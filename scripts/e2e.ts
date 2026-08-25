@@ -82,6 +82,7 @@ import type { CefrLevel } from "../src/lib/skills/types";
 import { buildWeeklyExam, finishWeekly, weeklyStatus } from "../src/lib/weekly";
 import { bandOf, computeProficiency, weakestSkill, type Evidence, type EvidenceSource, type ProficiencySkill } from "../src/lib/proficiency";
 import { gatherEvidence, proficiencyFor } from "../src/lib/proficiency-data";
+import { errorReport, frequentErrorTypes } from "../src/lib/error-analytics";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -2325,6 +2326,30 @@ async function main() {
   check("sıradaki adım okuma değil, ölçülmemiş bir beceri", pf.next !== null && pf.next.skill !== "reading" && pf.next.reason.includes("ölçülmedi"), pf.next?.reason);
   const planP = await buildPlan(USER, monday, "de", "A1", 20);
   check("plan beceri öğesi yetkinlikten geliyor", planP.items.some((i) => i.id === "skill" && i.detail.includes("ölçülmedi")));
+
+  console.log("\n40) Hata analitiği ve hedefli tekrar (WP-51)");
+  await reset();
+  await ensureProfile(USER, "E2E");
+  const eaWords = await db.select().from(words).where(isNotNull(words.artikel)).limit(8);
+  await submitAnswers(USER, eaWords.slice(0, 6).map((w) => ({ wordId: w.id, game: "artikel" as const, correct: false, latencyMs: 2000, errorType: "article" as const, detail: "die" })), monday, 20);
+  await submitAnswers(USER, [
+    { wordId: eaWords[6].id, game: "choice", correct: false, latencyMs: 2000, errorType: "meaning", detail: "kapı" },
+    { wordId: eaWords[6].id, game: "choice", correct: false, latencyMs: 2000, errorType: "meaning", detail: "kapı" },
+    { wordId: eaWords[7].id, game: "typing", correct: false, latencyMs: 2000, errorType: "spelling", detail: "x" },
+  ], monday, 20);
+  const rep = await errorReport(USER, "de");
+  check("dağılım: artikel önde (6/9 = %67), hedefli tur bağlantısı", rep.totalWrong === 9 && rep.types[0]?.type === "article" && rep.types[0].pct === 67 && rep.types[0].href === "/learn?game=artikel", JSON.stringify(rep.types));
+  check("karıştırma çifti: kelime ↔ 'kapı' ×2", rep.confusions.length === 1 && rep.confusions[0].with === "kapı" && rep.confusions[0].n === 2 && rep.confusions[0].wordId === eaWords[6].id);
+  const freq = await frequentErrorTypes(USER);
+  check("sık hata tipi: artikel (≥5), anlam değil (2)", freq.has("article") && !freq.has("meaning"));
+  // Ağırlık: artikel hatası olan, tekrar evresindeki bir kelime doğru bilinince aralık ×0,75 ve olay
+  await db.update(userWords).set({ state: 2, intervalDays: 20, ease: 2.5, reps: 4, correctStreak: 2, lastReviewedAt: new Date(Date.now() - 2 * 86400000) }).where(and(eq(userWords.userId, USER), eq(userWords.wordId, eaWords[0].id)));
+  await submitAnswers(USER, [{ wordId: eaWords[0].id, game: "artikel", correct: true, latencyMs: 2000 }], monday, 10);
+  const [uwW] = await db.select().from(userWords).where(and(eq(userWords.userId, USER), eq(userWords.wordId, eaWords[0].id)));
+  const plainIv = schedule({ state: 2, ease: 2.5, intervalDays: 20, reps: 4, lapses: 0, correctStreak: 2, leech: false, dueAt: new Date(), lastReviewedAt: new Date(Date.now() - 2 * 86400000) }, 5, new Date(), 1).intervalDays;
+  check("sık artikel hatası → aralık ağırlıksızdan kısa", (uwW?.intervalDays ?? 0) < plainIv && (uwW?.intervalDays ?? 0) > 0, `${uwW?.intervalDays} < ${plainIv}`);
+  const wEv = await db.select().from(events).where(and(eq(events.userId, USER), eq(events.name, "srs_weight")));
+  check("srs_weight olayı kind=article, value=75", wEv.length === 1 && wEv[0].kind === "article" && wEv[0].value === 75);
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

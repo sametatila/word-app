@@ -2,7 +2,8 @@ import "server-only";
 import { and, desc, eq, gte, isNotNull, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { events, reviews, userLessons, userSkills, userWords } from "@/lib/db/schema";
-import { ERROR_LABELS, isErrorType, type ErrorType } from "@/lib/errors";
+import { ERROR_LABELS, ERROR_TARGET_GAME, isErrorType } from "@/lib/errors";
+import { GAME_LABELS, type GameId } from "@/lib/types";
 import type { CefrLevel } from "@/lib/skills/types";
 import { computeProficiency } from "@/lib/proficiency";
 import { gatherEvidence, nextStep } from "@/lib/proficiency-data";
@@ -50,15 +51,6 @@ export type Plan = {
   complete: boolean;
 };
 
-const ERROR_GAME: Partial<Record<ErrorType, { game: string; label: string }>> = {
-  article: { game: "artikel", label: "Artikel Yarışı" },
-  plural: { game: "plural", label: "Çoğul Bilmece" },
-  spelling: { game: "typing", label: "Yazarak Hatırla" },
-  word_order: { game: "order", label: "Cümleyi Diz" },
-  verb_position: { game: "order", label: "Cümleyi Diz" },
-  meaning: { game: "choice", label: "Doğru Anlam" },
-  listening: { game: "listen", label: "Kulaktan Tanı" },
-};
 
 export async function buildPlan(
   userId: string,
@@ -146,8 +138,8 @@ export async function buildPlan(
       .groupBy(reviews.errorType)
       .orderBy(desc(sql`count(*)`))
       .limit(1);
-    if (top && isErrorType(top.type) && top.n >= 5 && ERROR_GAME[top.type]) {
-      const target = ERROR_GAME[top.type]!;
+    if (top && isErrorType(top.type) && top.n >= 5 && ERROR_TARGET_GAME[top.type]) {
+      const target = { game: ERROR_TARGET_GAME[top.type]!, label: GAME_LABELS[ERROR_TARGET_GAME[top.type] as GameId] };
       const dayStart = new Date(`${today}T00:00:00`);
       const [todayRows] = await db
         .select({ n: sql<number>`count(*)::int` })

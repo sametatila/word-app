@@ -43,6 +43,8 @@ Rapor: profil yalnız kelime metrikleri; beceri yetkinliği, hata tipleri, zaman
 
 **Süre.** 4 gün. **Bağımlılık.** WP-02, WP-11, WP-50.
 
+**Durum (2026-08-25).** Adım 1–3 bitti; 4 (haftalık bildirim) WP-52'ye. `src/lib/error-analytics.ts` (`errorReport`: 30 günlük hata tipi dağılımı + pay + hedefli tur bağlantısı, karıştırma çiftleri `reviews.detail`'den, zayıf kurallar `weakRules`; `frequentErrorTypes`); `ERROR_TARGET_GAME` haritası `lib/errors.ts`'te (plan kartı ve bu kart ortak); `GET /api/errors`; profilde `WeakSpotsCard` (ilk 3 tip + "Çalış", karıştırdıkların çipleri, zayıf kurallar). SRS: `submitAnswers` sık hata tipine ×0,75 uygular ve `srs_weight` olayı yazar; `report:learning` KPI 7 altında listeler. e2e §40 (5 kontrol). Kanıt: `reports/shots/wp51-weak-spots.png`.
+
 ---
 
 ## WP-52 · Gelişim raporu

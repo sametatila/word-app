@@ -66,6 +66,21 @@ export const ERROR_CHEATSHEET: Partial<Record<ErrorType, string>> = {
   word_order: "a1-satzbau",
 };
 
+/**
+ * Hata tipi → hedefli çalışma oyunu (tek oyunlu tur). WP-51 "zayıf noktaların"
+ * ve WP-60 plan kartı aynı haritayı okur; WP-11 drill'leri gelince
+ * dilbilgisi tipleri (case/verb_position/conjugation) drill'e yönlenir.
+ */
+export const ERROR_TARGET_GAME: Partial<Record<ErrorType, string>> = {
+  article: "artikel",
+  plural: "plural",
+  spelling: "typing",
+  word_order: "order",
+  verb_position: "order",
+  meaning: "choice",
+  listening: "listen",
+};
+
 export function cheatsheetHref(type: ErrorType): string | null {
   const id = ERROR_CHEATSHEET[type];
   return id ? `/cheatsheet#${id}` : null;

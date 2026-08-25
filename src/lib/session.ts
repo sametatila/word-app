@@ -5,6 +5,7 @@ import { dailyStats, events, profiles, reviews, sessionState, userWords, words }
 import { cleanDetail, isErrorType, srsWeightFor, type ErrorType } from "@/lib/errors";
 import { clozeTypeChance, gamesFor, PRODUCTION_GAMES, type Strength as LadderStrength } from "@/lib/ladder";
 import { chatConfigured } from "@/lib/chat-providers";
+import { FREQUENT_ERROR_WEIGHT, frequentErrorTypes } from "@/lib/error-analytics";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
 import { xpForChallengeRecord, xpForWager } from "@/lib/xp";
@@ -1294,11 +1295,13 @@ export async function submitAnswers(
     for (const r of rows) if (isErrorType(r.errorType)) lastErrorByWord.set(r.wordId, r.errorType);
   }
 
+  const frequent = wordIds.length ? await frequentErrorTypes(userId) : new Set<ErrorType>();
+
   let xpGained = 0;
   let correctCount = 0;
   let newCount = 0;
   const reviewRows: (typeof reviews.$inferInsert)[] = [];
-  /** Yanlışların hata tipi olayları — KPI 7 buradan okur. */
+  /** Yanlışların hata tipi olayları — KPI 7 buradan okur; SRS ağırlık olayları da buraya. */
   const errorEvents: (typeof events.$inferInsert)[] = [];
   const upserts: (typeof userWords.$inferInsert)[] = [];
   /** Aralığın cevap öncesi/sonrası hâli — pekişme eşiğini geçenleri saymak için. */
@@ -1343,7 +1346,15 @@ export async function submitAnswers(
         : ans.correct
           ? Math.max(3, own)
           : Math.min(3, own);
-    const next = schedule(prev, q, now, srsWeightFor(lastErrorByWord.get(ans.wordId)));
+    // Ağırlık: kelimenin son yanlışının tipi son 14 günde ≥ 5 kez görüldüyse
+    // ×0,75 (WP-51), yoksa tipin varsayılanı (lib/errors). Uygulanan her
+    // ağırlık olay olarak yazılır ki etkisi raporda izlenebilsin.
+    const lastType = lastErrorByWord.get(ans.wordId);
+    const weight = lastType ? (frequent.has(lastType) ? FREQUENT_ERROR_WEIGHT : srsWeightFor(lastType)) : 1;
+    const next = schedule(prev, q, now, weight);
+    if (lastType && weight < 1 && ans.correct && prev.state === 2) {
+      errorEvents.push({ userId, name: "srs_weight", day: today, value: Math.round(weight * 100), kind: lastType });
+    }
 
     xpGained += xpForQuality(q);
     if (ans.correct) correctCount += 1;

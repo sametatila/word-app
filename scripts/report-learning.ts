@@ -139,6 +139,14 @@ async function main() {
     console.log(`    ${String(r.error_type).padEnd(14)} ${pad(r.n, 5)}  ${pct(n(r.n), weekTotal)}`);
   }
   if (!errors.length) console.log("  (henüz hata tipi olayı yok — WP-02 sonrası dolar)");
+  const weighted = (await sql`
+    select date_trunc('week', day)::date::text as week, coalesce(kind,'?') as error_type, count(*)::int as n, round(avg(value))::int as w
+    from events where name = 'srs_weight' and day >= current_date - ${days}::int group by 1, 2 order by 1, 3 desc
+  `) as Row[];
+  if (weighted.length) {
+    console.log("  SRS hata ağırlığı uygulanan tekrarlar (WP-51)");
+    for (const r of weighted) console.log(`    ${r.week}  ${String(r.error_type).padEnd(14)} ${pad(r.n, 5)}  ×${(n(r.w) / 100).toFixed(2)}`);
+  }
 
   // 8. Tutunma
   const retention = (await sql`
