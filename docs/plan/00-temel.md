@@ -135,3 +135,5 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 **Kabul.** `CHAT_PROVIDER`/anahtarlar yokken A1 dersi baştan sona geçilir, `userLessons.passed = true`.
 
 **Süre.** 3 gün. **Bağımlılık.** Yok (WP-70 şemasıyla uyumlu olmalı).
+
+**Durum (2026-08-25).** Bitti. `LessonRoleplay.script?: DialogueTurn[]`; `src/lib/lessons/offline-roleplay.ts` (`offlineStart/offlineReply/offlineSummary/patternUsed`; senaryo modu = `lib/dialogue` niyet eşleştirme, senaryosuz ders = kalıp modu); `content/scripts-a1.ts` 10 A1 senaryosu (4'er tur, açılışla aynı ilk tur); `GET /api/roleplay` → `{configured}`; `lesson-player`: konuşmaya girerken ve kayıttan dönerken durum sorgusu, POST 503'te aynı cümleyle senaryoya geçiş, rozet ("Konuşma servisi kapalı — senaryolu konuşma / kalıpları kullan"), `[SAY]` örnek çipi, bitişte `production_attempt(roleplay)` puanı. e2e §30 (16 kontrol, sağlayıcısız `recordLesson.passed === true` dâhil) yeşil. Kanıt: `reports/shots/wp04-roleplay-{start,miss,turns,summary}.png` (demo sunucu, sağlayıcısız).

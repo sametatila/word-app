@@ -210,6 +210,7 @@ export function LessonPlayer({
     setTurns(v.turns);
     setPhase(v.phase);
     setResumed(true);
+    if (v.phase === "roleplay") probeRoleplayService();
   }, [lesson]);
 
   useEffect(() => {
@@ -664,16 +665,14 @@ export function LessonPlayer({
 
   // ─────────────────────────── konuşma pratiği ───────────────────────────
 
-  function startRoleplay() {
-    recognition.current?.abort();
-    cancelSpeech.current?.();
-    setAwaiting(false);
-    setPhase("roleplay");
-    if (turns.length) return; // kayıttan dönüldü, konuşma zaten kurulu
-    setTurns([{ role: "assistant", content: lesson.roleplay.opening }]);
-    // Sağlayıcı var mı? Yoksa daha ilk cümlede 503 yemek yerine baştan
-    // senaryolu konuşmaya geç. Açılış iki yolda da aynı metin (senaryonun
-    // ilk turu açılışla birebir), o yüzden beklemeden gösterildi.
+  /**
+   * Sağlayıcı var mı? Yoksa daha ilk cümlede 503 yemek yerine baştan
+   * senaryolu konuşmaya geç. Açılış iki yolda da aynı metin (senaryonun ilk
+   * turu açılışla birebir), o yüzden cevap beklenmeden gösteriliyor. Kayıttan
+   * dönüşte de soruluyor: yarım kalmış konuşma, servis o arada kapandıysa
+   * senaryoyla sürer.
+   */
+  function probeRoleplayService() {
     void fetch("/api/roleplay", { cache: "no-store" })
       .then((r) => (r.ok ? (r.json() as Promise<{ configured: boolean }>) : null))
       .then((s) => {
@@ -684,6 +683,16 @@ export function LessonPlayer({
         }
       })
       .catch(() => {});
+  }
+
+  function startRoleplay() {
+    recognition.current?.abort();
+    cancelSpeech.current?.();
+    setAwaiting(false);
+    setPhase("roleplay");
+    if (turns.length) return; // kayıttan dönüldü, konuşma zaten kurulu
+    setTurns([{ role: "assistant", content: lesson.roleplay.opening }]);
+    probeRoleplayService();
     const token = ++speechToken.current;
     if (ttsAvailable) {
       setSpeakingTurn(0);
