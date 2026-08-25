@@ -1,0 +1,63 @@
+# Faz 7 — İçerik üretim hattı
+
+Rapor: dersler A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme yalnız çoktan seçmeli; gerekçe yok. Kod tarafındaki her paket içerik ister; içerik de kod gibi şemalı, doğrulanan ve gözden geçirilen bir hatla üretilmeli. Mevcut desen (`data/skills/SPEC.md`, `make-packets.mjs`, `check.mjs`, `apply-*.ts`) korunur ve genelleştirilir.
+
+---
+
+## WP-70 · İçerik şeması ve doğrulayıcı (tek hat)
+
+**Amaç.** Her içerik türü için tek şema kaynağı, tek doğrulayıcı, tek üretim/uygulama akışı.
+
+**Mevcut kod.** `src/lib/skills/types.ts`, `src/lib/lessons/types.ts`, `src/lib/cheatsheet/types.ts`, `data/skills/*`, `data/meanings/*`, `data/zurich/*`, `scripts/apply-*.ts`, `scripts/seed-skills.ts`.
+
+**Tasarım.**
+- `data/content/SPEC.md`: tür başına alanlar, dil kuralları (Türkçe sade açıklama; Almanca doğal; tek doğal karşılık ilkesi), seviye ölçütleri (kelime/yapı listeleri), can-do etiketi zorunlu, `why_tr` zorunlu (soru/drill), yasaklar (İngilizce açıklama yok, çeviri yerine örnek).
+- Şema eklemeleri: `SkillQuestion.kind/why_tr`, `WritingTask` yeni türler (WP-31), `SpeakingMonologueExercise` (WP-21), `Lesson.roleplay.script` (WP-04), ders adımı `transform/choose` (WP-62), `Drill` (WP-11), `cando[]` (WP-43).
+- `data/content/check.mjs`: tüm içerik dosyalarını yükler (TS → `tsx` ile), şema + iş kuralları (kimlik benzersiz, can-do var, seviye kelime havuzu dışına çıkan kelime uyarısı — `words` tablosuyla karşılaştırma, umlaut/ß tutarlılığı, Almanca cümle uzunluğu) → CI'da `npm run test:content`.
+- Üretim akışı: `make-packets` → LLM (istem şablonu SPEC'ten) → `check` → insan gözden geçirme listesi (`data/content/review/*.md`, 5 maddede 1 örneklem) → `apply`.
+
+**Adımlar.** 1. SPEC. 2. Şema alanları (tipler). 3. Doğrulayıcı + CI. 4. Paket/apply genelleştirme. 5. Mevcut içeriğin doğrulayıcıdan geçirilip uyarıların kapatılması.
+
+**Kabul.** `npm run test:content` yeşil; yeni içerik türü eklemek yalnız SPEC + tip + doğrulayıcı kuralı gerektiriyor.
+
+**Süre.** 4 gün. **Bağımlılık.** Yok (en başta).
+
+---
+
+## WP-71 · Ders kapsamı: B1 100, B2 100, C1 60 + adım dengesi
+
+**Amaç.** Ders yolu becerilerin gerisinde; B2/C1 yok. Ayrıca mevcut derslerde tekrar/üret dengesi.
+
+**Tasarım.**
+- Modül temaları `src/lib/lessons/modules.ts`'de var (B1–C1 için tamamla); ders başına: 10–14 adım (tekrar ≤ %40, üret ≥ %35, dönüştür ≥ %15), kelime 6–8 (havuzdan), rol yapma (AI istemi + senaryo yedeği), can-do, özet kalıpları, ilgili dilbilgisi tablosu.
+- Üretim: modül başına paket → LLM → doğrulayıcı → gözden geçirme (her modülde 2 ders tam okuma) → apply. Mevcut 220 derse senaryo yedeği ve adım dengesi (yalnız ekleme: `transform` adımları).
+- Sıra: B1 (20→100) → B2 (100) → C1 (60).
+
+**Adımlar.** 1. B1 temaları + 10 pilot ders (kalite kalibrasyonu). 2. B1 kalanı. 3. Mevcut 220'ye senaryo + dönüştürme adımları. 4. B2. 5. C1.
+
+**Kabul.** Her seviyede modül/ders sayısı hedefte; doğrulayıcı yeşil; her derste rol yapma senaryosu.
+
+**Süre.** Sürekli; pilot 4 gün, B1 tamamı ~2 hafta içerik.
+
+---
+
+## WP-72 · Konuşma, yazma, okuma/dinleme içerik genişletme
+
+**Hedefler.** Konuşma drill 24→60+, monolog 20, diyalog 7→25; yazma her seviyede yeni tür görevleri (reply/form/rewrite/summary); okuma/dinlemede her egzersize ≥ 2 üretim/gapfill sorusu + `why_tr`; dinleme için gerçek insan sesi kayıtları (öncelik B1+; TTS yedek) — `ListeningSegment.audio`.
+**Yöntem.** WP-70 hattı; konuşma drilleri için `confusions` listesi Türkçe ses bilgisi uzmanı gözden geçirmesi; ses kayıtları için ana dil konuşuru (stüdyo değil, temiz oda).
+**Kabul.** Doğrulayıcı yeşil; beceri merkezinde her seviyede her türden en az 4 egzersiz.
+**Süre.** Sürekli (S4–S8).
+
+---
+
+## WP-73 · Gerekçe ve kural parçacıkları
+
+**Amaç.** WP-13 "neden" satırları ve WP-11 drill'leri için kural bilgisi: her dilbilgisi tablosuna kısa Türkçe kural parçacıkları, istisnalar, örnekler; her artikel/çoğul kalıbına kural; sık karıştırılan kelime çiftlerine ayrım cümlesi.
+
+**Tasarım.** `src/lib/cheatsheet/rules.ts`: `{ id, tableId?, trigger: {errorType, pattern}, why_tr, example_de, link }`; `why.ts` (WP-13) bunlardan seçer. Drill maddeleri (`drills.ts`) her tabloya 10–15. Karıştırma çiftleri `data/content/confusables.json` (500 çift; LLM + kelime havuzu benzerliğinden aday üretimi + gözden geçirme).
+
+**Adımlar.** 1. Kural şeması + 30 kural (A1/A2). 2. 5 tablo drill (WP-11 pilotu). 3. Kalan tablolar (60). 4. Karıştırma çiftleri.
+
+**Kabul.** Her hata tipi için en az bir gerekçe üretiliyor; 60 tablonun hepsinde drill; doğrulayıcı yeşil.
+
+**Süre.** Pilot 3 gün; tamamı ~2 hafta içerik.
