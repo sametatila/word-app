@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useStill } from "@/lib/use-still";
+import { claimStage, releaseStage } from "@/lib/mascot-stage";
 
 /**
  * Erdi'nin ortam sürprizleri — oyun oynanırken araya giren eğlence anları.
@@ -59,6 +60,8 @@ function Walker() {
       if (walk || document.hidden || Date.now() < walkNextAt) return;
       const w = window.innerWidth;
       const dur = (w + 2 * 140) / WALK_SPEED;
+      // Sahne doluysa (şerit çekiliyor, kutlama sürüyor) bir sonraki saniyede yine bak.
+      if (!claimStage("walk", dur * 1000 + 400)) return;
       walkNextAt = Date.now() + dur * 1000 + rand(90_000, 210_000);
       setWalk({ dir: Math.random() < 0.5 ? "ltr" : "rtl", dur, w });
     }, 1000);
@@ -68,7 +71,10 @@ function Walker() {
   useEffect(() => {
     if (!walk) return;
     const t = setTimeout(() => setWalk(null), walk.dur * 1000 + 400);
-    return () => clearTimeout(t);
+    return () => {
+      clearTimeout(t);
+      releaseStage("walk");
+    };
   }, [walk]);
 
   if (!walk) return null;
@@ -104,6 +110,7 @@ function Peeker() {
     if (peekNextAt === 0) peekNextAt = Date.now() + rand(60_000, 150_000);
     const tick = setInterval(() => {
       if (side || document.hidden || Date.now() < peekNextAt) return;
+      if (!claimStage("peek", PEEK_MS + 400)) return;
       peekNextAt = Date.now() + PEEK_MS + rand(150_000, 330_000);
       setSide(Math.random() < 0.5 ? "left" : "right");
     }, 1000);
@@ -113,7 +120,10 @@ function Peeker() {
   useEffect(() => {
     if (!side) return;
     const t = setTimeout(() => setSide(null), PEEK_MS);
-    return () => clearTimeout(t);
+    return () => {
+      clearTimeout(t);
+      releaseStage("peek");
+    };
   }, [side]);
 
   return (

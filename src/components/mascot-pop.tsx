@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Mascot, type Mood } from "@/components/mascot";
 import { useStill } from "@/lib/use-still";
+import { claimStage, releaseStage } from "@/lib/mascot-stage";
 
 /** Kutlama çeşitleri — hep aynı klip kutlamayı ezberletiyor, aralarında dönüyor. */
 const CHEERS: Mood[] = ["cheer", "dance", "happy"];
@@ -46,11 +47,39 @@ export function MascotPop({
     [trigger, mood]
   );
 
+  /*
+    Sahne doluysa (Erdi altta yürüyor, şeridi çekiyor) kutlama beklemeye
+    alınır: sahne boşalınca çıkar, sekiz saniye içinde boşalmazsa vazgeçilir —
+    gecikmiş kutlama neyi kutladığı belli olmayan bir kutlamadır.
+  */
   useEffect(() => {
     if (!trigger) return;
-    setShow(true);
-    const t = setTimeout(() => setShow(false), hold);
-    return () => clearTimeout(t);
+    let hide: ReturnType<typeof setTimeout> | null = null;
+    let poll: ReturnType<typeof setInterval> | null = null;
+    const giveUpAt = Date.now() + 8000;
+    const stopPolling = () => {
+      if (poll) clearInterval(poll);
+      poll = null;
+    };
+    const tryShow = () => {
+      if (!claimStage("pop", hold + 400)) {
+        if (Date.now() > giveUpAt) stopPolling();
+        return;
+      }
+      stopPolling();
+      setShow(true);
+      hide = setTimeout(() => {
+        setShow(false);
+        releaseStage("pop");
+      }, hold);
+    };
+    tryShow();
+    if (!hide) poll = setInterval(tryShow, 300);
+    return () => {
+      if (hide) clearTimeout(hide);
+      if (poll) clearInterval(poll);
+      releaseStage("pop");
+    };
   }, [trigger, hold]);
 
   /*
@@ -88,7 +117,7 @@ export function MascotPop({
           }}
         >
           {/* Hepsi aynı boy: dans geniş tuvalde diye büyütülmüştü, ekranda iri kaçıyordu. */}
-          <Mascot mood={shown} size={92} />
+          <Mascot mood={shown} size={92} stage="pop" />
         </motion.div>
       ) : null}
     </AnimatePresence>

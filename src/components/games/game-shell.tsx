@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Mascot } from "@/components/mascot";
 import { useStill } from "@/lib/use-still";
 import { holdRound } from "@/lib/mascot-hold";
+import { claimStage, releaseStage } from "@/lib/mascot-stage";
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -154,12 +155,16 @@ function VerdictBar({
   const fx = useMemo<"right" | "left" | null>(() => {
     if (!verdict || still) return null;
     if (Math.random() >= 0.25) return null;
+    // Erdi başka yerdeyse (altta yürüyor, köşede kutluyor) şeridi getiremez.
+    if (!claimStage("pull", PULL_MS + PULL_LINGER_MS)) return null;
     return Math.random() < 0.5 ? "right" : "left";
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [verdict, still]);
 
   useEffect(() => {
-    if (fx) holdRound(PULL_MS + PULL_LINGER_MS);
+    if (!fx) return;
+    holdRound(PULL_MS + PULL_LINGER_MS);
+    return () => releaseStage("pull");
   }, [fx]);
 
   // Şerit yalnızca söyleyecek sözü olan oyunlarda var. Eşleştirme ve tanıtım

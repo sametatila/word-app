@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useStill } from "@/lib/use-still";
+import { useStageOwner } from "@/lib/mascot-stage";
 
 /**
  * Erdi — uygulamanın mirketi.
@@ -105,12 +106,22 @@ export function Mascot({
   mood = "idle",
   size = 132,
   className = "",
+  stage,
 }: {
   mood?: Mood;
   size?: number;
   className?: string;
+  /**
+   * Bu örneğin ait olduğu sahne kilidi (bkz. lib/mascot-stage). Verilmezse
+   * örnek "yerleşik"tir: sahne başkasınınken görünmez olur — tek Erdi kuralı.
+   * Sahneyi alan gezici sarmalayıcılar (pop, çekme) kendi kimliğini verir.
+   */
+  stage?: string;
 }) {
   const still = useStill();
+  const stageOwner = useStageOwner();
+  /* Sahne başkasınınsa bu Erdi burada değil: kutu yerinde kalır, içi boşalır. */
+  const away = stageOwner !== null && stageOwner !== stage;
   const [idleClip, setIdleClip] = useState(IDLE_CLIPS[0]);
   /*
     Duygu bir SELAMLAMA, kalıcı bir durum değil: klip bir tur oynadıktan sonra
@@ -176,10 +187,13 @@ export function Mascot({
   }, [file]);
 
   return (
-    <div
+    <motion.div
       className={`pointer-events-none relative select-none ${className}`}
       style={{ width: size, aspectRatio: `${inIdle ? 2 / 3 : clip.aspect}` }}
       aria-hidden="true"
+      initial={false}
+      animate={{ opacity: away ? 0 : 1, scale: away ? 0.9 : 1 }}
+      transition={{ duration: 0.25 }}
     >
       {/* Yer gölgesi — karakteri havada asılı olmaktan kurtarıyor. */}
       <motion.div
@@ -225,6 +239,6 @@ export function Mascot({
           />
         </>
       )}
-    </div>
+    </motion.div>
   );
 }
