@@ -9,6 +9,7 @@ import { CHEATSHEETS, CHEAT_LEVELS } from "@/lib/cheatsheet";
 import type { CheatBlock, CheatSheet } from "@/lib/cheatsheet";
 import { itemById, itemsOfSheet, type CheatItem } from "@/lib/cheatsheet/items";
 import { CheatQuiz, CheatQuizLoading } from "./cheat-quiz";
+import { drillsFor } from "@/lib/cheatsheet/drills";
 
 /**
  * Dilbilgisi ekranı — kural ve çekim tablolarının başvuru yeri.
@@ -416,12 +417,21 @@ function SheetCard({
             <div className="space-y-4 px-4 pb-4">
               <p className="muted text-xs font-semibold italic">{sheet.de}</p>
 
-              <button
-                onClick={() => onQuiz(sheet)}
-                className="btn btn-primary flex items-center gap-1.5 px-3.5 py-2 text-xs"
-              >
-                <FlameIcon size={14} /> Bu sayfayı sına
-              </button>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => onQuiz(sheet)}
+                  className="btn btn-primary flex items-center gap-1.5 px-3.5 py-2 text-xs"
+                >
+                  <FlameIcon size={14} /> Bu sayfayı sına
+                </button>
+                {/* Drill (WP-11): kuralı cümle üstünde uygulatan yazılı tur —
+                    tabloyu hatırlamak değil, kullanmak. Yalnız drill'i olan tablolarda. */}
+                {drillsFor(sheet.id).length ? (
+                  <Link href={`/cheatsheet/${sheet.id}/drill`} className="btn btn-ghost px-3.5 py-2 text-xs">
+                    Çalış ({drillsFor(sheet.id).length})
+                  </Link>
+                ) : null}
+              </div>
 
               {blocks.map((block, bi) =>
                 block.kind === "note" ? (

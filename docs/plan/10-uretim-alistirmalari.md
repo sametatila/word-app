@@ -60,6 +60,8 @@ Raporun ana bulgusu: 12 oyunun 7'si tanıma; cümle kurma yalnız parça dizme; 
 
 **Süre.** 5 gün (+ içerik). **Bağımlılık.** WP-02, WP-10 (eşleştirme kütüphanesi), WP-73 (içerik ölçekleme).
 
+**Durum (2026-08-26).** Adım 1–4 bitti, 5 ertelendi. `src/lib/cheatsheet/drills.ts` (`Drill` şeması, 60 madde: a1-artikel, a1-pronomen, a1-perfekt, a2-nebensatz, a2-wechselpraepositionen; `drillsFor`, `drillById`), `scripts/check-drills.ts` (`npm run test:cheat`: kimlik/tablo/hata tipi/boşluk/gerekçe/tablo bağı/≥10), `src/components/cheatsheet/drill-player.tsx` (yazılı cevap, `matchSentence`, `TokenDiff`/`TypedTokens` fark, neden satırı + hata tipi, sonuçta yanlışların listesi ve tipe göre sayım, tabloya dönüş), rota `/cheatsheet/[table]/drill` (sunucuda karıştırma), tablo kartında "Çalış (12)". `/api/cheat` drill kimliklerini kabul ediyor; `?sheet=` yanıtına `drill {total, seen, ok}` eklendi. `drill` olayı (kind = hata tipi). Kanıt: `reports/shots/wp11-{sheet-button,drill-question,drill-wrong,drill-result}.png`.
+
 ---
 
 ## WP-12 · Serbest cümle görevi ("bu üç kelimeyle cümle kur")

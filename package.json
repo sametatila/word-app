@@ -17,6 +17,7 @@
     "test:coach-lines": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-coach.ts",
     "test:why": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-why.ts",
     "test:match": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-sentence-match.ts",
+    "test:cheat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-drills.ts",
     "test:content": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-content.ts",
     "db:seed": "tsx scripts/seed.ts",
     "db:seed:skills": "tsx scripts/seed-skills.ts",

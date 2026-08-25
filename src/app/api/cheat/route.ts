@@ -8,6 +8,7 @@ import { awardActivity } from "@/lib/award";
 import { xpForSkill } from "@/lib/xp";
 import { grade, schedule, type SrsState } from "@/lib/srs";
 import { CHEAT_ITEMS, itemById } from "@/lib/cheatsheet/items";
+import { drillById, drillsFor } from "@/lib/cheatsheet/drills";
 
 export const dynamic = "force-dynamic";
 
@@ -38,20 +39,30 @@ export async function GET(req: Request) {
       // Tek sayfanın maddeleri: sayfa açıldığında "kaçı biliniyor, kaçının
       // tekrarı gelmiş" göstermek için.
       const ids = CHEAT_ITEMS.filter((i) => i.sheetId === sheet).map((i) => i.id);
-      if (!ids.length) return NextResponse.json({ states: {}, due: 0, seen: 0 });
+      const drillIds = drillsFor(sheet).map((x) => x.id);
+      if (!ids.length && !drillIds.length) return NextResponse.json({ states: {}, due: 0, seen: 0 });
       const rows = await db
         .select()
         .from(cheatProgress)
-        .where(and(eq(cheatProgress.userId, userId), inArray(cheatProgress.itemId, ids)));
+        .where(and(eq(cheatProgress.userId, userId), inArray(cheatProgress.itemId, [...ids, ...drillIds])));
       const now = Date.now();
       const states: Record<string, { reps: number; lapses: number; due: boolean }> = {};
       let due = 0;
+      let seen = 0;
+      // Drill özeti (WP-11): kaçı denendi, kaçı son denemede doğruydu.
+      const drill = { total: drillIds.length, seen: 0, ok: 0 };
       for (const r of rows) {
+        if (r.itemId.startsWith("d:")) {
+          drill.seen++;
+          if (r.correctStreak > 0) drill.ok++;
+          continue;
+        }
+        seen++;
         const isDue = r.dueAt.getTime() <= now;
         if (isDue) due++;
         states[r.itemId] = { reps: r.reps, lapses: r.lapses, due: isDue };
       }
-      return NextResponse.json({ states, due, seen: rows.length, total: ids.length });
+      return NextResponse.json({ states, due, seen, total: ids.length, drill });
     }
 
     // Genel özet — ana ekrandaki kart ve cheatsheet başlığı bunu kullanıyor.
@@ -228,7 +239,8 @@ function parseResults(body: unknown): ParsedResults | null {
   for (const raw of b.results) {
     if (typeof raw !== "object" || raw === null) return null;
     const r = raw as Record<string, unknown>;
-    if (typeof r.itemId !== "string" || !itemById(r.itemId)) return null;
+    // Drill maddeleri (WP-11) aynı ilerleme tablosunda: "d:tablo:nn".
+    if (typeof r.itemId !== "string" || (!itemById(r.itemId) && !drillById(r.itemId))) return null;
     if (typeof r.correct !== "boolean") return null;
     const latencyMs = typeof r.latencyMs === "number" ? r.latencyMs : 0;
     results.push({
