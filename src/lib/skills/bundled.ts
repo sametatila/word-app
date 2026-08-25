@@ -12,6 +12,7 @@ import { zhC1 } from "./content/zh-c1";
 import { speaking } from "./content/speaking";
 import { zhSpeaking } from "./content/zh-speaking";
 import { dialogues } from "./content/dialogue";
+import { monologues } from "./content/monologue";
 import { derivedConfusions } from "../speech-rules";
 import { germanLexicon } from "../speech-lexicon";
 
@@ -77,4 +78,5 @@ export const BUNDLED_EXERCISES: SkillExercise[] = [
   ...withDerived(speaking),
   ...zhSpeaking,
   ...dialogues,
+  ...monologues,
 ];

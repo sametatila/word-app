@@ -53,6 +53,8 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Süre.** 5 gün (+ içerik). **Bağımlılık.** WP-03, WP-20, WP-70/72.
 
+**Durum (2026-08-26).** Adım 1, 3, 4 bitti; adım 2'nin monolog yarısı bitti (20), drill yarısı (40) WP-72'de. `types.ts` `SpeakingMonologueExercise { monologue: { promptTr, bulletsTr, targets, minSeconds, maxSeconds, sampleDe, rubricHint? } }`; `check-content.ts` monolog kuralları (3–5 madde, süre 20–120, örnek ≥30 kelime); `content/monologue.ts` 20 görev (A1 kişisel bilgi → C1 savunma), `bundled.ts`'e eklendi, `db:seed:skills` ile üretimde (364 egzersiz). `monologue-player.tsx`: hazırlık (30 sn geri sayım, madde işaretleri, kalıplar) → kayıt (sayaç, alt/üst sınır, sürekli tanıyıcı + MediaRecorder) → kontrol (ses oynatıcı, düzenlenebilir transkript, kalıp kullanımı işaretleri) → `askAssess(kind: speaking)` → `AssessmentCard` + kalıp çipleri + örnek monolog; tanıyıcısızsa kontrol listesiyle öz değerlendirme. Beceri merkezinde Konuşma sekmesinde "Monolog" türü (genre). Kanıt: `reports/shots/wp21-monologue-{prep,record,review,result}.png`, `wp21-hub-card.png` (a1-m1 uçtan uca: rubrik 4/4, +400 XP).
+
 ---
 
 ## WP-22 · Rol yapma sınav modu

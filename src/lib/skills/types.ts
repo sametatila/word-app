@@ -264,7 +264,30 @@ export type SpeakingDialogueExercise = ExerciseBase & {
   targets: Gloss[];
 };
 
-export type SpeakingExercise = SpeakingDrillExercise | SpeakingDialogueExercise;
+/**
+ * Monolog (WP-21): 30–60 saniye tek başına konuşma — kendini tanıt, gününü
+ * anlat, bir fikri savun. Hazırlık (madde işaretleri) → kayıt → transkript →
+ * rubrik (`kind: "speaking"`). Tanıyıcı yoksa kendi kaydını dinleyip kontrol
+ * listesiyle öz değerlendirme.
+ */
+export type SpeakingMonologueExercise = ExerciseBase & {
+  skill: "speaking";
+  monologue: {
+    /** Türkçe görev: "Kendini tanıt: adın, nereli olduğun, işin, hobin." */
+    promptTr: string;
+    /** Hazırlıkta gösterilen madde işaretleri, Türkçe (3–5). */
+    bulletsTr: string[];
+    /** Kullanılması beklenen kalıplar. */
+    targets: Gloss[];
+    minSeconds: number;
+    maxSeconds: number;
+    /** Örnek monolog, Almanca — sonuçtan sonra açılır. */
+    sampleDe: string;
+    /** Rubrik için ek ipucu (isteğe bağlı): "Perfekt bekle". */
+    rubricHint?: string;
+  };
+};
+export type SpeakingExercise = SpeakingDrillExercise | SpeakingDialogueExercise | SpeakingMonologueExercise;
 
 export type SkillExercise =
   | ReadingExercise

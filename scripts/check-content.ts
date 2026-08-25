@@ -199,6 +199,14 @@ function checkSkills(list: SkillExercise[]) {
       if ("dialogue" in e) {
         checkTurns(w, e.dialogue);
         if ((e.targets?.length ?? 0) < 2) W(w, "diyalog hedefleri < 2");
+      } else if ("monologue" in e) {
+        const m = e.monologue;
+        if (!m.promptTr?.trim()) E(w, "monolog: promptTr boş");
+        if (!m.bulletsTr || m.bulletsTr.length < 3 || m.bulletsTr.length > 5) E(w, `monolog: ${m.bulletsTr?.length ?? 0} madde (3–5)`);
+        if ((m.targets?.length ?? 0) < 2) W(w, "monolog hedefleri < 2");
+        if (!(m.minSeconds >= 20 && m.maxSeconds > m.minSeconds && m.maxSeconds <= 120)) E(w, `monolog süre ${m.minSeconds}–${m.maxSeconds}`);
+        if (wc(m.sampleDe) < 30) W(w, `monolog örneği ${wc(m.sampleDe)} kelime (< 30)`);
+        if (trLetters(m.sampleDe)) E(w, "monolog örneğinde Türkçe harf");
       } else {
         if (e.tasks.length < 4) W(w, `konuşma drill'i ${e.tasks.length} görev (< 4)`);
         for (const t of e.tasks) {

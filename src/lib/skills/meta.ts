@@ -21,7 +21,7 @@ export const LEVEL_ORDER: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 export function itemCount(ex: SkillExercise): number {
   if (ex.skill === "writing") return ex.tasks.length;
   // Konuşma iki biçimde gelir: tek tek söyleyiş görevleri ya da diyalog turları.
-  if (ex.skill === "speaking") return "dialogue" in ex ? ex.dialogue.length : ex.tasks.length;
+  if (ex.skill === "speaking") return "dialogue" in ex ? ex.dialogue.length : "monologue" in ex ? 1 : ex.tasks.length;
   return ex.questions.length;
 }
 
