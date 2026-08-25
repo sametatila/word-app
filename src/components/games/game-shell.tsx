@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, type ReactNode } from "react";
+import { useEffect, useMemo, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Mascot } from "@/components/mascot";
 import { useStill } from "@/lib/use-still";
+import { holdRound } from "@/lib/mascot-hold";
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -122,6 +123,10 @@ export function GameShell({
  * daha uzun ek bilgiler (örnek cümle gibi) bilerek şeride konmuyor — şerit
  * tek bakışta okunan bir cevap, bir metin bloğu değil.
  */
+/** Şeridin sürüklenerek gelme süresi ve mirketin ardından oyalanıp kaybolma payı (ms). */
+const PULL_MS = 1600;
+const PULL_LINGER_MS = 700;
+
 function VerdictBar({
   verdict,
   feedback,
@@ -132,20 +137,26 @@ function VerdictBar({
   const still = useStill();
   /*
     Arada bir (her seferinde DEĞİL — sürpriz sık tekrar edince gürültü olur)
-    şeridi Erdi'nin kendisi getiriyor: "push"ta soldan iterek, "pull"da
-    sağdan çekerek. İkisi de GİRİŞ koreografisi — ilk sürümde çekme çıkışa
-    bağlıydı ve hiç görünmedi: tur ilerleyince şerit animasyonsuz söküldüğü
-    için çıkış animasyonu hiçbir zaman oynamıyordu. Kliplerin duruşları:
-    push-right sağa dönük ileri iter (şeridin solunda), pull-left sağa dönük
-    geri geri sola yürüyerek sağındaki şeridi çeker (şeridin solunda).
-    Zar, şerit her yeniden kurulduğunda bir kez atılır.
+    şeridi Erdi'nin kendisi sağdan sürükleyerek getiriyor. Kliplerdeki
+    duruş: pull-left sağa dönük, geri geri sola yürüyor, sağındaki şeridi
+    çekiyor — yani şeridin solunda durur. İtme koreografisi denendi ve
+    inandırıcı olmadı; yalnız çekme kaldı.
+
+    Koreografi ağır çekimde (1.6 sn) ki çekme hissi okunsun; tur bu sürede
+    kapanmasın diye şerit kurulurken kapanış saati ileri alınıyor
+    (lib/mascot-hold) — ilk sürümde tur, mirket daha şeridi getirmeden
+    ilerliyor, animasyon yarıda kesiliyordu. Zar, şerit her yeniden
+    kurulduğunda bir kez atılır.
   */
-  const fx = useMemo<"push" | "pull" | null>(() => {
+  const fx = useMemo<"pull" | null>(() => {
     if (!verdict || still) return null;
-    const r = Math.random();
-    return r < 0.2 ? "push" : r < 0.4 ? "pull" : null;
+    return Math.random() < 0.25 ? "pull" : null;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [verdict, still]);
+
+  useEffect(() => {
+    if (fx === "pull") holdRound(PULL_MS + PULL_LINGER_MS);
+  }, [fx]);
 
   // Şerit yalnızca söyleyecek sözü olan oyunlarda var. Eşleştirme ve tanıtım
   // kartında cevaptan sonra gösterilecek bir düzeltme yok; orada boş bir şerit
@@ -160,39 +171,18 @@ function VerdictBar({
         {verdict ? (
           <motion.div
             key={verdict}
-            initial={
-              fx === "push"
-                ? { x: "-110%", opacity: 1 }
-                : fx === "pull"
-                  ? { x: "110%", opacity: 1 }
-                  : { opacity: 0, y: 10 }
-            }
-            animate={fx ? { x: 0, opacity: 1 } : { opacity: 1, y: 0 }}
+            initial={fx === "pull" ? { x: "110%", opacity: 1 } : { opacity: 0, y: 10 }}
+            animate={fx === "pull" ? { x: 0, opacity: 1 } : { opacity: 1, y: 0 }}
             exit={{ opacity: 0, transition: { duration: 0 } }}
             transition={
-              fx
-                ? { duration: 0.8, ease: "easeOut" }
+              fx === "pull"
+                ? { duration: PULL_MS / 1000, ease: "easeInOut" }
                 : { duration: 0.2, ease: [0.22, 1, 0.36, 1] }
             }
             className={`verdict relative flex min-h-[4.5rem] items-center gap-1 py-1 pl-1 pr-4 text-left text-sm font-semibold ${
               verdict === "correct" ? "verdict-correct" : "verdict-wrong"
             }`}
           >
-            {fx === "push" && (
-              /* Şeridi getiren Erdi — şeridin hemen solunda, onunla birlikte
-                 kayar; şerit yerine oturunca işini bitirip kaybolur. */
-              <motion.img
-                src="/anim/push-right.webp"
-                alt=""
-                aria-hidden
-                draggable={false}
-                className="pointer-events-none absolute bottom-1 h-14 w-auto"
-                style={{ left: -60 }}
-                initial={{ opacity: 1 }}
-                animate={{ opacity: [1, 1, 0] }}
-                transition={{ duration: 1.6, times: [0, 0.6, 1] }}
-              />
-            )}
             {fx === "pull" && (
               /* Şeridi çekerek getiren Erdi — sağa dönük, geri geri sola
                  yürüyor, sağındaki şeridi sürüklüyor; şeritle birlikte kayar,
@@ -206,7 +196,10 @@ function VerdictBar({
                 style={{ left: -60 }}
                 initial={{ opacity: 1 }}
                 animate={{ opacity: [1, 1, 0] }}
-                transition={{ duration: 1.6, times: [0, 0.6, 1] }}
+                transition={{
+                  duration: (PULL_MS + PULL_LINGER_MS) / 1000,
+                  times: [0, PULL_MS / (PULL_MS + PULL_LINGER_MS), 1],
+                }}
               />
             )}
             {/*

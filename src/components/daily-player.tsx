@@ -285,7 +285,15 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
           {xpGained > 0 ? <p className="mt-1 text-sm opacity-90">+{xpGained} XP</p> : null}
         </div>
 
-        {board.length > 1 ? <BoardList rows={board} title="Bugünün tablosu" /> : null}
+        {/* Tablo tek satırken de gösteriliyor: "Tabloyu gör" deyip tablo
+            görmemek, düğmenin yalan söylemesi. Seviyesinde ilk oynayan
+            kullanıcı kendi satırını ve neden yalnız olduğunu görüyor. */}
+        {board.length > 0 ? <BoardList rows={board} title="Bugünün tablosu" /> : null}
+        {board.length === 1 ? (
+          <p className="muted border-t px-5 py-3 text-xs" style={{ borderColor: "var(--border)" }}>
+            Seviyende bugün ilk oynayan sensin — diğerleri oynadıkça tablo dolacak.
+          </p>
+        ) : null}
 
         <div className="space-y-2 p-6">
           {/* Paylaşılan sonuç burada gerçekten bir şey ifade ediyor: karşı taraf

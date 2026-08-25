@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import { speakThen } from "@/components/speak-button";
+import { roundHoldRemaining } from "@/lib/mascot-hold";
 
 /**
  * Turun kapanışını yöneten yardımcı — ve sökülürken bekleyen her şeyi iptal eder.
@@ -38,6 +39,19 @@ export function useRoundExit() {
   useEffect(() => abort, [abort]);
 
   /**
+   * Kapanışı, Erdi'nin şeridi getirme koreografisi bitene kadar erteler
+   * (bkz. lib/mascot-hold). Koreografi yoksa hemen kapatır.
+   */
+  const finish = useCallback((done: () => void) => {
+    const wait = roundHoldRemaining();
+    if (!wait) {
+      done();
+      return;
+    }
+    timer.current = setTimeout(done, wait);
+  }, []);
+
+  /**
    * Metni okur, okuma bitince turu kapatır.
    *
    * `tail` verilirse kapanış o kadar geciktirilir — yanlış cevapta ekranda
@@ -56,24 +70,24 @@ export function useRoundExit() {
         () => {
           cancelSpeech.current = null;
           if (!tail) {
-            done();
+            finish(done);
             return;
           }
-          timer.current = setTimeout(done, tail);
+          timer.current = setTimeout(() => finish(done), tail);
         },
         speech,
       );
     },
-    [abort],
+    [abort, finish],
   );
 
   /** Sessiz kapanış — okunacak bir şey olmayan turlar için. */
   const exitAfter = useCallback(
     (ms: number, done: () => void) => {
       abort();
-      timer.current = setTimeout(done, ms);
+      timer.current = setTimeout(() => finish(done), ms);
     },
-    [abort],
+    [abort, finish],
   );
 
   /**

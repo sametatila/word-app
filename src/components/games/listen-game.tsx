@@ -10,6 +10,7 @@ import { fx } from "@/lib/fx";
 import { speakGerman, useSpeechAvailable } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
 import { firstExample } from "@/lib/example";
+import { roundHoldRemaining } from "@/lib/mascot-hold";
 
 type ListenRound = Extract<Round, { game: "listen" }>;
 
@@ -49,8 +50,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
     const latencyMs = Date.now() - started.current;
     const wait = isCorrect ? 1400 : 2600;
     fx(isCorrect ? "correct" : "wrong", wait);
-    setTimeout(
-      () =>
+    const fire = () =>
         onDone([
           {
             wordId: word.id,
@@ -59,9 +59,13 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
             // Tekrar tekrar dinlemek yardım almaktır: kalite puanı bunu bilsin.
             hintUsed: replays >= 2,
           },
-        ]),
-      wait,
-    );
+        ]);
+    // Erdi şeridi sürükleyerek getiriyorsa kapanış onu bekler (bkz. lib/mascot-hold).
+    setTimeout(() => {
+      const extra = roundHoldRemaining();
+      if (extra) setTimeout(fire, extra);
+      else fire();
+    }, wait);
   }
 
   const example = firstExample(word.beispiel);
