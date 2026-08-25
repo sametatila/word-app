@@ -37,6 +37,7 @@ import { Stagger } from "@/components/reveal";
 import { DailyPlayer } from "@/components/daily-player";
 import { DailyCard } from "@/components/daily-card";
 import { ChallengeCard } from "@/components/challenge-card";
+import { CheatsheetCard } from "@/components/cheatsheet-card";
 import { WalkCard } from "@/components/walk-card";
 import { WalkPlayer } from "@/components/walk-player";
 import { QuestCard } from "@/components/quest-card";
@@ -909,6 +910,9 @@ function StartCard({
           <DailyCard onPlay={onDaily} bare />
           <ChallengeCard best={meta.challengeBest} onPlay={onChallenge} bare />
           <WalkCard onPlay={onWalk} bare />
+          {/* Dilbilgisi en altta: diğer üçü bir TUR açıyor, bu bir EKRAN
+              açıyor. Sıralamada da o fark korunuyor. */}
+          <CheatsheetCard bare />
         </div>
       </section>
 

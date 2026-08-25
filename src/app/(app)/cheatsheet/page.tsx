@@ -1,7 +1,7 @@
 import { getUserId } from "@/lib/auth/server";
 import { redirect } from "next/navigation";
 import { ensureProfile } from "@/lib/session";
-import { CheatsheetView } from "@/components/lessons/cheatsheet-view";
+import { CheatsheetView } from "@/components/cheatsheet/cheatsheet-view";
 
 export const metadata = { title: "Cheatsheet" };
 

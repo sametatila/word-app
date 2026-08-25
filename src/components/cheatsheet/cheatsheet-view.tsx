@@ -57,9 +57,9 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
       >
         <div className="flex items-center gap-3">
           <Link
-            href="/lessons"
+            href="/learn"
             prefetch={false}
-            aria-label="Derslere dön"
+            aria-label="Öğren ekranına dön"
             className="chip flex h-9 w-9 shrink-0 items-center justify-center"
           >
             <ArrowLeftIcon size={18} />
