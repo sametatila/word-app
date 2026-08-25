@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { getUserId } from "@/lib/auth/server";
 import { BossPlayer } from "@/components/boss-player";
@@ -25,5 +26,15 @@ export default async function BossPage({
   const index = Number(mod);
   if (!LEVELS.includes(level) || !Number.isInteger(index) || index < 0 || index > 20) notFound();
 
-  return <BossPlayer level={level} moduleIndex={index} onExitHref="/lessons" />;
+  return (
+    <>
+      {/* Hız turu yanında gerçek sınav (WP-41): bölümler, süre, sertifika. */}
+      <div className="mx-auto mb-3 w-full max-w-2xl text-right">
+        <Link href={`/exam/${level}/${index}`} className="muted text-xs font-semibold underline-offset-2 hover:underline">
+          Gerçek sınav (20 dk, beş bölüm) →
+        </Link>
+      </div>
+      <BossPlayer level={level} moduleIndex={index} onExitHref="/lessons" />
+    </>
+  );
 }

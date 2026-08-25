@@ -76,7 +76,7 @@ export default async function ProfilePage() {
         {/* Zayıf noktaların (WP-51): hata tipleri, karıştırmalar, hedefli tur. */}
         <WeakSpotsCard />
         {/* Seviye testi (WP-40): son sonuç, yeniden alma. */}
-        <PlacementCard last={placement} canRetake={canRetake} retakeDays={RETAKE_DAYS} />
+        <PlacementCard last={placement} canRetake={canRetake} retakeDays={RETAKE_DAYS} level={profile.level} />
         {/* Yapabildiklerim (WP-43): CEFR can-do kanıtları. */}
         <CandoCard />
         {/* Yazılarım (WP-30): değerlendirme arşivi, silme. */}

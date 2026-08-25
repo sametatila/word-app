@@ -6,7 +6,7 @@ import type { PlacementRecord } from "@/lib/placement";
  * Profildeki seviye testi kartı (WP-40): son sonuç ve "yeniden al" ya da
  * ilk kez "seviyeni ölç". Sunucu bileşeni; veri profil sayfasından gelir.
  */
-export function PlacementCard({ last, canRetake, retakeDays }: { last: PlacementRecord | null; canRetake: boolean; retakeDays: number }) {
+export function PlacementCard({ last, canRetake, retakeDays, level }: { last: PlacementRecord | null; canRetake: boolean; retakeDays: number; level: string }) {
   return (
     <section className="card p-5">
       <div className="flex items-start justify-between gap-3">
@@ -29,6 +29,14 @@ export function PlacementCard({ last, canRetake, retakeDays }: { last: Placement
           <span className="muted shrink-0 text-xs">{retakeDays} günde bir</span>
         )}
       </div>
+      {/* Seviye sınavı (WP-41): 45 dk, beş bölüm, sertifika. */}
+      <p className="muted mt-3 text-xs">
+        Seviyeni belgelemek için{" "}
+        <Link href={`/exam/${level}`} className="font-semibold underline-offset-2 hover:underline">
+          {level} seviye sınavı
+        </Link>
+        {" "}(45 dk, beş bölüm, sertifika).
+      </p>
     </section>
   );
 }

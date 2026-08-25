@@ -79,6 +79,8 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 
 **Süre.** 8 gün. **Bağımlılık.** WP-10, 11, 30, 20, 22, 43, 02.
 
+**Durum (2026-08-25).** Adım 1–4 bitti (konuşma bölümü ve rozetler hariç — STATUS karar kaydı). `src/lib/exam.ts`: `buildExam` (modül 6/6/1/1/1, seviye 12/12/2/2/1; kelime = modül/seviye kelimelerinden çeviri+yazma, dilbilgisi = tablo hücreleri, okuma/dinleme = kullanılmamış egzersiz önce, yazma = serbest görev; tohum kullanıcı+sınav+hafta; modül ön koşulu %80 ders → değilse `trial`), `scoreSections` (toplam ≥70 ve her bölüm ≥50), `finishExam` (`exams`, `exam_finish` kind `level:A1`/`module:A1`), `examHistory/examById`; `POST/GET /api/exam` (kelime cevapları SRS'e de gider); `/exam/[level]` (45 dk) ve `/exam/[level]/[module]` (20 dk) → `exam-player.tsx` (tek zamanlayıcı, süre dolunca gönderir, bölüm puanları, sertifika düğmesi); `/api/certificate/[id]` SVG; hız turu sayfasından ve profil seviye kartından bağlantı. e2e §42 (12 kontrol). Tarayıcıda uçtan uca modül sınavı: `reports/shots/wp41-exam-{intro,vocab,grammar,writing,result}.png`.
+
 ---
 
 ## WP-42 · Haftalık kullanım sınavı
