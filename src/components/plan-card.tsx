@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { CheckIcon, ChevronIcon } from "@/components/icons";
 import { track } from "@/lib/track";
+import { CoachBubble } from "@/components/coach-bubble";
+import { planMoment } from "@/lib/coach-lines";
 import type { Plan, PlanItem } from "@/lib/plan";
 
 function localDay(): string {
@@ -24,7 +26,7 @@ function localDay(): string {
  * iskelet; sunucu ulaşılmazsa kart hiç görünmez — planın yokluğu turu
  * engellemez.
  */
-export function PlanCard({ onStartSession }: { onStartSession: () => void }) {
+export function PlanCard({ onStartSession, name }: { onStartSession: () => void; name?: string }) {
   const router = useRouter();
   const [plan, setPlan] = useState<Plan | null | undefined>(undefined);
 
@@ -60,6 +62,17 @@ export function PlanCard({ onStartSession }: { onStartSession: () => void }) {
 
   return (
     <section className="card mx-auto w-full max-w-md p-4">
+      {/*
+        Erdi koç (WP-66): günün saatine göre selam; haftanın başında özet
+        varsa selam yerine "bak ne oldu" dikizlemesi — kartta tek Erdi.
+      */}
+      {plan ? (
+        showSummary ? (
+          <CoachBubble moment="weekly" mood="peek" size={48} className="mb-2" />
+        ) : (
+          <CoachBubble moment={planMoment()} mood="wave" vars={{ name }} size={48} className="mb-2" />
+        )
+      ) : null}
       <div className="flex items-baseline justify-between">
         <h2 className="text-sm font-bold">Bugünkü planın</h2>
         {plan ? (

@@ -14,6 +14,7 @@ import type { GameResult } from "@/components/games/types";
 import type { ExamPaper, ExamResult, ExamSectionId, TextItem } from "@/lib/exam";
 import type { Round } from "@/lib/types";
 import type { CefrLevel } from "@/lib/skills/types";
+import { CoachBubble } from "@/components/coach-bubble";
 
 type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "writing" | "finishing" | "result" | "error";
 
@@ -165,6 +166,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   if (phase === "intro") {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
+        {/* Erdi koç (WP-66): sınav girişinde düşünceli, tek cümle. */}
+        <CoachBubble moment="exam_intro" mood="think" size={48} className="mb-3" />
         <h1 className="text-xl font-bold">{title}</h1>
         <p className="muted mt-2 text-sm leading-relaxed">
           Beş bölüm: kelime (yazarak), dilbilgisi, okuma, dinleme, yazma. Süre {module === null ? 45 : 20} dakika, geri dönüş ve ipucu yok. Geçme: toplam ≥ %70 ve her bölüm ≥ %50. Geçince sertifika.
@@ -199,6 +202,14 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   if (phase === "result" && result) {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
+        {/* Sonuçta Erdi kutlar ya da üzülür; cümle puanı ve seviyeyi söyler (WP-66). */}
+        <CoachBubble
+          moment={result.passed ? "exam_pass" : "exam_fail"}
+          mood={result.passed ? "cheer" : "sad"}
+          vars={{ pct: result.total, level }}
+          size={56}
+          className="mb-3"
+        />
         <h1 className="text-xl font-bold">{result.passed ? "Geçtin!" : "Bu sefer olmadı"}</h1>
         <p className="muted mt-1 text-sm">
           Toplam <strong>%{result.total}</strong>

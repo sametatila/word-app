@@ -127,3 +127,5 @@ Genel ilkeler (her WP için):
 **Adımlar.** 1. `coach-bubble.tsx`. 2. Anlara bağlama (5 yer). 3. Metin listesi (`src/lib/coach-lines.ts`, 40 cümle, tekrar etmeyen seçim).
 
 **Süre.** 2 gün. **Bağımlılık.** WP-60, WP-41, WP-52.
+
+**Durum (2026-08-25).** Adım 1–3 bitti. `src/components/coach-bubble.tsx` (`moment`, `mood`, `vars`, `hold` 4000, `tone` card/dark, `role=status`; balon kapanır, Erdi kalır; hareket azaltmada yalnız metin), `src/lib/coach-lines.ts` (8 an × 5 = 40 cümle; `pickCoachLine` cihazda son söylenenleri dışlar, `fillCoachLine` isim yoksa virgülüyle düşürür, `planMoment` saat → sabah/gün/akşam). Bağlanan anlar: plan kartı selamı (`wave`, ada göre), haftalık özet Pzt–Sal (`peek`, "bak ne oldu"), sınav girişi (`think`), sınav sonucu (`cheer`/`sad` + puan ve seviye), hedefli tur özeti (`thumbsup`/`sad`, `/learn?game=` ile açılan tur). `Mood`'a `peek` eklendi (klip `peek.webp`). Birim test `npm run test:coach-lines` (mevcut `test:coach` AI koç değerlendirmesiydi, ad çakışmasın diye). Kanıt: `reports/shots/wp66-coach-{plan,exam-intro,exam-result,targeted-start,weak-done}.png`.

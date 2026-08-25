@@ -43,6 +43,7 @@ import { WalkCard } from "@/components/walk-card";
 import { WalkPlayer } from "@/components/walk-player";
 import { QuestCard } from "@/components/quest-card";
 import { PlanCard } from "@/components/plan-card";
+import { CoachBubble } from "@/components/coach-bubble";
 import { AlertIcon, FlameIcon, RefreshIcon } from "@/components/icons";
 
 type Status =
@@ -85,6 +86,21 @@ function readGameMode(): PlayableGame | null {
     return raw && (PLAYABLE_GAMES as readonly string[]).includes(raw)
       ? (raw as PlayableGame)
       : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * `/learn?game=…` — zayıf nokta kartı ve plan kartının hedefli tur bağlantısı
+ * (WP-51/60). Adres yalnız açılışta okunur; sonra cihaz tercihine yazılır ki
+ * tur bitince "yeni tur" aynı oyunda kalsın. Bu parametre önceden hiç
+ * okunmuyordu: bağlantı karışık tura düşüyordu.
+ */
+function readGameParam(): PlayableGame | null {
+  try {
+    const raw = new URLSearchParams(window.location.search).get("game");
+    return raw && (PLAYABLE_GAMES as readonly string[]).includes(raw) ? (raw as PlayableGame) : null;
   } catch {
     return null;
   }
@@ -138,6 +154,8 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
    * kimliği değiştirmeden güncel değeri taşıyor.
    */
   const onlyGameRef = useRef<PlayableGame | null>(null);
+  /** Tur `/learn?game=` ile açıldı (zayıf nokta / plan öğesi) — özet koçu için. */
+  const targeted = useRef(false);
   /**
    * Üst üste doğru sayısı ve turun en iyisi.
    *
@@ -249,7 +267,11 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   useEffect(() => {
     // Açılışta cihazdaki tercih geri yükleniyor: kullanıcı hangi modda
     // bıraktıysa orada devam ediyor.
-    void load({ game: readGameMode() });
+    // Adresteki hedefli oyun cihaz tercihini ezer; tur "zayıf nokta çalışması"
+    // sayılır ve özet ekranında Erdi ona göre konuşur (WP-66).
+    const fromUrl = readGameParam();
+    if (fromUrl) targeted.current = true;
+    void load({ game: fromUrl ?? readGameMode() });
   }, [load]);
 
   /** Kaldığı yerden devam: sunucudaki ilerlemeyi yerine koyar. */
@@ -611,6 +633,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
           marks={marks.current}
           level={session?.meta.level ?? "A1"}
           partial={stoppedEarly.current}
+          targeted={targeted.current}
           onContinue={() => {
             router.refresh();
             void load();
@@ -931,7 +954,7 @@ function StartCard({
       {/* Bugünkü plan (WP-60): tur kartının hemen altında — "bugün ne yapmalı"
           sorusunun cevabı, modlar listesinden önce. */}
       <div className="mt-4">
-        <PlanCard onStartSession={onStart} />
+        <PlanCard onStartSession={onStart} name={name} />
       </div>
       {/*
         BAŞKA TÜRLÜ OYNA — normal turdan farklı üç oynama şekli.
@@ -1262,6 +1285,7 @@ function SummaryCard({
   marks,
   level,
   partial,
+  targeted,
   onContinue,
   onChallenge,
 }: {
@@ -1273,6 +1297,8 @@ function SummaryCard({
   level: string;
   /** Tur bitmeden bırakıldıysa özet "tamamlandı" demiyor. */
   partial?: boolean;
+  /** Hedefli tur (zayıf nokta): Erdi baş parmak + koç cümlesi (WP-66). */
+  targeted?: boolean;
   onContinue: () => void;
   onChallenge: () => void;
 }) {
@@ -1316,7 +1342,17 @@ function SummaryCard({
             transition={{ type: "spring", stiffness: 240, damping: 15 }}
             className="mx-auto w-fit"
           >
-            <Mascot mood={deserved ? "cheer" : accuracy >= 60 ? "happy" : "sad"} size={92} />
+            {targeted ? (
+              <CoachBubble
+                moment="weak_done"
+                mood={accuracy >= 60 ? "thumbsup" : "sad"}
+                size={72}
+                tone="dark"
+                className="mx-auto w-fit text-left"
+              />
+            ) : (
+              <Mascot mood={deserved ? "cheer" : accuracy >= 60 ? "happy" : "sad"} size={92} />
+            )}
           </motion.div>
           <h2 className="mt-2 text-2xl font-bold">
             {partial ? "Buraya kadar" : "Tur tamamlandı"}

@@ -51,7 +51,8 @@ export type Mood =
   | "sleep"
   | "thumbsup"
   | "dance"
-  | "wave";
+  | "wave"
+  | "peek";
 
 /*
   Duygu → klip. Çoğu klip dikey tuvalde (2:3); dans geniş tuvalde üretildi
@@ -70,6 +71,8 @@ const CLIP: Record<Mood, { file: string; aspect: number }> = {
   thumbsup: { file: "thumbsup", aspect: 2 / 3 },
   dance: { file: "dance", aspect: 194 / 228 },
   wave: { file: "wave", aspect: 2 / 3 },
+  /* Kenardan dikizleme klibi (mascot-fx ile aynı dosya) — "bak ne oldu" anı (WP-66). */
+  peek: { file: "peek", aspect: 2 / 3 },
 };
 
 /*

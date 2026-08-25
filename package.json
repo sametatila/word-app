@@ -14,6 +14,7 @@
     "report:providers": "tsx scripts/report-providers.ts",
     "report:learning": "tsx scripts/report-learning.ts",
     "test:assess": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/assess-eval.ts",
+    "test:coach-lines": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-coach.ts",
     "test:why": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-why.ts",
     "test:match": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-sentence-match.ts",
     "test:content": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-content.ts",
