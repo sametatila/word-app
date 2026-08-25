@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { BellIcon, CheckIcon, XIcon } from "@/components/icons";
+import { Mascot } from "@/components/mascot";
 import {
   currentSubscription,
   iosNeedsInstall,
@@ -112,7 +113,19 @@ export function PushOptIn({ streak }: { streak: number }) {
   }
 
   return (
-    <Card tone="brand" onClose={state === "ask" ? close : undefined}>
+    /*
+      Zil yerine uyuyan Erdi.
+
+      Zil genel bir simge; kartın söylediği şey ise özel: "çalışmadığın bir
+      günde seni dürteyim mi?". Uyuyan mirket o cümlenin birebir resmi ve
+      istenen izni tek bakışta anlatıyor. Uyku klibi neşeli boşta-beklemeye
+      geçmiyor (STICKY), yani kart açık kaldığı sürece anlamını koruyor.
+    */
+    <Card
+      tone="brand"
+      onClose={state === "ask" ? close : undefined}
+      icon={<Mascot mood="sleep" size={34} />}
+    >
       <p className="text-sm font-bold">
         {streak > 0 ? `${streak} günlük serini koruyalım mı?` : "Yarın hatırlatalım mı?"}
       </p>
@@ -135,10 +148,13 @@ export function PushOptIn({ streak }: { streak: number }) {
 function Card({
   tone,
   onClose,
+  icon,
   children,
 }: {
   tone: "brand" | "mint";
   onClose?: () => void;
+  /** Sol yuva; verilmezse zil. */
+  icon?: React.ReactNode;
   children: React.ReactNode;
 }) {
   const color = tone === "mint" ? "var(--color-mint)" : "var(--color-brand)";
@@ -150,7 +166,7 @@ function Card({
       style={{ background: `color-mix(in srgb, ${color} 12%, transparent)` }}
     >
       <span className="mt-0.5 shrink-0" style={{ color }}>
-        <BellIcon size={18} />
+        {icon ?? <BellIcon size={18} />}
       </span>
       <div className="min-w-0 flex-1">{children}</div>
       {onClose ? (
