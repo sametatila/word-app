@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BookOpenIcon } from "@/components/icons";
 
 /**
- * Başlangıç ekranındaki cheatsheet kartı.
+ * Başlangıç ekranındaki dilbilgisi kartı.
  *
  * Girişi burada, ders yolunda değil. Ders yolunun tepesine yapışık bir düğme
  * konmuştu ve yanlıştı: harita zaten dikey bir yolculuk ve tepesindeki her
@@ -13,8 +13,9 @@ import { BookOpenIcon } from "@/components/icons";
  * turun yerine geçen bir çalışma biçimi, yani buradaki üç kardeşiyle aynı
  * cinsten.
  *
- * Adı ekranın başlığıyla BİREBİR aynı: kartta "Dilbilgisi" yazıp açılan ekranda
- * "Cheatsheet" görmek, kullanıcıya iki ayrı yere gittiğini düşündürüyordu.
+ * Adı ekranın başlığıyla BİREBİR aynı: kartta bir ad, açılan ekranda başka bir
+ * ad görmek kullanıcıya iki ayrı yere gittiğini düşündürüyor. Ad Türkçe —
+ * uygulamanın geri kalanı da öyle (Dersler, Beceriler, Kelimeler).
  *
  * Kart tekrar borcunu gösteriyor: sayı olmadan tek satırlık bir menü
  * maddesi, sayıyla birlikte bir çağrı. Borç yoksa hiç sayı yazmıyor —
@@ -54,7 +55,7 @@ export function CheatsheetCard({ bare = false }: { bare?: boolean }) {
         </span>
 
         <div className="min-w-0 flex-1">
-          <p className="font-bold">Cheatsheet</p>
+          <p className="font-bold">Dilbilgisi</p>
           <p className="muted mt-0.5 text-xs">
             {due && due > 0
               ? `${due} maddenin tekrarı geldi · A1'den C1'e tablolar`
