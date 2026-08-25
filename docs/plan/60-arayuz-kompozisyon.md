@@ -99,6 +99,8 @@ Genel ilkeler (her WP için):
 
 **Süre.** 4 gün. **Bağımlılık.** WP-50, 51, 52, 43.
 
+**Durum (2026-08-25).** Adım 1–4 bitti. `src/app/(app)/profile/page.tsx` bölüm sırası: kimlik + seri (ProfileForm başlığı) → Yetkinlik → Zayıf noktaların → Gelişim → Yapabildiklerim → Sınavlarım (`src/components/exams-card.tsx`: son 8 seviye/modül sınavı, geçti/geçmedi, sertifika bağlantısı; son 8 haftalık kullanım puanı çubuk; seviye sınavı ve haftalık giriş bağlantıları) → Seviye testi → Rozetler → kelime kapsamı/ilerleme (ProgressView) → Yazılarım (silme) → Öğrenme/Uygulama/Hesap ayarları. Sınav verisi okunamazsa kart boş görünür, sayfa açılır. Kanıt: `reports/shots/wp64-profile-full.png`, `wp64-exams-card.png`.
+
 ---
 
 ## WP-65 · Onboarding ve yerleştirme akışı

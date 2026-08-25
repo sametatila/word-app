@@ -9,7 +9,10 @@ import { PlacementCard } from "@/components/placement-card";
 import { ProficiencyCard } from "@/components/proficiency-card";
 import { WeakSpotsCard } from "@/components/weak-spots-card";
 import { GrowthCard } from "@/components/growth-card";
+import { ExamsCard } from "@/components/exams-card";
 import { lastPlacement, RETAKE_DAYS } from "@/lib/placement";
+import { examHistory } from "@/lib/exam";
+import { weeklyHistory } from "@/lib/weekly";
 
 export const dynamic = "force-dynamic";
 
@@ -19,8 +22,13 @@ function localDayFallback() {
 
 /**
  * Profil sayfası: kimlik + ilerleme + ayarlar tek yerde.
- * Eski /progress sayfasının tüm içeriği başlığın hemen altında yaşar;
- * ayarlar ve hesap bölümleri onun altındadır.
+ *
+ * Bölüm sırası (WP-64): kimlik + seri → Yetkinlik → Zayıf noktaların →
+ * Gelişim → Yapabildiklerim → Sınavlarım + seviye testi → Rozetler → kelime
+ * kapsamı/ilerleme → Yazılarım → Ayarlar. Önce "neredeyim", sonra "nerede
+ * zayıfım", sonra "ne kadar ilerledim", en sonda arşiv ve ayarlar. Rozetler
+ * ve kelime grafikleri eskiden en üstteydi; öğrenme ölçümleri gelince yerini
+ * onlara bıraktı — rozet süs, yetkinlik bilgi.
  */
 export default async function ProfilePage() {
   const user = await getUserInfo();
@@ -32,6 +40,8 @@ export default async function ProfilePage() {
     const data = await getProgress(user.id, today);
     const placement = await lastPlacement(user.id).catch(() => null);
     const canRetake = !placement || Date.now() - new Date(placement.at).getTime() >= RETAKE_DAYS * 86400000;
+    // Sınav arşivi (WP-64): okunamazsa kart boş görünür, sayfa açılır.
+    const [exams, weekly] = await Promise.all([examHistory(user.id, 8).catch(() => []), weeklyHistory(user.id, 8).catch(() => [])]);
 
     return (
       <ProfileForm
@@ -50,8 +60,19 @@ export default async function ProfilePage() {
           totalXp: profile.totalXp,
         }}
       >
+        {/* Yetkinlik (WP-50): beceri × seviye kanıt çubukları + sıradaki adım. */}
+        <ProficiencyCard />
+        {/* Zayıf noktaların (WP-51): hata tipleri, karıştırmalar, hedefli tur. */}
+        <WeakSpotsCard />
+        {/* Gelişim (WP-52): 8 haftalık çizgiler, yetkinlik değişimi, kilometre taşları. */}
+        <GrowthCard />
+        {/* Yapabildiklerim (WP-43): CEFR can-do kanıtları. */}
+        <CandoCard />
+        {/* Sınavlarım (WP-41/42): seviye/modül sınavları, sertifikalar, haftalık puanlar. */}
+        <ExamsCard history={exams} weekly={weekly} level={profile.level} />
+        {/* Seviye testi (WP-40): son sonuç, yeniden alma. */}
+        <PlacementCard last={placement} canRetake={canRetake} retakeDays={RETAKE_DAYS} level={profile.level} />
         <AchievementWall />
-
         <ProgressView
           levels={data.levels}
           days={data.days.map((d) => ({
@@ -69,16 +90,6 @@ export default async function ProfilePage() {
           longest={data.profile.longestStreak}
           today={today}
         />
-        {/* Yetkinlik (WP-50): beceri × seviye kanıt çubukları + sıradaki adım. */}
-        <ProficiencyCard />
-        {/* Gelişim (WP-52): 8 haftalık çizgiler, yetkinlik değişimi, kilometre taşları. */}
-        <GrowthCard />
-        {/* Zayıf noktaların (WP-51): hata tipleri, karıştırmalar, hedefli tur. */}
-        <WeakSpotsCard />
-        {/* Seviye testi (WP-40): son sonuç, yeniden alma. */}
-        <PlacementCard last={placement} canRetake={canRetake} retakeDays={RETAKE_DAYS} level={profile.level} />
-        {/* Yapabildiklerim (WP-43): CEFR can-do kanıtları. */}
-        <CandoCard />
         {/* Yazılarım (WP-30): değerlendirme arşivi, silme. */}
         <WritingsCard />
       </ProfileForm>
