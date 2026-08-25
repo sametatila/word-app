@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { whyFor } from "@/lib/why";
 import { classifyTyping, miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
@@ -137,6 +138,15 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     <GameShell
       label="Yazarak Hatırla"
       verdict={status === "idle" ? null : status}
+      why={
+        status === "wrong"
+          ? whyFor({
+              type: classifyTyping(value, [word.de, ...(round.alternatives ?? [])]),
+              word,
+              detail: value,
+            })
+          : null
+      }
       feedback={
         <span>
           {status === "correct" ? "Harika! " : "Doğrusu: "}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
@@ -56,6 +57,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     <GameShell
       label="Artikel Yarışı"
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
+      why={picked != null && picked !== answer ? whyFor({ type: "article", word, detail: picked }) : null}
       feedback={
         <span>
           <strong>

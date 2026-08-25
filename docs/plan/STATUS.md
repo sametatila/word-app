@@ -12,7 +12,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-10 | Çeviri oyunu | 1 | bekliyor | | | | |
 | WP-11 | Dönüştürme drilleri | 1 | bekliyor | | | | |
 | WP-12 | Serbest cümle görevi | 1 | bekliyor | | | | |
-| WP-13 | "Neden" geri bildirimi | 1 | bekliyor | | | | |
+| WP-13 | "Neden" geri bildirimi | 1 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/why.ts`, `FeedbackLine`, şerit 2. satır, cheatsheet derin bağlantı; kanıt `reports/shots/wp13-*.png` |
 | WP-14 | Oyun merdiveni | 1 | bekliyor | | | | |
 | WP-20 | Telaffuz puanlama | 2 | bekliyor | | | | sağlayıcı kararı önce |
 | WP-21 | Konuşma içeriği + monolog | 2 | bekliyor | | | | |
@@ -55,3 +55,6 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — Senaryolar ders dosyasına değil `content/scripts-a1.ts`'e yazıldı; `lessons/index.ts` kimlikle bağlıyor. İçerik hattı (WP-70/71) senaryoyu ders metninden bağımsız üretip gözden geçirebilsin diye. Claude.
 - 2026-08-25 — Faz 0 e2e için yerel Postgres: `docker run … postgres:16-alpine` (5439), `DATABASE_URL=<test> npx drizzle-kit migrate`, `TEST_DATABASE_URL=<test> npm run test:seed && npm run test:e2e`. README'ye taşınmalı (WP-70 sırasında). Claude.
 - 2026-08-25 — WP-03 kalite testi Mistral ile koşuldu: 20/20 ±1, hata tipi 14/14, span 11/11. Modelin JSON'u beş biçimde bozduğu ölçüldü; ayrıştırıcı tek kuralla (`closesString`) onarıyor, istem iç tırnağı yasaklıyor, bütçe 1600 jeton. Model insan puanından ~+1 cömert (WP-50 notu). Claude.
+- 2026-08-25 — Sıra: Faz 0'dan sonra WP-70 yerine WP-13 alındı (sahibi "devam et" dedi; kullanıcıya en görünür kazanç geri bildirim). WP-70 sıradaki. Claude.
+- 2026-08-25 — WP-13 adım 3 (okuma/dinleme sorusu gerekçesi): `SkillQuestion.explain` zaten cevaptan sonra Türkçe gerekçe gösteriyor; ayrı `why_tr` alanı açılmadı, WP-70 şemasında `explain` bu rolü üstlenir. Adım 4 (ders `produce`): ilk yanlışta içerikteki hedefe özgü ipucu zaten "neden" işlevi görüyor; dokunulmadı. Claude.
+- 2026-08-25 — Artikel kuralları `lib/why.ts`'te "hep/genelde" güçlü/zayıf işaretli ve istisnada dürüst ("istisna — kelimeyle ezberle"); 50 isimlik test 35+ kural isabetiyle sabitlendi. Çoğul kalıbı turun doğru biçiminden türetiliyor (`formen` demo/dış veride eksik olabiliyor). Claude.

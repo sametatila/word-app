@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, type ReactNode } from "react";
+import { FeedbackLine } from "@/components/feedback/feedback-line";
+import type { Why } from "@/lib/why";
 import { AnimatePresence, motion } from "framer-motion";
 import { Mascot } from "@/components/mascot";
 import { useStill } from "@/lib/use-still";
@@ -72,6 +74,7 @@ export function GameShell({
   footer,
   verdict = null,
   feedback,
+  why = null,
   pull = true,
 }: {
   label: string;
@@ -88,6 +91,11 @@ export function GameShell({
    * zıplaması, dokunulan şıkkın parmağın altından kayması demek olurdu.
    */
   verdict?: "correct" | "wrong" | null;
+  /**
+   * Yanlışın gerekçesi (WP-13): şeridin ikinci satırı. Yalnız yanlışta ve
+   * yalnız oyun bir kural çıkarabildiğinde; doğru cevapta gerekçe yok.
+   */
+  why?: Why | null;
   /** Şeritte yazacak olan: doğru karşılık, anlam, düzeltme. */
   feedback?: ReactNode;
   /** Erdi'nin şeridi çekerek getirme koreografisi bu oyunda olabilir mi. */
@@ -116,7 +124,7 @@ export function GameShell({
           ekranda tamamen kapanıp yeri içeriğe bırakıyor. */}
       <div aria-hidden className="max-h-8 grow md:hidden" />
 
-      <VerdictBar verdict={verdict} feedback={feedback} pull={pull} />
+      <VerdictBar verdict={verdict} feedback={feedback} why={verdict === "wrong" ? why : null} pull={pull} />
     </div>
   );
 }
@@ -136,10 +144,12 @@ const PULL_LINGER_MS = 900;
 function VerdictBar({
   verdict,
   feedback,
+  why,
   pull,
 }: {
   verdict: "correct" | "wrong" | null;
   feedback?: ReactNode;
+  why: Why | null;
   pull: boolean;
 }) {
   const still = useStill();
@@ -261,7 +271,13 @@ function VerdictBar({
               {/* `pinned`: cevabın kendisi — yürüyüş, çekme ya da kutlama sürerken de görünür. */}
               <Mascot mood={verdict === "correct" ? "thumbsup" : "sad"} size={48} pinned />
             </motion.span>
-            <div className="min-w-0">{feedback}</div>
+            {/* Gerekçe ikinci satır: şerit en az yüksekliğini korur, uzun
+                gerekçe küçük yazıyla sarar. Cevap satırı hep önde: önce NE,
+                sonra NEDEN. */}
+            <div className="min-w-0">
+              {feedback}
+              {why ? <FeedbackLine why={why} compact /> : null}
+            </div>
           </motion.div>
         ) : null}
       </AnimatePresence>

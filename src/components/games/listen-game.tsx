@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
@@ -78,6 +79,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
     <GameShell
       label="Kulaktan Tanı"
       verdict={picked == null ? null : picked === word.tr ? "correct" : "wrong"}
+      why={picked != null && picked !== word.tr ? whyFor({ type: "listening", word, detail: picked }) : null}
       feedback={
         // Bu oyunda öğrenilen şey sesin YAZIMI: şeritte duyulan kelime
         // yazıyla duruyor. Örnek cümle şeride girmiyor, kendi yerinde kalıyor

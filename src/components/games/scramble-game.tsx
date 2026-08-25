@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
@@ -151,6 +152,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     <GameShell
       label="Harf Bulmacası"
       verdict={status === "playing" ? null : status}
+      why={status === "wrong" ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join("") }) : null}
       feedback={
         <span className="inline-flex items-center">
           {status === "correct" ? "Harika! " : "Doğrusu: "}

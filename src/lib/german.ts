@@ -42,7 +42,7 @@ export function umlautStem(stem: string): string {
 const NO_PLURAL = /^(\(?(sg|pl)\.?\)?|nur singular|nur plural|[–—-]{1,2})$/i;
 
 /** Sözlük yazımını (umlaut var mı, hangi ek) ayrıştırır. */
-function parsePluralRule(raw: string): { umlaut: boolean; suffix: string } | null {
+export function parsePluralRule(raw: string): { umlaut: boolean; suffix: string } | null {
   const value = raw.trim();
   if (!value) return null;
   // "-" tek başına "çoğulda değişmez" demektir ve geçerli bir kuraldır;

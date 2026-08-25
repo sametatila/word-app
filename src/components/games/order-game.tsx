@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { whyFor } from "@/lib/why";
 import { classifyOrder, miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
@@ -137,6 +138,16 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     <GameShell
       label="Cümleyi Diz"
       verdict={status === "playing" ? null : status}
+      why={
+        status === "wrong"
+          ? whyFor({
+              type: classifyOrder(placed.map((t) => t.text), answer, tail),
+              word,
+              answer,
+              tail,
+            })
+          : null
+      }
       feedback={
         <span className="inline-flex flex-wrap items-center">
           {status === "correct" ? "Harika! " : "Doğrusu: "}

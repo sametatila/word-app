@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
@@ -60,6 +61,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
       label="Doğru mu Yanlış mı"
       prompt={<span className="muted text-base">Bu eşleşme doğru mu?</span>}
       verdict={!settled ? null : wasRight ? "correct" : "wrong"}
+      why={settled && !wasRight ? whyFor({ type: "meaning", word, detail: isTrue ? null : claim.text }) : null}
       feedback={
         <span>
           {withArtikel(word)} ={" "}

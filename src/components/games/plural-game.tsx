@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
@@ -62,6 +63,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
     <GameShell
       label="Çoğul Bilmece"
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
+      why={picked != null && picked !== answer ? whyFor({ type: "plural", word, detail: picked, correct: answer }) : null}
       feedback={
         <span className="inline-flex items-center">
           <strong>die {answer}</strong>

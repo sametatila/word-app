@@ -115,6 +115,8 @@ Raporun ana bulgusu: 12 oyunun 7'si tanıma; cümle kurma yalnız parça dizme; 
 
 **Süre.** 4 gün. **Bağımlılık.** WP-02.
 
+**Durum (2026-08-25).** Bitti. `src/lib/why.ts` (`whyFor`: artikel son ek kuralları hep/genelde/istisna, çoğul kalıbı, harf farkı `charDiff` + Türkçe ses ipuçları, fiil konumu ana/yan/soru cümlesi, hâl/çekim/anlam/dinleme/telaffuz metinleri; her tip cheatsheet bağlantısı), `src/components/feedback/feedback-line.tsx` (etiket + gerekçe + "Kural ↗" → `feedback_why_opened`), `GameShell.why` → şeridin ikinci satırı (yalnız yanlışta), 9 oyun bağlı; `/cheatsheet#<sheetId>` derin bağlantı (seviye geçişi, kart açık, kaydırma, çerçeve vurgusu). `npm run test:why` (50 isim + çoğul/yazım/sıra, 80 kontrol) yeşil. Adım 3/4 mevcut mekanizmalarla karşılandı (STATUS karar kaydı). Kanıt: `reports/shots/wp13-why-{artikel,plural,typing}.png`, `wp13-cheat-link.png`.
+
 ---
 
 ## WP-14 · Oyun merdiveni: tanıma → üretim

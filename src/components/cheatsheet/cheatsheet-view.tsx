@@ -52,6 +52,27 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
 
   const query = term.trim().toLocaleLowerCase("de-DE");
 
+  /**
+   * Derin bağlantı (WP-13): `/cheatsheet#a1-artikel`. Geri bildirim
+   * şeridindeki "Kural ↗" buraya geliyor; sayfa o sayfanın seviyesine geçer,
+   * kartı açık getirir, kaydırır ve kısa süre vurgular. Hash yalnız ilk
+   * çizimden sonra okunuyor (sunucuda `location` yok) ve bir kez: kullanıcı
+   * sonra başka seviyeye geçerse bağlantı onu geri çekmemeli.
+   */
+  const [target, setTarget] = useState<string | null>(null);
+  useEffect(() => {
+    const id = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+    if (!id) return;
+    const sheet = CHEATSHEETS.find((s) => s.id === id);
+    if (!sheet) return;
+    setLevel(sheet.level);
+    setTarget(id);
+    const t = setTimeout(() => {
+      document.getElementById(`sheet-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+    return () => clearTimeout(t);
+  }, []);
+
   const refresh = useCallback(async () => {
     try {
       const res = await fetch("/api/cheat", { cache: "no-store" });
@@ -286,10 +307,11 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
         <SheetCard
           // Arama değişince kart yeniden kuruluyor: açık/kapalı ve gizli sütun
           // durumu eski aramanın kalıntısı olarak taşınmamalı.
-          key={`${sheet.id}:${query ? "q" : "all"}`}
+          key={`${sheet.id}:${query ? "q" : "all"}:${target === sheet.id ? "t" : ""}`}
           sheet={sheet}
           blocks={blocks}
-          defaultOpen={Boolean(query)}
+          defaultOpen={Boolean(query) || target === sheet.id}
+          highlight={target === sheet.id}
           onQuiz={startSheetQuiz}
         />
       ))}
@@ -336,11 +358,14 @@ function SheetCard({
   sheet,
   blocks,
   defaultOpen,
+  highlight = false,
   onQuiz,
 }: {
   sheet: CheatSheet;
   blocks: CheatBlock[];
   defaultOpen: boolean;
+  /** Derin bağlantıyla gelindi: kart kısa süre çerçeveli parlar. */
+  highlight?: boolean;
   onQuiz: (sheet: CheatSheet) => void;
 }) {
   const [open, setOpen] = useState(defaultOpen);
@@ -348,7 +373,13 @@ function SheetCard({
   const tone = LEVEL_TONE[sheet.level] ?? "var(--color-brand)";
 
   return (
-    <section className="card overflow-hidden">
+    <section
+      id={`sheet-${sheet.id}`}
+      className="card overflow-hidden"
+      // Yapışkan başlık + seviye şeridi ~9rem: derin bağlantıyla kaydırınca
+      // kart başlığı onların altında kalmasın.
+      style={{ scrollMarginTop: "9.5rem", ...(highlight ? { boxShadow: `0 0 0 3px ${tone}` } : {}) }}
+    >
       <button
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}

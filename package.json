@@ -14,6 +14,7 @@
     "report:providers": "tsx scripts/report-providers.ts",
     "report:learning": "tsx scripts/report-learning.ts",
     "test:assess": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/assess-eval.ts",
+    "test:why": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-why.ts",
     "db:seed": "tsx scripts/seed.ts",
     "db:seed:skills": "tsx scripts/seed-skills.ts",
     "db:seed:zurich": "tsx scripts/seed-zurich.ts",
