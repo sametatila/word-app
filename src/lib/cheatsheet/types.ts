@@ -58,6 +58,16 @@ export type CheatSheet = {
   de: string;
   /** Tek satır: bu sayfa hangi soruyu cevaplıyor. */
   summary: string;
+  /**
+   * Çalışma kimliğinin kökü — verilmezse `id`.
+   *
+   * Dört seviyenin düzensiz fiil sayfası AYNI satırları gösteriyor: A1 listesi
+   * B2 listesinin içinde. Kimlik sayfadan türetilseydi "nehmen · Perfekt"
+   * dört ayrı madde olurdu ve öğrenci aynı şeyi dört kez ezberlemek zorunda
+   * kalırdı — tekrar planı da dörde bölünürdü. Ortak bir kök vermek dört
+   * sayfayı tek bir çalışma havuzuna bağlıyor.
+   */
+  group?: string;
   blocks: CheatBlock[];
 };
 

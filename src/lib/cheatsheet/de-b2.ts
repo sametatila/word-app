@@ -19,6 +19,7 @@ export const DE_B2: CheatSheet[] = [
     title: "Düzensiz fiiller — tam liste",
     de: "Liste der unregelmäßigen Verben",
     summary: "189 fiil, dört biçim: Infinitiv, Präsens, Präteritum, Perfekt",
+    group: "verben",
     blocks: [
       table(
         ["Infinitiv", "Präsens (er)", "Präteritum", "Perfekt", "Türkçe"],

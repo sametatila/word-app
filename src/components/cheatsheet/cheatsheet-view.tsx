@@ -1,12 +1,14 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeftIcon, BookOpenIcon, ChevronIcon, TargetIcon } from "@/components/icons";
+import { ArrowLeftIcon, BookOpenIcon, ChevronIcon, FlameIcon, TargetIcon } from "@/components/icons";
 import { LEVEL_TONE } from "@/components/skills/theme";
 import { CHEATSHEETS, CHEAT_LEVELS } from "@/lib/cheatsheet";
 import type { CheatBlock, CheatSheet } from "@/lib/cheatsheet";
+import { itemById, itemsOfSheet, type CheatItem } from "@/lib/cheatsheet/items";
+import { CheatQuiz } from "./cheat-quiz";
 
 /**
  * Cheatsheet ekranı — dilbilgisi başvurusu ve tek mekanikli çalışma modu.
@@ -30,12 +32,116 @@ import type { CheatBlock, CheatSheet } from "@/lib/cheatsheet";
  * Burada puan, ilerleme ya da kilit YOK. Ders yolu ilerlemeyi ölçüyor;
  * başvuru ekranı ölçmüyor, açılıyor ve kapanıyor.
  */
+type Quiz = {
+  title: string;
+  items: CheatItem[];
+  states: Record<string, { reps: number; lapses: number }>;
+};
+
+type Summary = { due: number; seen: number; mastered: number; total: number };
+
+/** Bir turda sorulacak en çok madde — çalışma turu da kelime turu kadar uzun. */
+const QUIZ_SIZE = 14;
+
 export function CheatsheetView({ userLevel }: { userLevel: string }) {
   const start = (CHEAT_LEVELS as string[]).includes(userLevel) ? userLevel : "A1";
   const [level, setLevel] = useState(start);
   const [term, setTerm] = useState("");
+  const [quiz, setQuiz] = useState<Quiz | null>(null);
+  const [summary, setSummary] = useState<Summary | null>(null);
+  const [busy, setBusy] = useState(false);
 
   const query = term.trim().toLocaleLowerCase("de-DE");
+
+  const refresh = useCallback(async () => {
+    try {
+      const res = await fetch("/api/cheat", { cache: "no-store" });
+      if (res.ok) setSummary((await res.json()) as Summary);
+    } catch {
+      /* çevrimdışı: özet olmadan da sayfa çalışıyor */
+    }
+  }, []);
+
+  useEffect(() => {
+    void refresh();
+  }, [refresh]);
+
+  /**
+   * Sayfa turu.
+   *
+   * Sayfada 189 madde olabilir ve tur on dört soruluk; hangi on dördü
+   * sorulacağı rastgele DEĞİL: önce tekrarı gelmiş maddeler, sonra hiç
+   * görülmemişler, sonra en az tekrar edilmişler. Rastgele seçmek, elli kez
+   * doğru bilinen bir maddeyi hiç görülmemiş bir maddeyle aynı sıklıkta
+   * sormak olurdu.
+   */
+  const startSheetQuiz = useCallback(async (sheet: CheatSheet) => {
+    if (busy) return;
+    setBusy(true);
+    const all = itemsOfSheet(sheet);
+    let states: Record<string, { reps: number; lapses: number; due: boolean }> = {};
+    try {
+      const res = await fetch(`/api/cheat?sheet=${encodeURIComponent(sheet.id)}`, {
+        cache: "no-store",
+      });
+      if (res.ok) states = ((await res.json()) as { states: typeof states }).states ?? {};
+    } catch {
+      /* ilerleme okunamazsa hepsi yeni sayılır — tur yine kurulur */
+    }
+    const rank = (item: CheatItem) => {
+      const st = states[item.id];
+      if (!st) return 1; // hiç görülmemiş
+      if (st.due) return 0; // tekrarı gelmiş
+      return 2 + st.reps; // ilerlemiş: en az tekrar edilen önce
+    };
+    const items = [...all].sort((a, b) => rank(a) - rank(b)).slice(0, QUIZ_SIZE);
+    setQuiz({ title: sheet.title, items, states });
+    setBusy(false);
+  }, [busy]);
+
+  /** Karışık tekrar turu — bütün sayfalardan, yalnızca zamanı gelmişler. */
+  const startDueQuiz = useCallback(async () => {
+    if (busy) return;
+    setBusy(true);
+    try {
+      const res = await fetch("/api/cheat", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ want: "due", limit: QUIZ_SIZE }),
+      });
+      if (res.ok) {
+        const data = (await res.json()) as {
+          items: { itemId: string; reps: number; lapses: number }[];
+        };
+        const states: Record<string, { reps: number; lapses: number }> = {};
+        const items: CheatItem[] = [];
+        for (const row of data.items) {
+          const item = itemById(row.itemId);
+          if (!item) continue;
+          states[item.id] = { reps: row.reps, lapses: row.lapses };
+          items.push(item);
+        }
+        if (items.length) setQuiz({ title: "Tekrar turu", items, states });
+      }
+    } catch {
+      /* çevrimdışı */
+    }
+    setBusy(false);
+  }, [busy]);
+
+  if (quiz) {
+    return (
+      <CheatQuiz
+        title={quiz.title}
+        items={quiz.items}
+        states={quiz.states}
+        onClose={(answered) => {
+          setQuiz(null);
+          if (answered) void refresh();
+        }}
+      />
+    );
+  }
 
   /**
    * Arama seviyeyi AŞIYOR: "Passiv" yazan biri o konunun hangi seviyede
@@ -110,12 +216,45 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
         )}
       </div>
 
+      {/*
+        Tekrar şeridi — kelime tarafındaki "tekrar sırası gelen" sayacının
+        dilbilgisi karşılığı. Yalnızca borç varken görünüyor: sıfır yazan bir
+        sayaç her açılışta bir satır yer kaplar ve hiçbir şey söylemez.
+      */}
+      {summary && summary.due > 0 && !query ? (
+        <button
+          onClick={startDueQuiz}
+          disabled={busy}
+          className="card flex w-full items-center gap-3 px-4 py-3 text-left disabled:opacity-60"
+        >
+          <span
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
+            style={{
+              background: "color-mix(in srgb, var(--color-flame) 16%, transparent)",
+              color: "var(--color-flame)",
+            }}
+          >
+            <FlameIcon size={20} />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm font-bold">
+              {summary.due} maddenin tekrarı geldi
+            </span>
+            <span className="muted block text-xs">Bütün sayfalardan karışık tur</span>
+          </span>
+          <span className="btn btn-primary shrink-0 px-3.5 py-2 text-xs">Başla</span>
+        </button>
+      ) : null}
+
       <p className="muted text-xs font-semibold">
         {query
           ? results.length
             ? `${results.length} sayfada eşleşme`
             : "Eşleşme yok"
           : `${results.length} sayfa`}
+        {summary && summary.seen > 0 && !query
+          ? ` · ${summary.seen.toLocaleString("tr-TR")} madde çalışıldı`
+          : ""}
       </p>
 
       {results.map(({ sheet, blocks }) => (
@@ -126,6 +265,7 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
           sheet={sheet}
           blocks={blocks}
           defaultOpen={Boolean(query)}
+          onQuiz={startSheetQuiz}
         />
       ))}
 
@@ -171,10 +311,12 @@ function SheetCard({
   sheet,
   blocks,
   defaultOpen,
+  onQuiz,
 }: {
   sheet: CheatSheet;
   blocks: CheatBlock[];
   defaultOpen: boolean;
+  onQuiz: (sheet: CheatSheet) => void;
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const [study, setStudy] = useState(false);
@@ -254,7 +396,13 @@ function SheetCard({
                     }`}
                   >
                     {study ? <BookOpenIcon size={14} /> : <TargetIcon size={14} />}
-                    {study ? "Okumaya dön" : "Çalış"}
+                    {study ? "Okumaya dön" : "Kapat"}
+                  </button>
+                  <button
+                    onClick={() => onQuiz(sheet)}
+                    className="btn btn-primary flex items-center gap-1.5 px-3 py-1.5 text-xs"
+                  >
+                    <FlameIcon size={14} /> Sına
                   </button>
 
                   {study ? (

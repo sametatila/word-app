@@ -606,6 +606,7 @@ export const DE_B1: CheatSheet[] = [
     title: "Düzensiz fiiller — B1",
     de: "Unregelmäßige Verben",
     summary: "B1'e kadar geçen düzensiz fiillerin dört biçimi",
+    group: "verben",
     blocks: [
       table(
         ["Infinitiv", "Präsens (er)", "Präteritum", "Perfekt", "Türkçe"],
