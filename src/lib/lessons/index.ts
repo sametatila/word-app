@@ -21,6 +21,7 @@ import { deA2B09 } from "./content/de-a2-b09";
 import { deA2B10 } from "./content/de-a2-b10";
 import { deB1B01 } from "./content/de-b1-b01";
 import { deB1B02 } from "./content/de-b1-b02";
+import { A1_SCRIPTS } from "./content/scripts-a1";
 
 /**
  * Ders kataloğu.
@@ -34,7 +35,22 @@ import { deB1B02 } from "./content/de-b1-b02";
  * yeni geçti ve önce bu yapının oturması gerekiyor. Zürih dersleri aynı iskelet
  * doğrulandıktan sonra bu yapıda yeniden yazılacak.
  */
+/**
+ * Çevrimdışı senaryolar derse kimliğiyle bağlanıyor (WP-04). Ders dosyasına
+ * gömülmemesinin sebebi içerik hattı: senaryolar ayrı üretilip ayrı gözden
+ * geçiriliyor (WP-71/72) ve ders metnine dokunmadan eklenebiliyor. Derste
+ * zaten `script` varsa o kazanır.
+ */
+const SCRIPTS: Record<string, Lesson["roleplay"]["script"]> = { ...A1_SCRIPTS };
+
+function withScript(lesson: Lesson): Lesson {
+  if (lesson.roleplay.script || !SCRIPTS[lesson.id]) return lesson;
+  return { ...lesson, roleplay: { ...lesson.roleplay, script: SCRIPTS[lesson.id] } };
+}
+
 export const LESSONS: Lesson[] = [
+  ...[
+
   ...deA1B01,
   ...deA1B02,
   ...deA1B03,
@@ -57,6 +73,7 @@ export const LESSONS: Lesson[] = [
   ...deA2B10,
   ...deB1B01,
   ...deB1B02,
+  ].map(withScript),
 ];
 
 export const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"] as const;

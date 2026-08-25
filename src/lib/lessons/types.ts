@@ -1,3 +1,4 @@
+import type { DialogueTurn } from "@/lib/dialogue";
 import type { CefrLevel } from "../skills/types";
 
 /**
@@ -110,6 +111,15 @@ export type LessonRoleplay = {
    * bu sayı yalnızca alt sınır.
    */
   minTurns: number;
+  /**
+   * Çevrimdışı senaryo (WP-04): sohbet sağlayıcısı yokken aynı sahnenin
+   * niyet eşleştirmeli, dallanan hâli (`lib/dialogue.ts` motoru). İlk turun
+   * `ask`i açılış repliğiyle aynı olmalı; en az `minTurns` tur içermeli ki
+   * sağlayıcısız ortamda da ders geçilebilsin. Yoksa oynatıcı "hedef
+   * kalıpları kullan" görevine düşer (`lib/lessons/offline-roleplay.ts`).
+   * İçerik ayrı dosyada durur (`content/scripts-*.ts`) ve `index.ts` bağlar.
+   */
+  script?: DialogueTurn[];
 };
 
 /**

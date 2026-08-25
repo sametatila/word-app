@@ -69,6 +69,7 @@ import { classifyOrder, classifyTyping, miss } from "../src/lib/errors";
 import { overallScore, parseAssessment } from "../src/lib/assess-prompts";
 import { fallbackAssessment } from "../src/lib/assess-client";
 import { assess, assessHash } from "../src/lib/assess";
+import { offlineReply, offlineStart, offlineSummary, patternUsed } from "../src/lib/lessons/offline-roleplay";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -2063,6 +2064,48 @@ async function main() {
   check("assessHash farklı seviye → farklı özet", assessHash({ kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "x" } }) !== assessHash({ kind: "sentence", level: "A2", task: { prompt: "a" }, answer: { text: "x" } }));
   const noProvider = await assess(USER, { kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "x" } }, monday);
   check("sağlayıcısız ortamda not_configured", chatConfigured() ? noProvider.ok || !noProvider.ok : !noProvider.ok && noProvider.reason === "not_configured");
+
+  console.log("\n30) Çevrimdışı rol yapma (WP-04)");
+  const scripted = LESSONS.filter((l) => l.roleplay.script?.length);
+  check("10 A1 dersinde senaryo var", scripted.length >= 10 && scripted.every((l) => l.level === "A1"));
+  check("her senaryo minTurns kadar tur içeriyor", scripted.every((l) => l.roleplay.script!.length >= l.roleplay.minTurns));
+  check("senaryonun ilk turu açılışla aynı", scripted.every((l) => l.roleplay.script![0].ask === l.roleplay.opening));
+  check("senaryo dalları var olan turlara gidiyor", scripted.every((l) => l.roleplay.script!.every((t) => t.replies.every((r) => !r.next || l.roleplay.script!.some((x) => x.id === r.next)))));
+  const hallo = findLesson("de-a1-hallo")!;
+  let os = offlineStart(hallo);
+  check("açılış senaryodan", os.opening === hallo.roleplay.opening && os.hint !== null);
+  let ost = os.state;
+  const said = ["ich heisse mehmet", "ich komme aus der türkei", "ich wohne hier im zweiten stock", "mit meiner familie"];
+  let ended = false;
+  let understoodAll = true;
+  for (const line of said) {
+    const r = offlineReply(hallo, ost, line);
+    ost = r.state;
+    ended = r.ended;
+    if (!r.understood) understoodAll = false;
+  }
+  check("dört tipik cevap dört dalı tutuyor", understoodAll);
+  check("senaryo dördüncü turda bitiyor", ended && ost.userTurns === 4);
+  const halloSum = offlineSummary(hallo, ost);
+  check("özet: üç kalıp kullanıldı, puan 100", halloSum.used.length === 3 && halloSum.score === 100);
+  const miss1 = offlineReply(hallo, offlineStart(hallo).state, "guten abend, schönes wetter heute");
+  check("anlaşılmayan cevap: tur ilerlemiyor, örnek öneriliyor", !miss1.understood && miss1.state.turnId === "t1" && miss1.content.includes("[SAY] Ich heiße Mehmet."));
+  const noScript = LESSONS.find((l) => !l.roleplay.script?.length && l.patterns.length >= 2)!;
+  os = offlineStart(noScript);
+  check("senaryosuz ders: kalıp modu, ilk kalıp isteniyor", os.state.turnId === null && Boolean(os.hint?.startsWith("Kalıbı kullan")));
+  const p0 = noScript.patterns[0].de;
+  const r0 = offlineReply(noScript, os.state, p0.replace(/…/g, "Berlin"));
+  check("kalıp söylenince sayılıyor", r0.understood && r0.state.usedPatterns.includes(p0));
+  const rX = offlineReply(noScript, r0.state, "blabla");
+  check("alakasız cümle: kalıp sayılmıyor, ipucu kalıbı gösteriyor", !rX.understood && Boolean(rX.hint?.includes(noScript.patterns[1].de)));
+  let stAll = r0.state;
+  for (const p of noScript.patterns.slice(1)) stAll = offlineReply(noScript, stAll, p.de.replace(/…/g, "x")).state;
+  check("bütün kalıplar → bitti, puan 100", stAll.ended && offlineSummary(noScript, stAll).score === 100);
+  check("patternUsed: kısa kalıp tam kelime ister", patternUsed("Und dir?", "gut und dir") && !patternUsed("Und dir?", "gut, dirigent"));
+  // Sağlayıcısız ortamda ders geçilebiliyor: senaryo bitti → roleplayDone → recordLesson.passed
+  await db.delete(userLessons).where(eq(userLessons.userId, USER));
+  const offlineRec = await recordLesson(USER, hallo, scoredSteps(hallo), ost.userTurns >= hallo.roleplay.minTurns, monday);
+  check("senaryolu konuşmayla ders geçildi", offlineRec.passed === true);
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

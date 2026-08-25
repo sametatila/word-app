@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { offlineReply, offlineStart, offlineSummary, type OfflineState } from "@/lib/lessons/offline-roleplay";
+import { track } from "@/lib/track";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import {
@@ -163,6 +165,16 @@ export function LessonPlayer({
   const [handsFree, setHandsFree] = useState(true);
   /** Yazarak cevaplama — varsayılan değil, takılınca açılan çıkış yolu. */
   const [typing, setTyping] = useState(false);
+  /**
+   * Senaryolu (çevrimdışı) konuşma durumu — sohbet sağlayıcısı yokken
+   * (WP-04, lib/lessons/offline-roleplay). null = model konuşuyor. Ref de
+   * var çünkü `send` kapanışta eski durumu görmemeli.
+   */
+  const [offline, setOffline] = useState<OfflineState | null>(null);
+  const offlineRef = useRef<OfflineState | null>(null);
+  useEffect(() => {
+    offlineRef.current = offline;
+  }, [offline]);
 
   const [saved, setSaved] = useState<{ passed: boolean; nextDays: number } | null>(null);
   const [resumed, setResumed] = useState(false);
@@ -659,6 +671,19 @@ export function LessonPlayer({
     setPhase("roleplay");
     if (turns.length) return; // kayıttan dönüldü, konuşma zaten kurulu
     setTurns([{ role: "assistant", content: lesson.roleplay.opening }]);
+    // Sağlayıcı var mı? Yoksa daha ilk cümlede 503 yemek yerine baştan
+    // senaryolu konuşmaya geç. Açılış iki yolda da aynı metin (senaryonun
+    // ilk turu açılışla birebir), o yüzden beklemeden gösterildi.
+    void fetch("/api/roleplay", { cache: "no-store" })
+      .then((r) => (r.ok ? (r.json() as Promise<{ configured: boolean }>) : null))
+      .then((s) => {
+        if (s && !s.configured && !offlineRef.current) {
+          const start = offlineStart(lesson);
+          setOffline(start.state);
+          setHint(start.hint);
+        }
+      })
+      .catch(() => {});
     const token = ++speechToken.current;
     if (ttsAvailable) {
       setSpeakingTurn(0);
@@ -688,19 +713,61 @@ export function LessonPlayer({
       // lib/lessons/roleplay); okuma bitince ders kendiliğinden özete geçiyor.
       const closing = next.filter((m) => m.role === "user").length >= lesson.roleplay.minTurns;
 
+      /**
+       * Senaryolu cevap: model yerine niyet eşleştirme. Kapanış kuralı
+       * modelle aynı (alt sınır kadar tur) — ama senaryo daha erken biterse
+       * o da kapanıştır; ders yine sayılır.
+       */
+      const local = (state: OfflineState) => {
+        stopThinking();
+        const r = offlineReply(lesson, state, clean);
+        setOffline(r.state);
+        setHint(r.hint);
+        setTurns([...next, { role: "assistant", content: r.content }]);
+        const done = closing || r.ended;
+        if (ttsAvailable && r.speak.trim()) {
+          const token = ++speechToken.current;
+          setSpeakingTurn(next.length);
+          speakGerman(r.speak, () => {
+            if (speechToken.current !== token) return;
+            setSpeakingTurn(null);
+            if (done) {
+              void finishRef.current();
+              return;
+            }
+            if (!handsFreeRef.current || draftRef.current.trim()) return;
+            void listenRoleplay();
+          });
+        } else if (done) {
+          setTimeout(() => void finishRef.current(), 2500);
+        }
+      };
+
+      if (offlineRef.current) {
+        try {
+          local(offlineRef.current);
+        } finally {
+          setBusy(false);
+        }
+        return;
+      }
+
       try {
         const res = await fetch("/api/roleplay", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ lessonId: lesson.id, messages: next }),
         });
+        if (res.status === 503) {
+          // Sağlayıcı konuşmanın ortasında düştü: aynı cümleyi senaryoya ver.
+          // Senaryo baştan başlar (önceki turlar modelindi); hedef kalıplar
+          // yine de ölçülür ve ders geçilebilir.
+          local(offlineRef.current ?? offlineStart(lesson).state);
+          return;
+        }
         if (!res.ok || !res.body) {
           setTurns(next);
-          setError(
-            res.status === 503
-              ? "Konuşma servisi şu an kapalı. Dersin diğer bölümleri çalışıyor."
-              : "Cevap alınamadı. Tekrar dener misin?",
-          );
+          setError("Cevap alınamadı. Tekrar dener misin?");
           return;
         }
         const reader = res.body.getReader();
@@ -802,6 +869,11 @@ export function LessonPlayer({
     setSpeakingId(null);
     setSpeakingTurn(null);
     setPhase("summary");
+    // Senaryolu konuşmanın puanı: kalıpların kaçı kullanıldı (KPI 2/6).
+    // Modelli konuşmanın puanı WP-22 ile gelir.
+    if (offlineRef.current) {
+      track("production_attempt", offlineSummary(lesson, offlineRef.current).score, "roleplay");
+    }
     try {
       const res = await fetch("/api/lesson", {
         method: "POST",
@@ -1135,6 +1207,21 @@ export function LessonPlayer({
                 <span className="muted ml-1.5 font-semibold">· {lesson.roleplay.partner}</span>
               </p>
               <p className="muted mt-0.5 text-xs leading-relaxed">{lesson.roleplay.scene}</p>
+              {offline ? (
+                <p
+                  className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold"
+                  style={{
+                    background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
+                    color: "var(--color-flame)",
+                  }}
+                  title="Sohbet servisi şu an kapalı; konuşma önceden yazılmış bir senaryoyla sürüyor. Ders yine sayılır."
+                >
+                  <AlertIcon size={12} />
+                  {lesson.roleplay.script?.length
+                    ? "Konuşma servisi kapalı — senaryolu konuşma"
+                    : "Konuşma servisi kapalı — kalıpları kullan"}
+                </p>
+              ) : null}
               <div className="mt-2 flex items-center justify-between gap-2">
                 <span className="muted text-xs tabular-nums">
                   {userTurns} / {lesson.roleplay.minTurns} tur

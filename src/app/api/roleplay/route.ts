@@ -21,6 +21,17 @@ const MAX_CHARS = 2000;
  * bağlı. Bilinmeyen ders kimliği reddediliyor — konusuz konuşma bu uçtan
  * çıkamaz.
  */
+/**
+ * Servis durumu (WP-04): oynatıcı konuşma fazına girerken sorar ve
+ * sağlayıcı yoksa ilk turdan itibaren senaryolu konuşmaya geçer — 503'ü
+ * öğrencinin ilk cümlesinde yemek yerine.
+ */
+export async function GET() {
+  const userId = await getUserId();
+  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  return NextResponse.json({ configured: chatConfigured() }, { headers: { "cache-control": "no-store" } });
+}
+
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
