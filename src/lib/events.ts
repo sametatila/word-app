@@ -69,6 +69,7 @@ export const EVENT_NAMES = [
   "error_recorded", // yanlış cevabın hata tipi (kind = ErrorType, bkz. lib/errors.ts)
   "feedback_why_opened", // "neden?" açıklaması açıldı (kind = ErrorType)
   "skill_finish", // beceri egzersizi bitti (kind = beceri:seviye, örn. "reading:A2", value = puan 0–100)
+  "plan_start", // bugünkü plan kartından bir öğe açıldı (kind = öğe: review|lesson|skill|weak, value = sıra)
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];

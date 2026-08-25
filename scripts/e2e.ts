@@ -72,6 +72,7 @@ import { fallbackAssessment } from "../src/lib/assess-client";
 import { assess, assessHash } from "../src/lib/assess";
 import { offlineReply, offlineStart, offlineSummary, patternUsed } from "../src/lib/lessons/offline-roleplay";
 import { clozeTypeChance, easeRound, gamesFor as ladderGames, isProductionGame } from "../src/lib/ladder";
+import { buildPlan } from "../src/lib/plan";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -2178,6 +2179,22 @@ async function main() {
   await submitAnswers(USER, [{ wordId: fsPool[0].id, game: "free_sentence", correct: true, latencyMs: 30000, quality: 4 }], monday, 40);
   const [fsRv] = await db.select().from(reviews).where(and(eq(reviews.userId, USER), eq(reviews.wordId, fsPool[0].id))).orderBy(desc(reviews.id)).limit(1);
   check("serbest cümle cevabı kalitesiyle kaydediliyor", fsRv?.game === "free_sentence" && fsRv?.quality === 4);
+
+  console.log("\n34) Bugünkü plan (WP-60)");
+  await reset();
+  const planProfile = await ensureProfile(USER, "E2E");
+  let plan = await buildPlan(USER, monday, planProfile.course, "A1", planProfile.dailyGoal);
+  check("plan tur + ders + beceri öğeleri", plan.items.some((i) => i.id === "review") && plan.items.some((i) => i.id === "lesson") && plan.items.some((i) => i.id === "skill"), plan.items.map((i) => i.id).join(","));
+  check("hiçbiri yapılmadı, süre > 0", plan.items.every((i) => !i.done) && plan.minutes > 0 && !plan.complete);
+  check("zayıf nokta yok (hata yok)", !plan.items.some((i) => i.id === "weak"));
+  const planWords = await db.select().from(words).where(isNotNull(words.artikel)).limit(5);
+  await submitAnswers(USER, planWords.map((w) => ({ wordId: w.id, game: "artikel" as const, correct: false, latencyMs: 2000, errorType: "article" as const, detail: "die" })), monday, 20);
+  await track(USER, "session_done", monday, 3);
+  plan = await buildPlan(USER, monday, planProfile.course, "A1", planProfile.dailyGoal);
+  const weak = plan.items.find((i) => i.id === "weak");
+  check("5 artikel hatası → zayıf nokta öğesi, Artikel Yarışı", weak?.href === "/learn?game=artikel" && weak.title.includes("artikel"), weak?.title);
+  check("tur bugün tamamlandı işareti (session_done)", plan.items.find((i) => i.id === "review")?.done === true);
+  check("zayıf nokta öğesi bugün 5 artikel cevabıyla yapıldı sayılıyor", weak?.done === true);
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

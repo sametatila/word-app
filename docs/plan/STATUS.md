@@ -27,7 +27,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-50 | Beceri yetkinlik modeli | 5 | bekliyor | | | | |
 | WP-51 | Hata analitiği | 5 | bekliyor | | | | |
 | WP-52 | Gelişim raporu | 5 | bekliyor | | | | |
-| WP-60 | /learn yeniden kompozisyon | 6 | bekliyor | | | | |
+| WP-60 | /learn yeniden kompozisyon | 6 | inceleme | Claude | 2026-08-25 | (bkz. git log) | `lib/plan.ts`, `GET /api/plan`, `PlanCard`; modlar şeridi/sınav kartı yapılmadı (karar kaydı); kanıt `reports/shots/wp60-plan.png` |
 | WP-61 | Geri bildirim bileşeni | 6 | bekliyor | | | | |
 | WP-62 | Ders oynatıcı akışı | 6 | bekliyor | | | | |
 | WP-63 | Beceri merkezi | 6 | bekliyor | | | | |
@@ -69,3 +69,4 @@ Plan uygulanırken alınan ürün/teknik kararlar (tarih, karar, gerekçe, kim):
 - 2026-08-25 — Oturum içi basamak inişi istemcide: sunucu turları önceden kurduğu için `easeRound` eldeki veriyle dönüştürür (çeviri → cümle diz, yazarak tamamla → şıklı, yazma → ipuçlu); cevap oynanan oyunun adıyla kaydedilir. Claude.
 - 2026-08-25 — `free_sentence` turu PLAYABLE dışında ve oturumda en çok 2: hakemi AI (kota + süre), sağlayıcı yokken tur hiç kurulmuyor (yedek dilbilgisini ölçemiyor; ölçülmeyen iş yaptırmak yerine tur yok). Beceri tarafındaki `kind:"sentence"` görevi ise sağlayıcı yokken yedekle çalışır ve "AI kapalı" der. Claude.
 - 2026-08-25 — Serbest cümle SRS eşlemesi: overall ≥ 90 → 5, ≥ 70 → 4 (doğru), 40–69 → 3 (yanlış, lapse yok), < 40 → 2; yedekte en çok 3. Hata tipi rubriğin ilk hatasından. Claude.
+- 2026-08-25 — WP-60 kapsam: plan kartı (adım 1–2, 5) yapıldı; modlar şeridi (adım 3) ve sınavlar kartı (adım 4) yapılmadı — mevcut "Başka türlü oyna" bölümü ve tek oyun seçici zaten görünür, sınavlar WP-40/41/42 gelmeden boş bir kart olurdu. `dailyStats.plan_done` sütunu açılmadı: "yapıldı" bugünün kayıtlarından türetiliyor (session_done olayı, ders/egzersiz lastAt, oyun cevapları); ayrı bir kayıt planı sözleşmeye çevirirdi. Öneri motoru WP-50 gelene kadar geçici kural: en az çalışılan beceri + en sık hata tipi (≥5/14 gün) → tek oyunlu tur. Claude.

@@ -42,6 +42,7 @@ import { CheatsheetCard } from "@/components/cheatsheet-card";
 import { WalkCard } from "@/components/walk-card";
 import { WalkPlayer } from "@/components/walk-player";
 import { QuestCard } from "@/components/quest-card";
+import { PlanCard } from "@/components/plan-card";
 import { AlertIcon, FlameIcon, RefreshIcon } from "@/components/icons";
 
 type Status =
@@ -926,6 +927,11 @@ function StartCard({
             </p>
           ) : null}
         </div>
+      </div>
+      {/* Bugünkü plan (WP-60): tur kartının hemen altında — "bugün ne yapmalı"
+          sorusunun cevabı, modlar listesinden önce. */}
+      <div className="mt-4">
+        <PlanCard onStartSession={onStart} />
       </div>
       {/*
         BAŞKA TÜRLÜ OYNA — normal turdan farklı üç oynama şekli.

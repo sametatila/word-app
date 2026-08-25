@@ -34,6 +34,8 @@ Genel ilkeler (her WP için):
 
 **Süre.** 5 gün. **Bağımlılık.** WP-50 (öneri; yoksa geçici kural), WP-42, WP-40.
 
+**Durum (2026-08-25).** Adım 1, 2, 5 bitti; 3–4 ertelendi (STATUS karar kaydı). `src/lib/plan.ts` `buildPlan`: (1) kelime turu — vadesi gelen sayı, `session_done` ile yapıldı; (2) sıradaki ders — `nextLesson`, bugün `lastAt` ile yapıldı; (3) seviyede en az çalışılan beceriden ilk yapılmamış egzersiz; (4) son 14 günün en sık hata tipi (≥5) → o tipin tek oyunlu turu (`/learn?game=…`), bugün ≥5 cevapla yapıldı. `GET /api/plan?day=`; `src/components/plan-card.tsx` (iskelet, tik, ~dk, "Başla: …" ilk bitmemiş öğe, `plan_start` olayı kind=öğe). Karşılama kartının hemen altında. e2e §34 (6 kontrol). Kanıt: `reports/shots/wp60-plan.png`.
+
 ---
 
 ## WP-61 · Geri bildirim bileşeni ve fark vurgusu
