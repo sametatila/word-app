@@ -3,7 +3,8 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { chatConfigured, type ProviderMeta } from "@/lib/chat-providers";
 import { findLesson } from "@/lib/lessons";
-import { streamRoleplay, type RoleplayMode, type RoleplayTurn } from "@/lib/lessons/roleplay";
+import { streamDialogue, streamRoleplay, type RoleplayMode, type RoleplayTurn } from "@/lib/lessons/roleplay";
+import { getExercise } from "@/lib/skills";
 import { logRoleplayTurn } from "@/lib/lessons/log";
 import { recordAiUsage } from "@/lib/ai-usage";
 
@@ -52,11 +53,15 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
 
-  const { lessonId, messages: raw, mode: rawMode } = body as { lessonId?: unknown; messages?: unknown; mode?: unknown };
+  const { lessonId, exerciseId, messages: raw, mode: rawMode } = body as { lessonId?: unknown; exerciseId?: unknown; messages?: unknown; mode?: unknown };
   // Mod (WP-22): sınavda yardım/düzeltme yok; kayıtta da işaretlenir.
   const mode: RoleplayMode = rawMode === "exam" ? "exam" : "practice";
+  // Beceri diyaloğu (WP-23): ders yerine temalı egzersiz; senaryo istemcide yedek.
+  const dialogue = typeof exerciseId === "string" ? await getExercise(exerciseId) : undefined;
+  const dialogueEx = dialogue && dialogue.skill === "speaking" && "dialogue" in dialogue && dialogue.theme ? dialogue : undefined;
   const lesson = typeof lessonId === "string" ? findLesson(lessonId) : undefined;
-  if (!lesson) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
+  if (!lesson && !dialogueEx) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
+  const logId = lesson?.id ?? dialogueEx!.id;
 
   const messages = parseMessages(raw);
   if (!messages) return NextResponse.json({ error: "bad_request" }, { status: 400 });
@@ -79,13 +84,10 @@ export async function POST(req: Request) {
           // Her deneme muhasebeye yazılıyor — düşen sağlayıcı dâhil. Zincir
           // onu sessizce atladığı için, kaydedilmeyen bir hata hiç olmamış
           // gibi duruyordu.
-          for await (const delta of streamRoleplay(
-            lesson,
-            messages,
-            (m) => (meta = m),
-            (r) => recordAiUsage(userId, { kind: "roleplay", ...r }),
-            mode,
-          )) {
+          const gen = lesson
+            ? streamRoleplay(lesson, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "roleplay", ...r }), mode)
+            : streamDialogue(dialogueEx!, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "roleplay", ...r }));
+          for await (const delta of gen) {
             full += delta;
             controller.enqueue(encoder.encode(delta));
           }
@@ -96,7 +98,7 @@ export async function POST(req: Request) {
           controller.enqueue(encoder.encode("\n\n[Bağlantı koptu — tekrar dener misin?]"));
         } finally {
           controller.close();
-          if (full.trim()) void logRoleplayTurn(userId, lesson.id, turn, said, full, meta, mode);
+          if (full.trim()) void logRoleplayTurn(userId, logId, turn, said, full, meta, mode);
         }
       },
     });

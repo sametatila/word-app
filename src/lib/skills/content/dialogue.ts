@@ -21,6 +21,7 @@ import type { SpeakingDialogueExercise } from "../types";
 export const dialogues: SpeakingDialogueExercise[] = [
   {
     id: "a2-d1",
+    theme: { role: "Kellnerin in einem kleinen Café", goal: "Sipariş al, süt/şeker sor, bir tatlı tavsiye et, sonunda hesabı getir ve ödeme şeklini sor.", limits: "Fiyat sorulursa 3–5 Euro arası söyle." },
     level: "A2",
     skill: "speaking",
     title: "Im Café",
@@ -219,6 +220,7 @@ export const dialogues: SpeakingDialogueExercise[] = [
   // günden lazım olan şey.
   {
     id: "a1-d1",
+    theme: { role: "Passantin auf der Straße", goal: "Öğrenci bir yer soruyor (istasyon, eczane, market): yolu kısa tarif et, ne kadar uzak olduğunu söyle, yürüyerek mi otobüsle mi olduğunu sor.", limits: "Yön tarifini iki adımda tut (links, rechts, geradeaus)." },
     level: "A1",
     skill: "speaking",
     title: "Nach dem Weg fragen",
@@ -349,6 +351,7 @@ export const dialogues: SpeakingDialogueExercise[] = [
   // Fazladan kök yanlış eşleşme riski taşımıyor — ikisi de aynı dala gidiyor.
   {
     id: "zh-a2-d1",
+    theme: { role: "Verchöiferin imene chliine Lade", goal: "Ne istediğini sor, miktar ve fiyat söyle, başka bir şey isteyip istemediğini sor, ödemeyi al." },
     level: "A2",
     skill: "speaking",
     course: "gsw-zh",
@@ -470,6 +473,7 @@ export const dialogues: SpeakingDialogueExercise[] = [
   // söylenebilmesi önemli.
   {
     id: "b1-d1",
+    theme: { role: "Ärztin in einer Hausarztpraxis", goal: "Şikâyeti ve süresini sor, iki kısa muayene sorusu sor, tanı ve tavsiye ver, gerekirse reçete ve kontrol randevusu.", limits: "Ciddi tanı koyma; öneriler dinlenme, sıvı, ilaç düzeyinde kalsın." },
     level: "B1",
     skill: "speaking",
     title: "Beim Arzt",
@@ -597,6 +601,7 @@ export const dialogues: SpeakingDialogueExercise[] = [
   // lehçeyi standart biçimde yazma eğiliminde (bkz. zh-a2-d1).
   {
     id: "zh-a1-d1",
+    theme: { role: "Nachbarin im Treppenhaus", goal: "Tanışma: isim, nereli olduğu, ne iş yaptığı, hobisi; sen de kendinden kısa bilgi ver." },
     level: "A1",
     skill: "speaking",
     course: "gsw-zh",
@@ -714,6 +719,7 @@ export const dialogues: SpeakingDialogueExercise[] = [
   // yaşıyor.
   {
     id: "b2-d1",
+    theme: { role: "Personalchefin bei einem Vorstellungsgespräch", goal: "Deneyimi, güçlü ve zayıf yönleri, motivasyonu sor; maaş beklentisi ve başlangıç tarihini konuş; sonunda soruları olup olmadığını sor.", limits: "Pozisyon: müşteri hizmetleri; şirket adı uydurma, kısa tut." },
     level: "B2",
     skill: "speaking",
     title: "Vorstellungsgespräch",
@@ -856,6 +862,7 @@ export const dialogues: SpeakingDialogueExercise[] = [
   // değişiyor. Öğrenilen şey içerik değil, nasıl söylendiği.
   {
     id: "c1-d1",
+    theme: { role: "Gesprächspartner in einer Podiumsdiskussion", goal: "Konu: şehir merkezinde araba yasağı. Görüşünü iste, bir karşı argüman getir, gerekçe ve örnek iste, uzlaşma noktası ara.", limits: "Tek taraflı kalma; öğrenciyi nüans yapmaya zorla." },
     level: "C1",
     skill: "speaking",
     title: "Eine Meinung äußern",

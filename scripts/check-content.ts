@@ -199,6 +199,9 @@ function checkSkills(list: SkillExercise[]) {
       if ("dialogue" in e) {
         checkTurns(w, e.dialogue);
         if ((e.targets?.length ?? 0) < 2) W(w, "diyalog hedefleri < 2");
+        // Açık diyalog teması (WP-23): rol Almanca, hedef Türkçe, sahne = intro.
+        if (!e.theme) W(w, "diyalog teması yok (yalnız senaryo)");
+        else if (!e.theme.role?.trim() || !e.theme.goal?.trim()) E(w, "diyalog teması eksik (role/goal)");
       } else if ("monologue" in e) {
         const m = e.monologue;
         if (!m.promptTr?.trim()) E(w, "monolog: promptTr boş");

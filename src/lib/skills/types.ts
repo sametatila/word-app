@@ -256,12 +256,26 @@ export type SpeakingDrillExercise = ExerciseBase & {
  * bkz. lib/dialogue.ts. Kapalı bir temada (kafede sipariş) bu, gerçek bir
  * konuşma hissi verecek kadar iyi çalışır.
  */
+/**
+ * Açık diyalog teması (WP-23): sağlayıcı varken dil modeli bu rolü oynar,
+ * senaryo (`dialogue`) yedek olarak kalır. `intro` sahneyi anlatır.
+ */
+export type DialogueTheme = {
+  /** Modelin rolü, Almanca: "Kellnerin in einem Café". */
+  role: string;
+  /** Konuşmanın hedefi, Türkçe: model konuşmayı buraya sürer. */
+  goal: string;
+  /** Sınırlar, Türkçe (isteğe bağlı): "fiyat sorarsa 3–5 Euro arası söyle". */
+  limits?: string;
+};
 export type SpeakingDialogueExercise = ExerciseBase & {
   skill: "speaking";
   /** Konuşmanın turları; ilki `start` ile işaretlenen turdur. */
   dialogue: DialogueTurn[];
   /** Bu temanın pekiştirmek istediği kalıplar — sonunda özetlenir. */
   targets: Gloss[];
+  /** Varsa ve sağlayıcı açıksa açık uçlu diyalog (WP-23). */
+  theme?: DialogueTheme;
 };
 
 /**

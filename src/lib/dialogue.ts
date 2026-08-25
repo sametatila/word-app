@@ -97,3 +97,32 @@ export function usedTargets(path: DialogueReply[]): string[] {
   for (const reply of path) for (const target of reply.uses ?? []) out.add(target);
   return [...out];
 }
+
+/* ───────────── açık diyalog (WP-23) ───────────── */
+
+/** Tamamlanma: en az bu kadar tur VE bu kadar hedef kalıp; üst sınırda her hâlde kapanır. */
+export const DIALOGUE_MIN_TURNS = 4;
+export const DIALOGUE_MIN_TARGETS = 3;
+export const DIALOGUE_MAX_TURNS = 8;
+
+/**
+ * Açık diyalogda kalıp kullanımı yerel eşleştirmeyle: kalıbın "…" öncesi
+ * gövdesi ("Ich hätte gern") öğrencinin söylediklerinde geçiyor mu. Modelin
+ * işaretlemesi yerine bu seçildi: küçük modeller işaret satırını düşürüyor,
+ * yerel arama ise her turda aynı ölçüyü uyguluyor. "/" ile ayrılmış
+ * seçeneklerin ("bar / mit Karte") herhangi biri yeter.
+ */
+export function targetsUsed(targets: { de: string }[], texts: string[]): string[] {
+  const hay = normalizeSpoken(texts.join(" "));
+  const out: string[] = [];
+  for (const t of targets) {
+    const variants = t.de.split("/").map((v) => normalizeSpoken(v.split(/…|\.\.\./)[0]).trim()).filter((v) => v.length >= 3);
+    if (variants.some((v) => hay.includes(v))) out.push(t.de);
+  }
+  return out;
+}
+
+/** Konuşma kapanmalı mı: hedef ve tur eşiği ya da üst sınır. */
+export function dialogueDone(userTurns: number, usedCount: number): boolean {
+  return userTurns >= DIALOGUE_MAX_TURNS || (userTurns >= DIALOGUE_MIN_TURNS && usedCount >= DIALOGUE_MIN_TARGETS);
+}

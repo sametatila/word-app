@@ -100,4 +100,6 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Kabul.** Sağlayıcı açıkken senaryoda olmayan bir cevap ("Ich nehme einen Cappuccino, aber ohne Zucker") anlaşılıp konuşma sürüyor; kapalıyken senaryo çalışıyor.
 
+**Durum (2026-08-26).** Adım 1–2 bitti, 3 (7 → 25 diyalog) WP-72'de. `types.ts` `DialogueTheme { role, goal, limits? }` + `SpeakingDialogueExercise.theme?`; 7 diyaloga tema yazıldı (`content/dialogue.ts`), doğrulayıcı tema kontrolü. `lib/dialogue.ts`: `targetsUsed`, `dialogueDone` (≥4 tur ve ≥3 kalıp, en çok 8), sabitler. `lib/lessons/roleplay.ts`: ortak `streamSystem`, `dialoguePrompt` (rol, sahne = intro, hedef, kalıplar; düzeltme ve öneri yok; kapanış turu), `streamDialogue`. `/api/roleplay` `exerciseId` kabul ediyor (`getExercise`, temalı konuşma diyaloğu), log kimliği egzersiz. `dialogue-player.tsx`: tema + sağlayıcı → `mode: llm`; `askModel` (akış, `parseReply`, kalıp eşiğinde kapanış), hata → senaryoya dönüş; "Yazarak cevapla" alanı iki modda; açık modda payda 4. Kanıt: `reports/shots/wp23-dialogue-{open,done}.png` — "Ich nehme einen Cappuccino, aber ohne Zucker" anlaşıldı ve konuşma sürdü; 4 turda 5/5 kalıp, 4/4.
+
 **Süre.** 4 gün. **Bağımlılık.** WP-03, WP-72.

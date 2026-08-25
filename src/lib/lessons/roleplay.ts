@@ -5,6 +5,8 @@ import type { Lesson } from "./types";
 import { lessonIndexInLevel } from "./index";
 import { characterFor } from "./characters";
 import { EXAM_TURNS } from "./roleplay-const";
+import type { SpeakingDialogueExercise } from "@/lib/skills/types";
+import { dialogueDone, targetsUsed } from "@/lib/dialogue";
 
 /**
  * Rol yapma — dersin son ve asıl parçası.
@@ -239,9 +241,6 @@ export async function* streamRoleplay(
   report?: CallReport,
   mode: RoleplayMode = "practice",
 ): AsyncGenerator<string> {
-  const providers = chatProviders();
-  if (!providers.length) throw new Error("Sağlayıcı tanımlı değil");
-
   // Alt sınıra ulaşıldığında model sahneyi kapatıyor: ders bir sohbet uygulaması
   // değil ve "yeterince konuşuldu"nun kararını öğrenciye bırakmak konuşmayı
   // 25 tura sürüklüyordu. Kapanış cevabından sonra istemci dersi bitiriyor.
@@ -250,6 +249,60 @@ export async function* streamRoleplay(
     closing: userTurns >= (mode === "exam" ? EXAM_TURNS : lesson.roleplay.minTurns),
     mode,
   });
+  yield* streamSystem(system, messages, onMeta, report);
+}
+
+/**
+ * Beceri diyaloğu istemi (WP-23): tema + hedef kalıplar, senaryodaki açılış
+ * sorusuyla aynı sahne. Alıştırma istemine göre daha kısa: düzeltme yok
+ * (diyalog anlama/akış çalışması; düzeltme dersin işi), Türkçe yardım
+ * yalnız tıkanınca. Her tur en fazla iki cümle + soru; kapanışta veda.
+ */
+export function dialoguePrompt(ex: SpeakingDialogueExercise, closing: boolean): string {
+  const theme = ex.theme!;
+  const dialect = ex.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun; öğrenci Hochdeutsch cevap verirse düzeltme, sürdür." : "Standart Almanca (Hochdeutsch) konuşuyorsun.";
+  const targets = ex.targets.map((t) => `- ${t.de} — ${t.tr}`).join("\n");
+  return `Sen bir Almanca konuşma alıştırmasında öğrencinin muhatabısın. Öğrencinin ana dili Türkçe, seviyesi ${ex.level}. ${dialect}
+
+ROLÜN: ${theme.role}.
+SAHNE: ${ex.intro}
+HEDEF: ${theme.goal}${theme.limits ? `\nSINIRLAR: ${theme.limits}` : ""}
+
+ÖĞRENCİNİN KULLANMASI BEKLENEN KALIPLAR — konuşmayı bunların gerekeceği yere sür, ama kalıbı söyleme
+${targets}
+
+KURALLAR
+- Rolünde kal; ${ex.level} seviyesinde, en fazla 2 cümle, sonunda bir soru.
+- Öğrencinin söylediğine cevap ver; genel övgü yok. Sahneyi her turda ilerlet, aynı soruyu tekrar sorma.
+- Öğrenci senaryoda olmayan bir şey söylese de anla ve devam et (ör. "Cappuccino, aber ohne Zucker").
+- Dilbilgisi hatasını DÜZELTME; bu bir anlama/akış alıştırması. ${CORRECTION_MARK} satırı yazma.
+- Öğrenci Türkçe konuşur ya da tıkanırsa: tek cümle Türkçe yardım, sonra Almanca soru.
+- Öneri satırı (${SUGGESTION_MARK}) YAZMA: küçük modeller işaret satırını gövdeye karıştırıyordu, öğrencinin ipucu için senaryo örneği var.
+- Düz metin; yıldız, tire, madde işareti yok. Almanca harfleri (ä ö ü ß) doğru yaz.${closing ? `
+
+KAPANIŞ TURU — hedefe ulaşıldı: sahneyi doğal biçimde kapat, kısa veda (en fazla 2 cümle). SORU SORMA.` : ""}`;
+}
+
+export async function* streamDialogue(
+  ex: SpeakingDialogueExercise,
+  messages: RoleplayTurn[],
+  onMeta?: (meta: ProviderMeta) => void,
+  report?: CallReport,
+): AsyncGenerator<string> {
+  const said = messages.filter((m) => m.role === "user").map((m) => m.content);
+  const closing = dialogueDone(said.length, targetsUsed(ex.targets, said).length);
+  yield* streamSystem(dialoguePrompt(ex, closing), messages, onMeta, report);
+}
+
+/** Ortak akış: sağlayıcı zinciri, ilk parça gelmeden düşerse yedeğe geçer. */
+async function* streamSystem(
+  system: string,
+  messages: RoleplayTurn[],
+  onMeta?: (meta: ProviderMeta) => void,
+  report?: CallReport,
+): AsyncGenerator<string> {
+  const providers = chatProviders();
+  if (!providers.length) throw new Error("Sağlayıcı tanımlı değil");
   const failures: string[] = [];
 
   for (const provider of providers) {
