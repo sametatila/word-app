@@ -103,6 +103,25 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 
 **Durum (2026-08-25).** Adım 1–3, 5 bitti; 4 (quest + bildirim) ertelendi. `src/lib/weekly.ts`: `buildWeeklyExam` (pekişmiş ≥21 gün, son 4 haftada sınanmamış, 15 kelime; oyunlar çeviri 5 / yazma 4 / yazarak tamamla 3 / serbest cümle 2 (AI varsa) / yazma 1; pekişmiş < 30 → öğreniliyor bandı, "kısa kontrol"), `finishWeekly` (yanlış → kalite 2, `exams` satırı, `exam_finish` kind `usage:<seviye>`, tek hak), `weeklyStatus`, `weeklyHistory`; `GET/POST /api/weekly`; `/learn/haftalik` (`weekly-player.tsx`: tek hak, ipuçsuz, sonuçta yanlış kelimeler); plan kartına "Haftanın kullanım sınavı" öğesi (≥15 çalışılmış kelime). Migrasyon `0032_exams.sql` üretime uygulandı. KPI 3 (`report:learning`) bu olaydan okuyor. e2e §38 (11 kontrol). Kanıt: `reports/shots/wp42-weekly.png`.
 
+## Ek (2026-08-26): modül sınavı v3 — modülün kendi sınavı
+
+**Sorun.** v2 kâğıdında modül yalnızca KELİME bölümünü belirliyordu; dilbilgisi seviye tablolarından, okuma/dinleme seviye beceri bankasından, yazma ve konuşma yine seviyeden geliyordu. "A1 Modül 3 · Yeme-içme" sınavında tren garı metni ve Perfekt sorusu çıkabiliyordu. Dersler ise konuşma üzerine kurulu: her ders bir kalıp öğretiyor, Türkçe cümleyi Almanca kurduruyor, bozuk cümle hakkında hüküm verdiriyor. Sınav bunların hiçbirini ölçmüyordu.
+
+**Yapılanlar.**
+- `src/lib/lessons/module-content.ts` (saf): modülün on dersinden üretim adımları (`produce` → Türkçe yönerge + Almanca hedef; yönerge çerçeve cümlelerinden ve ders ipuçlarından arındırılıyor, cevabı ele veren madde `selfAnswering` ile düşüyor), hüküm cümleleri (`truefalse` + gerekçe), kalıplar, kelimeler, sahneler; `FOCUS_SHEETS` ders odağı → cheatsheet sayfası köprüsü (65 odak).
+- `src/lib/lessons/module-exam/` (elle yazılı, 23 modül): kâğıdın kapağı (kod, Almanca/Türkçe ad, ölçülen yapılar), **yapabilirlik listesi** (de/tr/en, 4–5 satır), modül sahnesinde geçen **dinleme diyaloğu** (4–8 replik + 3 soru), modül dünyasından **okuma metni** (+2 soru), modül durumunda **konuşma cümleleri** (2), modül temalı **yazma görevi** (kontrol listesi, kalıplar, örnek cevap).
+- Kâğıt (`lib/exam.ts` v3, 25 dk): Wortschatz 6 · Grammatik 6 (3 tablo hücresi + 3 ders hükmü) · **Satzbau 5** (yeni bölüm: 3 yazma + 2 dizme, derslerin üretim adımlarından) · Lesen 2 · Hören 3 · Sprechen 2 · Schreiben 1.
+- **Bölüm ağırlığı** (`SECTION_WEIGHT`): madde sayısı yerine ağırlık. Modülde Wortschatz 12 · Grammatik 18 · Satzbau 25 · Lesen 8 · Hören 12 · Sprechen 15 · Schreiben 10; üretim bölümleri toplam %50. (Eskiden yazma bölümü 24 maddenin 1'iydi, yani kâğıdın %4'ü.) Kâğıtta bulunmayan bölüm payını bırakır, kalanlar %100'e ölçeklenir.
+- Şıklar tohumlu karıştırılıyor (`shuffleQuestion`): elle yazarken doğru şıkkın hep aynı sıraya düşmesi kullanıcıya ulaşmıyor. Tablo hücrelerinde çeldiriciler artık cevaptan VE birbirinden farklı (aynı biçim iki satırda geçebiliyordu; v2'de aynı şık iki kez basılıyordu).
+- Oynatıcı: kapak (ne ölçülüyor, kaç bölüm, kural) → bölüm arası kartı (Teil n/N · Satzbau) → maddeler (geri dönüş, ipucu, anında geri bildirim yok) → sonuç. Sonuçta bölüm yüzdeleri **ağırlığıyla**, "artık şunları yapabiliyorsun" listesi (de/tr/en) ve **kaçırılan maddelerin dökümü** (doğru cevap, senin cevabın, ders hükmünün gerekçesi, cümle farkı). İpucu düğmeleri sınavda gizli (`components/games/no-hints.tsx` bağlamı; dört oyun okuyor).
+- Sertifika: kod + Almanca modül adı + bölüm yüzdeleri + "DAS KANN ICH JETZT" listesi.
+- Yol haritası: modülün çıkış düğümü artık **sınava** gidiyor (taç ve %puan sınavdan), hız turu altındaki ikincil satır.
+- Doğrulayıcılar: `npm run test:exams` (23 modülün planı, madde bütçesi, odak haritası, soru gövdeleri) ve `npm run test:exam-build` (veritabanısız kuru prova: 23 kâğıt kurulur, bölüm sayıları, dizinler, aidiyet, ağırlık toplamı, tam doğru %100 / boş %0). e2e §42 v3'e göre yenilendi.
+
+**Kanıt.** `reports/shots/wp41v3-exam-{kapak,grammatik,satzbau,hoeren,sonuc,dokum}.png` — demo sunucuda A1.3 kâğıdı uçtan uca oynandı (7 bölüm, sonuç ve döküm dahil).
+
+**Açık.** B1 modül 4–10 ile B2/C1 modülleri ders içeriği üretilince plan dosyalarına eklenecek; `test:exams` plansız modülü hata sayıyor.
+
 ## Ek (2026-08-26): konuşma bölümü
 
 WP-41 kâğıdına `speaking` bölümü eklendi: seviyenin ses çalışması cümlelerinden modül sınavında 2, seviye sınavında 3 madde (egzersiz başına en çok bir cümle, tohumlu). Puan `/api/pronounce` kelime düzeyi telaffuz puanı (WP-20); bölüm puanı maddelerin ortalaması, `scoreSections` yazma gibi rubrik olarak işler; bölüm eşiği %50 geçerli. STT sağlayıcısı yoksa bölüm kâğıtta yer almaz (yazma bölümüyle aynı ilke). Teknik arıza iki denemede sürerse madde 0 sayılır, sınav durmaz. Sertifika bölüm etiketi "Konuşma".
