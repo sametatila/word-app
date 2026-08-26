@@ -124,10 +124,20 @@ for (const l of LESSONS) {
   ok(l.roleplay.partner.trim().length > 5, "rol tanımı var");
   ok(l.roleplay.opening.trim().length > 0 && l.roleplay.openingTr.trim().length > 0, "açılış çift dilli");
   ok(l.roleplay.opening.includes("?"), "açılış soruyla bitiyor");
-  ok(l.roleplay.minTurns >= 3 && l.roleplay.minTurns <= 6, "tur alt sınırı 3-6", `(${l.roleplay.minTurns})`);
+  // Konuşmanın amacı: sahnenin kopyası olmamalı ve bir SONUÇ söylemeli.
+  // Dört turluk sahnelerde bu alan yoktu ve konuşma bitmiyor, kesiliyordu.
+  ok(l.roleplay.goal.trim().length > 25, "konuşmanın amacı yazılmış", `(${l.roleplay.goal.length})`);
+  ok(l.roleplay.goal.trim() !== l.roleplay.scene.trim(), "amaç sahnenin kopyası değil");
+  ok(l.roleplay.minTurns >= 6 && l.roleplay.minTurns <= 9, "tur alt sınırı 6-9", `(${l.roleplay.minTurns})`);
+  // Senaryolu derste çevrimdışı yol da alt sınıra ulaşabilmeli; yoksa
+  // sağlayıcısız ortamda ders hiç geçilemez.
+  ok(!l.roleplay.script || l.roleplay.script.length >= l.roleplay.minTurns,
+    "senaryo tur sayısı alt sınırı karşılıyor",
+    l.roleplay.script ? `(${l.roleplay.script.length} < ${l.roleplay.minTurns})` : "");
   const prompt = roleplayPrompt(l);
   ok(l.patterns.every((p) => prompt.includes(p.de)), "istem kalıpları taşıyor");
   ok(l.vocab.every((v) => prompt.includes(v.de)), "istem kelimeleri taşıyor");
+  ok(prompt.includes(l.roleplay.goal), "istem konuşmanın amacını taşıyor");
 
   // Tekrar/üretimden SONRAKİ adım övgüyle başlamamalı: doğru cevapta motor
   // zaten övgü ekliyor, "Çok iyi! Harika! İkinci..." diye üst üste binerdi.

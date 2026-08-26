@@ -103,8 +103,19 @@ Puanlanan adımlar: en az 2 `produce` + 1 `truefalse` (toplam ≥ 3).
 - `partner`: Türkçe sıfat + rol ("sabırsız ama iyi kalpli bir satıcı").
 - `opening`: Almanca, en fazla 2 cümle, SORUYLA biter. `openingTr` doğal
   Türkçesi.
-- `minTurns`: A1–A2 → 4, B1+ → 5. (Alt sınıra ulaşınca model sahneyi kapatır
-  ve ders özete geçer — sistem hallediyor, içerik karışmaz.)
+- `goal`: Türkçe, tek cümle — konuşma NE OLUNCA tamamlanır. Bir konu başlığı
+  değil bir SONUÇ yazılır: "Sipariş verilmiş, gelmiş ve hesap istenmiş olur."
+  Sahnenin kopyası olamaz; sahne öğrencinin ne yapacağını, amaç konuşmanın
+  nerede biteceğini söyler. Bu alan olmadan model tur sayısı dolana kadar soru
+  soruyor ve konuşma bitmiyor, KESİLİYOR.
+- `minTurns`: 6–9. Sabit değil, `goal`in kaç adım istediğine bağlı: iki
+  sonuçlu amaç taban turu, üç ve daha çok sonuçlu amaç bir tur fazlasını alır.
+  Taban seviyeyle yükselir (A1 6, A2 7, B1 8); adım sayısı fazlaysa sırasıyla
+  7, 8, 9. (Model konuşmayı dört fazda sürüyor — açılış, gelişme, toparlama,
+  kapanış — ve son turda amacı sonuçlandırıp veda ediyor; sistem hallediyor,
+  içerik karışmaz.)
+- Dersin çevrimdışı `script`i varsa tur sayısı `minTurns`tan az olamaz: az
+  olursa sağlayıcısız ortamda ders hiç geçilemez (doğrulayıcı hata verir).
 
 ## 7. Meta alanlar
 

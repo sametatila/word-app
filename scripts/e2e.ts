@@ -903,11 +903,15 @@ async function main() {
     check("istem seviyeyi taşıyor", prompt.includes(lesson.level));
     check("istem düzeltme işaretini taşıyor", prompt.includes(CORRECTION_MARK));
     check("istem öneri işaretini taşıyor", prompt.includes(SUGGESTION_MARK));
-    // Kapanış turu: alt sınıra ulaşınca model sahneyi kapatmalı — talimat
-    // ancak istendiğinde eklenmeli, her turda kapanmaya çalışan model olmaz.
-    check("kapanış talimatı istenince var",
-      roleplayPrompt(lesson, { closing: true }).includes("KAPANIŞ TURU"));
-    check("kapanış talimatı istenmeyince yok", !prompt.includes("KAPANIŞ TURU"));
+    // Konuşmanın yayı: her faz kendi yönergesini almalı. Tek "kapanış" bayrağı
+    // yetmiyordu — kapanıştan bir tur önce toparlama olmayınca konuşma
+    // bitmiyor, kesiliyordu.
+    check("amaç isteme giriyor", prompt.includes("KONUŞMANIN AMACI") && prompt.includes(lesson.roleplay.goal));
+    check("yay isteme giriyor", prompt.includes("KONUŞMANIN YAYI"));
+    check("açılış yönergesi istenince var", roleplayPrompt(lesson, { phase: "open" }).includes("ŞU AN: AÇILIŞ"));
+    check("toparlama yönergesi istenince var", roleplayPrompt(lesson, { phase: "wrapup" }).includes("TOPARLAMA TURU"));
+    check("kapanış talimatı istenince var", roleplayPrompt(lesson, { phase: "closing" }).includes("KAPANIŞ TURU"));
+    check("kapanış talimatı gelişme fazında yok", !prompt.includes("KAPANIŞ TURU"));
   }
 
   console.log("\n11s) Sapmalar kuraldan da türetiliyor");
