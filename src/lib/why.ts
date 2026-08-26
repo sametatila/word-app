@@ -1,6 +1,7 @@
 import { cheatsheetHref, ERROR_LABELS, type ErrorType } from "@/lib/errors";
 import { parsePluralRule, pluralOf, umlautStem } from "@/lib/german";
 import { ruleFor } from "@/lib/cheatsheet/rules";
+import { confusableHint } from "@/lib/confusables";
 
 /**
  * "Neden" — yanlış cevabın tek cümlelik gerekçesi (plan WP-13).
@@ -290,7 +291,10 @@ export function whyFor(input: WhyInput): Why {
     case "case":
     case "conjugation":
       return whyFromRule(input.type, contextOf(input));
-    case "meaning":
+    case "meaning": {
+      // Karıştırma çifti (WP-73): seçilen karşılık bilinen bir çiftin öbür yarısıysa ayrım cümlesi.
+      const pair = w ? confusableHint(w.de, input.detail) : null;
+      if (pair) return { type: "meaning", text: `${pair.hint} (${pair.example})`, href: null };
       return {
         type: "meaning",
         text: w
@@ -300,6 +304,7 @@ export function whyFor(input: WhyInput): Why {
           : "Anlamı karıştırdın; iki kelimeyi yan yana bir daha oku.",
         href: null,
       };
+    }
     case "listening":
       return {
         type: "listening",

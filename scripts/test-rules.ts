@@ -7,6 +7,7 @@ import assert from "node:assert/strict";
 import { RULES, ruleFor, uncoveredErrorTypes } from "../src/lib/cheatsheet/rules";
 import { CHEATSHEETS } from "../src/lib/cheatsheet/index";
 import { whyFor } from "../src/lib/why";
+import { CONFUSABLES, confusableHint } from "../src/lib/confusables";
 
 assert.ok(RULES.length >= 30, `en az 30 kural olmalı, ${RULES.length} var`);
 assert.deepEqual(uncoveredErrorTypes(), [], "genel kuralı olmayan hata tipi var");
@@ -53,4 +54,10 @@ const w4 = whyFor({ type: "verb_position", answer: ["Ich", "bleibe", "zu", "Haus
 assert.ok(w4.text.includes("sona"), `yan cümle gerekçesi: ${w4.text}`);
 assert.equal(w4.href, "/cheatsheet#a2-nebensatz");
 
+// Karıştırma çiftleri (WP-73 adım 4)
+assert.ok(CONFUSABLES.length >= 100, `en az 100 çift, ${CONFUSABLES.length} var`);
+for (const x of CONFUSABLES) assert.ok(x.hint.length > 10 && x.example.length > 3, `çift eksik: ${x.a}/${x.b}`);
+assert.equal(confusableHint("schön", "zaten")?.a, "schon");
+assert.equal(confusableHint("die Kirche", "kiraz")?.b, "Kirsche");
+assert.ok(whyFor({ type: "meaning", word: { de: "Gift", artikel: "das", tr: "zehir" }, detail: "hediye" }).text.includes("Geschenk"));
 console.log(`test:rules — ${RULES.length} kural, ${ids.size} kimlik, bağlam seçimi ve why.ts bağı: tamam`);
