@@ -2,18 +2,21 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { SKILL_LABELS, SKILL_ORDER, LEVEL_ORDER } from "@/lib/skills/meta";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { readSkillProgress, syncSkillProgress, type SkillProgress } from "@/lib/skills/progress";
 import type { SpeechTopic } from "@/lib/speech-progress";
 import { PROFICIENCY_LABELS, PROFICIENCY_SKILLS, weakestSkill, type Proficiency, type ProficiencySkill } from "@/lib/proficiency";
+import { WeakSpotsCard } from "@/components/weak-spots-card";
+import { GrowthCard } from "@/components/growth-card";
+import { CandoCard } from "@/components/cando-card";
 import type { NextStep } from "@/lib/proficiency-data";
 import type { ExamResult } from "@/lib/exam";
 import type { WeeklyStatus } from "@/lib/weekly";
 import type { PlacementRecord } from "@/lib/placement";
 import { describePerSkill } from "@/lib/placement-score";
-import { BookOpenIcon, CheckIcon } from "@/components/icons";
+import { BookOpenIcon, CheckIcon, ChevronIcon } from "@/components/icons";
 import { LEVEL_TONE, SKILL_ICON } from "./theme";
 
 /** Hub'a inen hafif liste satırı — egzersizin tam içeriği yalnızca kendi sayfasına gider. */
@@ -43,6 +46,8 @@ export type SkillsBoard = {
 export type ExamHubData = {
   history: ExamResult[];
   weekly: WeeklyStatus | null;
+  /** Haftalık kullanım sınavı puanları (yeni → eski) — çubuk grafik için. */
+  weeklyBars: { week: string; score: number | null }[];
   placement: PlacementRecord | null;
   canRetake: boolean;
 };
@@ -309,7 +314,22 @@ function tone(score: number | null) {
           : "var(--color-rose)";
 }
 
+/**
+ * Yetkinlik panosu ve altındaki ayrıntı.
+ *
+ * Üç ölçüm kartı (zayıf noktalar, gelişim, yapabildiklerim) profildeydi ve
+ * yanlış yerdeydi: profil ayar ekranı, bunlar ise panonun devamı. Aynı sayfada
+ * olmaları ikilenmeyi de bitiriyor — yetkinlik iki ayrı ekranda iki kez
+ * çiziliyordu.
+ *
+ * Ama üçü birden açık gelmiyor. Panonun kendisi "neredeyim" sorusuna altı
+ * çubukla zaten cevap veriyor; ayrıntı, cevabı beğenmeyip "neden" diye soran
+ * için. Kapalı açılmak sayfanın ilk ekranını da koruyor: pano, sekmeler ve
+ * listenin başı tek bakışta görünüyor.
+ */
 function Board({ board, level, activeLevel }: { board: SkillsBoard; level: CefrLevel; activeLevel: CefrLevel }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <section className="card p-4" aria-label="Yetkinlik">
       <div className="flex items-baseline justify-between">
@@ -342,6 +362,36 @@ function Board({ board, level, activeLevel }: { board: SkillsBoard; level: CefrL
           <span className="btn btn-primary shrink-0 px-3 py-1.5 text-xs">Başla</span>
         </Link>
       ) : null}
+
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="muted mt-3 flex w-full items-center justify-center gap-1.5 text-xs font-semibold"
+      >
+        {open ? "Ayrıntıyı kapat" : "Nerede zayıfım, ne kadar ilerledim"}
+        <motion.span animate={{ rotate: open ? 90 : 0 }} transition={{ duration: 0.18 }} className="inline-flex">
+          <ChevronIcon size={14} />
+        </motion.span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open ? (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="overflow-hidden"
+          >
+            <div className="mt-3 space-y-3 border-t pt-3" style={{ borderColor: "var(--border)" }}>
+              <WeakSpotsCard />
+              <GrowthCard />
+              <CandoCard />
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </section>
   );
 }
@@ -575,6 +625,36 @@ function ExamTab({ level, data }: { level: CefrLevel; data: ExamHubData | null }
               </li>
             ))}
           </ul>
+        </div>
+      ) : null}
+
+      {/*
+        Haftalık kullanım puanları. Profildeki "Sınavlarım" kartından buraya
+        taşındı: sınav girişleri, sınav arşivi ve haftalık eğri tek sekmede
+        toplanınca profilde aynı bilgiyi ikinci kez çizen kart gereksiz kaldı.
+        Hafta başına tek çubuk, yeni hafta en sağda — eğri soldan sağa okunuyor.
+      */}
+      {data?.weeklyBars.length ? (
+        <div>
+          <p className="muted mb-1.5 px-1 text-[11px] font-bold uppercase tracking-wide">Haftalık kullanım</p>
+          <div className="card p-4">
+            <div className="flex items-end gap-1.5" aria-label="Haftalık kullanım sınavı puanları">
+              {[...data.weeklyBars].reverse().map((w) => (
+                <div key={w.week} className="flex flex-1 flex-col items-center gap-1" title={`${w.week}: %${w.score ?? 0}`}>
+                  <div className="flex h-14 w-full items-end overflow-hidden rounded-md surface-2">
+                    <div
+                      className="w-full rounded-md"
+                      style={{
+                        height: `${Math.max(4, w.score ?? 0)}%`,
+                        background: (w.score ?? 0) >= 70 ? "var(--color-mint)" : "var(--color-flame)",
+                      }}
+                    />
+                  </div>
+                  <span className="muted text-[10px] tabular-nums">%{w.score ?? 0}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       ) : null}
     </section>

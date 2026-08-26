@@ -9,7 +9,7 @@ import { SkillsHub, type ExamHubData, type ServerSkillProgress, type SkillItem, 
 import { weakSpeechTopics, type SpeechTopic } from "@/lib/speech-progress";
 import { proficiencyFor } from "@/lib/proficiency-data";
 import { examHistory } from "@/lib/exam";
-import { weeklyStatus } from "@/lib/weekly";
+import { weeklyHistory, weeklyStatus } from "@/lib/weekly";
 import { lastPlacement, RETAKE_DAYS } from "@/lib/placement";
 import { candoForExercise } from "@/lib/cando-map";
 import { candoById } from "@/lib/cando";
@@ -84,13 +84,14 @@ export default async function SkillsPage() {
   let exams: ExamHubData | null = null;
   try {
     const day = new Date().toISOString().slice(0, 10);
-    const [history, weekly, placement] = await Promise.all([
-      examHistory(user.id, 5),
+    const [history, weekly, weeklyBars, placement] = await Promise.all([
+      examHistory(user.id, 8),
       weeklyStatus(user.id, day).catch(() => null),
+      weeklyHistory(user.id, 8).catch(() => []),
       lastPlacement(user.id).catch(() => null),
     ]);
     const canRetake = !placement || Date.now() - new Date(placement.at).getTime() >= RETAKE_DAYS * 86400000;
-    exams = { history, weekly, placement, canRetake };
+    exams = { history, weekly, weeklyBars, placement, canRetake };
   } catch (err) {
     console.error("[skills] sınav verisi okunamadı", err);
   }
