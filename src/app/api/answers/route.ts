@@ -4,25 +4,23 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { saveSessionProgress, submitAnswers } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
-import type { Answer, GameId, Wager } from "@/lib/types";
+import { GAME_LABELS, type Answer, type GameId, type Wager } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
-const GAMES: GameId[] = [
-  "free_sentence",
-  "intro",
-  "match",
-  "choice",
-  "artikel",
-  "cloze",
-  "scramble",
-  "typing",
-  "order",
-  "plural",
-  "listen",
-  "truefalse",
-  "speak",
-];
+/**
+ * Kabul edilen oyunlar — TEK KAYNAKTAN.
+ *
+ * Burada elle yazılmış bir liste vardı ve sürüklendi: "Çevir" oyunu eklendiğinde
+ * kimse bu dosyayı açmadı. Sonucu şuydu — çeviri cevabı gelen her istek 400
+ * dönüyor, istemci turu kaydedemiyor ve "bağlantın koptu" uyarısı çıkıyordu.
+ * Bağlantı kopmamıştı; istek reddediliyordu.
+ *
+ * `GAME_LABELS` bir `Record<GameId, string>`, yani anahtarları GameId'nin
+ * TAMAMI ve derleyici eksik bırakmaya izin vermiyor. Listeyi ondan türetmek
+ * aynı sürüklenmeyi bir daha imkânsız kılıyor.
+ */
+const GAMES = new Set(Object.keys(GAME_LABELS));
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
@@ -68,7 +66,7 @@ function parseBody(body: unknown) {
     if (typeof raw !== "object" || raw === null) return null;
     const a = raw as Record<string, unknown>;
     if (typeof a.wordId !== "number" || !Number.isInteger(a.wordId)) return null;
-    if (typeof a.game !== "string" || !GAMES.includes(a.game as GameId)) return null;
+    if (typeof a.game !== "string" || !GAMES.has(a.game)) return null;
     if (typeof a.correct !== "boolean") return null;
     answers.push({
       wordId: a.wordId,
