@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronIcon } from "@/components/icons";
 import { SpeakButton } from "@/components/speak-button";
 import { grammarNote, typLabel } from "@/components/games/types";
 import { firstExample } from "@/lib/example";
@@ -70,13 +71,20 @@ export function WordList({
   page,
   hasMore,
   query,
+  progress,
+  progressSummary,
 }: {
   rows: WordRow[];
   total: number;
   page: number;
   hasMore: boolean;
   query: { q: string; level: string; status: string };
+  /** İlerleme grafikleri (sunucuda kurulur) — başlığın altında katlanmış durur. */
+  progress?: ReactNode;
+  /** Kapalıyken de görünen tek satırlık özet. */
+  progressSummary?: string;
 }) {
+  const [showProgress, setShowProgress] = useState(false);
   const router = useRouter();
   const params = useSearchParams();
   const [term, setTerm] = useState(query.q);
@@ -119,6 +127,54 @@ export function WordList({
           {total.toLocaleString("tr-TR")} kelime · A1'den C1'e, en yaygın olanlar başta
         </p>
       </header>
+
+      {/*
+        İlerleme grafikleri profildeydi ve orası yanlış yerdi: kaç kelimenin
+        pekiştiğini merak eden kişi zaten kelime ekranındadır. Buraya gelince
+        "Kelimelerim" tek bir soruyu değil ikisini birden cevaplıyor — hangi
+        kelimeler ve ne kadarı oturdu.
+
+        Kapalı açılıyor: dört grafik listenin önüne geçerse ekran yine bir
+        panoya döner. Özet satırı kapalıyken de görünüyor, yani sayıya ulaşmak
+        için açmak gerekmiyor.
+      */}
+      {progress ? (
+        <section className="card overflow-hidden">
+          <button
+            type="button"
+            onClick={() => setShowProgress((v) => !v)}
+            aria-expanded={showProgress}
+            className="flex w-full items-center gap-3 px-4 py-3 text-left"
+          >
+            <span className="min-w-0 flex-1">
+              <span className="block text-sm font-bold">İlerlemem</span>
+              {progressSummary ? <span className="muted block text-xs">{progressSummary}</span> : null}
+            </span>
+            <motion.span
+              animate={{ rotate: showProgress ? 90 : 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+              className="muted shrink-0"
+            >
+              <ChevronIcon size={18} />
+            </motion.span>
+          </button>
+          <AnimatePresence initial={false}>
+            {showProgress ? (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+                className="overflow-hidden"
+              >
+                <div className="border-t px-4 pb-4 pt-4" style={{ borderColor: "var(--border)" }}>
+                  {progress}
+                </div>
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
+        </section>
+      ) : null}
 
       <div className="space-y-3">
         <input

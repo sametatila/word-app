@@ -2,7 +2,8 @@ import { and, asc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
-import { ensureProfile } from "@/lib/session";
+import { ensureProfile, getProgress } from "@/lib/session";
+import { ProgressView } from "@/components/progress-view";
 import { WordList, type WordRow } from "@/components/word-list";
 
 export const dynamic = "force-dynamic";
@@ -99,6 +100,20 @@ export default async function WordsPage({
       leech: r.leech ?? false,
     }));
 
+    /*
+      İlerleme grafikleri profilden buraya taşındı. Ayrı bir sorgu ama aynı
+      sayfada: kaç kelimenin pekiştiğini merak eden kişi zaten burada.
+      Okunamazsa yalnızca bölüm görünmez, liste açılmaya devam eder.
+    */
+    const today = new Date().toISOString().slice(0, 10);
+    const progress = await getProgress(userId, today).catch((err) => {
+      console.error("[words] ilerleme okunamadı", err);
+      return null;
+    });
+
+    const mastered = progress ? progress.levels.reduce((s, l) => s + l.mastered, 0) : 0;
+    const seen = progress ? progress.levels.reduce((s, l) => s + l.seen, 0) : 0;
+
     return (
       <WordList
         rows={list}
@@ -106,6 +121,32 @@ export default async function WordsPage({
         page={page}
         hasMore={hasMore}
         query={{ q, level, status }}
+        progressSummary={
+          progress
+            ? `${mastered.toLocaleString("tr-TR")} pekişti · ${seen.toLocaleString("tr-TR")} görüldü · ${progress.dueNow} tekrar sırada`
+            : undefined
+        }
+        progress={
+          progress ? (
+            <ProgressView
+              levels={progress.levels}
+              days={progress.days.map((d) => ({
+                day: String(d.day),
+                reviews: d.reviews,
+                correct: d.correct,
+                xp: d.xp,
+              }))}
+              dueNow={progress.dueNow}
+              upcoming={progress.upcoming}
+              games={progress.games}
+              seconds={progress.seconds}
+              leeches={progress.leeches}
+              streak={progress.profile.currentStreak}
+              longest={progress.profile.longestStreak}
+              today={today}
+            />
+          ) : undefined
+        }
       />
     );
   } catch (err) {
