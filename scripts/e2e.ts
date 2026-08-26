@@ -84,7 +84,9 @@ import { bandOf, computeProficiency, weakestSkill, type Evidence, type EvidenceS
 import { gatherEvidence, proficiencyFor } from "../src/lib/proficiency-data";
 import { errorReport, frequentErrorTypes } from "../src/lib/error-analytics";
 import { growthReport } from "../src/lib/growth";
-import { buildExam, examById, examHistory, finishExam, scoreSections } from "../src/lib/exam";
+import { buildExam, examById, examCando, examHistory, finishExam, scoreSections } from "../src/lib/exam";
+import { moduleContent } from "../src/lib/lessons/module-content";
+import { foldSentence } from "../src/lib/sentence-match";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
 
@@ -2377,32 +2379,51 @@ async function main() {
   const planS = await buildPlan(USER, today41, "de", "A2", 20);
   check("plan özet satırı taşıyor", typeof planS.summary === "string" && planS.summary!.includes("50 cevap"));
 
-  console.log("\n42) Seviye ve modül sınavı v2 (WP-41)");
+  console.log("\n42) Seviye ve modül sınavı v3 (WP-41)");
   await reset();
   await ensureProfile(USER, "E2E");
   const p1 = await buildExam(USER, "de", "A1", null, monday);
   const p2 = await buildExam(USER, "de", "A1", null, monday);
-  check("seviye kâğıdı: 12 kelime (üretim), 12 dilbilgisi, 2 okuma, 2 dinleme", p1.sections.vocab.length === 12 && p1.sections.grammar.length === 12 && p1.sections.reading.length === 2 && p1.sections.listening.length === 2, `${p1.sections.vocab.length}/${p1.sections.grammar.length}/${p1.sections.reading.length}/${p1.sections.listening.length}`);
+  check("seviye kâğıdı: 12 kelime, 12 dilbilgisi, 6 cümle kurma, 2 okuma, 2 dinleme", p1.sections.vocab.length === 12 && p1.sections.grammar.length === 12 && p1.sections.produce.length === 6 && p1.sections.reading.length === 2 && p1.sections.listening.length === 2, `${p1.sections.vocab.length}/${p1.sections.grammar.length}/${p1.sections.produce.length}/${p1.sections.reading.length}/${p1.sections.listening.length}`);
   check("kelime bölümü yalnız üretim oyunları", p1.sections.vocab.every((r) => r.game === "translate" || r.game === "typing"));
-  check("aynı hafta aynı kâğıt (tohumlu)", p1.sections.grammar.map((g) => g.id).join() === p2.sections.grammar.map((g) => g.id).join() && p1.sections.vocab.map((r) => (r as { word: { id: number } }).word.id).join() === p2.sections.vocab.map((r) => (r as { word: { id: number } }).word.id).join());
+  check("aynı hafta aynı kâğıt (tohumlu)", p1.sections.grammar.map((g) => g.id).join() === p2.sections.grammar.map((g) => g.id).join() && p1.sections.produce.map((g) => g.id).join() === p2.sections.produce.map((g) => g.id).join());
   const p3 = await buildExam(USER, "de", "A1", null, shiftDay(monday, 7));
   check("sonraki hafta farklı kâğıt", p3.sections.grammar.map((g) => g.id).join() !== p1.sections.grammar.map((g) => g.id).join());
-  const pm = await buildExam(USER, "de", "A1", 0, monday);
-  check("modül kâğıdı: 6/6/1/1 ve ön koşulsuz → deneme", pm.sections.vocab.length === 6 && pm.sections.grammar.length === 6 && pm.sections.reading.length === 1 && pm.trial === true);
-  check("süre: modül 20 dk, seviye 45 dk", pm.seconds === 1200 && p1.seconds === 2700);
-  const sc1 = scoreSections({ sections: [{ id: "vocab", correct: 10, total: 12 }, { id: "grammar", correct: 9, total: 12 }, { id: "reading", correct: 5, total: 6 }, { id: "listening", correct: 4, total: 6 }, { id: "writing", correct: 0, total: 1 }], writingScore: 75, seconds: 100 });
-  check("geçme: toplam ≥70 ve her bölüm ≥50", sc1.passed && sc1.total >= 70 && sc1.sections.find((s) => s.id === "writing")?.pct === 75, JSON.stringify(sc1));
-  const sc2 = scoreSections({ sections: [{ id: "vocab", correct: 12, total: 12 }, { id: "grammar", correct: 12, total: 12 }, { id: "reading", correct: 6, total: 6 }, { id: "listening", correct: 2, total: 6 }], seconds: 100 });
+
+  const pm = await buildExam(USER, "de", "A1", 2, monday);
+  check("modül kâğıdı: 6/6/5/1/1 ve ön koşulsuz → deneme", pm.sections.vocab.length === 6 && pm.sections.grammar.length === 6 && pm.sections.produce.length === 5 && pm.sections.reading.length === 1 && pm.sections.listening.length === 1 && pm.trial === true, `${pm.sections.vocab.length}/${pm.sections.grammar.length}/${pm.sections.produce.length}`);
+  check("süre: modül 25 dk, seviye 45 dk", pm.seconds === 1500 && p1.seconds === 2700);
+  check("kapak modülün kendisi (A1.3 · Yeme-içme)", pm.cover?.code === "A1.3" && pm.cover.titleDe === "Essen und Trinken" && pm.cover.canDo.length >= 4, JSON.stringify(pm.cover?.code));
+  check("okuma ve dinleme modülün planından", pm.sections.reading[0].id === "r:A1.3" && pm.sections.listening[0].id === "l:A1.3");
+  check("dinleme diyaloğu replikli, metni gizli", (pm.sections.listening[0].segments?.length ?? 0) >= 4 && !pm.sections.listening[0].text);
+  check("dilbilgisi: hem tablo hücresi hem ders hükmü", pm.sections.grammar.some((g) => g.kind === "cell") && pm.sections.grammar.some((g) => g.kind === "judge"));
+  const modLessons = moduleContent("de", "A1", 2).lessons.map((l) => l.id);
+  check("hüküm maddeleri modülün derslerinden", pm.sections.grammar.filter((g) => g.kind === "judge").every((g) => modLessons.some((id) => g.id.startsWith(`j:${id}#`))));
+  check("cümle kurma maddeleri modülün derslerinden", pm.sections.produce.every((i) => modLessons.some((id) => i.id.startsWith(`p:${id}#`))));
+  check("cümle kurma sorusu cevabı ele vermiyor", pm.sections.produce.every((i) => !foldSentence(i.prompt).includes(foldSentence(i.de))));
+  check("dizme maddesinde parçalar cümlenin kelimeleri", pm.sections.produce.filter((i) => i.mode === "order").every((i) => [...(i.chunks ?? [])].sort().join(" ") === i.de.trim().split(/\s+/).sort().join(" ")));
+  const pmB = await buildExam(USER, "de", "A2", 4, monday);
+  check("başka modül başka kâğıt (A2.5)", pmB.cover?.code === "A2.5" && pmB.sections.reading[0].id === "r:A2.5");
+
+  const sc1 = scoreSections({ sections: [{ id: "vocab", correct: 10, total: 12 }, { id: "grammar", correct: 9, total: 12 }, { id: "reading", correct: 5, total: 6 }, { id: "listening", correct: 4, total: 6 }, { id: "writing", correct: 0, total: 1 }], writingScore: 75, seconds: 100 }, "level");
+  check("geçme: toplam ≥70 ve her bölüm ≥50", sc1.passed && sc1.total >= 70 && sc1.sections.find((s) => s.id === "writing")?.pct === 75, JSON.stringify(sc1.total));
+  check("bölüm ağırlıkları %100'e tamamlanıyor", Math.abs(sc1.sections.reduce((a, s) => a + s.weight, 0) - 100) <= 1, String(sc1.sections.reduce((a, s) => a + s.weight, 0)));
+  const sc2 = scoreSections({ sections: [{ id: "vocab", correct: 12, total: 12 }, { id: "grammar", correct: 12, total: 12 }, { id: "reading", correct: 6, total: 6 }, { id: "listening", correct: 2, total: 6 }], seconds: 100 }, "level");
   check("bir bölüm <50 → toplam yüksek olsa da kalır", !sc2.passed && sc2.total >= 70);
+  // Üretim ağırlığı: tek maddelik yazma bölümü madde sayısına göre %4 ederdi.
+  const scW = scoreSections({ sections: [{ id: "vocab", correct: 6, total: 6 }, { id: "grammar", correct: 6, total: 6 }, { id: "produce", correct: 0, total: 5 }, { id: "writing", correct: 0, total: 1 }], writingScore: 0, seconds: 100 }, "module");
+  check("üretim bölümleri puanın ağırlığını taşıyor", scW.total < 50 && !scW.passed, String(scW.total));
+
   const er = await finishExam(USER, { kind: "level", level: "A1", module: null, trial: false }, { sections: [{ id: "vocab", correct: 10, total: 12 }, { id: "grammar", correct: 9, total: 12 }, { id: "reading", correct: 5, total: 6 }, { id: "listening", correct: 4, total: 6 }], seconds: 900 }, monday);
-  check("sonuç kaydedildi ve geçti", er.passed && er.total === 78 && er.kind === "level");
+  check("sonuç kaydedildi ve geçti", er.passed && er.total === 77 && er.kind === "level", String(er.total));
   check("sertifikaya uygun (geçti, deneme değil)", (await examById(USER, er.id))?.passed === true);
   const hist = await examHistory(USER);
   check("geçmişte listeleniyor", hist.length === 1 && hist[0].id === er.id);
   const evx = await db.select().from(events).where(and(eq(events.userId, USER), eq(events.name, "exam_finish")));
-  check("exam_finish kind=level:A1", evx.some((e) => e.kind === "level:A1" && e.value === 78));
+  check("exam_finish kind=level:A1", evx.some((e) => e.kind === "level:A1" && e.value === 77));
   const er2 = await finishExam(USER, { kind: "level", level: "A1", module: null, trial: false }, { sections: [{ id: "vocab", correct: 3, total: 12 }], seconds: 100 }, monday);
   check("aynı gün tekrar: satır güncellenir, yeni kayıt açılmaz", er2.id === er.id && (await examHistory(USER)).length === 1);
+  check("geçilen modülün yapabilirlik satırları var", examCando("A1", 2).length >= 4 && examCando("A1", 2)[0].de.startsWith("Ich kann"));
 
   await reset();
   await db.delete(achievements).where(eq(achievements.userId, "e2e-rival"));

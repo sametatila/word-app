@@ -26,6 +26,8 @@
     "test:pronounce": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-pronounce.ts",
     "test:cheat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-drills.ts",
     "test:content": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-content.ts",
+    "test:exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-exams.ts",
+    "test:exam-build": "tsx --tsconfig scripts/tsconfig.dry.json scripts/exam-dryrun.ts",
     "db:seed": "tsx scripts/seed.ts",
     "db:seed:skills": "tsx scripts/seed-skills.ts",
     "db:seed:zurich": "tsx scripts/seed-zurich.ts",
