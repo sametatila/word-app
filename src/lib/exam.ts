@@ -5,84 +5,106 @@ import { exams, userLessons, userSkills, words } from "@/lib/db/schema";
 import { CHEAT_ITEMS } from "@/lib/cheatsheet/items";
 import { chatConfigured, sttProviders } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
-import { LESSONS } from "@/lib/lessons";
+import { LESSONS, levelIndex } from "@/lib/lessons";
 import { MODULE_SIZE } from "@/lib/lessons/modules";
-import { moduleVocab } from "@/lib/lessons/boss";
+import {
+  moduleContent,
+  moduleSheets,
+  selfAnswering,
+  type ProduceItem as LessonProduceItem,
+} from "@/lib/lessons/module-content";
+import { moduleExamPlan, type ExamCando, type ModuleExamPlan } from "@/lib/lessons/module-exam";
 import { makeRound, toRoundWord, weekStart } from "@/lib/session";
 import { seededShuffle } from "@/lib/shuffle";
 import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
-import type { CefrLevel, SpeechConfusion, WritingTask } from "@/lib/skills/types";
+import {
+  scoreSections,
+  LEVEL_SECONDS,
+  MODULE_PREREQ,
+  MODULE_SECONDS,
+  type ExamCover,
+  type ExamKind,
+  type ExamPaper,
+  type ExamResult,
+  type ExamSubmission,
+  type GrammarItem,
+  type ProduceExamItem,
+  type SectionScore,
+  type SpeakingItem,
+  type TextItem,
+  type WritingItem,
+} from "@/lib/exam-types";
+import type { CefrLevel, WritingTask, SpeechConfusion } from "@/lib/skills/types";
 import type { Round } from "@/lib/types";
 
 /**
- * Seviye ve modül sınavı v2 (plan WP-41).
+ * Modül ve seviye sınavı (plan WP-41, v3).
  *
- * Modül patron turu bir HIZ turudur (15 tanıma sorusu, 60 sn); burası
- * gerçek sınav: bölümler, zaman sınırı, geri dönüş yok, ipucu yok, bölüm
- * başına puan, geçme eşiği ve sertifika.
+ * **Neyi ölçüyor.** Dersler konuşma üzerine kurulu: her ders bir kalıp
+ * öğretiyor, Türkçe bir cümleyi Almanca kurduruyor, bozuk bir cümle hakkında
+ * hüküm verdiriyor ve sonunda rol yaptırıyor. Sınav uzun süre bunun hiçbirini
+ * ölçmüyordu — modülden yalnızca KELİME listesi alınıyor, geri kalan bölümler
+ * (dilbilgisi, okuma, dinleme, yazma) SEVİYE havuzundan çekiliyordu. Sonuç:
+ * "A1 Modül 3 · Yeme-içme" sınavında tren garı metni ve Perfekt sorusu.
  *
- *   Bölüm       modül  seviye  kaynak
- *   kelime        6      12    modül/seviye kelimeleri → çeviri / yazma (üretim)
- *   dilbilgisi    6      12    dilbilgisi tablosu hücreleri → şıklı (WP-11 gelince drill)
- *   okuma         3       6    beceri bankası, kullanılmamış egzersiz
- *   dinleme       3       6    beceri bankası, kullanılmamış egzersiz
- *   yazma         1       1    serbest görev → AI rubriği (WP-30)
- *   konuşma       2       3    seviyenin söyleyiş cümleleri → kelime düzeyi telaffuz puanı (WP-20);
- *                              STT sağlayıcısı yoksa bölüm kâğıtta yok (yazma gibi)
+ * v3'te modül sınavının her bölümü modülün kendisinden geliyor:
  *
- * Geçme: toplam ≥ %70 ve hiçbir bölüm < %50. Modül sınavında ön koşul:
- * modül derslerinin ≥ %80'i geçilmiş; değilse sınav "deneme" olarak
- * kaydedilir (sayılmaz, sertifika yok) — kullanıcı yine deneyebilir, ama
- * sonuç yetkinlik kanıtına girmez.
+ *   Bölüm        madde  ağırlık  kaynak
+ *   Wortschatz     6      %12    modülün kelimeleri → çeviri / yazma
+ *   Grammatik      6      %18    modülün odak tabloları + derslerin hüküm cümleleri
+ *   Satzbau        5      %25    derslerin ÜRETİM adımları (Türkçe → Almanca)
+ *   Lesen          2      %8     modül temalı yazılı metin (elle yazılı)
+ *   Hören          3      %12    modül sahnesinde geçen diyalog (elle yazılı)
+ *   Sprechen       2      %15    modülün durumunda söylenecek cümleler
+ *   Schreiben      1      %10    modül temalı görev → AI rubriği
  *
- * Maddeler tohumlu: aynı kullanıcı, aynı sınav, aynı hafta → aynı kâğıt
- * (yarıda bırakıp dönünce farklı sorularla karşılaşmasın); haftaya yeni kâğıt.
+ * **Ağırlık neden var.** Eskiden puan madde sayısına göre hesaplanıyordu ve
+ * yazma bölümü 24 maddenin 1'iydi: yani kâğıdın %4'ü. Konuşma tabanlı bir
+ * kursta üretim bölümlerinin toplam ağırlığı %50 olmalı — `SECTION_WEIGHT`
+ * bunu söylüyor, madde sayısı değil.
+ *
+ * **Geçme:** toplam ≥ %70 ve hiçbir bölüm < %50. Ön koşul: modül derslerinin
+ * ≥ %80'i geçilmiş; değilse sınav "deneme" (sayılmaz, sertifika yok).
+ *
+ * Maddeler tohumlu: aynı kullanıcı, aynı sınav, aynı hafta → aynı kâğıt.
  */
 
-export type ExamKind = "module" | "level";
-export type ExamSectionId = "vocab" | "grammar" | "reading" | "listening" | "speaking" | "writing";
+export type {
+  ExamKind,
+  ExamSectionId,
+  GrammarItem,
+  ProduceExamItem,
+  TextItem,
+  WritingItem,
+  SpeakingItem,
+  ExamCover,
+  ExamPaper,
+  SectionScore,
+  ExamSubmission,
+  ExamResult,
+} from "@/lib/exam-types";
+export {
+  SECTION_ORDER,
+  SECTION_TITLE,
+  SECTION_TITLE_DE,
+  SECTION_WEIGHT,
+  MODULE_SECONDS,
+  LEVEL_SECONDS,
+  PASS_TOTAL,
+  PASS_SECTION,
+  MODULE_PREREQ,
+  scoreSections,
+} from "@/lib/exam-types";
 
-export type GrammarItem = { id: string; sheet: string; key: string; label: string; options: string[]; answer: number };
-export type TextItem = {
-  id: string;
-  title: string;
-  text?: string;
-  segments?: { speaker?: string; text: string }[];
-  questions: { text: string; options: string[]; answer: number }[];
+
+const COUNTS: Record<ExamKind, { vocab: number; grammar: number; produce: number; text: number; speaking: number; writing: number }> = {
+  module: { vocab: 6, grammar: 6, produce: 5, text: 1, speaking: 2, writing: 1 },
+  level: { vocab: 12, grammar: 12, produce: 6, text: 2, speaking: 3, writing: 1 },
 };
-export type WritingItem = { id: string; task: Extract<WritingTask, { kind: "free" }> };
-/** Söyleyiş maddesi: cümle, Türkçesi, bilinen sapmalar — puan `/api/pronounce`tan. */
-export type SpeakingItem = { id: string; de: string; tr: string; hint?: string; confusions?: SpeechConfusion[] };
 
-export type ExamPaper = {
-  kind: ExamKind;
-  level: CefrLevel;
-  module: number | null;
-  /** Ön koşul sağlanmadıysa true: sonuç sayılmaz. */
-  trial: boolean;
-  /** Toplam süre (saniye). */
-  seconds: number;
-  sections: {
-    vocab: Round[];
-    grammar: GrammarItem[];
-    reading: TextItem[];
-    listening: TextItem[];
-    speaking: SpeakingItem[];
-    writing: WritingItem[];
-  };
-  seed: string;
-};
-
-export const MODULE_SECONDS = 20 * 60;
-export const LEVEL_SECONDS = 45 * 60;
-export const PASS_TOTAL = 70;
-export const PASS_SECTION = 50;
-export const MODULE_PREREQ = 0.8;
-
-const COUNTS: Record<ExamKind, { vocab: number; grammar: number; text: number; speaking: number; writing: number }> = {
-  module: { vocab: 6, grammar: 6, text: 1, speaking: 2, writing: 1 },
-  level: { vocab: 12, grammar: 12, text: 2, speaking: 3, writing: 1 },
-};
+/** Dilbilgisi hücresinin cevabı bu uzunluğu aşarsa madde değil örnektir. */
+const MAX_CELL_ANSWER = 24;
+const EXAMPLE_LABEL = /örnek|beispiel|satz/i;
 
 export function examKindKey(kind: ExamKind, level: CefrLevel, module: number | null): string {
   return kind === "module" ? `module:${level}:${module ?? 0}` : `level:${level}`;
@@ -99,13 +121,124 @@ async function modulePrereq(userId: string, course: string, level: CefrLevel, mo
   return passed / chunk.length >= MODULE_PREREQ;
 }
 
+/**
+ * Çeldirici havuzu: cevaptan farklı, birbirinden de farklı kardeşler.
+ *
+ * Tablonun aynı sütununda aynı biçim birden çok satırda geçiyor (çekim
+ * tablosunda "ich soll" ile "er soll" aynı hücreyi taşır). Kardeş listesi
+ * ham hâliyle kullanılınca aynı şık iki kez basılıyor ve soru kendini ele
+ * veriyordu — iki özdeş şıkkın ikisi de doğru olamaz.
+ */
+function distractors(item: { answer: string; siblings: string[] }): string[] {
+  const seen = new Set([item.answer.trim()]);
+  const out: string[] = [];
+  for (const raw of item.siblings) {
+    const s = raw.trim();
+    if (!s || seen.has(s)) continue;
+    seen.add(s);
+    out.push(s);
+  }
+  return out;
+}
+
+/** Tablo hücrelerinden şıklı dilbilgisi maddesi. */
+function cellItems(pool: typeof CHEAT_ITEMS, seed: string, count: number): GrammarItem[] {
+  return seededShuffle(pool, `${seed}|cell`)
+    .slice(0, count)
+    .map((it) => {
+      const options = seededShuffle([it.answer, ...seededShuffle(distractors(it), `${seed}|${it.id}`).slice(0, 3)], `${seed}|opt|${it.id}`);
+      return { kind: "cell", id: `g:${it.id}`, sheet: it.sheetTitle, key: it.key, label: it.label, options, answer: options.indexOf(it.answer) } as const;
+    });
+}
+
+/** Sınavda sorulabilir tablo hücreleri: Almanca biçim, kısa, üç ayrı çeldiricili. */
+function answerableCells(sheetIds: string[], maxLevel: CefrLevel) {
+  const cap = levelIndex(maxLevel);
+  return CHEAT_ITEMS.filter(
+    (it) =>
+      it.speak &&
+      it.answer.length <= MAX_CELL_ANSWER &&
+      !EXAMPLE_LABEL.test(it.label) &&
+      levelIndex(it.level) <= cap &&
+      (!sheetIds.length || sheetIds.includes(it.sheetId)) &&
+      distractors(it).length >= 3,
+  );
+}
+
+/** Üretim adımlarından sınav maddesi: bir kısmı yazma, bir kısmı dizme. */
+function produceItems(source: LessonProduceItem[], seed: string, count: number): ProduceExamItem[] {
+  const usable = source.filter((p) => !selfAnswering(p) && p.de.trim().split(/\s+/).length >= 2);
+  const picked = seededShuffle(usable, `${seed}|produce`).slice(0, count);
+  return picked.map((p, i) => {
+    const words = p.de.trim().split(/\s+/);
+    // Maddelerin yarısı dizme: yazma cümlenin tamamını (kelime + biçim +
+    // sıra), dizme yalnız SIRAYI sınar. İkisi bir arada olunca kelimeyi
+    // bilip sırayı bilmeyen öğrenci ile ikisini de bilmeyen öğrenci
+    // ayrışıyor; ayrıca beş maddenin beşi de boş satır olsaydı bölüm A1'de
+    // ölçmekten çok yıldırırdı.
+    const order = i % 2 === 1 && words.length >= 4 && words.length <= 10;
+    return {
+      id: `p:${p.id}`,
+      prompt: p.prompt,
+      de: p.de,
+      accept: p.accept,
+      mode: order ? "order" : "type",
+      ...(order ? { chunks: seededShuffle(words, `${seed}|chunks|${p.id}`) } : {}),
+    };
+  });
+}
+
+/**
+ * Şıkları karıştırır ve doğru dizini yeniden hesaplar.
+ *
+ * Elle yazılan sorularda doğru şık farkında olmadan hep aynı sıraya
+ * düşebiliyor (yazarken "doğru cevabı ikinci sıraya koyma" alışkanlığı).
+ * Sınavda bu, soruyu okumadan cevaplanabilir hâle getirir. Karıştırma
+ * tohumlu: aynı kâğıt aynı hafta aynı sırayı gösteriyor, ama iki kullanıcının
+ * kâğıdı aynı değil.
+ */
+function shuffleQuestion(q: { text: string; textTr?: string; options: string[]; answer: number }, seed: string) {
+  const right = q.options[q.answer];
+  const options = seededShuffle(q.options, seed);
+  return { ...q, options, answer: options.indexOf(right) };
+}
+
+/** Elle yazılmış modül diyaloğundan dinleme maddesi. */
+function planListening(plan: ModuleExamPlan, count: number, seed: string): TextItem[] {
+  return [
+    {
+      id: `l:${plan.code}`,
+      title: plan.listening.title,
+      titleTr: plan.listening.titleTr,
+      situation: plan.listening.situation,
+      segments: plan.listening.turns.map((t) => ({ speaker: t.speaker, text: t.de, tr: t.tr })),
+      questions: plan.listening.questions.slice(0, count).map((q, i) => shuffleQuestion({ text: q.de, textTr: q.tr, options: q.options, answer: q.answer }, `${seed}|hoeren|${i}`)),
+    },
+  ];
+}
+
+function planReading(plan: ModuleExamPlan, count: number, seed: string): TextItem[] {
+  return [
+    {
+      id: `r:${plan.code}`,
+      title: plan.reading.title,
+      titleTr: plan.reading.titleTr,
+      genre: plan.reading.genre,
+      text: plan.reading.text,
+      questions: plan.reading.questions.slice(0, count).map((q, i) => shuffleQuestion({ text: q.de, textTr: q.tr, options: q.options, answer: q.answer }, `${seed}|lesen|${i}`)),
+    },
+  ];
+}
+
 export async function buildExam(userId: string, course: string, level: CefrLevel, module: number | null, today: string): Promise<ExamPaper> {
   const kind: ExamKind = module === null ? "level" : "module";
   const seed = `${userId}|${examKindKey(kind, level, module)}|${weekStart(today)}`;
   const c = COUNTS[kind];
   const trial = kind === "module" ? !(await modulePrereq(userId, course, level, module!)) : false;
+  const plan = kind === "module" ? moduleExamPlan(level, module!) : undefined;
+  const content = kind === "module" ? moduleContent(course, level, module!) : null;
 
-  // Kelime: modül kelimeleri (başlık) ya da seviyenin sık kelimeleri; üretim turu.
+  // Kelime: modül kelimeleri (ders başlıkları) ya da seviyenin sık kelimeleri.
   const pool = await db
     .select()
     .from(words)
@@ -113,8 +246,8 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
     .orderBy(asc(sql`coalesce(${words.rank}, 999999)`), asc(words.id))
     .limit(400);
   let candidates = pool;
-  if (kind === "module") {
-    const heads = new Set(moduleVocab(course, level, module!).map((h) => h.toLocaleLowerCase("de-DE")));
+  if (content) {
+    const heads = new Set(content.words.map((w) => w.head));
     const inModule = pool.filter((w) => heads.has(w.de.toLocaleLowerCase("de-DE")));
     if (inModule.length >= c.vocab) candidates = inModule;
   }
@@ -128,18 +261,32 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
     if (r) vocab.push(r);
   }
 
-  // Dilbilgisi: seviyenin tablo hücreleri, kardeşleri çeldirici.
-  const grammar: GrammarItem[] = seededShuffle(
-    CHEAT_ITEMS.filter((it) => it.level === level && it.siblings.length >= 3 && !it.speak),
-    `${seed}|grammar`,
-  )
-    .slice(0, c.grammar)
-    .map((it) => {
-      const options = seededShuffle([it.answer, ...seededShuffle(it.siblings.filter((s) => s !== it.answer), `${seed}|${it.id}`).slice(0, 3)], `${seed}|opt|${it.id}`);
-      return { id: `g:${it.id}`, sheet: it.sheetTitle, key: it.key, label: it.label, options, answer: options.indexOf(it.answer) };
-    });
+  // Dilbilgisi: modülün odak tabloları + derslerin hüküm cümleleri.
+  const grammar: GrammarItem[] = [];
+  if (content) {
+    const judges = seededShuffle(content.judge, `${seed}|judge`).slice(0, Math.floor(c.grammar / 2));
+    const cells = cellItems(answerableCells(moduleSheets(content), level), seed, c.grammar - judges.length);
+    // Dönüşümlü: iki hüküm arka arkaya gelince bölüm "doğru/yanlış turu"na
+    // benziyor ve şıklı maddeler kâğıdın sonuna yığılıyordu.
+    for (let i = 0; i < Math.max(judges.length, cells.length); i++) {
+      if (cells[i]) grammar.push(cells[i]);
+      const j = judges[i];
+      if (j) grammar.push({ kind: "judge", id: `j:${j.id}`, statement: j.statement, answer: j.answer, why: j.why });
+    }
+  } else {
+    grammar.push(...cellItems(answerableCells([], level).filter((it) => it.level === level), seed, c.grammar));
+  }
 
-  // Okuma / dinleme: seviyede kullanılmamış egzersizler önce.
+  // Cümle kurma: derslerin üretim adımları. Seviye sınavında seviyenin bütün
+  // modülleri havuz.
+  const produceSource: LessonProduceItem[] = content
+    ? content.produce
+    : LESSONS.filter((l) => l.course === course && l.level === level).length
+      ? Array.from({ length: Math.ceil(LESSONS.filter((l) => l.course === course && l.level === level).length / MODULE_SIZE) }).flatMap((_, i) => moduleContent(course, level, i).produce)
+      : [];
+  const produce = produceItems(produceSource, seed, c.produce);
+
+  // Okuma / dinleme: modülde elle yazılmış metin, seviyede beceri bankası.
   const done = new Set((await db.select({ id: userSkills.exerciseId }).from(userSkills).where(eq(userSkills.userId, userId))).map((r) => r.id));
   const bank = BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === (course === "gsw-zh" ? "gsw-zh" : "de") && e.level === level);
   const pickTexts = (skill: "reading" | "listening"): TextItem[] => {
@@ -148,99 +295,74 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
     return ordered.slice(0, c.text).map((ex) => ({
       id: `${skill[0]}:${ex.id}`,
       title: ex.title,
+      genre: ex.genre,
       text: ex.skill === "reading" ? ex.text : undefined,
       segments: ex.skill === "listening" ? ex.segments.slice(0, 3).map((s) => ({ speaker: s.speaker, text: s.text })) : undefined,
-      questions: ("questions" in ex ? ex.questions : []).slice(0, 3).map((q) => ({ text: q.text, options: q.options, answer: q.answer })),
+      questions: ("questions" in ex ? ex.questions : []).slice(0, 3).map((q, i) => shuffleQuestion({ text: q.text, options: q.options, answer: q.answer }, `${seed}|${skill}|${ex.id}|${i}`)),
     }));
   };
-  const reading = pickTexts("reading");
-  const listening = pickTexts("listening");
+  const reading = plan ? planReading(plan, 2, seed) : pickTexts("reading");
+  const listening = plan ? planListening(plan, 3, seed) : pickTexts("listening");
 
-  // Yazma: seviyeden bir serbest görev (AI değerlendirmesi; sağlayıcı yoksa bölüm yok).
+  // Yazma: modülün kendi görevi; seviyede bankadan serbest görev. Sağlayıcı
+  // yoksa bölüm kâğıtta hiç yok.
   const writing: WritingItem[] = [];
   if (chatConfigured()) {
-    const tasks = bank
-      .filter((e) => e.skill === "writing")
-      .flatMap((e) => (e.skill === "writing" ? e.tasks.filter((t): t is Extract<WritingTask, { kind: "free" }> => t.kind === "free").map((t, i) => ({ id: `w:${e.id}:${i}`, task: t })) : []));
-    writing.push(...seededShuffle(tasks, `${seed}|writing`).slice(0, c.writing));
-  }
-
-  // Konuşma: seviyenin ses çalışması cümleleri, egzersiz başına en çok bir
-  // (aynı egzersizin iki cümlesi aynı sesi sınar). STT yoksa bölüm yok —
-  // ölçülemeyen bölüm kâğıda konmaz, kullanıcı sertifikayı yine alabilir.
-  const speaking: SpeakingItem[] = [];
-  if (sttProviders().length) {
-    const drills = bank.filter((e) => e.skill === "speaking" && "tasks" in e && e.genre === "Ses çalışması");
-    for (const ex of seededShuffle(drills, `${seed}|speaking`)) {
-      if (speaking.length >= c.speaking) break;
-      const tasks = (ex as { tasks: { de: string; tr: string; hint?: string; confusions?: SpeechConfusion[] }[] }).tasks.filter((t) => t.de && t.de.split(/\s+/).length >= 3);
-      const t = seededShuffle(tasks, `${seed}|${ex.id}`)[0];
-      if (t) speaking.push({ id: `s:${ex.id}`, de: t.de, tr: t.tr, hint: t.hint, confusions: t.confusions?.slice(0, 4) });
+    if (plan) {
+      writing.push({ id: `w:${plan.code}`, task: { kind: "free", ...plan.writing } });
+    } else {
+      const tasks = bank
+        .filter((e) => e.skill === "writing")
+        .flatMap((e) => (e.skill === "writing" ? e.tasks.filter((t): t is Extract<WritingTask, { kind: "free" }> => t.kind === "free").map((t, i) => ({ id: `w:${e.id}:${i}`, task: t })) : []));
+      writing.push(...seededShuffle(tasks, `${seed}|writing`).slice(0, c.writing));
     }
   }
 
-  return { kind, level, module, trial, seconds: kind === "module" ? MODULE_SECONDS : LEVEL_SECONDS, sections: { vocab, grammar, reading, listening, speaking, writing }, seed };
-}
+  // Konuşma: modülün durumunda söylenecek cümleler; seviyede ses çalışması
+  // cümleleri. STT yoksa bölüm kâğıda konmaz — ölçülemeyen bölüm sorulmaz.
+  const speaking: SpeakingItem[] = [];
+  if (sttProviders().length) {
+    if (plan) {
+      speaking.push(...plan.speaking.slice(0, c.speaking).map((s, i) => ({ id: `s:${plan.code}:${i}`, de: s.de, tr: s.tr, situation: s.situation })));
+    } else {
+      const drills = bank.filter((e) => e.skill === "speaking" && "tasks" in e && e.genre === "Ses çalışması");
+      for (const ex of seededShuffle(drills, `${seed}|speaking`)) {
+        if (speaking.length >= c.speaking) break;
+        const tasks = (ex as { tasks: { de: string; tr: string; hint?: string; confusions?: SpeechConfusion[] }[] }).tasks.filter((t) => t.de && t.de.split(/\s+/).length >= 3);
+        const t = seededShuffle(tasks, `${seed}|${ex.id}`)[0];
+        if (t) speaking.push({ id: `s:${ex.id}`, de: t.de, tr: t.tr, hint: t.hint, confusions: t.confusions?.slice(0, 4) });
+      }
+    }
+  }
 
-export type SectionScore = { id: ExamSectionId; correct: number; total: number; pct: number };
+  const cover: ExamCover | null = plan
+    ? { code: plan.code, titleDe: plan.titleDe, titleTr: plan.titleTr, focus: plan.focus, canDo: plan.canDo }
+    : null;
 
-export type ExamSubmission = {
-  /** Bölüm başına doğru/toplam — nesnel bölümler istemcide sayılır, sunucu sınırlar. */
-  sections: { id: ExamSectionId; correct: number; total: number }[];
-  /** Kelime bölümünün cevapları — SRS'e ve hata tipine yazılır. */
-  vocabAnswers?: { wordId: number; game: string; correct: boolean; quality?: number; errorType?: string; detail?: string }[];
-  /** Yazma bölümü rubrik puanı (0–100) — `/api/assess` sonucundan. */
-  writingScore?: number | null;
-  /** Konuşma bölümü: maddelerin telaffuz puanı ortalaması (0–100) — `/api/pronounce`. */
-  speakingScore?: number | null;
-  seconds: number;
-};
-
-export type ExamResult = {
-  id: number;
-  kind: ExamKind;
-  level: CefrLevel;
-  module: number | null;
-  trial: boolean;
-  sections: SectionScore[];
-  total: number;
-  passed: boolean;
-  at: string;
-};
-
-export function scoreSections(sub: ExamSubmission): { sections: SectionScore[]; total: number; passed: boolean } {
-  const sections: SectionScore[] = sub.sections
-    .filter((s) => s.total > 0)
-    .map((s) => {
-      const rubric = s.id === "writing" ? sub.writingScore : s.id === "speaking" ? sub.speakingScore : null;
-      const correct = typeof rubric === "number" ? Math.round((Math.max(0, Math.min(100, rubric)) / 100) * s.total * 100) / 100 : Math.max(0, Math.min(s.total, s.correct));
-      return { id: s.id, correct, total: s.total, pct: Math.round((100 * correct) / s.total) };
-    });
-  const totalItems = sections.reduce((a, s) => a + s.total, 0);
-  const totalCorrect = sections.reduce((a, s) => a + s.correct, 0);
-  const total = totalItems ? Math.round((100 * totalCorrect) / totalItems) : 0;
-  const passed = total >= PASS_TOTAL && sections.every((s) => s.pct >= PASS_SECTION);
-  return { sections, total, passed };
+  return {
+    kind,
+    level,
+    module,
+    trial,
+    seconds: kind === "module" ? MODULE_SECONDS : LEVEL_SECONDS,
+    cover,
+    sections: { vocab, grammar, produce, reading, listening, speaking, writing },
+    seed,
+  };
 }
 
 export async function finishExam(userId: string, paper: Pick<ExamPaper, "kind" | "level" | "module" | "trial">, sub: ExamSubmission, day: string): Promise<ExamResult> {
-  const { sections, total, passed } = scoreSections(sub);
+  const { sections, total, passed } = scoreSections(sub, paper.kind);
   const key = examKindKey(paper.kind, paper.level, paper.module);
+  const answers = { sections, passed, trial: paper.trial, seconds: sub.seconds, vocab: sub.vocabAnswers ?? [] };
+  const correct = Math.round(sections.reduce((a, s) => a + s.correct, 0));
+  const items = sections.reduce((a, s) => a + s.total, 0);
   const [row] = await db
     .insert(exams)
-    .values({
-      userId,
-      kind: key,
-      week: day,
-      level: paper.level,
-      score: total,
-      correct: Math.round(sections.reduce((a, s) => a + s.correct, 0)),
-      total: sections.reduce((a, s) => a + s.total, 0),
-      answers: { sections, passed, trial: paper.trial, seconds: sub.seconds, vocab: sub.vocabAnswers ?? [] },
-    })
+    .values({ userId, kind: key, week: day, level: paper.level, score: total, correct, total: items, answers })
     .onConflictDoUpdate({
       target: [exams.userId, exams.kind, exams.week],
-      set: { score: total, correct: Math.round(sections.reduce((a, s) => a + s.correct, 0)), total: sections.reduce((a, s) => a + s.total, 0), answers: { sections, passed, trial: paper.trial, seconds: sub.seconds, vocab: sub.vocabAnswers ?? [] } },
+      set: { score: total, correct, total: items, answers },
     })
     .returning({ id: exams.id, at: exams.createdAt });
   await track(userId, "exam_finish", day, total, `${paper.kind}:${paper.level}`);
@@ -264,4 +386,32 @@ export async function examHistory(userId: string, limit = 10): Promise<ExamResul
 export async function examById(userId: string, id: number): Promise<ExamResult | null> {
   const list = await examHistory(userId, 200);
   return list.find((e) => e.id === id) ?? null;
+}
+
+/**
+ * Geçilmiş modül sınavları: "A1:2" → en iyi toplam puan.
+ *
+ * Yol haritasındaki taç buradan okuyor. Deneme kayıtları sayılmıyor: modül
+ * dersleri bitmeden girilen sınav bir kanıt değil, bir ön izleme.
+ */
+export async function passedModuleExams(userId: string): Promise<Map<string, number>> {
+  const rows = await db
+    .select({ kind: exams.kind, score: exams.score, answers: exams.answers })
+    .from(exams)
+    .where(and(eq(exams.userId, userId), sql`${exams.kind} like 'module:%'`));
+  const out = new Map<string, number>();
+  for (const r of rows) {
+    const a = r.answers as { passed?: boolean; trial?: boolean } | null;
+    if (!a?.passed || a.trial) continue;
+    const [, level, mod] = r.kind.split(":");
+    const key = `${level}:${Number(mod)}`;
+    out.set(key, Math.max(out.get(key) ?? 0, r.score));
+  }
+  return out;
+}
+
+/** Sınavı geçilmiş modülün yapabilirlik satırları — sertifika ve profil için. */
+export function examCando(level: string, module: number | null): ExamCando[] {
+  if (module === null) return [];
+  return moduleExamPlan(level, module)?.canDo ?? [];
 }

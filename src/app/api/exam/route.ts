@@ -3,6 +3,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, submitAnswers } from "@/lib/session";
 import { buildExam, examHistory, finishExam, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
+import { moduleExamPlan } from "@/lib/lessons/module-exam";
 import { track } from "@/lib/events";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 import { GAME_LABELS, type Answer, type GameId } from "@/lib/types";
@@ -11,17 +12,33 @@ import type { CefrLevel } from "@/lib/skills/types";
 export const dynamic = "force-dynamic";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
-const SECTIONS = new Set<ExamSectionId>(["vocab", "grammar", "reading", "listening", "speaking", "writing"]);
+const SECTIONS = new Set<ExamSectionId>(["vocab", "grammar", "produce", "reading", "listening", "speaking", "writing"]);
 
 /**
- * Sınav v2 (WP-41).
+ * Sınav (WP-41 v3).
  *   GET                                  → geçmiş sınavlar
+ *   GET ?level=A1&module=2               → kâğıdın KAPAĞI (kâğıdın kendisi değil)
  *   POST {action:"start", level, module?} → kâğıt
- *   POST {action:"finish", level, module?, trial, sections, vocabAnswers?, writingScore?, seconds, day}
+ *   POST {action:"finish", level, module?, trial, sections, vocabAnswers?, writingScore?, speakingScore?, seconds, day}
+ *
+ * Kapak ayrı bir uç, çünkü sınav başlamadan önce gösterilen şey (hangi
+ * modül, ne ölçüyor, kaç dakika) kâğıdın kendisini üretmeyi gerektirmemeli:
+ * kapağı görmek için soruları hazırlamak, vazgeçen kullanıcıya o haftanın
+ * kâğıdını harcatırdı.
  */
-export async function GET() {
+export async function GET(req: Request) {
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const url = new URL(req.url);
+  const level = url.searchParams.get("level");
+  const mod = url.searchParams.get("module");
+  if (level && mod !== null) {
+    const plan = moduleExamPlan(level, Number(mod));
+    return NextResponse.json(
+      { cover: plan ? { code: plan.code, titleDe: plan.titleDe, titleTr: plan.titleTr, focus: plan.focus } : null },
+      { headers: { "cache-control": "private, max-age=3600" } },
+    );
+  }
   try {
     return NextResponse.json({ exams: await examHistory(userId) }, { headers: { "cache-control": "no-store" } });
   } catch (err) {
