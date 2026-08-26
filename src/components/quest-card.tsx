@@ -40,10 +40,19 @@ export function QuestCard() {
   const [busy, setBusy] = useState<string | null>(null);
   const [flash, setFlash] = useState(0);
 
+  /**
+   * Gelen gövde KÖRÜ KÖRÜNE dönüştürülmüyordu ve bedeli ağırdı: 200 dönen ama
+   * `quests` taşımayan bir cevapta kart `undefined.filter` ile patlıyor,
+   * hata sınırı devreye giriyor ve BÜTÜN başlangıç ekranı "bir şeyler ters
+   * gitti"ye düşüyordu. Görevler ikincil bir bölüm; tek başına ekranı
+   * indirmemeli. Biçim tutmuyorsa kart yalnızca görünmez.
+   */
   const load = useCallback(async () => {
     try {
       const res = await fetch(`/api/quests?day=${localDay()}`, { cache: "no-store" });
-      if (res.ok) setBoard((await res.json()) as Board);
+      if (!res.ok) return;
+      const data = (await res.json()) as Partial<Board>;
+      if (Array.isArray(data.quests)) setBoard(data as Board);
     } catch {
       /* görevler ikincil: yüklenemezse kart hiç görünmez */
     }
@@ -67,7 +76,9 @@ export function QuestCard() {
           totalXp: number | null;
           currentStreak: number | null;
         };
-        setBoard({ quests: out.quests, allDone: out.allDone, allClaimed: out.allClaimed });
+        if (Array.isArray(out.quests)) {
+          setBoard({ quests: out.quests, allDone: out.allDone, allClaimed: out.allClaimed });
+        }
         if (out.xp > 0) {
           track("quest_claim", out.xp);
           play("unlock");
