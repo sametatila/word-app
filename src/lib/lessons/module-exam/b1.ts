@@ -383,4 +383,79 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         "Sehr geehrte Damen und Herren,\n\nhiermit widerspreche ich Ihrem Bescheid vom 14. April, mit dem mein Antrag auf Verlängerung der Aufenthaltserlaubnis abgelehnt wurde.\n\nDer Einkommensnachweis wurde meiner Ansicht nach fristgerecht eingereicht: Ich habe ihn am 3. April persönlich abgegeben. Eine Kopie mit dem Eingangsstempel füge ich in der Anlage bei.\n\nIch bitte darum, dass der Antrag erneut geprüft wird. Über eine kurze Bestätigung, dass mein Widerspruch eingegangen ist, wäre ich dankbar.\n\nMit freundlichen Grüßen\nLeyla Aydin",
     },
   },
+
+  {
+    level: "B1",
+    index: 5,
+    code: "B1.6",
+    titleDe: "Lernen und Weiterkommen",
+    titleTr: "Eğitim ve gelişim",
+    focus: [
+      { de: "Infinitiv mit zu", tr: "niyet ve değerlendirme: … zu …" },
+      { de: "um … zu + Infinitiv", tr: "amaç bildirmek" },
+      { de: "indirekte Frage", tr: "Ich weiß nicht, wann …" },
+      { de: "Konjunktiv II", tr: "An deiner Stelle würde ich …" },
+      { de: "zweiteilige Konnektoren", tr: "sowohl … als auch …" },
+    ],
+    canDo: [
+      { de: "Ich kann meine Lernziele nennen und begründen.", tr: "Öğrenme hedeflerimi söyleyip gerekçelendirebiliyorum.", en: "I can state and justify my learning goals." },
+      { de: "Ich kann zwei Kurse vergleichen und mich entscheiden.", tr: "İki kursu karşılaştırıp karar verebiliyorum.", en: "I can compare two courses and make a decision." },
+      { de: "Ich kann nach Informationen fragen, die ich nicht habe.", tr: "Bilmediğim bilgileri sorabiliyorum.", en: "I can ask for information I don't have." },
+      { de: "Ich kann eine Erfahrung wie ein Praktikum schriftlich beschreiben.", tr: "Staj gibi bir deneyimi yazılı anlatabiliyorum.", en: "I can describe an experience such as an internship in writing." },
+      { de: "Ich kann Rat geben und um Rückmeldung bitten.", tr: "Tavsiye verip geri bildirim isteyebiliyorum.", en: "I can give advice and ask for feedback." },
+    ],
+    listening: {
+      title: "Welcher Kurs passt?",
+      titleTr: "Hangi kurs uygun?",
+      situation: "Bir kurs danışmanı iki kursu karşılaştırıyor.",
+      turns: [
+        { speaker: "Beraterin", de: "Sie haben A2 abgeschlossen. Wollen Sie den Intensivkurs oder den Abendkurs?", tr: "A2'yi bitirmişsiniz. Yoğun kursu mu akşam kursunu mu istersiniz?" },
+        { speaker: "Herr Demir", de: "Ich arbeite Vollzeit. Wie oft findet der Abendkurs statt?", tr: "Tam zamanlı çalışıyorum. Akşam kursu ne sıklıkta?" },
+        { speaker: "Beraterin", de: "Zweimal pro Woche, jeweils von achtzehn bis halb neun. Der Intensivkurs läuft täglich am Vormittag.", tr: "Haftada iki kez, her seferinde altıdan sekiz buçuğa. Yoğun kurs her gün öğleden önce." },
+        { speaker: "Herr Demir", de: "Und wie lange dauert es bis zur B1-Prüfung?", tr: "Peki B1 sınavına kadar ne kadar sürüyor?" },
+        { speaker: "Beraterin", de: "Im Intensivkurs drei Monate, im Abendkurs etwa sechs.", tr: "Yoğun kursta üç ay, akşam kursunda yaklaşık altı." },
+        { speaker: "Herr Demir", de: "Sechs Monate sind lang. Aber tagsüber kann ich nicht.", tr: "Altı ay uzun. Ama gündüz olmuyor." },
+        { speaker: "Beraterin", de: "Dann nehmen Sie den Abendkurs. Vorher machen Sie bitte den Einstufungstest.", tr: "O zaman akşam kursunu alın. Öncesinde lütfen seviye tespit sınavına girin." },
+        { speaker: "Herr Demir", de: "Gut. Wann kann ich den machen?", tr: "Peki. Ne zaman girebilirim?" },
+      ],
+      questions: [
+        { de: "Warum kommt der Intensivkurs nicht infrage?", tr: "Yoğun kurs neden olmuyor?", options: ["Er ist zu teuer", "Herr Demir arbeitet tagsüber", "Es gibt keine Plätze", "Er dauert zu lange"], answer: 1 },
+        { de: "Wie lange dauert der Abendkurs bis zur Prüfung?", tr: "Akşam kursu sınava kadar ne kadar sürüyor?", options: ["Drei Monate", "Etwa sechs Monate", "Zwei Monate", "Ein Jahr"], answer: 1 },
+        { de: "Was soll Herr Demir vorher machen?", tr: "Bay Demir öncesinde ne yapmalı?", options: ["Die Gebühr zahlen", "Den Einstufungstest machen", "Einen Termin absagen", "Ein Praktikum machen"], answer: 1 },
+      ],
+    },
+    reading: {
+      title: "Weiterbildung: Digitale Buchhaltung",
+      titleTr: "Mesleki eğitim duyurusu",
+      genre: "Kurs tanıtımı",
+      text: "Weiterbildung: Digitale Buchhaltung\n\nDer Kurs richtet sich an Berufstätige, die ihre Kenntnisse berufsbegleitend erweitern möchten. Unterricht: freitags von sechzehn bis zwanzig Uhr, zwölf Wochen.\n\nZiel ist es, am Ende selbstständig mit den gängigen Programmen zu arbeiten. Ein Zertifikat wird nach bestandener Abschlussprüfung ausgestellt.\n\nKosten: 890 Euro. Die Hälfte kann über den Arbeitgeber finanziert werden — fragen Sie vorher nach.\n\nAnmeldung bis zwei Wochen vor Kursbeginn.",
+      questions: [
+        { de: "Für wen ist der Kurs gedacht?", tr: "Kurs kimler için?", options: ["Für Studierende", "Für Berufstätige", "Für Anfänger ohne Erfahrung", "Für Arbeitslose"], answer: 1 },
+        { de: "Wann bekommt man das Zertifikat?", tr: "Sertifika ne zaman veriliyor?", options: ["Am ersten Kurstag", "Nach der Anmeldung", "Nach bestandener Abschlussprüfung", "Nach zwölf Wochen automatisch"], answer: 2 },
+      ],
+    },
+    speaking: [
+      { situation: "Kurs danışmanına hedefini anlatıyorsun.", de: "Mein Ziel ist es, in sechs Monaten die Prüfung zu bestehen.", tr: "Hedefim altı ayda sınavı geçmek." },
+      { situation: "Bir arkadaşına tavsiye veriyorsun.", de: "An deiner Stelle würde ich zuerst den Einstufungstest machen.", tr: "Senin yerinde olsam önce seviye tespit sınavına girerdim." },
+    ],
+    writing: {
+      prompt: "Bir kurs merkezine e-posta yaz: hangi kursu istiyorsun, hedefin ne, neyi bilmen gerekiyor.",
+      checklist: [
+        "Hangi kursla ilgilendiğini yaz",
+        "Hedefini bir mastar öbeğiyle yaz",
+        "Bir amacını 'um … zu' ile gerekçelendir",
+        "En az iki dolaylı soru sor",
+      ],
+      minWords: 70,
+      phrases: [
+        { de: "Mein Ziel ist es, … zu …", tr: "Hedefim … yapmak", en: "My goal is to …" },
+        { de: "Ich mache das, um … zu …", tr: "Bunu … yapmak için yapıyorum", en: "I am doing this in order to …" },
+        { de: "Ich möchte wissen, ob …", tr: "…-ip …-mediğini bilmek istiyorum", en: "I would like to know whether …" },
+        { de: "Können Sie mir sagen, wann …?", tr: "…-in ne zaman olduğunu söyleyebilir misiniz?", en: "Could you tell me when …?" },
+        { de: "berufsbegleitend", tr: "işle birlikte", en: "alongside work" },
+      ],
+      sample:
+        "Sehr geehrte Damen und Herren,\n\nich interessiere mich für Ihren Abendkurs auf dem Niveau B1. Mein Ziel ist es, in etwa sechs Monaten die Prüfung zu bestehen. Ich lerne berufsbegleitend, denn ich arbeite Vollzeit und kann tagsüber nicht kommen.\n\nIch mache den Kurs vor allem, um im Beruf sicherer zu sprechen. Deshalb ist mir eine kleine Gruppe wichtiger als ein schnelles Tempo.\n\nKönnen Sie mir sagen, wann der nächste Einstufungstest stattfindet? Außerdem möchte ich wissen, ob man den Kurs in Raten bezahlen kann.\n\nVielen Dank und freundliche Grüße\nMurat Demir",
+    },
+  },
 ];
