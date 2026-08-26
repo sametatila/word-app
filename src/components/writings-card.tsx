@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { PenIcon } from "@/components/icons";
 import { CardSkeleton } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import type { Assessment } from "@/lib/assess-prompts";
@@ -27,7 +29,7 @@ const KIND_LABEL: Record<string, string> = {
  * silme buradan. Bekleyen (kuyruktaki) kayıtlar "puanlanacak" diye görünür.
  * Açınca aynı değerlendirme kartı — geri bildirim dili her yerde aynı.
  */
-export function WritingsCard() {
+export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
   const [items, setItems] = useState<Item[] | null | undefined>(undefined);
   const [open, setOpen] = useState<number | null>(null);
 
@@ -59,7 +61,16 @@ export function WritingsCard() {
   }
 
   if (items === undefined) return <CardSkeleton height={160} label="Yazıların yükleniyor" />;
-  if (!items || !items.length) return null;
+  /*
+    Boş durum, kartın nerede durduğuna göre değişiyor.
+
+    Bir listenin içinde (profil gibi) boş kart gürültüdür — gösterilecek bir
+    şey yoksa hiç görünmemeli. Ama KENDİ SAYFASINDA aynı davranış ekranı
+    bomboş bırakıyor: kullanıcı "Yazılarım"a giriyor ve karşısına başlıktan
+    başka hiçbir şey çıkmıyor. Orada boşluğun kendisi bir cevap değil, bir
+    soru — "burada ne olacaktı?".
+  */
+  if (!items || !items.length) return showEmpty ? <WritingsEmpty /> : null;
 
   return (
     <section id="writings" className="card p-5">
@@ -101,6 +112,37 @@ export function WritingsCard() {
           );
         })}
       </ul>
+    </section>
+  );
+}
+
+/**
+ * Yazılar arşivi boşken.
+ *
+ * Üç şey söylüyor: burada ne birikecek, nasıl birikecek ve oraya nereden
+ * gidilir. "Henüz yazın yok" tek başına bir duvar; yanına bir kapı gerekiyor.
+ */
+function WritingsEmpty() {
+  return (
+    <section className="card p-6 text-center">
+      <span
+        className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl"
+        style={{
+          background: "color-mix(in srgb, var(--color-sky) 14%, transparent)",
+          color: "var(--color-sky)",
+        }}
+      >
+        <PenIcon size={22} />
+      </span>
+      <h2 className="mt-3 font-bold">Henüz değerlendirilmiş yazın yok</h2>
+      <p className="muted mx-auto mt-2 max-w-sm text-sm">
+        Yazma alıştırmalarında serbest bir metin yazdığında buraya düşüyor:
+        metnin, aldığı puan ve düzeltmeler bir arada duruyor. Aynı görevi
+        tekrar yazdığında ikisini yan yana görebilirsin.
+      </p>
+      <Link href="/skills" prefetch={false} className="btn btn-primary mt-4 inline-flex px-5 py-2.5 text-sm">
+        Yazma alıştırmalarına git
+      </Link>
     </section>
   );
 }
