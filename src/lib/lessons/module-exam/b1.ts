@@ -307,4 +307,80 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         "Suche Rad-Begleitung\n\nIch suche jemanden, der zweimal pro Woche mit mir zur Arbeit fährt. Ich wohne im Bezirk Ehrenfeld, in dem es zum Glück viele ruhige Radwege gibt, und arbeite in der Innenstadt.\n\nIch habe ein altes Rad, das nicht besonders schnell ist — Tempo ist mir also nicht wichtig. Wichtiger ist mir jemand, dem man morgens auch mal in Ruhe zuhören kann.\n\nWer Interesse hat, meldet sich unter 0176 22 11 09, am besten abends. Ich freue mich!",
     },
   },
+
+  {
+    level: "B1",
+    index: 4,
+    code: "B1.5",
+    titleDe: "Ämter und Anträge",
+    titleTr: "Bürokrasi",
+    focus: [
+      { de: "Passiv im Präsens", tr: "wird artı Partizip II" },
+      { de: "Passiv im Präteritum", tr: "wurde artı Partizip II" },
+      { de: "Passiv mit Modalverb", tr: "muss vorgelegt werden" },
+      { de: "Konjunktiv II für höfliche Bitten", tr: "Wäre es möglich …?" },
+      { de: "indirekte Frage", tr: "Wissen Sie, wann …?" },
+    ],
+    canDo: [
+      { de: "Ich kann Behördenbriefe im Passiv verstehen.", tr: "Resmî yazılardaki edilgen cümleleri anlayabiliyorum.", en: "I can understand official letters written in the passive." },
+      { de: "Ich kann sagen, welche Unterlagen benötigt werden.", tr: "Hangi belgelerin gerektiğini söyleyebiliyorum.", en: "I can say which documents are required." },
+      { de: "Ich kann einen Amtstermin höflich verschieben.", tr: "Resmî bir randevuyu kibarca erteleyebiliyorum.", en: "I can politely postpone an appointment at a public office." },
+      { de: "Ich kann schriftlich Widerspruch einlegen und ihn begründen.", tr: "Yazılı itiraz edip gerekçelendirebiliyorum.", en: "I can lodge a written objection and justify it." },
+      { de: "Ich kann höflich nachfragen, was verlangt wird.", tr: "Neyin istendiğini kibarca sorabiliyorum.", en: "I can politely ask what is required." },
+    ],
+    listening: {
+      title: "Bei der Ausländerbehörde",
+      titleTr: "Yabancılar dairesinde",
+      situation: "Bir kadın oturma iznini uzatmak için memurla konuşuyor.",
+      turns: [
+        { speaker: "Sachbearbeiter", de: "Guten Tag. Ihre Aufenthaltserlaubnis läuft im Mai ab, richtig?", tr: "İyi günler. Oturma izniniz mayısta doluyor, değil mi?" },
+        { speaker: "Frau Nuri", de: "Ja, am fünfzehnten Mai. Ich möchte sie verlängern lassen.", tr: "Evet, 15 Mayıs'ta. Uzatmak istiyorum." },
+        { speaker: "Sachbearbeiter", de: "Dann werden drei Dinge benötigt: der Pass, der Mietvertrag und ein Nachweis über Ihr Einkommen.", tr: "O zaman üç şey gerekiyor: pasaport, kira sözleşmesi ve gelir belgesi." },
+        { speaker: "Frau Nuri", de: "Den Mietvertrag habe ich dabei. Muss das Original vorgelegt werden?", tr: "Kira sözleşmesi yanımda. Asıl nüsha mı ibraz edilmeli?" },
+        { speaker: "Sachbearbeiter", de: "Beim Pass ja, beim Mietvertrag reicht eine Kopie.", tr: "Pasaportta evet, kira sözleşmesinde fotokopi yeterli." },
+        { speaker: "Frau Nuri", de: "Und wie lange wird der Antrag bearbeitet?", tr: "Peki başvuru ne kadar sürede işleme alınıyor?" },
+        { speaker: "Sachbearbeiter", de: "In der Regel vier bis sechs Wochen. Der Bescheid wird Ihnen zugeschickt.", tr: "Genelde dört ila altı hafta. Karar yazısı size gönderilir." },
+        { speaker: "Frau Nuri", de: "Gut. Dann bringe ich den Einkommensnachweis morgen vorbei.", tr: "Peki. O zaman gelir belgesini yarın getiririm." },
+      ],
+      questions: [
+        { de: "Was läuft im Mai ab?", tr: "Mayısta neyin süresi doluyor?", options: ["Der Mietvertrag", "Die Aufenthaltserlaubnis", "Der Pass", "Die Widerspruchsfrist"], answer: 1 },
+        { de: "Wovon reicht eine Kopie?", tr: "Neyin fotokopisi yeterli?", options: ["Vom Pass", "Vom Mietvertrag", "Vom Einkommensnachweis", "Von allen Unterlagen"], answer: 1 },
+        { de: "Wie lange dauert die Bearbeitung?", tr: "İşlem ne kadar sürüyor?", options: ["Zwei Wochen", "Vier bis sechs Wochen", "Drei Monate", "Das sagt der Sachbearbeiter nicht"], answer: 1 },
+      ],
+    },
+    reading: {
+      title: "Bescheid des Straßenverkehrsamts",
+      titleTr: "Trafik dairesinden karar yazısı",
+      genre: "Resmî yazı",
+      text: "Stadt Bonn — Straßenverkehrsamt\n\nSehr geehrte Frau Aydin,\n\nIhr Antrag auf Umschreibung des Führerscheins wurde am 12. März bearbeitet. Leider konnte er nicht bewilligt werden, weil der Sehtest fehlt.\n\nDer Nachweis kann bis zum 30. April nachgereicht werden. Danach wird der Antrag ohne weitere Prüfung abgelehnt.\n\nDie Gebühr von 43 Euro wurde bereits gebucht und wird nicht erstattet.\n\nMit freundlichen Grüßen\nIm Auftrag\nR. Seidel",
+      questions: [
+        { de: "Warum wurde der Antrag nicht bewilligt?", tr: "Başvuru neden onaylanmadı?", options: ["Die Gebühr fehlt", "Der Sehtest fehlt", "Der Pass ist abgelaufen", "Die Frist ist vorbei"], answer: 1 },
+        { de: "Was passiert mit der Gebühr?", tr: "Ücrete ne oluyor?", options: ["Sie wird erstattet", "Sie wird nicht erstattet", "Sie muss noch gezahlt werden", "Sie wird halbiert"], answer: 1 },
+      ],
+    },
+    speaking: [
+      { situation: "Dairede hangi belgelerin gerektiğini soruyorsun.", de: "Können Sie mir sagen, welche Unterlagen benötigt werden?", tr: "Hangi belgelerin gerektiğini söyleyebilir misiniz?" },
+      { situation: "Randevunu kibarca ertelemek istiyorsun.", de: "Wäre es möglich, den Termin um eine Woche zu verschieben?", tr: "Randevuyu bir hafta ertelemek mümkün olur mu?" },
+    ],
+    writing: {
+      prompt: "Aşağıdaki karara yazılı olarak itiraz et.",
+      stimulus: "Ihr Antrag auf Verlängerung der Aufenthaltserlaubnis wurde abgelehnt, da der Einkommensnachweis nicht fristgerecht eingereicht wurde.",
+      checklist: [
+        "Neye itiraz ettiğini ilk cümlede yaz",
+        "İtirazını gerekçelendir",
+        "En az bir edilgen cümle kullan",
+        "Ricanı bir yan cümleyle yaz",
+      ],
+      minWords: 70,
+      phrases: [
+        { de: "Hiermit widerspreche ich …", tr: "İşbu yazıyla …'e itiraz ediyorum", en: "I hereby object to …" },
+        { de: "Ich bitte darum, dass …", tr: "…-mesini rica ediyorum", en: "I request that …" },
+        { de: "fristgerecht", tr: "süresi içinde", en: "within the deadline" },
+        { de: "in der Anlage", tr: "ekte", en: "enclosed" },
+        { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely" },
+      ],
+      sample:
+        "Sehr geehrte Damen und Herren,\n\nhiermit widerspreche ich Ihrem Bescheid vom 14. April, mit dem mein Antrag auf Verlängerung der Aufenthaltserlaubnis abgelehnt wurde.\n\nDer Einkommensnachweis wurde meiner Ansicht nach fristgerecht eingereicht: Ich habe ihn am 3. April persönlich abgegeben. Eine Kopie mit dem Eingangsstempel füge ich in der Anlage bei.\n\nIch bitte darum, dass der Antrag erneut geprüft wird. Über eine kurze Bestätigung, dass mein Widerspruch eingegangen ist, wäre ich dankbar.\n\nMit freundlichen Grüßen\nLeyla Aydin",
+    },
+  },
 ];
