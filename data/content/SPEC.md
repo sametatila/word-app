@@ -50,6 +50,11 @@ Uygulamadaki bütün öğretici içerik kod içinde TypeScript olarak yaşar ve 
 ### DialogueTurn (senaryo)
 - `id` benzersiz tur içinde; `ask` Almanca + `askTr`; `cue` Türkçe; `replies` ≥ 1; her `match` en az bir kök; `fallback.say/sayTr/example`.
 
+### Türetilmiş ve ek içerik dosyaları (WP-72)
+- `src/lib/skills/content/derived-questions.ts` — ÜRETİLMİŞ: `npm run content:derive` (scripts/derive-questions.ts) okuma/dinleme egzersizlerine gapfill/short_answer/dictation ekler; elle düzenlenmez, içerik değişince yeniden üretilir. `bundled.ts` yükleme sırasında birleştirir.
+- `src/lib/skills/content/writing-extra.ts` — elle yazılmış ek yazma görevleri (`form`/`rewrite`/`reply`/`summary`), egzersiz kimliğine göre sona eklenir.
+- Doğrulayıcı birleştirilmiş içeriği (`BUNDLED_EXERCISES`) kontrol eder; DB'ye `npm run db:seed:skills` ile aynı birleşik hâl yüklenir.
+
 ## Doğrulayıcı — `npm run test:content`
 
 `scripts/check-content.ts` bütün içeriği koddan yükler (tsx, path alias'ları `scripts/tsconfig.e2e.json`) ve iki liste basar: **hata** (yapıyı bozan: eksik alan, aralık dışı indeks, kopuk `next`, yinelenen kimlik, Almanca metinde Türkçe harf — özel adlar hariç) → çıkış kodu 1; **uyarı** (kalite: havuz dışı kelime, çok anlamlı karşılık, uzun metin, `en` eksik) → etiket başına sayılır. `data/content/baseline.json` etiket başına tavan tutar: bir kategori tavanı aşarsa ya da yeni kategori açılırsa hata. Mevcut borç bilinir (2026-08-25: 2.227 uyarı, en büyüğü sözlükçede `en` eksik 1.254 ve metinde geçmeyen sözlükçe kelimesi 485 — WP-72 kapatır), yeni borç alınmaz; borç azaldıkça `--baseline` ile tavan indirilir.

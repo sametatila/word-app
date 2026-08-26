@@ -13,6 +13,8 @@ import { speaking } from "./content/speaking";
 import { zhSpeaking } from "./content/zh-speaking";
 import { dialogues } from "./content/dialogue";
 import { monologues } from "./content/monologue";
+import { DERIVED_QUESTIONS } from "./content/derived-questions";
+import { WRITING_EXTRA } from "./content/writing-extra";
 import { derivedConfusions } from "../speech-rules";
 import { germanLexicon } from "../speech-lexicon";
 
@@ -64,7 +66,26 @@ function withDerived<T extends SkillExercise>(list: T[]): T[] {
   });
 }
 
-export const BUNDLED_EXERCISES: SkillExercise[] = [
+/**
+ * Türetilmiş yazılı sorular (WP-72): okuma/dinlemeye gapfill/short_answer/
+ * dikte ekler (scripts/derive-questions.ts). Elle yazılmış sorular önce,
+ * türetilenler sona; egzersiz zaten ≥ 2 yazılı soru taşıyorsa üretici onu
+ * boş bırakmıştır.
+ */
+function withDerivedQuestions<T extends SkillExercise>(list: T[]): T[] {
+  return list.map((ex) => {
+    if (ex.skill === "writing") {
+      // Yeni tür yazma görevleri (WP-31 adım 4): elle yazıldı, sona eklenir.
+      const extra = WRITING_EXTRA[ex.id];
+      return extra?.length ? { ...ex, tasks: [...ex.tasks, ...extra] } : ex;
+    }
+    if (ex.skill !== "reading" && ex.skill !== "listening") return ex;
+    const extra = DERIVED_QUESTIONS[ex.id];
+    return extra?.length ? { ...ex, questions: [...ex.questions, ...extra] } : ex;
+  });
+}
+
+const BASE: SkillExercise[] = [
   ...a1,
   ...a2,
   ...b1,
@@ -80,3 +101,5 @@ export const BUNDLED_EXERCISES: SkillExercise[] = [
   ...dialogues,
   ...monologues,
 ];
+
+export const BUNDLED_EXERCISES: SkillExercise[] = withDerivedQuestions(BASE);

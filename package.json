@@ -18,6 +18,7 @@
     "test:rules": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-rules.ts",
     "test:why": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-why.ts",
     "test:match": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-sentence-match.ts",
+    "content:derive": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/derive-questions.ts",
     "test:cheat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-drills.ts",
     "test:content": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-content.ts",
     "db:seed": "tsx scripts/seed.ts",
