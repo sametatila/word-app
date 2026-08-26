@@ -238,6 +238,7 @@ export function LessonHub({
   total,
   userLevel,
   cleared = {},
+  passed = {},
 }: {
   cards: HubCard[];
   next: string | null;
@@ -246,8 +247,10 @@ export function LessonHub({
   total: number;
   /** Kullanıcının seçtiği seviye — yolun başlangıç noktası. */
   userLevel: string;
-  /** Geçilmiş modül sınavları: "A1:2" → kalan en iyi süre. */
+  /** Geçilmiş hız turları: "A1:2" → kalan en iyi süre. */
   cleared?: Record<string, number>;
+  /** Geçilmiş modül sınavları: "A1:2" → en iyi toplam puan. */
+  passed?: Record<string, number>;
 }) {
   const doneCount = cards.filter((c) => c.done).length;
   const pct = total ? Math.round((doneCount / total) * 100) : 0;
@@ -369,13 +372,14 @@ export function LessonHub({
                   {/* Modülün sonundaki sınav: yolun varış noktası. Modül
                       bitmeden de açık — yoldaki kilitler gibi bu da görsel bir
                       sıralama iması, engel değil. */}
-                  <ModuleBoss
+                  <ModuleExit
                     level={level}
                     moduleIdx={mi}
                     accent={accent}
                     done={nodes.filter((n) => n.card.done).length}
                     size={nodes.length}
                     bestLeft={cleared[`${level}:${mi}`] ?? null}
+                    score={passed[`${level}:${mi}`] ?? null}
                   />
                 </div>
               );
@@ -390,34 +394,43 @@ export function LessonHub({
 }
 
 /**
- * Modül sınavı düğümü — yolun sonundaki patron.
+ * Modülün çıkış düğümü — yolun varış noktası.
  *
  * On ders bitince hiçbir şey OLMUYORDU: pankartta bir kupa beliriyor, yol
- * devam ediyordu. Sınav yolun sonuna bir varış noktası koyuyor ve modülün
- * kelimelerini bir arada, süre baskısı altında kullandırıyor.
+ * devam ediyordu. Buraya iki şey konuldu ve **sıraları bilinçli**:
  *
- * Modül bitmeden de açık. Ders yolundaki kilitler de dokunmayı engellemiyor
- * (bkz. dosya başındaki not) — burada da aynı ilke: kilit bir sıralama iması,
- * duvar değil. Hazır olmayan girer, zorlanır, döner.
+ *   1. **Modül sınavı** (asıl kapı). Yedi bölüm, 25 dakika: modülün
+ *      kelimeleri, dilbilgisi odakları, üretim adımları, kendi diyaloğu ve
+ *      metni, konuşma ve yazma. Geçince taç ve sertifika buradan geliyor.
+ *   2. **Hız turu** (isteğe bağlı ısınma). Altmış saniyede on beş kelime
+ *      turu; eğlencesi ve baskısı var ama bir şey KANITLAMIYOR — uzun süre
+ *      modülün tek "sınavı" oydu ve kullanıcı modülü bitirdiğinde yalnızca
+ *      kelime tanıdığını görüyordu.
+ *
+ * İkisi de modül bitmeden açık. Yoldaki kilitler gibi bu da görsel bir
+ * sıralama iması, duvar değil: hazır olmayan girer, zorlanır, döner.
  */
-function ModuleBoss({
+function ModuleExit({
   level,
   moduleIdx,
   accent,
   done,
   size,
   bestLeft,
+  score,
 }: {
   level: string;
   moduleIdx: number;
   accent: string;
   done: number;
   size: number;
-  /** Geçildiyse kalan en iyi süre; geçilmediyse null. */
+  /** Hız turu geçildiyse kalan en iyi süre. */
   bestLeft: number | null;
+  /** Modül sınavı geçildiyse en iyi toplam puan. */
+  score: number | null;
 }) {
   const ready = size > 0 && done >= size;
-  const cleared = bestLeft !== null;
+  const cleared = score !== null;
   const tone = cleared ? "var(--color-mint)" : ready ? accent : "var(--text-muted)";
 
   return (
@@ -428,7 +441,7 @@ function ModuleBoss({
         style={{ background: ready ? tone : "var(--border)", opacity: ready ? 0.5 : 1 }}
       />
       <Link
-        href={`/lessons/sinav/${level}/${moduleIdx}`}
+        href={`/exam/${level}/${moduleIdx}`}
         className="flex w-full max-w-sm items-center gap-3 rounded-2xl px-4 py-3 transition-transform active:scale-[0.98]"
         style={{
           background: cleared
@@ -444,21 +457,28 @@ function ModuleBoss({
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
           style={{ background: `color-mix(in srgb, ${tone} 18%, transparent)`, color: tone }}
         >
-          {cleared ? <TrophyIcon size={20} /> : <FlameIcon size={20} />}
+          {cleared ? <TrophyIcon size={20} /> : <FlagIcon size={20} />}
         </span>
         <span className="min-w-0 flex-1">
           <span className="block text-sm font-bold">Modül sınavı</span>
           <span className="muted block text-xs">
             {cleared
-              ? `Geçildi · en iyi ${bestLeft} sn kalan`
+              ? `Geçildi · %${score}`
               : ready
-                ? "15 soru, 60 saniye — modülün kelimeleriyle"
+                ? "Yedi bölüm, 25 dk — konuşma ve yazma dahil"
                 : `Önce dersler: ${done}/${size}`}
           </span>
         </span>
         <span className="shrink-0 text-xs font-bold" style={{ color: tone }}>
           {cleared ? "tekrar" : "gir"}
         </span>
+      </Link>
+      <Link
+        href={`/lessons/sinav/${level}/${moduleIdx}`}
+        className="muted mt-1.5 flex items-center gap-1.5 px-3 py-1 text-xs font-semibold underline-offset-2 hover:underline"
+      >
+        <FlameIcon size={12} />
+        {bestLeft !== null ? `Hız turu · en iyi ${bestLeft} sn kalan` : "Hız turu · 60 saniye, 15 kelime"}
       </Link>
     </div>
   );

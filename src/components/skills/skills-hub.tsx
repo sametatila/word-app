@@ -486,7 +486,7 @@ function ExamTab({ level, data }: { level: CefrLevel; data: ExamHubData | null }
     {
       href: `/exam/${level}`,
       title: `${level} seviye sınavı`,
-      detail: "45 dk · beş bölüm · geçince sertifika",
+      detail: "45 dk · yedi bölüm · geçince sertifika",
       cta: "Gir",
     },
     {

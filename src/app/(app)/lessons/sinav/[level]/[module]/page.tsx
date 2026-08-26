@@ -28,10 +28,14 @@ export default async function BossPage({
 
   return (
     <>
-      {/* Hız turu yanında gerçek sınav (WP-41): bölümler, süre, sertifika. */}
+      {/*
+        Hız turu modülü GEÇİRMİYOR: yalnızca kelimeleri baskı altında
+        kullandırıyor. Modülün kapısı yedi bölümlük sınav, bu yüzden bağlantı
+        sayfanın en üstünde ve ne olduğunu söylüyor.
+      */}
       <div className="mx-auto mb-3 w-full max-w-2xl text-right">
         <Link href={`/exam/${level}/${index}`} className="muted text-xs font-semibold underline-offset-2 hover:underline">
-          Gerçek sınav (20 dk, beş bölüm) →
+          Modül sınavı (25 dk, yedi bölüm) →
         </Link>
       </div>
       <BossPlayer level={level} moduleIndex={index} onExitHref="/lessons" />
