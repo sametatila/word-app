@@ -217,8 +217,8 @@ export const deC1B01: Lesson[] = [
     roleplay: {
       scene: "Bir meslektaşın sana üstü kapalı bir eleştiri yöneltti. Ne sezdiğini söyle, doğrudan sor, kendi çekinceni de üstü kapalı olmadan koy ve konuyu açıklığa kavuşturun.",
       partner: "doğrudan konuşmaktan kaçınan, ima ile konuşan bir meslektaş",
-      opening: "Also, an sich ist dein Entwurf ja gut. Eigentlich hätte ich es nur … na ja, anders gemacht.",
-      openingTr: "Yani, esasen taslağın iyi. Aslında ben sadece… şey, başka türlü yapardım.",
+      opening: "Also, an sich ist dein Entwurf ja gut. Eigentlich hätte ich es nur … na ja, anders gemacht. Verstehst du, was ich meine?",
+      openingTr: "Yani, esasen taslağın iyi. Aslında ben sadece… şey, başka türlü yapardım. Ne demek istediğimi anlıyor musun?",
       goal: "İmanın ardındaki eleştiri açıkça söylenmiş, iki taraf da çekincesini doğrudan koymuş ve konu açıklığa kavuşmuş olur.",
       minTurns: 8,
     },

@@ -134,9 +134,10 @@ export type LessonRoleplay = {
    * öğrenildi) bir tur fazlasını. Taban seviyeyle yükseliyor çünkü cümleler
    * uzuyor: A1 6, A2 7, B1 8; adım sayısı fazlaysa sırasıyla 7, 8, 9.
    *
-   * B2'nin tabanı da 8 — üst sınır dokuz olduğu için seviyeyle artış burada
-   * duruyor. B2'de yük tur sayısında değil cümlenin kendisinde: aynı dokuz
-   * turda isimleşmiş, edilgen ve dolaylı aktarımlı cümleler kuruluyor.
+   * B2 ve C1'in tabanı da 8 — üst sınır dokuz olduğu için seviyeyle artış
+   * burada duruyor. Yük tur sayısında değil cümlenin kendisinde: aynı dokuz
+   * turda B2'de isimleşmiş ve edilgen, C1'de işlev fiili öbekli, parçacıklı
+   * ve üslup seçimi gerektiren cümleler kuruluyor.
    *
    * Üst sınırın dokuz olmasının sebebi ölçülebilir: dokuz turdan sonra
    * konuşma bir sahne olmaktan çıkıp bir röportaja dönüyor ve öğrenci

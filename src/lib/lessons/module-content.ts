@@ -365,7 +365,7 @@ export const FOCUS_SHEETS: Record<string, string[]> = {
   "Ordinalzahlen-Datum": ["a2-ordinalzahlen"],
   "Futur-werden": ["b1-futur"],
   "Konjunktiv-II": ["b1-konjunktiv2", "a2-hoeflich"],
-  "Konjunktiv-II-irreal": ["b1-konjunktiv2"],
+  "Konjunktiv-II-irreal": ["b1-konjunktiv2", "c1-konjunktiv2-erweitert"],
   "Passiv-Präsens": ["b1-passiv"],
   "Passiv-Präteritum": ["b1-passiv"],
   "Um-zu": ["b1-infinitiv-zu"],
@@ -401,7 +401,23 @@ export const FOCUS_SHEETS: Record<string, string[]> = {
   "Nebensatz-indem": ["b2-konnektoren", "b1-konnektoren"],
   "Je-desto": ["b2-zweiteilige-konnektoren", "b1-konnektoren"],
   "Relativsatz-Genitiv": ["b1-relativsatz", "b1-genitiv"],
-  "Als-ob": ["b1-konjunktiv2", "b2-konjunktiv1"],
+  "Als-ob": ["b1-konjunktiv2", "b2-konjunktiv1", "c1-konjunktiv2-erweitert"],
+  // C1 — aynı ilke: seviyenin kendi sayfası + dayandığı alt seviye sayfası.
+  // C1 tablolarının çoğu uzun kalıp taşıdığı için sınavın dilbilgisi bölümüne
+  // az hücre veriyor; alt seviye sayfaları o boşluğu kapatıyor.
+  "Funktionsverbgefüge": ["c1-wendungen", "b2-funktionsverbgefuege", "c1-satzstellung"],
+  "Konjunktiv-II-Diplomatie": ["c1-konjunktiv2-erweitert", "b1-konjunktiv2", "c1-redemittel"],
+  "Modalpartikeln": ["c1-modalpartikeln", "c1-satzstellung"],
+  "Nominalstil": ["c1-nominalstil", "b2-nominalisierung"],
+  "Rhetorische-Mittel": ["c1-redemittel", "c1-satzstellung"],
+  "Konjunktiv-I-Rede": ["b2-konjunktiv1", "c1-redemittel"],
+  "Ironie-Untertreibung": ["c1-modalpartikeln", "c1-redemittel", "c1-satzstellung"],
+  "Metaphern": ["c1-wendungen", "c1-satzstellung"],
+  "Konzessive-Konnektoren": ["c1-textkonnektoren", "b1-konnektoren"],
+  "Redewendungen": ["c1-wendungen", "c1-satzstellung"],
+  "Partizipialkonstruktionen": ["c1-nominalstil", "b2-partizipialattribute", "c1-adjektiv-nomen-praeposition", "b2-nominalisierung"],
+  "Verweiswörter": ["c1-textkonnektoren", "b1-da-wo"],
+  "Wortschatz-Nuancen": ["c1-wortbildung", "c1-adjektiv-nomen-praeposition", "b2-verben"],
 };
 
 /** Modülün odaklarının açtığı tablo sayfaları — tekrarsız. */
