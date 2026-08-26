@@ -1,13 +1,35 @@
+import { Suspense } from "react";
 import { SessionPlayer } from "@/components/session-player";
 import { Leaderboard } from "@/components/leaderboard";
 import { getUserId } from "@/lib/auth/server";
 import { getLeaderboard, type LeaderboardWeek } from "@/lib/session";
+import { CardSkeleton } from "@/components/skeleton";
 
 export const dynamic = "force-dynamic";
 
-export default async function LearnPage() {
+export default function LearnPage() {
   // Sıralama sunucuda hazırlanır ve oynatıcıya hazır işaretleme olarak geçer:
   // oyun sırasında ekranı meşgul etmesin diye yalnızca başlangıç kartında görünür.
+  //
+  // Ama BEKLENMEZ. Önceden sorgu burada `await` ediliyordu ve sayfanın ilk
+  // baytı ona bağlıydı: on kişilik bir tabloyu toplamak, "bugün ne çalışacağım"
+  // sorusunun cevabını geciktiriyordu. Sıra en alttaki, en az acele edilen
+  // bölüm; sayfanın geri kalanı onu beklemek zorunda değil.
+  //
+  // Suspense ile kabuk anında gidiyor, tablo hazır olduğunda kendi yerine
+  // akıyor. Yer tutucu tablonun boyunda: hazır olunca sayfa zıplamıyor.
+  return (
+    <SessionPlayer
+      leaderboard={
+        <Suspense fallback={<CardSkeleton height={168} label="Bu hafta sıralaması yükleniyor" />}>
+          <LeaderboardSlot />
+        </Suspense>
+      }
+    />
+  );
+}
+
+async function LeaderboardSlot() {
   let week: LeaderboardWeek | null = null;
   try {
     const userId = await getUserId();
@@ -18,9 +40,5 @@ export default async function LearnPage() {
     // Sıralama okunamazsa oturum yine açılır — bu bilgi ikincildir.
     console.error("[learn] sıralama okunamadı", err);
   }
-
-  // Sarmalayıcı artık burada değil: kalan alana çakılmak mı yoksa içerikle
-  // birlikte büyümek mi gerektiği ekrana göre değişiyor ve bunu yalnızca
-  // oynatıcı biliyor.
-  return <SessionPlayer leaderboard={week ? <Leaderboard week={week} /> : null} />;
+  return week ? <Leaderboard week={week} /> : null;
 }

@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useCachedJson } from "@/lib/use-cached";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckIcon, ChevronIcon, ChevronRightIcon } from "@/components/icons";
 import { track } from "@/lib/track";
@@ -32,25 +33,21 @@ function localDay(): string {
  */
 export function PlanCard({ onStartSession, name }: { onStartSession: () => void; name?: string }) {
   const router = useRouter();
-  const [plan, setPlan] = useState<Plan | null | undefined>(undefined);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    let alive = true;
-    (async () => {
-      try {
-        const res = await fetch(`/api/plan?day=${localDay()}`, { cache: "no-store" });
-        if (!res.ok) return alive && setPlan(null);
-        const data = (await res.json()) as Plan;
-        if (alive) setPlan(data);
-      } catch {
-        if (alive) setPlan(null);
-      }
-    })();
-    return () => {
-      alive = false;
-    };
-  }, []);
+  /*
+    Önce önbellek, sonra tazeleme (bkz. lib/use-cached). Plan her açılışta
+    sıfırdan isteniyordu ve her açılışta geç geliyordu; oysa gün içinde nadiren
+    değişiyor ve değiştiğinde bunu haber veren bir olay zaten var.
+  */
+  const { data: plan } = useCachedJson<Plan>(
+    `plan:${localDay()}`,
+    `/api/plan?day=${localDay()}`,
+    (body) => {
+      const p = body as Partial<Plan>;
+      return Array.isArray(p?.items) ? (p as Plan) : null;
+    },
+  );
 
   if (plan === null) return null;
 

@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
+import { useCachedJson } from "@/lib/use-cached";
 import { CardSkeleton } from "@/components/skeleton";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -37,33 +38,26 @@ function localDay(): string {
 }
 
 export function QuestCard() {
-  const [board, setBoard] = useState<Board | null | undefined>(undefined);
   const [busy, setBusy] = useState<string | null>(null);
   const [flash, setFlash] = useState(0);
 
-  /**
-   * Gelen gövde KÖRÜ KÖRÜNE dönüştürülmüyordu ve bedeli ağırdı: 200 dönen ama
-   * `quests` taşımayan bir cevapta kart `undefined.filter` ile patlıyor,
-   * hata sınırı devreye giriyor ve BÜTÜN başlangıç ekranı "bir şeyler ters
-   * gitti"ye düşüyordu. Görevler ikincil bir bölüm; tek başına ekranı
-   * indirmemeli. Biçim tutmuyorsa kart yalnızca görünmez.
-   */
-  const load = useCallback(async () => {
-    try {
-      const res = await fetch(`/api/quests?day=${localDay()}`, { cache: "no-store" });
-      if (!res.ok) return setBoard(null);
-      const data = (await res.json()) as Partial<Board>;
-      // Biçim tutmuyorsa da bir karara varılıyor: `undefined` kalsaydı
-      // iskelet sonsuza kadar atardı.
-      setBoard(Array.isArray(data.quests) ? (data as Board) : null);
-    } catch {
-      setBoard(null);
-    }
-  }, []);
+  /*
+    Önce önbellek, sonra tazeleme (bkz. lib/use-cached). Görevler günlük ve gün
+    içinde yalnızca oynadıkça değişiyor; her açılışta sıfırdan beklemek yerine
+    son bilinen durum anında çiziliyor, istek arkada gidiyor.
 
-  useEffect(() => {
-    void load();
-  }, [load]);
+    Gövde doğrulanıyor: 200 dönen ama `quests` taşımayan bir cevapta kart
+    `undefined.filter` ile patlıyor ve hata sınırı bütün başlangıç ekranını
+    indiriyordu.
+  */
+  const { data: board, put } = useCachedJson<Board>(
+    `quests:${localDay()}`,
+    `/api/quests?day=${localDay()}`,
+    (body) => {
+      const b = body as Partial<Board>;
+      return Array.isArray(b?.quests) ? (b as Board) : null;
+    },
+  );
 
   async function claim(questId: string) {
     setBusy(questId);
@@ -79,8 +73,10 @@ export function QuestCard() {
           totalXp: number | null;
           currentStreak: number | null;
         };
+        // Sunucunun döndürdüğü yeni durum doğrudan yerleştiriliyor: ödülü
+        // aldıktan sonra bir istek daha atıp beklemek gereksiz.
         if (Array.isArray(out.quests)) {
-          setBoard({ quests: out.quests, allDone: out.allDone, allClaimed: out.allClaimed });
+          put({ quests: out.quests, allDone: out.allDone, allClaimed: out.allClaimed });
         }
         if (out.xp > 0) {
           track("quest_claim", out.xp);

@@ -57,6 +57,9 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "wortspiel-draft-",
   "wortspiel-game",
   "wortspiel-session-refreshed",
+  // Başlangıç ekranının önbelleği (bkz. lib/use-cached): plan ve görevler
+  // kişiye ait, ortak cihazda diğer hesaba görünmemeli.
+  "wortspiel:cache:",
 ];
 
 function forgetPreviousAccount() {
