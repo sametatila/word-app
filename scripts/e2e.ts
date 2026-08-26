@@ -44,6 +44,7 @@ import { germanLexicon } from "../src/lib/speech-lexicon";
 import { LESSONS, lessonsFor, findLesson } from "../src/lib/lessons";
 import { scoredSteps } from "../src/lib/lessons/types";
 import { lessonBoard, nextLesson, recordLesson, weakRules } from "../src/lib/lessons/progress";
+import { MAX_HISTORY } from "../src/lib/lessons/roleplay-const";
 import { roleplayPrompt } from "../src/lib/lessons/roleplay";
 import { chatConfigured, chatProviders, readLimits } from "../src/lib/chat-providers";
 import { cleanForSpeech } from "../src/lib/tts/edge";
@@ -912,6 +913,9 @@ async function main() {
     check("toparlama yönergesi istenince var", roleplayPrompt(lesson, { phase: "wrapup" }).includes("TOPARLAMA TURU"));
     check("kapanış talimatı istenince var", roleplayPrompt(lesson, { phase: "closing" }).includes("KAPANIŞ TURU"));
     check("kapanış talimatı gelişme fazında yok", !prompt.includes("KAPANIŞ TURU"));
+    // Geçmiş kırpması en uzun konuşmayı taşımalı: taşımazsa sunucudaki tur
+    // sayımı eksik çıkar ve model kapanış fazına hiç geçmez.
+    check("geçmiş sınırı en uzun konuşmayı taşıyor", MAX_HISTORY >= lesson.roleplay.minTurns * 2 + 1, `(${MAX_HISTORY})`);
   }
 
   console.log("\n11s) Sapmalar kuraldan da türetiliyor");

@@ -4,14 +4,18 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { chatConfigured, type ProviderMeta } from "@/lib/chat-providers";
 import { findLesson } from "@/lib/lessons";
 import { streamDialogue, streamRoleplay, type RoleplayMode, type RoleplayTurn } from "@/lib/lessons/roleplay";
+import { MAX_HISTORY } from "@/lib/lessons/roleplay-const";
 import { getExercise } from "@/lib/skills";
 import { logRoleplayTurn } from "@/lib/lessons/log";
 import { recordAiUsage } from "@/lib/ai-usage";
 
 export const dynamic = "force-dynamic";
 
-/** Rol yapma geçmişinin taşınacak kadarı — eski turlar bağlamı şişirmeden düşer. */
-const MAX_TURNS = 16;
+/**
+ * Rol yapma geçmişinin taşınacak kadarı — eski turlar bağlamı şişirmeden
+ * düşer. Sınır `roleplay-const`ta ve tur sayısından TÜRETİLİYOR: sabit bir
+ * sayı, uzun konuşmalarda açılışı kırpıp sunucudaki tur sayımını bozuyordu.
+ */
 const MAX_CHARS = 2000;
 
 /**
@@ -118,7 +122,7 @@ export async function POST(req: Request) {
 function parseMessages(raw: unknown): RoleplayTurn[] | null {
   if (!Array.isArray(raw) || raw.length === 0) return null;
   const out: RoleplayTurn[] = [];
-  for (const item of raw.slice(-MAX_TURNS)) {
+  for (const item of raw.slice(-MAX_HISTORY)) {
     if (typeof item !== "object" || item === null) return null;
     const m = item as Record<string, unknown>;
     if (m.role !== "user" && m.role !== "assistant") return null;
