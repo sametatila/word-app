@@ -250,6 +250,9 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     marks.current = [];
     setCombo(0);
     setCheer(0);
+    // Basamak her turda sıfırdan: hafifletme o oturuma ait bir karar.
+    setEased(false);
+    missStreak.current = 0;
     resetCombo();
     play("start");
     // Tur türü: karışık, tek oyun (hangisi), ek tur — üretim oranı KPI'sını
@@ -476,11 +479,23 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   }, [flush]);
 
   /**
-   * Oturum içi basamak inişi (WP-14): art arda üç üretim yanlışında kalan
-   * üretim turları hafifler (çeviri → cümle diz, yazarak tamamla → şıklı,
-   * yazma → ipuçlu). Kalıcı değil: sonraki oturum sunucuda yeniden kurulur.
-   * A/B bayrağı profilde yok (STATUS karar kaydı); etkisi raporda üretim
-   * payı ve doğruluk olarak izlenir.
+   * Oturum içi basamak inişi (WP-14).
+   *
+   * Art arda üç üretim yanlışında kalan üretim turları hafifliyor: çeviri →
+   * cümle diz, yazarak tamamla → şıklı, yazma → ipucu baştan açık.
+   *
+   * BAYRAK İNMEK ZORUNDA. Açıldıktan sonra hiçbir yerde kapanmıyordu: ne
+   * kullanıcı toparlayınca, ne de yeni tur başlayınca. Bileşen turlar arasında
+   * yeniden kurulmadığı için "kalıcı değil, sonraki oturum sunucuda yeniden
+   * kurulur" sözü tutulmuyordu — bir kez üç üretim turu kaçıran kullanıcı,
+   * sekmeyi kapatana kadar hep hafifletilmiş turlar görüyordu.
+   *
+   * Görünen belirti "Yazarak Hatırla'da ipucu tıklamadan açık geliyor"du ama
+   * etkisi daha genişti: aynı bayrak Çevir'i Cümleyi Diz'e, yazarak
+   * tamamlamayı şıklıya indiriyordu. Yani üretim çalışması sessizce duruyordu.
+   *
+   * İniş üç yanlışa, çıkış tek doğruya bağlı. Asimetri bilinçli: eğilim zor
+   * olana doğru olmalı, kolayda takılı kalmaya değil.
    */
   const [eased, setEased] = useState(false);
   const missStreak = useRef(0);
@@ -491,8 +506,15 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
       pending.current.push(...enriched);
       marks.current.push(...results.map((r) => r.correct));
       if (isProductionGame(round.game)) {
-        missStreak.current = results.every((r) => r.correct) ? 0 : missStreak.current + 1;
-        if (missStreak.current >= EASE_AFTER_MISSES) setEased(true);
+        if (results.every((r) => r.correct)) {
+          missStreak.current = 0;
+          // Toparladı: basamak geri çıkıyor. Yoksa iniş tek yönlü bir mandal
+          // olur ve oturumun kalanı hep hafifletilmiş geçer.
+          setEased(false);
+        } else {
+          missStreak.current += 1;
+          if (missStreak.current >= EASE_AFTER_MISSES) setEased(true);
+        }
       }
 
       // Yanlış bilinen kelimeleri oturum özetinde göstermek için topla
