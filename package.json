@@ -42,6 +42,7 @@
     "test:mix": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/game-mix.ts",
     "icons": "node scripts/icons.mjs",
     "db:check": "tsx scripts/schema-check.ts",
+    "test:cron": "node scripts/cron-check.mjs",
     "db:verify": "tsx scripts/verify-live.ts",
     "test:roleplay": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/roleplay-eval.ts",
     "test:loop": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/roleplay-loop.ts",
