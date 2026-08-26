@@ -14,6 +14,7 @@ import { speaking2a } from "./content/speaking-2a";
 import { speaking2b } from "./content/speaking-2b";
 import { zhSpeaking } from "./content/zh-speaking";
 import { dialogues } from "./content/dialogue";
+import { dialogues2 } from "./content/dialogue-2";
 import { monologues } from "./content/monologue";
 import { DERIVED_QUESTIONS } from "./content/derived-questions";
 import { WRITING_EXTRA } from "./content/writing-extra";
@@ -103,6 +104,7 @@ const BASE: SkillExercise[] = [
   ...withDerived(speaking2b),
   ...zhSpeaking,
   ...dialogues,
+  ...dialogues2,
   ...monologues,
 ];
 
