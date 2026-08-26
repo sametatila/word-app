@@ -2,7 +2,7 @@
  * Sınav kâğıdının kuru provası — veritabanı olmadan.
  *
  * `check-exams.ts` maddelerin VAR olduğunu kanıtlıyor; bu betik kâğıdın
- * gerçekten KURULDUĞUNU: 23 modülün her biri için `buildExam` çağrılıyor,
+ * gerçekten KURULDUĞUNU: her modül için `buildExam` çağrılıyor,
  * bölüm sayıları, ağırlıklar, doğru şık dizinleri ve maddelerin modüle
  * aidiyeti denetleniyor. Kelime sorgusu `scripts/stub-db.ts` ile taklit
  * ediliyor (bkz. tsconfig.dry.json).
@@ -102,7 +102,7 @@ async function main() {
     console.log(`${where.padEnd(6)} ${paper.cover?.titleDe.padEnd(32)} bölümler ${SECTION_ORDER.filter((id) => (id === "reading" ? s.reading.length : id === "listening" ? s.listening.length : id === "speaking" ? s.speaking.length : id === "writing" ? s.writing.length : id === "vocab" ? s.vocab.length : id === "grammar" ? s.grammar.length : s.produce.length) > 0).length} · üretim [${modes}]`);
   }
 
-  console.log(`\n${errors ? `✗ ${errors} hata` : "✓ 23 modülün kâğıdı kuruldu, hata yok"}.`);
+  console.log(`\n${errors ? `✗ ${errors} hata` : `✓ ${allModules(COURSE).length} modülün kâğıdı kuruldu, hata yok`}.`);
   process.exit(errors ? 1 : 0);
 }
 

@@ -6,7 +6,7 @@ import type { ModuleExamPlan } from "./types";
 export type { ModuleExamPlan, ExamCando, ExamQuestion, ExamTurn } from "./types";
 
 /**
- * Modül sınavı planları — kurstaki 23 modülün her biri için bir kâğıt.
+ * Modül sınavı planları — kurstaki her modül için bir kâğıt.
  *
  * Katalog gibi bu da tamamen kod: içerik kullanıcıya göre değişmiyor ve
  * dersler nasıl kodda duruyorsa sınav kâğıdının elle yazılan yarısı da orada

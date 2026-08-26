@@ -1,8 +1,7 @@
 import type { ModuleExamPlan } from "./types";
 
 /**
- * B1 modül sınavlarının elle yazılan içeriği (3 modül — müfredatın üretilmiş
- * kısmı).
+ * B1 modül sınavlarının elle yazılan içeriği (müfredatın üretilmiş modülleri).
  *
  * B1'de metinlerin işi değişiyor: artık bilgi taşımıyorlar, bir DURUŞ
  * taşıyorlar (bir ret mektubu, bir gider hesabı, bir forum yazısı) ve soru
@@ -231,6 +230,81 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       ],
       sample:
         "Vor drei Jahren habe ich meine Stelle gekündigt, obwohl ich dort gut verdient habe. Der Grund war einfach: Ich wollte etwas lernen, das mich wirklich interessiert.\n\nNachdem ich gekündigt hatte, war ich zwei Monate ohne Arbeit. Diese Zeit war schwierig, trotzdem habe ich sie genutzt: Ich habe jeden Tag Deutsch geübt, um bei Bewerbungsgesprächen sicherer zu sprechen. Bevor ich mich beworben habe, habe ich außerdem einen kurzen Kurs gemacht.\n\nHeute arbeite ich vier Tage pro Woche, damit ich freitags studieren kann. Je länger ich das mache, desto sicherer werde ich. Entweder man wartet auf den perfekten Moment oder man fängt einfach an — ich habe mich für das Zweite entschieden.",
+    },
+  },
+
+  {
+    level: "B1",
+    index: 3,
+    code: "B1.4",
+    titleDe: "Beschreiben und definieren",
+    titleTr: "İlgi cümleleri",
+    focus: [
+      { de: "Relativsatz im Nominativ", tr: "der / die / das ile tanımlama" },
+      { de: "Relativsatz im Akkusativ", tr: "nesnede der yerine den" },
+      { de: "Relativsatz im Dativ", tr: "dem / der / denen" },
+      { de: "Präposition + Relativpronomen", tr: "in dem, mit dem, von dem" },
+      { de: "alles, was … / jemand, der …", tr: "belirsiz sözlerle ilgi cümlesi" },
+    ],
+    canDo: [
+      { de: "Ich kann Personen genau beschreiben.", tr: "İnsanları ayrıntılı tarif edebiliyorum.", en: "I can describe people in detail." },
+      { de: "Ich kann etwas beschreiben, wenn ich den Namen nicht weiß.", tr: "Adını bilmediğim bir şeyi tarif edebiliyorum.", en: "I can describe something when I don't know its name." },
+      { de: "Ich kann das Relativpronomen im Nominativ, Akkusativ und Dativ richtig wählen.", tr: "İlgi zamirini yalın, belirtme ve yönelme hâlinde doğru seçebiliyorum.", en: "I can choose the right relative pronoun in all three cases." },
+      { de: "Ich kann eine Präposition vor das Relativpronomen stellen.", tr: "İlgi zamirinin önüne edat koyabiliyorum.", en: "I can put a preposition before the relative pronoun." },
+      { de: "Ich kann im Fundbüro einen verlorenen Gegenstand beschreiben.", tr: "Kayıp eşya bürosunda kaybettiğim eşyayı tarif edebiliyorum.", en: "I can describe a lost item at the lost-and-found office." },
+    ],
+    listening: {
+      title: "Im Fundbüro",
+      titleTr: "Kayıp eşya bürosunda",
+      situation: "Bir adam tramvayda unuttuğu çantayı arıyor.",
+      turns: [
+        { speaker: "Beamtin", de: "Guten Tag. Was haben Sie denn verloren?", tr: "İyi günler. Neyinizi kaybettiniz?" },
+        { speaker: "Herr Solak", de: "Eine Tasche, die ich gestern in der Straßenbahn vergessen habe.", tr: "Dün tramvayda unuttuğum bir çanta." },
+        { speaker: "Beamtin", de: "Können Sie die Tasche beschreiben?", tr: "Çantayı tarif edebilir misiniz?" },
+        { speaker: "Herr Solak", de: "Sie ist dunkelblau, aus Stoff, mit einem roten Band am Griff.", tr: "Koyu mavi, kumaştan, sapında kırmızı bir bant var." },
+        { speaker: "Beamtin", de: "Und was war darin?", tr: "Peki içinde ne vardı?" },
+        { speaker: "Herr Solak", de: "Ein Laptop, ein Ladegerät und ein Buch, das ich aus der Bibliothek geliehen habe.", tr: "Bir dizüstü, bir şarj aleti ve kütüphaneden aldığım bir kitap." },
+        { speaker: "Beamtin", de: "Einen Moment. Wir haben hier eine blaue Tasche, die gestern Abend abgegeben wurde.", tr: "Bir dakika. Dün akşam teslim edilen mavi bir çanta var." },
+        { speaker: "Herr Solak", de: "Das rote Band — ja, das ist meine!", tr: "Kırmızı bant — evet, bu benimki!" },
+      ],
+      questions: [
+        { de: "Wo hat Herr Solak die Tasche vergessen?", tr: "Bay Solak çantayı nerede unuttu?", options: ["Im Bus", "In der Straßenbahn", "Im Zug", "Im Café"], answer: 1 },
+        { de: "Woran erkennt man die Tasche?", tr: "Çanta neyden tanınıyor?", options: ["An einem Namensschild", "An einem roten Band am Griff", "An der Größe", "An einem Aufkleber"], answer: 1 },
+        { de: "Was war in der Tasche?", tr: "Çantada ne vardı?", options: ["Nur ein Laptop", "Ein Laptop, ein Ladegerät und ein Buch", "Ein Buch und ein Handy", "Kleidung und Schuhe"], answer: 1 },
+      ],
+    },
+    reading: {
+      title: "Schwarzes Brett — Nachbarschaftshilfe",
+      titleTr: "Mahalle panosundaki ilan",
+      genre: "İlan",
+      text: "Schwarzes Brett — Nachbarschaftshilfe\n\nGesucht: jemand, der zweimal pro Woche mit unserem Hund spazieren geht. Wir suchen keine Firma, sondern eine Person aus dem Viertel, die Zeit und Geduld hat.\n\nUnser Hund heißt Emil. Er ist ein ruhiger Mischling, der Kinder mag und der nicht an der Leine zieht.\n\nWir zahlen zwölf Euro pro Stunde. Wer Interesse hat, meldet sich unter 0176 55 43 21 — am besten abends, weil wir tagsüber arbeiten.\n\nFamilie Brandt, Haus Nr. 14",
+      questions: [
+        { de: "Wen sucht Familie Brandt?", tr: "Brandt ailesi kimi arıyor?", options: ["Eine Hundeschule", "Eine Person aus dem Viertel", "Einen Tierarzt", "Eine Firma"], answer: 1 },
+        { de: "Wann soll man am besten anrufen?", tr: "En iyisi ne zaman aranmalı?", options: ["Morgens", "Mittags", "Abends", "Am Wochenende"], answer: 2 },
+      ],
+    },
+    speaking: [
+      { situation: "Bir arkadaşına sevdiğin filmi öneriyorsun.", de: "Das ist ein Film, den ich schon dreimal gesehen habe.", tr: "Bu, üç kez izlediğim bir film." },
+      { situation: "Kayıp eşya bürosunda çantanı tarif ediyorsun.", de: "Ich suche eine Tasche, die ich in der Straßenbahn vergessen habe.", tr: "Tramvayda unuttuğum bir çanta arıyorum." },
+    ],
+    writing: {
+      prompt: "Mahalle panosuna bir ilan yaz: bir şey arıyorsun ya da bir şey veriyorsun.",
+      checklist: [
+        "Ne aradığını ya da ne verdiğini yaz",
+        "En az iki ilgi cümlesi kur",
+        "Bir tanesinde ilgi zamirinin önüne edat koy",
+        "Nasıl ve ne zaman ulaşılacağını yaz",
+      ],
+      minWords: 70,
+      phrases: [
+        { de: "Ich suche jemanden, der …", tr: "… olan birini arıyorum", en: "I am looking for someone who …" },
+        { de: "…, den ich … habe", tr: "…-dığım …", en: "…, which I have …" },
+        { de: "…, in dem / in der …", tr: "içinde … olan", en: "… in which …" },
+        { de: "Wer Interesse hat, meldet sich unter …", tr: "İlgilenen … numarasından ulaşsın", en: "Anyone interested can get in touch at …" },
+        { de: "am besten abends", tr: "en iyisi akşamları", en: "preferably in the evening" },
+      ],
+      sample:
+        "Suche Rad-Begleitung\n\nIch suche jemanden, der zweimal pro Woche mit mir zur Arbeit fährt. Ich wohne im Bezirk Ehrenfeld, in dem es zum Glück viele ruhige Radwege gibt, und arbeite in der Innenstadt.\n\nIch habe ein altes Rad, das nicht besonders schnell ist — Tempo ist mir also nicht wichtig. Wichtiger ist mir jemand, dem man morgens auch mal in Ruhe zuhören kann.\n\nWer Interesse hat, meldet sich unter 0176 22 11 09, am besten abends. Ich freue mich!",
     },
   },
 ];
