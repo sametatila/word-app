@@ -63,8 +63,19 @@ export function AchievementWall() {
       try {
         const res = await fetch("/api/achievements", { cache: "no-store" });
         if (!res.ok) return alive && setFailed(true);
-        const data = (await res.json()) as Board;
-        if (alive) setBoard(data);
+        /*
+          Gövde körü körüne dönüştürülmüyor. Rozet duvarı artık profilin
+          İÇİNDE çiziliyor; biçimi tutmayan bir cevap `undefined.toLocaleString`
+          ile patlasa hata sınırı bütün profili "bir şeyler ters gitti"ye
+          düşürürdü. Rozet ikincil bir bölüm, tek başına ekranı indirmemeli.
+        */
+        const data = (await res.json()) as Partial<Board>;
+        if (!alive) return;
+        if (Array.isArray(data.rows) && typeof data.total === "number") {
+          setBoard(data as Board);
+        } else {
+          setFailed(true);
+        }
       } catch {
         if (alive) setFailed(true);
       }
