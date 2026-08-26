@@ -982,7 +982,7 @@ function StartCard({
       */}
       <section className="mt-5">
         <h2 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">
-          Başka türlü oyna
+          Farklı bir şey dene
         </h2>
         <div className="grid grid-cols-2 gap-2">
           <DailyCard onPlay={onDaily} tile />
@@ -1016,7 +1016,7 @@ function LoadingCard() {
           animate={{ rotate: [0, 90, 180, 270, 360], borderRadius: ["30%", "50%", "30%"] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         />
-        <p className="muted text-sm">Bugünün kelimeleri hazırlanıyor…</p>
+        <p className="muted text-sm">Bugünkü çalışman hazırlanıyor…</p>
       </div>
     </div>
   );

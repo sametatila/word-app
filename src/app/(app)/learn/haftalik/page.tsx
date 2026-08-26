@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { getUserId } from "@/lib/auth/server";
 import { WeeklyPlayer } from "@/components/weekly-player";
 
-export const metadata = { title: "Haftalık kullanım sınavı" };
+export const metadata = { title: "Haftanın kısa sınavı" };
 export const dynamic = "force-dynamic";
 
 /** Haftalık kullanım sınavı (WP-42) — oynatıcı istemcide, durum ve sorular /api/weekly'den. */

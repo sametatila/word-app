@@ -98,7 +98,7 @@ export function GamePicker({
         className={`flex w-full items-center justify-between text-left ${bare ? "px-3.5 py-2.5 text-sm" : "px-5 py-3.5"}`}
       >
         <span className="font-bold">
-          {active ? GAME_LABELS[active] : "Tek oyun oyna"}
+          {active ? GAME_LABELS[active] : "Tek oyuna odaklan"}
         </span>
         <span className="muted flex items-center gap-1.5 text-xs">
           {active ? "seçili" : "20 tur · yalnızca tekrar"}

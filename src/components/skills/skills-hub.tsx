@@ -581,7 +581,7 @@ function ExamTab({ level, data }: { level: CefrLevel; data: ExamHubData | null }
     },
     {
       href: "/learn/haftalik",
-      title: "Haftalık kullanım sınavı",
+      title: "Haftanın kısa sınavı",
       detail: data?.weekly?.done
         ? `bu hafta yapıldı · %${data.weekly.score ?? 0}`
         : data?.weekly?.short
@@ -652,9 +652,9 @@ function ExamTab({ level, data }: { level: CefrLevel; data: ExamHubData | null }
       */}
       {data?.weeklyBars.length ? (
         <div>
-          <p className="muted mb-1.5 px-1 text-[11px] font-bold uppercase tracking-wide">Haftalık kullanım</p>
+          <p className="muted mb-1.5 px-1 text-[11px] font-bold uppercase tracking-wide">Hafta hafta</p>
           <div className="card p-4">
-            <div className="flex items-end gap-1.5" aria-label="Haftalık kullanım sınavı puanları">
+            <div className="flex items-end gap-1.5" aria-label="Haftanın kısa sınavı puanları">
               {[...data.weeklyBars].reverse().map((w) => (
                 <div key={w.week} className="flex flex-1 flex-col items-center gap-1" title={`${w.week}: %${w.score ?? 0}`}>
                   <div className="flex h-14 w-full items-end overflow-hidden rounded-md surface-2">
