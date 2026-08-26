@@ -344,6 +344,27 @@
     box-shadow: 0 6px 16px -8px var(--color-brand-600);
   }
   /*
+   * Seçili çipin içindeki ikincil metin.
+   *
+   * Çiplerin çoğu bir sayı taşıyor — "Hepsi 12", "A1 12/14", "yapılmamış 5" —
+   * ve o sayı `.muted` ile yazılıyordu. `.muted` gövde zeminine göre
+   * ayarlanmış bir gri; çip seçilince zemin kehribara dönüyor ama yazı grinin
+   * kendisinde kalıyordu. Ölçüldü: kehribar zemin üstünde koyu temada
+   * 1.22:1, açık temada 2.15:1 — ikincisi zor okunuyor, birincisi pratikte
+   * görünmüyor. Kullanıcının bildirdiği sorun tam olarak buydu ve tek bir
+   * ekranda değil, çip kullanan on üç yerde birdendi.
+   *
+   * Çözüm rengi sabitlemek değil, aynı yazı rengini SAYDAMLAŞTIRMAK: sayı
+   * çipin kendi yazı renginden türüyor, yani zemin değişse de birlikte
+   * değişiyor, ve saydamlık onu başlıktan geri planda tutuyor. %85 ölçülerek
+   * seçildi — geçişin en koyu ucunda 4.84:1, en açık ucunda 6.16:1; ikisi de
+   * küçük metin için AA eşiğinin (4.5) üstünde. Çipin kendi etiketi 6.25:1,
+   * yani sıralama korunuyor: önce etiket, sonra sayı.
+   */
+  .chip-active .muted {
+    color: color-mix(in srgb, currentColor 85%, transparent);
+  }
+  /*
    * Sonuç şeridi — ekranın dibindeki geri bildirim alanı.
    *
    * Şıkların rengiyle aynı aileden ama daha dolu bir zemin: şerit ekranın en
