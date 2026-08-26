@@ -368,6 +368,7 @@ export const FOCUS_SHEETS: Record<string, string[]> = {
   "Passiv-Präsens": ["b1-passiv"],
   "Passiv-Präteritum": ["b1-passiv"],
   "Um-zu": ["b1-infinitiv-zu"],
+  "Infinitiv-zu": ["b1-infinitiv-zu"],
   "Relativsatz-Nominativ": ["b1-relativsatz"],
   "Relativsatz-Akkusativ": ["b1-relativsatz"],
   "Relativsatz-Dativ": ["b1-relativsatz"],
