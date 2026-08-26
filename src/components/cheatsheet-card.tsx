@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCachedJson, localDayKey as localDay } from "@/lib/use-cached";
 import Link from "next/link";
 import { BookOpenIcon } from "@/components/icons";
 import { ModeTile } from "@/components/mode-tile";
@@ -30,24 +30,17 @@ export function CheatsheetCard({
   /** Izgara döşemesi olarak çiz (bkz. components/mode-tile). */
   tile?: boolean;
 }) {
-  const [due, setDue] = useState<number | null>(null);
-
-  useEffect(() => {
-    let alive = true;
-    (async () => {
-      try {
-        const res = await fetch("/api/cheat", { cache: "no-store" });
-        if (!res.ok) return;
-        const data = (await res.json()) as { due: number };
-        if (alive) setDue(data.due);
-      } catch {
-        /* çevrimdışı: kart sayısız görünür, bağlantı yine çalışır */
-      }
-    })();
-    return () => {
-      alive = false;
-    };
-  }, []);
+  /* Önce önbellek, sonra tazeleme (bkz. lib/use-cached): tekrar borcu her
+     açılışta sıfırdan sorulup kart bir an sayısız görünüyordu. */
+  const { data } = useCachedJson<{ due: number }>(
+    `cheat:${localDay()}`,
+    "/api/cheat",
+    (body) => {
+      const d = body as { due?: unknown };
+      return typeof d?.due === "number" ? { due: d.due } : null;
+    },
+  );
+  const due = data?.due ?? null;
 
   if (tile) {
     return (

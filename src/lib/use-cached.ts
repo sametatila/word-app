@@ -82,6 +82,22 @@ function prune(today: string) {
   }
 }
 
+/**
+ * Kancasız erişim — kendi yükleme akışı olan yerler için.
+ *
+ * Başlangıç turu bir kanca ile alınamıyor: veri gelince ekrana yazılmıyor,
+ * bir tur kuruluyor. Ama aynı alanı (gün ve hesap temizliği dahil) paylaşması
+ * gerekiyor, o yüzden okuma/yazma buradan.
+ */
+export function readCache<T>(key: string): T | undefined {
+  prune(localDayKey());
+  return read<T>(key);
+}
+
+export function writeCache<T>(key: string, value: T) {
+  write(key, value);
+}
+
 export type Cached<T> = {
   /** Son bilinen değer; henüz hiçbir şey yoksa `undefined`, veri yoksa `null`. */
   data: T | null | undefined;

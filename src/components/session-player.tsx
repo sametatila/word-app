@@ -45,6 +45,7 @@ import { QuestCard } from "@/components/quest-card";
 import { PlanCard } from "@/components/plan-card";
 import { CoachBubble } from "@/components/coach-bubble";
 import { AlertIcon, FlameIcon, RefreshIcon } from "@/components/icons";
+import { readCache, writeCache } from "@/lib/use-cached";
 
 type Status =
   | "loading"
@@ -117,6 +118,16 @@ function writeGameMode(game: PlayableGame | null) {
 
 type ErrorKind = "auth" | "db" | "network";
 
+/**
+ * Önbellek anahtarı: gün ve oyun kipi.
+ *
+ * Gün, çünkü tur günlük. Kip, çünkü "yalnızca Çevir" seçiliyken saklanan
+ * kuyruk karışık turun kartını yanlış gösterirdi.
+ */
+function sessionKey(game: PlayableGame | null): string {
+  return `session:${game ?? "mixed"}:${localDay()}`;
+}
+
 function localDay(): string {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
@@ -134,6 +145,10 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   const [errorKind, setErrorKind] = useState<ErrorKind>("db");
   const [saveWarning, setSaveWarning] = useState(false);
   const startedAt = useRef(Date.now());
+  /** Ekrandaki tur sunucudan mı geldi (önbellekten değil). */
+  const fresh = useRef(false);
+  /** Süren istek — "Başla" gerekirse bunu bekliyor. */
+  const inflight = useRef<Promise<SessionPayload | null> | null>(null);
   const pending = useRef<Answer[]>([]);
   const sessionXp = useRef(0);
   const missed = useRef<MissedWord[]>([]);
@@ -203,8 +218,15 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   }, [status]);
 
   const load = useCallback(
-    async (opts: { extra?: boolean; fresh?: boolean; game?: PlayableGame | null } = {}) => {
-    setStatus("loading");
+    async (opts: {
+      extra?: boolean;
+      fresh?: boolean;
+      game?: PlayableGame | null;
+      /** Ekranda zaten önbellekten gelen bir kart var — yükleme ekranına düşme. */
+      quiet?: boolean;
+    } = {}) => {
+    if (!opts.quiet) setStatus("loading");
+    fresh.current = false;
     setIndex(0);
     setTally({ correct: 0, total: 0, xp: 0 });
     setResult(null);
@@ -253,6 +275,11 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
       setResumable(data.resume);
       startedAt.current = Date.now();
       setStatus(data.rounds.length ? "ready" : "empty");
+      // Bir sonraki açılış bu kartı anında çizsin. Yalnızca AÇILIŞ turu
+      // saklanıyor: ek tur ve "yeni tur" istekleri o anın sonucu, yarının
+      // başlangıç kartı değil.
+      if (!opts.extra && !opts.fresh) writeCache(sessionKey(game), data);
+      fresh.current = true;
       return data;
     } catch {
       setErrorKind("network");
@@ -273,7 +300,32 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     // sayılır ve özet ekranında Erdi ona göre konuşur (WP-66).
     const fromUrl = readGameParam();
     if (fromUrl) targeted.current = true;
-    void load({ game: fromUrl ?? readGameMode() });
+    const game = fromUrl ?? readGameMode();
+
+    /*
+      ÖNCE ÖNBELLEK, SONRA TAZELEME (bkz. lib/use-cached).
+
+      Ekran her açılışta "Bugünkü çalışman hazırlanıyor…" gösteriyordu ve bu,
+      uygulamayı açan herkesin gördüğü ilk şeydi. Oysa kartın söylediklerinin
+      çoğu — kaç kelime, hangi seviye, seri, hedef — bir turdan diğerine
+      değişmiyor.
+
+      Ama tur verisi bir metin değil: "Başla" o kuyruğu oynatıyor. Eski bir
+      kuyruğu oynatmak, cevaplanmış kelimeleri tekrar sormak demek. Bu yüzden
+      önbellek yalnızca KARTI çiziyor; `fresh` bayrağı sunucudan taze kuyruk
+      gelene kadar kapalı duruyor ve "Başla" o ana kadar bekliyor
+      (bkz. startFresh). Pratikte fark edilmiyor — istek karta bakma süresinden
+      kısa — ama yanlış kuyrukla tur başlaması imkânsız.
+    */
+    const cached = readCache<SessionPayload>(sessionKey(game));
+    if (cached?.rounds?.length) {
+      setSession(cached);
+      setResumable(cached.resume);
+      setStatus("ready");
+    }
+    // İstek `inflight`e alınıyor: önbellekli açılışta "Başla" bunu bekliyor.
+    inflight.current = load({ game, quiet: Boolean(cached?.rounds?.length) });
+    void inflight.current;
   }, [load]);
 
   /** Kaldığı yerden devam: sunucudaki ilerlemeyi yerine koyar. */
@@ -301,6 +353,14 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
 
   /** Yeni tur: kayıtlı tur atılır ve sunucudan taze bir kuyruk istenir. */
   async function startFresh() {
+    // Kart önbellekten çizildiyse kuyruk henüz doğrulanmamış olabilir. O
+    // durumda yükleme ekranına dönülüp taze cevap bekleniyor: eski bir
+    // kuyrukla tur başlatmak, cevaplanmış kelimeleri yeniden sormak demek.
+    if (!fresh.current && inflight.current) {
+      setStatus("loading");
+      const data = await inflight.current;
+      if (!data?.rounds.length) return;
+    }
     if (resumable) {
       const data = await load({ fresh: true });
       if (!data?.rounds.length) return; // load hata/boş durumunu zaten gösterdi

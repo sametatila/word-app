@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCachedJson } from "@/lib/use-cached";
 import { CheckIcon, TrophyIcon } from "@/components/icons";
 import { ModeTile, ModeTileSkeleton } from "@/components/mode-tile";
 
@@ -12,6 +12,13 @@ import { ModeTile, ModeTileSkeleton } from "@/components/mode-tile";
  * olması, "bugün oynadım mı" sorusunun cevabını ekranda tutuyor — kaçırılan
  * günün fark edilmesi de böyle oluyor.
  */
+
+type Payload = {
+  level: string;
+  rounds: unknown[];
+  played: { score: number; correct: number; total: number } | null;
+  board: { rank: number; isMe: boolean }[];
+};
 
 type State = {
   loading: boolean;
@@ -38,44 +45,30 @@ export function DailyCard({
   /** Izgara döşemesi olarak çiz (bkz. components/mode-tile). */
   tile?: boolean;
 }) {
-  const [state, setState] = useState<State>({
-    loading: true,
-    played: null,
-    rank: null,
-    players: 0,
-    level: "",
-  });
+  /*
+    Önce önbellek, sonra tazeleme (bkz. lib/use-cached). Bu döşeme başlangıç
+    ekranının dört döşemesinden biri ve her açılışta boş bir iskelet olarak
+    beliriyordu; oysa "bugün oynadım mı" sorusunun cevabı gün içinde en fazla
+    bir kez değişiyor ve değiştiğinde bunu haber veren olay zaten var.
+  */
+  const { data } = useCachedJson<Payload>(
+    `daily:${localDay()}`,
+    `/api/daily?day=${localDay()}`,
+    (body) => {
+      const d = body as Partial<Payload>;
+      return Array.isArray(d?.rounds) && Array.isArray(d?.board) ? (d as Payload) : null;
+    },
+  );
 
-  useEffect(() => {
-    let alive = true;
-    (async () => {
-      try {
-        const res = await fetch(`/api/daily?day=${localDay()}`, { cache: "no-store" });
-        if (!res.ok) return alive && setState((s) => ({ ...s, loading: false }));
-        const d = (await res.json()) as {
-          level: string;
-          rounds: unknown[];
-          played: { score: number; correct: number; total: number } | null;
-          board: { rank: number; isMe: boolean }[];
-        };
-        if (!alive) return;
-        // Tur kurulamıyorsa (seviyede yeterli kelime yok) kart hiç görünmesin.
-        if (!d.played && !d.rounds.length) return setState((s) => ({ ...s, loading: false }));
-        setState({
-          loading: false,
-          played: d.played,
-          rank: d.board.find((r) => r.isMe)?.rank ?? null,
-          players: d.board.length,
-          level: d.level,
-        });
-      } catch {
-        if (alive) setState((s) => ({ ...s, loading: false }));
-      }
-    })();
-    return () => {
-      alive = false;
-    };
-  }, []);
+  const state: State = {
+    loading: data === undefined,
+    played: data?.played ?? null,
+    rank: data?.board.find((r) => r.isMe)?.rank ?? null,
+    players: data?.board.length ?? 0,
+    // Tur kurulamıyorsa (seviyede yeterli kelime yok) kart hiç görünmesin:
+    // seviye boş kalıyor ve aşağıdaki koşul kartı gizliyor.
+    level: data && (data.played || data.rounds.length) ? data.level : "",
+  };
 
   // Yüklenirken satırın YERİ duruyor.
   //
