@@ -587,6 +587,16 @@ export function sttProviders(): SttProvider[] {
   if (mistral && CATALOG.mistral.sttModel) {
     out.push({ name: "mistral", dialect: "openai", baseUrl: CATALOG.mistral.baseUrl, key: mistral, model: (CATALOG.mistral.sttEnvModel && process.env[CATALOG.mistral.sttEnvModel]) || CATALOG.mistral.sttModel });
   }
+  /*
+    STT_ORDER="cloudflare,groq" gibi bir liste sırayı ezer ve listede olmayanı
+    dışarıda bırakır — bir sağlayıcıyı tek başına denemek ya da kotası dolan
+    hattı geçici olarak sondan kaldırmak için (CHAT_PROVIDER'ın STT karşılığı).
+  */
+  const order = (process.env.STT_ORDER ?? "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
+  if (order.length) {
+    const picked = order.map((n) => out.find((p) => p.name === n)).filter((p): p is SttProvider => Boolean(p));
+    if (picked.length) return picked;
+  }
   return out;
 }
 

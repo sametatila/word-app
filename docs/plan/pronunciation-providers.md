@@ -61,6 +61,17 @@ TTS klibi → Groq → puan 100, ~300 ms; eksik yarım cümle → 52.
 Bilinen sınır: ASR dil modeli yakın sesteşleri "düzeltir" (Staat → Stadt); telaffuz hatası kelime
 düzeyinde ancak farklı bir kelimeye düştüğünde yakalanır. Fonem düzeyi faz 2.
 
+### Sağlayıcı testi (2026-08-26, gerçek anahtarlarla, TTS klibi "Ich wohne in der Stadt.")
+
+| Hat | Transkript | Kelime zamanı | Gecikme | Not |
+| --- | --- | --- | --- | --- |
+| Groq whisper-large-v3-turbo | ✓ | ✓ | 180–350 ms | birincil |
+| Cloudflare whisper-large-v3-turbo | ✓ | ✗ (akıcılık toplam süreden) | 0,8–2,2 s | Groq 401/429'da otomatik devraldı (kayıtta görüldü) |
+| Speechmatics enhanced | ✓ (noktalamasız) | ✓ | 2–3,2 s | iş oluştur + yoklama |
+| Deepgram nova-3 | ✓ (küçük harf) | ✓ | 0,35–1,2 s | kredi |
+
+Tek sağlayıcıyı denemek ya da sırayı ezmek: `STT_ORDER="cloudflare,groq"`.
+
 ## Mimari (faz 1)
 
 ```

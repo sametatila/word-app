@@ -4,12 +4,12 @@
 
 ## Gözlenen kullanım (son 30 gün)
 
-- Aktif kullanıcı: 3 (30 gün); DAU ortalama 2.0, en yüksek 3.
-- STT istekleri (pocket-mic → /api/stt): 124 istek, 766 sn ses; klip ortalama 6.2 sn, p95 20.0 sn; başarı 82 %, ilk cevap ortalama 537 ms.
-- Sağlayıcı dağılımı: groq/whisper-large-v3-turbo 66 istek (354 sn, ok 53); deepgram/nova-3 45 istek (216 sn, ok 41); mistral/voxtral-mini-latest 13 istek (196 sn, ok 8).
-- En yoğun gün: Sun Aug 23 — 92 istek, 573 sn; en yoğun saat: 68 istek, 502 sn; en yoğun dakika: 8 istek.
+- Aktif kullanıcı: 3 (30 gün); DAU ortalama 2.3, en yüksek 3.
+- STT istekleri (pocket-mic → /api/stt): 160 istek, 828 sn ses; klip ortalama 5.2 sn, p95 20.0 sn; başarı 81 %, ilk cevap ortalama 663 ms.
+- Sağlayıcı dağılımı: groq/whisper-large-v3-turbo 82 istek (376 sn, ok 61); deepgram/nova-3 49 istek (224 sn, ok 45); mistral/voxtral-mini-latest 13 istek (196 sn, ok 8); cloudflare/@cf/openai/whisper-large-v3-turbo 12 istek (24 sn, ok 12); speechmatics/enhanced 4 istek (8 sn, ok 4).
+- En yoğun gün: Sun Aug 23 — 92 istek, 573 sn; en yoğun saat: 68 istek, 502 sn; en yoğun dakika: 16 istek.
 - Rol yapma turu: 88 (30 gün); konuşma egzersizi denemesi: 5.
-- Günlük ortalama: 26 sn ses, 4.1 istek → kullanıcı başına gün başına 13 sn / 2.1 istek.
+- Günlük ortalama: 28 sn ses, 5.3 istek → kullanıcı başına gün başına 12 sn / 2.4 istek.
 
 ## Hedef model (WP-20 açıkken, kullanıcı başına gün başına)
 
@@ -25,17 +25,17 @@
 
 | DAU | sn/gün | sn/tepe saat | istek/gün | istek/tepe dk | Groq | Cloudflare | Gladia kredisi kaç gün |
 |---|---|---|---|---|---|---|---|
-| 1 | 13 | 4 | 2 | 0.1 | ✓ | ✓ | 22.558 |
-| 5 | 64 | 19 | 10 | 0.5 | ✓ | ✓ | 4.511 |
-| 10 | 128 | 38 | 21 | 1.0 | ✓ | ✓ | 2.255 |
-| 25 | 319 | 96 | 52 | 2.6 | ✓ | ✓ | 902 |
-| 50 | 638 | 192 | 103 | 5.2 | ✓ | ✓ | 451 |
-| 100 | 1.277 | 383 | 207 | 10.3 | ✓ | ✓ | 225 |
-| 250 | 3.192 | 958 | 517 | 25.8 | ✗ (dk-istek) | ✓ | 90 |
-| 500 | 6.383 | 1.915 | 1.033 | 51.7 | ✗ (dk-istek) | ✓ | 45 |
-| 1000 | 12.767 | 3.830 | 2.067 | 103.3 | ✗ (gün-istek, dk-istek) | ✓ | 22 |
+| 1 | 12 | 4 | 2 | 0.1 | ✓ | ✓ | 23.478 |
+| 5 | 61 | 18 | 12 | 0.6 | ✓ | ✓ | 4.695 |
+| 10 | 123 | 37 | 24 | 1.2 | ✓ | ✓ | 2.347 |
+| 25 | 307 | 92 | 59 | 3.0 | ✓ | ✓ | 939 |
+| 50 | 613 | 184 | 119 | 5.9 | ✓ | ✓ | 469 |
+| 100 | 1.227 | 368 | 237 | 11.9 | ✓ | ✓ | 234 |
+| 250 | 3.067 | 920 | 593 | 29.6 | ✗ (dk-istek) | ✓ | 93 |
+| 500 | 6.133 | 1.840 | 1.185 | 59.3 | ✗ (dk-istek) | ✓ | 46 |
+| 1000 | 12.267 | 3.680 | 2.370 | 118.5 | ✗ (gün-istek, dk-istek) | ✓ | 23 |
 
-Eşik: Groq ≤ **186 DAU**, Cloudflare ≤ **963 DAU**.
+Eşik: Groq ≤ **168 DAU**, Cloudflare ≤ **1.012 DAU**.
 
 ## Hedef model — DAU'ya göre
 
