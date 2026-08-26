@@ -156,17 +156,7 @@ export function ActivityProgress({
         />
       </div>
 
-      <section className="card p-5">
-        <h2 className="mb-4 font-bold">Son 8 hafta</h2>
-        <Heatmap byDay={byDay} today={today} />
-        <div className="muted mt-3 flex items-center justify-center gap-2 text-xs">
-          <span>az</span>
-          {[0, 1, 2, 3, 4].map((l) => (
-            <span key={l} className="h-3 w-3 rounded-sm" style={{ background: heatColor(l * 8) }} />
-          ))}
-          <span>çok</span>
-        </div>
-      </section>
+      <ActivityStrip byDay={byDay} today={today} />
 
       <section className="card p-5">
           <h2 className="mb-3 font-bold">Oyun performansın</h2>
@@ -260,58 +250,102 @@ function KpiCard({
   );
 }
 
-function Heatmap({ byDay, today }: { byDay: Map<string, DayRow>; today: string }) {
-  const weeks: string[][] = [];
-  const end = new Date(`${today}T00:00:00Z`);
-  const start = new Date(end);
-  start.setUTCDate(start.getUTCDate() - 55);
-  // Pazartesi başlangıcına hizala
-  const offset = (start.getUTCDay() + 6) % 7;
-  start.setUTCDate(start.getUTCDate() - offset);
+/** Şeritteki gün sayısı — iki tam hafta, hafta sonu ritmi görünsün diye. */
+const STRIP_DAYS = 14;
 
-  const cursor = new Date(start);
-  while (cursor <= end) {
-    const week: string[] = [];
-    for (let i = 0; i < 7; i++) {
-      week.push(cursor.toISOString().slice(0, 10));
-      cursor.setUTCDate(cursor.getUTCDate() + 1);
-    }
-    weeks.push(week);
+/*
+  İki harf, tek harf değil. Tek harfle şerit "P C C P P S Ç" oluyor ve bu
+  okunmuyor: Pazartesi, Perşembe ve Pazar aynı harfe, Cuma ile Cumartesi de
+  aynı harfe düşüyor. Şeridin altına gün adı koymanın tek sebebi hafta sonu
+  ritmini görünür kılmaktı; ayırt edilemeyen bir harf o işi yapmıyor.
+*/
+const WEEKDAY = ["Pt", "Sa", "Ça", "Pe", "Cu", "Ct", "Pa"];
+
+/**
+ * Son iki haftanın çalışma ritmi.
+ *
+ * Burada sekiz haftalık bir ısı haritası vardı: yedi sıra, sekiz sütun,
+ * altında bir de "az/çok" göstergesi. Kart tek başına 314 piksel yer
+ * kaplıyordu ve profildeki en uzun bloktu — oysa söylediği tek şey "hangi
+ * günler çalıştım".
+ *
+ * Günlük ayrıntıyı sekiz haftaya yaymak ya yedi sıra ya da çok uzun bir şerit
+ * istiyor; kompakt olmanın yolu iki boyuttan birini bırakmaktan geçiyor.
+ * Bırakılan boyut MENZİL oldu, ayrıntı değil: "dün çalıştım mı, hafta sonları
+ * düşüyor muyum" sorusu davranışı değiştiren soru; iki ay önceki salı değil.
+ * Uzun vadeli emek zaten üstteki "en uzun seri" ve "çalışma süresi"nde duruyor.
+ *
+ * Sütun yüksekliği o günün tekrar sayısı, pencerenin en yoğun gününe göre
+ * ölçekleniyor — mutlak bir eşik olsaydı az çalışan birinde şerit hep dümdüz,
+ * çok çalışanda hep tavanda görünürdü. Çalışılmayan gün ince bir taban çizgisi
+ * bırakıyor: boşluk da bir bilgi, ama sütunlar hizasını kaybetmemeli.
+ */
+function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: string }) {
+  const end = new Date(`${today}T00:00:00Z`);
+  const days: { day: string; reviews: number; weekday: number }[] = [];
+  for (let i = STRIP_DAYS - 1; i >= 0; i--) {
+    const d = new Date(end);
+    d.setUTCDate(d.getUTCDate() - i);
+    const key = d.toISOString().slice(0, 10);
+    days.push({ day: key, reviews: byDay.get(key)?.reviews ?? 0, weekday: (d.getUTCDay() + 6) % 7 });
   }
 
-  /*
-    Izgara ortalanıyor ve kare boyu sınırlı.
+  const peak = Math.max(1, ...days.map((d) => d.reviews));
+  const active = days.filter((d) => d.reviews > 0).length;
+  const total = days.reduce((s, d) => s + d.reviews, 0);
 
-    Kareler önce sabit 14 pikseldi ve sol kenara yapışıyordu; sağda kalan
-    boşluk grafiği bir şeyin kesilmiş parçası gibi gösteriyordu. Sonra tam
-    genişliğe yayıldı ve bu kez kareler 45 piksele çıktı — ısı haritası olmaktan
-    çıkıp mozaiğe döndü. İkisinin ortası: sütunlar kalan alanı paylaşıyor ama
-    kare 26 pikseli geçmiyor, ızgara da ortalanıyor. Dar telefonda küçülüyor,
-    geniş kartta simetrik duruyor.
-  */
   return (
-    <div className="flex justify-center gap-1.5">
-      {weeks.map((week, wi) => (
-        <div key={wi} className="flex min-w-0 flex-1 flex-col gap-1.5" style={{ maxWidth: 26 }}>
-          {week.map((day) => {
-            const row = byDay.get(day);
-            const count = row?.reviews ?? 0;
-            const future = day > today;
-            return (
-              <motion.div
-                key={day}
-                initial={{ opacity: 0, scale: 0.7 }}
-                animate={{ opacity: future ? 0.25 : 1, scale: 1 }}
-                transition={{ delay: wi * 0.012 }}
-                title={`${day}: ${count} tekrar`}
-                className="aspect-square w-full rounded-[3px]"
-                style={{ background: future ? "var(--surface-2)" : heatColor(count) }}
-              />
-            );
-          })}
-        </div>
-      ))}
-    </div>
+    <section className="card px-4 py-3.5">
+      <div className="mb-2.5 flex items-baseline justify-between gap-3">
+        <h2 className="text-sm font-bold">Son iki hafta</h2>
+        <p className="muted text-xs font-semibold tabular-nums">
+          {active} gün · {total.toLocaleString("tr-TR")} tekrar
+        </p>
+      </div>
+
+      <div className="flex h-11 items-end gap-[3px]">
+        {days.map((d, i) => {
+          const isToday = d.day === today;
+          // Çalışılan en düşük gün bile görünür olmalı: %14 taban, üstüne oran.
+          const pct = d.reviews > 0 ? 14 + Math.round((d.reviews / peak) * 86) : 0;
+          return (
+            <div key={d.day} className="flex min-w-0 flex-1 items-end" style={{ height: "100%" }}>
+              {d.reviews > 0 ? (
+                <motion.div
+                  initial={{ height: 0 }}
+                  animate={{ height: `${pct}%` }}
+                  transition={{ delay: i * 0.02, type: "spring", stiffness: 180, damping: 22 }}
+                  title={`${d.day}: ${d.reviews} tekrar`}
+                  className={`w-full rounded-[3px] ${isToday ? "brand-gradient" : ""}`}
+                  style={isToday ? undefined : { background: heatColor(d.reviews) }}
+                />
+              ) : (
+                <div
+                  title={`${d.day}: çalışılmadı`}
+                  className="w-full rounded-full surface-2"
+                  style={{ height: 3 }}
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Gün harfleri hafta sonu düşüşünü görünür kılıyor — şeridin tek başına
+          söyleyemediği şey bu. Bugün koyu, geri kalanı silik. */}
+      <div className="mt-1.5 flex gap-[3px]">
+        {days.map((d) => (
+          <span
+            key={d.day}
+            className={`min-w-0 flex-1 text-center text-[10px] leading-none ${
+              d.day === today ? "font-bold" : d.weekday >= 5 ? "muted opacity-60" : "muted"
+            }`}
+          >
+            {WEEKDAY[d.weekday]}
+          </span>
+        ))}
+      </div>
+    </section>
   );
 }
 
