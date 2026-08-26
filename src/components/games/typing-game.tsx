@@ -5,6 +5,7 @@ import { whyFor } from "@/lib/why";
 import { classifyTyping, miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
 import { matchesAnswer, withArtikel, type GameProps, typLabel } from "./types";
 import type { Round } from "@/lib/types";
@@ -47,6 +48,8 @@ function skeleton(de: string): string {
 }
 
 export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
+  // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
+  const noHints = useNoHints();
   const { word } = round;
 
   const [value, setValue] = useState("");
@@ -219,14 +222,16 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
         </div>
 
         <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={showHint}
-            disabled={status !== "idle" || hintShown}
-            className="btn btn-ghost min-h-12 flex-1 px-4 text-sm"
-          >
-            İpucu
-          </button>
+          {noHints ? null : (
+            <button
+              type="button"
+              onClick={showHint}
+              disabled={status !== "idle" || hintShown}
+              className="btn btn-ghost min-h-12 flex-1 px-4 text-sm"
+            >
+              İpucu
+            </button>
+          )}
           <button
             type="submit"
             disabled={status !== "idle" || value.trim() === ""}

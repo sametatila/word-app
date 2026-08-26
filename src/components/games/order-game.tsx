@@ -5,6 +5,7 @@ import { whyFor } from "@/lib/why";
 import { classifyOrder, miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
 import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
@@ -30,6 +31,8 @@ type Token = { id: number; text: string };
  * yuvayla çizilir. Böylece dokunulacak hedef tur boyunca sabit kalır.
  */
 export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
+  // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
+  const noHints = useNoHints();
   const { word, tokens, answer, tail, sentenceTr, sentenceEn } = round;
 
   const pool = useMemo<Token[]>(() => tokens.map((text, id) => ({ id, text })), [tokens]);
@@ -241,14 +244,16 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
           >
             Sil
           </button>
-          <button
-            type="button"
-            onClick={useHint}
-            disabled={status !== "playing" || placed.length >= answer.length}
-            className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
-          >
-            İpucu
-          </button>
+          {noHints ? null : (
+            <button
+              type="button"
+              onClick={useHint}
+              disabled={status !== "playing" || placed.length >= answer.length}
+              className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
+            >
+              İpucu
+            </button>
+          )}
         </div>
       </div>
     </GameShell>

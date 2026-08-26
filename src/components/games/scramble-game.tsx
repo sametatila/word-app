@@ -5,6 +5,7 @@ import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
 import { normalize, withArtikel, type GameProps } from "./types";
 import { seededShuffle } from "@/lib/shuffle";
@@ -40,6 +41,8 @@ function makePool(word: string, seed: string): Tile[] {
  * dokunulacak hedef oyun boyunca aynı yerde kalır.
  */
 export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
+  // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
+  const noHints = useNoHints();
   const { word } = round;
 
   const targetLetters = useMemo(() => Array.from(word.de).filter((c) => c !== " "), [word.de]);
@@ -230,14 +233,16 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
           >
             Sil
           </button>
-          <button
-            type="button"
-            onClick={useHint}
-            disabled={status !== "playing" || placed.length >= targetLetters.length}
-            className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
-          >
-            İpucu
-          </button>
+          {noHints ? null : (
+            <button
+              type="button"
+              onClick={useHint}
+              disabled={status !== "playing" || placed.length >= targetLetters.length}
+              className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
+            >
+              İpucu
+            </button>
+          )}
         </div>
       </div>
     </GameShell>

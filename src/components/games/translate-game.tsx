@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { GameShell } from "./game-shell";
+import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
@@ -42,6 +43,8 @@ const ASSESS_ACCEPT = 75;
  * düşürür (hintUsed).
  */
 export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
+  // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
+  const noHints = useNoHints();
   const { word, sentence, alternatives } = round;
   const [value, setValue] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -232,14 +235,16 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
         </div>
 
         <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={() => status === "idle" && setHintShown(true)}
-            disabled={status !== "idle" || hintShown}
-            className="btn btn-ghost min-h-12 flex-1 px-4 text-sm"
-          >
-            İpucu
-          </button>
+          {noHints ? null : (
+            <button
+              type="button"
+              onClick={() => status === "idle" && setHintShown(true)}
+              disabled={status !== "idle" || hintShown}
+              className="btn btn-ghost min-h-12 flex-1 px-4 text-sm"
+            >
+              İpucu
+            </button>
+          )}
           <button
             type="submit"
             disabled={status !== "idle" || value.trim() === ""}
