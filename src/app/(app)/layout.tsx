@@ -19,6 +19,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   let xp = 0;
   let course = "de";
   let voice: string | null = null;
+  let name: string | null = null;
   let needsOnboarding = false;
   try {
     const profile = await ensureProfile(user.id, user.name);
@@ -26,6 +27,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     xp = profile?.totalXp ?? 0;
     course = profile?.course ?? "de";
     voice = profile?.voice ?? null;
+    name = profile?.displayName ?? user.name ?? null;
     // Kurs hiç seçilmediyse (yeni kullanıcı) önce kurs/seviye ekranı gelir.
     // İsmi olmayan hesaplar da buraya düşer: sıralamada "İsimsiz öğrenci"
     // olarak görünmek yerine bir kez isim sorulur.
@@ -37,7 +39,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   if (needsOnboarding) redirect("/setup");
 
   return (
-    <AppShell streak={streak} xp={xp} course={course} voice={voice} userId={user.id}>
+    <AppShell streak={streak} xp={xp} course={course} voice={voice} userId={user.id} name={name}>
       {children}
     </AppShell>
   );

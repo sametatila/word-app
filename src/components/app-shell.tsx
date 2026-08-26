@@ -12,12 +12,37 @@ import { SessionKeeper } from "./session-keeper";
 import { AchievementUnlock } from "./achievement-unlock";
 import { track } from "@/lib/track";
 import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, ChatIcon } from "./icons";
+import { Avatar } from "@/components/avatar";
 
+/**
+ * Alt gezinme: ÜÇ sekme.
+ *
+ * Beş sekmeydi ve ikisi oraya ait değildi. Ölçüm (dört gün, 499 açılış):
+ * Öğren %45, Beceriler %24, Dersler %18, Profil %10, Kelimeler %3.
+ *
+ * Alt gezinme geri DÖNÜLEN yerler içindir. Uygulamanın üç öğrenme yolu var —
+ * kelime turu, ders yolu, beceri egzersizleri — ve sekmeler tam olarak onlar.
+ *
+ * Kelimeler bir hedef değil bir sonuç: kimse "kelime listeme bakayım" diye
+ * uygulamayı açmıyor, tura girip zorlandığı kelimeyi merak ettiğinde bakıyor.
+ * Girişi de oradan (tur özeti) ve profilden.
+ *
+ * Profil ayar ve arşiv ekranı; günde bir kez bile açılmıyor. Üst başlıkta
+ * zaten seri ve XP rozetleri var, sağ uca bir avatar doğal olarak oturuyor.
+ *
+ * Yan fayda ölçüldü: beş sekmede 320 px'lik ekranda "Kelimeler" etiketinin
+ * iki yanında 3,4 piksel kalıyordu. Üç sekmede her etiketin yeri iki katına
+ * çıkıyor ve kırpılma riski tamamen kalkıyor.
+ */
 const NAV = [
   { href: "/learn", label: "Öğren", Icon: CardsIcon },
-  { href: "/skills", label: "Beceriler", Icon: CompassIcon },
   { href: "/lessons", label: "Dersler", Icon: ChatIcon },
-  { href: "/words", label: "Kelimeler", Icon: ListIcon },
+  { href: "/skills", label: "Beceriler", Icon: CompassIcon },
+];
+
+/** Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor. */
+const SECONDARY = [
+  { href: "/words", label: "Kelimelerim", Icon: ListIcon },
   { href: "/profile", label: "Profil", Icon: UserIcon },
 ];
 
@@ -28,6 +53,7 @@ export function AppShell({
   course = "de",
   voice = null,
   userId,
+  name = null,
 }: {
   children: ReactNode;
   streak: number;
@@ -36,6 +62,8 @@ export function AppShell({
   voice?: string | null;
   /** Oturumdaki hesap — oturumu tazeleyen ve hesap değişimini fark eden bileşen için. */
   userId: string;
+  /** Görünen ad — başlıktaki armanın baş harfleri için. */
+  name?: string | null;
 }) {
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
@@ -224,6 +252,31 @@ export function AppShell({
           })}
         </nav>
 
+        {/*
+          Kelimeler ve Profil alt sekmelerden çıktı ama masaüstünde kenar
+          çubuğu boş yer dolu: ikisi de burada, ana üçlüden ayrı ve daha sönük
+          bir ikinci grup olarak duruyor. Sıralama aynı fikri anlatıyor —
+          üstte gidilen yerler, altta bakılan yerler.
+        */}
+        <nav className="mt-4 flex flex-col gap-1 border-t pt-4" style={{ borderColor: "var(--border)" }}>
+          {SECONDARY.map((item) => {
+            const active = pathname.startsWith(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                prefetch={false}
+                className={`flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
+                  active ? "text-[color:var(--text)]" : "muted hover:text-[color:var(--text)]"
+                }`}
+              >
+                <item.Icon size={17} />
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+
         <div className="mt-auto flex items-center justify-between">
           <StatPills streak={stats.streak} xp={stats.xp} />
           <ThemeToggle />
@@ -236,13 +289,40 @@ export function AppShell({
           className="safe-top sticky top-0 z-20 flex items-center justify-between border-b px-4 pb-3 backdrop-blur md:hidden"
           style={{ borderColor: "var(--border)", background: "color-mix(in srgb, var(--bg) 85%, transparent)" }}
         >
-          <Link href="/learn" className="flex items-center gap-2">
-            <img src="/logo-mark.png" alt="" width={32} height={32} className="rounded-lg" />
-            <span className="font-bold">Wortspiel</span>
+          <Link href="/learn" className="flex min-w-0 items-center gap-2">
+            <img src="/logo-mark.png" alt="" width={32} height={32} className="shrink-0 rounded-lg" />
+            {/*
+              Kelime markası 380 pikselin altında gizleniyor. Başlıkta artık
+              avatar da var ve 320 px'lik bir ekranda logo + ad + iki rozet +
+              tema + avatar sığmıyordu: ad rozetin altına giriyordu. Logonun
+              kendisi zaten kimliği taşıyor, ad ise tekrar.
+            */}
+            <span className="hidden font-bold min-[380px]:inline">Wortspiel</span>
           </Link>
           <div className="flex items-center gap-2">
             <StatPills streak={stats.streak} xp={stats.xp} />
             <ThemeToggle />
+            {/*
+              Profilin girişi: alt sekme değil, başlıktaki avatar.
+
+              Rozetlerin hemen yanında duruyor ve o komşuluk tesadüf değil —
+              seri, XP ve kimlik aynı şeyin üç yüzü. Alt çubuktan çıkması üç
+              sekmeye yer açtı; buradan her ekrandan tek dokunuşla ulaşılıyor.
+            */}
+            <Link
+              href="/profile"
+              prefetch={false}
+              aria-label="Profil ve ayarlar"
+              aria-current={pathname.startsWith("/profile") ? "page" : undefined}
+              className="shrink-0 rounded-full transition-shadow"
+              style={
+                pathname.startsWith("/profile")
+                  ? { boxShadow: "0 0 0 2px var(--color-brand)" }
+                  : undefined
+              }
+            >
+              <Avatar userId={userId} name={name} size={32} />
+            </Link>
           </div>
         </header>
 

@@ -1500,8 +1500,19 @@ function SummaryCard({
             {missed.length > 6 ? (
               <p className="muted mt-2 text-center text-xs">+{missed.length - 6} kelime daha</p>
             ) : null}
+            {/*
+              Kelime listesinin GİRİŞİ burası.
+
+              "Kelimelerim" alt sekmeden çıktı çünkü bir hedef değil bir sonuç:
+              kimse "kelime listeme bakayım" diye uygulamayı açmıyor, tura girip
+              zorlandığı kelimeyi merak ettiğinde bakıyor. Merakın doğduğu an tam
+              olarak bu ekran — bağlantı da o yüzden burada.
+            */}
             <p className="muted mt-2 text-center text-xs">
-              Bunlar yakında tekrar karşına çıkacak — ayrıca bir şey yapmana gerek yok.
+              Bunlar yakında tekrar karşına çıkacak — ayrıca bir şey yapmana gerek yok.{" "}
+              <Link href="/words?status=learning" className="font-semibold underline-offset-2 hover:underline">
+                Kelimelerim
+              </Link>
             </p>
           </div>
         ) : null}
