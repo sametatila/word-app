@@ -259,7 +259,7 @@ export const deB2B06: Lesson[] = [
       { say: [tr("Şimdi: 'Nitelikli personel eksikliği var.'")], expect: produce("Es mangelt an qualifiziertem Personal", [tr("Edattan sonra yönelme hâli; belirteçsiz sıfat -em ekini alır:"), de("Es mangelt an qualifiziertem Personal."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bu boşluk kolay doldurulamıyor.'")], expect: produce("Diese Lücke lässt sich nicht leicht schließen", [tr("lassen artı sich; olumsuzluk mastardan önce:"), de("Diese Lücke lässt sich nicht leicht schließen."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Viele Stellen sind kaum zu besetzen."), tr("cümlesi doğru mu?")], expect: truefalse("Viele Stellen sind kaum zu besetzen.", true, [tr("Doğru. sein artı zu artı mastar yapısı edilgen anlamı taşıyor ve çoğul özne sind alıyor.")]) },
-      { say: [tr("Son bir soru: 'Sorun nereden kaynaklanıyor?'")], expect: produce("Woran liegt das Problem", [tr("Edat soru zamiriyle kaynaşır:"), de("Woran liegt das Problem?"), tr("Tekrar dene.")]) },
+      { say: [tr("Son bir soru: 'Bunun sebebi ne?'")], expect: produce("Woran liegt das", [tr("Edat soru zamiriyle kaynaşır; kalıp bu hâliyle sabittir:"), de("Woran liegt das?"), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Konuşmada eleman bulamayan bir işletmeyle konuşacaksın.")] },
     ],
     roleplay: {

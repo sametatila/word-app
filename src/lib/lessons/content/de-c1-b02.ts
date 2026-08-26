@@ -159,7 +159,7 @@ export const deC1B02: Lesson[] = [
       word("Son", { de: "die Einsicht", tr: "kavrayış, kabul" }),
       { say: [tr("Örnek:"), de("Das ist eben so."), tr("Tekrar edin:"), de("Das ist eben so")], expect: repeat("Das ist eben so") },
       { say: [tr("Sıra sende: 'O zaman olmasın.'")], expect: produce("Dann halt nicht", [tr("Üç kelimelik tam bir cümle; parçacık ortada:"), de("Dann halt nicht."), tr("Tekrar dene.")]) },
-      { say: [tr("Şimdi: 'Bununla kabullenmek zorundayız.'")], expect: produce("Damit müssen wir uns abfinden", [tr("Edat zamirle kaynaşır; dönüşlü fiil mastar hâlinde sonda:"), de("Damit müssen wir uns abfinden."), tr("Tekrar dene.")]) },
+      { say: [tr("Şimdi: 'Buna razı olmak zorundayız.'")], expect: produce("Damit müssen wir uns abfinden", [tr("Edat zamirle kaynaşır; dönüşlü fiil mastar hâlinde sonda:"), de("Damit müssen wir uns abfinden."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bu böyle işte, değiştiremezsin.'")], expect: produce("So ist es eben, ändern kannst du es nicht", [tr("İkinci cümlede mastar öne alınmış:"), de("So ist es eben, ändern kannst du es nicht."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Das ist eben so."), tr("cümlesi doğru mu?")], expect: truefalse("Das ist eben so.", true, [tr("Doğru. Parçacık fiilden sonra duruyor ve cümleye 'değiştirilemez, kabul et' tonunu veriyor.")]) },
       { say: [tr("Son: 'Eh, böyle şeyler olur.'")], expect: produce("Na ja, so etwas kommt vor", [tr("Kalıplaşmış giriş, sonra düz cümle; ayrılabilen önek sonda:"), de("Na ja, so etwas kommt vor."), tr("Tekrar dene.")]) },

@@ -103,10 +103,14 @@ for (const l of LESSONS) {
     const e = s.expect as { target: string; hint: { text: string }[] };
     ok(e.target.trim().length > 0, "üretim hedefi dolu");
     ok(e.hint.length > 0 && e.hint.every((h) => h.text.trim().length > 0), "üretim ipucu dolu");
-    // İpucu doğruyu da söylemeli: "yanlış" demek öğretmez.
-    warn(`${id}: ipucu doğru cümleyi içermiyor olabilir`,
-      e.hint.some((h) => h.text.toLowerCase().includes(e.target.toLowerCase().split(" ").slice(-2).join(" "))) ||
-      e.hint.some((h) => h.text.length > 20));
+    // İpucu DOĞRU CÜMLENİN TAMAMINI söylemeli: "yanlış" demek öğretmez ve
+    // yarım ipucu ikinci denemeyi tahmin oyununa çevirir. Eskiden bu gevşek bir
+    // uyarıydı (son iki kelime ya da uzun bir metin yeterdi); kalite taraması
+    // 500 dersin 500'ünde tam cümlenin zaten verildiğini gösterdi, o yüzden
+    // artık sözleşme: gevşek eşik gerçek bir eksiği örtebilirdi.
+    const norm = (x: string) => x.toLowerCase().replace(/[.,!?…]/g, "").replace(/\s+/g, " ").trim();
+    ok(norm(e.hint.map((h) => h.text).join(" ")).includes(norm(e.target)),
+      "ipucu doğru cümleyi içeriyor", `(${e.target.slice(0, 40)})`);
   }
   for (const s of tfs) {
     const e = s.expect as { statement: string; why: { text: string }[]; answer: boolean };
@@ -189,6 +193,18 @@ const targets = LESSONS.flatMap((l) =>
 const dupTargets = targets.filter((a, i) => targets.findIndex((b) => b.t === a.t) !== i);
 warn("yinelenen üretim hedefi yok", dupTargets.length === 0,
   `(${[...new Set(dupTargets.map((d) => `${d.id}: ${d.t}`))].slice(0, 3).join(" | ")})`);
+
+// Hüküm cümleleri de kopya olmamalı: aynı yanlışı iki kez yargılatmak yeni bir
+// şey ölçmez. Uyarı, hata değil — B2 finali ile C1 finali aynı cümleyi BİLEREK
+// yankılıyor (seviyenin ilk kuralına kapanışta geri dönüş).
+const statements = LESSONS.flatMap((l) =>
+  l.lecture
+    .filter((s) => s.expect?.kind === "truefalse")
+    .map((s) => ({ id: l.id, t: (s.expect as { statement: string }).statement.toLowerCase() })),
+);
+const dupStatements = statements.filter((a, i) => statements.findIndex((b) => b.t === a.t) !== i);
+warn("yinelenen hüküm cümlesi yok", dupStatements.length <= 1,
+  `(${[...new Set(dupStatements.map((d) => `${d.id}: ${d.t}`))].slice(0, 3).join(" | ")})`);
 
 console.log(
   `\n${fails ? `${fails} HATA` : "Hata yok"} · ${warns ? `${warns} uyarı` : "uyarı yok"}`,

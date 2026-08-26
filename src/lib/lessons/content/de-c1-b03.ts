@@ -110,7 +110,7 @@ export const deC1B03: Lesson[] = [
       { say: [tr("Örnek:"), de("Kurz, klar, überzeugend."), tr("Tekrar edin:"), de("Kurz, klar, überzeugend")], expect: repeat("Kurz, klar, überzeugend") },
       { say: [tr("Sıra sende: 'Birincisi, ikincisi, üçüncüsü.'")], expect: produce("Erstens, zweitens, drittens", [tr("Sıra sayısı zarfları; üçü de -ens ekiyle:"), de("Erstens, zweitens, drittens."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Bilinçli duraklamalar etkiyi artırır.'")], expect: produce("Bewusste Pausen erhöhen die Wirkung", [tr("Belirtisiz çoğulda sıfat -e ekini alır; fiil çoğul:"), de("Bewusste Pausen erhöhen die Wirkung."), tr("Tekrar dene.")]) },
-      { say: [tr("Bir tane daha: 'Üçlü bir sıralama akılda kalıcıdır.'")], expect: produce("Eine Aufzählung zu dritt ist einprägsam", [tr("Kalıplaşmış sayı ifadesi; sıfat sonda:"), de("Eine Aufzählung zu dritt ist einprägsam."), tr("Tekrar dene.")]) },
+      { say: [tr("Bir tane daha: 'Üç maddelik bir sıralama akılda kalıcıdır.'")], expect: produce("Eine Aufzählung aus drei Punkten ist einprägsam", [tr("Edat yönelme hâli ister; sıfat sonda:"), de("Eine Aufzählung aus drei Punkten ist einprägsam."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Bewusste Pausen erhöht die Wirkung."), tr("cümlesi doğru mu?")], expect: truefalse("Bewusste Pausen erhöht die Wirkung.", false, [tr("Özne çoğul olduğu için fiil de çoğul çekilir:"), de("Bewusste Pausen erhöhen die Wirkung.")]) },
       { say: [tr("Son: 'Özlü konuşmak istiyorum.'")], expect: produce("Ich möchte prägnant sprechen", [tr("Zarf mastardan önce:"), de("Ich möchte prägnant sprechen."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Konuşmada bir fikri üç maddede savunacaksın.")] },
@@ -165,7 +165,7 @@ export const deC1B03: Lesson[] = [
     roleplay: {
       scene: "Uzmanı olmadığın bir dinleyiciye kendi alanından karmaşık bir konuyu anlatıyorsun. En az iki imge kullan, ana hattı belli et, gelen soruyu yine bir imgeyle cevapla ve toparla.",
       partner: "konuya yabancı, ama merak eden ve soru soran bir dinleyici",
-      opening: "Ich verstehe von Ihrem Fach ehrlich gesagt gar nichts. Erklären Sie es mir so, als wäre ich zwölf?",
+      opening: "Ich verstehe von Ihrem Fach ehrlich gesagt gar nichts. Können Sie es mir so erklären, als wäre ich zwölf?",
       openingTr: "Açıkçası sizin alanınızdan hiç anlamıyorum. Bana on iki yaşındaymışım gibi anlatır mısınız?",
       goal: "Konu en az iki imgeyle anlatılmış, ana hat belli edilmiş ve dinleyici anladığını kendi cümlesiyle söylemiş olur.",
       minTurns: 8,

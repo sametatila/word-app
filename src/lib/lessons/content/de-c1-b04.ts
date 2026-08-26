@@ -208,7 +208,7 @@ export const deC1B04: Lesson[] = [
       { say: [tr("Şimdi: 'Bu bardakta koparılan bir fırtına.'")], expect: produce("Das ist ein Sturm im Wasserglas", [tr("Mecaz olduğu gibi; edat yönelme hâlinde:"), de("Das ist ein Sturm im Wasserglas."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bulanık suda balık avlıyor.'")], expect: produce("Er fischt im Trüben", [tr("İsimleşmiş sıfat yönelme hâlinde:"), de("Er fischt im Trüben."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi anlam sorusu. Şu hüküm doğru mu:"), de("Dicke Luft bedeutet, dass die Luft im Raum schlecht ist.")], expect: truefalse("Dicke Luft bedeutet, dass die Luft im Raum schlecht ist.", false, [tr("Hayır — mecaz ortamın gerginliğini anlatır, havanın kalitesini değil:"), de("Nach der Sitzung herrschte dicke Luft.")]) },
-      { say: [tr("Son: 'Buz gibi bir hesap yaptı.'")], expect: produce("Er hat eiskalt kalkuliert", [tr("Zarf ortaçtan önce:"), de("Er hat eiskalt kalkuliert."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Soğukkanlılıkla hesap yaptı.'")], expect: produce("Er hat eiskalt kalkuliert", [tr("Zarf ortaçtan önce:"), de("Er hat eiskalt kalkuliert."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Konuşmada gergin bir ortamı anlatacaksın.")] },
     ],
     roleplay: {

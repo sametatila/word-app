@@ -64,7 +64,7 @@ export const deB1B06: Lesson[] = [
       { say: [tr("Sıra sende: 'Devam etmek önemli.' Ayrılabilen fiile dikkat.")], expect: produce("Es ist wichtig, dranzubleiben", [tr("Önekle kökün arasına giriyor:"), de("Es ist wichtig, dranzubleiben."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Bir hedef belirlemeye karar verdim.'")], expect: produce("Ich habe beschlossen, ein Ziel festzulegen", [tr("Yine ayrılabilen fiil, yine ortada:"), de("Ich habe beschlossen, ein Ziel festzulegen."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Yeni bir alışkanlık edinmeye niyetliyim.'")], expect: produce("Ich habe vor, eine neue Gewohnheit aufzubauen", [tr("Niyet kalıbı artı ayrılabilen fiil:"), de("Ich habe vor, eine neue Gewohnheit aufzubauen."), tr("Tekrar dene.")]) },
-      { say: [tr("Doğru mu yanlış mı:"), de("Ich habe vor, mehr Deutsch lernen."), tr("cümlesi doğru mu?")], expect: truefalse("Ich habe vor, mehr Deutsch lernen.", false, [tr("Mastarın önündeki küçük bağlaç eksik:"), de("Ich habe vor, mehr Deutsch zu lernen.")]) },
+      { say: [tr("Doğru mu yanlış mı:"), de("Es ist wichtig, dranbleiben."), tr("cümlesi doğru mu?")], expect: truefalse("Es ist wichtig, dranbleiben.", false, [tr("Ayrılabilen fiilde bağlaç fiilin ORTASINA girer:"), de("Es ist wichtig, dranzubleiben.")]) },
       { say: [tr("Son: 'Pes etmeye niyetim yok.'")], expect: produce("Ich habe nicht vor aufzugeben", [tr("Olumsuzluk niyet fiilinin yanında durur:"), de("Ich habe nicht vor aufzugeben."), tr("Tekrar dene.")], ["Ich habe nicht die Absicht aufzugeben"]) },
       { say: [tr("Hazırsın. Konuşmada bir arkadaşına bu yılki planlarını anlatacaksın: neye niyetlisin, neyi bırakacaksın.")] },
     ],

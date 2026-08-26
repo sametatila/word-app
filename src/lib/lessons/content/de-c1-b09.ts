@@ -297,7 +297,7 @@ export const deC1B09: Lesson[] = [
       word("Dördüncü", { de: "ablehnen", tr: "reddetmek" }),
       word("Son", { de: "die Gepflogenheit", tr: "teamül" }),
       { say: [tr("Örnek:"), de("Wollen wir uns duzen?"), tr("Tekrar edin:"), de("Wollen wir uns duzen")], expect: repeat("Wollen wir uns duzen") },
-      { say: [tr("Sıra sende, kibar ret: 'Ben siz'de kalmayı tercih ederim.'")], expect: produce("Ich bleibe lieber beim Sie", [tr("Edat yönelme hâlinde kaynaşmış; hitap biçimi isimleşmiş:"), de("Ich bleibe lieber beim Sie."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende, kibar ret: 'Ben sizli konuşmayı sürdürmeyi tercih ederim.'")], expect: produce("Ich bleibe lieber beim Sie", [tr("Edat yönelme hâlinde kaynaşmış; hitap biçimi isimleşmiş:"), de("Ich bleibe lieber beim Sie."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Teklifi kıdemli kişi yapar.'")], expect: produce("Das Du bietet die ranghöhere Person an", [tr("Nesne öne alınmış; ayrılabilen önek sonda:"), de("Das Du bietet die ranghöhere Person an."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bu teklifi reddetmek zordur.'")], expect: produce("Dieses Angebot abzulehnen ist schwer", [tr("Mastar öbeği özne olarak başta:"), de("Dieses Angebot abzulehnen ist schwer."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Ich bleibe lieber beim Sie."), tr("cümlesi doğru mu?")], expect: truefalse("Ich bleibe lieber beim Sie.", true, [tr("Doğru. Edat yönelme hâlinde kaynaşmış ve hitap biçimi isim gibi büyük harfle kullanılmış — kibar bir ret cümlesi.")]) },
