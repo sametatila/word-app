@@ -37,6 +37,8 @@ import { deB2B05 } from "./content/de-b2-b05";
 import { deB2B06 } from "./content/de-b2-b06";
 import { deB2B07 } from "./content/de-b2-b07";
 import { deB2B08 } from "./content/de-b2-b08";
+import { deB2B09 } from "./content/de-b2-b09";
+import { deB2B10 } from "./content/de-b2-b10";
 import { A1_SCRIPTS } from "./content/scripts-a1";
 
 /**
@@ -105,6 +107,8 @@ export const LESSONS: Lesson[] = [
   ...deB2B06,
   ...deB2B07,
   ...deB2B08,
+  ...deB2B09,
+  ...deB2B10,
   ].map(withScript),
 ];
 

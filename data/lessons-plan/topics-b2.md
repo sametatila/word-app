@@ -1,7 +1,8 @@
 # B2 Konuları (100)
 
 Satır biçimi: `NNN | slug | Titel (DE) | Türkçe | ikon | focusId | çekirdek kalıplar`
-- Kimlik = `de-b2-<slug>`. Bu seviyede üretilmiş ders yok; b01 partisi 001'den başlar.
+- Kimlik = `de-b2-<slug>`. **Tamamı üretildi** (2026-08-26): 100 ders `content/de-b2-b01.ts`…`b10.ts`,
+  10 modül sınavı `module-exam/b2.ts`.
 - B2 omurgası: Passiv'in bütün zamanları ve Passiversatz, ad tamlaması/Nominalstil,
   Partizipialattribute, öznel kip fiilleri (soll/will/dürfte), Genitiv edatları
   (trotz/wegen/aufgrund), gelişmiş bağlaçlar (indem, sofern, es sei denn),
