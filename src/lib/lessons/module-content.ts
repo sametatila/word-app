@@ -385,6 +385,23 @@ export const FOCUS_SHEETS: Record<string, string[]> = {
   "Nebensatz-nachdem": ["a2-nebensatz", "b1-konnektoren"],
   "Nebensatz-bevor-während": ["a2-nebensatz", "b1-konnektoren"],
   "Nebensatz-damit": ["a2-nebensatz", "b1-konnektoren"],
+  // B2 — seviyenin odakları iki kaynaktan besleniyor: kendi tabloları ve
+  // üstüne kurulduğu B1 sayfası. İkincisi keyfî değil, sınavın dilbilgisi
+  // bölümü için gereken hücre sayısını garanti ediyor (bkz. check-exams).
+  "Nominalisierung": ["b2-nominalisierung", "b2-funktionsverbgefuege"],
+  "Passiv-Perfekt": ["b2-passiv", "b1-passiv"],
+  "Passiv-Modal": ["b2-passiv", "b1-passiv"],
+  "Zustandspassiv": ["b2-passiv", "b1-passiv"],
+  "Passiversatz": ["b2-passiversatz", "b2-passiv"],
+  "Indirekte-Rede-Einstieg": ["b2-konjunktiv1"],
+  "Subjektive-Modalverben": ["b2-subjektive-modalverben", "b2-konjunktiv1"],
+  "Partizipialattribute": ["b2-partizipialattribute", "b2-nominalisierung", "b1-adjektiv-nomen"],
+  "Genitivpräpositionen": ["b1-genitiv", "b2-konnektoren"],
+  "Nebensatz-sofern": ["b2-konnektoren", "b1-konnektoren"],
+  "Nebensatz-indem": ["b2-konnektoren", "b1-konnektoren"],
+  "Je-desto": ["b2-zweiteilige-konnektoren", "b1-konnektoren"],
+  "Relativsatz-Genitiv": ["b1-relativsatz", "b1-genitiv"],
+  "Als-ob": ["b1-konjunktiv2", "b2-konjunktiv1"],
 };
 
 /** Modülün odaklarının açtığı tablo sayfaları — tekrarsız. */
