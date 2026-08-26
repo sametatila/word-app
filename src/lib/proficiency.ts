@@ -24,8 +24,28 @@ export const PROFICIENCY_LABELS: Record<ProficiencySkill, string> = {
   vocab: "Kelime",
 };
 
-export type EvidenceSource = "exam" | "assessment" | "exercise";
-export const SOURCE_WEIGHT: Record<EvidenceSource, number> = { exam: 3, assessment: 2, exercise: 1 };
+export type EvidenceSource = "exam" | "assessment" | "lesson" | "exercise" | "drill" | "game";
+
+/**
+ * Kaynak ağırlıkları — GÜVENİLİRLİK sırası, çaba sırası değil.
+ *
+ * Sınav en ağır: zamanlı, karışık ve tek oturumda. Değerlendirme ve ders
+ * ondan hafif ama tek bir alıştırmadan ağır: ikisi de puanlanmış bir bütün.
+ * Egzersiz, dilbilgisi çalışması ve kelime oyunu en hafif — tek tek küçük
+ * kanıtlar, ama çok sayıda oldukları için toplamda ağırlıkları birikiyor.
+ *
+ * Oyun kanıtı gün ve oyun türü başına TEK öğe olarak toplanıyor (bkz.
+ * proficiency-data): yoksa yoğun bir günde iki yüz cevap, bir sınavın altmış
+ * katı ağırlık taşır ve model o günün ruh hâline kilitlenirdi.
+ */
+export const SOURCE_WEIGHT: Record<EvidenceSource, number> = {
+  exam: 3,
+  assessment: 2,
+  lesson: 2,
+  exercise: 1,
+  drill: 1,
+  game: 1,
+};
 export const DECAY_DAYS = 30;
 
 export type Evidence = {
