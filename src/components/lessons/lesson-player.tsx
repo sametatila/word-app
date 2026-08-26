@@ -199,6 +199,8 @@ export function LessonPlayer({
   const [handsFree, setHandsFree] = useState(true);
   /** Yazarak cevaplama — varsayılan değil, takılınca açılan çıkış yolu. */
   const [typing, setTyping] = useState(false);
+  /** Son cevabın yolu — adım ölçümü için (WP-80): mikrofon mu, yazı mı. */
+  const inputMode = useRef<"mic" | "typed">("mic");
   /**
    * Senaryolu (çevrimdışı) konuşma durumu — sohbet sağlayıcısı yokken
    * (WP-04, lib/lessons/offline-roleplay). null = model konuşuyor. Ref de
@@ -594,6 +596,8 @@ export function LessonPlayer({
       const praise = trSeg(PRAISE[stepIndexRef.current % PRAISE.length]);
       const next = () => runStepRef.current(stepIndexRef.current + 1, [praise]);
       const isFirstTry = attempts.current === 0;
+      const via = inputMode.current;
+      inputMode.current = "mic";
 
       if (e.kind === "confirm") {
         runStepRef.current(stepIndexRef.current + 1);
@@ -607,6 +611,7 @@ export function LessonPlayer({
           return;
         }
         const ok = judgment === e.answer;
+        track("lesson_step", ok ? (isFirstTry ? 2 : 1) : 0, `truefalse:${via}`);
         if (ok && isFirstTry) setCorrectCount((n) => n + 1);
         fx(ok ? "correct" : "wrong", 900);
         interject(
@@ -623,6 +628,7 @@ export function LessonPlayer({
       const best = verdicts.find((v) => v.kind === "correct") ?? verdicts[0];
 
       if (best.kind === "correct") {
+        track("lesson_step", isFirstTry ? 2 : 1, `${e.kind}:${via}`);
         if (e.kind === "produce" && isFirstTry) setCorrectCount((n) => n + 1);
         fx("correct", 900);
         next();
@@ -641,6 +647,7 @@ export function LessonPlayer({
       fx("wrong", 900);
 
       if (attempts.current >= 3) {
+        track("lesson_step", 0, `${e.kind}:${via}`);
         interject(
           [trSeg("Sorun değil — bu, konuşmada tekrar karşına çıkacak. Devam edelim.")],
           () => runStepRef.current(stepIndexRef.current + 1),
@@ -687,6 +694,7 @@ export function LessonPlayer({
   useEffect(() => {
     if (!ready || started || phase !== "lecture") return;
     setStarted(true);
+    track("lesson_start", resumed ? 1 : 0, lesson.id);
     runStepRef.current(stepIndexRef.current);
     // İlk adım yalnızca bir kez oynatılmalı.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -694,6 +702,8 @@ export function LessonPlayer({
 
   /** Adımı atla — takılan öğrencinin çıkışı; puan almadan ilerler. */
   function skipStep() {
+    const k = lesson.lecture[stepIndex]?.expect?.kind;
+    if (k && k !== "confirm") track("lesson_step", 0, `${k}:skip`);
     recognition.current?.abort();
     attempts.current = 0;
     runStep(stepIndex + 1);
@@ -704,6 +714,7 @@ export function LessonPlayer({
     const clean = draft.trim();
     if (!clean) return;
     setDraft("");
+    inputMode.current = "typed";
     evaluate([clean]);
   }
 
@@ -922,6 +933,12 @@ export function LessonPlayer({
     setSpeakingId(null);
     setSpeakingTurn(null);
     setPhase("summary");
+    {
+      // Ders sonucu olay olarak da düşüyor (WP-80): user_lessons en iyi denemeyi
+      // tutar, buradaki satır BU denemeyi — trend ancak böyle çizilir.
+      const scored = lesson.lecture.filter((s) => s.expect?.kind === "produce" || s.expect?.kind === "truefalse").length;
+      track("lesson_finish", scored ? Math.round((100 * Math.min(correctCount, scored)) / scored) : 0, lesson.id);
+    }
     // Senaryolu konuşmanın puanı: kalıpların kaçı kullanıldı (KPI 2/6).
     // Modelli konuşmanın puanı WP-22 ile gelir.
     if (offlineRef.current) {

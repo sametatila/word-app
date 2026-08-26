@@ -13,6 +13,8 @@
     "report:events": "tsx scripts/report-events.ts",
     "report:providers": "tsx scripts/report-providers.ts",
     "report:learning": "tsx scripts/report-learning.ts",
+    "report:all": "npm run -s report:events && npm run -s report:learning && npm run -s report:stt",
+    "test:events": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-events.ts",
     "test:assess": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/assess-eval.ts",
     "test:coach-lines": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-coach.ts",
     "test:rules": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-rules.ts",

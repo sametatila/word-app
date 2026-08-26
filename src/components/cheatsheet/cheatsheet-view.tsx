@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { trackOnce } from "@/lib/track";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronIcon, FlameIcon } from "@/components/icons";
@@ -47,6 +48,12 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
   const start = (CHEAT_LEVELS as string[]).includes(userLevel) ? userLevel : "A1";
   const [level, setLevel] = useState(start);
   const [term, setTerm] = useState("");
+  // Arama kullanılıyor mu (ekran başına ilk sorgu) — WP-80.
+  useEffect(() => {
+    if (!term.trim()) return;
+    const t = setTimeout(() => trackOnce("search", term.trim().length, "cheatsheet"), 600);
+    return () => clearTimeout(t);
+  }, [term]);
   const [quiz, setQuiz] = useState<Quiz | null>(null);
   const [summary, setSummary] = useState<Summary | null>(null);
   /** Tur kurulurken gösterilecek başlık — kelime turundaki yükleme ekranının aynısı. */
@@ -378,6 +385,7 @@ function SheetCard({
       <button
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
+        data-panel={`sheet:${sheet.id}`}
         className="flex w-full items-center gap-3 px-4 py-3.5 text-left"
       >
         <span

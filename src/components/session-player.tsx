@@ -217,7 +217,9 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     setCheer(0);
     resetCombo();
     play("start");
-    track("session_start");
+    // Tur türü: karışık, tek oyun (hangisi), ek tur — üretim oranı KPI'sını
+    // tür bazında okumak için (WP-80).
+    track("session_start", 0, opts.game ? `single:${opts.game}` : opts.extra ? "extra" : "mixed");
     wagerOn.current = false;
     setWagerResult(null);
     bestCombo.current = 0;

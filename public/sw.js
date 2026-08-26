@@ -45,6 +45,9 @@ self.addEventListener("push", (event) => {
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
   const target = (event.notification.data && event.notification.data.url) || "/learn";
+  // Bildirimden gelindiği adreste belli olsun: uygulama açılışta `src=push`
+  // görürse push_open olayını yazar (bildirim hunisinin okuma ucu).
+  const url = target + (target.includes("?") ? "&" : "?") + "src=push";
 
   event.waitUntil(
     self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((list) => {
@@ -55,10 +58,10 @@ self.addEventListener("notificationclick", (event) => {
       }
       for (const client of list) {
         if ("navigate" in client && "focus" in client) {
-          return client.navigate(target).then((c) => (c ? c.focus() : undefined));
+          return client.navigate(url).then((c) => (c ? c.focus() : undefined));
         }
       }
-      return self.clients.openWindow(target);
+      return self.clients.openWindow(url);
     }),
   );
 });

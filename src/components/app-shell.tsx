@@ -8,6 +8,7 @@ import { TopProgress } from "./top-progress";
 import { ScreenDiag } from "@/components/screen-diag";
 import { InstallPrompt } from "./install-prompt";
 import { SessionKeeper } from "./session-keeper";
+import { Telemetry } from "./telemetry";
 import { AchievementUnlock } from "./achievement-unlock";
 import { track } from "@/lib/track";
 import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, ChatIcon } from "./icons";
@@ -34,9 +35,9 @@ import { Avatar } from "@/components/avatar";
  * çıkıyor ve kırpılma riski tamamen kalkıyor.
  */
 const NAV = [
-  { href: "/learn", label: "Öğren", Icon: CardsIcon },
-  { href: "/lessons", label: "Dersler", Icon: ChatIcon },
-  { href: "/skills", label: "Beceriler", Icon: CompassIcon },
+  { href: "/learn", label: "Öğren", Icon: CardsIcon, key: "learn" },
+  { href: "/lessons", label: "Dersler", Icon: ChatIcon, key: "lessons" },
+  { href: "/skills", label: "Beceriler", Icon: CompassIcon, key: "skills" },
 ];
 
 /** Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor. */
@@ -165,7 +166,9 @@ export function AppShell({
   // üçü dersleri açmıştı. Artık her açılış kendiliğinden yazılıyor.
   useEffect(() => {
     const i = NAV.findIndex((n) => pathname.startsWith(n.href));
-    if (i >= 0) track("nav", i);
+    // `kind` sekmenin ADI: sıra değişince (beş sekmeden üçe indi) eski
+    // satırların anlamı kaymasın diye sayıya güvenilmiyor (WP-80).
+    if (i >= 0) track("nav", i, NAV[i].key);
   }, [pathname]);
 
   useEffect(() => {
@@ -203,6 +206,7 @@ export function AppShell({
           değiştiyse eski hesabın kopyaları önce siliniyor. Çocuk bileşenin
           etkisi ebeveyninkinden önce çalıştığı için sıra buradan geliyor. */}
       <SessionKeeper userId={userId} />
+      <Telemetry />
       {/* Rozet kutlaması kabukta: rozet altı ayrı yerde kazanılabiliyor
           (kelime turu, ders, beceri, görev, günün turu, hayatta kalma) ve
           altısına ayrı kutlama koymak altı yerde unutulacak bir şey demekti.

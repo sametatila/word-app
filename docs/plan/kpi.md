@@ -6,6 +6,8 @@ Haftalar Pazartesi başlar (`date_trunc('week', …)`). Sayılar hem olay hem ki
 
 ## Veri kaynakları
 
+Tam envanter ve davranış olayları (ekran, süre, ders adımı, bildirim hunisi…): `docs/plan/80-takip.md` (WP-80). Sözlük doğrulaması `npm run test:events`.
+
 | Kaynak | Ne taşır | Notlar |
 |---|---|---|
 | `events` | ürün ve öğrenme olayları; `name` kapalı liste, `kind` kısa etiket, `value` sayı | serbest metin yok (bkz. `src/lib/events.ts`) |

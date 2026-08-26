@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { XIcon, LogoMark } from "@/components/icons";
+import { track } from "@/lib/track";
 
 type InstallEvent = Event & {
   prompt: () => Promise<void>;
@@ -61,6 +62,7 @@ export function InstallPrompt() {
       const t = setTimeout(() => {
         setIosHint(true);
         setVisible(true);
+        track("install_prompt", 2);
       }, 4000);
       return () => {
         clearTimeout(t);
@@ -82,7 +84,8 @@ export function InstallPrompt() {
   async function install() {
     if (!deferred) return;
     await deferred.prompt();
-    await deferred.userChoice.catch(() => null);
+    const choice = await deferred.userChoice.catch(() => null);
+    track("install_prompt", choice?.outcome === "accepted" ? 1 : 0);
     close();
   }
 

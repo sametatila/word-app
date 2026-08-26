@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { SettingRow } from "@/components/setting-row";
 import { MoonIcon, SunIcon } from "./icons";
+import { track } from "@/lib/track";
 
 export function ThemeToggle() {
   const [dark, setDark] = useState(false);
@@ -13,6 +14,7 @@ export function ThemeToggle() {
 
   function toggle() {
     const next = !dark;
+    track("setting_change", next ? 1 : 0, "theme");
     setDark(next);
     document.documentElement.classList.toggle("dark", next);
     try {
@@ -48,6 +50,7 @@ export function ThemeSetting() {
   }, []);
 
   function pick(next: boolean) {
+    if (next !== dark) track("setting_change", next ? 1 : 0, "theme");
     setDark(next);
     document.documentElement.classList.toggle("dark", next);
     try {

@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { AlertIcon, RefreshIcon } from "@/components/icons";
+import { track } from "@/lib/track";
+import { screenKey } from "@/lib/screens";
 
 export default function ErrorPage({
   error,
@@ -13,6 +15,9 @@ export default function ErrorPage({
 }) {
   useEffect(() => {
     console.error("[wortspiel]", error);
+    // Hata sınırına düşen ekran ölçülüyor: "bir şeyler ters gitti"yi kaç
+    // kişi, hangi ekranda gördü — yoksa yalnız şikâyet edenler sayılır.
+    track("client_error", 1, screenKey(window.location.pathname));
   }, [error]);
 
   return (

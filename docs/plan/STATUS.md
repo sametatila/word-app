@@ -38,6 +38,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-71 | Ders kapsamı B1–C1 | 7 | sürüyor | Claude | 2026-08-26 | (bkz. git log) | B1 modül 3 "Bağlaç ustalığı" 10 ders pilotu (`de-b1-b03.ts`; tekrar %36, üret 4 + doğru/yanlış 1 / ders, doğrulayıcı uyarısız); B1 30/100, B2 0, C1 0; kalan modüller aynı kalıpla |
 | WP-72 | Konuşma/yazma/okuma içeriği | 7 | sürüyor | Claude | 2026-08-26 | (bkz. git log) | Telaffuz drill 10 → 50 (+40), monolog 20, diyalog 7 → 25 (+18), yazma her egzersize yeni tür görev (40), okuma/dinlemeye 412 türetilmiş yazılı soru (`content:derive`); kalan: gerçek ses kayıtları, 51 egzersizde ikinci yazılı soru |
 | WP-73 | Gerekçe ve kural parçacıkları | 7 | sürüyor | Claude | 2026-08-26 | (bkz. git log) | Kural şeması + 35 kural; drill 28/60 tablo (A1 15, A2 13 tamam; B1–C1 32 tablo kaldı); 150 karıştırma çifti + 1 458 aday (`content:confusables`) |
+| WP-80 | Takip katmanı (veri boşluğu kapatma) | 8 | inceleme | Claude | 2026-08-26 | (bkz. git log) | 19 yeni olay (ekran, süre, ders adımı, söyleyiş kararı, ayar, cihaz, hata, bildirim hunisi), `lib/screens.ts`, `components/telemetry.tsx`, `test:events`, `report:events`/`report:learning` yeni bölümler, `report:all`; `docs/plan/80-takip.md` |
 
 ## Karar kaydı
 

@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Mascot, type Mood } from "@/components/mascot";
 import { useStill } from "@/lib/use-still";
 import { pickCoachLine, type CoachMoment, type CoachVars } from "@/lib/coach-lines";
+import { track } from "@/lib/track";
 
 /**
  * Koç balonu (WP-66): Erdi'nin yanında tek cümlelik Türkçe metin.
@@ -51,6 +52,7 @@ export function CoachBubble({
   useEffect(() => {
     setLine(text ?? pickCoachLine(moment, vars));
     setOpen(true);
+    track("coach_show", 0, moment);
     // vars nesnesi her çizimde yeni; cümle an değişince seçilir, isim/puan an ile gelir.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [moment, text]);

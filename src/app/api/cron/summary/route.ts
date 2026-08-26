@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { dailyStats } from "@/lib/db/schema";
 import { sendToUser } from "@/lib/push";
 import { weeklySummary } from "@/lib/growth";
+import { track } from "@/lib/events";
 import { shiftDay } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
@@ -36,8 +37,10 @@ export async function GET(req: Request) {
       try {
         const s = await weeklySummary(r.userId, today);
         if (!s.answers && !s.exercises && !s.lessonsPassed) continue;
-        await sendToUser(r.userId, { title: "Haftalık özetin", body: s.text, url: "/profile#growth", tag: "weekly-summary" });
+        // Gelişim kartı Beceriler panosuna taşındı; eski #growth çıpası profilde yok.
+        await sendToUser(r.userId, { title: "Haftalık özetin", body: s.text, url: "/skills", tag: "weekly-summary" });
         sent++;
+        await track(r.userId, "push_sent", today, 0, "summary");
       } catch (err) {
         console.error("[cron/summary]", r.userId, err);
       }

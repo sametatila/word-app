@@ -24,7 +24,8 @@ export function InviteCard() {
 
   useEffect(() => setOrigin(window.location.origin), []);
 
-  const text = `Almanca çalışıyorum, sen de gel: haftalık sıralamada yarışalım. ${origin}`;
+  // `src=invite`: davetle gelen açılış invite_open olayı olarak sayılıyor (WP-80).
+  const text = `Almanca çalışıyorum, sen de gel: haftalık sıralamada yarışalım. ${origin}/?src=invite`;
 
   async function invite() {
     track("share");

@@ -1,5 +1,7 @@
 "use client";
 
+import { track } from "@/lib/track";
+
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { SpeakingDrillExercise, SpeakingTask } from "@/lib/skills/types";
@@ -214,7 +216,10 @@ export function SpeakingPlayer({
   }
 
   /** Sonucu kaydeder ve sıradaki göreve geçer. */
-  function commit(correct: boolean) {
+  function commit(correct: boolean, via: "asr" | "self" = "self") {
+    // Karar kimin: tanıyıcının mı, öğrencinin mi. Öz-değerlendirme oranı
+    // yüksekse drill sınamıyor, alıştırıyor demektir (WP-80).
+    track("speak_self", correct ? 1 : 0, via);
     const next = [...results, correct];
     setResults(next);
     if (pronounce) pronounceScores.current.push(pronounce.overall);
@@ -433,7 +438,7 @@ export function SpeakingPlayer({
             {verdict ? (
               <button
                 type="button"
-                onClick={() => commit(isSpeechCorrect(verdict))}
+                onClick={() => commit(isSpeechCorrect(verdict), "asr")}
                 className="btn btn-primary px-5 py-2.5 text-sm"
               >
                 {index + 1 < tasks.length ? "Sıradaki" : "Bitir"}

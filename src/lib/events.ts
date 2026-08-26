@@ -73,6 +73,35 @@ export const EVENT_NAMES = [
   "pronounce", // telaffuz puanı (kind = egzersiz kimliği, value = 0–100) — WP-20
   "drill", // dilbilgisi drill cevabı (kind = ErrorType, value = 1 doğru / 0 yanlış) — WP-11
   "srs_weight", // tekrar aralığına hata tipi ağırlığı uygulandı (kind = ErrorType, value = ağırlık×100) — WP-51 ölçümü
+
+  /*
+    Takip katmanı (WP-80): "veri yok" durumuna düşmemek için.
+
+    Buraya kadar ölçülen şey TUR ve SONUÇ'tu. Ölçülmeyen: hangi ekrana ne kadar
+    girildiği (alt gezinmeden çıkarılan ekranlar görünmez olmuştu), katlı
+    bölümlerin açılıp açılmadığı, ders adımının sesle mi yazıyla mı geçildiği,
+    söyleyişte öğrencinin kendi kararı, ayarların değişip değişmediği, cihaz,
+    istemci hataları, bildirim hunisinin gönderim ucu. Aşağıdakiler bunlar.
+    Ekran anahtarları `lib/screens.ts`'teki kapalı listeden.
+  */
+  "page_view", // ekran açıldı (kind = ekran anahtarı)
+  "time_spent", // ekranda görünür geçen süre (kind = ekran anahtarı, value = saniye; ayrılırken yazılır)
+  "app_open", // günün ilk açılışı (kind = platform:görünüm → ios|android|desktop : standalone|browser, value = ekran genişliği px)
+  "client_error", // yakalanmamış istemci hatası (kind = ekran anahtarı, value = 1 hata sınırı / 0 pencere olayı; dakikada en çok bir)
+  "panel_open", // katlı bölüm açıldı/kapandı (kind = bölüm: weak_detail | sheet:<tablo> | words_progress | single_game, value = 1 açık / 0 kapalı)
+  "lesson_start", // ders başladı (kind = ders kimliği, value = 1 kaldığı yerden / 0 baştan)
+  "lesson_step", // ders adımı sonuçlandı (kind = adım:yol → repeat|produce|truefalse : mic|typed|skip, value = 2 ilk denemede / 1 sonraki denemede / 0 geçilemedi ya da atlandı)
+  "lesson_finish", // ders bitti (kind = ders kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_lessons'ta)
+  "speak_self", // söyleyiş görevinde karar (kind = asr tanıyıcı | self öz-değerlendirme, value = 1 doğru / 0 zorlandı)
+  "drill_finish", // dilbilgisi drill seti bitti (kind = tablo kimliği, value = doğru yüzdesi)
+  "onboarding_step", // onboarding adımı görüldü (kind = welcome|goal|level|ready, value = adım sırası)
+  "coach_show", // koç balonu gösterildi (kind = an)
+  "tts_play", // sesli okuma çalındı (kind = ekran anahtarı; ekran açılışı başına bir kez)
+  "search", // arama yapıldı (kind = words|cheatsheet, value = sorgu uzunluğu; ekran açılışı başına ilk)
+  "setting_change", // ayar değişti (kind = alan: name|daily_goal|new_per_day|level|course|voice|theme, value = sayısal ayarlarda yeni değer)
+  "push_optin", // bildirim izni (value = 1 verildi / 0 reddedildi / 2 sonra dedi)
+  "install_prompt", // ana ekrana ekleme (value = 1 eklendi / 0 reddedildi / 2 iOS ipucu gösterildi)
+  "push_sent", // sunucu bildirim gönderdi (kind = reminder|summary) — push_open ile huni
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];

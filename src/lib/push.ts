@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 import { dailyStats, profiles, pushSubscriptions, userWords } from "@/lib/db/schema";
 import { weekStart } from "@/lib/session";
 import { shiftDay } from "@/lib/award";
+import { track } from "@/lib/events";
 
 /**
  * Hatırlatma bildirimleri.
@@ -354,6 +355,7 @@ export async function runReminders() {
   }
 
   const jobs: Promise<boolean>[] = [];
+  const logs: Promise<void>[] = [];
   for (const t of targets) {
     const list = byUser.get(t.userId);
     if (!list?.length) continue;
@@ -366,8 +368,12 @@ export async function runReminders() {
     });
     if (!payload) continue;
     for (const sub of list) jobs.push(deliver(sub, payload));
+    // Gönderim ucu: push_open ile birlikte bildirim hunisi (WP-80). Sayıma
+    // girmiyor — `sent` yalnız teslimatı sayar.
+    logs.push(track(t.userId, "push_sent", today, 0, "reminder"));
   }
 
   const results = await Promise.all(jobs);
+  await Promise.all(logs);
   return { targets: targets.length, sent: results.filter(Boolean).length };
 }

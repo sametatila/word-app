@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { VoicePicker } from "@/components/voice-picker";
@@ -44,6 +44,10 @@ type Step = 0 | 1 | 2 | 3;
 export function CourseOnboarding({ initialName = "" }: { initialName?: string }) {
   const router = useRouter();
   const [step, setStep] = useState<Step>(0);
+  // Onboarding hunisi: hangi adıma kadar gelindi (WP-80).
+  useEffect(() => {
+    track("onboarding_step", step, ["welcome", "goal", "level", "ready"][step] ?? "other");
+  }, [step]);
   const [name, setName] = useState(initialName);
   const [course, setCourse] = useState("de");
   const [voice, setVoice] = useState<VoiceId>(defaultVoice("de"));

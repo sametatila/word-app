@@ -64,6 +64,8 @@ export function DrillPlayer({ drills, tableId, tableTitle }: { drills: Drill[]; 
   }
 
   async function save(all: Done[]) {
+    const right = all.filter((d) => d.match.verdict === "exact" || d.match.verdict === "spelling").length;
+    track("drill_finish", all.length ? Math.round((100 * right) / all.length) : 0, tableId);
     try {
       await fetch("/api/cheat", {
         method: "POST",

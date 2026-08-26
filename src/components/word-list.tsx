@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { trackOnce } from "@/lib/track";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronIcon } from "@/components/icons";
 import { PageBack } from "@/components/page-back";
@@ -99,6 +100,7 @@ export function WordList({
       if (term) next.set("q", term);
       else next.delete("q");
       next.delete("page");
+      if (term.trim()) trackOnce("search", term.trim().length, "words");
       router.replace(`/words?${next.toString()}`);
     }, 350);
     return () => clearTimeout(t);

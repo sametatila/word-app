@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { SpeakerIcon } from "./icons";
 import { sharedAudioContext } from "@/lib/audio-context";
 import { afterMs } from "@/components/pocket-clock";
+import { trackOnce } from "@/lib/track";
+import { screenKey } from "@/lib/screens";
 import { TURKISH_VOICE, lessonVoice, resolveVoice, type VoiceId } from "@/lib/tts/voices";
 
 /**
@@ -163,6 +165,8 @@ export function speakGerman(text: string, onEnd?: () => void, slow = false) {
 
   const course = readLocal(COURSE_KEY) ?? "de";
   const voice = resolveVoice(course, readLocal(VOICE_KEY));
+  // Hangi ekranda ses dinleniyor — ekran açılışı başına bir kez (WP-80).
+  if (typeof window !== "undefined") trackOnce("tts_play", 0, screenKey(window.location.pathname));
 
   // Önce boşluksuz yol: tek dosyada da kazanç aynı — baştaki/sondaki gömülü
   // sessizlik atılıyor, cümle aralarındaki bir saniyelik duraklamalar

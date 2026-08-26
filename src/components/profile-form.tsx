@@ -15,6 +15,7 @@ import { Disclosure } from "@/components/disclosure";
 import { SettingRow } from "@/components/setting-row";
 import { ThemeSetting } from "@/components/theme-toggle";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
+import { track } from "@/lib/track";
 
 type Initial = {
   displayName: string;
@@ -94,6 +95,14 @@ export function ProfileForm({
         body: JSON.stringify({ displayName: cleanName, dailyGoal, newPerDay, level, course, voice }),
       });
       if (res.ok) {
+        // Hangi ayar değişti (WP-80): "seviyeyi kimse değiştirmiyor" ya da
+        // "günlük hedef hep düşürülüyor" gibi kararlar buradan okunur.
+        if (cleanName !== initial.displayName) track("setting_change", 0, "name");
+        if (dailyGoal !== initial.dailyGoal) track("setting_change", dailyGoal, "daily_goal");
+        if (newPerDay !== initial.newPerDay) track("setting_change", newPerDay, "new_per_day");
+        if (level !== initial.level) track("setting_change", 0, "level");
+        if (course !== initial.course) track("setting_change", 0, "course");
+        if (voice !== initial.voice) track("setting_change", 0, "voice");
         setSaved(true);
         setTimeout(() => setSaved(false), 2200);
       } else if (res.status === 401) {

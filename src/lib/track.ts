@@ -17,6 +17,24 @@ import type { EventName } from "@/lib/events";
  * `kind` isteğe bağlı kısa etiket (oyun adı, hata tipi, "level:B1"); serbest
  * metin değil — sunucu biçimi doğrular, uymayanı düşürür (bkz. lib/events.ts).
  */
+/**
+ * Ekran açılışı başına bir kez yazılan olaylar (tts_play, search): aynı
+ * ekranda onuncu dinleme onuncu satır olmasın. Küme ekran değişince
+ * sıfırlanır (bkz. components/telemetry.tsx).
+ */
+const once = new Set<string>();
+
+export function resetOnce() {
+  once.clear();
+}
+
+export function trackOnce(name: EventName, value = 0, kind?: string) {
+  const key = `${name}:${kind ?? ""}`;
+  if (once.has(key)) return;
+  once.add(key);
+  track(name, value, kind);
+}
+
 export function track(name: EventName, value = 0, kind?: string) {
   if (typeof window === "undefined") return;
   const d = new Date();

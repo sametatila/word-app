@@ -1,5 +1,7 @@
 "use client";
 
+import { track } from "@/lib/track";
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { BellIcon, CheckIcon, XIcon } from "@/components/icons";
@@ -61,6 +63,11 @@ export function PushOptIn({ streak }: { streak: number }) {
       .catch(() => setState("ask"));
   }, []);
 
+  function dismiss() {
+    track("push_optin", 2);
+    close();
+  }
+
   function close() {
     setState("hidden");
     try {
@@ -74,6 +81,7 @@ export function PushOptIn({ streak }: { streak: number }) {
     setState("busy");
     try {
       const ok = await subscribeToPush();
+      track("push_optin", ok ? 1 : 0);
       if (ok) setState("done");
       else close(); // izin verilmedi
     } catch (err) {
@@ -102,7 +110,7 @@ export function PushOptIn({ streak }: { streak: number }) {
 
   if (state === "ios") {
     return (
-      <Card tone="brand" onClose={close}>
+      <Card tone="brand" onClose={dismiss}>
         <p className="text-sm font-bold">Hatırlatma almak ister misin?</p>
         <p className="muted mt-1 text-xs">
           iPhone&apos;da bildirim yalnızca uygulama ana ekrana eklenince çalışıyor. Paylaş

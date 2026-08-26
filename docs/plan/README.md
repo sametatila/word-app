@@ -48,6 +48,7 @@ Faz 4 (ölçme) ──── WP-43 önce; WP-40, 41, 42 (01, 02, 10, 11, 30, 20'
 Faz 5 (analitik) ─ WP-50, 51, 52 (01, 02, 40–42'ye) ◄──────────────┘
 Faz 6 (arayüz) ─── her fazla paralel; WP-60 erken, 61 WP-13 ile, 65 WP-40 ile
 Faz 7 (içerik) ─── WP-70 en başta; 71–73 sürekli
+Faz 8 (takip) ──── WP-80: veri boşluğu kapatma, her yeni yüzeyle birlikte sürer (80-takip.md)
 ```
 
 Önerilen sprint akışı (2 haftalık sprintler, 2–3 paralel ajan):
