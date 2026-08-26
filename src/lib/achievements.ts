@@ -1,6 +1,7 @@
 import "server-only";
 import { and, count, desc, eq, gt, gte, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { GROUP_LABELS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
 import {
   achievements,
   dailyScores,
@@ -63,8 +64,6 @@ export type Metric =
   | "activeDays"
   | "bossClears"
   | "courses";
-
-export type Group = "seri" | "kelime" | "oyun" | "ders" | "beceri" | "tur" | "keşif";
 
 export type AchievementDef = {
   id: string;
@@ -145,15 +144,12 @@ export const ACHIEVEMENTS: AchievementDef[] = [
 
 const BY_ID = new Map(ACHIEVEMENTS.map((a) => [a.id, a]));
 
-export const GROUP_LABELS: Record<Group, string> = {
-  seri: "Seri",
-  kelime: "Kelime",
-  oyun: "Oyunlar",
-  ders: "Dersler",
-  beceri: "Beceriler",
-  tur: "Turlar",
-  keşif: "Keşif",
-};
+// Grup tanımı arayüzle ortak (bkz. lib/achievement-groups): bu dosya
+// `server-only` olduğu için arayüz onu içe aktaramıyordu ve liste elle
+// kopyalanmıştı.
+export { GROUP_LABELS, GROUP_ORDER };
+export type { Group };
+
 
 type Metrics = Record<Metric, number>;
 

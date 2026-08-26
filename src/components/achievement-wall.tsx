@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { AchievementBadge, TIER_COLOR, TIER_LABEL, type BadgeRow } from "@/components/achievement-badge";
 import { TrophyIcon } from "@/components/icons";
+import { GROUP_LABELS, GROUP_ORDER } from "@/lib/achievement-groups";
 
 /**
  * Profildeki rozet duvarı.
@@ -35,17 +36,7 @@ import { TrophyIcon } from "@/components/icons";
 type Row = BadgeRow & { group: string; unlockedAt: string | null };
 type Board = { rows: Row[]; unlockedCount: number; total: number };
 
-const GROUP_LABELS: Record<string, string> = {
-  seri: "Seri",
-  kelime: "Kelime",
-  oyun: "Oyunlar",
-  ders: "Dersler",
-  beceri: "Beceriler",
-  tur: "Turlar",
-  keşif: "Keşif",
-};
 
-const GROUP_ORDER = ["seri", "kelime", "oyun", "ders", "beceri", "tur", "keşif"];
 
 /** "Sıradaki" sekmesinde kaç rozet gösterilir. */
 const NEXT_COUNT = 4;
@@ -271,6 +262,21 @@ export function AchievementWall() {
   );
 }
 
+/**
+ * Grup sekmesi.
+ *
+ * Kendi renklerini kuruyordu: seçiliyken `--color-brand` zemin üstünde beyaz
+ * yazı. Açık temada bu değişken koyu bir kehribar (brand-600) ve beyaz iyi
+ * okunuyor; KOYU temada ise açık kehribara (brand-300) dönüyor ve beyaz yazı
+ * onun üstünde kalıyor. Ölçüldü: etiket 2.09:1, sayaç 1.82:1 — ikisi de
+ * okunabilirlik eşiğinin çok altında.
+ *
+ * Çözüm yeni bir renk seçmek değil, uygulamanın çip diline dönmek. `.chip` ve
+ * `.chip-active` bu işi zaten doğru yapıyor (kehribar geçiş, koyu yazı,
+ * 6.25–7.94:1) ve sayacın saydamlığı da orada tanımlı. Yan faydası tutarlılık:
+ * bu şerit artık Beceriler'deki ve Yapabildiklerim'deki şeritlerle aynı
+ * görünüyor.
+ */
 function Tab({
   active,
   onClick,
@@ -282,6 +288,7 @@ function Tab({
   onClick: () => void;
   label: string;
   count?: string;
+  /** Gruptaki rozetlerin hepsi açıldı — seçili değilken nane. */
   complete?: boolean;
 }) {
   return (
@@ -289,16 +296,11 @@ function Tab({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold transition-colors"
-      style={{
-        background: active ? "var(--color-brand)" : "var(--surface-2)",
-        color: active ? "#fff" : complete ? "var(--color-mint)" : "var(--text-muted)",
-      }}
+      className={`chip shrink-0 whitespace-nowrap px-3 py-1.5 text-xs ${active ? "chip-active" : ""}`}
+      style={!active && complete ? { color: "var(--color-mint)" } : undefined}
     >
       {label}
-      {count ? (
-        <span className="ml-1.5 font-semibold tabular-nums opacity-80">{count}</span>
-      ) : null}
+      {count ? <span className="muted ml-1.5 font-semibold tabular-nums">{count}</span> : null}
     </button>
   );
 }
