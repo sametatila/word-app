@@ -31,3 +31,54 @@ export function PageSkeleton({ rows = 5, header = true }: { rows?: number; heade
     </div>
   );
 }
+
+/**
+ * Kendi verisini çeken bir kartın YERİ.
+ *
+ * Bu kartlar yüklenirken `null` dönüyordu ve sonuç ekranda görünür bir
+ * sarsıntıydı: sayfa açılıyor, yarım saniye sonra araya bir kart giriyor ve
+ * altındaki her şey aşağı kayıyor. Kullanıcı bunu "bir şeyler ters gitti"
+ * diye okuyor — oysa sistem doğru çalışıyor, yalnızca yerini önceden
+ * ayırmıyordu.
+ *
+ * Yükseklik kartın GERÇEK yüksekliğine yakın seçiliyor: iskelet kartın
+ * yerine geçmiyorsa kaymayı azaltır ama bitirmez.
+ *
+ * Veri gelip de gösterilecek bir şey ÇIKMAZSA kart yine hiç görünmüyor. O
+ * ayrım korunuyor: boş bir "zayıf noktan yok" kartı ne bilgi verir ne motive
+ * eder. İskelet yalnızca BEKLERKEN var.
+ */
+export function CardSkeleton({
+  height = 120,
+  label,
+}: {
+  /** Piksel — yerini tutacağı kartın yaklaşık boyu. */
+  height?: number;
+  /** Ekran okuyucuya durum: "yükleniyor". */
+  label?: string;
+}) {
+  return (
+    <div
+      className="card animate-pulse"
+      style={{ height, background: "var(--surface-2)", borderColor: "transparent" }}
+      role="status"
+      aria-busy="true"
+      aria-label={label ?? "Yükleniyor"}
+    />
+  );
+}
+
+/** Satır iskeleti — menü ve liste satırlarının yeri. */
+export function RowSkeleton({ rows = 3, height = 56 }: { rows?: number; height?: number }) {
+  return (
+    <div aria-hidden className="space-y-2">
+      {Array.from({ length: rows }).map((_, i) => (
+        <div
+          key={i}
+          className="animate-pulse rounded-xl"
+          style={{ height, background: "var(--surface-2)", opacity: 1 - i * 0.12 }}
+        />
+      ))}
+    </div>
+  );
+}

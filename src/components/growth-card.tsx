@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { CardSkeleton } from "@/components/skeleton";
 import type { GrowthReport, WeekPoint } from "@/lib/growth";
 
 /**
@@ -11,18 +12,18 @@ import type { GrowthReport, WeekPoint } from "@/lib/growth";
  * Veri olmayan hafta çizgide boşluk: sıfır çizmek "kötü hafta" demek olurdu.
  */
 export function GrowthCard() {
-  const [data, setData] = useState<GrowthReport | null>(null);
+  const [data, setData] = useState<GrowthReport | null | undefined>(undefined);
 
   useEffect(() => {
     let alive = true;
     (async () => {
       try {
         const res = await fetch("/api/growth", { cache: "no-store" });
-        if (!res.ok) return;
+        if (!res.ok) return setData(null);
         const d = (await res.json()) as GrowthReport;
         if (alive) setData(d);
       } catch {
-        /* kart görünmez */
+        setData(null);
       }
     })();
     return () => {
@@ -30,6 +31,7 @@ export function GrowthCard() {
     };
   }, []);
 
+  if (data === undefined) return <CardSkeleton height={240} label="Gelişim yükleniyor" />;
   if (!data) return null;
   const hasAny = Object.values(data.series).some((s) => s.some((p) => p.value !== null));
   if (!hasAny && !data.milestones.length) return null;

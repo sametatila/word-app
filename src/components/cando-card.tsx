@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { CardSkeleton } from "@/components/skeleton";
 import { CheckIcon } from "@/components/icons";
 import { CANDO_LEVELS, CANDO_SKILL_LABELS, type Cando } from "@/lib/cando";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -14,7 +15,7 @@ type Data = { level: string; items: Item[]; byLevel: Record<CefrLevel, { proven:
  * İfade dili "…yapabilirim": burası bir ölçek değil, bir ayna.
  */
 export function CandoCard() {
-  const [data, setData] = useState<Data | null>(null);
+  const [data, setData] = useState<Data | null | undefined>(undefined);
   const [level, setLevel] = useState<CefrLevel | null>(null);
 
   useEffect(() => {
@@ -22,13 +23,13 @@ export function CandoCard() {
     (async () => {
       try {
         const res = await fetch("/api/cando", { cache: "no-store" });
-        if (!res.ok) return;
+        if (!res.ok) return setData(null);
         const d = (await res.json()) as Data;
         if (!alive) return;
         setData(d);
         setLevel((CANDO_LEVELS as string[]).includes(d.level) ? (d.level as CefrLevel) : "A1");
       } catch {
-        /* kart görünmez */
+        setData(null);
       }
     })();
     return () => {
@@ -36,6 +37,7 @@ export function CandoCard() {
     };
   }, []);
 
+  if (data === undefined) return <CardSkeleton height={220} label="Yapabildiklerin yükleniyor" />;
   if (!data || !level) return null;
   const shown = data.items.filter((i) => i.cando.level === level);
   const skills = [...new Set(shown.map((i) => i.cando.skill))];

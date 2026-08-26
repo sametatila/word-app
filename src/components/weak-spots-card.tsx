@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { CardSkeleton } from "@/components/skeleton";
 import { useEffect, useState } from "react";
 import type { ErrorReport } from "@/lib/error-analytics";
 
@@ -11,18 +12,18 @@ import type { ErrorReport } from "@/lib/error-analytics";
  * ne bilgi verir ne motive eder.
  */
 export function WeakSpotsCard() {
-  const [report, setReport] = useState<ErrorReport | null>(null);
+  const [report, setReport] = useState<ErrorReport | null | undefined>(undefined);
 
   useEffect(() => {
     let alive = true;
     (async () => {
       try {
         const res = await fetch("/api/errors", { cache: "no-store" });
-        if (!res.ok) return;
+        if (!res.ok) return setReport(null);
         const d = (await res.json()) as ErrorReport;
         if (alive) setReport(d);
       } catch {
-        /* kart görünmez */
+        setReport(null);
       }
     })();
     return () => {
@@ -30,6 +31,7 @@ export function WeakSpotsCard() {
     };
   }, []);
 
+  if (report === undefined) return <CardSkeleton height={200} label="Zayıf noktalar yükleniyor" />;
   if (!report || (!report.types.length && !report.weakRules.length)) return null;
   const top = report.types.slice(0, 3);
 

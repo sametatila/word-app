@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { CardSkeleton } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import type { Assessment } from "@/lib/assess-prompts";
 
@@ -27,7 +28,7 @@ const KIND_LABEL: Record<string, string> = {
  * Açınca aynı değerlendirme kartı — geri bildirim dili her yerde aynı.
  */
 export function WritingsCard() {
-  const [items, setItems] = useState<Item[] | null>(null);
+  const [items, setItems] = useState<Item[] | null | undefined>(undefined);
   const [open, setOpen] = useState<number | null>(null);
 
   useEffect(() => {
@@ -35,11 +36,11 @@ export function WritingsCard() {
     (async () => {
       try {
         const res = await fetch("/api/assessments", { cache: "no-store" });
-        if (!res.ok) return;
+        if (!res.ok) return setItems(null);
         const data = (await res.json()) as { items: Item[] };
         if (alive) setItems(data.items);
       } catch {
-        /* liste yoksa kart görünmez */
+        setItems(null);
       }
     })();
     return () => {
@@ -53,10 +54,11 @@ export function WritingsCard() {
       const res = await fetch(`/api/assessments?id=${id}`, { method: "DELETE" });
       if (res.ok) setItems((list) => (list ?? []).filter((i) => i.id !== id));
     } catch {
-      /* ağ yoksa silinmedi; liste durur */
+      setItems(null);
     }
   }
 
+  if (items === undefined) return <CardSkeleton height={160} label="Yazıların yükleniyor" />;
   if (!items || !items.length) return null;
 
   return (

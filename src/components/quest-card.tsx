@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { CardSkeleton } from "@/components/skeleton";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckIcon, GiftIcon, TargetIcon } from "@/components/icons";
@@ -36,7 +37,7 @@ function localDay(): string {
 }
 
 export function QuestCard() {
-  const [board, setBoard] = useState<Board | null>(null);
+  const [board, setBoard] = useState<Board | null | undefined>(undefined);
   const [busy, setBusy] = useState<string | null>(null);
   const [flash, setFlash] = useState(0);
 
@@ -50,11 +51,13 @@ export function QuestCard() {
   const load = useCallback(async () => {
     try {
       const res = await fetch(`/api/quests?day=${localDay()}`, { cache: "no-store" });
-      if (!res.ok) return;
+      if (!res.ok) return setBoard(null);
       const data = (await res.json()) as Partial<Board>;
-      if (Array.isArray(data.quests)) setBoard(data as Board);
+      // Biçim tutmuyorsa da bir karara varılıyor: `undefined` kalsaydı
+      // iskelet sonsuza kadar atardı.
+      setBoard(Array.isArray(data.quests) ? (data as Board) : null);
     } catch {
-      /* görevler ikincil: yüklenemezse kart hiç görünmez */
+      setBoard(null);
     }
   }, []);
 
@@ -101,6 +104,7 @@ export function QuestCard() {
     }
   }
 
+  if (board === undefined) return <CardSkeleton height={150} label="Görevler yükleniyor" />;
   if (!board) return null;
 
   const claimable = board.quests.filter((q) => q.done >= q.target && !q.claimed).length;
