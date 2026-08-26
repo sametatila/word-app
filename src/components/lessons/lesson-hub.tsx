@@ -26,7 +26,6 @@ import {
   DogIcon,
   FamilyIcon,
   FilmIcon,
-  FlameIcon,
   FlagIcon,
   FlowerIcon,
   FoodIcon,
@@ -237,7 +236,6 @@ export function LessonHub({
   weak,
   total,
   userLevel,
-  cleared = {},
   passed = {},
 }: {
   cards: HubCard[];
@@ -247,8 +245,6 @@ export function LessonHub({
   total: number;
   /** Kullanıcının seçtiği seviye — yolun başlangıç noktası. */
   userLevel: string;
-  /** Geçilmiş hız turları: "A1:2" → kalan en iyi süre. */
-  cleared?: Record<string, number>;
   /** Geçilmiş modül sınavları: "A1:2" → en iyi toplam puan. */
   passed?: Record<string, number>;
 }) {
@@ -378,7 +374,6 @@ export function LessonHub({
                     accent={accent}
                     done={nodes.filter((n) => n.card.done).length}
                     size={nodes.length}
-                    bestLeft={cleared[`${level}:${mi}`] ?? null}
                     score={passed[`${level}:${mi}`] ?? null}
                   />
                 </div>
@@ -399,16 +394,19 @@ export function LessonHub({
  * On ders bitince hiçbir şey OLMUYORDU: pankartta bir kupa beliriyor, yol
  * devam ediyordu. Buraya iki şey konuldu ve **sıraları bilinçli**:
  *
- *   1. **Modül sınavı** (asıl kapı). Yedi bölüm, 25 dakika: modülün
- *      kelimeleri, dilbilgisi odakları, üretim adımları, kendi diyaloğu ve
- *      metni, konuşma ve yazma. Geçince taç ve sertifika buradan geliyor.
- *   2. **Hız turu** (isteğe bağlı ısınma). Altmış saniyede on beş kelime
- *      turu; eğlencesi ve baskısı var ama bir şey KANITLAMIYOR — uzun süre
- *      modülün tek "sınavı" oydu ve kullanıcı modülü bitirdiğinde yalnızca
- *      kelime tanıdığını görüyordu.
+ * Buradaki tek kapı **modül sınavı**: yedi bölüm, 25 dakika — modülün
+ * kelimeleri, dilbilgisi odakları, üretim adımları, kendi diyaloğu ve metni,
+ * konuşma ve yazma. Taç ve sertifika buradan geliyor.
  *
- * İkisi de modül bitmeden açık. Yoldaki kilitler gibi bu da görsel bir
- * sıralama iması, duvar değil: hazır olmayan girer, zorlanır, döner.
+ * Altında bir de hız turu bağlantısı vardı ve KALDIRILDI. Sebebi kusurun
+ * kendisiydi: altmış saniyede on beş kelimelik tur, sınav v3'ten önce
+ * modülün tek kapısıydı; yeni sınavın hemen altında durunca ikinci bir
+ * sınav gibi okunuyor ve tam da sınav revizyonunun kaldırdığı "sadece
+ * kelime" ölçümünü geri davet ediyordu. Tur silinmedi — oyun olarak
+ * yaşıyor ve girişi sınav sonucu ekranında (bkz. components/exam-player).
+ *
+ * Modül bitmeden de açık. Yoldaki kilitler gibi bu da görsel bir sıralama
+ * iması, duvar değil: hazır olmayan girer, zorlanır, döner.
  */
 function ModuleExit({
   level,
@@ -416,7 +414,6 @@ function ModuleExit({
   accent,
   done,
   size,
-  bestLeft,
   score,
 }: {
   level: string;
@@ -424,8 +421,6 @@ function ModuleExit({
   accent: string;
   done: number;
   size: number;
-  /** Hız turu geçildiyse kalan en iyi süre. */
-  bestLeft: number | null;
   /** Modül sınavı geçildiyse en iyi toplam puan. */
   score: number | null;
 }) {
@@ -472,13 +467,6 @@ function ModuleExit({
         <span className="shrink-0 text-xs font-bold" style={{ color: tone }}>
           {cleared ? "tekrar" : "gir"}
         </span>
-      </Link>
-      <Link
-        href={`/lessons/sinav/${level}/${moduleIdx}`}
-        className="muted mt-1.5 flex items-center gap-1.5 px-3 py-1 text-xs font-semibold underline-offset-2 hover:underline"
-      >
-        <FlameIcon size={12} />
-        {bestLeft !== null ? `Hız turu · en iyi ${bestLeft} sn kalan` : "Hız turu · 60 saniye, 15 kelime"}
       </Link>
     </div>
   );

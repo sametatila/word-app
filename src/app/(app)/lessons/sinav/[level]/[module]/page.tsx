@@ -32,6 +32,10 @@ export default async function BossPage({
         Hız turu modülü GEÇİRMİYOR: yalnızca kelimeleri baskı altında
         kullandırıyor. Modülün kapısı yedi bölümlük sınav, bu yüzden bağlantı
         sayfanın en üstünde ve ne olduğunu söylüyor.
+
+        Yol haritasındaki giriş kaldırıldı (bkz. components/lessons/lesson-hub):
+        sınavın hemen altında duran "60 sn, 15 kelime" satırı ikinci bir sınav
+        gibi okunuyordu. Tura artık sınav SONUCU ekranından giriliyor.
       */}
       <div className="mx-auto mb-3 w-full max-w-2xl text-right">
         <Link href={`/exam/${level}/${index}`} className="muted text-xs font-semibold underline-offset-2 hover:underline">

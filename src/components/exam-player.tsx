@@ -316,6 +316,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       <Result
         result={result}
         level={level}
+        moduleIndex={module}
         title={title}
         cando={cover?.canDo ?? []}
         focus={cover?.focus ?? []}
@@ -833,6 +834,7 @@ function ProduceCard({
 function Result({
   result,
   level,
+  moduleIndex,
   title,
   cando,
   focus,
@@ -843,6 +845,8 @@ function Result({
 }: {
   result: ExamResult;
   level: CefrLevel;
+  /** Modül sınavıysa modülün sırası; seviye sınavında null. */
+  moduleIndex: number | null;
   title: string;
   cando: { de: string; tr: string; en: string }[];
   focus: { de: string; tr: string }[];
@@ -968,6 +972,21 @@ function Result({
       <Link href="/lessons" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
         Derslere dön
       </Link>
+      {/*
+        Hız turunun tek girişi burası. Eskiden yol haritasında, modül
+        sınavının hemen altındaydı ve orada ikinci bir sınav gibi okunuyordu —
+        oysa altmış saniyede on beş kelime bir şey KANITLAMIYOR; sınav
+        revizyonunun kaldırdığı "sadece kelime" ölçümünü geri davet ediyordu.
+        Sınavdan SONRA ise yeri doğru: ölçüm bitti, bu bir oyun.
+      */}
+      {moduleIndex !== null ? (
+        <Link
+          href={`/lessons/sinav/${level}/${moduleIndex}`}
+          className="muted mt-2 block text-center text-xs font-semibold underline-offset-2 hover:underline"
+        >
+          Oyun: hız turu · modülün kelimeleri, 60 sn
+        </Link>
+      ) : null}
     </section>
   );
 }
