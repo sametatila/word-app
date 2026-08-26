@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { CheckIcon, TrophyIcon } from "@/components/icons";
+import { ModeTile, ModeTileSkeleton } from "@/components/mode-tile";
 
 /**
  * Ana ekrandaki "günün turu" kartı.
@@ -27,7 +28,16 @@ function localDay(): string {
   ).padStart(2, "0")}`;
 }
 
-export function DailyCard({ onPlay, bare = false }: { onPlay: () => void; bare?: boolean }) {
+export function DailyCard({
+  onPlay,
+  bare = false,
+  tile = false,
+}: {
+  onPlay: () => void;
+  bare?: boolean;
+  /** Izgara döşemesi olarak çiz (bkz. components/mode-tile). */
+  tile?: boolean;
+}) {
   const [state, setState] = useState<State>({
     loading: true,
     played: null,
@@ -76,10 +86,28 @@ export function DailyCard({ onPlay, bare = false }: { onPlay: () => void; bare?:
   //
   // Veri hiç yoksa (seviye de yok, oynanmış tur da) satır tamamen kalkıyor:
   // orada gösterilecek bir şey gerçekten yok.
-  if (state.loading) return <DailyRowSkeleton bare={bare} />;
+  if (state.loading) return tile ? <ModeTileSkeleton /> : <DailyRowSkeleton bare={bare} />;
   if (!state.played && !state.level) return null;
 
   const done = Boolean(state.played);
+
+  if (tile) {
+    return (
+      <ModeTile
+        icon={done ? <CheckIcon size={18} /> : <TrophyIcon size={18} />}
+        tone={done ? "var(--color-mint)" : "var(--color-brand)"}
+        title="Bugünün turu"
+        done={done}
+        status={
+          done
+            ? `${state.played!.correct}/${state.played!.total} doğru` +
+              (state.rank ? ` · ${state.rank}. sıra` : "")
+            : `${state.level} · herkes aynı kelimeler`
+        }
+        onPlay={onPlay}
+      />
+    );
+  }
 
   return (
     <section

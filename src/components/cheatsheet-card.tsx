@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { BookOpenIcon } from "@/components/icons";
+import { ModeTile } from "@/components/mode-tile";
 
 /**
  * Başlangıç ekranındaki dilbilgisi kartı.
@@ -21,7 +22,14 @@ import { BookOpenIcon } from "@/components/icons";
  * maddesi, sayıyla birlikte bir çağrı. Borç yoksa hiç sayı yazmıyor —
  * "0 tekrar" bilgi değil gürültü.
  */
-export function CheatsheetCard({ bare = false }: { bare?: boolean }) {
+export function CheatsheetCard({
+  bare = false,
+  tile = false,
+}: {
+  bare?: boolean;
+  /** Izgara döşemesi olarak çiz (bkz. components/mode-tile). */
+  tile?: boolean;
+}) {
   const [due, setDue] = useState<number | null>(null);
 
   useEffect(() => {
@@ -40,6 +48,18 @@ export function CheatsheetCard({ bare = false }: { bare?: boolean }) {
       alive = false;
     };
   }, []);
+
+  if (tile) {
+    return (
+      <ModeTile
+        icon={<BookOpenIcon size={18} />}
+        tone="var(--color-violet)"
+        title="Dilbilgisi"
+        status={due && due > 0 ? `${due} maddenin tekrarı geldi` : "A1'den C1'e tablolar"}
+        href="/cheatsheet"
+      />
+    );
+  }
 
   return (
     <section className={bare ? "w-full" : "card mx-auto mt-3 w-full max-w-md overflow-hidden"}>

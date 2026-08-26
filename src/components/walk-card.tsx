@@ -1,6 +1,7 @@
 "use client";
 
 import { HeadphonesIcon } from "@/components/icons";
+import { ModeTile } from "@/components/mode-tile";
 
 /**
  * Başlangıç ekranındaki "yürürken" kartı.
@@ -14,7 +15,27 @@ import { HeadphonesIcon } from "@/components/icons";
  * yoldan oynanması. Oyun seçicinin hemen üstünde duruyor çünkü ona en yakın
  * akraba o.
  */
-export function WalkCard({ onPlay, bare = false }: { onPlay: () => void; bare?: boolean }) {
+export function WalkCard({
+  onPlay,
+  bare = false,
+  tile = false,
+}: {
+  onPlay: () => void;
+  bare?: boolean;
+  /** Izgara döşemesi olarak çiz (bkz. components/mode-tile). */
+  tile?: boolean;
+}) {
+  if (tile) {
+    return (
+      <ModeTile
+        icon={<HeadphonesIcon size={18} />}
+        tone="var(--color-mint)"
+        title="Yürürken"
+        status="Ekrana bakmadan, sesli"
+        onPlay={onPlay}
+      />
+    );
+  }
   return (
     <section
       /* Giriş animasyonu YOK: bu kart başlangıç ekranında bir zincirin halkası

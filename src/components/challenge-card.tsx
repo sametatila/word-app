@@ -1,5 +1,6 @@
 "use client";
 
+import { ModeTile } from "@/components/mode-tile";
 import { SparkIcon } from "@/components/icons";
 
 /**
@@ -14,7 +15,29 @@ import { SparkIcon } from "@/components/icons";
  * bir başlık; "rekorun 1.240" ise bir davet. Rekoru olmayan için de metin
  * farklı: kırılacak bir rekor yoksa kurulacak bir rekor vardır.
  */
-export function ChallengeCard({ best, onPlay, bare = false }: { best: number; onPlay: () => void; bare?: boolean }) {
+export function ChallengeCard({
+  best,
+  onPlay,
+  bare = false,
+  tile = false,
+}: {
+  best: number;
+  onPlay: () => void;
+  bare?: boolean;
+  /** Izgara döşemesi olarak çiz (bkz. components/mode-tile). */
+  tile?: boolean;
+}) {
+  if (tile) {
+    return (
+      <ModeTile
+        icon={<SparkIcon size={18} />}
+        tone="var(--color-flame)"
+        title="Hayatta kalma"
+        status={best > 0 ? `Rekorun ${best.toLocaleString("tr-TR")} puan` : "40 sn · süre bitene kadar"}
+        onPlay={onPlay}
+      />
+    );
+  }
   return (
     <section
       /* Giriş animasyonu YOK: bu kart başlangıç ekranında bir zincirin halkası
