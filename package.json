@@ -21,6 +21,7 @@
     "report:stt": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/stt-capacity.ts",
     "content:confusables": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/confusables.ts",
     "content:derive": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/derive-questions.ts",
+    "test:pronounce": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-pronounce.ts",
     "test:cheat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-drills.ts",
     "test:content": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-content.ts",
     "db:seed": "tsx scripts/seed.ts",

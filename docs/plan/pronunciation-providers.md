@@ -42,6 +42,25 @@ Tarayıcı `SpeechRecognition` (mevcut) her durumda son yedek: ücretsiz, sını
 | ELSA API | fonem | kısıtlı | yok (19,99 $/ay uygulama) | ✗ | eleniyor |
 | Azure Speech | fonem + prosodi | ✓ | F0 5 saat/ay | ✓ | **sahibin kararıyla dışarıda** |
 
+## Uygulama durumu (2026-08-26) ve env değerleri
+
+Faz 1 kodda: `src/lib/stt.ts` (zincir), `src/app/api/pronounce/route.ts`, `src/lib/pronounce.ts` (puan),
+`src/lib/pronounce-client.ts` (paralel kayıt, WAV), `src/components/feedback/pronounce-card.tsx`;
+söyleyiş oynatıcısı (`speaking-player.tsx`) puanı tanıyıcı kararının altına ekler ve tur puanı
+olarak `user_skills.last_score`'a yazar; `pronounce` olayı (kind = egzersiz). Uçtan uca test:
+TTS klibi → Groq → puan 100, ~300 ms; eksik yarım cümle → 52.
+
+| Env | Zorunlu | Nereden |
+| --- | --- | --- |
+| `GROQ_API_KEY` | ✓ | var |
+| `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_AI_TOKEN` | ✓ (ikinci hat) | Cloudflare dash → Account ID; My Profile → API Tokens → "Workers AI" şablonu (Read) |
+| `SPEECHMATICS_API_KEY` | isteğe bağlı | portal.speechmatics.com (8 sa/ay) |
+| `DEEPGRAM_API_KEY`, `MISTRAL_API_KEY` | isteğe bağlı | mevcut destek, krediyle |
+| `CLOUDFLARE_STT_MODEL`, `GROQ_STT_MODEL`, `SPEECHMATICS_URL` | hayır | varsayılanları değiştirmek için |
+
+Bilinen sınır: ASR dil modeli yakın sesteşleri "düzeltir" (Staat → Stadt); telaffuz hatası kelime
+düzeyinde ancak farklı bir kelimeye düştüğünde yakalanır. Fonem düzeyi faz 2.
+
 ## Mimari (faz 1)
 
 ```

@@ -1,6 +1,7 @@
 "use client";
 
 import { FeedbackLine } from "@/components/feedback/feedback-line";
+import { PronounceCard } from "@/components/feedback/pronounce-card";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { CharDiff, DiffLegend, TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
 import { ERROR_TYPES } from "@/lib/errors";
@@ -94,6 +95,21 @@ export default function DemoFeedback() {
         <h2 className="muted mb-3 text-xs font-bold uppercase">AssessmentCard — sağlayıcı kapalı (yedek)</h2>
         <AssessmentCard answer="Ich trinke Kaffee." result={fb} failure="not_configured" />
       </section>
-    </div>
+    
+      {/* WP-20: telaffuz kartı — kelime ısı haritası örneği */}
+      <section id="pronounce" className="card p-4">
+        <h2 className="mb-2 font-bold">Telaffuz puanı (WP-20)</h2>
+        <PronounceCard
+          score={{
+            overall: 74, wordAccuracy: 70, completeness: 80, fluency: 85, rate: 3.4, pauses: 1, passed: false, transcript: "ich wohne in der staat",
+            extra: [],
+            words: [
+              { word: "Ich", status: "ok" }, { word: "wohne", status: "ok" }, { word: "in", status: "ok" }, { word: "der", status: "ok" },
+              { word: "Stadt", status: "near", heard: "Staat", hint: "„Stadt“taki a'yı uzattın ve „Staat“ (devlet) duyuldu. Sesi kısa kes: ŞTAT." },
+            ],
+          }}
+        />
+      </section>
+</div>
   );
 }

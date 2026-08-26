@@ -1,6 +1,7 @@
 "use client";
 
 import { afterMs, tickClock } from "@/components/pocket-clock";
+import { toWav } from "@/lib/pronounce-client";
 
 /**
  * Cepte çalışan mikrofon.
@@ -567,9 +568,18 @@ export async function transcribe(
   /** Beklenen cevap — karara etki etmiyor, yalnızca kayda geçiyor. */
   expected = "",
 ): Promise<string[]> {
+  /*
+    Halka tampondan kesilen webm dilimi her zaman geçerli bir dosya değil:
+    başlık eklense de ilk parça bir kümenin ortasından başlayabiliyor ve
+    sağlayıcılar bunu "bozuk dosya" (400) diye reddediyordu — ölçüldü: aynı
+    klip üç sağlayıcıda da 400 (WP-20 kota ölçümü, 13/124 istek). Çözüm
+    istemcide: dilimi çözüp 16 kHz mono WAV olarak gönder. Çözülemezse ham
+    dilim gider — eskisinden kötü değil.
+  */
+  const sendable = await toWav(clip).catch(() => clip);
   const form = new FormData();
-  const ext = clip.type.includes("mp4") ? "mp4" : clip.type.includes("ogg") ? "ogg" : "webm";
-  form.append("audio", clip, `clip.${ext}`);
+  const ext = sendable.type.includes("wav") ? "wav" : clip.type.includes("mp4") ? "mp4" : clip.type.includes("ogg") ? "ogg" : "webm";
+  form.append("audio", sendable, `clip.${ext}`);
   form.append("language", language);
   if (expected) form.append("expected", expected);
   try {

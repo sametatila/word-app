@@ -4,6 +4,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { SpeakingDrillExercise, SpeakingTask } from "@/lib/skills/types";
 import { judgeSpeech, isSpeechCorrect, type SpeechVerdict } from "@/lib/speech";
+import { askPronounce, captureClip, type Capture } from "@/lib/pronounce-client";
+import type { PronounceScore } from "@/lib/pronounce";
+import { PronounceCard } from "@/components/feedback/pronounce-card";
 import { askCoach } from "@/lib/coach-client";
 import {
   speakGerman,
@@ -47,6 +50,17 @@ export function SpeakingPlayer({
   const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState<boolean[]>([]);
   const [attempts, setAttempts] = useState(0);
+  /*
+    Telaffuz puanı (WP-20): tanıyıcıyla paralel kayıt. Tanıyıcının anlık
+    kararı hemen görünür, puan ve kelime ısı haritası klibin sunucudan
+    dönmesiyle eklenir. Tur puanı (beceri kaydına `score`) bu puanların
+    ortalaması; hiç puan gelmezse eski davranış (yalnız doğru sayısı).
+  */
+  const [pronounce, setPronounce] = useState<PronounceScore | null>(null);
+  const [pronouncing, setPronouncing] = useState(false);
+  const capture = useRef<Capture | null>(null);
+  const pronounceScores = useRef<number[]>([]);
+  const pronounceToken = useRef(0);
   const [coachHint, setCoachHint] = useState("");
   const [coaching, setCoaching] = useState(false);
 
@@ -95,6 +109,10 @@ export function SpeakingPlayer({
       return;
     }
 
+    // Paralel kayıt — tanıyıcı susunca klip puanlanmak üzere gönderilir.
+    capture.current = await captureClip(15_000);
+    setPronounce(null);
+
     const rec = new Ctor();
     recognition.current = rec;
     rec.lang = "de-DE";
@@ -124,6 +142,7 @@ export function SpeakingPlayer({
       );
       setVerdict(outcome);
       setPhase("done");
+      void scoreClip(task);
 
       // Koç yalnızca çevrimdışı teşhisin diyecek sözü kalmadığında çağrılıyor.
       // "correct" için gerek yok; "confusion" zaten hedefli bir açıklama taşıyor
@@ -149,6 +168,8 @@ export function SpeakingPlayer({
       });
     };
     rec.onerror = (e) => {
+      void capture.current?.stop();
+      capture.current = null;
       setPhase("idle");
       setError(
         e.error === "not-allowed" || e.error === "service-not-allowed"
@@ -177,20 +198,46 @@ export function SpeakingPlayer({
     recognition.current?.stop();
   }
 
+  /** Kaydı kapat, sunucuya gönder, puanı ekle; geç gelen puan sonraki göreve düşmesin. */
+  async function scoreClip(t: SpeakingTask) {
+    const cap = capture.current;
+    capture.current = null;
+    if (!cap) return;
+    const token = ++pronounceToken.current;
+    setPronouncing(true);
+    const blob = await cap.stop();
+    if (!blob || pronounceToken.current !== token) return setPronouncing(false);
+    const res = await askPronounce(blob, t.de, { exerciseId: exercise.id, confusions: t.confusions });
+    if (pronounceToken.current !== token) return;
+    setPronouncing(false);
+    if (res.ok) setPronounce(res.score);
+  }
+
   /** Sonucu kaydeder ve sıradaki göreve geçer. */
   function commit(correct: boolean) {
     const next = [...results, correct];
     setResults(next);
+    if (pronounce) pronounceScores.current.push(pronounce.overall);
+    pronounceToken.current++;
+    setPronounce(null);
+    setPronouncing(false);
     setVerdict(null);
     setError(null);
     clearCoach();
     setAttempts(0);
     setPhase("idle");
     if (index + 1 < tasks.length) setIndex(index + 1);
-    else void finish(next.filter(Boolean).length);
+    else {
+      const ps = pronounceScores.current;
+      const avg = ps.length ? Math.round(ps.reduce((a, b) => a + b, 0) / ps.length) : undefined;
+      void finish(next.filter(Boolean).length, avg);
+    }
   }
 
   function retry() {
+    pronounceToken.current++;
+    setPronounce(null);
+    setPronouncing(false);
     setVerdict(null);
     setError(null);
     clearCoach();
@@ -199,6 +246,10 @@ export function SpeakingPlayer({
   }
 
   function restart() {
+    pronounceScores.current = [];
+    pronounceToken.current++;
+    setPronounce(null);
+    setPronouncing(false);
     setResults([]);
     setIndex(0);
     setVerdict(null);
@@ -360,6 +411,14 @@ export function SpeakingPlayer({
               />
             ) : null}
           </AnimatePresence>
+          {/* Telaffuz puanı (WP-20): tanıyıcı kararının altına, klip dönünce. */}
+          {verdict && pronounce ? (
+            <div className="mt-3">
+              <PronounceCard score={pronounce} compact />
+            </div>
+          ) : verdict && pronouncing ? (
+            <p className="muted mt-3 text-center text-xs">Telaffuz puanlanıyor…</p>
+          ) : null}
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
             {verdict && !isSpeechCorrect(verdict) ? (

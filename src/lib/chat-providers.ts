@@ -529,7 +529,7 @@ export function chatConfigured(): boolean {
  */
 export type SttProvider = {
   name: string;
-  dialect: "openai" | "deepgram";
+  dialect: "openai" | "deepgram" | "cloudflare" | "speechmatics";
   baseUrl: string;
   key: string;
   model: string;
@@ -546,46 +546,46 @@ export type SttProvider = {
  */
 export function sttProviders(): SttProvider[] {
   const out: SttProvider[] = [];
-
   /*
-    Deepgram başta ve sebebi hızı değil DÜRÜSTLÜĞÜ.
-
-    Ölçüldü — temiz ve gürültülü seste ikisi de 8/8, ama ses bozulduğunda
-    yolları ayrılıyor:
-
-      başı kesik ses → groq: "Vielen Dank.", "Krater"   (uyduruyor)
-                       deepgram: ""                      (boş dönüyor)
-
-    Bu uygulamada fark büyük: uydurma bir metin YANLIŞ CEVAP olup öğrenciyi
-    cezalandırıyor, boş metin ise "duyamadım" sayılıp tekrar planına hiç
-    dokunmuyor. Yanlış bilgi vermektense bilmediğini söylemek.
-
-    Groq yedekte kalıyor: daha hızlı (ölçüldü: 215 ms'ye karşı 483 ms) ve
-    ücretsiz katmanı geniş, ama ani yükte 429 veriyor.
+    Sıra kota ölçümünden (docs/plan/stt-capacity.md, 2026-08):
+      1. Groq — ücretsiz 28 800 sn/gün, hızlı, kelime zaman damgası verir;
+         darboğazı dakikada 20 istek → 429'da hemen sonraki hat.
+      2. Cloudflare Workers AI — 10 000 neuron/gün (~214 dk), dakika sınırı
+         yok: tepe dakikanın ikinci hattı. REST ile, Worker gerekmez.
+      3. Speechmatics — 8 saat/ay, kelime güveni ve zamanı.
+      4. Deepgram — tek seferlik kredi; boş dönmesi "uydurmasından" iyi
+         (önceki ölçüm), o yüzden hâlâ zincirde.
+      5. Mistral Voxtral — son çare.
+    Eski "Deepgram önce" kararı kredisi bitince anlamsızlaşıyor; Groq'un
+    uydurma sorunu klibin BAŞI kesilince çıkıyordu ve o, kayıt tarafında
+    çözüldü (pocket-mic halka tampon + WAV).
   */
-  const dgKey = process.env.DEEPGRAM_API_KEY;
-  if (dgKey) {
+  const groq = process.env[CATALOG.groq.envKey];
+  if (groq && CATALOG.groq.sttModel) {
+    out.push({ name: "groq", dialect: "openai", baseUrl: CATALOG.groq.baseUrl, key: groq, model: (CATALOG.groq.sttEnvModel && process.env[CATALOG.groq.sttEnvModel]) || CATALOG.groq.sttModel });
+  }
+  const cfAccount = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const cfToken = process.env.CLOUDFLARE_AI_TOKEN;
+  if (cfAccount && cfToken) {
     out.push({
-      name: "deepgram",
-      dialect: "deepgram",
-      baseUrl: "https://api.deepgram.com/v1/listen",
-      key: dgKey,
-      model: process.env.DEEPGRAM_STT_MODEL || "nova-3",
+      name: "cloudflare",
+      dialect: "cloudflare",
+      baseUrl: `https://api.cloudflare.com/client/v4/accounts/${cfAccount}`,
+      key: cfToken,
+      model: process.env.CLOUDFLARE_STT_MODEL || "@cf/openai/whisper-large-v3-turbo",
     });
   }
-
-  const order: ProviderName[] = ["groq", "mistral"];
-  for (const name of order) {
-    const cfg = CATALOG[name];
-    const key = process.env[cfg.envKey];
-    if (!key || !cfg.sttModel) continue;
-    out.push({
-      name,
-      dialect: "openai",
-      baseUrl: cfg.baseUrl,
-      key,
-      model: (cfg.sttEnvModel && process.env[cfg.sttEnvModel]) || cfg.sttModel,
-    });
+  const smKey = process.env.SPEECHMATICS_API_KEY;
+  if (smKey) {
+    out.push({ name: "speechmatics", dialect: "speechmatics", baseUrl: process.env.SPEECHMATICS_URL || "https://asr.api.speechmatics.com", key: smKey, model: "enhanced" });
+  }
+  const dgKey = process.env.DEEPGRAM_API_KEY;
+  if (dgKey) {
+    out.push({ name: "deepgram", dialect: "deepgram", baseUrl: "https://api.deepgram.com/v1/listen", key: dgKey, model: process.env.DEEPGRAM_STT_MODEL || "nova-3" });
+  }
+  const mistral = process.env[CATALOG.mistral.envKey];
+  if (mistral && CATALOG.mistral.sttModel) {
+    out.push({ name: "mistral", dialect: "openai", baseUrl: CATALOG.mistral.baseUrl, key: mistral, model: (CATALOG.mistral.sttEnvModel && process.env[CATALOG.mistral.sttEnvModel]) || CATALOG.mistral.sttModel });
   }
   return out;
 }
