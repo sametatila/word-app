@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { CheckIcon, ChevronIcon } from "@/components/icons";
+import { CheckIcon, ChevronIcon, ChevronRightIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { CoachBubble } from "@/components/coach-bubble";
 import { planMoment } from "@/lib/coach-lines";
@@ -91,7 +91,7 @@ export function PlanCard({ onStartSession, name }: { onStartSession: () => void;
           {plan.complete ? `${plan.items.length}/${plan.items.length}` : `${doneCount}/${plan.items.length} · ~${plan.minutes} dk`}
         </span>
         <motion.span
-          animate={{ rotate: open ? 90 : 0 }}
+          animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.18 }}
           className="muted shrink-0"
         >
@@ -142,7 +142,7 @@ export function PlanCard({ onStartSession, name }: { onStartSession: () => void;
                           {item.detail} · {item.minutes} dk
                         </span>
                       </span>
-                      {!item.done ? <ChevronIcon size={14} className="muted shrink-0" /> : null}
+                      {!item.done ? <ChevronRightIcon size={14} className="muted shrink-0" /> : null}
                     </>
                   );
                   const cls = "flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left";

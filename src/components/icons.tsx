@@ -245,6 +245,20 @@ export const ChevronIcon = (p: IconProps) => (
   </Svg>
 );
 
+/**
+ * Sağa bakan şevron — GİTMEK için.
+ *
+ * Aşağı bakan şevron "burası açılır" der. Bir satır aşağı açılmıyor da başka
+ * bir ekrana gidiyorsa aşağı ok yanlış söz veriyor: kullanıcı dokunuyor,
+ * sayfa değişiyor, beklediği açılma olmuyor. Açılan yerlerde aşağı, giden
+ * yerlerde sağa.
+ */
+export const ChevronRightIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M9.5 6 15.5 12 9.5 18" />
+  </Svg>
+);
+
 export const ArrowLeftIcon = (p: IconProps) => (
   <Svg {...p}>
     <path d="M19.5 12h-15M10.5 6 4.5 12l6 6" />

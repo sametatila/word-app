@@ -328,7 +328,23 @@ function tone(score: number | null) {
  * listenin başı tek bakışta görünüyor.
  */
 function Board({ board, level, activeLevel }: { board: SkillsBoard; level: CefrLevel; activeLevel: CefrLevel }) {
+  /*
+    Profildeki "Yetkinlik ve gelişim" satırı buraya `?detail=1` ile geliyor ve
+    ayrıntı AÇIK açılıyor. Düz bir yönlendirme, dokunan kişiyi aradığı şeyin
+    kapalı hâliyle karşılamak olurdu — satır neyi vaat ediyorsa ekran onu
+    göstermeli.
+  */
   const [open, setOpen] = useState(false);
+
+  /*
+    Adres SUNUCUDA okunamaz. İlk durumu doğrudan `useState` içinde okumak
+    sunucuda kapalı, istemcide açık bir ağaç üretir ve React bunu hidratlama
+    uyuşmazlığı olarak bildirir. Bağlandıktan sonra açmak hem doğru hem de
+    görünürde aynı: kart zaten bir kare sonra açılıyor.
+  */
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).has("detail")) setOpen(true);
+  }, []);
 
   return (
     <section className="card p-4" aria-label="Yetkinlik">
@@ -370,7 +386,7 @@ function Board({ board, level, activeLevel }: { board: SkillsBoard; level: CefrL
         className="muted mt-3 flex w-full items-center justify-center gap-1.5 text-xs font-semibold"
       >
         {open ? "Ayrıntıyı kapat" : "Nerede zayıfım, ne kadar ilerledim"}
-        <motion.span animate={{ rotate: open ? 90 : 0 }} transition={{ duration: 0.18 }} className="inline-flex">
+        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.18 }} className="inline-flex">
           <ChevronIcon size={14} />
         </motion.span>
       </button>

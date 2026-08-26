@@ -397,7 +397,7 @@ function SheetCard({
           <span className="muted block truncate text-xs">{sheet.summary}</span>
         </span>
         <motion.span
-          animate={{ rotate: open ? 90 : 0 }}
+          animate={{ rotate: open ? 180 : 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 24 }}
           className="muted shrink-0"
         >
