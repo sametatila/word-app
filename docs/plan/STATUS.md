@@ -107,3 +107,18 @@ Otonom yapılabilen bütün WP'ler işlendi: Faz 0 (WP-00..04), üretim alışt�
 - 2026-08-26 — WP-20 sağlayıcı: Azure sahibin kararıyla dışarıda. Almanca için ücretsiz fonem API'si yok (Speechace Almanca yok, SpeechSuper 20 $/ay taban). Karar: Groq Whisper large-v3-turbo (günde 28 800 sn ses, anahtar var) + kelime hizalamalı kendi puanlama; yedek Gladia (10 sa/ay), Speechmatics (8 sa/ay), Deepgram (200 $ kredi). Fonem düzeyi faz 2: HF Space'te wav2vec2-xlsr-53-espeak (ücretsiz CPU). Tarama ve tablo `pronunciation-providers.md`. Claude.
 - 2026-08-26 — İçerik ölçekleme yöntemi: türetilebilen türetildi (okuma/dinleme yazılı soruları metnin sözlükçe kelimesi ve mevcut şıkların doğru cevabından; `content:derive` deterministik, elle yazılan sorular öncelikli), yazılması gerekenler elle yazıldı (drill 276, telaffuz drill 40, diyalog 18, yazma görevi 40, karıştırma çifti 150, B1 ders 10). Uyarı bütçesi iki kez bilinçli genişletildi (`en` karşılığı olmayan sözlükçe girdileri) — içerik borcu olarak duruyor. Türetilmiş sorular gözden geçirme için `derived-questions.ts`'te okunabilir; yanlış bulunan egzersize elle soru yazılınca türetme o egzersizden düşer. Claude.
 - 2026-08-26 — WP-20 faz 1 uygulandı: `/api/stt` ve `/api/pronounce` aynı zincir (`lib/stt.ts`); sıra kota ölçümüne göre Groq → Cloudflare (REST, Worker yok) → Speechmatics → Deepgram → Mistral; 429/400/5xx'te sonraki sağlayıcı. Puan kelime hizalaması (WP-10 `matchSentence`) + bütünlük + akıcılık (Groq kelime zaman damgası; hece hızı 2–4,5/sn doğal, 0,5 sn üstü duraklama −10); eşik 80. Sınır dürüstçe: Whisper yakın sesteşleri düzeltiyor (TTS ile "Staat" söylenen klip "Stadt" döndü) — fonem hatası ancak faz 2 (wav2vec2) ile; kart "kelime düzeyi" der. Söyleyiş turunda kayıt tanıyıcıyla paralel: karar anında, puan 0,3–1 sn sonra. pocket-mic dilimleri artık 16 kHz WAV (bozuk webm → 400 sorunu). Günlük kullanıcı kotası 120 istek (`ai_usage` sayacı). Claude.
+
+## 26 Ağustos akşamı — açık kalanların kapatılması (/goal)
+
+Karşılaştırma raporundaki (reports/gelisim-karsilastirma.html) açık kalanlar üçe ayrıldı:
+
+**Kapatıldı.**
+- WP-80 takip katmanı: 50 olay, `test:events`, `report:events`/`report:learning` yeni bölümler, `report:all`, `docs/plan/80-takip.md`. "Veri yok" durumuna düşmemenin kuralları orada.
+- Sınava konuşma bölümü (WP-41): kelime düzeyi telaffuz puanı, STT yoksa bölüm yok; kâğıt demo sunucuda doğrulandı (seviye 3, modül 2 madde).
+- Üretim oranı (WP-14 / KPI 2): iki neden bulundu — tanım cevap sayıyordu (düzeltildi: tur sayar) ve fresh/shaky kelimede merdiven üretim vermiyordu (üretim tabanı `PRODUCTION_FLOOR`=0.4; simülasyon %28 → %45, demo hesabında yeni oturum 7/16).
+- Okuma/dinleme gerekçesi: zaten vardı (1.547 soruda `explain`); rapor düzeltildi.
+- Ölçüm kartlarının görünürlüğü ve STT kotası: artık ölçülüyor (`panel_open`, §14 sağlayıcı başarı/429).
+
+**Bilerek açık (ağır içerik üretimi, sahibin ertelemesi).** B2/C1 dersleri ve B1 modül 4–10; B1–C1 tablo drill'leri (32 tablo); gerçek dinleme kayıtları; fonem düzeyi telaffuz (HF Space, faz 2).
+
+**Sahibe bağlı.** Yerleştirme kalibrasyonu, telefonda mikrofon testleri (telaffuz kartı, sınav konuşma bölümü), koç tonu, WP-62/65 akış testleri; `report:all` ile haftalık okuma.
