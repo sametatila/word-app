@@ -365,6 +365,7 @@ export const FOCUS_SHEETS: Record<string, string[]> = {
   "Ordinalzahlen-Datum": ["a2-ordinalzahlen"],
   "Futur-werden": ["b1-futur"],
   "Konjunktiv-II": ["b1-konjunktiv2", "a2-hoeflich"],
+  "Konjunktiv-II-irreal": ["b1-konjunktiv2"],
   "Passiv-Präsens": ["b1-passiv"],
   "Passiv-Präteritum": ["b1-passiv"],
   "Um-zu": ["b1-infinitiv-zu"],
