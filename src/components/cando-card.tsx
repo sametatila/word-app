@@ -57,13 +57,16 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
         Bir ifade, ona bağlı en az iki ders ya da egzersizi tamamlayınca kanıtlı sayılır.
         {bare ? ` ${provenTotal} kanıtlı.` : ""}
       </p>
-      <div className="mt-3 flex gap-1.5">
+      {/* Beş seviye çipi telefonda kartın genişliğini aşıyor ve sonuncusu
+          (C1) kesiliyordu: kaydırma olmadığı için ulaşılamaz bir sekmeydi.
+          Şerit artık kayıyor, kaydırma çubuğu gizli (bkz. globals). */}
+      <div className="no-scrollbar -mx-1 mt-3 flex gap-1.5 overflow-x-auto px-1 pb-0.5">
         {CANDO_LEVELS.map((l) => (
           <button
             key={l}
             type="button"
             onClick={() => setLevel(l)}
-            className={`chip px-3 py-1 text-xs font-bold ${l === level ? "chip-active" : ""}`}
+            className={`chip shrink-0 px-3 py-1 text-xs font-bold ${l === level ? "chip-active" : ""}`}
             aria-pressed={l === level}
           >
             {l}

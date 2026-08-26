@@ -274,7 +274,14 @@ export function SkillsHub({
       ) : null}
 
       {/* Sekmeler: dört egzersiz becerisi + dilbilgisi + sınav. */}
-      <div role="tablist" aria-label="Beceri" className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1">
+      {/* Kaydırma çubuğu gizli (bkz. globals `.no-scrollbar`): şerit zaten
+          taşan bir çip dizisi ve çubuk hem bir satır yer yiyor hem de
+          altındaki listeyle arasına gri bir çizgi çekiyordu. */}
+      <div
+        role="tablist"
+        aria-label="Beceri"
+        className="no-scrollbar -mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1"
+      >
         {TABS.map((t) => {
           const Icon = t.id in SKILL_ICON ? SKILL_ICON[t.id as SkillId] : null;
           const count = t.id === "grammar" || t.id === "exam" ? null : atLevel.filter((i) => i.skill === t.id).length;
