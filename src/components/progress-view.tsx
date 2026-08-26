@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GAME_LABELS, type GameId } from "@/lib/types";
 import Link from "next/link";
 import { BookIcon, ChevronRightIcon, FlameIcon, SparkIcon, TrophyIcon } from "@/components/icons";
 import type { ComponentType, SVGProps } from "react";
@@ -15,7 +14,6 @@ type LevelRow = {
   learning: number;
 };
 type DayRow = { day: string; reviews: number; correct: number; xp: number };
-type GameRow = { game: string; total: number; correct: number; avgMs: number };
 
 const LEVEL_COLOR: Record<string, string> = {
   A1: "var(--color-mint)",
@@ -117,12 +115,17 @@ export function WordProgress({
 }
 
 /**
- * Profilin istatistik bloğu: emek, hangi günler çalışıldı, hangi oyunda ne
- * kadar iyi. Hepsi kişi hakkında — kelime hakkında olanlar Kelimeler ekranında.
+ * Profilin emek bloğu: ne kadar biriktirdi, hangi günler çalıştı.
+ *
+ * "Oyun performansın" kartı buradaydı ve kalktı: oyun başına doğruluk yüzdesi
+ * artık yetkinlik modelinde, üstelik daha doğru biçimde — oyunlar kanıt olarak
+ * sayılıyor ve kelimenin SEVİYESİNE göre ayrışıyor. "Eşleştirmede %88" ile
+ * "B1 kelimede %88" arasındaki fark, ikincisinin bir şey ifade etmesi.
+ *
+ * Kalanların hepsi kişi hakkında; kelime hakkında olanlar Kelimeler ekranında.
  */
 export function ActivityProgress({
   days,
-  games,
   streak,
   longest,
   seconds,
@@ -130,7 +133,6 @@ export function ActivityProgress({
   today,
 }: {
   days: DayRow[];
-  games: GameRow[];
   streak: number;
   longest: number;
   seconds: number;
@@ -158,37 +160,6 @@ export function ActivityProgress({
 
       <ActivityStrip byDay={byDay} today={today} />
 
-      <section className="card p-5">
-          <h2 className="mb-3 font-bold">Oyun performansın</h2>
-          {games.length === 0 ? (
-            <p className="muted text-sm">Henüz veri yok — birkaç tur oyna.</p>
-          ) : (
-            <ul className="space-y-2.5">
-              {games.map((g) => {
-                const pct = g.total ? Math.round((g.correct / g.total) * 100) : 0;
-                return (
-                  <li key={g.game} className="text-sm">
-                    <div className="mb-1 flex justify-between">
-                      <span>{GAME_LABELS[g.game as GameId] ?? g.game}</span>
-                      <span className="muted">
-                        %{pct}
-                        {g.avgMs ? ` · ${(g.avgMs / 1000).toFixed(1)} sn` : ""}
-                      </span>
-                    </div>
-                    <div className="h-1.5 w-full overflow-hidden rounded-full surface-2">
-                      <motion.div
-                        className="brand-gradient h-full rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${pct}%` }}
-                        transition={{ type: "spring", stiffness: 150, damping: 24 }}
-                      />
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-      </section>
     </div>
   );
 }

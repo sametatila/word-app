@@ -3,6 +3,7 @@ import { ensureProfile, getProgress } from "@/lib/session";
 import { Avatar } from "@/components/avatar";
 import { ProfileMenu } from "@/components/profile-menu";
 import { ActivityProgress } from "@/components/progress-view";
+import { ProgressPanel } from "@/components/progress-panel";
 import { AchievementWall } from "@/components/achievement-wall";
 import { LevelBadge } from "@/components/level-badge";
 import { BackButton } from "@/components/page-back";
@@ -24,9 +25,10 @@ const COURSE_LABEL: Record<string, string> = {
  *
  * Kompozisyon bir cümle kuruyor, yukarıdan aşağı:
  *
- *   kim       — arma, ad, seviye, kurs
- *   ne koydum — seri, en uzun seri, süre, pekişen kelime
- *   ne zaman  — son sekiz haftanın ısı haritası
+ *   kim         — arma, ad, seviye, kurs
+ *   ne koydum   — seri, en uzun seri, süre, pekişen kelime
+ *   ne zaman    — son iki haftanın ritmi
+ *   ne kadar iyi— altı becerinin puanı, değişimi, sıradaki adım
  *   ne kazandım — rozetler
  *   ne değiştirebilirim — ayarlar, yazılar
  *
@@ -95,7 +97,6 @@ export default async function ProfilePage() {
               correct: d.correct,
               xp: d.xp,
             }))}
-            games={data.games}
             streak={profile.currentStreak}
             longest={profile.longestStreak}
             seconds={data.seconds}
@@ -103,6 +104,11 @@ export default async function ProfilePage() {
             today={today}
           />
         ) : null}
+
+        {/* Ölçüm bloğu: yetkinlik, dört haftalık değişim ve önerilen adım.
+            Becerilerden buraya taşındı — orası "ne yapayım" ekranı, burası
+            "neredeyim". */}
+        <ProgressPanel />
 
         <AchievementWall />
 

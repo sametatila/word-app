@@ -11,7 +11,7 @@ import type { ErrorReport } from "@/lib/error-analytics";
  * zayıf kurallar. Hata yoksa kart görünmez — boş bir "zayıf nokta yok" kartı
  * ne bilgi verir ne motive eder.
  */
-export function WeakSpotsCard() {
+export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
   const [report, setReport] = useState<ErrorReport | null | undefined>(undefined);
 
   useEffect(() => {
@@ -20,8 +20,11 @@ export function WeakSpotsCard() {
       try {
         const res = await fetch("/api/errors", { cache: "no-store" });
         if (!res.ok) return setReport(null);
-        const d = (await res.json()) as ErrorReport;
-        if (alive) setReport(d);
+        // Gövde doğrulanıyor. Kör dönüşümde, 200 dönen ama biçimi tutmayan bir
+        // cevap `report.types.length` üzerinde patlıyor ve hata sınırı kartı
+        // değil BÜTÜN ekranı indiriyordu.
+        const d = (await res.json()) as Partial<ErrorReport>;
+        if (alive) setReport(Array.isArray(d?.types) && Array.isArray(d?.weakRules) ? (d as ErrorReport) : null);
       } catch {
         setReport(null);
       }
@@ -31,18 +34,21 @@ export function WeakSpotsCard() {
     };
   }, []);
 
-  if (report === undefined) return <CardSkeleton height={200} label="Zayıf noktalar yükleniyor" />;
+  if (report === undefined) return <CardSkeleton height={bare ? 140 : 200} label="Zayıf noktalar yükleniyor" />;
   if (!report || (!report.types.length && !report.weakRules.length)) return null;
   const top = report.types.slice(0, 3);
 
+  /* `bare`: kendi kartını bırakıp gelişim kutusunun bir bölümü oluyor. */
   return (
-    <section id="weak-spots" className="card p-5">
+    <section id="weak-spots" className={bare ? "" : "card p-5"}>
       <div className="flex items-baseline justify-between">
-        <h2 className="font-bold">Zayıf noktaların</h2>
+        <h2 className={bare ? "text-[11px] font-bold uppercase tracking-wide muted" : "font-bold"}>
+          Zayıf noktaların
+        </h2>
         <span className="muted text-xs font-semibold">son {report.days} gün · {report.totalWrong} yanlış</span>
       </div>
       {top.length ? (
-        <ul className="mt-3 space-y-2">
+        <ul className="mt-2 space-y-2">
           {top.map((t) => (
             <li key={t.type} className="flex items-center gap-3">
               <span className="min-w-0 flex-1">

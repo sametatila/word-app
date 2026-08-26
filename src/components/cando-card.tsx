@@ -14,7 +14,7 @@ type Data = { level: string; items: Item[]; byLevel: Record<CefrLevel, { proven:
  * tik, gelişiyor yarım, henüz yok soluk. Kullanıcının seviyesi açık gelir.
  * İfade dili "…yapabilirim": burası bir ölçek değil, bir ayna.
  */
-export function CandoCard() {
+export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
   const [data, setData] = useState<Data | null | undefined>(undefined);
   const [level, setLevel] = useState<CefrLevel | null>(null);
 
@@ -37,19 +37,26 @@ export function CandoCard() {
     };
   }, []);
 
-  if (data === undefined) return <CardSkeleton height={220} label="Yapabildiklerin yükleniyor" />;
+  if (data === undefined) return <CardSkeleton height={bare ? 180 : 220} label="Yapabildiklerin yükleniyor" />;
   if (!data || !level) return null;
   const shown = data.items.filter((i) => i.cando.level === level);
   const skills = [...new Set(shown.map((i) => i.cando.skill))];
   const provenTotal = data.items.filter((i) => i.state === "proven").length;
 
+  /* `bare`: kendi kartını ve başlığını bırakıp açılır kutunun içeriği oluyor —
+     başlığı zaten kutunun kendisi taşıyor, iki kez yazmak gereksiz. */
   return (
-    <section id="cando" className="card p-5">
-      <div className="flex items-baseline justify-between">
-        <h2 className="font-bold">Yapabildiklerim</h2>
-        <span className="muted text-xs font-semibold">{provenTotal} kanıtlı</span>
-      </div>
-      <p className="muted mt-1 text-xs">Bir ifade, ona bağlı en az iki ders ya da egzersizi tamamlayınca kanıtlı sayılır.</p>
+    <section id="cando" className={bare ? "" : "card p-5"}>
+      {bare ? null : (
+        <div className="flex items-baseline justify-between">
+          <h2 className="font-bold">Yapabildiklerim</h2>
+          <span className="muted text-xs font-semibold">{provenTotal} kanıtlı</span>
+        </div>
+      )}
+      <p className="muted text-xs">
+        Bir ifade, ona bağlı en az iki ders ya da egzersizi tamamlayınca kanıtlı sayılır.
+        {bare ? ` ${provenTotal} kanıtlı.` : ""}
+      </p>
       <div className="mt-3 flex gap-1.5">
         {CANDO_LEVELS.map((l) => (
           <button

@@ -2,21 +2,19 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { SKILL_LABELS, SKILL_ORDER, LEVEL_ORDER } from "@/lib/skills/meta";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { readSkillProgress, syncSkillProgress, type SkillProgress } from "@/lib/skills/progress";
 import type { SpeechTopic } from "@/lib/speech-progress";
-import { PROFICIENCY_LABELS, PROFICIENCY_SKILLS, weakestSkill, type Proficiency, type ProficiencySkill } from "@/lib/proficiency";
-import { WeakSpotsCard } from "@/components/weak-spots-card";
-import { GrowthCard } from "@/components/growth-card";
+import { weakestSkill, type Proficiency, type ProficiencySkill } from "@/lib/proficiency";
 import { CandoCard } from "@/components/cando-card";
-import type { NextStep } from "@/lib/proficiency-data";
+import { Disclosure } from "@/components/disclosure";
 import type { ExamResult } from "@/lib/exam";
 import type { WeeklyStatus } from "@/lib/weekly";
 import type { PlacementRecord } from "@/lib/placement";
 import { describePerSkill } from "@/lib/placement-score";
-import { BookOpenIcon, CheckIcon, ChevronIcon } from "@/components/icons";
+import { BookOpenIcon, CheckIcon } from "@/components/icons";
 import { LEVEL_TONE, SKILL_ICON } from "./theme";
 
 /** Hub'a inen hafif liste satırı — egzersizin tam içeriği yalnızca kendi sayfasına gider. */
@@ -36,10 +34,16 @@ export type SkillItem = {
 export type ServerSkillProgress = Record<string, { correct: number; total: number; lastScore?: number | null; attempts?: number }>;
 
 /** Yetkinlik panosu (WP-50) — sunucuda hesaplanır, sayfayla gelir. */
+/**
+ * Panonun kalanı.
+ *
+ * Eskiden puan, önerilen adım ve kanıt sayısını taşıyordu; üçü de yetkinlik
+ * panosunun parçalarıydı ve pano profile taşındı. Geriye yalnızca puan kaldı,
+ * çünkü bu ekranda hâlâ iki iş yapıyor: hangi sekmenin açık geleceğini
+ * (en zayıf beceri) ve dilbilgisi sekmesindeki puan satırını belirliyor.
+ */
 export type SkillsBoard = {
   proficiency: Proficiency;
-  next: NextStep | null;
-  evidenceCount: number;
 };
 
 /** Sınav sekmesinin verisi: geçmiş, haftalık durum, yerleştirme. */
@@ -228,11 +232,22 @@ export function SkillsHub({
       </div>
 
       {/*
-        Yetkinlik panosu (WP-63/50): seçili seviyede altı becerinin kanıt
-        puanı ve "önerilen sıradaki". Liste artık panonun altında; sayfa bir
-        "ne var" listesi değil "neredeyim, sırada ne var" ekranı.
+        YETKİNLİK VE GELİŞİM BURADAN KALKTI.
+
+        Bu ekranda bir yetkinlik panosu ve onun ayrıntısında bir gelişim kutusu
+        vardı; ikisi de artık profilde (bkz. components/progress-panel). Sebep
+        ikilenme değil ADRES: Beceriler bir çalışma ekranı, "ne yapayım"
+        sorusunu cevaplıyor. "Neredeyim" ise profilin sorusu ve kullanıcı onu
+        sormak için buraya, egzersiz listesinin başına gelmiyordu.
+
+        Kalan tek ölçüm "Yapabildiklerim" — o bir puan değil, seviyenin
+        ifadeleriyle yazılmış bir ayna ("basit bir formu doldurabilirim") ve
+        tam da bu listenin yanında anlamlı: hangi egzersizin neye yaradığını
+        söyleyen tek şey o. Kapalı geliyor; ekranın işi listeyi göstermek.
       */}
-      {board ? <Board board={board} level={level} activeLevel={activeLevel} /> : null}
+      <Disclosure title="Yapabildiklerim" hint="seviyenin ifadeleri" className="card px-4 py-3">
+        <CandoCard bare />
+      </Disclosure>
 
       {/* Telaffuzda zorlanılan sesler — konuşma sekmesinde. */}
       {tab === "speaking" && weakSounds.length ? (
@@ -297,118 +312,6 @@ export function SkillsHub({
         />
       )}
     </div>
-  );
-}
-
-/* ---------- Pano ---------- */
-
-function tone(score: number | null) {
-  return score === null
-    ? "var(--surface-2)"
-    : score >= 85
-      ? "var(--color-mint)"
-      : score >= 70
-        ? "var(--color-brand)"
-        : score >= 40
-          ? "var(--color-flame)"
-          : "var(--color-rose)";
-}
-
-/**
- * Yetkinlik panosu ve altındaki ayrıntı.
- *
- * Üç ölçüm kartı (zayıf noktalar, gelişim, yapabildiklerim) profildeydi ve
- * yanlış yerdeydi: profil ayar ekranı, bunlar ise panonun devamı. Aynı sayfada
- * olmaları ikilenmeyi de bitiriyor — yetkinlik iki ayrı ekranda iki kez
- * çiziliyordu.
- *
- * Ama üçü birden açık gelmiyor. Panonun kendisi "neredeyim" sorusuna altı
- * çubukla zaten cevap veriyor; ayrıntı, cevabı beğenmeyip "neden" diye soran
- * için. Kapalı açılmak sayfanın ilk ekranını da koruyor: pano, sekmeler ve
- * listenin başı tek bakışta görünüyor.
- */
-function Board({ board, level, activeLevel }: { board: SkillsBoard; level: CefrLevel; activeLevel: CefrLevel }) {
-  /*
-    Profildeki "Yetkinlik ve gelişim" satırı buraya `?detail=1` ile geliyor ve
-    ayrıntı AÇIK açılıyor. Düz bir yönlendirme, dokunan kişiyi aradığı şeyin
-    kapalı hâliyle karşılamak olurdu — satır neyi vaat ediyorsa ekran onu
-    göstermeli.
-  */
-  const [open, setOpen] = useState(false);
-
-  /*
-    Adres SUNUCUDA okunamaz. İlk durumu doğrudan `useState` içinde okumak
-    sunucuda kapalı, istemcide açık bir ağaç üretir ve React bunu hidratlama
-    uyuşmazlığı olarak bildirir. Bağlandıktan sonra açmak hem doğru hem de
-    görünürde aynı: kart zaten bir kare sonra açılıyor.
-  */
-  useEffect(() => {
-    if (new URLSearchParams(window.location.search).has("detail")) setOpen(true);
-  }, []);
-
-  return (
-    <section className="card p-4" aria-label="Yetkinlik">
-      <div className="flex items-baseline justify-between">
-        <h2 className="text-sm font-bold">Yetkinlik · {level}</h2>
-        <span className="muted text-xs font-semibold">son 30 gün · {board.evidenceCount} kanıt</span>
-      </div>
-      <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2">
-        {PROFICIENCY_SKILLS.map((skill: ProficiencySkill) => {
-          const cell = board.proficiency[skill]?.[level];
-          return (
-            <div key={skill}>
-              <dt className="flex items-center justify-between text-xs">
-                <span className="font-semibold">{PROFICIENCY_LABELS[skill]}</span>
-                <span className="muted tabular-nums">{cell ? `${cell.score} · ${cell.band}` : "ölçülmedi"}</span>
-              </dt>
-              <dd className="mt-1 h-1.5 overflow-hidden rounded-full surface-2">
-                <div className="h-full rounded-full" style={{ width: `${cell?.score ?? 0}%`, background: tone(cell?.score ?? null) }} />
-              </dd>
-            </div>
-          );
-        })}
-      </dl>
-      {/* Öneri yalnız çalışma seviyesi için hesaplanıyor; başka seviyeye bakarken yanıltmasın. */}
-      {board.next && level === activeLevel ? (
-        <Link href={board.next.href} className="mt-3 flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 surface-2">
-          <span className="min-w-0">
-            <span className="block text-sm font-semibold">Önerilen sıradaki: {board.next.title}</span>
-            <span className="muted block text-xs">{board.next.reason} · {board.next.minutes} dk</span>
-          </span>
-          <span className="btn btn-primary shrink-0 px-3 py-1.5 text-xs">Başla</span>
-        </Link>
-      ) : null}
-
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        className="muted mt-3 flex w-full items-center justify-center gap-1.5 text-xs font-semibold"
-      >
-        {open ? "Ayrıntıyı kapat" : "Nerede zayıfım, ne kadar ilerledim"}
-        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.18 }} className="inline-flex">
-          <ChevronIcon size={14} />
-        </motion.span>
-      </button>
-
-      <AnimatePresence initial={false}>
-        {open ? (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="overflow-hidden"
-          >
-            <div className="mt-3 space-y-3 border-t pt-3" style={{ borderColor: "var(--border)" }}>
-              <WeakSpotsCard />
-              <GrowthCard />
-              <CandoCard />
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </section>
   );
 }
 

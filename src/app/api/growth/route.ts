@@ -15,7 +15,9 @@ export async function GET(req: Request) {
   try {
     const profile = await ensureProfile(userId);
     const level = (["A1", "A2", "B1", "B2", "C1"].includes(profile.level) ? profile.level : "A1") as CefrLevel;
-    return NextResponse.json(await growthReport(userId, level, day), { headers: { "cache-control": "no-store" } });
+    return NextResponse.json(await growthReport(userId, profile.course ?? "de", level, day), {
+      headers: { "cache-control": "no-store" },
+    });
   } catch (err) {
     console.error("[growth]", err);
     return NextResponse.json({ error: "database" }, { status: 500 });

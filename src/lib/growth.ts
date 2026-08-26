@@ -3,8 +3,8 @@ import { and, asc, eq, gte, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { assessments, dailyStats, events, exams, reviews, userLessons, userSkills } from "@/lib/db/schema";
 import { ERROR_LABELS, isErrorType } from "@/lib/errors";
-import { computeProficiency, PROFICIENCY_LABELS, PROFICIENCY_SKILLS, type ProficiencySkill } from "@/lib/proficiency";
-import { gatherEvidence } from "@/lib/proficiency-data";
+import { computeProficiency, PROFICIENCY_LABELS, PROFICIENCY_SKILLS, type Band, type ProficiencySkill } from "@/lib/proficiency";
+import { gatherEvidence, nextStep, type NextStep } from "@/lib/proficiency-data";
 import { shiftDay, weekStart } from "@/lib/session";
 import type { CefrLevel } from "@/lib/skills/types";
 import type { Assessment } from "@/lib/assess-prompts";
@@ -32,8 +32,18 @@ export type GrowthReport = {
     /** Haftalık cevap sayısı — çaba çizgisi. */
     answers: WeekPoint[];
   };
-  /** Kullanıcının seviyesinde beceri başına şimdi / 4 hafta önce. */
-  proficiency: { skill: ProficiencySkill; label: string; now: number | null; before: number | null }[];
+  /** Raporun hangi seviye için hazırlandığı. */
+  level: CefrLevel;
+  /** Kullanıcının seviyesinde beceri başına şimdi / 4 hafta önce / bant. */
+  proficiency: { skill: ProficiencySkill; label: string; now: number | null; before: number | null; band: Band | null }[];
+  /**
+   * Son 30 günün kanıt sayısı — güven göstergesi. "72 puan" ile "3 ölçümden
+   * 72 puan" aynı şey değil ve kullanıcı ikincisini bilmeden birincisine
+   * güvenmemeli.
+   */
+  evidenceCount: number;
+  /** En zayıf beceriden önerilen sıradaki adım. */
+  next: NextStep | null;
   milestones: { at: string; text: string }[];
   summary: WeeklySummary;
 };
@@ -55,7 +65,19 @@ function bucket(weeks: string[], rows: { week: string; value: number; n: number 
   return weeks.map((w) => ({ week: w, value: by.get(w)?.value ?? null, n: by.get(w)?.n ?? 0 }));
 }
 
-export async function growthReport(userId: string, level: CefrLevel, today: string): Promise<GrowthReport> {
+/**
+ * Rapor artık YETKİNLİĞİ DE taşıyor.
+ *
+ * Yetkinlik panosu Beceriler'de, gelişim kutusu ise onun içindeki ayrıntıda
+ * duruyordu ve ikisi aynı sayıyı iki kez, iki farklı sorgudan çiziyordu:
+ * pano `proficiencyFor`, gelişim `growthReport`. İki ayrı `gatherEvidence`
+ * çağrısı yalnızca israf değil, tutarsızlık riski — aralarında bir tur
+ * oynanırsa aynı ekranda iki farklı puan görünürdü.
+ *
+ * Şimdi tek kaynak: puan, bant, değişim oku, kanıt sayısı ve önerilen adım
+ * aynı rapordan geliyor.
+ */
+export async function growthReport(userId: string, course: string, level: CefrLevel, today: string): Promise<GrowthReport> {
   const thisWeek = weekStart(today);
   const weeks = Array.from({ length: WEEKS }, (_, i) => shiftDay(thisWeek, -7 * (WEEKS - 1 - i)));
   const since = new Date(`${weeks[0]}T00:00:00Z`);
@@ -99,14 +121,17 @@ export async function growthReport(userId: string, level: CefrLevel, today: stri
   // Yetkinlik değişimi: şimdi vs 4 hafta önce (o güne göre 30 günlük pencere).
   const now = new Date();
   const before = new Date(now.getTime() - 28 * 86400000);
-  const profNow = computeProficiency(await gatherEvidence(userId, now), now);
+  const evidenceNow = await gatherEvidence(userId, now);
+  const profNow = computeProficiency(evidenceNow, now);
   const profBefore = computeProficiency(await gatherEvidence(userId, before), before);
   const proficiency = PROFICIENCY_SKILLS.map((skill) => ({
     skill,
     label: PROFICIENCY_LABELS[skill],
     now: profNow[skill]?.[level]?.score ?? null,
     before: profBefore[skill]?.[level]?.score ?? null,
+    band: profNow[skill]?.[level]?.band ?? null,
   }));
+  const next = await nextStep(userId, course, level, profNow);
 
   // Kilometre taşları — ilk'ler.
   const milestones: { at: string; text: string }[] = [];
@@ -126,7 +151,7 @@ export async function growthReport(userId: string, level: CefrLevel, today: stri
   milestones.sort((a, b) => a.at.localeCompare(b.at));
 
   const summary = await weeklySummary(userId, today, series);
-  return { weeks, series, proficiency, milestones, summary };
+  return { weeks, level, series, proficiency, evidenceCount: evidenceNow.length, next, milestones, summary };
 }
 
 /** Geçen haftanın özeti (kart Pazartesi, bildirim cron). */
@@ -155,7 +180,7 @@ export async function weeklySummary(userId: string, today: string, series?: Grow
     .groupBy(reviews.errorType)
     .orderBy(sql`count(*) desc`)
     .limit(1);
-  const s = series ?? (await growthReport(userId, "A1", today)).series;
+  const s = series ?? (await growthReport(userId, "de", "A1", today)).series;
   const idx = s.writing.findIndex((p) => p.week === lastWeek);
   const writing = { from: idx > 0 ? s.writing[idx - 1].value : null, to: idx >= 0 ? s.writing[idx].value : null };
   const usage = s.usage.find((p) => p.week === lastWeek)?.value ?? null;

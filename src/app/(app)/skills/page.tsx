@@ -7,7 +7,8 @@ import { listExerciseMeta } from "@/lib/skills";
 import type { CefrLevel } from "@/lib/skills/types";
 import { SkillsHub, type ExamHubData, type ServerSkillProgress, type SkillItem, type SkillsBoard } from "@/components/skills/skills-hub";
 import { weakSpeechTopics, type SpeechTopic } from "@/lib/speech-progress";
-import { proficiencyFor } from "@/lib/proficiency-data";
+import { gatherEvidence } from "@/lib/proficiency-data";
+import { computeProficiency } from "@/lib/proficiency";
 import { examHistory } from "@/lib/exam";
 import { weeklyHistory, weeklyStatus } from "@/lib/weekly";
 import { lastPlacement, RETAKE_DAYS } from "@/lib/placement";
@@ -73,10 +74,20 @@ export default async function SkillsPage() {
     console.error("[skills] kullanıcı ilerlemesi okunamadı", err);
   }
 
+  /*
+    Yetkinlik panosu bu ekrandan kalktı (profilde, bkz. progress-panel) ama
+    modelin kendisi burada hâlâ iki işe yarıyor: hangi sekmenin açık geleceği
+    (en zayıf beceri) ve dilbilgisi sekmesindeki puan satırı.
+
+    O yüzden `proficiencyFor` değil doğrudan `computeProficiency`: birincisi
+    ayrıca "önerilen sıradaki adımı" hesaplıyor ve bunun için egzersiz
+    listesini okuyup bir sorgu daha atıyor. Öneri artık profilde gösteriliyor,
+    burada hiçbir yerde çizilmiyordu — her Beceriler açılışında hesaplanan,
+    kimsenin görmediği bir sonuçtu.
+  */
   let board: SkillsBoard | null = null;
   try {
-    const p = await proficiencyFor(user.id, course, activeLevel);
-    board = { proficiency: p.proficiency, next: p.next, evidenceCount: p.evidenceCount };
+    board = { proficiency: computeProficiency(await gatherEvidence(user.id)) };
   } catch (err) {
     console.error("[skills] yetkinlik okunamadı", err);
   }

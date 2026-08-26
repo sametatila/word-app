@@ -2364,7 +2364,7 @@ async function main() {
   await db.insert(exams).values({ userId: USER, kind: "weekly", week: lastMon, level: "A2", score: 80, correct: 12, total: 15, answers: [], createdAt: new Date(`${shiftDay(lastMon, 3)}T10:00:00Z`) });
   const gw = await db.select().from(words).limit(1);
   await db.insert(reviews).values({ userId: USER, wordId: gw[0].id, game: "artikel", correct: false, quality: 1, latencyMs: 1000, errorType: "article", detail: "die", createdAt: new Date(`${shiftDay(lastMon, 2)}T10:00:00Z`) });
-  const gr = await growthReport(USER, "A2", today41);
+  const gr = await growthReport(USER, "de", "A2", today41);
   check("8 haftalık eksen, sonuncusu bu hafta", gr.weeks.length === 8 && gr.weeks[7] === weekStart(today41));
   const lw = gr.series.writing.find((p) => p.week === lastMon);
   check("yazma serisinde geçen hafta 65", lw?.value === 65 && lw.n === 1, JSON.stringify(lw));
