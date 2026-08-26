@@ -13,9 +13,9 @@ desteklemiyor; SpeechSuper Almanca destekliyor ama aylık 20 $ taban; ELSA ücre
    kelime zaman damgaları veriyor. Anahtar zaten `.env`'de (`GROQ_API_KEY`). Puan: hedef cümle ↔
    transkript kelime hizalaması (WP-10 `matchSentence`) → kelime başına doğru/yanlış/eksik, süre ve
    duraklamalardan akıcılık, `confusions` ile ses ipucu. Kelime ısı haritası buradan çıkar.
-2. **Yedekler (ücretsiz, kalıcı):** Gladia (10 saat/ay), Speechmatics (8 saat/ay), Cloudflare Workers AI
-   Whisper (10 000 neuron/gün). Deepgram 200 $ tek seferlik kredi (süresiz, ~430 saat) — kalıcı katman
-   değil ama uzun süre yeter.
+2. **Yedekler:** Cloudflare Workers AI Whisper (10 000 neuron/gün ≈ 214 dk/gün, kalıcı), Speechmatics
+   (8 saat/ay, kalıcı); tek seferlik krediler: Gladia 50 € (≈ 80 saat), Deepgram 200 $ (≈ 430 saat).
+   Kota ölçümü: `docs/plan/stt-capacity.md` (`npm run report:stt`).
 3. **İsteğe bağlı (faz 2, fonem düzeyi, ücretsiz ama mühendislik ister):** açık kaynak
    `facebook/wav2vec2-xlsr-53-espeak-cv-ft` (çok dilli fonem tanıma, Almanca dâhil) ücretsiz bir
    Hugging Face Space'te (CPU) çalıştırılır; hedef cümle espeak-ng ile fonemlere çevrilir, tanınan
@@ -29,7 +29,7 @@ Tarayıcı `SpeechRecognition` (mevcut) her durumda son yedek: ücretsiz, sını
 | Sağlayıcı | Ne verir | Almanca | Ücretsiz katman | Kalıcı mı | Notlar |
 | --- | --- | --- | --- | --- | --- |
 | **Groq Whisper large-v3(-turbo)** | transkript + kelime zaman damgası | ✓ | 20 RPM, 2 000 istek/gün, 7 200 sn/saat, 28 800 sn/gün | ✓ (aylık sıfırlanan değil, günlük) | fonem yok; kelime puanı bizde. Anahtar var. |
-| Gladia | transkript + kelime güveni/zaman | ✓ | 10 saat/ay | ✓ her ay yenilenir | sonrası 0,61 $/saat |
+| Gladia | transkript + kelime güveni/zaman | ✓ | **50 € tek seferlik kredi (≈ 80 saat)** — aylık ücretsiz plan YOK (pricing sayfası, 2026-08) | ✗ yenilenmez | sonrası ~0,61 $/saat; eşzamanlılık 25 async |
 | Speechmatics | transkript + kelime güveni | ✓ | 480 dk/ay, 2 eşzamanlı gerçek zamanlı, kart yok | ✓ | sonrası ücretli |
 | Cloudflare Workers AI (Whisper) | transkript (+zaman) | ✓ | 10 000 neuron/gün (tüm modellerle ortak) | ✓ | Worker gerekir; Vercel'den çağrılabilir |
 | Deepgram Nova | transkript + kelime güveni/zaman | ✓ | 200 $ kredi, süresiz, kart yok | ✗ (tek seferlik) | ~430 saat; `/api/stt` zaten destekliyor |
@@ -48,7 +48,7 @@ Tarayıcı `SpeechRecognition` (mevcut) her durumda son yedek: ücretsiz, sını
 istemci: kayıt (pocket-mic, 16 kHz, ≤15 sn)
   → POST /api/pronounce { audio, target, level }
   → sunucu: Groq audio/transcriptions (response_format=verbose_json, timestamp_granularities=word, language=de)
-     yedek sırası: Gladia → Speechmatics → Deepgram → tarayıcı transkripti (istemci gönderir)
+     yedek sırası: Cloudflare Workers AI → Speechmatics → Deepgram/Gladia kredisi → tarayıcı transkripti (istemci gönderir)
   → puanlama (saf, lib/pronounce.ts):
        words[]: hedef kelime ↔ tanınan kelime (fold: umlaut/büyük-küçük), Levenshtein ≤1 "yakın",
                 eksik/fazla/yer değiştirmiş; confusions tablosuyla ses ipucu
@@ -66,7 +66,7 @@ kota tablosu); 429/kota aşımında tarayıcı transkriptine düşer, kart "yakl
 ## Kaynaklar
 
 - Groq ücretsiz katman sınırları (Whisper): https://www.free-model.com/models/groq/whisper-large-v3-turbo/ · https://www.grizzlypeaksoftware.com/articles/p/groq-api-free-tier-limits-in-2026-what-you-actually-get-uwysd6mb · https://console.groq.com/docs/model/whisper-large-v3
-- Gladia 10 saat/ay: https://www.gladia.io/blog/deepgram-pricing · https://whipscribe.com/tools/gladia
+- Gladia 50 € tek seferlik kredi (aylık ücretsiz plan yok): https://www.gladia.io/pricing
 - Speechmatics 480 dk/ay: https://www.speechmatics.com/pricing · https://getpulsesignal.com/pricing/speechmatics
 - Cloudflare Workers AI 10 000 neuron/gün, Whisper: https://developers.cloudflare.com/workers-ai/models/whisper-large-v3-turbo/ · https://pricepertoken.com/endpoints/cloudflare/free
 - Deepgram 200 $ kredi: https://costbench.com/software/ai-transcription-apis/deepgram/free-plan/ · https://texttolab.com/blog/deepgram-pricing
