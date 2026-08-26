@@ -41,6 +41,8 @@ Rapor: dersler A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme
 
 **Süre.** Sürekli; pilot 4 gün, B1 tamamı ~2 hafta içerik.
 
+**Durum (2026-08-26).** Adım 1 (pilot) bitti: `src/lib/lessons/content/de-b1-b03.ts` — modül 3 "Bağlaç ustalığı" 10 ders (damit, um…zu, obwohl/trotzdem, als/wenn, nachdem, bevor/während, deshalb, je…desto, entweder…oder, anlatı). Kalıp: 14 adım — onay, bağlam, 4 kelime (tekrar), kalıp açıklaması, 1 örnek tekrarı, 4 üretim, 1 doğru/yanlış, geçiş; rol yapma 4–5 tur, açık istem (senaryo yedeği yok; `offline-roleplay` genel görevine düşer). Doğrulayıcı uyarısız. Kalan: B1 modül 4–10 (70 ders), B2 100, C1 60; mevcut derslere senaryo yedeği.
+
 ---
 
 ## WP-72 · Konuşma, yazma, okuma/dinleme içerik genişletme
@@ -49,6 +51,8 @@ Rapor: dersler A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme
 **Yöntem.** WP-70 hattı; konuşma drilleri için `confusions` listesi Türkçe ses bilgisi uzmanı gözden geçirmesi; ses kayıtları için ana dil konuşuru (stüdyo değil, temiz oda).
 **Kabul.** Doğrulayıcı yeşil; beceri merkezinde her seviyede her türden en az 4 egzersiz.
 **Süre.** Sürekli (S4–S8).
+
+**Durum (2026-08-26).** Telaffuz drill 10 → 50 (`speaking-2a.ts`, `speaking-2b.ts`: ü/ö/r/h/sch/ei/sayı/tonlama, eu/ng/pf/vurgu/schwa/ch/h-uzatma, -ig/chs/r-ünlüleşme/-tion/cümle vurgusu/v/st-ortada/ie-i, ä/kn/Glottisschlag/yabancı vurgu/ünsüz kümesi/-en/ts/ritim, Fransızca-Yunanca alıntılar/nazal/bileşik vurgu/ironi/Auslaut/kısaltmalar/heceleme/akıcılık); monolog 20 (`monologue.ts`); diyalog 7 → 25 (`dialogue-2.ts`, hepsi temalı); yazma: 40 egzersize `form/rewrite/reply/summary` (`writing-extra.ts`); okuma/dinleme: 224 egzersize 412 türetilmiş yazılı soru (`derived-questions.ts`, `npm run content:derive`). Kalan: 51 egzersizde ikinci yazılı soru (türetilemedi, elle), gerçek ses kayıtları (`segments[].audio`).
 
 ---
 
@@ -63,5 +67,7 @@ Rapor: dersler A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme
 **Kabul.** Her hata tipi için en az bir gerekçe üretiliyor; 60 tablonun hepsinde drill; doğrulayıcı yeşil.
 
 **Süre.** Pilot 3 gün; tamamı ~2 hafta içerik.
+
+**Durum (2026-08-26, güncel).** Adım 1 (35 kural), 2 (5 tablo), 3 kısmen (A1 15 + A2 13 tablo = 28/60, 336 drill; `drills-a1.ts`, `drills-a2.ts`, şema `drill-schema.ts`), 4 (150 elle çift `src/lib/confusables.ts`, `why.ts` anlam hatasında ayrım cümlesi; 1 458 aday `data/content/confusables.json`). Kalan: B1 15, B2 ≈10, C1 ≈7 tablo drill'i.
 
 **Durum (2026-08-26).** Adım 1 ve 2 bitti. `src/lib/cheatsheet/rules.ts`: `Rule {id, level, trigger {errorType, pattern?}, why, example, link}`; 35 kural — hâl 8 (Dativ/Akkusativ edatları, yer edatları, Dativ fiiller, eril Akkusativ, Dativ çoğul -n, zamir hâli, genel), çekim 10 (Perfekt yardımcı, sein, haben, modal, Partizip II, ayrılabilen, kök değişimi, Präteritum, emir, genel), fiil yeri 7, kelime sırası 4, diğer tiplere genel. `ruleFor`, `ruleById`, `uncoveredErrorTypes`. `why.ts`: `whyFromRule` + `contextOf` (doğru cümle + yazılan + kelime). Test `scripts/test-rules.ts` (`npm run test:rules`: ≥30, her tipte genel kural, tekil kimlik, bağlantılar var, 19 bağlam → kural, 4 why.ts bağı). Adım 2 (5 tablo × 12 drill) WP-11'de. Kalan: 55 tablo drill (adım 3), karıştırma çiftleri `data/content/confusables.json` (adım 4) — LLM aday üretimi + gözden geçirme, sahibin onayıyla.
