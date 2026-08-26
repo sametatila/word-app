@@ -15,11 +15,17 @@ import type { ExamPaper, ExamResult, ExamSectionId, TextItem } from "@/lib/exam"
 import type { Round } from "@/lib/types";
 import type { CefrLevel } from "@/lib/skills/types";
 import { CoachBubble } from "@/components/coach-bubble";
+import { PronounceCard } from "@/components/feedback/pronounce-card";
+import { askPronounce, captureClip, type Capture } from "@/lib/pronounce-client";
+import type { PronounceScore } from "@/lib/pronounce";
+import { MicIcon } from "@/components/icons";
 
-type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "writing" | "finishing" | "result" | "error";
+type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "speaking" | "writing" | "finishing" | "result" | "error";
 
-const SECTION_TITLE: Record<ExamSectionId, string> = { vocab: "Kelime", grammar: "Dilbilgisi", reading: "Okuma", listening: "Dinleme", writing: "Yazma" };
-const ORDER: ExamSectionId[] = ["vocab", "grammar", "reading", "listening", "writing"];
+const SECTION_TITLE: Record<ExamSectionId, string> = { vocab: "Kelime", grammar: "Dilbilgisi", reading: "Okuma", listening: "Dinleme", speaking: "Konuşma", writing: "Yazma" };
+const ORDER: ExamSectionId[] = ["vocab", "grammar", "reading", "listening", "speaking", "writing"];
+/** Konuşma maddesinde en uzun kayıt. */
+const SPEAK_MAX_MS = 12_000;
 
 function localDay(): string {
   const d = new Date();
@@ -42,9 +48,15 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const [picked, setPicked] = useState<number | null>(null);
   const [writingText, setWritingText] = useState("");
   const [writingResult, setWritingResult] = useState<Assessment | FallbackAssessment | null>(null);
+  // Konuşma bölümü (WP-20 + WP-41): kayıt → /api/pronounce → kelime düzeyi puan.
+  const [spk, setSpk] = useState<"idle" | "rec" | "scoring" | "done" | "failed">("idle");
+  const [spkResult, setSpkResult] = useState<PronounceScore | null>(null);
+  const [spkTries, setSpkTries] = useState(0);
+  const capture = useRef<Capture | null>(null);
+  const speakingScores = useRef<number[]>([]);
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<ExamResult | null>(null);
-  const score = useRef<Record<ExamSectionId, { correct: number; total: number }>>({ vocab: { correct: 0, total: 0 }, grammar: { correct: 0, total: 0 }, reading: { correct: 0, total: 0 }, listening: { correct: 0, total: 0 }, writing: { correct: 0, total: 0 } });
+  const score = useRef<Record<ExamSectionId, { correct: number; total: number }>>({ vocab: { correct: 0, total: 0 }, grammar: { correct: 0, total: 0 }, reading: { correct: 0, total: 0 }, listening: { correct: 0, total: 0 }, speaking: { correct: 0, total: 0 }, writing: { correct: 0, total: 0 } });
   const vocabAnswers = useRef<Record<string, unknown>[]>([]);
   const writingScore = useRef<number | null>(null);
   const startedAt = useRef(Date.now());
@@ -59,7 +71,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       setPaper(p);
       setLeft(p.seconds);
       startedAt.current = Date.now();
-      score.current = { vocab: { correct: 0, total: p.sections.vocab.length }, grammar: { correct: 0, total: p.sections.grammar.length }, reading: { correct: 0, total: p.sections.reading.reduce((a, t) => a + t.questions.length, 0) }, listening: { correct: 0, total: p.sections.listening.reduce((a, t) => a + t.questions.length, 0) }, writing: { correct: 0, total: p.sections.writing.length } };
+      score.current = { vocab: { correct: 0, total: p.sections.vocab.length }, grammar: { correct: 0, total: p.sections.grammar.length }, reading: { correct: 0, total: p.sections.reading.reduce((a, t) => a + t.questions.length, 0) }, listening: { correct: 0, total: p.sections.listening.reduce((a, t) => a + t.questions.length, 0) }, speaking: { correct: 0, total: (p.sections.speaking ?? []).length }, writing: { correct: 0, total: p.sections.writing.length } };
       goTo("vocab", p);
     } catch {
       setPhase("error");
@@ -70,7 +82,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     setIdx(0);
     setQIdx(0);
     setPicked(null);
-    const has = section === "vocab" ? p.sections.vocab.length : section === "grammar" ? p.sections.grammar.length : section === "reading" ? p.sections.reading.length : section === "listening" ? p.sections.listening.length : p.sections.writing.length;
+    const has = section === "vocab" ? p.sections.vocab.length : section === "grammar" ? p.sections.grammar.length : section === "reading" ? p.sections.reading.length : section === "listening" ? p.sections.listening.length : section === "speaking" ? (p.sections.speaking ?? []).length : p.sections.writing.length;
     if (!has) return next(section, p);
     setPhase(section);
   }
@@ -103,7 +115,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       const res = await fetch("/api/exam", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ action: "finish", level, module, trial: paper.trial, sections, vocabAnswers: vocabAnswers.current, writingScore: writingScore.current, seconds: Math.round((Date.now() - startedAt.current) / 1000), day: localDay() }),
+        body: JSON.stringify({ action: "finish", level, module, trial: paper.trial, sections, vocabAnswers: vocabAnswers.current, writingScore: writingScore.current, speakingScore: speakingScores.current.length ? Math.round(speakingScores.current.reduce((a, b) => a + b, 0) / speakingScores.current.length) : null, seconds: Math.round((Date.now() - startedAt.current) / 1000), day: localDay() }),
       });
       if (!res.ok) throw new Error(String(res.status));
       setResult((await res.json()) as ExamResult);
@@ -326,6 +338,98 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       </section>
     );
   }
+  // speaking
+  if (phase === "speaking") {
+    const item = paper!.sections.speaking[idx];
+    const last = idx + 1 >= paper!.sections.speaking.length;
+    const startRec = async () => {
+      if (spk !== "idle" && spk !== "failed") return;
+      const cap = await captureClip(SPEAK_MAX_MS);
+      if (!cap) {
+        setSpk("failed");
+        return;
+      }
+      capture.current = cap;
+      setSpk("rec");
+      // Üst sınırda kayıt kendiliğinden kapanır; puanlama da o zaman başlasın.
+      setTimeout(() => void stopRec(), SPEAK_MAX_MS + 50);
+    };
+    const stopRec = async () => {
+      const cap = capture.current;
+      if (!cap) return;
+      capture.current = null;
+      setSpk("scoring");
+      const blob = await cap.stop();
+      const res = blob ? await askPronounce(blob, item.de, { confusions: item.confusions, language: "de" }) : ({ ok: false, reason: "failed" } as const);
+      if (res.ok) {
+        speakingScores.current[idx] = res.score.overall;
+        score.current.speaking.correct += res.score.passed ? 1 : 0;
+        setSpkResult(res.score);
+        setSpk("done");
+      } else {
+        setSpkTries((n) => n + 1);
+        setSpk("failed");
+      }
+    };
+    const advance = () => {
+      if (spk !== "done" && spk !== "failed") return;
+      // Teknik arıza iki denemede de sürdüyse madde 0 sayılır ama sınav durmaz.
+      if (spk === "failed" && speakingScores.current[idx] === undefined) speakingScores.current[idx] = 0;
+      setSpk("idle");
+      setSpkResult(null);
+      setSpkTries(0);
+      if (!last) setIdx(idx + 1);
+      else next("speaking", paper!);
+    };
+    return (
+      <section className="card mx-auto w-full max-w-md p-5">
+        {header}
+        <p className="muted text-xs">
+          {idx + 1}/{paper!.sections.speaking.length} · Cümleyi yüksek sesle, doğal hızda oku. Tek kayıt hakkı; puan kelime düzeyinde.
+        </p>
+        <p className="mt-3 text-lg font-bold leading-snug" lang="de">
+          {item.de}
+        </p>
+        <p className="muted text-sm">{item.tr}</p>
+        {spk === "idle" || spk === "rec" ? (
+          <div className="mt-5 flex flex-col items-center gap-2">
+            <button
+              type="button"
+              onClick={() => (spk === "rec" ? void stopRec() : void startRec())}
+              aria-label={spk === "rec" ? "Kaydı bitir" : "Kaydı başlat"}
+              className="flex h-20 w-20 items-center justify-center rounded-full text-white"
+              style={{ background: spk === "rec" ? "var(--color-rose)" : "var(--color-brand)" }}
+            >
+              <MicIcon size={30} />
+            </button>
+            <span className="muted text-xs">{spk === "rec" ? "Kaydediliyor… bitince dokun" : "Mikrofona dokun, oku, tekrar dokun"}</span>
+          </div>
+        ) : null}
+        {spk === "scoring" ? <p className="muted mt-5 text-center text-sm">Puanlanıyor…</p> : null}
+        {spk === "done" && spkResult ? (
+          <div className="mt-4">
+            <PronounceCard score={spkResult} compact />
+          </div>
+        ) : null}
+        {spk === "failed" ? (
+          <p className="mt-4 rounded-xl px-3 py-2 text-sm" style={{ background: "color-mix(in srgb, var(--color-rose) 10%, transparent)" }}>
+            {spkTries < 2 ? "Ses alınamadı ya da puanlanamadı. Bir kez daha dene; olmazsa madde atlanır." : "Bu madde puanlanamadı; sınav devam ediyor."}
+          </p>
+        ) : null}
+        {spk === "failed" && spkTries < 2 ? (
+          <button type="button" onClick={() => void startRec()} className="btn btn-ghost mt-3 w-full px-5 py-3 text-sm">
+            Tekrar dene
+          </button>
+        ) : null}
+        {spk === "done" || spk === "failed" ? (
+          <button type="button" onClick={advance} className="btn btn-primary mt-3 w-full px-5 py-3 text-sm">
+            {last ? "Sonraki bölüm" : "Sıradaki cümle"}
+          </button>
+        ) : null}
+      </section>
+    );
+  }
+
   // writing
   const w = paper!.sections.writing[0];
   return (

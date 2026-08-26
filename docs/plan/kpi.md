@@ -33,7 +33,7 @@ group by 1 order by 1;
 **Hedef.** Artan; kayıtlı kullanıcının ≥ %40'ı.
 
 ### 2. Üretim oranı
-**Tanım.** Öğrencinin kendisinin ürettiği cevaplar / bütün cevaplar. Üretim = kelime turunda üretim oyunları (`lib/ladder.ts` `PRODUCTION_GAMES`: yazma, harf bulmacası, cümle diz, çeviri, sesli) + üretim görevleri (`production_attempt`: serbest cümle, yazma, konuşma drill'i, rol yapma). Tanıma = çoktan seçmeli, eşleştirme, doğru-yanlış, artikel, çoğul, dinleme.
+**Tanım.** *(26 Ağu düzeltmesi: payda TUR sayar — tanıtım kartı hariç, eşleştirme turu beş cevap yazsa da 1 tur (0,2 ağırlık); eski tanım cevap sayıyordu ve pay yarı yarıya düşük görünüyordu.)* Öğrencinin kendisinin ürettiği cevaplar / bütün cevaplar. Üretim = kelime turunda üretim oyunları (`lib/ladder.ts` `PRODUCTION_GAMES`: yazma, harf bulmacası, cümle diz, çeviri, sesli) + üretim görevleri (`production_attempt`: serbest cümle, yazma, konuşma drill'i, rol yapma). Tanıma = çoktan seçmeli, eşleştirme, doğru-yanlış, artikel, çoğul, dinleme.
 **Kaynak.** `events.production_attempt` + `reviews.game`.
 ```sql
 with p as (

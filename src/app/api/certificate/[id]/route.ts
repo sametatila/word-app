@@ -42,5 +42,5 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
 }
 
 function sectionLabel(id: string): string {
-  return { vocab: "Kelime", grammar: "Dilbilgisi", reading: "Okuma", listening: "Dinleme", writing: "Yazma" }[id] ?? id;
+  return { vocab: "Kelime", grammar: "Dilbilgisi", reading: "Okuma", listening: "Dinleme", speaking: "Konuşma", writing: "Yazma" }[id] ?? id;
 }

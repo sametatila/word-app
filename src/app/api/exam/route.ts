@@ -11,7 +11,7 @@ import type { CefrLevel } from "@/lib/skills/types";
 export const dynamic = "force-dynamic";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
-const SECTIONS = new Set<ExamSectionId>(["vocab", "grammar", "reading", "listening", "writing"]);
+const SECTIONS = new Set<ExamSectionId>(["vocab", "grammar", "reading", "listening", "speaking", "writing"]);
 
 /**
  * Sınav v2 (WP-41).
@@ -74,6 +74,7 @@ export async function POST(req: Request) {
         sections,
         vocabAnswers,
         writingScore: typeof body.writingScore === "number" ? Math.max(0, Math.min(100, body.writingScore)) : null,
+speakingScore: typeof body.speakingScore === "number" ? Math.max(0, Math.min(100, body.speakingScore)) : null,
         seconds: typeof body.seconds === "number" ? Math.max(0, Math.min(3 * 3600, Math.round(body.seconds))) : 0,
       };
       // Kelime cevapları SRS'e: sınav da bir tekrar (hatalar tipleriyle).

@@ -3,7 +3,7 @@ import { and, asc, desc, eq, gt, gte, inArray, isNotNull, lt, lte, notInArray, s
 import { db } from "@/lib/db";
 import { dailyStats, events, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
 import { cleanDetail, isErrorType, srsWeightFor, type ErrorType } from "@/lib/errors";
-import { clozeTypeChance, gamesFor, PRODUCTION_GAMES, type Strength as LadderStrength } from "@/lib/ladder";
+import { clozeTypeChance, gamesFor, isProductionGame, PRODUCTION_GAMES, type Strength as LadderStrength } from "@/lib/ladder";
 import { chatConfigured } from "@/lib/chat-providers";
 import { FREQUENT_ERROR_WEIGHT, frequentErrorTypes } from "@/lib/error-analytics";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
@@ -40,6 +40,20 @@ const ROUNDS_PER_SESSION = 20;
 const RECENT_GAME_WINDOW = 3;
 /** Serbest cümle turu oturum başına tavanı (AI kotası ve süre). */
 const FREE_SENTENCE_PER_SESSION = 2;
+/**
+ * Oturumda üretim turlarının en düşük payı (KPI 2 hedefi %40).
+ *
+ * Merdiven (WP-14) her basamağa bir üretim dokunuşu koydu ama ölçüm (26 Ağu,
+ * 30 gün) payın %12–18'de kaldığını gösterdi: gerçek hesaplarda kelimelerin
+ * neredeyse tamamı "fresh/shaky" ve o basamakta üretim yalnız harf bulmacası
+ * + iki ipuçlu yazma. Taban, kurulmuş oturumu sondan başa tarayıp tanıma
+ * turlarını kelimenin gücüne uygun üretim turuna çevirir: yeni/takılan
+ * kelimede ipuçlu yazma ya da harf bulmacası (destekli), oturmuş/sağlamda
+ * çeviri, cümle diz, yazma. Aynı kelime iki kez üretilmez; tanıtım ve
+ * eşleştirme dokunulmaz; tek oyun modunda taban yok. `PRODUCTION_FLOOR=0`
+ * ile kapatılır (ölçüm/karşılaştırma için).
+ */
+const PRODUCTION_FLOOR = Math.max(0, Math.min(0.8, Number(process.env.PRODUCTION_FLOOR ?? 0.4)));
 
 /**
  * Bir oturumda bulunması istenen en az olgun kelime sayısı.
@@ -830,6 +844,8 @@ function composeRounds(
   // çıktığı sayılıp az çıkan öne alınıyor.
   const recent: string[] = [];
   const usage = new Map<string, number>();
+  /** Tur → kuyruk öğesi (gücü): üretim tabanı dönüşümde buna bakar. */
+  const meta = new Map<string, QueueItem>();
 
   for (const item of merged) {
     if (rounds.length >= ROUNDS_PER_SESSION - (useMatch ? 1 : 0)) break;
@@ -845,16 +861,55 @@ function composeRounds(
         : pickRound(item.word, item.strength, pool, recent, nextId, item.bias, usage);
     if (!round) continue;
     rounds.push(round);
+    meta.set(round.id, item);
     usage.set(round.game, (usage.get(round.game) ?? 0) + 1);
     recent.push(round.game);
     if (recent.length > RECENT_GAME_WINDOW) recent.shift();
   }
+
+  if (!only) raiseProductionFloor(rounds, meta, pool, nextId);
 
   if (useMatch) {
     rounds.push({ id: nextId(), game: "match", words: matchCandidates.map((m) => m.word) });
   }
 
   return rounds;
+}
+
+/** Üretim tabanı — gerekçe `PRODUCTION_FLOOR` yorumunda. */
+function raiseProductionFloor(
+  rounds: Round[],
+  meta: Map<string, QueueItem>,
+  pool: (typeof words.$inferSelect)[],
+  nextId: () => string,
+): void {
+  if (PRODUCTION_FLOOR <= 0) return;
+  const counted = rounds.filter((r) => r.game !== "intro" && r.game !== "match");
+  let need = Math.ceil(counted.length * PRODUCTION_FLOOR) - counted.filter((r) => isProductionGame(r.game)).length;
+  if (need <= 0) return;
+  const produced = new Set<number>();
+  for (const r of rounds) if (isProductionGame(r.game) && "word" in r) produced.add(r.word.id);
+  // Sondan başa: tanıtımın hemen ardındaki tanıma turu yerinde kalsın,
+  // üretim kelimeyle ikinci karşılaşmaya düşsün.
+  for (let i = rounds.length - 1; i >= 0 && need > 0; i--) {
+    const r = rounds[i];
+    if (r.game === "intro" || r.game === "match" || !("word" in r) || isProductionGame(r.game)) continue;
+    if (produced.has(r.word.id)) continue;
+    const strength = meta.get(r.id)?.strength ?? "fresh";
+    let alt: Round | null = null;
+    if (strength === "solid" || strength === "strong") {
+      alt =
+        makeRound(i % 2 ? "translate" : "order", r.word, pool, nextId, strength) ??
+        makeRound("typing", r.word, pool, nextId, strength);
+    } else {
+      alt = i % 2 ? makeRound("scramble", r.word, pool, nextId, strength) : null;
+      if (!alt) alt = { id: nextId(), game: "typing", word: r.word, alternatives: [], assist: true } as Round;
+    }
+    if (!alt) continue;
+    rounds[i] = alt;
+    produced.add(r.word.id);
+    need--;
+  }
 }
 
 /**

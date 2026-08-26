@@ -6,12 +6,14 @@ import { buildSession, submitAnswers, shiftDay } from "../src/lib/session";
 import type { Answer, Round } from "../src/lib/types";
 
 const USER = "mix-user";
+const ACCURACY = Math.max(0, Math.min(1, Number(process.env.MIX_ACCURACY ?? 1)));
 
 function answersFor(rounds: Round[]): Answer[] {
   const out: Answer[] = [];
   for (const r of rounds) {
     const ws = r.game === "match" ? r.words : [r.word];
-    for (const w of ws) out.push({ wordId: w.id, game: r.game, correct: true, latencyMs: 2500 });
+    // MIX_ACCURACY=0.35 → gerçek öğrenci gibi kelimeler "shaky" kalır; taban o basamakta ne yapıyor görülür.
+    for (const w of ws) out.push({ wordId: w.id, game: r.game, correct: Math.random() < ACCURACY, latencyMs: 2500 });
   }
   return out;
 }

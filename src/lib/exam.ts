@@ -3,7 +3,7 @@ import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { exams, userLessons, userSkills, words } from "@/lib/db/schema";
 import { CHEAT_ITEMS } from "@/lib/cheatsheet/items";
-import { chatConfigured } from "@/lib/chat-providers";
+import { chatConfigured, sttProviders } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
 import { LESSONS } from "@/lib/lessons";
 import { MODULE_SIZE } from "@/lib/lessons/modules";
@@ -11,7 +11,7 @@ import { moduleVocab } from "@/lib/lessons/boss";
 import { makeRound, toRoundWord, weekStart } from "@/lib/session";
 import { seededShuffle } from "@/lib/shuffle";
 import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
-import type { CefrLevel, WritingTask } from "@/lib/skills/types";
+import type { CefrLevel, SpeechConfusion, WritingTask } from "@/lib/skills/types";
 import type { Round } from "@/lib/types";
 
 /**
@@ -27,7 +27,8 @@ import type { Round } from "@/lib/types";
  *   okuma         3       6    beceri bankası, kullanılmamış egzersiz
  *   dinleme       3       6    beceri bankası, kullanılmamış egzersiz
  *   yazma         1       1    serbest görev → AI rubriği (WP-30)
- *   (konuşma WP-20/22 ile)
+ *   konuşma       2       3    seviyenin söyleyiş cümleleri → kelime düzeyi telaffuz puanı (WP-20);
+ *                              STT sağlayıcısı yoksa bölüm kâğıtta yok (yazma gibi)
  *
  * Geçme: toplam ≥ %70 ve hiçbir bölüm < %50. Modül sınavında ön koşul:
  * modül derslerinin ≥ %80'i geçilmiş; değilse sınav "deneme" olarak
@@ -39,7 +40,7 @@ import type { Round } from "@/lib/types";
  */
 
 export type ExamKind = "module" | "level";
-export type ExamSectionId = "vocab" | "grammar" | "reading" | "listening" | "writing";
+export type ExamSectionId = "vocab" | "grammar" | "reading" | "listening" | "speaking" | "writing";
 
 export type GrammarItem = { id: string; sheet: string; key: string; label: string; options: string[]; answer: number };
 export type TextItem = {
@@ -50,6 +51,8 @@ export type TextItem = {
   questions: { text: string; options: string[]; answer: number }[];
 };
 export type WritingItem = { id: string; task: Extract<WritingTask, { kind: "free" }> };
+/** Söyleyiş maddesi: cümle, Türkçesi, bilinen sapmalar — puan `/api/pronounce`tan. */
+export type SpeakingItem = { id: string; de: string; tr: string; hint?: string; confusions?: SpeechConfusion[] };
 
 export type ExamPaper = {
   kind: ExamKind;
@@ -64,6 +67,7 @@ export type ExamPaper = {
     grammar: GrammarItem[];
     reading: TextItem[];
     listening: TextItem[];
+    speaking: SpeakingItem[];
     writing: WritingItem[];
   };
   seed: string;
@@ -75,9 +79,9 @@ export const PASS_TOTAL = 70;
 export const PASS_SECTION = 50;
 export const MODULE_PREREQ = 0.8;
 
-const COUNTS: Record<ExamKind, { vocab: number; grammar: number; text: number; writing: number }> = {
-  module: { vocab: 6, grammar: 6, text: 1, writing: 1 },
-  level: { vocab: 12, grammar: 12, text: 2, writing: 1 },
+const COUNTS: Record<ExamKind, { vocab: number; grammar: number; text: number; speaking: number; writing: number }> = {
+  module: { vocab: 6, grammar: 6, text: 1, speaking: 2, writing: 1 },
+  level: { vocab: 12, grammar: 12, text: 2, speaking: 3, writing: 1 },
 };
 
 export function examKindKey(kind: ExamKind, level: CefrLevel, module: number | null): string {
@@ -161,7 +165,21 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
     writing.push(...seededShuffle(tasks, `${seed}|writing`).slice(0, c.writing));
   }
 
-  return { kind, level, module, trial, seconds: kind === "module" ? MODULE_SECONDS : LEVEL_SECONDS, sections: { vocab, grammar, reading, listening, writing }, seed };
+  // Konuşma: seviyenin ses çalışması cümleleri, egzersiz başına en çok bir
+  // (aynı egzersizin iki cümlesi aynı sesi sınar). STT yoksa bölüm yok —
+  // ölçülemeyen bölüm kâğıda konmaz, kullanıcı sertifikayı yine alabilir.
+  const speaking: SpeakingItem[] = [];
+  if (sttProviders().length) {
+    const drills = bank.filter((e) => e.skill === "speaking" && "tasks" in e && e.genre === "Ses çalışması");
+    for (const ex of seededShuffle(drills, `${seed}|speaking`)) {
+      if (speaking.length >= c.speaking) break;
+      const tasks = (ex as { tasks: { de: string; tr: string; hint?: string; confusions?: SpeechConfusion[] }[] }).tasks.filter((t) => t.de && t.de.split(/\s+/).length >= 3);
+      const t = seededShuffle(tasks, `${seed}|${ex.id}`)[0];
+      if (t) speaking.push({ id: `s:${ex.id}`, de: t.de, tr: t.tr, hint: t.hint, confusions: t.confusions?.slice(0, 4) });
+    }
+  }
+
+  return { kind, level, module, trial, seconds: kind === "module" ? MODULE_SECONDS : LEVEL_SECONDS, sections: { vocab, grammar, reading, listening, speaking, writing }, seed };
 }
 
 export type SectionScore = { id: ExamSectionId; correct: number; total: number; pct: number };
@@ -173,6 +191,8 @@ export type ExamSubmission = {
   vocabAnswers?: { wordId: number; game: string; correct: boolean; quality?: number; errorType?: string; detail?: string }[];
   /** Yazma bölümü rubrik puanı (0–100) — `/api/assess` sonucundan. */
   writingScore?: number | null;
+  /** Konuşma bölümü: maddelerin telaffuz puanı ortalaması (0–100) — `/api/pronounce`. */
+  speakingScore?: number | null;
   seconds: number;
 };
 
@@ -192,7 +212,8 @@ export function scoreSections(sub: ExamSubmission): { sections: SectionScore[]; 
   const sections: SectionScore[] = sub.sections
     .filter((s) => s.total > 0)
     .map((s) => {
-      const correct = s.id === "writing" && typeof sub.writingScore === "number" ? Math.round((sub.writingScore / 100) * s.total * 100) / 100 : Math.max(0, Math.min(s.total, s.correct));
+      const rubric = s.id === "writing" ? sub.writingScore : s.id === "speaking" ? sub.speakingScore : null;
+      const correct = typeof rubric === "number" ? Math.round((Math.max(0, Math.min(100, rubric)) / 100) * s.total * 100) / 100 : Math.max(0, Math.min(s.total, s.correct));
       return { id: s.id, correct, total: s.total, pct: Math.round((100 * correct) / s.total) };
     });
   const totalItems = sections.reduce((a, s) => a + s.total, 0);

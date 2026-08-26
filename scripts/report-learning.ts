@@ -59,12 +59,15 @@ async function main() {
     r as (
       select date_trunc('week', created_at)::date as week,
              count(*) filter (where game in ('typing','scramble','order','translate','speak'))::int as prod,
-             count(*) filter (where game not in ('typing','scramble','order','translate','speak'))::int as recog
+             -- Tanıma TUR sayısı: tanıtım kartı bir soru değil (sayılmaz); eşleştirme
+             -- turu beş cevap yazar ama tek turdur (1/5 ağırlık). Aksi hâlde pay
+             -- iki kat düşük görünüyordu (26 Ağu ölçümü: %12 → %19).
+             round(sum(case when game = 'match' then 0.2 when game = 'intro' then 0 when game in ('typing','scramble','order','translate','speak') then 0 else 1 end))::int as recog
       from reviews where created_at >= current_date - ${days}::int group by 1)
     select coalesce(p.week, r.week)::text as week, (coalesce(p.n,0) + coalesce(r.prod,0))::int as production, coalesce(r.recog,0)::int as recognition
     from p full join r on p.week = r.week order by 1
   `) as Row[];
-  head("2. Üretim oranı", "üretim cevabı (yazma/bulmaca/diz/çeviri/sesli + üretim görevleri) / tüm cevaplar · hedef ≥ %40");
+  head("2. Üretim oranı", "üretim turu (yazma/bulmaca/diz/çeviri/sesli + üretim görevleri) / tüm turlar (tanıtım hariç, eşleştirme = 1 tur) · hedef ≥ %40");
   for (const r of prod) {
     const p = n(r.production), q = n(r.recognition);
     console.log(`  ${r.week}  ${pad(p, 5)} üretim  ${pad(q, 6)} tanıma  → ${pct(p, p + q)}`);

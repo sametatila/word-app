@@ -102,3 +102,7 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 **Süre.** 4 gün. **Bağımlılık.** WP-10, WP-14, WP-02.
 
 **Durum (2026-08-25).** Adım 1–3, 5 bitti; 4 (quest + bildirim) ertelendi. `src/lib/weekly.ts`: `buildWeeklyExam` (pekişmiş ≥21 gün, son 4 haftada sınanmamış, 15 kelime; oyunlar çeviri 5 / yazma 4 / yazarak tamamla 3 / serbest cümle 2 (AI varsa) / yazma 1; pekişmiş < 30 → öğreniliyor bandı, "kısa kontrol"), `finishWeekly` (yanlış → kalite 2, `exams` satırı, `exam_finish` kind `usage:<seviye>`, tek hak), `weeklyStatus`, `weeklyHistory`; `GET/POST /api/weekly`; `/learn/haftalik` (`weekly-player.tsx`: tek hak, ipuçsuz, sonuçta yanlış kelimeler); plan kartına "Haftanın kullanım sınavı" öğesi (≥15 çalışılmış kelime). Migrasyon `0032_exams.sql` üretime uygulandı. KPI 3 (`report:learning`) bu olaydan okuyor. e2e §38 (11 kontrol). Kanıt: `reports/shots/wp42-weekly.png`.
+
+## Ek (2026-08-26): konuşma bölümü
+
+WP-41 kâğıdına `speaking` bölümü eklendi: seviyenin ses çalışması cümlelerinden modül sınavında 2, seviye sınavında 3 madde (egzersiz başına en çok bir cümle, tohumlu). Puan `/api/pronounce` kelime düzeyi telaffuz puanı (WP-20); bölüm puanı maddelerin ortalaması, `scoreSections` yazma gibi rubrik olarak işler; bölüm eşiği %50 geçerli. STT sağlayıcısı yoksa bölüm kâğıtta yer almaz (yazma bölümüyle aynı ilke). Teknik arıza iki denemede sürerse madde 0 sayılır, sınav durmaz. Sertifika bölüm etiketi "Konuşma".
