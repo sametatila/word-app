@@ -1,5 +1,7 @@
 # Azure Speech anahtarı — kurulum (WP-20 için)
 
+> **Durum (2026-08-26):** Sahibin kararıyla Azure KULLANILMAYACAK. Bu rehber ileride fikir değişirse dursun; geçerli karar ve alternatifler `pronunciation-providers.md`'de (Groq Whisper + kendi puanlama).
+
 Son güncelleme: 2026-08-26. Kaynaklar en altta; Azure portalın arayüzü sık değiştiği için
 adım adlarını "Ekran Görüntüsü"nden değil, sayfadaki arama kutusundan bulmak en güvenlisi.
 
