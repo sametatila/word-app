@@ -10,6 +10,8 @@ import { zhB1 } from "./content/zh-b1";
 import { zhB2 } from "./content/zh-b2";
 import { zhC1 } from "./content/zh-c1";
 import { speaking } from "./content/speaking";
+import { speaking2a } from "./content/speaking-2a";
+import { speaking2b } from "./content/speaking-2b";
 import { zhSpeaking } from "./content/zh-speaking";
 import { dialogues } from "./content/dialogue";
 import { monologues } from "./content/monologue";
@@ -97,6 +99,8 @@ const BASE: SkillExercise[] = [
   ...zhB2,
   ...zhC1,
   ...withDerived(speaking),
+  ...withDerived(speaking2a),
+  ...withDerived(speaking2b),
   ...zhSpeaking,
   ...dialogues,
   ...monologues,
