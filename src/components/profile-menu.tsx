@@ -1,21 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { ChartIcon, ChevronRightIcon, ListIcon, PenIcon, TrophyIcon, WrenchIcon } from "@/components/icons";
+import { ChevronRightIcon, PenIcon, WrenchIcon } from "@/components/icons";
 
 /**
- * Profilin gövdesi: kimlikten sonra tek bir menü.
+ * Profilin sonundaki iki satır.
  *
- * Önce burada on üç bölüm vardı, sonra üçe indi ama hâlâ kalabalıktı — çünkü
- * indirilen şey sayı değil, YAPIydı. Katlanmış bir "Arşiv" başlığının altına
- * rozetleri ve yazıları koymak, iki ayrı şeyi ortak yanları olmayan bir kutuda
- * birleştiriyordu: kimse "arşivime bakayım" diye düşünmüyor, "rozetlerime
- * bakayım" diye düşünüyor.
+ * Önce beş satırlık bir menüydü ve üçü fazlaydı. "Yetkinlik ve gelişim" zaten
+ * bir sekme olan Becerileri açıyordu — bir sekmeyi menüden bir kez daha
+ * sunmak, kullanıcıya iki ayrı yer varmış gibi hissettiriyor. Rozetler ve
+ * ilerleme ise gidilecek yerler değil, GÖSTERİLECEK şeyler: profilin kendisi
+ * onları anlatmalı, bir kapının arkasına saklamamalı.
  *
- * Menü bunu doğal biçimde çözüyor. Her satır bir yere gidiyor, her satır tek
- * satır ve sıra bir kuralı izliyor: önce en çok aranan (ayarlar), sonra
- * ölçümler, sonra biriktirilenler. Sağa bakan şevron da sözünü tutuyor —
- * burada hiçbir şey aşağı açılmıyor.
+ * Geriye gerçekten başka bir ekran olan ikisi kaldı: ayarların uzun bir formu
+ * var, yazılar ise ayrı bir arşiv.
  */
 const ITEMS = [
   {
@@ -24,27 +22,6 @@ const ITEMS = [
     detail: "Hedef, seviye, kurs, ses, tema, bildirim",
     Icon: WrenchIcon,
     tone: "var(--color-brand)",
-  },
-  {
-    href: "/skills?detail=1",
-    label: "Yetkinlik ve gelişim",
-    detail: "Zayıf noktalar, gelişim, sınavlar",
-    Icon: ChartIcon,
-    tone: "var(--color-violet)",
-  },
-  {
-    href: "/words",
-    label: "Kelime ilerlemen",
-    detail: "Kapsam, haftalık grafik, tekrar kuyruğu",
-    Icon: ListIcon,
-    tone: "var(--color-mint)",
-  },
-  {
-    href: "/profile/rozetler",
-    label: "Rozetler",
-    detail: "Kazandığın ve sıradaki başarımlar",
-    Icon: TrophyIcon,
-    tone: "var(--color-flame)",
   },
   {
     href: "/profile/yazilarim",
