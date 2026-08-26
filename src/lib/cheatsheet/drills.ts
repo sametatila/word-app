@@ -1,5 +1,8 @@
-import type { CefrLevel } from "@/lib/skills/types";
-import type { ErrorType } from "@/lib/errors";
+import { d, type Drill, type DrillKind } from "./drill-schema";
+import { DRILLS_A1 } from "./drills-a1";
+import { DRILLS_A2 } from "./drills-a2";
+
+export type { Drill, DrillKind } from "./drill-schema";
 
 /**
  * Dönüştürme drilleri (WP-11).
@@ -15,55 +18,10 @@ import type { ErrorType } from "@/lib/errors";
  * listesine o tiple düşer. `why` gerekçe satırı Türkçe ve kısa — WP-13
  * "neden" satırıyla aynı tonda.
  *
- * Pilot beş tablo × 12 madde; kalan tablolar WP-73 ile. Kimlik "d:tablo:nn"
+ * Pilot beş tablo burada; A1/A2'nin kalanı `drills-a1.ts`, `drills-a2.ts` (WP-73 adım 3). Kimlik "d:tablo:nn"
  * — sıraya değil içeriğe bağlı kalması için maddeler yeniden numaralanmaz,
  * araya girenler sona eklenir.
  */
-export type DrillKind = "transform" | "fill" | "reorder" | "translate";
-
-export type Drill = {
-  id: string;
-  tableId: string;
-  level: CefrLevel;
-  kind: DrillKind;
-  prompt: {
-    /** Verilen Almanca cümle/parça; `fill` türünde "___" boşluk. */
-    de?: string;
-    /** Türkçe yönerge: ne yapılacak. */
-    tr: string;
-  };
-  /** Beklenen tam cümle. */
-  answer: string;
-  /** Kabul edilen başka biçimler (boşluk doldurmada yalnız boşluğun kendisi de). */
-  alternatives?: string[];
-  errorType: ErrorType;
-  /** Gerekçe, Türkçe, tek cümle. */
-  why: string;
-};
-
-const d = (
-  tableId: string,
-  level: CefrLevel,
-  n: number,
-  kind: DrillKind,
-  tr: string,
-  de: string | undefined,
-  answer: string,
-  errorType: ErrorType,
-  why: string,
-  alternatives?: string[],
-): Drill => ({
-  id: `d:${tableId}:${String(n).padStart(2, "0")}`,
-  tableId,
-  level,
-  kind,
-  prompt: { de, tr },
-  answer,
-  alternatives,
-  errorType,
-  why,
-});
-
 const A1_ARTIKEL: Drill[] = [
   d("a1-artikel", "A1", 1, "transform", "Nesne yap (Akkusativ): Ich sehe …", "Der Mann ist hier.", "Ich sehe den Mann.", "case", "Eril isim nesne olunca der → den; Akkusativ'de değişen tek artikel erildir."),
   d("a1-artikel", "A1", 2, "fill", "Boşluğu doldur: bir köpeğim var (ein Hund)", "Ich habe ___ Hund.", "Ich habe einen Hund.", "case", "haben nesnesini Akkusativ'de ister: ein → einen (eril).", ["einen"]),
@@ -139,7 +97,7 @@ const A2_WECHSEL: Drill[] = [
   d("a2-wechselpraepositionen", "A2", 12, "fill", "Boşluğu doldur: kitapların arasında duruyor (die Bücher)", "Es steht zwischen ___ Büchern.", "Es steht zwischen den Büchern.", "case", "stehen durum → Dativ çoğul: den Büchern (-n).", ["den"]),
 ];
 
-export const DRILLS: Drill[] = [...A1_ARTIKEL, ...A1_PRONOMEN, ...A1_PERFEKT, ...A2_NEBENSATZ, ...A2_WECHSEL];
+export const DRILLS: Drill[] = [...A1_ARTIKEL, ...A1_PRONOMEN, ...A1_PERFEKT, ...DRILLS_A1, ...A2_NEBENSATZ, ...A2_WECHSEL, ...DRILLS_A2];
 
 const BY_ID = new Map(DRILLS.map((x) => [x.id, x]));
 const BY_TABLE = new Map<string, Drill[]>();
