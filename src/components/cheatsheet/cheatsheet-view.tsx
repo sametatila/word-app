@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeftIcon, ChevronIcon, FlameIcon } from "@/components/icons";
+import { ChevronIcon, FlameIcon } from "@/components/icons";
+import { BackButton } from "@/components/page-back";
 import { LEVEL_TONE } from "@/components/skills/theme";
 import { CHEATSHEETS, CHEAT_LEVELS } from "@/lib/cheatsheet";
 import type { CheatBlock, CheatSheet } from "@/lib/cheatsheet";
@@ -209,14 +210,7 @@ export function CheatsheetView({ userLevel }: { userLevel: string }) {
         style={{ background: "var(--bg)" }}
       >
         <div className="flex items-center gap-3">
-          <Link
-            href="/learn"
-            prefetch={false}
-            aria-label="Öğren ekranına dön"
-            className="chip flex h-9 w-9 shrink-0 items-center justify-center"
-          >
-            <ArrowLeftIcon size={18} />
-          </Link>
+          <BackButton fallback="/learn" />
           <div className="min-w-0">
             <h1 className="truncate text-xl font-bold">Dilbilgisi</h1>
             <p className="muted truncate text-xs font-semibold">

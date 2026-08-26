@@ -7,8 +7,8 @@ export const metadata = { title: "Yazılarım" };
 export default function WritingsPage() {
   return (
     <div className="mx-auto w-full max-w-3xl space-y-5">
-      <PageBack href="/profile" title="Yazılarım" subtitle="Değerlendirilmiş serbest yazıların" />
-      <WritingsCard />
+      <PageBack fallback="/profile" title="Yazılarım" subtitle="Değerlendirilmiş serbest yazıların" />
+      <WritingsCard showEmpty />
     </div>
   );
 }

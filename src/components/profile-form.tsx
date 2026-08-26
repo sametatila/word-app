@@ -108,7 +108,7 @@ export function ProfileForm({
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-6">
-      <PageBack href="/profile" title="Ayarlar" subtitle="Öğrenme, uygulama ve hesap" />
+      <PageBack fallback="/profile" title="Ayarlar" subtitle="Öğrenme, uygulama ve hesap" />
 
       {/*
         AYARLAR İKİYE AYRILDI.

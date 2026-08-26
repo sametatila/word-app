@@ -128,7 +128,7 @@ export function WordList({
         kendi geri hareketini bilmeyen kullanıcı burada sıkışırdı.
       */}
       <PageBack
-        href="/learn"
+        fallback="/learn"
         title="Kelimelerim"
         subtitle={`${total.toLocaleString("tr-TR")} kelime · A1'den C1'e`}
       />

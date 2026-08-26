@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { Avatar } from "@/components/avatar";
@@ -6,7 +5,7 @@ import { ProfileMenu } from "@/components/profile-menu";
 import { ActivityProgress } from "@/components/progress-view";
 import { AchievementWall } from "@/components/achievement-wall";
 import { LevelBadge } from "@/components/level-badge";
-import { ArrowLeftIcon } from "@/components/icons";
+import { BackButton } from "@/components/page-back";
 
 export const dynamic = "force-dynamic";
 
@@ -63,19 +62,11 @@ export default async function ProfilePage() {
       <div className="mx-auto w-full max-w-3xl space-y-4">
         {/*
           Kimlik şeridi. Geri düğmesi burada çünkü profil alt sekmelerden çıktı
-          ve başlıktaki avatardan açılıyor — çubukta karşılığı olmayan bir
-          ekrana girip cihazın kendi geri hareketini bilmeyen kullanıcı burada
-          sıkışırdı.
+          ve başlıktaki avatardan açılıyor; geri GELİNEN yere döner, sabit bir
+          adrese değil (bkz. components/page-back).
         */}
         <div className="flex items-center gap-3">
-          <Link
-            href="/learn"
-            prefetch={false}
-            aria-label="Öğren ekranına dön"
-            className="chip flex h-10 w-10 shrink-0 items-center justify-center"
-          >
-            <ArrowLeftIcon size={18} />
-          </Link>
+          <BackButton fallback="/learn" label="Geri dön" />
           {/* Arma sıralamadakiyle AYNI: kullanıcı kendini tabloda tanıyabilmeli. */}
           <Avatar userId={user.id} name={name} size={52} />
           <div className="min-w-0 flex-1">
