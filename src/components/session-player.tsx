@@ -824,8 +824,21 @@ function StartCard({
       sıralama.
     */
     <Stagger className="mx-auto w-full max-w-md">
+      {/*
+        BUGÜN — tek karar, tek kart.
+
+        Burada beş ayrı blok vardı: karşılama, iki sayaç, tempo şeridi, başlat
+        düğmesi ve kapsam satırı. Beşi de AYNI kararın parçalarıydı ("bugün
+        çalışayım mı, neyi") ama ayrı kutulara bölününce sayfadaki diğer
+        kartlarla aynı ağırlığı taşıyorlardı ve birincil eylem kalabalıkta
+        kayboluyordu.
+
+        Şimdi tek kart, dört katman: kim olduğun ve hedefin (renkli bant),
+        bugün ne var (sayaçlar + tempo), sıra kimde (plan satırı), ve eylem.
+        Sıra da bu — yukarıdan aşağı okununca bir cümle kuruyor.
+      */}
       <div className="card overflow-hidden">
-        <div className="brand-gradient-deep px-6 py-5 text-white sm:py-7">
+        <div className="brand-gradient-deep px-5 py-4 text-white">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
               <p className="text-sm opacity-90">
@@ -833,11 +846,11 @@ function StartCard({
                   ? `${meta.currentStreak} günlük seridesin`
                   : "Bugün serini başlat"}
               </p>
-              <div className="mt-1 flex items-center gap-2">
-                <h1 className="text-xl font-bold sm:text-2xl">
+              <div className="mt-0.5 flex items-center gap-2">
+                <h1 className="truncate text-xl font-bold">
                   {name ? `Hoş geldin, ${name}` : "Hoş geldin"}
                 </h1>
-                <span className="rounded-lg bg-white/25 px-2 py-0.5 text-sm font-black">
+                <span className="shrink-0 rounded-lg bg-white/25 px-2 py-0.5 text-sm font-black">
                   {meta.level}
                 </span>
               </div>
@@ -847,9 +860,9 @@ function StartCard({
 
               Seri duruyorsa keyfi yerinde. Seri KIRILMIŞSA uyuyor: "Bugün
               serini başlat" cümlesinin resmi bu — buralar sessizdi. Uyku
-              klibi bilerek seçildi, çünkü tek klip bir tur oynayıp neşeli
-              boşta-bekleme rotasyonuna geçmeyenlerden (bkz. mascot STICKY):
-              bu bir tepki değil, düzelene kadar süren bir DURUM.
+              klibi bilerek seçildi, çünkü bir tur oynayıp neşeli
+              boşta-bekleme rotasyonuna geçmeyen iki klipten biri (mascot
+              STICKY): bu bir tepki değil, düzelene kadar süren bir DURUM.
 
               Ama hiç oynamamış kullanıcıya uyuyan bir maskotla açmak yanlış
               olurdu — orada kırılmış bir şey yok, henüz başlamamış bir şey
@@ -857,21 +870,19 @@ function StartCard({
               kullanıcıdır.
             */}
             <Mascot
-              mood={
-                meta.currentStreak > 0 ? "happy" : meta.totalXp > 0 ? "sleep" : "idle"
-              }
-              size={62}
-              className="-my-2 shrink-0"
+              mood={meta.currentStreak > 0 ? "happy" : meta.totalXp > 0 ? "sleep" : "idle"}
+              size={54}
+              className="-my-1 shrink-0"
             />
           </div>
-          <div className="mt-3 sm:mt-4">
-            <div className="mb-1.5 flex justify-between text-xs font-semibold opacity-90">
+          <div className="mt-2.5">
+            <div className="mb-1 flex justify-between text-xs font-semibold opacity-90">
               <span>Günlük hedef</span>
-              <span>
+              <span className="tabular-nums">
                 {meta.reviewsToday} / {meta.dailyGoal}
               </span>
             </div>
-            <div className="h-2 w-full overflow-hidden rounded-full bg-white/25">
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/25">
               <motion.div
                 className="h-full rounded-full bg-white"
                 initial={{ width: 0 }}
@@ -882,43 +893,62 @@ function StartCard({
           </div>
         </div>
 
-        <div className="grid grid-cols-2 divide-x" style={{ borderColor: "var(--border)" }}>
-          <div className="px-4 py-3 text-center sm:py-4">
-            <div className="text-xl font-bold text-[color:var(--color-flame)]">{reviewCount}</div>
-            <div className="muted text-xs">tekrar sırası gelen</div>
-          </div>
-          <div className="px-4 py-3 text-center sm:py-4">
-            <div className="text-xl font-bold text-[color:var(--color-brand)]">{newCount}</div>
-            <div className="muted text-xs">yeni kelime</div>
-          </div>
-        </div>
-
-        <div className="px-6 pb-5 pt-3 sm:pb-6 sm:pt-4">
-          {/* Tempo bilgisi — bir başarı notu değil, bugün ne kadar yük alındığı.
-              Eski "zorluk yükseltildi / hafifletildi" metni oturum doğruluğunu
-              yetkinlik sanıyordu; o ölçü kuyruğun bileşimini ölçüyordu. */}
-          {meta.pacing !== "normal" ? (
-            <div
-              className="mb-4 rounded-xl px-3 py-2.5 text-center text-sm"
-              style={{ background: "var(--surface-2)" }}
+        <div className="space-y-3 px-4 py-4">
+          {/*
+            İki sayaç artık iki satırlık bölünmüş bir ızgara değil, tek satırda
+            iki çip. Aynı bilgi, üçte bir yer — ve sayı ile etiket yan yana
+            olduğu için okuması da daha kısa.
+          */}
+          <div className="flex items-center gap-2 text-sm">
+            <span
+              className="flex items-center gap-1.5 rounded-full px-2.5 py-1 font-bold"
+              style={{
+                background: "color-mix(in srgb, var(--color-flame) 14%, transparent)",
+                color: "var(--color-flame)",
+              }}
             >
+              <span className="tabular-nums">{reviewCount}</span>
+              <span className="text-xs font-semibold">tekrar</span>
+            </span>
+            <span
+              className="flex items-center gap-1.5 rounded-full px-2.5 py-1 font-bold"
+              style={{
+                background: "color-mix(in srgb, var(--color-brand) 14%, transparent)",
+                color: "var(--color-brand)",
+              }}
+            >
+              <span className="tabular-nums">{newCount}</span>
+              <span className="text-xs font-semibold">yeni</span>
+            </span>
+            {meta.coverage.total > 0 ? (
+              <span className="muted ml-auto truncate text-xs font-semibold tabular-nums">
+                {meta.coverage.mastered.toLocaleString("tr-TR")} / {meta.coverage.total.toLocaleString("tr-TR")} pekişti
+              </span>
+            ) : null}
+          </div>
+
+          {/* Tempo bilgisi — bir başarı notu değil, bugün ne kadar yük alındığı. */}
+          {meta.pacing !== "normal" ? (
+            <p className="rounded-xl px-3 py-2 text-xs surface-2">
               <strong style={{ color: "var(--color-flame)" }}>
-                {meta.pacing === "review" ? "Bugün tekrar günü" : "Bugün tempo biraz düşük"}
+                {meta.pacing === "review" ? "Bugün tekrar günü" : "Bugün tempo düşük"}
               </strong>
-              <p className="muted mt-1 text-xs">
-                {meta.pacing === "review"
-                  ? `${meta.dueCount} tekrar birikmiş — bugün onları kapatıyoruz.`
-                  : `${meta.leeches} kelimede takılıyorsun — yeni kelime yarıya indi.`}
-              </p>
-            </div>
+              {" — "}
+              {meta.pacing === "review"
+                ? `${meta.dueCount} tekrar birikmiş, bugün onları kapatıyoruz.`
+                : `${meta.leeches} kelimede takılıyorsun, yeni kelime yarıya indi.`}
+            </p>
           ) : null}
+
+          {/* Plan: kapalıyken tek satır, dokununca liste (bkz. components/plan-card). */}
+          <PlanCard onStartSession={onStart} name={name} />
 
           {resumable ? (
             <div className="space-y-2">
               <button onClick={onResume} className="btn btn-primary w-full px-5 py-3.5">
                 Kaldığın yerden devam et ({resumable.index + 1}. tur)
               </button>
-              <button onClick={onStart} className="btn btn-ghost w-full px-5 py-3">
+              <button onClick={onStart} className="btn btn-ghost w-full px-5 py-2.5 text-sm">
                 Yeni tura başla
               </button>
             </div>
@@ -926,68 +956,53 @@ function StartCard({
             <button onClick={onStart} className="btn btn-primary w-full px-5 py-3.5 text-base">
               {onlyGame
                 ? `${GAME_LABELS[onlyGame]} · ${rounds.length} tur`
-                : `${rounds.length} turluk oturuma başla`}
+                : `${rounds.length} turluk tura başla`}
             </button>
           )}
 
           {/*
-            Butonun altında eskiden iki açıklama bloğu vardı ve ikisi de
-            sistemin NASIL çalıştığını anlatıyordu: tekrarların kendiliğinden
-            geleceği, zorluğun kelimeye göre seçildiği, seviyeyi yalnızca
-            kullanıcının değiştirdiği. Bunlar bir kez öğrenilen şeyler; her
-            açılışta okunmuyor, sadece kartı uzatıp başlat düğmesini aşağı
-            itiyordu. Geriye tek satır kaldı ve o da bir açıklama değil, bir
-            SAYI — kullanıcının biriktirdiği şey.
+            Oyun seçici artık burada, başlat düğmesinin hemen altında.
+
+            On oyunluk ızgara olarak sayfanın DİBİNDE duruyordu ve orada bir
+            seçenek gibi görünüyordu. Oysa günlük bir karar değil bir TERCİH:
+            karışık tur varsayılan, tek oyuna kilitlemek ara sıra yapılan bir
+            şey. Turun ayarı, turun düğmesinin yanına ait. Kendi açılır
+            başlığı zaten var; kapalıyken tek satır.
           */}
-          {meta.coverage.total > 0 ? (
-            <p className="muted mt-4 text-center text-sm">
-              {meta.level} havuzunda{" "}
-              <strong style={{ color: "var(--color-mint)" }}>
-                {meta.coverage.mastered.toLocaleString("tr-TR")}
-              </strong>
-              {" / "}
-              {meta.coverage.total.toLocaleString("tr-TR")} kelime pekişti
-            </p>
-          ) : null}
+          <GamePicker active={onlyGame} onPick={onPickGame} bare />
         </div>
       </div>
-      {/* Bugünkü plan (WP-60): tur kartının hemen altında — "bugün ne yapmalı"
-          sorusunun cevabı, modlar listesinden önce. */}
-      <div className="mt-4">
-        <PlanCard onStartSession={onStart} name={name} />
-      </div>
+
       {/*
-        BAŞKA TÜRLÜ OYNA — normal turdan farklı üç oynama şekli.
+        BAŞKA TÜRLÜ OYNA — dört mod, iki satır.
 
-        Üçü de ayrı beyaz kutulardı ve sayfadaki diğer her kartla aynı ağırlığı
-        taşıyorlardı: başlat düğmesinden sonra altı eşit kutu geliyor, hangisinin
-        turun başka bir şekli, hangisinin bir ayar olduğu ayırt edilmiyordu.
-
-        Başlık "Bugün" değil: günün turu ve hayatta kalma turu bugüne özel ama
-        yürürken modu değil — o her zaman orada duran bir oynama biçimi.
-        Üçünü birleştiren şey zamanları değil, normal turun yerine geçmeleri.
+        Dördü alt alta dört satırdı ve dokunulabilir olan tek şey sağdaki küçük
+        düğmeydi. Döşemede döşemenin tamamı dokunulabilir ve dört mod ekranın
+        üçte biri yerine altıda birini tutuyor (bkz. components/mode-tile).
       */}
-      <section className="card mx-auto mt-4 w-full max-w-md overflow-hidden">
-        <SectionTitle>Başka türlü oyna</SectionTitle>
-        {/* Renk `divide-[color:…]` ile veriliyor, sarmalayıcının `style`ı ile
-            değil: `border-color` miras alınmıyor, çocuklar `currentColor`a
-            düşüyor ve ayırıcılar metin rengiyle — yani neredeyse siyah —
-            çiziliyordu. */}
-        <div className="divide-y divide-[color:var(--border)]">
-          <DailyCard onPlay={onDaily} bare />
-          <ChallengeCard best={meta.challengeBest} onPlay={onChallenge} bare />
-          <WalkCard onPlay={onWalk} bare />
-          {/* Dilbilgisi en altta: diğer üçü bir TUR açıyor, bu bir EKRAN
-              açıyor. Sıralamada da o fark korunuyor. */}
-          <CheatsheetCard bare />
+      <section className="mt-5">
+        <h2 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">
+          Başka türlü oyna
+        </h2>
+        <div className="grid grid-cols-2 gap-2">
+          <DailyCard onPlay={onDaily} tile />
+          <ChallengeCard best={meta.challengeBest} onPlay={onChallenge} tile />
+          <WalkCard onPlay={onWalk} tile />
+          <CheatsheetCard tile />
         </div>
       </section>
 
-      {/* Görevler kendi kartında: bugüne özel değil, açık kaldığı sürece duran
-          bir hedef listesi. */}
-      <QuestCard />
-      <GamePicker active={onlyGame} onPick={onPickGame} />
-      {leaderboard}
+      {/*
+        GÖREVLER VE SIRALAMA tek kartta.
+
+        İkisi de aynı duyguyu satıyor — biriktirmek ve karşılaştırmak — ama iki
+        ayrı blok tüketiyorlardı. Sıralama görevlerin altında: önce kendi
+        hedefin, sonra başkalarına göre yerin.
+      */}
+      <div className="mt-4 space-y-3">
+        <QuestCard />
+        {leaderboard}
+      </div>
     </Stagger>
   );
 }
@@ -1523,14 +1538,6 @@ function SummaryCard({
  * hangisinin bugüne özel bir olay, hangisinin her zaman orada duran bir ayar
  * olduğu okunmuyordu. Başlık o ayrımı kuruyor.
  */
-function SectionTitle({ children }: { children: ReactNode }) {
-  return (
-    <div className="border-b px-5 py-2.5" style={{ borderColor: "var(--border)" }}>
-      <h2 className="muted text-xs font-bold uppercase tracking-wide">{children}</h2>
-    </div>
-  );
-}
-
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="px-2 py-4 text-center">

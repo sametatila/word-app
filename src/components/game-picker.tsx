@@ -55,11 +55,20 @@ export function GamePicker({
   active,
   onPick,
   busy,
+  bare = false,
 }: {
   /** Seçili oyun; karışık turda null. */
   active: PlayableGame | null;
   onPick: (game: PlayableGame | null) => void;
   busy?: boolean;
+  /**
+   * Kendi kartını bırakıp "Bugün" kartının içine giren hâl.
+   *
+   * Seçici ayrı bir kart olarak sayfanın dibindeydi ve orada bir SEÇENEK gibi
+   * duruyordu. Oysa turun ayarı turun düğmesinin yanına ait: kart içinde,
+   * başlat düğmesinin hemen altında.
+   */
+  bare?: boolean;
 }) {
   // Seçili oyun varsa açık: o zaman ızgara bir seçenek listesi değil, ekranda
   // görünmesi gereken bir durum.
@@ -71,7 +80,7 @@ export function GamePicker({
          belirdiğinde altı kart aynı anda ama farklı mesafelerle (kimi 8, kimi
          14 piksel) açılıyordu — hepsi birden oynayan ama aynı ritmi tutmayan
          bir hareket. */
-      className="card mx-auto mt-4 w-full max-w-md overflow-hidden"
+      className={bare ? "-mx-1 overflow-hidden rounded-xl surface-2" : "card mx-auto mt-4 w-full max-w-md overflow-hidden"}
     >
       {/*
         Kapalı açılıyor.
@@ -86,7 +95,7 @@ export function GamePicker({
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between px-5 py-3.5 text-left"
+        className={`flex w-full items-center justify-between text-left ${bare ? "px-3.5 py-2.5 text-sm" : "px-5 py-3.5"}`}
       >
         <span className="font-bold">
           {active ? GAME_LABELS[active] : "Tek oyun oyna"}
