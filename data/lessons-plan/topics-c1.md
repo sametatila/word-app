@@ -1,7 +1,8 @@
 # C1 Konuları (100)
 
 Satır biçimi: `NNN | slug | Titel (DE) | Türkçe | ikon | focusId | çekirdek kalıplar`
-- Kimlik = `de-c1-<slug>`. Bu seviyede üretilmiş ders yok; b01 partisi 001'den başlar.
+- Kimlik = `de-c1-<slug>`. **Tamamı üretildi** (2026-08-26): 100 ders `content/de-c1-b01.ts`…`b10.ts`,
+  10 modül sınavı `module-exam/c1.ts`. Müfredat A1'den C1'e kapandı: 500 ders, 50 sınav.
 - C1 omurgası: Funktionsverbgefüge, kip parçacıkları (doch/ja/mal/eben/wohl),
   deyimler ve mecaz, Konjunktiv I ile tam dolaylı aktarım, karmaşık ad
   öbekleri ve katılımlı yapılar, irreal karşılaştırma (als ob + Konj. II),
