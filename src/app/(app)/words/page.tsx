@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
-import { ProgressView } from "@/components/progress-view";
+import { WordProgress } from "@/components/progress-view";
 import { WordList, type WordRow } from "@/components/word-list";
 
 export const dynamic = "force-dynamic";
@@ -128,22 +128,11 @@ export default async function WordsPage({
         }
         progress={
           progress ? (
-            <ProgressView
+            <WordProgress
               levels={progress.levels}
-              days={progress.days.map((d) => ({
-                day: String(d.day),
-                reviews: d.reviews,
-                correct: d.correct,
-                xp: d.xp,
-              }))}
               dueNow={progress.dueNow}
               upcoming={progress.upcoming}
-              games={progress.games}
-              seconds={progress.seconds}
               leeches={progress.leeches}
-              streak={progress.profile.currentStreak}
-              longest={progress.profile.longestStreak}
-              today={today}
             />
           ) : undefined
         }

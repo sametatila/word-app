@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { GAME_LABELS, type GameId } from "@/lib/types";
-import { BookIcon, FlameIcon, SparkIcon, TrophyIcon } from "@/components/icons";
+import Link from "next/link";
+import { BookIcon, ChevronRightIcon, FlameIcon, SparkIcon, TrophyIcon } from "@/components/icons";
 import type { ComponentType, SVGProps } from "react";
 
 type LevelRow = {
@@ -24,44 +25,34 @@ const LEVEL_COLOR: Record<string, string> = {
   C1: "var(--color-rose)",
 };
 
-export function ProgressView({
+/**
+ * İstatistikler KONUSUNA göre ikiye ayrıldı.
+ *
+ * Tek bir "ilerleme" bloğu vardı ve içinde iki ayrı soru duruyordu: "kelime
+ * dağarcığım ne durumda" (seviye kapsamı, tekrar kuyruğu) ve "ben ne kadar
+ * çalıştım" (seri, süre, hangi günler, hangi oyunda ne kadar iyiyim). Birincisi
+ * Kelimeler ekranının, ikincisi profilin sorusu. Aynı kutuda durunca ikisi de
+ * yanlış yerde oluyordu.
+ *
+ * Bölünme kod tekrarı yaratmıyor: ortak parçalar (KPI kartı, ısı haritası,
+ * halka) aşağıda tek kopya.
+ */
+export function WordProgress({
   levels,
-  days,
   dueNow,
   upcoming,
-  games,
-  streak,
-  longest,
-  seconds,
   leeches,
-  today,
 }: {
   levels: LevelRow[];
-  days: DayRow[];
   dueNow: number;
   upcoming: number;
-  games: GameRow[];
-  streak: number;
-  longest: number;
-  seconds: number;
   leeches: number;
-  today: string;
 }) {
   const totalSeen = levels.reduce((s, l) => s + l.seen, 0);
-  const totalMastered = levels.reduce((s, l) => s + l.mastered, 0);
   const totalWords = levels.reduce((s, l) => s + l.total, 0);
-  const byDay = new Map(days.map((d) => [d.day, d]));
 
   return (
-    // Başlığı üstteki profil sayfası verir; burada yalnızca istatistikler var.
-    <div className="space-y-6">
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <KpiCard label="Güncel seri" value={`${streak} gün`} tone="var(--color-flame)" Icon={FlameIcon} />
-        <KpiCard label="En uzun seri" value={`${longest} gün`} tone="var(--color-brand)" Icon={TrophyIcon} />
-        <KpiCard label="Çalışma süresi" value={formatDuration(seconds)} tone="var(--color-violet)" Icon={SparkIcon} />
-        <KpiCard label="Öğrenilen" value={`${totalMastered}`} tone="var(--color-mint)" Icon={BookIcon} />
-      </div>
-
+    <div className="space-y-4">
       {/* CEFR seviyeleri */}
       <section className="card p-5">
         <h2 className="mb-4 font-bold">CEFR seviyesine göre</h2>
@@ -103,25 +94,7 @@ export function ProgressView({
         </p>
       </section>
 
-      {/* Aktivite ısı haritası */}
       <section className="card p-5">
-        <h2 className="mb-4 font-bold">Son 8 hafta</h2>
-        <Heatmap byDay={byDay} today={today} />
-        <div className="muted mt-3 flex items-center gap-2 text-xs">
-          <span>az</span>
-          {[0, 1, 2, 3, 4].map((l) => (
-            <span
-              key={l}
-              className="h-3 w-3 rounded-sm"
-              style={{ background: heatColor(l * 8) }}
-            />
-          ))}
-          <span>çok</span>
-        </div>
-      </section>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <section className="card p-5">
           <h2 className="mb-3 font-bold">Tekrar kuyruğu</h2>
           <div className="flex items-center gap-4">
             <Donut value={dueNow} total={Math.max(1, dueNow + upcoming)} />
@@ -138,9 +111,64 @@ export function ProgressView({
               ) : null}
             </div>
           </div>
-        </section>
+      </section>
+    </div>
+  );
+}
 
-        <section className="card p-5">
+/**
+ * Profilin istatistik bloğu: emek, hangi günler çalışıldı, hangi oyunda ne
+ * kadar iyi. Hepsi kişi hakkında — kelime hakkında olanlar Kelimeler ekranında.
+ */
+export function ActivityProgress({
+  days,
+  games,
+  streak,
+  longest,
+  seconds,
+  mastered,
+  today,
+}: {
+  days: DayRow[];
+  games: GameRow[];
+  streak: number;
+  longest: number;
+  seconds: number;
+  /** Pekişmiş kelime sayısı — kart Kelimeler ekranına götürüyor. */
+  mastered: number;
+  today: string;
+}) {
+  const byDay = new Map(days.map((d) => [d.day, d]));
+
+  return (
+    <div className="space-y-4">
+      <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+        <KpiCard label="Güncel seri" value={`${streak} gün`} tone="var(--color-flame)" Icon={FlameIcon} />
+        <KpiCard label="En uzun seri" value={`${longest} gün`} tone="var(--color-brand)" Icon={TrophyIcon} />
+        <KpiCard label="Çalışma süresi" value={formatDuration(seconds)} tone="var(--color-violet)" Icon={SparkIcon} />
+        {/* Tek dokunuşla kelime ekranına: kapsamın ayrıntısı orada. */}
+        <KpiCard
+          label="Pekişen kelime"
+          value={mastered.toLocaleString("tr-TR")}
+          tone="var(--color-mint)"
+          Icon={BookIcon}
+          href="/words"
+        />
+      </div>
+
+      <section className="card p-5">
+        <h2 className="mb-4 font-bold">Son 8 hafta</h2>
+        <Heatmap byDay={byDay} today={today} />
+        <div className="muted mt-3 flex items-center justify-center gap-2 text-xs">
+          <span>az</span>
+          {[0, 1, 2, 3, 4].map((l) => (
+            <span key={l} className="h-3 w-3 rounded-sm" style={{ background: heatColor(l * 8) }} />
+          ))}
+          <span>çok</span>
+        </div>
+      </section>
+
+      <section className="card p-5">
           <h2 className="mb-3 font-bold">Oyun performansın</h2>
           {games.length === 0 ? (
             <p className="muted text-sm">Henüz veri yok — birkaç tur oyna.</p>
@@ -170,8 +198,7 @@ export function ProgressView({
               })}
             </ul>
           )}
-        </section>
-      </div>
+      </section>
     </div>
   );
 }
@@ -188,23 +215,47 @@ function KpiCard({
   value,
   tone,
   Icon,
+  href,
 }: {
   label: string;
   value: string;
   tone: string;
   Icon: ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
+  /**
+   * Verilirse kart bir bağlantı olur.
+   *
+   * "Pekişen kelime" sayısı için: sayının ayrıntısı Kelimeler ekranında ve
+   * meraklanan kişi zaten bu karta bakıyor. Ayrı bir menü satırı eklemek
+   * yerine sayının kendisini kapı yapmak hem daha az yer tutuyor hem de
+   * bağlantıyı merakın doğduğu yere koyuyor.
+   */
+  href?: string;
 }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="card p-4"
-    >
-      <div style={{ color: tone }}>
+  const body = (
+    <>
+      <div className="flex items-center justify-between" style={{ color: tone }}>
         <Icon size={20} />
+        {href ? (
+          <span className="muted">
+            <ChevronRightIcon size={14} />
+          </span>
+        ) : null}
       </div>
-      <div className="mt-1 text-xl font-bold">{value}</div>
+      <div className="mt-1 text-xl font-bold tabular-nums">{value}</div>
       <div className="muted text-xs">{label}</div>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} prefetch={false} className="card block p-4">
+        {body}
+      </Link>
+    );
+  }
+  return (
+    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="card p-4">
+      {body}
     </motion.div>
   );
 }
@@ -228,10 +279,20 @@ function Heatmap({ byDay, today }: { byDay: Map<string, DayRow>; today: string }
     weeks.push(week);
   }
 
+  /*
+    Izgara ortalanıyor ve kare boyu sınırlı.
+
+    Kareler önce sabit 14 pikseldi ve sol kenara yapışıyordu; sağda kalan
+    boşluk grafiği bir şeyin kesilmiş parçası gibi gösteriyordu. Sonra tam
+    genişliğe yayıldı ve bu kez kareler 45 piksele çıktı — ısı haritası olmaktan
+    çıkıp mozaiğe döndü. İkisinin ortası: sütunlar kalan alanı paylaşıyor ama
+    kare 26 pikseli geçmiyor, ızgara da ortalanıyor. Dar telefonda küçülüyor,
+    geniş kartta simetrik duruyor.
+  */
   return (
-    <div className="no-scrollbar flex gap-1 overflow-x-auto pb-1">
+    <div className="flex justify-center gap-1.5">
       {weeks.map((week, wi) => (
-        <div key={wi} className="flex flex-col gap-1">
+        <div key={wi} className="flex min-w-0 flex-1 flex-col gap-1.5" style={{ maxWidth: 26 }}>
           {week.map((day) => {
             const row = byDay.get(day);
             const count = row?.reviews ?? 0;
@@ -243,7 +304,7 @@ function Heatmap({ byDay, today }: { byDay: Map<string, DayRow>; today: string }
                 animate={{ opacity: future ? 0.25 : 1, scale: 1 }}
                 transition={{ delay: wi * 0.012 }}
                 title={`${day}: ${count} tekrar`}
-                className="h-3.5 w-3.5 rounded-sm"
+                className="aspect-square w-full rounded-[3px]"
                 style={{ background: future ? "var(--surface-2)" : heatColor(count) }}
               />
             );
