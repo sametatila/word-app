@@ -19,6 +19,13 @@ import type { ReactNode } from "react";
  *
  * Kendi kartı yok: dördü tek bir bölümün ızgarasında duruyor, yani sayfadaki
  * diğer kartlarla aynı ağırlığı taşımıyorlar.
+ *
+ * Döşemenin SEÇİLİ hâli yok ve olmamalı. Bir zamanlar "bugün yapıldı" olan
+ * döşemenin kenarlığı naneye dönüyordu; oysa nane kenarlık uygulamanın geri
+ * kalanında seçim dilinin kendisi — ayarlarda seçili kurs, sınavda işaretli
+ * şık aynı biçimde görünüyor. Dört döşemeden biri seçili gibi duruyor,
+ * kullanıcı da bir mod seçmiş sanıyordu. Dördü eşit; "yapıldı" bilgisi tik
+ * simgesinde ve "8/10 doğru · 3. sıra" satırında zaten var.
  */
 export function ModeTile({
   icon,
@@ -27,7 +34,6 @@ export function ModeTile({
   status,
   onPlay,
   href,
-  done = false,
 }: {
   icon: ReactNode;
   /** Simgenin rengi — CSS değişkeni. */
@@ -37,8 +43,6 @@ export function ModeTile({
   status: string;
   onPlay?: () => void;
   href?: string;
-  /** Bugün yapılmış olan mod — kenarlık nane, simge tik. */
-  done?: boolean;
 }) {
   const inner = (
     <>
@@ -56,9 +60,7 @@ export function ModeTile({
     </>
   );
 
-  const className = `option flex min-h-24 flex-col items-start px-3.5 py-3 text-left ${
-    done ? "border-[color:var(--color-mint)]" : ""
-  }`;
+  const className = "option flex min-h-24 flex-col items-start px-3.5 py-3 text-left";
 
   if (href) {
     return (

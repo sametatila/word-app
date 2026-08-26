@@ -97,7 +97,6 @@ export function DailyCard({
         icon={done ? <CheckIcon size={18} /> : <TrophyIcon size={18} />}
         tone={done ? "var(--color-mint)" : "var(--color-brand)"}
         title="Bugünün turu"
-        done={done}
         status={
           done
             ? `${state.played!.correct}/${state.played!.total} doğru` +
