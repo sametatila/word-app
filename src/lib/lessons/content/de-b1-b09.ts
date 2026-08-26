@@ -238,7 +238,7 @@ export const deB1B09: Lesson[] = [
       { de: "der Gemeinschaftsgarten", tr: "ortak bahçe" },
       { de: "pflanzen", tr: "dikmek" },
       { de: "die Ernte", tr: "hasat" },
-      { de: "das Beet", tr: "tarh" },
+      { de: "das Beet", tr: "tarh, çiçek yatağı" },
       { de: "sich beteiligen", tr: "katılmak" },
     ],
     patterns: [

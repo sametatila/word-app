@@ -384,7 +384,7 @@ export const deB1B10: Lesson[] = [
       { de: "dazugehören", tr: "ait olmak" },
       { de: "die Fremde", tr: "gurbet" },
       { de: "zerrissen", tr: "ikiye bölünmüş" },
-      { de: "die Ferne", tr: "uzak" },
+      { de: "die Ferne", tr: "uzaklık, uzak diyar" },
     ],
     patterns: [
       { de: "Als ich ankam, …", tr: "geçmişte tek seferlik an" },

@@ -1675,7 +1675,7 @@ export const deB1B01: Lesson[] = [
       { de: "sich beschäftigen", tr: "bir işle uğraşmak" },
       { de: "die Branche", tr: "sektör" },
       { de: "der Kontakt", tr: "bağlantı, temas" },
-      { de: "austauschen", tr: "alışveriş etmek, paylaşmak" },
+      { de: "austauschen", tr: "fikir alışverişinde bulunmak" },
     ],
     patterns: [
       { de: "Darf ich fragen, ob …?", tr: "izin isteyerek soru sorar" },
