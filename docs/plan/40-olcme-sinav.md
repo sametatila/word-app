@@ -120,7 +120,7 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 
 **Kanıt.** `reports/shots/wp41v3-exam-{kapak,grammatik,satzbau,hoeren,sonuc,dokum}.png` — demo sunucuda A1.3 kâğıdı uçtan uca oynandı (7 bölüm, sonuç ve döküm dahil).
 
-**Açık.** B1 modül 4–10 ile B2/C1 modülleri ders içeriği üretilince plan dosyalarına eklenecek; `test:exams` plansız modülü hata sayıyor.
+**Kapsam (2026-08-26 akşamı).** B1 modül 4–10 üretilince kâğıtları da yazıldı: kurs artık A1 10 + A2 10 + B1 10 = **30 modülün hepsinde** yedi bölümlük bir modül geçiş sınavı taşıyor (`test:exam-build` otuzunu da veritabanısız kuruyor). Açık kalan yalnızca B2/C1: ders içeriği üretilince plan dosyalarına eklenecek, `test:exams` plansız modülü hata sayıyor.
 
 ## Ek (2026-08-26): konuşma bölümü
 

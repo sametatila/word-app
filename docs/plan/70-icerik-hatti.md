@@ -41,7 +41,9 @@ Rapor: dersler A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme
 
 **Süre.** Sürekli; pilot 4 gün, B1 tamamı ~2 hafta içerik.
 
-**Durum (2026-08-26).** Adım 1 (pilot) bitti: `src/lib/lessons/content/de-b1-b03.ts` — modül 3 "Bağlaç ustalığı" 10 ders (damit, um…zu, obwohl/trotzdem, als/wenn, nachdem, bevor/während, deshalb, je…desto, entweder…oder, anlatı). Kalıp: 14 adım — onay, bağlam, 4 kelime (tekrar), kalıp açıklaması, 1 örnek tekrarı, 4 üretim, 1 doğru/yanlış, geçiş; rol yapma 4–5 tur, açık istem (senaryo yedeği yok; `offline-roleplay` genel görevine düşer). Doğrulayıcı uyarısız. Kalan: B1 modül 4–10 (70 ders), B2 100, C1 60; mevcut derslere senaryo yedeği.
+**Durum (2026-08-26).** Adım 1 (pilot) bitti: `src/lib/lessons/content/de-b1-b03.ts` — modül 3 "Bağlaç ustalığı" 10 ders (damit, um…zu, obwohl/trotzdem, als/wenn, nachdem, bevor/während, deshalb, je…desto, entweder…oder, anlatı). Kalıp: 14 adım — onay, bağlam, 4 kelime (tekrar), kalıp açıklaması, 1 örnek tekrarı, 4 üretim, 1 doğru/yanlış, geçiş; rol yapma 4–5 tur, açık istem (senaryo yedeği yok; `offline-roleplay` genel görevine düşer). Doğrulayıcı uyarısız. Kalan: B2 100, C1 60; mevcut derslere senaryo yedeği.
+
+**Durum (2026-08-26 akşamı).** B1 tamamlandı: modül 4–10 üretildi (70 ders, `de-b1-b04` … `de-b1-b10`), yani katalog A1 100 + A2 100 + B1 100 = 300 ders. Pilotun kalıbı korundu ama bir düzeltmeyle: pilot partide beş kelimeden yalnızca dördü söyletiliyordu (`check:lessons` 12 hata), yeni partilerde beşi de söyletiliyor ve ders 15–16 adıma çıkıyor. Her modülün ayrıca modül geçiş sınavı planı yazıldı (WP-41 v3). Kelime disiplini: elli kelimenin hepsi seviye içinde yeni, üretim hedefleri katalogda benzersiz.
 
 ---
 
