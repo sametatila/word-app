@@ -143,7 +143,20 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   const [tally, setTally] = useState({ correct: 0, total: 0, xp: 0 });
   const [result, setResult] = useState<AnswerResult | null>(null);
   const [errorKind, setErrorKind] = useState<ErrorKind>("db");
-  const [saveWarning, setSaveWarning] = useState(false);
+  /**
+   * Kaydetme uyarısı — iki ayrı durum, iki ayrı söz.
+   *
+   *   "retry"   — geçici: ağ yok ya da sunucu hata verdi. Cevaplar duruyor ve
+   *               bağlantı dönünce gönderiliyor.
+   *   "dropped" — kalıcı: sunucu isteği REDDETTİ (4xx). Yeniden denemek aynı
+   *               cevabı verir; o turun cevapları düşürülüyor.
+   *
+   * Ayrım, bildirilen hatanın ta kendisi yüzünden var. Reddedilen bir istek
+   * kuyruğa geri konuyordu ve sonraki her gönderim aynı zehirli cevabı yeniden
+   * taşıyordu: bir kez reddedilen tur, oturumun geri kalanında HER kaydı
+   * batırıyordu. Tek bir turun bedeli tek bir tur olmalı.
+   */
+  const [saveWarning, setSaveWarning] = useState<null | "retry" | "dropped">(null);
   const startedAt = useRef(Date.now());
   /** Ekrandaki tur sunucudan mı geldi (önbellekten değil). */
   const fresh = useRef(false);
@@ -415,11 +428,18 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
           }),
         });
         if (!res.ok) {
+          if (res.status >= 400 && res.status < 500) {
+            // Sunucunun ASLA kabul etmeyeceği bir istek. Kuyruğa geri koymak
+            // oturumun kalanındaki bütün kayıtları da batırır.
+            console.error("[answers] istek reddedildi", res.status, batch);
+            setSaveWarning("dropped");
+            return null;
+          }
           pending.current = [...batch, ...pending.current]; // kaybetme, sonraki turda tekrar dene
-          setSaveWarning(true);
+          setSaveWarning("retry");
           return null;
         }
-        setSaveWarning(false);
+        setSaveWarning(null);
         const data = (await res.json()) as AnswerResult;
         sessionXp.current += data.xpGained;
         if (wager) setWagerResult(data.wagerXp ?? 0);
@@ -432,12 +452,28 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         return data;
       } catch {
         pending.current = [...batch, ...pending.current];
-        setSaveWarning(true);
+        setSaveWarning("retry");
         return null;
       }
     },
     [],
   );
+
+  /*
+    Bağlantı dönünce bekleyenleri GERÇEKTEN gönder.
+
+    Uyarı "bağlantın döndüğünde otomatik gönderilecek" diyordu ama bunu yapan
+    bir şey yoktu: bekleyen cevaplar ancak bir sonraki etap sonunda, yani
+    kullanıcı oynamaya devam ederse deneniyordu. Yarıda bırakılan bir turda
+    verilen söz tutulmuyordu.
+  */
+  useEffect(() => {
+    const onOnline = () => {
+      if (pending.current.length) void flush(false, null);
+    };
+    window.addEventListener("online", onOnline);
+    return () => window.removeEventListener("online", onOnline);
+  }, [flush]);
 
   /**
    * Oturum içi basamak inişi (WP-14): art arda üç üretim yanlışında kalan
@@ -790,7 +826,9 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
           }}
         >
           <AlertIcon size={16} />
-          Cevapların kaydedilemiyor — bağlantın döndüğünde otomatik gönderilecek.
+          {saveWarning === "dropped"
+            ? "Bu turun cevapları kaydedilemedi. Tur devam ediyor."
+            : "Cevapların kaydedilemiyor — bağlantın döndüğünde otomatik gönderilecek."}
         </div>
       ) : null}
 
