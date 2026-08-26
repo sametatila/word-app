@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SettingRow } from "@/components/setting-row";
 import { MoonIcon, SunIcon } from "./icons";
 
 export function ThemeToggle() {
@@ -57,29 +58,25 @@ export function ThemeSetting() {
   }
 
   return (
-    <div className="flex items-center gap-3 p-5">
-      <div className="min-w-0 flex-1">
-        <p className="text-sm font-bold">Görünüm</p>
-        <p className="muted mt-0.5 text-xs">Açık ya da koyu tema</p>
-      </div>
-      <div className="flex shrink-0 gap-1.5">
-        <button
-          type="button"
-          onClick={() => pick(false)}
-          aria-pressed={!dark}
-          className={`chip flex items-center gap-1.5 px-3 py-1.5 text-xs ${!dark ? "chip-active" : ""}`}
-        >
-          <SunIcon size={14} /> Açık
-        </button>
-        <button
-          type="button"
-          onClick={() => pick(true)}
-          aria-pressed={dark}
-          className={`chip flex items-center gap-1.5 px-3 py-1.5 text-xs ${dark ? "chip-active" : ""}`}
-        >
-          <MoonIcon size={14} /> Koyu
-        </button>
-      </div>
-    </div>
+    <SettingRow title="Görünüm">
+      {/* İki seçenekli bir TERCİH, aç/kapa değil: "koyu tema kapalı" diye bir
+          şey yok, açık tema var. Bu yüzden anahtar değil çip ikilisi. */}
+      <button
+        type="button"
+        onClick={() => pick(false)}
+        aria-pressed={!dark}
+        className={`chip flex items-center gap-1.5 px-3 py-1.5 text-xs ${!dark ? "chip-active" : ""}`}
+      >
+        <SunIcon size={14} /> Açık
+      </button>
+      <button
+        type="button"
+        onClick={() => pick(true)}
+        aria-pressed={dark}
+        className={`chip flex items-center gap-1.5 px-3 py-1.5 text-xs ${dark ? "chip-active" : ""}`}
+      >
+        <MoonIcon size={14} /> Koyu
+      </button>
+    </SettingRow>
   );
 }

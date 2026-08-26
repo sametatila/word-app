@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SettingRow } from "@/components/setting-row";
 import { HandshakeIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 
@@ -45,18 +46,22 @@ export function InviteCard() {
   }
 
   return (
-    <section className="card p-5">
-      <h2 className="mb-2 flex items-center gap-2 font-bold">
-        <HandshakeIcon size={18} /> Birini çağır
-      </h2>
-      {/* İlk cümle üç özelliği sayıp hepsinin neden tek başına anlamsız
-          olduğunu anlatıyordu; ikna metni bile olsa kullanıcıya kendi
-          uygulamasını tanıtıyordu. Kalan cümle davetin ne işe yaradığını
-          söylüyor, o kadar. */}
-      <p className="muted text-sm">Bağlantıyı gönder, aynı tabloda yarışın.</p>
-      <button onClick={() => void invite()} className="btn btn-primary mt-3 px-4 py-2.5 text-sm">
-        {copied ? "Bağlantı kopyalandı" : "Davet bağlantısını paylaş"}
-      </button>
+    /* Kart değil satır. Bir başlık, iki satır açıklama ve tam genişlikte bir
+       düğme, tek bir paylaş eylemi için 146 piksel harcıyordu; ayarların geri
+       kalanı satır ritmine geçince bu kart tek başına eski biçimde kalıyordu.
+       İlk cümle üç özelliği sayıp hepsinin neden tek başına anlamsız olduğunu
+       anlatıyordu — ikna metni bile olsa kullanıcıya kendi uygulamasını
+       tanıtıyordu. Kalan cümle davetin ne işe yaradığını söylüyor. */
+    <section className="card">
+      <SettingRow title="Birini çağır" sub="Bağlantıyı gönder, aynı tabloda yarışın">
+        <button
+          onClick={() => void invite()}
+          className="btn btn-primary h-9 px-3.5 text-xs"
+        >
+          <HandshakeIcon size={15} />
+          <span className="ml-1.5">{copied ? "Kopyalandı" : "Paylaş"}</span>
+        </button>
+      </SettingRow>
     </section>
   );
 }

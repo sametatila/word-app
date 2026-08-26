@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SettingRow, Switch } from "@/components/setting-row";
 import { SpeakerIcon } from "@/components/icons";
 import { play, setSoundEnabled, soundEnabled } from "@/lib/sfx";
 import { track } from "@/lib/track";
@@ -31,42 +32,31 @@ export function SoundSettings({ bare = false }: { bare?: boolean } = {}) {
     setReady(true);
   }, []);
 
-  function toggle() {
-    const next = !on;
+  function toggle(next: boolean) {
     setOn(next);
     setSoundEnabled(next);
     track("sound_toggle", next ? 1 : 0);
   }
 
-  return (
-    /* `bare`: kendi kartını bırakıp uygulama ayarları kartının bir bölümü oluyor. */
-    <section className={bare ? "p-5" : "card p-5"}>
-      <h2 className="mb-2 flex items-center gap-2 font-bold">
-        <SpeakerIcon size={18} /> Oyun sesleri
-      </h2>
-      {/* Melodinin tarifi ("yükselen ton, alçalan nota, basamak basamak
-          yükselen perde") kalktı: hemen altında sesi dinleten bir düğme var,
-          yani ses yazıyla anlatılacak son şey. Kalan tek satır yazıyla
-          söylenmesi GEREKEN şeyi söylüyor — bu anahtarın telaffuzu
-          kapatmadığını, çünkü onu duymadan anlamanın yolu yok. */}
-      <p className="muted text-sm">
-        Telaffuz sesi bundan ayrı — bu anahtar kapalıyken de çalışır.
-      </p>
-      <button
-        onClick={toggle}
-        disabled={!ready}
-        className={`btn mt-3 px-4 py-2.5 text-sm disabled:opacity-60 ${on ? "btn-ghost" : "btn-primary"}`}
-      >
-        {on ? "Sesleri kapat" : "Sesleri aç"}
-      </button>
+  /* `bare`: kendi kartını bırakıp uygulama ayarları kartının bir bölümü oluyor. */
+  const body = (
+    <SettingRow title="Oyun sesleri" sub="Telaffuz sesi ayrı — bu kapalıyken de çalışır">
+      {/* Dinleme, anahtarın SOLUNDA ve yalnızca sesler açıkken: kapalıyken
+          çalacak bir şey yok ve orada durması çalışmayan bir düğme demek. */}
       {on ? (
         <button
+          type="button"
           onClick={() => play("correct")}
-          className="btn btn-ghost mt-2 ml-2 px-4 py-2.5 text-sm"
+          aria-label="Örnek sesi dinle"
+          title="Dinle"
+          className="chip flex h-8 w-8 items-center justify-center"
         >
-          Dinle
+          <SpeakerIcon size={15} />
         </button>
       ) : null}
-    </section>
+      <Switch on={on} onChange={toggle} disabled={!ready} label="Oyun sesleri" />
+    </SettingRow>
   );
+
+  return bare ? body : <section className="card">{body}</section>;
 }

@@ -25,10 +25,20 @@ export function VoicePicker({
   course,
   value,
   onChange,
+  compact = false,
 }: {
   course: string;
   value: string | null;
   onChange: (voice: VoiceId) => void;
+  /**
+   * Ayarlar kipi: tek satır, açıklama yok, dinleme düğmesi simgeye iniyor.
+   *
+   * Geniş kip ilk kurulum için: ses o an ilk kez seçiliyor ve iki sesin farkı
+   * ancak açıklamayla ve rahat bir dinle düğmesiyle anlatılabiliyor. Ayarlarda
+   * ise kullanıcı sesini çoktan tanıyor; orada gereken tek şey diğerine
+   * geçebilmek, iki kartlık 230 piksel değil.
+   */
+  compact?: boolean;
 }) {
   const [playing, setPlaying] = useState<string | null>(null);
   const options = voicesFor(course);
@@ -43,6 +53,51 @@ export function VoicePicker({
     // Sentez birkaç saniye sürebiliyor; gösterge sabit bir süre sonra sönüyor.
     // Gerçek bitişe bağlamıyoruz çünkü önizleme sesi kesilebilir de.
     setTimeout(() => setPlaying((p) => (p === voice ? null : p)), 3500);
+  }
+
+  if (compact) {
+    return (
+      <div className="grid grid-cols-2 gap-2">
+        {options.map((v) => {
+          const active = selected === v.id;
+          return (
+            <div
+              key={v.id}
+              className={`option flex items-center gap-2 py-2 pl-3 pr-2 ${
+                active ? "option-picked" : ""
+              }`}
+            >
+              <button
+                type="button"
+                onClick={() => onChange(v.id)}
+                aria-pressed={active}
+                className="min-w-0 flex-1 text-left"
+              >
+                <span className="block truncate text-sm font-bold">{v.label}</span>
+                <span className="muted block truncate text-[11px]">{v.gender}</span>
+              </button>
+              {active ? (
+                <span
+                  className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-white"
+                  style={{ background: "var(--color-brand-600)" }}
+                >
+                  <CheckIcon size={11} />
+                </span>
+              ) : null}
+              <button
+                type="button"
+                onClick={() => preview(v.id)}
+                className="chip flex h-8 w-8 shrink-0 items-center justify-center"
+                aria-label={`${v.label} sesini dinle`}
+                title="Dinle"
+              >
+                <SpeakerIcon size={14} />
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 
   return (

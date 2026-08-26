@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { SettingRow, Switch } from "@/components/setting-row";
 import { BellIcon } from "@/components/icons";
 import {
   currentSubscription,
@@ -63,59 +64,46 @@ export function PushSettings({ bare = false }: { bare?: boolean } = {}) {
 
   if (state === "loading") return null;
 
-  return (
-    /* `bare`: kendi kartını bırakıp uygulama ayarları kartının bir bölümü oluyor. */
-    <section className={bare ? "p-5" : "card p-5"}>
-      <h2 className="mb-2 flex items-center gap-2 font-bold">
-        <BellIcon size={18} /> Hatırlatmalar
-      </h2>
+  /*
+    Engelli durumlarda metin bir açıklama değil, bir TALİMAT: kullanıcı bu
+    anahtarı arıyor ve bulamıyor, tek merak ettiği ne yapması gerektiği.
+    Sebep kısmı ("bu tarayıcı desteklemiyor", "izin reddedilmiş") atıldı —
+    durum zaten anahtarın olmamasından belli; geriye yapılacak iş kaldı.
+  */
+  const blocked =
+    state === "unsupported"
+      ? "Uygulamayı ana ekrana ekleyip oradan aç."
+      : state === "ios"
+        ? "Önce “Ana ekrana ekle” adımlarını izle, sonra uygulamayı ana ekrandan aç."
+        : state === "denied"
+          ? "Tarayıcının site ayarlarından Wortspiel'e bildirim izni ver."
+          : null;
 
-      {/*
-        Engelli durumlarda metin bir açıklama değil, bir TALİMAT: kullanıcı bu
-        anahtarı arıyor ve bulamıyor, tek merak ettiği ne yapması gerektiği.
-        Üç metnin de sebep kısmı ("bu tarayıcı desteklemiyor", "izin
-        reddedilmiş") atıldı — durum zaten anahtarın olmamasından belli;
-        geriye yalnızca yapılacak iş kaldı.
-      */}
-      {state === "unsupported" ? (
-        <p className="muted text-sm">Uygulamayı ana ekrana ekleyip oradan aç.</p>
-      ) : state === "ios" ? (
-        <p className="muted text-sm">
-          Yukarıdaki “Uygulama olarak kur” adımlarını izle, sonra uygulamayı ana ekrandan aç.
-        </p>
-      ) : state === "denied" ? (
-        <p className="muted text-sm">
-          Tarayıcının site ayarlarından Wortspiel&apos;e bildirim izni ver.
-        </p>
-      ) : (
-        <>
-          {/* Açıkken kaç bildirim geleceği yazıyla söylenmesi GEREKEN şey:
-              izni veren kişinin tek sorusu bu ve deneyerek öğrenilmiyor. */}
-          <p className="muted text-sm">
-            Günde en fazla bir bildirim: serin tehlikedeyse ya da tekrarın varsa.
-          </p>
-          <button
-            onClick={() => void toggle()}
+  /* `bare`: kendi kartını bırakıp uygulama ayarları kartının bir bölümü oluyor. */
+  const body = (
+    <div>
+      <SettingRow
+        title="Hatırlatmalar"
+        // Açıkken kaç bildirim geleceği yazıyla söylenmesi GEREKEN şey: izni
+        // veren kişinin tek sorusu bu ve deneyerek öğrenilmiyor.
+        sub={blocked ?? "Günde en fazla bir bildirim: serin tehlikedeyse ya da tekrarın varsa"}
+      >
+        {blocked ? null : (
+          <Switch
+            on={state === "on"}
+            onChange={() => void toggle()}
             disabled={state === "busy"}
-            className={`btn mt-3 px-4 py-2.5 text-sm disabled:opacity-60 ${
-              state === "on" ? "btn-ghost" : "btn-primary"
-            }`}
-          >
-            {state === "busy" ? "Bekle…" : state === "on" ? "Hatırlatmaları kapat" : "Hatırlatmaları aç"}
-          </button>
-          {state === "on" ? (
-            <p className="mt-2 text-xs font-semibold" style={{ color: "var(--color-mint)" }}>
-              Bu cihazda açık.
-            </p>
-          ) : null}
-        </>
-      )}
-
+            label="Hatırlatmalar"
+          />
+        )}
+      </SettingRow>
       {error ? (
-        <p className="mt-2 text-xs font-semibold" style={{ color: "var(--color-flame)" }}>
+        <p className="px-4 pb-3 text-xs font-semibold" style={{ color: "var(--color-flame)" }}>
           {error}
         </p>
       ) : null}
-    </section>
+    </div>
   );
+
+  return bare ? body : <section className="card">{body}</section>;
 }

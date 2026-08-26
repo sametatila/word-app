@@ -11,6 +11,8 @@ import { PushSettings } from "@/components/push-settings";
 import { SoundSettings } from "@/components/sound-settings";
 import { InviteCard } from "@/components/invite-card";
 import { PageBack } from "@/components/page-back";
+import { Disclosure } from "@/components/disclosure";
+import { SettingRow } from "@/components/setting-row";
 import { ThemeSetting } from "@/components/theme-toggle";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 
@@ -107,7 +109,7 @@ export function ProfileForm({
   }
 
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-6">
+    <div className="mx-auto w-full max-w-3xl space-y-4">
       <PageBack fallback="/profile" title="Ayarlar" subtitle="Öğrenme, uygulama ve hesap" />
 
       {/*
@@ -127,7 +129,9 @@ export function ProfileForm({
 
         <div>
           <span className="muted mb-1.5 block text-sm font-semibold">Kursun</span>
-          <div className="grid gap-2 sm:grid-cols-2">
+          {/* İki kurs telefonda da yan yana. `sm:grid-cols-2` dar ekranda tek
+              sütuna düşüyordu ve iki kısa etiket için iki tam satır harcıyordu. */}
+          <div className="grid grid-cols-2 gap-2">
             {COURSES.map((c) => (
               <button
                 key={c.id}
@@ -163,6 +167,7 @@ export function ProfileForm({
             course={course}
             value={voice}
             onChange={(v: VoiceId) => setVoice(v)}
+            compact
           />
         </div>
 
@@ -179,12 +184,16 @@ export function ProfileForm({
 
         <div>
           <span className="muted mb-1.5 block text-sm font-semibold">Seviyen</span>
-          <div className="grid gap-2 sm:grid-cols-5">
+          {/* Beş seviye tek satırda. `sm:grid-cols-5` telefonda tek sütuna
+              düşüyor ve "A1".."C1" gibi iki karakterlik etiketler için beş tam
+              satır, yaklaşık 230 piksel harcıyordu — ayarların tek en uzun
+              parçasıydı. */}
+          <div className="grid grid-cols-5 gap-1.5">
             {LEVELS.map((l) => (
               <button
                 key={l.id}
                 onClick={() => setLevel(l.id)}
-                className={`option px-3 py-3 text-sm font-bold ${
+                className={`option px-1 py-2.5 text-sm font-bold ${
                   level === l.id ? "option-correct" : ""
                 }`}
                 title={l.desc}
@@ -203,13 +212,6 @@ export function ProfileForm({
           </p>
         </div>
 
-        {/* Tekrar mantığı eskiden ayrı bir "Tekrar sistemi" kartındaydı: dört
-            satır, hiçbir eylem yok, ayarların altında duran bir öğretici.
-            Bilginin ait olduğu yer burası — hedefi ayarlayan kişinin merak
-            ettiği tek şey o sayının neyi belirlediği. */}
-        <p className="muted -mb-2 text-xs">
-          Tekrar zamanları cevabının hızına ve doğruluğuna göre kendiliğinden hesaplanır.
-        </p>
         <Slider
           label="Günlük tekrar hedefi"
           value={dailyGoal}
@@ -228,6 +230,14 @@ export function ProfileForm({
           suffix="kelime"
           onChange={setNewPerDay}
         />
+        {/* Tekrar mantığı eskiden ayrı bir "Tekrar sistemi" kartındaydı: dört
+            satır, hiçbir eylem yok. Bilginin ait olduğu yer burası — hedefi
+            ayarlayan kişinin merak ettiği tek şey o sayının neyi belirlediği.
+            Kaydırıcıların ÜSTÜNDEYDİ ve negatif boşluk yüzünden ilk etiketin
+            üstüne biniyordu; notun yeri zaten anlattığı şeyin altı. */}
+        <p className="muted -mt-1 text-xs">
+          Tekrar zamanları cevabının hızına ve doğruluğuna göre kendiliğinden hesaplanır.
+        </p>
 
         <div className="flex items-center gap-3">
           <button
@@ -264,9 +274,15 @@ export function ProfileForm({
           izliyor: iPhone'da bildirim ancak uygulama ana ekrana eklenmişken
           çalışıyor, o yüzden kurulum bildirimden önce geliyor. */}
       <section className="card divide-y divide-[color:var(--border)] overflow-hidden">
+        {/* Kurulum rehberi açılır kutuda. Üç numaralı adım, cihaz seçici ve
+            açıklama metni 330 piksel tutuyordu ve bu, hayatta BİR KEZ yapılan
+            bir işin yönergesi — zaten kurmuş olan kullanıcı her ayar açılışında
+            onu geçmek zorunda kalıyordu. */}
         <div className="p-5">
-          <h2 className="mb-3 font-bold">Uygulama</h2>
-          <InstallGuide tone="plain" />
+          <h2 className="mb-2 font-bold">Uygulama</h2>
+          <Disclosure title="Ana ekrana ekle" hint="tam ekran, çevrimdışı">
+            <InstallGuide tone="plain" />
+          </Disclosure>
         </div>
         {/*
           Tema seçimi üst başlıktan buraya indi. Orada her ekranda duran bir
@@ -282,14 +298,15 @@ export function ProfileForm({
       {/* Davet kendi kartında kalıyor: bir ayar değil, bir çağrı. */}
       <InviteCard />
 
-      <section className="card p-5">
-        <h2 className="mb-3 font-bold">Hesap</h2>
+      {/* Hesap da satır. "Giriş yaptın, ilerlemen senkron" cümlesi kalıyor
+          çünkü çıkış yapmadan önce bilinmesi gereken tek şey o; ama iki satır
+          metin ve tam genişlikte bir düğme için 172 piksel gerekmiyordu. */}
+      <section className="card">
         {authEnabled ? (
-          <div className="space-y-3">
-            <p className="muted text-sm">
-              {accountName ? `${accountName} olarak giriş yaptın.` : "Giriş yaptın."} İlerlemen tüm
-              cihazlarında senkron.
-            </p>
+          <SettingRow
+            title="Hesap"
+            sub={`${accountName ? `${accountName} olarak girdin` : "Giriş yaptın"} · ilerlemen tüm cihazlarında senkron`}
+          >
             <button
               onClick={async () => {
                 setSigningOut(true);
@@ -302,16 +319,16 @@ export function ProfileForm({
                 router.refresh();
               }}
               disabled={signingOut}
-              className="btn btn-ghost px-4 py-2.5 text-sm disabled:opacity-60"
+              className="btn btn-ghost h-9 px-3.5 text-xs disabled:opacity-60"
             >
               {signingOut ? "Çıkılıyor…" : "Çıkış yap"}
             </button>
-          </div>
+          </SettingRow>
         ) : (
-          <p className="muted text-sm">
-            Neon Auth anahtarları eklendiğinde giriş, kayıt ve çoklu cihaz senkronizasyonu
-            kendiliğinden açılır. Şu anda demo modundasın.
-          </p>
+          <SettingRow
+            title="Demo modu"
+            sub="Neon Auth anahtarları eklendiğinde giriş ve çoklu cihaz senkronizasyonu kendiliğinden açılır."
+          />
         )}
       </section>
     </div>
