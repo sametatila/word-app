@@ -6,6 +6,7 @@ import { ensureProfile, makeRound, toRoundWord } from "@/lib/session";
 import { LESSONS } from "./index";
 import { lessonBoard } from "./progress";
 import { MODULE_SIZE, moduleTheme } from "./modules";
+import { moduleContent } from "./module-content";
 import type { Round } from "@/lib/types";
 
 /**
@@ -42,11 +43,6 @@ export const BOSS_MAX_SECONDS = 90;
 /** Sınav kurulabilmesi için gereken en az kelime. */
 const MIN_WORDS = 8;
 
-/** Başlıktan artikeli ayırır: ders "der Name" yazıyor, tablo "Name" tutuyor. */
-function headword(de: string): string {
-  return de.replace(/^(der|die|das)\s+/i, "").trim().toLocaleLowerCase("de-DE");
-}
-
 export type BossMeta = {
   level: string;
   moduleIndex: number;
@@ -60,22 +56,15 @@ export type BossMeta = {
 
 export type BossPayload = { meta: BossMeta; rounds: Round[]; pool: number };
 
-/** Modülün derslerindeki kelimeler — tekrarsız, ders sırasıyla. */
+/**
+ * Modülün derslerindeki kelimeler — tekrarsız, ders sırasıyla, artikelsiz.
+ *
+ * Türetme `module-content.ts`'te: aynı liste modül sınavının kelime bölümünü
+ * de besliyor ve iki yerde ayrı ayrı hesaplanması, birinde artikel kırpma
+ * kuralı değişince ikisinin sessizce ayrışması demekti.
+ */
 export function moduleVocab(course: string, level: string, moduleIndex: number): string[] {
-  const inLevel = LESSONS.filter((l) => l.course === course && l.level === level);
-  const chunk = inLevel.slice(moduleIndex * MODULE_SIZE, (moduleIndex + 1) * MODULE_SIZE);
-  const seen = new Set<string>();
-  const out: string[] = [];
-  for (const lesson of chunk) {
-    for (const v of lesson.vocab) {
-      const key = headword(v.de);
-      if (key && !seen.has(key)) {
-        seen.add(key);
-        out.push(key);
-      }
-    }
-  }
-  return out;
+  return moduleContent(course, level, moduleIndex).words.map((w) => w.head);
 }
 
 export async function buildModuleBoss(
