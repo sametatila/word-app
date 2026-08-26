@@ -36,8 +36,8 @@ export function ArchiveCard() {
           </span>
           <span className="min-w-0 flex-1">
             <span className="block text-sm font-bold">Yetkinlik ve gelişim</span>
-            <span className="muted block text-xs">
-              Zayıf noktaların, gelişim eğrisi, yapabildiklerin, sınavların
+            <span className="muted block truncate text-xs">
+              Zayıf noktalar, gelişim, sınavlar
             </span>
           </span>
           <span className="muted shrink-0">
@@ -57,8 +57,8 @@ export function ArchiveCard() {
           </span>
           <span className="min-w-0 flex-1">
             <span className="block text-sm font-bold">Kelime ilerlemen</span>
-            <span className="muted block text-xs">
-              Seviyeye göre kapsam, son sekiz hafta, tekrar kuyruğu
+            <span className="muted block truncate text-xs">
+              Kapsam, haftalık grafik, tekrar kuyruğu
             </span>
           </span>
           <span className="muted shrink-0">
