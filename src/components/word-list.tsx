@@ -4,6 +4,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronIcon } from "@/components/icons";
+import { PageBack } from "@/components/page-back";
 import { SpeakButton } from "@/components/speak-button";
 import { grammarNote, typLabel } from "@/components/games/types";
 import { firstExample } from "@/lib/example";
@@ -121,12 +122,16 @@ export function WordList({
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4">
-      <header>
-        <h1 className="text-2xl font-bold">Kelimelerim</h1>
-        <p className="muted mt-1 text-sm">
-          {total.toLocaleString("tr-TR")} kelime · A1'den C1'e, en yaygın olanlar başta
-        </p>
-      </header>
+      {/*
+        Geri düğmesi: Kelimeler alt sekmelerden çıktı ve tur özetinden ya da
+        profilden açılıyor. Çubukta karşılığı olmayan bir ekrana girip cihazın
+        kendi geri hareketini bilmeyen kullanıcı burada sıkışırdı.
+      */}
+      <PageBack
+        href="/learn"
+        title="Kelimelerim"
+        subtitle={`${total.toLocaleString("tr-TR")} kelime · A1'den C1'e`}
+      />
 
       {/*
         İlerleme grafikleri profildeydi ve orası yanlış yerdi: kaç kelimenin
@@ -151,7 +156,7 @@ export function WordList({
               {progressSummary ? <span className="muted block text-xs">{progressSummary}</span> : null}
             </span>
             <motion.span
-              animate={{ rotate: showProgress ? 90 : 0 }}
+              animate={{ rotate: showProgress ? 180 : 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 24 }}
               className="muted shrink-0"
             >
