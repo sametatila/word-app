@@ -201,7 +201,8 @@ export const deA2B08: Lesson[] = [
       partner: "kendi doğum gününü sevmeyen ama pastayı çok seven bir iş arkadaşı",
       opening: "Danke fürs Kommen! Wann hast du eigentlich Geburtstag?",
       openingTr: "Geldiğin için sağ ol! Senin doğum günün ne zaman aslında?",
-      minTurns: 4,
+      goal: "Tebrik edilmiş, kaç yaşına girdiği sorulmuş ve senin doğum günün de söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -396,7 +397,8 @@ export const deA2B08: Lesson[] = [
       partner: "her şeyi listeleyen, biraz telaşlı bir arkadaş",
       opening: "Wir haben nur eine Woche Zeit. Was machen wir zuerst?",
       openingTr: "Sadece bir haftamız var. Önce neyi halledelim?",
-      minTurns: 4,
+      goal: "Kimin neyi ayarlayacağı kararlaşmış ve umutlar ile endişeler konuşulmuş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -595,7 +597,8 @@ export const deA2B08: Lesson[] = [
       partner: "Alman görgü kurallarını iyi bilen, fikri net bir arkadaş",
       opening: "Wir sind in zehn Minuten da. Was bringen wir mit?",
       openingTr: "On dakikaya oradayız. Ne götürüyoruz?",
-      minTurns: 4,
+      goal: "Ne götürüleceği tartışılmış ve tek bir hediyede karar kılınmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -782,7 +785,8 @@ export const deA2B08: Lesson[] = [
       partner: "düğünlerde ağlayan, çok duygusal bir masa arkadaşı",
       opening: "Was für eine schöne Feier! Wie findest du das Brautpaar?",
       openingTr: "Ne güzel bir kutlama! Gelin ve damadı nasıl buldun?",
-      minTurns: 4,
+      goal: "Düğün hakkında görüş bildirilmiş ve iki ülkenin âdetleri karşılaştırılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -962,7 +966,8 @@ export const deA2B08: Lesson[] = [
       partner: "geleneklerine bağlı, senin bayramlarını da merak eden bir komşu",
       opening: "Bei uns gibt es an Weihnachten immer Karpfen. Wie feiert ihr denn?",
       openingTr: "Bizde Noel'de hep sazan balığı olur. Siz nasıl kutluyorsunuz?",
-      minTurns: 4,
+      goal: "Buradaki bayramlar öğrenilmiş ve kendi bayramların ile geleneklerin anlatılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1151,7 +1156,8 @@ export const deA2B08: Lesson[] = [
       partner: "önce hayal kırıklığına uğrayan ama sonra anlayış gösteren bir arkadaş",
       opening: "Du kommst doch morgen, oder?",
       openingTr: "Yarın geliyorsun, değil mi?",
-      minTurns: 4,
+      goal: "İptal bildirilmiş, sebebi söylenmiş ve telafi için bir gün önerilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1346,7 +1352,8 @@ export const deA2B08: Lesson[] = [
       partner: "iltifat almaya alışkın olmayan, biraz mahcup bir arkadaş",
       opening: "Komm rein! Und, wie gefällt dir die Wohnung?",
       openingTr: "İçeri gel! Ee, ev nasıl, beğendin mi?",
-      minTurns: 4,
+      goal: "En az üç iltifat edilmiş ve arkadaşının sorularına içtenlikle cevap verilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1528,7 +1535,8 @@ export const deA2B08: Lesson[] = [
       partner: "hâlâ biraz kırgın ama barışmaya açık bir arkadaş",
       opening: "Ich bin immer noch sauer. Warum hast du das gesagt?",
       openingTr: "Hâlâ kırgınım. Niye öyle dedin?",
-      minTurns: 4,
+      goal: "Özür dilenmiş, niyet açıklanmış ve barışma teklifi kabul edilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1725,7 +1733,8 @@ export const deA2B08: Lesson[] = [
       partner: "kendi ailesi de uzakta olan, seni iyi anlayan bir arkadaş",
       opening: "Du siehst traurig aus. Vermisst du deine Familie?",
       openingTr: "Üzgün görünüyorsun. Aileni mi özledin?",
-      minTurns: 4,
+      goal: "Ne zaman özlediğin, nasıl görüştüğünüz ve neyi iple çektiğin anlatılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1918,7 +1927,8 @@ export const deA2B08: Lesson[] = [
       partner: "her yıl aynı kararı verip hiç tutmayan neşeli bir arkadaş",
       opening: "Noch zehn Minuten bis Mitternacht! Was ist dein Vorsatz?",
       openingTr: "Gece yarısına on dakika kaldı! Senin kararın ne?",
-      minTurns: 4,
+      goal: "Karşılıklı yılbaşı kararları anlatılmış ve gece yarısı birlikte kutlanmış olur.",
+      minTurns: 7,
     },
   },
 ];

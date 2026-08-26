@@ -204,7 +204,8 @@ export const deA2B03: Lesson[] = [
       partner: "sakin ve ilgili bir doktor",
       opening: "Guten Tag! Was fehlt Ihnen denn?",
       openingTr: "İyi günler! Neyiniz var?",
-      minTurns: 4,
+      goal: "Şikâyetin anlatılmış, ne yapman gerektiği sorulmuş ve tekrarlanarak onaylanmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -396,7 +397,8 @@ export const deA2B03: Lesson[] = [
       partner: "hızlı çalışan, doğrudan soru soran bir hemşire",
       opening: "Bevor der Arzt kommt: Wie fühlen Sie sich heute?",
       openingTr: "Doktor gelmeden önce: bugün kendinizi nasıl hissediyorsunuz?",
-      minTurns: 4,
+      goal: "Belirtilerin, ne zamandır sürdüğü ve nasıl hissettiğin kaydedilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -588,7 +590,8 @@ export const deA2B03: Lesson[] = [
       partner: "kuralcı ama esprili bir doktor",
       opening: "Eine Woche lang gibt es ein paar Regeln. Haben Sie Fragen?",
       openingTr: "Bir hafta boyunca birkaç kural var. Sorunuz var mı?",
-      minTurns: 4,
+      goal: "Bir hafta boyunca neyin serbest neyin yasak olduğu tek tek netleşmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -776,7 +779,8 @@ export const deA2B03: Lesson[] = [
       partner: "her derde bir çaresi olan, ısrarcı bir büyükanne",
       opening: "Kind, du hustest ja! Soll ich dir einen Tee machen?",
       openingTr: "Evladım, öksürüyorsun! Sana bir çay yapayım mı?",
-      minTurns: 4,
+      goal: "Büyükannenin çaresi öğrenilmiş ve sen de kendi bildiğin bir çareyi anlatmış olursun.",
+      minTurns: 7,
     },
   },
   {
@@ -956,7 +960,8 @@ export const deA2B03: Lesson[] = [
       partner: "acelesi olmayan, her şeyi ayrıntısıyla anlatan bir eczacı",
       opening: "Das bekommen Sie auch ohne Rezept. Möchten Sie eine kurze Beratung?",
       openingTr: "Bunu reçetesiz de alabilirsiniz. Kısa bir bilgilendirme ister misiniz?",
-      minTurns: 4,
+      goal: "İlacın kullanım sıklığı, yan etkisi ve kaç güne yeteceği öğrenilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1144,7 +1149,8 @@ export const deA2B03: Lesson[] = [
       partner: "panikleyen ama yardım etmeye çalışan bir takım arkadaşı",
       opening: "Oh nein, du bist hingefallen! Wo tut es weh?",
       openingTr: "Eyvah, düştün! Neren acıyor?",
-      minTurns: 4,
+      goal: "Ne olduğu, neresinin incindiği ve şu an nasıl hissettiğin anlatılmış; ne yapılacağı kararlaşmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1323,7 +1329,8 @@ export const deA2B03: Lesson[] = [
       partner: "formları hızlıca dolduran, işini bilen bir resepsiyon görevlisi",
       opening: "Guten Tag! Sind Sie gesetzlich oder privat versichert?",
       openingTr: "İyi günler! Kamu sigortalı mısınız yoksa özel mi?",
-      minTurns: 4,
+      goal: "Sigorta bilgilerin kaydedilmiş ve masrafı kimin karşılayacağı öğrenilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1512,7 +1519,8 @@ export const deA2B03: Lesson[] = [
       partner: "gece nöbetindeki yorgun ama sakin bir görevli",
       opening: "Zahnärztlicher Notdienst. Wie stark sind die Schmerzen?",
       openingTr: "Acil diş hattı. Ağrınız ne kadar şiddetli?",
-      minTurns: 4,
+      goal: "Ağrının şiddeti ve süresi anlatılmış, bu gece ne yapman gerektiği söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1697,7 +1705,8 @@ export const deA2B03: Lesson[] = [
       partner: "her şeyi kafasına takan, açılmaya ihtiyacı olan bir iş arkadaşı",
       opening: "Ich schlafe seit Wochen schlecht. Kennst du das?",
       openingTr: "Haftalardır kötü uyuyorum. Sen de yaşadın mı böyle bir şey?",
-      minTurns: 4,
+      goal: "İş arkadaşının yaşadıkları dinlenmiş, sen de kendinden söz etmiş ve somut bir öneri sunmuş olursun.",
+      minTurns: 8,
     },
   },
   {
@@ -1889,7 +1898,8 @@ export const deA2B03: Lesson[] = [
       partner: "önleyici sağlığa çok inanan, sabırlı bir aile hekimi",
       opening: "Alles in Ordnung. Wann waren Sie das letzte Mal zur Vorsorge?",
       openingTr: "Her şey yolunda. En son ne zaman kontrole geldiniz?",
-      minTurns: 4,
+      goal: "Hangi kontrolü ne sıklıkta yaptıracağın netleşmiş ve bir alışkanlığın konuşulmuş olur.",
+      minTurns: 7,
     },
   },
 ];

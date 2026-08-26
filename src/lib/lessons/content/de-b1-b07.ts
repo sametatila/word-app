@@ -76,7 +76,8 @@ export const deB1B07: Lesson[] = [
       partner: "kendi görüşünü savunan, tartışmayı seven bir tanıdık",
       opening: "Hast du gehört? Autos sollen bald nicht mehr in die Innenstadt dürfen. Was hältst du davon?",
       openingTr: "Duydun mu? Yakında arabalar şehir merkezine giremeyecekmiş. Sen ne düşünüyorsun?",
-      minTurns: 5,
+      goal: "Görüşün gerekçesiyle söylenmiş, katıldığın ve katılmadığın noktalar ayrılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -123,7 +124,8 @@ export const deB1B07: Lesson[] = [
       partner: "kararsız, iki tarafı da duymak isteyen bir arkadaş",
       opening: "Wir überlegen, aufs Land zu ziehen. Sag mal ehrlich: Was spricht dafür und was dagegen?",
       openingTr: "Köye taşınmayı düşünüyoruz. Açık söyle: Neyi lehine, neyi aleyhine görüyorsun?",
-      minTurns: 5,
+      goal: "Artılar ve eksiler tartılmış ve hangisinin ağır bastığı söylenmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -170,7 +172,8 @@ export const deB1B07: Lesson[] = [
       partner: "önerisine bağlı ama makul bir meslektaş",
       opening: "Ich schlage vor, wir verschieben das Projekt um drei Monate. Wie siehst du das?",
       openingTr: "Projeyi üç ay ertelemeyi öneriyorum. Sen nasıl görüyorsun?",
-      minTurns: 5,
+      goal: "Karşı tarafın anlaşıldığı gösterilmiş, çekince söylenmiş ve bir uzlaşma önerilmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -217,7 +220,8 @@ export const deB1B07: Lesson[] = [
       partner: "kesin kurallar isteyen, endişeli bir veli",
       opening: "Zwei Stunden am Tag — das ist doch viel zu viel für ein Kind. Sehen Sie das auch so?",
       openingTr: "Günde iki saat — bir çocuk için bu çok fazla. Siz de öyle görüyor musunuz?",
-      minTurns: 5,
+      goal: "Ne kadarının uygun olduğu, neye bağlı olduğu ve nasıl sınırlanacağı konuşulmuş olur.",
+      minTurns: 9,
     },
   },
 
@@ -264,7 +268,8 @@ export const deB1B07: Lesson[] = [
       partner: "duyduğuna hemen inanan, heyecanlı bir tanıdık",
       opening: "Hast du das gelesen? Ab nächstem Jahr soll das komplett verboten werden. Wusstest du das?",
       openingTr: "Bunu okudun mu? Gelecek yıldan itibaren tamamen yasaklanacakmış. Biliyor muydun?",
-      minTurns: 5,
+      goal: "İddianın kaynağı sorgulanmış ve doğrulanıp doğrulanmadığı netleşmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -311,7 +316,8 @@ export const deB1B07: Lesson[] = [
       partner: "finali çok beğenmiş, seni ikna etmeye çalışan bir arkadaş",
       opening: "Also ich fand das Finale großartig. Aber du hast so komisch geguckt — was hat dir nicht gefallen?",
       openingTr: "Bence final harikaydı. Ama sen tuhaf bakıyordun — neyi beğenmedin?",
-      minTurns: 5,
+      goal: "Finale dair beğendiğin ve beğenmediğin söylenmiş, nasıl bir son beklediğin anlatılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -358,7 +364,8 @@ export const deB1B07: Lesson[] = [
       partner: "kitabı yarıda bırakmış, ikna edilmek isteyen bir kulüp üyesi",
       opening: "Ich bin auf Seite achtzig hängen geblieben. Lohnt es sich wirklich, weiterzulesen?",
       openingTr: "Seksen sayfada takıldım. Devam etmeye gerçekten değer mi?",
-      minTurns: 5,
+      goal: "Kitabın etkileyen ve ağır gelen yerleri anlatılmış; kime önerileceği söylenmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -405,7 +412,8 @@ export const deB1B07: Lesson[] = [
       partner: "kendi müziğini savunan, şakacı bir arkadaş",
       opening: "Wie kannst du das hören? Das ist doch immer derselbe Rhythmus. Was findest du daran gut?",
       openingTr: "Bunu nasıl dinliyorsun? Hep aynı ritim. Nesini beğeniyorsun?",
-      minTurns: 5,
+      goal: "Zevkler karşılaştırılmış ve tartışma kibarca kapanmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -452,7 +460,8 @@ export const deB1B07: Lesson[] = [
       partner: "sanattan pek anlamayan ama meraklı bir arkadaş",
       opening: "Und, wie war die Ausstellung? Ich verstehe von Kunst wenig — was ist dir geblieben?",
       openingTr: "Ee, sergi nasıldı? Ben sanattan pek anlamam — aklında ne kaldı?",
-      minTurns: 5,
+      goal: "Akılda kalan eser, sana çağrıştırdığı şey ve hissettirdiği anlatılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -499,7 +508,8 @@ export const deB1B07: Lesson[] = [
       partner: "karşı tarafı savunan, süreyi tutan bir münazara rakibi",
       opening: "Zwei Minuten für jeden. Ich beginne: Sonntags sollten die Läden geschlossen bleiben. Was sagst du dazu?",
       openingTr: "Her birimize iki dakika. Ben başlıyorum: Pazar günleri dükkânlar kapalı kalmalı. Sen ne diyorsun?",
-      minTurns: 5,
+      goal: "Görüşün söylenmiş, en az iki gerekçe sıralanmış ve konuşma bir özetle kapatılmış olur.",
+      minTurns: 9,
     },
   },
 ];

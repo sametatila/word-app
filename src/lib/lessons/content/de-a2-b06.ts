@@ -210,7 +210,8 @@ export const deA2B06: Lesson[] = [
       partner: "her iki ürünü de öven, satmayı bilen bir mağaza görevlisi",
       opening: "Die beiden sind sehr ähnlich. Welche gefällt Ihnen besser?",
       openingTr: "İkisi birbirine çok benziyor. Hangisini daha çok beğendiniz?",
-      minTurns: 4,
+      goal: "İki ürünün farkı ve fiyatı karşılaştırılmış, hangisini neden aldığın söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -399,7 +400,8 @@ export const deA2B06: Lesson[] = [
       partner: "her ürünün rakamlarını ezbere bilen bir satış danışmanı",
       opening: "Dieses Modell ist bei uns am beliebtesten. Suchen Sie etwas Bestimmtes?",
       openingTr: "Bu model bizde en çok satan. Belirli bir şey mi arıyorsunuz?",
-      minTurns: 4,
+      goal: "En ucuz ve en popüler seçenek öğrenilmiş, senin tercihin söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -568,7 +570,8 @@ export const deA2B06: Lesson[] = [
       partner: "acele ettirmeyen, dürüst tavsiye veren bir mağaza görevlisi",
       opening: "Beide stehen Ihnen gut. Welche ist bequemer?",
       openingTr: "İkisi de size yakıştı. Hangisi daha rahat?",
-      minTurns: 4,
+      goal: "İki parça kumaşı ve rahatlığıyla kıyaslanmış ve karar gerekçesiyle verilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -751,7 +754,8 @@ export const deA2B06: Lesson[] = [
       partner: "raftaki her rengi bilen, yardımsever bir mağaza görevlisi",
       opening: "Willkommen! Suchen Sie etwas für einen besonderen Anlass?",
       openingTr: "Hoş geldiniz! Özel bir gün için mi bakıyorsunuz?",
-      minTurns: 4,
+      goal: "Aradığın şey rengiyle tarif edilmiş ve gösterilenlerden biri beğenilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -935,7 +939,8 @@ export const deA2B06: Lesson[] = [
       partner: "sohbeti seven ama makası hızlı olan bir kuaför",
       opening: "Was darf es heute sein? Nur schneiden oder auch färben?",
       openingTr: "Bugün ne yapalım? Sadece kesim mi, boya da var mı?",
-      minTurns: 4,
+      goal: "İstenen işlem, uzunluk ölçüsü ve sınırın söylenmiş; kesim üzerinde anlaşılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1120,7 +1125,8 @@ export const deA2B06: Lesson[] = [
       partner: "kuralları savunan ama çözüm arayan bir müşteri hizmetleri görevlisi",
       opening: "Guten Tag! Worum geht es bei Ihrer Reklamation?",
       openingTr: "İyi günler! Şikâyetiniz ne hakkında?",
-      minTurns: 4,
+      goal: "Alım tarihi, sorun ve fiş konuşulmuş; ne istediğin net biçimde söylenmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1292,7 +1298,8 @@ export const deA2B06: Lesson[] = [
       partner: "pahalı tarifeyi öneren, hızlı konuşan bir bayi danışmanı",
       opening: "Wir haben zwei Tarife im Angebot. Wie viel telefonieren Sie im Monat?",
       openingTr: "İki tarifemiz var. Ayda ne kadar konuşuyorsunuz?",
-      minTurns: 4,
+      goal: "İki tarife karşılaştırılmış, biri seçilmiş ve eski sözleşmenin iptali konuşulmuş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1471,7 +1478,8 @@ export const deA2B06: Lesson[] = [
       partner: "her adımı sırayla anlatan, resmi ama nazik bir banka danışmanı",
       opening: "Guten Tag! Sind Sie schon Kundin bei uns?",
       openingTr: "İyi günler! Bizde hesabınız var mıydı?",
-      minTurns: 4,
+      goal: "Gereken belgeler, ücret ve kartın ne zaman geleceği öğrenilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1646,7 +1654,8 @@ export const deA2B06: Lesson[] = [
       partner: "seçenekleri sırayla sayan, aceleci bir postane görevlisi",
       opening: "Der Nächste, bitte! Was möchten Sie verschicken?",
       openingTr: "Sıradaki, buyurun! Ne göndermek istiyorsunuz?",
-      minTurns: 4,
+      goal: "En uygun gönderim biçimi seçilmiş, taahhüt konuşulmuş ve pul ile zarf alınmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1830,7 +1839,8 @@ export const deA2B06: Lesson[] = [
       partner: "fiyatını kolay düşürmeyen, esprili bir tezgâh sahibi",
       opening: "Das Fahrrad ist ein Schnäppchen! Möchten Sie es ausprobieren?",
       openingTr: "Bu bisiklet tam kelepir! Denemek ister misiniz?",
-      minTurns: 4,
+      goal: "Fiyat sorulmuş, pazarlık edilmiş ve son fiyat üzerinde anlaşılmış olur.",
+      minTurns: 7,
     },
   },
 ];

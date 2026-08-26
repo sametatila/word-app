@@ -70,7 +70,8 @@ export const deB1B03: Lesson[] = [
       partner: "meraklı ve destekleyici bir arkadaş",
       opening: "Hey! Du hast gesagt, du hast große Pläne für nächstes Jahr. Erzähl mal — was hast du vor, und warum?",
       openingTr: "Hey! Gelecek yıl için büyük planların varmış. Anlat — ne yapacaksın ve neden?",
-      minTurns: 5,
+      goal: "Her planın amacı söylenmiş ve arkadaşın hangisini en çok merak ettiğini belirtmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -117,7 +118,8 @@ export const deB1B03: Lesson[] = [
       partner: "soruları net, cesaretlendirici bir kurs danışmanı",
       opening: "Guten Tag! Schön, dass Sie da sind. Sagen Sie mir zuerst: Wozu lernen Sie eigentlich Deutsch?",
       openingTr: "İyi günler! Geldiğinize sevindim. Önce şunu söyleyin: Almancayı ne için öğreniyorsunuz?",
-      minTurns: 5,
+      goal: "Almanca öğrenme ve sınava girme amacın anlatılmış, danışman planını değerlendirmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -163,7 +165,8 @@ export const deB1B03: Lesson[] = [
       partner: "endişeli ama iyi niyetli bir arkadaş",
       opening: "Was? Du willst wirklich kündigen? Das Gehalt ist doch super. Warum denn?",
       openingTr: "Ne? Gerçekten istifa mı edeceksin? Maaş süper ama. Neden ki?",
-      minTurns: 5,
+      goal: "İstifa kararın zıtlık cümleleriyle savunulmuş ve arkadaşın kararını anlamış olur.",
+      minTurns: 8,
     },
   },
 
@@ -210,7 +213,8 @@ export const deB1B03: Lesson[] = [
       partner: "ilgiyle dinleyen, soru soran bir tanıdık",
       opening: "Du bist also in Izmir aufgewachsen? Wie war deine Kindheit dort? Erzähl mal von damals.",
       openingTr: "Demek İzmir'de büyüdün? Orada çocukluğun nasıldı? O zamanları anlatsana.",
-      minTurns: 5,
+      goal: "Tek seferlik anıların ve tekrarlanan alışkanlıkların ayrı ayrı anlatılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -256,7 +260,8 @@ export const deB1B03: Lesson[] = [
       partner: "kendi hikâyesini de paylaşan, meraklı bir kurs arkadaşı",
       opening: "Ich bin vor zwei Jahren gekommen. Und du — wie war das bei dir? Was hast du zuerst gemacht, nachdem du angekommen warst?",
       openingTr: "Ben iki yıl önce geldim. Peki sen — sende nasıldı? Vardıktan sonra ilk ne yaptın?",
-      minTurns: 5,
+      goal: "Buraya geliş hikâyen olay olay, doğru sırayla anlatılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -303,7 +308,8 @@ export const deB1B03: Lesson[] = [
       partner: "plan yapmayı seven, pratik bir arkadaş",
       opening: "Also, Kino um acht. Was machen wir vorher — essen wir noch etwas, bevor der Film anfängt?",
       openingTr: "Peki, sinema sekizde. Öncesinde ne yapıyoruz — film başlamadan önce bir şeyler yiyelim mi?",
-      minTurns: 5,
+      goal: "Film öncesi, film sırası ve sonrası için plan sıraya konmuş olur.",
+      minTurns: 8,
     },
   },
 
@@ -351,7 +357,8 @@ export const deB1B03: Lesson[] = [
       partner: "ciddi ama adil bir yönetici",
       opening: "Sie sind zwanzig Minuten zu spät. Was ist passiert?",
       openingTr: "Yirmi dakika geç kaldınız. Ne oldu?",
-      minTurns: 4,
+      goal: "Geç kalma sebebi, yine de yetiştirdiğin iş ve bundan sonraki önlemin söylenmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -397,7 +404,8 @@ export const deB1B03: Lesson[] = [
       partner: "yeni başlayan, biraz kaygılı bir öğrenci",
       opening: "Du sprichst schon so gut! Ich fange gerade erst an. Hast du Tipps für mich?",
       openingTr: "Sen çok iyi konuşuyorsun! Ben daha yeni başlıyorum. Bana tavsiyen var mı?",
-      minTurns: 5,
+      goal: "En az üç öğüt verilmiş ve karşındaki hangisini deneyeceğini söylemiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -445,7 +453,8 @@ export const deB1B03: Lesson[] = [
       partner: "kararsız, seçenek üreten bir arkadaş",
       opening: "Samstag: Wandern oder Museum? Oder beides? Ich kann mich nicht entscheiden — was meinst du?",
       openingTr: "Cumartesi: yürüyüş mü müze mi? Ya da ikisi de? Karar veremiyorum — sen ne dersin?",
-      minTurns: 5,
+      goal: "Hafta sonu için seçenekler tartılmış ve tek bir planda anlaşılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -492,7 +501,8 @@ export const deB1B03: Lesson[] = [
       partner: "ayrıntı isteyen, 'und dann?' diye soran bir arkadaş",
       opening: "Du siehst aus, als hättest du etwas erlebt. Erzähl von Anfang an — was ist passiert?",
       openingTr: "Bir şey yaşamış gibisin. Baştan anlat — ne oldu?",
-      minTurns: 5,
+      goal: "Olay baştan sona, sırasıyla anlatılmış ve nasıl bittiği söylenmiş olur.",
+      minTurns: 8,
     },
   },
 ];

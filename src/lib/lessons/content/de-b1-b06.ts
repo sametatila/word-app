@@ -73,7 +73,8 @@ export const deB1B06: Lesson[] = [
       partner: "planlarını ciddiye alan, soru soran bir arkadaş",
       opening: "Du hast gesagt, dieses Jahr wird anders. Was hast du dir denn vorgenommen?",
       openingTr: "Bu yılın farklı olacağını söylemiştin. Peki neye niyetlendin?",
-      minTurns: 5,
+      goal: "Neyi öğrenmeye niyetli olduğun, hangi alışkanlığı kuracağın ve neyi bırakacağın anlatılmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -120,7 +121,8 @@ export const deB1B06: Lesson[] = [
       partner: "somut sayılar isteyen bir kurs danışmanı",
       opening: "Bevor wir einen Kurs auswählen: Was genau möchten Sie in den nächsten sechs Monaten erreichen?",
       openingTr: "Kurs seçmeden önce: Önümüzdeki altı ayda tam olarak neyi başarmak istiyorsunuz?",
-      minTurns: 5,
+      goal: "Süre, hedef ve ara adımlar netleşmiş; ilerlemenin nasıl ölçüleceği kararlaşmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -167,7 +169,8 @@ export const deB1B06: Lesson[] = [
       partner: "iki kursu da iyi tanıyan, dürüst bir kurs sekreteri",
       opening: "Wir haben zwei Kurse, die für Sie infrage kommen. Wonach möchten Sie sich entscheiden?",
       openingTr: "Size uygun iki kursumuz var. Kararınızı neye göre vermek istersiniz?",
-      minTurns: 5,
+      goal: "İki kurs karşılaştırılmış ve biri gerekçesiyle seçilmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -214,7 +217,8 @@ export const deB1B06: Lesson[] = [
       partner: "sakinleştiren, somut tavsiye veren bir öğretmen",
       opening: "Sie wirken angespannt. Wovor haben Sie bei der Prüfung am meisten Respekt?",
       openingTr: "Gergin görünüyorsunuz. Sınavda en çok neyden çekiniyorsunuz?",
-      minTurns: 5,
+      goal: "Çekindiğin bölüm söylenmiş, olursa ne yapacağın konuşulmuş ve bir strateji üzerinde anlaşılmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -261,7 +265,8 @@ export const deB1B06: Lesson[] = [
       partner: "bütçeyi düşünen ama açık fikirli bir şef",
       opening: "Sie wollten über eine Weiterbildung sprechen. Wozu genau brauchen Sie die?",
       openingTr: "Mesleki eğitim hakkında konuşmak istemiştiniz. Tam olarak ne için gerekiyor?",
-      minTurns: 5,
+      goal: "Eğitimin amacı, şirkete faydası ve finansmanı konuşulmuş; şefin bir cevap vermiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -308,7 +313,8 @@ export const deB1B06: Lesson[] = [
       partner: "çok sayıda öğrenciyle konuşmuş, pratik bir öğrenci danışmanı",
       opening: "Setzen Sie sich. Sie interessieren sich für ein Studium bei uns — was möchten Sie zuerst klären?",
       openingTr: "Buyurun oturun. Bizde okumak istiyorsunuz — önce neyi netleştirelim?",
-      minTurns: 5,
+      goal: "Başvuru süresi, gereken belgeler ve sana uyan bölüm öğrenilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -355,7 +361,8 @@ export const deB1B06: Lesson[] = [
       partner: "ayrıntı soran, not alan bir insan kaynakları uzmanı",
       opening: "In Ihrem Lebenslauf steht ein Praktikum. Erzählen Sie doch kurz: Was machten Sie dort?",
       openingTr: "Özgeçmişinizde bir staj yazıyor. Kısaca anlatır mısınız: Orada ne yaptınız?",
-      minTurns: 5,
+      goal: "Stajın yeri, süresi, yaptığın işler ve sana kattıkları anlatılmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -402,7 +409,8 @@ export const deB1B06: Lesson[] = [
       partner: "kendi yöntemini savunan, meraklı bir kurs arkadaşı",
       opening: "Sag mal, wie lernst du eigentlich? Ich komme mit meiner Methode gerade nicht weiter.",
       openingTr: "Söylesene, sen nasıl çalışıyorsun? Benim yöntemim bir yere varmıyor.",
-      minTurns: 5,
+      goal: "İkinizin yöntemleri karşılaştırılmış ve birbirinizden bir şey denemeye karar verilmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -449,7 +457,8 @@ export const deB1B06: Lesson[] = [
       partner: "kendi hatalarını rahatça anlatan, rahatlatıcı bir arkadaş",
       opening: "Du sagst kaum etwas im Kurs, obwohl du viel kannst. Was hält dich zurück?",
       openingTr: "Kursta neredeyse hiç konuşmuyorsun, oysa çok şey biliyorsun. Seni tutan ne?",
-      minTurns: 5,
+      goal: "Çekincenin sebebi anlatılmış ve neye rağmen devam edeceğin söylenmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -496,7 +505,8 @@ export const deB1B06: Lesson[] = [
       partner: "deneyimli, doğrudan konuşan bir mentor",
       opening: "Du stehst also vor einer Entscheidung. Erzähl mir, welche Möglichkeiten du siehst — was würdest du am liebsten tun?",
       openingTr: "Demek bir karar aşamasındasın. Anlat bakalım, hangi seçenekleri görüyorsun — en çok ne yapmak isterdin?",
-      minTurns: 5,
+      goal: "Seçenekler anlatılmış, mentorun görüşü alınmış ve bir sonraki adım kararlaşmış olur.",
+      minTurns: 9,
     },
   },
 ];

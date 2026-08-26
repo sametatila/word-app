@@ -204,7 +204,8 @@ export const deA1B07: Lesson[] = [
       partner: "yeni evini görmek için sabırsızlanan bir arkadaş",
       opening: "Und, wie ist die neue Wohnung? Wie viele Zimmer hat sie?",
       openingTr: "Ee, yeni ev nasıl? Kaç odası var?",
-      minTurns: 4,
+      goal: "Evin kaç odalı ve nasıl bir yer olduğu anlatılmış; arkadaşın gelip görmeye söz vermiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -385,7 +386,8 @@ export const deA1B07: Lesson[] = [
       partner: "her şeyi beğenen, meraklı bir arkadaş",
       opening: "Wow, schön hier! Was ist denn das für ein Zimmer?",
       openingTr: "Vay, burası güzelmiş! Bu ne odası?",
-      minTurns: 4,
+      goal: "Bütün odalar gezilmiş ve arkadaşın evin planını anlamış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -567,7 +569,8 @@ export const deA1B07: Lesson[] = [
       partner: "kararsız ama eğlenceli bir arkadaş",
       opening: "Sag mal, wo stelle ich das Sofa hin? In die Ecke?",
       openingTr: "Söylesene, koltuğu nereye koyayım? Köşeye mi?",
-      minTurns: 4,
+      goal: "Her eşyanın nereye konacağı kararlaşmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -741,7 +744,8 @@ export const deA1B07: Lesson[] = [
       partner: "yıllardır o binada oturan, sıcakkanlı bir komşu",
       opening: "Guten Tag! Sie sind wohl die neuen Nachbarn, oder?",
       openingTr: "İyi günler! Siz yeni komşular olmalısınız, değil mi?",
-      minTurns: 4,
+      goal: "Karşılıklı tanışılmış ve komşunla ilk kısa sohbet bir vedayla kapanmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -925,7 +929,8 @@ export const deA1B07: Lesson[] = [
       partner: "kuralları önemseyen ama yardımsever bir bina yöneticisi",
       opening: "Willkommen im Haus! Kennen Sie schon die Hausordnung?",
       openingTr: "Binamıza hoş geldiniz! Apartman kurallarını biliyor musunuz?",
-      minTurns: 4,
+      goal: "Kuralların hepsi anlaşılmış ve senin tarafından tekrarlanarak onaylanmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1112,7 +1117,8 @@ export const deA1B07: Lesson[] = [
       partner: "işini bilen, doğrudan konuşan bir ev sahibi",
       opening: "Na, wie gefällt Ihnen die Wohnung?",
       openingTr: "Ee, daire nasıl, beğendiniz mi?",
-      minTurns: 4,
+      goal: "Kira, aidat ve toplam tutar netleşmiş; daireyi düşünüp düşünmeyeceğini söylemiş olursun.",
+      minTurns: 7,
     },
   },
   {
@@ -1294,7 +1300,8 @@ export const deA1B07: Lesson[] = [
       partner: "ev işlerinden pek hoşlanmayan bir ev arkadaşı",
       opening: "Also, wer räumt heute die Küche auf?",
       openingTr: "Peki, bugün mutfağı kim toplayacak?",
-      minTurns: 4,
+      goal: "Temizlik işleri paylaşılmış ve kimin ne zaman yapacağı kararlaşmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1487,7 +1494,8 @@ export const deA1B07: Lesson[] = [
       partner: "yardıma koşan ama biraz aceleci bir arkadaş",
       opening: "So, ich bin da! Was soll ich zuerst tragen?",
       openingTr: "İşte geldim! Önce neyi taşıyayım?",
-      minTurns: 4,
+      goal: "Hangi eşyanın nereye taşınacağı kararlaşmış ve ağır olanlar için yardım ayarlanmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1669,7 +1677,8 @@ export const deA1B07: Lesson[] = [
       partner: "çiçek yetiştirmeye meraklı bir komşu",
       opening: "Ihre Blumen sehen richtig schön aus! Gießen Sie die jeden Tag?",
       openingTr: "Çiçekleriniz gerçekten güzel görünüyor! Her gün mü suluyorsunuz?",
-      minTurns: 4,
+      goal: "Balkonundaki her şey anlatılmış ve komşunla bir kahve sözü verilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1853,7 +1862,8 @@ export const deA1B07: Lesson[] = [
       partner: "işi başından aşkın ama çözüm bulan bir apartman görevlisi",
       opening: "Hausmeister Berger, guten Tag. Was kann ich für Sie tun?",
       openingTr: "Apartman görevlisi Berger, iyi günler. Sizin için ne yapabilirim?",
-      minTurns: 4,
+      goal: "Arıza anlatılmış ve görevlinin ne zaman geleceği kararlaşmış olur.",
+      minTurns: 6,
     },
   },
 ];

@@ -196,7 +196,8 @@ export const deA1B06: Lesson[] = [
       partner: "acelesi olmayan, tarif vermeyi seven yaşlı bir adam",
       opening: "Sie sehen verloren aus. Kann ich Ihnen helfen?",
       openingTr: "Kaybolmuş gibisiniz. Yardım edebilir miyim?",
-      minTurns: 4,
+      goal: "Gara giden yol tarif edilmiş ve anlamadığın yer tekrar edilerek netleşmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -387,7 +388,8 @@ export const deA1B06: Lesson[] = [
       partner: "her gün aynı hattı kullanan, yardımsever bir yolcu",
       opening: "Warten Sie auch auf die Linie drei?",
       openingTr: "Siz de üç numaralı hattı mı bekliyorsunuz?",
-      minTurns: 4,
+      goal: "Hangi hattın gittiği ve kaç durak sonra ineceğin öğrenilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -567,7 +569,8 @@ export const deA1B06: Lesson[] = [
       partner: "hızlı konuşan ama kibar bir gişe görevlisi",
       opening: "Der Nächste, bitte! Wohin möchten Sie fahren?",
       openingTr: "Sıradaki, lütfen! Nereye gitmek istiyorsunuz?",
-      minTurns: 4,
+      goal: "Bilet alınmış, fiyatı söylenmiş ve peron numarası öğrenilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -747,7 +750,8 @@ export const deA1B06: Lesson[] = [
       partner: "gecikmelere alışmış, hafif alaycı bir yolcu",
       opening: "Schon wieder zehn Minuten später. Warten Sie auch auf den Zug nach Köln?",
       openingTr: "Yine on dakika gecikme. Siz de Köln trenini mi bekliyorsunuz?",
-      minTurns: 4,
+      goal: "Gecikmenin ne kadar olduğu öğrenilmiş ve bekleyip beklemeyeceğin kararlaşmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -933,7 +937,8 @@ export const deA1B06: Lesson[] = [
       partner: "sohbeti seven, şehri avucunun içi gibi bilen bir taksi şoförü",
       opening: "Guten Abend! Wohin darf ich Sie fahren?",
       openingTr: "İyi akşamlar! Sizi nereye götüreyim?",
-      minTurns: 4,
+      goal: "Varış yeri ve süre konuşulmuş, inerken ödeme yapılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1117,7 +1122,8 @@ export const deA1B06: Lesson[] = [
       partner: "haritayı kalemle işaretlemeyi seven bir resepsiyon görevlisi",
       opening: "Guten Morgen! Wohin möchten Sie heute gehen?",
       openingTr: "Günaydın! Bugün nereye gitmek istiyorsunuz?",
-      minTurns: 4,
+      goal: "Gitmek istediğin yerin ne kadar uzakta olduğu ve nasıl gidileceği netleşmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1310,7 +1316,8 @@ export const deA1B06: Lesson[] = [
       partner: "şehrini çok seven, hevesli bir turizm görevlisi",
       opening: "Willkommen in unserer Stadt! Wie lange bleiben Sie hier?",
       openingTr: "Şehrimize hoş geldiniz! Ne kadar kalacaksınız?",
-      minTurns: 4,
+      goal: "Yarın için bir gezi programı seçilmiş ve nereden başlayacağın kararlaşmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1494,7 +1501,8 @@ export const deA1B06: Lesson[] = [
       partner: "sakin sakin tarif eden, sabırlı bir dükkân sahibi",
       opening: "Sie sehen ratlos aus. Suchen Sie eine bestimmte Straße?",
       openingTr: "Şaşırmış görünüyorsunuz. Belli bir cadde mi arıyorsunuz?",
-      minTurns: 4,
+      goal: "Doğru yön tarif edilmiş ve tarifi tekrar ederek doğru anladığın onaylanmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1682,7 +1690,8 @@ export const deA1B06: Lesson[] = [
       partner: "bisikletleri kendi çocukları gibi seven bir dükkân sahibi",
       opening: "Hallo! Möchten Sie ein Fahrrad für heute leihen?",
       openingTr: "Merhaba! Bugünlük bir bisiklet mi kiralamak istiyorsunuz?",
-      minTurns: 4,
+      goal: "Bisikletin kaç saatliğine ve kaça kiralanacağı kararlaşmış, bisiklet yolu tarif edilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1865,7 +1874,8 @@ export const deA1B06: Lesson[] = [
       partner: "her soruya hazır cevabı olan, işini seven bir danışma görevlisi",
       opening: "Guten Tag! Brauchen Sie eine Auskunft?",
       openingTr: "İyi günler! Bilgi almak ister misiniz?",
-      minTurns: 4,
+      goal: "Trenin kalkış saati, peronu ve aktarma olup olmadığı öğrenilmiş olur.",
+      minTurns: 7,
     },
   },
 ];

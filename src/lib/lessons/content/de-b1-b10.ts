@@ -76,7 +76,8 @@ export const deB1B10: Lesson[] = [
       partner: "hayal kurmayı seven, sorular üreten bir arkadaş",
       opening: "Stell dir vor, du gewinnst morgen eine Million. Was würdest du als Erstes machen?",
       openingTr: "Düşün ki yarın bir milyon kazandın. İlk ne yapardın?",
-      minTurns: 5,
+      goal: "Zengin olsan ne yapacağın, nerede yaşayacağın ve neyi değiştirmeyeceğin söylenmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -123,7 +124,8 @@ export const deB1B10: Lesson[] = [
       partner: "kendi dileklerini de anlatan, samimi bir arkadaş",
       opening: "Wenn du drei Wünsche frei hättest — aber ehrlich, keine Millionen: Was wären deine drei?",
       openingTr: "Üç dilek hakkın olsa — ama dürüstçe, milyonlar olmadan: Üçü ne olurdu?",
-      minTurns: 5,
+      goal: "Üç dilek söylenmiş ve hangisinin hâlâ gerçekleşmediği anlatılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -170,7 +172,8 @@ export const deB1B10: Lesson[] = [
       partner: "yargılamayan, kendi pişmanlıklarını da anlatan bir arkadaş",
       opening: "Du hast neulich gesagt, du denkst noch oft an diese Sache. Was hättest du anders gemacht?",
       openingTr: "Geçen gün o meseleyi hâlâ sık düşündüğünü söylemiştin. Neyi farklı yapardın?",
-      minTurns: 5,
+      goal: "Karar anlatılmış, geriye bakınca ne yapman gerektiği söylenmiş ve bugün nasıl gördüğün belirtilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -217,7 +220,8 @@ export const deB1B10: Lesson[] = [
       partner: "sakinleştiren, sorularla düşündüren bir yakının",
       opening: "Du wirkst unruhig, seit die Entscheidung ansteht. Was ist die schlimmste Möglichkeit, an die du denkst?",
       openingTr: "Karar yaklaştığından beri huzursuz görünüyorsun. Aklındaki en kötü ihtimal ne?",
-      minTurns: 5,
+      goal: "Korkun adlandırılmış, en kötü ihtimalde ne yapacağın söylenmiş ve seni rahatlatan şey konuşulmuş olur.",
+      minTurns: 9,
     },
   },
 
@@ -264,7 +268,8 @@ export const deB1B10: Lesson[] = [
       partner: "sizi kaybetmiş olmaktan üzgün, konuşkan eski bir arkadaş",
       opening: "Ich glaub es nicht — wie lange ist das her? Erzähl, was ist bei dir alles passiert?",
       openingTr: "İnanamıyorum — ne kadar oldu? Anlat, sende neler oldu?",
-      minTurns: 5,
+      goal: "Aradan geçenler anlatılmış, kopuşun sebebi konuşulmuş ve yeniden görüşmek için söz verilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -311,7 +316,8 @@ export const deB1B10: Lesson[] = [
       partner: "şaşıran ama sıcak, düşünmek için zaman isteyen bir arkadaş",
       opening: "Du wolltest über etwas reden und guckst so ernst. Jetzt bin ich neugierig — was ist los?",
       openingTr: "Bir şey konuşmak istemiştin ve çok ciddi bakıyorsun. Şimdi merak ettim — ne oldu?",
-      minTurns: 5,
+      goal: "Duygun söylenmiş, bir teklif yapılmış ve cevabı ne olursa olsun ilişkinin süreceği belirtilmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -358,7 +364,8 @@ export const deB1B10: Lesson[] = [
       partner: "önce savunmaya geçen ama dinlemeye açılan bir yakının",
       opening: "Du bist seit Tagen komisch zu mir. Sagst du mir bitte, was eigentlich los ist?",
       openingTr: "Günlerdir bana karşı tuhafsın. Ne olduğunu söyler misin lütfen?",
-      minTurns: 5,
+      goal: "Ne olduğu ve ne hissettiğin suçlamadan anlatılmış; ne olmasını istediğin söylenmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -405,7 +412,8 @@ export const deB1B10: Lesson[] = [
       partner: "içtenlikle merak eden, aceleci olmayan bir tanıdık",
       opening: "Darf ich was Persönliches fragen? Wo fühlst du dich eigentlich zu Hause — hier oder dort?",
       openingTr: "Kişisel bir şey sorabilir miyim? Kendini asıl nerede evinde hissediyorsun — burada mı orada mı?",
-      minTurns: 5,
+      goal: "Gelişinin nasıl olduğu, neyi özlediğin ve şimdi nereye ait hissettiğin anlatılmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -452,7 +460,8 @@ export const deB1B10: Lesson[] = [
       partner: "gerçekçi sorular soran ama destekleyen bir dinleyici",
       opening: "Du hast mal von einem Plan erzählt, den du seit Jahren im Kopf hast. Was ist daraus geworden?",
       openingTr: "Yıllardır aklında olan bir plandan bahsetmiştin. Ondan ne oldu?",
-      minTurns: 5,
+      goal: "Hayalin, sebebi, ilk adımı ve seni tutan şey anlatılmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -499,7 +508,8 @@ export const deB1B10: Lesson[] = [
       partner: "seni baştan beri izlemiş, gurur duyan bir öğretmen",
       opening: "Wir sind am Ende von B1. Blicken Sie mal zurück: Was war für Sie der wichtigste Moment?",
       openingTr: "B1'in sonundayız. Biraz geriye bakın: Sizin için en önemli an neydi?",
-      minTurns: 5,
+      goal: "Yolun nasıl geçtiği, en zoru, gurur duyduğun şey ve sıradaki hedefin anlatılmış olur.",
+      minTurns: 9,
     },
   },
 ];

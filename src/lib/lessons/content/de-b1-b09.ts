@@ -75,7 +75,8 @@ export const deB1B09: Lesson[] = [
       partner: "kuralları iyi bilen, biraz titiz bir komşu",
       opening: "Sie sind neu hier, oder? Beim Müll machen am Anfang alle Fehler — was möchten Sie wissen?",
       openingTr: "Yeni taşındınız, değil mi? Çöp konusunda başta herkes hata yapar — ne öğrenmek istersiniz?",
-      minTurns: 5,
+      goal: "Hangi çöpün nereye gittiği ve depozitonun nasıl geri alındığı öğrenilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -122,7 +123,8 @@ export const deB1B09: Lesson[] = [
       partner: "tasarrufa mesafeli, rahatını seven bir ev arkadaşı",
       opening: "Die Stromrechnung ist echt hoch geworden. Aber ich will nicht im Dunkeln sitzen — was schlägst du vor?",
       openingTr: "Elektrik faturası cidden yükseldi. Ama karanlıkta oturmak da istemiyorum — ne öneriyorsun?",
-      minTurns: 5,
+      goal: "En az iki öneri amacıyla birlikte sunulmuş ve biri üzerinde anlaşılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -169,7 +171,8 @@ export const deB1B09: Lesson[] = [
       partner: "arabasına bağlı, pratik düşünen bir meslektaş",
       opening: "Du fährst jetzt jeden Tag mit dem Rad? Bei dem Wetter? Also ich bleibe beim Auto — überzeug mich mal.",
       openingTr: "Artık her gün bisikletle mi gidiyorsun? Bu havada? Ben arabada kalıyorum — hadi ikna et beni.",
-      minTurns: 5,
+      goal: "İki tarafın artı ve eksileri söylenmiş ve kendi tercihin gerekçesiyle savunulmuş olur.",
+      minTurns: 8,
     },
   },
 
@@ -216,7 +219,8 @@ export const deB1B09: Lesson[] = [
       partner: "fiyatı önemseyen, ikna olmaya açık bir arkadaş",
       opening: "Du kaufst jetzt nur noch im Unverpackt-Laden? Ist das nicht viel teurer? Erzähl mal.",
       openingTr: "Artık sadece ambalajsız dükkândan mı alıyorsun? Çok daha pahalı değil mi? Anlatsana.",
-      minTurns: 5,
+      goal: "Hangi ürünleri ve dükkânları tercih ettiğin gerekçesiyle anlatılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -263,7 +267,8 @@ export const deB1B09: Lesson[] = [
       partner: "hevesli ama hiçbir şey bilmeyen yeni bir katılımcı",
       opening: "Ich würde gern mitmachen. Wie läuft das hier eigentlich ab — muss man jede Woche kommen?",
       openingTr: "Katılmak isterim. Burada işler nasıl yürüyor — her hafta gelmek gerekiyor mu?",
-      minTurns: 5,
+      goal: "Çalışma günü, hasat paylaşımı ve sorumluluklar anlatılmış; yeni katılımcı kararını söylemiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -310,7 +315,8 @@ export const deB1B09: Lesson[] = [
       partner: "yılları karşılaştırmayı seven, uzun süredir burada yaşayan bir komşu",
       opening: "So einen Sommer hatten wir früher nie. Merken Sie das auch, oder bilde ich mir das ein?",
       openingTr: "Eskiden böyle bir yaz olmazdı. Siz de fark ediyor musunuz, yoksa bana mı öyle geliyor?",
-      minTurns: 5,
+      goal: "Eskisiyle bugün karşılaştırılmış ve senin fark ettiklerin anlatılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -357,7 +363,8 @@ export const deB1B09: Lesson[] = [
       partner: "sıcak ama gerçekçi bir gönüllü koordinatörü",
       opening: "Schön, dass Sie da sind. Sagen Sie mir zuerst: Warum möchten Sie sich bei uns engagieren?",
       openingTr: "Geldiğinize sevindim. Önce şunu söyleyin: Neden bizde gönüllü olmak istiyorsunuz?",
-      minTurns: 5,
+      goal: "Gönüllü olma sebebin, ayırabileceğin zaman ve yapabileceklerin anlatılmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -404,7 +411,8 @@ export const deB1B09: Lesson[] = [
       partner: "değişime kırgın, eski mahalleyi özleyen bir sakin",
       opening: "Sie hätten das Viertel vor zehn Jahren sehen sollen. Wissen Sie, was hier alles verschwunden ist?",
       openingTr: "Bu mahalleyi on yıl önce görmeliydiniz. Buradan nelerin kaybolduğunu biliyor musunuz?",
-      minTurns: 5,
+      goal: "Neyin yenilendiği, neyin kapandığı ve kiraların ne olduğu konuşulmuş olur.",
+      minTurns: 9,
     },
   },
 
@@ -451,7 +459,8 @@ export const deB1B09: Lesson[] = [
       partner: "kısa ve net cevap isteyen bir yerel gazeteci",
       opening: "Entschuldigen Sie, kurz für unsere Zeitung: Warum sind Sie heute hier?",
       openingTr: "Affedersiniz, gazetemiz için kısaca: Bugün neden buradasınız?",
-      minTurns: 5,
+      goal: "Neden orada olduğun ve talebin söylenmiş; ne değişmesini istediğin anlatılmış olur.",
+      minTurns: 8,
     },
   },
 
@@ -498,7 +507,8 @@ export const deB1B09: Lesson[] = [
       partner: "hayvanları çok iyi tanıyan, dürüst bir barınak görevlisi",
       opening: "Kommen Sie mit, ich zeige Ihnen die Tiere. Suchen Sie ein Tier für sich oder für die Familie?",
       openingTr: "Gelin, size hayvanları göstereyim. Kendiniz için mi yoksa aile için mi bir hayvan arıyorsunuz?",
-      minTurns: 5,
+      goal: "Hangi hayvanla ilgilenebileceğin, nasıl bir yuva gerektiği ve günlük sorumluluk konuşulmuş olur.",
+      minTurns: 9,
     },
   },
 ];

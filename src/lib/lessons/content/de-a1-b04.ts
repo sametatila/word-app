@@ -223,7 +223,8 @@ export const deA1B04: Lesson[] = [
       partner: "güler yüzlü, sohbeti seven bir iş arkadaşı",
       opening: "Sag mal, wann beginnt dein Tag? Stehst du früh auf?",
       openingTr: "Söylesene, günün kaçta başlıyor? Erken kalkıyor musun?",
-      minTurns: 4,
+      goal: "Gününün başlangıcı, iş saatleri ve akşamı anlatılmış; iş arkadaşın da kendi gününden bir şey söylemiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -420,7 +421,8 @@ export const deA1B04: Lesson[] = [
       partner: "acelesi olan ama kibar bir yolcu",
       opening: "Entschuldigung, wie spät ist es bitte?",
       openingTr: "Affedersiniz, saat kaç acaba?",
-      minTurns: 4,
+      goal: "Saat söylenmiş ve trenin kaçta geleceği öğrenilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -614,7 +616,8 @@ export const deA1B04: Lesson[] = [
       partner: "her şeyi son dakikaya bırakan bir arkadaş",
       opening: "Hallo! Stehst du morgen früh auf oder schläfst du lange?",
       openingTr: "Selam! Yarın erken mi kalkıyorsun, yoksa geç mi uyanacaksın?",
-      minTurns: 4,
+      goal: "Yarın kaçta kalkacağın ve alışverişe kaçta gideceğiniz kararlaşmış, arkadaşın gelip gelmeyeceğini söylemiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -801,7 +804,8 @@ export const deA1B04: Lesson[] = [
       partner: "yardımcı olmaya çalışan bir spor salonu görevlisi",
       opening: "Guten Tag! An welchen Tagen möchten Sie kommen?",
       openingTr: "İyi günler! Hangi günler gelmek istersiniz?",
-      minTurns: 4,
+      goal: "Hangi gün ve hangi saatte geleceğin kararlaştırılmış ve görevli bunu kaydetmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -983,7 +987,8 @@ export const deA1B04: Lesson[] = [
       partner: "meraklı ve cesaretlendiren bir dil öğretmeni",
       opening: "Schön, dass Sie da sind! Wann lernen Sie am liebsten Deutsch?",
       openingTr: "Geldiğinize sevindim! Almanca çalışmayı en çok ne zaman seviyorsunuz?",
-      minTurns: 4,
+      goal: "Bugün, yarın ve hafta sonu ne yapacağın söylenmiş; öğretmen çalışma planını onaylamış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1168,7 +1173,8 @@ export const deA1B04: Lesson[] = [
       partner: "sabahları çok erken kalkan bir ev arkadaşı",
       opening: "Du bist wieder spät dran! Was machst du morgens so lange?",
       openingTr: "Yine geç kaldın! Sabahları bu kadar uzun ne yapıyorsun?",
-      minTurns: 4,
+      goal: "Sabah sıran baştan sona anlatılmış ve geç çıkmanın sebebi bulunmuş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1350,7 +1356,8 @@ export const deA1B04: Lesson[] = [
       partner: "işe yeni başlamış, biraz çekingen bir iş arkadaşı",
       opening: "Entschuldige, wann fängt die Arbeit hier eigentlich an?",
       openingTr: "Pardon, burada iş aslında kaçta başlıyor?",
-      minTurns: 4,
+      goal: "Çalışma saatlerin ve mola düzenin anlatılmış; yeni iş arkadaşın kendi saatlerini söylemiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1541,7 +1548,8 @@ export const deA1B04: Lesson[] = [
       partner: "enerjik, seni evden çıkarmaya kararlı bir arkadaş",
       opening: "Endlich Feierabend! Kommst du mit oder bleibst du zu Hause?",
       openingTr: "Nihayet paydos! Geliyor musun, yoksa evde mi kalıyorsun?",
-      minTurns: 4,
+      goal: "Akşam ne yapacağınıza karar verilmiş ya da nazikçe vazgeçilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1727,7 +1735,8 @@ export const deA1B04: Lesson[] = [
       partner: "hafta sonu planı yapmayı seven bir arkadaş",
       opening: "Hast du schon Pläne für das Wochenende?",
       openingTr: "Hafta sonu için planın var mı?",
-      minTurns: 4,
+      goal: "Cumartesi ve pazar planların söylenmiş ve bir konuda birlikte hareket etmeye karar verilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1925,7 +1934,8 @@ export const deA1B04: Lesson[] = [
       partner: "ısrarcı olmayan ama bir an önce karar vermek isteyen bir arkadaş",
       opening: "Hallo! Hast du diese Woche mal Zeit für einen Kaffee?",
       openingTr: "Selam! Bu hafta bir kahve içmeye vaktin olur mu?",
-      minTurns: 4,
+      goal: "Buluşmanın günü ve saati kesinleşmiş, uymayan gün nazikçe elenmiş olur.",
+      minTurns: 6,
     },
   },
 ];

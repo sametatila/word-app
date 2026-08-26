@@ -204,7 +204,8 @@ export const deB1B02: Lesson[] = [
       partner: "biraz resmî ama yardımsever bir ev sahibi",
       opening: "Guten Tag! Sie interessieren sich für die Wohnung, richtig?",
       openingTr: "İyi günler! Daireyle ilgileniyorsunuz, değil mi?",
-      minTurns: 5,
+      goal: "Dairenin durumu ve kirası öğrenilmiş, bir gezme randevusu alınmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -387,7 +388,8 @@ export const deB1B02: Lesson[] = [
       partner: "birçok adayla görüşen, ölçüp biçen bir ev sahibi",
       opening: "Kommen Sie herein! Was möchten Sie über die Wohnung wissen?",
       openingTr: "Buyurun, girin! Daire hakkında ne öğrenmek istersiniz?",
-      minTurns: 5,
+      goal: "Giderler, depozito ve ne zaman taşınabileceğin öğrenilmiş olur.",
+      minTurns: 9,
     },
   },
   {
@@ -572,7 +574,8 @@ export const deB1B02: Lesson[] = [
       partner: "sözleşmeye hâkim, maddeleri tek tek açıklayan bir ev sahibi",
       opening: "Hier ist der Mietvertrag. Haben Sie Fragen zu einzelnen Punkten?",
       openingTr: "İşte kira sözleşmesi. Maddelerle ilgili sorunuz var mı?",
-      minTurns: 5,
+      goal: "Anlamadığın maddeler açıklanmış, depozito ve fesih süresi netleşmiş olur.",
+      minTurns: 9,
     },
   },
   {
@@ -747,7 +750,8 @@ export const deB1B02: Lesson[] = [
       partner: "önce savunmaya geçen ama sonra anlayan bir komşu",
       opening: "Ja bitte? Ist etwas passiert?",
       openingTr: "Buyurun? Bir şey mi oldu?",
-      minTurns: 5,
+      goal: "Rahatsızlık suçlamadan anlatılmış ve iki tarafın da kabul ettiği bir çözüm bulunmuş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -922,7 +926,8 @@ export const deB1B02: Lesson[] = [
       partner: "sıcak ama seçici bir ev arkadaşı",
       opening: "Schön, dass du da bist! Erzähl mal: Was ist dir beim Zusammenleben wichtig?",
       openingTr: "Geldiğine sevindim! Anlat bakalım: Birlikte yaşarken senin için ne önemli?",
-      minTurns: 5,
+      goal: "Senin için önemli olan söylenmiş, ev kuralları öğrenilmiş ve iş bölümünde uzlaşılmış olur.",
+      minTurns: 9,
     },
   },
   {
@@ -1103,7 +1108,8 @@ export const deB1B02: Lesson[] = [
       partner: "işi savsaklamaya meyilli ama ikna edilebilir bir ev sahibi",
       opening: "Hallo, hier Meier. Sie hatten angerufen — was ist denn los?",
       openingTr: "Alo, ben Meier. Aramışsınız — sorun nedir?",
-      minTurns: 5,
+      goal: "Arıza resmî dille bildirilmiş ve bir son tarih üzerinde anlaşılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1278,7 +1284,8 @@ export const deB1B02: Lesson[] = [
       partner: "rakamları savunan ama belge göstermeye açık bir ev sahibi",
       opening: "Sie haben die Abrechnung bekommen. Gibt es damit ein Problem?",
       openingTr: "Hesap dökümünü aldınız. Bir sorun mu var?",
-      minTurns: 5,
+      goal: "Hesabın nasıl çıktığı öğrenilmiş, itirazın iletilmiş ve nasıl devam edileceği söylenmiş olur.",
+      minTurns: 9,
     },
   },
   {
@@ -1459,7 +1466,8 @@ export const deB1B02: Lesson[] = [
       partner: "zevkine güvendiği için sana danışan bir arkadaş",
       opening: "Ich richte gerade neu ein. Welchen Stil magst du eigentlich?",
       openingTr: "Şu an evi yeniden döşüyorum. Sen aslında hangi tarzı seviyorsun?",
-      minTurns: 5,
+      goal: "Sevdiğin tarz anlatılmış, odalar tarif edilmiş ve arkadaşına somut bir öneri verilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1637,7 +1645,8 @@ export const deB1B02: Lesson[] = [
       partner: "işi organize etmeyi seven, sorumluluk alan bir arkadaş",
       opening: "So, ich bin da! Was machen wir zuerst?",
       openingTr: "İşte geldim! Önce ne yapıyoruz?",
-      minTurns: 5,
+      goal: "İşler zaman sırasına göre bölüşülmüş ve gün sonunda ne yapılacağı kararlaşmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1814,7 +1823,8 @@ export const deB1B02: Lesson[] = [
       partner: "bir yıl yurt dışına gideceği için odasını veren bir kiracı",
       opening: "Hallo! Du suchst also ein Zimmer auf Zeit — für wie lange denn?",
       openingTr: "Merhaba! Yani geçici bir oda arıyorsun — ne kadarlığına?",
-      minTurns: 5,
+      goal: "Kalış süresi, odanın durumu ve koşullar netleşmiş olur.",
+      minTurns: 8,
     },
   },
 ];

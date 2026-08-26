@@ -198,7 +198,8 @@ export const deA2B01: Lesson[] = [
       partner: "tatil hikâyelerini seven bir arkadaş",
       opening: "Hallo! Du warst doch im Urlaub. Wohin bist du gefahren?",
       openingTr: "Selam! Sen tatildeydin ya. Nereye gittin?",
-      minTurns: 4,
+      goal: "Tatilin nereye, nasıl ve neler yaparak geçtiği anlatılmış; arkadaşın da kendi tatilinden bir şey söylemiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -392,7 +393,8 @@ export const deA2B01: Lesson[] = [
       partner: "yemek konusunda meraklı, ayrıntı soran bir iş arkadaşı",
       opening: "Ich habe gestern richtig lecker gegessen. Und du, was hast du gegessen?",
       openingTr: "Dün gerçekten çok lezzetli bir şey yedim. Peki sen ne yedin?",
-      minTurns: 4,
+      goal: "Dün akşam ne yiyip içtiğin ve akşamın nasıl geçtiği anlatılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -604,7 +606,8 @@ export const deA2B01: Lesson[] = [
       partner: "işleri paylaşmayı önemseyen, biraz titiz bir ev arkadaşı",
       opening: "Ich habe schon angerufen und aufgeräumt. Was hast du gemacht?",
       openingTr: "Ben telefon ettim, ortalığı da topladım bile. Sen ne yaptın?",
-      minTurns: 4,
+      goal: "Gün içinde kimin neyi hallettiği karşılıklı anlatılmış ve kalan iş paylaşılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -790,7 +793,8 @@ export const deA2B01: Lesson[] = [
       partner: "kendi akşamını da anlatmak isteyen bir arkadaş",
       opening: "Gestern Abend war ich zu Hause. Was hast du gemacht?",
       openingTr: "Dün akşam evdeydim. Sen ne yaptın?",
-      minTurns: 4,
+      goal: "Dün akşam önce, sonra ve en sonunda ne olduğu sırayla anlatılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -988,7 +992,8 @@ export const deA2B01: Lesson[] = [
       partner: "kaşlarını kaldırmış ama dinlemeye açık bir patron",
       opening: "Sie kommen eine Stunde zu spät. Warum denn?",
       openingTr: "Bir saat geç kaldınız. Nedenmiş bakalım?",
-      minTurns: 4,
+      goal: "Geç kalmanın sebebi sırayla anlatılmış ve patronun durumu kabul etmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1166,7 +1171,8 @@ export const deA2B01: Lesson[] = [
       partner: "her fotoğrafta bir anı hatırlayan duygusal bir anne",
       opening: "Schau mal, dieses Foto! Wie alt warst du da?",
       openingTr: "Şuna baksana, bu fotoğraf! Burada kaç yaşındaydın?",
-      minTurns: 4,
+      goal: "Fotoğraftaki çocukluğun anlatılmış ve annenle ortak bir anıda buluşulmuş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1344,7 +1350,8 @@ export const deA2B01: Lesson[] = [
       partner: "eski günleri özleyen, anlatmaya doyamayan yaşlı bir komşu",
       opening: "Hier war früher alles ganz anders. Können Sie sich das vorstellen?",
       openingTr: "Burası eskiden bambaşkaydı. Gözünüzde canlandırabiliyor musunuz?",
-      minTurns: 4,
+      goal: "Mahallenin eskiden nasıl olduğu öğrenilmiş ve senin memleketinle karşılaştırılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1539,7 +1546,8 @@ export const deA2B01: Lesson[] = [
       partner: "hikâyenin devamını dört gözle bekleyen bir arkadaş",
       opening: "Du siehst so glücklich aus! Was hast du zum ersten Mal gemacht?",
       openingTr: "Çok mutlu görünüyorsun! İlk kez ne yaptın?",
-      minTurns: 4,
+      goal: "İlk deneyimin ne olduğu, o an ne hissettiğin ve nasıl sonuçlandığı anlatılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1724,7 +1732,8 @@ export const deA2B01: Lesson[] = [
       partner: "kendi haftasından da yakınmak isteyen bir arkadaş",
       opening: "Endlich Freitag! Wie war deine Woche?",
       openingTr: "Nihayet cuma! Haftan nasıl geçti?",
-      minTurns: 4,
+      goal: "Haftanın günleri anlatılmış ve haftanın nasıl geçtiği tek cümleyle değerlendirilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1919,7 +1928,8 @@ export const deA2B01: Lesson[] = [
       partner: "haberi duyunca bağıracak kadar coşkulu bir arkadaş",
       opening: "Hallo! Du klingst ja aufgeregt. Was ist los?",
       openingTr: "Alo! Sesin çok heyecanlı geliyor. Ne oldu?",
-      minTurns: 4,
+      goal: "Haber verilmiş, ayrıntıları sorulmuş ve birlikte kutlanmış olur.",
+      minTurns: 7,
     },
   },
 ];

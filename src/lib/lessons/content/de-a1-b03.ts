@@ -216,7 +216,8 @@ export const deA1B03: Lesson[] = [
       partner: "güler yüzlü bir garson",
       opening: "Guten Tag! Was möchten Sie bestellen?",
       openingTr: "İyi günler! Ne sipariş etmek istersiniz?",
-      minTurns: 4,
+      goal: "Sipariş verilmiş, masaya gelmiş ve hesap istenmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -425,7 +426,8 @@ export const deA1B03: Lesson[] = [
       partner: "sabahları neşeli, çok konuşan bir ev arkadaşı",
       opening: "Guten Morgen! Was isst du zum Frühstück?",
       openingTr: "Günaydın! Kahvaltıda ne yersin?",
-      minTurns: 4,
+      goal: "İkiniz de ne yiyip içeceğinizi söylemiş, sofrada eksik olan bir şey bulunmuş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -631,7 +633,8 @@ export const deA1B03: Lesson[] = [
       partner: "eli çabuk, şakacı bir büfeci",
       opening: "Hallo! Möchten Sie Wurst oder Pommes?",
       openingTr: "Merhaba! Sosis mi istersiniz, patates mi?",
-      minTurns: 4,
+      goal: "Sipariş verilmiş, fiyat söylenmiş ve burada mı yeneceği yoksa paket mi olacağı kararlaşmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -848,7 +851,8 @@ export const deA1B03: Lesson[] = [
       partner: "ne önereceğini iyi bilen, sakin bir garson",
       opening: "Guten Abend! Möchten Sie schon bestellen?",
       openingTr: "İyi akşamlar! Sipariş vermek ister misiniz?",
-      minTurns: 4,
+      goal: "Başlangıç ve ana yemek seçilmiş, sonunda ödeme istenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1057,7 +1061,8 @@ export const deA1B03: Lesson[] = [
       partner: "yemek konusunda çok meraklı bir iş arkadaşı",
       opening: "Ich esse gern Gemüse. Und was isst du gern?",
       openingTr: "Ben sebze yemeyi severim. Peki sen neyi severek yersin?",
-      minTurns: 4,
+      goal: "İkinizin de sevdiği yemekler konuşulmuş ve öğlen nereye gideceğinize karar verilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1265,7 +1270,8 @@ export const deA1B03: Lesson[] = [
       partner: "yardımsever ama acelesi olan bir market görevlisi",
       opening: "Guten Tag! Suchen Sie etwas?",
       openingTr: "İyi günler! Bir şey mi arıyorsunuz?",
-      minTurns: 4,
+      goal: "Aradığın ürünlerin yeri öğrenilmiş, bulunmayan bir şey için başka bir çözüm önerilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1452,7 +1458,8 @@ export const deA1B03: Lesson[] = [
       partner: "tezgâhıyla övünen, konuşkan bir manav",
       opening: "Die Tomaten sind heute frisch. Wie viel möchten Sie?",
       openingTr: "Domatesler bugün taze. Ne kadar istersiniz?",
-      minTurns: 4,
+      goal: "İstediğin ürünler ölçüsüyle tartılmış ve toplam tutar söylenmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1661,7 +1668,8 @@ export const deA1B03: Lesson[] = [
       partner: "mutfakta lafı çok olan, dağınık bir arkadaş",
       opening: "Ich habe Tomaten und Zwiebeln. Was kochen wir heute?",
       openingTr: "Domates ve soğan var. Bugün ne pişiriyoruz?",
-      minTurns: 4,
+      goal: "Kimin ne yapacağı paylaşılmış ve eksik malzeme için bir çözüm bulunmuş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1882,7 +1890,8 @@ export const deA1B03: Lesson[] = [
       partner: "yemeğini anlatmayı seven, sabırlı bir aşçı",
       opening: "Heute gibt es Suppe und Wurst. Was möchten Sie?",
       openingTr: "Bugün çorba ve sosis var. Ne istersiniz?",
-      minTurns: 4,
+      goal: "Yiyemediğin şey söylenmiş ve sana uygun bir seçenek bulunmuş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -2083,7 +2092,8 @@ export const deA1B03: Lesson[] = [
       partner: "misafirini doyurmadan bırakmayan, ısrarcı bir ev sahibi",
       opening: "Willkommen! Möchtest du zuerst eine Suppe?",
       openingTr: "Hoş geldin! Önce bir çorba ister misin?",
-      minTurns: 4,
+      goal: "İkramlar konuşulmuş, yemek övülmüş ve sofradan kalkarken teşekkür edilmiş olur.",
+      minTurns: 6,
     },
   },
 ];

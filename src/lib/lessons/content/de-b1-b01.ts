@@ -213,7 +213,8 @@ export const deB1B01: Lesson[] = [
       opening:
         "Guten Tag, schön, dass Sie da sind! Erzählen Sie mal: Warum bewerben Sie sich bei uns?",
       openingTr: "İyi günler, hoş geldiniz! Anlatın bakalım: Neden bize başvuruyorsunuz?",
-      minTurns: 5,
+      goal: "Neden başvurduğun, deneyimin ve güçlü yönlerin anlatılmış; görüşmeci sürecin nasıl devam edeceğini söylemiş olur.",
+      minTurns: 9,
     },
   },
   {
@@ -396,7 +397,8 @@ export const deB1B01: Lesson[] = [
       partner: "notlar alan, ayrıntı soran bir insan kaynakları uzmanı",
       opening: "Erzählen Sie uns bitte kurz von Ihrem Werdegang. Wo haben Sie angefangen?",
       openingTr: "Lütfen kariyer yolunuzdan kısaca bahsedin. Nerede başladınız?",
-      minTurns: 5,
+      goal: "Çalıştığın yerler, geçiş zamanların ve sorumlulukların sırayla anlatılmış olur.",
+      minTurns: 9,
     },
   },
   {
@@ -581,7 +583,8 @@ export const deB1B01: Lesson[] = [
       partner: "doğrudan soru soran ama önyargısız bir görüşmeci",
       opening: "Kommen wir zu einer klassischen Frage: Was sind Ihre Stärken und Schwächen?",
       openingTr: "Klasik bir soruya gelelim: Güçlü ve zayıf yönleriniz neler?",
-      minTurns: 5,
+      goal: "Güçlü yönün, zayıf yönün ve o zayıflık üzerinde ne yaptığın anlatılmış olur.",
+      minTurns: 9,
     },
   },
   {
@@ -763,7 +766,8 @@ export const deB1B01: Lesson[] = [
       partner: "gerekçe duymak isteyen, ikna olmaya açık bir bölüm yöneticisi",
       opening: "Warum bewerben Sie sich gerade bei uns? Was ist Ihre Motivation?",
       openingTr: "Neden tam da bize başvuruyorsunuz? Motivasyonunuz ne?",
-      minTurns: 5,
+      goal: "Başvurma amacın, hedefin ve seni bu işe çeken şey anlatılmış olur.",
+      minTurns: 9,
     },
   },
   {
@@ -944,7 +948,8 @@ export const deB1B01: Lesson[] = [
       partner: "sabırlı, her şeyi göstermeye hazır bir iş arkadaşı",
       opening: "Willkommen im Team! Haben Sie schon Fragen zum Ablauf?",
       openingTr: "Ekibe hoş geldiniz! İşleyişle ilgili sorunuz var mı?",
-      minTurns: 5,
+      goal: "Bilmediğin şeyler sorulmuş ve kime başvuracağın öğrenilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1122,7 +1127,8 @@ export const deB1B01: Lesson[] = [
       partner: "düzeni ayrıntılı anlatan bir takım lideri",
       opening: "Bei uns gibt es Gleitzeit. Wissen Sie schon, wie das funktioniert?",
       openingTr: "Bizde esnek mesai var. Nasıl işlediğini biliyor musunuz?",
-      minTurns: 5,
+      goal: "Esnek mesainin işleyişi ve fazla mesai öğrenilmiş, kendi tercihin söylenmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1296,7 +1302,8 @@ export const deB1B01: Lesson[] = [
       partner: "bütçesi belli ama esnekliği olan bir işveren",
       opening: "Sprechen wir über das Gehalt. Welche Vorstellung haben Sie?",
       openingTr: "Maaş konusunu konuşalım. Beklentiniz nedir?",
-      minTurns: 5,
+      goal: "Maaş beklentin söylenmiş, pazarlık alanı sorulmuş ve bir aralıkta anlaşılmış olur.",
+      minTurns: 9,
     },
   },
   {
@@ -1474,7 +1481,8 @@ export const deB1B01: Lesson[] = [
       partner: "moral vermeye çalışan yakın bir arkadaş",
       opening: "Und? Hast du schon eine Antwort auf deine Bewerbung bekommen?",
       openingTr: "Ee? Başvurundan cevap geldi mi?",
-      minTurns: 5,
+      goal: "Sürecin nasıl işlediği anlatılmış, ne hissettiğin söylenmiş ve bundan sonraki adımın belirtilmiş olur.",
+      minTurns: 9,
     },
   },
   {
@@ -1648,7 +1656,8 @@ export const deB1B01: Lesson[] = [
       partner: "gitmeni istemeyen ama anlayışlı bir yönetici",
       opening: "Sie wollten mit mir sprechen? Worum geht es denn?",
       openingTr: "Benimle konuşmak mı istiyordunuz? Konu nedir?",
-      minTurns: 5,
+      goal: "İstifa gerekçen açıklanmış, ayrılış tarihi kararlaşmış ve çalışma belgesi istenmiş olur.",
+      minTurns: 9,
     },
   },
   {
@@ -1830,7 +1839,8 @@ export const deB1B01: Lesson[] = [
       partner: "günde yüz kişiyle konuşan, enerjik bir stand görevlisi",
       opening: "Hallo! Interessieren Sie sich für unsere Firma?",
       openingTr: "Merhaba! Şirketimizle ilgileniyor musunuz?",
-      minTurns: 5,
+      goal: "Şirketin ne yaptığı ve eleman arayıp aramadığı öğrenilmiş, iletişim bilgisi paylaşılmış olur.",
+      minTurns: 8,
     },
   },
 ];

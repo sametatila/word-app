@@ -73,7 +73,8 @@ export const deB1B08: Lesson[] = [
       partner: "acele etmeyen, ayrıntı soran bir aile hekimi",
       opening: "Setzen Sie sich. Sie sagten am Telefon, es geht schon länger so — seit wann genau?",
       openingTr: "Buyurun oturun. Telefonda bir süredir böyle olduğunu söylediniz — tam olarak ne zamandan beri?",
-      minTurns: 5,
+      goal: "Şikâyetin süresi ve neyle bağlantılı olabileceği anlatılmış; doktor bir sonraki adımı söylemiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -120,7 +121,8 @@ export const deB1B08: Lesson[] = [
       partner: "telefonda hızlı konuşan, dolu bir randevu defteri olan sekreter",
       opening: "Praxis Dr. Ahrens, guten Tag. Haben Sie eine Überweisung von Ihrem Hausarzt?",
       openingTr: "Dr. Ahrens muayenehanesi, iyi günler. Aile hekiminizden sevkiniz var mı?",
-      minTurns: 5,
+      goal: "Randevu alınmış, bekleme süresi ve ne getirmen gerektiği öğrenilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -167,7 +169,8 @@ export const deB1B08: Lesson[] = [
       partner: "dikkatli, prospektüse bakan bir eczacı",
       opening: "Guten Tag. Bevor ich Ihnen das gebe: Nehmen Sie zurzeit andere Medikamente ein?",
       openingTr: "İyi günler. Bunu vermeden önce: Şu anda başka ilaç kullanıyor musunuz?",
-      minTurns: 5,
+      goal: "Kullandığın ilaçlar söylenmiş, etkileşim sorulmuş ve doz ile saat netleşmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -214,7 +217,8 @@ export const deB1B08: Lesson[] = [
       partner: "yargılamayan, somut öneri veren bir beslenme danışmanı",
       opening: "Erzählen Sie mir einfach von einem normalen Tag: Was essen Sie morgens, mittags, abends?",
       openingTr: "Bana sıradan bir gününüzü anlatın: Sabah, öğle, akşam ne yiyorsunuz?",
-      minTurns: 5,
+      goal: "Beslenme düzenin anlatılmış, neyi değiştirmeye çalıştığın ve neyin zor geldiği söylenmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -261,7 +265,8 @@ export const deB1B08: Lesson[] = [
       partner: "pratik öneriler veren, hareket ettiren bir fizyoterapist",
       opening: "Zeigen Sie mir mal, wie Sie am Schreibtisch sitzen. Wann tut es am meisten weh?",
       openingTr: "Masada nasıl oturduğunuzu gösterin bakalım. En çok ne zaman ağrıyor?",
-      minTurns: 5,
+      goal: "Ağrının ne zaman başladığı ve oturuş düzenin anlatılmış; somut bir öneri alınmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -308,7 +313,8 @@ export const deB1B08: Lesson[] = [
       partner: "günlük düzeni adım adım soran bir uyku danışmanı",
       opening: "Beschreiben Sie mir bitte Ihren Abend: Was machen Sie in den zwei Stunden, bevor Sie schlafen gehen?",
       openingTr: "Lütfen akşamınızı anlatın: Yatmadan önceki iki saatte ne yapıyorsunuz?",
-      minTurns: 5,
+      goal: "Yatmadan önceki alışkanlıkların, gece olanlar ve sabah nasıl uyandığın anlatılmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -355,7 +361,8 @@ export const deB1B08: Lesson[] = [
       partner: "acele ettirmeyen, dinlemeyi bilen bir arkadaş",
       opening: "Du wirkst seit ein paar Wochen anders. Willst du erzählen, was gerade los ist?",
       openingTr: "Birkaç haftadır farklı görünüyorsun. Neler olduğunu anlatmak ister misin?",
-      minTurns: 5,
+      goal: "Ne ağır geldiği ve ne zaman başladığı anlatılmış; ne iyi geldiği konuşulmuş olur.",
+      minTurns: 8,
     },
   },
 
@@ -402,7 +409,8 @@ export const deB1B08: Lesson[] = [
       partner: "hızlı ve net soru soran bir acil servis hemşiresi",
       opening: "Bleiben Sie ruhig sitzen. Erzählen Sie kurz: Was ist passiert und wann war das?",
       openingTr: "Sakin bir şekilde oturun. Kısaca anlatın: Ne oldu ve ne zaman oldu?",
-      minTurns: 5,
+      goal: "Olan biten sırayla anlatılmış ve şu an nerenin ağrıdığı söylenmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -449,7 +457,8 @@ export const deB1B08: Lesson[] = [
       partner: "kısa ve net konuşan bir muayenehane çalışanı",
       opening: "Guten Tag. Haben Sie Ihren Impfpass dabei? Dann schauen wir gleich, was heute gemacht wird.",
       openingTr: "İyi günler. Aşı kartınız yanınızda mı? O zaman bugün ne yapılacağına bakalım.",
-      minTurns: 5,
+      goal: "Ne getirmen gerektiği, olası yan etkiler ve hatırlatma dozunun zamanı öğrenilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -496,7 +505,8 @@ export const deB1B08: Lesson[] = [
       partner: "yorgun ama konuşmak isteyen bir hasta yakının",
       opening: "Schön, dass du da bist. Setz dich — und erzähl mir was von draußen, ja?",
       openingTr: "İyi ki geldin. Otur — ve bana dışarıdan bir şeyler anlat, olur mu?",
-      minTurns: 5,
+      goal: "Hâli sorulmuş, yardım teklif edilmiş ve moral verilmiş olur.",
+      minTurns: 8,
     },
   },
 ];

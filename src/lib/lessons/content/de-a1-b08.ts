@@ -196,7 +196,8 @@ export const deA1B08: Lesson[] = [
       partner: "meraklı ve çok soru soran bir kurs arkadaşı",
       opening: "Endlich Pause! Was machst du eigentlich in deiner Freizeit?",
       openingTr: "Nihayet mola! Boş zamanında ne yaparsın aslında?",
-      minTurns: 4,
+      goal: "İkinizin de hobileri konuşulmuş ve ortak bir ilgi bulunmuş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -381,7 +382,8 @@ export const deA1B08: Lesson[] = [
       partner: "cesaretlendirmeyi seven, enerjik bir spor eğitmeni",
       opening: "Schön, dass Sie da sind! Können Sie schon schwimmen?",
       openingTr: "Geldiğiniz için sevindim! Yüzme biliyor musunuz?",
-      minTurns: 4,
+      goal: "Neleri yapabildiğin öğrenilmiş ve sana uygun bir kurs saati önerilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -566,7 +568,8 @@ export const deA1B08: Lesson[] = [
       partner: "üyelik satmaya çalışan ama samimi bir salon danışmanı",
       opening: "Willkommen! Machen Sie im Moment regelmäßig Sport?",
       openingTr: "Hoş geldiniz! Şu sıralar düzenli spor yapıyor musunuz?",
-      minTurns: 4,
+      goal: "Ne tür spor yaptığın konuşulmuş, salonun saatleri ve üyelik konusu netleşmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -752,7 +755,8 @@ export const deA1B08: Lesson[] = [
       partner: "her konsere giden, hevesli bir müzik hayranı",
       opening: "Das war ein tolles Konzert, oder? Hörst du oft solche Musik?",
       openingTr: "Harika bir konserdi, değil mi? Sık sık böyle müzik dinler misin?",
-      minTurns: 4,
+      goal: "Konser hakkında fikirler paylaşılmış ve müzik zevkleriniz karşılaştırılmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -946,7 +950,8 @@ export const deA1B08: Lesson[] = [
       partner: "her filme varım diyen, hevesli bir arkadaş",
       opening: "Hey, schön dass du anrufst! Was gibt es?",
       openingTr: "Hey, aradığına sevindim! Ne var ne yok?",
-      minTurns: 4,
+      goal: "Film, saat ve buluşma yeri kesinleşmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1130,7 +1135,8 @@ export const deA1B08: Lesson[] = [
       partner: "her sabah köpeğini gezdiren, sohbeti seven bir komşu",
       opening: "Guten Morgen! Schönes Wetter heute, nicht wahr?",
       openingTr: "Günaydın! Bugün hava çok güzel, değil mi?",
-      minTurns: 4,
+      goal: "Hava üzerine kısa bir sohbet edilmiş ve ikinizin de günlük planı öğrenilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1318,7 +1324,8 @@ export const deA1B08: Lesson[] = [
       partner: "her şeyi planlamayı seven, neşeli bir arkadaş",
       opening: "Da bist du ja! Sollen wir zum See gehen oder auf die Wiese?",
       openingTr: "İşte geldin! Göle mi gidelim, çayıra mı?",
-      minTurns: 4,
+      goal: "Nerede oturacağınız ve parkta ne yapacağınız kararlaşmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1499,7 +1506,8 @@ export const deA1B08: Lesson[] = [
       partner: "kuralları tek tek anlatan, dost canlısı bir havuz görevlisi",
       opening: "Hallo! Möchten Sie eine Karte für zwei Stunden oder für den ganzen Tag?",
       openingTr: "Merhaba! İki saatlik bilet mi istersiniz, tam günlük mü?",
-      minTurns: 4,
+      goal: "Giriş ücreti, kalma süresi ve kabinler öğrenilmiş, havlu meselesi çözülmüş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1678,7 +1686,8 @@ export const deA1B08: Lesson[] = [
       partner: "her akşam haberleri izlemek isteyen bir ev arkadaşı",
       opening: "Die Nachrichten fangen gleich an. Oder möchtest du etwas anderes sehen?",
       openingTr: "Haberler birazdan başlıyor. Yoksa başka bir şey mi izlemek istersin?",
-      minTurns: 4,
+      goal: "Ne izleyeceğinizde ve kaçta başlayacağınızda anlaşılmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1862,7 +1871,8 @@ export const deA1B08: Lesson[] = [
       partner: "kolay pes etmeyen, ısrarcı ama sevecen bir arkadaş",
       opening: "Hallo! Wir gehen heute Abend essen. Kommst du mit?",
       openingTr: "Merhaba! Bu akşam yemeğe gidiyoruz. Sen de gelir misin?",
-      minTurns: 4,
+      goal: "Davet nazikçe reddedilmiş, sebebi söylenmiş ve başka bir gün önerilmiş olur.",
+      minTurns: 6,
     },
   },
 ];

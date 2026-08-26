@@ -210,7 +210,8 @@ export const deA2B05: Lesson[] = [
       partner: "sakin ama her cevabı not alan bir insan kaynakları uzmanı",
       opening: "Schön, dass Sie da sind. Warum haben Sie sich bei uns beworben?",
       openingTr: "Geldiğiniz için teşekkürler. Neden bize başvurdunuz?",
-      minTurns: 4,
+      goal: "Ne iş istediğin, nereye başvurduğun ve ne zaman başlayabileceğin söylenmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -392,7 +393,8 @@ export const deA2B05: Lesson[] = [
       partner: "her cevabın arkasını merak eden, sıcak bir kurs öğretmeni",
       opening: "Sie sind neu im Kurs. Warum lernen Sie Deutsch?",
       openingTr: "Kursta yenisiniz. Neden Almanca öğreniyorsunuz?",
-      minTurns: 4,
+      goal: "Almanca öğrenme sebeplerin anlatılmış ve bu yüzden neler yaptığın söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -567,7 +569,8 @@ export const deA2B05: Lesson[] = [
       partner: "sabahları biraz gergin ama anlayışlı bir ekip arkadaşı",
       opening: "Guten Morgen! Die Schicht hat schon angefangen. Wo bist du denn?",
       openingTr: "Günaydın! Vardiya çoktan başladı. Neredesin?",
-      minTurns: 4,
+      goal: "Geç kalacağın haber verilmiş, sebebi iki farklı biçimde söylenmiş ve varış saatin bildirilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -750,7 +753,8 @@ export const deA2B05: Lesson[] = [
       partner: "yeni geleni hemen sahiplenen, konuşkan bir bölüm çalışanı",
       opening: "Sie sind die neue Kollegin, oder? Für welche Abteilung arbeiten Sie?",
       openingTr: "Yeni iş arkadaşımız sizsiniz, değil mi? Hangi bölümde çalışıyorsunuz?",
-      minTurns: 4,
+      goal: "Karşılıklı tanışılmış ve ikinizin de hangi işten sorumlu olduğu öğrenilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -935,7 +939,8 @@ export const deA2B05: Lesson[] = [
       partner: "herkesi konuşturmaya çalışan, hızlı düşünen bir ekip lideri",
       opening: "Der erste Punkt ist der neue Plan. Was denken Sie darüber?",
       openingTr: "İlk gündem maddesi yeni plan. Bu konuda ne düşünüyorsunuz?",
-      minTurns: 4,
+      goal: "Görüşün söylenmiş, bir öneri sunulmuş ve ekibin katılıp katılmadığı öğrenilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1112,7 +1117,8 @@ export const deA2B05: Lesson[] = [
       partner: "acelesi olan ama kibar bir müşteri",
       opening: "Guten Tag! Kann ich bitte Frau Krüger sprechen?",
       openingTr: "İyi günler! Bayan Krüger ile görüşebilir miyim?",
-      minTurns: 4,
+      goal: "Aranan kişinin yerinde olmadığı söylenmiş, mesaj alınmış ve dahili numara verilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1293,7 +1299,8 @@ export const deA2B05: Lesson[] = [
       partner: "yemekhane yemeklerinden bıkmış, dışarıyı öneren bir iş arkadaşı",
       opening: "Mahlzeit! Gehen wir heute in die Kantine oder lieber raus?",
       openingTr: "Afiyet olsun! Bugün yemekhaneye mi gidelim, yoksa dışarı mı?",
-      minTurns: 4,
+      goal: "Nerede yiyeceğiniz kararlaşmış ve ne alacağın söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1476,7 +1483,8 @@ export const deA2B05: Lesson[] = [
       partner: "takvimi ezbere bilen, pazarlığı seven bir yönetici",
       opening: "Sie wollten mich sprechen. Geht es um den Urlaub?",
       openingTr: "Benimle görüşmek istemişsiniz. Konu izin mi?",
-      minTurns: 4,
+      goal: "İzin tarihleri ve yerine kimin bakacağı konuşulmuş, onay alınmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1650,7 +1658,8 @@ export const deA2B05: Lesson[] = [
       partner: "süreci ezbere bilen, sakin bir insan kaynakları çalışanı",
       opening: "Personalbüro, guten Morgen. Was kann ich für Sie tun?",
       openingTr: "İnsan kaynakları, günaydın. Sizin için ne yapabilirim?",
-      minTurns: 4,
+      goal: "Hastalık bildirilmiş, kaç gün gelemeyeceğin tahmin edilmiş ve raporun ne zaman geleceği söylenmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1820,7 +1829,8 @@ export const deA2B05: Lesson[] = [
       partner: "doğrudan konuşan ama destekleyici bir kadın yönetici",
       opening: "Setzen Sie sich. Wie zufrieden sind Sie mit Ihrer Arbeit?",
       openingTr: "Buyurun oturun. İşinizden ne kadar memnunsunuz?",
-      minTurns: 4,
+      goal: "Memnuniyetin sebebiyle anlatılmış, gelişim alanı sorulmuş ve görüşme için teşekkür edilmiş olur.",
+      minTurns: 8,
     },
   },
 ];

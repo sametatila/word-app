@@ -219,7 +219,8 @@ export const deA1B05: Lesson[] = [
       partner: "işini seven, biraz konuşkan bir satıcı",
       opening: "Guten Tag! Suchen Sie etwas Bestimmtes?",
       openingTr: "İyi günler! Aradığınız belli bir şey var mı?",
-      minTurns: 4,
+      goal: "Aradığın parça bulunmuş, biri seçilmiş ve kasanın yeri öğrenilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -423,7 +424,8 @@ export const deA1B05: Lesson[] = [
       partner: "aceleci ama yardımcı olmaya çalışan bir satış görevlisi",
       opening: "Die Jacke ist gerade neu gekommen. Welche Größe haben Sie?",
       openingTr: "Ceket daha yeni geldi. Hangi bedeni giyiyorsunuz?",
-      minTurns: 4,
+      goal: "Beden bulunmuş, kabinde denenmiş ve üstüne olup olmadığı söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -610,7 +612,8 @@ export const deA1B05: Lesson[] = [
       partner: "renk konusundaki fikirlerini saklamayan bir butik sahibi",
       opening: "Dieses Hemd gibt es in vier Farben. Welche Farbe suchen Sie?",
       openingTr: "Bu gömlekten dört renk var. Hangi rengi arıyorsunuz?",
-      minTurns: 4,
+      goal: "İstediğin renk sorulmuş ve alıp almayacağın kararlaşmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -807,7 +810,8 @@ export const deA1B05: Lesson[] = [
       partner: "indirimleri ezbere bilen, ikna etmeyi seven bir satıcı",
       opening: "Diese Schuhe sind gerade im Angebot. Möchten Sie sie anprobieren?",
       openingTr: "Bu ayakkabılar şu an indirimde. Denemek ister misiniz?",
-      minTurns: 4,
+      goal: "Fiyat öğrenilmiş ve indirimde olan başka bir seçenek konuşulmuş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1003,7 +1007,8 @@ export const deA1B05: Lesson[] = [
       partner: "kararsız ama şakacı bir arkadaş",
       opening: "Ich kann mich nicht entscheiden. Wie findest du die schwarze Jacke?",
       openingTr: "Bir türlü karar veremiyorum. Siyah ceketi nasıl buluyorsun?",
-      minTurns: 4,
+      goal: "İki ceket karşılaştırılmış ve arkadaşın hangisini alacağına karar vermiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1202,7 +1207,8 @@ export const deA1B05: Lesson[] = [
       partner: "kurallara bağlı ama yardımcı olmaya çalışan bir kasa görevlisi",
       opening: "Guten Tag! Was kann ich für Sie tun?",
       openingTr: "İyi günler! Sizin için ne yapabilirim?",
-      minTurns: 4,
+      goal: "Değişimin yapılıp yapılamayacağı netleşmiş ve yerine ne alacağın kararlaşmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1403,7 +1409,8 @@ export const deA1B05: Lesson[] = [
       partner: "öneri yapmayı çok seven, güler yüzlü bir satıcı",
       opening: "Herzlich willkommen! Suchen Sie ein Geschenk für jemanden?",
       openingTr: "Hoş geldiniz! Birine hediye mi arıyorsunuz?",
-      minTurns: 4,
+      goal: "Hediye seçilmiş ve paket yapılması istenmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1600,7 +1607,8 @@ export const deA1B05: Lesson[] = [
       partner: "yüksek sesle konuşan, şakacı bir tezgâhtar",
       opening: "Alles frisch von heute Morgen! Was darf es sein?",
       openingTr: "Hepsi bu sabahtan taze! Ne vereyim?",
-      minTurns: 4,
+      goal: "İstediğin ürünler ölçüsüyle tartılmış ve ödenecek tutar söylenmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1798,7 +1806,8 @@ export const deA1B05: Lesson[] = [
       partner: "raflardan hiç ayrılmayan, sakin bir market çalışanı",
       opening: "Sie suchen bestimmt etwas. Kann ich Ihnen helfen?",
       openingTr: "Bir şey arıyorsunuz galiba. Yardımcı olabilir miyim?",
-      minTurns: 4,
+      goal: "Listendeki ürünler bulunmuş ya da yerine bir seçenek önerilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1994,7 +2003,8 @@ export const deA1B05: Lesson[] = [
       partner: "sakin ve özür dilemeye alışkın bir müşteri temsilcisi",
       opening: "Kundenservice, guten Tag! Wie kann ich Ihnen helfen?",
       openingTr: "Müşteri hizmetleri, iyi günler! Size nasıl yardımcı olabilirim?",
-      minTurns: 4,
+      goal: "Siparişinin nerede olduğu öğrenilmiş ve ne zaman geleceği söylenmiş olur.",
+      minTurns: 6,
     },
   },
 ];

@@ -202,7 +202,8 @@ export const deA1B09: Lesson[] = [
       partner: "esprili ve çok sabırlı bir ilk yardım eğitmeni",
       opening: "Willkommen im Kurs! Sagen Sie mal, wie heißt das hier auf Deutsch?",
       openingTr: "Kursa hoş geldiniz! Söyleyin bakalım, bunun Almancası ne?",
-      minTurns: 4,
+      goal: "Gösterilen bütün vücut bölümleri artikeliyle söylenmiş ve bilmediklerinin Almancası öğrenilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -384,7 +385,8 @@ export const deA1B09: Lesson[] = [
       partner: "aceleci ama dikkatle dinleyen bir doktor",
       opening: "Guten Tag! Was fehlt Ihnen denn?",
       openingTr: "İyi günler! Neyiniz var bakalım?",
-      minTurns: 4,
+      goal: "Ağrının yeri ve süresi anlatılmış; doktor ne yapacağını söylemiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -580,7 +582,8 @@ export const deA1B09: Lesson[] = [
       partner: "telefonda hızlı konuşan, dolu takvimli bir sekreter",
       opening: "Praxis Doktor Weber, guten Tag! Was kann ich für Sie tun?",
       openingTr: "Doktor Weber muayenehanesi, iyi günler! Size nasıl yardımcı olabilirim?",
-      minTurns: 4,
+      goal: "Randevunun günü ve saati kesinleşmiş, yanında ne getirmen gerektiği söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -775,7 +778,8 @@ export const deA1B09: Lesson[] = [
       partner: "inatçı, sürekli şikâyet eden ama sonunda ikna olan bir arkadaş",
       opening: "Mir geht es schlecht, aber ich muss heute arbeiten. Ist das ein Problem?",
       openingTr: "Kötüyüm ama bugün çalışmak zorundayım. Sorun olur mu?",
-      minTurns: 4,
+      goal: "Arkadaşın bugün işe gitmemeye ve doktora gitmeye ikna olmuş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -956,7 +960,8 @@ export const deA1B09: Lesson[] = [
       partner: "titiz, her şeyi tek tek açıklayan bir eczacı",
       opening: "Guten Tag! Haben Sie ein Rezept?",
       openingTr: "İyi günler! Reçeteniz var mı?",
-      minTurns: 4,
+      goal: "İlaç alınmış ve nasıl kullanılacağı tekrar edilerek doğru anlaşılmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1149,7 +1154,8 @@ export const deA1B09: Lesson[] = [
       partner: "anlayışlı ama soru üstüne soru soran bir patron",
       opening: "Guten Morgen! Sie klingen gar nicht gut. Was ist los?",
       openingTr: "Günaydın! Sesiniz hiç iyi gelmiyor. Ne oldu?",
-      minTurns: 4,
+      goal: "Patronun durumu öğrenmiş ve ne zaman döneceğin konusunda anlaşılmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1351,7 +1357,8 @@ export const deA1B09: Lesson[] = [
       partner: "kendine bakmayı hiç beceremeyen, biraz mızmız bir arkadaş",
       opening: "Ich bin so erkältet! Hast du einen Tipp für mich?",
       openingTr: "Fena üşütmüşüm! Bana bir tavsiyen var mı?",
-      minTurns: 4,
+      goal: "Arkadaşına en az üç öğüt verilmiş ve o ne yapacağını söylemiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1540,7 +1547,8 @@ export const deA1B09: Lesson[] = [
       partner: "sakin sesli, adım adım yönlendiren bir acil çağrı görevlisi",
       opening: "Notruf eins eins zwei, guten Tag. Wo sind Sie?",
       openingTr: "Acil çağrı yüz on iki, iyi günler. Neredesiniz?",
-      minTurns: 4,
+      goal: "Kazanın yeri ve durumu bildirilmiş, görevli ekibin yola çıktığını söylemiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1733,7 +1741,8 @@ export const deA1B09: Lesson[] = [
       partner: "biraz sert konuşan ama iyi niyetli bir doktor",
       opening: "Sie sind oft müde, sagen Sie. Was essen Sie jeden Tag?",
       openingTr: "Sık sık yorgun olduğunuzu söylüyorsunuz. Her gün ne yiyorsunuz?",
-      minTurns: 4,
+      goal: "Alışkanlıkların anlatılmış ve doktorun önerdiği bir değişikliği kabul etmiş olursun.",
+      minTurns: 6,
     },
   },
   {
@@ -1920,7 +1929,8 @@ export const deA1B09: Lesson[] = [
       partner: "neşeli, durmadan konuşan bir diş hekimi",
       opening: "So, machen Sie bitte den Mund auf. Wo tut es weh?",
       openingTr: "Evet, lütfen ağzınızı açın. Neresi ağrıyor?",
-      minTurns: 4,
+      goal: "Ağrıyan diş bulunmuş ve ne yapılacağı söylenmiş olur.",
+      minTurns: 6,
     },
   },
 ];

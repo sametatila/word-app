@@ -75,7 +75,8 @@ export const deB1B05: Lesson[] = [
       partner: "aceleci ama bilgili bir şantiye görevlisi",
       opening: "Sie wollen sicher wissen, was hier passiert. Was möchten Sie denn genau erfahren?",
       openingTr: "Burada ne olduğunu merak ediyorsunuzdur. Tam olarak neyi öğrenmek istiyorsunuz?",
-      minTurns: 5,
+      goal: "Ne inşa edildiği, ne zaman biteceği ve hangi yolun kapalı olduğu öğrenilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -122,7 +123,8 @@ export const deB1B05: Lesson[] = [
       partner: "meraklı ve destekleyici bir arkadaş",
       opening: "Und? Hast du endlich Antwort bekommen? Was ist mit deinem Antrag passiert?",
       openingTr: "Ee? Sonunda cevap geldi mi? Başvurunla ne oldu?",
-      minTurns: 5,
+      goal: "Başvuru süreci adım adım anlatılmış ve sonucun ne olduğu söylenmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -169,7 +171,8 @@ export const deB1B05: Lesson[] = [
       partner: "resmî konuşan, net ama yardımcı bir memur",
       opening: "Guten Tag. Sie haben einen Termin zur Verlängerung — worum geht es genau?",
       openingTr: "İyi günler. Uzatma için randevunuz var — tam olarak konu nedir?",
-      minTurns: 5,
+      goal: "Gereken belgeler öğrenilmiş, iznin bitiş tarihi bildirilmiş ve işlem süresi söylenmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -216,7 +219,8 @@ export const deB1B05: Lesson[] = [
       partner: "sakin, adım adım ilerleyen bir danışman",
       opening: "Setzen Sie sich. Sie möchten also Widerspruch einlegen — gegen welchen Bescheid genau?",
       openingTr: "Buyurun oturun. Demek itiraz etmek istiyorsunuz — tam olarak hangi karara karşı?",
-      minTurns: 5,
+      goal: "İtiraz edilecek karar, gerekçen ve ricanın ne olacağı netleşmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -263,7 +267,8 @@ export const deB1B05: Lesson[] = [
       partner: "hızlı konuşan, deneyimli bir kurs görevlisi",
       opening: "Willkommen! Sie möchten den Führerschein machen — waren Sie schon einmal bei einer Fahrschule?",
       openingTr: "Hoş geldiniz! Ehliyet almak istiyorsunuz — daha önce hiç sürücü kursuna gittiniz mi?",
-      minTurns: 5,
+      goal: "Sürecin adımları, gereken ders sayısı ve ne kadar süreceği öğrenilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -310,7 +315,8 @@ export const deB1B05: Lesson[] = [
       partner: "titiz, rakamlarla konuşan bir mali müşavir",
       opening: "Guten Tag. Bringen wir Ihre Steuererklärung hinter uns — was haben Sie denn schon vorbereitet?",
       openingTr: "İyi günler. Şu vergi beyanını halledelim — neleri hazırladınız?",
-      minTurns: 5,
+      goal: "Hangi masrafları gider gösterebileceğin, gereken belgeler ve iadenin ne zaman geleceği öğrenilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -357,7 +363,8 @@ export const deB1B05: Lesson[] = [
       partner: "soruları sırayla soran, sakin bir sigorta görevlisi",
       opening: "Versicherung Nordstern, guten Tag. Sie möchten einen Schaden melden — was ist genau passiert?",
       openingTr: "Nordstern Sigorta, iyi günler. Hasar bildirmek istiyorsunuz — tam olarak ne oldu?",
-      minTurns: 5,
+      goal: "Hasar sırayla bildirilmiş ve bundan sonra ne olacağı söylenmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -404,7 +411,8 @@ export const deB1B05: Lesson[] = [
       partner: "kurallara bağlı ama esnetmeye açık bir randevu görevlisi",
       opening: "Bürgeramt, guten Tag. Sie möchten Ihren Termin ändern? Um welchen Termin geht es?",
       openingTr: "Nüfus dairesi, iyi günler. Randevunuzu değiştirmek mi istiyorsunuz? Hangi randevu için?",
-      minTurns: 5,
+      goal: "Erteleme sebebi söylenmiş, yeni tarih alınmış ve onayın yazılı geleceği kararlaşmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -451,7 +459,8 @@ export const deB1B05: Lesson[] = [
       partner: "kısa ve net konuşan bir danışma görevlisi",
       opening: "Guten Tag. Sie möchten eine Vollmacht ausstellen — wer soll Sie denn vertreten?",
       openingTr: "İyi günler. Vekâletname çıkarmak istiyorsunuz — sizi kim temsil edecek?",
-      minTurns: 5,
+      goal: "Kimin neyi ne zamana kadar yapabileceği netleşmiş ve gereken belgeler öğrenilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -498,7 +507,8 @@ export const deB1B05: Lesson[] = [
       partner: "bilgili, ayrıntı veren bir vatandaşlık danışmanı",
       opening: "Schön, dass Sie da sind. Sie interessieren sich für die Einbürgerung — was möchten Sie zuerst wissen?",
       openingTr: "Geldiğinize sevindim. Vatandaşlıkla ilgileniyorsunuz — önce neyi öğrenmek istersiniz?",
-      minTurns: 5,
+      goal: "Aranan şartlar, sınavın zamanı ve gereken belgeler öğrenilmiş olur.",
+      minTurns: 9,
     },
   },
 ];

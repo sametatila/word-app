@@ -193,7 +193,8 @@ export const deA1B02: Lesson[] = [
       partner: "kibar ve gerçekten ilgilenen bir masa arkadaşı",
       opening: "Erzählen Sie mal von Ihrer Familie. Haben Sie Kinder?",
       openingTr: "Ailenizden biraz söz edin. Çocuklarınız var mı?",
-      minTurns: 4,
+      goal: "Masadaki kişi ailenin kimlerden oluştuğunu öğrenmiş, kendi ailesinden de bir şey anlatmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -381,7 +382,8 @@ export const deA1B02: Lesson[] = [
       partner: "sohbeti seven, kalabalık ailesi olan bir iş arkadaşı",
       opening: "Ich habe drei Schwestern. Und du, hast du Geschwister?",
       openingTr: "Benim üç kız kardeşim var. Peki senin kardeşin var mı?",
-      minTurns: 4,
+      goal: "İkiniz de kaç kardeşiniz olduğunu ve kimin nerede yaşadığını öğrenmiş olursunuz.",
+      minTurns: 6,
     },
   },
   {
@@ -576,7 +578,8 @@ export const deA1B02: Lesson[] = [
       partner: "ısrarcı ama sonunda anlayış gösteren bir arkadaş",
       opening: "Wir gehen heute Abend essen. Kommst du mit?",
       openingTr: "Bu akşam yemeğe gidiyoruz. Sen de gelir misin?",
-      minTurns: 4,
+      goal: "Davet nazikçe reddedilmiş, sebebi söylenmiş ve başka bir güne söz verilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -774,7 +777,8 @@ export const deA1B02: Lesson[] = [
       partner: "hayvanlarına düşkün, konuşkan bir park sakini",
       opening: "Mein Hund heißt Rocky. Hast du auch ein Haustier?",
       openingTr: "Benim köpeğimin adı Rocky. Senin de evcil hayvanın var mı?",
-      minTurns: 4,
+      goal: "İki hayvanın da adı, yaşı ve huyu konuşulmuş, parkta yeniden görüşme sözü verilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -953,7 +957,8 @@ export const deA1B02: Lesson[] = [
       partner: "her yüzü tek tek soran meraklı bir arkadaş",
       opening: "Schönes Foto! Wer ist das neben dir?",
       openingTr: "Güzel fotoğraf! Yanındaki kim?",
-      minTurns: 4,
+      goal: "Fotoğraftaki kişilerin hepsi tanıtılmış ve arkadaşın kimin kim olduğunu anlamış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1142,7 +1147,8 @@ export const deA1B02: Lesson[] = [
       partner: "geveze, pazarlığı seven bir stant satıcısı",
       opening: "Guten Tag! Wie viele Bücher nehmen Sie?",
       openingTr: "İyi günler! Kaç kitap alıyorsunuz?",
-      minTurns: 4,
+      goal: "Kaç kitap aldığın ve toplam fiyat konuşulmuş, alışveriş tamamlanmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1323,7 +1329,8 @@ export const deA1B02: Lesson[] = [
       partner: "anlatmaya bayılan, biraz abartan bir arkadaş",
       opening: "Ich habe einen neuen Freund, er ist sehr groß. Wie sieht dein bester Freund aus?",
       openingTr: "Yeni bir arkadaşım var, çok uzun boylu. Senin en yakın arkadaşın nasıl biri?",
-      minTurns: 4,
+      goal: "Kişinin boyu, saçı ve gözlüğü anlatılmış; onu kalabalıkta tanıyabilecek kadar tarif edilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1516,7 +1523,8 @@ export const deA1B02: Lesson[] = [
       partner: "dinlemeyi seven, soru üstüne soru soran yeni bir tanıdık",
       opening: "Du sprichst so oft von Murat. Wer ist das?",
       openingTr: "Murat'tan çok söz ediyorsun. Kim bu?",
-      minTurns: 4,
+      goal: "Arkadaşının nerede oturduğu, ne iş yaptığı ve ne sıklıkta buluştuğunuz anlatılmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1708,7 +1716,8 @@ export const deA1B02: Lesson[] = [
       partner: "aceleci ama iyi niyetli bir görevli",
       opening: "Sie brauchen das Formular A und dann Zimmer zwölf, klar?",
       openingTr: "A formu lazım, sonra on ikinci odaya gideceksiniz, tamam mı?",
-      minTurns: 4,
+      goal: "Anlaşılmayan yer tekrar edilmiş, yanlış anlaşılan bilgi düzeltilmiş ve ne yapman gerektiği netleşmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1890,7 +1899,8 @@ export const deA1B02: Lesson[] = [
       partner: "her şeyi listeleyen, planlamayı seven bir kuzen",
       opening: "Am Samstag feiern wir zusammen. Wer kommt alles?",
       openingTr: "Cumartesi birlikte kutluyoruz. Kimler geliyor?",
-      minTurns: 4,
+      goal: "Kimin geleceği, kimin ne getireceği ve buluşma saati kararlaştırılmış olur.",
+      minTurns: 7,
     },
   },
 ];

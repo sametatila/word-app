@@ -206,7 +206,8 @@ export const deA2B09: Lesson[] = [
       partner: "kesin cevap almadan telefonu kapatmayan bir arkadaş",
       opening: "Und, was machst du am Samstag? Hast du schon Pläne?",
       openingTr: "Ee, cumartesi ne yapıyorsun? Planın var mı?",
-      minTurns: 4,
+      goal: "Hafta sonunun neye bağlı olduğu anlatılmış, haber verme zamanı ve yedek plan kararlaşmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -388,7 +389,8 @@ export const deA2B09: Lesson[] = [
       partner: "her diziyi bir hafta sonunda bitiren bir iş arkadaşı",
       opening: "Sag mal, schaust du eigentlich auch diese neue Serie?",
       openingTr: "Söylesene, sen de bu yeni diziyi izliyor musun?",
-      minTurns: 4,
+      goal: "İzlediğiniz diziler değerlendirilmiş ve hangi sezonun daha iyi olduğunda anlaşılmış ya da ayrışılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -574,7 +576,8 @@ export const deA2B09: Lesson[] = [
       partner: "her duyduğuna hemen inanan, heyecanlı bir komşu",
       opening: "Es steht heute in allen Zeitungen! Haben Sie das schon gehört?",
       openingTr: "Bugün bütün gazetelerde var! Duydunuz mu?",
-      minTurns: 4,
+      goal: "Haber dinlenmiş, kaynağı sorulmuş ve sen de duyduğun bir haberi aktarmış olursun.",
+      minTurns: 7,
     },
   },
   {
@@ -762,7 +765,8 @@ export const deA2B09: Lesson[] = [
       partner: "telefonunu savunan ama haksız olduğunu bilen bir arkadaş",
       opening: "Sorry, ich schaue nur kurz. Störe ich dich damit?",
       openingTr: "Pardon, kısacık bakıyorum. Bu seni rahatsız mı ediyor?",
-      minTurns: 4,
+      goal: "Rahatsızlık kibarca söylenmiş, kendi alışkanlığın itiraf edilmiş ve ortak bir kural konmuş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -946,7 +950,8 @@ export const deA2B09: Lesson[] = [
       partner: "sürekli mesaj yazmayı unutan, mahcup bir arkadaş",
       opening: "Oh nein, ich wollte dir gestern schreiben! Bist du sauer?",
       openingTr: "Eyvah, dün sana yazacaktım! Bana kızdın mı?",
-      minTurns: 4,
+      goal: "Beklentin söylenmiş, açıklama dinlenmiş ve yeni bir söz alınmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1129,7 +1134,8 @@ export const deA2B09: Lesson[] = [
       partner: "teknolojiden hiç anlamayan, panik hâlinde bir arkadaş",
       opening: "Hilfe, alles ist weg! Was soll ich jetzt machen?",
       openingTr: "İmdat, her şey gitti! Şimdi ne yapayım?",
-      minTurns: 4,
+      goal: "Sorun öğrenilmiş, adım adım yönerge verilmiş ve çözülüp çözülmediği öğrenilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1313,7 +1319,8 @@ export const deA2B09: Lesson[] = [
       partner: "her fotoğrafa ayrı yorum yapan, hevesli bir arkadaş",
       opening: "Warst du wirklich dort? Zeig mal, wie war das Wetter?",
       openingTr: "Gerçekten orada mıydın? Göstersene, hava nasıldı?",
-      minTurns: 4,
+      goal: "En güzel ve en komik fotoğraf anlatılmış, albümü paylaşma teklifi yapılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1496,7 +1503,8 @@ export const deA2B09: Lesson[] = [
       partner: "podcast dinlemeyi hiç denememiş, meraklı bir arkadaş",
       opening: "Du hörst ja ständig etwas. Worum geht es denn diesmal?",
       openingTr: "Sürekli bir şey dinliyorsun. Bu seferki ne hakkında?",
-      minTurns: 4,
+      goal: "Podcastin konusu ve sunucusu değerlendirilmiş, karşılıklı öneri alışverişi yapılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1687,7 +1695,8 @@ export const deA2B09: Lesson[] = [
       partner: "teknikle arası pek iyi olmayan, resmî konuşan bir görevli",
       opening: "Guten Tag! Ich glaube, es gibt ein Problem. Können Sie mich sehen?",
       openingTr: "İyi günler! Sanırım bir sorun var. Beni görebiliyor musunuz?",
-      minTurns: 4,
+      goal: "Teknik sorun kibarca bildirilmiş, çözülmüş ve görüşme sürdürülmüş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1869,7 +1878,8 @@ export const deA2B09: Lesson[] = [
       partner: "böyle bir şeyi asla yapamayacağını söyleyen bir arkadaş",
       opening: "Einen ganzen Tag ohne Handy? Wie hast du das ausgehalten?",
       openingTr: "Bütün bir gün telefonsuz mu? Buna nasıl dayandın?",
-      minTurns: 4,
+      goal: "Gün sırayla anlatılmış, başta ve sonda ne hissettiğin söylenmiş ve öneri kararı verilmiş olur.",
+      minTurns: 8,
     },
   },
 ];

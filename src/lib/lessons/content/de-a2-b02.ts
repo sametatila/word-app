@@ -203,7 +203,8 @@ export const deA2B02: Lesson[] = [
       partner: "kendi hikâyesini de anlatmak isteyen bir kursiyer",
       opening: "Sag mal, wie bist du eigentlich nach Deutschland gekommen?",
       openingTr: "Söylesene, Almanya'ya aslında nasıl geldin?",
-      minTurns: 4,
+      goal: "Buraya geliş hikâyen sırayla anlatılmış ve karşındaki en zor kısmın ne olduğunu öğrenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -386,7 +387,8 @@ export const deA2B02: Lesson[] = [
       partner: "kendi çocukluk hayalini de anlatan bir arkadaş",
       opening: "Was wolltest du eigentlich werden, als du klein warst?",
       openingTr: "Küçükken aslında ne olmak istiyordun?",
-      minTurns: 4,
+      goal: "Çocukluk hayalin, yapamadığın şey ve onun yerine yapmak zorunda kaldığın anlatılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -560,7 +562,8 @@ export const deA2B02: Lesson[] = [
       partner: "okulu hiç sevmemiş, esprili bir arkadaş",
       opening: "Wie war deine Schulzeit? Wart ihr streng erzogen?",
       openingTr: "Okul yılların nasıldı? Size sıkı mı davranıldı?",
-      minTurns: 4,
+      goal: "Okulda neyin zorunlu, neyin yasak olduğu ve en sevdiğin ders anlatılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -737,7 +740,8 @@ export const deA2B02: Lesson[] = [
       partner: "kendisi de yakın zamanda taşınmış bir komşu",
       opening: "Ihr seid neu hier, oder? Wann seid ihr umgezogen?",
       openingTr: "Siz yenisiniz, değil mi? Ne zaman taşındınız?",
-      minTurns: 4,
+      goal: "Taşınmanın zamanı, hazırlığı ve başlangıcın nasıl geçtiği anlatılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -920,7 +924,8 @@ export const deA2B02: Lesson[] = [
       partner: "hikâye dinlemeyi seven, meraklı bir masa arkadaşı",
       opening: "Ihr kennt euch schon lange, oder? Wie habt ihr euch kennengelernt?",
       openingTr: "Uzun zamandır tanışıyorsunuz, değil mi? Nasıl tanıştınız?",
-      minTurns: 4,
+      goal: "Nerede ve nasıl tanıştığınız ile bugün ne sıklıkta görüştüğünüz anlatılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1105,7 +1110,8 @@ export const deA2B02: Lesson[] = [
       partner: "sorularını üst üste soran, sıcak bir tanıdık",
       opening: "Wie lange bist du schon in Deutschland?",
       openingTr: "Ne zamandır Almanya'dasın?",
-      minTurns: 4,
+      goal: "Ne zamandır burada olduğun ve hangi olayın ne zaman olduğu karışmadan anlatılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1288,7 +1294,8 @@ export const deA2B02: Lesson[] = [
       partner: "kendi değişimini de anlatan, anlayışlı bir tanıdık",
       opening: "Und, was hat sich für dich am meisten verändert?",
       openingTr: "Peki senin için en çok ne değişti?",
-      minTurns: 4,
+      goal: "Neyin değiştiği ve neye alıştığın, başlangıçla bugün karşılaştırılarak anlatılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1469,7 +1476,8 @@ export const deA2B02: Lesson[] = [
       partner: "kendi çocukluğunu özleyen, duygulu bir arkadaş",
       opening: "Wo warst du als Kind am liebsten?",
       openingTr: "Çocukken en çok nerede olmayı severdin?",
-      minTurns: 4,
+      goal: "Büyüklerinin yanının nasıl olduğu, orada ne yapıldığı ve neye izin verildiği anlatılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1647,7 +1655,8 @@ export const deA2B02: Lesson[] = [
       partner: "kendi hikâyesini de anlatmaya hazır, şakacı bir arkadaş",
       opening: "Erzähl mal, was war dir mal richtig peinlich?",
       openingTr: "Anlatsana, en çok neye utandın?",
-      minTurns: 4,
+      goal: "Başına gelen anlatılmış, çevrenin tepkisi söylenmiş ve işin iyi tarafı bulunmuş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1821,7 +1830,8 @@ export const deA2B02: Lesson[] = [
       partner: "seni dinleyen, teşvik eden bir tanıdık",
       opening: "Worauf bist du in deinem Leben besonders stolz?",
       openingTr: "Hayatında en çok neyle gurur duyuyorsun?",
-      minTurns: 4,
+      goal: "Neyi başardığın, ne kadar emek verdiğin ve pes etmediğin anlatılmış olur.",
+      minTurns: 8,
     },
   },
 ];

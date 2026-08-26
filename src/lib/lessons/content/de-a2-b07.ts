@@ -202,7 +202,8 @@ export const deA2B07: Lesson[] = [
       partner: "her yeri görmek isteyen, kararsız bir seyahat arkadaşı",
       opening: "Also, wohin fahren wir dieses Jahr? Ans Meer oder in die Berge?",
       openingTr: "Peki, bu yıl nereye gidiyoruz? Denize mi, dağlara mı?",
-      minTurns: 4,
+      goal: "Gidilecek yer, güzergâh ve orada yapılacaklar kararlaşmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -376,7 +377,8 @@ export const deA2B07: Lesson[] = [
       partner: "resmî konuşan, işini hızlı yapan bir otel görevlisi",
       opening: "Guten Abend! Haben Sie eine Reservierung?",
       openingTr: "İyi akşamlar! Rezervasyonunuz var mı?",
-      minTurns: 4,
+      goal: "Rezervasyon onaylanmış, kalış süresi netleşmiş ve kahvaltı ile anahtar konusu çözülmüş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -564,7 +566,8 @@ export const deA2B07: Lesson[] = [
       partner: "her şeyi iki kere kontrol eden bir yol arkadaşı",
       opening: "Bist du fertig? Hast du alles eingepackt?",
       openingTr: "Hazır mısın? Her şeyi koydun mu?",
-      minTurns: 4,
+      goal: "Bavuldakiler karşılıklı sayılmış ve unutulan bir şey bulunmuş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -744,7 +747,8 @@ export const deA2B07: Lesson[] = [
       partner: "acelesi olan ama yardımcı olan bir havayolu görevlisi",
       opening: "Guten Tag! Haben Sie Gepäck zum Aufgeben?",
       openingTr: "İyi günler! Vermek istediğiniz bagajınız var mı?",
-      minTurns: 4,
+      goal: "Bagaj durumu bildirilmiş, kapı numarası ve kapanış saati öğrenilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -919,7 +923,8 @@ export const deA2B07: Lesson[] = [
       partner: "hava durumunu sürekli takip eden bir yol arkadaşı",
       opening: "Hast du den Wetterbericht gesehen? Wie wird das Wetter morgen?",
       openingTr: "Hava tahminine baktın mı? Yarın hava nasıl olacak?",
-      minTurns: 4,
+      goal: "Yarının havası ve sıcaklığı konuşulmuş, buna göre bir plan önerilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1098,7 +1103,8 @@ export const deA2B07: Lesson[] = [
       partner: "her ihtimale hazırlıklı olmak isteyen bir yol arkadaşı",
       opening: "Was machen wir morgen, wenn das Wetter schlecht ist?",
       openingTr: "Yarın hava kötü olursa ne yapacağız?",
-      minTurns: 4,
+      goal: "Hava iyi ve kötü olursa ne yapılacağı kararlaşmış ve yanınıza ne alacağınız söylenmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1273,7 +1279,8 @@ export const deA2B07: Lesson[] = [
       partner: "kuralları net anlatan, dost canlısı bir kamp görevlisi",
       opening: "Grüß Sie! Möchten Sie hier zelten?",
       openingTr: "Merhaba! Burada kamp mı yapacaksınız?",
-      minTurns: 4,
+      goal: "Çadırın nereye kurulacağı, alanda neler olduğu ve neyin yasak olduğu öğrenilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1447,7 +1454,8 @@ export const deA2B07: Lesson[] = [
       partner: "şehrini çok seven, ayrıntı anlatmayı seven bir rehber",
       opening: "Hier stehen wir auf dem ältesten Platz der Stadt. Wissen Sie, was das früher war?",
       openingTr: "Şu an şehrin en eski meydanındayız. Burasının eskiden ne olduğunu biliyor musunuz?",
-      minTurns: 4,
+      goal: "Meydanın eskiden ne olduğu öğrenilmiş ve senin izlenimin söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1629,7 +1637,8 @@ export const deA2B07: Lesson[] = [
       partner: "yöresini iyi bilen, öneri yapmayı seven bir satıcı",
       opening: "Suchen Sie ein Geschenk für jemanden?",
       openingTr: "Birine hediye mi bakıyorsunuz?",
-      minTurns: 4,
+      goal: "Kime alınacağı konuşulmuş, yöresel bir şey seçilmiş ve neden uygun olduğu söylenmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1803,7 +1812,8 @@ export const deA2B07: Lesson[] = [
       partner: "yoğun bir günde çözüm bulmaya çalışan bir havalimanı görevlisi",
       opening: "Ihr Flug wurde leider gestrichen. Wie kann ich Ihnen helfen?",
       openingTr: "Uçuşunuz maalesef iptal edildi. Size nasıl yardımcı olabilirim?",
-      minTurns: 4,
+      goal: "Durum anlatılmış, kaçırılan aktarma bildirilmiş ve biletin değişip değişmeyeceği netleşmiş olur.",
+      minTurns: 8,
     },
   },
 ];

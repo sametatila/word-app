@@ -187,7 +187,8 @@ export const deA2B10: Lesson[] = [
       partner: "işini hızlı yapan, kısa cevaplar veren bir memur",
       opening: "Der Nächste, bitte! Was kann ich für Sie tun?",
       openingTr: "Sıradaki, lütfen! Size nasıl yardımcı olabilirim?",
-      minTurns: 4,
+      goal: "İstediğin işlem söylenmiş, gereken belgeler öğrenilmiş ve memurun soruları cevaplanmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -370,7 +371,8 @@ export const deA2B10: Lesson[] = [
       partner: "sabırla açıklayan, acelesi olmayan bir danışma görevlisi",
       opening: "Hier fehlen noch drei Felder. Kommen Sie damit zurecht?",
       openingTr: "Burada üç alan eksik. Halledebiliyor musunuz?",
-      minTurns: 4,
+      goal: "Anlaşılmayan alanlar sorulmuş, ne yazılacağı öğrenilmiş ve talimat tekrarlanarak teyit edilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -560,7 +562,8 @@ export const deA2B10: Lesson[] = [
       partner: "kalabalıktan bunalmış ama elinden geleni yapan bir görevli",
       opening: "Es tut mir leid, der Termin ist ausgefallen. Was möchten Sie jetzt machen?",
       openingTr: "Üzgünüm, randevu iptal oldu. Şimdi ne yapmak istersiniz?",
-      minTurns: 4,
+      goal: "Bekleme anlatılmış, memnuniyetsizlik kibarca bildirilmiş ve yeni bir randevu alınmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -740,7 +743,8 @@ export const deA2B10: Lesson[] = [
       partner: "kitapları çok seven, önerilerini de paylaşan bir kütüphaneci",
       opening: "Willkommen! Möchten Sie einen Ausweis beantragen?",
       openingTr: "Hoş geldiniz! Kart çıkartmak ister misiniz?",
-      minTurns: 4,
+      goal: "Kart ücreti, ödünç süresi ve uzatma imkânı öğrenilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -923,7 +927,8 @@ export const deA2B10: Lesson[] = [
       partner: "kurs programını ezbere bilen, yardımsever bir danışman",
       opening: "Wir haben zwei Kurse im Herbst. Welches Niveau haben Sie denn?",
       openingTr: "Sonbaharda iki kursumuz var. Sizin seviyeniz nedir?",
-      minTurns: 4,
+      goal: "Hangi kursa gideceğin ve seviyen söylenmiş, boş yer durumu öğrenilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1112,7 +1117,8 @@ export const deA2B10: Lesson[] = [
       partner: "her planı 'peki ya sonra' diye sorgulayan gerçekçi bir arkadaş",
       opening: "Und, was machst du nach dem Kurs?",
       openingTr: "Ee, kurstan sonra ne yapacaksın?",
-      minTurns: 4,
+      goal: "Planların, henüz karar vermediğin nokta ve en büyük dileğin anlatılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1306,7 +1312,8 @@ export const deA2B10: Lesson[] = [
       partner: "gerçekçi ama cesaretlendiren bir kariyer danışmanı",
       opening: "Erzählen Sie mal: Was möchten Sie beruflich machen?",
       openingTr: "Anlatın bakalım: mesleki olarak ne yapmak istiyorsunuz?",
-      minTurns: 4,
+      goal: "İstediğin iş gerekçesiyle anlatılmış, gerekenler öğrenilmiş ve planın gerçekçiliği konuşulmuş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1492,7 +1499,8 @@ export const deA2B10: Lesson[] = [
       partner: "her şeye şaşıran, daha yeni gelmiş bir tanıdık",
       opening: "Ich bin erst seit einer Woche hier. Was war für dich am Anfang schwer?",
       openingTr: "Buraya geleli daha bir hafta oldu. Senin için başlangıçta ne zordu?",
-      minTurns: 4,
+      goal: "Neyin farklı olduğu, neye alıştığın ve neyi sevdiğin anlatılmış olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1680,7 +1688,8 @@ export const deA2B10: Lesson[] = [
       partner: "kendi de gergin olan ama seni sakinleştirmeye çalışan bir kurs arkadaşı",
       opening: "Morgen ist die Prüfung. Wie fühlst du dich?",
       openingTr: "Yarın sınav var. Kendini nasıl hissediyorsun?",
-      minTurns: 4,
+      goal: "Heyecanın anlatılmış, ne yaptığın söylenmiş ve arkadaşına cesaret verilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1870,7 +1879,8 @@ export const deA2B10: Lesson[] = [
       partner: "seninle gurur duyan, sorular sorarak konuşturan Almanca öğretmenin",
       opening: "Wir sind am Ende des Kurses. Was hat sich für Sie verändert?",
       openingTr: "Kursun sonuna geldik. Sizin için ne değişti?",
-      minTurns: 4,
+      goal: "Başta yapamadıkların, şimdi yapabildiklerin ve bundan sonraki planın anlatılmış olur.",
+      minTurns: 8,
     },
   },
 ];

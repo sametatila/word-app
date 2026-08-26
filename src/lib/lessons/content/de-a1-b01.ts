@@ -215,7 +215,8 @@ export const deA1B01: Lesson[] = [
       partner: "meraklı ama kibar bir komşu",
       opening: "Hallo! Sie sind neu hier, oder? Wie heißen Sie?",
       openingTr: "Merhaba! Buraya yeni taşındınız, değil mi? Adınız ne?",
-      minTurns: 4,
+      goal: "Komşun adını, nereli olduğunu ve hangi katta oturduğunu öğrenmiş; ikiniz de tanıştığınıza memnun olduğunuzu söylemiş olursunuz.",
+      minTurns: 7,
     },
   },
   {
@@ -421,7 +422,8 @@ export const deA1B01: Lesson[] = [
       partner: "neşeli ve konuşkan bir iş arkadaşı",
       opening: "Guten Morgen! Wie geht es dir heute?",
       openingTr: "Günaydın! Bugün nasılsın?",
-      minTurns: 4,
+      goal: "İkiniz de birbirinin hâlini sormuş ve cevaplamış, günün nasıl geçeceğine dair kısa bir söz alınmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -627,7 +629,8 @@ export const deA1B01: Lesson[] = [
       partner: "ciddi ama sıcak davranan bir patron",
       opening: "Guten Tag! Sind Sie neu hier im Team?",
       openingTr: "İyi günler! Ekibe yeni misiniz?",
-      minTurns: 4,
+      goal: "Patronun adını ve nerede oturduğunu öğrenmiş, sana ilk işini söylemiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -829,7 +832,8 @@ export const deA1B01: Lesson[] = [
       partner: "utangaç ama arkadaş canlısı bir kursiyer",
       opening: "Hallo! Ich bin auch neu hier. Woher kommst du?",
       openingTr: "Merhaba! Ben de buraya yeniyim. Nerelisin?",
-      minTurns: 4,
+      goal: "İkiniz de nereli olduğunuzu ve nerede oturduğunuzu öğrenmiş, kursta yan yana oturmaya karar vermiş olursunuz.",
+      minTurns: 6,
     },
   },
   {
@@ -1029,7 +1033,8 @@ export const deA1B01: Lesson[] = [
       partner: "meraklı ve sabırlı bir öğrenci",
       opening: "Entschuldigung, sprichst du Deutsch?",
       openingTr: "Affedersin, Almanca konuşuyor musun?",
-      minTurns: 4,
+      goal: "Hangi dilleri konuştuğunuz karşılıklı öğrenilmiş ve hangi dilde devam edeceğinize karar verilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1235,7 +1240,8 @@ export const deA1B01: Lesson[] = [
       partner: "hızlı konuşan ama yardımsever bir görevli",
       opening: "Guten Tag! Sie möchten Mitglied werden? Wie ist Ihre Telefonnummer?",
       openingTr: "İyi günler! Üye mi olmak istiyorsunuz? Telefon numaranız kaç?",
-      minTurns: 4,
+      goal: "Telefon numaran kaydedilmiş, aylık ücret ve üyeliğin ne zaman başlayacağı söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1433,7 +1439,8 @@ export const deA1B01: Lesson[] = [
       partner: "sakin ve titiz bir kütüphane görevlisi",
       opening: "Guten Tag! Ich brauche Ihren Vornamen und Ihren Nachnamen. Können Sie das buchstabieren?",
       openingTr: "İyi günler! Adınıza ve soyadınıza ihtiyacım var. Harfleyebilir misiniz?",
-      minTurns: 4,
+      goal: "Adın ve soyadın harf harf doğru yazılmış, kartın ne zaman hazır olacağı söylenmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1629,7 +1636,8 @@ export const deA1B01: Lesson[] = [
       partner: "sohbeti seven, biraz meraklı bir davetli",
       opening: "Guten Abend! Und was sind Sie von Beruf?",
       openingTr: "İyi akşamlar! Peki sizin mesleğiniz ne?",
-      minTurns: 4,
+      goal: "Karşındaki senin mesleğini ve nerede çalıştığını öğrenmiş, kendi işini de anlatmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1825,7 +1833,8 @@ export const deA1B01: Lesson[] = [
       partner: "şakacı ve rahat bir parti misafiri",
       opening: "Hallo, ich bin Lena und heute dreißig Jahre alt. Wie alt bist du?",
       openingTr: "Merhaba, ben Lena ve bugün otuz yaşındayım. Sen kaç yaşındasın?",
-      minTurns: 4,
+      goal: "İkiniz de yaşınızı ve nerede doğduğunuzu söylemiş, aranızda küçük bir ortak nokta bulunmuş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -2022,7 +2031,8 @@ export const deA1B01: Lesson[] = [
       partner: "resmî konuşan ama yardımsever bir memur",
       opening: "Guten Tag! Wie ist Ihr Name, bitte?",
       openingTr: "İyi günler! Adınız nedir?",
-      minTurns: 4,
+      goal: "Formdaki bütün alanlar dolmuş ve memur kaydın tamamlandığını söylemiş olur.",
+      minTurns: 7,
     },
   },
 ];

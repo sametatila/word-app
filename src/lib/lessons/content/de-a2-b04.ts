@@ -211,7 +211,8 @@ export const deA2B04: Lesson[] = [
       partner: "yardıma her zaman hazır ama biraz unutkan, senli benli bir komşu",
       opening: "Ach, du fährst weg? Wann kommst du denn zurück?",
       openingTr: "Aa, gidiyor musun? Ne zaman döneceksin peki?",
-      minTurns: 4,
+      goal: "Anahtar teslim edilmiş, bitkiler için rica iletilmiş ve neyin nerede olduğu gösterilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -397,7 +398,8 @@ export const deA2B04: Lesson[] = [
       partner: "apartmandaki herkesi tanıyan meraklı bir komşu",
       opening: "Schon wieder liegt hier alles herum. Gehört Ihnen der Regenschirm?",
       openingTr: "Yine her şey ortalıkta kalmış. Şemsiye sizin mi?",
-      minTurns: 4,
+      goal: "Eşyaların kime ait olduğu bulunmuş ve kalanlar için ne yapılacağı kararlaşmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -580,7 +582,8 @@ export const deA2B04: Lesson[] = [
       partner: "telefonda odaları tek tek gezen, sabırlı bir ev arkadaşı",
       opening: "Ich bin jetzt in der Küche. Wo genau soll der Schlüssel liegen?",
       openingTr: "Şimdi mutfaktayım. Anahtar tam olarak nerede olacaktı?",
-      minTurns: 4,
+      goal: "Anahtarın nerede olabileceği tarif edilmiş ve bulununca ne yapılacağı kararlaşmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -769,7 +772,8 @@ export const deA2B04: Lesson[] = [
       partner: "her kutuyu tek tek soran, yorulmuş bir arkadaş",
       opening: "Diese Kiste ist ziemlich schwer. Wohin soll ich sie stellen?",
       openingTr: "Bu kutu bayağı ağır. Nereye koyayım?",
-      minTurns: 4,
+      goal: "Her kutunun ve rafın yeri kararlaşmış, fikir değiştiğinde yeni yer de tarif edilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -958,7 +962,8 @@ export const deA2B04: Lesson[] = [
       partner: "dekorasyon konusunda kendine çok güvenen bir arkadaş",
       opening: "Also, ich finde, das Sofa gehört ans Fenster. Was meinst du?",
       openingTr: "Bence kanepenin yeri pencere kenarı. Sen ne dersin?",
-      minTurns: 4,
+      goal: "Eşyaların yerleri kararlaşmış ve odanın son hâli tarif edilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1136,7 +1141,8 @@ export const deA2B04: Lesson[] = [
       partner: "her şeyi not alan, yeni taşınmış bir komşu",
       opening: "Wir sind gerade eingezogen. Gibt es hier eine Bäckerei in der Nähe?",
       openingTr: "Daha yeni taşındık. Buralarda yakında bir fırın var mı?",
-      minTurns: 4,
+      goal: "Fırın, okul ve parkın yeri tarif edilmiş, en yakın markete nasıl gidileceği söylenmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1316,7 +1322,8 @@ export const deA2B04: Lesson[] = [
       partner: "aletlerine çok düşkün ama iyi niyetli, senli benli bir komşu",
       opening: "Hallo! Dich habe ich ja lange nicht gesehen. Brauchst du etwas?",
       openingTr: "Merhaba! Seni uzun süredir görmemiştim. Bir şeye mi ihtiyacın var?",
-      minTurns: 4,
+      goal: "Alet ödünç alınmış, ne zaman geri verileceği söylenmiş ve teşekkür edilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1495,7 +1502,8 @@ export const deA2B04: Lesson[] = [
       partner: "günde yüz kapı çalan, acelesi olan bir kurye",
       opening: "Guten Tag, ein Paket für Familie Weber. Sind Sie das?",
       openingTr: "İyi günler, Weber ailesine kargo var. Siz misiniz?",
-      minTurns: 4,
+      goal: "Kargonun teslim alınıp alınmayacağı kararlaşmış, imza halledilmiş ve komşuya nasıl haber verileceği söylenmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1684,7 +1692,8 @@ export const deA2B04: Lesson[] = [
       partner: "misafirleri olan, özür dilemeye hazır ama savunmaya da geçen bir komşu",
       opening: "Oh, guten Abend! Ist es zu laut bei uns?",
       openingTr: "Aa, iyi akşamlar! Bizden çok ses mi geliyor?",
-      minTurns: 4,
+      goal: "Rahatsızlık dostça anlatılmış ve iki tarafın da kabul ettiği bir çözümde anlaşılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1870,7 +1879,8 @@ export const deA2B04: Lesson[] = [
       partner: "işini bilen ama her şeyi not defterine yazan bir apartman yöneticisi",
       opening: "Guten Tag, Sie haben angerufen. Was ist denn kaputt?",
       openingTr: "İyi günler, aramışsınız. Ne bozuldu?",
-      minTurns: 4,
+      goal: "Arıza gösterilmiş ve ustanın geleceği gün üzerinde anlaşılmış olur.",
+      minTurns: 7,
     },
   },
 ];

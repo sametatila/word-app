@@ -74,7 +74,8 @@ export const deB1B04: Lesson[] = [
       partner: "meraklı, sohbeti seven bir tanıdık",
       opening: "Und, wie sind die Leute in deinem neuen Team? Wer ist dir am ersten Tag aufgefallen?",
       openingTr: "Ee, yeni ekibindeki insanlar nasıl? İlk gün kim dikkatini çekti?",
-      minTurns: 5,
+      goal: "Ekipteki en az üç kişi tanıtılmış ve tanıdığın kimin kim olduğunu ayırt edebilmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -121,7 +122,8 @@ export const deB1B04: Lesson[] = [
       partner: "seçici ama meraklı bir arkadaş",
       opening: "Ich brauche einen Film für heute Abend. Was hast du zuletzt gesehen, das sich wirklich gelohnt hat?",
       openingTr: "Bu akşam için bir filme ihtiyacım var. Son zamanlarda izlediğin, gerçekten değen bir şey var mı?",
-      minTurns: 5,
+      goal: "En az iki yapım önerilmiş ve arkadaşın akşam ne izleyeceğine karar vermiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -168,7 +170,8 @@ export const deB1B04: Lesson[] = [
       partner: "açık sözlü, düşündüren bir arkadaş",
       opening: "Mal ehrlich: Gibt es jemanden, dem du wirklich alles erzählen kannst?",
       openingTr: "Açık konuşalım: Gerçekten her şeyi anlatabildiğin biri var mı?",
-      minTurns: 5,
+      goal: "Kime güvendiğin ve kimin öğüdünü dinlediğin anlatılmış, arkadaşın da kendi cevabını vermiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -215,7 +218,8 @@ export const deB1B04: Lesson[] = [
       partner: "şehri hiç bilmeyen, her şeyi soran yeni bir komşu",
       opening: "Ich bin gerade hergezogen und kenne hier noch nichts. In welchem Bezirk wohnst du eigentlich?",
       openingTr: "Buraya yeni taşındım ve hiçbir yeri bilmiyorum. Sen hangi semtte oturuyorsun?",
-      minTurns: 5,
+      goal: "Oturduğun bölge, büyüdüğün yer ve çevredeki yerler tarif edilmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -262,7 +266,8 @@ export const deB1B04: Lesson[] = [
       partner: "gerçekçi sorular soran, biraz aceleci bir emlakçı",
       opening: "Erzählen Sie mir einfach mal: Was für ein Haus suchen Sie eigentlich, und wo soll es liegen?",
       openingTr: "Anlatın bakalım: Nasıl bir ev arıyorsunuz ve nerede olsun?",
-      minTurns: 5,
+      goal: "Hayalindeki evin özellikleri, çevresi ve bütçen netleşmiş; emlakçı bir öneri yapmış olur.",
+      minTurns: 9,
     },
   },
 
@@ -309,7 +314,8 @@ export const deB1B04: Lesson[] = [
       partner: "sakin, dinlemeyi bilen bir söyleşici",
       opening: "Wenn Sie zurückblicken: Wer sind die Menschen, die Sie am meisten geprägt haben?",
       openingTr: "Geriye baktığınızda: Sizi en çok şekillendiren insanlar kimler?",
-      minTurns: 5,
+      goal: "Hayatında iz bırakan en az iki kişi tarif edilmiş ve sana ne kattıkları söylenmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -356,7 +362,8 @@ export const deB1B04: Lesson[] = [
       partner: "sabırlı ama çok soru soran bir satıcı",
       opening: "Guten Tag! Sie suchen etwas, aber Sie wissen den Namen nicht — kein Problem. Wofür brauchen Sie das Teil denn?",
       openingTr: "İyi günler! Bir şey arıyorsunuz ama adını bilmiyorsunuz — sorun değil. Bu parçayı ne için kullanacaksınız?",
-      minTurns: 5,
+      goal: "Aradığın parça tarif edilerek bulunmuş ya da yerine bir seçenek önerilmiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -403,7 +410,8 @@ export const deB1B04: Lesson[] = [
       partner: "yorgun ama meraklı bir arkadaş",
       opening: "Ich bin völlig erschöpft. Gibt es einen Ort, an dem du wirklich abschalten kannst?",
       openingTr: "Tamamen tükendim. Gerçekten kafanı boşaltabildiğin bir yer var mı?",
-      minTurns: 5,
+      goal: "Sevdiğin mekân tarif edilmiş ve arkadaşın oraya gitmeye karar vermiş olur.",
+      minTurns: 8,
     },
   },
 
@@ -450,7 +458,8 @@ export const deB1B04: Lesson[] = [
       partner: "resmî konuşan, ayrıntı isteyen bir görevli",
       opening: "Guten Tag. Was genau haben Sie verloren, und wo könnte es passiert sein?",
       openingTr: "İyi günler. Tam olarak neyinizi kaybettiniz ve nerede olmuş olabilir?",
-      minTurns: 5,
+      goal: "Eşyan tarif edilmiş, bulunup bulunmadığı öğrenilmiş ve ne yapılacağı söylenmiş olur.",
+      minTurns: 9,
     },
   },
 
@@ -497,7 +506,8 @@ export const deB1B04: Lesson[] = [
       partner: "mutfakta acemi, telaşlı bir arkadaş",
       opening: "Heute Abend kommen Gäste und ich habe keine Idee. Kennst du ein Gericht, das schnell geht und trotzdem gut ist?",
       openingTr: "Bu akşam misafir geliyor ve hiçbir fikrim yok. Hem çabuk olan hem de iyi bir yemek biliyor musun?",
-      minTurns: 5,
+      goal: "Bir yemek önerilmiş, malzemeleri ve garnitürü söylenmiş; arkadaşın onu yapmaya karar vermiş olur.",
+      minTurns: 9,
     },
   },
 ];

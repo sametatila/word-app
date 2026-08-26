@@ -33,6 +33,21 @@ export type RoleplayTurn = ChatMessage;
  * turda kapanır ve sonra bütün konuşma rubrikle puanlanır.
  */
 export type RoleplayMode = "practice" | "exam";
+
+/**
+ * Konuşmanın hangi yayında olduğu.
+ *
+ * Rol yapma uzun süre iki hâlliydi: "devam" ve "kapanış". Sonucu ekranda
+ * görünüyordu — muhatap tur sayısı dolana kadar soru soruyor, sonra birden
+ * veda ediyordu. Ortada bir yay yoktu, yani konuşma bitmiyor KESİLİYORDU.
+ *
+ * Dört faz o yayı kuruyor: açılış sahneyi kurar, gelişme amaca yaklaşır,
+ * TOPARLAMA son açık noktayı kapatır ve bitişi haber verir, kapanış amacı
+ * sonuçlandırıp veda eder. Toparlama turu eklenmeseydi kapanış yine ani
+ * olurdu: bir tur önce "son bir şey soracağım" demek, konuşmayı bitirilebilir
+ * kılan şey.
+ */
+export type RoleplayPhase = "open" | "develop" | "wrapup" | "closing";
 export { EXAM_TURNS, EXAM_SECONDS } from "./roleplay-const";
 
 /**
@@ -44,8 +59,9 @@ export { EXAM_TURNS, EXAM_SECONDS } from "./roleplay-const";
  * düzeltmesi yerine "bu dersin kalıbına göre" düzeltme almak, dersin
  * bütünlüğünü koruyan şey.
  */
-export function roleplayPrompt(lesson: Lesson, opts?: { closing?: boolean; mode?: RoleplayMode }): string {
-  if (opts?.mode === "exam") return examPrompt(lesson, Boolean(opts.closing));
+export function roleplayPrompt(lesson: Lesson, opts?: { phase?: RoleplayPhase; mode?: RoleplayMode }): string {
+  const phase: RoleplayPhase = opts?.phase ?? "develop";
+  if (opts?.mode === "exam") return examPrompt(lesson, phase);
   const dialect =
     lesson.course === "gsw-zh"
       ? "Züritüütsch (Zürih Almancası) konuşuyorsun. Öğrenci Hochdeutsch cevap verirse düzeltme, konuşmayı sürdür — amaç lehçeye alıştırmak, konuşmayı kesmek değil."
@@ -69,6 +85,17 @@ zorlama; sen bu sahnedeki gerçek bir kişisin, bir alıştırma değil.
 
 SAHNE
 ${lesson.roleplay.scene}
+
+KONUŞMANIN AMACI — buraya varınca konuşma biter
+${lesson.roleplay.goal}
+Bu bir konu başlığı değil, bir SONUÇ. Her turda ona bir adım yaklaş; konuyu
+dağıtma, amaçla ilgisi olmayan yeni sahneler açma.
+
+KONUŞMANIN YAYI — ${lesson.roleplay.minTurns} turluk bir sahne
+Konuşmanın başı, ortası ve sonu vardır; arka arkaya sorulmuş sorular konuşma
+değildir. Açılışta sahneyi kurarsın, ortada amaca götüren ayrıntıları
+konuşursun (miktar, zaman, tercih, sebep, koşul), sonuna doğru açık kalan son
+noktayı kapatırsın, sonda amacı sonuçlandırıp veda edersin.
 
 BU DERSİN KALIPLARI — öğrenci az önce bunları öğrendi ve şimdi kullanmayı öğreniyor
 ${patterns}
@@ -118,6 +145,17 @@ Her turda düzeltme yazmak zorunda değilsin ve yazmamalısın. Bir düzeltme
 ancak nadir olduğunda anlam taşır: her cevabın başında bir düzeltme satırı
 görmeye alışan öğrenci onları okumayı bırakıyor. Öğrenci doğru konuştuysa
 düzeltme satırı yok — bunun yerine söylediği şeye cevap ver.
+
+ÖĞRENCİNİN SORUSUNU CEVAPSIZ BIRAKMA
+Öğrenci sana bir şey sorduysa ÖNCE ona cevap ver, sonra kendi sorunu sor.
+Cevaplanmayan soru konuşmayı ilerletmiyor, sırayı bozuyor — ve öğrenciye
+karşısında birinin olmadığını hissettiriyor.
+
+TEK KELİMELİK CEVABI AÇTIR
+Öğrenci bir iki kelimeyle cevap verdiyse ("Kaffee.", "Ja.", "Um acht.") bunu
+kabul et ama üstüne somut bir soru daha sor: "Mit Milch oder ohne?", "Und wo
+treffen wir uns?" Amaç onu cümle kurmaya getirmek. Kısa cevabı düzeltme,
+GENİŞLET — bu bölümün varlık sebebi öğrencinin konuşması.
 
 CEVABIN SIRASI — bu sırayı bozma
 1. Varsa düzeltme satırları (${CORRECTION_MARK} ile), her hata için bir satır.
@@ -175,17 +213,43 @@ CEVABIN EN SONUNDA ÜÇ ÖNERİ (her seferinde yaz)
   cümle yazmak öneri değil dolgu oluyor.
 - Öneri satırlarına açıklama, tırnak, numara ekleme.
 
-Karakter bütünlüğüne dikkat et: Almanca (ä ö ü ß) ve Türkçe (ç ğ ı ö ş ü) harfleri doğru yaz.${
-    opts?.closing
-      ? `
+Karakter bütünlüğüne dikkat et: Almanca (ä ö ü ß) ve Türkçe (ç ğ ı ö ş ü) harfleri doğru yaz.
+${phaseBlock(phase)}`;
+}
 
-KAPANIŞ TURU — konuşma amacına ulaştı
-Bu cevabında sahneyi DOĞAL biçimde kapat: rolüne uygun kısa bir toparlama ve
-veda söyle (en fazla 2 cümle). SORU SORMA ve öneri satırı (${SUGGESTION_MARK}) YAZMA.
+/**
+ * Faza göre eklenen yönerge.
+ *
+ * Ayrı bir blok, çünkü modelin her turda okuduğu şey değişmeli: aynı isteme
+ * bakan bir model turun sahnenin neresinde olduğunu bilemez ve hep aynı
+ * hamleyi yapar (soru sor, öneri yaz). Ölçülen kusur buydu — konuşma
+ * ilerlemiyor, yalnızca uzuyordu.
+ */
+function phaseBlock(phase: RoleplayPhase): string {
+  if (phase === "open")
+    return `
+ŞU AN: AÇILIŞ
+Sahneyi kur ve tek bir somut soru sor. Öğrencinin ne istediğini, neyi
+konuşmak için geldiğini öğren. Henüz ayrıntıya girme.`;
+  if (phase === "develop")
+    return `
+ŞU AN: GELİŞME
+Amaca bir adım yaklaş. Öğrencinin söylediği ayrıntıyı al, üstüne bir şey ekle
+ve bir sonraki adımı sor. Aynı soruyu farklı kelimelerle sorma.`;
+  if (phase === "wrapup")
+    return `
+ŞU AN: TOPARLAMA TURU — bu senin SON sorun
+Amacın gerçekleşmesi için eksik kalan son bilgiyi iste (saat, miktar, ödeme,
+onay, karar — sahnede hangisi eksikse). Yeni bir konu AÇMA. Bittiğini
+hissettir: bu sorudan sonra kapatacağını belli eden kısa bir cümle kur.`;
+  return `
+ŞU AN: KAPANIŞ TURU — konuşma amacına ulaştı
+Önce AMACI SONUÇLANDIR: ne kararlaştırıldığını, ne alındığını, ne yapılacağını
+tek cümleyle söyle ("Also: zwei Kaffee, Sie zahlen bar."). Sonra rolüne uygun
+kısa bir veda et. Toplam en fazla 2 cümle.
+SORU SORMA ve öneri satırı (${SUGGESTION_MARK}) YAZMA.
 Düzeltme kuralları geçerli: öğrencinin son cümlesinde gerçek bir hata varsa
-düzeltme satırını yine yaz.`
-      : ""
-  }`;
+düzeltme satırını yine yaz.`;
 }
 
 /**
@@ -196,7 +260,7 @@ düzeltme satırını yine yaz.`
  * görse de düzeltmez (puanlama sonra, bütün konuşma üstünde). Türkçe yardım
  * da yok: tıkanan öğrenciye kısa, basit Almanca ile yeniden sorar.
  */
-function examPrompt(lesson: Lesson, closing: boolean): string {
+function examPrompt(lesson: Lesson, phase: RoleplayPhase): string {
   const dialect = lesson.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun." : "Standart Almanca (Hochdeutsch) konuşuyorsun.";
   const who = characterFor(lesson, lessonIndexInLevel(lesson));
   return `Sen bir Almanca KONUŞMA SINAVINDA öğrencinin muhatabısın. Öğrencinin seviyesi ${lesson.level}. ${dialect}
@@ -207,6 +271,10 @@ Adın ${who.name}. ${lesson.roleplay.partner} rolündesin — ${who.note}. Gerç
 SAHNE
 ${lesson.roleplay.scene}
 
+KONUŞMANIN AMACI — buraya varınca konuşma biter
+${lesson.roleplay.goal}
+Her turda ona bir adım yaklaş; sondan bir önceki turda son eksik bilgiyi iste.
+
 SINAV KURALLARI — bunlara kesinlikle uy
 - YARDIM ETME: kalıp önerme, doğru cümleyi söyleme, "şöyle de" deme.
 - DÜZELTME YAZMA: öğrencinin hatasını görsen de düzeltme, yorumlama; rolünde kal ve söylediğine cevap ver. Anlaşılmayan bir şey söylerse gerçek bir muhatap gibi kısa, basit Almanca ile yeniden sor.
@@ -216,12 +284,17 @@ SINAV KURALLARI — bunlara kesinlikle uy
 - Sahneyi ilerlet: her turda yeni bir ayrıntı, aynı soruyu tekrar sorma. Övgü cümleleri yok.
 - Yıldız, tire, madde işareti yok; düz metin. Rol metnin sesli okunuyor.
 Almanca (ä ö ü ß) harfleri doğru yaz.${
-    closing
+    phase === "wrapup"
       ? `
 
+TOPARLAMA TURU — bu senin son sorun
+Amacın gerçekleşmesi için eksik kalan son bilgiyi iste. Yeni bir konu açma.`
+      : phase === "closing"
+        ? `
+
 KAPANIŞ TURU — sınav bitti
-Bu cevabında sahneyi doğal biçimde kapat: rolüne uygun kısa bir toparlama ve veda (en fazla 2 cümle). SORU SORMA.`
-      : ""
+Önce amacı tek cümleyle sonuçlandır, sonra rolüne uygun kısa bir veda et (toplam en fazla 2 cümle). SORU SORMA.`
+        : ""
   }`;
 }
 
@@ -241,14 +314,14 @@ export async function* streamRoleplay(
   report?: CallReport,
   mode: RoleplayMode = "practice",
 ): AsyncGenerator<string> {
-  // Alt sınıra ulaşıldığında model sahneyi kapatıyor: ders bir sohbet uygulaması
+  // Sahnenin nerede olduğunu tur sayısı söylüyor: ders bir sohbet uygulaması
   // değil ve "yeterince konuşuldu"nun kararını öğrenciye bırakmak konuşmayı
   // 25 tura sürüklüyordu. Kapanış cevabından sonra istemci dersi bitiriyor.
   const userTurns = messages.filter((m) => m.role === "user").length;
-  const system = roleplayPrompt(lesson, {
-    closing: userTurns >= (mode === "exam" ? EXAM_TURNS : lesson.roleplay.minTurns),
-    mode,
-  });
+  const limit = mode === "exam" ? EXAM_TURNS : lesson.roleplay.minTurns;
+  const phase: RoleplayPhase =
+    userTurns >= limit ? "closing" : userTurns >= limit - 1 ? "wrapup" : userTurns <= 1 ? "open" : "develop";
+  const system = roleplayPrompt(lesson, { phase, mode });
   yield* streamSystem(system, messages, onMeta, report);
 }
 

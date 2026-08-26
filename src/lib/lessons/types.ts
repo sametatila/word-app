@@ -105,10 +105,38 @@ export type LessonRoleplay = {
   opening: string;
   openingTr: string;
   /**
-   * Öğrencinin kalıpları kullanmış sayılması için gereken tur sayısı.
+   * Konuşmanın AMACI: ne olunca tamamlanmış sayılır.
    *
-   * Konuşma "yeterince konuşuldu"da değil, kalıplar kullanıldığında bitiyor;
-   * bu sayı yalnızca alt sınır.
+   * Bu alan olmadan rol yapma bir soru-cevap dizisiydi. Model sahneyi
+   * biliyordu ama nereye varacağını bilmiyordu; tur sayısı dolunca ortada
+   * bir soru asılı kalıyor, muhatap birden veda ediyordu. Öğrenci de
+   * konuşmanın bittiğini değil KESİLDİĞİNİ hissediyordu.
+   *
+   * Amaç bir cümlelik bir SONUÇTUR, bir konu başlığı değil: "Sipariş
+   * verilmiş, ödeme biçimi kararlaştırılmış olur." Model buna doğru
+   * ilerliyor, son turda onu sonuçlandırıp veda ediyor — yani konuşmanın
+   * başı, ortası ve sonu oluyor.
+   *
+   * Türkçe yazılır (isteme Türkçe giriyor) ve sahnenin kopyası olmamalı:
+   * sahne öğrencinin ne YAPACAĞINI, amaç konuşmanın nerede BİTECEĞİNİ
+   * söyler.
+   */
+  goal: string;
+  /**
+   * Konuşmanın tur sayısı — öğrencinin kaç kez söz alacağı. 6–9.
+   *
+   * Dört turdu ve azdı: selamlaşma, iki soru, veda. Öğrenci kalıbı bir kez
+   * kullanıp çıkıyordu ve konuşmanın bir yayı yoktu.
+   *
+   * Sayı sabit DEĞİL, `goal`in kaç adım istediğine bağlı: iki sonuçlu bir
+   * amaç (yol tarif edildi ve tekrar edilerek doğrulandı) taban turu alır,
+   * üç ve daha çok sonuçlu bir amaç (bilet alındı, fiyat söylendi, peron
+   * öğrenildi) bir tur fazlasını. Taban seviyeyle yükseliyor çünkü cümleler
+   * uzuyor: A1 6, A2 7, B1 8; adım sayısı fazlaysa sırasıyla 7, 8, 9.
+   *
+   * Üst sınırın dokuz olmasının sebebi ölçülebilir: dokuz turdan sonra
+   * konuşma bir sahne olmaktan çıkıp bir röportaja dönüyor ve öğrenci
+   * kalıbı değil sabrı tüketiyor.
    */
   minTurns: number;
   /**

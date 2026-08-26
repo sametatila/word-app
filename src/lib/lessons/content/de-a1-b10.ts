@@ -203,7 +203,8 @@ export const deA1B10: Lesson[] = [
       partner: "resmî konuşan, kibar bir sekreter",
       opening: "Firma Berger, guten Tag. Was kann ich für Sie tun?",
       openingTr: "Berger Şirketi, iyi günler. Sizin için ne yapabilirim?",
-      minTurns: 4,
+      goal: "Aradığın kişiye ulaşılmış ya da ne zaman tekrar arayacağın kararlaşmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -384,7 +385,8 @@ export const deA1B10: Lesson[] = [
       partner: "kısa ve hızlı yazan bir arkadaş",
       opening: "Hey! Schreibst du mir heute Abend?",
       openingTr: "Selam! Bu akşam bana yazar mısın?",
-      minTurns: 4,
+      goal: "Ne zaman ve ne göndereceğin kararlaşmış, mesajlaşma bir vedayla kapanmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -566,7 +568,8 @@ export const deA1B10: Lesson[] = [
       partner: "takvimi dolu ama çözüm arayan bir kuaför",
       opening: "Salon Schnittpunkt, guten Morgen. Möchten Sie einen Termin?",
       openingTr: "Schnittpunkt Kuaför, günaydın. Randevu mu almak istiyorsunuz?",
-      minTurns: 4,
+      goal: "Kuaför randevusunun günü ve saati kesinleşmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -747,7 +750,8 @@ export const deA1B10: Lesson[] = [
       partner: "davetlere bayılan, hemen soru soran bir arkadaş",
       opening: "Oh, eine Party? Wann ist die denn?",
       openingTr: "Aa, parti mi? Ne zamanmış?",
-      minTurns: 4,
+      goal: "Arkadaşın davete geleceğini söylemiş ve ne getireceği kararlaşmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -920,7 +924,8 @@ export const deA1B10: Lesson[] = [
       partner: "her ayrıntıyı merak eden bir arkadaş",
       opening: "Erzähl mal, was hast du gestern gemacht?",
       openingTr: "Anlatsana, dün ne yaptın?",
-      minTurns: 4,
+      goal: "Dün yaptığın en az üç şey geçmiş zamanla anlatılmış olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1091,7 +1096,8 @@ export const deA1B10: Lesson[] = [
       partner: "gezmeyi seven, sürekli yer öneren bir arkadaş",
       opening: "Wohin bist du am Wochenende gefahren?",
       openingTr: "Hafta sonu nereye gittin?",
-      minTurns: 4,
+      goal: "Nereye ve nasıl gittiğin ile bir günü nasıl geçirdiğin anlatılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1263,7 +1269,8 @@ export const deA1B10: Lesson[] = [
       partner: "kendi gününü de anlatmak isteyen bir arkadaş",
       opening: "Wie war dein Tag gestern? Was hast du zuerst gemacht?",
       openingTr: "Peki dünkü günün nasıldı? Önce ne yaptın?",
-      minTurns: 4,
+      goal: "Dünün sabahı, öğleni ve akşamı sırayla anlatılmış olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1444,7 +1451,8 @@ export const deA1B10: Lesson[] = [
       partner: "pazartesi sabahı sohbete ihtiyacı olan bir iş arkadaşı",
       opening: "Guten Morgen! Wie war dein Wochenende?",
       openingTr: "Günaydın! Hafta sonun nasıl geçti?",
-      minTurns: 4,
+      goal: "Hafta sonunun iki günü de anlatılmış ve nasıl geçtiği değerlendirilmiş olur.",
+      minTurns: 7,
     },
   },
   {
@@ -1625,7 +1633,8 @@ export const deA1B10: Lesson[] = [
       partner: "yazı çok seven, konuşkan bir tanıdık",
       opening: "Welche Jahreszeit magst du am liebsten?",
       openingTr: "En çok hangi mevsimi seversin?",
-      minTurns: 4,
+      goal: "Sevdiğin mevsim ve doğum gününün tarihi söylenmiş; karşındakininki de öğrenilmiş olur.",
+      minTurns: 6,
     },
   },
   {
@@ -1806,7 +1815,8 @@ export const deA1B10: Lesson[] = [
       partner: "seninle gurur duyan, cesaretlendiren bir tanıdık",
       opening: "Und, wie läuft es mit deinem Deutsch?",
       openingTr: "Ee, Almancan nasıl gidiyor?",
-      minTurns: 4,
+      goal: "Öğrendiklerin, artık yapabildiklerin ve sıradaki hedefin anlatılmış olur.",
+      minTurns: 7,
     },
   },
 ];
