@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { authApi } from "@/lib/auth/api";
@@ -10,7 +10,8 @@ import { InstallGuide } from "@/components/install-guide";
 import { PushSettings } from "@/components/push-settings";
 import { SoundSettings } from "@/components/sound-settings";
 import { InviteCard } from "@/components/invite-card";
-import { Avatar } from "@/components/avatar";
+import { PageBack } from "@/components/page-back";
+import { ThemeSetting } from "@/components/theme-toggle";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 
 type Initial = {
@@ -38,20 +39,26 @@ const LEVELS = [
   { id: "C1", label: "C1", desc: "Akademik ve soyut dile hâkimim" },
 ];
 
+/**
+ * Ayarlar ekranı.
+ *
+ * Eskiden profilin kendisiydi: kimlik başlığı, araya giren ilerleme kartları
+ * ve en altta ayarlar. Sesi kapatmak isteyen biri her seferinde bütün profili
+ * geçmek zorundaydı. Artık ayrı bir sayfa (/profile/ayarlar) ve profilden tek
+ * dokunuşla açılıyor — kimlik orada kalıyor, buraya yalnızca değiştirilen
+ * şeyler geliyor.
+ */
 export function ProfileForm({
   userId,
   initial,
   accountName,
   authEnabled,
-  children,
 }: {
   initial: Initial;
   accountName: string | null;
   /** Armanın türetildiği hesap kimliği — sıralamadakiyle aynı görünsün diye. */
   userId: string;
   authEnabled: boolean;
-  /** Başlık ile ayarlar arasına giren bölüm — ilerleme istatistikleri. */
-  children?: ReactNode;
 }) {
   const [displayName, setDisplayName] = useState(initial.displayName);
   const [dailyGoal, setDailyGoal] = useState(initial.dailyGoal);
@@ -101,19 +108,7 @@ export function ProfileForm({
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-6">
-      <header className="flex items-center gap-4">
-        {/* Profildeki arma sıralamadakiyle AYNI: kullanıcı kendini tabloda
-            tanıyabilmeli. İki yerde iki farklı görsel kimlik, kimlik değildir. */}
-        <Avatar userId={userId} name={displayName || accountName} size={64} />
-        <div>
-          <h1 className="text-2xl font-bold">{displayName || accountName || "Öğrenci"}</h1>
-          <p className="muted text-sm">
-            {initial.totalXp} XP · {initial.currentStreak} günlük seri (en uzun {initial.longestStreak})
-          </p>
-        </div>
-      </header>
-
-      {children}
+      <PageBack href="/profile" title="Ayarlar" subtitle="Öğrenme, uygulama ve hesap" />
 
       {/*
         AYARLAR İKİYE AYRILDI.
@@ -273,6 +268,13 @@ export function ProfileForm({
           <h2 className="mb-3 font-bold">Uygulama</h2>
           <InstallGuide tone="plain" />
         </div>
+        {/*
+          Tema seçimi üst başlıktan buraya indi. Orada her ekranda duran bir
+          düğmeydi ama günde bir kez bile dokunulmayan bir tercih; başlıkta
+          yer kaplıyor ve avatarla birlikte dar telefonlarda taşıyordu.
+          Ayarın evi ayarlar.
+        */}
+        <ThemeSetting />
         <SoundSettings bare />
         <PushSettings bare />
       </section>

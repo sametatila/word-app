@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useEffect, useState, type ReactNode, useRef } from "react";
-import { ThemeToggle } from "./theme-toggle";
 import { TopProgress } from "./top-progress";
 import { ScreenDiag } from "@/components/screen-diag";
 import { InstallPrompt } from "./install-prompt";
@@ -277,9 +276,8 @@ export function AppShell({
           })}
         </nav>
 
-        <div className="mt-auto flex items-center justify-between">
+        <div className="mt-auto">
           <StatPills streak={stats.streak} xp={stats.xp} />
-          <ThemeToggle />
         </div>
       </aside>
 
@@ -301,7 +299,6 @@ export function AppShell({
           </Link>
           <div className="flex items-center gap-2">
             <StatPills streak={stats.streak} xp={stats.xp} />
-            <ThemeToggle />
             {/*
               Profilin girişi: alt sekme değil, başlıktaki avatar.
 

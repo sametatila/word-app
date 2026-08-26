@@ -1,29 +1,25 @@
-import { getUserInfo, authEnabled } from "@/lib/auth/server";
+import Link from "next/link";
+import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
-import { ProfileForm } from "@/components/profile-form";
-import { ArchiveCard } from "@/components/archive-card";
+import { Avatar } from "@/components/avatar";
+import { ProfileMenu } from "@/components/profile-menu";
+import { ArrowLeftIcon } from "@/components/icons";
 
 export const dynamic = "force-dynamic";
 
 /**
- * Profil: kimlik + ayarlar + arşiv. Üç bölüm, o kadar.
+ * Profil: kimlik ve bir menü. Başka hiçbir şey.
  *
- * Buraya on üç bölüm birikmişti ve üç ayrı iş yapıyorlardı: ölçüm (yetkinlik,
- * zayıf noktalar, gelişim, yapabildiklerim, dört grafik), arşiv (sınavlar,
- * yazılar, seviye testi, rozetler) ve ayar. Sonuç şuydu — sesi kapatmak
- * isteyen biri altı ölçüm kartını geçmek zorundaydı.
+ * Buraya on üç bölüm birikmişti; ölçümler Becerilere ve Kelimelere taşındıktan
+ * sonra üçe indi ama hâlâ kalabalıktı — çünkü asıl sorun sayı değil YAPIydı.
+ * Katlanmış bir "Arşiv" başlığı altında rozetlerle yazıları birleştirmek,
+ * ortak yanları olmayan iki şeyi kimsenin aramadığı bir kutuya koymaktı:
+ * insan "arşivime bakayım" diye düşünmüyor, "rozetlerime bakayım" diye
+ * düşünüyor.
  *
- * Ölçümlerin hepsi zaten başka bir evi olan şeylerdi:
- *
- *   yetkinlik · zayıf noktalar · gelişim · yapabildiklerim → /skills panosu
- *   sınavlar · seviye testi                               → /skills Sınav sekmesi
- *   kelime grafikleri                                     → /words
- *
- * İlk üçü Becerilerde ZATEN çiziliyordu; profil onları ikinci kez hesaplayıp
- * ikinci kez çiziyordu. Taşıma bir özellik silmiyor, bir kopyayı siliyor.
- *
- * Geriye kalan arşiv (rozetler, yazılar) katlanmış duruyor: bir kez bakılıp
- * bırakılan şeyler, her açılışta ayar aramanın önüne geçmemeli.
+ * Menü bunu doğal biçimde çözüyor: her satır tek satır, her satır bir yere
+ * gidiyor. Ayarlar da artık bir bölüm değil bir sayfa — sesi kapatmak isteyen
+ * biri profilin tamamını geçmek zorunda değil.
  */
 export default async function ProfilePage() {
   const user = await getUserInfo();
@@ -31,26 +27,39 @@ export default async function ProfilePage() {
 
   try {
     const profile = await ensureProfile(user.id, user.name);
+    const name = profile.displayName || user.name || "Öğrenci";
 
     return (
-      <ProfileForm
-        authEnabled={authEnabled}
-        accountName={user.name}
-        userId={user.id}
-        initial={{
-          displayName: profile.displayName ?? "",
-          dailyGoal: profile.dailyGoal,
-          newPerDay: profile.newPerDay,
-          level: profile.level,
-          course: profile.course,
-          voice: profile.voice ?? null,
-          currentStreak: profile.currentStreak,
-          longestStreak: profile.longestStreak,
-          totalXp: profile.totalXp,
-        }}
-      >
-        <ArchiveCard />
-      </ProfileForm>
+      <div className="mx-auto w-full max-w-3xl space-y-5">
+        {/*
+          Geri düğmesi: profil alt sekmelerden çıktı ve başlıktaki avatardan
+          açılıyor. Çubukta karşılığı olmayan bir ekrana girip cihazın kendi
+          geri hareketini bilmeyen kullanıcı burada sıkışırdı.
+        */}
+        <div className="flex items-center gap-3">
+          <Link
+            href="/learn"
+            prefetch={false}
+            aria-label="Öğren ekranına dön"
+            className="chip flex h-10 w-10 shrink-0 items-center justify-center"
+          >
+            <ArrowLeftIcon size={18} />
+          </Link>
+          {/* Arma sıralamadakiyle AYNI: kullanıcı kendini tabloda tanıyabilmeli. */}
+          <Avatar userId={user.id} name={name} size={52} />
+          <div className="min-w-0">
+            <h1 className="truncate text-xl font-bold">{name}</h1>
+            <p className="muted truncate text-sm">
+              {profile.totalXp.toLocaleString("tr-TR")} XP · {profile.currentStreak} günlük seri
+              {profile.longestStreak > profile.currentStreak
+                ? ` (en uzun ${profile.longestStreak})`
+                : ""}
+            </p>
+          </div>
+        </div>
+
+        <ProfileMenu />
+      </div>
     );
   } catch (err) {
     console.error("[profile page]", err);
