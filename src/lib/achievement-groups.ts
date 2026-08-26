@@ -13,21 +13,43 @@
  * Bu dosya `server-only` değil: içinde sorgu yok, yalnızca isim ve sıra var.
  */
 
-export type Group = "seri" | "kelime" | "oyun" | "ders" | "beceri" | "tur" | "keşif";
+export type Group =
+  | "seri"
+  | "kelime"
+  | "oyun"
+  | "dilbilgisi"
+  | "ders"
+  | "sınav"
+  | "beceri"
+  | "tur"
+  | "keşif";
 
 /**
  * Sekme sırası.
  *
- * Kabaca "yakından uzağa": her gün dokunulan şeyler önde, seyrek olanlar
- * sonda.
+ * Kabaca "yakından uzağa": her gün dokunulan şeyler önde (seri, kelime,
+ * oyunlar), ara ara açılanlar ortada (dilbilgisi, dersler, sınavlar,
+ * beceriler), seyrek olanlar sonda (turlar, keşif).
  */
-export const GROUP_ORDER: Group[] = ["seri", "kelime", "oyun", "ders", "beceri", "tur", "keşif"];
+export const GROUP_ORDER: Group[] = [
+  "seri",
+  "kelime",
+  "oyun",
+  "dilbilgisi",
+  "ders",
+  "sınav",
+  "beceri",
+  "tur",
+  "keşif",
+];
 
 export const GROUP_LABELS: Record<Group, string> = {
   seri: "Seri",
   kelime: "Kelime",
   oyun: "Oyunlar",
+  dilbilgisi: "Dilbilgisi",
   ders: "Dersler",
+  "sınav": "Sınavlar",
   beceri: "Beceriler",
   tur: "Turlar",
   "keşif": "Keşif",

@@ -1,9 +1,14 @@
 import "server-only";
-import { and, count, desc, eq, gt, gte, inArray, sql } from "drizzle-orm";
+import { and, count, desc, eq, gt, gte, inArray, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { PLAYABLE_GAMES } from "@/lib/types";
 import { GROUP_LABELS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
 import {
   achievements,
+  assessments,
+  cheatProgress,
+  exams,
+  questClaims,
   dailyScores,
   dailyStats,
   profiles,
@@ -34,8 +39,14 @@ import {
  *
  * 2. **Az ve zor.** Araştırma tutarlı: her şeye rozet veren sistemler
  *    "overjustification" etkisiyle içsel motivasyonu DÜŞÜRÜYOR. Buradaki
- *    eşikler bilerek uzak — 33 rozetin çoğu aylara yayılıyor, birkaçı
+ *    eşikler bilerek uzak — rozetlerin çoğu aylara yayılıyor, birkaçı
  *    yıllara. Beş dakikada açılan rozet, rozet değil bildirimdir.
+ *
+ *    "Az" olan rozet BAŞINA emek, toplam sayı değil: uygulama büyüdükçe yeni
+ *    bölümler rozetsiz kaldı ve rozetsiz bölüm, ödülü olmayan bölüm değil
+ *    GÖRÜNMEYEN bölüm demek — rozet duvarı uygulamanın neler yapabildiğini
+ *    anlatan yüzeylerden biri. Dilbilgisi çalışması, sınavlar, yazma ve
+ *    konuşma değerlendirmeleri, görevler ve yeni oyunlar bu yüzden eklendi.
  *
  * 3. **Hiçbiri satın alınamaz.** Tek yol oynamak. Uygulamada para yok ve
  *    olmayacak; rozetin değeri de tam olarak buradan geliyor.
@@ -63,7 +74,18 @@ export type Metric =
   | "bestDayReviews"
   | "activeDays"
   | "bossClears"
-  | "courses";
+  | "courses"
+  // Uygulama büyüdükçe rozetsiz kalan bölümler: dilbilgisi çalışması,
+  // sınavlar, yazma ve konuşma değerlendirmeleri, görevler ve oyun keşfi.
+  | "drillMastered"
+  | "exams"
+  | "bestExam"
+  | "writings"
+  | "bestWriting"
+  | "speakings"
+  | "gameTranslate"
+  | "gamesPlayed"
+  | "fullQuestDays";
 
 export type AchievementDef = {
   id: string;
@@ -111,6 +133,22 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "speak100", title: "Ekransız", hint: "Yürürken modunda 100 kelimeyi sesli söyle", icon: "HeadphonesIcon", tier: "silver", group: "oyun", metric: "gameSpeak", target: 100 },
   { id: "speak500", title: "Ağızdan çıkan", hint: "Yürürken modunda 500 kelimeyi sesli söyle", icon: "HeadphonesIcon", tier: "gold", group: "oyun", metric: "gameSpeak", target: 500 },
 
+  { id: "translate200", title: "Çevirmen", hint: "200 cümleyi doğru çevir", icon: "PenIcon", tier: "silver", group: "oyun", metric: "gameTranslate", target: 200 },
+  /*
+    Keşif rozeti: sayı değil ÇEŞİT. On bir oyunun bazıları yalnızca karışık
+    turda ve seyrek çıkıyor; kullanıcıların çoğu "Çoğul Bilmece"nin ya da
+    "Doğru mu Yanlış mı"nın varlığını bilmiyor. Hepsini bir kez oynatmak,
+    listeyi göstermekten daha iyi bir tanıtım.
+  */
+  { id: "allGames", title: "Hepsini denedin", hint: "On bir oyunun hepsinde en az bir doğru yap", icon: "PuzzleIcon", tier: "silver", group: "oyun", metric: "gamesPlayed", target: PLAYABLE_GAMES.length },
+
+  // ——— Dilbilgisi ————————————————————————————————————————————————
+  // Dilbilgisi çalışması uygulamanın en yeni bölümü ve hiç rozeti yoktu.
+  // Ölçü kelimedekiyle aynı tanım: 21 günü geçen aralık = pekişmiş.
+  { id: "drill50", title: "Biçim bilgisi", hint: "50 dilbilgisi maddesini pekiştir", icon: "TagIcon", tier: "bronze", group: "dilbilgisi", metric: "drillMastered", target: 50 },
+  { id: "drill250", title: "Tablolar ezberde", hint: "250 dilbilgisi maddesini pekiştir", icon: "ListIcon", tier: "silver", group: "dilbilgisi", metric: "drillMastered", target: 250 },
+  { id: "drill1000", title: "Çekim ustası", hint: "1.000 dilbilgisi maddesini pekiştir", icon: "MountainIcon", tier: "gold", group: "dilbilgisi", metric: "drillMastered", target: 1000 },
+
   // ——— Ders ——————————————————————————————————————————————————————
   { id: "lesson1", title: "İlk ders", hint: "Bir dersi rol yapmayla birlikte bitir", icon: "ChatIcon", tier: "bronze", group: "ders", metric: "lessons", target: 1 },
   { id: "lesson10", title: "Bir modül", hint: "10 dersi tamamla", icon: "SchoolIcon", tier: "bronze", group: "ders", metric: "lessons", target: 10 },
@@ -119,10 +157,30 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "boss1", title: "Modül fatihi", hint: "Bir modül sınavını süre bitmeden geç", icon: "FlagIcon", tier: "silver", group: "ders", metric: "bossClears", target: 1 },
   { id: "boss10", title: "Sınav ustası", hint: "10 modül sınavını geç", icon: "FlagIcon", tier: "gold", group: "ders", metric: "bossClears", target: 10 },
 
+  // ——— Sınav ——————————————————————————————————————————————————————
+  // Sınavlar (haftanın kısa sınavı ve seviye sınavları) ölçümün en ağır
+  // kanıtı ama hiç rozeti yoktu. Puan rozeti sayıdan ayrı: on sınava girmek
+  // alışkanlık, bir sınavdan 90 almak başarı.
+  { id: "exam1", title: "İlk sınav", hint: "Bir sınavı tamamla", icon: "FlagIcon", tier: "bronze", group: "sınav", metric: "exams", target: 1 },
+  { id: "exam10", title: "Sınav rutini", hint: "10 sınav tamamla", icon: "CalendarIcon", tier: "silver", group: "sınav", metric: "exams", target: 10 },
+  { id: "exam90", title: "Neredeyse kusursuz", hint: "Bir sınavdan 90 puan al", icon: "StarIcon", tier: "gold", group: "sınav", metric: "bestExam", target: 90 },
+
   // ——— Beceri ————————————————————————————————————————————————————
   { id: "skill1", title: "Dört beceri", hint: "Bir beceri alıştırmasını bitir", icon: "CompassIcon", tier: "bronze", group: "beceri", metric: "skills", target: 1 },
   { id: "skill10", title: "Okur yazar", hint: "10 beceri alıştırmasını bitir", icon: "CompassIcon", tier: "silver", group: "beceri", metric: "skills", target: 10 },
   { id: "skill40", title: "Dört koldan", hint: "40 beceri alıştırmasını bitir", icon: "GlobeIcon", tier: "gold", group: "beceri", metric: "skills", target: 40 },
+
+  /*
+    Yazma ve konuşma buradaydı ama rozetsizdi.
+
+    "Yazılarım" ekranı boş açılıyordu ve boş kalmasının bir sebebi de hiçbir
+    şeyin oraya çağırmamasıydı. Üç rozet o ekrana bir yön veriyor: ilkini
+    yaz, alışkanlık kur, bir kez de gerçekten iyi yaz.
+  */
+  { id: "writing1", title: "İlk yazın", hint: "Bir yazını değerlendirt", icon: "PenIcon", tier: "bronze", group: "beceri", metric: "writings", target: 1 },
+  { id: "writing15", title: "Kalem alışkanlığı", hint: "15 yazı değerlendirt", icon: "PenIcon", tier: "silver", group: "beceri", metric: "writings", target: 15 },
+  { id: "writing85", title: "Temiz kalem", hint: "Bir yazından 85 puan al", icon: "StarIcon", tier: "gold", group: "beceri", metric: "bestWriting", target: 85 },
+  { id: "speaking25", title: "Sesli düşünen", hint: "25 konuşma ya da rol yapma değerlendirt", icon: "MicIcon", tier: "silver", group: "beceri", metric: "speakings", target: 25 },
 
   // ——— Günün turu & hayatta kalma ————————————————————————————————
   { id: "daily1", title: "Günün turu", hint: "Günün turunu bir kez oyna", icon: "TrophyIcon", tier: "bronze", group: "tur", metric: "dailyRounds", target: 1 },
@@ -140,13 +198,21 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "days30", title: "Sadık", hint: "30 farklı gün çalış", icon: "CalendarIcon", tier: "silver", group: "keşif", metric: "activeDays", target: 30 },
   { id: "days100", title: "Demirbaş", hint: "100 farklı gün çalış", icon: "CalendarIcon", tier: "gold", group: "keşif", metric: "activeDays", target: 100 },
   { id: "bilingual", title: "İki kurs", hint: "Hem Almanca hem Zürihçe kursunda çalış", icon: "MapIcon", tier: "gold", group: "keşif", metric: "courses", target: 2 },
+  /*
+    Görevler her gün üç tane ve gece yarısı yenileniyor. Rozet TOPLAM ödül
+    sayısını değil, üçünün de bitirildiği GÜN sayısını sayıyor: yirmi gün tek
+    görev almak ile yirmi günü tam kapatmak aynı şey değil ve ikincisi
+    görevlerin var oluş sebebi.
+  */
+  { id: "quests20", title: "Günü kapatan", hint: "20 gün, günün üç görevini de bitir", icon: "TargetIcon", tier: "gold", group: "keşif", metric: "fullQuestDays", target: 20 },
 ];
 
 const BY_ID = new Map(ACHIEVEMENTS.map((a) => [a.id, a]));
 
-// Grup tanımı arayüzle ortak (bkz. lib/achievement-groups): bu dosya
+// Grup tanımı arayüzle ortak (bkz. lib/achievement-groups): sunucu tarafı
 // `server-only` olduğu için arayüz onu içe aktaramıyordu ve liste elle
-// kopyalanmıştı.
+// kopyalanmıştı. Yeni bir grup eklenince rozetler açılıyor ama duvarda hiç
+// görünmüyordu.
 export { GROUP_LABELS, GROUP_ORDER };
 export type { Group };
 
@@ -174,6 +240,10 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     hourRow,
     dayRow,
     courseRow,
+    drillRow,
+    examRow,
+    assessRow,
+    questRow,
   ] = await Promise.all([
     db
       .select({ n: sql<number>`count(*)::int` })
@@ -234,6 +304,45 @@ async function collectMetrics(userId: string): Promise<Metrics> {
       .from(userWords)
       .innerJoin(words, eq(words.id, userWords.wordId))
       .where(and(eq(userWords.userId, userId), gt(userWords.reps, 0))),
+
+    // Dilbilgisi maddesi "pekişmiş" sayılıyor: kelimedekiyle aynı tanım,
+    // tekrar durumunda ve aralık 21 günü aşmış.
+    db
+      .select({ n: sql<number>`count(*)::int` })
+      .from(cheatProgress)
+      .where(and(eq(cheatProgress.userId, userId), eq(cheatProgress.state, 2), gte(cheatProgress.intervalDays, 21))),
+
+    db
+      .select({ n: sql<number>`count(*)::int`, best: sql<number>`coalesce(max(${exams.score}), 0)::int` })
+      .from(exams)
+      .where(eq(exams.userId, userId)),
+
+    /*
+      Yazma ve konuşma tek geçişte. Puan `result` içindeki JSON'dan
+      okunuyor; değerlendirilmemiş (result null) denemeler sayılmıyor —
+      gönderilmiş ama hakemden dönmemiş bir yazı henüz bir yazı değil.
+    */
+    db
+      .select({
+        writings: sql<number>`count(*) filter (where ${assessments.kind} = 'writing')::int`,
+        bestWriting: sql<number>`coalesce(max((${assessments.result}->'score'->>'overall')::int) filter (where ${assessments.kind} = 'writing'), 0)::int`,
+        speakings: sql<number>`count(*) filter (where ${assessments.kind} in ('speaking', 'roleplay'))::int`,
+      })
+      .from(assessments)
+      .where(and(eq(assessments.userId, userId), isNotNull(assessments.result))),
+
+    // Üç görevin de alındığı gün sayısı — tek tek ödüller değil, tam günler.
+    db
+      .select({ n: sql<number>`count(*)::int` })
+      .from(
+        db
+          .select({ day: questClaims.day })
+          .from(questClaims)
+          .where(eq(questClaims.userId, userId))
+          .groupBy(questClaims.day)
+          .having(sql`count(*) >= 3`)
+          .as("full_days"),
+      ),
   ]);
 
   const games = new Map(gameRows.map((r) => [r.game, Number(r.n)]));
@@ -261,6 +370,17 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     activeDays: Number(dayRow[0]?.days ?? 0),
     bossClears: Number(bossRow[0]?.n ?? 0),
     courses,
+    drillMastered: Number(drillRow[0]?.n ?? 0),
+    exams: Number(examRow[0]?.n ?? 0),
+    bestExam: Number(examRow[0]?.best ?? 0),
+    writings: Number(assessRow[0]?.writings ?? 0),
+    bestWriting: Number(assessRow[0]?.bestWriting ?? 0),
+    speakings: Number(assessRow[0]?.speakings ?? 0),
+    gameTranslate: games.get("translate") ?? 0,
+    // Kaç FARKLI oyunda en az bir doğru var. Hiç doğru yapılmamış bir oyunu
+    // "oynandı" saymak, keşif rozetini rastgele bir dokunuşla açardı.
+    gamesPlayed: PLAYABLE_GAMES.filter((g) => (games.get(g) ?? 0) > 0).length,
+    fullQuestDays: Number(questRow[0]?.n ?? 0),
   };
 }
 
