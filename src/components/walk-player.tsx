@@ -17,12 +17,11 @@ import {
   updatePocketTitle,
 } from "@/components/pocket-audio";
 import {
-  activateMic,
   closeMic,
   micSettings,
   micSupported,
   openMic,
-  recordClip,
+  recordFreshClip,
   sttAvailable,
   transcribe,
 } from "@/components/pocket-mic";
@@ -190,6 +189,8 @@ const CAPTURE_FAIL_LIMIT = 2;
  * söyleniyor.
  */
 const ARM_WAIT_MS = 30_000;
+/** Ekran açık yolda turlar arası nefes — "aşırı hızlı" geçişleri biraz yavaşlatır. */
+const GAP_MS = 550;
 
 /**
  * Ağ isteklerinin üst sınırı.
@@ -498,7 +499,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       track("walk_switch", 1, "arm-failed");
       return false;
     }
-    activateMic();
+    // Kaydedici cevap başına taze açılıyor (recordFreshClip); burada yalnızca
+    // akış tutuluyor ve sessiz döngü kuruluyor.
     armed.current = true;
     disarmWhenIdle.current = false;
     setPocket("armed");
@@ -685,8 +687,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         recording.current = true;
         try {
           // Kayıt konuşma bitince kendiliğinden kapanıyor; `windowMs` sabit
-          // pencere değil ÜST SINIR.
-          const clip = await recordClip(windowMs, 400, signal);
+          // pencere değil ÜST SINIR. Cevap başına taze, geçerli webm.
+          const clip = await recordFreshClip(windowMs, signal);
           if (signal?.aborted) return [];
           if (clip) {
             captureFails.current = 0;
@@ -694,7 +696,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             const heard = await transcribe(clip.blob, lang, expected, { signal });
             const outcome = heard.reason ?? "ok";
             track("walk_listen", Math.round(heard.sentSeconds * 10), `${heard.provider ?? "stt"}:${outcome}`);
-            note(`${heard.provider ?? "sunucu"} ${outcome} ${heard.sentSeconds.toFixed(1)} sn ${Date.now() - startedAt} ms${heard.alternatives[0] ? ` "${heard.alternatives[0]}"` : ""}${typeof heard.confidence === "number" ? ` ${heard.confidence.toFixed(2)}` : ""}${typeof heard.peakDb === "number" ? ` peak=${heard.peakDb.toFixed(0)}dB` : ""}`);
+            note(`${heard.provider ?? "sunucu"} ${outcome} ${heard.sentSeconds.toFixed(1)} sn ${Date.now() - startedAt} ms${heard.alternatives[0] ? ` "${heard.alternatives[0]}"` : ""}${typeof heard.confidence === "number" ? ` ${heard.confidence.toFixed(2)}` : ""}`);
             return heard.alternatives;
           }
           /*
@@ -1051,6 +1053,18 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             await say([{ lang: "de", text: target }]);
           }
           if (!alive()) return;
+          /*
+            Turlar arasında kısa bir nefes.
+
+            Ekran açık yolda tanıyıcı doğru cevabı duyar duymaz kapanıyor ve
+            sonraki soru hemen okunuyordu — "aşırı hızlı" bunun içindi. Ekranda
+            (armed değil) küçük bir es kulağa daha rahat geliyor; cepte ekran
+            kapalıyken zaten yavaş, orada es eklemenin karşılığı yok.
+          */
+          if (!armed.current && document.visibilityState === "visible") {
+            await new Promise<void>((r) => afterMs(GAP_MS, r));
+            if (!alive()) return;
+          }
         }
 
         pending.current.push(...results);

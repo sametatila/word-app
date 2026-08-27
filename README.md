@@ -587,10 +587,10 @@ yanlış cevap sayılıyordu (`der Großvater` → "Wolfsfatter", `raten` → "P
 | Ekranda kip **dersle birebir aynı**: yalnız tarayıcı tanıyıcısı, mikrofon tutulmuyor, sessiz döngü çalmıyor, okuma oyunların boşluksuz yolundan | İlk düzeltme mikrofon akışını oturum başında alıp (parçaları kapalı) tutmayı sürdürüyordu; sahibin telefonunda altı dinlemenin altısı `browser:end` — tanıyıcı açılıyor, hata vermeden ve hiçbir şey duymadan kapanıyor. Android eşzamanlı kayıtta sesi üstteki uygulamanın kendi akışına veriyor, tanıyıcı servisi sessizlik alıyor; aynı akış Bluetooth'ta çıkışı telefon yoluna düşürüp okumayı da bozuyordu ("oyunlardaki gibi değil"). Boş dinleme "duyamadım"dır, kip değişmez; sessizlik tavanı 7 sn |
 | Cep yolu **"Cebe koy" ile** kuruluyor | Mikrofon kilitli ekranda istenemiyor (ölçülmüş), tutulunca da tanıyıcı ölüyor: tek izinli an, kullanıcının ekran açıkken dokunduğu an. Düğme mikrofonu alıp sessiz döngüyü kuruyor, "ekranı kapatabilirsin" diyor; ekran kapanınca kayıt + sunucu. Ekran açık kaldıkça cepte kipinde DİNLENMİYOR, yarım dakikada kapanmazsa ekran kipine dönülüyor. Ekran geri açılınca (süren kayıt bitince) kendiliğinden ekran kipi |
 | Ekran kipinde ekran kapanırsa tur **duruyor ve sebebini söylüyor** | O an yapılabilecek dürüst şey yok. Ekranı KAPATMADAN cebe koyan için ekran kipi zaten yeter: ekran kilidi ekranı açık tutuyor, tanıyıcı sürüyor |
-| Ekran kapalıyken **Azure önde** (`mode: walk`) | Kısa-ses ucu sessizlikte boş dönüyor, güven bildiriyor; TTS kliplerinde 15/15. Whisper'lar yalnız Azure ve Deepgram düşerse. Azure ekranlı yollara hiç girmiyor: F0 ayda 5 saat, tarayıcı tanıyıcısı bedava |
-| Kip **görünürlükten** seçiliyor, istemci değil | `transcribe` sayfa gizliyse `walk`, görünürse `default` gönderiyor; sunucu Azure'u yalnız `walk`ta zincire alıyor. Görünür sayfa Azure isteyemiyor |
-| Pencere değil **konuşma** gidiyor | Klip PCM'e çözülüp konuşma bölgesi bulunuyor (`lib/vad`); ölçüldü: 6 sn'lik gürültülü pencere 1–1,4 sn'ye indi, güven aynı ya da yüksek — uzun sessizlik doğruluğu da bozuyordu. Sessiz pencere hiç gönderilmiyor. Kesilemeyen ama sesli pencere bütünüyle gidiyor: yanlış ret yanlış kabulden kötü |
-| Aylık **tavan** sunucuda | `ai_usage`'dan Azure saniyesi toplanıyor; 4,5 saati geçince Azure o ay zincirden düşüyor, tur Deepgram/Groq ile sürüyor |
+| Ekran kapalıyken **Deepgram önde** (`mode: walk`) | Klip geçerli webm olarak gidiyor ve Deepgram bunu ham çözüyor; başı-kesik seste UYDURMUYOR, boş dönüyor (Whisper'lar "der Großvater" → "Wolfsfatter" uyduruyor). Azure kısa-ses ucu webm ALMIYOR (yalnız WAV/OGG), o yüzden cep zincirinde değil — Azure yalnız TTS yedeği |
+| Klip **geçerli webm**, istemcide çevrilmiyor | Halka tampon + WAV'a çevirme yoldu ama çeviri `AudioContext`e dayanıyordu ve o KİLİTLİ EKRANDA askıya alınıyor: cep yolu sahada tamamen ölüydü (`stt:decode`, her klip ham webm → 400). Artık her cevap için taze `MediaRecorder` baştan sona kesintisiz kaydediyor (`recordFreshClip`) — geçerli webm, sunucu ham çözüyor, çeviri yok |
+| Kip **görünürlükten** seçiliyor, istemci değil | `transcribe` sayfa gizliyse `walk`, görünürse `default` gönderiyor. Görünür sayfa `walk` isteyemiyor — "ekran açıkken asla sunucu STT" böylece istemcinin elinde değil |
+| Turlar arası **kısa nefes** (ekran açık) | Tanıyıcı doğru cevabı duyar duymaz kapanıp sonraki soruya geçiyordu — "aşırı hızlı". Ekranda ~0,55 sn es; cepte ekran kapalıyken zaten yavaş, orada es yok |
 | Düğme **okumuyor**, döngüye not bırakıyor | "Cebe koy"dan doğrudan okumak döngünün süren okumasını iptal ediyor, döngü o okumanın bitişini 30 sn'lik tavana kadar bekliyordu (ölçüldü: 1,3 → 31,3 sn). Duyuruyu döngü kendi sırasında okuyor; dinlemenin ortasına denk gelirse kelime yeniden soruluyor |
 | Süresi dolan dinleme **iptal** | Eskiden arkada kaydı bitirip sunucuya da gönderiyordu: aynı saniyede iki çağrı |
 | Her dinleme **kayda geçiyor** | `walk_listen` (yol, hata kodu, giden saniye) ve `walk_switch`; `?diag=1` son dinlemeleri ekranda gösteriyor. Teşhisin kendisi bu veriden çıktı |
@@ -688,10 +688,11 @@ gizliyken reddediliyor, zamanlayıcılar dakikada bire kısılıyor. İkisi de m
 kendiliğinden olmuyor; eklenmezse test yalancı bir "geçti" veriyor — bu bölümdeki hataların
 çoğu tam olarak öyle gözden kaçmıştı.
 
-Yazıya çevirme `/api/stt` üzerinden. Ekran kapalı yolda (`mode: walk`) sıra **azure**
-(kısa-ses REST) → **deepgram** (`nova-3`) → **groq** (`whisper-large-v3-turbo`) → cloudflare
-→ speechmatics → **mistral** (`voxtral-mini-latest`); ekranlı yollarda groq önde ve Azure
-hiç yok. Hiçbiri yapılandırılmamışsa tarayıcının kendi tanıyıcısına düşülüyor.
+Yazıya çevirme `/api/stt` üzerinden. Ekran kapalı yolda (`mode: walk`) sıra **deepgram**
+(`nova-3`, webm'i ham çözüyor, başı-kesikte uydurmuyor) → **groq** → cloudflare →
+speechmatics → **mistral**; ekranlı yollarda groq önde. Azure kısa-ses ucu webm almadığı
+için STT zincirinde değil (yalnız TTS yedeği). Hiçbiri yoksa tarayıcının kendi tanıyıcısına
+düşülüyor.
 
 Deepgram'in başta olmasının sebebi hızı değil **dürüstlüğü**. Ölçüldü — temiz ve gürültülü
 seste ikisi de 8/8, ama ses bozulduğunda yolları ayrılıyor:

@@ -139,12 +139,39 @@ boşluksuz WebAudio yolu (armed'ken erken ses-öğesine geçmiyor).
 > başına tek `MediaRecorder` (oneShotClip) ile geçerli webm üretip Deepgram'a göndermek
 > (kalkış gecikmeli ama çözülebilir dosya).
 
+## v4 (aynı gün): client decode kilitli ekranda imkânsız — webm + Deepgram
+
+v3 (OfflineAudioContext) de sahada düştü: `walk_listen` hâlâ `stt:decode` ×N, `ai_usage`'da
+karşılık YOK (istek hiç gitmedi — client çözemedi). Yani `OfflineAudioContext.startRendering`
+de kilitli ekranda ilerlemiyor; ekran AÇIKKEN çözülen klipler (`die richtung` 0.89) Azure'a
+gidip duyuldu, kapalıyken hiçbiri. **Sonuç: istemcide ses çözme/WAV'a çevirme kilitli ekranda
+yapılamaz — o yol tamamen bırakıldı.**
+
+Yeni tasarım: cep yolu her cevap için stream'den TEK `MediaRecorder` açıp parçaları baştan
+sona kesintisiz birleştiriyor (`recordFreshClip`) — **geçerli webm/opus**. Sunucu ham çözüyor;
+istemcide decode/VAD yok. Zincir `walk`: **Deepgram önde** (webm native, başı-kesikte
+uydurmuyor, boş dönüyor), sonra Groq/Cloudflare/Speechmatics/Mistral. Azure kısa-ses ucu webm
+almadığı için (yalnız WAV/OGG) STT zincirinden çıktı — yalnız TTS yedeği kaldı; `azure()`
+adaptörü ve kota emniyeti kodda duruyor ama seçilmiyor (ileride telaffuz kartı WAV verirse).
+
+Bedeller: (1) ön-pay yok — kalkış gecikmesi küçük (stream açık, yalnız kaydedici taze) ama
+kelimenin ilk ~50 ms'i kaçabilir; Deepgram başı hafif kesikte çözer, çok kesikse boş döner
+("duyamadım", ceza yok). (2) VAD kırpma yok — klip 1–4 sn Deepgram'a gider (kredi bol);
+konuşma bitişi yine bayt boyutundan (kilitli ekranda çalışan tek ölçüt). (3) Azure'un
+dürüstlük/güven avantajı gitti ama Deepgram de dürüst (ölçüldü: başı-kesik → boş).
+
+Ayrıca: ekran açık turlar arası ~0,55 sn nefes ("aşırı hızlı" geçiş). Ve bir kullanıcı
+(Samet) yürürken modunda idx=19'da yarım turda takılıp resume loop'una girmişti — üretimde
+yalnız o `session_state` satırı silindi (kalıcı ilerleme user_words/reviews'te durdu).
+
 ## Açık kalanlar
 
-- OfflineAudioContext kilitli ekranda çözüyor mu — ilk gerçek yürüyüşte `walk_listen`
-  (`stt:decode` kalmadı mı, `azure:ok` geldi mi) gösterir.
-- `stt:silent` peak-dB'si: yüksekse VAD gevşetilecek, düşükse gerçekten sessizdi.
-- Güven eşiği (0,4) ve PA eşikleri gerçek kayıtlarla kalibre edilecek.
+- webm + Deepgram kilitli ekranda çalışıyor mu — ilk gerçek yürüyüşte `walk_listen`
+  (`deepgram:ok` geldi mi, `stt:decode` kalktı mı) ve `ai_usage` (deepgram ok, heard dolu)
+  gösterir. Deepgram kredisi biterse Groq'a düşer (webm alır ama başı-kesikte uydurabilir).
+- Güven eşiği (0,4) gerçek Deepgram kayıtlarıyla kalibre edilecek.
+- Ölü kod: halka tampon altyapısı (`recordClip`, `activateMic`, `oneShotClip`, `lib/vad`
+  cep tarafı) artık kullanılmıyor; ayrı bir temizlik commit'ine bırakıldı.
 - Cepte de Web Speech istenirse "karanlık ama görünür ekran" (cep kilidi) ayrı bir iş; ekran
   kipinde ekran kilidi zaten ekranı açık tutuyor, ekranı kapatmadan cebe koymak bugün çalışır.
 - Bluetooth'ta cepte kipinin okuması SCO yüzünden telefon kalitesinde olabilir; girişi telefon

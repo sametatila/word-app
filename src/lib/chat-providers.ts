@@ -604,26 +604,19 @@ export function sttProviders(mode: SttMode = "default"): SttProvider[] {
   }
   if (mode === "walk") {
     /*
-      Cep yolu: dürüstlük önce.
+      Cep yolu: dürüstlük önce, ama biçim de belirleyici.
 
-      Cepteki telefonun tek kelimelik, gürültülü klibinde Whisper tabanlılar
-      (Groq, Cloudflare, Mistral) uyduruyor — üretim verisinde "der Großvater"
-      için "Wolfsfatter", "raten" için "Per Geschenk" — ve uydurma metin yanlış
-      cevap sayılıp öğrenciyi cezalandırıyor. Azure kısa-ses ucu ile Deepgram
-      duymadığında boş dönüyor ve güven bildiriyor (ölçüldü, 2026-08-27: Azure
-      TTS kliplerinde 15/15, sessizlikte uydurma yok). Sıra buna göre: Azure,
-      Deepgram, sonra Whisper'lar yalnız ikisi de düşerse.
+      Klip GEÇERLİ webm olarak geliyor (pocket-mic recordFreshClip) ve
+      istemcide WAV'a çevrilmiyor: çeviri `AudioContext`e dayanıyordu ve o
+      kilitli ekranda askıya alınıyor — cep yolu sahada tamamen ölüydü
+      (`stt:decode`). Azure'un kısa-ses ucu webm ALMIYOR (yalnız WAV/OGG), o
+      yüzden cep zincirine hiç girmiyor. Deepgram webm'i ham çözüyor ve —
+      önemlisi — başı-kesik seste UYDURMUYOR, boş dönüyor (ölçüldü); Whisper
+      tabanlılar (Groq, Cloudflare, Mistral) uyduruyor ("der Großvater" →
+      "Wolfsfatter"). Bu yüzden Deepgram önde; Whisper'lar yalnız o düşerse.
     */
-    const azKey = process.env.AZURE_SPEECH_KEY;
-    const azRegion = process.env.AZURE_SPEECH_REGION;
-    const walk: SttProvider[] = [];
-    if (azKey && azRegion) {
-      walk.push({ name: "azure", dialect: "azure", baseUrl: `https://${azRegion}.stt.speech.microsoft.com`, key: azKey, model: "short-audio" });
-    }
-    const rank = (p: SttProvider) => (p.name === "deepgram" ? 0 : p.name === "groq" ? 1 : 2);
-    walk.push(...[...out].sort((a, b) => rank(a) - rank(b)));
-    out.length = 0;
-    out.push(...walk);
+    const rank = (p: SttProvider) => (p.name === "deepgram" ? 0 : p.name === "groq" ? 1 : p.name === "cloudflare" ? 2 : 3);
+    out.sort((a, b) => rank(a) - rank(b));
   }
   /*
     STT_ORDER="cloudflare,groq" gibi bir liste sırayı ezer ve listede olmayanı

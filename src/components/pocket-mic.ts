@@ -1,8 +1,6 @@
 "use client";
 
 import { afterMs, tickClock } from "@/components/pocket-clock";
-import { decodePcm, encodeWav } from "@/lib/pronounce-client";
-import { frameLevels, trimSpeech } from "@/lib/vad";
 
 /**
  * Cepte çalışan mikrofon.
@@ -524,6 +522,99 @@ export async function recordClip(maxMs: number, preRollMs = 400, signal?: AbortS
 }
 
 /**
+ * Cevap başına TAZE kayıt — cep yolunun kaydı.
+ *
+ * Neden halka tampon değil: halka tampondan geriye doğru kesilen dilim (header
+ * + ortadan başlayan parçalar) geçerli bir webm dosyası olmuyor ve sağlayıcılar
+ * "bozuk dosya" (400) diye reddediyordu. İstemcide WAV'a çevirmek bunu
+ * düzeltiyordu ama o yol EKRAN KAPALIYKEN çalışmıyor: `AudioContext` (ve
+ * `OfflineAudioContext.startRendering`) kilitli ekranda askıya alınıyor,
+ * `decodeAudioData` çözmüyor — ölçüldü, cep yolu sahada tamamen ölüydü
+ * (`stt:decode`). Çözüm çeviriyi bırakmak: her cevap için stream'den TEK
+ * `MediaRecorder` açılıyor, parçaları BAŞTAN SONA kesintisiz birleştiriliyor
+ * (geçerli webm/opus) ve Deepgram/Groq bunu ham hâliyle çözüyor.
+ *
+ * Kalkış gecikmesi küçük: stream oturum boyunca açık, yalnız kaydedici taze.
+ * Konuşmanın bitişi yine bayt boyutundan anlaşılıyor (WebAudio gerekmiyor;
+ * kilitli ekranda çalışan tek ölçüt bu). Ön-pay yok — kullanıcı işareti duyup
+ * konuşuyor ve kayıt işaretten hemen sonra başlıyor.
+ */
+export async function recordFreshClip(maxMs: number, signal?: AbortSignal): Promise<ClipResult> {
+  if (signal?.aborted) return null;
+  if (!stream?.active && !(await openMic())) return null;
+  stream!.getAudioTracks().forEach((t) => (t.enabled = true));
+  const type = pickMime();
+  let rec: MediaRecorder;
+  try {
+    rec = new MediaRecorder(stream!, type ? { mimeType: type } : undefined);
+  } catch {
+    return null;
+  }
+
+  const parts: Blob[] = [];
+  const sizes: number[] = []; // header hariç parça boyutları — bitiş kararı
+  const detectFrom = Date.now() + CUE_BLIND_MS;
+  const deadline = Date.now() + maxMs;
+  let started = false;
+  let quiet = 0;
+  let run = 0;
+
+  return new Promise<ClipResult>((resolve) => {
+    let settled = false;
+    const finish = (ok: boolean) => {
+      if (settled) return;
+      settled = true;
+      try {
+        if (rec.state !== "inactive") rec.stop();
+      } catch {
+        /* zaten durmuş */
+      }
+      stream?.getAudioTracks().forEach((t) => (t.enabled = false));
+      resolve(ok && parts.length > 1 ? { blob: new Blob(parts, { type: type || "audio/webm" }), ms: (parts.length - 1) * SLICE_MS } : null);
+    };
+    signal?.addEventListener("abort", () => finish(false), { once: true });
+
+    rec.ondataavailable = (e) => {
+      // Kaydedicinin parçaları saatin ikinci nabzı — gizli sayfada da 200 ms.
+      tickClock();
+      if (!e.data.size) return;
+      parts.push(e.data);
+      if (parts.length === 1) return; // ilk parça webm başlığı
+
+      sizes.push(e.data.size);
+      const sorted = [...sizes].sort((a, b) => a - b);
+      const floor = sorted[Math.floor(sorted.length * FLOOR_PERCENTILE)] ?? 0;
+      const threshold = Math.max(SPEECH_BYTES, Math.round(floor * FLOOR_FACTOR));
+      const now = Date.now();
+      if (now >= detectFrom) {
+        if (e.data.size >= threshold) {
+          run++;
+          if (run >= MIN_SPEECH_SLICES) {
+            started = true;
+            quiet = 0;
+          }
+        } else {
+          run = 0;
+          if (started) quiet++;
+        }
+      }
+      const elapsed = now - detectFrom;
+      if ((started && quiet >= TAIL_SLICES && elapsed >= MIN_LISTEN_MS) || now >= deadline) finish(true);
+    };
+    rec.onstop = () => finish(true);
+    rec.onerror = () => finish(false);
+
+    try {
+      rec.start(SLICE_MS);
+    } catch {
+      return finish(false);
+    }
+    // Son kapı: parça hiç gelmezse (kaydedici sessiz öldü) süre + pay sonunda kapat.
+    afterMs(maxMs + 1500, () => finish(true));
+  });
+}
+
+/**
  * Tek seferlik kayıt — sürekli kaydedici kurulamadığında son çare.
  *
  * Sürekli kaydın bütün avantajlarını kaybediyor (kalkış gecikmesi geri
@@ -579,8 +670,8 @@ const STT_TIMEOUT_MS = 8_000;
 const PROBE_TIMEOUT_MS = 5_000;
 /** Bunun altındaki güven, duyulmamış sayılıyor. Bkz. `transcribe`. */
 const MIN_CONFIDENCE = 0.4;
-/** Sunucuya giden sesin örnekleme hızı — sağlayıcıların ortak biçimi. */
-const SEND_RATE = 16_000;
+/** Ses saniyesi tahmini için: webm/opus ~2 kB/sn. Yalnız kota izlemesinde. */
+const OPUS_BYTES_PER_SEC = 2_000;
 
 export type PocketHeard = {
   /** Duyulan metin — hiç duyulmadıysa boş. */
@@ -593,23 +684,25 @@ export type PocketHeard = {
   /**
    * Boş dönüşün sebebi.
    *
-   *   decode — klip PCM'e çözülemedi (kilitli ekranda AudioContext arızası).
-   *   silent — çözüldü ama konuşma bölgesi yok (VAD).
-   *   empty  — sunucu boş metin döndü (Azure sessizliği).
+   *   network — istek gitti, sunucu hata/400 döndü.
+   *   empty   — sunucu boş metin döndü (Deepgram/Azure sessizliği).
    */
-  reason?: "silent" | "decode" | "network" | "empty" | "low_confidence" | "aborted";
-  /** `silent`/`decode`te klibin tepe seviyesi (dBFS) — gerçekten sessiz mi, VAD mi ayırt etmek için. */
-  peakDb?: number;
+  reason?: "network" | "empty" | "low_confidence" | "aborted";
 };
 
 /**
  * Kaydı sunucuya gönderip yazıya çevirir.
  *
- * Zincir kipi burada seçiliyor ve sayfanın görünürlüğüne bağlı: sayfa gizliyse
- * `walk` (Azure önde), görünürse `default` (Groq önde). Sahibin şartı "ekran
- * açıkken asla Azure" böylece tek yerde ve istemcinin elinde değil — görünür
- * sayfa `walk` isteyemiyor. Görünürken bu işlev zaten yalnız tarayıcı
- * tanıyıcısı olmayan tarayıcılarda çağrılıyor.
+ * Klip GEÇERLİ webm olarak gidiyor (bkz. recordFreshClip) ve sunucuda ham
+ * hâliyle çözülüyor — istemcide WAV'a çevirme YOK. Sebebi ölçülmüş bir arıza:
+ * çeviri `AudioContext`e dayanıyordu ve o kilitli ekranda askıya alınıyor,
+ * cep yolu sahada tamamen ölüydü (`stt:decode`). webm'i Deepgram ve Groq ham
+ * çözüyor; Azure webm almadığı için cep zincirinde Deepgram önde
+ * (chat-providers `SttMode`).
+ *
+ * Kip sayfanın görünürlüğünden: gizliyse `walk`, görünürse `default`. Sahibin
+ * şartı "ekran açıkken asla Azure" böylece tek yerde ve istemcinin elinde
+ * değil — görünür sayfa `walk` isteyemiyor.
  */
 export async function transcribe(
   clip: Blob,
@@ -618,48 +711,14 @@ export async function transcribe(
   expected = "",
   opts: { signal?: AbortSignal } = {},
 ): Promise<PocketHeard> {
-  const none = (reason: PocketHeard["reason"], sentSeconds = 0): PocketHeard => ({ alternatives: [], sentSeconds, reason });
-  /*
-    Pencere değil, konuşma gidiyor.
-
-    Halka tampondan kesilen webm dilimi her zaman geçerli bir dosya değil:
-    başlık eklense de ilk parça bir kümenin ortasından başlayabiliyor ve
-    sağlayıcılar bunu "bozuk dosya" (400) diye reddediyordu — ölçüldü: aynı
-    klip üç sağlayıcıda da 400. O yüzden dilim PCM'e çözülüyor; çözülmüşken
-    konuşma bölgesi de bulunuyor (lib/vad) ve yalnız o parça WAV olarak
-    gidiyor. Bölge yoksa istek yok: "duyamadım" kotaya dokunmuyor. Çözülemezse
-    ham dilim gider — eskisinden kötü değil.
-  */
-  let sendable: Blob = clip;
-  let sentSeconds = clip.size / SEND_RATE;
-  try {
-    const pcm = await decodePcm(clip, SEND_RATE);
-    const cut = trimSpeech(pcm, SEND_RATE);
-    if (!cut) {
-      // Çözüldü ama konuşma yok. Tepe seviyesini de döndür: gerçekten sessiz mi
-      // (kullanıcı susmuş) yoksa VAD mi kaçırdı (kısık mikrofon) — veriyle ayrılsın.
-      const levels = frameLevels(pcm, SEND_RATE);
-      const peakDb = levels.length ? Math.max(...levels) : -120;
-      return { ...none("silent"), peakDb };
-    }
-    sendable = encodeWav(cut.pcm, SEND_RATE);
-    sentSeconds = cut.pcm.length / SEND_RATE;
-  } catch {
-    /*
-      Çözülemedi. Ölçüldü: kilitli ekranda eski `new AudioContext()` yolu
-      klibi çözemiyordu (bkz. pronounce-client decodePcm). Artık OfflineAudio
-      ile çözülüyor; yine de olmazsa ham webm gider ama Azure webm almıyor ve
-      halka-tampon dilimi çoğu sağlayıcıda bozuk sayılıyor — bu yüzden ayrı
-      sebep, `silent`le karışmasın.
-    */
-    return none("decode");
-  }
+  const sentSeconds = clip.size / OPUS_BYTES_PER_SEC;
+  const none = (reason: PocketHeard["reason"]): PocketHeard => ({ alternatives: [], sentSeconds, reason });
   if (opts.signal?.aborted) return none("aborted");
 
   const hidden = typeof document !== "undefined" && document.visibilityState === "hidden";
   const form = new FormData();
-  const ext = sendable.type.includes("wav") ? "wav" : clip.type.includes("mp4") ? "mp4" : clip.type.includes("ogg") ? "ogg" : "webm";
-  form.append("audio", sendable, `clip.${ext}`);
+  const ext = clip.type.includes("wav") ? "wav" : clip.type.includes("mp4") ? "mp4" : clip.type.includes("ogg") ? "ogg" : "webm";
+  form.append("audio", clip, `clip.${ext}`);
   form.append("language", language);
   form.append("mode", hidden ? "walk" : "default");
   if (expected) form.append("expected", expected);
@@ -670,27 +729,26 @@ export async function transcribe(
   const signal = opts.signal && typeof AbortSignal.any === "function" ? AbortSignal.any([timeout, opts.signal]) : timeout;
   try {
     const res = await fetch("/api/stt", { method: "POST", body: form, signal });
-    if (!res.ok) return none("network", sentSeconds);
+    if (!res.ok) return none("network");
     const data = (await res.json()) as { text?: string; confidence?: number; provider?: string };
     const text = (data.text ?? "").trim();
-    if (!text) return { ...none("empty", sentSeconds), confidence: data.confidence, provider: data.provider };
+    if (!text) return { ...none("empty"), confidence: data.confidence, provider: data.provider };
     /*
       Güveni düşük metin, metin sayılmıyor.
 
       Tanıyıcı gürültüyü ve arkadan gelen konuşmayı da kelimeye çeviriyor —
       duyacak bir şey verilince duyuyor ve bazen başka bir dilde duyuyor.
       Ayırt eden şey metnin kendisi değil, tanıyıcının o metne ne kadar
-      inandığı: ölçümde Azure doğru kelimeye 0,85–0,95, yanlış dilde çöpe
-      0,21 verdi. Eşik yine de gevşek: daha önce ölçülmeden konan bir eşik
-      gerçek cihazda "her cevap duyamadım"a dönüşmüştü. Her çağrının güveni
+      inandığı. Eşik gevşek: daha önce ölçülmeden konan bir eşik gerçek
+      cihazda "her cevap duyamadım"a dönüşmüştü. Her çağrının güveni
       `ai_usage`'a yazılıyor; eşik veriyle sıkılır.
     */
     if (typeof data.confidence === "number" && data.confidence < MIN_CONFIDENCE) {
-      return { ...none("low_confidence", sentSeconds), confidence: data.confidence, provider: data.provider };
+      return { ...none("low_confidence"), confidence: data.confidence, provider: data.provider };
     }
     return { alternatives: [text], confidence: data.confidence, provider: data.provider, sentSeconds };
   } catch {
-    return none(opts.signal?.aborted ? "aborted" : "network", sentSeconds);
+    return none(opts.signal?.aborted ? "aborted" : "network");
   }
 }
 
