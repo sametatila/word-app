@@ -1,5 +1,5 @@
 import "server-only";
-import { sttProviders, type SttProvider } from "@/lib/chat-providers";
+import { sttProviders, type SttMode, type SttProvider } from "@/lib/chat-providers";
 import { recordAiUsage } from "@/lib/ai-usage";
 
 /**
@@ -11,6 +11,10 @@ import { recordAiUsage } from "@/lib/ai-usage";
  * (`docs/plan/stt-capacity.md`): Groq'un darboğazı dakikada 20 istek, o
  * yüzden 429'da hemen bir sonrakine geçilir; Cloudflare günlük süreyle
  * sınırlı ama dakika sınırı yok — tepe dakikanın ikinci hattı.
+ *
+ * Yürürken modunun ekran kapalı yolu (`mode: "walk"`) başka bir sıra kullanır:
+ * Azure → Deepgram → Whisper'lar. Orada ölçüt hız değil dürüstlük — bkz.
+ * chat-providers `SttMode`. Azure'un aylık F0 kotası burada korunuyor.
  *
  * Her deneme `ai_usage`'a yazılır (başarısızlar dâhil): kotaya ne kadar
  * yaklaşıldığı ancak buradan görülür. Ses saklanmaz.
@@ -36,6 +40,8 @@ export type SttOptions = {
   /** Muhasebe için: kim, ne bekleniyordu. */
   userId: string;
   expected?: string;
+  /** Zincir kipi — yürürken modunun cep yolu `walk` (Azure önde). */
+  mode?: SttMode;
 };
 
 export function sttConfigured(): boolean {
@@ -66,7 +72,10 @@ export class SttError extends Error {
  * öbürü bazen çözüyor (ölçüldü: aynı klip Groq'ta 400, Deepgram'da metin).
  */
 export async function transcribe(file: File, opts: SttOptions): Promise<SttResult> {
-  const providers = sttProviders();
+  let providers = sttProviders(opts.mode ?? "default");
+  if (providers.some((p) => p.name === "azure") && !(await azureBudgetOk())) {
+    providers = providers.filter((p) => p.name !== "azure");
+  }
   if (!providers.length) throw new SttError("not_configured", []);
   const language = opts.language ?? "de";
   const seconds = estimateSeconds(file);
@@ -125,7 +134,92 @@ async function callProvider(p: SttProvider, file: File, language: string, words:
       return cloudflare(p, file, language);
     case "speechmatics":
       return speechmatics(p, file, language);
+    case "azure":
+      return azure(p, file, language);
   }
+}
+
+/**
+ * Azure Speech, kısa-ses REST ucu (≤ 60 sn; WAV 16 kHz mono ya da OGG/Opus).
+ *
+ * Yürürken modunun cep yolunda ana hat (bkz. chat-providers `SttMode`).
+ * `format=detailed` NBest listesini ve her adayın güvenini veriyor; sessizlikte
+ * uydurmak yerine `InitialSilenceTimeout`/`NoMatch` dönüyor. O hâller boş
+ * metin ve sıfır güven olarak geçiyor, HATA değil: hata sayılsa zincir
+ * sıradakine geçer ve Whisper aynı sessizliğe bir kelime uydururdu.
+ *
+ * Dil kodu BCP-47 istiyor; uçlar iki harfli kod taşıdığı için burada
+ * eşleniyor. Webm gövde kabul edilmiyor: istemci zaten WAV'a çeviriyor,
+ * çeviremediği ham dilim için 400 atılır ve zincir sonraki sağlayıcıya geçer.
+ */
+const AZURE_LOCALE: Record<string, string> = { de: "de-DE", tr: "tr-TR", en: "en-US", fr: "fr-FR", it: "it-IT", es: "es-ES" };
+
+async function azure(p: SttProvider, file: File, language: string): Promise<Raw> {
+  const type = file.type.includes("wav")
+    ? "audio/wav; codecs=audio/pcm; samplerate=16000"
+    : file.type.includes("ogg")
+      ? "audio/ogg; codecs=opus"
+      : null;
+  if (!type) throw httpError(400, `azure: desteklenmeyen biçim ${file.type || "bilinmiyor"}`);
+  const locale = AZURE_LOCALE[language] ?? `${language}-${language.toUpperCase()}`;
+  const query = new URLSearchParams({ language: locale, format: "detailed", profanity: "raw" });
+  const res = await fetch(`${p.baseUrl}/speech/recognition/conversation/cognitiveservices/v1?${query}`, {
+    method: "POST",
+    headers: { "Ocp-Apim-Subscription-Key": p.key, "content-type": type, accept: "application/json" },
+    body: await file.arrayBuffer(),
+  });
+  if (!res.ok) throw httpError(res.status, await res.text().catch(() => ""));
+  const data = (await res.json()) as {
+    RecognitionStatus?: string;
+    NBest?: { Confidence?: number; Lexical?: string; Display?: string }[];
+  };
+  const status = data.RecognitionStatus ?? "";
+  if (status === "Success") {
+    const best = data.NBest?.[0];
+    // Lexical: küçük harf, noktalamasız — kabul mantığının istediği biçim.
+    return { text: (best?.Lexical ?? "").trim(), confidence: best?.Confidence };
+  }
+  if (status === "NoMatch" || status === "InitialSilenceTimeout" || status === "BabbleTimeout") {
+    return { text: "", confidence: 0 };
+  }
+  throw httpError(502, `azure: ${status || "cevap yok"}`);
+}
+
+/**
+ * Azure'un aylık F0 kotası (5 saat) için emniyet payı.
+ *
+ * Kota dolunca istekler reddediliyor; bunu yaşamadan zincirden düşmesi
+ * gerekiyor ki cepteki tur Deepgram/Groq ile sürsün. `ai_usage` her başarılı
+ * çağrının saniyesini tutuyor: ay başından beri toplanan saniye tavanı
+ * geçince Azure o ay listeden çıkıyor. Sorgu her cep cevabında bir kez daha
+ * yapılmasın diye bir dakikalık bellek var — bir dakikada tavanı aşacak kadar
+ * ses gelmiyor.
+ *
+ * Tavan bilerek 5 saatin altında (varsayılan 4,5 sa): Azure'un kendi sayacı
+ * bizim saniyeye yuvarlanmış toplamımızla birebir aynı değil.
+ */
+const AZURE_MONTHLY_SECONDS = Number(process.env.AZURE_STT_MONTHLY_SECONDS) || 16_200;
+const BUDGET_CACHE_MS = 60_000;
+let azureBudget: { at: number; ok: boolean } | null = null;
+
+async function azureBudgetOk(): Promise<boolean> {
+  if (azureBudget && Date.now() - azureBudget.at < BUDGET_CACHE_MS) return azureBudget.ok;
+  let ok = true;
+  try {
+    const { db } = await import("@/lib/db");
+    const { aiUsage } = await import("@/lib/db/schema");
+    const { and, eq, gte, sql } = await import("drizzle-orm");
+    const [row] = await db
+      .select({ s: sql<number>`coalesce(sum(audio_seconds), 0)::int` })
+      .from(aiUsage)
+      .where(and(eq(aiUsage.provider, "azure"), eq(aiUsage.kind, "stt"), eq(aiUsage.ok, true), gte(aiUsage.createdAt, sql`date_trunc('month', now())`)));
+    ok = (row?.s ?? 0) < AZURE_MONTHLY_SECONDS;
+    if (!ok) console.warn(`[stt] azure aylık tavan aşıldı (${row?.s} sn ≥ ${AZURE_MONTHLY_SECONDS}), bu ay zincirden düştü`);
+  } catch {
+    /* sayaç okunamazsa Azure denenir: bu bir emniyet payı, kapı değil */
+  }
+  azureBudget = { at: Date.now(), ok };
+  return ok;
 }
 
 /** Groq / Mistral: OpenAI biçimi. Groq kelime zaman damgası verir (verbose_json). */

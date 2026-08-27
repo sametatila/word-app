@@ -529,11 +529,24 @@ export function chatConfigured(): boolean {
  */
 export type SttProvider = {
   name: string;
-  dialect: "openai" | "deepgram" | "cloudflare" | "speechmatics";
+  dialect: "openai" | "deepgram" | "cloudflare" | "speechmatics" | "azure";
   baseUrl: string;
   key: string;
   model: string;
 };
+
+/**
+ * Zincirin hangi iş için kurulduğu.
+ *
+ *   default — söyleyiş drilleri, telaffuz puanı, sınav: ekran açık, Groq önde.
+ *   walk    — yürürken modunun EKRAN KAPALI yolu: Azure önde.
+ *
+ * Azure yalnız `walk`ta listeye giriyor ve bu bir sıralama tercihi değil,
+ * kota kuralı: F0 katmanı ayda 5 saat veriyor ve ekran açıkken tarayıcının
+ * kendi tanıyıcısı bedava. Azure'u ekranlı yollara açmak, cepte çalışan tek
+ * dürüst tanıyıcının kotasını ekranda harcamak olurdu (sahibin şartı).
+ */
+export type SttMode = "default" | "walk";
 
 /**
  * Konuşmayı yazıya çevirebilen sağlayıcılar, sırayla.
@@ -543,8 +556,10 @@ export type SttProvider = {
  * bu iş için ölçüsüz geniş (günde 2.000 istek · 28.800 saniye ses) ve gecikme
  * burada her şeyden önemli — kullanıcı cevabını söyledikten sonra beklediği
  * her saniye yürüyüşün ritmini bozuyor.
+ *
+ * `walk` kipinde sıra değişiyor (bkz. `SttMode`).
  */
-export function sttProviders(): SttProvider[] {
+export function sttProviders(mode: SttMode = "default"): SttProvider[] {
   const out: SttProvider[] = [];
   /*
     Sıra kota ölçümünden (docs/plan/stt-capacity.md, 2026-08):
@@ -587,10 +602,35 @@ export function sttProviders(): SttProvider[] {
   if (mistral && CATALOG.mistral.sttModel) {
     out.push({ name: "mistral", dialect: "openai", baseUrl: CATALOG.mistral.baseUrl, key: mistral, model: (CATALOG.mistral.sttEnvModel && process.env[CATALOG.mistral.sttEnvModel]) || CATALOG.mistral.sttModel });
   }
+  if (mode === "walk") {
+    /*
+      Cep yolu: dürüstlük önce.
+
+      Cepteki telefonun tek kelimelik, gürültülü klibinde Whisper tabanlılar
+      (Groq, Cloudflare, Mistral) uyduruyor — üretim verisinde "der Großvater"
+      için "Wolfsfatter", "raten" için "Per Geschenk" — ve uydurma metin yanlış
+      cevap sayılıp öğrenciyi cezalandırıyor. Azure kısa-ses ucu ile Deepgram
+      duymadığında boş dönüyor ve güven bildiriyor (ölçüldü, 2026-08-27: Azure
+      TTS kliplerinde 15/15, sessizlikte uydurma yok). Sıra buna göre: Azure,
+      Deepgram, sonra Whisper'lar yalnız ikisi de düşerse.
+    */
+    const azKey = process.env.AZURE_SPEECH_KEY;
+    const azRegion = process.env.AZURE_SPEECH_REGION;
+    const walk: SttProvider[] = [];
+    if (azKey && azRegion) {
+      walk.push({ name: "azure", dialect: "azure", baseUrl: `https://${azRegion}.stt.speech.microsoft.com`, key: azKey, model: "short-audio" });
+    }
+    const rank = (p: SttProvider) => (p.name === "deepgram" ? 0 : p.name === "groq" ? 1 : 2);
+    walk.push(...[...out].sort((a, b) => rank(a) - rank(b)));
+    out.length = 0;
+    out.push(...walk);
+  }
   /*
     STT_ORDER="cloudflare,groq" gibi bir liste sırayı ezer ve listede olmayanı
     dışarıda bırakır — bir sağlayıcıyı tek başına denemek ya da kotası dolan
     hattı geçici olarak sondan kaldırmak için (CHAT_PROVIDER'ın STT karşılığı).
+    Azure listeye yalnız `walk` kipinde girdiği için STT_ORDER onu ekranlı
+    yollara sokamaz.
   */
   const order = (process.env.STT_ORDER ?? "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
   if (order.length) {
