@@ -30,6 +30,17 @@ export type ListenResult = {
   alternatives: string[];
   /** Varsa adayların güven değerleri — `judgeSpeech` yalnızca varsa kullanır. */
   confidences: number[];
+  /**
+   * Tanıyıcının hata kodu: "no-speech", "aborted", "audio-capture",
+   * "not-allowed", "network", "service-not-allowed"… Hatasız kapandıysa yok.
+   *
+   * Eskiden yutuluyordu ve yürürken modunda bunun bedeli ağırdı: "kullanıcı
+   * susuyor" ile "tanıyıcı ekran kapanınca iptal edildi" ve "mikrofon başka
+   * uygulamada" aynı boş sonuç görünüyordu. Üçünün karşılığı farklı.
+   */
+  error?: string;
+  /** Hiç konuşma gelmeden sessizlik tavanı doldu. */
+  silent?: boolean;
 };
 
 export type ListenOptions = {
@@ -103,6 +114,8 @@ export function useListen() {
 
         let best: string[] = [];
         let confidences: number[] = [];
+        let error: string | undefined;
+        let silent = false;
         let delivered = false;
         let pause: ReturnType<typeof setTimeout> | null = null;
         let silence: ReturnType<typeof setTimeout> | null = null;
@@ -122,7 +135,7 @@ export function useListen() {
           delivered = true;
           clear();
           rec.current = null;
-          resolve({ alternatives: best, confidences });
+          resolve({ alternatives: best, confidences, error, silent: silent || undefined });
         };
 
         r.onresult = (e) => {
@@ -167,17 +180,22 @@ export function useListen() {
           */
           if (!cap) cap = setTimeout(() => r.stop(), maxMs);
         };
-        r.onerror = deliver;
+        r.onerror = (e) => {
+          error = e?.error || "error";
+          deliver();
+        };
         r.onend = deliver;
 
         try {
           r.start();
           onOpen();
           silence = setTimeout(() => {
+            silent = true;
             r.stop();
             deliver();
           }, silenceMs);
         } catch {
+          error = "start-failed";
           deliver();
         }
       });

@@ -20,7 +20,7 @@
  *     korumasız kalmak demek.
  *
  * Senaryolar: ok | tts-hang | tts-500 | stt-hang | stt-500 | stt-off | stt-noise
- *              | browser-fast
+ *              | browser-fast | visible-only | switch
  *
  * `browser-fast` EKRAN AÇIK yolu: doğru cevap ara sonuç olarak duyulur duyulmaz
  * dinleme kapanmalı. Sahte tanıyıcı bilerek `onend` VERMİYOR — tur ilerliyorsa
@@ -41,6 +41,8 @@ const BASE = process.env.WALK_BASE ?? "http://localhost:3011";
 const SCENARIO = process.argv[2] ?? "ok";
 const RUN_MS = Number(process.env.WALK_RUN_MS ?? 70_000);
 const HIDE_AT_MS = Number(process.env.WALK_HIDE_AT ?? 6_000);
+/** `switch` senaryosunda ekranın geri açıldığı an. */
+const SHOW_AT_MS = Number(process.env.WALK_SHOW_AT ?? 32_000);
 
 const t0 = Date.now();
 const at = () => String(Date.now() - t0).padStart(6);
@@ -71,6 +73,8 @@ const never = () => new Promise(() => {});
 
 const spoken = [];
 let sttPosts = 0;
+/** Sunucuya giden kayıtların anları — geçiş senaryosu "ne zaman" diye soruyor. */
+const sttTimes = [];
 
 /** Sahte tanıyıcının okuyacağı kelimeler — tur verisiyle aynı sıra. */
 const WORDS_FOR_FAKE = [
@@ -103,8 +107,8 @@ const ctx = await browser.newContext({
     "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Mobile Safari/537.36",
 });
 
-if (SCENARIO === "browser-fast") {
-  await ctx.addInitScript((words) => {
+if (SCENARIO === "browser-fast" || SCENARIO === "visible-only" || SCENARIO === "switch") {
+  await ctx.addInitScript(({ words, scenario }) => {
     /*
       Sahte konuşma tanıyıcı.
 
@@ -112,8 +116,20 @@ if (SCENARIO === "browser-fast") {
       dinlemeyi kapat" davranışı hiç sınanamıyordu. Bu sahte tanıyıcı doğru
       cevabı ARA SONUÇ olarak veriyor ve `onend` hiç vermiyor: tur ilerliyorsa
       bunu yapan tek şey erken kapatmadır.
+
+      `visible-only`: tanıyıcı hiç anlamıyor ("no-speech"). Ekran açıkken
+      sunucuya HİÇ istek gitmemeli — boş dinleme "duyamadım"dır, yol değişmez.
+
+      `switch`: tanıyıcı gerçek Android gibi davranıyor — sayfa gizlenince
+      süren dinlemeyi "aborted" ile iptal ediyor, gizliyken başlatılırsa da.
+      Ekran kapanınca cep yoluna, açılınca tanıyıcıya dönülmeli.
     */
     let n = 1; // ilk tur tanıtım, ilk dinleme ikinci kelimede
+    const active = new Set();
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) return;
+      for (const r of [...active]) r.__abort();
+    });
     class Fake {
       lang = "";
       interimResults = false;
@@ -122,20 +138,47 @@ if (SCENARIO === "browser-fast") {
       onresult = null;
       onend = null;
       onerror = null;
+      __abort() {
+        if (!active.has(this)) return;
+        active.delete(this);
+        this.onerror?.({ error: "aborted" });
+        this.onend?.();
+      }
       start() {
+        if (scenario === "visible-only") {
+          setTimeout(() => {
+            this.onerror?.({ error: "no-speech" });
+            this.onend?.();
+          }, 500);
+          return;
+        }
+        if (scenario === "switch" && document.hidden) {
+          setTimeout(() => {
+            this.onerror?.({ error: "aborted" });
+            this.onend?.();
+          }, 50);
+          return;
+        }
+        active.add(this);
         const [artikel, de] = words[n++ % words.length];
         setTimeout(() => {
+          if (!active.has(this)) return;
+          active.delete(this);
           const alt = { transcript: `${artikel} ${de}`, confidence: 0.95 };
           const res = Object.assign([alt], { length: 1, isFinal: false });
           this.onresult?.({ results: Object.assign([res], { length: 1 }) });
         }, 400);
       }
-      stop() {}
-      abort() {}
+      stop() {
+        active.delete(this);
+      }
+      abort() {
+        active.delete(this);
+      }
     }
     Object.defineProperty(window, "webkitSpeechRecognition", { value: Fake, writable: true });
     Object.defineProperty(window, "SpeechRecognition", { value: Fake, writable: true });
-  }, WORDS_FOR_FAKE);
+  }, { words: WORDS_FOR_FAKE, scenario: SCENARIO });
 }
 
 await ctx.addInitScript(() => {
@@ -310,6 +353,7 @@ await page.route("**/api/stt**", async (route) => {
       body: SCENARIO === "stt-off" ? '{"configured":false}' : '{"configured":true}',
     });
   sttPosts++;
+  sttTimes.push(Date.now() - t0);
   log("MİKROFON → sunucu (#" + sttPosts + ")");
   if (SCENARIO === "stt-hang") return never();
   if (SCENARIO === "stt-500") return route.fulfill({ status: 500, body: "" });
@@ -325,19 +369,16 @@ await page.route("**/api/stt**", async (route) => {
 
 log("senaryo:", SCENARIO);
 await page.goto(`${BASE}/learn`, { waitUntil: "domcontentloaded" });
-// Kartın kendi "Başla" düğmesi — sayfada birden fazla var, o yüzden karta
-// göre daraltılıyor.
-await page
-  .locator("section", { hasText: "Türkçesini duy, Almancasını söyle" })
-  .last()
-  .getByRole("button", { name: "Başla" })
-  .click({ timeout: 20_000 });
+// "Farklı bir şey dene" ızgarasındaki Yürürken döşemesi — döşemenin tamamı
+// bir düğme (bkz. components/mode-tile), adı başlık + durum satırı.
+await page.getByRole("button", { name: /Yürürken/ }).click({ timeout: 20_000 });
 await page.getByRole("button", { name: /Kulaklığı tak, başla|Devam et/ }).click({ timeout: 20_000 });
 log("tur başladı (ekran açık)");
 
 await page.waitForTimeout(HIDE_AT_MS);
 const beforeHide = spoken.length;
-if (SCENARIO === "browser-fast") {
+const hideAt = Date.now() - t0;
+if (SCENARIO === "browser-fast" || SCENARIO === "visible-only") {
   log("--- EKRAN AÇIK KALIYOR (tarayıcı tanıyıcısı yolu) ---");
 } else {
   log("--- EKRAN KAPANDI ---");
@@ -353,8 +394,21 @@ log(
   `nabız: ${beat1.timeupdate - beat0.timeupdate} atış / 4 sn · ${beat1.players} oynatıcı`,
 );
 
-
-await page.waitForTimeout(Math.max(0, RUN_MS - 8000));
+/*
+  `switch`: ekran bir süre sonra GERİ açılıyor. Beklenen: kapalıyken sunucuya
+  kayıt gitti, açıldıktan sonra (süren kaydın bitmesi için kısa bir pay
+  hariç) bir daha gitmiyor ve tur tanıyıcıyla sürüyor.
+*/
+let showAt = Infinity;
+if (SCENARIO === "switch") {
+  await page.waitForTimeout(Math.max(0, SHOW_AT_MS - HIDE_AT_MS - 8000));
+  showAt = Date.now() - t0;
+  log("--- EKRAN AÇILDI ---");
+  await page.evaluate(() => window.__setHidden(false));
+  await page.waitForTimeout(Math.max(0, RUN_MS - SHOW_AT_MS));
+} else {
+  await page.waitForTimeout(Math.max(0, RUN_MS - 8000));
+}
 await browser.close();
 
 // ── Değerlendirme ──────────────────────────────────────────────────
@@ -395,23 +449,51 @@ const kept = progressPosts > 0;
   aşımıyla kurtarılsaydı her soru 21 saniye sürerdi.
 */
 const quick = after.length > 1 && Math.max(...after.slice(1).map((s2, i) => s2.ms - after[i].ms), 0) < 8000;
+/*
+  Geçiş ölçütleri (`switch`): kapalıyken sunucuya kayıt gitmiş olmalı; ekran
+  açıldıktan sonra — süren kaydın bitmesine 8 sn pay — bir daha gitmemeli; tur
+  ekran açıldıktan sonra da ilerlemeli. `visible-only`: sayfa hep görünür,
+  sunucuya HİÇ istek yok, tur "duyamadım"larla yine de ilerliyor.
+*/
+const postsHidden = sttTimes.filter((t) => t >= hideAt && t < showAt).length;
+const postsAfterShow = sttTimes.filter((t) => t > showAt + 8000).length;
+const spokenAfterShow = spoken.filter((s) => s.ms > showAt + 2000).length;
+if (SCENARIO === "switch") {
+  console.log("kapalıyken giden kayıt              :", postsHidden);
+  console.log("açıldıktan sonra giden kayıt        :", postsAfterShow);
+  console.log("açıldıktan sonra okunan parça       :", spokenAfterShow);
+}
 const ok =
   SCENARIO === "browser-fast"
     ? uniq.length >= 3 && quick
-    : SCENARIO === "stt-off"
-    ? explained
-    : SCENARIO === "stt-noise"
-      ? uniq.length >= 3 && asNoise && kept
-      : uniq.length >= 3;
+    : SCENARIO === "visible-only"
+      // Tur ya "duyamadım"larla ilerler ya da duyulmama sınırında sesle durur;
+      // ikisi de doğru. Yanlış olan tek şey sunucuya istek gitmesi.
+      ? sttTimes.length === 0 && uniq.some((t) => t.includes("Duyamadım") || t.includes("duyamıyorum"))
+      : SCENARIO === "switch"
+        ? postsHidden > 0 && postsAfterShow === 0 && spokenAfterShow >= 2
+        : SCENARIO === "stt-off"
+          ? explained
+          : SCENARIO === "stt-noise"
+            ? uniq.length >= 3 && asNoise && kept
+            : uniq.length >= 3;
 console.log(
   ok
     ? SCENARIO === "browser-fast"
       ? "\nGEÇTİ — doğru cevap duyulur duyulmaz dinleme kapandı"
-      : SCENARIO === "stt-off"
-      ? "\nGEÇTİ — donmadı, sebebini sesle söyleyip durdu"
-      : SCENARIO === "stt-noise"
-        ? "\nGEÇTİ — güveni düşük metin yanlış sayılmadı, ilerleme yine de yazıldı"
-        : "\nGEÇTİ — ekran kapalıyken tur ilerledi"
-    : "\nKALDI — tur ekran kapalıyken durdu",
+      : SCENARIO === "visible-only"
+        ? "\nGEÇTİ — ekran açıkken sunucuya hiç istek gitmedi, tur duyamadımlarla sürdü"
+        : SCENARIO === "switch"
+          ? "\nGEÇTİ — kapanınca cep yoluna geçti, açılınca tanıyıcıya döndü"
+          : SCENARIO === "stt-off"
+            ? "\nGEÇTİ — donmadı, sebebini sesle söyleyip durdu"
+            : SCENARIO === "stt-noise"
+              ? "\nGEÇTİ — güveni düşük metin yanlış sayılmadı, ilerleme yine de yazıldı"
+              : "\nGEÇTİ — ekran kapalıyken tur ilerledi"
+    : SCENARIO === "visible-only"
+      ? "\nKALDI — ekran açıkken sunucuya istek gitti ya da tur ilerlemedi"
+      : SCENARIO === "switch"
+        ? "\nKALDI — geçiş beklendiği gibi olmadı"
+        : "\nKALDI — tur ekran kapalıyken durdu",
 );
 process.exit(ok ? 0 : 1);

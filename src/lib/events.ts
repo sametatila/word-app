@@ -41,6 +41,20 @@ export const EVENT_NAMES = [
     olmadığında bunun hangisi olduğunu söyleyemiyor — biz de tahmin ediyorduk.
   */
   "walk_end",
+  /*
+    Yürüyüşte her dinlemenin sonucu — hangi yol, ne oldu.
+
+      kind  = "browser:ok" | "browser:no-speech" | "browser:aborted" |
+              "browser:not-allowed" … | "<sağlayıcı>:ok" | "<sağlayıcı>:silent" |
+              "<sağlayıcı>:empty" | "<sağlayıcı>:low_confidence" | "deadline"
+      value = sunucuya giden ses, onda bir saniye (tarayıcı yolunda 0)
+
+    "Web Speech gerçekten devrede mi, mikrofon tutulurken bozuluyor mu, Azure'a
+    ne kadar ses gidiyor" soruları ancak buradan cevaplanıyor; tahminle değil.
+  */
+  "walk_listen",
+  // Yakalama yolu değişti (value = 1 cebe geçti / 0 ekrana döndü, kind = sebep: hidden|visible|handoff).
+  "walk_switch",
   "boss_play", // modül sınavına girildi (value = modül sırası)
   "boss_clear", // modül sınavı geçildi (value = kalan saniye)
   "quest_claim", // görev ödülü alındı

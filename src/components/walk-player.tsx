@@ -67,19 +67,29 @@ import type { Answer, Round, RoundWord, SessionPayload, SessionProgress } from "
  *   - **Tur bitince telefonu çıkarmak gerekmemeli.** Oturum sonunda soru sesli
  *     soruluyor ve cevap sesli alınıyor: "devam edelim mi?" → "evet".
  *
- * Ekran KAPANDIĞINDA ne olacağı ayrı bir sorun ve iki kipi zorunlu kıldı.
- * Ekran kilidi yalnızca boşta kalmayı engelliyor; kullanıcı güç tuşuna basıp
- * telefonu cebine attığında ekran yine kapanıyor ve konuşma tanıyıcı susuyor.
- * Web'de arka planda konuşma tanıma yok — bu bir eksik değil, mikrofonun
- * görünmez biçimde açık kalmasını engelleyen bilinçli bir platform kararı.
+ * Ekran KAPANDIĞINDA ne olacağı ayrı bir sorun. Ekran kilidi yalnızca boşta
+ * kalmayı engelliyor; kullanıcı güç tuşuna basıp telefonu cebine attığında
+ * ekran yine kapanıyor ve konuşma tanıyıcı susuyor. Bu bir eksik değil,
+ * Chromium'un Android'e özel kararı: sayfa gizlenince tanıma iptal ediliyor
+ * (Blink `SpeechRecognition::PageVisibilityChanged`), kendi ses kanalını
+ * verme (`start(track)`) ve cihaz-üstü API de Android Chrome'da yok.
  *
- *   - **Sesli cevap** kipi ölçüyor ama ekranın açık kalmasını istiyor.
- *   - **Cepte** kipi ölçmüyor: Türkçesini okuyor, tekrar etmen için susuyor,
- *     sonra Almancasını okuyor. Ekran kapalıyken çalışıyor.
+ * Bu yüzden iki yol var ve seçim tek bir şeye bağlı, sayfanın görünürlüğüne:
  *
- * Ekran kapanırsa ölçen kip DURMUYOR, cepte kipine düşüyor ve bunu sesle
- * söylüyor. Durmak, kullanıcının cebinden çıkardığında hiçbir şey olmamış
- * bulmasıydı — asıl şikâyet buydu.
+ *   - **Görünür → tarayıcının kendi tanıyıcısı, başka hiçbir şey.** Derslerin
+ *     yıllardır sorunsuz çalışan yolu; Android 12+'da Google'ın cihaz-üstü
+ *     tanıyıcısı. Boş dinleme "duyamadım"dır, yol değişmez. Sunucuya istek
+ *     yalnız tanıyıcı gerçekten bozuksa gider ve o zaman da Azure'a değil
+ *     (sahibin şartı; kota kuralı `chat-providers` `SttMode`'da).
+ *   - **Gizli → kayıt + sunucu (Azure önde).** Mikrofon akışı oturum başında
+ *     alınıp tutuluyor (kilitliyken yeniden istenemiyor); klip konuşmaya
+ *     kırpılıp gidiyor.
+ *
+ * Geçiş iki yönde de yakalanıyor: ekran dinleme sırasında kapanırsa tanıyıcı
+ * iptal olur, soru bir kez tekrar okunup cep yoluyla dinlenir; ekran geri
+ * açılınca süren kayıt bitene kadar beklenir, sonraki sorudan itibaren
+ * tanıyıcıya dönülür. Her dinleme ve her geçiş kayda geçiyor (`walk_listen`,
+ * `walk_switch`): "Web Speech gerçekten devrede mi" sorusu veriyle cevaplansın.
  */
 
 type Status =
@@ -142,10 +152,25 @@ const CONFIRM_SILENCE_MS = 7000;
  * uydurma oluyordu.
  */
 const ANSWER_WINDOW_MS = 6000;
-/** Tarayıcı tanıyıcısı için sessizlik tavanı — ardından kayıt yolu deneniyor. */
-const BROWSER_SILENCE_MS = 4000;
-/** Kaç boş denemeden sonra tarayıcı tanıyıcısı bu oturumda bırakılır. */
-const BROWSER_GIVE_UP = 2;
+/**
+ * Tarayıcı tanıyıcısında hiç konuşma gelmezse kaç ms beklenir.
+ *
+ * Eskiden 4 saniyeydi ve arkasında bir gerekçe vardı: boş dinlemenin ardından
+ * kayıt yolu da deneniyordu, tavan uzun tutulunca bekleme ikiye katlanıyordu.
+ * O ikinci deneme artık yok — görünürken tek yol tanıyıcı — yani tavan
+ * düşünme süresine göre kurulabiliyor. Dört saniyeyi aşan iki cevap eskiden
+ * tanıyıcıyı oturum boyunca kapatıyordu; kullanıcının "ekran açıkken
+ * Deepgram'a gidiyor" diye gördüğü şey buydu.
+ */
+const BROWSER_SILENCE_MS = 7000;
+/**
+ * Tanıyıcının bu oturumda kullanılamaz olduğunu söyleyen hata kodları.
+ *
+ * Bunlar "kullanıcı sustu" değil "mikrofon yok" demek: izin geri alınmış,
+ * cihaz başka uygulamada, servis kapalı. Boş dinleme ("no-speech") ve
+ * gizlenince iptal ("aborted") bu listede DEĞİL — onlar geçici.
+ */
+const BROWSER_DEAD = new Set(["not-allowed", "service-not-allowed", "audio-capture", "language-not-supported", "start-failed"]);
 /** Kaç ardışık başarısız kayıttan sonra tur durur. */
 const CAPTURE_FAIL_LIMIT = 2;
 
@@ -237,15 +262,21 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const browserRef = useRef(false);
   /** Sunucuda yazıya çevirme açık mı — ekran kapanınca devreye girecek yol. */
   const sttReady = useRef(false);
+  /** Süren dinlemenin iptal düğmesi — süre dolunca ya da tur durunca basılıyor. */
+  const hearCtl = useRef<AbortController | null>(null);
+  /** Kayıt yolu şu an bir cevap kaydediyor mu — ekran açılınca beklemek için. */
+  const recording = useRef(false);
   /**
-   * Tarayıcı tanıyıcısı üst üste kaç kez boş döndü.
+   * Ekran, kayıt sürerken açıldı: kayıt bitince mikrofon susturulacak.
    *
-   * Tanıyıcı "var" görünüp hiç sonuç vermeyebiliyor (ağ yok, motor kapalı,
-   * bazı tarayıcılarda sessizce düşüyor). O durumda her cevap önce onu bekler,
-   * sonra kayıt yolunu — yani süre ikiye katlanırdı. İki boş denemeden sonra
-   * oturum boyunca bırakılıyor.
+   * Hemen susturmak tamponu siliyor ve o cevabı yakıyordu; kullanıcı cebinden
+   * çıkardığı telefona cevabını çoktan söylemiş oluyordu.
    */
-  const browserMisses = useRef(0);
+  const deactivateWhenIdle = useRef(false);
+  /** Tur bir sebeple bitti mi — sökülürken ikinci bir `walk_end` yazılmasın. */
+  const ended = useRef(false);
+  /** `?diag=1`: son dinlemelerin yolu ve sonucu ekranda — telefonda bir bakışta. */
+  const [diag, setDiag] = useState<string[] | null>(null);
   /** Üst üste kaç turda klip üretilemedi — kayıt arızasını sessizce sürüklememek için. */
   const captureFails = useRef(0);
   /** Bu yürüyüşte sorulan kelimeler — devam turunda tekrar sorulmasın diye. */
@@ -393,15 +424,17 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     return withDeadline(spoken, SPEAK_CAP_MS, undefined);
   }, []);
 
+  /** Diag paneline bir satır — yalnız `?diag=1` ile açıkken tutuluyor. */
+  const note = useCallback((line: string) => {
+    setDiag((d) => (d ? [...d.slice(-5), line] : d));
+  }, []);
+
   /**
    * Bir cevabı dinler ve duyduğu adayları döndürür.
    *
    * İki yol da aynı sözleşmeyi veriyor, böylece tur döngüsü hangisinin
-   * kullanıldığını bilmek zorunda kalmıyor.
-   *
-   * `stt` yolunda kayıt penceresi SABİT. Sessizlik algılamak için WebAudio
-   * çözümleyicisi kullanılabilirdi ama ekran kapandığında `AudioContext`
-   * askıya alınıyor ve çözümleyici tam ihtiyaç duyulan yerde duruyor.
+   * kullanıldığını bilmek zorunda kalmıyor. Seçim tek bir şeye bağlı:
+   * sayfa görünür mü.
    */
   const hearOnce = useCallback(
     async (
@@ -410,58 +443,82 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       expected = "",
       /** Ara sonuç bunu geçerse dinleme HEMEN kapanır (bkz. use-listen). */
       accept?: (alternatives: string[]) => boolean,
+      /** Ekran dinleme sırasında kapanırsa cep yoluna geçmeden önce okunacak soru. */
+      reprompt?: SpeechSegment[],
+      signal?: AbortSignal,
     ): Promise<string[]> => {
+      const visible = () => typeof document === "undefined" || document.visibilityState === "visible";
+
       /*
-        Sıra: sayfa GÖRÜNÜRKEN önce tarayıcının kendi tanıyıcısı.
+        Görünürken tarayıcının kendi tanıyıcısı — başka hiçbir şey.
 
-        Ölçülebilir bir tercih değil, kullanılabilir bir gerçek: o tanıyıcı
-        kısa cevaplarda belirgin biçimde daha iyi anlıyor, anında cevap
-        veriyor ve hiçbir şeye mal olmuyor. Kayıt + sunucuda yazıya çevirme
-        yolu ise ekran kapandığında çalışabilen TEK yol — `SpeechRecognition`
-        sayfa görünmezken susuyor.
-
-        Yani ikisi rakip değil: biri kaliteyi, diğeri kapsamı veriyor. Boş
-        dönen tanıyıcının ardından kayıt yolu yine deneniyor, çünkü tek bir
-        turu kaybetmek gereksiz.
+        Eskiden iki boş dinlemeden sonra tanıyıcı oturum boyunca bırakılıp
+        sunucuya geçiliyordu; düşünme süresi dört saniyeyi aşan iki cevap
+        yetiyordu ve kullanıcı ekran açıkken uydurma kelimeler duyuyordu.
+        Boş dinleme artık "duyamadım"dır, yol değişmez. Yalnız tanıyıcının
+        gerçekten öldüğünü söyleyen kodlarda (BROWSER_DEAD) oturum boyunca
+        bırakılıyor ve bu sesle söyleniyor; o durumda sunucu yolu görünür
+        sayfadan `default` kipiyle çağrılıyor, yani Azure'a yine gidilmiyor
+        (bkz. pocket-mic `transcribe`).
       */
-      const visible = typeof document === "undefined" || document.visibilityState === "visible";
-
-      if (browserRef.current && visible) {
-        // Sessizlik tavanı burada daha dar: tanıyıcının kendi bitiş algısı var,
-        // tavan yalnızca hiç ses gelmediğinde devreye giriyor ve arkasından
-        // kayıt yolu deneneceği için uzun tutmanın bedeli iki kat bekleme.
+      if (browserRef.current && visible()) {
+        const startedAt = Date.now();
         const heard = await listen({
           lang: lang === "tr" ? "tr-TR" : "de-DE",
-          silenceMs: Math.min(windowMs, BROWSER_SILENCE_MS),
-          maxMs: Math.min(windowMs, BROWSER_SILENCE_MS),
+          silenceMs: BROWSER_SILENCE_MS,
+          maxMs: windowMs,
           accept,
           // İşaret tanıyıcı BAŞLADIKTAN sonra çalıyor: kullanıcı bipi duyduğu
           // anda mikrofon zaten dinliyor, yani bipi beklemesi gerekmiyor.
           // Ses öğesiyle veriliyor çünkü WebAudio yolu ekran kapalıyken askıda.
           onOpen: pocketCue,
         });
-        if (heard.alternatives.length) {
-          browserMisses.current = 0;
-          return heard.alternatives;
+        const outcome = heard.alternatives.length ? "ok" : heard.error ?? (heard.silent ? "silence" : "end");
+        track("walk_listen", 0, `browser:${outcome}`);
+        note(`tarayıcı ${outcome} ${Date.now() - startedAt} ms${heard.alternatives[0] ? ` "${heard.alternatives[0]}"` : ""}`);
+        if (heard.alternatives.length) return heard.alternatives;
+        if (signal?.aborted) return [];
+
+        if (heard.error && BROWSER_DEAD.has(heard.error)) {
+          browserRef.current = false;
+          captureRef.current = "stt";
+          setCapture("stt");
+          track("walk_switch", 1, "handoff");
+          await say([
+            {
+              lang: "tr",
+              text: sttReady.current
+                ? "Tarayıcının tanıyıcısı çalışmıyor; cevapları sunucuya soracağım."
+                : "Tarayıcının tanıyıcısı çalışmıyor. Turu durdurdum.",
+            },
+          ]);
+          if (!sttReady.current) {
+            pauseRef.current();
+            return [];
+          }
+          if (reprompt) await say(reprompt);
+        } else if (visible()) {
+          // Boş dinleme, sayfa hâlâ görünür: duyulmadı. Yol değişmiyor.
+          return [];
+        } else if (sttReady.current && micHeld()) {
+          /*
+            Ekran dinleme sırasında kapandı.
+
+            Kullanıcı soruyu duyup telefonu cebine koyduğunda tam olarak bu
+            oluyor: Android tanıyıcıyı iptal ediyor, cevap belki söylendi ama
+            kayıt yolu daha açılmamıştı. Soru bir kez tekrar okunuyor — hem
+            cevap yeniden alınıyor hem de "cebe geçtim" bunu söylemiş oluyor.
+          */
+          track("walk_switch", 1, "hidden");
+          if (reprompt) await say(reprompt);
+        } else {
+          return [];
         }
-        browserMisses.current += 1;
-        if (browserMisses.current >= BROWSER_GIVE_UP) browserRef.current = false;
+        if (signal?.aborted) return [];
       }
 
-      /*
-        Görünürlük YENİDEN okunuyor.
-
-        Ekran, tanıyıcı dinlerken kapanabiliyor — kullanıcı soruyu duyup
-        telefonu cebine koyduğunda tam olarak bu oluyor. Tanıyıcı o anda
-        susuyor ve elinde bir şey olmadan dönüyor. Girişteki "görünürdü"
-        bilgisiyle karar verilince kayıt yolu denenmiyor ve ekranın
-        kapanmasına denk gelen soru daima "duyamadım" oluyordu.
-      */
-      const stillVisible =
-        typeof document === "undefined" || document.visibilityState === "visible";
-
-      // Kayıt yolu yalnızca ekran kapalıyken (ya da tanıyıcı hiç yokken).
-      if (sttReady.current && (!stillVisible || !browserRef.current)) {
+      // Cep yolu: kayıt + sunucu. Sayfa gizli (ya da tanıyıcı yok).
+      if (sttReady.current) {
         /*
           İşaret kaydın İÇİNDEN veriliyor.
 
@@ -471,36 +528,54 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           yapabileyim" istenen şey bu.
         */
         pocketCue();
-        // Kayıt konuşma bitince kendiliğinden kapanıyor; `windowMs` sabit
-        // pencere değil ÜST SINIR.
-        const clip = await recordClip(windowMs);
-        if (clip) {
-          captureFails.current = 0;
-          return (await transcribe(clip.blob, lang, expected)).alternatives;
-        }
-        /*
-          Klip üretilemedi.
+        recording.current = true;
+        try {
+          // Kayıt konuşma bitince kendiliğinden kapanıyor; `windowMs` sabit
+          // pencere değil ÜST SINIR.
+          const clip = await recordClip(windowMs, 400, signal);
+          if (signal?.aborted) return [];
+          if (clip) {
+            captureFails.current = 0;
+            const startedAt = Date.now();
+            const heard = await transcribe(clip.blob, lang, expected, { signal });
+            const outcome = heard.reason ?? "ok";
+            track("walk_listen", Math.round(heard.sentSeconds * 10), `${heard.provider ?? "stt"}:${outcome}`);
+            note(`${heard.provider ?? "sunucu"} ${outcome} ${heard.sentSeconds.toFixed(1)} sn ${Date.now() - startedAt} ms${heard.alternatives[0] ? ` "${heard.alternatives[0]}"` : ""}${typeof heard.confidence === "number" ? ` ${heard.confidence.toFixed(2)}` : ""}`);
+            return heard.alternatives;
+          }
+          /*
+            Klip üretilemedi.
 
-          Bu "kullanıcı susuyor" değil, "kayıt çalışmıyor" demek ve ikisi çok
-          farklı: susan kullanıcı için turu sürdürmek doğru, çalışmayan kayıtla
-          sürdürmek yirmi turu saniyeler içinde tüketiyor. İki ardışık
-          başarısızlıkta tur duruyor ve sebebi SESLE söyleniyor — kullanıcı
-          ekrana bakmıyor.
-        */
-        captureFails.current += 1;
-        if (captureFails.current >= CAPTURE_FAIL_LIMIT) {
-          captureFails.current = 0;
-          track("walk_end", 4);
-          await say([
-            { lang: "tr", text: "Mikrofona ulaşamıyorum. Turu durdurdum, telefonu açınca devam edelim." },
-          ]);
-          pauseRef.current();
+            Bu "kullanıcı susuyor" değil, "kayıt çalışmıyor" demek ve ikisi çok
+            farklı: susan kullanıcı için turu sürdürmek doğru, çalışmayan kayıtla
+            sürdürmek yirmi turu saniyeler içinde tüketiyor. İki ardışık
+            başarısızlıkta tur duruyor ve sebebi SESLE söyleniyor — kullanıcı
+            ekrana bakmıyor.
+          */
+          captureFails.current += 1;
+          track("walk_listen", 0, "record:failed");
+          if (captureFails.current >= CAPTURE_FAIL_LIMIT) {
+            captureFails.current = 0;
+            track("walk_end", 4);
+            ended.current = true;
+            await say([
+              { lang: "tr", text: "Mikrofona ulaşamıyorum. Turu durdurdum, telefonu açınca devam edelim." },
+            ]);
+            pauseRef.current();
+          }
+        } finally {
+          recording.current = false;
+          // Ekran kayıt sürerken açıldıysa mikrofon şimdi susturuluyor.
+          if (deactivateWhenIdle.current && visible()) {
+            deactivateWhenIdle.current = false;
+            deactivateMic();
+          }
         }
       }
 
       return [];
     },
-    [listen, say],
+    [listen, note, say],
   );
 
   /**
@@ -511,21 +586,33 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * kopabiliyor. Bunların hepsi aynı sonucu veriyordu — tur o satırda donuyor
    * ve kullanıcı cepteki telefondan bir daha hiçbir şey duymuyor.
    *
-   * Süre dolarsa "duyulmadı" dönüyor. Bu bir kayıp ama turu öldürmüyor:
-   * duyulmayan cevap zaten yanlış sayılmıyor (bkz. UNHEARD_IS_NOT_WRONG).
+   * Süre dolarsa "duyulmadı" dönüyor VE içerideki iş iptal ediliyor: eskiden
+   * süresi dolan dinleme arkada kaydı bitirip sunucuya da gönderiyordu
+   * (üretimde aynı saniyede iki çağrı), sonraki sorunun sesine karışıyordu.
    */
   const hear = useCallback(
-    (
+    async (
       lang: "de" | "tr",
       windowMs: number,
       expected = "",
       accept?: (alternatives: string[]) => boolean,
-    ): Promise<string[]> =>
-      withDeadline(
-        hearOnce(lang, windowMs, expected, accept),
+      reprompt?: SpeechSegment[],
+    ): Promise<string[]> => {
+      hearCtl.current?.abort();
+      const ctl = new AbortController();
+      hearCtl.current = ctl;
+      const heard = await withDeadline(
+        hearOnce(lang, windowMs, expected, accept, reprompt, ctl.signal),
         windowMs + HEAR_SLACK_MS,
-        [] as string[],
-      ),
+        null as string[] | null,
+      );
+      if (heard === null) {
+        ctl.abort();
+        track("walk_listen", 0, "deadline");
+        return [];
+      }
+      return heard;
+    },
     [hearOnce],
   );
 
@@ -533,6 +620,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     run.current++;
     stopSpeaking();
     cancel();
+    hearCtl.current?.abort();
     speakDone.current?.();
     speakDone.current = null;
   }, [cancel]);
@@ -549,12 +637,19 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   */
   useEffect(
     () => () => {
+      // Geri hareketi ya da sekme değişimiyle çıkış da bir bitiş: kayda geçsin,
+      // yoksa dışarıdan "takıldı"dan ayırt edilemiyor (60 günde hiç walk_end yoktu).
+      if (!ended.current && run.current > 0) track("walk_end", 6);
       stopAll();
       stopPocketAudio();
       closeMic();
     },
     [stopAll],
   );
+
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).has("diag")) setDiag([]);
+  }, []);
 
   // Kurulum yoklaması: cevabı beklerken hiçbir şey engellenmiyor, yalnızca
   // başlangıç ekranındaki söz doğru olsun diye.
@@ -622,6 +717,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           CONFIRM_SILENCE_MS,
           "",
           (alts) => parseConfirm(alts[0] ?? "") !== null,
+          [{ lang: "tr", text: "Devam edelim mi?" }],
         );
         const intent = parseConfirm(heard[0] ?? "");
         if (intent === "yes") return "yes";
@@ -695,8 +791,12 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           const askedAt = Date.now();
           // Doğru cevap duyulur duyulmaz dinleme kapanıyor: beklenen cevap
           // belliyken duraklama payının dolmasını beklemenin karşılığı yok.
-          const heard = await hear("de", ANSWER_WINDOW_MS, target, (alts) =>
-            spokenMatches(alts, [target, word.de]),
+          const heard = await hear(
+            "de",
+            ANSWER_WINDOW_MS,
+            target,
+            (alts) => spokenMatches(alts, [target, word.de]),
+            [{ lang: "tr", text: word.tr }],
           );
           if (!alive()) return;
 
@@ -727,17 +827,14 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               // başka bir uygulama kullanıyor ya da tarayıcı tanıyıcısıyla
               // çalışılıyor ve sayfa arka planda. Devam etmek yirmi turu
               // saniyeler içinde tüketirdi.
+              // Eski hâli tarayıcı yolunda "ekranın açık kalması gerekiyor" diyordu;
+              // ekran zaten açıkken bu, kullanıcıya yanlış bir sebep söylemekti.
               await say([
-                {
-                  lang: "tr",
-                  text:
-                    captureRef.current === "browser"
-                      ? "Sesini duyamıyorum. Bu tarayıcıda ekranın açık kalması gerekiyor."
-                      : "Sesini duyamıyorum. Turu durdurdum, hazır olunca devam et.",
-                },
+                { lang: "tr", text: "Sesini duyamıyorum. Turu durdurdum; mikrofonu kontrol edip hazır olunca devam et." },
               ]);
               if (!alive()) return;
               track("walk_end", 3);
+              ended.current = true;
               heardLog.current = [];
               setStatus("paused");
               void release();
@@ -807,6 +904,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       if (!alive()) return;
       if (again === "no") {
         track("walk_end", 1);
+        ended.current = true;
         setPhase("speaking");
         await say([{ lang: "tr", text: "Tamam, iyi günler." }]);
         stopPocketAudio();
@@ -822,6 +920,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       if (!alive()) return;
       if (!next?.rounds.length) {
         track("walk_end", 2);
+        ended.current = true;
         await say([{ lang: "tr", text: "Bugünlük tekrar kalmadı." }]);
         setStatus("done");
         return;
@@ -904,6 +1003,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     heardLog.current = [];
     askedIds.current = new Set();
     startedAt.current = Date.now();
+    ended.current = false;
+    deactivateWhenIdle.current = false;
     setStatus("playing");
     track("walk_start", from);
     // Kısıtın gerçekten uygulanıp uygulanmadığı kayda geçiyor: bozuk ses
@@ -913,7 +1014,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   }
 
   function pause() {
-    track("walk_end", 6);
+    if (!ended.current) track("walk_end", 6);
+    ended.current = true;
     stopAll();
     void release();
     stopPocketAudio();
@@ -928,6 +1030,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   });
 
   function leave() {
+    if (!ended.current && status === "playing") track("walk_end", 6);
+    ended.current = true;
     stopAll();
     void release();
     stopPocketAudio();
@@ -966,9 +1070,12 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         // Tanıyıcı burada zaten susuyor; mikrofon artık kayıt yolunun.
         // Akış zaten elimizde — yalnızca açılıyor, yeniden istenmiyor.
         if (sttReady.current && micHeld()) {
+          deactivateWhenIdle.current = false;
           captureRef.current = "stt";
           setCapture("stt");
           activateMic();
+          track("walk_switch", 1, "hidden");
+          note("ekran kapandı → cep yolu");
           return;
         }
         /*
@@ -985,6 +1092,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           kullanmıyor çünkü o artık geçersiz bir jetona bağlı.
         */
         track("walk_end", 5);
+        ended.current = true;
         stopAll();
         void release();
         setStatus("paused");
@@ -1003,16 +1111,20 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       }
       // Ekran geri açıldı: kayıt durup parçalar susturuluyor, ama akış
       // BIRAKILMIYOR — ekran yeniden kapanabilir ve o an yeniden istemek
-      // reddedilirdi.
+      // reddedilirdi. Süren bir kayıt varsa bitmesi bekleniyor: tamponu şimdi
+      // silmek, cebe söylenmiş cevabı yakmak olurdu.
       if (browserRef.current) {
-        deactivateMic();
+        if (recording.current) deactivateWhenIdle.current = true;
+        else deactivateMic();
         captureRef.current = "browser";
         setCapture("browser");
+        track("walk_switch", 0, "visible");
+        note("ekran açıldı → tarayıcı");
       }
     };
     document.addEventListener("visibilitychange", onChange);
     return () => document.removeEventListener("visibilitychange", onChange);
-  }, [status, stopAll, release]);
+  }, [status, stopAll, release, note]);
 
   // ── Görünüm ────────────────────────────────────────────────────────
 
@@ -1083,7 +1195,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           >
             Bu kurulumda ekran kapalıyken ses yakalanamıyor: tur sürer ama cevapların
             duyulmaz. Cepte çalışması için sunucuda bir konuşma tanıma anahtarı
-            (<code>DEEPGRAM_API_KEY</code>) tanımlı olmalı.
+            (<code>AZURE_SPEECH_KEY</code> ya da <code>DEEPGRAM_API_KEY</code>) tanımlı olmalı.
           </p>
         ) : null}
         {status === "paused" ? (
@@ -1223,6 +1335,16 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           </>
         )}
       </motion.div>
+
+      {diag ? (
+        <div
+          className="mt-4 rounded-xl px-3 py-2 font-mono text-[11px] leading-snug"
+          style={{ background: "rgba(20,16,14,0.92)", color: "#f4eee4" }}
+        >
+          <div style={{ opacity: 0.6 }}>dinlemeler · yol: {capture === "stt" ? "cep" : "tarayıcı"}</div>
+          {diag.length ? diag.map((l, i) => <div key={i}>{l}</div>) : <div>—</div>}
+        </div>
+      ) : null}
 
       {/* Düğmeler bilerek büyük: yürürken ve bakmadan basılıyor. */}
       <button onClick={pause} className="btn btn-ghost mt-6 w-full px-5 py-4 text-base">
