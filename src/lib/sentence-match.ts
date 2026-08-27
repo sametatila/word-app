@@ -1,4 +1,5 @@
 import { classifyOrder, levenshtein, type ErrorType } from "@/lib/errors";
+import { foldNumbers } from "@/lib/german-numbers";
 
 /**
  * Cümle eşleştirme — "Çevir" turunun hakemi (plan WP-10).
@@ -41,8 +42,9 @@ export type SentenceMatch = {
 
 /** Katlama: karşılaştırma için; ekranda hep orijinal metin gösterilir. */
 export function foldSentence(s: string): string {
-  return s
-    .toLocaleLowerCase("de-DE")
+  // Sayı sözcükleri rakama: tanıyıcı/yazan "fünf"ü "5" verebiliyor, hedef
+  // "fünf". Cümlede "um fünf Uhr" ↔ "um 5 Uhr" eşleşsin.
+  return foldNumbers(s.toLocaleLowerCase("de-DE"))
     .replace(/ß/g, "ss")
     .replace(/ä/g, "ae")
     .replace(/ö/g, "oe")

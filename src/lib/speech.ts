@@ -17,6 +17,8 @@
  * için bu liste kısa ve tahmin edilebilir.
  */
 
+import { foldNumbers } from "@/lib/german-numbers";
+
 /** Öğrencinin bu görevde yapması beklenen, önceden tanımlı sapma. */
 export type SpeechConfusion = {
   /** Tanıyıcıdan çıkması beklenen yanlış biçim(ler). */
@@ -69,8 +71,10 @@ const PUNCTUATION = /[.,!?;:„“”"'`´()[\]…]/g;
  * şeyi yok ederdi — schön ile schon arasındaki fark bu turun konusu.
  */
 export function normalizeSpoken(text: string): string {
-  return text
-    .toLocaleLowerCase("de-DE")
+  // Sayı sözcükleri rakama: tanıyıcı "fünf"ü "5" yazıyor, içerik "fünf".
+  // Umlaut BİLEREK korunuyor (schön/schon farkı bu turun konusu), o yüzden
+  // foldNumbers'ın umlaut'lu biçimleri (fünf) de tanıması gerekiyor — tanıyor.
+  return foldNumbers(text.toLocaleLowerCase("de-DE"))
     .replace(PUNCTUATION, " ")
     .replace(/\s+/g, " ")
     .trim();

@@ -1,6 +1,7 @@
 import type { Round, RoundWord } from "@/lib/types";
 import type { ErrorType } from "@/lib/errors";
 import { umlautStem } from "@/lib/german";
+import { foldNumbers } from "@/lib/german-numbers";
 
 export type GameResult = {
   wordId: number;
@@ -97,7 +98,10 @@ export function normalize(s: string): string {
  * artikeli ayrı sütunda dursa bile "die Tür" yazan haklıdır.
  */
 export function foldSpelling(s: string): string {
-  return normalize(s)
+  // Sayı sözcüğü → rakam, umlaut katlamadan ÖNCE (fünf ve fuenf ikisi de
+  // tanınıyor, sıra aslında önemsiz): "fünf" ↔ "5" eşleşsin. Tanıyıcı sayıyı
+  // rakam yazıyor, içerik sözcükle; ikisi de rakama iniyor.
+  return foldNumbers(normalize(s))
     .replace(/^(der|die|das)\s+/, "")
     .replace(/ß/g, "ss")
     .replace(/ä/g, "ae")
