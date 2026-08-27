@@ -584,19 +584,20 @@ yanlış cevap sayılıyordu (`der Großvater` → "Wolfsfatter", `raten` → "P
 
 | Karar | Neden |
 |---|---|
-| Sayfa görünürken **yalnız tarayıcı tanıyıcısı** | Derslerin yıllardır sorunsuz yolu; Android 12+'da Google'ın cihaz-üstü tanıyıcısı. Boş dinleme "duyamadım"dır, yol değişmez; sessizlik tavanı 7 sn. Yalnız tanıyıcının öldüğünü söyleyen kodlarda (`not-allowed`, `audio-capture`) bırakılıyor ve sesle söyleniyor |
+| Ekranda kip **dersle birebir aynı**: yalnız tarayıcı tanıyıcısı, mikrofon tutulmuyor, sessiz döngü çalmıyor, okuma oyunların boşluksuz yolundan | İlk düzeltme mikrofon akışını oturum başında alıp (parçaları kapalı) tutmayı sürdürüyordu; sahibin telefonunda altı dinlemenin altısı `browser:end` — tanıyıcı açılıyor, hata vermeden ve hiçbir şey duymadan kapanıyor. Android eşzamanlı kayıtta sesi üstteki uygulamanın kendi akışına veriyor, tanıyıcı servisi sessizlik alıyor; aynı akış Bluetooth'ta çıkışı telefon yoluna düşürüp okumayı da bozuyordu ("oyunlardaki gibi değil"). Boş dinleme "duyamadım"dır, kip değişmez; sessizlik tavanı 7 sn |
+| Cep yolu **"Cebe koy" ile** kuruluyor | Mikrofon kilitli ekranda istenemiyor (ölçülmüş), tutulunca da tanıyıcı ölüyor: tek izinli an, kullanıcının ekran açıkken dokunduğu an. Düğme mikrofonu alıp sessiz döngüyü kuruyor, "ekranı kapatabilirsin" diyor; ekran kapanınca kayıt + sunucu. Ekran açık kaldıkça cepte kipinde DİNLENMİYOR, yarım dakikada kapanmazsa ekran kipine dönülüyor. Ekran geri açılınca (süren kayıt bitince) kendiliğinden ekran kipi |
+| Ekran kipinde ekran kapanırsa tur **duruyor ve sebebini söylüyor** | O an yapılabilecek dürüst şey yok. Ekranı KAPATMADAN cebe koyan için ekran kipi zaten yeter: ekran kilidi ekranı açık tutuyor, tanıyıcı sürüyor |
 | Ekran kapalıyken **Azure önde** (`mode: walk`) | Kısa-ses ucu sessizlikte boş dönüyor, güven bildiriyor; TTS kliplerinde 15/15. Whisper'lar yalnız Azure ve Deepgram düşerse. Azure ekranlı yollara hiç girmiyor: F0 ayda 5 saat, tarayıcı tanıyıcısı bedava |
 | Kip **görünürlükten** seçiliyor, istemci değil | `transcribe` sayfa gizliyse `walk`, görünürse `default` gönderiyor; sunucu Azure'u yalnız `walk`ta zincire alıyor. Görünür sayfa Azure isteyemiyor |
 | Pencere değil **konuşma** gidiyor | Klip PCM'e çözülüp konuşma bölgesi bulunuyor (`lib/vad`); ölçüldü: 6 sn'lik gürültülü pencere 1–1,4 sn'ye indi, güven aynı ya da yüksek — uzun sessizlik doğruluğu da bozuyordu. Sessiz pencere hiç gönderilmiyor. Kesilemeyen ama sesli pencere bütünüyle gidiyor: yanlış ret yanlış kabulden kötü |
 | Aylık **tavan** sunucuda | `ai_usage`'dan Azure saniyesi toplanıyor; 4,5 saati geçince Azure o ay zincirden düşüyor, tur Deepgram/Groq ile sürüyor |
-| Dinlemede ekran kapanırsa soru **tekrar okunuyor** | Android tanıyıcıyı iptal ediyor; cevap belki söylendi ama kayıt yolu daha açılmamıştı. Tekrar hem cevabı alıyor hem "cebe geçtim" demiş oluyor |
-| Ekran açılınca süren kayıt **bekleniyor** | Tamponu hemen silmek cebe söylenmiş cevabı yakıyordu |
+| Düğme **okumuyor**, döngüye not bırakıyor | "Cebe koy"dan doğrudan okumak döngünün süren okumasını iptal ediyor, döngü o okumanın bitişini 30 sn'lik tavana kadar bekliyordu (ölçüldü: 1,3 → 31,3 sn). Duyuruyu döngü kendi sırasında okuyor; dinlemenin ortasına denk gelirse kelime yeniden soruluyor |
 | Süresi dolan dinleme **iptal** | Eskiden arkada kaydı bitirip sunucuya da gönderiyordu: aynı saniyede iki çağrı |
-| Her dinleme **kayda geçiyor** | `walk_listen` (yol, hata kodu, giden saniye) ve `walk_switch`; `?diag=1` son dinlemeleri ekranda gösteriyor. "Web Speech gerçekten devrede mi" sorusu veriyle cevaplanıyor |
+| Her dinleme **kayda geçiyor** | `walk_listen` (yol, hata kodu, giden saniye) ve `walk_switch`; `?diag=1` son dinlemeleri ekranda gösteriyor. Teşhisin kendisi bu veriden çıktı |
 
 `npm run test:walk -- visible-only` ekran açıkken sunucuya sıfır istek gittiğini,
-`switch` kapanınca kaydın gidip açılınca bir daha gitmediğini ölçüyor; `npm run test:vad`
-kırpıcının birim testi.
+`switch` "Cebe koy" sonrası kapanınca kaydın gidip açılınca bir daha gitmediğini ve turun
+tanıyıcıyla sürdüğünü ölçüyor; `npm run test:vad` kırpıcının birim testi.
 
 #### Mikrofon açıkken ses kalitesi
 

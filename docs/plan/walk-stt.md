@@ -81,10 +81,39 @@ Toplam 34,4 → 6,9 s (%80). Sessiz pencere hiç gönderilmiyor. Kota: ~27 s/yü
 4. `test:walk` senaryoları: `visible-only` (ekran açık, sunucuya sıfır istek), `switch`
    (kapan → kayıt gider, aç → bir daha gitmez, tur sürer); `test:vad`.
 
+## v2 (aynı gün): tutulan mikrofon tanıyıcıyı öldürüyor
+
+İlk sürüm deploy edildi; sahip "ekran açıkken sürekli duyamadım, TTS oyunlardaki gibi değil,
+mikrofon açıldı işareti bazen gelmiyor" dedi. `walk_listen` verisi (17:00–17:02, iki deneme):
+
+```
+17:00:25 browser:end   17:00:39 browser:end   17:00:53 browser:end   → walk_end 3
+17:01:30 browser:end   17:01:44 browser:end   17:01:58 browser:end   → walk_end 3
+```
+
+Altı dinlemenin altısı `end`: tanıyıcı açılıyor, hata vermeden ve hiçbir şey duymadan
+kapanıyor. Aynı kod sahte tanıyıcıyla (`demo-u`, test koşumu) `browser:ok`. Derslerle tek
+fark: yürüyüş oturum başında mikrofon akışını tutuyordu (parçaları kapalı). Android eşzamanlı
+kayıt kuralı — sesi üstteki uygulama alır, öteki sessizlik — tanıyıcı servisini sağır
+bırakıyor; aynı akış Bluetooth'ta çıkışı SCO'ya düşürüp okumayı bozuyor (TTS şikâyeti).
+Okumanın diğer yarısı: yürüyüş ses-öğesi zincirini, oyunlar boşluksuz WebAudio yolunu
+kullanıyordu.
+
+Karar: **ekranda kip dersle birebir aynı** (mikrofon tutulmaz, sessiz döngü çalmaz, okuma
+oyunların yolundan, işaret dersin işareti). Cep yolu **"Cebe koy"** ile: mikrofon ve sessiz
+döngü dokunuşun içinde kuruluyor (mikrofon kilitli ekranda istenemiyor — tek izinli an bu),
+ekran kapanınca kayıt; ekran açıkken cepte kipinde dinlenmiyor (30 sn'de kapanmazsa ekran
+kipi), ekran açılınca kendiliğinden ekran kipi. Ekran kipinde ekran kapanırsa tur durup
+çaresini söylüyor. Bedeli: otomatik geçiş yok — platform kısıtıyla (kilitli ekranda mikrofon)
+cihaz kısıtı (tutulan mikrofon tanıyıcıyı öldürüyor) birlikte başka çıkış bırakmıyor.
+
+Bulunan ikinci hata: düğmeden doğrudan `say` çağırmak döngünün okumasını iptal edip döngüyü 30
+sn'lik tavana kadar asıyordu (harness: 1,3 → 31,3 sn); duyuruyu döngü kendi sırasında okuyor.
+
 ## Açık kalanlar
 
-- Görünürken tutulan mikrofon akışının Web Speech'i bozup bozmadığı cihazda ölçülmedi;
-  `walk_listen` (`browser:no-speech` oranı) ilk gerçek yürüyüşte cevaplar. Bozuyorsa akış
-  görünürken tutulmaz.
 - Güven eşiği (0,4) ve PA eşikleri gerçek kayıtlarla kalibre edilecek.
-- Cepte Web Speech kalitesi istenirse "karanlık ama görünür ekran" (cep kilidi) ayrı bir iş.
+- Cepte de Web Speech istenirse "karanlık ama görünür ekran" (cep kilidi) ayrı bir iş; ekran
+  kipinde ekran kilidi zaten ekranı açık tutuyor, ekranı kapatmadan cebe koymak bugün çalışır.
+- Bluetooth'ta cepte kipinin okuması SCO yüzünden telefon kalitesinde olabilir; girişi telefon
+  mikrofonuna sabitlemek bunu çözer ama kumaş arkasından dinler — sahibin tercihi.

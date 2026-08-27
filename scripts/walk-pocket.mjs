@@ -78,14 +78,14 @@ const sttTimes = [];
 
 /** Sahte tanıyıcının okuyacağı kelimeler — tur verisiyle aynı sıra. */
 const WORDS_FOR_FAKE = [
-  ["der", "Weg"],
-  ["die", "Katze"],
-  ["das", "Haus"],
-  ["der", "Baum"],
-  ["die", "Blume"],
-  ["das", "Buch"],
-  ["der", "Tisch"],
-  ["die", "Tür"],
+  ["der", "Weg", "yol"],
+  ["die", "Katze", "kedi"],
+  ["das", "Haus", "ev"],
+  ["der", "Baum", "ağaç"],
+  ["die", "Blume", "çiçek"],
+  ["das", "Buch", "kitap"],
+  ["der", "Tisch", "masa"],
+  ["die", "Tür", "kapı"],
 ];
 
 const browser = await chromium.launch({
@@ -124,7 +124,6 @@ if (SCENARIO === "browser-fast" || SCENARIO === "visible-only" || SCENARIO === "
       süren dinlemeyi "aborted" ile iptal ediyor, gizliyken başlatılırsa da.
       Ekran kapanınca cep yoluna, açılınca tanıyıcıya dönülmeli.
     */
-    let n = 1; // ilk tur tanıtım, ilk dinleme ikinci kelimede
     const active = new Set();
     document.addEventListener("visibilitychange", () => {
       if (!document.hidden) return;
@@ -160,17 +159,28 @@ if (SCENARIO === "browser-fast" || SCENARIO === "visible-only" || SCENARIO === "
           return;
         }
         active.add(this);
-        const [artikel, de] = words[n++ % words.length];
+        /*
+          Cevap ekrandan: dinleme sırasında Türkçe soru ekranda yazıyor, sahte
+          tanıyıcı onu bulup Almancasını veriyor. Sayaçla sıra tutmak kip
+          geçişlerinde (cebe koy → tekrar sor) kayıyordu ve her yanlış cevap
+          sonraki turu bozuyordu. Ekranda soru yoksa (onay sorusu) "evet".
+        */
+        const text = document.body.innerText;
+        const hit = words.find((w) => text.includes(w[2]));
+        const answer = hit ? `${hit[0]} ${hit[1]}` : "evet";
         setTimeout(() => {
           if (!active.has(this)) return;
           active.delete(this);
-          const alt = { transcript: `${artikel} ${de}`, confidence: 0.95 };
+          const alt = { transcript: answer, confidence: 0.95 };
           const res = Object.assign([alt], { length: 1, isFinal: false });
           this.onresult?.({ results: Object.assign([res], { length: 1 }) });
         }, 400);
       }
       stop() {
         active.delete(this);
+        // Gerçek tanıyıcı `stop()`tan sonra `onend` veriyor; `browser-fast`
+        // bilerek vermiyor (erken kapatmayı ölçmek için), geçiş senaryosu veriyor.
+        if (scenario === "switch") setTimeout(() => this.onend?.(), 30);
       }
       abort() {
         active.delete(this);
@@ -374,6 +384,22 @@ await page.goto(`${BASE}/learn`, { waitUntil: "domcontentloaded" });
 await page.getByRole("button", { name: /Yürürken/ }).click({ timeout: 20_000 });
 await page.getByRole("button", { name: /Kulaklığı tak, başla|Devam et/ }).click({ timeout: 20_000 });
 log("tur başladı (ekran açık)");
+
+/*
+  Cep yolu artık kendiliğinden değil "Cebe koy" ile kuruluyor: mikrofon ekran
+  AÇIKKEN alınıyor (kilitliyken istenemiyor) ve tutulan mikrofon tarayıcı
+  tanıyıcısını bozduğu için ekran kipinde hiç tutulmuyor. Ekranı kapatan
+  senaryolar önce buna basıyor; düğme yoksa (sunucu STT kapalı) tur ekran
+  kapanınca sesli açıklamayla durmalı.
+*/
+if (SCENARIO !== "browser-fast" && SCENARIO !== "visible-only") {
+  try {
+    await page.getByRole("button", { name: /Cebe koy/ }).click({ timeout: 8_000 });
+    log("cebe koy");
+  } catch {
+    log("cebe koy düğmesi yok (sunucu STT kapalı?)");
+  }
+}
 
 await page.waitForTimeout(HIDE_AT_MS);
 const beforeHide = spoken.length;
