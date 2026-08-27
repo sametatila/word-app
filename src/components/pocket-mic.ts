@@ -2,7 +2,7 @@
 
 import { afterMs, tickClock } from "@/components/pocket-clock";
 import { decodePcm, encodeWav } from "@/lib/pronounce-client";
-import { trimSpeech } from "@/lib/vad";
+import { frameLevels, trimSpeech } from "@/lib/vad";
 
 /**
  * Cepte çalışan mikrofon.
@@ -590,8 +590,16 @@ export type PocketHeard = {
   provider?: string;
   /** Sunucuya giden ses (sn); gönderilmediyse 0 — kota izlemesi için. */
   sentSeconds: number;
-  /** Boş dönüşün sebebi. */
-  reason?: "silent" | "network" | "empty" | "low_confidence" | "aborted";
+  /**
+   * Boş dönüşün sebebi.
+   *
+   *   decode — klip PCM'e çözülemedi (kilitli ekranda AudioContext arızası).
+   *   silent — çözüldü ama konuşma bölgesi yok (VAD).
+   *   empty  — sunucu boş metin döndü (Azure sessizliği).
+   */
+  reason?: "silent" | "decode" | "network" | "empty" | "low_confidence" | "aborted";
+  /** `silent`/`decode`te klibin tepe seviyesi (dBFS) — gerçekten sessiz mi, VAD mi ayırt etmek için. */
+  peakDb?: number;
 };
 
 /**
@@ -627,11 +635,24 @@ export async function transcribe(
   try {
     const pcm = await decodePcm(clip, SEND_RATE);
     const cut = trimSpeech(pcm, SEND_RATE);
-    if (!cut) return none("silent");
+    if (!cut) {
+      // Çözüldü ama konuşma yok. Tepe seviyesini de döndür: gerçekten sessiz mi
+      // (kullanıcı susmuş) yoksa VAD mi kaçırdı (kısık mikrofon) — veriyle ayrılsın.
+      const levels = frameLevels(pcm, SEND_RATE);
+      const peakDb = levels.length ? Math.max(...levels) : -120;
+      return { ...none("silent"), peakDb };
+    }
     sendable = encodeWav(cut.pcm, SEND_RATE);
     sentSeconds = cut.pcm.length / SEND_RATE;
   } catch {
-    /* çözülemeyen klip ham gider; sunucu 400 verirse zincir sıradakine geçer */
+    /*
+      Çözülemedi. Ölçüldü: kilitli ekranda eski `new AudioContext()` yolu
+      klibi çözemiyordu (bkz. pronounce-client decodePcm). Artık OfflineAudio
+      ile çözülüyor; yine de olmazsa ham webm gider ama Azure webm almıyor ve
+      halka-tampon dilimi çoğu sağlayıcıda bozuk sayılıyor — bu yüzden ayrı
+      sebep, `silent`le karışmasın.
+    */
+    return none("decode");
   }
   if (opts.signal?.aborted) return none("aborted");
 

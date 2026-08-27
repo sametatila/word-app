@@ -444,13 +444,16 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     const spoken = new Promise<void>((resolve) => {
       speakDone.current = resolve;
       /*
-        Yol kipe göre. Ekranda oyunlarla aynı boşluksuz WebAudio yolu — "okuma
-        oyunlardaki gibi olmalı" şikâyetinin bir yarısı buydu, ses öğesi zinciri
-        ayrı bir kulak veriyordu. Cepte (ya da sayfa gizliyken) ses ÖĞESİ yolu
-        zorlanıyor: telefon kilitlendiğinde `AudioContext` askıya alınıyor ve
-        WebAudio ile çalan her şey susuyor; ses öğeleri çalmaya devam ediyor.
+        Yol GÖRÜNÜRLÜĞE göre, kipe değil. Sayfa görünürken oyunlarla aynı
+        boşluksuz WebAudio yolu — "okuma oyunlardaki gibi olmalı" şikâyetinin
+        bir yarısı buydu, ses öğesi zinciri ayrı bir kulak veriyordu. Yalnızca
+        sayfa gizliyken ses ÖĞESİ yolu zorlanıyor: telefon kilitlendiğinde
+        `AudioContext` askıya alınıyor ve WebAudio ile çalan her şey susuyor;
+        ses öğeleri çalmaya devam ediyor. Cepte kipinde ekran açık kalabiliyor
+        (kullanıcı henüz kapatmadı) ve o an WebAudio çalışıyor — background'a
+        erken geçmenin sebebi yok.
       */
-      const background = armed.current || (typeof document !== "undefined" && document.visibilityState === "hidden");
+      const background = typeof document !== "undefined" && document.visibilityState === "hidden";
       speakSegments(
         segments,
         () => {
@@ -691,7 +694,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             const heard = await transcribe(clip.blob, lang, expected, { signal });
             const outcome = heard.reason ?? "ok";
             track("walk_listen", Math.round(heard.sentSeconds * 10), `${heard.provider ?? "stt"}:${outcome}`);
-            note(`${heard.provider ?? "sunucu"} ${outcome} ${heard.sentSeconds.toFixed(1)} sn ${Date.now() - startedAt} ms${heard.alternatives[0] ? ` "${heard.alternatives[0]}"` : ""}${typeof heard.confidence === "number" ? ` ${heard.confidence.toFixed(2)}` : ""}`);
+            note(`${heard.provider ?? "sunucu"} ${outcome} ${heard.sentSeconds.toFixed(1)} sn ${Date.now() - startedAt} ms${heard.alternatives[0] ? ` "${heard.alternatives[0]}"` : ""}${typeof heard.confidence === "number" ? ` ${heard.confidence.toFixed(2)}` : ""}${typeof heard.peakDb === "number" ? ` peak=${heard.peakDb.toFixed(0)}dB` : ""}`);
             return heard.alternatives;
           }
           /*

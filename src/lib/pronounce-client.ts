@@ -66,25 +66,34 @@ export async function toWav(blob: Blob, sampleRate = 16_000): Promise<Blob> {
  * Klibi tek kanal PCM'e çözer (varsayılan 16 kHz).
  *
  * Yürürken modu bunu ayrıca istiyor: WAV'a çevirmeden önce konuşma bölgesini
- * bulup yalnız onu gönderiyor (bkz. lib/vad). Çözme `decodeAudioData` ile;
- * ekran kapalıyken de çalıştığı üretimde görüldü (kliplerin tamamı WAV gitti).
+ * bulup yalnız onu gönderiyor (bkz. lib/vad).
+ *
+ * Çözme baştan sona **OfflineAudioContext** ile. Sebebi ölçülmüş bir arıza:
+ * `new AudioContext()` telefon kilitliyken SUSPENDED başlıyor ve o bağlamda
+ * `decodeAudioData` çözülmüyor — üretimde ekran kapanır kapanmaz her klip ham
+ * webm olarak gitti ve Azure "desteklenmeyen biçim", ötekiler "bozuk dosya"
+ * dedi (`die Verfügung` ekran daha açıkken çözülüp Azure'a WAV gittiği için
+ * duyulmuştu, sonrakiler değil). OfflineAudioContext donanıma bağlı değil,
+ * render güdümlü — kilitli ekranda da çözüyor. Sessiz döngü sekmeyi canlı
+ * tuttuğu için `startRendering` de ilerliyor.
  */
 export async function decodePcm(blob: Blob, sampleRate = 16_000): Promise<Float32Array> {
-  const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-  const ctx = new AC();
-  try {
-    const decoded = await ctx.decodeAudioData(await blob.arrayBuffer());
-    const length = Math.ceil(decoded.duration * sampleRate);
-    const off = new OfflineAudioContext(1, length, sampleRate);
-    const src = off.createBufferSource();
-    src.buffer = decoded;
-    src.connect(off.destination);
-    src.start();
-    const out = await off.startRendering();
-    return out.getChannelData(0);
-  } finally {
-    void ctx.close();
-  }
+  const OAC =
+    (typeof OfflineAudioContext !== "undefined" ? OfflineAudioContext : undefined) ||
+    (window as unknown as { webkitOfflineAudioContext?: typeof OfflineAudioContext }).webkitOfflineAudioContext;
+  if (!OAC) throw new Error("OfflineAudioContext yok");
+  const buf = await blob.arrayBuffer();
+  // Çözme için bir çerçevelik bağlam yeter; `decodeAudioData` kaynağın kendi
+  // oranında döner, yeniden örnekleme ikinci bağlamda.
+  const decoded = await new OAC(1, 1, sampleRate).decodeAudioData(buf);
+  const length = Math.max(1, Math.ceil(decoded.duration * sampleRate));
+  const off = new OAC(1, length, sampleRate);
+  const src = off.createBufferSource();
+  src.buffer = decoded;
+  src.connect(off.destination);
+  src.start();
+  const out = await off.startRendering();
+  return out.getChannelData(0);
 }
 
 export function encodeWav(samples: Float32Array, sampleRate: number): Blob {

@@ -110,8 +110,40 @@ cihaz kısıtı (tutulan mikrofon tanıyıcıyı öldürüyor) birlikte başka �
 Bulunan ikinci hata: düğmeden doğrudan `say` çağırmak döngünün okumasını iptal edip döngüyü 30
 sn'lik tavana kadar asıyordu (harness: 1,3 → 31,3 sn); duyuruyu döngü kendi sırasında okuyor.
 
+## v3 (aynı gün): kilitli ekranda klip WAV'a çevrilemiyordu
+
+v2 deploy edildi; "Cebe koy → ekranı kapat → hiçbirini duymadı." `ai_usage`/`walk_listen`:
+
+```
+azure ok  "die Verfügung"→"die verrü" 0.50   (ekran daha açıkken, WAV gitti)
+azure/deepgram/groq/cloudflare/speechmatics/mistral ERR 400  ×3 tur
+  azure: "desteklenmeyen biçim audio/webm;codecs=opus"
+  ötekiler: "corrupted / could not decode / invalid audio"
+walk_listen: stt:silent ×3 (bir tur), stt:network ×3 (öbür tur)
+```
+
+Kök neden: `transcribe` klibi `decodePcm` ile WAV'a çeviriyor; `new AudioContext()`
+kilitli ekranda **suspended** başlıyor ve o bağlamda `decodeAudioData` çözmüyor. Ekran
+kapanır kapanmaz her klip ham webm gidiyor; Azure webm almıyor, halka-tampon dilimi
+ötekilerde bozuk sayılıyor. Ekran açıkken çözülen tek klip (`die Verfügung`) duyulmuştu.
+
+Düzeltme: `decodePcm` baştan sona **OfflineAudioContext** ile (donanıma bağlı değil, render
+güdümlü; kilitli ekranda çözer). Ayrıca gözlem: `silent` (çözüldü, konuşma yok) ile `decode`
+(çözülemedi) ayrı sebepler; `silent`te klibin tepe-dB'si de kaydediliyor (`walk_listen` kind,
+`?diag=1` satırı) — gerçekten sessiz mi yoksa VAD mi kaçırdı, gerçek veride ayrılsın. TTS:
+okuma yolu artık kipe değil GÖRÜNÜRLÜĞE bağlı — cepte kipinde ekran açıkken de oyunların
+boşluksuz WebAudio yolu (armed'ken erken ses-öğesine geçmiyor).
+
+> Uyarı: OfflineAudioContext'in kilitli ekranda çözdüğü en iyi bahis ama gerçek cihazda
+> doğrulanmadı. Deploy sonrası `walk_listen`'da hâlâ `stt:decode` görülürse Plan B: cevap
+> başına tek `MediaRecorder` (oneShotClip) ile geçerli webm üretip Deepgram'a göndermek
+> (kalkış gecikmeli ama çözülebilir dosya).
+
 ## Açık kalanlar
 
+- OfflineAudioContext kilitli ekranda çözüyor mu — ilk gerçek yürüyüşte `walk_listen`
+  (`stt:decode` kalmadı mı, `azure:ok` geldi mi) gösterir.
+- `stt:silent` peak-dB'si: yüksekse VAD gevşetilecek, düşükse gerçekten sessizdi.
 - Güven eşiği (0,4) ve PA eşikleri gerçek kayıtlarla kalibre edilecek.
 - Cepte de Web Speech istenirse "karanlık ama görünür ekran" (cep kilidi) ayrı bir iş; ekran
   kipinde ekran kilidi zaten ekranı açık tutuyor, ekranı kapatmadan cebe koymak bugün çalışır.
