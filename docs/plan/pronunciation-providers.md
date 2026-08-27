@@ -1,7 +1,13 @@
 # Telaffuz puanlama — sağlayıcı taraması ve karar (WP-20)
 
-Tarih: 2026-08-26. Kısıt: **Azure yok** (sahibin kararı). Amaç: ücretsiz ya da kalıcı geniş katmanlı,
+Tarih: 2026-08-26. Kısıt (o gün): **Azure yok**. Amaç: ücretsiz ya da kalıcı geniş katmanlı,
 Almanca destekli, kelime (ve mümkünse fonem) düzeyinde telaffuz geri bildirimi.
+
+> **Güncelleme (2026-08-27):** Azure hesabı açıldı (F0, `germanywestcentral`). Azure'un
+> telaffuz puanı Almanca'da karışan çiftleri ayırıyor ama temiz seste bile kelime puanı 44–100
+> dalgalanıyor ve fonem sembolleri boş dönüyor; WP-20'ye bağlanmadan önce gerçek kayıtlarla
+> kalibrasyon şart. Ölçümler `walk-stt.md`'de. Aşağıdaki faz 1 kararı (Groq + kendi puanlama)
+> ekranlı yollarda yürürlükte; Azure yalnız yürürken modunun ekran kapalı yolunda.
 
 ## Özet karar
 

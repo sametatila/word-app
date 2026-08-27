@@ -1,6 +1,9 @@
 # Azure Speech anahtarı — kurulum (WP-20 için)
 
-> **Durum (2026-08-26):** Sahibin kararıyla Azure KULLANILMAYACAK. Bu rehber ileride fikir değişirse dursun; geçerli karar ve alternatifler `pronunciation-providers.md`'de (Groq Whisper + kendi puanlama).
+> **Durum (2026-08-27):** Hesap açıldı, kaynak F0 katmanında `germanywestcentral`; anahtar
+> `.env` ve Vercel'de. "Kullanılmayacak" notunun sebebi ilke değil hesap açılamamasıymış
+> (tenant hatası), çözüldü. Azure şu an **yürürken modunun ekran kapalı yolunda** STT ana hattı
+> ve TTS yedeği; telaffuz puanı için ölçümler ve eşik notları `walk-stt.md`'de.
 
 Son güncelleme: 2026-08-26. Kaynaklar en altta; Azure portalın arayüzü sık değiştiği için
 adım adlarını "Ekran Görüntüsü"nden değil, sayfadaki arama kutusundan bulmak en güvenlisi.

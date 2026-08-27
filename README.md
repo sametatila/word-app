@@ -154,10 +154,12 @@ NEON_AUTH_COOKIE_SECRET="openssl rand -base64 32 çıktısı"
 # Ders içi rol yapma — üçünden biri yeter. Sıra: cerebras → groq → mistral.
 #
 # Yürürken modunun EKRAN KAPALI çalışması için ayrıca bir yazıya çevirme anahtarı
-# gerekiyor. Önerilen: DEEPGRAM_API_KEY (bozuk seste uydurmuyor, boş dönüyor).
-# Yoksa GROQ_API_KEY ya da MISTRAL_API_KEY de kullanılır. Hiçbiri yoksa mod
-# tarayıcının kendi tanıyıcısına düşer ve ekranın açık kalması gerekir.
-# DEEPGRAM_API_KEY="..."
+# gerekiyor. Önerilen: AZURE_SPEECH_KEY + AZURE_SPEECH_REGION (F0: 5 saat/ay,
+# sessizlikte uydurmuyor, güven veriyor; yalnız bu yolda kullanılır). Yoksa
+# DEEPGRAM_API_KEY, o da yoksa GROQ_API_KEY. Hiçbiri yoksa mod tarayıcının kendi
+# tanıyıcısına düşer ve ekranın açık kalması gerekir.
+# AZURE_SPEECH_KEY="..."
+# AZURE_SPEECH_REGION="germanywestcentral"
 CEREBRAS_API_KEY="..."          # önerilen: ücretsizlerin en hızlısı, 1M token/gün
 # GROQ_API_KEY="..."            # ~500K token/gün, ilk yedek
 # MISTRAL_API_KEY="..."         # 1B token/ay ama ~2 RPM — taşma yedeği
@@ -210,7 +212,7 @@ vercel env add DATABASE_URL production                     # ve preview/developm
 vercel env add NEON_AUTH_BASE_URL production
 vercel env add NEON_AUTH_COOKIE_SECRET production
 vercel env add CEREBRAS_API_KEY production                  # rol yapma için; yoksa yalnızca o faz kapalı
-vercel env add DEEPGRAM_API_KEY production                  # yürürken modu ekran kapalı çalışsın diye
+vercel env add AZURE_SPEECH_KEY production                  # yürürken modu ekran kapalı çalışsın diye (+ AZURE_SPEECH_REGION)
 
 # Hatırlatma bildirimleri — üçü birden gerekli, biri eksikse özellik kapalı kalır.
 npx web-push generate-vapid-keys --json                     # çıktıdaki iki anahtar
@@ -571,6 +573,31 @@ ekran kapalıyken kayıt yapabilmesinin sebebi bu.
 | Arkada **sessiz döngü + MediaSession** | Ses hiç kesilmezse tarayıcı sekmeyi "medya çalıyor" sayıyor: zamanlayıcılar kısılmıyor ve sonraki parça ekran kapalıyken de başlatılabiliyor |
 | Ses **saklanmıyor** | Klip bellekte sağlayıcıya iletiliyor ve cevapla birlikte düşüyor |
 
+#### Ekran açıkken tanıyıcı, kapalıyken Azure
+
+Kullanıcının şikâyeti iki cümleydi: "ekran açıkken Web Speech yerine sunucuya gidiyor" ve
+"sunucu ne desem anlamıyor, olmayan kelimeler söylüyor." İkisi de doğruydu. Tanıyıcı iki
+boş dinlemeden sonra oturum boyunca bırakılıyordu (düşünme süresi 4 saniyeyi aşan iki cevap
+yetiyordu); sunucu tarafında Whisper tek kelimelik cep klibine kelime uyduruyor ve uydurma
+yanlış cevap sayılıyordu (`der Großvater` → "Wolfsfatter", `raten` → "Per Geschenk").
+Ölçümler ve karar `docs/plan/walk-stt.md`'de; özeti:
+
+| Karar | Neden |
+|---|---|
+| Sayfa görünürken **yalnız tarayıcı tanıyıcısı** | Derslerin yıllardır sorunsuz yolu; Android 12+'da Google'ın cihaz-üstü tanıyıcısı. Boş dinleme "duyamadım"dır, yol değişmez; sessizlik tavanı 7 sn. Yalnız tanıyıcının öldüğünü söyleyen kodlarda (`not-allowed`, `audio-capture`) bırakılıyor ve sesle söyleniyor |
+| Ekran kapalıyken **Azure önde** (`mode: walk`) | Kısa-ses ucu sessizlikte boş dönüyor, güven bildiriyor; TTS kliplerinde 15/15. Whisper'lar yalnız Azure ve Deepgram düşerse. Azure ekranlı yollara hiç girmiyor: F0 ayda 5 saat, tarayıcı tanıyıcısı bedava |
+| Kip **görünürlükten** seçiliyor, istemci değil | `transcribe` sayfa gizliyse `walk`, görünürse `default` gönderiyor; sunucu Azure'u yalnız `walk`ta zincire alıyor. Görünür sayfa Azure isteyemiyor |
+| Pencere değil **konuşma** gidiyor | Klip PCM'e çözülüp konuşma bölgesi bulunuyor (`lib/vad`); ölçüldü: 6 sn'lik gürültülü pencere 1–1,4 sn'ye indi, güven aynı ya da yüksek — uzun sessizlik doğruluğu da bozuyordu. Sessiz pencere hiç gönderilmiyor. Kesilemeyen ama sesli pencere bütünüyle gidiyor: yanlış ret yanlış kabulden kötü |
+| Aylık **tavan** sunucuda | `ai_usage`'dan Azure saniyesi toplanıyor; 4,5 saati geçince Azure o ay zincirden düşüyor, tur Deepgram/Groq ile sürüyor |
+| Dinlemede ekran kapanırsa soru **tekrar okunuyor** | Android tanıyıcıyı iptal ediyor; cevap belki söylendi ama kayıt yolu daha açılmamıştı. Tekrar hem cevabı alıyor hem "cebe geçtim" demiş oluyor |
+| Ekran açılınca süren kayıt **bekleniyor** | Tamponu hemen silmek cebe söylenmiş cevabı yakıyordu |
+| Süresi dolan dinleme **iptal** | Eskiden arkada kaydı bitirip sunucuya da gönderiyordu: aynı saniyede iki çağrı |
+| Her dinleme **kayda geçiyor** | `walk_listen` (yol, hata kodu, giden saniye) ve `walk_switch`; `?diag=1` son dinlemeleri ekranda gösteriyor. "Web Speech gerçekten devrede mi" sorusu veriyle cevaplanıyor |
+
+`npm run test:walk -- visible-only` ekran açıkken sunucuya sıfır istek gittiğini,
+`switch` kapanınca kaydın gidip açılınca bir daha gitmediğini ölçüyor; `npm run test:vad`
+kırpıcının birim testi.
+
 #### Mikrofon açıkken ses kalitesi
 
 Mikrofon oturum boyunca açık tutuluyor (ekran kilitlendikten sonra yeniden
@@ -660,9 +687,10 @@ gizliyken reddediliyor, zamanlayıcılar dakikada bire kısılıyor. İkisi de m
 kendiliğinden olmuyor; eklenmezse test yalancı bir "geçti" veriyor — bu bölümdeki hataların
 çoğu tam olarak öyle gözden kaçmıştı.
 
-Yazıya çevirme `/api/stt` üzerinden. Sıra **deepgram** (`nova-3`), sonra **groq**
-(`whisper-large-v3-turbo`), sonra **mistral** (`voxtral-mini-latest`). Hiçbiri
-yapılandırılmamışsa tarayıcının kendi tanıyıcısına düşülüyor.
+Yazıya çevirme `/api/stt` üzerinden. Ekran kapalı yolda (`mode: walk`) sıra **azure**
+(kısa-ses REST) → **deepgram** (`nova-3`) → **groq** (`whisper-large-v3-turbo`) → cloudflare
+→ speechmatics → **mistral** (`voxtral-mini-latest`); ekranlı yollarda groq önde ve Azure
+hiç yok. Hiçbiri yapılandırılmamışsa tarayıcının kendi tanıyıcısına düşülüyor.
 
 Deepgram'in başta olmasının sebebi hızı değil **dürüstlüğü**. Ölçüldü — temiz ve gürültülü
 seste ikisi de 8/8, ama ses bozulduğunda yolları ayrılıyor:
