@@ -522,72 +522,67 @@ export async function recordClip(maxMs: number, preRollMs = 400, signal?: AbortS
 }
 
 /**
- * Cevap başına TAZE kayıt — cep yolunun kaydı.
+ * Bir cevabın klibi — SÜREKLİ kaydediciden, geçerli webm olarak.
  *
- * Neden halka tampon değil: halka tampondan geriye doğru kesilen dilim (header
- * + ortadan başlayan parçalar) geçerli bir webm dosyası olmuyor ve sağlayıcılar
- * "bozuk dosya" (400) diye reddediyordu. İstemcide WAV'a çevirmek bunu
- * düzeltiyordu ama o yol EKRAN KAPALIYKEN çalışmıyor: `AudioContext` (ve
- * `OfflineAudioContext.startRendering`) kilitli ekranda askıya alınıyor,
- * `decodeAudioData` çözmüyor — ölçüldü, cep yolu sahada tamamen ölüydü
- * (`stt:decode`). Çözüm çeviriyi bırakmak: her cevap için stream'den TEK
- * `MediaRecorder` açılıyor, parçaları BAŞTAN SONA kesintisiz birleştiriliyor
- * (geçerli webm/opus) ve Deepgram/Groq bunu ham hâliyle çözüyor.
+ * İki gerçek bunu zorunlu kıldı, ikisi de ölçüldü:
  *
- * Kalkış gecikmesi küçük: stream oturum boyunca açık, yalnız kaydedici taze.
- * Konuşmanın bitişi yine bayt boyutundan anlaşılıyor (WebAudio gerekmiyor;
- * kilitli ekranda çalışan tek ölçüt bu). Ön-pay yok — kullanıcı işareti duyup
- * konuşuyor ve kayıt işaretten hemen sonra başlıyor.
+ *   1. **Ekran kapalıyken YENİ kayıt başlatılamıyor.** Cevap başına taze
+ *      `MediaRecorder` denendi (recordFreshClip); geçerli webm üretti (Deepgram
+ *      artık 400 değil 200 veriyordu) AMA klip SESSİZDİ — Deepgram boş dönüyordu
+ *      (`deepgram:empty`, conf 0), bitiş algısı hiç konuşma bulamıyordu. Android
+ *      arka planda (ekran kapalı) yeni bir `AudioRecord` başlatmayı sessiz
+ *      geçiyor; oysa ekran AÇIKKEN başlamış bir kayıt devam ediyor. O yüzden
+ *      kaydedici "Cebe koy" anında (ekran açık) bir kez başlatılıp AÇIK
+ *      tutuluyor (`activateMic`).
+ *   2. **Halka tampondan geriye yürüyerek kesmek geçerli webm vermiyor.**
+ *      `first`ten başlayan dilim bir küme sınırında olmuyor ve sağlayıcılar
+ *      "bozuk dosya" (400) diyordu; istemcide WAV'a çevirmek düzeltiyordu ama
+ *      o kilitli ekranda çalışmıyor (`AudioContext` askıda). Çözüm: geriye
+ *      yürüme YOK — cevap başında tampon sıfırlanıyor (başlık korunuyor) ve
+ *      cevabın parçaları BAŞTAN SONA kesintisiz gidiyor: başlık + ardışık
+ *      küme(ler) geçerli bir dosya. Konuşma bitişi yine bayt boyutundan.
  */
-export async function recordFreshClip(maxMs: number, signal?: AbortSignal): Promise<ClipResult> {
+export async function recordAnswerClip(maxMs: number, signal?: AbortSignal): Promise<ClipResult> {
   if (signal?.aborted) return null;
-  if (!stream?.active && !(await openMic())) return null;
-  stream!.getAudioTracks().forEach((t) => (t.enabled = true));
-  const type = pickMime();
-  let rec: MediaRecorder;
-  try {
-    rec = new MediaRecorder(stream!, type ? { mimeType: type } : undefined);
-  } catch {
-    return null;
+  // Kaydedici açık olmalı (Cebe koy'da açıldı). Değilse toparlamayı dene ama
+  // ekran kapalıyken yeni kayıt sessiz olabilir — o yüzden asıl açılış arm'da.
+  if (!micOpen()) {
+    if (!micHeld() && !(await openMic())) return null;
+    activateMic();
+    await new Promise<void>((r) => afterMs(SLICE_MS * 3, r));
   }
+  if (!header) return null;
 
-  const parts: Blob[] = [];
-  const sizes: number[] = []; // header hariç parça boyutları — bitiş kararı
+  // Bu cevabın parçaları baştan: geriye yürüme yok, kesintisiz.
+  chunks = [];
   const detectFrom = Date.now() + CUE_BLIND_MS;
   const deadline = Date.now() + maxMs;
-  let started = false;
-  let quiet = 0;
-  let run = 0;
 
   return new Promise<ClipResult>((resolve) => {
     let settled = false;
-    const finish = (ok: boolean) => {
+    const done = (v: ClipResult) => {
       if (settled) return;
       settled = true;
-      try {
-        if (rec.state !== "inactive") rec.stop();
-      } catch {
-        /* zaten durmuş */
-      }
-      stream?.getAudioTracks().forEach((t) => (t.enabled = false));
-      resolve(ok && parts.length > 1 ? { blob: new Blob(parts, { type: type || "audio/webm" }), ms: (parts.length - 1) * SLICE_MS } : null);
+      resolve(v);
     };
-    signal?.addEventListener("abort", () => finish(false), { once: true });
+    signal?.addEventListener("abort", () => done(null), { once: true });
 
-    rec.ondataavailable = (e) => {
-      // Kaydedicinin parçaları saatin ikinci nabzı — gizli sayfada da 200 ms.
-      tickClock();
-      if (!e.data.size) return;
-      parts.push(e.data);
-      if (parts.length === 1) return; // ilk parça webm başlığı
+    const tick = () => {
+      if (signal?.aborted) return done(null);
+      // Kaydedici öldüyse (akış bırakıldı) beklemenin anlamı yok.
+      if (!micOpen()) return done(header && chunks.length ? { blob: new Blob([header, ...chunks.map((c) => c.data)], { type: mime || "audio/webm" }), ms: chunks.length * SLICE_MS } : null);
 
-      sizes.push(e.data.size);
+      const sizes = chunks.map((c) => c.data.size);
       const sorted = [...sizes].sort((a, b) => a - b);
-      const floor = sorted[Math.floor(sorted.length * FLOOR_PERCENTILE)] ?? 0;
+      const floor = sorted.length ? sorted[Math.floor(sorted.length * FLOOR_PERCENTILE)] : 0;
       const threshold = Math.max(SPEECH_BYTES, Math.round(floor * FLOOR_FACTOR));
-      const now = Date.now();
-      if (now >= detectFrom) {
-        if (e.data.size >= threshold) {
+
+      let started = false;
+      let quiet = 0;
+      let run = 0;
+      for (const c of chunks) {
+        if (c.t < detectFrom) continue; // işaret körlüğü
+        if (c.data.size >= threshold) {
           run++;
           if (run >= MIN_SPEECH_SLICES) {
             started = true;
@@ -598,19 +593,18 @@ export async function recordFreshClip(maxMs: number, signal?: AbortSignal): Prom
           if (started) quiet++;
         }
       }
-      const elapsed = now - detectFrom;
-      if ((started && quiet >= TAIL_SLICES && elapsed >= MIN_LISTEN_MS) || now >= deadline) finish(true);
-    };
-    rec.onstop = () => finish(true);
-    rec.onerror = () => finish(false);
 
-    try {
-      rec.start(SLICE_MS);
-    } catch {
-      return finish(false);
-    }
-    // Son kapı: parça hiç gelmezse (kaydedici sessiz öldü) süre + pay sonunda kapat.
-    afterMs(maxMs + 1500, () => finish(true));
+      const elapsed = Date.now() - detectFrom;
+      const finished = started && quiet >= TAIL_SLICES && elapsed >= MIN_LISTEN_MS;
+      if (!finished && Date.now() < deadline) {
+        afterMs(SLICE_MS, tick);
+        return;
+      }
+      if (!header || !chunks.length) return done(null);
+      done({ blob: new Blob([header, ...chunks.map((c) => c.data)], { type: mime || "audio/webm" }), ms: chunks.length * SLICE_MS });
+    };
+
+    afterMs(SLICE_MS, tick);
   });
 }
 

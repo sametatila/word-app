@@ -164,11 +164,29 @@ Ayrıca: ekran açık turlar arası ~0,55 sn nefes ("aşırı hızlı" geçiş).
 (Samet) yürürken modunda idx=19'da yarım turda takılıp resume loop'una girmişti — üretimde
 yalnız o `session_state` satırı silindi (kalıcı ilerleme user_words/reviews'te durdu).
 
+## v5 (aynı gün): geçerli webm sessizdi — ekran kapalıyken yeni kayıt başlamıyor
+
+v4 webm geçerliliğini çözdü (Deepgram artık 400 değil **200 ok**) ama klip SESSİZ:
+`walk_listen` `deepgram:empty` ×N, `ai_usage`'da `deepgram ok heard="" conf=0`. Bitiş algısı
+hiç konuşma bulamadı (maxMs'e kadar). Yani cepte kipinde ekran kapalıyken mikrofon ses
+vermiyordu. Sebep: `recordFreshClip` her cevap için ekran KAPALIYKEN taze `MediaRecorder`
+başlatıyordu; Android arka planda yeni `AudioRecord`'u sessiz geçiyor. Kanıt: v1–v3'ün sürekli
+kaydedicisi (ekran açıkken başlamış) ekran kapalıyken SESLİ klip veriyordu (400'ler "bozuk
+format"tı, "ses yok" değil) — fark, kaydın ne zaman başladığı.
+
+Düzeltme (`recordAnswerClip`): kaydedici "Cebe koy" anında (ekran açık) başlatılıp AÇIK
+tutuluyor; her cevap ondan kesiliyor. Geçerlilik için geriye yürüme YOK — cevap başında tampon
+sıfırlanıp başlık + ardışık küme(ler) kesintisiz gidiyor. Böylece iki gerçek birleşti: sürekli
+kaydedici (arka planda ses) + kesintisiz kesme (geçerli webm). Konuşma bitişi yine bayt
+boyutundan (kilitli ekranda çalışan tek ölçüt).
+
 ## Açık kalanlar
 
-- webm + Deepgram kilitli ekranda çalışıyor mu — ilk gerçek yürüyüşte `walk_listen`
-  (`deepgram:ok` geldi mi, `stt:decode` kalktı mı) ve `ai_usage` (deepgram ok, heard dolu)
-  gösterir. Deepgram kredisi biterse Groq'a düşer (webm alır ama başı-kesikte uydurabilir).
+- recordAnswerClip gerçek cihazda: `walk_listen` `deepgram:ok` + `ai_usage` `heard` dolu mu.
+  Harness fake-device sürekli ses veriyor, gerçek Android arka plan mikrofonunu taklit etmiyor —
+  kanıt zinciri güçlü (sürekli kaydedici v1–v3'te sesliydi) ama cihaz onayı şart.
+- Deepgram kredisi biterse Groq'a düşer (webm alır ama başı-kesikte uydurabilir);
+  `report:providers` ile izlenmeli.
 - Güven eşiği (0,4) gerçek Deepgram kayıtlarıyla kalibre edilecek.
 - Ölü kod: halka tampon altyapısı (`recordClip`, `activateMic`, `oneShotClip`, `lib/vad`
   cep tarafı) artık kullanılmıyor; ayrı bir temizlik commit'ine bırakıldı.

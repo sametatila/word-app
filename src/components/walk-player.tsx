@@ -17,11 +17,12 @@ import {
   updatePocketTitle,
 } from "@/components/pocket-audio";
 import {
+  activateMic,
   closeMic,
   micSettings,
   micSupported,
   openMic,
-  recordFreshClip,
+  recordAnswerClip,
   sttAvailable,
   transcribe,
 } from "@/components/pocket-mic";
@@ -499,8 +500,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       track("walk_switch", 1, "arm-failed");
       return false;
     }
-    // Kaydedici cevap başına taze açılıyor (recordFreshClip); burada yalnızca
-    // akış tutuluyor ve sessiz döngü kuruluyor.
+    // Kaydedici BURADA, ekran AÇIKKEN başlatılıp açık tutuluyor. Ekran
+    // kapandıktan sonra yeni kayıt başlatmak Android'de sessiz geçiyordu
+    // (Deepgram boş dönüyordu); süregelen bir kayıt ise arka planda ses
+    // vermeye devam ediyor. Cevaplar bundan kesiliyor (recordAnswerClip).
+    activateMic();
     armed.current = true;
     disarmWhenIdle.current = false;
     setPocket("armed");
@@ -687,8 +691,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         recording.current = true;
         try {
           // Kayıt konuşma bitince kendiliğinden kapanıyor; `windowMs` sabit
-          // pencere değil ÜST SINIR. Cevap başına taze, geçerli webm.
-          const clip = await recordFreshClip(windowMs, signal);
+          // pencere değil ÜST SINIR. Sürekli kaydediciden kesilen geçerli webm.
+          const clip = await recordAnswerClip(windowMs, signal);
           if (signal?.aborted) return [];
           if (clip) {
             captureFails.current = 0;
