@@ -1,7 +1,8 @@
 "use client";
 
 import { afterMs, tickClock } from "@/components/pocket-clock";
-import { toWav } from "@/lib/pronounce-client";
+import { decodePcm, encodeWav } from "@/lib/pronounce-client";
+import { trimSpeech } from "@/lib/vad";
 
 /**
  * Cepte çalışan mikrofon.
@@ -35,6 +36,12 @@ import { toWav } from "@/lib/pronounce-client";
  *
  * Sürekli kayıtta kalkış gecikmesi yok; üstelik ön-pay ile okumanın bitişinden
  * biraz ÖNCESİ de alınabiliyor, yani erken başlayan cevap da tam giriyor.
+ *
+ * Sunucuya giden şey kesilen pencere değil, içindeki KONUŞMA. Pencere PCM'e
+ * çözülüp konuşma bölgesi bulunuyor (lib/vad) ve yalnız o parça gidiyor;
+ * konuşma yoksa istek hiç atılmıyor. Sebep kota: cep yolunun ana hattı Azure
+ * ve ücretsiz katmanı ayda beş saat. Ölçüldü — 6 saniyelik pencereler 1–1,4
+ * saniyeye indi, güven düşmedi; uzun sessizlik doğruluğu bile bozuyordu.
  */
 
 let stream: MediaStream | null = null;
@@ -335,10 +342,16 @@ export function closeMic() {
  *
  * `null` dönmesi "kayıt yapılamadı" demek; çağıran taraf bunu duyulmamış
  * cevaptan ayırt edebilsin diye boş blob dönülmüyor.
+ *
+ * `signal` iptal için: süresi dolan ya da ekranın geri açılmasıyla anlamını
+ * yitiren bir dinleme kaydı sürdürmesin. Eskiden süresi dolan dinleme arkada
+ * kaydı bitirip sunucuya da gönderiyordu — üretimde aynı saniyede iki çağrı
+ * görüldü, saf kota israfı.
  */
 export type ClipResult = { blob: Blob; ms: number } | null;
 
-export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipResult> {
+export async function recordClip(maxMs: number, preRollMs = 400, signal?: AbortSignal): Promise<ClipResult> {
+  if (signal?.aborted) return null;
   /*
     Algılama penceresi ön-paydan ve İŞARETTEN sonra başlıyor.
 
@@ -385,8 +398,13 @@ export async function recordClip(maxMs: number, preRollMs = 400): Promise<ClipRe
 
   return new Promise<ClipResult>((resolve) => {
     let started = false;
+    signal?.addEventListener("abort", () => resolve(null), { once: true });
 
     const tick = () => {
+      if (signal?.aborted) return resolve(null);
+      // Kaydedici bu arada öldüyse (ekran açıldı, akış kapandı) süre dolana
+      // kadar sessiz beklemenin anlamı yok.
+      if (!header && !micOpen()) return resolve(null);
       const slice = chunks.filter((c) => c.t >= from);
 
       /*
@@ -552,67 +570,106 @@ function oneShotClip(ms: number): Promise<ClipResult> {
 /**
  * Yazıya çevirmenin üst sınırı.
  *
- * Deepgram tipik olarak bir saniyenin altında dönüyor; sekiz saniye ağın kötü
- * olduğu ama çalıştığı hâli kapsıyor. Ötesi artık gecikme değil, kopukluk.
+ * Azure ve Deepgram tipik olarak bir saniyenin altında dönüyor; sekiz saniye
+ * ağın kötü olduğu ama çalıştığı hâli kapsıyor. Ötesi artık gecikme değil,
+ * kopukluk.
  */
 const STT_TIMEOUT_MS = 8_000;
 /** Yalnızca "yapılandırılmış mı" sorusu — kısa tutulabilir. */
 const PROBE_TIMEOUT_MS = 5_000;
 /** Bunun altındaki güven, duyulmamış sayılıyor. Bkz. `transcribe`. */
 const MIN_CONFIDENCE = 0.4;
+/** Sunucuya giden sesin örnekleme hızı — sağlayıcıların ortak biçimi. */
+const SEND_RATE = 16_000;
 
-/** Kaydı sunucuya gönderip yazıya çevirir. Başarısızsa boş dizi. */
+export type PocketHeard = {
+  /** Duyulan metin — hiç duyulmadıysa boş. */
+  alternatives: string[];
+  /** Sağlayıcının güveni (0–1), verdiyse. */
+  confidence?: number;
+  provider?: string;
+  /** Sunucuya giden ses (sn); gönderilmediyse 0 — kota izlemesi için. */
+  sentSeconds: number;
+  /** Boş dönüşün sebebi. */
+  reason?: "silent" | "network" | "empty" | "low_confidence" | "aborted";
+};
+
+/**
+ * Kaydı sunucuya gönderip yazıya çevirir.
+ *
+ * Zincir kipi burada seçiliyor ve sayfanın görünürlüğüne bağlı: sayfa gizliyse
+ * `walk` (Azure önde), görünürse `default` (Groq önde). Sahibin şartı "ekran
+ * açıkken asla Azure" böylece tek yerde ve istemcinin elinde değil — görünür
+ * sayfa `walk` isteyemiyor. Görünürken bu işlev zaten yalnız tarayıcı
+ * tanıyıcısı olmayan tarayıcılarda çağrılıyor.
+ */
 export async function transcribe(
   clip: Blob,
   language = "de",
   /** Beklenen cevap — karara etki etmiyor, yalnızca kayda geçiyor. */
   expected = "",
-): Promise<string[]> {
+  opts: { signal?: AbortSignal } = {},
+): Promise<PocketHeard> {
+  const none = (reason: PocketHeard["reason"], sentSeconds = 0): PocketHeard => ({ alternatives: [], sentSeconds, reason });
   /*
+    Pencere değil, konuşma gidiyor.
+
     Halka tampondan kesilen webm dilimi her zaman geçerli bir dosya değil:
     başlık eklense de ilk parça bir kümenin ortasından başlayabiliyor ve
     sağlayıcılar bunu "bozuk dosya" (400) diye reddediyordu — ölçüldü: aynı
-    klip üç sağlayıcıda da 400 (WP-20 kota ölçümü, 13/124 istek). Çözüm
-    istemcide: dilimi çözüp 16 kHz mono WAV olarak gönder. Çözülemezse ham
-    dilim gider — eskisinden kötü değil.
+    klip üç sağlayıcıda da 400. O yüzden dilim PCM'e çözülüyor; çözülmüşken
+    konuşma bölgesi de bulunuyor (lib/vad) ve yalnız o parça WAV olarak
+    gidiyor. Bölge yoksa istek yok: "duyamadım" kotaya dokunmuyor. Çözülemezse
+    ham dilim gider — eskisinden kötü değil.
   */
-  const sendable = await toWav(clip).catch(() => clip);
+  let sendable: Blob = clip;
+  let sentSeconds = clip.size / SEND_RATE;
+  try {
+    const pcm = await decodePcm(clip, SEND_RATE);
+    const cut = trimSpeech(pcm, SEND_RATE);
+    if (!cut) return none("silent");
+    sendable = encodeWav(cut.pcm, SEND_RATE);
+    sentSeconds = cut.pcm.length / SEND_RATE;
+  } catch {
+    /* çözülemeyen klip ham gider; sunucu 400 verirse zincir sıradakine geçer */
+  }
+  if (opts.signal?.aborted) return none("aborted");
+
+  const hidden = typeof document !== "undefined" && document.visibilityState === "hidden";
   const form = new FormData();
   const ext = sendable.type.includes("wav") ? "wav" : clip.type.includes("mp4") ? "mp4" : clip.type.includes("ogg") ? "ogg" : "webm";
   form.append("audio", sendable, `clip.${ext}`);
   form.append("language", language);
+  form.append("mode", hidden ? "walk" : "default");
   if (expected) form.append("expected", expected);
+  // Zaman aşımı ŞART. Cepteki telefon zayıf sinyalde bir isteği dakikalarca
+  // asılı tutabiliyor ve tur o istekte donuyordu. Süresi geçen bir yazıya
+  // çevirme zaten işe yaramaz: kullanıcı çoktan sıradakini bekliyor.
+  const timeout = AbortSignal.timeout(STT_TIMEOUT_MS);
+  const signal = opts.signal && typeof AbortSignal.any === "function" ? AbortSignal.any([timeout, opts.signal]) : timeout;
   try {
-    const res = await fetch("/api/stt", {
-      method: "POST",
-      body: form,
-      // Zaman aşımı ŞART. Cepteki telefon zayıf sinyalde bir isteği dakikalarca
-      // asılı tutabiliyor ve tur o istekte donuyordu. Süresi geçen bir yazıya
-      // çevirme zaten işe yaramaz: kullanıcı çoktan sıradakini bekliyor.
-      signal: AbortSignal.timeout(STT_TIMEOUT_MS),
-    });
-    if (!res.ok) return [];
-    const data = (await res.json()) as { text?: string; confidence?: number };
+    const res = await fetch("/api/stt", { method: "POST", body: form, signal });
+    if (!res.ok) return none("network", sentSeconds);
+    const data = (await res.json()) as { text?: string; confidence?: number; provider?: string };
     const text = (data.text ?? "").trim();
-    if (!text) return [];
+    if (!text) return { ...none("empty", sentSeconds), confidence: data.confidence, provider: data.provider };
     /*
       Güveni düşük metin, metin sayılmıyor.
 
       Tanıyıcı gürültüyü ve arkadan gelen konuşmayı da kelimeye çeviriyor —
       duyacak bir şey verilince duyuyor ve bazen başka bir dilde duyuyor.
       Ayırt eden şey metnin kendisi değil, tanıyıcının o metne ne kadar
-      inandığı: gerçek bir cevapta değer yüksek, uydurmada belirgin biçimde
-      düşük.
-
-      Eşik BİLEREK gevşek. Daha önce bir eşik ölçülmeden konmuştu ve gerçek
-      cihazda "her cevap duyamadım"a dönüşmüştü; o yüzden burada yalnızca açık
-      çöp eleniyor. Her çağrının güveni `ai_usage`'a yazılıyor, yani eşik bir
-      dahaki sefere tahminle değil veriyle sıkılacak.
+      inandığı: ölçümde Azure doğru kelimeye 0,85–0,95, yanlış dilde çöpe
+      0,21 verdi. Eşik yine de gevşek: daha önce ölçülmeden konan bir eşik
+      gerçek cihazda "her cevap duyamadım"a dönüşmüştü. Her çağrının güveni
+      `ai_usage`'a yazılıyor; eşik veriyle sıkılır.
     */
-    if (typeof data.confidence === "number" && data.confidence < MIN_CONFIDENCE) return [];
-    return [text];
+    if (typeof data.confidence === "number" && data.confidence < MIN_CONFIDENCE) {
+      return { ...none("low_confidence", sentSeconds), confidence: data.confidence, provider: data.provider };
+    }
+    return { alternatives: [text], confidence: data.confidence, provider: data.provider, sentSeconds };
   } catch {
-    return [];
+    return none(opts.signal?.aborted ? "aborted" : "network", sentSeconds);
   }
 }
 

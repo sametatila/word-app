@@ -59,6 +59,17 @@ export function captureClip(maxMs = 15_000): Promise<Capture | null> {
 
 /** Klibi 16 kHz mono PCM WAV'a çevirir — her sağlayıcının anladığı biçim. */
 export async function toWav(blob: Blob, sampleRate = 16_000): Promise<Blob> {
+  return encodeWav(await decodePcm(blob, sampleRate), sampleRate);
+}
+
+/**
+ * Klibi tek kanal PCM'e çözer (varsayılan 16 kHz).
+ *
+ * Yürürken modu bunu ayrıca istiyor: WAV'a çevirmeden önce konuşma bölgesini
+ * bulup yalnız onu gönderiyor (bkz. lib/vad). Çözme `decodeAudioData` ile;
+ * ekran kapalıyken de çalıştığı üretimde görüldü (kliplerin tamamı WAV gitti).
+ */
+export async function decodePcm(blob: Blob, sampleRate = 16_000): Promise<Float32Array> {
   const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
   const ctx = new AC();
   try {
@@ -70,13 +81,13 @@ export async function toWav(blob: Blob, sampleRate = 16_000): Promise<Blob> {
     src.connect(off.destination);
     src.start();
     const out = await off.startRendering();
-    return encodeWav(out.getChannelData(0), sampleRate);
+    return out.getChannelData(0);
   } finally {
     void ctx.close();
   }
 }
 
-function encodeWav(samples: Float32Array, sampleRate: number): Blob {
+export function encodeWav(samples: Float32Array, sampleRate: number): Blob {
   const buf = new ArrayBuffer(44 + samples.length * 2);
   const v = new DataView(buf);
   const str = (o: number, s: string) => [...s].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));

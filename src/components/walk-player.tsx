@@ -476,7 +476,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         const clip = await recordClip(windowMs);
         if (clip) {
           captureFails.current = 0;
-          return transcribe(clip.blob, lang, expected);
+          return (await transcribe(clip.blob, lang, expected)).alternatives;
         }
         /*
           Klip üretilemedi.

@@ -45,6 +45,7 @@
     "test:sql": "tsx scripts/sqlcheck.ts",
     "test:playtest": "node scripts/playtest.mjs 330",
     "test:walk": "node scripts/walk-pocket.mjs",
+    "test:vad": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-vad.ts",
     "test:audio": "node scripts/audio-overlap.mjs",
     "test:mix": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/game-mix.ts",
     "icons": "node scripts/icons.mjs",
