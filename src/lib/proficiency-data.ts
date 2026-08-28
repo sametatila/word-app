@@ -245,7 +245,7 @@ export async function nextStep(userId: string, course: string, level: CefrLevel,
     if (skill === "vocab") return { skill, label: PROFICIENCY_LABELS[skill], reason, href: "/learn", title: "Kelime turu", minutes: 6 };
     if (skill === "grammar") return { skill, label: PROFICIENCY_LABELS[skill], reason, href: "/lessons", title: "Dilbilgisi çalışması", minutes: 5 };
     const open = metas.find((m) => m.skill === skill && !done.has(m.id));
-    if (open) return { skill, label: PROFICIENCY_LABELS[skill], reason, href: `/skills/${open.id}`, title: open.title, minutes: open.minutes };
+    if (open) return { skill, label: PROFICIENCY_LABELS[skill], reason, href: `/immersion/skill/${open.id}`, title: open.title, minutes: open.minutes };
   }
   const lesson = await nextLesson(userId, course, level);
   if (lesson) return { skill: "speaking", label: "Ders", reason: "sıradaki ders", href: `/lessons/${lesson.lesson.id}`, title: lesson.lesson.title, minutes: lesson.lesson.minutes };

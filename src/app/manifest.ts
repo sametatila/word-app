@@ -18,7 +18,7 @@ export default function manifest(): MetadataRoute.Manifest {
     // Ana ekran simgesine uzun basınca çıkan hızlı erişimler.
     shortcuts: [
       { name: "Öğren", url: "/learn" },
-      { name: "Beceriler", url: "/skills" },
+      { name: "Immersion", url: "/immersion" },
     ],
     icons: [
       { src: "/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },

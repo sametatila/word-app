@@ -112,7 +112,7 @@ export async function buildPlan(
     const lv = (["A1", "A2", "B1", "B2", "C1"].includes(level) ? level : "A1") as CefrLevel;
     const prof = computeProficiency(await gatherEvidence(userId));
     const step = await nextStep(userId, course, lv, prof);
-    if (step && step.href.startsWith("/skills/")) {
+    if (step && step.href.startsWith("/immersion/skill/")) {
       const rows = await db
         .select({ skill: userSkills.skill, lastAt: userSkills.lastAt })
         .from(userSkills)

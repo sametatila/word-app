@@ -6,8 +6,14 @@ import { WritingPlayer } from "@/components/skills/writing-player";
 
 export const dynamic = "force-dynamic";
 
-/** Tek egzersiz sayfası: türe göre uygun oynatıcıyı açar. */
-export default async function SkillExercisePage({
+/**
+ * Immersion beceri item oynatıcısı (Faz 4). Eski `/skills/[id]` buraya taşındı;
+ * /skills slug'ı kaldırıldı. Oynatıcılar aynen kullanılıyor ({exercise} propu),
+ * ilerlemeyi kendileri POST /api/skills ile yazıyor. Immersion item'ları
+ * (okuma/dinleme/yazma) bu rotaya bağlanır; "geri" oynatıcının içinden
+ * /immersion'a döner.
+ */
+export default async function ImmersionSkillPage({
   params,
 }: {
   params: Promise<{ id: string }>;

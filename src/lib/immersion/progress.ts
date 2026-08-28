@@ -9,7 +9,7 @@ import type { Completion } from "./state";
  * Faz 3 tamamlanma adaptörü — mevcut ilerleme kaynaklarını immersion'ın saf
  * gating katmanına (state.ts `Completion`) çevirir. Yeni tablo yok:
  * - ders "bitti" = userLessons.roleplayDone (lessonBoard üzerinden)
- * - beceri "bitti" = userSkills.lastScore ≥ 70 (skills-hub ile aynı eşik)
+ * - beceri "bitti" = userSkills.lastScore ≥ 70 (eski beceri eşiğiyle aynı: 70)
  *
  * Her kaynak ayrı denenir; biri okunamazsa o küme boş kalır, sayfa yine açılır.
  */

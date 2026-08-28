@@ -140,7 +140,7 @@ function WritingsEmpty() {
         metnin, aldığı puan ve düzeltmeler bir arada duruyor. Aynı görevi
         tekrar yazdığında ikisini yan yana görebilirsin.
       </p>
-      <Link href="/skills" prefetch={false} className="btn btn-primary mt-4 inline-flex px-5 py-2.5 text-sm">
+      <Link href="/immersion" prefetch={false} className="btn btn-primary mt-4 inline-flex px-5 py-2.5 text-sm">
         Yazma alıştırmalarına git
       </Link>
     </section>

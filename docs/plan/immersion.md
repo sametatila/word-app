@@ -67,7 +67,8 @@ kurmasına yardım.** İki mod:
 
 ## Progress (BASİTLEŞTİRİLDİ — sahibin kararı)
 - **`userLessons` KALIR** — ders (lesson item) ilerlemesi + SRS `dueAt` dokunulmaz.
-- **`userSkills` eski verisi SİLİNİR** (yalnız Samet'in testi, kıymetli değil). Tablo,
+- **`userSkills` eski verisi (opsiyonel) SİLİNEBİLİR** (yalnız Samet'in testi). ZORUNLU değil:
+  aynı exercise id'leriyle tablo yeniden kullanıldığından eski ilerleme immersion'da geçerli kalır. Tablo,
   immersion beceri-item ilerlemesi için **yeniden kullanılır** (ileride `user_items`'a
   yeniden adlandırma opsiyonel bir temizlik; şart değil).
 - **Karmaşık birleşik-göç YOK.** Sadece: userSkills DELETE + userLessons'a dokunma.
@@ -88,8 +89,16 @@ kurmasına yardım.** İki mod:
    (module-exam/boss) içerik gelince Faz 3'te bağlanır.
 3. **Progress bağlama:** lesson item → userLessons; read/listen/write/grammar/quiz item →
    userSkills (eski veri silinmiş). Checkpoint geçme → gating.
-4. **Kaldırma:** `/skills` rotaları, hub, meta, `SkillId` kavramı, slug; userSkills eski veri
-   DELETE. Oynatıcılar immersion altına taşınır.
+4. **Kaldırma:** ✅ TAMAM (kod). `/skills` UI rotaları (page/[id]/loading) + `skills-hub`
+   silindi; skill oynatıcıları `app/(app)/immersion/skill/[id]` altına taşındı (aynı oynatıcı
+   bileşenleri). Tüm `/skills` bağlantıları `/immersion`e, tüm `/skills/[id]` üretimleri
+   (`nextStep`, plan, immersion) `/immersion/skill/[id]`e çevrildi; oynatıcı "geri" linki
+   `/immersion`. **KORUNDU:** `lib/skills/*` (types/index/bundled/content/record/progress),
+   oynatıcılar, `/api/skills` (ilerleme yazımı), `SkillId` TİPİ — roleplay/exam/proficiency/
+   immersion bunlara dayanıyor; kaldırılan yalnız kullanıcıya dönük skills BÖLÜMÜ.
+   **BEKLEYEN (opsiyonel, elle):** `user_skills` eski satırlarının DELETE'i — DB bu oturumdan
+   erişilemiyor; ayrıca ZORUNLU değil: tablo aynı exercise id'leriyle yeniden kullanıldığından
+   eski ilerleme immersion'da zararsızca korunur. Temiz sayfa istenirse: `DELETE FROM user_skills;`
 
 ## Sonraya bırakılan içerik kararları
 - Slot deseni sayıları (ünite başına kaç lesson/read/listen/write/grammar/quiz).
