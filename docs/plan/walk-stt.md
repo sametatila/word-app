@@ -180,13 +180,53 @@ sıfırlanıp başlık + ardışık küme(ler) kesintisiz gidiyor. Böylece iki 
 kaydedici (arka planda ses) + kesintisiz kesme (geçerli webm). Konuşma bitişi yine bayt
 boyutundan (kilitli ekranda çalışan tek ölçüt).
 
+## v6 — CİHAZ TESTİ: kök neden HyperOS, kodla aşılamaz (2026-08-28)
+
+Kullanıcının telefonuna adb (wireless) ile bağlanıp bizzat test edildi. Cihaz: **Xiaomi Redmi
+Note 13 Pro+ (2312FPCA6G, emerald), Android 16, HyperOS 3.0, Chrome 151**, PWA WebAPK olarak
+yüklü. Gerçek test (Cebe koy → ekran kapat → konuş): cep yolu ÇALIŞTI (`armed`, `browser:aborted`
+geçişi, 3× kayıt), ama 3 klibin de 5 sağlayıcıya gidip hepsi **400** verdi (`stt:network`,
+boş/bozuk klip). Sebep logcat'te, ekran kapalı olduğu SÜRECE 12 kez tekrar:
+
+```
+whetstone.activity: notifyMuteAudioInNeed uid is 10180 (Chrome), mScreenOnOff = false, status 0
+AwareResourceControl: noteMuteAudioInNeed uid=10180 status=0 mCloundAudioEnable=true
+```
+
+**HyperOS'un güç yöneticisi (`whetstone` / `AwareResourceControl`), ekran kapanır kapanmaz
+(`mScreenOnOff=false`) Chrome'u (uid 10180) sistem düzeyinde susturuyor** — mikrofon ve arka
+plan sesi. Ayrıca `appops` `RECORD_AUDIO` UID modu **`foreground`** (arka planda mikrofon yok),
+appops ile `allow` yapmak bile UID modunu değiştirmedi. İki katman birden: Android'in
+mikrofon-foreground zorlaması + HyperOS'un Aware audio mute'u.
+
+**Sonuç: PWA'da ekran kapalıyken mikrofon bu cihazda kodla ÇALIŞTIRILAMAZ.** recordFreshClip →
+recordAnswerClip → webm/Deepgram zincirinin hepsi doğruydu ama hepsinin altında ses fiziksel
+olarak kesiliyordu; v1–v5'in sırayla düşme sebebi buydu. Bu, en baştaki platform notunun
+(README: "ekran kapalıyken arka planda konuşma tanıma yok") HyperOS'ta daha da sert hâli.
+
+Çözüm yolları (hiçbiri kodla "ekran kapalı"yı çözmez):
+1. **Ekranı KAPATMA — karanlık ama açık ekran (cep kilidi).** HyperOS mute yalnız
+   `mScreenOnOff=false`'ta tetikleniyor; ekran açıksa yok. Ekranı simsiyah + wake lock ile
+   açık tutup Web Speech'i (ekran açık kipi, kaliteli) cepte kullanmak — tek garantili yol.
+   Ekran kilidiyle (Screen Wake Lock) ekran açık kalır; güç tuşuna basılmazsa mute yok.
+2. **HyperOS ayarı (garanti değil):** Wortspiel/Chrome → pil "Kısıtlama yok"; Geliştirici
+   seçenekleri → "MIUI optimizasyonu"nu kapat (`whetstone`/Aware gevşeyebilir). Kullanıcıya
+   bağlı, taşınabilir değil.
+3. Kabul: cep yolu yalnız mikrofonu kesmeyen cihazlarda (stok Android, bazı OEM'ler) çalışır;
+   HyperOS/MIUI'de ekran kapalı desteklenmez, ekran açık kipi kullanılır.
+
+Sahibin kararı (2026-08-28): "bu hep vardı, sonra düzeltilebilir" — cep yolu ekran-kapalı
+şimdilik açık bırakıldı. Ekran açık kipi kusursuz çalışıyor.
+
 ## Açık kalanlar
 
-- recordAnswerClip gerçek cihazda: `walk_listen` `deepgram:ok` + `ai_usage` `heard` dolu mu.
-  Harness fake-device sürekli ses veriyor, gerçek Android arka plan mikrofonunu taklit etmiyor —
-  kanıt zinciri güçlü (sürekli kaydedici v1–v3'te sesliydi) ama cihaz onayı şart.
-- Deepgram kredisi biterse Groq'a düşer (webm alır ama başı-kesikte uydurabilir);
-  `report:providers` ile izlenmeli.
+- **Karar sahipte:** cep yolu için "karanlık ama açık ekran" (cep kilidi) uygulansın mı?
+  Tek garantili yol; kod hazır edilebilir (wake lock zaten var, ekranı siyah overlay + dokunma
+  kilidi + Web Speech). HyperOS ayarı denemesi taşınabilir değil.
+- Küçük UX: 3. duyulmamada tur durunca son "duyamadım" anonsu, durma anonsuyla çakışıp
+  kesiliyor (stopAll okumayı iptal ediyor). Sahibin notu; ertelendi.
+- recordAnswerClip mikrofonu KESMEYEN bir cihazda (stok Android) doğrulanmadı; teoride doğru.
+- Deepgram kredisi biterse Groq'a düşer; `report:providers` ile izlenmeli.
 - Güven eşiği (0,4) gerçek Deepgram kayıtlarıyla kalibre edilecek.
 - Ölü kod: halka tampon altyapısı (`recordClip`, `activateMic`, `oneShotClip`, `lib/vad`
   cep tarafı) artık kullanılmıyor; ayrı bir temizlik commit'ine bırakıldı.
