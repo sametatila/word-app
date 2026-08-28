@@ -64,6 +64,25 @@ export function nextStreak(profile: StreakInput, today: string): StreakOutcome {
     };
   }
 
+  /*
+    Gün GERİ gidiyorsa seri DOKUNULMUYOR.
+
+    Uçların bir kısmı günü kullanıcının yerel gününden (`localDay`), bir kısmı
+    sunucunun UTC gününden türetiyordu; gece çalışan bir kullanıcıda (UTC+3,
+    yerel gün ilerlemiş ama UTC hâlâ dün) bu iki değer FARKLI oluyor ve
+    `lastActiveDay` bir ileri bir geri zıplıyordu. Geri giden gün ya bu gürültü
+    ya da geç ulaşan bir istek — ikisi de gerçek bir "yeni gün" değil, dolayısıyla
+    seriyi ne artırır ne de sıfırlar. Ölçüldü: Samet 10 gün kesintisiz çalıştığı
+    hâlde serisi 2'ye düşmüştü, longest 10 kalmıştı.
+  */
+  if (profile.lastActiveDay && today < profile.lastActiveDay) {
+    return {
+      currentStreak: profile.currentStreak,
+      longestStreak: profile.longestStreak,
+      repaired: false,
+    };
+  }
+
   let currentStreak: number;
   let repaired = false;
   if (profile.lastActiveDay === shiftDay(today, -1)) {
@@ -126,12 +145,16 @@ export async function awardActivity(
 
   const streak = nextStreak(profile, today);
 
+  // `lastActiveDay` yalnızca İLERİ gider: geri giden bir gün (saat dilimi
+  // gürültüsü, geç istek) kaydı geriletip ertesi günü "kaçırılmış" göstermesin.
+  const lastActiveDay = profile.lastActiveDay && today < profile.lastActiveDay ? profile.lastActiveDay : today;
+
   await db
     .update(profiles)
     .set({
       currentStreak: streak.currentStreak,
       longestStreak: streak.longestStreak,
-      lastActiveDay: today,
+      lastActiveDay,
       totalXp: profile.totalXp + xp,
       ...(streak.repaired ? { streakRepairAt: today } : {}),
     })

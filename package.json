@@ -47,6 +47,7 @@
     "test:walk": "node scripts/walk-pocket.mjs",
     "test:vad": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-vad.ts",
     "test:numbers": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-numbers.ts",
+    "test:award": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-award.ts",
     "test:audio": "node scripts/audio-overlap.mjs",
     "test:mix": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/game-mix.ts",
     "icons": "node scripts/icons.mjs",
