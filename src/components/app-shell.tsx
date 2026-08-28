@@ -11,33 +11,30 @@ import { SessionKeeper } from "./session-keeper";
 import { Telemetry } from "./telemetry";
 import { AchievementUnlock } from "./achievement-unlock";
 import { track } from "@/lib/track";
-import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon, ChatIcon } from "./icons";
+import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon } from "./icons";
 import { Avatar } from "@/components/avatar";
 
 /**
- * Alt gezinme: ÜÇ sekme.
+ * Alt gezinme: İKİ mod.
  *
- * Beş sekmeydi ve ikisi oraya ait değildi. Ölçüm (dört gün, 499 açılış):
- * Öğren %45, Beceriler %24, Dersler %18, Profil %10, Kelimeler %3.
+ * Uygulamanın iki öğrenme modu var, sekmeler tam olarak onlar:
+ *   - Öğren — kelime turu (SRS/oyun çekirdeği).
+ *   - Immersion — ders iskeleti + okuma/dinleme/yazma harmanı (üretim).
  *
- * Alt gezinme geri DÖNÜLEN yerler içindir. Uygulamanın üç öğrenme yolu var —
- * kelime turu, ders yolu, beceri egzersizleri — ve sekmeler tam olarak onlar.
+ * Eskiden üç sekmeydi (Öğren / Dersler / Beceriler). "Dersler" ve "Beceriler"
+ * aynı yolun iki parçasıydı — ders üretimi ile beceri egzersizleri — ve
+ * Immersion ikisini tek moda birleştirdi (bkz. docs/plan/immersion.md).
+ * Ölçüm de birleştirmeyi destekliyordu: Beceriler %24 + Dersler %18, aynı
+ * niyetin (dili özümseme) iki ayrı kapısıydı.
  *
- * Kelimeler bir hedef değil bir sonuç: kimse "kelime listeme bakayım" diye
- * uygulamayı açmıyor, tura girip zorlandığı kelimeyi merak ettiğinde bakıyor.
- * Girişi de oradan (tur özeti) ve profilden.
- *
- * Profil ayar ve arşiv ekranı; günde bir kez bile açılmıyor. Üst başlıkta
- * zaten seri ve XP rozetleri var, sağ uca bir avatar doğal olarak oturuyor.
- *
- * Yan fayda ölçüldü: beş sekmede 320 px'lik ekranda "Kelimeler" etiketinin
- * iki yanında 3,4 piksel kalıyordu. Üç sekmede her etiketin yeri iki katına
- * çıkıyor ve kırpılma riski tamamen kalkıyor.
+ * Kelimeler ve Profil alt gezinmede değil: Kelimeler bir hedef değil sonuç
+ * (tura girip zorlanılan kelimeye bakılır), Profil günde bir bile açılmaz —
+ * ikisi de üst başlıktan/ikincil gruptan ulaşılır. İki sekme 320 px'de bol
+ * bol sığıyor.
  */
 const NAV = [
   { href: "/learn", label: "Öğren", Icon: CardsIcon, key: "learn" },
-  { href: "/lessons", label: "Dersler", Icon: ChatIcon, key: "lessons" },
-  { href: "/skills", label: "Beceriler", Icon: CompassIcon, key: "skills" },
+  { href: "/immersion", label: "Immersion", Icon: CompassIcon, key: "immersion" },
 ];
 
 /** Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor. */

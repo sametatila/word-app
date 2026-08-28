@@ -78,8 +78,14 @@ kurmasına yardım.** İki mod:
    `ImmersionItem`/`Unit`/`Track` + saf `buildTrack(input)` (4/2/2/2 + ara sıra grammar/quiz +
    checkpoint, grup=10) ve DB sarmalayıcı `loadTrack(course, level)`. `test:track` 16 kontrol.
    DB değişmedi. Bugün: de her seviye 25 ünite.
-2. **UI:** immersion sayfası (üniteler/gating/pagination) + item renderer'lar (mevcut
-   oynatıcılar) + checkpoint. Learn ↔ Immersion iki mod girişi.
+2. **UI:** ✅ TAMAM. `/immersion` sayfası (`app/(app)/immersion/{page,loading}.tsx`) +
+   `components/immersion/immersion-hub.tsx` (sunucu bileşeni, JS yok): seviye çipleri →
+   gruplar (10 ünite, pagination kapısı) → ünite kartları → item satırları. Item'lar
+   MEVCUT oynatıcılara köprüyle bağlanır (ders→`/lessons/[id]`, beceri→`/skills/[id]`);
+   yer tutucular (grammar/quiz/checkpoint + boş beceri slotları) "yakında", tıklanmaz,
+   gating'i bloklamaz. Nav 2 moda indi: **Öğren + Immersion** ("Dersler" ve "Beceriler"
+   sekmeleri kalktı; rotalar Faz 4'e kadar köprü hedefi olarak duruyor). Checkpoint motoru
+   (module-exam/boss) içerik gelince Faz 3'te bağlanır.
 3. **Progress bağlama:** lesson item → userLessons; read/listen/write/grammar/quiz item →
    userSkills (eski veri silinmiş). Checkpoint geçme → gating.
 4. **Kaldırma:** `/skills` rotaları, hub, meta, `SkillId` kavramı, slug; userSkills eski veri
