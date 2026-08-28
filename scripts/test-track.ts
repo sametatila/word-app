@@ -4,6 +4,7 @@ import type { Lesson } from "../src/lib/lessons/types";
 import type { CefrLevel } from "../src/lib/skills/types";
 import type { SkillMeta } from "../src/lib/skills/index";
 import type { ImmersionTrack } from "../src/lib/immersion/types";
+import { buildTrackState, groupComplete } from "../src/lib/immersion/state";
 
 let pass = 0;
 const fail: string[] = [];
@@ -94,6 +95,32 @@ check("dersi olmayan seviye 0 ünite", buildTrack({ course: "de", level: "C1", l
 // 12. beceri hiç yoksa read/listen/write slotları null ama var
 const noSkills = buildTrack({ course: "de", level: "A1", lessons });
 check("beceri içeriği yoksa slotlar null yer tutucu", noSkills.units[0].items.filter((i) => i.kind === "read").every((i) => i.ref === null && i.title === "Okuma"));
+
+
+// ---- state / gating (saf) ----
+const u1 = t.units[0];
+const u1Refs = u1.items.filter((i) => i.ref).map((i) => i.ref as string);
+const s0 = buildTrackState(t, { lessonDone: () => false, skillDone: () => false });
+check("boşken ünite1 kilitsiz, ünite2/3 kilitli", !s0.units[0].locked && s0.units[1].locked && s0.units[2].locked);
+check("boşken currentIndex=1", s0.currentIndex === 1);
+check("ünite1 oynanabilir toplam=10 (4+2+2+2), done=0", s0.units[0].total === 10 && s0.units[0].done === 0);
+check("checkpoint placeholder → oynanamaz", s0.units[0].items.find((i) => i.item.kind === "checkpoint")?.playable === false);
+
+const doneSet = new Set(u1Refs);
+const s1 = buildTrackState(t, { lessonDone: (r) => doneSet.has(r), skillDone: (r) => doneSet.has(r) });
+check("ünite1 tümü bitince complete", s1.units[0].complete && s1.units[0].done === s1.units[0].total);
+check("ünite1 bitince ünite2 açılır, ünite3 kilitli", !s1.units[1].locked && s1.units[2].locked);
+check("currentIndex ünite2'ye ilerler", s1.currentIndex === 2);
+
+const u1Lessons = new Set(u1.items.filter((i) => i.kind === "lesson").map((i) => i.ref as string));
+const s2 = buildTrackState(t, { lessonDone: (r) => u1Lessons.has(r), skillDone: () => false });
+check("yalnız dersler bitince ünite1 EKSİK (beceriler bloklar)", !s2.units[0].complete && s2.units[0].done === 4);
+check("ünite1 eksikken ünite2 kilitli", s2.units[1].locked);
+
+const sAll = buildTrackState(t, { lessonDone: () => true, skillDone: () => true });
+check("her şey bitince tüm üniteler complete", sAll.units.every((u) => u.complete));
+check("grup 0 tamamlanmış (groupComplete)", groupComplete(sAll, 0) && !groupComplete(s0, 0));
+check("her şey bitince currentIndex son ünite", sAll.currentIndex === (t.units.at(-1)?.index ?? -1));
 
 if (fail.length) {
   console.error(`\n${fail.length} TEST BAŞARISIZ:`);
