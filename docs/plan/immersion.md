@@ -47,6 +47,10 @@ kurmasına yardım.** İki mod:
   da dâhil. **Motor/oynatıcılar korunur, yalnız İÇERİK silinir.**
 - Yeni read/listen/write/grammar/quiz/checkpoint içeriği **ünitenin lesson içeriğine göre başlık
   belirlenip** ona göre şekillenir — bir sonraki (içerik) adımda, zamanla.
+  - **ARAÇ HAZIR:** `lib/immersion/brief.ts` (`unitBriefs`/`buildUnitBriefs`) her üniteyi kendi
+    4 dersinden **tema + hedef kelime + kalıp + cando**'ya indirger — temalı içeriğin ŞARTNAMESİ.
+    `npm run briefs -- A1 de` insan-okur döküm verir. Yeni içerik bu havuzu kullanmalı ki
+    ünite dersleriyle aynı dünyada olsun. ("lesson'a göre türetilir" bunun somut hâli.)
 - Göç sonrası track: ünitelerde 4 lesson + boş/placeholder (read/listen/write/grammar/quiz) slotları
   + checkpoint; slotlar yeni içerikle dolar.
 

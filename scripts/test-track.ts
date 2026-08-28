@@ -5,6 +5,7 @@ import type { CefrLevel } from "../src/lib/skills/types";
 import type { SkillMeta } from "../src/lib/skills/index";
 import type { ImmersionTrack } from "../src/lib/immersion/types";
 import { buildTrackState, groupComplete } from "../src/lib/immersion/state";
+import { buildUnitBriefs } from "../src/lib/immersion/brief";
 
 let pass = 0;
 const fail: string[] = [];
@@ -123,6 +124,28 @@ const sAll = buildTrackState(t, { lessonDone: () => true, skillDone: () => true 
 check("her şey bitince tüm üniteler complete", sAll.units.every((u) => u.complete));
 check("grup 0 tamamlanmış (groupComplete)", groupComplete(sAll, 0) && !groupComplete(s0, 0));
 check("her şey bitince currentIndex son ünite", sAll.currentIndex === (t.units.at(-1)?.index ?? -1));
+
+
+// ---- content brief (lesson'a göre türetme) ----
+const bl = (i: number, vocab: [string, string][], patterns: [string, string][], cando: string[]) => ({
+  ...mkLesson(i, "A1"),
+  vocab: vocab.map(([de, tr]) => ({ de, tr })),
+  patterns: patterns.map(([de, tr]) => ({ de, tr })),
+  cando,
+});
+const briefLessons = [
+  bl(1, [["Hallo", "merhaba"], ["Name", "isim"]], [["Ich heiße …", "adım …"]], ["a1.self.introduce"]),
+  bl(2, [["Name", "isim"], ["Land", "ülke"]], [["Ich komme aus …", "…'denim"]], ["a1.self.origin"]),
+  bl(3, [["Beruf", "meslek"]], [["Ich bin …", "…yim"]], ["a1.self.introduce"]),
+  bl(4, [["Hobby", "hobi"]], [["Ich mag …", "…severim"]], ["a1.self.hobby"]),
+];
+const briefs = buildUnitBriefs("de", "A1", briefLessons);
+check("4 ders → 1 brief", briefs.length === 1);
+check("brief teması modülden (Tanışma ve ben)", briefs[0].theme === "Tanışma ve ben");
+check("brief vocab de'ye göre tekil (Name bir kez)", briefs[0].vocab.length === 5 && briefs[0].vocab.filter((v) => v.de === "Name").length === 1);
+check("brief pattern birleşik (4)", briefs[0].patterns.length === 4);
+check("brief cando birleşik+tekil (introduce bir kez)", briefs[0].cando.length === 3 && briefs[0].cando.filter((c) => c === "a1.self.introduce").length === 1);
+check("brief 4 lessonId + needs 2/2/2", briefs[0].lessonIds.length === 4 && briefs[0].needs.read === 2 && briefs[0].needs.listen === 2 && briefs[0].needs.write === 2);
 
 if (fail.length) {
   console.error(`\n${fail.length} TEST BAŞARISIZ:`);
