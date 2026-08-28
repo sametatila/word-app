@@ -34,7 +34,7 @@ import { Avatar } from "@/components/avatar";
  */
 const NAV = [
   { href: "/learn", label: "Öğren", Icon: CardsIcon, key: "learn" },
-  { href: "/immersion", label: "Immersion", Icon: CompassIcon, key: "immersion" },
+  { href: "/immersion", label: "Patika", Icon: CompassIcon, key: "immersion" },
 ];
 
 /** Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor. */

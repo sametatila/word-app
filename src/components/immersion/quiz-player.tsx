@@ -26,7 +26,7 @@ export function ImmersionQuizPlayer({
   return (
     <div className="mx-auto w-full max-w-2xl px-4 py-6">
       <div className="mb-5 flex items-center gap-3">
-        <Link href="/immersion" aria-label="Immersion'a dön" className="btn btn-ghost h-9 w-9 shrink-0 text-lg">
+        <Link href="/immersion" aria-label="Patika'ya dön" className="btn btn-ghost h-9 w-9 shrink-0 text-lg">
           ←
         </Link>
         <div className="min-w-0">
@@ -46,7 +46,7 @@ export function ImmersionQuizPlayer({
             %{questions.length ? Math.round((score / questions.length) * 100) : 0} doğru
           </p>
           <Link href="/immersion" className="btn btn-primary mt-5 inline-flex px-6 py-3">
-            Immersion'a dön
+            Patika'ya dön
           </Link>
         </div>
       )}

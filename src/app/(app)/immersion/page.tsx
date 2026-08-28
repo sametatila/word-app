@@ -17,11 +17,7 @@ const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
  * item'ları örülür (bkz. docs/plan/immersion.md). Seçili seviyenin track'i
  * kurulur, kullanıcının ilerlemesiyle gating hesaplanır, sunucuda çizilir.
  */
-export default async function ImmersionPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ level?: string }>;
-}) {
+export default async function ImmersionPage() {
   const user = await getUserInfo();
   if (!user) return null;
 
@@ -35,9 +31,9 @@ export default async function ImmersionPage({
     console.error("[immersion] profil okunamadı", err);
   }
 
-  // Seçili seviye: ?level= geçerliyse onu, değilse kullanıcının seviyesini göster.
-  const requested = (await searchParams).level;
-  const level = LEVELS.includes(requested as CefrLevel) ? (requested as CefrLevel) : profileLevel;
+  // CEFR seçimi buradan YAPILAMAZ — kullanıcı kendi seviyesindedir; seviye
+  // yerleştirme testiyle belirlenir, patika ekranından değiştirilmez.
+  const level = profileLevel;
 
   const track = await loadTrack(course, level);
   const completion = await immersionCompletion(user.id, course);
@@ -69,7 +65,6 @@ export default async function ImmersionPage({
   return (
     <ImmersionHub
       level={level}
-      levels={LEVELS}
       units={units}
       currentIndex={state.currentIndex}
       doneUnits={doneUnits}

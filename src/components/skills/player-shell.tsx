@@ -105,7 +105,7 @@ export function PlayerShell({
     <div className="mx-auto w-full max-w-2xl">
       <MascotFx />
       <div className="mb-5 flex items-center gap-3">
-        <Link href="/immersion" aria-label="Immersion'a dön" className="btn btn-ghost h-9 w-9 shrink-0">
+        <Link href="/immersion" aria-label="Patika'ya dön" className="btn btn-ghost h-9 w-9 shrink-0">
           <ArrowLeftIcon size={18} />
         </Link>
         <div className="min-w-0">
@@ -194,7 +194,7 @@ export function ResultCard({
       )}
       <div className="mt-4 flex items-center justify-center gap-3">
         <Link href="/immersion" className="btn btn-primary px-6 py-3">
-          Immersion'a dön
+          Patika'ya dön
         </Link>
         {onRetry && !perfect ? (
           <button type="button" onClick={onRetry} className="btn btn-ghost px-5 py-3">
