@@ -819,6 +819,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       stopAll();
       stopPocketAudio();
       closeMic();
+      try {
+        if (document.fullscreenElement) void document.exitFullscreen?.().catch(() => {});
+      } catch {
+        /* önemsiz */
+      }
     },
     [stopAll],
   );
@@ -827,10 +832,41 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     if (new URLSearchParams(window.location.search).has("diag")) setDiag([]);
   }, []);
 
-  // Tur oynamıyorsa karanlık katman kalkar (duraklat/çık/bitti sonrası açık kalmasın).
+  /** Tam ekrandan çık — sistem çubuklarını geri getirir. */
+  const exitFullscreen = useCallback(() => {
+    try {
+      if (document.fullscreenElement) void document.exitFullscreen?.().catch(() => {});
+    } catch {
+      /* önemsiz */
+    }
+  }, []);
+
+  /** Karanlık kilidi kapat: katman kalkar, tam ekrandan çıkılır. */
+  const exitDark = useCallback(() => {
+    darkTaps.current = [];
+    setScreenDark(false);
+    exitFullscreen();
+    track("walk_switch", 0, "dark-exit");
+  }, [exitFullscreen]);
+
+  // Tur oynamıyorsa karanlık katman ve tam ekran kalkar (duraklat/çık/bitti sonrası).
   useEffect(() => {
-    if (status !== "playing") setScreenDark(false);
-  }, [status]);
+    if (status !== "playing") {
+      setScreenDark(false);
+      exitFullscreen();
+    }
+  }, [status, exitFullscreen]);
+
+  // Kullanıcı sistem hareketiyle tam ekrandan çıkarsa (yukarı kaydırma, geri)
+  // katman da kalksın — yoksa çubuklar geri gelir ama siyah katman kalır ve
+  // kullanıcı ne olduğunu anlamaz.
+  useEffect(() => {
+    const onFsChange = () => {
+      if (!document.fullscreenElement) setScreenDark(false);
+    };
+    document.addEventListener("fullscreenchange", onFsChange);
+    return () => document.removeEventListener("fullscreenchange", onFsChange);
+  }, []);
 
   // Kurulum yoklaması: cevabı beklerken hiçbir şey engellenmiyor, yalnızca
   // başlangıç ekranındaki söz doğru olsun diye.
@@ -1219,11 +1255,21 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * Ekran açık kaldığı için tarayıcının tanıyıcısı (ekrandaki kusursuz yol)
    * cepte de çalışıyor; HyperOS'un ekran-kapanınca-sustur davranışına hiç
    * girilmiyor. Wake lock tur başında zaten alındı; burada teyit ediliyor.
+   *
+   * TAM EKRAN şart: siyah katman yalnız web sayfasını örter, Android'in üst
+   * durum çubuğu (saat/pil) ve alt gezinme düğmeleri sayfanın ÜSTÜNDE kalır ve
+   * cepte kazara basılabilir (geri, ana ekran, hatta arama). `requestFullscreen`
+   * ikisini de gizliyor — kullanıcı dokunuşunun içinden çağrıldığı için izinli.
    */
   function darken() {
     void acquire();
     darkTaps.current = [];
     setScreenDark(true);
+    try {
+      void document.documentElement.requestFullscreen?.({ navigationUI: "hide" }).catch(() => {});
+    } catch {
+      /* fullscreen reddedilirse katman yine örter, yalnız sistem çubukları kalır */
+    }
     track("walk_switch", 1, "dark");
     announce.current = "Ekranı karartıyorum, açık kalacak. Telefonu cebine koyabilirsin. Çıkmak için ekrana üç kez dokun.";
   }
@@ -1232,11 +1278,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   function onDarkTap() {
     const now = Date.now();
     darkTaps.current = [...darkTaps.current.filter((t) => now - t < 1200), now];
-    if (darkTaps.current.length >= 3) {
-      darkTaps.current = [];
-      setScreenDark(false);
-      track("walk_switch", 0, "dark-exit");
-    }
+    if (darkTaps.current.length >= 3) exitDark();
   }
 
   function pause() {
@@ -1264,6 +1306,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     void release();
     stopPocketAudio();
     closeMic();
+    exitFullscreen();
     onExit();
   }
 
