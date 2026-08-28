@@ -136,6 +136,20 @@ kurmasına yardım.** İki mod:
 - **Çok dillilik:** motor dil-parametrik (`course` zemini var), içerik tek çifte odaklı;
   PMF/tek-çift kanıtından sonra genişletilir (ayrı iş).
 
+## İçerik pilotu: A1 Ünite 1 "Tanışma ve ben" — TAM (2026-08-28)
+İlk eksiksiz tema-hizalı ünite (13 item hepsi oynanır):
+- **read/listen/write ×2/2/2** (`content/a1-u01.ts`) — yalnız ünitenin 20 kelimesi +
+  12 kalıbı; A1 başlangıç için çoğu MCQ + boşluk-doldurma/sıralama (dikte/serbest yok).
+  Dizinin başında → builder ünite 1'e yerleştirir (konum). Eski genel A1 sonraki ünitelere kaydı.
+- **grammar + quiz + bitiş sınavı** (`lib/immersion/content/de-a1-u01.ts`, 8+8+10 soru) — elle
+  yazılmış; gramer artık gerçek-oynanabilir (`/immersion/grammar/[unit]`), quiz/checkpoint
+  elle-yazılmış öncelikli yoksa deriveQuiz.
+- **Slot deseni değişti:** her ünite TAM TAKIM (grammar+quiz+checkpoint her ünitede). `unit`
+  alanı egzersizlere eklendi (belgeleme; ileride konum-bağımsız yerleşim).
+- test:content: benim içeriğim bütçeye SIFIR yeni borç ekledi (kalan aşımlar eski lessons borcu).
+
+Sıradaki ünitelerin şablonu bu. İçerik-yerleşim ileride `unit` tag'iyle konum-bağımsız olabilir.
+
 ## Kalan iş
 - **Kod:** ✅ quiz/checkpoint OTOMATİK TÜRETME (generator + oynatıcı rota) TAMAM — item'lar
   "yakında"dan gerçek-oynanabilire döndü (`/immersion/quiz/[unit]`, brief'ten türetilen pratik).

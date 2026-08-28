@@ -85,5 +85,6 @@ function hrefFor(item: ImmersionItem): string | null {
   if (item.kind === "read" || item.kind === "listen" || item.kind === "write") return `/immersion/skill/${item.ref}`;
   if (item.kind === "quiz") return `/immersion/quiz/${item.ref}`;
   if (item.kind === "checkpoint") return `/immersion/quiz/${item.ref}?mode=checkpoint`;
-  return null; // grammar: gerçek anlatım ister, henüz yok
+  if (item.kind === "grammar") return `/immersion/grammar/${item.ref}`;
+  return null;
 }

@@ -3,6 +3,7 @@ import type { Lesson } from "@/lib/lessons/types";
 import { MODULE_SIZE, moduleTheme } from "@/lib/lessons/modules";
 import { lessonsFor } from "@/lib/lessons/index";
 import { listExerciseMeta, type SkillMeta } from "@/lib/skills/index";
+import { hasAuthoredGrammar } from "./content";
 import type { ImmersionItem, ImmersionItemKind, ImmersionTrack, ImmersionUnit } from "./types";
 
 /**
@@ -24,20 +25,19 @@ export const GROUP_SIZE = 10;
 
 /**
  * Her ünitenin temel deseni: 4 lesson + 2 read + 2 listen + 2 write, serpiştirilmiş
- * (her dersi bir beceri izler). grammar/quiz "ara sıra" — slotPlan() ekliyor.
- * Sayılar geçici; içerik kararı sonraya bırakıldı (plan §Sonraya bırakılan).
+ * (her dersi bir beceri izler).
  */
 const BASE_PATTERN: ImmersionItemKind[] = [
   "lesson", "read", "lesson", "listen", "lesson", "write", "lesson", "read", "listen", "write",
 ];
 
-/** Ünitenin item deseni: temel + ara sıra grammar/quiz + kapanış checkpoint. */
-function slotPlan(unitIndex: number): ImmersionItemKind[] {
-  const plan = [...BASE_PATTERN];
-  if (unitIndex % 3 === 0) plan.push("grammar"); // her 3. ünite
-  if (unitIndex % 2 === 0) plan.push("quiz"); // her 2. ünite
-  plan.push("checkpoint");
-  return plan;
+/**
+ * Ünitenin item deseni — TAM TAKIM: temel + grammar + quiz + checkpoint.
+ * Sahibin kararı: her ünite eksiksiz şablon taşır (ilk ünite dâhil). İçerik
+ * zamanla dolar — grammar/quiz/checkpoint yer tutucudan türetilene/yazılana.
+ */
+function slotPlan(): ImmersionItemKind[] {
+  return [...BASE_PATTERN, "grammar", "quiz", "checkpoint"];
 }
 
 const SKILL_TITLE: Record<"read" | "listen" | "write", string> = {
@@ -84,7 +84,7 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
     const counters: Partial<Record<ImmersionItemKind, number>> = {};
     let lessonCursor = 0;
 
-    for (const kind of slotPlan(index)) {
+    for (const kind of slotPlan()) {
       const n = (counters[kind] = (counters[kind] ?? 0) + 1);
       const id = `${unitId}-${kind}${n}`;
       if (kind === "lesson") {
@@ -100,8 +100,10 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
           titleTr: meta?.genre ?? SKILL_TITLE[kind],
         });
       } else if (kind === "grammar") {
-        // Gramer türetilemez (gerçek anlatım ister) → yer tutucu, "yakında".
-        items.push({ id, kind, ref: null, title: "Dil bilgisi", titleTr: "Odak alıştırması" });
+        // Gramer türetilemez; yalnız elle yazılmış üniteler için oynanabilir,
+        // yoksa "yakında" (ref=null).
+        const gRef = hasAuthoredGrammar(unitId) ? unitId : null;
+        items.push({ id, kind, ref: gRef, title: "Dil bilgisi", titleTr: "Odak alıştırması" });
       } else if (kind === "quiz") {
         // quiz/checkpoint ünitenin brief'inden TÜRETİLİR (deriveQuiz) → oynanabilir.
         // ref = unitId: oynatıcı rotası hangi üniteden soru üreteceğini bundan bilir.

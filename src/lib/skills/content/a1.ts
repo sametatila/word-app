@@ -1,7 +1,12 @@
 import type { SkillExercise } from "../types";
+import { a1U01 } from "./a1-u01";
 
 /** A1 — okuma, dinleme ve yazma egzersizleri. */
 export const a1: SkillExercise[] = [
+  // Ünite 1 "Tanışma ve ben" tema-hizalı içerik EN BAŞTA durur → immersion
+  // builder ünite 1'in okuma/dinleme/yazma slotlarını (konuma göre) bunlarla
+  // doldurur. Eski genel A1 içeriği sonraki ünitelere kayar (köprü).
+  ...a1U01,
   // ─────────────────────────── OKUMA ───────────────────────────
   {
     id: "a1-r1",

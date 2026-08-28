@@ -80,10 +80,10 @@ check("reading ref sırası havuzu izler", JSON.stringify(readItems.slice(0, 3).
 const ids = t.units.flatMap((u) => u.items.map((i) => i.id));
 check("item id'leri benzersiz", new Set(ids).size === ids.length);
 
-// 8. grammar %3, quiz %2 ünitelerde
-check("ünite 2'de quiz var, grammar yok", t.units[1].items.some((i) => i.kind === "quiz") && !t.units[1].items.some((i) => i.kind === "grammar"));
-check("ünite 3'te grammar var, quiz yok", t.units[2].items.some((i) => i.kind === "grammar") && !t.units[2].items.some((i) => i.kind === "quiz"));
-check("ünite 1'de ne grammar ne quiz", !t.units[0].items.some((i) => i.kind === "grammar" || i.kind === "quiz"));
+// 8. her ünite TAM TAKIM: grammar + quiz + checkpoint
+check("her ünite grammar taşır", t.units.every((u) => u.items.some((i) => i.kind === "grammar")));
+check("her ünite quiz taşır", t.units.every((u) => u.items.some((i) => i.kind === "quiz")));
+check("ünite 1 tam takım (grammar+quiz+checkpoint)", ["grammar", "quiz", "checkpoint"].every((k) => t.units[0].items.some((i) => i.kind === k)));
 
 // 9. group = floor((index-1)/groupSize)
 check("group = floor((index-1)/GROUP_SIZE)", t.units.every((u) => u.group === Math.floor((u.index - 1) / GROUP_SIZE)));
