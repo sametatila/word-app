@@ -6,6 +6,7 @@ import type { SkillMeta } from "../src/lib/skills/index";
 import type { ImmersionTrack } from "../src/lib/immersion/types";
 import { buildTrackState, groupComplete } from "../src/lib/immersion/state";
 import { buildUnitBriefs } from "../src/lib/immersion/brief";
+import { deriveQuiz } from "../src/lib/immersion/quiz";
 
 let pass = 0;
 const fail: string[] = [];
@@ -146,6 +147,22 @@ check("brief vocab de'ye göre tekil (Name bir kez)", briefs[0].vocab.length ===
 check("brief pattern birleşik (4)", briefs[0].patterns.length === 4);
 check("brief cando birleşik+tekil (introduce bir kez)", briefs[0].cando.length === 3 && briefs[0].cando.filter((c) => c === "a1.self.introduce").length === 1);
 check("brief 4 lessonId + needs 2/2/2", briefs[0].lessonIds.length === 4 && briefs[0].needs.read === 2 && briefs[0].needs.listen === 2 && briefs[0].needs.write === 2);
+
+
+// ---- quiz/checkpoint türetme (brief → SkillQuestion) ----
+const qpool = {
+  vocab: Array.from({ length: 8 }, (_, k) => ({ de: `w${k}`, tr: `t${k}` })),
+  patterns: Array.from({ length: 5 }, (_, k) => ({ de: `De${k}`, tr: `Tr${k}` })),
+};
+const quiz = deriveQuiz(briefs[0], qpool, 6);
+check("quiz 6 soru üretir", quiz.length === 6);
+check("kelime sorusu de→tr, doğru cevap vocab tr", quiz[0].text.includes("Hallo") && quiz[0].options[quiz[0].answer] === "merhaba");
+check("son 2 soru kalıp (tr→de)", quiz.slice(-2).every((q) => q.text.includes("nasıl denir")));
+check("kalıp sorusunda doğru cevap de kalıbı", quiz[4].options[quiz[4].answer] === "Ich heiße …");
+check("hiçbir distraktör doğru cevaba eşit değil", quiz.every((q) => q.options.filter((_, idx) => idx !== q.answer).every((o) => o !== q.options[q.answer])));
+check("options benzersiz", quiz.every((q) => new Set(q.options).size === q.options.length));
+check("deterministik (aynı girdi → aynı quiz)", JSON.stringify(deriveQuiz(briefs[0], qpool, 6)) === JSON.stringify(quiz));
+check("checkpoint daha uzun (count=12 → 5 vocab + 2 kalıp = 7, brief küçük)", deriveQuiz(briefs[0], qpool, 12).length === Math.min(12, briefs[0].vocab.length + 2));
 
 if (fail.length) {
   console.error(`\n${fail.length} TEST BAŞARISIZ:`);

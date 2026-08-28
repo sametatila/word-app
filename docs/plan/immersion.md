@@ -116,9 +116,29 @@ kurmasına yardım.** İki mod:
    erişilemiyor; ayrıca ZORUNLU değil: tablo aynı exercise id'leriyle yeniden kullanıldığından
    eski ilerleme immersion'da zararsızca korunur. Temiz sayfa istenirse: `DELETE FROM user_skills;`
 
-## Sonraya bırakılan içerik kararları
-- Slot deseni sayıları (ünite başına kaç lesson/read/listen/write/grammar/quiz).
-- Grup boyutu (kaç ünite = 1 checkpoint arası) ve unlock eşiği.
-- Grammar/quiz içerik biçimi.
-- Çok dillilik: motor dil-parametrik olacak (`course` zemini var) ama içerik tek çifte odaklı
-  kalır; PMF/tek-çift kanıtından sonra genişletilir (ayrı iş).
+## Kararlar (SONUÇLANDIRILDI — 2026-08-28)
+- **Slot deseni:** 4 lesson + 2 read + 2 listen + 2 write; grammar `index%3==0`,
+  quiz `index%2==0`; sonda checkpoint. (UYGULANDI — `build.ts`.)
+- **Grup boyutu:** 10 ünite/grup. Seviye(25) → gruplar 1–10, 11–20, 21–25. (UYGULANDI.)
+- **Unlock eşiği (AŞAMALI):**
+  - Ünite geçildi = dersleri bitti (iskelet). (UYGULANDI — interim.)
+  - Grup→grup = önceki grubun tüm üniteleri complete → sonraki grup görünür. (UYGULANDI — hub.)
+  - İleride (checkpoint gelince): checkpoint ≥%70 → ünite geçildi (kural sıkılaştırılır).
+- **Quiz biçimi:** ünite brief'inden **OTOMATİK TÜRETİLİR** — 6–8 karışık hatırlama
+  (de↔tr kelime, kalıp eşleştirme), mevcut `SkillQuestion` + `quiz.tsx` UI'siyle.
+  İÇERİK YAZIMI GEREKMEZ, hep tema-hizalı. Distraktörler diğer ünitelerin havuzundan.
+- **Checkpoint biçimi:** ünite-sonu hatırlama sınavı — aynı brief-türetme, daha uzun
+  (~10–12), geçme ≥%70 → ünite cleared. quiz UI yeniden kullanılır; 10-derslik
+  modül-sınavı DEĞİL (ünite≠modül). Geçiş `userSkills`e checkpoint item id'siyle yazılır.
+- **Grammar biçimi:** ünitenin baskın kalıbına (brief.patterns) odaklı kısa mini-drill —
+  ünite başına hafif elle ya da türetme. En düşük öncelik (gramer en zayıf halkaydı).
+- **Çok dillilik:** motor dil-parametrik (`course` zemini var), içerik tek çifte odaklı;
+  PMF/tek-çift kanıtından sonra genişletilir (ayrı iş).
+
+## Kalan iş
+- **Kod (bu loop'ta bitiyor):** quiz/checkpoint OTOMATİK TÜRETME (generator + oynatıcı rota)
+  → quiz/checkpoint item'ları "yakında"dan gerçek-oynanabilire döner. İçerik-bedava.
+- **İçerik authoring (ayrı, zamanla — senin pipeline'ın):** `read`/`listen`/`write`
+  gerçek metin/ses ister, türetilemez. `npm run briefs -- <LEVEL> de` şartnamedir; yeni
+  içerik ünitenin brief havuzunu (tema+kelime+kalıp) kullanmalı. Gramer içeriği isteğe bağlı.
+- **DB (senin elinle, opsiyonel):** `DELETE FROM user_skills;` temiz sayfa istenirse.
