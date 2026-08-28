@@ -33,13 +33,8 @@ import {
 import { pluralChoices, umlautStem } from "../src/lib/german";
 import { firstExample } from "../src/lib/example";
 import { isSpeechCorrect, judgeSpeech, normalizeSpoken } from "../src/lib/speech";
-import { speaking } from "../src/lib/skills/content/speaking";
-import { zhSpeaking } from "../src/lib/skills/content/zh-speaking";
-import { dialogues } from "../src/lib/skills/content/dialogue";
-import { matchReply, usedTargets } from "../src/lib/dialogue";
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { derivedConfusions } from "../src/lib/speech-rules";
-import { weakSpeechTopics } from "../src/lib/speech-progress";
 import { germanLexicon } from "../src/lib/speech-lexicon";
 import { LESSONS, lessonsFor, findLesson } from "../src/lib/lessons";
 import { scoredSteps } from "../src/lib/lessons/types";
@@ -587,29 +582,6 @@ async function main() {
 
   setKeys(envBackup.cerebras, envBackup.groq, envBackup.mistral, envBackup.preferred);
 
-  console.log("\n11t) Zorlanılan ses konuları");
-  {
-    const meta = [
-      { id: "sp1", skill: "speaking", level: "A1", title: "Ch sesi" },
-      { id: "sp2", skill: "speaking", level: "A2", title: "Uzunluk" },
-      { id: "sp3", skill: "speaking", level: "A1", title: "Hiç denenmedi" },
-      { id: "rd1", skill: "reading", level: "A1", title: "Okuma" },
-    ];
-    const rows = [
-      { exerciseId: "sp1", correct: 1, total: 6, attempts: 5 },
-      { exerciseId: "sp2", correct: 3, total: 6, attempts: 1 },
-      { exerciseId: "rd1", correct: 0, total: 5, attempts: 3 },
-    ];
-    const weak = weakSpeechTopics(meta, rows);
-    check("yalnızca telaffuz konuları listeleniyor", weak.every((t) => t.exerciseId.startsWith("sp")));
-    check("en zayıf konu başta", weak[0]?.exerciseId === "sp1", `(${weak[0]?.exerciseId})`);
-    // Hiç denenmemiş konu "zorlandığın" değil "gelmediğin" — ikisi karışmamalı.
-    check("denenmemiş konu listeye girmiyor", !weak.some((t) => t.exerciseId === "sp3"));
-    const strong = weakSpeechTopics(meta, [{ exerciseId: "sp1", correct: 6, total: 6, attempts: 2 }]);
-    check("iyi bilinen konu zorlanılan sayılmıyor", strong.length === 0);
-    check("deneme sayısı taşınıyor", weak[0]?.attempts === 5);
-  }
-
   console.log("\n11s) Sapmalar kuraldan da türetiliyor");
   {
     const lex = germanLexicon();
@@ -633,73 +605,6 @@ async function main() {
       all.every((c) => c.heard[0].toLowerCase() !== (c.expected ?? "").toLowerCase()));
     check("türev doğru biçimi içermiyor",
       all.every((c) => !c.heard[0].toLowerCase().includes((c.expected ?? "x").toLowerCase())));
-  }
-
-  console.log("\n11w) Kendi değerlendiren egzersizlerin kuralları");
-  {
-    const drills = [...speaking, ...zhSpeaking];
-    const selfJudged = drills.filter((e) => e.judge === "self");
-    check("kendi değerlendiren egzersiz var", selfJudged.length > 0, `(${selfJudged.length})`);
-
-    // Tanıyıcı hiç çalışmadığı için sapma yazmak ölü içerik olurdu: yazılan
-    // satır asla tetiklenmez ama bakımı gerekir ve doğru sanılır.
-    const withConfusions = selfJudged.filter((e) =>
-      e.tasks.some((t) => (t.confusions ?? []).length > 0),
-    );
-    check("kendi değerlendirende sapma yazılmamış", withConfusions.length === 0,
-      `(${withConfusions.map((e) => e.id).join(", ")})`);
-
-    // Öğretme yükünü ipuçları taşıyor; ipucusuz görev orada sessiz kalır.
-    const noHint = selfJudged.flatMap((e) =>
-      e.tasks.filter((t) => !t.hint?.trim()).map(() => e.id),
-    );
-    check("kendi değerlendirende her görevin ipucu var", noHint.length === 0,
-      `(${[...new Set(noHint)].join(", ")})`);
-
-    // Tersi de geçerli olmalı: tanıyıcıyla değerlendirilen egzersizlerde en az
-    // bir sapma bulunmalı, yoksa tanıyıcı açık ama teşhis yok demektir.
-    const asrJudged = drills.filter((e) => e.judge !== "self");
-    const noConfusion = asrJudged.filter(
-      (e) => !e.tasks.some((t) => (t.confusions ?? []).length > 0),
-    );
-    check("tanıyıcılı egzersizlerde teşhis var", noConfusion.length === 0,
-      `(${noConfusion.map((e) => e.id).join(", ")})`);
-  }
-
-  console.log("\n11v) Diyalog eşleştirmesi gerçekçi girdilerde");
-  {
-    const find = (id: string) => dialogues.find((d) => d.id === id)!;
-    const turn = (id: string, tid: string) => find(id).dialogue.find((t) => t.id === tid)!;
-    const said = (id: string, tid: string, text: string) =>
-      matchReply(text, turn(id, tid).replies)?.reply.say ?? null;
-
-    // Almanca: aynı niyetin farklı kuruluşları aynı dala gitmeli.
-    check("kısa cevap tutuyor", said("a1-d1", "start", "Bahnhof") !== null);
-    check("tam cümle tutuyor",
-      said("a1-d1", "start", "Entschuldigung, wo ist der Bahnhof bitte?") !== null);
-    check("aynı niyet aynı dala gidiyor",
-      said("a1-d1", "start", "Bahnhof") === said("a1-d1", "start", "Ich suche den Bahnhof."));
-
-    // Zürih: asıl sınav. Tanıyıcı lehçeyi standart Almanca yazma eğiliminde,
-    // o yüzden köklere Hochdeutsch karşılıkları da yazılmıştı. Bu kontrol o
-    // iddiayı doğruluyor — ikisi de aynı dalı seçmeli.
-    const zhDialect = said("zh-a2-d1", "start", "Ich hätt gern Chäs.");
-    const zhStandard = said("zh-a2-d1", "start", "Ich hätte gern Käse.");
-    check("lehçe biçimi tutuyor", zhDialect !== null, `(${zhDialect})`);
-    check("tanıyıcının yazacağı standart biçim de tutuyor", zhStandard !== null,
-      `(${zhStandard})`);
-    check("ikisi aynı dala gidiyor", zhDialect === zhStandard);
-
-    const zhVerb = said("zh-a1-d1", "from", "Ich chume vo de Türkei.");
-    const zhVerbStd = said("zh-a1-d1", "from", "Ich komme aus der Türkei.");
-    check("lehçe fiili tutuyor", zhVerb !== null, `(${zhVerb})`);
-    check("standart fiil de tutuyor", zhVerbStd !== null, `(${zhVerbStd})`);
-
-    // Konu dışı cevap hiçbir dala uymamalı; uyarsa öğrenci yanlış yönlendirilir.
-    check("konu dışı cevap eşleşmiyor",
-      said("zh-a2-d1", "start", "Wie spät ist es?") === null,
-      `(${said("zh-a2-d1", "start", "Wie spät ist es?")})`);
-    check("boş cevap eşleşmiyor", said("b1-d1", "start", "   ") === null);
   }
 
   console.log("\n11u) İstem başlığı cevaba sızmıyor");
@@ -943,73 +848,6 @@ async function main() {
       all.every((c) => !c.heard[0].toLowerCase().includes((c.expected ?? "x").toLowerCase())));
   }
 
-  console.log("\n11w) Kendi değerlendiren egzersizlerin kuralları");
-  {
-    const drills = [...speaking, ...zhSpeaking];
-    const selfJudged = drills.filter((e) => e.judge === "self");
-    check("kendi değerlendiren egzersiz var", selfJudged.length > 0, `(${selfJudged.length})`);
-
-    // Tanıyıcı hiç çalışmadığı için sapma yazmak ölü içerik olurdu: yazılan
-    // satır asla tetiklenmez ama bakımı gerekir ve doğru sanılır.
-    const withConfusions = selfJudged.filter((e) =>
-      e.tasks.some((t) => (t.confusions ?? []).length > 0),
-    );
-    check("kendi değerlendirende sapma yazılmamış", withConfusions.length === 0,
-      `(${withConfusions.map((e) => e.id).join(", ")})`);
-
-    // Öğretme yükünü ipuçları taşıyor; ipucusuz görev orada sessiz kalır.
-    const noHint = selfJudged.flatMap((e) =>
-      e.tasks.filter((t) => !t.hint?.trim()).map(() => e.id),
-    );
-    check("kendi değerlendirende her görevin ipucu var", noHint.length === 0,
-      `(${[...new Set(noHint)].join(", ")})`);
-
-    // Tersi de geçerli olmalı: tanıyıcıyla değerlendirilen egzersizlerde en az
-    // bir sapma bulunmalı, yoksa tanıyıcı açık ama teşhis yok demektir.
-    const asrJudged = drills.filter((e) => e.judge !== "self");
-    const noConfusion = asrJudged.filter(
-      (e) => !e.tasks.some((t) => (t.confusions ?? []).length > 0),
-    );
-    check("tanıyıcılı egzersizlerde teşhis var", noConfusion.length === 0,
-      `(${noConfusion.map((e) => e.id).join(", ")})`);
-  }
-
-  console.log("\n11v) Diyalog eşleştirmesi gerçekçi girdilerde");
-  {
-    const find = (id: string) => dialogues.find((d) => d.id === id)!;
-    const turn = (id: string, tid: string) => find(id).dialogue.find((t) => t.id === tid)!;
-    const said = (id: string, tid: string, text: string) =>
-      matchReply(text, turn(id, tid).replies)?.reply.say ?? null;
-
-    // Almanca: aynı niyetin farklı kuruluşları aynı dala gitmeli.
-    check("kısa cevap tutuyor", said("a1-d1", "start", "Bahnhof") !== null);
-    check("tam cümle tutuyor",
-      said("a1-d1", "start", "Entschuldigung, wo ist der Bahnhof bitte?") !== null);
-    check("aynı niyet aynı dala gidiyor",
-      said("a1-d1", "start", "Bahnhof") === said("a1-d1", "start", "Ich suche den Bahnhof."));
-
-    // Zürih: asıl sınav. Tanıyıcı lehçeyi standart Almanca yazma eğiliminde,
-    // o yüzden köklere Hochdeutsch karşılıkları da yazılmıştı. Bu kontrol o
-    // iddiayı doğruluyor — ikisi de aynı dalı seçmeli.
-    const zhDialect = said("zh-a2-d1", "start", "Ich hätt gern Chäs.");
-    const zhStandard = said("zh-a2-d1", "start", "Ich hätte gern Käse.");
-    check("lehçe biçimi tutuyor", zhDialect !== null, `(${zhDialect})`);
-    check("tanıyıcının yazacağı standart biçim de tutuyor", zhStandard !== null,
-      `(${zhStandard})`);
-    check("ikisi aynı dala gidiyor", zhDialect === zhStandard);
-
-    const zhVerb = said("zh-a1-d1", "from", "Ich chume vo de Türkei.");
-    const zhVerbStd = said("zh-a1-d1", "from", "Ich komme aus der Türkei.");
-    check("lehçe fiili tutuyor", zhVerb !== null, `(${zhVerb})`);
-    check("standart fiil de tutuyor", zhVerbStd !== null, `(${zhVerbStd})`);
-
-    // Konu dışı cevap hiçbir dala uymamalı; uyarsa öğrenci yanlış yönlendirilir.
-    check("konu dışı cevap eşleşmiyor",
-      said("zh-a2-d1", "start", "Wie spät ist es?") === null,
-      `(${said("zh-a2-d1", "start", "Wie spät ist es?")})`);
-    check("boş cevap eşleşmiyor", said("b1-d1", "start", "   ") === null);
-  }
-
   console.log("\n11u) İstem başlığı cevaba sızmıyor");
   {
     const leaked = parseReply(
@@ -1158,157 +996,6 @@ async function main() {
   check("işaretsiz cevapta düzeltme/öneri yok",
     plain.corrections.length === 0 && plain.suggestions.length === 0);
   check("işaretsiz cevabın gövdesi bozulmuyor", plain.body === "Alles klar. Was machst du?");
-
-  console.log("\n11m) Karşılıklı konuşma (diyalog)");
-  const cafe = dialogues[0];
-  check("diyalog havuzu var", dialogues.length > 0);
-
-  // Yapısal kontroller **her** diyaloğa uygulanıyor. Eskiden yalnızca ilk
-  // diyaloğa bakılıyordu; havuza ikinci bir diyalog eklendiğinde kırık bir
-  // bağlantı ya da ölü bir tur sessizce yayına çıkardı.
-  for (const d of dialogues) {
-    const ids = new Set(d.dialogue.map((t) => t.id));
-    check(`[${d.id}] tur kimlikleri benzersiz`, ids.size === d.dialogue.length);
-
-    // Kırık bağlantı konuşmayı ortada bırakır: her `next` var olan bir tura gitmeli.
-    const broken = d.dialogue.flatMap((t) =>
-      t.replies.filter((r) => r.next && !ids.has(r.next)).map((r) => `${t.id} → ${r.next}`),
-    );
-    check(`[${d.id}] bütün dallar var olan bir tura gidiyor`, broken.length === 0,
-      `(${broken.join(", ")})`);
-
-    // Ulaşılamayan tur ölü içeriktir.
-    const seen = new Set([d.dialogue[0].id]);
-    let grew = true;
-    while (grew) {
-      grew = false;
-      for (const t of d.dialogue) {
-        if (!seen.has(t.id)) continue;
-        for (const r of t.replies) {
-          if (r.next && !seen.has(r.next)) {
-            seen.add(r.next);
-            grew = true;
-          }
-        }
-      }
-    }
-    const orphans = d.dialogue.filter((t) => !seen.has(t.id)).map((t) => t.id);
-    check(`[${d.id}] ulaşılamayan tur yok`, orphans.length === 0, `(${orphans.join(", ")})`);
-
-    check(`[${d.id}] her turda geri dönüş örneği var`,
-      d.dialogue.every((t) => t.fallback.example.trim().length > 0));
-    check(`[${d.id}] her turda en az bir dal var`,
-      d.dialogue.every((t) => t.replies.length > 0));
-    check(`[${d.id}] her turda yönlendirme yazılı`,
-      d.dialogue.every((t) => t.cue.trim().length > 0));
-
-    // `uses` konuşma sonunda özetleniyor; tanımsız bir kalıba işaret etmesi
-    // özeti sessizce yanlış yapardı.
-    const targets = new Set(d.targets.map((t) => t.de));
-    const unknown = d.dialogue.flatMap((t) =>
-      t.replies.flatMap((r) => (r.uses ?? []).filter((u) => !targets.has(u))),
-    );
-    check(`[${d.id}] kullanılan kalıplar hedeflerde tanımlı`, unknown.length === 0,
-      `(${[...new Set(unknown)].join(", ")})`);
-
-    // Geri dönüş örneği, hiçbir dalın tutmadığı durumda gösteriliyor. Örnek
-    // cümlenin kendisi bir dala uymuyorsa öğrenciye çalışmayan bir çıkış yolu
-    // gösterilmiş olur.
-    const deadEnds = d.dialogue
-      .filter((t) => matchReply(t.fallback.example, t.replies) === null)
-      .map((t) => t.id);
-    check(`[${d.id}] geri dönüş örneği bir dala uyuyor`, deadEnds.length === 0,
-      `(${deadEnds.join(", ")})`);
-  }
-
-  // Asıl işlev: söylenen şeye göre farklı dal seçilmeli.
-  const start = cafe.dialogue[0];
-  const coffee = matchReply("Ich hätte gern einen Kaffee", start.replies);
-  const tea = matchReply("Einen Tee bitte", start.replies);
-  check("kahve dalı seçiliyor", coffee?.reply.say.includes("Kaffee") === true);
-  check("çay dalı seçiliyor", tea?.reply.say.includes("Tee") === true);
-  check("aynı soru farklı cevaba farklı karşılık veriyor", coffee?.reply.say !== tea?.reply.say);
-  check("alakasız cevap eşleşmiyor", matchReply("Wo ist der Bahnhof", start.replies) === null);
-  check("boş cevap eşleşmiyor", matchReply("   ", start.replies) === null);
-
-  // Kısa kökler tam kelime aranmalı: "ja" kökü "Januar" içinde bulunmamalı.
-  const milk = cafe.dialogue.find((t) => t.id === "milk")!;
-  const negative = matchReply("Nein, ohne Zucker", milk.replies);
-  check("olumsuz cevap olumsuz dala gidiyor",
-    negative?.reply.say.includes("ohne") === true, `(${negative?.reply.say})`);
-  check("kısa kök parça olarak eşleşmiyor",
-    matchReply("Januar", [{ match: ["ja"], say: "x", sayTr: "x" }]) === null);
-  check("uzun kök parça olarak eşleşiyor",
-    matchReply("Ich möchte einen Kaffee", [{ match: ["möcht"], say: "x", sayTr: "x" }]) !== null);
-
-  // Pekiştirme ölçüsü gerçek olmalı: yalnızca tutan dalların kalıpları sayılır.
-  const path = [coffee!.reply, negative!.reply];
-  const used = usedTargets(path);
-  check("kullanılan kalıplar toplanıyor", used.length > 0, `(${used.join(", ")})`);
-  check("kullanılan kalıplar temanın hedefleri arasında",
-    used.every((u) => cafe.targets.some((t) => t.de === u)), `(${used.join(", ")})`);
-  check("diyalogda madde sayısı tur sayısı", itemCount(cafe) === cafe.dialogue.length);
-
-  console.log("\n11l) Konuşma alıştırmaları içeriği");
-  check("konuşma havuzu var", speaking.length > 0, `(${speaking.length})`);
-  check("kimlikler benzersiz", new Set(speaking.map((e) => e.id)).size === speaking.length);
-  check("her egzersizde görev var", speaking.every((e) => e.tasks.length > 0));
-  check("her görevde Almanca ve Türkçe metin var",
-    speaking.every((e) => e.tasks.every((t) => t.de.trim() && t.tr.trim())));
-  // Karışma kümesi işe yarasın: yanlış biçim hedefin kendisi olamaz, yoksa
-  // doğru söyleyen öğrenci "hata yaptın" uyarısı alırdı.
-  const selfConfusing = speaking.flatMap((e) =>
-    e.tasks.flatMap((t) =>
-      (t.confusions ?? []).flatMap((c) =>
-        c.heard.filter((h) => normalizeSpoken(h) === normalizeSpoken(t.de)).map((h) => `${e.id}: ${h}`),
-      ),
-    ),
-  );
-  check("yanlış biçim hedefin kendisi değil", selfConfusing.length === 0, `(${selfConfusing.join(", ")})`);
-  // `expected` hedef metinde geçmeli, yoksa "doğrusu" başka bir şey gösterir.
-  const strayExpected = speaking.flatMap((e) =>
-    e.tasks.flatMap((t) =>
-      (t.confusions ?? [])
-        .filter((c) => c.expected && !normalizeSpoken(t.de).includes(normalizeSpoken(c.expected)))
-        .map((c) => `${e.id}: ${c.expected}`),
-    ),
-  );
-  check("düzeltilen kelime hedef metinde geçiyor", strayExpected.length === 0,
-    `(${strayExpected.join(", ")})`);
-  // Her karışma gerçekten yakalanmalı: yazılan sapma judgeSpeech'ten geçmiyorsa
-  // içerik ölü demektir.
-  const deadConfusions: string[] = [];
-  for (const ex of speaking) {
-    for (const t of ex.tasks) {
-      for (const c of t.confusions ?? []) {
-        for (const heard of c.heard) {
-          const v = judgeSpeech(t.de, [heard], t.confusions ?? []);
-          if (v.kind !== "confusion") deadConfusions.push(`${ex.id} "${heard}" → ${v.kind}`);
-        }
-      }
-    }
-  }
-  check("yazılan her sapma yakalanıyor", deadConfusions.length === 0,
-    `(${deadConfusions.slice(0, 3).join(" · ")})`);
-  check("doğru söyleyiş her görevde kabul ediliyor",
-    speaking.every((e) =>
-      e.tasks.every((t) => judgeSpeech(t.de, [t.de], t.confusions ?? []).kind === "correct")));
-  // XP artık madde başına değil SÜRE başına (bkz. lib/xp.ts): eski tabloda
-  // beş dakikalık bir alıştırma ~46 XP veriyor, aynı sürede kelime oyunu
-  // ~500 XP kazandırıyordu ve bu, becerileri puan cinsinden değersiz kılıyordu.
-  {
-    const ex = speaking[0];
-    const items = itemCount(ex);
-    const none = xpFor(ex, 0);
-    const all = xpFor(ex, items);
-    check("hiç doğru yapmayan da çaba payı alıyor", none > 0, `(${none})`);
-    check("tam doğru daha çok kazandırıyor", all > none, `(${none} → ${all})`);
-    check("tam doğruda dakikada ~100 XP", Math.abs(all / ex.minutes - 100) < 1,
-      `(${(all / ex.minutes).toFixed(0)} XP/dk)`);
-    check("XP alıştırmanın süresiyle ölçekleniyor",
-      xpFor({ ...ex, minutes: ex.minutes * 2 }, items) === all * 2);
-  }
-  check("madde sayısı görev sayısı", itemCount(speaking[0]) === speaking[0].tasks.length);
 
   console.log("\n11k) Konuşma değerlendirmesi");
   const SCHOEN = [

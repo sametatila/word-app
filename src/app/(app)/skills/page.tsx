@@ -6,7 +6,6 @@ import { ensureProfile } from "@/lib/session";
 import { listExerciseMeta } from "@/lib/skills";
 import type { CefrLevel } from "@/lib/skills/types";
 import { SkillsHub, type ExamHubData, type ServerSkillProgress, type SkillItem, type SkillsBoard } from "@/components/skills/skills-hub";
-import { weakSpeechTopics, type SpeechTopic } from "@/lib/speech-progress";
 import { gatherEvidence } from "@/lib/proficiency-data";
 import { computeProficiency } from "@/lib/proficiency";
 import { examHistory } from "@/lib/exam";
@@ -53,10 +52,6 @@ export default async function SkillsPage() {
   // Tamamlanma durumu sunucudan gelir ki cihazlar arasında senkron olsun;
   // istemci bunu localStorage'daki (çevrimdışı) kayıtlarla birleştirir.
   const serverProgress: ServerSkillProgress = {};
-  // Telaffuzda zorlanılan ses konuları aynı satırlardan çıkıyor: her telaffuz
-  // egzersizi tek bir sesi çalıştırdığı için egzersiz başına skor, ses başına
-  // skor demek.
-  let weakSounds: SpeechTopic[] = [];
   try {
     const rows = await db
       .select({
@@ -69,7 +64,6 @@ export default async function SkillsPage() {
       .from(userSkills)
       .where(eq(userSkills.userId, user.id));
     for (const r of rows) serverProgress[r.exerciseId] = { correct: r.correct, total: r.total, attempts: r.attempts, lastScore: r.lastScore };
-    weakSounds = weakSpeechTopics(items, rows);
   } catch (err) {
     console.error("[skills] kullanıcı ilerlemesi okunamadı", err);
   }
@@ -112,7 +106,6 @@ export default async function SkillsPage() {
       items={items}
       activeLevel={activeLevel}
       serverProgress={serverProgress}
-      weakSounds={weakSounds}
       board={board}
       exams={exams}
     />

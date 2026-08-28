@@ -14,7 +14,10 @@ export const SKILL_LABELS: Record<SkillId, string> = {
   speaking: "Konuşma",
 };
 
-export const SKILL_ORDER: SkillId[] = ["reading", "listening", "writing", "speaking"];
+// Konuşma (speaking) becerisi kaldırıldı (2026-08): hiç kullanılmıyordu ve
+// LLM koçu hiç çağrılmamıştı. SkillId tipi paylaşımlı olduğu için (roleplay/
+// sınav de-facto kullanıyor) korunuyor, ama artık kullanıcıya gösterilmiyor.
+export const SKILL_ORDER: SkillId[] = ["reading", "listening", "writing"];
 export const LEVEL_ORDER: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 
 /** Puanlanabilir madde sayısı: soru ya da yazma görevi. */

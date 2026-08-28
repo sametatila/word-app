@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { SKILL_LABELS, SKILL_ORDER, LEVEL_ORDER } from "@/lib/skills/meta";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { readSkillProgress, syncSkillProgress, type SkillProgress } from "@/lib/skills/progress";
-import type { SpeechTopic } from "@/lib/speech-progress";
 import { weakestSkill, type Proficiency, type ProficiencySkill } from "@/lib/proficiency";
 import { CandoCard } from "@/components/cando-card";
 import { Disclosure } from "@/components/disclosure";
@@ -91,15 +90,12 @@ export function SkillsHub({
   items,
   activeLevel,
   serverProgress = {},
-  weakSounds = [],
   board = null,
   exams = null,
 }: {
   items: SkillItem[];
   activeLevel: CefrLevel;
   serverProgress?: ServerSkillProgress;
-  /** Telaffuzda zorlanılan ses konuları — sunucuda hesaplanıyor. */
-  weakSounds?: SpeechTopic[];
   board?: SkillsBoard | null;
   exams?: ExamHubData | null;
 }) {
@@ -249,29 +245,6 @@ export function SkillsHub({
         <CandoCard bare />
       </Disclosure>
 
-      {/* Telaffuzda zorlanılan sesler — konuşma sekmesinde. */}
-      {tab === "speaking" && weakSounds.length ? (
-        <section
-          className="rounded-2xl px-4 py-3.5"
-          style={{ background: "color-mix(in srgb, var(--color-flame) 10%, transparent)" }}
-        >
-          <p className="text-sm font-bold" style={{ color: "var(--color-flame)" }}>
-            Telaffuzda zorlandıkların
-          </p>
-          <ul className="mt-2 space-y-1.5">
-            {weakSounds.map((t) => (
-              <li key={t.exerciseId} className="flex items-center justify-between gap-3">
-                <Link href={`/skills/${t.exerciseId}`} className="text-sm font-semibold underline">
-                  {t.title}
-                </Link>
-                <span className="muted shrink-0 text-xs tabular-nums">
-                  {t.correct}/{t.total} · {t.attempts} deneme
-                </span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
 
       {/* Sekmeler: dört egzersiz becerisi + dilbilgisi + sınav. */}
       {/* Kaydırma çubuğu gizli (bkz. globals `.no-scrollbar`): şerit zaten
