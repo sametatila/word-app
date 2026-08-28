@@ -10,10 +10,8 @@
  * Bu betik kâğıdı üretmeden önce üretilebilir olduğunu kanıtlıyor:
  * `npm run test:exams`.
  */
-import { CHEATSHEETS } from "../src/lib/cheatsheet";
-import { CHEAT_ITEMS } from "../src/lib/cheatsheet/items";
 import { levelIndex } from "../src/lib/lessons";
-import { allModules, moduleContent, moduleSheets, selfAnswering, FOCUS_SHEETS } from "../src/lib/lessons/module-content";
+import { allModules, moduleContent, selfAnswering } from "../src/lib/lessons/module-content";
 import { MODULE_EXAMS, moduleExamPlan, type ExamQuestion, type ModuleExamPlan } from "../src/lib/lessons/module-exam";
 import { foldSentence } from "../src/lib/sentence-match";
 
@@ -32,7 +30,6 @@ const warn = (where: string, msg: string) => {
   console.warn(`! ${where}: ${msg}`);
 };
 
-const SHEET_IDS = new Set(CHEATSHEETS.map((s) => s.id));
 
 /** Soru gövdesi: dört ayrı şık, geçerli dizin, iki dilde kök. */
 function checkQuestion(where: string, q: ExamQuestion) {
@@ -113,31 +110,8 @@ for (const m of modules) {
   if (content.judge.length < NEED.judge) fail(where, `hüküm maddesi ${content.judge.length} (en az ${NEED.judge})`);
   if (content.words.length < NEED.words) fail(where, `kelime ${content.words.length} (en az ${NEED.words})`);
 
-  for (const focus of content.focus) {
-    const sheets = FOCUS_SHEETS[focus];
-    if (!sheets) {
-      fail(where, `odak haritada yok: ${focus} (FOCUS_SHEETS)`);
-      continue;
-    }
-    for (const id of sheets) if (!SHEET_IDS.has(id)) fail(where, `haritadaki sayfa yok: ${id} (${focus})`);
-  }
-
-  const sheets = moduleSheets(content);
-  const cap = levelIndex(m.level);
-  const cells = CHEAT_ITEMS.filter(
-    (it) =>
-      it.speak &&
-      it.answer.length <= 24 &&
-      !/örnek|beispiel|satz/i.test(it.label) &&
-      levelIndex(it.level) <= cap &&
-      sheets.includes(it.sheetId) &&
-      // Çeldiriciler cevaptan VE birbirinden farklı olmalı (bkz. lib/exam.ts).
-      new Set(it.siblings.map((x) => x.trim()).filter((x) => x && x !== it.answer.trim())).size >= 3,
-  );
-  if (cells.length < NEED.cell) fail(where, `dilbilgisi hücresi ${cells.length} (en az ${NEED.cell}) — sayfalar: ${sheets.join(", ")}`);
-
   console.log(
-    `${where.padEnd(6)} ${plan.code.padEnd(6)} ${plan.titleDe.padEnd(32)} üretim ${String(produce.length).padStart(2)} · hüküm ${String(content.judge.length).padStart(2)} · hücre ${String(cells.length).padStart(3)} · kelime ${content.words.length}`,
+    `${where.padEnd(6)} ${plan.code.padEnd(6)} ${plan.titleDe.padEnd(32)} üretim ${String(produce.length).padStart(2)} · hüküm ${String(content.judge.length).padStart(2)} · kelime ${content.words.length}`,
   );
 }
 

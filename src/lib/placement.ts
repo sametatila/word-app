@@ -2,7 +2,6 @@ import "server-only";
 import { and, asc, desc, eq, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { placements, profiles, words } from "@/lib/db/schema";
-import { CHEAT_ITEMS } from "@/lib/cheatsheet/items";
 import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
 import type { CefrLevel } from "@/lib/skills/types";
 import { track } from "@/lib/events";
@@ -49,7 +48,6 @@ export type PlacementTest = {
 
 const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 const VOCAB_PER_LEVEL = 6;
-const GRAMMAR_PER_LEVEL = 3;
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -77,13 +75,7 @@ export async function buildPlacement(course: string): Promise<PlacementTest> {
       return { id: `v${w.id}`, level, de: w.de, artikel: w.artikel, options, answer: options.indexOf(w.tr) };
     });
 
-    const items = CHEAT_ITEMS.filter((it) => it.level === level && it.siblings.length >= 3 && !it.speak);
-    grammar[level] = shuffle(items)
-      .slice(0, GRAMMAR_PER_LEVEL)
-      .map((it) => {
-        const options = shuffle([it.answer, ...shuffle(it.siblings.filter((s) => s !== it.answer)).slice(0, 3)]);
-        return { id: `g:${it.id}`, level, sheet: it.sheetTitle, key: it.key, label: it.label, options, answer: options.indexOf(it.answer) };
-      });
+    grammar[level] = []; // dilbilgisi kaldırıldı (2026-08); immersion'da yeniden
   }
 
   const pool = BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === (course === "gsw-zh" ? "gsw-zh" : "de"));

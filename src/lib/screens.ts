@@ -19,8 +19,6 @@ export const SCREEN_KEYS = [
   "roleplay_exam",
   "skills",
   "skill",
-  "cheatsheet",
-  "drill",
   "words",
   "profile",
   "settings",
@@ -45,8 +43,6 @@ export function screenKey(pathname: string): ScreenKey {
       return c === "exam" ? "roleplay_exam" : "lesson";
     case "skills":
       return b ? "skill" : "skills";
-    case "cheatsheet":
-      return c === "drill" ? "drill" : "cheatsheet";
     case "words":
       return "words";
     case "profile":

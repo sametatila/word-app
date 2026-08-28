@@ -93,7 +93,7 @@ for (const n of NOUNS) {
 }
 check("gerekçelerin hepsi seçilen yanlışı anıyor", NOUNS.every((n) => whyFor({ type: "article", word: { ...n }, detail: "xyz" }).text.startsWith("„xyz“ değil")));
 check("en az 35 isimde kural var", ruled >= 35, `ruled=${ruled}`);
-check("her gerekçe kural bağlantısı taşıyor", NOUNS.every((n) => whyFor({ type: "article", word: { ...n } }).href === "/cheatsheet#a1-artikel"));
+check("gerekçede cheatsheet bağlantısı yok (kaldırıldı)", NOUNS.every((n) => whyFor({ type: "article", word: { ...n } }).href === null));
 
 console.log("\n2) Çoğul gerekçeleri");
 const arzt = whyFor({ type: "plural", word: { de: "Arzt", artikel: "der", tr: "doktor", formen: "¨-e" }, detail: "Arzte" });
@@ -108,7 +108,7 @@ const fromRound = whyFor({ type: "plural", word: { de: "Arzt", artikel: "der", t
 check("formen yokken doğru biçim turdan alınıyor", fromRound.text.includes("umlaut") && fromRound.text.includes("die Ärzte") && !fromRound.text.includes("Arzte"), fromRound.text);
 const irregular = whyFor({ type: "plural", word: { de: "Museum", artikel: "das", tr: "müze" }, detail: "Museums", correct: "Museen" });
 check("kalıba uymayan doğru biçim → ezberle ama biçim gösteriliyor", irregular.text.includes("ezberle") && irregular.text.includes("die Museen"), irregular.text);
-check("çoğul bağlantısı", frau.href === "/cheatsheet#a1-plural");
+check("çoğul bağlantısı yok (kaldırıldı)", frau.href === null);
 
 console.log("\n3) Yazım farkı");
 const d = charDiff("Katse", "Katze");
@@ -134,7 +134,7 @@ const v4 = whyFor({ type: "verb_position", answer: ["Wann", "kommst", "du"], tai
 check("soru kelimesi → fiil ikinci", v4.text.includes("Soru kelimesinden"), v4.text);
 const v5 = whyFor({ type: "verb_position", answer: ["Ich", "gehe", "ins", "Kino"], tail: "." });
 check("düz ana cümle", v5.text.includes("ikinci sırada"), v5.text);
-check("kelime sırası bağlantısı", whyFor({ type: "word_order" }).href === "/cheatsheet#a1-satzbau");
+check("kelime sırası bağlantısı yok (kaldırıldı)", whyFor({ type: "word_order" }).href === null);
 
 console.log("\n5) Diğer tipler boş dönmüyor");
 for (const type of ["case", "conjugation", "meaning", "listening", "pronunciation"] as const) {

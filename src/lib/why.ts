@@ -1,6 +1,6 @@
-import { cheatsheetHref, ERROR_LABELS, type ErrorType } from "@/lib/errors";
+import { ERROR_LABELS, type ErrorType } from "@/lib/errors";
 import { parsePluralRule, pluralOf, umlautStem } from "@/lib/german";
-import { ruleFor } from "@/lib/cheatsheet/rules";
+import { ruleFor } from "@/lib/why-rules";
 import { confusableHint } from "@/lib/confusables";
 
 /**
@@ -81,7 +81,7 @@ export function articleRule(de: string): ArticleRule | null {
 }
 
 function whyArticle(word: WhyWord, picked?: string | null): Why {
-  const href = cheatsheetHref("article");
+  const href = null;
   const target = word.artikel ?? "";
   const rule = articleRule(word.de);
   const chosen = picked && picked !== target ? `„${picked}“ değil „${target}“: ` : "";
@@ -127,7 +127,7 @@ const PLURAL_PATTERN: Record<string, string> = {
  * "ezberle".
  */
 function whyPlural(word: WhyWord, picked?: string | null, correct?: string | null): Why {
-  const href = cheatsheetHref("plural");
+  const href = null;
   const rule = parsePluralRule(word.formen ?? "");
   const plural = correct?.replace(/^die\s+/i, "") || pluralOf(word.de, word.formen ?? null);
   if (!plural) {
@@ -222,7 +222,7 @@ function whyVerbPosition(answer?: string[] | null, tail?: string | null): Why {
   // Bağlantı kural parçacığından (WP-73): "weil" geçen cümle a2-nebensatz'a,
   // soru a1-wfragen'e gider — hata tipinin genel tablosundan daha isabetli.
   const rule = ruleFor("verb_position", `${(answer ?? []).join(" ")}${tail ?? ""}`);
-  const href = rule?.link ? `/cheatsheet#${rule.link}` : cheatsheetHref("verb_position");
+  const href = null;
   const sentence = (answer ?? []).join(" ");
   const first = answer?.[0]?.replace(/[^a-zäöüß]/gi, "") ?? "";
   if (SUBORDINATORS.test(sentence)) {
@@ -247,9 +247,9 @@ function whyVerbPosition(answer?: string[] | null, tail?: string | null): Why {
  */
 function whyFromRule(type: ErrorType, context: string): Why {
   const rule = ruleFor(type, context);
-  if (!rule) return { type, text: ERROR_LABELS[type], href: cheatsheetHref(type) };
+  if (!rule) return { type, text: ERROR_LABELS[type], href: null };
   const text = `${rule.why.charAt(0).toLocaleUpperCase("tr-TR")}${rule.why.slice(1)}: ${rule.example}`;
-  return { type, text, href: rule.link ? `/cheatsheet#${rule.link}` : cheatsheetHref(type) };
+  return { type, text, href: null };
 }
 
 /** Kural seçimi için bağlam: doğru cümle + yazılan + kelime. */
@@ -280,9 +280,9 @@ export function whyFor(input: WhyInput): Why {
   const w = input.word ?? null;
   switch (input.type) {
     case "article":
-      return w ? whyArticle(w, input.detail) : { type: "article", text: "Artikel kelimenin parçasıdır; kelimeyle birlikte öğren.", href: cheatsheetHref("article") };
+      return w ? whyArticle(w, input.detail) : { type: "article", text: "Artikel kelimenin parçasıdır; kelimeyle birlikte öğren.", href: null };
     case "plural":
-      return w ? whyPlural(w, input.detail, input.correct) : { type: "plural", text: "Çoğul biçimi kelimeyle birlikte öğren.", href: cheatsheetHref("plural") };
+      return w ? whyPlural(w, input.detail, input.correct) : { type: "plural", text: "Çoğul biçimi kelimeyle birlikte öğren.", href: null };
     case "spelling":
       return w ? whySpelling(w, input.detail) : { type: "spelling", text: "Yazımı harf harf karşılaştır.", href: null };
     case "verb_position":

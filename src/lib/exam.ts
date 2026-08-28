@@ -2,7 +2,6 @@ import "server-only";
 import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { exams, userLessons, userSkills, words } from "@/lib/db/schema";
-import { CHEAT_ITEMS } from "@/lib/cheatsheet/items";
 import { chatConfigured, sttProviders } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
 import { LESSONS, levelIndex } from "@/lib/lessons";
@@ -103,8 +102,6 @@ const COUNTS: Record<ExamKind, { vocab: number; grammar: number; produce: number
 };
 
 /** Dilbilgisi hücresinin cevabı bu uzunluğu aşarsa madde değil örnektir. */
-const MAX_CELL_ANSWER = 24;
-const EXAMPLE_LABEL = /örnek|beispiel|satz/i;
 
 export function examKindKey(kind: ExamKind, level: CefrLevel, module: number | null): string {
   return kind === "module" ? `module:${level}:${module ?? 0}` : `level:${level}`;
@@ -129,41 +126,6 @@ async function modulePrereq(userId: string, course: string, level: CefrLevel, mo
  * ham hâliyle kullanılınca aynı şık iki kez basılıyor ve soru kendini ele
  * veriyordu — iki özdeş şıkkın ikisi de doğru olamaz.
  */
-function distractors(item: { answer: string; siblings: string[] }): string[] {
-  const seen = new Set([item.answer.trim()]);
-  const out: string[] = [];
-  for (const raw of item.siblings) {
-    const s = raw.trim();
-    if (!s || seen.has(s)) continue;
-    seen.add(s);
-    out.push(s);
-  }
-  return out;
-}
-
-/** Tablo hücrelerinden şıklı dilbilgisi maddesi. */
-function cellItems(pool: typeof CHEAT_ITEMS, seed: string, count: number): GrammarItem[] {
-  return seededShuffle(pool, `${seed}|cell`)
-    .slice(0, count)
-    .map((it) => {
-      const options = seededShuffle([it.answer, ...seededShuffle(distractors(it), `${seed}|${it.id}`).slice(0, 3)], `${seed}|opt|${it.id}`);
-      return { kind: "cell", id: `g:${it.id}`, sheet: it.sheetTitle, key: it.key, label: it.label, options, answer: options.indexOf(it.answer) } as const;
-    });
-}
-
-/** Sınavda sorulabilir tablo hücreleri: Almanca biçim, kısa, üç ayrı çeldiricili. */
-function answerableCells(sheetIds: string[], maxLevel: CefrLevel) {
-  const cap = levelIndex(maxLevel);
-  return CHEAT_ITEMS.filter(
-    (it) =>
-      it.speak &&
-      it.answer.length <= MAX_CELL_ANSWER &&
-      !EXAMPLE_LABEL.test(it.label) &&
-      levelIndex(it.level) <= cap &&
-      (!sheetIds.length || sheetIds.includes(it.sheetId)) &&
-      distractors(it).length >= 3,
-  );
-}
 
 /** Üretim adımlarından sınav maddesi: bir kısmı yazma, bir kısmı dizme. */
 function produceItems(source: LessonProduceItem[], seed: string, count: number): ProduceExamItem[] {
@@ -261,21 +223,8 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
     if (r) vocab.push(r);
   }
 
-  // Dilbilgisi: modülün odak tabloları + derslerin hüküm cümleleri.
+  // Dilbilgisi kaldırıldı (2026-08): cheatsheet gitti, immersion'da yeniden.
   const grammar: GrammarItem[] = [];
-  if (content) {
-    const judges = seededShuffle(content.judge, `${seed}|judge`).slice(0, Math.floor(c.grammar / 2));
-    const cells = cellItems(answerableCells(moduleSheets(content), level), seed, c.grammar - judges.length);
-    // Dönüşümlü: iki hüküm arka arkaya gelince bölüm "doğru/yanlış turu"na
-    // benziyor ve şıklı maddeler kâğıdın sonuna yığılıyordu.
-    for (let i = 0; i < Math.max(judges.length, cells.length); i++) {
-      if (cells[i]) grammar.push(cells[i]);
-      const j = judges[i];
-      if (j) grammar.push({ kind: "judge", id: `j:${j.id}`, statement: j.statement, answer: j.answer, why: j.why });
-    }
-  } else {
-    grammar.push(...cellItems(answerableCells([], level).filter((it) => it.level === level), seed, c.grammar));
-  }
 
   // Cümle kurma: derslerin üretim adımları. Seviye sınavında seviyenin bütün
   // modülleri havuz.

@@ -431,22 +431,9 @@ function GrammarTab({ level, board }: { level: CefrLevel; board: SkillsBoard | n
   const cell = board?.proficiency.grammar?.[level];
   return (
     <section className="space-y-3">
-      <Link href="/cheatsheet" className="card flex items-center gap-3 p-4 transition-colors hover:bg-[color:var(--surface-2)]">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white" style={{ background: LEVEL_TONE[level] }}>
-          <BookOpenIcon size={20} />
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="block font-semibold">Dilbilgisi tabloları</span>
-          <span className="muted block text-xs">
-            {level} tabloları, hücre hücre çalışma ve sınav
-            {due ? ` · ${due} tekrar bekliyor` : ""}
-          </span>
-        </span>
-        <span className="muted shrink-0 text-lg leading-none">›</span>
-      </Link>
+      {/* Dilbilgisi (cheatsheet) kaldırıldı (2026-08); immersion'da yeniden kurulacak. */}
       <p className="muted px-1 text-xs">
-        {cell ? `Dilbilgisi ${level}: ${cell.score} · ${cell.band} (${cell.n} kanıt).` : `Dilbilgisi ${level} henüz ölçülmedi — tablo sınavı ve seviye sınavının dilbilgisi bölümü kanıt sayılır.`}
-        {" "}Konu drill'leri (WP-11) içerik geldikçe buraya eklenecek.
+        {cell ? `Dilbilgisi ${level}: ${cell.score} · ${cell.band} (${cell.n} kanıt).` : `Dilbilgisi ${level} henüz ölçülmedi.`}
       </p>
     </section>
   );

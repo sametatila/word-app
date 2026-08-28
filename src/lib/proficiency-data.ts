@@ -1,8 +1,7 @@
 import "server-only";
 import { and, eq, gte, isNotNull, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { assessments, cheatProgress, exams, reviews, userLessons, userSkills, words } from "@/lib/db/schema";
-import { CHEAT_ITEMS } from "@/lib/cheatsheet/items";
+import { assessments, exams, reviews, userLessons, userSkills, words } from "@/lib/db/schema";
 import { findLesson } from "@/lib/lessons";
 import { type GameId } from "@/lib/types";
 import { listExerciseMeta } from "@/lib/skills";
@@ -107,7 +106,6 @@ export async function gatherEvidence(userId: string, now = new Date()): Promise<
   }
 
   out.push(...(await lessonEvidence(userId, since, now)));
-  out.push(...(await drillEvidence(userId, since, now)));
   out.push(...(await gameEvidence(userId, since, now)));
   return out;
 }
@@ -157,35 +155,6 @@ async function lessonEvidence(userId: string, since: Date, until: Date): Promise
  * Eşleme: 0 → 0, 1 → 60, 2 → 80, 3 ve üstü → 100. Sıfırdan altmışa sıçrama
  * bilinçli; tek doğru "başlangıç" değil ama "sağlam" da değil.
  */
-async function drillEvidence(userId: string, since: Date, until: Date): Promise<Evidence[]> {
-  const rows = await db
-    .select({ itemId: cheatProgress.itemId, streak: cheatProgress.correctStreak, lastReviewedAt: cheatProgress.lastReviewedAt })
-    .from(cheatProgress)
-    .where(and(eq(cheatProgress.userId, userId), gte(cheatProgress.lastReviewedAt, since), lte(cheatProgress.lastReviewedAt, until)));
-  if (!rows.length) return [];
-
-  const levelOf = new Map(CHEAT_ITEMS.map((i) => [i.id, i.level]));
-  // Seviye başına tek kanıt: iki yüz form çalışan biri, iki yüz kanıtla
-  // modeli ele geçirirdi. Sınıf başına ortalama, bir çalışmanın karşılığı.
-  const byLevel = new Map<string, { sum: number; n: number; at: Date }>();
-  for (const r of rows) {
-    const level = levelOf.get(r.itemId);
-    if (!level || !LEVELS.has(level) || !r.lastReviewedAt) continue;
-    const score = r.streak <= 0 ? 0 : Math.min(100, 40 + r.streak * 20);
-    const a = byLevel.get(level) ?? { sum: 0, n: 0, at: r.lastReviewedAt };
-    a.sum += score;
-    a.n++;
-    if (r.lastReviewedAt > a.at) a.at = r.lastReviewedAt;
-    byLevel.set(level, a);
-  }
-  return [...byLevel.entries()].map(([level, a]) => ({
-    skill: "grammar" as ProficiencySkill,
-    level: level as CefrLevel,
-    score: Math.round(a.sum / a.n),
-    source: "drill" as const,
-    at: a.at,
-  }));
-}
 
 /**
  * Kelime oyunları.
@@ -274,7 +243,7 @@ export async function nextStep(userId: string, course: string, level: CefrLevel,
     const cell = prof[skill]?.[level];
     const reason = cell ? `${PROFICIENCY_LABELS[skill]} ${level} ${cell.score} — ${cell.band}` : `${PROFICIENCY_LABELS[skill]} ${level} henüz ölçülmedi`;
     if (skill === "vocab") return { skill, label: PROFICIENCY_LABELS[skill], reason, href: "/learn", title: "Kelime turu", minutes: 6 };
-    if (skill === "grammar") return { skill, label: PROFICIENCY_LABELS[skill], reason, href: "/cheatsheet", title: "Dilbilgisi çalışması", minutes: 5 };
+    if (skill === "grammar") return { skill, label: PROFICIENCY_LABELS[skill], reason, href: "/lessons", title: "Dilbilgisi çalışması", minutes: 5 };
     const open = metas.find((m) => m.skill === skill && !done.has(m.id));
     if (open) return { skill, label: PROFICIENCY_LABELS[skill], reason, href: `/skills/${open.id}`, title: open.title, minutes: open.minutes };
   }

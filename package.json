@@ -24,7 +24,6 @@
     "content:confusables": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/confusables.ts",
     "content:derive": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/derive-questions.ts",
     "test:pronounce": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-pronounce.ts",
-    "test:cheat": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-drills.ts",
     "test:content": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-content.ts",
     "test:exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-exams.ts",
     "test:exam-build": "tsx --tsconfig scripts/tsconfig.dry.json scripts/exam-dryrun.ts",

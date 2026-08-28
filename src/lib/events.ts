@@ -85,7 +85,6 @@ export const EVENT_NAMES = [
   "skill_finish", // beceri egzersizi bitti (kind = beceri:seviye, örn. "reading:A2", value = puan 0–100)
   "plan_start", // bugünkü plan kartından bir öğe açıldı (kind = öğe: review|lesson|skill|weak, value = sıra)
   "pronounce", // telaffuz puanı (kind = egzersiz kimliği, value = 0–100) — WP-20
-  "drill", // dilbilgisi drill cevabı (kind = ErrorType, value = 1 doğru / 0 yanlış) — WP-11
   "srs_weight", // tekrar aralığına hata tipi ağırlığı uygulandı (kind = ErrorType, value = ağırlık×100) — WP-51 ölçümü
 
   /*
@@ -107,7 +106,6 @@ export const EVENT_NAMES = [
   "lesson_step", // ders adımı sonuçlandı (kind = adım:yol → repeat|produce|truefalse : mic|typed|skip, value = 2 ilk denemede / 1 sonraki denemede / 0 geçilemedi ya da atlandı)
   "lesson_finish", // ders bitti (kind = ders kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_lessons'ta)
   "speak_self", // söyleyiş görevinde karar (kind = asr tanıyıcı | self öz-değerlendirme, value = 1 doğru / 0 zorlandı)
-  "drill_finish", // dilbilgisi drill seti bitti (kind = tablo kimliği, value = doğru yüzdesi)
   "onboarding_step", // onboarding adımı görüldü (kind = welcome|goal|level|ready, value = adım sırası)
   "coach_show", // koç balonu gösterildi (kind = an)
   "tts_play", // sesli okuma çalındı (kind = ekran anahtarı; ekran açılışı başına bir kez)

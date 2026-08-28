@@ -6,7 +6,6 @@ import { GROUP_LABELS, GROUP_ORDER, type Group } from "@/lib/achievement-groups"
 import {
   achievements,
   assessments,
-  cheatProgress,
   exams,
   questClaims,
   dailyScores,
@@ -305,12 +304,8 @@ async function collectMetrics(userId: string): Promise<Metrics> {
       .innerJoin(words, eq(words.id, userWords.wordId))
       .where(and(eq(userWords.userId, userId), gt(userWords.reps, 0))),
 
-    // Dilbilgisi maddesi "pekişmiş" sayılıyor: kelimedekiyle aynı tanım,
-    // tekrar durumunda ve aralık 21 günü aşmış.
-    db
-      .select({ n: sql<number>`count(*)::int` })
-      .from(cheatProgress)
-      .where(and(eq(cheatProgress.userId, userId), eq(cheatProgress.state, 2), gte(cheatProgress.intervalDays, 21))),
+    // Dilbilgisi drill'i kaldırıldı (2026-08); pekişmiş dilbilgisi maddesi artık 0.
+    Promise.resolve([{ n: 0 }]),
 
     db
       .select({ n: sql<number>`count(*)::int`, best: sql<number>`coalesce(max(${exams.score}), 0)::int` })

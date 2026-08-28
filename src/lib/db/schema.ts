@@ -216,28 +216,6 @@ export const userWords = pgTable(
  * bu kuyruk BİÇİM. Aynı kelimenin dört hâli burada dört ayrı madde ve yalnızca
  * cheatsheet ekranında sorularak ilerliyor — kelime oyunlarına karışmıyor.
  */
-export const cheatProgress = pgTable(
-  "cheat_progress",
-  {
-    userId: text("user_id").notNull(),
-    /** "grup|anahtar|sütun" — içerikten türetilir, satır sırasından değil. */
-    itemId: text("item_id").notNull(),
-    state: integer("state").notNull().default(0), // 0 yeni, 1 öğreniliyor, 2 tekrar
-    ease: real("ease").notNull().default(2.5),
-    intervalDays: real("interval_days").notNull().default(0),
-    dueAt: timestamp("due_at", { withTimezone: true }).notNull().defaultNow(),
-    reps: integer("reps").notNull().default(0),
-    lapses: integer("lapses").notNull().default(0),
-    correctStreak: integer("correct_streak").notNull().default(0),
-    leech: boolean("leech").notNull().default(false),
-    lastReviewedAt: timestamp("last_reviewed_at", { withTimezone: true }),
-  },
-  (t) => [
-    primaryKey({ columns: [t.userId, t.itemId] }),
-    index("cheat_progress_due_idx").on(t.userId, t.dueAt),
-  ],
-);
-
 /** Tek tek cevaplar — analiz ve oyun dengesi için */
 export const reviews = pgTable(
   "reviews",

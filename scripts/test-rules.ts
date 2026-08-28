@@ -4,21 +4,18 @@
  * tablolara; bağlam → doğru kural; why.ts artık bağlama göre kural seçiyor.
  */
 import assert from "node:assert/strict";
-import { RULES, ruleFor, uncoveredErrorTypes } from "../src/lib/cheatsheet/rules";
-import { CHEATSHEETS } from "../src/lib/cheatsheet/index";
+import { RULES, ruleFor, uncoveredErrorTypes } from "../src/lib/why-rules";
 import { whyFor } from "../src/lib/why";
 import { CONFUSABLES, confusableHint } from "../src/lib/confusables";
 
 assert.ok(RULES.length >= 30, `en az 30 kural olmalı, ${RULES.length} var`);
 assert.deepEqual(uncoveredErrorTypes(), [], "genel kuralı olmayan hata tipi var");
 const ids = new Set<string>();
-const sheets = new Set(CHEATSHEETS.map((s) => s.id));
 for (const x of RULES) {
   assert.ok(!ids.has(x.id), `çift kimlik ${x.id}`);
   ids.add(x.id);
   assert.ok(x.why.length > 0 && x.why.length <= 120, `${x.id}: kural yok ya da uzun`);
   assert.ok(x.example.length > 0, `${x.id}: örnek yok`);
-  if (x.link) assert.ok(sheets.has(x.link), `${x.id}: tablo yok (${x.link})`);
 }
 
 // Bağlam → kural
@@ -45,14 +42,14 @@ assert.equal(ruleFor("word_order", "Ich komme heute nicht.")?.id, "worder.nicht"
 // why.ts bağlantısı
 const w1 = whyFor({ type: "case", answer: ["Ich", "fahre", "mit", "dem", "Bus"], tail: "." });
 assert.ok(w1.text.includes("Dativ"), `case gerekçesi Dativ demeli: ${w1.text}`);
-assert.equal(w1.href, "/cheatsheet#a1-praepositionen");
+assert.equal(w1.href, null); // cheatsheet kaldırıldı
 const w2 = whyFor({ type: "conjugation", answer: ["Du", "bist", "müde"], tail: "." });
 assert.ok(/sein/i.test(w2.text), `çekim gerekçesi sein demeli: ${w2.text}`);
 const w3 = whyFor({ type: "word_order", answer: ["Ich", "gebe", "es", "ihm"], tail: "." });
 assert.ok(w3.text.includes("Akkusativ"), `sıra gerekçesi zamir sırasını söylemeli: ${w3.text}`);
 const w4 = whyFor({ type: "verb_position", answer: ["Ich", "bleibe", "zu", "Hause,", "weil", "ich", "krank", "bin"], tail: "." });
 assert.ok(w4.text.includes("sona"), `yan cümle gerekçesi: ${w4.text}`);
-assert.equal(w4.href, "/cheatsheet#a2-nebensatz");
+assert.equal(w4.href, null); // cheatsheet kaldırıldı
 
 // Karıştırma çiftleri (WP-73 adım 4)
 assert.ok(CONFUSABLES.length >= 100, `en az 100 çift, ${CONFUSABLES.length} var`);

@@ -38,7 +38,6 @@ import { Stagger } from "@/components/reveal";
 import { DailyPlayer } from "@/components/daily-player";
 import { DailyCard } from "@/components/daily-card";
 import { ChallengeCard } from "@/components/challenge-card";
-import { CheatsheetCard } from "@/components/cheatsheet-card";
 import { WalkCard } from "@/components/walk-card";
 import { WalkPlayer } from "@/components/walk-player";
 import { QuestCard } from "@/components/quest-card";
@@ -1110,7 +1109,6 @@ function StartCard({
           <DailyCard onPlay={onDaily} tile />
           <ChallengeCard best={meta.challengeBest} onPlay={onChallenge} tile />
           <WalkCard onPlay={onWalk} tile />
-          <CheatsheetCard tile />
         </div>
       </section>
 

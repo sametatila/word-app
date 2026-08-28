@@ -36,13 +36,15 @@ kurmasına yardım.** İki mod:
 (4/2/2/2), tek yönlü değil dört yönlü.
 
 ## İçerik stratejisi (sahibin kararı)
-- **KALIR (temel):** `lesson` içeriği + `grammar` içeriği (cheatsheet). Yeni her şey bunlara göre kurgulanır.
-- **SİLİNİR + sıfırdan kurulur:** mevcut `read`/`listen`/`write` egzersiz içeriği (120/120/80),
-  ve `exam`/`quiz` içeriği — hepsi yetersiz. **Motor/oynatıcılar korunur, yalnız İÇERİK silinir.**
-- Yeni read/listen/write/grammar/quiz/checkpoint içeriği **ünite (lesson) içeriğine göre başlık
+- **KALIR (TEK iskelet):** yalnız `lesson` içeriği. **Her şey lessonların üzerine inşa edilir** —
+  lesson, ünitenin iskeletini ve temasını belirler; diğer item tipleri ona göre türetilir.
+- **SİLİNİR + sıfırdan kurulur:** `read`/`listen`/`write` (120/120/80), **`grammar`**, `exam`, `quiz`
+  içeriğinin TAMAMI. Hepsi yetersiz; grammar↔lesson bağlanma noktaları sınırlı olduğu için grammar
+  da dâhil. **Motor/oynatıcılar korunur, yalnız İÇERİK silinir.**
+- Yeni read/listen/write/grammar/quiz/checkpoint içeriği **ünitenin lesson içeriğine göre başlık
   belirlenip** ona göre şekillenir — bir sonraki (içerik) adımda, zamanla.
-- Yani göç sonrası track: ünitelerde 4 lesson + boş/placeholder beceri slotları + checkpoint;
-  slotlar yeni içerikle dolar.
+- Göç sonrası track: ünitelerde 4 lesson + boş/placeholder (read/listen/write/grammar/quiz) slotları
+  + checkpoint; slotlar yeni içerikle dolar.
 
 ## Gating / ilerleme (Duolingo mantığı)
 - Kullanıcının CEFR'i (`profiles.level`) → **başlangıç ünitesi**.
@@ -56,7 +58,7 @@ kurmasına yardım.** İki mod:
 |---|---|
 | Dersler `de-a1-b01`… | `lesson` item'ları — track omurgası |
 | Beceri okuma/dinleme/yazma **içeriği** (`skill_exercises`) | **SİLİNİR**; `read`/`listen`/`write` item slotları ünite içeriğine göre sıfırdan kurulur (oynatıcılar korunur) |
-| Dilbilgisi içeriği (cheatsheet) | **KALIR** (temel); `grammar` item'ları buna göre şekillenir |
+| Dilbilgisi içeriği (cheatsheet/drill) | **SİLİNİR**; `grammar` item'ları lessonlara göre sıfırdan (bağlama noktaları sınırlıydı) |
 | Sınav + quiz **içeriği** | **SİLİNİR**; `checkpoint`/`quiz` ünite içeriğine göre yeniden (motor korunur) |
 | Modül sınavı düzeni + seviye | `checkpoint` (motor yeniden kullanılır) |
 | **Skills bölümü / `/skills` slug / hub / meta / `SkillId` kavramı** | **tamamen kaldırılır** |

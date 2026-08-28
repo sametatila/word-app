@@ -57,15 +57,6 @@ export const ERROR_LABELS: Record<ErrorType, string> = {
  * de olsa hatanın kuralı orada başlıyor. Anlam/dinleme/telaffuz için tablo
  * yok: bunlar kural değil kelime bilgisi.
  */
-export const ERROR_CHEATSHEET: Partial<Record<ErrorType, string>> = {
-  article: "a1-artikel",
-  plural: "a1-plural",
-  case: "a1-praepositionen",
-  verb_position: "a1-satzbau",
-  conjugation: "a1-praesens",
-  word_order: "a1-satzbau",
-};
-
 /**
  * Hata tipi → hedefli çalışma oyunu (tek oyunlu tur). WP-51 "zayıf noktaların"
  * ve WP-60 plan kartı aynı haritayı okur; WP-11 drill'leri gelince
@@ -81,10 +72,6 @@ export const ERROR_TARGET_GAME: Partial<Record<ErrorType, string>> = {
   listening: "listen",
 };
 
-export function cheatsheetHref(type: ErrorType): string | null {
-  const id = ERROR_CHEATSHEET[type];
-  return id ? `/cheatsheet#${id}` : null;
-}
 
 /**
  * Tekrar aralığına hata tipi ağırlığı (SRS kancası).

@@ -21,11 +21,9 @@ import path from "node:path";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { LESSONS } from "../src/lib/lessons";
 import { LESSON_ICONS } from "../src/lib/lessons/types";
-import { CHEATSHEETS } from "../src/lib/cheatsheet";
 import type { DialogueTurn } from "../src/lib/dialogue";
 import type { Lesson } from "../src/lib/lessons/types";
 import type { SkillExercise } from "../src/lib/skills/types";
-import type { CheatSheet } from "../src/lib/cheatsheet/types";
 import { isCandoId } from "../src/lib/cando";
 import { candoForExercise, candoForLesson } from "../src/lib/cando-map";
 // contains.mjs: kelimenin metinde çekimli hâliyle geçip geçmediği (kelime hattıyla ortak).
@@ -284,36 +282,13 @@ function checkLessons(list: Lesson[]) {
   }
 }
 
-/* ───────────── dilbilgisi sayfaları ───────────── */
-function checkSheets(list: CheatSheet[]) {
-  const ids = new Set<string>();
-  for (const s of list) {
-    const w = `[cheatsheet] ${s.id}`;
-    if (ids.has(s.id)) E(w, "yinelenen kimlik");
-    ids.add(s.id);
-    need(w, s as unknown as Record<string, unknown>, ["id", "level", "title", "de", "summary", "blocks"]);
-    if (!LEVELS.has(s.level)) E(w, `geçersiz seviye ${s.level}`);
-    s.blocks.forEach((b, i) => {
-      if (b.kind === "table") {
-        if (!b.columns?.length) E(w, `blok ${i + 1}: sütun yok`);
-        b.rows.forEach((row, ri) => {
-          if (row.length !== b.columns.length) E(w, `blok ${i + 1} satır ${ri + 1}: ${row.length} hücre, ${b.columns.length} sütun`);
-        });
-        if (!b.rows.length) W(w, `blok ${i + 1}: boş tablo`);
-      } else if (b.kind === "note") {
-        if (!b.text?.trim()) E(w, `blok ${i + 1}: boş not`);
-      }
-    });
-  }
-}
 
 /* ───────────── çalıştır ───────────── */
-const kinds = only ? [only] : ["skills", "lessons", "cheatsheet"];
+const kinds = only ? [only] : ["skills", "lessons"];
 if (kinds.includes("skills")) checkSkills(BUNDLED_EXERCISES);
 if (kinds.includes("lessons")) checkLessons(LESSONS);
-if (kinds.includes("cheatsheet")) checkSheets(CHEATSHEETS);
 
-const counts = `${BUNDLED_EXERCISES.length} egzersiz · ${LESSONS.length} ders · ${CHEATSHEETS.length} dilbilgisi sayfası · havuz ${words.length} kelime`;
+const counts = `${BUNDLED_EXERCISES.length} egzersiz · ${LESSONS.length} ders · havuz ${words.length} kelime`;
 console.log(`\nİçerik doğrulama — ${kinds.join(", ")} · ${counts}\n`);
 if (errors.length) {
   console.log(`HATA (${errors.length})`);
