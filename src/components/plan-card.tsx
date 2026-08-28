@@ -161,8 +161,8 @@ export function PlanCard({ onStartSession, name }: { onStartSession: () => void;
                 })}
               </ol>
               {showSummary ? (
-                /* Gelişim özeti artık Immersion'da: profildeki kart oraya taşındı. */
-                <Link href="/immersion" className="muted mt-1.5 block rounded-lg px-3 py-2 text-xs">
+                /* Gelişim özeti profildeki yetkinlik/gelişim panosuna götürür. */
+                <Link href="/profile" className="muted mt-1.5 block rounded-lg px-3 py-2 text-xs">
                   {plan.summary}
                 </Link>
               ) : null}

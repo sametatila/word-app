@@ -45,6 +45,9 @@ export type ImmersionHubProps = {
   levels: CefrLevel[];
   units: HubUnit[];
   currentIndex: number;
+  /** Bu seviyede tamamlanan ünite sayısı (ilerleme çubuğu). */
+  doneUnits: number;
+  totalUnits: number;
 };
 
 const KIND_LABEL: Record<ImmersionItemKind, string> = {
@@ -68,8 +71,9 @@ const KIND_TONE: Record<ImmersionItemKind, string> = {
   checkpoint: "var(--color-flame-600)",
 };
 
-export function ImmersionHub({ level, levels, units, currentIndex }: ImmersionHubProps) {
+export function ImmersionHub({ level, levels, units, currentIndex, doneUnits, totalUnits }: ImmersionHubProps) {
   const groups = groupUnits(units);
+  const pct = totalUnits ? Math.round((doneUnits / totalUnits) * 100) : 0;
 
   return (
     <div className="mx-auto w-full max-w-md px-4 pb-24 pt-4">
@@ -82,6 +86,18 @@ export function ImmersionHub({ level, levels, units, currentIndex }: ImmersionHu
       </header>
 
       <LevelChips level={level} levels={levels} />
+
+      <div className="mt-3">
+        <div className="mb-1 flex items-center justify-between text-xs">
+          <span className="font-semibold">{level} ilerlemesi</span>
+          <span className="muted">
+            {doneUnits}/{totalUnits} ünite · %{pct}
+          </span>
+        </div>
+        <div className="h-2 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+          <div className="h-full rounded-full" style={{ width: `${pct}%`, background: "var(--color-mint-600)" }} />
+        </div>
+      </div>
 
       <div className="mt-5 flex flex-col gap-6">
         {groups.map((g) => (

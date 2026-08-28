@@ -107,7 +107,7 @@ export const ListIcon = (p: IconProps) => (
   </Svg>
 );
 
-/** Beceriler sekmesi — pusula */
+/** Immersion sekmesi — pusula */
 export const CompassIcon = (p: IconProps) => (
   <Svg {...p}>
     <circle cx="12" cy="12" r="8.5" />

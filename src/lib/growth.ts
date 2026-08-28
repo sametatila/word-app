@@ -68,7 +68,7 @@ function bucket(weeks: string[], rows: { week: string; value: number; n: number 
 /**
  * Rapor artık YETKİNLİĞİ DE taşıyor.
  *
- * Yetkinlik panosu Beceriler'de, gelişim kutusu ise onun içindeki ayrıntıda
+ * Yetkinlik panosu profildedir, gelişim kutusu onun içindeki ayrıntıda
  * duruyordu ve ikisi aynı sayıyı iki kez, iki farklı sorgudan çiziyordu:
  * pano `proficiencyFor`, gelişim `growthReport`. İki ayrı `gatherEvidence`
  * çağrısı yalnızca israf değil, tutarsızlık riski — aralarında bir tur

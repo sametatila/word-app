@@ -65,7 +65,17 @@ export default async function ImmersionPage({
     })),
   }));
 
-  return <ImmersionHub level={level} levels={LEVELS} units={units} currentIndex={state.currentIndex} />;
+  const doneUnits = state.units.filter((u) => u.complete).length;
+  return (
+    <ImmersionHub
+      level={level}
+      levels={LEVELS}
+      units={units}
+      currentIndex={state.currentIndex}
+      doneUnits={doneUnits}
+      totalUnits={state.units.length}
+    />
+  );
 }
 
 /** Item → oynatıcı rotası. Yer tutucular (ref=null) ve içeriği-olmayan türler null. */

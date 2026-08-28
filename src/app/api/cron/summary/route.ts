@@ -37,8 +37,8 @@ export async function GET(req: Request) {
       try {
         const s = await weeklySummary(r.userId, today);
         if (!s.answers && !s.exercises && !s.lessonsPassed) continue;
-        // Gelişim kartı Beceriler panosuna taşındı; eski #growth çıpası profilde yok.
-        await sendToUser(r.userId, { title: "Haftalık özetin", body: s.text, url: "/immersion", tag: "weekly-summary" });
+        // Gelişim/yetkinlik panosu profildedir (ProgressPanel) — özet oraya götürür.
+        await sendToUser(r.userId, { title: "Haftalık özetin", body: s.text, url: "/profile", tag: "weekly-summary" });
         sent++;
         await track(r.userId, "push_sent", today, 0, "summary");
       } catch (err) {
