@@ -107,7 +107,9 @@ check("boşken ünite1 kilitsiz, ünite2/3 kilitli", !s0.units[0].locked && s0.u
 check("boşken currentIndex=1", s0.currentIndex === 1);
 check("ünite1 oynanabilir toplam=10 (4+2+2+2), done=0", s0.units[0].total === 10 && s0.units[0].done === 0);
 check("ünite1 iskelet 4 ders, 0 bitti", s0.units[0].lessonsTotal === 4 && s0.units[0].lessonsDone === 0);
-check("checkpoint placeholder → oynanamaz", s0.units[0].items.find((i) => i.item.kind === "checkpoint")?.playable === false);
+check("checkpoint artık oynanabilir (türetilen pratik)", s0.units[0].items.find((i) => i.item.kind === "checkpoint")?.playable === true);
+check("checkpoint/quiz sayıma girmez (total=10, ders+beceri)", s0.units[0].total === 10);
+check("checkpoint/quiz ref = unitId (türetme rotası)", t.units[1].items.filter((i) => i.kind === "checkpoint" || i.kind === "quiz").every((i) => i.ref === t.units[1].id));
 
 const doneSet = new Set(u1Refs);
 const s1 = buildTrackState(t, { lessonDone: (r) => doneSet.has(r), skillDone: (r) => doneSet.has(r) });

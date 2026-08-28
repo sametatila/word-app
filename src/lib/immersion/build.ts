@@ -100,11 +100,14 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
           titleTr: meta?.genre ?? SKILL_TITLE[kind],
         });
       } else if (kind === "grammar") {
+        // Gramer türetilemez (gerçek anlatım ister) → yer tutucu, "yakında".
         items.push({ id, kind, ref: null, title: "Dil bilgisi", titleTr: "Odak alıştırması" });
       } else if (kind === "quiz") {
-        items.push({ id, kind, ref: null, title: "Tekrar", titleTr: "Karışık hatırlama" });
+        // quiz/checkpoint ünitenin brief'inden TÜRETİLİR (deriveQuiz) → oynanabilir.
+        // ref = unitId: oynatıcı rotası hangi üniteden soru üreteceğini bundan bilir.
+        items.push({ id, kind, ref: unitId, title: "Tekrar", titleTr: "Karışık hatırlama" });
       } else {
-        items.push({ id, kind, ref: null, title: "Kontrol Noktası", titleTr: "Üniteyi bitir" });
+        items.push({ id, kind, ref: unitId, title: "Kontrol Noktası", titleTr: "Üniteyi bitir" });
       }
     }
 

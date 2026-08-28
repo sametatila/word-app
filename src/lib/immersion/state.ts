@@ -71,9 +71,15 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
       done: itemDone(item, c),
     }));
     const playable = items.filter((i) => i.playable);
-    const total = playable.length;
-    const done = playable.filter((i) => i.done).length;
-    const lessons = playable.filter((i) => i.item.kind === "lesson");
+    // total/done = TAMAMLANABİLİR item'lar (ders + beceri). quiz/checkpoint
+    // ünite brief'inden türetilen PRATİK: oynanabilir ama done-takibi yok (v1),
+    // sayıma girmez — yoksa asla-biten-olmayan bir item done===total'ı bozardı.
+    const completable = playable.filter(
+      (i) => i.item.kind === "lesson" || i.item.kind === "read" || i.item.kind === "listen" || i.item.kind === "write",
+    );
+    const total = completable.length;
+    const done = completable.filter((i) => i.done).length;
+    const lessons = completable.filter((i) => i.item.kind === "lesson");
     const lessonsTotal = lessons.length;
     const lessonsDone = lessons.filter((i) => i.done).length;
     // GATING İSKELETE (DERSLERE) BAĞLI — sahibin "lesson = iskelet" kararı.
