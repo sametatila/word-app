@@ -1,16 +1,18 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import type { ReactNode } from "react";
 import type { CefrLevel } from "@/lib/skills/types";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
 
 /**
- * Patika ana ekranı (immersion, 2. mod) — dolambaçlı yol, PROJENİN paletiyle.
+ * Patika ana ekranı (immersion, 2. mod) — BENTO IZGARA (sahibin seçimi).
  *
- * Sunucu bileşeni (JS yok). Her ünite kendi kıvrımlı patikası; item'lar sıcak
- * "madalyon" düğümler (Duolingo kopyası değil): dolu -600 tonu + ince -700 halka
- * + üstte hafif parlaklık + yumuşak gölge. Renkler globals.css paletinden ve
- * DOLU zeminde tema-bağımsız sabit -600 tonları (bkz. palet notu). Yol geometrisi
- * SABİT PİKSEL (yatay esneme yok → kıvrımlar temiz). Seviye seçimi yok.
+ * Üstte AKTİF ünite tam-genişlik "öne çıkan kart" (item hap-simgeleri + Devam et),
+ * altında diğer üniteler 2'li ızgara fayanslar (ilerleme halkası + durum). Bir
+ * fayansa dokununca o ünite öne çıkar (istemci durumu) — CEFR seçimi yok, ünite
+ * içi gezinme var. Renkler projenin paletinden; dolu zeminlerde tema-bağımsız
+ * sabit -600 tonları (globals.css palet notu). Tema-duyarlı (açık/koyu).
  */
 
 export type HubItem = {
@@ -45,29 +47,15 @@ export type ImmersionHubProps = {
   totalUnits: number;
 };
 
-// ── Düğüm tonu — PALETTEN, dolu zeminde sabit -600 (tema-bağımsız) ──────
-type Tone = { fill: string; rim: string };
-function toneFor(kind: ImmersionItemKind, status: NodeStatus): Tone {
-  if (status === "done") return { fill: "var(--color-mint-600)", rim: "var(--color-mint-700)" };
-  if (status === "locked" || status === "soon") return { fill: "var(--surface-2)", rim: "var(--border)" };
-  switch (kind) {
-    case "lesson":
-      return { fill: "var(--color-brand-600)", rim: "var(--color-brand-700)" };
-    case "read":
-      return { fill: "var(--color-sky-600)", rim: "var(--color-sky-700)" };
-    case "listen":
-      return { fill: "var(--color-violet-600)", rim: "var(--color-violet-700)" };
-    case "write":
-      return { fill: "var(--color-flame-600)", rim: "var(--color-flame-700)" };
-    case "grammar":
-      return { fill: "var(--color-brand-600)", rim: "var(--color-brand-700)" };
-    case "quiz":
-      return { fill: "var(--color-sky-600)", rim: "var(--color-sky-700)" };
-    default: // checkpoint
-      return { fill: "var(--color-rose-600)", rim: "var(--color-rose-700)" };
-  }
-}
-
+const ICON: Record<ImmersionItemKind, string> = {
+  lesson: "★",
+  read: "📖",
+  listen: "🎧",
+  write: "✎",
+  grammar: "Aa",
+  quiz: "⚡",
+  checkpoint: "🏆",
+};
 const KIND_LABEL: Record<ImmersionItemKind, string> = {
   lesson: "Ders",
   read: "Okuma",
@@ -78,273 +66,180 @@ const KIND_LABEL: Record<ImmersionItemKind, string> = {
   checkpoint: "Kontrol",
 };
 
-type NodeStatus = "done" | "current" | "available" | "locked" | "soon";
-
-// ── Serpentine geometri — SABİT PİKSEL (yatay esneme yok) ───────────────
-const W = 300; // patika sütun genişliği (px), ortalanır
-const CX = W / 2;
-const AMP = 66; // merkeze göre yatay sapma
-const XS = [CX, CX + AMP, CX, CX - AMP];
-const TOP = 50;
-const ROW = 90;
-const NODE = 60;
-const CP = 74;
-
-function posOf(i: number) {
-  return { x: XS[i % 4], y: TOP + i * ROW };
-}
-
 export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits }: ImmersionHubProps) {
-  const groups = groupUnits(units);
-  const pct = totalUnits ? Math.round((doneUnits / totalUnits) * 100) : 0;
+  const initial = Math.max(0, units.findIndex((u) => u.index === currentIndex));
+  const [featIdx, setFeatIdx] = useState(initial);
+  const feat = units[featIdx] ?? units[0];
+  const pctAll = totalUnits ? Math.round((doneUnits / totalUnits) * 100) : 0;
 
   return (
-    <div className="mx-auto w-full max-w-md px-4 pb-28 pt-4">
+    <div className="mx-auto w-full max-w-md px-4 pb-28 pt-11">
+      {/* üst başlık */}
       <header className="mb-4">
-        <div className="flex items-center justify-between gap-2">
-          <h1 className="text-xl font-extrabold">Patika</h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-extrabold">Patika</h1>
           <span className="rounded-full px-3 py-1 text-xs font-bold" style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}>
             {level}
           </span>
         </div>
-        <p className="muted mt-1 text-sm">
-          Dersler, okuma-dinleme-yazma ve tekrarlar iç içe — amaç kelime ezberi değil,
-          <strong> kendi cümleni kurmak.</strong>
-        </p>
-        <div className="mt-3">
-          <div className="mb-1 flex items-center justify-between text-xs">
-            <span className="font-semibold">{level} ilerlemesi</span>
-            <span className="muted">
-              {doneUnits}/{totalUnits} ünite · %{pct}
-            </span>
-          </div>
-          <div className="h-2.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
-            <div className="h-full rounded-full" style={{ width: `${pct}%`, background: "var(--color-mint-500)" }} />
-          </div>
+        <div className="mt-3 h-2.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+          <div className="h-full rounded-full transition-[width] duration-500" style={{ width: `${pctAll}%`, background: "var(--color-mint-500)" }} />
         </div>
+        <p className="mt-1.5 text-xs font-semibold" style={{ color: "var(--text-muted)" }}>
+          {level} · {doneUnits}/{totalUnits} ünite tamam
+        </p>
       </header>
 
-      <div className="flex flex-col gap-2">
-        {groups.map((g) => (
-          <GroupBlock key={g.group} group={g} currentIndex={currentIndex} />
+      {feat && <Featured unit={feat} isCurrent={feat.index === currentIndex} />}
+
+      <div className="mt-3 grid grid-cols-2 gap-3">
+        {units.map((u, i) => (
+          <Tile key={u.id} unit={u} active={i === featIdx} onSelect={() => !u.locked && setFeatIdx(i)} />
         ))}
       </div>
     </div>
   );
 }
 
-type Group = { group: number; units: HubUnit[]; reachable: boolean; complete: boolean };
-
-function groupUnits(units: HubUnit[]): Group[] {
-  const byGroup = new Map<number, HubUnit[]>();
-  for (const u of units) {
-    const arr = byGroup.get(u.group) ?? [];
-    arr.push(u);
-    byGroup.set(u.group, arr);
-  }
-  const out: Group[] = [];
-  let prevComplete = true;
-  for (const group of [...byGroup.keys()].sort((a, b) => a - b)) {
-    const gUnits = byGroup.get(group)!;
-    const complete = gUnits.every((u) => u.complete);
-    out.push({ group, units: gUnits, reachable: prevComplete, complete });
-    prevComplete = complete;
-  }
-  const firstLocked = out.findIndex((g) => !g.reachable);
-  return firstLocked < 0 ? out : out.slice(0, firstLocked + 1);
-}
-
-function GroupBlock({ group, currentIndex }: { group: Group; currentIndex: number }) {
-  const first = group.units[0]?.index ?? 0;
-  const last = group.units.at(-1)?.index ?? 0;
-
-  if (!group.reachable) {
-    return (
-      <section className="mt-2 flex items-center gap-3 rounded-2xl p-4" style={{ background: "var(--surface-2)", opacity: 0.8 }}>
-        <LockGlyph size={26} />
-        <div>
-          <p className="text-sm font-bold">Bölüm {group.group + 1} · Ünite {first}–{last}</p>
-          <p className="muted text-xs">Açmak için önceki bölümü tamamla.</p>
-        </div>
-      </section>
-    );
-  }
+function Featured({ unit, isCurrent }: { unit: HubUnit; isCurrent: boolean }) {
+  const nextHref = unit.items.find((i) => i.playable && !i.done && i.href)?.href ?? unit.items.find((i) => i.href)?.href ?? null;
 
   return (
-    <section className="flex flex-col">
-      {group.units.map((u) => (
-        <div key={u.id}>
-          <UnitBanner unit={u} />
-          <UnitPath unit={u} isCurrentUnit={u.index === currentIndex} />
+    <section
+      className="rounded-3xl p-4"
+      style={{ background: "var(--surface)", border: "2px solid var(--color-brand-600)", boxShadow: "0 16px 30px -16px rgba(120,60,10,0.35)" }}
+    >
+      <div className="flex items-start gap-3">
+        <UnitBadge unit={unit} big />
+        <div className="min-w-0 flex-1">
+          <p className="text-[10.5px] font-extrabold uppercase tracking-wider" style={{ color: "var(--color-brand-600)" }}>
+            {isCurrent ? "Şu an" : "Ünite"} · Ünite {unit.index}
+          </p>
+          <p className="truncate text-lg font-bold leading-tight">{unit.theme}</p>
+          <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+            {unit.complete ? "Tamamlandı" : `${unit.done}/${unit.total} adım`}
+          </p>
         </div>
-      ))}
+      </div>
+
+      {/* item hapları — oynatıcıya bağlı */}
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {unit.items.map((it) => (
+          <Hap key={it.id} item={it} locked={unit.locked} />
+        ))}
+      </div>
+
+      {nextHref && !unit.locked ? (
+        <Link
+          href={nextHref}
+          prefetch={false}
+          className="mt-4 block rounded-2xl py-3.5 text-center text-base font-extrabold text-white"
+          style={{ background: "linear-gradient(180deg,var(--color-brand-500),var(--color-brand-600))", boxShadow: "0 4px 0 var(--color-brand-700)" }}
+        >
+          {unit.complete ? "Tekrar et →" : "Devam et →"}
+        </Link>
+      ) : (
+        <div className="mt-4 rounded-2xl py-3.5 text-center text-sm font-bold" style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}>
+          🔒 Önceki üniteyi bitir
+        </div>
+      )}
     </section>
   );
 }
 
-function UnitBanner({ unit }: { unit: HubUnit }) {
-  const bg = unit.complete ? "var(--color-mint-600)" : unit.locked ? "var(--surface-2)" : "var(--color-brand-600)";
-  const fg = unit.locked ? "var(--text-muted)" : "#fff";
-  return (
-    <div className="sticky top-2 z-20 mb-1 flex items-center justify-between gap-2 rounded-2xl px-4 py-2.5" style={{ background: bg, color: fg, boxShadow: "0 4px 12px rgba(20,16,14,0.14)" }}>
-      <div className="min-w-0">
-        <p className="text-[11px] font-bold uppercase tracking-wide" style={{ opacity: 0.85 }}>
-          Bölüm {unit.group + 1} · Ünite {unit.index}
-        </p>
-        <p className="truncate text-sm font-extrabold">{unit.theme}</p>
-      </div>
-      <span className="shrink-0 text-xs font-bold" style={{ opacity: 0.95 }}>
-        {unit.complete ? "✓ Bitti" : unit.locked ? "🔒" : `${unit.lessonsDone}/${unit.lessonsTotal} ders`}
-      </span>
-    </div>
+function Hap({ item, locked }: { item: HubItem; locked: boolean }) {
+  const done = item.done;
+  const current = item.playable && !item.done && !locked;
+  const bg = done ? "var(--color-mint-600)" : current ? "var(--color-brand-600)" : "var(--surface-2)";
+  const fg = done || current ? "#fff" : "var(--text-muted)";
+  const inner = (
+    <span
+      className="flex h-8 w-8 items-center justify-center rounded-[10px] text-sm font-extrabold"
+      style={{
+        background: bg,
+        color: fg,
+        opacity: item.playable || done ? 1 : 0.6,
+        boxShadow: current ? "0 2px 0 var(--color-brand-700)" : undefined,
+      }}
+      title={`${KIND_LABEL[item.kind]}${item.titleTr ? " · " + item.titleTr : ""}`}
+    >
+      {done ? "✓" : ICON[item.kind]}
+    </span>
   );
-}
-
-function UnitPath({ unit, isCurrentUnit }: { unit: HubUnit; isCurrentUnit: boolean }) {
-  const items = unit.items;
-  const pts = items.map((_, i) => posOf(i));
-  const last = pts.at(-1) ?? { x: CX, y: TOP };
-  const height = last.y + CP / 2 + 34;
-  const currentIdx = isCurrentUnit ? items.findIndex((it) => it.playable && !it.done) : -1;
-
-  const edges = pts.slice(1).map((p, i) => {
-    const prev = pts[i];
-    const midY = (prev.y + p.y) / 2;
-    return { d: `M ${prev.x} ${prev.y} C ${prev.x} ${midY}, ${p.x} ${midY}, ${p.x} ${p.y}`, passed: items[i].done, dashed: !items[i + 1]?.playable };
-  });
-
-  return (
-    <div className="relative mx-auto" style={{ width: W, height }}>
-      {/* patika — sabit px, esnemez; altta koyu iz + üstte açık iz (yumuşak yol) */}
-      <svg aria-hidden className="absolute inset-0" width={W} height={height} viewBox={`0 0 ${W} ${height}`}>
-        {edges.map((e, i) => (
-          <path key={`b${i}`} d={e.d} fill="none" stroke={e.passed ? "var(--color-mint-500)" : "var(--border)"} strokeWidth={13} strokeLinecap="round" opacity={e.dashed ? 0.6 : 1} strokeDasharray={e.dashed ? "2 16" : undefined} />
-        ))}
-      </svg>
-      {items.map((item, i) => {
-        const status: NodeStatus = item.done ? "done" : !item.playable ? "soon" : unit.locked ? "locked" : i === currentIdx ? "current" : "available";
-        return <PathNode key={item.id} item={item} status={status} at={pts[i]} />;
-      })}
-    </div>
-  );
-}
-
-function PathNode({ item, status, at }: { item: HubItem; status: NodeStatus; at: { x: number; y: number } }) {
-  const tone = toneFor(item.kind, status);
-  const size = item.kind === "checkpoint" ? CP : NODE;
-  const clickable = item.playable && item.href;
-  const current = status === "current";
-  const muted = status === "soon" || status === "locked";
-
-  const body = (
-    <div className="relative" style={{ width: size, height: size }}>
-      {current && (
-        <span className="absolute -top-8 left-1/2 z-10 -translate-x-1/2 animate-bounce whitespace-nowrap rounded-lg px-2.5 py-1 text-[11px] font-extrabold" style={{ background: "var(--surface)", color: "var(--color-brand-600)", border: "2px solid var(--color-brand-600)", boxShadow: "0 3px 8px rgba(20,16,14,0.18)" }}>
-          BAŞLA
-        </span>
-      )}
-      {/* madalyon düğüm — dolu ton + ince halka + üst parlaklık + yumuşak gölge */}
-      <div
-        className="flex h-full w-full items-center justify-center rounded-full"
-        style={{
-          background: tone.fill,
-          border: `2px solid ${status === "soon" ? "var(--border)" : tone.rim}`,
-          borderStyle: status === "soon" ? "dashed" : "solid",
-          boxShadow: muted
-            ? "none"
-            : `inset 0 2px 3px rgba(255,255,255,0.28), inset 0 -3px 4px rgba(20,16,14,0.18), 0 5px 12px rgba(20,16,14,0.26)`,
-          opacity: status === "soon" ? 0.65 : 1,
-          transform: current ? "scale(1.05)" : undefined,
-        }}
-      >
-        <Glyph item={item} status={status} />
-      </div>
-      {/* etiket — düğümün konumunu kaydırmaz */}
-      <span className="absolute left-1/2 top-full mt-1.5 -translate-x-1/2 whitespace-nowrap text-[10px] font-bold" style={{ color: status === "done" ? "var(--color-mint-600)" : current ? "var(--color-brand-600)" : "var(--text-muted)" }}>
-        {KIND_LABEL[item.kind]}
-      </span>
-    </div>
-  );
-
-  const style = { position: "absolute" as const, left: at.x, top: at.y, transform: "translate(-50%, -50%)" };
-  if (clickable) {
+  if (item.href && item.playable && !locked) {
     return (
-      <Link href={item.href!} prefetch={false} className="group" style={style} aria-label={`${KIND_LABEL[item.kind]}: ${item.title}`}>
-        <div className="transition-transform group-active:translate-y-px">{body}</div>
+      <Link href={item.href} prefetch={false}>
+        {inner}
       </Link>
     );
   }
+  return inner;
+}
+
+function Tile({ unit, active, onSelect }: { unit: HubUnit; active: boolean; onSelect: () => void }) {
+  const pct = unit.total ? Math.round((unit.done / unit.total) * 100) : 0;
+  const clickable = !unit.locked;
+  const body = (
+    <>
+      <div className="flex w-full items-center justify-between">
+        <Ring pct={unit.complete ? 100 : pct} unit={unit} />
+        <span className="text-[11px] font-bold" style={{ color: "var(--text-muted)" }}>
+          Ünite {unit.index}
+        </span>
+      </div>
+      <p className="mt-2 line-clamp-2 text-sm font-bold leading-tight">{unit.theme}</p>
+      <p className="mt-auto pt-1 text-[11px] font-semibold" style={{ color: unit.complete ? "var(--color-mint-600)" : "var(--text-muted)" }}>
+        {unit.complete ? "Tamamlandı" : unit.locked ? "Kilitli" : `${unit.done}/${unit.total}`}
+      </p>
+    </>
+  );
+  const style = {
+    background: "var(--surface)",
+    border: active ? "2px solid var(--color-brand-600)" : "1px solid var(--border)",
+    opacity: unit.locked ? 0.62 : 1,
+    minHeight: 118,
+  };
+  const cls = "flex flex-col items-start rounded-2xl p-3.5 text-left transition-transform active:scale-[0.98]";
+  if (clickable) {
+    return (
+      <button type="button" onClick={onSelect} className={cls} style={style}>
+        {body}
+      </button>
+    );
+  }
   return (
-    <div style={style} aria-label={`${KIND_LABEL[item.kind]} — yakında`}>
+    <div className={cls} style={style}>
       {body}
     </div>
   );
 }
 
-// ── Beyaz düğüm simgeleri ───────────────────────────────────────────
-function Glyph({ item, status }: { item: HubItem; status: NodeStatus }) {
-  if (status === "locked") return <LockGlyph size={22} />;
-  if (status === "done")
-    return (
-      <Svg>
-        <path d="M5 12.5l4.2 4.3L19 7" />
-      </Svg>
-    );
-  const c = status === "soon" ? "var(--text-muted)" : "#fff";
-  const k = item.kind;
-  if (k === "checkpoint")
-    return (
-      <Svg fill c={c}>
-        <path d="M6 4h12v3.5a6 6 0 01-12 0zM4.5 5.5H6V8a3 3 0 01-1.5-2.6zM18 5.5h1.5A3 3 0 0118 8zM11 13.5h2V16h-2zM8 17h8v2.5H8z" />
-      </Svg>
-    );
-  if (k === "quiz")
-    return (
-      <Svg fill c={c}>
-        <path d="M13 2.5L5.5 13H10l-1 8.5L18.5 10H13z" />
-      </Svg>
-    );
-  if (k === "grammar") return <span style={{ color: c, fontWeight: 900, fontSize: 19, lineHeight: 1 }}>Aa</span>;
-  if (k === "write")
-    return (
-      <Svg fill c={c}>
-        <path d="M4 20l1.3-4.4L15 6l3 3-9.7 9.7zM16 5l1.5-1.5a1.4 1.4 0 012 0l1 1a1.4 1.4 0 010 2L19 8z" />
-      </Svg>
-    );
-  if (k === "listen")
-    return (
-      <Svg c={c}>
-        <path d="M5 13.5a7 7 0 0114 0" />
-        <path d="M4.5 14.5h2.5V20H6a1.5 1.5 0 01-1.5-1.5zM17 14.5h2.5V18.5A1.5 1.5 0 0118 20h-1z" fill={c} stroke="none" />
-      </Svg>
-    );
-  if (k === "read")
-    return (
-      <Svg fill c={c}>
-        <path d="M4.5 5.5C6.5 4.3 9.5 4.3 11.3 5.5V19c-1.8-1.1-4.8-1.1-6.8 0zM12.7 5.5C14.5 4.3 17.5 4.3 19.5 5.5V19c-2-1.1-5-1.1-6.8 0z" />
-      </Svg>
-    );
-  // lesson → yıldız
+/** Küçük ünite rozeti — ilerleme halkası + içinde durum. */
+function Ring({ pct, unit }: { pct: number; unit: HubUnit }) {
+  const glyph = unit.complete ? "✓" : unit.locked ? "🔒" : String(unit.index);
+  const col = unit.complete ? "var(--color-mint-500)" : unit.locked ? "var(--border)" : "var(--color-brand-500)";
   return (
-    <Svg fill c={c}>
-      <path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.7l5.9-.8z" />
-    </Svg>
+    <span
+      className="grid h-11 w-11 place-items-center rounded-full"
+      style={{ background: `conic-gradient(${col} ${pct * 3.6}deg, var(--surface-2) 0)` }}
+    >
+      <span className="grid h-8 w-8 place-items-center rounded-full text-xs font-extrabold" style={{ background: "var(--surface)", color: col }}>
+        {glyph}
+      </span>
+    </span>
   );
 }
 
-function Svg({ children, fill = false, c = "#fff" }: { children: ReactNode; fill?: boolean; c?: string }) {
+/** Öne çıkan karttaki büyük ünite rozeti. */
+function UnitBadge({ unit, big }: { unit: HubUnit; big?: boolean }) {
+  const size = big ? "h-14 w-14 text-xl" : "h-11 w-11 text-base";
+  const glyph = unit.complete ? "✓" : unit.locked ? "🔒" : String(unit.index);
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill={fill ? c : "none"} stroke={c} strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
-      {children}
-    </svg>
-  );
-}
-
-function LockGlyph({ size = 22 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M7 10V8a5 5 0 0110 0v2" />
-      <rect x="5" y="10" width="14" height="9.5" rx="2" fill="var(--text-muted)" stroke="none" />
-    </svg>
+    <span
+      className={`grid ${size} shrink-0 place-items-center rounded-2xl font-extrabold text-white`}
+      style={{ background: "linear-gradient(180deg,var(--color-brand-500),var(--color-brand-600))", boxShadow: "0 3px 0 var(--color-brand-700)" }}
+    >
+      {glyph}
+    </span>
   );
 }
