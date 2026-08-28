@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useListen } from "@/components/use-listen";
 import { spokenMatches } from "@/components/games/types";
-import { parseConfirm } from "@/lib/voice-intent";
+import { parseConfirm, parseSkip } from "@/lib/voice-intent";
 import { useWakeLock } from "@/components/use-wake-lock";
 import { cueListen } from "@/lib/lessons/cues";
 import { sharedAudioContext } from "@/lib/audio-context";
@@ -116,6 +116,22 @@ type Status =
 type Phase = "speaking" | "listening" | "judging";
 
 /**
+ * "Bilmiyorum" cevabına kısa motive — yanlış saymadan, uzun konuşmadan.
+ *
+ * Öğrenci cevabı bilmiyorsa "bilmiyorum/pas/fikrim yok" diyor; buna 15-20
+ * ifadeyle değil, ceza da vermeden, kısa bir cesaretle karşılık veriyoruz ve
+ * doğrusunu okuyoruz. Rastgele biri seçiliyor ki hep aynı cümle olmasın.
+ */
+const ENCOURAGE = [
+  "Sorun değil, doğrusu:",
+  "Olsun, aklında kalsın:",
+  "Zararı yok, doğrusu:",
+  "Boş ver, doğrusu:",
+  "Öğreniyoruz, doğrusu:",
+  "Bir dahakine. Doğrusu:",
+];
+
+/**
  * Duyulmayan cevabın karşılığı.
  *
  * Sessizlik YANLIŞ sayılmıyor. Sokakta, otobüste ya da cepteki telefonda
@@ -160,7 +176,7 @@ const CONFIRM_SILENCE_MS = 7000;
  * kelimenin BAŞI kayda girmiyordu. Whisper baştan okuduğu için sonuç doğrudan
  * uydurma oluyordu.
  */
-const ANSWER_WINDOW_MS = 6000;
+const ANSWER_WINDOW_MS = 8000;
 /**
  * Tarayıcı tanıyıcısında hiç konuşma gelmezse kaç ms beklenir.
  *
@@ -171,7 +187,7 @@ const ANSWER_WINDOW_MS = 6000;
  * tanıyıcıyı oturum boyunca kapatıyordu; kullanıcının "ekran açıkken
  * Deepgram'a gidiyor" diye gördüğü şey buydu.
  */
-const BROWSER_SILENCE_MS = 7000;
+const BROWSER_SILENCE_MS = 9000;
 /**
  * Tanıyıcının bu oturumda kullanılamaz olduğunu söyleyen hata kodları.
  *
@@ -190,8 +206,8 @@ const CAPTURE_FAIL_LIMIT = 2;
  * söyleniyor.
  */
 const ARM_WAIT_MS = 30_000;
-/** Ekran açık yolda turlar arası nefes — "aşırı hızlı" geçişleri biraz yavaşlatır. */
-const GAP_MS = 550;
+/** Turlar arası nefes — "aşırı hızlı" geçişleri yavaşlatır (cepte de geçerli). */
+const GAP_MS = 850;
 
 /**
  * Ağ isteklerinin üst sınırı.
@@ -241,7 +257,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>("speaking");
   const [prompt, setPrompt] = useState<{ tr: string; de: string } | null>(null);
-  const [verdict, setVerdict] = useState<"correct" | "wrong" | "unheard" | null>(null);
+  const [verdict, setVerdict] = useState<"correct" | "wrong" | "unheard" | "skip" | null>(null);
   /** Şu an sorulan şey bir kelime değil, "devam edelim mi?" onayı. */
   const [asking, setAsking] = useState(false);
   /**
@@ -974,12 +990,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         for (const word of wordsOf(round)) {
           if (!alive()) return;
           const target = withArtikel(word);
-          askedIds.current.add(word.id);
-          setPrompt({ tr: word.tr, de: target });
-          setVerdict(null);
 
           // Yeni kelime: sorulmuyor, tanıtılıyor. Ekranda da öyle çalışıyor.
           if (round.game === "intro") {
+            setPrompt({ tr: word.tr, de: target });
+            setVerdict(null);
             setPhase("speaking");
             await say([
               { lang: "tr", text: "Yeni kelime." },
@@ -997,6 +1012,24 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             });
             continue;
           }
+
+          /*
+            Aynı kelimeyi bu yürüyüşte İKİNCİ kez sorma.
+
+            Ekrandaki tur kuyruğu bir kelimeyi birden çok OYUNDA kullanabiliyor
+            (scramble'da diz, cloze'da boşluk doldur, listen'da dikte) — ekranda
+            bunlar farklı beceri, tekrar değil. Ama yürüyüşte hepsi tek bir soruya
+            iniyor ("Almancasını söyle") ve aynı kelime iki-üç kez soruluyordu:
+            "doğru bildiğimi tekrar soruyor" şikâyeti buydu (ölçüldü: 20 turluk
+            kuyrukta bir kelime üç kez). İlk sorulduğunda işaretleniyor, sonrakiler
+            atlanıyor. intro tanıtım olduğu için işaretlenmiyor: yeni kelime
+            tanıtılıp ardından bir kez sorulabilsin.
+          */
+          if (askedIds.current.has(word.id)) continue;
+          askedIds.current.add(word.id);
+
+          setPrompt({ tr: word.tr, de: target });
+          setVerdict(null);
 
           // Soru: Türkçe karşılık okunuyor, ardından mikrofon açılıyor.
           setPhase("speaking");
@@ -1018,12 +1051,14 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             );
           let heard = await ask();
           if (!alive()) return;
-          // "Cebe koy" dinlemenin ortasına denk geldi: kelime yeniden soruluyor
-          // (duyuruyu `hearOnce` kendi sırasında okuyor).
+          // "Cebe koy" dinlemenin ortasına denk geldi: önce kısa duyuru, sonra
+          // KELİME yeniden okunuyor (kullanıcı basarken kaçırmasın), sonra dinleme.
           if (reask.current) {
             reask.current = false;
             setPhase("speaking");
-            await say([{ lang: "tr", text: word.tr }]);
+            const pre = announce.current;
+            announce.current = null;
+            await say([...(pre ? [{ lang: "tr" as const, text: pre }] : []), { lang: "tr", text: word.tr }]);
             if (!alive()) return;
             setPhase("listening");
             heard = await ask();
@@ -1038,13 +1073,32 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           // yanlış sayılıyordu.
           const said = heard.find((h) => h.trim()) ?? "";
           const unheard = !said;
-          const ok = !unheard && spokenMatches(heard, [target, word.de]);
+          // "Bilmiyorum" YANLIŞ değil, bir teslim: ceza yok, kısa motive + doğrusu.
+          const skipped = !unheard && parseSkip(said);
+          const ok = !unheard && !skipped && spokenMatches(heard, [target, word.de]);
           setHeardText(said);
 
           // Pencere her turda güncelleniyor: duyulan da duyulmayan da giriyor.
+          // "Bilmiyorum" DUYULDU sayılıyor (mikrofon çalışıyor), sadece cevap değil.
           heardLog.current.push(!unheard);
           if (heardLog.current.length > UNHEARD_WINDOW) heardLog.current.shift();
           const misses = heardLog.current.filter((h) => !h).length;
+
+          // "Bilmiyorum": tekrar planına DOKUNMA (yanlış değil), doğrusunu oku.
+          if (skipped) {
+            setVerdict("skip");
+            const line = ENCOURAGE[Math.floor(Math.random() * ENCOURAGE.length)];
+            await say([
+              { lang: "tr", text: line },
+              { lang: "de", text: target },
+            ]);
+            if (!alive()) return;
+            if (document.visibilityState === "visible") {
+              await new Promise<void>((r) => afterMs(GAP_MS, r));
+              if (!alive()) return;
+            }
+            continue;
+          }
 
           if (unheard && UNHEARD_IS_NOT_WRONG) {
             setVerdict("unheard");
@@ -1262,6 +1316,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * ikisini de gizliyor — kullanıcı dokunuşunun içinden çağrıldığı için izinli.
    */
   function darken() {
+    if (screenDark) return;
     void acquire();
     darkTaps.current = [];
     setScreenDark(true);
@@ -1271,7 +1326,14 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       /* fullscreen reddedilirse katman yine örter, yalnız sistem çubukları kalır */
     }
     track("walk_switch", 1, "dark");
-    announce.current = "Ekranı karartıyorum, açık kalacak. Telefonu cebine koyabilirsin. Çıkmak için ekrana üç kez dokun.";
+    // Anons kısa: uzun açıklama akışı boğuyordu. Kelime bir sonraki turda değil,
+    // HEMEN tekrar sorulsun diye süren dinleme iptal ediliyor (reask) — kullanıcı
+    // darken'a basarken kelimeyi kaçırmasın.
+    announce.current = "Cepte. Çıkış: üç dokunuş.";
+    if (hearCtl.current && !hearCtl.current.signal.aborted) {
+      reask.current = true;
+      hearCtl.current.abort();
+    }
   }
 
   /** Karanlık katmana dokunuş — 1,2 sn içinde üç kez olursa çıkılır. */
@@ -1461,11 +1523,25 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           <strong>{Math.min(index + 1, total)}</strong>
           <span className="muted"> / {total} tur</span>
         </div>
+        {/*
+          İki başlatma: "Cebe koy" ekranı karartarak başlatır (fullscreen düğme
+          dokunuşunun içinde alınıyor, sonra tur); "Ekran açık" normal. Ekran
+          açık başlayan da tur içinde "Cebe koy"a basabilir.
+        */}
         <button
-          onClick={() => void start(index)}
+          onClick={() => {
+            darken();
+            void start(index);
+          }}
           className="btn btn-primary mt-5 w-full px-5 py-4 text-base"
         >
-          {status === "paused" ? "Devam et" : "Kulaklığı tak, başla"}
+          Cebe koy, {status === "paused" ? "devam et" : "başla"}
+        </button>
+        <button
+          onClick={() => void start(index)}
+          className="btn btn-ghost mt-2 w-full px-5 py-4 text-base"
+        >
+          Ekran açık {status === "paused" ? "devam et" : "başla"}
         </button>
         <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">Geri dön</button>
       </Frame>
@@ -1578,15 +1654,17 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
                 background:
                   verdict === "correct"
                     ? "color-mix(in srgb, var(--color-mint) 18%, transparent)"
-                    : "color-mix(in srgb, var(--color-flame) 18%, transparent)",
-                color: verdict === "correct" ? "var(--color-mint)" : "var(--color-flame)",
+                    : verdict === "wrong"
+                      ? "color-mix(in srgb, var(--color-flame) 18%, transparent)"
+                      : "var(--surface-2)",
+                color: verdict === "correct" ? "var(--color-mint)" : verdict === "wrong" ? "var(--color-flame)" : "var(--color-brand)",
               }}
             >
-              {verdict === "correct" ? <CheckIcon size={28} /> : <XIcon size={28} />}
+              {verdict === "correct" ? <CheckIcon size={28} /> : verdict === "wrong" ? <XIcon size={28} /> : <MicIcon size={28} />}
             </span>
             <p className="mt-3 text-lg font-bold">{prompt?.de}</p>
             <p className="muted mt-1 text-sm">
-              {verdict === "correct" ? "Doğru" : verdict === "unheard" ? "Duyamadım" : prompt?.tr}
+              {verdict === "correct" ? "Doğru" : verdict === "unheard" ? "Duyamadım" : verdict === "skip" ? "Bilmiyorsan sorun değil" : prompt?.tr}
             </p>
             {verdict === "wrong" && heardText ? (
               <p className="muted mt-2 text-xs">
