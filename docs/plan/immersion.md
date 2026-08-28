@@ -14,7 +14,8 @@ kurmasına yardım.** İki mod:
 ## Mevcut yapı (göçün üzerine kurulacağı zemin)
 - **Ders** = anlatım adımları (`say` + `produce`=kendi cümleni kur + `truefalse`) + roleplay.
   Zaten üretim/immersion birimi. (`lib/lessons/types.ts`)
-- Her CEFR seviyesi → **10 tematik modül × 10 ders = 100/seviye** (planlı; ~10 built).
+- Her CEFR seviyesi → **10 tematik modül × 10 ders = 100/seviye** (de KURULU: 500 ders).
+  buildTrack bunu 4'erli böler → **seviye başına 25 ünite** (gating grupları 1–10, 11–20, 21–25).
   Temalar `modules.ts` `MODULE_THEMES`. Modül = sunum kavramı (katalog 10'arlı dilimlenir).
 - **Modül sınavı** + `moduleClears` → gating altyapısı hazır (`/lessons/sinav/[level]/[module]`).
 - Beceri okuma/dinleme/yazma egzersizleri: `skill_exercises` (DB, 120/120/80) + `userSkills`.
@@ -73,8 +74,10 @@ kurmasına yardım.** İki mod:
 - Gating: `moduleClears` checkpoint kaynağı olarak kalır (ya da checkpoint item'ına devrolur).
 
 ## Fazlar (her biri tsc+build doğrulanıp commit'lenir)
-1. **Model + builder:** `ImmersionItem`/`Unit`/`Track` tipleri + `buildTrack(course, level)`
-   mevcut ders + beceri egzersizlerinden slot desenine göre track kurar. DB değişmez.
+1. **Model + builder:** ✅ TAMAM (commit sonrası). `src/lib/immersion/{types,build}.ts` —
+   `ImmersionItem`/`Unit`/`Track` + saf `buildTrack(input)` (4/2/2/2 + ara sıra grammar/quiz +
+   checkpoint, grup=10) ve DB sarmalayıcı `loadTrack(course, level)`. `test:track` 16 kontrol.
+   DB değişmedi. Bugün: de her seviye 25 ünite.
 2. **UI:** immersion sayfası (üniteler/gating/pagination) + item renderer'lar (mevcut
    oynatıcılar) + checkpoint. Learn ↔ Immersion iki mod girişi.
 3. **Progress bağlama:** lesson item → userLessons; read/listen/write/grammar/quiz item →
