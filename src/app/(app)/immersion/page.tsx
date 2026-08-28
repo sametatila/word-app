@@ -52,6 +52,8 @@ export default async function ImmersionPage({
     complete: u.complete,
     done: u.done,
     total: u.total,
+    lessonsDone: u.lessonsDone,
+    lessonsTotal: u.lessonsTotal,
     items: u.items.map((s) => ({
       id: s.item.id,
       kind: s.item.kind,

@@ -1,6 +1,9 @@
 # Immersion — ikinci mod (skills → derslere harmanlanmış)
 
-Durum: PLANLANDI, henüz uygulanmadı. Sahibin (Samet) direktifi, 2026-08-28.
+Durum: KOD TAMAM (Faz 1/2/4 + gating). Sahibin (Samet) direktifi, 2026-08-28.
+Kalan: içerik fazı (temalı read/listen/write/grammar/quiz/checkpoint) + opsiyonel
+`user_skills` DELETE (senin elinle). Kod, `/immersion` gezilebilir; dersler oynanır,
+beceri/gramer/quiz slotları köprü/placeholder.
 
 ## Tez
 Duolingo Almanca-Türkçe B1'i bitirdi ama **cümle kurmayı / kendini ifade etmeyi
@@ -50,9 +53,18 @@ kurmasına yardım.** İki mod:
 ## Gating / ilerleme (Duolingo mantığı)
 - Kullanıcının CEFR'i (`profiles.level`) → **başlangıç ünitesi**.
 - Altındaki üniteler açık (tekrar/serbest); seviyesinden itibaren **kilitli**:
-  bir üniteyi (tüm item'lar + checkpoint) bitirince sonraki açılır.
+  bir üniteyi bitirince sonraki açılır.
 - Ekranda ilk N ünite; gerisi kilitli + **sayfalı** ("ilk 10, sonra 11–25…").
 - Checkpoint geçme eşiği (örn. ≥%70) grup→grup geçişi kapısı.
+
+**Gating ölçütü — AŞAMALI (uygulama kararı, `state.ts`):**
+- **Şimdi (interim): İSKELETE bağlı** — ünite, DERSLERİ bitince tamamlanır ve
+  sonrakini açar. Beceri/gramer/quiz **opsiyonel zenginleştirme**, bloklamaz.
+  Gerekçe: bu içerik seyrek ve temaya göre yeniden kuruluyor; tematik olarak
+  rastgele/eksik içeriği kapı yapmak yanlış olurdu. "lesson = iskelet" kararıyla
+  birebir. Placeholder (ref=null) item'lar zaten hiç saymıyor.
+- **Sonra (temalı içerik oturunca): "tüm item'lar"a sıkılaştırılır** — o zaman her
+  ünitede tekdüze temalı beceri+checkpoint olacağı için kapı adil olur.
 
 ## Nereye ne gidiyor
 | Eski | Yeni |

@@ -34,6 +34,9 @@ export type HubUnit = {
   complete: boolean;
   done: number;
   total: number;
+  /** Ders (iskelet) ilerlemesi — gating ölçütü, başlıkta gösterilir. */
+  lessonsDone: number;
+  lessonsTotal: number;
   items: HubItem[];
 };
 
@@ -178,7 +181,7 @@ function UnitCard({ unit, isCurrent }: { unit: HubUnit; isCurrent: boolean }) {
             Ünite {unit.index} · {unit.theme}
           </p>
           <p className="muted text-xs">
-            {unit.done}/{unit.total} tamam
+            {unit.complete ? "Dersler tamam" : `${unit.lessonsDone}/${unit.lessonsTotal} ders`}
             {isCurrent && !unit.complete ? " · buradasın" : ""}
           </p>
         </div>
@@ -204,7 +207,7 @@ function UnitStatus({ unit }: { unit: HubUnit }) {
   if (unit.locked) return <LockGlyph />;
   return (
     <span className="shrink-0 text-xs font-semibold" style={{ color: "var(--color-brand)" }}>
-      {unit.total > 0 ? Math.round((unit.done / unit.total) * 100) : 0}%
+      {unit.lessonsTotal > 0 ? Math.round((unit.lessonsDone / unit.lessonsTotal) * 100) : 0}%
     </span>
   );
 }
@@ -255,6 +258,10 @@ function ItemStatus({ item, unitLocked }: { item: HubItem; unitLocked: boolean }
   }
   if (unitLocked) {
     return <span className="shrink-0 text-xs" style={{ color: "var(--text-muted)" }}>kilitli</span>;
+  }
+  // Ders = ana yol (gating); beceri/quiz = isteğe bağlı zenginleştirme.
+  if (item.kind !== "lesson") {
+    return <span className="shrink-0 text-xs" style={{ color: "var(--text-muted)" }}>isteğe bağlı →</span>;
   }
   return <span className="shrink-0 text-xs font-semibold" style={{ color: "var(--color-brand)" }}>başla →</span>;
 }

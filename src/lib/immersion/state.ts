@@ -28,10 +28,14 @@ export type UnitState = {
   locked: boolean;
   /** Tüm oynanabilir item'lar bitti mi. */
   complete: boolean;
-  /** Biten oynanabilir item sayısı. */
+  /** Biten oynanabilir item sayısı (dersler + zenginleştirme, gösterim için). */
   done: number;
-  /** Toplam oynanabilir item sayısı. */
+  /** Toplam oynanabilir item sayısı (gösterim için). */
   total: number;
+  /** Biten ders item'ı — GATING ölçütü (iskelet). */
+  lessonsDone: number;
+  /** Toplam ders item'ı (iskelet). */
+  lessonsTotal: number;
   items: ItemState[];
 };
 
@@ -66,14 +70,22 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
       playable: item.ref !== null,
       done: itemDone(item, c),
     }));
-    const total = items.filter((i) => i.playable).length;
-    const done = items.filter((i) => i.playable && i.done).length;
-    // Oynanabilir item yoksa ünite kapı olamaz → geçişli (pass-through) sayılır,
-    // yoksa boş bir ünite sonraki her şeyi kilitlerdi. de'de olmaz (her ünitede
-    // 4 ders), ama kısmi/boş seviyelerde güvenlik valfi.
-    const complete = total === 0 || done === total;
+    const playable = items.filter((i) => i.playable);
+    const total = playable.length;
+    const done = playable.filter((i) => i.done).length;
+    const lessons = playable.filter((i) => i.item.kind === "lesson");
+    const lessonsTotal = lessons.length;
+    const lessonsDone = lessons.filter((i) => i.done).length;
+    // GATING İSKELETE (DERSLERE) BAĞLI — sahibin "lesson = iskelet" kararı.
+    // Beceri/gramer/quiz item'ları OPSİYONEL zenginleştirme: ünite açılışını
+    // bloklamaz. Gerekçe: bu içerik seyrek ve temaya göre yeniden kuruluyor
+    // (bkz. plan §İçerik stratejisi); onları kapı yapmak, tematik olarak
+    // rastgele/eksik içeriği zorunlu kılardı. Temalı içerik oturunca kural
+    // "tüm item'lar" haline sıkılaştırılabilir. Dersi olmayan ünite (de'de
+    // olmaz) tüm-oynanabilir ölçütüne düşer — boş ünite sonrasını kilitlemesin.
+    const complete = lessonsTotal > 0 ? lessonsDone === lessonsTotal : total === 0 || done === total;
     const locked = !prevComplete;
-    units.push({ unit, locked, complete, done, total, items });
+    units.push({ unit, locked, complete, done, total, lessonsDone, lessonsTotal, items });
     if (!locked && !complete && currentIndex < 0) currentIndex = unit.index;
     prevComplete = complete;
   }

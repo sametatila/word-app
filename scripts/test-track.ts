@@ -104,6 +104,7 @@ const s0 = buildTrackState(t, { lessonDone: () => false, skillDone: () => false 
 check("boşken ünite1 kilitsiz, ünite2/3 kilitli", !s0.units[0].locked && s0.units[1].locked && s0.units[2].locked);
 check("boşken currentIndex=1", s0.currentIndex === 1);
 check("ünite1 oynanabilir toplam=10 (4+2+2+2), done=0", s0.units[0].total === 10 && s0.units[0].done === 0);
+check("ünite1 iskelet 4 ders, 0 bitti", s0.units[0].lessonsTotal === 4 && s0.units[0].lessonsDone === 0);
 check("checkpoint placeholder → oynanamaz", s0.units[0].items.find((i) => i.item.kind === "checkpoint")?.playable === false);
 
 const doneSet = new Set(u1Refs);
@@ -114,8 +115,9 @@ check("currentIndex ünite2'ye ilerler", s1.currentIndex === 2);
 
 const u1Lessons = new Set(u1.items.filter((i) => i.kind === "lesson").map((i) => i.ref as string));
 const s2 = buildTrackState(t, { lessonDone: (r) => u1Lessons.has(r), skillDone: () => false });
-check("yalnız dersler bitince ünite1 EKSİK (beceriler bloklar)", !s2.units[0].complete && s2.units[0].done === 4);
-check("ünite1 eksikken ünite2 kilitli", s2.units[1].locked);
+// GATING İSKELETE BAĞLI: yalnız dersler bitince ünite TAMAM (beceriler opsiyonel).
+check("yalnız dersler bitince ünite1 TAMAM (beceri gerekmez)", s2.units[0].complete && s2.units[0].lessonsDone === 4 && s2.units[0].done === 4);
+check("dersler bitince ünite2 açılır (beceri bloklamaz)", !s2.units[1].locked);
 
 const sAll = buildTrackState(t, { lessonDone: () => true, skillDone: () => true });
 check("her şey bitince tüm üniteler complete", sAll.units.every((u) => u.complete));
