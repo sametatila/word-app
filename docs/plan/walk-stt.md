@@ -218,11 +218,26 @@ olarak kesiliyordu; v1–v5'in sırayla düşme sebebi buydu. Bu, en baştaki pl
 Sahibin kararı (2026-08-28): "bu hep vardı, sonra düzeltilebilir" — cep yolu ekran-kapalı
 şimdilik açık bırakıldı. Ekran açık kipi kusursuz çalışıyor.
 
-## Açık kalanlar
+## v7 — "Karanlık ama açık ekran" (cep kilidi) uygulandı, cihazda denenecek
 
-- **Karar sahipte:** cep yolu için "karanlık ama açık ekran" (cep kilidi) uygulansın mı?
-  Tek garantili yol; kod hazır edilebilir (wake lock zaten var, ekranı siyah overlay + dokunma
-  kilidi + Web Speech). HyperOS ayarı denemesi taşınabilir değil.
+Sahibin isteğiyle 1. çözüm kuruldu. "Cebe koy · ekranı karart" düğmesi (`darken`): ekranın
+üstüne tam ekran siyah bir katman koyuyor (`screenDark`), tüm dokunmaları yutuyor (cepte
+kazara basılmasın), çıkış için 1,2 sn'de üç dokunuş. Wake lock tur başında zaten alınıyor;
+ekran teknik olarak AÇIK kalıyor (`mScreenOnOff=true`) → HyperOS'un ekran-kapanınca-sustur
+davranışına hiç girilmiyor → tarayıcının kendi tanıyıcısı (ekrandaki kusursuz yol) cepte de
+çalışıyor. Kayıt/sunucu (arm) yolu bu modda KULLANILMIYOR — ekran açık, Web Speech yeter.
+
+Düğme yalnız tanıyıcı olan tarayıcıda çıkıyor (sunucu STT şartı kalktı). Güç tuşuyla gerçek
+kapatma yine "tur durur, çaresini söyler" (o an mikrofon susar). Eski arm/recordAnswerClip/
+cep-kayıt kodu ölü kaldı (silinmedi; stok Android gibi mikrofonu kesmeyen cihazlar için
+ileride, ya da temizlik commit'inde).
+
+> Cihazda doğrulanacak: "Cebe koy · ekranı karart" → cebe koy → konuş → tanıyor mu.
+> logcat'te ekran açık kaldığı sürece `notifyMuteAudioInNeed ... mScreenOnOff=false` GÖRÜNMEMELİ
+> (ekran açık); `walk_listen` `browser:ok` gelmeli. `test:walk`ın cep-kayıt senaryoları
+> (`switch`/`ok`) bu değişiklikle eskidi — karart moduna göre güncellenecek (ayrı iş).
+
+## Açık kalanlar
 - Küçük UX: 3. duyulmamada tur durunca son "duyamadım" anonsu, durma anonsuyla çakışıp
   kesiliyor (stopAll okumayı iptal ediyor). Sahibin notu; ertelendi.
 - recordAnswerClip mikrofonu KESMEYEN bir cihazda (stok Android) doğrulanmadı; teoride doğru.

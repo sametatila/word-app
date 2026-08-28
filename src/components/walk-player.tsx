@@ -293,6 +293,20 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const armed = useRef(false);
   const [pocket, setPocket] = useState<"off" | "armed">("off");
   /**
+   * Ekran KARANLIK ama açık — "cep kilidi".
+   *
+   * Cihaz testinde (Xiaomi HyperOS, 2026-08-28) ekran KAPANINCA HyperOS'un güç
+   * yöneticisi (`whetstone`/`AwareResourceControl`) Chrome'un mikrofonunu
+   * susturuyor: cep yolu (kayıt + sunucu) o cihazlarda kodla çalıştırılamıyor.
+   * Ama susturma yalnız ekran kapalıyken; ekran AÇIK kalırsa tarayıcının kendi
+   * tanıyıcısı (ekranda kusursuz çalışan yol) cepte de çalışır. Bu yüzden ekranı
+   * kapatmak yerine simsiyah bir katmanla örtüyoruz: ekran teknik olarak açık,
+   * mikrofon çalışıyor, ama kullanıcı cebe koyunca ne ışık ne kazara dokunma.
+   */
+  const [screenDark, setScreenDark] = useState(false);
+  /** Karanlık katmandan çıkış: kısa sürede üç dokunuş (cepte kazara açılmasın). */
+  const darkTaps = useRef<number[]>([]);
+  /**
    * "Cebe koy" bir dinlemenin ORTASINDA basıldı: o dinleme iptal edildi ve
    * kelime bir kez daha sorulacak — mikrofon alınırken tanıyıcı ölüyor, o
    * kelimeyi "duyulmadı" saymak haksızlık olurdu.
@@ -813,6 +827,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     if (new URLSearchParams(window.location.search).has("diag")) setDiag([]);
   }, []);
 
+  // Tur oynamıyorsa karanlık katman kalkar (duraklat/çık/bitti sonrası açık kalmasın).
+  useEffect(() => {
+    if (status !== "playing") setScreenDark(false);
+  }, [status]);
+
   // Kurulum yoklaması: cevabı beklerken hiçbir şey engellenmiyor, yalnızca
   // başlangıç ekranındaki söz doğru olsun diye.
   useEffect(() => {
@@ -1194,6 +1213,32 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     announce.current = ok ? "Cebe alındı. Ekranı kapatabilirsin." : "Mikrofon açılamadı; ekranda devam ediyoruz.";
   }
 
+  /**
+   * "Cebe koy" — ekranı KARARTIR ama kapatmaz (bkz. `screenDark`).
+   *
+   * Ekran açık kaldığı için tarayıcının tanıyıcısı (ekrandaki kusursuz yol)
+   * cepte de çalışıyor; HyperOS'un ekran-kapanınca-sustur davranışına hiç
+   * girilmiyor. Wake lock tur başında zaten alındı; burada teyit ediliyor.
+   */
+  function darken() {
+    void acquire();
+    darkTaps.current = [];
+    setScreenDark(true);
+    track("walk_switch", 1, "dark");
+    announce.current = "Ekranı karartıyorum, açık kalacak. Telefonu cebine koyabilirsin. Çıkmak için ekrana üç kez dokun.";
+  }
+
+  /** Karanlık katmana dokunuş — 1,2 sn içinde üç kez olursa çıkılır. */
+  function onDarkTap() {
+    const now = Date.now();
+    darkTaps.current = [...darkTaps.current.filter((t) => now - t < 1200), now];
+    if (darkTaps.current.length >= 3) {
+      darkTaps.current = [];
+      setScreenDark(false);
+      track("walk_switch", 0, "dark-exit");
+    }
+  }
+
   function pause() {
     if (!ended.current) track("walk_end", 6);
     ended.current = true;
@@ -1257,7 +1302,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           [
             {
               lang: "tr",
-              text: "Ekran kapanınca sesini duyamıyorum. Turu durdurdum. Cepte devam etmek için ekranı açıp Cebe koy'a bas.",
+              text: "Ekran kapanınca sesini duyamıyorum. Turu durdurdum. Cepte devam etmek için ekranı kapatma; Cebe koy'a basınca ekran kararır ama açık kalır.",
             },
           ],
           undefined,
@@ -1340,8 +1385,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           sorulur; “evet” demen yeter.
         </p>
         <p className="muted mt-2 text-sm leading-relaxed">
-          Ekran açıkken telefonun kendi tanıyıcısı dinler; ekran kapanmaz. Telefonu ekranı
-          kapatarak cebine koyacaksan önce <strong>Cebe koy</strong>&apos;a bas, sonra kapat.
+          Telefonu cebine koyacaksan <strong>Cebe koy</strong>&apos;a bas: ekran kararır ama
+          açık kalır, tanıyıcı dinlemeyi sürdürür. Güç tuşuyla kapatma — ekran kapanınca
+          telefon mikrofonu susturur.
         </p>
         {pocketReady === false ? (
           <p
@@ -1400,6 +1446,25 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   // playing
   return (
     <Frame>
+      {/*
+        Karanlık kilit — ekranı örter ama kapatmaz. Tüm dokunmaları yutar
+        (cepte kazara basılmasın); çıkış için üç dokunuş. Ekran açık kaldığı
+        için tanıyıcı çalışmaya devam ediyor, akış kulakta sürüyor.
+      */}
+      {screenDark ? (
+        <div
+          onClick={onDarkTap}
+          className="fixed inset-0 z-[120] flex flex-col items-center justify-end"
+          style={{ background: "#000", touchAction: "none" }}
+        >
+          <p className="mb-24 px-8 text-center text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.22)" }}>
+            Ekran karanlık ama açık — dinliyorum, akış kulakta.
+            <br />
+            Çıkmak için üç kez dokun.
+          </p>
+        </div>
+      ) : null}
+
       <div className="mb-4 flex items-baseline justify-between text-xs font-semibold">
         <span className="muted">{index + 1} / {total}</span>
         <span className="flex items-center gap-2">
@@ -1505,27 +1570,18 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       ) : null}
 
       {/* Düğmeler bilerek büyük: yürürken ve bakmadan basılıyor. */}
-      {pocket === "armed" ? (
-        <>
-          <p
-            className="mt-6 rounded-xl px-3 py-2.5 text-center text-sm"
-            style={{
-              background: "color-mix(in srgb, var(--color-mint) 14%, transparent)",
-              color: "var(--color-mint)",
-            }}
-          >
-            Cepte: ekranı kapatabilirsin. Açık kalırsa yarım dakikada ekrana dönülür.
-          </p>
-          <button onClick={() => disarm("manual")} className="btn btn-ghost mt-2 w-full px-5 py-4 text-base">
-            Ekrana dön
-          </button>
-        </>
-      ) : pocketReady && sttReady.current ? (
-        <button onClick={() => void toPocket()} className="btn btn-primary mt-6 w-full px-5 py-4 text-base">
-          Cebe koy
+      {/*
+        "Cebe koy" ekranı KARARTIR ama kapatmaz: cihaz testinde (HyperOS) ekran
+        kapanınca sistem mikrofonu susturuyor, ekran açık kalınca tanıyıcı
+        çalışıyor. Tanıyıcı olan her tarayıcıda gösteriliyor; sunucu STT
+        gerekmiyor çünkü ekran açık kipin kendi tanıyıcısı kullanılıyor.
+      */}
+      {browserRef.current ? (
+        <button onClick={darken} className="btn btn-primary mt-6 w-full px-5 py-4 text-base">
+          Cebe koy · ekranı karart
         </button>
       ) : null}
-      <button onClick={pause} className={`btn btn-ghost ${pocket === "armed" || (pocketReady && sttReady.current) ? "mt-2" : "mt-6"} w-full px-5 py-4 text-base`}>
+      <button onClick={pause} className={`btn btn-ghost ${browserRef.current ? "mt-2" : "mt-6"} w-full px-5 py-4 text-base`}>
         Duraklat
       </button>
       <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">
