@@ -1,9 +1,10 @@
 # Immersion — ikinci mod (skills → derslere harmanlanmış)
 
-Durum: KOD TAMAM (Faz 1/2/4 + gating). Sahibin (Samet) direktifi, 2026-08-28.
-Kalan: içerik fazı (temalı read/listen/write/grammar/quiz/checkpoint) + opsiyonel
-`user_skills` DELETE (senin elinle). Kod, `/immersion` gezilebilir; dersler oynanır,
-beceri/gramer/quiz slotları köprü/placeholder.
+Durum: KOD TAMAM (Faz 1/2/3/4 + gating + quiz/checkpoint türetme). 2026-08-28.
+`/immersion` gezilebilir: dersler (iskelet, gating) + beceriler (köprü/placeholder)
++ quiz/checkpoint (ünitenin kendi kelime/kalıbından TÜRETİLEN oynanabilir pratik).
+Kalan: içerik authoring (temalı read/listen/write + gramer) + quiz tamamlanma
+sunucu kaydı (follow-up) + opsiyonel `user_skills` DELETE (senin elinle).
 
 ## Tez
 Duolingo Almanca-Türkçe B1'i bitirdi ama **cümle kurmayı / kendini ifade etmeyi
@@ -136,8 +137,11 @@ kurmasına yardım.** İki mod:
   PMF/tek-çift kanıtından sonra genişletilir (ayrı iş).
 
 ## Kalan iş
-- **Kod (bu loop'ta bitiyor):** quiz/checkpoint OTOMATİK TÜRETME (generator + oynatıcı rota)
-  → quiz/checkpoint item'ları "yakında"dan gerçek-oynanabilire döner. İçerik-bedava.
+- **Kod:** ✅ quiz/checkpoint OTOMATİK TÜRETME (generator + oynatıcı rota) TAMAM — item'lar
+  "yakında"dan gerçek-oynanabilire döndü (`/immersion/quiz/[unit]`, brief'ten türetilen pratik).
+  - Follow-up (opsiyonel): quiz tamamlanma SUNUCU kaydı — hafif yeni uç nokta gerekir
+    (`/api/skills` gerçek exercise ister, türetilene uymaz); şimdilik pratik gating yapmıyor.
+  - `grammar` item'ı hâlâ "yakında" — türetilemez (gerçek dilbilgisi anlatımı ister).
 - **İçerik authoring (ayrı, zamanla — senin pipeline'ın):** `read`/`listen`/`write`
   gerçek metin/ses ister, türetilemez. `npm run briefs -- <LEVEL> de` şartnamedir; yeni
   içerik ünitenin brief havuzunu (tema+kelime+kalıp) kullanmalı. Gramer içeriği isteğe bağlı.
