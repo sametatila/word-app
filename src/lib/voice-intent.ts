@@ -53,33 +53,45 @@ const YES_WORDS = new Set([
 const NO_PHRASES = ["istemiyor", "etmeyelim", "etmiyorum", "gerek yok", "yeterli", "simdilik"];
 const YES_PHRASES = ["devam edelim", "devam et", "olsun", "neden olmasin"];
 
-/**
- * "Bilmiyorum" niyeti.
- *
- * Kullanıcı cevabı bilmiyorsa Almanca kelime yerine Türkçe "bilmiyorum",
- * "bilemedim", "fikrim yok", "pas" gibi bir şey söylüyor. Bu bir YANLIŞ cevap
- * değil, bir teslim: yanlış saymak kelimeyi gerçekten unutulduğu için değil,
- * öğrenci dürüstçe "bilmiyorum" dediği için tekrar planına yazardı. Karşılığı
- * kısa bir motive ve doğrusunu okumak.
- *
- * Tanıyıcı Almanca kipte (de-DE) olduğu için Türkçe bu ifadeleri bozuk
- * döndürebiliyor; o yüzden hem tam kalıplar hem de ayırt edici kökler (bilmi-,
- * bileme-, fikrim, hatirla-) alt dize olarak taranıyor.
- */
-const SKIP_PHRASES = [
-  "bilmiyorum", "bilemedim", "bilemiyorum", "bilmem", "bilmiyom",
-  "fikrim yok", "hicbir fikrim", "hic fikrim", "fikri yok",
-  "hatirlamiyorum", "hatirlamadim", "aklima gelmiyor", "aklimda degil",
-  "emin degilim", "unuttum", "gecelim", "gec", "pas", "bilmi", "bileme", "fikrim", "hatirla",
-];
+/** Almanca harfleri sadeleştirir (ß→ss, ä→ae…) ve küçük harfe indirir. */
+export function foldGerman(text: string): string {
+  return text
+    .toLocaleLowerCase("de-DE")
+    .replace(/ß/g, "ss")
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 
-export function parseSkip(text: string): boolean {
-  const folded = foldTurkish(text);
+/**
+ * "Bilmiyorum / geç" niyeti — YÜRÜYÜŞ için, ALMANCA işaretle.
+ *
+ * Yürüyüşte tanıyıcı de-DE kipinde çalışıyor ve Türkçe "bilmiyorum"u güvenilir
+ * yakalayamıyor: Türkçe konuşmayı Almanca fonemlere çeviriyor, çıkan çöp metin
+ * öngörülemez. Bu yüzden teslim işareti ALMANCA veriliyor — "weiter", "weiß
+ * nicht", "keine Ahnung" — bunları de-DE tanıyıcı zaten kusursuz döndürüyor.
+ *
+ * Bir teslim YANLIŞ cevap değil: kelime gerçekten unutulduğu için değil,
+ * öğrenci dürüstçe bilmediğini söylediği için tekrar planına yazılmaz; karşılığı
+ * kısa bir motive ve doğrusunu okumak. Çağıran taraf bunu YALNIZ cevap hedefe
+ * UYMADIĞINDA soruyor — böylece hedefin kendisi "weiter" gibi bir kelime olsa
+ * bile doğru cevap yanlışlıkla teslim sayılmıyor.
+ *
+ * Kısa sözcükler tam-sözcük (alt dizede yanlış eşleşmesin: "weitergehen"
+ * içinde "weiter"), uzun kalıplar alt dize olarak aranıyor.
+ */
+const SKIP_DE_WORDS = new Set(["weiter", "ueberspringen", "naechste", "naechstes"]);
+const SKIP_DE_PHRASES = ["weiss nicht", "weiss es nicht", "keine ahnung", "keine idee", "kein plan"];
+
+export function parseSkipDe(text: string): boolean {
+  const folded = foldGerman(text);
   if (!folded) return false;
   const words = new Set(folded.split(" "));
-  // Kısa kökler (pas, gec) TAM sözcük; uzun kalıplar alt dize.
-  if (words.has("pas") || words.has("gec") || words.has("gecelim")) return true;
-  return SKIP_PHRASES.some((p) => p.length >= 5 && folded.includes(p));
+  if ([...SKIP_DE_WORDS].some((w) => words.has(w))) return true;
+  return SKIP_DE_PHRASES.some((p) => folded.includes(p));
 }
 
 /**

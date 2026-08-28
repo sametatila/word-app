@@ -743,6 +743,129 @@ export async function loadSession(
   return built;
 }
 
+/** Yürüyüş turundaki yeni kelime sayısı — karışık turdaki gibi arada birkaç. */
+const WALK_NEW = 3;
+
+/**
+ * Yürüyüş kuyruğu — "tek oyuna odaklan" mantığının sesli sürümü.
+ *
+ * Karışık oturumdan iki farkı var, ikisi de bilerek:
+ *
+ *   1. **Tek oyun: "Almancasını söyle" (`speak`).** Karışık oturum bir kelimeyi
+ *      birden çok oyuna (tanıtım + tanıma + üretim + eşleştirme) koyuyor; ekranda
+ *      bunlar ayrı beceri ama yürüyüşte hepsi tek soruya iniyor ve aynı kelime
+ *      iki-üç kez soruluyordu. Üstelik yeni-kelime katmanı 20 turu 30-40'a
+ *      çıkarıyordu (kod: "10 yeni kelime = 30 tur"). Burada kelime başına TEK
+ *      `speak` turu ve toplam TAM `ROUNDS_PER_SESSION` — ne aşım, ne atlama.
+ *
+ *   2. **Durum tutulmuyor.** `session_state`'e hiç dokunulmuyor. Normal oturumla
+ *      aynı satırı (kullanıcı başına tek) paylaşmak ikisini birbirine eziyordu:
+ *      yürüyüş karışık yarım turu devralıyor, ya da normal turu siliyordu. Yürüyüş
+ *      her sefer TAZE kuruluyor; öğrenme cevaplarla (`/api/answers` → SRS) yazılıyor,
+ *      turun nerede kaldığı yalnız client'ta. Cevaplanan kelime SRS'te ileriye
+ *      gittiği için sonraki yürüyüşte kendiliğinden geri gelmiyor.
+ *
+ * Kuyruk: zamanı gelen tekrarlar (en eski önce) + arada birkaç yeni kelime; her
+ * yeni kelime bir tanıtım kartı (`intro`) + bir `speak` turu. Tekrar zayıfsa
+ * turu yeni kelimeyle dolduruyor, ikisi de yoksa kısa bir yürüyüş — kopya ekleyip
+ * şişirmekten iyidir.
+ */
+export async function buildWalk(
+  userId: string,
+  today: string,
+  skip: number[] = [],
+): Promise<SessionPayload> {
+  const profile = await ensureProfile(userId);
+  const now = new Date();
+  const course = profile.course;
+  const band = levelBand(profile.level);
+  const T = ROUNDS_PER_SESSION;
+
+  // Tekrar tabanı: zamanı gelen kelimeler, en eskisi önce, atlananlar hariç.
+  const dueRows = await db
+    .select({ w: words })
+    .from(userWords)
+    .innerJoin(words, eq(words.id, userWords.wordId))
+    .where(
+      and(
+        eq(userWords.userId, userId),
+        lte(userWords.dueAt, now),
+        eq(words.course, course),
+        skip.length ? notInArray(userWords.wordId, skip) : undefined,
+      ),
+    )
+    .orderBy(asc(userWords.dueAt))
+    .limit(T);
+
+  // Yeni kelime adayları: hiç görülmemiş, seviyede sıklık sırasıyla.
+  const newCandidates = await db
+    .select()
+    .from(words)
+    .where(
+      and(
+        eq(words.course, course),
+        inArray(words.niveau, band.pool),
+        sql`not exists (
+          select 1 from ${userWords}
+          where ${userWords.wordId} = ${words.id} and ${userWords.userId} = ${userId}
+        )`,
+        skip.length ? notInArray(words.id, skip) : undefined,
+      ),
+    )
+    .orderBy(sql`${words.rank} asc nulls last`, asc(words.id))
+    .limit(WALK_NEW * 12);
+
+  // Kaç yeni kelime: en çok WALK_NEW; ama tekrar kuyruğu turu doldurmuyorsa
+  // (yeni/az kullanıcı) yeniyle doldur. Her yeni kelime iki tur (intro + speak).
+  let newN = Math.min(WALK_NEW, newCandidates.length);
+  const dueUsedFor = (n: number) => Math.min(dueRows.length, T - 2 * n);
+  while (2 * newN + dueUsedFor(newN) < T && newN < newCandidates.length) newN++;
+  const dueUsed = dueUsedFor(newN);
+
+  const newWords = pickNewWords(newCandidates, band, newN).map((w) => toRoundWord(w, true));
+  const dueWords = dueRows.slice(0, dueUsed).map((r) => toRoundWord(r.w, false));
+
+  const rounds = composeWalk(dueWords, newWords, T);
+
+  // meta yürüyüş ekranında kullanılmıyor ama SessionPayload gereği doldurulur.
+  const { meta } = await buildSession(userId, today, false, true);
+  return { rounds, resume: null, meta };
+}
+
+/**
+ * Yürüyüş kuyruğunu kurar: iki tekrar, sonra bir yeni çift (tanıtım + söyle);
+ * serpiştirilir. Saf ve test edilebilir (bkz. test:numbers) — kelime seçimi
+ * `buildWalk`'ta, burada yalnız diziliş.
+ *
+ * Değişmezler: her tekrar tek `speak` turu (kopya yok), her yeni kelime
+ * tanıtım + söyle ÇİFTİ (tanıtımı söylemeden bırakmak yeni kelimeyi öğretmez),
+ * toplam en çok `target` (aşım yok). Kelimeler bitince kısa kuyruk — şişirme yok.
+ */
+export function composeWalk(dueWords: RoundWord[], newWords: RoundWord[], target: number): Round[] {
+  let seq = 0;
+  const nextId = () => `w${++seq}`;
+  const rounds: Round[] = [];
+  const due = [...dueWords];
+  const fresh = [...newWords];
+  while ((due.length || fresh.length) && rounds.length < target) {
+    for (let k = 0; k < 2 && due.length && rounds.length < target; k++) {
+      rounds.push({ id: nextId(), game: "speak", word: due.shift()! });
+    }
+    if (fresh.length && rounds.length < target - 1) {
+      const w = fresh.shift()!;
+      rounds.push({ id: nextId(), game: "intro", word: w });
+      rounds.push({ id: nextId(), game: "speak", word: w });
+    } else if (!due.length && !fresh.length) {
+      break;
+    } else if (fresh.length && rounds.length >= target - 1) {
+      // Tek slot kaldı: yeni çift sığmıyor. Varsa tekrarla doldur, yoksa bitir.
+      if (due.length) rounds.push({ id: nextId(), game: "speak", word: due.shift()! });
+      else break;
+    }
+  }
+  return rounds;
+}
+
 /**
  * Turun nerede kalındığını kaydeder — her turdan sonra, cevaplarla birlikte.
  *

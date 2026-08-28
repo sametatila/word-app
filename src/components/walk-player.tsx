@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useListen } from "@/components/use-listen";
 import { spokenMatches } from "@/components/games/types";
-import { parseConfirm, parseSkip } from "@/lib/voice-intent";
+import { parseConfirm, parseSkipDe } from "@/lib/voice-intent";
 import { useWakeLock } from "@/components/use-wake-lock";
 import { cueListen } from "@/lib/lessons/cues";
 import { sharedAudioContext } from "@/lib/audio-context";
@@ -131,6 +131,9 @@ const ENCOURAGE = [
   "Bir dahakine. Doğrusu:",
 ];
 
+/** Cebe konunca okunan kısa anons — uzun açıklama akışı boğuyordu. */
+const POCKET_ANNOUNCE = "Cebe koyabilirsin. Çıkmak için üç kez dokun.";
+
 /**
  * Duyulmayan cevabın karşılığı.
  *
@@ -251,36 +254,6 @@ function wordsOf(round: Round): RoundWord[] {
   return round.game === "match" ? round.words : [round.word];
 }
 
-/**
- * Yürüyüş kuyruğu: aynı kelimeyi bir kez.
- *
- * Ekrandaki tur kuyruğu bir kelimeyi birden çok OYUNDA kullanabiliyor
- * (scramble'da diz, cloze'da boşluk doldur, listen'da dikte) — orada bunlar
- * farklı beceri. Yürüyüşte hepsi tek "Almancasını söyle"ye indiği için aynı
- * kelime iki-üç kez soruluyordu. Benzersizleştirmeyi YÜKLEMEDE yapıyoruz ki
- * sayaç da doğru olsun: "1/20" deyip 15'te bitmek yerine baştan "1/15".
- * intro tanıtım olduğu için sayılmıyor (tanıtılan kelime ayrıca sorulabilsin).
- */
-function walkQueue(rounds: Round[]): Round[] {
-  const seen = new Set<number>();
-  const out: Round[] = [];
-  for (const r of rounds) {
-    if (r.game === "match") {
-      out.push(r);
-      for (const w of r.words) seen.add(w.id);
-      continue;
-    }
-    if (r.game === "intro") {
-      out.push(r);
-      continue;
-    }
-    if (seen.has(r.word.id)) continue;
-    seen.add(r.word.id);
-    out.push(r);
-  }
-  return out;
-}
-
 export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const [status, setStatus] = useState<Status>("loading");
   const [session, setSession] = useState<SessionPayload | null>(null);
@@ -373,6 +346,14 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * kadar bekliyordu. Okuyan tek yer döngü; düğme yalnız not bırakıyor.
    */
   const announce = useRef<string | null>(null);
+  /**
+   * Oturum başında cebe kondu: cep anonsu SIRADAKİ kelimeden ÖNCE okunmalı.
+   * `announce` bir sonraki `hearOnce`'ta (kelimeden SONRA) okunuyor; başlangıçta
+   * bu "önce kelime, sonra cebe konuldu" sırasını veriyordu (bkz. darken/loop).
+   */
+  const pocketPreroll = useRef(false);
+  /** Teslim işaretinin ("weiter") ne olduğu yürüyüşe girişte bir kez okunur. */
+  const hintDone = useRef(false);
   /** Tur bir sebeple bitti mi — sökülürken ikinci bir `walk_end` yazılmasın. */
   const ended = useRef(false);
   /** `?diag=1`: son dinlemelerin yolu ve sonucu ekranda — telefonda bir bakışta. */
@@ -417,17 +398,19 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   const load = useCallback(async () => {
     try {
-      const res = await fetch("/api/session", {
+      // walk=1: sunucu yürüyüşe özel TEMİZ kuyruğu kuruyor (tam 20 tur, kelime
+      // başına tek "speak", araya birkaç yeni; bkz. buildWalk) ve session_state'e
+      // dokunmuyor. Client tarafı benzersizleştirme (eski walkQueue) artık gereksiz.
+      const res = await fetch("/api/session?walk=1", {
         cache: "no-store",
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });
       if (!res.ok) return setStatus("error");
       const data = (await res.json()) as SessionPayload & { resume?: SessionProgress | null };
       if (!data.rounds.length) return setStatus("empty");
-      const rounds = walkQueue(data.rounds);
-      setSession({ ...data, rounds });
+      setSession(data);
       const at = data.resume?.index ?? 0;
-      setIndex(Math.min(at, rounds.length - 1));
+      setIndex(Math.min(at, data.rounds.length - 1));
       if (data.resume) {
         tallyRef.current = { correct: data.resume.correct, total: data.resume.total };
         setTally(tallyRef.current);
@@ -443,38 +426,21 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     void load();
   }, [load]);
 
-  /** Cevapları ve turun nerede kalındığını gönderir — ekrandaki turla aynı uç. */
-  const flush = useCallback(async (final: boolean, progress: SessionProgress) => {
+  /**
+   * Cevapları SRS'e gönderir (`/api/answers`).
+   *
+   * Yürüyüş DURUM TUTMUYOR (bkz. buildWalk): `session_state`'e hiç dokunmuyor,
+   * çünkü o satır normal oturumla paylaşılıyor ve ilerleme yazmak normal turu
+   * ezerdi. Bu yüzden `progress` GÖNDERİLMİYOR (yollanırsa `/api/answers`
+   * `saveSessionProgress`'i çağırıp o satırı yazardı). Cevabı olmayan adım
+   * (tanıtım) hiçbir şey göndermiyor. Cevaplanan kelime SRS'te ileri gittiği
+   * için sonraki yürüyüşte kendiliğinden geri gelmiyor; aynı yürüyüş içinde de
+   * `?skip=` onu dışarıda tutuyor.
+   */
+  const flush = useCallback(async (final: boolean) => {
     const batch = pending.current;
     pending.current = [];
-    /*
-      Cevap yoksa da NEREDE KALINDIĞI yazılmalı.
-
-      Eskiden burada dönülüyordu ve sonucu ağırdı: duyulmayan tur cevap
-      üretmiyor (bilerek — yanlış sayılmıyor), yani bir turun bütün cevapları
-      duyulmadığında ilerleme hiç kaydedilmiyordu. Sunucudaki tur yarım kalmış
-      görünüyor ve `loadSession` yarım turu olduğu gibi geri veriyor. Yani hem
-      "devam edelim mi?" sonrası hem de uygulamaya yeniden girişte AYNI yirmi
-      tur geliyordu — "yapamadıklarımı tekrar tekrar veriyor" ve "her girip
-      bitirdiğimde aynı kelimeler geliyor" şikâyetlerinin ikisi de buydu.
-
-      İlerleme için ayrı bir uç zaten var; cevap üretmeyen adımlar için
-      yazılmıştı (bkz. api/session POST).
-    */
-    if (!batch.length) {
-      try {
-        await fetch("/api/session", {
-          signal: AbortSignal.timeout(NET_TIMEOUT_MS),
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ day: localDay(), progress }),
-          keepalive: true,
-        });
-      } catch {
-        /* çevrimdışıysa ilerleme bu tur için kaybolur */
-      }
-      return;
-    }
+    if (!batch.length) return;
     try {
       const res = await fetch("/api/answers", {
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
@@ -484,7 +450,6 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           answers: batch,
           day: localDay(),
           seconds: final ? Math.round((Date.now() - startedAt.current) / 1000) : 0,
-          progress,
         }),
         keepalive: true,
       });
@@ -948,13 +913,12 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const fetchSession = useCallback(async (): Promise<SessionPayload | null> => {
     try {
       const skip = [...askedIds.current].join(",");
-      const res = await fetch(`/api/session${skip ? `?skip=${skip}` : ""}`, {
+      const res = await fetch(`/api/session?walk=1${skip ? `&skip=${skip}` : ""}`, {
         cache: "no-store",
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });
       if (!res.ok) return null;
-      const data = (await res.json()) as SessionPayload;
-      return { ...data, rounds: walkQueue(data.rounds) };
+      return (await res.json()) as SessionPayload;
     } catch {
       return null;
     }
@@ -1024,6 +988,29 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       let current = rounds;
       let start = from;
 
+      // Oturum başı, bir kez okunuyor (devam turları while'ın içinde):
+      //   • Cebe kondu ise ("Cebe koy, başla") çıkış anonsu — SIRADAKİ kelimeden
+      //     ÖNCE, "önce kelime sonra cebe konuldu" sırası olmasın diye.
+      //   • Teslim işaretinin ne olduğu ("weiter") — girişte bir kez (hintDone).
+      const preroll: SpeechSegment[] = [];
+      if (pocketPreroll.current) {
+        pocketPreroll.current = false;
+        preroll.push({ lang: "tr", text: POCKET_ANNOUNCE });
+      }
+      if (!hintDone.current) {
+        hintDone.current = true;
+        preroll.push(
+          { lang: "tr", text: "Bilmediğin kelimede" },
+          { lang: "de", text: "weiter" },
+          { lang: "tr", text: "de." },
+        );
+      }
+      if (preroll.length) {
+        setPhase("speaking");
+        await say(preroll);
+        if (!alive()) return;
+      }
+
       // eslint-disable-next-line no-constant-condition
       while (true) {
       for (let i = start; i < current.length; i++) {
@@ -1058,8 +1045,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             continue;
           }
 
-          // Kuyruk yüklemede benzersizleştirildi (bkz. walkQueue); burada yalnızca
-          // devam turunun bu kelimeyi tekrar getirmemesi için işaretleniyor.
+          // Kuyruk zaten sunucuda benzersiz (bkz. buildWalk); bu işaret yalnızca
+          // DEVAM turunun `?skip=` listesini besliyor — aynı yürüyüşte aynı
+          // kelime ikinci kez gelmesin.
           askedIds.current.add(word.id);
 
           setPrompt({ tr: word.tr, de: target });
@@ -1080,9 +1068,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               "de",
               ANSWER_WINDOW_MS,
               target,
-              // Dogru cevap DA "bilmiyorum" da dinlemeyi erken kapatir: teslim
-              // eden kisi cevap penceresinin dolmasini beklemesin.
-              (alts) => spokenMatches(alts, [target, word.de]) || alts.some(parseSkip),
+              // Doğru cevap DA teslim işareti ("weiter") de dinlemeyi erken
+              // kapatır: cevap veren de teslim eden de pencerenin dolmasını beklemesin.
+              (alts) => spokenMatches(alts, [target, word.de]) || alts.some(parseSkipDe),
               [{ lang: "tr", text: word.tr }],
             );
           let heard = await ask();
@@ -1109,12 +1097,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           // yanlış sayılıyordu.
           const said = heard.find((h) => h.trim()) ?? "";
           const unheard = !said;
-          // "Bilmiyorum" YANLIŞ değil, bir teslim: ceza yok, kısa motive + doğrusu.
-          // Tanıyıcı de-DE kipinde olduğu için Türkçe teslim ifadesi en iyi
-          // tahminde Almancaya bozulmuş çıkabiliyor ama alt tahminlerden birinde
-          // Türkçesi durabiliyor; o yüzden TÜM n-best taranıyor (parseSkip tutucu).
-          const skipped = !unheard && heard.some((h) => parseSkip(h));
-          const ok = !unheard && !skipped && spokenMatches(heard, [target, word.de]);
+          // Doğruluk ÖNCE. Teslim ("weiter", "weiß nicht") yalnız cevap hedefe
+          // UYMADIĞINDA aranıyor — böylece hedefin kendisi bu kelimelerden biri
+          // olsa bile doğru cevap yanlışlıkla teslim sayılmıyor.
+          const ok = !unheard && spokenMatches(heard, [target, word.de]);
+          // Teslim YANLIŞ değil: ceza yok, kısa motive + doğrusu. İşaret ALMANCA
+          // veriliyor çünkü de-DE tanıyıcı Türkçe "bilmiyorum"u yakalayamıyor.
+          const skipped = !unheard && !ok && heard.some((h) => parseSkipDe(h));
           setHeardText(said);
 
           // Pencere her turda güncelleniyor: duyulan da duyulmayan da giriyor.
@@ -1221,13 +1210,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
         pending.current.push(...results);
         const last = i >= current.length - 1;
-        await flush(last, {
-          correct: tallyRef.current.correct,
-          total: tallyRef.current.total,
-          xp: tallyRef.current.correct * 10,
-          index: last ? current.length : i + 1,
-          missed: missed.current,
-        });
+        await flush(last);
         if (!alive()) return;
       }
 
@@ -1365,13 +1348,19 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       /* fullscreen reddedilirse katman yine örter, yalnız sistem çubukları kalır */
     }
     track("walk_switch", 1, "dark");
-    // Anons kısa: uzun açıklama akışı boğuyordu. Kelime bir sonraki turda değil,
-    // HEMEN tekrar sorulsun diye süren dinleme iptal ediliyor (reask) — kullanıcı
-    // darken'a basarken kelimeyi kaçırmasın.
-    announce.current = "Cepte. Çıkış: üç dokunuş.";
+    // Anons kısa: uzun açıklama akışı boğuyordu.
     if (hearCtl.current && !hearCtl.current.signal.aborted) {
+      // Kelime DİNLENİRKEN cebe kondu: süren dinleme iptal edilip önce anons,
+      // sonra kelime tekrar okunup yeniden dinleniyor (reask) — kullanıcı
+      // darken'a basarken kelimeyi kaçırmasın.
+      announce.current = POCKET_ANNOUNCE;
       reask.current = true;
       hearCtl.current.abort();
+    } else {
+      // Başlangıçta ("Cebe koy, başla") cebe kondu: anons SIRADAKİ kelimeden
+      // ÖNCE okunmalı, döngü başında (bkz. loop) — yoksa "önce kelime, sonra
+      // cebe konuldu" sırası oluyordu.
+      pocketPreroll.current = true;
     }
   }
 

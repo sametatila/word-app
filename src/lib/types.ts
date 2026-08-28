@@ -108,6 +108,10 @@ export type Option = { text: string; sub: string | null };
 
 export type Round =
   | { id: string; game: "intro"; word: RoundWord }
+  // Yalnızca yürürken modu üretir ve tüketir: "Almancasını söyle". Ekran
+  // oyunlarının hiçbiri bunu render etmez (GameSwitch'te bilinçli olarak yok),
+  // çünkü sesli cevap yalnız yürüyüşte var. Taşıdığı tek şey kelime.
+  | { id: string; game: "speak"; word: RoundWord }
   | { id: string; game: "match"; words: RoundWord[] }
   | { id: string; game: "choice"; word: RoundWord; options: Option[]; direction: "de-tr" | "tr-de" }
   | { id: string; game: "artikel"; word: RoundWord }

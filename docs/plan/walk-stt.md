@@ -272,6 +272,35 @@ Cihaz testinden sonra sahibin sıraladığı dört kusur; hepsi kod tarafı, ses
 
 Testler: `test:numbers`e noktalama vakaları eklendi. tsc + build yeşil.
 
+## v9 — sunucu-tarafı temiz kuyruk + sıra + Almanca teslim (2026-08-28)
+
+Sahip "en baştan tek oyuna odaklan mantığıyla kurgula" dedi. Kök neden ikiliydi:
+yürüyüş **karışık SRS oturumunu** çekiyordu (tanıtım+üretim+assist+eşleştirme → "10 yeni
+kelime = 30 tur"), ÜSTELİK normal oturumla **aynı `session_state` satırını** paylaşıp
+birbirini eziyordu (eski resume-loop bugu da buydu). Dört düzeltme:
+
+1. **Sunucu kuyruğu (`buildWalk`, session.ts + `?walk=1`).** Yürüyüşe özel, tek oyunlu
+   (`speak`), TAM `ROUNDS_PER_SESSION` (20), kelime başına tek tur, tekrar tabanı + arada
+   `WALK_NEW=3` yeni kelime (her biri intro+speak çifti). Aşım yok, atlama yok, kopya yok.
+   Saf diziliş `composeWalk` olarak ayrıldı → `npm run test:walkqueue` (tam-boyut/aşım/
+   yeni-kullanıcı/ince/sınır). Yeni `speak` Round tipi eklendi (types.ts) — sıfır blast
+   radius (GameSwitch onu render etmiyor, yalnız yürüyüş üretip tüketiyor).
+2. **İzole durum.** `buildWalk` `session_state`'e HİÇ dokunmuyor; client artık `progress`
+   GÖNDERMİYOR (yollasa `/api/answers` → `saveSessionProgress` normal turu ezerdi). Cevapsız
+   adım (intro) hiçbir şey yollamıyor. SRS `/api/answers` ile yürüyor; cevaplanan kelime
+   ileri gittiği için sonraki yürüyüşte gelmiyor, aynı yürüyüşte `?skip=` tutuyor. Client
+   `walkQueue` benzersizleştirmesi silindi (sunucu zaten temiz).
+3. **Sıra düzeltmesi.** "Cebe koy, başla"da cep anonsu artık SIRADAKİ kelimeden ÖNCE
+   (`pocketPreroll` + döngü başı), eskiden `announce` bir sonraki `hearOnce`'ta yani
+   kelimeden SONRA okunuyordu ("önce kelime, sonra cebe konuldu" bug'ı).
+4. **Almanca teslim (sahip kararı).** de-DE tanıyıcı Türkçe "bilmiyorum"u yakalayamıyor
+   (Türkçe→Almanca fonem çöpü, öngörülemez). Sahip "sadece Almanca kelime" seçti: `parseSkipDe`
+   ("weiter", "weiß nicht", "keine Ahnung"). Teslim yalnız cevap hedefe UYMADIĞINDA aranıyor
+   (hedef "weiter" olsa bile doğru cevap teslim sayılmasın). Girişte bir kez "Bilmediğinde
+   'weiter' de" okunuyor. Türkçe `parseSkip` kaldırıldı.
+
+tsc + build + test:walkqueue + test:numbers yeşil. Deploy sahipte.
+
 ## Açık kalanlar
 - Küçük UX: 3. duyulmamada tur durunca son "duyamadım" anonsu, durma anonsuyla çakışıp
   kesiliyor (stopAll okumayı iptal ediyor). Sahibin notu; ertelendi.

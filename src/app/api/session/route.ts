@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
-import { clearSessionState, loadSession, saveSessionProgress } from "@/lib/session";
+import { buildWalk, clearSessionState, loadSession, saveSessionProgress } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
 import { PLAYABLE_GAMES, type PlayableGame } from "@/lib/types";
 
@@ -18,6 +18,9 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const today = normalizeDay(url.searchParams.get("day"));
   const extra = url.searchParams.get("extra") === "1";
+  // Yürüyüş turu: kendi temiz kuyruğunu kurar ve `session_state`'e hiç
+  // dokunmaz (normal oturumla aynı satırı paylaşıp birbirini ezmesinler).
+  const walk = url.searchParams.get("walk") === "1";
   // Tek oyunlu tur: "?game=artikel". Tanıtım kartı bir oyun değil, bir
   // ekran — tek başına 20 tur tanıtım istenmesi anlamsız olurdu.
   const raw = url.searchParams.get("game");
@@ -40,7 +43,9 @@ export async function GET(req: Request) {
     .filter((n) => Number.isInteger(n) && n > 0)
     .slice(-SKIP_LIMIT);
   try {
-    const payload = await loadSession(userId, today, extra, only, skip);
+    const payload = walk
+      ? await buildWalk(userId, today, skip)
+      : await loadSession(userId, today, extra, only, skip);
     return NextResponse.json(payload);
   } catch (err) {
     console.error("[session]", err);
