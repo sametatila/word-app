@@ -7,7 +7,7 @@
  */
 import assert from "node:assert/strict";
 import { foldNumbers, wordToNumber } from "../src/lib/german-numbers";
-import { foldSpelling, spokenMatches } from "../src/components/games/types";
+import { foldSpelling, spokenMatches, expandPunctuationWords } from "../src/components/games/types";
 import { matchSentence } from "../src/lib/sentence-match";
 import { normalizeSpoken } from "../src/lib/speech";
 
@@ -51,4 +51,19 @@ assert.ok(!foldSpelling("Einsamkeit").includes("1"), "Einsamkeit rakama dönmeme
 assert.equal(normalizeSpoken("Fünf"), "5");
 assert.equal(normalizeSpoken("schön"), "schön", "umlaut korunmalı");
 
-console.log("test:numbers — sözcük/rakam/bileşik/artikel/cümle/kelime/telaffuz: tamam");
+// ── Noktalama-adı kelimeleri ────────────────────────────────────────────
+// Tanıyıcı "der Punkt" duyunca "Punkt"u yazım komutu sayıp "." yazıyor; simge
+// normalize'de silinince cevap ortadan kalkıyordu. Simge geri sözcüğe açılmalı.
+assert.equal(expandPunctuationWords("der."), "der punkt", "nokta simgesi sözcüğe açılır");
+assert.equal(expandPunctuationWords("."), "punkt");
+assert.ok(spokenMatches(["der."], ["der Punkt"]), "der. → der Punkt eşleşmeli (asıl hata)");
+assert.ok(spokenMatches(["."], ["Punkt"]), "yalın nokta simgesi Punkt sayılmalı");
+assert.ok(spokenMatches(["Punkt"], ["der Punkt"]), "sözcük biçimi zaten eşleşiyor");
+assert.ok(spokenMatches([",", "das."], ["das Komma"]), "komma simgesi de açılır");
+// Normal cevap trailing nokta ile bozulmuyor
+assert.ok(spokenMatches(["die Katze."], ["die Katze"]), "sonda nokta olan normal cevap doğru kalır");
+// Yanlış cevap noktalama açılımıyla YANLIŞLIKLA doğru olmuyor
+assert.ok(!spokenMatches(["der."], ["die Katze"]), "der. Katze cevabını doğru yapmamalı");
+assert.ok(!spokenMatches(["hund."], ["der Punkt"]), "alakasız kelime + nokta Punkt sayılmamalı");
+
+console.log("test:numbers — sözcük/rakam/bileşik/artikel/cümle/kelime/telaffuz/noktalama: tamam");

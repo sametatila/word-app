@@ -251,6 +251,36 @@ function wordsOf(round: Round): RoundWord[] {
   return round.game === "match" ? round.words : [round.word];
 }
 
+/**
+ * Yürüyüş kuyruğu: aynı kelimeyi bir kez.
+ *
+ * Ekrandaki tur kuyruğu bir kelimeyi birden çok OYUNDA kullanabiliyor
+ * (scramble'da diz, cloze'da boşluk doldur, listen'da dikte) — orada bunlar
+ * farklı beceri. Yürüyüşte hepsi tek "Almancasını söyle"ye indiği için aynı
+ * kelime iki-üç kez soruluyordu. Benzersizleştirmeyi YÜKLEMEDE yapıyoruz ki
+ * sayaç da doğru olsun: "1/20" deyip 15'te bitmek yerine baştan "1/15".
+ * intro tanıtım olduğu için sayılmıyor (tanıtılan kelime ayrıca sorulabilsin).
+ */
+function walkQueue(rounds: Round[]): Round[] {
+  const seen = new Set<number>();
+  const out: Round[] = [];
+  for (const r of rounds) {
+    if (r.game === "match") {
+      out.push(r);
+      for (const w of r.words) seen.add(w.id);
+      continue;
+    }
+    if (r.game === "intro") {
+      out.push(r);
+      continue;
+    }
+    if (seen.has(r.word.id)) continue;
+    seen.add(r.word.id);
+    out.push(r);
+  }
+  return out;
+}
+
 export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const [status, setStatus] = useState<Status>("loading");
   const [session, setSession] = useState<SessionPayload | null>(null);
@@ -394,9 +424,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       if (!res.ok) return setStatus("error");
       const data = (await res.json()) as SessionPayload & { resume?: SessionProgress | null };
       if (!data.rounds.length) return setStatus("empty");
-      setSession(data);
+      const rounds = walkQueue(data.rounds);
+      setSession({ ...data, rounds });
       const at = data.resume?.index ?? 0;
-      setIndex(Math.min(at, data.rounds.length - 1));
+      setIndex(Math.min(at, rounds.length - 1));
       if (data.resume) {
         tallyRef.current = { correct: data.resume.correct, total: data.resume.total };
         setTally(tallyRef.current);
@@ -473,6 +504,14 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   /** Okur ve bitmesini bekler. İptal edilirse söz elle çözülür, döngü kilitlenmez. */
   const say = useCallback((segments: SpeechSegment[]): Promise<void> => {
+    // Tur bittiyse (Bitir/Duraklat/ekran kapandı) hiçbir okuma başlamıyor.
+    // Bug: "devam edelim mi?" okuması ağa çıkmıştı, kullanıcı Bitir'e basıp
+    // ana ekrana döndü ve gecikmeli ses ORADA çaldı. Bekleyen okumayı da
+    // burada kesiyoruz; çalan okumayı stopSpeaking (stopAll) durduruyor.
+    if (ended.current) {
+      stopSpeaking();
+      return Promise.resolve();
+    }
     const spoken = new Promise<void>((resolve) => {
       speakDone.current = resolve;
       /*
@@ -914,7 +953,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });
       if (!res.ok) return null;
-      return (await res.json()) as SessionPayload;
+      const data = (await res.json()) as SessionPayload;
+      return { ...data, rounds: walkQueue(data.rounds) };
     } catch {
       return null;
     }
@@ -936,6 +976,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       setVerdict(null);
       try {
       for (let attempt = 0; attempt < 2; attempt++) {
+        // Kullanıcı bu soru okunurken/dinlenirken Bitir'e bastıysa (ended)
+        // ikinci denemeye HİÇ geçilmiyor: yoksa taze bir `say` jetonu alıp
+        // "Devam edelim mi?" ana ekrana dönüldükten sonra çalıyordu.
+        if (ended.current) return "no";
         setPhase("speaking");
         setPrompt(null);
         await say([
@@ -944,6 +988,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             text: attempt === 0 ? `${summary} Devam edelim mi?` : "Devam edelim mi? Evet ya da hayır de.",
           },
         ]);
+        if (ended.current) return "no";
         setPhase("listening");
         const heard = await hear(
           "tr",
@@ -1013,19 +1058,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             continue;
           }
 
-          /*
-            Aynı kelimeyi bu yürüyüşte İKİNCİ kez sorma.
-
-            Ekrandaki tur kuyruğu bir kelimeyi birden çok OYUNDA kullanabiliyor
-            (scramble'da diz, cloze'da boşluk doldur, listen'da dikte) — ekranda
-            bunlar farklı beceri, tekrar değil. Ama yürüyüşte hepsi tek bir soruya
-            iniyor ("Almancasını söyle") ve aynı kelime iki-üç kez soruluyordu:
-            "doğru bildiğimi tekrar soruyor" şikâyeti buydu (ölçüldü: 20 turluk
-            kuyrukta bir kelime üç kez). İlk sorulduğunda işaretleniyor, sonrakiler
-            atlanıyor. intro tanıtım olduğu için işaretlenmiyor: yeni kelime
-            tanıtılıp ardından bir kez sorulabilsin.
-          */
-          if (askedIds.current.has(word.id)) continue;
+          // Kuyruk yüklemede benzersizleştirildi (bkz. walkQueue); burada yalnızca
+          // devam turunun bu kelimeyi tekrar getirmemesi için işaretleniyor.
           askedIds.current.add(word.id);
 
           setPrompt({ tr: word.tr, de: target });
@@ -1046,7 +1080,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               "de",
               ANSWER_WINDOW_MS,
               target,
-              (alts) => spokenMatches(alts, [target, word.de]),
+              // Dogru cevap DA "bilmiyorum" da dinlemeyi erken kapatir: teslim
+              // eden kisi cevap penceresinin dolmasini beklemesin.
+              (alts) => spokenMatches(alts, [target, word.de]) || alts.some(parseSkip),
               [{ lang: "tr", text: word.tr }],
             );
           let heard = await ask();
@@ -1074,7 +1110,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           const said = heard.find((h) => h.trim()) ?? "";
           const unheard = !said;
           // "Bilmiyorum" YANLIŞ değil, bir teslim: ceza yok, kısa motive + doğrusu.
-          const skipped = !unheard && parseSkip(said);
+          // Tanıyıcı de-DE kipinde olduğu için Türkçe teslim ifadesi en iyi
+          // tahminde Almancaya bozulmuş çıkabiliyor ama alt tahminlerden birinde
+          // Türkçesi durabiliyor; o yüzden TÜM n-best taranıyor (parseSkip tutucu).
+          const skipped = !unheard && heard.some((h) => parseSkip(h));
           const ok = !unheard && !skipped && spokenMatches(heard, [target, word.de]);
           setHeardText(said);
 

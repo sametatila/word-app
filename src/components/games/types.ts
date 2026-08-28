@@ -119,6 +119,33 @@ export function matchesAnswer(typed: string, candidates: string[]): boolean {
 }
 
 /**
+ * Tanıyıcının sözlü noktalama ADINI simgeye çevirmesini geri alır.
+ *
+ * Almanca tanıyıcı "Punkt" dendiğinde onu bir yazım komutu sayıp "." yazıyor
+ * (aynı biçimde Komma→",", Fragezeichen→"?"). Ama "der Punkt" başlı başına bir
+ * sözlük kelimesi (nokta): simge sonra `normalize` tarafından silinince cevap
+ * ORTADAN kalkıyordu ve hiçbir zaman eşleşmiyordu ("der punkt diyorum, da
+ * olarak duydu"). Burada simge tekrar sözcüğe açılıyor; yalnızca EK bir okuma
+ * olarak deneniyor (asıl okuma önce), yani yanlışlıkla nokta eklenen normal
+ * bir cevaba zarar vermiyor — fazladan sözcük zaten `spokenMatches`'te bağışlı.
+ */
+const RECOGNIZER_PUNCT: Array<[RegExp, string]> = [
+  [/\u2026|\.\.\./g, " punkt "],
+  [/\./g, " punkt "],
+  [/,/g, " komma "],
+  [/\?/g, " fragezeichen "],
+  [/!/g, " ausrufezeichen "],
+  [/:/g, " doppelpunkt "],
+  [/;/g, " semikolon "],
+];
+
+export function expandPunctuationWords(s: string): string {
+  let out = s;
+  for (const [re, word] of RECOGNIZER_PUNCT) out = out.replace(re, word);
+  return out.replace(/\s+/g, " ").trim();
+}
+
+/**
  * Söylenen cevap, verilen başlıklardan biriyle eşleşiyor mu?
  *
  * Yazılan cevaptan iki noktada ayrılıyor ve ikisi de ölçümden çıktı:
@@ -146,13 +173,21 @@ export function spokenMatches(heard: string[], candidates: string[]): boolean {
     .filter(Boolean);
   if (!forms.length) return false;
 
-  return heard.some((raw) => {
-    const said = foldSpelling(raw);
-    if (!said) return false;
-    return forms.some(
+  // Asıl okuma fazladan kelimeyi bağışlar (içerme); noktalama-adı açılmış
+  // okuma ise YALNIZCA tam eşleşir. Aksi hâlde "Hund." → "hund punkt" içinde
+  // "punkt" geçtiği için hedef "Punkt" yanlışlıkla doğru sayılırdı.
+  const loose = (said: string) =>
+    !!said &&
+    forms.some(
       (form) =>
         said === form || (form.length >= CONTAINS_MIN && ` ${said} `.includes(` ${form} `)),
     );
+  const exact = (said: string) => !!said && forms.some((form) => said === form);
+
+  return heard.some((raw) => {
+    if (loose(foldSpelling(raw))) return true;
+    const expanded = expandPunctuationWords(raw);
+    return expanded !== raw && exact(foldSpelling(expanded));
   });
 }
 

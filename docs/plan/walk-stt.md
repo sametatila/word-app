@@ -237,6 +237,41 @@ ileride, ya da temizlik commit'inde).
 > (ekran açık); `walk_listen` `browser:ok` gelmeli. `test:walk`ın cep-kayıt senaryoları
 > (`switch`/`ok`) bu değişiklikle eskidi — karart moduna göre güncellenecek (ayrı iş).
 
+## v8 — sayaç, gecikmeli ses, teslim, noktalama (2026-08-28)
+
+Cihaz testinden sonra sahibin sıraladığı dört kusur; hepsi kod tarafı, ses yolu değişmedi.
+
+1. **"20 soracak ama 15'te bitiyor."** Ekran tur kuyruğu bir kelimeyi birden çok OYUNDA
+   kullanıyor (scramble/cloze/listen ayrı beceri); yürüyüşte hepsi "Almancasını söyle"ye
+   iniyor ve aynı kelime tekrar geliyordu. Eskiden döngü çalışırken atlanıyordu (`askedIds`
+   `continue`) → sayaç 20 der, 15'te biter. Artık YÜKLEMEDE benzersizleştiriliyor
+   (`walkQueue`, walk-player.tsx): sayaç baştan doğru ("1/15"). Turlar arası tekrar zaten
+   SUNUCUDA `?skip=` ile eleniyor (`fetchSession`), o yüzden `askedIds.add` duruyor ama
+   çalışma-anı atlaması kalktı.
+
+2. **Bitir'e basınca gecikmeli ses.** "Devam edelim mi?" okuması ağ yolundayken Bitir'e
+   basılıp ana ekrana dönülüyor, sonra ses ORADA çalıyordu. Kök neden: her `speakSegments`
+   yeni bir jeton alıyor, yani eski `stopSpeaking`'in jeton artışı SONRAKİ `say`i durdurmuyor.
+   `say` artık `ended.current` iken hiç başlamıyor + `askContinue` ikinci denemeye `ended`
+   iken geçmiyor.
+
+3. **"bilmiyorum/bilemedim" anlaşılmıyor.** Tanıyıcı de-DE kipinde; Türkçe teslim ifadesi
+   Almancaya bozuluyor. Gerçek çift-dil ikinci bir tanıyıcı ister (yapıyı bozar, sahibin şartı
+   "bozmazsa"). Yapıyı bozmadan yapılan: `parseSkip` artık TÜM n-best'i tarıyor (ilk tahmin
+   bozuksa alt tahminde Türkçesi durabiliyor) ve teslim de dinlemeyi erken kapatıyor. Kalan
+   boşluk veri işi: `?diag=1` ham metni gösteriyor, gerçek de-DE biçimleri gelince tam
+   eklenecek. Spekülatif Almanca parça EKLENMEDİ (gerçek cevaba yanlış-teslim riski).
+
+4. **"der Punkt diyorum, 'da' duyuyor" + sayılar.** Almanca tanıyıcı sözlü noktalama ADINI
+   simgeye çeviriyor ("Punkt"→"."), simge de `normalize`'de siliniyordu → "der Punkt" (nokta,
+   B1 sözlük kelimesi id 2528) hiç eşleşmiyordu. `expandPunctuationWords` simgeyi geri sözcüğe
+   açıyor, `spokenMatches`'te YALNIZ tam-eşleşme olarak ek okuma (asıl okuma önce; "Hund."→
+   "hund punkt" içinde "punkt" geçip yanlış doğru saymasın diye tam-eşleşme şart). Sayılar
+   zaten `foldNumbers` ile iki yönlü katlı (yalın sayı sözlük kelimesi yok; test:numbers).
+   Not: saf akustik yanılma ("da", hiçbir alternatifte simge/kelime yoksa) kodla çözülemez.
+
+Testler: `test:numbers`e noktalama vakaları eklendi. tsc + build yeşil.
+
 ## Açık kalanlar
 - Küçük UX: 3. duyulmamada tur durunca son "duyamadım" anonsu, durma anonsuyla çakışıp
   kesiliyor (stopAll okumayı iptal ediyor). Sahibin notu; ertelendi.
