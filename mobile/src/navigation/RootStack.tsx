@@ -20,6 +20,7 @@ import { DailyScreen } from "../screens/DailyScreen";
 import { WeeklyScreen } from "../screens/WeeklyScreen";
 import { PracticeScreen } from "../screens/PracticeScreen";
 import { QuestsScreen } from "../screens/QuestsScreen";
+import { CandoScreen } from "../screens/CandoScreen";
 
 /** Kök yığın: onboarding + sekmeler + üzerine tam ekran açılan akış ekranları. */
 export type RootStackParams = {
@@ -42,6 +43,7 @@ export type RootStackParams = {
   Weekly: undefined;
   Practice: undefined;
   Quests: undefined;
+  Cando: undefined;
   Item: { id: string; kind: string; title: string };
 };
 
@@ -70,6 +72,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Quests" component={QuestsScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Cando" component={CandoScreen} />
     </Stack.Navigator>
   );
 }
