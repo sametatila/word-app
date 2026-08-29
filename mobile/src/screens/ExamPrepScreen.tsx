@@ -8,6 +8,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon, ChevronRightIcon, ReadIcon, ListenIcon, WriteIcon, BoltIcon, CheckIcon } from "../ui/icons";
+import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 /**
@@ -29,6 +30,10 @@ export function ExamPrepScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [exam, setExam] = useState(0);
+  const { me } = useMe();
+  const level = me?.level ?? "A1";
+  // Genel ilerleme: gerçek kelime kapsaması (pekişen/toplam). Yoksa gizli.
+  const overallPct = me && me.totalWords ? Math.min(100, Math.round((me.mastered / me.totalWords) * 100)) : null;
   const tintOf = (k: keyof Palette) => colors[k] as string;
 
   return (
@@ -46,12 +51,14 @@ export function ExamPrepScreen() {
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
             <View>
               <Text variant="micro" color={colors.textMuted}>SEVİYE</Text>
-              <Text variant="h1" color={colors.primary}>A1</Text>
+              <Text variant="h1" color={colors.primary}>{level}</Text>
             </View>
-            <View style={{ alignItems: "flex-end" }}>
-              <Text variant="micro" color={colors.textMuted}>GENEL İLERLEME</Text>
-              <Text variant="h1">%38</Text>
-            </View>
+            {overallPct !== null && (
+              <View style={{ alignItems: "flex-end" }}>
+                <Text variant="micro" color={colors.textMuted}>KELİME KAPSAMASI</Text>
+                <Text variant="h1">%{overallPct}</Text>
+              </View>
+            )}
           </View>
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
             {EXAMS.map((e, i) => {
