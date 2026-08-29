@@ -35,12 +35,16 @@ export function GameScreen() {
   const startedAt = useRef(0);
   const roundStart = useRef(0);
   const day = useRef(todayStr());
+  // Bu oturumun cevapları sunucuya yazıldı mı? (finish ya da çıkış-flush)
+  // İkisi birden yazıp XP/SRS'i çift saymasın diye tek kapı.
+  const submitted = useRef(false);
 
   async function load() {
     setPhase("loading");
     try {
       const p = await fetchSession(day.current);
       answers.current = [];
+      submitted.current = false;
       setRounds(p.rounds ?? []);
       setMeta(p.meta ?? null);
       setIdx(0);
@@ -54,6 +58,20 @@ export function GameScreen() {
     }
   }
   useEffect(() => { load(); }, []);
+
+  // Yarım kalan turu terk edince (X / donanım geri / kaydırma) toplanan
+  // cevapları yaz — web'deki çıkışta-flush (sendBeacon) gibi. Yoksa 15/20'de
+  // çıkan kullanıcının emeği ve SRS/XP güncellemesi tümden yok olurdu.
+  useEffect(() => {
+    return () => {
+      if (submitted.current) return;
+      const pending = answers.current;
+      if (!pending.length) return;
+      submitted.current = true;
+      const secs = Math.round((Date.now() - startedAt.current) / 1000);
+      void submitAnswers(pending, day.current, secs).catch(() => { /* sessizce düşer */ });
+    };
+  }, []);
 
   function onDone(ok: boolean) {
     const r = rounds[idx];
@@ -71,6 +89,8 @@ export function GameScreen() {
     setPhase("done");
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
     track("session_done", ok, "session");
+    if (submitted.current) return;
+    submitted.current = true;
     try { if (answers.current.length) await submitAnswers(answers.current, day.current, secs); } catch { /* ölçüm/yazma sessizce düşer */ }
   }
 
