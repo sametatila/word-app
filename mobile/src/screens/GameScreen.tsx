@@ -73,10 +73,16 @@ export function GameScreen() {
     };
   }, []);
 
-  function onDone(ok: boolean) {
+  function onDone(ok: boolean, batch?: { wordId: number; correct: boolean }[]) {
     const r = rounds[idx];
-    const wordId = r?.word?.id ?? r?.words?.[0]?.id ?? 0;
-    if (wordId && r) answers.current.push({ wordId, game: r.game, correct: ok, latencyMs: Math.max(0, Date.now() - roundStart.current) });
+    const lat = Math.max(0, Date.now() - roundStart.current);
+    if (batch && batch.length && r) {
+      // Çok kelimeli tur (match): her kelimenin SRS'i ayrı yazılır.
+      for (const b of batch) if (b.wordId) answers.current.push({ wordId: b.wordId, game: r.game, correct: b.correct, latencyMs: lat });
+    } else {
+      const wordId = r?.word?.id ?? r?.words?.[0]?.id ?? 0;
+      if (wordId && r) answers.current.push({ wordId, game: r.game, correct: ok, latencyMs: lat });
+    }
     roundStart.current = Date.now();
     const next = idx + 1;
     if (next >= rounds.length) void finish();

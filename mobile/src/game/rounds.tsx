@@ -12,7 +12,9 @@ function norm(s: string): string {
   return s.trim().toLowerCase().replace(/^(der|die|das)\s+/, "").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss").replace(/\s+/g, " ");
 }
 
-type Done = (correct: boolean) => void;
+/** Tur bitince çağrılır. `batch`: çok kelimeli turlar (match) kelime başına
+    sonuç verir; verilmezse çağıran tek cevabı (round.word) yazar. */
+type Done = (correct: boolean, batch?: { wordId: number; correct: boolean }[]) => void;
 
 /** Soru kartı — ortak üst blok. */
 function Prompt({ label, big, sub, colors }: { label: string; big: string; sub?: string | null; colors: Palette }) {
@@ -335,7 +337,74 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
   );
 }
 
-const INTERACTIVE = new Set(["choice", "artikel", "truefalse", "typing", "cloze", "plural", "listen", "scramble", "order", "translate"]);
+/** Eşleştirme kartı — match'in iki sütunundaki tek hücre. */
+function MatchCard({ text, state, onPress, colors }: { text: string; state: "idle" | "sel" | "correct" | "wrong"; onPress: () => void; colors: Palette }) {
+  const border = state === "correct" ? colors.success : state === "wrong" ? colors.danger : state === "sel" ? colors.primary : colors.border;
+  const bg = state === "correct" ? colors.successSoft : state === "wrong" ? colors.dangerSoft : state === "sel" ? colors.primarySoft : colors.surface;
+  return (
+    <PressableScale onPress={onPress} disabled={state === "correct"} style={{ borderWidth: 1.5, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.md, opacity: state === "correct" ? 0.5 : 1, minHeight: 60, justifyContent: "center" }}>
+      <Text variant="bodyStrong" color={colors.text}>{text}</Text>
+    </PressableScale>
+  );
+}
+
+/** Eşleştir (match): Almanca ↔ Türkçe çiftleri. Sol Almanca, sağ karışık Türkçe;
+    sol seç → sağ seç. Her kelimenin SRS'i ayrı yazılır (batch). */
+function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
+  const words = round.words ?? [];
+  const rights = React.useMemo(() => {
+    const arr = words.map((w) => ({ wordId: w.id, text: w.tr }));
+    for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; }
+    return arr;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [round.id]);
+  const [selLeft, setSelLeft] = useState<number | null>(null);
+  const [matched, setMatched] = useState<Set<number>>(new Set());
+  const [wrong, setWrong] = useState<{ left: number; right: number } | null>(null);
+  const wrongBefore = useRef<Set<number>>(new Set());
+  const done = useRef(false);
+
+  function pickLeft(id: number) { if (matched.has(id) || done.current) return; setSelLeft(id); setWrong(null); }
+  function pickRight(r: { wordId: number; text: string }) {
+    if (done.current || selLeft == null || matched.has(r.wordId)) return;
+    if (r.wordId === selLeft) {
+      const nm = new Set(matched); nm.add(selLeft); setMatched(nm); setSelLeft(null);
+      if (nm.size === words.length) {
+        done.current = true;
+        const batch = words.map((w) => ({ wordId: w.id, correct: !wrongBefore.current.has(w.id) }));
+        setTimeout(() => onDone(batch.every((b) => b.correct), batch), 600);
+      }
+    } else {
+      wrongBefore.current.add(selLeft);
+      const l = selLeft;
+      setWrong({ left: l, right: r.wordId });
+      setSelLeft(null);
+      setTimeout(() => setWrong((w) => (w && w.left === l ? null : w)), 550);
+    }
+  }
+
+  return (
+    <View>
+      <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.lg, textAlign: "center" }}>Eşleştir</Text>
+      <View style={{ flexDirection: "row", gap: spacing.md }}>
+        <View style={{ flex: 1, gap: spacing.sm }}>
+          {words.map((w) => {
+            const st = matched.has(w.id) ? "correct" : wrong?.left === w.id ? "wrong" : selLeft === w.id ? "sel" : "idle";
+            return <MatchCard key={w.id} text={withArtikel(w)} state={st} onPress={() => pickLeft(w.id)} colors={colors} />;
+          })}
+        </View>
+        <View style={{ flex: 1, gap: spacing.sm }}>
+          {rights.map((r) => {
+            const st = matched.has(r.wordId) ? "correct" : wrong?.right === r.wordId ? "wrong" : "idle";
+            return <MatchCard key={r.wordId} text={r.text} state={st} onPress={() => pickRight(r)} colors={colors} />;
+          })}
+        </View>
+      </View>
+    </View>
+  );
+}
+
+const INTERACTIVE = new Set(["choice", "artikel", "truefalse", "typing", "cloze", "plural", "listen", "scramble", "order", "translate", "match"]);
 
 /** Tur türüne göre doğru oynatıcıyı seçer. */
 export function RoundView({ round, onDone }: { round: Round; onDone: Done }) {
@@ -350,6 +419,7 @@ export function RoundView({ round, onDone }: { round: Round; onDone: Done }) {
   if (round.game === "scramble" && round.word) return <ScrambleRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "order" && round.tokens?.length && (round.answer as unknown as string[])?.length) return <OrderRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "translate" && round.sentence) return <TranslateRound round={round} onDone={onDone} colors={colors} />;
+  if (round.game === "match" && (round.words?.length ?? 0) >= 2) return <MatchRound round={round} onDone={onDone} colors={colors} />;
   return <SelfAssess round={round} onDone={onDone} colors={colors} />;
 }
 
