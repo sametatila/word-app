@@ -8,6 +8,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, ExamIcon, BellIcon, LogoutIcon, CrownIcon } from "../ui/icons";
+import { useAuth } from "../lib/AuthContext";
 import { useTheme, spacing, radii, softShadow, type ThemeMode, type Palette } from "../theme";
 
 const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
@@ -41,6 +42,9 @@ export function ProfileScreen() {
   const { colors, mode, setMode } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const { user, signOut } = useAuth();
+  const displayName = user?.name ?? "Misafir";
+  const initial = (displayName.trim()[0] ?? "M").toUpperCase();
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -56,10 +60,10 @@ export function ProfileScreen() {
         {/* kimlik kartı */}
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
           <View style={[{ width: 76, height: 76, borderRadius: 38, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 10)]}>
-            <Text variant="display" color="#fff">S</Text>
+            <Text variant="display" color="#fff">{initial}</Text>
           </View>
-          <Text variant="h2" style={{ marginTop: spacing.md }}>Samet</Text>
-          <Text variant="caption" color={colors.textMuted}>A1 · Başlangıç</Text>
+          <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
+          <Text variant="caption" color={colors.textMuted}>{user?.email ?? "A1 · Başlangıç (giriş yapılmadı)"}</Text>
           <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
               <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>7 gün</Text>
@@ -111,10 +115,16 @@ export function ProfileScreen() {
           <Row icon={BellIcon} label="Bildirimler" tint={colors.info} colors={colors} last />
         </Card>
 
-        <PressableScale style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
-          <LogoutIcon color={colors.danger} size={20} />
-          <Text variant="bodyStrong" color={colors.danger}>Çıkış yap</Text>
-        </PressableScale>
+        {user ? (
+          <PressableScale onPress={() => signOut()} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
+            <LogoutIcon color={colors.danger} size={20} />
+            <Text variant="bodyStrong" color={colors.danger}>Çıkış yap</Text>
+          </PressableScale>
+        ) : (
+          <PressableScale onPress={() => nav.navigate("Auth")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.lg }, softShadow(colors.primary, 8)]}>
+            <Text variant="h3" color="#fff">Giriş yap / Kayıt ol</Text>
+          </PressableScale>
+        )}
       </ScrollView>
     </View>
   );

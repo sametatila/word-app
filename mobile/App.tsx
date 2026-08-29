@@ -4,6 +4,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ThemeProvider, useTheme } from "./src/theme";
+import { AuthProvider } from "./src/lib/AuthContext";
 import { RootStack } from "./src/navigation/RootStack";
 import { ONBOARDED_KEY } from "./src/lib/onboarding";
 
@@ -35,7 +36,9 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider>
-        <Nav />
+        <AuthProvider>
+          <Nav />
+        </AuthProvider>
       </ThemeProvider>
     </SafeAreaProvider>
   );

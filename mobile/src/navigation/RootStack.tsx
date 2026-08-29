@@ -8,6 +8,7 @@ import { WalkModeScreen } from "../screens/WalkModeScreen";
 import { PaywallScreen } from "../screens/PaywallScreen";
 import { OnboardingScreen } from "../screens/OnboardingScreen";
 import { UnitScreen } from "../screens/UnitScreen";
+import { AuthScreen } from "../screens/AuthScreen";
 
 /** Kök yığın: onboarding + sekmeler + üzerine tam ekran açılan akış ekranları. */
 export type RootStackParams = {
@@ -19,6 +20,7 @@ export type RootStackParams = {
   Walk: undefined;
   Paywall: undefined;
   Unit: { index: number; theme: string };
+  Auth: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -34,6 +36,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Walk" component={WalkModeScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Unit" component={UnitScreen} />
+      <Stack.Screen name="Auth" component={AuthScreen} options={{ animation: "slide_from_bottom" }} />
     </Stack.Navigator>
   );
 }
