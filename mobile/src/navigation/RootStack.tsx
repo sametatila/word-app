@@ -18,12 +18,13 @@ import { NotificationsScreen } from "../screens/NotificationsScreen";
 import { ItemScreen } from "../screens/ItemScreen";
 import { DailyScreen } from "../screens/DailyScreen";
 import { WeeklyScreen } from "../screens/WeeklyScreen";
+import { PracticeScreen } from "../screens/PracticeScreen";
 
 /** Kök yığın: onboarding + sekmeler + üzerine tam ekran açılan akış ekranları. */
 export type RootStackParams = {
   Onboarding: undefined;
   Tabs: undefined;
-  Game: undefined;
+  Game: { game?: string } | undefined;
   Profile: undefined;
   ExamPrep: undefined;
   Walk: undefined;
@@ -38,6 +39,7 @@ export type RootStackParams = {
   Notifications: undefined;
   Daily: undefined;
   Weekly: undefined;
+  Practice: undefined;
   Item: { id: string; kind: string; title: string };
 };
 
@@ -64,6 +66,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Item" component={ItemScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Daily" component={DailyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} />
     </Stack.Navigator>
   );
 }

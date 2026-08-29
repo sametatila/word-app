@@ -80,11 +80,29 @@ export function todayStr(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
-/** Günün turu (gerçek). Oturum yoksa ApiError(401) fırlar — çağıran girişe yönlendirir. */
-export function fetchSession(day = todayStr(), opts?: { extra?: boolean; walk?: boolean }): Promise<SessionPayload> {
-  const q = `${opts?.extra ? "&extra=1" : ""}${opts?.walk ? "&walk=1" : ""}`;
+/** Günün turu (gerçek). Oturum yoksa ApiError(401) fırlar — çağıran girişe yönlendirir.
+    `game`: tek-oyun pratiği (web'deki oyun seçici — ör. yalnız "artikel").
+    `fresh`: "yeni tura başla" — önce kayıtlı turu atar, sonra yenisini kurar. */
+export async function fetchSession(day = todayStr(), opts?: { extra?: boolean; walk?: boolean; game?: string; fresh?: boolean }): Promise<SessionPayload> {
+  if (opts?.fresh) { try { await api("/api/session", { method: "DELETE" }); } catch { /* yut */ } }
+  const q = `${opts?.extra ? "&extra=1" : ""}${opts?.walk ? "&walk=1" : ""}${opts?.game ? `&game=${opts.game}` : ""}`;
   return api<SessionPayload>(`/api/session?day=${day}${q}`);
 }
+
+/** Tek-oyun pratiğinde oynanabilecek türler (web PLAYABLE_GAMES ile aynı) + Türkçe adlar. */
+export const PRACTICE_GAMES: { game: string; label: string }[] = [
+  { game: "choice", label: "Doğru Anlam" },
+  { game: "artikel", label: "Artikel Yarışı" },
+  { game: "cloze", label: "Cümleyi Tamamla" },
+  { game: "typing", label: "Yazarak Hatırla" },
+  { game: "listen", label: "Kulaktan Tanı" },
+  { game: "truefalse", label: "Doğru mu Yanlış mı" },
+  { game: "match", label: "Eşleştirme" },
+  { game: "scramble", label: "Harf Bulmacası" },
+  { game: "order", label: "Cümleyi Diz" },
+  { game: "plural", label: "Çoğul Bilmece" },
+  { game: "translate", label: "Çevir" },
+];
 
 /** Cevapları sunucuya yazar (SRS + XP + seri güncellenir). `progress` verilirse
     oturum konumu da (index) kaydedilir — kaldığın yerden devam için. */

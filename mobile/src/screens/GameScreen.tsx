@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { View, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
@@ -10,7 +10,7 @@ import { XIcon, ShareIcon } from "../ui/icons";
 import { shareResult } from "../lib/share";
 import { ProgressRing } from "../ui/ProgressRing";
 import { RoundView } from "../game/rounds";
-import { fetchSession, submitAnswers, todayStr, type Round, type SessionMeta, type AnswerOut, type SessionProgress } from "../game/session";
+import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type SessionMeta, type AnswerOut, type SessionProgress } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -26,6 +26,9 @@ export function GameScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const route = useRoute<RouteProp<RootStackParams, "Game">>();
+  const onlyGame = route.params?.game ?? null;
+  const gameLabel = onlyGame ? PRACTICE_GAMES.find((g) => g.game === onlyGame)?.label ?? null : null;
   const [phase, setPhase] = useState<Phase>("loading");
   const [rounds, setRounds] = useState<Round[]>([]);
   const [meta, setMeta] = useState<SessionMeta | null>(null);
@@ -57,13 +60,20 @@ export function GameScreen() {
   async function load() {
     setPhase("loading");
     try {
-      const p = await fetchSession(day.current);
+      // Tek-oyun pratiği hep taze başlar; karışık Günlük tur normal yüklenir.
+      let p = await fetchSession(day.current, onlyGame ? { game: onlyGame, fresh: true } : undefined);
+      let list = p.rounds ?? [];
+      // Karışık tur açılırken slotta tek-oyun pratiği kalıntısı varsa (tüm turlar
+      // tek tür — paylaşılan session_state) onu atla, taze karışık tur getir.
+      // Yoksa Günlük tur yanlışlıkla pratiği "kaldığın yerden" gösterirdi.
+      if (!onlyGame && list.length > 0 && new Set(list.map((x) => x.game)).size === 1) {
+        p = await fetchSession(day.current, { fresh: true });
+        list = p.rounds ?? [];
+      }
       answers.current = [];
       submitted.current = false;
-      const list = p.rounds ?? [];
-      // Yarım kalan turdan devam: sunucu resume.index veriyorsa oradan başla
-      // (baştan tekrar oynatma → çift sayım yok). Aksi hâlde 0.
-      const r = p.resume;
+      // Yarım kalan turdan devam yalnız karışık turda (pratik taze başlar).
+      const r = onlyGame ? null : p.resume;
       const start = r && r.index > 0 && r.index < list.length ? r.index : 0;
       resumeBase.current = { correct: r?.correct ?? 0, total: r?.total ?? 0, xp: r?.xp ?? 0 };
       setRounds(list);
@@ -72,7 +82,7 @@ export function GameScreen() {
       setIdx(start);
       startedAt.current = Date.now();
       roundStart.current = Date.now();
-      track("session_start", 0, "session");
+      track("session_start", 0, onlyGame ? "practice" : "session");
       if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setPhase("done"); }
       else setPhase("play");
     } catch (e) {
@@ -193,6 +203,7 @@ export function GameScreen() {
         </View>
         <Text variant="bodyStrong" color={colors.textMuted}>{idx + 1}/{rounds.length}</Text>
       </View>
+      {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>🎯 {gameLabel} · pratik</Text>}
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />
     </View>
   );
