@@ -111,6 +111,11 @@ dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
+    // Maskot: animasyonlu WebP oynatımı (Erdi). RN'in Fresco'su (3.7.0) animasyon
+    // eklentisini varsayılan getirmiyor; olmadan WebP tek karede donuyor.
+    implementation("com.facebook.fresco:animated-webp:3.7.0")
+    implementation("com.facebook.fresco:webpsupport:3.7.0")
+
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
