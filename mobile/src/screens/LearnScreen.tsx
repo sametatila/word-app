@@ -7,7 +7,7 @@ import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon } from "../ui/icons";
+import { FlameIcon, BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, CheckIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
 import { Mascot } from "../ui/Mascot";
@@ -114,6 +114,7 @@ export function LearnScreen() {
       <ActionRow title="Pratik" subtitle="Tek bir oyunu kendi kelimelerinle çalış" tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
       <ActionRow title="Günün turu" subtitle="Herkesle aynı yarışma · sıralamaya gir" tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
       <ActionRow title="Haftalık sınav" subtitle="Öğrendiklerini ölç · haftada bir" tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
+      <ActionRow title="Günün görevleri" subtitle="Günlük hedefler · XP kazan" tint={colors.streak} icon={CheckIcon} onPress={() => nav.navigate("Quests")} />
       <ActionRow title="Yürüyüş modu" subtitle="Kulakla öğren, ellerin serbest" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
       <ActionRow title="Sınav hazırlık" subtitle="Goethe & telc — hedefe yönelik" tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
     </Screen>
