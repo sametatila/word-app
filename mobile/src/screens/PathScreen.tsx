@@ -4,7 +4,7 @@ import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { LearnIcon, WalkIcon, ArrowRightIcon, CheckIcon } from "../ui/icons";
+import { ListenIcon, CheckIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 // demo veri (gerçek: API + immersion track)
@@ -49,8 +49,8 @@ export function PathScreen() {
         </View>
         {/* sıradaki */}
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.md, padding: spacing.md, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
-          <View style={{ width: 40, height: 40, borderRadius: radii.md, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }}>
-            <WalkIcon color="#fff" size={20} />
+          <View style={{ width: 40, height: 40, borderRadius: radii.md, backgroundColor: colors.info, alignItems: "center", justifyContent: "center" }}>
+            <ListenIcon color="#fff" size={20} />
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="micro" color={colors.textMuted}>SIRADAKİ · DİNLEME</Text>
