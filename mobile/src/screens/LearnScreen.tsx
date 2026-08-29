@@ -10,6 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
+import { Mascot } from "../ui/Mascot";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 /** Alt aksiyon satırı — dil odaklı, sade. */
@@ -67,7 +68,8 @@ export function LearnScreen() {
       {/* GÜNLÜK TUR — dil-içerik öncelikli kahraman (fitness halkası değil) */}
       <PressableScale onPress={() => nav.navigate("Game")}>
         <View style={[{ borderRadius: radii.xl, overflow: "hidden", backgroundColor: colors.primary, marginBottom: spacing.xl }, softShadow(colors.primary, 14)]}>
-          <View style={{ padding: spacing.xl }}>
+          <View style={{ padding: spacing.xl, flexDirection: "row", alignItems: "flex-end", gap: spacing.md }}>
+            <View style={{ flex: 1 }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginBottom: spacing.sm }}>
               <View style={{ width: 40, height: 40, borderRadius: radii.md, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
                 <BoltIcon color="#fff" size={22} />
@@ -82,6 +84,8 @@ export function LearnScreen() {
               <Text variant="bodyStrong" color={colors.primary}>Başla</Text>
               <ArrowRightIcon color={colors.primary} size={18} />
             </View>
+            </View>
+            <Mascot mood="wave" size={66} />
           </View>
         </View>
       </PressableScale>

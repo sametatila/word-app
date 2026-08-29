@@ -4,6 +4,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon } from "../ui/icons";
 import { Mascot, type Mood } from "../ui/Mascot";
+import { haptic } from "../lib/haptics";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
@@ -105,7 +106,7 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
       <View style={{ gap: spacing.md }}>
         {(round.options ?? []).map((o) => {
           const st = picked ? (o.text === answer ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
-          return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => { if (!picked) { setPicked(o.text); setTimeout(() => onDone(o.text === answer), o.text === answer ? 650 : 1100); } }} colors={colors} />;
+          return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => { if (!picked) { setPicked(o.text); haptic(o.text === answer ? "correct" : "wrong"); setTimeout(() => onDone(o.text === answer), o.text === answer ? 650 : 1100); } }} colors={colors} />;
         })}
       </View>
     </RoundShell>
@@ -120,7 +121,7 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {["der", "die", "das"].map((a) => {
           const st = picked ? (a === word.artikel ? "correct" : a === picked ? "wrong" : "idle") : "idle";
-          return <View key={a} style={{ flex: 1 }}><OptionButton text={a} state={st} idleTint={ARTIKEL_TONE[a]} onPress={() => { if (!picked) { setPicked(a); setTimeout(() => onDone(a === word.artikel), a === word.artikel ? 650 : 1100); } }} colors={colors} /></View>;
+          return <View key={a} style={{ flex: 1 }}><OptionButton text={a} state={st} idleTint={ARTIKEL_TONE[a]} onPress={() => { if (!picked) { setPicked(a); haptic(a === word.artikel ? "correct" : "wrong"); setTimeout(() => onDone(a === word.artikel), a === word.artikel ? 650 : 1100); } }} colors={colors} /></View>;
         })}
       </View>
     </RoundShell>
@@ -136,7 +137,7 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {[{ v: true, l: "Doğru" }, { v: false, l: "Yanlış" }].map(({ v, l }) => {
           const st = ans !== null ? (v === round.isTrue ? "correct" : v === ans ? "wrong" : "idle") : "idle";
-          return <View key={l} style={{ flex: 1 }}><OptionButton text={l} state={st} onPress={() => { if (ans === null) { setAns(v); setTimeout(() => onDone(correctOf(v)), correctOf(v) ? 650 : 1100); } }} colors={colors} /></View>;
+          return <View key={l} style={{ flex: 1 }}><OptionButton text={l} state={st} onPress={() => { if (ans === null) { setAns(v); haptic(correctOf(v) ? "correct" : "wrong"); setTimeout(() => onDone(correctOf(v)), correctOf(v) ? 650 : 1100); } }} colors={colors} /></View>;
         })}
       </View>
     </RoundShell>
@@ -151,7 +152,7 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     if (checked !== null) return;
     const ok = norm(val) === norm(word.de) || norm(val) === norm(withArtikel(word));
     setChecked(ok);
-    setTimeout(() => onDone(ok), ok ? 700 : 1400);
+    haptic(ok ? "correct" : "wrong"); setTimeout(() => onDone(ok), ok ? 700 : 1400);
   }
   return (
     <View style={{ flex: 1 }}>
@@ -196,7 +197,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
       <View style={{ gap: spacing.md }}>
         {opts.map((o) => {
           const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
-          return <OptionButton key={o} text={o} state={st} onPress={() => { if (!picked) { setPicked(o); setTimeout(() => onDone(o === answer), o === answer ? 650 : 1100); } }} colors={colors} />;
+          return <OptionButton key={o} text={o} state={st} onPress={() => { if (!picked) { setPicked(o); haptic(o === answer ? "correct" : "wrong"); setTimeout(() => onDone(o === answer), o === answer ? 650 : 1100); } }} colors={colors} />;
         })}
       </View>
     </View>
@@ -256,7 +257,7 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
       <View style={{ gap: spacing.md }}>
         {opts.map((o) => {
           const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
-          return <OptionButton key={o} text={`die ${o}`} state={st} onPress={() => { if (!picked) { setPicked(o); setTimeout(() => onDone(o === answer), o === answer ? 650 : 1100); } }} colors={colors} />;
+          return <OptionButton key={o} text={`die ${o}`} state={st} onPress={() => { if (!picked) { setPicked(o); haptic(o === answer ? "correct" : "wrong"); setTimeout(() => onDone(o === answer), o === answer ? 650 : 1100); } }} colors={colors} />;
         })}
       </View>
     </RoundShell>
@@ -279,7 +280,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
       <View style={{ gap: spacing.md }}>
         {(round.options ?? []).map((o) => {
           const st = picked ? (o.text === word.tr ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
-          return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => { if (!picked) { setPicked(o.text); setTimeout(() => onDone(o.text === word.tr), o.text === word.tr ? 650 : 1100); } }} colors={colors} />;
+          return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => { if (!picked) { setPicked(o.text); haptic(o.text === word.tr ? "correct" : "wrong"); setTimeout(() => onDone(o.text === word.tr), o.text === word.tr ? 650 : 1100); } }} colors={colors} />;
         })}
       </View>
     </View>
@@ -307,7 +308,7 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
     if (np.length === target.length) {
       const ok = norm(np.map((x) => x.char).join("")) === compareTarget;
       setStatus(ok ? "correct" : "wrong");
-      setTimeout(() => onDone(ok), ok ? 800 : 1500);
+      haptic(ok ? "correct" : "wrong"); setTimeout(() => onDone(ok), ok ? 800 : 1500);
     }
   }
   const brd = status === "correct" ? colors.success : status === "wrong" ? colors.danger : colors.border;
@@ -344,7 +345,7 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     if (np.length === answer.length) {
       const ok = np.map((x) => x.text).join(" ") === answer.join(" ");
       setStatus(ok ? "correct" : "wrong");
-      setTimeout(() => onDone(ok), ok ? 850 : 1600);
+      haptic(ok ? "correct" : "wrong"); setTimeout(() => onDone(ok), ok ? 850 : 1600);
     }
   }
   const brd = status === "correct" ? colors.success : status === "wrong" ? colors.danger : colors.border;
@@ -377,7 +378,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     const t = sn(val);
     const ok = !!t && (t === sn(s.de) || alts.some((a) => sn(a) === t));
     setChecked(ok);
-    setTimeout(() => onDone(ok), ok ? 800 : 1600);
+    haptic(ok ? "correct" : "wrong"); setTimeout(() => onDone(ok), ok ? 800 : 1600);
   }
   return (
     <View style={{ flex: 1 }}>
@@ -438,14 +439,14 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   function pickRight(r: { wordId: number; text: string }) {
     if (done.current || selLeft == null || matched.has(r.wordId)) return;
     if (r.wordId === selLeft) {
-      const nm = new Set(matched); nm.add(selLeft); setMatched(nm); setSelLeft(null);
+      const nm = new Set(matched); nm.add(selLeft); setMatched(nm); setSelLeft(null); haptic("correct");
       if (nm.size === words.length) {
         done.current = true;
         const batch = words.map((w) => ({ wordId: w.id, correct: !wrongBefore.current.has(w.id) }));
         setTimeout(() => onDone(batch.every((b) => b.correct), batch), 600);
       }
     } else {
-      wrongBefore.current.add(selLeft);
+      wrongBefore.current.add(selLeft); haptic("wrong");
       const l = selLeft;
       setWrong({ left: l, right: r.wordId });
       setSelLeft(null);
