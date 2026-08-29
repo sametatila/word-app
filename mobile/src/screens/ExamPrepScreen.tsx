@@ -71,7 +71,7 @@ export function ExamPrepScreen() {
             const tint = tintOf(m.tint as keyof Palette);
             const pct = m.total ? Math.round((m.done / m.total) * 100) : 0;
             return (
-              <PressableScale key={m.key} onPress={() => m.premium && nav.navigate("Paywall")}>
+              <PressableScale key={m.key} onPress={() => m.premium ? nav.navigate("Paywall") : nav.navigate("Game")}>
                 <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <View style={[{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
                     <m.icon color="#fff" size={24} />
@@ -97,8 +97,8 @@ export function ExamPrepScreen() {
           })}
         </View>
 
-        {/* deneme sınavı */}
-        <PressableScale style={{ marginTop: spacing.lg }}>
+        {/* deneme sınavı — şimdilik pratik turu (gerçek modül sınavı sonra) */}
+        <PressableScale style={{ marginTop: spacing.lg }} onPress={() => nav.navigate("Game")}>
           <View style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.primary, 10)]}>
             <CheckIcon color="#fff" size={22} />
             <Text variant="h3" color="#fff">Deneme sınavına gir</Text>

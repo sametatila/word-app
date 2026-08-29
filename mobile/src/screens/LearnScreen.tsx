@@ -96,9 +96,8 @@ export function LearnScreen() {
         </View>
       </Card>
 
-      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.md }}>
+      <View style={{ marginBottom: spacing.md }}>
         <Text variant="h2">Bugün</Text>
-        <Text variant="caption" color={colors.primary}>Tümü →</Text>
       </View>
       <QuickCard title="Tur başlat" subtitle="Kelime turu · 5 dk" tint={colors.primary} icon={BoltIcon} onPress={() => nav.navigate("Game")} />
       <QuickCard title="Yürüyüş modu" subtitle="Kulakla öğren, ellerin serbest" tint={colors.info} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
