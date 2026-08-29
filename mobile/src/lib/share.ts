@@ -1,4 +1,5 @@
 import { Share } from "react-native";
+import { track } from "./track";
 
 /**
  * Paylaşım / davet (§4 — referral & paylaşım). RN'in yerleşik Share API'siyle
@@ -10,6 +11,7 @@ const APP_URL = "https://www.exfe.me";
 
 export async function shareInvite(): Promise<void> {
   try {
+    track("share", 0, "invite");
     await Share.share({
       message: `Almancayı Wortspiel ile oyun gibi öğreniyorum — sen de dene! ${APP_URL}?ref=davet`,
     });
@@ -18,6 +20,7 @@ export async function shareInvite(): Promise<void> {
 
 export async function shareResult(correct: number, total: number): Promise<void> {
   try {
+    track("share", correct, "result");
     await Share.share({
       message: `Bugün Wortspiel'de ${total} kelimeden ${correct}'ini doğru bildim! 🎯 Sen de dene: ${APP_URL}?ref=sonuc`,
     });
@@ -26,6 +29,7 @@ export async function shareResult(correct: number, total: number): Promise<void>
 
 export async function shareStreak(days: number): Promise<void> {
   try {
+    track("share", days, "streak");
     await Share.share({
       message: `Wortspiel'de ${days} günlük serim var 🔥 Almanca öğrenmeye sen de başla: ${APP_URL}?ref=seri`,
     });

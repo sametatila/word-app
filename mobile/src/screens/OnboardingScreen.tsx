@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { track } from "../lib/track";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, BoltIcon, ExamIcon, CheckIcon } from "../ui/icons";
@@ -45,6 +46,9 @@ export function OnboardingScreen() {
   const [i, setI] = useState(0);
   const [choices, setChoices] = useState<Record<string, string>>({});
   const step = STEPS[i];
+
+  // §4 funnel: onboarding adımı görüldü (kind = adım, value = sıra).
+  useEffect(() => { track("onboarding_step", i, step?.key); }, [i, step?.key]);
   const last = i === STEPS.length - 1;
   const needsChoice = !!step.options;
   const chosen = choices[step.key];

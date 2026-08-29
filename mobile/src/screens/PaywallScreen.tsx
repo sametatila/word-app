@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, CheckIcon, CrownIcon } from "../ui/icons";
+import { track } from "../lib/track";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 /**
@@ -42,6 +43,9 @@ export function PaywallScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const [plan, setPlan] = useState<string>("yearly");
+
+  // §4 funnel: paywall görüldü (kaynak sonra route param'la gelebilir).
+  useEffect(() => { track("paywall_view", 0, "mobile"); }, []);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -95,7 +99,7 @@ export function PaywallScreen() {
 
       {/* alt CTA */}
       <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm }}>
-        <PressableScale style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 12)]}>
+        <PressableScale onPress={() => track("purchase_start", 0, plan)} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 12)]}>
           <Text variant="h3" color="#fff">Premium'a geç</Text>
         </PressableScale>
         <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>

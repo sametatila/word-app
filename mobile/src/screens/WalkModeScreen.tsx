@@ -6,6 +6,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon, ChevronRightIcon, WalkIcon } from "../ui/icons";
 import { DEMO_WORDS, withArtikel } from "../data/demoWords";
+import { track } from "../lib/track";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 /**
@@ -22,6 +23,9 @@ export function WalkModeScreen() {
   const [idx, setIdx] = useState(0);
   const pulse = useRef(new Animated.Value(0)).current;
   const word = DEMO_WORDS[idx % DEMO_WORDS.length];
+
+  // §4 funnel: yürüyüş modu başladı.
+  useEffect(() => { track("walk_start", 0); }, []);
 
   useEffect(() => {
     if (!playing) { pulse.stopAnimation(); return; }

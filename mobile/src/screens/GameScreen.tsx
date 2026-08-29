@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -8,6 +8,7 @@ import { XIcon, ShareIcon } from "../ui/icons";
 import { shareResult } from "../lib/share";
 import { ProgressRing } from "../ui/ProgressRing";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
+import { track } from "../lib/track";
 import { DEMO_WORDS, withArtikel, type Word } from "../data/demoWords";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
@@ -42,6 +43,10 @@ export function GameScreen() {
   const [idx, setIdx] = useState(0);
   const [correct, setCorrect] = useState(0);
   const done = idx >= rounds.length;
+
+  // §4 funnel: tur başladı / bitti (value = doğru sayısı).
+  useEffect(() => { track("session_start", 0, "choice"); }, [seed]);
+  useEffect(() => { if (done) track("session_done", correct, "choice"); }, [done]);
 
   function onDone(ok: boolean) {
     if (ok) setCorrect((c) => c + 1);

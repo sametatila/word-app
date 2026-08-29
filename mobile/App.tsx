@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StatusBar, View } from "react-native";
+import { StatusBar, View, Dimensions } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -7,6 +7,7 @@ import { ThemeProvider, useTheme } from "./src/theme";
 import { AuthProvider } from "./src/lib/AuthContext";
 import { RootStack } from "./src/navigation/RootStack";
 import { ONBOARDED_KEY } from "./src/lib/onboarding";
+import { track } from "./src/lib/track";
 
 function Nav() {
   const { colors, isDark } = useTheme();
@@ -17,6 +18,8 @@ function Nav() {
     AsyncStorage.getItem(ONBOARDED_KEY)
       .then((v) => setOnboarded(v === "1"))
       .catch(() => setOnboarded(false));
+    // Günün ilk açılışı (§4 funnel) — kind platform:görünüm, value ekran genişliği.
+    track("app_open", Math.round(Dimensions.get("window").width), "android:standalone");
   }, []);
 
   const base = isDark ? DarkTheme : DefaultTheme;
