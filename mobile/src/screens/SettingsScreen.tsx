@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { View, TextInput, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -36,6 +36,20 @@ export function SettingsScreen() {
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
+  // useMe async gelir: ilk render'da me=null olduğu için state'ler yedeğe
+  // (A1 / 20) düşüyordu ve gerçek değer (ör. A2) sonradan gelince useState'in
+  // ilk değeri artık güncellenmiyordu — Ayarlar'da seviye A1 görünüyordu.
+  // me ilk kez gelince BİR KEZ hidrate et (kullanıcının sonraki düzenini ezme).
+  const hydrated = useRef(false);
+  useEffect(() => {
+    if (me && !hydrated.current) {
+      hydrated.current = true;
+      setName((n) => n || me.name || user?.name || "");
+      setGoal(me.dailyGoal);
+      setLevel(me.level);
+    }
+  }, [me, user]);
+
   async function save() {
     if (busy) return;
     if (!user) { nav.navigate("Auth"); return; }
@@ -69,7 +83,7 @@ export function SettingsScreen() {
 
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, marginBottom: spacing.sm, marginLeft: 4 }}>GÜNLÜK HEDEF (tekrar / gün)</Text>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-          {GOALS.map((g) => <Chip key={g} label={String(g)} active={goal === g} onPress={() => setGoal(g)} colors={colors} />)}
+          {Array.from(new Set([...GOALS, goal])).sort((a, b) => a - b).map((g) => <Chip key={g} label={String(g)} active={goal === g} onPress={() => setGoal(g)} colors={colors} />)}
         </View>
 
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, marginBottom: spacing.sm, marginLeft: 4 }}>SEVİYE</Text>
