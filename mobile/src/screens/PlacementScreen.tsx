@@ -140,7 +140,7 @@ export function PlacementScreen() {
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {total} sorudan {correct} doğru. Bu seviyeden başlayabilirsin.
           </Text>
-          {saved && <Text variant="bodyStrong" color={colors.success} style={{ marginBottom: spacing.md }}>Kaydedildi ✓</Text>}
+          {saved && <Text variant="bodyStrong" color={colors.success} style={{ marginBottom: spacing.md }}>Kaydedildi</Text>}
           <PressableScale onPress={applyLevel} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color="#fff">{user ? "Seviyemi ayarla" : "Anladım"}</Text>
           </PressableScale>

@@ -57,7 +57,7 @@ export function SettingsScreen() {
     setMsg(null);
     const ok = await updateProfile({ displayName: name.trim() || undefined, dailyGoal: goal, level });
     setBusy(false);
-    if (ok) { await refresh(); setMsg("Kaydedildi ✓"); setTimeout(() => nav.goBack(), 600); }
+    if (ok) { await refresh(); setMsg("Kaydedildi"); setTimeout(() => nav.goBack(), 600); }
     else setMsg("Kaydedilemedi, tekrar dene.");
   }
 
@@ -99,7 +99,7 @@ export function SettingsScreen() {
             Ayarların hesabına kaydedilir. Kaydetmek için giriş yap.
           </Text>
         )}
-        {msg && <Text variant="bodyStrong" color={msg.includes("✓") ? colors.success : colors.danger} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text>}
+        {msg && <Text variant="bodyStrong" color={msg === "Kaydedildi" ? colors.success : colors.danger} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text>}
 
         <PressableScale onPress={save} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.xl }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color="#fff">{busy ? "..." : user ? "Kaydet" : "Giriş yap ve kaydet"}</Text>

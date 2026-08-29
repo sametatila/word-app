@@ -177,7 +177,7 @@ export function GameScreen() {
             <Text variant="display" color={colors.primary}>{finalCorrect}/{total || 0}</Text>
             <Text variant="micro" color={colors.textMuted}>doğru</Text>
           </ProgressRing>
-          <Text variant="h1" style={{ marginTop: spacing.xl }}>{total ? "Tur bitti! 🎉" : "Bugünlük bu kadar"}</Text>
+          <Text variant="h1" style={{ marginTop: spacing.xl }}>{total ? "Tur bitti!" : "Bugünlük bu kadar"}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {total ? "İlerlemen kaydedildi." : "Şu an tekrar edilecek kelime yok — yarın yeniden gel."}
           </Text>
@@ -203,7 +203,7 @@ export function GameScreen() {
         </View>
         <Text variant="bodyStrong" color={colors.textMuted}>{idx + 1}/{rounds.length}</Text>
       </View>
-      {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>🎯 {gameLabel} · pratik</Text>}
+      {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>{gameLabel} · pratik</Text>}
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />
     </View>
   );

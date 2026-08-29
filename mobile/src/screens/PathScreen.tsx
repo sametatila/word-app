@@ -7,7 +7,7 @@ import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon } from "../ui/icons";
+import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { usePatika, type Patika, type PatikaUnit } from "../lib/usePatika";
 import { KIND_LABEL } from "../data/demoUnit";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -69,7 +69,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: PatikaUnit; i
       )}
       <PressableScale style={{ marginTop: spacing.md }} onPress={onContinue}>
         <View style={[{ borderRadius: radii.lg, backgroundColor: unit.locked ? colors.surface2 : colors.primary, paddingVertical: 15, alignItems: "center" }, unit.locked ? {} : softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color={unit.locked ? colors.textFaint : colors.onPrimary}>{unit.locked ? "🔒 Önce önceki üniteyi bitir" : unit.complete ? "Tekrar et →" : "Devam et →"}</Text>
+          <Text variant="h3" color={unit.locked ? colors.textFaint : colors.onPrimary}>{unit.locked ? "Önce önceki üniteyi bitir" : unit.complete ? "Tekrar et →" : "Devam et →"}</Text>
         </View>
       </PressableScale>
     </Card>
@@ -109,7 +109,7 @@ export function PathScreen() {
           <PressableScale key={u.id} style={{ width: "47.5%" }} onPress={() => openUnit(u)}>
             <Card padded style={{ minHeight: 116, opacity: u.locked ? 0.6 : 1, borderColor: u.index === patika.currentIndex ? colors.primary : colors.border, borderWidth: u.index === patika.currentIndex ? 2 : 1 }}>
               <View style={{ width: 40, height: 40, borderRadius: 20, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === patika.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <Text variant="bodyStrong" color={colors.textMuted}>🔒</Text> : <Text variant="bodyStrong" color={u.index === patika.currentIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
+                {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === patika.currentIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
               </View>
               <Text variant="bodyStrong" style={{ marginTop: 8 }} numberOfLines={2}>{u.theme}</Text>
               <Text variant="micro" color={u.complete ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? "Tamamlandı" : u.locked ? "Kilitli" : `${u.done}/${u.total}`}</Text>

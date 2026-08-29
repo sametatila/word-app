@@ -37,7 +37,7 @@ export async function enableDailyReminder(hhmm: string): Promise<boolean> {
   await notifee.createTriggerNotification(
     {
       title: "Wortspiel",
-      body: "Bugünkü turunu unutma 🔥 Serini koru!",
+      body: "Bugünkü turunu unutma — serini koru!",
       android: { channelId: CHANNEL_ID, smallIcon: "ic_launcher", pressAction: { id: "default" } },
     },
     { type: TriggerType.TIMESTAMP, timestamp: next.getTime(), repeatFrequency: RepeatFrequency.DAILY },
@@ -59,7 +59,7 @@ export async function showTestNotification(): Promise<boolean> {
   await ensureChannel();
   await notifee.displayNotification({
     title: "Wortspiel",
-    body: "Bildirimler açık 🎉 Seni her gün nazikçe hatırlatacağız.",
+    body: "Bildirimler açık — seni her gün nazikçe hatırlatacağız.",
     android: { channelId: CHANNEL_ID, smallIcon: "ic_launcher", pressAction: { id: "default" } },
   });
   return true;

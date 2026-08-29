@@ -22,7 +22,7 @@ export async function shareResult(correct: number, total: number): Promise<void>
   try {
     track("share", correct, "result");
     await Share.share({
-      message: `Bugün Wortspiel'de ${total} kelimeden ${correct}'ini doğru bildim! 🎯 Sen de dene: ${APP_URL}?ref=sonuc`,
+      message: `Bugün Wortspiel'de ${total} kelimeden ${correct}'ini doğru bildim! Sen de dene: ${APP_URL}?ref=sonuc`,
     });
   } catch { /* kullanıcı vazgeçti */ }
 }
@@ -31,7 +31,7 @@ export async function shareStreak(days: number): Promise<void> {
   try {
     track("share", days, "streak");
     await Share.share({
-      message: `Wortspiel'de ${days} günlük serim var 🔥 Almanca öğrenmeye sen de başla: ${APP_URL}?ref=seri`,
+      message: `Wortspiel'de ${days} günlük serim var — Almanca öğrenmeye sen de başla: ${APP_URL}?ref=seri`,
     });
   } catch { /* kullanıcı vazgeçti */ }
 }

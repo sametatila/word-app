@@ -15,7 +15,7 @@ export function SkillsScreen() {
         </View>
         <Text variant="h1">Beceriler</Text>
         <View style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 16, paddingVertical: 8 }}>
-          <Text variant="caption" color={colors.textMuted}>🚧 Yapım aşamasında</Text>
+          <Text variant="caption" color={colors.textMuted}>Yapım aşamasında</Text>
         </View>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", maxWidth: 280, lineHeight: 22 }}>
           Bu bölüm yakında. Farklı bir kurgu üzerinde çalışıyoruz — okuma, dinleme, yazma ve daha fazlası burada olacak.

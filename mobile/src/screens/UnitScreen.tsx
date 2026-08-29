@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, CheckIcon, LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon } from "../ui/icons";
+import { ChevronLeftIcon, CheckIcon, LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, LockIcon } from "../ui/icons";
 import { DEMO_UNIT_ITEMS, KIND_LABEL, type ItemKind } from "../data/demoUnit";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -85,7 +85,7 @@ export function UnitScreen() {
                       <Text variant="micro" color={colors.primary}>Şimdi</Text>
                     </View>
                   ) : (
-                    <Text variant="caption" color={colors.textFaint}>🔒</Text>
+                    <LockIcon color={colors.textFaint} size={18} />
                   )}
                 </Card>
               </PressableScale>

@@ -37,7 +37,7 @@ export function LearnScreen() {
   const { user } = useAuth();
   const { me } = useMe();
   const initial = ((user?.name ?? "Öğrenci").trim()[0] ?? "Ö").toUpperCase();
-  const greeting = user?.name ? `Merhaba ${user.name.split(" ")[0]} 👋` : "Merhaba 👋";
+  const greeting = user?.name ? `Merhaba ${user.name.split(" ")[0]}` : "Merhaba";
   const level = me?.level ?? "A1";
   const mastered = me?.mastered ?? 0;
   const totalWords = me?.totalWords ?? 0;

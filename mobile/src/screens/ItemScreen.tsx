@@ -84,7 +84,7 @@ function WriteBody({ colors }: { colors: Palette }) {
       />
       {sent && (
         <Card style={{ marginTop: spacing.lg, backgroundColor: colors.successSoft, borderColor: colors.success, borderWidth: 1 }}>
-          <Text variant="bodyStrong" color={colors.success}>Güzel! ✓ Değerlendirme yakında sunucuda yapılacak.</Text>
+          <Text variant="bodyStrong" color={colors.success}>Güzel! Değerlendirme yakında sunucuda yapılacak.</Text>
         </Card>
       )}
     </>

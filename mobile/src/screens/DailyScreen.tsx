@@ -21,7 +21,7 @@ function medalColor(rank: number, colors: Palette): string {
 }
 
 function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
-  if (!rows.length) return <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>Bugün ilk oynayan sen ol 🎯</Text>;
+  if (!rows.length) return <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>Bugün ilk oynayan sen ol</Text>;
   return (
     <View style={{ gap: spacing.sm, marginTop: spacing.md }}>
       {rows.map((r) => {
@@ -165,7 +165,7 @@ export function DailyScreen() {
             <Text variant="display" color="#fff" style={{ fontSize: 52, marginTop: 4 }}>{scoreRef.current.toLocaleString("tr-TR")}</Text>
             <View style={{ flexDirection: "row", gap: spacing.xl, marginTop: spacing.md }}>
               <View style={{ alignItems: "center" }}><Text variant="h3" color="#fff">{correctRef.current}/{total}</Text><Text variant="micro" color="#ffffffcc">doğru</Text></View>
-              <View style={{ alignItems: "center" }}><Text variant="h3" color="#fff">🔥 {bestComboRef.current}</Text><Text variant="micro" color="#ffffffcc">en iyi seri</Text></View>
+              <View style={{ alignItems: "center" }}><View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><FlameIcon color="#fff" size={18} /><Text variant="h3" color="#fff">{bestComboRef.current}</Text></View><Text variant="micro" color="#ffffffcc">en iyi seri</Text></View>
             </View>
           </View>
           <Text variant="h3" style={{ marginTop: spacing.xl, marginBottom: 2 }}>Günün sıralaması</Text>

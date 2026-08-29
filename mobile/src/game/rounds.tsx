@@ -215,7 +215,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const [picked, setPicked] = useState<string | null>(null);
   return (
     <View>
-      <Prompt label="🔊 Dinle · anlamını seç" big={withArtikel(word)} sub={word.en} colors={colors} />
+      <Prompt label="Dinle · anlamını seç" big={withArtikel(word)} sub={word.en} colors={colors} />
       <View style={{ gap: spacing.md }}>
         {(round.options ?? []).map((o) => {
           const st = picked ? (o.text === word.tr ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
