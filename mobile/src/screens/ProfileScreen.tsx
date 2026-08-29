@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, ExamIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon } from "../ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, ExamIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatDuration, formatXp } from "../lib/useMe";
@@ -58,7 +58,10 @@ export function ProfileScreen() {
         <PressableScale onPress={() => nav.goBack()} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ChevronLeftIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">Profil</Text>
+        <Text variant="h2" style={{ flex: 1 }}>Profil</Text>
+        <PressableScale onPress={() => nav.navigate("Settings")} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <SettingsIcon color={colors.text} size={22} />
+        </PressableScale>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
