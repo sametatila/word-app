@@ -6,7 +6,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, ShareIcon } from "../ui/icons";
+import { XIcon, ShareIcon, FlameIcon } from "../ui/icons";
 import { shareResult } from "../lib/share";
 import { ProgressRing } from "../ui/ProgressRing";
 import { Mascot } from "../ui/Mascot";
@@ -36,6 +36,7 @@ export function GameScreen() {
   const [idx, setIdx] = useState(0);
   const [finalCorrect, setFinalCorrect] = useState(0);
   const [finalTotal, setFinalTotal] = useState(0);
+  const [combo, setCombo] = useState(0);
   const answers = useRef<AnswerOut[]>([]);
   const startedAt = useRef(0);
   const roundStart = useRef(0);
@@ -73,6 +74,7 @@ export function GameScreen() {
       }
       answers.current = [];
       submitted.current = false;
+      setCombo(0);
       // Yarım kalan turdan devam yalnız karışık turda (pratik taze başlar).
       const r = onlyGame ? null : p.resume;
       const start = r && r.index > 0 && r.index < list.length ? r.index : 0;
@@ -116,6 +118,7 @@ export function GameScreen() {
       const wordId = r?.word?.id ?? r?.words?.[0]?.id ?? 0;
       if (wordId && r) answers.current.push({ wordId, game: r.game, correct: ok, latencyMs: lat });
     }
+    setCombo((c) => (ok ? c + 1 : 0));
     roundStart.current = Date.now();
     const next = idx + 1;
     idxRef.current = next;
@@ -203,6 +206,7 @@ export function GameScreen() {
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>
+        {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><FlameIcon color={colors.streak} size={15} /><Text variant="bodyStrong" color={colors.streak}>{combo}</Text></View>}
         <Text variant="bodyStrong" color={colors.textMuted}>{idx + 1}/{rounds.length}</Text>
       </View>
       {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>{gameLabel} · pratik</Text>}
