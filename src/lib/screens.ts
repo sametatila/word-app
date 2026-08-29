@@ -14,6 +14,9 @@ export const SCREEN_KEYS = [
   "home",
   "learn",
   "weekly",
+  "immersion",
+  "beceriler",
+  "premium",
   "lessons",
   "lesson",
   "roleplay_exam",
@@ -38,6 +41,12 @@ export function screenKey(pathname: string): ScreenKey {
   switch (a) {
     case "learn":
       return b === "haftalik" ? "weekly" : "learn";
+    case "immersion":
+      return "immersion";
+    case "beceriler":
+      return "beceriler";
+    case "premium":
+      return "premium";
     case "lessons":
       if (!b) return "lessons";
       return c === "exam" ? "roleplay_exam" : "lesson";
