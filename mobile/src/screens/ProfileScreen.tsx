@@ -2,10 +2,12 @@ import React from "react";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, ExamIcon, BellIcon, LogoutIcon } from "../ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, ExamIcon, BellIcon, LogoutIcon, CrownIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow, type ThemeMode, type Palette } from "../theme";
 
 const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
@@ -38,7 +40,7 @@ function Row({ icon: Icon, label, tint, colors, last }: { icon: (p: { color: str
 export function ProfileScreen() {
   const { colors, mode, setMode } = useTheme();
   const insets = useSafeAreaInsets();
-  const nav = useNavigation<{ goBack: () => void }>();
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -75,6 +77,18 @@ export function ProfileScreen() {
           <StatTile value="1.240" label="Toplam XP" color={colors.success} colors={colors} />
           <StatTile value="3s 20dk" label="Bu hafta süre" color={colors.info} colors={colors} />
         </View>
+
+        {/* premium yükseltme bandı (§4) */}
+        <PressableScale onPress={() => nav.navigate("Paywall")} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>
+          <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff2e" }}>
+            <CrownIcon color="#fff" size={26} />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text variant="h3" color="#fff">Premium'a geç</Text>
+            <Text variant="caption" color="#ffffffcc">Sınırsız konuşma + tam sınav hazırlığı</Text>
+          </View>
+          <ChevronRightIcon color="#fff" size={22} />
+        </PressableScale>
 
         {/* görünüm — tema geçişi */}
         <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>GÖRÜNÜM</Text>

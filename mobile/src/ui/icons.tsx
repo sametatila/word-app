@@ -69,3 +69,6 @@ export const LogoutIcon = ({ color = "#000", size }: P) => (
 export const ExamIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M3 8l9-4 9 4-9 4-9-4zM7 10v5c0 1.5 2.2 3 5 3s5-1.5 5-3v-5M21 8v5" {...stroke(color)} /></S>
 );
+export const CrownIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M4 8l3.5 4L12 6l4.5 6L20 8l-1.5 10h-13zM5.5 20h13" {...stroke(color)} /></S>
+);

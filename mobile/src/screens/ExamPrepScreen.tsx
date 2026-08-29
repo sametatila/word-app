@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
@@ -25,7 +27,7 @@ const MODULES = [
 export function ExamPrepScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const nav = useNavigation<{ goBack: () => void }>();
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [exam, setExam] = useState(0);
   const tintOf = (k: keyof Palette) => colors[k] as string;
 
@@ -69,7 +71,7 @@ export function ExamPrepScreen() {
             const tint = tintOf(m.tint as keyof Palette);
             const pct = m.total ? Math.round((m.done / m.total) * 100) : 0;
             return (
-              <PressableScale key={m.key}>
+              <PressableScale key={m.key} onPress={() => m.premium && nav.navigate("Paywall")}>
                 <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <View style={[{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
                     <m.icon color="#fff" size={24} />
