@@ -45,6 +45,17 @@ const ARTIKEL_TONE: Record<string, string> = { der: "#0284c7", die: "#e11d48", d
     sonuç verir; verilmezse çağıran tek cevabı (round.word) yazar. */
 type Done = (correct: boolean, batch?: { wordId: number; correct: boolean }[]) => void;
 
+/** Tur düzeni: soru/örnek ÜSTTE, şık ve girişler ALTTA (başparmak bölgesi) —
+    tek elle kullanım için. `marginTop:auto` etkileşimi ekranın altına yaslar. */
+function RoundShell({ top, children }: { top: React.ReactNode; children: React.ReactNode }) {
+  return (
+    <View style={{ flex: 1 }}>
+      {top}
+      <View style={{ marginTop: "auto" }}>{children}</View>
+    </View>
+  );
+}
+
 /** Soru kartı — ortak üst blok. */
 function Prompt({ label, big, sub, colors }: { label: string; big: string; sub?: string | null; colors: Palette }) {
   return (
@@ -79,15 +90,14 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const answer = deSide ? word.tr : withArtikel(word);
   const [picked, setPicked] = useState<string | null>(null);
   return (
-    <View>
-      <Prompt label={deSide ? "Türkçesi?" : "Almancası?"} big={question} sub={!deSide ? word.en : null} colors={colors} />
+    <RoundShell top={<Prompt label={deSide ? "Türkçesi?" : "Almancası?"} big={question} sub={!deSide ? word.en : null} colors={colors} />}>
       <View style={{ gap: spacing.md }}>
         {(round.options ?? []).map((o) => {
           const st = picked ? (o.text === answer ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
           return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => { if (!picked) { setPicked(o.text); setTimeout(() => onDone(o.text === answer), o.text === answer ? 650 : 1100); } }} colors={colors} />;
         })}
       </View>
-    </View>
+    </RoundShell>
   );
 }
 
@@ -95,15 +105,14 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
   const word = round.word!;
   const [picked, setPicked] = useState<string | null>(null);
   return (
-    <View>
-      <Prompt label="Hangi artikel?" big={word.de} sub={meaningLine(word)} colors={colors} />
+    <RoundShell top={<Prompt label="Hangi artikel?" big={word.de} sub={meaningLine(word)} colors={colors} />}>
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {["der", "die", "das"].map((a) => {
           const st = picked ? (a === word.artikel ? "correct" : a === picked ? "wrong" : "idle") : "idle";
           return <View key={a} style={{ flex: 1 }}><OptionButton text={a} state={st} idleTint={ARTIKEL_TONE[a]} onPress={() => { if (!picked) { setPicked(a); setTimeout(() => onDone(a === word.artikel), a === word.artikel ? 650 : 1100); } }} colors={colors} /></View>;
         })}
       </View>
-    </View>
+    </RoundShell>
   );
 }
 
@@ -112,15 +121,14 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
   const [ans, setAns] = useState<boolean | null>(null);
   const correctOf = (said: boolean) => said === round.isTrue;
   return (
-    <View>
-      <Prompt label="Doğru mu?" big={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />
+    <RoundShell top={<Prompt label="Doğru mu?" big={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />}>
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {[{ v: true, l: "Doğru" }, { v: false, l: "Yanlış" }].map(({ v, l }) => {
           const st = ans !== null ? (v === round.isTrue ? "correct" : v === ans ? "wrong" : "idle") : "idle";
           return <View key={l} style={{ flex: 1 }}><OptionButton text={l} state={st} onPress={() => { if (ans === null) { setAns(v); setTimeout(() => onDone(correctOf(v)), correctOf(v) ? 650 : 1100); } }} colors={colors} /></View>;
         })}
       </View>
-    </View>
+    </RoundShell>
   );
 }
 
@@ -135,25 +143,27 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setTimeout(() => onDone(ok), ok ? 700 : 1400);
   }
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Prompt label="Almancasını yaz" big={word.tr} sub={word.en} colors={colors} />
-      <TextInput
-        value={val}
-        onChangeText={setVal}
-        editable={checked === null}
-        autoCapitalize="none"
-        autoCorrect={false}
-        placeholder="Yaz..."
-        placeholderTextColor={colors.textFaint}
-        onSubmitEditing={check}
-        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: checked === null ? colors.border : checked ? colors.success : colors.danger, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
-      />
-      {checked === false && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.md }}>Doğrusu: {withArtikel(word)}</Text>}
-      {checked === null && (
-        <PressableScale onPress={check} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-          <Text variant="h3" color="#fff">Kontrol et</Text>
-        </PressableScale>
-      )}
+      <View style={{ marginTop: "auto" }}>
+        <TextInput
+          value={val}
+          onChangeText={setVal}
+          editable={checked === null}
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholder="Yaz..."
+          placeholderTextColor={colors.textFaint}
+          onSubmitEditing={check}
+          style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: checked === null ? colors.border : checked ? colors.success : colors.danger, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
+        />
+        {checked === false && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.md }}>Doğrusu: {withArtikel(word)}</Text>}
+        {checked === null && (
+          <PressableScale onPress={check} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+            <Text variant="h3" color="#fff">Kontrol et</Text>
+          </PressableScale>
+        )}
+      </View>
     </View>
   );
 }
@@ -163,14 +173,14 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   const answer = round.answer ?? "";
   const [picked, setPicked] = useState<string | null>(null);
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.xl }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>Boşluğu doldur</Text>
         <Text variant="h2" style={{ lineHeight: 32 }}>{round.sentence}</Text>
         {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}
         {round.sentenceEn ? <Text variant="micro" color={colors.textFaint} style={{ marginTop: 2 }}>{round.sentenceEn}</Text> : null}
       </View>
-      <View style={{ gap: spacing.md }}>
+      <View style={{ gap: spacing.md, marginTop: "auto" }}>
         {opts.map((o) => {
           const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
           return <OptionButton key={o} text={o} state={st} onPress={() => { if (!picked) { setPicked(o); setTimeout(() => onDone(o === answer), o === answer ? 650 : 1100); } }} colors={colors} />;
@@ -188,24 +198,26 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   const [reveal, setReveal] = useState(false);
   if (!word) { onDone(true); return null; }
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Prompt label={round.game === "intro" ? "Yeni kelime" : "Hatırla"} big={withArtikel(word)} sub={round.sentence ?? null} colors={colors} />
-      {!reveal ? (
-        <PressableScale onPress={() => setReveal(true)} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-          <Text variant="h3" color="#fff">Cevabı göster</Text>
-        </PressableScale>
-      ) : (
-        <>
-          <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, marginBottom: spacing.lg }}>
-            <Text variant="h3">{meaningLine(word)}</Text>
-            <ExampleBlock de={word.beispiel} tr={word.beispielTr} en={word.beispielEn ?? null} colors={colors} />
-          </View>
+      {reveal ? (
+        <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
+          <Text variant="h3">{meaningLine(word)}</Text>
+          <ExampleBlock de={word.beispiel} tr={word.beispielTr} en={word.beispielEn ?? null} colors={colors} />
+        </View>
+      ) : null}
+      <View style={{ marginTop: "auto" }}>
+        {!reveal ? (
+          <PressableScale onPress={() => setReveal(true)} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+            <Text variant="h3" color="#fff">Cevabı göster</Text>
+          </PressableScale>
+        ) : (
           <View style={{ flexDirection: "row", gap: spacing.md }}>
             <View style={{ flex: 1 }}><OptionButton text="Zorlandım" state="idle" onPress={() => onDone(false)} colors={colors} /></View>
             <View style={{ flex: 1 }}><OptionButton text="Bildim" state="idle" onPress={() => onDone(true)} colors={colors} /></View>
           </View>
-        </>
-      )}
+        )}
+      </View>
     </View>
   );
 }
@@ -226,15 +238,14 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const opts = (round.options as unknown as string[] | undefined) ?? [];
   const [picked, setPicked] = useState<string | null>(null);
   return (
-    <View>
-      <Prompt label="Çoğulu?" big={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
+    <RoundShell top={<Prompt label="Çoğulu?" big={withArtikel(word)} sub={meaningLine(word)} colors={colors} />}>
       <View style={{ gap: spacing.md }}>
         {opts.map((o) => {
           const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
           return <OptionButton key={o} text={`die ${o}`} state={st} onPress={() => { if (!picked) { setPicked(o); setTimeout(() => onDone(o === answer), o === answer ? 650 : 1100); } }} colors={colors} />;
         })}
       </View>
-    </View>
+    </RoundShell>
   );
 }
 
@@ -243,19 +254,19 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const word = round.word!;
   const [picked, setPicked] = useState<string | null>(null);
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Prompt label="Dinle · anlamını seç" big={withArtikel(word)} sub={null} colors={colors} />
-      <View style={{ gap: spacing.md }}>
+      {picked && (word.beispiel || word.beispielTr) ? (
+        <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
+          <ExampleBlock de={word.beispiel} tr={word.beispielTr} en={word.beispielEn ?? null} colors={colors} />
+        </View>
+      ) : null}
+      <View style={{ gap: spacing.md, marginTop: "auto" }}>
         {(round.options ?? []).map((o) => {
           const st = picked ? (o.text === word.tr ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
           return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => { if (!picked) { setPicked(o.text); setTimeout(() => onDone(o.text === word.tr), o.text === word.tr ? 650 : 1100); } }} colors={colors} />;
         })}
       </View>
-      {picked && (round.word?.beispiel || round.word?.beispielTr) ? (
-        <View style={{ marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
-          <ExampleBlock de={word.beispiel} tr={word.beispielTr} en={word.beispielEn ?? null} colors={colors} />
-        </View>
-      ) : null}
     </View>
   );
 }
@@ -286,15 +297,17 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
   }
   const brd = status === "correct" ? colors.success : status === "wrong" ? colors.danger : colors.border;
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Prompt label="Harfleri sırala" big={word.tr} sub={word.en} colors={colors} />
-      <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
-        {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>Harflere dokun…</Text> : placed.map((t, i) => <Tile key={i} label={t.char} colors={colors} onPress={() => { if (status === "playing") setPlaced((p) => p.slice(0, i)); }} />)}
+      <View style={{ marginTop: "auto" }}>
+        <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
+          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>Harflere dokun…</Text> : placed.map((t, i) => <Tile key={i} label={t.char} colors={colors} onPress={() => { if (status === "playing") setPlaced((p) => p.slice(0, i)); }} />)}
+        </View>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+          {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
+        </View>
+        {status === "wrong" && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.lg }}>Doğrusu: {word.de}</Text>}
       </View>
-      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-        {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
-      </View>
-      {status === "wrong" && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.lg }}>Doğrusu: {word.de}</Text>}
     </View>
   );
 }
@@ -320,15 +333,17 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   }
   const brd = status === "correct" ? colors.success : status === "wrong" ? colors.danger : colors.border;
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Prompt label="Cümleyi sıraya diz" big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
-      <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
-        {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>Kelimelere dokun…</Text> : placed.map((t, i) => <Tile key={i} label={t.text} colors={colors} onPress={() => { if (status === "playing") setPlaced((p) => p.slice(0, i)); }} />)}
+      <View style={{ marginTop: "auto" }}>
+        <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
+          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>Kelimelere dokun…</Text> : placed.map((t, i) => <Tile key={i} label={t.text} colors={colors} onPress={() => { if (status === "playing") setPlaced((p) => p.slice(0, i)); }} />)}
+        </View>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+          {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
+        </View>
+        {status === "wrong" && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.lg }}>Doğrusu: {[...answer, tail].filter(Boolean).join(" ")}</Text>}
       </View>
-      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-        {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
-      </View>
-      {status === "wrong" && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.lg }}>Doğrusu: {[...answer, tail].filter(Boolean).join(" ")}</Text>}
     </View>
   );
 }
@@ -348,25 +363,27 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     setTimeout(() => onDone(ok), ok ? 800 : 1600);
   }
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Prompt label="Almancaya çevir" big={s.tr} sub={s.en} colors={colors} />
-      <TextInput
-        value={val}
-        onChangeText={setVal}
-        editable={checked === null}
-        multiline
-        autoCapitalize="sentences"
-        autoCorrect={false}
-        placeholder="Almanca cümleyi yaz…"
-        placeholderTextColor={colors.textFaint}
-        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: checked === null ? colors.border : checked ? colors.success : colors.danger, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
-      />
-      {checked === false && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.md }}>Doğrusu: {s.de}</Text>}
-      {checked === null && (
-        <PressableScale onPress={check} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-          <Text variant="h3" color="#fff">Kontrol et</Text>
-        </PressableScale>
-      )}
+      <View style={{ marginTop: "auto" }}>
+        <TextInput
+          value={val}
+          onChangeText={setVal}
+          editable={checked === null}
+          multiline
+          autoCapitalize="sentences"
+          autoCorrect={false}
+          placeholder="Almanca cümleyi yaz…"
+          placeholderTextColor={colors.textFaint}
+          style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: checked === null ? colors.border : checked ? colors.success : colors.danger, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
+        />
+        {checked === false && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.md }}>Doğrusu: {s.de}</Text>}
+        {checked === null && (
+          <PressableScale onPress={check} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+            <Text variant="h3" color="#fff">Kontrol et</Text>
+          </PressableScale>
+        )}
+      </View>
     </View>
   );
 }
@@ -419,9 +436,9 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   }
 
   return (
-    <View>
-      <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.lg, textAlign: "center" }}>Eşleştir</Text>
-      <View style={{ flexDirection: "row", gap: spacing.md }}>
+    <View style={{ flex: 1 }}>
+      <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.lg, marginTop: spacing.md, textAlign: "center" }}>Eşleştir</Text>
+      <View style={{ flexDirection: "row", gap: spacing.md, marginTop: "auto" }}>
         <View style={{ flex: 1, gap: spacing.sm }}>
           {words.map((w) => {
             const st = matched.has(w.id) ? "correct" : wrong?.left === w.id ? "wrong" : selLeft === w.id ? "sel" : "idle";
