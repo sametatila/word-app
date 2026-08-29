@@ -11,30 +11,31 @@ import { SessionKeeper } from "./session-keeper";
 import { Telemetry } from "./telemetry";
 import { AchievementUnlock } from "./achievement-unlock";
 import { track } from "@/lib/track";
-import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, UserIcon } from "./icons";
+import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, StarIcon, UserIcon } from "./icons";
 import { Avatar } from "@/components/avatar";
 
 /**
- * Alt gezinme: İKİ mod.
+ * Alt gezinme: ÜÇ sekme.
  *
- * Uygulamanın iki öğrenme modu var, sekmeler tam olarak onlar:
+ * İki olgun öğrenme modu + yapım aşamasında bir üçüncü:
  *   - Öğren — kelime turu (SRS/oyun çekirdeği).
- *   - Immersion — ders iskeleti + okuma/dinleme/yazma harmanı (üretim).
+ *   - Patika (immersion) — ders iskeleti + okuma/dinleme/yazma harmanı (üretim).
+ *   - Beceriler — YENİ, farklı bir kurgu; şimdilik yapım aşamasında bir yer
+ *     tutucu (bkz. /beceriler). Menüde görünür ama içeriği henüz yok.
  *
- * Eskiden üç sekmeydi (Öğren / Dersler / Beceriler). "Dersler" ve "Beceriler"
- * aynı yolun iki parçasıydı — ders üretimi ile beceri egzersizleri — ve
- * Immersion ikisini tek moda birleştirdi (bkz. docs/plan/immersion.md).
- * Ölçüm de birleştirmeyi destekliyordu: Beceriler %24 + Dersler %18, aynı
- * niyetin (dili özümseme) iki ayrı kapısıydı.
+ * Eskiden üç sekmeydi (Öğren / Dersler / Beceriler); "Dersler" ve "Beceriler"
+ * aynı yolun iki parçasıydı ve Immersion ikisini tek moda (Patika) birleştirdi
+ * (bkz. docs/plan/immersion.md). Yeni "Beceriler" o eskiyle aynı DEĞİL — ayrı
+ * bir düşünce; kurgu netleşene dek yapım aşamasında duruyor.
  *
  * Kelimeler ve Profil alt gezinmede değil: Kelimeler bir hedef değil sonuç
  * (tura girip zorlanılan kelimeye bakılır), Profil günde bir bile açılmaz —
- * ikisi de üst başlıktan/ikincil gruptan ulaşılır. İki sekme 320 px'de bol
- * bol sığıyor.
+ * ikisi de üst başlıktan/ikincil gruptan ulaşılır. Üç sekme 320 px'de sığıyor.
  */
 const NAV = [
   { href: "/learn", label: "Öğren", Icon: CardsIcon, key: "learn" },
   { href: "/immersion", label: "Patika", Icon: CompassIcon, key: "immersion" },
+  { href: "/beceriler", label: "Beceriler", Icon: StarIcon, key: "beceriler" },
 ];
 
 /** Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor. */
