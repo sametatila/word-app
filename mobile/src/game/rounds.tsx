@@ -5,6 +5,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon } from "../ui/icons";
 import { Mascot, type Mood } from "../ui/Mascot";
 import { haptic } from "../lib/haptics";
+import { whyMeaning, whyArticle, whyPlural } from "./why";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
@@ -95,6 +96,15 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint }: { text: s
   );
 }
 
+/** Yanlış cevapta neden yanlış olduğunu gösteren kısa ipucu satırı. */
+function WhyLine({ text, colors }: { text: string; colors: Palette }) {
+  return (
+    <View style={{ marginTop: spacing.md, backgroundColor: colors.dangerSoft, borderRadius: radii.md, paddingVertical: spacing.sm, paddingHorizontal: spacing.md }}>
+      <Text variant="caption" color={colors.text}>{text}</Text>
+    </View>
+  );
+}
+
 function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const word = round.word!;
   const deSide = round.direction === "de-tr";
@@ -109,6 +119,7 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
           return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => { if (!picked) { setPicked(o.text); haptic(o.text === answer ? "correct" : "wrong"); setTimeout(() => onDone(o.text === answer), o.text === answer ? 650 : 1100); } }} colors={colors} />;
         })}
       </View>
+      {picked && picked !== answer ? <WhyLine text={whyMeaning(word, picked)} colors={colors} /> : null}
     </RoundShell>
   );
 }
@@ -124,6 +135,7 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
           return <View key={a} style={{ flex: 1 }}><OptionButton text={a} state={st} idleTint={ARTIKEL_TONE[a]} onPress={() => { if (!picked) { setPicked(a); haptic(a === word.artikel ? "correct" : "wrong"); setTimeout(() => onDone(a === word.artikel), a === word.artikel ? 650 : 1100); } }} colors={colors} /></View>;
         })}
       </View>
+      {picked && picked !== word.artikel ? <WhyLine text={whyArticle(word)} colors={colors} /> : null}
     </RoundShell>
   );
 }
@@ -140,6 +152,7 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
           return <View key={l} style={{ flex: 1 }}><OptionButton text={l} state={st} onPress={() => { if (ans === null) { setAns(v); haptic(correctOf(v) ? "correct" : "wrong"); setTimeout(() => onDone(correctOf(v)), correctOf(v) ? 650 : 1100); } }} colors={colors} /></View>;
         })}
       </View>
+      {ans !== null && !correctOf(ans) ? <WhyLine text={whyMeaning(word, null)} colors={colors} /> : null}
     </RoundShell>
   );
 }
