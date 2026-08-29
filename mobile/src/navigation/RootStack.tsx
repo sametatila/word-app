@@ -6,9 +6,11 @@ import { ProfileScreen } from "../screens/ProfileScreen";
 import { ExamPrepScreen } from "../screens/ExamPrepScreen";
 import { WalkModeScreen } from "../screens/WalkModeScreen";
 import { PaywallScreen } from "../screens/PaywallScreen";
+import { OnboardingScreen } from "../screens/OnboardingScreen";
 
-/** Kök yığın: sekmeler + üzerine tam ekran açılan akış ekranları. */
+/** Kök yığın: onboarding + sekmeler + üzerine tam ekran açılan akış ekranları. */
 export type RootStackParams = {
+  Onboarding: undefined;
   Tabs: undefined;
   Game: undefined;
   Profile: undefined;
@@ -19,9 +21,10 @@ export type RootStackParams = {
 
 const Stack = createNativeStackNavigator<RootStackParams>();
 
-export function RootStack() {
+export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParams }) {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName={initialRoute} screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Onboarding" component={OnboardingScreen} />
       <Stack.Screen name="Tabs" component={RootTabs} />
       <Stack.Screen name="Game" component={GameScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
