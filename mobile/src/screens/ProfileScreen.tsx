@@ -122,7 +122,7 @@ export function ProfileScreen() {
           <Row icon={PodiumIcon} label="Haftalık sıralama" tint={colors.info} colors={colors} onPress={() => nav.navigate("Leaderboard")} />
           <Row icon={ExamIcon} label="Sınav hazırlık" tint={colors.accent} colors={colors} onPress={() => nav.navigate("ExamPrep")} />
           <Row icon={ShareIcon} label="Arkadaşını davet et" tint={colors.success} colors={colors} onPress={() => shareInvite()} />
-          <Row icon={BellIcon} label="Bildirimler" tint={colors.info} colors={colors} last />
+          <Row icon={BellIcon} label="Bildirimler" tint={colors.info} colors={colors} onPress={() => nav.navigate("Notifications")} last />
         </Card>
 
         {user ? (
