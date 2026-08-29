@@ -70,8 +70,8 @@ export function todayStr(): string {
 }
 
 /** Günün turu (gerçek). Oturum yoksa ApiError(401) fırlar — çağıran girişe yönlendirir. */
-export function fetchSession(day = todayStr(), opts?: { extra?: boolean }): Promise<SessionPayload> {
-  const q = opts?.extra ? "&extra=1" : "";
+export function fetchSession(day = todayStr(), opts?: { extra?: boolean; walk?: boolean }): Promise<SessionPayload> {
+  const q = `${opts?.extra ? "&extra=1" : ""}${opts?.walk ? "&walk=1" : ""}`;
   return api<SessionPayload>(`/api/session?day=${day}${q}`);
 }
 

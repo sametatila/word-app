@@ -50,8 +50,8 @@ export function AchievementsScreen() {
   useEffect(() => {
     if (!user) { setRemote(null); return; }
     let alive = true;
-    api<Achievement[]>("/api/achievements")
-      .then((d) => { if (alive) setRemote(Array.isArray(d) ? d : null); })
+    api<{ rows: Achievement[] }>("/api/achievements")
+      .then((d) => { if (alive) setRemote(Array.isArray(d?.rows) ? d.rows : null); })
       .catch(() => { if (alive) setRemote(null); });
     return () => { alive = false; };
   }, [user]);

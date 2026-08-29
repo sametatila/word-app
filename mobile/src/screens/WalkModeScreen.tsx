@@ -5,9 +5,13 @@ import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon, ChevronRightIcon, WalkIcon } from "../ui/icons";
-import { DEMO_WORDS, withArtikel } from "../data/demoWords";
+import { DEMO_WORDS, type Word } from "../data/demoWords";
 import { track } from "../lib/track";
+import { fetchSession } from "../game/session";
+import { useAuth } from "../lib/AuthContext";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+
+const withArtikel = (w: { artikel?: string | null; de: string }) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 
 /**
  * Yürüyüş modu (§4 — manşet özellik). Eller serbest, kulakla öğren: kelimeler
@@ -19,13 +23,30 @@ export function WalkModeScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
+  const { user } = useAuth();
   const [playing, setPlaying] = useState(true);
   const [idx, setIdx] = useState(0);
+  const [real, setReal] = useState<Word[] | null>(null);
   const pulse = useRef(new Animated.Value(0)).current;
-  const word = DEMO_WORDS[idx % DEMO_WORDS.length];
+  const list: Word[] = real && real.length ? real : DEMO_WORDS;
+  const word = list[idx % list.length];
 
   // §4 funnel: yürüyüş modu başladı.
   useEffect(() => { track("walk_start", 0); }, []);
+
+  // Gerçek yürüyüş turu (mevcut /api/session?walk=1). Oturum yoksa/hata → demo.
+  useEffect(() => {
+    if (!user) return;
+    let alive = true;
+    fetchSession(undefined, { walk: true })
+      .then((p) => {
+        const ws = (p.rounds ?? []).map((r) => r.word).filter((w): w is NonNullable<typeof w> => !!w)
+          .map((w) => ({ id: w.id, de: w.de, tr: w.tr, artikel: (w.artikel as Word["artikel"]) ?? undefined }));
+        if (alive && ws.length) setReal(ws);
+      })
+      .catch(() => { /* demo'da kal */ });
+    return () => { alive = false; };
+  }, [user]);
 
   useEffect(() => {
     if (!playing) { pulse.stopAnimation(); return; }
@@ -67,7 +88,7 @@ export function WalkModeScreen() {
 
         {/* okunmakta olan kelime */}
         <View style={{ alignItems: "center", marginTop: spacing.xxxl, marginBottom: spacing.xxxl }}>
-          <Text variant="caption" color={colors.textMuted}>kelime {(idx % DEMO_WORDS.length) + 1}/{DEMO_WORDS.length}</Text>
+          <Text variant="caption" color={colors.textMuted}>kelime {(idx % list.length) + 1}/{list.length}</Text>
           <Text variant="display" color={colors.text} style={{ marginTop: spacing.sm }}>{withArtikel(word)}</Text>
           <Text variant="h3" color={colors.textMuted} style={{ marginTop: 4 }}>{word.tr}</Text>
         </View>
@@ -86,7 +107,7 @@ export function WalkModeScreen() {
 
         {/* ileri/geri */}
         <View style={{ flexDirection: "row", gap: spacing.xxl, marginTop: spacing.xl }}>
-          <PressableScale onPress={() => setIdx((i) => (i - 1 + DEMO_WORDS.length) % DEMO_WORDS.length)} style={{ width: 52, height: 52, borderRadius: 26, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border }}>
+          <PressableScale onPress={() => setIdx((i) => (i - 1 + list.length) % list.length)} style={{ width: 52, height: 52, borderRadius: 26, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border }}>
             <View style={{ transform: [{ rotate: "180deg" }] }}><ChevronRightIcon color={colors.text} size={24} /></View>
           </PressableScale>
           <PressableScale onPress={() => setIdx((i) => i + 1)} style={{ width: 52, height: 52, borderRadius: 26, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border }}>
