@@ -3,7 +3,7 @@ import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
 import { useMe } from "./useMe";
 import { buildLocalPatika } from "../game/immersionTrack";
-import { getDoneLessons } from "../game/lessonProgress";
+import { getDoneItems } from "../game/lessonProgress";
 
 /** Patika (immersion) hub'ı — gerçek track, kullanıcının ilerlemesiyle. */
 export type PatikaItem = { id: string; kind: string; title: string; titleTr: string | null; playable: boolean; done: boolean; ref?: string | null };
@@ -51,7 +51,7 @@ export function usePatika(): { data: Patika | null; loading: boolean; source: "a
         if (!alive) return;
         if (!me?.level) { setData(null); setSource(null); return; }
         const level = /^[ABC][12]$/.test(me.level) ? me.level : "A1";
-        const done = await getDoneLessons();
+        const done = await getDoneItems();
         if (alive) { setData(buildLocalPatika(level, done)); setSource("local"); }
       })
       .finally(() => { if (alive) setLoading(false); });

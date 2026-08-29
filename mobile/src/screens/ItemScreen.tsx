@@ -1,112 +1,66 @@
-import React, { useState } from "react";
-import { View, ScrollView, TextInput } from "react-native";
+import React, { useRef, useState } from "react";
+import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, CheckIcon } from "../ui/icons";
+import { Mascot } from "../ui/Mascot";
+import { XIcon, ReadIcon, ListenIcon, WriteIcon, SpeakerIcon } from "../ui/icons";
 import { KIND_LABEL, type ItemKind } from "../data/demoUnit";
+import { getExercise, type ListeningSegment } from "../data/skills";
+import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
+import { markItemDone } from "../game/lessonProgress";
+import { speakGerman } from "../lib/tts";
+import { API_BASE } from "../api/client";
+import { todayStr } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
-  read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />, write: (p) => <WriteIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />,
+  read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />, write: (p) => <WriteIcon {...p} />,
 };
-const KIND_TINT: Record<string, keyof Palette> = { read: "info", listen: "accent", write: "success", grammar: "streak" };
+const KIND_TINT: Record<string, keyof Palette> = { read: "info", listen: "accent", write: "success" };
 
-/** Okuma metni (demo A1 — "Tanışma ve ben"). */
-function ReadBody({ colors }: { colors: Palette }) {
-  const [tr, setTr] = useState(false);
+/** Okuma metni — paragraflar \n\n ile ayrılır (web reading-player gibi). */
+function ReadingText({ text, colors }: { text: string; colors: Palette }) {
   return (
-    <>
-      <Card style={{ marginBottom: spacing.lg }}>
-        <Text variant="h3" style={{ marginBottom: spacing.sm }}>Ich heiße Emma</Text>
-        <Text variant="body" style={{ lineHeight: 26 }}>
-          Hallo! Ich heiße Emma. Ich komme aus der Türkei und wohne in Berlin. Ich bin
-          Studentin und lerne Deutsch. Ich spreche Türkisch, Englisch und ein bisschen Deutsch.
-        </Text>
-      </Card>
-      <PressableScale onPress={() => setTr((v) => !v)} style={{ marginBottom: spacing.md }}>
-        <Text variant="bodyStrong" color={colors.primary}>{tr ? "Çeviriyi gizle" : "Türkçesini göster"}</Text>
-      </PressableScale>
-      {tr && (
-        <Card style={{ backgroundColor: colors.surface2 }}>
-          <Text variant="body" color={colors.textMuted} style={{ lineHeight: 24 }}>
-            Merhaba! Benim adım Emma. Türkiye'den geliyorum ve Berlin'de yaşıyorum. Öğrenciyim
-            ve Almanca öğreniyorum. Türkçe, İngilizce ve biraz Almanca konuşuyorum.
-          </Text>
-        </Card>
-      )}
-    </>
+    <Card style={{ marginTop: spacing.md }}>
+      {text.split("\n\n").map((p, i) => (
+        <Text key={i} variant="body" style={{ lineHeight: 25, marginTop: i > 0 ? spacing.md : 0 }}>{p}</Text>
+      ))}
+    </Card>
   );
 }
 
-function ListenBody({ colors }: { colors: Palette }) {
-  const [playing, setPlaying] = useState(false);
+/** Dinleme — cihaz TTS'i (audio dosyaları /public'te, çevrimdışı yok); metin gizli başlar. */
+function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; colors: Palette }) {
   const [reveal, setReveal] = useState(false);
+  const full = segments.map((s) => s.text).join("  ");
   return (
     <>
-      <Card style={{ alignItems: "center", marginBottom: spacing.lg, paddingVertical: spacing.xxl }}>
-        <PressableScale onPress={() => setPlaying((p) => !p)} style={[{ width: 88, height: 88, borderRadius: 44, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
-          {playing
-            ? <View style={{ flexDirection: "row", gap: 6 }}><View style={{ width: 7, height: 26, borderRadius: 3, backgroundColor: "#fff" }} /><View style={{ width: 7, height: 26, borderRadius: 3, backgroundColor: "#fff" }} /></View>
-            : <View style={{ width: 0, height: 0, borderTopWidth: 14, borderBottomWidth: 14, borderLeftWidth: 22, borderTopColor: "transparent", borderBottomColor: "transparent", borderLeftColor: "#fff", marginLeft: 5 }} />}
+      <Card style={{ alignItems: "center", marginTop: spacing.md, paddingVertical: spacing.xl }}>
+        <PressableScale onPress={() => speakGerman(full)} style={[{ width: 80, height: 80, borderRadius: 40, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
+          <SpeakerIcon color="#fff" size={34} />
         </PressableScale>
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>Dinle ve anla</Text>
       </Card>
-      <PressableScale onPress={() => setReveal((v) => !v)} style={{ marginBottom: spacing.md }}>
+      <PressableScale onPress={() => setReveal((v) => !v)} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
         <Text variant="bodyStrong" color={colors.primary}>{reveal ? "Metni gizle" : "Metni göster"}</Text>
       </PressableScale>
-      {reveal && (
-        <Card><Text variant="body" style={{ lineHeight: 26 }}>Hallo, ich heiße Emma. Wie heißt du? Ich komme aus Berlin.</Text></Card>
-      )}
-    </>
-  );
-}
-
-function WriteBody({ colors }: { colors: Palette }) {
-  const [text, setText] = useState("");
-  const [sent, setSent] = useState(false);
-  return (
-    <>
-      <Card style={{ marginBottom: spacing.lg }}>
-        <Text variant="micro" color={colors.textMuted}>GÖREV</Text>
-        <Text variant="bodyStrong" style={{ marginTop: 4 }}>Kendini Almanca tanıt (3 cümle): adın, nereden geldiğin, ne öğrendiğin.</Text>
-      </Card>
-      <TextInput
-        value={text}
-        onChangeText={setText}
-        placeholder="Ich heiße..."
-        placeholderTextColor={colors.textFaint}
-        multiline
-        style={{ minHeight: 120, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, padding: spacing.lg, color: colors.text, fontSize: 16, lineHeight: 24 }}
-      />
-      {sent && (
-        <Card style={{ marginTop: spacing.lg, backgroundColor: colors.successSoft, borderColor: colors.success, borderWidth: 1 }}>
-          <Text variant="bodyStrong" color={colors.success}>Güzel! Değerlendirme yakında sunucuda yapılacak.</Text>
+      {reveal ? (
+        <Card style={{ marginTop: spacing.sm }}>
+          {segments.map((s, i) => (
+            <View key={i} style={{ marginTop: i > 0 ? spacing.md : 0, flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
+              <PressableScale onPress={() => speakGerman(s.text)} hitSlop={6} style={{ marginTop: 2 }}><SpeakerIcon color={colors.textMuted} size={16} /></PressableScale>
+              <View style={{ flex: 1 }}>
+                {s.speaker ? <Text variant="micro" color={colors.textMuted}>{s.speaker}</Text> : null}
+                <Text variant="body" style={{ lineHeight: 24 }}>{s.text}</Text>
+              </View>
+            </View>
+          ))}
         </Card>
-      )}
-    </>
-  );
-}
-
-function GrammarBody({ colors }: { colors: Palette }) {
-  const rows = [["ich", "bin"], ["du", "bist"], ["er/sie/es", "ist"], ["wir", "sind"], ["ihr", "seid"], ["sie/Sie", "sind"]];
-  return (
-    <>
-      <Card style={{ marginBottom: spacing.lg }}>
-        <Text variant="h3" style={{ marginBottom: spacing.sm }}>sein fiili (olmak)</Text>
-        <Text variant="body" color={colors.textMuted} style={{ lineHeight: 24 }}>Almancanın en önemli fiili. Kişiye göre çekimi ezberlenmeli:</Text>
-      </Card>
-      <Card>
-        {rows.map(([p, f], i) => (
-          <View key={p} style={{ flexDirection: "row", justifyContent: "space-between", paddingVertical: 10, borderBottomWidth: i < rows.length - 1 ? 1 : 0, borderBottomColor: colors.hairline }}>
-            <Text variant="body" color={colors.textMuted}>{p}</Text>
-            <Text variant="bodyStrong" color={colors.primary}>{f}</Text>
-          </View>
-        ))}
-      </Card>
+      ) : null}
     </>
   );
 }
@@ -116,10 +70,50 @@ export function ItemScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const { params } = useRoute<RouteProp<RootStackParams, "Item">>();
+  const exercise = getExercise(params.id);
+  const startedAt = useRef(Date.now());
+  const saved = useRef(false);
+  const [correct, setCorrect] = useState(0);
+  const [finished, setFinished] = useState(false);
+  const [round, setRound] = useState(0);
+
   const kind = params.kind as ItemKind;
-  const tint = colors[(KIND_TINT[kind] ?? "primary") as keyof Palette] as string;
+  const tint = colors[(KIND_TINT[kind] ?? "primary")] as string;
   const Icon = KIND_ICON[kind];
-  const [done, setDone] = useState(false);
+
+  async function recordAndFinish(c: number) {
+    setCorrect(c);
+    setFinished(true);
+    if (!exercise || saved.current) return;
+    saved.current = true;
+    void markItemDone(exercise.id);
+    try {
+      await fetch(`${API_BASE}/api/skills`, {
+        method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ id: exercise.id, correct: c, day: todayStr(), seconds: Math.round((Date.now() - startedAt.current) / 1000) }),
+      });
+    } catch { /* çevrimdışı: yerel işaret yeterli */ }
+  }
+
+  function retry() {
+    saved.current = false;
+    setFinished(false);
+    setCorrect(0);
+    setRound((r) => r + 1);
+  }
+
+  if (!exercise) {
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
+        <Mascot mood="sad" size={90} />
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>Bu içerik yayına alınınca burada açılacak.</Text>
+        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primary}>Geri dön</Text></PressableScale>
+      </View>
+    );
+  }
+
+  const total = exercise.skill === "writing" ? (exercise.tasks?.length ?? 0) : (exercise.questions?.length ?? 0);
+  const pct = total ? Math.round((correct / total) * 100) : 100;
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -129,28 +123,42 @@ export function ItemScreen() {
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
           {Icon && <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: tint, alignItems: "center", justifyContent: "center" }}>{Icon({ color: "#fff", size: 18 })}</View>}
-          <View>
-            <Text variant="micro" color={colors.textMuted}>{KIND_LABEL[kind] ?? "İçerik"}</Text>
-            <Text variant="h3">{params.title}</Text>
+          <View style={{ flex: 1 }}>
+            <Text variant="micro" color={colors.textMuted}>{KIND_LABEL[kind] ?? "İçerik"} · {exercise.genre}</Text>
+            <Text variant="h3" numberOfLines={1}>{exercise.title}</Text>
           </View>
         </View>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        {kind === "read" && <ReadBody colors={colors} />}
-        {kind === "listen" && <ListenBody colors={colors} />}
-        {kind === "write" && <WriteBody colors={colors} />}
-        {kind === "grammar" && <GrammarBody colors={colors} />}
-        {!["read", "listen", "write", "grammar"].includes(kind) && (
-          <Card style={{ alignItems: "center", paddingVertical: spacing.xxl }}>
-            <Text variant="body" color={colors.textMuted}>Bu adım yakında.</Text>
-          </Card>
+      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+        <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{exercise.intro}</Text>
+
+        {exercise.skill === "reading" && exercise.text ? <ReadingText text={exercise.text} colors={colors} /> : null}
+        {exercise.skill === "listening" && exercise.segments ? <ListeningBody segments={exercise.segments} colors={colors} /> : null}
+
+        <GlossPanel gloss={exercise.gloss} colors={colors} />
+
+        {exercise.skill === "writing" ? (
+          <WritingList key={round} tasks={(exercise.tasks ?? []) as WritingTask[]} onAllDone={recordAndFinish} colors={colors} />
+        ) : (
+          <QuestionList key={round} questions={exercise.questions ?? []} onAllAnswered={recordAndFinish} colors={colors} />
         )}
 
-        <PressableScale onPress={() => { setDone(true); setTimeout(() => nav.goBack(), 600); }} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.xl }, softShadow(colors.primary, 10)]}>
-          {done && <CheckIcon color="#fff" size={20} />}
-          <Text variant="h3" color="#fff">{done ? "Tamamlandı" : "Tamamla →"}</Text>
-        </PressableScale>
+        {finished ? (
+          <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
+            <Mascot mood={pct >= 70 ? "celebrate" : pct >= 40 ? "happy" : "idle"} size={84} />
+            <Text variant="h2">{exercise.skill === "writing" ? "Görevler bitti" : `${correct}/${total} doğru`}</Text>
+            {exercise.skill !== "writing" ? <Text variant="caption" color={colors.textMuted}>%{pct} başarı</Text> : null}
+            <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
+              <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+                <Text variant="bodyStrong" color={colors.text}>Tekrar dene</Text>
+              </PressableScale>
+              <PressableScale onPress={() => nav.goBack()} style={[{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+                <Text variant="bodyStrong" color={colors.onPrimary}>Patika'ya dön</Text>
+              </PressableScale>
+            </View>
+          </Card>
+        ) : null}
       </ScrollView>
     </View>
   );

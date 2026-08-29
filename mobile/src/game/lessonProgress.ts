@@ -1,16 +1,15 @@
 /**
- * Biten derslerin cihaz kaydı — /api/immersion canlı olmadan Patika ilerlemesi.
- *
- * Sunucuya da yazılır (/api/lesson recordLesson); bu yerel set yalnız gerçek
- * track gelene kadar hangi dersin bittiğini Patika'ya söyler. Sunucu track'i
- * (gating + gerçek ilerleme) açıldığında usePatika onu tercih eder.
+ * Biten Patika adımlarının cihaz kaydı — /api/immersion canlı olmadan
+ * ilerleme. Ders id'leri ve beceri egzersizi id'leri aynı kümede (hepsi item
+ * ref'i). Sunucuya da yazılır (/api/lesson, /api/skills); bu yerel set yalnız
+ * gerçek track gelene kadar Patika'ya hangi adımın bittiğini söyler.
  */
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const KEY = "wortspiel-lessons-done";
+const KEY = "wortspiel-items-done";
 let cache: Set<string> | null = null;
 
-export async function getDoneLessons(): Promise<Set<string>> {
+export async function getDoneItems(): Promise<Set<string>> {
   if (cache) return cache;
   try {
     const raw = await AsyncStorage.getItem(KEY);
@@ -21,13 +20,13 @@ export async function getDoneLessons(): Promise<Set<string>> {
   return cache;
 }
 
-export async function markLessonDone(id: string): Promise<void> {
-  const s = await getDoneLessons();
+export async function markItemDone(id: string): Promise<void> {
+  const s = await getDoneItems();
   if (s.has(id)) return;
   s.add(id);
   try { await AsyncStorage.setItem(KEY, JSON.stringify([...s])); } catch { /* yut */ }
 }
 
-export function isLessonDoneSync(id: string): boolean {
+export function isItemDoneSync(id: string): boolean {
   return cache?.has(id) ?? false;
 }

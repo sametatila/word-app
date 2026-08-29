@@ -10,7 +10,7 @@ import { ChevronLeftIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon } from "
 import { Mascot } from "../ui/Mascot";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
-import { markLessonDone } from "../game/lessonProgress";
+import { markItemDone } from "../game/lessonProgress";
 import { speakGerman } from "../lib/tts";
 import { haptic } from "../lib/haptics";
 import { api, API_BASE } from "../api/client";
@@ -214,7 +214,7 @@ export function LessonScreen() {
     setPhase("summary");
     if (saved) return;
     setSaved(true);
-    void markLessonDone(lesson.id);
+    void markItemDone(lesson.id);
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
     try {
       await fetch(`${API_BASE}/api/lesson`, {

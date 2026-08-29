@@ -9,7 +9,13 @@
  * usePatika onu tercih eder ve gerçek ilerleme/gating gelir.
  */
 import { lessonsForLevel } from "../data/lessons";
+import { listSkillMeta, type SkillMeta } from "../data/skills";
 import type { Patika, PatikaItem, PatikaUnit } from "../lib/usePatika";
+
+/** Track item türü → beceri kataloğu türü. */
+const SKILL_OF: Record<string, "reading" | "listening" | "writing"> = {
+  read: "reading", listen: "listening", write: "writing",
+};
 
 const UNIT_LESSONS = 4;
 const GROUP_SIZE = 10;
@@ -46,6 +52,14 @@ function unitTheme(level: string, firstLessonIndex: number, unitIndex: number): 
  */
 export function buildLocalPatika(level: string, done: Set<string>): Patika {
   const lessons = lessonsForLevel(level);
+  // Beceri havuzları — web builder gibi sırayla tüketilir (2/ünite/tür);
+  // biterse slot boş (ref=null → "Yakında"). Erken üniteler dolu.
+  const pools: Record<string, SkillMeta[]> = {
+    read: listSkillMeta(level, "reading"),
+    listen: listSkillMeta(level, "listening"),
+    write: listSkillMeta(level, "writing"),
+  };
+  const cursors: Record<string, number> = { read: 0, listen: 0, write: 0 };
   const unitCount = Math.ceil(lessons.length / UNIT_LESSONS) || 1;
   const units: PatikaUnit[] = [];
 
@@ -65,7 +79,15 @@ export function buildLocalPatika(level: string, done: Set<string>): Patika {
         if (!lesson) continue; // kısmi son ünitede boş ders slotu üretilmez
         items.push({ id, kind, title: lesson.title, titleTr: lesson.titleTr, playable: true, done: done.has(lesson.id), ref: lesson.id });
       } else if (kind === "read" || kind === "listen" || kind === "write") {
-        items.push({ id, kind, title: SKILL_TITLE[kind], titleTr: SKILL_TITLE[kind], playable: false, done: false, ref: null });
+        const meta = pools[kind][cursors[kind]++];
+        items.push({
+          id, kind,
+          title: meta?.title ?? SKILL_TITLE[kind],
+          titleTr: meta?.genre ?? SKILL_TITLE[kind],
+          playable: !!meta,
+          done: meta ? done.has(meta.id) : false,
+          ref: meta?.id ?? null,
+        });
       } else {
         const t = SLOT_TITLE[kind];
         items.push({ id, kind, title: t.title, titleTr: t.titleTr, playable: false, done: false, ref: null });

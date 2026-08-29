@@ -37,7 +37,7 @@ export function UnitScreen() {
   function openItem(it: (typeof items)[number]) {
     if (it.kind === "lesson") { if (it.ref) nav.navigate("Lesson", { id: it.ref }); return; }
     if (!it.playable) return; // beceri/quiz/kontrol içeriği yayına alınınca açılır
-    nav.navigate("Item", { id: it.id, kind: it.kind, title: it.title });
+    nav.navigate("Item", { id: it.ref ?? it.id, kind: it.kind, title: it.title });
   }
 
   return (
