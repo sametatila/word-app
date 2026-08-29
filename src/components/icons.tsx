@@ -779,6 +779,13 @@ export const StarIcon = (p: IconProps) => (
   </Svg>
 );
 
+/** Taç — premium. */
+export const CrownIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4 8l3.5 4L12 6l4.5 6L20 8l-1.5 10h-13zM5.5 20h13" />
+  </Svg>
+);
+
 /** Soru — tartışma. */
 export const QuestionIcon = (p: IconProps) => (
   <Svg {...p}>

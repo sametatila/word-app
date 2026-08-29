@@ -1,5 +1,8 @@
+import Link from "next/link";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
+import { isPremium } from "@/lib/premium";
+import { CrownIcon } from "@/components/icons";
 import { Avatar } from "@/components/avatar";
 import { ProfileMenu } from "@/components/profile-menu";
 import { ActivityProgress } from "@/components/progress-view";
@@ -59,6 +62,7 @@ export default async function ProfilePage() {
     const mastered = data ? data.levels.reduce((s, l) => s + l.mastered, 0) : 0;
     const total = data ? data.levels.reduce((s, l) => s + l.total, 0) : 0;
     const atLevel = data?.levels.find((l) => l.niveau === profile.level);
+    const premium = await isPremium(user.id);
 
     return (
       <div className="mx-auto w-full max-w-3xl space-y-4">
@@ -88,6 +92,25 @@ export default async function ProfilePage() {
             total={atLevel?.total ?? 0}
           />
         </div>
+
+        {/* Premium yükseltme bandı (§4) — mobil app'teki bantla aynı; yalnızca
+            premium olmayan kullanıcıya. */}
+        {!premium ? (
+          <Link
+            href="/premium?from=profile"
+            prefetch={false}
+            className="brand-gradient flex items-center gap-3 rounded-2xl px-5 py-4 text-white"
+          >
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: "rgba(255,255,255,0.18)" }}>
+              <CrownIcon size={24} />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block font-bold">Premium'a geç</span>
+              <span className="block text-sm text-white/85">Sınırsız konuşma + tam sınav hazırlığı</span>
+            </span>
+            <span aria-hidden className="text-xl">›</span>
+          </Link>
+        ) : null}
 
         {data ? (
           <ActivityProgress

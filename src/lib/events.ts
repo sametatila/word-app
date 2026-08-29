@@ -114,6 +114,21 @@ export const EVENT_NAMES = [
   "push_optin", // bildirim izni (value = 1 verildi / 0 reddedildi / 2 sonra dedi)
   "install_prompt", // ana ekrana ekleme (value = 1 eklendi / 0 reddedildi / 2 iOS ipucu gösterildi)
   "push_sent", // sunucu bildirim gönderdi (kind = reminder|summary) — push_open ile huni
+
+  /*
+    Dönüşüm hunisi — premium (WP-90, dönüşüm planı §4).
+
+    "Paywall'ı gören kaç kişi satın aldı" sorusu ancak buradan cevaplanır:
+    paywall_view (kind = nereden gelindi: exam|walk|limit|profile|nav) →
+    purchase_start (plan seçildi, kind = monthly|yearly) → purchase_done
+    (kind = plan, value = aylık kuruş). premium_gate ise bir premium özelliğin
+    kilide takıldığı an (kind = özellik: speaking|exam_full|unlimited_tour) —
+    paywall'ı hangi kısıt besliyor, oradan görülür.
+  */
+  "paywall_view", // paywall açıldı (kind = kaynak)
+  "premium_gate", // premium özellik kilide takıldı (kind = özellik)
+  "purchase_start", // satın alma başladı (kind = plan)
+  "purchase_done", // satın alma tamamlandı (kind = plan, value = aylık kuruş)
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];
