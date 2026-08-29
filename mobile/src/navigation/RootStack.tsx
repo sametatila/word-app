@@ -10,6 +10,7 @@ import { OnboardingScreen } from "../screens/OnboardingScreen";
 import { UnitScreen } from "../screens/UnitScreen";
 import { AuthScreen } from "../screens/AuthScreen";
 import { WordsScreen } from "../screens/WordsScreen";
+import { AchievementsScreen } from "../screens/AchievementsScreen";
 
 /** Kök yığın: onboarding + sekmeler + üzerine tam ekran açılan akış ekranları. */
 export type RootStackParams = {
@@ -23,6 +24,7 @@ export type RootStackParams = {
   Unit: { index: number; theme: string };
   Auth: undefined;
   Words: undefined;
+  Achievements: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -40,6 +42,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Unit" component={UnitScreen} />
       <Stack.Screen name="Auth" component={AuthScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Words" component={WordsScreen} />
+      <Stack.Screen name="Achievements" component={AchievementsScreen} />
     </Stack.Navigator>
   );
 }
