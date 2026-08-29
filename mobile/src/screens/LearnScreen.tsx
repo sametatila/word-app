@@ -57,8 +57,13 @@ export function LearnScreen() {
           <Text variant="caption" color={colors.textMuted}>Merhaba 👋</Text>
           <Text variant="display">Bugün</Text>
         </View>
-        <View style={[{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 9, borderWidth: 1, borderColor: colors.hairline }, softShadow("#5a3418", 6)]}>
-          <FlameIcon color={colors.streak} size={18} /><Text variant="bodyStrong" color={colors.streak}>7</Text>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+          <View style={[{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 9, borderWidth: 1, borderColor: colors.hairline }, softShadow("#5a3418", 6)]}>
+            <FlameIcon color={colors.streak} size={18} /><Text variant="bodyStrong" color={colors.streak}>7</Text>
+          </View>
+          <PressableScale onPress={() => nav.navigate("Profile")} style={[{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 6)]}>
+            <Text variant="h3" color="#fff">S</Text>
+          </PressableScale>
         </View>
       </View>
 

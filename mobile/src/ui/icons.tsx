@@ -51,3 +51,21 @@ export const GrammarIcon = ({ color = "#000", size }: P) => (
 export const QuizIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Circle cx="12" cy="12" r="9" {...stroke(color)} /><Path d="M9 9a3 3 0 114 2.8c-1 .4-1 1-1 2.2M12 17.5v.5" {...stroke(color)} /></S>
 );
+export const ChevronLeftIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M15 6l-6 6 6 6" {...stroke(color, 2.2)} /></S>
+);
+export const ChevronRightIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M9 6l6 6-6 6" {...stroke(color, 2.2)} /></S>
+);
+export const BellIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M6 9a6 6 0 1112 0c0 5 2 6 2 6H4s2-1 2-6z" {...stroke(color)} /><Path d="M10 20a2 2 0 004 0" {...stroke(color)} /></S>
+);
+export const TrophyIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M7 4h10v4a5 5 0 01-10 0zM7 6H4v1a3 3 0 003 3M17 6h3v1a3 3 0 01-3 3M9 15h6M8 20h8M10 15v5M14 15v5" {...stroke(color)} /></S>
+);
+export const LogoutIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M14 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2v-2M10 12h10M17 9l3 3-3 3" {...stroke(color)} /></S>
+);
+export const ExamIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M3 8l9-4 9 4-9 4-9-4zM7 10v5c0 1.5 2.2 3 5 3s5-1.5 5-3v-5M21 8v5" {...stroke(color)} /></S>
+);
