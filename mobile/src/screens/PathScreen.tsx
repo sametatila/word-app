@@ -1,5 +1,8 @@
 import React from "react";
 import { View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParams } from "../navigation/RootStack";
 import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
@@ -16,6 +19,7 @@ const UNITS = [
 
 export function PathScreen() {
   const { colors } = useTheme();
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   return (
     <Screen>
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.md }}>
@@ -57,7 +61,7 @@ export function PathScreen() {
             <Text variant="bodyStrong">Ich heiße Emma</Text>
           </View>
         </View>
-        <PressableScale style={{ marginTop: spacing.md }}>
+        <PressableScale style={{ marginTop: spacing.md }} onPress={() => nav.navigate("Unit", { index: 2, theme: "Tanışma ve ben" })}>
           <View style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>Devam et →</Text>
           </View>
@@ -66,13 +70,15 @@ export function PathScreen() {
 
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
         {UNITS.map((u) => (
-          <Card key={u.n} padded style={{ width: "47.5%", minHeight: 116, opacity: u.st === "lock" ? 0.6 : 1 }}>
-            <View style={{ width: 40, height: 40, borderRadius: 20, borderWidth: 3, borderColor: u.st === "done" ? colors.success : u.st === "cur" ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-              {u.st === "done" ? <CheckIcon color={colors.success} size={18} /> : <Text variant="bodyStrong" color={u.st === "cur" ? colors.primary : colors.textMuted}>{u.n}</Text>}
-            </View>
-            <Text variant="bodyStrong" style={{ marginTop: 8 }}>{u.th}</Text>
-            <Text variant="micro" color={u.st === "done" ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.st === "done" ? "Tamamlandı" : u.st === "lock" ? "Kilitli" : "Devam ediyor"}</Text>
-          </Card>
+          <PressableScale key={u.n} style={{ width: "47.5%" }} onPress={() => u.st !== "lock" && nav.navigate("Unit", { index: u.n, theme: u.th })}>
+            <Card padded style={{ minHeight: 116, opacity: u.st === "lock" ? 0.6 : 1 }}>
+              <View style={{ width: 40, height: 40, borderRadius: 20, borderWidth: 3, borderColor: u.st === "done" ? colors.success : u.st === "cur" ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
+                {u.st === "done" ? <CheckIcon color={colors.success} size={18} /> : <Text variant="bodyStrong" color={u.st === "cur" ? colors.primary : colors.textMuted}>{u.n}</Text>}
+              </View>
+              <Text variant="bodyStrong" style={{ marginTop: 8 }}>{u.th}</Text>
+              <Text variant="micro" color={u.st === "done" ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.st === "done" ? "Tamamlandı" : u.st === "lock" ? "Kilitli" : "Devam ediyor"}</Text>
+            </Card>
+          </PressableScale>
         ))}
       </View>
     </Screen>
