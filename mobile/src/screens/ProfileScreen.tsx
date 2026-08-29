@@ -114,7 +114,7 @@ export function ProfileScreen() {
 
         {/* ayar satırları */}
         <Card padded style={{ paddingVertical: 0 }}>
-          <Row icon={LearnIcon} label="Kelimelerim" tint={colors.primary} colors={colors} />
+          <Row icon={LearnIcon} label="Kelimelerim" tint={colors.primary} colors={colors} onPress={() => nav.navigate("Words")} />
           <Row icon={TrophyIcon} label="Başarımlar" tint={colors.streak} colors={colors} />
           <Row icon={ExamIcon} label="Sınav hazırlık" tint={colors.accent} colors={colors} onPress={() => nav.navigate("ExamPrep")} />
           <Row icon={ShareIcon} label="Arkadaşını davet et" tint={colors.success} colors={colors} onPress={() => shareInvite()} />
