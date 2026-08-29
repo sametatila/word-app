@@ -38,6 +38,10 @@ export async function GET() {
       items: u.items.map((s) => ({
         id: s.item.id,
         kind: s.item.kind,
+        // Altındaki içeriğin kimliği: ders id'si / egzersiz id'si / ünite id'si
+        // (quiz+checkpoint). REST istemcisi (mobil) oynatıcıya bununla gider;
+        // web sunucu bileşeninde zaten ref'le köprü kuruyor.
+        ref: s.item.ref,
         title: s.item.title,
         titleTr: s.item.titleTr,
         playable: s.playable,

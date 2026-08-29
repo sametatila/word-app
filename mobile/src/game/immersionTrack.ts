@@ -123,3 +123,15 @@ export function buildLocalPatika(level: string, done: Set<string>): Patika {
     totalUnits: units.length,
   };
 }
+
+/**
+ * item id → ref haritası (aynı seviye). /api/immersion cevabı ref taşımıyor;
+ * item id'leri hem sunucu hem istemci aynı formülle üretiyor
+ * (`${unitId}-${kind}${n}`, aynı kaynak içerik) → ref'leri buradan doldururuz.
+ */
+export function refIndex(level: string): Map<string, string | null> {
+  const p = buildLocalPatika(level, new Set<string>());
+  const m = new Map<string, string | null>();
+  for (const u of p.units) for (const it of u.items) m.set(it.id, it.ref ?? null);
+  return m;
+}

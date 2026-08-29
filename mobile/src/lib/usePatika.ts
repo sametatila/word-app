@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
 import { useMe } from "./useMe";
-import { buildLocalPatika } from "../game/immersionTrack";
+import { buildLocalPatika, refIndex } from "../game/immersionTrack";
 import { getDoneItems } from "../game/lessonProgress";
 
 /** Patika (immersion) hub'ı — gerçek track, kullanıcının ilerlemesiyle. */
@@ -42,8 +42,19 @@ export function usePatika(): { data: Patika | null; loading: boolean; source: "a
     api<Patika>("/api/immersion")
       .then((d) => {
         if (!alive) return;
-        if (d?.units?.length) { setData(d); setSource("api"); }
-        else throw new Error("empty");
+        if (!d?.units?.length) throw new Error("empty");
+        // /api/immersion item ref taşımıyor → oynatıcıya gidebilmek için pakete
+        // gömülü aynı-kaynak track'ten ref doldur (item id'leri birebir eşleşir).
+        const idx = refIndex(d.level);
+        const enriched: Patika = {
+          ...d,
+          units: d.units.map((u) => ({
+            ...u,
+            items: u.items.map((it) => ({ ...it, ref: it.ref ?? idx.get(it.id) ?? null })),
+          })),
+        };
+        setData(enriched);
+        setSource("api");
       })
       .catch(async () => {
         // /api/immersion canlı değil → cihazda kur. Seviye gelene kadar bekle
