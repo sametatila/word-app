@@ -57,7 +57,14 @@ export type SessionMeta = {
   level: string;
 };
 
-export type SessionPayload = { rounds: Round[]; resume: unknown; meta: SessionMeta };
+/** Yarım kalan turun sunucudaki durumu — kaldığın yerden devam için. */
+export type ResumeState = { index: number; correct: number; total: number; xp: number; missed: unknown[] };
+
+export type SessionPayload = { rounds: Round[]; resume: ResumeState | null; meta: SessionMeta };
+
+/** Oturum ilerlemesi — cevaplarla birlikte gidip `session_state.index`'i ilerletir
+    (böylece kapatıp açınca tur baştan tekrar oynanmaz ve çift sayılmaz). */
+export type SessionProgress = { index: number; correct: number; total: number; xp: number };
 
 export type AnswerOut = {
   wordId: number;
@@ -79,7 +86,8 @@ export function fetchSession(day = todayStr(), opts?: { extra?: boolean; walk?: 
   return api<SessionPayload>(`/api/session?day=${day}${q}`);
 }
 
-/** Cevapları sunucuya yazar (SRS + XP + seri güncellenir). */
-export async function submitAnswers(answers: AnswerOut[], day: string, seconds: number): Promise<void> {
-  await api("/api/answers", { method: "POST", body: JSON.stringify({ answers, day, seconds }) });
+/** Cevapları sunucuya yazar (SRS + XP + seri güncellenir). `progress` verilirse
+    oturum konumu da (index) kaydedilir — kaldığın yerden devam için. */
+export async function submitAnswers(answers: AnswerOut[], day: string, seconds: number, progress?: SessionProgress): Promise<void> {
+  await api("/api/answers", { method: "POST", body: JSON.stringify({ answers, day, seconds, ...(progress ? { progress } : {}) }) });
 }

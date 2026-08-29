@@ -10,7 +10,7 @@ import { XIcon, ShareIcon } from "../ui/icons";
 import { shareResult } from "../lib/share";
 import { ProgressRing } from "../ui/ProgressRing";
 import { RoundView } from "../game/rounds";
-import { fetchSession, submitAnswers, todayStr, type Round, type SessionMeta, type AnswerOut } from "../game/session";
+import { fetchSession, submitAnswers, todayStr, type Round, type SessionMeta, type AnswerOut, type SessionProgress } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -31,6 +31,7 @@ export function GameScreen() {
   const [meta, setMeta] = useState<SessionMeta | null>(null);
   const [idx, setIdx] = useState(0);
   const [finalCorrect, setFinalCorrect] = useState(0);
+  const [finalTotal, setFinalTotal] = useState(0);
   const answers = useRef<AnswerOut[]>([]);
   const startedAt = useRef(0);
   const roundStart = useRef(0);
@@ -38,6 +39,20 @@ export function GameScreen() {
   // Bu oturumun cevapları sunucuya yazıldı mı? (finish ya da çıkış-flush)
   // İkisi birden yazıp XP/SRS'i çift saymasın diye tek kapı.
   const submitted = useRef(false);
+  // Turun sunucudaki konumu (kaç tur bitti). unmount-flush ref'ten okur.
+  const idxRef = useRef(0);
+  // Yarım kalan turdan devam ederken önceki (sunucudaki) sayaç tabanı.
+  const resumeBase = useRef({ correct: 0, total: 0, xp: 0 });
+
+  /** Şu ana kadarki ilerleme — cevaplarla gidip sunucu index'ini ilerletir. */
+  function progressNow(): SessionProgress {
+    return {
+      index: idxRef.current,
+      correct: resumeBase.current.correct + answers.current.filter((a) => a.correct).length,
+      total: resumeBase.current.total + answers.current.length,
+      xp: resumeBase.current.xp,
+    };
+  }
 
   async function load() {
     setPhase("loading");
@@ -45,13 +60,20 @@ export function GameScreen() {
       const p = await fetchSession(day.current);
       answers.current = [];
       submitted.current = false;
-      setRounds(p.rounds ?? []);
+      const list = p.rounds ?? [];
+      // Yarım kalan turdan devam: sunucu resume.index veriyorsa oradan başla
+      // (baştan tekrar oynatma → çift sayım yok). Aksi hâlde 0.
+      const r = p.resume;
+      const start = r && r.index > 0 && r.index < list.length ? r.index : 0;
+      resumeBase.current = { correct: r?.correct ?? 0, total: r?.total ?? 0, xp: r?.xp ?? 0 };
+      setRounds(list);
       setMeta(p.meta ?? null);
-      setIdx(0);
+      idxRef.current = start;
+      setIdx(start);
       startedAt.current = Date.now();
       roundStart.current = Date.now();
       track("session_start", 0, "session");
-      if ((p.rounds?.length ?? 0) === 0) { setFinalCorrect(0); setPhase("done"); }
+      if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setPhase("done"); }
       else setPhase("play");
     } catch (e) {
       setPhase(e instanceof ApiError && e.status === 401 ? "auth" : "error");
@@ -69,7 +91,7 @@ export function GameScreen() {
       if (!pending.length) return;
       submitted.current = true;
       const secs = Math.round((Date.now() - startedAt.current) / 1000);
-      void submitAnswers(pending, day.current, secs).catch(() => { /* sessizce düşer */ });
+      void submitAnswers(pending, day.current, secs, progressNow()).catch(() => { /* sessizce düşer */ });
     };
   }, []);
 
@@ -85,19 +107,21 @@ export function GameScreen() {
     }
     roundStart.current = Date.now();
     const next = idx + 1;
+    idxRef.current = next;
     if (next >= rounds.length) void finish();
     else setIdx(next);
   }
 
   async function finish() {
-    const ok = answers.current.filter((a) => a.correct).length;
-    setFinalCorrect(ok);
+    const totalCorrect = resumeBase.current.correct + answers.current.filter((a) => a.correct).length;
+    setFinalCorrect(totalCorrect);
+    setFinalTotal(resumeBase.current.total + answers.current.length);
     setPhase("done");
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
-    track("session_done", ok, "session");
+    track("session_done", totalCorrect, "session");
     if (submitted.current) return;
     submitted.current = true;
-    try { if (answers.current.length) await submitAnswers(answers.current, day.current, secs); } catch { /* ölçüm/yazma sessizce düşer */ }
+    try { if (answers.current.length) await submitAnswers(answers.current, day.current, secs, progressNow()); } catch { /* ölçüm/yazma sessizce düşer */ }
   }
 
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
@@ -131,7 +155,7 @@ export function GameScreen() {
   }
 
   if (phase === "done") {
-    const total = answers.current.length;
+    const total = finalTotal;
     const pct = total ? Math.round((finalCorrect / total) * 100) : 0;
     return (
       <View style={pad}>
