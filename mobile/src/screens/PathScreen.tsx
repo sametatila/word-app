@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -8,7 +8,7 @@ import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
-import { usePatika, type Patika, type PatikaUnit } from "../lib/usePatika";
+import { usePatika, type PatikaUnit } from "../lib/usePatika";
 import { KIND_LABEL } from "../data/demoUnit";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -17,25 +17,8 @@ const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.Re
   write: (p) => <WriteIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />, quiz: (p) => <QuizIcon {...p} />, checkpoint: (p) => <CheckIcon {...p} />,
 };
 
-/** Misafir/çevrimdışı için demo Patika — gerçek veri gelince yerini alır. */
-const DEMO_PATIKA: Patika = {
-  level: "A1", currentIndex: 2, doneUnits: 1, totalUnits: 4,
-  units: [
-    { id: "d1", index: 1, group: 1, theme: "Selamlaşma & sen", locked: false, complete: true, done: 8, total: 8, lessonsDone: 3, lessonsTotal: 3, items: [] },
-    { id: "d2", index: 2, group: 1, theme: "Tanışma ve ben", locked: false, complete: false, done: 3, total: 13, lessonsDone: 1, lessonsTotal: 4, items: [
-      { id: "d2-1", kind: "lesson", title: "Merhaba, ben Emma", titleTr: null, playable: true, done: true },
-      { id: "d2-2", kind: "read", title: "Ich heiße Emma", titleTr: null, playable: true, done: true },
-      { id: "d2-3", kind: "grammar", title: "sein fiili", titleTr: null, playable: true, done: true },
-      { id: "d2-4", kind: "listen", title: "Ich heiße Emma", titleTr: null, playable: true, done: false },
-      ...Array.from({ length: 9 }, (_, i) => ({ id: `d2-${i + 5}`, kind: "lesson", title: "…", titleTr: null, playable: false, done: false })),
-    ] },
-    { id: "d3", index: 3, group: 1, theme: "Şehirde", locked: true, complete: false, done: 0, total: 12, lessonsDone: 0, lessonsTotal: 4, items: [] },
-    { id: "d4", index: 4, group: 1, theme: "Yeme-içme", locked: true, complete: false, done: 0, total: 12, lessonsDone: 0, lessonsTotal: 4, items: [] },
-  ],
-};
-
 function Featured({ unit, isCurrent, colors, onContinue }: { unit: PatikaUnit; isCurrent: boolean; colors: Palette; onContinue: () => void }) {
-  const next = unit.items.find((i) => i.playable && !i.done) ?? null;
+  const next = unit.items.find((i) => i.kind === "lesson" && i.playable && !i.done) ?? unit.items.find((i) => i.playable && !i.done) ?? null;
   const NextIcon = next ? KIND_ICON[next.kind] : null;
   return (
     <Card style={{ marginBottom: spacing.lg, borderColor: colors.primary, borderWidth: 2 }}>
@@ -46,7 +29,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: PatikaUnit; i
         <View style={{ flex: 1 }}>
           <Text variant="micro" color={colors.primary}>{isCurrent ? "ŞU AN" : "ÜNİTE"} · ÜNİTE {unit.index}</Text>
           <Text variant="h2">{unit.theme}</Text>
-          <Text variant="caption" color={colors.textMuted}>{unit.complete ? "Tamamlandı" : `${unit.done}/${unit.total} adım`}</Text>
+          <Text variant="caption" color={colors.textMuted}>{unit.complete ? "Tamamlandı" : `${unit.lessonsDone}/${unit.lessonsTotal} ders`}</Text>
         </View>
       </View>
       {unit.items.length > 0 && (
@@ -63,7 +46,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: PatikaUnit; i
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="micro" color={colors.textMuted}>SIRADAKİ · {(KIND_LABEL[next.kind as keyof typeof KIND_LABEL] ?? next.kind).toUpperCase()}</Text>
-            <Text variant="bodyStrong">{next.title}</Text>
+            <Text variant="bodyStrong" numberOfLines={1}>{next.title}</Text>
           </View>
         </View>
       )}
@@ -79,14 +62,26 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: PatikaUnit; i
 export function PathScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const { data } = usePatika();
-  const patika = data ?? DEMO_PATIKA;
+  const { data: patika, source, loading } = usePatika();
+
+  if (!patika) {
+    return (
+      <Screen>
+        <Text variant="display" style={{ marginBottom: spacing.lg }}>Patika</Text>
+        <View style={{ paddingVertical: spacing.xxxl, alignItems: "center", gap: spacing.md }}>
+          <ActivityIndicator color={colors.primary} size="large" />
+          <Text variant="caption" color={colors.textMuted}>{loading ? "Patika hazırlanıyor…" : "Giriş yapınca patikan yüklenir."}</Text>
+        </View>
+      </Screen>
+    );
+  }
+
   const featured = patika.units.find((u) => u.index === patika.currentIndex) ?? patika.units[0];
   const pctAll = patika.totalUnits ? Math.round((patika.doneUnits / patika.totalUnits) * 100) : 0;
 
   function openUnit(u: PatikaUnit) {
     if (u.locked) return;
-    nav.navigate("Unit", { index: u.index, theme: u.theme, items: u.items });
+    nav.navigate("Unit", { index: u.index, level: patika!.level, theme: u.theme, items: u.items });
   }
 
   return (
@@ -100,7 +95,9 @@ export function PathScreen() {
       <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: 6 }}>
         <View style={{ height: "100%", width: `${Math.max(2, pctAll)}%`, borderRadius: 5, backgroundColor: colors.success }} />
       </View>
-      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>{patika.level} · {patika.doneUnits}/{patika.totalUnits} ünite tamam</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>
+        {patika.level} · {patika.doneUnits}/{patika.totalUnits} ünite tamam{source === "local" ? " · ilerleme cihazda" : ""}
+      </Text>
 
       {featured && <Featured unit={featured} isCurrent={featured.index === patika.currentIndex} colors={colors} onContinue={() => openUnit(featured)} />}
 
@@ -112,7 +109,7 @@ export function PathScreen() {
                 {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === patika.currentIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
               </View>
               <Text variant="bodyStrong" style={{ marginTop: 8 }} numberOfLines={2}>{u.theme}</Text>
-              <Text variant="micro" color={u.complete ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? "Tamamlandı" : u.locked ? "Kilitli" : `${u.done}/${u.total}`}</Text>
+              <Text variant="micro" color={u.complete ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? "Tamamlandı" : u.locked ? "Kilitli" : `${u.lessonsDone}/${u.lessonsTotal} ders`}</Text>
             </Card>
           </PressableScale>
         ))}

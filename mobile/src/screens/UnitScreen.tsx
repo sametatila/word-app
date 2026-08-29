@@ -7,8 +7,8 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, CheckIcon, LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, LockIcon } from "../ui/icons";
-import { DEMO_UNIT_ITEMS, KIND_LABEL, type ItemKind } from "../data/demoUnit";
+import { ChevronLeftIcon, ChevronRightIcon, CheckIcon, LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, LockIcon } from "../ui/icons";
+import { KIND_LABEL, type ItemKind } from "../data/demoUnit";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const KIND_ICON: Record<ItemKind, (p: { color: string; size: number }) => React.ReactElement> = {
@@ -25,14 +25,20 @@ export function UnitScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { params } = useRoute<RouteProp<RootStackParams, "Unit">>();
-  // Gerçek item'lar (Patika'dan) varsa onlar; yoksa demo. Birleşik biçim.
-  const raw = params.items && params.items.length
-    ? params.items.map((i) => ({ id: i.id, kind: i.kind, title: i.title, done: i.done, locked: !i.playable }))
-    : DEMO_UNIT_ITEMS.map((d) => ({ id: d.id, kind: d.kind as string, title: d.title, done: d.status === "done", locked: d.status === "locked" }));
-  const currentId = raw.find((i) => !i.locked && !i.done)?.id;
+  const raw = (params.items ?? []).map((i) => ({
+    id: i.id, kind: i.kind as ItemKind, title: i.title, done: i.done, playable: i.playable, ref: i.ref ?? null,
+  }));
+  // "Şimdi" = ilk oynanabilir + bitmemiş adım (dersler her zaman oynanabilir).
+  const currentId = raw.find((i) => i.playable && !i.done)?.id;
   const items = raw.map((i) => ({ ...i, current: i.id === currentId }));
   const done = items.filter((i) => i.done).length;
   const pct = items.length ? Math.round((done / items.length) * 100) : 0;
+
+  function openItem(it: (typeof items)[number]) {
+    if (it.kind === "lesson") { if (it.ref) nav.navigate("Lesson", { id: it.ref }); return; }
+    if (!it.playable) return; // beceri/quiz/kontrol içeriği yayına alınınca açılır
+    nav.navigate("Item", { id: it.id, kind: it.kind, title: it.title });
+  }
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -41,7 +47,7 @@ export function UnitScreen() {
           <ChevronLeftIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="micro" color={colors.textMuted}>A1 · ÜNİTE {params.index}</Text>
+          <Text variant="micro" color={colors.textMuted}>{params.level} · ÜNİTE {params.index}</Text>
           <Text variant="h2">{params.theme}</Text>
         </View>
       </View>
@@ -54,36 +60,33 @@ export function UnitScreen() {
 
         <View style={{ gap: spacing.md }}>
           {items.map((it) => {
-            const locked = it.locked;
-            const current = it.current;
-            const tint = colors[(KIND_TINT[it.kind as ItemKind] ?? "primary") as keyof Palette] as string;
-            const Icon = KIND_ICON[it.kind as ItemKind] ?? KIND_ICON.lesson;
+            const soon = !it.playable && it.kind !== "lesson"; // içerik henüz canlı değil
+            const tint = colors[(KIND_TINT[it.kind] ?? "primary")] as string;
+            const Icon = KIND_ICON[it.kind] ?? KIND_ICON.lesson;
             return (
-              <PressableScale
-                key={it.id}
-                onPress={() => {
-                  if (locked) return;
-                  if (["read", "listen", "write", "grammar"].includes(it.kind)) nav.navigate("Item", { id: it.id, kind: it.kind, title: it.title });
-                  else nav.navigate("Game");
-                }}
-                style={{ opacity: locked ? 0.55 : 1 }}
-              >
-                <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: current ? 2 : 1, borderColor: current ? colors.primary : colors.hairline }}>
-                  <View style={[{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: locked ? colors.surface2 : tint }, !locked ? softShadow(tint, 6) : {}]}>
-                    <Icon color={locked ? colors.textFaint : "#fff"} size={22} />
+              <PressableScale key={it.id} onPress={() => openItem(it)} style={{ opacity: soon ? 0.6 : 1 }}>
+                <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: it.current ? 2 : 1, borderColor: it.current ? colors.primary : colors.hairline }}>
+                  <View style={[{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soon ? colors.surface2 : tint }, !soon ? softShadow(tint, 6) : {}]}>
+                    <Icon color={soon ? colors.textFaint : "#fff"} size={22} />
                   </View>
                   <View style={{ flex: 1 }}>
-                    <Text variant="micro" color={colors.textMuted}>{KIND_LABEL[it.kind as ItemKind] ?? it.kind}</Text>
+                    <Text variant="micro" color={colors.textMuted}>{KIND_LABEL[it.kind] ?? it.kind}</Text>
                     <Text variant="bodyStrong" numberOfLines={1}>{it.title}</Text>
                   </View>
                   {it.done ? (
                     <View style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
                       <CheckIcon color={colors.success} size={16} />
                     </View>
-                  ) : current ? (
+                  ) : soon ? (
+                    <View style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 4 }}>
+                      <Text variant="micro" color={colors.textMuted}>Yakında</Text>
+                    </View>
+                  ) : it.current ? (
                     <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 4 }}>
                       <Text variant="micro" color={colors.primary}>Şimdi</Text>
                     </View>
+                  ) : it.playable ? (
+                    <ChevronRightIcon color={colors.textFaint} size={20} />
                   ) : (
                     <LockIcon color={colors.textFaint} size={18} />
                   )}
@@ -92,6 +95,10 @@ export function UnitScreen() {
             );
           })}
         </View>
+
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, textAlign: "center" }}>
+          Okuma · dinleme · yazma · quiz içeriği yayına alınınca burada açılır.
+        </Text>
       </ScrollView>
     </View>
   );
