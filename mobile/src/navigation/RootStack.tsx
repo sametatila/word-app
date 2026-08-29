@@ -26,7 +26,7 @@ export type RootStackParams = {
   ExamPrep: undefined;
   Walk: undefined;
   Paywall: undefined;
-  Unit: { index: number; theme: string };
+  Unit: { index: number; theme: string; items?: { id: string; kind: string; title: string; done: boolean; playable: boolean }[] };
   Auth: undefined;
   Words: undefined;
   Achievements: undefined;

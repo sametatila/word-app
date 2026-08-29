@@ -25,9 +25,14 @@ export function UnitScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { params } = useRoute<RouteProp<RootStackParams, "Unit">>();
-  const items = DEMO_UNIT_ITEMS;
-  const done = items.filter((i) => i.status === "done").length;
-  const pct = Math.round((done / items.length) * 100);
+  // Gerçek item'lar (Patika'dan) varsa onlar; yoksa demo. Birleşik biçim.
+  const raw = params.items && params.items.length
+    ? params.items.map((i) => ({ id: i.id, kind: i.kind, title: i.title, done: i.done, locked: !i.playable }))
+    : DEMO_UNIT_ITEMS.map((d) => ({ id: d.id, kind: d.kind as string, title: d.title, done: d.status === "done", locked: d.status === "locked" }));
+  const currentId = raw.find((i) => !i.locked && !i.done)?.id;
+  const items = raw.map((i) => ({ ...i, current: i.id === currentId }));
+  const done = items.filter((i) => i.done).length;
+  const pct = items.length ? Math.round((done / items.length) * 100) : 0;
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -49,10 +54,10 @@ export function UnitScreen() {
 
         <View style={{ gap: spacing.md }}>
           {items.map((it) => {
-            const locked = it.status === "locked";
-            const current = it.status === "current";
-            const tint = colors[KIND_TINT[it.kind]] as string;
-            const Icon = KIND_ICON[it.kind];
+            const locked = it.locked;
+            const current = it.current;
+            const tint = colors[(KIND_TINT[it.kind as ItemKind] ?? "primary") as keyof Palette] as string;
+            const Icon = KIND_ICON[it.kind as ItemKind] ?? KIND_ICON.lesson;
             return (
               <PressableScale
                 key={it.id}
@@ -68,10 +73,10 @@ export function UnitScreen() {
                     <Icon color={locked ? colors.textFaint : "#fff"} size={22} />
                   </View>
                   <View style={{ flex: 1 }}>
-                    <Text variant="micro" color={colors.textMuted}>{KIND_LABEL[it.kind]}</Text>
-                    <Text variant="bodyStrong">{it.title}</Text>
+                    <Text variant="micro" color={colors.textMuted}>{KIND_LABEL[it.kind as ItemKind] ?? it.kind}</Text>
+                    <Text variant="bodyStrong" numberOfLines={1}>{it.title}</Text>
                   </View>
-                  {it.status === "done" ? (
+                  {it.done ? (
                     <View style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
                       <CheckIcon color={colors.success} size={16} />
                     </View>
