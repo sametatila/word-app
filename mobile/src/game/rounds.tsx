@@ -2,10 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { View, TextInput } from "react-native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { CheckIcon, XIcon } from "../ui/icons";
+import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { Mascot, type Mood } from "../ui/Mascot";
 import { haptic } from "../lib/haptics";
 import { whyMeaning, whyArticle, whyPlural } from "./why";
+import { speakGerman, ttsAvailable } from "../lib/tts";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
@@ -223,10 +224,12 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
 function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const word = round.word ?? round.words?.[0];
   const [reveal, setReveal] = useState(false);
+  useEffect(() => { if (round.game === "intro" && word) speakGerman(withArtikel(word)); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [round.id]);
   if (!word) { onDone(true); return null; }
   return (
     <View style={{ flex: 1 }}>
       <Prompt label={round.game === "intro" ? "Yeni kelime" : "Hatırla"} big={withArtikel(word)} sub={round.sentence ?? null} colors={colors} />
+      <View style={{ alignItems: "center", marginTop: -spacing.md, marginBottom: spacing.md }}><SpeakButton text={withArtikel(word)} colors={colors} size={24} /></View>
       {reveal ? (
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
           <Text variant="h3">{meaningLine(word)}</Text>
@@ -278,12 +281,38 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
 }
 
 /** Dinle (listen): sesli mod (TTS) henüz yok — kelime okunur, anlamı seçilir. */
+/** Almanca metnin yanında küçük hoparlör — dokununca seslendirir (web SpeakButton). */
+function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palette; size?: number }) {
+  return (
+    <PressableScale onPress={() => speakGerman(text)} hitSlop={8} style={{ padding: 4 }}>
+      <SpeakerIcon color={colors.primary} size={size} />
+    </PressableScale>
+  );
+}
+
 function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const word = round.word!;
   const [picked, setPicked] = useState<string | null>(null);
+  const [audible, setAudible] = useState<boolean | null>(null);
+  useEffect(() => { ttsAvailable().then(setAudible); }, []);
+  useEffect(() => { if (audible) speakGerman(withArtikel(word)); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [audible, round.id]);
+  const hideWord = audible === true && !picked;
   return (
     <View style={{ flex: 1 }}>
-      <Prompt label="Dinle · anlamını seç" big={withArtikel(word)} sub={null} colors={colors} />
+      {/* Duyulabiliyorsa kelime gizli (gerçek dinleme testi); değilse görünür. */}
+      <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.xl }, softShadow("#5a3418", 10)]}>
+        <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>Dinle · anlamını seç</Text>
+        {hideWord ? (
+          <PressableScale onPress={() => speakGerman(withArtikel(word))} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
+            <SpeakerIcon color="#fff" size={38} />
+          </PressableScale>
+        ) : (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 6, marginTop: spacing.sm }}>
+            <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(word)}</Text>
+            <SpeakButton text={withArtikel(word)} colors={colors} size={24} />
+          </View>
+        )}
+      </View>
       {picked && (word.beispiel || word.beispielTr) ? (
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
           <ExampleBlock de={word.beispiel} tr={word.beispielTr} en={word.beispielEn ?? null} colors={colors} />

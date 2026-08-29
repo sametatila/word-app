@@ -25,6 +25,9 @@ export const BoltIcon = ({ color = "#000", size }: P) => (
 export const CheckIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M5 12.5l4.2 4.3L19 7" {...stroke(color, 2.6)} /></S>
 );
+export const SpeakerIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M4 9v6h4l5 4V5L8 9H4z" {...stroke(color)} /><Path d="M16 8.5a4 4 0 010 7M18.5 6a7 7 0 010 12" {...stroke(color)} /></S>
+);
 export const LockIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Rect x="5" y="11" width="14" height="9" rx="2" {...stroke(color)} /><Path d="M8 11V8a4 4 0 018 0v3" {...stroke(color)} /></S>
 );
