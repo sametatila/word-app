@@ -86,21 +86,24 @@ export function LearnScreen() {
         </View>
       </PressableScale>
 
-      {/* dil ilerlemesi — sade satır (fitness metresi değil) */}
-      <Card style={{ marginBottom: spacing.xl }}>
-        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-            <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 4 }}>
-              <Text variant="bodyStrong" color={colors.primary}>{level}</Text>
+      {/* dil ilerlemesi — sade satır (fitness metresi değil). Yalnız gerçek veri
+          gelince; yoksa (misafir / uç henüz deploy değil) yanıltıcı 0 gösterme. */}
+      {me && (
+        <Card style={{ marginBottom: spacing.xl }}>
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+              <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 4 }}>
+                <Text variant="bodyStrong" color={colors.primary}>{level}</Text>
+              </View>
+              <Text variant="bodyStrong">{mastered} kelime öğrenildi</Text>
             </View>
-            <Text variant="bodyStrong">{mastered} kelime öğrenildi</Text>
+            <Text variant="caption" color={colors.textMuted}>{formatXp(me.xp)} XP</Text>
           </View>
-          <Text variant="caption" color={colors.textMuted}>{me ? `${formatXp(me.xp)} XP` : ""}</Text>
-        </View>
-        <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
-          <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
-        </View>
-      </Card>
+          <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
+            <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
+          </View>
+        </Card>
+      )}
 
       {/* diğer öğrenme yolları */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>Daha fazlası</Text>
