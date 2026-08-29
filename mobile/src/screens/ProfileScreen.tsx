@@ -9,6 +9,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, ExamIcon, BellIcon, LogoutIcon, CrownIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
+import { useMe, formatDuration, formatXp } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type ThemeMode, type Palette } from "../theme";
 
 const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
@@ -43,8 +44,11 @@ export function ProfileScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user, signOut } = useAuth();
+  const { me } = useMe();
   const displayName = user?.name ?? "Misafir";
   const initial = (displayName.trim()[0] ?? "M").toUpperCase();
+  const streak = me ? me.streak : 7;
+  const xpLabel = me ? formatXp(me.xp) : "1.2k";
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -66,20 +70,20 @@ export function ProfileScreen() {
           <Text variant="caption" color={colors.textMuted}>{user?.email ?? "A1 · Başlangıç (giriş yapılmadı)"}</Text>
           <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
-              <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>7 gün</Text>
+              <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{streak} gün</Text>
             </View>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
-              <BoltIcon color={colors.primary} size={16} /><Text variant="bodyStrong" color={colors.primary}>1.2k XP</Text>
+              <BoltIcon color={colors.primary} size={16} /><Text variant="bodyStrong" color={colors.primary}>{xpLabel} XP</Text>
             </View>
           </View>
         </Card>
 
         {/* istatistik ızgarası */}
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-          <StatTile value="248" label="Öğrenilen kelime" color={colors.primary} colors={colors} />
-          <StatTile value="7" label="Gün serisi" color={colors.streak} colors={colors} />
-          <StatTile value="1.240" label="Toplam XP" color={colors.success} colors={colors} />
-          <StatTile value="3s 20dk" label="Bu hafta süre" color={colors.info} colors={colors} />
+          <StatTile value={me ? String(me.mastered) : "248"} label="Öğrenilen kelime" color={colors.primary} colors={colors} />
+          <StatTile value={me ? String(me.streak) : "7"} label="Gün serisi" color={colors.streak} colors={colors} />
+          <StatTile value={me ? String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".") : "1.240"} label="Toplam XP" color={colors.success} colors={colors} />
+          <StatTile value={me ? formatDuration(me.seconds) : "3s 20dk"} label="Bu hafta süre" color={colors.info} colors={colors} />
         </View>
 
         {/* premium yükseltme bandı (§4) */}

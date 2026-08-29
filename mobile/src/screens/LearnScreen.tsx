@@ -10,6 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ProgressRing } from "../ui/ProgressRing";
 import { FlameIcon, BoltIcon, WalkIcon, CheckIcon, ArrowRightIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
+import { useMe, formatDuration, formatXp } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const Stat = ({ label, value, unit, color, colors }: { label: string; value: string; unit: string; color: string; colors: Palette }) => (
@@ -52,8 +53,14 @@ export function LearnScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
+  const { me } = useMe();
   const initial = ((user?.name ?? "Misafir").trim()[0] ?? "M").toUpperCase();
   const greeting = user?.name ? `Merhaba ${user.name.split(" ")[0]} 👋` : "Merhaba 👋";
+  // me varsa gerçek sayılar, yoksa demo (misafir / çevrimdışı).
+  const streak = me ? me.streak : 7;
+  const learned = me ? String(me.mastered) : "12";
+  const xp = me ? formatXp(me.xp) : "1.2k";
+  const dur = me ? formatDuration(me.seconds) : "14 dk";
   return (
     <Screen>
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.lg }}>
@@ -63,7 +70,7 @@ export function LearnScreen() {
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
           <View style={[{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 9, borderWidth: 1, borderColor: colors.hairline }, softShadow("#5a3418", 6)]}>
-            <FlameIcon color={colors.streak} size={18} /><Text variant="bodyStrong" color={colors.streak}>7</Text>
+            <FlameIcon color={colors.streak} size={18} /><Text variant="bodyStrong" color={colors.streak}>{streak}</Text>
           </View>
           <PressableScale onPress={() => nav.navigate("Profile")} style={[{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 6)]}>
             <Text variant="h3" color="#fff">{initial}</Text>
@@ -74,7 +81,7 @@ export function LearnScreen() {
       <Card style={{ marginBottom: spacing.xl }}>
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
           <View style={{ gap: spacing.md }}>
-            <Stat label="Öğrenilen" value="12" unit="kelime" color={colors.primary} colors={colors} />
+            <Stat label="Öğrenilen" value={learned} unit="kelime" color={colors.primary} colors={colors} />
             <Stat label="Tekrar" value="34" unit="kart" color={colors.info} colors={colors} />
           </View>
           <ProgressRing size={130} stroke={13} pct={62} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
@@ -83,9 +90,9 @@ export function LearnScreen() {
           </ProgressRing>
         </View>
         <View style={{ flexDirection: "row", marginTop: spacing.lg, gap: spacing.lg }}>
-          <Meter label="XP" value="1.2k" color={colors.primary} colors={colors} />
-          <Meter label="Seri" value="7 gün" color={colors.streak} colors={colors} />
-          <Meter label="Süre" value="14 dk" color={colors.info} colors={colors} />
+          <Meter label="XP" value={xp} color={colors.primary} colors={colors} />
+          <Meter label="Seri" value={`${streak} gün`} color={colors.streak} colors={colors} />
+          <Meter label="Süre" value={dur} color={colors.info} colors={colors} />
         </View>
       </Card>
 
