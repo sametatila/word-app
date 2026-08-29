@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
+import { todayStr } from "../game/session";
 
 /** /api/me özeti — ana ekran ve profilin gösterdiği gerçek sayılar. */
 export type Me = {
@@ -16,10 +17,23 @@ export type Me = {
   seconds: number;
 };
 
+/** /api/session meta'sının okuduğumuz alt kümesi (özet ucu deploy değilse kaynak). */
+type SessionMetaLite = {
+  displayName: string | null;
+  level: string;
+  currentStreak: number;
+  totalXp: number;
+  dailyGoal: number;
+  coverage?: { mastered: number; total: number };
+};
+
 /**
- * Oturum açıksa gerçek özeti getirir; misafirde ya da hata olduğunda null döner
- * (ekranlar o zaman demo değerlere düşer). Hata YUTULUR — ölçüm/özet
- * kullanıcının önüne geçmemeli, en fazla demo görünür.
+ * Oturum açıksa gerçek özeti getirir; misafirde null döner (ekranlar demo'ya düşer).
+ *
+ * ÖNEMLİ: /api/me henüz canlıya alınmadıysa (404) DEMO'YA DÜŞMEYİZ — aynı gerçek
+ * sayılar /api/session meta'sında da var (Neon'dan: seri, XP, seviye, isim,
+ * pekişen/toplam kelime). Böylece ana ekran push beklemeden gerçek veriyle dolar.
+ * Hata her iki uçta da yutulur; en fazla demo görünür, kullanıcının önüne geçmez.
  */
 export function useMe(): { me: Me | null; loading: boolean } {
   const { user } = useAuth();
@@ -32,7 +46,31 @@ export function useMe(): { me: Me | null; loading: boolean } {
     setLoading(true);
     api<Me>("/api/me")
       .then((d) => { if (alive) setMe(d); })
-      .catch(() => { if (alive) setMe(null); })
+      .catch(async () => {
+        // /api/me yok (404) → gerçek veriyi session meta'sından türet.
+        try {
+          const s = await api<{ meta: SessionMetaLite }>(`/api/session?day=${todayStr()}`);
+          const m = s.meta;
+          if (alive && m) {
+            setMe({
+              name: m.displayName,
+              level: m.level,
+              course: "de",
+              streak: m.currentStreak,
+              longestStreak: m.currentStreak,
+              xp: m.totalXp,
+              dailyGoal: m.dailyGoal,
+              mastered: m.coverage?.mastered ?? 0,
+              totalWords: m.coverage?.total ?? 0,
+              seconds: 0,
+            });
+          } else if (alive) {
+            setMe(null);
+          }
+        } catch {
+          if (alive) setMe(null);
+        }
+      })
       .finally(() => { if (alive) setLoading(false); });
     return () => { alive = false; };
   }, [user]);
