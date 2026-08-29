@@ -9,7 +9,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
-import { sendRoleplay, type ChatMsg } from "../game/roleplay";
+import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
 import { markLessonDone } from "../game/lessonProgress";
 import { speakGerman } from "../lib/tts";
 import { haptic } from "../lib/haptics";
@@ -28,7 +28,7 @@ type Phase = "lecture" | "roleplay" | "summary";
 
 /** Anlatım/konuşma akışındaki baloncuk. */
 type BubbleData =
-  | { role: "teacher"; segments: Segment[]; tone?: "hint" | "why" }
+  | { role: "teacher"; segments: Segment[]; tone?: "hint" | "why"; fix?: string[] }
   | { role: "student"; text: string; ok?: boolean };
 type Bubble = BubbleData & { id: number };
 
@@ -75,6 +75,7 @@ export function LessonScreen() {
   const [busy, setBusy] = useState(false);        // roleplay bekleme
   const [roleTurns, setRoleTurns] = useState(0);
   const [roleMsgs, setRoleMsgs] = useState<ChatMsg[]>([]);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
   const [saved, setSaved] = useState(false);
 
   const scoreTotal = lesson ? scoredSteps(lesson) : 0;
@@ -176,12 +177,13 @@ export function LessonScreen() {
     scrollDown();
   }
 
-  async function sendRole() {
+  async function sendRole(textArg?: string) {
     if (!lesson || busy) return;
-    const text = input.trim();
+    const text = (textArg ?? input).trim();
     if (!text) return;
     push({ role: "student", text });
     setInput("");
+    setSuggestions([]);
     setBusy(true);
     const next: ChatMsg[] = [...roleMsgs, { role: "user", content: text }];
     setRoleMsgs(next);
@@ -189,9 +191,12 @@ export function LessonScreen() {
     scrollDown();
     try {
       const reply = await sendRoleplay(lesson.id, next);
-      setRoleMsgs([...next, { role: "assistant", content: reply || "…" }]);
-      push({ role: "teacher", segments: [{ lang: "de", text: reply || "…" }] });
-      if (reply) speakGerman(reply);
+      const parsed = parseReply(reply || "…");
+      const bodyText = parsed.body || reply || "…";
+      setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
+      push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], fix: parsed.corrections.length ? parsed.corrections : undefined });
+      setSuggestions(parsed.suggestions);
+      if (bodyText) speakGerman(bodyText);
     } catch {
       push({ role: "teacher", segments: [{ lang: "tr", text: "[Bağlantı sorunu — tekrar dener misin?]" }], tone: "hint" });
     } finally {
@@ -281,7 +286,8 @@ export function LessonScreen() {
                 onConfirm={onConfirm} onRepeatDone={onRepeatDone} onProduce={submitProduce} onTrueFalse={answerTrueFalse}
                 colors={colors} />
             ) : (
-              <RoleplayControls input={input} setInput={setInput} busy={busy} onSend={sendRole}
+              <RoleplayControls input={input} setInput={setInput} busy={busy} onSend={() => sendRole()}
+                suggestions={suggestions} onSuggest={(s) => sendRole(s)}
                 ready={roleplayReady} turns={roleTurns} minTurns={minTurns} onFinish={() => finish(true)} colors={colors} />
             )}
           </View>
@@ -314,6 +320,11 @@ function BubbleView({ b, colors }: { b: Bubble; colors: Palette }) {
             </Text>
           ))}
         </Text>
+        {b.fix?.length ? (
+          <View style={{ marginTop: 8, gap: 2, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: 6 }}>
+            {b.fix.map((f, i) => <Text key={i} variant="micro" color={colors.textMuted}>Düzeltme: {f}</Text>)}
+          </View>
+        ) : null}
       </View>
       {deText(b.segments) ? (
         <PressableScale onPress={() => speakGerman(deText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4, marginTop: 4, marginLeft: 4 }}>
@@ -387,12 +398,22 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onRepeatDo
   );
 }
 
-function RoleplayControls({ input, setInput, busy, onSend, ready, turns, minTurns, onFinish, colors }: {
+function RoleplayControls({ input, setInput, busy, onSend, suggestions, onSuggest, ready, turns, minTurns, onFinish, colors }: {
   input: string; setInput: (s: string) => void; busy: boolean; onSend: () => void;
+  suggestions: string[]; onSuggest: (s: string) => void;
   ready: boolean; turns: number; minTurns: number; onFinish: () => void; colors: Palette;
 }) {
   return (
     <View style={{ gap: spacing.sm }}>
+      {!busy && suggestions.length > 0 && (
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs }}>
+          {suggestions.map((s, i) => (
+            <PressableScale key={i} onPress={() => onSuggest(s)} style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 8, borderWidth: 1, borderColor: colors.primary }}>
+              <Text variant="caption" color={colors.primary}>{s}</Text>
+            </PressableScale>
+          ))}
+        </View>
+      )}
       {ready ? (
         <BigButton label="Konuşmayı bitir → Özet" onPress={onFinish} tint={colors.success} colors={colors} />
       ) : (
