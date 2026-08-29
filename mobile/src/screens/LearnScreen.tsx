@@ -82,7 +82,7 @@ export function LearnScreen() {
       </View>
       <QuickCard title="Tur başlat" subtitle="Kelime turu · 5 dk" tint={colors.primary} icon={BoltIcon} />
       <QuickCard title="Yürüyüş modu" subtitle="Kulakla öğren, ellerin serbest" tint={colors.info} icon={WalkIcon} />
-      <QuickCard title="Sınav hazırlık" subtitle="Goethe A1 · painkiller" tint={colors.accent} icon={CheckIcon} />
+      <QuickCard title="Sınav hazırlık" subtitle="Goethe A1 · Modül 1" tint={colors.accent} icon={CheckIcon} />
     </Screen>
   );
 }
