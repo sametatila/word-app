@@ -13,6 +13,7 @@ import { WordsScreen } from "../screens/WordsScreen";
 import { AchievementsScreen } from "../screens/AchievementsScreen";
 import { SettingsScreen } from "../screens/SettingsScreen";
 import { PlacementScreen } from "../screens/PlacementScreen";
+import { LeaderboardScreen } from "../screens/LeaderboardScreen";
 
 /** Kök yığın: onboarding + sekmeler + üzerine tam ekran açılan akış ekranları. */
 export type RootStackParams = {
@@ -29,6 +30,7 @@ export type RootStackParams = {
   Achievements: undefined;
   Settings: undefined;
   Placement: undefined;
+  Leaderboard: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -49,6 +51,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Achievements" component={AchievementsScreen} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
       <Stack.Screen name="Placement" component={PlacementScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Leaderboard" component={LeaderboardScreen} />
     </Stack.Navigator>
   );
 }

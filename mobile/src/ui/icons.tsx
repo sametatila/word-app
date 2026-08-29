@@ -78,3 +78,6 @@ export const ShareIcon = ({ color = "#000", size }: P) => (
 export const SettingsIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Circle cx="12" cy="12" r="3" {...stroke(color)} /><Path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" {...stroke(color)} /></S>
 );
+export const PodiumIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M9 20V9h6v11M15 20V4h5v16M9 20V13H4v7M2 20h20" {...stroke(color)} /></S>
+);

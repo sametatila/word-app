@@ -1,0 +1,76 @@
+import React, { useEffect, useState } from "react";
+import { View, FlatList } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
+import { Text } from "../ui/Text";
+import { PressableScale } from "../ui/PressableScale";
+import { ChevronLeftIcon, FlameIcon } from "../ui/icons";
+import { useAuth } from "../lib/AuthContext";
+import { api } from "../api/client";
+import { DEMO_LEADERBOARD, type LeaderboardWeek, type LeaderboardRow } from "../data/demoLeaderboard";
+import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+
+function medalColor(rank: number, colors: Palette): string {
+  return rank === 1 ? colors.streak : rank === 2 ? "#9aa3ad" : rank === 3 ? "#b08d57" : colors.textMuted;
+}
+
+export function LeaderboardScreen() {
+  const { colors } = useTheme();
+  const insets = useSafeAreaInsets();
+  const nav = useNavigation<{ goBack: () => void }>();
+  const { user } = useAuth();
+  const [week, setWeek] = useState<LeaderboardWeek>(DEMO_LEADERBOARD);
+
+  useEffect(() => {
+    if (!user) { setWeek(DEMO_LEADERBOARD); return; }
+    let alive = true;
+    api<LeaderboardWeek>("/api/leaderboard")
+      .then((d) => { if (alive && d?.rows) setWeek(d); })
+      .catch(() => { if (alive) setWeek(DEMO_LEADERBOARD); });
+    return () => { alive = false; };
+  }, [user]);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: colors.bg }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+        <PressableScale onPress={() => nav.goBack()} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <ChevronLeftIcon color={colors.text} size={24} />
+        </PressableScale>
+        <View style={{ flex: 1 }}>
+          <Text variant="h2">Sıralama</Text>
+          <Text variant="caption" color={colors.textMuted}>Bu hafta · {week.daysLeft} gün kaldı</Text>
+        </View>
+      </View>
+
+      <FlatList
+        data={week.rows}
+        keyExtractor={(r) => r.userId}
+        contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.sm }}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item: r }: { item: LeaderboardRow }) => {
+          const mc = medalColor(r.rank, colors);
+          const initial = ((r.name ?? "?").trim()[0] ?? "?").toUpperCase();
+          return (
+            <View style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 12, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
+              <View style={{ width: 30, alignItems: "center" }}>
+                <Text variant="h3" color={mc}>{r.rank}</Text>
+              </View>
+              <View style={{ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center", backgroundColor: r.isMe ? colors.primary : colors.surface2 }}>
+                <Text variant="bodyStrong" color={r.isMe ? "#fff" : colors.textMuted}>{initial}</Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong" color={r.isMe ? colors.primary : colors.text}>{r.name ?? "Öğrenci"}{r.isMe ? " (sen)" : ""}</Text>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+                  <FlameIcon color={colors.streak} size={12} />
+                  <Text variant="micro" color={colors.textMuted}>{r.streak} gün seri</Text>
+                </View>
+              </View>
+              <Text variant="h3" color={r.isMe ? colors.primary : colors.text}>{String(r.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</Text>
+              <Text variant="micro" color={colors.textMuted}>XP</Text>
+            </View>
+          );
+        }}
+      />
+    </View>
+  );
+}
