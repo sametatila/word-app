@@ -7,7 +7,7 @@ import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon } from "../ui/icons";
+import { FlameIcon, BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -108,6 +108,7 @@ export function LearnScreen() {
       {/* diğer öğrenme yolları */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>Daha fazlası</Text>
       <ActionRow title="Günün turu" subtitle="Herkesle aynı yarışma · sıralamaya gir" tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
+      <ActionRow title="Haftalık sınav" subtitle="Öğrendiklerini ölç · haftada bir" tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
       <ActionRow title="Yürüyüş modu" subtitle="Kulakla öğren, ellerin serbest" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
       <ActionRow title="Sınav hazırlık" subtitle="Goethe & telc — hedefe yönelik" tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
     </Screen>

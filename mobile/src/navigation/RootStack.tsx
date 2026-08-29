@@ -17,6 +17,7 @@ import { LeaderboardScreen } from "../screens/LeaderboardScreen";
 import { NotificationsScreen } from "../screens/NotificationsScreen";
 import { ItemScreen } from "../screens/ItemScreen";
 import { DailyScreen } from "../screens/DailyScreen";
+import { WeeklyScreen } from "../screens/WeeklyScreen";
 
 /** Kök yığın: onboarding + sekmeler + üzerine tam ekran açılan akış ekranları. */
 export type RootStackParams = {
@@ -36,6 +37,7 @@ export type RootStackParams = {
   Leaderboard: undefined;
   Notifications: undefined;
   Daily: undefined;
+  Weekly: undefined;
   Item: { id: string; kind: string; title: string };
 };
 
@@ -61,6 +63,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Notifications" component={NotificationsScreen} />
       <Stack.Screen name="Item" component={ItemScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Daily" component={DailyScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
     </Stack.Navigator>
   );
 }
