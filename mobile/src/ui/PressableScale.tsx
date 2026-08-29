@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Animated, Pressable, type PressableProps, type ViewStyle } from "react-native";
+import { Animated, Pressable, type PressableProps, type StyleProp, type ViewStyle } from "react-native";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
@@ -11,7 +11,7 @@ const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
  * bu elemana geçer — iç View'e verilseydi dış Pressable içerik kadar daralır,
  * satırda 1/3 yeri kaplamazdı (alt tab bar'ın sola yığılma hatası buydu).
  */
-export function PressableScale({ children, style, onPressIn, onPressOut, ...rest }: Omit<PressableProps, "children" | "style"> & { style?: ViewStyle; children?: React.ReactNode }) {
+export function PressableScale({ children, style, onPressIn, onPressOut, ...rest }: Omit<PressableProps, "children" | "style"> & { style?: StyleProp<ViewStyle>; children?: React.ReactNode }) {
   const scale = useRef(new Animated.Value(1)).current;
   return (
     <AnimatedPressable

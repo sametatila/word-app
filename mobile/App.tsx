@@ -3,7 +3,7 @@ import { StatusBar } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { ThemeProvider, useTheme } from "./src/theme";
-import { RootTabs } from "./src/navigation/RootTabs";
+import { RootStack } from "./src/navigation/RootStack";
 
 function Nav() {
   const { colors, isDark } = useTheme();
@@ -12,7 +12,7 @@ function Nav() {
   return (
     <NavigationContainer theme={navTheme}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
-      <RootTabs />
+      <RootStack />
     </NavigationContainer>
   );
 }

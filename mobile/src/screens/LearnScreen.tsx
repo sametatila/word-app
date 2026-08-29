@@ -1,5 +1,8 @@
 import React from "react";
 import { View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParams } from "../navigation/RootStack";
 import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
@@ -26,10 +29,10 @@ const Meter = ({ label, value, color, colors }: { label: string; value: string; 
     <Text variant="bodyStrong">{value}</Text>
   </View>
 );
-function QuickCard({ title, subtitle, tint, icon: Icon }: { title: string; subtitle: string; tint: string; icon: (p: { color: string; size: number }) => React.ReactElement }) {
+function QuickCard({ title, subtitle, tint, icon: Icon, onPress }: { title: string; subtitle: string; tint: string; icon: (p: { color: string; size: number }) => React.ReactElement; onPress?: () => void }) {
   const { colors } = useTheme();
   return (
-    <PressableScale style={{ marginBottom: spacing.md }}>
+    <PressableScale onPress={onPress} style={{ marginBottom: spacing.md }}>
       <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <View style={[{ width: 52, height: 52, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 8)]}>
           <Icon color="#fff" size={26} />
@@ -46,6 +49,7 @@ function QuickCard({ title, subtitle, tint, icon: Icon }: { title: string; subti
 
 export function LearnScreen() {
   const { colors } = useTheme();
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   return (
     <Screen>
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.lg }}>
@@ -80,7 +84,7 @@ export function LearnScreen() {
         <Text variant="h2">Bugün</Text>
         <Text variant="caption" color={colors.primary}>Tümü →</Text>
       </View>
-      <QuickCard title="Tur başlat" subtitle="Kelime turu · 5 dk" tint={colors.primary} icon={BoltIcon} />
+      <QuickCard title="Tur başlat" subtitle="Kelime turu · 5 dk" tint={colors.primary} icon={BoltIcon} onPress={() => nav.navigate("Game")} />
       <QuickCard title="Yürüyüş modu" subtitle="Kulakla öğren, ellerin serbest" tint={colors.info} icon={WalkIcon} />
       <QuickCard title="Sınav hazırlık" subtitle="Goethe A1 · Modül 1" tint={colors.accent} icon={CheckIcon} />
     </Screen>
