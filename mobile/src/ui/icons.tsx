@@ -72,3 +72,6 @@ export const ExamIcon = ({ color = "#000", size }: P) => (
 export const CrownIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M4 8l3.5 4L12 6l4.5 6L20 8l-1.5 10h-13zM5.5 20h13" {...stroke(color)} /></S>
 );
+export const ShareIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Circle cx="6" cy="12" r="2.4" {...stroke(color)} /><Circle cx="17" cy="6" r="2.4" {...stroke(color)} /><Circle cx="17" cy="18" r="2.4" {...stroke(color)} /><Path d="M8.1 10.9l6.8-3.8M8.1 13.1l6.8 3.8" {...stroke(color)} /></S>
+);

@@ -7,8 +7,9 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, ExamIcon, BellIcon, LogoutIcon, CrownIcon } from "../ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, ExamIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
+import { shareInvite } from "../lib/share";
 import { useMe, formatDuration, formatXp } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type ThemeMode, type Palette } from "../theme";
 
@@ -27,9 +28,9 @@ function StatTile({ value, label, color, colors }: { value: string; label: strin
   );
 }
 
-function Row({ icon: Icon, label, tint, colors, last }: { icon: (p: { color: string; size: number }) => React.ReactElement; label: string; tint: string; colors: Palette; last?: boolean }) {
+function Row({ icon: Icon, label, tint, colors, last, onPress }: { icon: (p: { color: string; size: number }) => React.ReactElement; label: string; tint: string; colors: Palette; last?: boolean; onPress?: () => void }) {
   return (
-    <PressableScale style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
+    <PressableScale onPress={onPress} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
       <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>
         <Icon color={tint} size={20} />
       </View>
@@ -115,7 +116,8 @@ export function ProfileScreen() {
         <Card padded style={{ paddingVertical: 0 }}>
           <Row icon={LearnIcon} label="Kelimelerim" tint={colors.primary} colors={colors} />
           <Row icon={TrophyIcon} label="Başarımlar" tint={colors.streak} colors={colors} />
-          <Row icon={ExamIcon} label="Sınav hazırlık" tint={colors.accent} colors={colors} />
+          <Row icon={ExamIcon} label="Sınav hazırlık" tint={colors.accent} colors={colors} onPress={() => nav.navigate("ExamPrep")} />
+          <Row icon={ShareIcon} label="Arkadaşını davet et" tint={colors.success} colors={colors} onPress={() => shareInvite()} />
           <Row icon={BellIcon} label="Bildirimler" tint={colors.info} colors={colors} last />
         </Card>
 

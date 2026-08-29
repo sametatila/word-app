@@ -4,7 +4,8 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, CheckIcon } from "../ui/icons";
+import { XIcon, ShareIcon } from "../ui/icons";
+import { shareResult } from "../lib/share";
 import { ProgressRing } from "../ui/ProgressRing";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
 import { DEMO_WORDS, withArtikel, type Word } from "../data/demoWords";
@@ -71,6 +72,10 @@ export function GameScreen() {
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl }}>+{correct * 10} XP kazandın</Text>
           <PressableScale onPress={restart} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color="#fff">Yeni tur</Text>
+          </PressableScale>
+          <PressableScale onPress={() => shareResult(correct, rounds.length)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
+            <ShareIcon color={colors.text} size={19} />
+            <Text variant="bodyStrong" color={colors.text}>Paylaş</Text>
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}>
             <Text variant="bodyStrong" color={colors.textMuted}>Bitir</Text>
