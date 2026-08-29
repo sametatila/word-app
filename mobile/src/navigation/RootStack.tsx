@@ -15,6 +15,7 @@ import { SettingsScreen } from "../screens/SettingsScreen";
 import { PlacementScreen } from "../screens/PlacementScreen";
 import { LeaderboardScreen } from "../screens/LeaderboardScreen";
 import { NotificationsScreen } from "../screens/NotificationsScreen";
+import { ItemScreen } from "../screens/ItemScreen";
 
 /** Kök yığın: onboarding + sekmeler + üzerine tam ekran açılan akış ekranları. */
 export type RootStackParams = {
@@ -33,6 +34,7 @@ export type RootStackParams = {
   Placement: undefined;
   Leaderboard: undefined;
   Notifications: undefined;
+  Item: { id: string; kind: string; title: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -55,6 +57,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Placement" component={PlacementScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Leaderboard" component={LeaderboardScreen} />
       <Stack.Screen name="Notifications" component={NotificationsScreen} />
+      <Stack.Screen name="Item" component={ItemScreen} options={{ animation: "slide_from_bottom" }} />
     </Stack.Navigator>
   );
 }

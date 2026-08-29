@@ -54,7 +54,15 @@ export function UnitScreen() {
             const tint = colors[KIND_TINT[it.kind]] as string;
             const Icon = KIND_ICON[it.kind];
             return (
-              <PressableScale key={it.id} onPress={() => !locked && nav.navigate("Game")} style={{ opacity: locked ? 0.55 : 1 }}>
+              <PressableScale
+                key={it.id}
+                onPress={() => {
+                  if (locked) return;
+                  if (["read", "listen", "write", "grammar"].includes(it.kind)) nav.navigate("Item", { id: it.id, kind: it.kind, title: it.title });
+                  else nav.navigate("Game");
+                }}
+                style={{ opacity: locked ? 0.55 : 1 }}
+              >
                 <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: current ? 2 : 1, borderColor: current ? colors.primary : colors.hairline }}>
                   <View style={[{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: locked ? colors.surface2 : tint }, !locked ? softShadow(tint, 6) : {}]}>
                     <Icon color={locked ? colors.textFaint : "#fff"} size={22} />
