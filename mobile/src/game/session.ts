@@ -40,6 +40,10 @@ export type Round = {
   tokens?: string[];
   correctOrder?: string[];
   prompt?: string;
+  /** order: cümle sonu noktalaması (son kelimeyi ele vermesin diye ayrı durur). */
+  tail?: string;
+  /** translate: kabul edilen başka kuruluşlar. */
+  alternatives?: string[];
 };
 
 export type SessionMeta = {
