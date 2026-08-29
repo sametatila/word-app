@@ -7,37 +7,19 @@ import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ProgressRing } from "../ui/ProgressRing";
-import { FlameIcon, BoltIcon, WalkIcon, CheckIcon, ArrowRightIcon } from "../ui/icons";
+import { FlameIcon, BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
-import { useMe, formatDuration, formatXp } from "../lib/useMe";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useMe, formatXp } from "../lib/useMe";
+import { useTheme, spacing, radii, softShadow } from "../theme";
 
-const Stat = ({ label, value, unit, color, colors }: { label: string; value: string; unit: string; color: string; colors: Palette }) => (
-  <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 8 }}>
-    <View style={{ width: 4, height: 30, borderRadius: 2, backgroundColor: color }} />
-    <View>
-      <Text variant="caption" color={colors.textMuted}>{label}</Text>
-      <Text variant="h2">{value} <Text variant="caption" color={colors.textMuted}>{unit}</Text></Text>
-    </View>
-  </View>
-);
-const Meter = ({ label, value, color, colors }: { label: string; value: string; color: string; colors: Palette }) => (
-  <View style={{ flex: 1 }}>
-    <Text variant="micro" color={colors.textMuted}>{label}</Text>
-    <View style={{ height: 5, borderRadius: 3, backgroundColor: colors.surface2, marginTop: 6, marginBottom: 5, overflow: "hidden" }}>
-      <View style={{ height: "100%", width: "70%", borderRadius: 3, backgroundColor: color }} />
-    </View>
-    <Text variant="bodyStrong">{value}</Text>
-  </View>
-);
-function QuickCard({ title, subtitle, tint, icon: Icon, onPress }: { title: string; subtitle: string; tint: string; icon: (p: { color: string; size: number }) => React.ReactElement; onPress?: () => void }) {
+/** Alt aksiyon satırı — dil odaklı, sade. */
+function ActionRow({ title, subtitle, tint, icon: Icon, onPress }: { title: string; subtitle: string; tint: string; icon: (p: { color: string; size: number }) => React.ReactElement; onPress?: () => void }) {
   const { colors } = useTheme();
   return (
     <PressableScale onPress={onPress} style={{ marginBottom: spacing.md }}>
       <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-        <View style={[{ width: 52, height: 52, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 8)]}>
-          <Icon color="#fff" size={26} />
+        <View style={[{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
+          <Icon color="#fff" size={24} />
         </View>
         <View style={{ flex: 1 }}>
           <Text variant="h3">{title}</Text>
@@ -54,54 +36,76 @@ export function LearnScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
   const { me } = useMe();
-  const initial = ((user?.name ?? "Misafir").trim()[0] ?? "M").toUpperCase();
+  const initial = ((user?.name ?? "Öğrenci").trim()[0] ?? "Ö").toUpperCase();
   const greeting = user?.name ? `Merhaba ${user.name.split(" ")[0]} 👋` : "Merhaba 👋";
-  // me varsa gerçek sayılar, yoksa demo (misafir / çevrimdışı).
-  const streak = me ? me.streak : 7;
-  const learned = me ? String(me.mastered) : "12";
-  const xp = me ? formatXp(me.xp) : "1.2k";
-  const dur = me ? formatDuration(me.seconds) : "14 dk";
+  const level = me?.level ?? "A1";
+  const mastered = me?.mastered ?? 0;
+  const totalWords = me?.totalWords ?? 0;
+  const streak = me?.streak ?? 0;
+  const pct = totalWords ? Math.min(100, Math.round((mastered / totalWords) * 100)) : 0;
+
   return (
     <Screen>
+      {/* başlık */}
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.lg }}>
         <View>
           <Text variant="caption" color={colors.textMuted}>{greeting}</Text>
-          <Text variant="display">Bugün</Text>
+          <Text variant="display">Almanca öğren</Text>
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-          <View style={[{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 9, borderWidth: 1, borderColor: colors.hairline }, softShadow("#5a3418", 6)]}>
-            <FlameIcon color={colors.streak} size={18} /><Text variant="bodyStrong" color={colors.streak}>{streak}</Text>
-          </View>
+          {streak > 0 && (
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 8 }}>
+              <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{streak}</Text>
+            </View>
+          )}
           <PressableScale onPress={() => nav.navigate("Profile")} style={[{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 6)]}>
             <Text variant="h3" color="#fff">{initial}</Text>
           </PressableScale>
         </View>
       </View>
 
-      <Card style={{ marginBottom: spacing.xl }}>
-        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-          <View style={{ gap: spacing.md }}>
-            <Stat label="Öğrenilen" value={learned} unit="kelime" color={colors.primary} colors={colors} />
-            <Stat label="Tekrar" value="34" unit="kart" color={colors.info} colors={colors} />
+      {/* GÜNLÜK TUR — dil-içerik öncelikli kahraman (fitness halkası değil) */}
+      <PressableScale onPress={() => nav.navigate("Game")}>
+        <View style={[{ borderRadius: radii.xl, overflow: "hidden", backgroundColor: colors.primary, marginBottom: spacing.xl }, softShadow(colors.primary, 14)]}>
+          <View style={{ padding: spacing.xl }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginBottom: spacing.sm }}>
+              <View style={{ width: 40, height: 40, borderRadius: radii.md, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
+                <BoltIcon color="#fff" size={22} />
+              </View>
+              <Text variant="micro" color="#ffffffcc" style={{ textTransform: "uppercase", letterSpacing: 1 }}>Günlük tur</Text>
+            </View>
+            <Text variant="h1" color="#fff">Kelimelerini çalış</Text>
+            <Text variant="body" color="#ffffffdd" style={{ marginTop: 4 }}>
+              Tekrar zamanı gelenleri pekiştir, yeni kelimeler öğren.
+            </Text>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginTop: spacing.lg, backgroundColor: "#ffffff", borderRadius: radii.pill, alignSelf: "flex-start", paddingHorizontal: 20, paddingVertical: 11 }}>
+              <Text variant="bodyStrong" color={colors.primary}>Başla</Text>
+              <ArrowRightIcon color={colors.primary} size={18} />
+            </View>
           </View>
-          <ProgressRing size={130} stroke={13} pct={62} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
-            <Text variant="display" color={colors.primary}>8</Text>
-            <Text variant="micro" color={colors.textMuted}>hedefe kaldı</Text>
-          </ProgressRing>
         </View>
-        <View style={{ flexDirection: "row", marginTop: spacing.lg, gap: spacing.lg }}>
-          <Meter label="XP" value={xp} color={colors.primary} colors={colors} />
-          <Meter label="Seri" value={`${streak} gün`} color={colors.streak} colors={colors} />
-          <Meter label="Süre" value={dur} color={colors.info} colors={colors} />
+      </PressableScale>
+
+      {/* dil ilerlemesi — sade satır (fitness metresi değil) */}
+      <Card style={{ marginBottom: spacing.xl }}>
+        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+            <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 4 }}>
+              <Text variant="bodyStrong" color={colors.primary}>{level}</Text>
+            </View>
+            <Text variant="bodyStrong">{mastered} kelime öğrenildi</Text>
+          </View>
+          <Text variant="caption" color={colors.textMuted}>{me ? `${formatXp(me.xp)} XP` : ""}</Text>
+        </View>
+        <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
+          <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
         </View>
       </Card>
 
-      <View style={{ marginBottom: spacing.md }}>
-        <Text variant="h2">Bugün</Text>
-      </View>
-      <QuickCard title="Tur başlat" subtitle="Kelime turu · 5 dk" tint={colors.primary} icon={BoltIcon} onPress={() => nav.navigate("Game")} />
-      <QuickCard title="Yürüyüş modu" subtitle="Kulakla öğren, ellerin serbest" tint={colors.info} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
-      <QuickCard title="Sınav hazırlık" subtitle="Goethe A1 · Modül 1" tint={colors.accent} icon={CheckIcon} onPress={() => nav.navigate("ExamPrep")} />
+      {/* diğer öğrenme yolları */}
+      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>Daha fazlası</Text>
+      <ActionRow title="Yürüyüş modu" subtitle="Kulakla öğren, ellerin serbest" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
+      <ActionRow title="Sınav hazırlık" subtitle="Goethe & telc — hedefe yönelik" tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
     </Screen>
   );
 }
