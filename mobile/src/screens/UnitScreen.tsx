@@ -36,7 +36,11 @@ export function UnitScreen() {
 
   function openItem(it: (typeof items)[number]) {
     if (it.kind === "lesson") { if (it.ref) nav.navigate("Lesson", { id: it.ref }); return; }
-    if (!it.playable) return; // beceri/quiz/kontrol içeriği yayına alınınca açılır
+    if (!it.playable) return; // içerik yayına alınınca açılır ("Yakında")
+    if (it.kind === "quiz" || it.kind === "checkpoint") {
+      nav.navigate("Quiz", { itemId: it.id, level: params.level, unitIndex: params.index, kind: it.kind, theme: params.theme });
+      return;
+    }
     nav.navigate("Item", { id: it.ref ?? it.id, kind: it.kind, title: it.title });
   }
 
@@ -97,7 +101,7 @@ export function UnitScreen() {
         </View>
 
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, textAlign: "center" }}>
-          Okuma · dinleme · yazma · quiz içeriği yayına alınınca burada açılır.
+          Dil bilgisi alıştırmaları ve ileri ünitelerin beceri içeriği yayına alınınca burada açılır.
         </Text>
       </ScrollView>
     </View>

@@ -23,6 +23,7 @@ import { QuestsScreen } from "../screens/QuestsScreen";
 import { CandoScreen } from "../screens/CandoScreen";
 import { WritingsScreen } from "../screens/WritingsScreen";
 import { LessonScreen } from "../screens/LessonScreen";
+import { QuizScreen } from "../screens/QuizScreen";
 
 /** Kök yığın: onboarding + sekmeler + üzerine tam ekran açılan akış ekranları. */
 export type RootStackParams = {
@@ -35,6 +36,7 @@ export type RootStackParams = {
   Paywall: undefined;
   Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; ref?: string | null }[] };
   Lesson: { id: string };
+  Quiz: { itemId: string; level: string; unitIndex: number; kind: string; theme: string };
   Auth: undefined;
   Words: undefined;
   Achievements: undefined;
@@ -65,6 +67,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Unit" component={UnitScreen} />
       <Stack.Screen name="Lesson" component={LessonScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Quiz" component={QuizScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Auth" component={AuthScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Words" component={WordsScreen} />
       <Stack.Screen name="Achievements" component={AchievementsScreen} />

@@ -88,7 +88,12 @@ export function buildLocalPatika(level: string, done: Set<string>): Patika {
           done: meta ? done.has(meta.id) : false,
           ref: meta?.id ?? null,
         });
+      } else if (kind === "quiz" || kind === "checkpoint") {
+        // Quiz/checkpoint ünitenin ders içeriğinden CİHAZDA türetilir → oynanır.
+        const t = SLOT_TITLE[kind];
+        items.push({ id, kind, title: t.title, titleTr: t.titleTr, playable: true, done: done.has(id), ref: unitId });
       } else {
+        // grammar — elle yazılmış içerik gerekir, henüz yok → "Yakında".
         const t = SLOT_TITLE[kind];
         items.push({ id, kind, title: t.title, titleTr: t.titleTr, playable: false, done: false, ref: null });
       }
