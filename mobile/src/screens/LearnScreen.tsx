@@ -9,6 +9,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ProgressRing } from "../ui/ProgressRing";
 import { FlameIcon, BoltIcon, WalkIcon, CheckIcon, ArrowRightIcon } from "../ui/icons";
+import { useAuth } from "../lib/AuthContext";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const Stat = ({ label, value, unit, color, colors }: { label: string; value: string; unit: string; color: string; colors: Palette }) => (
@@ -50,11 +51,14 @@ function QuickCard({ title, subtitle, tint, icon: Icon, onPress }: { title: stri
 export function LearnScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const { user } = useAuth();
+  const initial = ((user?.name ?? "Misafir").trim()[0] ?? "M").toUpperCase();
+  const greeting = user?.name ? `Merhaba ${user.name.split(" ")[0]} 👋` : "Merhaba 👋";
   return (
     <Screen>
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.lg }}>
         <View>
-          <Text variant="caption" color={colors.textMuted}>Merhaba 👋</Text>
+          <Text variant="caption" color={colors.textMuted}>{greeting}</Text>
           <Text variant="display">Bugün</Text>
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
@@ -62,7 +66,7 @@ export function LearnScreen() {
             <FlameIcon color={colors.streak} size={18} /><Text variant="bodyStrong" color={colors.streak}>7</Text>
           </View>
           <PressableScale onPress={() => nav.navigate("Profile")} style={[{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 6)]}>
-            <Text variant="h3" color="#fff">S</Text>
+            <Text variant="h3" color="#fff">{initial}</Text>
           </PressableScale>
         </View>
       </View>
