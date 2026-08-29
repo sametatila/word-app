@@ -47,15 +47,6 @@ export type ImmersionHubProps = {
   totalUnits: number;
 };
 
-const ICON: Record<ImmersionItemKind, string> = {
-  lesson: "★",
-  read: "📖",
-  listen: "🎧",
-  write: "✎",
-  grammar: "Aa",
-  quiz: "⚡",
-  checkpoint: "🏆",
-};
 const KIND_LABEL: Record<ImmersionItemKind, string> = {
   lesson: "Ders",
   read: "Okuma",
@@ -102,7 +93,8 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
 }
 
 function Featured({ unit, isCurrent }: { unit: HubUnit; isCurrent: boolean }) {
-  const nextHref = unit.items.find((i) => i.playable && !i.done && i.href)?.href ?? unit.items.find((i) => i.href)?.href ?? null;
+  const next = unit.items.find((i) => i.playable && !i.done && i.href) ?? null;
+  const nextHref = next?.href ?? unit.items.find((i) => i.href)?.href ?? null;
 
   return (
     <section
@@ -122,24 +114,44 @@ function Featured({ unit, isCurrent }: { unit: HubUnit; isCurrent: boolean }) {
         </div>
       </div>
 
-      {/* item hapları — oynatıcıya bağlı */}
-      <div className="mt-3 flex flex-wrap gap-1.5">
-        {unit.items.map((it) => (
-          <Hap key={it.id} item={it} locked={unit.locked} />
-        ))}
+      {/* segment çubuğu — ünitenin bölümleri (ikon kalabalığı yok): biten yosun,
+          sıradaki kehribar, gerisi boş. */}
+      <div className="mt-3.5 flex gap-1">
+        {unit.items.map((it) => {
+          const seg = it.done ? "var(--color-mint-500)" : it === next ? "var(--color-brand-600)" : "var(--surface-2)";
+          return <span key={it.id} className="h-2.5 flex-1 rounded-full" style={{ background: seg }} />;
+        })}
       </div>
+
+      {/* sıradaki adım — tek biçim çizgi-ikon + item adı */}
+      {next && !unit.locked && (
+        <div className="mt-3.5 flex items-center gap-3 rounded-2xl p-3" style={{ background: "var(--surface-2)" }}>
+          <span
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white"
+            style={{ background: "linear-gradient(180deg,var(--color-brand-500),var(--color-brand-600))" }}
+          >
+            <KindIcon kind={next.kind} />
+          </span>
+          <div className="min-w-0">
+            <p className="text-[11px] font-bold uppercase tracking-wide" style={{ color: "var(--text-muted)" }}>
+              Sıradaki · {KIND_LABEL[next.kind]}
+            </p>
+            <p className="truncate text-sm font-bold">{next.title}</p>
+          </div>
+        </div>
+      )}
 
       {nextHref && !unit.locked ? (
         <Link
           href={nextHref}
           prefetch={false}
-          className="mt-4 block rounded-2xl py-3.5 text-center text-base font-extrabold text-white"
+          className="mt-3.5 block rounded-2xl py-3.5 text-center text-base font-extrabold text-white"
           style={{ background: "linear-gradient(180deg,var(--color-brand-500),var(--color-brand-600))", boxShadow: "0 4px 0 var(--color-brand-700)" }}
         >
           {unit.complete ? "Tekrar et →" : "Devam et →"}
         </Link>
       ) : (
-        <div className="mt-4 rounded-2xl py-3.5 text-center text-sm font-bold" style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}>
+        <div className="mt-3.5 rounded-2xl py-3.5 text-center text-sm font-bold" style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}>
           🔒 Önceki üniteyi bitir
         </div>
       )}
@@ -147,33 +159,63 @@ function Featured({ unit, isCurrent }: { unit: HubUnit; isCurrent: boolean }) {
   );
 }
 
-function Hap({ item, locked }: { item: HubItem; locked: boolean }) {
-  const done = item.done;
-  const current = item.playable && !item.done && !locked;
-  const bg = done ? "var(--color-mint-600)" : current ? "var(--color-brand-600)" : "var(--surface-2)";
-  const fg = done || current ? "#fff" : "var(--text-muted)";
-  const inner = (
-    <span
-      className="flex h-8 w-8 items-center justify-center rounded-[10px] text-sm font-extrabold"
-      style={{
-        background: bg,
-        color: fg,
-        opacity: item.playable || done ? 1 : 0.6,
-        boxShadow: current ? "0 2px 0 var(--color-brand-700)" : undefined,
-      }}
-      title={`${KIND_LABEL[item.kind]}${item.titleTr ? " · " + item.titleTr : ""}`}
-    >
-      {done ? "✓" : ICON[item.kind]}
-    </span>
-  );
-  if (item.href && item.playable && !locked) {
-    return (
-      <Link href={item.href} prefetch={false}>
-        {inner}
-      </Link>
-    );
+/** Tek biçim çizgi-ikon (karışık emoji yerine) — "sıradaki" satırında kullanılır. */
+function KindIcon({ kind }: { kind: ImmersionItemKind }) {
+  const c = { width: 20, height: 20, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+  switch (kind) {
+    case "read":
+      return (
+        <svg {...c}>
+          <path d="M12 6C9 4 5 4 3 5v13c2-1 6-1 9 1 3-2 7-2 9-1V5c-2-1-6-1-9 1z" />
+          <path d="M12 7v12" />
+        </svg>
+      );
+    case "listen":
+      return (
+        <svg {...c}>
+          <path d="M5 13a7 7 0 0114 0" />
+          <rect x="3.5" y="13" width="4" height="7" rx="1.5" />
+          <rect x="16.5" y="13" width="4" height="7" rx="1.5" />
+        </svg>
+      );
+    case "write":
+      return (
+        <svg {...c}>
+          <path d="M4 20l1-4L16 5l3 3L8 19z" />
+          <path d="M14 7l3 3" />
+        </svg>
+      );
+    case "grammar":
+      return (
+        <svg {...c}>
+          <path d="M4 18L9 6l5 12" />
+          <path d="M5.5 14h7" />
+          <path d="M17 10v8" />
+          <path d="M17 11a3 3 0 100 6" />
+        </svg>
+      );
+    case "quiz":
+      return (
+        <svg {...c}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M9 9a3 3 0 114 2.8c-1 .4-1 1-1 2.2" />
+          <path d="M12 17.5v.5" />
+        </svg>
+      );
+    case "checkpoint":
+      return (
+        <svg {...c}>
+          <path d="M6 4v16" />
+          <path d="M6 5h11l-2 3 2 3H6" />
+        </svg>
+      );
+    default: // lesson
+      return (
+        <svg {...c}>
+          <path d="M4 5h16v11H8l-4 3z" />
+        </svg>
+      );
   }
-  return inner;
 }
 
 function Tile({ unit, active, onSelect }: { unit: HubUnit; active: boolean; onSelect: () => void }) {
