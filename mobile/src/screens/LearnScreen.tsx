@@ -90,8 +90,8 @@ export function LearnScreen() {
         <Text variant="caption" color={colors.primary}>Tümü →</Text>
       </View>
       <QuickCard title="Tur başlat" subtitle="Kelime turu · 5 dk" tint={colors.primary} icon={BoltIcon} onPress={() => nav.navigate("Game")} />
-      <QuickCard title="Yürüyüş modu" subtitle="Kulakla öğren, ellerin serbest" tint={colors.info} icon={WalkIcon} />
-      <QuickCard title="Sınav hazırlık" subtitle="Goethe A1 · Modül 1" tint={colors.accent} icon={CheckIcon} />
+      <QuickCard title="Yürüyüş modu" subtitle="Kulakla öğren, ellerin serbest" tint={colors.info} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
+      <QuickCard title="Sınav hazırlık" subtitle="Goethe A1 · Modül 1" tint={colors.accent} icon={CheckIcon} onPress={() => nav.navigate("ExamPrep")} />
     </Screen>
   );
 }
