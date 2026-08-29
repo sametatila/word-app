@@ -76,6 +76,9 @@ export function SettingsScreen() {
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
           {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => setLevel(l)} colors={colors} />)}
         </View>
+        <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
+          <Text variant="bodyStrong" color={colors.primary}>Emin değil misin? Seviye testini çöz →</Text>
+        </PressableScale>
 
         {!user && (
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl }}>
