@@ -10,7 +10,7 @@ import { ChevronLeftIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon } from "
 import { Mascot } from "../ui/Mascot";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
-import { markItemDone } from "../game/lessonProgress";
+import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakGerman } from "../lib/tts";
 import { haptic } from "../lib/haptics";
 import { api, API_BASE } from "../api/client";
@@ -77,17 +77,28 @@ export function LessonScreen() {
   const [roleMsgs, setRoleMsgs] = useState<ChatMsg[]>([]);
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [saved, setSaved] = useState(false);
+  const [resumeOffer, setResumeOffer] = useState<{ cursor: number; correct: number } | null>(null);
 
   const scoreTotal = lesson ? scoredSteps(lesson) : 0;
   const scrollDown = () => setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 60);
   const push = (b: BubbleData) => setFeed((f) => [...f, { ...b, id: bubbleId.current++ }]);
 
-  // Anlatımı başlat: ilk actionable adıma kadar öğretmen baloncuklarını aç.
+  // Anlatımı başlat: yarım kalan kayıt varsa devam teklif et, yoksa baştan.
   useEffect(() => {
     if (!lesson) return;
-    presentFrom(0);
+    loadLessonResume(lesson.id).then((r) => {
+      if (r && r.cursor < lesson.lecture.length) setResumeOffer({ cursor: r.cursor, correct: r.correct });
+      else presentFrom(0);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lesson]);
+
+  // Anlatım ilerledikçe cihazda sakla (yarım kalırsa "devam et").
+  useEffect(() => {
+    if (!lesson || phase !== "lecture") return;
+    if (cursor > 0 && cursor < lesson.lecture.length) void saveLessonResume(lesson.id, cursor, correct);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cursor, phase]);
 
   /** cursor'dan itibaren: anlatım baloncuklarını aç, ilk `expect`li adımda dur. */
   function presentFrom(from: number) {
@@ -166,6 +177,7 @@ export function LessonScreen() {
   function enterRoleplay() {
     if (!lesson) return;
     setPhase("roleplay");
+    void clearLessonResume(lesson.id);
     const opening = lesson.roleplay.opening;
     setFeed([]);
     push({ role: "teacher", segments: [{ lang: "tr", text: `Konuşma: ${lesson.roleplay.scene}` }] });
@@ -215,6 +227,7 @@ export function LessonScreen() {
     if (saved) return;
     setSaved(true);
     void markItemDone(lesson.id);
+    void clearLessonResume(lesson.id);
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
     try {
       await fetch(`${API_BASE}/api/lesson`, {
@@ -268,6 +281,20 @@ export function LessonScreen() {
         <Summary lesson={lesson} correct={correct} total={scoreTotal} next={nextLesson} colors={colors} insets={insets}
           onBack={() => nav.goBack()}
           onNext={nextLesson ? () => nav.replace("Lesson", { id: nextLesson.id }) : undefined} />
+      ) : resumeOffer ? (
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
+          <Mascot mood="wave" size={90} />
+          <Text variant="h2" style={{ textAlign: "center" }}>Kaldığın yerden devam?</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>Bu derse ara vermiştin. Kaldığın adımdan sürdür ya da baştan başla.</Text>
+          <View style={{ alignSelf: "stretch", gap: spacing.sm }}>
+            <BigButton label="Kaldığın yerden devam et" onPress={() => { const r = resumeOffer; setResumeOffer(null); setCorrect(r.correct); presentFrom(r.cursor); }} colors={colors} />
+            <PressableScale onPress={() => { setResumeOffer(null); void clearLessonResume(lesson.id); presentFrom(0); }}>
+              <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, alignItems: "center" }}>
+                <Text variant="h3" color={colors.text}>Baştan başla</Text>
+              </View>
+            </PressableScale>
+          </View>
+        </View>
       ) : (
         <>
           <ScrollView ref={scrollRef} contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })}>

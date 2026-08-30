@@ -30,3 +30,37 @@ export async function markItemDone(id: string): Promise<void> {
 export function isItemDoneSync(id: string): boolean {
   return cache?.has(id) ?? false;
 }
+
+/**
+ * Yarım kalan dersin cihazda saklanması (web lesson-player RESUME_KEY karşılığı).
+ * Anlatım uzun; ortasında çıkan öğrenci baştan başlamamalı. Yalnız anlatım fazı
+ * saklanır (konuşma sona yakın; gerekirse baştan). 3 günden eski kayıt atılır.
+ */
+const RESUME_PREFIX = "wortspiel-lesson-resume:";
+const RESUME_TTL_MS = 3 * 86400000;
+
+export type LessonResume = { cursor: number; correct: number; at: number };
+
+export async function saveLessonResume(id: string, cursor: number, correct: number): Promise<void> {
+  try {
+    await AsyncStorage.setItem(RESUME_PREFIX + id, JSON.stringify({ cursor, correct, at: Date.now() }));
+  } catch { /* yut */ }
+}
+
+export async function loadLessonResume(id: string): Promise<LessonResume | null> {
+  try {
+    const raw = await AsyncStorage.getItem(RESUME_PREFIX + id);
+    if (!raw) return null;
+    const v = JSON.parse(raw) as LessonResume;
+    if (!v || typeof v.cursor !== "number" || typeof v.at !== "number") return null;
+    if (Date.now() - v.at > RESUME_TTL_MS) return null;
+    if (v.cursor <= 0) return null;
+    return v;
+  } catch {
+    return null;
+  }
+}
+
+export async function clearLessonResume(id: string): Promise<void> {
+  try { await AsyncStorage.removeItem(RESUME_PREFIX + id); } catch { /* yut */ }
+}
