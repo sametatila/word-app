@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { View, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon } from "../ui/icons";
@@ -17,6 +17,8 @@ import {
 } from "../game/placement";
 import { useAuth } from "../lib/AuthContext";
 import { updateProfile } from "../lib/updateProfile";
+import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
+import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 const withArtikel = (a: string | null, de: string) => (a ? `${a} ${de}` : de);
@@ -43,6 +45,8 @@ export function PlacementScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
+  const { params } = useRoute<RouteProp<RootStackParams, "Placement">>();
+  const onboarding = params?.onboarding === true;
   const { user } = useAuth();
 
   // Gerçek test (oturum açıksa Neon'dan). Yüklenene dek loading; hata → demo.
@@ -89,12 +93,15 @@ export function PlacementScreen() {
   }
 
   async function applyLevel() {
-    if (!user) { nav.goBack(); return; }
-    try {
-      if (result) await acceptPlacement(result.id, result.suggested);
-      else await updateProfile({ level });
-      setSaved(true);
-    } catch { /* yut: yine de kapat */ }
+    // Onboarding'de misafir: seviye yerel prefs'e; hesap açınca profile taşınır.
+    if (onboarding) await saveOnboardingPrefs({ level });
+    if (user) {
+      try {
+        if (result) await acceptPlacement(result.id, result.suggested);
+        else await updateProfile({ level });
+      } catch { /* yut: yine de kapat */ }
+    }
+    setSaved(true);
     setTimeout(() => nav.goBack(), 700);
   }
 

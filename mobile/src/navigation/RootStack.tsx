@@ -41,7 +41,7 @@ export type RootStackParams = {
   Words: undefined;
   Achievements: undefined;
   Settings: undefined;
-  Placement: undefined;
+  Placement: { onboarding?: boolean } | undefined;
   Leaderboard: undefined;
   Notifications: undefined;
   Daily: undefined;

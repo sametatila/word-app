@@ -71,24 +71,35 @@ export function ProfileScreen() {
             <Text variant="display" color="#fff">{initial}</Text>
           </View>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
-          <Text variant="caption" color={colors.textMuted}>{user?.email ?? "A1 · Başlangıç (giriş yapılmadı)"}</Text>
-          <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
-              <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{streak} gün</Text>
+          <Text variant="caption" color={colors.textMuted}>{user?.email ?? "Henüz giriş yapmadın"}</Text>
+          {me ? (
+            <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+                <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{me.streak} gün</Text>
+              </View>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+                <BoltIcon color={colors.primary} size={16} /><Text variant="bodyStrong" color={colors.primary}>{xpLabel} XP</Text>
+              </View>
             </View>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
-              <BoltIcon color={colors.primary} size={16} /><Text variant="bodyStrong" color={colors.primary}>{xpLabel} XP</Text>
-            </View>
-          </View>
+          ) : null}
         </Card>
 
-        {/* istatistik ızgarası */}
-        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-          <StatTile value={me ? String(me.mastered) : "248"} label="Öğrenilen kelime" color={colors.primary} colors={colors} />
-          <StatTile value={me ? String(me.streak) : "7"} label="Gün serisi" color={colors.streak} colors={colors} />
-          <StatTile value={me ? String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".") : "1.240"} label="Toplam XP" color={colors.success} colors={colors} />
-          <StatTile value={me ? formatDuration(me.seconds) : "3s 20dk"} label="Bu hafta süre" color={colors.info} colors={colors} />
-        </View>
+        {/* istatistik ızgarası — yalnız gerçek veriyle; misafirde uydurma sayı yok */}
+        {me ? (
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
+            <StatTile value={String(me.mastered)} label="Öğrenilen kelime" color={colors.primary} colors={colors} />
+            <StatTile value={String(me.streak)} label="Gün serisi" color={colors.streak} colors={colors} />
+            <StatTile value={String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")} label="Toplam XP" color={colors.success} colors={colors} />
+            <StatTile value={formatDuration(me.seconds)} label="Bu hafta süre" color={colors.info} colors={colors} />
+          </View>
+        ) : (
+          <Card padded style={{ marginBottom: spacing.lg, alignItems: "center", gap: spacing.sm }}>
+            <Text variant="bodyStrong" style={{ textAlign: "center" }}>İlerlemen misafir modunda saklanmıyor</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 19 }}>
+              Hesap açınca serini, XP'ni ve kelimelerini kaydeder, cihazlar arası devam eder, sıralamaya girersin.
+            </Text>
+          </Card>
+        )}
 
         {/* premium yükseltme bandı (§4) */}
         <PressableScale onPress={() => nav.navigate("Paywall")} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>

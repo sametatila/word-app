@@ -1,5 +1,7 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { getSession, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
+import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
+import { updateProfile } from "./updateProfile";
 
 type Ctx = {
   user: AuthUser | null;
@@ -25,6 +27,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const refresh = useCallback(async () => { setUser(await getSession()); }, []);
 
+  /** Misafirken seçilen kurs/hedef/seviye — giriş yapınca profile taşınır. */
+  const applyPrefs = useCallback(async () => {
+    const prefs = await loadOnboardingPrefs();
+    if (!hasPrefs(prefs)) return;
+    const ok = await updateProfile({
+      ...(prefs.course ? { course: prefs.course } : {}),
+      ...(prefs.goal ? { dailyGoal: prefs.goal } : {}),
+      ...(prefs.level ? { level: prefs.level } : {}),
+    });
+    if (ok) await clearOnboardingPrefs();
+  }, []);
+
   useEffect(() => {
     let alive = true;
     (async () => {
@@ -36,13 +50,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signIn = useCallback(async (email: string, password: string) => {
     const r = await apiSignIn(email, password);
-    if (r.ok) setUser(r.user ?? (await getSession()));
+    if (r.ok) { setUser(r.user ?? (await getSession())); await applyPrefs(); }
     return r;
   }, []);
 
   const signUp = useCallback(async (name: string, email: string, password: string) => {
     const r = await apiSignUp(name, email, password);
-    if (r.ok) setUser(r.user ?? (await getSession()));
+    if (r.ok) { setUser(r.user ?? (await getSession())); await applyPrefs(); }
     return r;
   }, []);
 
