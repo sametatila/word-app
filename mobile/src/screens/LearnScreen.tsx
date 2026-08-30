@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Linking } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -10,6 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, CheckIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
+import { useUpdate } from "../lib/useUpdate";
 import { Mascot } from "../ui/Mascot";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
@@ -37,6 +38,7 @@ export function LearnScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
   const { me } = useMe();
+  const update = useUpdate();
   const initial = ((user?.name ?? "Öğrenci").trim()[0] ?? "Ö").toUpperCase();
   const greeting = user?.name ? `Merhaba ${user.name.split(" ")[0]}` : "Merhaba";
   const level = me?.level ?? "A1";
@@ -47,6 +49,18 @@ export function LearnScreen() {
 
   return (
     <Screen>
+      {update && (
+        <PressableScale onPress={() => Linking.openURL(update.url)} style={{ marginBottom: spacing.md }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.primarySoft, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.primary, paddingHorizontal: spacing.lg, paddingVertical: 12 }}>
+            <BoltIcon color={colors.primary} size={20} />
+            <View style={{ flex: 1 }}>
+              <Text variant="bodyStrong" color={colors.primary}>Yeni sürüm hazır · v{update.version}</Text>
+              <Text variant="caption" color={colors.textMuted}>İndirmek için dokun</Text>
+            </View>
+            <ArrowRightIcon color={colors.primary} size={18} />
+          </View>
+        </PressableScale>
+      )}
       {/* başlık */}
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.lg }}>
         <View>
