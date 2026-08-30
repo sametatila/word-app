@@ -3,5 +3,5 @@
  * ikisi de artar). Güncelleme denetimi (useUpdate) bunu GitHub'daki son
  * sürümle karşılaştırır. Native modül (device-info) eklememek için sabit.
  */
-export const APP_VERSION = "1.0.2";
-export const APP_VERSION_CODE = 4;
+export const APP_VERSION = "1.0.3";
+export const APP_VERSION_CODE = 5;
