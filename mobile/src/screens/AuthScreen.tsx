@@ -3,6 +3,8 @@ import { View, TextInput, ScrollView, Modal, ActivityIndicator } from "react-nat
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { WebView, type WebViewNavigation } from "react-native-webview";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, ChevronLeftIcon, BoltIcon, GoogleIcon, AppleIcon, FacebookIcon, MailIcon } from "../ui/icons";
@@ -41,7 +43,8 @@ function providerIcon(id: string, colors: Palette) {
 export function AuthScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const nav = useNavigation<{ goBack: () => void }>();
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const toApp = () => nav.reset({ index: 0, routes: [{ name: "Tabs" }] });
   const { signIn, signUp, socialComplete } = useAuth();
   const [view, setView] = useState<View2>("options");
   const [mode, setMode] = useState<Mode>("signin");
@@ -59,7 +62,7 @@ export function AuthScreen() {
     setError(null);
     const r = mode === "signin" ? await signIn(email.trim(), password) : await signUp(name, email.trim(), password);
     setBusy(false);
-    if (r.ok) { nav.goBack(); return; }
+    if (r.ok) { toApp(); return; }
     setError(translateAuthError(r.code, r.message));
   }
 
@@ -77,7 +80,7 @@ export function AuthScreen() {
     if (!socialUrl || !navState.url.startsWith(SOCIAL_CALLBACK)) return;
     setSocialUrl(null);
     const ok = await socialComplete();
-    if (ok) nav.goBack();
+    if (ok) toApp();
     else setError("Giriş tamamlanamadı. Tekrar dener misin?");
   }
 
@@ -88,11 +91,14 @@ export function AuthScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      {/* başlık: seçenekler ekranında X (kapat), e-posta ekranında geri */}
-      <View style={{ flexDirection: "row", alignItems: "center", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
-        <PressableScale onPress={() => (view === "email" ? (setView("options"), setError(null)) : nav.goBack())} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          {view === "email" ? <ChevronLeftIcon color={colors.text} size={24} /> : <XIcon color={colors.textMuted} size={22} />}
-        </PressableScale>
+      {/* Zorunlu giriş duvarı: seçenekler ekranında kapatma YOK (misafir modu yok).
+          Yalnız e-posta formundan sağlayıcı listesine geri dönülür. */}
+      <View style={{ flexDirection: "row", alignItems: "center", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, minHeight: 44 }}>
+        {view === "email" && (
+          <PressableScale onPress={() => { setView("options"); setError(null); }} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+            <ChevronLeftIcon color={colors.text} size={24} />
+          </PressableScale>
+        )}
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>

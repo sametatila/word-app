@@ -46,8 +46,10 @@ export function ProfileScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user, signOut } = useAuth();
   const { me } = useMe();
-  const displayName = user?.name ?? "Misafir";
-  const initial = (displayName.trim()[0] ?? "M").toUpperCase();
+  // Misafir modu yok: kullanıcı her zaman var. Adı yoksa e-posta adından türet.
+  const displayName = user?.name?.trim() || user?.email?.split("@")[0] || "Öğrenci";
+  const initial = (displayName.trim()[0] ?? "Ö").toUpperCase();
+  async function doSignOut() { await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
   const streak = me ? me.streak : 7;
   const xpLabel = me ? formatXp(me.xp) : "1.2k";
 
@@ -93,11 +95,8 @@ export function ProfileScreen() {
             <StatTile value={formatDuration(me.seconds)} label="Bu hafta süre" color={colors.info} colors={colors} />
           </View>
         ) : (
-          <Card padded style={{ marginBottom: spacing.lg, alignItems: "center", gap: spacing.sm }}>
-            <Text variant="bodyStrong" style={{ textAlign: "center" }}>İlerlemen misafir modunda saklanmıyor</Text>
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 19 }}>
-              Hesap açınca serini, XP'ni ve kelimelerini kaydeder, cihazlar arası devam eder, sıralamaya girersin.
-            </Text>
+          <Card padded style={{ marginBottom: spacing.lg, alignItems: "center" }}>
+            <Text variant="caption" color={colors.textMuted}>İstatistiklerin yükleniyor…</Text>
           </Card>
         )}
 
@@ -138,16 +137,10 @@ export function ProfileScreen() {
           <Row icon={BellIcon} label="Bildirimler" tint={colors.info} colors={colors} onPress={() => nav.navigate("Notifications")} last />
         </Card>
 
-        {user ? (
-          <PressableScale onPress={() => signOut()} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
-            <LogoutIcon color={colors.danger} size={20} />
-            <Text variant="bodyStrong" color={colors.danger}>Çıkış yap</Text>
-          </PressableScale>
-        ) : (
-          <PressableScale onPress={() => nav.navigate("Auth")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.lg }, softShadow(colors.primary, 8)]}>
-            <Text variant="h3" color="#fff">Giriş yap / Kayıt ol</Text>
-          </PressableScale>
-        )}
+        <PressableScale onPress={doSignOut} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
+          <LogoutIcon color={colors.danger} size={20} />
+          <Text variant="bodyStrong" color={colors.danger}>Çıkış yap</Text>
+        </PressableScale>
       </ScrollView>
     </View>
   );

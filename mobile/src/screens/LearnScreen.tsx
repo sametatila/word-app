@@ -97,15 +97,9 @@ export function LearnScreen() {
               <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{streak}</Text>
             </View>
           )}
-          {user ? (
-            <PressableScale onPress={() => nav.navigate("Profile")} style={[{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 6)]}>
-              <Text variant="h3" color="#fff">{initial}</Text>
-            </PressableScale>
-          ) : (
-            <PressableScale onPress={() => nav.navigate("Auth")} style={[{ borderRadius: radii.pill, backgroundColor: colors.primary, paddingHorizontal: 16, paddingVertical: 10 }, softShadow(colors.primary, 6)]}>
-              <Text variant="bodyStrong" color="#fff">Giriş yap</Text>
-            </PressableScale>
-          )}
+          <PressableScale onPress={() => nav.navigate("Profile")} style={[{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 6)]}>
+            <Text variant="h3" color="#fff">{initial}</Text>
+          </PressableScale>
         </View>
       </View>
 

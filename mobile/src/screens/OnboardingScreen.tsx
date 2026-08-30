@@ -7,17 +7,21 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { track } from "../lib/track";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { LearnIcon, BoltIcon, ExamIcon, CheckIcon, SkillsIcon } from "../ui/icons";
+import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
 import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 /**
- * Kayıt-duvarsız onboarding (§4). Kullanıcı hesap açmadan kurs + hedef + seviye
- * seçer; seçimler yerelde tutulur (onboardingPrefs) ve hesap açınca profile
- * taşınır. "Testle belirle" gerçek yerleştirme sınavını açar. Görüldüğü
- * AsyncStorage'a yazılır, bir daha çıkmaz.
+ * İlk açılış akışı (§4). Sıra: karşılama → kurs → seviye → hedef. Seçimler
+ * yerelde tutulur (onboardingPrefs) ve hesap açınca profile taşınır.
+ *
+ * Misafir modu YOK: akış sonunda hesap açmak/giriş yapmak ZORUNLU (bkz.
+ * App.tsx kök yönlendirme, AuthScreen giriş duvarı). Seviye adımı üç yol:
+ *  • "Sıfırdan" → A1 + ilk kelime çalışması (FirstPractice) → hesap
+ *  • "Testle belirle" → yerleştirme sınavı (Placement) → hesap
+ *  • "Seviyeni seç" → kullanıcı A1–C1 seçer → hesap
  */
 type Option = { key: string; label: string; sub?: string };
 type Step = {
@@ -27,6 +31,8 @@ type Step = {
   subtitle: string;
   options?: Option[];
 };
+
+const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 
 const STEPS: Step[] = [
   {
@@ -44,6 +50,16 @@ const STEPS: Step[] = [
     ],
   },
   {
+    key: "level", icon: ExamIcon,
+    title: "Nereden başlayalım?",
+    subtitle: "Sıfırdan başla, kısa bir testle seviyeni belirle ya da seviyeni kendin seç.",
+    options: [
+      { key: "A1", label: "Sıfırdan", sub: "Yeni başlıyorum — ilk kelimelerle ısınalım" },
+      { key: "test", label: "Testle belirle", sub: "Kısa yerleştirme sınavı" },
+      { key: "pick", label: "Seviyeni seç", sub: "Seviyeni biliyorsan doğrudan seç" },
+    ],
+  },
+  {
     key: "goal", icon: CheckIcon,
     title: "Günlük hedefin ne olsun?",
     subtitle: "İstediğin zaman değiştirebilirsin.",
@@ -51,16 +67,6 @@ const STEPS: Step[] = [
       { key: "5", label: "Rahat", sub: "5 dk / gün" },
       { key: "10", label: "Kararlı", sub: "10 dk / gün" },
       { key: "20", label: "Ciddi", sub: "20 dk / gün" },
-    ],
-  },
-  {
-    key: "level", icon: ExamIcon,
-    title: "Nereden başlayalım?",
-    subtitle: "Emin değilsen kısa bir testle seviyeni belirleyelim.",
-    options: [
-      { key: "A1", label: "Sıfırdan", sub: "Yeni başlıyorum" },
-      { key: "A2", label: "Biraz biliyorum", sub: "Temel günlük dili biliyorum" },
-      { key: "test", label: "Testle belirle", sub: "Kısa yerleştirme sınavı" },
     ],
   },
 ];
@@ -71,13 +77,16 @@ export function OnboardingScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [i, setI] = useState(0);
   const [choices, setChoices] = useState<Record<string, string>>({});
+  const [pickedLevel, setPickedLevel] = useState<string | null>(null);
   const step = STEPS[i];
 
   useEffect(() => { track("onboarding_step", i, step?.key); }, [i, step?.key]);
   const last = i === STEPS.length - 1;
   const needsChoice = !!step.options;
   const chosen = choices[step.key];
-  const canNext = !needsChoice || !!chosen;
+  // Seviye adımında "Seviyeni seç" işaretliyse ayrıca bir seviye seçilmeli.
+  const levelPickPending = step.key === "level" && chosen === "pick" && !pickedLevel;
+  const canNext = (!needsChoice || !!chosen) && !levelPickPending;
 
   async function finish() {
     const course = choices.course ?? "de";
@@ -85,31 +94,29 @@ export function OnboardingScreen() {
     const levelChoice = choices.level;
     try { await AsyncStorage.setItem(ONBOARDED_KEY, "1"); } catch { /* geç */ }
     if (levelChoice === "test") {
-      // Seviye testin sonunda belirlenir; kurs+hedef şimdiden saklanır.
+      // Seviye testin sonunda belirlenir; kurs+hedef şimdiden saklanır → Placement → hesap.
       await saveOnboardingPrefs({ course, goal });
-      nav.reset({ index: 1, routes: [{ name: "Tabs" }, { name: "Placement", params: { onboarding: true } }] });
+      nav.reset({ index: 0, routes: [{ name: "Placement", params: { onboarding: true } }] });
+    } else if (levelChoice === "A1") {
+      // Sıfırdan: A1 + ilk kelime çalışması → hesap.
+      await saveOnboardingPrefs({ course, goal, level: "A1" });
+      nav.reset({ index: 0, routes: [{ name: "FirstPractice" }] });
     } else {
-      await saveOnboardingPrefs({ course, goal, level: levelChoice });
-      nav.reset({ index: 0, routes: [{ name: "Tabs" }] });
+      // Seviyeni seç: seçilen seviye → doğrudan giriş duvarı.
+      await saveOnboardingPrefs({ course, goal, level: pickedLevel ?? "A1" });
+      nav.reset({ index: 0, routes: [{ name: "Auth" }] });
     }
-  }
-  function skip() {
-    AsyncStorage.setItem(ONBOARDED_KEY, "1").catch(() => {});
-    nav.reset({ index: 0, routes: [{ name: "Tabs" }] });
   }
   function next() { if (last) void finish(); else if (canNext) setI((n) => n + 1); }
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.lg, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.xxl }}>
+      <View style={{ flexDirection: "row", alignItems: "center", marginBottom: spacing.xxl }}>
         <View style={{ flexDirection: "row", gap: 6 }}>
           {STEPS.map((_, n) => (
             <View key={n} style={{ height: 6, width: n === i ? 22 : 6, borderRadius: 3, backgroundColor: n === i ? colors.primary : colors.surface2 }} />
           ))}
         </View>
-        <PressableScale onPress={skip}>
-          <Text variant="bodyStrong" color={colors.textMuted}>Atla</Text>
-        </PressableScale>
       </View>
 
       <View style={{ flex: 1, justifyContent: "center" }}>
@@ -135,15 +142,28 @@ export function OnboardingScreen() {
                 </PressableScale>
               );
             })}
+            {/* "Seviyeni seç" için satır içi seviye seçici (A1–C1) */}
+            {step.key === "level" && chosen === "pick" && (
+              <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: 2 }}>
+                {LEVELS.map((lv) => {
+                  const on = pickedLevel === lv;
+                  return (
+                    <PressableScale key={lv} onPress={() => setPickedLevel(lv)} style={{ flex: 1, paddingVertical: 12, borderRadius: radii.md, alignItems: "center", borderWidth: 2, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primarySoft : colors.surface }}>
+                      <Text variant="bodyStrong" color={on ? colors.primary : colors.text}>{lv}</Text>
+                    </PressableScale>
+                  );
+                })}
+              </View>
+            )}
           </View>
         )}
       </View>
 
       <PressableScale onPress={next} style={[{ borderRadius: radii.lg, backgroundColor: canNext ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, canNext ? softShadow(colors.primary, 10) : {}]}>
-        <Text variant="h3" color={canNext ? "#fff" : colors.textFaint}>{last ? (chosen === "test" ? "Teste başla" : "Hemen başla") : "Devam et"}</Text>
+        <Text variant="h3" color={canNext ? "#fff" : colors.textFaint}>{last ? (choices.level === "test" ? "Teste başla" : "Devam et") : "Devam et"}</Text>
       </PressableScale>
       <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
-        Kayıt gerekmez — ilerlemeni saklamak için sonra hesap açarsın.
+        Birazdan hesabını açacaksın — serin, XP'n ve ilerlemen kaydolur.
       </Text>
     </View>
   );

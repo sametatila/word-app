@@ -16,6 +16,7 @@ export type EventName =
   | "walk_start"
   | "share"
   | "onboarding_step"
+  | "first_practice"
   | "nav"
   | "paywall_view"
   | "premium_gate"

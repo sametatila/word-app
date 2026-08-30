@@ -7,6 +7,7 @@ import { ExamPrepScreen } from "../screens/ExamPrepScreen";
 import { WalkModeScreen } from "../screens/WalkModeScreen";
 import { PaywallScreen } from "../screens/PaywallScreen";
 import { OnboardingScreen } from "../screens/OnboardingScreen";
+import { FirstPracticeScreen } from "../screens/FirstPracticeScreen";
 import { UnitScreen } from "../screens/UnitScreen";
 import { AuthScreen } from "../screens/AuthScreen";
 import { WordsScreen } from "../screens/WordsScreen";
@@ -28,6 +29,7 @@ import { QuizScreen } from "../screens/QuizScreen";
 /** Kök yığın: onboarding + sekmeler + üzerine tam ekran açılan akış ekranları. */
 export type RootStackParams = {
   Onboarding: undefined;
+  FirstPractice: undefined;
   Tabs: undefined;
   Game: { game?: string } | undefined;
   Profile: undefined;
@@ -59,6 +61,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
   return (
     <Stack.Navigator initialRouteName={initialRoute} screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+      <Stack.Screen name="FirstPractice" component={FirstPracticeScreen} />
       <Stack.Screen name="Tabs" component={RootTabs} />
       <Stack.Screen name="Game" component={GameScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
