@@ -11,6 +11,8 @@ type Ctx = {
   signUp: (name: string, email: string, password: string) => Promise<AuthOutcome>;
   signOut: () => Promise<void>;
   refresh: () => Promise<void>;
+  /** Sosyal giriş WebView'i bitince: oturumu tazele + onboarding prefs'i uygula. */
+  socialComplete: () => Promise<boolean>;
 };
 
 const AuthContext = createContext<Ctx>({
@@ -19,6 +21,7 @@ const AuthContext = createContext<Ctx>({
   signUp: async () => ({ ok: false, code: "", message: "" }),
   signOut: async () => {},
   refresh: async () => {},
+  socialComplete: async () => false,
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -62,8 +65,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signOut = useCallback(async () => { await apiSignOut(); setUser(null); }, []);
 
+  const socialComplete = useCallback(async () => {
+    const u = await getSession();
+    setUser(u);
+    if (u) await applyPrefs();
+    return !!u;
+  }, [applyPrefs]);
+
   return (
-    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh }}>
+    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh, socialComplete }}>
       {children}
     </AuthContext.Provider>
   );

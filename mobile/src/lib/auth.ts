@@ -66,3 +66,21 @@ export async function getSession(): Promise<AuthUser | null> {
 export async function signOut(): Promise<void> {
   try { await post("sign-out", {}); } catch { /* yut */ }
 }
+
+/**
+ * Sosyal giriş (Neon Auth / Managed Better Auth). POST sign-in/social sağlayıcı
+ * için bir OAuth başlatma URL'i döndürür; mobil bunu WebView'de açar. Android'de
+ * WebView ile fetch AYNI çerez kavanozunu (CookieManager) paylaşır — OAuth bitip
+ * oturum çerezi yazılınca uygulamanın istekleri de oturumlu olur. `callbackURL`
+ * bitişte gidilecek sayfa; WebView bu adrese ulaşınca akış tamamdır.
+ */
+export async function signInSocial(provider: string, callbackURL: string): Promise<string | null> {
+  try {
+    const res = await post("sign-in/social", { provider, callbackURL });
+    if (!res.ok) return null;
+    const j = JSON.parse(await res.text()) as { url?: string };
+    return j.url ?? null;
+  } catch {
+    return null;
+  }
+}
