@@ -22,6 +22,10 @@ export async function GET() {
     const progress = await getProgress(userId, today).catch(() => null);
     const mastered = progress ? progress.levels.reduce((s, l) => s + l.mastered, 0) : 0;
     const totalWords = progress ? progress.levels.reduce((s, l) => s + l.total, 0) : 0;
+    // Günlük alışkanlık döngüsü — getProgress zaten hesaplıyor (ek sorgu yok):
+    // bugünkü tekrar/yeni sayısı + zamanı gelen (due) toplam. Ana ekranın günlük
+    // hedef halkası ve "bugün ne var" çipleri bunları gösterir.
+    const todayStat = progress?.days?.find((d) => d.day === today);
 
     return NextResponse.json(
       {
@@ -35,6 +39,9 @@ export async function GET() {
         mastered,
         totalWords,
         seconds: progress?.seconds ?? 0,
+        reviewsToday: todayStat?.reviews ?? 0,
+        newToday: todayStat?.newWords ?? 0,
+        dueCount: progress?.dueNow ?? 0,
       },
       { headers: { "cache-control": "no-store" } },
     );

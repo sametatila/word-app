@@ -15,6 +15,10 @@ export type Me = {
   mastered: number;
   totalWords: number;
   seconds: number;
+  /** Günlük alışkanlık döngüsü (/api/me; canlı değilse tanımsız). */
+  reviewsToday?: number;
+  newToday?: number;
+  dueCount?: number;
 };
 
 /** /api/session meta'sının okuduğumuz alt kümesi (özet ucu deploy değilse kaynak). */
@@ -24,6 +28,9 @@ type SessionMetaLite = {
   currentStreak: number;
   totalXp: number;
   dailyGoal: number;
+  reviewsToday?: number;
+  newToday?: number;
+  dueCount?: number;
   coverage?: { mastered: number; total: number };
 };
 
@@ -63,6 +70,9 @@ export function useMe(): { me: Me | null; loading: boolean } {
               mastered: m.coverage?.mastered ?? 0,
               totalWords: m.coverage?.total ?? 0,
               seconds: 0,
+              reviewsToday: m.reviewsToday,
+              newToday: m.newToday,
+              dueCount: m.dueCount,
             });
           } else if (alive) {
             setMe(null);

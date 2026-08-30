@@ -64,6 +64,12 @@ export function LearnScreen() {
   const totalWords = me?.totalWords ?? 0;
   const streak = me?.streak ?? 0;
   const pct = totalWords ? Math.min(100, Math.round((mastered / totalWords) * 100)) : 0;
+  const dailyGoal = me?.dailyGoal ?? 0;
+  const reviewsToday = me?.reviewsToday ?? 0;
+  const dueCount = me?.dueCount ?? 0;
+  const newToday = me?.newToday ?? 0;
+  const hasToday = me?.reviewsToday !== undefined; // canlı /api/me
+  const goalPct = dailyGoal ? Math.min(100, Math.round((reviewsToday / dailyGoal) * 100)) : 0;
 
   return (
     <Screen>
@@ -119,8 +125,34 @@ export function LearnScreen() {
             </View>
             <Mascot mood={streak > 0 ? "happy" : (me?.xp ?? 0) > 0 ? "sleep" : "wave"} size={66} />
           </View>
+          {hasToday && dailyGoal > 0 && (
+            <View style={{ paddingHorizontal: spacing.xl, paddingBottom: spacing.lg, marginTop: -spacing.sm }}>
+              <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 6 }}>
+                <Text variant="micro" color="#ffffffdd">Günlük hedef</Text>
+                <Text variant="micro" color="#ffffffdd">{reviewsToday}/{dailyGoal}</Text>
+              </View>
+              <View style={{ height: 6, borderRadius: 3, backgroundColor: "#ffffff40", overflow: "hidden" }}>
+                <View style={{ height: "100%", width: `${Math.max(3, goalPct)}%`, backgroundColor: "#fff", borderRadius: 3 }} />
+              </View>
+            </View>
+          )}
         </View>
       </PressableScale>
+
+      {hasToday && (dueCount > 0 || newToday > 0) && (
+        <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
+          {dueCount > 0 && (
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
+              <FlameIcon color={colors.streak} size={15} /><Text variant="caption" color={colors.streak}><Text variant="bodyStrong" color={colors.streak}>{dueCount}</Text> tekrar bekliyor</Text>
+            </View>
+          )}
+          {newToday > 0 && (
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
+              <BoltIcon color={colors.primary} size={15} /><Text variant="caption" color={colors.primary}><Text variant="bodyStrong" color={colors.primary}>{newToday}</Text> yeni bugün</Text>
+            </View>
+          )}
+        </View>
+      )}
 
       {/* dil ilerlemesi — sade satır (fitness metresi değil). Yalnız gerçek veri
           gelince; yoksa (misafir / uç henüz deploy değil) yanıltıcı 0 gösterme. */}
