@@ -97,3 +97,23 @@ export const GoogleIcon = ({ size = 20 }: { size?: number }) => (
     <Path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
   </Svg>
 );
+
+/** Apple logosu (tek renk) — sosyal giriş. */
+export const AppleIcon = ({ color = "#000", size = 20 }: { color?: string; size?: number }) => (
+  <Svg width={size} height={size} viewBox="0 0 24 24">
+    <Path fill={color} d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.85-1.01.618 0 2.828.06 4.273 2.19-.132.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.94 4.45z" />
+  </Svg>
+);
+
+/** Facebook logosu (mavi kare + beyaz f) — sosyal giriş. */
+export const FacebookIcon = ({ size = 20 }: { size?: number }) => (
+  <Svg width={size} height={size} viewBox="0 0 24 24">
+    <Rect width="24" height="24" rx="5" fill="#1877F2" />
+    <Path fill="#fff" d="M16.5 12.3h-2.3V20H11v-7.7H9.3V9.5H11V7.9c0-2 .82-3.4 3.2-3.4h2v2.7h-1.3c-.9 0-1 .34-1 .97v1.3h2.3l-.4 2.8z" />
+  </Svg>
+);
+
+/** Zarf ikonu — e-posta ile giriş. */
+export const MailIcon = ({ color = "#000", size = 20 }: { color?: string; size?: number }) => (
+  <S size={size}><Rect x="3" y="5" width="18" height="14" rx="2" {...stroke(color)} /><Path d="M4 7l8 6 8-6" {...stroke(color)} /></S>
+);
