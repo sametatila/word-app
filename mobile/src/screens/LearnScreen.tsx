@@ -33,6 +33,24 @@ function ActionRow({ title, subtitle, tint, icon: Icon, onPress }: { title: stri
   );
 }
 
+/** Öne çıkan kama döşemesi — plan: yürüyüş = manşet, sınav = painkiller. */
+function WedgeTile({ title, pitch, tint, icon: Icon, onPress }: { title: string; pitch: string; tint: string; icon: (p: { color: string; size: number }) => React.ReactElement; onPress?: () => void }) {
+  const { colors } = useTheme();
+  return (
+    <PressableScale onPress={onPress} style={{ flex: 1 }}>
+      <Card padded style={{ minHeight: 132, borderColor: tint, borderWidth: 1.5, justifyContent: "space-between", gap: spacing.md }}>
+        <View style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 8)]}>
+          <Icon color="#fff" size={24} />
+        </View>
+        <View>
+          <Text variant="h3">{title}</Text>
+          <Text variant="caption" color={colors.textMuted}>{pitch}</Text>
+        </View>
+      </Card>
+    </PressableScale>
+  );
+}
+
 export function LearnScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
@@ -99,7 +117,7 @@ export function LearnScreen() {
               <ArrowRightIcon color={colors.primary} size={18} />
             </View>
             </View>
-            <Mascot mood="wave" size={66} />
+            <Mascot mood={streak > 0 ? "happy" : (me?.xp ?? 0) > 0 ? "sleep" : "wave"} size={66} />
           </View>
         </View>
       </PressableScale>
@@ -123,14 +141,19 @@ export function LearnScreen() {
         </Card>
       )}
 
+      {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
+      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>Öne çıkan</Text>
+      <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
+        <WedgeTile title="Yürüyüş modu" pitch="Kulakla öğren, eller serbest" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
+        <WedgeTile title="Sınav hazırlık" pitch="Goethe & telc — hedefe yönelik" tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
+      </View>
+
       {/* diğer öğrenme yolları */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>Daha fazlası</Text>
       <ActionRow title="Pratik" subtitle="Tek bir oyunu kendi kelimelerinle çalış" tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
       <ActionRow title="Günün turu" subtitle="Herkesle aynı yarışma · sıralamaya gir" tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
       <ActionRow title="Haftalık sınav" subtitle="Öğrendiklerini ölç · haftada bir" tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
       <ActionRow title="Günün görevleri" subtitle="Günlük hedefler · XP kazan" tint={colors.streak} icon={CheckIcon} onPress={() => nav.navigate("Quests")} />
-      <ActionRow title="Yürüyüş modu" subtitle="Kulakla öğren, ellerin serbest" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
-      <ActionRow title="Sınav hazırlık" subtitle="Goethe & telc — hedefe yönelik" tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
     </Screen>
   );
 }

@@ -14,6 +14,7 @@ const CLIP = {
   sad: require("../assets/mascot/sad.webp"),
   celebrate: require("../assets/mascot/celebrate.webp"),
   wave: require("../assets/mascot/wave.webp"),
+  sleep: require("../assets/mascot/sleep.webp"),
 } as const;
 
 export type Mood = keyof typeof CLIP;
