@@ -52,3 +52,27 @@ export function speakGerman(text: string): void {
     } catch { /* yut */ }
   });
 }
+
+/**
+ * Metni belirtilen dilde seslendirir ve BİTİNCE resolve olur — yürüyüş modunun
+ * sıralaması için (önce konuş, sonra dinle; yoksa mikrofon TTS'i duyar).
+ */
+export function speakAndWait(text: string, lang: "de-DE" | "tr-TR" = "de-DE"): Promise<void> {
+  return new Promise((resolve) => {
+    void ttsAvailable().then((ok) => {
+      if (!ok || !text) { resolve(); return; }
+      let done = false;
+      let sub: { remove?: () => void } | undefined;
+      const guard = setTimeout(() => finish(), 9000);
+      function finish() { if (done) return; done = true; clearTimeout(guard); try { sub?.remove?.(); } catch { /* yut */ } resolve(); }
+      try { sub = Tts.addEventListener("tts-finish", finish) as unknown as { remove?: () => void }; } catch { /* yut */ }
+      (async () => {
+        try {
+          Tts.stop();
+          await Tts.setDefaultLanguage(lang).catch(() => {});
+          Tts.speak(text, { androidParams: { KEY_PARAM_PAN: 0, KEY_PARAM_VOLUME: 1, KEY_PARAM_STREAM: "STREAM_MUSIC" }, rate: 0.42, iosVoiceId: "" });
+        } catch { finish(); }
+      })();
+    });
+  });
+}
