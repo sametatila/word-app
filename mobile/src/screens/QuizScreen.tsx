@@ -6,6 +6,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
+import { Celebrate } from "../ui/Celebrate";
 import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
 import { buildUnitBrief, levelPool, deriveQuiz } from "../game/immersionQuiz";
 import { QuestionList } from "../game/skillQuiz";
@@ -51,7 +52,7 @@ export function QuizScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <XIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
@@ -80,6 +81,7 @@ export function QuizScreen() {
 
         {finished ? (
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
+            <Celebrate show={!!passed} />
             <Mascot mood={passed ? "celebrate" : "idle"} size={84} />
             <Text variant="h2">{correct}/{total} doğru</Text>
             <Text variant="caption" color={passed ? colors.success : colors.textMuted}>{passed ? `%${pct} — geçtin` : `%${pct} — biraz daha çalış`}</Text>

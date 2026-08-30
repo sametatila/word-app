@@ -6,6 +6,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon, ChevronRightIcon, WalkIcon, CheckIcon, XIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
+import { Celebrate } from "../ui/Celebrate";
 import { DEMO_WORDS, type Word } from "../data/demoWords";
 import { track } from "../lib/track";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut } from "../game/session";
@@ -130,7 +131,7 @@ export function WalkModeScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ChevronLeftIcon color={colors.text} size={24} />
         </PressableScale>
         <Text variant="h2" style={{ flex: 1 }}>Yürüyüş modu</Text>
@@ -141,6 +142,7 @@ export function WalkModeScreen() {
 
       {step === "done" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
+          <Celebrate show={step === "done"} />
           <Mascot mood="celebrate" size={110} />
           <Text variant="display">Tur bitti</Text>
           <Text variant="h2" color={colors.primary}>{tally.correct}/{tally.total} doğru</Text>

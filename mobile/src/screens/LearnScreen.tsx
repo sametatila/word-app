@@ -97,7 +97,7 @@ export function LearnScreen() {
               <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{streak}</Text>
             </View>
           )}
-          <PressableScale onPress={() => nav.navigate("Profile")} style={[{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 6)]}>
+          <PressableScale onPress={() => nav.navigate("Profile")} accessibilityLabel="Profil" style={[{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 6)]}>
             <Text variant="h3" color="#fff">{initial}</Text>
           </PressableScale>
         </View>

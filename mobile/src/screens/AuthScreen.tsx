@@ -10,6 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { XIcon, ChevronLeftIcon, BoltIcon, GoogleIcon, AppleIcon, FacebookIcon, MailIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { signInSocial } from "../lib/auth";
+import { notifPrimeNeeded } from "../lib/notifications";
 import { translateAuthError } from "../lib/authErrors";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -44,7 +45,11 @@ export function AuthScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const toApp = () => nav.reset({ index: 0, routes: [{ name: "Tabs" }] });
+  const toApp = async () => {
+    // İlk giriş sonrası bir kez bildirim priming; sonra uygulama.
+    const prime = await notifPrimeNeeded().catch(() => false);
+    nav.reset({ index: 0, routes: [{ name: prime ? "NotifPrime" : "Tabs" }] });
+  };
   const { signIn, signUp, socialComplete } = useAuth();
   const [view, setView] = useState<View2>("options");
   const [mode, setMode] = useState<Mode>("signin");
@@ -62,7 +67,7 @@ export function AuthScreen() {
     setError(null);
     const r = mode === "signin" ? await signIn(email.trim(), password) : await signUp(name, email.trim(), password);
     setBusy(false);
-    if (r.ok) { toApp(); return; }
+    if (r.ok) { void toApp(); return; }
     setError(translateAuthError(r.code, r.message));
   }
 
@@ -80,7 +85,7 @@ export function AuthScreen() {
     if (!socialUrl || !navState.url.startsWith(SOCIAL_CALLBACK)) return;
     setSocialUrl(null);
     const ok = await socialComplete();
-    if (ok) toApp();
+    if (ok) void toApp();
     else setError("Giriş tamamlanamadı. Tekrar dener misin?");
   }
 

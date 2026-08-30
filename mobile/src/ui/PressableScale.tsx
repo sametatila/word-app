@@ -15,6 +15,7 @@ export function PressableScale({ children, style, onPressIn, onPressOut, ...rest
   const scale = useRef(new Animated.Value(1)).current;
   return (
     <AnimatedPressable
+      accessibilityRole="button"
       onPressIn={(e) => { Animated.spring(scale, { toValue: 0.96, useNativeDriver: true, speed: 50, bounciness: 0 }).start(); onPressIn?.(e); }}
       onPressOut={(e) => { Animated.spring(scale, { toValue: 1, useNativeDriver: true, speed: 40, bounciness: 6 }).start(); onPressOut?.(e); }}
       style={[style, { transform: [{ scale }] }]}

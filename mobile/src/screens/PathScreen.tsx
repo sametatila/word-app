@@ -1,9 +1,10 @@
 import React from "react";
-import { View, ActivityIndicator } from "react-native";
+import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Screen } from "../ui/Screen";
+import { Skeleton } from "../ui/Skeleton";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
@@ -65,12 +66,15 @@ export function PathScreen() {
   const { data: patika, source } = usePatika();
 
   if (!patika) {
+    // Düz spinner yerine patika şeklinde iskelet (algılanan hız).
     return (
       <Screen>
         <Text variant="display" style={{ marginBottom: spacing.lg }}>Patika</Text>
-        <View style={{ paddingVertical: spacing.xxxl, alignItems: "center", gap: spacing.md }}>
-          <ActivityIndicator color={colors.primary} size="large" />
-          <Text variant="caption" color={colors.textMuted}>Patika hazırlanıyor…</Text>
+        <Skeleton height={10} radius={5} style={{ marginBottom: 8 }} />
+        <Skeleton height={14} width="55%" radius={7} style={{ marginBottom: spacing.lg }} />
+        <Skeleton height={196} radius={radii.xl} style={{ marginBottom: spacing.lg }} />
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+          {[0, 1, 2, 3].map((i) => <Skeleton key={i} height={116} width="47.5%" radius={radii.lg} />)}
         </View>
       </Screen>
     );

@@ -8,6 +8,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
+import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
@@ -259,7 +260,7 @@ export function LessonScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm }}>
       {/* Başlık + ilerleme */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ChevronLeftIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
@@ -466,6 +467,7 @@ function Summary({ lesson, correct, total, next, colors, insets, onBack, onNext 
   const mood = pct >= 80 ? "celebrate" : pct >= 50 ? "happy" : "idle";
   return (
     <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl, alignItems: "center" }} showsVerticalScrollIndicator={false}>
+      <Celebrate show={pct >= 80} />
       <View style={{ marginTop: spacing.lg }}><Mascot mood={mood as never} size={110} /></View>
       <Text variant="display" style={{ marginTop: spacing.md }}>Ders bitti</Text>
       <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{lesson.title} · {lesson.titleTr}</Text>

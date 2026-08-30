@@ -97,14 +97,12 @@ export function OnboardingScreen() {
       // Seviye testin sonunda belirlenir; kurs+hedef şimdiden saklanır → Placement → hesap.
       await saveOnboardingPrefs({ course, goal });
       nav.reset({ index: 0, routes: [{ name: "Placement", params: { onboarding: true } }] });
-    } else if (levelChoice === "A1") {
-      // Sıfırdan: A1 + ilk kelime çalışması → hesap.
-      await saveOnboardingPrefs({ course, goal, level: "A1" });
-      nav.reset({ index: 0, routes: [{ name: "FirstPractice" }] });
     } else {
-      // Seviyeni seç: seçilen seviye → doğrudan giriş duvarı.
-      await saveOnboardingPrefs({ course, goal, level: pickedLevel ?? "A1" });
-      nav.reset({ index: 0, routes: [{ name: "Auth" }] });
+      // Sıfırdan (A1) ya da Seviyeni seç (pickedLevel): her ikisi de giriş öncesi
+      // kısa bir ısınmadan (FirstPractice) geçer — her yola ilk-değer tadı.
+      const lvl = levelChoice === "A1" ? "A1" : (pickedLevel ?? "A1");
+      await saveOnboardingPrefs({ course, goal, level: lvl });
+      nav.reset({ index: 0, routes: [{ name: "FirstPractice", params: { level: lvl } }] });
     }
   }
   function next() { if (last) void finish(); else if (canNext) setI((n) => n + 1); }

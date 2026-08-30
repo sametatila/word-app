@@ -64,3 +64,22 @@ export async function showTestNotification(): Promise<boolean> {
   });
   return true;
 }
+
+/**
+ * İlk giriş sonrası bildirim izni "priming"i (§4 — elde tutmanın #1 kaldıracı).
+ * Bir kez gösterilir; hatırlatma zaten kuruluysa ya da daha önce sorulduysa atlanır.
+ */
+const PRIMED_KEY = "wortspiel:notif-primed";
+
+export async function notifPrimeNeeded(): Promise<boolean> {
+  try {
+    if ((await AsyncStorage.getItem(PRIMED_KEY)) === "1") return false;
+    return !(await getReminder()); // hatırlatma zaten varsa gerekmez
+  } catch {
+    return false;
+  }
+}
+
+export async function markNotifPrimed(): Promise<void> {
+  try { await AsyncStorage.setItem(PRIMED_KEY, "1"); } catch { /* yut */ }
+}

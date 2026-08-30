@@ -17,6 +17,7 @@ export type EventName =
   | "share"
   | "onboarding_step"
   | "first_practice"
+  | "notif_prime"
   | "nav"
   | "paywall_view"
   | "premium_gate"
