@@ -9,6 +9,8 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { usePatika, type PatikaUnit } from "../lib/usePatika";
+import { useAuth } from "../lib/AuthContext";
+import { Mascot } from "../ui/Mascot";
 import { KIND_LABEL } from "../data/demoUnit";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -63,15 +65,30 @@ export function PathScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { data: patika, source, loading } = usePatika();
+  const { user } = useAuth();
 
   if (!patika) {
     return (
       <Screen>
         <Text variant="display" style={{ marginBottom: spacing.lg }}>Patika</Text>
-        <View style={{ paddingVertical: spacing.xxxl, alignItems: "center", gap: spacing.md }}>
-          <ActivityIndicator color={colors.primary} size="large" />
-          <Text variant="caption" color={colors.textMuted}>{loading ? "Patika hazırlanıyor…" : "Giriş yapınca patikan yüklenir."}</Text>
-        </View>
+        {!user ? (
+          // Misafir: patikanın ne olduğunu anlat + giriş çağrısı (boş spinner değil).
+          <View style={{ alignItems: "center", gap: spacing.lg, paddingTop: spacing.xxxl, paddingHorizontal: spacing.md }}>
+            <Mascot mood="idle" size={104} />
+            <Text variant="h2" style={{ textAlign: "center" }}>Öğrenme patikan seni bekliyor</Text>
+            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 23 }}>
+              Seviyene göre üniteler: konuşmalı dersler, okuma-dinleme-yazma alıştırmaları ve quizler. Giriş yapınca patikan açılır, kaldığın yerden devam eder.
+            </Text>
+            <PressableScale onPress={() => nav.navigate("Auth")} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
+              <Text variant="h3" color={colors.onPrimary}>Giriş yap / Kayıt ol</Text>
+            </PressableScale>
+          </View>
+        ) : (
+          <View style={{ paddingVertical: spacing.xxxl, alignItems: "center", gap: spacing.md }}>
+            <ActivityIndicator color={colors.primary} size="large" />
+            <Text variant="caption" color={colors.textMuted}>Patika hazırlanıyor…</Text>
+          </View>
+        )}
       </Screen>
     );
   }
