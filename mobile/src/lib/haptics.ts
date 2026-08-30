@@ -1,15 +1,23 @@
-import { Vibration } from "react-native";
+import { trigger, type HapticFeedbackTypes } from "react-native-haptic-feedback";
+import { sfx } from "./sfx";
 
 /**
- * Dokunsal geri bildirim — web'deki lib/fx vibrate desenleriyle aynı.
- * Doğru: kısa tek titreşim; yanlış: çift; dokunuş: çok kısa. Sessizce yutulur.
+ * Geri bildirim — haptik + kısa ses efekti birlikte. react-native-haptic-feedback
+ * iOS'ta gerçek Taptic desenleri verir (eski `Vibration` iOS'ta süreyi/deseni yok
+ * sayıyordu; doğru/yanlış aynı hissediliyordu). Android'de titreşim; sistem
+ * kapalıysa `enableVibrateFallback` ile yine dener. Motor/ses yoksa sessizce yutulur.
  */
+const MAP: Record<"correct" | "wrong" | "tap", HapticFeedbackTypes> = {
+  correct: "notificationSuccess" as HapticFeedbackTypes,
+  wrong: "notificationError" as HapticFeedbackTypes,
+  tap: "impactLight" as HapticFeedbackTypes,
+};
+
 export function haptic(kind: "correct" | "wrong" | "tap"): void {
   try {
-    if (kind === "correct") Vibration.vibrate(18);
-    else if (kind === "wrong") Vibration.vibrate([0, 34, 60, 34]);
-    else Vibration.vibrate(8);
+    trigger(MAP[kind], { enableVibrateFallback: true, ignoreAndroidSystemSettings: false });
   } catch {
-    /* titreşim yoksa yut */
+    /* haptik motoru yoksa yut */
   }
+  sfx(kind);
 }

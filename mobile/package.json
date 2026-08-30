@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "postinstall": "node scripts/patch-tts.js && node scripts/patch-voice.js"
+    "postinstall": "node scripts/patch-tts.js && node scripts/patch-voice.js && node scripts/patch-sound.js && node scripts/patch-haptic.js"
   },
   "dependencies": {
     "@notifee/react-native": "^9.1.8",
@@ -21,8 +21,10 @@
     "react": "19.2.3",
     "react-native": "0.87.1",
     "react-native-confetti-cannon": "^1.5.2",
+    "react-native-haptic-feedback": "^2.3.3",
     "react-native-safe-area-context": "^5.5.2",
     "react-native-screens": "^4.27.0",
+    "react-native-sound": "^0.11.2",
     "react-native-svg": "^15.15.5",
     "react-native-tts": "^4.1.1",
     "react-native-webview": "^14.0.1"
