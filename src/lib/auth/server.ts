@@ -124,3 +124,14 @@ export async function getUserInfo(): Promise<SessionUser | null> {
 export async function getSessionRead(): Promise<SessionRead> {
   return readSession();
 }
+
+/** Oturumdaki kullanıcının e-postası (admin kapısı için); yoksa null. */
+export async function getUserEmail(): Promise<string | null> {
+  if (!auth) return null;
+  try {
+    const { data } = await auth.getSession();
+    return (data?.user as { email?: string } | undefined)?.email ?? null;
+  } catch {
+    return null;
+  }
+}
