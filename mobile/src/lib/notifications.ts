@@ -59,7 +59,7 @@ export async function showTestNotification(): Promise<boolean> {
   await ensureChannel();
   await notifee.displayNotification({
     title: "Wortspiel",
-    body: "Bildirimler açık — seni her gün nazikçe hatırlatacağız.",
+    body: "Bildirimler açık — her gün nazikçe hatırlatacağız.",
     android: { channelId: CHANNEL_ID, smallIcon: "ic_launcher", pressAction: { id: "default" } },
   });
   return true;

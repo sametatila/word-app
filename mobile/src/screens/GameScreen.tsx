@@ -147,8 +147,8 @@ export function GameScreen() {
   if (phase === "auth") {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="display" style={{ textAlign: "center" }}>Gerçek turun için giriş yap</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>Kendi kelimelerin ve ilerlemenle oyna — her şey hesabında kaydolur.</Text>
+        <Text variant="display" style={{ textAlign: "center" }}>İlerlemeni kaydetmek için giriş yap</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>Giriş yapınca kendi kelimelerinle çalışırsın ve serin, XP'n, ilerlemen hesabına kaydedilir.</Text>
         <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color="#fff">Giriş yap / Kayıt ol</Text>
         </PressableScale>
