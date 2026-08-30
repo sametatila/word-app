@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -7,22 +7,24 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ChevronRightIcon, ReadIcon, ListenIcon, WriteIcon, BoltIcon, CheckIcon } from "../ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon, ReadIcon, ListenIcon, WriteIcon, BoltIcon, LockIcon } from "../ui/icons";
 import { useMe } from "../lib/useMe";
+import { listSkillMeta } from "../data/skills";
+import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 /**
  * Sınav hazırlık (§4 — sınav-hazırlığı ürünleştirme). Goethe/telc modülleri:
- * Lesen/Hören/Schreiben/Sprechen. Konuşma modülü premium (ileride paywall'a
- * bağlanacak). Şimdilik demo; ilerleme ve kilit gerçek veriyle gelecek.
+ * Lesen/Hören (ücretsiz, gerçek okuma/dinleme alıştırmaları) + Schreiben/Sprechen
+ * (premium). Uydurma ilerleme yok; modüller gerçek içeriğe bağlı.
  */
 const EXAMS = ["Goethe-Zertifikat", "telc Deutsch"];
 
 const MODULES = [
-  { key: "lesen", label: "Lesen", sub: "Okuma · 4 bölüm", icon: ReadIcon, tint: "info", done: 2, total: 4, premium: false },
-  { key: "hoeren", label: "Hören", sub: "Dinleme · 4 bölüm", icon: ListenIcon, tint: "accent", done: 1, total: 4, premium: false },
-  { key: "schreiben", label: "Schreiben", sub: "Yazma · 2 görev", icon: WriteIcon, tint: "success", done: 0, total: 2, premium: true },
-  { key: "sprechen", label: "Sprechen", sub: "Konuşma · 3 bölüm", icon: BoltIcon, tint: "primary", done: 0, total: 3, premium: true },
+  { key: "lesen", label: "Lesen", tr: "Okuma", icon: ReadIcon, tint: "info", skill: "reading", kind: "read", premium: false },
+  { key: "hoeren", label: "Hören", tr: "Dinleme", icon: ListenIcon, tint: "accent", skill: "listening", kind: "listen", premium: false },
+  { key: "schreiben", label: "Schreiben", tr: "Yazma", icon: WriteIcon, tint: "success", skill: "writing", kind: "write", premium: true },
+  { key: "sprechen", label: "Sprechen", tr: "Konuşma", icon: BoltIcon, tint: "primary", skill: "speaking", kind: "speak", premium: true },
 ] as const;
 
 export function ExamPrepScreen() {
@@ -31,10 +33,22 @@ export function ExamPrepScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [exam, setExam] = useState(0);
   const { me } = useMe();
-  const level = me?.level ?? "A1";
-  // Genel ilerleme: gerçek kelime kapsaması (pekişen/toplam). Yoksa gizli.
+  // Misafirde yerleştirme sınavının belirlediği seviye (prefs); yoksa A1.
+  const [guestLevel, setGuestLevel] = useState<string | null>(null);
+  useEffect(() => { if (!me) void loadOnboardingPrefs().then((p) => setGuestLevel(p.level ?? null)); }, [me]);
+  const level = me?.level ?? guestLevel ?? "A1";
   const overallPct = me && me.totalWords ? Math.min(100, Math.round((me.mastered / me.totalWords) * 100)) : null;
-  const tintOf = (k: keyof Palette) => colors[k] as string;
+
+  function openModule(m: (typeof MODULES)[number]) {
+    if (m.premium) { nav.navigate("Paywall"); return; }
+    const ex = listSkillMeta(level, m.skill as "reading" | "listening" | "writing")[0];
+    if (ex) nav.navigate("Item", { id: ex.id, kind: m.kind, title: ex.title ?? m.label });
+  }
+
+  function countFor(m: (typeof MODULES)[number]): number {
+    if (m.skill === "speaking") return 0;
+    return listSkillMeta(level, m.skill as "reading" | "listening" | "writing").length;
+  }
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -75,10 +89,12 @@ export function ExamPrepScreen() {
         <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>MODÜLLER</Text>
         <View style={{ gap: spacing.md }}>
           {MODULES.map((m) => {
-            const tint = tintOf(m.tint as keyof Palette);
-            const pct = m.total ? Math.round((m.done / m.total) * 100) : 0;
+            const tint = colors[m.tint as keyof Palette] as string;
+            const n = countFor(m);
+            const soon = !m.premium && n === 0; // ücretsiz ama içerik yok
+            const sub = m.premium ? `${m.tr} · Premium` : n > 0 ? `${m.tr} · ${n} alıştırma` : `${m.tr} · yakında`;
             return (
-              <PressableScale key={m.key} onPress={() => m.premium ? nav.navigate("Paywall") : nav.navigate("Game")}>
+              <PressableScale key={m.key} onPress={() => (soon ? undefined : openModule(m))} style={{ opacity: soon ? 0.6 : 1 }}>
                 <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <View style={[{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
                     <m.icon color="#fff" size={24} />
@@ -92,25 +108,18 @@ export function ExamPrepScreen() {
                         </View>
                       )}
                     </View>
-                    <Text variant="caption" color={colors.textMuted}>{m.sub}</Text>
-                    <View style={{ height: 5, borderRadius: 3, backgroundColor: colors.surface2, marginTop: 8, overflow: "hidden" }}>
-                      <View style={{ height: "100%", width: `${pct}%`, backgroundColor: tint, borderRadius: 3 }} />
-                    </View>
+                    <Text variant="caption" color={colors.textMuted}>{sub}</Text>
                   </View>
-                  <ChevronRightIcon color={colors.textFaint} size={20} />
+                  {m.premium ? <LockIcon color={colors.streak} size={20} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
                 </Card>
               </PressableScale>
             );
           })}
         </View>
 
-        {/* deneme sınavı — şimdilik pratik turu (gerçek modül sınavı sonra) */}
-        <PressableScale style={{ marginTop: spacing.lg }} onPress={() => nav.navigate("Game")}>
-          <View style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.primary, 10)]}>
-            <CheckIcon color="#fff" size={22} />
-            <Text variant="h3" color="#fff">Deneme sınavına gir</Text>
-          </View>
-        </PressableScale>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg, textAlign: "center", lineHeight: 18 }}>
+          Lesen ve Hören ücretsiz; Schreiben ve Sprechen Premium'da. Tam Goethe/telc deneme sınavı yakında.
+        </Text>
       </ScrollView>
     </View>
   );
