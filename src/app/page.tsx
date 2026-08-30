@@ -3,6 +3,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Reveal } from "@/components/reveal";
 import { Mascot } from "@/components/mascot";
 import { InstallGuide } from "@/components/install-guide";
+import { AppDownload } from "@/components/app-download";
 import {
   KeyboardIcon,
   LinkIcon,
@@ -193,12 +194,29 @@ export default function Home() {
           <Reveal>
             <h2 className="text-center text-2xl font-bold sm:text-3xl">Telefonuna kur</h2>
             <p className="muted mx-auto mt-3 max-w-lg text-center text-sm">
-              Mağazaya gerek yok — tarayıcıdan ana ekrana eklenir, tam ekran açılır.
+              Android için native uygulamayı indir ya da tarayıcıdan ana ekrana ekle — mağazaya gerek yok.
             </p>
           </Reveal>
           <Reveal delay={0.06}>
-            <div className="mx-auto mt-8 max-w-xl">
-              <InstallGuide />
+            <div className="mx-auto mt-8 max-w-xl space-y-5">
+              {/* Native Android APK — GitHub release, sürüm kontrollü kalıcı bağlantı */}
+              <div className="rounded-2xl px-5 py-6 text-center" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                <p className="text-base font-bold">Android uygulaması</p>
+                <p className="muted mx-auto mt-1.5 max-w-sm text-sm">
+                  Native APK — tam ekran, çevrimdışı, en hızlı. Güncellemeler uygulama içinde bildirilir.
+                </p>
+                <div className="mt-4 flex justify-center">
+                  <AppDownload />
+                </div>
+                <p className="muted mt-3 text-xs">
+                  Kurarken “bilinmeyen kaynak” izni gerekebilir (bu tek uygulama için).
+                </p>
+              </div>
+              {/* Tarayıcıdan (PWA) — iOS ve alternatif */}
+              <div>
+                <p className="muted mb-2 text-center text-xs font-semibold uppercase tracking-wide">ya da tarayıcıdan (PWA)</p>
+                <InstallGuide />
+              </div>
             </div>
           </Reveal>
         </section>
