@@ -11,6 +11,7 @@ import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, Trop
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatDuration, formatXp } from "../lib/useMe";
+import { usePremium } from "../lib/usePremium";
 import { useTheme, spacing, radii, softShadow, type ThemeMode, type Palette } from "../theme";
 
 const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
@@ -46,6 +47,7 @@ export function ProfileScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user, signOut } = useAuth();
   const { me } = useMe();
+  const premium = usePremium();
   // Misafir modu yok: kullanıcı her zaman var. Adı yoksa e-posta adından türet.
   const displayName = user?.name?.trim() || user?.email?.split("@")[0] || "Öğrenci";
   const initial = (displayName.trim()[0] ?? "Ö").toUpperCase();
@@ -100,17 +102,30 @@ export function ProfileScreen() {
           </Card>
         )}
 
-        {/* premium yükseltme bandı (§4) */}
-        <PressableScale onPress={() => nav.navigate("Paywall")} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>
-          <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff2e" }}>
-            <CrownIcon color="#fff" size={26} />
+        {/* premium: üye ise rozet, değilse yükseltme bandı (§4) */}
+        {premium ? (
+          <View style={{ borderRadius: radii.xl, backgroundColor: colors.successSoft, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
+            <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.success }}>
+              <CrownIcon color="#fff" size={26} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text variant="h3" color={colors.success}>Premium üye</Text>
+              <Text variant="caption" color={colors.textMuted}>Tüm özellikler açık — teşekkürler!</Text>
+            </View>
+            <CheckIcon color={colors.success} size={22} />
           </View>
-          <View style={{ flex: 1 }}>
-            <Text variant="h3" color="#fff">Premium'a geç</Text>
-            <Text variant="caption" color="#ffffffcc">Sınırsız konuşma + tam sınav hazırlığı</Text>
-          </View>
-          <ChevronRightIcon color="#fff" size={22} />
-        </PressableScale>
+        ) : (
+          <PressableScale onPress={() => nav.navigate("Paywall")} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>
+            <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff2e" }}>
+              <CrownIcon color="#fff" size={26} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text variant="h3" color="#fff">Premium'a geç</Text>
+              <Text variant="caption" color="#ffffffcc">Sınırsız konuşma + tam sınav hazırlığı</Text>
+            </View>
+            <ChevronRightIcon color="#fff" size={22} />
+          </PressableScale>
+        )}
 
         {/* görünüm — tema geçişi */}
         <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>GÖRÜNÜM</Text>

@@ -9,6 +9,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon, ChevronRightIcon, ReadIcon, ListenIcon, WriteIcon, BoltIcon, LockIcon } from "../ui/icons";
 import { useMe } from "../lib/useMe";
+import { usePremium } from "../lib/usePremium";
 import { listSkillMeta } from "../data/skills";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -33,6 +34,7 @@ export function ExamPrepScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [exam, setExam] = useState(0);
   const { me } = useMe();
+  const premium = usePremium();
   // Misafirde yerleştirme sınavının belirlediği seviye (prefs); yoksa A1.
   const [guestLevel, setGuestLevel] = useState<string | null>(null);
   useEffect(() => { if (!me) void loadOnboardingPrefs().then((p) => setGuestLevel(p.level ?? null)); }, [me]);
@@ -40,7 +42,7 @@ export function ExamPrepScreen() {
   const overallPct = me && me.totalWords ? Math.min(100, Math.round((me.mastered / me.totalWords) * 100)) : null;
 
   function openModule(m: (typeof MODULES)[number]) {
-    if (m.premium) { nav.navigate("Paywall"); return; }
+    if (m.premium && !premium) { nav.navigate("Paywall"); return; }
     const ex = listSkillMeta(level, m.skill as "reading" | "listening" | "writing")[0];
     if (ex) nav.navigate("Item", { id: ex.id, kind: m.kind, title: ex.title ?? m.label });
   }
@@ -110,7 +112,7 @@ export function ExamPrepScreen() {
                     </View>
                     <Text variant="caption" color={colors.textMuted}>{sub}</Text>
                   </View>
-                  {m.premium ? <LockIcon color={colors.streak} size={20} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
+                  {m.premium && !premium ? <LockIcon color={colors.streak} size={20} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
                 </Card>
               </PressableScale>
             );

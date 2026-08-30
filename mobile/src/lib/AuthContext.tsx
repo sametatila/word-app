@@ -2,6 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useState } fr
 import { getSession, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
 import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
 import { updateProfile } from "./updateProfile";
+import { configureBilling } from "./billing";
 
 type Ctx = {
   user: AuthUser | null;
@@ -50,6 +51,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     })();
     return () => { alive = false; };
   }, []);
+
+  // Kullanıcı değişince RevenueCat'i Neon kimliğiyle başlat/güncelle (web+mobil
+  // aynı entitlement). Anahtar yoksa güvenle no-op.
+  useEffect(() => { void configureBilling(user?.id ?? null); }, [user?.id]);
 
   const signIn = useCallback(async (email: string, password: string) => {
     const r = await apiSignIn(email, password);

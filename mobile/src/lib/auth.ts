@@ -84,3 +84,18 @@ export async function signInSocial(provider: string, callbackURL: string): Promi
     return null;
   }
 }
+
+/**
+ * Parola sıfırlama bağlantısı ister (web'le AYNI Better Auth ucu:
+ * request-password-reset). Sıfırlamanın kendisi e-postadaki bağlantıyla
+ * web'deki /reset-password sayfasında tamamlanır — mobil ayrı sayfa gerektirmez.
+ * Güvenlik: e-posta kayıtlı olmasa bile true döneriz (hesap sızdırmamak için).
+ */
+export async function requestPasswordReset(email: string): Promise<boolean> {
+  try {
+    const res = await post("request-password-reset", { email, redirectTo: "https://www.exfe.me/reset-password" });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}

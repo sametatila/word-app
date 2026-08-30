@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
+import type { PurchasesPackage } from "react-native-purchases";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, CheckIcon, CrownIcon, ExamIcon } from "../ui/icons";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
+import { billingAvailable, getPackages, purchase, restore } from "../lib/billing";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 /**
@@ -60,16 +62,39 @@ export function PaywallScreen() {
   const nav = useNavigation<{ goBack: () => void }>();
   const [plan, setPlan] = useState<string>("yearly");
   const [started, setStarted] = useState(false);
+  const [pkgs, setPkgs] = useState<PurchasesPackage[]>([]);
+  const [busy, setBusy] = useState(false);
   const selected = PLANS.find((p) => p.key === plan) ?? PLANS[0];
   const hasTrial = selected.trial > 0;
+  const live = billingAvailable(); // RevenueCat anahtarı var mı → gerçek satın alma
 
-  // §4 funnel: paywall görüldü (kaynak sonra route param'la gelebilir).
-  useEffect(() => { track("paywall_view", 0, "mobile"); }, []);
+  // §4 funnel: paywall görüldü. Anahtar varsa gerçek paketleri (fiyatları) çek.
+  useEffect(() => {
+    track("paywall_view", 0, "mobile");
+    if (live) void getPackages().then(setPkgs);
+  }, [live]);
 
-  function start() {
+  const pkgFor = (key: string): PurchasesPackage | undefined =>
+    pkgs.find((p) => (key === "yearly" ? p.packageType === "ANNUAL" : p.packageType === "MONTHLY"));
+
+  async function start() {
     track("purchase_start", 0, plan);
     haptic("correct");
-    setStarted(true);
+    if (!live) { setStarted(true); return; } // anahtar yok → huni modu (dönüt)
+    const pkg = pkgFor(plan);
+    if (!pkg) { setStarted(true); return; }
+    setBusy(true);
+    const ok = await purchase(pkg);
+    setBusy(false);
+    if (ok) { haptic("correct"); nav.goBack(); } // premium aktif → gating usePremium ile güncellenir
+  }
+
+  async function doRestore() {
+    if (!live || busy) return;
+    setBusy(true);
+    const ok = await restore();
+    setBusy(false);
+    if (ok) nav.goBack();
   }
 
   return (
@@ -166,12 +191,17 @@ export function PaywallScreen() {
           </View>
         ) : (
           <>
-            <PressableScale onPress={start} accessibilityRole="button" accessibilityLabel={hasTrial ? "7 gün ücretsiz başla" : "Premium'a başla"} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 12)]}>
-              <Text variant="h3" color="#fff">{hasTrial ? "7 gün ücretsiz başla" : "Premium'a başla"}</Text>
+            <PressableScale onPress={start} disabled={busy} accessibilityRole="button" accessibilityLabel={hasTrial ? "7 gün ücretsiz başla" : "Premium'a başla"} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 12)]}>
+              {busy ? <ActivityIndicator color="#fff" /> : <Text variant="h3" color="#fff">{hasTrial ? "7 gün ücretsiz başla" : "Premium'a başla"}</Text>}
             </PressableScale>
             <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>
-              {hasTrial ? `7 gün ücretsiz, sonra ${selected.price} · ` : `${selected.price} · `}İstediğin zaman iptal · Otomatik yenilenir
+              {hasTrial ? `7 gün ücretsiz, sonra ${(live ? pkgFor(plan)?.product.priceString : null) ?? selected.price} · ` : `${(live ? pkgFor(plan)?.product.priceString : null) ?? selected.price} · `}İstediğin zaman iptal · Otomatik yenilenir
             </Text>
+            {live && (
+              <PressableScale onPress={doRestore} accessibilityLabel="Satın almayı geri yükle" style={{ alignItems: "center", paddingVertical: spacing.sm, marginTop: 2 }}>
+                <Text variant="caption" color={colors.textMuted}>Satın almayı geri yükle</Text>
+              </PressableScale>
+            )}
           </>
         )}
       </View>

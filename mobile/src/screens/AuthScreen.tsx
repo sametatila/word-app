@@ -9,13 +9,13 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, ChevronLeftIcon, BoltIcon, GoogleIcon, AppleIcon, FacebookIcon, MailIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
-import { signInSocial } from "../lib/auth";
+import { signInSocial, requestPasswordReset } from "../lib/auth";
 import { notifPrimeNeeded } from "../lib/notifications";
 import { translateAuthError } from "../lib/authErrors";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 type Mode = "signin" | "signup";
-type View2 = "options" | "email";
+type View2 = "options" | "email" | "forgot";
 
 /** OAuth bitişinde gidilen adres — WebView buraya ulaşınca akış tamamdır. */
 const SOCIAL_CALLBACK = "https://www.exfe.me/learn";
@@ -60,6 +60,8 @@ export function AuthScreen() {
   const [error, setError] = useState<string | null>(null);
   const [socialUrl, setSocialUrl] = useState<string | null>(null);
   const [socialBusy, setSocialBusy] = useState<string | null>(null);
+  const [resetSent, setResetSent] = useState(false);
+  const [resetBusy, setResetBusy] = useState(false);
 
   async function submit() {
     if (busy) return;
@@ -69,6 +71,15 @@ export function AuthScreen() {
     setBusy(false);
     if (r.ok) { void toApp(); return; }
     setError(translateAuthError(r.code, r.message));
+  }
+
+  async function doReset() {
+    if (resetBusy || !email.trim()) return;
+    setResetBusy(true);
+    setError(null);
+    await requestPasswordReset(email.trim());
+    setResetBusy(false);
+    setResetSent(true); // güvenlik: e-posta kayıtlı olmasa da aynı onay
   }
 
   async function startSocial(provider: string) {
@@ -112,10 +123,10 @@ export function AuthScreen() {
             <BoltIcon color="#fff" size={38} />
           </View>
           <Text variant="display" style={{ marginTop: spacing.md }}>
-            {view === "options" ? "Giriş yap" : mode === "signin" ? "Tekrar hoş geldin" : "Hesap oluştur"}
+            {view === "forgot" ? "Parolanı mı unuttun?" : view === "options" ? "Giriş yap" : mode === "signin" ? "Tekrar hoş geldin" : "Hesap oluştur"}
           </Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>
-            {view === "options" ? "İlerlemen kaydolur, cihazlar arası devam eder." : mode === "signin" ? "Serini kaldığın yerden sürdür." : "Birkaç saniye sürer, ilerlemen kaydedilir."}
+            {view === "forgot" ? "E-postanı gir, sıfırlama bağlantısı gönderelim." : view === "options" ? "İlerlemen kaydolur, cihazlar arası devam eder." : mode === "signin" ? "Serini kaldığın yerden sürdür." : "Birkaç saniye sürer, ilerlemen kaydedilir."}
           </Text>
         </View>
 
@@ -149,6 +160,26 @@ export function AuthScreen() {
               </View>
             )}
           </View>
+        ) : view === "forgot" ? (
+          <View style={{ gap: spacing.md }}>
+            {resetSent ? (
+              <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.lg, padding: spacing.lg, gap: 6 }}>
+                <Text variant="bodyStrong" color={colors.success}>Bağlantı gönderildi</Text>
+                <Text variant="caption" color={colors.textMuted}>{email.trim() || "E-postana"} adresine bir sıfırlama bağlantısı gönderdik (adres kayıtlıysa). Gelen kutunu kontrol et.</Text>
+              </View>
+            ) : (
+              <>
+                <TextInput value={email} onChangeText={setEmail} placeholder="E-posta" placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
+                {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.danger}>{error}</Text></View>)}
+                <PressableScale onPress={doReset} accessibilityLabel="Sıfırlama bağlantısı gönder" style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
+                  <Text variant="h3" color="#fff">{resetBusy ? "..." : "Sıfırlama bağlantısı gönder"}</Text>
+                </PressableScale>
+              </>
+            )}
+            <PressableScale onPress={() => { setView("email"); setResetSent(false); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
+              <Text variant="bodyStrong" color={colors.primary}>Girişe dön</Text>
+            </PressableScale>
+          </View>
         ) : (
           <View style={{ gap: spacing.md }}>
             {mode === "signup" && (
@@ -166,6 +197,12 @@ export function AuthScreen() {
             <PressableScale onPress={submit} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color="#fff">{busy ? "..." : mode === "signin" ? "Giriş yap" : "Hesap oluştur"}</Text>
             </PressableScale>
+
+            {mode === "signin" && (
+              <PressableScale onPress={() => { setView("forgot"); setError(null); setResetSent(false); }} style={{ alignItems: "center", paddingVertical: spacing.xs }}>
+                <Text variant="caption" color={colors.textMuted}>Parolanı mı unuttun?</Text>
+              </PressableScale>
+            )}
 
             <PressableScale onPress={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
               <Text variant="body" color={colors.textMuted}>
