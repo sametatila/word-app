@@ -21,7 +21,7 @@ kurmasına yardım.** İki mod:
 - Her CEFR seviyesi → **10 tematik modül × 10 ders = 100/seviye** (de KURULU: 500 ders).
   buildTrack bunu 4'erli böler → **seviye başına 25 ünite** (gating grupları 1–10, 11–20, 21–25).
   Temalar `modules.ts` `MODULE_THEMES`. Modül = sunum kavramı (katalog 10'arlı dilimlenir).
-- **Modül sınavı** + `moduleClears` → gating altyapısı hazır (`/lessons/sinav/[level]/[module]`).
+- **Modül sınavı** + `moduleClears` → gating altyapısı hazır (`/lessons/boss/[level]/[module]`).
 - Beceri okuma/dinleme/yazma egzersizleri: `skill_exercises` (DB, 120/120/80) + `userSkills`.
   Oynatıcılar iyi: `reading-player`, `listening-player`, `writing-player` — KORUNUR, item render eder.
 

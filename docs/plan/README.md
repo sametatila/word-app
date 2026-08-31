@@ -6,14 +6,14 @@ Plan **iş paketlerine (WP)** bölünmüştür. Her WP başka bir ajan tarafınd
 
 | Dosya | Faz | İş paketleri |
 |---|---|---|
-| [00-temel.md](00-temel.md) | 0 — Temel altyapı | WP-00 Ölçüm çerçevesi · WP-01 Beceri ilerlemesi sunucuya · WP-02 Hata taksonomisi · WP-03 AI değerlendirme servisi · WP-04 Çevrimdışı rol yapma yedeği |
-| [10-uretim-alistirmalari.md](10-uretim-alistirmalari.md) | 1 — Üretim odaklı alıştırma | WP-10 Çeviri oyunu · WP-11 Dönüştürme drilleri · WP-12 Serbest cümle · WP-13 "Neden" geri bildirimi · WP-14 Oyun merdiveni |
-| [20-konusma.md](20-konusma.md) | 2 — Konuşma | WP-20 Telaffuz puanlama · WP-21 Konuşma içeriği · WP-22 Rol yapma sınavı · WP-23 Açık diyalog |
-| [30-yazma.md](30-yazma.md) | 3 — Yazma | WP-30 AI yazma değerlendirmesi · WP-31 Yazma görev türleri |
-| [40-olcme-sinav.md](40-olcme-sinav.md) | 4 — Ölçme ve sınav | WP-40 Yerleştirme testi · WP-41 Seviye sınavı v2 · WP-42 Haftalık kullanım sınavı · WP-43 CEFR can-do haritası |
-| [50-analitik-profil.md](50-analitik-profil.md) | 5 — Analitik | WP-50 Beceri yetkinlik modeli · WP-51 Hata analitiği · WP-52 Gelişim raporu |
-| [60-arayuz-kompozisyon.md](60-arayuz-kompozisyon.md) | 6 — Arayüz ve kompozisyon | WP-60 /learn yeniden kompozisyon · WP-61 Geri bildirim bileşeni · WP-62 Ders oynatıcı · WP-63 Beceri merkezi · WP-64 Profil · WP-65 Onboarding · WP-66 Erdi koç sesi |
-| [70-icerik-hatti.md](70-icerik-hatti.md) | 7 — İçerik üretim hattı | WP-70 İçerik şeması ve doğrulayıcı · WP-71 Ders kapsamı (B1–C1) · WP-72 Konuşma/yazma içeriği · WP-73 Gerekçe ve kural parçacıkları |
+| [00-foundation.md](00-foundation.md) | 0 — Temel altyapı | WP-00 Ölçüm çerçevesi · WP-01 Beceri ilerlemesi sunucuya · WP-02 Hata taksonomisi · WP-03 AI değerlendirme servisi · WP-04 Çevrimdışı rol yapma yedeği |
+| [10-production-exercises.md](10-production-exercises.md) | 1 — Üretim odaklı alıştırma | WP-10 Çeviri oyunu · WP-11 Dönüştürme drilleri · WP-12 Serbest cümle · WP-13 "Neden" geri bildirimi · WP-14 Oyun merdiveni |
+| [20-speaking.md](20-speaking.md) | 2 — Konuşma | WP-20 Telaffuz puanlama · WP-21 Konuşma içeriği · WP-22 Rol yapma sınavı · WP-23 Açık diyalog |
+| [30-writing.md](30-writing.md) | 3 — Yazma | WP-30 AI yazma değerlendirmesi · WP-31 Yazma görev türleri |
+| [40-assessment-exams.md](40-assessment-exams.md) | 4 — Ölçme ve sınav | WP-40 Yerleştirme testi · WP-41 Seviye sınavı v2 · WP-42 Haftalık kullanım sınavı · WP-43 CEFR can-do haritası |
+| [50-analytics-profile.md](50-analytics-profile.md) | 5 — Analitik | WP-50 Beceri yetkinlik modeli · WP-51 Hata analitiği · WP-52 Gelişim raporu |
+| [60-ui-composition.md](60-ui-composition.md) | 6 — Arayüz ve kompozisyon | WP-60 /learn yeniden kompozisyon · WP-61 Geri bildirim bileşeni · WP-62 Ders oynatıcı · WP-63 Beceri merkezi · WP-64 Profil · WP-65 Onboarding · WP-66 Erdi koç sesi |
+| [70-content-pipeline.md](70-content-pipeline.md) | 7 — İçerik üretim hattı | WP-70 İçerik şeması ve doğrulayıcı · WP-71 Ders kapsamı (B1–C1) · WP-72 Konuşma/yazma içeriği · WP-73 Gerekçe ve kural parçacıkları |
 
 ## Hedef puanlar
 
@@ -48,7 +48,7 @@ Faz 4 (ölçme) ──── WP-43 önce; WP-40, 41, 42 (01, 02, 10, 11, 30, 20'
 Faz 5 (analitik) ─ WP-50, 51, 52 (01, 02, 40–42'ye) ◄──────────────┘
 Faz 6 (arayüz) ─── her fazla paralel; WP-60 erken, 61 WP-13 ile, 65 WP-40 ile
 Faz 7 (içerik) ─── WP-70 en başta; 71–73 sürekli
-Faz 8 (takip) ──── WP-80: veri boşluğu kapatma, her yeni yüzeyle birlikte sürer (80-takip.md)
+Faz 8 (takip) ──── WP-80: veri boşluğu kapatma, her yeni yüzeyle birlikte sürer (80-tracking.md)
 ```
 
 Önerilen sprint akışı (2 haftalık sprintler, 2–3 paralel ajan):

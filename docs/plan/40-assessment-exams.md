@@ -56,7 +56,7 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 
 **Amaç.** Modül patron turu "hız turu" olarak kalır; ayrıca **gerçek sınav**: dört beceri + dilbilgisi, üretim ağırlıklı, zamanlı, geçme eşiği, sertifika.
 
-**Mevcut kod.** `src/lib/lessons/boss.ts` (`BOSS_*`, `moduleClears`), `src/components/boss-player.tsx`, `/lessons/sinav/[level]/[module]`, `/api/boss`.
+**Mevcut kod.** `src/lib/lessons/boss.ts` (`BOSS_*`, `moduleClears`), `src/components/boss-player.tsx`, `/lessons/boss/[level]/[module]`, `/api/boss`.
 
 **Tasarım.**
 - İki düzey: **Modül sınavı v2** (ders modülü sonu, 20 dk) ve **Seviye sınavı** (seviye sonu, 45 dk). Bölümler ve ağırlıklar:
@@ -71,7 +71,7 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 - Kurallar: zaman sınırı, geri dönüş yok, ipucu yok, her bölüm ayrı puan; geçme: toplam ≥ %70 ve hiçbir bölüm < %50. Ders modülünde ön koşul: modül derslerinin ≥ %80'i geçilmiş (aksi hâlde "deneme" — sayılmaz).
 - Sonuç: bölüm puanları, hata tipi dağılımı (WP-02), can-do kanıtları (WP-43), önerilen çalışma (WP-51), sertifika (paylaşılabilir görsel + PDF: `/api/certificate/[id]`; `share-result.tsx` deseni).
 - Kayıt: `exams` (`userId, kind, level, module?, startedAt, finishedAt, sections jsonb, total, passed`). Rozetler: "Sınav ustası" grubu genişler.
-- Erişim: `/lessons/sinav/[level]/[module]` mevcut → "Hız turu" ve "Sınav" sekmeleri; `/skills` ve `/learn`'de "Seviye sınavı" kartı (WP-60/63).
+- Erişim: `/lessons/boss/[level]/[module]` mevcut → "Hız turu" ve "Sınav" sekmeleri; `/skills` ve `/learn`'de "Seviye sınavı" kartı (WP-60/63).
 
 **Adımlar.** 1. Sınav kurucu (`src/lib/exam.ts`: bölüm madde seçimi, kullanılmamış madde tercihi, tohumlu rastgelelik). 2. `exam-player.tsx` (bölüm geçişleri, zamanlayıcı, kayıt/devam). 3. Değerlendirme (nesnel + WP-03/20 çağrıları) ve sonuç ekranı. 4. Sertifika. 5. Rozet/quest bağları. 6. e2e: sınav kurulumu deterministik.
 
@@ -95,13 +95,13 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 - Kayıt: `exams` (kind: weekly). Profilde haftalık trend (WP-52). Görev kartında "Haftanın sınavı" (quest).
 - Pekişmiş kelimesi < 30 olan kullanıcıda: "öğreniliyor" bandından 15 kelime, etiket "kısa kontrol".
 
-**Adımlar.** 1. Kurucu + rota `/learn/haftalik`. 2. Oynatıcı (session-player alt akışı; tek hak, ipuçsuz). 3. Sonuç + SRS geri yazımı + kayıt. 4. Quest + bildirim. 5. KPI: kullanım skoru.
+**Adımlar.** 1. Kurucu + rota `/learn/weekly`. 2. Oynatıcı (session-player alt akışı; tek hak, ipuçsuz). 3. Sonuç + SRS geri yazımı + kayıt. 4. Quest + bildirim. 5. KPI: kullanım skoru.
 
 **Kabul.** Pazartesi kart görünüyor; 15 soru; sonuç ve trend; yanlış kelimeler tekrar kuyruğuna dönüyor.
 
 **Süre.** 4 gün. **Bağımlılık.** WP-10, WP-14, WP-02.
 
-**Durum (2026-08-25).** Adım 1–3, 5 bitti; 4 (quest + bildirim) ertelendi. `src/lib/weekly.ts`: `buildWeeklyExam` (pekişmiş ≥21 gün, son 4 haftada sınanmamış, 15 kelime; oyunlar çeviri 5 / yazma 4 / yazarak tamamla 3 / serbest cümle 2 (AI varsa) / yazma 1; pekişmiş < 30 → öğreniliyor bandı, "kısa kontrol"), `finishWeekly` (yanlış → kalite 2, `exams` satırı, `exam_finish` kind `usage:<seviye>`, tek hak), `weeklyStatus`, `weeklyHistory`; `GET/POST /api/weekly`; `/learn/haftalik` (`weekly-player.tsx`: tek hak, ipuçsuz, sonuçta yanlış kelimeler); plan kartına "Haftanın kullanım sınavı" öğesi (≥15 çalışılmış kelime). Migrasyon `0032_exams.sql` üretime uygulandı. KPI 3 (`report:learning`) bu olaydan okuyor. e2e §38 (11 kontrol). Kanıt: `reports/shots/wp42-weekly.png`.
+**Durum (2026-08-25).** Adım 1–3, 5 bitti; 4 (quest + bildirim) ertelendi. `src/lib/weekly.ts`: `buildWeeklyExam` (pekişmiş ≥21 gün, son 4 haftada sınanmamış, 15 kelime; oyunlar çeviri 5 / yazma 4 / yazarak tamamla 3 / serbest cümle 2 (AI varsa) / yazma 1; pekişmiş < 30 → öğreniliyor bandı, "kısa kontrol"), `finishWeekly` (yanlış → kalite 2, `exams` satırı, `exam_finish` kind `usage:<seviye>`, tek hak), `weeklyStatus`, `weeklyHistory`; `GET/POST /api/weekly`; `/learn/weekly` (`weekly-player.tsx`: tek hak, ipuçsuz, sonuçta yanlış kelimeler); plan kartına "Haftanın kullanım sınavı" öğesi (≥15 çalışılmış kelime). Migrasyon `0032_exams.sql` üretime uygulandı. KPI 3 (`report:learning`) bu olaydan okuyor. e2e §38 (11 kontrol). Kanıt: `reports/shots/wp42-weekly.png`.
 
 ## Ek (2026-08-26): modül sınavı v3 — modülün kendi sınavı
 

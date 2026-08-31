@@ -725,7 +725,7 @@ export const assessments = pgTable(
  * Yerleştirme testleri (WP-40). Her alma bir satır: önerilen seviye, kabul
  * edilen (kullanıcı değiştirebilir — karar hep onun), beceri başına tahmin
  * ve cevapların tamamı (kalibrasyon: 10 kişilik karşılaştırma bu satırlardan
- * yapılır, `docs/plan/40-olcme-sinav.md`). 30 günde bir yeniden alınabilir.
+ * yapılır, `docs/plan/40-assessment-exams.md`). 30 günde bir yeniden alınabilir.
  */
 export const placements = pgTable(
   "placements",
