@@ -47,9 +47,32 @@ export const auth = betterAuth({
     updateAge: 60 * 60 * 24, // günde bir tazele
     cookieCache: { enabled: true, maxAge: 900 }, // 15 dk çerez-önbelleği (dış isteği azaltır)
   },
+  /**
+   * Hız sınırı. Ölçüldü: sınır yokken /sign-in/email'e art arda 8 yanlış parola
+   * 8 × 401 döndü — parola denemesi sınırsızdı. Sayaç bellekte, yani instance
+   * başına (üretimde üç instance → etkin sınır ~3 katı); sert sınır nginx'te
+   * (/api/auth/sign-in* için limit_req). IP nginx'in koyduğu x-real-ip'ten
+   * okunur: x-forwarded-for'a istemci kendi değerini ekleyebiliyor
+   * ($proxy_add_x_forwarded_for), o başlığa güvenmek sınırı sahte IP ile
+   * aşılabilir kılardı.
+   */
+  rateLimit: {
+    enabled: process.env.NODE_ENV === "production",
+    storage: "memory",
+    window: 60,
+    max: 120,
+    customRules: {
+      "/sign-in/email": { window: 60, max: 5 },
+      "/sign-in/social": { window: 60, max: 10 },
+      "/sign-up/email": { window: 3600, max: 5 },
+      "/request-password-reset": { window: 3600, max: 3 },
+      "/reset-password": { window: 3600, max: 5 },
+    },
+  },
   advanced: {
     // Çapraz-köken gezinmelerde (e-posta/bildirim bağlantısı) çerez gitsin diye lax.
     defaultCookieAttributes: { sameSite: "lax" },
+    ipAddress: { ipAddressHeaders: ["x-real-ip"] },
   },
 });
 

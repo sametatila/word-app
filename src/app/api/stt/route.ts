@@ -12,6 +12,8 @@ export const maxDuration = 30;
 
 /** Kabul edilen en büyük klip — bir kelimelik cevap birkaç yüz kilobayt. */
 const MAX_BYTES = 2_000_000;
+/** Kullanıcı başına günlük STT isteği (başarısızlar dâhil); pronounce'ın 120'si bunun içinde sayılır. */
+const DAILY_LIMIT = 400;
 
 /**
  * Konuşmayı yazıya çevirme.
@@ -58,6 +60,7 @@ export async function POST(req: Request) {
   if (!file || file.size === 0) return NextResponse.json({ error: "no_audio" }, { status: 400 });
   if (file.size > MAX_BYTES) return NextResponse.json({ error: "too_large" }, { status: 413 });
 
+  if (!(await underDailyLimit(userId))) return NextResponse.json({ error: "quota" }, { status: 429 });
   try {
     const out = await transcribe(file, { language, userId, expected, mode });
     return NextResponse.json({ text: out.text, confidence: out.confidence, provider: out.provider, model: out.model });
@@ -81,4 +84,19 @@ export async function GET() {
     provider: providers[0]?.name ?? null,
     walk: walk[0]?.name ?? null,
   });
+}
+
+async function underDailyLimit(userId: string): Promise<boolean> {
+  try {
+    const { db } = await import("@/lib/db");
+    const { aiUsage } = await import("@/lib/db/schema");
+    const { and, eq, gte, sql } = await import("drizzle-orm");
+    const [row] = await db
+      .select({ n: sql<number>`count(*)::int` })
+      .from(aiUsage)
+      .where(and(eq(aiUsage.userId, userId), eq(aiUsage.kind, "stt"), gte(aiUsage.createdAt, sql`now() - interval '1 day'`)));
+    return (row?.n ?? 0) < DAILY_LIMIT;
+  } catch {
+    return true;
+  }
 }

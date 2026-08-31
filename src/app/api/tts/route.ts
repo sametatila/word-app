@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getUserId } from "@/lib/auth/server";
 import { MAX_TEXT } from "@/lib/tts/edge";
 import { synthesizeSpeech } from "@/lib/tts/synth";
 import { TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
@@ -59,6 +60,11 @@ export async function GET(req: Request) {
   }
   if (!sameOrigin(req)) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
+  // Girişsiz sayfaların hiçbiri seslendirme kullanmıyor; açık uç, Azure yedeğinin
+  // ücretli kotasını herkesin harcayabildiği bir sentez servisi olurdu.
+  if (!(await getUserId())) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401, headers: { "cache-control": "no-store" } });
   }
 
   try {
