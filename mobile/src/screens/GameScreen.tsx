@@ -8,6 +8,8 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, ShareIcon, FlameIcon } from "../ui/icons";
 import { shareResult } from "../lib/share";
+import { MascotPop } from "../ui/MascotPop";
+import { AmbientPeek } from "../ui/AmbientMascot";
 import { ProgressRing } from "../ui/ProgressRing";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
@@ -38,6 +40,7 @@ export function GameScreen() {
   const [finalCorrect, setFinalCorrect] = useState(0);
   const [finalTotal, setFinalTotal] = useState(0);
   const [combo, setCombo] = useState(0);
+  const [pop, setPop] = useState(0);
   const answers = useRef<AnswerOut[]>([]);
   const startedAt = useRef(0);
   const roundStart = useRef(0);
@@ -119,6 +122,7 @@ export function GameScreen() {
       const wordId = r?.word?.id ?? r?.words?.[0]?.id ?? 0;
       if (wordId && r) answers.current.push({ wordId, game: r.game, correct: ok, latencyMs: lat });
     }
+    if (ok && (combo + 1) % 5 === 0) setPop((x) => x + 1);
     setCombo((c) => (ok ? c + 1 : 0));
     roundStart.current = Date.now();
     const next = idx + 1;
@@ -213,6 +217,8 @@ export function GameScreen() {
       </View>
       {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>{gameLabel} · pratik</Text>}
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />
+      <AmbientPeek />
+      <MascotPop trigger={pop} />
     </View>
   );
 }

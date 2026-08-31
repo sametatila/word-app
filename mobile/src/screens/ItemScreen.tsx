@@ -6,6 +6,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
+import { Celebrate } from "../ui/Celebrate";
 import { XIcon, ReadIcon, ListenIcon, WriteIcon, SpeakerIcon } from "../ui/icons";
 import { KIND_LABEL, type ItemKind } from "../data/demoUnit";
 import { getExercise, type ListeningSegment } from "../data/skills";
@@ -153,6 +154,7 @@ export function ItemScreen() {
 
         {finished ? (
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
+            <Celebrate show={pct >= 70} />
             <Mascot mood={pct >= 70 ? "celebrate" : pct >= 40 ? "happy" : "idle"} size={84} />
             <Text variant="h2">{exercise.skill === "writing" ? "Görevler bitti" : `${correct}/${total} doğru`}</Text>
             {exercise.skill !== "writing" ? <Text variant="caption" color={colors.textMuted}>%{pct} başarı</Text> : null}

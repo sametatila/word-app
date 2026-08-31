@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, TextInput, KeyboardAvoidingView, Platform } from "react-native";
+import { View, TextInput, KeyboardAvoidingView, Platform, Animated } from "react-native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
@@ -96,15 +96,31 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint }: { text: s
   const bg = state === "correct" ? colors.successSoft : state === "wrong" ? colors.dangerSoft : colors.surface;
   const border = state === "correct" ? colors.success : state === "wrong" ? colors.danger : idleTint ?? colors.border;
   const fg = state === "correct" ? colors.success : state === "wrong" ? colors.danger : idleTint ?? colors.text;
+  // Web geri bildirimi: yanlışta yatay "shake", doğruda hafif "pop".
+  const shake = useRef(new Animated.Value(0)).current;
+  const pop = useRef(new Animated.Value(1)).current;
+  useEffect(() => {
+    if (state === "wrong") {
+      Animated.sequence([-8, 8, -6, 6, -3, 0].map((v) => Animated.timing(shake, { toValue: v, duration: 45, useNativeDriver: true }))).start();
+    } else if (state === "correct") {
+      Animated.sequence([
+        Animated.spring(pop, { toValue: 1.05, useNativeDriver: true, speed: 50, bounciness: 0 }),
+        Animated.spring(pop, { toValue: 1, useNativeDriver: true, speed: 20, bounciness: 8 }),
+      ]).start();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state]);
   return (
-    <PressableScale onPress={onPress} style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
-      <View style={{ flex: 1 }}>
-        <Text variant="bodyStrong" color={fg}>{text}</Text>
-        {sub ? <Text variant="caption" color={colors.textMuted}>{sub}</Text> : null}
-      </View>
-      {state === "correct" && <CheckIcon color={colors.success} size={22} />}
-      {state === "wrong" && <XIcon color={colors.danger} size={22} />}
-    </PressableScale>
+    <Animated.View style={{ transform: [{ translateX: shake }, { scale: pop }] }}>
+      <PressableScale onPress={onPress} style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
+        <View style={{ flex: 1 }}>
+          <Text variant="bodyStrong" color={fg}>{text}</Text>
+          {sub ? <Text variant="caption" color={colors.textMuted}>{sub}</Text> : null}
+        </View>
+        {state === "correct" && <CheckIcon color={colors.success} size={22} />}
+        {state === "wrong" && <XIcon color={colors.danger} size={22} />}
+      </PressableScale>
+    </Animated.View>
   );
 }
 
@@ -492,11 +508,18 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
 function MatchCard({ text, sub, state, onPress, colors }: { text: string; sub?: string | null; state: "idle" | "sel" | "correct" | "wrong"; onPress: () => void; colors: Palette }) {
   const border = state === "correct" ? colors.success : state === "wrong" ? colors.danger : state === "sel" ? colors.primary : colors.border;
   const bg = state === "correct" ? colors.successSoft : state === "wrong" ? colors.dangerSoft : state === "sel" ? colors.primarySoft : colors.surface;
+  const shake = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    if (state === "wrong") Animated.sequence([-7, 7, -5, 5, 0].map((v) => Animated.timing(shake, { toValue: v, duration: 45, useNativeDriver: true }))).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state]);
   return (
-    <PressableScale onPress={onPress} disabled={state === "correct"} style={{ borderWidth: 1.5, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.md, paddingHorizontal: spacing.md, opacity: state === "correct" ? 0.5 : 1, minHeight: 60, justifyContent: "center" }}>
-      <Text variant="bodyStrong" color={colors.text}>{text}</Text>
-      {sub ? <Text variant="micro" color={colors.textMuted}>{sub}</Text> : null}
-    </PressableScale>
+    <Animated.View style={{ transform: [{ translateX: shake }] }}>
+      <PressableScale onPress={onPress} disabled={state === "correct"} style={{ borderWidth: 1.5, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.md, paddingHorizontal: spacing.md, opacity: state === "correct" ? 0.5 : 1, minHeight: 60, justifyContent: "center" }}>
+        <Text variant="bodyStrong" color={colors.text}>{text}</Text>
+        {sub ? <Text variant="micro" color={colors.textMuted}>{sub}</Text> : null}
+      </PressableScale>
+    </Animated.View>
   );
 }
 

@@ -8,6 +8,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, FlameIcon, BoltIcon } from "../ui/icons";
 import { RoundView } from "../game/rounds";
+import { Celebrate } from "../ui/Celebrate";
 import { fetchDaily, submitDaily, scoreAnswer, type DailyBoardRow } from "../game/daily";
 import type { Round } from "../game/session";
 import { ApiError } from "../api/client";
@@ -155,6 +156,7 @@ export function DailyScreen() {
     const total = totalRef.current;
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
+        <Celebrate show />
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
           <Text variant="h2">Günün turu</Text>
           <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
