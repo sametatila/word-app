@@ -25,6 +25,22 @@ export function shiftDay(day: string, delta: number) {
   return d.toISOString().slice(0, 10);
 }
 
+/**
+ * İstemciden gelen günü sunucu-bugününün ±1 gününe sıkıştırır.
+ *
+ * `day` istemci belirliyor (saat dilimi + çevrimdışı senkron için gerekli), ama
+ * yalnız biçimi (`YYYY-MM-DD`) doğrulanınca 2020/2099 tarihli aktivite kabul
+ * ediliyordu: ileriye yazım seriyi (`nextStreak`), gün-bazlı rozetleri ve
+ * geçmiş hafta sıralamasını şişirebilir. Meşru aralık dar — gece yarısında
+ * yerel gün UTC'nin +1'i, geç ulaşan/çevrimdışı istek -1 olabilir; bu pencere
+ * dışı bir "gün" gerçek aktivite değildir. Aralık dışı ya da bozuk → bugün.
+ */
+export function clampDay(raw: unknown, serverToday = new Date().toISOString().slice(0, 10)): string {
+  if (typeof raw !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(raw)) return serverToday;
+  if (raw < shiftDay(serverToday, -1) || raw > shiftDay(serverToday, 1)) return serverToday;
+  return raw;
+}
+
 export type StreakInput = {
   lastActiveDay: string | null;
   currentStreak: number;

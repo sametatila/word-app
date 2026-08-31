@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { clampDay } from "@/lib/award";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, submitAnswers } from "@/lib/session";
@@ -60,7 +61,7 @@ export async function POST(req: Request) {
   const level = body.level as CefrLevel;
   if (!LEVELS.includes(level)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
   const module = typeof body.module === "number" && Number.isInteger(body.module) && body.module >= 0 && body.module <= 20 ? body.module : null;
-  const day = typeof body.day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(body.day) ? body.day : new Date().toISOString().slice(0, 10);
+  const day = clampDay(body.day);
   try {
     const profile = await ensureProfile(userId);
     if (body.action === "start") {

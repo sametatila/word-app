@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { clampDay } from "@/lib/award";
 import { getUserId } from "@/lib/auth/server";
 import { isEventName, track } from "@/lib/events";
 
@@ -20,9 +21,7 @@ export async function POST(req: Request) {
     const userId = await getUserId();
     if (!userId) return new NextResponse(null, { status: 204 });
     const body = (await req.json()) as { name?: string; day?: string; value?: number; kind?: string };
-    const day = typeof body.day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(body.day)
-      ? body.day
-      : new Date().toISOString().slice(0, 10);
+    const day = clampDay(body.day);
     if (!body.name || !isEventName(body.name)) return new NextResponse(null, { status: 204 });
     await track(userId, body.name, day, Number(body.value) || 0, body.kind);
   } catch {

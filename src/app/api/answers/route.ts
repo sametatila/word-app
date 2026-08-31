@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { clampDay } from "@/lib/award";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
@@ -81,10 +82,7 @@ function parseBody(body: unknown) {
     });
   }
 
-  const day =
-    typeof b.day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(b.day)
-      ? b.day
-      : new Date().toISOString().slice(0, 10);
+  const day = clampDay(b.day);
   const seconds = typeof b.seconds === "number" ? Math.max(0, Math.round(b.seconds)) : 0;
   // İlerleme isteğe bağlıdır: meydan okuma turu cevap gönderir ama kayıtlı bir
   // oturuma ait değildir.
