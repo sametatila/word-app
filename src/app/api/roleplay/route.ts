@@ -19,6 +19,15 @@ export const dynamic = "force-dynamic";
 const MAX_CHARS = 2000;
 
 /**
+ * Kullanıcı başına günlük rol yapma/diyalog turu (ai_usage'daki sağlayıcı
+ * denemeleri, düşenler dâhil). Sohbet koçu paylaşılan ücretsiz sağlayıcı
+ * kotasına (Groq/Mistral/Cerebras) dayanıyor; tek hesabın döngüyle bu kotayı
+ * tüketip herkese "sohbet kapalı" gösterebilmesi bir istismar yoluydu. Sınır
+ * cömert: dürüst ağır kullanım ~100-150 turdur.
+ */
+const ROLEPLAY_DAILY_LIMIT = 300;
+
+/**
  * Rol yapma ucu — dersin konuşma bölümü.
  *
  * Eski `/api/chat`'in yerine geçiyor ve tek farkı belirleyici: istek bir ders
@@ -45,6 +54,10 @@ export async function POST(req: Request) {
 
   if (!chatConfigured()) {
     return NextResponse.json({ error: "not_configured" }, { status: 503 });
+  }
+
+  if (!(await underDailyLimit(userId))) {
+    return NextResponse.json({ error: "quota" }, { status: 429 });
   }
 
   let body: unknown;
@@ -134,4 +147,19 @@ function parseMessages(raw: unknown): RoleplayTurn[] | null {
   // Son söz öğrencinin olmalı; aksi hâlde modele cevaplayacak bir şey yok.
   if (!out.length || out[out.length - 1].role !== "user") return null;
   return out;
+}
+
+async function underDailyLimit(userId: string): Promise<boolean> {
+  try {
+    const { db } = await import("@/lib/db");
+    const { aiUsage } = await import("@/lib/db/schema");
+    const { and, eq, gte, sql } = await import("drizzle-orm");
+    const [row] = await db
+      .select({ n: sql<number>`count(*)::int` })
+      .from(aiUsage)
+      .where(and(eq(aiUsage.userId, userId), eq(aiUsage.kind, "roleplay"), gte(aiUsage.createdAt, sql`now() - interval '1 day'`)));
+    return (row?.n ?? 0) < ROLEPLAY_DAILY_LIMIT;
+  } catch {
+    return true;
+  }
 }
