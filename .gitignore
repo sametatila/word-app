@@ -84,3 +84,7 @@ data/skills/.verify.json
 data/mascot/raw/
 .vercel
 .env*
+
+# Agent yönergeleri — yerel-only (server ops bilgisi repoda değil)
+AGENTS.md
+CLAUDE.md
