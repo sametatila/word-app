@@ -16,9 +16,11 @@ type Injectable = { injectJavaScript: (script: string) => void };
  */
 let viewRef: Injectable | null = null;
 let ready = false;
+let healthy = true; // ses hataları (çerez/ağ) üst üste gelirse cihaz TTS'ine düş
+let errors = 0;
 
 export function bridgeReady(): boolean {
-  return ready && viewRef !== null;
+  return ready && healthy && viewRef !== null;
 }
 
 export function bridgeSpeak(voice: VoiceId, text: string, slow: boolean): void {
@@ -45,7 +47,12 @@ export function TtsBridge() {
       mediaPlaybackRequiresUserAction={false}
       allowsInlineMediaPlayback
       cacheEnabled
-      onMessage={(e) => { if (e.nativeEvent.data === "ready") ready = true; }}
+      onMessage={(e) => {
+        const m = e.nativeEvent.data;
+        if (m === "ready") { ready = true; healthy = true; errors = 0; }
+        else if (m === "play" || m === "end") { healthy = true; errors = 0; } // başarı sağlığı geri getirir
+        else if (m === "error") { if (++errors >= 2) healthy = false; } // üst üste hata → cihaz TTS'i
+      }}
       onError={() => { ready = false; }}
       onHttpError={() => { ready = false; }}
       style={{ width: 0, height: 0, position: "absolute", top: -1000, opacity: 0 }}
