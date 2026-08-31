@@ -4,6 +4,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/lib/db";
 import { user, session, account, verification } from "@/lib/db/auth-schema";
+import { emailConfigured, sendEmail, verificationEmail, resetEmail } from "@/lib/email";
 
 /**
  * Self-hosted Better Auth (Neon Auth yerine). Oturumlar/kullanıcılar KENDİ
@@ -32,11 +33,22 @@ export const auth = betterAuth({
   database: drizzleAdapter(db, { provider: "pg", schema: { user, session, account, verification } }),
   emailAndPassword: {
     enabled: true,
-    requireEmailVerification: false,
+    // Doğrulama yalnız SMTP bağlıyken zorunlu: sağlayıcı yokken kayıt olan
+    // kullanıcı doğrulama e-postası bekleyip kilitlenmesin. Sosyal giriş
+    // (Google) sağlayıcıdan `emailVerified: true` geldiği için bundan etkilenmez.
+    requireEmailVerification: emailConfigured,
     minPasswordLength: 8,
     sendResetPassword: async ({ user: u, url }) => {
-      // TODO(SMTP): e-posta sağlayıcı bağlanınca gerçek gönderim. Şimdilik log.
-      console.log(`[auth] parola sıfırlama bağlantısı — ${u.email}: ${url}`);
+      const { subject, html, text } = resetEmail(url);
+      await sendEmail(u.email, subject, html, text);
+    },
+  },
+  emailVerification: {
+    sendOnSignUp: true,
+    autoSignInAfterVerification: true,
+    sendVerificationEmail: async ({ user: u, url }) => {
+      const { subject, html, text } = verificationEmail(url);
+      await sendEmail(u.email, subject, html, text);
     },
   },
   socialProviders: googleConfigured
