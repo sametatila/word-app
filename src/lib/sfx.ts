@@ -33,7 +33,7 @@
 
 import { sharedAudioContext } from "@/lib/audio-context";
 
-const STORAGE_KEY = "wortspiel-sound";
+const STORAGE_KEY = "nomi-sound";
 
 /**
  * Ana ses seviyesi.

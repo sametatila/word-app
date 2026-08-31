@@ -15,8 +15,8 @@
  * PUT edilir (XP verilmez, bkz. lib/skills/record.ts) ve bayrak yazılır.
  */
 
-const KEY = "wortspiel-skills-v1";
-const MIGRATED_KEY = "wortspiel-skills-migrated";
+const KEY = "nomi-skills-v1";
+const MIGRATED_KEY = "nomi-skills-migrated";
 
 export type SkillRecord = {
   /** Doğru madde sayısı (en iyi deneme). */
@@ -44,7 +44,7 @@ export function readSkillProgress(): SkillProgress {
 function writeSkillProgress(all: SkillProgress) {
   try {
     localStorage.setItem(KEY, JSON.stringify(all));
-    window.dispatchEvent(new CustomEvent("wortspiel:skills", { detail: all }));
+    window.dispatchEvent(new CustomEvent("nomi:skills", { detail: all }));
   } catch {
     /* depolama kapalıysa sessizce geç */
   }
@@ -92,7 +92,7 @@ function fromServer(progress: ServerStatus): SkillProgress {
 let syncing: Promise<SkillProgress> | null = null;
 
 /**
- * Sunucudan okur, önbellekle birleştirir, `wortspiel:skills` olayını atar.
+ * Sunucudan okur, önbellekle birleştirir, `nomi:skills` olayını atar.
  * Aynı anda iki çağrı tek istek yapar. Ağ yoksa önbellek döner — hata yok.
  */
 export function syncSkillProgress(): Promise<SkillProgress> {

@@ -17,24 +17,24 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Wortspiel — Almanca Kelime",
+  title: "Nomi — Almanca Kelime",
   description,
-  applicationName: "Wortspiel",
+  applicationName: "Nomi",
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    siteName: "Wortspiel",
-    title: "Wortspiel — Almanca kelimeleri oynayarak öğren",
+    siteName: "Nomi",
+    title: "Nomi — Almanca kelimeleri oynayarak öğren",
     description,
     url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wortspiel — Almanca kelimeleri oynayarak öğren",
+    title: "Nomi — Almanca kelimeleri oynayarak öğren",
     description,
   },
-  appleWebApp: { capable: true, title: "Wortspiel", statusBarStyle: "black-translucent" },
+  appleWebApp: { capable: true, title: "Nomi", statusBarStyle: "black-translucent" },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
@@ -57,9 +57,23 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
+/**
+ * Uygulama adı Wortspiel'den Nomi'ye geçti (2026-08-31). Cihazdaki tercih ve
+ * önbellek anahtarları eski önekle duruyor; tema okunmadan önce bir kez yeni
+ * öneke taşınır ki kimse temasını, kursunu, ilerlemesini kaybetmesin.
+ */
 const themeScript = `
 try {
-  var stored = localStorage.getItem('wortspiel-theme');
+  for (var i = localStorage.length - 1; i >= 0; i--) {
+    var k = localStorage.key(i);
+    if (!k || k.indexOf('wortspiel') !== 0) continue;
+    var nk = 'nomi' + k.slice('wortspiel'.length);
+    if (localStorage.getItem(nk) === null) localStorage.setItem(nk, localStorage.getItem(k));
+    localStorage.removeItem(k);
+  }
+} catch (e) {}
+try {
+  var stored = localStorage.getItem('nomi-theme');
   var dark = stored ? stored === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
   if (dark) document.documentElement.classList.add('dark');
 } catch (e) {}

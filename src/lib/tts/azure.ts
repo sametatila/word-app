@@ -50,7 +50,7 @@ export async function synthesizeAzure(clean: string, voice: VoiceId, slow = fals
           "Content-Type": "application/ssml+xml",
           "X-Microsoft-OutputFormat": OUTPUT_FORMAT,
           // Azure bu başlığı istiyor; boş bırakılırsa bazı bölgelerde reddediyor.
-          "User-Agent": "wortspiel",
+          "User-Agent": "nomi",
         },
         body: ssml,
       },

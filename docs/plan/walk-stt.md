@@ -209,7 +209,7 @@ olarak kesiliyordu; v1–v5'in sırayla düşme sebebi buydu. Bu, en baştaki pl
    `mScreenOnOff=false`'ta tetikleniyor; ekran açıksa yok. Ekranı simsiyah + wake lock ile
    açık tutup Web Speech'i (ekran açık kipi, kaliteli) cepte kullanmak — tek garantili yol.
    Ekran kilidiyle (Screen Wake Lock) ekran açık kalır; güç tuşuna basılmazsa mute yok.
-2. **HyperOS ayarı (garanti değil):** Wortspiel/Chrome → pil "Kısıtlama yok"; Geliştirici
+2. **HyperOS ayarı (garanti değil):** Nomi/Chrome → pil "Kısıtlama yok"; Geliştirici
    seçenekleri → "MIUI optimizasyonu"nu kapat (`whetstone`/Aware gevşeyebilir). Kullanıcıya
    bağlı, taşınabilir değil.
 3. Kabul: cep yolu yalnız mikrofonu kesmeyen cihazlarda (stok Android, bazı OEM'ler) çalışır;

@@ -111,7 +111,7 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
             task={asFree(active)}
             level={exercise.level}
             exerciseId={exercise.id}
-            draftKey={`wortspiel-draft-${exercise.id}-${step}`}
+            draftKey={`nomi-draft-${exercise.id}-${step}`}
             onDone={completeTask}
           />
         )

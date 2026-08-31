@@ -13,14 +13,14 @@ import { track } from "@/lib/track";
  * Tek bir yerde duruyor: uygulama kabuğunda. Rozetin kazanılabileceği yerler
  * çok — kelime turu, ders, beceri, görev ödülü, günün turu, hayatta kalma —
  * ve altısına ayrı kutlama koymak altı yerde unutulabilecek bir şey demekti.
- * Tetikleyici zaten var olan `wortspiel:stats` olayı: XP değiştiyse bir şey
+ * Tetikleyici zaten var olan `nomi:stats` olayı: XP değiştiyse bir şey
  * KAZANILMIŞ demektir.
  *
  * Üç kural kutlamayı kutlama olarak tutuyor:
  *
  * 1. **Oyunun ortasını kesmiyor.** `stats` olayı her turdan sonra atılıyor;
  *    tam ekran bir kart 7. turda belirse kutlama değil kesinti olurdu. Oyun
- *    ekranı "meşgul" sinyali gönderiyor (`wortspiel:busy`) ve kuyruk o sinyal
+ *    ekranı "meşgul" sinyali gönderiyor (`nomi:busy`) ve kuyruk o sinyal
  *    kalkana kadar bekliyor — etap ya da özet ekranında patlıyor.
  *
  * 2. **Toplu açılış tek kart.** Rozetler geriye dönük hesaplandığı için sistem
@@ -116,8 +116,8 @@ export function AchievementUnlock() {
       const detail = (e as CustomEvent<{ busy: boolean }>).detail;
       setBusy(Boolean(detail?.busy));
     };
-    window.addEventListener("wortspiel:busy", onBusy);
-    return () => window.removeEventListener("wortspiel:busy", onBusy);
+    window.addEventListener("nomi:busy", onBusy);
+    return () => window.removeEventListener("nomi:busy", onBusy);
   }, []);
 
   useEffect(() => {
@@ -136,11 +136,11 @@ export function AchievementUnlock() {
       // bir kez bakmak yeterli.
       timer.current = setTimeout(() => void check(), 1200);
     };
-    window.addEventListener("wortspiel:stats", onStats);
+    window.addEventListener("nomi:stats", onStats);
     return () => {
       clearTimeout(first);
       if (timer.current) clearTimeout(timer.current);
-      window.removeEventListener("wortspiel:stats", onStats);
+      window.removeEventListener("nomi:stats", onStats);
     };
   }, [check]);
 

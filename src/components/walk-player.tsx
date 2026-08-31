@@ -456,7 +456,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       if (!res.ok) return;
       const data = (await res.json()) as { totalXp: number; currentStreak: number };
       window.dispatchEvent(
-        new CustomEvent("wortspiel:stats", {
+        new CustomEvent("nomi:stats", {
           detail: { xp: data.totalXp, streak: data.currentStreak },
         }),
       );
@@ -528,7 +528,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const arm = useCallback(async (): Promise<boolean> => {
     if (armed.current) return true;
     if (!sttReady.current) return false;
-    startPocketAudio("Wortspiel · Yürürken", {});
+    startPocketAudio("Nomi · Yürürken", {});
     if (!(await openMic())) {
       stopPocketAudio();
       track("walk_switch", 1, "arm-failed");

@@ -21,7 +21,7 @@ export function AuthShell({
     <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col justify-center px-5 py-10">
       <Link href="/" className="mb-8 flex items-center justify-center gap-2">
         <LogoMark size={40} />
-        <span className="text-lg font-bold">Wortspiel</span>
+        <span className="text-lg font-bold">Nomi</span>
       </Link>
 
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="card p-6">

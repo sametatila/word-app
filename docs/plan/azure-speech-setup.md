@@ -38,11 +38,11 @@ adım adlarını "Ekran Görüntüsü"nden değil, sayfadaki arama kutusundan bu
    Doğrudan bağlantı: https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices
 2. Formu doldur:
    - **Subscription:** ücretsiz aboneliğin.
-   - **Resource group:** "Create new" → `wortspiel` gibi bir ad.
+   - **Resource group:** "Create new" → `nomi` gibi bir ad.
    - **Region:** **West Europe** (`westeurope`) — Almanca telaffuz değerlendirmesi bu bölgede
      var ve Türkiye'ye yakın. (Alternatif: `germanywestcentral`.) Bölge adını not al;
      `.env`'e yazılacak.
-   - **Name:** `wortspiel-speech` (dünya genelinde benzersiz olmalı; alınmışsa sonuna sayı ekle).
+   - **Name:** `nomi-speech` (dünya genelinde benzersiz olmalı; alınmışsa sonuna sayı ekle).
    - **Pricing tier:** **Free F0**. Bir abonelikte yalnız **bir** F0 Speech kaynağı olabilir;
      seçenek görünmüyorsa aynı abonelikte zaten bir F0 var demektir.
 3. **Review + create → Create**. Dağıtım 1–2 dakika sürer; "Go to resource".

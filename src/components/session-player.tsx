@@ -78,7 +78,7 @@ const STAGE_SIZE = 5;
  * seçiyor, ertesi açılışta kendini karışık turda buluyordu. Oyun modu bir
  * tercih — kullanıcı değiştirene kadar geçerli kalmalı.
  */
-const GAME_MODE_KEY = "wortspiel-game-mode";
+const GAME_MODE_KEY = "nomi-game-mode";
 
 function readGameMode(): PlayableGame | null {
   try {
@@ -219,14 +219,14 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
    * "Oyun ortasındayım" sinyali.
    *
    * Rozet kutlaması kabukta duruyor ve tetikleyicisi her turdan sonra atılan
-   * `wortspiel:stats`. Sinyal olmasaydı tam ekran bir kutlama 7. turun
+   * `nomi:stats`. Sinyal olmasaydı tam ekran bir kutlama 7. turun
    * ortasında belirir, kutlama olmaktan çıkıp kesinti olurdu. Kabuk bu
    * bayrağı görünce kuyruğu tutuyor ve etap/özet ekranında salıyor.
    */
   useEffect(() => {
     const playing =
       status === "playing" || status === "challenge" || status === "daily" || status === "walk";
-    window.dispatchEvent(new CustomEvent("wortspiel:busy", { detail: { busy: playing } }));
+    window.dispatchEvent(new CustomEvent("nomi:busy", { detail: { busy: playing } }));
   }, [status]);
 
   const load = useCallback(
@@ -447,7 +447,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         if (wager) setWagerResult(data.wagerXp ?? 0);
         // üst bardaki seri/XP rozetlerini anında güncelle
         window.dispatchEvent(
-          new CustomEvent("wortspiel:stats", {
+          new CustomEvent("nomi:stats", {
             detail: { xp: data.totalXp, streak: data.currentStreak },
           }),
         );

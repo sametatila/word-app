@@ -1,4 +1,4 @@
-# Wortspiel — Öğrenme Odaklı Dönüşüm Yol Haritası
+# Nomi — Öğrenme Odaklı Dönüşüm Yol Haritası
 
 Kaynak: `reports/ogrenme-kesif-raporu.html` (25 Ağustos 2026 keşif raporu). Bu plan o raporun her bulgusunu kapatmak, puanları en yüksek seviyeye çıkarmak ve ürünü "kelime tanıma uygulaması"ndan "dört beceride ölçülebilir ilerleme veren öğrenme sistemi"ne taşımak için yazıldı.
 

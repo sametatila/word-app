@@ -18,7 +18,7 @@ export type FxKind = "correct" | "wrong" | "tap";
 
 export type FxDetail = { kind: FxKind; ms: number };
 
-const EVENT = "wortspiel:fx";
+const EVENT = "nomi:fx";
 
 /** Titreşim desenleri — kısa tutulur, rahatsız etmemeli. */
 const PATTERN: Record<FxKind, number | number[]> = {

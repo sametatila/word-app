@@ -55,7 +55,7 @@ type FeedItem =
   | { id: number; role: "assistant"; segments: Segment[]; tone?: "hint"; pending?: boolean }
   | { id: number; role: "user"; text: string };
 
-const HANDSFREE_KEY = "wortspiel-lesson-handsfree";
+const HANDSFREE_KEY = "nomi-lesson-handsfree";
 
 /**
  * Eller serbestken mikrofonun boşuna açık kalabileceği süre.
@@ -117,7 +117,7 @@ const PAUSE_MS = 2600;
  * adım sayacı kalıcı bir kayıt değil ve her adımda sunucuya yazmak akışa
  * bekleme eklerdi. Bedeli açık — başka cihazda devam edilemiyor.
  */
-const RESUME_KEY = "wortspiel-lesson-progress";
+const RESUME_KEY = "nomi-lesson-progress";
 const RESUME_DAYS = 3;
 
 type Saved = {
@@ -967,7 +967,7 @@ export function LessonPlayer({
         // Ders bölümü bunu dispatch etmiyordu: puan kazanılıyor ama ekranda
         // hiçbir şey değişmiyordu.
         window.dispatchEvent(
-          new CustomEvent("wortspiel:stats", {
+          new CustomEvent("nomi:stats", {
             detail: { xp: data.totalXp, streak: data.currentStreak },
           }),
         );

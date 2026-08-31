@@ -18,7 +18,7 @@ export function ThemeToggle() {
     setDark(next);
     document.documentElement.classList.toggle("dark", next);
     try {
-      localStorage.setItem("wortspiel-theme", next ? "dark" : "light");
+      localStorage.setItem("nomi-theme", next ? "dark" : "light");
     } catch {
       /* kullanılamıyorsa sessizce geç */
     }
@@ -54,7 +54,7 @@ export function ThemeSetting() {
     setDark(next);
     document.documentElement.classList.toggle("dark", next);
     try {
-      localStorage.setItem("wortspiel-theme", next ? "dark" : "light");
+      localStorage.setItem("nomi-theme", next ? "dark" : "light");
     } catch {
       /* kullanılamıyorsa tercih yalnızca bu oturum boyunca geçerli */
     }

@@ -14,7 +14,7 @@ export default function ErrorPage({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("[wortspiel]", error);
+    console.error("[nomi]", error);
     // Hata sınırına düşen ekran ölçülüyor: "bir şeyler ters gitti"yi kaç
     // kişi, hangi ekranda gördü — yoksa yalnız şikâyet edenler sayılır.
     track("client_error", 1, screenKey(window.location.pathname));

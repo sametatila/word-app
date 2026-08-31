@@ -76,9 +76,9 @@ export function AppShell({
   // ses çalınacağı anda eşzamanlı okunabilmeli, o an sunucuya sorulamaz.
   useEffect(() => {
     try {
-      localStorage.setItem("wortspiel-course", course);
-      if (voice) localStorage.setItem("wortspiel-voice", voice);
-      else localStorage.removeItem("wortspiel-voice");
+      localStorage.setItem("nomi-course", course);
+      if (voice) localStorage.setItem("nomi-voice", voice);
+      else localStorage.removeItem("nomi-voice");
     } catch {
       /* depolama kapalıysa kursun varsayılan sesi kullanılır */
     }
@@ -174,8 +174,8 @@ export function AppShell({
       const detail = (e as CustomEvent<{ xp: number; streak: number }>).detail;
       if (detail) setStats({ streak: detail.streak, xp: detail.xp });
     };
-    window.addEventListener("wortspiel:stats", onStats);
-    return () => window.removeEventListener("wortspiel:stats", onStats);
+    window.addEventListener("nomi:stats", onStats);
+    return () => window.removeEventListener("nomi:stats", onStats);
   }, []);
 
   return (
@@ -208,7 +208,7 @@ export function AppShell({
       {/* Rozet kutlaması kabukta: rozet altı ayrı yerde kazanılabiliyor
           (kelime turu, ders, beceri, görev, günün turu, hayatta kalma) ve
           altısına ayrı kutlama koymak altı yerde unutulacak bir şey demekti.
-          Tetikleyici zaten var olan `wortspiel:stats` olayı. */}
+          Tetikleyici zaten var olan `nomi:stats` olayı. */}
       <AchievementUnlock />
       <ScreenDiag />
       <TopProgress />
@@ -225,7 +225,7 @@ export function AppShell({
             ekranda bir mirket, uygulamanın içinde bir harf görüyordu.
           */}
           <img src="/logo-mark.png" alt="" width={36} height={36} className="rounded-xl" />
-          <span className="text-lg font-bold">Wortspiel</span>
+          <span className="text-lg font-bold">Nomi</span>
         </Link>
 
         <nav className="flex flex-col gap-1">
@@ -297,7 +297,7 @@ export function AppShell({
               tema + avatar sığmıyordu: ad rozetin altına giriyordu. Logonun
               kendisi zaten kimliği taşıyor, ad ise tekrar.
             */}
-            <span className="hidden font-bold min-[380px]:inline">Wortspiel</span>
+            <span className="hidden font-bold min-[380px]:inline">Nomi</span>
           </Link>
           <div className="flex items-center gap-2">
             <StatPills streak={stats.streak} xp={stats.xp} />

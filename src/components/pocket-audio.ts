@@ -174,7 +174,7 @@ export function startPocketAudio(title: string, controls: PocketControls = {}) {
   try {
     const MD = (window as unknown as { MediaMetadata?: new (i: object) => MediaMetadata })
       .MediaMetadata;
-    if (MD) ms.metadata = new MD({ title, artist: "Wortspiel", album: "Yürürken" });
+    if (MD) ms.metadata = new MD({ title, artist: "Nomi", album: "Yürürken" });
     ms.playbackState = "playing";
     ms.setActionHandler("pause", () => controls.onPause?.());
     ms.setActionHandler("play", () => controls.onResume?.());
@@ -191,7 +191,7 @@ export function updatePocketTitle(title: string) {
     .MediaMetadata;
   if (!nav.mediaSession || !MD) return;
   try {
-    nav.mediaSession.metadata = new MD({ title, artist: "Wortspiel", album: "Yürürken" });
+    nav.mediaSession.metadata = new MD({ title, artist: "Nomi", album: "Yürürken" });
   } catch {
     /* önemsiz */
   }

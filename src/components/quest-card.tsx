@@ -88,7 +88,7 @@ export function QuestCard() {
           // gönderilen bir seri rozeti sıfırlardı.
           if (out.totalXp !== null && out.currentStreak !== null) {
             window.dispatchEvent(
-              new CustomEvent("wortspiel:stats", {
+              new CustomEvent("nomi:stats", {
                 detail: { xp: out.totalXp, streak: out.currentStreak },
               }),
             );

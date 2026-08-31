@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
  * başarısızsa düğme yine çalışır (bağlantı statik).
  */
 const REPO = "sametatila/word-app";
-const APK_URL = `https://github.com/${REPO}/releases/latest/download/wortspiel.apk`;
+const APK_URL = `https://github.com/${REPO}/releases/latest/download/nomi.apk`;
 const LATEST_API = `https://api.github.com/repos/${REPO}/releases/latest`;
 
 export function AppDownload() {

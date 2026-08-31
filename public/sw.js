@@ -1,5 +1,5 @@
 /**
- * Wortspiel service worker — yalnızca bildirim işi görür.
+ * Nomi service worker — yalnızca bildirim işi görür.
  *
  * Bilerek dar tutuldu: çevrimdışı önbellek yok. Uygulamanın içeriği
  * (kelime kuyruğu, tekrar zamanları, ilerleme) sunucudan geliyor ve
@@ -28,13 +28,13 @@ self.addEventListener("push", (event) => {
   }
 
   event.waitUntil(
-    self.registration.showNotification(data.title || "Wortspiel", {
+    self.registration.showNotification(data.title || "Nomi", {
       body: data.body || "",
       icon: "/icon-192.png",
       badge: "/icon-192.png",
       // Aynı etiket öncekinin yerine geçer: kaçırılan günler kilit
       // ekranında üst üste yığılmasın.
-      tag: data.tag || "wortspiel",
+      tag: data.tag || "nomi",
       renotify: true,
       lang: "tr",
       data: { url: data.url || "/learn" },

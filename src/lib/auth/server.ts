@@ -22,7 +22,7 @@ export const authEnabled = Boolean(process.env.DATABASE_URL && process.env.BETTE
 const BASE_URL = process.env.BETTER_AUTH_URL ?? "https://www.exfe.me";
 
 export const auth = betterAuth({
-  appName: "Wortspiel",
+  appName: "Nomi",
   // Yer tutucu yalnız derleme içindir: `authEnabled` false iken /api/auth 503
   // döner ve readSession oturum okumaz (bkz. app/api/auth/[...path]/route.ts).
   secret: process.env.BETTER_AUTH_SECRET ?? "build-time-placeholder-secret-change-me",

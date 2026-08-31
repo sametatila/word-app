@@ -58,7 +58,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
   <rect width="800" height="${height}" rx="24" fill="#fbf6ef"/>
   <rect x="20" y="20" width="760" height="${height - 40}" rx="18" fill="none" stroke="#c8792d" stroke-width="3"/>
   <g font-family="sans-serif">
-    <text x="400" y="80" text-anchor="middle" font-size="20" fill="#8a6a4f" letter-spacing="4">WORTSPIEL</text>
+    <text x="400" y="80" text-anchor="middle" font-size="20" fill="#8a6a4f" letter-spacing="4">NOMI</text>
     <text x="400" y="120" text-anchor="middle" font-size="16" fill="#8a6a4f">${esc(kicker)}</text>
     <text x="400" y="166" text-anchor="middle" font-size="34" font-weight="700" fill="#3b2a1e">${esc(title)}</text>
     ${subtitle ? `<text x="400" y="196" text-anchor="middle" font-size="17" fill="#8a6a4f">${esc(subtitle)}</text>` : ""}

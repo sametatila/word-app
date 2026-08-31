@@ -29,9 +29,9 @@ import { useEffect } from "react";
  */
 
 /** Son tazelemenin zamanı — her açılışta sunucuya gitmemek için. */
-const REFRESHED_KEY = "wortspiel-session-refreshed";
+const REFRESHED_KEY = "nomi-session-refreshed";
 /** Cihazdaki kopyaların hangi hesaba ait olduğu. */
-const ACCOUNT_KEY = "wortspiel-account";
+const ACCOUNT_KEY = "nomi-account";
 
 /**
  * İki tazeleme arası en kısa süre.
@@ -45,21 +45,21 @@ const REFRESH_EVERY_MS = 6 * 60 * 60 * 1000;
 /**
  * Hesaba ait cihaz anahtarlarının önekleri.
  *
- * Tema (`wortspiel-theme`), kurulum/bildirim uyarılarının kapatılması
- * (`wortspiel:*-dismissed`) ve ders anlatımının eller serbest tercihi bilerek
+ * Tema (`nomi-theme`), kurulum/bildirim uyarılarının kapatılması
+ * (`nomi:*-dismissed`) ve ders anlatımının eller serbest tercihi bilerek
  * dışarıda: bunlar telefonun tercihi, hesabın değil.
  */
 const ACCOUNT_SCOPED_PREFIXES = [
-  "wortspiel-course",
-  "wortspiel-voice",
-  "wortspiel-skills",
-  "wortspiel-lesson-progress",
-  "wortspiel-draft-",
-  "wortspiel-game",
-  "wortspiel-session-refreshed",
+  "nomi-course",
+  "nomi-voice",
+  "nomi-skills",
+  "nomi-lesson-progress",
+  "nomi-draft-",
+  "nomi-game",
+  "nomi-session-refreshed",
   // Başlangıç ekranının önbelleği (bkz. lib/use-cached): plan ve görevler
   // kişiye ait, ortak cihazda diğer hesaba görünmemeli.
-  "wortspiel:cache:",
+  "nomi:cache:",
 ];
 
 function forgetPreviousAccount() {
