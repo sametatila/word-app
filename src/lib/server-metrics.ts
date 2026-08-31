@@ -104,16 +104,16 @@ export async function getServerMetrics(): Promise<ServerMetrics> {
     rows(sql`select pg_database_size(current_database())::bigint bytes`),
     rows(sql`select round(sum(blks_hit) * 100.0 / nullif(sum(blks_hit) + sum(blks_read), 0), 1) hit from pg_stat_database where datname = current_database()`),
     rows(sql`select relname name, pg_total_relation_size(relid)::bigint bytes from pg_statio_user_tables order by pg_total_relation_size(relid) desc limit 6`),
-    fs.readFile("/opt/wortspiel/active", "utf8").catch(() => ""),
-    run("journalctl", ["-u", "wortspiel-webhook", "-n", "500", "--no-pager", "-o", "short-iso"]),
-    run("systemctl", ["is-active", ...INSTANCES.map((i) => `wortspiel@${i}`)]),
+    fs.readFile("/opt/nomi/active", "utf8").catch(() => ""),
+    run("journalctl", ["-u", "nomi-webhook", "-n", "500", "--no-pager", "-o", "short-iso"]),
+    run("systemctl", ["is-active", ...INSTANCES.map((i) => `nomi@${i}`)]),
   ]);
 
   const mem = parseMem(meminfo);
   const disk = parseDf(dfOut);
   const c = pgConn[0] ?? {};
   const activeColor = activeRaw.trim() || "?";
-  const liveCommit = activeColor !== "?" ? (await run("git", ["-C", `/opt/wortspiel/${activeColor}`, "rev-parse", "--short", "HEAD"])).trim() : "";
+  const liveCommit = activeColor !== "?" ? (await run("git", ["-C", `/opt/nomi/${activeColor}`, "rev-parse", "--short", "HEAD"])).trim() : "";
   const instStates = instRaw.trim().split("\n");
 
   return {
