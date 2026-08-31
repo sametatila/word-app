@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
 import { useMe } from "./useMe";
-import { buildLocalPatika, refIndex } from "../game/immersionTrack";
+import { buildLocalLearningPath, refIndex } from "../game/immersionTrack";
 import { getDoneItems } from "../game/lessonProgress";
 
 /** Patika (immersion) hub'ı — gerçek track, kullanıcının ilerlemesiyle. */
-export type PatikaItem = { id: string; kind: string; title: string; titleTr: string | null; playable: boolean; done: boolean; ref?: string | null };
-export type PatikaUnit = {
+export type LearningPathItem = { id: string; kind: string; title: string; titleTr: string | null; playable: boolean; done: boolean; ref?: string | null };
+export type LearningPathUnit = {
   id: string;
   index: number;
   group: number;
@@ -18,9 +18,9 @@ export type PatikaUnit = {
   total: number;
   lessonsDone: number;
   lessonsTotal: number;
-  items: PatikaItem[];
+  items: LearningPathItem[];
 };
-export type Patika = { level: string; units: PatikaUnit[]; currentIndex: number; doneUnits: number; totalUnits: number };
+export type LearningPath = { level: string; units: LearningPathUnit[]; currentIndex: number; doneUnits: number; totalUnits: number };
 
 /**
  * Patika'yı getirir. Önce /api/immersion (gerçek gating + beceri içeriği);
@@ -28,10 +28,10 @@ export type Patika = { level: string; units: PatikaUnit[]; currentIndex: number;
  * gerçek ~25 ünite, gerçek ders içeriği, yerel ders ilerlemesi. Böylece push
  * beklemeden doğru yapı görünür; sahte A1/4-ünite demosu kalkar.
  */
-export function usePatika(): { data: Patika | null; loading: boolean; source: "api" | "local" | null } {
+export function useLearningPath(): { data: LearningPath | null; loading: boolean; source: "api" | "local" | null } {
   const { user } = useAuth();
   const { me } = useMe();
-  const [data, setData] = useState<Patika | null>(null);
+  const [data, setData] = useState<LearningPath | null>(null);
   const [source, setSource] = useState<"api" | "local" | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -39,14 +39,14 @@ export function usePatika(): { data: Patika | null; loading: boolean; source: "a
     if (!user) { setData(null); setSource(null); return; }
     let alive = true;
     setLoading(true);
-    api<Patika>("/api/immersion")
+    api<LearningPath>("/api/immersion")
       .then((d) => {
         if (!alive) return;
         if (!d?.units?.length) throw new Error("empty");
         // /api/immersion item ref taşımıyor → oynatıcıya gidebilmek için pakete
         // gömülü aynı-kaynak track'ten ref doldur (item id'leri birebir eşleşir).
         const idx = refIndex(d.level);
-        const enriched: Patika = {
+        const enriched: LearningPath = {
           ...d,
           units: d.units.map((u) => ({
             ...u,
@@ -63,7 +63,7 @@ export function usePatika(): { data: Patika | null; loading: boolean; source: "a
         if (!me?.level) { setData(null); setSource(null); return; }
         const level = /^[ABC][12]$/.test(me.level) ? me.level : "A1";
         const done = await getDoneItems();
-        if (alive) { setData(buildLocalPatika(level, done)); setSource("local"); }
+        if (alive) { setData(buildLocalLearningPath(level, done)); setSource("local"); }
       })
       .finally(() => { if (alive) setLoading(false); });
     return () => { alive = false; };

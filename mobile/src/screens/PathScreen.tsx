@@ -9,7 +9,7 @@ import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
-import { usePatika, type PatikaUnit } from "../lib/usePatika";
+import { useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
 import { KIND_LABEL } from "../data/demoUnit";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -18,7 +18,7 @@ const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.Re
   write: (p) => <WriteIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />, quiz: (p) => <QuizIcon {...p} />, checkpoint: (p) => <CheckIcon {...p} />,
 };
 
-function Featured({ unit, isCurrent, colors, onContinue }: { unit: PatikaUnit; isCurrent: boolean; colors: Palette; onContinue: () => void }) {
+function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathUnit; isCurrent: boolean; colors: Palette; onContinue: () => void }) {
   const next = unit.items.find((i) => i.kind === "lesson" && i.playable && !i.done) ?? unit.items.find((i) => i.playable && !i.done) ?? null;
   const NextIcon = next ? KIND_ICON[next.kind] : null;
   return (
@@ -63,9 +63,9 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: PatikaUnit; i
 export function PathScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const { data: patika, source } = usePatika();
+  const { data: path, source } = useLearningPath();
 
-  if (!patika) {
+  if (!path) {
     // Düz spinner yerine patika şeklinde iskelet (algılanan hız).
     return (
       <Screen>
@@ -80,12 +80,12 @@ export function PathScreen() {
     );
   }
 
-  const featured = patika.units.find((u) => u.index === patika.currentIndex) ?? patika.units[0];
-  const pctAll = patika.totalUnits ? Math.round((patika.doneUnits / patika.totalUnits) * 100) : 0;
+  const featured = path.units.find((u) => u.index === path.currentIndex) ?? path.units[0];
+  const pctAll = path.totalUnits ? Math.round((path.doneUnits / path.totalUnits) * 100) : 0;
 
-  function openUnit(u: PatikaUnit) {
+  function openUnit(u: LearningPathUnit) {
     if (u.locked) return;
-    nav.navigate("Unit", { index: u.index, level: patika!.level, theme: u.theme, items: u.items });
+    nav.navigate("Unit", { index: u.index, level: path!.level, theme: u.theme, items: u.items });
   }
 
   return (
@@ -93,24 +93,24 @@ export function PathScreen() {
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.md }}>
         <Text variant="display">Patika</Text>
         <View style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7 }}>
-          <Text variant="caption" color={colors.textMuted}>{patika.level}</Text>
+          <Text variant="caption" color={colors.textMuted}>{path.level}</Text>
         </View>
       </View>
       <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: 6 }}>
         <View style={{ height: "100%", width: `${Math.max(2, pctAll)}%`, borderRadius: 5, backgroundColor: colors.success }} />
       </View>
       <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>
-        {patika.level} · {patika.doneUnits}/{patika.totalUnits} ünite tamam{source === "local" ? " · ilerleme cihazda" : ""}
+        {path.level} · {path.doneUnits}/{path.totalUnits} ünite tamam{source === "local" ? " · ilerleme cihazda" : ""}
       </Text>
 
-      {featured && <Featured unit={featured} isCurrent={featured.index === patika.currentIndex} colors={colors} onContinue={() => openUnit(featured)} />}
+      {featured && <Featured unit={featured} isCurrent={featured.index === path.currentIndex} colors={colors} onContinue={() => openUnit(featured)} />}
 
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
-        {patika.units.map((u) => (
+        {path.units.map((u) => (
           <PressableScale key={u.id} style={{ width: "47.5%" }} onPress={() => openUnit(u)}>
-            <Card padded style={{ minHeight: 116, opacity: u.locked ? 0.6 : 1, borderColor: u.index === patika.currentIndex ? colors.primary : colors.border, borderWidth: u.index === patika.currentIndex ? 2 : 1 }}>
-              <View style={{ width: 40, height: 40, borderRadius: 20, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === patika.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === patika.currentIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
+            <Card padded style={{ minHeight: 116, opacity: u.locked ? 0.6 : 1, borderColor: u.index === path.currentIndex ? colors.primary : colors.border, borderWidth: u.index === path.currentIndex ? 2 : 1 }}>
+              <View style={{ width: 40, height: 40, borderRadius: 20, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
+                {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === path.currentIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
               </View>
               <Text variant="bodyStrong" style={{ marginTop: 8 }} numberOfLines={2}>{u.theme}</Text>
               <Text variant="micro" color={u.complete ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? "Tamamlandı" : u.locked ? "Kilitli" : `${u.lessonsDone}/${u.lessonsTotal} ders`}</Text>

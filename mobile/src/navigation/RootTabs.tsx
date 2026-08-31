@@ -9,9 +9,9 @@ const Tab = createBottomTabNavigator();
 export function RootTabs() {
   return (
     <Tab.Navigator tabBar={(p) => <TabBar {...p} />} screenOptions={{ headerShown: false }}>
-      <Tab.Screen name="Ogren" component={LearnScreen} options={{ title: "Öğren" }} />
-      <Tab.Screen name="Patika" component={PathScreen} options={{ title: "Patika" }} />
-      <Tab.Screen name="Beceriler" component={SkillsScreen} options={{ title: "Beceriler" }} />
+      <Tab.Screen name="Learn" component={LearnScreen} options={{ title: "Öğren" }} />
+      <Tab.Screen name="Path" component={PathScreen} options={{ title: "Patika" }} />
+      <Tab.Screen name="Skills" component={SkillsScreen} options={{ title: "Beceriler" }} />
     </Tab.Navigator>
   );
 }

@@ -8,10 +8,10 @@ import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, PathIcon, SkillsIcon } from "../ui/icons";
 import { track } from "../lib/track";
 
-const NAV_KEY: Record<string, string> = { Ogren: "learn", Patika: "immersion", Beceriler: "beceriler" };
+const NAV_KEY: Record<string, string> = { Learn: "learn", Path: "immersion", Skills: "skills" };
 
 const ICONS: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
-  Ogren: (p) => <LearnIcon {...p} />, Patika: (p) => <PathIcon {...p} />, Beceriler: (p) => <SkillsIcon {...p} />,
+  Learn: (p) => <LearnIcon {...p} />, Path: (p) => <PathIcon {...p} />, Skills: (p) => <SkillsIcon {...p} />,
 };
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {

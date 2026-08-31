@@ -6,11 +6,11 @@
  * temaları. Fark: beceri içeriği (read/listen/write) Neon'da ve daha canlı
  * değil; o slotlar "yayına alınınca" olarak işaretlenir (playable:false).
  * Dersler pakette olduğu için oynanabilir. /api/immersion açıldığında
- * usePatika onu tercih eder ve gerçek ilerleme/gating gelir.
+ * useLearningPath onu tercih eder ve gerçek ilerleme/gating gelir.
  */
 import { lessonsForLevel } from "../data/lessons";
 import { listSkillMeta, type SkillMeta } from "../data/skills";
-import type { Patika, PatikaItem, PatikaUnit } from "../lib/usePatika";
+import type { LearningPath, LearningPathItem, LearningPathUnit } from "../lib/useLearningPath";
 
 /** Track item türü → beceri kataloğu türü. */
 const SKILL_OF: Record<string, "reading" | "listening" | "writing"> = {
@@ -50,7 +50,7 @@ function unitTheme(level: string, firstLessonIndex: number, unitIndex: number): 
  * Gating YOK: sunucu ilerlemesi olmadan kilit yanıltıcı olur ve kullanıcıyı
  * ilk ünitede kilitler; onun yerine hepsi açık, ilerleme derse göre.
  */
-export function buildLocalPatika(level: string, done: Set<string>): Patika {
+export function buildLocalLearningPath(level: string, done: Set<string>): LearningPath {
   const lessons = lessonsForLevel(level);
   // Beceri havuzları — web builder gibi sırayla tüketilir (2/ünite/tür);
   // biterse slot boş (ref=null → "Yakında"). Erken üniteler dolu.
@@ -61,13 +61,13 @@ export function buildLocalPatika(level: string, done: Set<string>): Patika {
   };
   const cursors: Record<string, number> = { read: 0, listen: 0, write: 0 };
   const unitCount = Math.ceil(lessons.length / UNIT_LESSONS) || 1;
-  const units: PatikaUnit[] = [];
+  const units: LearningPathUnit[] = [];
 
   for (let u = 0; u < unitCount; u++) {
     const index = u + 1;
     const unitId = `de-${level.toLowerCase()}-u${String(index).padStart(2, "0")}`;
     const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
-    const items: PatikaItem[] = [];
+    const items: LearningPathItem[] = [];
     const counters: Record<string, number> = {};
     let lessonCursor = 0;
 
@@ -130,7 +130,7 @@ export function buildLocalPatika(level: string, done: Set<string>): Patika {
  * (`${unitId}-${kind}${n}`, aynı kaynak içerik) → ref'leri buradan doldururuz.
  */
 export function refIndex(level: string): Map<string, string | null> {
-  const p = buildLocalPatika(level, new Set<string>());
+  const p = buildLocalLearningPath(level, new Set<string>());
   const m = new Map<string, string | null>();
   for (const u of p.units) for (const it of u.items) m.set(it.id, it.ref ?? null);
   return m;
