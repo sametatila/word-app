@@ -1,6 +1,6 @@
 import "dotenv/config";
-import { neon } from "@neondatabase/serverless";
-import { drizzle } from "drizzle-orm/neon-http";
+import { Pool } from "pg";
+import { drizzle } from "drizzle-orm/node-postgres";
 import { notInArray, sql } from "drizzle-orm";
 import { skillExercises } from "../src/lib/db/schema";
 import { itemCount } from "../src/lib/skills/meta";
@@ -42,7 +42,7 @@ async function main() {
   if (!url) throw new Error("DATABASE_URL tanımlı değil");
   checkEncoding();
 
-  const client = neon(url);
+  const client = new Pool({ connectionString: url });
   const db = drizzle(client);
 
   // drizzle/0004_common_kabuki.sql + 0006 (course sütunu) ile birebir aynı DDL.

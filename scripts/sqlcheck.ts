@@ -3,11 +3,11 @@
  * Veritabanı gerekmez; çıktı gerçek PostgreSQL'de PREPARE ile doğrulanır.
  */
 import { and, asc, eq, gt, inArray, lte, sql } from "drizzle-orm";
-import { drizzle } from "drizzle-orm/neon-http";
-import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/node-postgres";
+import { Pool } from "pg";
 import { dailyStats, profiles, reviews, userWords, words } from "../src/lib/db/schema";
 
-const db = drizzle(neon("postgresql://u:p@localhost/db"));
+const db = drizzle(new Pool({ connectionString: "postgresql://u:p@localhost/db" }));
 const userId = "u1";
 const today = "2026-01-01";
 const now = new Date();

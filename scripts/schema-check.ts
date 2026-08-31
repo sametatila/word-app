@@ -9,11 +9,11 @@
  * uçta. Bu betik ayrışmayı deploy'dan önce görünür kılar.
  */
 import "dotenv/config";
-import { neon } from "@neondatabase/serverless";
+import { Pool } from "pg";
 import { getTableConfig } from "drizzle-orm/pg-core";
 import * as schema from "../src/lib/db/schema";
 
-const sql = neon(process.env.DATABASE_URL!);
+const sql = new Pool({ connectionString: process.env.DATABASE_URL! });
 
 async function main() {
   const live = await sql`

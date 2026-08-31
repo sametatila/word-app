@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { neon } from "@neondatabase/serverless";
+import { Pool } from "pg";
 
 /**
  * Öğrenme raporu — `docs/plan/kpi.md`'deki sekiz KPI, haftalık.
@@ -29,7 +29,7 @@ function head(title: string, hint?: string) {
 async function main() {
   const url = process.env.DATABASE_URL;
   if (!url) throw new Error("DATABASE_URL tanımlı değil");
-  const sql = neon(url);
+  const sql = new Pool({ connectionString: url });
   const weeks = Math.max(1, Math.min(52, Number(process.argv[2]) || 8));
   const since = `current_date - ${7 * weeks}`;
   // Neon sürücüsü parametreyi tarih aritmetiğinde interval gibi okuyamıyor;

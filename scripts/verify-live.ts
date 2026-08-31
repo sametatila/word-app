@@ -13,10 +13,10 @@ import "dotenv/config";
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
-import { neon } from "@neondatabase/serverless";
+import { Pool } from "pg";
 import { cleanHeadword } from "../src/lib/headword";
 
-const sql = neon(process.env.DATABASE_URL!);
+const sql = new Pool({ connectionString: process.env.DATABASE_URL! });
 const ROOT = process.cwd();
 const problems: string[] = [];
 

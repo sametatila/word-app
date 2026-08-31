@@ -2,7 +2,7 @@ import "dotenv/config";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { neon } from "@neondatabase/serverless";
+import { Pool } from "pg";
 import { readMeanings } from "./apply-meanings";
 
 /**
@@ -71,7 +71,7 @@ async function main() {
     return;
   }
 
-  const sql = neon(process.env.DATABASE_URL);
+  const sql = new Pool({ connectionString: process.env.DATABASE_URL });
   const CHUNK = 200;
   let yazilan = 0;
   for (let i = 0; i < rows.length; i += CHUNK) {

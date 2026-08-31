@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { neon } from "@neondatabase/serverless";
+import { Pool } from "pg";
 
 /**
  * Olay raporu.
@@ -41,7 +41,7 @@ function pct(a: number, b: number): string {
 async function main() {
   const url = process.env.DATABASE_URL;
   if (!url) throw new Error("DATABASE_URL tanımlı değil");
-  const sql = neon(url);
+  const sql = new Pool({ connectionString: url });
   const days = Math.max(1, Math.min(365, Number(process.argv[2]) || 14));
 
   const totals = (await sql`

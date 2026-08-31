@@ -1,8 +1,8 @@
 import "dotenv/config";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { neon } from "@neondatabase/serverless";
-import { drizzle } from "drizzle-orm/neon-http";
+import { Pool } from "pg";
+import { drizzle } from "drizzle-orm/node-postgres";
 import { and, eq, notInArray, sql } from "drizzle-orm";
 import { words } from "../src/lib/db/schema";
 import { cleanHeadword } from "../src/lib/headword";
@@ -22,7 +22,7 @@ type Row = {
 
 async function main() {
   if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL tanımlı değil");
-  const db = drizzle(neon(process.env.DATABASE_URL));
+  const db = drizzle(new Pool({ connectionString: process.env.DATABASE_URL }));
 
   const file = path.join(process.cwd(), "data", "app", "words.json");
   const rows = JSON.parse(readFileSync(file, "utf8")) as Row[];

@@ -1,104 +1,65 @@
 import "server-only";
-import { createNeonAuth } from "@neondatabase/auth/next/server";
+import { headers } from "next/headers";
+import { betterAuth } from "better-auth";
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { db } from "@/lib/db";
+import { user, session, account, verification } from "@/lib/db/auth-schema";
 
 /**
- * Neon Auth (Managed Better Auth).
- * Anahtarlar yoksa uygulama demo modunda tek kullanıcıyla çalışır; böylece
- * veritabanı/auth kurulmadan da arayüz derlenir ve açılır.
+ * Self-hosted Better Auth (Neon Auth yerine). Oturumlar/kullanıcılar KENDİ
+ * Postgres'imizde. Uçlar aynı (`/api/auth/sign-in/email`, `sign-up/email`,
+ * `get-session`, `sign-out`, `sign-in/social`, `request-password-reset`) →
+ * web formları ve mobil uygulama değişmeden çalışır.
+ *
+ * Google sosyal giriş yalnız GOOGLE_CLIENT_ID/SECRET verilince açılır; yoksa
+ * e-posta/parola tek başına çalışır. Parola sıfırlama e-postası şimdilik sunucu
+ * log'una düşer (SMTP/Resend bağlanınca gerçek gönderim — bkz. sendResetPassword).
  */
-export const authEnabled = Boolean(
-  process.env.NEON_AUTH_BASE_URL && process.env.NEON_AUTH_COOKIE_SECRET,
-);
+const googleConfigured = Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
 
-/**
- * Demo modu artık **açıkça istenmeden** açılmıyor.
- *
- * Önceden yalnızca `NODE_ENV !== "production"` koşuluna bakıyordu, yani her
- * geliştirme ortamı kendiliğinden "demo-user" hesabı üretiyordu. Bu hesap
- * gerçek veritabanına yazıyor ve kullanıcı listesinde gerçek hesapların
- * arasında duruyordu — kimsenin açmadığı, kimsenin sahiplenmediği bir kayıt.
- *
- * Artık `ALLOW_DEMO_USER=1` gerekiyor. Tek kullanım yeri tarayıcı testi
- * (scripts/playtest.mjs): o testin giriş adımı yok ve auth'suz bir sunucuya
- * ihtiyaç duyuyor. Onun dışında hiçbir yerde açılmıyor.
- *
- * Üretimde kapalı olması ayrıca güvenlik meselesi: tek bir ortam değişkeninin
- * eksilmesi (yanlış yazım, yeni ortama kopyalanmaması) uygulamayı sessizce
- * kimlik doğrulamasız hâle getirirdi ve her ziyaretçi aynı hesabın verilerini
- * okuyup yazabilirdi. Bozuk davranmak, sessizce açık olmaktan iyidir.
- */
-const demoAllowed =
-  process.env.ALLOW_DEMO_USER === "1" && process.env.NODE_ENV !== "production";
+export const authEnabled = Boolean(process.env.DATABASE_URL && process.env.BETTER_AUTH_SECRET);
 
-if (!authEnabled && !demoAllowed) {
-  console.error(
-    "[auth] NEON_AUTH_BASE_URL / NEON_AUTH_COOKIE_SECRET tanımsız — tüm istekler oturumsuz sayılacak. " +
-      "Tarayıcı testi için demo hesabı gerekiyorsa ALLOW_DEMO_USER=1 verin.",
-  );
-}
+const BASE_URL = process.env.BETTER_AUTH_URL ?? "https://www.exfe.me";
 
-export const auth = authEnabled
-  ? createNeonAuth({
-      baseUrl: process.env.NEON_AUTH_BASE_URL!,
-      cookies: {
-        secret: process.env.NEON_AUTH_COOKIE_SECRET!,
-        /**
-         * `strict` yerine `lax`.
-         *
-         * `strict` çerezi yalnızca site İÇİNDEN başlayan gezinmelerde
-         * gönderiyor. Bu uygulamaya giriş, dışarıdan başlayan gezinmelerle
-         * dolu: e-posta doğrulama bağlantısı, parola sıfırlama bağlantısı,
-         * bildirime dokunulduğunda servis işçisinin açtığı pencere ve ana
-         * ekrana eklenmiş uygulamanın açılışı. Bunların herhangi birinde çerez
-         * gönderilmeyince sunucu isteği oturumsuz görüyor ve kullanıcıyı giriş
-         * ekranına atıyor — oturum aslında duruyorken.
-         *
-         * `lax` GET gezinmelerinde çerezi gönderir, çapraz siteden gelen
-         * POST'larda göndermez; durum değiştiren uçlarda ayrıca aynı-köken
-         * kontrolü var (bkz. lib/auth/origin), yani CSRF savunması iki
-         * katmanlı kalıyor.
-         */
-        sameSite: "lax",
-        /**
-         * Oturum verisi önbelleğinin ömrü (saniye).
-         *
-         * Varsayılan 300 sn. Bu süre dolduğunda her istek yukarıdaki auth
-         * sunucusuna gidiyor; o sunucuya ulaşılamadığı her an kullanıcı
-         * oturumsuz sayılıyor. Süreyi uzatmak dışarıya bağımlı anların
-         * sayısını düşürüyor. Üst sınır oturumun kendisi değil — jeton çerezi
-         * ayrıca duruyor ve geçersiz kılınan bir oturum en geç bu süre sonunda
-         * fark ediliyor.
-         */
-        sessionDataTtl: 900,
-      },
-      logLevel: "warn",
-    })
-  : null;
+export const auth = betterAuth({
+  appName: "Wortspiel",
+  secret: process.env.BETTER_AUTH_SECRET ?? "build-time-placeholder-secret-change-me",
+  baseURL: BASE_URL,
+  basePath: "/api/auth",
+  trustedOrigins: [BASE_URL, "https://exfe.me", "https://www.exfe.me"],
+  database: drizzleAdapter(db, { provider: "pg", schema: { user, session, account, verification } }),
+  emailAndPassword: {
+    enabled: true,
+    requireEmailVerification: false,
+    minPasswordLength: 8,
+    sendResetPassword: async ({ user: u, url }) => {
+      // TODO(SMTP): e-posta sağlayıcı bağlanınca gerçek gönderim. Şimdilik log.
+      console.log(`[auth] parola sıfırlama bağlantısı — ${u.email}: ${url}`);
+    },
+  },
+  socialProviders: googleConfigured
+    ? { google: { clientId: process.env.GOOGLE_CLIENT_ID!, clientSecret: process.env.GOOGLE_CLIENT_SECRET! } }
+    : {},
+  session: {
+    expiresIn: 60 * 60 * 24 * 30, // 30 gün
+    updateAge: 60 * 60 * 24, // günde bir tazele
+    cookieCache: { enabled: true, maxAge: 900 }, // 15 dk çerez-önbelleği (dış isteği azaltır)
+  },
+  advanced: {
+    // Çapraz-köken gezinmelerde (e-posta/bildirim bağlantısı) çerez gitsin diye lax.
+    defaultCookieAttributes: { sameSite: "lax" },
+  },
+});
 
 export type SessionUser = { id: string; name: string | null };
-
-/**
- * Oturum okuması: kullanıcı **ve** okumanın başarılı olup olmadığı.
- *
- * İkisini ayırmak şart. Önce her hata `null` kullanıcıya dönüşüyordu ve
- * çağıran taraf bunu "giriş yapılmamış" diye okuyup giriş ekranına
- * yönlendiriyordu. Oysa auth sunucusuna bir saniyelik erişim sorunu ile
- * gerçekten oturumsuz olmak aynı şey değil: birincisinde kullanıcının
- * çerezi yerinde duruyor ve onu giriş ekranına atmak, oturumu kendi elimizle
- * bitirmek oluyordu — telefonda uygulamayı her açtığında yeniden giriş
- * yapması gerektiği şikâyetinin kaynağı da bu.
- */
 export type SessionRead = { user: SessionUser | null; failed: boolean };
 
 async function readSession(): Promise<SessionRead> {
-  if (!auth) {
-    return { user: demoAllowed ? { id: "demo-user", name: "Demo" } : null, failed: false };
-  }
   try {
-    const { data } = await auth.getSession();
-    const user = data?.user;
-    if (!user) return { user: null, failed: false };
-    return { user: { id: user.id, name: user.name ?? user.email ?? null }, failed: false };
+    const data = await auth.api.getSession({ headers: await headers() });
+    const u = data?.user;
+    if (!u) return { user: null, failed: false };
+    return { user: { id: u.id, name: u.name ?? u.email ?? null }, failed: false };
   } catch (err) {
     console.error("[auth] oturum okunamadı", err);
     return { user: null, failed: true };
@@ -114,23 +75,16 @@ export async function getUserInfo(): Promise<SessionUser | null> {
   return (await readSession()).user;
 }
 
-/**
- * Oturum durumu, okuma hatası bilgisiyle birlikte.
- *
- * Yalnızca giriş ekranına yönlendirme kararını veren yer kullanıyor: orada
- * "oturum yok" ile "oturuma bakılamadı" farkı kullanıcının hesabını
- * kaybetmesiyle kaybetmemesi arasındaki fark.
- */
+/** Oturum durumu + okuma hatası bilgisi (giriş ekranına yönlendirme kararı için). */
 export async function getSessionRead(): Promise<SessionRead> {
   return readSession();
 }
 
 /** Oturumdaki kullanıcının e-postası (admin kapısı için); yoksa null. */
 export async function getUserEmail(): Promise<string | null> {
-  if (!auth) return null;
   try {
-    const { data } = await auth.getSession();
-    return (data?.user as { email?: string } | undefined)?.email ?? null;
+    const data = await auth.api.getSession({ headers: await headers() });
+    return data?.user?.email ?? null;
   } catch {
     return null;
   }

@@ -1,13 +1,10 @@
 import { auth } from "@/lib/auth/server";
+import { toNextJsHandler } from "better-auth/next-js";
 
+/**
+ * Better Auth uçları (/api/auth/*). Catch-all rota; Better Auth handler'ı tam
+ * URL'e bakarak sign-in/email, sign-up/email, get-session, sign-out,
+ * sign-in/social, request-password-reset vb. hepsini karşılar.
+ */
 export const dynamic = "force-dynamic";
-
-const handlers = auth?.handler();
-const disabled = () =>
-  new Response(JSON.stringify({ error: "auth_disabled" }), {
-    status: 404,
-    headers: { "content-type": "application/json" },
-  });
-
-export const GET = handlers?.GET ?? disabled;
-export const POST = handlers?.POST ?? disabled;
+export const { GET, POST } = toNextJsHandler(auth);

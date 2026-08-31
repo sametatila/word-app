@@ -1,8 +1,8 @@
 import "dotenv/config";
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
-import { neon } from "@neondatabase/serverless";
-import { drizzle } from "drizzle-orm/neon-http";
+import { Pool } from "pg";
+import { drizzle } from "drizzle-orm/node-postgres";
 import { and, eq, notInArray, sql } from "drizzle-orm";
 import { cleanHeadword } from "../src/lib/headword";
 import { words } from "../src/lib/db/schema";
@@ -182,7 +182,7 @@ async function main() {
     };
   });
 
-  const db = drizzle(neon(process.env.DATABASE_URL));
+  const db = drizzle(new Pool({ connectionString: process.env.DATABASE_URL }));
   const CHUNK = 400;
   for (let i = 0; i < values.length; i += CHUNK) {
     const chunk = values.slice(i, i + CHUNK);

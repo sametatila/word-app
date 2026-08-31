@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { neon } from "@neondatabase/serverless";
+import { Pool } from "pg";
 
 /**
  * Hangi sağlayıcı gerçekten cevaplıyor.
@@ -20,7 +20,7 @@ type Row = Record<string, unknown>;
 async function main() {
   const url = process.env.DATABASE_URL;
   if (!url) throw new Error("DATABASE_URL tanımlı değil");
-  const sql = neon(url);
+  const sql = new Pool({ connectionString: url });
 
   // ── AI çağrılarının muhasebesi ─────────────────────────────────────
   // Bu tablo başarısız denemeleri de tutuyor. Zincir düşen sağlayıcıyı

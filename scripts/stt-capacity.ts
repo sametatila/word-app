@@ -14,9 +14,9 @@
  */
 import "dotenv/config";
 import { writeFileSync } from "node:fs";
-import { neon } from "@neondatabase/serverless";
+import { Pool } from "pg";
 
-const sql = neon(process.env.DATABASE_URL!);
+const sql = new Pool({ connectionString: process.env.DATABASE_URL! });
 const q = async <T = Record<string, unknown>>(s: TemplateStringsArray, ...v: unknown[]) => (await sql(s, ...v)) as T[];
 
 /** Kotalar (2026-08, kaynaklar docs/plan/pronunciation-providers.md). */
