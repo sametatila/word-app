@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cronGate } from "@/lib/cron-auth";
 import { runAssessQueue } from "@/lib/assess";
 
 export const dynamic = "force-dynamic";
@@ -10,15 +11,8 @@ export const maxDuration = 60;
  * yetki kuralı: `CRON_SECRET` Bearer; üretimde sırsız çalışmaz.
  */
 export async function GET(req: Request) {
-  const secret = process.env.CRON_SECRET;
-  if (secret) {
-    if (req.headers.get("authorization") !== `Bearer ${secret}`) {
-      return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-    }
-  } else if (process.env.NODE_ENV === "production") {
-    console.error("[cron/assess] CRON_SECRET tanımsız — tur çalıştırılmadı.");
-    return NextResponse.json({ error: "not_configured" }, { status: 503 });
-  }
+  const denied = cronGate(req, "assess");
+  if (denied) return denied;
   try {
     const result = await runAssessQueue(20);
     console.log(`[cron/assess] bekleyen ${result.pending} · puanlanan ${result.done} · başarısız ${result.failed}`);

@@ -23,6 +23,8 @@ const BASE_URL = process.env.BETTER_AUTH_URL ?? "https://www.exfe.me";
 
 export const auth = betterAuth({
   appName: "Wortspiel",
+  // Yer tutucu yalnız derleme içindir: `authEnabled` false iken /api/auth 503
+  // döner ve readSession oturum okumaz (bkz. app/api/auth/[...path]/route.ts).
   secret: process.env.BETTER_AUTH_SECRET ?? "build-time-placeholder-secret-change-me",
   baseURL: BASE_URL,
   basePath: "/api/auth",
@@ -55,6 +57,7 @@ export type SessionUser = { id: string; name: string | null };
 export type SessionRead = { user: SessionUser | null; failed: boolean };
 
 async function readSession(): Promise<SessionRead> {
+  if (!authEnabled) return { user: null, failed: false };
   try {
     const data = await auth.api.getSession({ headers: await headers() });
     const u = data?.user;

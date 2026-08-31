@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cronGate } from "@/lib/cron-auth";
 import { and, gte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats } from "@/lib/db/schema";
@@ -18,13 +19,8 @@ export const maxDuration = 60;
  * yetki kuralı.
  */
 export async function GET(req: Request) {
-  const secret = process.env.CRON_SECRET;
-  if (secret) {
-    if (req.headers.get("authorization") !== `Bearer ${secret}`) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  } else if (process.env.NODE_ENV === "production") {
-    console.error("[cron/summary] CRON_SECRET tanımsız — tur çalıştırılmadı.");
-    return NextResponse.json({ error: "not_configured" }, { status: 503 });
-  }
+  const denied = cronGate(req, "summary");
+  if (denied) return denied;
   const today = new Date().toISOString().slice(0, 10);
   try {
     const rows = await db

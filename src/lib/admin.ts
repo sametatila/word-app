@@ -9,15 +9,12 @@ import { computeFunnel, type Funnel } from "@/lib/funnel";
  * istatistik/telemetriyi en ince detayına kadar görmesi için. Erişim yalnız
  * ADMIN_EMAILS ortam değişkenindeki e-postalara açık (virgülle ayrılmış).
  */
-// Sahibin panosuna her zaman erişebilmesi için varsayılan admin; ek adminler
-// ADMIN_EMAILS ortam değişkeninden (virgülle) eklenir. Not: bir platformda
-// (Vercel vb.) ADMIN_EMAILS'i sonradan eklemek YENİ BİR DEPLOY gerektirir —
-// varsayılan sayesinde deploy beklemeden erişim açık kalır. Yine de e-postayı
-// BİLMEK yetki vermez: bu hesapla GİRİŞ yapmak gerekir.
-const DEFAULT_ADMINS = ["sametatila@gmail.com"];
+// Yetki listesi yalnız ADMIN_EMAILS'ten okunur; koda gömülü varsayılan yok.
+// Repo herkese açık: koddaki bir e-posta hem hedef gösterir hem de sunucudaki
+// .env'den bağımsız, geri alınamaz bir yetki olurdu. Liste boşsa kimse admin
+// değildir (kapalı varsayılan).
 const ADMINS = Array.from(new Set(
-  [...DEFAULT_ADMINS, ...(process.env.ADMIN_EMAILS ?? "").split(",")]
-    .map((s) => s.trim().toLowerCase()).filter(Boolean),
+  (process.env.ADMIN_EMAILS ?? "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean),
 ));
 
 /** Admin kapısı — hem yetki hem de tanılama için giriş e-postasını da döndürür. */

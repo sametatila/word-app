@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cronGate } from "@/lib/cron-auth";
 import { runReminders } from "@/lib/push";
 
 export const dynamic = "force-dynamic";
@@ -19,18 +20,8 @@ export const maxDuration = 60;
  * yetki ve raporlama var.
  */
 export async function GET(req: Request) {
-  const secret = process.env.CRON_SECRET;
-  if (secret) {
-    const header = req.headers.get("authorization");
-    if (header !== `Bearer ${secret}`) {
-      return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-    }
-  } else if (process.env.NODE_ENV === "production") {
-    // Sırsız bir üretim kurulumu açık bir bildirim musluğudur. Sessizce
-    // çalışmaktansa görünür biçimde durması doğru.
-    console.error("[cron/reminders] CRON_SECRET tanımsız — tur çalıştırılmadı.");
-    return NextResponse.json({ error: "not_configured" }, { status: 503 });
-  }
+  const denied = cronGate(req, "reminders");
+  if (denied) return denied;
 
   try {
     const result = await runReminders();
