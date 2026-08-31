@@ -3,6 +3,7 @@ import { View, Animated } from "react-native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon } from "../ui/icons";
+import { SpeakButton } from "../ui/SpeakButton";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 export type ChoiceRound = {
@@ -56,6 +57,7 @@ export function ChoiceGame({ round, onDone }: { round: ChoiceRound; onDone: (cor
       >
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{round.prompt}</Text>
         <Text variant="display" style={{ marginTop: spacing.sm, textAlign: "center" }}>{round.question}</Text>
+        <View style={{ marginTop: spacing.sm }}><SpeakButton text={round.question} size={22} /></View>
       </View>
 
       {/* şıklar */}

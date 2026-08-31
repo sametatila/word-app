@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -13,6 +13,10 @@ import { shareInvite } from "../lib/share";
 import { useMe, formatDuration, formatXp } from "../lib/useMe";
 import { usePremium } from "../lib/usePremium";
 import { useTheme, spacing, radii, softShadow, type ThemeMode, type Palette } from "../theme";
+import { VoicePicker } from "../ui/VoicePicker";
+import { loadVoicePref, setVoicePref } from "../lib/tts";
+import { defaultVoice, type VoiceId } from "../lib/voices";
+import { updateProfile } from "../lib/updateProfile";
 
 const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
   { key: "system", label: "Sistem" },
@@ -48,6 +52,14 @@ export function ProfileScreen() {
   const { user, signOut } = useAuth();
   const { me } = useMe();
   const premium = usePremium();
+  const course = me?.course ?? "de";
+  const [voice, setVoice] = useState<VoiceId>(defaultVoice(course));
+  useEffect(() => { void loadVoicePref(course).then(setVoice); }, [course]);
+  function pickVoice(v: VoiceId) {
+    setVoice(v);
+    void setVoicePref(course, v);
+    void updateProfile({ voice: v });
+  }
   // Misafir modu yok: kullanıcı her zaman var. Adı yoksa e-posta adından türet.
   const displayName = user?.name?.trim() || user?.email?.split("@")[0] || "Öğrenci";
   const initial = (displayName.trim()[0] ?? "Ö").toUpperCase();
@@ -138,6 +150,12 @@ export function ProfileScreen() {
               </PressableScale>
             );
           })}
+        </View>
+
+        {/* ses — okuma sesi seçimi (web ile aynı iki ses) */}
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>OKUMA SESİ</Text>
+        <View style={{ marginBottom: spacing.lg }}>
+          <VoicePicker course={course} value={voice} onChange={pickVoice} />
         </View>
 
         {/* ayar satırları */}

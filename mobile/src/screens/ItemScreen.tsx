@@ -26,6 +26,13 @@ const KIND_TINT: Record<string, keyof Palette> = { read: "info", listen: "accent
 function ReadingText({ text, colors }: { text: string; colors: Palette }) {
   return (
     <Card style={{ marginTop: spacing.md }}>
+      <View style={{ flexDirection: "row", justifyContent: "flex-end", marginBottom: spacing.xs }}>
+        <PressableScale onPress={() => speakGerman(text)} hitSlop={8} accessibilityLabel="Metni sesli oku"
+          style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+          <SpeakerIcon color={colors.primary} size={18} />
+          <Text variant="caption" color={colors.primary}>Sesli oku</Text>
+        </PressableScale>
+      </View>
       {text.split("\n\n").map((p, i) => (
         <Text key={i} variant="body" style={{ lineHeight: 25, marginTop: i > 0 ? spacing.md : 0 }}>{p}</Text>
       ))}

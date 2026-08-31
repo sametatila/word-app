@@ -8,6 +8,7 @@ import { AuthProvider, useAuth } from "./src/lib/AuthContext";
 import { RootStack } from "./src/navigation/RootStack";
 import { ONBOARDED_KEY } from "./src/lib/onboarding";
 import { migrateLegacyKeys } from "./src/lib/storageMigration";
+import { loadVoicePref } from "./src/lib/tts";
 import { track } from "./src/lib/track";
 
 function Nav() {
@@ -18,6 +19,7 @@ function Nav() {
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {
     migrateLegacyKeys()
+      .then(() => loadVoicePref())
       .then(() => AsyncStorage.getItem(ONBOARDED_KEY))
       .then((v) => setOnboarded(v === "1"))
       .catch(() => setOnboarded(false));

@@ -1,25 +1,40 @@
 import Tts from "react-native-tts";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
 
 /**
- * Almanca sesli okuma (TTS) — Android TextToSpeech.
+ * Almanca sesli okuma (TTS) — cihazın TextToSpeech motoru.
  *
  * ÖNEMLİ dayanıklılık: eskiden `setDefaultLanguage("de-DE")` başarısız olursa
- * (cihazda Almanca ses verisi kurulu değilse) TÜM TTS kapanıyordu — yani ses
- * hiç çıkmıyordu. Artık motor varsa TTS AÇIK kalır; Almanca ayrı denenir,
- * yoksa ses verisi kurulumu istenir ama konuşma yine de yapılır (varsayılan
- * sesle). Motor hiç yoksa (bazı emülatörler) sessizce devre dışı kalır.
+ * (cihazda Almanca ses verisi yoksa) TÜM TTS kapanıyordu. Artık motor varsa
+ * TTS AÇIK kalır; Almanca ayrı denenir, yoksa ses verisi kurulumu istenir ama
+ * konuşma yine de yapılır. Motor hiç yoksa sessizce devre dışı kalır.
+ *
+ * Ses TERCİHİ (web ile aynı iki ses): kullanıcı profilde Katja/Conrad (ya da
+ * Leni/Jan) seçer; seçim `nomi-voice`'ta saklanır ve okuma anında cihazın en
+ * yakın sesine (dil + cinsiyet) eşleştirilir. Cihazda tek Almanca ses varsa
+ * ikisi aynı duyulabilir — bu cihaz sınırı, tercih yine kaydedilir ve web'e
+ * (profiles.voice) yazılır.
  */
+const VOICE_KEY = "nomi-voice";
 let ready: Promise<boolean> | null = null;
 export let germanReady = false;
+
+let currentCourse = "de";
+let currentVoice: VoiceId = defaultVoice("de");
+let voiceLoaded = false;
+
+/** Cihaz seslerinin bir kez okunan listesi (react-native-tts Voice tipi). */
+type DeviceVoice = Awaited<ReturnType<typeof Tts.voices>>[number];
+let deviceVoices: DeviceVoice[] | null = null;
+const deviceVoiceCache = new Map<VoiceId, string | null>();
 
 async function init(): Promise<boolean> {
   try {
     await Tts.getInitStatus();
   } catch {
-    // TTS motoru yok (ör. emülatör). Ses çıkmaz; çağıran kelimeyi gösterir.
     return false;
   }
-  // Almanca sesi AYRI: başarısız olsa da TTS'i kapatma.
   try {
     await Tts.setDefaultLanguage("de-DE");
     germanReady = true;
@@ -27,8 +42,11 @@ async function init(): Promise<boolean> {
     germanReady = false;
     try { (Tts as { requestInstallData?: () => void }).requestInstallData?.(); } catch { /* yut */ }
   }
-  try { await Tts.setDefaultRate(0.42); } catch { /* yut */ }
+  try { await Tts.setDefaultRate(deviceRate(false)); } catch { /* yut */ }
   try { (Tts as { setIgnoreSilentSwitch?: (v: string) => void }).setIgnoreSilentSwitch?.("ignore"); } catch { /* yut */ }
+  try {
+    deviceVoices = await Tts.voices();
+  } catch { deviceVoices = null; }
   return true;
 }
 
@@ -37,42 +55,119 @@ export function ttsAvailable(): Promise<boolean> {
   return ready;
 }
 
-/** Metni seslendirir (fire-and-forget). Motor varsa, Almanca sesi olmasa bile konuşur. */
-export function speakGerman(text: string): void {
+/** Saklı ses tercihini yükler (uygulama açılışında bir kez). */
+export async function loadVoicePref(course?: string): Promise<VoiceId> {
+  if (course) currentCourse = course;
+  if (!voiceLoaded) {
+    try {
+      const saved = await AsyncStorage.getItem(VOICE_KEY);
+      // Kurs bilinmeden yükleniyorsa kayıtlı seçime GÜVEN (kaydederken zaten
+      // kursa göre doğrulanmıştı); kurs verildiyse ona göre doğrula.
+      currentVoice = course
+        ? resolveVoice(course, saved)
+        : (VOICES.find((v) => v.id === saved)?.id ?? defaultVoice(currentCourse));
+    } catch { currentVoice = defaultVoice(currentCourse); }
+    voiceLoaded = true;
+  } else if (course) {
+    currentVoice = resolveVoice(course, currentVoice);
+  }
+  return currentVoice;
+}
+
+/** Ses tercihini ayarlar + saklar (profil seçimi buradan geçer). */
+export async function setVoicePref(course: string, voice: VoiceId): Promise<void> {
+  currentCourse = course;
+  currentVoice = resolveVoice(course, voice);
+  voiceLoaded = true;
+  try { await AsyncStorage.setItem(VOICE_KEY, currentVoice); } catch { /* yut */ }
+}
+
+export function currentVoiceId(): VoiceId {
+  return currentVoice;
+}
+
+/**
+ * Bir Edge ses id'sini cihazın en yakın sesine eşleştirir: önce dil (de-DE /
+ * de-CH → yoksa de-DE), sonra cinsiyet (ad/kimlik ipucu ya da ≥2 aday varsa
+ * konumsal). Bulunamazsa null → cihaz varsayılan dili kullanır.
+ */
+function deviceVoiceFor(voice: VoiceId): string | null {
+  if (deviceVoiceCache.has(voice)) return deviceVoiceCache.get(voice) ?? null;
+  if (!deviceVoices?.length) { deviceVoiceCache.set(voice, null); return null; }
+  const lang = langOf(voice);
+  const usable = deviceVoices.filter((v) => !v.notInstalled && v.language);
+  let cands = usable.filter((v) => v.language!.toLowerCase().startsWith(lang.toLowerCase()));
+  if (!cands.length && lang === "de-CH") cands = usable.filter((v) => v.language!.toLowerCase().startsWith("de"));
+  if (!cands.length) { deviceVoiceCache.set(voice, null); return null; }
+  cands = [...cands].sort((a, b) => (b.quality ?? 0) - (a.quality ?? 0));
+  const female = voice.includes("Katja") || voice.includes("Leni") || voice.includes("Emel");
+  const FEM = /(-x-[a-z]*f|female|femal|katja|hedda|leni|klara|amala|maja|-f-|women)/i;
+  const MAL = /(-x-[a-z]*m|male|conrad|jan|bern|kilian|-m-|men)/i;
+  const want = female ? FEM : MAL;
+  const byName = cands.find((v) => want.test(`${v.id} ${v.name ?? ""}`));
+  const picked = byName ?? (cands.length > 1 ? cands[female ? 0 : 1] : cands[0]);
+  deviceVoiceCache.set(voice, picked.id);
+  return picked.id;
+}
+
+async function applyVoice(voice: VoiceId): Promise<string> {
+  const lang = langOf(voice);
+  try { await Tts.setDefaultLanguage(lang); } catch { /* de-CH cihazda yoksa yut */ }
+  const id = deviceVoiceFor(voice);
+  if (id) { try { await Tts.setDefaultVoice(id); } catch { /* de-CH/ses yoksa yut */ } }
+  return id ?? "";
+}
+
+/**
+ * Metni seslendirir (fire-and-forget). Ses/hız kullanıcı tercihinden; `opts.voice`
+ * verilirse onu kullanır (ön izleme), `opts.slow` telaffuz için yavaşlatır.
+ */
+export function speakGerman(text: string, opts?: { slow?: boolean; voice?: VoiceId }): void {
   if (!text) return;
-  void ttsAvailable().then((ok) => {
+  void ttsAvailable().then(async (ok) => {
     if (!ok) return;
+    const voice = opts?.voice ?? currentVoice;
+    const rate = deviceRate(opts?.slow);
     try {
       Tts.stop();
+      const iosVoiceId = await applyVoice(voice);
       Tts.speak(text, {
         androidParams: { KEY_PARAM_PAN: 0, KEY_PARAM_VOLUME: 1, KEY_PARAM_STREAM: "STREAM_MUSIC" },
-        rate: 0.42,
-        iosVoiceId: "",
+        rate,
+        iosVoiceId,
       });
     } catch { /* yut */ }
   });
 }
 
+/** Ön izleme: belirli bir sesi hemen çalar (profil seçim ekranı). */
+export function speakWithVoice(text: string, voice: VoiceId): void {
+  speakGerman(text, { voice });
+}
+
 /**
  * Metni belirtilen dilde seslendirir ve BİTİNCE resolve olur — yürüyüş modunun
- * sıralaması için (önce konuş, sonra dinle; yoksa mikrofon TTS'i duyar).
+ * sıralaması için (önce konuş, sonra dinle). Almanca ise kullanıcı sesini
+ * uygular; Türkçe (anlatım) sabit.
  */
 export function speakAndWait(text: string, lang: "de-DE" | "tr-TR" = "de-DE"): Promise<void> {
   return new Promise((resolve) => {
-    void ttsAvailable().then((ok) => {
+    void ttsAvailable().then(async (ok) => {
       if (!ok || !text) { resolve(); return; }
       let done = false;
       let sub: { remove?: () => void } | undefined;
       const guard = setTimeout(() => finish(), 9000);
       function finish() { if (done) return; done = true; clearTimeout(guard); try { sub?.remove?.(); } catch { /* yut */ } resolve(); }
       try { sub = Tts.addEventListener("tts-finish", finish) as unknown as { remove?: () => void }; } catch { /* yut */ }
-      (async () => {
-        try {
-          Tts.stop();
+      try {
+        Tts.stop();
+        if (lang === "de-DE") {
+          await applyVoice(currentVoice);
+        } else {
           await Tts.setDefaultLanguage(lang).catch(() => {});
-          Tts.speak(text, { androidParams: { KEY_PARAM_PAN: 0, KEY_PARAM_VOLUME: 1, KEY_PARAM_STREAM: "STREAM_MUSIC" }, rate: 0.42, iosVoiceId: "" });
-        } catch { finish(); }
-      })();
+        }
+        Tts.speak(text, { androidParams: { KEY_PARAM_PAN: 0, KEY_PARAM_VOLUME: 1, KEY_PARAM_STREAM: "STREAM_MUSIC" }, rate: deviceRate(false), iosVoiceId: "" });
+      } catch { finish(); }
     });
   });
 }

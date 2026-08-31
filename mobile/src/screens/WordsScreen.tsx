@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon } from "../ui/icons";
+import { SpeakButton } from "../ui/SpeakButton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
 import { DEMO_WORD_LIST, STATUS_LABEL, type WordRow, type WordStatus } from "../data/demoWordList";
@@ -98,6 +99,7 @@ export function WordsScreen() {
                 <Text variant="bodyStrong">{w.artikel ? `${w.artikel} ${w.de}` : w.de}</Text>
                 <Text variant="caption" color={colors.textMuted}>{w.tr}</Text>
               </View>
+              <SpeakButton text={w.artikel ? `${w.artikel} ${w.de}` : w.de} size={34} />
               <View style={{ backgroundColor: colors.surface2, borderRadius: radii.sm, paddingHorizontal: 7, paddingVertical: 2 }}>
                 <Text variant="micro" color={colors.textMuted}>{w.niveau}</Text>
               </View>

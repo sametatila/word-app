@@ -70,12 +70,23 @@ function RoundShell({ top, children, mood }: { top: React.ReactNode; children: R
   );
 }
 
+/** Almanca istemli turlarda bir kez otomatik okuma (web choice-game gibi). */
+function useAutoSpeak(text: string | null | undefined, key: string | number) {
+  useEffect(() => {
+    if (!text) return;
+    const t = setTimeout(() => speakGerman(text), 260);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key]);
+}
+
 /** Soru kartı — ortak üst blok. */
-function Prompt({ label, big, sub, colors }: { label: string; big: string; sub?: string | null; colors: Palette }) {
+function Prompt({ label, big, sub, speakText, colors }: { label: string; big: string; sub?: string | null; speakText?: string | null; colors: Palette }) {
   return (
     <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.xl }, softShadow("#5a3418", 10)]}>
       <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{label}</Text>
       <Text variant="display" style={{ marginTop: spacing.sm, textAlign: "center" }}>{big}</Text>
+      {speakText ? <View style={{ marginTop: spacing.sm }}><SpeakButton text={speakText} colors={colors} size={22} /></View> : null}
       {sub ? <Text variant="body" color={colors.textMuted} style={{ marginTop: 4 }}>{sub}</Text> : null}
     </View>
   );
@@ -112,14 +123,16 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const question = deSide ? withArtikel(word) : word.tr;
   const answer = deSide ? word.tr : withArtikel(word);
   const [picked, setPicked] = useState<string | null>(null);
+  useAutoSpeak(deSide ? question : null, round.id);
   return (
-    <RoundShell mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} top={<Prompt label={deSide ? "Türkçesi?" : "Almancası?"} big={question} sub={!deSide ? word.en : null} colors={colors} />}>
+    <RoundShell mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} top={<Prompt label={deSide ? "Türkçesi?" : "Almancası?"} big={question} speakText={deSide ? question : null} sub={!deSide ? word.en : null} colors={colors} />}>
       <View style={{ gap: spacing.md }}>
         {(round.options ?? []).map((o) => {
           const st = picked ? (o.text === answer ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
           return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => { if (!picked) { setPicked(o.text); haptic(o.text === answer ? "correct" : "wrong"); setTimeout(() => onDone(o.text === answer), o.text === answer ? 650 : 1100); } }} colors={colors} />;
         })}
       </View>
+      {picked ? <View style={{ alignItems: "center", marginTop: spacing.md }}><SpeakButton text={withArtikel(word)} colors={colors} size={22} /></View> : null}
       {picked && picked !== answer ? <WhyLine text={whyMeaning(word, picked)} colors={colors} /> : null}
     </RoundShell>
   );
@@ -129,7 +142,7 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
   const word = round.word!;
   const [picked, setPicked] = useState<string | null>(null);
   return (
-    <RoundShell mood={picked ? (picked === word.artikel ? "thumbsup" : "sad") : "idle"} top={<Prompt label="Hangi artikel?" big={word.de} sub={meaningLine(word)} colors={colors} />}>
+    <RoundShell mood={picked ? (picked === word.artikel ? "thumbsup" : "sad") : "idle"} top={<Prompt label="Hangi artikel?" big={word.de} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />}>
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {["der", "die", "das"].map((a) => {
           const st = picked ? (a === word.artikel ? "correct" : a === picked ? "wrong" : "idle") : "idle";
@@ -146,7 +159,7 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
   const [ans, setAns] = useState<boolean | null>(null);
   const correctOf = (said: boolean) => said === round.isTrue;
   return (
-    <RoundShell mood={ans !== null ? (correctOf(ans) ? "thumbsup" : "sad") : "idle"} top={<Prompt label="Doğru mu?" big={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />}>
+    <RoundShell mood={ans !== null ? (correctOf(ans) ? "thumbsup" : "sad") : "idle"} top={<Prompt label="Doğru mu?" big={withArtikel(word)} speakText={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />}>
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {[{ v: true, l: "Doğru" }, { v: false, l: "Yanlış" }].map(({ v, l }) => {
           const st = ans !== null ? (v === round.isTrue ? "correct" : v === ans ? "wrong" : "idle") : "idle";
@@ -184,7 +197,12 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
           onSubmitEditing={check}
           style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: checked === null ? colors.border : checked ? colors.success : colors.danger, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
         />
-        {checked === false && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.md }}>Doğrusu: {withArtikel(word)}</Text>}
+        {checked !== null && (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
+            <Text variant="bodyStrong" color={colors.success}>{checked ? withArtikel(word) : `Doğrusu: ${withArtikel(word)}`}</Text>
+            <SpeakButton text={withArtikel(word)} colors={colors} size={22} />
+          </View>
+        )}
         {checked === null && (
           <PressableScale onPress={check} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color="#fff">Kontrol et</Text>
@@ -203,7 +221,10 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     <View style={{ flex: 1 }}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.xl }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>Boşluğu doldur</Text>
-        <Text variant="h2" style={{ lineHeight: 32 }}>{round.sentence}</Text>
+        <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
+          <Text variant="h2" style={{ flex: 1, lineHeight: 32 }}>{round.sentence}</Text>
+          <SpeakButton text={round.sentence ?? ""} colors={colors} size={22} />
+        </View>
         {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}
         {round.sentenceEn ? <Text variant="micro" color={colors.textFaint} style={{ marginTop: 2 }}>{round.sentenceEn}</Text> : null}
       </View>
@@ -269,13 +290,14 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const opts = (round.options as unknown as string[] | undefined) ?? [];
   const [picked, setPicked] = useState<string | null>(null);
   return (
-    <RoundShell mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} top={<Prompt label="Çoğulu?" big={withArtikel(word)} sub={meaningLine(word)} colors={colors} />}>
+    <RoundShell mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} top={<Prompt label="Çoğulu?" big={withArtikel(word)} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />}>
       <View style={{ gap: spacing.md }}>
         {opts.map((o) => {
           const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
           return <OptionButton key={o} text={`die ${o}`} state={st} onPress={() => { if (!picked) { setPicked(o); haptic(o === answer ? "correct" : "wrong"); setTimeout(() => onDone(o === answer), o === answer ? 650 : 1100); } }} colors={colors} />;
         })}
       </View>
+      {picked ? <View style={{ alignItems: "center", marginTop: spacing.md }}><SpeakButton text={`die ${answer}`} colors={colors} size={22} /></View> : null}
     </RoundShell>
   );
 }
@@ -365,7 +387,12 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
           {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
         </View>
-        {status === "wrong" && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.lg }}>Doğrusu: {word.de}</Text>}
+        {status !== "playing" && (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.lg }}>
+            <Text variant="bodyStrong" color={colors.success}>{status === "wrong" ? `Doğrusu: ${word.de}` : word.de}</Text>
+            <SpeakButton text={word.de} colors={colors} size={22} />
+          </View>
+        )}
       </View>
     </View>
   );
@@ -402,7 +429,12 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
           {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
         </View>
-        {status === "wrong" && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.lg }}>Doğrusu: {[...answer, tail].filter(Boolean).join(" ")}</Text>}
+        {status !== "playing" && (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.lg }}>
+            <Text variant="bodyStrong" color={colors.success} style={{ flex: 1 }}>{status === "wrong" ? `Doğrusu: ${[...answer, tail].filter(Boolean).join(" ")}` : [...answer, tail].filter(Boolean).join(" ")}</Text>
+            <SpeakButton text={[...answer, tail].filter(Boolean).join(" ")} colors={colors} size={22} />
+          </View>
+        )}
       </View>
     </View>
   );
@@ -438,7 +470,12 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
           placeholderTextColor={colors.textFaint}
           style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: checked === null ? colors.border : checked ? colors.success : colors.danger, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
         />
-        {checked === false && <Text variant="bodyStrong" color={colors.success} style={{ marginTop: spacing.md }}>Doğrusu: {s.de}</Text>}
+        {checked !== null && (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
+            <Text variant="bodyStrong" color={colors.success} style={{ flex: 1 }}>{checked ? s.de : `Doğrusu: ${s.de}`}</Text>
+            <SpeakButton text={s.de} colors={colors} size={22} />
+          </View>
+        )}
         {checked === null && (
           <PressableScale onPress={check} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
             <Text variant="h3" color="#fff">Kontrol et</Text>
@@ -504,7 +541,12 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
         <View style={{ flex: 1, gap: spacing.sm }}>
           {words.map((w) => {
             const st = matched.has(w.id) ? "correct" : wrong?.left === w.id ? "wrong" : selLeft === w.id ? "sel" : "idle";
-            return <MatchCard key={w.id} text={withArtikel(w)} state={st} onPress={() => pickLeft(w.id)} colors={colors} />;
+            return (
+              <View key={w.id} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+                <View style={{ flex: 1 }}><MatchCard text={withArtikel(w)} state={st} onPress={() => pickLeft(w.id)} colors={colors} /></View>
+                <SpeakButton text={withArtikel(w)} colors={colors} size={18} />
+              </View>
+            );
           })}
         </View>
         <View style={{ flex: 1, gap: spacing.sm }}>

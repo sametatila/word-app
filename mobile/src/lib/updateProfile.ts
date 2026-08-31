@@ -12,6 +12,7 @@ export type ProfilePatch = {
   level?: string;
   course?: string;
   goal?: string;
+  voice?: string;
 };
 
 export async function updateProfile(patch: ProfilePatch): Promise<boolean> {
