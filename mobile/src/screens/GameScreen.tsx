@@ -113,6 +113,7 @@ export function GameScreen() {
   }, []);
 
   function onDone(ok: boolean, batch?: { wordId: number; correct: boolean }[]) {
+    if (idxRef.current !== idx) return; // çift "Devam" / geç tıklama koruması
     const r = rounds[idx];
     const lat = Math.max(0, Date.now() - roundStart.current);
     if (batch && batch.length && r) {

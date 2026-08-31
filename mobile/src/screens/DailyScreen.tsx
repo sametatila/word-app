@@ -53,6 +53,7 @@ export function DailyScreen() {
   const [phase, setPhase] = useState<Phase>("loading");
   const [rounds, setRounds] = useState<Round[]>([]);
   const [idx, setIdx] = useState(0);
+  const doneGuard = useRef(-1);
   const [board, setBoard] = useState<DailyBoardRow[]>([]);
   const [scoreView, setScoreView] = useState(0);
   const [comboView, setComboView] = useState(0);
@@ -98,6 +99,8 @@ export function DailyScreen() {
   useEffect(() => { load(); }, []);
 
   function onDone(ok: boolean) {
+    if (doneGuard.current === idx) return; // çift "Devam" koruması
+    doneGuard.current = idx;
     const lat = Math.max(0, Date.now() - roundStart.current);
     const running = ok ? comboRef.current + 1 : 0;
     scoreRef.current += scoreAnswer(ok, lat, running);

@@ -1,6 +1,7 @@
 import Tts from "react-native-tts";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
+import { bridgeReady, bridgeSpeak } from "./ttsBridge";
 
 /**
  * Almanca sesli okuma (TTS) — cihazın TextToSpeech motoru.
@@ -10,11 +11,10 @@ import { type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } 
  * TTS AÇIK kalır; Almanca ayrı denenir, yoksa ses verisi kurulumu istenir ama
  * konuşma yine de yapılır. Motor hiç yoksa sessizce devre dışı kalır.
  *
- * Ses TERCİHİ (web ile aynı iki ses): kullanıcı profilde Katja/Conrad (ya da
- * Leni/Jan) seçer; seçim `nomi-voice`'ta saklanır ve okuma anında cihazın en
- * yakın sesine (dil + cinsiyet) eşleştirilir. Cihazda tek Almanca ses varsa
- * ikisi aynı duyulabilir — bu cihaz sınırı, tercih yine kaydedilir ve web'e
- * (profiles.voice) yazılır.
+ * GERÇEK ses: okuma önce Edge KÖPRÜSÜ'nden geçer (lib/ttsBridge → /api/tts),
+ * yani web'le BİREBİR aynı Katja/Conrad/Leni/Jan çalar. Köprü hazır değilse
+ * (yükleniyor/çevrimdışı) cihaz TTS'ine düşülür ve seçilen sesin dil+cinsiyet
+ * en yakını cihazda uygulanır. Tercih `nomi-voice`'ta ve profiles.voice'ta.
  */
 const VOICE_KEY = "nomi-voice";
 let ready: Promise<boolean> | null = null;
@@ -124,9 +124,14 @@ async function applyVoice(voice: VoiceId): Promise<string> {
  */
 export function speakGerman(text: string, opts?: { slow?: boolean; voice?: VoiceId }): void {
   if (!text) return;
+  const voice = opts?.voice ?? currentVoice;
+  // Önce Edge köprüsü (web ile birebir aynı ses); hazır değilse cihaz TTS'i.
+  if (bridgeReady()) {
+    bridgeSpeak(voice, text, opts?.slow ?? false);
+    return;
+  }
   void ttsAvailable().then(async (ok) => {
     if (!ok) return;
-    const voice = opts?.voice ?? currentVoice;
     const rate = deviceRate(opts?.slow);
     try {
       Tts.stop();

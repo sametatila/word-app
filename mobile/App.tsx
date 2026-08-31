@@ -9,6 +9,7 @@ import { RootStack } from "./src/navigation/RootStack";
 import { ONBOARDED_KEY } from "./src/lib/onboarding";
 import { migrateLegacyKeys } from "./src/lib/storageMigration";
 import { loadVoicePref } from "./src/lib/tts";
+import { TtsBridge } from "./src/lib/ttsBridge";
 import { track } from "./src/lib/track";
 
 function Nav() {
@@ -40,6 +41,7 @@ function Nav() {
   return (
     <NavigationContainer theme={navTheme}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
+      <TtsBridge />
       {/* Telefon-öncelikli düzen: geniş ekranda (tablet) içerik ortalı bir
           sütuna sığdırılır — yoksa kartlar/metin tüm genişliğe yayılıp gerilir.
           Telefonda maxWidth kısıtlamaz (ekran zaten daha dar). */}
