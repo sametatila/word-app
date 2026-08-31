@@ -18,17 +18,17 @@ import { readMeanings } from "./apply-meanings";
 
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, "data", "zurich", "beispiel", "out");
-const HEDEF = (process.argv[2] ?? "all").toLowerCase();
+const TARGET = (process.argv[2] ?? "all").toLowerCase();
 const DRY = process.argv.includes("--dry");
 const ID_OFFSET = 100000;
 
 /** Kaynak id → Züritüütsch örnek cümle. */
-export function readZurichSentences(filtre = "all"): Map<number, string> {
+export function readZurichSentences(filter = "all"): Map<number, string> {
   const out = new Map<number, string>();
   if (!existsSync(OUT)) return out;
   for (const f of readdirSync(OUT).filter((f) => f.endsWith(".json")).sort()) {
     const slug = f.replace(/\.json$/, "");
-    if (filtre !== "all" && slug !== filtre && !slug.startsWith(`${filtre}-`)) continue;
+    if (filter !== "all" && slug !== filter && !slug.startsWith(`${filter}-`)) continue;
     for (const r of JSON.parse(readFileSync(path.join(OUT, f), "utf8")) as {
       id: number;
       beispiel: string;
@@ -43,22 +43,22 @@ async function main() {
   if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL tanımlı değil");
 
   try {
-    execFileSync("node", ["data/zurich/beispiel/check.mjs", HEDEF], { stdio: "inherit" });
+    execFileSync("node", ["data/zurich/beispiel/check.mjs", TARGET], { stdio: "inherit" });
   } catch {
     console.error("\nDenetleyici hata bildirdi — yazma yapılmadı.");
     process.exit(1);
   }
 
-  const cumleler = readZurichSentences(HEDEF);
+  const sentences = readZurichSentences(TARGET);
   const meanings = new Map(readMeanings().map((m) => [m.id, m]));
-  const rows = [...cumleler]
+  const rows = [...sentences]
     .map(([id, beispiel]) => ({ id, beispiel, m: meanings.get(id) }))
     .filter((r) => r.m);
 
-  const cevirisiz = cumleler.size - rows.length;
-  if (cevirisiz)
+  const untranslated = sentences.size - rows.length;
+  if (untranslated)
     console.log(
-      `${cevirisiz} lehçe cümlesinin Almanca karşılığı henüz yenilenmemiş — atlandı.`,
+      `${untranslated} lehçe cümlesinin Almanca karşılığı henüz yenilenmemiş — atlandı.`,
     );
   if (!rows.length) {
     console.log("Uygulanacak cümle yok.");
@@ -73,7 +73,7 @@ async function main() {
 
   const sql = new Pool({ connectionString: process.env.DATABASE_URL });
   const CHUNK = 200;
-  let yazilan = 0;
+  let written = 0;
   for (let i = 0; i < rows.length; i += CHUNK) {
     const chunk = rows.slice(i, i + CHUNK);
     const params: string[] = [];
@@ -89,8 +89,8 @@ async function main() {
        where w.id = v.id and w.course = 'gsw-zh'`,
       params,
     );
-    yazilan += chunk.length;
-    console.log(`  ${yazilan}/${rows.length}`);
+    written += chunk.length;
+    console.log(`  ${written}/${rows.length}`);
   }
   console.log("Uygulama tamam.");
 }

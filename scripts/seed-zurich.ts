@@ -142,12 +142,12 @@ async function main() {
     const src = srcById.get(g.id);
     if (!src) throw new Error(`Kaynakta olmayan id: ${g.id}`);
     const meaning = meanings.get(g.id);
-    const yeniCumle = zurichSentences.get(g.id)?.trim() || null;
-    const gswSentence = yeniCumle ?? g.beispiel?.trim() ?? null;
+    const newSentence = zurichSentences.get(g.id)?.trim() || null;
+    const gswSentence = newSentence ?? g.beispiel?.trim() ?? null;
 
     let tr: string | null;
     let en: string | null;
-    if (yeniCumle && meaning) {
+    if (newSentence && meaning) {
       // Yeni hatta lehçe cümlesi Almanca cümlenin karşılığı olmak zorunda:
       // çeviri koşulsuz devralınıyor.
       tr = meaning.beispielTr;

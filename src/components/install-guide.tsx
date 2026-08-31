@@ -81,7 +81,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
   const [installed, setInstalled] = useState(false);
   const [deferred, setDeferred] = useState<InstallEvent | null>(null);
   /** Kendi platformu dışındaki adımları da görmek isteyen olur. */
-  const [hepsi, setHepsi] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     setPlatform(detect());
@@ -125,7 +125,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
       </div>
     );
 
-  const goster: Platform[] = hepsi
+  const shown: Platform[] = showAll
     ? (Object.keys(STEPS) as Platform[])
     : [platform];
 
@@ -160,21 +160,21 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
       </div>
 
       <div className="mt-4 space-y-4">
-        {goster.map((p) => (
+        {shown.map((p) => (
           <div key={p}>
             <p className="text-xs font-bold" style={{ color: "var(--color-brand)" }}>
               {STEPS[p].title}
             </p>
             <ol className="mt-1.5 space-y-1.5">
-              {STEPS[p].steps.map((adim, i) => (
-                <li key={adim} className="flex gap-2.5 text-sm">
+              {STEPS[p].steps.map((step, i) => (
+                <li key={step} className="flex gap-2.5 text-sm">
                   <span
                     className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-bold tabular-nums"
                     style={{ background: "var(--surface-2)" }}
                   >
                     {i + 1}
                   </span>
-                  <span className="min-w-0">{adim}</span>
+                  <span className="min-w-0">{step}</span>
                 </li>
               ))}
             </ol>
@@ -184,10 +184,10 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
       </div>
 
       <button
-        onClick={() => setHepsi((v) => !v)}
+        onClick={() => setShowAll((v) => !v)}
         className="muted mt-3 text-xs font-semibold underline underline-offset-2"
       >
-        {hepsi ? "Yalnızca bu cihazın adımlarını göster" : "Başka bir cihazın adımlarını göster"}
+        {showAll ? "Yalnızca bu cihazın adımlarını göster" : "Başka bir cihazın adımlarını göster"}
       </button>
     </div>
   );

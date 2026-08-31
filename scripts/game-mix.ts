@@ -84,11 +84,11 @@ async function main() {
     .update(userWords)
     .set({ dueAt: sql`now() + interval '30 days'` })
     .where(eq(userWords.userId, USER));
-  const ileri = await buildSession(USER, day);
-  const ileriMix = ileri.rounds.map((r) => r.game);
-  console.log(`\nİLERLEMİŞ ÖĞRENCİ (tekrarı gelen kelime yok): ${ileriMix.join(", ")}`);
-  const uretim = ileriMix.filter((g) => g === "typing" || g === "order" || g === "scramble");
-  console.log(uretim.length ? `  ✓ ${uretim.length} üretim turu var` : "  ✗ hiç üretim turu yok");
+  const advanced = await buildSession(USER, day);
+  const advancedMix = advanced.rounds.map((r) => r.game);
+  console.log(`\nİLERLEMİŞ ÖĞRENCİ (tekrarı gelen kelime yok): ${advancedMix.join(", ")}`);
+  const production = advancedMix.filter((g) => g === "typing" || g === "order" || g === "scramble");
+  console.log(production.length ? `  ✓ ${production.length} üretim turu var` : "  ✗ hiç üretim turu yok");
 
   console.log("\nGÖRÜLEN OYUNLAR:", [...seen].join(", "));
   console.log("EKSİK:", ["intro","choice","artikel","scramble","cloze","typing","match"].filter((g) => !seen.has(g)).join(", ") || "yok");

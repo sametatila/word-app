@@ -101,8 +101,8 @@ out = []
 for r in rows:
     r['turkce'] = key2tr.get((r['wort'], r['artikel']), '')
     out.append({k: r.get(k, '') for k in fields})
-bos = sum(1 for r in out if not r['turkce'])
-print('CSV satırı:', len(out), '| türkçesi boş:', bos)
+empty = sum(1 for r in out if not r['turkce'])
+print('CSV satırı:', len(out), '| türkçesi boş:', empty)
 
 
 def write(path, data, enc, delim):

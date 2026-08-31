@@ -25,10 +25,10 @@ type Word = {
 
 const words: Word[] = JSON.parse(fs.readFileSync("data/app/words.json", "utf8"));
 
-type Finding = { id: number; de: string; kural: string; detay: string };
+type Finding = { id: number; de: string; rule: string; detail: string };
 const findings: Finding[] = [];
-const add = (w: Word, kural: string, detay: string) =>
-  findings.push({ id: w.id, de: w.de, kural, detay });
+const add = (w: Word, rule: string, detail: string) =>
+  findings.push({ id: w.id, de: w.de, rule, detail });
 
 /**
  * Almancada isim cinsi büyük ölçüde son ekten okunur. Bunlar istisnasız ya da
@@ -136,14 +136,14 @@ for (const w of words) {
 // Rapor
 const byRule = new Map<string, Finding[]>();
 for (const f of findings) {
-  if (!byRule.has(f.kural)) byRule.set(f.kural, []);
-  byRule.get(f.kural)!.push(f);
+  if (!byRule.has(f.rule)) byRule.set(f.rule, []);
+  byRule.get(f.rule)!.push(f);
 }
 
 console.log(`havuz ${words.length} madde · ${findings.length} bulgu\n`);
-for (const [kural, list] of [...byRule.entries()].sort((a, b) => b[1].length - a[1].length)) {
-  console.log(`${String(list.length).padStart(5)}  ${kural}`);
-  for (const f of list.slice(0, 5)) console.log(`         ${f.id}  ${f.detay}`);
+for (const [rule, list] of [...byRule.entries()].sort((a, b) => b[1].length - a[1].length)) {
+  console.log(`${String(list.length).padStart(5)}  ${rule}`);
+  for (const f of list.slice(0, 5)) console.log(`         ${f.id}  ${f.detail}`);
   if (list.length > 5) console.log(`         … ${list.length - 5} tane daha`);
 }
 

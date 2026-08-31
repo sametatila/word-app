@@ -38,14 +38,14 @@ const only = args.find((a) => !a.startsWith("--"));
 const writeBaseline = args.includes("--baseline");
 
 const LEVELS = new Set(["A1", "A2", "B1", "B2", "C1"]);
-const TR_HARF = /[ıİğĞşŞ]/;
+const TR_LETTER = /[ıİğĞşŞ]/;
 /**
  * Almanca metinde Türkçe harf var mı — ÖZEL ADLAR HARİÇ. Metinlerde Türk
  * karakterler var ("Frau Yıldız", "Herr Aydın") ve bu bilinçli: öğrenci
  * kendini metinde görüyor. Büyük harfle başlayan kelimeler (özel ad ya da
  * Almanca isim) sınavdan çıkarılıyor; kalanında Türkçe harf hata.
  */
-const trLetters = (text: string) => TR_HARF.test(text.replace(/(^|[\s„"(])[A-ZÄÖÜİ][^\s.,;:!?„"()]*/g, "$1"));
+const trLetters = (text: string) => TR_LETTER.test(text.replace(/(^|[\s„"(])[A-ZÄÖÜİ][^\s.,;:!?„"()]*/g, "$1"));
 const READING_WORDS: Record<string, [number, number]> = { A1: [60, 120], A2: [100, 180], B1: [150, 260], B2: [200, 350], C1: [250, 450] };
 
 const errors: string[] = [];
@@ -105,7 +105,7 @@ function checkSkills(list: SkillExercise[]) {
     if (e.minutes < 1 || e.minutes > 20) W(w, `minutes ${e.minutes} aralık dışı (1–20)`);
     for (const id of e.cando ?? []) if (!isCandoId(id)) E(w, `bilinmeyen can-do kimliği ${id}`);
     if (!candoForExercise(e).length) E(w, "can-do etiketi üretilemedi");
-    if (TR_HARF.test(e.intro) === false && /[ßÄÖÜäöü]/.test(e.intro) && !/„|"/.test(e.intro)) W(w, "intro Türkçe olmalı; Almanca harf var");
+    if (TR_LETTER.test(e.intro) === false && /[ßÄÖÜäöü]/.test(e.intro) && !/„|"/.test(e.intro)) W(w, "intro Türkçe olmalı; Almanca harf var");
 
     const text =
       e.skill === "reading" ? e.text : e.skill === "listening" ? e.segments.map((s) => s.text).join(" ") : "";
@@ -113,7 +113,7 @@ function checkSkills(list: SkillExercise[]) {
       if (!g.de?.trim() || !g.tr?.trim()) E(w, `gloss eksik: ${JSON.stringify(g)}`);
       if (multi(g.tr)) W(w, `çok anlamlı tr: ${g.de} → "${g.tr}"`);
       if (!g.en) W(w, `en yok: ${g.de}`);
-      if (g.en && TR_HARF.test(g.en)) E(w, `en alanında Türkçe harf: ${g.de} → "${g.en}"`);
+      if (g.en && TR_LETTER.test(g.en)) E(w, `en alanında Türkçe harf: ${g.de} → "${g.en}"`);
       if (/[()[\]]/.test(g.tr)) W(w, `parantezli tr: ${g.de} → "${g.tr}"`);
       if (text && !/[…/,]/.test(g.de) && !contains(text, g.de)) W(w, `sözlükçe kelimesi metinde yok: "${g.de}"`);
     }

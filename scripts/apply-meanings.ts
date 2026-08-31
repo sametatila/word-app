@@ -20,7 +20,7 @@ import { Pool } from "pg";
 
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, "data", "meanings", "out");
-const HEDEF = (process.argv[2] ?? "all").toLowerCase();
+const TARGET = (process.argv[2] ?? "all").toLowerCase();
 const DRY = process.argv.includes("--dry");
 
 /** gsw-zh kursu aynı kelimeyi 100000 kaydırmalı kimlikle taşıyor. */
@@ -35,16 +35,16 @@ export type Meaning = {
   beispielEn: string;
 };
 
-export function readMeanings(filtre = "all"): Meaning[] {
+export function readMeanings(filter = "all"): Meaning[] {
   if (!existsSync(OUT)) return [];
   const rows: Meaning[] = [];
-  const görülen = new Set<number>();
+  const seen = new Set<number>();
   for (const f of readdirSync(OUT).filter((f) => f.endsWith(".json")).sort()) {
     const slug = f.replace(/\.json$/, "");
-    if (filtre !== "all" && slug !== filtre && !slug.startsWith(`${filtre}-`)) continue;
+    if (filter !== "all" && slug !== filter && !slug.startsWith(`${filter}-`)) continue;
     for (const r of JSON.parse(readFileSync(path.join(OUT, f), "utf8")) as Meaning[]) {
-      if (görülen.has(r.id)) throw new Error(`${f}: ${r.id} birden çok pakette var`);
-      görülen.add(r.id);
+      if (seen.has(r.id)) throw new Error(`${f}: ${r.id} birden çok pakette var`);
+      seen.add(r.id);
       rows.push(r);
     }
   }
@@ -57,13 +57,13 @@ async function main() {
   // Denetleyici ayrı bir süreç: aynı kuralların iki kopyası olmasın diye
   // burada yeniden yazılmıyor, olduğu gibi çağrılıyor.
   try {
-    execFileSync("node", ["data/meanings/check.mjs", HEDEF], { stdio: "inherit" });
+    execFileSync("node", ["data/meanings/check.mjs", TARGET], { stdio: "inherit" });
   } catch {
     console.error("\nDenetleyici hata bildirdi — yazma yapılmadı.");
     process.exit(1);
   }
 
-  const rows = readMeanings(HEDEF);
+  const rows = readMeanings(TARGET);
   if (!rows.length) {
     console.log("Uygulanacak madde yok.");
     return;
@@ -76,7 +76,7 @@ async function main() {
 
   const sql = new Pool({ connectionString: process.env.DATABASE_URL });
   const CHUNK = 200;
-  let yazilan = 0;
+  let written = 0;
 
   for (let i = 0; i < rows.length; i += CHUNK) {
     const chunk = rows.slice(i, i + CHUNK);
@@ -115,8 +115,8 @@ async function main() {
       params,
     );
 
-    yazilan += chunk.length;
-    console.log(`  ${yazilan}/${rows.length}`);
+    written += chunk.length;
+    console.log(`  ${written}/${rows.length}`);
   }
 
   console.log("Uygulama tamam.");

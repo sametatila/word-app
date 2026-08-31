@@ -645,22 +645,22 @@ async function main() {
     // noktalama olmadan döndürüyor. „ich arbeite auch“ cümlesini
     // „Ich arbeite auch.“ diye düzeltmek, öğrencinin yapmadığı bir hatayı ona
     // yüklemek oluyor — söylediğinde öyle bir hata yok.
-    const kozmetik = [
+    const cosmetic = [
       `${CORRECTION_MARK} ich arbeite auch → Ich arbeite auch. (Rechtschreibung)`,
       `${CORRECTION_MARK} ich gehe mit freunden → Ich gehe mit Freunden (Großschreibung)`,
       `${CORRECTION_MARK} wir bestellen schnitzel → Wir bestellen Schnitzel.`,
     ];
-    for (const line of kozmetik) {
+    for (const line of cosmetic) {
       check(`süzülüyor: ${line.slice(3, 42)}`, parseReply(line).corrections.length === 0);
     }
     // Gerçek hatalar süzgeçten geçmeye devam etmeli; fazla geniş bir süzgeç
     // dersin asıl işini sessizce kapatırdı.
-    const gercek = [
+    const real = [
       `${CORRECTION_MARK} ich arbeite seit 10 Jahre → ich arbeite seit 10 Jahren (Dativ)`,
       `${CORRECTION_MARK} Heute ich gehe → Heute gehe ich (V2-Regel)`,
       `${CORRECTION_MARK} ich habe ein Hund → ich habe einen Hund (Akkusativ)`,
     ];
-    for (const line of gercek) {
+    for (const line of real) {
       check(`korunuyor: ${line.slice(3, 42)}`, parseReply(line).corrections.length === 1);
     }
   }

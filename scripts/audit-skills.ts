@@ -11,9 +11,9 @@ import { sentenceContainsWord } from "../src/lib/headword";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/index";
 import type { SkillExercise, SkillQuestion } from "../src/lib/skills/types";
 
-type Finding = { id: string; kural: string; detay: string };
+type Finding = { id: string; rule: string; detail: string };
 const findings: Finding[] = [];
-const add = (id: string, kural: string, detay: string) => findings.push({ id, kural, detay });
+const add = (id: string, rule: string, detail: string) => findings.push({ id, rule, detail });
 
 const norm = (s: string) =>
   s.toLowerCase().replace(/[.,!?;:„“"'()–—-]/g, " ").replace(/\s+/g, " ").trim();
@@ -120,16 +120,16 @@ for (const ex of BUNDLED_EXERCISES as SkillExercise[]) {
 
 const byRule = new Map<string, Finding[]>();
 for (const f of findings) {
-  if (!byRule.has(f.kural)) byRule.set(f.kural, []);
-  byRule.get(f.kural)!.push(f);
+  if (!byRule.has(f.rule)) byRule.set(f.rule, []);
+  byRule.get(f.rule)!.push(f);
 }
 const byCourse = { de: 0, "gsw-zh": 0 } as Record<string, number>;
 for (const ex of BUNDLED_EXERCISES as SkillExercise[]) byCourse[ex.course ?? "de"]++;
 
 console.log(`${(BUNDLED_EXERCISES as SkillExercise[]).length} egzersiz (de ${byCourse.de} · gsw-zh ${byCourse["gsw-zh"]}) · ${findings.length} bulgu\n`);
-for (const [kural, list] of [...byRule.entries()].sort((a, b) => b[1].length - a[1].length)) {
-  console.log(`${String(list.length).padStart(4)}  ${kural}`);
-  for (const f of list.slice(0, 6)) console.log(`        ${f.id}  ${f.detay}`);
+for (const [rule, list] of [...byRule.entries()].sort((a, b) => b[1].length - a[1].length)) {
+  console.log(`${String(list.length).padStart(4)}  ${rule}`);
+  for (const f of list.slice(0, 6)) console.log(`        ${f.id}  ${f.detail}`);
   if (list.length > 6) console.log(`        … ${list.length - 6} tane daha`);
 }
 fs.writeFileSync("data/audit-skills.json", JSON.stringify(findings, null, 1));

@@ -60,7 +60,7 @@ async function main() {
         provider: roleplayLogs.provider,
         model: roleplayLogs.model,
         n: sql<number>`count(*)::int`,
-        son: sql<Date>`max(${roleplayLogs.createdAt})`,
+        last: sql<Date>`max(${roleplayLogs.createdAt})`,
       })
       .from(roleplayLogs)
       .groupBy(roleplayLogs.provider, roleplayLogs.model)
@@ -70,19 +70,19 @@ async function main() {
     } else {
       for (const r of rows) {
         const ad = r.provider ?? "(kaydedilmemiş — sütun eklenmeden önceki satırlar)";
-        console.log(`${String(r.n).padStart(5)} istek  ${ad}${r.model ? ` · ${r.model}` : ""}  son: ${new Date(r.son).toISOString().slice(0, 16)}`);
+        console.log(`${String(r.n).padStart(5)} istek  ${ad}${r.model ? ` · ${r.model}` : ""}  son: ${new Date(r.last).toISOString().slice(0, 16)}`);
       }
       // Sağlayıcının bildirdiği kalan hak: limite ne kadar yaklaşıldığı ancak
       // buradan görülüyor, 429 gelene kadar her şey normal görünüyor.
-      const [son] = await db
+      const [last] = await db
         .select({ limits: roleplayLogs.limits, provider: roleplayLogs.provider, at: roleplayLogs.createdAt })
         .from(roleplayLogs)
         .where(sql`${roleplayLogs.limits} is not null`)
         .orderBy(desc(roleplayLogs.createdAt))
         .limit(1);
-      if (son?.limits) {
-        console.log(`\nSon cevapta ${son.provider} şunu bildirdi (${new Date(son.at).toISOString().slice(0, 16)}):`);
-        for (const [k, v] of Object.entries(son.limits)) console.log(`  ${k}: ${v}`);
+      if (last?.limits) {
+        console.log(`\nSon cevapta ${last.provider} şunu bildirdi (${new Date(last.at).toISOString().slice(0, 16)}):`);
+        for (const [k, v] of Object.entries(last.limits)) console.log(`  ${k}: ${v}`);
       } else {
         console.log("\nHenüz kalan hak bilgisi kaydedilmemiş.");
       }

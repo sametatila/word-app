@@ -1,1827 +1,3812 @@
 [
  {
+  "id": "a1-u1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "a1-u1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-u1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "a1-u1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-u1-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "a1-u1-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-u1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "a1-u1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
   "id": "a1-r6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die U-Bahn-Linie\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die U-Bahn-Linie\""
+ },
+ {
+  "id": "a1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a1-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"umziehen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"umziehen\""
+ },
+ {
+  "id": "a1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a1-r9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Kasse\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Kasse\""
+ },
+ {
+  "id": "a1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Anzeige\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Anzeige\""
  },
  {
   "id": "a1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"günstig\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"günstig\""
+ },
+ {
+  "id": "a1-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a1-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Zettel\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Zettel\""
  },
  {
   "id": "a1-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"annehmen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"annehmen\""
  },
  {
   "id": "a1-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"vorbeikommen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vorbeikommen\""
  },
  {
   "id": "a1-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Tasse\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Tasse\""
  },
  {
   "id": "a1-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"leihen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"leihen\""
  },
  {
   "id": "a1-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Schlüssel\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Schlüssel\""
+ },
+ {
+  "id": "a1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "a1-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "a1-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
  },
  {
   "id": "a1-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"wegwerfen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"wegwerfen\""
  },
  {
   "id": "a1-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Strafe\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Strafe\""
+ },
+ {
+  "id": "a1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a1-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Kleingeld\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Kleingeld\""
+ },
+ {
+  "id": "a1-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "a1-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
  },
  {
   "id": "a1-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Ansage\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Ansage\""
  },
  {
   "id": "a1-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Angebot\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Angebot\""
  },
  {
   "id": "a1-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Ausgang\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Ausgang\""
+ },
+ {
+  "id": "a1-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "a1-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
  },
  {
   "id": "a1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich freuen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich freuen\""
+ },
+ {
+  "id": "a1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"absagen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"absagen\""
+ },
+ {
+  "id": "a1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a1-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "a1-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"vorschlagen\""
- },
- {
-  "id": "a1-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Schlafzimmer\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vorschlagen\""
  },
  {
   "id": "a1-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Unterricht\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Unterricht\""
  },
  {
   "id": "a1-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Unterschrift\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Unterschrift\""
  },
  {
   "id": "a1-w5",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 3: \"Bitte entschuldigen Sie, dass er heute fehlt.\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"Bitte entschuldigen Sie, dass er heute fehlt.\""
  },
  {
   "id": "a1-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Formular\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Formular\""
  },
  {
   "id": "a1-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Familienname\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Familienname\""
  },
  {
   "id": "a1-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Vorname\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Vorname\""
  },
  {
   "id": "a1-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Staatsangehörigkeit\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Staatsangehörigkeit\""
  },
  {
   "id": "a1-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Uhrzeit\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Uhrzeit\""
  },
  {
   "id": "a1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Postkarte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Postkarte\""
  },
  {
   "id": "a1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Urlaub\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Urlaub\""
  },
  {
   "id": "a1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"schicken\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"schicken\""
+ },
+ {
+  "id": "a2-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a2-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich bewerben\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich bewerben\""
  },
  {
   "id": "a2-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"vielleicht\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vielleicht\""
+ },
+ {
+  "id": "a2-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a2-r8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Krankenkasse\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Krankenkasse\""
+ },
+ {
+  "id": "a2-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "a2-r9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"gemeinsam\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gemeinsam\""
+ },
+ {
+  "id": "a2-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a2-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Anfrage\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Anfrage\""
+ },
+ {
+  "id": "a2-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "a2-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Feiertag\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Feiertag\""
+ },
+ {
+  "id": "a2-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "a2-r12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Ankunft\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Ankunft\""
  },
  {
   "id": "a2-r12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Ermäßigung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Ermäßigung\""
+ },
+ {
+  "id": "a2-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a2-l1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Sprechstundenhilfe\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Sprechstundenhilfe\""
+ },
+ {
+  "id": "a2-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a2-l2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"absagen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"absagen\""
+ },
+ {
+  "id": "a2-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a2-l6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"gelten\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gelten\""
+ },
+ {
+  "id": "a2-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
  },
  {
   "id": "a2-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Vorstellungsgespräch\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Vorstellungsgespräch\""
  },
  {
   "id": "a2-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Unterlagen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Unterlagen\""
  },
  {
   "id": "a2-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich melden\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich melden\""
+ },
+ {
+  "id": "a2-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a2-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Nebenkosten\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Nebenkosten\""
  },
  {
   "id": "a2-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Vermieter\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Vermieter\""
+ },
+ {
+  "id": "a2-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "a2-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Gespräch\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Gespräch\""
+ },
+ {
+  "id": "a2-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
  },
  {
   "id": "a2-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"geschlossen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"geschlossen\""
  },
  {
   "id": "a2-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich gewöhnen an\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich gewöhnen an\""
+ },
+ {
+  "id": "a2-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "a2-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "a2-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Lieferung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Lieferung\""
  },
  {
   "id": "a2-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Liefertermin\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Liefertermin\""
  },
  {
   "id": "a2-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"verspäten\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"verspäten\""
+ },
+ {
+  "id": "a2-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "a2-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich merken\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich merken\""
  },
  {
   "id": "a2-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Feierabend\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Feierabend\""
+ },
+ {
+  "id": "a2-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "a2-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "a2-w1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"feiern\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"feiern\""
  },
  {
   "id": "a2-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Miete\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Miete\""
  },
  {
   "id": "a2-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Nebenkosten\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Nebenkosten\""
  },
  {
   "id": "a2-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Vermieterin\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Vermieterin\""
  },
  {
   "id": "a2-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Urlaub\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Urlaub\""
  },
  {
   "id": "a2-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"einreichen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"einreichen\""
  },
  {
   "id": "a2-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Rückmeldung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Rückmeldung\""
  },
  {
   "id": "a2-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"überweisen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"überweisen\""
  },
  {
   "id": "a2-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"absagen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"absagen\""
  },
  {
   "id": "a2-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zusagen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zusagen\""
  },
  {
   "id": "a2-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Vorschlag\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Vorschlag\""
  },
  {
   "id": "a2-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Brauch\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Brauch\""
  },
  {
   "id": "a2-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Unterschied\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Unterschied\""
  },
  {
   "id": "a2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich vorstellen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich vorstellen\""
  },
  {
   "id": "a2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"helfen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"helfen\""
  },
  {
   "id": "a2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich freuen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich freuen\""
+ },
+ {
+  "id": "b1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b1-r2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"erfahren von\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"erfahren von\""
+ },
+ {
+  "id": "b1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b1-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Kredit\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Kredit\""
  },
  {
   "id": "b1-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich lohnen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich lohnen\""
  },
  {
   "id": "b1-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Konkurrenz\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Konkurrenz\""
+ },
+ {
+  "id": "b1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b1-r9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"duzen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"duzen\""
  },
  {
   "id": "b1-r9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Anrede\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Anrede\""
+ },
+ {
+  "id": "b1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zuordnen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zuordnen\""
  },
  {
   "id": "b1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Spende\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Spende\""
  },
  {
   "id": "b1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Umfrage\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Umfrage\""
  },
  {
   "id": "b1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sinken\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sinken\""
+ },
+ {
+  "id": "b1-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b1-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Voraussetzung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Voraussetzung\""
+ },
+ {
+  "id": "b1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b1-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Handwerker\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Handwerker\""
  },
  {
   "id": "b1-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Anfahrt\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Anfahrt\""
  },
  {
   "id": "b1-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Notfall\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Notfall\""
+ },
+ {
+  "id": "b1-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b1-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "b1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Verabredung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Verabredung\""
  },
  {
   "id": "b1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"unhöflich\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unhöflich\""
  },
  {
   "id": "b1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Ausrede\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Ausrede\""
  },
  {
   "id": "b1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Unterschied\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Unterschied\""
  },
  {
   "id": "b1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"entschuldigen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"entschuldigen\""
+ },
+ {
+  "id": "b1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Missverständnis\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Missverständnis\""
  },
  {
   "id": "b1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Vorwurf\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Vorwurf\""
  },
  {
   "id": "b1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich angegriffen fühlen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich angegriffen fühlen\""
  },
  {
   "id": "b1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Absicht\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Absicht\""
  },
  {
   "id": "b1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zugeben\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zugeben\""
+ },
+ {
+  "id": "b1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Eröffnung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Eröffnung\""
  },
  {
   "id": "b1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Andrang\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Andrang\""
  },
  {
   "id": "b1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Vorbereitung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Vorbereitung\""
  },
  {
   "id": "b1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich lohnen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich lohnen\""
  },
  {
   "id": "b1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Zweifel\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Zweifel\""
  },
  {
   "id": "b1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"dankbar\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"dankbar\""
+ },
+ {
+  "id": "b1-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b1-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b1-w1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Hausverwaltung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Hausverwaltung\""
  },
  {
   "id": "b1-w1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Erlaubnis\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Erlaubnis\""
  },
  {
   "id": "b1-w3",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"absagen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"absagen\""
  },
  {
   "id": "b1-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"öffentliche Verkehrsmittel\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"öffentliche Verkehrsmittel\""
  },
  {
   "id": "b1-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"mehrfach\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"mehrfach\""
  },
  {
   "id": "b1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Erfahrung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Erfahrung\""
  },
  {
   "id": "b1-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Anlass\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Anlass\""
+ },
+ {
+  "id": "b2-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b2-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b2-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b2-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b2-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b2-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b2-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Pause\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Pause\""
  },
  {
   "id": "b2-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Vorwurf\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Vorwurf\""
  },
  {
   "id": "b2-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"belegen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"belegen\""
  },
  {
   "id": "b2-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Kündigung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Kündigung\""
  },
  {
   "id": "b2-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich melden\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich melden\""
+ },
+ {
+  "id": "b2-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b2-r9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Erinnerung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Erinnerung\""
+ },
+ {
+  "id": "b2-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b2-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Belastung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Belastung\""
  },
  {
   "id": "b2-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Branche\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Branche\""
+ },
+ {
+  "id": "b2-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b2-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"unabhängig\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unabhängig\""
+ },
+ {
+  "id": "b2-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b2-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b2-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "b2-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Zusage\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Zusage\""
  },
  {
   "id": "b2-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"abwägen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abwägen\""
+ },
+ {
+  "id": "b2-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b2-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Argument\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Argument\""
  },
  {
   "id": "b2-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Perspektive\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Perspektive\""
  },
  {
   "id": "b2-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"verbindlich\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"verbindlich\""
+ },
+ {
+  "id": "b2-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b2-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Anteil\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Anteil\""
  },
  {
   "id": "b2-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Gegenmittel\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Gegenmittel\""
  },
  {
   "id": "b2-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Zielgruppe\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Zielgruppe\""
+ },
+ {
+  "id": "b2-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "b2-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "b2-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Amtsdeutsch\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Amtsdeutsch\""
+ },
+ {
+  "id": "b2-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b2-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Betriebsrat\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Betriebsrat\""
  },
  {
   "id": "b2-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Protokoll\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Protokoll\""
  },
  {
   "id": "b2-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"eskalieren\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"eskalieren\""
+ },
+ {
+  "id": "b2-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b2-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Pressekonferenz\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Pressekonferenz\""
  },
  {
   "id": "b2-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Einzelfall\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Einzelfall\""
+ },
+ {
+  "id": "b2-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "b2-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "b2-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zusichern\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zusichern\""
  },
  {
   "id": "b2-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Frist\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Frist\""
  },
  {
   "id": "b2-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich bewähren\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich bewähren\""
  },
  {
   "id": "b2-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die These\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die These\""
  },
  {
   "id": "b2-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zum einen … zum anderen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zum einen … zum anderen\""
  },
  {
   "id": "b2-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"letztlich\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"letztlich\""
  },
  {
   "id": "b2-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"hohl\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"hohl\""
  },
  {
   "id": "b2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"recherchieren\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"recherchieren\""
  },
  {
   "id": "b2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"bestätigen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bestätigen\""
  },
  {
   "id": "b2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"dementieren\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"dementieren\""
  },
  {
   "id": "b2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Quelle\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Quelle\""
  },
  {
   "id": "c1-r1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"jemandem etwas zurechnen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"jemandem etwas zurechnen\""
  },
  {
   "id": "c1-r1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas fortschreiben\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas fortschreiben\""
  },
  {
   "id": "c1-r1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas revidieren\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas revidieren\""
+ },
+ {
+  "id": "c1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "c1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "c1-r2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"aufholen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aufholen\""
+ },
+ {
+  "id": "c1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "c1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "c1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "c1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "c1-r4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Defizit\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Defizit\""
  },
  {
   "id": "c1-r4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas belegen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas belegen\""
  },
  {
   "id": "c1-r4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas verkennen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas verkennen\""
+ },
+ {
+  "id": "c1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "c1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "c1-r5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas bespielen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas bespielen\""
  },
  {
   "id": "c1-r5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Kontemplation\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Kontemplation\""
  },
  {
   "id": "c1-r5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas preisgeben\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas preisgeben\""
+ },
+ {
+  "id": "c1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "c1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "c1-r6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"stagnieren\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"stagnieren\""
  },
  {
   "id": "c1-r6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas diversifizieren\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas diversifizieren\""
+ },
+ {
+  "id": "c1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "c1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "c1-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Vorlage\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Vorlage\""
  },
  {
   "id": "c1-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"abwägen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abwägen\""
+ },
+ {
+  "id": "c1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "c1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "c1-r8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"abtreten\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abtreten\""
+ },
+ {
+  "id": "c1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "c1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
+ },
+ {
+  "id": "c1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "c1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "c1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Aussage\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Aussage\""
  },
  {
   "id": "c1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"implizit\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"implizit\""
  },
  {
   "id": "c1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"einschränken\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"einschränken\""
  },
  {
   "id": "c1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"nahelegen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"nahelegen\""
  },
  {
   "id": "c1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Korrelation\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Korrelation\""
  },
  {
   "id": "c1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"vorschnell\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vorschnell\""
+ },
+ {
+  "id": "c1-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "c1-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Aneignung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Aneignung\""
  },
  {
   "id": "c1-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Redlichkeit\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Redlichkeit\""
+ },
+ {
+  "id": "c1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "c1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
+ },
+ {
+  "id": "c1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "c1-l2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Zielkonflikt\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Zielkonflikt\""
+ },
+ {
+  "id": "c1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "c1-l3",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas übersehen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas übersehen\""
  },
  {
   "id": "c1-l3",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas hinterfragen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas hinterfragen\""
+ },
+ {
+  "id": "c1-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "c1-l4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Überalterung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Überalterung\""
  },
  {
   "id": "c1-l4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Rückkehrer\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Rückkehrer\""
  },
  {
   "id": "c1-l5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas verkümmern lassen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas verkümmern lassen\""
  },
  {
   "id": "c1-l5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Steuerzahler\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Steuerzahler\""
  },
  {
   "id": "c1-l6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas verstauben\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas verstauben\""
+ },
+ {
+  "id": "c1-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "c1-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Deutungshoheit\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Deutungshoheit\""
  },
  {
   "id": "c1-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"eskalieren\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"eskalieren\""
  },
  {
   "id": "c1-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Fußnote\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Fußnote\""
  },
  {
   "id": "c1-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Imageschaden\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Imageschaden\""
  },
  {
   "id": "c1-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"einlenken\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"einlenken\""
+ },
+ {
+  "id": "c1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "c1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "c1-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Vorlage\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Vorlage\""
  },
  {
   "id": "c1-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"unweigerlich\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unweigerlich\""
+ },
+ {
+  "id": "c1-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "c1-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Enteignung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Enteignung\""
  },
  {
   "id": "c1-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Nachverdichtung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Nachverdichtung\""
  },
  {
   "id": "c1-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Anreiz\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Anreiz\""
+ },
+ {
+  "id": "c1-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "c1-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "c1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Honorar\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Honorar\""
  },
  {
   "id": "c1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Nennung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Nennung\""
  },
  {
   "id": "c1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Klausel\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Klausel\""
  },
  {
   "id": "c1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Zugeständnis\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Zugeständnis\""
+ },
+ {
+  "id": "c1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "c1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "c1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Verzögerung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Verzögerung\""
  },
  {
   "id": "c1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Vorurteil\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Vorurteil\""
+ },
+ {
+  "id": "c1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "c1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "c1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Zumutung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Zumutung\""
  },
  {
   "id": "c1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Anlass\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Anlass\""
  },
  {
   "id": "c1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"beharren\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"beharren\""
  },
  {
   "id": "c1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Genugtuung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Genugtuung\""
  },
  {
   "id": "c1-w1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich belaufen auf\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich belaufen auf\""
  },
  {
   "id": "c1-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas aufheben\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas aufheben\""
  },
  {
   "id": "c1-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"etwas nachweisen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"etwas nachweisen\""
  },
  {
   "id": "c1-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Förderung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Förderung\""
  },
  {
   "id": "c1-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Mitwirkung\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Mitwirkung\""
  },
  {
   "id": "c1-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"relativieren\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"relativieren\""
  },
  {
   "id": "c1-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zurückhaltend\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zurückhaltend\""
  },
  {
   "id": "c1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Rezension\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"die Rezension\""
  },
  {
   "id": "c1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Aufbau\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Aufbau\""
  },
  {
   "id": "c1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Urteil\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"das Urteil\""
  },
  {
   "id": "c1-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Selbstgerechtigkeit\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"der Anlass\""
  },
  {
   "id": "c1-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Anlass\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"beharren auf\""
  },
  {
-  "id": "c1-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"beharren auf\""
+  "id": "zh-a1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a1-r2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"aalüte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aalüte\""
+ },
+ {
+  "id": "zh-a1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a1-r6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"gälte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gälte\""
+ },
+ {
+  "id": "zh-a1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a1-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"abgää\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abgää\""
+ },
+ {
+  "id": "zh-a1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sueche\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sueche\""
  },
  {
   "id": "zh-a1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"gratis\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gratis\""
+ },
+ {
+  "id": "zh-a1-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a1-r12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"gälte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gälte\""
  },
  {
   "id": "zh-a1-r12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"kontrolliere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"kontrolliere\""
+ },
+ {
+  "id": "zh-a1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-a1-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "zh-a1-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a1-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "zh-a1-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "zh-a1-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "zh-a1-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "zh-a1-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
  },
  {
   "id": "zh-a1-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich melde\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich melde\""
+ },
+ {
+  "id": "zh-a1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a1-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"iipacke\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"iipacke\""
+ },
+ {
+  "id": "zh-a1-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "zh-a1-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
  },
  {
   "id": "zh-a1-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zue\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zue\""
  },
  {
   "id": "zh-a1-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"verlore\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"verlore\""
+ },
+ {
+  "id": "zh-a1-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "zh-a1-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
  },
  {
   "id": "zh-a1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"aastoosse\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aastoosse\""
  },
  {
   "id": "zh-a1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"stoo\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"stoo\""
  },
  {
   "id": "zh-a1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"nachhär\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"nachhär\""
+ },
+ {
+  "id": "zh-a1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"dringend\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"dringend\""
  },
  {
   "id": "zh-a1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"vorbiicho\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vorbiicho\""
+ },
+ {
+  "id": "zh-a1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"mitcho\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"mitcho\""
  },
  {
   "id": "zh-a1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich fröie\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich fröie\""
+ },
+ {
+  "id": "zh-a1-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a1-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a1-w1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"choo us\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"choo us\""
  },
  {
   "id": "zh-a1-w2",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 2: \"Häsch du morn Namitag Ziit?\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Häsch du morn Namitag Ziit?\""
  },
  {
   "id": "zh-a1-w3",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 2: \"Zum Zmorge iss ich meischtens Brot mit Chääs.\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Zum Zmorge iss ich meischtens Brot mit Chääs.\""
  },
  {
   "id": "zh-a1-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"läse\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"läse\""
  },
  {
   "id": "zh-a1-w4",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 2: \"Am Morge schtaa ich am viertel ab sibni uf.\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Am Morge schtaa ich am viertel ab sibni uf.\""
  },
  {
   "id": "zh-a1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"erkläre\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"erkläre\""
  },
  {
   "id": "zh-a1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"anders\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"anders\""
  },
  {
   "id": "zh-a1-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"dra dänke\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"dra dänke\""
+ },
+ {
+  "id": "zh-a2-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a2-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"uufgää\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"uufgää\""
+ },
+ {
+  "id": "zh-a2-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-a2-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-a2-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-a2-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-a2-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"leider\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"leider\""
  },
  {
   "id": "zh-a2-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"unterschriibe\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unterschriibe\""
+ },
+ {
+  "id": "zh-a2-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-a2-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-a2-l1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"aalüte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aalüte\""
+ },
+ {
+  "id": "zh-a2-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a2-l2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"gälte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gälte\""
+ },
+ {
+  "id": "zh-a2-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 4: 0 şık"
+ },
+ {
+  "id": "zh-a2-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a2-l6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"abhole\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abhole\""
+ },
+ {
+  "id": "zh-a2-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a2-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sperre\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sperre\""
+ },
+ {
+  "id": "zh-a2-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a2-l9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"reserviere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"reserviere\""
+ },
+ {
+  "id": "zh-a2-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
  },
  {
   "id": "zh-a2-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"aabüüte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aabüüte\""
  },
  {
   "id": "zh-a2-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"gnaut\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gnaut\""
+ },
+ {
+  "id": "zh-a2-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a2-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"handle\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"handle\""
+ },
+ {
+  "id": "zh-a2-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-a2-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-a2-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"endlich\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"endlich\""
+ },
+ {
+  "id": "zh-a2-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-a2-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-a2-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"kaputt\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"kaputt\""
  },
  {
   "id": "zh-a2-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"vorbiicho\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vorbiicho\""
  },
  {
   "id": "zh-a2-w2",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 1: \"Üsi Heizig funktioniert sit zwäi Täg nöd meh.\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Üsi Heizig funktioniert sit zwäi Täg nöd meh.\""
  },
  {
   "id": "zh-a2-w3",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"gsee\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gsee\""
  },
  {
   "id": "zh-a2-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich intressiere für\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich intressiere für\""
  },
  {
   "id": "zh-a2-w4",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 2: \"Ich han zwäi Jaar i eme Café gschaffet.\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Ich han zwäi Jaar i eme Café gschaffet.\""
  },
  {
   "id": "zh-a2-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich vorstelle\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich vorstelle\""
  },
  {
   "id": "zh-a2-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"ruhig\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"ruhig\""
  },
  {
   "id": "zh-a2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"iizoge\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"iizoge\""
  },
  {
   "id": "zh-a2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich vorstelle\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich vorstelle\""
  },
  {
   "id": "zh-a2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"vorbiicho\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vorbiicho\""
  },
  {
   "id": "zh-a2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"Bschäid gää\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"Bschäid gää\""
  },
  {
   "id": "zh-a2-w8",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 2: \"Mir laded Si uf es Glas ii.\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"Mir laded Si uf es Glas ii.\""
+ },
+ {
+  "id": "zh-b1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-r3",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"gälte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gälte\""
+ },
+ {
+  "id": "zh-b1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-r4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"erooberä\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"erooberä\""
+ },
+ {
+  "id": "zh-b1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-r5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"abgää\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abgää\""
+ },
+ {
+  "id": "zh-b1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-r6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich gwöhne a\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich gwöhne a\""
+ },
+ {
+  "id": "zh-b1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-r9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"übersetze\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"übersetze\""
+ },
+ {
+  "id": "zh-b1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zueordne\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zueordne\""
  },
  {
   "id": "zh-b1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sinke\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sinke\""
+ },
+ {
+  "id": "zh-b1-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-r12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"provisorisch\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"provisorisch\""
+ },
+ {
+  "id": "zh-b1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
+ },
+ {
+  "id": "zh-b1-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-l2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"aazünde\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aazünde\""
+ },
+ {
+  "id": "zh-b1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-l3",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"schniide\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"schniide\""
  },
  {
   "id": "zh-b1-l3",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zwäg mache\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zwäg mache\""
+ },
+ {
+  "id": "zh-b1-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-b1-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-b1-l4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-b1-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 5: 0 şık"
+ },
+ {
+  "id": "zh-b1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b1-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich beklage\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich beklage\""
+ },
+ {
+  "id": "zh-b1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"iiglenkt\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"iiglenkt\""
  },
  {
   "id": "zh-b1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich luune\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich luune\""
+ },
+ {
+  "id": "zh-b1-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b1-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b1-w3",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 1: \"Miner Meinig nach bruucht d Stadt meh Bäum.\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"Miner Meinig nach bruucht d Stadt meh Bäum.\""
  },
  {
   "id": "zh-b1-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich gwöhne\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich gwöhne\""
  },
  {
   "id": "zh-b1-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"ungwont\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"ungwont\""
  },
  {
   "id": "zh-b1-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich iiläbe\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich iiläbe\""
  },
  {
   "id": "zh-b1-w4",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 3: \"Hüt fühl ich mi da vill besser.\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 3: \"Hüt fühl ich mi da vill besser.\""
  },
  {
   "id": "zh-b1-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"iigschriibe\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"iigschriibe\""
  },
  {
   "id": "zh-b1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich verbessere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich verbessere\""
+ },
+ {
+  "id": "zh-b2-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b2-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b2-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b2-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b2-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b2-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b2-r7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"iiteile\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"iiteile\""
+ },
+ {
+  "id": "zh-b2-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-b2-r8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"obligatorisch\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"obligatorisch\""
+ },
+ {
+  "id": "zh-b2-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b2-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b2-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"iischränke\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"iischränke\""
+ },
+ {
+  "id": "zh-b2-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b2-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"konkret\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"konkret\""
+ },
+ {
+  "id": "zh-b2-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b2-l1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-b2-l2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich öppis läischte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich öppis läischte\""
+ },
+ {
+  "id": "zh-b2-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b2-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b2-l4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"uufhole\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"uufhole\""
+ },
+ {
+  "id": "zh-b2-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-b2-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b2-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"iischtiige\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"iischtiige\""
  },
  {
   "id": "zh-b2-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich mälde\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich mälde\""
  },
  {
   "id": "zh-b2-l8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"abklääre\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abklääre\""
+ },
+ {
+  "id": "zh-b2-l8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-b2-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-b2-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zäitgemäss\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zäitgemäss\""
  },
  {
   "id": "zh-b2-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich aagriffe fühle\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich aagriffe fühle\""
  },
  {
   "id": "zh-b2-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"klääre\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"klääre\""
  },
  {
   "id": "zh-b2-l11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zuegää\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zuegää\""
+ },
+ {
+  "id": "zh-b2-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
  },
  {
   "id": "zh-b2-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich fröie\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich fröie\""
  },
  {
   "id": "zh-b2-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"iiraume\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"iiraume\""
  },
  {
   "id": "zh-b2-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"wiedergää\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"wiedergää\""
  },
  {
   "id": "zh-b2-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sachlich\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sachlich\""
  },
  {
   "id": "zh-b2-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"wäggloo\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"wäggloo\""
  },
  {
   "id": "zh-b2-w4",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 1: \"De Text gaat um d Folge vom Wachstum vo de Stadt.\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 1: \"De Text gaat um d Folge vom Wachstum vo de Stadt.\""
  },
  {
   "id": "zh-b2-w5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"konkret\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"konkret\""
  },
  {
   "id": "zh-b2-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"entchräfte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"entchräfte\""
  },
  {
   "id": "zh-b2-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"letschtlich\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"letschtlich\""
  },
  {
   "id": "zh-b2-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"rächtziitig\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"rächtziitig\""
  },
  {
   "id": "zh-c1-r1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"uufnää\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"uufnää\""
+ },
+ {
+  "id": "zh-c1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-c1-r1",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-c1-r2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-c1-r3",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"unverbindlich\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unverbindlich\""
  },
  {
   "id": "zh-c1-r3",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"härzlich\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"härzlich\""
+ },
+ {
+  "id": "zh-c1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-r3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "zh-c1-r4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"verzögere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"verzögere\""
+ },
+ {
+  "id": "zh-c1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-r4",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "zh-c1-r5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"unsichtbar\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unsichtbar\""
  },
  {
   "id": "zh-c1-r5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich lohne\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich lohne\""
+ },
+ {
+  "id": "zh-c1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-r5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
+ },
+ {
+  "id": "zh-c1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-r6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
+ },
+ {
+  "id": "zh-c1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-r7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
+ },
+ {
+  "id": "zh-c1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-r8",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "zh-c1-r9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"belege\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"belege\""
  },
  {
   "id": "zh-c1-r9",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"vereinnahme\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vereinnahme\""
+ },
+ {
+  "id": "zh-c1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-r9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "zh-c1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"implizit\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"implizit\""
  },
  {
   "id": "zh-c1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"iischränke\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"iischränke\""
  },
  {
   "id": "zh-c1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"nahelege\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"nahelege\""
  },
  {
   "id": "zh-c1-r10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"vorschnäll\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vorschnäll\""
  },
  {
   "id": "zh-c1-r11",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sachlich\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sachlich\""
+ },
+ {
+  "id": "zh-c1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-r11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "zh-c1-r12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"hinterlege\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"hinterlege\""
+ },
+ {
+  "id": "zh-c1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-c1-r12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-c1-l2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich aagliiche\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich aagliiche\""
+ },
+ {
+  "id": "zh-c1-l2",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-c1-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-c1-l3",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-c1-l4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"überschätze\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"überschätze\""
  },
  {
   "id": "zh-c1-l4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"vorsichtig\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"vorsichtig\""
  },
  {
   "id": "zh-c1-l5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"verschiebe\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"verschiebe\""
  },
  {
   "id": "zh-c1-l5",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich beruhige\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich beruhige\""
+ },
+ {
+  "id": "zh-c1-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-c1-l5",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-c1-l6",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-c1-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sich berüefe uf\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"sich berüefe uf\""
  },
  {
   "id": "zh-c1-l7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"eskaliere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"eskaliere\""
+ },
+ {
+  "id": "zh-c1-l7",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-c1-l9",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-c1-l10",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"beurkunde\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"beurkunde\""
+ },
+ {
+  "id": "zh-c1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-c1-l10",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
+ },
+ {
+  "id": "zh-c1-l11",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 8: 0 şık"
  },
  {
   "id": "zh-c1-l12",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"aapasse\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"aapasse\""
+ },
+ {
+  "id": "zh-c1-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 6: 0 şık"
+ },
+ {
+  "id": "zh-c1-l12",
+  "rule": "şık sayısı yetersiz",
+  "detail": "soru 7: 0 şık"
  },
  {
   "id": "zh-c1-w1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"liifere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"liifere\""
  },
  {
   "id": "zh-c1-w1",
-  "kural": "alternatif farklı kelimeler",
-  "detay": "görev 2: \"D Ladebsitzer händ Angscht vor weniger Umsatz, aber d Schtudie zäiged, dass d Fuessgänger meh poschte.\""
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"D Ladebsitzer händ Angscht vor weniger Umsatz, aber d Schtudie zäiged, dass d Fuessgänger meh poschte.\""
  },
  {
   "id": "zh-c1-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"entchräfte\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"entchräfte\""
  },
  {
   "id": "zh-c1-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"unterstelle\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"unterstelle\""
  },
  {
   "id": "zh-c1-w2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"differenziere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"differenziere\""
  },
  {
   "id": "zh-c1-w3",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"objektiv\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"objektiv\""
  },
  {
   "id": "zh-c1-w4",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"verallgemeinere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"verallgemeinere\""
  },
  {
   "id": "zh-c1-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"relativiere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"relativiere\""
  },
  {
   "id": "zh-c1-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zruckhaltend\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zruckhaltend\""
  },
  {
   "id": "zh-c1-w6",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"überinterpretiere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"überinterpretiere\""
  },
  {
   "id": "zh-c1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"verallgemeinere\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"verallgemeinere\""
  },
  {
   "id": "zh-c1-w7",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"beiläufig\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"beiläufig\""
  },
  {
   "id": "zh-c1-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"beharre uf\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"beharre uf\""
  },
  {
   "id": "zh-c1-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"iiraume\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"iiraume\""
  },
  {
   "id": "zh-c1-w8",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"widme\""
- },
- {
-  "id": "a1-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"schön\""
- },
- {
-  "id": "a1-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"hören\""
- },
- {
-  "id": "a1-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"müde\""
- },
- {
-  "id": "a1-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"über\""
- },
- {
-  "id": "a1-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"können\""
- },
- {
-  "id": "a1-s2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Wasser\""
- },
- {
-  "id": "a1-s2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"wohnen\""
- },
- {
-  "id": "a1-s2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Vater\""
- },
- {
-  "id": "a1-s2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Zeit\""
- },
- {
-  "id": "a1-s2",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"zwei\""
- },
- {
-  "id": "a2-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"nicht\""
- },
- {
-  "id": "a2-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Milch\""
- },
- {
-  "id": "a2-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"auch\""
- },
- {
-  "id": "a2-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"das Buch\""
- },
- {
-  "id": "a2-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Küche\""
- },
- {
-  "id": "b1-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Stadt\""
- },
- {
-  "id": "b1-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Staat\""
- },
- {
-  "id": "b1-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"sprechen\""
- },
- {
-  "id": "b1-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Sport\""
- },
- {
-  "id": "b1-s1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"spät\""
- },
- {
-  "id": "a2-d1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"bestellen\""
- },
- {
-  "id": "a2-d1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"die Rechnung\""
- },
- {
-  "id": "a2-d1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"bar zahlen\""
- },
- {
-  "id": "a2-d1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"mit Karte\""
- },
- {
-  "id": "a2-d1",
-  "kural": "sözlükçe metinde geçmiyor",
-  "detay": "\"der Kuchen\""
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"widme\""
  }
 ]

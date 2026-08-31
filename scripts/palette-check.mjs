@@ -225,21 +225,21 @@ distinct(AD, 20, "koyu tema");
 
 title("6. SONUC SERITLERI  (globals.css color-mix formulu)");
 contrastRows([["acik", "light", L], ["koyu", "dark", D]].flatMap(([tn, key, T]) =>
-  [["dogru", "mint"], ["yanlis", "rose"]].map(([vn, fam]) => {
+  [["correct", "mint"], ["wrong", "rose"]].map(([vn, fam]) => {
     const a = tone(fam, key);
     return [`${tn}: ${vn} seridi`, mix(a, 55, T["--text"]), mix(a, 16, T["--surface"])];
   })));
 
 title("7. SIK DURUMLARI");
 contrastRows([["acik", "light", L], ["koyu", "dark", D]].flatMap(([tn, key, T]) => [
-  ...[["dogru", "mint"], ["yanlis", "rose"]].map(([vn, fam]) =>
+  ...[["correct", "mint"], ["wrong", "rose"]].map(([vn, fam]) =>
     [`${tn}: ${vn} sik metni`, T["--text"], mix(tone(fam, key), 14, T["--surface"])]),
   [`${tn}: secili sik metni`, T["--text"], mix(tone("brand", key), 8, T["--surface"])],
 ]));
 
 title("8. AYRISMA  [GEVSEK — ikon ve etiketle birlikte]");
 for (const [tn, key] of [["acik", "light"], ["koyu", "dark"]]) {
-  distinct({ marka: tone("brand", key), seri: tone("flame", key), yanlis: tone("rose", key) }, 12, `${tn}: marka / seri / yanlis`);
+  distinct({ brand: tone("brand", key), streak: tone("flame", key), wrong: tone("rose", key) }, 12, `${tn}: brand / streak / wrong`);
   distinct(Object.fromEntries(FAMS.map((f) => [f, tone(f, key)])), 12, `${tn}: alti modul vurgusu`);
 }
 

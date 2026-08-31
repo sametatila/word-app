@@ -28,35 +28,35 @@ async function main() {
   // 429 alan birincil"i hiç kullanılmıyor sanıyordu.
   const usage = (await sql`
     select kind, provider, model,
-           count(*)::int as toplam,
-           count(*) filter (where ok)::int as basarili,
-           round(avg(ms) filter (where ok))::int as ort_ms,
-           coalesce(sum(prompt_tokens), 0)::int as giris,
-           coalesce(sum(completion_tokens), 0)::int as cikis,
-           coalesce(sum(audio_seconds), 0)::int as ses,
-           max(created_at)::text as son
+           count(*)::int as total,
+           count(*) filter (where ok)::int as succeeded,
+           round(avg(ms) filter (where ok))::int as avg_ms,
+           coalesce(sum(prompt_tokens), 0)::int as prompt_tokens_sum,
+           coalesce(sum(completion_tokens), 0)::int as completion_tokens_sum,
+           coalesce(sum(audio_seconds), 0)::int as audio_sec,
+           max(created_at)::text as last_at
     from ai_usage
     where created_at > now() - interval '30 days'
     group by 1, 2, 3
-    order by toplam desc
+    order by total desc
   `) as Row[];
 
   if (usage.length) {
     console.log("\nSon 30 gün · AI çağrıları\n");
     console.log("  iş         sağlayıcı   model                      çağrı  başarı  ort ms   jeton      ses");
     for (const r of usage) {
-      const t = Number(r.toplam), ok = Number(r.basarili);
-      const tok = Number(r.giris) + Number(r.cikis);
+      const t = Number(r.total), ok = Number(r.succeeded);
+      const tok = Number(r.prompt_tokens_sum) + Number(r.completion_tokens_sum);
       console.log(
         `  ${String(r.kind).padEnd(10)} ${String(r.provider).padEnd(11)} ${String(r.model).slice(0, 26).padEnd(26)} ` +
-          `${String(t).padStart(5)}  %${String(Math.round((ok / t) * 100)).padStart(3)}  ${String(r.ort_ms ?? "—").padStart(6)}  ` +
-          `${tok ? String(tok).padStart(7) : "      —"}  ${Number(r.ses) ? String(r.ses).padStart(5) + " sn" : "     —"}`,
+          `${String(t).padStart(5)}  %${String(Math.round((ok / t) * 100)).padStart(3)}  ${String(r.avg_ms ?? "—").padStart(6)}  ` +
+          `${tok ? String(tok).padStart(7) : "      —"}  ${Number(r.audio_sec) ? String(r.audio_sec).padStart(5) + " sn" : "     —"}`,
       );
     }
 
     // Hatalar ayrı: en çok merak edilen "neden düştü" sorusu.
     const errs = (await sql`
-      select provider, status, count(*)::int as n, max(error) as ornek
+      select provider, status, count(*)::int as n, max(error) as sample
       from ai_usage
       where not ok and created_at > now() - interval '30 days'
       group by 1, 2 order by n desc limit 6
@@ -65,7 +65,7 @@ async function main() {
       console.log("\n  Düşen denemeler");
       for (const e of errs) {
         console.log(
-          `    ${String(e.provider).padEnd(11)} ${String(e.status).padStart(3)}  ${String(e.n).padStart(4)} kez  ${String(e.ornek ?? "").slice(0, 60)}`,
+          `    ${String(e.provider).padEnd(11)} ${String(e.status).padStart(3)}  ${String(e.n).padStart(4)} kez  ${String(e.sample ?? "").slice(0, 60)}`,
         );
       }
     }
@@ -93,16 +93,16 @@ async function main() {
 
     // Ücretsiz katmanın bağlayıcı sınırı istek sayısı; günlük en yoğunlar.
     const daily = (await sql`
-      select day::text as gun, kind, count(*)::int as n, coalesce(sum(audio_seconds), 0)::int as ses
+      select day::text as day, kind, count(*)::int as n, coalesce(sum(audio_seconds), 0)::int as audio_sec
       from ai_usage where created_at > now() - interval '30 days'
       group by 1, 2 order by n desc limit 6
     `) as Row[];
     if (daily.length) {
       console.log("\n  Günün en yoğunları (groq ücretsiz sınırı: 2.000 istek · 28.800 sn ses)");
       for (const d of daily) {
-        const n = Number(d.n), sec = Number(d.ses);
+        const n = Number(d.n), sec = Number(d.audio_sec);
         console.log(
-          `    ${d.gun}  ${String(d.kind).padEnd(10)} ${String(n).padStart(5)} istek (%${Math.round((n / 2000) * 100)})` +
+          `    ${d.day}  ${String(d.kind).padEnd(10)} ${String(n).padStart(5)} istek (%${Math.round((n / 2000) * 100)})` +
             (sec ? `  ${sec} sn ses (%${Math.round((sec / 28800) * 100)})` : ""),
         );
       }
@@ -127,7 +127,7 @@ async function main() {
       coalesce(model, '(kayıtsız)') as model,
       count(*)::int as n,
       min(created_at)::text as ilk,
-      max(created_at)::text as son
+      max(created_at)::text as last_at
     from roleplay_logs
     group by 1, 2
     order by n desc
@@ -137,7 +137,7 @@ async function main() {
   console.log("  sağlayıcı      model                              tur    son kullanım");
   for (const r of rows) {
     console.log(
-      `  ${String(r.provider).padEnd(14)} ${String(r.model).slice(0, 34).padEnd(34)} ${String(r.n).padStart(4)}   ${String(r.son).slice(0, 16)}`,
+      `  ${String(r.provider).padEnd(14)} ${String(r.model).slice(0, 34).padEnd(34)} ${String(r.n).padStart(4)}   ${String(r.last_at).slice(0, 16)}`,
     );
   }
 
