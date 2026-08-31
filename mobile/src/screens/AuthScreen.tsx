@@ -10,6 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { XIcon, ChevronLeftIcon, BoltIcon, GoogleIcon, AppleIcon, FacebookIcon, MailIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { signInSocial, requestPasswordReset } from "../lib/auth";
+import { googleSignIn } from "../lib/googleAuth";
 import { notifPrimeNeeded } from "../lib/notifications";
 import { translateAuthError } from "../lib/authErrors";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -23,10 +24,11 @@ const SOCIAL_CALLBACK = "https://www.exfe.me/learn";
 /**
  * Giriş / kayıt. Önce sağlayıcı listesi (Google / Apple / Facebook / E-posta);
  * e-posta formu DOĞRUDAN açık değil, "E-posta ile devam et"e basınca gelir.
- * Sosyal akış WebView'de yürür (Android'de WebView ↔ fetch aynı çerez kavanozu).
+ * Google NATIVE akışta (cihaz hesap seçici → idToken → better-auth); Apple/Facebook
+ * (şimdilik kapalı) etkinleşince WebView redirect yolunu kullanır.
  *
- * `enabled:false` sağlayıcılar Neon Console'da henüz etkin değil ("yakında");
- * konsolda açılınca tek satırla (enabled:true) aktifleşir — aynı akış çalışır.
+ * `enabled:false` sağlayıcılar sunucuda (better-auth) henüz açık değil ("yakında");
+ * creds girilip provider eklenince aktifleşir.
  */
 const PROVIDERS = [
   { id: "google", label: "Google", enabled: true },
@@ -86,6 +88,22 @@ export function AuthScreen() {
     if (socialBusy) return;
     setSocialBusy(provider);
     setError(null);
+    if (provider === "google") {
+      // NATIVE Google: cihaz hesap seçici → idToken → better-auth. WebView yok
+      // (Google embedded WebView OAuth'u engelliyor + cihaz hesaplarını göstermiyordu).
+      const r = await googleSignIn();
+      if (r.ok) {
+        const done = await socialComplete(); // oturumu tazele + onboarding prefs
+        setSocialBusy(null);
+        if (done) void toApp();
+        else setError("Giriş tamamlanamadı. Tekrar dener misin?");
+      } else {
+        setSocialBusy(null);
+        if (r.code !== "CANCELLED") setError(r.message);
+      }
+      return;
+    }
+    // Diğer sağlayıcılar (apple/facebook — şimdilik kapalı): WebView redirect yolu.
     const url = await signInSocial(provider, SOCIAL_CALLBACK);
     setSocialBusy(null);
     if (url) setSocialUrl(url);

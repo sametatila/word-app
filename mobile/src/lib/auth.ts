@@ -86,6 +86,22 @@ export async function signInSocial(provider: string, callbackURL: string): Promi
 }
 
 /**
+ * NATIVE Google girişi (idToken akışı). Cihaz hesap seçiciden alınan idToken'ı
+ * better-auth'a gönderir (POST sign-in/social, `{ idToken: { token } }`). WebView
+ * YOK — embedded WebView OAuth'u Google engelliyor ve cihazın Google hesaplarını
+ * göstermiyordu (her seferinde sıfırdan giriş). idToken'ın `aud`'u Web client ID
+ * = sunucudaki GOOGLE_CLIENT_ID, better-auth onu doğrulayıp oturumu açar; çerez
+ * RN jar'ına yazılır (sonrası e-posta girişiyle birebir aynı).
+ */
+export async function signInGoogleNative(idToken: string): Promise<AuthOutcome> {
+  try {
+    return await parse(await post("sign-in/social", { provider: "google", idToken: { token: idToken } }));
+  } catch {
+    return { ok: false, code: "NETWORK", message: "Bağlantı kurulamadı" };
+  }
+}
+
+/**
  * Parola sıfırlama bağlantısı ister (web'le AYNI Better Auth ucu:
  * request-password-reset). Sıfırlamanın kendisi e-postadaki bağlantıyla
  * web'deki /reset-password sayfasında tamamlanır — mobil ayrı sayfa gerektirmez.
