@@ -21,7 +21,7 @@ import { Avatar } from "@/components/avatar";
  *   - Öğren — kelime turu (SRS/oyun çekirdeği).
  *   - Patika (immersion) — ders iskeleti + okuma/dinleme/yazma harmanı (üretim).
  *   - Beceriler — YENİ, farklı bir kurgu; şimdilik yapım aşamasında bir yer
- *     tutucu (bkz. /beceriler). Menüde görünür ama içeriği henüz yok.
+ *     tutucu (bkz. /skills). Menüde görünür ama içeriği henüz yok.
  *
  * Eskiden üç sekmeydi (Öğren / Dersler / Beceriler); "Dersler" ve "Beceriler"
  * aynı yolun iki parçasıydı ve Immersion ikisini tek moda (Patika) birleştirdi
@@ -35,7 +35,7 @@ import { Avatar } from "@/components/avatar";
 const NAV = [
   { href: "/learn", label: "Öğren", Icon: CardsIcon, key: "learn" },
   { href: "/immersion", label: "Patika", Icon: CompassIcon, key: "immersion" },
-  { href: "/beceriler", label: "Beceriler", Icon: StarIcon, key: "beceriler" },
+  { href: "/skills", label: "Beceriler", Icon: StarIcon, key: "skills" },
 ];
 
 /** Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor. */

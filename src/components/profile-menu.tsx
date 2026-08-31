@@ -17,14 +17,14 @@ import { ChevronRightIcon, PenIcon, WrenchIcon } from "@/components/icons";
  */
 const ITEMS = [
   {
-    href: "/profile/ayarlar",
+    href: "/profile/settings",
     label: "Ayarlar",
     detail: "Hedef, seviye, kurs, ses, tema, bildirim",
     Icon: WrenchIcon,
     tone: "var(--color-brand)",
   },
   {
-    href: "/profile/yazilarim",
+    href: "/profile/writings",
     label: "Yazılarım",
     detail: "Değerlendirilmiş serbest yazıların",
     Icon: PenIcon,

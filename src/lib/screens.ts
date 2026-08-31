@@ -15,7 +15,6 @@ export const SCREEN_KEYS = [
   "learn",
   "weekly",
   "immersion",
-  "beceriler",
   "premium",
   "lessons",
   "lesson",
@@ -40,11 +39,9 @@ export function screenKey(pathname: string): ScreenKey {
   const [, a, b, c] = p.split("/");
   switch (a) {
     case "learn":
-      return b === "haftalik" ? "weekly" : "learn";
+      return b === "weekly" ? "weekly" : "learn";
     case "immersion":
       return "immersion";
-    case "beceriler":
-      return "beceriler";
     case "premium":
       return "premium";
     case "lessons":
@@ -55,9 +52,9 @@ export function screenKey(pathname: string): ScreenKey {
     case "words":
       return "words";
     case "profile":
-      if (b === "ayarlar") return "settings";
-      if (b === "rozetler") return "badges";
-      if (b === "yazilarim") return "writings";
+      if (b === "settings") return "settings";
+      if (b === "badges") return "badges";
+      if (b === "writings") return "writings";
       return "profile";
     case "exam":
       return "exam";

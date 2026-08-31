@@ -175,7 +175,7 @@ export async function buildPlan(
         detail: ws.done ? `skor ${ws.score}` : "15 soru · yazarak · tek hak",
         minutes: 8,
         done: ws.done,
-        href: "/learn/haftalik",
+        href: "/learn/weekly",
       });
     }
   } catch (err) {

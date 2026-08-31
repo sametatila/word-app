@@ -2,11 +2,11 @@ import { VerifyEmailNotice } from "@/components/verify-email-notice";
 
 export const dynamic = "force-dynamic";
 
-export default async function EpostaDogrulaPage({
+export default async function VerifyEmailPage({
   searchParams,
 }: {
-  searchParams: Promise<{ email?: string; durum?: string }>;
+  searchParams: Promise<{ email?: string; status?: string }>;
 }) {
-  const { email, durum } = await searchParams;
-  return <VerifyEmailNotice email={email ?? null} reason={durum === "dogrulanmadi" ? "blocked" : "new"} />;
+  const { email, status } = await searchParams;
+  return <VerifyEmailNotice email={email ?? null} reason={status === "unverified" ? "blocked" : "new"} />;
 }

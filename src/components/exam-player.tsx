@@ -981,7 +981,7 @@ function Result({
       */}
       {moduleIndex !== null ? (
         <Link
-          href={`/lessons/sinav/${level}/${moduleIndex}`}
+          href={`/lessons/boss/${level}/${moduleIndex}`}
           className="muted mt-2 block text-center text-xs font-semibold underline-offset-2 hover:underline"
         >
           Oyun: hız turu · modülün kelimeleri, 60 sn

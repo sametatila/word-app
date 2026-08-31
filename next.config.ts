@@ -62,6 +62,13 @@ const nextConfig: NextConfig = {
     return [
       // İlerleme sayfası Profil'e taşındı; eski yer imleri ve PWA kısayolları kırılmasın.
       { source: "/progress", destination: "/profile", permanent: false },
+      // Türkçe yol adları İngilizceye taşındı; eski bağlantılar, bildirim URL'leri
+      // ve yer imleri kırılmasın.
+      { source: "/beceriler", destination: "/skills", permanent: true },
+      { source: "/learn/haftalik", destination: "/learn/weekly", permanent: true },
+      { source: "/lessons/sinav/:level/:module", destination: "/lessons/boss/:level/:module", permanent: true },
+      { source: "/profile/ayarlar", destination: "/profile/settings", permanent: true },
+      { source: "/profile/yazilarim", destination: "/profile/writings", permanent: true },
     ];
   },
 };

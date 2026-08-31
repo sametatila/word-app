@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: "Beceriler" };
  * Tasarım dili mobil app'teki Beceriler ekranıyla bilerek aynı: yumuşak turuncu
  * kare içinde yıldız, "yapım aşamasında" hapı, kısa açıklama.
  */
-export default function BecerilerPage() {
+export default function SkillsPage() {
   return (
     <div className="mx-auto flex w-full max-w-md flex-1 flex-col items-center justify-center px-6 py-16 text-center">
       <div

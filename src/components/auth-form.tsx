@@ -35,7 +35,7 @@ export function AuthForm() {
         if (!res.ok) {
           // Doğrulanmamış hesap bir hata değil, eksik bir adım: kullanıcıyı oraya al.
           if (isEmailNotVerified(res)) {
-            router.push(`/verify-email?email=${encodeURIComponent(email)}&durum=dogrulanmadi`);
+            router.push(`/verify-email?email=${encodeURIComponent(email)}&status=unverified`);
             return;
           }
           setError(translateAuthError(res));
@@ -63,7 +63,7 @@ export function AuthForm() {
         router.push("/learn");
         router.refresh();
       } else {
-        router.push(`/verify-email?email=${encodeURIComponent(email)}&durum=yeni`);
+        router.push(`/verify-email?email=${encodeURIComponent(email)}&status=new`);
       }
     } finally {
       setBusy(false);

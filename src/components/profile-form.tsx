@@ -47,7 +47,7 @@ const LEVELS = [
  *
  * Eskiden profilin kendisiydi: kimlik başlığı, araya giren ilerleme kartları
  * ve en altta ayarlar. Sesi kapatmak isteyen biri her seferinde bütün profili
- * geçmek zorundaydı. Artık ayrı bir sayfa (/profile/ayarlar) ve profilden tek
+ * geçmek zorundaydı. Artık ayrı bir sayfa (/profile/settings) ve profilden tek
  * dokunuşla açılıyor — kimlik orada kalıyor, buraya yalnızca değiştirilen
  * şeyler geliyor.
  */

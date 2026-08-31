@@ -5,7 +5,7 @@ import { AuthForm } from "@/components/auth-form";
 
 export const dynamic = "force-dynamic";
 
-export default async function GirisPage() {
+export default async function LoginPage() {
   if (!authEnabled) {
     return (
       <div className="mx-auto flex min-h-dvh max-w-md flex-col items-center justify-center gap-4 p-6 text-center">
