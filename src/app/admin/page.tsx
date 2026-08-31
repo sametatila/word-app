@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { isAdmin, adminAllowlistEmpty, getAdminData, type AdminData } from "@/lib/admin";
+import { adminGate, getAdminData, type AdminData } from "@/lib/admin";
 import { UsersTable } from "./users-table";
 
 export const metadata: Metadata = { title: "Yönetim" };
@@ -79,20 +78,24 @@ function TrendChart({ trend }: { trend: AdminData["trend"] }) {
 }
 
 export default async function AdminPage() {
-  if (!(await isAdmin())) {
-    // Allowlist boşsa yapılandırma uyarısı; doluysa 404 (admin değil).
-    if (adminAllowlistEmpty()) {
-      return (
-        <div className="mx-auto max-w-lg px-6 py-16 text-center">
-          <h1 className="text-2xl font-extrabold">Yönetim panosu kapalı</h1>
+  const gate = await adminGate();
+  if (!gate.ok) {
+    return (
+      <div className="mx-auto max-w-lg px-6 py-16 text-center">
+        <h1 className="text-2xl font-extrabold">Yönetim panosu</h1>
+        {gate.email ? (
           <p className="mt-3 text-sm" style={{ color: "var(--text-muted)" }}>
-            Erişim için ortam değişkeni <code>ADMIN_EMAILS</code>&apos;e (virgülle ayrılmış) admin e-postalarını ekle,
-            sonra bu e-postayla giriş yap. Örn: <code>ADMIN_EMAILS=sametatila@gmail.com</code>
+            Bu hesap (<b>{gate.email}</b>) yönetim yetkisine sahip değil. Admin e-postasıyla giriş yap.
+            Ek admin eklemek için <code>ADMIN_EMAILS</code>&apos;e ekle ve <b>yeniden deploy et</b>
+            (ortam değişkeni değişikliği ancak yeni deploy&apos;da etkinleşir).
           </p>
-        </div>
-      );
-    }
-    notFound();
+        ) : (
+          <p className="mt-3 text-sm" style={{ color: "var(--text-muted)" }}>
+            Önce giriş yap, sonra admin e-postasıyla bu sayfaya dön.
+          </p>
+        )}
+      </div>
+    );
   }
 
   const d = await getAdminData();

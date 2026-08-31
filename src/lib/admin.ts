@@ -9,16 +9,21 @@ import { computeFunnel, type Funnel } from "@/lib/funnel";
  * istatistik/telemetriyi en ince detayına kadar görmesi için. Erişim yalnız
  * ADMIN_EMAILS ortam değişkenindeki e-postalara açık (virgülle ayrılmış).
  */
-const ADMINS = (process.env.ADMIN_EMAILS ?? "")
-  .split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
+// Sahibin panosuna her zaman erişebilmesi için varsayılan admin; ek adminler
+// ADMIN_EMAILS ortam değişkeninden (virgülle) eklenir. Not: bir platformda
+// (Vercel vb.) ADMIN_EMAILS'i sonradan eklemek YENİ BİR DEPLOY gerektirir —
+// varsayılan sayesinde deploy beklemeden erişim açık kalır. Yine de e-postayı
+// BİLMEK yetki vermez: bu hesapla GİRİŞ yapmak gerekir.
+const DEFAULT_ADMINS = ["sametatila@gmail.com"];
+const ADMINS = Array.from(new Set(
+  [...DEFAULT_ADMINS, ...(process.env.ADMIN_EMAILS ?? "").split(",")]
+    .map((s) => s.trim().toLowerCase()).filter(Boolean),
+));
 
-export function adminAllowlistEmpty(): boolean {
-  return ADMINS.length === 0;
-}
-
-export async function isAdmin(): Promise<boolean> {
-  const email = (await getUserEmail())?.toLowerCase();
-  return !!email && ADMINS.includes(email);
+/** Admin kapısı — hem yetki hem de tanılama için giriş e-postasını da döndürür. */
+export async function adminGate(): Promise<{ ok: boolean; email: string | null }> {
+  const email = (await getUserEmail()) ?? null;
+  return { ok: !!email && ADMINS.includes(email.toLowerCase()), email };
 }
 
 type Row = Record<string, unknown>;
