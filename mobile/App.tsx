@@ -7,6 +7,7 @@ import { ThemeProvider, useTheme } from "./src/theme";
 import { AuthProvider, useAuth } from "./src/lib/AuthContext";
 import { RootStack } from "./src/navigation/RootStack";
 import { ONBOARDED_KEY } from "./src/lib/onboarding";
+import { migrateLegacyKeys } from "./src/lib/storageMigration";
 import { track } from "./src/lib/track";
 
 function Nav() {
@@ -16,7 +17,8 @@ function Nav() {
 
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {
-    AsyncStorage.getItem(ONBOARDED_KEY)
+    migrateLegacyKeys()
+      .then(() => AsyncStorage.getItem(ONBOARDED_KEY))
       .then((v) => setOnboarded(v === "1"))
       .catch(() => setOnboarded(false));
     // Günün ilk açılışı (§4 funnel) — kind platform:görünüm, value ekran genişliği.

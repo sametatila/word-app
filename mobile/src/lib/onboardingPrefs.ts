@@ -5,7 +5,7 @@
  */
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const KEY = "wortspiel:onboarding-prefs";
+const KEY = "nomi:onboarding-prefs";
 export type OnboardingPrefs = { course?: string; goal?: number; level?: string };
 
 export async function loadOnboardingPrefs(): Promise<OnboardingPrefs> {

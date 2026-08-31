@@ -37,7 +37,7 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 const STEPS: Step[] = [
   {
     key: "welcome", icon: BoltIcon,
-    title: "Wortspiel'e hoş geldin",
+    title: "Nomi'e hoş geldin",
     subtitle: "Kısa turlarla, oyun gibi öğren. Birkaç dakikada başlarsın; düzenli çalışınca ilerleme kalıcı olur.",
   },
   {

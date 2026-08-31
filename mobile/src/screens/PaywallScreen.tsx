@@ -111,7 +111,7 @@ export function PaywallScreen() {
           <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <CrownIcon color="#fff" size={44} />
           </View>
-          <Text variant="display" style={{ marginTop: spacing.md }}>Wortspiel Premium</Text>
+          <Text variant="display" style={{ marginTop: spacing.md }}>Nomi Premium</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>Sınırsız öğren, sınavına tam hazırlan</Text>
         </View>
 

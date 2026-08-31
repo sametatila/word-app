@@ -1,4 +1,4 @@
-package com.wortspiel
+package com.nomi
 
 import android.app.Application
 import com.facebook.react.PackageList

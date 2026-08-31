@@ -6,7 +6,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
  * tehlikesi, cihazda zamanlanır (FCM/sunucu gerekmez). notifee ile tekrarlayan
  * TIMESTAMP tetikleyici. Seçilen saat AsyncStorage'da tutulur.
  */
-const REMINDER_KEY = "wortspiel:reminder"; // "HH:MM" açık, "" kapalı
+const REMINDER_KEY = "nomi:reminder"; // "HH:MM" açık, "" kapalı
 const CHANNEL_ID = "reminder";
 
 export async function getReminder(): Promise<string | null> {
@@ -36,7 +36,7 @@ export async function enableDailyReminder(hhmm: string): Promise<boolean> {
 
   await notifee.createTriggerNotification(
     {
-      title: "Wortspiel",
+      title: "Nomi",
       body: "Bugünkü turunu unutma — serini koru!",
       android: { channelId: CHANNEL_ID, smallIcon: "ic_launcher", pressAction: { id: "default" } },
     },
@@ -58,7 +58,7 @@ export async function showTestNotification(): Promise<boolean> {
   if (settings.authorizationStatus === AuthorizationStatus.DENIED) return false;
   await ensureChannel();
   await notifee.displayNotification({
-    title: "Wortspiel",
+    title: "Nomi",
     body: "Bildirimler açık — her gün nazikçe hatırlatacağız.",
     android: { channelId: CHANNEL_ID, smallIcon: "ic_launcher", pressAction: { id: "default" } },
   });
@@ -69,7 +69,7 @@ export async function showTestNotification(): Promise<boolean> {
  * İlk giriş sonrası bildirim izni "priming"i (§4 — elde tutmanın #1 kaldıracı).
  * Bir kez gösterilir; hatırlatma zaten kuruluysa ya da daha önce sorulduysa atlanır.
  */
-const PRIMED_KEY = "wortspiel:notif-primed";
+const PRIMED_KEY = "nomi:notif-primed";
 
 export async function notifPrimeNeeded(): Promise<boolean> {
   try {
