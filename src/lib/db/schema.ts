@@ -138,6 +138,12 @@ export const profiles = pgTable("profiles", {
    * her gün affeden bir seri, seri olmaktan çıkardı.
    */
   streakRepairAt: date("streak_repair_at"),
+  /**
+   * Premium yetki bitişi (abonelik). null → ücretsiz. `isPremium` bunu okur.
+   * Gerçek satın alma (RevenueCat webhook / web ödeme) bu alanı `grantPremium`
+   * ile yazacak; şimdilik altyapı hazır, kaynak bağlı değil (WP-90).
+   */
+  premiumUntil: timestamp("premium_until", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
