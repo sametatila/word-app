@@ -60,6 +60,18 @@ export type AdminData = {
     userId: string; name: string; level: string; course: string; streak: number;
     longest: number; xp: number; words: number; lastActive: string; joined: string;
   }[];
+  // — UX / platform / öğrenme kalitesi / ops (WP-admin genişletme) —
+  platform: { key: string; count: number; users: number }[];
+  screens: { screen: string; views: number; avgSec: number }[];
+  sessionFunnel: { startCard: number; started: number; done: number; stopped: number };
+  onboarding: { step: string; users: number }[];
+  walk: { reason: number; count: number }[];
+  production: { task: string; count: number; avgScore: number }[];
+  clientErrors: { screen: string; count: number }[];
+  premium: { views: number; gates: number; starts: number; done: number };
+  premiumGates: { feature: string; count: number }[];
+  notifications: { optinYes: number; optinNo: number; sent: number; opened: number };
+  ai: { provider: string; calls: number; okPct: number; avgMs: number; errors: number; tokens: number }[];
   generatedAt: string;
 };
 
@@ -126,6 +138,20 @@ export async function getAdminData(): Promise<AdminData> {
     `),
   ]);
 
+  const [platform, screens, sess, onb, walk, production, clientErrors, prem, premGates, notif, ai] = await Promise.all([
+    rows(sql`select coalesce(kind,'?') k, count(*)::int c, count(distinct user_id)::int u from events where name='app_open' and day >= current_date - 29 group by kind order by c desc`),
+    rows(sql`select coalesce(kind,'?') screen, count(*) filter (where name='page_view')::int views, coalesce(avg(value) filter (where name='time_spent'),0)::int avg_sec from events where name in ('page_view','time_spent') and day >= current_date - 29 group by kind order by views desc limit 20`),
+    rows(sql`select count(*) filter (where name='start_card')::int start_card, count(*) filter (where name='session_start')::int started, count(*) filter (where name='session_done')::int done, count(*) filter (where name='session_stop')::int stopped from events where day >= current_date - 29`),
+    rows(sql`select coalesce(kind,'?') step, count(distinct user_id)::int users from events where name='onboarding_step' and day >= current_date - 29 group by kind`),
+    rows(sql`select value reason, count(*)::int c from events where name='walk_end' and day >= current_date - 29 group by value order by value`),
+    rows(sql`select coalesce(kind,'?') task, count(*)::int c, coalesce(avg(value),0)::int avg_score from events where name='production_attempt' and day >= current_date - 29 group by kind order by c desc`),
+    rows(sql`select coalesce(kind,'?') screen, count(*)::int c from events where name='client_error' and day >= current_date - 29 group by kind order by c desc limit 12`),
+    rows(sql`select count(*) filter (where name='paywall_view')::int views, count(*) filter (where name='premium_gate')::int gates, count(*) filter (where name='purchase_start')::int starts, count(*) filter (where name='purchase_done')::int done from events where day >= current_date - 29`),
+    rows(sql`select coalesce(kind,'?') feature, count(*)::int c from events where name='premium_gate' and day >= current_date - 29 group by kind order by c desc limit 8`),
+    rows(sql`select count(*) filter (where name='push_optin' and value=1)::int optin_yes, count(*) filter (where name='push_optin' and value=0)::int optin_no, count(*) filter (where name='push_sent')::int sent, count(*) filter (where name='push_open')::int opened from events where day >= current_date - 29`),
+    rows(sql`select provider, count(*)::int calls, round(avg(case when ok then 1.0 else 0.0 end)*100,1) ok_pct, coalesce(avg(ms),0)::int avg_ms, count(*) filter (where not ok)::int errors, coalesce(sum(prompt_tokens),0)::bigint tokens from ai_usage where day >= current_date - 6 group by provider order by calls desc`),
+  ]);
+
   const k = kpiRows[0] ?? {};
   return {
     kpi: {
@@ -148,6 +174,17 @@ export async function getAdminData(): Promise<AdminData> {
       streak: num(r.streak), longest: num(r.longest), xp: num(r.xp), words: num(r.words),
       lastActive: str(r.last_active), joined: str(r.joined),
     })),
+    platform: platform.map((r) => ({ key: str(r.k), count: num(r.c), users: num(r.u) })),
+    screens: screens.map((r) => ({ screen: str(r.screen), views: num(r.views), avgSec: num(r.avg_sec) })),
+    sessionFunnel: { startCard: num(sess[0]?.start_card), started: num(sess[0]?.started), done: num(sess[0]?.done), stopped: num(sess[0]?.stopped) },
+    onboarding: onb.map((r) => ({ step: str(r.step), users: num(r.users) })),
+    walk: walk.map((r) => ({ reason: num(r.reason), count: num(r.c) })),
+    production: production.map((r) => ({ task: str(r.task), count: num(r.c), avgScore: num(r.avg_score) })),
+    clientErrors: clientErrors.map((r) => ({ screen: str(r.screen), count: num(r.c) })),
+    premium: { views: num(prem[0]?.views), gates: num(prem[0]?.gates), starts: num(prem[0]?.starts), done: num(prem[0]?.done) },
+    premiumGates: premGates.map((r) => ({ feature: str(r.feature), count: num(r.c) })),
+    notifications: { optinYes: num(notif[0]?.optin_yes), optinNo: num(notif[0]?.optin_no), sent: num(notif[0]?.sent), opened: num(notif[0]?.opened) },
+    ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens) })),
     generatedAt: new Date().toISOString(),
   };
 }
