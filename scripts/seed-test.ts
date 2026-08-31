@@ -18,7 +18,7 @@ type Row = {
 };
 
 async function main() {
-  const pool = new Pool({ connectionString: process.env.TEST_DATABASE_URL });
+  const pool = new Pool({ connectionString: process.env.TEST_DATABASE_URL || undefined });
   const rows = JSON.parse(
     readFileSync(path.join(process.cwd(), "data", "app", "words.json"), "utf8"),
   ) as Row[];

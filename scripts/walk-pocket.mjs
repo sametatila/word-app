@@ -1,7 +1,7 @@
 /**
  * Cepte kipinin arıza sınaması — gerçek uygulama, gerçek tarayıcı.
  *
- *   ALLOW_DEMO_USER=1 npm run build && ALLOW_DEMO_USER=1 npx next start -p 3011
+ *   npm run build && npx next start -p 3011
  *   WALK_BASE=http://localhost:3011 node scripts/walk-pocket.mjs [senaryo]
  *
  * Neden dışarıdan ölçüyor: uygulamanın kendi günlüğüne bakmak, uygulamanın

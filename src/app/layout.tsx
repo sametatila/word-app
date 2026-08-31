@@ -5,15 +5,12 @@ import "./globals.css";
  * Paylaşılan bağlantının nasıl göründüğü.
  *
  * Mutlak adres gerekiyor: `og:image` göreli bir yol kabul etmiyor, sosyal ağ
- * bunu kendi alan adında arar ve önizleme boş çıkardı. Vercel önizleme
- * dağıtımlarında adres her seferinde değiştiği için ortamdan okunuyor;
- * yoksa üretim adresi kullanılıyor.
+ * bunu kendi alan adında arar ve önizleme boş çıkardı. NEXT_PUBLIC_SITE_URL
+ * verilmemişse uygulamanın kök adresi (BETTER_AUTH_URL) kullanılıyor; o da
+ * yoksa üretim adresi.
  */
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "https://exfe.me");
+  process.env.NEXT_PUBLIC_SITE_URL || process.env.BETTER_AUTH_URL || "https://www.exfe.me";
 
 const description =
   "A1'den C1'e 7.392 kelime, on oyun ve kendi kendini ayarlayan tekrar sistemiyle Almanca kelime uygulaması. Hochdeutsch ve Zürih Almancası, Türkçe anlatımıyla.";

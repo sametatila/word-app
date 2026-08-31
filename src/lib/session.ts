@@ -53,7 +53,7 @@ const FREE_SENTENCE_PER_SESSION = 2;
  * eşleştirme dokunulmaz; tek oyun modunda taban yok. `PRODUCTION_FLOOR=0`
  * ile kapatılır (ölçüm/karşılaştırma için).
  */
-const PRODUCTION_FLOOR = Math.max(0, Math.min(0.8, Number(process.env.PRODUCTION_FLOOR ?? 0.4)));
+const PRODUCTION_FLOOR = Math.max(0, Math.min(0.8, Number(process.env.PRODUCTION_FLOOR || 0.4)));
 
 /**
  * Bir oturumda bulunması istenen en az olgun kelime sayısı.
