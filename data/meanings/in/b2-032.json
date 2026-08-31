@@ -1,16 +1,16 @@
 {
- "paket": "b2-032",
+ "packet": "b2-032",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 5195,
    "de": "überparteilich",
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "partiler üstü, tarafsız",
-   "mevcutBeispiel": "Das Bündnis versteht sich als überparteilich und offen für alle.",
-   "mevcutBeispielTr": "Birlik kendini partiler üstü ve herkese açık olarak tanımlıyor."
+   "currentTr": "partiler üstü, tarafsız",
+   "currentBeispiel": "Das Bündnis versteht sich als überparteilich und offen für alle.",
+   "currentBeispielTr": "Birlik kendini partiler üstü ve herkese açık olarak tanımlıyor."
   },
   {
    "id": 5196,
@@ -18,9 +18,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "bağımsız",
-   "mevcutBeispiel": "Ein unabhängiger Gutachter soll die Kosten noch einmal prüfen.",
-   "mevcutBeispielTr": "Bağımsız bir bilirkişi maliyetleri bir kez daha inceleyecek."
+   "currentTr": "bağımsız",
+   "currentBeispiel": "Ein unabhängiger Gutachter soll die Kosten noch einmal prüfen.",
+   "currentBeispielTr": "Bağımsız bir bilirkişi maliyetleri bir kez daha inceleyecek."
   },
   {
    "id": 5197,
@@ -28,9 +28,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ülke çapında, federal düzeyde",
-   "mevcutBeispiel": "Die neue Regelung gilt ab Januar bundesweit.",
-   "mevcutBeispielTr": "Yeni düzenleme ocak ayından itibaren ülke çapında geçerli."
+   "currentTr": "ülke çapında, federal düzeyde",
+   "currentBeispiel": "Die neue Regelung gilt ab Januar bundesweit.",
+   "currentBeispielTr": "Yeni düzenleme ocak ayından itibaren ülke çapında geçerli."
   },
   {
    "id": 5198,
@@ -38,10 +38,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "resmî",
-   "mevcutBeispiel": "Das amtliche Endergebnis liegt erst am Mittwoch vor.",
-   "mevcutBeispielTr": "Resmî kesin sonuç ancak çarşamba günü açıklanacak.",
-   "cakisan": [
+   "currentTr": "resmî",
+   "currentBeispiel": "Das amtliche Endergebnis liegt erst am Mittwoch vor.",
+   "currentBeispielTr": "Resmî kesin sonuç ancak çarşamba günü açıklanacak.",
+   "overlapping": [
     "behördlich (B2)"
    ]
   },
@@ -51,9 +51,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "muhafazakâr",
-   "mevcutBeispiel": "In ländlichen Regionen wählen die Menschen eher konservativ.",
-   "mevcutBeispielTr": "Kırsal bölgelerde insanlar daha çok muhafazakâr oy kullanıyor."
+   "currentTr": "muhafazakâr",
+   "currentBeispiel": "In ländlichen Regionen wählen die Menschen eher konservativ.",
+   "currentBeispielTr": "Kırsal bölgelerde insanlar daha çok muhafazakâr oy kullanıyor."
   },
   {
    "id": 5200,
@@ -61,10 +61,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "karşısında, göz önüne alındığında",
-   "mevcutBeispiel": "Angesichts der leeren Kassen wurden alle Neubauten verschoben.",
-   "mevcutBeispielTr": "Boş kasalar göz önüne alınarak bütün yeni yapılar ertelendi.",
-   "cakisan": [
+   "currentTr": "karşısında, göz önüne alındığında",
+   "currentBeispiel": "Angesichts der leeren Kassen wurden alle Neubauten verschoben.",
+   "currentBeispielTr": "Boş kasalar göz önüne alınarak bütün yeni yapılar ertelendi.",
+   "overlapping": [
     "gegenüber (A2)"
    ]
   },
@@ -74,10 +74,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rechtsanwälte",
-   "mevcutTr": "avukat",
-   "mevcutBeispiel": "Mein Rechtsanwalt rät mir, den Bescheid nicht zu akzeptieren.",
-   "mevcutBeispielTr": "Avukatım tebligatı kabul etmememi tavsiye ediyor.",
-   "cakisan": [
+   "currentTr": "avukat",
+   "currentBeispiel": "Mein Rechtsanwalt rät mir, den Bescheid nicht zu akzeptieren.",
+   "currentBeispielTr": "Avukatım tebligatı kabul etmememi tavsiye ediyor.",
+   "overlapping": [
     "der Anwalt (B1)",
     "die Anwältin (B1)"
    ]
@@ -88,10 +88,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Auflösungen",
-   "mevcutTr": "fesih, sona erdirme, dağıtma",
-   "mevcutBeispiel": "Die Auflösung des Vertrags erfolgte im gegenseitigen Einvernehmen.",
-   "mevcutBeispielTr": "Sözleşmenin feshi karşılıklı anlaşmayla gerçekleşti.",
-   "cakisan": [
+   "currentTr": "fesih, sona erdirme, dağıtma",
+   "currentBeispiel": "Die Auflösung des Vertrags erfolgte im gegenseitigen Einvernehmen.",
+   "currentBeispielTr": "Sözleşmenin feshi karşılıklı anlaşmayla gerçekleşti.",
+   "overlapping": [
     "die Kündigung (B1)"
    ]
   },
@@ -101,10 +101,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nachweise",
-   "mevcutTr": "belge, kanıt, ispat",
-   "mevcutBeispiel": "Ohne Nachweis über Ihr Einkommen kann der Antrag nicht bearbeitet werden.",
-   "mevcutBeispielTr": "Gelirinize ilişkin belge olmadan başvuru işleme alınamaz.",
-   "cakisan": [
+   "currentTr": "belge, kanıt, ispat",
+   "currentBeispiel": "Ohne Nachweis über Ihr Einkommen kann der Antrag nicht bearbeitet werden.",
+   "currentBeispielTr": "Gelirinize ilişkin belge olmadan başvuru işleme alınamaz.",
+   "overlapping": [
     "der Beleg (B1)",
     "das Dokument (B1)",
     "die Urkunde (B1)",
@@ -117,9 +117,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Unterlagen",
-   "mevcutTr": "evrak, belge",
-   "mevcutBeispiel": "Bitte bringen Sie alle Unterlagen im Original zum Termin mit.",
-   "mevcutBeispielTr": "Lütfen bütün evrakları randevuya asıllarıyla birlikte getirin."
+   "currentTr": "evrak, belge",
+   "currentBeispiel": "Bitte bringen Sie alle Unterlagen im Original zum Termin mit.",
+   "currentBeispielTr": "Lütfen bütün evrakları randevuya asıllarıyla birlikte getirin."
   },
   {
    "id": 5205,
@@ -127,9 +127,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bußgelder",
-   "mevcutTr": "idari para cezası",
-   "mevcutBeispiel": "Wer zu schnell fährt, muss mit einem empfindlichen Bußgeld rechnen.",
-   "mevcutBeispielTr": "Hız sınırını aşan kişi ağır bir para cezasını göze almalı."
+   "currentTr": "idari para cezası",
+   "currentBeispiel": "Wer zu schnell fährt, muss mit einem empfindlichen Bußgeld rechnen.",
+   "currentBeispielTr": "Hız sınırını aşan kişi ağır bir para cezasını göze almalı."
   },
   {
    "id": 5206,
@@ -137,9 +137,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sanktionen",
-   "mevcutTr": "yaptırım, müeyyide",
-   "mevcutBeispiel": "Bei wiederholten Verstößen drohen dem Betrieb harte Sanktionen.",
-   "mevcutBeispielTr": "Tekrarlanan ihlallerde işletmeyi ağır yaptırımlar bekliyor."
+   "currentTr": "yaptırım, müeyyide",
+   "currentBeispiel": "Bei wiederholten Verstößen drohen dem Betrieb harte Sanktionen.",
+   "currentBeispielTr": "Tekrarlanan ihlallerde işletmeyi ağır yaptırımlar bekliyor."
   },
   {
    "id": 5207,
@@ -147,9 +147,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verstöße",
-   "mevcutTr": "ihlal, aykırılık",
-   "mevcutBeispiel": "Ein Verstoß gegen die Auflagen führt zum Entzug der Lizenz.",
-   "mevcutBeispielTr": "Şartların ihlali lisansın geri alınmasına yol açar."
+   "currentTr": "ihlal, aykırılık",
+   "currentBeispiel": "Ein Verstoß gegen die Auflagen führt zum Entzug der Lizenz.",
+   "currentBeispielTr": "Şartların ihlali lisansın geri alınmasına yol açar."
   },
   {
    "id": 5208,
@@ -157,9 +157,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vergehen",
-   "mevcutTr": "hafif suç, kabahat",
-   "mevcutBeispiel": "Für ein solches Vergehen sieht das Gesetz eine Geldbuße vor.",
-   "mevcutBeispielTr": "Kanun böyle bir suç için para cezası öngörüyor."
+   "currentTr": "hafif suç, kabahat",
+   "currentBeispiel": "Für ein solches Vergehen sieht das Gesetz eine Geldbuße vor.",
+   "currentBeispielTr": "Kanun böyle bir suç için para cezası öngörüyor."
   },
   {
    "id": 5209,
@@ -167,10 +167,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Straftaten",
-   "mevcutTr": "suç, cürüm",
-   "mevcutBeispiel": "Die Zahl der angezeigten Straftaten ist im letzten Jahr gesunken.",
-   "mevcutBeispielTr": "Geçen yıl bildirilen suçların sayısı azaldı.",
-   "cakisan": [
+   "currentTr": "suç, cürüm",
+   "currentBeispiel": "Die Zahl der angezeigten Straftaten ist im letzten Jahr gesunken.",
+   "currentBeispielTr": "Geçen yıl bildirilen suçların sayısı azaldı.",
+   "overlapping": [
     "die Schuld (B1)",
     "das Verbrechen (B2)"
    ]
@@ -181,9 +181,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ordnungswidrigkeiten",
-   "mevcutTr": "kabahat, idari suç",
-   "mevcutBeispiel": "Falsches Parken gilt lediglich als Ordnungswidrigkeit, nicht als Straftat.",
-   "mevcutBeispielTr": "Hatalı park sadece kabahat sayılır, suç değil."
+   "currentTr": "kabahat, idari suç",
+   "currentBeispiel": "Falsches Parken gilt lediglich als Ordnungswidrigkeit, nicht als Straftat.",
+   "currentBeispielTr": "Hatalı park sadece kabahat sayılır, suç değil."
   },
   {
    "id": 5211,
@@ -191,9 +191,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rechtsgrundlagen",
-   "mevcutTr": "hukuki dayanak, yasal temel",
-   "mevcutBeispiel": "Für diese Maßnahme fehlt der Behörde jede Rechtsgrundlage.",
-   "mevcutBeispielTr": "Bu tedbir için idarenin hiçbir hukuki dayanağı yok."
+   "currentTr": "hukuki dayanak, yasal temel",
+   "currentBeispiel": "Für diese Maßnahme fehlt der Behörde jede Rechtsgrundlage.",
+   "currentBeispielTr": "Bu tedbir için idarenin hiçbir hukuki dayanağı yok."
   },
   {
    "id": 5212,
@@ -201,10 +201,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Entschädigungen",
-   "mevcutTr": "tazminat, zarar karşılığı",
-   "mevcutBeispiel": "Die Fluggesellschaft zahlte den Reisenden eine Entschädigung für die Verspätung.",
-   "mevcutBeispielTr": "Havayolu şirketi yolculara gecikme için tazminat ödedi.",
-   "cakisan": [
+   "currentTr": "tazminat, zarar karşılığı",
+   "currentBeispiel": "Die Fluggesellschaft zahlte den Reisenden eine Entschädigung für die Verspätung.",
+   "currentBeispielTr": "Havayolu şirketi yolculara gecikme için tazminat ödedi.",
+   "overlapping": [
     "die Abfindung (B2)",
     "der Schadenersatz (B2)"
    ]
@@ -215,9 +215,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gemeinden",
-   "mevcutTr": "belediye, köy idaresi",
-   "mevcutBeispiel": "Die Gemeinde erhebt für die Müllabfuhr eine jährliche Gebühr.",
-   "mevcutBeispielTr": "Belediye çöp toplama için yıllık bir ücret alıyor."
+   "currentTr": "belediye, köy idaresi",
+   "currentBeispiel": "Die Gemeinde erhebt für die Müllabfuhr eine jährliche Gebühr.",
+   "currentBeispielTr": "Belediye çöp toplama için yıllık bir ücret alıyor."
   },
   {
    "id": 5214,
@@ -225,9 +225,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Aufenthaltserlaubnisse",
-   "mevcutTr": "oturma izni",
-   "mevcutBeispiel": "Meine Aufenthaltserlaubnis läuft am Ende des Monats ab.",
-   "mevcutBeispielTr": "Oturma iznimin süresi ay sonunda doluyor."
+   "currentTr": "oturma izni",
+   "currentBeispiel": "Meine Aufenthaltserlaubnis läuft am Ende des Monats ab.",
+   "currentBeispielTr": "Oturma iznimin süresi ay sonunda doluyor."
   },
   {
    "id": 5215,
@@ -235,9 +235,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Personalausweise",
-   "mevcutTr": "kimlik kartı, nüfus cüzdanı",
-   "mevcutBeispiel": "Zur Abholung des Pakets benötigen Sie einen gültigen Personalausweis.",
-   "mevcutBeispielTr": "Paketi teslim almak için geçerli bir kimlik kartına ihtiyacınız var."
+   "currentTr": "kimlik kartı, nüfus cüzdanı",
+   "currentBeispiel": "Zur Abholung des Pakets benötigen Sie einen gültigen Personalausweis.",
+   "currentBeispielTr": "Paketi teslim almak için geçerli bir kimlik kartına ihtiyacınız var."
   },
   {
    "id": 5216,
@@ -245,9 +245,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Untervermietungen",
-   "mevcutTr": "alt kiralama, kiradaki yeri başkasına kiraya verme",
-   "mevcutBeispiel": "Eine Untervermietung ist nur mit Erlaubnis des Vermieters zulässig.",
-   "mevcutBeispielTr": "Alt kiralama yalnızca ev sahibinin izniyle mümkündür."
+   "currentTr": "alt kiralama, kiradaki yeri başkasına kiraya verme",
+   "currentBeispiel": "Eine Untervermietung ist nur mit Erlaubnis des Vermieters zulässig.",
+   "currentBeispielTr": "Alt kiralama yalnızca ev sahibinin izniyle mümkündür."
   },
   {
    "id": 5217,
@@ -255,9 +255,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rechtsmittel",
-   "mevcutTr": "kanun yolu, hukuki başvuru yolu",
-   "mevcutBeispiel": "Gegen dieses Urteil sind keine weiteren Rechtsmittel mehr möglich.",
-   "mevcutBeispielTr": "Bu karara karşı başka bir kanun yolu kalmadı."
+   "currentTr": "kanun yolu, hukuki başvuru yolu",
+   "currentBeispiel": "Gegen dieses Urteil sind keine weiteren Rechtsmittel mehr möglich.",
+   "currentBeispielTr": "Bu karara karşı başka bir kanun yolu kalmadı."
   },
   {
    "id": 5218,
@@ -265,10 +265,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verfahren",
-   "mevcutTr": "dava, işlem, süreç",
-   "mevcutBeispiel": "Das Verfahren gegen den Konzern wurde nach zwei Jahren eingestellt.",
-   "mevcutBeispielTr": "Şirkete karşı açılan dava iki yıl sonra düştü.",
-   "cakisan": [
+   "currentTr": "dava, işlem, süreç",
+   "currentBeispiel": "Das Verfahren gegen den Konzern wurde nach zwei Jahren eingestellt.",
+   "currentBeispielTr": "Şirkete karşı açılan dava iki yıl sonra düştü.",
+   "overlapping": [
     "der Prozess (B1)",
     "die Klage (C1)"
    ]
@@ -279,9 +279,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ermittlungen",
-   "mevcutTr": "soruşturma, tahkikat",
-   "mevcutBeispiel": "Die Ermittlungen dauern noch an, erste Ergebnisse liegen aber vor.",
-   "mevcutBeispielTr": "Soruşturma sürüyor, ancak ilk sonuçlar elde edildi."
+   "currentTr": "soruşturma, tahkikat",
+   "currentBeispiel": "Die Ermittlungen dauern noch an, erste Ergebnisse liegen aber vor.",
+   "currentBeispielTr": "Soruşturma sürüyor, ancak ilk sonuçlar elde edildi."
   },
   {
    "id": 5220,
@@ -289,9 +289,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Staatsanwaltschaften",
-   "mevcutTr": "savcılık",
-   "mevcutBeispiel": "Die Staatsanwaltschaft hat Anklage wegen Betrugs erhoben.",
-   "mevcutBeispielTr": "Savcılık dolandırıcılık suçlamasıyla dava açtı."
+   "currentTr": "savcılık",
+   "currentBeispiel": "Die Staatsanwaltschaft hat Anklage wegen Betrugs erhoben.",
+   "currentBeispielTr": "Savcılık dolandırıcılık suçlamasıyla dava açtı."
   },
   {
    "id": 5221,
@@ -299,9 +299,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verteidigungen",
-   "mevcutTr": "savunma",
-   "mevcutBeispiel": "Die Verteidigung beantragte, weitere Zeugen zu laden.",
-   "mevcutBeispielTr": "Savunma, başka tanıkların da çağrılmasını talep etti."
+   "currentTr": "savunma",
+   "currentBeispiel": "Die Verteidigung beantragte, weitere Zeugen zu laden.",
+   "currentBeispielTr": "Savunma, başka tanıkların da çağrılmasını talep etti."
   },
   {
    "id": 5222,
@@ -309,9 +309,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Freisprüche",
-   "mevcutTr": "beraat",
-   "mevcutBeispiel": "Nach langem Prozess endete der Fall mit einem Freispruch.",
-   "mevcutBeispielTr": "Uzun süren yargılamanın ardından dava beraatle sonuçlandı."
+   "currentTr": "beraat",
+   "currentBeispiel": "Nach langem Prozess endete der Fall mit einem Freispruch.",
+   "currentBeispielTr": "Uzun süren yargılamanın ardından dava beraatle sonuçlandı."
   },
   {
    "id": 5223,
@@ -319,9 +319,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ertelenmiş ceza, denetimli serbestlik",
-   "mevcutBeispiel": "Er erhielt eine Freiheitsstrafe von einem Jahr auf Bewährung.",
-   "mevcutBeispielTr": "Bir yıllık hapis cezası ertelenerek denetimli serbestliğe çevrildi."
+   "currentTr": "ertelenmiş ceza, denetimli serbestlik",
+   "currentBeispiel": "Er erhielt eine Freiheitsstrafe von einem Jahr auf Bewährung.",
+   "currentBeispielTr": "Bir yıllık hapis cezası ertelenerek denetimli serbestliğe çevrildi."
   },
   {
    "id": 5224,
@@ -329,9 +329,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "adalet sistemi, yargı",
-   "mevcutBeispiel": "Die überlastete Justiz braucht dringend mehr Personal.",
-   "mevcutBeispielTr": "Aşırı yüklenmiş yargının acilen daha fazla personele ihtiyacı var."
+   "currentTr": "adalet sistemi, yargı",
+   "currentBeispiel": "Die überlastete Justiz braucht dringend mehr Personal.",
+   "currentBeispielTr": "Aşırı yüklenmiş yargının acilen daha fazla personele ihtiyacı var."
   },
   {
    "id": 5225,
@@ -339,9 +339,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yazışma",
-   "mevcutBeispiel": "Bewahren Sie den gesamten Schriftverkehr mit dem Amt sorgfältig auf.",
-   "mevcutBeispielTr": "Daireyle yaptığınız bütün yazışmayı özenle saklayın."
+   "currentTr": "yazışma",
+   "currentBeispiel": "Bewahren Sie den gesamten Schriftverkehr mit dem Amt sorgfältig auf.",
+   "currentBeispielTr": "Daireyle yaptığınız bütün yazışmayı özenle saklayın."
   },
   {
    "id": 5226,
@@ -349,9 +349,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Paragrafen",
-   "mevcutTr": "madde, paragraf",
-   "mevcutBeispiel": "Der zuständige Paragraf regelt die Kündigung von Mietverhältnissen.",
-   "mevcutBeispielTr": "İlgili madde kira ilişkilerinin sona erdirilmesini düzenliyor."
+   "currentTr": "madde, paragraf",
+   "currentBeispiel": "Der zuständige Paragraf regelt die Kündigung von Mietverhältnissen.",
+   "currentBeispielTr": "İlgili madde kira ilişkilerinin sona erdirilmesini düzenliyor."
   },
   {
    "id": 5227,
@@ -359,9 +359,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schweigepflichten",
-   "mevcutTr": "sır saklama yükümlülüğü, gizlilik yükümlülüğü",
-   "mevcutBeispiel": "Ärzte unterliegen gegenüber Dritten einer strengen Schweigepflicht.",
-   "mevcutBeispielTr": "Doktorlar üçüncü kişilere karşı katı bir sır saklama yükümlülüğü altındadır."
+   "currentTr": "sır saklama yükümlülüğü, gizlilik yükümlülüğü",
+   "currentBeispiel": "Ärzte unterliegen gegenüber Dritten einer strengen Schweigepflicht.",
+   "currentBeispielTr": "Doktorlar üçüncü kişilere karşı katı bir sır saklama yükümlülüğü altındadır."
   },
   {
    "id": 5228,
@@ -369,10 +369,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Akten",
-   "mevcutTr": "dosya, evrak dosyası",
-   "mevcutBeispiel": "Der Anwalt bat um Einsicht in die vollständige Akte.",
-   "mevcutBeispielTr": "Avukat dosyanın tamamını incelemek için izin istedi.",
-   "cakisan": [
+   "currentTr": "dosya, evrak dosyası",
+   "currentBeispiel": "Der Anwalt bat um Einsicht in die vollständige Akte.",
+   "currentBeispielTr": "Avukat dosyanın tamamını incelemek için izin istedi.",
+   "overlapping": [
     "die Datei (A2)",
     "die Mappe (B1)"
    ]
@@ -383,9 +383,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zwangsvollstreckungen",
-   "mevcutTr": "cebri icra",
-   "mevcutBeispiel": "Wenn Sie nicht zahlen, droht die Zwangsvollstreckung in Ihr Vermögen.",
-   "mevcutBeispielTr": "Ödeme yapmazsanız mal varlığınıza cebri icra uygulanabilir."
+   "currentTr": "cebri icra",
+   "currentBeispiel": "Wenn Sie nicht zahlen, droht die Zwangsvollstreckung in Ihr Vermögen.",
+   "currentBeispielTr": "Ödeme yapmazsanız mal varlığınıza cebri icra uygulanabilir."
   },
   {
    "id": 5230,
@@ -393,9 +393,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vormundschaften",
-   "mevcutTr": "vesayet",
-   "mevcutBeispiel": "Das Gericht übertrug die Vormundschaft für das Kind der Tante.",
-   "mevcutBeispielTr": "Mahkeme çocuğun vesayetini teyzesine verdi."
+   "currentTr": "vesayet",
+   "currentBeispiel": "Das Gericht übertrug die Vormundschaft für das Kind der Tante.",
+   "currentBeispielTr": "Mahkeme çocuğun vesayetini teyzesine verdi."
   },
   {
    "id": 5231,
@@ -403,10 +403,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Erbschaften",
-   "mevcutTr": "miras",
-   "mevcutBeispiel": "Er hat die Erbschaft wegen der hohen Schulden ausgeschlagen.",
-   "mevcutBeispielTr": "Yüksek borçlar yüzünden mirası reddetti.",
-   "cakisan": [
+   "currentTr": "miras",
+   "currentBeispiel": "Er hat die Erbschaft wegen der hohen Schulden ausgeschlagen.",
+   "currentBeispielTr": "Yüksek borçlar yüzünden mirası reddetti.",
+   "overlapping": [
     "das Vermächtnis (C1)"
    ]
   },
@@ -416,9 +416,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Testamente",
-   "mevcutTr": "vasiyetname",
-   "mevcutBeispiel": "Sein Testament wurde nach dem Tod beim Nachlassgericht eröffnet.",
-   "mevcutBeispielTr": "Vasiyetnamesi ölümünden sonra miras mahkemesinde açıldı."
+   "currentTr": "vasiyetname",
+   "currentBeispiel": "Sein Testament wurde nach dem Tod beim Nachlassgericht eröffnet.",
+   "currentBeispielTr": "Vasiyetnamesi ölümünden sonra miras mahkemesinde açıldı."
   },
   {
    "id": 5233,
@@ -426,9 +426,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Grundbücher",
-   "mevcutTr": "tapu sicili",
-   "mevcutBeispiel": "Der neue Eigentümer wird erst nach Wochen ins Grundbuch eingetragen.",
-   "mevcutBeispielTr": "Yeni malik ancak haftalar sonra tapu siciline kaydediliyor."
+   "currentTr": "tapu sicili",
+   "currentBeispiel": "Der neue Eigentümer wird erst nach Wochen ins Grundbuch eingetragen.",
+   "currentBeispielTr": "Yeni malik ancak haftalar sonra tapu siciline kaydediliyor."
   },
   {
    "id": 5234,
@@ -436,9 +436,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nebenkostenabrechnungen",
-   "mevcutTr": "aidat ve giderler dökümü, yan giderler hesabı",
-   "mevcutBeispiel": "Gegen die Nebenkostenabrechnung habe ich fristgerecht Widerspruch eingelegt.",
-   "mevcutBeispielTr": "Yan giderler hesabına süresi içinde itiraz ettim."
+   "currentTr": "aidat ve giderler dökümü, yan giderler hesabı",
+   "currentBeispiel": "Gegen die Nebenkostenabrechnung habe ich fristgerecht Widerspruch eingelegt.",
+   "currentBeispielTr": "Yan giderler hesabına süresi içinde itiraz ettim."
   },
   {
    "id": 5235,
@@ -446,10 +446,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verklagt",
-   "mevcutTr": "dava açmak, mahkemeye vermek",
-   "mevcutBeispiel": "Die Mieterin will den Eigentümer wegen der Mieterhöhung verklagen.",
-   "mevcutBeispielTr": "Kiracı, kira artışı yüzünden mülk sahibine dava açmak istiyor.",
-   "cakisan": [
+   "currentTr": "dava açmak, mahkemeye vermek",
+   "currentBeispiel": "Die Mieterin will den Eigentümer wegen der Mieterhöhung verklagen.",
+   "currentBeispielTr": "Kiracı, kira artışı yüzünden mülk sahibine dava açmak istiyor.",
+   "overlapping": [
     "anklagen (C1)"
    ]
   },
@@ -459,9 +459,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat eingelegt",
-   "mevcutTr": "itirazda bulunmak, sunmak (Widerspruch/Beschwerde einlegen)",
-   "mevcutBeispiel": "Wir haben gegen die Entscheidung fristgerecht Beschwerde eingelegt.",
-   "mevcutBeispielTr": "Karara karşı süresi içinde şikâyet başvurusunda bulunduk."
+   "currentTr": "itirazda bulunmak, sunmak (Widerspruch/Beschwerde einlegen)",
+   "currentBeispiel": "Wir haben gegen die Entscheidung fristgerecht Beschwerde eingelegt.",
+   "currentBeispielTr": "Karara karşı süresi içinde şikâyet başvurusunda bulunduk."
   },
   {
    "id": 5237,
@@ -469,9 +469,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verhängt",
-   "mevcutTr": "ceza vermek, uygulamak, koymak",
-   "mevcutBeispiel": "Das Gericht verhängte gegen ihn eine hohe Geldbuße.",
-   "mevcutBeispielTr": "Mahkeme onun hakkında yüksek bir para cezasına hükmetti."
+   "currentTr": "ceza vermek, uygulamak, koymak",
+   "currentBeispiel": "Das Gericht verhängte gegen ihn eine hohe Geldbuße.",
+   "currentBeispielTr": "Mahkeme onun hakkında yüksek bir para cezasına hükmetti."
   },
   {
    "id": 5238,
@@ -479,10 +479,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat geahndet",
-   "mevcutTr": "cezalandırmak, yaptırım uygulamak",
-   "mevcutBeispiel": "Solche Verstöße werden von der Behörde konsequent geahndet.",
-   "mevcutBeispielTr": "Bu tür ihlaller idare tarafından kararlılıkla cezalandırılıyor.",
-   "cakisan": [
+   "currentTr": "cezalandırmak, yaptırım uygulamak",
+   "currentBeispiel": "Solche Verstöße werden von der Behörde konsequent geahndet.",
+   "currentBeispielTr": "Bu tür ihlaller idare tarafından kararlılıkla cezalandırılıyor.",
+   "overlapping": [
     "bestrafen (B1)"
    ]
   },
@@ -492,9 +492,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat widerrufen",
-   "mevcutTr": "caymak, geri almak (beyan, izin)",
-   "mevcutBeispiel": "Sie können den Vertrag innerhalb von vierzehn Tagen widerrufen.",
-   "mevcutBeispielTr": "Sözleşmeden on dört gün içinde cayabilirsiniz."
+   "currentTr": "caymak, geri almak (beyan, izin)",
+   "currentBeispiel": "Sie können den Vertrag innerhalb von vierzehn Tagen widerrufen.",
+   "currentBeispielTr": "Sözleşmeden on dört gün içinde cayabilirsiniz."
   },
   {
    "id": 5240,
@@ -502,9 +502,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat befristet",
-   "mevcutTr": "süreyle sınırlamak, süreli yapmak",
-   "mevcutBeispiel": "Die Aufenthaltserlaubnis wurde zunächst auf ein Jahr befristet.",
-   "mevcutBeispielTr": "Oturma izni ilk aşamada bir yılla sınırlandırıldı."
+   "currentTr": "süreyle sınırlamak, süreli yapmak",
+   "currentBeispiel": "Die Aufenthaltserlaubnis wurde zunächst auf ein Jahr befristet.",
+   "currentBeispielTr": "Oturma izni ilk aşamada bir yılla sınırlandırıldı."
   },
   {
    "id": 5241,
@@ -512,9 +512,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat berechtigt",
-   "mevcutTr": "hak tanımak, yetki vermek",
-   "mevcutBeispiel": "Diese Karte berechtigt Sie zur kostenlosen Nutzung der Bibliothek.",
-   "mevcutBeispielTr": "Bu kart size kütüphaneyi ücretsiz kullanma hakkı veriyor."
+   "currentTr": "hak tanımak, yetki vermek",
+   "currentBeispiel": "Diese Karte berechtigt Sie zur kostenlosen Nutzung der Bibliothek.",
+   "currentBeispielTr": "Bu kart size kütüphaneyi ücretsiz kullanma hakkı veriyor."
   },
   {
    "id": 5242,
@@ -522,9 +522,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat vernommen",
-   "mevcutTr": "ifadesini almak, sorgulamak",
-   "mevcutBeispiel": "Die Polizei vernahm den Zeugen mehr als drei Stunden lang.",
-   "mevcutBeispielTr": "Polis tanığın ifadesini üç saatten uzun süre aldı."
+   "currentTr": "ifadesini almak, sorgulamak",
+   "currentBeispiel": "Die Polizei vernahm den Zeugen mehr als drei Stunden lang.",
+   "currentBeispielTr": "Polis tanığın ifadesini üç saatten uzun süre aldı."
   },
   {
    "id": 5243,
@@ -532,9 +532,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat umgemeldet",
-   "mevcutTr": "adres değişikliğini bildirmek, kaydı nakletmek",
-   "mevcutBeispiel": "Nach dem Umzug müssen Sie sich innerhalb von zwei Wochen ummelden.",
-   "mevcutBeispielTr": "Taşındıktan sonra iki hafta içinde adres değişikliğini bildirmelisiniz."
+   "currentTr": "adres değişikliğini bildirmek, kaydı nakletmek",
+   "currentBeispiel": "Nach dem Umzug müssen Sie sich innerhalb von zwei Wochen ummelden.",
+   "currentBeispielTr": "Taşındıktan sonra iki hafta içinde adres değişikliğini bildirmelisiniz."
   },
   {
    "id": 5244,
@@ -542,9 +542,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat zugestellt",
-   "mevcutTr": "tebliğ etmek, teslim etmek",
-   "mevcutBeispiel": "Der Bescheid wurde ihm gestern persönlich zugestellt.",
-   "mevcutBeispielTr": "Tebligat kendisine dün bizzat teslim edildi."
+   "currentTr": "tebliğ etmek, teslim etmek",
+   "currentBeispiel": "Der Bescheid wurde ihm gestern persönlich zugestellt.",
+   "currentBeispielTr": "Tebligat kendisine dün bizzat teslim edildi."
   }
  ]
 }

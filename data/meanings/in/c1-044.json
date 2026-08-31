@@ -1,16 +1,16 @@
 {
- "paket": "c1-044",
+ "packet": "c1-044",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 7403,
    "de": "der Notfallplan",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Notfallpläne",
-   "mevcutTr": "acil durum planı",
-   "mevcutBeispiel": "Ein Notfallplan nützt wenig, wenn ihn niemand je geprobt hat.",
-   "mevcutBeispielTr": "Kimsenin prova etmediği bir acil durum planının pek faydası olmaz."
+   "currentTr": "acil durum planı",
+   "currentBeispiel": "Ein Notfallplan nützt wenig, wenn ihn niemand je geprobt hat.",
+   "currentBeispielTr": "Kimsenin prova etmediği bir acil durum planının pek faydası olmaz."
   },
   {
    "id": 7404,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "atalet, değişime direnç",
-   "mevcutBeispiel": "Das Beharrungsvermögen der Institutionen bremst jede angekündigte Reform.",
-   "mevcutBeispielTr": "Kurumların değişime direnci, ilan edilen her reformu yavaşlatıyor."
+   "currentTr": "atalet, değişime direnç",
+   "currentBeispiel": "Das Beharrungsvermögen der Institutionen bremst jede angekündigte Reform.",
+   "currentBeispielTr": "Kurumların değişime direnci, ilan edilen her reformu yavaşlatıyor."
   },
   {
    "id": 7405,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Erschütterungen",
-   "mevcutTr": "sarsıntı, sarsılma",
-   "mevcutBeispiel": "Das Vertrauen der Anleger hat eine schwere Erschütterung erlitten.",
-   "mevcutBeispielTr": "Yatırımcı güveni ağır bir sarsıntı geçirdi."
+   "currentTr": "sarsıntı, sarsılma",
+   "currentBeispiel": "Das Vertrauen der Anleger hat eine schwere Erschütterung erlitten.",
+   "currentBeispielTr": "Yatırımcı güveni ağır bir sarsıntı geçirdi."
   },
   {
    "id": 7406,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verwerfungen",
-   "mevcutTr": "çarpıklık, kırılma, dengesizlik",
-   "mevcutBeispiel": "Der Umbau der Wirtschaft führt zu sozialen Verwerfungen in ganzen Regionen.",
-   "mevcutBeispielTr": "Ekonominin dönüşümü, bütün bölgelerde toplumsal kırılmalara yol açıyor."
+   "currentTr": "çarpıklık, kırılma, dengesizlik",
+   "currentBeispiel": "Der Umbau der Wirtschaft führt zu sozialen Verwerfungen in ganzen Regionen.",
+   "currentBeispielTr": "Ekonominin dönüşümü, bütün bölgelerde toplumsal kırılmalara yol açıyor."
   },
   {
    "id": 7407,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "riskten kaçınma eğilimi",
-   "mevcutBeispiel": "Übertriebene Risikoscheu kann selbst zu einem erheblichen Risiko werden.",
-   "mevcutBeispielTr": "Aşırı riskten kaçınma, kendisi ciddi bir riske dönüşebilir."
+   "currentTr": "riskten kaçınma eğilimi",
+   "currentBeispiel": "Übertriebene Risikoscheu kann selbst zu einem erheblichen Risiko werden.",
+   "currentBeispielTr": "Aşırı riskten kaçınma, kendisi ciddi bir riske dönüşebilir."
   },
   {
    "id": 7408,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Erwartungshaltungen",
-   "mevcutTr": "beklenti, beklenti içinde olma",
-   "mevcutBeispiel": "Die Erwartungshaltung der Öffentlichkeit beeinflusst die Prognosen der Fachleute.",
-   "mevcutBeispielTr": "Kamuoyunun beklentisi uzmanların tahminlerini etkiliyor."
+   "currentTr": "beklenti, beklenti içinde olma",
+   "currentBeispiel": "Die Erwartungshaltung der Öffentlichkeit beeinflusst die Prognosen der Fachleute.",
+   "currentBeispielTr": "Kamuoyunun beklentisi uzmanların tahminlerini etkiliyor."
   },
   {
    "id": 7409,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Leitbilder",
-   "mevcutTr": "ideal model, yol gösterici ilke",
-   "mevcutBeispiel": "Ohne ein überzeugendes Leitbild bleibt jede Reform Stückwerk.",
-   "mevcutBeispielTr": "İnandırıcı bir ideal model olmadan her reform yarım kalır."
+   "currentTr": "ideal model, yol gösterici ilke",
+   "currentBeispiel": "Ohne ein überzeugendes Leitbild bleibt jede Reform Stückwerk.",
+   "currentBeispielTr": "İnandırıcı bir ideal model olmadan her reform yarım kalır."
   },
   {
    "id": 7410,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Dystopien",
-   "mevcutTr": "distopya, karanlık gelecek tasavvuru",
-   "mevcutBeispiel": "Der Roman zeichnet eine Dystopie, die unangenehm plausibel wirkt.",
-   "mevcutBeispielTr": "Roman, rahatsız edici derecede inandırıcı bir distopya çiziyor."
+   "currentTr": "distopya, karanlık gelecek tasavvuru",
+   "currentBeispiel": "Der Roman zeichnet eine Dystopie, die unangenehm plausibel wirkt.",
+   "currentBeispielTr": "Roman, rahatsız edici derecede inandırıcı bir distopya çiziyor."
   },
   {
    "id": 7411,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Langzeitfolgen",
-   "mevcutTr": "uzun vadeli sonuç",
-   "mevcutBeispiel": "Über die Langzeitfolgen dieses Eingriffs weiß man bisher wenig.",
-   "mevcutBeispielTr": "Bu müdahalenin uzun vadeli sonuçları hakkında şimdiye dek az şey biliniyor."
+   "currentTr": "uzun vadeli sonuç",
+   "currentBeispiel": "Über die Langzeitfolgen dieses Eingriffs weiß man bisher wenig.",
+   "currentBeispielTr": "Bu müdahalenin uzun vadeli sonuçları hakkında şimdiye dek az şey biliniyor."
   },
   {
    "id": 7412,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vorkehrungen",
-   "mevcutTr": "önlem, tedbir",
-   "mevcutBeispiel": "Die Kommune hat für den Ernstfall umfangreiche Vorkehrungen getroffen.",
-   "mevcutBeispielTr": "Belediye, olası kriz için kapsamlı önlemler aldı."
+   "currentTr": "önlem, tedbir",
+   "currentBeispiel": "Die Kommune hat für den Ernstfall umfangreiche Vorkehrungen getroffen.",
+   "currentBeispielTr": "Belediye, olası kriz için kapsamlı önlemler aldı."
   },
   {
    "id": 7413,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Dominoeffekte",
-   "mevcutTr": "domino etkisi, zincirleme etki",
-   "mevcutBeispiel": "Der Ausfall eines Zulieferers löste einen Dominoeffekt in der Branche aus.",
-   "mevcutBeispielTr": "Bir tedarikçinin devre dışı kalması sektörde domino etkisi yarattı."
+   "currentTr": "domino etkisi, zincirleme etki",
+   "currentBeispiel": "Der Ausfall eines Zulieferers löste einen Dominoeffekt in der Branche aus.",
+   "currentBeispielTr": "Bir tedarikçinin devre dışı kalması sektörde domino etkisi yarattı."
   },
   {
    "id": 7414,
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kurskorrekturen",
-   "mevcutTr": "rota düzeltmesi, yön değişikliği",
-   "mevcutBeispiel": "Eine frühe Kurskorrektur wäre billiger gewesen als die späte Rettung.",
-   "mevcutBeispielTr": "Erken bir rota düzeltmesi, geç kalmış kurtarmadan daha ucuza gelirdi."
+   "currentTr": "rota düzeltmesi, yön değişikliği",
+   "currentBeispiel": "Eine frühe Kurskorrektur wäre billiger gewesen als die späte Rettung.",
+   "currentBeispielTr": "Erken bir rota düzeltmesi, geç kalmış kurtarmadan daha ucuza gelirdi."
   },
   {
    "id": 7415,
@@ -128,9 +128,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Erblasten",
-   "mevcutTr": "geçmişten devralınan yük, miras kalan sorun",
-   "mevcutBeispiel": "Die kommende Regierung übernimmt eine schwere finanzielle Erblast.",
-   "mevcutBeispielTr": "Gelecek hükûmet ağır bir mali yükü devralıyor."
+   "currentTr": "geçmişten devralınan yük, miras kalan sorun",
+   "currentBeispiel": "Die kommende Regierung übernimmt eine schwere finanzielle Erblast.",
+   "currentBeispielTr": "Gelecek hükûmet ağır bir mali yükü devralıyor."
   },
   {
    "id": 7416,
@@ -138,9 +138,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat antizipiert",
-   "mevcutTr": "önceden sezmek, öngörmek",
-   "mevcutBeispiel": "Gute Planung antizipiert Widerstände, statt sie später zu beklagen.",
-   "mevcutBeispielTr": "İyi planlama, direnci sonradan yakınmak yerine önceden sezer."
+   "currentTr": "önceden sezmek, öngörmek",
+   "currentBeispiel": "Gute Planung antizipiert Widerstände, statt sie später zu beklagen.",
+   "currentBeispielTr": "İyi planlama, direnci sonradan yakınmak yerine önceden sezer."
   },
   {
    "id": 7417,
@@ -148,9 +148,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat ausgelotet",
-   "mevcutTr": "yoklamak, sınırlarını araştırmak",
-   "mevcutBeispiel": "Die Kommission lotet aus, welche Maßnahmen politisch überhaupt durchsetzbar sind.",
-   "mevcutBeispielTr": "Komisyon, hangi tedbirlerin siyaseten uygulanabilir olduğunu yokluyor."
+   "currentTr": "yoklamak, sınırlarını araştırmak",
+   "currentBeispiel": "Die Kommission lotet aus, welche Maßnahmen politisch überhaupt durchsetzbar sind.",
+   "currentBeispielTr": "Komisyon, hangi tedbirlerin siyaseten uygulanabilir olduğunu yokluyor."
   },
   {
    "id": 7418,
@@ -158,9 +158,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat durchgespielt",
-   "mevcutTr": "baştan sona düşünmek, senaryolarını denemek",
-   "mevcutBeispiel": "Im Krisenstab wurden alle denkbaren Verläufe einmal durchgespielt.",
-   "mevcutBeispielTr": "Kriz masasında akla gelebilecek bütün seyirler birer kez denendi."
+   "currentTr": "baştan sona düşünmek, senaryolarını denemek",
+   "currentBeispiel": "Im Krisenstab wurden alle denkbaren Verläufe einmal durchgespielt.",
+   "currentBeispielTr": "Kriz masasında akla gelebilecek bütün seyirler birer kez denendi."
   },
   {
    "id": 7419,
@@ -168,9 +168,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist ausgeblieben",
-   "mevcutTr": "gerçekleşmemek, gelmemek",
-   "mevcutBeispiel": "Der erhoffte Aufschwung ist auch in diesem Jahr ausgeblieben.",
-   "mevcutBeispielTr": "Umulan canlanma bu yıl da gerçekleşmedi."
+   "currentTr": "gerçekleşmemek, gelmemek",
+   "currentBeispiel": "Der erhoffte Aufschwung ist auch in diesem Jahr ausgeblieben.",
+   "currentBeispielTr": "Umulan canlanma bu yıl da gerçekleşmedi."
   },
   {
    "id": 7420,
@@ -178,9 +178,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist umgeschlagen",
-   "mevcutTr": "birdenbire tersine dönmek, aniden değişmek",
-   "mevcutBeispiel": "Die anfängliche Begeisterung ist rasch in Ernüchterung umgeschlagen.",
-   "mevcutBeispielTr": "Başlangıçtaki coşku hızla hayal kırıklığına dönüştü."
+   "currentTr": "birdenbire tersine dönmek, aniden değişmek",
+   "currentBeispiel": "Die anfängliche Begeisterung ist rasch in Ernüchterung umgeschlagen.",
+   "currentBeispielTr": "Başlangıçtaki coşku hızla hayal kırıklığına dönüştü."
   },
   {
    "id": 7421,
@@ -188,9 +188,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat einkalkuliert",
-   "mevcutTr": "hesaba katmak, göz önünde bulundurmak",
-   "mevcutBeispiel": "Rückschläge sind in diesem Zeitplan bereits einkalkuliert.",
-   "mevcutBeispielTr": "Bu zaman planında aksaklıklar şimdiden hesaba katılmış."
+   "currentTr": "hesaba katmak, göz önünde bulundurmak",
+   "currentBeispiel": "Rückschläge sind in diesem Zeitplan bereits einkalkuliert.",
+   "currentBeispielTr": "Bu zaman planında aksaklıklar şimdiden hesaba katılmış."
   },
   {
    "id": 7422,
@@ -198,10 +198,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat herbeigeführt",
-   "mevcutTr": "sağlamak, gerçekleştirmek, yol açmak",
-   "mevcutBeispiel": "Eine Entscheidung sollte man herbeiführen, bevor die Lage kippt.",
-   "mevcutBeispielTr": "Durum devrilmeden önce bir karara varılmalı.",
-   "cakisan": [
+   "currentTr": "sağlamak, gerçekleştirmek, yol açmak",
+   "currentBeispiel": "Eine Entscheidung sollte man herbeiführen, bevor die Lage kippt.",
+   "currentBeispielTr": "Durum devrilmeden önce bir karara varılmalı.",
+   "overlapping": [
     "bereitstellen (C1)"
    ]
   },
@@ -211,10 +211,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat veranschlagt",
-   "mevcutTr": "öngörmek, tahmini olarak belirlemek",
-   "mevcutBeispiel": "Für den Umbau sind fünf Jahre veranschlagt, realistisch sind acht.",
-   "mevcutBeispielTr": "Dönüşüm için beş yıl öngörülmüş, gerçekçisi sekiz.",
-   "cakisan": [
+   "currentTr": "öngörmek, tahmini olarak belirlemek",
+   "currentBeispiel": "Für den Umbau sind fünf Jahre veranschlagt, realistisch sind acht.",
+   "currentBeispielTr": "Dönüşüm için beş yıl öngörülmüş, gerçekçisi sekiz.",
+   "overlapping": [
     "prognostizieren (C1)"
    ]
   },
@@ -224,9 +224,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat sich gewappnet",
-   "mevcutTr": "hazırlıklı olmak, kendini donatmak",
-   "mevcutBeispiel": "Die Städte wappnen sich gegen immer längere Hitzeperioden.",
-   "mevcutBeispielTr": "Şehirler giderek uzayan sıcak dönemlere karşı hazırlanıyor."
+   "currentTr": "hazırlıklı olmak, kendini donatmak",
+   "currentBeispiel": "Die Städte wappnen sich gegen immer längere Hitzeperioden.",
+   "currentBeispielTr": "Şehirler giderek uzayan sıcak dönemlere karşı hazırlanıyor."
   },
   {
    "id": 7425,
@@ -234,9 +234,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kestirilemez, öngörülemez",
-   "mevcutBeispiel": "Ein Ausstieg hätte Folgen von unabsehbarer Tragweite.",
-   "mevcutBeispielTr": "Bir çekilmenin kapsamı kestirilemez sonuçları olurdu."
+   "currentTr": "kestirilemez, öngörülemez",
+   "currentBeispiel": "Ein Ausstieg hätte Folgen von unabsehbarer Tragweite.",
+   "currentBeispielTr": "Bir çekilmenin kapsamı kestirilemez sonuçları olurdu."
   },
   {
    "id": 7426,
@@ -244,9 +244,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ileriyi gören, öngörülü",
-   "mevcutBeispiel": "Vorausschauendes Handeln kostet heute Geld und spart morgen viel mehr.",
-   "mevcutBeispielTr": "Öngörülü davranmak bugün para götürür, yarın çok daha fazlasını kazandırır."
+   "currentTr": "ileriyi gören, öngörülü",
+   "currentBeispiel": "Vorausschauendes Handeln kostet heute Geld und spart morgen viel mehr.",
+   "currentBeispielTr": "Öngörülü davranmak bugün para götürür, yarın çok daha fazlasını kazandırır."
   },
   {
    "id": 7427,
@@ -254,9 +254,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "varsayımsal, farazi",
-   "mevcutBeispiel": "Diese Zahlen sind rein hypothetisch und ersetzen keine Messung.",
-   "mevcutBeispielTr": "Bu rakamlar tamamen varsayımsal, ölçümün yerini tutmaz."
+   "currentTr": "varsayımsal, farazi",
+   "currentBeispiel": "Diese Zahlen sind rein hypothetisch und ersetzen keine Messung.",
+   "currentBeispielTr": "Bu rakamlar tamamen varsayımsal, ölçümün yerini tutmaz."
   },
   {
    "id": 7428,
@@ -264,9 +264,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sinsi, yavaş yavaş ilerleyen",
-   "mevcutBeispiel": "Der schleichende Verlust an Vertrauen fällt zunächst kaum auf.",
-   "mevcutBeispielTr": "Güvenin sinsice aşınması ilk başta neredeyse fark edilmiyor."
+   "currentTr": "sinsi, yavaş yavaş ilerleyen",
+   "currentBeispiel": "Der schleichende Verlust an Vertrauen fällt zunächst kaum auf.",
+   "currentBeispielTr": "Güvenin sinsice aşınması ilk başta neredeyse fark edilmiyor."
   },
   {
    "id": 7429,
@@ -274,9 +274,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "vahim, uğursuz sonuçlara yol açan",
-   "mevcutBeispiel": "Das Zögern in den ersten Wochen erwies sich als verhängnisvoll.",
-   "mevcutBeispielTr": "İlk haftalardaki tereddüt vahim sonuçlar doğurdu."
+   "currentTr": "vahim, uğursuz sonuçlara yol açan",
+   "currentBeispiel": "Das Zögern in den ersten Wochen erwies sich als verhängnisvoll.",
+   "currentBeispielTr": "İlk haftalardaki tereddüt vahim sonuçlar doğurdu."
   }
  ]
 }

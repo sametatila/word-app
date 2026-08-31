@@ -1,7 +1,7 @@
 {
- "paket": "de-022",
+ "packet": "de-022",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "c1-s1",
    "skill": "speaking",
@@ -9,44 +9,44 @@
    "title": "Fremdwörter",
    "genre": "Ses çalışması",
    "intro": "Bu kelimeler Türkçede de var, çünkü iki dil de Fransızcadan almış. Tuzak da orada: tanıdık geldikleri için Türkçe alışkanlığıyla okunuyorlar. Vurguları da yerli Almanca kelimelerin tersine son hecede.",
-   "metin": "Ich studiere an der Universität.\nWir essen heute im Restaurant.\nMein Bruder ist Ingenieur.\nSie arbeitet als Journalistin.\nDas Auto steht in der Garage.\nDer Chef hat den Termin verschoben.",
+   "text": "Ich studiere an der Universität.\nWir essen heute im Restaurant.\nMein Bruder ist Ingenieur.\nSie arbeitet als Journalistin.\nDas Auto steht in der Garage.\nDer Chef hat den Termin verschoben.",
    "gloss": [
     {
      "de": "die Universität",
-     "mevcutTr": "üniversite",
-     "havuz": {
+     "currentTr": "üniversite",
+     "pool": {
       "tr": "üniversite",
       "en": "university"
      }
     },
     {
      "de": "das Restaurant",
-     "mevcutTr": "restoran",
-     "havuz": {
+     "currentTr": "restoran",
+     "pool": {
       "tr": "restoran",
       "en": "restaurant"
      }
     },
     {
      "de": "der Ingenieur",
-     "mevcutTr": "mühendis",
-     "havuz": {
+     "currentTr": "mühendis",
+     "pool": {
       "tr": "mühendis",
       "en": "engineer"
      }
     },
     {
      "de": "der Journalist",
-     "mevcutTr": "gazeteci",
-     "havuz": {
+     "currentTr": "gazeteci",
+     "pool": {
       "tr": "gazeteci",
       "en": "journalist"
      }
     },
     {
      "de": "die Garage",
-     "mevcutTr": "garaj",
-     "havuz": {
+     "currentTr": "garaj",
+     "pool": {
       "tr": "garaj",
       "en": "garage"
      }
@@ -55,27 +55,27 @@
    "tasks": [
     {
      "de": "Ich studiere an der Universität.",
-     "mevcutTr": "Üniversitede okuyorum."
+     "currentTr": "Üniversitede okuyorum."
     },
     {
      "de": "Wir essen heute im Restaurant.",
-     "mevcutTr": "Bugün restoranda yemek yiyoruz."
+     "currentTr": "Bugün restoranda yemek yiyoruz."
     },
     {
      "de": "Mein Bruder ist Ingenieur.",
-     "mevcutTr": "Erkek kardeşim mühendis."
+     "currentTr": "Erkek kardeşim mühendis."
     },
     {
      "de": "Sie arbeitet als Journalistin.",
-     "mevcutTr": "Gazeteci olarak çalışıyor."
+     "currentTr": "Gazeteci olarak çalışıyor."
     },
     {
      "de": "Das Auto steht in der Garage.",
-     "mevcutTr": "Araba garajda duruyor."
+     "currentTr": "Araba garajda duruyor."
     },
     {
      "de": "Der Chef hat den Termin verschoben.",
-     "mevcutTr": "Patron randevuyu erteledi."
+     "currentTr": "Patron randevuyu erteledi."
     }
    ]
   },
@@ -86,49 +86,49 @@
    "title": "Auslautverhärtung",
    "genre": "Ses çalışması",
    "intro": "Kelime sonundaki b, d, g sertleşir (Tag = TAAK). Ama çekimlenip ünlü eklenince yumuşak hâline döner (Tage = TAA-ge). Kuralın kolay kısmı ilki, zor kısmı ikincisi.",
-   "metin": "Der Tag war lang, aber die Tage davor waren kurz.\nDer Hund bellt, die Hunde schlafen.\nDas Kind spielt mit den anderen Kindern.\nDer Berg ist hoch, die Berge sind höher.\nDas Auto ist gelb, ich mag gelbe Autos.",
+   "text": "Der Tag war lang, aber die Tage davor waren kurz.\nDer Hund bellt, die Hunde schlafen.\nDas Kind spielt mit den anderen Kindern.\nDer Berg ist hoch, die Berge sind höher.\nDas Auto ist gelb, ich mag gelbe Autos.",
    "gloss": [
     {
      "de": "der Tag / die Tage",
-     "mevcutTr": "gün / günler"
+     "currentTr": "gün / günler"
     },
     {
      "de": "der Hund / die Hunde",
-     "mevcutTr": "köpek / köpekler"
+     "currentTr": "köpek / köpekler"
     },
     {
      "de": "gelb / gelbe",
-     "mevcutTr": "sarı"
+     "currentTr": "sarı"
     },
     {
      "de": "das Kind / die Kinder",
-     "mevcutTr": "çocuk / çocuklar"
+     "currentTr": "çocuk / çocuklar"
     },
     {
      "de": "der Berg / die Berge",
-     "mevcutTr": "dağ / dağlar"
+     "currentTr": "dağ / dağlar"
     }
    ],
    "tasks": [
     {
      "de": "Der Tag war lang, aber die Tage davor waren kurz.",
-     "mevcutTr": "Gün uzundu ama ondan önceki günler kısaydı."
+     "currentTr": "Gün uzundu ama ondan önceki günler kısaydı."
     },
     {
      "de": "Der Hund bellt, die Hunde schlafen.",
-     "mevcutTr": "Köpek havlıyor, köpekler uyuyor."
+     "currentTr": "Köpek havlıyor, köpekler uyuyor."
     },
     {
      "de": "Das Kind spielt mit den anderen Kindern.",
-     "mevcutTr": "Çocuk diğer çocuklarla oynuyor."
+     "currentTr": "Çocuk diğer çocuklarla oynuyor."
     },
     {
      "de": "Der Berg ist hoch, die Berge sind höher.",
-     "mevcutTr": "Dağ yüksek, dağlar daha yüksek."
+     "currentTr": "Dağ yüksek, dağlar daha yüksek."
     },
     {
      "de": "Das Auto ist gelb, ich mag gelbe Autos.",
-     "mevcutTr": "Araba sarı, sarı arabaları severim."
+     "currentTr": "Araba sarı, sarı arabaları severim."
     }
    ]
   },
@@ -139,36 +139,36 @@
    "title": "Im Café",
    "genre": "Diyalog",
    "intro": "Garson seninle konuşuyor. Sorularına yüksek sesle Almanca cevap ver — ne dediğine göre konuşma farklı ilerler.",
-   "metin": "",
+   "text": "",
    "gloss": [
     {
      "de": "bestellen",
-     "mevcutTr": "sipariş etmek",
-     "havuz": {
+     "currentTr": "sipariş etmek",
+     "pool": {
       "tr": "sipariş etmek",
       "en": "to order"
      }
     },
     {
      "de": "die Rechnung",
-     "mevcutTr": "hesap",
-     "havuz": {
+     "currentTr": "hesap",
+     "pool": {
       "tr": "fatura",
       "en": "bill"
      }
     },
     {
      "de": "bar zahlen",
-     "mevcutTr": "nakit ödemek"
+     "currentTr": "nakit ödemek"
     },
     {
      "de": "mit Karte",
-     "mevcutTr": "kartla"
+     "currentTr": "kartla"
     },
     {
      "de": "der Kuchen",
-     "mevcutTr": "kek",
-     "havuz": {
+     "currentTr": "kek",
+     "pool": {
       "tr": "kek",
       "en": "cake"
      }
@@ -177,23 +177,23 @@
    "targets": [
     {
      "de": "Ich hätte gern …",
-     "mevcutTr": "… istiyorum"
+     "currentTr": "… istiyorum"
     },
     {
      "de": "mit Milch / ohne Zucker",
-     "mevcutTr": "sütlü / şekersiz"
+     "currentTr": "sütlü / şekersiz"
     },
     {
      "de": "Was empfehlen Sie?",
-     "mevcutTr": "Ne tavsiye edersiniz?"
+     "currentTr": "Ne tavsiye edersiniz?"
     },
     {
      "de": "Die Rechnung, bitte.",
-     "mevcutTr": "Hesap, lütfen."
+     "currentTr": "Hesap, lütfen."
     },
     {
      "de": "Ich zahle bar / mit Karte.",
-     "mevcutTr": "Nakit / kartla ödüyorum."
+     "currentTr": "Nakit / kartla ödüyorum."
     }
    ]
   },
@@ -204,57 +204,57 @@
    "title": "Nach dem Weg fragen",
    "genre": "Diyalog",
    "intro": "Sokakta birine yol soruyorsun. Yüksek sesle Almanca cevap ver — ne dediğine göre konuşma değişir.",
-   "metin": "",
+   "text": "",
    "gloss": [
     {
      "de": "der Bahnhof",
-     "mevcutTr": "tren istasyonu",
-     "havuz": {
+     "currentTr": "tren istasyonu",
+     "pool": {
       "tr": "tren istasyonu",
       "en": "train station"
      }
     },
     {
      "de": "die Apotheke",
-     "mevcutTr": "eczane",
-     "havuz": {
+     "currentTr": "eczane",
+     "pool": {
       "tr": "eczane",
       "en": "pharmacy"
      }
     },
     {
      "de": "geradeaus",
-     "mevcutTr": "dümdüz",
-     "havuz": {
+     "currentTr": "dümdüz",
+     "pool": {
       "tr": "dümdüz",
       "en": "straight ahead"
      }
     },
     {
      "de": "links / rechts",
-     "mevcutTr": "sol / sağ"
+     "currentTr": "sol / sağ"
     },
     {
      "de": "zu Fuß",
-     "mevcutTr": "yürüyerek"
+     "currentTr": "yürüyerek"
     }
    ],
    "targets": [
     {
      "de": "Entschuldigung, wo ist …?",
-     "mevcutTr": "Affedersiniz, … nerede?"
+     "currentTr": "Affedersiniz, … nerede?"
     },
     {
      "de": "Wie komme ich zum …?",
-     "mevcutTr": "…'a nasıl giderim?"
+     "currentTr": "…'a nasıl giderim?"
     },
     {
      "de": "Ist es weit?",
-     "mevcutTr": "Uzak mı?"
+     "currentTr": "Uzak mı?"
     },
     {
      "de": "Vielen Dank!",
-     "mevcutTr": "Çok teşekkürler!"
+     "currentTr": "Çok teşekkürler!"
     }
    ]
   },
@@ -265,40 +265,40 @@
    "title": "Beim Arzt",
    "genre": "Diyalog",
    "intro": "Doktordasın. Şikâyetini yüksek sesle Almanca anlat — ne dediğine göre doktor farklı sorular soruyor.",
-   "metin": "",
+   "text": "",
    "gloss": [
     {
      "de": "die Schmerzen",
-     "mevcutTr": "ağrı"
+     "currentTr": "ağrı"
     },
     {
      "de": "der Hals",
-     "mevcutTr": "boğaz",
-     "havuz": {
+     "currentTr": "boğaz",
+     "pool": {
       "tr": "boyun",
       "en": "neck"
      }
     },
     {
      "de": "das Fieber",
-     "mevcutTr": "ateş",
-     "havuz": {
+     "currentTr": "ateş",
+     "pool": {
       "tr": "ateş",
       "en": "fever"
      }
     },
     {
      "de": "das Rezept",
-     "mevcutTr": "reçete",
-     "havuz": {
+     "currentTr": "reçete",
+     "pool": {
       "tr": "tarif",
       "en": "recipe"
      }
     },
     {
      "de": "sich ausruhen",
-     "mevcutTr": "dinlenmek",
-     "havuz": {
+     "currentTr": "dinlenmek",
+     "pool": {
       "tr": "dinlenmek",
       "en": "to rest"
      }
@@ -307,19 +307,19 @@
    "targets": [
     {
      "de": "Ich habe … schmerzen.",
-     "mevcutTr": "…m ağrıyor."
+     "currentTr": "…m ağrıyor."
     },
     {
      "de": "Seit … Tagen.",
-     "mevcutTr": "… gündür."
+     "currentTr": "… gündür."
     },
     {
      "de": "Ich habe Fieber.",
-     "mevcutTr": "Ateşim var."
+     "currentTr": "Ateşim var."
     },
     {
      "de": "Brauche ich ein Rezept?",
-     "mevcutTr": "Reçeteye ihtiyacım var mı?"
+     "currentTr": "Reçeteye ihtiyacım var mı?"
     }
    ]
   },
@@ -330,40 +330,40 @@
    "title": "Vorstellungsgespräch",
    "genre": "Diyalog",
    "intro": "Bir iş görüşmesindesin. Sorulara yüksek sesle Almanca cevap ver — gerçek bir görüşmenin sırasıyla ilerliyor.",
-   "metin": "",
+   "text": "",
    "gloss": [
     {
      "de": "die Erfahrung",
-     "mevcutTr": "deneyim",
-     "havuz": {
+     "currentTr": "deneyim",
+     "pool": {
       "tr": "deneyim",
       "en": "experience"
      }
     },
     {
      "de": "die Stärke",
-     "mevcutTr": "güçlü yön"
+     "currentTr": "güçlü yön"
     },
     {
      "de": "das Gehalt",
-     "mevcutTr": "maaş",
-     "havuz": {
+     "currentTr": "maaş",
+     "pool": {
       "tr": "maaş",
       "en": "salary"
      }
     },
     {
      "de": "die Stelle",
-     "mevcutTr": "iş",
-     "havuz": {
+     "currentTr": "iş",
+     "pool": {
       "tr": "iş",
       "en": "position"
      }
     },
     {
      "de": "sich bewerben",
-     "mevcutTr": "başvurmak",
-     "havuz": {
+     "currentTr": "başvurmak",
+     "pool": {
       "tr": "başvurmak",
       "en": "to apply"
      }
@@ -372,19 +372,19 @@
    "targets": [
     {
      "de": "Ich habe … Jahre Erfahrung.",
-     "mevcutTr": "… yıllık deneyimim var."
+     "currentTr": "… yıllık deneyimim var."
     },
     {
      "de": "Meine Stärke ist …",
-     "mevcutTr": "Güçlü yönüm …"
+     "currentTr": "Güçlü yönüm …"
     },
     {
      "de": "Ich stelle mir … vor.",
-     "mevcutTr": "… düşünüyorum."
+     "currentTr": "… düşünüyorum."
     },
     {
      "de": "Ich hätte eine Frage.",
-     "mevcutTr": "Bir sorum olacak."
+     "currentTr": "Bir sorum olacak."
     }
    ]
   },
@@ -395,45 +395,45 @@
    "title": "Eine Meinung äußern",
    "genre": "Diyalog",
    "intro": "Bir tartışmadasın. Katılabilir, kısmen katılabilir ya da karşı çıkabilirsin — önemli olan bunu Almancada nasıl söylediğin.",
-   "metin": "",
+   "text": "",
    "gloss": [
     {
      "de": "meiner Meinung nach",
-     "mevcutTr": "bence"
+     "currentTr": "bence"
     },
     {
      "de": "das sehe ich anders",
-     "mevcutTr": "ben farklı görüyorum"
+     "currentTr": "ben farklı görüyorum"
     },
     {
      "de": "einerseits … andererseits",
-     "mevcutTr": "bir yandan … öte yandan"
+     "currentTr": "bir yandan … öte yandan"
     },
     {
      "de": "da haben Sie recht",
-     "mevcutTr": "bu konuda haklısınız"
+     "currentTr": "bu konuda haklısınız"
     },
     {
      "de": "ich bezweifle, dass …",
-     "mevcutTr": "… olduğundan şüpheliyim"
+     "currentTr": "… olduğundan şüpheliyim"
     }
    ],
    "targets": [
     {
      "de": "Meiner Meinung nach …",
-     "mevcutTr": "Bence …"
+     "currentTr": "Bence …"
     },
     {
      "de": "Das sehe ich anders.",
-     "mevcutTr": "Ben farklı görüyorum."
+     "currentTr": "Ben farklı görüyorum."
     },
     {
      "de": "Einerseits …, andererseits …",
-     "mevcutTr": "Bir yandan …, öte yandan …"
+     "currentTr": "Bir yandan …, öte yandan …"
     },
     {
      "de": "Da haben Sie recht, aber …",
-     "mevcutTr": "Haklısınız, ama …"
+     "currentTr": "Haklısınız, ama …"
     }
    ]
   }

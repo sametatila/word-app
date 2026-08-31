@@ -1,17 +1,17 @@
 {
- "paket": "b2-040",
+ "packet": "b2-040",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 5596,
    "de": "die Einfuhr",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Einfuhren",
-   "mevcutTr": "ithalat, dışalım",
-   "mevcutBeispiel": "Die Einfuhr frischer Lebensmittel wurde vorübergehend untersagt.",
-   "mevcutBeispielTr": "Taze gıda ürünlerinin ithalatı geçici olarak yasaklandı.",
-   "cakisan": [
+   "currentTr": "ithalat, dışalım",
+   "currentBeispiel": "Die Einfuhr frischer Lebensmittel wurde vorübergehend untersagt.",
+   "currentBeispielTr": "Taze gıda ürünlerinin ithalatı geçici olarak yasaklandı.",
+   "overlapping": [
     "der Import (B1)"
    ]
   },
@@ -21,9 +21,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Umsatzsteuern",
-   "mevcutTr": "KDV, satış vergisi",
-   "mevcutBeispiel": "Auf der Rechnung ist die Umsatzsteuer gesondert ausgewiesen.",
-   "mevcutBeispielTr": "Faturada KDV ayrıca gösterilmiştir."
+   "currentTr": "KDV, satış vergisi",
+   "currentBeispiel": "Auf der Rechnung ist die Umsatzsteuer gesondert ausgewiesen.",
+   "currentBeispielTr": "Faturada KDV ayrıca gösterilmiştir."
   },
   {
    "id": 5598,
@@ -31,9 +31,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Existenzgründungen",
-   "mevcutTr": "iş kurma, girişim kurma",
-   "mevcutBeispiel": "Die Stadt berät junge Leute bei der Existenzgründung kostenfrei.",
-   "mevcutBeispielTr": "Şehir, gençlere iş kurma konusunda ücretsiz danışmanlık veriyor."
+   "currentTr": "iş kurma, girişim kurma",
+   "currentBeispiel": "Die Stadt berät junge Leute bei der Existenzgründung kostenfrei.",
+   "currentBeispielTr": "Şehir, gençlere iş kurma konusunda ücretsiz danışmanlık veriyor."
   },
   {
    "id": 5599,
@@ -41,9 +41,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Beteiligungen",
-   "mevcutTr": "hisse, pay, katılım",
-   "mevcutBeispiel": "Der Investor hält eine Beteiligung von fünfundzwanzig Prozent.",
-   "mevcutBeispielTr": "Yatırımcının şirkette yüzde yirmi beş payı var."
+   "currentTr": "hisse, pay, katılım",
+   "currentBeispiel": "Der Investor hält eine Beteiligung von fünfundzwanzig Prozent.",
+   "currentBeispielTr": "Yatırımcının şirkette yüzde yirmi beş payı var."
   },
   {
    "id": 5600,
@@ -51,9 +51,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Börsen",
-   "mevcutTr": "borsa",
-   "mevcutBeispiel": "An der Börse reagierten die Anleger nervös auf die neuen Zahlen.",
-   "mevcutBeispielTr": "Borsada yatırımcılar yeni rakamlara gergin tepki verdi."
+   "currentTr": "borsa",
+   "currentBeispiel": "An der Börse reagierten die Anleger nervös auf die neuen Zahlen.",
+   "currentBeispielTr": "Borsada yatırımcılar yeni rakamlara gergin tepki verdi."
   },
   {
    "id": 5601,
@@ -61,10 +61,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "fiyatlandırma, fiyat politikası",
-   "mevcutBeispiel": "Die aggressive Preisgestaltung des Anbieters ärgert die ganze Branche.",
-   "mevcutBeispielTr": "Sağlayıcının saldırgan fiyatlandırması bütün sektörü rahatsız ediyor.",
-   "cakisan": [
+   "currentTr": "fiyatlandırma, fiyat politikası",
+   "currentBeispiel": "Die aggressive Preisgestaltung des Anbieters ärgert die ganze Branche.",
+   "currentBeispielTr": "Sağlayıcının saldırgan fiyatlandırması bütün sektörü rahatsız ediyor.",
+   "overlapping": [
     "die Bepreisung (C1)"
    ]
   },
@@ -74,9 +74,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Beschaffungen",
-   "mevcutTr": "tedarik, temin",
-   "mevcutBeispiel": "Die Beschaffung der Ersatzteile dauert länger als geplant.",
-   "mevcutBeispielTr": "Yedek parçaların tedariki planlanandan uzun sürüyor."
+   "currentTr": "tedarik, temin",
+   "currentBeispiel": "Die Beschaffung der Ersatzteile dauert länger als geplant.",
+   "currentBeispielTr": "Yedek parçaların tedariki planlanandan uzun sürüyor."
   },
   {
    "id": 5603,
@@ -84,9 +84,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kalite güvencesi, kalite kontrol",
-   "mevcutBeispiel": "In der Qualitätssicherung wird jedes zehnte Teil genau geprüft.",
-   "mevcutBeispielTr": "Kalite güvencesinde her onuncu parça ayrıntılı olarak denetleniyor."
+   "currentTr": "kalite güvencesi, kalite kontrol",
+   "currentBeispiel": "In der Qualitätssicherung wird jedes zehnte Teil genau geprüft.",
+   "currentBeispielTr": "Kalite güvencesinde her onuncu parça ayrıntılı olarak denetleniyor."
   },
   {
    "id": 5604,
@@ -94,10 +94,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "verimlilik, etkinlik",
-   "mevcutBeispiel": "Neue Maschinen sollen die Effizienz der gesamten Produktion erhöhen.",
-   "mevcutBeispielTr": "Yeni makinelerin bütün üretimin verimliliğini artırması bekleniyor.",
-   "cakisan": [
+   "currentTr": "verimlilik, etkinlik",
+   "currentBeispiel": "Neue Maschinen sollen die Effizienz der gesamten Produktion erhöhen.",
+   "currentBeispielTr": "Yeni makinelerin bütün üretimin verimliliğini artırması bekleniyor.",
+   "overlapping": [
     "die Produktivität (C1)"
    ]
   },
@@ -107,9 +107,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sanierungen",
-   "mevcutTr": "mali yeniden yapılandırma, ıslah",
-   "mevcutBeispiel": "Die Sanierung des Unternehmens dauerte fast drei Jahre.",
-   "mevcutBeispielTr": "Şirketin yeniden yapılandırılması neredeyse üç yıl sürdü."
+   "currentTr": "mali yeniden yapılandırma, ıslah",
+   "currentBeispiel": "Die Sanierung des Unternehmens dauerte fast drei Jahre.",
+   "currentBeispielTr": "Şirketin yeniden yapılandırılması neredeyse üç yıl sürdü."
   },
   {
    "id": 5606,
@@ -117,9 +117,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gewerbe",
-   "mevcutTr": "ticari işletme, esnaflık, meslek",
-   "mevcutBeispiel": "Wer ein Gewerbe anmeldet, braucht am Anfang wenig Kapital.",
-   "mevcutBeispielTr": "Ticari işletme açan kişinin başlangıçta az sermayeye ihtiyacı olur."
+   "currentTr": "ticari işletme, esnaflık, meslek",
+   "currentBeispiel": "Wer ein Gewerbe anmeldet, braucht am Anfang wenig Kapital.",
+   "currentBeispielTr": "Ticari işletme açan kişinin başlangıçta az sermayeye ihtiyacı olur."
   },
   {
    "id": 5607,
@@ -127,9 +127,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Monopole",
-   "mevcutTr": "tekel",
-   "mevcutBeispiel": "Der Anbieter besitzt in dieser Region praktisch ein Monopol.",
-   "mevcutBeispielTr": "Sağlayıcı bu bölgede fiilen tekel konumunda."
+   "currentTr": "tekel",
+   "currentBeispiel": "Der Anbieter besitzt in dieser Region praktisch ein Monopol.",
+   "currentBeispielTr": "Sağlayıcı bu bölgede fiilen tekel konumunda."
   },
   {
    "id": 5608,
@@ -137,9 +137,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kartelle",
-   "mevcutTr": "kartel",
-   "mevcutBeispiel": "Das Kartell hatte die Preise über Jahre künstlich hochgehalten.",
-   "mevcutBeispielTr": "Kartel yıllarca fiyatları yapay biçimde yüksek tutmuştu."
+   "currentTr": "kartel",
+   "currentBeispiel": "Das Kartell hatte die Preise über Jahre künstlich hochgehalten.",
+   "currentBeispielTr": "Kartel yıllarca fiyatları yapay biçimde yüksek tutmuştu."
   },
   {
    "id": 5609,
@@ -147,9 +147,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Lieferengpässe",
-   "mevcutTr": "tedarik darboğazı, sevkiyat sıkıntısı",
-   "mevcutBeispiel": "Ein Lieferengpass bei Chips bremst die gesamte Branche.",
-   "mevcutBeispielTr": "Çiplerdeki tedarik darboğazı bütün sektörü yavaşlatıyor."
+   "currentTr": "tedarik darboğazı, sevkiyat sıkıntısı",
+   "currentBeispiel": "Ein Lieferengpass bei Chips bremst die gesamte Branche.",
+   "currentBeispielTr": "Çiplerdeki tedarik darboğazı bütün sektörü yavaşlatıyor."
   },
   {
    "id": 5610,
@@ -157,9 +157,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "öz sermaye, öz kaynak",
-   "mevcutBeispiel": "Ohne ausreichendes Eigenkapital gewährt die Bank keinen Kredit.",
-   "mevcutBeispielTr": "Yeterli öz sermaye olmadan banka kredi vermiyor."
+   "currentTr": "öz sermaye, öz kaynak",
+   "currentBeispiel": "Ohne ausreichendes Eigenkapital gewährt die Bank keinen Kredit.",
+   "currentBeispielTr": "Yeterli öz sermaye olmadan banka kredi vermiyor."
   },
   {
    "id": 5611,
@@ -167,10 +167,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat erzielt",
-   "mevcutTr": "elde etmek, sağlamak",
-   "mevcutBeispiel": "Mit dem neuen Modell erzielte die Firma hohe Verkaufszahlen.",
-   "mevcutBeispielTr": "Firma yeni modelle yüksek satış rakamlarına ulaştı.",
-   "cakisan": [
+   "currentTr": "elde etmek, sağlamak",
+   "currentBeispiel": "Mit dem neuen Modell erzielte die Firma hohe Verkaufszahlen.",
+   "currentBeispielTr": "Firma yeni modelle yüksek satış rakamlarına ulaştı.",
+   "overlapping": [
     "erwirken (C1)"
    ]
   },
@@ -180,9 +180,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat konkurriert",
-   "mevcutTr": "rekabet etmek, yarışmak",
-   "mevcutBeispiel": "Kleine Läden können mit den großen Ketten kaum konkurrieren.",
-   "mevcutBeispielTr": "Küçük dükkânlar büyük zincirlerle zor rekabet ediyor."
+   "currentTr": "rekabet etmek, yarışmak",
+   "currentBeispiel": "Kleine Läden können mit den großen Ketten kaum konkurrieren.",
+   "currentBeispielTr": "Küçük dükkânlar büyük zincirlerle zor rekabet ediyor."
   },
   {
    "id": 5613,
@@ -190,9 +190,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat exportiert",
-   "mevcutTr": "ihraç etmek",
-   "mevcutBeispiel": "Die Region exportiert vor allem Maschinen und Fahrzeugteile.",
-   "mevcutBeispielTr": "Bölge özellikle makine ve araç parçası ihraç ediyor."
+   "currentTr": "ihraç etmek",
+   "currentBeispiel": "Die Region exportiert vor allem Maschinen und Fahrzeugteile.",
+   "currentBeispielTr": "Bölge özellikle makine ve araç parçası ihraç ediyor."
   },
   {
    "id": 5614,
@@ -200,9 +200,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verlagert",
-   "mevcutTr": "kaydırmak, başka yere taşımak",
-   "mevcutBeispiel": "Der Hersteller hat die Fertigung nach Osteuropa verlagert.",
-   "mevcutBeispielTr": "Üretici imalatı Doğu Avrupa'ya taşıdı."
+   "currentTr": "kaydırmak, başka yere taşımak",
+   "currentBeispiel": "Der Hersteller hat die Fertigung nach Osteuropa verlagert.",
+   "currentBeispielTr": "Üretici imalatı Doğu Avrupa'ya taşıdı."
   },
   {
    "id": 5615,
@@ -210,9 +210,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat floriert",
-   "mevcutTr": "iyi gitmek, gelişmek",
-   "mevcutBeispiel": "Trotz der Krise floriert der Handel mit Gebrauchtwagen.",
-   "mevcutBeispielTr": "Krize rağmen ikinci el araç ticareti iyi gidiyor."
+   "currentTr": "iyi gitmek, gelişmek",
+   "currentBeispiel": "Trotz der Krise floriert der Handel mit Gebrauchtwagen.",
+   "currentBeispielTr": "Krize rağmen ikinci el araç ticareti iyi gidiyor."
   },
   {
    "id": 5616,
@@ -220,10 +220,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat veräußert",
-   "mevcutTr": "elden çıkarmak, satmak",
-   "mevcutBeispiel": "Der Konzern veräußerte seine Anteile an dem kleinen Zulieferer.",
-   "mevcutBeispielTr": "Holding küçük tedarikçideki paylarını elden çıkardı.",
-   "cakisan": [
+   "currentTr": "elden çıkarmak, satmak",
+   "currentBeispiel": "Der Konzern veräußerte seine Anteile an dem kleinen Zulieferer.",
+   "currentBeispielTr": "Holding küçük tedarikçideki paylarını elden çıkardı.",
+   "overlapping": [
     "entsorgen (B1)"
    ]
   },
@@ -233,9 +233,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat unterboten",
-   "mevcutTr": "altına inmek, fiyat kırmak",
-   "mevcutBeispiel": "Der Wettbewerber hat unser Angebot deutlich unterboten.",
-   "mevcutBeispielTr": "Rakip firma teklifimizin belirgin biçimde altına indi."
+   "currentTr": "altına inmek, fiyat kırmak",
+   "currentBeispiel": "Der Wettbewerber hat unser Angebot deutlich unterboten.",
+   "currentBeispielTr": "Rakip firma teklifimizin belirgin biçimde altına indi."
   },
   {
    "id": 5618,
@@ -243,9 +243,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ekonomik, iktisadi, verimli",
-   "mevcutBeispiel": "Die Lage des Betriebs ist wirtschaftlich äußerst angespannt.",
-   "mevcutBeispielTr": "İşletmenin durumu ekonomik açıdan son derece gergin."
+   "currentTr": "ekonomik, iktisadi, verimli",
+   "currentBeispiel": "Die Lage des Betriebs ist wirtschaftlich äußerst angespannt.",
+   "currentBeispielTr": "İşletmenin durumu ekonomik açıdan son derece gergin."
   },
   {
    "id": 5619,
@@ -253,9 +253,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "pazar lideri olan",
-   "mevcutBeispiel": "Bei Sicherheitstechnik ist die Firma in Europa marktführend.",
-   "mevcutBeispielTr": "Güvenlik teknolojisinde firma Avrupa'da pazar lideri konumunda."
+   "currentTr": "pazar lideri olan",
+   "currentBeispiel": "Bei Sicherheitstechnik ist die Firma in Europa marktführend.",
+   "currentBeispielTr": "Güvenlik teknolojisinde firma Avrupa'da pazar lideri konumunda."
   },
   {
    "id": 5620,
@@ -263,9 +263,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "gerileyen, azalan",
-   "mevcutBeispiel": "Die Bestellungen aus dem Ausland sind seit Monaten rückläufig.",
-   "mevcutBeispielTr": "Yurt dışından gelen siparişler aylardır geriliyor."
+   "currentTr": "gerileyen, azalan",
+   "currentBeispiel": "Die Bestellungen aus dem Ausland sind seit Monaten rückläufig.",
+   "currentBeispielTr": "Yurt dışından gelen siparişler aylardır geriliyor."
   },
   {
    "id": 5621,
@@ -273,9 +273,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "iş ile ilgili, iş için, ticari",
-   "mevcutBeispiel": "Er ist diese Woche geschäftlich in Mailand unterwegs.",
-   "mevcutBeispielTr": "Bu hafta iş için Milano'da bulunuyor."
+   "currentTr": "iş ile ilgili, iş için, ticari",
+   "currentBeispiel": "Er ist diese Woche geschäftlich in Mailand unterwegs.",
+   "currentBeispielTr": "Bu hafta iş için Milano'da bulunuyor."
   },
   {
    "id": 5622,
@@ -283,10 +283,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "standart olarak, seri üretimde bulunan",
-   "mevcutBeispiel": "Das Navigationssystem ist bei diesem Modell serienmäßig eingebaut.",
-   "mevcutBeispielTr": "Navigasyon sistemi bu modelde standart olarak takılı geliyor.",
-   "cakisan": [
+   "currentTr": "standart olarak, seri üretimde bulunan",
+   "currentBeispiel": "Das Navigationssystem ist bei diesem Modell serienmäßig eingebaut.",
+   "currentBeispielTr": "Navigasyon sistemi bu modelde standart olarak takılı geliyor.",
+   "overlapping": [
     "standardmäßig (B2)"
    ]
   },
@@ -296,9 +296,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "orta ölçekli, KOBİ niteliğinde",
-   "mevcutBeispiel": "Die Region lebt vor allem von mittelständischen Betrieben.",
-   "mevcutBeispielTr": "Bölge esas olarak orta ölçekli işletmelerle geçiniyor."
+   "currentTr": "orta ölçekli, KOBİ niteliğinde",
+   "currentBeispiel": "Die Region lebt vor allem von mittelständischen Betrieben.",
+   "currentBeispielTr": "Bölge esas olarak orta ölçekli işletmelerle geçiniyor."
   },
   {
    "id": 5624,
@@ -306,10 +306,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kazançlı, kârlı",
-   "mevcutBeispiel": "Der Handel mit Ersatzteilen ist erstaunlich einträglich geworden.",
-   "mevcutBeispielTr": "Yedek parça ticareti şaşırtıcı derecede kazançlı hâle geldi.",
-   "cakisan": [
+   "currentTr": "kazançlı, kârlı",
+   "currentBeispiel": "Der Handel mit Ersatzteilen ist erstaunlich einträglich geworden.",
+   "currentBeispielTr": "Yedek parça ticareti şaşırtıcı derecede kazançlı hâle geldi.",
+   "overlapping": [
     "lukrativ (B2)"
    ]
   },
@@ -319,9 +319,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "alt kira, alt kiracılık",
-   "mevcutBeispiel": "Er wohnt zur Untermiete in einem Zimmer bei einer Familie.",
-   "mevcutBeispielTr": "Bir ailenin yanındaki bir odada alt kiracı olarak yaşıyor."
+   "currentTr": "alt kira, alt kiracılık",
+   "currentBeispiel": "Er wohnt zur Untermiete in einem Zimmer bei einer Familie.",
+   "currentBeispielTr": "Bir ailenin yanındaki bir odada alt kiracı olarak yaşıyor."
   },
   {
    "id": 5626,
@@ -329,9 +329,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Mietspiegel",
-   "mevcutTr": "kira endeksi, resmî kira barometresi",
-   "mevcutBeispiel": "Laut Mietspiegel ist die geforderte Miete deutlich zu hoch.",
-   "mevcutBeispielTr": "Kira endeksine göre istenen kira açıkça çok yüksek."
+   "currentTr": "kira endeksi, resmî kira barometresi",
+   "currentBeispiel": "Laut Mietspiegel ist die geforderte Miete deutlich zu hoch.",
+   "currentBeispielTr": "Kira endeksine göre istenen kira açıkça çok yüksek."
   },
   {
    "id": 5627,
@@ -339,9 +339,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Mietpreisbremsen",
-   "mevcutTr": "kira artış freni, kira tavanı düzenlemesi",
-   "mevcutBeispiel": "Die Mietpreisbremse soll den Anstieg der Mieten in Großstädten dämpfen.",
-   "mevcutBeispielTr": "Kira freni, büyük şehirlerdeki kira artışını yavaşlatmayı amaçlıyor."
+   "currentTr": "kira artış freni, kira tavanı düzenlemesi",
+   "currentBeispiel": "Die Mietpreisbremse soll den Anstieg der Mieten in Großstädten dämpfen.",
+   "currentBeispielTr": "Kira freni, büyük şehirlerdeki kira artışını yavaşlatmayı amaçlıyor."
   },
   {
    "id": 5628,
@@ -349,9 +349,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Hausverwaltungen",
-   "mevcutTr": "bina yönetimi, apartman yönetimi",
-   "mevcutBeispiel": "Die Hausverwaltung reagiert seit Wochen nicht auf unsere Beschwerden.",
-   "mevcutBeispielTr": "Bina yönetimi haftalardır şikayetlerimize yanıt vermiyor."
+   "currentTr": "bina yönetimi, apartman yönetimi",
+   "currentBeispiel": "Die Hausverwaltung reagiert seit Wochen nicht auf unsere Beschwerden.",
+   "currentBeispielTr": "Bina yönetimi haftalardır şikayetlerimize yanıt vermiyor."
   },
   {
    "id": 5629,
@@ -359,9 +359,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zwangsräumungen",
-   "mevcutTr": "zorla tahliye, icra yoluyla tahliye",
-   "mevcutBeispiel": "Nach monatelangem Streit kam es zur Zwangsräumung der Wohnung.",
-   "mevcutBeispielTr": "Aylarca süren anlaşmazlığın ardından daire zorla tahliye edildi."
+   "currentTr": "zorla tahliye, icra yoluyla tahliye",
+   "currentBeispiel": "Nach monatelangem Streit kam es zur Zwangsräumung der Wohnung.",
+   "currentBeispielTr": "Aylarca süren anlaşmazlığın ardından daire zorla tahliye edildi."
   },
   {
    "id": 5630,
@@ -369,9 +369,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "küf",
-   "mevcutBeispiel": "Hinter dem Schrank hat sich im Winter Schimmel gebildet.",
-   "mevcutBeispielTr": "Kışın dolabın arkasında küf oluştu."
+   "currentTr": "küf",
+   "currentBeispiel": "Hinter dem Schrank hat sich im Winter Schimmel gebildet.",
+   "currentBeispielTr": "Kışın dolabın arkasında küf oluştu."
   },
   {
    "id": 5631,
@@ -379,9 +379,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Immobilien",
-   "mevcutTr": "gayrimenkul, taşınmaz",
-   "mevcutBeispiel": "Er hat sein Geld in Immobilien statt in Aktien angelegt.",
-   "mevcutBeispielTr": "Parasını hisse senedi yerine gayrimenkule yatırdı."
+   "currentTr": "gayrimenkul, taşınmaz",
+   "currentBeispiel": "Er hat sein Geld in Immobilien statt in Aktien angelegt.",
+   "currentBeispielTr": "Parasını hisse senedi yerine gayrimenkule yatırdı."
   },
   {
    "id": 5632,
@@ -389,9 +389,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Makler",
-   "mevcutTr": "emlakçı, komisyoncu",
-   "mevcutBeispiel": "Der Makler verlangt eine Provision von zwei Monatsmieten.",
-   "mevcutBeispielTr": "Emlakçı iki aylık kira tutarında komisyon istiyor."
+   "currentTr": "emlakçı, komisyoncu",
+   "currentBeispiel": "Der Makler verlangt eine Provision von zwei Monatsmieten.",
+   "currentBeispielTr": "Emlakçı iki aylık kira tutarında komisyon istiyor."
   },
   {
    "id": 5633,
@@ -399,9 +399,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Eigentumswohnungen",
-   "mevcutTr": "mülkiyeti kendine ait daire, kat mülkiyetli daire",
-   "mevcutBeispiel": "Sie haben eine kleine Eigentumswohnung am Stadtrand gekauft.",
-   "mevcutBeispielTr": "Şehrin kenarında küçük bir daire satın aldılar."
+   "currentTr": "mülkiyeti kendine ait daire, kat mülkiyetli daire",
+   "currentBeispiel": "Sie haben eine kleine Eigentumswohnung am Stadtrand gekauft.",
+   "currentBeispielTr": "Şehrin kenarında küçük bir daire satın aldılar."
   },
   {
    "id": 5634,
@@ -409,9 +409,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wertsteigerungen",
-   "mevcutTr": "değer artışı",
-   "mevcutBeispiel": "Der neue Bahnhof sorgte für eine deutliche Wertsteigerung der Grundstücke.",
-   "mevcutBeispielTr": "Yeni tren istasyonu arsaların değerinde belirgin bir artışa yol açtı."
+   "currentTr": "değer artışı",
+   "currentBeispiel": "Der neue Bahnhof sorgte für eine deutliche Wertsteigerung der Grundstücke.",
+   "currentBeispielTr": "Yeni tren istasyonu arsaların değerinde belirgin bir artışa yol açtı."
   },
   {
    "id": 5635,
@@ -419,9 +419,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wohnungsmärkte",
-   "mevcutTr": "konut piyasası",
-   "mevcutBeispiel": "Der Wohnungsmarkt in der Hauptstadt ist seit Jahren angespannt.",
-   "mevcutBeispielTr": "Başkentteki konut piyasası yıllardır gergin."
+   "currentTr": "konut piyasası",
+   "currentBeispiel": "Der Wohnungsmarkt in der Hauptstadt ist seit Jahren angespannt.",
+   "currentBeispielTr": "Başkentteki konut piyasası yıllardır gergin."
   },
   {
    "id": 5636,
@@ -429,9 +429,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Leerstände",
-   "mevcutTr": "boş durma, boş kalma (konut, dükkân)",
-   "mevcutBeispiel": "In der Altstadt nimmt der Leerstand von Ladenlokalen zu.",
-   "mevcutBeispielTr": "Eski şehirde boş duran dükkanların sayısı artıyor."
+   "currentTr": "boş durma, boş kalma (konut, dükkân)",
+   "currentBeispiel": "In der Altstadt nimmt der Leerstand von Ladenlokalen zu.",
+   "currentBeispielTr": "Eski şehirde boş duran dükkanların sayısı artıyor."
   },
   {
    "id": 5637,
@@ -439,9 +439,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Dämmungen",
-   "mevcutTr": "yalıtım, izolasyon",
-   "mevcutBeispiel": "Eine bessere Dämmung senkt die Heizkosten spürbar.",
-   "mevcutBeispielTr": "Daha iyi bir yalıtım ısınma masraflarını hissedilir ölçüde düşürür."
+   "currentTr": "yalıtım, izolasyon",
+   "currentBeispiel": "Eine bessere Dämmung senkt die Heizkosten spürbar.",
+   "currentBeispielTr": "Daha iyi bir yalıtım ısınma masraflarını hissedilir ölçüde düşürür."
   },
   {
    "id": 5638,
@@ -449,9 +449,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fassaden",
-   "mevcutTr": "cephe, bina yüzü",
-   "mevcutBeispiel": "Die Fassade des Gebäudes wird im Frühjahr neu gestrichen.",
-   "mevcutBeispielTr": "Binanın cephesi ilkbaharda yeniden boyanacak."
+   "currentTr": "cephe, bina yüzü",
+   "currentBeispiel": "Die Fassade des Gebäudes wird im Frühjahr neu gestrichen.",
+   "currentBeispielTr": "Binanın cephesi ilkbaharda yeniden boyanacak."
   },
   {
    "id": 5639,
@@ -459,9 +459,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Grundrisse",
-   "mevcutTr": "kat planı, plan",
-   "mevcutBeispiel": "Auf dem Grundriss erkennt man drei Zimmer und einen Balkon.",
-   "mevcutBeispielTr": "Kat planında üç oda ve bir balkon görülüyor."
+   "currentTr": "kat planı, plan",
+   "currentBeispiel": "Auf dem Grundriss erkennt man drei Zimmer und einen Balkon.",
+   "currentBeispielTr": "Kat planında üç oda ve bir balkon görülüyor."
   },
   {
    "id": 5640,
@@ -469,10 +469,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Dachgeschosse",
-   "mevcutTr": "çatı katı",
-   "mevcutBeispiel": "Im Dachgeschoss ist es im Sommer unerträglich heiß.",
-   "mevcutBeispielTr": "Çatı katı yazın dayanılmayacak kadar sıcak oluyor.",
-   "cakisan": [
+   "currentTr": "çatı katı",
+   "currentBeispiel": "Im Dachgeschoss ist es im Sommer unerträglich heiß.",
+   "currentBeispielTr": "Çatı katı yazın dayanılmayacak kadar sıcak oluyor.",
+   "overlapping": [
     "der Dachboden (A2)"
    ]
   },
@@ -482,9 +482,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Altbauten",
-   "mevcutTr": "eski yapı, eski bina (genelde savaş öncesi)",
-   "mevcutBeispiel": "Viele Studenten wohnen gern in einem Altbau mit hohen Decken.",
-   "mevcutBeispielTr": "Birçok öğrenci tavanları yüksek eski binalarda oturmayı seviyor."
+   "currentTr": "eski yapı, eski bina (genelde savaş öncesi)",
+   "currentBeispiel": "Viele Studenten wohnen gern in einem Altbau mit hohen Decken.",
+   "currentBeispielTr": "Birçok öğrenci tavanları yüksek eski binalarda oturmayı seviyor."
   },
   {
    "id": 5642,
@@ -492,9 +492,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Neubauten",
-   "mevcutTr": "yeni yapı, yeni bina",
-   "mevcutBeispiel": "Der Neubau am Fluss bietet Platz für achtzig Familien.",
-   "mevcutBeispielTr": "Nehir kenarındaki yeni bina seksen aileye yer sunuyor."
+   "currentTr": "yeni yapı, yeni bina",
+   "currentBeispiel": "Der Neubau am Fluss bietet Platz für achtzig Familien.",
+   "currentBeispielTr": "Nehir kenarındaki yeni bina seksen aileye yer sunuyor."
   },
   {
    "id": 5643,
@@ -502,9 +502,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Baugenehmigungen",
-   "mevcutTr": "yapı ruhsatı, inşaat izni",
-   "mevcutBeispiel": "Ohne Baugenehmigung darf hier nicht gebaut werden.",
-   "mevcutBeispielTr": "Yapı ruhsatı olmadan burada inşaat yapılamaz."
+   "currentTr": "yapı ruhsatı, inşaat izni",
+   "currentBeispiel": "Ohne Baugenehmigung darf hier nicht gebaut werden.",
+   "currentBeispielTr": "Yapı ruhsatı olmadan burada inşaat yapılamaz."
   },
   {
    "id": 5644,
@@ -512,9 +512,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bebauungspläne",
-   "mevcutTr": "imar planı",
-   "mevcutBeispiel": "Der neue Bebauungsplan sieht deutlich mehr Grünflächen vor.",
-   "mevcutBeispielTr": "Yeni imar planı belirgin biçimde daha fazla yeşil alan öngörüyor."
+   "currentTr": "imar planı",
+   "currentBeispiel": "Der neue Bebauungsplan sieht deutlich mehr Grünflächen vor.",
+   "currentBeispielTr": "Yeni imar planı belirgin biçimde daha fazla yeşil alan öngörüyor."
   },
   {
    "id": 5645,
@@ -522,9 +522,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kentsel gelişim, şehir planlaması",
-   "mevcutBeispiel": "Die Stadtentwicklung orientiert sich künftig stärker am Klimaschutz.",
-   "mevcutBeispielTr": "Kentsel gelişim bundan böyle iklim korumasına daha çok yönelecek."
+   "currentTr": "kentsel gelişim, şehir planlaması",
+   "currentBeispiel": "Die Stadtentwicklung orientiert sich künftig stärker am Klimaschutz.",
+   "currentBeispielTr": "Kentsel gelişim bundan böyle iklim korumasına daha çok yönelecek."
   }
  ]
 }

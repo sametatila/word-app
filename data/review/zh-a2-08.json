@@ -79,7 +79,7 @@
   "gsw": "Warehuus",
   "gswArtikel": "s",
   "gswBeispiel": "Im Warehuus git s alles vo Chleider bis Chuchimöbel.",
-  "ayniLehce": [
+  "sameDialect": [
    "Kaufhaus (A2)"
   ]
  },
@@ -550,7 +550,7 @@
   "gsw": "zruggschicke",
   "gswArtikel": null,
   "gswBeispiel": "D Jagge passt nöd, ich schicke si zrugg.",
-  "ayniLehce": [
+  "sameDialect": [
    "zurücksenden (B2)"
   ]
  },

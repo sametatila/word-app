@@ -1,16 +1,16 @@
 {
- "paket": "c1-018",
+ "packet": "c1-018",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 6103,
    "de": "die Vertrauensbildung",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "güven inşası, güven oluşturma",
-   "mevcutBeispiel": "Kleine Schritte der Vertrauensbildung gehen jedem Abkommen voraus.",
-   "mevcutBeispielTr": "Her anlaşmadan önce küçük güven inşası adımları gelir."
+   "currentTr": "güven inşası, güven oluşturma",
+   "currentBeispiel": "Kleine Schritte der Vertrauensbildung gehen jedem Abkommen voraus.",
+   "currentBeispielTr": "Her anlaşmadan önce küçük güven inşası adımları gelir."
   },
   {
    "id": 6104,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Absichtserklärungen",
-   "mevcutTr": "niyet beyanı",
-   "mevcutBeispiel": "Bisher liegt nur eine unverbindliche Absichtserklärung vor.",
-   "mevcutBeispielTr": "Şimdilik yalnızca bağlayıcı olmayan bir niyet beyanı mevcut."
+   "currentTr": "niyet beyanı",
+   "currentBeispiel": "Bisher liegt nur eine unverbindliche Absichtserklärung vor.",
+   "currentBeispielTr": "Şimdilik yalnızca bağlayıcı olmayan bir niyet beyanı mevcut."
   },
   {
    "id": 6105,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Übereinkünfte",
-   "mevcutTr": "mutabakat, uzlaşma",
-   "mevcutBeispiel": "Nach langem Ringen erzielten die Delegationen eine tragfähige Übereinkunft.",
-   "mevcutBeispielTr": "Uzun bir çekişmenin ardından heyetler sağlam bir mutabakata vardı."
+   "currentTr": "mutabakat, uzlaşma",
+   "currentBeispiel": "Nach langem Ringen erzielten die Delegationen eine tragfähige Übereinkunft.",
+   "currentBeispielTr": "Uzun bir çekişmenin ardından heyetler sağlam bir mutabakata vardı."
   },
   {
    "id": 6106,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "müdahalecilik",
-   "mevcutBeispiel": "Der Autor kritisiert den humanitären Interventionismus westlicher Regierungen.",
-   "mevcutBeispielTr": "Yazar Batılı hükümetlerin insani müdahaleciliğini eleştiriyor."
+   "currentTr": "müdahalecilik",
+   "currentBeispiel": "Der Autor kritisiert den humanitären Interventionismus westlicher Regierungen.",
+   "currentBeispielTr": "Yazar Batılı hükümetlerin insani müdahaleciliğini eleştiriyor."
   },
   {
    "id": 6107,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Embargos",
-   "mevcutTr": "ambargo",
-   "mevcutBeispiel": "Das Embargo auf Rüstungsgüter gilt seit über zehn Jahren.",
-   "mevcutBeispielTr": "Silah ürünlerine yönelik ambargo on yıldan uzun süredir geçerli."
+   "currentTr": "ambargo",
+   "currentBeispiel": "Das Embargo auf Rüstungsgüter gilt seit über zehn Jahren.",
+   "currentBeispielTr": "Silah ürünlerine yönelik ambargo on yıldan uzun süredir geçerli."
   },
   {
    "id": 6108,
@@ -58,10 +58,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat ratifiziert",
-   "mevcutTr": "onaylamak, tasdik etmek",
-   "mevcutBeispiel": "Das Parlament ratifizierte den Vertrag erst nach heftiger Debatte.",
-   "mevcutBeispielTr": "Parlamento anlaşmayı ancak sert bir tartışmadan sonra onayladı.",
-   "cakisan": [
+   "currentTr": "onaylamak, tasdik etmek",
+   "currentBeispiel": "Das Parlament ratifizierte den Vertrag erst nach heftiger Debatte.",
+   "currentBeispielTr": "Parlamento anlaşmayı ancak sert bir tartışmadan sonra onayladı.",
+   "overlapping": [
     "bestätigen (A2)",
     "genehmigen (B1)",
     "absegnen (B2)",
@@ -75,9 +75,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat aufgekündigt",
-   "mevcutTr": "feshetmek, tek taraflı sona erdirmek",
-   "mevcutBeispiel": "Die Regierung kündigte das Abkommen ohne Vorwarnung auf.",
-   "mevcutBeispielTr": "Hükümet anlaşmayı hiçbir uyarı yapmadan feshetti."
+   "currentTr": "feshetmek, tek taraflı sona erdirmek",
+   "currentBeispiel": "Die Regierung kündigte das Abkommen ohne Vorwarnung auf.",
+   "currentBeispielTr": "Hükümet anlaşmayı hiçbir uyarı yapmadan feshetti."
   },
   {
    "id": 6110,
@@ -85,9 +85,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gelockert",
-   "mevcutTr": "gevşetmek, hafifletmek",
-   "mevcutBeispiel": "Als Geste des guten Willens lockerte man die Einreisebeschränkungen.",
-   "mevcutBeispielTr": "İyi niyet göstergesi olarak giriş kısıtlamaları gevşetildi."
+   "currentTr": "gevşetmek, hafifletmek",
+   "currentBeispiel": "Als Geste des guten Willens lockerte man die Einreisebeschränkungen.",
+   "currentBeispielTr": "İyi niyet göstergesi olarak giriş kısıtlamaları gevşetildi."
   },
   {
    "id": 6111,
@@ -95,9 +95,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat eingelenkt",
-   "mevcutTr": "geri adım atmak, uzlaşmaya yanaşmak",
-   "mevcutBeispiel": "Erst unter wirtschaftlichem Druck lenkte die Führung ein.",
-   "mevcutBeispielTr": "Yönetim ancak ekonomik baskı altında geri adım attı."
+   "currentTr": "geri adım atmak, uzlaşmaya yanaşmak",
+   "currentBeispiel": "Erst unter wirtschaftlichem Druck lenkte die Führung ein.",
+   "currentBeispielTr": "Yönetim ancak ekonomik baskı altında geri adım attı."
   },
   {
    "id": 6112,
@@ -105,9 +105,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat bekräftigt",
-   "mevcutTr": "teyit etmek, yinelemek",
-   "mevcutBeispiel": "Beide Seiten bekräftigten ihren Willen zu weiteren Gesprächen.",
-   "mevcutBeispielTr": "İki taraf da görüşmeleri sürdürme iradesini teyit etti."
+   "currentTr": "teyit etmek, yinelemek",
+   "currentBeispiel": "Beide Seiten bekräftigten ihren Willen zu weiteren Gesprächen.",
+   "currentBeispielTr": "İki taraf da görüşmeleri sürdürme iradesini teyit etti."
   },
   {
    "id": 6113,
@@ -115,9 +115,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat missachtet",
-   "mevcutTr": "hiçe saymak, uymamak",
-   "mevcutBeispiel": "Wer die Auflagen missachtet, muss mit weiteren Strafen rechnen.",
-   "mevcutBeispielTr": "Koşulları hiçe sayan yeni cezaları göze almalıdır."
+   "currentTr": "hiçe saymak, uymamak",
+   "currentBeispiel": "Wer die Auflagen missachtet, muss mit weiteren Strafen rechnen.",
+   "currentBeispielTr": "Koşulları hiçe sayan yeni cezaları göze almalıdır."
   },
   {
    "id": 6114,
@@ -125,10 +125,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat eingegriffen",
-   "mevcutTr": "müdahale etmek, karışmak",
-   "mevcutBeispiel": "Die Staatengemeinschaft zögerte lange, militärisch einzugreifen.",
-   "mevcutBeispielTr": "Uluslararası topluluk askeri müdahalede uzun süre tereddüt etti.",
-   "cakisan": [
+   "currentTr": "müdahale etmek, karışmak",
+   "currentBeispiel": "Die Staatengemeinschaft zögerte lange, militärisch einzugreifen.",
+   "currentBeispielTr": "Uluslararası topluluk askeri müdahalede uzun süre tereddüt etti.",
+   "overlapping": [
     "einschreiten (C1)"
    ]
   },
@@ -138,10 +138,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat entsandt",
-   "mevcutTr": "göndermek, sevk etmek",
-   "mevcutBeispiel": "Die Organisation entsandte eine unabhängige Beobachtermission in das Krisengebiet.",
-   "mevcutBeispielTr": "Örgüt kriz bölgesine bağımsız bir gözlem heyeti gönderdi.",
-   "cakisan": [
+   "currentTr": "göndermek, sevk etmek",
+   "currentBeispiel": "Die Organisation entsandte eine unabhängige Beobachtermission in das Krisengebiet.",
+   "currentBeispielTr": "Örgüt kriz bölgesine bağımsız bir gözlem heyeti gönderdi.",
+   "overlapping": [
     "schicken (A1)",
     "senden (B1)",
     "abschicken (A2)",
@@ -155,9 +155,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat belagert",
-   "mevcutTr": "kuşatmak",
-   "mevcutBeispiel": "Die Stadt wurde monatelang belagert und von Hilfslieferungen abgeschnitten.",
-   "mevcutBeispielTr": "Şehir aylarca kuşatıldı ve yardım sevkiyatından koparıldı."
+   "currentTr": "kuşatmak",
+   "currentBeispiel": "Die Stadt wurde monatelang belagert und von Hilfslieferungen abgeschnitten.",
+   "currentBeispielTr": "Şehir aylarca kuşatıldı ve yardım sevkiyatından koparıldı."
   },
   {
    "id": 6117,
@@ -165,9 +165,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat zurückgeschlagen",
-   "mevcutTr": "püskürtmek, karşılık vermek",
-   "mevcutBeispiel": "Die Verteidiger schlugen den Vorstoß an der Ostflanke zurück.",
-   "mevcutBeispielTr": "Savunmacılar doğu kanadındaki ilerleyişi püskürttü."
+   "currentTr": "püskürtmek, karşılık vermek",
+   "currentBeispiel": "Die Verteidiger schlugen den Vorstoß an der Ostflanke zurück.",
+   "currentBeispielTr": "Savunmacılar doğu kanadındaki ilerleyişi püskürttü."
   },
   {
    "id": 6118,
@@ -175,10 +175,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist beigetreten",
-   "mevcutTr": "katılmak, üye olmak",
-   "mevcutBeispiel": "Das Land will dem Bündnis so rasch wie möglich beitreten.",
-   "mevcutBeispielTr": "Ülke ittifaka mümkün olduğunca çabuk katılmak istiyor.",
-   "cakisan": [
+   "currentTr": "katılmak, üye olmak",
+   "currentBeispiel": "Das Land will dem Bündnis so rasch wie möglich beitreten.",
+   "currentBeispielTr": "Ülke ittifaka mümkün olduğunca çabuk katılmak istiyor.",
+   "overlapping": [
     "mitmachen (A1)",
     "sich beteiligen (B1)",
     "eintreten (B1)",
@@ -191,9 +191,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat beschwichtigt",
-   "mevcutTr": "yatıştırmak, sakinleştirmek",
-   "mevcutBeispiel": "Der Minister versuchte, die aufgebrachte Öffentlichkeit zu beschwichtigen.",
-   "mevcutBeispielTr": "Bakan öfkeli kamuoyunu yatıştırmaya çalıştı."
+   "currentTr": "yatıştırmak, sakinleştirmek",
+   "currentBeispiel": "Der Minister versuchte, die aufgebrachte Öffentlichkeit zu beschwichtigen.",
+   "currentBeispielTr": "Bakan öfkeli kamuoyunu yatıştırmaya çalıştı."
   },
   {
    "id": 6120,
@@ -201,9 +201,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat sich solidarisiert",
-   "mevcutTr": "dayanışma göstermek, yan yana durmak",
-   "mevcutBeispiel": "Mehrere Nachbarstaaten solidarisierten sich öffentlich mit dem angegriffenen Land.",
-   "mevcutBeispielTr": "Birçok komşu devlet saldırıya uğrayan ülkeyle açıkça dayanışma gösterdi."
+   "currentTr": "dayanışma göstermek, yan yana durmak",
+   "currentBeispiel": "Mehrere Nachbarstaaten solidarisierten sich öffentlich mit dem angegriffenen Land.",
+   "currentBeispielTr": "Birçok komşu devlet saldırıya uğrayan ülkeyle açıkça dayanışma gösterdi."
   },
   {
    "id": 6121,
@@ -211,9 +211,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çok taraflı",
-   "mevcutBeispiel": "Solche Probleme lassen sich nur multilateral lösen.",
-   "mevcutBeispielTr": "Bu tür sorunlar ancak çok taraflı olarak çözülebilir."
+   "currentTr": "çok taraflı",
+   "currentBeispiel": "Solche Probleme lassen sich nur multilateral lösen.",
+   "currentBeispielTr": "Bu tür sorunlar ancak çok taraflı olarak çözülebilir."
   },
   {
    "id": 6122,
@@ -221,9 +221,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "tek taraflı",
-   "mevcutBeispiel": "Der einseitige Rückzug aus dem Vertrag überraschte selbst enge Partner.",
-   "mevcutBeispielTr": "Anlaşmadan tek taraflı çekilme yakın ortakları bile şaşırttı."
+   "currentTr": "tek taraflı",
+   "currentBeispiel": "Der einseitige Rückzug aus dem Vertrag überraschte selbst enge Partner.",
+   "currentBeispielTr": "Anlaşmadan tek taraflı çekilme yakın ortakları bile şaşırttı."
   },
   {
    "id": 6123,
@@ -231,9 +231,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "diplomatik",
-   "mevcutBeispiel": "Auf diplomatischem Weg ließ sich die Krise vorerst entschärfen.",
-   "mevcutBeispielTr": "Kriz diplomatik yoldan şimdilik yumuşatılabildi."
+   "currentTr": "diplomatik",
+   "currentBeispiel": "Auf diplomatischem Weg ließ sich die Krise vorerst entschärfen.",
+   "currentBeispielTr": "Kriz diplomatik yoldan şimdilik yumuşatılabildi."
   },
   {
    "id": 6124,
@@ -241,9 +241,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "askerî",
-   "mevcutBeispiel": "Eine militärische Lösung schließt die Regierung bislang aus.",
-   "mevcutBeispielTr": "Hükümet askerî bir çözümü şimdilik dışlıyor."
+   "currentTr": "askerî",
+   "currentBeispiel": "Eine militärische Lösung schließt die Regierung bislang aus.",
+   "currentBeispielTr": "Hükümet askerî bir çözümü şimdilik dışlıyor."
   },
   {
    "id": 6125,
@@ -251,9 +251,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "insani",
-   "mevcutBeispiel": "Die humanitäre Lage in der belagerten Stadt verschlechtert sich täglich.",
-   "mevcutBeispielTr": "Kuşatılmış şehirdeki insani durum her gün kötüleşiyor."
+   "currentTr": "insani",
+   "currentBeispiel": "Die humanitäre Lage in der belagerten Stadt verschlechtert sich täglich.",
+   "currentBeispielTr": "Kuşatılmış şehirdeki insani durum her gün kötüleşiyor."
   },
   {
    "id": 6126,
@@ -261,10 +261,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hassas, çetrefilli, nazik (konu)",
-   "mevcutBeispiel": "Die Frage der Grenzziehung bleibt der heikelste Punkt der Gespräche.",
-   "mevcutBeispielTr": "Sınır çizimi meselesi görüşmelerin en hassas noktası olmayı sürdürüyor.",
-   "cakisan": [
+   "currentTr": "hassas, çetrefilli, nazik (konu)",
+   "currentBeispiel": "Die Frage der Grenzziehung bleibt der heikelste Punkt der Gespräche.",
+   "currentBeispielTr": "Sınır çizimi meselesi görüşmelerin en hassas noktası olmayı sürdürüyor.",
+   "overlapping": [
     "brisant (C1)",
     "anfällig (B2)"
    ]
@@ -275,10 +275,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "gergin",
-   "mevcutBeispiel": "Das Verhältnis der beiden Staaten ist seit Monaten angespannt.",
-   "mevcutBeispielTr": "İki devletin ilişkisi aylardır gergin.",
-   "cakisan": [
+   "currentTr": "gergin",
+   "currentBeispiel": "Das Verhältnis der beiden Staaten ist seit Monaten angespannt.",
+   "currentBeispielTr": "İki devletin ilişkisi aylardır gergin.",
+   "overlapping": [
     "nervös (A2)"
    ]
   },
@@ -288,9 +288,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "taviz vermeyen, katı",
-   "mevcutBeispiel": "In der Frage der Entschädigungen blieb die Delegation unnachgiebig.",
-   "mevcutBeispielTr": "Tazminatlar konusunda heyet taviz vermedi."
+   "currentTr": "taviz vermeyen, katı",
+   "currentBeispiel": "In der Frage der Entschädigungen blieb die Delegation unnachgiebig.",
+   "currentBeispielTr": "Tazminatlar konusunda heyet taviz vermedi."
   },
   {
    "id": 6129,
@@ -298,9 +298,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "görüşmeye açık, diyaloga hazır",
-   "mevcutBeispiel": "Trotz aller Rückschläge zeigt sich die Gegenseite weiterhin gesprächsbereit.",
-   "mevcutBeispielTr": "Bütün aksiliklere rağmen karşı taraf hâlâ görüşmeye açık görünüyor."
+   "currentTr": "görüşmeye açık, diyaloga hazır",
+   "currentBeispiel": "Trotz aller Rückschläge zeigt sich die Gegenseite weiterhin gesprächsbereit.",
+   "currentBeispielTr": "Bütün aksiliklere rağmen karşı taraf hâlâ görüşmeye açık görünüyor."
   },
   {
    "id": 6130,
@@ -308,10 +308,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "buna karşılık, karşılığında",
-   "mevcutBeispiel": "Im Gegenzug verlangte man die Freilassung aller politischen Gefangenen.",
-   "mevcutBeispielTr": "Buna karşılık bütün siyasi tutukluların serbest bırakılması talep edildi.",
-   "cakisan": [
+   "currentTr": "buna karşılık, karşılığında",
+   "currentBeispiel": "Im Gegenzug verlangte man die Freilassung aller politischen Gefangenen.",
+   "currentBeispielTr": "Buna karşılık bütün siyasi tutukluların serbest bırakılması talep edildi.",
+   "overlapping": [
     "hingegen (C1)"
    ]
   },
@@ -321,9 +321,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Indizien",
-   "mevcutTr": "emare, belirti, ipucu",
-   "mevcutBeispiel": "Die Studie liefert nur Indizien, aber keinen eindeutigen Nachweis.",
-   "mevcutBeispielTr": "Çalışma yalnızca emareler sunuyor, kesin bir kanıt değil."
+   "currentTr": "emare, belirti, ipucu",
+   "currentBeispiel": "Die Studie liefert nur Indizien, aber keinen eindeutigen Nachweis.",
+   "currentBeispielTr": "Çalışma yalnızca emareler sunuyor, kesin bir kanıt değil."
   },
   {
    "id": 6132,
@@ -331,10 +331,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Entgegnungen",
-   "mevcutTr": "karşılık, mukabele, cevap",
-   "mevcutBeispiel": "Seine Entgegnung auf die Kritik wirkte souverän und gut vorbereitet.",
-   "mevcutBeispielTr": "Eleştiriye verdiği karşılık kendinden emin ve iyi hazırlanmış görünüyordu.",
-   "cakisan": [
+   "currentTr": "karşılık, mukabele, cevap",
+   "currentBeispiel": "Seine Entgegnung auf die Kritik wirkte souverän und gut vorbereitet.",
+   "currentBeispielTr": "Eleştiriye verdiği karşılık kendinden emin ve iyi hazırlanmış görünüyordu.",
+   "overlapping": [
     "die Gegenleistung (C1)"
    ]
   },
@@ -344,9 +344,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Abwägungen",
-   "mevcutTr": "tartıp değerlendirme, muhakeme",
-   "mevcutBeispiel": "Nach sorgfältiger Abwägung aller Argumente fiel die Entscheidung sehr knapp aus.",
-   "mevcutBeispielTr": "Bütün argümanlar dikkatle tartıldıktan sonra karar kıl payı çıktı."
+   "currentTr": "tartıp değerlendirme, muhakeme",
+   "currentBeispiel": "Nach sorgfältiger Abwägung aller Argumente fiel die Entscheidung sehr knapp aus.",
+   "currentBeispielTr": "Bütün argümanlar dikkatle tartıldıktan sonra karar kıl payı çıktı."
   },
   {
    "id": 6134,
@@ -354,9 +354,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Erörterungen",
-   "mevcutTr": "irdeleme, ele alma, tartışma",
-   "mevcutBeispiel": "Die Erörterung dieser Frage nahm den halben Abend in Anspruch.",
-   "mevcutBeispielTr": "Bu sorunun irdelenmesi akşamın yarısını aldı."
+   "currentTr": "irdeleme, ele alma, tartışma",
+   "currentBeispiel": "Die Erörterung dieser Frage nahm den halben Abend in Anspruch.",
+   "currentBeispielTr": "Bu sorunun irdelenmesi akşamın yarısını aldı."
   },
   {
    "id": 6135,
@@ -364,9 +364,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Streitpunkte",
-   "mevcutTr": "anlaşmazlık konusu, ihtilaf noktası",
-   "mevcutBeispiel": "Der eigentliche Streitpunkt blieb bis zum Schluss ungeklärt.",
-   "mevcutBeispielTr": "Asıl anlaşmazlık konusu sonuna kadar açıklığa kavuşmadı."
+   "currentTr": "anlaşmazlık konusu, ihtilaf noktası",
+   "currentBeispiel": "Der eigentliche Streitpunkt blieb bis zum Schluss ungeklärt.",
+   "currentBeispielTr": "Asıl anlaşmazlık konusu sonuna kadar açıklığa kavuşmadı."
   },
   {
    "id": 6136,
@@ -374,10 +374,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Blickwinkel",
-   "mevcutTr": "bakış açısı, perspektif",
-   "mevcutBeispiel": "Aus diesem Blickwinkel betrachtet erscheint der Einwand plötzlich berechtigt.",
-   "mevcutBeispielTr": "Bu bakış açısından bakıldığında itiraz birden yerinde görünüyor.",
-   "cakisan": [
+   "currentTr": "bakış açısı, perspektif",
+   "currentBeispiel": "Aus diesem Blickwinkel betrachtet erscheint der Einwand plötzlich berechtigt.",
+   "currentBeispielTr": "Bu bakış açısından bakıldığında itiraz birden yerinde görünüyor.",
+   "overlapping": [
     "der Standpunkt (B1)",
     "die Perspektive (C1)",
     "die Sichtweise (C1)"
@@ -389,9 +389,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rhetoriken",
-   "mevcutTr": "retorik, hitabet, söz sanatı",
-   "mevcutBeispiel": "Hinter der brillanten Rhetorik verbarg sich kein einziges Argument.",
-   "mevcutBeispielTr": "Parlak retoriğin arkasında tek bir argüman bile yoktu."
+   "currentTr": "retorik, hitabet, söz sanatı",
+   "currentBeispiel": "Hinter der brillanten Rhetorik verbarg sich kein einziges Argument.",
+   "currentBeispielTr": "Parlak retoriğin arkasında tek bir argüman bile yoktu."
   },
   {
    "id": 6138,
@@ -399,9 +399,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Unterstellungen",
-   "mevcutTr": "isnat, asılsız suçlama",
-   "mevcutBeispiel": "Solche Unterstellungen haben in einer sachlichen Debatte nichts verloren.",
-   "mevcutBeispielTr": "Böyle isnatların nesnel bir tartışmada yeri yoktur."
+   "currentTr": "isnat, asılsız suçlama",
+   "currentBeispiel": "Solche Unterstellungen haben in einer sachlichen Debatte nichts verloren.",
+   "currentBeispielTr": "Böyle isnatların nesnel bir tartışmada yeri yoktur."
   },
   {
    "id": 6139,
@@ -409,9 +409,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Widerlegungen",
-   "mevcutTr": "çürütme, yanlışlama",
-   "mevcutBeispiel": "Die Widerlegung seiner Hauptthese gelang der Rednerin in wenigen Sätzen.",
-   "mevcutBeispielTr": "Konuşmacı onun ana tezini birkaç cümlede çürütmeyi başardı."
+   "currentTr": "çürütme, yanlışlama",
+   "currentBeispiel": "Die Widerlegung seiner Hauptthese gelang der Rednerin in wenigen Sätzen.",
+   "currentBeispielTr": "Konuşmacı onun ana tezini birkaç cümlede çürütmeyi başardı."
   },
   {
    "id": 6140,
@@ -419,10 +419,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Facetten",
-   "mevcutTr": "yön, boyut, cephe",
-   "mevcutBeispiel": "Der Vortrag beleuchtete auch die weniger bekannten Facetten des Problems.",
-   "mevcutBeispielTr": "Sunum sorunun daha az bilinen yönlerine de ışık tuttu.",
-   "cakisan": [
+   "currentTr": "yön, boyut, cephe",
+   "currentBeispiel": "Der Vortrag beleuchtete auch die weniger bekannten Facetten des Problems.",
+   "currentBeispielTr": "Sunum sorunun daha az bilinen yönlerine de ışık tuttu.",
+   "overlapping": [
     "die Richtung (B1)"
    ]
   },
@@ -432,9 +432,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Stoßrichtungen",
-   "mevcutTr": "yönelim, hedef, saldırı yönü",
-   "mevcutBeispiel": "Die Stoßrichtung seiner Kritik war von Anfang an klar.",
-   "mevcutBeispielTr": "Eleştirisinin hedefi baştan beri belliydi."
+   "currentTr": "yönelim, hedef, saldırı yönü",
+   "currentBeispiel": "Die Stoßrichtung seiner Kritik war von Anfang an klar.",
+   "currentBeispielTr": "Eleştirisinin hedefi baştan beri belliydi."
   },
   {
    "id": 6142,
@@ -442,10 +442,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "üslup, anlatım tarzı",
-   "mevcutBeispiel": "Der akademische Duktus des Textes schreckt viele Leser ab.",
-   "mevcutBeispielTr": "Metnin akademik üslubu birçok okuru ürkütüyor.",
-   "cakisan": [
+   "currentTr": "üslup, anlatım tarzı",
+   "currentBeispiel": "Der akademische Duktus des Textes schreckt viele Leser ab.",
+   "currentBeispielTr": "Metnin akademik üslubu birçok okuru ürkütüyor.",
+   "overlapping": [
     "der Umgangston (B2)"
    ]
   },
@@ -455,9 +455,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "genel hava, ana ton, esas fikir",
-   "mevcutBeispiel": "Der Tenor der gesamten Debatte war überraschend versöhnlich.",
-   "mevcutBeispielTr": "Bütün tartışmanın genel havası şaşırtıcı biçimde uzlaşmacıydı."
+   "currentTr": "genel hava, ana ton, esas fikir",
+   "currentBeispiel": "Der Tenor der gesamten Debatte war überraschend versöhnlich.",
+   "currentBeispielTr": "Bütün tartışmanın genel havası şaşırtıcı biçimde uzlaşmacıydı."
   },
   {
    "id": 6144,
@@ -465,9 +465,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Repliken",
-   "mevcutTr": "karşı cevap, replik",
-   "mevcutBeispiel": "Ihre Replik auf den Zwischenruf erntete Applaus im ganzen Saal.",
-   "mevcutBeispielTr": "Laf atmaya verdiği karşılık bütün salondan alkış aldı."
+   "currentTr": "karşı cevap, replik",
+   "currentBeispiel": "Ihre Replik auf den Zwischenruf erntete Applaus im ganzen Saal.",
+   "currentBeispielTr": "Laf atmaya verdiği karşılık bütün salondan alkış aldı."
   },
   {
    "id": 6145,
@@ -475,9 +475,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Dissense",
-   "mevcutTr": "görüş ayrılığı, uyuşmazlık",
-   "mevcutBeispiel": "Der Dissens betrifft weniger die Fakten als deren Deutung.",
-   "mevcutBeispielTr": "Görüş ayrılığı olgulardan çok onların yorumuyla ilgili."
+   "currentTr": "görüş ayrılığı, uyuşmazlık",
+   "currentBeispiel": "Der Dissens betrifft weniger die Fakten als deren Deutung.",
+   "currentBeispielTr": "Görüş ayrılığı olgulardan çok onların yorumuyla ilgili."
   },
   {
    "id": 6146,
@@ -485,9 +485,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Trugschlüsse",
-   "mevcutTr": "yanılgı, mantık hatası",
-   "mevcutBeispiel": "Wer so argumentiert, unterliegt einem weit verbreiteten Trugschluss.",
-   "mevcutBeispielTr": "Böyle argüman kuran kişi çok yaygın bir yanılgıya düşüyor."
+   "currentTr": "yanılgı, mantık hatası",
+   "currentBeispiel": "Wer so argumentiert, unterliegt einem weit verbreiteten Trugschluss.",
+   "currentBeispielTr": "Böyle argüman kuran kişi çok yaygın bir yanılgıya düşüyor."
   },
   {
    "id": 6147,
@@ -495,9 +495,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zirkelschlüsse",
-   "mevcutTr": "döngüsel akıl yürütme, kısır döngü",
-   "mevcutBeispiel": "Seine Begründung entpuppte sich bei genauem Hinsehen als Zirkelschluss.",
-   "mevcutBeispielTr": "Gerekçesi dikkatle bakıldığında döngüsel bir akıl yürütme çıktı."
+   "currentTr": "döngüsel akıl yürütme, kısır döngü",
+   "currentBeispiel": "Seine Begründung entpuppte sich bei genauem Hinsehen als Zirkelschluss.",
+   "currentBeispielTr": "Gerekçesi dikkatle bakıldığında döngüsel bir akıl yürütme çıktı."
   },
   {
    "id": 6148,
@@ -505,9 +505,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Analogien",
-   "mevcutTr": "analoji, benzeşim",
-   "mevcutBeispiel": "Die Analogie zwischen Markt und Ökosystem hinkt an entscheidender Stelle.",
-   "mevcutBeispielTr": "Piyasa ile ekosistem arasındaki analoji can alıcı noktada aksıyor."
+   "currentTr": "analoji, benzeşim",
+   "currentBeispiel": "Die Analogie zwischen Markt und Ökosystem hinkt an entscheidender Stelle.",
+   "currentBeispielTr": "Piyasa ile ekosistem arasındaki analoji can alıcı noktada aksıyor."
   },
   {
    "id": 6149,
@@ -515,9 +515,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gegenbeispiele",
-   "mevcutTr": "karşı örnek",
-   "mevcutBeispiel": "Ein einziges Gegenbeispiel genügt, um die Regel zu erschüttern.",
-   "mevcutBeispielTr": "Kuralı sarsmak için tek bir karşı örnek yeter."
+   "currentTr": "karşı örnek",
+   "currentBeispiel": "Ein einziges Gegenbeispiel genügt, um die Regel zu erschüttern.",
+   "currentBeispielTr": "Kuralı sarsmak için tek bir karşı örnek yeter."
   },
   {
    "id": 6150,
@@ -525,9 +525,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Grundannahmen",
-   "mevcutTr": "temel varsayım",
-   "mevcutBeispiel": "Die Grundannahme des Modells wurde nie ernsthaft geprüft.",
-   "mevcutBeispielTr": "Modelin temel varsayımı hiçbir zaman ciddi biçimde sınanmadı."
+   "currentTr": "temel varsayım",
+   "currentBeispiel": "Die Grundannahme des Modells wurde nie ernsthaft geprüft.",
+   "currentBeispielTr": "Modelin temel varsayımı hiçbir zaman ciddi biçimde sınanmadı."
   },
   {
    "id": 6151,
@@ -535,9 +535,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Einwürfe",
-   "mevcutTr": "araya girme, laf atma, kısa itiraz",
-   "mevcutBeispiel": "Sein knapper Einwurf brachte die Rednerin kurz aus dem Konzept.",
-   "mevcutBeispielTr": "Kısa itirazı konuşmacının bir an aklını karıştırdı."
+   "currentTr": "araya girme, laf atma, kısa itiraz",
+   "currentBeispiel": "Sein knapper Einwurf brachte die Rednerin kurz aus dem Konzept.",
+   "currentBeispielTr": "Kısa itirazı konuşmacının bir an aklını karıştırdı."
   },
   {
    "id": 6152,
@@ -545,9 +545,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ikna gücü",
-   "mevcutBeispiel": "Seinem Vortrag fehlte es trotz guter Daten an Überzeugungskraft.",
-   "mevcutBeispielTr": "Sunumu iyi verilere rağmen ikna gücünden yoksundu."
+   "currentTr": "ikna gücü",
+   "currentBeispiel": "Seinem Vortrag fehlte es trotz guter Daten an Überzeugungskraft.",
+   "currentBeispielTr": "Sunumu iyi verilere rağmen ikna gücünden yoksundu."
   }
  ]
 }

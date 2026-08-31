@@ -340,7 +340,7 @@
   "gsw": "zügle",
   "gswArtikel": null,
   "gswBeispiel": "Am Buffet mues ich min Appetit würklich zügle.",
-  "ayniLehce": [
+  "sameDialect": [
    "umziehen (A1)"
   ]
  },
@@ -784,7 +784,7 @@
   "gsw": "reklamiere",
   "gswArtikel": null,
   "gswBeispiel": "Ich han di defekti Kaffimaschine sofort bim Händler reklamiert.",
-  "ayniLehce": [
+  "sameDialect": [
    "sich beschweren (B1)"
   ]
  },
@@ -886,7 +886,7 @@
   "gsw": "zruggschicke",
   "gswArtikel": null,
   "gswBeispiel": "Si mönd d Waar i de Originalverpackig zruggschicke.",
-  "ayniLehce": [
+  "sameDialect": [
    "zurückschicken (A2)"
   ]
  },

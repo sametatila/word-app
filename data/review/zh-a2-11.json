@@ -16,7 +16,7 @@
   "gsw": "Hupe",
   "gswArtikel": "d",
   "gswBeispiel": "D Hupe a mim Auto isch kaputt.",
-  "ayniLehce": [
+  "sameDialect": [
    "hupen (B1)"
   ]
  },
@@ -55,7 +55,7 @@
   "gsw": "Trottoir",
   "gswArtikel": "s",
   "gswBeispiel": "Uf em Trottoir dörf mer nöd parkiere.",
-  "ayniLehce": [
+  "sameDialect": [
    "Gehsteig (B1)",
    "Trottoir (B1)",
    "Gehweg (A2)"
@@ -204,7 +204,7 @@
   "gsw": "Quartier",
   "gswArtikel": "s",
   "gswBeispiel": "Mir wohned imene ruhige Quartier im Norde.",
-  "ayniLehce": [
+  "sameDialect": [
    "Quartier (B1)",
    "Viertel (B1)",
    "Wohnviertel (B2)"
@@ -218,7 +218,7 @@
   "gsw": "Trottoir",
   "gswArtikel": "s",
   "gswBeispiel": "Uf em Trottoir dörf mer nöd parkiere.",
-  "ayniLehce": [
+  "sameDialect": [
    "Gehsteig (B1)",
    "Trottoir (B1)",
    "Bürgersteig (A2)"
@@ -349,7 +349,7 @@
   "gsw": "uswiise",
   "gswArtikel": null,
   "gswBeispiel": "Bi de Kontrolle muesch di mit em Pass uswiise.",
-  "ayniLehce": [
+  "sameDialect": [
    "ausweisen (C1)"
   ]
  },
@@ -361,7 +361,7 @@
   "gsw": "informiere",
   "gswArtikel": null,
   "gswBeispiel": "Ich han mich bim Amt über d Aamäldig informiert.",
-  "ayniLehce": [
+  "sameDialect": [
    "informieren (B1)"
   ]
  },
@@ -499,7 +499,7 @@
   "gsw": "schtriite",
   "gswArtikel": null,
   "gswBeispiel": "D Nachbere schtriited oft wäge em Lärm.",
-  "ayniLehce": [
+  "sameDialect": [
    "sich streiten (B1)"
   ]
  },
@@ -511,7 +511,7 @@
   "gsw": "verletze",
   "gswArtikel": null,
   "gswBeispiel": "Bi dem Unfall hät sich niemert verletzt.",
-  "ayniLehce": [
+  "sameDialect": [
    "sich verletzen (B1)"
   ]
  },
@@ -550,7 +550,7 @@
   "gsw": "summe",
   "gswArtikel": null,
   "gswBeispiel": "D Biene summed de ganz Taag im Garte.",
-  "ayniLehce": [
+  "sameDialect": [
    "Summe (B1)"
   ]
  },
@@ -679,7 +679,7 @@
   "gsw": "schüüch",
   "gswArtikel": null,
   "gswBeispiel": "Reh sind sehr schüüch und laufed schnäll wäg.",
-  "ayniLehce": [
+  "sameDialect": [
    "schüchtern (A2)"
   ]
  },
@@ -727,7 +727,7 @@
   "gsw": "glätte",
   "gswArtikel": null,
   "gswBeispiel": "Vor em Ässe glätte ich s Tischtuech mit de Hand.",
-  "ayniLehce": [
+  "sameDialect": [
    "bügeln (A2)"
   ]
  },
@@ -901,7 +901,7 @@
   "gsw": "abwäsche",
   "gswArtikel": null,
   "gswBeispiel": "Nach em Znacht tue ich s Gschirr vo Hand abwäsche.",
-  "ayniLehce": [
+  "sameDialect": [
    "abwaschen (B1)"
   ]
  },
@@ -922,7 +922,7 @@
   "gsw": "flicke",
   "gswArtikel": null,
   "gswBeispiel": "Mini Grossmueter flickt mini alti Hose mit Nadle und Fade.",
-  "ayniLehce": [
+  "sameDialect": [
    "reparieren (A1)"
   ]
  },

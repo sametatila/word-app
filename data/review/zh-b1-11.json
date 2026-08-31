@@ -61,7 +61,7 @@
   "gsw": "i d Pension gaa",
   "gswArtikel": null,
   "gswBeispiel": "Ich wott Änd Jaar i d Pension gaa.",
-  "ayniLehce": [
+  "sameDialect": [
    "in Rente gehen (B1)"
   ]
  },
@@ -82,7 +82,7 @@
   "gsw": "Pensionär",
   "gswArtikel": "de",
   "gswBeispiel": "Mini Groossmueter schaffet nüme. Si isch Pensionäri.",
-  "ayniLehce": [
+  "sameDialect": [
    "Rentner (A2)"
   ]
  },
@@ -112,7 +112,7 @@
   "gsw": "Perron",
   "gswArtikel": "de",
   "gswBeispiel": "Uf em Hauptbaanhof hät s mäischtens vil Perrons.",
-  "ayniLehce": [
+  "sameDialect": [
    "Bahnsteig (A1)"
   ]
  },
@@ -142,7 +142,7 @@
   "gsw": "Zivilschtand",
   "gswArtikel": "de",
   "gswBeispiel": "Bi «Zivilschtand» muesch «ledig» aachrüüze.",
-  "ayniLehce": [
+  "sameDialect": [
    "Zivilstand (B1)"
   ]
  },
@@ -163,7 +163,7 @@
   "gsw": "Pfanne",
   "gswArtikel": "d",
   "gswBeispiel": "Häsch käi grösseri Pfanne? Ich wott Härdöpfel choche.",
-  "ayniLehce": [
+  "sameDialect": [
    "Topf (A2)"
   ]
  },
@@ -184,7 +184,7 @@
   "gsw": "pflanze",
   "gswArtikel": null,
   "gswBeispiel": "Chum, mir gönd en Baum go pflanze!",
-  "ayniLehce": [
+  "sameDialect": [
    "Pflanze (A2)"
   ]
  },
@@ -259,7 +259,7 @@
   "gsw": "Pilz",
   "gswArtikel": "de",
   "gswBeispiel": "Händ Si frischi Pilz?",
-  "ayniLehce": [
+  "sameDialect": [
    "Schwammerl (B1)"
   ]
  },
@@ -343,7 +343,7 @@
   "gsw": "Portmonee",
   "gswArtikel": "s",
   "gswBeispiel": "Ich ha nu Münz i mim Portmonee.",
-  "ayniLehce": [
+  "sameDialect": [
    "Geldbörse (A2)",
    "Brieftasche (B1)"
   ]
@@ -365,7 +365,7 @@
   "gsw": "Pöschtler",
   "gswArtikel": "de",
   "gswBeispiel": "Isch d Pöschtlerin scho daa gsii?",
-  "ayniLehce": [
+  "sameDialect": [
    "Briefträger (B1)",
    "Postbote (A2)"
   ]
@@ -378,7 +378,7 @@
   "gsw": "Poulet",
   "gswArtikel": "s",
   "gswBeispiel": "Zum Zmittag git's Poulet mit Riis.",
-  "ayniLehce": [
+  "sameDialect": [
    "Hähnchen (A1)"
   ]
  },
@@ -570,7 +570,7 @@
   "gsw": "Quartier",
   "gswArtikel": "s",
   "gswBeispiel": "Mir wohned imene schööne Quartier.",
-  "ayniLehce": [
+  "sameDialect": [
    "Viertel (B1)",
    "Wohnviertel (B2)",
    "Stadtteil (A2)"
@@ -620,7 +620,7 @@
   "gsw": "Raam",
   "gswArtikel": "de",
   "gswBeispiel": "Ich hett gärn es Schtück Torte mit Schlagraam.",
-  "ayniLehce": [
+  "sameDialect": [
    "Obers (B1)"
   ]
  },
@@ -695,7 +695,7 @@
   "gsw": "use",
   "gswArtikel": null,
   "gswBeispiel": "Wotsch ine oder use? Er isch grad usegloffe.",
-  "ayniLehce": [
+  "sameDialect": [
    "heraus (A2)"
   ]
  },
@@ -770,7 +770,7 @@
   "gsw": "Rächt",
   "gswArtikel": "s",
   "gswBeispiel": "Ich ha Vortritt gha. Ich bi im Rächt gsii.",
-  "ayniLehce": [
+  "sameDialect": [
    "recht (B1)"
   ]
  },
@@ -791,7 +791,7 @@
   "gsw": "rächt",
   "gswArtikel": null,
   "gswBeispiel": "Isch es Ine rächt, wänn ich morn verbiichume?",
-  "ayniLehce": [
+  "sameDialect": [
    "Recht (B1)"
   ]
  },
@@ -866,7 +866,7 @@
   "gsw": "Regle",
   "gswArtikel": "d",
   "gswBeispiel": "Wie gaat das Schpiil? Kennsch d Regle?",
-  "ayniLehce": [
+  "sameDialect": [
    "regeln (B1)"
   ]
  },
@@ -887,7 +887,7 @@
   "gsw": "regle",
   "gswArtikel": null,
   "gswBeispiel": "D Ampele isch kaputt. En Polizischt reglet de Verchehr.",
-  "ayniLehce": [
+  "sameDialect": [
    "Regel (B1)"
   ]
  },
@@ -917,7 +917,7 @@
   "gsw": "länge",
   "gswArtikel": null,
   "gswBeispiel": "Ich nime nu e Suppe. Das längt mer.",
-  "ayniLehce": [
+  "sameDialect": [
    "ausreichen (B1)",
    "genügen (B1)"
   ]
@@ -1020,7 +1020,7 @@
   "gsw": "i d Pension gaa",
   "gswArtikel": null,
   "gswBeispiel": "Ich dörf Änd Jaar i d Pension gaa.",
-  "ayniLehce": [
+  "sameDialect": [
    "in Pension gehen (B1)"
   ]
  },

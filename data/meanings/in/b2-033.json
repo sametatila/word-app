@@ -1,16 +1,16 @@
 {
- "paket": "b2-033",
+ "packet": "b2-033",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 5245,
    "de": "vorschreiben",
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat vorgeschrieben",
-   "mevcutTr": "zorunlu kılmak, öngörmek, emretmek",
-   "mevcutBeispiel": "Die Verordnung schreibt eine schriftliche Begründung ausdrücklich vor.",
-   "mevcutBeispielTr": "Yönetmelik yazılı gerekçe sunulmasını açıkça zorunlu kılıyor."
+   "currentTr": "zorunlu kılmak, öngörmek, emretmek",
+   "currentBeispiel": "Die Verordnung schreibt eine schriftliche Begründung ausdrücklich vor.",
+   "currentBeispielTr": "Yönetmelik yazılı gerekçe sunulmasını açıkça zorunlu kılıyor."
   },
   {
    "id": 5246,
@@ -18,10 +18,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat untersagt",
-   "mevcutTr": "yasaklamak, men etmek",
-   "mevcutBeispiel": "Der Stadt wurde untersagt, das Grundstück weiter zu bebauen.",
-   "mevcutBeispielTr": "Şehre, arsanın üzerine yeni yapı yapması yasaklandı.",
-   "cakisan": [
+   "currentTr": "yasaklamak, men etmek",
+   "currentBeispiel": "Der Stadt wurde untersagt, das Grundstück weiter zu bebauen.",
+   "currentBeispielTr": "Şehre, arsanın üzerine yeni yapı yapması yasaklandı.",
+   "overlapping": [
     "verbieten (B1)"
    ]
   },
@@ -31,10 +31,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gestattet",
-   "mevcutTr": "izin vermek, müsaade etmek",
-   "mevcutBeispiel": "Der Vermieter gestattet die Haltung eines Hundes nur ausnahmsweise.",
-   "mevcutBeispielTr": "Ev sahibi köpek beslenmesine yalnızca istisnai olarak izin veriyor.",
-   "cakisan": [
+   "currentTr": "izin vermek, müsaade etmek",
+   "currentBeispiel": "Der Vermieter gestattet die Haltung eines Hundes nur ausnahmsweise.",
+   "currentBeispielTr": "Ev sahibi köpek beslenmesine yalnızca istisnai olarak izin veriyor.",
+   "overlapping": [
     "erlauben (A1)"
    ]
   },
@@ -44,9 +44,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "hukuka aykırı, kanunsuz",
-   "mevcutBeispiel": "Das Gericht erklärte die Kündigung für rechtswidrig.",
-   "mevcutBeispielTr": "Mahkeme fesih işlemini hukuka aykırı buldu."
+   "currentTr": "hukuka aykırı, kanunsuz",
+   "currentBeispiel": "Das Gericht erklärte die Kündigung für rechtswidrig.",
+   "currentBeispielTr": "Mahkeme fesih işlemini hukuka aykırı buldu."
   },
   {
    "id": 5249,
@@ -54,10 +54,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "resmî, idari, daireye ait",
-   "mevcutBeispiel": "Für den Umbau brauchen wir eine behördliche Genehmigung.",
-   "mevcutBeispielTr": "Tadilat için resmî bir izne ihtiyacımız var.",
-   "cakisan": [
+   "currentTr": "resmî, idari, daireye ait",
+   "currentBeispiel": "Für den Umbau brauchen wir eine behördliche Genehmigung.",
+   "currentBeispielTr": "Tadilat için resmî bir izne ihtiyacımız var.",
+   "overlapping": [
     "amtlich (B2)"
    ]
   },
@@ -67,9 +67,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kabul edilemez, caiz olmayan",
-   "mevcutBeispiel": "Die Klage wurde als unzulässig zurückgewiesen.",
-   "mevcutBeispielTr": "Dava, kabul edilemez bulunarak reddedildi."
+   "currentTr": "kabul edilemez, caiz olmayan",
+   "currentBeispiel": "Die Klage wurde als unzulässig zurückgewiesen.",
+   "currentBeispielTr": "Dava, kabul edilemez bulunarak reddedildi."
   },
   {
    "id": 5251,
@@ -77,9 +77,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ücrete tabi, harca tabi",
-   "mevcutBeispiel": "Die Ausstellung einer zweiten Bescheinigung ist gebührenpflichtig.",
-   "mevcutBeispielTr": "İkinci bir belgenin düzenlenmesi ücrete tabidir."
+   "currentTr": "ücrete tabi, harca tabi",
+   "currentBeispiel": "Die Ausstellung einer zweiten Bescheinigung ist gebührenpflichtig.",
+   "currentBeispielTr": "İkinci bir belgenin düzenlenmesi ücrete tabidir."
   },
   {
    "id": 5252,
@@ -87,9 +87,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ilgili, konuya ilişkin",
-   "mevcutBeispiel": "Der Anwalt zitierte die einschlägigen Vorschriften des Mietrechts.",
-   "mevcutBeispielTr": "Avukat kira hukukunun ilgili hükümlerini aktardı."
+   "currentTr": "ilgili, konuya ilişkin",
+   "currentBeispiel": "Der Anwalt zitierte die einschlägigen Vorschriften des Mietrechts.",
+   "currentBeispielTr": "Avukat kira hukukunun ilgili hükümlerini aktardı."
   },
   {
    "id": 5253,
@@ -97,10 +97,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "belirleyici, esas alınan",
-   "mevcutBeispiel": "Für die Berechnung ist das Datum des Eingangs maßgeblich.",
-   "mevcutBeispielTr": "Hesaplamada evrakın geliş tarihi esas alınır.",
-   "cakisan": [
+   "currentTr": "belirleyici, esas alınan",
+   "currentBeispiel": "Für die Berechnung ist das Datum des Eingangs maßgeblich.",
+   "currentBeispielTr": "Hesaplamada evrakın geliş tarihi esas alınır.",
+   "overlapping": [
     "ausschlaggebend (B2)"
    ]
   },
@@ -110,10 +110,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "geçersiz",
-   "mevcutBeispiel": "Ohne Stempel ist das Formular leider ungültig.",
-   "mevcutBeispielTr": "Mühür olmadan form maalesef geçersiz.",
-   "cakisan": [
+   "currentTr": "geçersiz",
+   "currentBeispiel": "Ohne Stempel ist das Formular leider ungültig.",
+   "currentBeispielTr": "Mühür olmadan form maalesef geçersiz.",
+   "overlapping": [
     "unwirksam (B2)"
    ]
   },
@@ -123,9 +123,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "uyarınca, gereğince",
-   "mevcutBeispiel": "Gemäß dem Vertrag haften Sie für alle entstandenen Schäden.",
-   "mevcutBeispielTr": "Sözleşme uyarınca doğan bütün zararlardan siz sorumlusunuz."
+   "currentTr": "uyarınca, gereğince",
+   "currentBeispiel": "Gemäß dem Vertrag haften Sie für alle entstandenen Schäden.",
+   "currentBeispielTr": "Sözleşme uyarınca doğan bütün zararlardan siz sorumlusunuz."
   },
   {
    "id": 5256,
@@ -133,9 +133,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Reiseveranstalter",
-   "mevcutTr": "tur operatörü, seyahat düzenleyicisi",
-   "mevcutBeispiel": "Der Reiseveranstalter hat uns den Ausfall des Fluges erst gestern mitgeteilt.",
-   "mevcutBeispielTr": "Tur operatörü uçuşun iptalini bize daha dün bildirdi."
+   "currentTr": "tur operatörü, seyahat düzenleyicisi",
+   "currentBeispiel": "Der Reiseveranstalter hat uns den Ausfall des Fluges erst gestern mitgeteilt.",
+   "currentBeispielTr": "Tur operatörü uçuşun iptalini bize daha dün bildirdi."
   },
   {
    "id": 5257,
@@ -143,9 +143,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anzahlungen",
-   "mevcutTr": "kapora, ön ödeme",
-   "mevcutBeispiel": "Bei der Buchung wird eine Anzahlung von zwanzig Prozent fällig.",
-   "mevcutBeispielTr": "Rezervasyon sırasında yüzde yirmilik bir kapora ödenmesi gerekiyor."
+   "currentTr": "kapora, ön ödeme",
+   "currentBeispiel": "Bei der Buchung wird eine Anzahlung von zwanzig Prozent fällig.",
+   "currentBeispielTr": "Rezervasyon sırasında yüzde yirmilik bir kapora ödenmesi gerekiyor."
   },
   {
    "id": 5258,
@@ -153,9 +153,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yeme içme, iaşe",
-   "mevcutBeispiel": "Im Preis sind Unterbringung und Verpflegung für sieben Tage enthalten.",
-   "mevcutBeispielTr": "Fiyata yedi günlük konaklama ve yeme içme dahildir."
+   "currentTr": "yeme içme, iaşe",
+   "currentBeispiel": "Im Preis sind Unterbringung und Verpflegung für sieben Tage enthalten.",
+   "currentBeispielTr": "Fiyata yedi günlük konaklama ve yeme içme dahildir."
   },
   {
    "id": 5259,
@@ -163,9 +163,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Pauschalreisen",
-   "mevcutTr": "paket tur",
-   "mevcutBeispiel": "Viele Urlauber buchen lieber eine Pauschalreise als einzelne Leistungen.",
-   "mevcutBeispielTr": "Pek çok tatilci tek tek hizmet almak yerine paket tur satın almayı tercih ediyor."
+   "currentTr": "paket tur",
+   "currentBeispiel": "Viele Urlauber buchen lieber eine Pauschalreise als einzelne Leistungen.",
+   "currentBeispielTr": "Pek çok tatilci tek tek hizmet almak yerine paket tur satın almayı tercih ediyor."
   },
   {
    "id": 5260,
@@ -173,10 +173,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rundreisen",
-   "mevcutTr": "tur, tur gezisi",
-   "mevcutBeispiel": "Auf unserer Rundreise durch Sizilien haben wir zwölf Orte besucht.",
-   "mevcutBeispielTr": "Sicilya turumuzda on iki yeri gezdik.",
-   "cakisan": [
+   "currentTr": "tur, tur gezisi",
+   "currentBeispiel": "Auf unserer Rundreise durch Sizilien haben wir zwölf Orte besucht.",
+   "currentBeispielTr": "Sicilya turumuzda on iki yeri gezdik.",
+   "overlapping": [
     "der Rundgang (A2)",
     "die Tour (A2)",
     "die Runde (B1)",
@@ -189,9 +189,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kreuzfahrten",
-   "mevcutTr": "gemi turu, kruvaziyer",
-   "mevcutBeispiel": "Die Kreuzfahrt durch die Ostsee war günstiger als erwartet.",
-   "mevcutBeispielTr": "Baltık Denizi'ndeki gemi turu beklediğimizden ucuza geldi."
+   "currentTr": "gemi turu, kruvaziyer",
+   "currentBeispiel": "Die Kreuzfahrt durch die Ostsee war günstiger als erwartet.",
+   "currentBeispielTr": "Baltık Denizi'ndeki gemi turu beklediğimizden ucuza geldi."
   },
   {
    "id": 5262,
@@ -199,9 +199,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Besichtigungen",
-   "mevcutTr": "gezip görme, ziyaret",
-   "mevcutBeispiel": "Die Besichtigung des Doms ist nur mit einer Führung möglich.",
-   "mevcutBeispielTr": "Katedralin gezilmesi ancak rehber eşliğinde mümkün."
+   "currentTr": "gezip görme, ziyaret",
+   "currentBeispiel": "Die Besichtigung des Doms ist nur mit einer Führung möglich.",
+   "currentBeispielTr": "Katedralin gezilmesi ancak rehber eşliğinde mümkün."
   },
   {
    "id": 5263,
@@ -209,10 +209,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "turizm, turist hareketliliği",
-   "mevcutBeispiel": "Der Fremdenverkehr bringt der Region jedes Jahr Millionen ein.",
-   "mevcutBeispielTr": "Turizm bölgeye her yıl milyonlarca kazandırıyor.",
-   "cakisan": [
+   "currentTr": "turizm, turist hareketliliği",
+   "currentBeispiel": "Der Fremdenverkehr bringt der Region jedes Jahr Millionen ein.",
+   "currentBeispielTr": "Turizm bölgeye her yıl milyonlarca kazandırıyor.",
+   "overlapping": [
     "der Tourismus (B1)"
    ]
   },
@@ -222,9 +222,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yüksek sezon, sezonun en yoğun dönemi",
-   "mevcutBeispiel": "In der Hochsaison verdoppeln sich die Preise an der Küste.",
-   "mevcutBeispielTr": "Yoğun sezonda kıyıdaki fiyatlar ikiye katlanıyor."
+   "currentTr": "yüksek sezon, sezonun en yoğun dönemi",
+   "currentBeispiel": "In der Hochsaison verdoppeln sich die Preise an der Küste.",
+   "currentBeispielTr": "Yoğun sezonda kıyıdaki fiyatlar ikiye katlanıyor."
   },
   {
    "id": 5265,
@@ -232,9 +232,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "izdiham, yığılma",
-   "mevcutBeispiel": "Wegen des großen Andrangs mussten wir zwei Stunden anstehen.",
-   "mevcutBeispielTr": "Büyük kalabalık yüzünden iki saat sıra beklemek zorunda kaldık."
+   "currentTr": "izdiham, yığılma",
+   "currentBeispiel": "Wegen des großen Andrangs mussten wir zwei Stunden anstehen.",
+   "currentBeispielTr": "Büyük kalabalık yüzünden iki saat sıra beklemek zorunda kaldık."
   },
   {
    "id": 5266,
@@ -242,9 +242,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zwischenlandungen",
-   "mevcutTr": "ara iniş, aktarma inişi",
-   "mevcutBeispiel": "Der Flug nach Chile hat eine Zwischenlandung in Madrid.",
-   "mevcutBeispielTr": "Şili uçuşunun Madrid'de bir ara inişi var."
+   "currentTr": "ara iniş, aktarma inişi",
+   "currentBeispiel": "Der Flug nach Chile hat eine Zwischenlandung in Madrid.",
+   "currentBeispielTr": "Şili uçuşunun Madrid'de bir ara inişi var."
   },
   {
    "id": 5267,
@@ -252,9 +252,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zollkontrollen",
-   "mevcutTr": "gümrük kontrolü",
-   "mevcutBeispiel": "Bei der Zollkontrolle wurde mein Koffer gründlich durchsucht.",
-   "mevcutBeispielTr": "Gümrük kontrolünde valizim baştan sona arandı."
+   "currentTr": "gümrük kontrolü",
+   "currentBeispiel": "Bei der Zollkontrolle wurde mein Koffer gründlich durchsucht.",
+   "currentBeispielTr": "Gümrük kontrolünde valizim baştan sona arandı."
   },
   {
    "id": 5268,
@@ -262,9 +262,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Einreisen",
-   "mevcutTr": "ülkeye giriş",
-   "mevcutBeispiel": "Für die Einreise benötigen Sie einen mindestens sechs Monate gültigen Pass.",
-   "mevcutBeispielTr": "Ülkeye giriş için en az altı ay geçerli bir pasaporta ihtiyacınız var."
+   "currentTr": "ülkeye giriş",
+   "currentBeispiel": "Für die Einreise benötigen Sie einen mindestens sechs Monate gültigen Pass.",
+   "currentBeispielTr": "Ülkeye giriş için en az altı ay geçerli bir pasaporta ihtiyacınız var."
   },
   {
    "id": 5269,
@@ -272,9 +272,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Grenzübergänge",
-   "mevcutTr": "sınır kapısı",
-   "mevcutBeispiel": "Am Grenzübergang stauten sich die Autos über mehrere Kilometer.",
-   "mevcutBeispielTr": "Sınır kapısında araçlar kilometrelerce kuyruk oluşturdu."
+   "currentTr": "sınır kapısı",
+   "currentBeispiel": "Am Grenzübergang stauten sich die Autos über mehrere Kilometer.",
+   "currentBeispielTr": "Sınır kapısında araçlar kilometrelerce kuyruk oluşturdu."
   },
   {
    "id": 5270,
@@ -282,9 +282,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Unterbringungen",
-   "mevcutTr": "yerleştirme, konaklama düzeni",
-   "mevcutBeispiel": "Für die Unterbringung der Gruppe wurde ein einfaches Gästehaus gemietet.",
-   "mevcutBeispielTr": "Grubun konaklaması için sade bir misafirhane kiralandı."
+   "currentTr": "yerleştirme, konaklama düzeni",
+   "currentBeispiel": "Für die Unterbringung der Gruppe wurde ein einfaches Gästehaus gemietet.",
+   "currentBeispielTr": "Grubun konaklaması için sade bir misafirhane kiralandı."
   },
   {
    "id": 5271,
@@ -292,9 +292,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Herbergen",
-   "mevcutTr": "hostel, konukevi",
-   "mevcutBeispiel": "Am Ende der Etappe fanden die Pilger eine einfache Herberge.",
-   "mevcutBeispielTr": "Etabın sonunda hacılar mütevazı bir konukevi buldu."
+   "currentTr": "hostel, konukevi",
+   "currentBeispiel": "Am Ende der Etappe fanden die Pilger eine einfache Herberge.",
+   "currentBeispielTr": "Etabın sonunda hacılar mütevazı bir konukevi buldu."
   },
   {
    "id": 5272,
@@ -302,9 +302,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Reiserouten",
-   "mevcutTr": "seyahat güzergâhı",
-   "mevcutBeispiel": "Wegen des Unwetters mussten wir unsere Reiseroute kurzfristig ändern.",
-   "mevcutBeispielTr": "Fırtına yüzünden güzergâhımızı son anda değiştirmek zorunda kaldık."
+   "currentTr": "seyahat güzergâhı",
+   "currentBeispiel": "Wegen des Unwetters mussten wir unsere Reiseroute kurzfristig ändern.",
+   "currentBeispielTr": "Fırtına yüzünden güzergâhımızı son anda değiştirmek zorunda kaldık."
   },
   {
    "id": 5273,
@@ -312,9 +312,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abstecher",
-   "mevcutTr": "kısa uğrayış, yol üstü gezi",
-   "mevcutBeispiel": "Auf dem Rückweg machten wir einen kurzen Abstecher an den See.",
-   "mevcutBeispielTr": "Dönüş yolunda göle kısa bir uğrama yaptık."
+   "currentTr": "kısa uğrayış, yol üstü gezi",
+   "currentBeispiel": "Auf dem Rückweg machten wir einen kurzen Abstecher an den See.",
+   "currentBeispielTr": "Dönüş yolunda göle kısa bir uğrama yaptık."
   },
   {
    "id": 5274,
@@ -322,9 +322,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gipfel",
-   "mevcutTr": "zirve, doruk",
-   "mevcutBeispiel": "Vom Gipfel aus sieht man bei klarem Wetter bis zum Meer.",
-   "mevcutBeispielTr": "Hava açıkken zirveden denize kadar görülüyor."
+   "currentTr": "zirve, doruk",
+   "currentBeispiel": "Vom Gipfel aus sieht man bei klarem Wetter bis zum Meer.",
+   "currentBeispielTr": "Hava açıkken zirveden denize kadar görülüyor."
   },
   {
    "id": 5275,
@@ -332,10 +332,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schluchten",
-   "mevcutTr": "boğaz, kanyon",
-   "mevcutBeispiel": "Ein schmaler Pfad führt durch die enge Schlucht hinunter zum Fluss.",
-   "mevcutBeispielTr": "Dar bir patika kanyonun içinden nehre iniyor.",
-   "cakisan": [
+   "currentTr": "boğaz, kanyon",
+   "currentBeispiel": "Ein schmaler Pfad führt durch die enge Schlucht hinunter zum Fluss.",
+   "currentBeispielTr": "Dar bir patika kanyonun içinden nehre iniyor.",
+   "overlapping": [
     "der Hals (A1)"
    ]
   },
@@ -345,9 +345,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Buchten",
-   "mevcutTr": "koy, körfez",
-   "mevcutBeispiel": "In der versteckten Bucht ankerten nur zwei kleine Segelboote.",
-   "mevcutBeispielTr": "Gizli koyda yalnızca iki küçük yelkenli demirlemişti."
+   "currentTr": "koy, körfez",
+   "currentBeispiel": "In der versteckten Bucht ankerten nur zwei kleine Segelboote.",
+   "currentBeispielTr": "Gizli koyda yalnızca iki küçük yelkenli demirlemişti."
   },
   {
    "id": 5277,
@@ -355,9 +355,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Halbinseln",
-   "mevcutTr": "yarımada",
-   "mevcutBeispiel": "Die Halbinsel ist nur über eine schmale Landbrücke erreichbar.",
-   "mevcutBeispielTr": "Yarımadaya ancak dar bir kara köprüsünden ulaşılabiliyor."
+   "currentTr": "yarımada",
+   "currentBeispiel": "Die Halbinsel ist nur über eine schmale Landbrücke erreichbar.",
+   "currentBeispielTr": "Yarımadaya ancak dar bir kara köprüsünden ulaşılabiliyor."
   },
   {
    "id": 5278,
@@ -365,9 +365,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gletscher",
-   "mevcutTr": "buzul",
-   "mevcutBeispiel": "Der Gletscher hat sich in dreißig Jahren um einen Kilometer zurückgezogen.",
-   "mevcutBeispielTr": "Buzul otuz yılda bir kilometre geriledi."
+   "currentTr": "buzul",
+   "currentBeispiel": "Der Gletscher hat sich in dreißig Jahren um einen Kilometer zurückgezogen.",
+   "currentBeispielTr": "Buzul otuz yılda bir kilometre geriledi."
   },
   {
    "id": 5279,
@@ -375,9 +375,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vulkane",
-   "mevcutTr": "yanardağ",
-   "mevcutBeispiel": "Der Aufstieg zum Vulkan ist wegen der Aschewolke gesperrt.",
-   "mevcutBeispielTr": "Kül bulutu nedeniyle yanardağa tırmanış yasaklandı."
+   "currentTr": "yanardağ",
+   "currentBeispiel": "Der Aufstieg zum Vulkan ist wegen der Aschewolke gesperrt.",
+   "currentBeispielTr": "Kül bulutu nedeniyle yanardağa tırmanış yasaklandı."
   },
   {
    "id": 5280,
@@ -385,9 +385,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wüsten",
-   "mevcutTr": "çöl",
-   "mevcutBeispiel": "Nachts fallen die Temperaturen in der Wüste unter null Grad.",
-   "mevcutBeispielTr": "Geceleri çölde sıcaklık sıfırın altına düşüyor."
+   "currentTr": "çöl",
+   "currentBeispiel": "Nachts fallen die Temperaturen in der Wüste unter null Grad.",
+   "currentBeispielTr": "Geceleri çölde sıcaklık sıfırın altına düşüyor."
   },
   {
    "id": 5281,
@@ -395,9 +395,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Mündungen",
-   "mevcutTr": "nehir ağzı, döküldüğü yer",
-   "mevcutBeispiel": "An der Mündung des Flusses brüten zahlreiche seltene Vögel.",
-   "mevcutBeispielTr": "Nehrin denize döküldüğü yerde çok sayıda nadir kuş kuluçkaya yatıyor."
+   "currentTr": "nehir ağzı, döküldüğü yer",
+   "currentBeispiel": "An der Mündung des Flusses brüten zahlreiche seltene Vögel.",
+   "currentBeispielTr": "Nehrin denize döküldüğü yerde çok sayıda nadir kuş kuluçkaya yatıyor."
   },
   {
    "id": 5282,
@@ -405,9 +405,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Strömungen",
-   "mevcutTr": "akıntı",
-   "mevcutBeispiel": "Wegen der starken Strömung ist das Baden hier verboten.",
-   "mevcutBeispielTr": "Güçlü akıntı nedeniyle burada denize girmek yasak."
+   "currentTr": "akıntı",
+   "currentBeispiel": "Wegen der starken Strömung ist das Baden hier verboten.",
+   "currentBeispielTr": "Güçlü akıntı nedeniyle burada denize girmek yasak."
   },
   {
    "id": 5283,
@@ -415,9 +415,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "el değmemiş doğa, vahşi doğa",
-   "mevcutBeispiel": "Nur wenige Kilometer weiter beginnt die echte Wildnis.",
-   "mevcutBeispielTr": "Birkaç kilometre ötede gerçek vahşi doğa başlıyor."
+   "currentTr": "el değmemiş doğa, vahşi doğa",
+   "currentBeispiel": "Nur wenige Kilometer weiter beginnt die echte Wildnis.",
+   "currentBeispielTr": "Birkaç kilometre ötede gerçek vahşi doğa başlıyor."
   },
   {
    "id": 5284,
@@ -425,9 +425,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Seilbahnen",
-   "mevcutTr": "teleferik",
-   "mevcutBeispiel": "Bei starkem Wind stellt die Seilbahn den Betrieb sofort ein.",
-   "mevcutBeispielTr": "Şiddetli rüzgârda teleferik seferlerini derhal durduruyor."
+   "currentTr": "teleferik",
+   "currentBeispiel": "Bei starkem Wind stellt die Seilbahn den Betrieb sofort ein.",
+   "currentBeispielTr": "Şiddetli rüzgârda teleferik seferlerini derhal durduruyor."
   },
   {
    "id": 5285,
@@ -435,9 +435,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kitle turizmi",
-   "mevcutBeispiel": "Der Massentourismus belastet die Wasserversorgung der Insel erheblich.",
-   "mevcutBeispielTr": "Kitle turizmi adanın su kaynaklarını ciddi biçimde zorluyor."
+   "currentTr": "kitle turizmi",
+   "currentBeispiel": "Der Massentourismus belastet die Wasserversorgung der Insel erheblich.",
+   "currentBeispielTr": "Kitle turizmi adanın su kaynaklarını ciddi biçimde zorluyor."
   },
   {
    "id": 5286,
@@ -445,9 +445,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wahrzeichen",
-   "mevcutTr": "simge yapı, sembol",
-   "mevcutBeispiel": "Der alte Leuchtturm ist bis heute das Wahrzeichen des Hafens.",
-   "mevcutBeispielTr": "Eski deniz feneri bugün hâlâ limanın simgesi."
+   "currentTr": "simge yapı, sembol",
+   "currentBeispiel": "Der alte Leuchtturm ist bis heute das Wahrzeichen des Hafens.",
+   "currentBeispielTr": "Eski deniz feneri bugün hâlâ limanın simgesi."
   },
   {
    "id": 5287,
@@ -455,9 +455,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anlegestellen",
-   "mevcutTr": "iskele, yanaşma yeri",
-   "mevcutBeispiel": "Das Ausflugsschiff verlässt die Anlegestelle jede volle Stunde.",
-   "mevcutBeispielTr": "Gezi teknesi iskeleden her saat başı kalkıyor."
+   "currentTr": "iskele, yanaşma yeri",
+   "currentBeispiel": "Das Ausflugsschiff verlässt die Anlegestelle jede volle Stunde.",
+   "currentBeispielTr": "Gezi teknesi iskeleden her saat başı kalkıyor."
   },
   {
    "id": 5288,
@@ -465,9 +465,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "konaklama ve yeme içme sektörü",
-   "mevcutBeispiel": "Im Gastgewerbe fehlen seit Jahren ausgebildete Fachkräfte.",
-   "mevcutBeispielTr": "Konaklama ve yeme içme sektöründe yıllardır nitelikli eleman bulunamıyor."
+   "currentTr": "konaklama ve yeme içme sektörü",
+   "currentBeispiel": "Im Gastgewerbe fehlen seit Jahren ausgebildete Fachkräfte.",
+   "currentBeispielTr": "Konaklama ve yeme içme sektöründe yıllardır nitelikli eleman bulunamıyor."
   },
   {
    "id": 5289,
@@ -475,9 +475,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Etappen",
-   "mevcutTr": "etap, aşama",
-   "mevcutBeispiel": "Die letzte Etappe des Weges war die anstrengendste von allen.",
-   "mevcutBeispielTr": "Yolun son etabı hepsinin en yorucusuydu."
+   "currentTr": "etap, aşama",
+   "currentBeispiel": "Die letzte Etappe des Weges war die anstrengendste von allen.",
+   "currentBeispielTr": "Yolun son etabı hepsinin en yorucusuydu."
   },
   {
    "id": 5290,
@@ -485,10 +485,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ausblicke",
-   "mevcutTr": "manzara, görünüm",
-   "mevcutBeispiel": "Von der Terrasse hat man einen weiten Ausblick über das Tal.",
-   "mevcutBeispielTr": "Terastan vadiye doğru geniş bir manzara var.",
-   "cakisan": [
+   "currentTr": "manzara, görünüm",
+   "currentBeispiel": "Von der Terrasse hat man einen weiten Ausblick über das Tal.",
+   "currentBeispielTr": "Terastan vadiye doğru geniş bir manzara var.",
+   "overlapping": [
     "die Landschaft (A2)",
     "die Aussicht (B1)"
    ]
@@ -499,9 +499,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat umgebucht",
-   "mevcutTr": "rezervasyonu değiştirmek, tarihi kaydırmak",
-   "mevcutBeispiel": "Wir mussten den Flug wegen des Streiks kostenlos umbuchen.",
-   "mevcutBeispielTr": "Grev yüzünden uçuşu ücretsiz olarak değiştirmek zorunda kaldık."
+   "currentTr": "rezervasyonu değiştirmek, tarihi kaydırmak",
+   "currentBeispiel": "Wir mussten den Flug wegen des Streiks kostenlos umbuchen.",
+   "currentBeispielTr": "Grev yüzünden uçuşu ücretsiz olarak değiştirmek zorunda kaldık."
   },
   {
    "id": 5292,
@@ -509,10 +509,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat aufgesucht",
-   "mevcutTr": "gitmek, başvurmak, uğramak",
-   "mevcutBeispiel": "Bei Beschwerden sollten Reisende sofort einen Arzt aufsuchen.",
-   "mevcutBeispielTr": "Şikâyet durumunda yolcular derhal bir doktora başvurmalı.",
-   "cakisan": [
+   "currentTr": "gitmek, başvurmak, uğramak",
+   "currentBeispiel": "Bei Beschwerden sollten Reisende sofort einen Arzt aufsuchen.",
+   "currentBeispielTr": "Şikâyet durumunda yolcular derhal bir doktora başvurmalı.",
+   "overlapping": [
     "fahren (A1)",
     "gehen (A1)",
     "weggehen (A2)"
@@ -524,10 +524,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist angereist",
-   "mevcutTr": "gelmek, varmak",
-   "mevcutBeispiel": "Die meisten Gäste reisen mit dem Zug oder dem Bus an.",
-   "mevcutBeispielTr": "Konukların çoğu trenle ya da otobüsle geliyor.",
-   "cakisan": [
+   "currentTr": "gelmek, varmak",
+   "currentBeispiel": "Die meisten Gäste reisen mit dem Zug oder dem Bus an.",
+   "currentBeispielTr": "Konukların çoğu trenle ya da otobüsle geliyor.",
+   "overlapping": [
     "kommen (A1)"
    ]
   },
@@ -537,10 +537,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat sich verirrt",
-   "mevcutTr": "yolunu kaybetmek, kaybolmak",
-   "mevcutBeispiel": "Im dichten Nebel haben sich zwei Wanderer im Gebirge verirrt.",
-   "mevcutBeispielTr": "Yoğun siste iki yürüyüşçü dağda kayboldu.",
-   "cakisan": [
+   "currentTr": "yolunu kaybetmek, kaybolmak",
+   "currentBeispiel": "Im dichten Nebel haben sich zwei Wanderer im Gebirge verirrt.",
+   "currentBeispielTr": "Yoğun siste iki yürüyüşçü dağda kayboldu.",
+   "overlapping": [
     "sich verlaufen (B1)"
    ]
   }

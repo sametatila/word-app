@@ -1,7 +1,7 @@
 {
- "paket": "zh-021",
+ "packet": "zh-021",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-a1-s1",
    "skill": "speaking",
@@ -9,69 +9,69 @@
    "title": "De Ch-Luut",
    "genre": "Ses çalışması",
    "intro": "Züritüütsch'ün imzası bu ses. Hochdeutsch'ta „k“ olan yerde lehçede gırtlaktan gelen bir „ch“ var: Kind → Chind. Ne Türkçede ne standart Almancada kelime başında bulunur.",
-   "metin": "s Chind\nd Chuchi\nIch hätt gern e Stückli Chäs.\nDas isch es chlises Huus.\nChumm, mir gönd go poschte.",
+   "text": "s Chind\nd Chuchi\nIch hätt gern e Stückli Chäs.\nDas isch es chlises Huus.\nChumm, mir gönd go poschte.",
    "gloss": [
     {
      "de": "s Chind",
-     "mevcutTr": "çocuk (Hochdeutsch: das Kind)"
+     "currentTr": "çocuk (Hochdeutsch: das Kind)"
     },
     {
      "de": "d Chuchi",
-     "mevcutTr": "mutfak (die Küche)",
-     "havuz": {
+     "currentTr": "mutfak (die Küche)",
+     "pool": {
       "tr": "mutfak",
       "en": "kitchen"
      },
-     "hdAdayi": "die Küche"
+     "hdCandidate": "die Küche"
     },
     {
      "de": "de Chäs",
-     "mevcutTr": "peynir (der Käse)",
-     "havuz": {
+     "currentTr": "peynir (der Käse)",
+     "pool": {
       "tr": "peynir",
       "en": "cheese"
      },
-     "hdAdayi": "der Käse"
+     "hdCandidate": "der Käse"
     },
     {
      "de": "chli",
-     "mevcutTr": "küçük (klein)",
-     "havuz": {
+     "currentTr": "küçük (klein)",
+     "pool": {
       "tr": "küçük",
       "en": "small"
      },
-     "hdAdayi": "klein"
+     "hdCandidate": "klein"
     },
     {
      "de": "cho",
-     "mevcutTr": "gelmek (kommen)",
-     "havuz": {
+     "currentTr": "gelmek (kommen)",
+     "pool": {
       "tr": "gelmek",
       "en": "to come"
      },
-     "hdAdayi": "kommen"
+     "hdCandidate": "kommen"
     }
    ],
    "tasks": [
     {
      "de": "s Chind",
-     "mevcutTr": "çocuk"
+     "currentTr": "çocuk"
     },
     {
      "de": "d Chuchi",
-     "mevcutTr": "mutfak"
+     "currentTr": "mutfak"
     },
     {
      "de": "Ich hätt gern e Stückli Chäs.",
-     "mevcutTr": "Bir parça peynir istiyorum."
+     "currentTr": "Bir parça peynir istiyorum."
     },
     {
      "de": "Das isch es chlises Huus.",
-     "mevcutTr": "Bu küçük bir ev."
+     "currentTr": "Bu küçük bir ev."
     },
     {
      "de": "Chumm, mir gönd go poschte.",
-     "mevcutTr": "Hadi, alışverişe gidelim."
+     "currentTr": "Hadi, alışverişe gidelim."
     }
    ]
   },
@@ -82,74 +82,74 @@
    "title": "Eifachi Vokal",
    "genre": "Ses çalışması",
    "intro": "Hochdeutsch'un ikili ünlüleri lehçede tek uzun sese dönüşür: Zeit → Ziit, Haus → Huus, Leute → Lüüt. Çift yazılan harf sesin uzun olduğunu gösterir.",
-   "metin": "Ich han kei Ziit.\nMir gönd hei is Huus.\nVill Lüüt sind hüt do.\nDas isch nöd wiit vo do.\nWas isch dis Bruef?",
+   "text": "Ich han kei Ziit.\nMir gönd hei is Huus.\nVill Lüüt sind hüt do.\nDas isch nöd wiit vo do.\nWas isch dis Bruef?",
    "gloss": [
     {
      "de": "d Ziit",
-     "mevcutTr": "zaman (die Zeit)",
-     "havuz": {
+     "currentTr": "zaman (die Zeit)",
+     "pool": {
       "tr": "zaman",
       "en": "time"
      },
-     "hdAdayi": "die Zeit"
+     "hdCandidate": "die Zeit"
     },
     {
      "de": "s Huus",
-     "mevcutTr": "ev (das Haus)",
-     "havuz": {
+     "currentTr": "ev (das Haus)",
+     "pool": {
       "tr": "ev",
       "en": "house"
      },
-     "hdAdayi": "das Haus"
+     "hdCandidate": "das Haus"
     },
     {
      "de": "d Lüüt",
-     "mevcutTr": "insanlar (die Leute)",
-     "havuz": {
+     "currentTr": "insanlar (die Leute)",
+     "pool": {
       "tr": "insanlar",
       "en": "people"
      },
-     "hdAdayi": "die Leute"
+     "hdCandidate": "die Leute"
     },
     {
      "de": "wiit",
-     "mevcutTr": "uzak (weit)",
-     "havuz": {
+     "currentTr": "uzak (weit)",
+     "pool": {
       "tr": "uzak",
       "en": "far"
      },
-     "hdAdayi": "weit"
+     "hdCandidate": "weit"
     },
     {
      "de": "de Bruef",
-     "mevcutTr": "meslek (der Beruf)",
-     "havuz": {
+     "currentTr": "meslek (der Beruf)",
+     "pool": {
       "tr": "meslek",
       "en": "profession"
      },
-     "hdAdayi": "der Beruf"
+     "hdCandidate": "der Beruf"
     }
    ],
    "tasks": [
     {
      "de": "Ich han kei Ziit.",
-     "mevcutTr": "Vaktim yok."
+     "currentTr": "Vaktim yok."
     },
     {
      "de": "Mir gönd hei is Huus.",
-     "mevcutTr": "Eve gidiyoruz."
+     "currentTr": "Eve gidiyoruz."
     },
     {
      "de": "Vill Lüüt sind hüt do.",
-     "mevcutTr": "Bugün çok insan var."
+     "currentTr": "Bugün çok insan var."
     },
     {
      "de": "Das isch nöd wiit vo do.",
-     "mevcutTr": "Burası uzak değil."
+     "currentTr": "Burası uzak değil."
     },
     {
      "de": "Was isch dis Bruef?",
-     "mevcutTr": "Mesleğin ne?"
+     "currentTr": "Mesleğin ne?"
     }
    ]
   },
@@ -160,64 +160,64 @@
    "title": "S -li am Ändi",
    "genre": "Ses çalışması",
    "intro": "„-li“ eki lehçede iki iş yapar: küçültme (Stück → Stückli) ve -lich sonlarının kısalması (wirklich → würkli). Vurgu kökte kalır, ek hafifçe söylenir.",
-   "metin": "Nimm no es Stückli.\nS Meitli isch scho i de Schuel.\nDas isch würkli guet.\nSi isch en fründlichi Frau.\nHäsch s Chäschtli gseh?",
+   "text": "Nimm no es Stückli.\nS Meitli isch scho i de Schuel.\nDas isch würkli guet.\nSi isch en fründlichi Frau.\nHäsch s Chäschtli gseh?",
    "gloss": [
     {
      "de": "s Stückli",
-     "mevcutTr": "parçacık (das Stückchen)"
+     "currentTr": "parçacık (das Stückchen)"
     },
     {
      "de": "s Meitli",
-     "mevcutTr": "kız (das Mädchen)",
-     "havuz": {
+     "currentTr": "kız (das Mädchen)",
+     "pool": {
       "tr": "kız",
       "en": "girl"
      },
-     "hdAdayi": "das Mädchen"
+     "hdCandidate": "das Mädchen"
     },
     {
      "de": "s Chäschtli",
-     "mevcutTr": "dolapçık (das Kästchen)"
+     "currentTr": "dolapçık (das Kästchen)"
     },
     {
      "de": "würkli",
-     "mevcutTr": "gerçekten (wirklich)",
-     "havuz": {
+     "currentTr": "gerçekten (wirklich)",
+     "pool": {
       "tr": "gerçekten",
       "en": "really"
      },
-     "hdAdayi": "wirklich"
+     "hdCandidate": "wirklich"
     },
     {
      "de": "fründli",
-     "mevcutTr": "cana yakın (freundlich)",
-     "havuz": {
+     "currentTr": "cana yakın (freundlich)",
+     "pool": {
       "tr": "güler yüzlü",
       "en": "friendly"
      },
-     "hdAdayi": "freundlich"
+     "hdCandidate": "freundlich"
     }
    ],
    "tasks": [
     {
      "de": "Nimm no es Stückli.",
-     "mevcutTr": "Bir parça daha al."
+     "currentTr": "Bir parça daha al."
     },
     {
      "de": "S Meitli isch scho i de Schuel.",
-     "mevcutTr": "Kız çoktan okulda."
+     "currentTr": "Kız çoktan okulda."
     },
     {
      "de": "Das isch würkli guet.",
-     "mevcutTr": "Bu gerçekten iyi."
+     "currentTr": "Bu gerçekten iyi."
     },
     {
      "de": "Si isch en fründlichi Frau.",
-     "mevcutTr": "O cana yakın bir kadın."
+     "currentTr": "O cana yakın bir kadın."
     },
     {
      "de": "Häsch s Chäschtli gseh?",
-     "mevcutTr": "Dolapçığı gördün mü?"
+     "currentTr": "Dolapçığı gördün mü?"
     }
    ]
   },
@@ -228,49 +228,49 @@
    "title": "Die wichtigschte Verbe",
    "genre": "Ses çalışması",
    "intro": "Bu birkaç fiil her cümlede geçiyor ve Hochdeutsch'tan en çok ayrılan yerler bunlar. Önce bunlar oturursa lehçenin geri kalanı çok daha kolay geliyor.",
-   "metin": "Das isch mis Huus.\nEr hät kei Ziit.\nWohi gaht si?\nWänn chunt de Zug?\nIch wott es Kafi, bitte.",
+   "text": "Das isch mis Huus.\nEr hät kei Ziit.\nWohi gaht si?\nWänn chunt de Zug?\nIch wott es Kafi, bitte.",
    "gloss": [
     {
      "de": "isch",
-     "mevcutTr": "-dir (ist)"
+     "currentTr": "-dir (ist)"
     },
     {
      "de": "hät",
-     "mevcutTr": "sahip (hat)"
+     "currentTr": "sahip (hat)"
     },
     {
      "de": "gaht",
-     "mevcutTr": "gidiyor (geht)"
+     "currentTr": "gidiyor (geht)"
     },
     {
      "de": "chunt",
-     "mevcutTr": "geliyor (kommt)"
+     "currentTr": "geliyor (kommt)"
     },
     {
      "de": "wott",
-     "mevcutTr": "istiyor (will)"
+     "currentTr": "istiyor (will)"
     }
    ],
    "tasks": [
     {
      "de": "Das isch mis Huus.",
-     "mevcutTr": "Bu benim evim."
+     "currentTr": "Bu benim evim."
     },
     {
      "de": "Er hät kei Ziit.",
-     "mevcutTr": "Onun vakti yok."
+     "currentTr": "Onun vakti yok."
     },
     {
      "de": "Wohi gaht si?",
-     "mevcutTr": "O nereye gidiyor?"
+     "currentTr": "O nereye gidiyor?"
     },
     {
      "de": "Wänn chunt de Zug?",
-     "mevcutTr": "Tren ne zaman geliyor?"
+     "currentTr": "Tren ne zaman geliyor?"
     },
     {
      "de": "Ich wott es Kafi, bitte.",
-     "mevcutTr": "Bir kahve istiyorum, lütfen."
+     "currentTr": "Bir kahve istiyorum, lütfen."
     }
    ]
   },
@@ -281,49 +281,49 @@
    "title": "Satzrhythmus",
    "genre": "Ses çalışması",
    "intro": "Doğru sesleri çıkarmak yetmiyor: lehçeyi lehçe yapan cümlenin akışı. Kelimeler birbirine bağlanır, sık kalıplar tek kelime gibi söylenir. Leni'yi dinle ve nereye bağladığına dikkat et.",
-   "metin": "Das isch schön, gäll?\nChum emal do ane!\nI weiss nöd, öb er chunt.\nEs git no vill z tue.\nDas gaht scho, mach dir kei Sorge.",
+   "text": "Das isch schön, gäll?\nChum emal do ane!\nI weiss nöd, öb er chunt.\nEs git no vill z tue.\nDas gaht scho, mach dir kei Sorge.",
    "gloss": [
     {
      "de": "gäll?",
-     "mevcutTr": "değil mi? (nicht wahr?)"
+     "currentTr": "değil mi? (nicht wahr?)"
     },
     {
      "de": "chum emal",
-     "mevcutTr": "gel hele (komm mal)"
+     "currentTr": "gel hele (komm mal)"
     },
     {
      "de": "es git",
-     "mevcutTr": "var (es gibt)"
+     "currentTr": "var (es gibt)"
     },
     {
      "de": "i weiss nöd",
-     "mevcutTr": "bilmiyorum (ich weiß nicht)"
+     "currentTr": "bilmiyorum (ich weiß nicht)"
     },
     {
      "de": "das gaht scho",
-     "mevcutTr": "olur, tamam (das geht schon)"
+     "currentTr": "olur, tamam (das geht schon)"
     }
    ],
    "tasks": [
     {
      "de": "Das isch schön, gäll?",
-     "mevcutTr": "Güzel, değil mi?"
+     "currentTr": "Güzel, değil mi?"
     },
     {
      "de": "Chum emal do ane!",
-     "mevcutTr": "Gel hele buraya!"
+     "currentTr": "Gel hele buraya!"
     },
     {
      "de": "I weiss nöd, öb er chunt.",
-     "mevcutTr": "Gelip gelmeyeceğini bilmiyorum."
+     "currentTr": "Gelip gelmeyeceğini bilmiyorum."
     },
     {
      "de": "Es git no vill z tue.",
-     "mevcutTr": "Yapılacak çok şey var."
+     "currentTr": "Yapılacak çok şey var."
     },
     {
      "de": "Das gaht scho, mach dir kei Sorge.",
-     "mevcutTr": "Olur, merak etme."
+     "currentTr": "Olur, merak etme."
     }
    ]
   },
@@ -334,49 +334,49 @@
    "title": "S Perfekt: gsi, gha, gseh",
    "genre": "Ses çalışması",
    "intro": "Lehçede geçmiş zaman hep Perfekt ve „ge-“ öneki tek bir g'ye iniyor: gewesen → gsi. Araya ünlü koymadan söylemek gerekiyor — asıl zorluk bu.",
-   "metin": "Ich bi geschter dihei gsi.\nMir hend kei Ziit gha.\nHäsch das au gseh?\nIch han de Zug gnoh.\nDas han ich nöd gwüsst.",
+   "text": "Ich bi geschter dihei gsi.\nMir hend kei Ziit gha.\nHäsch das au gseh?\nIch han de Zug gnoh.\nDas han ich nöd gwüsst.",
    "gloss": [
     {
      "de": "gsi",
-     "mevcutTr": "olmuş (gewesen)"
+     "currentTr": "olmuş (gewesen)"
     },
     {
      "de": "gha",
-     "mevcutTr": "sahip olmuş (gehabt)"
+     "currentTr": "sahip olmuş (gehabt)"
     },
     {
      "de": "gseh",
-     "mevcutTr": "görmüş (gesehen)"
+     "currentTr": "görmüş (gesehen)"
     },
     {
      "de": "gnoh",
-     "mevcutTr": "almış (genommen)"
+     "currentTr": "almış (genommen)"
     },
     {
      "de": "gwüsst",
-     "mevcutTr": "bilmiş (gewusst)"
+     "currentTr": "bilmiş (gewusst)"
     }
    ],
    "tasks": [
     {
      "de": "Ich bi geschter dihei gsi.",
-     "mevcutTr": "Dün evdeydim."
+     "currentTr": "Dün evdeydim."
     },
     {
      "de": "Mir hend kei Ziit gha.",
-     "mevcutTr": "Vaktimiz olmadı."
+     "currentTr": "Vaktimiz olmadı."
     },
     {
      "de": "Häsch das au gseh?",
-     "mevcutTr": "Sen de gördün mü?"
+     "currentTr": "Sen de gördün mü?"
     },
     {
      "de": "Ich han de Zug gnoh.",
-     "mevcutTr": "Treni aldım."
+     "currentTr": "Treni aldım."
     },
     {
      "de": "Das han ich nöd gwüsst.",
-     "mevcutTr": "Bunu bilmiyordum."
+     "currentTr": "Bunu bilmiyordum."
     }
    ]
   },
@@ -387,49 +387,49 @@
    "title": "Schnälls Rede",
    "genre": "Ses çalışması",
    "intro": "Günlük hızda fiil ve zamir birbirine yapışır: „hast du“ → „häsch“, „kommst du“ → „chunnsch“. Bunu bilmeden lehçe okunabilir ama konuşulduğunda anlaşılmaz.",
-   "metin": "Häsch scho gässe?\nChunnsch au mit?\nWottsch no e Kafi?\nChasch mir schnäll hälfe?\nWeisch, ich han das nöd gwüsst.",
+   "text": "Häsch scho gässe?\nChunnsch au mit?\nWottsch no e Kafi?\nChasch mir schnäll hälfe?\nWeisch, ich han das nöd gwüsst.",
    "gloss": [
     {
      "de": "häsch",
-     "mevcutTr": "sende var mı / -dın mı (hast du)"
+     "currentTr": "sende var mı / -dın mı (hast du)"
     },
     {
      "de": "chunnsch",
-     "mevcutTr": "geliyor musun (kommst du)"
+     "currentTr": "geliyor musun (kommst du)"
     },
     {
      "de": "wottsch",
-     "mevcutTr": "istiyor musun (willst du)"
+     "currentTr": "istiyor musun (willst du)"
     },
     {
      "de": "chasch",
-     "mevcutTr": "yapabilir misin (kannst du)"
+     "currentTr": "yapabilir misin (kannst du)"
     },
     {
      "de": "weisch",
-     "mevcutTr": "biliyor musun (weißt du)"
+     "currentTr": "biliyor musun (weißt du)"
     }
    ],
    "tasks": [
     {
      "de": "Häsch scho gässe?",
-     "mevcutTr": "Yemek yedin mi?"
+     "currentTr": "Yemek yedin mi?"
     },
     {
      "de": "Chunnsch au mit?",
-     "mevcutTr": "Sen de geliyor musun?"
+     "currentTr": "Sen de geliyor musun?"
     },
     {
      "de": "Wottsch no e Kafi?",
-     "mevcutTr": "Bir kahve daha ister misin?"
+     "currentTr": "Bir kahve daha ister misin?"
     },
     {
      "de": "Chasch mir schnäll hälfe?",
-     "mevcutTr": "Bana hızlıca yardım edebilir misin?"
+     "currentTr": "Bana hızlıca yardım edebilir misin?"
     },
     {
      "de": "Weisch, ich han das nöd gwüsst.",
-     "mevcutTr": "Biliyor musun, bunu bilmiyordum."
+     "currentTr": "Biliyor musun, bunu bilmiyordum."
     }
    ]
   },
@@ -440,64 +440,64 @@
    "title": "Im Lade",
    "genre": "Diyalog",
    "intro": "Dükkânda alışveriş yapıyorsun. Züritüütsch konuş — Hochdeutsch söylersen de anlaşılır, ama lehçeyi dene.",
-   "metin": "",
+   "text": "",
    "gloss": [
     {
      "de": "de Lade",
-     "mevcutTr": "dükkân (der Laden)",
-     "havuz": {
+     "currentTr": "dükkân (der Laden)",
+     "pool": {
       "tr": "dükkân",
       "en": "shop"
      },
-     "hdAdayi": "der Laden"
+     "hdCandidate": "der Laden"
     },
     {
      "de": "de Chäs",
-     "mevcutTr": "peynir (der Käse)",
-     "havuz": {
+     "currentTr": "peynir (der Käse)",
+     "pool": {
       "tr": "peynir",
       "en": "cheese"
      },
-     "hdAdayi": "der Käse"
+     "hdCandidate": "der Käse"
     },
     {
      "de": "s Brot",
-     "mevcutTr": "ekmek",
-     "havuz": {
+     "currentTr": "ekmek",
+     "pool": {
       "tr": "ekmek",
       "en": "bread"
      }
     },
     {
      "de": "wieviel",
-     "mevcutTr": "ne kadar"
+     "currentTr": "ne kadar"
     },
     {
      "de": "zäme",
-     "mevcutTr": "toplam, birlikte (zusammen)",
-     "havuz": {
+     "currentTr": "toplam, birlikte (zusammen)",
+     "pool": {
       "tr": "birlikte",
       "en": "together"
      },
-     "hdAdayi": "zusammen"
+     "hdCandidate": "zusammen"
     }
    ],
    "targets": [
     {
      "de": "Ich hätt gern …",
-     "mevcutTr": "… istiyorum"
+     "currentTr": "… istiyorum"
     },
     {
      "de": "Wieviel choschtet das?",
-     "mevcutTr": "Bu ne kadar?"
+     "currentTr": "Bu ne kadar?"
     },
     {
      "de": "Das isch alles.",
-     "mevcutTr": "Hepsi bu."
+     "currentTr": "Hepsi bu."
     },
     {
      "de": "Merci vilmal.",
-     "mevcutTr": "Çok teşekkürler."
+     "currentTr": "Çok teşekkürler."
     }
    ]
   }

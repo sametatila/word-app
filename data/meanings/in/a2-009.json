@@ -1,16 +1,16 @@
 {
- "paket": "a2-009",
+ "packet": "a2-009",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 1203,
    "de": "sonnig",
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "güneşli",
-   "mevcutBeispiel": "Morgen ist das Wetter wieder warm und sonnig.",
-   "mevcutBeispielTr": "Yarın hava yine sıcak ve güneşli."
+   "currentTr": "güneşli",
+   "currentBeispiel": "Morgen ist das Wetter wieder warm und sonnig.",
+   "currentBeispielTr": "Yarın hava yine sıcak ve güneşli."
   },
   {
    "id": 1161,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sığır, sığır eti",
-   "mevcutBeispiel": "Ich esse nur Fleisch vom Rind.",
-   "mevcutBeispielTr": "Sadece sığır eti yerim."
+   "currentTr": "sığır, sığır eti",
+   "currentBeispiel": "Ich esse nur Fleisch vom Rind.",
+   "currentBeispielTr": "Sadece sığır eti yerim."
   },
   {
    "id": 1211,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "muayene saati, görüşme saati",
-   "mevcutBeispiel": "Frau Doktor Weiß hat von 9:00 bis 12:30 Uhr Sprechstunde.",
-   "mevcutBeispielTr": "Doktor Weiß'ın muayene saatleri 9:00 - 12:30 arası."
+   "currentTr": "muayene saati, görüşme saati",
+   "currentBeispiel": "Frau Doktor Weiß hat von 9:00 bis 12:30 Uhr Sprechstunde.",
+   "currentBeispielTr": "Doktor Weiß'ın muayene saatleri 9:00 - 12:30 arası."
   },
   {
    "id": 1257,
@@ -38,9 +38,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "steigt um, ist umgestiegen",
-   "mevcutTr": "aktarma yapmak",
-   "mevcutBeispiel": "Sie müssen in Mannheim umsteigen.",
-   "mevcutBeispielTr": "Mannheim'da aktarma yapmanız gerekiyor."
+   "currentTr": "aktarma yapmak",
+   "currentBeispiel": "Sie müssen in Mannheim umsteigen.",
+   "currentBeispielTr": "Mannheim'da aktarma yapmanız gerekiyor."
   },
   {
    "id": 1062,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "polisiye",
-   "mevcutBeispiel": "Miriam liest gern spannende Krimis. Schauen wir am Sonntag zusammen den Tatort? – Nein, ich mag keine Krimis.",
-   "mevcutBeispielTr": "Miriam sürükleyici polisiyeler okumayı sever. Pazar günü birlikte Tatort izleyelim mi? – Hayır, polisiye sevmem."
+   "currentTr": "polisiye",
+   "currentBeispiel": "Miriam liest gern spannende Krimis. Schauen wir am Sonntag zusammen den Tatort? – Nein, ich mag keine Krimis.",
+   "currentBeispielTr": "Miriam sürükleyici polisiyeler okumayı sever. Pazar günü birlikte Tatort izleyelim mi? – Hayır, polisiye sevmem."
   },
   {
    "id": 1288,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "voleybol",
-   "mevcutBeispiel": "Ich spiele gern Volleyball.",
-   "mevcutBeispielTr": "Voleybol oynamayı severim."
+   "currentTr": "voleybol",
+   "currentBeispiel": "Ich spiele gern Volleyball.",
+   "currentBeispielTr": "Voleybol oynamayı severim."
   },
   {
    "id": 1118,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "makarna, erişte",
-   "mevcutBeispiel": "Möchten Sie lieber Reis oder Nudeln? – Lieber Nudeln, bitte.",
-   "mevcutBeispielTr": "Pilav mı istersiniz, makarna mı? – Makarna lütfen."
+   "currentTr": "makarna, erişte",
+   "currentBeispiel": "Möchten Sie lieber Reis oder Nudeln? – Lieber Nudeln, bitte.",
+   "currentBeispielTr": "Pilav mı istersiniz, makarna mı? – Makarna lütfen."
   },
   {
    "id": 895,
@@ -78,9 +78,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "begründet, hat begründet",
-   "mevcutTr": "gerekçelendirmek, açıklamak",
-   "mevcutBeispiel": "Bitte begründen Sie Ihre Meinung.",
-   "mevcutBeispielTr": "Lütfen görüşünüzü gerekçelendirin."
+   "currentTr": "gerekçelendirmek, açıklamak",
+   "currentBeispiel": "Bitte begründen Sie Ihre Meinung.",
+   "currentBeispielTr": "Lütfen görüşünüzü gerekçelendirin."
   },
   {
    "id": 1229,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "tablet",
-   "mevcutBeispiel": "Hast du ein Tablet? - Nein, ich habe einen Laptop und ein Handy.",
-   "mevcutBeispielTr": "Tabletin var mı? - Hayır, dizüstü bilgisayarım ve telefonum var."
+   "currentTr": "tablet",
+   "currentBeispiel": "Hast du ein Tablet? - Nein, ich habe einen Laptop und ein Handy.",
+   "currentBeispielTr": "Tabletin var mı? - Hayır, dizüstü bilgisayarım ve telefonum var."
   },
   {
    "id": 1056,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "kozmetik",
-   "mevcutBeispiel": "Kosmetik können Sie im Erdgeschoss kaufen.",
-   "mevcutBeispielTr": "Kozmetik ürünlerini zemin kattan alabilirsiniz."
+   "currentTr": "kozmetik",
+   "currentBeispiel": "Kosmetik können Sie im Erdgeschoss kaufen.",
+   "currentBeispielTr": "Kozmetik ürünlerini zemin kattan alabilirsiniz."
   },
   {
    "id": 911,
@@ -108,9 +108,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "bulutlu",
-   "mevcutBeispiel": "Heute ist es bewölkt. Es gibt viele Wolken am Himmel.",
-   "mevcutBeispielTr": "Bugün hava bulutlu. Gökyüzünde çok bulut var."
+   "currentTr": "bulutlu",
+   "currentBeispiel": "Heute ist es bewölkt. Es gibt viele Wolken am Himmel.",
+   "currentBeispielTr": "Bugün hava bulutlu. Gökyüzünde çok bulut var."
   },
   {
    "id": 1210,
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "spor sahası",
-   "mevcutBeispiel": "Das Fußballtraining ist um 17 Uhr auf dem Sportplatz.",
-   "mevcutBeispielTr": "Futbol antrenmanı saat 17'de spor sahasında."
+   "currentTr": "spor sahası",
+   "currentBeispiel": "Das Fußballtraining ist um 17 Uhr auf dem Sportplatz.",
+   "currentBeispielTr": "Futbol antrenmanı saat 17'de spor sahasında."
   },
   {
    "id": 1058,
@@ -128,10 +128,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "sağlık sigortası",
-   "mevcutBeispiel": "Bei welcher Krankenkasse sind Sie?",
-   "mevcutBeispielTr": "Hangi sağlık sigortasındasınız?",
-   "cakisan": [
+   "currentTr": "sağlık sigortası",
+   "currentBeispiel": "Bei welcher Krankenkasse sind Sie?",
+   "currentBeispielTr": "Hangi sağlık sigortasındasınız?",
+   "overlapping": [
     "die Krankenversicherung (B2)"
    ]
   },
@@ -141,10 +141,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "web sitesi, ana sayfa",
-   "mevcutBeispiel": "Auf der Homepage von Freiburg gibt es alle wichtigen Informationen über die Stadt. Kennst du eine Homepage mit Deutschüb",
-   "mevcutBeispielTr": "Freiburg'un web sitesinde şehirle ilgili bütün önemli bilgiler var.",
-   "cakisan": [
+   "currentTr": "web sitesi, ana sayfa",
+   "currentBeispiel": "Auf der Homepage von Freiburg gibt es alle wichtigen Informationen über die Stadt. Kennst du eine Homepage mit Deutschüb",
+   "currentBeispielTr": "Freiburg'un web sitesinde şehirle ilgili bütün önemli bilgiler var.",
+   "overlapping": [
     "die Webseite (A2)"
    ]
   },
@@ -154,10 +154,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "uygun fiyatlı, ucuz",
-   "mevcutBeispiel": "Die Jacke ist sehr preiswert. Sie kostet nur 15 Euro.",
-   "mevcutBeispielTr": "Ceket çok uygun fiyatlı; sadece 15 euro.",
-   "cakisan": [
+   "currentTr": "uygun fiyatlı, ucuz",
+   "currentBeispiel": "Die Jacke ist sehr preiswert. Sie kostet nur 15 Euro.",
+   "currentBeispielTr": "Ceket çok uygun fiyatlı; sadece 15 euro.",
+   "overlapping": [
     "günstig (A1)"
    ]
   },
@@ -167,9 +167,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "skuter, motorlu skuter",
-   "mevcutBeispiel": "Oskar fährt mit dem Motorroller zur Arbeit.",
-   "mevcutBeispielTr": "Oskar işe skuterle gidiyor."
+   "currentTr": "skuter, motorlu skuter",
+   "currentBeispiel": "Oskar fährt mit dem Motorroller zur Arbeit.",
+   "currentBeispielTr": "Oskar işe skuterle gidiyor."
   },
   {
    "id": 1212,
@@ -177,9 +177,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "şehir planı, şehir haritası",
-   "mevcutBeispiel": "Haben Sie einen Stadtplan von Salzburg?",
-   "mevcutBeispielTr": "Salzburg şehir haritanız var mı?"
+   "currentTr": "şehir planı, şehir haritası",
+   "currentBeispiel": "Haben Sie einen Stadtplan von Salzburg?",
+   "currentBeispielTr": "Salzburg şehir haritanız var mı?"
   },
   {
    "id": 1322,
@@ -187,9 +187,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "çalıştay, seminer",
-   "mevcutBeispiel": "Das war ein toller Workshop. Ich habe viel gelernt. Am Freitag gibt es einen Computer-Workshop in meiner Firma.",
-   "mevcutBeispielTr": "Harika bir çalıştaydı; çok şey öğrendim. Cuma günü firmamda bir bilgisayar semineri var."
+   "currentTr": "çalıştay, seminer",
+   "currentBeispiel": "Das war ein toller Workshop. Ich habe viel gelernt. Am Freitag gibt es einen Computer-Workshop in meiner Firma.",
+   "currentBeispielTr": "Harika bir çalıştaydı; çok şey öğrendim. Cuma günü firmamda bir bilgisayar semineri var."
   },
   {
    "id": 1111,
@@ -197,9 +197,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sisli",
-   "mevcutBeispiel": "Fahr vorsichtig! Es ist neblig.",
-   "mevcutBeispielTr": "Dikkatli sür! Hava sisli."
+   "currentTr": "sisli",
+   "currentBeispiel": "Fahr vorsichtig! Es ist neblig.",
+   "currentBeispielTr": "Dikkatli sür! Hava sisli."
   },
   {
    "id": 1275,
@@ -207,9 +207,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "ulaşım aracı",
-   "mevcutBeispiel": "Welche Verkehrsmittel benutzen Sie oft?",
-   "mevcutBeispielTr": "Hangi ulaşım araçlarını sık kullanıyorsunuz?"
+   "currentTr": "ulaşım aracı",
+   "currentBeispiel": "Welche Verkehrsmittel benutzen Sie oft?",
+   "currentBeispielTr": "Hangi ulaşım araçlarını sık kullanıyorsunuz?"
   },
   {
    "id": 924,
@@ -217,10 +217,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "chattet, hat gechattet",
-   "mevcutTr": "sohbet etmek, yazışmak",
-   "mevcutBeispiel": "Luis chattet gern mit seinen Freunden im Internet.",
-   "mevcutBeispielTr": "Luis internette arkadaşlarıyla yazışmayı sever.",
-   "cakisan": [
+   "currentTr": "sohbet etmek, yazışmak",
+   "currentBeispiel": "Luis chattet gern mit seinen Freunden im Internet.",
+   "currentBeispielTr": "Luis internette arkadaşlarıyla yazışmayı sever.",
+   "overlapping": [
     "sich unterhalten (B1)",
     "plaudern (A2)"
    ]
@@ -231,9 +231,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "lädt herunter, hat heruntergeladen",
-   "mevcutTr": "indirmek",
-   "mevcutBeispiel": "Er lädt die Musik aus dem Internet herunter.",
-   "mevcutBeispielTr": "Müziği internetten indiriyor."
+   "currentTr": "indirmek",
+   "currentBeispiel": "Er lädt die Musik aus dem Internet herunter.",
+   "currentBeispielTr": "Müziği internetten indiriyor."
   },
   {
    "id": 1041,
@@ -241,9 +241,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "gençlik yurdu",
-   "mevcutBeispiel": "Wir übernachten in einer Jugendherberge.",
-   "mevcutBeispielTr": "Bir gençlik yurdunda kalıyoruz."
+   "currentTr": "gençlik yurdu",
+   "currentBeispiel": "Wir übernachten in einer Jugendherberge.",
+   "currentBeispielTr": "Bir gençlik yurdunda kalıyoruz."
   },
   {
    "id": 874,
@@ -251,10 +251,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kesinlikle, mutlaka",
-   "mevcutBeispiel": "Ich möchte auf jeden Fall den neuen James-Bond- Film sehen. - Wirklich? Ich finde James-Bond-Filme langweilig. Ich sehe ",
-   "mevcutBeispielTr": "Yeni James Bond filmini kesinlikle izlemek istiyorum. — Gerçekten mi? Ben James Bond filmlerini sıkıcı buluyorum.",
-   "cakisan": [
+   "currentTr": "kesinlikle, mutlaka",
+   "currentBeispiel": "Ich möchte auf jeden Fall den neuen James-Bond- Film sehen. - Wirklich? Ich finde James-Bond-Filme langweilig. Ich sehe ",
+   "currentBeispielTr": "Yeni James Bond filmini kesinlikle izlemek istiyorum. — Gerçekten mi? Ben James Bond filmlerini sıkıcı buluyorum.",
+   "overlapping": [
     "absolut (B1)",
     "bestimmt (B1)"
    ]
@@ -265,9 +265,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "darüber)",
-   "mevcutTr": "ona, buna (bunun üzerine)",
-   "mevcutBeispiel": "Darauf fällt mir keine Antwort ein. Darüber spreche ich nicht gern.",
-   "mevcutBeispielTr": "Buna verecek bir cevap aklıma gelmiyor. Bunun hakkında konuşmayı sevmiyorum."
+   "currentTr": "ona, buna (bunun üzerine)",
+   "currentBeispiel": "Darauf fällt mir keine Antwort ein. Darüber spreche ich nicht gern.",
+   "currentBeispielTr": "Buna verecek bir cevap aklıma gelmiyor. Bunun hakkında konuşmayı sevmiyorum."
   },
   {
    "id": 944,
@@ -275,9 +275,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "e-kitap",
-   "mevcutBeispiel": "Liest du lieber E-Books oder Bücher aus Papier? Entschuldigung, kann man hier E-Books kaufen?",
-   "mevcutBeispielTr": "E-kitap mı okumayı tercih edersin, kağıt kitap mı? Affedersiniz, burada e-kitap satılıyor mu?"
+   "currentTr": "e-kitap",
+   "currentBeispiel": "Liest du lieber E-Books oder Bücher aus Papier? Entschuldigung, kann man hier E-Books kaufen?",
+   "currentBeispielTr": "E-kitap mı okumayı tercih edersin, kağıt kitap mı? Affedersiniz, burada e-kitap satılıyor mu?"
   },
   {
    "id": 948,
@@ -285,10 +285,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "bazı, birkaç",
-   "mevcutBeispiel": "In diesem Text sind einige Fehler. Das dauert noch einige Zeit, bis das Essen fertig ist.",
-   "mevcutBeispielTr": "Bu metinde birkaç hata var. Yemeğin hazır olması biraz zaman alacak.",
-   "cakisan": [
+   "currentTr": "bazı, birkaç",
+   "currentBeispiel": "In diesem Text sind einige Fehler. Das dauert noch einige Zeit, bis das Essen fertig ist.",
+   "currentBeispielTr": "Bu metinde birkaç hata var. Yemeğin hazır olması biraz zaman alacak.",
+   "overlapping": [
     "manche (A2)"
    ]
   },
@@ -298,10 +298,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "tek, ayrı, tekli",
-   "mevcutBeispiel": "Nicht alle zusammen. Könnt ihr bitte einzeln sprechen? Florian ist ein Einzelkind. Er hat keine Geschwister. Ein Einzelz",
-   "mevcutBeispielTr": "Hepiniz aynı anda değil. Tek tek konuşabilir misiniz lütfen? Florian tek çocuk; hiç kardeşi yok.",
-   "cakisan": [
+   "currentTr": "tek, ayrı, tekli",
+   "currentBeispiel": "Nicht alle zusammen. Könnt ihr bitte einzeln sprechen? Florian ist ein Einzelkind. Er hat keine Geschwister. Ein Einzelz",
+   "currentBeispielTr": "Hepiniz aynı anda değil. Tek tek konuşabilir misiniz lütfen? Florian tek çocuk; hiç kardeşi yok.",
+   "overlapping": [
     "einzige (B1)"
    ]
   },
@@ -311,9 +311,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "ist erkältet, war erkältet, ist erkältet gewesen",
-   "mevcutTr": "nezle olmak, üşütmüş olmak",
-   "mevcutBeispiel": "Lisa ist erkältet. Sie kann heute nicht zur Schule gehen.",
-   "mevcutBeispielTr": "Lisa üşütmüş. Bugün okula gidemiyor."
+   "currentTr": "nezle olmak, üşütmüş olmak",
+   "currentBeispiel": "Lisa ist erkältet. Sie kann heute nicht zur Schule gehen.",
+   "currentBeispielTr": "Lisa üşütmüş. Bugün okula gidemiyor."
   },
   {
    "id": 962,
@@ -321,10 +321,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "indirim",
-   "mevcutBeispiel": "Für Schüler, Studenten und Rentner gibt es eine Ermäßigung.",
-   "mevcutBeispielTr": "Öğrencilere ve emeklilere indirim var.",
-   "cakisan": [
+   "currentTr": "indirim",
+   "currentBeispiel": "Für Schüler, Studenten und Rentner gibt es eine Ermäßigung.",
+   "currentBeispielTr": "Öğrencilere ve emeklilere indirim var.",
+   "overlapping": [
     "das Angebot (A1)",
     "der Rabatt (B1)",
     "der Ausverkauf (B2)"
@@ -336,9 +336,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "ist fit, war fit, ist fit gewesen",
-   "mevcutTr": "formda olmak",
-   "mevcutBeispiel": "Tom will fit sein. Er geht jeden Tag ins Fitnessstudio.",
-   "mevcutBeispielTr": "Tom formda olmak istiyor. Her gün spor salonuna gidiyor."
+   "currentTr": "formda olmak",
+   "currentBeispiel": "Tom will fit sein. Er geht jeden Tag ins Fitnessstudio.",
+   "currentBeispielTr": "Tom formda olmak istiyor. Her gün spor salonuna gidiyor."
   },
   {
    "id": 989,
@@ -346,9 +346,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Pl.)",
-   "mevcutTr": "kayıp eşyalar",
-   "mevcutBeispiel": "Haben Sie meinen Schirm gefunden? - Sie können dort bei den Fundsachen schauen.",
-   "mevcutBeispielTr": "Şemsiyemi buldunuz mu? - Şuradaki kayıp eşya bölümüne bakabilirsiniz."
+   "currentTr": "kayıp eşyalar",
+   "currentBeispiel": "Haben Sie meinen Schirm gefunden? - Sie können dort bei den Fundsachen schauen.",
+   "currentBeispielTr": "Şemsiyemi buldunuz mu? - Şuradaki kayıp eşya bölümüne bakabilirsiniz."
   },
   {
    "id": 994,
@@ -356,9 +356,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "ort, tag), (-e, -e, -e)",
-   "mevcutTr": "doğum- (Geburtstag, Geburtsort, Geburtsjahr)",
-   "mevcutBeispiel": "Das Geburtsjahr Ihres Sohnes, bitte? Bitte tragen Sie Ihren Geburtsort noch ein. Herzlichen Glückwunsch zum Geburtstag!",
-   "mevcutBeispielTr": "Oğlunuzun doğum yılı lütfen? Doğum yerinizi de yazın lütfen. Doğum günün kutlu olsun!"
+   "currentTr": "doğum- (Geburtstag, Geburtsort, Geburtsjahr)",
+   "currentBeispiel": "Das Geburtsjahr Ihres Sohnes, bitte? Bitte tragen Sie Ihren Geburtsort noch ein. Herzlichen Glückwunsch zum Geburtstag!",
+   "currentBeispielTr": "Oğlunuzun doğum yılı lütfen? Doğum yerinizi de yazın lütfen. Doğum günün kutlu olsun!"
   },
   {
    "id": 995,
@@ -366,9 +366,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sayın, saygıdeğer",
-   "mevcutBeispiel": "Sehr geehrte Damen und Herren,",
-   "mevcutBeispielTr": "Sayın yetkililer / Değerli hanımefendiler ve beyefendiler,"
+   "currentTr": "sayın, saygıdeğer",
+   "currentBeispiel": "Sehr geehrte Damen und Herren,",
+   "currentBeispielTr": "Sayın yetkililer / Değerli hanımefendiler ve beyefendiler,"
   },
   {
    "id": 1011,
@@ -376,10 +376,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "ist gültig, war gültig, ist gültig gewesen",
-   "mevcutTr": "geçerli olmak",
-   "mevcutBeispiel": "Der Pass ist nicht mehr gültig.",
-   "mevcutBeispielTr": "Pasaport artık geçerli değil.",
-   "cakisan": [
+   "currentTr": "geçerli olmak",
+   "currentBeispiel": "Der Pass ist nicht mehr gültig.",
+   "currentBeispielTr": "Pasaport artık geçerli değil.",
+   "overlapping": [
     "gelten (B1)"
    ]
   },
@@ -389,10 +389,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "bazı, kimi",
-   "mevcutBeispiel": "Manche Nachbarn sind unfreundlich.",
-   "mevcutBeispielTr": "Bazı komşular pek cana yakın değil.",
-   "cakisan": [
+   "currentTr": "bazı, kimi",
+   "currentBeispiel": "Manche Nachbarn sind unfreundlich.",
+   "currentBeispielTr": "Bazı komşular pek cana yakın değil.",
+   "overlapping": [
     "einige (A2)"
    ]
   },
@@ -402,10 +402,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "birkaç",
-   "mevcutBeispiel": "Wir fahren ein paar Tage ans Meer. Hast du ein paar Minuten Zeit?",
-   "mevcutBeispielTr": "Birkaç günlüğüne denize gidiyoruz. Birkaç dakikan var mı?",
-   "cakisan": [
+   "currentTr": "birkaç",
+   "currentBeispiel": "Wir fahren ein paar Tage ans Meer. Hast du ein paar Minuten Zeit?",
+   "currentBeispielTr": "Birkaç günlüğüne denize gidiyoruz. Birkaç dakikan var mı?",
+   "overlapping": [
     "mehrere (B1)"
    ]
   },
@@ -415,10 +415,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Pl.)",
-   "mevcutTr": "patates kızartması",
-   "mevcutBeispiel": "Die Kinder essen Bratwurst mit Pommes frites.",
-   "mevcutBeispielTr": "Çocuklar patates kızartmasıyla ızgara sosis yiyor.",
-   "cakisan": [
+   "currentTr": "patates kızartması",
+   "currentBeispiel": "Die Kinder essen Bratwurst mit Pommes frites.",
+   "currentBeispielTr": "Çocuklar patates kızartmasıyla ızgara sosis yiyor.",
+   "overlapping": [
     "die Pommes (A2)"
    ]
   },
@@ -428,9 +428,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "ist unterwegs, war unterwegs, ist unterwegs gewesen",
-   "mevcutTr": "yolda olmak",
-   "mevcutBeispiel": "Warte bitte auf mich. Ich bin unterwegs und komme gleich.",
-   "mevcutBeispielTr": "Beni bekle lütfen. Yoldayım, birazdan geliyorum."
+   "currentTr": "yolda olmak",
+   "currentBeispiel": "Warte bitte auf mich. Ich bin unterwegs und komme gleich.",
+   "currentBeispielTr": "Beni bekle lütfen. Yoldayım, birazdan geliyorum."
   },
   {
    "id": 1269,
@@ -438,9 +438,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "ist verabredet, war verabredet, ist verabredet gewesen",
-   "mevcutTr": "sözleşmiş olmak, buluşacak olmak",
-   "mevcutBeispiel": "Ich bin mit meiner Freundin verabredet.",
-   "mevcutBeispielTr": "Kız arkadaşımla sözleştik."
+   "currentTr": "sözleşmiş olmak, buluşacak olmak",
+   "currentBeispiel": "Ich bin mit meiner Freundin verabredet.",
+   "currentBeispielTr": "Kız arkadaşımla sözleştik."
   },
   {
    "id": 1331,
@@ -448,9 +448,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "zieht (an/aus), hat/ist (an/aus)gezogen",
-   "mevcutTr": "giymek, (giysi) giydirmek",
-   "mevcutBeispiel": "Ich ziehe mir eine Jacke an.",
-   "mevcutBeispielTr": "Bir ceket giyiyorum."
+   "currentTr": "giymek, (giysi) giydirmek",
+   "currentBeispiel": "Ich ziehe mir eine Jacke an.",
+   "currentBeispielTr": "Bir ceket giyiyorum."
   },
   {
    "id": 1339,
@@ -458,9 +458,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "geben, gehen, kommen, laufen)",
-   "mevcutTr": "geri (dönmek, vermek, gitmek)",
-   "mevcutBeispiel": "Fahrt ihr nach der Party zurück nach Hause? Wann muss ich das Buch zurückgeben? Wir gehen wieder zurück. Wann kommst du ",
-   "mevcutBeispielTr": "Partiden sonra eve mi dönüyorsunuz? Kitabı ne zaman geri vermem gerekiyor? Geri dönüyoruz."
+   "currentTr": "geri (dönmek, vermek, gitmek)",
+   "currentBeispiel": "Fahrt ihr nach der Party zurück nach Hause? Wann muss ich das Buch zurückgeben? Wir gehen wieder zurück. Wann kommst du ",
+   "currentBeispielTr": "Partiden sonra eve mi dönüyorsunuz? Kitabı ne zaman geri vermem gerekiyor? Geri dönüyoruz."
   },
   {
    "id": 7430,
@@ -468,9 +468,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "minicik, çok küçük",
-   "mevcutBeispiel": "Unsere erste Wohnung war winzig.",
-   "mevcutBeispielTr": "İlk dairemiz minicikti."
+   "currentTr": "minicik, çok küçük",
+   "currentBeispiel": "Unsere erste Wohnung war winzig.",
+   "currentBeispielTr": "İlk dairemiz minicikti."
   },
   {
    "id": 7431,
@@ -478,10 +478,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "devasa, kocaman",
-   "mevcutBeispiel": "Vor dem Bahnhof steht eine gigantische Uhr.",
-   "mevcutBeispielTr": "Garın önünde devasa bir saat duruyor.",
-   "cakisan": [
+   "currentTr": "devasa, kocaman",
+   "currentBeispiel": "Vor dem Bahnhof steht eine gigantische Uhr.",
+   "currentBeispielTr": "Garın önünde devasa bir saat duruyor.",
+   "overlapping": [
     "riesig (B1)"
    ]
   },
@@ -491,9 +491,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "oval",
-   "mevcutBeispiel": "Der Spiegel im Flur ist oval.",
-   "mevcutBeispielTr": "Koridordaki ayna ovaldir."
+   "currentTr": "oval",
+   "currentBeispiel": "Der Spiegel im Flur ist oval.",
+   "currentBeispielTr": "Koridordaki ayna ovaldir."
   },
   {
    "id": 7433,
@@ -501,9 +501,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "masif, som",
-   "mevcutBeispiel": "Der Tisch ist aus massivem Holz.",
-   "mevcutBeispielTr": "Masa masif ahşaptan."
+   "currentTr": "masif, som",
+   "currentBeispiel": "Der Tisch ist aus massivem Holz.",
+   "currentBeispielTr": "Masa masif ahşaptan."
   },
   {
    "id": 7434,
@@ -511,9 +511,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yumuşacık, ince",
-   "mevcutBeispiel": "Das Fleisch ist heute besonders zart.",
-   "mevcutBeispielTr": "Et bugün özellikle yumuşacık."
+   "currentTr": "yumuşacık, ince",
+   "currentBeispiel": "Das Fleisch ist heute besonders zart.",
+   "currentBeispielTr": "Et bugün özellikle yumuşacık."
   },
   {
    "id": 7435,
@@ -521,10 +521,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kaba, iri taneli",
-   "mevcutBeispiel": "Das Salz ist zu grob für den Salat.",
-   "mevcutBeispielTr": "Tuz salata için fazla iri taneli.",
-   "cakisan": [
+   "currentTr": "kaba, iri taneli",
+   "currentBeispiel": "Das Salz ist zu grob für den Salat.",
+   "currentBeispielTr": "Tuz salata için fazla iri taneli.",
+   "overlapping": [
     "unhöflich (A2)"
    ]
   },
@@ -534,10 +534,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sert, katı (esnemeyen, bükülmeyen)",
-   "mevcutBeispiel": "Der neue Lederschuh ist noch sehr steif.",
-   "mevcutBeispielTr": "Yeni deri ayakkabı hâlâ çok sert.",
-   "cakisan": [
+   "currentTr": "sert, katı (esnemeyen, bükülmeyen)",
+   "currentBeispiel": "Der neue Lederschuh ist noch sehr steif.",
+   "currentBeispielTr": "Yeni deri ayakkabı hâlâ çok sert.",
+   "overlapping": [
     "hart (A2)",
     "streng (A2)",
     "drastisch (B2)",
@@ -550,9 +550,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "pürüzlü, kaba",
-   "mevcutBeispiel": "Die Wand ist rau und nicht gestrichen.",
-   "mevcutBeispielTr": "Duvar pürüzlü ve boyanmamış."
+   "currentTr": "pürüzlü, kaba",
+   "currentBeispiel": "Die Wand ist rau und nicht gestrichen.",
+   "currentBeispielTr": "Duvar pürüzlü ve boyanmamış."
   }
  ]
 }

@@ -1,17 +1,17 @@
 {
- "paket": "b2-041",
+ "packet": "b2-041",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 5646,
    "de": "das Stadtviertel",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Stadtviertel",
-   "mevcutTr": "semt, mahalle",
-   "mevcutBeispiel": "Das Stadtviertel hat sich in zehn Jahren völlig verändert.",
-   "mevcutBeispielTr": "Semt on yıl içinde tamamen değişti.",
-   "cakisan": [
+   "currentTr": "semt, mahalle",
+   "currentBeispiel": "Das Stadtviertel hat sich in zehn Jahren völlig verändert.",
+   "currentBeispielTr": "Semt on yıl içinde tamamen değişti.",
+   "overlapping": [
     "das Quartier (B1)",
     "der Stadtteil (A2)"
    ]
@@ -22,9 +22,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Innenstädte",
-   "mevcutTr": "şehir merkezi",
-   "mevcutBeispiel": "In der Innenstadt sollen künftig deutlich weniger Autos fahren.",
-   "mevcutBeispielTr": "Şehir merkezinde bundan sonra çok daha az araba dolaşacak."
+   "currentTr": "şehir merkezi",
+   "currentBeispiel": "In der Innenstadt sollen künftig deutlich weniger Autos fahren.",
+   "currentBeispielTr": "Şehir merkezinde bundan sonra çok daha az araba dolaşacak."
   },
   {
    "id": 5648,
@@ -32,9 +32,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sozialwohnungen",
-   "mevcutTr": "sosyal konut",
-   "mevcutBeispiel": "Die Stadt plant den Bau von tausend neuen Sozialwohnungen.",
-   "mevcutBeispielTr": "Şehir bin yeni sosyal konut yapmayı planlıyor."
+   "currentTr": "sosyal konut",
+   "currentBeispiel": "Die Stadt plant den Bau von tausend neuen Sozialwohnungen.",
+   "currentBeispielTr": "Şehir bin yeni sosyal konut yapmayı planlıyor."
   },
   {
    "id": 5649,
@@ -42,9 +42,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "evsizlik, barınaksızlık",
-   "mevcutBeispiel": "Steigende Mieten treiben immer mehr Menschen in die Obdachlosigkeit.",
-   "mevcutBeispielTr": "Artan kiralar giderek daha çok insanı evsizliğe sürüklüyor."
+   "currentTr": "evsizlik, barınaksızlık",
+   "currentBeispiel": "Steigende Mieten treiben immer mehr Menschen in die Obdachlosigkeit.",
+   "currentBeispielTr": "Artan kiralar giderek daha çok insanı evsizliğe sürüklüyor."
   },
   {
    "id": 5650,
@@ -52,9 +52,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wohnflächen",
-   "mevcutTr": "kullanım alanı, net konut alanı",
-   "mevcutBeispiel": "Die Wohnung hat eine Wohnfläche von siebzig Quadratmetern.",
-   "mevcutBeispielTr": "Dairenin yetmiş metrekare kullanım alanı var."
+   "currentTr": "kullanım alanı, net konut alanı",
+   "currentBeispiel": "Die Wohnung hat eine Wohnfläche von siebzig Quadratmetern.",
+   "currentBeispielTr": "Dairenin yetmiş metrekare kullanım alanı var."
   },
   {
    "id": 5651,
@@ -62,9 +62,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Stellplätze",
-   "mevcutTr": "park yeri, araç yeri",
-   "mevcutBeispiel": "Zur Wohnung gehört ein überdachter Stellplatz für ein Auto.",
-   "mevcutBeispielTr": "Daireye bir araba için üstü kapalı park yeri dahil."
+   "currentTr": "park yeri, araç yeri",
+   "currentBeispiel": "Zur Wohnung gehört ein überdachter Stellplatz für ein Auto.",
+   "currentBeispielTr": "Daireye bir araba için üstü kapalı park yeri dahil."
   },
   {
    "id": 5652,
@@ -72,9 +72,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Speditionen",
-   "mevcutTr": "nakliye firması, taşımacılık şirketi",
-   "mevcutBeispiel": "Für den Umzug haben wir eine günstige Spedition beauftragt.",
-   "mevcutBeispielTr": "Taşınmak için uygun fiyatlı bir nakliye firmasıyla anlaştık."
+   "currentTr": "nakliye firması, taşımacılık şirketi",
+   "currentBeispiel": "Für den Umzug haben wir eine günstige Spedition beauftragt.",
+   "currentBeispielTr": "Taşınmak için uygun fiyatlı bir nakliye firmasıyla anlaştık."
   },
   {
    "id": 5653,
@@ -82,10 +82,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "trafik yoğunluğu, trafik hacmi",
-   "mevcutBeispiel": "Am Freitagnachmittag ist das Verkehrsaufkommen besonders hoch.",
-   "mevcutBeispielTr": "Cuma öğleden sonraları trafik yoğunluğu özellikle yüksek oluyor.",
-   "cakisan": [
+   "currentTr": "trafik yoğunluğu, trafik hacmi",
+   "currentBeispiel": "Am Freitagnachmittag ist das Verkehrsaufkommen besonders hoch.",
+   "currentBeispielTr": "Cuma öğleden sonraları trafik yoğunluğu özellikle yüksek oluyor.",
+   "overlapping": [
     "die Verkehrsdichte (B2)"
    ]
   },
@@ -95,9 +95,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kreisverkehre",
-   "mevcutTr": "dönel kavşak",
-   "mevcutBeispiel": "Am Kreisverkehr müssen Sie die zweite Ausfahrt nehmen.",
-   "mevcutBeispielTr": "Dönel kavşakta ikinci çıkışa girmeniz gerekiyor."
+   "currentTr": "dönel kavşak",
+   "currentBeispiel": "Am Kreisverkehr müssen Sie die zweite Ausfahrt nehmen.",
+   "currentBeispielTr": "Dönel kavşakta ikinci çıkışa girmeniz gerekiyor."
   },
   {
    "id": 5655,
@@ -105,9 +105,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Radwege",
-   "mevcutTr": "bisiklet yolu",
-   "mevcutBeispiel": "Der neue Radweg verläuft getrennt von der Fahrbahn.",
-   "mevcutBeispielTr": "Yeni bisiklet yolu araç şeridinden ayrı ilerliyor."
+   "currentTr": "bisiklet yolu",
+   "currentBeispiel": "Der neue Radweg verläuft getrennt von der Fahrbahn.",
+   "currentBeispielTr": "Yeni bisiklet yolu araç şeridinden ayrı ilerliyor."
   },
   {
    "id": 5656,
@@ -115,9 +115,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Pendler",
-   "mevcutTr": "işe gidip gelen kişi, banliyö yolcusu",
-   "mevcutBeispiel": "Tausende Pendler fahren täglich mit dem Zug in die Stadt.",
-   "mevcutBeispielTr": "Binlerce kişi her gün trenle şehre gidip geliyor."
+   "currentTr": "işe gidip gelen kişi, banliyö yolcusu",
+   "currentBeispiel": "Tausende Pendler fahren täglich mit dem Zug in die Stadt.",
+   "currentBeispielTr": "Binlerce kişi her gün trenle şehre gidip geliyor."
   },
   {
    "id": 5657,
@@ -125,9 +125,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Mauten",
-   "mevcutTr": "geçiş ücreti, otoyol ücreti",
-   "mevcutBeispiel": "In Österreich muss man für die Autobahn eine Maut zahlen.",
-   "mevcutBeispielTr": "Avusturya'da otoyol için geçiş ücreti ödemek gerekiyor."
+   "currentTr": "geçiş ücreti, otoyol ücreti",
+   "currentBeispiel": "In Österreich muss man für die Autobahn eine Maut zahlen.",
+   "currentBeispielTr": "Avusturya'da otoyol için geçiş ücreti ödemek gerekiyor."
   },
   {
    "id": 5658,
@@ -135,9 +135,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Tiefgaragen",
-   "mevcutTr": "yeraltı otoparkı, kapalı otopark",
-   "mevcutBeispiel": "In der Tiefgarage sind am Abend noch einige Plätze frei.",
-   "mevcutBeispielTr": "Yeraltı otoparkında akşam saatlerinde hâlâ birkaç yer boş."
+   "currentTr": "yeraltı otoparkı, kapalı otopark",
+   "currentBeispiel": "In der Tiefgarage sind am Abend noch einige Plätze frei.",
+   "currentBeispielTr": "Yeraltı otoparkında akşam saatlerinde hâlâ birkaç yer boş."
   },
   {
    "id": 5659,
@@ -145,10 +145,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Geschwindigkeitsbegrenzungen",
-   "mevcutTr": "hız sınırı",
-   "mevcutBeispiel": "Vor der Schule gilt eine Geschwindigkeitsbegrenzung von dreißig.",
-   "mevcutBeispielTr": "Okulun önünde otuz kilometrelik hız sınırı geçerli.",
-   "cakisan": [
+   "currentTr": "hız sınırı",
+   "currentBeispiel": "Vor der Schule gilt eine Geschwindigkeitsbegrenzung von dreißig.",
+   "currentBeispielTr": "Okulun önünde otuz kilometrelik hız sınırı geçerli.",
+   "overlapping": [
     "die Geschwindigkeitsbeschränkung (B1)"
    ]
   },
@@ -158,10 +158,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ladesäulen",
-   "mevcutTr": "şarj istasyonu, şarj ünitesi",
-   "mevcutBeispiel": "Vor dem Rathaus wurden zwei neue Ladesäulen installiert.",
-   "mevcutBeispielTr": "Belediye binasının önüne iki yeni şarj ünitesi kuruldu.",
-   "cakisan": [
+   "currentTr": "şarj istasyonu, şarj ünitesi",
+   "currentBeispiel": "Vor dem Rathaus wurden zwei neue Ladesäulen installiert.",
+   "currentBeispielTr": "Belediye binasının önüne iki yeni şarj ünitesi kuruldu.",
+   "overlapping": [
     "die Ladestation (B2)"
    ]
   },
@@ -171,9 +171,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schienennetze",
-   "mevcutTr": "demiryolu ağı",
-   "mevcutBeispiel": "Das Schienennetz im Norden wird in den nächsten Jahren erweitert.",
-   "mevcutBeispielTr": "Kuzeydeki demiryolu ağı önümüzdeki yıllarda genişletilecek."
+   "currentTr": "demiryolu ağı",
+   "currentBeispiel": "Das Schienennetz im Norden wird in den nächsten Jahren erweitert.",
+   "currentBeispielTr": "Kuzeydeki demiryolu ağı önümüzdeki yıllarda genişletilecek."
   },
   {
    "id": 5662,
@@ -181,9 +181,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Umgehungsstraßen",
-   "mevcutTr": "çevre yolu",
-   "mevcutBeispiel": "Seit dem Bau der Umgehungsstraße ist es im Dorf ruhiger.",
-   "mevcutBeispielTr": "Çevre yolu yapıldığından beri köy daha sakin."
+   "currentTr": "çevre yolu",
+   "currentBeispiel": "Seit dem Bau der Umgehungsstraße ist es im Dorf ruhiger.",
+   "currentBeispielTr": "Çevre yolu yapıldığından beri köy daha sakin."
   },
   {
    "id": 5663,
@@ -191,9 +191,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zugausfälle",
-   "mevcutTr": "tren seferinin iptali",
-   "mevcutBeispiel": "Wegen des Sturms kam es zu zahlreichen Zugausfällen.",
-   "mevcutBeispielTr": "Fırtına yüzünden çok sayıda tren seferi iptal edildi."
+   "currentTr": "tren seferinin iptali",
+   "currentBeispiel": "Wegen des Sturms kam es zu zahlreichen Zugausfällen.",
+   "currentBeispielTr": "Fırtına yüzünden çok sayıda tren seferi iptal edildi."
   },
   {
    "id": 5664,
@@ -201,9 +201,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anwohner",
-   "mevcutTr": "civarda oturan kişi, mahalle sakini",
-   "mevcutBeispiel": "Die Anwohner beschweren sich über den Lärm der Baustelle.",
-   "mevcutBeispielTr": "Civarda oturanlar şantiyenin gürültüsünden şikayetçi."
+   "currentTr": "civarda oturan kişi, mahalle sakini",
+   "currentBeispiel": "Die Anwohner beschweren sich über den Lärm der Baustelle.",
+   "currentBeispielTr": "Civarda oturanlar şantiyenin gürültüsünden şikayetçi."
   },
   {
    "id": 5665,
@@ -211,9 +211,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat modernisiert",
-   "mevcutTr": "modernleştirmek, yenilemek",
-   "mevcutBeispiel": "Der Eigentümer will das Bad und die Heizung modernisieren.",
-   "mevcutBeispielTr": "Mal sahibi banyoyu ve kaloriferi yenilemek istiyor."
+   "currentTr": "modernleştirmek, yenilemek",
+   "currentBeispiel": "Der Eigentümer will das Bad und die Heizung modernisieren.",
+   "currentBeispielTr": "Mal sahibi banyoyu ve kaloriferi yenilemek istiyor."
   },
   {
    "id": 5666,
@@ -221,10 +221,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat errichtet",
-   "mevcutTr": "inşa etmek, dikmek",
-   "mevcutBeispiel": "Auf dem Gelände soll ein neues Wohnhaus errichtet werden.",
-   "mevcutBeispielTr": "Arazide yeni bir apartman inşa edilecek.",
-   "cakisan": [
+   "currentTr": "inşa etmek, dikmek",
+   "currentBeispiel": "Auf dem Gelände soll ein neues Wohnhaus errichtet werden.",
+   "currentBeispielTr": "Arazide yeni bir apartman inşa edilecek.",
+   "overlapping": [
     "bauen (A2)"
    ]
   },
@@ -234,9 +234,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgerissen",
-   "mevcutTr": "yıkmak, sökmek",
-   "mevcutBeispiel": "Die alte Fabrik am Kanal wird im Sommer abgerissen.",
-   "mevcutBeispielTr": "Kanal kenarındaki eski fabrika yaz aylarında yıkılacak."
+   "currentTr": "yıkmak, sökmek",
+   "currentBeispiel": "Die alte Fabrik am Kanal wird im Sommer abgerissen.",
+   "currentBeispielTr": "Kanal kenarındaki eski fabrika yaz aylarında yıkılacak."
   },
   {
    "id": 5668,
@@ -244,9 +244,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat umgeleitet",
-   "mevcutTr": "başka yöne yönlendirmek, güzergâhı değiştirmek",
-   "mevcutBeispiel": "Der Verkehr wird wegen der Bauarbeiten großräumig umgeleitet.",
-   "mevcutBeispielTr": "Trafik inşaat çalışmaları nedeniyle geniş bir alanda başka yöne yönlendiriliyor."
+   "currentTr": "başka yöne yönlendirmek, güzergâhı değiştirmek",
+   "currentBeispiel": "Der Verkehr wird wegen der Bauarbeiten großräumig umgeleitet.",
+   "currentBeispielTr": "Trafik inşaat çalışmaları nedeniyle geniş bir alanda başka yöne yönlendiriliyor."
   },
   {
    "id": 5669,
@@ -254,10 +254,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat ausgebaut",
-   "mevcutTr": "genişletmek, geliştirmek",
-   "mevcutBeispiel": "Die Stadt will das Radwegenetz in den nächsten Jahren ausbauen.",
-   "mevcutBeispielTr": "Şehir bisiklet yolu ağını önümüzdeki yıllarda genişletmek istiyor.",
-   "cakisan": [
+   "currentTr": "genişletmek, geliştirmek",
+   "currentBeispiel": "Die Stadt will das Radwegenetz in den nächsten Jahren ausbauen.",
+   "currentBeispielTr": "Şehir bisiklet yolu ağını önümüzdeki yıllarda genişletmek istiyor.",
+   "overlapping": [
     "erweitern (B2)",
     "ausweiten (B2)"
    ]
@@ -268,9 +268,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat erschlossen",
-   "mevcutTr": "altyapıya kavuşturmak, imara açmak",
-   "mevcutBeispiel": "Das neue Baugebiet wird zuerst mit Straßen und Leitungen erschlossen.",
-   "mevcutBeispielTr": "Yeni yapı alanı önce yollar ve hatlarla altyapıya kavuşturuluyor."
+   "currentTr": "altyapıya kavuşturmak, imara açmak",
+   "currentBeispiel": "Das neue Baugebiet wird zuerst mit Straßen und Leitungen erschlossen.",
+   "currentBeispielTr": "Yeni yapı alanı önce yollar ve hatlarla altyapıya kavuşturuluyor."
   },
   {
    "id": 5671,
@@ -278,10 +278,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verlegt",
-   "mevcutTr": "döşemek, yerini değiştirmek",
-   "mevcutBeispiel": "Die Handwerker verlegen im Keller neue Rohre.",
-   "mevcutBeispielTr": "Ustalar bodrumda yeni borular döşüyor.",
-   "cakisan": [
+   "currentTr": "döşemek, yerini değiştirmek",
+   "currentBeispiel": "Die Handwerker verlegen im Keller neue Rohre.",
+   "currentBeispielTr": "Ustalar bodrumda yeni borular döşüyor.",
+   "overlapping": [
     "einrichten (B1)"
    ]
   },
@@ -291,10 +291,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat eingeparkt",
-   "mevcutTr": "park etmek, manevrayla yerleştirmek",
-   "mevcutBeispiel": "In dieser engen Straße kann man kaum einparken.",
-   "mevcutBeispielTr": "Bu dar sokakta neredeyse park edilemiyor.",
-   "cakisan": [
+   "currentTr": "park etmek, manevrayla yerleştirmek",
+   "currentBeispiel": "In dieser engen Straße kann man kaum einparken.",
+   "currentBeispielTr": "Bu dar sokakta neredeyse park edilemiyor.",
+   "overlapping": [
     "parken (A2)"
    ]
   },
@@ -304,9 +304,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat befahren",
-   "mevcutTr": "üzerinden geçmek, araçla kullanmak",
-   "mevcutBeispiel": "Diese Straße darf nur von Anliegern befahren werden.",
-   "mevcutBeispielTr": "Bu yolu yalnızca civarda oturanlar araçla kullanabilir."
+   "currentTr": "üzerinden geçmek, araçla kullanmak",
+   "currentBeispiel": "Diese Straße darf nur von Anliegern befahren werden.",
+   "currentBeispielTr": "Bu yolu yalnızca civarda oturanlar araçla kullanabilir."
   },
   {
    "id": 5674,
@@ -314,9 +314,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat ausgestattet",
-   "mevcutTr": "donatmak, teçhiz etmek",
-   "mevcutBeispiel": "Die Wohnung ist mit einer neuen Küche ausgestattet.",
-   "mevcutBeispielTr": "Daire yeni bir mutfakla donatılmış durumda."
+   "currentTr": "donatmak, teçhiz etmek",
+   "currentBeispiel": "Die Wohnung ist mit einer neuen Küche ausgestattet.",
+   "currentBeispielTr": "Daire yeni bir mutfakla donatılmış durumda."
   },
   {
    "id": 5675,
@@ -324,9 +324,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat umgestaltet",
-   "mevcutTr": "yeniden düzenlemek, dönüştürmek",
-   "mevcutBeispiel": "Der Platz vor dem Bahnhof wird komplett umgestaltet.",
-   "mevcutBeispielTr": "Tren istasyonunun önündeki meydan baştan aşağı yeniden düzenleniyor."
+   "currentTr": "yeniden düzenlemek, dönüştürmek",
+   "currentBeispiel": "Der Platz vor dem Bahnhof wird komplett umgestaltet.",
+   "currentBeispielTr": "Tren istasyonunun önündeki meydan baştan aşağı yeniden düzenleniyor."
   },
   {
    "id": 5676,
@@ -334,9 +334,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat bezuschusst",
-   "mevcutTr": "maddi destek vermek, sübvanse etmek",
-   "mevcutBeispiel": "Der Staat bezuschusst den Einbau neuer Fenster.",
-   "mevcutBeispielTr": "Devlet yeni pencere takılmasına maddi destek veriyor."
+   "currentTr": "maddi destek vermek, sübvanse etmek",
+   "currentBeispiel": "Der Staat bezuschusst den Einbau neuer Fenster.",
+   "currentBeispielTr": "Devlet yeni pencere takılmasına maddi destek veriyor."
   },
   {
    "id": 5677,
@@ -344,10 +344,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgestellt",
-   "mevcutTr": "bırakmak, park etmek",
-   "mevcutBeispiel": "Fahrräder dürfen nicht im Treppenhaus abgestellt werden.",
-   "mevcutBeispielTr": "Bisikletler merdiven boşluğuna bırakılamaz.",
-   "cakisan": [
+   "currentTr": "bırakmak, park etmek",
+   "currentBeispiel": "Fahrräder dürfen nicht im Treppenhaus abgestellt werden.",
+   "currentBeispielTr": "Bisikletler merdiven boşluğuna bırakılamaz.",
+   "overlapping": [
     "lassen (A1)",
     "loslassen (A2)"
    ]
@@ -358,9 +358,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yörede alışılmış, emsale uygun",
-   "mevcutBeispiel": "Die Miete liegt leicht über der ortsüblichen Vergleichsmiete.",
-   "mevcutBeispielTr": "Kira, yöredeki emsal kira bedelinin biraz üzerinde."
+   "currentTr": "yörede alışılmış, emsale uygun",
+   "currentBeispiel": "Die Miete liegt leicht über der ortsüblichen Vergleichsmiete.",
+   "currentBeispielTr": "Kira, yöredeki emsal kira bedelinin biraz üzerinde."
   },
   {
    "id": 5679,
@@ -368,9 +368,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "oturmaya hazır, teslime hazır",
-   "mevcutBeispiel": "Die Wohnungen sollen schon im Herbst bezugsfertig sein.",
-   "mevcutBeispielTr": "Dairelerin daha sonbaharda oturmaya hazır olması bekleniyor."
+   "currentTr": "oturmaya hazır, teslime hazır",
+   "currentBeispiel": "Die Wohnungen sollen schon im Herbst bezugsfertig sein.",
+   "currentBeispielTr": "Dairelerin daha sonbaharda oturmaya hazır olması bekleniyor."
   },
   {
    "id": 5680,
@@ -378,9 +378,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yürüme mesafesinde",
-   "mevcutBeispiel": "Der Bahnhof ist von hier aus fußläufig zu erreichen.",
-   "mevcutBeispielTr": "Tren istasyonuna buradan yürüyerek ulaşılabiliyor."
+   "currentTr": "yürüme mesafesinde",
+   "currentBeispiel": "Der Bahnhof ist von hier aus fußläufig zu erreichen.",
+   "currentBeispielTr": "Tren istasyonuna buradan yürüyerek ulaşılabiliyor."
   },
   {
    "id": 5681,
@@ -388,9 +388,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yerleşim yeri içinde",
-   "mevcutBeispiel": "Innerorts gilt in der Regel Tempo fünfzig.",
-   "mevcutBeispielTr": "Yerleşim yeri içinde kural olarak elli hız sınırı geçerlidir."
+   "currentTr": "yerleşim yeri içinde",
+   "currentBeispiel": "Innerorts gilt in der Regel Tempo fünfzig.",
+   "currentBeispielTr": "Yerleşim yeri içinde kural olarak elli hız sınırı geçerlidir."
   },
   {
    "id": 5682,
@@ -398,9 +398,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "engelsiz, erişilebilir",
-   "mevcutBeispiel": "Der Umbau macht das Gebäude endlich barrierefrei.",
-   "mevcutBeispielTr": "Tadilat binayı nihayet engelsiz hale getiriyor."
+   "currentTr": "engelsiz, erişilebilir",
+   "currentBeispiel": "Der Umbau macht das Gebäude endlich barrierefrei.",
+   "currentBeispielTr": "Tadilat binayı nihayet engelsiz hale getiriyor."
   },
   {
    "id": 5683,
@@ -408,9 +408,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "trafiği yavaşlatılmış, araç trafiği kısıtlanmış",
-   "mevcutBeispiel": "In verkehrsberuhigten Zonen darf man nur Schritt fahren.",
-   "mevcutBeispielTr": "Trafiği yavaşlatılmış bölgelerde ancak yürüme hızında gidilebilir."
+   "currentTr": "trafiği yavaşlatılmış, araç trafiği kısıtlanmış",
+   "currentBeispiel": "In verkehrsberuhigten Zonen darf man nur Schritt fahren.",
+   "currentBeispielTr": "Trafiği yavaşlatılmış bölgelerde ancak yürüme hızında gidilebilir."
   },
   {
    "id": 5684,
@@ -418,9 +418,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "katlanılamaz, makul sayılamayacak",
-   "mevcutBeispiel": "Der Lärm in der Wohnung ist für Familien unzumutbar.",
-   "mevcutBeispielTr": "Dairedeki gürültü aileler için katlanılabilir değil."
+   "currentTr": "katlanılamaz, makul sayılamayacak",
+   "currentBeispiel": "Der Lärm in der Wohnung ist für Familien unzumutbar.",
+   "currentBeispielTr": "Dairedeki gürültü aileler için katlanılabilir değil."
   },
   {
    "id": 5685,
@@ -428,9 +428,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "çevredeki, etraftaki",
-   "mevcutBeispiel": "Die umliegenden Gemeinden wachsen schneller als die Großstadt.",
-   "mevcutBeispielTr": "Çevredeki belediyeler büyük şehirden daha hızlı büyüyor."
+   "currentTr": "çevredeki, etraftaki",
+   "currentBeispiel": "Die umliegenden Gemeinden wachsen schneller als die Großstadt.",
+   "currentBeispielTr": "Çevredeki belediyeler büyük şehirden daha hızlı büyüyor."
   },
   {
    "id": 5686,
@@ -438,9 +438,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "harap, yıkılmaya yüz tutmuş",
-   "mevcutBeispiel": "Das baufällige Haus an der Ecke steht seit Jahren leer.",
-   "mevcutBeispielTr": "Köşedeki harap ev yıllardır boş duruyor."
+   "currentTr": "harap, yıkılmaya yüz tutmuş",
+   "currentBeispiel": "Das baufällige Haus an der Ecke steht seit Jahren leer.",
+   "currentBeispielTr": "Köşedeki harap ev yıllardır boş duruyor."
   }
  ]
 }

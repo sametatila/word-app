@@ -5,7 +5,7 @@ egzersizin sözlükçesindeki her madde için `tr` ve `en` üretirsin; Züritü�
 kursunda ayrıca gerekiyorsa `hd` ve `note`.
 
 Bu bir gözden geçirme değil, bir **yeniden yazma**. Pakette gördüğün
-`mevcutTr` değerleri kaynağın kendisidir ve güvenilmez.
+`currentTr` değerleri kaynağın kendisidir ve güvenilmez.
 
 ## Neden bu iş yapılıyor
 
@@ -36,7 +36,7 @@ pastane metninde    der Kuchen   →  "pasta"        (havuzdaki "kek" değil)
 
 ### Havuzla ilişki — kural
 
-Pakette `havuz` alanı varsa, o kelimenin kelime havuzundaki karşılığıdır.
+Pakette `pool` alanı varsa, o kelimenin kelime havuzundaki karşılığıdır.
 
 - Metindeki anlam havuzdakiyle **aynıysa**, havuzun sözcüğünü **birebir**
   kullan. "kek" varken "pasta, kek" yazmak uygulamayı kendisiyle çelişir
@@ -64,9 +64,9 @@ sonra  { de: "d Wohnig", tr: "daire", en: "apartment", hd: "Wohnung" }
 `hd` yalnızca Almanca biçimi taşır — açıklama değil, tek kelime ya da kısa
 ifade. Lehçe biçim ile Hochdeutsch aynıysa `hd` yazma.
 
-Pakette bazı maddelerde `hdAdayi` göreceksin. Bu, mevcut çevirinin parantezinden
+Pakette bazı maddelerde `hdCandidate` göreceksin. Bu, mevcut çevirinin parantezinden
 çıkarılmış ve kelime havuzunda karşılığı bulunmuş bir Hochdeutsch **adayıdır** —
-o maddenin `havuz` ipucu da oradan geliyor. Aday, doğrulanmış bir bilgi değil:
+o maddenin `pool` ipucu da oradan geliyor. Aday, doğrulanmış bir bilgi değil:
 lehçe maddesiyle gerçekten örtüşüyorsa `hd` olarak kullan, örtüşmüyorsa yok say
 ve durumu bildir.
 
@@ -88,7 +88,7 @@ yazma.
 
 ## Metinde geçmeyen kelime
 
-Sözlükçenin işi **bu metindeki** kelimeleri açıklamak. Pakette `metin` alanı
+Sözlükçenin işi **bu metindeki** kelimeleri açıklamak. Pakette `text` alanı
 egzersizin öğrencinin gördüğü Almanca gövdesidir. Sözlükçe maddesi orada
 geçmiyorsa bunu **bildir** — kelimeyi kendin silme ya da değiştirme, çünkü
 sözlükçenin hangi maddeyi taşıyacağı ayrı bir karar.
@@ -120,7 +120,7 @@ egzersiz** ve her alan çıktıda yer alır, kaynakla aynı sırada.
       { "de": "das Angebot", "tr": "indirim", "en": "special offer" },
       { "de": "günstig", "tr": "uygun fiyatlı", "en": "affordable" }
     ],
-    "metindeYok": ["die Kasse"]
+    "notInText": ["die Kasse"]
   },
   {
     "id": "zh-a1-r2",
@@ -132,7 +132,7 @@ egzersiz** ve her alan çıktıda yer alır, kaynakla aynı sırada.
 ```
 
 Alanlar: `id` (zorunlu), `gloss` / `phrases` / `targets` / `tasks` (pakette
-hangisi varsa), ve varsa `metindeYok` — metinde bulamadığın madde başlıkları.
+hangisi varsa), ve varsa `notInText` — metinde bulamadığın madde başlıkları.
 
 Yazdıktan sonra **kendin denetle**:
 

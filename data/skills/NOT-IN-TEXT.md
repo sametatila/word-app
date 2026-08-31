@@ -9,7 +9,7 @@ Liste iki bağımsız kaynağın kesişimi: paketi üreten ajan metni okuyup bil
 bildirdiği 268 maddenin 8 tanesini denetleyici buluyor;
 onlar rapora girmedi.
 
-Yeniden üretmek için: `node data/skills/metinde-yok.mjs`
+Yeniden üretmek için: `node data/skills/not-in-text.mjs`
 
 Oran, sözlükçenin ne kadarının metinle ilgisiz olduğunu gösteriyor.
 

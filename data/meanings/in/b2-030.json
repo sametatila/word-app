@@ -1,16 +1,16 @@
 {
- "paket": "b2-030",
+ "packet": "b2-030",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 5095,
    "de": "die Staude",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Stauden",
-   "mevcutTr": "çok yıllık bitki",
-   "mevcutBeispiel": "Diese Stauden blühen jedes Jahr wieder ohne großen Aufwand.",
-   "mevcutBeispielTr": "Bu çok yıllık bitkiler fazla uğraş gerektirmeden her yıl yeniden çiçek açıyor."
+   "currentTr": "çok yıllık bitki",
+   "currentBeispiel": "Diese Stauden blühen jedes Jahr wieder ohne großen Aufwand.",
+   "currentBeispielTr": "Bu çok yıllık bitkiler fazla uğraş gerektirmeden her yıl yeniden çiçek açıyor."
   },
   {
    "id": 5096,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Obstbäume",
-   "mevcutTr": "meyve ağacı",
-   "mevcutBeispiel": "Im Februar werden die alten Obstbäume im Garten ausgelichtet.",
-   "mevcutBeispielTr": "Şubatta bahçedeki yaşlı meyve ağaçları seyreltiliyor."
+   "currentTr": "meyve ağacı",
+   "currentBeispiel": "Im Februar werden die alten Obstbäume im Garten ausgelichtet.",
+   "currentBeispielTr": "Şubatta bahçedeki yaşlı meyve ağaçları seyreltiliyor."
   },
   {
    "id": 5097,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Beete",
-   "mevcutTr": "tarh, çiçek/sebze yatağı",
-   "mevcutBeispiel": "Im hinteren Beet haben wir dieses Jahr Kräuter angelegt.",
-   "mevcutBeispielTr": "Arkadaki tarha bu yıl baharat bitkileri ektik."
+   "currentTr": "tarh, çiçek/sebze yatağı",
+   "currentBeispiel": "Im hinteren Beet haben wir dieses Jahr Kräuter angelegt.",
+   "currentBeispielTr": "Arkadaki tarha bu yıl baharat bitkileri ektik."
   },
   {
    "id": 5098,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gewächshäuser",
-   "mevcutTr": "sera",
-   "mevcutBeispiel": "Im Gewächshaus reifen die Tomaten gut zwei Wochen früher.",
-   "mevcutBeispielTr": "Serada domatesler iki hafta kadar erken olgunlaşıyor."
+   "currentTr": "sera",
+   "currentBeispiel": "Im Gewächshaus reifen die Tomaten gut zwei Wochen früher.",
+   "currentBeispielTr": "Serada domatesler iki hafta kadar erken olgunlaşıyor."
   },
   {
    "id": 5099,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kompost, organik gübre",
-   "mevcutBeispiel": "Küchenabfälle und Laub kommen bei uns auf den Kompost.",
-   "mevcutBeispielTr": "Mutfak atıkları ve yapraklar bizde komposta gidiyor."
+   "currentTr": "kompost, organik gübre",
+   "currentBeispiel": "Küchenabfälle und Laub kommen bei uns auf den Kompost.",
+   "currentBeispielTr": "Mutfak atıkları ve yapraklar bizde komposta gidiyor."
   },
   {
    "id": 5100,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Setzlinge",
-   "mevcutTr": "fide",
-   "mevcutBeispiel": "Die Setzlinge kommen erst Mitte Mai ins Freiland.",
-   "mevcutBeispielTr": "Fideler ancak mayıs ortasında açık toprağa dikiliyor."
+   "currentTr": "fide",
+   "currentBeispiel": "Die Setzlinge kommen erst Mitte Mai ins Freiland.",
+   "currentBeispielTr": "Fideler ancak mayıs ortasında açık toprağa dikiliyor."
   },
   {
    "id": 5101,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gartenscheren",
-   "mevcutTr": "bahçe makası",
-   "mevcutBeispiel": "Mit einer scharfen Gartenschere verletzt man die Rinde weniger.",
-   "mevcutBeispielTr": "Keskin bir bahçe makasıyla kabuğa daha az zarar verilir."
+   "currentTr": "bahçe makası",
+   "currentBeispiel": "Mit einer scharfen Gartenschere verletzt man die Rinde weniger.",
+   "currentBeispielTr": "Keskin bir bahçe makasıyla kabuğa daha az zarar verilir."
   },
   {
    "id": 5102,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gießkannen",
-   "mevcutTr": "sulama kabı, süzgeçli kova",
-   "mevcutBeispiel": "Er füllte die Gießkanne aus der Regentonne hinter dem Schuppen.",
-   "mevcutBeispielTr": "Kulübenin arkasındaki yağmur fıçısından sulama kabını doldurdu."
+   "currentTr": "sulama kabı, süzgeçli kova",
+   "currentBeispiel": "Er füllte die Gießkanne aus der Regentonne hinter dem Schuppen.",
+   "currentBeispielTr": "Kulübenin arkasındaki yağmur fıçısından sulama kabını doldurdu."
   },
   {
    "id": 5103,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wildtiere",
-   "mevcutTr": "yabani hayvan",
-   "mevcutBeispiel": "Der neue Zaun soll Wildtiere von der Autobahn fernhalten.",
-   "mevcutBeispielTr": "Yeni çit, yabani hayvanları otoyoldan uzak tutmayı amaçlıyor."
+   "currentTr": "yabani hayvan",
+   "currentBeispiel": "Der neue Zaun soll Wildtiere von der Autobahn fernhalten.",
+   "currentBeispielTr": "Yeni çit, yabani hayvanları otoyoldan uzak tutmayı amaçlıyor."
   },
   {
    "id": 5104,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nagetiere",
-   "mevcutTr": "kemirgen",
-   "mevcutBeispiel": "Nagetiere haben im Winter die Rinde der jungen Bäume abgefressen.",
-   "mevcutBeispielTr": "Kemirgenler kışın genç ağaçların kabuğunu kemirmiş."
+   "currentTr": "kemirgen",
+   "currentBeispiel": "Nagetiere haben im Winter die Rinde der jungen Bäume abgefressen.",
+   "currentBeispielTr": "Kemirgenler kışın genç ağaçların kabuğunu kemirmiş."
   },
   {
    "id": 5105,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zugvögel",
-   "mevcutTr": "göçmen kuş",
-   "mevcutBeispiel": "Viele Zugvögel kehren wegen des milderen Klimas früher zurück.",
-   "mevcutBeispielTr": "Birçok göçmen kuş ılıman iklim yüzünden daha erken dönüyor."
+   "currentTr": "göçmen kuş",
+   "currentBeispiel": "Viele Zugvögel kehren wegen des milderen Klimas früher zurück.",
+   "currentBeispielTr": "Birçok göçmen kuş ılıman iklim yüzünden daha erken dönüyor."
   },
   {
    "id": 5106,
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bienenvölker",
-   "mevcutTr": "arı kolonisi",
-   "mevcutBeispiel": "Ein starkes Bienenvolk übersteht auch einen langen Winter.",
-   "mevcutBeispielTr": "Güçlü bir arı kolonisi uzun bir kışı bile atlatır."
+   "currentTr": "arı kolonisi",
+   "currentBeispiel": "Ein starkes Bienenvolk übersteht auch einen langen Winter.",
+   "currentBeispielTr": "Güçlü bir arı kolonisi uzun bir kışı bile atlatır."
   },
   {
    "id": 5107,
@@ -128,9 +128,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nistplätze",
-   "mevcutTr": "yuvalanma yeri",
-   "mevcutBeispiel": "Alte Scheunen bieten Schwalben einen sicheren Nistplatz.",
-   "mevcutBeispielTr": "Eski ambarlar kırlangıçlara güvenli bir yuvalanma yeri sunuyor."
+   "currentTr": "yuvalanma yeri",
+   "currentBeispiel": "Alte Scheunen bieten Schwalben einen sicheren Nistplatz.",
+   "currentBeispielTr": "Eski ambarlar kırlangıçlara güvenli bir yuvalanma yeri sunuyor."
   },
   {
    "id": 5108,
@@ -138,10 +138,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist gewelkt",
-   "mevcutTr": "solmak, pörsümek",
-   "mevcutBeispiel": "Ohne Wasser welken die Blätter schon nach zwei Tagen.",
-   "mevcutBeispielTr": "Susuz kalınca yapraklar iki gün içinde soluyor.",
-   "cakisan": [
+   "currentTr": "solmak, pörsümek",
+   "currentBeispiel": "Ohne Wasser welken die Blätter schon nach zwei Tagen.",
+   "currentBeispielTr": "Susuz kalınca yapraklar iki gün içinde soluyor.",
+   "overlapping": [
     "verblassen (C1)"
    ]
   },
@@ -151,9 +151,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist verdorrt",
-   "mevcutTr": "kuruyup kavrulmak",
-   "mevcutBeispiel": "Der Rasen ist im heißen August völlig verdorrt.",
-   "mevcutBeispielTr": "Çimenlik, sıcak ağustos ayında tamamen kavruldu."
+   "currentTr": "kuruyup kavrulmak",
+   "currentBeispiel": "Der Rasen ist im heißen August völlig verdorrt.",
+   "currentBeispielTr": "Çimenlik, sıcak ağustos ayında tamamen kavruldu."
   },
   {
    "id": 5110,
@@ -161,9 +161,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist gesprossen",
-   "mevcutTr": "filizlenmek, yeşermek",
-   "mevcutBeispiel": "Nach dem warmen Regen sprießt überall frisches Grün.",
-   "mevcutBeispielTr": "Ilık yağmurdan sonra her yerde taze yeşillikler filizleniyor."
+   "currentTr": "filizlenmek, yeşermek",
+   "currentBeispiel": "Nach dem warmen Regen sprießt überall frisches Grün.",
+   "currentBeispielTr": "Ilık yağmurdan sonra her yerde taze yeşillikler filizleniyor."
   },
   {
    "id": 5111,
@@ -171,9 +171,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat umgegraben",
-   "mevcutTr": "belleyip alt üst etmek, çapalamak",
-   "mevcutBeispiel": "Im Herbst hat er das ganze Gemüsebeet noch einmal umgegraben.",
-   "mevcutBeispielTr": "Sonbaharda bütün sebze tarhını bir kez daha belledi."
+   "currentTr": "belleyip alt üst etmek, çapalamak",
+   "currentBeispiel": "Im Herbst hat er das ganze Gemüsebeet noch einmal umgegraben.",
+   "currentBeispielTr": "Sonbaharda bütün sebze tarhını bir kez daha belledi."
   },
   {
    "id": 5112,
@@ -181,9 +181,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gejätet",
-   "mevcutTr": "yabani ot ayıklamak",
-   "mevcutBeispiel": "Nach dem Regen lässt sich das Unkraut leichter jäten.",
-   "mevcutBeispielTr": "Yağmurdan sonra yabani otları ayıklamak daha kolay oluyor."
+   "currentTr": "yabani ot ayıklamak",
+   "currentBeispiel": "Nach dem Regen lässt sich das Unkraut leichter jäten.",
+   "currentBeispielTr": "Yağmurdan sonra yabani otları ayıklamak daha kolay oluyor."
   },
   {
    "id": 5113,
@@ -191,9 +191,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat beschnitten",
-   "mevcutTr": "budamak",
-   "mevcutBeispiel": "Die Hecke sollte man zweimal im Jahr beschneiden.",
-   "mevcutBeispielTr": "Çit bitkisini yılda iki kez budamak gerekir."
+   "currentTr": "budamak",
+   "currentBeispiel": "Die Hecke sollte man zweimal im Jahr beschneiden.",
+   "currentBeispielTr": "Çit bitkisini yılda iki kez budamak gerekir."
   },
   {
    "id": 5114,
@@ -201,9 +201,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist gestreunt",
-   "mevcutTr": "başıboş dolaşmak",
-   "mevcutBeispiel": "Nachts streunen Füchse sogar durch die Gärten am Stadtrand.",
-   "mevcutBeispielTr": "Geceleri tilkiler şehir kenarındaki bahçelerde bile dolaşıyor."
+   "currentTr": "başıboş dolaşmak",
+   "currentBeispiel": "Nachts streunen Füchse sogar durch die Gärten am Stadtrand.",
+   "currentBeispielTr": "Geceleri tilkiler şehir kenarındaki bahçelerde bile dolaşıyor."
   },
   {
    "id": 5115,
@@ -211,9 +211,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat aufgeforstet",
-   "mevcutTr": "ağaçlandırmak",
-   "mevcutBeispiel": "Die Gemeinde will die kahlen Hänge wieder aufforsten.",
-   "mevcutBeispielTr": "Belediye çıplak yamaçları yeniden ağaçlandırmak istiyor."
+   "currentTr": "ağaçlandırmak",
+   "currentBeispiel": "Die Gemeinde will die kahlen Hänge wieder aufforsten.",
+   "currentBeispielTr": "Belediye çıplak yamaçları yeniden ağaçlandırmak istiyor."
   },
   {
    "id": 5116,
@@ -221,9 +221,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist verwittert",
-   "mevcutTr": "hava koşullarıyla aşınmak, yıpranmak",
-   "mevcutBeispiel": "Der Zaun ist über die Jahre in Wind und Regen verwittert.",
-   "mevcutBeispielTr": "Çit, yıllar içinde rüzgâr ve yağmurda yıprandı."
+   "currentTr": "hava koşullarıyla aşınmak, yıpranmak",
+   "currentBeispiel": "Der Zaun ist über die Jahre in Wind und Regen verwittert.",
+   "currentBeispielTr": "Çit, yıllar içinde rüzgâr ve yağmurda yıprandı."
   },
   {
    "id": 5117,
@@ -231,9 +231,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist abgekühlt",
-   "mevcutTr": "serinlemek, soğumak",
-   "mevcutBeispiel": "Nach dem Gewitter hat sich die Luft spürbar abgekühlt.",
-   "mevcutBeispielTr": "Sağanaktan sonra hava gözle görülür biçimde serinledi."
+   "currentTr": "serinlemek, soğumak",
+   "currentBeispiel": "Nach dem Gewitter hat sich die Luft spürbar abgekühlt.",
+   "currentBeispielTr": "Sağanaktan sonra hava gözle görülür biçimde serinledi."
   },
   {
    "id": 5118,
@@ -241,9 +241,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat genieselt",
-   "mevcutTr": "çiselemek",
-   "mevcutBeispiel": "Draußen nieselt es seit dem frühen Morgen ununterbrochen.",
-   "mevcutBeispielTr": "Dışarıda sabahın erken saatlerinden beri aralıksız çiseliyor."
+   "currentTr": "çiselemek",
+   "currentBeispiel": "Draußen nieselt es seit dem frühen Morgen ununterbrochen.",
+   "currentBeispielTr": "Dışarıda sabahın erken saatlerinden beri aralıksız çiseliyor."
   },
   {
    "id": 5119,
@@ -251,9 +251,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist aufgeklart",
-   "mevcutTr": "hava açmak",
-   "mevcutBeispiel": "Gegen Mittag klarte es auf und die Sonne kam heraus.",
-   "mevcutBeispielTr": "Öğleye doğru hava açtı ve güneş çıktı."
+   "currentTr": "hava açmak",
+   "currentBeispiel": "Gegen Mittag klarte es auf und die Sonne kam heraus.",
+   "currentBeispielTr": "Öğleye doğru hava açtı ve güneş çıktı."
   },
   {
    "id": 5120,
@@ -261,9 +261,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat überflutet",
-   "mevcutTr": "su basmak, sular altında bırakmak",
-   "mevcutBeispiel": "Der Bach hat nach der Schneeschmelze die Wiesen überflutet.",
-   "mevcutBeispielTr": "Kar erimesinden sonra dere çayırları sular altında bıraktı."
+   "currentTr": "su basmak, sular altında bırakmak",
+   "currentBeispiel": "Der Bach hat nach der Schneeschmelze die Wiesen überflutet.",
+   "currentBeispielTr": "Kar erimesinden sonra dere çayırları sular altında bıraktı."
   },
   {
    "id": 5121,
@@ -271,9 +271,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist versickert",
-   "mevcutTr": "toprağa sızmak",
-   "mevcutBeispiel": "Auf verdichtetem Boden versickert das Regenwasser nur langsam.",
-   "mevcutBeispielTr": "Sıkışmış toprakta yağmur suyu ancak yavaşça sızıyor."
+   "currentTr": "toprağa sızmak",
+   "currentBeispiel": "Auf verdichtetem Boden versickert das Regenwasser nur langsam.",
+   "currentBeispielTr": "Sıkışmış toprakta yağmur suyu ancak yavaşça sızıyor."
   },
   {
    "id": 5122,
@@ -281,9 +281,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat bestäubt",
-   "mevcutTr": "tozlaştırmak, döllemek",
-   "mevcutBeispiel": "Wildbienen bestäuben viele Obstsorten zuverlässiger als Honigbienen.",
-   "mevcutBeispielTr": "Yabani arılar birçok meyve türünü bal arılarından daha güvenilir biçimde tozlaştırır."
+   "currentTr": "tozlaştırmak, döllemek",
+   "currentBeispiel": "Wildbienen bestäuben viele Obstsorten zuverlässiger als Honigbienen.",
+   "currentBeispielTr": "Yabani arılar birçok meyve türünü bal arılarından daha güvenilir biçimde tozlaştırır."
   },
   {
    "id": 5123,
@@ -291,9 +291,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gebrütet",
-   "mevcutTr": "kuluçkaya yatmak",
-   "mevcutBeispiel": "Auf dem Dach des Rathauses brüten seit Jahren Störche.",
-   "mevcutBeispielTr": "Belediye binasının çatısında yıllardır leylekler kuluçkaya yatıyor."
+   "currentTr": "kuluçkaya yatmak",
+   "currentBeispiel": "Auf dem Dach des Rathauses brüten seit Jahren Störche.",
+   "currentBeispielTr": "Belediye binasının çatısında yıllardır leylekler kuluçkaya yatıyor."
   },
   {
    "id": 5124,
@@ -301,9 +301,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gestürmt",
-   "mevcutTr": "fırtına çıkmak, sert esmek",
-   "mevcutBeispiel": "An der Küste stürmte es die ganze Nacht hindurch.",
-   "mevcutBeispielTr": "Kıyıda bütün gece boyunca fırtına esti."
+   "currentTr": "fırtına çıkmak, sert esmek",
+   "currentBeispiel": "An der Küste stürmte es die ganze Nacht hindurch.",
+   "currentBeispielTr": "Kıyıda bütün gece boyunca fırtına esti."
   },
   {
    "id": 5125,
@@ -311,10 +311,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist verdunstet",
-   "mevcutTr": "buharlaşmak",
-   "mevcutBeispiel": "In der Mittagshitze verdunstet das Gießwasser fast sofort.",
-   "mevcutBeispielTr": "Öğle sıcağında sulama suyu neredeyse anında buharlaşıyor.",
-   "cakisan": [
+   "currentTr": "buharlaşmak",
+   "currentBeispiel": "In der Mittagshitze verdunstet das Gießwasser fast sofort.",
+   "currentBeispielTr": "Öğle sıcağında sulama suyu neredeyse anında buharlaşıyor.",
+   "overlapping": [
     "sich verflüchtigen (C1)",
     "verdampfen (C1)"
    ]
@@ -325,9 +325,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist geschmolzen",
-   "mevcutTr": "erimek",
-   "mevcutBeispiel": "Der Schnee auf den Gipfeln schmilzt von Jahr zu Jahr früher.",
-   "mevcutBeispielTr": "Zirvelerdeki kar her yıl biraz daha erken eriyor."
+   "currentTr": "erimek",
+   "currentBeispiel": "Der Schnee auf den Gipfeln schmilzt von Jahr zu Jahr früher.",
+   "currentBeispielTr": "Zirvelerdeki kar her yıl biraz daha erken eriyor."
   },
   {
    "id": 5127,
@@ -335,9 +335,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gewuchert",
-   "mevcutTr": "aşırı büyümek, her yeri sarmak",
-   "mevcutBeispiel": "Die Minze wuchert im ganzen Garten und verdrängt andere Kräuter.",
-   "mevcutBeispielTr": "Nane bütün bahçeyi sarıyor ve diğer bitkileri boğuyor."
+   "currentTr": "aşırı büyümek, her yeri sarmak",
+   "currentBeispiel": "Die Minze wuchert im ganzen Garten und verdrängt andere Kräuter.",
+   "currentBeispielTr": "Nane bütün bahçeyi sarıyor ve diğer bitkileri boğuyor."
   },
   {
    "id": 5128,
@@ -345,9 +345,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gerodet",
-   "mevcutTr": "ağaçları kesip temizlemek",
-   "mevcutBeispiel": "Für die neue Trasse wurde ein ganzer Streifen Wald gerodet.",
-   "mevcutBeispielTr": "Yeni güzergâh için ormanın bütün bir şeridi kesildi."
+   "currentTr": "ağaçları kesip temizlemek",
+   "currentBeispiel": "Für die neue Trasse wurde ein ganzer Streifen Wald gerodet.",
+   "currentBeispielTr": "Yeni güzergâh için ormanın bütün bir şeridi kesildi."
   },
   {
    "id": 5129,
@@ -355,9 +355,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "verimli, bereketli",
-   "mevcutBeispiel": "Der Boden am Flussufer ist besonders fruchtbar und leicht zu bearbeiten.",
-   "mevcutBeispielTr": "Nehir kıyısındaki toprak özellikle verimli ve işlenmesi kolay."
+   "currentTr": "verimli, bereketli",
+   "currentBeispiel": "Der Boden am Flussufer ist besonders fruchtbar und leicht zu bearbeiten.",
+   "currentBeispielTr": "Nehir kıyısındaki toprak özellikle verimli ve işlenmesi kolay."
   },
   {
    "id": 5130,
@@ -365,9 +365,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kıraç, çorak",
-   "mevcutBeispiel": "Auf dem kargen Bergboden wachsen nur wenige zähe Pflanzen.",
-   "mevcutBeispielTr": "Kıraç dağ toprağında yalnızca birkaç dayanıklı bitki yetişiyor."
+   "currentTr": "kıraç, çorak",
+   "currentBeispiel": "Auf dem kargen Bergboden wachsen nur wenige zähe Pflanzen.",
+   "currentBeispielTr": "Kıraç dağ toprağında yalnızca birkaç dayanıklı bitki yetişiyor."
   },
   {
    "id": 5131,
@@ -375,9 +375,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "bataklık gibi, çamurlu",
-   "mevcutBeispiel": "Nach der Schneeschmelze ist die Wiese hinter dem Hof sumpfig.",
-   "mevcutBeispielTr": "Kar eridikten sonra çiftliğin arkasındaki çayır bataklık gibi oluyor."
+   "currentTr": "bataklık gibi, çamurlu",
+   "currentBeispiel": "Nach der Schneeschmelze ist die Wiese hinter dem Hof sumpfig.",
+   "currentBeispielTr": "Kar eridikten sonra çiftliğin arkasındaki çayır bataklık gibi oluyor."
   },
   {
    "id": 5132,
@@ -385,9 +385,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "her dem yeşil",
-   "mevcutBeispiel": "Immergrüne Hecken bieten Vögeln auch im Winter Schutz.",
-   "mevcutBeispielTr": "Her dem yeşil çitler kuşlara kışın da barınak sağlıyor."
+   "currentTr": "her dem yeşil",
+   "currentBeispiel": "Immergrüne Hecken bieten Vögeln auch im Winter Schutz.",
+   "currentBeispielTr": "Her dem yeşil çitler kuşlara kışın da barınak sağlıyor."
   },
   {
    "id": 5133,
@@ -395,9 +395,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kışa dayanıklı",
-   "mevcutBeispiel": "Diese Sorte ist winterhart und muss nicht abgedeckt werden.",
-   "mevcutBeispielTr": "Bu tür kışa dayanıklı ve üzerinin örtülmesi gerekmiyor."
+   "currentTr": "kışa dayanıklı",
+   "currentBeispiel": "Diese Sorte ist winterhart und muss nicht abgedeckt werden.",
+   "currentBeispielTr": "Bu tür kışa dayanıklı ve üzerinin örtülmesi gerekmiyor."
   },
   {
    "id": 5134,
@@ -405,9 +405,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "tür bakımından zengin",
-   "mevcutBeispiel": "Eine artenreiche Wiese kommt ohne chemische Mittel gut zurecht.",
-   "mevcutBeispielTr": "Tür bakımından zengin bir çayır kimyasal maddeler olmadan da iyi idare eder."
+   "currentTr": "tür bakımından zengin",
+   "currentBeispiel": "Eine artenreiche Wiese kommt ohne chemische Mittel gut zurecht.",
+   "currentBeispielTr": "Tür bakımından zengin bir çayır kimyasal maddeler olmadan da iyi idare eder."
   },
   {
    "id": 5135,
@@ -415,9 +415,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "gür, bol",
-   "mevcutBeispiel": "Nach dem regnerischen Frühling wächst alles besonders üppig.",
-   "mevcutBeispielTr": "Yağmurlu ilkbahardan sonra her şey alabildiğine gür büyüyor."
+   "currentTr": "gür, bol",
+   "currentBeispiel": "Nach dem regnerischen Frühling wächst alles besonders üppig.",
+   "currentBeispielTr": "Yağmurlu ilkbahardan sonra her şey alabildiğine gür büyüyor."
   },
   {
    "id": 5136,
@@ -425,9 +425,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "mevsimsel, mevsime bağlı",
-   "mevcutBeispiel": "Der Wasserstand des Sees schwankt stark jahreszeitlich.",
-   "mevcutBeispielTr": "Gölün su seviyesi mevsimsel olarak çok değişiyor."
+   "currentTr": "mevsimsel, mevsime bağlı",
+   "currentBeispiel": "Der Wasserstand des Sees schwankt stark jahreszeitlich.",
+   "currentBeispielTr": "Gölün su seviyesi mevsimsel olarak çok değişiyor."
   },
   {
    "id": 5137,
@@ -435,9 +435,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "bunaltıcı, boğucu sıcak",
-   "mevcutBeispiel": "Die Luft war den ganzen Tag schwül und drückend.",
-   "mevcutBeispielTr": "Hava bütün gün bunaltıcı ve ağırdı."
+   "currentTr": "bunaltıcı, boğucu sıcak",
+   "currentBeispiel": "Die Luft war den ganzen Tag schwül und drückend.",
+   "currentBeispielTr": "Hava bütün gün bunaltıcı ve ağırdı."
   },
   {
    "id": 5138,
@@ -445,9 +445,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "doğaya yakın, doğal",
-   "mevcutBeispiel": "Der Bach wurde naturnah umgestaltet und mäandert wieder frei.",
-   "mevcutBeispielTr": "Dere doğaya yakın biçimde yeniden düzenlendi ve yine serbestçe kıvrılıyor."
+   "currentTr": "doğaya yakın, doğal",
+   "currentBeispiel": "Der Bach wurde naturnah umgestaltet und mäandert wieder frei.",
+   "currentBeispielTr": "Dere doğaya yakın biçimde yeniden düzenlendi ve yine serbestçe kıvrılıyor."
   },
   {
    "id": 5139,
@@ -455,9 +455,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Stimmzettel",
-   "mevcutTr": "oy pusulası",
-   "mevcutBeispiel": "Er faltete den Stimmzettel und warf ihn in die Urne.",
-   "mevcutBeispielTr": "Oy pusulasını katlayıp sandığa attı."
+   "currentTr": "oy pusulası",
+   "currentBeispiel": "Er faltete den Stimmzettel und warf ihn in die Urne.",
+   "currentBeispielTr": "Oy pusulasını katlayıp sandığa attı."
   },
   {
    "id": 5140,
@@ -465,9 +465,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Volksabstimmungen",
-   "mevcutTr": "halk oylaması, referandum",
-   "mevcutBeispiel": "Über den Bau der neuen Brücke entscheidet eine Volksabstimmung.",
-   "mevcutBeispielTr": "Yeni köprünün yapımına halk oylaması karar verecek."
+   "currentTr": "halk oylaması, referandum",
+   "currentBeispiel": "Über den Bau der neuen Brücke entscheidet eine Volksabstimmung.",
+   "currentBeispielTr": "Yeni köprünün yapımına halk oylaması karar verecek."
   },
   {
    "id": 5141,
@@ -475,9 +475,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bürgerinitiativen",
-   "mevcutTr": "yurttaş girişimi, vatandaş inisiyatifi",
-   "mevcutBeispiel": "Eine Bürgerinitiative kämpft seit Jahren gegen den geplanten Flughafen.",
-   "mevcutBeispielTr": "Bir yurttaş girişimi yıllardır planlanan havalimanına karşı mücadele ediyor."
+   "currentTr": "yurttaş girişimi, vatandaş inisiyatifi",
+   "currentBeispiel": "Eine Bürgerinitiative kämpft seit Jahren gegen den geplanten Flughafen.",
+   "currentBeispielTr": "Bir yurttaş girişimi yıllardır planlanan havalimanına karşı mücadele ediyor."
   },
   {
    "id": 5142,
@@ -485,9 +485,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bürgermeister",
-   "mevcutTr": "belediye başkanı",
-   "mevcutBeispiel": "Der Bürgermeister eröffnete die Sitzung mit einer kurzen Rede.",
-   "mevcutBeispielTr": "Belediye başkanı oturumu kısa bir konuşmayla açtı."
+   "currentTr": "belediye başkanı",
+   "currentBeispiel": "Der Bürgermeister eröffnete die Sitzung mit einer kurzen Rede.",
+   "currentBeispielTr": "Belediye başkanı oturumu kısa bir konuşmayla açtı."
   },
   {
    "id": 5143,
@@ -495,9 +495,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gemeinderäte",
-   "mevcutTr": "belediye meclisi, meclis üyesi",
-   "mevcutBeispiel": "Der Gemeinderat tritt jeden zweiten Donnerstag im Rathaus zusammen.",
-   "mevcutBeispielTr": "Belediye meclisi iki haftada bir perşembe belediye binasında toplanıyor."
+   "currentTr": "belediye meclisi, meclis üyesi",
+   "currentBeispiel": "Der Gemeinderat tritt jeden zweiten Donnerstag im Rathaus zusammen.",
+   "currentBeispielTr": "Belediye meclisi iki haftada bir perşembe belediye binasında toplanıyor."
   },
   {
    "id": 5144,
@@ -505,9 +505,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Stadträte",
-   "mevcutTr": "şehir meclisi, meclis üyesi",
-   "mevcutBeispiel": "Im Stadtrat gibt es keine klare Mehrheit für den Vorschlag.",
-   "mevcutBeispielTr": "Şehir meclisinde öneri için net bir çoğunluk yok."
+   "currentTr": "şehir meclisi, meclis üyesi",
+   "currentBeispiel": "Im Stadtrat gibt es keine klare Mehrheit für den Vorschlag.",
+   "currentBeispielTr": "Şehir meclisinde öneri için net bir çoğunluk yok."
   }
  ]
 }

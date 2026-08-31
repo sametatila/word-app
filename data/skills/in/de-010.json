@@ -1,7 +1,7 @@
 {
- "paket": "de-010",
+ "packet": "de-010",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "b1-r9",
    "skill": "reading",
@@ -9,55 +9,55 @@
    "title": "Duzen oder siezen?",
    "genre": "Kültür",
    "intro": "Almanca öğrenen herkesin en çok tereddüt ettiği konu: „du“ mu „Sie“ mi? Bu yazı kuralın nasıl değiştiğini anlatıyor.",
-   "metin": "Für Deutschlernende ist es eine der schwersten Fragen — und für viele Deutsche inzwischen auch.\n\nDie alte Regel war einfach: Erwachsene, die man nicht kennt, siezt man. Geduzt wurde in der Familie, unter Freunden und unter Kindern. Wer wechseln wollte, musste warten: Das „du“ bietet die ältere Person an, im Beruf die höhere Position.\n\nDiese Regel gilt noch — aber nicht überall. In der IT-Branche, in Start-ups, in Sportgeschäften und bei IKEA werden alle geduzt, vom Praktikanten bis zur Chefin. In einer Bank, bei einer Behörde oder beim Arzt wäre das dagegen ein Fehler.\n\nDas Problem: Ein „du“ kann man nicht mehr zurücknehmen. Wer zu früh duzt, wirkt schnell zu vertraulich. Wer zu lange siezt, wirkt kalt — aber das ist der kleinere Fehler und leicht zu korrigieren.\n\nDie Faustregel lautet deshalb: Siezen Sie, bis Ihnen das „du“ angeboten wird. Und wenn Sie unsicher sind, hilft ein einfacher Satz: „Sagen wir du oder Sie?“ Fast niemand findet diese Frage unhöflich — im Gegenteil, sie zeigt, dass Sie aufmerksam sind.",
+   "text": "Für Deutschlernende ist es eine der schwersten Fragen — und für viele Deutsche inzwischen auch.\n\nDie alte Regel war einfach: Erwachsene, die man nicht kennt, siezt man. Geduzt wurde in der Familie, unter Freunden und unter Kindern. Wer wechseln wollte, musste warten: Das „du“ bietet die ältere Person an, im Beruf die höhere Position.\n\nDiese Regel gilt noch — aber nicht überall. In der IT-Branche, in Start-ups, in Sportgeschäften und bei IKEA werden alle geduzt, vom Praktikanten bis zur Chefin. In einer Bank, bei einer Behörde oder beim Arzt wäre das dagegen ein Fehler.\n\nDas Problem: Ein „du“ kann man nicht mehr zurücknehmen. Wer zu früh duzt, wirkt schnell zu vertraulich. Wer zu lange siezt, wirkt kalt — aber das ist der kleinere Fehler und leicht zu korrigieren.\n\nDie Faustregel lautet deshalb: Siezen Sie, bis Ihnen das „du“ angeboten wird. Und wenn Sie unsicher sind, hilft ein einfacher Satz: „Sagen wir du oder Sie?“ Fast niemand findet diese Frage unhöflich — im Gegenteil, sie zeigt, dass Sie aufmerksam sind.",
    "gloss": [
     {
      "de": "duzen",
-     "mevcutTr": "sen diye hitap etmek",
-     "havuz": {
+     "currentTr": "sen diye hitap etmek",
+     "pool": {
       "tr": "sen diye hitap etmek",
       "en": "to address informally"
      }
     },
     {
      "de": "siezen",
-     "mevcutTr": "siz diye hitap etmek"
+     "currentTr": "siz diye hitap etmek"
     },
     {
      "de": "anbieten",
-     "mevcutTr": "sunmak",
-     "havuz": {
+     "currentTr": "sunmak",
+     "pool": {
       "tr": "sunmak",
       "en": "to offer"
      }
     },
     {
      "de": "die Anrede",
-     "mevcutTr": "hitap",
-     "havuz": {
+     "currentTr": "hitap",
+     "pool": {
       "tr": "hitap",
       "en": "salutation"
      }
     },
     {
      "de": "unhöflich",
-     "mevcutTr": "nezaketsiz",
-     "havuz": {
+     "currentTr": "nezaketsiz",
+     "pool": {
       "tr": "nezaketsiz",
       "en": "impolite"
      }
     },
     {
      "de": "die Branche",
-     "mevcutTr": "sektör"
+     "currentTr": "sektör"
     },
     {
      "de": "zurücknehmen",
-     "mevcutTr": "geri almak"
+     "currentTr": "geri almak"
     },
     {
      "de": "die Faustregel",
-     "mevcutTr": "genel kural"
+     "currentTr": "genel kural"
     }
    ]
   },
@@ -68,56 +68,56 @@
    "title": "Überschriften zuordnen",
    "genre": "Sınav formatı",
    "intro": "B1 sınavının klasik görevi: kısa metinlere doğru başlığı bulmak. Beş kısa haber, altı başlık — biri fazla.",
-   "metin": "TEXT 1: Ab September fährt die Linie 4 auch am Wochenende alle zehn Minuten. Die Stadt reagiert damit auf viele Beschwerden aus den Außenbezirken.\n\nTEXT 2: Nach drei Jahren ist die Sanierung der Grundschule Nord fertig. Die Klassen ziehen in den Ferien zurück, der Unterricht beginnt wie geplant.\n\nTEXT 3: Die Zahl der Fahrraddiebstähle ist im letzten Jahr um 18 Prozent gesunken. Die Polizei erklärt das mit den neuen Abstellplätzen am Bahnhof.\n\nTEXT 4: Beim Stadtfest sind 12.400 Euro zusammengekommen. Das Geld geht an das Frauenhaus, das seit Jahren zu wenig Platz hat.\n\nTEXT 5: Wer Hilfe beim Heizen braucht, kann bis Ende Oktober einen Antrag stellen. Formulare gibt es online und im Rathaus.\n\nÜBERSCHRIFTEN:\na) Weniger Fahrräder gestohlen\nb) Mehr Busse am Wochenende\nc) Schule wieder offen\nd) Fest bringt Geld für den guten Zweck\ne) Neue Baustelle am Bahnhof\nf) Unterstützung beantragen — Frist läuft",
+   "text": "TEXT 1: Ab September fährt die Linie 4 auch am Wochenende alle zehn Minuten. Die Stadt reagiert damit auf viele Beschwerden aus den Außenbezirken.\n\nTEXT 2: Nach drei Jahren ist die Sanierung der Grundschule Nord fertig. Die Klassen ziehen in den Ferien zurück, der Unterricht beginnt wie geplant.\n\nTEXT 3: Die Zahl der Fahrraddiebstähle ist im letzten Jahr um 18 Prozent gesunken. Die Polizei erklärt das mit den neuen Abstellplätzen am Bahnhof.\n\nTEXT 4: Beim Stadtfest sind 12.400 Euro zusammengekommen. Das Geld geht an das Frauenhaus, das seit Jahren zu wenig Platz hat.\n\nTEXT 5: Wer Hilfe beim Heizen braucht, kann bis Ende Oktober einen Antrag stellen. Formulare gibt es online und im Rathaus.\n\nÜBERSCHRIFTEN:\na) Weniger Fahrräder gestohlen\nb) Mehr Busse am Wochenende\nc) Schule wieder offen\nd) Fest bringt Geld für den guten Zweck\ne) Neue Baustelle am Bahnhof\nf) Unterstützung beantragen — Frist läuft",
    "gloss": [
     {
      "de": "die Überschrift",
-     "mevcutTr": "başlık",
-     "havuz": {
+     "currentTr": "başlık",
+     "pool": {
       "tr": "başlık",
       "en": "headline"
      }
     },
     {
      "de": "zuordnen",
-     "mevcutTr": "eşleştirmek",
-     "havuz": {
+     "currentTr": "eşleştirmek",
+     "pool": {
       "tr": "eşleştirmek",
       "en": "to match"
      }
     },
     {
      "de": "die Spende",
-     "mevcutTr": "bağış"
+     "currentTr": "bağış"
     },
     {
      "de": "die Baustelle",
-     "mevcutTr": "şantiye",
-     "havuz": {
+     "currentTr": "şantiye",
+     "pool": {
       "tr": "şantiye",
       "en": "construction site"
      }
     },
     {
      "de": "die Umfrage",
-     "mevcutTr": "anket",
-     "havuz": {
+     "currentTr": "anket",
+     "pool": {
       "tr": "anket",
       "en": "survey"
      }
     },
     {
      "de": "sinken",
-     "mevcutTr": "düşmek",
-     "havuz": {
+     "currentTr": "düşmek",
+     "pool": {
       "tr": "düşmek",
       "en": "to drop"
      }
     },
     {
      "de": "der Antrag",
-     "mevcutTr": "başvuru",
-     "havuz": {
+     "currentTr": "başvuru",
+     "pool": {
       "tr": "başvuru",
       "en": "application"
      }
@@ -131,56 +131,56 @@
    "title": "Die Antwort von der Bank",
    "genre": "Resmî yazı",
    "intro": "Hikâyenin devamı: Tarek kredi başvurusu yaptı. Bankanın cevabını okuyacaksın — tam bir „evet“ değil.",
-   "metin": "Sehr geehrter Herr Haddad,\n\nvielen Dank für Ihren Kreditantrag vom 4. April und für das ausführliche Gespräch.\n\nIhr Konzept hat uns überzeugt: Der Standort ist gut gewählt, und Ihre Zahlen sind vorsichtig gerechnet — das sehen wir selten. Trotzdem können wir den Antrag nicht in voller Höhe bewilligen.\n\nBeantragt: 45.000 Euro. Wir bieten Ihnen 30.000 Euro an.\n\nDer Grund ist Ihre Sicherheit. Sie bringen 18.000 Euro eigenes Geld mit, das ist gut. Sie haben aber keine weiteren Sicherheiten. Für die vollen 45.000 Euro bräuchten wir entweder eine Bürgschaft oder eine Zusage der Förderbank, die Gründungen in der Gastronomie unterstützt.\n\nKonditionen für die 30.000 Euro: Laufzeit 7 Jahre, Zinssatz 5,4 Prozent, tilgungsfrei in den ersten sechs Monaten.\n\nMein Rat: Sprechen Sie mit der Förderbank, bevor Sie unterschreiben. Das Verfahren dauert etwa vier Wochen, und die Konditionen sind besser als unsere.\n\nUnser Angebot gilt bis zum 30. Juni.\n\nMit freundlichen Grüßen\nS. Lorenz, Firmenkunden",
+   "text": "Sehr geehrter Herr Haddad,\n\nvielen Dank für Ihren Kreditantrag vom 4. April und für das ausführliche Gespräch.\n\nIhr Konzept hat uns überzeugt: Der Standort ist gut gewählt, und Ihre Zahlen sind vorsichtig gerechnet — das sehen wir selten. Trotzdem können wir den Antrag nicht in voller Höhe bewilligen.\n\nBeantragt: 45.000 Euro. Wir bieten Ihnen 30.000 Euro an.\n\nDer Grund ist Ihre Sicherheit. Sie bringen 18.000 Euro eigenes Geld mit, das ist gut. Sie haben aber keine weiteren Sicherheiten. Für die vollen 45.000 Euro bräuchten wir entweder eine Bürgschaft oder eine Zusage der Förderbank, die Gründungen in der Gastronomie unterstützt.\n\nKonditionen für die 30.000 Euro: Laufzeit 7 Jahre, Zinssatz 5,4 Prozent, tilgungsfrei in den ersten sechs Monaten.\n\nMein Rat: Sprechen Sie mit der Förderbank, bevor Sie unterschreiben. Das Verfahren dauert etwa vier Wochen, und die Konditionen sind besser als unsere.\n\nUnser Angebot gilt bis zum 30. Juni.\n\nMit freundlichen Grüßen\nS. Lorenz, Firmenkunden",
    "gloss": [
     {
      "de": "der Kreditantrag",
-     "mevcutTr": "kredi başvurusu"
+     "currentTr": "kredi başvurusu"
     },
     {
      "de": "bewilligen",
-     "mevcutTr": "onaylamak",
-     "havuz": {
+     "currentTr": "onaylamak",
+     "pool": {
       "tr": "onaylamak",
       "en": "to approve"
      }
     },
     {
      "de": "die Sicherheit",
-     "mevcutTr": "teminat",
-     "havuz": {
+     "currentTr": "teminat",
+     "pool": {
       "tr": "güvenlik",
       "en": "safety"
      }
     },
     {
      "de": "die Bürgschaft",
-     "mevcutTr": "kefalet",
-     "havuz": {
+     "currentTr": "kefalet",
+     "pool": {
       "tr": "kefalet",
       "en": "guarantee"
      }
     },
     {
      "de": "die Laufzeit",
-     "mevcutTr": "vade"
+     "currentTr": "vade"
     },
     {
      "de": "der Zinssatz",
-     "mevcutTr": "faiz oranı",
-     "havuz": {
+     "currentTr": "faiz oranı",
+     "pool": {
       "tr": "faiz oranı",
       "en": "interest rate"
      }
     },
     {
      "de": "die Tilgung",
-     "mevcutTr": "anapara ödemesi"
+     "currentTr": "anapara ödemesi"
     },
     {
      "de": "die Voraussetzung",
-     "mevcutTr": "ön koşul",
-     "havuz": {
+     "currentTr": "ön koşul",
+     "pool": {
       "tr": "ön koşul",
       "en": "prerequisite"
      }
@@ -194,56 +194,56 @@
    "title": "Ein Arbeitszeugnis lesen",
    "genre": "Rehber",
    "intro": "Alman iş referanslarının gizli dili: her şey olumlu görünür, ama kelimeler not anlamına gelir. Bu yazı kodu çözüyor.",
-   "metin": "In Deutschland hat jede Arbeitnehmerin das Recht auf ein Arbeitszeugnis — und dieses Zeugnis muss wohlwollend formuliert sein. Negative Sätze sind also praktisch verboten. Genau deshalb hat sich ein Code entwickelt, den man kennen muss.\n\nDie wichtigste Formel steht fast immer am Ende und beschreibt die Leistung. Sie funktioniert wie eine Note:\n\n„… stets zur vollsten Zufriedenheit“ = sehr gut\n„… stets zur vollen Zufriedenheit“ = gut\n„… zur vollen Zufriedenheit“ = befriedigend\n„… zur Zufriedenheit“ = ausreichend\n„… insgesamt zur Zufriedenheit“ = mangelhaft\n\nEin einziges Wort — „stets“ oder „vollsten“ — entscheidet also über zwei Noten.\n\nGefährlich sind Sätze, die freundlich klingen und es nicht sind. „Er war stets bemüht“ heißt: Er hat sich Mühe gegeben, aber es hat nicht gereicht. „Sie war gesellig und trug zur Verbesserung des Betriebsklimas bei“ kann bedeuten, dass jemand mehr geredet als gearbeitet hat.\n\nAuch das Fehlen zählt: Wenn am Ende der übliche Dank und die guten Wünsche für die Zukunft fehlen, lesen Personalabteilungen das als deutliches Signal.\n\nWenn Sie ein Zeugnis bekommen, lesen Sie es also zweimal — und fragen Sie im Zweifel nach einer Korrektur. Sie haben ein Recht darauf.",
+   "text": "In Deutschland hat jede Arbeitnehmerin das Recht auf ein Arbeitszeugnis — und dieses Zeugnis muss wohlwollend formuliert sein. Negative Sätze sind also praktisch verboten. Genau deshalb hat sich ein Code entwickelt, den man kennen muss.\n\nDie wichtigste Formel steht fast immer am Ende und beschreibt die Leistung. Sie funktioniert wie eine Note:\n\n„… stets zur vollsten Zufriedenheit“ = sehr gut\n„… stets zur vollen Zufriedenheit“ = gut\n„… zur vollen Zufriedenheit“ = befriedigend\n„… zur Zufriedenheit“ = ausreichend\n„… insgesamt zur Zufriedenheit“ = mangelhaft\n\nEin einziges Wort — „stets“ oder „vollsten“ — entscheidet also über zwei Noten.\n\nGefährlich sind Sätze, die freundlich klingen und es nicht sind. „Er war stets bemüht“ heißt: Er hat sich Mühe gegeben, aber es hat nicht gereicht. „Sie war gesellig und trug zur Verbesserung des Betriebsklimas bei“ kann bedeuten, dass jemand mehr geredet als gearbeitet hat.\n\nAuch das Fehlen zählt: Wenn am Ende der übliche Dank und die guten Wünsche für die Zukunft fehlen, lesen Personalabteilungen das als deutliches Signal.\n\nWenn Sie ein Zeugnis bekommen, lesen Sie es also zweimal — und fragen Sie im Zweifel nach einer Korrektur. Sie haben ein Recht darauf.",
    "gloss": [
     {
      "de": "das Arbeitszeugnis",
-     "mevcutTr": "çalışma belgesi",
-     "havuz": {
+     "currentTr": "çalışma belgesi",
+     "pool": {
       "tr": "çalışma belgesi",
       "en": "employment reference"
      }
     },
     {
      "de": "die Formulierung",
-     "mevcutTr": "ifade biçimi",
-     "havuz": {
+     "currentTr": "ifade biçimi",
+     "pool": {
       "tr": "ifade biçimi",
       "en": "wording"
      }
     },
     {
      "de": "stets",
-     "mevcutTr": "daima",
-     "havuz": {
+     "currentTr": "daima",
+     "pool": {
       "tr": "daima",
       "en": "always"
      }
     },
     {
      "de": "zur vollen Zufriedenheit",
-     "mevcutTr": "tam memnuniyetle"
+     "currentTr": "tam memnuniyetle"
     },
     {
      "de": "bemüht sein",
-     "mevcutTr": "gayret göstermek"
+     "currentTr": "gayret göstermek"
     },
     {
      "de": "der Code",
-     "mevcutTr": "şifre"
+     "currentTr": "şifre"
     },
     {
      "de": "wohlwollend",
-     "mevcutTr": "iyi niyetli",
-     "havuz": {
+     "currentTr": "iyi niyetli",
+     "pool": {
       "tr": "iyi niyetli",
       "en": "benevolent"
      }
     },
     {
      "de": "das Recht",
-     "mevcutTr": "hak",
-     "havuz": {
+     "currentTr": "hak",
+     "pool": {
       "tr": "hak",
       "en": "right"
      }
@@ -257,68 +257,68 @@
    "title": "Die Lange Nacht der Museen",
    "genre": "Radyo duyurusu",
    "intro": "Radyodaki hafta sonu etkinlik duyurusunu dinle ve ayrıntıları not et.",
-   "metin": "Und nun die Veranstaltungstipps für das Wochenende. Am Samstag findet in Nürnberg wieder die Lange Nacht der Museen statt. Von 18 Uhr abends bis 1 Uhr nachts öffnen mehr als vierzig Museen und Galerien ihre Türen. Das Eintrittsband kostet 17 Euro, ermäßigt 12 Euro, und gilt für alle teilnehmenden Häuser. Kinder unter zwölf Jahren haben freien Eintritt.\nBesonders empfehlen möchten wir das neue Zukunftsmuseum: Dort können Besucherinnen und Besucher ab 20 Uhr Roboter selbst steuern. Im Stadtmuseum wird stündlich eine Führung durch die Ausstellung über das mittelalterliche Nürnberg angeboten.\nZwischen den Museen fahren kostenlose Shuttlebusse, die alle zehn Minuten an den Haltestellen abfahren. Die Veranstalter empfehlen, das Auto zu Hause zu lassen, da die Innenstadt teilweise gesperrt ist. Karten gibt es online oder an der Abendkasse. Im vergangenen Jahr waren sie allerdings schon am frühen Abend ausverkauft.",
+   "text": "Und nun die Veranstaltungstipps für das Wochenende. Am Samstag findet in Nürnberg wieder die Lange Nacht der Museen statt. Von 18 Uhr abends bis 1 Uhr nachts öffnen mehr als vierzig Museen und Galerien ihre Türen. Das Eintrittsband kostet 17 Euro, ermäßigt 12 Euro, und gilt für alle teilnehmenden Häuser. Kinder unter zwölf Jahren haben freien Eintritt.\nBesonders empfehlen möchten wir das neue Zukunftsmuseum: Dort können Besucherinnen und Besucher ab 20 Uhr Roboter selbst steuern. Im Stadtmuseum wird stündlich eine Führung durch die Ausstellung über das mittelalterliche Nürnberg angeboten.\nZwischen den Museen fahren kostenlose Shuttlebusse, die alle zehn Minuten an den Haltestellen abfahren. Die Veranstalter empfehlen, das Auto zu Hause zu lassen, da die Innenstadt teilweise gesperrt ist. Karten gibt es online oder an der Abendkasse. Im vergangenen Jahr waren sie allerdings schon am frühen Abend ausverkauft.",
    "gloss": [
     {
      "de": "die Veranstaltung",
-     "mevcutTr": "etkinlik",
-     "havuz": {
+     "currentTr": "etkinlik",
+     "pool": {
       "tr": "etkinlik",
       "en": "event"
      }
     },
     {
      "de": "der Eintritt",
-     "mevcutTr": "giriş ücreti",
-     "havuz": {
+     "currentTr": "giriş ücreti",
+     "pool": {
       "tr": "giriş ücreti",
       "en": "admission"
      }
     },
     {
      "de": "ermäßigt",
-     "mevcutTr": "indirimli"
+     "currentTr": "indirimli"
     },
     {
      "de": "die Führung",
-     "mevcutTr": "rehberli tur",
-     "havuz": {
+     "currentTr": "rehberli tur",
+     "pool": {
       "tr": "rehberli tur",
       "en": "guided tour"
      }
     },
     {
      "de": "die Ausstellung",
-     "mevcutTr": "sergi",
-     "havuz": {
+     "currentTr": "sergi",
+     "pool": {
       "tr": "sergi",
       "en": "exhibition"
      }
     },
     {
      "de": "mittelalterlich",
-     "mevcutTr": "ortaçağa ait"
+     "currentTr": "ortaçağa ait"
     },
     {
      "de": "die Haltestelle",
-     "mevcutTr": "durak",
-     "havuz": {
+     "currentTr": "durak",
+     "pool": {
       "tr": "durak",
       "en": "stop"
      }
     },
     {
      "de": "gesperrt",
-     "mevcutTr": "trafiğe kapalı"
+     "currentTr": "trafiğe kapalı"
     },
     {
      "de": "die Abendkasse",
-     "mevcutTr": "gişe"
+     "currentTr": "gişe"
     },
     {
      "de": "ausverkauft",
-     "mevcutTr": "tükenmiş",
-     "havuz": {
+     "currentTr": "tükenmiş",
+     "pool": {
       "tr": "biletleri tükenmiş",
       "en": "sold out"
      }
@@ -332,76 +332,76 @@
    "title": "Ehrenamt bei der Tafel",
    "genre": "Radyo röportajı",
    "intro": "Gıda bankasında gönüllü çalışan Herr Weber ile yapılan radyo röportajını dinle.",
-   "metin": "Moderatorin: Willkommen zurück bei Radio Neckarwelle. Zu Gast ist heute Thomas Weber, der sich seit fünf Jahren ehrenamtlich bei der Heidelberger Tafel engagiert. Herr Weber, was genau machen Sie dort?\nHerr Weber: Wir sammeln Lebensmittel, die Supermärkte nicht mehr verkaufen können, die aber noch gut sind. Diese verteilen wir dann an Menschen mit wenig Geld. Ich fahre zweimal pro Woche mit dem Kühlwagen zu den Märkten und hole die Ware ab.\nModeratorin: Wie sind Sie zu diesem Ehrenamt gekommen?\nHerr Weber: Ganz zufällig. Nach meiner Rente hatte ich plötzlich viel Zeit und habe einen Zeitungsartikel über die Tafel gelesen. Am nächsten Tag habe ich einfach dort angerufen.\nModeratorin: Was gibt Ihnen die Arbeit persönlich?\nHerr Weber: Sehr viel. Man bekommt direkte Dankbarkeit, und ich habe tolle Menschen kennengelernt. Aber ich will ehrlich sein: Manchmal ist es auch traurig zu sehen, wie viele Familien Hilfe brauchen.\nModeratorin: Sucht die Tafel noch Unterstützung?\nHerr Weber: Unbedingt! Besonders Fahrerinnen und Fahrer werden gesucht. Wer Interesse hat, findet alle Informationen auf unserer Webseite.",
+   "text": "Moderatorin: Willkommen zurück bei Radio Neckarwelle. Zu Gast ist heute Thomas Weber, der sich seit fünf Jahren ehrenamtlich bei der Heidelberger Tafel engagiert. Herr Weber, was genau machen Sie dort?\nHerr Weber: Wir sammeln Lebensmittel, die Supermärkte nicht mehr verkaufen können, die aber noch gut sind. Diese verteilen wir dann an Menschen mit wenig Geld. Ich fahre zweimal pro Woche mit dem Kühlwagen zu den Märkten und hole die Ware ab.\nModeratorin: Wie sind Sie zu diesem Ehrenamt gekommen?\nHerr Weber: Ganz zufällig. Nach meiner Rente hatte ich plötzlich viel Zeit und habe einen Zeitungsartikel über die Tafel gelesen. Am nächsten Tag habe ich einfach dort angerufen.\nModeratorin: Was gibt Ihnen die Arbeit persönlich?\nHerr Weber: Sehr viel. Man bekommt direkte Dankbarkeit, und ich habe tolle Menschen kennengelernt. Aber ich will ehrlich sein: Manchmal ist es auch traurig zu sehen, wie viele Familien Hilfe brauchen.\nModeratorin: Sucht die Tafel noch Unterstützung?\nHerr Weber: Unbedingt! Besonders Fahrerinnen und Fahrer werden gesucht. Wer Interesse hat, findet alle Informationen auf unserer Webseite.",
    "gloss": [
     {
      "de": "das Ehrenamt",
-     "mevcutTr": "gönüllü görev",
-     "havuz": {
+     "currentTr": "gönüllü görev",
+     "pool": {
       "tr": "gönüllü görev",
       "en": "volunteer work"
      }
     },
     {
      "de": "die Tafel",
-     "mevcutTr": "gıda bankası",
-     "havuz": {
+     "currentTr": "gıda bankası",
+     "pool": {
       "tr": "tahta",
       "en": "board"
      }
     },
     {
      "de": "sich engagieren",
-     "mevcutTr": "gönüllü çalışmak",
-     "havuz": {
+     "currentTr": "gönüllü çalışmak",
+     "pool": {
       "tr": "gönüllü çalışmak",
       "en": "to volunteer"
      }
     },
     {
      "de": "die Lebensmittel",
-     "mevcutTr": "gıda",
-     "havuz": {
+     "currentTr": "gıda",
+     "pool": {
       "tr": "gıda",
       "en": "groceries"
      }
     },
     {
      "de": "verteilen",
-     "mevcutTr": "dağıtmak",
-     "havuz": {
+     "currentTr": "dağıtmak",
+     "pool": {
       "tr": "dağıtmak",
       "en": "to distribute"
      }
     },
     {
      "de": "die Ware abholen",
-     "mevcutTr": "malı teslim almak"
+     "currentTr": "malı teslim almak"
     },
     {
      "de": "die Rente",
-     "mevcutTr": "emeklilik",
-     "havuz": {
+     "currentTr": "emeklilik",
+     "pool": {
       "tr": "emekli maaşı",
       "en": "pension"
      }
     },
     {
      "de": "zufällig",
-     "mevcutTr": "tesadüfen",
-     "havuz": {
+     "currentTr": "tesadüfen",
+     "pool": {
       "tr": "tesadüfen",
       "en": "by chance"
      }
     },
     {
      "de": "die Dankbarkeit",
-     "mevcutTr": "minnettarlık"
+     "currentTr": "minnettarlık"
     },
     {
      "de": "die Unterstützung",
-     "mevcutTr": "destek",
-     "havuz": {
+     "currentTr": "destek",
+     "pool": {
       "tr": "destek",
       "en": "support"
      }
@@ -415,63 +415,63 @@
    "title": "Ein Garten für alle",
    "genre": "Günlük konuşma",
    "intro": "İki komşunun, binalarının arkasına yapılacak ortak bahçe hakkındaki konuşmasını dinle.",
-   "metin": "Jonas: Hallo Elif! Hast du schon gehört? Auf der freien Fläche hinter unserem Haus soll ein Gemeinschaftsgarten entstehen.\nElif: Ja, ich habe den Aushang im Treppenhaus gesehen. Ich bin mir aber nicht sicher, ob das funktioniert. Wer soll sich denn darum kümmern?\nJonas: Die Idee ist, dass jeder Haushalt ein kleines Beet bekommt. Um die gemeinsamen Wege und die Obstbäume kümmern wir uns zusammen. Nächsten Samstag um zehn gibt es ein erstes Treffen.\nElif: Hm, ich habe ehrlich gesagt noch nie etwas angepflanzt. Ich hätte Angst, dass bei mir alles vertrocknet.\nJonas: Das macht doch nichts! Frau Behrens aus dem dritten Stock war früher Gärtnerin, sie will Anfängern helfen. Und stell dir vor: eigene Tomaten, frische Kräuter direkt vor der Tür.\nElif: Das klingt schon verlockend. Und die Kinder könnten draußen spielen, während wir im Garten arbeiten. Weißt du was? Ich komme am Samstag einfach mal mit.\nJonas: Super! Ich hole dich um kurz vor zehn ab.",
+   "text": "Jonas: Hallo Elif! Hast du schon gehört? Auf der freien Fläche hinter unserem Haus soll ein Gemeinschaftsgarten entstehen.\nElif: Ja, ich habe den Aushang im Treppenhaus gesehen. Ich bin mir aber nicht sicher, ob das funktioniert. Wer soll sich denn darum kümmern?\nJonas: Die Idee ist, dass jeder Haushalt ein kleines Beet bekommt. Um die gemeinsamen Wege und die Obstbäume kümmern wir uns zusammen. Nächsten Samstag um zehn gibt es ein erstes Treffen.\nElif: Hm, ich habe ehrlich gesagt noch nie etwas angepflanzt. Ich hätte Angst, dass bei mir alles vertrocknet.\nJonas: Das macht doch nichts! Frau Behrens aus dem dritten Stock war früher Gärtnerin, sie will Anfängern helfen. Und stell dir vor: eigene Tomaten, frische Kräuter direkt vor der Tür.\nElif: Das klingt schon verlockend. Und die Kinder könnten draußen spielen, während wir im Garten arbeiten. Weißt du was? Ich komme am Samstag einfach mal mit.\nJonas: Super! Ich hole dich um kurz vor zehn ab.",
    "gloss": [
     {
      "de": "der Gemeinschaftsgarten",
-     "mevcutTr": "ortak bahçe"
+     "currentTr": "ortak bahçe"
     },
     {
      "de": "die Fläche",
-     "mevcutTr": "alan",
-     "havuz": {
+     "currentTr": "alan",
+     "pool": {
       "tr": "alan",
       "en": "area"
      }
     },
     {
      "de": "der Aushang",
-     "mevcutTr": "duyuru"
+     "currentTr": "duyuru"
     },
     {
      "de": "das Treppenhaus",
-     "mevcutTr": "merdiven boşluğu",
-     "havuz": {
+     "currentTr": "merdiven boşluğu",
+     "pool": {
       "tr": "merdiven boşluğu",
       "en": "stairwell"
      }
     },
     {
      "de": "sich kümmern um",
-     "mevcutTr": "ilgilenmek"
+     "currentTr": "ilgilenmek"
     },
     {
      "de": "der Haushalt",
-     "mevcutTr": "hane",
-     "havuz": {
+     "currentTr": "hane",
+     "pool": {
       "tr": "ev işleri",
       "en": "housework"
      }
     },
     {
      "de": "das Beet",
-     "mevcutTr": "tarh",
-     "havuz": {
+     "currentTr": "tarh",
+     "pool": {
       "tr": "tarh",
       "en": "garden bed"
      }
     },
     {
      "de": "anpflanzen",
-     "mevcutTr": "dikmek"
+     "currentTr": "dikmek"
     },
     {
      "de": "vertrocknen",
-     "mevcutTr": "kurumak"
+     "currentTr": "kurumak"
     },
     {
      "de": "verlockend",
-     "mevcutTr": "cazip"
+     "currentTr": "cazip"
     }
    ]
   },
@@ -482,68 +482,68 @@
    "title": "Station fünf: die Speicherstadt",
    "genre": "Sesli rehber",
    "intro": "Hamburg Liman Müzesi'ndeki sesli rehberin Speicherstadt bölümünü dinle.",
-   "metin": "Herzlich willkommen im Hafenmuseum Hamburg. Sie hören Station fünf: die Speicherstadt. Vor Ihnen sehen Sie ein Modell des größten historischen Lagerhauskomplexes der Welt. Die Speicherstadt wurde zwischen 1883 und 1927 gebaut. In den roten Backsteingebäuden lagerten Kaffee, Tee, Gewürze und Teppiche aus der ganzen Welt.\nBeachten Sie die kleinen Türen in den oberen Stockwerken: Dort wurden die Waren früher mit Seilwinden direkt aus den Schiffen nach oben gezogen. Bis heute riecht es in einigen Gebäuden nach Gewürzen.\nSeit 2015 gehört die Speicherstadt zum Weltkulturerbe der UNESCO. Heute befinden sich in den alten Speichern Museen, Büros und Cafés. In der Vitrine rechts neben dem Modell sehen Sie originale Werkzeuge der Hafenarbeiter, die hier bis in die achtziger Jahre gearbeitet haben.\nWenn Sie mehr über den modernen Containerhafen erfahren möchten, folgen Sie dem blauen Pfeil zur Station sechs im nächsten Raum. Wir wünschen Ihnen einen angenehmen Aufenthalt.",
+   "text": "Herzlich willkommen im Hafenmuseum Hamburg. Sie hören Station fünf: die Speicherstadt. Vor Ihnen sehen Sie ein Modell des größten historischen Lagerhauskomplexes der Welt. Die Speicherstadt wurde zwischen 1883 und 1927 gebaut. In den roten Backsteingebäuden lagerten Kaffee, Tee, Gewürze und Teppiche aus der ganzen Welt.\nBeachten Sie die kleinen Türen in den oberen Stockwerken: Dort wurden die Waren früher mit Seilwinden direkt aus den Schiffen nach oben gezogen. Bis heute riecht es in einigen Gebäuden nach Gewürzen.\nSeit 2015 gehört die Speicherstadt zum Weltkulturerbe der UNESCO. Heute befinden sich in den alten Speichern Museen, Büros und Cafés. In der Vitrine rechts neben dem Modell sehen Sie originale Werkzeuge der Hafenarbeiter, die hier bis in die achtziger Jahre gearbeitet haben.\nWenn Sie mehr über den modernen Containerhafen erfahren möchten, folgen Sie dem blauen Pfeil zur Station sechs im nächsten Raum. Wir wünschen Ihnen einen angenehmen Aufenthalt.",
    "gloss": [
     {
      "de": "das Lagerhaus",
-     "mevcutTr": "depo binası"
+     "currentTr": "depo binası"
     },
     {
      "de": "der Backstein",
-     "mevcutTr": "tuğla"
+     "currentTr": "tuğla"
     },
     {
      "de": "lagern",
-     "mevcutTr": "depolamak",
-     "havuz": {
+     "currentTr": "depolamak",
+     "pool": {
       "tr": "depolamak",
       "en": "to store"
      }
     },
     {
      "de": "das Gewürz",
-     "mevcutTr": "baharat",
-     "havuz": {
+     "currentTr": "baharat",
+     "pool": {
       "tr": "baharat",
       "en": "spice"
      }
     },
     {
      "de": "der Teppich",
-     "mevcutTr": "halı",
-     "havuz": {
+     "currentTr": "halı",
+     "pool": {
       "tr": "halı",
       "en": "carpet"
      }
     },
     {
      "de": "das Stockwerk",
-     "mevcutTr": "kat",
-     "havuz": {
+     "currentTr": "kat",
+     "pool": {
       "tr": "kat",
       "en": "story"
      }
     },
     {
      "de": "die Ware",
-     "mevcutTr": "mal",
-     "havuz": {
+     "currentTr": "mal",
+     "pool": {
       "tr": "mal",
       "en": "goods"
      }
     },
     {
      "de": "das Weltkulturerbe",
-     "mevcutTr": "dünya kültür mirası"
+     "currentTr": "dünya kültür mirası"
     },
     {
      "de": "die Vitrine",
-     "mevcutTr": "vitrin"
+     "currentTr": "vitrin"
     },
     {
      "de": "der Aufenthalt",
-     "mevcutTr": "kalış",
-     "havuz": {
+     "currentTr": "kalış",
+     "pool": {
       "tr": "kalış",
       "en": "stay"
      }

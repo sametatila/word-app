@@ -16,7 +16,7 @@
   "gsw": "dusche",
   "gswArtikel": null,
   "gswBeispiel": "Zerscht dusche ich, dänn gits Zmorge.",
-  "ayniLehce": [
+  "sameDialect": [
    "Dusche (A1)"
   ]
  },
@@ -118,7 +118,7 @@
   "gsw": "Glace",
   "gswArtikel": "d",
   "gswBeispiel": "Ich möcht e groossi Glace.",
-  "ayniLehce": [
+  "sameDialect": [
    "die/das Glace/Glacé (B1)"
   ]
  },
@@ -211,7 +211,7 @@
   "gsw": "ässe",
   "gswArtikel": null,
   "gswBeispiel": "Was wänd ir ässe?",
-  "ayniLehce": [
+  "sameDialect": [
    "Essen (A1)"
   ]
  },
@@ -223,7 +223,7 @@
   "gsw": "Ässe",
   "gswArtikel": "s",
   "gswBeispiel": "Wie isch s Ässe z Tüütschland gsii?",
-  "ayniLehce": [
+  "sameDialect": [
    "essen (A1)"
   ]
  },
@@ -271,7 +271,7 @@
   "gsw": "Billett",
   "gswArtikel": "s",
   "gswBeispiel": "Si bruuched es Billett.",
-  "ayniLehce": [
+  "sameDialect": [
    "Billett (B1)",
    "Fahrschein (A2)"
   ]
@@ -293,7 +293,7 @@
   "gsw": "Velo",
   "gswArtikel": "s",
   "gswBeispiel": "Mir chömed mit em Velo.",
-  "ayniLehce": [
+  "sameDialect": [
    "Velo (B1)"
   ]
  },
@@ -341,7 +341,7 @@
   "gsw": "Ferie",
   "gswArtikel": "d",
   "gswBeispiel": "Was mached ir i de Ferie?",
-  "ayniLehce": [
+  "sameDialect": [
    "Urlaub (A1)"
   ]
  },
@@ -353,7 +353,7 @@
   "gsw": "fernsee",
   "gswArtikel": null,
   "gswBeispiel": "Tuesch vil fernsee?",
-  "ayniLehce": [
+  "sameDialect": [
    "Fernsehen (A1)"
   ]
  },
@@ -365,7 +365,7 @@
   "gsw": "Fernsee",
   "gswArtikel": "s",
   "gswBeispiel": "Was gits hüt im Fernsee?",
-  "ayniLehce": [
+  "sameDialect": [
    "fernsehen (A1)"
   ]
  },
@@ -692,7 +692,7 @@
   "gsw": "gnueg",
   "gswArtikel": null,
   "gswBeispiel": "Es hät na gnueg Pizza da. Möchtisch na es Schtück?",
-  "ayniLehce": [
+  "sameDialect": [
    "ausreichend (B1)",
    "genügend (A2)"
   ]
@@ -714,7 +714,7 @@
   "gsw": "grad",
   "gswArtikel": null,
   "gswBeispiel": "Was machsch grad?",
-  "ayniLehce": [
+  "sameDialect": [
    "Grad (A1)"
   ]
  },
@@ -735,7 +735,7 @@
   "gsw": "gern",
   "gswArtikel": null,
   "gswBeispiel": "Mir lueged gern Krimis.",
-  "ayniLehce": [
+  "sameDialect": [
    "gern(e) (A1)"
   ]
  },
@@ -774,7 +774,7 @@
   "gsw": "zue sii",
   "gswArtikel": null,
   "gswBeispiel": "D Apotheek isch hüt zue.",
-  "ayniLehce": [
+  "sameDialect": [
    "zu sein (A1)"
   ]
  },
@@ -795,7 +795,7 @@
   "gsw": "gwünne",
   "gswArtikel": null,
   "gswBeispiel": "Me cha e Räis gwünne.",
-  "ayniLehce": [
+  "sameDialect": [
    "siegen (B1)"
   ]
  },
@@ -825,7 +825,7 @@
   "gsw": "gliich",
   "gswArtikel": null,
   "gswBeispiel": "Er chunt gli. Das isch mer gliich.",
-  "ayniLehce": [
+  "sameDialect": [
    "dennoch (C1)"
   ]
  },

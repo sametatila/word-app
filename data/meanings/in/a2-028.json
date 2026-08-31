@@ -1,16 +1,16 @@
 {
- "paket": "a2-028",
+ "packet": "a2-028",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 8340,
    "de": "sich zanken",
    "typ": "Verb",
    "niveau": "A2",
    "formen": "zankt sich, hat sich gezankt",
-   "mevcutTr": "atışmak, çekişmek",
-   "mevcutBeispiel": "Die Kinder zanken sich um das neue Spielzeug.",
-   "mevcutBeispielTr": "Çocuklar yeni oyuncak için atışıyor."
+   "currentTr": "atışmak, çekişmek",
+   "currentBeispiel": "Die Kinder zanken sich um das neue Spielzeug.",
+   "currentBeispielTr": "Çocuklar yeni oyuncak için atışıyor."
   },
   {
    "id": 8341,
@@ -18,9 +18,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schwört, hat geschworen",
-   "mevcutTr": "yemin etmek",
-   "mevcutBeispiel": "Ich schwöre dir, ich habe nichts davon gewusst.",
-   "mevcutBeispielTr": "Yemin ederim, bundan hiç haberim yoktu."
+   "currentTr": "yemin etmek",
+   "currentBeispiel": "Ich schwöre dir, ich habe nichts davon gewusst.",
+   "currentBeispielTr": "Yemin ederim, bundan hiç haberim yoktu."
   },
   {
    "id": 8342,
@@ -28,9 +28,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "beschimpft, hat beschimpft",
-   "mevcutTr": "sövmek, ağır sözler söylemek",
-   "mevcutBeispiel": "Im Bus beschimpft ein Mann den Fahrer.",
-   "mevcutBeispielTr": "Otobüste bir adam şoföre ağzına geleni söylüyor."
+   "currentTr": "sövmek, ağır sözler söylemek",
+   "currentBeispiel": "Im Bus beschimpft ein Mann den Fahrer.",
+   "currentBeispielTr": "Otobüste bir adam şoföre ağzına geleni söylüyor."
   },
   {
    "id": 8343,
@@ -38,9 +38,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "redet mit, hat mitgeredet",
-   "mevcutTr": "söz sahibi olmak, konuşmaya katılmak",
-   "mevcutBeispiel": "Bei diesem Thema rede ich gern mit.",
-   "mevcutBeispielTr": "Bu konuda konuşmaya seve seve katılırım."
+   "currentTr": "söz sahibi olmak, konuşmaya katılmak",
+   "currentBeispiel": "Bei diesem Thema rede ich gern mit.",
+   "currentBeispielTr": "Bu konuda konuşmaya seve seve katılırım."
   },
   {
    "id": 8344,
@@ -48,9 +48,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "zwinkert, hat gezwinkert",
-   "mevcutTr": "göz kırpmak",
-   "mevcutBeispiel": "Mein Opa zwinkert mir über den Tisch zu.",
-   "mevcutBeispielTr": "Dedem masanın üzerinden bana göz kırpıyor."
+   "currentTr": "göz kırpmak",
+   "currentBeispiel": "Mein Opa zwinkert mir über den Tisch zu.",
+   "currentBeispielTr": "Dedem masanın üzerinden bana göz kırpıyor."
   },
   {
    "id": 8345,
@@ -58,9 +58,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "begeistert, hat begeistert",
-   "mevcutTr": "hayran bırakmak, coşturmak",
-   "mevcutBeispiel": "Der neue Film begeistert meine ganze Familie.",
-   "mevcutBeispielTr": "Yeni film bütün ailemi hayran bırakıyor."
+   "currentTr": "hayran bırakmak, coşturmak",
+   "currentBeispiel": "Der neue Film begeistert meine ganze Familie.",
+   "currentBeispielTr": "Yeni film bütün ailemi hayran bırakıyor."
   },
   {
    "id": 8346,
@@ -68,9 +68,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "sagt weiter, hat weitergesagt",
-   "mevcutTr": "başkasına söylemek, yaymak",
-   "mevcutBeispiel": "Sag das bitte nicht weiter, es ist ein Geheimnis!",
-   "mevcutBeispielTr": "Bunu lütfen kimseye söyleme, bu bir sır!"
+   "currentTr": "başkasına söylemek, yaymak",
+   "currentBeispiel": "Sag das bitte nicht weiter, es ist ein Geheimnis!",
+   "currentBeispielTr": "Bunu lütfen kimseye söyleme, bu bir sır!"
   },
   {
    "id": 8347,
@@ -78,9 +78,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "hilft weiter, hat weitergeholfen",
-   "mevcutTr": "yardımcı olmak, yol göstermek",
-   "mevcutBeispiel": "Die Frau am Schalter hilft mir immer weiter.",
-   "mevcutBeispielTr": "Gişedeki kadın bana her zaman yardımcı oluyor."
+   "currentTr": "yardımcı olmak, yol göstermek",
+   "currentBeispiel": "Die Frau am Schalter hilft mir immer weiter.",
+   "currentBeispielTr": "Gişedeki kadın bana her zaman yardımcı oluyor."
   },
   {
    "id": 8348,
@@ -88,10 +88,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "lügt an, hat angelogen",
-   "mevcutTr": "yalan söylemek (birine)",
-   "mevcutBeispiel": "Warum lügst du deine Eltern so oft an?",
-   "mevcutBeispielTr": "Neden aileni bu kadar sık kandırıyorsun?",
-   "cakisan": [
+   "currentTr": "yalan söylemek (birine)",
+   "currentBeispiel": "Warum lügst du deine Eltern so oft an?",
+   "currentBeispielTr": "Neden aileni bu kadar sık kandırıyorsun?",
+   "overlapping": [
     "lügen (A2)"
    ]
   },
@@ -101,9 +101,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "verärgert, hat verärgert",
-   "mevcutTr": "kızdırmak, canını sıkmak",
-   "mevcutBeispiel": "Seine Antwort verärgert die ganze Gruppe.",
-   "mevcutBeispielTr": "Verdiği cevap bütün grubu kızdırıyor."
+   "currentTr": "kızdırmak, canını sıkmak",
+   "currentBeispiel": "Seine Antwort verärgert die ganze Gruppe.",
+   "currentBeispielTr": "Verdiği cevap bütün grubu kızdırıyor."
   },
   {
    "id": 8350,
@@ -111,10 +111,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "banyo",
-   "mevcutBeispiel": "Das Badezimmer ist klein, aber sehr hell.",
-   "mevcutBeispielTr": "Banyo küçük ama çok aydınlık.",
-   "cakisan": [
+   "currentTr": "banyo",
+   "currentBeispiel": "Das Badezimmer ist klein, aber sehr hell.",
+   "currentBeispielTr": "Banyo küçük ama çok aydınlık.",
+   "overlapping": [
     "das Bad (A1)"
    ]
   },
@@ -124,9 +124,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "kova",
-   "mevcutBeispiel": "Ich hole einen Eimer mit warmem Wasser.",
-   "mevcutBeispielTr": "Sıcak suyla dolu bir kova getiriyorum."
+   "currentTr": "kova",
+   "currentBeispiel": "Ich hole einen Eimer mit warmem Wasser.",
+   "currentBeispielTr": "Sıcak suyla dolu bir kova getiriyorum."
   },
   {
    "id": 8352,
@@ -134,9 +134,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-",
-   "mevcutTr": "soba, fırın",
-   "mevcutBeispiel": "Im Winter machen wir jeden Abend den Ofen an.",
-   "mevcutBeispielTr": "Kışın her akşam sobayı yakıyoruz."
+   "currentTr": "soba, fırın",
+   "currentBeispiel": "Im Winter machen wir jeden Abend den Ofen an.",
+   "currentBeispielTr": "Kışın her akşam sobayı yakıyoruz."
   },
   {
    "id": 8353,
@@ -144,10 +144,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "streicht, hat gestrichen",
-   "mevcutTr": "boyamak (duvar)",
-   "mevcutBeispiel": "Wir wollen die Wände im Wohnzimmer weiß streichen.",
-   "mevcutBeispielTr": "Oturma odasındaki duvarları beyaza boyamak istiyoruz.",
-   "cakisan": [
+   "currentTr": "boyamak (duvar)",
+   "currentBeispiel": "Wir wollen die Wände im Wohnzimmer weiß streichen.",
+   "currentBeispielTr": "Oturma odasındaki duvarları beyaza boyamak istiyoruz.",
+   "overlapping": [
     "lackieren (B2)"
    ]
   },
@@ -157,9 +157,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "çekmece",
-   "mevcutBeispiel": "Die Löffel sind in der oberen Schublade.",
-   "mevcutBeispielTr": "Kaşıklar üstteki çekmecede."
+   "currentTr": "çekmece",
+   "currentBeispiel": "Die Löffel sind in der oberen Schublade.",
+   "currentBeispielTr": "Kaşıklar üstteki çekmecede."
   },
   {
    "id": 8355,
@@ -167,9 +167,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "şömine",
-   "mevcutBeispiel": "Im Wohnzimmer gibt es einen alten Kamin.",
-   "mevcutBeispielTr": "Oturma odasında eski bir şömine var."
+   "currentTr": "şömine",
+   "currentBeispiel": "Im Wohnzimmer gibt es einen alten Kamin.",
+   "currentBeispielTr": "Oturma odasında eski bir şömine var."
   },
   {
    "id": 8356,
@@ -177,9 +177,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "kapı zili",
-   "mevcutBeispiel": "Unsere Türklingel ist kaputt, bitte klopfen Sie.",
-   "mevcutBeispielTr": "Kapı zilimiz bozuk, lütfen kapıyı çalın."
+   "currentTr": "kapı zili",
+   "currentBeispiel": "Unsere Türklingel ist kaputt, bitte klopfen Sie.",
+   "currentBeispielTr": "Kapı zilimiz bozuk, lütfen kapıyı çalın."
   },
   {
    "id": 8357,
@@ -187,10 +187,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-",
-   "mevcutTr": "çatı katı, tavan arası",
-   "mevcutBeispiel": "Die alten Koffer stehen auf dem Dachboden.",
-   "mevcutBeispielTr": "Eski bavullar tavan arasında duruyor.",
-   "cakisan": [
+   "currentTr": "çatı katı, tavan arası",
+   "currentBeispiel": "Die alten Koffer stehen auf dem Dachboden.",
+   "currentBeispielTr": "Eski bavullar tavan arasında duruyor.",
+   "overlapping": [
     "das Dachgeschoss (B2)"
    ]
   },
@@ -200,9 +200,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "sokak kapısı, bina kapısı",
-   "mevcutBeispiel": "Bitte mach die Haustür abends zu.",
-   "mevcutBeispielTr": "Lütfen akşamları sokak kapısını kapat."
+   "currentTr": "sokak kapısı, bina kapısı",
+   "currentBeispiel": "Bitte mach die Haustür abends zu.",
+   "currentBeispielTr": "Lütfen akşamları sokak kapısını kapat."
   },
   {
    "id": 8359,
@@ -210,10 +210,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "yatak, şilte",
-   "mevcutBeispiel": "Die neue Matratze ist viel bequemer.",
-   "mevcutBeispielTr": "Yeni şilte çok daha rahat.",
-   "cakisan": [
+   "currentTr": "yatak, şilte",
+   "currentBeispiel": "Die neue Matratze ist viel bequemer.",
+   "currentBeispielTr": "Yeni şilte çok daha rahat.",
+   "overlapping": [
     "das Bett (A1)"
    ]
   },
@@ -223,9 +223,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "süpürge",
-   "mevcutBeispiel": "Der Besen steht hinter der Tür in der Küche.",
-   "mevcutBeispielTr": "Süpürge mutfakta kapının arkasında duruyor."
+   "currentTr": "süpürge",
+   "currentBeispiel": "Der Besen steht hinter der Tür in der Küche.",
+   "currentBeispielTr": "Süpürge mutfakta kapının arkasında duruyor."
   },
   {
    "id": 8361,
@@ -233,9 +233,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "misafir odası",
-   "mevcutBeispiel": "Meine Schwester schläft im Gästezimmer.",
-   "mevcutBeispielTr": "Kız kardeşim misafir odasında uyuyor."
+   "currentTr": "misafir odası",
+   "currentBeispiel": "Meine Schwester schläft im Gästezimmer.",
+   "currentBeispielTr": "Kız kardeşim misafir odasında uyuyor."
   },
   {
    "id": 8362,
@@ -243,10 +243,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-",
-   "mevcutTr": "yer, döşeme",
-   "mevcutBeispiel": "Der Fußboden im Flur ist aus Holz.",
-   "mevcutBeispielTr": "Koridordaki yer ahşaptan.",
-   "cakisan": [
+   "currentTr": "yer, döşeme",
+   "currentBeispiel": "Der Fußboden im Flur ist aus Holz.",
+   "currentBeispielTr": "Koridordaki yer ahşaptan.",
+   "overlapping": [
     "der Platz (A1)",
     "der Ort (A1)"
    ]
@@ -257,9 +257,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "elektrikli süpürge",
-   "mevcutBeispiel": "Der Staubsauger ist leider kaputt.",
-   "mevcutBeispielTr": "Elektrikli süpürge maalesef bozuk."
+   "currentTr": "elektrikli süpürge",
+   "currentBeispiel": "Der Staubsauger ist leider kaputt.",
+   "currentBeispielTr": "Elektrikli süpürge maalesef bozuk."
   },
   {
    "id": 8364,
@@ -267,9 +267,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "çamaşır makinesi",
-   "mevcutBeispiel": "Die Waschmaschine steht im Keller.",
-   "mevcutBeispielTr": "Çamaşır makinesi bodrumda duruyor."
+   "currentTr": "çamaşır makinesi",
+   "currentBeispiel": "Die Waschmaschine steht im Keller.",
+   "currentBeispielTr": "Çamaşır makinesi bodrumda duruyor."
   },
   {
    "id": 8365,
@@ -277,9 +277,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "çöp kovası",
-   "mevcutBeispiel": "Kannst du bitte den Mülleimer leeren?",
-   "mevcutBeispielTr": "Çöp kovasını boşaltabilir misin lütfen?"
+   "currentTr": "çöp kovası",
+   "currentBeispiel": "Kannst du bitte den Mülleimer leeren?",
+   "currentBeispielTr": "Çöp kovasını boşaltabilir misin lütfen?"
   },
   {
    "id": 8366,
@@ -287,9 +287,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "çocuk odası",
-   "mevcutBeispiel": "Im Kinderzimmer liegen überall Spielsachen.",
-   "mevcutBeispielTr": "Çocuk odasında her yerde oyuncaklar var."
+   "currentTr": "çocuk odası",
+   "currentBeispiel": "Im Kinderzimmer liegen überall Spielsachen.",
+   "currentBeispielTr": "Çocuk odasında her yerde oyuncaklar var."
   },
   {
    "id": 8367,
@@ -297,10 +297,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "wischt, hat gewischt",
-   "mevcutTr": "silmek, paspaslamak",
-   "mevcutBeispiel": "Am Samstag wische ich den Boden in der Küche.",
-   "mevcutBeispielTr": "Cumartesi günü mutfaktaki zemini siliyorum.",
-   "cakisan": [
+   "currentTr": "silmek, paspaslamak",
+   "currentBeispiel": "Am Samstag wische ich den Boden in der Küche.",
+   "currentBeispielTr": "Cumartesi günü mutfaktaki zemini siliyorum.",
+   "overlapping": [
     "löschen (B1)",
     "aufwischen (A2)",
     "abwischen (A2)"
@@ -312,9 +312,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "yemek odası",
-   "mevcutBeispiel": "Sonntags essen wir alle zusammen im Esszimmer.",
-   "mevcutBeispielTr": "Pazar günleri hep birlikte yemek odasında yemek yiyoruz."
+   "currentTr": "yemek odası",
+   "currentBeispiel": "Sonntags essen wir alle zusammen im Esszimmer.",
+   "currentBeispielTr": "Pazar günleri hep birlikte yemek odasında yemek yiyoruz."
   },
   {
    "id": 8369,
@@ -322,9 +322,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "lavabo",
-   "mevcutBeispiel": "Das Waschbecken im Bad ist verstopft.",
-   "mevcutBeispielTr": "Banyodaki lavabo tıkalı."
+   "currentTr": "lavabo",
+   "currentBeispiel": "Das Waschbecken im Bad ist verstopft.",
+   "currentBeispielTr": "Banyodaki lavabo tıkalı."
   },
   {
    "id": 8370,
@@ -332,9 +332,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "mutfak evyesi",
-   "mevcutBeispiel": "In der Spüle steht noch schmutziges Geschirr.",
-   "mevcutBeispielTr": "Evyede hâlâ kirli bulaşık duruyor."
+   "currentTr": "mutfak evyesi",
+   "currentBeispiel": "In der Spüle steht noch schmutziges Geschirr.",
+   "currentBeispielTr": "Evyede hâlâ kirli bulaşık duruyor."
   },
   {
    "id": 8371,
@@ -342,9 +342,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "vida",
-   "mevcutBeispiel": "Ich brauche noch eine kleine Schraube für das Regal.",
-   "mevcutBeispielTr": "Raf için bir küçük vidaya daha ihtiyacım var."
+   "currentTr": "vida",
+   "currentBeispiel": "Ich brauche noch eine kleine Schraube für das Regal.",
+   "currentBeispielTr": "Raf için bir küçük vidaya daha ihtiyacım var."
   },
   {
    "id": 8372,
@@ -352,9 +352,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "şifonyer, çekmeceli dolap",
-   "mevcutBeispiel": "Meine Socken sind in der Kommode im Schlafzimmer.",
-   "mevcutBeispielTr": "Çoraplarım yatak odasındaki konsolda."
+   "currentTr": "şifonyer, çekmeceli dolap",
+   "currentBeispiel": "Meine Socken sind in der Kommode im Schlafzimmer.",
+   "currentBeispielTr": "Çoraplarım yatak odasındaki konsolda."
   },
   {
    "id": 8373,
@@ -362,9 +362,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "tornavida",
-   "mevcutBeispiel": "Hast du einen Schraubenzieher für mich?",
-   "mevcutBeispielTr": "Bana verecek bir tornavidan var mı?"
+   "currentTr": "tornavida",
+   "currentBeispiel": "Hast du einen Schraubenzieher für mich?",
+   "currentBeispielTr": "Bana verecek bir tornavidan var mı?"
   },
   {
    "id": 8374,
@@ -372,9 +372,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "kurutma makinesi",
-   "mevcutBeispiel": "Die Handtücher sind noch im Trockner.",
-   "mevcutBeispielTr": "Havlular hâlâ kurutma makinesinde."
+   "currentTr": "kurutma makinesi",
+   "currentBeispiel": "Die Handtücher sind noch im Trockner.",
+   "currentBeispielTr": "Havlular hâlâ kurutma makinesinde."
   },
   {
    "id": 8375,
@@ -382,9 +382,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "gardırop, elbise dolabı",
-   "mevcutBeispiel": "Der Kleiderschrank ist zu klein für zwei Personen.",
-   "mevcutBeispielTr": "Gardırop iki kişi için çok küçük."
+   "currentTr": "gardırop, elbise dolabı",
+   "currentBeispiel": "Der Kleiderschrank ist zu klein für zwei Personen.",
+   "currentBeispielTr": "Gardırop iki kişi için çok küçük."
   },
   {
    "id": 8376,
@@ -392,9 +392,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "lüftet, hat gelüftet",
-   "mevcutTr": "havalandırmak",
-   "mevcutBeispiel": "Du musst das Zimmer jeden Morgen kurz lüften.",
-   "mevcutBeispielTr": "Odayı her sabah kısaca havalandırman gerekiyor."
+   "currentTr": "havalandırmak",
+   "currentBeispiel": "Du musst das Zimmer jeden Morgen kurz lüften.",
+   "currentBeispielTr": "Odayı her sabah kısaca havalandırman gerekiyor."
   },
   {
    "id": 8377,
@@ -402,9 +402,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "bügelt, hat gebügelt",
-   "mevcutTr": "ütülemek",
-   "mevcutBeispiel": "Ich bügele am Abend meine Hemden.",
-   "mevcutBeispielTr": "Akşam gömleklerimi ütülüyorum."
+   "currentTr": "ütülemek",
+   "currentBeispiel": "Ich bügele am Abend meine Hemden.",
+   "currentBeispielTr": "Akşam gömleklerimi ütülüyorum."
   },
   {
    "id": 8378,
@@ -412,9 +412,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "tabure",
-   "mevcutBeispiel": "Setz dich bitte auf den Hocker neben dem Tisch.",
-   "mevcutBeispielTr": "Lütfen masanın yanındaki tabureye otur."
+   "currentTr": "tabure",
+   "currentBeispiel": "Setz dich bitte auf den Hocker neben dem Tisch.",
+   "currentBeispielTr": "Lütfen masanın yanındaki tabureye otur."
   },
   {
    "id": 8379,
@@ -422,9 +422,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "ampul",
-   "mevcutBeispiel": "Im Flur ist die Glühbirne kaputt.",
-   "mevcutBeispielTr": "Koridorda ampul bozuk."
+   "currentTr": "ampul",
+   "currentBeispiel": "Im Flur ist die Glühbirne kaputt.",
+   "currentBeispielTr": "Koridorda ampul bozuk."
   },
   {
    "id": 8380,
@@ -432,9 +432,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "vantilatör",
-   "mevcutBeispiel": "Im Sommer brauchen wir im Schlafzimmer einen Ventilator.",
-   "mevcutBeispielTr": "Yazın yatak odasında bir vantilatöre ihtiyacımız oluyor."
+   "currentTr": "vantilatör",
+   "currentBeispiel": "Im Sommer brauchen wir im Schlafzimmer einen Ventilator.",
+   "currentBeispielTr": "Yazın yatak odasında bir vantilatöre ihtiyacımız oluyor."
   },
   {
    "id": 8381,
@@ -442,9 +442,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "komodin",
-   "mevcutBeispiel": "Meine Brille liegt auf dem Nachttisch.",
-   "mevcutBeispielTr": "Gözlüğüm komodinin üstünde duruyor."
+   "currentTr": "komodin",
+   "currentBeispiel": "Meine Brille liegt auf dem Nachttisch.",
+   "currentBeispielTr": "Gözlüğüm komodinin üstünde duruyor."
   },
   {
    "id": 8382,
@@ -452,9 +452,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "musluk",
-   "mevcutBeispiel": "Der Wasserhahn in der Küche tropft schon wieder.",
-   "mevcutBeispielTr": "Mutfaktaki musluk yine damlıyor."
+   "currentTr": "musluk",
+   "currentBeispiel": "Der Wasserhahn in der Küche tropft schon wieder.",
+   "currentBeispielTr": "Mutfaktaki musluk yine damlıyor."
   },
   {
    "id": 8383,
@@ -462,9 +462,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schließt auf, hat aufgeschlossen",
-   "mevcutTr": "kilidi açmak, açmak",
-   "mevcutBeispiel": "Kannst du bitte die Wohnungstür aufschließen?",
-   "mevcutBeispielTr": "Lütfen dairenin kapısını açabilir misin?"
+   "currentTr": "kilidi açmak, açmak",
+   "currentBeispiel": "Kannst du bitte die Wohnungstür aufschließen?",
+   "currentBeispielTr": "Lütfen dairenin kapısını açabilir misin?"
   },
   {
    "id": 8384,
@@ -472,9 +472,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "nevresim takımı",
-   "mevcutBeispiel": "Ich wechsle jeden Samstag die Bettwäsche.",
-   "mevcutBeispielTr": "Her cumartesi nevresim takımını değiştiriyorum."
+   "currentTr": "nevresim takımı",
+   "currentBeispiel": "Ich wechsle jeden Samstag die Bettwäsche.",
+   "currentBeispielTr": "Her cumartesi nevresim takımını değiştiriyorum."
   },
   {
    "id": 8385,
@@ -482,9 +482,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "metrekare",
-   "mevcutBeispiel": "Unsere Wohnung hat 65 Quadratmeter.",
-   "mevcutBeispielTr": "Dairemiz 65 metrekare."
+   "currentTr": "metrekare",
+   "currentBeispiel": "Unsere Wohnung hat 65 Quadratmeter.",
+   "currentBeispielTr": "Dairemiz 65 metrekare."
   },
   {
    "id": 8386,
@@ -492,9 +492,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "duvar kâğıdı",
-   "mevcutBeispiel": "Die alte Tapete gefällt mir überhaupt nicht.",
-   "mevcutBeispielTr": "Eski duvar kâğıdı bana hiç hoş gelmiyor."
+   "currentTr": "duvar kâğıdı",
+   "currentBeispiel": "Die alte Tapete gefällt mir überhaupt nicht.",
+   "currentBeispielTr": "Eski duvar kâğıdı bana hiç hoş gelmiyor."
   },
   {
    "id": 8387,
@@ -502,9 +502,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "kahve makinesi",
-   "mevcutBeispiel": "Die Kaffeemaschine steht neben dem Kühlschrank.",
-   "mevcutBeispielTr": "Kahve makinesi buzdolabının yanında duruyor."
+   "currentTr": "kahve makinesi",
+   "currentBeispiel": "Die Kaffeemaschine steht neben dem Kühlschrank.",
+   "currentBeispielTr": "Kahve makinesi buzdolabının yanında duruyor."
   },
   {
    "id": 8388,
@@ -512,9 +512,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "ışık düğmesi",
-   "mevcutBeispiel": "Der Lichtschalter ist links neben der Tür.",
-   "mevcutBeispielTr": "Işık düğmesi kapının solunda."
+   "currentTr": "ışık düğmesi",
+   "currentBeispiel": "Der Lichtschalter ist links neben der Tür.",
+   "currentBeispielTr": "Işık düğmesi kapının solunda."
   },
   {
    "id": 8389,
@@ -522,9 +522,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "üst kat",
-   "mevcutBeispiel": "Die Schlafzimmer sind im Obergeschoss.",
-   "mevcutBeispielTr": "Yatak odaları üst katta."
+   "currentTr": "üst kat",
+   "currentBeispiel": "Die Schlafzimmer sind im Obergeschoss.",
+   "currentBeispielTr": "Yatak odaları üst katta."
   }
  ]
 }

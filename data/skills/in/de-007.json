@@ -1,7 +1,7 @@
 {
- "paket": "de-007",
+ "packet": "de-007",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "a2-l5",
    "skill": "listening",
@@ -9,56 +9,56 @@
    "title": "Probleme mit dem neuen Handy",
    "genre": "Diyalog",
    "intro": "Bir müşteri yeni aldığı telefonu şikayet için mağazaya getiriyor — çözüm ne olacak?",
-   "metin": "Kundin: Guten Tag. Ich habe dieses Handy vor zwei Wochen bei Ihnen gekauft, aber der Akku ist immer schon am Nachmittag leer.\nVerkäufer: Das tut mir leid. Haben Sie viele Apps geöffnet? Manchmal ist das das Problem.\nKundin: Nein, ich benutze nur wenige Apps. Ich telefoniere und schreibe Nachrichten, das ist alles.\nVerkäufer: Dann schauen wir uns das Gerät genauer an. Haben Sie die Rechnung dabei?\nKundin: Ja, hier bitte.\nVerkäufer: Danke. Wir schicken das Handy in die Werkstatt, das dauert ungefähr eine Woche. Wenn der Akku kaputt ist, bekommen Sie ein neues Gerät. Das kostet dann natürlich nichts.\nKundin: Und kann ich so lange ein anderes Handy haben?\nVerkäufer: Ja, wir geben Ihnen gern ein Leihgerät mit.",
+   "text": "Kundin: Guten Tag. Ich habe dieses Handy vor zwei Wochen bei Ihnen gekauft, aber der Akku ist immer schon am Nachmittag leer.\nVerkäufer: Das tut mir leid. Haben Sie viele Apps geöffnet? Manchmal ist das das Problem.\nKundin: Nein, ich benutze nur wenige Apps. Ich telefoniere und schreibe Nachrichten, das ist alles.\nVerkäufer: Dann schauen wir uns das Gerät genauer an. Haben Sie die Rechnung dabei?\nKundin: Ja, hier bitte.\nVerkäufer: Danke. Wir schicken das Handy in die Werkstatt, das dauert ungefähr eine Woche. Wenn der Akku kaputt ist, bekommen Sie ein neues Gerät. Das kostet dann natürlich nichts.\nKundin: Und kann ich so lange ein anderes Handy haben?\nVerkäufer: Ja, wir geben Ihnen gern ein Leihgerät mit.",
    "gloss": [
     {
      "de": "der Akku",
-     "mevcutTr": "batarya",
-     "havuz": {
+     "currentTr": "batarya",
+     "pool": {
       "tr": "batarya",
       "en": "battery"
      }
     },
     {
      "de": "leer",
-     "mevcutTr": "boş",
-     "havuz": {
+     "currentTr": "boş",
+     "pool": {
       "tr": "boş",
       "en": "empty"
      }
     },
     {
      "de": "das Gerät",
-     "mevcutTr": "cihaz",
-     "havuz": {
+     "currentTr": "cihaz",
+     "pool": {
       "tr": "cihaz",
       "en": "device"
      }
     },
     {
      "de": "die Rechnung",
-     "mevcutTr": "fatura",
-     "havuz": {
+     "currentTr": "fatura",
+     "pool": {
       "tr": "fatura",
       "en": "bill"
      }
     },
     {
      "de": "die Werkstatt",
-     "mevcutTr": "tamirhane",
-     "havuz": {
+     "currentTr": "tamirhane",
+     "pool": {
       "tr": "tamirhane",
       "en": "repair shop"
      }
     },
     {
      "de": "das Leihgerät",
-     "mevcutTr": "ödünç cihaz"
+     "currentTr": "ödünç cihaz"
     },
     {
      "de": "dauern",
-     "mevcutTr": "sürmek",
-     "havuz": {
+     "currentTr": "sürmek",
+     "pool": {
       "tr": "sürmek",
       "en": "to last"
      }
@@ -72,59 +72,59 @@
    "title": "Durchsage am Bahnhof",
    "genre": "Anons",
    "intro": "Gardaki anonsu dinle: München treniyle ilgili önemli değişiklikler var.",
-   "metin": "Achtung, eine wichtige Information für Reisende nach München: Der Intercity 512 nach München, planmäßige Abfahrt 14 Uhr 20, hat heute ungefähr 30 Minuten Verspätung. Der Grund ist ein technischer Defekt.\nDer Zug fährt heute von Gleis 9 ab, nicht von Gleis 5. Reisende mit dem Ziel Augsburg können auch den Regionalzug um 14 Uhr 35 von Gleis 2 nehmen. Ihr Ticket gilt auch in diesem Zug.\nIm Intercity ist heute leider kein Bordrestaurant geöffnet. Getränke bekommen Sie am Kiosk in der Bahnhofshalle. Wir bitten um Entschuldigung und wünschen Ihnen eine gute Reise.",
+   "text": "Achtung, eine wichtige Information für Reisende nach München: Der Intercity 512 nach München, planmäßige Abfahrt 14 Uhr 20, hat heute ungefähr 30 Minuten Verspätung. Der Grund ist ein technischer Defekt.\nDer Zug fährt heute von Gleis 9 ab, nicht von Gleis 5. Reisende mit dem Ziel Augsburg können auch den Regionalzug um 14 Uhr 35 von Gleis 2 nehmen. Ihr Ticket gilt auch in diesem Zug.\nIm Intercity ist heute leider kein Bordrestaurant geöffnet. Getränke bekommen Sie am Kiosk in der Bahnhofshalle. Wir bitten um Entschuldigung und wünschen Ihnen eine gute Reise.",
    "gloss": [
     {
      "de": "die Verspätung",
-     "mevcutTr": "gecikme",
-     "havuz": {
+     "currentTr": "gecikme",
+     "pool": {
       "tr": "gecikme",
       "en": "delay"
      }
     },
     {
      "de": "die Abfahrt",
-     "mevcutTr": "yola çıkış",
-     "havuz": {
+     "currentTr": "yola çıkış",
+     "pool": {
       "tr": "yola çıkış",
       "en": "departure"
      }
     },
     {
      "de": "das Gleis",
-     "mevcutTr": "peron",
-     "havuz": {
+     "currentTr": "peron",
+     "pool": {
       "tr": "ray",
       "en": "track"
      }
     },
     {
      "de": "der Grund",
-     "mevcutTr": "sebep",
-     "havuz": {
+     "currentTr": "sebep",
+     "pool": {
       "tr": "sebep",
       "en": "reason"
      }
     },
     {
      "de": "gelten",
-     "mevcutTr": "geçerli olmak",
-     "havuz": {
+     "currentTr": "geçerli olmak",
+     "pool": {
       "tr": "geçerli olmak",
       "en": "to be valid"
      }
     },
     {
      "de": "das Bordrestaurant",
-     "mevcutTr": "yemekli vagon"
+     "currentTr": "yemekli vagon"
     },
     {
      "de": "die Reisenden",
-     "mevcutTr": "yolcular"
+     "currentTr": "yolcular"
     },
     {
      "de": "technischer Defekt",
-     "mevcutTr": "teknik arıza"
+     "currentTr": "teknik arıza"
     }
    ]
   },
@@ -135,52 +135,52 @@
    "title": "Einladung zum Gespräch",
    "genre": "Telefon",
    "intro": "Hikâyenin devamı: apotek Pelin'i arıyor. Telefonda ne kararlaştırdıklarını dinleyeceksin.",
-   "metin": "Frau Kern: Guten Tag, Frau Aydın? Kern, Apotheke am Markt. Sie haben sich bei uns beworben.\nPelin: Guten Tag! Ja, genau.\nFrau Kern: Ihre Bewerbung hat uns gefallen. Können Sie am Mittwoch um 14 Uhr zu einem Gespräch kommen?\nPelin: Mittwoch … Ja, das passt mir. Um 14 Uhr.\nFrau Kern: Schön. Bringen Sie bitte Ihre Zeugnisse mit — auch das vom Praktikum.\nPelin: Das Praktikum war vor drei Jahren. Ist das ein Problem?\nFrau Kern: Überhaupt nicht. Wir suchen jemanden, der freundlich mit Menschen umgeht. Den Rest lernen Sie bei uns.\nPelin: Das beruhigt mich. Wo genau finde ich Sie?\nFrau Kern: Marktstraße 4. Nicht der Haupteingang — die kleine Tür rechts, da steht „Personal“.\nPelin: Alles klar. Vielen Dank, bis Mittwoch!",
+   "text": "Frau Kern: Guten Tag, Frau Aydın? Kern, Apotheke am Markt. Sie haben sich bei uns beworben.\nPelin: Guten Tag! Ja, genau.\nFrau Kern: Ihre Bewerbung hat uns gefallen. Können Sie am Mittwoch um 14 Uhr zu einem Gespräch kommen?\nPelin: Mittwoch … Ja, das passt mir. Um 14 Uhr.\nFrau Kern: Schön. Bringen Sie bitte Ihre Zeugnisse mit — auch das vom Praktikum.\nPelin: Das Praktikum war vor drei Jahren. Ist das ein Problem?\nFrau Kern: Überhaupt nicht. Wir suchen jemanden, der freundlich mit Menschen umgeht. Den Rest lernen Sie bei uns.\nPelin: Das beruhigt mich. Wo genau finde ich Sie?\nFrau Kern: Marktstraße 4. Nicht der Haupteingang — die kleine Tür rechts, da steht „Personal“.\nPelin: Alles klar. Vielen Dank, bis Mittwoch!",
    "gloss": [
     {
      "de": "das Vorstellungsgespräch",
-     "mevcutTr": "iş görüşmesi",
-     "havuz": {
+     "currentTr": "iş görüşmesi",
+     "pool": {
       "tr": "iş görüşmesi",
       "en": "job interview"
      }
     },
     {
      "de": "die Bewerbung",
-     "mevcutTr": "başvuru",
-     "havuz": {
+     "currentTr": "başvuru",
+     "pool": {
       "tr": "başvuru",
       "en": "application"
      }
     },
     {
      "de": "es passt mir",
-     "mevcutTr": "bana uyar"
+     "currentTr": "bana uyar"
     },
     {
      "de": "die Unterlagen",
-     "mevcutTr": "belgeler",
-     "havuz": {
+     "currentTr": "belgeler",
+     "pool": {
       "tr": "belgeler",
       "en": "documents"
      }
     },
     {
      "de": "das Zeugnis",
-     "mevcutTr": "belge",
-     "havuz": {
+     "currentTr": "belge",
+     "pool": {
       "tr": "karne",
       "en": "report card"
      }
     },
     {
      "de": "sich melden",
-     "mevcutTr": "haber vermek"
+     "currentTr": "haber vermek"
     },
     {
      "de": "der Eingang",
-     "mevcutTr": "giriş",
-     "havuz": {
+     "currentTr": "giriş",
+     "pool": {
       "tr": "giriş",
       "en": "entrance"
      }
@@ -194,51 +194,51 @@
    "title": "Die Nebenkostenabrechnung",
    "genre": "Diyalog",
    "intro": "Almanya'da kiracıların yılda bir kez korkuyla açtığı zarf: aidat/gider hesabı. Ev sahibiyle konuşmayı dinleyeceksin.",
-   "metin": "Herr Bach: Frau Aydın, haben Sie die Abrechnung bekommen?\nPelin: Ja, gestern. 480 Euro nachzahlen — ich habe erst gedacht, das ist ein Fehler.\nHerr Bach: Leider nicht. Das Gas ist im letzten Jahr sehr teuer geworden. Alle im Haus zahlen nach.\nPelin: 480 Euro auf einmal ist viel für mich.\nHerr Bach: Das verstehe ich. Sie können in drei Raten zahlen — 160 Euro im Juli, August und September.\nPelin: Das hilft wirklich. Und nächstes Jahr?\nHerr Bach: Ihre monatliche Vorauszahlung steigt von 140 auf 190 Euro. Dann kommt so eine Rechnung nicht wieder.\nPelin: Kann ich irgendwo sparen?\nHerr Bach: Beim Lüften. Fenster ganz auf, fünf Minuten, dann zu — und die Heizung dabei runterdrehen. Das bringt am meisten.",
+   "text": "Herr Bach: Frau Aydın, haben Sie die Abrechnung bekommen?\nPelin: Ja, gestern. 480 Euro nachzahlen — ich habe erst gedacht, das ist ein Fehler.\nHerr Bach: Leider nicht. Das Gas ist im letzten Jahr sehr teuer geworden. Alle im Haus zahlen nach.\nPelin: 480 Euro auf einmal ist viel für mich.\nHerr Bach: Das verstehe ich. Sie können in drei Raten zahlen — 160 Euro im Juli, August und September.\nPelin: Das hilft wirklich. Und nächstes Jahr?\nHerr Bach: Ihre monatliche Vorauszahlung steigt von 140 auf 190 Euro. Dann kommt so eine Rechnung nicht wieder.\nPelin: Kann ich irgendwo sparen?\nHerr Bach: Beim Lüften. Fenster ganz auf, fünf Minuten, dann zu — und die Heizung dabei runterdrehen. Das bringt am meisten.",
    "gloss": [
     {
      "de": "die Nebenkosten",
-     "mevcutTr": "yan giderler",
-     "havuz": {
+     "currentTr": "yan giderler",
+     "pool": {
       "tr": "yan giderler",
       "en": "utility costs"
      }
     },
     {
      "de": "die Abrechnung",
-     "mevcutTr": "hesap dökümü"
+     "currentTr": "hesap dökümü"
     },
     {
      "de": "nachzahlen",
-     "mevcutTr": "ek ödeme yapmak"
+     "currentTr": "ek ödeme yapmak"
     },
     {
      "de": "die Heizung",
-     "mevcutTr": "kalorifer",
-     "havuz": {
+     "currentTr": "kalorifer",
+     "pool": {
       "tr": "kalorifer",
       "en": "heating"
      }
     },
     {
      "de": "der Vermieter",
-     "mevcutTr": "ev sahibi",
-     "havuz": {
+     "currentTr": "ev sahibi",
+     "pool": {
       "tr": "ev sahibi",
       "en": "landlord"
      }
     },
     {
      "de": "sparen",
-     "mevcutTr": "tasarruf etmek",
-     "havuz": {
+     "currentTr": "tasarruf etmek",
+     "pool": {
       "tr": "biriktirmek",
       "en": "to save"
      }
     },
     {
      "de": "die Rate",
-     "mevcutTr": "taksit"
+     "currentTr": "taksit"
     }
    ]
   },
@@ -249,60 +249,60 @@
    "title": "Vier kurze Gespräche",
    "genre": "Sınav formatı",
    "intro": "Goethe A2 dinleme bölümünün klasik görevi: dört kısa konuşma, her birine bir soru. Konuşmalar birbirinden bağımsız.",
-   "metin": "1 — Im Laden: — Die Jacke ist zu klein. Kann ich sie umtauschen? — Klar, haben Sie den Kassenbon? — Ja, hier. — Gut. Größe M haben wir leider nur in Blau.\n2 — Im Bus: — Entschuldigung, fährt der Bus zum Krankenhaus? — Nein, der Achtzehner fährt zum Bahnhof. Sie brauchen die Zwölf. — Und wo steige ich um? — An der nächsten Haltestelle, gegenüber.\n3 — Am Telefon: — Restaurant Marino, guten Abend. — Guten Abend, ich möchte einen Tisch für vier Personen. — Für wann? — Samstag, 19 Uhr. — Samstag ist voll. Freitag oder Sonntag ginge.\n4 — Im Büro: — Herr Weber, das Meeting ist verschoben. — Auf wann? — Von 10 auf 14 Uhr. Der Raum bleibt gleich. — Gut, dann habe ich vormittags Zeit für die Berichte.",
+   "text": "1 — Im Laden: — Die Jacke ist zu klein. Kann ich sie umtauschen? — Klar, haben Sie den Kassenbon? — Ja, hier. — Gut. Größe M haben wir leider nur in Blau.\n2 — Im Bus: — Entschuldigung, fährt der Bus zum Krankenhaus? — Nein, der Achtzehner fährt zum Bahnhof. Sie brauchen die Zwölf. — Und wo steige ich um? — An der nächsten Haltestelle, gegenüber.\n3 — Am Telefon: — Restaurant Marino, guten Abend. — Guten Abend, ich möchte einen Tisch für vier Personen. — Für wann? — Samstag, 19 Uhr. — Samstag ist voll. Freitag oder Sonntag ginge.\n4 — Im Büro: — Herr Weber, das Meeting ist verschoben. — Auf wann? — Von 10 auf 14 Uhr. Der Raum bleibt gleich. — Gut, dann habe ich vormittags Zeit für die Berichte.",
    "gloss": [
     {
      "de": "das Gespräch",
-     "mevcutTr": "konuşma",
-     "havuz": {
+     "currentTr": "konuşma",
+     "pool": {
       "tr": "konuşma",
       "en": "conversation"
      }
     },
     {
      "de": "die Größe",
-     "mevcutTr": "beden",
-     "havuz": {
+     "currentTr": "beden",
+     "pool": {
       "tr": "beden",
       "en": "size"
      }
     },
     {
      "de": "umtauschen",
-     "mevcutTr": "değiştirmek",
-     "havuz": {
+     "currentTr": "değiştirmek",
+     "pool": {
       "tr": "değiştirmek",
       "en": "to exchange"
      }
     },
     {
      "de": "der Kassenbon",
-     "mevcutTr": "kasa fişi",
-     "havuz": {
+     "currentTr": "kasa fişi",
+     "pool": {
       "tr": "kasa fişi",
       "en": "receipt"
      }
     },
     {
      "de": "die Haltestelle",
-     "mevcutTr": "durak",
-     "havuz": {
+     "currentTr": "durak",
+     "pool": {
       "tr": "durak",
       "en": "stop"
      }
     },
     {
      "de": "aussteigen",
-     "mevcutTr": "inmek",
-     "havuz": {
+     "currentTr": "inmek",
+     "pool": {
       "tr": "inmek",
       "en": "to get off"
      }
     },
     {
      "de": "die Bestellung",
-     "mevcutTr": "sipariş",
-     "havuz": {
+     "currentTr": "sipariş",
+     "pool": {
       "tr": "sipariş",
       "en": "order"
      }
@@ -316,56 +316,56 @@
    "title": "Warum ist sonntags alles zu?",
    "genre": "Kültür",
    "intro": "Almanya'ya yeni gelenlerin ilk şoku: pazar günü kapalı mağazalar. Kısa bir sohbet dinleyeceksin.",
-   "metin": "Pelin: Sag mal, warum ist am Sonntag wirklich alles zu?\nJonas: Weil es im Gesetz steht. Der Sonntag ist ein Ruhetag — das kommt aus der Kirche, gilt aber für alle.\nPelin: Und wenn ich Milch brauche?\nJonas: Dann hast du Pech. Es gibt Ausnahmen: Tankstellen, Bahnhöfe, Flughäfen. Manche Bäcker machen morgens für drei Stunden auf.\nPelin: In der Türkei kann man immer einkaufen. Das fehlt mir.\nJonas: Am Anfang hat es mich auch genervt. Aber weißt du was — jetzt mag ich es. Die Stadt ist leiser, und niemand muss arbeiten.\nPelin: Und was machen die Leute?\nJonas: Spazieren gehen. Kuchen essen. Verwandte besuchen. Es gibt sogar ein Wort dafür: Sonntagsspaziergang.\nPelin: Dann muss ich also samstags an alles denken.\nJonas: Genau. Das lernt hier jeder — meistens einmal auf die harte Tour.",
+   "text": "Pelin: Sag mal, warum ist am Sonntag wirklich alles zu?\nJonas: Weil es im Gesetz steht. Der Sonntag ist ein Ruhetag — das kommt aus der Kirche, gilt aber für alle.\nPelin: Und wenn ich Milch brauche?\nJonas: Dann hast du Pech. Es gibt Ausnahmen: Tankstellen, Bahnhöfe, Flughäfen. Manche Bäcker machen morgens für drei Stunden auf.\nPelin: In der Türkei kann man immer einkaufen. Das fehlt mir.\nJonas: Am Anfang hat es mich auch genervt. Aber weißt du was — jetzt mag ich es. Die Stadt ist leiser, und niemand muss arbeiten.\nPelin: Und was machen die Leute?\nJonas: Spazieren gehen. Kuchen essen. Verwandte besuchen. Es gibt sogar ein Wort dafür: Sonntagsspaziergang.\nPelin: Dann muss ich also samstags an alles denken.\nJonas: Genau. Das lernt hier jeder — meistens einmal auf die harte Tour.",
    "gloss": [
     {
      "de": "der Ruhetag",
-     "mevcutTr": "dinlenme günü"
+     "currentTr": "dinlenme günü"
     },
     {
      "de": "geschlossen",
-     "mevcutTr": "kapalı",
-     "havuz": {
+     "currentTr": "kapalı",
+     "pool": {
       "tr": "kapalı",
       "en": "closed"
      }
     },
     {
      "de": "die Ausnahme",
-     "mevcutTr": "istisna",
-     "havuz": {
+     "currentTr": "istisna",
+     "pool": {
       "tr": "istisna",
       "en": "exception"
      }
     },
     {
      "de": "die Tankstelle",
-     "mevcutTr": "benzin istasyonu",
-     "havuz": {
+     "currentTr": "benzin istasyonu",
+     "pool": {
       "tr": "benzin istasyonu",
       "en": "gas station"
      }
     },
     {
      "de": "der Bäcker",
-     "mevcutTr": "fırıncı",
-     "havuz": {
+     "currentTr": "fırıncı",
+     "pool": {
       "tr": "fırıncı",
       "en": "baker"
      }
     },
     {
      "de": "sich gewöhnen an",
-     "mevcutTr": "alışmak",
-     "havuz": {
+     "currentTr": "alışmak",
+     "pool": {
       "tr": "alışmak",
       "en": "to get used to"
      }
     },
     {
      "de": "einkaufen",
-     "mevcutTr": "alışveriş yapmak",
-     "havuz": {
+     "currentTr": "alışveriş yapmak",
+     "pool": {
       "tr": "alışveriş yapmak",
       "en": "to shop"
      }
@@ -379,48 +379,48 @@
    "title": "Die Lieferung kommt nicht",
    "genre": "Telefon",
    "intro": "Sipariş edilen mobilya gelmedi. Müşteri hizmetleriyle konuşmayı dinleyeceksin.",
-   "metin": "Service: Möbel Nord, Kundenservice, mein Name ist Berger.\nPelin: Guten Tag. Mein Schrank sollte am Dienstag kommen. Heute ist Freitag und ich habe nichts gehört.\nService: Das tut mir leid. Ihre Bestellnummer, bitte?\nPelin: M wie Martha, vier, neun, null, sechs.\nService: Danke … Ich sehe es. Der Schrank ist nicht im Lager. Der neue Termin ist der 22., also in zwei Wochen.\nPelin: Zwei Wochen? Und niemand sagt mir Bescheid?\nService: Sie haben völlig recht, das hätte eine Nachricht geben müssen. Entschuldigung.\nPelin: Kann ich die Bestellung stornieren?\nService: Ja, jederzeit. Oder Sie warten und bekommen einen Gutschein über 30 Euro. Sie entscheiden.\nPelin: Ich warte. Aber bitte rufen Sie mich an, wenn sich wieder etwas ändert.\nService: Mache ich. Ich schreibe es direkt in Ihre Bestellung.",
+   "text": "Service: Möbel Nord, Kundenservice, mein Name ist Berger.\nPelin: Guten Tag. Mein Schrank sollte am Dienstag kommen. Heute ist Freitag und ich habe nichts gehört.\nService: Das tut mir leid. Ihre Bestellnummer, bitte?\nPelin: M wie Martha, vier, neun, null, sechs.\nService: Danke … Ich sehe es. Der Schrank ist nicht im Lager. Der neue Termin ist der 22., also in zwei Wochen.\nPelin: Zwei Wochen? Und niemand sagt mir Bescheid?\nService: Sie haben völlig recht, das hätte eine Nachricht geben müssen. Entschuldigung.\nPelin: Kann ich die Bestellung stornieren?\nService: Ja, jederzeit. Oder Sie warten und bekommen einen Gutschein über 30 Euro. Sie entscheiden.\nPelin: Ich warte. Aber bitte rufen Sie mich an, wenn sich wieder etwas ändert.\nService: Mache ich. Ich schreibe es direkt in Ihre Bestellung.",
    "gloss": [
     {
      "de": "die Lieferung",
-     "mevcutTr": "teslimat",
-     "havuz": {
+     "currentTr": "teslimat",
+     "pool": {
       "tr": "teslimat",
       "en": "delivery"
      }
     },
     {
      "de": "der Liefertermin",
-     "mevcutTr": "teslim tarihi"
+     "currentTr": "teslim tarihi"
     },
     {
      "de": "die Bestellnummer",
-     "mevcutTr": "sipariş numarası"
+     "currentTr": "sipariş numarası"
     },
     {
      "de": "das Lager",
-     "mevcutTr": "depo",
-     "havuz": {
+     "currentTr": "depo",
+     "pool": {
       "tr": "depo",
       "en": "warehouse"
      }
     },
     {
      "de": "verspäten",
-     "mevcutTr": "gecikmek"
+     "currentTr": "gecikmek"
     },
     {
      "de": "stornieren",
-     "mevcutTr": "iptal etmek",
-     "havuz": {
+     "currentTr": "iptal etmek",
+     "pool": {
       "tr": "iptal etmek",
       "en": "to cancel"
      }
     },
     {
      "de": "der Gutschein",
-     "mevcutTr": "hediye çeki",
-     "havuz": {
+     "currentTr": "hediye çeki",
+     "pool": {
       "tr": "hediye çeki",
       "en": "voucher"
      }
@@ -434,56 +434,56 @@
    "title": "Pelins erster Tag",
    "genre": "Sesli mesaj",
    "intro": "Hikâyenin sonu: Pelin işe başladı ve akşam arkadaşına sesli mesaj bırakıyor.",
-   "metin": "Pelin: Ceyda! Ich bin durch. Erster Tag geschafft.\nPelin: Also: Ich war um Viertel nach acht da, viel zu früh natürlich. Frau Kern hat mir alles gezeigt — Empfang, Kasse, Lager, die Schubladen mit den Rezepten.\nPelin: Am Anfang habe ich am Telefon zweimal „Wie bitte?“ gesagt. Ich dachte, jetzt ist es vorbei. Aber die Kollegin, Marlies, hat nur gelacht und gesagt: „Das sage ich nach zwanzig Jahren auch noch.“\nPelin: Das Schwerste sind die Namen von den Medikamenten. Ich habe mir zwölf aufgeschrieben.\nPelin: Ich bin total erschöpft, aber weißt du was? Ich bin auch ein bisschen stolz. Vor zwei Monaten habe ich mich nicht mal getraut zu schreiben.\nPelin: Am Samstag lade ich dich ein. Ich koche. Bis dann!",
+   "text": "Pelin: Ceyda! Ich bin durch. Erster Tag geschafft.\nPelin: Also: Ich war um Viertel nach acht da, viel zu früh natürlich. Frau Kern hat mir alles gezeigt — Empfang, Kasse, Lager, die Schubladen mit den Rezepten.\nPelin: Am Anfang habe ich am Telefon zweimal „Wie bitte?“ gesagt. Ich dachte, jetzt ist es vorbei. Aber die Kollegin, Marlies, hat nur gelacht und gesagt: „Das sage ich nach zwanzig Jahren auch noch.“\nPelin: Das Schwerste sind die Namen von den Medikamenten. Ich habe mir zwölf aufgeschrieben.\nPelin: Ich bin total erschöpft, aber weißt du was? Ich bin auch ein bisschen stolz. Vor zwei Monaten habe ich mich nicht mal getraut zu schreiben.\nPelin: Am Samstag lade ich dich ein. Ich koche. Bis dann!",
    "gloss": [
     {
      "de": "der Empfang",
-     "mevcutTr": "resepsiyon",
-     "havuz": {
+     "currentTr": "resepsiyon",
+     "pool": {
       "tr": "resepsiyon",
       "en": "reception"
      }
     },
     {
      "de": "die Kollegin",
-     "mevcutTr": "kadın meslektaş",
-     "havuz": {
+     "currentTr": "kadın meslektaş",
+     "pool": {
       "tr": "kadın meslektaş",
       "en": "female colleague"
      }
     },
     {
      "de": "die Kasse",
-     "mevcutTr": "kasa",
-     "havuz": {
+     "currentTr": "kasa",
+     "pool": {
       "tr": "kasa",
       "en": "checkout"
      }
     },
     {
      "de": "sich merken",
-     "mevcutTr": "aklında tutmak"
+     "currentTr": "aklında tutmak"
     },
     {
      "de": "der Feierabend",
-     "mevcutTr": "iş çıkışı",
-     "havuz": {
+     "currentTr": "iş çıkışı",
+     "pool": {
       "tr": "iş çıkışı",
       "en": "quitting time"
      }
     },
     {
      "de": "erschöpft",
-     "mevcutTr": "bitkin",
-     "havuz": {
+     "currentTr": "bitkin",
+     "pool": {
       "tr": "bitkin",
       "en": "exhausted"
      }
     },
     {
      "de": "stolz",
-     "mevcutTr": "gururlu",
-     "havuz": {
+     "currentTr": "gururlu",
+     "pool": {
       "tr": "gururlu",
       "en": "proud"
      }

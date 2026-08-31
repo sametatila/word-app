@@ -54,7 +54,7 @@
   "tr": "değiştirmek",
   "formen": "ändert, hat geändert",
   "beispiel": "Das Wetter hat sich geändert. Wie kann ich mein Passwort ändern?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "umtauschen (B1)"
   ]
  },
@@ -209,7 +209,7 @@
   "tr": "dağıtmak",
   "formen": "trägt aus, hat ausgetragen",
   "beispiel": "Er trägt jeden Morgen die Zeitung aus.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "verteilen (B1)",
    "austeilen (A2)"
   ]
@@ -309,7 +309,7 @@
   "tr": "bildirmek, haber vermek",
   "formen": "berichtet, hat berichtet",
   "beispiel": "Alle Zeitungen berichten von dem Unfall.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "melden (B1)",
    "mitteilen (B1)"
   ]
@@ -425,7 +425,7 @@
   "tr": "kızartmak, kavurmak",
   "formen": "brät, hat gebraten",
   "beispiel": "Braten Sie das Fleisch in etwas Öl ! Der Fisch brät in der Pfanne.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "rösten (A2)"
   ]
  },
@@ -452,7 +452,7 @@
   "tr": "rezervasyon yapmak, ayırtmak",
   "formen": "bucht, hat gebucht",
   "beispiel": "Morgen buche ich unsere Urlaubsreise.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "reservieren (A2)"
   ]
  },
@@ -463,7 +463,7 @@
   "tr": "renkli",
   "formen": "",
   "beispiel": "Anna trägt gern bunte Kleider. Meine Wohnung ist sehr bunt: Das Wohnzimmer ist rot, die Küche grün und das Bad blau.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "farbig (B1)"
   ]
  },
@@ -602,7 +602,7 @@
   "tr": "içeride",
   "formen": "",
   "beispiel": "Wollen Sie drinnen oder draußen sitzen? Hier drinnen ist es sehr warm.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "drin (B1)"
   ]
  },
@@ -629,7 +629,7 @@
   "tr": "ince, zayıf",
   "formen": "",
   "beispiel": "Das Buch ist sehr dünn. Es hat nur 40 Seiten. Mein Bruder ist 1,80 Meter groß und 62 Kilo schwer, er ist zu dünn.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "schlank (B1)"
   ]
  },
@@ -696,7 +696,7 @@
   "tr": "kaydetmek, yazmak",
   "formen": "trägt ein, hat eingetragen",
   "beispiel": "Tragen Sie sich bitte in diese Liste ein ! Sie müssen Ihren Namen und Ihre Adresse eintragen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "eintragen (B1)"
   ]
  },
@@ -723,7 +723,7 @@
   "tr": "dar",
   "formen": "",
   "beispiel": "Diese Hose ist zu eng. Gibt es sie auch eine Nummer größer?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "schmal (B1)"
   ]
  },
@@ -742,7 +742,7 @@
   "tr": "zemin kat",
   "formen": "-e",
   "beispiel": "Ich wohne im Erdgeschoss.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Erdgeschoss/Erdgeschoß (B1)"
   ]
  },
@@ -785,7 +785,7 @@
   "tr": "indirim",
   "formen": "-en",
   "beispiel": "Für Schüler, Studenten und Rentner gibt es eine Ermäßigung.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Rabatt (B1)"
   ]
  },
@@ -812,7 +812,7 @@
   "tr": "düşmek",
   "formen": "fällt, ist gefallen",
   "beispiel": "Pass auf, das Glas fällt gleich vom Tisch.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "stürzen (B1)"
   ]
  },
@@ -831,7 +831,7 @@
   "tr": "harika, muhteşem",
   "formen": "",
   "beispiel": "Dein neues Kleid sieht fantastisch aus! Das Buch ist fantastisch. Du musst es unbedingt lesen!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "toll (A1)"
   ]
  },
@@ -842,7 +842,7 @@
   "tr": "neredeyse, hemen hemen",
   "formen": "",
   "beispiel": "Der Film ist fast zu Ende. Ich habe fast alles verstanden.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "nahezu (B2)"
   ]
  },
@@ -957,7 +957,7 @@
   "tr": "sevinmek, memnun olmak",
   "formen": "(sich)",
   "beispiel": "Zum Geburtstag habe ich ein interessantes Buch bekommen. Ich freue mich sehr über das Geschenk.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "sich freuen über (B2)"
   ]
  },
@@ -984,7 +984,7 @@
   "tr": "ehliyet",
   "formen": "-e",
   "beispiel": "Hast du den Führerschein? Sie hat die Führerscheinprüfung bestanden.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Führerausweis (B1)"
   ]
  },
@@ -1003,7 +1003,7 @@
   "tr": "korkunç, berbat",
   "formen": "",
   "beispiel": "Er hat furchtbare Schmerzen. Die Hose sieht ja furchtbar aus. So kannst du nicht zur Arbeit gehen!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "schrecklich (A2)"
   ]
  },

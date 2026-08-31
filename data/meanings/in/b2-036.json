@@ -1,16 +1,16 @@
 {
- "paket": "b2-036",
+ "packet": "b2-036",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 5396,
    "de": "das Fremdwort",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fremdwörter",
-   "mevcutTr": "yabancı kökenli kelime",
-   "mevcutBeispiel": "Er benutzt gern Fremdwörter, um gebildet zu wirken.",
-   "mevcutBeispielTr": "Bilgili görünmek için yabancı kökenli kelimeleri seve seve kullanıyor."
+   "currentTr": "yabancı kökenli kelime",
+   "currentBeispiel": "Er benutzt gern Fremdwörter, um gebildet zu wirken.",
+   "currentBeispielTr": "Bilgili görünmek için yabancı kökenli kelimeleri seve seve kullanıyor."
   },
   {
    "id": 5397,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Feststellungen",
-   "mevcutTr": "tespit, saptama",
-   "mevcutBeispiel": "Seine nüchterne Feststellung beendete die hitzige Diskussion.",
-   "mevcutBeispielTr": "Soğukkanlı tespiti hararetli tartışmayı sona erdirdi."
+   "currentTr": "tespit, saptama",
+   "currentBeispiel": "Seine nüchterne Feststellung beendete die hitzige Diskussion.",
+   "currentBeispielTr": "Soğukkanlı tespiti hararetli tartışmayı sona erdirdi."
   },
   {
    "id": 5398,
@@ -28,10 +28,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anmerkungen",
-   "mevcutTr": "not, ek açıklama",
-   "mevcutBeispiel": "Die Lehrerin schrieb einige kritische Anmerkungen an den Rand.",
-   "mevcutBeispielTr": "Öğretmen kenara birkaç eleştirel not yazdı.",
-   "cakisan": [
+   "currentTr": "not, ek açıklama",
+   "currentBeispiel": "Die Lehrerin schrieb einige kritische Anmerkungen an den Rand.",
+   "currentBeispielTr": "Öğretmen kenara birkaç eleştirel not yazdı.",
+   "overlapping": [
     "die Note (A1)",
     "die Notiz (A2)",
     "der Vermerk (C1)"
@@ -43,9 +43,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "övgü, takdir",
-   "mevcutBeispiel": "Ein ehrliches Lob motiviert oft mehr als eine gute Note.",
-   "mevcutBeispielTr": "Samimi bir övgü çoğu zaman iyi bir nottan daha çok motive eder."
+   "currentTr": "övgü, takdir",
+   "currentBeispiel": "Ein ehrliches Lob motiviert oft mehr als eine gute Note.",
+   "currentBeispielTr": "Samimi bir övgü çoğu zaman iyi bir nottan daha çok motive eder."
   },
   {
    "id": 5400,
@@ -53,9 +53,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Tadel",
-   "mevcutTr": "azar, kınama",
-   "mevcutBeispiel": "Sein scharfer Tadel verletzte den jungen Kollegen sehr.",
-   "mevcutBeispielTr": "Sert azarı genç meslektaşını çok kırdı."
+   "currentTr": "azar, kınama",
+   "currentBeispiel": "Sein scharfer Tadel verletzte den jungen Kollegen sehr.",
+   "currentBeispielTr": "Sert azarı genç meslektaşını çok kırdı."
   },
   {
    "id": 5401,
@@ -63,9 +63,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gedächtnisse",
-   "mevcutTr": "hafıza, bellek",
-   "mevcutBeispiel": "Neue Vokabeln bleiben nur mit regelmäßiger Wiederholung im Gedächtnis.",
-   "mevcutBeispielTr": "Yeni kelimeler ancak düzenli tekrarla hafızada kalıyor."
+   "currentTr": "hafıza, bellek",
+   "currentBeispiel": "Neue Vokabeln bleiben nur mit regelmäßiger Wiederholung im Gedächtnis.",
+   "currentBeispielTr": "Yeni kelimeler ancak düzenli tekrarla hafızada kalıyor."
   },
   {
    "id": 5402,
@@ -73,9 +73,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sahne heyecanı, sunum heyecanı",
-   "mevcutBeispiel": "Vor jedem Vortrag hat sie schreckliches Lampenfieber.",
-   "mevcutBeispielTr": "Her sunumdan önce korkunç bir sahne heyecanı yaşıyor."
+   "currentTr": "sahne heyecanı, sunum heyecanı",
+   "currentBeispiel": "Vor jedem Vortrag hat sie schreckliches Lampenfieber.",
+   "currentBeispielTr": "Her sunumdan önce korkunç bir sahne heyecanı yaşıyor."
   },
   {
    "id": 5403,
@@ -83,10 +83,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "özgüven",
-   "mevcutBeispiel": "Mit jedem gelungenen Gespräch wuchs sein Selbstvertrauen.",
-   "mevcutBeispielTr": "Başarılı geçen her konuşmayla özgüveni arttı.",
-   "cakisan": [
+   "currentTr": "özgüven",
+   "currentBeispiel": "Mit jedem gelungenen Gespräch wuchs sein Selbstvertrauen.",
+   "currentBeispielTr": "Başarılı geçen her konuşmayla özgüveni arttı.",
+   "overlapping": [
     "die Selbstsicherheit (B2)",
     "das Selbstbewusstsein (B2)"
    ]
@@ -97,9 +97,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "hazırcevaplık",
-   "mevcutBeispiel": "Ihre Schlagfertigkeit rettete sie in der schwierigen Diskussion.",
-   "mevcutBeispielTr": "Hazırcevaplığı onu zor tartışmada kurtardı."
+   "currentTr": "hazırcevaplık",
+   "currentBeispiel": "Ihre Schlagfertigkeit rettete sie in der schwierigen Diskussion.",
+   "currentBeispielTr": "Hazırcevaplığı onu zor tartışmada kurtardı."
   },
   {
    "id": 5405,
@@ -107,10 +107,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zusammenfassungen",
-   "mevcutTr": "özet",
-   "mevcutBeispiel": "Am Ende gab er eine kurze Zusammenfassung der wichtigsten Punkte.",
-   "mevcutBeispielTr": "Sonunda en önemli noktaların kısa bir özetini verdi.",
-   "cakisan": [
+   "currentTr": "özet",
+   "currentBeispiel": "Am Ende gab er eine kurze Zusammenfassung der wichtigsten Punkte.",
+   "currentBeispielTr": "Sonunda en önemli noktaların kısa bir özetini verdi.",
+   "overlapping": [
     "das Resümee (C1)"
    ]
   },
@@ -120,9 +120,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Moderationen",
-   "mevcutTr": "moderatörlük, oturum yönetimi",
-   "mevcutBeispiel": "Die Moderation der Runde übernahm eine erfahrene Journalistin.",
-   "mevcutBeispielTr": "Oturumun yönetimini deneyimli bir gazeteci üstlendi."
+   "currentTr": "moderatörlük, oturum yönetimi",
+   "currentBeispiel": "Die Moderation der Runde übernahm eine erfahrene Journalistin.",
+   "currentBeispielTr": "Oturumun yönetimini deneyimli bir gazeteci üstlendi."
   },
   {
    "id": 5407,
@@ -130,9 +130,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Redner",
-   "mevcutTr": "konuşmacı, hatip",
-   "mevcutBeispiel": "Der Redner sprach frei und ohne einen einzigen Zettel.",
-   "mevcutBeispielTr": "Konuşmacı tek bir kâğıt olmadan doğaçlama konuştu."
+   "currentTr": "konuşmacı, hatip",
+   "currentBeispiel": "Der Redner sprach frei und ohne einen einzigen Zettel.",
+   "currentBeispielTr": "Konuşmacı tek bir kâğıt olmadan doğaçlama konuştu."
   },
   {
    "id": 5408,
@@ -140,9 +140,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sprechhemmungen",
-   "mevcutTr": "konuşma çekingenliği",
-   "mevcutBeispiel": "Viele Lernende überwinden ihre Sprechhemmung erst im Ausland.",
-   "mevcutBeispielTr": "Birçok öğrenci konuşma çekingenliğini ancak yurt dışında aşıyor."
+   "currentTr": "konuşma çekingenliği",
+   "currentBeispiel": "Viele Lernende überwinden ihre Sprechhemmung erst im Ausland.",
+   "currentBeispielTr": "Birçok öğrenci konuşma çekingenliğini ancak yurt dışında aşıyor."
   },
   {
    "id": 5409,
@@ -150,9 +150,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kanıt değeri, anlatım gücü",
-   "mevcutBeispiel": "Die Aussagekraft dieses Tests wird von Fachleuten bezweifelt.",
-   "mevcutBeispielTr": "Bu testin kanıt değeri uzmanlarca kuşkuyla karşılanıyor."
+   "currentTr": "kanıt değeri, anlatım gücü",
+   "currentBeispiel": "Die Aussagekraft dieses Tests wird von Fachleuten bezweifelt.",
+   "currentBeispielTr": "Bu testin kanıt değeri uzmanlarca kuşkuyla karşılanıyor."
   },
   {
    "id": 5410,
@@ -160,9 +160,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verbesserungsvorschläge",
-   "mevcutTr": "iyileştirme önerisi",
-   "mevcutBeispiel": "Der Dozent notierte zu jedem Text zwei Verbesserungsvorschläge.",
-   "mevcutBeispielTr": "Öğretim görevlisi her metne iki iyileştirme önerisi not etti."
+   "currentTr": "iyileştirme önerisi",
+   "currentBeispiel": "Der Dozent notierte zu jedem Text zwei Verbesserungsvorschläge.",
+   "currentBeispielTr": "Öğretim görevlisi her metne iki iyileştirme önerisi not etti."
   },
   {
    "id": 5411,
@@ -170,9 +170,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "incelik, ölçülülük",
-   "mevcutBeispiel": "Kritik muss man mit etwas Taktgefühl vorbringen.",
-   "mevcutBeispielTr": "Eleştiriyi biraz incelikle dile getirmek gerekir."
+   "currentTr": "incelik, ölçülülük",
+   "currentBeispiel": "Kritik muss man mit etwas Taktgefühl vorbringen.",
+   "currentBeispielTr": "Eleştiriyi biraz incelikle dile getirmek gerekir."
   },
   {
    "id": 5412,
@@ -180,9 +180,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Muttersprachler",
-   "mevcutTr": "ana dili konuşuru",
-   "mevcutBeispiel": "Selbst Muttersprachler machen bei diesem Fall häufig Fehler.",
-   "mevcutBeispielTr": "Bu hâlde ana dili konuşurları bile sık sık hata yapıyor."
+   "currentTr": "ana dili konuşuru",
+   "currentBeispiel": "Selbst Muttersprachler machen bei diesem Fall häufig Fehler.",
+   "currentBeispielTr": "Bu hâlde ana dili konuşurları bile sık sık hata yapıyor."
   },
   {
    "id": 5413,
@@ -190,9 +190,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat nachgefragt",
-   "mevcutTr": "sorup öğrenmek, tekrar sormak",
-   "mevcutBeispiel": "Wenn du etwas nicht verstehst, solltest du sofort nachfragen.",
-   "mevcutBeispielTr": "Bir şeyi anlamazsan hemen sorup öğrenmelisin."
+   "currentTr": "sorup öğrenmek, tekrar sormak",
+   "currentBeispiel": "Wenn du etwas nicht verstehst, solltest du sofort nachfragen.",
+   "currentBeispielTr": "Bir şeyi anlamazsan hemen sorup öğrenmelisin."
   },
   {
    "id": 5414,
@@ -200,10 +200,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat eingewandt",
-   "mevcutTr": "itiraz etmek, itiraz olarak ileri sürmek",
-   "mevcutBeispiel": "Gegen diesen Vorschlag hatte niemand etwas einzuwenden.",
-   "mevcutBeispielTr": "Bu öneriye kimsenin itirazı yoktu.",
-   "cakisan": [
+   "currentTr": "itiraz etmek, itiraz olarak ileri sürmek",
+   "currentBeispiel": "Gegen diesen Vorschlag hatte niemand etwas einzuwenden.",
+   "currentBeispielTr": "Bu öneriye kimsenin itirazı yoktu.",
+   "overlapping": [
     "widersprechen (B1)",
     "anfechten (C1)"
    ]
@@ -214,9 +214,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gestottert",
-   "mevcutTr": "kekelemek",
-   "mevcutBeispiel": "Vor Aufregung stotterte er bei den ersten Sätzen.",
-   "mevcutBeispielTr": "Heyecandan ilk cümlelerde kekeledi."
+   "currentTr": "kekelemek",
+   "currentBeispiel": "Vor Aufregung stotterte er bei den ersten Sätzen.",
+   "currentBeispielTr": "Heyecandan ilk cümlelerde kekeledi."
   },
   {
    "id": 5416,
@@ -224,9 +224,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gezögert",
-   "mevcutTr": "tereddüt etmek, duraksamak",
-   "mevcutBeispiel": "Er zögerte kurz, bevor er auf die heikle Frage antwortete.",
-   "mevcutBeispielTr": "Hassas soruyu yanıtlamadan önce kısaca duraksadı."
+   "currentTr": "tereddüt etmek, duraksamak",
+   "currentBeispiel": "Er zögerte kurz, bevor er auf die heikle Frage antwortete.",
+   "currentBeispielTr": "Hassas soruyu yanıtlamadan önce kısaca duraksadı."
   },
   {
    "id": 5417,
@@ -234,10 +234,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat klargestellt",
-   "mevcutTr": "açıklığa kavuşturmak, netleştirmek",
-   "mevcutBeispiel": "Ich möchte kurz klarstellen, wie meine Bemerkung gemeint war.",
-   "mevcutBeispielTr": "Sözümün ne anlama geldiğini kısaca netleştirmek istiyorum.",
-   "cakisan": [
+   "currentTr": "açıklığa kavuşturmak, netleştirmek",
+   "currentBeispiel": "Ich möchte kurz klarstellen, wie meine Bemerkung gemeint war.",
+   "currentBeispielTr": "Sözümün ne anlama geldiğini kısaca netleştirmek istiyorum.",
+   "overlapping": [
     "klären (B1)"
    ]
   },
@@ -247,9 +247,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat umformuliert",
-   "mevcutTr": "yeniden ifade etmek, başka türlü yazmak",
-   "mevcutBeispiel": "Diesen Satz solltest du höflicher umformulieren.",
-   "mevcutBeispielTr": "Bu cümleyi daha kibar biçimde yeniden ifade etmelisin."
+   "currentTr": "yeniden ifade etmek, başka türlü yazmak",
+   "currentBeispiel": "Diesen Satz solltest du höflicher umformulieren.",
+   "currentBeispielTr": "Bu cümleyi daha kibar biçimde yeniden ifade etmelisin."
   },
   {
    "id": 5419,
@@ -257,10 +257,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat nachgeahmt",
-   "mevcutTr": "taklit etmek",
-   "mevcutBeispiel": "Kinder ahmen die Aussprache ihrer Umgebung fast automatisch nach.",
-   "mevcutBeispielTr": "Çocuklar çevrelerinin telaffuzunu neredeyse kendiliğinden taklit eder.",
-   "cakisan": [
+   "currentTr": "taklit etmek",
+   "currentBeispiel": "Kinder ahmen die Aussprache ihrer Umgebung fast automatisch nach.",
+   "currentBeispielTr": "Çocuklar çevrelerinin telaffuzunu neredeyse kendiliğinden taklit eder.",
+   "overlapping": [
     "nachbilden (C1)",
     "nachmachen (A2)"
    ]
@@ -271,9 +271,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgeschnitten",
-   "mevcutTr": "(sınavda) sonuç almak, derece yapmak",
-   "mevcutBeispiel": "Im mündlichen Teil hat sie deutlich besser abgeschnitten.",
-   "mevcutBeispielTr": "Sözlü bölümde belirgin biçimde daha iyi sonuç aldı."
+   "currentTr": "(sınavda) sonuç almak, derece yapmak",
+   "currentBeispiel": "Im mündlichen Teil hat sie deutlich besser abgeschnitten.",
+   "currentBeispielTr": "Sözlü bölümde belirgin biçimde daha iyi sonuç aldı."
   },
   {
    "id": 5421,
@@ -281,9 +281,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat dargelegt",
-   "mevcutTr": "ortaya koymak, gerekçeli anlatmak",
-   "mevcutBeispiel": "In der Einleitung legt sie ihre Sicht der Dinge dar.",
-   "mevcutBeispielTr": "Girişte konuya bakışını ortaya koyuyor."
+   "currentTr": "ortaya koymak, gerekçeli anlatmak",
+   "currentBeispiel": "In der Einleitung legt sie ihre Sicht der Dinge dar.",
+   "currentBeispielTr": "Girişte konuya bakışını ortaya koyuyor."
   },
   {
    "id": 5422,
@@ -291,10 +291,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat zugegeben",
-   "mevcutTr": "itiraf etmek, kabul etmek",
-   "mevcutBeispiel": "Er gab offen zu, den Termin völlig vergessen zu haben.",
-   "mevcutBeispielTr": "Randevuyu tamamen unuttuğunu açıkça itiraf etti.",
-   "cakisan": [
+   "currentTr": "itiraf etmek, kabul etmek",
+   "currentBeispiel": "Er gab offen zu, den Termin völlig vergessen zu haben.",
+   "currentBeispielTr": "Randevuyu tamamen unuttuğunu açıkça itiraf etti.",
+   "overlapping": [
     "eingestehen (C1)",
     "gestehen (A2)"
    ]
@@ -305,9 +305,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "aksansız",
-   "mevcutBeispiel": "Nach zwanzig Jahren spricht er nahezu akzentfrei Deutsch.",
-   "mevcutBeispielTr": "Yirmi yıl sonra neredeyse aksansız Almanca konuşuyor."
+   "currentTr": "aksansız",
+   "currentBeispiel": "Nach zwanzig Jahren spricht er nahezu akzentfrei Deutsch.",
+   "currentBeispielTr": "Yirmi yıl sonra neredeyse aksansız Almanca konuşuyor."
   },
   {
    "id": 5424,
@@ -315,9 +315,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "konuşkan, sohbeti seven",
-   "mevcutBeispiel": "Nach dem zweiten Kaffee wurde sie erstaunlich gesprächig.",
-   "mevcutBeispielTr": "İkinci kahveden sonra şaşırtıcı derecede konuşkan oldu."
+   "currentTr": "konuşkan, sohbeti seven",
+   "currentBeispiel": "Nach dem zweiten Kaffee wurde sie erstaunlich gesprächig.",
+   "currentBeispielTr": "İkinci kahveden sonra şaşırtıcı derecede konuşkan oldu."
   },
   {
    "id": 5425,
@@ -325,9 +325,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ikna edici, inandırıcı",
-   "mevcutBeispiel": "Seine Argumente waren sachlich und ausgesprochen überzeugend.",
-   "mevcutBeispielTr": "Argümanları nesnel ve son derece ikna ediciydi."
+   "currentTr": "ikna edici, inandırıcı",
+   "currentBeispiel": "Seine Argumente waren sachlich und ausgesprochen überzeugend.",
+   "currentBeispielTr": "Argümanları nesnel ve son derece ikna ediciydi."
   },
   {
    "id": 5426,
@@ -335,9 +335,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "aşina, tanıdık; yaygın, akıcı",
-   "mevcutBeispiel": "Dieser Ausdruck ist mir aus dem Berufsalltag durchaus geläufig.",
-   "mevcutBeispielTr": "Bu ifade iş hayatından bana epeyce aşina."
+   "currentTr": "aşina, tanıdık; yaygın, akıcı",
+   "currentBeispiel": "Dieser Ausdruck ist mir aus dem Berufsalltag durchaus geläufig.",
+   "currentBeispielTr": "Bu ifade iş hayatından bana epeyce aşina."
   },
   {
    "id": 5427,
@@ -345,9 +345,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "duraklayarak, kesik kesik",
-   "mevcutBeispiel": "Am Anfang las er noch stockend, später ganz flüssig.",
-   "mevcutBeispielTr": "Başlarda kesik kesik okuyordu, sonra tamamen akıcı hâle geldi."
+   "currentTr": "duraklayarak, kesik kesik",
+   "currentBeispiel": "Am Anfang las er noch stockend, später ganz flüssig.",
+   "currentBeispielTr": "Başlarda kesik kesik okuyordu, sonra tamamen akıcı hâle geldi."
   },
   {
    "id": 5428,
@@ -355,9 +355,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ısrarla, vurgulu biçimde",
-   "mevcutBeispiel": "Der Prüfer wies nachdrücklich auf die Zeitbegrenzung hin.",
-   "mevcutBeispielTr": "Sınav görevlisi süre sınırına ısrarla dikkat çekti."
+   "currentTr": "ısrarla, vurgulu biçimde",
+   "currentBeispiel": "Der Prüfer wies nachdrücklich auf die Zeitbegrenzung hin.",
+   "currentBeispielTr": "Sınav görevlisi süre sınırına ısrarla dikkat çekti."
   },
   {
    "id": 5429,
@@ -365,9 +365,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "laf arasında, öylesine",
-   "mevcutBeispiel": "Sie erwähnte ganz beiläufig, dass sie kündigen werde.",
-   "mevcutBeispielTr": "İşten ayrılacağını laf arasında söyleyiverdi."
+   "currentTr": "laf arasında, öylesine",
+   "currentBeispiel": "Sie erwähnte ganz beiläufig, dass sie kündigen werde.",
+   "currentBeispielTr": "İşten ayrılacağını laf arasında söyleyiverdi."
   },
   {
    "id": 5430,
@@ -375,9 +375,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "isabetli, yerinde",
-   "mevcutBeispiel": "Für dieses Gefühl gibt es im Deutschen kein treffendes Wort.",
-   "mevcutBeispielTr": "Bu duygu için Almancada yerinde bir kelime yok."
+   "currentTr": "isabetli, yerinde",
+   "currentBeispiel": "Für dieses Gefühl gibt es im Deutschen kein treffendes Wort.",
+   "currentBeispielTr": "Bu duygu için Almancada yerinde bir kelime yok."
   },
   {
    "id": 5431,
@@ -385,9 +385,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "veri güvenliği",
-   "mevcutBeispiel": "Die Datensicherheit hat in unserem Unternehmen oberste Priorität.",
-   "mevcutBeispielTr": "Şirketimizde veri güvenliği en öncelikli konudur."
+   "currentTr": "veri güvenliği",
+   "currentBeispiel": "Die Datensicherheit hat in unserem Unternehmen oberste Priorität.",
+   "currentBeispielTr": "Şirketimizde veri güvenliği en öncelikli konudur."
   },
   {
    "id": 5432,
@@ -395,9 +395,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Benutzeroberflächen",
-   "mevcutTr": "kullanıcı arayüzü",
-   "mevcutBeispiel": "Die neue Benutzeroberfläche wirkt deutlich übersichtlicher als die alte.",
-   "mevcutBeispielTr": "Yeni kullanıcı arayüzü eskisine göre çok daha derli toplu görünüyor."
+   "currentTr": "kullanıcı arayüzü",
+   "currentBeispiel": "Die neue Benutzeroberfläche wirkt deutlich übersichtlicher als die alte.",
+   "currentBeispielTr": "Yeni kullanıcı arayüzü eskisine göre çok daha derli toplu görünüyor."
   },
   {
    "id": 5433,
@@ -405,10 +405,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anwendungen",
-   "mevcutTr": "uygulama, kullanım",
-   "mevcutBeispiel": "Diese Anwendung läuft auch auf älteren Geräten ohne Probleme.",
-   "mevcutBeispielTr": "Bu uygulama eski cihazlarda da sorunsuz çalışıyor.",
-   "cakisan": [
+   "currentTr": "uygulama, kullanım",
+   "currentBeispiel": "Diese Anwendung läuft auch auf älteren Geräten ohne Probleme.",
+   "currentBeispielTr": "Bu uygulama eski cihazlarda da sorunsuz çalışıyor.",
+   "overlapping": [
     "der Vollzug (C1)",
     "die App (A2)"
    ]
@@ -419,10 +419,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zugriffe",
-   "mevcutTr": "erişim",
-   "mevcutBeispiel": "Ohne Berechtigung hat niemand Zugriff auf die vertraulichen Unterlagen.",
-   "mevcutBeispielTr": "Yetkisi olmayan hiç kimse gizli belgelere erişemez.",
-   "cakisan": [
+   "currentTr": "erişim",
+   "currentBeispiel": "Ohne Berechtigung hat niemand Zugriff auf die vertraulichen Unterlagen.",
+   "currentBeispielTr": "Yetkisi olmayan hiç kimse gizli belgelere erişemez.",
+   "overlapping": [
     "die Reichweite (B2)"
    ]
   },
@@ -432,9 +432,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kennwörter",
-   "mevcutTr": "parola, şifre",
-   "mevcutBeispiel": "Bitte ändern Sie Ihr Kennwort mindestens alle drei Monate.",
-   "mevcutBeispielTr": "Lütfen parolanızı en az üç ayda bir değiştirin."
+   "currentTr": "parola, şifre",
+   "currentBeispiel": "Bitte ändern Sie Ihr Kennwort mindestens alle drei Monate.",
+   "currentBeispielTr": "Lütfen parolanızı en az üç ayda bir değiştirin."
   },
   {
    "id": 5436,
@@ -442,9 +442,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Speicherplätze",
-   "mevcutTr": "depolama alanı, bellek alanı",
-   "mevcutBeispiel": "Auf dem Server ist kaum noch Speicherplatz für neue Aufnahmen.",
-   "mevcutBeispielTr": "Sunucuda yeni kayıtlar için neredeyse hiç depolama alanı kalmadı."
+   "currentTr": "depolama alanı, bellek alanı",
+   "currentBeispiel": "Auf dem Server ist kaum noch Speicherplatz für neue Aufnahmen.",
+   "currentBeispielTr": "Sunucuda yeni kayıtlar için neredeyse hiç depolama alanı kalmadı."
   },
   {
    "id": 5437,
@@ -452,9 +452,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Arbeitsspeicher",
-   "mevcutTr": "çalışma belleği, RAM",
-   "mevcutBeispiel": "Der Arbeitsspeicher reicht für so ein aufwendiges Programm nicht aus.",
-   "mevcutBeispielTr": "Çalışma belleği bu kadar ağır bir program için yetmiyor."
+   "currentTr": "çalışma belleği, RAM",
+   "currentBeispiel": "Der Arbeitsspeicher reicht für so ein aufwendiges Programm nicht aus.",
+   "currentBeispielTr": "Çalışma belleği bu kadar ağır bir program için yetmiyor."
   },
   {
    "id": 5438,
@@ -462,9 +462,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Datenübertragungen",
-   "mevcutTr": "veri aktarımı",
-   "mevcutBeispiel": "Die Datenübertragung wurde wegen einer schlechten Verbindung mehrmals unterbrochen.",
-   "mevcutBeispielTr": "Kötü bağlantı yüzünden veri aktarımı birkaç kez kesildi."
+   "currentTr": "veri aktarımı",
+   "currentBeispiel": "Die Datenübertragung wurde wegen einer schlechten Verbindung mehrmals unterbrochen.",
+   "currentBeispielTr": "Kötü bağlantı yüzünden veri aktarımı birkaç kez kesildi."
   },
   {
    "id": 5439,
@@ -472,9 +472,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Betriebssysteme",
-   "mevcutTr": "işletim sistemi",
-   "mevcutBeispiel": "Das Betriebssystem wird heute Nacht auf die neueste Fassung gebracht.",
-   "mevcutBeispielTr": "İşletim sistemi bu gece en yeni sürüme geçirilecek."
+   "currentTr": "işletim sistemi",
+   "currentBeispiel": "Das Betriebssystem wird heute Nacht auf die neueste Fassung gebracht.",
+   "currentBeispielTr": "İşletim sistemi bu gece en yeni sürüme geçirilecek."
   },
   {
    "id": 5440,
@@ -482,9 +482,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Quellcodes",
-   "mevcutTr": "kaynak kod",
-   "mevcutBeispiel": "Der Quellcode dieses Programms ist für alle frei einsehbar.",
-   "mevcutBeispielTr": "Bu programın kaynak kodu herkese açık şekilde görülebiliyor."
+   "currentTr": "kaynak kod",
+   "currentBeispiel": "Der Quellcode dieses Programms ist für alle frei einsehbar.",
+   "currentBeispielTr": "Bu programın kaynak kodu herkese açık şekilde görülebiliyor."
   },
   {
    "id": 5441,
@@ -492,9 +492,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fehlermeldungen",
-   "mevcutTr": "hata mesajı",
-   "mevcutBeispiel": "Beim Start erscheint jedes Mal dieselbe rätselhafte Fehlermeldung.",
-   "mevcutBeispielTr": "Açılışta her seferinde aynı anlaşılmaz hata mesajı beliriyor."
+   "currentTr": "hata mesajı",
+   "currentBeispiel": "Beim Start erscheint jedes Mal dieselbe rätselhafte Fehlermeldung.",
+   "currentBeispielTr": "Açılışta her seferinde aynı anlaşılmaz hata mesajı beliriyor."
   },
   {
    "id": 5442,
@@ -502,9 +502,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Systemausfälle",
-   "mevcutTr": "sistem arızası, sistem çökmesi",
-   "mevcutBeispiel": "Nach dem Systemausfall konnten wir stundenlang keine Bestellungen bearbeiten.",
-   "mevcutBeispielTr": "Sistem arızasından sonra saatlerce hiçbir siparişi işleyemedik."
+   "currentTr": "sistem arızası, sistem çökmesi",
+   "currentBeispiel": "Nach dem Systemausfall konnten wir stundenlang keine Bestellungen bearbeiten.",
+   "currentBeispielTr": "Sistem arızasından sonra saatlerce hiçbir siparişi işleyemedik."
   },
   {
    "id": 5443,
@@ -512,10 +512,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Berechtigungen",
-   "mevcutTr": "yetki, izin",
-   "mevcutBeispiel": "Neue Mitarbeiter erhalten erst nach der Schulung erweiterte Berechtigungen.",
-   "mevcutBeispielTr": "Yeni çalışanlar geniş yetkileri ancak eğitimden sonra alıyor.",
-   "cakisan": [
+   "currentTr": "yetki, izin",
+   "currentBeispiel": "Neue Mitarbeiter erhalten erst nach der Schulung erweiterte Berechtigungen.",
+   "currentBeispielTr": "Yeni çalışanlar geniş yetkileri ancak eğitimden sonra alıyor.",
+   "overlapping": [
     "die Machtbefugnis (C1)",
     "die Befugnis (C1)"
    ]
@@ -526,9 +526,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nutzerkonten",
-   "mevcutTr": "kullanıcı hesabı",
-   "mevcutBeispiel": "Sein Nutzerkonto wurde nach mehreren Verstößen dauerhaft gelöscht.",
-   "mevcutBeispielTr": "Kullanıcı hesabı birkaç ihlalden sonra kalıcı olarak silindi."
+   "currentTr": "kullanıcı hesabı",
+   "currentBeispiel": "Sein Nutzerkonto wurde nach mehreren Verstößen dauerhaft gelöscht.",
+   "currentBeispielTr": "Kullanıcı hesabı birkaç ihlalden sonra kalıcı olarak silindi."
   },
   {
    "id": 5445,
@@ -536,9 +536,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sicherheitslücken",
-   "mevcutTr": "güvenlik açığı",
-   "mevcutBeispiel": "Die Sicherheitslücke wurde zum Glück vor dem Angriff entdeckt.",
-   "mevcutBeispielTr": "Güvenlik açığı neyse ki saldırıdan önce fark edildi."
+   "currentTr": "güvenlik açığı",
+   "currentBeispiel": "Die Sicherheitslücke wurde zum Glück vor dem Angriff entdeckt.",
+   "currentBeispielTr": "Güvenlik açığı neyse ki saldırıdan önce fark edildi."
   }
  ]
 }

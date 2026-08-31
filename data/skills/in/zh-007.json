@@ -1,7 +1,7 @@
 {
- "paket": "zh-007",
+ "packet": "zh-007",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-a2-l5",
    "skill": "listening",
@@ -9,40 +9,40 @@
    "title": "Es Telefon mit de Nochbarin",
    "genre": "Telefon",
    "intro": "Frau Steiner tatile çıkıyor ve komşusundan bir ricası var. Telefon konuşmasını dinleyeceksin.",
-   "metin": "Frau Steiner: Grüezi Frau Ochsner, do isch d Steiner vom zwäite Schtock.\nFrau Ochsner: Grüezi! Wie gaat s Ine?\nFrau Steiner: Guet, merci. Du — ich gang am Friitig für zwäi Wuche uf Italie. Chönted Si mer es Gfalle tue?\nFrau Ochsner: Sicher, gärn. Um was gaat s?\nFrau Steiner: D Pflanze giesse, öppe zwäimal i de Wuche. Und de Briefchaschte leere wär super.\nFrau Ochsner: Käi Problem. Händ Si en Schlüssel für mi?\nFrau Steiner: Ja, ich bring en am Dunschtig verbii. D Pflanze staned uf em Balkon und i de Chuchi.\nFrau Ochsner: Alles klar. Schööni Ferie und guet Reis!",
+   "text": "Frau Steiner: Grüezi Frau Ochsner, do isch d Steiner vom zwäite Schtock.\nFrau Ochsner: Grüezi! Wie gaat s Ine?\nFrau Steiner: Guet, merci. Du — ich gang am Friitig für zwäi Wuche uf Italie. Chönted Si mer es Gfalle tue?\nFrau Ochsner: Sicher, gärn. Um was gaat s?\nFrau Steiner: D Pflanze giesse, öppe zwäimal i de Wuche. Und de Briefchaschte leere wär super.\nFrau Ochsner: Käi Problem. Händ Si en Schlüssel für mi?\nFrau Steiner: Ja, ich bring en am Dunschtig verbii. D Pflanze staned uf em Balkon und i de Chuchi.\nFrau Ochsner: Alles klar. Schööni Ferie und guet Reis!",
    "gloss": [
     {
      "de": "d Nochbarin",
-     "mevcutTr": "kadın komşu"
+     "currentTr": "kadın komşu"
     },
     {
      "de": "d Pflanze giesse",
-     "mevcutTr": "çiçekleri sulamak"
+     "currentTr": "çiçekleri sulamak"
     },
     {
      "de": "de Schlüssel",
-     "mevcutTr": "anahtar",
-     "havuz": {
+     "currentTr": "anahtar",
+     "pool": {
       "tr": "anahtar",
       "en": "key"
      }
     },
     {
      "de": "de Briefchaschte",
-     "mevcutTr": "posta kutusu"
+     "currentTr": "posta kutusu"
     },
     {
      "de": "leere",
-     "mevcutTr": "boşaltmak"
+     "currentTr": "boşaltmak"
     },
     {
      "de": "es Gfalle tue",
-     "mevcutTr": "iyilik yapmak"
+     "currentTr": "iyilik yapmak"
     },
     {
      "de": "sicher",
-     "mevcutTr": "elbette, tabii",
-     "havuz": {
+     "currentTr": "elbette, tabii",
+     "pool": {
       "tr": "emin",
       "en": "sure"
      }
@@ -56,43 +56,43 @@
    "title": "Im Fundbüro",
    "genre": "Diyalog",
    "intro": "Elif tramvayda çantasını unutmuş. Kayıp eşya bürosundaki konuşmayı dinleyeceksin.",
-   "metin": "Aagschtellte: Grüezi, was cha ich für Si tue?\nElif: Grüezi. Ich han geschter im Tram Nummere 11 mini Täsche verlore.\nAagschtellte: Wie gseet si uus?\nElif: Si isch brun, us Läder, nöd sehr grooss. Inne sind es Buech und mis Portmonnee.\nAagschtellte: Momänt … Ja, do hät öpper geschter am Aabig e bruni Täsche abggää. Chönd Si mer säge, was für es Buech?\nElif: Es türkisches Chochbuech, rot.\nAagschtellte: Das stimmt. Denn ghört si Ine. Bitte de Uuswiis zäige und da underschriibe.\nElif: Oh, super! Merci vilmal — das isch e Erliichterig.",
+   "text": "Aagschtellte: Grüezi, was cha ich für Si tue?\nElif: Grüezi. Ich han geschter im Tram Nummere 11 mini Täsche verlore.\nAagschtellte: Wie gseet si uus?\nElif: Si isch brun, us Läder, nöd sehr grooss. Inne sind es Buech und mis Portmonnee.\nAagschtellte: Momänt … Ja, do hät öpper geschter am Aabig e bruni Täsche abggää. Chönd Si mer säge, was für es Buech?\nElif: Es türkisches Chochbuech, rot.\nAagschtellte: Das stimmt. Denn ghört si Ine. Bitte de Uuswiis zäige und da underschriibe.\nElif: Oh, super! Merci vilmal — das isch e Erliichterig.",
    "gloss": [
     {
      "de": "s Fundbüro",
-     "mevcutTr": "kayıp eşya bürosu",
-     "havuz": {
+     "currentTr": "kayıp eşya bürosu",
+     "pool": {
       "tr": "kayıp eşya bürosu",
       "en": "lost and found"
      }
     },
     {
      "de": "verlore",
-     "mevcutTr": "kaybolmuş, kaybettim"
+     "currentTr": "kaybolmuş, kaybettim"
     },
     {
      "de": "d Täsche",
-     "mevcutTr": "çanta"
+     "currentTr": "çanta"
     },
     {
      "de": "abgää",
-     "mevcutTr": "teslim etmek"
+     "currentTr": "teslim etmek"
     },
     {
      "de": "de Inhalt",
-     "mevcutTr": "içindekiler",
-     "havuz": {
+     "currentTr": "içindekiler",
+     "pool": {
       "tr": "içerik",
       "en": "content"
      }
     },
     {
      "de": "s Portmonnee",
-     "mevcutTr": "cüzdan (İsviçre'de yaygın)"
+     "currentTr": "cüzdan (İsviçre'de yaygın)"
     },
     {
      "de": "abhole",
-     "mevcutTr": "gelip almak"
+     "currentTr": "gelip almak"
     }
    ]
   },
@@ -103,39 +103,39 @@
    "title": "A de Bsichtigung",
    "genre": "Diyalog",
    "intro": "Hikâyenin devamı: Deniz ev gezmesinde yönetimden kadına soru soruyor — yedi dakika içinde.",
-   "metin": "Frau Hubmann: Bitte chömed Si ane. Sibe Minute, denn chunt di nächschti Gruppe.\nDeniz: Merci. Sind d Nebechoschte i de 1'760 scho drin?\nFrau Hubmann: Ja, inklusiv. Nur de Struum zaaled Si sälber.\nDeniz: Und d Waschchuchi?\nFrau Hubmann: Im Keller. Jedi Wonig hät zwäi Täg im Monet. De Plan hanget a de Tür.\nDeniz: Git s en Keller zu de Wonig?\nFrau Hubmann: Ja, sächs Quadratmeter. Und en Veloplatz im Hof.\nDeniz: Ab wänn wär si frei?\nFrau Hubmann: Ab em 1. April. Vorher chan i niemert iizüge laa.\nDeniz: Und wänn entschäided Si?\nFrau Hubmann: I zwo bis drüü Wuche. Mir mälded üs nur, wänn s klappt — susch chunt es Mail.\nDeniz: Alles klar. Do isch mis Dossier.",
+   "text": "Frau Hubmann: Bitte chömed Si ane. Sibe Minute, denn chunt di nächschti Gruppe.\nDeniz: Merci. Sind d Nebechoschte i de 1'760 scho drin?\nFrau Hubmann: Ja, inklusiv. Nur de Struum zaaled Si sälber.\nDeniz: Und d Waschchuchi?\nFrau Hubmann: Im Keller. Jedi Wonig hät zwäi Täg im Monet. De Plan hanget a de Tür.\nDeniz: Git s en Keller zu de Wonig?\nFrau Hubmann: Ja, sächs Quadratmeter. Und en Veloplatz im Hof.\nDeniz: Ab wänn wär si frei?\nFrau Hubmann: Ab em 1. April. Vorher chan i niemert iizüge laa.\nDeniz: Und wänn entschäided Si?\nFrau Hubmann: I zwo bis drüü Wuche. Mir mälded üs nur, wänn s klappt — susch chunt es Mail.\nDeniz: Alles klar. Do isch mis Dossier.",
    "gloss": [
     {
      "de": "d Verwaltig",
-     "mevcutTr": "yönetim şirketi"
+     "currentTr": "yönetim şirketi"
     },
     {
      "de": "d Nebechoschte",
-     "mevcutTr": "yan giderler"
+     "currentTr": "yan giderler"
     },
     {
      "de": "d Waschchuchi",
-     "mevcutTr": "çamaşırhane"
+     "currentTr": "çamaşırhane"
     },
     {
      "de": "de Keller",
-     "mevcutTr": "bodrum",
-     "havuz": {
+     "currentTr": "bodrum",
+     "pool": {
       "tr": "bodrum",
       "en": "basement"
      }
     },
     {
      "de": "de Iizugstermin",
-     "mevcutTr": "giriş tarihi"
+     "currentTr": "giriş tarihi"
     },
     {
      "de": "d Frag",
-     "mevcutTr": "soru"
+     "currentTr": "soru"
     },
     {
      "de": "sich mälde",
-     "mevcutTr": "haber vermek"
+     "currentTr": "haber vermek"
     }
    ]
   },
@@ -146,44 +146,44 @@
    "title": "De Lift reserviere",
    "genre": "Telefon",
    "intro": "Taşınma günü öncesi klasik iş: asansörü ve yükleme yerini ayırtmak.",
-   "metin": "Hauswart: Grüezi, Bertastrass, Kovac.\nDeniz: Grüezi Herr Kovac. Ich zieh am 30. März ii und wott froge, öb ich de Lift cha reserviere.\nHauswart: Am 30.? Do zügled na zwo anderi Parteie.\nDeniz: Oje.\nHauswart: Nöd schlimm, mir teiled uf. Wänn chämed Si? Am Morge oder am Namitag?\nDeniz: Am Morge wär besser. Öppe ab de achti.\nHauswart: Denn gäb ich Ine achti bis zwölfi. Danach chunt d Familie us em vierte Schtock.\nDeniz: Perfäkt. Und de Zügelwage — wo cha de staa?\nHauswart: Vor em Huus. Aber dört isch Parkverbot. Si bruuched e Bewilligung vo de Stadt, susch git s e Buess.\nDeniz: Wo überchunt me die?\nHauswart: Online, öppe zää Täg vorher. Choschtet 40 Franke. Mached Si s früeh — s duuret.\nDeniz: Merci vilmal für de Tipp.",
+   "text": "Hauswart: Grüezi, Bertastrass, Kovac.\nDeniz: Grüezi Herr Kovac. Ich zieh am 30. März ii und wott froge, öb ich de Lift cha reserviere.\nHauswart: Am 30.? Do zügled na zwo anderi Parteie.\nDeniz: Oje.\nHauswart: Nöd schlimm, mir teiled uf. Wänn chämed Si? Am Morge oder am Namitag?\nDeniz: Am Morge wär besser. Öppe ab de achti.\nHauswart: Denn gäb ich Ine achti bis zwölfi. Danach chunt d Familie us em vierte Schtock.\nDeniz: Perfäkt. Und de Zügelwage — wo cha de staa?\nHauswart: Vor em Huus. Aber dört isch Parkverbot. Si bruuched e Bewilligung vo de Stadt, susch git s e Buess.\nDeniz: Wo überchunt me die?\nHauswart: Online, öppe zää Täg vorher. Choschtet 40 Franke. Mached Si s früeh — s duuret.\nDeniz: Merci vilmal für de Tipp.",
    "gloss": [
     {
      "de": "de Lift",
-     "mevcutTr": "asansör",
-     "havuz": {
+     "currentTr": "asansör",
+     "pool": {
       "tr": "asansör",
       "en": "elevator"
      }
     },
     {
      "de": "reserviere",
-     "mevcutTr": "ayırtmak"
+     "currentTr": "ayırtmak"
     },
     {
      "de": "de Hauswart",
-     "mevcutTr": "kapıcı"
+     "currentTr": "kapıcı"
     },
     {
      "de": "d Bewilligung",
-     "mevcutTr": "izin",
-     "havuz": {
+     "currentTr": "izin",
+     "pool": {
       "tr": "resmî onay",
       "en": "approval"
      }
     },
     {
      "de": "de Halteplatz",
-     "mevcutTr": "durma/yükleme yeri"
+     "currentTr": "durma/yükleme yeri"
     },
     {
      "de": "sperre",
-     "mevcutTr": "kapatmak"
+     "currentTr": "kapatmak"
     },
     {
      "de": "s Formular",
-     "mevcutTr": "form",
-     "havuz": {
+     "currentTr": "form",
+     "pool": {
       "tr": "form",
       "en": "form"
      }
@@ -197,35 +197,35 @@
    "title": "Vier churzi Gspröch",
    "genre": "Sınav formatı",
    "intro": "Dört kısa konuşma, her birine bir soru. Konuşmalar birbirinden bağımsız.",
-   "metin": "1 — Im Lade: — Die Jagge isch z chlii. Cha ich si umtusche? — Sicher, händ Si de Bon? — Ja, do. — Guet. Grössi M hämmer läider nur na i Blau.\n2 — Im Tram: — Entschuldiged Si, fahrt das Tram zum Spital? — Nei, de Vierer fahrt zum Bahnhof. Si bruuched de Nüüner. — Und wo mues ich umschtiige? — A de nächschte Haltstell, grad gägenüber.\n3 — Am Telefon: — Reschtorant Sonne, guete Aabig. — Grüezi, ich hett gärn en Tisch für vieri. — Für wänn? — Am Samschtig am sibni. — Am Samschtig sind mir voll. Am Friitig oder Sunntig gäb s na öppis.\n4 — Im Büro: — Du, d Sitzig isch verschobe. — Uf wänn? — Vo de zäni uf di zwöi. De Ruum bliibt gliich. — Guet, denn han ich am Morge Ziit für de Bricht.",
+   "text": "1 — Im Lade: — Die Jagge isch z chlii. Cha ich si umtusche? — Sicher, händ Si de Bon? — Ja, do. — Guet. Grössi M hämmer läider nur na i Blau.\n2 — Im Tram: — Entschuldiged Si, fahrt das Tram zum Spital? — Nei, de Vierer fahrt zum Bahnhof. Si bruuched de Nüüner. — Und wo mues ich umschtiige? — A de nächschte Haltstell, grad gägenüber.\n3 — Am Telefon: — Reschtorant Sonne, guete Aabig. — Grüezi, ich hett gärn en Tisch für vieri. — Für wänn? — Am Samschtig am sibni. — Am Samschtig sind mir voll. Am Friitig oder Sunntig gäb s na öppis.\n4 — Im Büro: — Du, d Sitzig isch verschobe. — Uf wänn? — Vo de zäni uf di zwöi. De Ruum bliibt gliich. — Guet, denn han ich am Morge Ziit für de Bricht.",
    "gloss": [
     {
      "de": "umtusche",
-     "mevcutTr": "değiştirmek (ürün)"
+     "currentTr": "değiştirmek (ürün)"
     },
     {
      "de": "de Bon",
-     "mevcutTr": "fiş"
+     "currentTr": "fiş"
     },
     {
      "de": "d Haltstell",
-     "mevcutTr": "durak"
+     "currentTr": "durak"
     },
     {
      "de": "umschtiige",
-     "mevcutTr": "aktarma yapmak"
+     "currentTr": "aktarma yapmak"
     },
     {
      "de": "reserviere",
-     "mevcutTr": "yer ayırtmak"
+     "currentTr": "yer ayırtmak"
     },
     {
      "de": "d Sitzig",
-     "mevcutTr": "toplantı"
+     "currentTr": "toplantı"
     },
     {
      "de": "verschobe",
-     "mevcutTr": "ertelenmiş"
+     "currentTr": "ertelenmiş"
     }
    ]
   },
@@ -236,35 +236,35 @@
    "title": "Duzis mache",
    "genre": "Kültür",
    "intro": "İsviçre'de „du“ demeye geçmenin kendine has bir adı ve kuralı var: Duzis. Kısa bir sohbet.",
-   "metin": "Deniz: Sag emal — wänn säit me da du und wänn Si?\nNina: Fuuschtregel: Im Gschäft under Kollege du, mit Chunde Si. A de Behörde Si. Im Sportverein sofort du, au mit em Präsidänt.\nDeniz: Und wär aafangt?\nNina: Di elteri Person oder di höcheri Poschtion. Bi eus säit me: „Wämmer duzis mache?“ Das isch e richtigi Frag, und me schüttlet mängisch d Hand.\nDeniz: Und wänn ich s zerscht säge?\nNina: Bi glichaltrige Lüüt isch das kä Problem. Bi de Chefin würd ich warte.\nDeniz: Und wänn ich s falsch mach?\nNina: Denn merksch es: Di ander Person antwortet witer mit Si. Zrugg gaat s nöd würkli — es git käi Siezis mache.\nDeniz: Also lieber warte.\nNina: Genau. Und wänn du unsicher bisch, frög äifach. Niemert findet die Frag komisch.",
+   "text": "Deniz: Sag emal — wänn säit me da du und wänn Si?\nNina: Fuuschtregel: Im Gschäft under Kollege du, mit Chunde Si. A de Behörde Si. Im Sportverein sofort du, au mit em Präsidänt.\nDeniz: Und wär aafangt?\nNina: Di elteri Person oder di höcheri Poschtion. Bi eus säit me: „Wämmer duzis mache?“ Das isch e richtigi Frag, und me schüttlet mängisch d Hand.\nDeniz: Und wänn ich s zerscht säge?\nNina: Bi glichaltrige Lüüt isch das kä Problem. Bi de Chefin würd ich warte.\nDeniz: Und wänn ich s falsch mach?\nNina: Denn merksch es: Di ander Person antwortet witer mit Si. Zrugg gaat s nöd würkli — es git käi Siezis mache.\nDeniz: Also lieber warte.\nNina: Genau. Und wänn du unsicher bisch, frög äifach. Niemert findet die Frag komisch.",
    "gloss": [
     {
      "de": "duzis mache",
-     "mevcutTr": "„du“ demeye geçmek (İsviçre kalıbı)"
+     "currentTr": "„du“ demeye geçmek (İsviçre kalıbı)"
     },
     {
      "de": "sieze",
-     "mevcutTr": "„Sie“ demek"
+     "currentTr": "„Sie“ demek"
     },
     {
      "de": "aabüüte",
-     "mevcutTr": "teklif etmek"
+     "currentTr": "teklif etmek"
     },
     {
      "de": "d Aared",
-     "mevcutTr": "hitap"
+     "currentTr": "hitap"
     },
     {
      "de": "gnaut",
-     "mevcutTr": "tam olarak"
+     "currentTr": "tam olarak"
     },
     {
      "de": "unsicher",
-     "mevcutTr": "emin olmayan"
+     "currentTr": "emin olmayan"
     },
     {
      "de": "zrugg",
-     "mevcutTr": "geri"
+     "currentTr": "geri"
     }
    ]
   },
@@ -275,39 +275,39 @@
    "title": "Im Brockenhuus",
    "genre": "Diyalog",
    "intro": "İsviçre'nin ikinci el mağazaları: Brockenhaus. Taşınan herkesin ilk durağı.",
-   "metin": "Verchäuferin: Grüezi, sueched Si öppis Bestimmts?\nSara: Grüezi. Es Gstell für Büecher, öppe zwäi Meter.\nVerchäuferin: Do häre. Das isch Massivholz, 120 Franke. Und das dört isch günschtiger, 45.\nSara: Und de Zuestand?\nVerchäuferin: S günschtige hät hinde en Chratzer. Me gseet en nöd, wänn s a de Wand staat.\nSara: Chönd Si öppis am Priis mache?\nVerchäuferin: Bi eus sind d Priise fescht. Aber jede Zischtig isch alles um zwänzg Prozänt reduziert.\nSara: Hüt isch Määndig …\nVerchäuferin: Genau. Wänn Si warted, zaaled Si morn 36 statt 45.\nSara: Und bringed Si s au?\nVerchäuferin: Mir liefered im Stadtgebiet für 60 Franke. Bi eme Gstell für 36 lohnt sich das nöd — nämed Si liber es Auto oder es Cargovelo.",
+   "text": "Verchäuferin: Grüezi, sueched Si öppis Bestimmts?\nSara: Grüezi. Es Gstell für Büecher, öppe zwäi Meter.\nVerchäuferin: Do häre. Das isch Massivholz, 120 Franke. Und das dört isch günschtiger, 45.\nSara: Und de Zuestand?\nVerchäuferin: S günschtige hät hinde en Chratzer. Me gseet en nöd, wänn s a de Wand staat.\nSara: Chönd Si öppis am Priis mache?\nVerchäuferin: Bi eus sind d Priise fescht. Aber jede Zischtig isch alles um zwänzg Prozänt reduziert.\nSara: Hüt isch Määndig …\nVerchäuferin: Genau. Wänn Si warted, zaaled Si morn 36 statt 45.\nSara: Und bringed Si s au?\nVerchäuferin: Mir liefered im Stadtgebiet für 60 Franke. Bi eme Gstell für 36 lohnt sich das nöd — nämed Si liber es Auto oder es Cargovelo.",
    "gloss": [
     {
      "de": "s Brockenhuus",
-     "mevcutTr": "ikinci el mağazası"
+     "currentTr": "ikinci el mağazası"
     },
     {
      "de": "de Gstell",
-     "mevcutTr": "raf"
+     "currentTr": "raf"
     },
     {
      "de": "de Zuestand",
-     "mevcutTr": "durum, hâl"
+     "currentTr": "durum, hâl"
     },
     {
      "de": "handle",
-     "mevcutTr": "pazarlık etmek"
+     "currentTr": "pazarlık etmek"
     },
     {
      "de": "d Lieferig",
-     "mevcutTr": "teslimat"
+     "currentTr": "teslimat"
     },
     {
      "de": "de Transport",
-     "mevcutTr": "taşıma",
-     "havuz": {
+     "currentTr": "taşıma",
+     "pool": {
       "tr": "nakliye",
       "en": "transport"
      }
     },
     {
      "de": "reduziert",
-     "mevcutTr": "indirimli"
+     "currentTr": "indirimli"
     }
    ]
   },
@@ -318,48 +318,48 @@
    "title": "Mir händ si übercho!",
    "genre": "Sesli mesaj",
    "intro": "Hikâyenin sonu: Deniz arkadaşına sesli mesaj bırakıyor.",
-   "metin": "Deniz: Murat! Mir händ si übercho. D Wonig a de Bertastrass.\nDeniz: Und weisch was s Verruckte isch? Ich han mich im Dezämber beworbe und e Absaag übercho. Jetz hät di ander Partei abgsäit — und si händ mich wider aagschriibe.\nDeniz: Vierzää Absääge insgesamt. Ich glaub, das isch kä Rekord, aber es hät sich so aagfühlt.\nDeniz: De Vertrag hämmer am Mittwuch unterschriibe. D Kaution isch drü Monetsmiete — das hät weh taa, aber s isch dure.\nDeniz: Schlüsselübergab am 30. März am zäni. De Lift han ich scho reserviert, achti bis zwölfi.\nDeniz: Und du chunsch am 12. April zum Iizugsapéro. Nöd frooge — du chunsch. Bis dänn!",
+   "text": "Deniz: Murat! Mir händ si übercho. D Wonig a de Bertastrass.\nDeniz: Und weisch was s Verruckte isch? Ich han mich im Dezämber beworbe und e Absaag übercho. Jetz hät di ander Partei abgsäit — und si händ mich wider aagschriibe.\nDeniz: Vierzää Absääge insgesamt. Ich glaub, das isch kä Rekord, aber es hät sich so aagfühlt.\nDeniz: De Vertrag hämmer am Mittwuch unterschriibe. D Kaution isch drü Monetsmiete — das hät weh taa, aber s isch dure.\nDeniz: Schlüsselübergab am 30. März am zäni. De Lift han ich scho reserviert, achti bis zwölfi.\nDeniz: Und du chunsch am 12. April zum Iizugsapéro. Nöd frooge — du chunsch. Bis dänn!",
    "gloss": [
     {
      "de": "überchoo",
-     "mevcutTr": "almak, elde etmek"
+     "currentTr": "almak, elde etmek"
     },
     {
      "de": "de Vertrag",
-     "mevcutTr": "sözleşme",
-     "havuz": {
+     "currentTr": "sözleşme",
+     "pool": {
       "tr": "sözleşme",
       "en": "contract"
      }
     },
     {
      "de": "d Kaution",
-     "mevcutTr": "depozito",
-     "havuz": {
+     "currentTr": "depozito",
+     "pool": {
       "tr": "depozito",
       "en": "deposit"
      }
     },
     {
      "de": "d Schlüsselübergab",
-     "mevcutTr": "anahtar teslimi"
+     "currentTr": "anahtar teslimi"
     },
     {
      "de": "de Iizugsapéro",
-     "mevcutTr": "taşınma sonrası davet"
+     "currentTr": "taşınma sonrası davet"
     },
     {
      "de": "de Rekord",
-     "mevcutTr": "rekor",
-     "havuz": {
+     "currentTr": "rekor",
+     "pool": {
       "tr": "rekor",
       "en": "record"
      }
     },
     {
      "de": "endlich",
-     "mevcutTr": "nihayet",
-     "havuz": {
+     "currentTr": "nihayet",
+     "pool": {
       "tr": "sonunda",
       "en": "finally"
      }

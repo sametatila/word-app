@@ -46,7 +46,7 @@
   "tr": "çift",
   "formen": "-e",
   "beispiel": "Romeo und Julia sind ein Paar. Ich brauche ein Paar Schuhe.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "Doppel- (B1)"
   ]
  },
@@ -57,7 +57,7 @@
   "tr": "birkaç",
   "formen": "",
   "beispiel": "Wir fahren ein paar Tage ans Meer. Hast du ein paar Minuten Zeit?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "(ein) paar (B1)"
   ]
  },
@@ -148,7 +148,7 @@
   "tr": "patates kızartması",
   "formen": "",
   "beispiel": "Die Kinder essen Bratwurst mit Pommes frites.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Pommes (A2)"
   ]
  },
@@ -175,7 +175,7 @@
   "tr": "uygun fiyatlı, ucuz",
   "formen": "",
   "beispiel": "Die Jacke ist sehr preiswert. Sie kostet nur 15 Euro.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "günstig (A1)"
   ]
  },
@@ -186,7 +186,7 @@
   "tr": "özel",
   "formen": "",
   "beispiel": "Das ist meine Nummer im Büro und das ist meine private Handynummer. Dieser Strand ist privat. Wir dürfen hier nicht schw",
-  "ayniAnlam": [
+  "sameMeaning": [
    "speziell (B1)"
   ]
  },
@@ -245,7 +245,7 @@
   "tr": "temizlemek",
   "formen": "putzt, hat geputzt",
   "beispiel": "Ich muss heute noch das Bad putzen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "reinigen (B1)",
    "säubern (A2)"
   ]
@@ -273,7 +273,7 @@
   "tr": "hesaplamak",
   "formen": "rechnet, hat gerechnet",
   "beispiel": "Sarah kann gut rechnen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "berechnen (B1)"
   ]
  },
@@ -284,7 +284,7 @@
   "tr": "konuşmak",
   "formen": "redet, hat geredet",
   "beispiel": "Mit meiner Freundin kann ich über alles reden. Rede nicht so viel!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "sprechen (A1)"
   ]
  },
@@ -335,7 +335,7 @@
   "tr": "emekli",
   "formen": "- / die Rentnerin, -nen",
   "beispiel": "Mein Onkel arbeitet nicht mehr. Er ist Rentner.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Pensionist (B1)",
    "pensioniert (A2)"
   ]
@@ -347,7 +347,7 @@
   "tr": "rezervasyon yapmak, ayırtmak",
   "formen": "reserviert, reservierte, hat reserviert",
   "beispiel": "Reservieren Sie bitte ein Doppelzimmer. Ich möchte gern einen Tisch für fünf Personen reservieren.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "buchen (A2)"
   ]
  },
@@ -566,7 +566,7 @@
   "tr": "korkunç, berbat",
   "formen": "",
   "beispiel": "Ich finde ihren Rock schrecklich. Er sieht furchtbar aus! Ich finde den Film schrecklich. Er macht mir Angst.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "furchtbar (A2)"
   ]
  },
@@ -617,7 +617,7 @@
   "tr": "deniz",
   "formen": "(Sg)",
   "beispiel": "Die See ist heute ruhig. Wir machen Urlaub an der Nordsee.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Meer (A1)"
   ]
  },
@@ -684,7 +684,7 @@
   "tr": "kayak",
   "formen": "-, -er",
   "beispiel": "Gehen wir am Wochenende Ski fahren? Er kauft sich neue Ski.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Ski/Schi (B1)"
   ]
  },
@@ -839,7 +839,7 @@
   "tr": "kat",
   "formen": "-e",
   "beispiel": "Das Gebäude hat zwanzig Stockwerke.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Stock (A1)",
    "die Etage (B1)"
   ]
@@ -859,7 +859,7 @@
   "tr": "sert, katı",
   "formen": "",
   "beispiel": "Der Lehrer von meiner Tochter ist sehr streng.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "steif (A2)"
   ]
  },
@@ -894,7 +894,7 @@
   "tr": "harika, süper",
   "formen": "",
   "beispiel": "Der Film ist super. Er kann super tanzen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "klasse (B1)"
   ]
  },
@@ -921,7 +921,7 @@
   "tr": "hap",
   "formen": "-n",
   "beispiel": "Du sollst am Abend zwei Tabletten nehmen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Pille (B1)"
   ]
  },
@@ -964,7 +964,7 @@
   "tr": "katılmak",
   "formen": "nimmt teil, hat teilgenommen",
   "beispiel": "Ich möchte an dem Tanzkurs teilnehmen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "mitmachen (A1)",
    "sich beteiligen (B1)",
    "teilnehmen an (B2)"

@@ -1,7 +1,7 @@
 {
- "paket": "zh-011",
+ "packet": "zh-011",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-b1-l5",
    "skill": "listening",
@@ -9,51 +9,51 @@
    "title": "E Reklamation am Telefon",
    "genre": "Telefon",
    "intro": "Murat, internetten aldığı bozuk bir ürün için müşteri hizmetlerini arıyor. Konuşmayı dinleyeceksin.",
-   "metin": "Kundedienscht: Grüezi, Kundedienscht Bergmann, Sie schprächt d Frau Roth.\nMurat: Grüezi. Ich han vor ere Wuche e Kaffimaschine bstellt. Si isch aacho, aber si lauft nöd — s Wasser bliibt chalt.\nFrau Roth: Das tuet mer läid. Händ Si d Bstellnummere zur Hand?\nMurat: Ja: A wie Anna, sibe, sibe, drü, zwäi.\nFrau Roth: Merci, ich han s. Sie händ zwäi Möglichkäite: Mir schicked Ine en Ersatz, oder Si gänd s Grät zrugg und mir schriibed Ine de Betrag guet.\nMurat: Was gaat schnäller?\nFrau Roth: De Ersatz. Wänn Si hüt s Paket uf d Poscht bringed, isch s nöie i zwäi bis drüü Täg bi Ine.\nMurat: Guet, denn de Ersatz. Mues ich s Porto zaale?\nFrau Roth: Nei. Ich schick Ine grad es Retour-Etikett per Mail — das drucked Si us und chläbed s ufs Paket.\nMurat: Perfäkt, merci vilmal.",
+   "text": "Kundedienscht: Grüezi, Kundedienscht Bergmann, Sie schprächt d Frau Roth.\nMurat: Grüezi. Ich han vor ere Wuche e Kaffimaschine bstellt. Si isch aacho, aber si lauft nöd — s Wasser bliibt chalt.\nFrau Roth: Das tuet mer läid. Händ Si d Bstellnummere zur Hand?\nMurat: Ja: A wie Anna, sibe, sibe, drü, zwäi.\nFrau Roth: Merci, ich han s. Sie händ zwäi Möglichkäite: Mir schicked Ine en Ersatz, oder Si gänd s Grät zrugg und mir schriibed Ine de Betrag guet.\nMurat: Was gaat schnäller?\nFrau Roth: De Ersatz. Wänn Si hüt s Paket uf d Poscht bringed, isch s nöie i zwäi bis drüü Täg bi Ine.\nMurat: Guet, denn de Ersatz. Mues ich s Porto zaale?\nFrau Roth: Nei. Ich schick Ine grad es Retour-Etikett per Mail — das drucked Si us und chläbed s ufs Paket.\nMurat: Perfäkt, merci vilmal.",
    "gloss": [
     {
      "de": "d Reklamation",
-     "mevcutTr": "şikâyet, iade talebi",
-     "havuz": {
+     "currentTr": "şikâyet, iade talebi",
+     "pool": {
       "tr": "şikâyet",
       "en": "complaint"
      }
     },
     {
      "de": "d Bstellig",
-     "mevcutTr": "sipariş"
+     "currentTr": "sipariş"
     },
     {
      "de": "d Rächnig",
-     "mevcutTr": "fatura"
+     "currentTr": "fatura"
     },
     {
      "de": "de Ersatz",
-     "mevcutTr": "değişim, yenisi",
-     "havuz": {
+     "currentTr": "değişim, yenisi",
+     "pool": {
       "tr": "yedek",
       "en": "replacement"
      }
     },
     {
      "de": "zrugggää",
-     "mevcutTr": "iade etmek"
+     "currentTr": "iade etmek"
     },
     {
      "de": "s Etikett",
-     "mevcutTr": "etiket",
-     "havuz": {
+     "currentTr": "etiket",
+     "pool": {
       "tr": "etiket",
       "en": "label"
      }
     },
     {
      "de": "d Frischt",
-     "mevcutTr": "süre"
+     "currentTr": "süre"
     },
     {
      "de": "guetschriibe",
-     "mevcutTr": "hesaba geçirmek, iade etmek"
+     "currentTr": "hesaba geçirmek, iade etmek"
     }
    ]
   },
@@ -64,43 +64,43 @@
    "title": "Radio: Verchehr und Veraastaltige",
    "genre": "Radyo",
    "intro": "Yerel radyoda trafik durumu ve hafta sonu etkinlik duyurularını dinleyeceksin.",
-   "metin": "Es isch zää vor achti — de Verchehr und denn üsi Tipps für s Wuchenänd.\nUf de A1 zwüsche Wettige und em Gubrist stoot s: sächs Kilometer Stau nach eme Unfall. D Polizei isch im Iisatz, di linggi Schpur isch gschperrt. Rächned mit zwänzg Minute Verluscht.\nI de Stadt sälber isch d Langstrass wäge Bauarbete bis am Friitig zue. S Tram Nummere achti fahrt e Umleitig über s Escher-Wyss-Platz.\nUnd jetz s Wuchenänd: Uf em Kasernenareal staat s Foodfeschtival — vo Friitig bis Sunntig, elfi bis am zäni am Aabig. De Iitritt isch gratis, s Ässe nöd.\nAm Sunntig am zwölfi git s im Quartier Wipkinge en Flohmärt. Bi Räge wird er uf de nöchscht Sunntig verschobe.",
+   "text": "Es isch zää vor achti — de Verchehr und denn üsi Tipps für s Wuchenänd.\nUf de A1 zwüsche Wettige und em Gubrist stoot s: sächs Kilometer Stau nach eme Unfall. D Polizei isch im Iisatz, di linggi Schpur isch gschperrt. Rächned mit zwänzg Minute Verluscht.\nI de Stadt sälber isch d Langstrass wäge Bauarbete bis am Friitig zue. S Tram Nummere achti fahrt e Umleitig über s Escher-Wyss-Platz.\nUnd jetz s Wuchenänd: Uf em Kasernenareal staat s Foodfeschtival — vo Friitig bis Sunntig, elfi bis am zäni am Aabig. De Iitritt isch gratis, s Ässe nöd.\nAm Sunntig am zwölfi git s im Quartier Wipkinge en Flohmärt. Bi Räge wird er uf de nöchscht Sunntig verschobe.",
    "gloss": [
     {
      "de": "d Veraastaltig",
-     "mevcutTr": "etkinlik"
+     "currentTr": "etkinlik"
     },
     {
      "de": "de Stau",
-     "mevcutTr": "trafik sıkışıklığı",
-     "havuz": {
+     "currentTr": "trafik sıkışıklığı",
+     "pool": {
       "tr": "trafik sıkışıklığı",
       "en": "traffic jam"
      }
     },
     {
      "de": "d Umleitig",
-     "mevcutTr": "güzergâh değişikliği"
+     "currentTr": "güzergâh değişikliği"
     },
     {
      "de": "de Iisatz",
-     "mevcutTr": "müdahale (itfaiye/polis)"
+     "currentTr": "müdahale (itfaiye/polis)"
     },
     {
      "de": "d Sperrig",
-     "mevcutTr": "kapatma",
-     "havuz": {
+     "currentTr": "kapatma",
+     "pool": {
       "tr": "hantal",
       "en": "bulky"
      }
     },
     {
      "de": "s Feschtgländ",
-     "mevcutTr": "festival alanı"
+     "currentTr": "festival alanı"
     },
     {
      "de": "de Iitritt",
-     "mevcutTr": "giriş"
+     "currentTr": "giriş"
     }
    ]
   },
@@ -111,40 +111,40 @@
    "title": "Mit de Putzfirma verhandle",
    "genre": "Telefon",
    "intro": "Hikâyenin devamı: Yusuf teslim temizliği için teklif alıyor. Garantinin ne anlama geldiğine dikkat et.",
-   "metin": "Firma: Reinigung Sauber, grüezi.\nYusuf: Grüezi. Ich bruuch e Endreinigung für e 3-Zimmer-Wonig, 78 Quadratmeter, Abgab am 28. Juli.\nFirma: Mit oder ohni Abnaamegarantie?\nYusuf: Was isch de Underschid genau?\nFirma: Mit Garantie chömed mir nomal, wänn d Verwaltig öppis reklamiert — so oft, bis si abnimmt. Ohni Garantie putzed mir äimal; wänn d Verwaltig denn öppis findet, isch das Ihres Problem.\nYusuf: Und de Priis?\nFirma: Ohni Garantie 640 Franke, mit Garantie 820. Fänschter sind bi bäidem drin, de Backofe au.\nYusuf: Und wänn s Silikon Schimmel hät?\nFirma: Putze chömer s, ersetze nöd. Neus Silikon isch en Zueschlag vo 150 pro Bad — das mached aber d Verwaltige mängisch sälber und ziehnd s ab.\nYusuf: Denn nimm ich mit Garantie. Und s Silikon lass ich uf mich zuecho.\nFirma: Vernünftig. Ich schick Ine d Offerte schriftlich — die isch verbindlich, wänn Si bis am Friitig bestätiged.",
+   "text": "Firma: Reinigung Sauber, grüezi.\nYusuf: Grüezi. Ich bruuch e Endreinigung für e 3-Zimmer-Wonig, 78 Quadratmeter, Abgab am 28. Juli.\nFirma: Mit oder ohni Abnaamegarantie?\nYusuf: Was isch de Underschid genau?\nFirma: Mit Garantie chömed mir nomal, wänn d Verwaltig öppis reklamiert — so oft, bis si abnimmt. Ohni Garantie putzed mir äimal; wänn d Verwaltig denn öppis findet, isch das Ihres Problem.\nYusuf: Und de Priis?\nFirma: Ohni Garantie 640 Franke, mit Garantie 820. Fänschter sind bi bäidem drin, de Backofe au.\nYusuf: Und wänn s Silikon Schimmel hät?\nFirma: Putze chömer s, ersetze nöd. Neus Silikon isch en Zueschlag vo 150 pro Bad — das mached aber d Verwaltige mängisch sälber und ziehnd s ab.\nYusuf: Denn nimm ich mit Garantie. Und s Silikon lass ich uf mich zuecho.\nFirma: Vernünftig. Ich schick Ine d Offerte schriftlich — die isch verbindlich, wänn Si bis am Friitig bestätiged.",
    "gloss": [
     {
      "de": "d Endreinigung",
-     "mevcutTr": "teslim temizliği"
+     "currentTr": "teslim temizliği"
     },
     {
      "de": "d Abnaamegarantie",
-     "mevcutTr": "teslim garantisi"
+     "currentTr": "teslim garantisi"
     },
     {
      "de": "d Offerte",
-     "mevcutTr": "teklif"
+     "currentTr": "teklif"
     },
     {
      "de": "de Quadratmeter",
-     "mevcutTr": "metrekare",
-     "havuz": {
+     "currentTr": "metrekare",
+     "pool": {
       "tr": "metrekare",
       "en": "square meter"
      }
     },
     {
      "de": "de Zueschlag",
-     "mevcutTr": "ek ücret"
+     "currentTr": "ek ücret"
     },
     {
      "de": "d Nachbesserig",
-     "mevcutTr": "düzeltme"
+     "currentTr": "düzeltme"
     },
     {
      "de": "verbindlich",
-     "mevcutTr": "bağlayıcı",
-     "havuz": {
+     "currentTr": "bağlayıcı",
+     "pool": {
       "tr": "bağlayıcı",
       "en": "binding"
      }
@@ -158,43 +158,43 @@
    "title": "Bi de Schlichtigsbehörde",
    "genre": "Danışma",
    "intro": "Depozito anlaşmazlığında İsviçre'nin sessiz ama çok işlevli kurumu: uzlaştırma makamı. Ücretsizdir.",
-   "metin": "Beraterin: Erzeeled Si churz — worum gaat s?\nYusuf: D Verwaltig ziet 450 Franke ab für en Chratzer im Parkett. De isch aber scho bim Iizug da gsii.\nBeraterin: Staat er im Iizugsprotokoll?\nYusuf: Nei. Ich han damals nüüt bemerkt.\nBeraterin: Und was händ Si als Bewiis?\nYusuf: Es Foti vom Iizugstag. Me gseet d Stell, und s Datum isch im Bild gspeicheret.\nBeraterin: Das isch besser als nüüt, aber nöd sicher. S Foti zäigt, dass en Chratzer da gsii isch — nöd unbedingt, dass es de gliich isch. Trotzdem: Mit eme Foti isch Ihri Poschtion deutlich stercher.\nYusuf: Was chan ich mache?\nBeraterin: Schriibed Si zerscht de Verwaltig und setzed Si e Frischt vo zää Täg. Wänn si nöd iiglenkt, chömed Si zu üs — d Iigab isch koschtelos.\nYusuf: Und wie lang duuret das?\nBeraterin: Bi eus im Schnitt zwäi bis drüü Mönet bis zur Verhandlig. Öppe siebzg Prozänt vo de Fäll ändet mit ere Einigung — mängisch scho, will me überhaupt schriibt.\nYusuf: Und wänn nöd?\nBeraterin: Denn chönd Si vor Gricht. Für 450 Franke ratet ich Ine das nöd. Aber sowiit chunt s sälte.",
+   "text": "Beraterin: Erzeeled Si churz — worum gaat s?\nYusuf: D Verwaltig ziet 450 Franke ab für en Chratzer im Parkett. De isch aber scho bim Iizug da gsii.\nBeraterin: Staat er im Iizugsprotokoll?\nYusuf: Nei. Ich han damals nüüt bemerkt.\nBeraterin: Und was händ Si als Bewiis?\nYusuf: Es Foti vom Iizugstag. Me gseet d Stell, und s Datum isch im Bild gspeicheret.\nBeraterin: Das isch besser als nüüt, aber nöd sicher. S Foti zäigt, dass en Chratzer da gsii isch — nöd unbedingt, dass es de gliich isch. Trotzdem: Mit eme Foti isch Ihri Poschtion deutlich stercher.\nYusuf: Was chan ich mache?\nBeraterin: Schriibed Si zerscht de Verwaltig und setzed Si e Frischt vo zää Täg. Wänn si nöd iiglenkt, chömed Si zu üs — d Iigab isch koschtelos.\nYusuf: Und wie lang duuret das?\nBeraterin: Bi eus im Schnitt zwäi bis drüü Mönet bis zur Verhandlig. Öppe siebzg Prozänt vo de Fäll ändet mit ere Einigung — mängisch scho, will me überhaupt schriibt.\nYusuf: Und wänn nöd?\nBeraterin: Denn chönd Si vor Gricht. Für 450 Franke ratet ich Ine das nöd. Aber sowiit chunt s sälte.",
    "gloss": [
     {
      "de": "d Schlichtigsbehörde",
-     "mevcutTr": "kira uzlaştırma makamı"
+     "currentTr": "kira uzlaştırma makamı"
     },
     {
      "de": "s Verfaare",
-     "mevcutTr": "usul, süreç"
+     "currentTr": "usul, süreç"
     },
     {
      "de": "koschtelos",
-     "mevcutTr": "ücretsiz"
+     "currentTr": "ücretsiz"
     },
     {
      "de": "d Iigab",
-     "mevcutTr": "başvuru"
+     "currentTr": "başvuru"
     },
     {
      "de": "d Verjährung",
-     "mevcutTr": "zamanaşımı",
-     "havuz": {
+     "currentTr": "zamanaşımı",
+     "pool": {
       "tr": "zamanaşımı",
       "en": "limitation period"
      }
     },
     {
      "de": "d Einigung",
-     "mevcutTr": "uzlaşma"
+     "currentTr": "uzlaşma"
     },
     {
      "de": "d Fritig",
-     "mevcutTr": "süre"
+     "currentTr": "süre"
     },
     {
      "de": "s Bewiismittel",
-     "mevcutTr": "delil"
+     "currentTr": "delil"
     }
    ]
   },
@@ -205,51 +205,51 @@
    "title": "Radio: Weniger Auto i de Stadt",
    "genre": "Sınav formatı",
    "intro": "Bir radyo haberi ve içerik soruları. Bir kez baştan sona dinlemeyi dene, sonra soruları çöz.",
-   "metin": "Moderator: Siit drüü Mönet isch d Chäsergass für Auto gsperrt — als Versuech. Nächschti Wuche entschäidet de Gmeinderaat, öb s so bliibt.\nReporterin: Am Aafang isch d Uufregig gross gsii. Vierzg Gschäft händ underschriibe, si händ weniger Chundschaft befürchtet. Hüt tönt s anders.\nLadebsitzerin: Ich bi degäge gsii, ganz klar. Ich han dänkt, ohni Parkplätz chunt niemert meh. Aber min Umsatz isch um siebe Prozänt gschtiige. D Lüüt bliibed äifach lenger.\nReporterin: Nöd alli sind zfriede. Wär schweri Ware verchauft — Möbel, Getränk —, klagt über d Lieferige.\nHändler: Für mich isch s schlächter worde. Mini Chunde chaufed Chäschte, nöd Blueme. Die cha me nöd trage.\nReporterin: D vorläufigi Uuswertig vo de Stadt zäigt: De Umsatz im ganze Bereich isch um vier Prozänt gschtiige, d Zaal vo de Bsuecher um elf. Gliichziitig git s driissg Prozänt meh Reklamatione über de Lieferverchehr i de Näbestrasse.\nModerator: Und de Entschäid?\nReporterin: Wahrschiinlich e Verlängerig um es Jaar — mit feschte Lieferziite am Morge. E definitivi Sperrig wott im Momänt niemert beschliesse.",
+   "text": "Moderator: Siit drüü Mönet isch d Chäsergass für Auto gsperrt — als Versuech. Nächschti Wuche entschäidet de Gmeinderaat, öb s so bliibt.\nReporterin: Am Aafang isch d Uufregig gross gsii. Vierzg Gschäft händ underschriibe, si händ weniger Chundschaft befürchtet. Hüt tönt s anders.\nLadebsitzerin: Ich bi degäge gsii, ganz klar. Ich han dänkt, ohni Parkplätz chunt niemert meh. Aber min Umsatz isch um siebe Prozänt gschtiige. D Lüüt bliibed äifach lenger.\nReporterin: Nöd alli sind zfriede. Wär schweri Ware verchauft — Möbel, Getränk —, klagt über d Lieferige.\nHändler: Für mich isch s schlächter worde. Mini Chunde chaufed Chäschte, nöd Blueme. Die cha me nöd trage.\nReporterin: D vorläufigi Uuswertig vo de Stadt zäigt: De Umsatz im ganze Bereich isch um vier Prozänt gschtiige, d Zaal vo de Bsuecher um elf. Gliichziitig git s driissg Prozänt meh Reklamatione über de Lieferverchehr i de Näbestrasse.\nModerator: Und de Entschäid?\nReporterin: Wahrschiinlich e Verlängerig um es Jaar — mit feschte Lieferziite am Morge. E definitivi Sperrig wott im Momänt niemert beschliesse.",
    "gloss": [
     {
      "de": "de Versuech",
-     "mevcutTr": "pilot uygulama"
+     "currentTr": "pilot uygulama"
     },
     {
      "de": "d Sperrig",
-     "mevcutTr": "kapatma",
-     "havuz": {
+     "currentTr": "kapatma",
+     "pool": {
       "tr": "hantal",
       "en": "bulky"
      }
     },
     {
      "de": "de Umsatz",
-     "mevcutTr": "ciro",
-     "havuz": {
+     "currentTr": "ciro",
+     "pool": {
       "tr": "ciro",
       "en": "revenue"
      }
     },
     {
      "de": "befürchte",
-     "mevcutTr": "endişe etmek"
+     "currentTr": "endişe etmek"
     },
     {
      "de": "d Uuswertig",
-     "mevcutTr": "değerlendirme"
+     "currentTr": "değerlendirme"
     },
     {
      "de": "vorläufig",
-     "mevcutTr": "geçici",
-     "havuz": {
+     "currentTr": "geçici",
+     "pool": {
       "tr": "geçici",
       "en": "temporary"
      }
     },
     {
      "de": "d Verlängerig",
-     "mevcutTr": "uzatma"
+     "currentTr": "uzatma"
     },
     {
      "de": "d Lieferziit",
-     "mevcutTr": "teslimat saati"
+     "currentTr": "teslimat saati"
     }
    ]
   },
@@ -260,47 +260,47 @@
    "title": "Warum mir so vill abschtimmed",
    "genre": "Podcast",
    "intro": "Yılda dört kez oy pusulası. İsviçre'de yaşayan herkesin merak ettiği sistem, kısa bir sohbette.",
-   "metin": "Host: Vier Mal im Jaar chunt s Couvert. Warum eigentlich so oft?\nPolitologin: Well s zwäi Instrumänt git. Mit ere Initiative chan s Volch öppis Nöis verlange — dezue bruucht s 100'000 Unterschrifte. Mit em Referändum cha me es Gsetz vom Parlamänt stoppe — dezue bruucht s 50'000.\nHost: Und wie vill Lüüt gönd würkli abschtimme?\nPolitologin: Im Schnitt öppe 45 Prozänt. Das tönt tüüf, isch aber irreführend: Über es ganzes Jaar gseh beteiliged sich viel meh Lüüt — nur nöd immer di gliiche. Jede wählt d Theme uus, wo en betreffed.\nHost: Wie informiert me sich?\nPolitologin: Im Couvert isch s Abstimmigsbüechli. Dört staat d Vorlag, d Meinig vom Bundesrat und — das isch s Interessante — au d Meinig vom Komitee degäge, im Originalton.\nHost: Also schriibt de Staat d Gägenargumänt sälber ab?\nPolitologin: Er druckt si. Er darf si nöd ändere. Das isch e Regle, wo vill Länder nöd händ.\nHost: Und wänn me e Vorlag nöd verstaat?\nPolitologin: Denn cha me läär iileere — das isch legitim. Vill Lüüt schtimmed bewusst nur bi dem ab, wo si sich sicher fühled.",
+   "text": "Host: Vier Mal im Jaar chunt s Couvert. Warum eigentlich so oft?\nPolitologin: Well s zwäi Instrumänt git. Mit ere Initiative chan s Volch öppis Nöis verlange — dezue bruucht s 100'000 Unterschrifte. Mit em Referändum cha me es Gsetz vom Parlamänt stoppe — dezue bruucht s 50'000.\nHost: Und wie vill Lüüt gönd würkli abschtimme?\nPolitologin: Im Schnitt öppe 45 Prozänt. Das tönt tüüf, isch aber irreführend: Über es ganzes Jaar gseh beteiliged sich viel meh Lüüt — nur nöd immer di gliiche. Jede wählt d Theme uus, wo en betreffed.\nHost: Wie informiert me sich?\nPolitologin: Im Couvert isch s Abstimmigsbüechli. Dört staat d Vorlag, d Meinig vom Bundesrat und — das isch s Interessante — au d Meinig vom Komitee degäge, im Originalton.\nHost: Also schriibt de Staat d Gägenargumänt sälber ab?\nPolitologin: Er druckt si. Er darf si nöd ändere. Das isch e Regle, wo vill Länder nöd händ.\nHost: Und wänn me e Vorlag nöd verstaat?\nPolitologin: Denn cha me läär iileere — das isch legitim. Vill Lüüt schtimmed bewusst nur bi dem ab, wo si sich sicher fühled.",
    "gloss": [
     {
      "de": "d Abstimmig",
-     "mevcutTr": "referandum"
+     "currentTr": "referandum"
     },
     {
      "de": "d Initiative",
-     "mevcutTr": "halk girişimi"
+     "currentTr": "halk girişimi"
     },
     {
      "de": "s Referändum",
-     "mevcutTr": "yasaya karşı referandum"
+     "currentTr": "yasaya karşı referandum"
     },
     {
      "de": "d Unterschrift",
-     "mevcutTr": "imza",
-     "havuz": {
+     "currentTr": "imza",
+     "pool": {
       "tr": "imza",
       "en": "signature"
      }
     },
     {
      "de": "d Stimmbetäiligung",
-     "mevcutTr": "katılım oranı"
+     "currentTr": "katılım oranı"
     },
     {
      "de": "s Couvert",
-     "mevcutTr": "zarf",
-     "havuz": {
+     "currentTr": "zarf",
+     "pool": {
       "tr": "zarf",
       "en": "envelope"
      }
     },
     {
      "de": "s Abstimmigsbüechli",
-     "mevcutTr": "resmî bilgi kitapçığı"
+     "currentTr": "resmî bilgi kitapçığı"
     },
     {
      "de": "sich informiere",
-     "mevcutTr": "bilgi edinmek"
+     "currentTr": "bilgi edinmek"
     }
    ]
   },
@@ -311,51 +311,51 @@
    "title": "Es Gspröch über de Lärm",
    "genre": "Diyalog",
    "intro": "Komşuyla gürültü konuşmak — İsviçre'de doğrudan ama kırmadan yapılması gereken konuşma.",
-   "metin": "Frau Britschgi: Herr Demir, händ Si churz Ziit? Ich wett öppis aaschpräche.\nYusuf: Sicher. Isch öppis?\nFrau Britschgi: Am Sunntig am zäni am Aabig händ Si Musik gha. Ich mues am Määndig am füfi uf.\nYusuf: Das tuet mer läid. Ich han nöd dänkt, dass me s ghört — s isch nöd luut gsii.\nFrau Britschgi: S Huus isch hellhörig. Ich ghöre s Bass, nöd d Musik. Und am Sunntig isch de ganz Tag Ruhezyt.\nYusuf: De ganz Tag? Das han ich würkli nöd gwüsst.\nFrau Britschgi: Staat i de Huusornig. Under de Wuche isch s ab zäni, am Sunntig immer.\nYusuf: Guet, ich pass uuf. Und wänn ich emal Bsuech han und s spöter wird — söll ich Ine Bschäid gää?\nFrau Britschgi: Das wär mir am liebschte. Denn weiss ich, dass s äimalig isch. Ich bi nöd d Polizei, ich mues nur schlaafe.\nYusuf: Abgmacht. Und merci, dass Si direkt zu mir cho sind.\nFrau Britschgi: Ich gaa immer zerscht sälber. D Verwaltig iischalte cha me nachhär immer no.",
+   "text": "Frau Britschgi: Herr Demir, händ Si churz Ziit? Ich wett öppis aaschpräche.\nYusuf: Sicher. Isch öppis?\nFrau Britschgi: Am Sunntig am zäni am Aabig händ Si Musik gha. Ich mues am Määndig am füfi uf.\nYusuf: Das tuet mer läid. Ich han nöd dänkt, dass me s ghört — s isch nöd luut gsii.\nFrau Britschgi: S Huus isch hellhörig. Ich ghöre s Bass, nöd d Musik. Und am Sunntig isch de ganz Tag Ruhezyt.\nYusuf: De ganz Tag? Das han ich würkli nöd gwüsst.\nFrau Britschgi: Staat i de Huusornig. Under de Wuche isch s ab zäni, am Sunntig immer.\nYusuf: Guet, ich pass uuf. Und wänn ich emal Bsuech han und s spöter wird — söll ich Ine Bschäid gää?\nFrau Britschgi: Das wär mir am liebschte. Denn weiss ich, dass s äimalig isch. Ich bi nöd d Polizei, ich mues nur schlaafe.\nYusuf: Abgmacht. Und merci, dass Si direkt zu mir cho sind.\nFrau Britschgi: Ich gaa immer zerscht sälber. D Verwaltig iischalte cha me nachhär immer no.",
    "gloss": [
     {
      "de": "de Lärm",
-     "mevcutTr": "gürültü",
-     "havuz": {
+     "currentTr": "gürültü",
+     "pool": {
       "tr": "gürültü",
       "en": "noise"
      }
     },
     {
      "de": "d Ruhezyt",
-     "mevcutTr": "sessizlik saatleri"
+     "currentTr": "sessizlik saatleri"
     },
     {
      "de": "sich beklage",
-     "mevcutTr": "şikâyet etmek"
+     "currentTr": "şikâyet etmek"
     },
     {
      "de": "d Rücksicht",
-     "mevcutTr": "saygı, dikkat",
-     "havuz": {
+     "currentTr": "saygı, dikkat",
+     "pool": {
       "tr": "anlayış",
       "en": "consideration"
      }
     },
     {
      "de": "aaschprääche",
-     "mevcutTr": "konuyu açmak"
+     "currentTr": "konuyu açmak"
     },
     {
      "de": "d Verwaltig iischalte",
-     "mevcutTr": "yönetimi devreye sokmak"
+     "currentTr": "yönetimi devreye sokmak"
     },
     {
      "de": "s Verständnis",
-     "mevcutTr": "anlayış",
-     "havuz": {
+     "currentTr": "anlayış",
+     "pool": {
       "tr": "anlayış",
       "en": "understanding"
      }
     },
     {
      "de": "abmache",
-     "mevcutTr": "kararlaştırmak"
+     "currentTr": "kararlaştırmak"
     }
    ]
   },
@@ -366,43 +366,43 @@
    "title": "D Kaution isch zrugg",
    "genre": "Sesli mesaj",
    "intro": "Hikâyenin sonu: Yusuf sonucu anlatıyor.",
-   "metin": "Yusuf: Du, es isch erledigt. D Kaution isch geschter cho.\nYusuf: Ich han de Verwaltig gschriibe, mit em Foti im Aahang, und e Frischt vo zää Täg gsetzt. Ganz sachlich, käi Emotion.\nYusuf: Nach acht Täg isch d Antwort cho: Si strichet de Abzug für de Chratzer. Nöd will si zuegänd, dass er scho da gsii isch — si schriibed „im Sinne einer Kulanz“. Isch mir egal, wie si s nänned.\nYusuf: Also 180 statt 630. S Silikon zaal ich, das isch fair — de Schimmel isch vo mir cho.\nYusuf: Und weisch was s Verruckte isch? Zur Schlichtigsbehörde han ich gar nie müesse. Es hät greicht, dass ich gwüsst han, dass es si git.\nYusuf: Also: Fotiered eui Wonig am Iizugstag. Alli Zimmer, au wänn s blöd tönt. Das isch de bescht Rat, wo ich der cha gää.",
+   "text": "Yusuf: Du, es isch erledigt. D Kaution isch geschter cho.\nYusuf: Ich han de Verwaltig gschriibe, mit em Foti im Aahang, und e Frischt vo zää Täg gsetzt. Ganz sachlich, käi Emotion.\nYusuf: Nach acht Täg isch d Antwort cho: Si strichet de Abzug für de Chratzer. Nöd will si zuegänd, dass er scho da gsii isch — si schriibed „im Sinne einer Kulanz“. Isch mir egal, wie si s nänned.\nYusuf: Also 180 statt 630. S Silikon zaal ich, das isch fair — de Schimmel isch vo mir cho.\nYusuf: Und weisch was s Verruckte isch? Zur Schlichtigsbehörde han ich gar nie müesse. Es hät greicht, dass ich gwüsst han, dass es si git.\nYusuf: Also: Fotiered eui Wonig am Iizugstag. Alli Zimmer, au wänn s blöd tönt. Das isch de bescht Rat, wo ich der cha gää.",
    "gloss": [
     {
      "de": "d Kaution",
-     "mevcutTr": "depozito",
-     "havuz": {
+     "currentTr": "depozito",
+     "pool": {
       "tr": "depozito",
       "en": "deposit"
      }
     },
     {
      "de": "iiglenkt",
-     "mevcutTr": "geri adım atmış"
+     "currentTr": "geri adım atmış"
     },
     {
      "de": "de Abzug",
-     "mevcutTr": "kesinti"
+     "currentTr": "kesinti"
     },
     {
      "de": "s Foti",
-     "mevcutTr": "fotoğraf"
+     "currentTr": "fotoğraf"
     },
     {
      "de": "sich luune",
-     "mevcutTr": "değmek, kârlı olmak"
+     "currentTr": "değmek, kârlı olmak"
     },
     {
      "de": "d Antwort",
-     "mevcutTr": "cevap",
-     "havuz": {
+     "currentTr": "cevap",
+     "pool": {
       "tr": "cevap",
       "en": "answer"
      }
     },
     {
      "de": "erledigt",
-     "mevcutTr": "hallolmuş"
+     "currentTr": "hallolmuş"
     }
    ]
   }

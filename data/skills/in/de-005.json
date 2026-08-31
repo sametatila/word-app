@@ -1,7 +1,7 @@
 {
- "paket": "de-005",
+ "packet": "de-005",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "a2-r1",
    "skill": "reading",
@@ -9,44 +9,44 @@
    "title": "Grüße aus Hamburg",
    "genre": "E-posta",
    "intro": "Arkadaşın Merve, Hamburg tatilinden sana yazıyor — planlarını ve gördüklerini yakala.",
-   "metin": "Liebe Elif,\n\nviele Grüße aus Hamburg! Ich bin seit Montag hier und bleibe noch bis Sonntag. Das Wetter war am Anfang schlecht, aber seit gestern scheint die Sonne. Gestern habe ich eine Hafenrundfahrt gemacht, das war toll! Die Fahrt hat 90 Minuten gedauert und nur 18 Euro gekostet.\n\nMorgen will ich das Miniatur Wunderland besuchen, weil meine Schwester sagt, dass es dort sehr schön ist. Am Samstag treffe ich einen alten Freund. Wir wollen zusammen Fisch essen, denn Hamburg ist bekannt für seinen Fischmarkt.\n\nUnd du? Wie geht es dir? Schreib mir bald!\n\nLiebe Grüße\nMerve",
+   "text": "Liebe Elif,\n\nviele Grüße aus Hamburg! Ich bin seit Montag hier und bleibe noch bis Sonntag. Das Wetter war am Anfang schlecht, aber seit gestern scheint die Sonne. Gestern habe ich eine Hafenrundfahrt gemacht, das war toll! Die Fahrt hat 90 Minuten gedauert und nur 18 Euro gekostet.\n\nMorgen will ich das Miniatur Wunderland besuchen, weil meine Schwester sagt, dass es dort sehr schön ist. Am Samstag treffe ich einen alten Freund. Wir wollen zusammen Fisch essen, denn Hamburg ist bekannt für seinen Fischmarkt.\n\nUnd du? Wie geht es dir? Schreib mir bald!\n\nLiebe Grüße\nMerve",
    "gloss": [
     {
      "de": "die Hafenrundfahrt",
-     "mevcutTr": "liman turu"
+     "currentTr": "liman turu"
     },
     {
      "de": "dauern",
-     "mevcutTr": "sürmek",
-     "havuz": {
+     "currentTr": "sürmek",
+     "pool": {
       "tr": "sürmek",
       "en": "to last"
      }
     },
     {
      "de": "die Sonne scheint",
-     "mevcutTr": "güneş açıyor"
+     "currentTr": "güneş açıyor"
     },
     {
      "de": "bekannt für",
-     "mevcutTr": "-iyle ünlü"
+     "currentTr": "-iyle ünlü"
     },
     {
      "de": "der Fischmarkt",
-     "mevcutTr": "balık pazarı"
+     "currentTr": "balık pazarı"
     },
     {
      "de": "bleiben",
-     "mevcutTr": "kalmak",
-     "havuz": {
+     "currentTr": "kalmak",
+     "pool": {
       "tr": "kalmak",
       "en": "to stay"
      }
     },
     {
      "de": "besuchen",
-     "mevcutTr": "ziyaret etmek",
-     "havuz": {
+     "currentTr": "ziyaret etmek",
+     "pool": {
       "tr": "ziyaret etmek",
       "en": "to visit"
      }
@@ -60,60 +60,60 @@
    "title": "Neues Schwimmbad öffnet am Wochenende",
    "genre": "Haber",
    "intro": "Yerel gazeteden kısa bir haber: Leipzig'de yeni bir yüzme havuzu açılıyor.",
-   "metin": "Leipzig. Nach zwei Jahren Bauzeit öffnet am Samstag das neue Schwimmbad im Stadtteil Gohlis. Das alte Bad war seit 2023 geschlossen, weil das Dach kaputt war. Das neue Gebäude hat drei Becken: ein Sportbecken, ein Kinderbecken und ein Außenbecken für den Sommer.\n\nAm Eröffnungstag ist der Eintritt frei. Ab Sonntag kostet eine Karte für Erwachsene 5 Euro, Kinder bis 14 Jahre zahlen 2,50 Euro. Das Bad ist täglich von 7 bis 22 Uhr geöffnet, nur montags bleibt es geschlossen. Die Stadt hofft, dass viele Familien kommen.",
+   "text": "Leipzig. Nach zwei Jahren Bauzeit öffnet am Samstag das neue Schwimmbad im Stadtteil Gohlis. Das alte Bad war seit 2023 geschlossen, weil das Dach kaputt war. Das neue Gebäude hat drei Becken: ein Sportbecken, ein Kinderbecken und ein Außenbecken für den Sommer.\n\nAm Eröffnungstag ist der Eintritt frei. Ab Sonntag kostet eine Karte für Erwachsene 5 Euro, Kinder bis 14 Jahre zahlen 2,50 Euro. Das Bad ist täglich von 7 bis 22 Uhr geöffnet, nur montags bleibt es geschlossen. Die Stadt hofft, dass viele Familien kommen.",
    "gloss": [
     {
      "de": "das Schwimmbad",
-     "mevcutTr": "yüzme havuzu",
-     "havuz": {
+     "currentTr": "yüzme havuzu",
+     "pool": {
       "tr": "yüzme havuzu",
       "en": "swimming pool"
      }
     },
     {
      "de": "die Bauzeit",
-     "mevcutTr": "inşaat süresi"
+     "currentTr": "inşaat süresi"
     },
     {
      "de": "das Dach",
-     "mevcutTr": "çatı",
-     "havuz": {
+     "currentTr": "çatı",
+     "pool": {
       "tr": "çatı",
       "en": "roof"
      }
     },
     {
      "de": "das Becken",
-     "mevcutTr": "havuz"
+     "currentTr": "havuz"
     },
     {
      "de": "der Eintritt",
-     "mevcutTr": "giriş ücreti",
-     "havuz": {
+     "currentTr": "giriş ücreti",
+     "pool": {
       "tr": "giriş ücreti",
       "en": "admission"
      }
     },
     {
      "de": "der Erwachsene",
-     "mevcutTr": "yetişkin",
-     "havuz": {
+     "currentTr": "yetişkin",
+     "pool": {
       "tr": "yetişkin",
       "en": "adult"
      }
     },
     {
      "de": "geschlossen",
-     "mevcutTr": "kapalı",
-     "havuz": {
+     "currentTr": "kapalı",
+     "pool": {
       "tr": "kapalı",
       "en": "closed"
      }
     },
     {
      "de": "täglich",
-     "mevcutTr": "her gün",
-     "havuz": {
+     "currentTr": "her gün",
+     "pool": {
       "tr": "günlük",
       "en": "daily"
      }
@@ -127,63 +127,63 @@
    "title": "2-Zimmer-Wohnung in der Südstadt",
    "genre": "İlan",
    "intro": "Nürnberg'de kiralık daire arıyorsun — bu ilandaki detayları dikkatle oku.",
-   "metin": "2-Zimmer-Wohnung in Nürnberg-Südstadt\n\nHelle Wohnung im 3. Stock, 54 Quadratmeter, mit Balkon und neuer Küche. Die Miete beträgt 680 Euro plus 120 Euro Nebenkosten. Ein Keller gehört zur Wohnung, eine Garage leider nicht. Haustiere sind nach Absprache erlaubt.\n\nDie U-Bahn-Station Aufseßplatz ist nur fünf Minuten zu Fuß entfernt, ein Supermarkt liegt direkt gegenüber. Die Wohnung ist ab dem 1. Oktober frei.\n\nBesichtigung: Samstag, den 20. September, von 10 bis 13 Uhr. Bitte melden Sie sich vorher per E-Mail bei Frau Weber: wohnung-weber@mailbox.de. Bringen Sie zur Besichtigung bitte einen Ausweis mit.",
+   "text": "2-Zimmer-Wohnung in Nürnberg-Südstadt\n\nHelle Wohnung im 3. Stock, 54 Quadratmeter, mit Balkon und neuer Küche. Die Miete beträgt 680 Euro plus 120 Euro Nebenkosten. Ein Keller gehört zur Wohnung, eine Garage leider nicht. Haustiere sind nach Absprache erlaubt.\n\nDie U-Bahn-Station Aufseßplatz ist nur fünf Minuten zu Fuß entfernt, ein Supermarkt liegt direkt gegenüber. Die Wohnung ist ab dem 1. Oktober frei.\n\nBesichtigung: Samstag, den 20. September, von 10 bis 13 Uhr. Bitte melden Sie sich vorher per E-Mail bei Frau Weber: wohnung-weber@mailbox.de. Bringen Sie zur Besichtigung bitte einen Ausweis mit.",
    "gloss": [
     {
      "de": "die Miete",
-     "mevcutTr": "kira",
-     "havuz": {
+     "currentTr": "kira",
+     "pool": {
       "tr": "kira",
       "en": "rent"
      }
     },
     {
      "de": "die Nebenkosten",
-     "mevcutTr": "yan giderler",
-     "havuz": {
+     "currentTr": "yan giderler",
+     "pool": {
       "tr": "yan giderler",
       "en": "utility costs"
      }
     },
     {
      "de": "der Keller",
-     "mevcutTr": "bodrum",
-     "havuz": {
+     "currentTr": "bodrum",
+     "pool": {
       "tr": "bodrum",
       "en": "basement"
      }
     },
     {
      "de": "nach Absprache",
-     "mevcutTr": "anlaşmaya bağlı"
+     "currentTr": "anlaşmaya bağlı"
     },
     {
      "de": "erlaubt",
-     "mevcutTr": "serbest",
-     "havuz": {
+     "currentTr": "serbest",
+     "pool": {
       "tr": "serbest",
       "en": "allowed"
      }
     },
     {
      "de": "die Besichtigung",
-     "mevcutTr": "gezme",
-     "havuz": {
+     "currentTr": "gezme",
+     "pool": {
       "tr": "gezme",
       "en": "viewing"
      }
     },
     {
      "de": "der Ausweis",
-     "mevcutTr": "kimlik",
-     "havuz": {
+     "currentTr": "kimlik",
+     "pool": {
       "tr": "kimlik",
       "en": "ID card"
      }
     },
     {
      "de": "entfernt",
-     "mevcutTr": "uzaklıkta"
+     "currentTr": "uzaklıkta"
     }
    ]
   },
@@ -194,63 +194,63 @@
    "title": "Sommerfest im Stadtpark",
    "genre": "Program",
    "intro": "Şehir parkındaki yaz festivalinin programını incele — saatler ve yerler önemli.",
-   "metin": "Sommerfest im Stadtpark — Programm für Samstag\n\n11 Uhr: Eröffnung mit dem Bürgermeister auf der Hauptbühne.\n\n12 bis 15 Uhr: Kinderprogramm mit Spielen und Schminken auf der Wiese am See. Die Teilnahme ist kostenlos.\n\n15 Uhr: Fußballturnier der Stadtteile am Sportplatz. Anmeldung bis 14 Uhr am Infostand.\n\n17 Uhr: Konzert der Band „Nachtzug“ auf der Hauptbühne. Karten kosten 8 Euro, Kinder unter 12 Jahren sind frei.\n\n22 Uhr: Feuerwerk über dem See.\n\nEssen und Getränke gibt es an über 20 Ständen. Bitte kommen Sie mit Bus oder Fahrrad, denn es gibt nur wenige Parkplätze. Bei Regen fällt das Feuerwerk aus.",
+   "text": "Sommerfest im Stadtpark — Programm für Samstag\n\n11 Uhr: Eröffnung mit dem Bürgermeister auf der Hauptbühne.\n\n12 bis 15 Uhr: Kinderprogramm mit Spielen und Schminken auf der Wiese am See. Die Teilnahme ist kostenlos.\n\n15 Uhr: Fußballturnier der Stadtteile am Sportplatz. Anmeldung bis 14 Uhr am Infostand.\n\n17 Uhr: Konzert der Band „Nachtzug“ auf der Hauptbühne. Karten kosten 8 Euro, Kinder unter 12 Jahren sind frei.\n\n22 Uhr: Feuerwerk über dem See.\n\nEssen und Getränke gibt es an über 20 Ständen. Bitte kommen Sie mit Bus oder Fahrrad, denn es gibt nur wenige Parkplätze. Bei Regen fällt das Feuerwerk aus.",
    "gloss": [
     {
      "de": "die Eröffnung",
-     "mevcutTr": "açılış",
-     "havuz": {
+     "currentTr": "açılış",
+     "pool": {
       "tr": "açılış",
       "en": "opening"
      }
     },
     {
      "de": "der Bürgermeister",
-     "mevcutTr": "belediye başkanı",
-     "havuz": {
+     "currentTr": "belediye başkanı",
+     "pool": {
       "tr": "belediye başkanı",
       "en": "mayor"
      }
     },
     {
      "de": "die Bühne",
-     "mevcutTr": "sahne",
-     "havuz": {
+     "currentTr": "sahne",
+     "pool": {
       "tr": "sahne",
       "en": "stage"
      }
     },
     {
      "de": "das Turnier",
-     "mevcutTr": "turnuva",
-     "havuz": {
+     "currentTr": "turnuva",
+     "pool": {
       "tr": "turnuva",
       "en": "tournament"
      }
     },
     {
      "de": "die Anmeldung",
-     "mevcutTr": "kayıt",
-     "havuz": {
+     "currentTr": "kayıt",
+     "pool": {
       "tr": "kayıt",
       "en": "registration"
      }
     },
     {
      "de": "das Feuerwerk",
-     "mevcutTr": "havai fişek"
+     "currentTr": "havai fişek"
     },
     {
      "de": "ausfallen",
-     "mevcutTr": "iptal olmak",
-     "havuz": {
+     "currentTr": "iptal olmak",
+     "pool": {
       "tr": "iptal olmak",
       "en": "to be canceled"
      }
     },
     {
      "de": "der Stand",
-     "mevcutTr": "stant"
+     "currentTr": "stant"
     }
    ]
   },
@@ -261,64 +261,64 @@
    "title": "Mein erster Monat in der neuen Arbeit",
    "genre": "Blog",
    "intro": "Bir blog yazarı yeni işindeki ilk ayını anlatıyor — nelerin değiştiğine dikkat et.",
-   "metin": "Seit vier Wochen arbeite ich als Verkäuferin in einer Buchhandlung in Köln. Früher habe ich in einem Büro gearbeitet, aber die Arbeit dort war mir zu langweilig. Jetzt habe ich jeden Tag Kontakt mit Menschen, und das gefällt mir viel besser.\n\nMein Arbeitstag beginnt um 9 Uhr und endet um 18 Uhr. Am Anfang war ich abends sehr müde, weil ich den ganzen Tag stehen muss. Aber meine Kollegen sind nett und helfen mir, wenn ich Fragen habe.\n\nNur eine Sache finde ich schwierig: Ich muss auch am Samstag arbeiten. Dafür habe ich montags frei.",
+   "text": "Seit vier Wochen arbeite ich als Verkäuferin in einer Buchhandlung in Köln. Früher habe ich in einem Büro gearbeitet, aber die Arbeit dort war mir zu langweilig. Jetzt habe ich jeden Tag Kontakt mit Menschen, und das gefällt mir viel besser.\n\nMein Arbeitstag beginnt um 9 Uhr und endet um 18 Uhr. Am Anfang war ich abends sehr müde, weil ich den ganzen Tag stehen muss. Aber meine Kollegen sind nett und helfen mir, wenn ich Fragen habe.\n\nNur eine Sache finde ich schwierig: Ich muss auch am Samstag arbeiten. Dafür habe ich montags frei.",
    "gloss": [
     {
      "de": "die Buchhandlung",
-     "mevcutTr": "kitapçı",
-     "havuz": {
+     "currentTr": "kitapçı",
+     "pool": {
       "tr": "kitapçı",
       "en": "bookstore"
      }
     },
     {
      "de": "die Verkäuferin",
-     "mevcutTr": "kadın satıcı",
-     "havuz": {
+     "currentTr": "kadın satıcı",
+     "pool": {
       "tr": "kadın satıcı",
       "en": "saleswoman"
      }
     },
     {
      "de": "langweilig",
-     "mevcutTr": "sıkıcı",
-     "havuz": {
+     "currentTr": "sıkıcı",
+     "pool": {
       "tr": "sıkıcı",
       "en": "boring"
      }
     },
     {
      "de": "der Kontakt",
-     "mevcutTr": "iletişim",
-     "havuz": {
+     "currentTr": "iletişim",
+     "pool": {
       "tr": "iletişim",
       "en": "contact"
      }
     },
     {
      "de": "müde",
-     "mevcutTr": "yorgun",
-     "havuz": {
+     "currentTr": "yorgun",
+     "pool": {
       "tr": "yorgun",
       "en": "tired"
      }
     },
     {
      "de": "der Kollege",
-     "mevcutTr": "iş arkadaşı",
-     "havuz": {
+     "currentTr": "iş arkadaşı",
+     "pool": {
       "tr": "iş arkadaşı",
       "en": "colleague"
      }
     },
     {
      "de": "frei haben",
-     "mevcutTr": "izinli olmak"
+     "currentTr": "izinli olmak"
     },
     {
      "de": "dafür",
-     "mevcutTr": "buna karşılık",
-     "havuz": {
+     "currentTr": "buna karşılık",
+     "pool": {
       "tr": "bunun için",
       "en": "for it"
      }
@@ -332,60 +332,60 @@
    "title": "Einladung zum Grillfest",
    "genre": "Davetiye",
    "intro": "Komşun Frau Schmidt apartmana bir davetiye asmış — kim, neyi, ne zaman kutluyor?",
-   "metin": "Liebe Nachbarinnen und Nachbarn,\n\nam Samstag, den 14. Juni, werde ich 60 Jahre alt. Das möchte ich gern mit Ihnen feiern! Ich lade Sie herzlich zu einem Grillfest in unserem Hof ein. Wir beginnen um 16 Uhr, das Ende ist offen.\n\nFür Fleisch, Würstchen und Getränke sorge ich. Es wäre schön, wenn Sie einen Salat oder einen Nachtisch mitbringen. Wer ein Instrument spielt, kann es gern mitbringen — mein Enkel spielt Gitarre.\n\nBitte sagen Sie mir bis zum 10. Juni Bescheid, ob Sie kommen. Sie erreichen mich unter der Nummer 0176 4532218 oder einfach an der Wohnungstür Nummer 12.\n\nHerzliche Grüße\nHannelore Schmidt",
+   "text": "Liebe Nachbarinnen und Nachbarn,\n\nam Samstag, den 14. Juni, werde ich 60 Jahre alt. Das möchte ich gern mit Ihnen feiern! Ich lade Sie herzlich zu einem Grillfest in unserem Hof ein. Wir beginnen um 16 Uhr, das Ende ist offen.\n\nFür Fleisch, Würstchen und Getränke sorge ich. Es wäre schön, wenn Sie einen Salat oder einen Nachtisch mitbringen. Wer ein Instrument spielt, kann es gern mitbringen — mein Enkel spielt Gitarre.\n\nBitte sagen Sie mir bis zum 10. Juni Bescheid, ob Sie kommen. Sie erreichen mich unter der Nummer 0176 4532218 oder einfach an der Wohnungstür Nummer 12.\n\nHerzliche Grüße\nHannelore Schmidt",
    "gloss": [
     {
      "de": "einladen",
-     "mevcutTr": "davet etmek",
-     "havuz": {
+     "currentTr": "davet etmek",
+     "pool": {
       "tr": "davet etmek",
       "en": "to invite"
      }
     },
     {
      "de": "das Grillfest",
-     "mevcutTr": "mangal partisi"
+     "currentTr": "mangal partisi"
     },
     {
      "de": "der Hof",
-     "mevcutTr": "avlu",
-     "havuz": {
+     "currentTr": "avlu",
+     "pool": {
       "tr": "avlu",
       "en": "courtyard"
      }
     },
     {
      "de": "sorgen für",
-     "mevcutTr": "-i sağlamak"
+     "currentTr": "-i sağlamak"
     },
     {
      "de": "der Nachtisch",
-     "mevcutTr": "tatlı",
-     "havuz": {
+     "currentTr": "tatlı",
+     "pool": {
       "tr": "tatlı",
       "en": "dessert"
      }
     },
     {
      "de": "der Enkel",
-     "mevcutTr": "erkek torun",
-     "havuz": {
+     "currentTr": "erkek torun",
+     "pool": {
       "tr": "erkek torun",
       "en": "grandson"
      }
     },
     {
      "de": "Bescheid sagen",
-     "mevcutTr": "haber vermek",
-     "havuz": {
+     "currentTr": "haber vermek",
+     "pool": {
       "tr": "haber vermek",
       "en": "to let know"
      }
     },
     {
      "de": "erreichen",
-     "mevcutTr": "ulaşmak",
-     "havuz": {
+     "currentTr": "ulaşmak",
+     "pool": {
       "tr": "ulaşmak",
       "en": "to reach"
      }
@@ -399,60 +399,60 @@
    "title": "Pelin hat eine Anzeige gefunden",
    "genre": "Mesaj",
    "intro": "Pelin bir iş ilanı buldu ve arkadaşına yazıyor. Bu, A2'de takip edeceğin hikâyenin başlangıcı.",
-   "metin": "Hey Ceyda,\n\nich habe endlich eine Stelle gefunden, die wirklich passt! Eine Apotheke in der Nähe sucht jemanden für den Empfang — Teilzeit, 25 Stunden, Montag bis Donnerstag.\n\nDas Problem: Sie wollen Erfahrung. Ich habe nur ein Praktikum gemacht, und das war vor drei Jahren. Traue ich mich überhaupt?\n\nMein Deutsch ist okay, aber am Telefon werde ich immer nervös. Und im Lebenslauf sieht meine Zeit ohne Arbeit ziemlich lang aus.\n\nAber weißt du was — ich schreibe trotzdem. Schlimmstenfalls sagen sie Nein, und dann weiß ich es wenigstens.\n\nDrück mir die Daumen!\nPelin",
+   "text": "Hey Ceyda,\n\nich habe endlich eine Stelle gefunden, die wirklich passt! Eine Apotheke in der Nähe sucht jemanden für den Empfang — Teilzeit, 25 Stunden, Montag bis Donnerstag.\n\nDas Problem: Sie wollen Erfahrung. Ich habe nur ein Praktikum gemacht, und das war vor drei Jahren. Traue ich mich überhaupt?\n\nMein Deutsch ist okay, aber am Telefon werde ich immer nervös. Und im Lebenslauf sieht meine Zeit ohne Arbeit ziemlich lang aus.\n\nAber weißt du was — ich schreibe trotzdem. Schlimmstenfalls sagen sie Nein, und dann weiß ich es wenigstens.\n\nDrück mir die Daumen!\nPelin",
    "gloss": [
     {
      "de": "die Stelle",
-     "mevcutTr": "iş",
-     "havuz": {
+     "currentTr": "iş",
+     "pool": {
       "tr": "iş",
       "en": "position"
      }
     },
     {
      "de": "sich bewerben",
-     "mevcutTr": "başvurmak",
-     "havuz": {
+     "currentTr": "başvurmak",
+     "pool": {
       "tr": "başvurmak",
       "en": "to apply"
      }
     },
     {
      "de": "der Lebenslauf",
-     "mevcutTr": "özgeçmiş",
-     "havuz": {
+     "currentTr": "özgeçmiş",
+     "pool": {
       "tr": "özgeçmiş",
       "en": "resume"
      }
     },
     {
      "de": "die Erfahrung",
-     "mevcutTr": "deneyim",
-     "havuz": {
+     "currentTr": "deneyim",
+     "pool": {
       "tr": "deneyim",
       "en": "experience"
      }
     },
     {
      "de": "die Teilzeit",
-     "mevcutTr": "yarı zamanlı çalışma",
-     "havuz": {
+     "currentTr": "yarı zamanlı çalışma",
+     "pool": {
       "tr": "yarı zamanlı çalışma",
       "en": "part-time work"
      }
     },
     {
      "de": "sich trauen",
-     "mevcutTr": "cesaret etmek",
-     "havuz": {
+     "currentTr": "cesaret etmek",
+     "pool": {
       "tr": "cesaret etmek",
       "en": "to dare"
      }
     },
     {
      "de": "vielleicht",
-     "mevcutTr": "belki",
-     "havuz": {
+     "currentTr": "belki",
+     "pool": {
       "tr": "belki",
       "en": "maybe"
      }
@@ -466,60 +466,60 @@
    "title": "Post von der Krankenkasse",
    "genre": "Resmî yazı",
    "intro": "Almanya'da herkesin posta kutusuna düşen yazılardan biri. Sigorta şirketinden gelen mektubu okuyacaksın.",
-   "metin": "Sehr geehrte Frau Aydın,\n\nvielen Dank für Ihre Nachricht vom 3. März.\n\n1. Ihr Beitrag: Ab dem 1. April zahlen Sie 178,40 Euro im Monat. Der Betrag wird automatisch von Ihrem Konto abgebucht. Sie müssen nichts tun.\n\n2. Ihre Frage zur Brille: Wir zahlen einen Zuschuss von 120 Euro, aber nur alle zwei Jahre und nur mit einem Rezept vom Augenarzt. Bitte reichen Sie die Rechnung und das Rezept zusammen ein.\n\n3. Wichtig: Die Frist für den Antrag ist der 30. Juni. Nach diesem Datum können wir den Zuschuss leider nicht mehr zahlen.\n\nSie können alle Dokumente auch in unserer App hochladen — das geht schneller als per Post.\n\nMit freundlichen Grüßen\nA. Roth, Kundenservice",
+   "text": "Sehr geehrte Frau Aydın,\n\nvielen Dank für Ihre Nachricht vom 3. März.\n\n1. Ihr Beitrag: Ab dem 1. April zahlen Sie 178,40 Euro im Monat. Der Betrag wird automatisch von Ihrem Konto abgebucht. Sie müssen nichts tun.\n\n2. Ihre Frage zur Brille: Wir zahlen einen Zuschuss von 120 Euro, aber nur alle zwei Jahre und nur mit einem Rezept vom Augenarzt. Bitte reichen Sie die Rechnung und das Rezept zusammen ein.\n\n3. Wichtig: Die Frist für den Antrag ist der 30. Juni. Nach diesem Datum können wir den Zuschuss leider nicht mehr zahlen.\n\nSie können alle Dokumente auch in unserer App hochladen — das geht schneller als per Post.\n\nMit freundlichen Grüßen\nA. Roth, Kundenservice",
    "gloss": [
     {
      "de": "die Krankenkasse",
-     "mevcutTr": "sağlık sigortası",
-     "havuz": {
+     "currentTr": "sağlık sigortası",
+     "pool": {
       "tr": "sağlık sigortası",
       "en": "health insurance fund"
      }
     },
     {
      "de": "der Beitrag",
-     "mevcutTr": "prim",
-     "havuz": {
+     "currentTr": "prim",
+     "pool": {
       "tr": "aidat",
       "en": "membership fee"
      }
     },
     {
      "de": "der Nachweis",
-     "mevcutTr": "kanıt",
-     "havuz": {
+     "currentTr": "kanıt",
+     "pool": {
       "tr": "kanıt",
       "en": "proof"
      }
     },
     {
      "de": "die Frist",
-     "mevcutTr": "son tarih",
-     "havuz": {
+     "currentTr": "son tarih",
+     "pool": {
       "tr": "son tarih",
       "en": "deadline"
      }
     },
     {
      "de": "einreichen",
-     "mevcutTr": "sunmak",
-     "havuz": {
+     "currentTr": "sunmak",
+     "pool": {
       "tr": "sunmak",
       "en": "to submit"
      }
     },
     {
      "de": "der Zuschuss",
-     "mevcutTr": "destek",
-     "havuz": {
+     "currentTr": "destek",
+     "pool": {
       "tr": "destek",
       "en": "subsidy"
      }
     },
     {
      "de": "die Brille",
-     "mevcutTr": "gözlük",
-     "havuz": {
+     "currentTr": "gözlük",
+     "pool": {
       "tr": "gözlük",
       "en": "glasses"
      }

@@ -1,16 +1,16 @@
 {
- "paket": "a2-011",
+ "packet": "a2-011",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 7488,
    "de": "luftig",
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "havadar, ferah",
-   "mevcutBeispiel": "Das neue Büro ist hell und luftig.",
-   "mevcutBeispielTr": "Yeni ofis aydınlık ve havadar."
+   "currentTr": "havadar, ferah",
+   "currentBeispiel": "Das neue Büro ist hell und luftig.",
+   "currentBeispielTr": "Yeni ofis aydınlık ve havadar."
   },
   {
    "id": 7489,
@@ -18,9 +18,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "ısıtmalı, ısıtılan",
-   "mevcutBeispiel": "Die Garage ist im Winter nicht beheizt.",
-   "mevcutBeispielTr": "Garaj kışın ısıtılmıyor."
+   "currentTr": "ısıtmalı, ısıtılan",
+   "currentBeispiel": "Die Garage ist im Winter nicht beheizt.",
+   "currentBeispielTr": "Garaj kışın ısıtılmıyor."
   },
   {
    "id": 7490,
@@ -28,9 +28,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "iç açıcı olmayan, soğuk (ortam)",
-   "mevcutBeispiel": "Das Wartezimmer war kalt und ungemütlich.",
-   "mevcutBeispielTr": "Bekleme odası soğuk ve iç açıcı değildi."
+   "currentTr": "iç açıcı olmayan, soğuk (ortam)",
+   "currentBeispiel": "Das Wartezimmer war kalt und ungemütlich.",
+   "currentBeispielTr": "Bekleme odası soğuk ve iç açıcı değildi."
   },
   {
    "id": 7491,
@@ -38,9 +38,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "rahatsız, konforsuz",
-   "mevcutBeispiel": "Diese Schuhe sind schön, aber unbequem.",
-   "mevcutBeispielTr": "Bu ayakkabılar güzel ama rahatsız."
+   "currentTr": "rahatsız, konforsuz",
+   "currentBeispiel": "Diese Schuhe sind schön, aber unbequem.",
+   "currentBeispielTr": "Bu ayakkabılar güzel ama rahatsız."
   },
   {
    "id": 7492,
@@ -48,9 +48,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "nefis, çok lezzetli",
-   "mevcutBeispiel": "Der Kuchen von deiner Mutter war köstlich.",
-   "mevcutBeispielTr": "Annenin keki nefisti."
+   "currentTr": "nefis, çok lezzetli",
+   "currentBeispiel": "Der Kuchen von deiner Mutter war köstlich.",
+   "currentBeispielTr": "Annenin keki nefisti."
   },
   {
    "id": 7493,
@@ -58,9 +58,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "baharatlı, çeşnili",
-   "mevcutBeispiel": "Die Suppe ist schön würzig.",
-   "mevcutBeispielTr": "Çorba güzelce baharatlı."
+   "currentTr": "baharatlı, çeşnili",
+   "currentBeispiel": "Die Suppe ist schön würzig.",
+   "currentBeispielTr": "Çorba güzelce baharatlı."
   },
   {
    "id": 7494,
@@ -68,9 +68,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yavan, tatsız",
-   "mevcutBeispiel": "Ohne Salz schmeckt das Essen fad.",
-   "mevcutBeispielTr": "Tuzsuz olunca yemek yavan geliyor."
+   "currentTr": "yavan, tatsız",
+   "currentBeispiel": "Ohne Salz schmeckt das Essen fad.",
+   "currentBeispielTr": "Tuzsuz olunca yemek yavan geliyor."
   },
   {
    "id": 7495,
@@ -78,9 +78,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "küf kokulu, ağır kokulu",
-   "mevcutBeispiel": "Im Keller riecht es muffig.",
-   "mevcutBeispielTr": "Bodrum küf kokuyor."
+   "currentTr": "küf kokulu, ağır kokulu",
+   "currentBeispiel": "Im Keller riecht es muffig.",
+   "currentBeispielTr": "Bodrum küf kokuyor."
   },
   {
    "id": 7496,
@@ -88,9 +88,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "pis kokan, leş gibi kokan",
-   "mevcutBeispiel": "Vor dem Haus stand eine stinkende Mülltonne.",
-   "mevcutBeispielTr": "Evin önünde pis kokan bir çöp kovası duruyordu."
+   "currentTr": "pis kokan, leş gibi kokan",
+   "currentBeispiel": "Vor dem Haus stand eine stinkende Mülltonne.",
+   "currentBeispielTr": "Evin önünde pis kokan bir çöp kovası duruyordu."
   },
   {
    "id": 7497,
@@ -98,9 +98,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "mis kokulu, güzel kokan",
-   "mevcutBeispiel": "Sie brachte mir duftende Blumen mit.",
-   "mevcutBeispielTr": "Bana mis kokulu çiçekler getirdi."
+   "currentTr": "mis kokulu, güzel kokan",
+   "currentBeispiel": "Sie brachte mir duftende Blumen mit.",
+   "currentBeispielTr": "Bana mis kokulu çiçekler getirdi."
   },
   {
    "id": 7498,
@@ -108,9 +108,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "boğuk (ses)",
-   "mevcutBeispiel": "Aus dem Nachbarhaus kam ein dumpfes Geräusch.",
-   "mevcutBeispielTr": "Yandaki evden boğuk bir ses geldi."
+   "currentTr": "boğuk (ses)",
+   "currentBeispiel": "Aus dem Nachbarhaus kam ein dumpfes Geräusch.",
+   "currentBeispielTr": "Yandaki evden boğuk bir ses geldi."
   },
   {
    "id": 7499,
@@ -118,9 +118,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "tiz, keskin (ses)",
-   "mevcutBeispiel": "Der Wecker hat einen schrillen Ton.",
-   "mevcutBeispielTr": "Çalar saatin tiz bir sesi var."
+   "currentTr": "tiz, keskin (ses)",
+   "currentBeispiel": "Der Wecker hat einen schrillen Ton.",
+   "currentBeispielTr": "Çalar saatin tiz bir sesi var."
   },
   {
    "id": 7500,
@@ -128,9 +128,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sabırlı",
-   "mevcutBeispiel": "Meine Lehrerin ist sehr geduldig mit uns.",
-   "mevcutBeispielTr": "Öğretmenim bize karşı çok sabırlı."
+   "currentTr": "sabırlı",
+   "currentBeispiel": "Meine Lehrerin ist sehr geduldig mit uns.",
+   "currentBeispielTr": "Öğretmenim bize karşı çok sabırlı."
   },
   {
    "id": 7501,
@@ -138,9 +138,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sabırsız",
-   "mevcutBeispiel": "Mein Bruder wird schnell ungeduldig, wenn er warten muss.",
-   "mevcutBeispielTr": "Kardeşim beklemek zorunda kalınca çabuk sabırsızlaşıyor."
+   "currentTr": "sabırsız",
+   "currentBeispiel": "Mein Bruder wird schnell ungeduldig, wenn er warten muss.",
+   "currentBeispielTr": "Kardeşim beklemek zorunda kalınca çabuk sabırsızlaşıyor."
   },
   {
    "id": 7502,
@@ -148,9 +148,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "alçakgönüllü, mütevazı",
-   "mevcutBeispiel": "Er ist reich, aber er lebt sehr bescheiden.",
-   "mevcutBeispielTr": "O zengin ama çok mütevazı yaşıyor."
+   "currentTr": "alçakgönüllü, mütevazı",
+   "currentBeispiel": "Er ist reich, aber er lebt sehr bescheiden.",
+   "currentBeispielTr": "O zengin ama çok mütevazı yaşıyor."
   },
   {
    "id": 7503,
@@ -158,9 +158,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "cimri",
-   "mevcutBeispiel": "Mein Onkel ist so geizig, dass er nie Trinkgeld gibt.",
-   "mevcutBeispielTr": "Amcam o kadar cimri ki hiç bahşiş vermiyor."
+   "currentTr": "cimri",
+   "currentBeispiel": "Mein Onkel ist so geizig, dass er nie Trinkgeld gibt.",
+   "currentBeispielTr": "Amcam o kadar cimri ki hiç bahşiş vermiyor."
   },
   {
    "id": 7504,
@@ -168,9 +168,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "bencil",
-   "mevcutBeispiel": "Sei nicht so egoistisch und teile die Schokolade!",
-   "mevcutBeispielTr": "Bu kadar bencil olma ve çikolatayı paylaş!"
+   "currentTr": "bencil",
+   "currentBeispiel": "Sei nicht so egoistisch und teile die Schokolade!",
+   "currentBeispielTr": "Bu kadar bencil olma ve çikolatayı paylaş!"
   },
   {
    "id": 7505,
@@ -178,9 +178,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yardımsever",
-   "mevcutBeispiel": "Unsere neuen Nachbarn sind sehr hilfsbereit.",
-   "mevcutBeispielTr": "Yeni komşularımız çok yardımsever."
+   "currentTr": "yardımsever",
+   "currentBeispiel": "Unsere neuen Nachbarn sind sehr hilfsbereit.",
+   "currentBeispielTr": "Yeni komşularımız çok yardımsever."
   },
   {
    "id": 7506,
@@ -188,9 +188,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "misafirperver",
-   "mevcutBeispiel": "Die Familie war gastfreundlich und hat uns zum Essen eingeladen.",
-   "mevcutBeispielTr": "Aile misafirperverdi ve bizi yemeğe davet etti."
+   "currentTr": "misafirperver",
+   "currentBeispiel": "Die Familie war gastfreundlich und hat uns zum Essen eingeladen.",
+   "currentBeispielTr": "Aile misafirperverdi ve bizi yemeğe davet etti."
   },
   {
    "id": 7507,
@@ -198,9 +198,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "utangaç, çekingen",
-   "mevcutBeispiel": "Als Kind war ich sehr schüchtern.",
-   "mevcutBeispielTr": "Çocukken çok utangaçtım."
+   "currentTr": "utangaç, çekingen",
+   "currentBeispiel": "Als Kind war ich sehr schüchtern.",
+   "currentBeispielTr": "Çocukken çok utangaçtım."
   },
   {
    "id": 7508,
@@ -208,9 +208,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "az konuşan, suskun",
-   "mevcutBeispiel": "Mein Vater ist ein schweigsamer Mann.",
-   "mevcutBeispielTr": "Babam az konuşan bir adamdır."
+   "currentTr": "az konuşan, suskun",
+   "currentBeispiel": "Mein Vater ist ein schweigsamer Mann.",
+   "currentBeispielTr": "Babam az konuşan bir adamdır."
   },
   {
    "id": 7509,
@@ -218,9 +218,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kötü niyetli, kırıcı",
-   "mevcutBeispiel": "Das war gemein von dir, sie so zu ärgern.",
-   "mevcutBeispielTr": "Ona böyle takılman senin için kötü niyetliceydi."
+   "currentTr": "kötü niyetli, kırıcı",
+   "currentBeispiel": "Das war gemein von dir, sie so zu ärgern.",
+   "currentBeispielTr": "Ona böyle takılman senin için kötü niyetliceydi."
   },
   {
    "id": 7510,
@@ -228,10 +228,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "dürüst, terbiyeli",
-   "mevcutBeispiel": "Er ist ein anständiger Mensch und hilft immer.",
-   "mevcutBeispielTr": "O dürüst bir insan ve her zaman yardım eder.",
-   "cakisan": [
+   "currentTr": "dürüst, terbiyeli",
+   "currentBeispiel": "Er ist ein anständiger Mensch und hilft immer.",
+   "currentBeispielTr": "O dürüst bir insan ve her zaman yardım eder.",
+   "overlapping": [
     "ehrlich (B1)",
     "integer (C1)"
    ]
@@ -242,9 +242,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kuşkucu, güvenmeyen",
-   "mevcutBeispiel": "Seit dem Streit ist sie mir gegenüber misstrauisch.",
-   "mevcutBeispielTr": "Kavgadan beri bana karşı kuşkucu."
+   "currentTr": "kuşkucu, güvenmeyen",
+   "currentBeispiel": "Seit dem Streit ist sie mir gegenüber misstrauisch.",
+   "currentBeispielTr": "Kavgadan beri bana karşı kuşkucu."
   },
   {
    "id": 7512,
@@ -252,10 +252,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kıskanç, imrenen",
-   "mevcutBeispiel": "Meine Kollegin ist neidisch auf mein neues Auto.",
-   "mevcutBeispielTr": "Meslektaşım yeni arabamı kıskanıyor.",
-   "cakisan": [
+   "currentTr": "kıskanç, imrenen",
+   "currentBeispiel": "Meine Kollegin ist neidisch auf mein neues Auto.",
+   "currentBeispielTr": "Meslektaşım yeni arabamı kıskanıyor.",
+   "overlapping": [
     "eifersüchtig (B2)"
    ]
   },
@@ -265,10 +265,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "uslu, söz dinleyen",
-   "mevcutBeispiel": "Die Kinder waren heute den ganzen Tag brav.",
-   "mevcutBeispielTr": "Çocuklar bugün bütün gün uslu durdular.",
-   "cakisan": [
+   "currentTr": "uslu, söz dinleyen",
+   "currentBeispiel": "Die Kinder waren heute den ganzen Tag brav.",
+   "currentBeispielTr": "Çocuklar bugün bütün gün uslu durdular.",
+   "overlapping": [
     "artig (A2)"
    ]
   },
@@ -278,9 +278,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "agresif, saldırgan (davranış)",
-   "mevcutBeispiel": "Nach zwei Bier wird er leider aggressiv.",
-   "mevcutBeispielTr": "İki biradan sonra maalesef saldırganlaşıyor."
+   "currentTr": "agresif, saldırgan (davranış)",
+   "currentBeispiel": "Nach zwei Bier wird er leider aggressiv.",
+   "currentBeispielTr": "İki biradan sonra maalesef saldırganlaşıyor."
   },
   {
    "id": 7515,
@@ -288,9 +288,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "barışçıl, huzurlu",
-   "mevcutBeispiel": "Mein Großvater war ein friedlicher Mann.",
-   "mevcutBeispielTr": "Dedem barışçıl bir adamdı."
+   "currentTr": "barışçıl, huzurlu",
+   "currentBeispiel": "Mein Großvater war ein friedlicher Mann.",
+   "currentBeispielTr": "Dedem barışçıl bir adamdı."
   },
   {
    "id": 7516,
@@ -298,10 +298,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "saygılı",
-   "mevcutBeispiel": "Die Schüler sind respektvoll zu ihren Lehrern.",
-   "mevcutBeispielTr": "Öğrenciler öğretmenlerine karşı saygılı.",
-   "cakisan": [
+   "currentTr": "saygılı",
+   "currentBeispiel": "Die Schüler sind respektvoll zu ihren Lehrern.",
+   "currentBeispielTr": "Öğrenciler öğretmenlerine karşı saygılı.",
+   "overlapping": [
     "rücksichtsvoll (B2)"
    ]
   },
@@ -311,9 +311,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "düşüncesiz, saygısız",
-   "mevcutBeispiel": "Er fährt rücksichtslos und viel zu schnell.",
-   "mevcutBeispielTr": "Düşüncesizce ve çok hızlı araba kullanıyor."
+   "currentTr": "düşüncesiz, saygısız",
+   "currentBeispiel": "Er fährt rücksichtslos und viel zu schnell.",
+   "currentBeispielTr": "Düşüncesizce ve çok hızlı araba kullanıyor."
   },
   {
    "id": 7518,
@@ -321,10 +321,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "arsız, terbiyesiz",
-   "mevcutBeispiel": "Seine Antwort am Telefon war richtig unverschämt.",
-   "mevcutBeispielTr": "Telefondaki cevabı gerçekten terbiyesizceydi.",
-   "cakisan": [
+   "currentTr": "arsız, terbiyesiz",
+   "currentBeispiel": "Seine Antwort am Telefon war richtig unverschämt.",
+   "currentBeispielTr": "Telefondaki cevabı gerçekten terbiyesizceydi.",
+   "overlapping": [
     "frech (B1)"
    ]
   },
@@ -334,10 +334,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kaba, nezaketsiz",
-   "mevcutBeispiel": "Es ist unhöflich, beim Essen auf das Handy zu schauen.",
-   "mevcutBeispielTr": "Yemek sırasında telefona bakmak kabalıktır.",
-   "cakisan": [
+   "currentTr": "kaba, nezaketsiz",
+   "currentBeispiel": "Es ist unhöflich, beim Essen auf das Handy zu schauen.",
+   "currentBeispielTr": "Yemek sırasında telefona bakmak kabalıktır.",
+   "overlapping": [
     "grob (A2)"
    ]
   },
@@ -347,9 +347,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sadakatsiz, vefasız",
-   "mevcutBeispiel": "Sie hat sich getrennt, weil ihr Mann untreu war.",
-   "mevcutBeispielTr": "Kocası sadakatsiz olduğu için ondan ayrıldı."
+   "currentTr": "sadakatsiz, vefasız",
+   "currentBeispiel": "Sie hat sich getrennt, weil ihr Mann untreu war.",
+   "currentBeispielTr": "Kocası sadakatsiz olduğu için ondan ayrıldı."
   },
   {
    "id": 7521,
@@ -357,10 +357,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kasten, bilerek",
-   "mevcutBeispiel": "Er hat das Glas nicht absichtlich kaputt gemacht.",
-   "mevcutBeispielTr": "Bardağı bilerek kırmadı.",
-   "cakisan": [
+   "currentTr": "kasten, bilerek",
+   "currentBeispiel": "Er hat das Glas nicht absichtlich kaputt gemacht.",
+   "currentBeispielTr": "Bardağı bilerek kırmadı.",
+   "overlapping": [
     "vorsätzlich (B2)"
    ]
   },
@@ -370,9 +370,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "çaresiz",
-   "mevcutBeispiel": "Ohne meine Brille fühle ich mich völlig hilflos.",
-   "mevcutBeispielTr": "Gözlüğüm olmadan kendimi tamamen çaresiz hissediyorum."
+   "currentTr": "çaresiz",
+   "currentBeispiel": "Ohne meine Brille fühle ich mich völlig hilflos.",
+   "currentBeispielTr": "Gözlüğüm olmadan kendimi tamamen çaresiz hissediyorum."
   },
   {
    "id": 7523,
@@ -380,9 +380,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "becerikli, mahir",
-   "mevcutBeispiel": "Meine Schwester ist sehr geschickt mit ihren Händen.",
-   "mevcutBeispielTr": "Kız kardeşim elleriyle çok becerikli."
+   "currentTr": "becerikli, mahir",
+   "currentBeispiel": "Meine Schwester ist sehr geschickt mit ihren Händen.",
+   "currentBeispielTr": "Kız kardeşim elleriyle çok becerikli."
   },
   {
    "id": 7524,
@@ -390,9 +390,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "beceriksiz, sakar",
-   "mevcutBeispiel": "Ich bin so ungeschickt, mir fällt immer etwas herunter.",
-   "mevcutBeispielTr": "O kadar sakarım ki hep elimden bir şey düşüyor."
+   "currentTr": "beceriksiz, sakar",
+   "currentBeispiel": "Ich bin so ungeschickt, mir fällt immer etwas herunter.",
+   "currentBeispielTr": "O kadar sakarım ki hep elimden bir şey düşüyor."
   },
   {
    "id": 7525,
@@ -400,10 +400,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "akıllı, zeki, kurnaz",
-   "mevcutBeispiel": "Das war eine schlaue Idee von dir.",
-   "mevcutBeispielTr": "Bu senin akıllıca bir fikrindi.",
-   "cakisan": [
+   "currentTr": "akıllı, zeki, kurnaz",
+   "currentBeispiel": "Das war eine schlaue Idee von dir.",
+   "currentBeispielTr": "Bu senin akıllıca bir fikrindi.",
+   "overlapping": [
     "klug (A2)"
    ]
   },
@@ -413,10 +413,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yetenekli",
-   "mevcutBeispiel": "Mein Sohn ist musikalisch sehr begabt.",
-   "mevcutBeispielTr": "Oğlum müzik konusunda çok yetenekli.",
-   "cakisan": [
+   "currentTr": "yetenekli",
+   "currentBeispiel": "Mein Sohn ist musikalisch sehr begabt.",
+   "currentBeispielTr": "Oğlum müzik konusunda çok yetenekli.",
+   "overlapping": [
     "talentiert (A2)"
    ]
   },
@@ -426,10 +426,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yetenekli",
-   "mevcutBeispiel": "Sie ist eine talentierte junge Fußballspielerin.",
-   "mevcutBeispielTr": "O yetenekli genç bir futbolcu.",
-   "cakisan": [
+   "currentTr": "yetenekli",
+   "currentBeispiel": "Sie ist eine talentierte junge Fußballspielerin.",
+   "currentBeispielTr": "O yetenekli genç bir futbolcu.",
+   "overlapping": [
     "begabt (A2)"
    ]
   },
@@ -439,9 +439,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "unutkan",
-   "mevcutBeispiel": "Im Alter wurde meine Oma sehr vergesslich.",
-   "mevcutBeispielTr": "Yaşlılıkta babaannem çok unutkan oldu."
+   "currentTr": "unutkan",
+   "currentBeispiel": "Im Alter wurde meine Oma sehr vergesslich.",
+   "currentBeispielTr": "Yaşlılıkta babaannem çok unutkan oldu."
   },
   {
    "id": 7529,
@@ -449,9 +449,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "iyi kalpli, yumuşak huylu",
-   "mevcutBeispiel": "Unser Hausmeister ist ein gutmütiger alter Mann.",
-   "mevcutBeispielTr": "Kapıcımız iyi kalpli yaşlı bir adam."
+   "currentTr": "iyi kalpli, yumuşak huylu",
+   "currentBeispiel": "Unser Hausmeister ist ein gutmütiger alter Mann.",
+   "currentBeispielTr": "Kapıcımız iyi kalpli yaşlı bir adam."
   },
   {
    "id": 7530,
@@ -459,9 +459,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "dakik olmayan, geç kalan",
-   "mevcutBeispiel": "Er ist immer unpünktlich und kommt zu spät.",
-   "mevcutBeispielTr": "O her zaman dakik değil ve geç geliyor."
+   "currentTr": "dakik olmayan, geç kalan",
+   "currentBeispiel": "Er ist immer unpünktlich und kommt zu spät.",
+   "currentBeispielTr": "O her zaman dakik değil ve geç geliyor."
   },
   {
    "id": 7531,
@@ -469,9 +469,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "telaşlı, aceleci",
-   "mevcutBeispiel": "Am Morgen ist meine Mutter immer sehr hektisch.",
-   "mevcutBeispielTr": "Sabahları annem hep çok telaşlı olur."
+   "currentTr": "telaşlı, aceleci",
+   "currentBeispiel": "Am Morgen ist meine Mutter immer sehr hektisch.",
+   "currentBeispielTr": "Sabahları annem hep çok telaşlı olur."
   },
   {
    "id": 7532,
@@ -479,10 +479,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "rahat, havalı",
-   "mevcutBeispiel": "Mein Chef ist im Büro sehr lässig.",
-   "mevcutBeispielTr": "Patronum ofiste çok rahat.",
-   "cakisan": [
+   "currentTr": "rahat, havalı",
+   "currentBeispiel": "Mein Chef ist im Büro sehr lässig.",
+   "currentBeispielTr": "Patronum ofiste çok rahat.",
+   "overlapping": [
     "gemütlich (A1)",
     "bequem (A2)"
    ]
@@ -493,10 +493,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "hareketli, canlı (kişi, huy)",
-   "mevcutBeispiel": "Unsere Tochter ist ein lebhaftes Kind.",
-   "mevcutBeispielTr": "Kızımız canlı bir çocuk.",
-   "cakisan": [
+   "currentTr": "hareketli, canlı (kişi, huy)",
+   "currentBeispiel": "Unsere Tochter ist ein lebhaftes Kind.",
+   "currentBeispielTr": "Kızımız canlı bir çocuk.",
+   "overlapping": [
     "mobil (B1)",
     "belebt (A2)"
    ]
@@ -507,9 +507,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "çocukça",
-   "mevcutBeispiel": "Mit vierzig ist so ein Streit einfach kindisch.",
-   "mevcutBeispielTr": "Kırk yaşında böyle bir kavga düpedüz çocukça."
+   "currentTr": "çocukça",
+   "currentBeispiel": "Mit vierzig ist so ein Streit einfach kindisch.",
+   "currentBeispielTr": "Kırk yaşında böyle bir kavga düpedüz çocukça."
   },
   {
    "id": 7535,
@@ -517,9 +517,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sevimli, cana yakın, hoş sohbet",
-   "mevcutBeispiel": "Der Kellner war sehr charmant zu den Gästen.",
-   "mevcutBeispielTr": "Garson misafirlere karşı çok sevimliydi."
+   "currentTr": "sevimli, cana yakın, hoş sohbet",
+   "currentBeispiel": "Der Kellner war sehr charmant zu den Gästen.",
+   "currentBeispielTr": "Garson misafirlere karşı çok sevimliydi."
   },
   {
    "id": 7536,
@@ -527,9 +527,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "çekici, alımlı",
-   "mevcutBeispiel": "Sie findet ihren neuen Kollegen sehr attraktiv.",
-   "mevcutBeispielTr": "Yeni iş arkadaşını çok çekici buluyor."
+   "currentTr": "çekici, alımlı",
+   "currentBeispiel": "Sie findet ihren neuen Kollegen sehr attraktiv.",
+   "currentBeispielTr": "Yeni iş arkadaşını çok çekici buluyor."
   },
   {
    "id": 7537,
@@ -537,9 +537,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "düşünceli, dalgın",
-   "mevcutBeispiel": "Nach dem Gespräch war mein Vater sehr nachdenklich.",
-   "mevcutBeispielTr": "Konuşmadan sonra babam çok düşünceliydi."
+   "currentTr": "düşünceli, dalgın",
+   "currentBeispiel": "Nach dem Gespräch war mein Vater sehr nachdenklich.",
+   "currentBeispielTr": "Konuşmadan sonra babam çok düşünceliydi."
   }
  ]
 }

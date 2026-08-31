@@ -1,16 +1,16 @@
 {
- "paket": "a2-010",
+ "packet": "a2-010",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 7438,
    "de": "klebrig",
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yapış yapış, yapışkan",
-   "mevcutBeispiel": "Der Tisch ist noch klebrig vom Saft.",
-   "mevcutBeispielTr": "Masa meyve suyundan hâlâ yapış yapış."
+   "currentTr": "yapış yapış, yapışkan",
+   "currentBeispiel": "Der Tisch ist noch klebrig vom Saft.",
+   "currentBeispielTr": "Masa meyve suyundan hâlâ yapış yapış."
   },
   {
    "id": 7439,
@@ -18,9 +18,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "tozlu",
-   "mevcutBeispiel": "Die Bücher im Keller sind sehr staubig.",
-   "mevcutBeispielTr": "Bodrumdaki kitaplar çok tozlu."
+   "currentTr": "tozlu",
+   "currentBeispiel": "Die Bücher im Keller sind sehr staubig.",
+   "currentBeispielTr": "Bodrumdaki kitaplar çok tozlu."
   },
   {
    "id": 7440,
@@ -28,9 +28,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "parlak",
-   "mevcutBeispiel": "Nach dem Putzen ist der Boden richtig glänzend.",
-   "mevcutBeispielTr": "Temizlikten sonra yer gerçekten parlak."
+   "currentTr": "parlak",
+   "currentBeispiel": "Nach dem Putzen ist der Boden richtig glänzend.",
+   "currentBeispielTr": "Temizlikten sonra yer gerçekten parlak."
   },
   {
    "id": 7441,
@@ -38,9 +38,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "mat",
-   "mevcutBeispiel": "Wir haben die Wände in einem matten Weiß gestrichen.",
-   "mevcutBeispielTr": "Duvarları mat bir beyaza boyadık."
+   "currentTr": "mat",
+   "currentBeispiel": "Wir haben die Wände in einem matten Weiß gestrichen.",
+   "currentBeispielTr": "Duvarları mat bir beyaza boyadık."
   },
   {
    "id": 7442,
@@ -48,9 +48,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "ahşap, tahtadan",
-   "mevcutBeispiel": "Auf dem Balkon steht ein hölzerner Stuhl.",
-   "mevcutBeispielTr": "Balkonda ahşap bir sandalye duruyor."
+   "currentTr": "ahşap, tahtadan",
+   "currentBeispiel": "Auf dem Balkon steht ein hölzerner Stuhl.",
+   "currentBeispielTr": "Balkonda ahşap bir sandalye duruyor."
   },
   {
    "id": 7443,
@@ -58,9 +58,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "metalik, madensi",
-   "mevcutBeispiel": "Das Wasser hier schmeckt etwas metallisch.",
-   "mevcutBeispielTr": "Buradaki su biraz metalik tadıyor."
+   "currentTr": "metalik, madensi",
+   "currentBeispiel": "Das Wasser hier schmeckt etwas metallisch.",
+   "currentBeispielTr": "Buradaki su biraz metalik tadıyor."
   },
   {
    "id": 7444,
@@ -68,9 +68,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "su geçirmez",
-   "mevcutBeispiel": "Meine neue Jacke ist zum Glück wasserdicht.",
-   "mevcutBeispielTr": "Yeni montum neyse ki su geçirmez."
+   "currentTr": "su geçirmez",
+   "currentBeispiel": "Meine neue Jacke ist zum Glück wasserdicht.",
+   "currentBeispielTr": "Yeni montum neyse ki su geçirmez."
   },
   {
    "id": 7445,
@@ -78,9 +78,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "açık mavi",
-   "mevcutBeispiel": "Sie trägt ein hellblaues Hemd.",
-   "mevcutBeispielTr": "Açık mavi bir gömlek giyiyor."
+   "currentTr": "açık mavi",
+   "currentBeispiel": "Sie trägt ein hellblaues Hemd.",
+   "currentBeispielTr": "Açık mavi bir gömlek giyiyor."
   },
   {
    "id": 7446,
@@ -88,9 +88,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "koyu mavi, lacivert",
-   "mevcutBeispiel": "Der Koffer ist dunkelblau und ziemlich groß.",
-   "mevcutBeispielTr": "Bavul lacivert ve oldukça büyük."
+   "currentTr": "koyu mavi, lacivert",
+   "currentBeispiel": "Der Koffer ist dunkelblau und ziemlich groß.",
+   "currentBeispielTr": "Bavul lacivert ve oldukça büyük."
   },
   {
    "id": 7447,
@@ -98,9 +98,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "mavimsi",
-   "mevcutBeispiel": "Am Abend wird der Schnee bläulich.",
-   "mevcutBeispielTr": "Akşamları kar mavimsi oluyor."
+   "currentTr": "mavimsi",
+   "currentBeispiel": "Am Abend wird der Schnee bläulich.",
+   "currentBeispielTr": "Akşamları kar mavimsi oluyor."
   },
   {
    "id": 7448,
@@ -108,9 +108,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kırmızımsı",
-   "mevcutBeispiel": "Ihre Haare sind rötlich, fast orange.",
-   "mevcutBeispielTr": "Saçları kırmızımsı, neredeyse turuncu."
+   "currentTr": "kırmızımsı",
+   "currentBeispiel": "Ihre Haare sind rötlich, fast orange.",
+   "currentBeispielTr": "Saçları kırmızımsı, neredeyse turuncu."
   },
   {
    "id": 7449,
@@ -118,9 +118,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sarımsı",
-   "mevcutBeispiel": "Die alte Tischdecke ist schon gelblich.",
-   "mevcutBeispielTr": "Eski masa örtüsü artık sarımsı."
+   "currentTr": "sarımsı",
+   "currentBeispiel": "Die alte Tischdecke ist schon gelblich.",
+   "currentBeispielTr": "Eski masa örtüsü artık sarımsı."
   },
   {
    "id": 7450,
@@ -128,9 +128,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "altın rengi, altından",
-   "mevcutBeispiel": "Meine Oma trägt einen goldenen Ring.",
-   "mevcutBeispielTr": "Babaannem altın bir yüzük takıyor."
+   "currentTr": "altın rengi, altından",
+   "currentBeispiel": "Meine Oma trägt einen goldenen Ring.",
+   "currentBeispielTr": "Babaannem altın bir yüzük takıyor."
   },
   {
    "id": 7451,
@@ -138,9 +138,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "gümüş rengi, gümüşten",
-   "mevcutBeispiel": "Auf dem Tisch liegen silberne Löffel.",
-   "mevcutBeispielTr": "Masanın üstünde gümüş kaşıklar duruyor."
+   "currentTr": "gümüş rengi, gümüşten",
+   "currentBeispiel": "Auf dem Tisch liegen silberne Löffel.",
+   "currentBeispielTr": "Masanın üstünde gümüş kaşıklar duruyor."
   },
   {
    "id": 7452,
@@ -148,9 +148,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "tek renkli, düz renk",
-   "mevcutBeispiel": "Für das Büro kaufe ich lieber einfarbige Hemden.",
-   "mevcutBeispielTr": "Ofis için tek renkli gömlekler almayı tercih ediyorum."
+   "currentTr": "tek renkli, düz renk",
+   "currentBeispiel": "Für das Büro kaufe ich lieber einfarbige Hemden.",
+   "currentBeispielTr": "Ofis için tek renkli gömlekler almayı tercih ediyorum."
   },
   {
    "id": 7453,
@@ -158,9 +158,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "çizgili",
-   "mevcutBeispiel": "Er hat einen gestreiften Pullover an.",
-   "mevcutBeispielTr": "Üstünde çizgili bir kazak var."
+   "currentTr": "çizgili",
+   "currentBeispiel": "Er hat einen gestreiften Pullover an.",
+   "currentBeispielTr": "Üstünde çizgili bir kazak var."
   },
   {
    "id": 7454,
@@ -168,9 +168,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kareli, ekose",
-   "mevcutBeispiel": "Auf dem Tisch liegt eine karierte Decke.",
-   "mevcutBeispielTr": "Masanın üstünde kareli bir örtü duruyor."
+   "currentTr": "kareli, ekose",
+   "currentBeispiel": "Auf dem Tisch liegt eine karierte Decke.",
+   "currentBeispielTr": "Masanın üstünde kareli bir örtü duruyor."
   },
   {
    "id": 7455,
@@ -178,9 +178,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "arızalı, bozuk",
-   "mevcutBeispiel": "Der Aufzug ist seit Montag defekt.",
-   "mevcutBeispielTr": "Asansör pazartesiden beri arızalı."
+   "currentTr": "arızalı, bozuk",
+   "currentBeispiel": "Der Aufzug ist seit Montag defekt.",
+   "currentBeispielTr": "Asansör pazartesiden beri arızalı."
   },
   {
    "id": 7456,
@@ -188,9 +188,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "hasarlı, zarar görmüş",
-   "mevcutBeispiel": "Das Paket kam beschädigt bei mir an.",
-   "mevcutBeispielTr": "Paket bana hasarlı ulaştı."
+   "currentTr": "hasarlı, zarar görmüş",
+   "currentBeispiel": "Das Paket kam beschädigt bei mir an.",
+   "currentBeispielTr": "Paket bana hasarlı ulaştı."
   },
   {
    "id": 7457,
@@ -198,9 +198,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kırık, kırılmış",
-   "mevcutBeispiel": "Im Karton lagen zwei zerbrochene Teller.",
-   "mevcutBeispielTr": "Kutunun içinde iki kırık tabak vardı."
+   "currentTr": "kırık, kırılmış",
+   "currentBeispiel": "Im Karton lagen zwei zerbrochene Teller.",
+   "currentBeispielTr": "Kutunun içinde iki kırık tabak vardı."
   },
   {
    "id": 7458,
@@ -208,10 +208,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sağlam, bütün",
-   "mevcutBeispiel": "Zum Glück sind alle Gläser heil geblieben.",
-   "mevcutBeispielTr": "Neyse ki bütün bardaklar sağlam kaldı.",
-   "cakisan": [
+   "currentTr": "sağlam, bütün",
+   "currentBeispiel": "Zum Glück sind alle Gläser heil geblieben.",
+   "currentBeispielTr": "Neyse ki bütün bardaklar sağlam kaldı.",
+   "overlapping": [
     "fest (B1)",
     "tragfähig (C1)",
     "stichhaltig (C1)",
@@ -224,9 +224,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "ikinci el, kullanılmış",
-   "mevcutBeispiel": "Wir haben eine gebrauchte Waschmaschine gekauft.",
-   "mevcutBeispielTr": "İkinci el bir çamaşır makinesi aldık."
+   "currentTr": "ikinci el, kullanılmış",
+   "currentBeispiel": "Wir haben eine gebrauchte Waschmaschine gekauft.",
+   "currentBeispielTr": "İkinci el bir çamaşır makinesi aldık."
   },
   {
    "id": 7460,
@@ -234,9 +234,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yıpranmış, eskimiş",
-   "mevcutBeispiel": "Der Teppich im Wohnzimmer ist schon abgenutzt.",
-   "mevcutBeispielTr": "Oturma odasındaki halı iyice yıpranmış."
+   "currentTr": "yıpranmış, eskimiş",
+   "currentBeispiel": "Der Teppich im Wohnzimmer ist schon abgenutzt.",
+   "currentBeispielTr": "Oturma odasındaki halı iyice yıpranmış."
   },
   {
    "id": 7461,
@@ -244,9 +244,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "paslı",
-   "mevcutBeispiel": "Im Garten steht ein rostiges Fahrrad.",
-   "mevcutBeispielTr": "Bahçede paslı bir bisiklet duruyor."
+   "currentTr": "paslı",
+   "currentBeispiel": "Im Garten steht ein rostiges Fahrrad.",
+   "currentBeispielTr": "Bahçede paslı bir bisiklet duruyor."
   },
   {
    "id": 7462,
@@ -254,9 +254,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sallanan, oynak",
-   "mevcutBeispiel": "Setz dich nicht auf den Stuhl, er ist wackelig.",
-   "mevcutBeispielTr": "O sandalyeye oturma, sallanıyor."
+   "currentTr": "sallanan, oynak",
+   "currentBeispiel": "Setz dich nicht auf den Stuhl, er ist wackelig.",
+   "currentBeispielTr": "O sandalyeye oturma, sallanıyor."
   },
   {
    "id": 7463,
@@ -264,10 +264,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kırılgan, kolay kırılır",
-   "mevcutBeispiel": "Vorsicht, die Vase ist sehr zerbrechlich.",
-   "mevcutBeispielTr": "Dikkat et, vazo çok kırılgan.",
-   "cakisan": [
+   "currentTr": "kırılgan, kolay kırılır",
+   "currentBeispiel": "Vorsicht, die Vase ist sehr zerbrechlich.",
+   "currentBeispielTr": "Dikkat et, vazo çok kırılgan.",
+   "overlapping": [
     "spröde (B2)"
    ]
   },
@@ -277,10 +277,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sağlam, dayanıklı",
-   "mevcutBeispiel": "Das Regal ist stabil und trägt viele Bücher.",
-   "mevcutBeispielTr": "Raf sağlam ve çok kitap taşıyor.",
-   "cakisan": [
+   "currentTr": "sağlam, dayanıklı",
+   "currentBeispiel": "Das Regal ist stabil und trägt viele Bücher.",
+   "currentBeispielTr": "Raf sağlam ve çok kitap taşıyor.",
+   "overlapping": [
     "fest (B1)",
     "tragfähig (C1)",
     "stichhaltig (C1)",
@@ -293,10 +293,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "dolu, doldurulmuş",
-   "mevcutBeispiel": "Auf dem Tisch stand eine mit Wasser gefüllte Flasche.",
-   "mevcutBeispielTr": "Masanın üstünde suyla dolu bir şişe duruyordu.",
-   "cakisan": [
+   "currentTr": "dolu, doldurulmuş",
+   "currentBeispiel": "Auf dem Tisch stand eine mit Wasser gefüllte Flasche.",
+   "currentBeispielTr": "Masanın üstünde suyla dolu bir şişe duruyordu.",
+   "overlapping": [
     "besetzt (A1)",
     "voll (A2)",
     "der Hagel (B2)"
@@ -308,9 +308,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "dağınık, düzensiz",
-   "mevcutBeispiel": "Mein Zimmer ist heute sehr unordentlich.",
-   "mevcutBeispielTr": "Odam bugün çok dağınık."
+   "currentTr": "dağınık, düzensiz",
+   "currentBeispiel": "Mein Zimmer ist heute sehr unordentlich.",
+   "currentBeispielTr": "Odam bugün çok dağınık."
   },
   {
    "id": 7467,
@@ -318,9 +318,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "bakımlı, özenli",
-   "mevcutBeispiel": "Der Garten hinter dem Haus ist sehr gepflegt.",
-   "mevcutBeispielTr": "Evin arkasındaki bahçe çok bakımlı."
+   "currentTr": "bakımlı, özenli",
+   "currentBeispiel": "Der Garten hinter dem Haus ist sehr gepflegt.",
+   "currentBeispielTr": "Evin arkasındaki bahçe çok bakımlı."
   },
   {
    "id": 7468,
@@ -328,10 +328,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kirli, pis",
-   "mevcutBeispiel": "Deine Schuhe sind ganz dreckig.",
-   "mevcutBeispielTr": "Ayakkabıların resmen kirli.",
-   "cakisan": [
+   "currentTr": "kirli, pis",
+   "currentBeispiel": "Deine Schuhe sind ganz dreckig.",
+   "currentBeispielTr": "Ayakkabıların resmen kirli.",
+   "overlapping": [
     "schmutzig (A2)"
    ]
   },
@@ -341,9 +341,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "bozulmuş, çürümüş",
-   "mevcutBeispiel": "Die Milch im Kühlschrank ist verdorben.",
-   "mevcutBeispielTr": "Buzdolabındaki süt bozulmuş."
+   "currentTr": "bozulmuş, çürümüş",
+   "currentBeispiel": "Die Milch im Kühlschrank ist verdorben.",
+   "currentBeispielTr": "Buzdolabındaki süt bozulmuş."
   },
   {
    "id": 7470,
@@ -351,9 +351,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "küflü",
-   "mevcutBeispiel": "Das Brot ist nach einer Woche schimmelig.",
-   "mevcutBeispielTr": "Ekmek bir hafta sonra küflü."
+   "currentTr": "küflü",
+   "currentBeispiel": "Das Brot ist nach einer Woche schimmelig.",
+   "currentBeispielTr": "Ekmek bir hafta sonra küflü."
   },
   {
    "id": 7471,
@@ -361,9 +361,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "olağanüstü, sıra dışı",
-   "mevcutBeispiel": "Das Hotel hatte eine außergewöhnliche Aussicht.",
-   "mevcutBeispielTr": "Otelin olağanüstü bir manzarası vardı."
+   "currentTr": "olağanüstü, sıra dışı",
+   "currentBeispiel": "Das Hotel hatte eine außergewöhnliche Aussicht.",
+   "currentBeispielTr": "Otelin olağanüstü bir manzarası vardı."
   },
   {
    "id": 7472,
@@ -371,10 +371,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kaliteli, zarif",
-   "mevcutBeispiel": "Das Restaurant hat edle Möbel aus dunklem Holz.",
-   "mevcutBeispielTr": "Restoranda koyu ahşaptan kaliteli mobilyalar var.",
-   "cakisan": [
+   "currentTr": "kaliteli, zarif",
+   "currentBeispiel": "Das Restaurant hat edle Möbel aus dunklem Holz.",
+   "currentBeispielTr": "Restoranda koyu ahşaptan kaliteli mobilyalar var.",
+   "overlapping": [
     "hochwertig (B2)"
    ]
   },
@@ -384,9 +384,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sade, gösterişsiz",
-   "mevcutBeispiel": "Ich mag Zimmer, die schlicht eingerichtet sind.",
-   "mevcutBeispielTr": "Sade döşenmiş odaları severim."
+   "currentTr": "sade, gösterişsiz",
+   "currentBeispiel": "Ich mag Zimmer, die schlicht eingerichtet sind.",
+   "currentBeispielTr": "Sade döşenmiş odaları severim."
   },
   {
    "id": 7474,
@@ -394,9 +394,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "özgün, orijinal",
-   "mevcutBeispiel": "Dein Geschenk war wirklich originell.",
-   "mevcutBeispielTr": "Hediyen gerçekten özgündü."
+   "currentTr": "özgün, orijinal",
+   "currentBeispiel": "Dein Geschenk war wirklich originell.",
+   "currentBeispielTr": "Hediyen gerçekten özgündü."
   },
   {
    "id": 7475,
@@ -404,9 +404,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "göze batmayan, dikkat çekmeyen",
-   "mevcutBeispiel": "Die Tasche ist klein und unauffällig.",
-   "mevcutBeispielTr": "Çanta küçük ve göze batmıyor."
+   "currentTr": "göze batmayan, dikkat çekmeyen",
+   "currentBeispiel": "Die Tasche ist klein und unauffällig.",
+   "currentBeispielTr": "Çanta küçük ve göze batmıyor."
   },
   {
    "id": 7476,
@@ -414,9 +414,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "göze çarpan, dikkat çekici",
-   "mevcutBeispiel": "Sie trägt heute eine auffällige rote Jacke.",
-   "mevcutBeispielTr": "Bugün dikkat çekici kırmızı bir ceket giyiyor."
+   "currentTr": "göze çarpan, dikkat çekici",
+   "currentBeispiel": "Sie trägt heute eine auffällige rote Jacke.",
+   "currentBeispielTr": "Bugün dikkat çekici kırmızı bir ceket giyiyor."
   },
   {
    "id": 7477,
@@ -424,9 +424,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "eski moda, demode",
-   "mevcutBeispiel": "Die Lampe im Flur sieht ziemlich altmodisch aus.",
-   "mevcutBeispielTr": "Koridordaki lamba oldukça eski moda görünüyor."
+   "currentTr": "eski moda, demode",
+   "currentBeispiel": "Die Lampe im Flur sieht ziemlich altmodisch aus.",
+   "currentBeispielTr": "Koridordaki lamba oldukça eski moda görünüyor."
   },
   {
    "id": 7478,
@@ -434,9 +434,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "modaya uygun, şık",
-   "mevcutBeispiel": "Diese Brille ist gerade sehr modisch.",
-   "mevcutBeispielTr": "Bu gözlük şu sıralar çok modaya uygun."
+   "currentTr": "modaya uygun, şık",
+   "currentBeispiel": "Diese Brille ist gerade sehr modisch.",
+   "currentBeispielTr": "Bu gözlük şu sıralar çok modaya uygun."
   },
   {
    "id": 7479,
@@ -444,9 +444,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kullanışlı, taşıması kolay",
-   "mevcutBeispiel": "Der kleine Koffer ist leicht und handlich.",
-   "mevcutBeispielTr": "Küçük bavul hafif ve kullanışlı."
+   "currentTr": "kullanışlı, taşıması kolay",
+   "currentBeispiel": "Der kleine Koffer ist leicht und handlich.",
+   "currentBeispielTr": "Küçük bavul hafif ve kullanışlı."
   },
   {
    "id": 7480,
@@ -454,9 +454,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "buz gibi",
-   "mevcutBeispiel": "Draußen weht ein eisiger Wind.",
-   "mevcutBeispielTr": "Dışarıda buz gibi bir rüzgâr esiyor."
+   "currentTr": "buz gibi",
+   "currentBeispiel": "Draußen weht ein eisiger Wind.",
+   "currentBeispielTr": "Dışarıda buz gibi bir rüzgâr esiyor."
   },
   {
    "id": 7481,
@@ -464,9 +464,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "ayazlı, dondurucu",
-   "mevcutBeispiel": "Die Nächte sind im Januar oft frostig.",
-   "mevcutBeispielTr": "Ocakta geceler çoğu zaman ayazlı olur."
+   "currentTr": "ayazlı, dondurucu",
+   "currentBeispiel": "Die Nächte sind im Januar oft frostig.",
+   "currentBeispielTr": "Ocakta geceler çoğu zaman ayazlı olur."
   },
   {
    "id": 7482,
@@ -474,9 +474,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "ılık",
-   "mevcutBeispiel": "Der Kaffee ist nur noch lauwarm.",
-   "mevcutBeispielTr": "Kahve artık sadece ılık."
+   "currentTr": "ılık",
+   "currentBeispiel": "Der Kaffee ist nur noch lauwarm.",
+   "currentBeispielTr": "Kahve artık sadece ılık."
   },
   {
    "id": 7483,
@@ -484,9 +484,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "fırtınalı",
-   "mevcutBeispiel": "Gestern war das Wetter sehr stürmisch.",
-   "mevcutBeispielTr": "Dün hava çok fırtınalıydı."
+   "currentTr": "fırtınalı",
+   "currentBeispiel": "Gestern war das Wetter sehr stürmisch.",
+   "currentBeispielTr": "Dün hava çok fırtınalıydı."
   },
   {
    "id": 7484,
@@ -494,9 +494,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yağmurlu",
-   "mevcutBeispiel": "Im April ist es hier meistens regnerisch.",
-   "mevcutBeispielTr": "Nisanda burası çoğunlukla yağmurlu olur."
+   "currentTr": "yağmurlu",
+   "currentBeispiel": "Im April ist es hier meistens regnerisch.",
+   "currentBeispielTr": "Nisanda burası çoğunlukla yağmurlu olur."
   },
   {
    "id": 7485,
@@ -504,10 +504,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kapalı (hava), bulutlu",
-   "mevcutBeispiel": "Heute bleibt der Himmel den ganzen Tag bedeckt.",
-   "mevcutBeispielTr": "Bugün gökyüzü bütün gün kapalı kalacak.",
-   "cakisan": [
+   "currentTr": "kapalı (hava), bulutlu",
+   "currentBeispiel": "Heute bleibt der Himmel den ganzen Tag bedeckt.",
+   "currentBeispielTr": "Bugün gökyüzü bütün gün kapalı kalacak.",
+   "overlapping": [
     "geschlossen (A1)"
    ]
   },
@@ -517,9 +517,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "cereyanlı, esintili",
-   "mevcutBeispiel": "Im Treppenhaus ist es immer zugig.",
-   "mevcutBeispielTr": "Merdiven boşluğu her zaman cereyanlıdır."
+   "currentTr": "cereyanlı, esintili",
+   "currentBeispiel": "Im Treppenhaus ist es immer zugig.",
+   "currentBeispielTr": "Merdiven boşluğu her zaman cereyanlıdır."
   },
   {
    "id": 7487,
@@ -527,9 +527,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "havasız, boğucu",
-   "mevcutBeispiel": "Im Bus war die Luft sehr stickig.",
-   "mevcutBeispielTr": "Otobüste hava çok boğucuydu."
+   "currentTr": "havasız, boğucu",
+   "currentBeispiel": "Im Bus war die Luft sehr stickig.",
+   "currentBeispielTr": "Otobüste hava çok boğucuydu."
   }
  ]
 }

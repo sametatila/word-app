@@ -97,7 +97,7 @@
   "gsw": "Telefonnummere",
   "gswArtikel": "d",
   "gswBeispiel": "Chasch mer bitte dini Telefonnummere gää?",
-  "ayniLehce": [
+  "sameDialect": [
    "Rufnummer (B1)"
   ]
  },
@@ -442,7 +442,7 @@
   "gsw": "Couvert",
   "gswArtikel": "s",
   "gswBeispiel": "De Brief liit in eme wiisse Couvert.",
-  "ayniLehce": [
+  "sameDialect": [
    "Briefumschlag (B1)",
    "Couvert (B1)",
    "Kuvert (B1)"
@@ -465,7 +465,7 @@
   "gsw": "Päckli",
   "gswArtikel": "s",
   "gswBeispiel": "Für mini Schweschter isch es Päckli choo.",
-  "ayniLehce": [
+  "sameDialect": [
    "Paket (A1)"
   ]
  },
@@ -639,7 +639,7 @@
   "gsw": "Billett",
   "gswArtikel": "s",
   "gswBeispiel": "Ich han mis Billett am Automaat gchauft.",
-  "ayniLehce": [
+  "sameDialect": [
    "Fahrkarte (A1)",
    "Billett (B1)"
   ]

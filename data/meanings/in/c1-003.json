@@ -1,17 +1,17 @@
 {
- "paket": "c1-003",
+ "packet": "c1-003",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 3475,
    "de": "die Relevanz",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "önem, konuyla ilgililik",
-   "mevcutBeispiel": "Die Relevanz der Studie für die Praxis ist unbestritten.",
-   "mevcutBeispielTr": "Çalışmanın uygulamadaki önemi tartışmasız.",
-   "cakisan": [
+   "currentTr": "önem, konuyla ilgililik",
+   "currentBeispiel": "Die Relevanz der Studie für die Praxis ist unbestritten.",
+   "currentBeispielTr": "Çalışmanın uygulamadaki önemi tartışmasız.",
+   "overlapping": [
     "die Tragweite (C1)"
    ]
   },
@@ -21,9 +21,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Expansionen",
-   "mevcutTr": "genişleme, büyüme",
-   "mevcutBeispiel": "Die geplante Expansion nach Südamerika wurde vorerst gestoppt.",
-   "mevcutBeispielTr": "Güney Amerika'ya planlanan genişleme şimdilik durduruldu."
+   "currentTr": "genişleme, büyüme",
+   "currentBeispiel": "Die geplante Expansion nach Südamerika wurde vorerst gestoppt.",
+   "currentBeispielTr": "Güney Amerika'ya planlanan genişleme şimdilik durduruldu."
   },
   {
    "id": 3649,
@@ -31,10 +31,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "verkörpert, hat verkörpert",
-   "mevcutTr": "somutlaştırmak, temsil etmek",
-   "mevcutBeispiel": "Die Figur verkörpert das Ideal des tragischen Helden.",
-   "mevcutBeispielTr": "Karakter, trajik kahraman idealini temsil ediyor.",
-   "cakisan": [
+   "currentTr": "somutlaştırmak, temsil etmek",
+   "currentBeispiel": "Die Figur verkörpert das Ideal des tragischen Helden.",
+   "currentBeispielTr": "Karakter, trajik kahraman idealini temsil ediyor.",
+   "overlapping": [
     "konkretisieren (C1)"
    ]
   },
@@ -44,9 +44,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "bezweckt, hat bezweckt",
-   "mevcutTr": "amaçlamak",
-   "mevcutBeispiel": "Was bezweckt er mit dieser Aussage eigentlich?",
-   "mevcutBeispielTr": "Bu sözüyle aslında neyi amaçlıyor?"
+   "currentTr": "amaçlamak",
+   "currentBeispiel": "Was bezweckt er mit dieser Aussage eigentlich?",
+   "currentBeispielTr": "Bu sözüyle aslında neyi amaçlıyor?"
   },
   {
    "id": 3605,
@@ -54,9 +54,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Ideologien",
-   "mevcutTr": "ideoloji",
-   "mevcutBeispiel": "Die Ideologie des Autors spiegelt sich in jedem Kapitel wider.",
-   "mevcutBeispielTr": "Yazarın ideolojisi her bölüme yansıyor."
+   "currentTr": "ideoloji",
+   "currentBeispiel": "Die Ideologie des Autors spiegelt sich in jedem Kapitel wider.",
+   "currentBeispielTr": "Yazarın ideolojisi her bölüme yansıyor."
   },
   {
    "id": 3640,
@@ -64,10 +64,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Relikte",
-   "mevcutTr": "kalıntı, geçmişten kalma şey",
-   "mevcutBeispiel": "Das Gedicht wirkt wie ein Relikt aus vergangenen Zeiten.",
-   "mevcutBeispielTr": "Şiir, geçmiş zamanlardan kalma bir kalıntı gibi duruyor.",
-   "cakisan": [
+   "currentTr": "kalıntı, geçmişten kalma şey",
+   "currentBeispiel": "Das Gedicht wirkt wie ein Relikt aus vergangenen Zeiten.",
+   "currentBeispielTr": "Şiir, geçmiş zamanlardan kalma bir kalıntı gibi duruyor.",
+   "overlapping": [
     "der Rückstand (B2)"
    ]
   },
@@ -77,10 +77,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "wägt ab, hat abgewogen",
-   "mevcutTr": "tartmak, kıyaslamak",
-   "mevcutBeispiel": "Man muss Vor- und Nachteile sorgfältig abwägen.",
-   "mevcutBeispielTr": "Artıları ve eksileri dikkatle tartmak gerekir.",
-   "cakisan": [
+   "currentTr": "tartmak, kıyaslamak",
+   "currentBeispiel": "Man muss Vor- und Nachteile sorgfältig abwägen.",
+   "currentBeispielTr": "Artıları ve eksileri dikkatle tartmak gerekir.",
+   "overlapping": [
     "wiegen (B1)"
    ]
   },
@@ -90,9 +90,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Revisionen",
-   "mevcutTr": "temyiz",
-   "mevcutBeispiel": "Die Revision wurde vom Bundesgerichtshof zugelassen.",
-   "mevcutBeispielTr": "Temyiz başvurusu Federal Yargıtay'ca kabul edildi."
+   "currentTr": "temyiz",
+   "currentBeispiel": "Die Revision wurde vom Bundesgerichtshof zugelassen.",
+   "currentBeispielTr": "Temyiz başvurusu Federal Yargıtay'ca kabul edildi."
   },
   {
    "id": 4001,
@@ -100,9 +100,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "beutet aus, hat ausgebeutet",
-   "mevcutTr": "sömürmek",
-   "mevcutBeispiel": "Konzerne beuten die Ressourcen ärmerer Länder rücksichtslos aus.",
-   "mevcutBeispielTr": "Şirketler, yoksul ülkelerin kaynaklarını acımasızca sömürüyor."
+   "currentTr": "sömürmek",
+   "currentBeispiel": "Konzerne beuten die Ressourcen ärmerer Länder rücksichtslos aus.",
+   "currentBeispielTr": "Şirketler, yoksul ülkelerin kaynaklarını acımasızca sömürüyor."
   },
   {
    "id": 3482,
@@ -110,10 +110,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Herangehensweisen",
-   "mevcutTr": "yaklaşım, yöntem",
-   "mevcutBeispiel": "Seine Herangehensweise unterscheidet sich grundlegend von der üblichen.",
-   "mevcutBeispielTr": "Yaklaşımı, alışılmış olandan temelden farklı.",
-   "cakisan": [
+   "currentTr": "yaklaşım, yöntem",
+   "currentBeispiel": "Seine Herangehensweise unterscheidet sich grundlegend von der üblichen.",
+   "currentBeispielTr": "Yaklaşımı, alışılmış olandan temelden farklı.",
+   "overlapping": [
     "die Näherung (C1)"
    ]
   },
@@ -123,9 +123,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zumutungen",
-   "mevcutTr": "kabul edilemez şey, eziyet",
-   "mevcutBeispiel": "Die lange Wartezeit empfand sie als reine Zumutung.",
-   "mevcutBeispielTr": "Uzun bekleme süresini düpedüz bir haksızlık olarak gördü."
+   "currentTr": "kabul edilemez şey, eziyet",
+   "currentBeispiel": "Die lange Wartezeit empfand sie als reine Zumutung.",
+   "currentBeispielTr": "Uzun bekleme süresini düpedüz bir haksızlık olarak gördü."
   },
   {
    "id": 3689,
@@ -133,10 +133,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "räumt ein, hat eingeräumt",
-   "mevcutTr": "kabul etmek, itiraf etmek",
-   "mevcutBeispiel": "Der Minister räumte Fehler in der Planung ein.",
-   "mevcutBeispielTr": "Bakan, planlamada hatalar olduğunu kabul etti.",
-   "cakisan": [
+   "currentTr": "kabul etmek, itiraf etmek",
+   "currentBeispiel": "Der Minister räumte Fehler in der Planung ein.",
+   "currentBeispielTr": "Bakan, planlamada hatalar olduğunu kabul etti.",
+   "overlapping": [
     "akzeptieren (B1)",
     "annehmen (B1)",
     "aufnehmen (B1)",
@@ -151,10 +151,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Fragmente",
-   "mevcutTr": "parça, kalıntı metin",
-   "mevcutBeispiel": "Nur ein Fragment des antiken Dramas ist erhalten geblieben.",
-   "mevcutBeispielTr": "Antik oyundan geriye yalnızca bir parça kaldı.",
-   "cakisan": [
+   "currentTr": "parça, kalıntı metin",
+   "currentBeispiel": "Nur ein Fragment des antiken Dramas ist erhalten geblieben.",
+   "currentBeispielTr": "Antik oyundan geriye yalnızca bir parça kaldı.",
+   "overlapping": [
     "das Stück (A1)",
     "der Teil (A1)",
     "das Bauteil (B2)"
@@ -166,10 +166,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "untermauert, hat untermauert",
-   "mevcutTr": "desteklemek, temellendirmek",
-   "mevcutBeispiel": "Zahlreiche Studien untermauern diese Annahme.",
-   "mevcutBeispielTr": "Sayısız çalışma bu varsayımı destekliyor.",
-   "cakisan": [
+   "currentTr": "desteklemek, temellendirmek",
+   "currentBeispiel": "Zahlreiche Studien untermauern diese Annahme.",
+   "currentBeispielTr": "Sayısız çalışma bu varsayımı destekliyor.",
+   "overlapping": [
     "fördern (B1)",
     "unterstützen (B1)",
     "befürworten (B2)",
@@ -182,9 +182,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "strebt an, hat angestrebt",
-   "mevcutTr": "hedeflemek, amaçlamak",
-   "mevcutBeispiel": "Der Vorstand strebt eine Verdopplung des Umsatzes an.",
-   "mevcutBeispielTr": "Yönetim kurulu ciroyu ikiye katlamayı hedefliyor."
+   "currentTr": "hedeflemek, amaçlamak",
+   "currentBeispiel": "Der Vorstand strebt eine Verdopplung des Umsatzes an.",
+   "currentBeispielTr": "Yönetim kurulu ciroyu ikiye katlamayı hedefliyor."
   },
   {
    "id": 4009,
@@ -192,9 +192,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ikiyüzlü, riyakâr",
-   "mevcutBeispiel": "Kritiker nennen die Kampagne des Unternehmens schlicht scheinheilig.",
-   "mevcutBeispielTr": "Eleştirmenler şirketin kampanyasını düpedüz ikiyüzlü buluyor."
+   "currentTr": "ikiyüzlü, riyakâr",
+   "currentBeispiel": "Kritiker nennen die Kampagne des Unternehmens schlicht scheinheilig.",
+   "currentBeispielTr": "Eleştirmenler şirketin kampanyasını düpedüz ikiyüzlü buluyor."
   },
   {
    "id": 3708,
@@ -202,9 +202,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "azim, ısrar",
-   "mevcutBeispiel": "Nur durch Beharrlichkeit erreichte sie ihr Ziel.",
-   "mevcutBeispielTr": "Hedefine ancak azimle ulaştı."
+   "currentTr": "azim, ısrar",
+   "currentBeispiel": "Nur durch Beharrlichkeit erreichte sie ihr Ziel.",
+   "currentBeispielTr": "Hedefine ancak azimle ulaştı."
   },
   {
    "id": 4007,
@@ -212,9 +212,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "erdemli",
-   "mevcutBeispiel": "In ihren Reden gibt sie sich gerne besonders tugendhaft.",
-   "mevcutBeispielTr": "Konuşmalarında kendini özellikle erdemli göstermeyi seviyor."
+   "currentTr": "erdemli",
+   "currentBeispiel": "In ihren Reden gibt sie sich gerne besonders tugendhaft.",
+   "currentBeispielTr": "Konuşmalarında kendini özellikle erdemli göstermeyi seviyor."
   },
   {
    "id": 3943,
@@ -222,9 +222,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Interessenkonflikte",
-   "mevcutTr": "çıkar çatışması",
-   "mevcutBeispiel": "Ein möglicher Interessenkonflikt wurde offen angesprochen.",
-   "mevcutBeispielTr": "Olası bir çıkar çatışması açıkça dile getirildi."
+   "currentTr": "çıkar çatışması",
+   "currentBeispiel": "Ein möglicher Interessenkonflikt wurde offen angesprochen.",
+   "currentBeispielTr": "Olası bir çıkar çatışması açıkça dile getirildi."
   },
   {
    "id": 3471,
@@ -232,10 +232,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kontroversen",
-   "mevcutTr": "tartışma, ihtilaf",
-   "mevcutBeispiel": "Die Kontroverse um die Studie hält bis heute an.",
-   "mevcutBeispielTr": "Çalışma etrafındaki tartışma bugün hâlâ sürüyor.",
-   "cakisan": [
+   "currentTr": "tartışma, ihtilaf",
+   "currentBeispiel": "Die Kontroverse um die Studie hält bis heute an.",
+   "currentBeispielTr": "Çalışma etrafındaki tartışma bugün hâlâ sürüyor.",
+   "overlapping": [
     "die Diskussion (B1)",
     "die Debatte (B2)",
     "die Auseinandersetzung (B2)"
@@ -247,9 +247,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "zarar sınırlama",
-   "mevcutBeispiel": "Nach dem Skandal betrieb die Firma reine Schadensbegrenzung.",
-   "mevcutBeispielTr": "Skandaldan sonra şirket yalnızca zararı sınırlamaya çalıştı."
+   "currentTr": "zarar sınırlama",
+   "currentBeispiel": "Nach dem Skandal betrieb die Firma reine Schadensbegrenzung.",
+   "currentBeispielTr": "Skandaldan sonra şirket yalnızca zararı sınırlamaya çalıştı."
   },
   {
    "id": 3465,
@@ -257,10 +257,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Auswertungen",
-   "mevcutTr": "değerlendirme, analiz",
-   "mevcutBeispiel": "Die statistische Auswertung dauerte mehrere Wochen.",
-   "mevcutBeispielTr": "İstatistiksel değerlendirme birkaç hafta sürdü.",
-   "cakisan": [
+   "currentTr": "değerlendirme, analiz",
+   "currentBeispiel": "Die statistische Auswertung dauerte mehrere Wochen.",
+   "currentBeispielTr": "İstatistiksel değerlendirme birkaç hafta sürdü.",
+   "overlapping": [
     "die Einschätzung (B2)",
     "die Bewertung (B2)",
     "die Beurteilung (B2)",
@@ -274,9 +274,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "eskimeyen, çağlar üstü",
-   "mevcutBeispiel": "Die Themen des Dramas wirken erstaunlich zeitlos und aktuell.",
-   "mevcutBeispielTr": "Oyunun temaları şaşırtıcı ölçüde zamansız ve güncel."
+   "currentTr": "eskimeyen, çağlar üstü",
+   "currentBeispiel": "Die Themen des Dramas wirken erstaunlich zeitlos und aktuell.",
+   "currentBeispielTr": "Oyunun temaları şaşırtıcı ölçüde zamansız ve güncel."
   },
   {
    "id": 3551,
@@ -284,10 +284,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ficht an, hat angefochten",
-   "mevcutTr": "itiraz etmek, iptalini istemek",
-   "mevcutBeispiel": "Der Kläger focht den Bescheid vor Gericht an.",
-   "mevcutBeispielTr": "Davacı, karara mahkemede itiraz etti.",
-   "cakisan": [
+   "currentTr": "itiraz etmek, iptalini istemek",
+   "currentBeispiel": "Der Kläger focht den Bescheid vor Gericht an.",
+   "currentBeispielTr": "Davacı, karara mahkemede itiraz etti.",
+   "overlapping": [
     "widersprechen (B1)",
     "einwenden (B2)"
    ]
@@ -298,9 +298,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "reflektiert, hat reflektiert",
-   "mevcutTr": "üzerine düşünmek, yansıtmak",
-   "mevcutBeispiel": "Der Essay reflektiert kritisch über die Rolle der Kunst.",
-   "mevcutBeispielTr": "Deneme, sanatın rolü üzerine eleştirel bir bakışla düşünüyor."
+   "currentTr": "üzerine düşünmek, yansıtmak",
+   "currentBeispiel": "Der Essay reflektiert kritisch über die Rolle der Kunst.",
+   "currentBeispielTr": "Deneme, sanatın rolü üzerine eleştirel bir bakışla düşünüyor."
   },
   {
    "id": 4016,
@@ -308,9 +308,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "verdeutlicht, hat verdeutlicht",
-   "mevcutTr": "açıkça göstermek, örnekle anlaşılır kılmak",
-   "mevcutBeispiel": "Das Beispiel verdeutlicht die Problematik sehr gut.",
-   "mevcutBeispielTr": "Örnek, sorunu çok iyi ortaya koyuyor."
+   "currentTr": "açıkça göstermek, örnekle anlaşılır kılmak",
+   "currentBeispiel": "Das Beispiel verdeutlicht die Problematik sehr gut.",
+   "currentBeispielTr": "Örnek, sorunu çok iyi ortaya koyuyor."
   },
   {
    "id": 3717,
@@ -318,10 +318,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "anlaşılır, mantıklı",
-   "mevcutBeispiel": "Seine Entscheidung ist angesichts der Umstände nachvollziehbar.",
-   "mevcutBeispielTr": "Koşullar düşünülünce kararı gayet anlaşılır.",
-   "cakisan": [
+   "currentTr": "anlaşılır, mantıklı",
+   "currentBeispiel": "Seine Entscheidung ist angesichts der Umstände nachvollziehbar.",
+   "currentBeispielTr": "Koşullar düşünülünce kararı gayet anlaşılır.",
+   "overlapping": [
     "verständlich (B1)"
    ]
   },
@@ -331,10 +331,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "eskaliert, ist eskaliert",
-   "mevcutTr": "tırmanmak, şiddetlenmek",
-   "mevcutBeispiel": "Der Konflikt zwischen den Abteilungen ist eskaliert.",
-   "mevcutBeispielTr": "Bölümler arasındaki çatışma iyice tırmandı.",
-   "cakisan": [
+   "currentTr": "tırmanmak, şiddetlenmek",
+   "currentBeispiel": "Der Konflikt zwischen den Abteilungen ist eskaliert.",
+   "currentBeispielTr": "Bölümler arasındaki çatışma iyice tırmandı.",
+   "overlapping": [
     "klettern (B1)",
     "besteigen (B2)"
    ]
@@ -345,10 +345,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vermerke",
-   "mevcutTr": "not, şerh",
-   "mevcutBeispiel": "Der Sachbearbeiter fügte dem Vorgang einen Vermerk hinzu.",
-   "mevcutBeispielTr": "Memur, dosyaya bir not ekledi.",
-   "cakisan": [
+   "currentTr": "not, şerh",
+   "currentBeispiel": "Der Sachbearbeiter fügte dem Vorgang einen Vermerk hinzu.",
+   "currentBeispielTr": "Memur, dosyaya bir not ekledi.",
+   "overlapping": [
     "die Note (A1)",
     "die Notiz (A2)",
     "die Anmerkung (B2)"
@@ -360,9 +360,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rechtsstreitigkeiten",
-   "mevcutTr": "hukuki anlaşmazlık",
-   "mevcutBeispiel": "Der Rechtsstreit zog sich über Jahre hin.",
-   "mevcutBeispielTr": "Hukuki anlaşmazlık yıllarca sürdü."
+   "currentTr": "hukuki anlaşmazlık",
+   "currentBeispiel": "Der Rechtsstreit zog sich über Jahre hin.",
+   "currentBeispielTr": "Hukuki anlaşmazlık yıllarca sürdü."
   },
   {
    "id": 3622,
@@ -370,9 +370,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Parodien",
-   "mevcutTr": "parodi",
-   "mevcutBeispiel": "Die Parodie übertreibt den pathetischen Stil des Originals.",
-   "mevcutBeispielTr": "Parodi, orijinalin abartılı duygusal üslubunu iyice uç noktaya taşıyor."
+   "currentTr": "parodi",
+   "currentBeispiel": "Die Parodie übertreibt den pathetischen Stil des Originals.",
+   "currentBeispielTr": "Parodi, orijinalin abartılı duygusal üslubunu iyice uç noktaya taşıyor."
   },
   {
    "id": 3556,
@@ -380,10 +380,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vollzüge",
-   "mevcutTr": "uygulama, icra",
-   "mevcutBeispiel": "Der Vollzug der Maßnahme obliegt der Kommune.",
-   "mevcutBeispielTr": "Önlemin uygulanması belediyenin görevidir.",
-   "cakisan": [
+   "currentTr": "uygulama, icra",
+   "currentBeispiel": "Der Vollzug der Maßnahme obliegt der Kommune.",
+   "currentBeispielTr": "Önlemin uygulanması belediyenin görevidir.",
+   "overlapping": [
     "die Anwendung (B2)",
     "die App (A2)"
    ]
@@ -394,10 +394,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "büyük ölçüde, hemen hemen",
-   "mevcutBeispiel": "Die Fachwelt stimmt der These weitgehend zu.",
-   "mevcutBeispielTr": "Bilim çevresi teze büyük ölçüde katılıyor.",
-   "cakisan": [
+   "currentTr": "büyük ölçüde, hemen hemen",
+   "currentBeispiel": "Die Fachwelt stimmt der These weitgehend zu.",
+   "currentBeispielTr": "Bilim çevresi teze büyük ölçüde katılıyor.",
+   "overlapping": [
     "größtenteils (A2)"
    ]
   },
@@ -407,9 +407,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Instanzen",
-   "mevcutTr": "merci, derece",
-   "mevcutBeispiel": "Der Fall durchlief mehrere Instanzen.",
-   "mevcutBeispielTr": "Dava birden çok yargı derecesinden geçti."
+   "currentTr": "merci, derece",
+   "currentBeispiel": "Der Fall durchlief mehrere Instanzen.",
+   "currentBeispielTr": "Dava birden çok yargı derecesinden geçti."
   },
   {
    "id": 4008,
@@ -417,9 +417,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kendini haklı gören, kibirli",
-   "mevcutBeispiel": "Sein selbstgerechter Ton stieß bei vielen Zuhörern auf Ablehnung.",
-   "mevcutBeispielTr": "Kendini haklı gören ses tonu birçok dinleyicide tepki uyandırdı."
+   "currentTr": "kendini haklı gören, kibirli",
+   "currentBeispiel": "Sein selbstgerechter Ton stieß bei vielen Zuhörern auf Ablehnung.",
+   "currentBeispielTr": "Kendini haklı gören ses tonu birçok dinleyicide tepki uyandırdı."
   },
   {
    "id": 3463,
@@ -427,9 +427,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Argumentationen",
-   "mevcutTr": "argümantasyon, gerekçelendirme",
-   "mevcutBeispiel": "Ihre Argumentation überzeugte selbst die Kritiker.",
-   "mevcutBeispielTr": "Gerekçelendirmesi eleştirmenleri bile ikna etti."
+   "currentTr": "argümantasyon, gerekçelendirme",
+   "currentBeispiel": "Ihre Argumentation überzeugte selbst die Kritiker.",
+   "currentBeispielTr": "Gerekçelendirmesi eleştirmenleri bile ikna etti."
   },
   {
    "id": 4005,
@@ -437,9 +437,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ahlaken kınanacak, kabul edilemez",
-   "mevcutBeispiel": "Solche Manipulationen sind ethisch schlicht verwerflich.",
-   "mevcutBeispielTr": "Bu tür manipülasyonlar etik açıdan düpedüz kabul edilemez."
+   "currentTr": "ahlaken kınanacak, kabul edilemez",
+   "currentBeispiel": "Solche Manipulationen sind ethisch schlicht verwerflich.",
+   "currentBeispielTr": "Bu tür manipülasyonlar etik açıdan düpedüz kabul edilemez."
   },
   {
    "id": 3718,
@@ -447,10 +447,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çelişkili",
-   "mevcutBeispiel": "Die Aussagen der Zeugen waren teilweise widersprüchlich.",
-   "mevcutBeispielTr": "Tanıkların ifadeleri yer yer çelişkiliydi.",
-   "cakisan": [
+   "currentTr": "çelişkili",
+   "currentBeispiel": "Die Aussagen der Zeugen waren teilweise widersprüchlich.",
+   "currentBeispielTr": "Tanıkların ifadeleri yer yer çelişkiliydi.",
+   "overlapping": [
     "zwiespältig (C1)"
    ]
   },
@@ -460,9 +460,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "verharrt, hat verharrt",
-   "mevcutTr": "sabit kalmak, bir durumda kalmak",
-   "mevcutBeispiel": "Die Preise verharren seit Monaten auf hohem Niveau.",
-   "mevcutBeispielTr": "Fiyatlar aylardır yüksek seviyede sabit duruyor."
+   "currentTr": "sabit kalmak, bir durumda kalmak",
+   "currentBeispiel": "Die Preise verharren seit Monaten auf hohem Niveau.",
+   "currentBeispielTr": "Fiyatlar aylardır yüksek seviyede sabit duruyor."
   },
   {
    "id": 4004,
@@ -470,9 +470,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "endişe verici, kaygı uyandırıcı",
-   "mevcutBeispiel": "Der Vertrauensverlust in die Presse ist eine bedenkliche Entwicklung.",
-   "mevcutBeispielTr": "Basına duyulan güvenin azalması endişe verici bir gelişme."
+   "currentTr": "endişe verici, kaygı uyandırıcı",
+   "currentBeispiel": "Der Vertrauensverlust in die Presse ist eine bedenkliche Entwicklung.",
+   "currentBeispielTr": "Basına duyulan güvenin azalması endişe verici bir gelişme."
   },
   {
    "id": 3603,
@@ -480,9 +480,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Ästhetiken",
-   "mevcutTr": "estetik",
-   "mevcutBeispiel": "Die Ästhetik des Romans wurde von Kritikern kontrovers diskutiert.",
-   "mevcutBeispielTr": "Romanın estetiği eleştirmenler arasında hararetle tartışıldı."
+   "currentTr": "estetik",
+   "currentBeispiel": "Die Ästhetik des Romans wurde von Kritikern kontrovers diskutiert.",
+   "currentBeispielTr": "Romanın estetiği eleştirmenler arasında hararetle tartışıldı."
   },
   {
    "id": 3543,
@@ -490,9 +490,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Haftungen",
-   "mevcutTr": "sorumluluk (hukuki, mali)",
-   "mevcutBeispiel": "Die Haftung des Herstellers ist gesetzlich geregelt.",
-   "mevcutBeispielTr": "Üreticinin sorumluluğu yasayla düzenlenmiştir."
+   "currentTr": "sorumluluk (hukuki, mali)",
+   "currentBeispiel": "Die Haftung des Herstellers ist gesetzlich geregelt.",
+   "currentBeispielTr": "Üreticinin sorumluluğu yasayla düzenlenmiştir."
   },
   {
    "id": 3898,
@@ -500,9 +500,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "beharrt, hat beharrt",
-   "mevcutTr": "ısrar etmek",
-   "mevcutBeispiel": "Er beharrte auf seiner ursprünglichen Forderung.",
-   "mevcutBeispielTr": "İlk talebinde ısrar etti."
+   "currentTr": "ısrar etmek",
+   "currentBeispiel": "Er beharrte auf seiner ursprünglichen Forderung.",
+   "currentBeispielTr": "İlk talebinde ısrar etti."
   },
   {
    "id": 3991,
@@ -510,9 +510,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "bevormundet, hat bevormundet",
-   "mevcutTr": "adına karar vermek, vesayetçi davranmak",
-   "mevcutBeispiel": "Viele fühlen sich durch ständige Ratschläge bevormundet.",
-   "mevcutBeispielTr": "Birçok kişi sürekli verilen akıllarla vesayet altına alındığını hissediyor."
+   "currentTr": "adına karar vermek, vesayetçi davranmak",
+   "currentBeispiel": "Viele fühlen sich durch ständige Ratschläge bevormundet.",
+   "currentBeispielTr": "Birçok kişi sürekli verilen akıllarla vesayet altına alındığını hissediyor."
   },
   {
    "id": 3662,
@@ -520,10 +520,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "tartışmalı",
-   "mevcutBeispiel": "Die Ausstellung wurde in der Presse äußerst kontrovers diskutiert.",
-   "mevcutBeispielTr": "Sergi basında son derece tartışmalı biçimde ele alındı.",
-   "cakisan": [
+   "currentTr": "tartışmalı",
+   "currentBeispiel": "Die Ausstellung wurde in der Presse äußerst kontrovers diskutiert.",
+   "currentBeispielTr": "Sergi basında son derece tartışmalı biçimde ele alındı.",
+   "overlapping": [
     "umstritten (B2)",
     "strittig (C1)"
    ]
@@ -534,9 +534,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kaçınılmaz",
-   "mevcutBeispiel": "Eine Reform ist mittlerweile unumgänglich geworden.",
-   "mevcutBeispielTr": "Reform artık kaçınılmaz hâle geldi."
+   "currentTr": "kaçınılmaz",
+   "currentBeispiel": "Eine Reform ist mittlerweile unumgänglich geworden.",
+   "currentBeispielTr": "Reform artık kaçınılmaz hâle geldi."
   },
   {
    "id": 3494,
@@ -544,10 +544,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Konsistenzen",
-   "mevcutTr": "tutarlılık, uyumluluk",
-   "mevcutBeispiel": "Die Konsistenz der Argumentation überzeugt die Leserschaft.",
-   "mevcutBeispielTr": "Gerekçelendirmenin tutarlılığı okuru ikna ediyor.",
-   "cakisan": [
+   "currentTr": "tutarlılık, uyumluluk",
+   "currentBeispiel": "Die Konsistenz der Argumentation überzeugt die Leserschaft.",
+   "currentBeispielTr": "Gerekçelendirmenin tutarlılığı okuru ikna ediyor.",
+   "overlapping": [
     "die Kohärenz (C1)",
     "die Stringenz (C1)"
    ]
@@ -558,10 +558,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Defizite",
-   "mevcutTr": "açık, defisit",
-   "mevcutBeispiel": "Das Haushaltsdefizit stieg trotz der Sparmaßnahmen weiter an.",
-   "mevcutBeispielTr": "Bütçe açığı, tasarruf önlemlerine rağmen artmaya devam etti.",
-   "cakisan": [
+   "currentTr": "açık, defisit",
+   "currentBeispiel": "Das Haushaltsdefizit stieg trotz der Sparmaßnahmen weiter an.",
+   "currentBeispielTr": "Bütçe açığı, tasarruf önlemlerine rağmen artmaya devam etti.",
+   "overlapping": [
     "offen (A1)",
     "geöffnet (A1)",
     "deutlich (A2)",
@@ -574,10 +574,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ağır, ciddi",
-   "mevcutBeispiel": "Der Vorfall hatte schwerwiegende Konsequenzen für alle Beteiligten.",
-   "mevcutBeispielTr": "Olay, ilgili herkes için ağır sonuçlar doğurdu.",
-   "cakisan": [
+   "currentTr": "ağır, ciddi",
+   "currentBeispiel": "Der Vorfall hatte schwerwiegende Konsequenzen für alle Beteiligten.",
+   "currentBeispielTr": "Olay, ilgili herkes için ağır sonuçlar doğurdu.",
+   "overlapping": [
     "träge (B2)"
    ]
   },
@@ -587,9 +587,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "tartışılmaz, yadsınamaz",
-   "mevcutBeispiel": "Der Klimawandel ist mittlerweile eine unbestreitbare Tatsache.",
-   "mevcutBeispielTr": "İklim değişikliği artık yadsınamaz bir gerçek."
+   "currentTr": "tartışılmaz, yadsınamaz",
+   "currentBeispiel": "Der Klimawandel ist mittlerweile eine unbestreitbare Tatsache.",
+   "currentBeispielTr": "İklim değişikliği artık yadsınamaz bir gerçek."
   }
  ]
 }

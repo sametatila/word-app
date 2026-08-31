@@ -1,7 +1,7 @@
 {
- "paket": "de-018",
+ "packet": "de-018",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "c1-r9",
    "skill": "reading",
@@ -9,55 +9,55 @@
    "title": "Der deutsche Wald",
    "genre": "Kültür denemesi",
    "intro": "Neden Almanya'da orman bir doğa parçası değil de bir duygu meselesidir? Kültürel bir deneme.",
-   "metin": "Kaum ein Wort ist im Deutschen so aufgeladen wie „Wald“. Es taucht in Volksliedern auf, in Märchen, in politischen Debatten, und es lässt sich in andere Sprachen nur schwer mit derselben Temperatur übersetzen. Der englische „forest“ ist ein Ort; der deutsche Wald ist eine Stimmung.\n\nHistorisch ist das erklärbar. Die Romantik des 19. Jahrhunderts machte den Wald zum Gegenbild der Stadt: dunkel, alt, echt — alles, was die Industrialisierung nicht war. Diese Verbindung überlebte politische Systeme, die sie sehr unterschiedlich benutzten, und sie wurde in den 1980er Jahren noch einmal aktiviert. Das Waldsterben war eine ökologische Krise, aber die Heftigkeit der Reaktion erklärt sich nicht allein aus Bodenwerten und Nadelverlust: Es starb nicht irgendein Ökosystem, es starb ein Selbstbild.\n\nErnüchternd ist der Blick auf das, was tatsächlich wächst. Rund die Hälfte des deutschen Waldes besteht aus Fichten und Kiefern, die hier über weite Strecken nie heimisch waren. Sie wurden gepflanzt, weil sie schnell wachsen und gerade sind — Nutzwald, kein Märchenwald. Ausgerechnet diese Monokulturen sind es, die Dürre und Borkenkäfer am wenigsten aushalten. Der Wald, um den getrauert wird, ist in weiten Teilen ein forstwirtschaftliches Produkt des 19. Jahrhunderts.\n\nDaraus folgt kein Grund zum Spott. Die Projektion hat etwas bewirkt: Deutschland hat eine im internationalen Vergleich strenge Forstgesetzgebung und mehr Waldfläche als vor hundert Jahren. Ein Land, das seine Wälder emotional besetzt, schützt sie besser als eines, das sie nur bilanziert.\n\nInteressant wird es dort, wo beides zusammenkommt. Der Umbau zu Mischwäldern dauert Jahrzehnte und sieht in den ersten Jahren nicht nach Sehnsucht aus, sondern nach Baustelle. Wer den Wald liebt, muss ihn eine Zeit lang hässlich ertragen.",
+   "text": "Kaum ein Wort ist im Deutschen so aufgeladen wie „Wald“. Es taucht in Volksliedern auf, in Märchen, in politischen Debatten, und es lässt sich in andere Sprachen nur schwer mit derselben Temperatur übersetzen. Der englische „forest“ ist ein Ort; der deutsche Wald ist eine Stimmung.\n\nHistorisch ist das erklärbar. Die Romantik des 19. Jahrhunderts machte den Wald zum Gegenbild der Stadt: dunkel, alt, echt — alles, was die Industrialisierung nicht war. Diese Verbindung überlebte politische Systeme, die sie sehr unterschiedlich benutzten, und sie wurde in den 1980er Jahren noch einmal aktiviert. Das Waldsterben war eine ökologische Krise, aber die Heftigkeit der Reaktion erklärt sich nicht allein aus Bodenwerten und Nadelverlust: Es starb nicht irgendein Ökosystem, es starb ein Selbstbild.\n\nErnüchternd ist der Blick auf das, was tatsächlich wächst. Rund die Hälfte des deutschen Waldes besteht aus Fichten und Kiefern, die hier über weite Strecken nie heimisch waren. Sie wurden gepflanzt, weil sie schnell wachsen und gerade sind — Nutzwald, kein Märchenwald. Ausgerechnet diese Monokulturen sind es, die Dürre und Borkenkäfer am wenigsten aushalten. Der Wald, um den getrauert wird, ist in weiten Teilen ein forstwirtschaftliches Produkt des 19. Jahrhunderts.\n\nDaraus folgt kein Grund zum Spott. Die Projektion hat etwas bewirkt: Deutschland hat eine im internationalen Vergleich strenge Forstgesetzgebung und mehr Waldfläche als vor hundert Jahren. Ein Land, das seine Wälder emotional besetzt, schützt sie besser als eines, das sie nur bilanziert.\n\nInteressant wird es dort, wo beides zusammenkommt. Der Umbau zu Mischwäldern dauert Jahrzehnte und sieht in den ersten Jahren nicht nach Sehnsucht aus, sondern nach Baustelle. Wer den Wald liebt, muss ihn eine Zeit lang hässlich ertragen.",
    "gloss": [
     {
      "de": "die Sehnsucht",
-     "mevcutTr": "özlem",
-     "havuz": {
+     "currentTr": "özlem",
+     "pool": {
       "tr": "özlem",
       "en": "longing"
      }
     },
     {
      "de": "die Romantik",
-     "mevcutTr": "Romantizm"
+     "currentTr": "Romantizm"
     },
     {
      "de": "das Waldsterben",
-     "mevcutTr": "orman ölümü"
+     "currentTr": "orman ölümü"
     },
     {
      "de": "die Monokultur",
-     "mevcutTr": "monokültür",
-     "havuz": {
+     "currentTr": "monokültür",
+     "pool": {
       "tr": "tek ürün tarımı",
       "en": "monoculture"
      }
     },
     {
      "de": "der Nutzwald",
-     "mevcutTr": "üretim ormanı"
+     "currentTr": "üretim ormanı"
     },
     {
      "de": "aufforsten",
-     "mevcutTr": "ağaçlandırmak",
-     "havuz": {
+     "currentTr": "ağaçlandırmak",
+     "pool": {
       "tr": "ağaçlandırmak",
       "en": "to reforest"
      }
     },
     {
      "de": "die Projektion",
-     "mevcutTr": "yansıtma",
-     "havuz": {
+     "currentTr": "yansıtma",
+     "pool": {
       "tr": "yansıtma",
       "en": "projection"
      }
     },
     {
      "de": "ernüchternd",
-     "mevcutTr": "ayıltıcı"
+     "currentTr": "ayıltıcı"
     }
    ]
   },
@@ -68,68 +68,68 @@
    "title": "Was der Text nicht sagt",
    "genre": "Sınav formatı",
    "intro": "C1 okuma sınavının asıl zorluğu: metnin söylediğiyle ima ettiğini ayırmak. Yoğun bir metin ve çıkarım soruları.",
-   "metin": "Eine vielzitierte Untersuchung zum Homeoffice kommt zu einem klaren Befund: Beschäftigte, die überwiegend zu Hause arbeiten, werden seltener befördert als solche, die überwiegend im Büro sind. Der Unterschied ist erheblich und bleibt bestehen, wenn man Alter, Position und Betriebszugehörigkeit berücksichtigt.\n\nDie Studie zieht daraus jedoch nicht den Schluss, den viele Schlagzeilen daraus gezogen haben. Sie stellt ausdrücklich fest, dass sie die Richtung des Zusammenhangs nicht bestimmen kann. Es ist ebenso möglich, dass Menschen, die ohnehin weniger auf Aufstieg hin arbeiten, häufiger Homeoffice wählen, wie dass Homeoffice den Aufstieg behindert.\n\nZwei Beobachtungen sprechen dennoch für einen Effekt der Sichtbarkeit. Erstens ist der Nachteil in Unternehmen ohne strukturierte Leistungsbeurteilung deutlich größer als in solchen mit klaren Kriterien. Zweitens verschwindet er fast vollständig dort, wo auch die Führungskraft überwiegend remote arbeitet.\n\nDie Autorinnen warnen ausdrücklich vor der Empfehlung, die aus ihrer Arbeit am häufigsten abgeleitet wird — Beschäftigte sollten öfter ins Büro kommen. Diese Empfehlung behandle ein organisatorisches Problem als individuelles. Wenn Beförderung von Anwesenheit abhängt, sei das ein Befund über die Beurteilungspraxis, nicht über die Beschäftigten.",
+   "text": "Eine vielzitierte Untersuchung zum Homeoffice kommt zu einem klaren Befund: Beschäftigte, die überwiegend zu Hause arbeiten, werden seltener befördert als solche, die überwiegend im Büro sind. Der Unterschied ist erheblich und bleibt bestehen, wenn man Alter, Position und Betriebszugehörigkeit berücksichtigt.\n\nDie Studie zieht daraus jedoch nicht den Schluss, den viele Schlagzeilen daraus gezogen haben. Sie stellt ausdrücklich fest, dass sie die Richtung des Zusammenhangs nicht bestimmen kann. Es ist ebenso möglich, dass Menschen, die ohnehin weniger auf Aufstieg hin arbeiten, häufiger Homeoffice wählen, wie dass Homeoffice den Aufstieg behindert.\n\nZwei Beobachtungen sprechen dennoch für einen Effekt der Sichtbarkeit. Erstens ist der Nachteil in Unternehmen ohne strukturierte Leistungsbeurteilung deutlich größer als in solchen mit klaren Kriterien. Zweitens verschwindet er fast vollständig dort, wo auch die Führungskraft überwiegend remote arbeitet.\n\nDie Autorinnen warnen ausdrücklich vor der Empfehlung, die aus ihrer Arbeit am häufigsten abgeleitet wird — Beschäftigte sollten öfter ins Büro kommen. Diese Empfehlung behandle ein organisatorisches Problem als individuelles. Wenn Beförderung von Anwesenheit abhängt, sei das ein Befund über die Beurteilungspraxis, nicht über die Beschäftigten.",
    "gloss": [
     {
      "de": "die Aussage",
-     "mevcutTr": "ifade",
-     "havuz": {
+     "currentTr": "ifade",
+     "pool": {
       "tr": "ifade",
       "en": "statement"
      }
     },
     {
      "de": "implizit",
-     "mevcutTr": "örtük",
-     "havuz": {
+     "currentTr": "örtük",
+     "pool": {
       "tr": "örtük",
       "en": "implicit"
      }
     },
     {
      "de": "einschränken",
-     "mevcutTr": "kısıtlamak",
-     "havuz": {
+     "currentTr": "kısıtlamak",
+     "pool": {
       "tr": "kısıtlamak",
       "en": "to restrict"
      }
     },
     {
      "de": "der Befund",
-     "mevcutTr": "bulgu",
-     "havuz": {
+     "currentTr": "bulgu",
+     "pool": {
       "tr": "tetkik sonucu",
       "en": "test result"
      }
     },
     {
      "de": "nahelegen",
-     "mevcutTr": "işaret etmek",
-     "havuz": {
+     "currentTr": "işaret etmek",
+     "pool": {
       "tr": "işaret etmek",
       "en": "to suggest"
      }
     },
     {
      "de": "ausschließen",
-     "mevcutTr": "dışlamak",
-     "havuz": {
+     "currentTr": "dışlamak",
+     "pool": {
       "tr": "dışlamak",
       "en": "to exclude"
      }
     },
     {
      "de": "die Korrelation",
-     "mevcutTr": "korelasyon",
-     "havuz": {
+     "currentTr": "korelasyon",
+     "pool": {
       "tr": "korelasyon",
       "en": "correlation"
      }
     },
     {
      "de": "vorschnell",
-     "mevcutTr": "aceleci",
-     "havuz": {
+     "currentTr": "aceleci",
+     "pool": {
       "tr": "aceleci",
       "en": "hasty"
      }
@@ -143,64 +143,64 @@
    "title": "Der offene Brief",
    "genre": "Açık mektup",
    "intro": "Hikâyenin devamı: Miriam'ın çevirisi tartışma yarattı — „bu kitabı o çevirmemeliydi“. Yanıtı bir açık mektup.",
-   "metin": "Liebe Kolleginnen und Kollegen,\n\nseit zwei Wochen wird über meine Übersetzung diskutiert, und ich habe geschwiegen, weil ich zuerst zuhören wollte. Jetzt möchte ich antworten — nicht, um recht zu behalten, sondern um zwei Dinge zu trennen, die in der Debatte ständig zusammenfallen.\n\nDer erste Einwand lautet, ich hätte diesen Roman nicht übersetzen sollen, weil mir die Erfahrung fehle, aus der er geschrieben ist. Diesen Einwand halte ich für ernst und für falsch. Ernst, weil er auf ein reales Ungleichgewicht zeigt: Wer übersetzt wen, wer wird gefragt, wer bekommt Aufträge? Falsch, weil er Übersetzung mit Vertretung verwechselt. Eine Übersetzerin spricht nicht für die Autorin. Sie stellt her, dass die Autorin selbst gehört werden kann — in einer Sprache, die sie nicht hatte.\n\nWürde man den Einwand konsequent zu Ende denken, ergäbe sich ein absurder Zustand: Übersetzt werden dürfte nur, was man selbst erlebt hat. Literatur wäre auf Herkunft verteilt statt auf Können, und die Bücher, die uns am fremdesten sind, blieben unübersetzt — also gerade jene, für die Übersetzung überhaupt existiert.\n\nDer zweite Einwand ist konkreter und trifft mich härter: Ich hätte an mehreren Stellen geglättet. Das stimmt. In drei Kapiteln habe ich Sätze verkürzt, die im Original absichtlich lang und atemlos sind. Ich habe geglaubt, deutsche Leser würden abbrechen. Das war eine Entscheidung über den Text hinweg, und sie war falsch. Die zweite Auflage wird an diesen Stellen korrigiert; die Liste der Änderungen liegt beim Verlag und wird veröffentlicht.\n\nIch schreibe das, weil ich glaube, dass die Debatte nur dann etwas wert ist, wenn man in ihr auch verlieren kann. Wer sich jedem Einwand entzieht, führt kein Gespräch. Wer jedem nachgibt, auch nicht.\n\nMiriam Falk",
+   "text": "Liebe Kolleginnen und Kollegen,\n\nseit zwei Wochen wird über meine Übersetzung diskutiert, und ich habe geschwiegen, weil ich zuerst zuhören wollte. Jetzt möchte ich antworten — nicht, um recht zu behalten, sondern um zwei Dinge zu trennen, die in der Debatte ständig zusammenfallen.\n\nDer erste Einwand lautet, ich hätte diesen Roman nicht übersetzen sollen, weil mir die Erfahrung fehle, aus der er geschrieben ist. Diesen Einwand halte ich für ernst und für falsch. Ernst, weil er auf ein reales Ungleichgewicht zeigt: Wer übersetzt wen, wer wird gefragt, wer bekommt Aufträge? Falsch, weil er Übersetzung mit Vertretung verwechselt. Eine Übersetzerin spricht nicht für die Autorin. Sie stellt her, dass die Autorin selbst gehört werden kann — in einer Sprache, die sie nicht hatte.\n\nWürde man den Einwand konsequent zu Ende denken, ergäbe sich ein absurder Zustand: Übersetzt werden dürfte nur, was man selbst erlebt hat. Literatur wäre auf Herkunft verteilt statt auf Können, und die Bücher, die uns am fremdesten sind, blieben unübersetzt — also gerade jene, für die Übersetzung überhaupt existiert.\n\nDer zweite Einwand ist konkreter und trifft mich härter: Ich hätte an mehreren Stellen geglättet. Das stimmt. In drei Kapiteln habe ich Sätze verkürzt, die im Original absichtlich lang und atemlos sind. Ich habe geglaubt, deutsche Leser würden abbrechen. Das war eine Entscheidung über den Text hinweg, und sie war falsch. Die zweite Auflage wird an diesen Stellen korrigiert; die Liste der Änderungen liegt beim Verlag und wird veröffentlicht.\n\nIch schreibe das, weil ich glaube, dass die Debatte nur dann etwas wert ist, wenn man in ihr auch verlieren kann. Wer sich jedem Einwand entzieht, führt kein Gespräch. Wer jedem nachgibt, auch nicht.\n\nMiriam Falk",
    "gloss": [
     {
      "de": "der offene Brief",
-     "mevcutTr": "açık mektup"
+     "currentTr": "açık mektup"
     },
     {
      "de": "die Legitimation",
-     "mevcutTr": "meşrulaştırma",
-     "havuz": {
+     "currentTr": "meşrulaştırma",
+     "pool": {
       "tr": "meşrulaştırma",
       "en": "legitimization"
      }
     },
     {
      "de": "die Erfahrung",
-     "mevcutTr": "deneyim",
-     "havuz": {
+     "currentTr": "deneyim",
+     "pool": {
       "tr": "deneyim",
       "en": "experience"
      }
     },
     {
      "de": "die Zuständigkeit",
-     "mevcutTr": "yetki alanı",
-     "havuz": {
+     "currentTr": "yetki alanı",
+     "pool": {
       "tr": "yetki alanı",
       "en": "responsibility"
      }
     },
     {
      "de": "der Einwand",
-     "mevcutTr": "itiraz",
-     "havuz": {
+     "currentTr": "itiraz",
+     "pool": {
       "tr": "itiraz",
       "en": "objection"
      }
     },
     {
      "de": "verkürzen",
-     "mevcutTr": "kısaltmak",
-     "havuz": {
+     "currentTr": "kısaltmak",
+     "pool": {
       "tr": "kısaltmak",
       "en": "to shorten"
      }
     },
     {
      "de": "die Aneignung",
-     "mevcutTr": "sahiplenme"
+     "currentTr": "sahiplenme"
     },
     {
      "de": "sich entziehen",
-     "mevcutTr": "kaçınmak"
+     "currentTr": "kaçınmak"
     },
     {
      "de": "die Redlichkeit",
-     "mevcutTr": "dürüstlük",
-     "havuz": {
+     "currentTr": "dürüstlük",
+     "pool": {
       "tr": "dürüstlük",
       "en": "honesty"
      }
@@ -214,47 +214,47 @@
    "title": "Krankenversicherung für Selbstständige",
    "genre": "Rehber",
    "intro": "Serbest çalışanlar için Almanya'nın en pahalı kararı: hangi sağlık sigortası? Geri dönüşü olmayan bir seçim.",
-   "metin": "Für Angestellte ist die Sache einfach: Der Beitrag hängt vom Einkommen ab und wird geteilt. Selbstständige stehen vor einer Entscheidung, die sie meist nur einmal treffen können.\n\nIn der gesetzlichen Krankenversicherung richtet sich der Beitrag nach dem Gewinn, mit einem Mindestbeitrag, der auch dann fällig wird, wenn kaum etwas verdient wurde. In schlechten Jahren ist das eine erhebliche Belastung; in guten Jahren begrenzt eine Beitragsbemessungsgrenze die Zahlung nach oben. Familienangehörige ohne eigenes Einkommen sind beitragsfrei mitversichert — bei drei Kindern ein Unterschied von mehreren hundert Euro monatlich.\n\nIn der privaten Versicherung richtet sich der Beitrag nicht nach dem Einkommen, sondern nach Alter, Gesundheitszustand und gewähltem Leistungsumfang. Wer jung, gesund und kinderlos ist, zahlt oft deutlich weniger. Der Vergleich in diesem Moment ist jedoch irreführend: Beiträge steigen mit dem Alter und mit den Kosten des Gesundheitssystems, und jedes Familienmitglied kostet extra.\n\nEntscheidend ist die Rückkehr. Sie ist nach dem 55. Lebensjahr praktisch ausgeschlossen. Wer sich mit dreißig privat versichert, trifft damit eine Entscheidung für die Zeit, in der die Beiträge am höchsten und das Einkommen möglicherweise niedriger sein wird.\n\nDaraus folgt keine allgemeine Empfehlung, wohl aber eine Faustregel: Wer Familie plant, ein schwankendes Einkommen hat oder die eigene gesundheitliche Zukunft nicht einschätzen kann, fährt mit der gesetzlichen Versicherung meist besser — auch wenn er in den ersten Jahren mehr zahlt. Der höhere Beitrag ist der Preis für die Möglichkeit, sich zu irren.",
+   "text": "Für Angestellte ist die Sache einfach: Der Beitrag hängt vom Einkommen ab und wird geteilt. Selbstständige stehen vor einer Entscheidung, die sie meist nur einmal treffen können.\n\nIn der gesetzlichen Krankenversicherung richtet sich der Beitrag nach dem Gewinn, mit einem Mindestbeitrag, der auch dann fällig wird, wenn kaum etwas verdient wurde. In schlechten Jahren ist das eine erhebliche Belastung; in guten Jahren begrenzt eine Beitragsbemessungsgrenze die Zahlung nach oben. Familienangehörige ohne eigenes Einkommen sind beitragsfrei mitversichert — bei drei Kindern ein Unterschied von mehreren hundert Euro monatlich.\n\nIn der privaten Versicherung richtet sich der Beitrag nicht nach dem Einkommen, sondern nach Alter, Gesundheitszustand und gewähltem Leistungsumfang. Wer jung, gesund und kinderlos ist, zahlt oft deutlich weniger. Der Vergleich in diesem Moment ist jedoch irreführend: Beiträge steigen mit dem Alter und mit den Kosten des Gesundheitssystems, und jedes Familienmitglied kostet extra.\n\nEntscheidend ist die Rückkehr. Sie ist nach dem 55. Lebensjahr praktisch ausgeschlossen. Wer sich mit dreißig privat versichert, trifft damit eine Entscheidung für die Zeit, in der die Beiträge am höchsten und das Einkommen möglicherweise niedriger sein wird.\n\nDaraus folgt keine allgemeine Empfehlung, wohl aber eine Faustregel: Wer Familie plant, ein schwankendes Einkommen hat oder die eigene gesundheitliche Zukunft nicht einschätzen kann, fährt mit der gesetzlichen Versicherung meist besser — auch wenn er in den ersten Jahren mehr zahlt. Der höhere Beitrag ist der Preis für die Möglichkeit, sich zu irren.",
    "gloss": [
     {
      "de": "gesetzlich versichert",
-     "mevcutTr": "kamu sigortalı"
+     "currentTr": "kamu sigortalı"
     },
     {
      "de": "privat versichert",
-     "mevcutTr": "özel sigortalı"
+     "currentTr": "özel sigortalı"
     },
     {
      "de": "der Beitragssatz",
-     "mevcutTr": "prim oranı",
-     "havuz": {
+     "currentTr": "prim oranı",
+     "pool": {
       "tr": "prim oranı",
       "en": "contribution rate"
      }
     },
     {
      "de": "die Bemessungsgrundlage",
-     "mevcutTr": "matrah"
+     "currentTr": "matrah"
     },
     {
      "de": "der Mindestbeitrag",
-     "mevcutTr": "asgari prim"
+     "currentTr": "asgari prim"
     },
     {
      "de": "die Rückkehr",
-     "mevcutTr": "dönüş",
-     "havuz": {
+     "currentTr": "dönüş",
+     "pool": {
       "tr": "dönüş",
       "en": "return"
      }
     },
     {
      "de": "die Altersrückstellung",
-     "mevcutTr": "yaşlılık karşılığı"
+     "currentTr": "yaşlılık karşılığı"
     },
     {
      "de": "in Kauf nehmen",
-     "mevcutTr": "göze almak"
+     "currentTr": "göze almak"
     }
    ]
   },
@@ -265,59 +265,59 @@
    "title": "Warum Fakten allein nicht überzeugen",
    "genre": "Konferans",
    "intro": "Bilim iletişimi kongresindeki bu açılış konuşmasında konuşmacının çürüttüğü modeli ve önerdiği üç sonucu not al.",
-   "metin": "Meine Damen und Herren, ich freue mich, Sie zur diesjährigen Tagung des Netzwerks Wissenschaftskommunikation begrüßen zu dürfen. Mein Thema klingt zunächst paradox: Warum überzeugen Fakten allein nicht – und was folgt daraus für unseren Umgang mit der Öffentlichkeit?\nJahrzehntelang folgte die Wissenschaftskommunikation dem sogenannten Defizitmodell. Die Annahme lautete: Wenn Menschen Forschungsergebnisse ablehnen, fehlt ihnen schlicht das Wissen. Man müsse die Lücke nur mit verständlichen Informationen füllen, dann stelle sich die Zustimmung von selbst ein.\nDie empirische Forschung hat dieses Modell gründlich widerlegt. Eine Auswertung von mehr als achtzig Einzelstudien, die wir im vergangenen Jahr an der Universität Erfurt abgeschlossen haben, zeigt: Zusätzliches Wissen verändert Einstellungen kaum, sobald ein Thema die eigene Identität berührt. Wer sich einer Gemeinschaft zugehörig fühlt, die etwa dem Impfen skeptisch gegenübersteht, verarbeitet neue Informationen nicht neutral, sondern als Angriff auf diese Zugehörigkeit.\nEntscheidend ist stattdessen Vertrauen. Menschen fragen nicht zuerst: Stimmt das? Sie fragen: Wer sagt das, und meint diese Person es gut mit mir? Unsere Daten zeigen deutlich: Kommunikation, die Unsicherheiten offenlegt und eigene Interessenkonflikte benennt, wirkt glaubwürdiger als eine, die Gewissheit vortäuscht.\nDaraus ergeben sich drei praktische Konsequenzen. Erstens: Hören Sie zu, bevor Sie senden – wer die Sorgen seines Publikums nicht kennt, redet an ihm vorbei. Zweitens: Erzählen Sie von Menschen und Entscheidungen, nicht nur von Zahlen; Geschichten schaffen die Anschlussstellen, an denen Fakten überhaupt erst haften bleiben. Drittens: Räumen Sie Fehler öffentlich ein, auch wenn es unbequem ist.\nDenn das ist der Kern meiner Botschaft: Wissenschaft verliert ihre Autorität nicht durch das Eingeständnis von Grenzen, sondern durch den Anschein der Unfehlbarkeit. Vielen Dank für Ihre Aufmerksamkeit.",
+   "text": "Meine Damen und Herren, ich freue mich, Sie zur diesjährigen Tagung des Netzwerks Wissenschaftskommunikation begrüßen zu dürfen. Mein Thema klingt zunächst paradox: Warum überzeugen Fakten allein nicht – und was folgt daraus für unseren Umgang mit der Öffentlichkeit?\nJahrzehntelang folgte die Wissenschaftskommunikation dem sogenannten Defizitmodell. Die Annahme lautete: Wenn Menschen Forschungsergebnisse ablehnen, fehlt ihnen schlicht das Wissen. Man müsse die Lücke nur mit verständlichen Informationen füllen, dann stelle sich die Zustimmung von selbst ein.\nDie empirische Forschung hat dieses Modell gründlich widerlegt. Eine Auswertung von mehr als achtzig Einzelstudien, die wir im vergangenen Jahr an der Universität Erfurt abgeschlossen haben, zeigt: Zusätzliches Wissen verändert Einstellungen kaum, sobald ein Thema die eigene Identität berührt. Wer sich einer Gemeinschaft zugehörig fühlt, die etwa dem Impfen skeptisch gegenübersteht, verarbeitet neue Informationen nicht neutral, sondern als Angriff auf diese Zugehörigkeit.\nEntscheidend ist stattdessen Vertrauen. Menschen fragen nicht zuerst: Stimmt das? Sie fragen: Wer sagt das, und meint diese Person es gut mit mir? Unsere Daten zeigen deutlich: Kommunikation, die Unsicherheiten offenlegt und eigene Interessenkonflikte benennt, wirkt glaubwürdiger als eine, die Gewissheit vortäuscht.\nDaraus ergeben sich drei praktische Konsequenzen. Erstens: Hören Sie zu, bevor Sie senden – wer die Sorgen seines Publikums nicht kennt, redet an ihm vorbei. Zweitens: Erzählen Sie von Menschen und Entscheidungen, nicht nur von Zahlen; Geschichten schaffen die Anschlussstellen, an denen Fakten überhaupt erst haften bleiben. Drittens: Räumen Sie Fehler öffentlich ein, auch wenn es unbequem ist.\nDenn das ist der Kern meiner Botschaft: Wissenschaft verliert ihre Autorität nicht durch das Eingeständnis von Grenzen, sondern durch den Anschein der Unfehlbarkeit. Vielen Dank für Ihre Aufmerksamkeit.",
    "gloss": [
     {
      "de": "das Defizitmodell",
-     "mevcutTr": "eksiklik modeli"
+     "currentTr": "eksiklik modeli"
     },
     {
      "de": "die Zustimmung",
-     "mevcutTr": "onay",
-     "havuz": {
+     "currentTr": "onay",
+     "pool": {
       "tr": "onay",
       "en": "consent"
      }
     },
     {
      "de": "etwas widerlegen",
-     "mevcutTr": "çürütmek"
+     "currentTr": "çürütmek"
     },
     {
      "de": "die Einstellung",
-     "mevcutTr": "tutum"
+     "currentTr": "tutum"
     },
     {
      "de": "die Zugehörigkeit",
-     "mevcutTr": "aidiyet",
-     "havuz": {
+     "currentTr": "aidiyet",
+     "pool": {
       "tr": "aidiyet",
       "en": "belonging"
      }
     },
     {
      "de": "die Glaubwürdigkeit",
-     "mevcutTr": "inandırıcılık",
-     "havuz": {
+     "currentTr": "inandırıcılık",
+     "pool": {
       "tr": "inandırıcılık",
       "en": "credibility"
      }
     },
     {
      "de": "etwas offenlegen",
-     "mevcutTr": "açıkça ortaya koymak"
+     "currentTr": "açıkça ortaya koymak"
     },
     {
      "de": "Gewissheit vortäuschen",
-     "mevcutTr": "kesinlik taslamak"
+     "currentTr": "kesinlik taslamak"
     },
     {
      "de": "Fehler einräumen",
-     "mevcutTr": "hatayı kabul etmek"
+     "currentTr": "hatayı kabul etmek"
     },
     {
      "de": "die Unfehlbarkeit",
-     "mevcutTr": "yanılmazlık"
+     "currentTr": "yanılmazlık"
     }
    ]
   },
@@ -328,72 +328,72 @@
    "title": "Streitfall Nachverdichtung",
    "genre": "Panel",
    "intro": "Kent gelişimi panelinde iki uzman yoğunlaştırma konusunda karşı karşıya — kimin hangi gerekçeyle nerede uzlaştığını yakala.",
-   "metin": "Moderatorin: Willkommen zu unserem Stadtgespräch. In den deutschen Großstädten fehlen nach aktuellen Schätzungen rund 550.000 Wohnungen. Zugleich heizen sich die Innenstädte im Sommer immer stärker auf. Frau Professor Wenzel, Sie sagen: Wir müssen dichter bauen. Warum?\nProfessorin Wenzel: Weil jede nicht gebaute Wohnung in der Stadt am Stadtrand doppelt gebaut wird – mit neuen Straßen, langen Pendelwegen und deutlich höherem Flächenverbrauch. Nachverdichtung heißt ja nicht, jeden Hof zuzubetonieren. Es heißt: Baulücken schließen, Gebäude aufstocken, eingeschossige Supermärkte mit Wohnungen überbauen. Allein durch Aufstockung ließen sich nach unseren Berechnungen bundesweit etwa 400.000 Wohnungen schaffen, ohne einen einzigen Quadratmeter zusätzlich zu versiegeln.\nModeratorin: Herr Roth, Sie sind Landschaftsarchitekt und sehen das kritischer.\nHerr Roth: Ich widerspreche gar nicht grundsätzlich, aber die Praxis sieht anders aus. Verdichtet wird dort, wo es am billigsten ist: auf Grünflächen und in Innenhöfen. Genau diese Flächen kühlen aber die Stadt. Wenn wir Frischluftschneisen zubauen, verwandeln wir Quartiere in Hitzeinseln – und die Leidtragenden sind ältere Menschen und Familien, die sich keine Klimaanlage leisten können. Wohnungsbau gegen Klimaanpassung auszuspielen, halte ich für kurzsichtig.\nProfessorin Wenzel: Da bin ich völlig bei Ihnen – deshalb spreche ich von qualifizierter Dichte. Wer aufstockt, muss zugleich Dächer begrünen, Fassaden beschatten und Höfe entsiegeln. Und wir sollten endlich über den Bestand reden: Millionen Quadratmeter Büros stehen seit der Pandemie leer. Ihre Umnutzung zu Wohnraum wäre die klimafreundlichste Verdichtung überhaupt.\nHerr Roth: Wenn Verdichtung so verstanden wird, trage ich sie mit. Meine Bedingung bleibt allerdings: Für jeden neuen Quadratmeter Wohnfläche muss die Stadt an anderer Stelle messbar grüner werden. Sonst lösen wir die Wohnungsnot und schaffen die nächste Krise gleich mit.\nModeratorin: Qualifizierte Dichte statt bloßer Masse – so weit scheint der Konsens zu reichen. Vielen Dank Ihnen beiden für dieses Gespräch.",
+   "text": "Moderatorin: Willkommen zu unserem Stadtgespräch. In den deutschen Großstädten fehlen nach aktuellen Schätzungen rund 550.000 Wohnungen. Zugleich heizen sich die Innenstädte im Sommer immer stärker auf. Frau Professor Wenzel, Sie sagen: Wir müssen dichter bauen. Warum?\nProfessorin Wenzel: Weil jede nicht gebaute Wohnung in der Stadt am Stadtrand doppelt gebaut wird – mit neuen Straßen, langen Pendelwegen und deutlich höherem Flächenverbrauch. Nachverdichtung heißt ja nicht, jeden Hof zuzubetonieren. Es heißt: Baulücken schließen, Gebäude aufstocken, eingeschossige Supermärkte mit Wohnungen überbauen. Allein durch Aufstockung ließen sich nach unseren Berechnungen bundesweit etwa 400.000 Wohnungen schaffen, ohne einen einzigen Quadratmeter zusätzlich zu versiegeln.\nModeratorin: Herr Roth, Sie sind Landschaftsarchitekt und sehen das kritischer.\nHerr Roth: Ich widerspreche gar nicht grundsätzlich, aber die Praxis sieht anders aus. Verdichtet wird dort, wo es am billigsten ist: auf Grünflächen und in Innenhöfen. Genau diese Flächen kühlen aber die Stadt. Wenn wir Frischluftschneisen zubauen, verwandeln wir Quartiere in Hitzeinseln – und die Leidtragenden sind ältere Menschen und Familien, die sich keine Klimaanlage leisten können. Wohnungsbau gegen Klimaanpassung auszuspielen, halte ich für kurzsichtig.\nProfessorin Wenzel: Da bin ich völlig bei Ihnen – deshalb spreche ich von qualifizierter Dichte. Wer aufstockt, muss zugleich Dächer begrünen, Fassaden beschatten und Höfe entsiegeln. Und wir sollten endlich über den Bestand reden: Millionen Quadratmeter Büros stehen seit der Pandemie leer. Ihre Umnutzung zu Wohnraum wäre die klimafreundlichste Verdichtung überhaupt.\nHerr Roth: Wenn Verdichtung so verstanden wird, trage ich sie mit. Meine Bedingung bleibt allerdings: Für jeden neuen Quadratmeter Wohnfläche muss die Stadt an anderer Stelle messbar grüner werden. Sonst lösen wir die Wohnungsnot und schaffen die nächste Krise gleich mit.\nModeratorin: Qualifizierte Dichte statt bloßer Masse – so weit scheint der Konsens zu reichen. Vielen Dank Ihnen beiden für dieses Gespräch.",
    "gloss": [
     {
      "de": "die Nachverdichtung",
-     "mevcutTr": "kentsel yoğunlaştırma"
+     "currentTr": "kentsel yoğunlaştırma"
     },
     {
      "de": "die Wohnungsnot",
-     "mevcutTr": "konut sıkıntısı",
-     "havuz": {
+     "currentTr": "konut sıkıntısı",
+     "pool": {
       "tr": "konut sıkıntısı",
       "en": "housing shortage"
      }
     },
     {
      "de": "die Baulücke",
-     "mevcutTr": "boş parsel"
+     "currentTr": "boş parsel"
     },
     {
      "de": "etwas aufstocken",
-     "mevcutTr": "kat çıkmak"
+     "currentTr": "kat çıkmak"
     },
     {
      "de": "die Versiegelung",
-     "mevcutTr": "betonlaşma",
-     "havuz": {
+     "currentTr": "betonlaşma",
+     "pool": {
       "tr": "betonlaşma",
       "en": "soil sealing"
      }
     },
     {
      "de": "die Frischluftschneise",
-     "mevcutTr": "temiz hava koridoru"
+     "currentTr": "temiz hava koridoru"
     },
     {
      "de": "die Hitzeinsel",
-     "mevcutTr": "ısı adası",
-     "havuz": {
+     "currentTr": "ısı adası",
+     "pool": {
       "tr": "ısı adası",
       "en": "heat island"
      }
     },
     {
      "de": "der Bestand",
-     "mevcutTr": "yapı stoku"
+     "currentTr": "yapı stoku"
     },
     {
      "de": "der Leerstand",
-     "mevcutTr": "boş kalma",
-     "havuz": {
+     "currentTr": "boş kalma",
+     "pool": {
       "tr": "boş kalma",
       "en": "vacancy"
      }
     },
     {
      "de": "die Umnutzung",
-     "mevcutTr": "yeniden işlevlendirme",
-     "havuz": {
+     "currentTr": "yeniden işlevlendirme",
+     "pool": {
       "tr": "yeniden işlevlendirme",
       "en": "change of use"
      }
     },
     {
      "de": "der Zielkonflikt",
-     "mevcutTr": "hedef çatışması",
-     "havuz": {
+     "currentTr": "hedef çatışması",
+     "pool": {
       "tr": "hedef çatışması",
       "en": "conflict of goals"
      }
@@ -407,64 +407,64 @@
    "title": "Künstliche Intelligenz in der Diagnostik",
    "genre": "Akademik röportaj",
    "intro": "Bir tıp bilişimi profesörüyle yapılan bu akademik söyleşide fırsatlarla riskler arasındaki dengeyi ve sorumluluk sorusunu izle.",
-   "metin": "Moderator: Herr Professor Lehmann, Sie erforschen den Einsatz künstlicher Intelligenz in der medizinischen Diagnostik. Wie gut sind diese Systeme inzwischen wirklich?\nProfessor Lehmann: In eng umgrenzten Aufgaben erstaunlich gut. In unserer Heidelberger Studie hat ein Bilderkennungssystem verdächtige Hautveränderungen mit einer Treffsicherheit von 94 Prozent erkannt, erfahrene Fachärzte kamen auf 87 Prozent. Aber dieser Vergleich führt in die Irre, wenn man ihn absolut setzt. Die Maschine erkennt Muster in Bildern – sie kennt weder die Krankengeschichte noch die Lebensumstände des Patienten.\nModerator: Trotzdem klingt das nach einer klaren Verbesserung. Wo liegt das Problem?\nProfessor Lehmann: Im sogenannten Automatisierungsbias. Wir haben Ärztinnen und Ärzte absichtlich mit fehlerhaften Systemvorschlägen konfrontiert. Das Ergebnis hat uns beunruhigt: Fast ein Drittel übernahm die falsche Einschätzung, obwohl sie ohne das System richtig geurteilt hätte. Je überzeugender die Technik auftritt, desto eher schaltet der Mensch das eigene Urteil ab. Genau das Gegenteil dessen, was wir wollen.\nModerator: Wer haftet denn, wenn eine solche gemeinsame Entscheidung falsch ist?\nProfessor Lehmann: Rechtlich ist das eindeutig: die behandelnde Ärztin oder der behandelnde Arzt. Die Systeme sind als Unterstützung zugelassen, nicht als Entscheider. Deshalb sage ich meinen Studierenden immer: Die künstliche Intelligenz ist ein Werkzeug, kein Kollege. Ein Befund, den ich nicht hinterfragen kann, ist keine Entlastung, sondern ein Risiko.\nModerator: Was müsste sich ändern, damit die Technik verantwortungsvoll eingesetzt wird?\nProfessor Lehmann: Drei Dinge. Die Systeme müssen ihre Unsicherheit anzeigen, statt nur ein Ergebnis zu liefern. Der Umgang mit ihnen muss fester Teil des Medizinstudiums werden. Und wir brauchen eine fortlaufende Kontrolle nach der Zulassung, denn diese Systeme verändern sich mit neuen Daten. Unter diesen Bedingungen kann künstliche Intelligenz die Versorgung tatsächlich verbessern – vor allem dort, wo Fachärzte fehlen.",
+   "text": "Moderator: Herr Professor Lehmann, Sie erforschen den Einsatz künstlicher Intelligenz in der medizinischen Diagnostik. Wie gut sind diese Systeme inzwischen wirklich?\nProfessor Lehmann: In eng umgrenzten Aufgaben erstaunlich gut. In unserer Heidelberger Studie hat ein Bilderkennungssystem verdächtige Hautveränderungen mit einer Treffsicherheit von 94 Prozent erkannt, erfahrene Fachärzte kamen auf 87 Prozent. Aber dieser Vergleich führt in die Irre, wenn man ihn absolut setzt. Die Maschine erkennt Muster in Bildern – sie kennt weder die Krankengeschichte noch die Lebensumstände des Patienten.\nModerator: Trotzdem klingt das nach einer klaren Verbesserung. Wo liegt das Problem?\nProfessor Lehmann: Im sogenannten Automatisierungsbias. Wir haben Ärztinnen und Ärzte absichtlich mit fehlerhaften Systemvorschlägen konfrontiert. Das Ergebnis hat uns beunruhigt: Fast ein Drittel übernahm die falsche Einschätzung, obwohl sie ohne das System richtig geurteilt hätte. Je überzeugender die Technik auftritt, desto eher schaltet der Mensch das eigene Urteil ab. Genau das Gegenteil dessen, was wir wollen.\nModerator: Wer haftet denn, wenn eine solche gemeinsame Entscheidung falsch ist?\nProfessor Lehmann: Rechtlich ist das eindeutig: die behandelnde Ärztin oder der behandelnde Arzt. Die Systeme sind als Unterstützung zugelassen, nicht als Entscheider. Deshalb sage ich meinen Studierenden immer: Die künstliche Intelligenz ist ein Werkzeug, kein Kollege. Ein Befund, den ich nicht hinterfragen kann, ist keine Entlastung, sondern ein Risiko.\nModerator: Was müsste sich ändern, damit die Technik verantwortungsvoll eingesetzt wird?\nProfessor Lehmann: Drei Dinge. Die Systeme müssen ihre Unsicherheit anzeigen, statt nur ein Ergebnis zu liefern. Der Umgang mit ihnen muss fester Teil des Medizinstudiums werden. Und wir brauchen eine fortlaufende Kontrolle nach der Zulassung, denn diese Systeme verändern sich mit neuen Daten. Unter diesen Bedingungen kann künstliche Intelligenz die Versorgung tatsächlich verbessern – vor allem dort, wo Fachärzte fehlen.",
    "gloss": [
     {
      "de": "die Diagnostik",
-     "mevcutTr": "tanı bilimi"
+     "currentTr": "tanı bilimi"
     },
     {
      "de": "die Treffsicherheit",
-     "mevcutTr": "isabet oranı"
+     "currentTr": "isabet oranı"
     },
     {
      "de": "etwas übersehen",
-     "mevcutTr": "gözden kaçırmak"
+     "currentTr": "gözden kaçırmak"
     },
     {
      "de": "der Automatisierungsbias",
-     "mevcutTr": "otomasyon yanlılığı"
+     "currentTr": "otomasyon yanlılığı"
     },
     {
      "de": "die Haftung",
-     "mevcutTr": "sorumluluk",
-     "havuz": {
+     "currentTr": "sorumluluk",
+     "pool": {
       "tr": "sorumluluk",
       "en": "liability"
      }
     },
     {
      "de": "das Werkzeug",
-     "mevcutTr": "alet",
-     "havuz": {
+     "currentTr": "alet",
+     "pool": {
       "tr": "alet",
       "en": "tool"
      }
     },
     {
      "de": "die Zulassung",
-     "mevcutTr": "ruhsat",
-     "havuz": {
+     "currentTr": "ruhsat",
+     "pool": {
       "tr": "kabul",
       "en": "admission"
      }
     },
     {
      "de": "der Befund",
-     "mevcutTr": "tetkik sonucu",
-     "havuz": {
+     "currentTr": "tetkik sonucu",
+     "pool": {
       "tr": "tetkik sonucu",
       "en": "test result"
      }
     },
     {
      "de": "etwas hinterfragen",
-     "mevcutTr": "sorgulamak"
+     "currentTr": "sorgulamak"
     },
     {
      "de": "die Entlastung",
-     "mevcutTr": "rahatlama",
-     "havuz": {
+     "currentTr": "rahatlama",
+     "pool": {
       "tr": "rahatlama",
       "en": "relief"
      }
@@ -478,72 +478,72 @@
    "title": "Wildenhain: Ein Dorf erfindet sich neu",
    "genre": "Radyo belgeseli",
    "intro": "Bu radyo belgeselinde küçülen bir Doğu Almanya köyünün rakamlarını ve beklenmedik dönüş hikâyesini dinle.",
-   "metin": "Sprecherin: Ein Montagmorgen in Wildenhain, einem Dorf im Norden Sachsens. Der Bäcker hat vor sieben Jahren geschlossen, die Grundschule vor fünf. Von den einst 1.900 Einwohnern sind noch knapp 1.100 geblieben, mehr als ein Drittel von ihnen ist älter als 65. Wildenhain ist kein Einzelfall – es ist der Normalfall in weiten Teilen des ländlichen Ostdeutschlands.\nSprecherin: Im Rathaus empfängt uns Bürgermeisterin Anke Petzold. Seit elf Jahren verwaltet sie die Ausdünnung ihres Ortes: erst gingen die Jungen, dann die Läden, zuletzt die Buslinie nach Torgau.\nBürgermeisterin Petzold: Das Schlimmste war nicht der Wegzug selbst, sondern die Stimmung, die er hinterlässt. Wenn die Schule schließt, sagt das jeder jungen Familie: Hier ist keine Zukunft. Gegen dieses Gefühl kämpfen wir bis heute an.\nSprecherin: Doch seit etwa drei Jahren registriert die Gemeinde etwas Neues. Erst waren es zwei Familien aus Leipzig, dann ein halbes Dutzend. Inzwischen zählt Wildenhain 74 Zugezogene – die meisten zwischen 30 und 45, viele davon mit Berufen, die nur einen Bildschirm brauchen. Möglich wurde das durch einen Zufall der Infrastrukturpolitik: Wildenhain bekam früher als die Nachbarorte einen flächendeckenden Glasfaseranschluss.\nBürgermeisterin Petzold: Die Neuen wollen kein Museumsdorf und keine Vorstadt, sie wollen Mitgestaltung. Sie haben den alten Konsum als Genossenschaft wiederbelebt, mit Dorfladen, Café und Arbeitsplätzen zum Mieten. Und plötzlich reden die Alteingesessenen und die Zugezogenen am selben Tresen miteinander.\nSprecherin: Forschende der Universität Halle beobachten solche Entwicklungen inzwischen in mehreren Regionen, warnen jedoch vor verfrühter Euphorie. Von einer Trendwende könne erst die Rede sein, wenn Kitas, Ärzte und Busverbindungen nachzögen – Zuzug allein mache noch keine tragfähige Infrastruktur. Bürgermeisterin Petzold formuliert es verhaltener: Wildenhain sei nicht gerettet, sagt sie. Aber es habe zum ersten Mal seit Jahrzehnten wieder eine Richtung.",
+   "text": "Sprecherin: Ein Montagmorgen in Wildenhain, einem Dorf im Norden Sachsens. Der Bäcker hat vor sieben Jahren geschlossen, die Grundschule vor fünf. Von den einst 1.900 Einwohnern sind noch knapp 1.100 geblieben, mehr als ein Drittel von ihnen ist älter als 65. Wildenhain ist kein Einzelfall – es ist der Normalfall in weiten Teilen des ländlichen Ostdeutschlands.\nSprecherin: Im Rathaus empfängt uns Bürgermeisterin Anke Petzold. Seit elf Jahren verwaltet sie die Ausdünnung ihres Ortes: erst gingen die Jungen, dann die Läden, zuletzt die Buslinie nach Torgau.\nBürgermeisterin Petzold: Das Schlimmste war nicht der Wegzug selbst, sondern die Stimmung, die er hinterlässt. Wenn die Schule schließt, sagt das jeder jungen Familie: Hier ist keine Zukunft. Gegen dieses Gefühl kämpfen wir bis heute an.\nSprecherin: Doch seit etwa drei Jahren registriert die Gemeinde etwas Neues. Erst waren es zwei Familien aus Leipzig, dann ein halbes Dutzend. Inzwischen zählt Wildenhain 74 Zugezogene – die meisten zwischen 30 und 45, viele davon mit Berufen, die nur einen Bildschirm brauchen. Möglich wurde das durch einen Zufall der Infrastrukturpolitik: Wildenhain bekam früher als die Nachbarorte einen flächendeckenden Glasfaseranschluss.\nBürgermeisterin Petzold: Die Neuen wollen kein Museumsdorf und keine Vorstadt, sie wollen Mitgestaltung. Sie haben den alten Konsum als Genossenschaft wiederbelebt, mit Dorfladen, Café und Arbeitsplätzen zum Mieten. Und plötzlich reden die Alteingesessenen und die Zugezogenen am selben Tresen miteinander.\nSprecherin: Forschende der Universität Halle beobachten solche Entwicklungen inzwischen in mehreren Regionen, warnen jedoch vor verfrühter Euphorie. Von einer Trendwende könne erst die Rede sein, wenn Kitas, Ärzte und Busverbindungen nachzögen – Zuzug allein mache noch keine tragfähige Infrastruktur. Bürgermeisterin Petzold formuliert es verhaltener: Wildenhain sei nicht gerettet, sagt sie. Aber es habe zum ersten Mal seit Jahrzehnten wieder eine Richtung.",
    "gloss": [
     {
      "de": "die Landflucht",
-     "mevcutTr": "kırdan kente göç",
-     "havuz": {
+     "currentTr": "kırdan kente göç",
+     "pool": {
       "tr": "kırdan kente göç",
       "en": "rural exodus"
      }
     },
     {
      "de": "die Ausdünnung",
-     "mevcutTr": "seyrekleşme"
+     "currentTr": "seyrekleşme"
     },
     {
      "de": "der Wegzug",
-     "mevcutTr": "göçüp gitme"
+     "currentTr": "göçüp gitme"
     },
     {
      "de": "die Überalterung",
-     "mevcutTr": "nüfusun yaşlanması",
-     "havuz": {
+     "currentTr": "nüfusun yaşlanması",
+     "pool": {
       "tr": "nüfusun yaşlanması",
       "en": "population aging"
      }
     },
     {
      "de": "der Rückkehrer",
-     "mevcutTr": "geri dönen kişi"
+     "currentTr": "geri dönen kişi"
     },
     {
      "de": "der Glasfaseranschluss",
-     "mevcutTr": "fiber optik bağlantı"
+     "currentTr": "fiber optik bağlantı"
     },
     {
      "de": "der Gemeinschaftsraum",
-     "mevcutTr": "ortak kullanım mekânı"
+     "currentTr": "ortak kullanım mekânı"
     },
     {
      "de": "die Genossenschaft",
-     "mevcutTr": "kooperatif",
-     "havuz": {
+     "currentTr": "kooperatif",
+     "pool": {
       "tr": "kooperatif",
       "en": "cooperative"
      }
     },
     {
      "de": "tragfähig",
-     "mevcutTr": "sağlam",
-     "havuz": {
+     "currentTr": "sağlam",
+     "pool": {
       "tr": "uygulanabilir",
       "en": "viable"
      }
     },
     {
      "de": "die Trendwende",
-     "mevcutTr": "eğilimin tersine dönmesi",
-     "havuz": {
+     "currentTr": "eğilimin tersine dönmesi",
+     "pool": {
       "tr": "eğilimin tersine dönmesi",
       "en": "trend reversal"
      }
     },
     {
      "de": "verhalten",
-     "mevcutTr": "ölçülü",
-     "havuz": {
+     "currentTr": "ölçülü",
+     "pool": {
       "tr": "davranış",
       "en": "behavior"
      }

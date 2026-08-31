@@ -1,7 +1,7 @@
 {
- "paket": "zh-015",
+ "packet": "zh-015",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-b2-l5",
    "skill": "listening",
@@ -9,47 +9,47 @@
    "title": "Sitzig: Es nöis Projäkt",
    "genre": "Toplantı",
    "intro": "Bir ekip toplantısında yeni projenin planlaması konuşuluyor. İş hayatının lehçesini dinleyeceksin.",
-   "metin": "Reto: Also, zum Projäkt Nordstärn: De Kund wott de Start uf de erscht Oktober. Mir händ jetz Juni.\nSibel: Vier Mönet. Das gaat — aber nume, wänn mir d Schnittstell zum alte System vorher klääred. Genau dört sind mir letschts Mal drei Wuche hange bliibe.\nReto: Was bruuchsch du dezue?\nSibel: Zwäi Täg mit em Anbieter und en Entschäid vo de Gschäftsleitig, öb mir migriere oder parallel fahred. Ohni dää Entschäid plane ich ins Läärä.\nMarc: Ich han en Iiwand zum Termiin. Im Auguscht sind drei vo üs i de Ferie. Wänn mir dää Monet voll iiplaned, isch de Puffer scho ufbruucht, bevor öppis passiert isch.\nReto: Das isch en guete Punkt. Vorschlag: Mir planed de Auguscht mit halber Kapazität und säged em Kund de fufzähnt Oktober statt de erscht.\nSibel: Iiverstande. Zwäi Wuche Puffer sind realistisch, drei wäred besser — aber ich cha mit zwäi läbe.\nMarc: Und wär redt mit em Kund? Wänn das erscht im Auguscht chunt, isch er suur.\nReto: Ich lüüte hüt na aa. Sibel, du hesch bis am Friitig d Schnittstelle-Frag als äi Siite — die nimm ich mit. Marc, du machsch d Ferieplanig im Tool. S Protokoll schick ich hüt Aabig.",
+   "text": "Reto: Also, zum Projäkt Nordstärn: De Kund wott de Start uf de erscht Oktober. Mir händ jetz Juni.\nSibel: Vier Mönet. Das gaat — aber nume, wänn mir d Schnittstell zum alte System vorher klääred. Genau dört sind mir letschts Mal drei Wuche hange bliibe.\nReto: Was bruuchsch du dezue?\nSibel: Zwäi Täg mit em Anbieter und en Entschäid vo de Gschäftsleitig, öb mir migriere oder parallel fahred. Ohni dää Entschäid plane ich ins Läärä.\nMarc: Ich han en Iiwand zum Termiin. Im Auguscht sind drei vo üs i de Ferie. Wänn mir dää Monet voll iiplaned, isch de Puffer scho ufbruucht, bevor öppis passiert isch.\nReto: Das isch en guete Punkt. Vorschlag: Mir planed de Auguscht mit halber Kapazität und säged em Kund de fufzähnt Oktober statt de erscht.\nSibel: Iiverstande. Zwäi Wuche Puffer sind realistisch, drei wäred besser — aber ich cha mit zwäi läbe.\nMarc: Und wär redt mit em Kund? Wänn das erscht im Auguscht chunt, isch er suur.\nReto: Ich lüüte hüt na aa. Sibel, du hesch bis am Friitig d Schnittstelle-Frag als äi Siite — die nimm ich mit. Marc, du machsch d Ferieplanig im Tool. S Protokoll schick ich hüt Aabig.",
    "gloss": [
     {
      "de": "d Sitzig",
-     "mevcutTr": "toplantı"
+     "currentTr": "toplantı"
     },
     {
      "de": "de Termiin",
-     "mevcutTr": "tarih, teslim tarihi"
+     "currentTr": "tarih, teslim tarihi"
     },
     {
      "de": "d Ressource",
-     "mevcutTr": "kaynak (kişi/bütçe)",
-     "havuz": {
+     "currentTr": "kaynak (kişi/bütçe)",
+     "pool": {
       "tr": "kaynak",
       "en": "resource"
      }
     },
     {
      "de": "de Puffer",
-     "mevcutTr": "pay, tampon süre"
+     "currentTr": "pay, tampon süre"
     },
     {
      "de": "d Schnittstell",
-     "mevcutTr": "arayüz, kesişim noktası"
+     "currentTr": "arayüz, kesişim noktası"
     },
     {
      "de": "verschiebe",
-     "mevcutTr": "ertelemek"
+     "currentTr": "ertelemek"
     },
     {
      "de": "s Protokoll",
-     "mevcutTr": "toplantı tutanağı",
-     "havuz": {
+     "currentTr": "toplantı tutanağı",
+     "pool": {
       "tr": "tutanak",
       "en": "minutes"
      }
     },
     {
      "de": "de Iiwand",
-     "mevcutTr": "itiraz"
+     "currentTr": "itiraz"
     }
    ]
   },
@@ -60,48 +60,48 @@
    "title": "Interview: D Klimaziel vo de Stadt",
    "genre": "Röportaj",
    "intro": "Bir belediye meclisi üyesiyle şehrin iklim hedefleri üzerine yapılan röportajı dinleyeceksin.",
-   "metin": "Journalischt: Frau Sommer, d Stadt wott bis zwäitusigvierzg netto null. Sind Si im Plan?\nSommer: Bim Struum ja, bi de Wärmi nöd. Öppe s vierzg Prozänt vom Uusstoss chunt vo Heizige, und dört gaat s z langsam.\nJournalischt: Warum?\nSommer: Wil e Heizig zwänzg Jaar hebt. Wär hüt e nöii Gasheizig iibout, isch bis zwäitusigfüfevierzg drin. Drum isch entschäidend, dass jedi Heizig, wo hüt ersetzt wird, glii uf Fernwärmi oder Wärmipumpe gaat.\nJournalischt: Und wänn en Hausbsitzer das nöd wott?\nSommer: Denn hämmer es Problem. Zwinge chöned mir nume beschränkt. Was mir chönd: bezaale. Mir übernämed en Täil vo de Choschte und mir bouted s Fernwärminetz us — wär aagschlosse isch, entschäidet sich fascht immer defür.\nJournalischt: Kritiker säged, das seig e Subvention für Hausbsitzer, zaalt vo allne — au vo de Mieter.\nSommer: Dää Iiwand isch berächtigt, und ich nimm en ernscht. Nume: D Alternative isch nöd „nüüt zaale“. D Alternative isch, dass mir spöter meh zaaled, für Schäde. Und d Miete schtiigt bi ere schlächte Heizig au — über d Näbechoschte.\nJournalischt: Was passiert, wänn Si s Ziel verfehled?\nSommer: Denn isch es en politische Schade — aber ehrlich gsäit: Es Ziel, wo me sicher erräicht, isch z tüüf gsetzt gsii.",
+   "text": "Journalischt: Frau Sommer, d Stadt wott bis zwäitusigvierzg netto null. Sind Si im Plan?\nSommer: Bim Struum ja, bi de Wärmi nöd. Öppe s vierzg Prozänt vom Uusstoss chunt vo Heizige, und dört gaat s z langsam.\nJournalischt: Warum?\nSommer: Wil e Heizig zwänzg Jaar hebt. Wär hüt e nöii Gasheizig iibout, isch bis zwäitusigfüfevierzg drin. Drum isch entschäidend, dass jedi Heizig, wo hüt ersetzt wird, glii uf Fernwärmi oder Wärmipumpe gaat.\nJournalischt: Und wänn en Hausbsitzer das nöd wott?\nSommer: Denn hämmer es Problem. Zwinge chöned mir nume beschränkt. Was mir chönd: bezaale. Mir übernämed en Täil vo de Choschte und mir bouted s Fernwärminetz us — wär aagschlosse isch, entschäidet sich fascht immer defür.\nJournalischt: Kritiker säged, das seig e Subvention für Hausbsitzer, zaalt vo allne — au vo de Mieter.\nSommer: Dää Iiwand isch berächtigt, und ich nimm en ernscht. Nume: D Alternative isch nöd „nüüt zaale“. D Alternative isch, dass mir spöter meh zaaled, für Schäde. Und d Miete schtiigt bi ere schlächte Heizig au — über d Näbechoschte.\nJournalischt: Was passiert, wänn Si s Ziel verfehled?\nSommer: Denn isch es en politische Schade — aber ehrlich gsäit: Es Ziel, wo me sicher erräicht, isch z tüüf gsetzt gsii.",
    "gloss": [
     {
      "de": "s Ziel",
-     "mevcutTr": "hedef",
-     "havuz": {
+     "currentTr": "hedef",
+     "pool": {
       "tr": "hedef",
       "en": "goal"
      }
     },
     {
      "de": "de Uusstoss",
-     "mevcutTr": "salım, emisyon"
+     "currentTr": "salım, emisyon"
     },
     {
      "de": "d Heizig ersetze",
-     "mevcutTr": "kalorifer sistemini değiştirmek"
+     "currentTr": "kalorifer sistemini değiştirmek"
     },
     {
      "de": "de Fernwärme",
-     "mevcutTr": "bölgesel ısıtma"
+     "currentTr": "bölgesel ısıtma"
     },
     {
      "de": "d Frischt",
-     "mevcutTr": "süre"
+     "currentTr": "süre"
     },
     {
      "de": "de Widerstand",
-     "mevcutTr": "direnç, karşı çıkış",
-     "havuz": {
+     "currentTr": "direnç, karşı çıkış",
+     "pool": {
       "tr": "direniş",
       "en": "resistance"
      }
     },
     {
      "de": "zwinge",
-     "mevcutTr": "zorlamak"
+     "currentTr": "zorlamak"
     },
     {
      "de": "d Bilanz",
-     "mevcutTr": "bilanço",
-     "havuz": {
+     "currentTr": "bilanço",
+     "pool": {
       "tr": "bilanço",
       "en": "balance sheet"
      }
@@ -115,39 +115,39 @@
    "title": "S Gspröch für d Lehrstell",
    "genre": "İş görüşmesi",
    "intro": "Hikâyenin devamı: Amina ikinci kez başvurdu ve görüşmeye çağrıldı. Geri bildirimi nasıl kullandığına dikkat et.",
-   "metin": "Frau Kern: Frau Bekele, schön sind Si wider da. Si händ sich s zwäite Mal beworbe — was isch anders?\nAmina: S Schriibe. Si händ mer gsäit, s seig z allgemäin gsii. Ich han s neu gschriibe und drin verzellt, was mich bim Schnuppere würkli bewegt hät.\nFrau Kern: Nämli?\nAmina: S Dosiere. Ich han Respäkt devor gha — und genau drum wott ich s lerne. Ich han gmerkt, dass mir Sache mit Verantwortig meh gäbed als Sache ohni.\nFrau Kern: Das isch e gueti Antwort. Jetz e unaagnämi Frag: Ihri Note i de Mathematik sind mittelmässig. I dem Bruef rächne mir jede Tag.\nAmina: Das schtimmt. Ich han im letschte Jaar e Vier-fünf gha. Ich han sitdem Nachhilf gnoo und im letschte Zügnis e Füüfi. Ich cha Ine s Zügnis zäige.\nFrau Kern: Das interessiert mich meh als di erschti Note. Warum?\nAmina: Well me dra gschaffet hät. Es zäigt, öb öpper e Schwächi aaluegt oder nöd.\nFrau Kern: Genau. Letschti Frag: D Berufsschuel isch äi Tag i de Wuche, und im erschte Jaar isch s vill. Was mached Si, wänn Si merked, dass Si nöd hinderher chömed?\nAmina: Sofort säge. Nöd am Schluss vom Semeschter, wänn s scho z spaat isch.\nFrau Kern: Si überchömed vo mir bis am Friitig Bschäid. Und unabhängig devo: Das Gspröch isch deutlich besser gsii als di erschti Bewärbig.",
+   "text": "Frau Kern: Frau Bekele, schön sind Si wider da. Si händ sich s zwäite Mal beworbe — was isch anders?\nAmina: S Schriibe. Si händ mer gsäit, s seig z allgemäin gsii. Ich han s neu gschriibe und drin verzellt, was mich bim Schnuppere würkli bewegt hät.\nFrau Kern: Nämli?\nAmina: S Dosiere. Ich han Respäkt devor gha — und genau drum wott ich s lerne. Ich han gmerkt, dass mir Sache mit Verantwortig meh gäbed als Sache ohni.\nFrau Kern: Das isch e gueti Antwort. Jetz e unaagnämi Frag: Ihri Note i de Mathematik sind mittelmässig. I dem Bruef rächne mir jede Tag.\nAmina: Das schtimmt. Ich han im letschte Jaar e Vier-fünf gha. Ich han sitdem Nachhilf gnoo und im letschte Zügnis e Füüfi. Ich cha Ine s Zügnis zäige.\nFrau Kern: Das interessiert mich meh als di erschti Note. Warum?\nAmina: Well me dra gschaffet hät. Es zäigt, öb öpper e Schwächi aaluegt oder nöd.\nFrau Kern: Genau. Letschti Frag: D Berufsschuel isch äi Tag i de Wuche, und im erschte Jaar isch s vill. Was mached Si, wänn Si merked, dass Si nöd hinderher chömed?\nAmina: Sofort säge. Nöd am Schluss vom Semeschter, wänn s scho z spaat isch.\nFrau Kern: Si überchömed vo mir bis am Friitig Bschäid. Und unabhängig devo: Das Gspröch isch deutlich besser gsii als di erschti Bewärbig.",
    "gloss": [
     {
      "de": "s Bewärbigsgspröch",
-     "mevcutTr": "iş görüşmesi"
+     "currentTr": "iş görüşmesi"
     },
     {
      "de": "d Motivation",
-     "mevcutTr": "motivasyon"
+     "currentTr": "motivasyon"
     },
     {
      "de": "d Verantwortig",
-     "mevcutTr": "sorumluluk"
+     "currentTr": "sorumluluk"
     },
     {
      "de": "de Respäkt",
-     "mevcutTr": "saygı, çekince"
+     "currentTr": "saygı, çekince"
     },
     {
      "de": "iischtiige",
-     "mevcutTr": "başlamak"
+     "currentTr": "başlamak"
     },
     {
      "de": "d Berufsschuel",
-     "mevcutTr": "meslek okulu"
+     "currentTr": "meslek okulu"
     },
     {
      "de": "d Probeziit",
-     "mevcutTr": "deneme süresi"
+     "currentTr": "deneme süresi"
     },
     {
      "de": "sich mälde",
-     "mevcutTr": "haber vermek"
+     "currentTr": "haber vermek"
     }
    ]
   },
@@ -158,47 +158,47 @@
    "title": "Bim Berufsberater",
    "genre": "Danışma",
    "intro": "İsviçre'de ücretsiz bir hizmet: meslek danışmanlığı. Danışmanın nasıl soru sorduğuna dikkat et.",
-   "metin": "Berater: Sibe Absääge. Wie gaat s Ine demit?\nAmina: Schlächt. Ich han underdesse s Gfüel, es lit a mir.\nBerater: Verständlich. Trotzdem: Uf e Lehrstell i de Apothek chömed im Kanton Züri öppe zwölf Bewärbige. Bi sibe Absääge sind Si statistisch no ganz normal underwägs.\nAmina: Das hilft mer ehrlich gsäit nöd sehr.\nBerater: Verstand ich. Reded mer über de Plan B — nöd well de Plan A gschtorbe isch, sondern damit Si nöd unter Druck entschäided.\nAmina: Welli Möglichkäite han ich?\nBerater: Drei. Erschtens: es Brückeaagebot, es Jaar mit Schuel und Praktikum. Zwäitens: e verwandti Lehr — Drogerie, Fachfrau Gsundheit. Drittens: es Zwüschejaar mit Arbet, aber das würd ich nur mit eme klare Ziel mache.\nAmina: Isch es Brückeaagebot nöd es verlorenes Jaar?\nBerater: Das isch di häufigscht Angscht, und d Zaale säged s Gägetäil: Öppe achtzg Prozänt finded danach e Lehrstell. Betriib gsend, dass öpper dra bliibe isch.\nAmina: Und wänn ich im Auguscht doch e Zuesaag überchume?\nBerater: Denn nämed Si si und sääged s Brückeaagebot ab. Das isch kä Problem — melde Si sich äifach früeh. Wichtig isch nur, dass Si sich jetz aamälded: D Frischt isch Ändi Februar.",
+   "text": "Berater: Sibe Absääge. Wie gaat s Ine demit?\nAmina: Schlächt. Ich han underdesse s Gfüel, es lit a mir.\nBerater: Verständlich. Trotzdem: Uf e Lehrstell i de Apothek chömed im Kanton Züri öppe zwölf Bewärbige. Bi sibe Absääge sind Si statistisch no ganz normal underwägs.\nAmina: Das hilft mer ehrlich gsäit nöd sehr.\nBerater: Verstand ich. Reded mer über de Plan B — nöd well de Plan A gschtorbe isch, sondern damit Si nöd unter Druck entschäided.\nAmina: Welli Möglichkäite han ich?\nBerater: Drei. Erschtens: es Brückeaagebot, es Jaar mit Schuel und Praktikum. Zwäitens: e verwandti Lehr — Drogerie, Fachfrau Gsundheit. Drittens: es Zwüschejaar mit Arbet, aber das würd ich nur mit eme klare Ziel mache.\nAmina: Isch es Brückeaagebot nöd es verlorenes Jaar?\nBerater: Das isch di häufigscht Angscht, und d Zaale säged s Gägetäil: Öppe achtzg Prozänt finded danach e Lehrstell. Betriib gsend, dass öpper dra bliibe isch.\nAmina: Und wänn ich im Auguscht doch e Zuesaag überchume?\nBerater: Denn nämed Si si und sääged s Brückeaagebot ab. Das isch kä Problem — melde Si sich äifach früeh. Wichtig isch nur, dass Si sich jetz aamälded: D Frischt isch Ändi Februar.",
    "gloss": [
     {
      "de": "d Berufsberatig",
-     "mevcutTr": "meslek danışmanlığı"
+     "currentTr": "meslek danışmanlığı"
     },
     {
      "de": "de Zwüscheweg",
-     "mevcutTr": "ara yol"
+     "currentTr": "ara yol"
     },
     {
      "de": "s Brückeaagebot",
-     "mevcutTr": "geçiş yılı programı"
+     "currentTr": "geçiş yılı programı"
     },
     {
      "de": "d Alternative",
-     "mevcutTr": "alternatif",
-     "havuz": {
+     "currentTr": "alternatif",
+     "pool": {
       "tr": "alternatif",
       "en": "alternative"
      }
     },
     {
      "de": "de Notfallplan",
-     "mevcutTr": "acil durum planı",
-     "havuz": {
+     "currentTr": "acil durum planı",
+     "pool": {
       "tr": "acil durum planı",
       "en": "emergency plan"
      }
     },
     {
      "de": "d Durchlässigkäit",
-     "mevcutTr": "geçişkenlik"
+     "currentTr": "geçişkenlik"
     },
     {
      "de": "abklääre",
-     "mevcutTr": "netleştirmek"
+     "currentTr": "netleştirmek"
     },
     {
      "de": "d Frischt",
-     "mevcutTr": "süre"
+     "currentTr": "süre"
     }
    ]
   },
@@ -209,39 +209,39 @@
    "title": "Vortrag: Warum mir Nachrichte miided",
    "genre": "Sınav formatı",
    "intro": "Uzun format: bir konuşma ve içerik soruları. Not alarak dinlemeyi dene.",
-   "metin": "Referentin: Ich fang mit ere Zaal aa: I de Schwiiz säit underdesse öppe es Drittel vo de Befragte, si gäng de Nachrichte bewusst us em Wäg. Vor zää Jaar isch s halb so vill gsii.\nReferentin: Di naheliegendi Erklärig wär Desinterässe. Si isch falsch. D Gruppe, wo am stärchschte miidet, isch nöd di uninteressierti, sondern di belaschteti: Lüüt mit wenig Ziit, wenig Gäld und wenig Kontrolle über ihri Lag.\nReferentin: I de Interviews chunt immer wider s gliiche Wort: Oomacht. Nöd „Ich verstaan s nöd“, sondern „Ich cha sowiso nüüt mache“.\nReferentin: De zwäit Grund isch d Wiederholig. Wär de gliich Konflikt jede Tag i de gliiche Form gseet, ohni dass sich d Information ändert, lernt nüüt dezue — er gspürt nur wider s Gliiche. S Hirn nennt das Belaschtig, nöd Wüsse.\nReferentin: Was hilft, isch guet undersuecht und wird sälte gmacht. Erschtens Iiordnig: nöd nur was passiert isch, sondern warum und was drus folgt. Zwäitens Handligswüsse: Was chönd Betroffeni konkret tue? Drittens, und das isch unbequem: weniger, aber vollständiger berichte.\nReferentin: Ich säg uusdrücklich nöd: nur gueti Nachrichte. Das isch di schlächtischti Antwort uf es ächts Problem. D Lüüt miided Nachrichte nöd, will si schlächt sind, sondern will si folgelos wirked.\nReferentin: Und e Iischränkig: Üsi Date chömed us Befragige. Was d Lüüt über ihres Verhalte säged, isch nöd immer das, wo si mached. D Richtig isch stabil, di genaui Höchi würd ich vorsichtig zitiere.",
+   "text": "Referentin: Ich fang mit ere Zaal aa: I de Schwiiz säit underdesse öppe es Drittel vo de Befragte, si gäng de Nachrichte bewusst us em Wäg. Vor zää Jaar isch s halb so vill gsii.\nReferentin: Di naheliegendi Erklärig wär Desinterässe. Si isch falsch. D Gruppe, wo am stärchschte miidet, isch nöd di uninteressierti, sondern di belaschteti: Lüüt mit wenig Ziit, wenig Gäld und wenig Kontrolle über ihri Lag.\nReferentin: I de Interviews chunt immer wider s gliiche Wort: Oomacht. Nöd „Ich verstaan s nöd“, sondern „Ich cha sowiso nüüt mache“.\nReferentin: De zwäit Grund isch d Wiederholig. Wär de gliich Konflikt jede Tag i de gliiche Form gseet, ohni dass sich d Information ändert, lernt nüüt dezue — er gspürt nur wider s Gliiche. S Hirn nennt das Belaschtig, nöd Wüsse.\nReferentin: Was hilft, isch guet undersuecht und wird sälte gmacht. Erschtens Iiordnig: nöd nur was passiert isch, sondern warum und was drus folgt. Zwäitens Handligswüsse: Was chönd Betroffeni konkret tue? Drittens, und das isch unbequem: weniger, aber vollständiger berichte.\nReferentin: Ich säg uusdrücklich nöd: nur gueti Nachrichte. Das isch di schlächtischti Antwort uf es ächts Problem. D Lüüt miided Nachrichte nöd, will si schlächt sind, sondern will si folgelos wirked.\nReferentin: Und e Iischränkig: Üsi Date chömed us Befragige. Was d Lüüt über ihres Verhalte säged, isch nöd immer das, wo si mached. D Richtig isch stabil, di genaui Höchi würd ich vorsichtig zitiere.",
    "gloss": [
     {
      "de": "d Nachrichtevermiidig",
-     "mevcutTr": "haberden kaçınma"
+     "currentTr": "haberden kaçınma"
     },
     {
      "de": "de Aateil",
-     "mevcutTr": "oran"
+     "currentTr": "oran"
     },
     {
      "de": "d Oomacht",
-     "mevcutTr": "çaresizlik"
+     "currentTr": "çaresizlik"
     },
     {
      "de": "d Wiederholig",
-     "mevcutTr": "tekrar"
+     "currentTr": "tekrar"
     },
     {
      "de": "d Iiordnig",
-     "mevcutTr": "bağlama oturtma"
+     "currentTr": "bağlama oturtma"
     },
     {
      "de": "s Handligswüsse",
-     "mevcutTr": "ne yapılabileceği bilgisi"
+     "currentTr": "ne yapılabileceği bilgisi"
     },
     {
      "de": "d Iischränkig",
-     "mevcutTr": "sınırlama, çekince"
+     "currentTr": "sınırlama, çekince"
     },
     {
      "de": "überinterpretiere",
-     "mevcutTr": "aşırı yorumlamak"
+     "currentTr": "aşırı yorumlamak"
     }
    ]
   },
@@ -252,43 +252,43 @@
    "title": "Podium: Isch d Lehr no zäitgemäss?",
    "genre": "Panel",
    "intro": "İsviçre'nin en çok gurur duyduğu sistem tartışılıyor. Kimin nerede taviz verdiğini izle.",
-   "metin": "Moderator: Frau Blattner, Si fordered, dass meh Jugendlichi as Gymi gönd. Warum?\nBlattner: Well d Arbetswelt sich schnäller ändert als es Berufsbild. Wär mit fufzäh en Bruef wählt, wählt villicht öppis, wo s i zwänzg Jaar nüme git. E breiti Bildig schützt besser.\nModerator: Herr Nussbaumer?\nNussbaumer: Das Argumänt tönt guet und isch empirisch schwach. D Lehr isch nöd es Bruefsurtäil uf Läbesziit — vierzig Prozänt vo de Lehrabgänger schaffed zää Jaar spöter i me andere Feld. Was bliibt, isch d Fähigkäit z schaffe: Termine, Chunde, Verantwortig. Das lernt me im Gymi nöd.\nBlattner: Dää Punkt raum ich ii. Was ich nöd iiraume, isch di soziali Sälektion. Chind vo Akademiker gönd bi gliiche Note deutlich hüüfiger as Gymi. Das isch nöd Talänt, das isch Herkunft.\nNussbaumer: Und do bin ich bi Ine. Das isch de gröscht Handligsbedarf, wo mir händ. Aber d Antwort isch nöd, d Lehr abzwerte — sondern d Durchlässigkäit ernscht z nää. Berufsmatur mues gliichwertig sii, nöd es Trostpreis.\nModerator: Und d Automatisierig?\nNussbaumer: Trifft bäidi Wäg. Es git kä Uusbildig, wo dervor schützt.\nBlattner: Do sind mir üs einig. Villicht isch d Frag falsch gstellt: Nöd Lehr oder Gymi, sondern öb öpper mit zwänzg no cha wächsle, ohni vo vorne aazfange.",
+   "text": "Moderator: Frau Blattner, Si fordered, dass meh Jugendlichi as Gymi gönd. Warum?\nBlattner: Well d Arbetswelt sich schnäller ändert als es Berufsbild. Wär mit fufzäh en Bruef wählt, wählt villicht öppis, wo s i zwänzg Jaar nüme git. E breiti Bildig schützt besser.\nModerator: Herr Nussbaumer?\nNussbaumer: Das Argumänt tönt guet und isch empirisch schwach. D Lehr isch nöd es Bruefsurtäil uf Läbesziit — vierzig Prozänt vo de Lehrabgänger schaffed zää Jaar spöter i me andere Feld. Was bliibt, isch d Fähigkäit z schaffe: Termine, Chunde, Verantwortig. Das lernt me im Gymi nöd.\nBlattner: Dää Punkt raum ich ii. Was ich nöd iiraume, isch di soziali Sälektion. Chind vo Akademiker gönd bi gliiche Note deutlich hüüfiger as Gymi. Das isch nöd Talänt, das isch Herkunft.\nNussbaumer: Und do bin ich bi Ine. Das isch de gröscht Handligsbedarf, wo mir händ. Aber d Antwort isch nöd, d Lehr abzwerte — sondern d Durchlässigkäit ernscht z nää. Berufsmatur mues gliichwertig sii, nöd es Trostpreis.\nModerator: Und d Automatisierig?\nNussbaumer: Trifft bäidi Wäg. Es git kä Uusbildig, wo dervor schützt.\nBlattner: Do sind mir üs einig. Villicht isch d Frag falsch gstellt: Nöd Lehr oder Gymi, sondern öb öpper mit zwänzg no cha wächsle, ohni vo vorne aazfange.",
    "gloss": [
     {
      "de": "zäitgemäss",
-     "mevcutTr": "çağa uygun"
+     "currentTr": "çağa uygun"
     },
     {
      "de": "d Akademisierig",
-     "mevcutTr": "akademikleşme"
+     "currentTr": "akademikleşme"
     },
     {
      "de": "d Durchlässigkäit",
-     "mevcutTr": "geçişkenlik"
+     "currentTr": "geçişkenlik"
     },
     {
      "de": "de Abschluss",
-     "mevcutTr": "diploma",
-     "havuz": {
+     "currentTr": "diploma",
+     "pool": {
       "tr": "mezuniyet",
       "en": "graduation"
      }
     },
     {
      "de": "d Automatisierig",
-     "mevcutTr": "otomasyon"
+     "currentTr": "otomasyon"
     },
     {
      "de": "s Vorurtäil",
-     "mevcutTr": "önyargı"
+     "currentTr": "önyargı"
     },
     {
      "de": "iiraume",
-     "mevcutTr": "kabul etmek"
+     "currentTr": "kabul etmek"
     },
     {
      "de": "de Handligsbedarf",
-     "mevcutTr": "yapılması gereken"
+     "currentTr": "yapılması gereken"
     }
    ]
   },
@@ -299,51 +299,51 @@
    "title": "Es Konfliktgspröch im Betrieb",
    "genre": "Diyalog",
    "intro": "İş yerinde bir çatışma nasıl konuşulur? İsviçre'de doğrudan olacaksın, ama karşındakini köşeye sıkıştırmadan.",
-   "metin": "Lea: Jonas, häsch churz Ziit? Ich wett öppis aaschpräche.\nJonas: Klar. Tönt ernscht.\nLea: Gestern a de Sitzig häsch gsäit, de Bricht seig „irgendwie unvollständig“. Ich han drü Täg dra gschaffet.\nJonas: Oh. Ich han di nöd wölle kritisiere.\nLea: Das glaub ich der. Aber vor sibe Lüüt wirkt so en Satz anders als under üs.\nJonas: Do häsch rächt. Ich han a d Zaale usem Lager dänkt — die fähled ja würkli. Aber die häsch du gar nie übercho, oder?\nLea: Genau. Ich han zwäimal gfrogt und käi Antwort übercho.\nJonas: Denn isch min Satz äifach falsch gsii. Ich säg das morn i de Rundi — churz, ohni Drama, aber ich säg s.\nLea: Merci. Und wänn der öppis uffallt, säg s mer gärn vorher.\nJonas: Mached mer so. Ich schriib der denn äifach direkt.",
+   "text": "Lea: Jonas, häsch churz Ziit? Ich wett öppis aaschpräche.\nJonas: Klar. Tönt ernscht.\nLea: Gestern a de Sitzig häsch gsäit, de Bricht seig „irgendwie unvollständig“. Ich han drü Täg dra gschaffet.\nJonas: Oh. Ich han di nöd wölle kritisiere.\nLea: Das glaub ich der. Aber vor sibe Lüüt wirkt so en Satz anders als under üs.\nJonas: Do häsch rächt. Ich han a d Zaale usem Lager dänkt — die fähled ja würkli. Aber die häsch du gar nie übercho, oder?\nLea: Genau. Ich han zwäimal gfrogt und käi Antwort übercho.\nJonas: Denn isch min Satz äifach falsch gsii. Ich säg das morn i de Rundi — churz, ohni Drama, aber ich säg s.\nLea: Merci. Und wänn der öppis uffallt, säg s mer gärn vorher.\nJonas: Mached mer so. Ich schriib der denn äifach direkt.",
    "gloss": [
     {
      "de": "de Konflikt",
-     "mevcutTr": "çatışma",
-     "havuz": {
+     "currentTr": "çatışma",
+     "pool": {
       "tr": "çatışma",
       "en": "conflict"
      }
     },
     {
      "de": "de Vorwurf",
-     "mevcutTr": "suçlama",
-     "havuz": {
+     "currentTr": "suçlama",
+     "pool": {
       "tr": "suçlama",
       "en": "accusation"
      }
     },
     {
      "de": "sich aagriffe fühle",
-     "mevcutTr": "saldırıya uğramış hissetmek"
+     "currentTr": "saldırıya uğramış hissetmek"
     },
     {
      "de": "d Absicht",
-     "mevcutTr": "niyet",
-     "havuz": {
+     "currentTr": "niyet",
+     "pool": {
       "tr": "niyet",
       "en": "intention"
      }
     },
     {
      "de": "aaschpräche",
-     "mevcutTr": "konuyu açmak"
+     "currentTr": "konuyu açmak"
     },
     {
      "de": "klääre",
-     "mevcutTr": "açıklığa kavuşturmak"
+     "currentTr": "açıklığa kavuşturmak"
     },
     {
      "de": "zuegää",
-     "mevcutTr": "kabul etmek"
+     "currentTr": "kabul etmek"
     },
     {
      "de": "abmache",
-     "mevcutTr": "kararlaştırmak"
+     "currentTr": "kararlaştırmak"
     }
    ]
   },
@@ -354,43 +354,43 @@
    "title": "De Vertrag isch da",
    "genre": "Telefon",
    "intro": "Hikâyenin sonu: Amina'nın telefonu çalıyor — ve konuşma beklediği yerde bitmiyor.",
-   "metin": "Frau Kern: Frau Bekele? Kern, Apotheke am Limmatplatz. Händ Si churz Ziit?\nAmina: Ja … ja, sicher.\nFrau Kern: Mir wänd Ine d Lehrstell aabüüte. Ab em 1. Auguscht, Pharma-Assistentin EFZ, drei Jaar.\nAmina: Würkli? Merci. Merci vilmal.\nFrau Kern: Gärn. Ich säg Ine aber au, warum — das isch mir wichtig. Nöd wäge de Note. Wäge de Antwort uf d Frag mit de Berufsschuel.\nAmina: Wäge däm, dass ich s sofort säge würd?\nFrau Kern: Genau. Mir händ scho Lehrlig gha, wo im Juni gsäit händ, si chömed siit Oktober nöd hinderher. Das isch s Problem, nöd d Note.\nAmina: Wie gaat s jetz wiiter?\nFrau Kern: Ich schick Ine de Lehrvertrag. Dää unterschriibed Si, Ihri Eltere au, well Si na nöd achzäh sind. Denn gaat er as Amt für Berufsbildig — ohni die Bewilligung isch er nöd gültig.\nAmina: Und d Probeziit?\nFrau Kern: Drei Mönet. Die isch für bäidi Siite da — au für Si. Wänn Si im Oktober merked, das isch nüt für Si, denn säged Si s. Das isch käi Katastrofe, sondern de Sinn vo de Probeziit.\nAmina: Das han ich no nie so ghört.\nFrau Kern: Denn han ich hüt scho öppis Nützlichs gmacht. Bis im Auguscht!",
+   "text": "Frau Kern: Frau Bekele? Kern, Apotheke am Limmatplatz. Händ Si churz Ziit?\nAmina: Ja … ja, sicher.\nFrau Kern: Mir wänd Ine d Lehrstell aabüüte. Ab em 1. Auguscht, Pharma-Assistentin EFZ, drei Jaar.\nAmina: Würkli? Merci. Merci vilmal.\nFrau Kern: Gärn. Ich säg Ine aber au, warum — das isch mir wichtig. Nöd wäge de Note. Wäge de Antwort uf d Frag mit de Berufsschuel.\nAmina: Wäge däm, dass ich s sofort säge würd?\nFrau Kern: Genau. Mir händ scho Lehrlig gha, wo im Juni gsäit händ, si chömed siit Oktober nöd hinderher. Das isch s Problem, nöd d Note.\nAmina: Wie gaat s jetz wiiter?\nFrau Kern: Ich schick Ine de Lehrvertrag. Dää unterschriibed Si, Ihri Eltere au, well Si na nöd achzäh sind. Denn gaat er as Amt für Berufsbildig — ohni die Bewilligung isch er nöd gültig.\nAmina: Und d Probeziit?\nFrau Kern: Drei Mönet. Die isch für bäidi Siite da — au für Si. Wänn Si im Oktober merked, das isch nüt für Si, denn säged Si s. Das isch käi Katastrofe, sondern de Sinn vo de Probeziit.\nAmina: Das han ich no nie so ghört.\nFrau Kern: Denn han ich hüt scho öppis Nützlichs gmacht. Bis im Auguscht!",
    "gloss": [
     {
      "de": "d Zuesaag",
-     "mevcutTr": "olumlu cevap"
+     "currentTr": "olumlu cevap"
     },
     {
      "de": "de Lehrvertrag",
-     "mevcutTr": "çıraklık sözleşmesi",
-     "havuz": {
+     "currentTr": "çıraklık sözleşmesi",
+     "pool": {
       "tr": "çıraklık sözleşmesi",
       "en": "apprenticeship contract"
      }
     },
     {
      "de": "s Amt für Berufsbildig",
-     "mevcutTr": "meslek eğitimi dairesi"
+     "currentTr": "meslek eğitimi dairesi"
     },
     {
      "de": "unterschriibe",
-     "mevcutTr": "imzalamak"
+     "currentTr": "imzalamak"
     },
     {
      "de": "d Probeziit",
-     "mevcutTr": "deneme süresi"
+     "currentTr": "deneme süresi"
     },
     {
      "de": "de Loon",
-     "mevcutTr": "ücret"
+     "currentTr": "ücret"
     },
     {
      "de": "d Erwartig",
-     "mevcutTr": "beklenti"
+     "currentTr": "beklenti"
     },
     {
      "de": "sich fröie",
-     "mevcutTr": "sevinmek"
+     "currentTr": "sevinmek"
     }
    ]
   }

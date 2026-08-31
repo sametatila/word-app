@@ -238,7 +238,7 @@
   "tr": "bir daha, tekrar",
   "formen": "",
   "beispiel": "Kannst du das bitte nochmal erklären?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "noch mal (B1)"
   ]
  },
@@ -313,7 +313,7 @@
   "tr": "yerine",
   "formen": "",
   "beispiel": "Anstatt zu lernen, hat er den ganzen Tag gespielt.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "statt (B1)"
   ]
  },
@@ -532,7 +532,7 @@
   "tr": "postacı",
   "formen": "-n",
   "beispiel": "Der Postbote bringt die Pakete meistens am Vormittag.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Briefträger (B1)",
    "der Pöstler (B1)"
   ]
@@ -608,7 +608,7 @@
   "tr": "iş görüşmesi, mülakat",
   "formen": "-e",
   "beispiel": "Ich habe morgen um zehn Uhr ein Bewerbungsgespräch.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Vorstellungsgespräch (B1)"
   ]
  },
@@ -683,7 +683,7 @@
   "tr": "depo, ambar",
   "formen": "-n",
   "beispiel": "In der Lagerhalle ist es im Winter sehr kalt.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Lager (B1)"
   ]
  },
@@ -710,7 +710,7 @@
   "tr": "muayenehane",
   "formen": "-praxen",
   "beispiel": "Sie arbeitet als Sekretärin in einer Arztpraxis.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Praxis (A1)",
    "die Ordination (B1)"
   ]

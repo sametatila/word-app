@@ -1,16 +1,16 @@
 {
- "paket": "b2-026",
+ "packet": "b2-026",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4895,
    "de": "proben",
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat geprobt",
-   "mevcutTr": "prova yapmak, çalışmak",
-   "mevcutBeispiel": "Das Ensemble probt jeden Abend bis kurz vor Mitternacht.",
-   "mevcutBeispielTr": "Topluluk her akşam gece yarısına az kala kadar prova yapıyor."
+   "currentTr": "prova yapmak, çalışmak",
+   "currentBeispiel": "Das Ensemble probt jeden Abend bis kurz vor Mitternacht.",
+   "currentBeispielTr": "Topluluk her akşam gece yarısına az kala kadar prova yapıyor."
   },
   {
    "id": 4896,
@@ -18,9 +18,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verfilmt",
-   "mevcutTr": "filme çekmek, sinemaya uyarlamak",
-   "mevcutBeispiel": "Der Roman wurde inzwischen zum dritten Mal verfilmt.",
-   "mevcutBeispielTr": "Roman bu arada üçüncü kez sinemaya uyarlandı."
+   "currentTr": "filme çekmek, sinemaya uyarlamak",
+   "currentBeispiel": "Der Roman wurde inzwischen zum dritten Mal verfilmt.",
+   "currentBeispielTr": "Roman bu arada üçüncü kez sinemaya uyarlandı."
   },
   {
    "id": 4897,
@@ -28,10 +28,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat betrachtet",
-   "mevcutTr": "seyretmek, incelemek, saymak",
-   "mevcutBeispiel": "Er betrachtete das Bild lange, ohne ein Wort zu sagen.",
-   "mevcutBeispielTr": "Resmi tek kelime etmeden uzun uzun inceledi.",
-   "cakisan": [
+   "currentTr": "seyretmek, incelemek, saymak",
+   "currentBeispiel": "Er betrachtete das Bild lange, ohne ein Wort zu sagen.",
+   "currentBeispielTr": "Resmi tek kelime etmeden uzun uzun inceledi.",
+   "overlapping": [
     "zuschauen (B1)"
    ]
   },
@@ -41,10 +41,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gestaltet",
-   "mevcutTr": "biçimlendirmek, tasarlamak, düzenlemek",
-   "mevcutBeispiel": "Die Studierenden gestalteten das Programm des Festivals selbst.",
-   "mevcutBeispielTr": "Öğrenciler festivalin programını kendileri düzenledi.",
-   "cakisan": [
+   "currentTr": "biçimlendirmek, tasarlamak, düzenlemek",
+   "currentBeispiel": "Die Studierenden gestalteten das Programm des Festivals selbst.",
+   "currentBeispielTr": "Öğrenciler festivalin programını kendileri düzenledi.",
+   "overlapping": [
     "prägen (B2)"
    ]
   },
@@ -54,10 +54,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat bestiegen",
-   "mevcutTr": "tırmanmak, zirvesine çıkmak",
-   "mevcutBeispiel": "Im Sommer wollen wir gemeinsam den höchsten Gipfel besteigen.",
-   "mevcutBeispielTr": "Yazın birlikte en yüksek zirveye tırmanmak istiyoruz.",
-   "cakisan": [
+   "currentTr": "tırmanmak, zirvesine çıkmak",
+   "currentBeispiel": "Im Sommer wollen wir gemeinsam den höchsten Gipfel besteigen.",
+   "currentBeispielTr": "Yazın birlikte en yüksek zirveye tırmanmak istiyoruz.",
+   "overlapping": [
     "klettern (B1)",
     "eskalieren (C1)"
    ]
@@ -68,10 +68,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat erkundet",
-   "mevcutTr": "keşfetmek, araştırmak",
-   "mevcutBeispiel": "Am ersten Tag erkundeten wir die Altstadt ganz ohne Karte.",
-   "mevcutBeispielTr": "İlk gün eski şehri hiç harita kullanmadan keşfettik.",
-   "cakisan": [
+   "currentTr": "keşfetmek, araştırmak",
+   "currentBeispiel": "Am ersten Tag erkundeten wir die Altstadt ganz ohne Karte.",
+   "currentBeispielTr": "İlk gün eski şehri hiç harita kullanmadan keşfettik.",
+   "overlapping": [
     "entdecken (B1)"
    ]
   },
@@ -81,9 +81,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat besiegt",
-   "mevcutTr": "yenmek, mağlup etmek",
-   "mevcutBeispiel": "Sie besiegte die Titelverteidigerin in nur zwei Sätzen.",
-   "mevcutBeispielTr": "Unvanını savunan rakibini yalnızca iki sette yendi."
+   "currentTr": "yenmek, mağlup etmek",
+   "currentBeispiel": "Sie besiegte die Titelverteidigerin in nur zwei Sätzen.",
+   "currentBeispielTr": "Unvanını savunan rakibini yalnızca iki sette yendi."
   },
   {
    "id": 4902,
@@ -91,9 +91,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist unterlegen",
-   "mevcutTr": "yenilmek, mağlup olmak",
-   "mevcutBeispiel": "Im Finale unterlagen sie dem Gastgeber mit einem Tor Unterschied.",
-   "mevcutBeispielTr": "Finalde ev sahibine bir gol farkla yenildiler."
+   "currentTr": "yenilmek, mağlup olmak",
+   "currentBeispiel": "Im Finale unterlagen sie dem Gastgeber mit einem Tor Unterschied.",
+   "currentBeispielTr": "Finalde ev sahibine bir gol farkla yenildiler."
   },
   {
    "id": 4903,
@@ -101,10 +101,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat ausgeübt",
-   "mevcutTr": "yapmak, icra etmek, uygulamak",
-   "mevcutBeispiel": "Diesen Sport übt er schon seit seiner Schulzeit aus.",
-   "mevcutBeispielTr": "Bu sporu okul yıllarından beri yapıyor.",
-   "cakisan": [
+   "currentTr": "yapmak, icra etmek, uygulamak",
+   "currentBeispiel": "Diesen Sport übt er schon seit seiner Schulzeit aus.",
+   "currentBeispielTr": "Bu sporu okul yıllarından beri yapıyor.",
+   "overlapping": [
     "machen (A1)",
     "tun (A1)",
     "treiben (B1)"
@@ -116,10 +116,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat sich gewidmet",
-   "mevcutTr": "kendini adamak, vakit ayırmak",
-   "mevcutBeispiel": "Nach der Pensionierung widmete er sich ganz der Malerei.",
-   "mevcutBeispielTr": "Emekli olduktan sonra kendini tamamen resme adadı.",
-   "cakisan": [
+   "currentTr": "kendini adamak, vakit ayırmak",
+   "currentBeispiel": "Nach der Pensionierung widmete er sich ganz der Malerei.",
+   "currentBeispielTr": "Emekli olduktan sonra kendini tamamen resme adadı.",
+   "overlapping": [
     "sich engagieren (B2)",
     "sich engagieren für (B2)"
    ]
@@ -130,9 +130,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat ausgestrahlt",
-   "mevcutTr": "yayınlamak, yaymak",
-   "mevcutBeispiel": "Das Finale wird am Samstag live im Fernsehen ausgestrahlt.",
-   "mevcutBeispielTr": "Final cumartesi günü televizyonda canlı yayınlanacak."
+   "currentTr": "yayınlamak, yaymak",
+   "currentBeispiel": "Das Finale wird am Samstag live im Fernsehen ausgestrahlt.",
+   "currentBeispielTr": "Final cumartesi günü televizyonda canlı yayınlanacak."
   },
   {
    "id": 4906,
@@ -140,9 +140,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat moderiert",
-   "mevcutTr": "sunuculuk yapmak, yönetmek",
-   "mevcutBeispiel": "Sie moderiert seit fünf Jahren eine Sendung über junge Musik.",
-   "mevcutBeispielTr": "Beş yıldır genç müzik üzerine bir program sunuyor."
+   "currentTr": "sunuculuk yapmak, yönetmek",
+   "currentBeispiel": "Sie moderiert seit fünf Jahren eine Sendung über junge Musik.",
+   "currentBeispielTr": "Beş yıldır genç müzik üzerine bir program sunuyor."
   },
   {
    "id": 4907,
@@ -150,9 +150,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat mitgerissen",
-   "mevcutTr": "coşturmak, sürüklemek",
-   "mevcutBeispiel": "Der Schlusschor riss selbst die skeptischen Zuhörer mit.",
-   "mevcutBeispielTr": "Final korosu şüpheci dinleyicileri bile coşturdu."
+   "currentTr": "coşturmak, sürüklemek",
+   "currentBeispiel": "Der Schlusschor riss selbst die skeptischen Zuhörer mit.",
+   "currentBeispielTr": "Final korosu şüpheci dinleyicileri bile coşturdu."
   },
   {
    "id": 4908,
@@ -160,9 +160,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat fasziniert",
-   "mevcutTr": "büyülemek, hayran bırakmak",
-   "mevcutBeispiel": "Alte Handschriften faszinieren ihn mehr als jedes moderne Werk.",
-   "mevcutBeispielTr": "Eski el yazmaları onu her modern eserden daha çok büyülüyor."
+   "currentTr": "büyülemek, hayran bırakmak",
+   "currentBeispiel": "Alte Handschriften faszinieren ihn mehr als jedes moderne Werk.",
+   "currentBeispielTr": "Eski el yazmaları onu her modern eserden daha çok büyülüyor."
   },
   {
    "id": 4909,
@@ -170,10 +170,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat beeindruckt",
-   "mevcutTr": "etkilemek, hayranlık uyandırmak",
-   "mevcutBeispiel": "Die Lichtinstallation im Innenhof hat mich wirklich beeindruckt.",
-   "mevcutBeispielTr": "İç avludaki ışık yerleştirmesi beni gerçekten etkiledi.",
-   "cakisan": [
+   "currentTr": "etkilemek, hayranlık uyandırmak",
+   "currentBeispiel": "Die Lichtinstallation im Innenhof hat mich wirklich beeindruckt.",
+   "currentBeispielTr": "İç avludaki ışık yerleştirmesi beni gerçekten etkiledi.",
+   "overlapping": [
     "beeinflussen (B1)",
     "sich auswirken (B2)"
    ]
@@ -184,9 +184,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat angefeuert",
-   "mevcutTr": "tezahürat yapmak, desteklemek",
-   "mevcutBeispiel": "Die Zuschauer feuerten die Läufer auf den letzten Metern an.",
-   "mevcutBeispielTr": "Seyirciler son metrelerde koşuculara tezahürat yaptı."
+   "currentTr": "tezahürat yapmak, desteklemek",
+   "currentBeispiel": "Die Zuschauer feuerten die Läufer auf den letzten Metern an.",
+   "currentBeispielTr": "Seyirciler son metrelerde koşuculara tezahürat yaptı."
   },
   {
    "id": 4911,
@@ -194,10 +194,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat applaudiert",
-   "mevcutTr": "alkışlamak",
-   "mevcutBeispiel": "Das Publikum applaudierte im Stehen fast fünf Minuten lang.",
-   "mevcutBeispielTr": "Seyirci ayakta neredeyse beş dakika boyunca alkışladı.",
-   "cakisan": [
+   "currentTr": "alkışlamak",
+   "currentBeispiel": "Das Publikum applaudierte im Stehen fast fünf Minuten lang.",
+   "currentBeispielTr": "Seyirci ayakta neredeyse beş dakika boyunca alkışladı.",
+   "overlapping": [
     "klatschen (A2)"
    ]
   },
@@ -207,9 +207,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sanatsal, sanata ilişkin",
-   "mevcutBeispiel": "Die künstlerische Leitung des Hauses wechselt zur neuen Spielzeit.",
-   "mevcutBeispielTr": "Kurumun sanat yönetmenliği yeni sezonda değişiyor."
+   "currentTr": "sanatsal, sanata ilişkin",
+   "currentBeispiel": "Die künstlerische Leitung des Hauses wechselt zur neuen Spielzeit.",
+   "currentBeispielTr": "Kurumun sanat yönetmenliği yeni sezonda değişiyor."
   },
   {
    "id": 4913,
@@ -217,9 +217,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sürükleyici, ilgi çekici",
-   "mevcutBeispiel": "Der Vortrag über alte Musikinstrumente war überraschend fesselnd.",
-   "mevcutBeispielTr": "Eski müzik aletleri üzerine konuşma şaşırtıcı derecede sürükleyiciydi."
+   "currentTr": "sürükleyici, ilgi çekici",
+   "currentBeispiel": "Der Vortrag über alte Musikinstrumente war überraschend fesselnd.",
+   "currentBeispielTr": "Eski müzik aletleri üzerine konuşma şaşırtıcı derecede sürükleyiciydi."
   },
   {
    "id": 4914,
@@ -227,10 +227,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "tekdüze, monoton",
-   "mevcutBeispiel": "Ohne Vereine und Feste wäre das Dorfleben ziemlich eintönig.",
-   "mevcutBeispielTr": "Dernekler ve şenlikler olmasa köy hayatı epeyce tekdüze olurdu.",
-   "cakisan": [
+   "currentTr": "tekdüze, monoton",
+   "currentBeispiel": "Ohne Vereine und Feste wäre das Dorfleben ziemlich eintönig.",
+   "currentBeispielTr": "Dernekler ve şenlikler olmasa köy hayatı epeyce tekdüze olurdu.",
+   "overlapping": [
     "monoton (C1)"
    ]
   },
@@ -240,10 +240,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "çeşitli, renkli, monotonluktan uzak",
-   "mevcutBeispiel": "Das Ferienprogramm für Kinder ist in diesem Jahr sehr abwechslungsreich.",
-   "mevcutBeispielTr": "Çocuklar için tatil programı bu yıl çok çeşitli.",
-   "cakisan": [
+   "currentTr": "çeşitli, renkli, monotonluktan uzak",
+   "currentBeispiel": "Das Ferienprogramm für Kinder ist in diesem Jahr sehr abwechslungsreich.",
+   "currentBeispielTr": "Çocuklar için tatil programı bu yıl çok çeşitli.",
+   "overlapping": [
     "vielfältig (B2)"
    ]
   },
@@ -253,9 +253,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "eğlenceli, keyifli",
-   "mevcutBeispiel": "Der Abend war lehrreich und zugleich ausgesprochen unterhaltsam.",
-   "mevcutBeispielTr": "Akşam hem öğreticiydi hem de son derece eğlenceliydi."
+   "currentTr": "eğlenceli, keyifli",
+   "currentBeispiel": "Der Abend war lehrreich und zugleich ausgesprochen unterhaltsam.",
+   "currentBeispielTr": "Akşam hem öğreticiydi hem de son derece eğlenceliydi."
   },
   {
    "id": 4917,
@@ -263,9 +263,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "görülmeye değer",
-   "mevcutBeispiel": "Besonders sehenswert ist die Sammlung im Obergeschoss des Museums.",
-   "mevcutBeispielTr": "Özellikle müzenin üst katındaki koleksiyon görülmeye değer."
+   "currentTr": "görülmeye değer",
+   "currentBeispiel": "Besonders sehenswert ist die Sammlung im Obergeschoss des Museums.",
+   "currentBeispielTr": "Özellikle müzenin üst katındaki koleksiyon görülmeye değer."
   },
   {
    "id": 4918,
@@ -273,10 +273,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "çağdaş, günümüze ait",
-   "mevcutBeispiel": "Für zeitgenössische Kunst interessiert sich vor allem ein jüngeres Publikum.",
-   "mevcutBeispielTr": "Çağdaş sanata özellikle daha genç bir kitle ilgi duyuyor.",
-   "cakisan": [
+   "currentTr": "çağdaş, günümüze ait",
+   "currentBeispiel": "Für zeitgenössische Kunst interessiert sich vor allem ein jüngeres Publikum.",
+   "currentBeispielTr": "Çağdaş sanata özellikle daha genç bir kitle ilgi duyuyor.",
+   "overlapping": [
     "zeitgemäß (B2)"
    ]
   },
@@ -286,9 +286,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "biletleri tükenmiş, tükenmiş (ürün)",
-   "mevcutBeispiel": "Beide Konzerte waren schon nach wenigen Stunden ausverkauft.",
-   "mevcutBeispielTr": "Her iki konserin de biletleri birkaç saat içinde tükendi."
+   "currentTr": "biletleri tükenmiş, tükenmiş (ürün)",
+   "currentBeispiel": "Beide Konzerte waren schon nach wenigen Stunden ausverkauft.",
+   "currentBeispielTr": "Her iki konserin de biletleri birkaç saat içinde tükendi."
   },
   {
    "id": 4920,
@@ -296,9 +296,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kendi başına, kendi bildiğince (rehbersiz)",
-   "mevcutBeispiel": "Statt einer Führung erkundeten sie die Stadt auf eigene Faust.",
-   "mevcutBeispielTr": "Rehberli tur yerine şehri kendi başlarına gezdiler."
+   "currentTr": "kendi başına, kendi bildiğince (rehbersiz)",
+   "currentBeispiel": "Statt einer Führung erkundeten sie die Stadt auf eigene Faust.",
+   "currentBeispielTr": "Rehberli tur yerine şehri kendi başlarına gezdiler."
   },
   {
    "id": 4921,
@@ -306,9 +306,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Auflagen",
-   "mevcutTr": "tiraj, baskı sayısı",
-   "mevcutBeispiel": "Die Auflage der Zeitung ist in den letzten Jahren deutlich gesunken.",
-   "mevcutBeispielTr": "Gazetenin tirajı son yıllarda belirgin biçimde düştü."
+   "currentTr": "tiraj, baskı sayısı",
+   "currentBeispiel": "Die Auflage der Zeitung ist in den letzten Jahren deutlich gesunken.",
+   "currentBeispielTr": "Gazetenin tirajı son yıllarda belirgin biçimde düştü."
   },
   {
    "id": 4922,
@@ -316,9 +316,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Redaktionen",
-   "mevcutTr": "yazı işleri, redaksiyon",
-   "mevcutBeispiel": "Die Redaktion entscheidet morgen über den Aufmacher der Titelseite.",
-   "mevcutBeispielTr": "Yazı işleri yarın manşet haberi konusunda karar verecek."
+   "currentTr": "yazı işleri, redaksiyon",
+   "currentBeispiel": "Die Redaktion entscheidet morgen über den Aufmacher der Titelseite.",
+   "currentBeispielTr": "Yazı işleri yarın manşet haberi konusunda karar verecek."
   },
   {
    "id": 4923,
@@ -326,9 +326,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Leitartikel",
-   "mevcutTr": "başyazı",
-   "mevcutBeispiel": "Im Leitartikel kritisiert der Chefredakteur die Entscheidung der Regierung.",
-   "mevcutBeispielTr": "Başyazıda genel yayın yönetmeni hükümetin kararını eleştiriyor."
+   "currentTr": "başyazı",
+   "currentBeispiel": "Im Leitartikel kritisiert der Chefredakteur die Entscheidung der Regierung.",
+   "currentBeispielTr": "Başyazıda genel yayın yönetmeni hükümetin kararını eleştiriyor."
   },
   {
    "id": 4924,
@@ -336,9 +336,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "radyo ve televizyon yayıncılığı",
-   "mevcutBeispiel": "Der öffentlich-rechtliche Rundfunk finanziert sich über einen monatlichen Beitrag.",
-   "mevcutBeispielTr": "Kamu yayıncılığı aylık bir katkı payıyla finanse ediliyor."
+   "currentTr": "radyo ve televizyon yayıncılığı",
+   "currentBeispiel": "Der öffentlich-rechtliche Rundfunk finanziert sich über einen monatlichen Beitrag.",
+   "currentBeispielTr": "Kamu yayıncılığı aylık bir katkı payıyla finanse ediliyor."
   },
   {
    "id": 4925,
@@ -346,9 +346,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Moderatoren",
-   "mevcutTr": "sunucu, program sunucusu",
-   "mevcutBeispiel": "Der Moderator unterbrach den Gast mitten in seiner Antwort.",
-   "mevcutBeispielTr": "Sunucu, konuğun sözünü cevabının ortasında kesti."
+   "currentTr": "sunucu, program sunucusu",
+   "currentBeispiel": "Der Moderator unterbrach den Gast mitten in seiner Antwort.",
+   "currentBeispielTr": "Sunucu, konuğun sözünü cevabının ortasında kesti."
   },
   {
    "id": 4926,
@@ -356,9 +356,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Pressefreiheiten",
-   "mevcutTr": "basın özgürlüğü",
-   "mevcutBeispiel": "In vielen Ländern wird die Pressefreiheit systematisch eingeschränkt.",
-   "mevcutBeispielTr": "Birçok ülkede basın özgürlüğü sistematik olarak kısıtlanıyor."
+   "currentTr": "basın özgürlüğü",
+   "currentBeispiel": "In vielen Ländern wird die Pressefreiheit systematisch eingeschränkt.",
+   "currentBeispielTr": "Birçok ülkede basın özgürlüğü sistematik olarak kısıtlanıyor."
   },
   {
    "id": 4927,
@@ -366,9 +366,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gerüchte",
-   "mevcutTr": "söylenti, dedikodu",
-   "mevcutBeispiel": "Über die geplante Fusion halten sich hartnäckige Gerüchte.",
-   "mevcutBeispielTr": "Planlanan birleşme hakkında inatçı söylentiler dolaşıyor."
+   "currentTr": "söylenti, dedikodu",
+   "currentBeispiel": "Über die geplante Fusion halten sich hartnäckige Gerüchte.",
+   "currentBeispielTr": "Planlanan birleşme hakkında inatçı söylentiler dolaşıyor."
   },
   {
    "id": 4928,
@@ -376,10 +376,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kampagnen",
-   "mevcutTr": "kampanya",
-   "mevcutBeispiel": "Die Kampagne gegen Lebensmittelverschwendung läuft seit drei Monaten.",
-   "mevcutBeispielTr": "Gıda israfına karşı kampanya üç aydır sürüyor.",
-   "cakisan": [
+   "currentTr": "kampanya",
+   "currentBeispiel": "Die Kampagne gegen Lebensmittelverschwendung läuft seit drei Monaten.",
+   "currentBeispielTr": "Gıda israfına karşı kampanya üç aydır sürüyor.",
+   "overlapping": [
     "die Aktion (B1)"
    ]
   },
@@ -389,9 +389,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Slogans",
-   "mevcutTr": "slogan",
-   "mevcutBeispiel": "Der neue Slogan der Marke bleibt sofort im Gedächtnis.",
-   "mevcutBeispielTr": "Markanın yeni sloganı hemen akılda kalıyor."
+   "currentTr": "slogan",
+   "currentBeispiel": "Der neue Slogan der Marke bleibt sofort im Gedächtnis.",
+   "currentBeispielTr": "Markanın yeni sloganı hemen akılda kalıyor."
   },
   {
    "id": 4930,
@@ -399,9 +399,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zielgruppen",
-   "mevcutTr": "hedef kitle",
-   "mevcutBeispiel": "Die Werbung spricht vor allem eine junge Zielgruppe an.",
-   "mevcutBeispielTr": "Reklam her şeyden önce genç bir hedef kitleye sesleniyor."
+   "currentTr": "hedef kitle",
+   "currentBeispiel": "Die Werbung spricht vor allem eine junge Zielgruppe an.",
+   "currentBeispielTr": "Reklam her şeyden önce genç bir hedef kitleye sesleniyor."
   },
   {
    "id": 4931,
@@ -409,10 +409,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Reichweiten",
-   "mevcutTr": "erişim, ulaşılan kitle",
-   "mevcutBeispiel": "Der Beitrag erzielte in wenigen Stunden eine enorme Reichweite.",
-   "mevcutBeispielTr": "Paylaşım birkaç saat içinde muazzam bir erişime ulaştı.",
-   "cakisan": [
+   "currentTr": "erişim, ulaşılan kitle",
+   "currentBeispiel": "Der Beitrag erzielte in wenigen Stunden eine enorme Reichweite.",
+   "currentBeispielTr": "Paylaşım birkaç saat içinde muazzam bir erişime ulaştı.",
+   "overlapping": [
     "der Zugriff (B2)"
    ]
   },
@@ -422,9 +422,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Meinungsumfragen",
-   "mevcutTr": "kamuoyu araştırması, anket",
-   "mevcutBeispiel": "Laut einer aktuellen Meinungsumfrage lehnt die Mehrheit den Vorschlag ab.",
-   "mevcutBeispielTr": "Güncel bir kamuoyu araştırmasına göre çoğunluk öneriyi reddediyor."
+   "currentTr": "kamuoyu araştırması, anket",
+   "currentBeispiel": "Laut einer aktuellen Meinungsumfrage lehnt die Mehrheit den Vorschlag ab.",
+   "currentBeispielTr": "Güncel bir kamuoyu araştırmasına göre çoğunluk öneriyi reddediyor."
   },
   {
    "id": 4933,
@@ -432,9 +432,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Boulevardzeitungen",
-   "mevcutTr": "magazin gazetesi, bulvar gazetesi",
-   "mevcutBeispiel": "Die Boulevardzeitung machte aus dem Streit eine große Geschichte.",
-   "mevcutBeispielTr": "Bulvar gazetesi tartışmadan büyük bir hikâye çıkardı."
+   "currentTr": "magazin gazetesi, bulvar gazetesi",
+   "currentBeispiel": "Die Boulevardzeitung machte aus dem Streit eine große Geschichte.",
+   "currentBeispielTr": "Bulvar gazetesi tartışmadan büyük bir hikâye çıkardı."
   },
   {
    "id": 4934,
@@ -442,9 +442,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nachrichtensendungen",
-   "mevcutTr": "haber bülteni",
-   "mevcutBeispiel": "Die Nachrichtensendung um acht Uhr erreicht Millionen Haushalte.",
-   "mevcutBeispielTr": "Saat sekizdeki haber bülteni milyonlarca haneye ulaşıyor."
+   "currentTr": "haber bülteni",
+   "currentBeispiel": "Die Nachrichtensendung um acht Uhr erreicht Millionen Haushalte.",
+   "currentBeispielTr": "Saat sekizdeki haber bülteni milyonlarca haneye ulaşıyor."
   },
   {
    "id": 4935,
@@ -452,10 +452,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rubriken",
-   "mevcutTr": "bölüm, köşe, kategori",
-   "mevcutBeispiel": "Den Artikel finden Sie in der Rubrik Wirtschaft.",
-   "mevcutBeispielTr": "Yazıyı ekonomi bölümünde bulabilirsiniz.",
-   "cakisan": [
+   "currentTr": "bölüm, köşe, kategori",
+   "currentBeispiel": "Den Artikel finden Sie in der Rubrik Wirtschaft.",
+   "currentBeispielTr": "Yazıyı ekonomi bölümünde bulabilirsiniz.",
+   "overlapping": [
     "der Abschnitt (B1)",
     "die Abteilung (B1)",
     "das Kapitel (B1)",
@@ -468,9 +468,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kolumnen",
-   "mevcutTr": "köşe yazısı",
-   "mevcutBeispiel": "Ihre wöchentliche Kolumne über das Stadtleben hat viele treue Leser.",
-   "mevcutBeispielTr": "Şehir hayatı üzerine haftalık köşe yazısının pek çok sadık okuru var."
+   "currentTr": "köşe yazısı",
+   "currentBeispiel": "Ihre wöchentliche Kolumne über das Stadtleben hat viele treue Leser.",
+   "currentBeispielTr": "Şehir hayatı üzerine haftalık köşe yazısının pek çok sadık okuru var."
   },
   {
    "id": 4937,
@@ -478,10 +478,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kommentare",
-   "mevcutTr": "yorum, değerlendirme yazısı",
-   "mevcutBeispiel": "Unter dem Video sammelten sich innerhalb einer Stunde hundert Kommentare.",
-   "mevcutBeispielTr": "Videonun altında bir saat içinde yüz yorum birikti.",
-   "cakisan": [
+   "currentTr": "yorum, değerlendirme yazısı",
+   "currentBeispiel": "Unter dem Video sammelten sich innerhalb einer Stunde hundert Kommentare.",
+   "currentBeispielTr": "Videonun altında bir saat içinde yüz yorum birikti.",
+   "overlapping": [
     "die Interpretation (C1)",
     "die Deutung (B2)"
    ]
@@ -492,10 +492,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Veröffentlichungen",
-   "mevcutTr": "yayın, yayımlama",
-   "mevcutBeispiel": "Die Veröffentlichung der Dokumente sorgte für heftige Reaktionen.",
-   "mevcutBeispielTr": "Belgelerin yayımlanması sert tepkilere yol açtı.",
-   "cakisan": [
+   "currentTr": "yayın, yayımlama",
+   "currentBeispiel": "Die Veröffentlichung der Dokumente sorgte für heftige Reaktionen.",
+   "currentBeispielTr": "Belgelerin yayımlanması sert tepkilere yol açtı.",
+   "overlapping": [
     "die Sendung (A2)"
    ]
   },
@@ -505,10 +505,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Mitteilungen",
-   "mevcutTr": "bildiri, duyuru",
-   "mevcutBeispiel": "In einer kurzen Mitteilung wies das Ministerium die Vorwürfe zurück.",
-   "mevcutBeispielTr": "Bakanlık kısa bir bildiride suçlamaları reddetti.",
-   "cakisan": [
+   "currentTr": "bildiri, duyuru",
+   "currentBeispiel": "In einer kurzen Mitteilung wies das Ministerium die Vorwürfe zurück.",
+   "currentBeispielTr": "Bakanlık kısa bir bildiride suçlamaları reddetti.",
+   "overlapping": [
     "das Manifest (C1)"
    ]
   },
@@ -518,9 +518,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ankündigungen",
-   "mevcutTr": "duyuru, önceden haber verme",
-   "mevcutBeispiel": "Nach der Ankündigung des Rücktritts stiegen die Aktien wieder.",
-   "mevcutBeispielTr": "İstifa duyurusundan sonra hisseler yeniden yükseldi."
+   "currentTr": "duyuru, önceden haber verme",
+   "currentBeispiel": "Nach der Ankündigung des Rücktritts stiegen die Aktien wieder.",
+   "currentBeispielTr": "İstifa duyurusundan sonra hisseler yeniden yükseldi."
   },
   {
    "id": 4941,
@@ -528,9 +528,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Behauptungen",
-   "mevcutTr": "iddia",
-   "mevcutBeispiel": "Für diese Behauptung liefert der Autor keinerlei Belege.",
-   "mevcutBeispielTr": "Yazar bu iddia için hiçbir kanıt sunmuyor."
+   "currentTr": "iddia",
+   "currentBeispiel": "Für diese Behauptung liefert der Autor keinerlei Belege.",
+   "currentBeispielTr": "Yazar bu iddia için hiçbir kanıt sunmuyor."
   },
   {
    "id": 4942,
@@ -538,9 +538,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Richtigstellungen",
-   "mevcutTr": "düzeltme, tekzip",
-   "mevcutBeispiel": "Die Zeitung druckte am nächsten Tag eine kurze Richtigstellung.",
-   "mevcutBeispielTr": "Gazete ertesi gün kısa bir düzeltme yayımladı."
+   "currentTr": "düzeltme, tekzip",
+   "currentBeispiel": "Die Zeitung druckte am nächsten Tag eine kurze Richtigstellung.",
+   "currentBeispielTr": "Gazete ertesi gün kısa bir düzeltme yayımladı."
   },
   {
    "id": 4943,
@@ -548,9 +548,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gegendarstellungen",
-   "mevcutTr": "cevap hakkı yazısı, karşı açıklama",
-   "mevcutBeispiel": "Der Politiker verlangte eine Gegendarstellung auf derselben Seite.",
-   "mevcutBeispielTr": "Siyasetçi aynı sayfada bir karşı açıklama yayımlanmasını talep etti."
+   "currentTr": "cevap hakkı yazısı, karşı açıklama",
+   "currentBeispiel": "Der Politiker verlangte eine Gegendarstellung auf derselben Seite.",
+   "currentBeispielTr": "Siyasetçi aynı sayfada bir karşı açıklama yayımlanmasını talep etti."
   },
   {
    "id": 4944,
@@ -558,9 +558,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Falschmeldungen",
-   "mevcutTr": "yalan haber, asılsız haber",
-   "mevcutBeispiel": "Die Falschmeldung wurde tausendfach geteilt, bevor jemand widersprach.",
-   "mevcutBeispielTr": "Yalan haber, biri itiraz etmeden önce binlerce kez paylaşıldı."
+   "currentTr": "yalan haber, asılsız haber",
+   "currentBeispiel": "Die Falschmeldung wurde tausendfach geteilt, bevor jemand widersprach.",
+   "currentBeispielTr": "Yalan haber, biri itiraz etmeden önce binlerce kez paylaşıldı."
   }
  ]
 }

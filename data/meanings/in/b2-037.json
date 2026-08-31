@@ -1,16 +1,16 @@
 {
- "paket": "b2-037",
+ "packet": "b2-037",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 5446,
    "de": "die Schadsoftware",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "zararlı yazılım",
-   "mevcutBeispiel": "Über einen Anhang gelangte Schadsoftware in das gesamte Firmennetz.",
-   "mevcutBeispielTr": "Bir ek dosya üzerinden zararlı yazılım tüm şirket ağına yayıldı."
+   "currentTr": "zararlı yazılım",
+   "currentBeispiel": "Über einen Anhang gelangte Schadsoftware in das gesamte Firmennetz.",
+   "currentBeispielTr": "Bir ek dosya üzerinden zararlı yazılım tüm şirket ağına yayıldı."
   },
   {
    "id": 5447,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Angreifer",
-   "mevcutTr": "saldırgan",
-   "mevcutBeispiel": "Die Angreifer verschafften sich über gestohlene Zugangsdaten Eintritt ins System.",
-   "mevcutBeispielTr": "Saldırganlar çalınan giriş bilgileriyle sisteme sızdı."
+   "currentTr": "saldırgan",
+   "currentBeispiel": "Die Angreifer verschafften sich über gestohlene Zugangsdaten Eintritt ins System.",
+   "currentBeispielTr": "Saldırganlar çalınan giriş bilgileriyle sisteme sızdı."
   },
   {
    "id": 5448,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "veri kötüye kullanımı",
-   "mevcutBeispiel": "Gegen den Anbieter läuft eine Untersuchung wegen möglichen Datenmissbrauchs.",
-   "mevcutBeispielTr": "Sağlayıcı hakkında olası veri kötüye kullanımı nedeniyle soruşturma yürütülüyor."
+   "currentTr": "veri kötüye kullanımı",
+   "currentBeispiel": "Gegen den Anbieter läuft eine Untersuchung wegen möglichen Datenmissbrauchs.",
+   "currentBeispielTr": "Sağlayıcı hakkında olası veri kötüye kullanımı nedeniyle soruşturma yürütülüyor."
   },
   {
    "id": 5449,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Datenverluste",
-   "mevcutTr": "veri kaybı",
-   "mevcutBeispiel": "Eine regelmäßige Sicherung schützt am besten vor plötzlichem Datenverlust.",
-   "mevcutBeispielTr": "Düzenli yedekleme ani veri kaybına karşı en iyi korumadır."
+   "currentTr": "veri kaybı",
+   "currentBeispiel": "Eine regelmäßige Sicherung schützt am besten vor plötzlichem Datenverlust.",
+   "currentBeispielTr": "Düzenli yedekleme ani veri kaybına karşı en iyi korumadır."
   },
   {
    "id": 5450,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verfügbarkeiten",
-   "mevcutTr": "erişilebilirlik, kullanılabilirlik",
-   "mevcutBeispiel": "Der Vertrag sichert uns eine Verfügbarkeit von fast hundert Prozent zu.",
-   "mevcutBeispielTr": "Sözleşme bize neredeyse yüzde yüz erişilebilirlik güvencesi veriyor."
+   "currentTr": "erişilebilirlik, kullanılabilirlik",
+   "currentBeispiel": "Der Vertrag sichert uns eine Verfügbarkeit von fast hundert Prozent zu.",
+   "currentBeispielTr": "Sözleşme bize neredeyse yüzde yüz erişilebilirlik güvencesi veriyor."
   },
   {
    "id": 5451,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rechenleistungen",
-   "mevcutTr": "işlem gücü",
-   "mevcutBeispiel": "Für diese Auswertung brauchen wir deutlich mehr Rechenleistung als bisher.",
-   "mevcutBeispielTr": "Bu analiz için şimdiye kadarkinden çok daha fazla işlem gücü gerekiyor."
+   "currentTr": "işlem gücü",
+   "currentBeispiel": "Für diese Auswertung brauchen wir deutlich mehr Rechenleistung als bisher.",
+   "currentBeispielTr": "Bu analiz için şimdiye kadarkinden çok daha fazla işlem gücü gerekiyor."
   },
   {
    "id": 5452,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Endgeräte",
-   "mevcutTr": "uç cihaz, son kullanıcı cihazı",
-   "mevcutBeispiel": "Die Seite passt sich an jedes Endgerät automatisch an.",
-   "mevcutBeispielTr": "Sayfa her uç cihaza kendiliğinden uyum sağlıyor."
+   "currentTr": "uç cihaz, son kullanıcı cihazı",
+   "currentBeispiel": "Die Seite passt sich an jedes Endgerät automatisch an.",
+   "currentBeispielTr": "Sayfa her uç cihaza kendiliğinden uyum sağlıyor."
   },
   {
    "id": 5453,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sensoren",
-   "mevcutTr": "sensör, algılayıcı",
-   "mevcutBeispiel": "Ein Sensor an der Tür meldet jede unbefugte Bewegung.",
-   "mevcutBeispielTr": "Kapıdaki bir sensör her izinsiz hareketi bildiriyor."
+   "currentTr": "sensör, algılayıcı",
+   "currentBeispiel": "Ein Sensor an der Tür meldet jede unbefugte Bewegung.",
+   "currentBeispielTr": "Kapıdaki bir sensör her izinsiz hareketi bildiriyor."
   },
   {
    "id": 5454,
@@ -88,10 +88,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fernsteuerungen",
-   "mevcutTr": "uzaktan kumanda, uzaktan kontrol",
-   "mevcutBeispiel": "Die Heizung lässt sich per Fernsteuerung vom Handy aus regeln.",
-   "mevcutBeispielTr": "Kalorifer telefondan uzaktan kumandayla ayarlanabiliyor.",
-   "cakisan": [
+   "currentTr": "uzaktan kumanda, uzaktan kontrol",
+   "currentBeispiel": "Die Heizung lässt sich per Fernsteuerung vom Handy aus regeln.",
+   "currentBeispielTr": "Kalorifer telefondan uzaktan kumandayla ayarlanabiliyor.",
+   "overlapping": [
     "die Fernbedienung (B1)"
    ]
   },
@@ -101,9 +101,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Roboter",
-   "mevcutTr": "robot",
-   "mevcutBeispiel": "In der Halle übernehmen Roboter inzwischen die schwersten Arbeitsschritte.",
-   "mevcutBeispielTr": "Fabrika salonunda artık en ağır iş adımlarını robotlar üstleniyor."
+   "currentTr": "robot",
+   "currentBeispiel": "In der Halle übernehmen Roboter inzwischen die schwersten Arbeitsschritte.",
+   "currentBeispielTr": "Fabrika salonunda artık en ağır iş adımlarını robotlar üstleniyor."
   },
   {
    "id": 5456,
@@ -111,9 +111,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Entwickler",
-   "mevcutTr": "geliştirici",
-   "mevcutBeispiel": "Die Entwickler arbeiten seit Wochen an einer stabileren Fassung.",
-   "mevcutBeispielTr": "Geliştiriciler haftalardır daha kararlı bir sürüm üzerinde çalışıyor."
+   "currentTr": "geliştirici",
+   "currentBeispiel": "Die Entwickler arbeiten seit Wochen an einer stabileren Fassung.",
+   "currentBeispielTr": "Geliştiriciler haftalardır daha kararlı bir sürüm üzerinde çalışıyor."
   },
   {
    "id": 5457,
@@ -121,10 +121,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Neuerungen",
-   "mevcutTr": "yenilik",
-   "mevcutBeispiel": "Die wichtigste Neuerung betrifft den Schutz persönlicher Daten.",
-   "mevcutBeispielTr": "En önemli yenilik kişisel verilerin korunmasıyla ilgili.",
-   "cakisan": [
+   "currentTr": "yenilik",
+   "currentBeispiel": "Die wichtigste Neuerung betrifft den Schutz persönlicher Daten.",
+   "currentBeispielTr": "En önemli yenilik kişisel verilerin korunmasıyla ilgili.",
+   "overlapping": [
     "die Innovation (B2)"
    ]
   },
@@ -134,9 +134,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abläufe",
-   "mevcutTr": "işleyiş, süreç, akış",
-   "mevcutBeispiel": "Der gesamte Ablauf der Bestellung wird nun vom Rechner gesteuert.",
-   "mevcutBeispielTr": "Siparişin tüm işleyişi artık bilgisayar tarafından yönetiliyor."
+   "currentTr": "işleyiş, süreç, akış",
+   "currentBeispiel": "Der gesamte Ablauf der Bestellung wird nun vom Rechner gesteuert.",
+   "currentBeispielTr": "Siparişin tüm işleyişi artık bilgisayar tarafından yönetiliyor."
   },
   {
    "id": 5459,
@@ -144,9 +144,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ladegeräte",
-   "mevcutTr": "şarj cihazı",
-   "mevcutBeispiel": "Ich habe mein Ladegerät im Zug liegen lassen.",
-   "mevcutBeispielTr": "Şarj cihazımı trende unuttum."
+   "currentTr": "şarj cihazı",
+   "currentBeispiel": "Ich habe mein Ladegerät im Zug liegen lassen.",
+   "currentBeispielTr": "Şarj cihazımı trende unuttum."
   },
   {
    "id": 5460,
@@ -154,9 +154,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Datenbanken",
-   "mevcutTr": "veri tabanı",
-   "mevcutBeispiel": "In der Datenbank stehen die Angaben von mehreren Millionen Kunden.",
-   "mevcutBeispielTr": "Veri tabanında milyonlarca müşterinin bilgileri bulunuyor."
+   "currentTr": "veri tabanı",
+   "currentBeispiel": "In der Datenbank stehen die Angaben von mehreren Millionen Kunden.",
+   "currentBeispielTr": "Veri tabanında milyonlarca müşterinin bilgileri bulunuyor."
   },
   {
    "id": 5461,
@@ -164,9 +164,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Suchmaschinen",
-   "mevcutTr": "arama motoru",
-   "mevcutBeispiel": "Die Suchmaschine zeigt Werbung immer vor den eigentlichen Ergebnissen.",
-   "mevcutBeispielTr": "Arama motoru reklamları hep asıl sonuçlardan önce gösteriyor."
+   "currentTr": "arama motoru",
+   "currentBeispiel": "Die Suchmaschine zeigt Werbung immer vor den eigentlichen Ergebnissen.",
+   "currentBeispielTr": "Arama motoru reklamları hep asıl sonuçlardan önce gösteriyor."
   },
   {
    "id": 5462,
@@ -174,9 +174,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Dateiformate",
-   "mevcutTr": "dosya biçimi",
-   "mevcutBeispiel": "Bitte schicken Sie den Bericht in einem gängigen Dateiformat.",
-   "mevcutBeispielTr": "Lütfen raporu yaygın bir dosya biçiminde gönderin."
+   "currentTr": "dosya biçimi",
+   "currentBeispiel": "Bitte schicken Sie den Bericht in einem gängigen Dateiformat.",
+   "currentBeispielTr": "Lütfen raporu yaygın bir dosya biçiminde gönderin."
   },
   {
    "id": 5463,
@@ -184,9 +184,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "virüs koruması",
-   "mevcutBeispiel": "Ohne aktuellen Virenschutz sollte man keine fremden Anhänge öffnen.",
-   "mevcutBeispielTr": "Güncel virüs koruması olmadan yabancı ekler açılmamalı."
+   "currentTr": "virüs koruması",
+   "currentBeispiel": "Ohne aktuellen Virenschutz sollte man keine fremden Anhänge öffnen.",
+   "currentBeispielTr": "Güncel virüs koruması olmadan yabancı ekler açılmamalı."
   },
   {
    "id": 5464,
@@ -194,9 +194,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Netzbetreiber",
-   "mevcutTr": "şebeke işletmecisi, operatör",
-   "mevcutBeispiel": "Der Netzbetreiber hat die Störung nach zwei Tagen endlich behoben.",
-   "mevcutBeispielTr": "Operatör arızayı iki gün sonra nihayet giderdi."
+   "currentTr": "şebeke işletmecisi, operatör",
+   "currentBeispiel": "Der Netzbetreiber hat die Störung nach zwei Tagen endlich behoben.",
+   "currentBeispielTr": "Operatör arızayı iki gün sonra nihayet giderdi."
   },
   {
    "id": 5465,
@@ -204,10 +204,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Dienstleistungen",
-   "mevcutTr": "hizmet",
-   "mevcutBeispiel": "Viele Dienstleistungen der Behörde lassen sich inzwischen im Netz erledigen.",
-   "mevcutBeispielTr": "Kurumun birçok hizmeti artık internet üzerinden halledilebiliyor.",
-   "cakisan": [
+   "currentTr": "hizmet",
+   "currentBeispiel": "Viele Dienstleistungen der Behörde lassen sich inzwischen im Netz erledigen.",
+   "currentBeispielTr": "Kurumun birçok hizmeti artık internet üzerinden halledilebiliyor.",
+   "overlapping": [
     "der Service (A2)",
     "der Dienst (B1)"
    ]
@@ -218,9 +218,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "elektronik aksam, elektronik (bilim dalı)",
-   "mevcutBeispiel": "Bei dem Unfall wurde vor allem die Elektronik des Wagens beschädigt.",
-   "mevcutBeispielTr": "Kazada özellikle aracın elektroniği zarar gördü."
+   "currentTr": "elektronik aksam, elektronik (bilim dalı)",
+   "currentBeispiel": "Bei dem Unfall wurde vor allem die Elektronik des Wagens beschädigt.",
+   "currentBeispielTr": "Kazada özellikle aracın elektroniği zarar gördü."
   },
   {
    "id": 5467,
@@ -228,9 +228,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "elektrik beslemesi, güç kaynağı",
-   "mevcutBeispiel": "Eine unterbrochene Stromversorgung kann den ganzen Betrieb lahmlegen.",
-   "mevcutBeispielTr": "Kesintiye uğrayan elektrik beslemesi tüm işletmeyi felç edebilir."
+   "currentTr": "elektrik beslemesi, güç kaynağı",
+   "currentBeispiel": "Eine unterbrochene Stromversorgung kann den ganzen Betrieb lahmlegen.",
+   "currentBeispielTr": "Kesintiye uğrayan elektrik beslemesi tüm işletmeyi felç edebilir."
   },
   {
    "id": 5468,
@@ -238,9 +238,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kullanım, kullanış",
-   "mevcutBeispiel": "Die Handhabung des Programms ist auch für Ungeübte leicht.",
-   "mevcutBeispielTr": "Programın kullanımı deneyimsizler için bile kolay."
+   "currentTr": "kullanım, kullanış",
+   "currentBeispiel": "Die Handhabung des Programms ist auch für Ungeübte leicht.",
+   "currentBeispielTr": "Programın kullanımı deneyimsizler için bile kolay."
   },
   {
    "id": 5469,
@@ -248,9 +248,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Funkverbindungen",
-   "mevcutTr": "telsiz bağlantısı, kablosuz bağlantı",
-   "mevcutBeispiel": "Im Tunnel brach die Funkverbindung zum Fahrzeug plötzlich ab.",
-   "mevcutBeispielTr": "Tünelde araçla olan telsiz bağlantısı birden koptu."
+   "currentTr": "telsiz bağlantısı, kablosuz bağlantı",
+   "currentBeispiel": "Im Tunnel brach die Funkverbindung zum Fahrzeug plötzlich ab.",
+   "currentBeispielTr": "Tünelde araçla olan telsiz bağlantısı birden koptu."
   },
   {
    "id": 5470,
@@ -258,9 +258,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Signale",
-   "mevcutTr": "sinyal, işaret",
-   "mevcutBeispiel": "Das Signal wird auf dem Land oft von Bäumen abgeschwächt.",
-   "mevcutBeispielTr": "Kırsalda sinyal çoğu zaman ağaçlar yüzünden zayıflıyor."
+   "currentTr": "sinyal, işaret",
+   "currentBeispiel": "Das Signal wird auf dem Land oft von Bäumen abgeschwächt.",
+   "currentBeispielTr": "Kırsalda sinyal çoğu zaman ağaçlar yüzünden zayıflıyor."
   },
   {
    "id": 5471,
@@ -268,9 +268,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Simulationen",
-   "mevcutTr": "simülasyon, benzetim",
-   "mevcutBeispiel": "In der Simulation hielt die Brücke auch starkem Wind stand.",
-   "mevcutBeispielTr": "Simülasyonda köprü şiddetli rüzgâra da dayandı."
+   "currentTr": "simülasyon, benzetim",
+   "currentBeispiel": "In der Simulation hielt die Brücke auch starkem Wind stand.",
+   "currentBeispielTr": "Simülasyonda köprü şiddetli rüzgâra da dayandı."
   },
   {
    "id": 5472,
@@ -278,9 +278,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Warnhinweise",
-   "mevcutTr": "uyarı, uyarı notu",
-   "mevcutBeispiel": "Die meisten Leute klicken den Warnhinweis einfach weg.",
-   "mevcutBeispielTr": "İnsanların çoğu uyarıyı okumadan kapatıp geçiyor."
+   "currentTr": "uyarı, uyarı notu",
+   "currentBeispiel": "Die meisten Leute klicken den Warnhinweis einfach weg.",
+   "currentBeispielTr": "İnsanların çoğu uyarıyı okumadan kapatıp geçiyor."
   },
   {
    "id": 5473,
@@ -288,9 +288,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bildschirmauflösungen",
-   "mevcutTr": "ekran çözünürlüğü",
-   "mevcutBeispiel": "Bei dieser Bildschirmauflösung ist die Schrift kaum noch lesbar.",
-   "mevcutBeispielTr": "Bu ekran çözünürlüğünde yazı neredeyse okunmuyor."
+   "currentTr": "ekran çözünürlüğü",
+   "currentBeispiel": "Bei dieser Bildschirmauflösung ist die Schrift kaum noch lesbar.",
+   "currentBeispielTr": "Bu ekran çözünürlüğünde yazı neredeyse okunmuyor."
   },
   {
    "id": 5474,
@@ -298,9 +298,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Testläufe",
-   "mevcutTr": "deneme çalışması, test çalıştırması",
-   "mevcutBeispiel": "Vor der Einführung gab es mehrere Testläufe mit echten Kunden.",
-   "mevcutBeispielTr": "Hizmete alınmadan önce gerçek müşterilerle birkaç deneme yapıldı."
+   "currentTr": "deneme çalışması, test çalıştırması",
+   "currentBeispiel": "Vor der Einführung gab es mehrere Testläufe mit echten Kunden.",
+   "currentBeispielTr": "Hizmete alınmadan önce gerçek müşterilerle birkaç deneme yapıldı."
   },
   {
    "id": 5475,
@@ -308,9 +308,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verschlüsselt",
-   "mevcutTr": "şifrelemek",
-   "mevcutBeispiel": "Alle Nachrichten werden bereits auf dem Gerät verschlüsselt.",
-   "mevcutBeispielTr": "Bütün iletiler daha cihazın üzerindeyken şifreleniyor."
+   "currentTr": "şifrelemek",
+   "currentBeispiel": "Alle Nachrichten werden bereits auf dem Gerät verschlüsselt.",
+   "currentBeispielTr": "Bütün iletiler daha cihazın üzerindeyken şifreleniyor."
   },
   {
    "id": 5476,
@@ -318,9 +318,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat aktualisiert",
-   "mevcutTr": "güncellemek",
-   "mevcutBeispiel": "Wir aktualisieren die Angaben auf der Seite jeden Morgen.",
-   "mevcutBeispielTr": "Sayfadaki bilgileri her sabah güncelliyoruz."
+   "currentTr": "güncellemek",
+   "currentBeispiel": "Wir aktualisieren die Angaben auf der Seite jeden Morgen.",
+   "currentBeispielTr": "Sayfadaki bilgileri her sabah güncelliyoruz."
   },
   {
    "id": 5477,
@@ -328,9 +328,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat programmiert",
-   "mevcutTr": "programlamak, kodlamak",
-   "mevcutBeispiel": "Sie hat die Steuerung der Maschine selbst programmiert.",
-   "mevcutBeispielTr": "Makinenin kumandasını kendisi programladı."
+   "currentTr": "programlamak, kodlamak",
+   "currentBeispiel": "Sie hat die Steuerung der Maschine selbst programmiert.",
+   "currentBeispielTr": "Makinenin kumandasını kendisi programladı."
   },
   {
    "id": 5478,
@@ -338,10 +338,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist abgestürzt",
-   "mevcutTr": "çökmek (program), donmak",
-   "mevcutBeispiel": "Das Programm ist mitten in der Bearbeitung wieder abgestürzt.",
-   "mevcutBeispielTr": "Program düzenleme sırasında yine çöktü.",
-   "cakisan": [
+   "currentTr": "çökmek (program), donmak",
+   "currentBeispiel": "Das Programm ist mitten in der Bearbeitung wieder abgestürzt.",
+   "currentBeispielTr": "Program düzenleme sırasında yine çöktü.",
+   "overlapping": [
     "zusammenbrechen (B2)",
     "einstürzen (B2)"
    ]
@@ -352,10 +352,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat ausgeführt",
-   "mevcutTr": "yürütmek, çalıştırmak, uygulamak",
-   "mevcutBeispiel": "Der Rechner führt den Befehl erst nach der Bestätigung aus.",
-   "mevcutBeispielTr": "Bilgisayar komutu ancak onaydan sonra çalıştırıyor.",
-   "cakisan": [
+   "currentTr": "yürütmek, çalıştırmak, uygulamak",
+   "currentBeispiel": "Der Rechner führt den Befehl erst nach der Bestätigung aus.",
+   "currentBeispielTr": "Bilgisayar komutu ancak onaydan sonra çalıştırıyor.",
+   "overlapping": [
     "abwickeln (B2)"
    ]
   },
@@ -365,9 +365,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat wiederhergestellt",
-   "mevcutTr": "geri yüklemek, eski hâline getirmek",
-   "mevcutBeispiel": "Zum Glück konnten wir die gelöschten Unterlagen wiederherstellen.",
-   "mevcutBeispielTr": "Neyse ki silinen belgeleri geri yükleyebildik."
+   "currentTr": "geri yüklemek, eski hâline getirmek",
+   "currentBeispiel": "Zum Glück konnten wir die gelöschten Unterlagen wiederherstellen.",
+   "currentBeispielTr": "Neyse ki silinen belgeleri geri yükleyebildik."
   },
   {
    "id": 5481,
@@ -375,10 +375,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat erfasst",
-   "mevcutTr": "kaydetmek, saptamak, kavramak",
-   "mevcutBeispiel": "Das Gerät erfasst den Verbrauch jeder einzelnen Wohnung.",
-   "mevcutBeispielTr": "Cihaz her dairenin tüketimini ayrı ayrı kaydediyor.",
-   "cakisan": [
+   "currentTr": "kaydetmek, saptamak, kavramak",
+   "currentBeispiel": "Das Gerät erfasst den Verbrauch jeder einzelnen Wohnung.",
+   "currentBeispielTr": "Cihaz her dairenin tüketimini ayrı ayrı kaydediyor.",
+   "overlapping": [
     "speichern (A2)",
     "verzeichnen (B2)",
     "abspeichern (C1)"
@@ -390,10 +390,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat eingegeben",
-   "mevcutTr": "girmek (veri), yazmak",
-   "mevcutBeispiel": "Geben Sie bitte den Bestätigungscode aus der Nachricht ein.",
-   "mevcutBeispielTr": "Lütfen mesajdaki onay kodunu girin.",
-   "cakisan": [
+   "currentTr": "girmek (veri), yazmak",
+   "currentBeispiel": "Geben Sie bitte den Bestätigungscode aus der Nachricht ein.",
+   "currentBeispielTr": "Lütfen mesajdaki onay kodunu girin.",
+   "overlapping": [
     "sich unterziehen (C1)",
     "ablegen (A2)",
     "betreten (A2)"
@@ -405,10 +405,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gesperrt",
-   "mevcutTr": "engellemek, bloke etmek, kapatmak",
-   "mevcutBeispiel": "Nach drei falschen Versuchen wird der Zugang automatisch gesperrt.",
-   "mevcutBeispielTr": "Üç yanlış denemeden sonra erişim kendiliğinden engelleniyor.",
-   "cakisan": [
+   "currentTr": "engellemek, bloke etmek, kapatmak",
+   "currentBeispiel": "Nach drei falschen Versuchen wird der Zugang automatisch gesperrt.",
+   "currentBeispielTr": "Üç yanlış denemeden sonra erişim kendiliğinden engelleniyor.",
+   "overlapping": [
     "behindern (B1)",
     "unterbinden (C1)",
     "blockieren (B2)",
@@ -421,9 +421,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat freigeschaltet",
-   "mevcutTr": "etkinleştirmek, açmak, aktive etmek",
-   "mevcutBeispiel": "Die Funktion wird erst nach der Bezahlung freigeschaltet.",
-   "mevcutBeispielTr": "Bu özellik ancak ödemeden sonra etkinleştiriliyor."
+   "currentTr": "etkinleştirmek, açmak, aktive etmek",
+   "currentBeispiel": "Die Funktion wird erst nach der Bezahlung freigeschaltet.",
+   "currentBeispielTr": "Bu özellik ancak ödemeden sonra etkinleştiriliyor."
   },
   {
    "id": 5485,
@@ -431,10 +431,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgerufen",
-   "mevcutTr": "sorgulamak, erişmek, çağırmak",
-   "mevcutBeispiel": "Den Kontostand kann man jederzeit vom Handy abrufen.",
-   "mevcutBeispielTr": "Hesap bakiyesi istenildiği an telefondan sorgulanabiliyor.",
-   "cakisan": [
+   "currentTr": "sorgulamak, erişmek, çağırmak",
+   "currentBeispiel": "Den Kontostand kann man jederzeit vom Handy abrufen.",
+   "currentBeispielTr": "Hesap bakiyesi istenildiği an telefondan sorgulanabiliyor.",
+   "overlapping": [
     "hinterfragen (C1)"
    ]
   },
@@ -444,10 +444,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat blockiert",
-   "mevcutTr": "engellemek, bloke etmek",
-   "mevcutBeispiel": "Das Programm blockiert Werbung und unerwünschte Verbindungen zuverlässig.",
-   "mevcutBeispielTr": "Program reklamları ve istenmeyen bağlantıları güvenilir biçimde engelliyor.",
-   "cakisan": [
+   "currentTr": "engellemek, bloke etmek",
+   "currentBeispiel": "Das Programm blockiert Werbung und unerwünschte Verbindungen zuverlässig.",
+   "currentBeispielTr": "Program reklamları ve istenmeyen bağlantıları güvenilir biçimde engelliyor.",
+   "overlapping": [
     "behindern (B1)",
     "unterbinden (C1)",
     "sperren (B2)",
@@ -460,9 +460,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gefiltert",
-   "mevcutTr": "filtrelemek, süzmek",
-   "mevcutBeispiel": "Der Dienst filtert verdächtige Nachrichten schon vor der Zustellung.",
-   "mevcutBeispielTr": "Hizmet şüpheli iletileri daha teslim edilmeden süzüyor."
+   "currentTr": "filtrelemek, süzmek",
+   "currentBeispiel": "Der Dienst filtert verdächtige Nachrichten schon vor der Zustellung.",
+   "currentBeispielTr": "Hizmet şüpheli iletileri daha teslim edilmeden süzüyor."
   },
   {
    "id": 5488,
@@ -470,10 +470,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verknüpft",
-   "mevcutTr": "bağlamak, ilişkilendirmek",
-   "mevcutBeispiel": "Die App verknüpft deinen Kalender mit dem des Teams.",
-   "mevcutBeispielTr": "Uygulama senin takvimini ekibin takvimiyle ilişkilendiriyor.",
-   "cakisan": [
+   "currentTr": "bağlamak, ilişkilendirmek",
+   "currentBeispiel": "Die App verknüpft deinen Kalender mit dem des Teams.",
+   "currentBeispielTr": "Uygulama senin takvimini ekibin takvimiyle ilişkilendiriyor.",
+   "overlapping": [
     "anschließen (B1)",
     "verbinden (B1)",
     "binden (C1)"
@@ -485,10 +485,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kablosuz",
-   "mevcutBeispiel": "Die Kopfhörer verbinden sich kabellos mit jedem Gerät im Raum.",
-   "mevcutBeispielTr": "Kulaklık odadaki her cihaza kablosuz olarak bağlanıyor.",
-   "cakisan": [
+   "currentTr": "kablosuz",
+   "currentBeispiel": "Die Kopfhörer verbinden sich kabellos mit jedem Gerät im Raum.",
+   "currentBeispielTr": "Kulaklık odadaki her cihaza kablosuz olarak bağlanıyor.",
+   "overlapping": [
     "drahtlos (B2)"
    ]
   },
@@ -498,9 +498,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "uyumlu",
-   "mevcutBeispiel": "Der Drucker ist leider nicht mit unserem System kompatibel.",
-   "mevcutBeispielTr": "Yazıcı ne yazık ki sistemimizle uyumlu değil."
+   "currentTr": "uyumlu",
+   "currentBeispiel": "Der Drucker ist leider nicht mit unserem System kompatibel.",
+   "currentBeispielTr": "Yazıcı ne yazık ki sistemimizle uyumlu değil."
   },
   {
    "id": 5491,
@@ -508,9 +508,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "eskimiş, güncelliğini yitirmiş",
-   "mevcutBeispiel": "Die Ausstattung im Labor ist inzwischen hoffnungslos veraltet.",
-   "mevcutBeispielTr": "Laboratuvardaki donanım artık umutsuzca eskimiş durumda."
+   "currentTr": "eskimiş, güncelliğini yitirmiş",
+   "currentBeispiel": "Die Ausstattung im Labor ist inzwischen hoffnungslos veraltet.",
+   "currentBeispielTr": "Laboratuvardaki donanım artık umutsuzca eskimiş durumda."
   },
   {
    "id": 5492,
@@ -518,10 +518,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "standart olarak, varsayılan olarak",
-   "mevcutBeispiel": "Die Ortung ist bei diesem Gerät standardmäßig ausgeschaltet.",
-   "mevcutBeispielTr": "Bu cihazda konum takibi varsayılan olarak kapalı.",
-   "cakisan": [
+   "currentTr": "standart olarak, varsayılan olarak",
+   "currentBeispiel": "Die Ortung ist bei diesem Gerät standardmäßig ausgeschaltet.",
+   "currentBeispielTr": "Bu cihazda konum takibi varsayılan olarak kapalı.",
+   "overlapping": [
     "serienmäßig (B2)"
    ]
   },
@@ -531,9 +531,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "zahmetli, masraflı, çok emek isteyen",
-   "mevcutBeispiel": "Die Umstellung war aufwendiger, als wir zunächst gedacht hatten.",
-   "mevcutBeispielTr": "Geçiş ilk başta düşündüğümüzden daha zahmetli oldu."
+   "currentTr": "zahmetli, masraflı, çok emek isteyen",
+   "currentBeispiel": "Die Umstellung war aufwendiger, als wir zunächst gedacht hatten.",
+   "currentBeispielTr": "Geçiş ilk başta düşündüğümüzden daha zahmetli oldu."
   },
   {
    "id": 5494,
@@ -541,10 +541,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "çağdaş, güncel, çağa uygun",
-   "mevcutBeispiel": "Eine zeitgemäße Ausrüstung gehört heute zu jedem Arbeitsplatz.",
-   "mevcutBeispielTr": "Çağdaş bir donanım bugün her iş yerinin gereğidir.",
-   "cakisan": [
+   "currentTr": "çağdaş, güncel, çağa uygun",
+   "currentBeispiel": "Eine zeitgemäße Ausrüstung gehört heute zu jedem Arbeitsplatz.",
+   "currentBeispielTr": "Çağdaş bir donanım bugün her iş yerinin gereğidir.",
+   "overlapping": [
     "zeitgenössisch (B2)"
    ]
   },
@@ -554,9 +554,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yetkisiz, izinsiz",
-   "mevcutBeispiel": "Unbefugte Zugriffe werden vom System sofort gemeldet.",
-   "mevcutBeispielTr": "Yetkisiz erişimler sistem tarafından anında bildiriliyor."
+   "currentTr": "yetkisiz, izinsiz",
+   "currentBeispiel": "Unbefugte Zugriffe werden vom System sofort gemeldet.",
+   "currentBeispielTr": "Yetkisiz erişimler sistem tarafından anında bildiriliyor."
   }
  ]
 }

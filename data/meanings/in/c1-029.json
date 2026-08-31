@@ -1,16 +1,16 @@
 {
- "paket": "c1-029",
+ "packet": "c1-029",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 6653,
    "de": "der Kostenträger",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kostenträger",
-   "mevcutTr": "masrafı üstlenen kurum, ödeyici kurum",
-   "mevcutBeispiel": "Der Kostenträger lehnte die Übernahme der neuen Therapie ab.",
-   "mevcutBeispielTr": "Ödeyici kurum yeni tedavinin masrafını üstlenmeyi reddetti."
+   "currentTr": "masrafı üstlenen kurum, ödeyici kurum",
+   "currentBeispiel": "Der Kostenträger lehnte die Übernahme der neuen Therapie ab.",
+   "currentBeispielTr": "Ödeyici kurum yeni tedavinin masrafını üstlenmeyi reddetti."
   },
   {
    "id": 6654,
@@ -18,10 +18,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Erstattungen",
-   "mevcutTr": "geri ödeme, masraf iadesi",
-   "mevcutBeispiel": "Über die Erstattung des Medikaments entscheidet ein eigener Ausschuss.",
-   "mevcutBeispielTr": "İlacın geri ödemesine ayrı bir komisyon karar veriyor.",
-   "cakisan": [
+   "currentTr": "geri ödeme, masraf iadesi",
+   "currentBeispiel": "Über die Erstattung des Medikaments entscheidet ein eigener Ausschuss.",
+   "currentBeispielTr": "İlacın geri ödemesine ayrı bir komisyon karar veriyor.",
+   "overlapping": [
     "die Rückerstattung (B2)"
    ]
   },
@@ -31,9 +31,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Leistungskataloge",
-   "mevcutTr": "hizmet kapsamı, teminat listesi",
-   "mevcutBeispiel": "Der Leistungskatalog der Kassen wird regelmäßig überarbeitet.",
-   "mevcutBeispielTr": "Sigortaların hizmet kapsamı düzenli olarak gözden geçiriliyor."
+   "currentTr": "hizmet kapsamı, teminat listesi",
+   "currentBeispiel": "Der Leistungskatalog der Kassen wird regelmäßig überarbeitet.",
+   "currentBeispielTr": "Sigortaların hizmet kapsamı düzenli olarak gözden geçiriliyor."
   },
   {
    "id": 6656,
@@ -41,9 +41,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Ethikkommissionen",
-   "mevcutTr": "etik kurul",
-   "mevcutBeispiel": "Die Ethikkommission gab das Studienvorhaben mit Auflagen frei.",
-   "mevcutBeispielTr": "Etik kurul araştırma projesine şartlı olarak izin verdi."
+   "currentTr": "etik kurul",
+   "currentBeispiel": "Die Ethikkommission gab das Studienvorhaben mit Auflagen frei.",
+   "currentBeispielTr": "Etik kurul araştırma projesine şartlı olarak izin verdi."
   },
   {
    "id": 6657,
@@ -51,9 +51,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zulassungsbehörden",
-   "mevcutTr": "ruhsatlandırma kurumu, onay makamı",
-   "mevcutBeispiel": "Die Zulassungsbehörde verlangte weitere Daten zur Langzeitsicherheit.",
-   "mevcutBeispielTr": "Ruhsatlandırma kurumu uzun vadeli güvenlik için ek veri istedi."
+   "currentTr": "ruhsatlandırma kurumu, onay makamı",
+   "currentBeispiel": "Die Zulassungsbehörde verlangte weitere Daten zur Langzeitsicherheit.",
+   "currentBeispielTr": "Ruhsatlandırma kurumu uzun vadeli güvenlik için ek veri istedi."
   },
   {
    "id": 6658,
@@ -61,9 +61,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Nutzenbewertungen",
-   "mevcutTr": "fayda değerlendirmesi",
-   "mevcutBeispiel": "Die frühe Nutzenbewertung entscheidet über den Preis des Präparats.",
-   "mevcutBeispielTr": "Erken fayda değerlendirmesi preparatın fiyatını belirliyor."
+   "currentTr": "fayda değerlendirmesi",
+   "currentBeispiel": "Die frühe Nutzenbewertung entscheidet über den Preis des Präparats.",
+   "currentBeispielTr": "Erken fayda değerlendirmesi preparatın fiyatını belirliyor."
   },
   {
    "id": 6659,
@@ -71,10 +71,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Evidenzen",
-   "mevcutTr": "kanıt, bilimsel kanıt",
-   "mevcutBeispiel": "Für diese Behandlung fehlt bislang belastbare Evidenz.",
-   "mevcutBeispielTr": "Bu tedavi için şimdiye dek sağlam bir kanıt yok.",
-   "cakisan": [
+   "currentTr": "kanıt, bilimsel kanıt",
+   "currentBeispiel": "Für diese Behandlung fehlt bislang belastbare Evidenz.",
+   "currentBeispielTr": "Bu tedavi için şimdiye dek sağlam bir kanıt yok.",
+   "overlapping": [
     "der Beweis (B1)"
    ]
   },
@@ -84,9 +84,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verblindungen",
-   "mevcutTr": "körleme, kör çalışma yöntemi",
-   "mevcutBeispiel": "Ohne Verblindung verlieren die Ergebnisse an Aussagekraft.",
-   "mevcutBeispielTr": "Körleme olmadan sonuçların anlamlılığı zayıflar."
+   "currentTr": "körleme, kör çalışma yöntemi",
+   "currentBeispiel": "Ohne Verblindung verlieren die Ergebnisse an Aussagekraft.",
+   "currentBeispielTr": "Körleme olmadan sonuçların anlamlılığı zayıflar."
   },
   {
    "id": 6661,
@@ -94,9 +94,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kontrollgruppen",
-   "mevcutTr": "kontrol grubu",
-   "mevcutBeispiel": "Die Kontrollgruppe erhielt lediglich ein wirkstofffreies Präparat.",
-   "mevcutBeispielTr": "Kontrol grubuna yalnızca etkin madde içermeyen bir preparat verildi."
+   "currentTr": "kontrol grubu",
+   "currentBeispiel": "Die Kontrollgruppe erhielt lediglich ein wirkstofffreies Präparat.",
+   "currentBeispielTr": "Kontrol grubuna yalnızca etkin madde içermeyen bir preparat verildi."
   },
   {
    "id": 6662,
@@ -104,9 +104,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "zorunlu aşı",
-   "mevcutBeispiel": "Eine allgemeine Impfpflicht greift tief in die körperliche Integrität ein.",
-   "mevcutBeispielTr": "Genel bir aşı zorunluluğu beden bütünlüğüne derinden müdahale eder."
+   "currentTr": "zorunlu aşı",
+   "currentBeispiel": "Eine allgemeine Impfpflicht greift tief in die körperliche Integrität ein.",
+   "currentBeispielTr": "Genel bir aşı zorunluluğu beden bütünlüğüne derinden müdahale eder."
   },
   {
    "id": 6663,
@@ -114,9 +114,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sürü bağışıklığı, toplumsal bağışıklık",
-   "mevcutBeispiel": "Herdenimmunität schützt vor allem jene, die sich nicht impfen lassen können.",
-   "mevcutBeispielTr": "Sürü bağışıklığı en çok aşı olamayanları korur."
+   "currentTr": "sürü bağışıklığı, toplumsal bağışıklık",
+   "currentBeispiel": "Herdenimmunität schützt vor allem jene, die sich nicht impfen lassen können.",
+   "currentBeispielTr": "Sürü bağışıklığı en çok aşı olamayanları korur."
   },
   {
    "id": 6664,
@@ -124,9 +124,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Meldepflichten",
-   "mevcutTr": "bildirim zorunluluğu",
-   "mevcutBeispiel": "Für bestimmte Infektionen besteht eine gesetzliche Meldepflicht.",
-   "mevcutBeispielTr": "Belirli enfeksiyonlar için yasal bildirim zorunluluğu vardır."
+   "currentTr": "bildirim zorunluluğu",
+   "currentBeispiel": "Für bestimmte Infektionen besteht eine gesetzliche Meldepflicht.",
+   "currentBeispielTr": "Belirli enfeksiyonlar için yasal bildirim zorunluluğu vardır."
   },
   {
    "id": 6665,
@@ -134,9 +134,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Präventionen",
-   "mevcutTr": "önleme, koruyucu sağlık",
-   "mevcutBeispiel": "In der Prävention steckt mehr Potenzial als in teurer Spitzenmedizin.",
-   "mevcutBeispielTr": "Koruyucu sağlıkta, pahalı ileri tıptan daha fazla potansiyel var."
+   "currentTr": "önleme, koruyucu sağlık",
+   "currentBeispiel": "In der Prävention steckt mehr Potenzial als in teurer Spitzenmedizin.",
+   "currentBeispielTr": "Koruyucu sağlıkta, pahalı ileri tıptan daha fazla potansiyel var."
   },
   {
    "id": 6666,
@@ -144,9 +144,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sağlık okuryazarlığı",
-   "mevcutBeispiel": "Geringe Gesundheitskompetenz erschwert eine wirklich freie Entscheidung.",
-   "mevcutBeispielTr": "Düşük sağlık okuryazarlığı gerçekten özgür bir kararı zorlaştırır."
+   "currentTr": "sağlık okuryazarlığı",
+   "currentBeispiel": "Geringe Gesundheitskompetenz erschwert eine wirklich freie Entscheidung.",
+   "currentBeispielTr": "Düşük sağlık okuryazarlığı gerçekten özgür bir kararı zorlaştırır."
   },
   {
    "id": 6667,
@@ -154,9 +154,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hastalık yükü",
-   "mevcutBeispiel": "Chronische Leiden tragen den größten Teil der Krankheitslast.",
-   "mevcutBeispielTr": "Hastalık yükünün en büyük kısmını kronik rahatsızlıklar oluşturuyor."
+   "currentTr": "hastalık yükü",
+   "currentBeispiel": "Chronische Leiden tragen den größten Teil der Krankheitslast.",
+   "currentBeispielTr": "Hastalık yükünün en büyük kısmını kronik rahatsızlıklar oluşturuyor."
   },
   {
    "id": 6668,
@@ -164,9 +164,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Behandlungsabbrüche",
-   "mevcutTr": "tedavinin sonlandırılması",
-   "mevcutBeispiel": "Der Behandlungsabbruch entsprach dem erklärten Willen des Sterbenden.",
-   "mevcutBeispielTr": "Tedavinin sonlandırılması, ölmekte olanın beyan ettiği iradeye uygundu."
+   "currentTr": "tedavinin sonlandırılması",
+   "currentBeispiel": "Der Behandlungsabbruch entsprach dem erklärten Willen des Sterbenden.",
+   "currentBeispielTr": "Tedavinin sonlandırılması, ölmekte olanın beyan ettiği iradeye uygundu."
   },
   {
    "id": 6669,
@@ -174,9 +174,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "palyatif tıp, yatıştırıcı bakım",
-   "mevcutBeispiel": "Die Palliativmedizin zielt nicht auf Heilung, sondern auf Linderung.",
-   "mevcutBeispielTr": "Palyatif tıp iyileşmeyi değil, acıyı hafifletmeyi hedefler."
+   "currentTr": "palyatif tıp, yatıştırıcı bakım",
+   "currentBeispiel": "Die Palliativmedizin zielt nicht auf Heilung, sondern auf Linderung.",
+   "currentBeispielTr": "Palyatif tıp iyileşmeyi değil, acıyı hafifletmeyi hedefler."
   },
   {
    "id": 6670,
@@ -184,9 +184,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "paternalizm, vesayetçilik",
-   "mevcutBeispiel": "Wohlmeinender Paternalismus bleibt ein Eingriff in fremde Lebensentwürfe.",
-   "mevcutBeispielTr": "İyi niyetli vesayetçilik bile başkasının hayat tasarımına müdahaledir."
+   "currentTr": "paternalizm, vesayetçilik",
+   "currentBeispiel": "Wohlmeinender Paternalismus bleibt ein Eingriff in fremde Lebensentwürfe.",
+   "currentBeispielTr": "İyi niyetli vesayetçilik bile başkasının hayat tasarımına müdahaledir."
   },
   {
    "id": 6671,
@@ -194,9 +194,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Indikationen",
-   "mevcutTr": "endikasyon, tıbbi gereklilik",
-   "mevcutBeispiel": "Für den Eingriff bestand keine zwingende medizinische Indikation.",
-   "mevcutBeispielTr": "Müdahale için zorunlu bir tıbbi gereklilik yoktu."
+   "currentTr": "endikasyon, tıbbi gereklilik",
+   "currentBeispiel": "Für den Eingriff bestand keine zwingende medizinische Indikation.",
+   "currentBeispielTr": "Müdahale için zorunlu bir tıbbi gereklilik yoktu."
   },
   {
    "id": 6672,
@@ -204,9 +204,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Keimbahnen",
-   "mevcutTr": "germ hattı, üreme hücresi soyu",
-   "mevcutBeispiel": "Eingriffe in die Keimbahn wirken über Generationen hinweg fort.",
-   "mevcutBeispielTr": "Germ hattına yapılan müdahaleler kuşaklar boyunca etkisini sürdürür."
+   "currentTr": "germ hattı, üreme hücresi soyu",
+   "currentBeispiel": "Eingriffe in die Keimbahn wirken über Generationen hinweg fort.",
+   "currentBeispielTr": "Germ hattına yapılan müdahaleler kuşaklar boyunca etkisini sürdürür."
   },
   {
    "id": 6673,
@@ -214,9 +214,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Organspenden",
-   "mevcutTr": "organ bağışı",
-   "mevcutBeispiel": "Die Bereitschaft zur Organspende hängt stark vom Rechtsmodell ab.",
-   "mevcutBeispielTr": "Organ bağışına yatkınlık büyük ölçüde hukuki modele bağlı."
+   "currentTr": "organ bağışı",
+   "currentBeispiel": "Die Bereitschaft zur Organspende hängt stark vom Rechtsmodell ab.",
+   "currentBeispielTr": "Organ bağışına yatkınlık büyük ölçüde hukuki modele bağlı."
   },
   {
    "id": 6674,
@@ -224,9 +224,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "beyin ölümü",
-   "mevcutBeispiel": "Ob der Hirntod den Tod des Menschen bedeutet, ist umstritten.",
-   "mevcutBeispielTr": "Beyin ölümünün insanın ölümü sayılıp sayılmayacağı tartışmalı."
+   "currentTr": "beyin ölümü",
+   "currentBeispiel": "Ob der Hirntod den Tod des Menschen bedeutet, ist umstritten.",
+   "currentBeispielTr": "Beyin ölümünün insanın ölümü sayılıp sayılmayacağı tartışmalı."
   },
   {
    "id": 6675,
@@ -234,9 +234,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Widerspruchslösungen",
-   "mevcutTr": "varsayılan rıza modeli, itiraz esaslı çözüm",
-   "mevcutBeispiel": "Mit der Widerspruchslösung gilt jeder als Spender, der nicht widerspricht.",
-   "mevcutBeispielTr": "Varsayılan rıza modelinde itiraz etmeyen herkes bağışçı sayılır."
+   "currentTr": "varsayılan rıza modeli, itiraz esaslı çözüm",
+   "currentBeispiel": "Mit der Widerspruchslösung gilt jeder als Spender, der nicht widerspricht.",
+   "currentBeispielTr": "Varsayılan rıza modelinde itiraz etmeyen herkes bağışçı sayılır."
   },
   {
    "id": 6676,
@@ -244,9 +244,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Fallpauschalen",
-   "mevcutTr": "vaka başı sabit ödeme",
-   "mevcutBeispiel": "Fallpauschalen belohnen kurze Liegezeiten und rasche Eingriffe.",
-   "mevcutBeispielTr": "Vaka başı ödemeler kısa yatışı ve hızlı müdahaleyi ödüllendiriyor."
+   "currentTr": "vaka başı sabit ödeme",
+   "currentBeispiel": "Fallpauschalen belohnen kurze Liegezeiten und rasche Eingriffe.",
+   "currentBeispielTr": "Vaka başı ödemeler kısa yatışı ve hızlı müdahaleyi ödüllendiriyor."
   },
   {
    "id": 6677,
@@ -254,9 +254,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Ressourcenallokationen",
-   "mevcutTr": "kaynak dağılımı, kaynak tahsisi",
-   "mevcutBeispiel": "Jede Ressourcenallokation im Gesundheitswesen bleibt eine politische Entscheidung.",
-   "mevcutBeispielTr": "Sağlıkta her kaynak dağılımı nihayetinde siyasi bir karardır."
+   "currentTr": "kaynak dağılımı, kaynak tahsisi",
+   "currentBeispiel": "Jede Ressourcenallokation im Gesundheitswesen bleibt eine politische Entscheidung.",
+   "currentBeispielTr": "Sağlıkta her kaynak dağılımı nihayetinde siyasi bir karardır."
   },
   {
    "id": 6678,
@@ -264,10 +264,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat verabreicht",
-   "mevcutTr": "vermek, uygulamak",
-   "mevcutBeispiel": "Das Mittel wurde ohne Wissen der Angehörigen verabreicht.",
-   "mevcutBeispielTr": "İlaç, yakınlarının bilgisi olmadan uygulandı.",
-   "cakisan": [
+   "currentTr": "vermek, uygulamak",
+   "currentBeispiel": "Das Mittel wurde ohne Wissen der Angehörigen verabreicht.",
+   "currentBeispielTr": "İlaç, yakınlarının bilgisi olmadan uygulandı.",
+   "overlapping": [
     "geben (A1)",
     "erteilen (B2)"
    ]
@@ -278,9 +278,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gerechtfertigt",
-   "mevcutTr": "haklı çıkarmak, gerekçelendirmek",
-   "mevcutBeispiel": "Kein erhoffter Nutzen rechtfertigt eine Täuschung der Teilnehmer.",
-   "mevcutBeispielTr": "Umulan hiçbir yarar, katılımcıların aldatılmasını haklı çıkarmaz."
+   "currentTr": "haklı çıkarmak, gerekçelendirmek",
+   "currentBeispiel": "Kein erhoffter Nutzen rechtfertigt eine Täuschung der Teilnehmer.",
+   "currentBeispielTr": "Umulan hiçbir yarar, katılımcıların aldatılmasını haklı çıkarmaz."
   },
   {
    "id": 6680,
@@ -288,10 +288,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat entnommen",
-   "mevcutTr": "almak, çıkarmak",
-   "mevcutBeispiel": "Gewebe darf nur mit ausdrücklicher Zustimmung entnommen werden.",
-   "mevcutBeispielTr": "Doku ancak açık onayla alınabilir.",
-   "cakisan": [
+   "currentTr": "almak, çıkarmak",
+   "currentBeispiel": "Gewebe darf nur mit ausdrücklicher Zustimmung entnommen werden.",
+   "currentBeispielTr": "Doku ancak açık onayla alınabilir.",
+   "overlapping": [
     "bekommen (A1)",
     "nehmen (A1)",
     "kriegen (A1)",
@@ -307,10 +307,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat dokumentiert",
-   "mevcutTr": "belgelemek, kayda geçirmek",
-   "mevcutBeispiel": "Jede Abweichung von der Leitlinie ist lückenlos zu dokumentieren.",
-   "mevcutBeispielTr": "Kılavuzdan her sapma eksiksiz biçimde kayda geçirilmelidir.",
-   "cakisan": [
+   "currentTr": "belgelemek, kayda geçirmek",
+   "currentBeispiel": "Jede Abweichung von der Leitlinie ist lückenlos zu dokumentieren.",
+   "currentBeispielTr": "Kılavuzdan her sapma eksiksiz biçimde kayda geçirilmelidir.",
+   "overlapping": [
     "nachweisen (B2)",
     "bescheinigen (B2)"
    ]
@@ -321,10 +321,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat eingeholt",
-   "mevcutTr": "almak, temin etmek",
-   "mevcutBeispiel": "Vor dem Eingriff muss eine zweite Meinung eingeholt werden.",
-   "mevcutBeispielTr": "Müdahaleden önce ikinci bir görüş alınmalıdır.",
-   "cakisan": [
+   "currentTr": "almak, temin etmek",
+   "currentBeispiel": "Vor dem Eingriff muss eine zweite Meinung eingeholt werden.",
+   "currentBeispielTr": "Müdahaleden önce ikinci bir görüş alınmalıdır.",
+   "overlapping": [
     "bekommen (A1)",
     "nehmen (A1)",
     "kriegen (A1)",
@@ -340,10 +340,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat sich unterzogen",
-   "mevcutTr": "(bir şeye) girmek, tabi olmak",
-   "mevcutBeispiel": "Sie hat sich freiwillig einer belastenden Untersuchung unterzogen.",
-   "mevcutBeispielTr": "Gönüllü olarak yorucu bir tetkikten geçti.",
-   "cakisan": [
+   "currentTr": "(bir şeye) girmek, tabi olmak",
+   "currentBeispiel": "Sie hat sich freiwillig einer belastenden Untersuchung unterzogen.",
+   "currentBeispielTr": "Gönüllü olarak yorucu bir tetkikten geçti.",
+   "overlapping": [
     "eingeben (B2)",
     "ablegen (A2)",
     "betreten (A2)"
@@ -355,9 +355,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "tedavi edilemez, şifasız",
-   "mevcutBeispiel": "Unheilbar Kranke brauchen Begleitung, nicht immer neue Eingriffe.",
-   "mevcutBeispielTr": "Tedavisi olmayan hastaların ihtiyacı yeni müdahaleler değil, refakattir."
+   "currentTr": "tedavi edilemez, şifasız",
+   "currentBeispiel": "Unheilbar Kranke brauchen Begleitung, nicht immer neue Eingriffe.",
+   "currentBeispielTr": "Tedavisi olmayan hastaların ihtiyacı yeni müdahaleler değil, refakattir."
   },
   {
    "id": 6685,
@@ -365,9 +365,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "girişimsel, invaziv",
-   "mevcutBeispiel": "Weniger invasive Verfahren verkürzen die Genesungszeit erheblich.",
-   "mevcutBeispielTr": "Daha az girişimsel yöntemler iyileşme süresini belirgin şekilde kısaltır."
+   "currentTr": "girişimsel, invaziv",
+   "currentBeispiel": "Weniger invasive Verfahren verkürzen die Genesungszeit erheblich.",
+   "currentBeispielTr": "Daha az girişimsel yöntemler iyileşme süresini belirgin şekilde kısaltır."
   },
   {
    "id": 6686,
@@ -375,10 +375,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "anlamlı, açıklayıcı",
-   "mevcutBeispiel": "Bei so kleinen Fallzahlen ist das Ergebnis kaum aussagekräftig.",
-   "mevcutBeispielTr": "Bu kadar az vakayla sonuç neredeyse hiç anlamlı değil.",
-   "cakisan": [
+   "currentTr": "anlamlı, açıklayıcı",
+   "currentBeispiel": "Bei so kleinen Fallzahlen ist das Ergebnis kaum aussagekräftig.",
+   "currentBeispielTr": "Bu kadar az vakayla sonuç neredeyse hiç anlamlı değil.",
+   "overlapping": [
     "sinnvoll (B1)",
     "signifikant (B2)"
    ]
@@ -389,9 +389,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ergin, kendi kararını verebilen",
-   "mevcutBeispiel": "Das Leitbild vom mündigen Patienten bleibt oft blanke Theorie.",
-   "mevcutBeispielTr": "Kendi kararını veren hasta ideali çoğu zaman salt teoride kalıyor."
+   "currentTr": "ergin, kendi kararını verebilen",
+   "currentBeispiel": "Das Leitbild vom mündigen Patienten bleibt oft blanke Theorie.",
+   "currentBeispielTr": "Kendi kararını veren hasta ideali çoğu zaman salt teoride kalıyor."
   },
   {
    "id": 6688,
@@ -399,9 +399,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "evrensellik, genel geçerlilik",
-   "mevcutBeispiel": "Die Universalität der Menschenrechte wird von manchen Regierungen offen bestritten.",
-   "mevcutBeispielTr": "İnsan haklarının evrenselliği bazı hükümetlerce açıkça reddediliyor."
+   "currentTr": "evrensellik, genel geçerlilik",
+   "currentBeispiel": "Die Universalität der Menschenrechte wird von manchen Regierungen offen bestritten.",
+   "currentBeispielTr": "İnsan haklarının evrenselliği bazı hükümetlerce açıkça reddediliyor."
   },
   {
    "id": 6689,
@@ -409,9 +409,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "uluslararası örf ve âdet hukuku",
-   "mevcutBeispiel": "Das Folterverbot gilt heute als Teil des Völkergewohnheitsrechts.",
-   "mevcutBeispielTr": "İşkence yasağı bugün uluslararası örf ve âdet hukukunun parçası sayılıyor."
+   "currentTr": "uluslararası örf ve âdet hukuku",
+   "currentBeispiel": "Das Folterverbot gilt heute als Teil des Völkergewohnheitsrechts.",
+   "currentBeispielTr": "İşkence yasağı bugün uluslararası örf ve âdet hukukunun parçası sayılıyor."
   },
   {
    "id": 6690,
@@ -419,9 +419,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vertragsstaaten",
-   "mevcutTr": "taraf devlet, sözleşmeye taraf ülke",
-   "mevcutBeispiel": "Jeder Vertragsstaat muss alle vier Jahre einen ausführlichen Bericht vorlegen.",
-   "mevcutBeispielTr": "Her taraf devlet dört yılda bir ayrıntılı rapor sunmak zorundadır."
+   "currentTr": "taraf devlet, sözleşmeye taraf ülke",
+   "currentBeispiel": "Jeder Vertragsstaat muss alle vier Jahre einen ausführlichen Bericht vorlegen.",
+   "currentBeispielTr": "Her taraf devlet dört yılda bir ayrıntılı rapor sunmak zorundadır."
   },
   {
    "id": 6691,
@@ -429,9 +429,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zusatzprotokolle",
-   "mevcutTr": "ek protokol",
-   "mevcutBeispiel": "Das Zusatzprotokoll eröffnet Einzelpersonen erstmals den Weg zum Ausschuss.",
-   "mevcutBeispielTr": "Ek protokol bireylere ilk kez komiteye başvurma yolunu açıyor."
+   "currentTr": "ek protokol",
+   "currentBeispiel": "Das Zusatzprotokoll eröffnet Einzelpersonen erstmals den Weg zum Ausschuss.",
+   "currentBeispielTr": "Ek protokol bireylere ilk kez komiteye başvurma yolunu açıyor."
   },
   {
    "id": 6692,
@@ -439,9 +439,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Flüchtlingskonventionen",
-   "mevcutTr": "mülteci sözleşmesi",
-   "mevcutBeispiel": "Die Flüchtlingskonvention verbietet die Rückführung in ein Verfolgerland.",
-   "mevcutBeispielTr": "Mülteci sözleşmesi kişinin zulüm gördüğü ülkeye geri gönderilmesini yasaklar."
+   "currentTr": "mülteci sözleşmesi",
+   "currentBeispiel": "Die Flüchtlingskonvention verbietet die Rückführung in ein Verfolgerland.",
+   "currentBeispielTr": "Mülteci sözleşmesi kişinin zulüm gördüğü ülkeye geri gönderilmesini yasaklar."
   },
   {
    "id": 6693,
@@ -449,9 +449,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zurückweisungen",
-   "mevcutTr": "geri çevirme, sınırda geri gönderme",
-   "mevcutBeispiel": "Die Zurückweisung an der Grenze verstößt gegen geltendes Flüchtlingsrecht.",
-   "mevcutBeispielTr": "Sınırda geri çevirme yürürlükteki mülteci hukukuna aykırıdır."
+   "currentTr": "geri çevirme, sınırda geri gönderme",
+   "currentBeispiel": "Die Zurückweisung an der Grenze verstößt gegen geltendes Flüchtlingsrecht.",
+   "currentBeispielTr": "Sınırda geri çevirme yürürlükteki mülteci hukukuna aykırıdır."
   },
   {
    "id": 6694,
@@ -459,9 +459,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Herkunftsstaaten",
-   "mevcutTr": "menşe ülke, geldiği devlet",
-   "mevcutBeispiel": "Die Lage im Herkunftsstaat wird vor jeder Entscheidung sorgfältig geprüft.",
-   "mevcutBeispielTr": "Her karardan önce menşe ülkedeki durum dikkatle inceleniyor."
+   "currentTr": "menşe ülke, geldiği devlet",
+   "currentBeispiel": "Die Lage im Herkunftsstaat wird vor jeder Entscheidung sorgfältig geprüft.",
+   "currentBeispielTr": "Her karardan önce menşe ülkedeki durum dikkatle inceleniyor."
   },
   {
    "id": 6695,
@@ -469,9 +469,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "vatansızlık",
-   "mevcutBeispiel": "Staatenlosigkeit nimmt den Betroffenen fast jeden rechtlichen Schutz.",
-   "mevcutBeispielTr": "Vatansızlık ilgili kişileri neredeyse her türlü hukuki korumadan yoksun bırakır."
+   "currentTr": "vatansızlık",
+   "currentBeispiel": "Staatenlosigkeit nimmt den Betroffenen fast jeden rechtlichen Schutz.",
+   "currentBeispielTr": "Vatansızlık ilgili kişileri neredeyse her türlü hukuki korumadan yoksun bırakır."
   },
   {
    "id": 6696,
@@ -479,10 +479,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Interventionen",
-   "mevcutTr": "müdahale",
-   "mevcutBeispiel": "Eine humanitäre Intervention ohne Mandat bleibt völkerrechtlich hochumstritten.",
-   "mevcutBeispielTr": "Yetkisiz bir insani müdahale uluslararası hukukta son derece tartışmalıdır.",
-   "cakisan": [
+   "currentTr": "müdahale",
+   "currentBeispiel": "Eine humanitäre Intervention ohne Mandat bleibt völkerrechtlich hochumstritten.",
+   "currentBeispielTr": "Yetkisiz bir insani müdahale uluslararası hukukta son derece tartışmalıdır.",
+   "overlapping": [
     "der Eingriff (B2)"
    ]
   },
@@ -492,9 +492,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Hoheitsgewalten",
-   "mevcutTr": "hükümranlık yetkisi, kamu gücü",
-   "mevcutBeispiel": "Der Vertrag gilt für alle Personen unter der Hoheitsgewalt des Staates.",
-   "mevcutBeispielTr": "Sözleşme devletin hükümranlık yetkisi altındaki herkes için geçerlidir."
+   "currentTr": "hükümranlık yetkisi, kamu gücü",
+   "currentBeispiel": "Der Vertrag gilt für alle Personen unter der Hoheitsgewalt des Staates.",
+   "currentBeispielTr": "Sözleşme devletin hükümranlık yetkisi altındaki herkes için geçerlidir."
   },
   {
    "id": 6698,
@@ -502,9 +502,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Strafgerichtshöfe",
-   "mevcutTr": "ceza mahkemesi (uluslararası)",
-   "mevcutBeispiel": "Der Strafgerichtshof erließ einen Haftbefehl gegen den ehemaligen Befehlshaber.",
-   "mevcutBeispielTr": "Ceza mahkemesi eski komutan hakkında tutuklama emri çıkardı."
+   "currentTr": "ceza mahkemesi (uluslararası)",
+   "currentBeispiel": "Der Strafgerichtshof erließ einen Haftbefehl gegen den ehemaligen Befehlshaber.",
+   "currentBeispielTr": "Ceza mahkemesi eski komutan hakkında tutuklama emri çıkardı."
   },
   {
    "id": 6699,
@@ -512,9 +512,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verfahrensgarantien",
-   "mevcutTr": "usul güvencesi",
-   "mevcutBeispiel": "Im Eilverfahren wurden zentrale Verfahrensgarantien schlicht übergangen.",
-   "mevcutBeispielTr": "Hızlandırılmış usulde temel usul güvenceleri açıkça göz ardı edildi."
+   "currentTr": "usul güvencesi",
+   "currentBeispiel": "Im Eilverfahren wurden zentrale Verfahrensgarantien schlicht übergangen.",
+   "currentBeispielTr": "Hızlandırılmış usulde temel usul güvenceleri açıkça göz ardı edildi."
   },
   {
    "id": 6700,
@@ -522,9 +522,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Individualbeschwerden",
-   "mevcutTr": "bireysel başvuru",
-   "mevcutBeispiel": "Die Individualbeschwerde gibt einzelnen Bürgern Zugang zu einem internationalen Ausschuss.",
-   "mevcutBeispielTr": "Bireysel başvuru tek tek yurttaşlara uluslararası bir komiteye erişim sağlar."
+   "currentTr": "bireysel başvuru",
+   "currentBeispiel": "Die Individualbeschwerde gibt einzelnen Bürgern Zugang zu einem internationalen Ausschuss.",
+   "currentBeispielTr": "Bireysel başvuru tek tek yurttaşlara uluslararası bir komiteye erişim sağlar."
   },
   {
    "id": 6701,
@@ -532,9 +532,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Präzedenzfälle",
-   "mevcutTr": "emsal, emsal karar",
-   "mevcutBeispiel": "Das Urteil gilt als Präzedenzfall für alle künftigen Klagen gegen Konzerne.",
-   "mevcutBeispielTr": "Karar şirketlere karşı açılacak tüm davalar için emsal sayılıyor."
+   "currentTr": "emsal, emsal karar",
+   "currentBeispiel": "Das Urteil gilt als Präzedenzfall für alle künftigen Klagen gegen Konzerne.",
+   "currentBeispielTr": "Karar şirketlere karşı açılacak tüm davalar için emsal sayılıyor."
   },
   {
    "id": 6702,
@@ -542,9 +542,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verbindlichkeiten",
-   "mevcutTr": "bağlayıcılık",
-   "mevcutBeispiel": "Über die rechtliche Verbindlichkeit der Erklärung streiten Fachleute bis heute.",
-   "mevcutBeispielTr": "Bildirinin hukuki bağlayıcılığı konusunda uzmanlar bugün hâlâ tartışıyor."
+   "currentTr": "bağlayıcılık",
+   "currentBeispiel": "Über die rechtliche Verbindlichkeit der Erklärung streiten Fachleute bis heute.",
+   "currentBeispielTr": "Bildirinin hukuki bağlayıcılığı konusunda uzmanlar bugün hâlâ tartışıyor."
   }
  ]
 }

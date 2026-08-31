@@ -262,7 +262,7 @@
   "tr": "telefon numarası",
   "formen": "-n",
   "beispiel": "Kannst du mir bitte deine Telefonnummer geben?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Rufnummer (B1)"
   ]
  },
@@ -369,7 +369,7 @@
   "tr": "dizüstü bilgisayar",
   "formen": "-s",
   "beispiel": "Ich nehme meinen Laptop mit ins Büro.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der/das Laptop (A2)"
   ]
  },
@@ -484,7 +484,7 @@
   "tr": "kullanıcı",
   "formen": "-",
   "beispiel": "Jeder Benutzer bekommt ein eigenes Passwort.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Nutzer (B2)"
   ]
  },
@@ -567,7 +567,7 @@
   "tr": "göndermek, yollamak",
   "formen": "schickt ab, hat abgeschickt",
   "beispiel": "Ich habe das Formular gestern abgeschickt.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "verschicken (A2)"
   ]
  },
@@ -578,7 +578,7 @@
   "tr": "zarf",
   "formen": "¨-e",
   "beispiel": "Der Brief liegt in einem weißen Umschlag.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Briefumschlag (B1)",
    "das Couvert (B1)",
    "das Kuvert (B1)"

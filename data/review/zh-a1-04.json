@@ -133,7 +133,7 @@
   "gsw": "Note",
   "gswArtikel": "d",
   "gswBeispiel": "Häsch gueti Note in Änglisch?",
-  "ayniLehce": [
+  "sameDialect": [
    "Schein (B1)"
   ]
  },
@@ -154,7 +154,7 @@
   "gsw": "nume",
   "gswArtikel": null,
   "gswBeispiel": "Ich möcht nume es Glas Wasser.",
-  "ayniLehce": [
+  "sameDialect": [
    "ausschließlich (B1)",
    "bloß (B1)"
   ]
@@ -167,7 +167,7 @@
   "gsw": "Frücht",
   "gswArtikel": "d",
   "gswBeispiel": "Mir ässed immer viil Frücht.",
-  "ayniLehce": [
+  "sameDialect": [
    "Früchte (B1)"
   ]
  },
@@ -188,7 +188,7 @@
   "gsw": "offe",
   "gswArtikel": null,
   "gswBeispiel": "Jetz isch d Türe offe.",
-  "ayniLehce": [
+  "sameDialect": [
    "geöffnet (A1)"
   ]
  },
@@ -236,7 +236,7 @@
   "gsw": "Päckli",
   "gswArtikel": "s",
   "gswBeispiel": "Isch das Päckli für mich?",
-  "ayniLehce": [
+  "sameDialect": [
    "Päckchen (A2)"
   ]
  },
@@ -473,7 +473,7 @@
   "gsw": "flicke",
   "gswArtikel": null,
   "gswBeispiel": "Min Vatter cha s Velo flicke.",
-  "ayniLehce": [
+  "sameDialect": [
    "flicken (A2)"
   ]
  },
@@ -494,7 +494,7 @@
   "gsw": "richtig",
   "gswArtikel": null,
   "gswBeispiel": "D Antwort isch nöd richtig.",
-  "ayniLehce": [
+  "sameDialect": [
    "Richtung (B1)"
   ]
  },
@@ -650,7 +650,7 @@
   "gsw": "scho",
   "gswArtikel": null,
   "gswBeispiel": "Ich ha scho sächs Computerschpiil.",
-  "ayniLehce": [
+  "sameDialect": [
    "bereits (B1)"
   ]
  },
@@ -671,7 +671,7 @@
   "gsw": "schriibe",
   "gswArtikel": null,
   "gswBeispiel": "Ich mues de Erika na es Mail schriibe.",
-  "ayniLehce": [
+  "sameDialect": [
    "Schreiben (B1)"
   ]
  },
@@ -737,7 +737,7 @@
   "gsw": "sii",
   "gswArtikel": null,
   "gswBeispiel": "Ich will nöd eläi sii./Ich bi drizää Jaar alt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Sie (A1)"
   ]
  },
@@ -776,7 +776,7 @@
   "gsw": "Sii",
   "gswArtikel": null,
   "gswBeispiel": "Sind Sii de nöi Lehrer?/Wie gaat s Ine?",
-  "ayniLehce": [
+  "sameDialect": [
    "sein (A1)"
   ]
  },
@@ -887,7 +887,7 @@
   "gsw": "rede",
   "gswArtikel": null,
   "gswBeispiel": "Si mues na mit em Lehrer rede.",
-  "ayniLehce": [
+  "sameDialect": [
    "reden (A2)"
   ]
  },

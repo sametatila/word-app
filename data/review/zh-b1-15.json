@@ -43,7 +43,7 @@
   "gsw": "öppe",
   "gswArtikel": null,
   "gswBeispiel": "Wie wiit isch es bis zum Bahnhof? – Nöd wiit, öppe zää Minuute z Fuess.",
-  "ayniLehce": [
+  "sameDialect": [
    "etwa (B1)"
   ]
  },
@@ -298,7 +298,7 @@
   "gsw": "Velo",
   "gswArtikel": "s",
   "gswBeispiel": "1. Si fahrt jede Morge mit em Velo go schaffe. 2. Am Sunntig fahred mir oft Velo.",
-  "ayniLehce": [
+  "sameDialect": [
    "Fahrrad (A1)"
   ]
  },
@@ -310,7 +310,7 @@
   "gsw": "abmache",
   "gswArtikel": null,
   "gswBeispiel": "Mir händ mit de Fründe abgmacht – mir gönd zäme go ässe.",
-  "ayniLehce": [
+  "sameDialect": [
    "vereinbaren (A2)",
    "abmachen (B1)"
   ]
@@ -386,7 +386,7 @@
   "gsw": "verbessere",
   "gswArtikel": null,
   "gswBeispiel": "1. Ich ha miis Tüütsch verbesseret. 2. Miini Chind händ sich i de Schuel verbesseret.",
-  "ayniLehce": [
+  "sameDialect": [
    "verbessern (A2)"
   ]
  },
@@ -524,7 +524,7 @@
   "gsw": "vergnüege",
   "gswArtikel": null,
   "gswBeispiel": "A de Party han ich mi sehr guet vergnüegt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Vergnügen (B1)"
   ]
  },
@@ -536,7 +536,7 @@
   "gsw": "Vergnüege",
   "gswArtikel": "s",
   "gswBeispiel": "1. Es isch es Vergnüege, de Chind bim Schpile zuezluege. 2. Ich wünsche dir vil Vergnüege a de Party!",
-  "ayniLehce": [
+  "sameDialect": [
    "sich vergnügen (B1)"
   ]
  },
@@ -575,7 +575,7 @@
   "gsw": "verhalte",
   "gswArtikel": null,
   "gswBeispiel": "De Maa hät sich öis gägenüber komisch verhalte.",
-  "ayniLehce": [
+  "sameDialect": [
    "Verhalten (B1)"
   ]
  },
@@ -587,7 +587,7 @@
   "gsw": "Verhalte",
   "gswArtikel": "s",
   "gswBeispiel": "Ich bewundere diis Verhalte i de schwirige Situation.",
-  "ayniLehce": [
+  "sameDialect": [
    "sich verhalten (B1)"
   ]
  },
@@ -671,7 +671,7 @@
   "gsw": "verletze",
   "gswArtikel": null,
   "gswBeispiel": "1. Ich ha mi a de Hand verletzt. 2. Ich ha mir de Arm verletzt.",
-  "ayniLehce": [
+  "sameDialect": [
    "verletzen (A2)"
   ]
  },
@@ -836,7 +836,7 @@
   "gsw": "verpasse",
   "gswArtikel": null,
   "gswBeispiel": "Tuet mer läid, ich ha d Aamäldefrischt verpasst.",
-  "ayniLehce": [
+  "sameDialect": [
    "verpassen (A2)"
   ]
  },
@@ -938,7 +938,7 @@
   "gsw": "vertraue",
   "gswArtikel": null,
   "gswBeispiel": "Ich känne di guet. Ich vertraue der.",
-  "ayniLehce": [
+  "sameDialect": [
    "Vertrauen (B1)"
   ]
  },
@@ -950,7 +950,7 @@
   "gsw": "Vertraue",
   "gswArtikel": "s",
   "gswBeispiel": "Ich ha Vertraue zu Ine.",
-  "ayniLehce": [
+  "sameDialect": [
    "vertrauen (B1)"
   ]
  },
@@ -1016,7 +1016,7 @@
   "gsw": "Verwandte",
   "gswArtikel": "d",
   "gswBeispiel": "A min Geburtstag chömed alli Verwandte.",
-  "ayniLehce": [
+  "sameDialect": [
    "Verwandte (A1)"
   ]
  },

@@ -205,7 +205,7 @@
   "gsw": "Billett",
   "gswArtikel": "s",
   "gswBeispiel": "Es Billett chönd Si am Schalter chaufe.",
-  "ayniLehce": [
+  "sameDialect": [
    "Fahrkarte (A1)",
    "Fahrschein (A2)"
   ]
@@ -281,7 +281,7 @@
   "gsw": "nume",
   "gswArtikel": null,
   "gswBeispiel": "1. Ich möcht nüüt chaufe. Ich möcht mi nume umluege. 2. Chum ja nöd z schpaat. Mir müend pünktlich am Baanhof sii.",
-  "ayniLehce": [
+  "sameDialect": [
    "nur (A1)",
    "ausschließlich (B1)"
   ]
@@ -321,7 +321,7 @@
   "gsw": "Bode",
   "gswArtikel": "de",
   "gswBeispiel": "1. D Büecher sind alli am Bode gläge. 2. Uf dem Bode wachst s Gmües bsunders guet.",
-  "ayniLehce": [
+  "sameDialect": [
    "Fußboden (A2)"
   ]
  },
@@ -351,7 +351,7 @@
   "gsw": "Braate",
   "gswArtikel": "de",
   "gswBeispiel": "Nämed Si na es bitzli Soose zum Braate?",
-  "ayniLehce": [
+  "sameDialect": [
    "braten (A2)"
   ]
  },
@@ -381,7 +381,7 @@
   "gsw": "bremse",
   "gswArtikel": null,
   "gswBeispiel": "De Maa isch ganz plötzli über d Straass gloffe. Ich ha müese fescht bremse.",
-  "ayniLehce": [
+  "sameDialect": [
    "Bremse (B1)"
   ]
  },
@@ -393,7 +393,7 @@
   "gsw": "Bremse",
   "gswArtikel": "d",
   "gswBeispiel": "Du muesch unbedingt d Bremse kontrolliere laa.",
-  "ayniLehce": [
+  "sameDialect": [
    "bremsen (B1)"
   ]
  },
@@ -423,7 +423,7 @@
   "gsw": "Pöschtler",
   "gswArtikel": "de",
   "gswBeispiel": "Isch d Pöschtlerin scho daa gsii?",
-  "ayniLehce": [
+  "sameDialect": [
    "Pöstler (B1)",
    "Postbote (A2)"
   ]
@@ -436,7 +436,7 @@
   "gsw": "Couvert",
   "gswArtikel": "s",
   "gswBeispiel": "Ich hett gärn 50 Couverts und Briefmarke dezue.",
-  "ayniLehce": [
+  "sameDialect": [
    "Couvert (B1)",
    "Kuvert (B1)",
    "Umschlag (A2)"
@@ -450,7 +450,7 @@
   "gsw": "Portmonee",
   "gswArtikel": "s",
   "gswBeispiel": "Ich ha nume Münz i mim Portmonee.",
-  "ayniLehce": [
+  "sameDialect": [
    "Geldbörse (A2)",
    "Portemonnaie/Portmonee (B1)"
   ]
@@ -472,7 +472,7 @@
   "gsw": "Brötli",
   "gswArtikel": "s",
   "gswBeispiel": "Ich hole gschwind es paar Brötli zum Zmorge.",
-  "ayniLehce": [
+  "sameDialect": [
    "Brötchen (A1)"
   ]
  },
@@ -493,7 +493,7 @@
   "gsw": "Bueb",
   "gswArtikel": "de",
   "gswBeispiel": "I de Schuelklass sind 15 Buebe und 10 Meitli.",
-  "ayniLehce": [
+  "sameDialect": [
    "Junge (A1)"
   ]
  },
@@ -514,7 +514,7 @@
   "gsw": "Büchs",
   "gswArtikel": "d",
   "gswBeispiel": "Ich ha na e Büchs Boone.",
-  "ayniLehce": [
+  "sameDialect": [
    "Dose (B1)"
   ]
  },
@@ -571,7 +571,7 @@
   "gsw": "Bürschte",
   "gswArtikel": "d",
   "gswBeispiel": "1. Häsch du e Bürschte? Miini Schue sind so dräckig. 2. Ich bruuche e Bürschte für miini Haar.",
-  "ayniLehce": [
+  "sameDialect": [
    "bürsten (A2)"
   ]
  },
@@ -619,7 +619,7 @@
   "gsw": "Coiffeur",
   "gswArtikel": "de",
   "gswBeispiel": "1. Du gseesch toll us! Wer isch din Coiffeur? 2. Miini Tochter wott Coiffeuse werde.",
-  "ayniLehce": [
+  "sameDialect": [
    "Friseur (B1)"
   ]
  },
@@ -631,7 +631,7 @@
   "gsw": "Coiffeuse",
   "gswArtikel": "d",
   "gswBeispiel": "1. Du gseesch toll us! Wer isch din Coiffeur? 2. Miini Tochter wott Coiffeuse werde.",
-  "ayniLehce": [
+  "sameDialect": [
    "Friseurin (B1)"
   ]
  },
@@ -670,7 +670,7 @@
   "gsw": "Couvert",
   "gswArtikel": "s",
   "gswBeispiel": "Ich hett gärn 50 Couverts und Briefmarke dezue.",
-  "ayniLehce": [
+  "sameDialect": [
    "Briefumschlag (B1)",
    "Kuvert (B1)",
    "Umschlag (A2)"
@@ -720,7 +720,7 @@
   "gsw": "drum",
   "gswArtikel": null,
   "gswBeispiel": "Ich bi verchältet, drum chan ich hüt nöd choo.",
-  "ayniLehce": [
+  "sameDialect": [
    "deshalb (A1)",
    "darum (A2)"
   ]
@@ -859,7 +859,7 @@
   "gsw": "Dessert",
   "gswArtikel": "s",
   "gswBeispiel": "Nach em Ässe hät s na es fäins Dessert gää.",
-  "ayniLehce": [
+  "sameDialect": [
    "Nachspeise (B1)",
    "Nachtisch (B2)"
   ]
@@ -998,7 +998,7 @@
   "gsw": "Disco",
   "gswArtikel": "d",
   "gswBeispiel": "Mir gönd hüt am Aabig i d Disco.",
-  "ayniLehce": [
+  "sameDialect": [
    "Disco (A1)"
   ]
  },

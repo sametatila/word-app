@@ -1,7 +1,7 @@
 {
- "paket": "zh-017",
+ "packet": "zh-017",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-c1-r1",
    "skill": "reading",
@@ -9,39 +9,39 @@
    "title": "Schtirbt s Züritüütsch us?",
    "genre": "Köşe yazısı",
    "intro": "Bir kültür dergisindeki bu köşe yazısında yazar, 'lehçe ölüyor' klişesiyle ironik bir hesaplaşmaya girişiyor. Kimin suçlandığına ve yazarın asıl tehlikeyi nerede gördüğüne dikkat et.",
-   "metin": "Alli paar Jaar schriibt wider öpper s gliiche Klagelied: S Züritüütsch schtirbt us, d Jugend cha nüme richtig rede, und schuld isch s Handy. Ich ha das Lied scho als Chind ghöört – und lueged Sii: Mir rede immer no Mundart. Eifach andersch.\n\nKlar, min Grossvatter hät no Wörter bruucht, wo hüt fascht niemert me kennt. Aber en Sprach, wo läbt, veränderet sich halt. D Jugendliche mische hüt änglischi Wörter is Züritüütsch – «nice», «safe», «cringe». Für vili isch das en Skandal. Für mich isch es s Zäiche, dass de Dialäkt läbig isch: Er nimmt uuf, was er bruucht, und laat gaa, was er nüme bruucht.\n\nAu d Zuegwanderete veränderen d Sprach. Chind, wo dihäi Albanisch oder Tamilisch rede, lerned uf em Pausehof Züritüütsch – und bringed en äigete Sound mit. Das isch kän Verluscht, das isch e nöii Farb.\n\nGfäärlich für de Dialäkt sind nöd d Jugend und nöd d Zuegwanderete. Gfäärlich sind d Purischte, wo jedes nöie Wort als Fääler aaluege und us de Mundart es Museum mache wänd. En Sprach, wo me nu no bewache daarf, läbt nüme. Also: Lönd s Züritüütsch läbe – au wänn's hüt andersch töönt als vor füfzg Jaar.",
+   "text": "Alli paar Jaar schriibt wider öpper s gliiche Klagelied: S Züritüütsch schtirbt us, d Jugend cha nüme richtig rede, und schuld isch s Handy. Ich ha das Lied scho als Chind ghöört – und lueged Sii: Mir rede immer no Mundart. Eifach andersch.\n\nKlar, min Grossvatter hät no Wörter bruucht, wo hüt fascht niemert me kennt. Aber en Sprach, wo läbt, veränderet sich halt. D Jugendliche mische hüt änglischi Wörter is Züritüütsch – «nice», «safe», «cringe». Für vili isch das en Skandal. Für mich isch es s Zäiche, dass de Dialäkt läbig isch: Er nimmt uuf, was er bruucht, und laat gaa, was er nüme bruucht.\n\nAu d Zuegwanderete veränderen d Sprach. Chind, wo dihäi Albanisch oder Tamilisch rede, lerned uf em Pausehof Züritüütsch – und bringed en äigete Sound mit. Das isch kän Verluscht, das isch e nöii Farb.\n\nGfäärlich für de Dialäkt sind nöd d Jugend und nöd d Zuegwanderete. Gfäärlich sind d Purischte, wo jedes nöie Wort als Fääler aaluege und us de Mundart es Museum mache wänd. En Sprach, wo me nu no bewache daarf, läbt nüme. Also: Lönd s Züritüütsch läbe – au wänn's hüt andersch töönt als vor füfzg Jaar.",
    "gloss": [
     {
      "de": "s Klagelied",
-     "mevcutTr": "ağıt, yakınma şarkısı"
+     "currentTr": "ağıt, yakınma şarkısı"
     },
     {
      "de": "läbig",
-     "mevcutTr": "canlı, hayat dolu"
+     "currentTr": "canlı, hayat dolu"
     },
     {
      "de": "d Zuegwanderete",
-     "mevcutTr": "göçle gelenler"
+     "currentTr": "göçle gelenler"
     },
     {
      "de": "de Verluscht",
-     "mevcutTr": "kayıp"
+     "currentTr": "kayıp"
     },
     {
      "de": "de Purischt",
-     "mevcutTr": "dil tutucusu, safçı"
+     "currentTr": "dil tutucusu, safçı"
     },
     {
      "de": "bewache",
-     "mevcutTr": "korumak, nöbet tutmak"
+     "currentTr": "korumak, nöbet tutmak"
     },
     {
      "de": "uufnää",
-     "mevcutTr": "içine almak, kabul etmek"
+     "currentTr": "içine almak, kabul etmek"
     },
     {
      "de": "de Pausehof",
-     "mevcutTr": "teneffüs avlusu"
+     "currentTr": "teneffüs avlusu"
     }
    ]
   },
@@ -52,43 +52,43 @@
    "title": "Wonigssueche z Züri – es Draama in drüü Akt",
    "genre": "Blog",
    "intro": "Zürih'te ev arayan birinin ironik blog yazısı. Üç 'perde' boyunca beklentiyle gerçeklik arasındaki uçuruma ve sondaki beklenmedik dönüşe dikkat et.",
-   "metin": "Akt äis: D Hoffnig. Ich ha tänkt, mit mim guete Loon und mim suubere Betriibigsuszug find ich z Züri locker e Wonig. Ich ha es Dossier gmacht, mit Foto und Motivazioonsschriibe – als wär's e Bewärbig für en Job bi de Bank.\n\nAkt zwäi: D Realität. A de erschte Bsichtigung sind achzg Lüüt vor de Tür gschtande. D Wonig: zwäiehalb Zimmer, vierte Schtock, kä Lift, Chuchi us de Sibezgerjaar. De Priis: zwäituusigdrühundert Franke. D Verwaltig hät gsäit, mir söled s Formular usfüle und bitte nöd aalüüte – si mälde sich. Si händ sich nie gmäldet.\n\nAkt drüü: D Ernüchterig. Mini Fründin hät gmäint, ich söll's bi de Genosseschafte probiere. Super Idee: D Wartelischte sind sit zää Jaar zue. Min Kolleg wont sit sibe Jaar imene WG-Zimmer, wil er kä Wonig findt – und de Maa isch Aawalt.\n\nEpilog: Ich zügle jetz uf Baade. S Zugbilett choschtet öppis, und ich bruuche vierzg Minuute bis Züri. Aber d Miete isch d Helfti, und vom Balkon gsee ich d Limmat statt e Buuschtell. Villicht isch das gar nöd s schlächtscht Änd vo dem Draama.",
+   "text": "Akt äis: D Hoffnig. Ich ha tänkt, mit mim guete Loon und mim suubere Betriibigsuszug find ich z Züri locker e Wonig. Ich ha es Dossier gmacht, mit Foto und Motivazioonsschriibe – als wär's e Bewärbig für en Job bi de Bank.\n\nAkt zwäi: D Realität. A de erschte Bsichtigung sind achzg Lüüt vor de Tür gschtande. D Wonig: zwäiehalb Zimmer, vierte Schtock, kä Lift, Chuchi us de Sibezgerjaar. De Priis: zwäituusigdrühundert Franke. D Verwaltig hät gsäit, mir söled s Formular usfüle und bitte nöd aalüüte – si mälde sich. Si händ sich nie gmäldet.\n\nAkt drüü: D Ernüchterig. Mini Fründin hät gmäint, ich söll's bi de Genosseschafte probiere. Super Idee: D Wartelischte sind sit zää Jaar zue. Min Kolleg wont sit sibe Jaar imene WG-Zimmer, wil er kä Wonig findt – und de Maa isch Aawalt.\n\nEpilog: Ich zügle jetz uf Baade. S Zugbilett choschtet öppis, und ich bruuche vierzg Minuute bis Züri. Aber d Miete isch d Helfti, und vom Balkon gsee ich d Limmat statt e Buuschtell. Villicht isch das gar nöd s schlächtscht Änd vo dem Draama.",
    "gloss": [
     {
      "de": "de Betriibigsuszug",
-     "mevcutTr": "icra sicil belgesi (İsviçre'de kiralamada istenir)"
+     "currentTr": "icra sicil belgesi (İsviçre'de kiralamada istenir)"
     },
     {
      "de": "d Bewärbig",
-     "mevcutTr": "başvuru"
+     "currentTr": "başvuru"
     },
     {
      "de": "d Bsichtigung",
-     "mevcutTr": "daireyi gezip görme"
+     "currentTr": "daireyi gezip görme"
     },
     {
      "de": "d Verwaltig",
-     "mevcutTr": "yönetim, emlak idaresi"
+     "currentTr": "yönetim, emlak idaresi"
     },
     {
      "de": "d Genosseschaft",
-     "mevcutTr": "kooperatif (ucuz konut sağlar)"
+     "currentTr": "kooperatif (ucuz konut sağlar)"
     },
     {
      "de": "sich mälde",
-     "mevcutTr": "haber vermek, dönüş yapmak"
+     "currentTr": "haber vermek, dönüş yapmak"
     },
     {
      "de": "zügle",
-     "mevcutTr": "taşınmak (ev değiştirmek)"
+     "currentTr": "taşınmak (ev değiştirmek)"
     },
     {
      "de": "d Helfti",
-     "mevcutTr": "yarısı"
+     "currentTr": "yarısı"
     },
     {
      "de": "d Ernüchterig",
-     "mevcutTr": "hayal kırıklığı, ayılma"
+     "currentTr": "hayal kırıklığı, ayılma"
     }
    ]
   },
@@ -99,60 +99,60 @@
    "title": "S Grüezi-Paradox",
    "genre": "Köşe yazısı",
    "intro": "İsviçre nezaketinin yakınlık mı mesafe mi olduğunu tartışan ironik bir köşe yazısı okuyacaksın. Yazarın tonuna dikkat et.",
-   "metin": "Es git en Vorwurf, wo ich sit zwänzg Jaar ghööre, meischtens vo Lüüt, wo nöd da uufgwachse sind: D Schwiizer seiged höflich, aber chalt. Me grüezi enand im Träppehuus, me lächlet im Lift — und nach drei Jaar wüsst me na immer nöd, wie di Nochbarin heisst.\n\nIch han lang widersproche. Underdesse gib ich zue: De Vorwurf stimmt. Nume: Er beschriibt käi Chälti, sondern e Regle, wo niemert erklärt.\n\nD Regle gaat so: S Grüezi isch käi Aagebot, s isch e Bestätigung. Es säit nöd „ich möcht di kenne“, sondern „ich gsee di, und ich stör di nöd“. Wär das als Aafang vom Gspröch verstaat, wartet ewig uf de zwäit Satz. Dää chunt nöd — nöd wil me nöd wott, sondern wil s Aafange bi eus als Iigriff giltet.\n\nDas isch käi Entschuldigung. Es isch e Beschriibig — und si erklärt s Missverständnis in beid Richtige. De Zuegwandti liest Chälti, wo Rücksicht gmeint isch. De Iiheimisch liest Uufdringlichkäit, wo Intressse gmeint isch. Beid händ rächt und beid händ unrächt, und beid warted uf de andere.\n\nS Interessante isch, was passiert, wänn d Schwelle emal überschritte isch. Wär bi eus emal drin isch, isch drin: Me hilft bim Zügle, me nimmt d Poscht ane, me passt uf s Chind uuf — und zwar über Jaar, ohni Ufhebes. Di gliich Zruckhaltig, wo vorher wie Distanz uusgseh hät, wird nachhär zu Verlässlichkäit.\n\nDrum säg ich hüt de Nöiaakömmlinge nüme „das isch halt so“. Ich säge ne: Frööged. Zwäimal. S dritt Mal fröget denn s Gägenüber. Und wänn ihr das Gfüel händ, ihr seiged z direkt gsii — sind ihr wahrschiinlich grad rächtziitig gsii.",
+   "text": "Es git en Vorwurf, wo ich sit zwänzg Jaar ghööre, meischtens vo Lüüt, wo nöd da uufgwachse sind: D Schwiizer seiged höflich, aber chalt. Me grüezi enand im Träppehuus, me lächlet im Lift — und nach drei Jaar wüsst me na immer nöd, wie di Nochbarin heisst.\n\nIch han lang widersproche. Underdesse gib ich zue: De Vorwurf stimmt. Nume: Er beschriibt käi Chälti, sondern e Regle, wo niemert erklärt.\n\nD Regle gaat so: S Grüezi isch käi Aagebot, s isch e Bestätigung. Es säit nöd „ich möcht di kenne“, sondern „ich gsee di, und ich stör di nöd“. Wär das als Aafang vom Gspröch verstaat, wartet ewig uf de zwäit Satz. Dää chunt nöd — nöd wil me nöd wott, sondern wil s Aafange bi eus als Iigriff giltet.\n\nDas isch käi Entschuldigung. Es isch e Beschriibig — und si erklärt s Missverständnis in beid Richtige. De Zuegwandti liest Chälti, wo Rücksicht gmeint isch. De Iiheimisch liest Uufdringlichkäit, wo Intressse gmeint isch. Beid händ rächt und beid händ unrächt, und beid warted uf de andere.\n\nS Interessante isch, was passiert, wänn d Schwelle emal überschritte isch. Wär bi eus emal drin isch, isch drin: Me hilft bim Zügle, me nimmt d Poscht ane, me passt uf s Chind uuf — und zwar über Jaar, ohni Ufhebes. Di gliich Zruckhaltig, wo vorher wie Distanz uusgseh hät, wird nachhär zu Verlässlichkäit.\n\nDrum säg ich hüt de Nöiaakömmlinge nüme „das isch halt so“. Ich säge ne: Frööged. Zwäimal. S dritt Mal fröget denn s Gägenüber. Und wänn ihr das Gfüel händ, ihr seiged z direkt gsii — sind ihr wahrschiinlich grad rächtziitig gsii.",
    "gloss": [
     {
      "de": "d Höflichkäit",
-     "mevcutTr": "nezaket"
+     "currentTr": "nezaket"
     },
     {
      "de": "d Distanz",
-     "mevcutTr": "mesafe",
-     "havuz": {
+     "currentTr": "mesafe",
+     "pool": {
       "tr": "mesafe",
       "en": "distance"
      }
     },
     {
      "de": "verwächsle",
-     "mevcutTr": "birbirine karıştırmak"
+     "currentTr": "birbirine karıştırmak"
     },
     {
      "de": "de Vorwurf",
-     "mevcutTr": "suçlama",
-     "havuz": {
+     "currentTr": "suçlama",
+     "pool": {
       "tr": "suçlama",
       "en": "accusation"
      }
     },
     {
      "de": "unverbindlich",
-     "mevcutTr": "bağlayıcı olmayan, mesafeli",
-     "havuz": {
+     "currentTr": "bağlayıcı olmayan, mesafeli",
+     "pool": {
       "tr": "bağlayıcı olmayan",
       "en": "non-binding"
      }
     },
     {
      "de": "d Zuegwandti",
-     "mevcutTr": "sonradan gelenler"
+     "currentTr": "sonradan gelenler"
     },
     {
      "de": "s Missverständnis",
-     "mevcutTr": "yanlış anlama",
-     "havuz": {
+     "currentTr": "yanlış anlama",
+     "pool": {
       "tr": "yanlış anlaşılma",
       "en": "misunderstanding"
      }
     },
     {
      "de": "härzlich",
-     "mevcutTr": "içten"
+     "currentTr": "içten"
     },
     {
      "de": "d Schwelle",
-     "mevcutTr": "eşik",
-     "havuz": {
+     "currentTr": "eşik",
+     "pool": {
       "tr": "eşik",
       "en": "threshold"
      }
@@ -166,51 +166,51 @@
    "title": "Direkti Demokratie und ihri Schattesiite",
    "genre": "Deneme",
    "intro": "Doğrudan demokrasinin hem gücünü hem bedelini tartan bir deneme okuyacaksın. Yazarın nerede kabul, nerede itiraz ettiğini izle.",
-   "metin": "Vier Mal im Jaar chunt s Couvert. Drü, vier, mängisch sibe Vorlage: es Steuergsetz, e Velo-Initiative, e Änderig im Jagdgsetz. Für vill Uusländer isch das s Fascinierendschte a de Schwiiz — und für vill Schwiizer di normalschti Sach vo de Wält.\n\nMe cha d Vorteil schnell ufzelle. Wer sälber entschäidet, akzeptiert au Entschäid, wo em nöd passed: D Legitimation isch höcher als bi jedem Parlamäntsbeschluss. Und s Referändum wirkt scho, bevor s brucht wird — will jedi Regierig weiss, dass es cha choo, wird vo Aafang aa breiter verhandlet. De berüehmt Schwiizer Kompromiss isch nöd Charakter, er isch Statistik.\n\nAber d Rächnig hät zwäi Poschte, wo me sältener nennt.\n\nDe erscht heisst Tempo. Es Gsetz, wo dur alli Schtufe mues, bruucht bi eus schnell zää Jaar. Bi de Frauestimmrächt hät das bis nüünzähundertäinesibzg duuret — nöd wil s Parlamänt degäge gsii isch, sondern wil e Minderhäit vo Männer hät chöne blockiere. Wär säit, s System schütz vor Fähler, mues au säge: Es schützt s Bschtaande — au wänn s falsch isch.\n\nDe zwäit Poschte heisst Minderhäit. Bi ere Volksabschtimmig entschäidet e Mehrhäit über Rächt vo Lüüt, wo per Definition nie e Mehrhäit sind. S Parlamänt cha das au — aber es mues sich erkläre, s Volch nöd. E Abschtimmig kennt käi Begründigspflicht.\n\nWas folgt drus? Nöd d Abschaffig, sondern Ehrlichkäit. Direkti Demokratie isch käi Garantie für gscheiti Entschäid, si isch e Garantie für aakzeptierti Entschäid. Das isch vill — aber s isch nöd s gliiche. Wär beides verwächslet, wird jedes Mal enttüüscht sii, wänn d Mehrhäit öppis beschlüsst, wo ihm falsch vorchunt. Und das wird passiere. Regelmässig, vier Mal im Jaar.",
+   "text": "Vier Mal im Jaar chunt s Couvert. Drü, vier, mängisch sibe Vorlage: es Steuergsetz, e Velo-Initiative, e Änderig im Jagdgsetz. Für vill Uusländer isch das s Fascinierendschte a de Schwiiz — und für vill Schwiizer di normalschti Sach vo de Wält.\n\nMe cha d Vorteil schnell ufzelle. Wer sälber entschäidet, akzeptiert au Entschäid, wo em nöd passed: D Legitimation isch höcher als bi jedem Parlamäntsbeschluss. Und s Referändum wirkt scho, bevor s brucht wird — will jedi Regierig weiss, dass es cha choo, wird vo Aafang aa breiter verhandlet. De berüehmt Schwiizer Kompromiss isch nöd Charakter, er isch Statistik.\n\nAber d Rächnig hät zwäi Poschte, wo me sältener nennt.\n\nDe erscht heisst Tempo. Es Gsetz, wo dur alli Schtufe mues, bruucht bi eus schnell zää Jaar. Bi de Frauestimmrächt hät das bis nüünzähundertäinesibzg duuret — nöd wil s Parlamänt degäge gsii isch, sondern wil e Minderhäit vo Männer hät chöne blockiere. Wär säit, s System schütz vor Fähler, mues au säge: Es schützt s Bschtaande — au wänn s falsch isch.\n\nDe zwäit Poschte heisst Minderhäit. Bi ere Volksabschtimmig entschäidet e Mehrhäit über Rächt vo Lüüt, wo per Definition nie e Mehrhäit sind. S Parlamänt cha das au — aber es mues sich erkläre, s Volch nöd. E Abschtimmig kennt käi Begründigspflicht.\n\nWas folgt drus? Nöd d Abschaffig, sondern Ehrlichkäit. Direkti Demokratie isch käi Garantie für gscheiti Entschäid, si isch e Garantie für aakzeptierti Entschäid. Das isch vill — aber s isch nöd s gliiche. Wär beides verwächslet, wird jedes Mal enttüüscht sii, wänn d Mehrhäit öppis beschlüsst, wo ihm falsch vorchunt. Und das wird passiere. Regelmässig, vier Mal im Jaar.",
    "gloss": [
     {
      "de": "d Abschtimmig",
-     "mevcutTr": "referandum, oylama"
+     "currentTr": "referandum, oylama"
     },
     {
      "de": "d Initiative",
-     "mevcutTr": "halk girişimi"
+     "currentTr": "halk girişimi"
     },
     {
      "de": "s Referändum",
-     "mevcutTr": "referandum (yasaya karşı)"
+     "currentTr": "referandum (yasaya karşı)"
     },
     {
      "de": "d Stimmbetäiligung",
-     "mevcutTr": "katılım oranı"
+     "currentTr": "katılım oranı"
     },
     {
      "de": "d Minderhäit",
-     "mevcutTr": "azınlık"
+     "currentTr": "azınlık"
     },
     {
      "de": "de Kompromiss",
-     "mevcutTr": "uzlaşma",
-     "havuz": {
+     "currentTr": "uzlaşma",
+     "pool": {
       "tr": "uzlaşma",
       "en": "compromise"
      }
     },
     {
      "de": "verzögere",
-     "mevcutTr": "geciktirmek"
+     "currentTr": "geciktirmek"
     },
     {
      "de": "d Legitimation",
-     "mevcutTr": "meşruiyet",
-     "havuz": {
+     "currentTr": "meşruiyet",
+     "pool": {
       "tr": "meşrulaştırma",
       "en": "legitimization"
      }
     },
     {
      "de": "d Vorlag",
-     "mevcutTr": "oylanacak metin"
+     "currentTr": "oylanacak metin"
     }
    ]
   },
@@ -221,51 +221,51 @@
    "title": "Reportage: Di erschti Schicht",
    "genre": "Röportaj yazısı",
    "intro": "Zürih'in gece bitip günün başladığı saatlerini anlatan bir gazete reportajı okuyacaksın — anlatımcı, gözleme dayalı bir metin.",
-   "metin": "Am zwänzg vor vieri isch d Langstrass läär. Nöd ruhig — läär. De Underschid merkt me erscht, wänn me emal um die Ziit dört staat: S Ruusche vo de Stadt isch nöd wägg, es hät nume niemert meh, wo drüber redt.\n\nAntonio Ferreira staat sit zwänzg Jaar um die Ziit uuf. Er fahrt de Kehrichtwage. „D Lüüt mäined, mir sammled Abfall“, säit er und lachet. „Mir sammled, was d Nacht übrig lat.“ Um vieri fangt sini Schicht aa, um halbi zwölfi isch si fertig. Am Nomittag schlaaft er zwäi Stund, denn hollt er sini Töchter vo de Schuel ab. „Das isch de Grund für d Schicht. Nöd s Gäld.“\n\nZwäi Strasse wiiter wüscht d Ana Petrović s Trottoir vor eme Lade, wo erscht am nüüni uufmacht. Si isch siit sibezähni z Züri, siit drüzähni Jaar bi de Reinigung. Ob si sich als Teil vo de Stadt fühlt? Si überleit lang. „Ich kenne d Stadt besser als di mäischte, wo da wohned“, säit si denn. „Aber gseh wärde ich nöd. S isch nöd bös gmeint. Es isch äifach so: Wär früeh schafft, arbeitet dört, wo niemert isch.“\n\nUm sächsi wird s anderscht. D Bäckerei mached uuf, s erscht Tram fahrt, und im Kafi am Egge sitzed di erschte drü Lüüt — nöd d Frühufsteher us de Werbig, sondern Lüüt, wo scho vier Stund hinder sich händ. „Das isch üse Feierabig-Kafi“, säit de Ferreira. „Für die andere isch s de Zmorge.“\n\nS Klischee vo de Stadt, wo nie schlaaft, isch falsch. D Stadt schlaaft — si schlaaft nume nöd alli gliichziitig. Und di Schicht, wo am wenigschte gseh wird, isch di, wo alles andere erscht möglich macht.",
+   "text": "Am zwänzg vor vieri isch d Langstrass läär. Nöd ruhig — läär. De Underschid merkt me erscht, wänn me emal um die Ziit dört staat: S Ruusche vo de Stadt isch nöd wägg, es hät nume niemert meh, wo drüber redt.\n\nAntonio Ferreira staat sit zwänzg Jaar um die Ziit uuf. Er fahrt de Kehrichtwage. „D Lüüt mäined, mir sammled Abfall“, säit er und lachet. „Mir sammled, was d Nacht übrig lat.“ Um vieri fangt sini Schicht aa, um halbi zwölfi isch si fertig. Am Nomittag schlaaft er zwäi Stund, denn hollt er sini Töchter vo de Schuel ab. „Das isch de Grund für d Schicht. Nöd s Gäld.“\n\nZwäi Strasse wiiter wüscht d Ana Petrović s Trottoir vor eme Lade, wo erscht am nüüni uufmacht. Si isch siit sibezähni z Züri, siit drüzähni Jaar bi de Reinigung. Ob si sich als Teil vo de Stadt fühlt? Si überleit lang. „Ich kenne d Stadt besser als di mäischte, wo da wohned“, säit si denn. „Aber gseh wärde ich nöd. S isch nöd bös gmeint. Es isch äifach so: Wär früeh schafft, arbeitet dört, wo niemert isch.“\n\nUm sächsi wird s anderscht. D Bäckerei mached uuf, s erscht Tram fahrt, und im Kafi am Egge sitzed di erschte drü Lüüt — nöd d Frühufsteher us de Werbig, sondern Lüüt, wo scho vier Stund hinder sich händ. „Das isch üse Feierabig-Kafi“, säit de Ferreira. „Für die andere isch s de Zmorge.“\n\nS Klischee vo de Stadt, wo nie schlaaft, isch falsch. D Stadt schlaaft — si schlaaft nume nöd alli gliichziitig. Und di Schicht, wo am wenigschte gseh wird, isch di, wo alles andere erscht möglich macht.",
    "gloss": [
     {
      "de": "d Schicht",
-     "mevcutTr": "vardiya",
-     "havuz": {
+     "currentTr": "vardiya",
+     "pool": {
       "tr": "toplumsal katman",
       "en": "social stratum"
      }
     },
     {
      "de": "de Kehrichtwage",
-     "mevcutTr": "çöp kamyonu"
+     "currentTr": "çöp kamyonu"
     },
     {
      "de": "d Reinigung",
-     "mevcutTr": "temizlik",
-     "havuz": {
+     "currentTr": "temizlik",
+     "pool": {
       "tr": "kuru temizlemeci",
       "en": "dry cleaner"
      }
     },
     {
      "de": "de Znüni",
-     "mevcutTr": "kuşluk atıştırmalığı"
+     "currentTr": "kuşluk atıştırmalığı"
     },
     {
      "de": "unsichtbar",
-     "mevcutTr": "görünmez"
+     "currentTr": "görünmez"
     },
     {
      "de": "de Ruum",
-     "mevcutTr": "alan, mekân"
+     "currentTr": "alan, mekân"
     },
     {
      "de": "sich lohne",
-     "mevcutTr": "değmek"
+     "currentTr": "değmek"
     },
     {
      "de": "de Iidruck",
-     "mevcutTr": "izlenim"
+     "currentTr": "izlenim"
     },
     {
      "de": "s Klischee",
-     "mevcutTr": "klişe"
+     "currentTr": "klişe"
     }
    ]
   },
@@ -276,55 +276,55 @@
    "title": "Rezension: En Film uf Mundart",
    "genre": "Eleştiri",
    "intro": "Lehçeyle çekilmiş bir filmin eleştirisini okuyacaksın. Eleştirmenin övgü ve itirazlarını ayırt et.",
-   "metin": "Es git e Sort Schwiizer Film, wo me scho kennt, bevor me en gseh hät: es Dorf, en Ätti, wo nöd redt, und am Schluss e Versöönig vor eme Bärgpanorama. «Stilli Wuche» vom Regisseur Lukas Ammann fangt genau so aa — und macht denn öppis Underwartets.\n\nD Gschicht isch schnell verzellt. Zwäi Brüeder träffed sich nach zwölf Jaar wider, wil de Vater gschtorbe isch. De äi hät s Huus ghüetet, de ander isch nach Berlin. Vier Täg, es Huus, e Beerdigung.\n\nWas dää Film über s Klischee hebt, isch de Verzicht. Ammann git de Figure käi grossi Sätz. Di entschäidend Szene duuret sibezää Sekunde, und es fallt käi Wort: De äi Brueder stellt em andere en Kafi ane, mit zwäi Stück Zucker — und mir wüssed sofort, dass er sich erinneret. Wär Mundart-Kino kennt, gseet do öppis Nöis: E Sprooch, wo funktioniert, gnau wil si nöd bruucht wird.\n\nDe Diaalog isch Züritüütsch und Bärndüütsch, und Ammann nimmt s ärnscht: D Figure rededt nöd Mundart, si dänked druff. S Timing, d Verchürzige, s Chluure vo de Wort — das lat sich nöd übersetze, und drum funktioniert de Film mit Untertitel schlächter als ohni.\n\nD Schwächi isch s Ändi. Nach eme Stund und füfzäh Minute, wo nüüt erklärt wird, erklärt de Film uf de letschte drei Minute alles. E Rede am Grab, wo alli Motiv na emal ufzellt, als hett de Regisseur im Schniidruum s Vertroue verlore.\n\nTrotzdem: «Stilli Wuche» isch de bescht Schwiizer Film vo dem Jaar. Und er zäigt, dass Mundart im Kino nöd Folklore mues sii. Si cha s Material sälber sii.",
+   "text": "Es git e Sort Schwiizer Film, wo me scho kennt, bevor me en gseh hät: es Dorf, en Ätti, wo nöd redt, und am Schluss e Versöönig vor eme Bärgpanorama. «Stilli Wuche» vom Regisseur Lukas Ammann fangt genau so aa — und macht denn öppis Underwartets.\n\nD Gschicht isch schnell verzellt. Zwäi Brüeder träffed sich nach zwölf Jaar wider, wil de Vater gschtorbe isch. De äi hät s Huus ghüetet, de ander isch nach Berlin. Vier Täg, es Huus, e Beerdigung.\n\nWas dää Film über s Klischee hebt, isch de Verzicht. Ammann git de Figure käi grossi Sätz. Di entschäidend Szene duuret sibezää Sekunde, und es fallt käi Wort: De äi Brueder stellt em andere en Kafi ane, mit zwäi Stück Zucker — und mir wüssed sofort, dass er sich erinneret. Wär Mundart-Kino kennt, gseet do öppis Nöis: E Sprooch, wo funktioniert, gnau wil si nöd bruucht wird.\n\nDe Diaalog isch Züritüütsch und Bärndüütsch, und Ammann nimmt s ärnscht: D Figure rededt nöd Mundart, si dänked druff. S Timing, d Verchürzige, s Chluure vo de Wort — das lat sich nöd übersetze, und drum funktioniert de Film mit Untertitel schlächter als ohni.\n\nD Schwächi isch s Ändi. Nach eme Stund und füfzäh Minute, wo nüüt erklärt wird, erklärt de Film uf de letschte drei Minute alles. E Rede am Grab, wo alli Motiv na emal ufzellt, als hett de Regisseur im Schniidruum s Vertroue verlore.\n\nTrotzdem: «Stilli Wuche» isch de bescht Schwiizer Film vo dem Jaar. Und er zäigt, dass Mundart im Kino nöd Folklore mues sii. Si cha s Material sälber sii.",
    "gloss": [
     {
      "de": "d Rezension",
-     "mevcutTr": "eleştiri, kritik",
-     "havuz": {
+     "currentTr": "eleştiri, kritik",
+     "pool": {
       "tr": "eleştiri yazısı",
       "en": "review"
      }
     },
     {
      "de": "de Regisseur",
-     "mevcutTr": "yönetmen"
+     "currentTr": "yönetmen"
     },
     {
      "de": "d Figur",
-     "mevcutTr": "karakter",
-     "havuz": {
+     "currentTr": "karakter",
+     "pool": {
       "tr": "vücut yapısı",
       "en": "figure"
      }
     },
     {
      "de": "de Diaalog",
-     "mevcutTr": "diyalog"
+     "currentTr": "diyalog"
     },
     {
      "de": "überzüüge",
-     "mevcutTr": "ikna etmek"
+     "currentTr": "ikna etmek"
     },
     {
      "de": "d Schwächi",
-     "mevcutTr": "zaaf"
+     "currentTr": "zaaf"
     },
     {
      "de": "de Verzicht",
-     "mevcutTr": "vazgeçme"
+     "currentTr": "vazgeçme"
     },
     {
      "de": "de Untertitel",
-     "mevcutTr": "altyazı",
-     "havuz": {
+     "currentTr": "altyazı",
+     "pool": {
       "tr": "altyazı",
       "en": "subtitle"
      }
     },
     {
      "de": "d Erwartig",
-     "mevcutTr": "beklenti"
+     "currentTr": "beklenti"
     }
    ]
   },
@@ -335,48 +335,48 @@
    "title": "S Gsuech",
    "genre": "Deneme",
    "intro": "Nadia yirmi yıl sonra vatandaşlığa başvurmaya karar veriyor — ve bu kararın kendisi hakkında ne söylediğini düşünüyor.",
-   "metin": "Nach zwänzg Jaar han ich s Gsuech iigrächt, und s Erschte, wo ich gschpürt han, isch nöd Fröid gsii, sondern Verlägeheit.\n\nWarum jetz? D Antwort, wo me erwartet, wär: well ich mich ghörig fühle. Si stimmt nöd ganz. Ich han mich vor sibe Jaar au scho ghörig gfühlt, und domals han ich nüüt gmacht. Was sich gänderet hät, isch nöd s Gfühl, sondern d Politik: Bi de letschte drei Abstimmige isch über Sache entschide worde, wo mich direkt betreffe — und ich han zuegluegt.\n\nDas isch e nüchterni Begründig, und si macht mich verdächtig. Wär us praktische Gründ iiburgeret, gilt bi mängem als Opportunist. S Verfaare sälber verlangt aber genau s Gägetäil: Me mues zäige, dass me d Sprooch cha, dass me integriert isch, dass me d Gschichte kennt — und implizit, dass me s würkli will. E Prüefig über Zueghörigkäit isch e komischi Sach: Si verlangt es Bekenntnis und misstraut em gliichziitig.\n\nAm mäischte bschäftigt mich e anderi Frag. Ich cha die Sprooch, ich kenne die Regle, ich zaale hier siit zwänzg Jaar Stüüre — und trotzdem sitz ich bald vor ere Kommission, wo entschäidet, öb das reicht. Nöd well si mich kennt, sondern well s so vorgseh isch. Das isch nöd unfair; es isch nur ungwont, mit vierzgi nomal gprüeft z wärde.\n\nUnd trotzdem: Ich würd lüge, wänn ich säge, s berüehrt mich nöd. Es isch zwiespältig — ich find s Verfaare fragwürdig und ich wott s Resultat. Beides gliichziitig.\n\nVillicht isch genau das di ehrlichschti Form vo Zueghörigkäit, wo s git: Me kritisiert es Land und wott trotzdem dezue ghöre.",
+   "text": "Nach zwänzg Jaar han ich s Gsuech iigrächt, und s Erschte, wo ich gschpürt han, isch nöd Fröid gsii, sondern Verlägeheit.\n\nWarum jetz? D Antwort, wo me erwartet, wär: well ich mich ghörig fühle. Si stimmt nöd ganz. Ich han mich vor sibe Jaar au scho ghörig gfühlt, und domals han ich nüüt gmacht. Was sich gänderet hät, isch nöd s Gfühl, sondern d Politik: Bi de letschte drei Abstimmige isch über Sache entschide worde, wo mich direkt betreffe — und ich han zuegluegt.\n\nDas isch e nüchterni Begründig, und si macht mich verdächtig. Wär us praktische Gründ iiburgeret, gilt bi mängem als Opportunist. S Verfaare sälber verlangt aber genau s Gägetäil: Me mues zäige, dass me d Sprooch cha, dass me integriert isch, dass me d Gschichte kennt — und implizit, dass me s würkli will. E Prüefig über Zueghörigkäit isch e komischi Sach: Si verlangt es Bekenntnis und misstraut em gliichziitig.\n\nAm mäischte bschäftigt mich e anderi Frag. Ich cha die Sprooch, ich kenne die Regle, ich zaale hier siit zwänzg Jaar Stüüre — und trotzdem sitz ich bald vor ere Kommission, wo entschäidet, öb das reicht. Nöd well si mich kennt, sondern well s so vorgseh isch. Das isch nöd unfair; es isch nur ungwont, mit vierzgi nomal gprüeft z wärde.\n\nUnd trotzdem: Ich würd lüge, wänn ich säge, s berüehrt mich nöd. Es isch zwiespältig — ich find s Verfaare fragwürdig und ich wott s Resultat. Beides gliichziitig.\n\nVillicht isch genau das di ehrlichschti Form vo Zueghörigkäit, wo s git: Me kritisiert es Land und wott trotzdem dezue ghöre.",
    "gloss": [
     {
      "de": "d Iiburgerig",
-     "mevcutTr": "vatandaşlığa kabul"
+     "currentTr": "vatandaşlığa kabul"
     },
     {
      "de": "s Gsuech",
-     "mevcutTr": "başvuru"
+     "currentTr": "başvuru"
     },
     {
      "de": "d Zueghörigkäit",
-     "mevcutTr": "aidiyet"
+     "currentTr": "aidiyet"
     },
     {
      "de": "de Verdacht",
-     "mevcutTr": "kuşku",
-     "havuz": {
+     "currentTr": "kuşku",
+     "pool": {
       "tr": "şüphe",
       "en": "suspicion"
      }
     },
     {
      "de": "sich rächtfertige",
-     "mevcutTr": "kendini savunmak"
+     "currentTr": "kendini savunmak"
     },
     {
      "de": "d Prüefig",
-     "mevcutTr": "sınav, inceleme"
+     "currentTr": "sınav, inceleme"
     },
     {
      "de": "d Anmassig",
-     "mevcutTr": "haddini bilmezlik"
+     "currentTr": "haddini bilmezlik"
     },
     {
      "de": "s Bekenntnis",
-     "mevcutTr": "aidiyet beyanı"
+     "currentTr": "aidiyet beyanı"
     },
     {
      "de": "zwiespältig",
-     "mevcutTr": "iki arada, çelişkili",
-     "havuz": {
+     "currentTr": "iki arada, çelişkili",
+     "pool": {
       "tr": "ikircikli",
       "en": "ambivalent"
      }
@@ -390,55 +390,55 @@
    "title": "S Verfaare",
    "genre": "Rehber",
    "intro": "İsviçre vatandaşlık süreci üç kademelidir ve dünyada eşi az bulunur: son sözü çoğu yerde belediye söyler.",
-   "metin": "D Schwiiz burgeret uf drei Ebene ii: Bund, Kanton und Gmeind. Alli drüü müend zuestimme, und jede prüeft öppis anders.\n\nDe Bund setzt d Minimalvoruussetzige: e Niederlassigsbewilligung C, zää Jaar Wohnsitz i de Schwiiz (Jaar zwüsche acht und achzäh zellt doppelt), Sprachkenntnis mündlich B1 und schriftlich A2, käi Iiträg im Strafregischter und käi Sozialhilf i de letschte drei Jaar.\n\nDe Kanton setzt zuesätzlichi Frischte — im Kanton Züri zwäi Jaar im Kanton — und prüeft d Integration.\n\nD Gmeind isch de interessantischt Täil. Si prüeft s «Vertrautsii mit de Läbensverhältnis» und entschäidet als erschti Instanz. Wie si das macht, isch sehr underschidlich: mängisch es Gspröch mit ere Kommission, mängisch nur e Aktenprüefig. Bis 2003 händ es paar Gmeinde sogar a de Gmeindsversammlig abstimme laa — bis s Bundesgricht das verbote hät, well Entschäid begründet wärde müend und nöd nach Name entschide wärde darf.\n\nGenau do lit s zentrale Spannigsfäld. E Iiburgerig isch käi Verwaltigsakt wie e Bewilligung, sondern e politische Entschäid. Gliichziitig darf si nöd willkürlich sii. Wär abglehnt wird, mues e Begründig überchoo und cha rekurriere.\n\nWas mängi überrascht: Es git kä Rächt uf Iiburgerig. Alli Voruussetzige z erfülle heisst nöd automatisch, dass me si überchunt — es heisst nur, dass e Ablähnig sachlich begründet sii mues.",
+   "text": "D Schwiiz burgeret uf drei Ebene ii: Bund, Kanton und Gmeind. Alli drüü müend zuestimme, und jede prüeft öppis anders.\n\nDe Bund setzt d Minimalvoruussetzige: e Niederlassigsbewilligung C, zää Jaar Wohnsitz i de Schwiiz (Jaar zwüsche acht und achzäh zellt doppelt), Sprachkenntnis mündlich B1 und schriftlich A2, käi Iiträg im Strafregischter und käi Sozialhilf i de letschte drei Jaar.\n\nDe Kanton setzt zuesätzlichi Frischte — im Kanton Züri zwäi Jaar im Kanton — und prüeft d Integration.\n\nD Gmeind isch de interessantischt Täil. Si prüeft s «Vertrautsii mit de Läbensverhältnis» und entschäidet als erschti Instanz. Wie si das macht, isch sehr underschidlich: mängisch es Gspröch mit ere Kommission, mängisch nur e Aktenprüefig. Bis 2003 händ es paar Gmeinde sogar a de Gmeindsversammlig abstimme laa — bis s Bundesgricht das verbote hät, well Entschäid begründet wärde müend und nöd nach Name entschide wärde darf.\n\nGenau do lit s zentrale Spannigsfäld. E Iiburgerig isch käi Verwaltigsakt wie e Bewilligung, sondern e politische Entschäid. Gliichziitig darf si nöd willkürlich sii. Wär abglehnt wird, mues e Begründig überchoo und cha rekurriere.\n\nWas mängi überrascht: Es git kä Rächt uf Iiburgerig. Alli Voruussetzige z erfülle heisst nöd automatisch, dass me si überchunt — es heisst nur, dass e Ablähnig sachlich begründet sii mues.",
    "gloss": [
     {
      "de": "s Verfaare",
-     "mevcutTr": "usul, süreç"
+     "currentTr": "usul, süreç"
     },
     {
      "de": "d Niederlassigsbewilligung",
-     "mevcutTr": "yerleşim izni (C)"
+     "currentTr": "yerleşim izni (C)"
     },
     {
      "de": "d Wohnsitzfrischt",
-     "mevcutTr": "ikamet süresi"
+     "currentTr": "ikamet süresi"
     },
     {
      "de": "d Integration",
-     "mevcutTr": "uyum",
-     "havuz": {
+     "currentTr": "uyum",
+     "pool": {
       "tr": "entegrasyon",
       "en": "integration"
      }
     },
     {
      "de": "de Leumund",
-     "mevcutTr": "sicil, itibar"
+     "currentTr": "sicil, itibar"
     },
     {
      "de": "d Kommission",
-     "mevcutTr": "komisyon",
-     "havuz": {
+     "currentTr": "komisyon",
+     "pool": {
       "tr": "komisyon",
       "en": "commission"
      }
     },
     {
      "de": "de Rekurs",
-     "mevcutTr": "itiraz"
+     "currentTr": "itiraz"
     },
     {
      "de": "d Willkür",
-     "mevcutTr": "keyfîlik",
-     "havuz": {
+     "currentTr": "keyfîlik",
+     "pool": {
       "tr": "keyfilik",
       "en": "arbitrariness"
      }
     },
     {
      "de": "d Zueschtändigkäit",
-     "mevcutTr": "yetki"
+     "currentTr": "yetki"
     }
    ]
   }

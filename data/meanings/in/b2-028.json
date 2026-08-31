@@ -1,17 +1,17 @@
 {
- "paket": "b2-028",
+ "packet": "b2-028",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4995,
    "de": "tagesaktuell",
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "güncel, o güne ait",
-   "mevcutBeispiel": "Die App liefert tagesaktuelle Meldungen aus der ganzen Region.",
-   "mevcutBeispielTr": "Uygulama tüm bölgeden güncel haberler sunuyor.",
-   "cakisan": [
+   "currentTr": "güncel, o güne ait",
+   "currentBeispiel": "Die App liefert tagesaktuelle Meldungen aus der ganzen Region.",
+   "currentBeispielTr": "Uygulama tüm bölgeden güncel haberler sunuyor.",
+   "overlapping": [
     "aktuell (A2)"
    ]
   },
@@ -21,9 +21,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Aufenthaltstitel",
-   "mevcutTr": "oturum belgesi, ikamet izni",
-   "mevcutBeispiel": "Ohne gültigen Aufenthaltstitel darfst du hier nicht arbeiten.",
-   "mevcutBeispielTr": "Geçerli bir oturum belgen olmadan burada çalışamazsın."
+   "currentTr": "oturum belgesi, ikamet izni",
+   "currentBeispiel": "Ohne gültigen Aufenthaltstitel darfst du hier nicht arbeiten.",
+   "currentBeispielTr": "Geçerli bir oturum belgen olmadan burada çalışamazsın."
   },
   {
    "id": 4997,
@@ -31,9 +31,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Niederlassungserlaubnisse",
-   "mevcutTr": "süresiz oturum izni, yerleşim izni",
-   "mevcutBeispiel": "Nach fünf Jahren kann sie eine Niederlassungserlaubnis bekommen.",
-   "mevcutBeispielTr": "Beş yılın ardından süresiz oturum izni alabilir."
+   "currentTr": "süresiz oturum izni, yerleşim izni",
+   "currentBeispiel": "Nach fünf Jahren kann sie eine Niederlassungserlaubnis bekommen.",
+   "currentBeispielTr": "Beş yılın ardından süresiz oturum izni alabilir."
   },
   {
    "id": 4998,
@@ -41,9 +41,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Einbürgerungen",
-   "mevcutTr": "vatandaşlığa geçiş, vatandaşlığa alınma",
-   "mevcutBeispiel": "Die Einbürgerung wurde nach acht Monaten Prüfung genehmigt.",
-   "mevcutBeispielTr": "Vatandaşlığa geçiş sekiz aylık incelemenin ardından onaylandı."
+   "currentTr": "vatandaşlığa geçiş, vatandaşlığa alınma",
+   "currentBeispiel": "Die Einbürgerung wurde nach acht Monaten Prüfung genehmigt.",
+   "currentBeispielTr": "Vatandaşlığa geçiş sekiz aylık incelemenin ardından onaylandı."
   },
   {
    "id": 4999,
@@ -51,9 +51,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ausländerbehörden",
-   "mevcutTr": "yabancılar dairesi",
-   "mevcutBeispiel": "Die Ausländerbehörde hat mir einen Termin im Mai gegeben.",
-   "mevcutBeispielTr": "Yabancılar dairesi bana mayısta bir randevu verdi."
+   "currentTr": "yabancılar dairesi",
+   "currentBeispiel": "Die Ausländerbehörde hat mir einen Termin im Mai gegeben.",
+   "currentBeispielTr": "Yabancılar dairesi bana mayısta bir randevu verdi."
   },
   {
    "id": 5000,
@@ -61,9 +61,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Integrationskurse",
-   "mevcutTr": "uyum kursu",
-   "mevcutBeispiel": "Der Integrationskurs endet mit einer schriftlichen und einer mündlichen Prüfung.",
-   "mevcutBeispielTr": "Uyum kursu yazılı ve sözlü bir sınavla sona eriyor."
+   "currentTr": "uyum kursu",
+   "currentBeispiel": "Der Integrationskurs endet mit einer schriftlichen und einer mündlichen Prüfung.",
+   "currentBeispielTr": "Uyum kursu yazılı ve sözlü bir sınavla sona eriyor."
   },
   {
    "id": 5001,
@@ -71,9 +71,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anerkennungen",
-   "mevcutTr": "tanınma, denklik",
-   "mevcutBeispiel": "Die Anerkennung ihres Diploms dauerte fast ein Jahr.",
-   "mevcutBeispielTr": "Diplomasının denkliği neredeyse bir yıl sürdü."
+   "currentTr": "tanınma, denklik",
+   "currentBeispiel": "Die Anerkennung ihres Diploms dauerte fast ein Jahr.",
+   "currentBeispielTr": "Diplomasının denkliği neredeyse bir yıl sürdü."
   },
   {
    "id": 5002,
@@ -81,9 +81,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "denklik, eşdeğerlik",
-   "mevcutBeispiel": "Das Amt prüft die Gleichwertigkeit des ausländischen Berufsabschlusses.",
-   "mevcutBeispielTr": "Kurum, yurt dışındaki meslek diplomasının denkliğini inceliyor."
+   "currentTr": "denklik, eşdeğerlik",
+   "currentBeispiel": "Das Amt prüft die Gleichwertigkeit des ausländischen Berufsabschlusses.",
+   "currentBeispielTr": "Kurum, yurt dışındaki meslek diplomasının denkliğini inceliyor."
   },
   {
    "id": 5003,
@@ -91,9 +91,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "aile birleşimi",
-   "mevcutBeispiel": "Beim Familiennachzug muss der Lebensunterhalt gesichert sein.",
-   "mevcutBeispielTr": "Aile birleşiminde geçimin güvence altında olması gerekir."
+   "currentTr": "aile birleşimi",
+   "currentBeispiel": "Beim Familiennachzug muss der Lebensunterhalt gesichert sein.",
+   "currentBeispielTr": "Aile birleşiminde geçimin güvence altında olması gerekir."
   },
   {
    "id": 5004,
@@ -101,9 +101,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ablehnungsbescheide",
-   "mevcutTr": "ret kararı, olumsuz karar yazısı",
-   "mevcutBeispiel": "Gegen den Ablehnungsbescheid kann man innerhalb eines Monats klagen.",
-   "mevcutBeispielTr": "Ret kararına karşı bir ay içinde dava açılabilir."
+   "currentTr": "ret kararı, olumsuz karar yazısı",
+   "currentBeispiel": "Gegen den Ablehnungsbescheid kann man innerhalb eines Monats klagen.",
+   "currentBeispielTr": "Ret kararına karşı bir ay içinde dava açılabilir."
   },
   {
    "id": 5005,
@@ -111,9 +111,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sperrfristen",
-   "mevcutTr": "yasak süresi",
-   "mevcutBeispiel": "Nach der Ausweisung gilt eine Sperrfrist von drei Jahren.",
-   "mevcutBeispielTr": "Sınır dışı işleminden sonra üç yıllık bir giriş yasağı uygulanıyor."
+   "currentTr": "yasak süresi",
+   "currentBeispiel": "Nach der Ausweisung gilt eine Sperrfrist von drei Jahren.",
+   "currentBeispielTr": "Sınır dışı işleminden sonra üç yıllık bir giriş yasağı uygulanıyor."
   },
   {
    "id": 5006,
@@ -121,9 +121,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Geburtsurkunden",
-   "mevcutTr": "doğum belgesi",
-   "mevcutBeispiel": "Bitte bringen Sie die Geburtsurkunde Ihres Kindes im Original mit.",
-   "mevcutBeispielTr": "Lütfen çocuğunuzun doğum belgesinin aslını yanınızda getirin."
+   "currentTr": "doğum belgesi",
+   "currentBeispiel": "Bitte bringen Sie die Geburtsurkunde Ihres Kindes im Original mit.",
+   "currentBeispielTr": "Lütfen çocuğunuzun doğum belgesinin aslını yanınızda getirin."
   },
   {
    "id": 5007,
@@ -131,9 +131,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Führungszeugnisse",
-   "mevcutTr": "adli sicil kaydı",
-   "mevcutBeispiel": "Für die Einbürgerung wird ein aktuelles Führungszeugnis verlangt.",
-   "mevcutBeispielTr": "Vatandaşlık için güncel bir adli sicil kaydı isteniyor."
+   "currentTr": "adli sicil kaydı",
+   "currentBeispiel": "Für die Einbürgerung wird ein aktuelles Führungszeugnis verlangt.",
+   "currentBeispielTr": "Vatandaşlık için güncel bir adli sicil kaydı isteniyor."
   },
   {
    "id": 5008,
@@ -141,9 +141,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "geçim, geçimini sağlama",
-   "mevcutBeispiel": "Sie muss ihren Lebensunterhalt ohne staatliche Hilfe bestreiten.",
-   "mevcutBeispielTr": "Geçimini devlet yardımı olmadan sağlaması gerekiyor."
+   "currentTr": "geçim, geçimini sağlama",
+   "currentBeispiel": "Sie muss ihren Lebensunterhalt ohne staatliche Hilfe bestreiten.",
+   "currentBeispielTr": "Geçimini devlet yardımı olmadan sağlaması gerekiyor."
   },
   {
    "id": 5009,
@@ -151,10 +151,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Krankenversicherungen",
-   "mevcutTr": "sağlık sigortası",
-   "mevcutBeispiel": "Ohne Krankenversicherung wird der Antrag gar nicht erst geprüft.",
-   "mevcutBeispielTr": "Sağlık sigortası olmadan başvuru hiç incelenmiyor bile.",
-   "cakisan": [
+   "currentTr": "sağlık sigortası",
+   "currentBeispiel": "Ohne Krankenversicherung wird der Antrag gar nicht erst geprüft.",
+   "currentBeispielTr": "Sağlık sigortası olmadan başvuru hiç incelenmiyor bile.",
+   "overlapping": [
     "die Krankenkasse (A2)"
    ]
   },
@@ -164,9 +164,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Asylverfahren",
-   "mevcutTr": "iltica süreci, sığınma işlemi",
-   "mevcutBeispiel": "Das Asylverfahren zieht sich seit mehr als zwei Jahren hin.",
-   "mevcutBeispielTr": "İltica süreci iki yıldan fazladır uzayıp gidiyor."
+   "currentTr": "iltica süreci, sığınma işlemi",
+   "currentBeispiel": "Das Asylverfahren zieht sich seit mehr als zwei Jahren hin.",
+   "currentBeispielTr": "İltica süreci iki yıldan fazladır uzayıp gidiyor."
   },
   {
    "id": 5011,
@@ -174,10 +174,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Flüchtlinge",
-   "mevcutTr": "mülteci",
-   "mevcutBeispiel": "Die Stadt hat im vergangenen Jahr dreihundert Flüchtlinge aufgenommen.",
-   "mevcutBeispielTr": "Şehir geçen yıl üç yüz mülteci kabul etti.",
-   "cakisan": [
+   "currentTr": "mülteci",
+   "currentBeispiel": "Die Stadt hat im vergangenen Jahr dreihundert Flüchtlinge aufgenommen.",
+   "currentBeispielTr": "Şehir geçen yıl üç yüz mülteci kabul etti.",
+   "overlapping": [
     "der Geflüchtete (B2)"
    ]
   },
@@ -187,9 +187,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Hochschulabschlüsse",
-   "mevcutTr": "üniversite diploması, yükseköğrenim derecesi",
-   "mevcutBeispiel": "Für dieses Visum ist ein anerkannter Hochschulabschluss Bedingung.",
-   "mevcutBeispielTr": "Bu vize için tanınmış bir üniversite diploması şart."
+   "currentTr": "üniversite diploması, yükseköğrenim derecesi",
+   "currentBeispiel": "Für dieses Visum ist ein anerkannter Hochschulabschluss Bedingung.",
+   "currentBeispielTr": "Bu vize için tanınmış bir üniversite diploması şart."
   },
   {
    "id": 5013,
@@ -197,10 +197,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "katılım, pay alma",
-   "mevcutBeispiel": "Sprache ist der Schlüssel zur gesellschaftlichen Teilhabe.",
-   "mevcutBeispielTr": "Dil, toplumsal katılımın anahtarıdır.",
-   "cakisan": [
+   "currentTr": "katılım, pay alma",
+   "currentBeispiel": "Sprache ist der Schlüssel zur gesellschaftlichen Teilhabe.",
+   "currentBeispielTr": "Dil, toplumsal katılımın anahtarıdır.",
+   "overlapping": [
     "die Teilnahme (B1)",
     "die Partizipation (C1)"
    ]
@@ -211,9 +211,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Terminvergaben",
-   "mevcutTr": "randevu verme, randevu dağıtımı",
-   "mevcutBeispiel": "Die Terminvergabe läuft inzwischen nur noch online.",
-   "mevcutBeispielTr": "Randevu verme işlemi artık yalnızca internet üzerinden yürüyor."
+   "currentTr": "randevu verme, randevu dağıtımı",
+   "currentBeispiel": "Die Terminvergabe läuft inzwischen nur noch online.",
+   "currentBeispielTr": "Randevu verme işlemi artık yalnızca internet üzerinden yürüyor."
   },
   {
    "id": 5015,
@@ -221,10 +221,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Reisepässe",
-   "mevcutTr": "pasaport",
-   "mevcutBeispiel": "Mein Reisepass läuft in drei Monaten ab.",
-   "mevcutBeispielTr": "Pasaportumun süresi üç ay sonra doluyor.",
-   "cakisan": [
+   "currentTr": "pasaport",
+   "currentBeispiel": "Mein Reisepass läuft in drei Monaten ab.",
+   "currentBeispielTr": "Pasaportumun süresi üç ay sonra doluyor.",
+   "overlapping": [
     "der Pass (A1)"
    ]
   },
@@ -234,9 +234,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verpflichtungserklärungen",
-   "mevcutTr": "taahhütname, masrafları üstlenme beyanı",
-   "mevcutBeispiel": "Mein Onkel hat für den Besuch eine Verpflichtungserklärung unterschrieben.",
-   "mevcutBeispielTr": "Amcam ziyaret için bir taahhütname imzaladı."
+   "currentTr": "taahhütname, masrafları üstlenme beyanı",
+   "currentBeispiel": "Mein Onkel hat für den Besuch eine Verpflichtungserklärung unterschrieben.",
+   "currentBeispielTr": "Amcam ziyaret için bir taahhütname imzaladı."
   },
   {
    "id": 5017,
@@ -244,9 +244,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bürgerbüros",
-   "mevcutTr": "vatandaş hizmetleri bürosu",
-   "mevcutBeispiel": "Im Bürgerbüro kannst du deine neue Adresse anmelden.",
-   "mevcutBeispielTr": "Vatandaş hizmetleri bürosunda yeni adresini kaydettirebilirsin."
+   "currentTr": "vatandaş hizmetleri bürosu",
+   "currentBeispiel": "Im Bürgerbüro kannst du deine neue Adresse anmelden.",
+   "currentBeispielTr": "Vatandaş hizmetleri bürosunda yeni adresini kaydettirebilirsin."
   },
   {
    "id": 5018,
@@ -254,9 +254,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zuzüge",
-   "mevcutTr": "başka yerden gelip yerleşme, göç akını",
-   "mevcutBeispiel": "Der starke Zuzug junger Familien verändert das Viertel spürbar.",
-   "mevcutBeispielTr": "Genç ailelerin yoğun akını mahalleyi gözle görülür biçimde değiştiriyor."
+   "currentTr": "başka yerden gelip yerleşme, göç akını",
+   "currentBeispiel": "Der starke Zuzug junger Familien verändert das Viertel spürbar.",
+   "currentBeispielTr": "Genç ailelerin yoğun akını mahalleyi gözle görülür biçimde değiştiriyor."
   },
   {
    "id": 5019,
@@ -264,9 +264,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Erwerbstätigkeiten",
-   "mevcutTr": "gelir getiren çalışma, iş hayatı",
-   "mevcutBeispiel": "Eine selbstständige Erwerbstätigkeit ist mit diesem Titel nicht gestattet.",
-   "mevcutBeispielTr": "Bu belgeyle serbest meslekte çalışmaya izin verilmiyor."
+   "currentTr": "gelir getiren çalışma, iş hayatı",
+   "currentBeispiel": "Eine selbstständige Erwerbstätigkeit ist mit diesem Titel nicht gestattet.",
+   "currentBeispielTr": "Bu belgeyle serbest meslekte çalışmaya izin verilmiyor."
   },
   {
    "id": 5020,
@@ -274,9 +274,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kalma hakkı",
-   "mevcutBeispiel": "Die Familie kämpft seit Jahren um ein sicheres Bleiberecht.",
-   "mevcutBeispielTr": "Aile yıllardır güvenceli bir kalma hakkı için mücadele ediyor."
+   "currentTr": "kalma hakkı",
+   "currentBeispiel": "Die Familie kämpft seit Jahren um ein sicheres Bleiberecht.",
+   "currentBeispielTr": "Aile yıllardır güvenceli bir kalma hakkı için mücadele ediyor."
   },
   {
    "id": 5021,
@@ -284,9 +284,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Härtefälle",
-   "mevcutTr": "istisnai durum, mağduriyet hâli",
-   "mevcutBeispiel": "In einem Härtefall kann die Kommission eine Ausnahme empfehlen.",
-   "mevcutBeispielTr": "İstisnai bir durumda komisyon bir muafiyet önerebilir."
+   "currentTr": "istisnai durum, mağduriyet hâli",
+   "currentBeispiel": "In einem Härtefall kann die Kommission eine Ausnahme empfehlen.",
+   "currentBeispielTr": "İstisnai bir durumda komisyon bir muafiyet önerebilir."
   },
   {
    "id": 5022,
@@ -294,9 +294,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "dil becerileri, dil düzeyi",
-   "mevcutBeispiel": "Ihre Sprachkenntnisse reichen für den Beruf längst aus.",
-   "mevcutBeispielTr": "Dil düzeyi bu meslek için çoktan yeterli."
+   "currentTr": "dil becerileri, dil düzeyi",
+   "currentBeispiel": "Ihre Sprachkenntnisse reichen für den Beruf längst aus.",
+   "currentBeispielTr": "Dil düzeyi bu meslek için çoktan yeterli."
   },
   {
    "id": 5023,
@@ -304,9 +304,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Niveaustufen",
-   "mevcutTr": "seviye kademesi, dil düzeyi",
-   "mevcutBeispiel": "Für die Ausbildung wird mindestens die Niveaustufe B1 verlangt.",
-   "mevcutBeispielTr": "Meslek eğitimi için en az B1 seviyesi isteniyor."
+   "currentTr": "seviye kademesi, dil düzeyi",
+   "currentBeispiel": "Für die Ausbildung wird mindestens die Niveaustufe B1 verlangt.",
+   "currentBeispielTr": "Meslek eğitimi için en az B1 seviyesi isteniyor."
   },
   {
    "id": 5024,
@@ -314,9 +314,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Beratungsstellen",
-   "mevcutTr": "danışma merkezi",
-   "mevcutBeispiel": "Die Beratungsstelle hilft kostenlos beim Ausfüllen der Formulare.",
-   "mevcutBeispielTr": "Danışma merkezi formların doldurulmasında ücretsiz yardım ediyor."
+   "currentTr": "danışma merkezi",
+   "currentBeispiel": "Die Beratungsstelle hilft kostenlos beim Ausfüllen der Formulare.",
+   "currentBeispielTr": "Danışma merkezi formların doldurulmasında ücretsiz yardım ediyor."
   },
   {
    "id": 5025,
@@ -324,9 +324,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bundesämter",
-   "mevcutTr": "federal daire, federal kurum",
-   "mevcutBeispiel": "Das zuständige Bundesamt entscheidet über den Antrag.",
-   "mevcutBeispielTr": "Başvuru hakkında yetkili federal daire karar veriyor."
+   "currentTr": "federal daire, federal kurum",
+   "currentBeispiel": "Das zuständige Bundesamt entscheidet über den Antrag.",
+   "currentBeispielTr": "Başvuru hakkında yetkili federal daire karar veriyor."
   },
   {
    "id": 5026,
@@ -334,9 +334,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Herkunftssprachen",
-   "mevcutTr": "köken dili, ana dil",
-   "mevcutBeispiel": "Viele Kinder verlieren ihre Herkunftssprache schon in der Grundschule.",
-   "mevcutBeispielTr": "Birçok çocuk köken dilini daha ilkokulda yitiriyor."
+   "currentTr": "köken dili, ana dil",
+   "currentBeispiel": "Viele Kinder verlieren ihre Herkunftssprache schon in der Grundschule.",
+   "currentBeispielTr": "Birçok çocuk köken dilini daha ilkokulda yitiriyor."
   },
   {
    "id": 5027,
@@ -344,9 +344,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Doppelstaatsangehörigkeiten",
-   "mevcutTr": "çifte vatandaşlık",
-   "mevcutBeispiel": "Seit der Reform ist die Doppelstaatsangehörigkeit deutlich einfacher geworden.",
-   "mevcutBeispielTr": "Reformdan bu yana çifte vatandaşlık belirgin biçimde kolaylaştı."
+   "currentTr": "çifte vatandaşlık",
+   "currentBeispiel": "Seit der Reform ist die Doppelstaatsangehörigkeit deutlich einfacher geworden.",
+   "currentBeispielTr": "Reformdan bu yana çifte vatandaşlık belirgin biçimde kolaylaştı."
   },
   {
    "id": 5028,
@@ -354,9 +354,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Aufnahmeländer",
-   "mevcutTr": "kabul eden ülke, göç alan ülke",
-   "mevcutBeispiel": "Das Aufnahmeland trägt die Kosten der ersten Unterbringung.",
-   "mevcutBeispielTr": "İlk barınmanın masraflarını kabul eden ülke karşılıyor."
+   "currentTr": "kabul eden ülke, göç alan ülke",
+   "currentBeispiel": "Das Aufnahmeland trägt die Kosten der ersten Unterbringung.",
+   "currentBeispielTr": "İlk barınmanın masraflarını kabul eden ülke karşılıyor."
   },
   {
    "id": 5029,
@@ -364,9 +364,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wartezeiten",
-   "mevcutTr": "bekleme süresi",
-   "mevcutBeispiel": "Die Wartezeit für einen Termin beträgt derzeit vier Monate.",
-   "mevcutBeispielTr": "Randevu için bekleme süresi şu anda dört ay."
+   "currentTr": "bekleme süresi",
+   "currentBeispiel": "Die Wartezeit für einen Termin beträgt derzeit vier Monate.",
+   "currentBeispielTr": "Randevu için bekleme süresi şu anda dört ay."
   },
   {
    "id": 5030,
@@ -374,9 +374,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sozialleistungen",
-   "mevcutTr": "sosyal yardım, sosyal ödenek",
-   "mevcutBeispiel": "Wer Sozialleistungen bezieht, hat es beim Familiennachzug schwerer.",
-   "mevcutBeispielTr": "Sosyal yardım alan biri aile birleşiminde daha çok zorlanır."
+   "currentTr": "sosyal yardım, sosyal ödenek",
+   "currentBeispiel": "Wer Sozialleistungen bezieht, hat es beim Familiennachzug schwerer.",
+   "currentBeispielTr": "Sosyal yardım alan biri aile birleşiminde daha çok zorlanır."
   },
   {
    "id": 5031,
@@ -384,9 +384,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "iş piyasasına erişim",
-   "mevcutBeispiel": "Nach drei Monaten bekommen sie einen freien Arbeitsmarktzugang.",
-   "mevcutBeispielTr": "Üç ay sonra iş piyasasına serbest erişim hakkı elde ediyorlar."
+   "currentTr": "iş piyasasına erişim",
+   "currentBeispiel": "Nach drei Monaten bekommen sie einen freien Arbeitsmarktzugang.",
+   "currentBeispielTr": "Üç ay sonra iş piyasasına serbest erişim hakkı elde ediyorlar."
   },
   {
    "id": 5032,
@@ -394,9 +394,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anpassungslehrgänge",
-   "mevcutTr": "meslekî uyum eğitimi, tamamlama kursu",
-   "mevcutBeispiel": "Die Ärztin muss noch einen Anpassungslehrgang im Krankenhaus machen.",
-   "mevcutBeispielTr": "Doktorun hastanede bir uyum eğitimi daha alması gerekiyor."
+   "currentTr": "meslekî uyum eğitimi, tamamlama kursu",
+   "currentBeispiel": "Die Ärztin muss noch einen Anpassungslehrgang im Krankenhaus machen.",
+   "currentBeispielTr": "Doktorun hastanede bir uyum eğitimi daha alması gerekiyor."
   },
   {
    "id": 5033,
@@ -404,9 +404,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Auslandsvertretungen",
-   "mevcutTr": "yurt dışı temsilciliği",
-   "mevcutBeispiel": "Den Antrag stellt man bei der deutschen Auslandsvertretung im Heimatland.",
-   "mevcutBeispielTr": "Başvuru, kendi ülkendeki Alman temsilciliğine yapılıyor."
+   "currentTr": "yurt dışı temsilciliği",
+   "currentBeispiel": "Den Antrag stellt man bei der deutschen Auslandsvertretung im Heimatland.",
+   "currentBeispielTr": "Başvuru, kendi ülkendeki Alman temsilciliğine yapılıyor."
   },
   {
    "id": 5034,
@@ -414,9 +414,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "karşılama kültürü, kucaklayıcı tutum",
-   "mevcutBeispiel": "Von der viel gelobten Willkommenskultur ist wenig übrig geblieben.",
-   "mevcutBeispielTr": "Çok övülen karşılama kültüründen geriye pek bir şey kalmadı."
+   "currentTr": "karşılama kültürü, kucaklayıcı tutum",
+   "currentBeispiel": "Von der viel gelobten Willkommenskultur ist wenig übrig geblieben.",
+   "currentBeispielTr": "Çok övülen karşılama kültüründen geriye pek bir şey kalmadı."
   },
   {
    "id": 5035,
@@ -424,9 +424,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Parallelgesellschaften",
-   "mevcutTr": "paralel toplum",
-   "mevcutBeispiel": "Über angebliche Parallelgesellschaften wird oft ohne Belege gestritten.",
-   "mevcutBeispielTr": "Sözde paralel toplumlar üzerine sık sık dayanaksız tartışılıyor."
+   "currentTr": "paralel toplum",
+   "currentBeispiel": "Über angebliche Parallelgesellschaften wird oft ohne Belege gestritten.",
+   "currentBeispielTr": "Sözde paralel toplumlar üzerine sık sık dayanaksız tartışılıyor."
   },
   {
    "id": 5036,
@@ -434,9 +434,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Notare",
-   "mevcutTr": "noter",
-   "mevcutBeispiel": "Die Vollmacht muss ein Notar bestätigen.",
-   "mevcutBeispielTr": "Vekâletnameyi bir noterin onaylaması gerekiyor."
+   "currentTr": "noter",
+   "currentBeispiel": "Die Vollmacht muss ein Notar bestätigen.",
+   "currentBeispielTr": "Vekâletnameyi bir noterin onaylaması gerekiyor."
   },
   {
    "id": 5037,
@@ -444,9 +444,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nachqualifizierungen",
-   "mevcutTr": "tamamlayıcı nitelik kazandırma, ek eğitim",
-   "mevcutBeispiel": "Ohne Nachqualifizierung darf er den Beruf hier nicht ausüben.",
-   "mevcutBeispielTr": "Ek eğitim almadan mesleğini burada yapamaz."
+   "currentTr": "tamamlayıcı nitelik kazandırma, ek eğitim",
+   "currentBeispiel": "Ohne Nachqualifizierung darf er den Beruf hier nicht ausüben.",
+   "currentBeispielTr": "Ek eğitim almadan mesleğini burada yapamaz."
   },
   {
    "id": 5038,
@@ -454,9 +454,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zuwanderungen",
-   "mevcutTr": "göç alma, dışarıdan göç",
-   "mevcutBeispiel": "Die Wirtschaft ist auf gezielte Zuwanderung dringend angewiesen.",
-   "mevcutBeispielTr": "Ekonominin planlı göçe acilen ihtiyacı var."
+   "currentTr": "göç alma, dışarıdan göç",
+   "currentBeispiel": "Die Wirtschaft ist auf gezielte Zuwanderung dringend angewiesen.",
+   "currentBeispielTr": "Ekonominin planlı göçe acilen ihtiyacı var."
   },
   {
    "id": 5039,
@@ -464,9 +464,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Prüfungsgebühren",
-   "mevcutTr": "sınav ücreti",
-   "mevcutBeispiel": "Die Prüfungsgebühr muss vor dem Termin überwiesen werden.",
-   "mevcutBeispielTr": "Sınav ücretinin randevudan önce havale edilmesi gerekiyor."
+   "currentTr": "sınav ücreti",
+   "currentBeispiel": "Die Prüfungsgebühr muss vor dem Termin überwiesen werden.",
+   "currentBeispielTr": "Sınav ücretinin randevudan önce havale edilmesi gerekiyor."
   },
   {
    "id": 5040,
@@ -474,10 +474,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat erteilt",
-   "mevcutTr": "vermek, tanımak (izin, belge)",
-   "mevcutBeispiel": "Die Arbeitserlaubnis wurde ihm für zwei Jahre erteilt.",
-   "mevcutBeispielTr": "Çalışma izni ona iki yıllığına verildi.",
-   "cakisan": [
+   "currentTr": "vermek, tanımak (izin, belge)",
+   "currentBeispiel": "Die Arbeitserlaubnis wurde ihm für zwei Jahre erteilt.",
+   "currentBeispielTr": "Çalışma izni ona iki yıllığına verildi.",
+   "overlapping": [
     "geben (A1)",
     "verabreichen (C1)"
    ]
@@ -488,9 +488,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat beglaubigt",
-   "mevcutTr": "tasdik etmek, onaylamak (suret, imza)",
-   "mevcutBeispiel": "Lass die Kopie deines Zeugnisses im Rathaus beglaubigen.",
-   "mevcutBeispielTr": "Diplomanın fotokopisini belediyede tasdik ettir."
+   "currentTr": "tasdik etmek, onaylamak (suret, imza)",
+   "currentBeispiel": "Lass die Kopie deines Zeugnisses im Rathaus beglaubigen.",
+   "currentBeispielTr": "Diplomanın fotokopisini belediyede tasdik ettir."
   },
   {
    "id": 5042,
@@ -498,9 +498,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat bearbeitet",
-   "mevcutTr": "işleme almak, üzerinde çalışmak",
-   "mevcutBeispiel": "Mein Antrag wird seit sechs Wochen bearbeitet.",
-   "mevcutBeispielTr": "Başvurum altı haftadır işleme alınmış durumda."
+   "currentTr": "işleme almak, üzerinde çalışmak",
+   "currentBeispiel": "Mein Antrag wird seit sechs Wochen bearbeitet.",
+   "currentBeispielTr": "Başvurum altı haftadır işleme alınmış durumda."
   },
   {
    "id": 5043,
@@ -508,10 +508,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat entzogen",
-   "mevcutTr": "geri almak, elinden almak",
-   "mevcutBeispiel": "Bei falschen Angaben kann man ihm den Titel entziehen.",
-   "mevcutBeispielTr": "Yanlış beyanda bulunursa belgesi elinden alınabilir.",
-   "cakisan": [
+   "currentTr": "geri almak, elinden almak",
+   "currentBeispiel": "Bei falschen Angaben kann man ihm den Titel entziehen.",
+   "currentBeispielTr": "Yanlış beyanda bulunursa belgesi elinden alınabilir.",
+   "overlapping": [
     "aberkennen (C1)"
    ]
   },
@@ -521,9 +521,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat nachgereicht",
-   "mevcutTr": "sonradan teslim etmek, eksiği tamamlamak",
-   "mevcutBeispiel": "Die fehlende Bescheinigung kannst du bis Freitag nachreichen.",
-   "mevcutBeispielTr": "Eksik belgeyi cumaya kadar sonradan teslim edebilirsin."
+   "currentTr": "sonradan teslim etmek, eksiği tamamlamak",
+   "currentBeispiel": "Die fehlende Bescheinigung kannst du bis Freitag nachreichen.",
+   "currentBeispielTr": "Eksik belgeyi cumaya kadar sonradan teslim edebilirsin."
   }
  ]
 }

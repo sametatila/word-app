@@ -1,16 +1,16 @@
 {
- "paket": "a2-029",
+ "packet": "a2-029",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 8390,
    "de": "der Untermieter",
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "alt kiracı, kiracının kiracısı",
-   "mevcutBeispiel": "Wir suchen einen Untermieter für das kleine Zimmer.",
-   "mevcutBeispielTr": "Küçük oda için bir oda kiracısı arıyoruz."
+   "currentTr": "alt kiracı, kiracının kiracısı",
+   "currentBeispiel": "Wir suchen einen Untermieter für das kleine Zimmer.",
+   "currentBeispielTr": "Küçük oda için bir oda kiracısı arıyoruz."
   },
   {
    "id": 8391,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "derin dondurucu",
-   "mevcutBeispiel": "Das Brot liegt im Gefrierschrank.",
-   "mevcutBeispielTr": "Ekmek derin dondurucuda duruyor."
+   "currentTr": "derin dondurucu",
+   "currentBeispiel": "Das Brot liegt im Gefrierschrank.",
+   "currentBeispielTr": "Ekmek derin dondurucuda duruyor."
   },
   {
    "id": 8392,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "yorgan",
-   "mevcutBeispiel": "Im Winter brauche ich eine dicke Bettdecke.",
-   "mevcutBeispielTr": "Kışın kalın bir yorgana ihtiyacım oluyor."
+   "currentTr": "yorgan",
+   "currentBeispiel": "Im Winter brauche ich eine dicke Bettdecke.",
+   "currentBeispielTr": "Kışın kalın bir yorgana ihtiyacım oluyor."
   },
   {
    "id": 8393,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "yedek anahtar",
-   "mevcutBeispiel": "Der Ersatzschlüssel liegt bei meiner Nachbarin.",
-   "mevcutBeispielTr": "Yedek anahtar komşumda duruyor."
+   "currentTr": "yedek anahtar",
+   "currentBeispiel": "Der Ersatzschlüssel liegt bei meiner Nachbarin.",
+   "currentBeispielTr": "Yedek anahtar komşumda duruyor."
   },
   {
    "id": 8394,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "ütü",
-   "mevcutBeispiel": "Vorsicht, das Bügeleisen ist noch heiß!",
-   "mevcutBeispielTr": "Dikkat et, ütü hâlâ sıcak!"
+   "currentTr": "ütü",
+   "currentBeispiel": "Vorsicht, das Bügeleisen ist noch heiß!",
+   "currentBeispielTr": "Dikkat et, ütü hâlâ sıcak!"
   },
   {
    "id": 8395,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "kitaplık",
-   "mevcutBeispiel": "Das Bücherregal ist schon wieder voll.",
-   "mevcutBeispielTr": "Kitaplık yine dolmuş."
+   "currentTr": "kitaplık",
+   "currentBeispiel": "Das Bücherregal ist schon wieder voll.",
+   "currentBeispielTr": "Kitaplık yine dolmuş."
   },
   {
    "id": 8396,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "yemek masası",
-   "mevcutBeispiel": "Am Esstisch haben sechs Personen Platz.",
-   "mevcutBeispielTr": "Yemek masasında altı kişi oturabiliyor."
+   "currentTr": "yemek masası",
+   "currentBeispiel": "Am Esstisch haben sechs Personen Platz.",
+   "currentBeispielTr": "Yemek masasında altı kişi oturabiliyor."
   },
   {
    "id": 8397,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "elektrik faturası",
-   "mevcutBeispiel": "Die Stromrechnung ist dieses Jahr sehr hoch.",
-   "mevcutBeispielTr": "Elektrik faturası bu yıl çok yüksek."
+   "currentTr": "elektrik faturası",
+   "currentBeispiel": "Die Stromrechnung ist dieses Jahr sehr hoch.",
+   "currentBeispielTr": "Elektrik faturası bu yıl çok yüksek."
   },
   {
    "id": 8398,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "bulaşık makinesi",
-   "mevcutBeispiel": "Stell die Teller bitte in den Geschirrspüler.",
-   "mevcutBeispielTr": "Tabakları lütfen bulaşık makinesine koy."
+   "currentTr": "bulaşık makinesi",
+   "currentBeispiel": "Stell die Teller bitte in den Geschirrspüler.",
+   "currentBeispielTr": "Tabakları lütfen bulaşık makinesine koy."
   },
   {
    "id": 8399,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "çift kişilik yatak",
-   "mevcutBeispiel": "Im Schlafzimmer steht ein großes Doppelbett.",
-   "mevcutBeispielTr": "Yatak odasında büyük bir çift kişilik yatak duruyor."
+   "currentTr": "çift kişilik yatak",
+   "currentBeispiel": "Im Schlafzimmer steht ein großes Doppelbett.",
+   "currentBeispielTr": "Yatak odasında büyük bir çift kişilik yatak duruyor."
   },
   {
    "id": 8400,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "radyatör, petek",
-   "mevcutBeispiel": "Der Heizkörper im Bad wird nicht warm.",
-   "mevcutBeispielTr": "Banyodaki radyatör ısınmıyor."
+   "currentTr": "radyatör, petek",
+   "currentBeispiel": "Der Heizkörper im Bad wird nicht warm.",
+   "currentBeispielTr": "Banyodaki radyatör ısınmıyor."
   },
   {
    "id": 8401,
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "sehpa, orta sehpa",
-   "mevcutBeispiel": "Die Zeitung liegt auf dem Couchtisch.",
-   "mevcutBeispielTr": "Gazete sehpanın üstünde duruyor."
+   "currentTr": "sehpa, orta sehpa",
+   "currentBeispiel": "Die Zeitung liegt auf dem Couchtisch.",
+   "currentBeispielTr": "Gazete sehpanın üstünde duruyor."
   },
   {
    "id": 8402,
@@ -128,9 +128,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "temizlik malzemesi",
-   "mevcutBeispiel": "Die Putzmittel stehen unter der Spüle.",
-   "mevcutBeispielTr": "Temizlik malzemeleri evyenin altında duruyor."
+   "currentTr": "temizlik malzemesi",
+   "currentBeispiel": "Die Putzmittel stehen unter der Spüle.",
+   "currentBeispielTr": "Temizlik malzemeleri evyenin altında duruyor."
   },
   {
    "id": 8403,
@@ -138,9 +138,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "depo odası, kiler",
-   "mevcutBeispiel": "Das Fahrrad steht im Abstellraum.",
-   "mevcutBeispielTr": "Bisiklet depo odasında duruyor."
+   "currentTr": "depo odası, kiler",
+   "currentBeispiel": "Das Fahrrad steht im Abstellraum.",
+   "currentBeispielTr": "Bisiklet depo odasında duruyor."
   },
   {
    "id": 8404,
@@ -148,9 +148,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "ev arama, konut arayışı",
-   "mevcutBeispiel": "Die Wohnungssuche in der Stadt ist sehr schwer.",
-   "mevcutBeispielTr": "Şehirde ev aramak çok zor."
+   "currentTr": "ev arama, konut arayışı",
+   "currentBeispiel": "Die Wohnungssuche in der Stadt ist sehr schwer.",
+   "currentBeispielTr": "Şehirde ev aramak çok zor."
   },
   {
    "id": 8405,
@@ -158,9 +158,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-er",
-   "mevcutTr": "sıra ev, bitişik nizam ev",
-   "mevcutBeispiel": "Meine Eltern wohnen in einem kleinen Reihenhaus.",
-   "mevcutBeispielTr": "Annemle babam küçük bir sıra evde oturuyor."
+   "currentTr": "sıra ev, bitişik nizam ev",
+   "currentBeispiel": "Meine Eltern wohnen in einem kleinen Reihenhaus.",
+   "currentBeispielTr": "Annemle babam küçük bir sıra evde oturuyor."
   }
  ]
 }

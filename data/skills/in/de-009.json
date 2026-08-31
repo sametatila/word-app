@@ -1,7 +1,7 @@
 {
- "paket": "de-009",
+ "packet": "de-009",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "b1-r1",
    "skill": "reading",
@@ -9,75 +9,75 @@
    "title": "Zweites Leben für alte Geräte",
    "genre": "Makale",
    "intro": "Leipzig'deki bir tamir kafesini tanıtan bu gazete makalesini oku ve soruları yanıtla.",
-   "metin": "In Deutschland landen jedes Jahr Tausende Tonnen Elektrogeräte im Müll, obwohl viele davon noch repariert werden könnten. Gegen diese Verschwendung engagiert sich das Repair-Café in Leipzig-Plagwitz. Jeden ersten Samstag im Monat treffen sich dort ehrenamtliche Helferinnen und Helfer, die kaputte Toaster, Lampen oder Fahrräder gemeinsam mit den Besitzern reparieren.\n\n„Bei uns wird nichts einfach weggeworfen“, erklärt Organisatorin Karin Melzer. „Etwa siebzig Prozent der Geräte, die zu uns gebracht werden, funktionieren danach wieder.“ Die Reparatur selbst ist kostenlos, nur Ersatzteile müssen bezahlt werden. Wer möchte, kann eine kleine Spende dalassen, mit der Werkzeug und Miete finanziert werden.\n\nDas Angebot wird immer beliebter: Kamen im ersten Jahr rund zwanzig Besucher pro Termin, sind es heute oft mehr als sechzig. Melzer wünscht sich trotzdem mehr Unterstützung von der Stadt, zum Beispiel größere Räume. Außerdem sucht das Team dringend Freiwillige, die sich mit Computern auskennen, denn gerade elektronische Geräte werden immer häufiger gebracht.",
+   "text": "In Deutschland landen jedes Jahr Tausende Tonnen Elektrogeräte im Müll, obwohl viele davon noch repariert werden könnten. Gegen diese Verschwendung engagiert sich das Repair-Café in Leipzig-Plagwitz. Jeden ersten Samstag im Monat treffen sich dort ehrenamtliche Helferinnen und Helfer, die kaputte Toaster, Lampen oder Fahrräder gemeinsam mit den Besitzern reparieren.\n\n„Bei uns wird nichts einfach weggeworfen“, erklärt Organisatorin Karin Melzer. „Etwa siebzig Prozent der Geräte, die zu uns gebracht werden, funktionieren danach wieder.“ Die Reparatur selbst ist kostenlos, nur Ersatzteile müssen bezahlt werden. Wer möchte, kann eine kleine Spende dalassen, mit der Werkzeug und Miete finanziert werden.\n\nDas Angebot wird immer beliebter: Kamen im ersten Jahr rund zwanzig Besucher pro Termin, sind es heute oft mehr als sechzig. Melzer wünscht sich trotzdem mehr Unterstützung von der Stadt, zum Beispiel größere Räume. Außerdem sucht das Team dringend Freiwillige, die sich mit Computern auskennen, denn gerade elektronische Geräte werden immer häufiger gebracht.",
    "gloss": [
     {
      "de": "das Gerät",
-     "mevcutTr": "cihaz",
-     "havuz": {
+     "currentTr": "cihaz",
+     "pool": {
       "tr": "cihaz",
       "en": "device"
      }
     },
     {
      "de": "die Verschwendung",
-     "mevcutTr": "israf",
-     "havuz": {
+     "currentTr": "israf",
+     "pool": {
       "tr": "israf",
       "en": "waste"
      }
     },
     {
      "de": "ehrenamtlich",
-     "mevcutTr": "gönüllü",
-     "havuz": {
+     "currentTr": "gönüllü",
+     "pool": {
       "tr": "gönüllü",
       "en": "voluntary"
      }
     },
     {
      "de": "das Ersatzteil",
-     "mevcutTr": "yedek parça",
-     "havuz": {
+     "currentTr": "yedek parça",
+     "pool": {
       "tr": "yedek parça",
       "en": "spare part"
      }
     },
     {
      "de": "die Spende",
-     "mevcutTr": "bağış"
+     "currentTr": "bağış"
     },
     {
      "de": "das Werkzeug",
-     "mevcutTr": "alet",
-     "havuz": {
+     "currentTr": "alet",
+     "pool": {
       "tr": "alet",
       "en": "tool"
      }
     },
     {
      "de": "die Miete",
-     "mevcutTr": "kira",
-     "havuz": {
+     "currentTr": "kira",
+     "pool": {
       "tr": "kira",
       "en": "rent"
      }
     },
     {
      "de": "die Unterstützung",
-     "mevcutTr": "destek",
-     "havuz": {
+     "currentTr": "destek",
+     "pool": {
       "tr": "destek",
       "en": "support"
      }
     },
     {
      "de": "der Freiwillige",
-     "mevcutTr": "gönüllü"
+     "currentTr": "gönüllü"
     },
     {
      "de": "sich auskennen mit",
-     "mevcutTr": "bir konudan iyi anlamak"
+     "currentTr": "bir konudan iyi anlamak"
     }
    ]
   },
@@ -88,64 +88,64 @@
    "title": "Mein Monat ohne Instagram",
    "genre": "Blog yazısı",
    "intro": "Bir blog yazarının sosyal medyadan uzak geçirdiği bir ayı anlattığı bu yazıyı oku.",
-   "metin": "Vor sechs Wochen habe ich ein Experiment gestartet: einen Monat ohne Instagram, TikTok und Co. Der Grund war einfach — laut meiner Handy-Statistik verbrachte ich täglich fast drei Stunden in sozialen Netzwerken, oft ohne es zu merken.\n\nDie ersten Tage waren schwieriger als gedacht. Ständig griff ich automatisch zum Handy, nur um festzustellen, dass die Apps gelöscht waren. Nach etwa einer Woche wurde es besser. Ich las abends wieder Bücher, traf mich häufiger mit Freunden und schlief deutlich besser, weil ich das Handy nicht mehr mit ins Bett nahm.\n\nNatürlich gab es auch Nachteile. Von manchen Verabredungen erfuhr ich zu spät, weil sie nur in einer Gruppe gepostet wurden. Und ehrlich gesagt fehlten mir die lustigen Videos manchmal.\n\nMein Fazit: Ganz verzichten möchte ich nicht, aber ich habe mir feste Regeln gesetzt. Die Apps sind vom Startbildschirm verschwunden, und nach 21 Uhr bleibt das Handy in der Küche. Probiert es aus — es lohnt sich!",
+   "text": "Vor sechs Wochen habe ich ein Experiment gestartet: einen Monat ohne Instagram, TikTok und Co. Der Grund war einfach — laut meiner Handy-Statistik verbrachte ich täglich fast drei Stunden in sozialen Netzwerken, oft ohne es zu merken.\n\nDie ersten Tage waren schwieriger als gedacht. Ständig griff ich automatisch zum Handy, nur um festzustellen, dass die Apps gelöscht waren. Nach etwa einer Woche wurde es besser. Ich las abends wieder Bücher, traf mich häufiger mit Freunden und schlief deutlich besser, weil ich das Handy nicht mehr mit ins Bett nahm.\n\nNatürlich gab es auch Nachteile. Von manchen Verabredungen erfuhr ich zu spät, weil sie nur in einer Gruppe gepostet wurden. Und ehrlich gesagt fehlten mir die lustigen Videos manchmal.\n\nMein Fazit: Ganz verzichten möchte ich nicht, aber ich habe mir feste Regeln gesetzt. Die Apps sind vom Startbildschirm verschwunden, und nach 21 Uhr bleibt das Handy in der Küche. Probiert es aus — es lohnt sich!",
    "gloss": [
     {
      "de": "das Experiment",
-     "mevcutTr": "deney"
+     "currentTr": "deney"
     },
     {
      "de": "verbringen",
-     "mevcutTr": "geçirmek",
-     "havuz": {
+     "currentTr": "geçirmek",
+     "pool": {
       "tr": "geçirmek",
       "en": "to spend"
      }
     },
     {
      "de": "feststellen",
-     "mevcutTr": "fark etmek",
-     "havuz": {
+     "currentTr": "fark etmek",
+     "pool": {
       "tr": "tespit etmek",
       "en": "to determine"
      }
     },
     {
      "de": "die Verabredung",
-     "mevcutTr": "buluşma",
-     "havuz": {
+     "currentTr": "buluşma",
+     "pool": {
       "tr": "buluşma",
       "en": "date"
      }
     },
     {
      "de": "erfahren von",
-     "mevcutTr": "bir şeyden haberdar olmak"
+     "currentTr": "bir şeyden haberdar olmak"
     },
     {
      "de": "verzichten auf",
-     "mevcutTr": "bir şeyden vazgeçmek"
+     "currentTr": "bir şeyden vazgeçmek"
     },
     {
      "de": "das Fazit",
-     "mevcutTr": "sonuç",
-     "havuz": {
+     "currentTr": "sonuç",
+     "pool": {
       "tr": "sonuç",
       "en": "conclusion"
      }
     },
     {
      "de": "die Regel",
-     "mevcutTr": "kural",
-     "havuz": {
+     "currentTr": "kural",
+     "pool": {
       "tr": "kural",
       "en": "rule"
      }
     },
     {
      "de": "sich lohnen",
-     "mevcutTr": "değmek",
-     "havuz": {
+     "currentTr": "değmek",
+     "pool": {
       "tr": "değmek",
       "en": "to be worth it"
      }
@@ -159,83 +159,83 @@
    "title": "Ihr Praktikum bei Medienhaus Süd",
    "genre": "E-posta",
    "intro": "Bir yayınevinin staj başvurusuna verdiği bu yarı resmi yanıtı oku ve ayrıntıları yakala.",
-   "metin": "Liebe Frau Yılmaz,\n\nvielen Dank für Ihre Bewerbung um ein Praktikum in unserer Online-Redaktion. Wir freuen uns, Ihnen mitteilen zu können, dass wir Ihnen den Platz anbieten möchten. Das Praktikum beginnt am 1. März und dauert acht Wochen. Die Arbeitszeit ist montags bis freitags von 9 bis 15 Uhr, an zwei Tagen pro Woche können Sie von zu Hause arbeiten.\n\nIn den ersten zwei Wochen werden Sie von unserer Redakteurin Frau Sommer betreut. Sie zeigt Ihnen, wie Artikel für unsere Webseite geschrieben und Fotos bearbeitet werden. Danach dürfen Sie eigene kleine Beiträge veröffentlichen.\n\nLeider können wir das Praktikum nicht bezahlen, aber Sie erhalten ein Ticket für den Nahverkehr und ein Mittagessen in unserer Kantine. Bitte teilen Sie uns bis zum 15. Februar mit, ob Sie das Angebot annehmen. Falls Sie noch Fragen haben, können Sie mich gern anrufen.\n\nMit freundlichen Grüßen\nKatrin Albrecht\nPersonalabteilung",
+   "text": "Liebe Frau Yılmaz,\n\nvielen Dank für Ihre Bewerbung um ein Praktikum in unserer Online-Redaktion. Wir freuen uns, Ihnen mitteilen zu können, dass wir Ihnen den Platz anbieten möchten. Das Praktikum beginnt am 1. März und dauert acht Wochen. Die Arbeitszeit ist montags bis freitags von 9 bis 15 Uhr, an zwei Tagen pro Woche können Sie von zu Hause arbeiten.\n\nIn den ersten zwei Wochen werden Sie von unserer Redakteurin Frau Sommer betreut. Sie zeigt Ihnen, wie Artikel für unsere Webseite geschrieben und Fotos bearbeitet werden. Danach dürfen Sie eigene kleine Beiträge veröffentlichen.\n\nLeider können wir das Praktikum nicht bezahlen, aber Sie erhalten ein Ticket für den Nahverkehr und ein Mittagessen in unserer Kantine. Bitte teilen Sie uns bis zum 15. Februar mit, ob Sie das Angebot annehmen. Falls Sie noch Fragen haben, können Sie mich gern anrufen.\n\nMit freundlichen Grüßen\nKatrin Albrecht\nPersonalabteilung",
    "gloss": [
     {
      "de": "die Bewerbung",
-     "mevcutTr": "başvuru",
-     "havuz": {
+     "currentTr": "başvuru",
+     "pool": {
       "tr": "başvuru",
       "en": "application"
      }
     },
     {
      "de": "das Praktikum",
-     "mevcutTr": "staj",
-     "havuz": {
+     "currentTr": "staj",
+     "pool": {
       "tr": "staj",
       "en": "internship"
      }
     },
     {
      "de": "die Redaktion",
-     "mevcutTr": "yazı işleri",
-     "havuz": {
+     "currentTr": "yazı işleri",
+     "pool": {
       "tr": "yazı işleri",
       "en": "editorial office"
      }
     },
     {
      "de": "betreuen",
-     "mevcutTr": "ilgilenmek",
-     "havuz": {
+     "currentTr": "ilgilenmek",
+     "pool": {
       "tr": "ilgilenmek",
       "en": "to look after"
      }
     },
     {
      "de": "bearbeiten",
-     "mevcutTr": "düzenlemek",
-     "havuz": {
+     "currentTr": "düzenlemek",
+     "pool": {
       "tr": "işleme almak",
       "en": "to process"
      }
     },
     {
      "de": "der Beitrag",
-     "mevcutTr": "yazı",
-     "havuz": {
+     "currentTr": "yazı",
+     "pool": {
       "tr": "aidat",
       "en": "membership fee"
      }
     },
     {
      "de": "veröffentlichen",
-     "mevcutTr": "yayımlamak",
-     "havuz": {
+     "currentTr": "yayımlamak",
+     "pool": {
       "tr": "yayımlamak",
       "en": "to publish"
      }
     },
     {
      "de": "der Nahverkehr",
-     "mevcutTr": "toplu taşıma",
-     "havuz": {
+     "currentTr": "toplu taşıma",
+     "pool": {
       "tr": "toplu taşıma",
       "en": "local public transport"
      }
     },
     {
      "de": "die Kantine",
-     "mevcutTr": "yemekhane",
-     "havuz": {
+     "currentTr": "yemekhane",
+     "pool": {
       "tr": "yemekhane",
       "en": "cafeteria"
      }
     },
     {
      "de": "ein Angebot annehmen",
-     "mevcutTr": "bir teklifi kabul etmek"
+     "currentTr": "bir teklifi kabul etmek"
     }
    ]
   },
@@ -246,71 +246,71 @@
    "title": "Gesund essen im Büroalltag",
    "genre": "Kılavuz",
    "intro": "Tüketici danışma merkezinin ofis çalışanlarına yönelik beslenme önerilerini oku.",
-   "metin": "Wer den ganzen Tag im Büro sitzt, greift in der Mittagspause oft zu Fast Food oder Fertiggerichten. Dabei lässt sich gesunde Ernährung auch mit wenig Zeit organisieren. Die Verbraucherzentrale Hessen gibt dazu einige praktische Tipps.\n\nErstens: Planen Sie Ihre Mahlzeiten am Wochenende. Wenn Suppen oder Salate schon vorbereitet sind, müssen sie am Abend nur noch eingepackt werden. Dieses sogenannte Meal-Prep spart nicht nur Zeit, sondern auch Geld, weil weniger Lebensmittel weggeworfen werden.\n\nZweitens: Trinken Sie genug. Viele Beschäftigte trinken zu wenig, was zu Kopfschmerzen und Müdigkeit führen kann. Eine Flasche Wasser auf dem Schreibtisch hilft, daran zu denken.\n\nDrittens: Essen Sie nicht am Arbeitsplatz. Wer vor dem Bildschirm isst, isst meistens schneller und mehr. Besser ist eine echte Pause, am besten mit einem kurzen Spaziergang.\n\nÜbrigens: Süßigkeiten müssen nicht komplett verboten werden. Ein Stück Schokolade am Nachmittag ist erlaubt — es sollte nur nicht die ganze Tafel sein.",
+   "text": "Wer den ganzen Tag im Büro sitzt, greift in der Mittagspause oft zu Fast Food oder Fertiggerichten. Dabei lässt sich gesunde Ernährung auch mit wenig Zeit organisieren. Die Verbraucherzentrale Hessen gibt dazu einige praktische Tipps.\n\nErstens: Planen Sie Ihre Mahlzeiten am Wochenende. Wenn Suppen oder Salate schon vorbereitet sind, müssen sie am Abend nur noch eingepackt werden. Dieses sogenannte Meal-Prep spart nicht nur Zeit, sondern auch Geld, weil weniger Lebensmittel weggeworfen werden.\n\nZweitens: Trinken Sie genug. Viele Beschäftigte trinken zu wenig, was zu Kopfschmerzen und Müdigkeit führen kann. Eine Flasche Wasser auf dem Schreibtisch hilft, daran zu denken.\n\nDrittens: Essen Sie nicht am Arbeitsplatz. Wer vor dem Bildschirm isst, isst meistens schneller und mehr. Besser ist eine echte Pause, am besten mit einem kurzen Spaziergang.\n\nÜbrigens: Süßigkeiten müssen nicht komplett verboten werden. Ein Stück Schokolade am Nachmittag ist erlaubt — es sollte nur nicht die ganze Tafel sein.",
    "gloss": [
     {
      "de": "die Ernährung",
-     "mevcutTr": "beslenme",
-     "havuz": {
+     "currentTr": "beslenme",
+     "pool": {
       "tr": "beslenme",
       "en": "nutrition"
      }
     },
     {
      "de": "das Fertiggericht",
-     "mevcutTr": "hazır yemek"
+     "currentTr": "hazır yemek"
     },
     {
      "de": "die Mahlzeit",
-     "mevcutTr": "öğün",
-     "havuz": {
+     "currentTr": "öğün",
+     "pool": {
       "tr": "öğün",
       "en": "meal"
      }
     },
     {
      "de": "vorbereiten",
-     "mevcutTr": "hazırlamak",
-     "havuz": {
+     "currentTr": "hazırlamak",
+     "pool": {
       "tr": "hazırlamak",
       "en": "to prepare"
      }
     },
     {
      "de": "einpacken",
-     "mevcutTr": "paketlemek",
-     "havuz": {
+     "currentTr": "paketlemek",
+     "pool": {
       "tr": "paketlemek",
       "en": "to wrap up"
      }
     },
     {
      "de": "der Beschäftigte",
-     "mevcutTr": "çalışan"
+     "currentTr": "çalışan"
     },
     {
      "de": "die Müdigkeit",
-     "mevcutTr": "yorgunluk"
+     "currentTr": "yorgunluk"
     },
     {
      "de": "der Bildschirm",
-     "mevcutTr": "ekran",
-     "havuz": {
+     "currentTr": "ekran",
+     "pool": {
       "tr": "ekran",
       "en": "screen"
      }
     },
     {
      "de": "der Spaziergang",
-     "mevcutTr": "yürüyüş",
-     "havuz": {
+     "currentTr": "yürüyüş",
+     "pool": {
       "tr": "yürüyüş",
       "en": "walk"
      }
     },
     {
      "de": "die Tafel Schokolade",
-     "mevcutTr": "tablet çikolata"
+     "currentTr": "tablet çikolata"
     }
    ]
   },
@@ -321,75 +321,75 @@
    "title": "Mehr Platz für Menschen statt Autos",
    "genre": "Okur mektubu",
    "intro": "Yaya bölgesi tartışmasına katılan bir okurun gazeteye yazdığı mektubu oku.",
-   "metin": "Leserbrief zum Artikel „Streit um die neue Fußgängerzone“ vom 12. Mai\n\nSehr geehrte Redaktion,\n\nmit großem Interesse habe ich Ihren Artikel über die geplante Fußgängerzone in der Bahnhofstraße gelesen. Als Anwohnerin kann ich die Kritik einiger Geschäftsleute nicht verstehen. Sie befürchten, dass weniger Kunden kommen, wenn man nicht mehr direkt vor den Läden parken kann. Studien aus anderen Städten zeigen jedoch das Gegenteil: Wo weniger Autos fahren, bleiben die Menschen länger und kaufen sogar mehr ein.\n\nIch wohne seit fünfzehn Jahren in dieser Straße und erlebe den Lärm und die schlechte Luft jeden Tag. Meine Kinder können hier nicht draußen spielen, weil ständig Autos vorbeifahren. Eine Fußgängerzone mit Bänken und Bäumen würde die Lebensqualität für alle verbessern.\n\nNatürlich müssen auch Lösungen für ältere Menschen gefunden werden, die nicht gut zu Fuß unterwegs sind. Ein kleiner Elektrobus, wie es ihn in Freiburg gibt, wäre eine Möglichkeit.\n\nMit freundlichen Grüßen\nSabine Krüger",
+   "text": "Leserbrief zum Artikel „Streit um die neue Fußgängerzone“ vom 12. Mai\n\nSehr geehrte Redaktion,\n\nmit großem Interesse habe ich Ihren Artikel über die geplante Fußgängerzone in der Bahnhofstraße gelesen. Als Anwohnerin kann ich die Kritik einiger Geschäftsleute nicht verstehen. Sie befürchten, dass weniger Kunden kommen, wenn man nicht mehr direkt vor den Läden parken kann. Studien aus anderen Städten zeigen jedoch das Gegenteil: Wo weniger Autos fahren, bleiben die Menschen länger und kaufen sogar mehr ein.\n\nIch wohne seit fünfzehn Jahren in dieser Straße und erlebe den Lärm und die schlechte Luft jeden Tag. Meine Kinder können hier nicht draußen spielen, weil ständig Autos vorbeifahren. Eine Fußgängerzone mit Bänken und Bäumen würde die Lebensqualität für alle verbessern.\n\nNatürlich müssen auch Lösungen für ältere Menschen gefunden werden, die nicht gut zu Fuß unterwegs sind. Ein kleiner Elektrobus, wie es ihn in Freiburg gibt, wäre eine Möglichkeit.\n\nMit freundlichen Grüßen\nSabine Krüger",
    "gloss": [
     {
      "de": "der Leserbrief",
-     "mevcutTr": "okur mektubu",
-     "havuz": {
+     "currentTr": "okur mektubu",
+     "pool": {
       "tr": "okur mektubu",
       "en": "letter to the editor"
      }
     },
     {
      "de": "die Fußgängerzone",
-     "mevcutTr": "yaya bölgesi",
-     "havuz": {
+     "currentTr": "yaya bölgesi",
+     "pool": {
       "tr": "yaya bölgesi",
       "en": "pedestrian zone"
      }
     },
     {
      "de": "die Anwohnerin",
-     "mevcutTr": "mahalle sakini"
+     "currentTr": "mahalle sakini"
     },
     {
      "de": "die Geschäftsleute",
-     "mevcutTr": "esnaf"
+     "currentTr": "esnaf"
     },
     {
      "de": "befürchten",
-     "mevcutTr": "endişe etmek",
-     "havuz": {
+     "currentTr": "endişe etmek",
+     "pool": {
       "tr": "endişe etmek",
       "en": "to fear"
      }
     },
     {
      "de": "das Gegenteil",
-     "mevcutTr": "tersi",
-     "havuz": {
+     "currentTr": "tersi",
+     "pool": {
       "tr": "tersi",
       "en": "opposite"
      }
     },
     {
      "de": "der Lärm",
-     "mevcutTr": "gürültü",
-     "havuz": {
+     "currentTr": "gürültü",
+     "pool": {
       "tr": "gürültü",
       "en": "noise"
      }
     },
     {
      "de": "die Lebensqualität",
-     "mevcutTr": "yaşam kalitesi",
-     "havuz": {
+     "currentTr": "yaşam kalitesi",
+     "pool": {
       "tr": "yaşam kalitesi",
       "en": "quality of life"
      }
     },
     {
      "de": "die Lösung",
-     "mevcutTr": "çözüm",
-     "havuz": {
+     "currentTr": "çözüm",
+     "pool": {
       "tr": "çözüm",
       "en": "solution"
      }
     },
     {
      "de": "zu Fuß unterwegs sein",
-     "mevcutTr": "yaya olarak dolaşmak"
+     "currentTr": "yaya olarak dolaşmak"
     }
    ]
   },
@@ -400,76 +400,76 @@
    "title": "Vier Tage arbeiten, fünf Tage bezahlt werden",
    "genre": "Dergi makalesi",
    "intro": "Dört günlük çalışma haftasını deneyen şirketleri konu alan bu dergi makalesini oku.",
-   "metin": "Immer mehr deutsche Unternehmen testen die Vier-Tage-Woche. Die Idee: Die Beschäftigten arbeiten nur noch vier Tage, bekommen aber das gleiche Gehalt wie vorher. Eine der ersten Firmen war die Werbeagentur „Kolibri“ aus Köln, die das Modell seit zwei Jahren anbietet.\n\nGeschäftsführer Jan Petersen ist zufrieden: „Unsere Mitarbeiterinnen und Mitarbeiter sind seltener krank und deutlich motivierter. Außerdem bekommen wir viel mehr Bewerbungen als früher.“ Damit die Arbeit trotzdem geschafft wird, wurden die Meetings verkürzt und viele Aufgaben digitalisiert.\n\nDoch nicht überall funktioniert das Modell. In Krankenhäusern, Schulen oder im Handwerk kann die Arbeit nicht einfach auf vier Tage verteilt werden, weil die Menschen dort täglich gebraucht werden. Kritiker warnen außerdem, dass der Stress steigen könnte, wenn dieselbe Arbeit in kürzerer Zeit erledigt werden muss.\n\nEine aktuelle Umfrage zeigt trotzdem klare Zahlen: 71 Prozent der Beschäftigten in Deutschland würden gern vier Tage pro Woche arbeiten — die meisten allerdings nur, wenn das Gehalt gleich bleibt.",
+   "text": "Immer mehr deutsche Unternehmen testen die Vier-Tage-Woche. Die Idee: Die Beschäftigten arbeiten nur noch vier Tage, bekommen aber das gleiche Gehalt wie vorher. Eine der ersten Firmen war die Werbeagentur „Kolibri“ aus Köln, die das Modell seit zwei Jahren anbietet.\n\nGeschäftsführer Jan Petersen ist zufrieden: „Unsere Mitarbeiterinnen und Mitarbeiter sind seltener krank und deutlich motivierter. Außerdem bekommen wir viel mehr Bewerbungen als früher.“ Damit die Arbeit trotzdem geschafft wird, wurden die Meetings verkürzt und viele Aufgaben digitalisiert.\n\nDoch nicht überall funktioniert das Modell. In Krankenhäusern, Schulen oder im Handwerk kann die Arbeit nicht einfach auf vier Tage verteilt werden, weil die Menschen dort täglich gebraucht werden. Kritiker warnen außerdem, dass der Stress steigen könnte, wenn dieselbe Arbeit in kürzerer Zeit erledigt werden muss.\n\nEine aktuelle Umfrage zeigt trotzdem klare Zahlen: 71 Prozent der Beschäftigten in Deutschland würden gern vier Tage pro Woche arbeiten — die meisten allerdings nur, wenn das Gehalt gleich bleibt.",
    "gloss": [
     {
      "de": "das Unternehmen",
-     "mevcutTr": "şirket",
-     "havuz": {
+     "currentTr": "şirket",
+     "pool": {
       "tr": "bir şeyler yapmak",
       "en": "to do something"
      }
     },
     {
      "de": "der Beschäftigte",
-     "mevcutTr": "çalışan"
+     "currentTr": "çalışan"
     },
     {
      "de": "das Gehalt",
-     "mevcutTr": "maaş",
-     "havuz": {
+     "currentTr": "maaş",
+     "pool": {
       "tr": "maaş",
       "en": "salary"
      }
     },
     {
      "de": "die Werbeagentur",
-     "mevcutTr": "reklam ajansı"
+     "currentTr": "reklam ajansı"
     },
     {
      "de": "der Geschäftsführer",
-     "mevcutTr": "genel müdür",
-     "havuz": {
+     "currentTr": "genel müdür",
+     "pool": {
       "tr": "genel müdür",
       "en": "managing director"
      }
     },
     {
      "de": "die Bewerbung",
-     "mevcutTr": "başvuru",
-     "havuz": {
+     "currentTr": "başvuru",
+     "pool": {
       "tr": "başvuru",
       "en": "application"
      }
     },
     {
      "de": "verkürzen",
-     "mevcutTr": "kısaltmak",
-     "havuz": {
+     "currentTr": "kısaltmak",
+     "pool": {
       "tr": "kısaltmak",
       "en": "to shorten"
      }
     },
     {
      "de": "verteilen auf",
-     "mevcutTr": "bir şeye yaymak"
+     "currentTr": "bir şeye yaymak"
     },
     {
      "de": "das Handwerk",
-     "mevcutTr": "zanaat"
+     "currentTr": "zanaat"
     },
     {
      "de": "erledigen",
-     "mevcutTr": "halletmek",
-     "havuz": {
+     "currentTr": "halletmek",
+     "pool": {
       "tr": "halletmek",
       "en": "to take care of"
      }
     },
     {
      "de": "die Umfrage",
-     "mevcutTr": "anket",
-     "havuz": {
+     "currentTr": "anket",
+     "pool": {
       "tr": "anket",
       "en": "survey"
      }
@@ -483,60 +483,60 @@
    "title": "Tareks Plan",
    "genre": "Forum",
    "intro": "Tarek küçük bir kafe açmak istiyor ve bir girişimci forumunda akıl danışıyor. Soru ve iki cevabı okuyacaksın.",
-   "metin": "TAREK_87: Ich arbeite seit sechs Jahren als Koch, immer für andere. Jetzt will ich mich selbstständig machen — ein kleines Café mit syrischem Frühstück, 20 Plätze. Ich habe 18.000 Euro Ersparnisse. Ein Laden im Viertel kostet 1.400 Euro Miete. Ist das verrückt?\n\nMARIE_G: Verrückt nicht, aber knapp. Rechne nicht nur mit der Miete: Kaution (meistens drei Monatsmieten), Umbau, Küche, Versicherung, Steuerberater. Bei mir war der Umbau doppelt so teuer wie geplant — das ist fast immer so. Und die ersten sechs Monate verdienst du nichts. Plane Geld zum Leben ein, sonst arbeitest du unter Druck und triffst schlechte Entscheidungen.\n\nHASSAN_K: Ich rate dir nicht ab, im Gegenteil. Aber mach zwei Dinge, bevor du unterschreibst. Erstens: Steh eine Woche lang zu verschiedenen Zeiten vor dem Laden und zähle, wie viele Menschen vorbeigehen. Zweitens: Frag beim Gewerbeamt, welche Genehmigungen du brauchst — bei Essen sind es mehr, als du denkst. Ich habe drei Monate verloren, weil ich das erst hinterher gemacht habe.\n\nTAREK_87: Danke euch. Ich glaube, ich zähle erst mal Menschen.",
+   "text": "TAREK_87: Ich arbeite seit sechs Jahren als Koch, immer für andere. Jetzt will ich mich selbstständig machen — ein kleines Café mit syrischem Frühstück, 20 Plätze. Ich habe 18.000 Euro Ersparnisse. Ein Laden im Viertel kostet 1.400 Euro Miete. Ist das verrückt?\n\nMARIE_G: Verrückt nicht, aber knapp. Rechne nicht nur mit der Miete: Kaution (meistens drei Monatsmieten), Umbau, Küche, Versicherung, Steuerberater. Bei mir war der Umbau doppelt so teuer wie geplant — das ist fast immer so. Und die ersten sechs Monate verdienst du nichts. Plane Geld zum Leben ein, sonst arbeitest du unter Druck und triffst schlechte Entscheidungen.\n\nHASSAN_K: Ich rate dir nicht ab, im Gegenteil. Aber mach zwei Dinge, bevor du unterschreibst. Erstens: Steh eine Woche lang zu verschiedenen Zeiten vor dem Laden und zähle, wie viele Menschen vorbeigehen. Zweitens: Frag beim Gewerbeamt, welche Genehmigungen du brauchst — bei Essen sind es mehr, als du denkst. Ich habe drei Monate verloren, weil ich das erst hinterher gemacht habe.\n\nTAREK_87: Danke euch. Ich glaube, ich zähle erst mal Menschen.",
    "gloss": [
     {
      "de": "sich selbstständig machen",
-     "mevcutTr": "kendi işini kurmak"
+     "currentTr": "kendi işini kurmak"
     },
     {
      "de": "die Ersparnisse",
-     "mevcutTr": "birikim"
+     "currentTr": "birikim"
     },
     {
      "de": "der Kredit",
-     "mevcutTr": "kredi",
-     "havuz": {
+     "currentTr": "kredi",
+     "pool": {
       "tr": "kredi",
       "en": "loan"
      }
     },
     {
      "de": "die Miete",
-     "mevcutTr": "kira",
-     "havuz": {
+     "currentTr": "kira",
+     "pool": {
       "tr": "kira",
       "en": "rent"
      }
     },
     {
      "de": "sich lohnen",
-     "mevcutTr": "değmek",
-     "havuz": {
+     "currentTr": "değmek",
+     "pool": {
       "tr": "değmek",
       "en": "to be worth it"
      }
     },
     {
      "de": "die Konkurrenz",
-     "mevcutTr": "rekabet",
-     "havuz": {
+     "currentTr": "rekabet",
+     "pool": {
       "tr": "rekabet",
       "en": "competition"
      }
     },
     {
      "de": "abraten",
-     "mevcutTr": "tavsiye etmemek",
-     "havuz": {
+     "currentTr": "tavsiye etmemek",
+     "pool": {
       "tr": "tavsiye etmemek",
       "en": "to advise against"
      }
     },
     {
      "de": "die Genehmigung",
-     "mevcutTr": "resmî izin",
-     "havuz": {
+     "currentTr": "resmî izin",
+     "pool": {
       "tr": "resmî izin",
       "en": "permit"
      }
@@ -550,60 +550,60 @@
    "title": "Gewerbeanmeldung: Was Sie brauchen",
    "genre": "Rehber",
    "intro": "Almanya'da iş kurmanın ilk adımı. Belediyenin bilgilendirme sayfasını okuyacaksın.",
-   "metin": "Wer in Deutschland ein Gewerbe betreibt, muss es anmelden — vor dem ersten Arbeitstag, nicht danach.\n\nSie brauchen: Personalausweis oder Pass, das ausgefüllte Formular und 26 Euro Gebühr. Bei Gastronomie kommen zwei Dinge dazu: ein Führungszeugnis und die Gaststättenerlaubnis. Wenn Sie Lebensmittel zubereiten, brauchen Sie außerdem eine Belehrung vom Gesundheitsamt — die dauert etwa eine Stunde und gilt lebenslang.\n\nWas viele überrascht: Sie müssen sich nicht selbst beim Finanzamt melden. Das Gewerbeamt informiert es automatisch. Danach schickt Ihnen das Finanzamt einen Fragebogen, in dem Sie Ihren erwarteten Gewinn schätzen. Nehmen Sie diese Schätzung ernst: Sie bestimmt, wie viel Steuer Sie im Voraus zahlen.\n\nDie Anmeldung selbst dauert 15 Minuten. Die Erlaubnis für Gastronomie dagegen kann sechs bis zwölf Wochen brauchen. Planen Sie diese Zeit ein, bevor Sie einen Mietvertrag unterschreiben.\n\nTipp: Die meisten Städte bieten eine kostenlose Erstberatung für Gründerinnen und Gründer an. Sie dauert eine Stunde und spart oft mehrere Wochen.",
+   "text": "Wer in Deutschland ein Gewerbe betreibt, muss es anmelden — vor dem ersten Arbeitstag, nicht danach.\n\nSie brauchen: Personalausweis oder Pass, das ausgefüllte Formular und 26 Euro Gebühr. Bei Gastronomie kommen zwei Dinge dazu: ein Führungszeugnis und die Gaststättenerlaubnis. Wenn Sie Lebensmittel zubereiten, brauchen Sie außerdem eine Belehrung vom Gesundheitsamt — die dauert etwa eine Stunde und gilt lebenslang.\n\nWas viele überrascht: Sie müssen sich nicht selbst beim Finanzamt melden. Das Gewerbeamt informiert es automatisch. Danach schickt Ihnen das Finanzamt einen Fragebogen, in dem Sie Ihren erwarteten Gewinn schätzen. Nehmen Sie diese Schätzung ernst: Sie bestimmt, wie viel Steuer Sie im Voraus zahlen.\n\nDie Anmeldung selbst dauert 15 Minuten. Die Erlaubnis für Gastronomie dagegen kann sechs bis zwölf Wochen brauchen. Planen Sie diese Zeit ein, bevor Sie einen Mietvertrag unterschreiben.\n\nTipp: Die meisten Städte bieten eine kostenlose Erstberatung für Gründerinnen und Gründer an. Sie dauert eine Stunde und spart oft mehrere Wochen.",
    "gloss": [
     {
      "de": "das Gewerbe",
-     "mevcutTr": "ticari işletme",
-     "havuz": {
+     "currentTr": "ticari işletme",
+     "pool": {
       "tr": "ticari işletme",
       "en": "business"
      }
     },
     {
      "de": "anmelden",
-     "mevcutTr": "kaydettirmek"
+     "currentTr": "kaydettirmek"
     },
     {
      "de": "die Gebühr",
-     "mevcutTr": "ücret",
-     "havuz": {
+     "currentTr": "ücret",
+     "pool": {
       "tr": "ücret",
       "en": "fee"
      }
     },
     {
      "de": "das Führungszeugnis",
-     "mevcutTr": "adli sicil kaydı",
-     "havuz": {
+     "currentTr": "adli sicil kaydı",
+     "pool": {
       "tr": "adli sicil kaydı",
       "en": "criminal record certificate"
      }
     },
     {
      "de": "die Erlaubnis",
-     "mevcutTr": "izin",
-     "havuz": {
+     "currentTr": "izin",
+     "pool": {
       "tr": "izin",
       "en": "permission"
      }
     },
     {
      "de": "das Finanzamt",
-     "mevcutTr": "vergi dairesi",
-     "havuz": {
+     "currentTr": "vergi dairesi",
+     "pool": {
       "tr": "vergi dairesi",
       "en": "tax office"
      }
     },
     {
      "de": "die Steuernummer",
-     "mevcutTr": "vergi numarası"
+     "currentTr": "vergi numarası"
     },
     {
      "de": "automatisch",
-     "mevcutTr": "otomatik",
-     "havuz": {
+     "currentTr": "otomatik",
+     "pool": {
       "tr": "otomatik",
       "en": "automatic"
      }

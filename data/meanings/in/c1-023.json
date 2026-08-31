@@ -1,16 +1,16 @@
 {
- "paket": "c1-023",
+ "packet": "c1-023",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 6353,
    "de": "die Rechtsprechung",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "içtihat, yargı kararları",
-   "mevcutBeispiel": "Die Rechtsprechung des obersten Gerichts hat sich seither deutlich gewandelt.",
-   "mevcutBeispielTr": "Yüksek mahkemenin içtihadı o zamandan beri belirgin biçimde değişti."
+   "currentTr": "içtihat, yargı kararları",
+   "currentBeispiel": "Die Rechtsprechung des obersten Gerichts hat sich seither deutlich gewandelt.",
+   "currentBeispielTr": "Yüksek mahkemenin içtihadı o zamandan beri belirgin biçimde değişti."
   },
   {
    "id": 6354,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rechtsquellen",
-   "mevcutTr": "hukuk kaynağı",
-   "mevcutBeispiel": "Neben dem Gesetz gelten auch Verträge als anerkannte Rechtsquellen.",
-   "mevcutBeispielTr": "Kanunun yanı sıra sözleşmeler de tanınmış hukuk kaynağı sayılır."
+   "currentTr": "hukuk kaynağı",
+   "currentBeispiel": "Neben dem Gesetz gelten auch Verträge als anerkannte Rechtsquellen.",
+   "currentBeispielTr": "Kanunun yanı sıra sözleşmeler de tanınmış hukuk kaynağı sayılır."
   },
   {
    "id": 6355,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hukukun geliştirilmesi, yargı yoluyla hukuk yaratma",
-   "mevcutBeispiel": "Durch Rechtsfortbildung schließen die Gerichte Lücken, die der Gesetzgeber hinterlassen hat.",
-   "mevcutBeispielTr": "Mahkemeler, yasa koyucunun bıraktığı boşlukları hukuku geliştirerek doldurur."
+   "currentTr": "hukukun geliştirilmesi, yargı yoluyla hukuk yaratma",
+   "currentBeispiel": "Durch Rechtsfortbildung schließen die Gerichte Lücken, die der Gesetzgeber hinterlassen hat.",
+   "currentBeispielTr": "Mahkemeler, yasa koyucunun bıraktığı boşlukları hukuku geliştirerek doldurur."
   },
   {
    "id": 6356,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hukuk güvenliği",
-   "mevcutBeispiel": "Ständig wechselnde Vorschriften untergraben die Rechtssicherheit für alle Beteiligten.",
-   "mevcutBeispielTr": "Sürekli değişen düzenlemeler, bütün taraflar için hukuk güvenliğini zayıflatıyor."
+   "currentTr": "hukuk güvenliği",
+   "currentBeispiel": "Ständig wechselnde Vorschriften untergraben die Rechtssicherheit für alle Beteiligten.",
+   "currentBeispielTr": "Sürekli değişen düzenlemeler, bütün taraflar için hukuk güvenliğini zayıflatıyor."
   },
   {
    "id": 6357,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rechtsfolgen",
-   "mevcutTr": "hukuki sonuç",
-   "mevcutBeispiel": "Der Vertragsbruch zieht empfindliche Rechtsfolgen für beide Seiten nach sich.",
-   "mevcutBeispielTr": "Sözleşmenin ihlali her iki taraf için ağır hukuki sonuçlar doğuruyor."
+   "currentTr": "hukuki sonuç",
+   "currentBeispiel": "Der Vertragsbruch zieht empfindliche Rechtsfolgen für beide Seiten nach sich.",
+   "currentBeispielTr": "Sözleşmenin ihlali her iki taraf için ağır hukuki sonuçlar doğuruyor."
   },
   {
    "id": 6358,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rechtslücken",
-   "mevcutTr": "hukuk boşluğu",
-   "mevcutBeispiel": "Der neue Sachverhalt offenbart eine Rechtslücke, die niemand vorhergesehen hatte.",
-   "mevcutBeispielTr": "Yeni durum, kimsenin öngörmediği bir hukuk boşluğunu açığa çıkarıyor."
+   "currentTr": "hukuk boşluğu",
+   "currentBeispiel": "Der neue Sachverhalt offenbart eine Rechtslücke, die niemand vorhergesehen hatte.",
+   "currentBeispielTr": "Yeni durum, kimsenin öngörmediği bir hukuk boşluğunu açığa çıkarıyor."
   },
   {
    "id": 6359,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hukuki pozitivizm",
-   "mevcutBeispiel": "Der Rechtspositivismus trennt die Geltung des Rechts streng von der Moral.",
-   "mevcutBeispielTr": "Hukuki pozitivizm, hukukun geçerliliğini ahlaktan kesin biçimde ayırır."
+   "currentTr": "hukuki pozitivizm",
+   "currentBeispiel": "Der Rechtspositivismus trennt die Geltung des Rechts streng von der Moral.",
+   "currentBeispielTr": "Hukuki pozitivizm, hukukun geçerliliğini ahlaktan kesin biçimde ayırır."
   },
   {
    "id": 6360,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rechtswege",
-   "mevcutTr": "yargı yolu",
-   "mevcutBeispiel": "Nach der Ablehnung blieb ihr nur noch der Rechtsweg.",
-   "mevcutBeispielTr": "Talebi reddedilince ona yalnızca yargı yolu kaldı."
+   "currentTr": "yargı yolu",
+   "currentBeispiel": "Nach der Ablehnung blieb ihr nur noch der Rechtsweg.",
+   "currentBeispielTr": "Talebi reddedilince ona yalnızca yargı yolu kaldı."
   },
   {
    "id": 6361,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rechtsordnungen",
-   "mevcutTr": "hukuk düzeni",
-   "mevcutBeispiel": "Jede Rechtsordnung beruht auf Grundentscheidungen, die selten offen diskutiert werden.",
-   "mevcutBeispielTr": "Her hukuk düzeni, nadiren açıkça tartışılan temel tercihlere dayanır."
+   "currentTr": "hukuk düzeni",
+   "currentBeispiel": "Jede Rechtsordnung beruht auf Grundentscheidungen, die selten offen diskutiert werden.",
+   "currentBeispielTr": "Her hukuk düzeni, nadiren açıkça tartışılan temel tercihlere dayanır."
   },
   {
    "id": 6362,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rechtsgüter",
-   "mevcutTr": "hukuki değer, korunan hukuki menfaat",
-   "mevcutBeispiel": "Das Strafrecht schützt Rechtsgüter wie Leben, Freiheit und Eigentum.",
-   "mevcutBeispielTr": "Ceza hukuku yaşam, özgürlük ve mülkiyet gibi hukuki değerleri korur."
+   "currentTr": "hukuki değer, korunan hukuki menfaat",
+   "currentBeispiel": "Das Strafrecht schützt Rechtsgüter wie Leben, Freiheit und Eigentum.",
+   "currentBeispielTr": "Ceza hukuku yaşam, özgürlük ve mülkiyet gibi hukuki değerleri korur."
   },
   {
    "id": 6363,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hukuk felsefesi",
-   "mevcutBeispiel": "In der Rechtsphilosophie streitet man seit Jahrhunderten über den Gerechtigkeitsbegriff.",
-   "mevcutBeispielTr": "Hukuk felsefesinde adalet kavramı yüzyıllardır tartışılıyor."
+   "currentTr": "hukuk felsefesi",
+   "currentBeispiel": "In der Rechtsphilosophie streitet man seit Jahrhunderten über den Gerechtigkeitsbegriff.",
+   "currentBeispielTr": "Hukuk felsefesinde adalet kavramı yüzyıllardır tartışılıyor."
   },
   {
    "id": 6364,
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hukuk dogmatiği",
-   "mevcutBeispiel": "Die Rechtsdogmatik ordnet die Vorschriften zu einem widerspruchsfreien System.",
-   "mevcutBeispielTr": "Hukuk dogmatiği, kuralları çelişkisiz bir sistem hâline getirir."
+   "currentTr": "hukuk dogmatiği",
+   "currentBeispiel": "Die Rechtsdogmatik ordnet die Vorschriften zu einem widerspruchsfreien System.",
+   "currentBeispielTr": "Hukuk dogmatiği, kuralları çelişkisiz bir sistem hâline getirir."
   },
   {
    "id": 6365,
@@ -128,9 +128,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "adalet duygusu, hukuk duygusu",
-   "mevcutBeispiel": "Das milde Urteil verletzte das Rechtsempfinden vieler Beobachter.",
-   "mevcutBeispielTr": "Hafif karar, birçok gözlemcinin adalet duygusunu incitti."
+   "currentTr": "adalet duygusu, hukuk duygusu",
+   "currentBeispiel": "Das milde Urteil verletzte das Rechtsempfinden vieler Beobachter.",
+   "currentBeispielTr": "Hafif karar, birçok gözlemcinin adalet duygusunu incitti."
   },
   {
    "id": 6366,
@@ -138,9 +138,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ölçülülük, orantılılık",
-   "mevcutBeispiel": "Das Gericht prüfte die Verhältnismäßigkeit des polizeilichen Eingriffs sehr genau.",
-   "mevcutBeispielTr": "Mahkeme, polis müdahalesinin orantılılığını çok titizlikle inceledi."
+   "currentTr": "ölçülülük, orantılılık",
+   "currentBeispiel": "Das Gericht prüfte die Verhältnismäßigkeit des polizeilichen Eingriffs sehr genau.",
+   "currentBeispielTr": "Mahkeme, polis müdahalesinin orantılılığını çok titizlikle inceledi."
   },
   {
    "id": 6367,
@@ -148,9 +148,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kuvvetler ayrılığı",
-   "mevcutBeispiel": "Die Gewaltenteilung soll verhindern, dass sich Macht an einer Stelle bündelt.",
-   "mevcutBeispielTr": "Kuvvetler ayrılığı, gücün tek bir noktada toplanmasını engellemeyi amaçlar."
+   "currentTr": "kuvvetler ayrılığı",
+   "currentBeispiel": "Die Gewaltenteilung soll verhindern, dass sich Macht an einer Stelle bündelt.",
+   "currentBeispielTr": "Kuvvetler ayrılığı, gücün tek bir noktada toplanmasını engellemeyi amaçlar."
   },
   {
    "id": 6368,
@@ -158,9 +158,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verfassungsbeschwerden",
-   "mevcutTr": "anayasa şikâyeti, bireysel başvuru",
-   "mevcutBeispiel": "Gegen das Gesetz wurde bereits mehrfach Verfassungsbeschwerde erhoben.",
-   "mevcutBeispielTr": "Yasaya karşı daha şimdiden birçok kez anayasa şikâyetinde bulunuldu."
+   "currentTr": "anayasa şikâyeti, bireysel başvuru",
+   "currentBeispiel": "Gegen das Gesetz wurde bereits mehrfach Verfassungsbeschwerde erhoben.",
+   "currentBeispielTr": "Yasaya karşı daha şimdiden birçok kez anayasa şikâyetinde bulunuldu."
   },
   {
    "id": 6369,
@@ -168,9 +168,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Normenkontrollen",
-   "mevcutTr": "norm denetimi",
-   "mevcutBeispiel": "Im Rahmen der Normenkontrolle prüft das Gericht die Vereinbarkeit mit der Verfassung.",
-   "mevcutBeispielTr": "Norm denetimi çerçevesinde mahkeme, düzenlemenin anayasaya uygunluğunu inceler."
+   "currentTr": "norm denetimi",
+   "currentBeispiel": "Im Rahmen der Normenkontrolle prüft das Gericht die Vereinbarkeit mit der Verfassung.",
+   "currentBeispielTr": "Norm denetimi çerçevesinde mahkeme, düzenlemenin anayasaya uygunluğunu inceler."
   },
   {
    "id": 6370,
@@ -178,9 +178,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gesetzgebungsverfahren",
-   "mevcutTr": "yasama süreci, kanun yapım usulü",
-   "mevcutBeispiel": "Das Gesetzgebungsverfahren wurde wegen formeller Fehler abgebrochen.",
-   "mevcutBeispielTr": "Yasama süreci biçimsel hatalar nedeniyle yarıda kesildi."
+   "currentTr": "yasama süreci, kanun yapım usulü",
+   "currentBeispiel": "Das Gesetzgebungsverfahren wurde wegen formeller Fehler abgebrochen.",
+   "currentBeispielTr": "Yasama süreci biçimsel hatalar nedeniyle yarıda kesildi."
   },
   {
    "id": 6371,
@@ -188,9 +188,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Präjudize",
-   "mevcutTr": "emsal karar, içtihat örneği",
-   "mevcutBeispiel": "Die Entscheidung wirkt als Präjudiz für alle ähnlich gelagerten Fälle.",
-   "mevcutBeispielTr": "Bu karar, benzer nitelikteki bütün davalar için emsal işlevi görüyor."
+   "currentTr": "emsal karar, içtihat örneği",
+   "currentBeispiel": "Die Entscheidung wirkt als Präjudiz für alle ähnlich gelagerten Fälle.",
+   "currentBeispielTr": "Bu karar, benzer nitelikteki bütün davalar için emsal işlevi görüyor."
   },
   {
    "id": 6372,
@@ -198,9 +198,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "keyfilik yasağı",
-   "mevcutBeispiel": "Das Willkürverbot zwingt die Behörden, gleiche Fälle gleich zu behandeln.",
-   "mevcutBeispielTr": "Keyfilik yasağı, idareyi aynı olayları aynı biçimde ele almaya zorlar."
+   "currentTr": "keyfilik yasağı",
+   "currentBeispiel": "Das Willkürverbot zwingt die Behörden, gleiche Fälle gleich zu behandeln.",
+   "currentBeispielTr": "Keyfilik yasağı, idareyi aynı olayları aynı biçimde ele almaya zorlar."
   },
   {
    "id": 6373,
@@ -208,9 +208,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Ermessensspielräume",
-   "mevcutTr": "takdir alanı, takdir yetkisi",
-   "mevcutBeispiel": "Der Behörde bleibt bei dieser Entscheidung ein erheblicher Ermessensspielraum.",
-   "mevcutBeispielTr": "İdarenin bu kararda hatırı sayılır bir takdir alanı bulunuyor."
+   "currentTr": "takdir alanı, takdir yetkisi",
+   "currentBeispiel": "Der Behörde bleibt bei dieser Entscheidung ein erheblicher Ermessensspielraum.",
+   "currentBeispielTr": "İdarenin bu kararda hatırı sayılır bir takdir alanı bulunuyor."
   },
   {
    "id": 6374,
@@ -218,9 +218,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Strafmaße",
-   "mevcutTr": "ceza miktarı, verilecek ceza",
-   "mevcutBeispiel": "Über das Strafmaß entscheidet das Gericht nach der Schwere der Tat.",
-   "mevcutBeispielTr": "Ceza miktarına mahkeme, fiilin ağırlığına göre karar verir."
+   "currentTr": "ceza miktarı, verilecek ceza",
+   "currentBeispiel": "Über das Strafmaß entscheidet das Gericht nach der Schwere der Tat.",
+   "currentBeispielTr": "Ceza miktarına mahkeme, fiilin ağırlığına göre karar verir."
   },
   {
    "id": 6375,
@@ -228,9 +228,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "masumiyet karinesi",
-   "mevcutBeispiel": "Die vorschnelle Berichterstattung verletzte die Unschuldsvermutung des Beschuldigten.",
-   "mevcutBeispielTr": "Aceleci haberler, şüphelinin masumiyet karinesini ihlal etti."
+   "currentTr": "masumiyet karinesi",
+   "currentBeispiel": "Die vorschnelle Berichterstattung verletzte die Unschuldsvermutung des Beschuldigten.",
+   "currentBeispielTr": "Aceleci haberler, şüphelinin masumiyet karinesini ihlal etti."
   },
   {
    "id": 6376,
@@ -238,9 +238,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "görevi kötüye kullanma",
-   "mevcutBeispiel": "Gegen den Beamten wird wegen Amtsmissbrauchs ermittelt.",
-   "mevcutBeispielTr": "Memur hakkında görevi kötüye kullanmaktan soruşturma yürütülüyor."
+   "currentTr": "görevi kötüye kullanma",
+   "currentBeispiel": "Gegen den Beamten wird wegen Amtsmissbrauchs ermittelt.",
+   "currentBeispielTr": "Memur hakkında görevi kötüye kullanmaktan soruşturma yürütülüyor."
   },
   {
    "id": 6377,
@@ -248,9 +248,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yanlılık, tarafsızlığın yitimi",
-   "mevcutBeispiel": "Wegen möglicher Befangenheit zog sich der Richter von dem Fall zurück.",
-   "mevcutBeispielTr": "Olası yanlılık nedeniyle hâkim davadan çekildi."
+   "currentTr": "yanlılık, tarafsızlığın yitimi",
+   "currentBeispiel": "Wegen möglicher Befangenheit zog sich der Richter von dem Fall zurück.",
+   "currentBeispielTr": "Olası yanlılık nedeniyle hâkim davadan çekildi."
   },
   {
    "id": 6378,
@@ -258,9 +258,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Leitsätze",
-   "mevcutTr": "içtihat özeti, temel ilke",
-   "mevcutBeispiel": "Der erste Leitsatz des Urteils wird in allen Kommentaren zitiert.",
-   "mevcutBeispielTr": "Kararın ilk içtihat özeti bütün şerhlerde alıntılanıyor."
+   "currentTr": "içtihat özeti, temel ilke",
+   "currentBeispiel": "Der erste Leitsatz des Urteils wird in allen Kommentaren zitiert.",
+   "currentBeispielTr": "Kararın ilk içtihat özeti bütün şerhlerde alıntılanıyor."
   },
   {
    "id": 6379,
@@ -268,9 +268,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Tatbestände",
-   "mevcutTr": "suçun unsurları, olgusal durum",
-   "mevcutBeispiel": "Das Verhalten erfüllt den Tatbestand der Nötigung.",
-   "mevcutBeispielTr": "Bu davranış, tehditle zorlama suçunun unsurlarını oluşturuyor."
+   "currentTr": "suçun unsurları, olgusal durum",
+   "currentBeispiel": "Das Verhalten erfüllt den Tatbestand der Nötigung.",
+   "currentBeispielTr": "Bu davranış, tehditle zorlama suçunun unsurlarını oluşturuyor."
   },
   {
    "id": 6380,
@@ -278,9 +278,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "örf ve âdet hukuku",
-   "mevcutBeispiel": "In manchen Bereichen gilt bis heute ungeschriebenes Gewohnheitsrecht.",
-   "mevcutBeispielTr": "Bazı alanlarda bugün hâlâ yazısız örf ve âdet hukuku geçerli."
+   "currentTr": "örf ve âdet hukuku",
+   "currentBeispiel": "In manchen Bereichen gilt bis heute ungeschriebenes Gewohnheitsrecht.",
+   "currentBeispielTr": "Bazı alanlarda bugün hâlâ yazısız örf ve âdet hukuku geçerli."
   },
   {
    "id": 6381,
@@ -288,9 +288,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "doğal hukuk",
-   "mevcutBeispiel": "Das Naturrecht leitet seine Sätze aus der Vernunft ab.",
-   "mevcutBeispielTr": "Doğal hukuk, ilkelerini akıldan türetir."
+   "currentTr": "doğal hukuk",
+   "currentBeispiel": "Das Naturrecht leitet seine Sätze aus der Vernunft ab.",
+   "currentBeispielTr": "Doğal hukuk, ilkelerini akıldan türetir."
   },
   {
    "id": 6382,
@@ -298,10 +298,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "meşruiyet",
-   "mevcutBeispiel": "Ohne breite Zustimmung verliert eine Ordnung ihre Legitimität.",
-   "mevcutBeispielTr": "Geniş bir onay olmadan bir düzen meşruiyetini yitirir.",
-   "cakisan": [
+   "currentTr": "meşruiyet",
+   "currentBeispiel": "Ohne breite Zustimmung verliert eine Ordnung ihre Legitimität.",
+   "currentBeispielTr": "Geniş bir onay olmadan bir düzen meşruiyetini yitirir.",
+   "overlapping": [
     "die Legitimation (C1)"
    ]
   },
@@ -311,9 +311,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kasıt",
-   "mevcutBeispiel": "Für eine Verurteilung muss dem Täter Vorsatz nachgewiesen werden.",
-   "mevcutBeispielTr": "Mahkûmiyet için failin kastının kanıtlanması gerekir."
+   "currentTr": "kasıt",
+   "currentBeispiel": "Für eine Verurteilung muss dem Täter Vorsatz nachgewiesen werden.",
+   "currentBeispielTr": "Mahkûmiyet için failin kastının kanıtlanması gerekir."
   },
   {
    "id": 6384,
@@ -321,9 +321,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ihmal, taksir",
-   "mevcutBeispiel": "Der Unfall beruhte auf grober Fahrlässigkeit des Fahrers.",
-   "mevcutBeispielTr": "Kaza, sürücünün ağır ihmalinden kaynaklandı."
+   "currentTr": "ihmal, taksir",
+   "currentBeispiel": "Der Unfall beruhte auf grober Fahrlässigkeit des Fahrers.",
+   "currentBeispielTr": "Kaza, sürücünün ağır ihmalinden kaynaklandı."
   },
   {
    "id": 6385,
@@ -331,9 +331,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "meşru müdafaa",
-   "mevcutBeispiel": "Er berief sich vor Gericht erfolgreich auf Notwehr.",
-   "mevcutBeispielTr": "Mahkemede meşru müdafaa savunmasını başarıyla ileri sürdü."
+   "currentTr": "meşru müdafaa",
+   "currentBeispiel": "Er berief sich vor Gericht erfolgreich auf Notwehr.",
+   "currentBeispielTr": "Mahkemede meşru müdafaa savunmasını başarıyla ileri sürdü."
   },
   {
    "id": 6386,
@@ -341,9 +341,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "insan onuru",
-   "mevcutBeispiel": "Die Menschenwürde steht am Anfang der Verfassung und ist unantastbar.",
-   "mevcutBeispielTr": "İnsan onuru anayasanın başında yer alır ve dokunulmazdır."
+   "currentTr": "insan onuru",
+   "currentBeispiel": "Die Menschenwürde steht am Anfang der Verfassung und ist unantastbar.",
+   "currentBeispielTr": "İnsan onuru anayasanın başında yer alır ve dokunulmazdır."
   },
   {
    "id": 6387,
@@ -351,9 +351,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "eşitlik ilkesi",
-   "mevcutBeispiel": "Die Regelung verstößt nach Ansicht der Kläger gegen den Gleichheitsgrundsatz.",
-   "mevcutBeispielTr": "Davacılara göre bu düzenleme eşitlik ilkesine aykırı."
+   "currentTr": "eşitlik ilkesi",
+   "currentBeispiel": "Die Regelung verstößt nach Ansicht der Kläger gegen den Gleichheitsgrundsatz.",
+   "currentBeispielTr": "Davacılara göre bu düzenleme eşitlik ilkesine aykırı."
   },
   {
    "id": 6388,
@@ -361,9 +361,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Grundrechtseingriffe",
-   "mevcutTr": "temel hakka müdahale",
-   "mevcutBeispiel": "Jeder Grundrechtseingriff braucht eine klare gesetzliche Grundlage.",
-   "mevcutBeispielTr": "Temel haklara yapılan her müdahale açık bir yasal dayanak gerektirir."
+   "currentTr": "temel hakka müdahale",
+   "currentBeispiel": "Jeder Grundrechtseingriff braucht eine klare gesetzliche Grundlage.",
+   "currentBeispielTr": "Temel haklara yapılan her müdahale açık bir yasal dayanak gerektirir."
   },
   {
    "id": 6389,
@@ -371,9 +371,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Präambeln",
-   "mevcutTr": "başlangıç metni, önsöz",
-   "mevcutBeispiel": "Die Präambel nennt die Werte, auf die sich der Staat gründet.",
-   "mevcutBeispielTr": "Başlangıç metni, devletin dayandığı değerleri sayar."
+   "currentTr": "başlangıç metni, önsöz",
+   "currentBeispiel": "Die Präambel nennt die Werte, auf die sich der Staat gründet.",
+   "currentBeispielTr": "Başlangıç metni, devletin dayandığı değerleri sayar."
   },
   {
    "id": 6390,
@@ -381,9 +381,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hakkaniyet, nasafet",
-   "mevcutBeispiel": "Wo das Gesetz schweigt, entscheidet das Gericht nach Billigkeit.",
-   "mevcutBeispielTr": "Kanunun sustuğu yerde mahkeme hakkaniyete göre karar verir."
+   "currentTr": "hakkaniyet, nasafet",
+   "currentBeispiel": "Wo das Gesetz schweigt, entscheidet das Gericht nach Billigkeit.",
+   "currentBeispielTr": "Kanunun sustuğu yerde mahkeme hakkaniyete göre karar verir."
   },
   {
    "id": 6391,
@@ -391,9 +391,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "irade serbestisi, özel hukuk özerkliği",
-   "mevcutBeispiel": "Die Privatautonomie erlaubt den Parteien, ihre Verträge frei zu gestalten.",
-   "mevcutBeispielTr": "İrade serbestisi, taraflara sözleşmelerini serbestçe düzenleme imkânı verir."
+   "currentTr": "irade serbestisi, özel hukuk özerkliği",
+   "currentBeispiel": "Die Privatautonomie erlaubt den Parteien, ihre Verträge frei zu gestalten.",
+   "currentBeispielTr": "İrade serbestisi, taraflara sözleşmelerini serbestçe düzenleme imkânı verir."
   },
   {
    "id": 6392,
@@ -401,9 +401,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yargı erki",
-   "mevcutBeispiel": "Die Judikative darf sich nicht zum Ersatzgesetzgeber aufschwingen.",
-   "mevcutBeispielTr": "Yargı erki kendini yedek yasa koyucu yerine koyamaz."
+   "currentTr": "yargı erki",
+   "currentBeispiel": "Die Judikative darf sich nicht zum Ersatzgesetzgeber aufschwingen.",
+   "currentBeispielTr": "Yargı erki kendini yedek yasa koyucu yerine koyamaz."
   },
   {
    "id": 6393,
@@ -411,9 +411,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gerichtsbarkeiten",
-   "mevcutTr": "yargı yetkisi, yargı kolu",
-   "mevcutBeispiel": "Für diesen Streit ist die ordentliche Gerichtsbarkeit zuständig.",
-   "mevcutBeispielTr": "Bu uyuşmazlıkta adli yargı görevli."
+   "currentTr": "yargı yetkisi, yargı kolu",
+   "currentBeispiel": "Für diesen Streit ist die ordentliche Gerichtsbarkeit zuständig.",
+   "currentBeispielTr": "Bu uyuşmazlıkta adli yargı görevli."
   },
   {
    "id": 6394,
@@ -421,9 +421,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat subsumiert",
-   "mevcutTr": "kapsamına sokmak, norm altına yerleştirmek",
-   "mevcutBeispiel": "Der Richter subsumierte den Sachverhalt unter die passende Norm.",
-   "mevcutBeispielTr": "Hâkim, olayı uygun normun kapsamına soktu."
+   "currentTr": "kapsamına sokmak, norm altına yerleştirmek",
+   "currentBeispiel": "Der Richter subsumierte den Sachverhalt unter die passende Norm.",
+   "currentBeispielTr": "Hâkim, olayı uygun normun kapsamına soktu."
   },
   {
    "id": 6395,
@@ -431,10 +431,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat verworfen",
-   "mevcutTr": "reddetmek, (plan/fikirden) vazgeçmek",
-   "mevcutBeispiel": "Das Gericht verwarf die Beschwerde als unbegründet.",
-   "mevcutBeispielTr": "Mahkeme, şikâyeti dayanaktan yoksun bularak reddetti.",
-   "cakisan": [
+   "currentTr": "reddetmek, (plan/fikirden) vazgeçmek",
+   "currentBeispiel": "Das Gericht verwarf die Beschwerde als unbegründet.",
+   "currentBeispielTr": "Mahkeme, şikâyeti dayanaktan yoksun bularak reddetti.",
+   "overlapping": [
     "ablehnen (B1)",
     "sich weigern (B1)",
     "verweigern (B2)"
@@ -446,9 +446,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat kodifiziert",
-   "mevcutTr": "kanunlaştırmak, derlemek",
-   "mevcutBeispiel": "Das Zivilrecht wurde im neunzehnten Jahrhundert umfassend kodifiziert.",
-   "mevcutBeispielTr": "Medeni hukuk on dokuzuncu yüzyılda kapsamlı biçimde kanunlaştırıldı."
+   "currentTr": "kanunlaştırmak, derlemek",
+   "currentBeispiel": "Das Zivilrecht wurde im neunzehnten Jahrhundert umfassend kodifiziert.",
+   "currentBeispielTr": "Medeni hukuk on dokuzuncu yüzyılda kapsamlı biçimde kanunlaştırıldı."
   },
   {
    "id": 6397,
@@ -456,9 +456,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat freigesprochen",
-   "mevcutTr": "beraat ettirmek",
-   "mevcutBeispiel": "Das Gericht sprach den Angeklagten aus Mangel an Beweisen frei.",
-   "mevcutBeispielTr": "Mahkeme, delil yetersizliğinden sanığın beraatine karar verdi."
+   "currentTr": "beraat ettirmek",
+   "currentBeispiel": "Das Gericht sprach den Angeklagten aus Mangel an Beweisen frei.",
+   "currentBeispielTr": "Mahkeme, delil yetersizliğinden sanığın beraatine karar verdi."
   },
   {
    "id": 6398,
@@ -466,9 +466,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat oblegen",
-   "mevcutTr": "yükümlülüğünde olmak, düşmek",
-   "mevcutBeispiel": "Die Beweisführung obliegt in diesem Verfahren der Anklage.",
-   "mevcutBeispielTr": "Bu davada ispat yükümlülüğü iddia makamına düşer."
+   "currentTr": "yükümlülüğünde olmak, düşmek",
+   "currentBeispiel": "Die Beweisführung obliegt in diesem Verfahren der Anklage.",
+   "currentBeispielTr": "Bu davada ispat yükümlülüğü iddia makamına düşer."
   },
   {
    "id": 6399,
@@ -476,10 +476,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat herangezogen",
-   "mevcutTr": "başvurmak, esas almak",
-   "mevcutBeispiel": "Zur Begründung zog das Gericht ältere Entscheidungen heran.",
-   "mevcutBeispielTr": "Mahkeme, gerekçesinde daha eski kararlara başvurdu.",
-   "cakisan": [
+   "currentTr": "başvurmak, esas almak",
+   "currentBeispiel": "Zur Begründung zog das Gericht ältere Entscheidungen heran.",
+   "currentBeispielTr": "Mahkeme, gerekçesinde daha eski kararlara başvurdu.",
+   "overlapping": [
     "beantragen (B1)",
     "sich bewerben um (B2)"
    ]
@@ -490,10 +490,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat verkündet",
-   "mevcutTr": "ilan etmek, açıklamak",
-   "mevcutBeispiel": "Das Urteil wird kommenden Dienstag öffentlich verkündet.",
-   "mevcutBeispielTr": "Karar, önümüzdeki salı günü aleni olarak açıklanacak.",
-   "cakisan": [
+   "currentTr": "ilan etmek, açıklamak",
+   "currentBeispiel": "Das Urteil wird kommenden Dienstag öffentlich verkündet.",
+   "currentBeispielTr": "Karar, önümüzdeki salı günü aleni olarak açıklanacak.",
+   "overlapping": [
     "ausweisen (C1)"
    ]
   },
@@ -503,10 +503,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat zugerechnet",
-   "mevcutTr": "atfetmek, isnat etmek",
-   "mevcutBeispiel": "Der Schaden wird dem Unternehmen als Ganzem zugerechnet.",
-   "mevcutBeispielTr": "Zarar, bir bütün olarak şirkete atfediliyor.",
-   "cakisan": [
+   "currentTr": "atfetmek, isnat etmek",
+   "currentBeispiel": "Der Schaden wird dem Unternehmen als Ganzem zugerechnet.",
+   "currentBeispielTr": "Zarar, bir bütün olarak şirkete atfediliyor.",
+   "overlapping": [
     "zuschreiben (C1)"
    ]
   },
@@ -516,9 +516,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gerügt",
-   "mevcutTr": "kınamak, eleştirmek",
-   "mevcutBeispiel": "Das oberste Gericht rügte die schleppende Dauer des Verfahrens.",
-   "mevcutBeispielTr": "Yüksek mahkeme, sürecin ağır aksak uzunluğunu eleştirdi."
+   "currentTr": "kınamak, eleştirmek",
+   "currentBeispiel": "Das oberste Gericht rügte die schleppende Dauer des Verfahrens.",
+   "currentBeispielTr": "Yüksek mahkeme, sürecin ağır aksak uzunluğunu eleştirdi."
   }
  ]
 }

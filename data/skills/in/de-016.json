@@ -1,7 +1,7 @@
 {
- "paket": "de-016",
+ "packet": "de-016",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "b2-w1",
    "skill": "writing",
@@ -9,97 +9,97 @@
    "title": "Forumsbeitrag: Handyverbot an Schulen?",
    "genre": "Forum yorumu",
    "intro": "Bir veli forumunda okullarda cep telefonu yasağı tartışılıyor; önce iki cümle kur, sonra tartışmaya kendi yorumunla katıl.",
-   "metin": "Die Nutzung von Handys im Unterricht wurde an vielen Schulen verboten.\n\nStatt eines Verbots sollte den Schülern ein bewusster Umgang beigebracht werden.\n\nBeitrag von Markus_74 im Elternforum: Meine Tochter kommt völlig überreizt aus der Schule. In den Pausen starren alle nur auf ihre Bildschirme, niemand redet mehr miteinander. Ich finde, Handys haben an Schulen nichts verloren. Wie seht ihr das?\n\nDas Thema betrifft mich als Vater von zwei Schulkindern unmittelbar, deshalb möchte ich meine Sicht darlegen. Einerseits kann ich Markus gut verstehen: Durch die ständige Ablenkung leidet nicht nur die Konzentration, sondern auch das soziale Miteinander in den Pausen. Andererseits halte ich ein komplettes Verbot für den falschen Weg. Zum einen lässt es sich in der Praxis kaum kontrollieren, zum anderen gehören digitale Medien nun einmal zur Lebenswelt der Jugendlichen. Statt Handys generell zu verbieten, sollte der Umgang mit ihnen gezielt vermittelt werden, etwa in einem Fach wie Medienkunde. An der Schule meiner Tochter gibt es außerdem eine überzeugende Zwischenlösung: Bis zur zehnten Klasse bleiben die Geräte vormittags in Schließfächern, während sie im Unterricht gelegentlich gezielt eingesetzt werden. Meiner Meinung nach wäre ein solches abgestuftes Modell sinnvoller als ein pauschales Verbot, das am Ende nur zu Konflikten führt.",
+   "text": "Die Nutzung von Handys im Unterricht wurde an vielen Schulen verboten.\n\nStatt eines Verbots sollte den Schülern ein bewusster Umgang beigebracht werden.\n\nBeitrag von Markus_74 im Elternforum: Meine Tochter kommt völlig überreizt aus der Schule. In den Pausen starren alle nur auf ihre Bildschirme, niemand redet mehr miteinander. Ich finde, Handys haben an Schulen nichts verloren. Wie seht ihr das?\n\nDas Thema betrifft mich als Vater von zwei Schulkindern unmittelbar, deshalb möchte ich meine Sicht darlegen. Einerseits kann ich Markus gut verstehen: Durch die ständige Ablenkung leidet nicht nur die Konzentration, sondern auch das soziale Miteinander in den Pausen. Andererseits halte ich ein komplettes Verbot für den falschen Weg. Zum einen lässt es sich in der Praxis kaum kontrollieren, zum anderen gehören digitale Medien nun einmal zur Lebenswelt der Jugendlichen. Statt Handys generell zu verbieten, sollte der Umgang mit ihnen gezielt vermittelt werden, etwa in einem Fach wie Medienkunde. An der Schule meiner Tochter gibt es außerdem eine überzeugende Zwischenlösung: Bis zur zehnten Klasse bleiben die Geräte vormittags in Schließfächern, während sie im Unterricht gelegentlich gezielt eingesetzt werden. Meiner Meinung nach wäre ein solches abgestuftes Modell sinnvoller als ein pauschales Verbot, das am Ende nur zu Konflikten führt.",
    "gloss": [
     {
      "de": "das Verbot",
-     "mevcutTr": "yasak",
-     "havuz": {
+     "currentTr": "yasak",
+     "pool": {
       "tr": "yasak",
       "en": "ban"
      }
     },
     {
      "de": "die Nutzung",
-     "mevcutTr": "kullanım"
+     "currentTr": "kullanım"
     },
     {
      "de": "der Umgang mit",
-     "mevcutTr": "kullanma biçimi"
+     "currentTr": "kullanma biçimi"
     },
     {
      "de": "die Ablenkung",
-     "mevcutTr": "dikkat dağınıklığı"
+     "currentTr": "dikkat dağınıklığı"
     },
     {
      "de": "das Miteinander",
-     "mevcutTr": "birliktelik",
-     "havuz": {
+     "currentTr": "birliktelik",
+     "pool": {
       "tr": "birbiriyle",
       "en": "with each other"
      }
     },
     {
      "de": "vermitteln",
-     "mevcutTr": "aktarmak",
-     "havuz": {
+     "currentTr": "aktarmak",
+     "pool": {
       "tr": "aktarmak",
       "en": "to convey"
      }
     },
     {
      "de": "das Schließfach",
-     "mevcutTr": "kilitli dolap"
+     "currentTr": "kilitli dolap"
     },
     {
      "de": "abgestuft",
-     "mevcutTr": "kademeli"
+     "currentTr": "kademeli"
     },
     {
      "de": "pauschal",
-     "mevcutTr": "toptan",
-     "havuz": {
+     "currentTr": "toptan",
+     "pool": {
       "tr": "her şey dahil",
       "en": "all-inclusive"
      }
     },
     {
      "de": "überreizt",
-     "mevcutTr": "aşırı uyarılmış"
+     "currentTr": "aşırı uyarılmış"
     }
    ],
    "phrases": [
     {
      "de": "Einerseits …, andererseits …",
-     "mevcutTr": "Bir yandan …, öte yandan …"
+     "currentTr": "Bir yandan …, öte yandan …"
     },
     {
      "de": "Ich halte … für …",
-     "mevcutTr": "…'yi … olarak görüyorum"
+     "currentTr": "…'yi … olarak görüyorum"
     },
     {
      "de": "Statt … zu verbieten",
-     "mevcutTr": "… yasaklamak yerine"
+     "currentTr": "… yasaklamak yerine"
     },
     {
      "de": "Zum einen …, zum anderen …",
-     "mevcutTr": "Birincisi …, ikincisi …"
+     "currentTr": "Birincisi …, ikincisi …"
     },
     {
      "de": "Es lässt sich kaum kontrollieren",
-     "mevcutTr": "Bunu denetlemek neredeyse imkânsız"
+     "currentTr": "Bunu denetlemek neredeyse imkânsız"
     },
     {
      "de": "Meiner Meinung nach",
-     "mevcutTr": "Bence"
+     "currentTr": "Bence"
     },
     {
      "de": "Ein sinnvoller Kompromiss wäre …",
-     "mevcutTr": "Mantıklı bir orta yol … olurdu"
+     "currentTr": "Mantıklı bir orta yol … olurdu"
     },
     {
      "de": "Das betrifft mich unmittelbar",
-     "mevcutTr": "Bu beni doğrudan ilgilendiriyor"
+     "currentTr": "Bu beni doğrudan ilgilendiriyor"
     }
    ]
   },
@@ -110,80 +110,80 @@
    "title": "Beschwerdebrief: Mangelhafte Möbellieferung",
    "genre": "Şikâyet mektubu",
    "intro": "Sipariş ettiğin dolap hasarlı geldi ve müşteri hizmetleri dönmüyor; önce iki cümle kur, sonra yarı resmi bir şikâyet mektubu yaz.",
-   "metin": "Der bestellte Schrank wurde mir in beschädigtem Zustand geliefert.\n\nIch bitte Sie um die umgehende Behebung des Schadens oder die Rückerstattung des Kaufpreises.\n\nSehr geehrte Damen und Herren,\n\nam 12. Juli habe ich in Ihrem Onlineshop einen Kleiderschrank mit der Bestellnummer 58231 bestellt. Die Lieferung erfolgte am 28. Juli, allerdings musste ich beim Auspacken feststellen, dass die linke Tür einen tiefen Kratzer aufweist und ein Scharnier fehlt.\n\nBereits am Tag der Lieferung habe ich Ihren Kundenservice telefonisch informiert. Mir wurde zugesichert, dass sich ein Mitarbeiter innerhalb von drei Werktagen melden würde. Trotz mehrmaliger Nachfrage per E-Mail ist dies bis heute nicht geschehen, was ich äußerst ärgerlich finde.\n\nIch fordere Sie daher auf, mir bis zum 20. August kostenlos eine einwandfreie Ersatztür samt Scharnier zu liefern oder den Kaufpreis in voller Höhe zu erstatten. Sollte ich bis zu diesem Termin keine Rückmeldung erhalten, sehe ich mich gezwungen, vom Kauf zurückzutreten und die Verbraucherzentrale einzuschalten.\n\nMit freundlichen Grüßen\nDeniz Aydın",
+   "text": "Der bestellte Schrank wurde mir in beschädigtem Zustand geliefert.\n\nIch bitte Sie um die umgehende Behebung des Schadens oder die Rückerstattung des Kaufpreises.\n\nSehr geehrte Damen und Herren,\n\nam 12. Juli habe ich in Ihrem Onlineshop einen Kleiderschrank mit der Bestellnummer 58231 bestellt. Die Lieferung erfolgte am 28. Juli, allerdings musste ich beim Auspacken feststellen, dass die linke Tür einen tiefen Kratzer aufweist und ein Scharnier fehlt.\n\nBereits am Tag der Lieferung habe ich Ihren Kundenservice telefonisch informiert. Mir wurde zugesichert, dass sich ein Mitarbeiter innerhalb von drei Werktagen melden würde. Trotz mehrmaliger Nachfrage per E-Mail ist dies bis heute nicht geschehen, was ich äußerst ärgerlich finde.\n\nIch fordere Sie daher auf, mir bis zum 20. August kostenlos eine einwandfreie Ersatztür samt Scharnier zu liefern oder den Kaufpreis in voller Höhe zu erstatten. Sollte ich bis zu diesem Termin keine Rückmeldung erhalten, sehe ich mich gezwungen, vom Kauf zurückzutreten und die Verbraucherzentrale einzuschalten.\n\nMit freundlichen Grüßen\nDeniz Aydın",
    "gloss": [
     {
      "de": "die Lieferung",
-     "mevcutTr": "teslimat",
-     "havuz": {
+     "currentTr": "teslimat",
+     "pool": {
       "tr": "teslimat",
       "en": "delivery"
      }
     },
     {
      "de": "beschädigt",
-     "mevcutTr": "hasarlı",
-     "havuz": {
+     "currentTr": "hasarlı",
+     "pool": {
       "tr": "hasarlı",
       "en": "damaged"
      }
     },
     {
      "de": "der Kratzer",
-     "mevcutTr": "çizik"
+     "currentTr": "çizik"
     },
     {
      "de": "das Scharnier",
-     "mevcutTr": "menteşe"
+     "currentTr": "menteşe"
     },
     {
      "de": "zusichern",
-     "mevcutTr": "taahhüt etmek",
-     "havuz": {
+     "currentTr": "taahhüt etmek",
+     "pool": {
       "tr": "taahhüt etmek",
       "en": "to assure"
      }
     },
     {
      "de": "die Nachfrage",
-     "mevcutTr": "sorma",
-     "havuz": {
+     "currentTr": "sorma",
+     "pool": {
       "tr": "talep",
       "en": "demand"
      }
     },
     {
      "de": "die Frist",
-     "mevcutTr": "son tarih",
-     "havuz": {
+     "currentTr": "son tarih",
+     "pool": {
       "tr": "son tarih",
       "en": "deadline"
      }
     },
     {
      "de": "erstatten",
-     "mevcutTr": "geri ödemek",
-     "havuz": {
+     "currentTr": "geri ödemek",
+     "pool": {
       "tr": "geri ödemek",
       "en": "to reimburse"
      }
     },
     {
      "de": "vom Kauf zurücktreten",
-     "mevcutTr": "satın almadan caymak"
+     "currentTr": "satın almadan caymak"
     },
     {
      "de": "einschalten",
-     "mevcutTr": "devreye sokmak",
-     "havuz": {
+     "currentTr": "devreye sokmak",
+     "pool": {
       "tr": "açmak",
       "en": "to turn on"
      }
     },
     {
      "de": "einwandfrei",
-     "mevcutTr": "kusursuz",
-     "havuz": {
+     "currentTr": "kusursuz",
+     "pool": {
       "tr": "kusursuz",
       "en": "flawless"
      }
@@ -192,39 +192,39 @@
    "phrases": [
     {
      "de": "Ich wende mich an Sie, weil …",
-     "mevcutTr": "Şu nedenle size başvuruyorum: …"
+     "currentTr": "Şu nedenle size başvuruyorum: …"
     },
     {
      "de": "Leider musste ich feststellen, dass …",
-     "mevcutTr": "Maalesef şunu fark ettim: …"
+     "currentTr": "Maalesef şunu fark ettim: …"
     },
     {
      "de": "Trotz mehrmaliger Nachfrage",
-     "mevcutTr": "Defalarca sormama rağmen"
+     "currentTr": "Defalarca sormama rağmen"
     },
     {
      "de": "Ich fordere Sie auf, …",
-     "mevcutTr": "Sizden … talep ediyorum"
+     "currentTr": "Sizden … talep ediyorum"
     },
     {
      "de": "Ich setze Ihnen eine Frist bis zum …",
-     "mevcutTr": "Size … tarihine kadar süre veriyorum"
+     "currentTr": "Size … tarihine kadar süre veriyorum"
     },
     {
      "de": "Andernfalls sehe ich mich gezwungen, …",
-     "mevcutTr": "Aksi hâlde … zorunda kalacağım"
+     "currentTr": "Aksi hâlde … zorunda kalacağım"
     },
     {
      "de": "den Kaufpreis in voller Höhe erstatten",
-     "mevcutTr": "satış bedelini tam olarak geri ödemek"
+     "currentTr": "satış bedelini tam olarak geri ödemek"
     },
     {
      "de": "Ich erwarte Ihre Rückmeldung",
-     "mevcutTr": "Dönüşünüzü bekliyorum"
+     "currentTr": "Dönüşünüzü bekliyorum"
     },
     {
      "de": "die Verbraucherzentrale einschalten",
-     "mevcutTr": "tüketici merkezini devreye sokmak"
+     "currentTr": "tüketici merkezini devreye sokmak"
     }
    ]
   },
@@ -235,93 +235,93 @@
    "title": "Leserbrief: Autofreie Innenstadt – ja oder nein?",
    "genre": "Okur mektubu",
    "intro": "Yerel gazete, şehir merkezinin hafta sonları trafiğe kapatılacağını yazdı; önce iki cümle kur, sonra gazeteye bir okur mektubu yaz.",
-   "metin": "Die Sperrung der Innenstadt für den Autoverkehr wird seit Jahren heftig diskutiert.\n\nSolange der öffentliche Nahverkehr nicht ausgebaut wird, lässt sich ein solches Verbot nicht umsetzen.\n\nAus dem Stadtanzeiger vom 2. August: Der Stadtrat plant, die Innenstadt ab dem kommenden Jahr an Wochenenden für den privaten Autoverkehr zu sperren. Während Umweltverbände den Beschluss begrüßen, warnt der Einzelhandel vor erheblichen Umsatzeinbußen.\n\nMit großem Interesse habe ich Ihren Artikel über die geplante autofreie Innenstadt gelesen. Als Anwohnerin der Fußgängerzone begrüße ich den Beschluss des Stadtrats ausdrücklich. Es steht außer Frage, dass weniger Autoverkehr die Luftqualität verbessert und die Aufenthaltsqualität erhöht – das zeigen Städte wie Gent oder Pontevedra seit Jahren.\n\nDie Sorgen des Einzelhandels nehme ich dennoch ernst. Dabei wird allerdings übersehen, dass Kundinnen und Kunden, die zu Fuß oder mit dem Rad kommen, nach mehreren Untersuchungen sogar häufiger einkaufen als Autofahrer. Zwar mag der Umsatz in der Anfangszeit leicht zurückgehen, jedoch dürfte sich dieser Effekt ausgleichen, sobald die Innenstadt attraktiver wird.\n\nEntscheidend ist aus meiner Sicht die Umsetzung: Ohne zusätzliche Busverbindungen und sichere Radwege bleibt der Plan Stückwerk. Abschließend möchte ich deshalb vorschlagen, die Sperrung mit einem kostenlosen Wochenendticket für Busse und Bahnen zu verbinden. Davon würden Handel und Umwelt gleichermaßen profitieren.",
+   "text": "Die Sperrung der Innenstadt für den Autoverkehr wird seit Jahren heftig diskutiert.\n\nSolange der öffentliche Nahverkehr nicht ausgebaut wird, lässt sich ein solches Verbot nicht umsetzen.\n\nAus dem Stadtanzeiger vom 2. August: Der Stadtrat plant, die Innenstadt ab dem kommenden Jahr an Wochenenden für den privaten Autoverkehr zu sperren. Während Umweltverbände den Beschluss begrüßen, warnt der Einzelhandel vor erheblichen Umsatzeinbußen.\n\nMit großem Interesse habe ich Ihren Artikel über die geplante autofreie Innenstadt gelesen. Als Anwohnerin der Fußgängerzone begrüße ich den Beschluss des Stadtrats ausdrücklich. Es steht außer Frage, dass weniger Autoverkehr die Luftqualität verbessert und die Aufenthaltsqualität erhöht – das zeigen Städte wie Gent oder Pontevedra seit Jahren.\n\nDie Sorgen des Einzelhandels nehme ich dennoch ernst. Dabei wird allerdings übersehen, dass Kundinnen und Kunden, die zu Fuß oder mit dem Rad kommen, nach mehreren Untersuchungen sogar häufiger einkaufen als Autofahrer. Zwar mag der Umsatz in der Anfangszeit leicht zurückgehen, jedoch dürfte sich dieser Effekt ausgleichen, sobald die Innenstadt attraktiver wird.\n\nEntscheidend ist aus meiner Sicht die Umsetzung: Ohne zusätzliche Busverbindungen und sichere Radwege bleibt der Plan Stückwerk. Abschließend möchte ich deshalb vorschlagen, die Sperrung mit einem kostenlosen Wochenendticket für Busse und Bahnen zu verbinden. Davon würden Handel und Umwelt gleichermaßen profitieren.",
    "gloss": [
     {
      "de": "die Sperrung",
-     "mevcutTr": "kapatma"
+     "currentTr": "kapatma"
     },
     {
      "de": "der Einzelhandel",
-     "mevcutTr": "perakende",
-     "havuz": {
+     "currentTr": "perakende",
+     "pool": {
       "tr": "perakende",
       "en": "retail"
      }
     },
     {
      "de": "die Umsatzeinbuße",
-     "mevcutTr": "ciro kaybı"
+     "currentTr": "ciro kaybı"
     },
     {
      "de": "der Beschluss",
-     "mevcutTr": "karar",
-     "havuz": {
+     "currentTr": "karar",
+     "pool": {
       "tr": "karar",
       "en": "decision"
      }
     },
     {
      "de": "die Aufenthaltsqualität",
-     "mevcutTr": "mekân kalitesi",
-     "havuz": {
+     "currentTr": "mekân kalitesi",
+     "pool": {
       "tr": "mekân kalitesi",
       "en": "quality of stay"
      }
     },
     {
      "de": "übersehen",
-     "mevcutTr": "gözden kaçırmak"
+     "currentTr": "gözden kaçırmak"
     },
     {
      "de": "sich ausgleichen",
-     "mevcutTr": "dengelenmek"
+     "currentTr": "dengelenmek"
     },
     {
      "de": "die Umsetzung",
-     "mevcutTr": "uygulama"
+     "currentTr": "uygulama"
     },
     {
      "de": "das Stückwerk",
-     "mevcutTr": "yarım yamalak iş"
+     "currentTr": "yarım yamalak iş"
     },
     {
      "de": "profitieren von",
-     "mevcutTr": "yararlanmak"
+     "currentTr": "yararlanmak"
     }
    ],
    "phrases": [
     {
      "de": "Mit großem Interesse habe ich Ihren Artikel gelesen",
-     "mevcutTr": "Yazınızı büyük bir ilgiyle okudum"
+     "currentTr": "Yazınızı büyük bir ilgiyle okudum"
     },
     {
      "de": "Ich teile die Auffassung, dass …",
-     "mevcutTr": "… görüşünü paylaşıyorum"
+     "currentTr": "… görüşünü paylaşıyorum"
     },
     {
      "de": "Es steht außer Frage, dass …",
-     "mevcutTr": "… olduğu tartışmasız"
+     "currentTr": "… olduğu tartışmasız"
     },
     {
      "de": "Dabei wird übersehen, dass …",
-     "mevcutTr": "Burada gözden kaçırılan şu: …"
+     "currentTr": "Burada gözden kaçırılan şu: …"
     },
     {
      "de": "Zwar …, jedoch …",
-     "mevcutTr": "Gerçi …, ancak …"
+     "currentTr": "Gerçi …, ancak …"
     },
     {
      "de": "Entscheidend ist aus meiner Sicht …",
-     "mevcutTr": "Bana göre belirleyici olan …"
+     "currentTr": "Bana göre belirleyici olan …"
     },
     {
      "de": "Abschließend möchte ich vorschlagen, …",
-     "mevcutTr": "Son olarak şunu önermek isterim: …"
+     "currentTr": "Son olarak şunu önermek isterim: …"
     },
     {
      "de": "Davon würden beide Seiten profitieren",
-     "mevcutTr": "Bundan iki taraf da kazançlı çıkar"
+     "currentTr": "Bundan iki taraf da kazançlı çıkar"
     }
    ]
   },
@@ -332,97 +332,97 @@
    "title": "Forumsbeitrag: Homeoffice – Fluch oder Segen?",
    "genre": "Forum yorumu",
    "intro": "Bir kariyer forumunda „evden mi ofisten mi?“ tartışması dönüyor; önce iki cümle kur, sonra kendi deneyimlerinle dengeli bir yorum yaz.",
-   "metin": "Die Möglichkeit des Homeoffice wird von vielen Beschäftigten als großer Gewinn angesehen.\n\nIch befürchte, dass die Grenze zwischen Arbeit und Privatleben zunehmend verschwimmt.\n\nFrage von Elif_M im Karriereforum: Mein neuer Arbeitgeber lässt mir die Wahl zwischen Homeoffice und Büro. Ich kann mich nicht entscheiden. Wie arbeitet ihr lieber, und was sind eure Erfahrungen?\n\nDiese Frage beschäftigt unser Team seit Monaten, deshalb möchte ich meine Erfahrungen teilen. Ich arbeite seit drei Jahren überwiegend im Homeoffice und möchte die Vorteile nicht mehr missen: Der Wegfall des Pendelns spart mir täglich fast zwei Stunden, und konzentrierte Aufgaben erledige ich zu Hause deutlich schneller, weil ich seltener unterbrochen werde.\n\nAllerdings hat die Sache auch Schattenseiten. Der spontane Austausch mit den Kolleginnen und Kollegen fehlt mir, und gerade neue Teammitglieder tun sich schwer, Anschluss zu finden. Hinzu kommt die Gefahr, dass Arbeit und Freizeit ineinander übergehen – anfangs habe ich abends deutlich zu lange am Schreibtisch gesessen.\n\nAus meiner Sicht liegt die Lösung in einer klugen Mischung: zwei feste Bürotage für Besprechungen und Teamarbeit, der Rest flexibel von zu Hause. Wichtig ist dabei, klare Regeln zu vereinbaren, damit niemand rund um die Uhr erreichbar sein muss.",
+   "text": "Die Möglichkeit des Homeoffice wird von vielen Beschäftigten als großer Gewinn angesehen.\n\nIch befürchte, dass die Grenze zwischen Arbeit und Privatleben zunehmend verschwimmt.\n\nFrage von Elif_M im Karriereforum: Mein neuer Arbeitgeber lässt mir die Wahl zwischen Homeoffice und Büro. Ich kann mich nicht entscheiden. Wie arbeitet ihr lieber, und was sind eure Erfahrungen?\n\nDiese Frage beschäftigt unser Team seit Monaten, deshalb möchte ich meine Erfahrungen teilen. Ich arbeite seit drei Jahren überwiegend im Homeoffice und möchte die Vorteile nicht mehr missen: Der Wegfall des Pendelns spart mir täglich fast zwei Stunden, und konzentrierte Aufgaben erledige ich zu Hause deutlich schneller, weil ich seltener unterbrochen werde.\n\nAllerdings hat die Sache auch Schattenseiten. Der spontane Austausch mit den Kolleginnen und Kollegen fehlt mir, und gerade neue Teammitglieder tun sich schwer, Anschluss zu finden. Hinzu kommt die Gefahr, dass Arbeit und Freizeit ineinander übergehen – anfangs habe ich abends deutlich zu lange am Schreibtisch gesessen.\n\nAus meiner Sicht liegt die Lösung in einer klugen Mischung: zwei feste Bürotage für Besprechungen und Teamarbeit, der Rest flexibel von zu Hause. Wichtig ist dabei, klare Regeln zu vereinbaren, damit niemand rund um die Uhr erreichbar sein muss.",
    "gloss": [
     {
      "de": "der Wegfall",
-     "mevcutTr": "ortadan kalkma"
+     "currentTr": "ortadan kalkma"
     },
     {
      "de": "das Pendeln",
-     "mevcutTr": "işe gidip gelmek",
-     "havuz": {
+     "currentTr": "işe gidip gelmek",
+     "pool": {
       "tr": "işe gidip gelmek",
       "en": "to commute"
      }
     },
     {
      "de": "unterbrechen",
-     "mevcutTr": "bölmek",
-     "havuz": {
+     "currentTr": "bölmek",
+     "pool": {
       "tr": "sözünü kesmek",
       "en": "to interrupt"
      }
     },
     {
      "de": "die Schattenseite",
-     "mevcutTr": "olumsuz yan"
+     "currentTr": "olumsuz yan"
     },
     {
      "de": "der Austausch",
-     "mevcutTr": "fikir alışverişi"
+     "currentTr": "fikir alışverişi"
     },
     {
      "de": "Anschluss finden",
-     "mevcutTr": "kaynaşmak"
+     "currentTr": "kaynaşmak"
     },
     {
      "de": "ineinander übergehen",
-     "mevcutTr": "iç içe geçmek"
+     "currentTr": "iç içe geçmek"
     },
     {
      "de": "sich bewähren",
-     "mevcutTr": "kendini kanıtlamak",
-     "havuz": {
+     "currentTr": "kendini kanıtlamak",
+     "pool": {
       "tr": "kendini kanıtlamak",
       "en": "to prove itself"
      }
     },
     {
      "de": "vereinbaren",
-     "mevcutTr": "kararlaştırmak",
-     "havuz": {
+     "currentTr": "kararlaştırmak",
+     "pool": {
       "tr": "kararlaştırmak",
       "en": "to arrange"
      }
     },
     {
      "de": "erreichbar",
-     "mevcutTr": "ulaşılabilir"
+     "currentTr": "ulaşılabilir"
     }
    ],
    "phrases": [
     {
      "de": "Ich möchte meine Erfahrungen teilen",
-     "mevcutTr": "Deneyimlerimi paylaşmak istiyorum"
+     "currentTr": "Deneyimlerimi paylaşmak istiyorum"
     },
     {
      "de": "Ein großer Vorteil besteht darin, dass …",
-     "mevcutTr": "Büyük bir avantajı şu: …"
+     "currentTr": "Büyük bir avantajı şu: …"
     },
     {
      "de": "Allerdings hat die Sache auch Schattenseiten",
-     "mevcutTr": "Ancak işin olumsuz yanları da var"
+     "currentTr": "Ancak işin olumsuz yanları da var"
     },
     {
      "de": "Hinzu kommt, dass …",
-     "mevcutTr": "Buna ek olarak …"
+     "currentTr": "Buna ek olarak …"
     },
     {
      "de": "Aus meiner Sicht",
-     "mevcutTr": "Bana göre"
+     "currentTr": "Bana göre"
     },
     {
      "de": "Die Lösung liegt in …",
-     "mevcutTr": "Çözüm …'da yatıyor"
+     "currentTr": "Çözüm …'da yatıyor"
     },
     {
      "de": "Es hat sich bewährt, dass …",
-     "mevcutTr": "Şunun işe yaradığı görüldü: …"
+     "currentTr": "Şunun işe yaradığı görüldü: …"
     },
     {
      "de": "rund um die Uhr erreichbar sein",
-     "mevcutTr": "günün her saati ulaşılabilir olmak"
+     "currentTr": "günün her saati ulaşılabilir olmak"
     }
    ]
   },
@@ -433,85 +433,85 @@
    "title": "Widerspruch gegen einen Bescheid",
    "genre": "Resmî yazı",
    "intro": "Almanya'da resmî karara itiraz etmenin biçimi bellidir: süre, gerekçe, talep. Bunu yazacaksın.",
-   "metin": "Hiermit lege ich Widerspruch gegen den Bescheid vom 8. März ein.\n\nIn der Berechnung wurde mein Einkommen aus dem Januar nicht berücksichtigt.\n\nIch beantrage daher die Aufhebung des Bescheids.\n\nSehr geehrte Damen und Herren,\n\nhiermit lege ich Widerspruch gegen den Bescheid vom 8. März ein.\nAktenzeichen: WG-2026-114-7739\n\nZur Begründung führe ich aus:\n\nIn der Berechnung wurde mein Einkommen aus dem Januar nicht berücksichtigt, sondern das aus dem Dezember. Im Dezember habe ich eine einmalige Nachzahlung meines früheren Arbeitgebers erhalten, die im Bescheid als laufendes Einkommen behandelt wird. Dadurch liegt das angenommene Monatseinkommen um 640 Euro über dem tatsächlichen.\n\nAußerdem sind die Heizkosten mit 78 Euro angesetzt. Laut Nebenkostenabrechnung meines Vermieters betragen sie 121 Euro monatlich.\n\nAls Nachweis füge ich bei: die Lohnabrechnungen für Dezember und Januar, das Schreiben des früheren Arbeitgebers zur Nachzahlung sowie die Nebenkostenabrechnung 2025.\n\nIch beantrage daher die Aufhebung des Bescheids und eine neue Berechnung auf Grundlage der beigefügten Unterlagen.\n\nFür Rückfragen stehe ich Ihnen gern zur Verfügung.\n\nMit freundlichen Grüßen\nNora Weiß",
+   "text": "Hiermit lege ich Widerspruch gegen den Bescheid vom 8. März ein.\n\nIn der Berechnung wurde mein Einkommen aus dem Januar nicht berücksichtigt.\n\nIch beantrage daher die Aufhebung des Bescheids.\n\nSehr geehrte Damen und Herren,\n\nhiermit lege ich Widerspruch gegen den Bescheid vom 8. März ein.\nAktenzeichen: WG-2026-114-7739\n\nZur Begründung führe ich aus:\n\nIn der Berechnung wurde mein Einkommen aus dem Januar nicht berücksichtigt, sondern das aus dem Dezember. Im Dezember habe ich eine einmalige Nachzahlung meines früheren Arbeitgebers erhalten, die im Bescheid als laufendes Einkommen behandelt wird. Dadurch liegt das angenommene Monatseinkommen um 640 Euro über dem tatsächlichen.\n\nAußerdem sind die Heizkosten mit 78 Euro angesetzt. Laut Nebenkostenabrechnung meines Vermieters betragen sie 121 Euro monatlich.\n\nAls Nachweis füge ich bei: die Lohnabrechnungen für Dezember und Januar, das Schreiben des früheren Arbeitgebers zur Nachzahlung sowie die Nebenkostenabrechnung 2025.\n\nIch beantrage daher die Aufhebung des Bescheids und eine neue Berechnung auf Grundlage der beigefügten Unterlagen.\n\nFür Rückfragen stehe ich Ihnen gern zur Verfügung.\n\nMit freundlichen Grüßen\nNora Weiß",
    "gloss": [
     {
      "de": "der Bescheid",
-     "mevcutTr": "resmî karar",
-     "havuz": {
+     "currentTr": "resmî karar",
+     "pool": {
       "tr": "haber",
       "en": "notice"
      }
     },
     {
      "de": "der Widerspruch",
-     "mevcutTr": "itiraz",
-     "havuz": {
+     "currentTr": "itiraz",
+     "pool": {
       "tr": "çelişki",
       "en": "contradiction"
      }
     },
     {
      "de": "das Aktenzeichen",
-     "mevcutTr": "dosya numarası",
-     "havuz": {
+     "currentTr": "dosya numarası",
+     "pool": {
       "tr": "dosya numarası",
       "en": "file number"
      }
     },
     {
      "de": "die Begründung",
-     "mevcutTr": "gerekçe",
-     "havuz": {
+     "currentTr": "gerekçe",
+     "pool": {
       "tr": "gerekçe",
       "en": "justification"
      }
     },
     {
      "de": "beifügen",
-     "mevcutTr": "eklemek",
-     "havuz": {
+     "currentTr": "eklemek",
+     "pool": {
       "tr": "eklemek",
       "en": "to enclose"
      }
     },
     {
      "de": "die Berechnung",
-     "mevcutTr": "hesaplama"
+     "currentTr": "hesaplama"
     },
     {
      "de": "berücksichtigen",
-     "mevcutTr": "dikkate almak"
+     "currentTr": "dikkate almak"
     },
     {
      "de": "die Aufhebung",
-     "mevcutTr": "iptal"
+     "currentTr": "iptal"
     }
    ],
    "phrases": [
     {
      "de": "Hiermit lege ich Widerspruch gegen … ein.",
-     "mevcutTr": "İşbu yazıyla …'e itiraz ediyorum."
+     "currentTr": "İşbu yazıyla …'e itiraz ediyorum."
     },
     {
      "de": "Aktenzeichen: …",
-     "mevcutTr": "Dosya numarası: …"
+     "currentTr": "Dosya numarası: …"
     },
     {
      "de": "Zur Begründung führe ich aus:",
-     "mevcutTr": "Gerekçe olarak şunları belirtiyorum:"
+     "currentTr": "Gerekçe olarak şunları belirtiyorum:"
     },
     {
      "de": "Als Nachweis füge ich … bei.",
-     "mevcutTr": "Kanıt olarak … ekliyorum."
+     "currentTr": "Kanıt olarak … ekliyorum."
     },
     {
      "de": "Ich beantrage daher …",
-     "mevcutTr": "Bu nedenle … talep ediyorum."
+     "currentTr": "Bu nedenle … talep ediyorum."
     },
     {
      "de": "Für Rückfragen stehe ich zur Verfügung.",
-     "mevcutTr": "Sorularınız için müsaitim."
+     "currentTr": "Sorularınız için müsaitim."
     }
    ]
   },
@@ -522,52 +522,52 @@
    "title": "Erörterung: Pro und Kontra",
    "genre": "Sınav formatı",
    "intro": "B2 yazma bölümünün ana görevi: bir konuyu iki yönüyle tartışıp kendi sonucuna varmak. Yapı burada içerik kadar önemlidir.",
-   "metin": "Über dieses Thema wird seit Jahren diskutiert.\n\nDieses Argument hat einen berechtigten Kern, aber nicht mehr.\n\nNach Abwägung aller Punkte schließe ich mich der zweiten Position an.\n\nÜber die Frage, ob ein Studium kostenlos sein soll, wird in Deutschland seit Jahren diskutiert — meist dann, wenn die Haushalte der Länder knapp werden.\n\nFür ein gebührenfreies Studium spricht zunächst der Zugang. Wer aus einer Familie ohne akademischen Hintergrund kommt, entscheidet sich schon bei geringen Kosten häufiger gegen ein Studium; das ist gut belegt. Ein weiteres Argument ist volkswirtschaftlich: Ein Staat, der Ausbildung finanziert, holt das Geld später über Steuern zurück.\n\nDagegen wird eingewendet, dass gerade das gebührenfreie System sozial ungerecht sei. Es wird von allen bezahlt, genutzt aber überdurchschnittlich von Kindern gut verdienender Eltern. Hinzu kommt die Finanzierungslage: Hörsäle, Bibliotheken und Personal sind vielerorts überlastet.\n\nDieses zweite Argument hat einen berechtigten Kern, aber es trifft nicht die Gebührenfrage, sondern die Schulpolitik. Wer die soziale Auswahl vor dem Studium nicht ändert, verschiebt mit Gebühren nur die Hürde und macht sie zusätzlich sichtbar.\n\nNach Abwägung aller Punkte halte ich Gebühren für den falschen Hebel. Sinnvoller wäre, die Hochschulen besser zu finanzieren und gleichzeitig das BAföG so zu erhöhen, dass es die tatsächlichen Lebenshaltungskosten deckt. Das Problem liegt selten in den Studiengebühren — es liegt in der Miete.",
+   "text": "Über dieses Thema wird seit Jahren diskutiert.\n\nDieses Argument hat einen berechtigten Kern, aber nicht mehr.\n\nNach Abwägung aller Punkte schließe ich mich der zweiten Position an.\n\nÜber die Frage, ob ein Studium kostenlos sein soll, wird in Deutschland seit Jahren diskutiert — meist dann, wenn die Haushalte der Länder knapp werden.\n\nFür ein gebührenfreies Studium spricht zunächst der Zugang. Wer aus einer Familie ohne akademischen Hintergrund kommt, entscheidet sich schon bei geringen Kosten häufiger gegen ein Studium; das ist gut belegt. Ein weiteres Argument ist volkswirtschaftlich: Ein Staat, der Ausbildung finanziert, holt das Geld später über Steuern zurück.\n\nDagegen wird eingewendet, dass gerade das gebührenfreie System sozial ungerecht sei. Es wird von allen bezahlt, genutzt aber überdurchschnittlich von Kindern gut verdienender Eltern. Hinzu kommt die Finanzierungslage: Hörsäle, Bibliotheken und Personal sind vielerorts überlastet.\n\nDieses zweite Argument hat einen berechtigten Kern, aber es trifft nicht die Gebührenfrage, sondern die Schulpolitik. Wer die soziale Auswahl vor dem Studium nicht ändert, verschiebt mit Gebühren nur die Hürde und macht sie zusätzlich sichtbar.\n\nNach Abwägung aller Punkte halte ich Gebühren für den falschen Hebel. Sinnvoller wäre, die Hochschulen besser zu finanzieren und gleichzeitig das BAföG so zu erhöhen, dass es die tatsächlichen Lebenshaltungskosten deckt. Das Problem liegt selten in den Studiengebühren — es liegt in der Miete.",
    "gloss": [
     {
      "de": "die Erörterung",
-     "mevcutTr": "irdeleme",
-     "havuz": {
+     "currentTr": "irdeleme",
+     "pool": {
       "tr": "irdeleme",
       "en": "discussion"
      }
     },
     {
      "de": "die These",
-     "mevcutTr": "tez",
-     "havuz": {
+     "currentTr": "tez",
+     "pool": {
       "tr": "tez",
       "en": "thesis"
      }
     },
     {
      "de": "abwägen",
-     "mevcutTr": "ölçüp biçmek",
-     "havuz": {
+     "currentTr": "ölçüp biçmek",
+     "pool": {
       "tr": "ölçüp biçmek",
       "en": "to weigh up"
      }
     },
     {
      "de": "das Argument entkräften",
-     "mevcutTr": "argümanı çürütmek"
+     "currentTr": "argümanı çürütmek"
     },
     {
      "de": "zum einen … zum anderen",
-     "mevcutTr": "bir yandan … diğer yandan"
+     "currentTr": "bir yandan … diğer yandan"
     },
     {
      "de": "letztlich",
-     "mevcutTr": "sonuçta",
-     "havuz": {
+     "currentTr": "sonuçta",
+     "pool": {
       "tr": "sonuçta",
       "en": "ultimately"
      }
     },
     {
      "de": "die Schlussfolgerung",
-     "mevcutTr": "çıkarım",
-     "havuz": {
+     "currentTr": "çıkarım",
+     "pool": {
       "tr": "çıkarım",
       "en": "conclusion"
      }
@@ -576,27 +576,27 @@
    "phrases": [
     {
      "de": "Über dieses Thema wird seit Jahren diskutiert.",
-     "mevcutTr": "Bu konu yıllardır tartışılıyor."
+     "currentTr": "Bu konu yıllardır tartışılıyor."
     },
     {
      "de": "Für … spricht zunächst, dass …",
-     "mevcutTr": "…'in lehine ilk olarak şu var: …"
+     "currentTr": "…'in lehine ilk olarak şu var: …"
     },
     {
      "de": "Ein weiteres Argument ist …",
-     "mevcutTr": "Bir diğer argüman …"
+     "currentTr": "Bir diğer argüman …"
     },
     {
      "de": "Dagegen wird eingewendet, dass …",
-     "mevcutTr": "Buna karşı şu itiraz yapılıyor: …"
+     "currentTr": "Buna karşı şu itiraz yapılıyor: …"
     },
     {
      "de": "Dieses Argument hat einen berechtigten Kern, aber …",
-     "mevcutTr": "Bu argümanın haklı bir yanı var ama …"
+     "currentTr": "Bu argümanın haklı bir yanı var ama …"
     },
     {
      "de": "Nach Abwägung aller Punkte …",
-     "mevcutTr": "Bütün noktaları tarttıktan sonra …"
+     "currentTr": "Bütün noktaları tarttıktan sonra …"
     }
    ]
   },
@@ -607,77 +607,77 @@
    "title": "Kommentar zur Erinnerungskultur",
    "genre": "Köşe yazısı",
    "intro": "b2-r9'daki konuyu bir köşe yazısına dönüştüreceksin: kendi bakışın, bir itiraz ve bir sonuç. Bu konuda ton önemlidir — büyük laf değil, düşünülmüş cümle.",
-   "metin": "Erinnerung verliert ihren Inhalt in dem Moment, in dem sie zum Ritual wird.\n\nDiesen Einwand muss man ernst nehmen.\n\nDie Frage richtet sich nicht an die Vergangenheit, sondern an die Gegenwart.\n\nVor meiner Haustür liegt ein Stolperstein. Ich gehe seit vier Jahren täglich darüber, und ich habe den Namen erst im dritten Jahr gelesen — an einem Morgen, an dem mein Bus nicht kam und ich zehn Minuten stehen musste.\n\nDas klingt nach einem Versäumnis, und das ist es auch. Aber es sagt zugleich etwas über die Idee dieses Denkmals. Es verlangt nichts. Es steht nicht auf einem Platz, zu dem man fährt, sondern liegt im Weg — und man begegnet ihm irgendwann, ohne es geplant zu haben.\n\nMan könnte einwenden, dass genau das zu wenig ist. Ein Stein, über den alle laufen, wird zur Möblierung; Erinnerung verliert ihren Inhalt in dem Moment, in dem sie zum Ritual wird. Diesen Einwand muss man ernst nehmen, denn er beschreibt etwas Richtiges: In vielen deutschen Städten gibt es inzwischen mehr Gedenkformate als Menschen, die sie besuchen.\n\nGenau darin liegt aber auch der Unterschied. Ein Ritual hat einen Termin. Ein Stein im Gehweg hat keinen. Er wirkt nicht, weil man ihn ehrt, sondern weil er einen an einem beliebigen Dienstag erwischt.\n\nEs geht nicht um die Frage, ob wir genug erinnern, sondern wann. Am Ende bleibt die Frage, ob ein Name, den man beim Warten auf den Bus liest, mehr auslöst als eine Rede, die man erwartet hat. Ich glaube inzwischen: ja.",
+   "text": "Erinnerung verliert ihren Inhalt in dem Moment, in dem sie zum Ritual wird.\n\nDiesen Einwand muss man ernst nehmen.\n\nDie Frage richtet sich nicht an die Vergangenheit, sondern an die Gegenwart.\n\nVor meiner Haustür liegt ein Stolperstein. Ich gehe seit vier Jahren täglich darüber, und ich habe den Namen erst im dritten Jahr gelesen — an einem Morgen, an dem mein Bus nicht kam und ich zehn Minuten stehen musste.\n\nDas klingt nach einem Versäumnis, und das ist es auch. Aber es sagt zugleich etwas über die Idee dieses Denkmals. Es verlangt nichts. Es steht nicht auf einem Platz, zu dem man fährt, sondern liegt im Weg — und man begegnet ihm irgendwann, ohne es geplant zu haben.\n\nMan könnte einwenden, dass genau das zu wenig ist. Ein Stein, über den alle laufen, wird zur Möblierung; Erinnerung verliert ihren Inhalt in dem Moment, in dem sie zum Ritual wird. Diesen Einwand muss man ernst nehmen, denn er beschreibt etwas Richtiges: In vielen deutschen Städten gibt es inzwischen mehr Gedenkformate als Menschen, die sie besuchen.\n\nGenau darin liegt aber auch der Unterschied. Ein Ritual hat einen Termin. Ein Stein im Gehweg hat keinen. Er wirkt nicht, weil man ihn ehrt, sondern weil er einen an einem beliebigen Dienstag erwischt.\n\nEs geht nicht um die Frage, ob wir genug erinnern, sondern wann. Am Ende bleibt die Frage, ob ein Name, den man beim Warten auf den Bus liest, mehr auslöst als eine Rede, die man erwartet hat. Ich glaube inzwischen: ja.",
    "gloss": [
     {
      "de": "die Erinnerungskultur",
-     "mevcutTr": "hatırlama kültürü",
-     "havuz": {
+     "currentTr": "hatırlama kültürü",
+     "pool": {
       "tr": "hatırlama kültürü",
       "en": "memory culture"
      }
     },
     {
      "de": "die Haltung",
-     "mevcutTr": "tutum"
+     "currentTr": "tutum"
     },
     {
      "de": "die Geste",
-     "mevcutTr": "jest"
+     "currentTr": "jest"
     },
     {
      "de": "beiläufig",
-     "mevcutTr": "laf arasında",
-     "havuz": {
+     "currentTr": "laf arasında",
+     "pool": {
       "tr": "laf arasında",
       "en": "casually"
      }
     },
     {
      "de": "das Ritual",
-     "mevcutTr": "ritüel",
-     "havuz": {
+     "currentTr": "ritüel",
+     "pool": {
       "tr": "ritüel",
       "en": "ritual"
      }
     },
     {
      "de": "hohl",
-     "mevcutTr": "içi boş"
+     "currentTr": "içi boş"
     },
     {
      "de": "angemessen",
-     "mevcutTr": "makul",
-     "havuz": {
+     "currentTr": "makul",
+     "pool": {
       "tr": "makul",
       "en": "reasonable"
      }
     },
     {
      "de": "die Gegenwart",
-     "mevcutTr": "bugün"
+     "currentTr": "bugün"
     }
    ],
    "phrases": [
     {
      "de": "Vor meiner Haustür liegt …",
-     "mevcutTr": "Kapımın önünde … var."
+     "currentTr": "Kapımın önünde … var."
     },
     {
      "de": "Man könnte einwenden, dass …",
-     "mevcutTr": "Şöyle bir itiraz gelebilir: …"
+     "currentTr": "Şöyle bir itiraz gelebilir: …"
     },
     {
      "de": "Genau darin liegt der Punkt.",
-     "mevcutTr": "İşin özü tam burada."
+     "currentTr": "İşin özü tam burada."
     },
     {
      "de": "Es geht nicht um …, sondern um …",
-     "mevcutTr": "Mesele … değil, …"
+     "currentTr": "Mesele … değil, …"
     },
     {
      "de": "Am Ende bleibt die Frage: …",
-     "mevcutTr": "Sonunda geriye şu soru kalıyor: …"
+     "currentTr": "Sonunda geriye şu soru kalıyor: …"
     }
    ]
   },
@@ -688,64 +688,64 @@
    "title": "Der Artikel",
    "genre": "Haber yazısı",
    "intro": "Hikâyenin son parçası: Nora'nın yerine geçip haberi yazacaksın. Gazetecilikte kural nettir — iddia ile kanıt ayrılır, karşı taraf konuşturulur.",
-   "metin": "Unserer Redaktion liegen Schichtpläne aus sechs Monaten vor.\n\nDas Unternehmen weist diesen Vorwurf zurück.\n\nEin Zusammenhang lässt sich nicht nachweisen.\n\nVier Beschäftigte eines Logistikzentrums in Nordkamp haben nach kritischen Wortmeldungen deutlich weniger Schichten erhalten. Das geht aus Schichtplänen von sechs Monaten hervor, die unserer Redaktion vorliegen.\n\nDie vier hatten im Oktober auf einer Betriebsversammlung Kritik geäußert — zwei an der Pausenregelung, zwei an unbezahlten Umkleidezeiten. Ab November sank ihre Zahl der Schichten um durchschnittlich 38 Prozent. Im selben Monat stellte der Betrieb laut internem Newsletter sechs neue Kräfte ein.\n\nEine Mitarbeiterin, deren Name der Redaktion bekannt ist, sagt: „Jeder kennt zwei, drei Namen, bei denen es passiert ist.“ Sie wollte nicht namentlich auftreten; über ihre Vertragsverlängerung wird im März entschieden.\n\nDas Unternehmen weist die Vorwürfe zurück. Arbeitszeiten würden „gesetzeskonform erfasst und vergütet“; für eine Benachteiligung lägen keine Belege vor. Für die Verträge der Leihkräfte seien die Dienstleister zuständig, Zahlen zur Fluktuation lägen nicht vor.\n\nEin kausaler Zusammenhang zwischen den Wortmeldungen und den Schichtplänen lässt sich mit den vorliegenden Unterlagen nicht nachweisen. Auffällig bleibt die zeitliche Nähe — und die gleichzeitige Einstellung neuer Beschäftigter.",
+   "text": "Unserer Redaktion liegen Schichtpläne aus sechs Monaten vor.\n\nDas Unternehmen weist diesen Vorwurf zurück.\n\nEin Zusammenhang lässt sich nicht nachweisen.\n\nVier Beschäftigte eines Logistikzentrums in Nordkamp haben nach kritischen Wortmeldungen deutlich weniger Schichten erhalten. Das geht aus Schichtplänen von sechs Monaten hervor, die unserer Redaktion vorliegen.\n\nDie vier hatten im Oktober auf einer Betriebsversammlung Kritik geäußert — zwei an der Pausenregelung, zwei an unbezahlten Umkleidezeiten. Ab November sank ihre Zahl der Schichten um durchschnittlich 38 Prozent. Im selben Monat stellte der Betrieb laut internem Newsletter sechs neue Kräfte ein.\n\nEine Mitarbeiterin, deren Name der Redaktion bekannt ist, sagt: „Jeder kennt zwei, drei Namen, bei denen es passiert ist.“ Sie wollte nicht namentlich auftreten; über ihre Vertragsverlängerung wird im März entschieden.\n\nDas Unternehmen weist die Vorwürfe zurück. Arbeitszeiten würden „gesetzeskonform erfasst und vergütet“; für eine Benachteiligung lägen keine Belege vor. Für die Verträge der Leihkräfte seien die Dienstleister zuständig, Zahlen zur Fluktuation lägen nicht vor.\n\nEin kausaler Zusammenhang zwischen den Wortmeldungen und den Schichtplänen lässt sich mit den vorliegenden Unterlagen nicht nachweisen. Auffällig bleibt die zeitliche Nähe — und die gleichzeitige Einstellung neuer Beschäftigter.",
    "gloss": [
     {
      "de": "der Vorwurf",
-     "mevcutTr": "suçlama",
-     "havuz": {
+     "currentTr": "suçlama",
+     "pool": {
       "tr": "suçlama",
       "en": "accusation"
      }
     },
     {
      "de": "recherchieren",
-     "mevcutTr": "araştırmak",
-     "havuz": {
+     "currentTr": "araştırmak",
+     "pool": {
       "tr": "araştırmak",
       "en": "to research"
      }
     },
     {
      "de": "vorliegen",
-     "mevcutTr": "elde bulunmak"
+     "currentTr": "elde bulunmak"
     },
     {
      "de": "bestätigen",
-     "mevcutTr": "onaylamak",
-     "havuz": {
+     "currentTr": "onaylamak",
+     "pool": {
       "tr": "onaylamak",
       "en": "to confirm"
      }
     },
     {
      "de": "dementieren",
-     "mevcutTr": "yalanlamak",
-     "havuz": {
+     "currentTr": "yalanlamak",
+     "pool": {
       "tr": "yalanlamak",
       "en": "to deny"
      }
     },
     {
      "de": "die Quelle",
-     "mevcutTr": "kaynak",
-     "havuz": {
+     "currentTr": "kaynak",
+     "pool": {
       "tr": "kaynak",
       "en": "source"
      }
     },
     {
      "de": "der Zusammenhang",
-     "mevcutTr": "bağlantı",
-     "havuz": {
+     "currentTr": "bağlantı",
+     "pool": {
       "tr": "bağlantı",
       "en": "connection"
      }
     },
     {
      "de": "nachweisen",
-     "mevcutTr": "belgelemek",
-     "havuz": {
+     "currentTr": "belgelemek",
+     "pool": {
       "tr": "belgelemek",
       "en": "to prove"
      }
@@ -754,23 +754,23 @@
    "phrases": [
     {
      "de": "Nach Informationen unserer Redaktion …",
-     "mevcutTr": "Gazetemizin edindiği bilgilere göre …"
+     "currentTr": "Gazetemizin edindiği bilgilere göre …"
     },
     {
      "de": "Das geht aus … hervor, die uns vorliegen.",
-     "mevcutTr": "Bu, elimizdeki …'den anlaşılıyor."
+     "currentTr": "Bu, elimizdeki …'den anlaşılıyor."
     },
     {
      "de": "Eine Mitarbeiterin, deren Name der Redaktion bekannt ist, sagt: …",
-     "mevcutTr": "Adı gazetemizce bilinen bir çalışan şöyle diyor: …"
+     "currentTr": "Adı gazetemizce bilinen bir çalışan şöyle diyor: …"
     },
     {
      "de": "Das Unternehmen weist die Vorwürfe zurück.",
-     "mevcutTr": "Şirket suçlamaları reddediyor."
+     "currentTr": "Şirket suçlamaları reddediyor."
     },
     {
      "de": "Ein kausaler Zusammenhang lässt sich nicht nachweisen.",
-     "mevcutTr": "Nedensel bir bağlantı kanıtlanamıyor."
+     "currentTr": "Nedensel bir bağlantı kanıtlanamıyor."
     }
    ]
   }

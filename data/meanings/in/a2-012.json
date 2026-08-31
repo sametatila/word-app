@@ -1,17 +1,17 @@
 {
- "paket": "a2-012",
+ "packet": "a2-012",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 7538,
    "de": "sanft",
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yumuşak, nazik",
-   "mevcutBeispiel": "Die Krankenschwester hat eine sanfte Stimme.",
-   "mevcutBeispielTr": "Hemşirenin yumuşak bir sesi var.",
-   "cakisan": [
+   "currentTr": "yumuşak, nazik",
+   "currentBeispiel": "Die Krankenschwester hat eine sanfte Stimme.",
+   "currentBeispielTr": "Hemşirenin yumuşak bir sesi var.",
+   "overlapping": [
     "weich (A2)"
    ]
   },
@@ -21,9 +21,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "sevecen, şefkatli",
-   "mevcutBeispiel": "Meine Großmutter war immer sehr liebevoll.",
-   "mevcutBeispielTr": "Büyükannem her zaman çok sevecendi."
+   "currentTr": "sevecen, şefkatli",
+   "currentBeispiel": "Meine Großmutter war immer sehr liebevoll.",
+   "currentBeispielTr": "Büyükannem her zaman çok sevecendi."
   },
   {
    "id": 7540,
@@ -31,10 +31,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "şefkatli, nazik (dokunuş, ses)",
-   "mevcutBeispiel": "Er nahm sie zärtlich in den Arm.",
-   "mevcutBeispielTr": "Onu şefkatle kollarına aldı.",
-   "cakisan": [
+   "currentTr": "şefkatli, nazik (dokunuş, ses)",
+   "currentBeispiel": "Er nahm sie zärtlich in den Arm.",
+   "currentBeispielTr": "Onu şefkatle kollarına aldı.",
+   "overlapping": [
     "fürsorglich (A2)"
    ]
   },
@@ -44,10 +44,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "esprili, mizah dolu",
-   "mevcutBeispiel": "Unser Trainer ist ein humorvoller Mensch.",
-   "mevcutBeispielTr": "Antrenörümüz esprili bir insan.",
-   "cakisan": [
+   "currentTr": "esprili, mizah dolu",
+   "currentBeispiel": "Unser Trainer ist ein humorvoller Mensch.",
+   "currentBeispielTr": "Antrenörümüz esprili bir insan.",
+   "overlapping": [
     "witzig (A2)"
    ]
   },
@@ -57,9 +57,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "motive, istekli",
-   "mevcutBeispiel": "Die neue Praktikantin ist sehr motiviert.",
-   "mevcutBeispielTr": "Yeni stajyer çok istekli."
+   "currentTr": "motive, istekli",
+   "currentBeispiel": "Die neue Praktikantin ist sehr motiviert.",
+   "currentBeispielTr": "Yeni stajyer çok istekli."
   },
   {
    "id": 7543,
@@ -67,9 +67,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "karamsar",
-   "mevcutBeispiel": "Warum bist du immer so pessimistisch?",
-   "mevcutBeispielTr": "Neden hep bu kadar karamsarsın?"
+   "currentTr": "karamsar",
+   "currentBeispiel": "Warum bist du immer so pessimistisch?",
+   "currentBeispielTr": "Neden hep bu kadar karamsarsın?"
   },
   {
    "id": 7544,
@@ -77,9 +77,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "şaşkın, şaşırmış",
-   "mevcutBeispiel": "Ich war überrascht, dich hier zu sehen.",
-   "mevcutBeispielTr": "Seni burada görünce şaşırdım."
+   "currentTr": "şaşkın, şaşırmış",
+   "currentBeispiel": "Ich war überrascht, dich hier zu sehen.",
+   "currentBeispielTr": "Seni burada görünce şaşırdım."
   },
   {
    "id": 7545,
@@ -87,9 +87,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "hayret etmiş, şaşırmış",
-   "mevcutBeispiel": "Alle waren erstaunt über sein gutes Deutsch.",
-   "mevcutBeispielTr": "Herkes onun iyi Almancasına hayret etti."
+   "currentTr": "hayret etmiş, şaşırmış",
+   "currentBeispiel": "Alle waren erstaunt über sein gutes Deutsch.",
+   "currentBeispielTr": "Herkes onun iyi Almancasına hayret etti."
   },
   {
    "id": 7546,
@@ -97,10 +97,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "endişeli, kaygılı",
-   "mevcutBeispiel": "Die Eltern sind besorgt um ihren kranken Sohn.",
-   "mevcutBeispielTr": "Anne baba hasta oğulları için endişeli.",
-   "cakisan": [
+   "currentTr": "endişeli, kaygılı",
+   "currentBeispiel": "Die Eltern sind besorgt um ihren kranken Sohn.",
+   "currentBeispielTr": "Anne baba hasta oğulları için endişeli.",
+   "overlapping": [
     "ängstlich (B1)"
    ]
   },
@@ -110,9 +110,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "hayal kırıklığına uğramış",
-   "mevcutBeispiel": "Ich bin enttäuscht, weil du nicht gekommen bist.",
-   "mevcutBeispielTr": "Gelmediğin için hayal kırıklığına uğradım."
+   "currentTr": "hayal kırıklığına uğramış",
+   "currentBeispiel": "Ich bin enttäuscht, weil du nicht gekommen bist.",
+   "currentBeispielTr": "Gelmediğin için hayal kırıklığına uğradım."
   },
   {
    "id": 7548,
@@ -120,10 +120,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "heyecanlı, telaşlı",
-   "mevcutBeispiel": "Vor der Prüfung war ich sehr aufgeregt.",
-   "mevcutBeispielTr": "Sınavdan önce çok heyecanlıydım.",
-   "cakisan": [
+   "currentTr": "heyecanlı, telaşlı",
+   "currentBeispiel": "Vor der Prüfung war ich sehr aufgeregt.",
+   "currentBeispielTr": "Sınavdan önce çok heyecanlıydım.",
+   "overlapping": [
     "spannend (A2)"
    ]
   },
@@ -133,9 +133,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kafası karışmış, şaşkın",
-   "mevcutBeispiel": "Nach der langen Erklärung war ich völlig verwirrt.",
-   "mevcutBeispielTr": "Uzun açıklamadan sonra kafam tamamen karışmıştı."
+   "currentTr": "kafası karışmış, şaşkın",
+   "currentBeispiel": "Nach der langen Erklärung war ich völlig verwirrt.",
+   "currentBeispielTr": "Uzun açıklamadan sonra kafam tamamen karışmıştı."
   },
   {
    "id": 7550,
@@ -143,10 +143,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "kızgın, canı sıkkın",
-   "mevcutBeispiel": "Der Kunde war über die späte Lieferung verärgert.",
-   "mevcutBeispielTr": "Müşteri geç teslimat yüzünden kızgındı.",
-   "cakisan": [
+   "currentTr": "kızgın, canı sıkkın",
+   "currentBeispiel": "Der Kunde war über die späte Lieferung verärgert.",
+   "currentBeispielTr": "Müşteri geç teslimat yüzünden kızgındı.",
+   "overlapping": [
     "böse (A1)"
    ]
   },
@@ -156,9 +156,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "gücenmiş, alınmış",
-   "mevcutBeispiel": "Sie ist beleidigt, weil ich ihre Frisur nicht gelobt habe.",
-   "mevcutBeispielTr": "Saç modelini övmediğim için alındı."
+   "currentTr": "gücenmiş, alınmış",
+   "currentBeispiel": "Sie ist beleidigt, weil ich ihre Frisur nicht gelobt habe.",
+   "currentBeispielTr": "Saç modelini övmediğim için alındı."
   },
   {
    "id": 7552,
@@ -166,9 +166,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "rahatlamış, sakin",
-   "mevcutBeispiel": "Nach dem Urlaub sieht er sehr entspannt aus.",
-   "mevcutBeispielTr": "Tatilden sonra çok rahatlamış görünüyor."
+   "currentTr": "rahatlamış, sakin",
+   "currentBeispiel": "Nach dem Urlaub sieht er sehr entspannt aus.",
+   "currentBeispielTr": "Tatilden sonra çok rahatlamış görünüyor."
   },
   {
    "id": 7553,
@@ -176,9 +176,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "içi rahatlamış, ferahlamış",
-   "mevcutBeispiel": "Ich war erleichtert, als der Arzt anrief.",
-   "mevcutBeispielTr": "Doktor aradığında içim rahatladı."
+   "currentTr": "içi rahatlamış, ferahlamış",
+   "currentBeispiel": "Ich war erleichtert, als der Arzt anrief.",
+   "currentBeispielTr": "Doktor aradığında içim rahatladı."
   },
   {
    "id": 7554,
@@ -186,10 +186,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "stresli",
-   "mevcutBeispiel": "Meine Kollegin ist diese Woche total gestresst.",
-   "mevcutBeispielTr": "Meslektaşım bu hafta tamamen stresli.",
-   "cakisan": [
+   "currentTr": "stresli",
+   "currentBeispiel": "Meine Kollegin ist diese Woche total gestresst.",
+   "currentBeispielTr": "Meslektaşım bu hafta tamamen stresli.",
+   "overlapping": [
     "stressig (A2)"
    ]
   },
@@ -199,9 +199,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "canı sıkkın, sıkılmış",
-   "mevcutBeispiel": "Die Kinder saßen gelangweilt im Wartezimmer.",
-   "mevcutBeispielTr": "Çocuklar bekleme odasında canları sıkkın oturuyorlardı."
+   "currentTr": "canı sıkkın, sıkılmış",
+   "currentBeispiel": "Die Kinder saßen gelangweilt im Wartezimmer.",
+   "currentBeispielTr": "Çocuklar bekleme odasında canları sıkkın oturuyorlardı."
   },
   {
    "id": 7556,
@@ -209,9 +209,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "uykulu",
-   "mevcutBeispiel": "Nach dem Mittagessen werde ich immer schläfrig.",
-   "mevcutBeispielTr": "Öğle yemeğinden sonra hep uykum gelir."
+   "currentTr": "uykulu",
+   "currentBeispiel": "Nach dem Mittagessen werde ich immer schläfrig.",
+   "currentBeispielTr": "Öğle yemeğinden sonra hep uykum gelir."
   },
   {
    "id": 7557,
@@ -219,9 +219,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "mutsuz",
-   "mevcutBeispiel": "In seinem alten Job war er sehr unglücklich.",
-   "mevcutBeispielTr": "Eski işinde çok mutsuzdu."
+   "currentTr": "mutsuz",
+   "currentBeispiel": "In seinem alten Job war er sehr unglücklich.",
+   "currentBeispielTr": "Eski işinde çok mutsuzdu."
   },
   {
    "id": 7558,
@@ -229,9 +229,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "hoşnutsuz, memnuniyetsiz",
-   "mevcutBeispiel": "Der Gast war mit dem Zimmer unzufrieden.",
-   "mevcutBeispielTr": "Misafir odadan memnun değildi."
+   "currentTr": "hoşnutsuz, memnuniyetsiz",
+   "currentBeispiel": "Der Gast war mit dem Zimmer unzufrieden.",
+   "currentBeispielTr": "Misafir odadan memnun değildi."
   },
   {
    "id": 7559,
@@ -239,9 +239,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "adaletsiz, haksız",
-   "mevcutBeispiel": "Der Chef behandelt die Praktikanten ungerecht.",
-   "mevcutBeispielTr": "Patron stajyerlere adaletsiz davranıyor."
+   "currentTr": "adaletsiz, haksız",
+   "currentBeispiel": "Der Chef behandelt die Praktikanten ungerecht.",
+   "currentBeispielTr": "Patron stajyerlere adaletsiz davranıyor."
   },
   {
    "id": 7560,
@@ -249,9 +249,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "nişanlı",
-   "mevcutBeispiel": "Meine Schwester ist seit einem Jahr verlobt.",
-   "mevcutBeispielTr": "Kız kardeşim bir yıldır nişanlı."
+   "currentTr": "nişanlı",
+   "currentBeispiel": "Meine Schwester ist seit einem Jahr verlobt.",
+   "currentBeispielTr": "Kız kardeşim bir yıldır nişanlı."
   },
   {
    "id": 7561,
@@ -259,9 +259,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "dul",
-   "mevcutBeispiel": "Meine Nachbarin ist seit zehn Jahren verwitwet.",
-   "mevcutBeispielTr": "Komşum on yıldır dul."
+   "currentTr": "dul",
+   "currentBeispiel": "Meine Nachbarin ist seit zehn Jahren verwitwet.",
+   "currentBeispielTr": "Komşum on yıldır dul."
   },
   {
    "id": 7562,
@@ -269,9 +269,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "reşit olmayan",
-   "mevcutBeispiel": "Minderjährige Kinder dürfen keinen Alkohol kaufen.",
-   "mevcutBeispielTr": "Reşit olmayan çocuklar alkol satın alamaz."
+   "currentTr": "reşit olmayan",
+   "currentBeispiel": "Minderjährige Kinder dürfen keinen Alkohol kaufen.",
+   "currentBeispielTr": "Reşit olmayan çocuklar alkol satın alamaz."
   },
   {
    "id": 7563,
@@ -279,9 +279,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "reşit",
-   "mevcutBeispiel": "In Deutschland ist man mit 18 Jahren volljährig.",
-   "mevcutBeispielTr": "Almanya'da 18 yaşında reşit olunuyor."
+   "currentTr": "reşit",
+   "currentBeispiel": "In Deutschland ist man mit 18 Jahren volljährig.",
+   "currentBeispielTr": "Almanya'da 18 yaşında reşit olunuyor."
   },
   {
    "id": 7564,
@@ -289,10 +289,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "genç, gençlere özgü",
-   "mevcutBeispiel": "Mit sechzig hat er noch ein jugendliches Aussehen.",
-   "mevcutBeispielTr": "Altmış yaşında hâlâ genç bir görünümü var.",
-   "cakisan": [
+   "currentTr": "genç, gençlere özgü",
+   "currentBeispiel": "Mit sechzig hat er noch ein jugendliches Aussehen.",
+   "currentBeispielTr": "Altmış yaşında hâlâ genç bir görünümü var.",
+   "overlapping": [
     "jung (A1)",
     "der Jugendliche (A1)"
    ]
@@ -303,9 +303,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "deneyimsiz, tecrübesiz",
-   "mevcutBeispiel": "Der neue Fahrer ist noch sehr unerfahren.",
-   "mevcutBeispielTr": "Yeni şoför henüz çok deneyimsiz."
+   "currentTr": "deneyimsiz, tecrübesiz",
+   "currentBeispiel": "Der neue Fahrer ist noch sehr unerfahren.",
+   "currentBeispielTr": "Yeni şoför henüz çok deneyimsiz."
   },
   {
    "id": 7566,
@@ -313,9 +313,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "emekli olmuş, emekliye ayrılmış",
-   "mevcutBeispiel": "Mein Onkel ist seit zwei Jahren pensioniert.",
-   "mevcutBeispielTr": "Amcam iki yıldır emekli."
+   "currentTr": "emekli olmuş, emekliye ayrılmış",
+   "currentBeispiel": "Mein Onkel ist seit zwei Jahren pensioniert.",
+   "currentBeispielTr": "Amcam iki yıldır emekli."
   },
   {
    "id": 7567,
@@ -323,9 +323,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "engelli",
-   "mevcutBeispiel": "Der Platz vorne ist für behinderte Fahrgäste.",
-   "mevcutBeispielTr": "Öndeki yer engelli yolcular içindir."
+   "currentTr": "engelli",
+   "currentBeispiel": "Der Platz vorne ist für behinderte Fahrgäste.",
+   "currentBeispielTr": "Öndeki yer engelli yolcular içindir."
   },
   {
    "id": 7568,
@@ -333,9 +333,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "arkadaş olan, dost",
-   "mevcutBeispiel": "Wir sind seit der Schulzeit befreundet.",
-   "mevcutBeispielTr": "Okul zamanından beri arkadaşız."
+   "currentTr": "arkadaş olan, dost",
+   "currentBeispiel": "Wir sind seit der Schulzeit befreundet.",
+   "currentBeispielTr": "Okul zamanından beri arkadaşız."
   },
   {
    "id": 7569,
@@ -343,10 +343,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "tanıdık, alışık",
-   "mevcutBeispiel": "Seine Stimme kam mir sofort vertraut vor.",
-   "mevcutBeispielTr": "Sesi bana hemen tanıdık geldi.",
-   "cakisan": [
+   "currentTr": "tanıdık, alışık",
+   "currentBeispiel": "Seine Stimme kam mir sofort vertraut vor.",
+   "currentBeispielTr": "Sesi bana hemen tanıdık geldi.",
+   "overlapping": [
     "der Bekannte (A1)",
     "die Bekannte (B1)"
    ]
@@ -357,9 +357,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "bundan sonra, ileride",
-   "mevcutBeispiel": "Künftig arbeite ich nur noch vier Tage pro Woche.",
-   "mevcutBeispielTr": "Bundan sonra haftada sadece dört gün çalışacağım."
+   "currentTr": "bundan sonra, ileride",
+   "currentBeispiel": "Künftig arbeite ich nur noch vier Tage pro Woche.",
+   "currentBeispielTr": "Bundan sonra haftada sadece dört gün çalışacağım."
   },
   {
    "id": 7571,
@@ -367,10 +367,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yakında, çok yakında",
-   "mevcutBeispiel": "Der neue Supermarkt öffnet demnächst.",
-   "mevcutBeispielTr": "Yeni süpermarket yakında açılıyor.",
-   "cakisan": [
+   "currentTr": "yakında, çok yakında",
+   "currentBeispiel": "Der neue Supermarkt öffnet demnächst.",
+   "currentBeispielTr": "Yeni süpermarket yakında açılıyor.",
+   "overlapping": [
     "bald (A1)"
    ]
   },
@@ -380,10 +380,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "şimdiye kadar, bugüne dek",
-   "mevcutBeispiel": "Bislang habe ich keine Antwort bekommen.",
-   "mevcutBeispielTr": "Şimdiye kadar hiç cevap almadım.",
-   "cakisan": [
+   "currentTr": "şimdiye kadar, bugüne dek",
+   "currentBeispiel": "Bislang habe ich keine Antwort bekommen.",
+   "currentBeispielTr": "Şimdiye kadar hiç cevap almadım.",
+   "overlapping": [
     "bisher (B1)"
    ]
   },
@@ -393,9 +393,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "ondan önce, öncesinde",
-   "mevcutBeispiel": "Um acht beginnt der Kurs, davor trinke ich einen Kaffee.",
-   "mevcutBeispielTr": "Kurs sekizde başlıyor, ondan önce bir kahve içiyorum."
+   "currentTr": "ondan önce, öncesinde",
+   "currentBeispiel": "Um acht beginnt der Kurs, davor trinke ich einen Kaffee.",
+   "currentBeispielTr": "Kurs sekizde başlıyor, ondan önce bir kahve içiyorum."
   },
   {
    "id": 7574,
@@ -403,9 +403,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "daha önce, önceden",
-   "mevcutBeispiel": "Wir hatten uns nie zuvor gesehen.",
-   "mevcutBeispielTr": "Birbirimizi daha önce hiç görmemiştik."
+   "currentTr": "daha önce, önceden",
+   "currentBeispiel": "Wir hatten uns nie zuvor gesehen.",
+   "currentBeispielTr": "Birbirimizi daha önce hiç görmemiştik."
   },
   {
    "id": 7575,
@@ -413,9 +413,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "ardından, hemen sonra",
-   "mevcutBeispiel": "Wir essen zuerst, anschließend gehen wir ins Kino.",
-   "mevcutBeispielTr": "Önce yemek yiyoruz, ardından sinemaya gidiyoruz."
+   "currentTr": "ardından, hemen sonra",
+   "currentBeispiel": "Wir essen zuerst, anschließend gehen wir ins Kino.",
+   "currentBeispielTr": "Önce yemek yiyoruz, ardından sinemaya gidiyoruz."
   },
   {
    "id": 7576,
@@ -423,9 +423,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "en erken",
-   "mevcutBeispiel": "Der Arzt hat frühestens am Freitag einen Termin frei.",
-   "mevcutBeispielTr": "Doktorun en erken cuma günü boş randevusu var."
+   "currentTr": "en erken",
+   "currentBeispiel": "Der Arzt hat frühestens am Freitag einen Termin frei.",
+   "currentBeispielTr": "Doktorun en erken cuma günü boş randevusu var."
   },
   {
    "id": 7577,
@@ -433,9 +433,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "son zamanlarda, yeni yeni",
-   "mevcutBeispiel": "Neuerdings fährt mein Vater mit dem Fahrrad zur Arbeit.",
-   "mevcutBeispielTr": "Son zamanlarda babam işe bisikletle gidiyor."
+   "currentTr": "son zamanlarda, yeni yeni",
+   "currentBeispiel": "Neuerdings fährt mein Vater mit dem Fahrrad zur Arbeit.",
+   "currentBeispielTr": "Son zamanlarda babam işe bisikletle gidiyor."
   },
   {
    "id": 7578,
@@ -443,10 +443,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "o zamandan beri",
-   "mevcutBeispiel": "Sie ist letztes Jahr umgezogen und seither sehen wir uns selten.",
-   "mevcutBeispielTr": "Geçen yıl taşındı ve o zamandan beri birbirimizi nadiren görüyoruz.",
-   "cakisan": [
+   "currentTr": "o zamandan beri",
+   "currentBeispiel": "Sie ist letztes Jahr umgezogen und seither sehen wir uns selten.",
+   "currentBeispielTr": "Geçen yıl taşındı ve o zamandan beri birbirimizi nadiren görüyoruz.",
+   "overlapping": [
     "seitdem (B1)"
    ]
   },
@@ -456,9 +456,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "arada bir, arada sırada",
-   "mevcutBeispiel": "Ich lerne drei Stunden und mache zwischendurch eine Pause.",
-   "mevcutBeispielTr": "Üç saat çalışıyorum ve arada bir mola veriyorum."
+   "currentTr": "arada bir, arada sırada",
+   "currentBeispiel": "Ich lerne drei Stunden und mache zwischendurch eine Pause.",
+   "currentBeispielTr": "Üç saat çalışıyorum ve arada bir mola veriyorum."
   },
   {
    "id": 7580,
@@ -466,10 +466,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "şu anda, şimdilik",
-   "mevcutBeispiel": "Momentan habe ich leider kein Geld für ein Auto.",
-   "mevcutBeispielTr": "Şu anda maalesef araba için param yok.",
-   "cakisan": [
+   "currentTr": "şu anda, şimdilik",
+   "currentBeispiel": "Momentan habe ich leider kein Geld für ein Auto.",
+   "currentBeispielTr": "Şu anda maalesef araba için param yok.",
+   "overlapping": [
     "gerade (A1)",
     "zurzeit (A1)"
    ]
@@ -480,9 +480,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "şu sıralar, hâlihazırda",
-   "mevcutBeispiel": "Derzeit sucht die Firma zwei neue Mitarbeiter.",
-   "mevcutBeispielTr": "Şu sıralar firma iki yeni çalışan arıyor."
+   "currentTr": "şu sıralar, hâlihazırda",
+   "currentBeispiel": "Derzeit sucht die Firma zwei neue Mitarbeiter.",
+   "currentBeispielTr": "Şu sıralar firma iki yeni çalışan arıyor."
   },
   {
    "id": 7582,
@@ -490,9 +490,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "gündüzleri, gün boyunca",
-   "mevcutBeispiel": "Tagsüber ist niemand zu Hause.",
-   "mevcutBeispielTr": "Gündüzleri evde kimse olmuyor."
+   "currentTr": "gündüzleri, gün boyunca",
+   "currentBeispiel": "Tagsüber ist niemand zu Hause.",
+   "currentBeispielTr": "Gündüzleri evde kimse olmuyor."
   },
   {
    "id": 7583,
@@ -500,9 +500,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "şimdilik, geçici olarak",
-   "mevcutBeispiel": "Wir bleiben vorerst in der alten Wohnung.",
-   "mevcutBeispielTr": "Şimdilik eski dairede kalıyoruz."
+   "currentTr": "şimdilik, geçici olarak",
+   "currentBeispiel": "Wir bleiben vorerst in der alten Wohnung.",
+   "currentBeispielTr": "Şimdilik eski dairede kalıyoruz."
   },
   {
    "id": 7584,
@@ -510,9 +510,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "zaman zaman, bir süreliğine",
-   "mevcutBeispiel": "Die Straße ist zeitweise gesperrt.",
-   "mevcutBeispielTr": "Yol zaman zaman kapalı oluyor."
+   "currentTr": "zaman zaman, bir süreliğine",
+   "currentBeispiel": "Die Straße ist zeitweise gesperrt.",
+   "currentBeispielTr": "Yol zaman zaman kapalı oluyor."
   },
   {
    "id": 7585,
@@ -520,9 +520,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yıllarca",
-   "mevcutBeispiel": "Er hat jahrelang in der Schweiz gearbeitet.",
-   "mevcutBeispielTr": "Yıllarca İsviçre'de çalıştı."
+   "currentTr": "yıllarca",
+   "currentBeispiel": "Er hat jahrelang in der Schweiz gearbeitet.",
+   "currentBeispielTr": "Yıllarca İsviçre'de çalıştı."
   },
   {
    "id": 7586,
@@ -530,9 +530,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "saatlerce",
-   "mevcutBeispiel": "Wir haben stundenlang auf den Zug gewartet.",
-   "mevcutBeispielTr": "Saatlerce treni bekledik."
+   "currentTr": "saatlerce",
+   "currentBeispiel": "Wir haben stundenlang auf den Zug gewartet.",
+   "currentBeispielTr": "Saatlerce treni bekledik."
   },
   {
    "id": 7587,
@@ -540,9 +540,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "günlerce",
-   "mevcutBeispiel": "Es hat tagelang geregnet.",
-   "mevcutBeispielTr": "Günlerce yağmur yağdı."
+   "currentTr": "günlerce",
+   "currentBeispiel": "Es hat tagelang geregnet.",
+   "currentBeispielTr": "Günlerce yağmur yağdı."
   }
  ]
 }

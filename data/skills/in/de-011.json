@@ -1,7 +1,7 @@
 {
- "paket": "de-011",
+ "packet": "de-011",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "b1-l5",
    "skill": "listening",
@@ -9,67 +9,67 @@
    "title": "Tag der offenen Tür an der Volkshochschule",
    "genre": "Duyuru",
    "intro": "Halk eğitim merkezinin açık kapı gününde yapılan anonsu dinle.",
-   "metin": "Liebe Besucherinnen und Besucher, herzlich willkommen zum Tag der offenen Tür der Volkshochschule Bochum. Bevor die einzelnen Kurse vorgestellt werden, einige wichtige Informationen. Das neue Programmheft für das Herbstsemester liegt am Empfang für Sie bereit. Insgesamt werden über vierhundert Kurse angeboten, von Sprachen über Computerkurse bis zu Gesundheit und Kochen.\nNeu in diesem Semester ist der Bereich Digitale Sicherheit: Hier lernen Sie zum Beispiel, wie Sie sichere Passwörter erstellen und Betrug im Internet erkennen. Wer sich heute für einen Kurs anmeldet, erhält zehn Prozent Rabatt auf die Kursgebühr. Die Anmeldung ist in Raum zwölf im Erdgeschoss möglich, bitte bringen Sie dafür Ihren Ausweis mit.\nUm 15 Uhr stellen unsere Sprachlehrerinnen und Sprachlehrer im großen Saal die neuen Konversationskurse vor. Dort können Sie auch einen kostenlosen Einstufungstest machen, wenn Sie nicht sicher sind, welches Niveau zu Ihnen passt. Die Cafeteria im ersten Stock ist bis 17 Uhr geöffnet. Wir wünschen Ihnen einen schönen Tag!",
+   "text": "Liebe Besucherinnen und Besucher, herzlich willkommen zum Tag der offenen Tür der Volkshochschule Bochum. Bevor die einzelnen Kurse vorgestellt werden, einige wichtige Informationen. Das neue Programmheft für das Herbstsemester liegt am Empfang für Sie bereit. Insgesamt werden über vierhundert Kurse angeboten, von Sprachen über Computerkurse bis zu Gesundheit und Kochen.\nNeu in diesem Semester ist der Bereich Digitale Sicherheit: Hier lernen Sie zum Beispiel, wie Sie sichere Passwörter erstellen und Betrug im Internet erkennen. Wer sich heute für einen Kurs anmeldet, erhält zehn Prozent Rabatt auf die Kursgebühr. Die Anmeldung ist in Raum zwölf im Erdgeschoss möglich, bitte bringen Sie dafür Ihren Ausweis mit.\nUm 15 Uhr stellen unsere Sprachlehrerinnen und Sprachlehrer im großen Saal die neuen Konversationskurse vor. Dort können Sie auch einen kostenlosen Einstufungstest machen, wenn Sie nicht sicher sind, welches Niveau zu Ihnen passt. Die Cafeteria im ersten Stock ist bis 17 Uhr geöffnet. Wir wünschen Ihnen einen schönen Tag!",
    "gloss": [
     {
      "de": "der Tag der offenen Tür",
-     "mevcutTr": "açık kapı günü"
+     "currentTr": "açık kapı günü"
     },
     {
      "de": "die Volkshochschule",
-     "mevcutTr": "halk eğitim merkezi",
-     "havuz": {
+     "currentTr": "halk eğitim merkezi",
+     "pool": {
       "tr": "halk eğitim merkezi",
       "en": "adult education center"
      }
     },
     {
      "de": "das Programmheft",
-     "mevcutTr": "program kitapçığı"
+     "currentTr": "program kitapçığı"
     },
     {
      "de": "der Empfang",
-     "mevcutTr": "resepsiyon",
-     "havuz": {
+     "currentTr": "resepsiyon",
+     "pool": {
       "tr": "resepsiyon",
       "en": "reception"
      }
     },
     {
      "de": "der Betrug",
-     "mevcutTr": "dolandırıcılık",
-     "havuz": {
+     "currentTr": "dolandırıcılık",
+     "pool": {
       "tr": "dolandırıcılık",
       "en": "fraud"
      }
     },
     {
      "de": "sich anmelden",
-     "mevcutTr": "kaydolmak",
-     "havuz": {
+     "currentTr": "kaydolmak",
+     "pool": {
       "tr": "kaydolmak",
       "en": "to register"
      }
     },
     {
      "de": "die Kursgebühr",
-     "mevcutTr": "kurs ücreti"
+     "currentTr": "kurs ücreti"
     },
     {
      "de": "der Ausweis",
-     "mevcutTr": "kimlik",
-     "havuz": {
+     "currentTr": "kimlik",
+     "pool": {
       "tr": "kimlik",
       "en": "ID card"
      }
     },
     {
      "de": "der Einstufungstest",
-     "mevcutTr": "seviye tespit sınavı"
+     "currentTr": "seviye tespit sınavı"
     },
     {
      "de": "das Niveau",
-     "mevcutTr": "seviye"
+     "currentTr": "seviye"
     }
    ]
   },
@@ -80,75 +80,75 @@
    "title": "Wie viel Handy ist zu viel?",
    "genre": "Radyo röportajı",
    "intro": "Gençlerin telefon kullanımı üzerine yapılan araştırmayı anlatan uzman röportajını dinle.",
-   "metin": "Moderator: Wie viel Zeit verbringen Jugendliche am Handy? Eine neue Studie der Universität Mannheim liefert Antworten. Frau Doktor Lindner, Sie haben die Studie geleitet. Was sind die wichtigsten Ergebnisse?\nFrau Lindner: Jugendliche zwischen zwölf und siebzehn Jahren nutzen ihr Smartphone im Durchschnitt dreieinhalb Stunden täglich. Das klingt erst einmal viel, aber uns hat etwas anderes überrascht: Die meisten Jugendlichen finden selbst, dass das zu viel ist. Zwei Drittel wünschen sich, weniger Zeit am Handy zu verbringen.\nModerator: Und schaffen sie das auch?\nFrau Lindner: Selten, denn die Apps sind so gebaut, dass man immer weiterschauen möchte. Verbote helfen unserer Erfahrung nach wenig. Sinnvoller sind gemeinsame Regeln in der Familie, zum Beispiel handyfreie Zeiten beim Abendessen. Diese Regeln sollten dann übrigens auch für die Eltern gelten.\nModerator: Gibt es auch positive Ergebnisse?\nFrau Lindner: Ja, durchaus. Viele Jugendliche nutzen das Handy für die Schule, lernen mit Videos oder bleiben mit der Familie im Ausland in Kontakt. Das Smartphone ist also nicht nur ein Problem. Es kommt darauf an, wie man es benutzt.",
+   "text": "Moderator: Wie viel Zeit verbringen Jugendliche am Handy? Eine neue Studie der Universität Mannheim liefert Antworten. Frau Doktor Lindner, Sie haben die Studie geleitet. Was sind die wichtigsten Ergebnisse?\nFrau Lindner: Jugendliche zwischen zwölf und siebzehn Jahren nutzen ihr Smartphone im Durchschnitt dreieinhalb Stunden täglich. Das klingt erst einmal viel, aber uns hat etwas anderes überrascht: Die meisten Jugendlichen finden selbst, dass das zu viel ist. Zwei Drittel wünschen sich, weniger Zeit am Handy zu verbringen.\nModerator: Und schaffen sie das auch?\nFrau Lindner: Selten, denn die Apps sind so gebaut, dass man immer weiterschauen möchte. Verbote helfen unserer Erfahrung nach wenig. Sinnvoller sind gemeinsame Regeln in der Familie, zum Beispiel handyfreie Zeiten beim Abendessen. Diese Regeln sollten dann übrigens auch für die Eltern gelten.\nModerator: Gibt es auch positive Ergebnisse?\nFrau Lindner: Ja, durchaus. Viele Jugendliche nutzen das Handy für die Schule, lernen mit Videos oder bleiben mit der Familie im Ausland in Kontakt. Das Smartphone ist also nicht nur ein Problem. Es kommt darauf an, wie man es benutzt.",
    "gloss": [
     {
      "de": "der Jugendliche",
-     "mevcutTr": "genç",
-     "havuz": {
+     "currentTr": "genç",
+     "pool": {
       "tr": "genç kız",
       "en": "teenage girl"
      }
     },
     {
      "de": "die Studie",
-     "mevcutTr": "araştırma",
-     "havuz": {
+     "currentTr": "araştırma",
+     "pool": {
       "tr": "araştırma",
       "en": "study"
      }
     },
     {
      "de": "leiten",
-     "mevcutTr": "yönetmek",
-     "havuz": {
+     "currentTr": "yönetmek",
+     "pool": {
       "tr": "yönetmek",
       "en": "to lead"
      }
     },
     {
      "de": "das Ergebnis",
-     "mevcutTr": "sonuç",
-     "havuz": {
+     "currentTr": "sonuç",
+     "pool": {
       "tr": "sonuç",
       "en": "result"
      }
     },
     {
      "de": "im Durchschnitt",
-     "mevcutTr": "ortalama olarak"
+     "currentTr": "ortalama olarak"
     },
     {
      "de": "überraschen",
-     "mevcutTr": "şaşırtmak",
-     "havuz": {
+     "currentTr": "şaşırtmak",
+     "pool": {
       "tr": "şaşırtmak",
       "en": "to surprise"
      }
     },
     {
      "de": "das Verbot",
-     "mevcutTr": "yasak",
-     "havuz": {
+     "currentTr": "yasak",
+     "pool": {
       "tr": "yasak",
       "en": "ban"
      }
     },
     {
      "de": "sinnvoll",
-     "mevcutTr": "mantıklı",
-     "havuz": {
+     "currentTr": "mantıklı",
+     "pool": {
       "tr": "mantıklı",
       "en": "sensible"
      }
     },
     {
      "de": "gelten für",
-     "mevcutTr": "için geçerli olmak"
+     "currentTr": "için geçerli olmak"
     },
     {
      "de": "in Kontakt bleiben",
-     "mevcutTr": "iletişimde kalmak"
+     "currentTr": "iletişimde kalmak"
     }
    ]
   },
@@ -159,55 +159,55 @@
    "title": "Beim Steuerberater",
    "genre": "Danışma",
    "intro": "Hikâyenin devamı: Tarek mali müşavire gidiyor. Kendi işini kuran herkesin oturduğu masa.",
-   "metin": "Frau Petrova: Herr Haddad, Sie eröffnen im September. Was ist Ihre größte Sorge?\nTarek: Ehrlich? Die Steuern. Ich verstehe nicht, wie viel ich am Ende wirklich habe.\nFrau Petrova: Gute Frage. Fangen wir mit der Umsatzsteuer an. Bei Essen im Café sind das 19 Prozent, zum Mitnehmen 7. Diese Steuer gehört nie Ihnen — Sie sammeln sie nur für den Staat.\nTarek: Das habe ich gehört. Aber es liegt doch auf meinem Konto.\nFrau Petrova: Genau das ist die Falle. Die meisten geben es aus und haben im Quartal ein Problem. Machen Sie ein zweites Konto und überweisen Sie das Geld sofort dorthin.\nTarek: Und die Kleinunternehmerregelung?\nFrau Petrova: Bei Ihnen nicht sinnvoll. Die gilt bis 22.000 Euro Umsatz im Jahr. Sie planen mit 90.000.\nTarek: Was muss ich sonst noch tun?\nFrau Petrova: Alle Belege aufbewahren — zehn Jahre. Fotografieren reicht, wenn Sie sie geordnet ablegen. Und legen Sie jeden Monat 25 Prozent vom Gewinn zurück, nicht vom Umsatz.\nTarek: Und wenn ich einen Fehler mache?\nFrau Petrova: Dann korrigieren wir ihn. Das Finanzamt ist nicht Ihr Feind — es wird nur ungemütlich, wenn man sich nicht meldet.",
+   "text": "Frau Petrova: Herr Haddad, Sie eröffnen im September. Was ist Ihre größte Sorge?\nTarek: Ehrlich? Die Steuern. Ich verstehe nicht, wie viel ich am Ende wirklich habe.\nFrau Petrova: Gute Frage. Fangen wir mit der Umsatzsteuer an. Bei Essen im Café sind das 19 Prozent, zum Mitnehmen 7. Diese Steuer gehört nie Ihnen — Sie sammeln sie nur für den Staat.\nTarek: Das habe ich gehört. Aber es liegt doch auf meinem Konto.\nFrau Petrova: Genau das ist die Falle. Die meisten geben es aus und haben im Quartal ein Problem. Machen Sie ein zweites Konto und überweisen Sie das Geld sofort dorthin.\nTarek: Und die Kleinunternehmerregelung?\nFrau Petrova: Bei Ihnen nicht sinnvoll. Die gilt bis 22.000 Euro Umsatz im Jahr. Sie planen mit 90.000.\nTarek: Was muss ich sonst noch tun?\nFrau Petrova: Alle Belege aufbewahren — zehn Jahre. Fotografieren reicht, wenn Sie sie geordnet ablegen. Und legen Sie jeden Monat 25 Prozent vom Gewinn zurück, nicht vom Umsatz.\nTarek: Und wenn ich einen Fehler mache?\nFrau Petrova: Dann korrigieren wir ihn. Das Finanzamt ist nicht Ihr Feind — es wird nur ungemütlich, wenn man sich nicht meldet.",
    "gloss": [
     {
      "de": "der Steuerberater",
-     "mevcutTr": "mali müşavir"
+     "currentTr": "mali müşavir"
     },
     {
      "de": "die Umsatzsteuer",
-     "mevcutTr": "KDV",
-     "havuz": {
+     "currentTr": "KDV",
+     "pool": {
       "tr": "KDV",
       "en": "sales tax"
      }
     },
     {
      "de": "der Gewinn",
-     "mevcutTr": "kâr",
-     "havuz": {
+     "currentTr": "kâr",
+     "pool": {
       "tr": "kâr",
       "en": "profit"
      }
     },
     {
      "de": "die Kleinunternehmerregelung",
-     "mevcutTr": "küçük işletme muafiyeti"
+     "currentTr": "küçük işletme muafiyeti"
     },
     {
      "de": "die Belege",
-     "mevcutTr": "fişler"
+     "currentTr": "fişler"
     },
     {
      "de": "aufbewahren",
-     "mevcutTr": "saklamak",
-     "havuz": {
+     "currentTr": "saklamak",
+     "pool": {
       "tr": "saklamak",
       "en": "to store"
      }
     },
     {
      "de": "die Rücklage",
-     "mevcutTr": "yedek akçe",
-     "havuz": {
+     "currentTr": "yedek akçe",
+     "pool": {
       "tr": "yedek akçe",
       "en": "reserve"
      }
     },
     {
      "de": "monatlich",
-     "mevcutTr": "aylık"
+     "currentTr": "aylık"
     }
    ]
   },
@@ -218,64 +218,64 @@
    "title": "Handwerker am Telefon",
    "genre": "Telefon",
    "intro": "Almanya'da usta bulmak kendi başına bir sınavdır. Tarek kafenin elektriği için arıyor.",
-   "metin": "Elektro Kranz: Elektro Kranz, Weber.\nTarek: Guten Tag. Ich eröffne im September ein Café und brauche neue Leitungen für die Küche. Wann könnten Sie kommen?\nWeber: September … Da muss ich Sie enttäuschen. Wir sind bis Mitte Oktober ausgebucht.\nTarek: Das ist zu spät. Gibt es gar keine Möglichkeit?\nWeber: Moment. Wie groß ist der Auftrag? Wenn es zwei Tage sind, kann ich vielleicht etwas schieben. Bei einer Woche nicht.\nTarek: Ich schätze zwei bis drei Tage. Küche und ein neuer Sicherungskasten.\nWeber: Dann komme ich nächste Woche vorbei und schaue es mir an. Das kostet nichts. Danach bekommen Sie einen schriftlichen Kostenvoranschlag.\nTarek: Und ist der Preis dann fest?\nWeber: Der Voranschlag ist nicht verbindlich, aber bei mir weicht er selten mehr als zehn Prozent ab. Wenn während der Arbeit etwas Größeres auftaucht, rufe ich Sie an, bevor ich weitermache.\nTarek: Das ist mir wichtig. Dann bis nächste Woche.",
+   "text": "Elektro Kranz: Elektro Kranz, Weber.\nTarek: Guten Tag. Ich eröffne im September ein Café und brauche neue Leitungen für die Küche. Wann könnten Sie kommen?\nWeber: September … Da muss ich Sie enttäuschen. Wir sind bis Mitte Oktober ausgebucht.\nTarek: Das ist zu spät. Gibt es gar keine Möglichkeit?\nWeber: Moment. Wie groß ist der Auftrag? Wenn es zwei Tage sind, kann ich vielleicht etwas schieben. Bei einer Woche nicht.\nTarek: Ich schätze zwei bis drei Tage. Küche und ein neuer Sicherungskasten.\nWeber: Dann komme ich nächste Woche vorbei und schaue es mir an. Das kostet nichts. Danach bekommen Sie einen schriftlichen Kostenvoranschlag.\nTarek: Und ist der Preis dann fest?\nWeber: Der Voranschlag ist nicht verbindlich, aber bei mir weicht er selten mehr als zehn Prozent ab. Wenn während der Arbeit etwas Größeres auftaucht, rufe ich Sie an, bevor ich weitermache.\nTarek: Das ist mir wichtig. Dann bis nächste Woche.",
    "gloss": [
     {
      "de": "der Handwerker",
-     "mevcutTr": "usta",
-     "havuz": {
+     "currentTr": "usta",
+     "pool": {
       "tr": "usta",
       "en": "craftsman"
      }
     },
     {
      "de": "der Termin",
-     "mevcutTr": "randevu",
-     "havuz": {
+     "currentTr": "randevu",
+     "pool": {
       "tr": "randevu",
       "en": "appointment"
      }
     },
     {
      "de": "der Kostenvoranschlag",
-     "mevcutTr": "fiyat teklifi",
-     "havuz": {
+     "currentTr": "fiyat teklifi",
+     "pool": {
       "tr": "fiyat teklifi",
       "en": "cost estimate"
      }
     },
     {
      "de": "die Anfahrt",
-     "mevcutTr": "yol ücreti"
+     "currentTr": "yol ücreti"
     },
     {
      "de": "der Notfall",
-     "mevcutTr": "acil durum",
-     "havuz": {
+     "currentTr": "acil durum",
+     "pool": {
       "tr": "acil durum",
       "en": "emergency"
      }
     },
     {
      "de": "ausgebucht",
-     "mevcutTr": "tamamen dolu",
-     "havuz": {
+     "currentTr": "tamamen dolu",
+     "pool": {
       "tr": "tamamen dolu",
       "en": "fully booked"
      }
     },
     {
      "de": "der Auftrag",
-     "mevcutTr": "iş",
-     "havuz": {
+     "currentTr": "iş",
+     "pool": {
       "tr": "görev",
       "en": "assignment"
      }
     },
     {
      "de": "verbindlich",
-     "mevcutTr": "bağlayıcı",
-     "havuz": {
+     "currentTr": "bağlayıcı",
+     "pool": {
       "tr": "bağlayıcı",
       "en": "binding"
      }
@@ -289,64 +289,64 @@
    "title": "Radiobeitrag: Weniger Autos in der Stadt",
    "genre": "Sınav formatı",
    "intro": "B1 dinleme bölümünün ikinci kısmı gibi: bir radyo haberi, ardından içerik soruları. Bir kez baştan sona dinlemeyi dene.",
-   "metin": "Moderator: Seit drei Monaten ist die Königstraße für Autos gesperrt — als Versuch. Nächste Woche entscheidet der Stadtrat, ob es dabei bleibt. Nina Färber hat sich umgehört.\nReporterin: Am Anfang war die Empörung groß. Vierzig Geschäfte hatten unterschrieben, sie befürchteten weniger Kundschaft. Heute klingt es anders.\nLadenbesitzerin: Ich war dagegen, ganz klar. Ich habe gedacht, ohne Parkplätze kommt niemand mehr. Aber mein Umsatz ist um sieben Prozent gestiegen. Die Leute bleiben einfach länger.\nReporterin: Nicht alle sind zufrieden. Wer schwere Waren verkauft — Möbel, Getränke —, klagt über Probleme bei der Lieferung.\nHändler: Für mich ist es schlechter geworden. Meine Kunden kaufen Kästen, keine Blumen. Die kann man nicht tragen.\nReporterin: Die vorläufige Auswertung der Stadt zeigt: Der Umsatz im gesamten Bereich ist um vier Prozent gestiegen, die Zahl der Besucher um elf. Gleichzeitig gibt es 30 Prozent mehr Beschwerden über Lieferverkehr in den Nebenstraßen.\nModerator: Und die Entscheidung?\nReporterin: Wahrscheinlich eine Verlängerung um ein Jahr — mit festen Lieferzeiten am Morgen. Eine endgültige Sperrung will im Moment niemand beschließen.",
+   "text": "Moderator: Seit drei Monaten ist die Königstraße für Autos gesperrt — als Versuch. Nächste Woche entscheidet der Stadtrat, ob es dabei bleibt. Nina Färber hat sich umgehört.\nReporterin: Am Anfang war die Empörung groß. Vierzig Geschäfte hatten unterschrieben, sie befürchteten weniger Kundschaft. Heute klingt es anders.\nLadenbesitzerin: Ich war dagegen, ganz klar. Ich habe gedacht, ohne Parkplätze kommt niemand mehr. Aber mein Umsatz ist um sieben Prozent gestiegen. Die Leute bleiben einfach länger.\nReporterin: Nicht alle sind zufrieden. Wer schwere Waren verkauft — Möbel, Getränke —, klagt über Probleme bei der Lieferung.\nHändler: Für mich ist es schlechter geworden. Meine Kunden kaufen Kästen, keine Blumen. Die kann man nicht tragen.\nReporterin: Die vorläufige Auswertung der Stadt zeigt: Der Umsatz im gesamten Bereich ist um vier Prozent gestiegen, die Zahl der Besucher um elf. Gleichzeitig gibt es 30 Prozent mehr Beschwerden über Lieferverkehr in den Nebenstraßen.\nModerator: Und die Entscheidung?\nReporterin: Wahrscheinlich eine Verlängerung um ein Jahr — mit festen Lieferzeiten am Morgen. Eine endgültige Sperrung will im Moment niemand beschließen.",
    "gloss": [
     {
      "de": "der Beitrag",
-     "mevcutTr": "haber",
-     "havuz": {
+     "currentTr": "haber",
+     "pool": {
       "tr": "aidat",
       "en": "membership fee"
      }
     },
     {
      "de": "der Versuch",
-     "mevcutTr": "deneme",
-     "havuz": {
+     "currentTr": "deneme",
+     "pool": {
       "tr": "deneme",
       "en": "attempt"
      }
     },
     {
      "de": "die Sperrung",
-     "mevcutTr": "kapatma"
+     "currentTr": "kapatma"
     },
     {
      "de": "der Umsatz",
-     "mevcutTr": "ciro",
-     "havuz": {
+     "currentTr": "ciro",
+     "pool": {
       "tr": "ciro",
       "en": "revenue"
      }
     },
     {
      "de": "befürchten",
-     "mevcutTr": "endişe etmek",
-     "havuz": {
+     "currentTr": "endişe etmek",
+     "pool": {
       "tr": "endişe etmek",
       "en": "to fear"
      }
     },
     {
      "de": "die Auswertung",
-     "mevcutTr": "analiz",
-     "havuz": {
+     "currentTr": "analiz",
+     "pool": {
       "tr": "analiz",
       "en": "analysis"
      }
     },
     {
      "de": "vorläufig",
-     "mevcutTr": "geçici",
-     "havuz": {
+     "currentTr": "geçici",
+     "pool": {
       "tr": "geçici",
       "en": "temporary"
      }
     },
     {
      "de": "die Verlängerung",
-     "mevcutTr": "uzatma",
-     "havuz": {
+     "currentTr": "uzatma",
+     "pool": {
       "tr": "uzatma",
       "en": "extension"
      }
@@ -360,52 +360,52 @@
    "title": "Podcast: Pünktlichkeit",
    "genre": "Kültür",
    "intro": "Almanya ile ilgili en bilinen klişe. Bu podcast bölümü klişenin ne kadar doğru olduğunu tartışıyor.",
-   "metin": "Host: Heute: Sind die Deutschen wirklich so pünktlich? Zu Gast ist die Soziologin Dr. Karin Sander.\nSander: Teils. Im Beruf und bei Terminen mit Institutionen: ja, sehr. Im Privaten ist es viel lockerer, als das Klischee sagt.\nHost: Also darf ich zu spät zur Party kommen?\nSander: Zu einer Party sogar sehr gern — kommen Sie nicht als Erster, das gilt fast als unangenehm. Aber zum Abendessen bei jemandem zu Hause: pünktlich. Da steht das Essen auf dem Tisch.\nHost: Wo ist die Grenze?\nSander: Die Faustregel ist: Wenn jemand etwas für Sie vorbereitet hat, kommen Sie pünktlich. Wenn nicht, sind fünfzehn Minuten kein Problem.\nHost: Und wenn ich mich verspäte?\nSander: Dann ist eine kurze Nachricht wichtiger als die Verspätung selbst. Das ist der eigentliche Punkt: Nicht die Zeit ist heilig, sondern die Information. Wer sich meldet, verletzt keine Regel.\nSander: Interessant ist übrigens die Universität. Da beginnt eine Vorlesung um zehn und heißt trotzdem „zehn Uhr“ — angefangen wird um Viertel nach. Das nennt sich akademisches Viertel und ist mehrere hundert Jahre alt.",
+   "text": "Host: Heute: Sind die Deutschen wirklich so pünktlich? Zu Gast ist die Soziologin Dr. Karin Sander.\nSander: Teils. Im Beruf und bei Terminen mit Institutionen: ja, sehr. Im Privaten ist es viel lockerer, als das Klischee sagt.\nHost: Also darf ich zu spät zur Party kommen?\nSander: Zu einer Party sogar sehr gern — kommen Sie nicht als Erster, das gilt fast als unangenehm. Aber zum Abendessen bei jemandem zu Hause: pünktlich. Da steht das Essen auf dem Tisch.\nHost: Wo ist die Grenze?\nSander: Die Faustregel ist: Wenn jemand etwas für Sie vorbereitet hat, kommen Sie pünktlich. Wenn nicht, sind fünfzehn Minuten kein Problem.\nHost: Und wenn ich mich verspäte?\nSander: Dann ist eine kurze Nachricht wichtiger als die Verspätung selbst. Das ist der eigentliche Punkt: Nicht die Zeit ist heilig, sondern die Information. Wer sich meldet, verletzt keine Regel.\nSander: Interessant ist übrigens die Universität. Da beginnt eine Vorlesung um zehn und heißt trotzdem „zehn Uhr“ — angefangen wird um Viertel nach. Das nennt sich akademisches Viertel und ist mehrere hundert Jahre alt.",
    "gloss": [
     {
      "de": "die Pünktlichkeit",
-     "mevcutTr": "dakiklik"
+     "currentTr": "dakiklik"
     },
     {
      "de": "das Klischee",
-     "mevcutTr": "klişe"
+     "currentTr": "klişe"
     },
     {
      "de": "die Verabredung",
-     "mevcutTr": "buluşma",
-     "havuz": {
+     "currentTr": "buluşma",
+     "pool": {
       "tr": "buluşma",
       "en": "date"
      }
     },
     {
      "de": "akademisches Viertel",
-     "mevcutTr": "akademik çeyrek"
+     "currentTr": "akademik çeyrek"
     },
     {
      "de": "unhöflich",
-     "mevcutTr": "nezaketsiz",
-     "havuz": {
+     "currentTr": "nezaketsiz",
+     "pool": {
       "tr": "nezaketsiz",
       "en": "impolite"
      }
     },
     {
      "de": "die Ausrede",
-     "mevcutTr": "bahane"
+     "currentTr": "bahane"
     },
     {
      "de": "der Unterschied",
-     "mevcutTr": "fark",
-     "havuz": {
+     "currentTr": "fark",
+     "pool": {
       "tr": "fark",
       "en": "difference"
      }
     },
     {
      "de": "entschuldigen",
-     "mevcutTr": "affetmek",
-     "havuz": {
+     "currentTr": "affetmek",
+     "pool": {
       "tr": "affetmek",
       "en": "to excuse"
      }
@@ -419,64 +419,64 @@
    "title": "Ein Missverständnis im Team",
    "genre": "Diyalog",
    "intro": "İş yerinde yanlış anlaşılma nasıl konuşulur? Doğrudan ama kırmadan — Almanca iletişimin zor kısmı.",
-   "metin": "Lea: Jonas, hast du kurz Zeit? Ich möchte etwas ansprechen.\nJonas: Klar. Klingt ernst.\nLea: Gestern in der Besprechung hast du gesagt, der Bericht sei „irgendwie unvollständig“. Ich habe drei Tage daran gearbeitet.\nJonas: Oh. Ich wollte dich nicht kritisieren.\nLea: Das glaube ich dir. Aber vor sieben Leuten wirkt so ein Satz anders als unter uns.\nJonas: Da hast du recht. Ich habe an die Zahlen aus dem Lager gedacht — die fehlen ja wirklich. Aber die hast du gar nicht bekommen, oder?\nLea: Genau. Ich habe zweimal gefragt und keine Antwort bekommen.\nJonas: Dann war mein Satz einfach falsch. Ich sage das morgen in der Runde — kurz, ohne Drama, aber ich sage es.\nLea: Danke. Und wenn dir etwas auffällt, sag es mir gern vorher.\nJonas: Machen wir so. Ich schreibe dir dann einfach direkt.",
+   "text": "Lea: Jonas, hast du kurz Zeit? Ich möchte etwas ansprechen.\nJonas: Klar. Klingt ernst.\nLea: Gestern in der Besprechung hast du gesagt, der Bericht sei „irgendwie unvollständig“. Ich habe drei Tage daran gearbeitet.\nJonas: Oh. Ich wollte dich nicht kritisieren.\nLea: Das glaube ich dir. Aber vor sieben Leuten wirkt so ein Satz anders als unter uns.\nJonas: Da hast du recht. Ich habe an die Zahlen aus dem Lager gedacht — die fehlen ja wirklich. Aber die hast du gar nicht bekommen, oder?\nLea: Genau. Ich habe zweimal gefragt und keine Antwort bekommen.\nJonas: Dann war mein Satz einfach falsch. Ich sage das morgen in der Runde — kurz, ohne Drama, aber ich sage es.\nLea: Danke. Und wenn dir etwas auffällt, sag es mir gern vorher.\nJonas: Machen wir so. Ich schreibe dir dann einfach direkt.",
    "gloss": [
     {
      "de": "das Missverständnis",
-     "mevcutTr": "yanlış anlaşılma",
-     "havuz": {
+     "currentTr": "yanlış anlaşılma",
+     "pool": {
       "tr": "yanlış anlaşılma",
       "en": "misunderstanding"
      }
     },
     {
      "de": "der Vorwurf",
-     "mevcutTr": "suçlama",
-     "havuz": {
+     "currentTr": "suçlama",
+     "pool": {
       "tr": "suçlama",
       "en": "accusation"
      }
     },
     {
      "de": "sich angegriffen fühlen",
-     "mevcutTr": "kendini saldırıya uğramış hissetmek"
+     "currentTr": "kendini saldırıya uğramış hissetmek"
     },
     {
      "de": "die Absicht",
-     "mevcutTr": "niyet",
-     "havuz": {
+     "currentTr": "niyet",
+     "pool": {
       "tr": "niyet",
       "en": "intention"
      }
     },
     {
      "de": "ansprechen",
-     "mevcutTr": "konuyu açmak",
-     "havuz": {
+     "currentTr": "konuyu açmak",
+     "pool": {
       "tr": "konuşmaya başlamak",
       "en": "to approach"
      }
     },
     {
      "de": "klären",
-     "mevcutTr": "netleştirmek",
-     "havuz": {
+     "currentTr": "netleştirmek",
+     "pool": {
       "tr": "netleştirmek",
       "en": "to clarify"
      }
     },
     {
      "de": "zugeben",
-     "mevcutTr": "itiraf etmek",
-     "havuz": {
+     "currentTr": "itiraf etmek",
+     "pool": {
       "tr": "itiraf etmek",
       "en": "to admit"
      }
     },
     {
      "de": "abmachen",
-     "mevcutTr": "anlaşmak",
-     "havuz": {
+     "currentTr": "anlaşmak",
+     "pool": {
       "tr": "anlaşmak",
       "en": "to agree"
      }
@@ -490,68 +490,68 @@
    "title": "Die Eröffnung",
    "genre": "Röportaj",
    "intro": "Hikâyenin sonu: yerel radyo, kafesinin açılış gününde Tarek ile konuşuyor.",
-   "metin": "Reporterin: Herr Haddad, seit heute Morgen um sieben steht hier eine Schlange. Haben Sie damit gerechnet?\nTarek: Überhaupt nicht. Ich habe für vierzig Frühstücke eingekauft. Um halb elf war alles weg.\nReporterin: Wie lange hat der Weg bis hierher gedauert?\nTarek: Vierzehn Monate. Neun davon nur Papier: Gewerbe, Erlaubnis, Bank, Gesundheitsamt. Gekocht habe ich in dieser Zeit fast nie.\nReporterin: Gab es einen Moment, in dem Sie aufgeben wollten?\nTarek: Ja, im Februar. Die Bank hat mir weniger gegeben, als ich wollte, und der Elektriker hatte keine Zeit. Ich habe drei Tage nicht geschlafen und gedacht: Das war's.\nReporterin: Was hat geholfen?\nTarek: Ein Mann aus einem Forum, Hassan. Wir kannten uns nicht. Er hat gesagt: „Ruf die Förderbank an, bevor du unterschreibst.“ Dieser eine Satz hat mir 15.000 Euro gespart.\nReporterin: Und was wünschen Sie sich für das erste Jahr?\nTarek: Dass ich in einem Jahr noch hier stehe. Und ehrlich gesagt: einen freien Sonntag.",
+   "text": "Reporterin: Herr Haddad, seit heute Morgen um sieben steht hier eine Schlange. Haben Sie damit gerechnet?\nTarek: Überhaupt nicht. Ich habe für vierzig Frühstücke eingekauft. Um halb elf war alles weg.\nReporterin: Wie lange hat der Weg bis hierher gedauert?\nTarek: Vierzehn Monate. Neun davon nur Papier: Gewerbe, Erlaubnis, Bank, Gesundheitsamt. Gekocht habe ich in dieser Zeit fast nie.\nReporterin: Gab es einen Moment, in dem Sie aufgeben wollten?\nTarek: Ja, im Februar. Die Bank hat mir weniger gegeben, als ich wollte, und der Elektriker hatte keine Zeit. Ich habe drei Tage nicht geschlafen und gedacht: Das war's.\nReporterin: Was hat geholfen?\nTarek: Ein Mann aus einem Forum, Hassan. Wir kannten uns nicht. Er hat gesagt: „Ruf die Förderbank an, bevor du unterschreibst.“ Dieser eine Satz hat mir 15.000 Euro gespart.\nReporterin: Und was wünschen Sie sich für das erste Jahr?\nTarek: Dass ich in einem Jahr noch hier stehe. Und ehrlich gesagt: einen freien Sonntag.",
    "gloss": [
     {
      "de": "die Eröffnung",
-     "mevcutTr": "açılış",
-     "havuz": {
+     "currentTr": "açılış",
+     "pool": {
       "tr": "açılış",
       "en": "opening"
      }
     },
     {
      "de": "der Andrang",
-     "mevcutTr": "izdiham",
-     "havuz": {
+     "currentTr": "izdiham",
+     "pool": {
       "tr": "izdiham",
       "en": "rush"
      }
     },
     {
      "de": "die Vorbereitung",
-     "mevcutTr": "hazırlık",
-     "havuz": {
+     "currentTr": "hazırlık",
+     "pool": {
       "tr": "hazırlık",
       "en": "preparation"
      }
     },
     {
      "de": "sich lohnen",
-     "mevcutTr": "değmek",
-     "havuz": {
+     "currentTr": "değmek",
+     "pool": {
       "tr": "değmek",
       "en": "to be worth it"
      }
     },
     {
      "de": "die Schlange",
-     "mevcutTr": "kuyruk",
-     "havuz": {
+     "currentTr": "kuyruk",
+     "pool": {
       "tr": "yılan",
       "en": "snake"
      }
     },
     {
      "de": "aufgeben",
-     "mevcutTr": "pes etmek",
-     "havuz": {
+     "currentTr": "pes etmek",
+     "pool": {
       "tr": "pes etmek",
       "en": "to give up"
      }
     },
     {
      "de": "der Zweifel",
-     "mevcutTr": "şüphe",
-     "havuz": {
+     "currentTr": "şüphe",
+     "pool": {
       "tr": "şüphe",
       "en": "doubt"
      }
     },
     {
      "de": "dankbar",
-     "mevcutTr": "minnettar",
-     "havuz": {
+     "currentTr": "minnettar",
+     "pool": {
       "tr": "minnettar",
       "en": "grateful"
      }

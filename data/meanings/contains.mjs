@@ -173,13 +173,13 @@ const PREFIXES = [
  */
 function splits(bare) {
   const out = [];
-  const yürü = (onek, kalan) => {
-    if (onek) out.push([onek, kalan]);
+  const walk = (prefix, rest) => {
+    if (prefix) out.push([prefix, rest]);
     for (const p of PREFIXES)
-      if (kalan.startsWith(p) && kalan.length - p.length >= 3)
-        yürü(onek + p, kalan.slice(p.length));
+      if (rest.startsWith(p) && rest.length - p.length >= 3)
+        walk(prefix + p, rest.slice(p.length));
   };
-  yürü("", bare);
+  walk("", bare);
   return out;
 }
 
@@ -304,7 +304,7 @@ const IRREGULAR_FLAT = new Map(
  * olmadan her biri listeye tek tek yazılmak zorundaydı — yazılmayanların
  * Präteritum cümlesi reddediliyordu.
  */
-const AYRILMAYAN = ["be", "emp", "ent", "er", "ge", "miss", "ver", "zer"];
+const INSEPARABLE = ["be", "emp", "ent", "er", "ge", "miss", "ver", "zer"];
 
 /**
  * "da(r)-" / "wo(r)-" ile kaynaşabilen edatlar.
@@ -313,7 +313,7 @@ const AYRILMAYAN = ["be", "emp", "ent", "er", "ge", "miss", "ver", "zer"];
  * cümlede kaynaşmış oluyor: `sich freuen auf` için "Ich freue mich **darauf**,
  * Sie kennenzulernen." Kaynaşmış hâl aranmayınca doğru cümle reddediliyordu.
  */
-const EDATLAR = new Set([
+const PREPOSITIONS = new Set([
   "auf",
   "an",
   "in",
@@ -331,10 +331,10 @@ const EDATLAR = new Set([
   "gegen",
 ]);
 
-const irrForms = (gövde) => {
-  const f = flat(gövde).replace(/[^a-z]/g, "");
+const irrForms = (stem) => {
+  const f = flat(stem).replace(/[^a-z]/g, "");
   return (
-    IRREGULAR[gövde] ??
+    IRREGULAR[stem] ??
     IRREGULAR_FLAT.get(f) ??
     IRREGULAR_FLAT.get(`${f}en`) ??
     []
@@ -439,12 +439,12 @@ function stemVariants(r) {
   // "hat verschrieben") kurup denetleyiciye takıldığı için Präsens'e
   // çevirmek zorunda kaldı — yani kural, dilin tipik biçimini veriden
   // çıkarıyordu.
-  const ciftler = [
+  const pairs = [
     ["ie", "o"], // schließen → schloss, fliegen → flog, verlieren → verlor
     ["ei", "ie"], // schreiben → schrieb, bleiben → blieb
     ["ei", "i"], // schneiden → schnitt, greifen → griff
   ];
-  for (const [from, to] of ciftler) {
+  for (const [from, to] of pairs) {
     const i = r.lastIndexOf(from);
     if (i >= 0) out.push(r.slice(0, i) + to + r.slice(i + from.length));
   }
@@ -454,16 +454,16 @@ function stemVariants(r) {
   // fangen → fing. Kusur `erfahren von` maddesinde görüldü: metinde
   // "Von manchen Verabredungen **erfuhr** ich zu spät." yazıyordu ve
   // denetleyici kelimeyi bulamıyordu.
-  const son = r.search(/[iea](?=[^aeiou]*$)/);
-  if (son >= 0)
+  const last = r.search(/[iea](?=[^aeiou]*$)/);
+  if (last >= 0)
     // e → i de gerekli: Präsens 3. tekil şahısta gövde inceliyor
     // (bewerben → bewirbt, sprechen → spricht, helfen → hilft).
-    for (const v of r[son] === "i"
+    for (const v of r[last] === "i"
       ? ["a", "u"]
-      : r[son] === "a"
+      : r[last] === "a"
         ? ["u", "ie", "i"]
         : ["a", "o", "i"])
-      out.push(r.slice(0, son) + v + r.slice(son + 1));
+      out.push(r.slice(0, last) + v + r.slice(last + 1));
   return out;
 }
 
@@ -482,8 +482,8 @@ function stemVariants(r) {
 function prefixedForms(part) {
   const bare = flat(part).replace(/[^a-z]/g, "");
   const out = [];
-  for (const [onek, kalan] of splits(bare)) {
-    const govde = root(kalan);
+  for (const [prefix, rest] of splits(bare)) {
+    const stem = root(rest);
     // "ge" Perfekt ortacı, "zu" ise mastar: ikisi de ön ek ile gövdenin arasına
     // giriyor ("ist abgeschoben", "um abzuschieben"). `zu`'lu mastar B2'den
     // itibaren çok yaygın ve tanınmadığında ajan doğal biçimden kaçınıyordu.
@@ -491,12 +491,12 @@ function prefixedForms(part) {
     // Gövde ayrıca güçlü fiil olabiliyor ve ön ekle Ablaut aynı anda oluyor:
     // "ausweichen" → "ist ausgewichen". Ön ek ile ünlü değişimi ayrı ayrı
     // işlendiğinde bu biçim hiçbir kurala uymuyordu.
-    if (govde.length >= 3)
-      for (const g of [govde, ...stemVariants(govde)])
-        out.push(`${onek}ge${g}`, `${onek}zu${g}`, `${onek}${g}`);
-    for (const form of irrForms(kalan)) {
+    if (stem.length >= 3)
+      for (const g of [stem, ...stemVariants(stem)])
+        out.push(`${prefix}ge${g}`, `${prefix}zu${g}`, `${prefix}${g}`);
+    for (const form of irrForms(rest)) {
       const f = flat(form).replace(/[^a-z]/g, "");
-      out.push(`${onek}${f}`);
+      out.push(`${prefix}${f}`);
     }
   }
   return out;
@@ -523,9 +523,9 @@ function contains(sentence, headword) {
    * yalnızca bir uyarıyı susturuyor. Bu yüzden gevşek taraf seçildi ve
    * `der Termin` bilinen bir sınır olarak duruyor.
    */
-  const kok = (r) => hay.includes(r.slice(0, Math.max(4, r.length - 2)));
-  const kelime = (t) => new RegExp(`(?<![a-z])${t}(?![a-z])`).test(hay);
-  const bas = (t) => new RegExp(`(?<![a-z])${t}`).test(hay);
+  const hasRoot = (r) => hay.includes(r.slice(0, Math.max(4, r.length - 2)));
+  const hasWord = (t) => new RegExp(`(?<![a-z])${t}(?![a-z])`).test(hay);
+  const hasStart = (t) => new RegExp(`(?<![a-z])${t}`).test(hay);
 
   /**
    * Bir kökün cümlede aranışı, uzunluğa göre üç kademe.
@@ -535,34 +535,34 @@ function contains(sentence, headword) {
    * aransa "Ich gehe" eşleşmezdi. Dörtten uzun kök serbest gövdedir; bileşik
    * kelimede ortada da durabilir ("Rucksack" içindeki "sack").
    */
-  const varMi = (r) =>
-    r.length <= 2 ? kelime(r) : r.length === 3 ? bas(r) : kok(r);
+  const exists = (r) =>
+    r.length <= 2 ? hasWord(r) : r.length === 3 ? hasStart(r) : hasRoot(r);
 
-  const parcaVar = (part) => {
+  const partPresent = (part) => {
     const bare = flat(part).replace(/[^a-z]/g, "");
     const r = root(part);
     if (!r) return true;
-    if (roots(part).some((c) => varMi(c))) return true;
+    if (roots(part).some((c) => exists(c))) return true;
 
     // Edat "darauf"/"worauf" içinde kaynaşmış olabilir (bkz. EDATLAR).
-    if (EDATLAR.has(bare))
-      for (const ön of ["da", "dar", "wo", "wor"])
-        if (kelime(`${ön}${bare}`)) return true;
+    if (PREPOSITIONS.has(bare))
+      for (const pre of ["da", "dar", "wo", "wor"])
+        if (hasWord(`${pre}${bare}`)) return true;
 
     // Üç harflik gövde kelime BAŞI olarak aranıyor (bkz. `varMi`), oysa
     // düzenli ortaçta gövde başta değil: "dösen" → "gedöst", "rügen" →
     // "gerügt", "fügen" → "gefügt". Bu fiiller kendi Perfekt cümlelerini hiç
     // kuramıyordu. Gevşeme ortaç/mastar imiyle sınırlı: aranan "ge"/"zu" ile
     // başlayan tam sözcük, serbest bir gövde değil.
-    if (r.length === 3 && (bas(`ge${r}`) || bas(`zu${r}`))) return true;
+    if (r.length === 3 && (hasStart(`ge${r}`) || hasStart(`zu${r}`))) return true;
 
     // Perfekt: "hat angerufen", "ist zurückgefahren", "hat übertrieben".
-    if (prefixedForms(part).some((f) => kok(f))) return true;
+    if (prefixedForms(part).some((f) => hasRoot(f))) return true;
 
     // Ablaut: "ist verschwunden", "hat versprochen".
     // Eşik dörde iniyor: "melken" kökü ("melk") beş harften kısa olduğu için
     // Ablaut hiç denenmiyordu ve "gemolken" bulunamıyordu.
-    if (r.length >= 4 && stemVariants(r).some((f) => kok(f))) return true;
+    if (r.length >= 4 && stemVariants(r).some((f) => hasRoot(f))) return true;
 
     // Ayrılabilir fiil: ön ek cümlenin sonuna kaçar ("Siehst du viel fern?").
     // Ön ekin ayrı bir kelime olarak bulunması şart, kök ise gövde olarak.
@@ -575,44 +575,44 @@ function contains(sentence, headword) {
     // hata masum değil: denetimin işi sözlükçede metinde hiç geçmeyen
     // kelimeleri bulmak ve kusur tam o aramayı köreltiyordu.
     if (/(en|n)$/.test(bare))
-      for (const [onek, kalan] of splits(bare)) {
-        if (!kelime(onek)) continue;
-        const govde = root(kalan);
-        if (govde.length >= 3 && kok(govde)) return true;
+      for (const [prefix, rest] of splits(bare)) {
+        if (!hasWord(prefix)) continue;
+        const stem = root(rest);
+        if (stem.length >= 3 && hasRoot(stem)) return true;
         // Ayrılmış hâlde de gövde ünlüsü değişiyor: "mitreißen" → "riss … mit",
         // "aufgeben" → "gab … auf". Ablaut yalnızca bitişik biçimlerde
         // deneniyordu, bu yüzden ayrılabilir güçlü fiillerin doğru Präteritum
         // cümleleri reddediliyor ve ajanlar Präsens'e çekilmek zorunda kalıyordu.
-        if (govde.length >= 4 && stemVariants(govde).some((f) => kok(f)))
+        if (stem.length >= 4 && stemVariants(stem).some((f) => hasRoot(f)))
           return true;
-        if (irrForms(kalan).some((f) => varMi(flat(f).replace(/[^a-z]/g, ""))))
+        if (irrForms(rest).some((f) => exists(flat(f).replace(/[^a-z]/g, ""))))
           return true;
         // Gövdesi kısa olanlar ("einüben" → "übt … ein"). `root()` iki harften
         // kısa sonuçlarda kırpılmamış hâle geri döndüğü için buradaki gövde
         // ("ub") hiç üretilmiyor ve "übt" bulunamıyordu. Ön ekin cümlede ayrı
         // bir kelime olarak durduğu zaten doğrulandı; bu güçlü bir işaret
         // olduğu için gövde kelime BAŞI olarak aranıyor.
-        const kisa = flat(kalan)
+        const short = flat(rest)
           .replace(/[^a-z]/g, "")
           .replace(/(en|n)$/, "");
-        if (kisa.length >= 2 && bas(kisa)) return true;
+        if (short.length >= 2 && hasStart(short)) return true;
       }
 
     // Ayrılmayan ön ekin altındaki güçlü gövde (bkz. AYRILMAYAN).
-    for (const ön of AYRILMAYAN) {
-      if (!bare.startsWith(ön) || bare.length - ön.length < 4) continue;
-      const biçimler = irrForms(bare.slice(ön.length));
-      if (biçimler.some((f) => kok(`${ön}${flat(f).replace(/[^a-z]/g, "")}`)))
+    for (const pre of INSEPARABLE) {
+      if (!bare.startsWith(pre) || bare.length - pre.length < 4) continue;
+      const formList = irrForms(bare.slice(pre.length));
+      if (formList.some((f) => hasRoot(`${pre}${flat(f).replace(/[^a-z]/g, "")}`)))
         return true;
     }
 
     // Güçlü fiiller: gövde ünlüsü değiştiği için kök araması işe yaramıyor.
     const irr =
       IRREGULAR[part.toLowerCase().replace(/[.,]+$/, "")] ?? IRREGULAR[bare];
-    return irr ? irr.some((f) => varMi(flat(f).replace(/[^a-z]/g, ""))) : false;
+    return irr ? irr.some((f) => exists(flat(f).replace(/[^a-z]/g, ""))) : false;
   };
 
-  return forms(headword).some((form) => form.split(/\s+/).every(parcaVar));
+  return forms(headword).some((form) => form.split(/\s+/).every(partPresent));
 }
 
 export { contains, flat, roots, forms };

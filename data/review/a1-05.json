@@ -22,7 +22,7 @@
   "tr": "uyandırmak",
   "formen": "",
   "beispiel": "Meine Mutter weckt mich um 7.30 Uhr.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "aufwecken (A2)"
   ]
  },
@@ -57,7 +57,7 @@
   "tr": "hangi",
   "formen": "-er, -e, -s",
   "beispiel": "Welche CD möchtest du?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "welcher (A2)"
   ]
  },
@@ -68,7 +68,7 @@
   "tr": "az",
   "formen": "e",
   "beispiel": "Ich habe heute wenig Zeit.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "wenig/wenige (B1)"
   ]
  },
@@ -223,7 +223,7 @@
   "tr": "istemek",
   "formen": "",
   "beispiel": "Willst du meine Freunde kennenlernen?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "möchten (A1)"
   ]
  },
@@ -234,7 +234,7 @@
   "tr": "kelime, sözcük",
   "formen": "ö, -er",
   "beispiel": "Wie viele Wörter hat dein Brief?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Vokabel (A2)"
   ]
  },
@@ -245,7 +245,7 @@
   "tr": "harika, mükemmel",
   "formen": "",
   "beispiel": "Das Essen schmeckt wunderbar.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "prima (B1)"
   ]
  },
@@ -320,7 +320,7 @@
   "tr": "önce, ilk olarak",
   "formen": "",
   "beispiel": "Sagen Sie bitte zuerst den Vornamen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "zunächst (B1)"
   ]
  },
@@ -339,7 +339,7 @@
   "tr": "örneğin",
   "formen": "",
   "beispiel": "Mein Freund hat viele Hobbys, zum Beispiel Kochen, Lesen und Tanzen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "zum Beispiel/z. B. (A1)"
   ]
  },
@@ -350,7 +350,7 @@
   "tr": "kapatmak",
   "formen": "",
   "beispiel": "Machst du bitte das Fenster zu?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "ausmachen (A1)",
    "schließen (A1)"
   ]
@@ -370,7 +370,7 @@
   "tr": "kapalı olmak",
   "formen": "",
   "beispiel": "Die Bibliothek ist in den Ferien zu.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "geschlossen sein (A1)"
   ]
  },
@@ -421,7 +421,7 @@
   "tr": "tıklamak",
   "formen": "",
   "beispiel": "Da musst du dieses Wort anklicken.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "klicken (B1)"
   ]
  },
@@ -448,7 +448,7 @@
   "tr": "açmak",
   "formen": "",
   "beispiel": "Mach bitte das Licht an!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "aufmachen (A1)",
    "öffnen (A1)",
    "einschalten (B1)",
@@ -494,7 +494,7 @@
   "tr": "anons, duyuru",
   "formen": "-n",
   "beispiel": "Hören Sie die Ansagen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Durchsage (A1)"
   ]
  },
@@ -513,7 +513,7 @@
   "tr": "açık olmak",
   "formen": "",
   "beispiel": "Heute Nacht war das Licht an.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "auf sein (A1)"
   ]
  },
@@ -556,7 +556,7 @@
   "tr": "bitmek, sona ermek",
   "formen": "",
   "beispiel": "Der Kurs hört in einer Woche auf. Hier hört die Bahnhofstraße auf.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "enden (A1)"
   ]
  },
@@ -567,7 +567,7 @@
   "tr": "asansör",
   "formen": "-ü, e",
   "beispiel": "In diesem Haus gibt es keinen Aufzug.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Lift (B1)"
   ]
  },
@@ -578,7 +578,7 @@
   "tr": "doldurmak",
   "formen": "",
   "beispiel": "Füllen Sie bitte dieses Formular aus.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "füllen (A2)"
   ]
  },
@@ -605,7 +605,7 @@
   "tr": "yabancı",
   "formen": "-",
   "beispiel": "SInd Sie Ausländerin?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "ausländisch (A1)",
    "fremd (A1)"
   ]
@@ -617,7 +617,7 @@
   "tr": "yabancı",
   "formen": "",
   "beispiel": "Leider habe ich nur ausländisches Geld.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Ausländer (A1)",
    "fremd (A1)"
   ]
@@ -629,7 +629,7 @@
   "tr": "kapatmak",
   "formen": "",
   "beispiel": "Mach bitte das Licht aus!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "zumachen (A1)",
    "schließen (A1)"
   ]
@@ -729,7 +729,7 @@
   "tr": "memur",
   "formen": "-n",
   "beispiel": "Fragen Sie die Beamtin an Schalter acht!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Beamtin (B1)"
   ]
  },
@@ -740,7 +740,7 @@
   "tr": "başlamak",
   "formen": "",
   "beispiel": "Das Spiel beginnt um 15.30 Uhr.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "anfangen (A1)"
   ]
  },
@@ -767,7 +767,7 @@
   "tr": "örneğin",
   "formen": "",
   "beispiel": "Viele meiner Verwandten, z. B. meine beiden Brüder, arbeiten auch hier.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "zum Beispiel (A1)"
   ]
  },
@@ -794,7 +794,7 @@
   "tr": "kullanmak",
   "formen": "",
   "beispiel": "Die Aufzüge bitte nicht benutzen!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "gebrauchen (B1)",
    "verwenden (B1)"
   ]
@@ -814,7 +814,7 @@
   "tr": "en iyi",
   "formen": "",
   "beispiel": "Am besten treffen wir uns morgen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "beste (A1)"
   ]
  },
@@ -1017,7 +1017,7 @@
   "tr": "çünkü",
   "formen": "",
   "beispiel": "Ich kann nicht kommen, denn ich bin krank.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "weil (A2)"
   ]
  },
@@ -1052,7 +1052,7 @@
   "tr": "doktor",
   "formen": "",
   "beispiel": "Meine Tochter ist krank. Wir gehen zum Doktor.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Doktorin (B1)"
   ]
  },

@@ -1,16 +1,16 @@
 {
- "paket": "c1-033",
+ "packet": "c1-033",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 6853,
    "de": "die Wertvorstellung",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Wertvorstellungen",
-   "mevcutTr": "değer anlayışı, değer yargısı",
-   "mevcutBeispiel": "Die Wertvorstellungen der Generationen driften spürbar auseinander.",
-   "mevcutBeispielTr": "Kuşakların değer anlayışları belirgin biçimde birbirinden uzaklaşıyor."
+   "currentTr": "değer anlayışı, değer yargısı",
+   "currentBeispiel": "Die Wertvorstellungen der Generationen driften spürbar auseinander.",
+   "currentBeispielTr": "Kuşakların değer anlayışları belirgin biçimde birbirinden uzaklaşıyor."
   },
   {
    "id": 6854,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "geçicilik, fanilik",
-   "mevcutBeispiel": "Das Bewusstsein der Vergänglichkeit verändert unseren Umgang mit Zeit.",
-   "mevcutBeispielTr": "Geçicilik bilinci, zamanla ilişkimizi değiştirir."
+   "currentTr": "geçicilik, fanilik",
+   "currentBeispiel": "Das Bewusstsein der Vergänglichkeit verändert unseren Umgang mit Zeit.",
+   "currentBeispielTr": "Geçicilik bilinci, zamanla ilişkimizi değiştirir."
   },
   {
    "id": 6855,
@@ -28,10 +28,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Wesenszüge",
-   "mevcutTr": "karakter özelliği, temel nitelik",
-   "mevcutBeispiel": "Neugier gilt vielen als grundlegender Wesenszug des Menschen.",
-   "mevcutBeispielTr": "Merak, birçoklarınca insanın temel bir niteliği sayılır.",
-   "cakisan": [
+   "currentTr": "karakter özelliği, temel nitelik",
+   "currentBeispiel": "Neugier gilt vielen als grundlegender Wesenszug des Menschen.",
+   "currentBeispielTr": "Merak, birçoklarınca insanın temel bir niteliği sayılır.",
+   "overlapping": [
     "der Charakterzug (B2)"
    ]
   },
@@ -41,9 +41,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Triebfedern",
-   "mevcutTr": "itici güç, saik",
-   "mevcutBeispiel": "Die eigentliche Triebfeder seines Engagements war schlichte Eitelkeit.",
-   "mevcutBeispielTr": "Çabalarının asıl itici gücü basit bir kibirdi."
+   "currentTr": "itici güç, saik",
+   "currentBeispiel": "Die eigentliche Triebfeder seines Engagements war schlichte Eitelkeit.",
+   "currentBeispielTr": "Çabalarının asıl itici gücü basit bir kibirdi."
   },
   {
    "id": 6857,
@@ -51,10 +51,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çaba, arayış, gayret",
-   "mevcutBeispiel": "Das Streben nach Glück lässt sich nicht erzwingen.",
-   "mevcutBeispielTr": "Mutluluğa erişme çabası zorlamayla gerçekleşmez.",
-   "cakisan": [
+   "currentTr": "çaba, arayış, gayret",
+   "currentBeispiel": "Das Streben nach Glück lässt sich nicht erzwingen.",
+   "currentBeispielTr": "Mutluluğa erişme çabası zorlamayla gerçekleşmez.",
+   "overlapping": [
     "die Mühe (B1)",
     "die Bemühung (B2)"
    ]
@@ -65,9 +65,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kendini bilme, öz farkındalık",
-   "mevcutBeispiel": "Selbsterkenntnis gilt seit der Antike als Anfang aller Weisheit.",
-   "mevcutBeispielTr": "Kendini bilmek, Antik Çağ'dan beri tüm bilgeliğin başlangıcı sayılır."
+   "currentTr": "kendini bilme, öz farkındalık",
+   "currentBeispiel": "Selbsterkenntnis gilt seit der Antike als Anfang aller Weisheit.",
+   "currentBeispielTr": "Kendini bilmek, Antik Çağ'dan beri tüm bilgeliğin başlangıcı sayılır."
   },
   {
    "id": 6859,
@@ -75,9 +75,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Selbstzwecke",
-   "mevcutTr": "kendi başına amaç",
-   "mevcutBeispiel": "Der Mensch ist Selbstzweck und darf nie bloßes Mittel sein.",
-   "mevcutBeispielTr": "İnsan kendi başına bir amaçtır ve asla salt araç olamaz."
+   "currentTr": "kendi başına amaç",
+   "currentBeispiel": "Der Mensch ist Selbstzweck und darf nie bloßes Mittel sein.",
+   "currentBeispielTr": "İnsan kendi başına bir amaçtır ve asla salt araç olamaz."
   },
   {
    "id": 6860,
@@ -85,9 +85,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çıkışsızlık, umutsuzluk",
-   "mevcutBeispiel": "Camus beschreibt die Ausweglosigkeit als Grundgefühl des modernen Menschen.",
-   "mevcutBeispielTr": "Camus, çıkışsızlığı modern insanın temel duygusu olarak betimler."
+   "currentTr": "çıkışsızlık, umutsuzluk",
+   "currentBeispiel": "Camus beschreibt die Ausweglosigkeit als Grundgefühl des modernen Menschen.",
+   "currentBeispielTr": "Camus, çıkışsızlığı modern insanın temel duygusu olarak betimler."
   },
   {
    "id": 6861,
@@ -95,9 +95,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "bağışlama, affetme",
-   "mevcutBeispiel": "Vergebung bedeutet nicht, das Geschehene für harmlos zu erklären.",
-   "mevcutBeispielTr": "Bağışlamak, olup biteni zararsız ilan etmek anlamına gelmez."
+   "currentTr": "bağışlama, affetme",
+   "currentBeispiel": "Vergebung bedeutet nicht, das Geschehene für harmlos zu erklären.",
+   "currentBeispielTr": "Bağışlamak, olup biteni zararsız ilan etmek anlamına gelmez."
   },
   {
    "id": 6862,
@@ -105,9 +105,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hoşgörü, müsamaha",
-   "mevcutBeispiel": "Mit sich selbst übt er weit mehr Nachsicht als mit anderen.",
-   "mevcutBeispielTr": "Kendisine karşı başkalarına olduğundan çok daha hoşgörülü davranıyor."
+   "currentTr": "hoşgörü, müsamaha",
+   "currentBeispiel": "Mit sich selbst übt er weit mehr Nachsicht als mit anderen.",
+   "currentBeispielTr": "Kendisine karşı başkalarına olduğundan çok daha hoşgörülü davranıyor."
   },
   {
    "id": 6863,
@@ -115,9 +115,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "satın alınamazlık, dürüstlük (rüşvete kapalı olma)",
-   "mevcutBeispiel": "Die Unbestechlichkeit der Richter ist die Grundlage jedes Rechtsstaats.",
-   "mevcutBeispielTr": "Yargıçların satın alınamazlığı, her hukuk devletinin temelidir."
+   "currentTr": "satın alınamazlık, dürüstlük (rüşvete kapalı olma)",
+   "currentBeispiel": "Die Unbestechlichkeit der Richter ist die Grundlage jedes Rechtsstaats.",
+   "currentBeispielTr": "Yargıçların satın alınamazlığı, her hukuk devletinin temelidir."
   },
   {
    "id": 6864,
@@ -125,9 +125,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "erginlik, kendi aklını kullanabilme",
-   "mevcutBeispiel": "Bildung soll vor allem zur geistigen Mündigkeit führen.",
-   "mevcutBeispielTr": "Eğitim her şeyden önce zihinsel erginliğe götürmelidir."
+   "currentTr": "erginlik, kendi aklını kullanabilme",
+   "currentBeispiel": "Bildung soll vor allem zur geistigen Mündigkeit führen.",
+   "currentBeispielTr": "Eğitim her şeyden önce zihinsel erginliğe götürmelidir."
   },
   {
    "id": 6865,
@@ -135,9 +135,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Selbsttäuschungen",
-   "mevcutTr": "kendini kandırma, kendini aldatma",
-   "mevcutBeispiel": "Wer nur bestätigende Quellen liest, betreibt eine bequeme Selbsttäuschung.",
-   "mevcutBeispielTr": "Yalnızca kendini doğrulayan kaynakları okuyan kişi rahat bir kendini kandırma içindedir."
+   "currentTr": "kendini kandırma, kendini aldatma",
+   "currentBeispiel": "Wer nur bestätigende Quellen liest, betreibt eine bequeme Selbsttäuschung.",
+   "currentBeispielTr": "Yalnızca kendini doğrulayan kaynakları okuyan kişi rahat bir kendini kandırma içindedir."
   },
   {
    "id": 6866,
@@ -145,10 +145,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "alçakgönüllülük, tevazu",
-   "mevcutBeispiel": "Vor der Komplexität des Themas ist etwas Demut angebracht.",
-   "mevcutBeispielTr": "Konunun karmaşıklığı karşısında biraz tevazu yerinde olur.",
-   "cakisan": [
+   "currentTr": "alçakgönüllülük, tevazu",
+   "currentBeispiel": "Vor der Komplexität des Themas ist etwas Demut angebracht.",
+   "currentBeispielTr": "Konunun karmaşıklığı karşısında biraz tevazu yerinde olur.",
+   "overlapping": [
     "die Bescheidenheit (B2)"
    ]
   },
@@ -158,9 +158,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kibir, gurur",
-   "mevcutBeispiel": "Sein Hochmut verstellte ihm den Blick für eigene Fehler.",
-   "mevcutBeispielTr": "Kibri, kendi hatalarını görmesini engelledi."
+   "currentTr": "kibir, gurur",
+   "currentBeispiel": "Sein Hochmut verstellte ihm den Blick für eigene Fehler.",
+   "currentBeispielTr": "Kibri, kendi hatalarını görmesini engelledi."
   },
   {
    "id": 6868,
@@ -168,10 +168,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat geboten",
-   "mevcutTr": "gerektirmek, emretmek, buyurmak",
-   "mevcutBeispiel": "Die Lage gebietet Zurückhaltung statt vorschneller Urteile.",
-   "mevcutBeispielTr": "Durum, aceleci yargılar yerine ölçülülük gerektiriyor.",
-   "cakisan": [
+   "currentTr": "gerektirmek, emretmek, buyurmak",
+   "currentBeispiel": "Die Lage gebietet Zurückhaltung statt vorschneller Urteile.",
+   "currentBeispielTr": "Durum, aceleci yargılar yerine ölçülülük gerektiriyor.",
+   "overlapping": [
     "erfordern (B1)"
    ]
   },
@@ -181,9 +181,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat missbilligt",
-   "mevcutTr": "onaylamamak, hoş karşılamamak",
-   "mevcutBeispiel": "Viele Kollegen missbilligten sein Vorgehen, sagten aber nichts.",
-   "mevcutBeispielTr": "Birçok meslektaşı davranışını onaylamadı, ama bir şey söylemedi."
+   "currentTr": "onaylamamak, hoş karşılamamak",
+   "currentBeispiel": "Viele Kollegen missbilligten sein Vorgehen, sagten aber nichts.",
+   "currentBeispielTr": "Birçok meslektaşı davranışını onaylamadı, ama bir şey söylemedi."
   },
   {
    "id": 6870,
@@ -191,9 +191,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat bejaht",
-   "mevcutTr": "olumlamak, evet demek, onaylamak",
-   "mevcutBeispiel": "Nietzsche fordert, das Leben mit all seinen Härten zu bejahen.",
-   "mevcutBeispielTr": "Nietzsche, hayatı tüm sertlikleriyle olumlamayı talep eder."
+   "currentTr": "olumlamak, evet demek, onaylamak",
+   "currentBeispiel": "Nietzsche fordert, das Leben mit all seinen Härten zu bejahen.",
+   "currentBeispielTr": "Nietzsche, hayatı tüm sertlikleriyle olumlamayı talep eder."
   },
   {
    "id": 6871,
@@ -201,9 +201,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat verneint",
-   "mevcutTr": "olumsuzlamak, reddetmek, hayır demek",
-   "mevcutBeispiel": "Die Frage nach einem absoluten Maßstab verneint er entschieden.",
-   "mevcutBeispielTr": "Mutlak bir ölçüt olup olmadığı sorusunu kararlılıkla reddediyor."
+   "currentTr": "olumsuzlamak, reddetmek, hayır demek",
+   "currentBeispiel": "Die Frage nach einem absoluten Maßstab verneint er entschieden.",
+   "currentBeispielTr": "Mutlak bir ölçüt olup olmadığı sorusunu kararlılıkla reddediyor."
   },
   {
    "id": 6872,
@@ -211,9 +211,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat beigemessen",
-   "mevcutTr": "önem atfetmek, değer vermek",
-   "mevcutBeispiel": "Der Autor misst der Absicht mehr Gewicht bei als der Folge.",
-   "mevcutBeispielTr": "Yazar, niyete sonuçtan daha fazla ağırlık veriyor."
+   "currentTr": "önem atfetmek, değer vermek",
+   "currentBeispiel": "Der Autor misst der Absicht mehr Gewicht bei als der Folge.",
+   "currentBeispielTr": "Yazar, niyete sonuçtan daha fazla ağırlık veriyor."
   },
   {
    "id": 6873,
@@ -221,9 +221,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat angemaßt",
-   "mevcutTr": "haddi olmadan kalkışmak, kendinde hak görmek",
-   "mevcutBeispiel": "Niemand sollte sich das Urteil über fremde Gewissensfragen anmaßen.",
-   "mevcutBeispielTr": "Kimse başkasının vicdan meseleleri hakkında hüküm verme hakkını kendinde görmemeli."
+   "currentTr": "haddi olmadan kalkışmak, kendinde hak görmek",
+   "currentBeispiel": "Niemand sollte sich das Urteil über fremde Gewissensfragen anmaßen.",
+   "currentBeispielTr": "Kimse başkasının vicdan meseleleri hakkında hüküm verme hakkını kendinde görmemeli."
   },
   {
    "id": 6874,
@@ -231,10 +231,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat hingenommen",
-   "mevcutTr": "kabullenmek, katlanmak, boyun eğmek",
-   "mevcutBeispiel": "Eine solche Ungleichheit müssen wir nicht stillschweigend hinnehmen.",
-   "mevcutBeispielTr": "Böyle bir eşitsizliği sessizce kabullenmek zorunda değiliz.",
-   "cakisan": [
+   "currentTr": "kabullenmek, katlanmak, boyun eğmek",
+   "currentBeispiel": "Eine solche Ungleichheit müssen wir nicht stillschweigend hinnehmen.",
+   "currentBeispielTr": "Böyle bir eşitsizliği sessizce kabullenmek zorunda değiliz.",
+   "overlapping": [
     "sich abfinden (C1)",
     "einsehen (A2)"
    ]
@@ -245,9 +245,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ahlaki, ahlaka ilişkin",
-   "mevcutBeispiel": "Er beurteilte die Tat nach sittlichen, nicht nach juristischen Kriterien.",
-   "mevcutBeispielTr": "Eylemi hukuki değil, ahlaki ölçütlere göre değerlendirdi."
+   "currentTr": "ahlaki, ahlaka ilişkin",
+   "currentBeispiel": "Er beurteilte die Tat nach sittlichen, nicht nach juristischen Kriterien.",
+   "currentBeispielTr": "Eylemi hukuki değil, ahlaki ölçütlere göre değerlendirdi."
   },
   {
    "id": 6876,
@@ -255,10 +255,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "vicdansız, pervasız",
-   "mevcutBeispiel": "Er nutzte die Notlage seiner Nachbarn völlig skrupellos aus.",
-   "mevcutBeispielTr": "Komşularının zor durumundan tamamen vicdansızca yararlandı.",
-   "cakisan": [
+   "currentTr": "vicdansız, pervasız",
+   "currentBeispiel": "Er nutzte die Notlage seiner Nachbarn völlig skrupellos aus.",
+   "currentBeispielTr": "Komşularının zor durumundan tamamen vicdansızca yararlandı.",
+   "overlapping": [
     "gewissenlos (C1)"
    ]
   },
@@ -268,10 +268,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "makul, inandırıcı, akla yatkın",
-   "mevcutBeispiel": "Seine Erklärung klang einleuchtend, hielt der Prüfung aber nicht stand.",
-   "mevcutBeispielTr": "Açıklaması akla yatkın geldi, ama incelemeye dayanamadı.",
-   "cakisan": [
+   "currentTr": "makul, inandırıcı, akla yatkın",
+   "currentBeispiel": "Seine Erklärung klang einleuchtend, hielt der Prüfung aber nicht stand.",
+   "currentBeispielTr": "Açıklaması akla yatkın geldi, ama incelemeye dayanamadı.",
+   "overlapping": [
     "vernünftig (B1)",
     "zumutbar (B2)"
    ]
@@ -282,9 +282,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "görünüşte, yüzeysel olarak",
-   "mevcutBeispiel": "Vordergründig geht es um Geld, eigentlich aber um Anerkennung.",
-   "mevcutBeispielTr": "Görünüşte mesele para, aslında ise kabul görmek."
+   "currentTr": "görünüşte, yüzeysel olarak",
+   "currentBeispiel": "Vordergründig geht es um Geld, eigentlich aber um Anerkennung.",
+   "currentBeispielTr": "Görünüşte mesele para, aslında ise kabul görmek."
   },
   {
    "id": 6879,
@@ -292,10 +292,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "bilerek, iradi olarak, kasten",
-   "mevcutBeispiel": "Nur willentlich herbeigeführte Folgen lassen sich moralisch zurechnen.",
-   "mevcutBeispielTr": "Yalnızca iradi olarak yol açılan sonuçlar ahlaken yüklenebilir.",
-   "cakisan": [
+   "currentTr": "bilerek, iradi olarak, kasten",
+   "currentBeispiel": "Nur willentlich herbeigeführte Folgen lassen sich moralisch zurechnen.",
+   "currentBeispielTr": "Yalnızca iradi olarak yol açılan sonuçlar ahlaken yüklenebilir.",
+   "overlapping": [
     "wissentlich (C1)"
    ]
   },
@@ -305,9 +305,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verfassungsgerichte",
-   "mevcutTr": "anayasa mahkemesi",
-   "mevcutBeispiel": "Das Verfassungsgericht erklärte das umstrittene Gesetz in Teilen für nichtig.",
-   "mevcutBeispielTr": "Anayasa mahkemesi tartışmalı yasayı kısmen geçersiz saydı."
+   "currentTr": "anayasa mahkemesi",
+   "currentBeispiel": "Das Verfassungsgericht erklärte das umstrittene Gesetz in Teilen für nichtig.",
+   "currentBeispielTr": "Anayasa mahkemesi tartışmalı yasayı kısmen geçersiz saydı."
   },
   {
    "id": 6881,
@@ -315,9 +315,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verhältniswahlen",
-   "mevcutTr": "nispi temsil, oransal seçim sistemi",
-   "mevcutBeispiel": "Bei der Verhältniswahl spiegelt die Sitzverteilung den Stimmenanteil der Parteien wider.",
-   "mevcutBeispielTr": "Nispi temsilde sandalye dağılımı partilerin oy oranını yansıtır."
+   "currentTr": "nispi temsil, oransal seçim sistemi",
+   "currentBeispiel": "Bei der Verhältniswahl spiegelt die Sitzverteilung den Stimmenanteil der Parteien wider.",
+   "currentBeispielTr": "Nispi temsilde sandalye dağılımı partilerin oy oranını yansıtır."
   },
   {
    "id": 6882,
@@ -325,9 +325,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Exekutiven",
-   "mevcutTr": "yürütme, yürütme erki",
-   "mevcutBeispiel": "Die Exekutive darf sich nicht über die Beschlüsse des Parlaments hinwegsetzen.",
-   "mevcutBeispielTr": "Yürütme, parlamentonun kararlarını hiçe sayamaz."
+   "currentTr": "yürütme, yürütme erki",
+   "currentBeispiel": "Die Exekutive darf sich nicht über die Beschlüsse des Parlaments hinwegsetzen.",
+   "currentBeispielTr": "Yürütme, parlamentonun kararlarını hiçe sayamaz."
   },
   {
    "id": 6883,
@@ -335,9 +335,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Legislativen",
-   "mevcutTr": "yasama organı",
-   "mevcutBeispiel": "In der Debatte ging es um das Verhältnis von Legislative und Regierung.",
-   "mevcutBeispielTr": "Tartışmada yasama organı ile hükümet arasındaki ilişki ele alındı."
+   "currentTr": "yasama organı",
+   "currentBeispiel": "In der Debatte ging es um das Verhältnis von Legislative und Regierung.",
+   "currentBeispielTr": "Tartışmada yasama organı ile hükümet arasındaki ilişki ele alındı."
   },
   {
    "id": 6884,
@@ -345,9 +345,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "federalizm",
-   "mevcutBeispiel": "Der deutsche Föderalismus verteilt die Bildungspolitik auf die einzelnen Länder.",
-   "mevcutBeispielTr": "Alman federalizmi eğitim politikasını eyaletler arasında paylaştırır."
+   "currentTr": "federalizm",
+   "currentBeispiel": "Der deutsche Föderalismus verteilt die Bildungspolitik auf die einzelnen Länder.",
+   "currentBeispielTr": "Alman federalizmi eğitim politikasını eyaletler arasında paylaştırır."
   },
   {
    "id": 6885,
@@ -355,9 +355,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yerindenlik ilkesi, subsidiyarite",
-   "mevcutBeispiel": "Nach dem Grundsatz der Subsidiarität entscheidet stets die kleinste geeignete Ebene.",
-   "mevcutBeispielTr": "Yerindenlik ilkesine göre kararı daima en küçük uygun birim verir."
+   "currentTr": "yerindenlik ilkesi, subsidiyarite",
+   "currentBeispiel": "Nach dem Grundsatz der Subsidiarität entscheidet stets die kleinste geeignete Ebene.",
+   "currentBeispielTr": "Yerindenlik ilkesine göre kararı daima en küçük uygun birim verir."
   },
   {
    "id": 6886,
@@ -365,9 +365,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gebietskörperschaften",
-   "mevcutTr": "yerel yönetim birimi, mahalli idare",
-   "mevcutBeispiel": "Städte und Landkreise sind Gebietskörperschaften mit eigener Verwaltung.",
-   "mevcutBeispielTr": "Şehirler ve ilçeler kendi idaresi olan yerel yönetim birimleridir."
+   "currentTr": "yerel yönetim birimi, mahalli idare",
+   "currentBeispiel": "Städte und Landkreise sind Gebietskörperschaften mit eigener Verwaltung.",
+   "currentBeispielTr": "Şehirler ve ilçeler kendi idaresi olan yerel yönetim birimleridir."
   },
   {
    "id": 6887,
@@ -375,9 +375,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Ressorts",
-   "mevcutTr": "birim, görev alanı, bakanlık dairesi",
-   "mevcutBeispiel": "Für diese Frage ist ein anderes Ressort im Ministerium zuständig.",
-   "mevcutBeispielTr": "Bu konudan bakanlıktaki başka bir birim sorumlu."
+   "currentTr": "birim, görev alanı, bakanlık dairesi",
+   "currentBeispiel": "Für diese Frage ist ein anderes Ressort im Ministerium zuständig.",
+   "currentBeispielTr": "Bu konudan bakanlıktaki başka bir birim sorumlu."
   },
   {
    "id": 6888,
@@ -385,9 +385,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bürokratien",
-   "mevcutTr": "bürokrasi, kırtasiyecilik",
-   "mevcutBeispiel": "Kleine Betriebe klagen seit Jahren über die ausufernde Bürokratie.",
-   "mevcutBeispielTr": "Küçük işletmeler yıllardır azgın bürokrasiden şikâyetçi."
+   "currentTr": "bürokrasi, kırtasiyecilik",
+   "currentBeispiel": "Kleine Betriebe klagen seit Jahren über die ausufernde Bürokratie.",
+   "currentBeispielTr": "Küçük işletmeler yıllardır azgın bürokrasiden şikâyetçi."
   },
   {
    "id": 6889,
@@ -395,9 +395,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Referenden",
-   "mevcutTr": "referandum, halk oylaması",
-   "mevcutBeispiel": "Über den Beitritt soll ein landesweites Referendum entscheiden.",
-   "mevcutBeispielTr": "Katılım konusunda ülke çapında bir referandum karar verecek."
+   "currentTr": "referandum, halk oylaması",
+   "currentBeispiel": "Über den Beitritt soll ein landesweites Referendum entscheiden.",
+   "currentBeispielTr": "Katılım konusunda ülke çapında bir referandum karar verecek."
   },
   {
    "id": 6890,
@@ -405,10 +405,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Machtbefugnisse",
-   "mevcutTr": "yetki, iktidar yetkisi",
-   "mevcutBeispiel": "Der Präsident schöpfte seine Machtbefugnisse bis an die Grenze des Erlaubten aus.",
-   "mevcutBeispielTr": "Cumhurbaşkanı yetkilerini izin verilenin sınırına kadar kullandı.",
-   "cakisan": [
+   "currentTr": "yetki, iktidar yetkisi",
+   "currentBeispiel": "Der Präsident schöpfte seine Machtbefugnisse bis an die Grenze des Erlaubten aus.",
+   "currentBeispielTr": "Cumhurbaşkanı yetkilerini izin verilenin sınırına kadar kullandı.",
+   "overlapping": [
     "die Berechtigung (B2)",
     "die Befugnis (C1)"
    ]
@@ -419,9 +419,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "irade oluşumu, karar oluşturma süreci",
-   "mevcutBeispiel": "Parteien sind für die politische Willensbildung des Volkes unverzichtbar.",
-   "mevcutBeispielTr": "Partiler halkın siyasi irade oluşumu için vazgeçilmezdir."
+   "currentTr": "irade oluşumu, karar oluşturma süreci",
+   "currentBeispiel": "Parteien sind für die politische Willensbildung des Volkes unverzichtbar.",
+   "currentBeispielTr": "Partiler halkın siyasi irade oluşumu için vazgeçilmezdir."
   },
   {
    "id": 6892,
@@ -429,9 +429,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Interessenverbände",
-   "mevcutTr": "çıkar grubu, meslek örgütü",
-   "mevcutBeispiel": "Mächtige Interessenverbände treten in Berlin für ihre Branche ein.",
-   "mevcutBeispielTr": "Güçlü çıkar grupları Berlin'de kendi sektörleri için mücadele ediyor."
+   "currentTr": "çıkar grubu, meslek örgütü",
+   "currentBeispiel": "Mächtige Interessenverbände treten in Berlin für ihre Branche ein.",
+   "currentBeispielTr": "Güçlü çıkar grupları Berlin'de kendi sektörleri için mücadele ediyor."
   },
   {
    "id": 6893,
@@ -439,9 +439,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "lobicilik",
-   "mevcutBeispiel": "Ein öffentliches Register soll den Lobbyismus im Parlament transparenter machen.",
-   "mevcutBeispielTr": "Açık bir kayıt sistemi meclisteki lobiciliği daha şeffaf hâle getirecek."
+   "currentTr": "lobicilik",
+   "currentBeispiel": "Ein öffentliches Register soll den Lobbyismus im Parlament transparenter machen.",
+   "currentBeispielTr": "Açık bir kayıt sistemi meclisteki lobiciliği daha şeffaf hâle getirecek."
   },
   {
    "id": 6894,
@@ -449,9 +449,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Einflussnahmen",
-   "mevcutTr": "etki etme, nüfuz kullanma",
-   "mevcutBeispiel": "Die Aufsicht untersucht eine mögliche Einflussnahme auf die Vergabe der Aufträge.",
-   "mevcutBeispielTr": "Denetim kurulu, ihalelerin dağıtımına yönelik olası nüfuz kullanımını inceliyor."
+   "currentTr": "etki etme, nüfuz kullanma",
+   "currentBeispiel": "Die Aufsicht untersucht eine mögliche Einflussnahme auf die Vergabe der Aufträge.",
+   "currentBeispielTr": "Denetim kurulu, ihalelerin dağıtımına yönelik olası nüfuz kullanımını inceliyor."
   },
   {
    "id": 6895,
@@ -459,9 +459,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gewaltmonopole",
-   "mevcutTr": "güç tekeli, zor kullanma tekeli",
-   "mevcutBeispiel": "In manchen Regionen hat der Staat sein Gewaltmonopol praktisch verloren.",
-   "mevcutBeispielTr": "Bazı bölgelerde devlet güç tekelini fiilen yitirmiş durumda."
+   "currentTr": "güç tekeli, zor kullanma tekeli",
+   "currentBeispiel": "In manchen Regionen hat der Staat sein Gewaltmonopol praktisch verloren.",
+   "currentBeispielTr": "Bazı bölgelerde devlet güç tekelini fiilen yitirmiş durumda."
   },
   {
    "id": 6896,
@@ -469,9 +469,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "devlet çıkarı, hikmet-i hükümet",
-   "mevcutBeispiel": "Der Minister berief sich auf die Staatsräson und schwieg zu Details.",
-   "mevcutBeispielTr": "Bakan devlet çıkarını öne sürerek ayrıntılar hakkında sustu."
+   "currentTr": "devlet çıkarı, hikmet-i hükümet",
+   "currentBeispiel": "Der Minister berief sich auf die Staatsräson und schwieg zu Details.",
+   "currentBeispielTr": "Bakan devlet çıkarını öne sürerek ayrıntılar hakkında sustu."
   },
   {
    "id": 6897,
@@ -479,9 +479,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Regierungserklärungen",
-   "mevcutTr": "hükümet programı açıklaması",
-   "mevcutBeispiel": "In seiner Regierungserklärung kündigte der Kanzler eine Wende in der Energiepolitik an.",
-   "mevcutBeispielTr": "Başbakan hükümet programı konuşmasında enerji politikasında dönüşüm ilan etti."
+   "currentTr": "hükümet programı açıklaması",
+   "currentBeispiel": "In seiner Regierungserklärung kündigte der Kanzler eine Wende in der Energiepolitik an.",
+   "currentBeispielTr": "Başbakan hükümet programı konuşmasında enerji politikasında dönüşüm ilan etti."
   },
   {
    "id": 6898,
@@ -489,9 +489,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bundestage",
-   "mevcutTr": "Federal Meclis",
-   "mevcutBeispiel": "Der Bundestag debattierte bis in die frühen Morgenstunden über den Haushalt.",
-   "mevcutBeispielTr": "Federal Meclis bütçeyi sabahın erken saatlerine kadar tartıştı."
+   "currentTr": "Federal Meclis",
+   "currentBeispiel": "Der Bundestag debattierte bis in die frühen Morgenstunden über den Haushalt.",
+   "currentBeispielTr": "Federal Meclis bütçeyi sabahın erken saatlerine kadar tartıştı."
   },
   {
    "id": 6899,
@@ -499,9 +499,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Quoren",
-   "mevcutTr": "yeter sayı, nisap",
-   "mevcutBeispiel": "Ohne das nötige Quorum ist die Abstimmung von vornherein ungültig.",
-   "mevcutBeispielTr": "Gerekli nisap olmadan oylama en baştan geçersizdir."
+   "currentTr": "yeter sayı, nisap",
+   "currentBeispiel": "Ohne das nötige Quorum ist die Abstimmung von vornherein ungültig.",
+   "currentBeispielTr": "Gerekli nisap olmadan oylama en baştan geçersizdir."
   },
   {
    "id": 6900,
@@ -509,9 +509,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Geschäftsordnungen",
-   "mevcutTr": "içtüzük, çalışma yönetmeliği",
-   "mevcutBeispiel": "Der Antrag verstieß eindeutig gegen die Geschäftsordnung des Parlaments.",
-   "mevcutBeispielTr": "Önerge açıkça parlamentonun içtüzüğüne aykırıydı."
+   "currentTr": "içtüzük, çalışma yönetmeliği",
+   "currentBeispiel": "Der Antrag verstieß eindeutig gegen die Geschäftsordnung des Parlaments.",
+   "currentBeispielTr": "Önerge açıkça parlamentonun içtüzüğüne aykırıydı."
   },
   {
    "id": 6901,
@@ -519,9 +519,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "diplomasi",
-   "mevcutBeispiel": "Stille Diplomatie erreichte mehr als jede öffentliche Drohung.",
-   "mevcutBeispielTr": "Sessiz diplomasi her türlü açık tehditten daha fazlasını başardı."
+   "currentTr": "diplomasi",
+   "currentBeispiel": "Stille Diplomatie erreichte mehr als jede öffentliche Drohung.",
+   "currentBeispielTr": "Sessiz diplomasi her türlü açık tehditten daha fazlasını başardı."
   },
   {
    "id": 6902,
@@ -529,9 +529,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat amtiert",
-   "mevcutTr": "görevde olmak, görevi yürütmek",
-   "mevcutBeispiel": "Er amtierte zwölf Jahre lang als Bürgermeister dieser Stadt.",
-   "mevcutBeispielTr": "On iki yıl boyunca bu şehrin belediye başkanlığını yürüttü."
+   "currentTr": "görevde olmak, görevi yürütmek",
+   "currentBeispiel": "Er amtierte zwölf Jahre lang als Bürgermeister dieser Stadt.",
+   "currentBeispielTr": "On iki yıl boyunca bu şehrin belediye başkanlığını yürüttü."
   }
  ]
 }

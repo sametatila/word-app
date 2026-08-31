@@ -54,9 +54,9 @@ for (const f of parts) {
   }
 
   const srcById = new Map((src as { id: number; beispiel?: string }[]).map((r) => [r.id, r]));
-  const problems: Record<string, string[]> = { sayi: [], id: [], artikel: [], sz: [], bos: [], kelime: [], yerel: [] };
+  const problems: Record<string, string[]> = { count: [], id: [], artikel: [], sz: [], empty: [], word: [], localized: [] };
 
-  if (out.length !== src.length) problems.sayi.push(`${out.length} ≠ ${src.length}`);
+  if (out.length !== src.length) problems.count.push(`${out.length} ≠ ${src.length}`);
 
   for (const g of out as { id: number; gsw?: string; artikel?: string | null; beispiel?: string }[]) {
     const s = srcById.get(g.id);
@@ -64,23 +64,23 @@ for (const f of parts) {
       problems.id.push(String(g.id));
       continue;
     }
-    if (!g.gsw || !String(g.gsw).trim()) problems.bos.push(String(g.id));
+    if (!g.gsw || !String(g.gsw).trim()) problems.empty.push(String(g.id));
     if (g.artikel != null && !["de", "d", "s"].includes(g.artikel))
       problems.artikel.push(`${g.id}:${g.artikel}`);
     if (/ß/.test(JSON.stringify(g))) problems.sz.push(String(g.id));
 
     if (g.beispiel && !containsWord(g.gsw ?? "", g.beispiel))
-      problems.kelime.push(`${g.gsw} → ${g.beispiel}`);
+      problems.word.push(`${g.gsw} → ${g.beispiel}`);
 
     // Asıl kapı: çeviri devralınabilecek mi?
     const de = (s.beispiel || "").split(/(?<=[.!?])\s+/)[0];
     if (de && g.beispiel && !fits(de, g.beispiel))
-      problems.yerel.push(`${g.id} | DE: ${de} | ZH: ${g.beispiel}`);
+      problems.localized.push(`${g.id} | DE: ${de} | ZH: ${g.beispiel}`);
   }
 
   const counts = Object.entries(problems).filter(([, v]) => v.length);
   totalItems += out.length;
-  const yerelPct = ((problems.yerel.length / Math.max(1, out.length)) * 100).toFixed(1);
+  const localizedPct = ((problems.localized.length / Math.max(1, out.length)) * 100).toFixed(1);
 
   if (!counts.length) {
     console.log(`${f.padEnd(14)} ✓  ${out.length} madde, sorun yok`);
@@ -89,7 +89,7 @@ for (const f of parts) {
     console.log(
       `${f.padEnd(14)} ✗  ${out.length} madde — ` +
         counts.map(([k, v]) => `${k}:${v.length}`).join(" · ") +
-        (problems.yerel.length ? `  (yerelleştirme %${yerelPct})` : ""),
+        (problems.localized.length ? `  (yerelleştirme %${localizedPct})` : ""),
     );
     for (const [k, v] of counts) {
       for (const line of v.slice(0, 3)) console.log(`     ${k}: ${line}`);

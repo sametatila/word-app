@@ -7,7 +7,7 @@
   "gsw": "Chugelschriiber",
   "gswArtikel": "de",
   "gswBeispiel": "Häsch mir en Chugelschriiber?",
-  "ayniLehce": [
+  "sameDialect": [
    "Kugelschreiber (A1)"
   ]
  },
@@ -118,7 +118,7 @@
   "gsw": "Couvert",
   "gswArtikel": "s",
   "gswBeispiel": "Ich hett gärn 50 Couvert und Briefmarke dezue.",
-  "ayniLehce": [
+  "sameDialect": [
    "Briefumschlag (B1)",
    "Couvert (B1)",
    "Umschlag (A2)"
@@ -231,7 +231,7 @@
   "gsw": "Laschtwage",
   "gswArtikel": "de",
   "gswBeispiel": "Vor öis isch die ganz Ziit en Laschtwage gfaare. Drum hät s so lang duuret.",
-  "ayniLehce": [
+  "sameDialect": [
    "Lkw (A1)"
   ]
  },
@@ -333,7 +333,7 @@
   "gsw": "läid tue",
   "gswArtikel": null,
   "gswBeispiel": "D Frau tuet mer läid. – Tuet mer läid, das weiss ich nöd.",
-  "ayniLehce": [
+  "sameDialect": [
    "leidtun (A2)"
   ]
  },
@@ -453,7 +453,7 @@
   "gsw": "Lift",
   "gswArtikel": "de",
   "gswBeispiel": "Im Büro isch läider de Lift kaputt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Aufzug (A1)"
   ]
  },
@@ -483,7 +483,7 @@
   "gsw": "link",
   "gswArtikel": null,
   "gswBeispiel": "Er hät sich s linke Bäi broche. S Huus isch uf de linke Siite.",
-  "ayniLehce": [
+  "sameDialect": [
    "Link (A2)"
   ]
  },
@@ -549,7 +549,7 @@
   "gsw": "Loon",
   "gswArtikel": "de",
   "gswBeispiel": "Si überchömed de Loon immer am Ändi vom Monet.",
-  "ayniLehce": [
+  "sameDialect": [
    "Gehalt (A2)"
   ]
  },
@@ -705,7 +705,7 @@
   "gsw": "Aprikose",
   "gswArtikel": "d",
   "gswBeispiel": "Schmöcked dir d Aprikose?",
-  "ayniLehce": [
+  "sameDialect": [
    "Aprikose (B1)"
   ]
  },
@@ -744,7 +744,7 @@
   "gsw": "Matur",
   "gswArtikel": "d",
   "gswBeispiel": "Mini Tochter hät grad d Matur gmacht.",
-  "ayniLehce": [
+  "sameDialect": [
    "Abitur (B1)"
   ]
  },
@@ -954,7 +954,7 @@
   "gsw": "Metzger",
   "gswArtikel": "de",
   "gswBeispiel": "Dää Metzger hät sehr gueti Wurscht.",
-  "ayniLehce": [
+  "sameDialect": [
    "Fleischhauer (B1)"
   ]
  },

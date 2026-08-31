@@ -1,7 +1,7 @@
 {
- "paket": "zh-004",
+ "packet": "zh-004",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-a1-w1",
    "skill": "writing",
@@ -9,33 +9,33 @@
    "title": "Sich vorstelle",
    "genre": "Tanışma",
    "intro": "Kendini lehçeyle tanıtmayı çalışacaksın: önce cümleler kur, sonra kısa bir grup mesajı yaz.",
-   "metin": "Ich häisse Elif und chume us de Türkei.\n\nIch wohne z Züri und gaa mit em Tram go schaffe.\n\nIch schaffe als Lehrerin.\n\nHoi zäme! Ich häisse Emre und chume us de Türkei, us Ankara. Jetz wohne ich z Züri, im Chreis 5. Ich schaffe als Ingenieur. Mini Hobbys sind Fuessball und Choche. Ich lerne Züritüütsch für de Alltag. Bis bald! Emre",
+   "text": "Ich häisse Elif und chume us de Türkei.\n\nIch wohne z Züri und gaa mit em Tram go schaffe.\n\nIch schaffe als Lehrerin.\n\nHoi zäme! Ich häisse Emre und chume us de Türkei, us Ankara. Jetz wohne ich z Züri, im Chreis 5. Ich schaffe als Ingenieur. Mini Hobbys sind Fuessball und Choche. Ich lerne Züritüütsch für de Alltag. Bis bald! Emre",
    "gloss": [
     {
      "de": "häisse",
-     "mevcutTr": "adında olmak (heißen)",
-     "havuz": {
+     "currentTr": "adında olmak (heißen)",
+     "pool": {
       "tr": "adı olmak",
       "en": "to be called"
      },
-     "hdAdayi": "heißen"
+     "hdCandidate": "heißen"
     },
     {
      "de": "choo us",
-     "mevcutTr": "…den gelmek, …li olmak (ich chume us …)"
+     "currentTr": "…den gelmek, …li olmak (ich chume us …)"
     },
     {
      "de": "wohne z",
-     "mevcutTr": "…de oturmak (z Züri = Zürih'te)"
+     "currentTr": "…de oturmak (z Züri = Zürih'te)"
     },
     {
      "de": "schaffe als",
-     "mevcutTr": "… olarak çalışmak (arbeiten yerine)"
+     "currentTr": "… olarak çalışmak (arbeiten yerine)"
     },
     {
      "de": "s Hobby",
-     "mevcutTr": "hobi",
-     "havuz": {
+     "currentTr": "hobi",
+     "pool": {
       "tr": "hobi",
       "en": "hobby"
      }
@@ -44,27 +44,27 @@
    "phrases": [
     {
      "de": "Ich häisse …",
-     "mevcutTr": "Benim adım …"
+     "currentTr": "Benim adım …"
     },
     {
      "de": "Ich chume us …",
-     "mevcutTr": "…den geliyorum / …liyim"
+     "currentTr": "…den geliyorum / …liyim"
     },
     {
      "de": "Ich wohne z …",
-     "mevcutTr": "…de oturuyorum"
+     "currentTr": "…de oturuyorum"
     },
     {
      "de": "Ich schaffe als …",
-     "mevcutTr": "… olarak çalışıyorum"
+     "currentTr": "… olarak çalışıyorum"
     },
     {
      "de": "Mis Hobby isch …",
-     "mevcutTr": "Hobim …"
+     "currentTr": "Hobim …"
     },
     {
      "de": "Bis bald!",
-     "mevcutTr": "Görüşürüz!"
+     "currentTr": "Görüşürüz!"
     }
    ]
   },
@@ -75,54 +75,54 @@
    "title": "E Nachricht an en Kolleg",
    "genre": "Mesaj",
    "intro": "Bir buluşmayı ertelemeyi lehçeyle yazacaksın: önce cümleler kur, sonra kısa bir mesaj yaz.",
-   "metin": "Ich cha hüt läider nöd choo, ich bi chrank.\n\nHäsch du morn am Namitag Ziit?\n\nIch schriibe der am Aabig.\n\nHoi Murat! Sorry, ich cha hüt am Aabig läider nöd choo — ich mues lenger schaffe. Passt s der am Friitig am sächsi? Mir chönted üs bim Bellevue träffe und nachhär öppis go ässe. Gib mer churz Bschäid. Liebi Grüess, Elif",
+   "text": "Ich cha hüt läider nöd choo, ich bi chrank.\n\nHäsch du morn am Namitag Ziit?\n\nIch schriibe der am Aabig.\n\nHoi Murat! Sorry, ich cha hüt am Aabig läider nöd choo — ich mues lenger schaffe. Passt s der am Friitig am sächsi? Mir chönted üs bim Bellevue träffe und nachhär öppis go ässe. Gib mer churz Bschäid. Liebi Grüess, Elif",
    "gloss": [
     {
      "de": "läider",
-     "mevcutTr": "maalesef (leider)",
-     "havuz": {
+     "currentTr": "maalesef (leider)",
+     "pool": {
       "tr": "maalesef",
       "en": "unfortunately"
      },
-     "hdAdayi": "leider"
+     "hdCandidate": "leider"
     },
     {
      "de": "chrank",
-     "mevcutTr": "hasta"
+     "currentTr": "hasta"
     },
     {
      "de": "d Ziit",
-     "mevcutTr": "vakit, zaman"
+     "currentTr": "vakit, zaman"
     },
     {
      "de": "passe",
-     "mevcutTr": "uymak (bir zaman için)"
+     "currentTr": "uymak (bir zaman için)"
     },
     {
      "de": "Bschäid gää",
-     "mevcutTr": "haber vermek"
+     "currentTr": "haber vermek"
     }
    ],
    "phrases": [
     {
      "de": "Ich cha läider nöd choo.",
-     "mevcutTr": "Maalesef gelemiyorum."
+     "currentTr": "Maalesef gelemiyorum."
     },
     {
      "de": "Ich mues lenger schaffe.",
-     "mevcutTr": "Daha uzun çalışmam gerek."
+     "currentTr": "Daha uzun çalışmam gerek."
     },
     {
      "de": "Passt s der am …?",
-     "mevcutTr": "… sana uyar mı?"
+     "currentTr": "… sana uyar mı?"
     },
     {
      "de": "Mir chönted üs … träffe.",
-     "mevcutTr": "… buluşabiliriz."
+     "currentTr": "… buluşabiliriz."
     },
     {
      "de": "Gib mer churz Bschäid.",
-     "mevcutTr": "Kısaca haber ver."
+     "currentTr": "Kısaca haber ver."
     }
    ]
   },
@@ -133,68 +133,68 @@
    "title": "Iichaufe und Ässe",
    "genre": "Günlük yaşam",
    "intro": "Alışveriş ve yemek konusunu lehçeyle yazacaksın.",
-   "metin": "Ich mues Milch und Brot chaufe.\n\nZum Zmorge iss ich meischtens es Brot mit Chääs.\n\nWottsch du hüt am Aabig zu üs choo? Ich choche öppis.\n\nHoi Sara! Chunsch du am Friitig zum Znacht zu mir? Ich choche öppis us de Türkei — Linsesuppe und Reis mit Gmües. Mir ässed am halbi sibni. Wänn du wottsch, bring doch en Salaat mit. Säg mer bis am Dunschtig Bschäid. Ich fröie mi! Elif",
+   "text": "Ich mues Milch und Brot chaufe.\n\nZum Zmorge iss ich meischtens es Brot mit Chääs.\n\nWottsch du hüt am Aabig zu üs choo? Ich choche öppis.\n\nHoi Sara! Chunsch du am Friitig zum Znacht zu mir? Ich choche öppis us de Türkei — Linsesuppe und Reis mit Gmües. Mir ässed am halbi sibni. Wänn du wottsch, bring doch en Salaat mit. Säg mer bis am Dunschtig Bschäid. Ich fröie mi! Elif",
    "gloss": [
     {
      "de": "chaufe",
-     "mevcutTr": "satın almak (kaufen)",
-     "havuz": {
+     "currentTr": "satın almak (kaufen)",
+     "pool": {
       "tr": "satın almak",
       "en": "to buy"
      },
-     "hdAdayi": "kaufen"
+     "hdCandidate": "kaufen"
     },
     {
      "de": "de Zmorge",
-     "mevcutTr": "kahvaltı (Frühstück)",
-     "havuz": {
+     "currentTr": "kahvaltı (Frühstück)",
+     "pool": {
       "tr": "kahvaltı",
       "en": "breakfast"
      },
-     "hdAdayi": "Frühstück"
+     "hdCandidate": "Frühstück"
     },
     {
      "de": "de Chääs",
-     "mevcutTr": "peynir (Käse)",
-     "havuz": {
+     "currentTr": "peynir (Käse)",
+     "pool": {
       "tr": "peynir",
       "en": "cheese"
      },
-     "hdAdayi": "Käse"
+     "hdCandidate": "Käse"
     },
     {
      "de": "choche",
-     "mevcutTr": "yemek pişirmek"
+     "currentTr": "yemek pişirmek"
     },
     {
      "de": "de Znacht",
-     "mevcutTr": "akşam yemeği"
+     "currentTr": "akşam yemeği"
     },
     {
      "de": "d Iichaufsliste",
-     "mevcutTr": "alışveriş listesi"
+     "currentTr": "alışveriş listesi"
     }
    ],
    "phrases": [
     {
      "de": "Chunsch du zum Znacht?",
-     "mevcutTr": "Akşam yemeğine gelir misin?"
+     "currentTr": "Akşam yemeğine gelir misin?"
     },
     {
      "de": "Ich choche …",
-     "mevcutTr": "… pişiriyorum."
+     "currentTr": "… pişiriyorum."
     },
     {
      "de": "Mir ässed am …",
-     "mevcutTr": "Saat …'de yiyoruz."
+     "currentTr": "Saat …'de yiyoruz."
     },
     {
      "de": "Bring doch … mit.",
-     "mevcutTr": "… getirsene."
+     "currentTr": "… getirsene."
     },
     {
      "de": "Ich fröie mi!",
-     "mevcutTr": "Sevinirim / dört gözle bekliyorum!"
+     "currentTr": "Sevinirim / dört gözle bekliyorum!"
     }
    ]
   },
@@ -205,58 +205,58 @@
    "title": "Mini Wohnig, min Alltag",
    "genre": "Günlük yaşam",
    "intro": "Evini ve günlük düzenini lehçeyle anlatacaksın.",
-   "metin": "Ich wohne z Züri i ere chliine Wohnig.\n\nIch schtaa am viertel ab sibni uf.\n\nAm Aabig bin ich meischtens dihäi und lise es Buech.\n\nIch schtaa am viertel ab sibni uf. Zum Zmorge iss ich es Brot mit Chääs und trinke en Kafi. Denn gaa ich mit em Tram Nummere 11 go schaffe. Am Mittag iss ich mit mine Kollege i de Kantine. Am Namitag gaa ich no schnäll i d Migros. Am Aabig bin ich meischtens dihäi: ich choche öppis, lise es Buech oder lueg e Serie. Am Samschtig gaa ich gärn an See.",
+   "text": "Ich wohne z Züri i ere chliine Wohnig.\n\nIch schtaa am viertel ab sibni uf.\n\nAm Aabig bin ich meischtens dihäi und lise es Buech.\n\nIch schtaa am viertel ab sibni uf. Zum Zmorge iss ich es Brot mit Chääs und trinke en Kafi. Denn gaa ich mit em Tram Nummere 11 go schaffe. Am Mittag iss ich mit mine Kollege i de Kantine. Am Namitag gaa ich no schnäll i d Migros. Am Aabig bin ich meischtens dihäi: ich choche öppis, lise es Buech oder lueg e Serie. Am Samschtig gaa ich gärn an See.",
    "gloss": [
     {
      "de": "d Wohnig",
-     "mevcutTr": "daire"
+     "currentTr": "daire"
     },
     {
      "de": "ufschtaa",
-     "mevcutTr": "kalkmak (aufstehen)",
-     "havuz": {
+     "currentTr": "kalkmak (aufstehen)",
+     "pool": {
       "tr": "kalkmak",
       "en": "to get up"
      },
-     "hdAdayi": "aufstehen"
+     "hdCandidate": "aufstehen"
     },
     {
      "de": "viertel ab",
-     "mevcutTr": "…i çeyrek geçe"
+     "currentTr": "…i çeyrek geçe"
     },
     {
      "de": "dihäi",
-     "mevcutTr": "evde"
+     "currentTr": "evde"
     },
     {
      "de": "läse",
-     "mevcutTr": "okumak (ich lise)"
+     "currentTr": "okumak (ich lise)"
     },
     {
      "de": "de Feierabig",
-     "mevcutTr": "iş sonrası, mesai sonu"
+     "currentTr": "iş sonrası, mesai sonu"
     }
    ],
    "phrases": [
     {
      "de": "Ich schtaa am … uf.",
-     "mevcutTr": "Saat …'de kalkarım."
+     "currentTr": "Saat …'de kalkarım."
     },
     {
      "de": "Zum Zmorge iss ich …",
-     "mevcutTr": "Kahvaltıda … yerim."
+     "currentTr": "Kahvaltıda … yerim."
     },
     {
      "de": "Ich gaa mit em Tram go schaffe.",
-     "mevcutTr": "İşe tramvayla giderim."
+     "currentTr": "İşe tramvayla giderim."
     },
     {
      "de": "Am Namitag …",
-     "mevcutTr": "Öğleden sonra …"
+     "currentTr": "Öğleden sonra …"
     },
     {
      "de": "Am Aabig bin ich dihäi.",
-     "mevcutTr": "Akşamları evdeyim."
+     "currentTr": "Akşamları evdeyim."
     }
    ]
   },
@@ -267,40 +267,40 @@
    "title": "E Entschuldigung für de Chindsgi",
    "genre": "Resmî yazı",
    "intro": "Çocuğun okula gitmediği her gün yazılan kısa not. Lehçede yazılır ama kibar biçimi vardır.",
-   "metin": "Min Sohn Kerem isch hüt chrank.\n\nEr hät Fieber und cha nöd in Chindsgi choo.\n\nBitte entschuldiged Si sis Fääle hüt.\n\nLiebi Frau Suter\n\nMin Sohn Kerem isch sit gescht chrank. Er hät Fieber und cha hüt und morn nöd in Chindsgi choo. Bitte entschuldiged Si sis Fääle.\n\nAm Dunschtig isch er hoffentlich wider da.\n\nFründlichi Grüess\nMeral Yıldız\n14. Mai",
+   "text": "Min Sohn Kerem isch hüt chrank.\n\nEr hät Fieber und cha nöd in Chindsgi choo.\n\nBitte entschuldiged Si sis Fääle hüt.\n\nLiebi Frau Suter\n\nMin Sohn Kerem isch sit gescht chrank. Er hät Fieber und cha hüt und morn nöd in Chindsgi choo. Bitte entschuldiged Si sis Fääle.\n\nAm Dunschtig isch er hoffentlich wider da.\n\nFründlichi Grüess\nMeral Yıldız\n14. Mai",
    "gloss": [
     {
      "de": "chrank",
-     "mevcutTr": "hasta"
+     "currentTr": "hasta"
     },
     {
      "de": "s Fieber",
-     "mevcutTr": "ateş",
-     "havuz": {
+     "currentTr": "ateş",
+     "pool": {
       "tr": "ateş",
       "en": "fever"
      }
     },
     {
      "de": "fääle",
-     "mevcutTr": "gelmemek, devamsızlık"
+     "currentTr": "gelmemek, devamsızlık"
     },
     {
      "de": "entschuldige",
-     "mevcutTr": "mazur görmek"
+     "currentTr": "mazur görmek"
     },
     {
      "de": "hoffentlich",
-     "mevcutTr": "umarım",
-     "havuz": {
+     "currentTr": "umarım",
+     "pool": {
       "tr": "umarım",
       "en": "hopefully"
      }
     },
     {
      "de": "d Unterschrift",
-     "mevcutTr": "imza",
-     "havuz": {
+     "currentTr": "imza",
+     "pool": {
       "tr": "imza",
       "en": "signature"
      }
@@ -309,23 +309,23 @@
    "phrases": [
     {
      "de": "Liebi Frau …",
-     "mevcutTr": "Sayın … Hanım,"
+     "currentTr": "Sayın … Hanım,"
     },
     {
      "de": "Min Sohn / Mini Tochter …",
-     "mevcutTr": "Oğlum / kızım …"
+     "currentTr": "Oğlum / kızım …"
     },
     {
      "de": "isch sit gescht chrank",
-     "mevcutTr": "dünden beri hasta"
+     "currentTr": "dünden beri hasta"
     },
     {
      "de": "Bitte entschuldiged Si …",
-     "mevcutTr": "Lütfen … mazur görün."
+     "currentTr": "Lütfen … mazur görün."
     },
     {
      "de": "Fründlichi Grüess",
-     "mevcutTr": "Saygılarımla"
+     "currentTr": "Saygılarımla"
     }
    ]
   },
@@ -336,73 +336,73 @@
    "title": "Aamäldig und churzi Nachricht",
    "genre": "Sınav formatı",
    "intro": "İki tipik görev: kısa bilgi alanlarını doldurmak ve üç noktaya değinen kısa bir mesaj yazmak.",
-   "metin": "Ich möcht mich für en Züritüütsch-Kurs aamälde.\n\nAm Aabig nach de sächsi han ich Ziit.\n\nSchriibed Si mer bitte de Priis.\n\nGrüezi mitenand\n\nIch möcht mich für en Züritüütsch-Kurs für Aafänger aamälde. Ich schaffe bis am füfi, drum han ich nur am Aabig nach de sächsi Ziit — am beschte am Määndig oder Mittwuch.\n\nWas choschtet de Kurs und wänn fangt er aa? Schriibed Si mer bitte au, wie lang er duuret.\n\nMerci vilmal und liebi Grüess\nMeral Yıldız",
+   "text": "Ich möcht mich für en Züritüütsch-Kurs aamälde.\n\nAm Aabig nach de sächsi han ich Ziit.\n\nSchriibed Si mer bitte de Priis.\n\nGrüezi mitenand\n\nIch möcht mich für en Züritüütsch-Kurs für Aafänger aamälde. Ich schaffe bis am füfi, drum han ich nur am Aabig nach de sächsi Ziit — am beschte am Määndig oder Mittwuch.\n\nWas choschtet de Kurs und wänn fangt er aa? Schriibed Si mer bitte au, wie lang er duuret.\n\nMerci vilmal und liebi Grüess\nMeral Yıldız",
    "gloss": [
     {
      "de": "s Formular",
-     "mevcutTr": "form",
-     "havuz": {
+     "currentTr": "form",
+     "pool": {
       "tr": "form",
       "en": "form"
      }
     },
     {
      "de": "de Familiename",
-     "mevcutTr": "soyadı"
+     "currentTr": "soyadı"
     },
     {
      "de": "de Vorname",
-     "mevcutTr": "ad",
-     "havuz": {
+     "currentTr": "ad",
+     "pool": {
       "tr": "ad",
       "en": "first name"
      }
     },
     {
      "de": "d Aamäldig",
-     "mevcutTr": "kayıt"
+     "currentTr": "kayıt"
     },
     {
      "de": "de Kurs",
-     "mevcutTr": "kurs",
-     "havuz": {
+     "currentTr": "kurs",
+     "pool": {
       "tr": "kurs",
       "en": "course"
      }
     },
     {
      "de": "d Ziit haa",
-     "mevcutTr": "vakti olmak"
+     "currentTr": "vakti olmak"
     },
     {
      "de": "de Priis",
-     "mevcutTr": "fiyat"
+     "currentTr": "fiyat"
     }
    ],
    "phrases": [
     {
      "de": "Grüezi mitenand,",
-     "mevcutTr": "Merhaba,"
+     "currentTr": "Merhaba,"
     },
     {
      "de": "Ich möcht mich für … aamälde.",
-     "mevcutTr": "… için kaydolmak istiyorum."
+     "currentTr": "… için kaydolmak istiyorum."
     },
     {
      "de": "Am … han ich Ziit.",
-     "mevcutTr": "… günü vaktim var."
+     "currentTr": "… günü vaktim var."
     },
     {
      "de": "Was choschtet de Kurs?",
-     "mevcutTr": "Kurs ne kadar?"
+     "currentTr": "Kurs ne kadar?"
     },
     {
      "de": "Wänn fangt er aa?",
-     "mevcutTr": "Ne zaman başlıyor?"
+     "currentTr": "Ne zaman başlıyor?"
     },
     {
      "de": "Merci vilmal und liebi Grüess",
-     "mevcutTr": "Teşekkürler, sevgiler"
+     "currentTr": "Teşekkürler, sevgiler"
     }
    ]
   },
@@ -413,44 +413,44 @@
    "title": "S Znüni erkläre",
    "genre": "Kültür",
    "intro": "Ülkendeki bir arkadaşına İsviçre'deki günlük bir âdeti anlatacaksın — kültürü anlatmak, dili en çok geliştiren yazma türüdür.",
-   "metin": "I de Schwiiz git s am nüüni e Pause.\n\nAlli ässed öppis — das häisst Znüni.\n\nAm Aafang isch mer das komisch vorcho.\n\nHoi Zeynep\n\nIch verzell der öppis us de Schwiiz. Bi eus git s am nüüni e chliini Pause — au i de Schuel, au im Gschäft. Das häisst Znüni.\n\nAlli ässed denn öppis Chliises: es Brot, en Öpfel, es Jogurt. D Chind händ s im Rucksack, d Erwachsene gönd zäme i d Kantine oder stönd i de Chuchi.\n\nAm Aafang isch mer das komisch vorcho — ich han doch am achti Zmorge gha! Hüt find ich s aber guet: me redt zää Minute mit de Lüüt, und denn schaffed alli wider.\n\nLiebi Grüess\nMeral",
+   "text": "I de Schwiiz git s am nüüni e Pause.\n\nAlli ässed öppis — das häisst Znüni.\n\nAm Aafang isch mer das komisch vorcho.\n\nHoi Zeynep\n\nIch verzell der öppis us de Schwiiz. Bi eus git s am nüüni e chliini Pause — au i de Schuel, au im Gschäft. Das häisst Znüni.\n\nAlli ässed denn öppis Chliises: es Brot, en Öpfel, es Jogurt. D Chind händ s im Rucksack, d Erwachsene gönd zäme i d Kantine oder stönd i de Chuchi.\n\nAm Aafang isch mer das komisch vorcho — ich han doch am achti Zmorge gha! Hüt find ich s aber guet: me redt zää Minute mit de Lüüt, und denn schaffed alli wider.\n\nLiebi Grüess\nMeral",
    "gloss": [
     {
      "de": "erkläre",
-     "mevcutTr": "açıklamak"
+     "currentTr": "açıklamak"
     },
     {
      "de": "s Znüni",
-     "mevcutTr": "kuşluk yemeği"
+     "currentTr": "kuşluk yemeği"
     },
     {
      "de": "d Pause",
-     "mevcutTr": "mola",
-     "havuz": {
+     "currentTr": "mola",
+     "pool": {
       "tr": "mola",
       "en": "break"
      }
     },
     {
      "de": "zäme",
-     "mevcutTr": "birlikte"
+     "currentTr": "birlikte"
     },
     {
      "de": "anders",
-     "mevcutTr": "farklı",
-     "havuz": {
+     "currentTr": "farklı",
+     "pool": {
       "tr": "başka türlü",
       "en": "differently"
      }
     },
     {
      "de": "bi eus",
-     "mevcutTr": "bizde"
+     "currentTr": "bizde"
     },
     {
      "de": "komisch",
-     "mevcutTr": "tuhaf, garip",
-     "havuz": {
+     "currentTr": "tuhaf, garip",
+     "pool": {
       "tr": "tuhaf",
       "en": "strange"
      }
@@ -459,23 +459,23 @@
    "phrases": [
     {
      "de": "Bi eus i de Schwiiz git s …",
-     "mevcutTr": "Bizde, İsviçre'de … var."
+     "currentTr": "Bizde, İsviçre'de … var."
     },
     {
      "de": "Das isch am …",
-     "mevcutTr": "Bu … zamanında olur."
+     "currentTr": "Bu … zamanında olur."
     },
     {
      "de": "D Lüüt …",
-     "mevcutTr": "İnsanlar …"
+     "currentTr": "İnsanlar …"
     },
     {
      "de": "Am Aafang han ich das komisch gfunde.",
-     "mevcutTr": "Başta tuhaf bulmuştum."
+     "currentTr": "Başta tuhaf bulmuştum."
     },
     {
      "de": "Hüt find ich s guet.",
-     "mevcutTr": "Bugün iyi buluyorum."
+     "currentTr": "Bugün iyi buluyorum."
     }
    ]
   },
@@ -486,53 +486,53 @@
    "title": "Antwort a d Frau Suter",
    "genre": "Not",
    "intro": "Hikâyenin son bölümü: öğretmenin notuna (zh-a1-r11) yazılı cevap vereceksin — üç maddesine de.",
-   "metin": "Merci vilmal für de Zettel.\n\nA d Jagge dänk ich.\n\nDe Kerem chunt gärn am Ussflug mit.\n\nLiebi Frau Suter\n\nMerci vilmal für de Zettel.\n\nA d Jagge dänk ich — si isch under em Bett gsii. Am Määndig nimmt er si mit.\n\nDe Kerem chunt gärn am Ussflug mit. Was mues er mitnää? Mir händ käini Gummistifeli, aber alti Schueh scho.\n\nUnd das mit em Rede hät mi würkli gfröit. Dihäi redt er au meh.\n\nFründlichi Grüess\nMeral Yıldız",
+   "text": "Merci vilmal für de Zettel.\n\nA d Jagge dänk ich.\n\nDe Kerem chunt gärn am Ussflug mit.\n\nLiebi Frau Suter\n\nMerci vilmal für de Zettel.\n\nA d Jagge dänk ich — si isch under em Bett gsii. Am Määndig nimmt er si mit.\n\nDe Kerem chunt gärn am Ussflug mit. Was mues er mitnää? Mir händ käini Gummistifeli, aber alti Schueh scho.\n\nUnd das mit em Rede hät mi würkli gfröit. Dihäi redt er au meh.\n\nFründlichi Grüess\nMeral Yıldız",
    "gloss": [
     {
      "de": "danke für",
-     "mevcutTr": "… için teşekkür"
+     "currentTr": "… için teşekkür"
     },
     {
      "de": "dra dänke",
-     "mevcutTr": "unutmamak, aklında tutmak"
+     "currentTr": "unutmamak, aklında tutmak"
     },
     {
      "de": "mitcho",
-     "mevcutTr": "birlikte gelmek"
+     "currentTr": "birlikte gelmek"
     },
     {
      "de": "sich fröie",
-     "mevcutTr": "sevinmek"
+     "currentTr": "sevinmek"
     },
     {
      "de": "gärn",
-     "mevcutTr": "memnuniyetle"
+     "currentTr": "memnuniyetle"
     },
     {
      "de": "es hät mi gfröit",
-     "mevcutTr": "beni sevindirdi"
+     "currentTr": "beni sevindirdi"
     }
    ],
    "phrases": [
     {
      "de": "Merci vilmal für de Zettel.",
-     "mevcutTr": "Not için teşekkürler."
+     "currentTr": "Not için teşekkürler."
     },
     {
      "de": "A d Jagge dänk ich.",
-     "mevcutTr": "Ceketi unutmam."
+     "currentTr": "Ceketi unutmam."
     },
     {
      "de": "De Kerem chunt gärn mit.",
-     "mevcutTr": "Kerem seve seve geliyor."
+     "currentTr": "Kerem seve seve geliyor."
     },
     {
      "de": "Was mues er mitnää?",
-     "mevcutTr": "Ne getirmesi gerekiyor?"
+     "currentTr": "Ne getirmesi gerekiyor?"
     },
     {
      "de": "Das hät mi gfröit.",
-     "mevcutTr": "Bu beni sevindirdi."
+     "currentTr": "Bu beni sevindirdi."
     }
    ]
   }

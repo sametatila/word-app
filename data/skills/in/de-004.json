@@ -1,7 +1,7 @@
 {
- "paket": "de-004",
+ "packet": "de-004",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "a1-w1",
    "skill": "writing",
@@ -9,36 +9,36 @@
    "title": "Sich vorstellen",
    "genre": "Tanışma",
    "intro": "Kendini tanıtmayı çalışacaksın: önce cümleler kur, sonra kısa bir forum mesajı yaz.",
-   "metin": "Ich heiße Elif und komme aus Izmir.\n\nIch wohne in Berlin in einer kleinen Wohnung.\n\nIch arbeite als Lehrerin.\n\nHallo zusammen! Ich heiße Emre und ich komme aus der Türkei, aus Ankara. Jetzt wohne ich in Hamburg. Ich arbeite als Ingenieur. Meine Hobbys sind Fußball und Kochen. Ich lerne Deutsch für die Arbeit. Bis bald! Emre",
+   "text": "Ich heiße Elif und komme aus Izmir.\n\nIch wohne in Berlin in einer kleinen Wohnung.\n\nIch arbeite als Lehrerin.\n\nHallo zusammen! Ich heiße Emre und ich komme aus der Türkei, aus Ankara. Jetzt wohne ich in Hamburg. Ich arbeite als Ingenieur. Meine Hobbys sind Fußball und Kochen. Ich lerne Deutsch für die Arbeit. Bis bald! Emre",
    "gloss": [
     {
      "de": "heißen",
-     "mevcutTr": "adı olmak",
-     "havuz": {
+     "currentTr": "adı olmak",
+     "pool": {
       "tr": "adı olmak",
       "en": "to be called"
      }
     },
     {
      "de": "kommen aus",
-     "mevcutTr": "…den gelmek"
+     "currentTr": "…den gelmek"
     },
     {
      "de": "wohnen",
-     "mevcutTr": "oturmak",
-     "havuz": {
+     "currentTr": "oturmak",
+     "pool": {
       "tr": "oturmak",
       "en": "to live"
      }
     },
     {
      "de": "arbeiten als",
-     "mevcutTr": "… olarak çalışmak"
+     "currentTr": "… olarak çalışmak"
     },
     {
      "de": "das Hobby",
-     "mevcutTr": "hobi",
-     "havuz": {
+     "currentTr": "hobi",
+     "pool": {
       "tr": "hobi",
       "en": "hobby"
      }
@@ -47,27 +47,27 @@
    "phrases": [
     {
      "de": "Ich heiße …",
-     "mevcutTr": "Benim adım …"
+     "currentTr": "Benim adım …"
     },
     {
      "de": "Ich komme aus …",
-     "mevcutTr": "…'den geliyorum"
+     "currentTr": "…'den geliyorum"
     },
     {
      "de": "Ich wohne in …",
-     "mevcutTr": "…'de oturuyorum"
+     "currentTr": "…'de oturuyorum"
     },
     {
      "de": "Ich arbeite als …",
-     "mevcutTr": "… olarak çalışıyorum"
+     "currentTr": "… olarak çalışıyorum"
     },
     {
      "de": "Mein Hobby ist …",
-     "mevcutTr": "Hobim …"
+     "currentTr": "Hobim …"
     },
     {
      "de": "Bis bald!",
-     "mevcutTr": "Yakında görüşürüz!"
+     "currentTr": "Yakında görüşürüz!"
     }
    ]
   },
@@ -78,36 +78,36 @@
    "title": "Eine Nachricht an einen Freund",
    "genre": "Mesaj",
    "intro": "Arkadaşlarla plan yapmayı çalışacaksın: cümleler kur, sonra bir davete cevap yaz.",
-   "metin": "Wir gehen morgen ins Kino.\n\nUm wie viel Uhr treffen wir uns?\n\nLeider kann ich heute nicht kommen.\n\nHallo! Kommst du am Samstag zu meiner Party? Sie beginnt um 18 Uhr. Liebe Grüße, Jonas\n\nHallo Jonas, danke für deine Einladung! Aber ich kann am Samstag leider nicht kommen. Ich muss am Abend arbeiten. Hast du am Sonntag Zeit? Wir können zusammen Kaffee trinken. Viele Grüße, Selin",
+   "text": "Wir gehen morgen ins Kino.\n\nUm wie viel Uhr treffen wir uns?\n\nLeider kann ich heute nicht kommen.\n\nHallo! Kommst du am Samstag zu meiner Party? Sie beginnt um 18 Uhr. Liebe Grüße, Jonas\n\nHallo Jonas, danke für deine Einladung! Aber ich kann am Samstag leider nicht kommen. Ich muss am Abend arbeiten. Hast du am Sonntag Zeit? Wir können zusammen Kaffee trinken. Viele Grüße, Selin",
    "gloss": [
     {
      "de": "sich treffen",
-     "mevcutTr": "buluşmak"
+     "currentTr": "buluşmak"
     },
     {
      "de": "die Einladung",
-     "mevcutTr": "davet",
-     "havuz": {
+     "currentTr": "davet",
+     "pool": {
       "tr": "davet",
       "en": "invitation"
      }
     },
     {
      "de": "leider",
-     "mevcutTr": "maalesef",
-     "havuz": {
+     "currentTr": "maalesef",
+     "pool": {
       "tr": "maalesef",
       "en": "unfortunately"
      }
     },
     {
      "de": "die Zeit haben",
-     "mevcutTr": "vakti olmak"
+     "currentTr": "vakti olmak"
     },
     {
      "de": "vorschlagen",
-     "mevcutTr": "önermek",
-     "havuz": {
+     "currentTr": "önermek",
+     "pool": {
       "tr": "önermek",
       "en": "to suggest"
      }
@@ -116,23 +116,23 @@
    "phrases": [
     {
      "de": "Danke für deine Einladung!",
-     "mevcutTr": "Davetin için teşekkürler!"
+     "currentTr": "Davetin için teşekkürler!"
     },
     {
      "de": "Ich kann leider nicht kommen.",
-     "mevcutTr": "Maalesef gelemiyorum."
+     "currentTr": "Maalesef gelemiyorum."
     },
     {
      "de": "Ich muss arbeiten.",
-     "mevcutTr": "Çalışmam gerekiyor."
+     "currentTr": "Çalışmam gerekiyor."
     },
     {
      "de": "Hast du am Sonntag Zeit?",
-     "mevcutTr": "Pazar günü vaktin var mı?"
+     "currentTr": "Pazar günü vaktin var mı?"
     },
     {
      "de": "Viele Grüße",
-     "mevcutTr": "Selamlar"
+     "currentTr": "Selamlar"
     }
    ]
   },
@@ -143,44 +143,44 @@
    "title": "Essen und Einkaufen",
    "genre": "Günlük yaşam",
    "intro": "Alışveriş ve yemek cümleleri kuracak, sonra bir arkadaşını akşam yemeğine davet edeceksin.",
-   "metin": "Ich möchte ein Kilo Tomaten kaufen.\n\nZum Frühstück esse ich Brot und Käse.\n\nTrinkst du Tee oder Kaffee?\n\nLiebe Mia, ich lade dich zum Abendessen ein. Hast du am Freitag um 19 Uhr Zeit? Ich koche Nudeln mit Tomatensoße und einen Salat. Bring bitte einen Nachtisch mit. Ich freue mich! Bis Freitag! Deine Aylin",
+   "text": "Ich möchte ein Kilo Tomaten kaufen.\n\nZum Frühstück esse ich Brot und Käse.\n\nTrinkst du Tee oder Kaffee?\n\nLiebe Mia, ich lade dich zum Abendessen ein. Hast du am Freitag um 19 Uhr Zeit? Ich koche Nudeln mit Tomatensoße und einen Salat. Bring bitte einen Nachtisch mit. Ich freue mich! Bis Freitag! Deine Aylin",
    "gloss": [
     {
      "de": "kaufen",
-     "mevcutTr": "satın almak",
-     "havuz": {
+     "currentTr": "satın almak",
+     "pool": {
       "tr": "satın almak",
       "en": "to buy"
      }
     },
     {
      "de": "das Frühstück",
-     "mevcutTr": "kahvaltı",
-     "havuz": {
+     "currentTr": "kahvaltı",
+     "pool": {
       "tr": "kahvaltı",
       "en": "breakfast"
      }
     },
     {
      "de": "kochen",
-     "mevcutTr": "yemek pişirmek",
-     "havuz": {
+     "currentTr": "yemek pişirmek",
+     "pool": {
       "tr": "yemek pişirmek",
       "en": "to cook"
      }
     },
     {
      "de": "der Nachtisch",
-     "mevcutTr": "tatlı",
-     "havuz": {
+     "currentTr": "tatlı",
+     "pool": {
       "tr": "tatlı",
       "en": "dessert"
      }
     },
     {
      "de": "mitbringen",
-     "mevcutTr": "getirmek",
-     "havuz": {
+     "currentTr": "getirmek",
+     "pool": {
       "tr": "getirmek",
       "en": "to bring along"
      }
@@ -189,23 +189,23 @@
    "phrases": [
     {
      "de": "Ich lade dich zum Abendessen ein.",
-     "mevcutTr": "Seni akşam yemeğine davet ediyorum."
+     "currentTr": "Seni akşam yemeğine davet ediyorum."
     },
     {
      "de": "Ich koche …",
-     "mevcutTr": "… pişiriyorum"
+     "currentTr": "… pişiriyorum"
     },
     {
      "de": "Hast du Zeit?",
-     "mevcutTr": "Vaktin var mı?"
+     "currentTr": "Vaktin var mı?"
     },
     {
      "de": "Bring bitte … mit.",
-     "mevcutTr": "Lütfen … getir."
+     "currentTr": "Lütfen … getir."
     },
     {
      "de": "Bis Freitag!",
-     "mevcutTr": "Cumaya görüşürüz!"
+     "currentTr": "Cumaya görüşürüz!"
     }
    ]
   },
@@ -216,52 +216,52 @@
    "title": "Meine Wohnung, mein Alltag",
    "genre": "Günlük yaşam",
    "intro": "Ev ve günlük rutin cümleleri kuracak, sonra yeni evini bir arkadaşına anlatacaksın.",
-   "metin": "Meine Wohnung ist klein, aber sehr schön.\n\nIch fahre mit dem Bus zur Arbeit.\n\nAm Abend sehe ich fern.\n\nHallo Tom, ich habe eine neue Wohnung in München! Sie hat zwei Zimmer, eine Küche und einen kleinen Balkon. Die Wohnung ist hell und liegt im Zentrum. Willst du mich besuchen? Du kannst am Samstag kommen. Viele Grüße, Deniz",
+   "text": "Meine Wohnung ist klein, aber sehr schön.\n\nIch fahre mit dem Bus zur Arbeit.\n\nAm Abend sehe ich fern.\n\nHallo Tom, ich habe eine neue Wohnung in München! Sie hat zwei Zimmer, eine Küche und einen kleinen Balkon. Die Wohnung ist hell und liegt im Zentrum. Willst du mich besuchen? Du kannst am Samstag kommen. Viele Grüße, Deniz",
    "gloss": [
     {
      "de": "die Wohnung",
-     "mevcutTr": "daire",
-     "havuz": {
+     "currentTr": "daire",
+     "pool": {
       "tr": "daire",
       "en": "apartment"
      }
     },
     {
      "de": "das Schlafzimmer",
-     "mevcutTr": "yatak odası",
-     "havuz": {
+     "currentTr": "yatak odası",
+     "pool": {
       "tr": "yatak odası",
       "en": "bedroom"
      }
     },
     {
      "de": "hell",
-     "mevcutTr": "aydınlık",
-     "havuz": {
+     "currentTr": "aydınlık",
+     "pool": {
       "tr": "aydınlık",
       "en": "bright"
      }
     },
     {
      "de": "die Arbeit",
-     "mevcutTr": "iş",
-     "havuz": {
+     "currentTr": "iş",
+     "pool": {
       "tr": "iş",
       "en": "work"
      }
     },
     {
      "de": "fernsehen",
-     "mevcutTr": "televizyon izlemek",
-     "havuz": {
+     "currentTr": "televizyon izlemek",
+     "pool": {
       "tr": "televizyon izlemek",
       "en": "to watch TV"
      }
     },
     {
      "de": "besuchen",
-     "mevcutTr": "ziyaret etmek",
-     "havuz": {
+     "currentTr": "ziyaret etmek",
+     "pool": {
       "tr": "ziyaret etmek",
       "en": "to visit"
      }
@@ -270,23 +270,23 @@
    "phrases": [
     {
      "de": "Ich habe eine neue Wohnung.",
-     "mevcutTr": "Yeni bir dairem var."
+     "currentTr": "Yeni bir dairem var."
     },
     {
      "de": "Die Wohnung hat zwei Zimmer.",
-     "mevcutTr": "Dairenin iki odası var."
+     "currentTr": "Dairenin iki odası var."
     },
     {
      "de": "Sie liegt im Zentrum.",
-     "mevcutTr": "Merkezde bulunuyor."
+     "currentTr": "Merkezde bulunuyor."
     },
     {
      "de": "Willst du mich besuchen?",
-     "mevcutTr": "Beni ziyaret etmek ister misin?"
+     "currentTr": "Beni ziyaret etmek ister misin?"
     },
     {
      "de": "Du kannst am Wochenende kommen.",
-     "mevcutTr": "Hafta sonu gelebilirsin."
+     "currentTr": "Hafta sonu gelebilirsin."
     }
    ]
   },
@@ -297,52 +297,52 @@
    "title": "Eine Entschuldigung für die Schule",
    "genre": "Resmî yazı",
    "intro": "Almanya'da çocuğu okula gitmeyen her veli bunu yazar: kısa, resmî bir mazeret notu.",
-   "metin": "Mein Sohn Karim ist heute krank.\n\nEr hat Fieber und kann nicht in die Schule kommen.\n\nBitte entschuldigen Sie sein Fehlen heute.\n\nSehr geehrte Frau Berger,\n\nmein Sohn Karim Haddad aus der Klasse 3b ist seit gestern krank. Er hat Fieber und kann heute und morgen nicht in die Schule kommen. Bitte entschuldigen Sie sein Fehlen.\n\nAm Donnerstag ist er hoffentlich wieder da.\n\nMit freundlichen Grüßen\nAmir Haddad\n14. Mai",
+   "text": "Mein Sohn Karim ist heute krank.\n\nEr hat Fieber und kann nicht in die Schule kommen.\n\nBitte entschuldigen Sie sein Fehlen heute.\n\nSehr geehrte Frau Berger,\n\nmein Sohn Karim Haddad aus der Klasse 3b ist seit gestern krank. Er hat Fieber und kann heute und morgen nicht in die Schule kommen. Bitte entschuldigen Sie sein Fehlen.\n\nAm Donnerstag ist er hoffentlich wieder da.\n\nMit freundlichen Grüßen\nAmir Haddad\n14. Mai",
    "gloss": [
     {
      "de": "die Entschuldigung",
-     "mevcutTr": "mazeret yazısı",
-     "havuz": {
+     "currentTr": "mazeret yazısı",
+     "pool": {
       "tr": "özür",
       "en": "apology"
      }
     },
     {
      "de": "krank",
-     "mevcutTr": "hasta",
-     "havuz": {
+     "currentTr": "hasta",
+     "pool": {
       "tr": "hasta",
       "en": "sick"
      }
     },
     {
      "de": "das Fieber",
-     "mevcutTr": "ateş",
-     "havuz": {
+     "currentTr": "ateş",
+     "pool": {
       "tr": "ateş",
       "en": "fever"
      }
     },
     {
      "de": "der Unterricht",
-     "mevcutTr": "ders",
-     "havuz": {
+     "currentTr": "ders",
+     "pool": {
       "tr": "ders",
       "en": "class"
      }
     },
     {
      "de": "fehlen",
-     "mevcutTr": "devamsızlık yapmak",
-     "havuz": {
+     "currentTr": "devamsızlık yapmak",
+     "pool": {
       "tr": "eksik olmak",
       "en": "to be missing"
      }
     },
     {
      "de": "die Unterschrift",
-     "mevcutTr": "imza",
-     "havuz": {
+     "currentTr": "imza",
+     "pool": {
       "tr": "imza",
       "en": "signature"
      }
@@ -351,23 +351,23 @@
    "phrases": [
     {
      "de": "Sehr geehrte Frau …,",
-     "mevcutTr": "Sayın … Hanım,"
+     "currentTr": "Sayın … Hanım,"
     },
     {
      "de": "mein Sohn / meine Tochter …",
-     "mevcutTr": "oğlum / kızım …"
+     "currentTr": "oğlum / kızım …"
     },
     {
      "de": "ist seit … krank",
-     "mevcutTr": "…'den beri hasta"
+     "currentTr": "…'den beri hasta"
     },
     {
      "de": "Bitte entschuldigen Sie …",
-     "mevcutTr": "Lütfen … mazur görün."
+     "currentTr": "Lütfen … mazur görün."
     },
     {
      "de": "Mit freundlichen Grüßen",
-     "mevcutTr": "Saygılarımla"
+     "currentTr": "Saygılarımla"
     }
    ]
   },
@@ -378,81 +378,81 @@
    "title": "Formular und kurze Nachricht",
    "genre": "Sınav formatı",
    "intro": "Goethe A1 yazma bölümünün iki görevi: kısa bilgi alanlarını doldurmak ve üç noktaya değinen kısa bir mesaj yazmak. İkisini de burada çalışacaksın.",
-   "metin": "Ich möchte mich für einen Deutschkurs anmelden.\n\nIch habe abends nach 18 Uhr Zeit.\n\nBitte schreiben Sie mir den Preis.\n\nGuten Tag,\n\nich möchte mich für einen Deutschkurs A2 anmelden. Ich arbeite bis 17 Uhr, deshalb habe ich nur abends nach 18 Uhr Zeit — am besten am Montag und Mittwoch.\n\nWie viel kostet der Kurs und wann beginnt er? Bitte schreiben Sie mir auch, wie lange er dauert.\n\nVielen Dank und viele Grüße\nAmir Haddad",
+   "text": "Ich möchte mich für einen Deutschkurs anmelden.\n\nIch habe abends nach 18 Uhr Zeit.\n\nBitte schreiben Sie mir den Preis.\n\nGuten Tag,\n\nich möchte mich für einen Deutschkurs A2 anmelden. Ich arbeite bis 17 Uhr, deshalb habe ich nur abends nach 18 Uhr Zeit — am besten am Montag und Mittwoch.\n\nWie viel kostet der Kurs und wann beginnt er? Bitte schreiben Sie mir auch, wie lange er dauert.\n\nVielen Dank und viele Grüße\nAmir Haddad",
    "gloss": [
     {
      "de": "das Formular",
-     "mevcutTr": "form",
-     "havuz": {
+     "currentTr": "form",
+     "pool": {
       "tr": "form",
       "en": "form"
      }
     },
     {
      "de": "der Familienname",
-     "mevcutTr": "soyadı",
-     "havuz": {
+     "currentTr": "soyadı",
+     "pool": {
       "tr": "soyadı",
       "en": "last name"
      }
     },
     {
      "de": "der Vorname",
-     "mevcutTr": "ad",
-     "havuz": {
+     "currentTr": "ad",
+     "pool": {
       "tr": "ad",
       "en": "first name"
      }
     },
     {
      "de": "die Staatsangehörigkeit",
-     "mevcutTr": "vatandaşlık",
-     "havuz": {
+     "currentTr": "vatandaşlık",
+     "pool": {
       "tr": "vatandaşlık",
       "en": "citizenship"
      }
     },
     {
      "de": "der Kurs",
-     "mevcutTr": "kurs",
-     "havuz": {
+     "currentTr": "kurs",
+     "pool": {
       "tr": "kurs",
       "en": "course"
      }
     },
     {
      "de": "anmelden",
-     "mevcutTr": "kaydolmak"
+     "currentTr": "kaydolmak"
     },
     {
      "de": "die Uhrzeit",
-     "mevcutTr": "saat"
+     "currentTr": "saat"
     }
    ],
    "phrases": [
     {
      "de": "Guten Tag,",
-     "mevcutTr": "İyi günler,"
+     "currentTr": "İyi günler,"
     },
     {
      "de": "Ich möchte mich für … anmelden.",
-     "mevcutTr": "… için kaydolmak istiyorum."
+     "currentTr": "… için kaydolmak istiyorum."
     },
     {
      "de": "Ich habe am … Zeit.",
-     "mevcutTr": "… günü vaktim var."
+     "currentTr": "… günü vaktim var."
     },
     {
      "de": "Wie viel kostet der Kurs?",
-     "mevcutTr": "Kurs ne kadar?"
+     "currentTr": "Kurs ne kadar?"
     },
     {
      "de": "Wann beginnt der Kurs?",
-     "mevcutTr": "Kurs ne zaman başlıyor?"
+     "currentTr": "Kurs ne zaman başlıyor?"
     },
     {
      "de": "Vielen Dank und viele Grüße",
-     "mevcutTr": "Teşekkürler ve selamlar"
+     "currentTr": "Teşekkürler ve selamlar"
     }
    ]
   },
@@ -463,52 +463,52 @@
    "title": "Eine Postkarte",
    "genre": "Kültür",
    "intro": "Almanya'da hâlâ yaşayan bir gelenek: tatilden kartpostal yollamak. Kısa, sıcak ve birkaç cümlelik.",
-   "metin": "Wir sind seit einer Woche an der Ostsee.\n\nDas Wetter ist super und wir schwimmen jeden Tag.\n\nAm Samstag fahren wir nach Hause.\n\nLiebe Sofia,\n\nliebe Grüße aus Rügen! Wir sind seit einer Woche an der Ostsee. Das Wetter ist super — nur am Montag hat es geregnet. Wir schwimmen jeden Tag und gestern sind wir vier Stunden gewandert.\n\nAm Samstag fahren wir nach Hause. Dann erzähle ich alles.\n\nBis bald!\nAmir",
+   "text": "Wir sind seit einer Woche an der Ostsee.\n\nDas Wetter ist super und wir schwimmen jeden Tag.\n\nAm Samstag fahren wir nach Hause.\n\nLiebe Sofia,\n\nliebe Grüße aus Rügen! Wir sind seit einer Woche an der Ostsee. Das Wetter ist super — nur am Montag hat es geregnet. Wir schwimmen jeden Tag und gestern sind wir vier Stunden gewandert.\n\nAm Samstag fahren wir nach Hause. Dann erzähle ich alles.\n\nBis bald!\nAmir",
    "gloss": [
     {
      "de": "die Postkarte",
-     "mevcutTr": "kartpostal",
-     "havuz": {
+     "currentTr": "kartpostal",
+     "pool": {
       "tr": "kartpostal",
       "en": "postcard"
      }
     },
     {
      "de": "der Urlaub",
-     "mevcutTr": "tatil",
-     "havuz": {
+     "currentTr": "tatil",
+     "pool": {
       "tr": "tatil",
       "en": "vacation"
      }
     },
     {
      "de": "das Wetter",
-     "mevcutTr": "hava",
-     "havuz": {
+     "currentTr": "hava",
+     "pool": {
       "tr": "hava",
       "en": "weather"
      }
     },
     {
      "de": "die Ostsee",
-     "mevcutTr": "Baltık Denizi"
+     "currentTr": "Baltık Denizi"
     },
     {
      "de": "wandern",
-     "mevcutTr": "yürüyüş yapmak",
-     "havuz": {
+     "currentTr": "yürüyüş yapmak",
+     "pool": {
       "tr": "yürüyüş yapmak",
       "en": "to hike"
      }
     },
     {
      "de": "die Grüße",
-     "mevcutTr": "selamlar"
+     "currentTr": "selamlar"
     },
     {
      "de": "schicken",
-     "mevcutTr": "göndermek",
-     "havuz": {
+     "currentTr": "göndermek",
+     "pool": {
       "tr": "göndermek",
       "en": "to send"
      }
@@ -517,27 +517,27 @@
    "phrases": [
     {
      "de": "Liebe Grüße aus …",
-     "mevcutTr": "…'den sevgiler"
+     "currentTr": "…'den sevgiler"
     },
     {
      "de": "Wir sind seit … hier.",
-     "mevcutTr": "…'den beri buradayız."
+     "currentTr": "…'den beri buradayız."
     },
     {
      "de": "Das Wetter ist …",
-     "mevcutTr": "Hava …"
+     "currentTr": "Hava …"
     },
     {
      "de": "Wir gehen jeden Tag …",
-     "mevcutTr": "Her gün … gidiyoruz."
+     "currentTr": "Her gün … gidiyoruz."
     },
     {
      "de": "Am … kommen wir zurück.",
-     "mevcutTr": "… günü dönüyoruz."
+     "currentTr": "… günü dönüyoruz."
     },
     {
      "de": "Bis bald!",
-     "mevcutTr": "Yakında görüşürüz!"
+     "currentTr": "Yakında görüşürüz!"
     }
    ]
   },
@@ -548,52 +548,52 @@
    "title": "Antwort an Frau Wagner",
    "genre": "Mesaj",
    "intro": "Hikâyenin son bölümü: Frau Wagner'in notuna (a1-r11) cevap yazacaksın. Teşekkür, kabul ve bir soru.",
-   "metin": "Vielen Dank für das Paket.\n\nDen Tisch nehme ich gern.\n\nPasst es Ihnen heute Abend um 18 Uhr?\n\nLiebe Frau Wagner,\n\nvielen Dank für das Paket! Das ist sehr nett von Ihnen.\n\nDen Tisch nehme ich gern — ich habe wirklich noch keinen. Passt es Ihnen heute Abend um 18 Uhr? Dann hole ich beides ab.\n\nUnd ja, ich trinke sehr gern Tee. In Syrien trinken wir ihn süß und stark.\n\nBis später!\nAmir (Wohnung 7)",
+   "text": "Vielen Dank für das Paket.\n\nDen Tisch nehme ich gern.\n\nPasst es Ihnen heute Abend um 18 Uhr?\n\nLiebe Frau Wagner,\n\nvielen Dank für das Paket! Das ist sehr nett von Ihnen.\n\nDen Tisch nehme ich gern — ich habe wirklich noch keinen. Passt es Ihnen heute Abend um 18 Uhr? Dann hole ich beides ab.\n\nUnd ja, ich trinke sehr gern Tee. In Syrien trinken wir ihn süß und stark.\n\nBis später!\nAmir (Wohnung 7)",
    "gloss": [
     {
      "de": "sich bedanken",
-     "mevcutTr": "teşekkür etmek",
-     "havuz": {
+     "currentTr": "teşekkür etmek",
+     "pool": {
       "tr": "teşekkür etmek",
       "en": "to thank"
      }
     },
     {
      "de": "annehmen",
-     "mevcutTr": "kabul etmek",
-     "havuz": {
+     "currentTr": "kabul etmek",
+     "pool": {
       "tr": "varsaymak",
       "en": "to assume"
      }
     },
     {
      "de": "gern",
-     "mevcutTr": "memnuniyetle",
-     "havuz": {
+     "currentTr": "memnuniyetle",
+     "pool": {
       "tr": "severek",
       "en": "gladly"
      }
     },
     {
      "de": "passen",
-     "mevcutTr": "uymak",
-     "havuz": {
+     "currentTr": "uymak",
+     "pool": {
       "tr": "uymak",
       "en": "to fit"
      }
     },
     {
      "de": "abholen",
-     "mevcutTr": "gidip almak",
-     "havuz": {
+     "currentTr": "gidip almak",
+     "pool": {
       "tr": "gidip almak",
       "en": "to pick up"
      }
     },
     {
      "de": "wirklich",
-     "mevcutTr": "gerçekten",
-     "havuz": {
+     "currentTr": "gerçekten",
+     "pool": {
       "tr": "gerçekten",
       "en": "really"
      }
@@ -602,23 +602,23 @@
    "phrases": [
     {
      "de": "Vielen Dank für …",
-     "mevcutTr": "… için çok teşekkürler."
+     "currentTr": "… için çok teşekkürler."
     },
     {
      "de": "Das ist sehr nett von Ihnen.",
-     "mevcutTr": "Bu çok nazik bir davranış."
+     "currentTr": "Bu çok nazik bir davranış."
     },
     {
      "de": "Den Tisch nehme ich gern.",
-     "mevcutTr": "Masayı memnuniyetle alırım."
+     "currentTr": "Masayı memnuniyetle alırım."
     },
     {
      "de": "Ich komme heute um … vorbei.",
-     "mevcutTr": "Bugün saat …'de uğrarım."
+     "currentTr": "Bugün saat …'de uğrarım."
     },
     {
      "de": "Bis später!",
-     "mevcutTr": "Sonra görüşürüz!"
+     "currentTr": "Sonra görüşürüz!"
     }
    ]
   }

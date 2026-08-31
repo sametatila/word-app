@@ -1,16 +1,16 @@
 {
- "paket": "a2-015",
+ "packet": "a2-015",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 7688,
    "de": "der Berater",
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "danışman",
-   "mevcutBeispiel": "Der Berater von der Bank hat uns alles genau erklärt.",
-   "mevcutBeispielTr": "Bankadaki danışman bize her şeyi ayrıntılı anlattı."
+   "currentTr": "danışman",
+   "currentBeispiel": "Der Berater von der Bank hat uns alles genau erklärt.",
+   "currentBeispielTr": "Bankadaki danışman bize her şeyi ayrıntılı anlattı."
   },
   {
    "id": 7689,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "işe gidiş yolu",
-   "mevcutBeispiel": "Mein Arbeitsweg dauert jeden Morgen fast eine Stunde.",
-   "mevcutBeispielTr": "İşe gidiş yolum her sabah neredeyse bir saat sürüyor."
+   "currentTr": "işe gidiş yolu",
+   "currentBeispiel": "Mein Arbeitsweg dauert jeden Morgen fast eine Stunde.",
+   "currentBeispielTr": "İşe gidiş yolum her sabah neredeyse bir saat sürüyor."
   },
   {
    "id": 7690,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "şirket arabası",
-   "mevcutBeispiel": "Mit dem Firmenwagen fahre ich zu den Kunden.",
-   "mevcutBeispielTr": "Şirket arabasıyla müşterilere gidiyorum."
+   "currentTr": "şirket arabası",
+   "currentBeispiel": "Mit dem Firmenwagen fahre ich zu den Kunden.",
+   "currentBeispielTr": "Şirket arabasıyla müşterilere gidiyorum."
   },
   {
    "id": 7691,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "hizmet aracı, makam arabası",
-   "mevcutBeispiel": "Mein Chef hat einen großen Dienstwagen bekommen.",
-   "mevcutBeispielTr": "Patronum büyük bir makam arabası aldı."
+   "currentTr": "hizmet aracı, makam arabası",
+   "currentBeispiel": "Mein Chef hat einen großen Dienstwagen bekommen.",
+   "currentBeispielTr": "Patronum büyük bir makam arabası aldı."
   },
   {
    "id": 7692,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "iş seyahati",
-   "mevcutBeispiel": "Nächste Woche macht mein Vater eine Geschäftsreise nach Wien.",
-   "mevcutBeispielTr": "Gelecek hafta babam Viyana'ya bir iş seyahati yapıyor."
+   "currentTr": "iş seyahati",
+   "currentBeispiel": "Nächste Woche macht mein Vater eine Geschäftsreise nach Wien.",
+   "currentBeispielTr": "Gelecek hafta babam Viyana'ya bir iş seyahati yapıyor."
   },
   {
    "id": 7693,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "görev seyahati, iş gezisi",
-   "mevcutBeispiel": "Die Firma bezahlt das Hotel auf der Dienstreise.",
-   "mevcutBeispielTr": "Şirket görev seyahatindeki oteli ödüyor."
+   "currentTr": "görev seyahati, iş gezisi",
+   "currentBeispiel": "Die Firma bezahlt das Hotel auf der Dienstreise.",
+   "currentBeispielTr": "Şirket görev seyahatindeki oteli ödüyor."
   },
   {
    "id": 7694,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "eğitim, kurs",
-   "mevcutBeispiel": "Am Dienstag habe ich eine Schulung für das neue Programm.",
-   "mevcutBeispielTr": "Salı günü yeni program için bir eğitimim var."
+   "currentTr": "eğitim, kurs",
+   "currentBeispiel": "Am Dienstag habe ich eine Schulung für das neue Programm.",
+   "currentBeispielTr": "Salı günü yeni program için bir eğitimim var."
   },
   {
    "id": 7695,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "kalfa",
-   "mevcutBeispiel": "Nach der Ausbildung arbeitet er als Geselle in einer Werkstatt.",
-   "mevcutBeispielTr": "Meslek eğitiminden sonra bir atölyede kalfa olarak çalışıyor."
+   "currentTr": "kalfa",
+   "currentBeispiel": "Nach der Ausbildung arbeitet er als Geselle in einer Werkstatt.",
+   "currentBeispielTr": "Meslek eğitiminden sonra bir atölyede kalfa olarak çalışıyor."
   },
   {
    "id": 7696,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "takım çalışması, ekip çalışması",
-   "mevcutBeispiel": "In unserem Büro ist Teamarbeit sehr wichtig.",
-   "mevcutBeispielTr": "Bizim ofiste takım çalışması çok önemli."
+   "currentTr": "takım çalışması, ekip çalışması",
+   "currentBeispiel": "In unserem Büro ist Teamarbeit sehr wichtig.",
+   "currentBeispielTr": "Bizim ofiste takım çalışması çok önemli."
   },
   {
    "id": 7697,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "iş kıyafeti",
-   "mevcutBeispiel": "Die Arbeitskleidung bekommen wir von der Firma.",
-   "mevcutBeispielTr": "İş kıyafetini şirketten alıyoruz."
+   "currentTr": "iş kıyafeti",
+   "currentBeispiel": "Die Arbeitskleidung bekommen wir von der Firma.",
+   "currentBeispielTr": "İş kıyafetini şirketten alıyoruz."
   },
   {
    "id": 7698,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "eldiven",
-   "mevcutBeispiel": "Bei dieser Arbeit musst du immer Handschuhe tragen.",
-   "mevcutBeispielTr": "Bu işte her zaman eldiven takmalısın."
+   "currentTr": "eldiven",
+   "currentBeispiel": "Bei dieser Arbeit musst du immer Handschuhe tragen.",
+   "currentBeispielTr": "Bu işte her zaman eldiven takmalısın."
   },
   {
    "id": 7699,
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "koruyucu gözlük",
-   "mevcutBeispiel": "In der Werkstatt trägt jeder eine Schutzbrille.",
-   "mevcutBeispielTr": "Atölyede herkes koruyucu gözlük takıyor."
+   "currentTr": "koruyucu gözlük",
+   "currentBeispiel": "In der Werkstatt trägt jeder eine Schutzbrille.",
+   "currentBeispielTr": "Atölyede herkes koruyucu gözlük takıyor."
   },
   {
    "id": 7700,
@@ -128,9 +128,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "ilkokul",
-   "mevcutBeispiel": "Meine Tochter geht seit einem Jahr in die Grundschule.",
-   "mevcutBeispielTr": "Kızım bir yıldır ilkokula gidiyor."
+   "currentTr": "ilkokul",
+   "currentBeispiel": "Meine Tochter geht seit einem Jahr in die Grundschule.",
+   "currentBeispielTr": "Kızım bir yıldır ilkokula gidiyor."
   },
   {
    "id": 7701,
@@ -138,9 +138,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-ien",
-   "mevcutTr": "lise",
-   "mevcutBeispiel": "Nach der vierten Klasse wechselt er auf das Gymnasium.",
-   "mevcutBeispielTr": "Dördüncü sınıftan sonra liseye geçiyor."
+   "currentTr": "lise",
+   "currentBeispiel": "Nach der vierten Klasse wechselt er auf das Gymnasium.",
+   "currentBeispielTr": "Dördüncü sınıftan sonra liseye geçiyor."
   },
   {
    "id": 7702,
@@ -148,9 +148,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "ortaokul",
-   "mevcutBeispiel": "Ich habe die Realschule mit guten Noten beendet.",
-   "mevcutBeispielTr": "Ortaokulu iyi notlarla bitirdim."
+   "currentTr": "ortaokul",
+   "currentBeispiel": "Ich habe die Realschule mit guten Noten beendet.",
+   "currentBeispielTr": "Ortaokulu iyi notlarla bitirdim."
   },
   {
    "id": 7703,
@@ -158,10 +158,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "sınıf, derslik",
-   "mevcutBeispiel": "Das Klassenzimmer ist hell und hat große Fenster.",
-   "mevcutBeispielTr": "Sınıf aydınlık ve büyük pencereleri var.",
-   "cakisan": [
+   "currentTr": "sınıf, derslik",
+   "currentBeispiel": "Das Klassenzimmer ist hell und hat große Fenster.",
+   "currentBeispielTr": "Sınıf aydınlık ve büyük pencereleri var.",
+   "overlapping": [
     "die Klasse (A1)"
    ]
   },
@@ -171,9 +171,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "okul bahçesi",
-   "mevcutBeispiel": "In der Pause spielen die Kinder auf dem Schulhof.",
-   "mevcutBeispielTr": "Teneffüste çocuklar okul bahçesinde oynuyor."
+   "currentTr": "okul bahçesi",
+   "currentBeispiel": "In der Pause spielen die Kinder auf dem Schulhof.",
+   "currentBeispielTr": "Teneffüste çocuklar okul bahçesinde oynuyor."
   },
   {
    "id": 7705,
@@ -181,9 +181,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "okul çantası",
-   "mevcutBeispiel": "Meine Schultasche ist heute sehr schwer.",
-   "mevcutBeispielTr": "Okul çantam bugün çok ağır."
+   "currentTr": "okul çantası",
+   "currentBeispiel": "Meine Schultasche ist heute sehr schwer.",
+   "currentBeispielTr": "Okul çantam bugün çok ağır."
   },
   {
    "id": 7706,
@@ -191,9 +191,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-er",
-   "mevcutTr": "ders kitabı",
-   "mevcutBeispiel": "Ich habe mein Schulbuch zu Hause vergessen.",
-   "mevcutBeispielTr": "Ders kitabımı evde unuttum."
+   "currentTr": "ders kitabı",
+   "currentBeispiel": "Ich habe mein Schulbuch zu Hause vergessen.",
+   "currentBeispielTr": "Ders kitabımı evde unuttum."
   },
   {
    "id": 7707,
@@ -201,9 +201,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "öğretim yılı",
-   "mevcutBeispiel": "Das neue Schuljahr beginnt im September.",
-   "mevcutBeispielTr": "Yeni öğretim yılı eylülde başlıyor."
+   "currentTr": "öğretim yılı",
+   "currentBeispiel": "Das neue Schuljahr beginnt im September.",
+   "currentBeispielTr": "Yeni öğretim yılı eylülde başlıyor."
   },
   {
    "id": 7708,
@@ -211,9 +211,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "sınıf arkadaşı",
-   "mevcutBeispiel": "Mein Mitschüler hilft mir bei den Hausaufgaben.",
-   "mevcutBeispielTr": "Sınıf arkadaşım ödevlerimde bana yardım ediyor."
+   "currentTr": "sınıf arkadaşı",
+   "currentBeispiel": "Mein Mitschüler hilft mir bei den Hausaufgaben.",
+   "currentBeispielTr": "Sınıf arkadaşım ödevlerimde bana yardım ediyor."
   },
   {
    "id": 7709,
@@ -221,10 +221,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-er",
-   "mevcutTr": "ders, branş",
-   "mevcutBeispiel": "Mein liebstes Schulfach ist Musik.",
-   "mevcutBeispielTr": "En sevdiğim ders müzik.",
-   "cakisan": [
+   "currentTr": "ders, branş",
+   "currentBeispiel": "Mein liebstes Schulfach ist Musik.",
+   "currentBeispielTr": "En sevdiğim ders müzik.",
+   "overlapping": [
     "das Fach (A1)",
     "der Unterricht (A1)"
    ]
@@ -235,9 +235,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "matematik",
-   "mevcutBeispiel": "In Mathematik habe ich eine Zwei bekommen.",
-   "mevcutBeispielTr": "Matematikten iki aldım."
+   "currentTr": "matematik",
+   "currentBeispiel": "In Mathematik habe ich eine Zwei bekommen.",
+   "currentBeispielTr": "Matematikten iki aldım."
   },
   {
    "id": 7711,
@@ -245,9 +245,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "fizik",
-   "mevcutBeispiel": "Am Montag haben wir zwei Stunden Physik.",
-   "mevcutBeispielTr": "Pazartesi iki saat fizik dersimiz var."
+   "currentTr": "fizik",
+   "currentBeispiel": "Am Montag haben wir zwei Stunden Physik.",
+   "currentBeispielTr": "Pazartesi iki saat fizik dersimiz var."
   },
   {
    "id": 7712,
@@ -255,9 +255,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "kimya",
-   "mevcutBeispiel": "In Chemie machen wir heute ein Experiment.",
-   "mevcutBeispielTr": "Kimya dersinde bugün bir deney yapıyoruz."
+   "currentTr": "kimya",
+   "currentBeispiel": "In Chemie machen wir heute ein Experiment.",
+   "currentBeispielTr": "Kimya dersinde bugün bir deney yapıyoruz."
   },
   {
    "id": 7713,
@@ -265,10 +265,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "spor salonu",
-   "mevcutBeispiel": "Der Sportunterricht findet in der Sporthalle statt.",
-   "mevcutBeispielTr": "Beden eğitimi dersi spor salonunda yapılıyor.",
-   "cakisan": [
+   "currentTr": "spor salonu",
+   "currentBeispiel": "Der Sportunterricht findet in der Sporthalle statt.",
+   "currentBeispielTr": "Beden eğitimi dersi spor salonunda yapılıyor.",
+   "overlapping": [
     "die Turnhalle (A2)",
     "das Fitnessstudio (A2)"
    ]
@@ -279,9 +279,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "dil bilgisi",
-   "mevcutBeispiel": "Die deutsche Grammatik ist am Anfang schwer.",
-   "mevcutBeispielTr": "Almanca dil bilgisi başlangıçta zor."
+   "currentTr": "dil bilgisi",
+   "currentBeispiel": "Die deutsche Grammatik ist am Anfang schwer.",
+   "currentBeispielTr": "Almanca dil bilgisi başlangıçta zor."
   },
   {
    "id": 7715,
@@ -289,10 +289,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "kelime (yabancı dilde öğrenilen), sözcük",
-   "mevcutBeispiel": "Ich lerne jeden Tag zwanzig neue Vokabeln.",
-   "mevcutBeispielTr": "Her gün yirmi yeni kelime öğreniyorum.",
-   "cakisan": [
+   "currentTr": "kelime (yabancı dilde öğrenilen), sözcük",
+   "currentBeispiel": "Ich lerne jeden Tag zwanzig neue Vokabeln.",
+   "currentBeispielTr": "Her gün yirmi yeni kelime öğreniyorum.",
+   "overlapping": [
     "das Wort (A1)"
    ]
   },
@@ -302,9 +302,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "cetvel",
-   "mevcutBeispiel": "Zeichne die Linie bitte mit einem Lineal.",
-   "mevcutBeispielTr": "Çizgiyi lütfen bir cetvelle çiz."
+   "currentTr": "cetvel",
+   "currentBeispiel": "Zeichne die Linie bitte mit einem Lineal.",
+   "currentBeispielTr": "Çizgiyi lütfen bir cetvelle çiz."
   },
   {
    "id": 7717,
@@ -312,9 +312,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "ders programı",
-   "mevcutBeispiel": "Unser neuer Stundenplan hängt an der Tür.",
-   "mevcutBeispielTr": "Yeni ders programımız kapıda asılı."
+   "currentTr": "ders programı",
+   "currentBeispiel": "Unser neuer Stundenplan hängt an der Tür.",
+   "currentBeispielTr": "Yeni ders programımız kapıda asılı."
   },
   {
    "id": 7718,
@@ -322,9 +322,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "sınıf öğretmeni",
-   "mevcutBeispiel": "Unser Klassenlehrer ist sehr nett.",
-   "mevcutBeispielTr": "Sınıf öğretmenimiz çok kibar."
+   "currentTr": "sınıf öğretmeni",
+   "currentBeispiel": "Unser Klassenlehrer ist sehr nett.",
+   "currentBeispielTr": "Sınıf öğretmenimiz çok kibar."
   },
   {
    "id": 7719,
@@ -332,9 +332,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "veli toplantısı",
-   "mevcutBeispiel": "Am Donnerstag ist in der Schule ein Elternabend.",
-   "mevcutBeispielTr": "Perşembe günü okulda veli toplantısı var."
+   "currentTr": "veli toplantısı",
+   "currentBeispiel": "Am Donnerstag ist in der Schule ein Elternabend.",
+   "currentBeispielTr": "Perşembe günü okulda veli toplantısı var."
   },
   {
    "id": 7720,
@@ -342,9 +342,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "uygulamalı bilimler yüksekokulu",
-   "mevcutBeispiel": "Sie studiert Informatik an einer Fachhochschule.",
-   "mevcutBeispielTr": "Bir uygulamalı bilimler yüksekokulunda bilgisayar bilimi okuyor."
+   "currentTr": "uygulamalı bilimler yüksekokulu",
+   "currentBeispiel": "Sie studiert Informatik an einer Fachhochschule.",
+   "currentBeispielTr": "Bir uygulamalı bilimler yüksekokulunda bilgisayar bilimi okuyor."
   },
   {
    "id": 7721,
@@ -352,10 +352,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "çırak, meslek eğitimi gören kişi",
-   "mevcutBeispiel": "Unser neuer Azubi lernt schnell.",
-   "mevcutBeispielTr": "Yeni çırağımız çabuk öğreniyor.",
-   "cakisan": [
+   "currentTr": "çırak, meslek eğitimi gören kişi",
+   "currentBeispiel": "Unser neuer Azubi lernt schnell.",
+   "currentBeispielTr": "Yeni çırağımız çabuk öğreniyor.",
+   "overlapping": [
     "der Lehrling (B1)",
     "der Auszubildende (B2)"
    ]
@@ -366,9 +366,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "versetzt, hat versetzt",
-   "mevcutTr": "sınıf geçirmek, nakletmek",
-   "mevcutBeispiel": "Die Lehrerin hat ihn in die nächste Klasse versetzt.",
-   "mevcutBeispielTr": "Öğretmen onu bir üst sınıfa geçirdi."
+   "currentTr": "sınıf geçirmek, nakletmek",
+   "currentBeispiel": "Die Lehrerin hat ihn in die nächste Klasse versetzt.",
+   "currentBeispielTr": "Öğretmen onu bir üst sınıfa geçirdi."
   },
   {
    "id": 7723,
@@ -376,9 +376,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "hört ab, hat abgehört",
-   "mevcutTr": "(ders/kelime) sözlü sormak",
-   "mevcutBeispiel": "Meine Mutter hört mich jeden Abend die Vokabeln ab.",
-   "mevcutBeispielTr": "Annem her akşam bana kelimeleri sözlü soruyor."
+   "currentTr": "(ders/kelime) sözlü sormak",
+   "currentBeispiel": "Meine Mutter hört mich jeden Abend die Vokabeln ab.",
+   "currentBeispielTr": "Annem her akşam bana kelimeleri sözlü soruyor."
   },
   {
    "id": 7724,
@@ -386,9 +386,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "hält mit, hat mitgehalten",
-   "mevcutTr": "ayak uydurmak, yetişmek",
-   "mevcutBeispiel": "In diesem Kurs kann ich gut mithalten.",
-   "mevcutBeispielTr": "Bu kursta iyi ayak uydurabiliyorum."
+   "currentTr": "ayak uydurmak, yetişmek",
+   "currentBeispiel": "In diesem Kurs kann ich gut mithalten.",
+   "currentBeispielTr": "Bu kursta iyi ayak uydurabiliyorum."
   },
   {
    "id": 7725,
@@ -396,9 +396,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "bringt bei, hat beigebracht",
-   "mevcutTr": "öğretmek",
-   "mevcutBeispiel": "Meine Oma hat mir das Lesen beigebracht.",
-   "mevcutBeispielTr": "Okumayı bana anneannem öğretti."
+   "currentTr": "öğretmek",
+   "currentBeispiel": "Meine Oma hat mir das Lesen beigebracht.",
+   "currentBeispielTr": "Okumayı bana anneannem öğretti."
   },
   {
    "id": 7726,
@@ -406,10 +406,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "verbessert, hat verbessert",
-   "mevcutTr": "geliştirmek, düzeltmek",
-   "mevcutBeispiel": "Ich möchte mein Deutsch im Kurs verbessern.",
-   "mevcutBeispielTr": "Almancamı kursta geliştirmek istiyorum.",
-   "cakisan": [
+   "currentTr": "geliştirmek, düzeltmek",
+   "currentBeispiel": "Ich möchte mein Deutsch im Kurs verbessern.",
+   "currentBeispielTr": "Almancamı kursta geliştirmek istiyorum.",
+   "overlapping": [
     "entwickeln (B1)",
     "entfalten (C1)"
    ]
@@ -420,10 +420,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "bewertet, hat bewertet",
-   "mevcutTr": "değerlendirmek, notlandırmak",
-   "mevcutBeispiel": "Die Lehrerin bewertet unsere Aufsätze am Wochenende.",
-   "mevcutBeispielTr": "Öğretmen kompozisyonlarımızı hafta sonu değerlendiriyor.",
-   "cakisan": [
+   "currentTr": "değerlendirmek, notlandırmak",
+   "currentBeispiel": "Die Lehrerin bewertet unsere Aufsätze am Wochenende.",
+   "currentBeispielTr": "Öğretmen kompozisyonlarımızı hafta sonu değerlendiriyor.",
+   "overlapping": [
     "einschätzen (B2)",
     "beurteilen (B2)",
     "auswerten (B2)",
@@ -436,10 +436,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "lehrt, hat gelehrt",
-   "mevcutTr": "ders vermek, öğretmek",
-   "mevcutBeispiel": "Er lehrt seit zehn Jahren an einer Schule.",
-   "mevcutBeispielTr": "On yıldır bir okulda ders veriyor.",
-   "cakisan": [
+   "currentTr": "ders vermek, öğretmek",
+   "currentBeispiel": "Er lehrt seit zehn Jahren an einer Schule.",
+   "currentBeispielTr": "On yıldır bir okulda ders veriyor.",
+   "overlapping": [
     "unterrichten (B1)"
    ]
   },
@@ -449,10 +449,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "bildet aus, hat ausgebildet",
-   "mevcutTr": "yetiştirmek, meslek eğitimi vermek",
-   "mevcutBeispiel": "Die Firma bildet jedes Jahr fünf junge Leute aus.",
-   "mevcutBeispielTr": "Firma her yıl beş genci yetiştiriyor.",
-   "cakisan": [
+   "currentTr": "yetiştirmek, meslek eğitimi vermek",
+   "currentBeispiel": "Die Firma bildet jedes Jahr fünf junge Leute aus.",
+   "currentBeispielTr": "Firma her yıl beş genci yetiştiriyor.",
+   "overlapping": [
     "erziehen (B1)",
     "anbauen (C1)",
     "züchten (C1)"
@@ -464,10 +464,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "legt ab, hat abgelegt",
-   "mevcutTr": "(sınava) girmek, vermek",
-   "mevcutBeispiel": "Nächste Woche lege ich meine mündliche Prüfung ab.",
-   "mevcutBeispielTr": "Gelecek hafta sözlü sınavıma gireceğim.",
-   "cakisan": [
+   "currentTr": "(sınava) girmek, vermek",
+   "currentBeispiel": "Nächste Woche lege ich meine mündliche Prüfung ab.",
+   "currentBeispielTr": "Gelecek hafta sözlü sınavıma gireceğim.",
+   "overlapping": [
     "eingeben (B2)",
     "sich unterziehen (C1)",
     "betreten (A2)"
@@ -479,9 +479,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "ordnet zu, hat zugeordnet",
-   "mevcutTr": "eşleştirmek, ait olduğu yere koymak",
-   "mevcutBeispiel": "Ordne die Wörter den richtigen Bildern zu!",
-   "mevcutBeispielTr": "Kelimeleri doğru resimlerle eşleştir!"
+   "currentTr": "eşleştirmek, ait olduğu yere koymak",
+   "currentBeispiel": "Ordne die Wörter den richtigen Bildern zu!",
+   "currentBeispielTr": "Kelimeleri doğru resimlerle eşleştir!"
   },
   {
    "id": 7732,
@@ -489,9 +489,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "teilt aus, hat ausgeteilt",
-   "mevcutTr": "dağıtmak (elden, tek tek vermek)",
-   "mevcutBeispiel": "Der Lehrer teilt die Blätter für den Test aus.",
-   "mevcutBeispielTr": "Öğretmen sınav kâğıtlarını dağıtıyor."
+   "currentTr": "dağıtmak (elden, tek tek vermek)",
+   "currentBeispiel": "Der Lehrer teilt die Blätter für den Test aus.",
+   "currentBeispielTr": "Öğretmen sınav kâğıtlarını dağıtıyor."
   },
   {
    "id": 7733,
@@ -499,9 +499,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "kommt weiter, ist weitergekommen",
-   "mevcutTr": "ilerlemek, yol almak",
-   "mevcutBeispiel": "Im Deutschkurs komme ich langsam weiter.",
-   "mevcutBeispielTr": "Almanca kursunda yavaş yavaş ilerliyorum."
+   "currentTr": "ilerlemek, yol almak",
+   "currentBeispiel": "Im Deutschkurs komme ich langsam weiter.",
+   "currentBeispielTr": "Almanca kursunda yavaş yavaş ilerliyorum."
   },
   {
    "id": 7734,
@@ -509,10 +509,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "hilft nach, hat nachgeholfen",
-   "mevcutTr": "(derste) yardım etmek, takviye ders vermek",
-   "mevcutBeispiel": "Meine Schwester hilft mir in Englisch nach.",
-   "mevcutBeispielTr": "Ablam İngilizce konusunda bana takviye ders veriyor.",
-   "cakisan": [
+   "currentTr": "(derste) yardım etmek, takviye ders vermek",
+   "currentBeispiel": "Meine Schwester hilft mir in Englisch nach.",
+   "currentBeispielTr": "Ablam İngilizce konusunda bana takviye ders veriyor.",
+   "overlapping": [
     "helfen (A1)",
     "mithelfen (A2)"
    ]
@@ -523,10 +523,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "macht nach, hat nachgemacht",
-   "mevcutTr": "taklit etmek, aynısını yapmak",
-   "mevcutBeispiel": "Die Kinder machen alles nach, was der Lehrer zeigt.",
-   "mevcutBeispielTr": "Çocuklar öğretmenin gösterdiği her şeyi taklit ediyor.",
-   "cakisan": [
+   "currentTr": "taklit etmek, aynısını yapmak",
+   "currentBeispiel": "Die Kinder machen alles nach, was der Lehrer zeigt.",
+   "currentBeispielTr": "Çocuklar öğretmenin gösterdiği her şeyi taklit ediyor.",
+   "overlapping": [
     "nachahmen (B2)",
     "nachbilden (C1)"
    ]
@@ -537,9 +537,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "liest durch, hat durchgelesen",
-   "mevcutTr": "baştan sona okumak",
-   "mevcutBeispiel": "Lies die Aufgabe in Ruhe durch!",
-   "mevcutBeispielTr": "Soruyu sakince baştan sona oku!"
+   "currentTr": "baştan sona okumak",
+   "currentBeispiel": "Lies die Aufgabe in Ruhe durch!",
+   "currentBeispielTr": "Soruyu sakince baştan sona oku!"
   },
   {
    "id": 7737,
@@ -547,9 +547,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schreibt mit, hat mitgeschrieben",
-   "mevcutTr": "not tutmak",
-   "mevcutBeispiel": "Im Unterricht schreibe ich immer mit.",
-   "mevcutBeispielTr": "Derste her zaman not tutarım."
+   "currentTr": "not tutmak",
+   "currentBeispiel": "Im Unterricht schreibe ich immer mit.",
+   "currentBeispielTr": "Derste her zaman not tutarım."
   }
  ]
 }

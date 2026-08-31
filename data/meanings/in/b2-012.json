@@ -1,16 +1,16 @@
 {
- "paket": "b2-012",
+ "packet": "b2-012",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4193,
    "de": "die Schwankung",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schwankungen",
-   "mevcutTr": "dalgalanma, oynaklık",
-   "mevcutBeispiel": "Starke Schwankungen der Preise erschweren die Planung.",
-   "mevcutBeispielTr": "Fiyatlardaki güçlü dalgalanmalar planlamayı zorlaştırıyor."
+   "currentTr": "dalgalanma, oynaklık",
+   "currentBeispiel": "Starke Schwankungen der Preise erschweren die Planung.",
+   "currentBeispielTr": "Fiyatlardaki güçlü dalgalanmalar planlamayı zorlaştırıyor."
   },
   {
    "id": 4194,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Überschüsse",
-   "mevcutTr": "fazla, artı bakiye",
-   "mevcutBeispiel": "Die Gemeinde schloss das Jahr mit einem kleinen Überschuss ab.",
-   "mevcutBeispielTr": "Belediye yılı küçük bir fazlayla kapattı."
+   "currentTr": "fazla, artı bakiye",
+   "currentBeispiel": "Die Gemeinde schloss das Jahr mit einem kleinen Überschuss ab.",
+   "currentBeispielTr": "Belediye yılı küçük bir fazlayla kapattı."
   },
   {
    "id": 4195,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kriterien",
-   "mevcutTr": "ölçüt, kıstas",
-   "mevcutBeispiel": "Das wichtigste Kriterium bei der Auswahl war die Erfahrung.",
-   "mevcutBeispielTr": "Seçimde en önemli ölçüt deneyimdi."
+   "currentTr": "ölçüt, kıstas",
+   "currentBeispiel": "Das wichtigste Kriterium bei der Auswahl war die Erfahrung.",
+   "currentBeispielTr": "Seçimde en önemli ölçüt deneyimdi."
   },
   {
    "id": 4196,
@@ -38,10 +38,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Tendenzen",
-   "mevcutTr": "eğilim, gidişat",
-   "mevcutBeispiel": "Die Zahlen zeigen eine klare Tendenz nach oben.",
-   "mevcutBeispielTr": "Rakamlar yukarı yönlü net bir eğilim gösteriyor.",
-   "cakisan": [
+   "currentTr": "eğilim, gidişat",
+   "currentBeispiel": "Die Zahlen zeigen eine klare Tendenz nach oben.",
+   "currentBeispielTr": "Rakamlar yukarı yönlü net bir eğilim gösteriyor.",
+   "overlapping": [
     "die Neigung (B2)",
     "der Hang (C1)"
    ]
@@ -52,9 +52,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Quoten",
-   "mevcutTr": "oran, kota",
-   "mevcutBeispiel": "Die Quote der Ausbildungsabbrüche ist leicht gestiegen.",
-   "mevcutBeispielTr": "Eğitimi yarıda bırakma oranı hafifçe yükseldi."
+   "currentTr": "oran, kota",
+   "currentBeispiel": "Die Quote der Ausbildungsabbrüche ist leicht gestiegen.",
+   "currentBeispielTr": "Eğitimi yarıda bırakma oranı hafifçe yükseldi."
   },
   {
    "id": 4198,
@@ -62,9 +62,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Spannen",
-   "mevcutTr": "aralık, fark, marj",
-   "mevcutBeispiel": "Die Spanne zwischen den Angeboten war überraschend groß.",
-   "mevcutBeispielTr": "Teklifler arasındaki fark şaşırtıcı derecede büyüktü."
+   "currentTr": "aralık, fark, marj",
+   "currentBeispiel": "Die Spanne zwischen den Angeboten war überraschend groß.",
+   "currentBeispielTr": "Teklifler arasındaki fark şaşırtıcı derecede büyüktü."
   },
   {
    "id": 4199,
@@ -72,9 +72,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Größenordnungen",
-   "mevcutTr": "büyüklük mertebesi, ölçek",
-   "mevcutBeispiel": "Die Kosten bewegen sich in der Größenordnung von zwei Millionen.",
-   "mevcutBeispielTr": "Maliyetler iki milyon mertebesinde seyrediyor."
+   "currentTr": "büyüklük mertebesi, ölçek",
+   "currentBeispiel": "Die Kosten bewegen sich in der Größenordnung von zwei Millionen.",
+   "currentBeispielTr": "Maliyetler iki milyon mertebesinde seyrediyor."
   },
   {
    "id": 4200,
@@ -82,10 +82,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gefälle",
-   "mevcutTr": "fark, uçurum, eğim",
-   "mevcutBeispiel": "Zwischen Stadt und Land besteht ein deutliches Gefälle bei den Löhnen.",
-   "mevcutBeispielTr": "Şehir ile kır arasında ücretlerde belirgin bir uçurum var.",
-   "cakisan": [
+   "currentTr": "fark, uçurum, eğim",
+   "currentBeispiel": "Zwischen Stadt und Land besteht ein deutliches Gefälle bei den Löhnen.",
+   "currentBeispielTr": "Şehir ile kır arasında ücretlerde belirgin bir uçurum var.",
+   "overlapping": [
     "der Unterschied (A2)"
    ]
   },
@@ -95,9 +95,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Obergrenzen",
-   "mevcutTr": "üst sınır, tavan",
-   "mevcutBeispiel": "Für die Beiträge gilt eine gesetzliche Obergrenze.",
-   "mevcutBeispielTr": "Katkı payları için yasal bir üst sınır geçerli."
+   "currentTr": "üst sınır, tavan",
+   "currentBeispiel": "Für die Beiträge gilt eine gesetzliche Obergrenze.",
+   "currentBeispielTr": "Katkı payları için yasal bir üst sınır geçerli."
   },
   {
    "id": 4202,
@@ -105,10 +105,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Einbußen",
-   "mevcutTr": "kayıp, zarar",
-   "mevcutBeispiel": "Der Sturm führte zu erheblichen Einbußen bei der Ernte.",
-   "mevcutBeispielTr": "Fırtına hasatta önemli kayıplara yol açtı.",
-   "cakisan": [
+   "currentTr": "kayıp, zarar",
+   "currentBeispiel": "Der Sturm führte zu erheblichen Einbußen bei der Ernte.",
+   "currentBeispielTr": "Fırtına hasatta önemli kayıplara yol açtı.",
+   "overlapping": [
     "weg (A2)",
     "der Verlust (B1)"
    ]
@@ -119,9 +119,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bandbreiten",
-   "mevcutTr": "yelpaze, aralık, çeşitlilik",
-   "mevcutBeispiel": "Die Bandbreite der Meinungen im Publikum war beachtlich.",
-   "mevcutBeispielTr": "Dinleyicilerdeki görüş yelpazesi dikkat çekiciydi."
+   "currentTr": "yelpaze, aralık, çeşitlilik",
+   "currentBeispiel": "Die Bandbreite der Meinungen im Publikum war beachtlich.",
+   "currentBeispielTr": "Dinleyicilerdeki görüş yelpazesi dikkat çekiciydi."
   },
   {
    "id": 4204,
@@ -129,9 +129,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schwellen",
-   "mevcutTr": "eşik, sınır",
-   "mevcutBeispiel": "Die Arbeitslosigkeit liegt knapp unter der kritischen Schwelle.",
-   "mevcutBeispielTr": "İşsizlik kritik eşiğin hemen altında."
+   "currentTr": "eşik, sınır",
+   "currentBeispiel": "Die Arbeitslosigkeit liegt knapp unter der kritischen Schwelle.",
+   "currentBeispielTr": "İşsizlik kritik eşiğin hemen altında."
   },
   {
    "id": 4205,
@@ -139,10 +139,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Lehrgänge",
-   "mevcutTr": "kurs, eğitim programı",
-   "mevcutBeispiel": "Der Lehrgang dauert sechs Wochen und endet mit einer Prüfung.",
-   "mevcutBeispielTr": "Kurs altı hafta sürüyor ve bir sınavla sona eriyor.",
-   "cakisan": [
+   "currentTr": "kurs, eğitim programı",
+   "currentBeispiel": "Der Lehrgang dauert sechs Wochen und endet mit einer Prüfung.",
+   "currentBeispielTr": "Kurs altı hafta sürüyor ve bir sınavla sona eriyor.",
+   "overlapping": [
     "der Kurs (A1)"
    ]
   },
@@ -152,9 +152,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Berufsschulen",
-   "mevcutTr": "meslek okulu",
-   "mevcutBeispiel": "Zweimal pro Woche besucht sie die Berufsschule in Hamburg.",
-   "mevcutBeispielTr": "Haftada iki kez Hamburg'daki meslek okuluna gidiyor."
+   "currentTr": "meslek okulu",
+   "currentBeispiel": "Zweimal pro Woche besucht sie die Berufsschule in Hamburg.",
+   "currentBeispielTr": "Haftada iki kez Hamburg'daki meslek okuluna gidiyor."
   },
   {
    "id": 4207,
@@ -162,9 +162,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Studienplätze",
-   "mevcutTr": "üniversitede öğrenim yeri, kayıt hakkı",
-   "mevcutBeispiel": "Er hat endlich einen Studienplatz für Medizin bekommen.",
-   "mevcutBeispielTr": "Sonunda tıp okumak için bir kontenjan hakkı kazandı."
+   "currentTr": "üniversitede öğrenim yeri, kayıt hakkı",
+   "currentBeispiel": "Er hat endlich einen Studienplatz für Medizin bekommen.",
+   "currentBeispielTr": "Sonunda tıp okumak için bir kontenjan hakkı kazandı."
   },
   {
    "id": 4208,
@@ -172,9 +172,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fakultäten",
-   "mevcutTr": "fakülte",
-   "mevcutBeispiel": "Die juristische Fakultät zieht im Herbst in ein neues Gebäude.",
-   "mevcutBeispielTr": "Hukuk fakültesi sonbaharda yeni bir binaya taşınıyor."
+   "currentTr": "fakülte",
+   "currentBeispiel": "Die juristische Fakultät zieht im Herbst in ein neues Gebäude.",
+   "currentBeispielTr": "Hukuk fakültesi sonbaharda yeni bir binaya taşınıyor."
   },
   {
    "id": 4209,
@@ -182,9 +182,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Studiengebühren",
-   "mevcutTr": "öğrenim ücreti, harç",
-   "mevcutBeispiel": "In vielen Bundesländern zahlen Studierende keine Studiengebühren mehr.",
-   "mevcutBeispielTr": "Birçok eyalette öğrenciler artık öğrenim ücreti ödemiyor."
+   "currentTr": "öğrenim ücreti, harç",
+   "currentBeispiel": "In vielen Bundesländern zahlen Studierende keine Studiengebühren mehr.",
+   "currentBeispielTr": "Birçok eyalette öğrenciler artık öğrenim ücreti ödemiyor."
   },
   {
    "id": 4210,
@@ -192,9 +192,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bildungswege",
-   "mevcutTr": "eğitim yolu, öğrenim süreci",
-   "mevcutBeispiel": "Der zweite Bildungsweg steht auch Berufstätigen offen.",
-   "mevcutBeispielTr": "İkinci eğitim yolu çalışanlara da açıktır."
+   "currentTr": "eğitim yolu, öğrenim süreci",
+   "currentBeispiel": "Der zweite Bildungsweg steht auch Berufstätigen offen.",
+   "currentBeispielTr": "İkinci eğitim yolu çalışanlara da açıktır."
   },
   {
    "id": 4211,
@@ -202,9 +202,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schulabschlüsse",
-   "mevcutTr": "okul diploması, mezuniyet derecesi",
-   "mevcutBeispiel": "Ohne Schulabschluss ist die Suche nach einer Lehrstelle schwierig.",
-   "mevcutBeispielTr": "Diploma olmadan çıraklık yeri aramak zordur."
+   "currentTr": "okul diploması, mezuniyet derecesi",
+   "currentBeispiel": "Ohne Schulabschluss ist die Suche nach einer Lehrstelle schwierig.",
+   "currentBeispielTr": "Diploma olmadan çıraklık yeri aramak zordur."
   },
   {
    "id": 4212,
@@ -212,10 +212,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fachrichtungen",
-   "mevcutTr": "bölüm, uzmanlık alanı",
-   "mevcutBeispiel": "Nach zwei Semestern wechselte er die Fachrichtung.",
-   "mevcutBeispielTr": "İki dönem sonra bölümünü değiştirdi.",
-   "cakisan": [
+   "currentTr": "bölüm, uzmanlık alanı",
+   "currentBeispiel": "Nach zwei Semestern wechselte er die Fachrichtung.",
+   "currentBeispielTr": "İki dönem sonra bölümünü değiştirdi.",
+   "overlapping": [
     "der Abschnitt (B1)",
     "die Abteilung (B1)",
     "das Kapitel (B1)",
@@ -228,9 +228,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fertigkeiten",
-   "mevcutTr": "beceri, ustalık",
-   "mevcutBeispiel": "Im Praktikum erwerben die Auszubildenden praktische Fertigkeiten.",
-   "mevcutBeispielTr": "Stajda çıraklar pratik beceriler ediniyor."
+   "currentTr": "beceri, ustalık",
+   "currentBeispiel": "Im Praktikum erwerben die Auszubildenden praktische Fertigkeiten.",
+   "currentBeispielTr": "Stajda çıraklar pratik beceriler ediniyor."
   },
   {
    "id": 4214,
@@ -238,9 +238,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "üniversiteye giriş yeterliliği",
-   "mevcutBeispiel": "Die allgemeine Hochschulreife berechtigt zum Studium an jeder Universität.",
-   "mevcutBeispielTr": "Genel üniversite yeterliliği her üniversitede okuma hakkı verir."
+   "currentTr": "üniversiteye giriş yeterliliği",
+   "currentBeispiel": "Die allgemeine Hochschulreife berechtigt zum Studium an jeder Universität.",
+   "currentBeispielTr": "Genel üniversite yeterliliği her üniversitede okuma hakkı verir."
   },
   {
    "id": 4215,
@@ -248,10 +248,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "uygulamayla bağ, pratiğe dönüklük",
-   "mevcutBeispiel": "Vielen Studiengängen fehlt es an echtem Praxisbezug.",
-   "mevcutBeispielTr": "Birçok lisans programında gerçek bir uygulama bağı eksik.",
-   "cakisan": [
+   "currentTr": "uygulamayla bağ, pratiğe dönüklük",
+   "currentBeispiel": "Vielen Studiengängen fehlt es an echtem Praxisbezug.",
+   "currentBeispielTr": "Birçok lisans programında gerçek bir uygulama bağı eksik.",
+   "overlapping": [
     "der Anwendungsbezug (C1)"
    ]
   },
@@ -261,10 +261,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Lehrkräfte",
-   "mevcutTr": "öğretmen, eğitmen",
-   "mevcutBeispiel": "An der Schule fehlen seit Monaten ausgebildete Lehrkräfte.",
-   "mevcutBeispielTr": "Okulda aylardır eğitimli öğretmen eksiği var.",
-   "cakisan": [
+   "currentTr": "öğretmen, eğitmen",
+   "currentBeispiel": "An der Schule fehlen seit Monaten ausgebildete Lehrkräfte.",
+   "currentBeispielTr": "Okulda aylardır eğitimli öğretmen eksiği var.",
+   "overlapping": [
     "der Lehrer (A1)"
    ]
   },
@@ -274,10 +274,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kavrayış, anlama yetisi",
-   "mevcutBeispiel": "Sie hat eine schnelle Auffassungsgabe und lernt mühelos.",
-   "mevcutBeispielTr": "Kavrayışı hızlıdır ve zorlanmadan öğrenir.",
-   "cakisan": [
+   "currentTr": "kavrayış, anlama yetisi",
+   "currentBeispiel": "Sie hat eine schnelle Auffassungsgabe und lernt mühelos.",
+   "currentBeispielTr": "Kavrayışı hızlıdır ve zorlanmadan öğrenir.",
+   "overlapping": [
     "die Einsicht (C1)"
    ]
   },
@@ -287,9 +287,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Lernmethoden",
-   "mevcutTr": "öğrenme yöntemi",
-   "mevcutBeispiel": "Welche Lernmethode passt, muss jeder selbst herausfinden.",
-   "mevcutBeispielTr": "Hangi öğrenme yönteminin uyduğunu herkes kendi bulmalı."
+   "currentTr": "öğrenme yöntemi",
+   "currentBeispiel": "Welche Lernmethode passt, muss jeder selbst herausfinden.",
+   "currentBeispielTr": "Hangi öğrenme yönteminin uyduğunu herkes kendi bulmalı."
   },
   {
    "id": 4219,
@@ -297,10 +297,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gliederungen",
-   "mevcutTr": "plan, ana hatlar, bölümlendirme",
-   "mevcutBeispiel": "Der Professor bemängelte die unklare Gliederung der Arbeit.",
-   "mevcutBeispielTr": "Profesör çalışmanın belirsiz planını eleştirdi.",
-   "cakisan": [
+   "currentTr": "plan, ana hatlar, bölümlendirme",
+   "currentBeispiel": "Der Professor bemängelte die unklare Gliederung der Arbeit.",
+   "currentBeispielTr": "Profesör çalışmanın belirsiz planını eleştirdi.",
+   "overlapping": [
     "der Plan (A1)"
    ]
   },
@@ -310,9 +310,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Quellenangaben",
-   "mevcutTr": "kaynak gösterimi",
-   "mevcutBeispiel": "Ohne korrekte Quellenangaben wird die Arbeit nicht bewertet.",
-   "mevcutBeispielTr": "Doğru kaynak gösterimi olmadan çalışma değerlendirilmez."
+   "currentTr": "kaynak gösterimi",
+   "currentBeispiel": "Ohne korrekte Quellenangaben wird die Arbeit nicht bewertet.",
+   "currentBeispielTr": "Doğru kaynak gösterimi olmadan çalışma değerlendirilmez."
   },
   {
    "id": 4221,
@@ -320,9 +320,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Plagiate",
-   "mevcutTr": "intihal, aşırma",
-   "mevcutBeispiel": "Die Universität entzog ihm wegen eines Plagiats den Titel.",
-   "mevcutBeispielTr": "Üniversite intihal nedeniyle unvanını geri aldı."
+   "currentTr": "intihal, aşırma",
+   "currentBeispiel": "Die Universität entzog ihm wegen eines Plagiats den Titel.",
+   "currentBeispielTr": "Üniversite intihal nedeniyle unvanını geri aldı."
   },
   {
    "id": 4222,
@@ -330,9 +330,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anmeldefristen",
-   "mevcutTr": "kayıt süresi, başvuru süresi",
-   "mevcutBeispiel": "Die Anmeldefrist für das Wintersemester läuft am Freitag ab.",
-   "mevcutBeispielTr": "Kış dönemi başvuru süresi cuma günü doluyor."
+   "currentTr": "kayıt süresi, başvuru süresi",
+   "currentBeispiel": "Die Anmeldefrist für das Wintersemester läuft am Freitag ab.",
+   "currentBeispielTr": "Kış dönemi başvuru süresi cuma günü doluyor."
   },
   {
    "id": 4223,
@@ -340,9 +340,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Doktoranden",
-   "mevcutTr": "doktora öğrencisi",
-   "mevcutBeispiel": "Der Doktorand stellte seine Ergebnisse im Kolloquium vor.",
-   "mevcutBeispielTr": "Doktora öğrencisi sonuçlarını kolokyumda sundu."
+   "currentTr": "doktora öğrencisi",
+   "currentBeispiel": "Der Doktorand stellte seine Ergebnisse im Kolloquium vor.",
+   "currentBeispielTr": "Doktora öğrencisi sonuçlarını kolokyumda sundu."
   },
   {
    "id": 4224,
@@ -350,9 +350,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zulassungsbeschränkungen",
-   "mevcutTr": "kontenjan sınırlaması",
-   "mevcutBeispiel": "Für Psychologie gilt an fast allen Universitäten eine Zulassungsbeschränkung.",
-   "mevcutBeispielTr": "Psikoloji için neredeyse tüm üniversitelerde kontenjan sınırlaması var."
+   "currentTr": "kontenjan sınırlaması",
+   "currentBeispiel": "Für Psychologie gilt an fast allen Universitäten eine Zulassungsbeschränkung.",
+   "currentBeispielTr": "Psikoloji için neredeyse tüm üniversitelerde kontenjan sınırlaması var."
   },
   {
    "id": 4225,
@@ -360,9 +360,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Durchschnittsnoten",
-   "mevcutTr": "not ortalaması",
-   "mevcutBeispiel": "Seine Durchschnittsnote reichte für den gewünschten Studiengang nicht.",
-   "mevcutBeispielTr": "Not ortalaması istediği bölüm için yeterli olmadı."
+   "currentTr": "not ortalaması",
+   "currentBeispiel": "Seine Durchschnittsnote reichte für den gewünschten Studiengang nicht.",
+   "currentBeispielTr": "Not ortalaması istediği bölüm için yeterli olmadı."
   },
   {
    "id": 4226,
@@ -370,9 +370,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "zorunlu eğitim",
-   "mevcutBeispiel": "In Deutschland besteht die Schulpflicht bis zum sechzehnten Lebensjahr.",
-   "mevcutBeispielTr": "Almanya'da zorunlu eğitim on altı yaşına kadar sürer."
+   "currentTr": "zorunlu eğitim",
+   "currentBeispiel": "In Deutschland besteht die Schulpflicht bis zum sechzehnten Lebensjahr.",
+   "currentBeispielTr": "Almanya'da zorunlu eğitim on altı yaşına kadar sürer."
   },
   {
    "id": 4227,
@@ -380,9 +380,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Lehrverträge",
-   "mevcutTr": "çıraklık sözleşmesi",
-   "mevcutBeispiel": "Der Betrieb schloss mit ihr einen dreijährigen Lehrvertrag.",
-   "mevcutBeispielTr": "İşletme onunla üç yıllık bir çıraklık sözleşmesi imzaladı."
+   "currentTr": "çıraklık sözleşmesi",
+   "currentBeispiel": "Der Betrieb schloss mit ihr einen dreijährigen Lehrvertrag.",
+   "currentBeispielTr": "İşletme onunla üç yıllık bir çıraklık sözleşmesi imzaladı."
   },
   {
    "id": 4228,
@@ -390,10 +390,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ausbildungsplätze",
-   "mevcutTr": "çıraklık yeri, mesleki eğitim yeri",
-   "mevcutBeispiel": "In der Region bleiben viele Ausbildungsplätze unbesetzt.",
-   "mevcutBeispielTr": "Bölgede birçok çıraklık yeri boş kalıyor.",
-   "cakisan": [
+   "currentTr": "çıraklık yeri, mesleki eğitim yeri",
+   "currentBeispiel": "In der Region bleiben viele Ausbildungsplätze unbesetzt.",
+   "currentBeispielTr": "Bölgede birçok çıraklık yeri boş kalıyor.",
+   "overlapping": [
     "die Lehrstelle (B1)"
    ]
   },
@@ -403,9 +403,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Meisterprüfungen",
-   "mevcutTr": "ustalık sınavı",
-   "mevcutBeispiel": "Nach der Meisterprüfung darf er selbst Lehrlinge ausbilden.",
-   "mevcutBeispielTr": "Ustalık sınavından sonra kendisi çırak yetiştirebilir."
+   "currentTr": "ustalık sınavı",
+   "currentBeispiel": "Nach der Meisterprüfung darf er selbst Lehrlinge ausbilden.",
+   "currentBeispielTr": "Ustalık sınavından sonra kendisi çırak yetiştirebilir."
   },
   {
    "id": 4230,
@@ -413,9 +413,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Umschulungen",
-   "mevcutTr": "meslek değiştirme eğitimi",
-   "mevcutBeispiel": "Das Arbeitsamt finanziert ihm eine Umschulung zum Pfleger.",
-   "mevcutBeispielTr": "İş kurumu ona bakıcılığa geçiş eğitimini finanse ediyor."
+   "currentTr": "meslek değiştirme eğitimi",
+   "currentBeispiel": "Das Arbeitsamt finanziert ihm eine Umschulung zum Pfleger.",
+   "currentBeispielTr": "İş kurumu ona bakıcılığa geçiş eğitimini finanse ediyor."
   },
   {
    "id": 4231,
@@ -423,9 +423,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wissenslücken",
-   "mevcutTr": "bilgi eksiği, bilgi boşluğu",
-   "mevcutBeispiel": "Der Test deckte erhebliche Wissenslücken in Mathematik auf.",
-   "mevcutBeispielTr": "Test matematikte ciddi bilgi eksikleri ortaya çıkardı."
+   "currentTr": "bilgi eksiği, bilgi boşluğu",
+   "currentBeispiel": "Der Test deckte erhebliche Wissenslücken in Mathematik auf.",
+   "currentBeispielTr": "Test matematikte ciddi bilgi eksikleri ortaya çıkardı."
   },
   {
    "id": 4232,
@@ -433,9 +433,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bildungsurlaube",
-   "mevcutTr": "eğitim izni",
-   "mevcutBeispiel": "Sie nahm eine Woche Bildungsurlaub für einen Sprachkurs.",
-   "mevcutBeispielTr": "Bir dil kursu için bir hafta eğitim izni aldı."
+   "currentTr": "eğitim izni",
+   "currentBeispiel": "Sie nahm eine Woche Bildungsurlaub für einen Sprachkurs.",
+   "currentBeispielTr": "Bir dil kursu için bir hafta eğitim izni aldı."
   },
   {
    "id": 4233,
@@ -443,9 +443,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abendschulen",
-   "mevcutTr": "akşam okulu",
-   "mevcutBeispiel": "Er besucht die Abendschule, um seinen Realschulabschluss zu machen.",
-   "mevcutBeispielTr": "Ortaokul diplomasını almak için akşam okuluna gidiyor."
+   "currentTr": "akşam okulu",
+   "currentBeispiel": "Er besucht die Abendschule, um seinen Realschulabschluss zu machen.",
+   "currentBeispielTr": "Ortaokul diplomasını almak için akşam okuluna gidiyor."
   },
   {
    "id": 4234,
@@ -453,9 +453,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fernstudien",
-   "mevcutTr": "uzaktan eğitim",
-   "mevcutBeispiel": "Ein Fernstudium verlangt viel Disziplin und gute Zeiteinteilung.",
-   "mevcutBeispielTr": "Uzaktan eğitim çok disiplin ve iyi bir zaman planlaması ister."
+   "currentTr": "uzaktan eğitim",
+   "currentBeispiel": "Ein Fernstudium verlangt viel Disziplin und gute Zeiteinteilung.",
+   "currentBeispielTr": "Uzaktan eğitim çok disiplin ve iyi bir zaman planlaması ister."
   },
   {
    "id": 4235,
@@ -463,9 +463,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Volkshochschulen",
-   "mevcutTr": "halk eğitim merkezi",
-   "mevcutBeispiel": "Die Volkshochschule bietet im Herbst neue Sprachkurse an.",
-   "mevcutBeispielTr": "Halk eğitim merkezi sonbaharda yeni dil kursları açıyor."
+   "currentTr": "halk eğitim merkezi",
+   "currentBeispiel": "Die Volkshochschule bietet im Herbst neue Sprachkurse an.",
+   "currentBeispielTr": "Halk eğitim merkezi sonbaharda yeni dil kursları açıyor."
   },
   {
    "id": 4236,
@@ -473,9 +473,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fehlzeiten",
-   "mevcutTr": "devamsızlık süresi",
-   "mevcutBeispiel": "Wegen zu vieler Fehlzeiten wurde er nicht zugelassen.",
-   "mevcutBeispielTr": "Çok fazla devamsızlık yüzünden sınava alınmadı."
+   "currentTr": "devamsızlık süresi",
+   "currentBeispiel": "Wegen zu vieler Fehlzeiten wurde er nicht zugelassen.",
+   "currentBeispielTr": "Çok fazla devamsızlık yüzünden sınava alınmadı."
   },
   {
    "id": 4237,
@@ -483,9 +483,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Versetzungen",
-   "mevcutTr": "sınıf geçme, nakil",
-   "mevcutBeispiel": "Seine Versetzung in die nächste Klasse ist gefährdet.",
-   "mevcutBeispielTr": "Bir üst sınıfa geçmesi tehlikede."
+   "currentTr": "sınıf geçme, nakil",
+   "currentBeispiel": "Seine Versetzung in die nächste Klasse ist gefährdet.",
+   "currentBeispielTr": "Bir üst sınıfa geçmesi tehlikede."
   },
   {
    "id": 4238,
@@ -493,9 +493,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yetişkin eğitimi",
-   "mevcutBeispiel": "Die Erwachsenenbildung gewinnt in alternden Gesellschaften an Bedeutung.",
-   "mevcutBeispielTr": "Yaşlanan toplumlarda yetişkin eğitimi önem kazanıyor."
+   "currentTr": "yetişkin eğitimi",
+   "currentBeispiel": "Die Erwachsenenbildung gewinnt in alternden Gesellschaften an Bedeutung.",
+   "currentBeispielTr": "Yaşlanan toplumlarda yetişkin eğitimi önem kazanıyor."
   },
   {
    "id": 4239,
@@ -503,9 +503,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Mitschriften",
-   "mevcutTr": "ders notu, tutulan not",
-   "mevcutBeispiel": "Er lieh sich die Mitschriften der letzten Vorlesung aus.",
-   "mevcutBeispielTr": "Son dersin notlarını ödünç aldı."
+   "currentTr": "ders notu, tutulan not",
+   "currentBeispiel": "Er lieh sich die Mitschriften der letzten Vorlesung aus.",
+   "currentBeispielTr": "Son dersin notlarını ödünç aldı."
   },
   {
    "id": 4240,
@@ -513,10 +513,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Begabungen",
-   "mevcutTr": "yetenek (doğuştan gelen), kabiliyet",
-   "mevcutBeispiel": "Ihre musikalische Begabung zeigte sich schon im Kindergarten.",
-   "mevcutBeispielTr": "Müzik yeteneği daha anaokulunda belli oldu.",
-   "cakisan": [
+   "currentTr": "yetenek (doğuştan gelen), kabiliyet",
+   "currentBeispiel": "Ihre musikalische Begabung zeigte sich schon im Kindergarten.",
+   "currentBeispielTr": "Müzik yeteneği daha anaokulunda belli oldu.",
+   "overlapping": [
     "die Fähigkeit (B1)",
     "das Talent (B1)"
    ]
@@ -527,10 +527,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abschlusszeugnisse",
-   "mevcutTr": "diploma, mezuniyet belgesi",
-   "mevcutBeispiel": "Das Abschlusszeugnis wird im Original bei der Bewerbung verlangt.",
-   "mevcutBeispielTr": "Başvuruda diplomanın aslı isteniyor.",
-   "cakisan": [
+   "currentTr": "diploma, mezuniyet belgesi",
+   "currentBeispiel": "Das Abschlusszeugnis wird im Original bei der Bewerbung verlangt.",
+   "currentBeispielTr": "Başvuruda diplomanın aslı isteniyor.",
+   "overlapping": [
     "das Diplom (B1)"
    ]
   },
@@ -540,9 +540,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schwerpunkte",
-   "mevcutTr": "ağırlık noktası, odak",
-   "mevcutBeispiel": "Im Master wählte sie den Schwerpunkt Umweltrecht.",
-   "mevcutBeispielTr": "Yüksek lisansta çevre hukuku odağını seçti."
+   "currentTr": "ağırlık noktası, odak",
+   "currentBeispiel": "Im Master wählte sie den Schwerpunkt Umweltrecht.",
+   "currentBeispielTr": "Yüksek lisansta çevre hukuku odağını seçti."
   }
  ]
 }

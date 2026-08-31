@@ -1,16 +1,16 @@
 {
- "paket": "c1-028",
+ "packet": "c1-028",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 6603,
    "de": "die Stimmungsmache",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kışkırtma, algı yaratma",
-   "mevcutBeispiel": "Was als Analyse angekündigt war, entpuppte sich als plumpe Stimmungsmache.",
-   "mevcutBeispielTr": "Analiz diye duyurulan şey, kaba bir algı yaratma çabası çıktı."
+   "currentTr": "kışkırtma, algı yaratma",
+   "currentBeispiel": "Was als Analyse angekündigt war, entpuppte sich als plumpe Stimmungsmache.",
+   "currentBeispielTr": "Analiz diye duyurulan şey, kaba bir algı yaratma çabası çıktı."
   },
   {
    "id": 6604,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Pamphlete",
-   "mevcutTr": "pamflet, polemik yazı",
-   "mevcutBeispiel": "Sein Buch ist weniger Studie als politisches Pamphlet gegen die Regierung.",
-   "mevcutBeispielTr": "Kitabı bir incelemeden çok hükûmete karşı yazılmış siyasi bir taşlama yazısı."
+   "currentTr": "pamflet, polemik yazı",
+   "currentBeispiel": "Sein Buch ist weniger Studie als politisches Pamphlet gegen die Regierung.",
+   "currentBeispielTr": "Kitabı bir incelemeden çok hükûmete karşı yazılmış siyasi bir taşlama yazısı."
   },
   {
    "id": 6605,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Glossen",
-   "mevcutTr": "köşe taşlaması, mizahi yorum yazısı",
-   "mevcutBeispiel": "Die Glosse spitzt zu und darf gerade deshalb nicht wörtlich gelesen werden.",
-   "mevcutBeispielTr": "Mizahi yorum yazısı abartır ve tam da bu yüzden birebir okunmamalıdır."
+   "currentTr": "köşe taşlaması, mizahi yorum yazısı",
+   "currentBeispiel": "Die Glosse spitzt zu und darf gerade deshalb nicht wörtlich gelesen werden.",
+   "currentBeispielTr": "Mizahi yorum yazısı abartır ve tam da bu yüzden birebir okunmamalıdır."
   },
   {
    "id": 6606,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Feuilletons",
-   "mevcutTr": "kültür sanat eki, feuilleton",
-   "mevcutBeispiel": "Im Feuilleton wird seit Wochen über den Begriff der Cancel-Kultur gestritten.",
-   "mevcutBeispielTr": "Kültür sanat ekinde haftalardır iptal kültürü kavramı tartışılıyor."
+   "currentTr": "kültür sanat eki, feuilleton",
+   "currentBeispiel": "Im Feuilleton wird seit Wochen über den Begriff der Cancel-Kultur gestritten.",
+   "currentBeispielTr": "Kültür sanat ekinde haftalardır iptal kültürü kavramı tartışılıyor."
   },
   {
    "id": 6607,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Anonymisierungen",
-   "mevcutTr": "kimliğin gizlenmesi, anonimleştirme",
-   "mevcutBeispiel": "Erst nach sorgfältiger Anonymisierung durfte das Interview gesendet werden.",
-   "mevcutBeispielTr": "Röportaj ancak titiz bir anonimleştirmeden sonra yayımlanabildi."
+   "currentTr": "kimliğin gizlenmesi, anonimleştirme",
+   "currentBeispiel": "Erst nach sorgfältiger Anonymisierung durfte das Interview gesendet werden.",
+   "currentBeispielTr": "Röportaj ancak titiz bir anonimleştirmeden sonra yayımlanabildi."
   },
   {
    "id": 6608,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Indiskretionen",
-   "mevcutTr": "sır ifşası, boşboğazlık",
-   "mevcutBeispiel": "Gezielte Indiskretionen aus dem Ministerium prägten die Debatte tagelang.",
-   "mevcutBeispielTr": "Bakanlıktan sızdırılan bilgiler tartışmayı günlerce belirledi."
+   "currentTr": "sır ifşası, boşboğazlık",
+   "currentBeispiel": "Gezielte Indiskretionen aus dem Ministerium prägten die Debatte tagelang.",
+   "currentBeispielTr": "Bakanlıktan sızdırılan bilgiler tartışmayı günlerce belirledi."
   },
   {
    "id": 6609,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Sprachregelungen",
-   "mevcutTr": "resmî söylem kalıbı, dil talimatı",
-   "mevcutBeispiel": "Alle Sprecher hielten sich auffällig genau an dieselbe Sprachregelung.",
-   "mevcutBeispielTr": "Bütün sözcüler dikkat çekecek kadar aynı söylem kalıbına bağlı kaldı."
+   "currentTr": "resmî söylem kalıbı, dil talimatı",
+   "currentBeispiel": "Alle Sprecher hielten sich auffällig genau an dieselbe Sprachregelung.",
+   "currentBeispielTr": "Bütün sözcüler dikkat çekecek kadar aynı söylem kalıbına bağlı kaldı."
   },
   {
    "id": 6610,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verleumdungen",
-   "mevcutTr": "iftira",
-   "mevcutBeispiel": "Der Vorwurf erfüllt den Tatbestand der Verleumdung, wenn er wider besseres Wissen erhoben wird.",
-   "mevcutBeispielTr": "Suçlama, aksi bilindiği hâlde ileri sürülmüşse iftira suçunu oluşturur."
+   "currentTr": "iftira",
+   "currentBeispiel": "Der Vorwurf erfüllt den Tatbestand der Verleumdung, wenn er wider besseres Wissen erhoben wird.",
+   "currentBeispielTr": "Suçlama, aksi bilindiği hâlde ileri sürülmüşse iftira suçunu oluşturur."
   },
   {
    "id": 6611,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Unterlassungserklärungen",
-   "mevcutTr": "ihlali tekrarlamama taahhüdü",
-   "mevcutBeispiel": "Das Magazin unterschrieb eine Unterlassungserklärung und nahm den Beitrag offline.",
-   "mevcutBeispielTr": "Dergi bir tekrarlamama taahhüdü imzaladı ve yazıyı yayından kaldırdı."
+   "currentTr": "ihlali tekrarlamama taahhüdü",
+   "currentBeispiel": "Das Magazin unterschrieb eine Unterlassungserklärung und nahm den Beitrag offline.",
+   "currentBeispielTr": "Dergi bir tekrarlamama taahhüdü imzaladı ve yazıyı yayından kaldırdı."
   },
   {
    "id": 6612,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Selbstzensuren",
-   "mevcutTr": "otosansür",
-   "mevcutBeispiel": "Wo Klagen drohen, beginnt die Selbstzensur lange vor jedem Verbot.",
-   "mevcutBeispielTr": "Dava tehdidi olan yerde otosansür, herhangi bir yasaktan çok önce başlar."
+   "currentTr": "otosansür",
+   "currentBeispiel": "Wo Klagen drohen, beginnt die Selbstzensur lange vor jedem Verbot.",
+   "currentBeispielTr": "Dava tehdidi olan yerde otosansür, herhangi bir yasaktan çok önce başlar."
   },
   {
    "id": 6613,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rezipienten",
-   "mevcutTr": "alımlayıcı, izleyici-okur",
-   "mevcutBeispiel": "Der Rezipient ist längst kein passiver Empfänger fertiger Botschaften mehr.",
-   "mevcutBeispielTr": "Alımlayıcı çoktandır hazır mesajların edilgen bir alıcısı değil."
+   "currentTr": "alımlayıcı, izleyici-okur",
+   "currentBeispiel": "Der Rezipient ist längst kein passiver Empfänger fertiger Botschaften mehr.",
+   "currentBeispielTr": "Alımlayıcı çoktandır hazır mesajların edilgen bir alıcısı değil."
   },
   {
    "id": 6614,
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Emotionalisierungen",
-   "mevcutTr": "duygusallaştırma",
-   "mevcutBeispiel": "Die Emotionalisierung komplexer Themen erhöht die Reichweite und senkt das Verständnis.",
-   "mevcutBeispielTr": "Karmaşık konuların duygusallaştırılması erişimi artırırken anlamayı düşürür."
+   "currentTr": "duygusallaştırma",
+   "currentBeispiel": "Die Emotionalisierung komplexer Themen erhöht die Reichweite und senkt das Verständnis.",
+   "currentBeispielTr": "Karmaşık konuların duygusallaştırılması erişimi artırırken anlamayı düşürür."
   },
   {
    "id": 6615,
@@ -128,9 +128,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kommerzialisierungen",
-   "mevcutTr": "ticarileşme",
-   "mevcutBeispiel": "Die Kommerzialisierung des Journalismus verschiebt die Auswahl der Themen unmerklich.",
-   "mevcutBeispielTr": "Gazeteciliğin ticarileşmesi konu seçimini fark ettirmeden kaydırır."
+   "currentTr": "ticarileşme",
+   "currentBeispiel": "Die Kommerzialisierung des Journalismus verschiebt die Auswahl der Themen unmerklich.",
+   "currentBeispielTr": "Gazeteciliğin ticarileşmesi konu seçimini fark ettirmeden kaydırır."
   },
   {
    "id": 6616,
@@ -138,9 +138,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bezahlschranken",
-   "mevcutTr": "ödeme duvarı, paralı erişim engeli",
-   "mevcutBeispiel": "Hinter der Bezahlschranke steht die Recherche, davor bleibt der Alarmruf.",
-   "mevcutBeispielTr": "Ödeme duvarının arkasında araştırma yazısı, önünde ise yalnızca alarm çığlığı kalıyor."
+   "currentTr": "ödeme duvarı, paralı erişim engeli",
+   "currentBeispiel": "Hinter der Bezahlschranke steht die Recherche, davor bleibt der Alarmruf.",
+   "currentBeispielTr": "Ödeme duvarının arkasında araştırma yazısı, önünde ise yalnızca alarm çığlığı kalıyor."
   },
   {
    "id": 6617,
@@ -148,9 +148,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Wächterämter",
-   "mevcutTr": "bekçilik görevi, denetleyici rol",
-   "mevcutBeispiel": "Die Presse nimmt gegenüber der Macht ein Wächteramt wahr.",
-   "mevcutBeispielTr": "Basın, iktidar karşısında bir bekçilik görevi üstlenir."
+   "currentTr": "bekçilik görevi, denetleyici rol",
+   "currentBeispiel": "Die Presse nimmt gegenüber der Macht ein Wächteramt wahr.",
+   "currentBeispielTr": "Basın, iktidar karşısında bir bekçilik görevi üstlenir."
   },
   {
    "id": 6618,
@@ -158,9 +158,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vertrauensverluste",
-   "mevcutTr": "güven kaybı",
-   "mevcutBeispiel": "Ein einziger gefälschter Beitrag löste einen dauerhaften Vertrauensverlust aus.",
-   "mevcutBeispielTr": "Tek bir uydurma yazı kalıcı bir güven kaybına yol açtı."
+   "currentTr": "güven kaybı",
+   "currentBeispiel": "Ein einziger gefälschter Beitrag löste einen dauerhaften Vertrauensverlust aus.",
+   "currentBeispielTr": "Tek bir uydurma yazı kalıcı bir güven kaybına yol açtı."
   },
   {
    "id": 6619,
@@ -168,9 +168,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Diskreditierungen",
-   "mevcutTr": "itibarsızlaştırma",
-   "mevcutBeispiel": "Statt Argumenten folgte die systematische Diskreditierung der Kritikerin.",
-   "mevcutBeispielTr": "Argümanlar yerine eleştirmenin sistematik biçimde itibarsızlaştırılması geldi."
+   "currentTr": "itibarsızlaştırma",
+   "currentBeispiel": "Statt Argumenten folgte die systematische Diskreditierung der Kritikerin.",
+   "currentBeispielTr": "Argümanlar yerine eleştirmenin sistematik biçimde itibarsızlaştırılması geldi."
   },
   {
    "id": 6620,
@@ -178,9 +178,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Transparenzgebote",
-   "mevcutTr": "şeffaflık ilkesi",
-   "mevcutBeispiel": "Aus dem Transparenzgebot folgt, dass bezahlte Beiträge klar gekennzeichnet werden.",
-   "mevcutBeispielTr": "Şeffaflık ilkesi, ücretli içeriklerin açıkça işaretlenmesini gerektirir."
+   "currentTr": "şeffaflık ilkesi",
+   "currentBeispiel": "Aus dem Transparenzgebot folgt, dass bezahlte Beiträge klar gekennzeichnet werden.",
+   "currentBeispielTr": "Şeffaflık ilkesi, ücretli içeriklerin açıkça işaretlenmesini gerektirir."
   },
   {
    "id": 6621,
@@ -188,9 +188,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Massenmedien",
-   "mevcutTr": "kitle iletişim aracı",
-   "mevcutBeispiel": "Kein Massenmedium erreicht heute noch das gesamte Publikum gleichzeitig.",
-   "mevcutBeispielTr": "Bugün hiçbir kitle iletişim aracı tüm izleyiciye aynı anda ulaşamıyor."
+   "currentTr": "kitle iletişim aracı",
+   "currentBeispiel": "Kein Massenmedium erreicht heute noch das gesamte Publikum gleichzeitig.",
+   "currentBeispielTr": "Bugün hiçbir kitle iletişim aracı tüm izleyiciye aynı anda ulaşamıyor."
   },
   {
    "id": 6622,
@@ -198,9 +198,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Schweigespiralen",
-   "mevcutTr": "suskunluk sarmalı",
-   "mevcutBeispiel": "Wer sich in der Minderheit wähnt, schweigt und verstärkt so die Schweigespirale.",
-   "mevcutBeispielTr": "Kendini azınlıkta sanan susar ve böylece suskunluk sarmalını güçlendirir."
+   "currentTr": "suskunluk sarmalı",
+   "currentBeispiel": "Wer sich in der Minderheit wähnt, schweigt und verstärkt so die Schweigespirale.",
+   "currentBeispielTr": "Kendini azınlıkta sanan susar ve böylece suskunluk sarmalını güçlendirir."
   },
   {
    "id": 6623,
@@ -208,9 +208,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat lanciert",
-   "mevcutTr": "gündeme sokmak, servis etmek, piyasaya sürmek",
-   "mevcutBeispiel": "Die Geschichte wurde kurz vor der Abstimmung gezielt lanciert.",
-   "mevcutBeispielTr": "Haber, oylamadan hemen önce planlı biçimde gündeme sokuldu."
+   "currentTr": "gündeme sokmak, servis etmek, piyasaya sürmek",
+   "currentBeispiel": "Die Geschichte wurde kurz vor der Abstimmung gezielt lanciert.",
+   "currentBeispielTr": "Haber, oylamadan hemen önce planlı biçimde gündeme sokuldu."
   },
   {
    "id": 6624,
@@ -218,10 +218,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat richtiggestellt",
-   "mevcutTr": "düzeltmek, tashih etmek",
-   "mevcutBeispiel": "Die Redaktion stellte die falsche Zahl erst nach drei Tagen richtig.",
-   "mevcutBeispielTr": "Yayın kurulu yanlış rakamı ancak üç gün sonra düzeltti.",
-   "cakisan": [
+   "currentTr": "düzeltmek, tashih etmek",
+   "currentBeispiel": "Die Redaktion stellte die falsche Zahl erst nach drei Tagen richtig.",
+   "currentBeispielTr": "Yayın kurulu yanlış rakamı ancak üç gün sonra düzeltti.",
+   "overlapping": [
     "korrigieren (B1)",
     "nachbessern (B2)",
     "glätten (A2)"
@@ -233,10 +233,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat insinuiert",
-   "mevcutTr": "ima etmek, üstü kapalı sezdirmek",
-   "mevcutBeispiel": "Der Beitrag insinuiert einen Zusammenhang, den er nirgends belegt.",
-   "mevcutBeispielTr": "Yazı, hiçbir yerde kanıtlamadığı bir bağlantıyı ima ediyor.",
-   "cakisan": [
+   "currentTr": "ima etmek, üstü kapalı sezdirmek",
+   "currentBeispiel": "Der Beitrag insinuiert einen Zusammenhang, den er nirgends belegt.",
+   "currentBeispielTr": "Yazı, hiçbir yerde kanıtlamadığı bir bağlantıyı ima ediyor.",
+   "overlapping": [
     "andeuten (B2)",
     "anspielen (C1)"
    ]
@@ -247,9 +247,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat unterstellt",
-   "mevcutTr": "isnat etmek, atfetmek",
-   "mevcutBeispiel": "Man unterstellte ihr Absicht, obwohl der Fehler technisch bedingt war.",
-   "mevcutBeispielTr": "Hata teknik kaynaklı olmasına rağmen ona kasıt isnat edildi."
+   "currentTr": "isnat etmek, atfetmek",
+   "currentBeispiel": "Man unterstellte ihr Absicht, obwohl der Fehler technisch bedingt war.",
+   "currentBeispielTr": "Hata teknik kaynaklı olmasına rağmen ona kasıt isnat edildi."
   },
   {
    "id": 6627,
@@ -257,9 +257,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat bloßgestellt",
-   "mevcutTr": "rezil etmek, teşhir etmek",
-   "mevcutBeispiel": "Eine Kamera darf niemanden vor Millionen Zuschauern bloßstellen.",
-   "mevcutBeispielTr": "Bir kamera hiç kimseyi milyonlarca izleyici önünde rezil etmemelidir."
+   "currentTr": "rezil etmek, teşhir etmek",
+   "currentBeispiel": "Eine Kamera darf niemanden vor Millionen Zuschauern bloßstellen.",
+   "currentBeispielTr": "Bir kamera hiç kimseyi milyonlarca izleyici önünde rezil etmemelidir."
   },
   {
    "id": 6628,
@@ -267,9 +267,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat vertuscht",
-   "mevcutTr": "örtbas etmek",
-   "mevcutBeispiel": "Jahrelang wurden die Vorfälle intern vertuscht und kleingeredet.",
-   "mevcutBeispielTr": "Olaylar yıllarca kurum içinde örtbas edildi ve önemsizleştirildi."
+   "currentTr": "örtbas etmek",
+   "currentBeispiel": "Jahrelang wurden die Vorfälle intern vertuscht und kleingeredet.",
+   "currentBeispielTr": "Olaylar yıllarca kurum içinde örtbas edildi ve önemsizleştirildi."
   },
   {
    "id": 6629,
@@ -277,10 +277,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat aufgebauscht",
-   "mevcutTr": "abartmak, şişirmek",
-   "mevcutBeispiel": "Ein Randthema wurde wochenlang zur Staatskrise aufgebauscht.",
-   "mevcutBeispielTr": "Kenarda kalmış bir konu haftalarca devlet krizi boyutuna şişirildi.",
-   "cakisan": [
+   "currentTr": "abartmak, şişirmek",
+   "currentBeispiel": "Ein Randthema wurde wochenlang zur Staatskrise aufgebauscht.",
+   "currentBeispielTr": "Kenarda kalmış bir konu haftalarca devlet krizi boyutuna şişirildi.",
+   "overlapping": [
     "übertreiben (B1)",
     "dramatisieren (C1)",
     "überschätzen (C1)"
@@ -292,9 +292,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat kolportiert",
-   "mevcutTr": "dedikodu gibi yaymak, dolaşıma sokmak",
-   "mevcutBeispiel": "Die Zahl wird seit Jahren kolportiert, ohne je überprüft worden zu sein.",
-   "mevcutBeispielTr": "Bu rakam yıllardır hiç doğrulanmadan ağızdan ağıza dolaşıyor."
+   "currentTr": "dedikodu gibi yaymak, dolaşıma sokmak",
+   "currentBeispiel": "Die Zahl wird seit Jahren kolportiert, ohne je überprüft worden zu sein.",
+   "currentBeispielTr": "Bu rakam yıllardır hiç doğrulanmadan ağızdan ağıza dolaşıyor."
   },
   {
    "id": 6631,
@@ -302,9 +302,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat offengelegt",
-   "mevcutTr": "açıkça beyan etmek, ifşa etmek",
-   "mevcutBeispiel": "Autoren müssen mögliche Interessenkonflikte am Textende offenlegen.",
-   "mevcutBeispielTr": "Yazarlar olası çıkar çatışmalarını metnin sonunda açıklamak zorundadır."
+   "currentTr": "açıkça beyan etmek, ifşa etmek",
+   "currentBeispiel": "Autoren müssen mögliche Interessenkonflikte am Textende offenlegen.",
+   "currentBeispielTr": "Yazarlar olası çıkar çatışmalarını metnin sonunda açıklamak zorundadır."
   },
   {
    "id": 6632,
@@ -312,10 +312,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat preisgegeben",
-   "mevcutTr": "ele vermek, ifşa etmek",
-   "mevcutBeispiel": "Kein seriöser Journalist gibt die Identität seiner Quelle preis.",
-   "mevcutBeispielTr": "Ciddi hiçbir gazeteci kaynağının kimliğini ele vermez.",
-   "cakisan": [
+   "currentTr": "ele vermek, ifşa etmek",
+   "currentBeispiel": "Kein seriöser Journalist gibt die Identität seiner Quelle preis.",
+   "currentBeispielTr": "Ciddi hiçbir gazeteci kaynağının kimliğini ele vermez.",
+   "overlapping": [
     "verraten (B1)"
    ]
   },
@@ -325,9 +325,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat abgewiegelt",
-   "mevcutTr": "yatıştırmaya çalışmak, önemsizleştirmek",
-   "mevcutBeispiel": "Die Behörde wiegelte ab, statt die offenen Fragen zu beantworten.",
-   "mevcutBeispielTr": "Kurum, açık soruları yanıtlamak yerine konuyu yatıştırmaya çalıştı."
+   "currentTr": "yatıştırmaya çalışmak, önemsizleştirmek",
+   "currentBeispiel": "Die Behörde wiegelte ab, statt die offenen Fragen zu beantworten.",
+   "currentBeispielTr": "Kurum, açık soruları yanıtlamak yerine konuyu yatıştırmaya çalıştı."
   },
   {
    "id": 6634,
@@ -335,9 +335,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat mobilisiert",
-   "mevcutTr": "harekete geçirmek, seferber etmek",
-   "mevcutBeispiel": "Ein einziger Hinweis mobilisierte binnen Stunden Tausende von Unterstützern.",
-   "mevcutBeispielTr": "Tek bir çağrı saatler içinde binlerce destekçiyi harekete geçirdi."
+   "currentTr": "harekete geçirmek, seferber etmek",
+   "currentBeispiel": "Ein einziger Hinweis mobilisierte binnen Stunden Tausende von Unterstützern.",
+   "currentBeispielTr": "Tek bir çağrı saatler içinde binlerce destekçiyi harekete geçirdi."
   },
   {
    "id": 6635,
@@ -345,10 +345,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat kommentiert",
-   "mevcutTr": "yorumlamak, değerlendirmek",
-   "mevcutBeispiel": "Wer Nachrichten macht, sollte sie nicht im selben Text kommentieren.",
-   "mevcutBeispielTr": "Haber yapan kişi, aynı metinde onu yorumlamamalıdır.",
-   "cakisan": [
+   "currentTr": "yorumlamak, değerlendirmek",
+   "currentBeispiel": "Wer Nachrichten macht, sollte sie nicht im selben Text kommentieren.",
+   "currentBeispielTr": "Haber yapan kişi, aynı metinde onu yorumlamamalıdır.",
+   "overlapping": [
     "interpretieren (C1)",
     "deuten (C1)"
    ]
@@ -359,9 +359,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yayıncılıkla ilgili, basın-yayına dair",
-   "mevcutBeispiel": "Die Fusion hätte erhebliche publizistische Folgen für die Region.",
-   "mevcutBeispielTr": "Birleşmenin bölge için ciddi yayıncılık sonuçları olurdu."
+   "currentTr": "yayıncılıkla ilgili, basın-yayına dair",
+   "currentBeispiel": "Die Fusion hätte erhebliche publizistische Folgen für die Region.",
+   "currentBeispielTr": "Birleşmenin bölge için ciddi yayıncılık sonuçları olurdu."
   },
   {
    "id": 6637,
@@ -369,9 +369,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "medyaya ilişkin, medya aracılığıyla",
-   "mevcutBeispiel": "Der Prozess wurde medial begleitet wie ein sportliches Großereignis.",
-   "mevcutBeispielTr": "Dava, büyük bir spor olayı gibi medyada takip edildi."
+   "currentTr": "medyaya ilişkin, medya aracılığıyla",
+   "currentBeispiel": "Der Prozess wurde medial begleitet wie ein sportliches Großereignis.",
+   "currentBeispielTr": "Dava, büyük bir spor olayı gibi medyada takip edildi."
   },
   {
    "id": 6638,
@@ -379,9 +379,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "tarafsız",
-   "mevcutBeispiel": "Von einer Aufsichtsbehörde erwartet man unparteiische Entscheidungen.",
-   "mevcutBeispielTr": "Bir denetim kurumundan tarafsız kararlar beklenir."
+   "currentTr": "tarafsız",
+   "currentBeispiel": "Von einer Aufsichtsbehörde erwartet man unparteiische Entscheidungen.",
+   "currentBeispielTr": "Bir denetim kurumundan tarafsız kararlar beklenir."
   },
   {
    "id": 6639,
@@ -389,9 +389,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "araştırmacı (gazetecilik)",
-   "mevcutBeispiel": "Investigative Arbeit braucht Zeit, Geld und einen langen Atem.",
-   "mevcutBeispielTr": "Araştırmacı gazetecilik zaman, para ve uzun soluk gerektirir."
+   "currentTr": "araştırmacı (gazetecilik)",
+   "currentBeispiel": "Investigative Arbeit braucht Zeit, Geld und einen langen Atem.",
+   "currentBeispielTr": "Araştırmacı gazetecilik zaman, para ve uzun soluk gerektirir."
   },
   {
    "id": 6640,
@@ -399,9 +399,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çarpıcı ama yüzeysel, slogan gibi",
-   "mevcutBeispiel": "Seine Thesen sind plakativ formuliert und halten der Prüfung kaum stand.",
-   "mevcutBeispielTr": "Tezleri çarpıcı ama yüzeysel biçimde kurulmuş ve incelemeye pek dayanmıyor."
+   "currentTr": "çarpıcı ama yüzeysel, slogan gibi",
+   "currentBeispiel": "Seine Thesen sind plakativ formuliert und halten der Prüfung kaum stand.",
+   "currentBeispielTr": "Tezleri çarpıcı ama yüzeysel biçimde kurulmuş ve incelemeye pek dayanmıyor."
   },
   {
    "id": 6641,
@@ -409,9 +409,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "telkin edici, yönlendirici",
-   "mevcutBeispiel": "Suggestive Fragen erzeugen genau die Antworten, die man hören will.",
-   "mevcutBeispielTr": "Yönlendirici sorular tam da duyulmak istenen yanıtları üretir."
+   "currentTr": "telkin edici, yönlendirici",
+   "currentBeispiel": "Suggestive Fragen erzeugen genau die Antworten, die man hören will.",
+   "currentBeispielTr": "Yönlendirici sorular tam da duyulmak istenen yanıtları üretir."
   },
   {
    "id": 6642,
@@ -419,9 +419,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kanıtsız, dayanaksız",
-   "mevcutBeispiel": "Der Vorwurf blieb bis zum Schluss unbelegt und wurde dennoch wiederholt.",
-   "mevcutBeispielTr": "Suçlama sonuna kadar dayanaksız kaldı, buna rağmen tekrarlandı."
+   "currentTr": "kanıtsız, dayanaksız",
+   "currentBeispiel": "Der Vorwurf blieb bis zum Schluss unbelegt und wurde dennoch wiederholt.",
+   "currentBeispielTr": "Suçlama sonuna kadar dayanaksız kaldı, buna rağmen tekrarlandı."
   },
   {
    "id": 6643,
@@ -429,9 +429,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "devletten bağımsız, devlete mesafeli",
-   "mevcutBeispiel": "Die Aufsicht über den Rundfunk muss staatsfern organisiert sein.",
-   "mevcutBeispielTr": "Yayıncılık denetimi devletten bağımsız biçimde örgütlenmelidir."
+   "currentTr": "devletten bağımsız, devlete mesafeli",
+   "currentBeispiel": "Die Aufsicht über den Rundfunk muss staatsfern organisiert sein.",
+   "currentBeispielTr": "Yayıncılık denetimi devletten bağımsız biçimde örgütlenmelidir."
   },
   {
    "id": 6644,
@@ -439,9 +439,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Aufklärungspflichten",
-   "mevcutTr": "aydınlatma yükümlülüğü, bilgilendirme borcu",
-   "mevcutBeispiel": "Die Ärztin verletzte ihre Aufklärungspflicht über mögliche Spätfolgen.",
-   "mevcutBeispielTr": "Doktor, olası geç etkiler konusundaki aydınlatma yükümlülüğünü ihlal etti."
+   "currentTr": "aydınlatma yükümlülüğü, bilgilendirme borcu",
+   "currentBeispiel": "Die Ärztin verletzte ihre Aufklärungspflicht über mögliche Spätfolgen.",
+   "currentBeispielTr": "Doktor, olası geç etkiler konusundaki aydınlatma yükümlülüğünü ihlal etti."
   },
   {
    "id": 6645,
@@ -449,9 +449,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kendi geleceğini belirleme, özerklik",
-   "mevcutBeispiel": "Die Selbstbestimmung des Kranken wiegt schwerer als ärztliche Fürsorge.",
-   "mevcutBeispielTr": "Hastanın kendi kaderini tayin hakkı, hekimin koruyuculuğundan daha ağır basar."
+   "currentTr": "kendi geleceğini belirleme, özerklik",
+   "currentBeispiel": "Die Selbstbestimmung des Kranken wiegt schwerer als ärztliche Fürsorge.",
+   "currentBeispielTr": "Hastanın kendi kaderini tayin hakkı, hekimin koruyuculuğundan daha ağır basar."
   },
   {
    "id": 6646,
@@ -459,9 +459,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ötanazi, ölüme yardım",
-   "mevcutBeispiel": "Über die Zulässigkeit aktiver Sterbehilfe wird seit Jahrzehnten gestritten.",
-   "mevcutBeispielTr": "Aktif ötanazinin caiz olup olmadığı onlarca yıldır tartışılıyor."
+   "currentTr": "ötanazi, ölüme yardım",
+   "currentBeispiel": "Über die Zulässigkeit aktiver Sterbehilfe wird seit Jahrzehnten gestritten.",
+   "currentBeispielTr": "Aktif ötanazinin caiz olup olmadığı onlarca yıldır tartışılıyor."
   },
   {
    "id": 6647,
@@ -469,9 +469,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Patientenverfügungen",
-   "mevcutTr": "hasta vasiyeti, tedavi talimatnamesi",
-   "mevcutBeispiel": "In seiner Patientenverfügung hatte er künstliche Beatmung ausdrücklich abgelehnt.",
-   "mevcutBeispielTr": "Hasta vasiyetinde yapay solunumu açıkça reddetmişti."
+   "currentTr": "hasta vasiyeti, tedavi talimatnamesi",
+   "currentBeispiel": "In seiner Patientenverfügung hatte er künstliche Beatmung ausdrücklich abgelehnt.",
+   "currentBeispielTr": "Hasta vasiyetinde yapay solunumu açıkça reddetmişti."
   },
   {
    "id": 6648,
@@ -479,9 +479,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "katlanılabilirlik, makul olma",
-   "mevcutBeispiel": "Die Zumutbarkeit einer belastenden Therapie muss im Einzelfall geprüft werden.",
-   "mevcutBeispielTr": "Ağır bir tedavinin katlanılabilir olup olmadığı her vakada ayrı değerlendirilmelidir."
+   "currentTr": "katlanılabilirlik, makul olma",
+   "currentBeispiel": "Die Zumutbarkeit einer belastenden Therapie muss im Einzelfall geprüft werden.",
+   "currentBeispielTr": "Ağır bir tedavinin katlanılabilir olup olmadığı her vakada ayrı değerlendirilmelidir."
   },
   {
    "id": 6649,
@@ -489,9 +489,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "dağıtım adaleti, paylaşım adaleti",
-   "mevcutBeispiel": "Bei knappen Spenderorganen stellt sich die Frage der Verteilungsgerechtigkeit.",
-   "mevcutBeispielTr": "Organ kıtlığında dağıtım adaleti sorunu ortaya çıkar."
+   "currentTr": "dağıtım adaleti, paylaşım adaleti",
+   "currentBeispiel": "Bei knappen Spenderorganen stellt sich die Frage der Verteilungsgerechtigkeit.",
+   "currentBeispielTr": "Organ kıtlığında dağıtım adaleti sorunu ortaya çıkar."
   },
   {
    "id": 6650,
@@ -499,10 +499,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kıtlık, yetersizlik",
-   "mevcutBeispiel": "Die Knappheit an Intensivbetten zwang die Klinik zu harten Entscheidungen.",
-   "mevcutBeispielTr": "Yoğun bakım yatağı kıtlığı kliniği zor kararlara zorladı.",
-   "cakisan": [
+   "currentTr": "kıtlık, yetersizlik",
+   "currentBeispiel": "Die Knappheit an Intensivbetten zwang die Klinik zu harten Entscheidungen.",
+   "currentBeispielTr": "Yoğun bakım yatağı kıtlığı kliniği zor kararlara zorladı.",
+   "overlapping": [
     "die Hungersnot (C1)"
    ]
   },
@@ -512,9 +512,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rationierungen",
-   "mevcutTr": "kısıtlama, tayınlama",
-   "mevcutBeispiel": "Eine verdeckte Rationierung teurer Therapien findet längst statt.",
-   "mevcutBeispielTr": "Pahalı tedavilerin örtülü biçimde kısıtlanması çoktan uygulanıyor."
+   "currentTr": "kısıtlama, tayınlama",
+   "currentBeispiel": "Eine verdeckte Rationierung teurer Therapien findet längst statt.",
+   "currentBeispielTr": "Pahalı tedavilerin örtülü biçimde kısıtlanması çoktan uygulanıyor."
   },
   {
    "id": 6652,
@@ -522,9 +522,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Triagen",
-   "mevcutTr": "triyaj, aciliyet sıralaması",
-   "mevcutBeispiel": "Die Triage zwingt Ärzte, über Lebenschancen zu entscheiden.",
-   "mevcutBeispielTr": "Triyaj, hekimleri yaşam şansları hakkında karar vermeye zorlar."
+   "currentTr": "triyaj, aciliyet sıralaması",
+   "currentBeispiel": "Die Triage zwingt Ärzte, über Lebenschancen zu entscheiden.",
+   "currentBeispielTr": "Triyaj, hekimleri yaşam şansları hakkında karar vermeye zorlar."
   }
  ]
 }

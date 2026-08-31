@@ -70,7 +70,7 @@
   "gsw": "Pöschtler",
   "gswArtikel": "de",
   "gswBeispiel": "De Pöschtler bringt d Päckli meischtens am Vormittag.",
-  "ayniLehce": [
+  "sameDialect": [
    "Briefträger (B1)",
    "Pöstler (B1)"
   ]
@@ -623,7 +623,7 @@
   "gsw": "Turnhalle",
   "gswArtikel": "d",
   "gswBeispiel": "De Schportunterricht findet i de Turnhalle schtatt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Turnhalle (A2)"
   ]
  },
@@ -698,7 +698,7 @@
   "gsw": "Lehrling",
   "gswArtikel": "de",
   "gswBeispiel": "Eusen nöie Lehrling lernt schnäll.",
-  "ayniLehce": [
+  "sameDialect": [
    "Auszubildende (B2)"
   ]
  },
@@ -746,7 +746,7 @@
   "gsw": "verbessere",
   "gswArtikel": null,
   "gswBeispiel": "Ich wett mis Tüütsch im Kurs verbessere.",
-  "ayniLehce": [
+  "sameDialect": [
    "sich verbessern (B1)"
   ]
  },

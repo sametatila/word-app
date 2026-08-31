@@ -1,16 +1,16 @@
 {
- "paket": "a2-016",
+ "packet": "a2-016",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 7738,
    "de": "nachsitzen",
    "typ": "Verb",
    "niveau": "A2",
    "formen": "sitzt nach, hat nachgesessen",
-   "mevcutTr": "okulda cezalı kalmak",
-   "mevcutBeispiel": "Weil er zu spät kam, musste er nachsitzen.",
-   "mevcutBeispielTr": "Geç geldiği için okulda cezalı kalmak zorunda kaldı."
+   "currentTr": "okulda cezalı kalmak",
+   "currentBeispiel": "Weil er zu spät kam, musste er nachsitzen.",
+   "currentBeispielTr": "Geç geldiği için okulda cezalı kalmak zorunda kaldı."
   },
   {
    "id": 7739,
@@ -18,10 +18,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "macht vor, hat vorgemacht",
-   "mevcutTr": "göstermek, yaparak göstermek",
-   "mevcutBeispiel": "Der Lehrer macht uns die Übung erst vor.",
-   "mevcutBeispielTr": "Öğretmen alıştırmayı önce bize yaparak gösteriyor.",
-   "cakisan": [
+   "currentTr": "göstermek, yaparak göstermek",
+   "currentBeispiel": "Der Lehrer macht uns die Übung erst vor.",
+   "currentBeispielTr": "Öğretmen alıştırmayı önce bize yaparak gösteriyor.",
+   "overlapping": [
     "zeigen (A1)",
     "aufzeigen (C1)",
     "vorführen (A2)"
@@ -33,9 +33,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "sagt auf, hat aufgesagt",
-   "mevcutTr": "ezbere okumak",
-   "mevcutBeispiel": "Jedes Kind muss ein Gedicht aufsagen.",
-   "mevcutBeispielTr": "Her çocuk bir şiiri ezbere okumak zorunda."
+   "currentTr": "ezbere okumak",
+   "currentBeispiel": "Jedes Kind muss ein Gedicht aufsagen.",
+   "currentBeispielTr": "Her çocuk bir şiiri ezbere okumak zorunda."
   },
   {
    "id": 7741,
@@ -43,10 +43,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schlägt auf, hat aufgeschlagen",
-   "mevcutTr": "(kitabı) açmak",
-   "mevcutBeispiel": "Schlagt bitte das Buch auf Seite zwölf auf!",
-   "mevcutBeispielTr": "Lütfen kitabı on ikinci sayfadan açın!",
-   "cakisan": [
+   "currentTr": "(kitabı) açmak",
+   "currentBeispiel": "Schlagt bitte das Buch auf Seite zwölf auf!",
+   "currentBeispielTr": "Lütfen kitabı on ikinci sayfadan açın!",
+   "overlapping": [
     "einschalten (B1)",
     "schalten (B1)",
     "anschalten (A2)"
@@ -58,9 +58,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "liest nach, hat nachgelesen",
-   "mevcutTr": "okuyup bakmak, kaynaktan okumak",
-   "mevcutBeispiel": "Die Regel kannst du im Buch nachlesen.",
-   "mevcutBeispielTr": "Kuralı kitaptan okuyup bakabilirsin."
+   "currentTr": "okuyup bakmak, kaynaktan okumak",
+   "currentBeispiel": "Die Regel kannst du im Buch nachlesen.",
+   "currentBeispielTr": "Kuralı kitaptan okuyup bakabilirsin."
   },
   {
    "id": 7743,
@@ -68,10 +68,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "nimmt durch, hat durchgenommen",
-   "mevcutTr": "(konuyu) işlemek",
-   "mevcutBeispiel": "Wir nehmen im Unterricht gerade die Vergangenheit durch.",
-   "mevcutBeispielTr": "Derste şu anda geçmiş zamanı işliyoruz.",
-   "cakisan": [
+   "currentTr": "(konuyu) işlemek",
+   "currentBeispiel": "Wir nehmen im Unterricht gerade die Vergangenheit durch.",
+   "currentBeispielTr": "Derste şu anda geçmiş zamanı işliyoruz.",
+   "overlapping": [
     "verarbeiten (B2)",
     "bewirtschaften (B2)"
    ]
@@ -82,9 +82,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "odaklanmış, konsantre",
-   "mevcutBeispiel": "Nach der Pause arbeiten wir wieder konzentriert.",
-   "mevcutBeispielTr": "Teneffüsten sonra yine odaklanmış şekilde çalışıyoruz."
+   "currentTr": "odaklanmış, konsantre",
+   "currentBeispiel": "Nach der Pause arbeiten wir wieder konzentriert.",
+   "currentBeispielTr": "Teneffüsten sonra yine odaklanmış şekilde çalışıyoruz."
   },
   {
    "id": 7745,
@@ -92,9 +92,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "özenli, dikkatli",
-   "mevcutBeispiel": "Sie macht ihre Hausaufgaben immer sorgfältig.",
-   "mevcutBeispielTr": "Ödevlerini her zaman özenli yapıyor."
+   "currentTr": "özenli, dikkatli",
+   "currentBeispiel": "Sie macht ihre Hausaufgaben immer sorgfältig.",
+   "currentBeispielTr": "Ödevlerini her zaman özenli yapıyor."
   },
   {
    "id": 7746,
@@ -102,10 +102,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "anlaşılmaz",
-   "mevcutBeispiel": "Die Frage war für mich völlig unverständlich.",
-   "mevcutBeispielTr": "Soru benim için tamamen anlaşılmazdı.",
-   "cakisan": [
+   "currentTr": "anlaşılmaz",
+   "currentBeispiel": "Die Frage war für mich völlig unverständlich.",
+   "currentBeispielTr": "Soru benim için tamamen anlaşılmazdı.",
+   "overlapping": [
     "undurchsichtig (C1)"
    ]
   },
@@ -115,9 +115,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yapılabilir, üstesinden gelinebilir",
-   "mevcutBeispiel": "Die Prüfung war schwer, aber machbar.",
-   "mevcutBeispielTr": "Sınav zordu ama yapılabilirdi."
+   "currentTr": "yapılabilir, üstesinden gelinebilir",
+   "currentBeispiel": "Die Prüfung war schwer, aber machbar.",
+   "currentBeispielTr": "Sınav zordu ama yapılabilirdi."
   },
   {
    "id": 7748,
@@ -125,9 +125,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "öğretici",
-   "mevcutBeispiel": "Der Ausflug ins Museum war sehr lehrreich.",
-   "mevcutBeispielTr": "Müzeye yapılan gezi çok öğreticiydi."
+   "currentTr": "öğretici",
+   "currentBeispiel": "Der Ausflug ins Museum war sehr lehrreich.",
+   "currentBeispielTr": "Müzeye yapılan gezi çok öğreticiydi."
   },
   {
    "id": 7749,
@@ -135,9 +135,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "okunaklı",
-   "mevcutBeispiel": "Bitte schreib deinen Namen leserlich!",
-   "mevcutBeispielTr": "Lütfen adını okunaklı yaz!"
+   "currentTr": "okunaklı",
+   "currentBeispiel": "Bitte schreib deinen Namen leserlich!",
+   "currentBeispielTr": "Lütfen adını okunaklı yaz!"
   },
   {
    "id": 7750,
@@ -145,9 +145,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "hatalı, yanlışlarla dolu",
-   "mevcutBeispiel": "Meine Übersetzung war leider fehlerhaft.",
-   "mevcutBeispielTr": "Çevirim maalesef hatalıydı."
+   "currentTr": "hatalı, yanlışlarla dolu",
+   "currentBeispiel": "Meine Übersetzung war leider fehlerhaft.",
+   "currentBeispielTr": "Çevirim maalesef hatalıydı."
   },
   {
    "id": 7751,
@@ -155,9 +155,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "hevesli, gayretli",
-   "mevcutBeispiel": "Die Kinder üben eifrig für das Diktat.",
-   "mevcutBeispielTr": "Çocuklar dikte için hevesle çalışıyor."
+   "currentTr": "hevesli, gayretli",
+   "currentBeispiel": "Die Kinder üben eifrig für das Diktat.",
+   "currentBeispielTr": "Çocuklar dikte için hevesle çalışıyor."
   },
   {
    "id": 7752,
@@ -165,9 +165,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "hatasız",
-   "mevcutBeispiel": "Sein Diktat war fehlerfrei.",
-   "mevcutBeispielTr": "Diktesi hatasızdı."
+   "currentTr": "hatasız",
+   "currentBeispiel": "Sein Diktat war fehlerfrei.",
+   "currentBeispielTr": "Diktesi hatasızdı."
   },
   {
    "id": 7753,
@@ -175,9 +175,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yıllık, her yıl",
-   "mevcutBeispiel": "Die Schule macht jährlich einen Ausflug.",
-   "mevcutBeispielTr": "Okul yılda bir gezi düzenliyor."
+   "currentTr": "yıllık, her yıl",
+   "currentBeispiel": "Die Schule macht jährlich einen Ausflug.",
+   "currentBeispielTr": "Okul yılda bir gezi düzenliyor."
   },
   {
    "id": 7754,
@@ -185,9 +185,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "huzursuz, yerinde duramayan",
-   "mevcutBeispiel": "Die Klasse war heute sehr unruhig.",
-   "mevcutBeispielTr": "Sınıf bugün çok huzursuzdu."
+   "currentTr": "huzursuz, yerinde duramayan",
+   "currentBeispiel": "Die Klasse war heute sehr unruhig.",
+   "currentBeispielTr": "Sınıf bugün çok huzursuzdu."
   },
   {
    "id": 7755,
@@ -195,9 +195,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "öğleden önce",
-   "mevcutBeispiel": "Der Kurs findet vormittags statt.",
-   "mevcutBeispielTr": "Kurs öğleden önce yapılıyor."
+   "currentTr": "öğleden önce",
+   "currentBeispiel": "Der Kurs findet vormittags statt.",
+   "currentBeispielTr": "Kurs öğleden önce yapılıyor."
   },
   {
    "id": 7756,
@@ -205,10 +205,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "anlayışlı",
-   "mevcutBeispiel": "Der Direktor war sehr verständnisvoll.",
-   "mevcutBeispielTr": "Müdür çok anlayışlıydı.",
-   "cakisan": [
+   "currentTr": "anlayışlı",
+   "currentBeispiel": "Der Direktor war sehr verständnisvoll.",
+   "currentBeispielTr": "Müdür çok anlayışlıydı.",
+   "overlapping": [
     "einfühlsam (B2)"
    ]
   },
@@ -218,9 +218,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "devlete ait, resmî",
-   "mevcutBeispiel": "Meine Kinder gehen auf eine staatliche Schule.",
-   "mevcutBeispielTr": "Çocuklarım devlet okuluna gidiyor."
+   "currentTr": "devlete ait, resmî",
+   "currentBeispiel": "Meine Kinder gehen auf eine staatliche Schule.",
+   "currentBeispielTr": "Çocuklarım devlet okuluna gidiyor."
   },
   {
    "id": 7758,
@@ -228,9 +228,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "ezbere",
-   "mevcutBeispiel": "Ich kann das Gedicht schon auswendig.",
-   "mevcutBeispielTr": "Şiiri artık ezbere biliyorum."
+   "currentTr": "ezbere",
+   "currentBeispiel": "Ich kann das Gedicht schon auswendig.",
+   "currentBeispielTr": "Şiiri artık ezbere biliyorum."
   },
   {
    "id": 7759,
@@ -238,9 +238,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "dilsel, dil açısından",
-   "mevcutBeispiel": "Sprachlich hat er sich sehr verbessert.",
-   "mevcutBeispielTr": "Dil açısından çok gelişti."
+   "currentTr": "dilsel, dil açısından",
+   "currentBeispiel": "Sprachlich hat er sich sehr verbessert.",
+   "currentBeispielTr": "Dil açısından çok gelişti."
   },
   {
    "id": 7760,
@@ -248,9 +248,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "haftalık pazar, semt pazarı",
-   "mevcutBeispiel": "Am Samstag kaufe ich Obst auf dem Wochenmarkt.",
-   "mevcutBeispielTr": "Cumartesi günü haftalık pazardan meyve alıyorum."
+   "currentTr": "haftalık pazar, semt pazarı",
+   "currentBeispiel": "Am Samstag kaufe ich Obst auf dem Wochenmarkt.",
+   "currentBeispielTr": "Cumartesi günü haftalık pazardan meyve alıyorum."
   },
   {
    "id": 7761,
@@ -258,9 +258,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "pastane",
-   "mevcutBeispiel": "Die Torte kommt aus einer kleinen Konditorei.",
-   "mevcutBeispielTr": "Yaş pasta küçük bir pastaneden geliyor."
+   "currentTr": "pastane",
+   "currentBeispiel": "Die Torte kommt aus einer kleinen Konditorei.",
+   "currentBeispielTr": "Yaş pasta küçük bir pastaneden geliyor."
   },
   {
    "id": 7762,
@@ -268,9 +268,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "ayakkabı mağazası",
-   "mevcutBeispiel": "Das Schuhgeschäft hat heute bis 20 Uhr offen.",
-   "mevcutBeispielTr": "Ayakkabı mağazası bugün saat 20'ye kadar açık."
+   "currentTr": "ayakkabı mağazası",
+   "currentBeispiel": "Das Schuhgeschäft hat heute bis 20 Uhr offen.",
+   "currentBeispielTr": "Ayakkabı mağazası bugün saat 20'ye kadar açık."
   },
   {
    "id": 7763,
@@ -278,10 +278,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-er",
-   "mevcutTr": "büyük mağaza",
-   "mevcutBeispiel": "Im Warenhaus gibt es alles von Kleidung bis Küchenmöbel.",
-   "mevcutBeispielTr": "Büyük mağazada kıyafetten mutfak mobilyasına kadar her şey var.",
-   "cakisan": [
+   "currentTr": "büyük mağaza",
+   "currentBeispiel": "Im Warenhaus gibt es alles von Kleidung bis Küchenmöbel.",
+   "currentBeispielTr": "Büyük mağazada kıyafetten mutfak mobilyasına kadar her şey var.",
+   "overlapping": [
     "das Kaufhaus (A2)"
    ]
   },
@@ -291,9 +291,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "alışveriş arabası",
-   "mevcutBeispiel": "Mein Einkaufswagen ist schon ganz voll.",
-   "mevcutBeispielTr": "Alışveriş arabam şimdiden tamamen doldu."
+   "currentTr": "alışveriş arabası",
+   "currentBeispiel": "Mein Einkaufswagen ist schon ganz voll.",
+   "currentBeispielTr": "Alışveriş arabam şimdiden tamamen doldu."
   },
   {
    "id": 7765,
@@ -301,9 +301,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "alışveriş listesi",
-   "mevcutBeispiel": "Ohne Einkaufsliste vergesse ich immer etwas.",
-   "mevcutBeispielTr": "Alışveriş listesi olmadan hep bir şey unutuyorum."
+   "currentTr": "alışveriş listesi",
+   "currentBeispiel": "Ohne Einkaufsliste vergesse ich immer etwas.",
+   "currentBeispielTr": "Alışveriş listesi olmadan hep bir şey unutuyorum."
   },
   {
    "id": 7766,
@@ -311,9 +311,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "sepet",
-   "mevcutBeispiel": "Leg die Äpfel bitte in den Korb.",
-   "mevcutBeispielTr": "Elmaları lütfen sepete koy."
+   "currentTr": "sepet",
+   "currentBeispiel": "Leg die Äpfel bitte in den Korb.",
+   "currentBeispielTr": "Elmaları lütfen sepete koy."
   },
   {
    "id": 7767,
@@ -321,9 +321,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "sürekli müşteri, devamlı müşteri",
-   "mevcutBeispiel": "Als Stammkunde bekomme ich in dem Laden zehn Prozent Rabatt.",
-   "mevcutBeispielTr": "Sürekli müşteri olarak o dükkânda yüzde on indirim alıyorum."
+   "currentTr": "sürekli müşteri, devamlı müşteri",
+   "currentBeispiel": "Als Stammkunde bekomme ich in dem Laden zehn Prozent Rabatt.",
+   "currentBeispielTr": "Sürekli müşteri olarak o dükkânda yüzde on indirim alıyorum."
   },
   {
    "id": 7768,
@@ -331,9 +331,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "kuyruk, sıra",
-   "mevcutBeispiel": "An der Kasse war eine lange Warteschlange.",
-   "mevcutBeispielTr": "Kasada uzun bir kuyruk vardı."
+   "currentTr": "kuyruk, sıra",
+   "currentBeispiel": "An der Kasse war eine lange Warteschlange.",
+   "currentBeispielTr": "Kasada uzun bir kuyruk vardı."
   },
   {
    "id": 7769,
@@ -341,9 +341,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "steht an, hat angestanden",
-   "mevcutTr": "kuyrukta beklemek, sıraya girmek",
-   "mevcutBeispiel": "Wir mussten zwanzig Minuten an der Kasse anstehen.",
-   "mevcutBeispielTr": "Kasada yirmi dakika sıra beklemek zorunda kaldık."
+   "currentTr": "kuyrukta beklemek, sıraya girmek",
+   "currentBeispiel": "Wir mussten zwanzig Minuten an der Kasse anstehen.",
+   "currentBeispielTr": "Kasada yirmi dakika sıra beklemek zorunda kaldık."
   },
   {
    "id": 7770,
@@ -351,9 +351,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-er",
-   "mevcutTr": "fiyat etiketi",
-   "mevcutBeispiel": "Auf dem Preisschild steht 4,99 Euro.",
-   "mevcutBeispielTr": "Fiyat etiketinde 4,99 avro yazıyor."
+   "currentTr": "fiyat etiketi",
+   "currentBeispiel": "Auf dem Preisschild steht 4,99 Euro.",
+   "currentBeispielTr": "Fiyat etiketinde 4,99 avro yazıyor."
   },
   {
    "id": 7771,
@@ -361,9 +361,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "sezon sonu indirimi",
-   "mevcutBeispiel": "Im Schlussverkauf habe ich eine Jacke für 20 Euro gekauft.",
-   "mevcutBeispielTr": "Sezon sonu indiriminde 20 avroya bir ceket aldım."
+   "currentTr": "sezon sonu indirimi",
+   "currentBeispiel": "Im Schlussverkauf habe ich eine Jacke für 20 Euro gekauft.",
+   "currentBeispielTr": "Sezon sonu indiriminde 20 avroya bir ceket aldım."
   },
   {
    "id": 7772,
@@ -371,9 +371,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "özel fiyat, indirimli fiyat",
-   "mevcutBeispiel": "Diese Woche gibt es Kaffee zum Sonderpreis.",
-   "mevcutBeispielTr": "Bu hafta kahve özel fiyatla satılıyor."
+   "currentTr": "özel fiyat, indirimli fiyat",
+   "currentBeispiel": "Diese Woche gibt es Kaffee zum Sonderpreis.",
+   "currentBeispielTr": "Bu hafta kahve özel fiyatla satılıyor."
   },
   {
    "id": 7773,
@@ -381,9 +381,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "bozuk para",
-   "mevcutBeispiel": "Hast du Kleingeld für den Einkaufswagen?",
-   "mevcutBeispielTr": "Alışveriş arabası için bozuk paran var mı?"
+   "currentTr": "bozuk para",
+   "currentBeispiel": "Hast du Kleingeld für den Einkaufswagen?",
+   "currentBeispielTr": "Alışveriş arabası için bozuk paran var mı?"
   },
   {
    "id": 7774,
@@ -391,10 +391,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "banknot, kâğıt para",
-   "mevcutBeispiel": "Ich habe nur einen Geldschein von 50 Euro dabei.",
-   "mevcutBeispielTr": "Yanımda sadece 50 avroluk bir banknot var.",
-   "cakisan": [
+   "currentTr": "banknot, kâğıt para",
+   "currentBeispiel": "Ich habe nur einen Geldschein von 50 Euro dabei.",
+   "currentBeispielTr": "Yanımda sadece 50 avroluk bir banknot var.",
+   "overlapping": [
     "der Schein (B1)"
    ]
   },
@@ -404,9 +404,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "para üstü",
-   "mevcutBeispiel": "Die Verkäuferin hat mir das Wechselgeld gegeben.",
-   "mevcutBeispielTr": "Satıcı bana para üstünü verdi."
+   "currentTr": "para üstü",
+   "currentBeispiel": "Die Verkäuferin hat mir das Wechselgeld gegeben.",
+   "currentBeispielTr": "Satıcı bana para üstünü verdi."
   },
   {
    "id": 7776,
@@ -414,10 +414,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "kasa fişi",
-   "mevcutBeispiel": "Ohne Kassenzettel kann ich die Hose nicht zurückbringen.",
-   "mevcutBeispielTr": "Kasa fişi olmadan pantolonu geri götüremem.",
-   "cakisan": [
+   "currentTr": "kasa fişi",
+   "currentBeispiel": "Ohne Kassenzettel kann ich die Hose nicht zurückbringen.",
+   "currentBeispielTr": "Kasa fişi olmadan pantolonu geri götüremem.",
+   "overlapping": [
     "der Kassenbon (B2)"
    ]
   },
@@ -427,10 +427,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-nen",
-   "mevcutTr": "kasiyer (kadın)",
-   "mevcutBeispiel": "Die Kassiererin war sehr freundlich zu mir.",
-   "mevcutBeispielTr": "Kasiyer bana karşı çok nazikti.",
-   "cakisan": [
+   "currentTr": "kasiyer (kadın)",
+   "currentBeispiel": "Die Kassiererin war sehr freundlich zu mir.",
+   "currentBeispielTr": "Kasiyer bana karşı çok nazikti.",
+   "overlapping": [
     "der Kassierer (A2)"
    ]
   },
@@ -440,9 +440,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "yoğurt",
-   "mevcutBeispiel": "Zum Frühstück esse ich Joghurt mit Obst.",
-   "mevcutBeispielTr": "Kahvaltıda meyveli yoğurt yiyorum."
+   "currentTr": "yoğurt",
+   "currentBeispiel": "Zum Frühstück esse ich Joghurt mit Obst.",
+   "currentBeispielTr": "Kahvaltıda meyveli yoğurt yiyorum."
   },
   {
    "id": 7779,
@@ -450,9 +450,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "hardal",
-   "mevcutBeispiel": "Möchtest du Senf oder Ketchup zur Wurst?",
-   "mevcutBeispielTr": "Sosisin yanına hardal mı ketçap mı istersin?"
+   "currentTr": "hardal",
+   "currentBeispiel": "Möchtest du Senf oder Ketchup zur Wurst?",
+   "currentBeispielTr": "Sosisin yanına hardal mı ketçap mı istersin?"
   },
   {
    "id": 7780,
@@ -460,9 +460,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "sığır eti, dana eti",
-   "mevcutBeispiel": "Für die Suppe brauche ich ein halbes Kilo Rindfleisch.",
-   "mevcutBeispielTr": "Çorba için yarım kilo sığır etine ihtiyacım var."
+   "currentTr": "sığır eti, dana eti",
+   "currentBeispiel": "Für die Suppe brauche ich ein halbes Kilo Rindfleisch.",
+   "currentBeispielTr": "Çorba için yarım kilo sığır etine ihtiyacım var."
   },
   {
    "id": 7781,
@@ -470,9 +470,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "çıtır, gevrek",
-   "mevcutBeispiel": "Das Brot vom Bäcker ist heute schön knusprig.",
-   "mevcutBeispielTr": "Fırıncıdan aldığımız ekmek bugün güzelce çıtır çıtır."
+   "currentTr": "çıtır, gevrek",
+   "currentBeispiel": "Das Brot vom Bäcker ist heute schön knusprig.",
+   "currentBeispielTr": "Fırıncıdan aldığımız ekmek bugün güzelce çıtır çıtır."
   },
   {
    "id": 7782,
@@ -480,10 +480,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "stok, erzak",
-   "mevcutBeispiel": "Wir haben noch einen Vorrat an Reis und Mehl.",
-   "mevcutBeispielTr": "Hâlâ pirinç ve un stokumuz var.",
-   "cakisan": [
+   "currentTr": "stok, erzak",
+   "currentBeispiel": "Wir haben noch einen Vorrat an Reis und Mehl.",
+   "currentBeispielTr": "Hâlâ pirinç ve un stokumuz var.",
+   "overlapping": [
     "der Lagerbestand (B2)"
    ]
   },
@@ -493,9 +493,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "hamur",
-   "mevcutBeispiel": "Der Teig muss eine Stunde ruhen.",
-   "mevcutBeispielTr": "Hamurun bir saat dinlenmesi gerekiyor."
+   "currentTr": "hamur",
+   "currentBeispiel": "Der Teig muss eine Stunde ruhen.",
+   "currentBeispielTr": "Hamurun bir saat dinlenmesi gerekiyor."
   },
   {
    "id": 7784,
@@ -503,10 +503,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Pl.)",
-   "mevcutTr": "patates kızartması (günlük kısa hâl)",
-   "mevcutBeispiel": "Mein Sohn isst am liebsten Pommes mit Ketchup.",
-   "mevcutBeispielTr": "Oğlum en çok ketçaplı patates kızartması yemeyi seviyor.",
-   "cakisan": [
+   "currentTr": "patates kızartması (günlük kısa hâl)",
+   "currentBeispiel": "Mein Sohn isst am liebsten Pommes mit Ketchup.",
+   "currentBeispielTr": "Oğlum en çok ketçaplı patates kızartması yemeyi seviyor.",
+   "overlapping": [
     "die Pommes frites (A2)"
    ]
   },
@@ -516,10 +516,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "ana yemek",
-   "mevcutBeispiel": "Als Hauptgericht nehme ich Fisch mit Kartoffeln.",
-   "mevcutBeispielTr": "Ana yemek olarak patatesli balık alacağım.",
-   "cakisan": [
+   "currentTr": "ana yemek",
+   "currentBeispiel": "Als Hauptgericht nehme ich Fisch mit Kartoffeln.",
+   "currentBeispielTr": "Ana yemek olarak patatesli balık alacağım.",
+   "overlapping": [
     "der Hauptgang (B2)"
    ]
   },
@@ -529,9 +529,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "günün yemeği",
-   "mevcutBeispiel": "Das Tagesgericht kostet heute nur 8 Euro.",
-   "mevcutBeispielTr": "Günün yemeği bugün sadece 8 avro."
+   "currentTr": "günün yemeği",
+   "currentBeispiel": "Das Tagesgericht kostet heute nur 8 Euro.",
+   "currentBeispielTr": "Günün yemeği bugün sadece 8 avro."
   },
   {
    "id": 7787,
@@ -539,9 +539,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "garnitür, yan yemek",
-   "mevcutBeispiel": "Als Beilage gibt es Reis oder Salat.",
-   "mevcutBeispielTr": "Garnitür olarak pilav ya da salata var."
+   "currentTr": "garnitür, yan yemek",
+   "currentBeispiel": "Als Beilage gibt es Reis oder Salat.",
+   "currentBeispielTr": "Garnitür olarak pilav ya da salata var."
   }
  ]
 }

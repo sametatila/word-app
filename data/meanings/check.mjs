@@ -41,51 +41,51 @@ const words_ = (s) => s.trim().split(/\s+/).filter(Boolean).length;
 
 /* ── denetim ────────────────────────────────────────────────────────────── */
 
-const TR_HARF = /[ıİğĞşŞ]/;
+const TR_LETTER = /[ıİğĞşŞ]/;
 
-function denetle(paket) {
-  const src = JSON.parse(readFileSync(`${IN}/${paket}.json`, "utf8"));
-  const hatalar = [];
-  const uyarilar = [];
-  const push = (kova, id, de, etiket, mesaj) =>
-    kova.push(`  [${etiket}] ${id} ${de} — ${mesaj}`);
+function inspect(packet) {
+  const src = JSON.parse(readFileSync(`${IN}/${packet}.json`, "utf8"));
+  const errors = [];
+  const warnings = [];
+  const push = (bucket, id, de, label, message) =>
+    bucket.push(`  [${label}] ${id} ${de} — ${message}`);
 
-  if (!existsSync(`${OUT}/${paket}.json`)) return { paket, yok: true, hatalar, uyarilar };
+  if (!existsSync(`${OUT}/${packet}.json`)) return { packet, absent: true, errors, warnings };
 
   let out;
   try {
-    out = JSON.parse(readFileSync(`${OUT}/${paket}.json`, "utf8"));
+    out = JSON.parse(readFileSync(`${OUT}/${packet}.json`, "utf8"));
   } catch (e) {
-    hatalar.push(`  [bozuk json] ${e.message}`);
-    return { paket, hatalar, uyarilar, madde: 0 };
+    errors.push(`  [bozuk json] ${e.message}`);
+    return { packet, errors, warnings, items: 0 };
   }
   if (!Array.isArray(out)) {
-    hatalar.push("  [bozuk json] çıktı bir dizi değil");
-    return { paket, hatalar, uyarilar, madde: 0 };
+    errors.push("  [bozuk json] çıktı bir dizi değil");
+    return { packet, errors, warnings, items: 0 };
   }
 
   const byId = new Map(out.map((r) => [r.id, r]));
-  const beklenen = src.kelimeler.map((k) => k.id);
-  const eksik = beklenen.filter((id) => !byId.has(id));
-  const fazla = out.map((r) => r.id).filter((id) => !beklenen.includes(id));
-  if (eksik.length) hatalar.push(`  [eksik madde] ${eksik.join(", ")}`);
-  if (fazla.length) hatalar.push(`  [pakete ait olmayan] ${fazla.join(", ")}`);
+  const expected = src.words.map((k) => k.id);
+  const missing = expected.filter((id) => !byId.has(id));
+  const extra = out.map((r) => r.id).filter((id) => !expected.includes(id));
+  if (missing.length) errors.push(`  [eksik madde] ${missing.join(", ")}`);
+  if (extra.length) errors.push(`  [pakete ait olmayan] ${extra.join(", ")}`);
   if (out.length !== new Set(out.map((r) => r.id)).size)
-    hatalar.push("  [yinelenen id] aynı madde birden çok kez yazılmış");
+    errors.push("  [yinelenen id] aynı madde birden çok kez yazılmış");
 
-  const trSayaci = new Map();
+  const trCounter = new Map();
 
-  for (const k of src.kelimeler) {
+  for (const k of src.words) {
     const r = byId.get(k.id);
     if (!r) continue;
     const de = k.de;
-    const H = (etiket, mesaj) => push(hatalar, k.id, de, etiket, mesaj);
-    const U = (etiket, mesaj) => push(uyarilar, k.id, de, etiket, mesaj);
+    const H = (label, message) => push(errors, k.id, de, label, message);
+    const U = (label, message) => push(warnings, k.id, de, label, message);
 
-    for (const alan of ["tr", "en", "beispiel", "beispielTr", "beispielEn"]) {
-      if (typeof r[alan] !== "string" || !r[alan].trim()) H("boş alan", alan);
+    for (const field of ["tr", "en", "beispiel", "beispielTr", "beispielEn"]) {
+      if (typeof r[field] !== "string" || !r[field].trim()) H("boş alan", field);
     }
-    if (hatalar.length && (!r.tr || !r.en || !r.beispiel)) continue;
+    if (errors.length && (!r.tr || !r.en || !r.beispiel)) continue;
 
     const tr = (r.tr ?? "").trim();
     const en = (r.en ?? "").trim();
@@ -109,7 +109,7 @@ function denetle(paket) {
     if (/[,;/]/.test(en)) H("çok anlamlı en", `"${en}"`);
     if (/[()[\]]/.test(en)) H("parantezli en", `"${en}"`);
     if (en.length > 40) H("uzun en", `${en.length} karakter: "${en}"`);
-    if (TR_HARF.test(en)) H("dil karışması", `en alanında Türkçe harf: "${en}"`);
+    if (TR_LETTER.test(en)) H("dil karışması", `en alanında Türkçe harf: "${en}"`);
     if (en.toLocaleLowerCase("tr-TR") === tr.toLocaleLowerCase("tr-TR"))
       U("tr = en", `"${tr}" — ikisi aynı, alıntı kelime değilse hata`);
     /**
@@ -122,15 +122,15 @@ function denetle(paket) {
      * karşılığı bozmaya zorluyordu — nitekim iki pakette tam olarak bu oldu.
      * Kaynak zaten isim diyorsa ek yanıltıcıdır ve kaynak kazanır.
      */
-    const fiilMi = k.typ === "Verb" || (k.typ !== "Nomen" && /(mek|mak)$/.test(tr));
+    const isVerb = k.typ === "Verb" || (k.typ !== "Nomen" && /(mek|mak)$/.test(tr));
     // Kip fiillerinin İngilizce karşılığı mastar almaz: "möchten" → "would
     // like", "dürfen" → "may". Kural yalnızca "to …" kabul edince ajan
     // möchten'e wollen ile birebir aynı karşılığı ("to want") vermek zorunda
     // kaldı ve iki kelime hiçbir turda ayırt edilemez hâle geldi.
-    const fiilBicimi = /^(to|would|can|may|must|should|shall|might)\s/;
-    if (fiilMi && !fiilBicimi.test(en))
+    const verbForm = /^(to|would|can|may|must|should|shall|might)\s/;
+    if (isVerb && !verbForm.test(en))
       H("fiilde mastar yok", `"${en}" — fiiller "to …" (ya da kip fiili) biçiminde yazılır`);
-    if (!fiilMi && /^to\s/.test(en)) U("fiil olmayanda to", `"${en}"`);
+    if (!isVerb && /^to\s/.test(en)) U("fiil olmayanda to", `"${en}"`);
 
     /* beispiel — tek, tam, kelimeyi içeren cümle */
     if (!/[.!?]$/.test(bsp)) H("bozuk cümle", `sonu noktalama değil: "${bsp}"`);
@@ -145,76 +145,76 @@ function denetle(paket) {
     if (!/^[A-ZÄÖÜ„"»]/.test(bsp)) U("küçük harfle başlıyor", `"${bsp}"`);
 
     /* çeviriler */
-    for (const [ad, metin] of [["beispielTr", bspTr], ["beispielEn", bspEn]]) {
-      if (!metin) continue;
-      if (/^\d+[.)]/.test(metin) || /\s\d+\.\s/.test(metin)) H("numaralı çeviri", `${ad}: "${metin}"`);
-      if (sentenceCount(metin) > 1) H("çok cümleli çeviri", `${ad}: "${metin}"`);
-      if (!/[.!?…]$/.test(metin)) U("bozuk çeviri", `${ad} noktalama ile bitmiyor: "${metin}"`);
+    for (const [name, text] of [["beispielTr", bspTr], ["beispielEn", bspEn]]) {
+      if (!text) continue;
+      if (/^\d+[.)]/.test(text) || /\s\d+\.\s/.test(text)) H("numaralı çeviri", `${name}: "${text}"`);
+      if (sentenceCount(text) > 1) H("çok cümleli çeviri", `${name}: "${text}"`);
+      if (!/[.!?…]$/.test(text)) U("bozuk çeviri", `${name} noktalama ile bitmiyor: "${text}"`);
     }
-    if (TR_HARF.test(bspEn)) H("dil karışması", `beispielEn Türkçe harf taşıyor: "${bspEn}"`);
+    if (TR_LETTER.test(bspEn)) H("dil karışması", `beispielEn Türkçe harf taşıyor: "${bspEn}"`);
     if (bspTr && bspTr === bspEn) H("aynı çeviri", "beispielTr ile beispielEn birebir aynı");
     if (/\?$/.test(bsp) !== /\?$/.test(bspTr)) U("soru uyuşmazlığı", `"${bsp}" ↔ "${bspTr}"`);
     if (/\?$/.test(bsp) !== /\?$/.test(bspEn)) U("soru uyuşmazlığı", `"${bsp}" ↔ "${bspEn}"`);
-    const oran = (t) => (bsp.length ? t.length / bsp.length : 1);
-    if (bspTr && (oran(bspTr) < 0.35 || oran(bspTr) > 2.5))
+    const ratio = (t) => (bsp.length ? t.length / bsp.length : 1);
+    if (bspTr && (ratio(bspTr) < 0.35 || ratio(bspTr) > 2.5))
       U("çeviri uzunluğu", `beispielTr oransız: "${bsp}" ↔ "${bspTr}"`);
-    if (bspEn && (oran(bspEn) < 0.35 || oran(bspEn) > 2.5))
+    if (bspEn && (ratio(bspEn) < 0.35 || ratio(bspEn) > 2.5))
       U("çeviri uzunluğu", `beispielEn oransız: "${bsp}" ↔ "${bspEn}"`);
 
     const trKey = tr.toLocaleLowerCase("tr-TR");
-    trSayaci.set(trKey, [...(trSayaci.get(trKey) ?? []), de]);
+    trCounter.set(trKey, [...(trCounter.get(trKey) ?? []), de]);
   }
 
   /* Paket içi ikizler: aynı Türkçe karşılığı alan iki kelime, İngilizcede de
      aynıysa öğrenci ikisini hiçbir turda ayırt edemez. */
-  for (const [k, list] of trSayaci) {
+  for (const [k, list] of trCounter) {
     if (list.length < 2) continue;
-    const enler = new Set(
+    const enSet = new Set(
       list.map((de) => {
-        const id = src.kelimeler.find((x) => x.de === de)?.id;
+        const id = src.words.find((x) => x.de === de)?.id;
         return (byId.get(id)?.en ?? "").toLowerCase();
       }),
     );
-    if (enler.size === 1) hatalar.push(`  [ayırt edilemez ikiz] "${k}" = ${list.join(", ")} (İngilizcesi de aynı)`);
-    else uyarilar.push(`  [aynı tr] "${k}" = ${list.join(", ")} (İngilizceleri farklı)`);
+    if (enSet.size === 1) errors.push(`  [ayırt edilemez ikiz] "${k}" = ${list.join(", ")} (İngilizcesi de aynı)`);
+    else warnings.push(`  [aynı tr] "${k}" = ${list.join(", ")} (İngilizceleri farklı)`);
   }
 
-  return { paket, hatalar, uyarilar, madde: out.length };
+  return { packet, errors, warnings, items: out.length };
 }
 
 /* ── çalıştır ───────────────────────────────────────────────────────────── */
 
-const hepsi = readdirSync(IN)
+const all = readdirSync(IN)
   .filter((f) => f.endsWith(".json") && !f.startsWith("_"))
   .map((f) => f.replace(/\.json$/, ""))
   .sort();
-const secili =
-  ARG === "all" ? hepsi : hepsi.filter((p) => p === ARG || p.startsWith(`${ARG}-`));
-if (!secili.length) {
+const selected =
+  ARG === "all" ? all : all.filter((p) => p === ARG || p.startsWith(`${ARG}-`));
+if (!selected.length) {
   console.error(`"${ARG}" ile eşleşen paket yok.`);
   process.exit(1);
 }
 
-let hata = 0;
-let uyari = 0;
-let bekleyen = 0;
-let madde = 0;
-for (const p of secili) {
-  const r = denetle(p);
-  if (r.yok) {
-    bekleyen++;
-    if (secili.length === 1) console.log(`${p}: çıktı yok`);
+let errorCount = 0;
+let warningCount = 0;
+let pending = 0;
+let items = 0;
+for (const p of selected) {
+  const r = inspect(p);
+  if (r.absent) {
+    pending++;
+    if (selected.length === 1) console.log(`${p}: çıktı yok`);
     continue;
   }
-  hata += r.hatalar.length;
-  uyari += r.uyarilar.length;
-  madde += r.madde;
-  if (r.hatalar.length || r.uyarilar.length) {
-    console.log(`\n${p}  (${r.madde} madde)`);
-    r.hatalar.forEach((h) => console.log(h));
-    r.uyarilar.forEach((u) => console.log(u));
-  } else if (secili.length === 1) {
-    console.log(`${p}: ${r.madde} madde, temiz.`);
+  errorCount += r.errors.length;
+  warningCount += r.warnings.length;
+  items += r.items;
+  if (r.errors.length || r.warnings.length) {
+    console.log(`\n${p}  (${r.items} madde)`);
+    r.errors.forEach((h) => console.log(h));
+    r.warnings.forEach((u) => console.log(u));
+  } else if (selected.length === 1) {
+    console.log(`${p}: ${r.items} madde, temiz.`);
   }
 }
 
@@ -230,14 +230,14 @@ for (const p of secili) {
  * Uyarı, hata değil: ikisi gerçekten eşanlamlıysa (anfangen/beginnen) aynı
  * karşılığı almaları doğrudur ve zorlama bir ayrım Türkçeyi bozar.
  */
-if (secili.length > 1) {
-  const kaynak = new Map();
-  for (const p of hepsi)
-    for (const k of JSON.parse(readFileSync(`${IN}/${p}.json`, "utf8")).kelimeler)
-      kaynak.set(k.id, k.de);
+if (selected.length > 1) {
+  const source = new Map();
+  for (const p of all)
+    for (const k of JSON.parse(readFileSync(`${IN}/${p}.json`, "utf8")).words)
+      source.set(k.id, k.de);
 
-  const gruplar = new Map();
-  for (const p of secili) {
+  const groups = new Map();
+  for (const p of selected) {
     if (!existsSync(`${OUT}/${p}.json`)) continue;
     let rows;
     try {
@@ -248,22 +248,22 @@ if (secili.length > 1) {
     for (const r of rows) {
       if (!r?.tr || !r?.en) continue;
       const key = `${r.tr.toLocaleLowerCase("tr-TR")}|${r.en.toLowerCase()}`;
-      if (!gruplar.has(key)) gruplar.set(key, []);
-      gruplar.get(key).push(`${kaynak.get(r.id) ?? r.id} [${p}]`);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(`${source.get(r.id) ?? r.id} [${p}]`);
     }
   }
 
-  const ikizler = [...gruplar].filter(([, list]) => list.length > 1);
-  if (ikizler.length) {
+  const twins = [...groups].filter(([, list]) => list.length > 1);
+  if (twins.length) {
     console.log("\n── paketler arası ayırt edilemez ikizler ──");
-    for (const [key, list] of ikizler.slice(0, 40))
+    for (const [key, list] of twins.slice(0, 40))
       console.log(`  "${key.split("|")[0]}" / "${key.split("|")[1]}" = ${list.join(", ")}`);
-    if (ikizler.length > 40) console.log(`  … ve ${ikizler.length - 40} tane daha`);
-    uyari += ikizler.length;
+    if (twins.length > 40) console.log(`  … ve ${twins.length - 40} tane daha`);
+    warningCount += twins.length;
   }
 }
 
 console.log(
-  `\nözet: ${secili.length - bekleyen}/${secili.length} paket üretilmiş, ${madde} madde · ${hata} hata · ${uyari} uyarı`,
+  `\nözet: ${selected.length - pending}/${selected.length} paket üretilmiş, ${items} madde · ${errorCount} hata · ${warningCount} uyarı`,
 );
-process.exit(hata ? 1 : 0);
+process.exit(errorCount ? 1 : 0);

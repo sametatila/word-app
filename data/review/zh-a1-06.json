@@ -79,7 +79,7 @@
   "gsw": "Beck",
   "gswArtikel": "de",
   "gswBeispiel": "Ich gang schnäll zum Beck.",
-  "ayniLehce": [
+  "sameDialect": [
    "Bäcker (A2)"
   ]
  },
@@ -127,7 +127,7 @@
   "gsw": "bar",
   "gswArtikel": null,
   "gswBeispiel": "Mues ich bar zale oder gaat s au mit de Charte?",
-  "ayniLehce": [
+  "sameDialect": [
    "Bar (B1)"
   ]
  },
@@ -148,7 +148,7 @@
   "gsw": "aafange",
   "gswArtikel": null,
   "gswBeispiel": "Mir wänd jetz aafange. S Schpiil fangt am halbi vieri aa.",
-  "ayniLehce": [
+  "sameDialect": [
    "anfangen (A1)"
   ]
  },
@@ -196,7 +196,7 @@
   "gsw": "bruuche",
   "gswArtikel": null,
   "gswBeispiel": "D Lift bitte nöd bruuche!",
-  "ayniLehce": [
+  "sameDialect": [
    "brauchen (A1)",
    "benötigen (B1)",
    "gebrauchen (B1)"
@@ -264,7 +264,7 @@
   "gsw": "bitte",
   "gswArtikel": null,
   "gswBeispiel": "Darf ich Si um öppis bitte?",
-  "ayniLehce": [
+  "sameDialect": [
    "bitte (A1)"
   ]
  },
@@ -366,7 +366,7 @@
   "gsw": "Kafi",
   "gswArtikel": "s",
   "gswBeispiel": "Söled mer öis im Kafi träffe?",
-  "ayniLehce": [
+  "sameDialect": [
    "Kaffeehaus (B1)"
   ]
  },
@@ -414,7 +414,7 @@
   "gsw": "danke",
   "gswArtikel": null,
   "gswBeispiel": "Söll ich Ine hälfe? – Näi, danke!",
-  "ayniLehce": [
+  "sameDialect": [
    "danken (A1)"
   ]
  },
@@ -561,7 +561,7 @@
   "gsw": "Dusche",
   "gswArtikel": "d",
   "gswBeispiel": "Öisi Wonig hät nu äi Dusche.",
-  "ayniLehce": [
+  "sameDialect": [
    "duschen (A1)"
   ]
  },
@@ -915,7 +915,7 @@
   "gsw": "gern",
   "gswArtikel": null,
   "gswBeispiel": "Ich gaa gern go poschte.",
-  "ayniLehce": [
+  "sameDialect": [
    "gern (A1)"
   ]
  },
@@ -972,7 +972,7 @@
   "gsw": "Grad",
   "gswArtikel": null,
   "gswBeispiel": "Hüt händ mer drissg Grad.",
-  "ayniLehce": [
+  "sameDialect": [
    "gerade (A1)"
   ]
  },
@@ -993,7 +993,7 @@
   "gsw": "grilliere",
   "gswArtikel": null,
   "gswBeispiel": "Hüt grilliered mer im Garte.",
-  "ayniLehce": [
+  "sameDialect": [
    "grillieren (B1)"
   ]
  },

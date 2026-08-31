@@ -304,7 +304,7 @@
   "gsw": "aaluege",
   "gswArtikel": null,
   "gswBeispiel": "Hüt Aabig tüend mir en alte Film aaluege.",
-  "ayniLehce": [
+  "sameDialect": [
    "ansehen (A2)"
   ]
  },
@@ -397,7 +397,7 @@
   "gsw": "Turnhalle",
   "gswArtikel": "d",
   "gswBeispiel": "Bi Räge isch s Training i de Turnhalle.",
-  "ayniLehce": [
+  "sameDialect": [
    "Sporthalle (A2)"
   ]
  },
@@ -760,7 +760,7 @@
   "gsw": "Ambulanz",
   "gswArtikel": "d",
   "gswBeispiel": "D Ambulanz bringt de Maa is Schpital.",
-  "ayniLehce": [
+  "sameDialect": [
    "Krankenwagen (B1)"
   ]
  },

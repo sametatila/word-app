@@ -1,7 +1,7 @@
 {
- "paket": "de-021",
+ "packet": "de-021",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "a1-s1",
    "skill": "speaking",
@@ -9,53 +9,53 @@
    "title": "Lange und kurze Vokale",
    "genre": "Ses çalışması",
    "intro": "Türkçede ünlünün uzunluğu anlamı değiştirmez; Almancada değiştirir. Aynı ünlü kısa ya da uzun olduğunda karşına bambaşka bir kelime çıkar.",
-   "metin": "Ich wohne in der Stadt.\nDer Staat zahlt das.\nIch kenne ihn gut.\nDas Fenster ist offen.\nIch fühle mich gut.\nWir haben eine Höhle gefunden.",
+   "text": "Ich wohne in der Stadt.\nDer Staat zahlt das.\nIch kenne ihn gut.\nDas Fenster ist offen.\nIch fühle mich gut.\nWir haben eine Höhle gefunden.",
    "gloss": [
     {
      "de": "die Stadt / der Staat",
-     "mevcutTr": "şehir / devlet"
+     "currentTr": "şehir / devlet"
     },
     {
      "de": "in / ihn",
-     "mevcutTr": "içinde / onu"
+     "currentTr": "içinde / onu"
     },
     {
      "de": "offen / der Ofen",
-     "mevcutTr": "açık / fırın"
+     "currentTr": "açık / fırın"
     },
     {
      "de": "füllen / fühlen",
-     "mevcutTr": "doldurmak / hissetmek"
+     "currentTr": "doldurmak / hissetmek"
     },
     {
      "de": "die Hölle / die Höhle",
-     "mevcutTr": "cehennem / mağara"
+     "currentTr": "cehennem / mağara"
     }
    ],
    "tasks": [
     {
      "de": "Ich wohne in der Stadt.",
-     "mevcutTr": "Şehirde oturuyorum."
+     "currentTr": "Şehirde oturuyorum."
     },
     {
      "de": "Der Staat zahlt das.",
-     "mevcutTr": "Bunu devlet ödüyor."
+     "currentTr": "Bunu devlet ödüyor."
     },
     {
      "de": "Ich kenne ihn gut.",
-     "mevcutTr": "Onu iyi tanıyorum."
+     "currentTr": "Onu iyi tanıyorum."
     },
     {
      "de": "Das Fenster ist offen.",
-     "mevcutTr": "Pencere açık."
+     "currentTr": "Pencere açık."
     },
     {
      "de": "Ich fühle mich gut.",
-     "mevcutTr": "Kendimi iyi hissediyorum."
+     "currentTr": "Kendimi iyi hissediyorum."
     },
     {
      "de": "Wir haben eine Höhle gefunden.",
-     "mevcutTr": "Bir mağara bulduk."
+     "currentTr": "Bir mağara bulduk."
     }
    ]
   },
@@ -66,69 +66,69 @@
    "title": "W, V und Z",
    "genre": "Ses çalışması",
    "intro": "Bu üç harf Almancada Türkçedekinden farklı okunur: w = v, v = f, z = ts. En sık yapılan hata bunlar.",
-   "metin": "Wasser\nWo wohnen Sie?\nMein Vater ist Lehrer.\nIch habe keine Zeit.\nzwei Kinder\nWir wohnen zusammen in Wien.",
+   "text": "Wasser\nWo wohnen Sie?\nMein Vater ist Lehrer.\nIch habe keine Zeit.\nzwei Kinder\nWir wohnen zusammen in Wien.",
    "gloss": [
     {
      "de": "das Wasser",
-     "mevcutTr": "su",
-     "havuz": {
+     "currentTr": "su",
+     "pool": {
       "tr": "su",
       "en": "water"
      }
     },
     {
      "de": "wohnen",
-     "mevcutTr": "oturmak",
-     "havuz": {
+     "currentTr": "oturmak",
+     "pool": {
       "tr": "oturmak",
       "en": "to live"
      }
     },
     {
      "de": "der Vater",
-     "mevcutTr": "baba",
-     "havuz": {
+     "currentTr": "baba",
+     "pool": {
       "tr": "baba",
       "en": "father"
      }
     },
     {
      "de": "die Zeit",
-     "mevcutTr": "zaman",
-     "havuz": {
+     "currentTr": "zaman",
+     "pool": {
       "tr": "zaman",
       "en": "time"
      }
     },
     {
      "de": "zwei",
-     "mevcutTr": "iki"
+     "currentTr": "iki"
     }
    ],
    "tasks": [
     {
      "de": "Wasser",
-     "mevcutTr": "su"
+     "currentTr": "su"
     },
     {
      "de": "Wo wohnen Sie?",
-     "mevcutTr": "Nerede oturuyorsunuz?"
+     "currentTr": "Nerede oturuyorsunuz?"
     },
     {
      "de": "Mein Vater ist Lehrer.",
-     "mevcutTr": "Babam öğretmen."
+     "currentTr": "Babam öğretmen."
     },
     {
      "de": "Ich habe keine Zeit.",
-     "mevcutTr": "Vaktim yok."
+     "currentTr": "Vaktim yok."
     },
     {
      "de": "zwei Kinder",
-     "mevcutTr": "iki çocuk"
+     "currentTr": "iki çocuk"
     },
     {
      "de": "Wir wohnen zusammen in Wien.",
-     "mevcutTr": "Viyana'da birlikte oturuyoruz."
+     "currentTr": "Viyana'da birlikte oturuyoruz."
     }
    ]
   },
@@ -139,32 +139,32 @@
    "title": "„ie“ und „ei“",
    "genre": "Ses çalışması",
    "intro": "İkilinin ikinci harfi sesi belirler: „ie“ uzun i, „ei“ ise ay. Harfleri tek tek okursan kelime değişir — hepsi gerçek kelime olduğu için hata fark edilmeden geçer.",
-   "metin": "Die Reise war sehr schön.\nDer Riese war sehr groß.\nDie Kühe stehen auf der Wiese.\nAuf diese Weise geht es schneller.\nSie bieten uns einen guten Preis.\nBeide Kinder sind hier.",
+   "text": "Die Reise war sehr schön.\nDer Riese war sehr groß.\nDie Kühe stehen auf der Wiese.\nAuf diese Weise geht es schneller.\nSie bieten uns einen guten Preis.\nBeide Kinder sind hier.",
    "gloss": [
     {
      "de": "die Reise / der Riese",
-     "mevcutTr": "yolculuk / dev"
+     "currentTr": "yolculuk / dev"
     },
     {
      "de": "die Wiese / die Weise",
-     "mevcutTr": "çayır / biçim"
+     "currentTr": "çayır / biçim"
     },
     {
      "de": "sie / sei",
-     "mevcutTr": "onlar / ol"
+     "currentTr": "onlar / ol"
     },
     {
      "de": "bieten",
-     "mevcutTr": "sunmak",
-     "havuz": {
+     "currentTr": "sunmak",
+     "pool": {
       "tr": "sunmak",
       "en": "to offer"
      }
     },
     {
      "de": "beide",
-     "mevcutTr": "her ikisi",
-     "havuz": {
+     "currentTr": "her ikisi",
+     "pool": {
       "tr": "her ikisi",
       "en": "both"
      }
@@ -173,27 +173,27 @@
    "tasks": [
     {
      "de": "Die Reise war sehr schön.",
-     "mevcutTr": "Yolculuk çok güzeldi."
+     "currentTr": "Yolculuk çok güzeldi."
     },
     {
      "de": "Der Riese war sehr groß.",
-     "mevcutTr": "Dev çok büyüktü."
+     "currentTr": "Dev çok büyüktü."
     },
     {
      "de": "Die Kühe stehen auf der Wiese.",
-     "mevcutTr": "İnekler çayırda duruyor."
+     "currentTr": "İnekler çayırda duruyor."
     },
     {
      "de": "Auf diese Weise geht es schneller.",
-     "mevcutTr": "Bu şekilde daha hızlı oluyor."
+     "currentTr": "Bu şekilde daha hızlı oluyor."
     },
     {
      "de": "Sie bieten uns einen guten Preis.",
-     "mevcutTr": "Bize iyi bir fiyat sunuyorlar."
+     "currentTr": "Bize iyi bir fiyat sunuyorlar."
     },
     {
      "de": "Beide Kinder sind hier.",
-     "mevcutTr": "Her iki çocuk da burada."
+     "currentTr": "Her iki çocuk da burada."
     }
    ]
   },
@@ -204,44 +204,44 @@
    "title": "Der ch-Laut",
    "genre": "Ses çalışması",
    "intro": "Almancada iki ayrı „ch“ var: ince ünlülerden sonra yumuşak (ich), kalın ünlülerden sonra gırtlaktan (auch). Türkçede ikisi de yok.",
-   "metin": "Ich bin nicht müde.\nIch trinke gern Milch.\nIch lese auch ein Buch.\nDie Küche ist klein.\nNatürlich, sehr gern!\nIch möchte noch einen Kaffee.",
+   "text": "Ich bin nicht müde.\nIch trinke gern Milch.\nIch lese auch ein Buch.\nDie Küche ist klein.\nNatürlich, sehr gern!\nIch möchte noch einen Kaffee.",
    "gloss": [
     {
      "de": "nicht",
-     "mevcutTr": "değil",
-     "havuz": {
+     "currentTr": "değil",
+     "pool": {
       "tr": "değil",
       "en": "not"
      }
     },
     {
      "de": "die Milch",
-     "mevcutTr": "süt",
-     "havuz": {
+     "currentTr": "süt",
+     "pool": {
       "tr": "süt",
       "en": "milk"
      }
     },
     {
      "de": "auch",
-     "mevcutTr": "de",
-     "havuz": {
+     "currentTr": "de",
+     "pool": {
       "tr": "de",
       "en": "also"
      }
     },
     {
      "de": "das Buch",
-     "mevcutTr": "kitap",
-     "havuz": {
+     "currentTr": "kitap",
+     "pool": {
       "tr": "kitap",
       "en": "book"
      }
     },
     {
      "de": "die Küche",
-     "mevcutTr": "mutfak",
-     "havuz": {
+     "currentTr": "mutfak",
+     "pool": {
       "tr": "mutfak",
       "en": "kitchen"
      }
@@ -250,27 +250,27 @@
    "tasks": [
     {
      "de": "Ich bin nicht müde.",
-     "mevcutTr": "Yorgun değilim."
+     "currentTr": "Yorgun değilim."
     },
     {
      "de": "Ich trinke gern Milch.",
-     "mevcutTr": "Süt içmeyi severim."
+     "currentTr": "Süt içmeyi severim."
     },
     {
      "de": "Ich lese auch ein Buch.",
-     "mevcutTr": "Ben de bir kitap okuyorum."
+     "currentTr": "Ben de bir kitap okuyorum."
     },
     {
      "de": "Die Küche ist klein.",
-     "mevcutTr": "Mutfak küçük."
+     "currentTr": "Mutfak küçük."
     },
     {
      "de": "Natürlich, sehr gern!",
-     "mevcutTr": "Tabii ki, memnuniyetle!"
+     "currentTr": "Tabii ki, memnuniyetle!"
     },
     {
      "de": "Ich möchte noch einen Kaffee.",
-     "mevcutTr": "Bir kahve daha istiyorum."
+     "currentTr": "Bir kahve daha istiyorum."
     }
    ]
   },
@@ -281,40 +281,40 @@
    "title": "Sp, St und Vokallänge",
    "genre": "Ses çalışması",
    "intro": "Kelime başındaki sp/st „şp/şt“ okunur. Ayrıca ünlü uzunluğu anlam ayırır: „Stadt“ (şehir) ile „Staat“ (devlet) aynı değil.",
-   "metin": "Ich spreche ein bisschen Deutsch.\nDie Stadt ist sehr groß.\nIch treibe gern Sport.\nEs ist schon spät.\nWir stehen am Bahnhof.\nVerstehen Sie mich?",
+   "text": "Ich spreche ein bisschen Deutsch.\nDie Stadt ist sehr groß.\nIch treibe gern Sport.\nEs ist schon spät.\nWir stehen am Bahnhof.\nVerstehen Sie mich?",
    "gloss": [
     {
      "de": "die Stadt",
-     "mevcutTr": "şehir",
-     "havuz": {
+     "currentTr": "şehir",
+     "pool": {
       "tr": "şehir",
       "en": "city"
      }
     },
     {
      "de": "der Staat",
-     "mevcutTr": "devlet"
+     "currentTr": "devlet"
     },
     {
      "de": "sprechen",
-     "mevcutTr": "konuşmak",
-     "havuz": {
+     "currentTr": "konuşmak",
+     "pool": {
       "tr": "konuşmak",
       "en": "to speak"
      }
     },
     {
      "de": "der Sport",
-     "mevcutTr": "spor",
-     "havuz": {
+     "currentTr": "spor",
+     "pool": {
       "tr": "spor",
       "en": "sport"
      }
     },
     {
      "de": "spät",
-     "mevcutTr": "geç",
-     "havuz": {
+     "currentTr": "geç",
+     "pool": {
       "tr": "geç",
       "en": "late"
      }
@@ -323,27 +323,27 @@
    "tasks": [
     {
      "de": "Ich spreche ein bisschen Deutsch.",
-     "mevcutTr": "Biraz Almanca konuşuyorum."
+     "currentTr": "Biraz Almanca konuşuyorum."
     },
     {
      "de": "Die Stadt ist sehr groß.",
-     "mevcutTr": "Şehir çok büyük."
+     "currentTr": "Şehir çok büyük."
     },
     {
      "de": "Ich treibe gern Sport.",
-     "mevcutTr": "Spor yapmayı severim."
+     "currentTr": "Spor yapmayı severim."
     },
     {
      "de": "Es ist schon spät.",
-     "mevcutTr": "Vakit geç oldu."
+     "currentTr": "Vakit geç oldu."
     },
     {
      "de": "Wir stehen am Bahnhof.",
-     "mevcutTr": "Tren istasyonunda duruyoruz."
+     "currentTr": "Tren istasyonunda duruyoruz."
     },
     {
      "de": "Verstehen Sie mich?",
-     "mevcutTr": "Beni anlıyor musunuz?"
+     "currentTr": "Beni anlıyor musunuz?"
     }
    ]
   },
@@ -354,53 +354,53 @@
    "title": "„z“ in der Wortmitte und am Ende",
    "genre": "Ses çalışması",
    "intro": "Almanca „z“ her yerde ts'dir — kelime başında da, ortasında da, sonunda da. Türkçedeki gibi z söylersen karşındaki başka bir kelime duyar.",
-   "metin": "Wir heizen im Winter mit Gas.\nWir reisen jedes Jahr nach Italien.\nDas ist ganz einfach.\nDie Pause war viel zu kurz.\nDer Kurs beginnt am Montag.\nBitte nennen Sie mir die Zahl.",
+   "text": "Wir heizen im Winter mit Gas.\nWir reisen jedes Jahr nach Italien.\nDas ist ganz einfach.\nDie Pause war viel zu kurz.\nDer Kurs beginnt am Montag.\nBitte nennen Sie mir die Zahl.",
    "gloss": [
     {
      "de": "heizen / heißen",
-     "mevcutTr": "ısıtmak / adı olmak"
+     "currentTr": "ısıtmak / adı olmak"
     },
     {
      "de": "reizen / reisen",
-     "mevcutTr": "tahriş etmek / seyahat etmek"
+     "currentTr": "tahriş etmek / seyahat etmek"
     },
     {
      "de": "ganz / die Gans",
-     "mevcutTr": "tamamen / kaz"
+     "currentTr": "tamamen / kaz"
     },
     {
      "de": "kurz / der Kurs",
-     "mevcutTr": "kısa / kurs"
+     "currentTr": "kısa / kurs"
     },
     {
      "de": "die Zahl / der Saal",
-     "mevcutTr": "sayı / salon"
+     "currentTr": "sayı / salon"
     }
    ],
    "tasks": [
     {
      "de": "Wir heizen im Winter mit Gas.",
-     "mevcutTr": "Kışın gazla ısıtıyoruz."
+     "currentTr": "Kışın gazla ısıtıyoruz."
     },
     {
      "de": "Wir reisen jedes Jahr nach Italien.",
-     "mevcutTr": "Her yıl İtalya'ya seyahat ediyoruz."
+     "currentTr": "Her yıl İtalya'ya seyahat ediyoruz."
     },
     {
      "de": "Das ist ganz einfach.",
-     "mevcutTr": "Bu gayet basit."
+     "currentTr": "Bu gayet basit."
     },
     {
      "de": "Die Pause war viel zu kurz.",
-     "mevcutTr": "Mola çok kısaydı."
+     "currentTr": "Mola çok kısaydı."
     },
     {
      "de": "Der Kurs beginnt am Montag.",
-     "mevcutTr": "Kurs pazartesi başlıyor."
+     "currentTr": "Kurs pazartesi başlıyor."
     },
     {
      "de": "Bitte nennen Sie mir die Zahl.",
-     "mevcutTr": "Lütfen bana sayıyı söyleyin."
+     "currentTr": "Lütfen bana sayıyı söyleyin."
     }
    ]
   },
@@ -411,65 +411,65 @@
    "title": "Das stumme „h“",
    "genre": "Ses çalışması",
    "intro": "Ünlüden sonraki „h“ okunmaz — önündeki ünlüyü uzatır. Türkçede h her zaman söylenir, bu yüzden en sık atlanan kurallardan biri.",
-   "metin": "Wir gehen nach Hause.\nIch kann dich sehen.\nWie spät ist es auf deiner Uhr?\nDas ist nicht wahr.\nIch habe ihn gestern gesehen.",
+   "text": "Wir gehen nach Hause.\nIch kann dich sehen.\nWie spät ist es auf deiner Uhr?\nDas ist nicht wahr.\nIch habe ihn gestern gesehen.",
    "gloss": [
     {
      "de": "gehen",
-     "mevcutTr": "gitmek",
-     "havuz": {
+     "currentTr": "gitmek",
+     "pool": {
       "tr": "gitmek",
       "en": "to go"
      }
     },
     {
      "de": "sehen",
-     "mevcutTr": "görmek",
-     "havuz": {
+     "currentTr": "görmek",
+     "pool": {
       "tr": "görmek",
       "en": "to see"
      }
     },
     {
      "de": "die Uhr",
-     "mevcutTr": "saat",
-     "havuz": {
+     "currentTr": "saat",
+     "pool": {
       "tr": "saat",
       "en": "clock"
      }
     },
     {
      "de": "wahr",
-     "mevcutTr": "doğru",
-     "havuz": {
+     "currentTr": "doğru",
+     "pool": {
       "tr": "doğru",
       "en": "true"
      }
     },
     {
      "de": "ihn",
-     "mevcutTr": "onu"
+     "currentTr": "onu"
     }
    ],
    "tasks": [
     {
      "de": "Wir gehen nach Hause.",
-     "mevcutTr": "Eve gidiyoruz."
+     "currentTr": "Eve gidiyoruz."
     },
     {
      "de": "Ich kann dich sehen.",
-     "mevcutTr": "Seni görebiliyorum."
+     "currentTr": "Seni görebiliyorum."
     },
     {
      "de": "Wie spät ist es auf deiner Uhr?",
-     "mevcutTr": "Senin saatinde saat kaç?"
+     "currentTr": "Senin saatinde saat kaç?"
     },
     {
      "de": "Das ist nicht wahr.",
-     "mevcutTr": "Bu doğru değil."
+     "currentTr": "Bu doğru değil."
     },
     {
      "de": "Ich habe ihn gestern gesehen.",
-     "mevcutTr": "Onu dün gördüm."
+     "currentTr": "Onu dün gördüm."
     }
    ]
   },
@@ -480,44 +480,44 @@
    "title": "Das unbetonte „-er“",
    "genre": "Ses çalışması",
    "intro": "Kelime sonundaki vurgusuz „-er“ belirgin bir „er“ değil, neredeyse „a“dır: Vater = FAA-ta. Aksanı en çok ele veren ayrıntı bu.",
-   "metin": "Mein Vater und meine Mutter wohnen hier.\nMeine Schwester ist Lehrerin.\nHeute geht es mir besser.\nEr kommt immer zu spät.\nDer Winter war dieses Jahr sehr kalt.",
+   "text": "Mein Vater und meine Mutter wohnen hier.\nMeine Schwester ist Lehrerin.\nHeute geht es mir besser.\nEr kommt immer zu spät.\nDer Winter war dieses Jahr sehr kalt.",
    "gloss": [
     {
      "de": "der Vater",
-     "mevcutTr": "baba",
-     "havuz": {
+     "currentTr": "baba",
+     "pool": {
       "tr": "baba",
       "en": "father"
      }
     },
     {
      "de": "die Mutter",
-     "mevcutTr": "anne",
-     "havuz": {
+     "currentTr": "anne",
+     "pool": {
       "tr": "anne",
       "en": "mother"
      }
     },
     {
      "de": "die Schwester",
-     "mevcutTr": "kız kardeş",
-     "havuz": {
+     "currentTr": "kız kardeş",
+     "pool": {
       "tr": "kız kardeş",
       "en": "sister"
      }
     },
     {
      "de": "besser",
-     "mevcutTr": "daha iyi",
-     "havuz": {
+     "currentTr": "daha iyi",
+     "pool": {
       "tr": "daha iyi",
       "en": "better"
      }
     },
     {
      "de": "immer",
-     "mevcutTr": "her zaman",
-     "havuz": {
+     "currentTr": "her zaman",
+     "pool": {
       "tr": "her zaman",
       "en": "always"
      }
@@ -526,23 +526,23 @@
    "tasks": [
     {
      "de": "Mein Vater und meine Mutter wohnen hier.",
-     "mevcutTr": "Babam ve annem burada oturuyor."
+     "currentTr": "Babam ve annem burada oturuyor."
     },
     {
      "de": "Meine Schwester ist Lehrerin.",
-     "mevcutTr": "Kız kardeşim öğretmen."
+     "currentTr": "Kız kardeşim öğretmen."
     },
     {
      "de": "Heute geht es mir besser.",
-     "mevcutTr": "Bugün daha iyiyim."
+     "currentTr": "Bugün daha iyiyim."
     },
     {
      "de": "Er kommt immer zu spät.",
-     "mevcutTr": "O her zaman geç geliyor."
+     "currentTr": "O her zaman geç geliyor."
     },
     {
      "de": "Der Winter war dieses Jahr sehr kalt.",
-     "mevcutTr": "Bu yıl kış çok soğuktu."
+     "currentTr": "Bu yıl kış çok soğuktu."
     }
    ]
   }

@@ -34,7 +34,7 @@
   "gsw": "Büchs",
   "gswArtikel": "d",
   "gswBeispiel": "Ich ha na e Büchs Boone.",
-  "ayniLehce": [
+  "sameDialect": [
    "Büchse (B1)"
   ]
  },
@@ -46,7 +46,7 @@
   "gsw": "Dräck",
   "gswArtikel": "de",
   "gswBeispiel": "1. Iss de Öpfel nöd! De isch im Dräck gläge. 2. Vor luuter Dräck am Fänschter han ich nüüt gsee.",
-  "ayniLehce": [
+  "sameDialect": [
    "Schmutz (B1)"
   ]
  },
@@ -148,7 +148,7 @@
   "gsw": "gliichfalls",
   "gswArtikel": null,
   "gswBeispiel": "Ich wünsche Ine es schööns Wuchenänd. – Merci, gliichfalls.",
-  "ayniLehce": [
+  "sameDialect": [
    "gleichfalls (B1)"
   ]
  },
@@ -277,7 +277,7 @@
   "gsw": "pressiere",
   "gswArtikel": null,
   "gswBeispiel": "Es pressiert sehr. Bitte mached Si schnäll.",
-  "ayniLehce": [
+  "sameDialect": [
    "sich beeilen (B1)"
   ]
  },
@@ -523,7 +523,7 @@
   "gsw": "inklusive",
   "gswArtikel": null,
   "gswBeispiel": "Alles zäme choschtet 200 Franke inklusive Faartchöschte.",
-  "ayniLehce": [
+  "sameDialect": [
    "inklusive (B1)"
   ]
  },
@@ -949,7 +949,7 @@
   "gsw": "Härdöpfel",
   "gswArtikel": "de",
   "gswBeispiel": "Chan ich bitte na Härdöpfel übercho?",
-  "ayniLehce": [
+  "sameDialect": [
    "Kartoffel (A1)"
   ]
  },

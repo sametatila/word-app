@@ -14,7 +14,7 @@
   "tr": "açmak",
   "formen": "",
   "beispiel": "Ich öffne die Tür. Der Laden ist samstags bis 16.00 Uhr geöffnet.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "aufmachen (A1)",
    "anmachen (A1)",
    "einschalten (B1)",
@@ -28,7 +28,7 @@
   "tr": "açık",
   "formen": "",
   "beispiel": "Der Laden ist samstags bis 16.00 Uhr geöffnet.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "offen (A1)"
   ]
  },
@@ -39,7 +39,7 @@
   "tr": "yağ",
   "formen": "",
   "beispiel": "Den Salat machen wir ohne Öl.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Fett (B1)"
   ]
  },
@@ -50,7 +50,7 @@
   "tr": "büyükanne",
   "formen": "-s",
   "beispiel": "Meine Oma ist schon tot.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Großmutter (A1)"
   ]
  },
@@ -61,7 +61,7 @@
   "tr": "büyükbaba",
   "formen": "-s",
   "beispiel": "Mein Opa heißt Hans.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Großvater (A1)"
   ]
  },
@@ -88,7 +88,7 @@
   "tr": "belgeler, evraklar",
   "formen": "(pl.)",
   "beispiel": "Haben Sie Ihre Papiere dabei?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Unterlagen (B1)"
   ]
  },
@@ -99,7 +99,7 @@
   "tr": "partner, eş",
   "formen": "-/",
   "beispiel": "Veronika ist meine Partnerin.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Partnerin (A1)"
   ]
  },
@@ -110,7 +110,7 @@
   "tr": "partner, eş",
   "formen": "-nen",
   "beispiel": "Sie ist meine Partnerin.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Partner (A1)"
   ]
  },
@@ -129,7 +129,7 @@
   "tr": "pasaport",
   "formen": "-ä, e",
   "beispiel": "Im Hotel brauchst du deinen Pass.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Reisepass (B2)"
   ]
  },
@@ -156,7 +156,7 @@
   "tr": "patates kızartması",
   "formen": "",
   "beispiel": "Kinder essen Hähnchen mit Pommes frites.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Pommes frites (Pl.) (A2)",
    "die Pommes (A2)"
   ]
@@ -184,7 +184,7 @@
   "tr": "muayenehane",
   "formen": "",
   "beispiel": "Die Praxis ist ab acht Uhr geöffnet.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Ordination (B1)",
    "die Arztpraxis (A2)"
   ]
@@ -292,7 +292,7 @@
   "tr": "resepsiyon",
   "formen": "",
   "beispiel": "Fragen Sie bitte im Hotel an der Rezeption.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Rezeption/Reception (B1)"
   ]
  },
@@ -351,7 +351,7 @@
   "tr": "göndermek",
   "formen": "",
   "beispiel": "Bitte schicken Sie mir eine E-Mail.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "senden (B1)"
   ]
  },
@@ -378,7 +378,7 @@
   "tr": "kapatmak",
   "formen": "",
   "beispiel": "Bitte, schließen Sie die Tür.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "zumachen (A1)",
    "ausmachen (A1)"
   ]
@@ -502,7 +502,7 @@
   "tr": "kanepe",
   "formen": "",
   "beispiel": "Das Sofa ist bequem.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Couch (B1)"
   ]
  },
@@ -561,7 +561,7 @@
   "tr": "koymak, yerleştirmek",
   "formen": "",
   "beispiel": "Stell die Tasche rechts in die Ecke!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "legen (A1)"
   ]
  },
@@ -572,7 +572,7 @@
   "tr": "kat",
   "formen": "",
   "beispiel": "Unsere Wohnung liegt im ersten Stock.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Stockwerk (A2)",
    "die Etage (B1)"
   ]
@@ -584,7 +584,7 @@
   "tr": "tramvay",
   "formen": "",
   "beispiel": "Wo fährt die Straßenbahn ab?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Tram (B1)"
   ]
  },
@@ -675,7 +675,7 @@
   "tr": "bilet",
   "formen": "-s",
   "beispiel": "Wie viel kostet das Ticket?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Fahrkarte (A1)",
    "das Billett (B1)"
   ]
@@ -695,7 +695,7 @@
   "tr": "domates",
   "formen": "-n",
   "beispiel": "Die Tomate ist noch grün.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Paradeiser (B1)"
   ]
  },
@@ -722,7 +722,7 @@
   "tr": "merdiven",
   "formen": "-n",
   "beispiel": "Die Toilette? Die Treppe hoch und dann links.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Leiter (B1)",
    "die Stiege (B1)"
   ]
@@ -734,7 +734,7 @@
   "tr": "hoşça kal, güle güle",
   "formen": "",
   "beispiel": "Junge Leute sagen meistens „tschüss!“ und nicht „auf Wiedersehen“.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "tschüs (A2)"
   ]
  },
@@ -745,7 +745,7 @@
   "tr": "yapmak",
   "formen": "",
   "beispiel": "Ich habe noch etwas zu tun. Was tut Ihr Mann?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "machen (A1)"
   ]
  },
@@ -796,7 +796,7 @@
   "tr": "imzalamak",
   "formen": "",
   "beispiel": "Wo muss ich unterschreiben?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "unterzeichnen (B2)"
   ]
  },
@@ -831,7 +831,7 @@
   "tr": "yasak",
   "formen": "",
   "beispiel": "Hier ist Rauchen verboten.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "untersagt (B1)",
    "das Verbot (B1)"
   ]
@@ -899,7 +899,7 @@
   "tr": "dikkat",
   "formen": "",
   "beispiel": "Vorsicht! Da kommt ein Auto.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Achtung (A1)"
   ]
  },
@@ -910,7 +910,7 @@
   "tr": "kendini tanıtmak",
   "formen": "",
   "beispiel": "Wir wollen uns kennenlernen. Können Sie sich bitte vorstellen?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "vorstellen (A1)"
   ]
  },
@@ -993,7 +993,7 @@
   "tr": "ödemek",
   "formen": "",
   "beispiel": "Entschuldigung, zahlen bitte!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "bezahlen (A1)"
   ]
  },

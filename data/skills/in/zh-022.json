@@ -1,7 +1,7 @@
 {
- "paket": "zh-022",
+ "packet": "zh-022",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-a1-d1",
    "skill": "speaking",
@@ -9,45 +9,45 @@
    "title": "Sich vorstelle",
    "genre": "Diyalog",
    "intro": "Biriyle yeni tanışıyorsun. Züritüütsch cevap ver — Hochdeutsch de anlaşılır ama lehçeyi dene.",
-   "metin": "",
+   "text": "",
    "gloss": [
     {
      "de": "Grüezi",
-     "mevcutTr": "merhaba (resmî)"
+     "currentTr": "merhaba (resmî)"
     },
     {
      "de": "Wie gaht's?",
-     "mevcutTr": "Nasılsın? (Wie geht es?)"
+     "currentTr": "Nasılsın? (Wie geht es?)"
     },
     {
      "de": "ich chume vo",
-     "mevcutTr": "…-dan geliyorum (ich komme aus)"
+     "currentTr": "…-dan geliyorum (ich komme aus)"
     },
     {
      "de": "ich schaffe",
-     "mevcutTr": "çalışıyorum (ich arbeite)"
+     "currentTr": "çalışıyorum (ich arbeite)"
     },
     {
      "de": "Freut mi",
-     "mevcutTr": "Memnun oldum (Freut mich)"
+     "currentTr": "Memnun oldum (Freut mich)"
     }
    ],
    "targets": [
     {
      "de": "Ich heisse …",
-     "mevcutTr": "Adım …"
+     "currentTr": "Adım …"
     },
     {
      "de": "Ich chume vo …",
-     "mevcutTr": "…-danım."
+     "currentTr": "…-danım."
     },
     {
      "de": "Ich schaffe als …",
-     "mevcutTr": "… olarak çalışıyorum."
+     "currentTr": "… olarak çalışıyorum."
     },
     {
      "de": "Freut mi!",
-     "mevcutTr": "Memnun oldum!"
+     "currentTr": "Memnun oldum!"
     }
    ]
   }

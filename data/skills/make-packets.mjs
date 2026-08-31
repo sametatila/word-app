@@ -7,7 +7,7 @@
  * egzersizin **tam metni** giriyor — okuma parçası, dinleme bölümleri, yazma
  * uyaranı ya da konuşma cümleleri.
  *
- * `havuz` alanı kritik. Aynı kelimeye iki ekranda iki farklı karşılık vermek
+ * `pool` alanı kritik. Aynı kelimeye iki ekranda iki farklı karşılık vermek
  * uygulamayı kendisiyle çelişir hâle getiriyordu: Almanca kursunun 895
  * sözlükçe maddesinden 392'si kelime havuzundan farklı bir karşılık veriyordu
  * (Kuchen "pasta, kek" ↔ "kek", abfahren "kalkmak, hareket etmek" ↔
@@ -47,25 +47,25 @@ const byId = new Map(words.map((w) => [w.id, w]));
  * "sıkı" ipucu görüp durumu bildirdi — ipucu yanlış olunca ajan ya yanlış
  * karşılığa yönlendiriliyor ya da onu doğrulamak için vakit harcıyor.
  */
-const havuz = new Map();
+const pool = new Map();
 for (const f of readdirSync(`${ROOT}data/meanings/out`).filter((f) => f.endsWith(".json"))) {
   for (const m of JSON.parse(readFileSync(`${ROOT}data/meanings/out/${f}`, "utf8"))) {
     const w = byId.get(m.id);
     if (!w) continue;
-    const isim = Boolean(w.artikel);
-    havuz.set(`${isim ? "N" : "-"}:${w.de.toLocaleLowerCase("de-DE")}`, { tr: m.tr, en: m.en });
+    const isNoun = Boolean(w.artikel);
+    pool.set(`${isNoun ? "N" : "-"}:${w.de.toLocaleLowerCase("de-DE")}`, { tr: m.tr, en: m.en });
   }
 }
 
 /** Madde başlığından artikeli düşürerek havuzda arar; isim/isim değil ayrımıyla. */
-function havuzda(de) {
-  const isim = /^(der|die|das|de|d|s)\s+/i.test(de);
-  const gövde = de.replace(/^(der|die|das|de|d|s)\s+/i, "").toLocaleLowerCase("de-DE");
-  return havuz.get(`${isim ? "N" : "-"}:${gövde}`) ?? havuz.get(`${isim ? "-" : "N"}:${gövde}`);
+function inPool(de) {
+  const isNoun = /^(der|die|das|de|d|s)\s+/i.test(de);
+  const stem = de.replace(/^(der|die|das|de|d|s)\s+/i, "").toLocaleLowerCase("de-DE");
+  return pool.get(`${isNoun ? "N" : "-"}:${stem}`) ?? pool.get(`${isNoun ? "-" : "N"}:${stem}`);
 }
 
 /** Egzersizin öğrencinin gördüğü Almanca gövdesi. */
-function govde(e) {
+function bodyOf(e) {
   if (e.skill === "reading") return e.text ?? "";
   if (e.skill === "listening")
     return (e.segments ?? []).map((s) => (s.speaker ? `${s.speaker}: ${s.text}` : s.text)).join("\n");
@@ -82,22 +82,22 @@ mkdirSync(`${ROOT}data/skills/in`, { recursive: true });
 mkdirSync(`${ROOT}data/skills/out`, { recursive: true });
 
 const index = [];
-let alan = 0;
+let fields = 0;
 for (const course of ["de", "gsw-zh"]) {
   const rows = exercises.filter((e) => (e.course ?? "de") === course);
   const slugBase = course === "de" ? "de" : "zh";
 
   for (let i = 0; i < rows.length; i += SIZE) {
     const slug = `${slugBase}-${String(Math.floor(i / SIZE) + 1).padStart(3, "0")}`;
-    const paket = rows.slice(i, i + SIZE).map((e) => {
-      const kayit = {
+    const records = rows.slice(i, i + SIZE).map((e) => {
+      const record = {
         id: e.id,
         skill: e.skill,
         level: e.level,
         title: e.title,
         genre: e.genre,
         intro: e.intro,
-        metin: govde(e),
+        text: bodyOf(e),
         gloss: (e.gloss ?? []).map((g) => {
           // Lehçe biçim Almanca havuzda birebir yok ("d Wohnig" ↔ "Wohnung"),
           // o yüzden Züritüütsch maddelerinin yalnızca %18'i ipucu alıyordu.
@@ -106,50 +106,50 @@ for (const course of ["de", "gsw-zh"]) {
           // Parantez Türkçe açıklama da taşıyabiliyor; havuzda karşılığı
           // bulunması adayın gerçekten Almanca olduğunun kendi süzgeci.
           const paren = /\(([^)]+)\)/.exec(g.tr ?? "")?.[1]?.trim();
-          const köprü = paren && !/[ıİğĞşŞ]/.test(paren) ? havuzda(paren) : null;
-          const h = havuzda(g.de) ?? köprü;
+          const bridge = paren && !/[ıİğĞşŞ]/.test(paren) ? inPool(paren) : null;
+          const h = inPool(g.de) ?? bridge;
           return {
             de: g.de,
-            mevcutTr: g.tr,
-            ...(h ? { havuz: h } : {}),
-            ...(köprü && !havuzda(g.de) ? { hdAdayi: paren } : {}),
+            currentTr: g.tr,
+            ...(h ? { pool: h } : {}),
+            ...(bridge && !inPool(g.de) ? { hdCandidate: paren } : {}),
           };
         }),
       };
       if (e.skill === "writing") {
         const free = (e.tasks ?? []).filter((t) => t.kind === "free");
         if (free.length)
-          kayit.phrases = free.flatMap((t) =>
-            (t.phrases ?? []).map((p) => ({ de: p.de, mevcutTr: p.tr })),
+          record.phrases = free.flatMap((t) =>
+            (t.phrases ?? []).map((p) => ({ de: p.de, currentTr: p.tr })),
           );
       }
       if (e.skill === "speaking") {
-        if (e.tasks) kayit.tasks = e.tasks.map((t) => ({ de: t.de, mevcutTr: t.tr }));
+        if (e.tasks) record.tasks = e.tasks.map((t) => ({ de: t.de, currentTr: t.tr }));
         if (e.targets)
-          kayit.targets = e.targets.map((t) => ({ de: t.de, mevcutTr: t.tr }));
+          record.targets = e.targets.map((t) => ({ de: t.de, currentTr: t.tr }));
       }
-      alan +=
-        kayit.gloss.length +
-        (kayit.phrases?.length ?? 0) +
-        (kayit.tasks?.length ?? 0) +
-        (kayit.targets?.length ?? 0);
-      return kayit;
+      fields +=
+        record.gloss.length +
+        (record.phrases?.length ?? 0) +
+        (record.tasks?.length ?? 0) +
+        (record.targets?.length ?? 0);
+      return record;
     });
 
     writeFileSync(
       `${ROOT}data/skills/in/${slug}.json`,
-      JSON.stringify({ paket: slug, course, egzersizler: paket }, null, 1) + "\n",
+      JSON.stringify({ packet: slug, course, exercises: records }, null, 1) + "\n",
     );
-    index.push({ paket: slug, course, egzersiz: paket.length });
+    index.push({ packet: slug, course, exerciseCount: records.length });
   }
 }
 
 writeFileSync(`${ROOT}data/skills/in/_index.json`, JSON.stringify(index, null, 1) + "\n");
-const bitmis = index.filter((p) => existsSync(`${ROOT}data/skills/out/${p.paket}.json`)).length;
-console.log(`${exercises.length} egzersiz → ${index.length} paket (${SIZE}'lik), ${alan} alan`);
+const finished = index.filter((p) => existsSync(`${ROOT}data/skills/out/${p.packet}.json`)).length;
+console.log(`${exercises.length} egzersiz → ${index.length} paket (${SIZE}'lik), ${fields} alan`);
 for (const c of ["de", "gsw-zh"]) {
   const p = index.filter((x) => x.course === c);
-  console.log(`  ${c}: ${p.length} paket, ${p.reduce((s, x) => s + x.egzersiz, 0)} egzersiz`);
+  console.log(`  ${c}: ${p.length} paket, ${p.reduce((s, x) => s + x.exerciseCount, 0)} egzersiz`);
 }
-console.log(`havuzda karşılığı bulunan sözlükçe kelimesi: ${havuz.size} kayıtlık havuz`);
-console.log(`çıktısı hazır olan: ${bitmis}/${index.length}`);
+console.log(`havuzda karşılığı bulunan sözlükçe kelimesi: ${pool.size} kayıtlık havuz`);
+console.log(`çıktısı hazır olan: ${finished}/${index.length}`);

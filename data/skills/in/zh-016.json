@@ -1,7 +1,7 @@
 {
- "paket": "zh-016",
+ "packet": "zh-016",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-b2-w1",
    "skill": "writing",
@@ -9,52 +9,52 @@
    "title": "Forumsbiitraag: Autofreii Innestadt?",
    "genre": "Forum yorumu",
    "intro": "Mahalle forumunda araçsız şehir merkezi tartışılıyor; önce iki cümle kur, sonra tartışmaya kendi yorumunla katıl.",
-   "metin": "Ich finde, i de Innestadt hät s z vil Autos.\n\nÄinersiits bruuched d Läde Chundschaft, anderersiits wänd alli e rueigi Innestadt.\n\nBiitraag vo Heidi_52 im Quartierforum: Ich han min Lade sit drissg Jaar a de Löwestraass. Wänn d Autos nüme dörfed cho, chunt au d Chundschaft nüme – dänn cha ich grad zuemache. Die Politiker dänked nie a s chliine Gwärb. Wie gsend ir das?\n\nIch wone sit füfzää Jaar im Chräis 4, drum betrifft mich s Thema diräkt. Äinersiits verschtaan ich d Sorge vo de Ladebsitzer wie de Heidi: Si bruuched Chundschaft, und wär schwäri Sache chauft, wott mit em Auto vorfahre chöne. Anderersiits gsee ich jede Tag, wie s Quartier under em Vercheer liidet: Lärm, dräckigi Luft und käin Platz für d Chind. Drum bin ich für en autofreii Innestadt – aber mit Uusnaame. D Lieferwäge, s Gwärb und d Lüüt mit ere Behinderig müend wiiterhin dure chöne. Für alli anderi hät s am Rand vo de Stadt Parkhüüser, und vo dört fahrt s Tram alli paar Minute. Züri wär nöd di erschti Stadt: Z Oslo funktioniert das Modäll sit Jaare, und d Läde händ dört hüt sogar meh Umsatz als vorhär. Probiere mer s doch emal us – für es Jaar, als Versuech. Dänn gsend mir, öb d Ängscht berächtigt sind.",
+   "text": "Ich finde, i de Innestadt hät s z vil Autos.\n\nÄinersiits bruuched d Läde Chundschaft, anderersiits wänd alli e rueigi Innestadt.\n\nBiitraag vo Heidi_52 im Quartierforum: Ich han min Lade sit drissg Jaar a de Löwestraass. Wänn d Autos nüme dörfed cho, chunt au d Chundschaft nüme – dänn cha ich grad zuemache. Die Politiker dänked nie a s chliine Gwärb. Wie gsend ir das?\n\nIch wone sit füfzää Jaar im Chräis 4, drum betrifft mich s Thema diräkt. Äinersiits verschtaan ich d Sorge vo de Ladebsitzer wie de Heidi: Si bruuched Chundschaft, und wär schwäri Sache chauft, wott mit em Auto vorfahre chöne. Anderersiits gsee ich jede Tag, wie s Quartier under em Vercheer liidet: Lärm, dräckigi Luft und käin Platz für d Chind. Drum bin ich für en autofreii Innestadt – aber mit Uusnaame. D Lieferwäge, s Gwärb und d Lüüt mit ere Behinderig müend wiiterhin dure chöne. Für alli anderi hät s am Rand vo de Stadt Parkhüüser, und vo dört fahrt s Tram alli paar Minute. Züri wär nöd di erschti Stadt: Z Oslo funktioniert das Modäll sit Jaare, und d Läde händ dört hüt sogar meh Umsatz als vorhär. Probiere mer s doch emal us – für es Jaar, als Versuech. Dänn gsend mir, öb d Ängscht berächtigt sind.",
    "gloss": [
     {
      "de": "d Innestadt",
-     "mevcutTr": "şehir merkezi"
+     "currentTr": "şehir merkezi"
     },
     {
      "de": "de Vercheer",
-     "mevcutTr": "trafik"
+     "currentTr": "trafik"
     },
     {
      "de": "d Chundschaft",
-     "mevcutTr": "müşteriler"
+     "currentTr": "müşteriler"
     },
     {
      "de": "s Gwärb",
-     "mevcutTr": "esnaf, küçük işletmeler"
+     "currentTr": "esnaf, küçük işletmeler"
     },
     {
      "de": "d Uusnaam",
-     "mevcutTr": "istisna"
+     "currentTr": "istisna"
     },
     {
      "de": "s Parkhuus",
-     "mevcutTr": "katlı otopark"
+     "currentTr": "katlı otopark"
     },
     {
      "de": "de Lärm",
-     "mevcutTr": "gürültü",
-     "havuz": {
+     "currentTr": "gürültü",
+     "pool": {
       "tr": "gürültü",
       "en": "noise"
      }
     },
     {
      "de": "de Versuech",
-     "mevcutTr": "deneme"
+     "currentTr": "deneme"
     },
     {
      "de": "berächtigt",
-     "mevcutTr": "haklı, yerinde"
+     "currentTr": "haklı, yerinde"
     },
     {
      "de": "de Umsatz",
-     "mevcutTr": "ciro",
-     "havuz": {
+     "currentTr": "ciro",
+     "pool": {
       "tr": "ciro",
       "en": "revenue"
      }
@@ -63,31 +63,31 @@
    "phrases": [
     {
      "de": "Äinersiits …, anderersiits …",
-     "mevcutTr": "Bir yandan…, öte yandan…"
+     "currentTr": "Bir yandan…, öte yandan…"
     },
     {
      "de": "Ich verschtaa d Sorge vo …",
-     "mevcutTr": "…'nın kaygısını anlıyorum"
+     "currentTr": "…'nın kaygısını anlıyorum"
     },
     {
      "de": "Drum bin ich für/gäge …",
-     "mevcutTr": "Bu yüzden …'dan yanayım / …'a karşıyım"
+     "currentTr": "Bu yüzden …'dan yanayım / …'a karşıyım"
     },
     {
      "de": "mit Uusnaame",
-     "mevcutTr": "istisnalar hariç"
+     "currentTr": "istisnalar hariç"
     },
     {
      "de": "Probiere mer s doch emal us",
-     "mevcutTr": "Hadi bir deneyelim"
+     "currentTr": "Hadi bir deneyelim"
     },
     {
      "de": "Das betrifft mich diräkt",
-     "mevcutTr": "Bu beni doğrudan ilgilendiriyor"
+     "currentTr": "Bu beni doğrudan ilgilendiriyor"
     },
     {
      "de": "meh wärt als …",
-     "mevcutTr": "…'dan daha değerli"
+     "currentTr": "…'dan daha değerli"
     }
    ]
   },
@@ -98,32 +98,32 @@
    "title": "Läserbrief: Sunntigsverchauf",
    "genre": "Okur mektubu",
    "intro": "zh-b2-r6'daki iki okur mektubuna kendi yanıtını yazacaksın: karşı tarafın argümanını da ele alacaksın.",
-   "metin": "Ich raume ii, dass de Herr Hofstetter bi de Freiwilligkäit rächt hät.\n\nTrotzdem giltet das Argumänt nöd für alli Läde.\n\nLetschtlich isch das e Frag vo de Abwägig.\n\nZu de bäide Läserbrief vom letschte Samschtig:\n\nIch raume ii, dass de Herr Hofstetter bi de Freiwilligkäit rächt hät. Wär im Verchauf schafft und de Sunntig ablehnt, spürt das im nächschte Plan — das schriibt niemert ufe, aber es passiert. Wer das bestriitet, hät nie hinder ere Kasse gschtande.\n\nTrotzdem giltet das Argumänt nöd für alli Läde. Im Familiebetrieb, wo d Bsitzer sälber hinder de Theke staned, git s dää Druck nöd. D Frau Iseli hät drum au rächt: Mir verbüüted genau dene, wo am wenigschte Macht händ, während de Onlinehandel am Sunntig ohni Iischränkig lieferet.\n\nEntschäidend isch für mi nöd d Frag „offe oder zue“, sondern wär entschäidet und zu welne Bedingige. Es Verbot schützt s Personal nume so lang, wie s Personal käi anderi Wahl hät.\n\nEn gangbare Kompromiss wär: Sunntigsverchauf erlaubt für Betriib bis zää Aagschtellti, mit eme Loonzueschlag vo fufzg Prozänt und em Rächt, ohni Begründig nei z säge — schriftlich feschtghalte, nöd nume gmeint.\n\nLetschtlich isch das e Frag vo de Abwägig: Mir bruuched käi Sunntig ohni Läde, aber au käi Läde ohni Sunntig.\n\nDeniz Kaya, Züri-Wipkinge",
+   "text": "Ich raume ii, dass de Herr Hofstetter bi de Freiwilligkäit rächt hät.\n\nTrotzdem giltet das Argumänt nöd für alli Läde.\n\nLetschtlich isch das e Frag vo de Abwägig.\n\nZu de bäide Läserbrief vom letschte Samschtig:\n\nIch raume ii, dass de Herr Hofstetter bi de Freiwilligkäit rächt hät. Wär im Verchauf schafft und de Sunntig ablehnt, spürt das im nächschte Plan — das schriibt niemert ufe, aber es passiert. Wer das bestriitet, hät nie hinder ere Kasse gschtande.\n\nTrotzdem giltet das Argumänt nöd für alli Läde. Im Familiebetrieb, wo d Bsitzer sälber hinder de Theke staned, git s dää Druck nöd. D Frau Iseli hät drum au rächt: Mir verbüüted genau dene, wo am wenigschte Macht händ, während de Onlinehandel am Sunntig ohni Iischränkig lieferet.\n\nEntschäidend isch für mi nöd d Frag „offe oder zue“, sondern wär entschäidet und zu welne Bedingige. Es Verbot schützt s Personal nume so lang, wie s Personal käi anderi Wahl hät.\n\nEn gangbare Kompromiss wär: Sunntigsverchauf erlaubt für Betriib bis zää Aagschtellti, mit eme Loonzueschlag vo fufzg Prozänt und em Rächt, ohni Begründig nei z säge — schriftlich feschtghalte, nöd nume gmeint.\n\nLetschtlich isch das e Frag vo de Abwägig: Mir bruuched käi Sunntig ohni Läde, aber au käi Läde ohni Sunntig.\n\nDeniz Kaya, Züri-Wipkinge",
    "gloss": [
     {
      "de": "s Gägenargumänt",
-     "mevcutTr": "karşı argüman"
+     "currentTr": "karşı argüman"
     },
     {
      "de": "iiraume",
-     "mevcutTr": "kabul etmek (bir noktayı)"
+     "currentTr": "kabul etmek (bir noktayı)"
     },
     {
      "de": "entchräfte",
-     "mevcutTr": "çürütmek"
+     "currentTr": "çürütmek"
     },
     {
      "de": "d Abwägig",
-     "mevcutTr": "tartma, değerlendirme"
+     "currentTr": "tartma, değerlendirme"
     },
     {
      "de": "letschtlich",
-     "mevcutTr": "nihayetinde"
+     "currentTr": "nihayetinde"
     },
     {
      "de": "de Kompromiss",
-     "mevcutTr": "uzlaşma",
-     "havuz": {
+     "currentTr": "uzlaşma",
+     "pool": {
       "tr": "uzlaşma",
       "en": "compromise"
      }
@@ -132,23 +132,23 @@
    "phrases": [
     {
      "de": "Zu de bäide Läserbrief vom …",
-     "mevcutTr": "…tarihli iki okur mektubuna dair"
+     "currentTr": "…tarihli iki okur mektubuna dair"
     },
     {
      "de": "Ich raume ii, dass …",
-     "mevcutTr": "… olduğunu kabul ediyorum."
+     "currentTr": "… olduğunu kabul ediyorum."
     },
     {
      "de": "Trotzdem übergseet er, dass …",
-     "mevcutTr": "Yine de … olduğunu gözden kaçırıyor."
+     "currentTr": "Yine de … olduğunu gözden kaçırıyor."
     },
     {
      "de": "Entschäidend isch für mi …",
-     "mevcutTr": "Benim için belirleyici olan …"
+     "currentTr": "Benim için belirleyici olan …"
     },
     {
      "de": "En gangbare Kompromiss wär …",
-     "mevcutTr": "Uygulanabilir bir uzlaşma … olurdu."
+     "currentTr": "Uygulanabilir bir uzlaşma … olurdu."
     }
    ]
   },
@@ -159,61 +159,61 @@
    "title": "Aatrag uf Wiiterbildig",
    "genre": "İş yazışması",
    "intro": "Yöneticine bir eğitim talebi yazacaksın: isteğini şirkete faydası üzerinden gerekçelendireceksin.",
-   "metin": "Ich möcht en Kurs bsueche, wo im Oktober aafangt.\n\nDe Kurs duuret acht Täg und choschtet dräitusigzwäihundert Franke.\n\nWährend minere Abwäsenhäit chan d Sibel mi vertrete.\n\nGrüezi Frau Baumann\n\nIch möcht Ine en Aatrag stelle: Ich möcht en Kurs bsueche, wo im Oktober aafangt — «Projäktleitig i de Logischtik», bi de Fachhochschuel Winterthur. De Kurs duuret acht Täg, verteilt uf vier Mönet, und choschtet dräitusigzwäihundert Franke.\n\nDe Grund isch konkret: Siit em Projäkt Nordstärn füehre ich Termiine und Ressource sälber, aber ich mach das us Erfaarig und nöd us Methodik. Bi de letschte zwäi Verzögerige han ich s Problem z spaat gseh. Genau das isch de Schwerpunkt vom Kurs.\n\nFür üses Team bedüütet das, dass mir d Plänig nöd meh extern iichaufe müend. Elleige bim Projäkt Nordstärn hämmer letschts Jaar vierezwänzgtuusig Franke a e externi Beratig zaalt.\n\nD Abwäsenhäit isch mir bewusst. D Kurstäg sind am Friitig; während minere Abwäsenhäit chan d Sibel mi vertrete, si isch iiverstande. Ich verpflichte mi, s Glernte im Team witerzgää — zwäi Mittagssitzige nach em Kurs.\n\nIch bitte Si um Ihres Iiverständnis und gärn au um es churzes Gspröch, wänn Si Fräge händ.\n\nFründlichi Grüess\nMurat Aydın",
+   "text": "Ich möcht en Kurs bsueche, wo im Oktober aafangt.\n\nDe Kurs duuret acht Täg und choschtet dräitusigzwäihundert Franke.\n\nWährend minere Abwäsenhäit chan d Sibel mi vertrete.\n\nGrüezi Frau Baumann\n\nIch möcht Ine en Aatrag stelle: Ich möcht en Kurs bsueche, wo im Oktober aafangt — «Projäktleitig i de Logischtik», bi de Fachhochschuel Winterthur. De Kurs duuret acht Täg, verteilt uf vier Mönet, und choschtet dräitusigzwäihundert Franke.\n\nDe Grund isch konkret: Siit em Projäkt Nordstärn füehre ich Termiine und Ressource sälber, aber ich mach das us Erfaarig und nöd us Methodik. Bi de letschte zwäi Verzögerige han ich s Problem z spaat gseh. Genau das isch de Schwerpunkt vom Kurs.\n\nFür üses Team bedüütet das, dass mir d Plänig nöd meh extern iichaufe müend. Elleige bim Projäkt Nordstärn hämmer letschts Jaar vierezwänzgtuusig Franke a e externi Beratig zaalt.\n\nD Abwäsenhäit isch mir bewusst. D Kurstäg sind am Friitig; während minere Abwäsenhäit chan d Sibel mi vertrete, si isch iiverstande. Ich verpflichte mi, s Glernte im Team witerzgää — zwäi Mittagssitzige nach em Kurs.\n\nIch bitte Si um Ihres Iiverständnis und gärn au um es churzes Gspröch, wänn Si Fräge händ.\n\nFründlichi Grüess\nMurat Aydın",
    "gloss": [
     {
      "de": "d Wiiterbildig",
-     "mevcutTr": "mesleki eğitim, kurs"
+     "currentTr": "mesleki eğitim, kurs"
     },
     {
      "de": "de Aatrag",
-     "mevcutTr": "talep, başvuru"
+     "currentTr": "talep, başvuru"
     },
     {
      "de": "de Nutze",
-     "mevcutTr": "fayda"
+     "currentTr": "fayda"
     },
     {
      "de": "d Choschte",
-     "mevcutTr": "masraf"
+     "currentTr": "masraf"
     },
     {
      "de": "d Abwäsenhäit",
-     "mevcutTr": "işte olmama, devamsızlık"
+     "currentTr": "işte olmama, devamsızlık"
     },
     {
      "de": "sich verpflichte",
-     "mevcutTr": "taahhüt etmek"
+     "currentTr": "taahhüt etmek"
     },
     {
      "de": "d Vertretig",
-     "mevcutTr": "vekâlet, yerine bakma"
+     "currentTr": "vekâlet, yerine bakma"
     }
    ],
    "phrases": [
     {
      "de": "Ich möcht Ine en Aatrag stelle.",
-     "mevcutTr": "Size bir talepte bulunmak istiyorum."
+     "currentTr": "Size bir talepte bulunmak istiyorum."
     },
     {
      "de": "De Kurs findet vom … bis am … statt.",
-     "mevcutTr": "Kurs …–… tarihleri arasında."
+     "currentTr": "Kurs …–… tarihleri arasında."
     },
     {
      "de": "Für üses Team bedüütet das, dass …",
-     "mevcutTr": "Ekibimiz için bu … demek."
+     "currentTr": "Ekibimiz için bu … demek."
     },
     {
      "de": "D Choschte betraged … Franke.",
-     "mevcutTr": "Masraf … frank."
+     "currentTr": "Masraf … frank."
     },
     {
      "de": "Ich verpflichte mi, …",
-     "mevcutTr": "… taahhüt ediyorum."
+     "currentTr": "… taahhüt ediyorum."
     },
     {
      "de": "Ich bitte Si um Ihres Iiverständnis.",
-     "mevcutTr": "Onayınızı rica ediyorum."
+     "currentTr": "Onayınızı rica ediyorum."
     }
    ]
   },
@@ -224,61 +224,61 @@
    "title": "E Zämefassig schriibe",
    "genre": "Özet",
    "intro": "zh-b2-r5'teki metni (D Stadt wachst) özetleyeceksin: kendi görüşünü katmadan, ana çizgiyi kendi cümlelerinle.",
-   "metin": "De Text handlet vo de Folge vom Wachstum vo de Stadt.\n\nLaut em Autor isch d Flächi pro Person s eigentlich Problem.\n\nZum Schluss säit de Text, dass käini Massnaam elleige gnueget.\n\nDe Text handlet vo de Folge vom Wachstum vo de Stadt Züri. Er zäigt zerscht d Zaale: vierehundertdriissgtuusig Iiwohner hüt, öppe füfhunderttuusig bis zwäitusigvierzg.\n\nAls Grund nennt de Autor nöd de Zuezug us em Uusland — dää sig stabil. Wichtiger seiged zwäi anderi Entwicklige: D Lüüt bliibed lenger i de Stadt, und jedi Person bruucht meh Wonflächi als früener.\n\nAls Folg dervo mues d Stadt verdichte. Laut em Autor isch d Flächi pro Person s eigentlich Problem, wil me nöd gliichziitig meh Lüüt und meh Platz pro Person cha haa. Wo nöi bout wird, schtiiged aber d Miete, und di alte Bewohner müend furt.\n\nWiiter wird gsäit, dass au d Infrastruktur under Druck chunt: Bis zwäituusigfüfedrissg bruucht d Stadt sibe nöii Schuelhüüser, hät aber fascht käis Bouland meh.\n\nZum Schluss chunt de Text zum Schluss, dass käini Massnaam elleige gnueget — aber au, dass e Stadt nöd cha beschliesse, nöd z wachse.",
+   "text": "De Text handlet vo de Folge vom Wachstum vo de Stadt.\n\nLaut em Autor isch d Flächi pro Person s eigentlich Problem.\n\nZum Schluss säit de Text, dass käini Massnaam elleige gnueget.\n\nDe Text handlet vo de Folge vom Wachstum vo de Stadt Züri. Er zäigt zerscht d Zaale: vierehundertdriissgtuusig Iiwohner hüt, öppe füfhunderttuusig bis zwäitusigvierzg.\n\nAls Grund nennt de Autor nöd de Zuezug us em Uusland — dää sig stabil. Wichtiger seiged zwäi anderi Entwicklige: D Lüüt bliibed lenger i de Stadt, und jedi Person bruucht meh Wonflächi als früener.\n\nAls Folg dervo mues d Stadt verdichte. Laut em Autor isch d Flächi pro Person s eigentlich Problem, wil me nöd gliichziitig meh Lüüt und meh Platz pro Person cha haa. Wo nöi bout wird, schtiiged aber d Miete, und di alte Bewohner müend furt.\n\nWiiter wird gsäit, dass au d Infrastruktur under Druck chunt: Bis zwäituusigfüfedrissg bruucht d Stadt sibe nöii Schuelhüüser, hät aber fascht käis Bouland meh.\n\nZum Schluss chunt de Text zum Schluss, dass käini Massnaam elleige gnueget — aber au, dass e Stadt nöd cha beschliesse, nöd z wachse.",
    "gloss": [
     {
      "de": "d Zämefassig",
-     "mevcutTr": "özet"
+     "currentTr": "özet"
     },
     {
      "de": "de Kärn",
-     "mevcutTr": "öz, çekirdek"
+     "currentTr": "öz, çekirdek"
     },
     {
      "de": "wiedergää",
-     "mevcutTr": "aktarmak"
+     "currentTr": "aktarmak"
     },
     {
      "de": "d Quelle",
-     "mevcutTr": "kaynak",
-     "havuz": {
+     "currentTr": "kaynak",
+     "pool": {
       "tr": "kaynak",
       "en": "source"
      }
     },
     {
      "de": "sachlich",
-     "mevcutTr": "nesnel, olgusal",
-     "havuz": {
+     "currentTr": "nesnel, olgusal",
+     "pool": {
       "tr": "ölçülü",
       "en": "matter-of-fact"
      }
     },
     {
      "de": "wäggloo",
-     "mevcutTr": "atmak, dışarıda bırakmak"
+     "currentTr": "atmak, dışarıda bırakmak"
     }
    ],
    "phrases": [
     {
      "de": "De Text handlet vo …",
-     "mevcutTr": "Metin … hakkında."
+     "currentTr": "Metin … hakkında."
     },
     {
      "de": "Als Grund nennt de Autor …",
-     "mevcutTr": "Yazar gerekçe olarak … gösteriyor."
+     "currentTr": "Yazar gerekçe olarak … gösteriyor."
     },
     {
      "de": "Als Folg dervo …",
-     "mevcutTr": "Bunun sonucu olarak …"
+     "currentTr": "Bunun sonucu olarak …"
     },
     {
      "de": "Wiiter wird gsäit, dass …",
-     "mevcutTr": "Ayrıca … deniyor."
+     "currentTr": "Ayrıca … deniyor."
     },
     {
      "de": "Zum Schluss chunt de Text zum Schluss, dass …",
-     "mevcutTr": "Metin sonunda … sonucuna varıyor."
+     "currentTr": "Metin sonunda … sonucuna varıyor."
     }
    ]
   },
@@ -289,69 +289,69 @@
    "title": "S Motivationsschriibe",
    "genre": "Başvuru",
    "intro": "zh-b2-r11'deki geri bildirimin dersi: genel cümleler değil, tek somut deneyim. Onu yazacaksın.",
-   "metin": "Was mich bi de Schnupperlehr am mäischte bewegt hät, isch s Dosiere gsii.\n\nSache mit Verantwortig gänd mer meh als Sache ohni.\n\nIch behaupte das nöd, ich beleg s mit eme Biispil.\n\nSehr geehrti Frau Kern\n\nIch bewirb mich um d Lehrstell als Pharma-Assistentin EFZ ab Auguscht.\n\nWas mich bi de Schnupperlehr am mäischte bewegt hät, isch nöd de Verchauf gsii, sondern s Dosiere. Am dritte Tag han ich gseh, wie Si e Salbe agrüehrt händ und zwäimal nachegrächnet händ, obwohl Si das siit Jaare mached. Ich han gmerkt, dass mich das nöd abschreckt, sondern zieht: Sache mit Verantwortig gänd mer meh als Sache ohni.\n\nDas hät mer au zäigt, warum d Beratig de grösser Täil vo dere Arbet isch. Ich han bi Ine Chunde ghört, wo eigentlich nöd s Medikamänt gsuecht händ, sondern öpper, wo zuelost.\n\nE Schwächi vo mir isch d Mathematik gsii — im vorletschte Zügnis han ich e 4,5 gha. Dra han ich gschaffet, indem ich es halbs Jaar Nachhilf gnoo han; im letschte Zügnis staat e 5. Ich schriib das, well i dem Bruef Rächne käi Näbesach isch.\n\nGärn zäig ich Ine i me Gspröch, was ich siit em Schnuppere dezuegleert han.\n\nFründlichi Grüess\nAmina Bekele",
+   "text": "Was mich bi de Schnupperlehr am mäischte bewegt hät, isch s Dosiere gsii.\n\nSache mit Verantwortig gänd mer meh als Sache ohni.\n\nIch behaupte das nöd, ich beleg s mit eme Biispil.\n\nSehr geehrti Frau Kern\n\nIch bewirb mich um d Lehrstell als Pharma-Assistentin EFZ ab Auguscht.\n\nWas mich bi de Schnupperlehr am mäischte bewegt hät, isch nöd de Verchauf gsii, sondern s Dosiere. Am dritte Tag han ich gseh, wie Si e Salbe agrüehrt händ und zwäimal nachegrächnet händ, obwohl Si das siit Jaare mached. Ich han gmerkt, dass mich das nöd abschreckt, sondern zieht: Sache mit Verantwortig gänd mer meh als Sache ohni.\n\nDas hät mer au zäigt, warum d Beratig de grösser Täil vo dere Arbet isch. Ich han bi Ine Chunde ghört, wo eigentlich nöd s Medikamänt gsuecht händ, sondern öpper, wo zuelost.\n\nE Schwächi vo mir isch d Mathematik gsii — im vorletschte Zügnis han ich e 4,5 gha. Dra han ich gschaffet, indem ich es halbs Jaar Nachhilf gnoo han; im letschte Zügnis staat e 5. Ich schriib das, well i dem Bruef Rächne käi Näbesach isch.\n\nGärn zäig ich Ine i me Gspröch, was ich siit em Schnuppere dezuegleert han.\n\nFründlichi Grüess\nAmina Bekele",
    "gloss": [
     {
      "de": "s Motivationsschriibe",
-     "mevcutTr": "motivasyon mektubu"
+     "currentTr": "motivasyon mektubu"
     },
     {
      "de": "d Stärchi",
-     "mevcutTr": "güçlü yön"
+     "currentTr": "güçlü yön"
     },
     {
      "de": "konkret",
-     "mevcutTr": "somut"
+     "currentTr": "somut"
     },
     {
      "de": "s Erläbnis",
-     "mevcutTr": "yaşantı"
+     "currentTr": "yaşantı"
     },
     {
      "de": "belege",
-     "mevcutTr": "belgelemek, örneklemek"
+     "currentTr": "belgelemek, örneklemek"
     },
     {
      "de": "d Verantwortig",
-     "mevcutTr": "sorumluluk"
+     "currentTr": "sorumluluk"
     },
     {
      "de": "s Ziel",
-     "mevcutTr": "hedef",
-     "havuz": {
+     "currentTr": "hedef",
+     "pool": {
       "tr": "hedef",
       "en": "goal"
      }
     },
     {
      "de": "d Iischränkig",
-     "mevcutTr": "sınır, çekince"
+     "currentTr": "sınır, çekince"
     }
    ],
    "phrases": [
     {
      "de": "Ich bewirb mich um d Lehrstell als …",
-     "mevcutTr": "… çıraklık yeri için başvuruyorum."
+     "currentTr": "… çıraklık yeri için başvuruyorum."
     },
     {
      "de": "Was mich am mäischte bewegt hät, isch …",
-     "mevcutTr": "Beni en çok etkileyen …"
+     "currentTr": "Beni en çok etkileyen …"
     },
     {
      "de": "Das hät mer zäigt, dass …",
-     "mevcutTr": "Bu bana … olduğunu gösterdi."
+     "currentTr": "Bu bana … olduğunu gösterdi."
     },
     {
      "de": "E Schwächi vo mir isch …",
-     "mevcutTr": "Bir zayıflığım …"
+     "currentTr": "Bir zayıflığım …"
     },
     {
      "de": "Dra han ich gschaffet, indem …",
-     "mevcutTr": "Bunun üzerinde … yaparak çalıştım."
+     "currentTr": "Bunun üzerinde … yaparak çalıştım."
     },
     {
      "de": "Gärn zäig ich Ine das i me Gspröch.",
-     "mevcutTr": "Bunu bir görüşmede göstermek isterim."
+     "currentTr": "Bunu bir görüşmede göstermek isterim."
     }
    ]
   },
@@ -362,65 +362,65 @@
    "title": "Erörterig: Pro und Kontra",
    "genre": "Sınav formatı",
    "intro": "Sınavın ana görevi: bir konuyu iki yönüyle tartıp kendi sonucuna varmak. Yapı, içerik kadar puan getirir.",
-   "metin": "Über das Thema wird siit Jaare diskutiert.\n\nDas Argumänt hät en berächtigte Kärn, aber nöd meh.\n\nNach em Abwäge vo allne Punkt schliess ich mich de zwäite Poschtion aa.\n\nÜber d Frag, öb alli Jugendliche zerscht e Lehr mache sötted, wird siit Jaare diskutiert — mäistens denn, wänn d Betriib z wenig Lehrlig finded.\n\nFür so es Modäll schpricht zerscht d Erfaarig: Wär drü Jaar imene Betrieb gschaffet hät, kennt Termine, Chunde und Verantwortig. Das lernt me im Gymi nöd, und es hilft spöter au im Studium. Es wiiters Argumänt isch d Orientierig: Mit fufzäh weiss fascht niemert, was er will. Wär zerscht schafft, entschäidet mit zwänzg besser.\n\nDegäge wird iigwändet, dass me domit e ganzi Generation drü Jaar später as Studium laat. I de Medizin oder de Forschig, wo d Uusbildig sowiso lang isch, isch das käi Chliinigkäit. Zudem würd es Zwangsmodäll genau das zerstöre, was d Lehr uszäichnet: dass si freiwillig gwählt wird.\n\nDää zwäit Iiwand hät en berächtigte Kärn, aber er trifft nöd d Idee, sondern d Form. E Pflicht wär falsch — es Aagebot nöd. Vill Gymischüeler händ nie es Praktikum gmacht, nöd will si nöd wänd, sondern will s niemert vorgseh hät.\n\nNach em Abwäge vo allne Punkt bin ich gäge e Pflicht, aber defür, dass jedi Mittelschuel es obligatorischs Praxisjahr aabüütet — bezaalt und aagrächnet. Nöd zum d Lehr uufwerte, sondern zum d Wahl ehrlicher z mache.",
+   "text": "Über das Thema wird siit Jaare diskutiert.\n\nDas Argumänt hät en berächtigte Kärn, aber nöd meh.\n\nNach em Abwäge vo allne Punkt schliess ich mich de zwäite Poschtion aa.\n\nÜber d Frag, öb alli Jugendliche zerscht e Lehr mache sötted, wird siit Jaare diskutiert — mäistens denn, wänn d Betriib z wenig Lehrlig finded.\n\nFür so es Modäll schpricht zerscht d Erfaarig: Wär drü Jaar imene Betrieb gschaffet hät, kennt Termine, Chunde und Verantwortig. Das lernt me im Gymi nöd, und es hilft spöter au im Studium. Es wiiters Argumänt isch d Orientierig: Mit fufzäh weiss fascht niemert, was er will. Wär zerscht schafft, entschäidet mit zwänzg besser.\n\nDegäge wird iigwändet, dass me domit e ganzi Generation drü Jaar später as Studium laat. I de Medizin oder de Forschig, wo d Uusbildig sowiso lang isch, isch das käi Chliinigkäit. Zudem würd es Zwangsmodäll genau das zerstöre, was d Lehr uszäichnet: dass si freiwillig gwählt wird.\n\nDää zwäit Iiwand hät en berächtigte Kärn, aber er trifft nöd d Idee, sondern d Form. E Pflicht wär falsch — es Aagebot nöd. Vill Gymischüeler händ nie es Praktikum gmacht, nöd will si nöd wänd, sondern will s niemert vorgseh hät.\n\nNach em Abwäge vo allne Punkt bin ich gäge e Pflicht, aber defür, dass jedi Mittelschuel es obligatorischs Praxisjahr aabüütet — bezaalt und aagrächnet. Nöd zum d Lehr uufwerte, sondern zum d Wahl ehrlicher z mache.",
    "gloss": [
     {
      "de": "d Erörterig",
-     "mevcutTr": "tartışma yazısı"
+     "currentTr": "tartışma yazısı"
     },
     {
      "de": "d These",
-     "mevcutTr": "tez",
-     "havuz": {
+     "currentTr": "tez",
+     "pool": {
       "tr": "tez",
       "en": "thesis"
      }
     },
     {
      "de": "abwäge",
-     "mevcutTr": "tartmak"
+     "currentTr": "tartmak"
     },
     {
      "de": "entchräfte",
-     "mevcutTr": "çürütmek"
+     "currentTr": "çürütmek"
     },
     {
      "de": "zum äine … zum andere",
-     "mevcutTr": "bir yandan … öte yandan"
+     "currentTr": "bir yandan … öte yandan"
     },
     {
      "de": "letschtlich",
-     "mevcutTr": "nihayetinde"
+     "currentTr": "nihayetinde"
     },
     {
      "de": "d Schlussfolgerig",
-     "mevcutTr": "sonuç"
+     "currentTr": "sonuç"
     }
    ],
    "phrases": [
     {
      "de": "Über das Thema wird siit Jaare diskutiert.",
-     "mevcutTr": "Bu konu yıllardır tartışılıyor."
+     "currentTr": "Bu konu yıllardır tartışılıyor."
     },
     {
      "de": "Für … schpricht zerscht, dass …",
-     "mevcutTr": "…'in lehine önce şu var: …"
+     "currentTr": "…'in lehine önce şu var: …"
     },
     {
      "de": "Es wiiters Argumänt isch …",
-     "mevcutTr": "Bir diğer argüman …"
+     "currentTr": "Bir diğer argüman …"
     },
     {
      "de": "Degäge wird iigwändet, dass …",
-     "mevcutTr": "Buna karşı … itirazı yapılıyor."
+     "currentTr": "Buna karşı … itirazı yapılıyor."
     },
     {
      "de": "Das Argumänt hät en berächtigte Kärn, aber …",
-     "mevcutTr": "Bu argümanın haklı bir çekirdeği var ama …"
+     "currentTr": "Bu argümanın haklı bir çekirdeği var ama …"
     },
     {
      "de": "Nach em Abwäge vo allne Punkt …",
-     "mevcutTr": "Her şeyi tarttıktan sonra …"
+     "currentTr": "Her şeyi tarttıktan sonra …"
     }
    ]
   },
@@ -431,48 +431,48 @@
    "title": "Kommentar: D Schwiiz und Europa",
    "genre": "Köşe yazısı",
    "intro": "zh-b2-r9'daki konuyu bir köşe yazısına dönüştüreceksin: kendi bakışın, en güçlü itiraz ve bir sonuç.",
-   "metin": "Unabhängigkäit häisst imene chliine Land öppis anders.\n\nWär die Debatte verkürzt, verfehlt au d Antwort.\n\nLetschtlich gaat s nöd um de Beitritt, sondern drum, wär entschäidet.\n\nWär emal e Maschine us Tüütschland importiert hät, weiss, wie üsi Beziehig zu Europa würkli uusgseet: käi Zollformular, käi zwäiti Prüefig, dräi Täg Lieferziit. Das isch nöd Zuefall, sondern es Abkomme über technischi Handelshemmnis — es Dokumänt, wo niemert liest und alli bruuched.\n\nMini These isch: D Debatte über d Souveränität wird gführt, als hätted mir d Wahl zwüsche Abhängigkäit und Unabhängigkäit. Die Wahl hämmer nöd. Mir händ nur d Wahl, öb mir bi de Regle, wo für üs sowiso gälted, mitredde oder nöd.\n\nS stärchschte Gägenargumänt lautet: Wär automatisch Recht übernimmt, gitt s Läzte uuf, wo en chliine Staat hät — d Kontrolle über d äigene Gsetz. Dää Iiwand nimm ich ernscht, wil er nöd theoretisch isch: Es Volch, wo abstimmt und denn ghört, es seig nöd zueständig, verlüürt s Vertraue in s ganze System.\n\nTrotzdem übergseet er öppis. Mir übernämed hüt scho fascht alles — nur ohni am Tisch z sitze. D Frag isch nöd, öb mir Regle übernämed, sondern öb mir si mitschriibed.\n\nMis Fazit isch drum weniger dramatisch, als d Debatte tönt: Nöd de Beitritt isch d Frag, sondern d Ehrlichkäit. Wär vo Unabhängigkäit redt und gliichziitig vo de Liefertermin profitiert, mues säge, wie beides zäme gaat.",
+   "text": "Unabhängigkäit häisst imene chliine Land öppis anders.\n\nWär die Debatte verkürzt, verfehlt au d Antwort.\n\nLetschtlich gaat s nöd um de Beitritt, sondern drum, wär entschäidet.\n\nWär emal e Maschine us Tüütschland importiert hät, weiss, wie üsi Beziehig zu Europa würkli uusgseet: käi Zollformular, käi zwäiti Prüefig, dräi Täg Lieferziit. Das isch nöd Zuefall, sondern es Abkomme über technischi Handelshemmnis — es Dokumänt, wo niemert liest und alli bruuched.\n\nMini These isch: D Debatte über d Souveränität wird gführt, als hätted mir d Wahl zwüsche Abhängigkäit und Unabhängigkäit. Die Wahl hämmer nöd. Mir händ nur d Wahl, öb mir bi de Regle, wo für üs sowiso gälted, mitredde oder nöd.\n\nS stärchschte Gägenargumänt lautet: Wär automatisch Recht übernimmt, gitt s Läzte uuf, wo en chliine Staat hät — d Kontrolle über d äigene Gsetz. Dää Iiwand nimm ich ernscht, wil er nöd theoretisch isch: Es Volch, wo abstimmt und denn ghört, es seig nöd zueständig, verlüürt s Vertraue in s ganze System.\n\nTrotzdem übergseet er öppis. Mir übernämed hüt scho fascht alles — nur ohni am Tisch z sitze. D Frag isch nöd, öb mir Regle übernämed, sondern öb mir si mitschriibed.\n\nMis Fazit isch drum weniger dramatisch, als d Debatte tönt: Nöd de Beitritt isch d Frag, sondern d Ehrlichkäit. Wär vo Unabhängigkäit redt und gliichziitig vo de Liefertermin profitiert, mues säge, wie beides zäme gaat.",
    "gloss": [
     {
      "de": "de Kommentar",
-     "mevcutTr": "köşe yazısı",
-     "havuz": {
+     "currentTr": "köşe yazısı",
+     "pool": {
       "tr": "yorum",
       "en": "comment"
      }
     },
     {
      "de": "d Haltig",
-     "mevcutTr": "duruş"
+     "currentTr": "duruş"
     },
     {
      "de": "d Souveränität",
-     "mevcutTr": "egemenlik",
-     "havuz": {
+     "currentTr": "egemenlik",
+     "pool": {
       "tr": "egemenlik",
       "en": "sovereignty"
      }
     },
     {
      "de": "de Priis",
-     "mevcutTr": "bedel"
+     "currentTr": "bedel"
     },
     {
      "de": "d Iischränkig",
-     "mevcutTr": "kısıtlama"
+     "currentTr": "kısıtlama"
     },
     {
      "de": "verkürze",
-     "mevcutTr": "basitleştirmek"
+     "currentTr": "basitleştirmek"
     },
     {
      "de": "d Abhängigkäit",
-     "mevcutTr": "bağımlılık"
+     "currentTr": "bağımlılık"
     },
     {
      "de": "s Fazit",
-     "mevcutTr": "sonuç",
-     "havuz": {
+     "currentTr": "sonuç",
+     "pool": {
       "tr": "sonuç",
       "en": "conclusion"
      }
@@ -481,27 +481,27 @@
    "phrases": [
     {
      "de": "Wär emal … erläbt hät, weiss, dass …",
-     "mevcutTr": "Bir kez … yaşayan bilir ki …"
+     "currentTr": "Bir kez … yaşayan bilir ki …"
     },
     {
      "de": "Mini These isch: …",
-     "mevcutTr": "Tezim şu: …"
+     "currentTr": "Tezim şu: …"
     },
     {
      "de": "S stärchschte Gägenargumänt lautet: …",
-     "mevcutTr": "En güçlü karşı argüman şudur: …"
+     "currentTr": "En güçlü karşı argüman şudur: …"
     },
     {
      "de": "Dää Iiwand nimm ich ernscht, wil …",
-     "mevcutTr": "Bu itirazı ciddiye alıyorum çünkü …"
+     "currentTr": "Bu itirazı ciddiye alıyorum çünkü …"
     },
     {
      "de": "Trotzdem übergseet er, dass …",
-     "mevcutTr": "Yine de … gözden kaçıyor."
+     "currentTr": "Yine de … gözden kaçıyor."
     },
     {
      "de": "Mis Fazit isch drum …",
-     "mevcutTr": "Dolayısıyla sonucum …"
+     "currentTr": "Dolayısıyla sonucum …"
     }
    ]
   },
@@ -512,36 +512,36 @@
    "title": "S Mail a de Berufsberater",
    "genre": "İş yazışması",
    "intro": "Hikâyenin son parçası: Amina'nın yerine geçip danışmanına haber vereceksin — ve bir şeyi iptal edeceksin.",
-   "metin": "Ich han e Lehrstell übercho.\n\nDrum möcht ich s Brückeaagebot absäge.\n\nIch wott de Platz früeh freigää, damit en öpper anders überchunt.\n\nGuete Tag Herr Baumann\n\nIch han e Lehrstell übercho — i de Apotheke am Limmatplatz, als Pharma-Assistentin EFZ. Ich fang am 1. Auguscht aa.\n\nDrum möcht ich s Brückeaagebot absäge, wo ich im Februar aagmäldet han. Ich schriib Ine hüt und nöd im Juli, damit de Platz früeh frei wird und en öpper anders überchunt.\n\nGholfe hät mir vor allem zwäi Sache us üsem Gspröch. Erschtens de Satz, dass ich bi sibe Absääge statistisch normal underwägs seig — ich han vorher dänkt, es lieg a mir. Zwäitens de Plan B: Well ich gwüsst han, dass es en git, bin ich is zwäite Gspröch ganz anders gange. Ich han nöd s Gfüel gha, es hängt alles a dere äine Stund.\n\nMerci vilmal für Ihri Underschtützig. Wänn Si emal öpper händ, wo scho vill Absääge übercho hät: Ich verzell gärn, wie s bi mir gloffe isch.\n\nFründlichi Grüess\nAmina Bekele",
+   "text": "Ich han e Lehrstell übercho.\n\nDrum möcht ich s Brückeaagebot absäge.\n\nIch wott de Platz früeh freigää, damit en öpper anders überchunt.\n\nGuete Tag Herr Baumann\n\nIch han e Lehrstell übercho — i de Apotheke am Limmatplatz, als Pharma-Assistentin EFZ. Ich fang am 1. Auguscht aa.\n\nDrum möcht ich s Brückeaagebot absäge, wo ich im Februar aagmäldet han. Ich schriib Ine hüt und nöd im Juli, damit de Platz früeh frei wird und en öpper anders überchunt.\n\nGholfe hät mir vor allem zwäi Sache us üsem Gspröch. Erschtens de Satz, dass ich bi sibe Absääge statistisch normal underwägs seig — ich han vorher dänkt, es lieg a mir. Zwäitens de Plan B: Well ich gwüsst han, dass es en git, bin ich is zwäite Gspröch ganz anders gange. Ich han nöd s Gfüel gha, es hängt alles a dere äine Stund.\n\nMerci vilmal für Ihri Underschtützig. Wänn Si emal öpper händ, wo scho vill Absääge übercho hät: Ich verzell gärn, wie s bi mir gloffe isch.\n\nFründlichi Grüess\nAmina Bekele",
    "gloss": [
     {
      "de": "d Zuesaag",
-     "mevcutTr": "olumlu cevap"
+     "currentTr": "olumlu cevap"
     },
     {
      "de": "absäge",
-     "mevcutTr": "iptal etmek"
+     "currentTr": "iptal etmek"
     },
     {
      "de": "de Platz freigää",
-     "mevcutTr": "yeri boşaltmak"
+     "currentTr": "yeri boşaltmak"
     },
     {
      "de": "sich bedanke",
-     "mevcutTr": "teşekkür etmek"
+     "currentTr": "teşekkür etmek"
     },
     {
      "de": "d Underschtützig",
-     "mevcutTr": "destek"
+     "currentTr": "destek"
     },
     {
      "de": "rächtziitig",
-     "mevcutTr": "zamanında"
+     "currentTr": "zamanında"
     },
     {
      "de": "de Rat",
-     "mevcutTr": "tavsiye",
-     "havuz": {
+     "currentTr": "tavsiye",
+     "pool": {
       "tr": "tavsiye",
       "en": "advice"
      }
@@ -550,23 +550,23 @@
    "phrases": [
     {
      "de": "Ich han e Lehrstell übercho.",
-     "mevcutTr": "Bir çıraklık yeri buldum."
+     "currentTr": "Bir çıraklık yeri buldum."
     },
     {
      "de": "Ich fang am … a.",
-     "mevcutTr": "…'de başlıyorum."
+     "currentTr": "…'de başlıyorum."
     },
     {
      "de": "Drum möcht ich … absäge.",
-     "mevcutTr": "Bu yüzden …'i iptal etmek istiyorum."
+     "currentTr": "Bu yüzden …'i iptal etmek istiyorum."
     },
     {
      "de": "Gholfe hät mir vor allem …",
-     "mevcutTr": "Bana en çok … yardımcı oldu."
+     "currentTr": "Bana en çok … yardımcı oldu."
     },
     {
      "de": "Merci vilmal für Ihri Underschtützig.",
-     "mevcutTr": "Desteğiniz için çok teşekkürler."
+     "currentTr": "Desteğiniz için çok teşekkürler."
     }
    ]
   }

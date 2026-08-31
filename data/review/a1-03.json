@@ -14,7 +14,7 @@
   "tr": "genç",
   "formen": "-n",
   "beispiel": "Ist das ein Film für Jugendliche?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "jung (A1)",
    "der/die Jugendliche (A2)"
   ]
@@ -26,7 +26,7 @@
   "tr": "genç",
   "formen": "",
   "beispiel": "Meine Eltern sind noch jung.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "r/e Jugendliche (A1)",
    "der/die Jugendliche (A2)"
   ]
@@ -38,7 +38,7 @@
   "tr": "erkek çocuk, oğlan",
   "formen": "-n",
   "beispiel": "Der Junge ist neu in unserer Klasse.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Bub (B1)"
   ]
  },
@@ -73,7 +73,7 @@
   "tr": "soğuk",
   "formen": "",
   "beispiel": "Heute ist es sehr kalt./Mir ist kalt.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Kälte (B1)"
   ]
  },
@@ -100,7 +100,7 @@
   "tr": "patates",
   "formen": "-n",
   "beispiel": "Ich möchte keine Kartoffeln.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Erdapfel (B1)"
   ]
  },
@@ -199,7 +199,7 @@
   "tr": "sınav, yazılı sınav",
   "formen": "-en",
   "beispiel": "Ich muss lernen, morgen schreiben wir eine Klassenarbeit.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Schularbeit (B1)"
   ]
  },
@@ -314,7 +314,7 @@
   "tr": "tükenmez kalem",
   "formen": "-",
   "beispiel": "Wo ist mein Kugelschreiber?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Kuli (B1)"
   ]
  },
@@ -397,7 +397,7 @@
   "tr": "bırakmak",
   "formen": "",
   "beispiel": "Ihr könnt die Bücher zu Hause lassen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "hinterlassen (B1)"
   ]
  },
@@ -432,7 +432,7 @@
   "tr": "üzgün",
   "formen": "",
   "beispiel": "Es tut mir leid.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "traurig (A1)"
   ]
  },
@@ -523,7 +523,7 @@
   "tr": "komik, eğlenceli",
   "formen": "",
   "beispiel": "Jan ist nett und lustig.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "witzig (A2)"
   ]
  },
@@ -534,7 +534,7 @@
   "tr": "yapmak",
   "formen": "",
   "beispiel": "Am Samstag machen wir einen Ausflug./ Das macht nichts./Das macht 4,00 Euro.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "tun (A1)"
   ]
  },
@@ -553,7 +553,7 @@
   "tr": "e-posta",
   "formen": "-s",
   "beispiel": "Danke für deine Mail.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die E-Mail (A1)",
    "die (E-)Mail (A2)"
   ]
@@ -573,7 +573,7 @@
   "tr": "insan",
   "formen": "",
   "beispiel": "Hier kann man auch Eis essen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Mensch (A1)"
   ]
  },
@@ -624,7 +624,7 @@
   "tr": "reçel",
   "formen": "-n",
   "beispiel": "Ich esse Brot mit Marmelade.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Konfitüre (B1)"
   ]
  },
@@ -699,7 +699,7 @@
   "tr": "katılmak",
   "formen": "",
   "beispiel": "Warum macht ihr nicht mit?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "teilnehmen (A2)",
    "sich beteiligen (B1)",
    "teilnehmen an (B2)"
@@ -784,7 +784,7 @@
   "tr": "gelecek, bir sonraki",
   "formen": "",
   "beispiel": "Nächsten Monat bekommen wir Zeugnisse.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "nächst- (A1)"
   ]
  },
@@ -883,7 +883,7 @@
   "tr": "not",
   "formen": "-n",
   "beispiel": "Hast du gute Noten in Englisch?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Notiz (A2)"
   ]
  },
@@ -910,7 +910,7 @@
   "tr": "meyve",
   "formen": "(Sg.)",
   "beispiel": "Wir essen immer viel Obst.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Frucht (B1)",
    "Früchte (CH) (B1)"
   ]
@@ -930,7 +930,7 @@
   "tr": "açık",
   "formen": "",
   "beispiel": "Jetzt ist die Tür offen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "geöffnet (A1)"
   ]
  },
@@ -989,7 +989,7 @@
   "tr": "olmak, meydana gelmek",
   "formen": "",
   "beispiel": "Wie ist der Unfall passiert? Was ist passiert?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "vorkommen (B1)"
   ]
  },

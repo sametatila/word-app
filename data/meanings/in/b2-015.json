@@ -1,17 +1,17 @@
 {
- "paket": "b2-015",
+ "packet": "b2-015",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4343,
    "de": "beschleunigen",
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat beschleunigt",
-   "mevcutTr": "hızlandırmak",
-   "mevcutBeispiel": "Die digitale Ablage hat die Bearbeitung spürbar beschleunigt.",
-   "mevcutBeispielTr": "Dijital dosyalama işlem sürecini gözle görülür şekilde hızlandırdı.",
-   "cakisan": [
+   "currentTr": "hızlandırmak",
+   "currentBeispiel": "Die digitale Ablage hat die Bearbeitung spürbar beschleunigt.",
+   "currentBeispielTr": "Dijital dosyalama işlem sürecini gözle görülür şekilde hızlandırdı.",
+   "overlapping": [
     "ankurbeln (B2)"
    ]
   },
@@ -21,9 +21,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat umgesetzt",
-   "mevcutTr": "hayata geçirmek, uygulamak",
-   "mevcutBeispiel": "Die Vorschläge aus der Sitzung wollen wir bis Herbst umsetzen.",
-   "mevcutBeispielTr": "Toplantıdaki önerileri sonbahara kadar hayata geçirmek istiyoruz."
+   "currentTr": "hayata geçirmek, uygulamak",
+   "currentBeispiel": "Die Vorschläge aus der Sitzung wollen wir bis Herbst umsetzen.",
+   "currentBeispielTr": "Toplantıdaki önerileri sonbahara kadar hayata geçirmek istiyoruz."
   },
   {
    "id": 4345,
@@ -31,10 +31,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat durchgeführt",
-   "mevcutTr": "gerçekleştirmek, yürütmek",
-   "mevcutBeispiel": "Die Schulung wird in zwei Gruppen durchgeführt.",
-   "mevcutBeispielTr": "Eğitim iki grup hâlinde gerçekleştirilecek.",
-   "cakisan": [
+   "currentTr": "gerçekleştirmek, yürütmek",
+   "currentBeispiel": "Die Schulung wird in zwei Gruppen durchgeführt.",
+   "currentBeispielTr": "Eğitim iki grup hâlinde gerçekleştirilecek.",
+   "overlapping": [
     "realisieren (B1)",
     "verwirklichen (B2)"
    ]
@@ -45,10 +45,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat überwacht",
-   "mevcutTr": "denetlemek, izlemek",
-   "mevcutBeispiel": "Ein Kollege überwacht laufend die Einhaltung der Fristen.",
-   "mevcutBeispielTr": "Bir meslektaşımız sürelere uyulmasını sürekli izliyor.",
-   "cakisan": [
+   "currentTr": "denetlemek, izlemek",
+   "currentBeispiel": "Ein Kollege überwacht laufend die Einhaltung der Fristen.",
+   "currentBeispielTr": "Bir meslektaşımız sürelere uyulmasını sürekli izliyor.",
+   "overlapping": [
     "beaufsichtigen (B2)"
    ]
   },
@@ -58,9 +58,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "derhâl, gecikmeksizin",
-   "mevcutBeispiel": "Änderungen sind der Personalabteilung unverzüglich mitzuteilen.",
-   "mevcutBeispielTr": "Değişiklikler insan kaynaklarına derhâl bildirilmelidir."
+   "currentTr": "derhâl, gecikmeksizin",
+   "currentBeispiel": "Änderungen sind der Personalabteilung unverzüglich mitzuteilen.",
+   "currentBeispielTr": "Değişiklikler insan kaynaklarına derhâl bildirilmelidir."
   },
   {
    "id": 4348,
@@ -68,9 +68,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "baş sorumlu olarak, öncülük eden",
-   "mevcutBeispiel": "Unsere Abteilung ist bei diesem Projekt federführend.",
-   "mevcutBeispielTr": "Bu projede baş sorumlu bizim bölümümüz."
+   "currentTr": "baş sorumlu olarak, öncülük eden",
+   "currentBeispiel": "Unsere Abteilung ist bei diesem Projekt federführend.",
+   "currentBeispielTr": "Bu projede baş sorumlu bizim bölümümüz."
   },
   {
    "id": 4349,
@@ -78,9 +78,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kısa süre içinde, vakit geçirmeden",
-   "mevcutBeispiel": "Bitte beantworten Sie die Anfrage möglichst zeitnah.",
-   "mevcutBeispielTr": "Lütfen talebi mümkün olduğunca kısa sürede yanıtlayın."
+   "currentTr": "kısa süre içinde, vakit geçirmeden",
+   "currentBeispiel": "Bitte beantworten Sie die Anfrage möglichst zeitnah.",
+   "currentBeispielTr": "Lütfen talebi mümkün olduğunca kısa sürede yanıtlayın."
   },
   {
    "id": 4350,
@@ -88,9 +88,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "son anda, kısa süre kala; kısa vadeli",
-   "mevcutBeispiel": "Der Termin wurde kurzfristig auf Donnerstag verlegt.",
-   "mevcutBeispielTr": "Randevu son anda perşembeye alındı."
+   "currentTr": "son anda, kısa süre kala; kısa vadeli",
+   "currentBeispiel": "Der Termin wurde kurzfristig auf Donnerstag verlegt.",
+   "currentBeispielTr": "Randevu son anda perşembeye alındı."
   },
   {
    "id": 4351,
@@ -98,9 +98,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "hızlıca, aksatmadan",
-   "mevcutBeispiel": "Wenn alle mitziehen, kommen wir zügig voran.",
-   "mevcutBeispielTr": "Herkes katkı verirse hızlıca ilerleriz."
+   "currentTr": "hızlıca, aksatmadan",
+   "currentBeispiel": "Wenn alle mitziehen, kommen wir zügig voran.",
+   "currentBeispielTr": "Herkes katkı verirse hızlıca ilerleriz."
   },
   {
    "id": 4352,
@@ -108,10 +108,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "eksiksiz, kesintisiz",
-   "mevcutBeispiel": "Die Bearbeitung jedes Vorgangs muss lückenlos dokumentiert sein.",
-   "mevcutBeispielTr": "Her işlemin görülmesi eksiksiz biçimde belgelenmiş olmalı.",
-   "cakisan": [
+   "currentTr": "eksiksiz, kesintisiz",
+   "currentBeispiel": "Die Bearbeitung jedes Vorgangs muss lückenlos dokumentiert sein.",
+   "currentBeispielTr": "Her işlemin görülmesi eksiksiz biçimde belgelenmiş olmalı.",
+   "overlapping": [
     "vollständig (A2)"
    ]
   },
@@ -121,9 +121,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sorunsuz, pürüzsüz",
-   "mevcutBeispiel": "Die Übergabe an das neue Team verlief reibungslos.",
-   "mevcutBeispielTr": "Yeni ekibe devir teslim sorunsuz geçti."
+   "currentTr": "sorunsuz, pürüzsüz",
+   "currentBeispiel": "Die Übergabe an das neue Team verlief reibungslos.",
+   "currentBeispielTr": "Yeni ekibe devir teslim sorunsuz geçti."
   },
   {
    "id": 4354,
@@ -131,9 +131,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "öncelikli, öncelikle",
-   "mevcutBeispiel": "Beschwerden von Kunden werden vorrangig bearbeitet.",
-   "mevcutBeispielTr": "Müşteri şikâyetleri öncelikli olarak ele alınır."
+   "currentTr": "öncelikli, öncelikle",
+   "currentBeispiel": "Beschwerden von Kunden werden vorrangig bearbeitet.",
+   "currentBeispielTr": "Müşteri şikâyetleri öncelikli olarak ele alınır."
   },
   {
    "id": 4355,
@@ -141,9 +141,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "bölümler arası, birimleri kapsayan",
-   "mevcutBeispiel": "Für solche Fragen brauchen wir eine abteilungsübergreifende Arbeitsgruppe.",
-   "mevcutBeispielTr": "Bu tür sorular için bölümler arası bir çalışma grubuna ihtiyacımız var."
+   "currentTr": "bölümler arası, birimleri kapsayan",
+   "currentBeispiel": "Für solche Fragen brauchen wir eine abteilungsübergreifende Arbeitsgruppe.",
+   "currentBeispielTr": "Bu tür sorular için bölümler arası bir çalışma grubuna ihtiyacımız var."
   },
   {
    "id": 4356,
@@ -151,10 +151,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "zamanında, tarihine uygun",
-   "mevcutBeispiel": "Die Unterlagen gingen termingerecht bei der Behörde ein.",
-   "mevcutBeispielTr": "Belgeler kuruma zamanında ulaştı.",
-   "cakisan": [
+   "currentTr": "zamanında, tarihine uygun",
+   "currentBeispiel": "Die Unterlagen gingen termingerecht bei der Behörde ein.",
+   "currentBeispielTr": "Belgeler kuruma zamanında ulaştı.",
+   "overlapping": [
     "rechtzeitig (B1)"
    ]
   },
@@ -164,10 +164,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yetiştirme, ekim, tarım",
-   "mevcutBeispiel": "Der Anbau von Mais lohnt sich auf diesen Böden kaum noch.",
-   "mevcutBeispielTr": "Bu topraklarda mısır yetiştirmek artık pek kârlı değil.",
-   "cakisan": [
+   "currentTr": "yetiştirme, ekim, tarım",
+   "currentBeispiel": "Der Anbau von Mais lohnt sich auf diesen Böden kaum noch.",
+   "currentBeispielTr": "Bu topraklarda mısır yetiştirmek artık pek kârlı değil.",
+   "overlapping": [
     "die Erziehung (B1)"
    ]
   },
@@ -177,9 +177,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "hayvancılık, besicilik",
-   "mevcutBeispiel": "In dieser Region lebt fast jeder zweite Betrieb von der Viehzucht.",
-   "mevcutBeispielTr": "Bu bölgede işletmelerin neredeyse yarısı hayvancılıkla geçiniyor."
+   "currentTr": "hayvancılık, besicilik",
+   "currentBeispiel": "In dieser Region lebt fast jeder zweite Betrieb von der Viehzucht.",
+   "currentBeispielTr": "Bu bölgede işletmelerin neredeyse yarısı hayvancılıkla geçiniyor."
   },
   {
    "id": 4359,
@@ -187,9 +187,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nutztiere",
-   "mevcutTr": "çiftlik hayvanı, besi hayvanı",
-   "mevcutBeispiel": "Für Nutztiere gelten strengere Vorschriften als für Haustiere.",
-   "mevcutBeispielTr": "Çiftlik hayvanları için ev hayvanlarından daha katı kurallar geçerli."
+   "currentTr": "çiftlik hayvanı, besi hayvanı",
+   "currentBeispiel": "Für Nutztiere gelten strengere Vorschriften als für Haustiere.",
+   "currentBeispielTr": "Çiftlik hayvanları için ev hayvanlarından daha katı kurallar geçerli."
   },
   {
    "id": 4360,
@@ -197,10 +197,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Dünger",
-   "mevcutTr": "gübre",
-   "mevcutBeispiel": "Zu viel Dünger belastet das Grundwasser in der ganzen Gegend.",
-   "mevcutBeispielTr": "Aşırı gübre, bütün yörenin yeraltı suyunu kirletiyor.",
-   "cakisan": [
+   "currentTr": "gübre",
+   "currentBeispiel": "Zu viel Dünger belastet das Grundwasser in der ganzen Gegend.",
+   "currentBeispielTr": "Aşırı gübre, bütün yörenin yeraltı suyunu kirletiyor.",
+   "overlapping": [
     "das Düngemittel (B2)"
    ]
   },
@@ -210,9 +210,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nährstoffe",
-   "mevcutTr": "besin maddesi, besleyici madde",
-   "mevcutBeispiel": "Beim langen Kochen gehen viele Nährstoffe verloren.",
-   "mevcutBeispielTr": "Uzun süre pişirmede birçok besin maddesi kayboluyor."
+   "currentTr": "besin maddesi, besleyici madde",
+   "currentBeispiel": "Beim langen Kochen gehen viele Nährstoffe verloren.",
+   "currentBeispielTr": "Uzun süre pişirmede birçok besin maddesi kayboluyor."
   },
   {
    "id": 4362,
@@ -220,9 +220,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ballaststoffe",
-   "mevcutTr": "lif, posa",
-   "mevcutBeispiel": "Vollkornbrot enthält deutlich mehr Ballaststoffe als Weißbrot.",
-   "mevcutBeispielTr": "Tam tahıllı ekmek beyaz ekmekten belirgin biçimde daha fazla lif içerir."
+   "currentTr": "lif, posa",
+   "currentBeispiel": "Vollkornbrot enthält deutlich mehr Ballaststoffe als Weißbrot.",
+   "currentBeispielTr": "Tam tahıllı ekmek beyaz ekmekten belirgin biçimde daha fazla lif içerir."
   },
   {
    "id": 4363,
@@ -230,9 +230,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Eiweiße",
-   "mevcutTr": "protein, yumurta akı",
-   "mevcutBeispiel": "Linsen sind eine günstige Quelle für pflanzliches Eiweiß.",
-   "mevcutBeispielTr": "Mercimek, bitkisel protein için ucuz bir kaynaktır."
+   "currentTr": "protein, yumurta akı",
+   "currentBeispiel": "Linsen sind eine günstige Quelle für pflanzliches Eiweiß.",
+   "currentBeispielTr": "Mercimek, bitkisel protein için ucuz bir kaynaktır."
   },
   {
    "id": 4364,
@@ -240,9 +240,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Getreide",
-   "mevcutTr": "tahıl, hububat",
-   "mevcutBeispiel": "Das Getreide wurde wegen des Regens zu spät geerntet.",
-   "mevcutBeispielTr": "Tahıl, yağmur yüzünden çok geç hasat edildi."
+   "currentTr": "tahıl, hububat",
+   "currentBeispiel": "Das Getreide wurde wegen des Regens zu spät geerntet.",
+   "currentBeispielTr": "Tahıl, yağmur yüzünden çok geç hasat edildi."
   },
   {
    "id": 4365,
@@ -250,9 +250,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Hülsenfrüchte",
-   "mevcutTr": "baklagil",
-   "mevcutBeispiel": "Hülsenfrüchte verbessern nebenbei die Qualität des Bodens.",
-   "mevcutBeispielTr": "Baklagiller ayrıca toprağın kalitesini de iyileştirir."
+   "currentTr": "baklagil",
+   "currentBeispiel": "Hülsenfrüchte verbessern nebenbei die Qualität des Bodens.",
+   "currentBeispielTr": "Baklagiller ayrıca toprağın kalitesini de iyileştirir."
   },
   {
    "id": 4366,
@@ -260,9 +260,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Erzeuger",
-   "mevcutTr": "üretici (tarım, ham ürün), yetiştirici",
-   "mevcutBeispiel": "Vom Endpreis bleibt dem Erzeuger oft nur ein kleiner Teil.",
-   "mevcutBeispielTr": "Nihai fiyattan üreticiye çoğu zaman küçük bir pay kalıyor."
+   "currentTr": "üretici (tarım, ham ürün), yetiştirici",
+   "currentBeispiel": "Vom Endpreis bleibt dem Erzeuger oft nur ein kleiner Teil.",
+   "currentBeispielTr": "Nihai fiyattan üreticiye çoğu zaman küçük bir pay kalıyor."
   },
   {
    "id": 4367,
@@ -270,9 +270,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verpackungen",
-   "mevcutTr": "ambalaj, paketleme",
-   "mevcutBeispiel": "Die neue Verpackung besteht vollständig aus recyceltem Papier.",
-   "mevcutBeispielTr": "Yeni ambalaj tamamen geri dönüştürülmüş kâğıttan oluşuyor."
+   "currentTr": "ambalaj, paketleme",
+   "currentBeispiel": "Die neue Verpackung besteht vollständig aus recyceltem Papier.",
+   "currentBeispielTr": "Yeni ambalaj tamamen geri dönüştürülmüş kâğıttan oluşuyor."
   },
   {
    "id": 4368,
@@ -280,9 +280,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kennzeichnungen",
-   "mevcutTr": "işaretleme, etiketleme, tanımlama",
-   "mevcutBeispiel": "Eine klare Kennzeichnung der Herkunft ist seit Januar Pflicht.",
-   "mevcutBeispielTr": "Menşein açıkça belirtilmesi ocaktan beri zorunlu."
+   "currentTr": "işaretleme, etiketleme, tanımlama",
+   "currentBeispiel": "Eine klare Kennzeichnung der Herkunft ist seit Januar Pflicht.",
+   "currentBeispielTr": "Menşein açıkça belirtilmesi ocaktan beri zorunlu."
   },
   {
    "id": 4369,
@@ -290,9 +290,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Etiketten",
-   "mevcutTr": "etiket",
-   "mevcutBeispiel": "Auf dem Etikett stehen alle Zutaten in absteigender Menge.",
-   "mevcutBeispielTr": "Etikette bütün içerikler miktarı azalan sırayla yazıyor."
+   "currentTr": "etiket",
+   "currentBeispiel": "Auf dem Etikett stehen alle Zutaten in absteigender Menge.",
+   "currentBeispielTr": "Etikette bütün içerikler miktarı azalan sırayla yazıyor."
   },
   {
    "id": 4370,
@@ -300,9 +300,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Mindesthaltbarkeitsdaten",
-   "mevcutTr": "tavsiye edilen tüketim tarihi",
-   "mevcutBeispiel": "Viele Joghurts sind nach dem Mindesthaltbarkeitsdatum noch genießbar.",
-   "mevcutBeispielTr": "Birçok yoğurt, tavsiye edilen tüketim tarihinden sonra da yenebilir."
+   "currentTr": "tavsiye edilen tüketim tarihi",
+   "currentBeispiel": "Viele Joghurts sind nach dem Mindesthaltbarkeitsdatum noch genießbar.",
+   "currentBeispielTr": "Birçok yoğurt, tavsiye edilen tüketim tarihinden sonra da yenebilir."
   },
   {
    "id": 4371,
@@ -310,9 +310,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "tüketicinin korunması, tüketici hakları",
-   "mevcutBeispiel": "Der Verbraucherschutz fordert strengere Regeln für Werbung mit Kindern.",
-   "mevcutBeispielTr": "Tüketici koruma kurumu, çocuklu reklamlar için daha sıkı kurallar istiyor."
+   "currentTr": "tüketicinin korunması, tüketici hakları",
+   "currentBeispiel": "Der Verbraucherschutz fordert strengere Regeln für Werbung mit Kindern.",
+   "currentBeispielTr": "Tüketici koruma kurumu, çocuklu reklamlar için daha sıkı kurallar istiyor."
   },
   {
    "id": 4372,
@@ -320,9 +320,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sorten",
-   "mevcutTr": "çeşit, tür, cins",
-   "mevcutBeispiel": "Alte Sorten sind robuster, bringen aber weniger Ernte.",
-   "mevcutBeispielTr": "Eski çeşitler daha dayanıklı, ama daha az ürün veriyor."
+   "currentTr": "çeşit, tür, cins",
+   "currentBeispiel": "Alte Sorten sind robuster, bringen aber weniger Ernte.",
+   "currentBeispielTr": "Eski çeşitler daha dayanıklı, ama daha az ürün veriyor."
   },
   {
    "id": 4373,
@@ -330,9 +330,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Genossenschaften",
-   "mevcutTr": "kooperatif, birlik",
-   "mevcutBeispiel": "Die Milchbauern haben sich zu einer Genossenschaft zusammengeschlossen.",
-   "mevcutBeispielTr": "Sütçüler bir kooperatif çatısı altında birleşti."
+   "currentTr": "kooperatif, birlik",
+   "currentBeispiel": "Die Milchbauern haben sich zu einer Genossenschaft zusammengeschlossen.",
+   "currentBeispielTr": "Sütçüler bir kooperatif çatısı altında birleşti."
   },
   {
    "id": 4374,
@@ -340,9 +340,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zwischenhändler",
-   "mevcutTr": "aracı, komisyoncu",
-   "mevcutBeispiel": "Ohne Zwischenhändler bleibt den Bauern ein höherer Anteil.",
-   "mevcutBeispielTr": "Aracı olmadan çiftçilere daha yüksek bir pay kalıyor."
+   "currentTr": "aracı, komisyoncu",
+   "currentBeispiel": "Ohne Zwischenhändler bleibt den Bauern ein höherer Anteil.",
+   "currentBeispielTr": "Aracı olmadan çiftçilere daha yüksek bir pay kalıyor."
   },
   {
    "id": 4375,
@@ -350,9 +350,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vermarktungen",
-   "mevcutTr": "pazarlama, satışa sunma",
-   "mevcutBeispiel": "Die Vermarktung regionaler Produkte läuft inzwischen über eine eigene Plattform.",
-   "mevcutBeispielTr": "Yöresel ürünlerin pazarlaması artık kendi platformu üzerinden yürüyor."
+   "currentTr": "pazarlama, satışa sunma",
+   "currentBeispiel": "Die Vermarktung regionaler Produkte läuft inzwischen über eine eigene Plattform.",
+   "currentBeispielTr": "Yöresel ürünlerin pazarlaması artık kendi platformu üzerinden yürüyor."
   },
   {
    "id": 4376,
@@ -360,10 +360,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Absätze",
-   "mevcutTr": "satış, sürüm",
-   "mevcutBeispiel": "Der Absatz von Hafermilch ist im letzten Jahr stark gestiegen.",
-   "mevcutBeispielTr": "Yulaf sütünün satışı geçen yıl büyük ölçüde arttı.",
-   "cakisan": [
+   "currentTr": "satış, sürüm",
+   "currentBeispiel": "Der Absatz von Hafermilch ist im letzten Jahr stark gestiegen.",
+   "currentBeispielTr": "Yulaf sütünün satışı geçen yıl büyük ölçüde arttı.",
+   "overlapping": [
     "der Vertrieb (B2)"
    ]
   },
@@ -373,9 +373,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "gıda israfı",
-   "mevcutBeispiel": "Gegen Lebensmittelverschwendung hilft vor allem bessere Planung im Haushalt.",
-   "mevcutBeispielTr": "Gıda israfına karşı en çok evde daha iyi planlama yardımcı oluyor."
+   "currentTr": "gıda israfı",
+   "currentBeispiel": "Gegen Lebensmittelverschwendung hilft vor allem bessere Planung im Haushalt.",
+   "currentBeispielTr": "Gıda israfına karşı en çok evde daha iyi planlama yardımcı oluyor."
   },
   {
    "id": 4378,
@@ -383,9 +383,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "bertaraf, atıkların yok edilmesi",
-   "mevcutBeispiel": "Die Entsorgung der abgelaufenen Ware kostet den Supermarkt viel Geld.",
-   "mevcutBeispielTr": "Tarihi geçmiş malların bertarafı süpermarkete çok pahalıya mal oluyor."
+   "currentTr": "bertaraf, atıkların yok edilmesi",
+   "currentBeispiel": "Die Entsorgung der abgelaufenen Ware kostet den Supermarkt viel Geld.",
+   "currentBeispielTr": "Tarihi geçmiş malların bertarafı süpermarkete çok pahalıya mal oluyor."
   },
   {
    "id": 4379,
@@ -393,10 +393,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Landwirte",
-   "mevcutTr": "çiftçi, tarım üreticisi",
-   "mevcutBeispiel": "Immer weniger Landwirte finden einen Nachfolger für ihren Hof.",
-   "mevcutBeispielTr": "Giderek daha az çiftçi çiftliği için bir devralan bulabiliyor.",
-   "cakisan": [
+   "currentTr": "çiftçi, tarım üreticisi",
+   "currentBeispiel": "Immer weniger Landwirte finden einen Nachfolger für ihren Hof.",
+   "currentBeispielTr": "Giderek daha az çiftçi çiftliği için bir devralan bulabiliyor.",
+   "overlapping": [
     "der Bauer (B1)"
    ]
   },
@@ -406,9 +406,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Siegel",
-   "mevcutTr": "sertifika etiketi, mühür, damga",
-   "mevcutBeispiel": "Das grüne Siegel sagt allein noch nichts über die Tierhaltung aus.",
-   "mevcutBeispielTr": "Yeşil damga tek başına hayvan yetiştiriciliği hakkında hiçbir şey söylemiyor."
+   "currentTr": "sertifika etiketi, mühür, damga",
+   "currentBeispiel": "Das grüne Siegel sagt allein noch nichts über die Tierhaltung aus.",
+   "currentBeispielTr": "Yeşil damga tek başına hayvan yetiştiriciliği hakkında hiçbir şey söylemiyor."
   },
   {
    "id": 4381,
@@ -416,10 +416,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rückstände",
-   "mevcutTr": "kalıntı, artık",
-   "mevcutBeispiel": "In den Proben fanden die Prüfer keine Rückstände von Pestiziden.",
-   "mevcutBeispielTr": "Numunelerde denetçiler hiçbir pestisit kalıntısı bulmadı.",
-   "cakisan": [
+   "currentTr": "kalıntı, artık",
+   "currentBeispiel": "In den Proben fanden die Prüfer keine Rückstände von Pestiziden.",
+   "currentBeispielTr": "Numunelerde denetçiler hiçbir pestisit kalıntısı bulmadı.",
+   "overlapping": [
     "das Relikt (C1)"
    ]
   },
@@ -429,9 +429,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Pestizide",
-   "mevcutTr": "tarım ilacı, pestisit",
-   "mevcutBeispiel": "Der Einsatz bestimmter Pestizide ist in der EU inzwischen verboten.",
-   "mevcutBeispielTr": "Bazı tarım ilaçlarının kullanımı AB'de artık yasak."
+   "currentTr": "tarım ilacı, pestisit",
+   "currentBeispiel": "Der Einsatz bestimmter Pestizide ist in der EU inzwischen verboten.",
+   "currentBeispielTr": "Bazı tarım ilaçlarının kullanımı AB'de artık yasak."
   },
   {
    "id": 4383,
@@ -439,9 +439,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Pflanzenschutzmittel",
-   "mevcutTr": "bitki koruma ilacı, zirai ilaç",
-   "mevcutBeispiel": "Neue Pflanzenschutzmittel müssen ein langes Zulassungsverfahren durchlaufen.",
-   "mevcutBeispielTr": "Yeni bitki koruma ilaçları uzun bir ruhsat sürecinden geçmek zorunda."
+   "currentTr": "bitki koruma ilacı, zirai ilaç",
+   "currentBeispiel": "Neue Pflanzenschutzmittel müssen ein langes Zulassungsverfahren durchlaufen.",
+   "currentBeispielTr": "Yeni bitki koruma ilaçları uzun bir ruhsat sürecinden geçmek zorunda."
   },
   {
    "id": 4384,
@@ -449,10 +449,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schädlinge",
-   "mevcutTr": "zararlı, haşere",
-   "mevcutBeispiel": "Ein einziger Schädling kann die halbe Ernte vernichten.",
-   "mevcutBeispielTr": "Tek bir zararlı hasadın yarısını yok edebilir.",
-   "cakisan": [
+   "currentTr": "zararlı, haşere",
+   "currentBeispiel": "Ein einziger Schädling kann die halbe Ernte vernichten.",
+   "currentBeispielTr": "Tek bir zararlı hasadın yarısını yok edebilir.",
+   "overlapping": [
     "schädlich (A2)"
    ]
   },
@@ -462,9 +462,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Unkräuter",
-   "mevcutTr": "yabani ot",
-   "mevcutBeispiel": "Auf dem Bioacker wird das Unkraut mechanisch entfernt.",
-   "mevcutBeispielTr": "Organik tarlada yabani otlar mekanik olarak temizleniyor."
+   "currentTr": "yabani ot",
+   "currentBeispiel": "Auf dem Bioacker wird das Unkraut mechanisch entfernt.",
+   "currentBeispielTr": "Organik tarlada yabani otlar mekanik olarak temizleniyor."
   },
   {
    "id": 4386,
@@ -472,9 +472,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bewässerungen",
-   "mevcutTr": "sulama",
-   "mevcutBeispiel": "Ohne künstliche Bewässerung wäre hier kein Gemüseanbau möglich.",
-   "mevcutBeispielTr": "Yapay sulama olmadan burada sebze yetiştirmek mümkün olmazdı."
+   "currentTr": "sulama",
+   "currentBeispiel": "Ohne künstliche Bewässerung wäre hier kein Gemüseanbau möglich.",
+   "currentBeispielTr": "Yapay sulama olmadan burada sebze yetiştirmek mümkün olmazdı."
   },
   {
    "id": 4387,
@@ -482,9 +482,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Missernten",
-   "mevcutTr": "ürün kıtlığı, kötü hasat",
-   "mevcutBeispiel": "Nach der zweiten Missernte in Folge gab der Betrieb auf.",
-   "mevcutBeispielTr": "Üst üste ikinci kötü hasattan sonra işletme pes etti."
+   "currentTr": "ürün kıtlığı, kötü hasat",
+   "currentBeispiel": "Nach der zweiten Missernte in Folge gab der Betrieb auf.",
+   "currentBeispielTr": "Üst üste ikinci kötü hasattan sonra işletme pes etti."
   },
   {
    "id": 4388,
@@ -492,9 +492,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fruchtfolgen",
-   "mevcutTr": "ekim nöbeti, münavebe",
-   "mevcutBeispiel": "Eine durchdachte Fruchtfolge hält den Acker über Jahre fruchtbar.",
-   "mevcutBeispielTr": "İyi düşünülmüş bir ekim nöbeti tarlayı yıllarca verimli tutar."
+   "currentTr": "ekim nöbeti, münavebe",
+   "currentBeispiel": "Eine durchdachte Fruchtfolge hält den Acker über Jahre fruchtbar.",
+   "currentBeispielTr": "İyi düşünülmüş bir ekim nöbeti tarlayı yıllarca verimli tutar."
   },
   {
    "id": 4389,
@@ -502,9 +502,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Monokulturen",
-   "mevcutTr": "tek ürün tarımı, monokültür",
-   "mevcutBeispiel": "Monokulturen sind besonders anfällig für Krankheiten und Insekten.",
-   "mevcutBeispielTr": "Tek ürün tarımı hastalıklara ve böceklere karşı özellikle savunmasızdır."
+   "currentTr": "tek ürün tarımı, monokültür",
+   "currentBeispiel": "Monokulturen sind besonders anfällig für Krankheiten und Insekten.",
+   "currentBeispielTr": "Tek ürün tarımı hastalıklara ve böceklere karşı özellikle savunmasızdır."
   },
   {
    "id": 4390,
@@ -512,9 +512,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Erosionen",
-   "mevcutTr": "erozyon, aşınma",
-   "mevcutBeispiel": "Hecken am Feldrand schützen die Hänge vor Erosion.",
-   "mevcutBeispielTr": "Tarla kenarındaki çalılar yamaçları erozyondan korur."
+   "currentTr": "erozyon, aşınma",
+   "currentBeispiel": "Hecken am Feldrand schützen die Hänge vor Erosion.",
+   "currentBeispielTr": "Tarla kenarındaki çalılar yamaçları erozyondan korur."
   },
   {
    "id": 4391,
@@ -522,9 +522,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Weiden",
-   "mevcutTr": "mera, otlak",
-   "mevcutBeispiel": "Im Sommer stehen die Kühe den ganzen Tag auf der Weide.",
-   "mevcutBeispielTr": "Yazın inekler bütün gün merada duruyor."
+   "currentTr": "mera, otlak",
+   "currentBeispiel": "Im Sommer stehen die Kühe den ganzen Tag auf der Weide.",
+   "currentBeispielTr": "Yazın inekler bütün gün merada duruyor."
   },
   {
    "id": 4392,
@@ -532,9 +532,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "hayvan refahı",
-   "mevcutBeispiel": "Für mehr Tierwohl wären viele Kunden bereit, mehr zu zahlen.",
-   "mevcutBeispielTr": "Daha fazla hayvan refahı için birçok müşteri fazla ödemeye razı olurdu."
+   "currentTr": "hayvan refahı",
+   "currentBeispiel": "Für mehr Tierwohl wären viele Kunden bereit, mehr zu zahlen.",
+   "currentBeispielTr": "Daha fazla hayvan refahı için birçok müşteri fazla ödemeye razı olurdu."
   }
  ]
 }

@@ -1,16 +1,16 @@
 {
- "paket": "c1-040",
+ "packet": "c1-040",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 7203,
    "de": "modellieren",
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat modelliert",
-   "mevcutTr": "modellemek",
-   "mevcutBeispiel": "Die Forscher modellieren den Verlauf unter drei verschiedenen Szenarien.",
-   "mevcutBeispielTr": "Araştırmacılar süreci üç farklı senaryo altında modelliyor."
+   "currentTr": "modellemek",
+   "currentBeispiel": "Die Forscher modellieren den Verlauf unter drei verschiedenen Szenarien.",
+   "currentBeispielTr": "Araştırmacılar süreci üç farklı senaryo altında modelliyor."
   },
   {
    "id": 7204,
@@ -18,9 +18,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat simuliert",
-   "mevcutTr": "benzetim yapmak, simüle etmek",
-   "mevcutBeispiel": "Das Programm simuliert die Entwicklung über einen Zeitraum von 50 Jahren.",
-   "mevcutBeispielTr": "Program, gelişimi elli yıllık bir süre için simüle ediyor."
+   "currentTr": "benzetim yapmak, simüle etmek",
+   "currentBeispiel": "Das Programm simuliert die Entwicklung über einen Zeitraum von 50 Jahren.",
+   "currentBeispielTr": "Program, gelişimi elli yıllık bir süre için simüle ediyor."
   },
   {
    "id": 7205,
@@ -28,9 +28,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yaklaşık olarak, kabaca",
-   "mevcutBeispiel": "Der Verlauf lässt sich näherungsweise durch eine Gerade beschreiben.",
-   "mevcutBeispielTr": "Seyir yaklaşık olarak bir doğruyla betimlenebilir."
+   "currentTr": "yaklaşık olarak, kabaca",
+   "currentBeispiel": "Der Verlauf lässt sich näherungsweise durch eine Gerade beschreiben.",
+   "currentBeispielTr": "Seyir yaklaşık olarak bir doğruyla betimlenebilir."
   },
   {
    "id": 7206,
@@ -38,9 +38,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "eğilim olarak, genel olarak",
-   "mevcutBeispiel": "Jüngere Befragte antworten tendenziell kritischer als ältere.",
-   "mevcutBeispielTr": "Genç katılımcılar eğilim olarak yaşlılardan daha eleştirel yanıt veriyor."
+   "currentTr": "eğilim olarak, genel olarak",
+   "currentBeispiel": "Jüngere Befragte antworten tendenziell kritischer als ältere.",
+   "currentBeispielTr": "Genç katılımcılar eğilim olarak yaşlılardan daha eleştirel yanıt veriyor."
   },
   {
    "id": 7207,
@@ -48,9 +48,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "nicel, sayısal",
-   "mevcutBeispiel": "Die Arbeit verbindet quantitative Verfahren mit ausführlichen Interviews.",
-   "mevcutBeispielTr": "Çalışma nicel yöntemleri ayrıntılı görüşmelerle birleştiriyor."
+   "currentTr": "nicel, sayısal",
+   "currentBeispiel": "Die Arbeit verbindet quantitative Verfahren mit ausführlichen Interviews.",
+   "currentBeispielTr": "Çalışma nicel yöntemleri ayrıntılı görüşmelerle birleştiriyor."
   },
   {
    "id": 7208,
@@ -58,9 +58,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "nitel",
-   "mevcutBeispiel": "Für diese Fragestellung eignet sich ein qualitativer Zugang besser.",
-   "mevcutBeispielTr": "Bu soru için nitel bir yaklaşım daha uygun."
+   "currentTr": "nitel",
+   "currentBeispiel": "Für diese Fragestellung eignet sich ein qualitativer Zugang besser.",
+   "currentBeispielTr": "Bu soru için nitel bir yaklaşım daha uygun."
   },
   {
    "id": 7209,
@@ -68,9 +68,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yöntemsel, yöntem açısından",
-   "mevcutBeispiel": "Die Studie weist mehrere methodische Schwächen auf.",
-   "mevcutBeispielTr": "Çalışma birçok yöntemsel zaaf taşıyor."
+   "currentTr": "yöntemsel, yöntem açısından",
+   "currentBeispiel": "Die Studie weist mehrere methodische Schwächen auf.",
+   "currentBeispielTr": "Çalışma birçok yöntemsel zaaf taşıyor."
   },
   {
    "id": 7210,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "veri etiği",
-   "mevcutBeispiel": "Ohne eine belastbare Datenethik bleibt jede Digitalstrategie moralisch blind.",
-   "mevcutBeispielTr": "Sağlam bir veri etiği olmadan her dijitalleşme stratejisi ahlaki olarak kördür."
+   "currentTr": "veri etiği",
+   "currentBeispiel": "Ohne eine belastbare Datenethik bleibt jede Digitalstrategie moralisch blind.",
+   "currentBeispielTr": "Sağlam bir veri etiği olmadan her dijitalleşme stratejisi ahlaki olarak kördür."
   },
   {
    "id": 7211,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Überwachungen",
-   "mevcutTr": "gözetim, izleme",
-   "mevcutBeispiel": "Flächendeckende Überwachung verändert das Verhalten der Menschen im öffentlichen Raum.",
-   "mevcutBeispielTr": "Yaygın gözetim, insanların kamusal alandaki davranışını değiştiriyor."
+   "currentTr": "gözetim, izleme",
+   "currentBeispiel": "Flächendeckende Überwachung verändert das Verhalten der Menschen im öffentlichen Raum.",
+   "currentBeispielTr": "Yaygın gözetim, insanların kamusal alandaki davranışını değiştiriyor."
   },
   {
    "id": 7212,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "veri minimizasyonu, az veri toplama ilkesi",
-   "mevcutBeispiel": "Datensparsamkeit gilt als Leitprinzip, wird in der Praxis aber selten eingehalten.",
-   "mevcutBeispielTr": "Veri asgariliği bir temel ilke sayılıyor ama uygulamada nadiren gözetiliyor."
+   "currentTr": "veri minimizasyonu, az veri toplama ilkesi",
+   "currentBeispiel": "Datensparsamkeit gilt als Leitprinzip, wird in der Praxis aber selten eingehalten.",
+   "currentBeispielTr": "Veri asgariliği bir temel ilke sayılıyor ama uygulamada nadiren gözetiliyor."
   },
   {
    "id": 7213,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "anlaşılabilirlik, izlenebilirlik",
-   "mevcutBeispiel": "Bei komplexen Modellen leidet die Nachvollziehbarkeit einzelner Entscheidungen erheblich.",
-   "mevcutBeispielTr": "Karmaşık modellerde tek tek kararların izlenebilirliği ciddi biçimde zayıflıyor."
+   "currentTr": "anlaşılabilirlik, izlenebilirlik",
+   "currentBeispiel": "Bei komplexen Modellen leidet die Nachvollziehbarkeit einzelner Entscheidungen erheblich.",
+   "currentBeispielTr": "Karmaşık modellerde tek tek kararların izlenebilirliği ciddi biçimde zayıflıyor."
   },
   {
    "id": 7214,
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "amaca bağlılık ilkesi",
-   "mevcutBeispiel": "Die Zweckbindung erlaubt keine spätere Auswertung zu ganz anderen Zielen.",
-   "mevcutBeispielTr": "Amaca bağlılık ilkesi, verinin sonradan bambaşka amaçlarla işlenmesine izin vermez."
+   "currentTr": "amaca bağlılık ilkesi",
+   "currentBeispiel": "Die Zweckbindung erlaubt keine spätere Auswertung zu ganz anderen Zielen.",
+   "currentBeispielTr": "Amaca bağlılık ilkesi, verinin sonradan bambaşka amaçlarla işlenmesine izin vermez."
   },
   {
    "id": 7215,
@@ -128,9 +128,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "profil çıkarma",
-   "mevcutBeispiel": "Kommerzielle Profilbildung erfasst längst auch politische Neigungen der Nutzer.",
-   "mevcutBeispielTr": "Ticari profil çıkarma çoktan kullanıcıların siyasi eğilimlerini de kapsıyor."
+   "currentTr": "profil çıkarma",
+   "currentBeispiel": "Kommerzielle Profilbildung erfasst längst auch politische Neigungen der Nutzer.",
+   "currentBeispielTr": "Ticari profil çıkarma çoktan kullanıcıların siyasi eğilimlerini de kapsıyor."
   },
   {
    "id": 7216,
@@ -138,9 +138,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "örüntü tanıma",
-   "mevcutBeispiel": "Mustererkennung ersetzt kein Verständnis der zugrunde liegenden Zusammenhänge.",
-   "mevcutBeispielTr": "Örüntü tanıma, altta yatan bağlantıların anlaşılmasının yerini tutmaz."
+   "currentTr": "örüntü tanıma",
+   "currentBeispiel": "Mustererkennung ersetzt kein Verständnis der zugrunde liegenden Zusammenhänge.",
+   "currentBeispielTr": "Örüntü tanıma, altta yatan bağlantıların anlaşılmasının yerini tutmaz."
   },
   {
    "id": 7217,
@@ -148,9 +148,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Lernverfahren",
-   "mevcutTr": "öğrenme yöntemi (teknik süreç, algoritma)",
-   "mevcutBeispiel": "Statistische Lernverfahren liefern Korrelationen, aber keine Erklärungen.",
-   "mevcutBeispielTr": "İstatistiksel öğrenme yöntemleri korelasyon verir, açıklama değil."
+   "currentTr": "öğrenme yöntemi (teknik süreç, algoritma)",
+   "currentBeispiel": "Statistische Lernverfahren liefern Korrelationen, aber keine Erklärungen.",
+   "currentBeispielTr": "İstatistiksel öğrenme yöntemleri korelasyon verir, açıklama değil."
   },
   {
    "id": 7218,
@@ -158,9 +158,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "eğitim verileri",
-   "mevcutBeispiel": "Woher die Trainingsdaten stammen, bleibt bei vielen Anbietern unklar.",
-   "mevcutBeispielTr": "Eğitim verilerinin nereden geldiği birçok sağlayıcıda belirsiz kalıyor."
+   "currentTr": "eğitim verileri",
+   "currentBeispiel": "Woher die Trainingsdaten stammen, bleibt bei vielen Anbietern unklar.",
+   "currentBeispielTr": "Eğitim verilerinin nereden geldiği birçok sağlayıcıda belirsiz kalıyor."
   },
   {
    "id": 7219,
@@ -168,9 +168,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Regulierungen",
-   "mevcutTr": "düzenleme, regülasyon",
-   "mevcutBeispiel": "Eine zu späte Regulierung zementiert die Vormacht der etablierten Konzerne.",
-   "mevcutBeispielTr": "Çok geç kalan bir düzenleme, yerleşik şirketlerin üstünlüğünü kalıcılaştırır."
+   "currentTr": "düzenleme, regülasyon",
+   "currentBeispiel": "Eine zu späte Regulierung zementiert die Vormacht der etablierten Konzerne.",
+   "currentBeispielTr": "Çok geç kalan bir düzenleme, yerleşik şirketlerin üstünlüğünü kalıcılaştırır."
   },
   {
    "id": 7220,
@@ -178,9 +178,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "katma değer yaratma",
-   "mevcutBeispiel": "Die eigentliche Wertschöpfung verlagert sich von der Hardware zur Software.",
-   "mevcutBeispielTr": "Asıl katma değer donanımdan yazılıma kayıyor."
+   "currentTr": "katma değer yaratma",
+   "currentBeispiel": "Die eigentliche Wertschöpfung verlagert sich von der Hardware zur Software.",
+   "currentBeispielTr": "Asıl katma değer donanımdan yazılıma kayıyor."
   },
   {
    "id": 7221,
@@ -188,9 +188,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Beschäftigungsstrukturen",
-   "mevcutTr": "istihdam yapısı",
-   "mevcutBeispiel": "Die Beschäftigungsstruktur verschiebt sich zugunsten hochqualifizierter Tätigkeiten.",
-   "mevcutBeispielTr": "İstihdam yapısı yüksek nitelikli işler lehine kayıyor."
+   "currentTr": "istihdam yapısı",
+   "currentBeispiel": "Die Beschäftigungsstruktur verschiebt sich zugunsten hochqualifizierter Tätigkeiten.",
+   "currentBeispielTr": "İstihdam yapısı yüksek nitelikli işler lehine kayıyor."
   },
   {
    "id": 7222,
@@ -198,9 +198,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Sachzwänge",
-   "mevcutTr": "nesnel zorunluluk, kaçınılmaz koşul",
-   "mevcutBeispiel": "Technischer Fortschritt wird oft als Sachzwang dargestellt, nicht als politische Wahl.",
-   "mevcutBeispielTr": "Teknolojik ilerleme çoğu kez siyasi bir tercih değil, nesnel bir zorunluluk gibi sunulur."
+   "currentTr": "nesnel zorunluluk, kaçınılmaz koşul",
+   "currentBeispiel": "Technischer Fortschritt wird oft als Sachzwang dargestellt, nicht als politische Wahl.",
+   "currentBeispielTr": "Teknolojik ilerleme çoğu kez siyasi bir tercih değil, nesnel bir zorunluluk gibi sunulur."
   },
   {
    "id": 7223,
@@ -208,9 +208,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "teknolojinin etkilerinin değerlendirilmesi",
-   "mevcutBeispiel": "Eine ernsthafte Technikfolgenabschätzung müsste vor der Markteinführung stattfinden.",
-   "mevcutBeispielTr": "Ciddi bir teknoloji etki değerlendirmesi piyasaya sürülmeden önce yapılmalıydı."
+   "currentTr": "teknolojinin etkilerinin değerlendirilmesi",
+   "currentBeispiel": "Eine ernsthafte Technikfolgenabschätzung müsste vor der Markteinführung stattfinden.",
+   "currentBeispielTr": "Ciddi bir teknoloji etki değerlendirmesi piyasaya sürülmeden önce yapılmalıydı."
   },
   {
    "id": 7224,
@@ -218,9 +218,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ilerleme inancı",
-   "mevcutBeispiel": "Ein ungebrochener Fortschrittsglaube verstellt den Blick auf die Nebenwirkungen.",
-   "mevcutBeispielTr": "Sarsılmamış bir ilerleme inancı, yan etkileri görmeyi engelliyor."
+   "currentTr": "ilerleme inancı",
+   "currentBeispiel": "Ein ungebrochener Fortschrittsglaube verstellt den Blick auf die Nebenwirkungen.",
+   "currentBeispielTr": "Sarsılmamış bir ilerleme inancı, yan etkileri görmeyi engelliyor."
   },
   {
    "id": 7225,
@@ -228,9 +228,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "teknoloji şüpheciliği",
-   "mevcutBeispiel": "Ihre Technikskepsis beruht auf Erfahrung, nicht auf bloßer Angst.",
-   "mevcutBeispielTr": "Onun teknoloji şüpheciliği korkuya değil, deneyime dayanıyor."
+   "currentTr": "teknoloji şüpheciliği",
+   "currentBeispiel": "Ihre Technikskepsis beruht auf Erfahrung, nicht auf bloßer Angst.",
+   "currentBeispielTr": "Onun teknoloji şüpheciliği korkuya değil, deneyime dayanıyor."
   },
   {
    "id": 7226,
@@ -238,9 +238,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sorumluluğun dağılıp kaybolması",
-   "mevcutBeispiel": "In verteilten Systemen droht eine Verantwortungsdiffusion zwischen Entwicklern und Betreibern.",
-   "mevcutBeispielTr": "Dağıtık sistemlerde sorumluluk geliştiricilerle işletmeciler arasında kaybolma tehlikesi taşıyor."
+   "currentTr": "sorumluluğun dağılıp kaybolması",
+   "currentBeispiel": "In verteilten Systemen droht eine Verantwortungsdiffusion zwischen Entwicklern und Betreibern.",
+   "currentBeispielTr": "Dağıtık sistemlerde sorumluluk geliştiricilerle işletmeciler arasında kaybolma tehlikesi taşıyor."
   },
   {
    "id": 7227,
@@ -248,9 +248,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Angriffsflächen",
-   "mevcutTr": "saldırıya açık yüzey, zafiyet alanı",
-   "mevcutBeispiel": "Jede zusätzliche Vernetzung vergrößert die Angriffsfläche des gesamten Systems.",
-   "mevcutBeispielTr": "Her ek bağlantı, sistemin bütününde saldırıya açık alanı büyütüyor."
+   "currentTr": "saldırıya açık yüzey, zafiyet alanı",
+   "currentBeispiel": "Jede zusätzliche Vernetzung vergrößert die Angriffsfläche des gesamten Systems.",
+   "currentBeispielTr": "Her ek bağlantı, sistemin bütününde saldırıya açık alanı büyütüyor."
   },
   {
    "id": 7228,
@@ -258,9 +258,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zugriffsrechte",
-   "mevcutTr": "erişim hakkı, erişim yetkisi",
-   "mevcutBeispiel": "Zu weit gefasste Zugriffsrechte sind eine häufige Ursache für Datenpannen.",
-   "mevcutBeispielTr": "Fazla geniş tanımlanmış erişim yetkileri veri sızıntılarının sık görülen sebebidir."
+   "currentTr": "erişim hakkı, erişim yetkisi",
+   "currentBeispiel": "Zu weit gefasste Zugriffsrechte sind eine häufige Ursache für Datenpannen.",
+   "currentBeispielTr": "Fazla geniş tanımlanmış erişim yetkileri veri sızıntılarının sık görülen sebebidir."
   },
   {
    "id": 7229,
@@ -268,9 +268,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hesaplanabilirlik, öngörülebilirlik",
-   "mevcutBeispiel": "Die Berechenbarkeit menschlichen Verhaltens hat klare erkenntnistheoretische Grenzen.",
-   "mevcutBeispielTr": "İnsan davranışının hesaplanabilirliğinin belirgin bilgikuramsal sınırları vardır."
+   "currentTr": "hesaplanabilirlik, öngörülebilirlik",
+   "currentBeispiel": "Die Berechenbarkeit menschlichen Verhaltens hat klare erkenntnistheoretische Grenzen.",
+   "currentBeispielTr": "İnsan davranışının hesaplanabilirliğinin belirgin bilgikuramsal sınırları vardır."
   },
   {
    "id": 7230,
@@ -278,9 +278,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Quantifizierungen",
-   "mevcutTr": "sayısallaştırma, niceliğe indirgeme",
-   "mevcutBeispiel": "Die Quantifizierung von Bildung verkennt, was sich schwer messen lässt.",
-   "mevcutBeispielTr": "Eğitimin sayısallaştırılması, güç ölçülen şeyleri görmezden geliyor."
+   "currentTr": "sayısallaştırma, niceliğe indirgeme",
+   "currentBeispiel": "Die Quantifizierung von Bildung verkennt, was sich schwer messen lässt.",
+   "currentBeispielTr": "Eğitimin sayısallaştırılması, güç ölçülen şeyleri görmezden geliyor."
   },
   {
    "id": 7231,
@@ -288,9 +288,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Selbstverpflichtungen",
-   "mevcutTr": "gönüllü taahhüt",
-   "mevcutBeispiel": "Freiwillige Selbstverpflichtungen der Branche ersetzen keine verbindlichen Gesetze.",
-   "mevcutBeispielTr": "Sektörün gönüllü taahhütleri bağlayıcı yasaların yerini tutmaz."
+   "currentTr": "gönüllü taahhüt",
+   "currentBeispiel": "Freiwillige Selbstverpflichtungen der Branche ersetzen keine verbindlichen Gesetze.",
+   "currentBeispielTr": "Sektörün gönüllü taahhütleri bağlayıcı yasaların yerini tutmaz."
   },
   {
    "id": 7232,
@@ -298,9 +298,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Aufsichtsbehörden",
-   "mevcutTr": "denetim kurumu, düzenleyici kurum",
-   "mevcutBeispiel": "Der Aufsichtsbehörde fehlt es an Fachpersonal und technischer Ausstattung.",
-   "mevcutBeispielTr": "Denetim kurumunun uzman personeli ve teknik donanımı yetersiz."
+   "currentTr": "denetim kurumu, düzenleyici kurum",
+   "currentBeispiel": "Der Aufsichtsbehörde fehlt es an Fachpersonal und technischer Ausstattung.",
+   "currentBeispielTr": "Denetim kurumunun uzman personeli ve teknik donanımı yetersiz."
   },
   {
    "id": 7233,
@@ -308,9 +308,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat ausgespäht",
-   "mevcutTr": "gizlice gözetlemek, casusluk etmek",
-   "mevcutBeispiel": "Der Dienst hat jahrelang die Kommunikation befreundeter Regierungen ausgespäht.",
-   "mevcutBeispielTr": "İstihbarat servisi yıllarca dost hükümetlerin iletişimini gizlice izledi."
+   "currentTr": "gizlice gözetlemek, casusluk etmek",
+   "currentBeispiel": "Der Dienst hat jahrelang die Kommunikation befreundeter Regierungen ausgespäht.",
+   "currentBeispielTr": "İstihbarat servisi yıllarca dost hükümetlerin iletişimini gizlice izledi."
   },
   {
    "id": 7234,
@@ -318,9 +318,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat protokolliert",
-   "mevcutTr": "kayda geçirmek, tutanağa geçirmek",
-   "mevcutBeispiel": "Jeder Zugriff auf die Datenbank wird lückenlos protokolliert.",
-   "mevcutBeispielTr": "Veri tabanına yapılan her erişim eksiksiz biçimde kayda geçiriliyor."
+   "currentTr": "kayda geçirmek, tutanağa geçirmek",
+   "currentBeispiel": "Jeder Zugriff auf die Datenbank wird lückenlos protokolliert.",
+   "currentBeispielTr": "Veri tabanına yapılan her erişim eksiksiz biçimde kayda geçiriliyor."
   },
   {
    "id": 7235,
@@ -328,10 +328,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat nachgebildet",
-   "mevcutTr": "taklit etmek, yeniden oluşturmak",
-   "mevcutBeispiel": "Maschinen bilden sprachliche Muster nach, ohne sie zu verstehen.",
-   "mevcutBeispielTr": "Makineler dilsel kalıpları anlamadan yeniden üretiyor.",
-   "cakisan": [
+   "currentTr": "taklit etmek, yeniden oluşturmak",
+   "currentBeispiel": "Maschinen bilden sprachliche Muster nach, ohne sie zu verstehen.",
+   "currentBeispielTr": "Makineler dilsel kalıpları anlamadan yeniden üretiyor.",
+   "overlapping": [
     "nachahmen (B2)",
     "nachmachen (A2)"
    ]
@@ -342,9 +342,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat skaliert",
-   "mevcutTr": "ölçeklendirmek, büyütmek",
-   "mevcutBeispiel": "Ein Fehler, der sich beliebig skalieren lässt, wird zum Systemrisiko.",
-   "mevcutBeispielTr": "İstenildiği kadar ölçeklenebilen bir hata sistemsel bir riske dönüşür."
+   "currentTr": "ölçeklendirmek, büyütmek",
+   "currentBeispiel": "Ein Fehler, der sich beliebig skalieren lässt, wird zum Systemrisiko.",
+   "currentBeispielTr": "İstenildiği kadar ölçeklenebilen bir hata sistemsel bir riske dönüşür."
   },
   {
    "id": 7237,
@@ -352,9 +352,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat ausgehebelt",
-   "mevcutTr": "etkisiz kılmak, devre dışı bırakmak",
-   "mevcutBeispiel": "Technische Voreinstellungen hebeln bestehende Schutzrechte faktisch aus.",
-   "mevcutBeispielTr": "Teknik ön ayarlar mevcut koruma haklarını fiilen etkisiz kılıyor."
+   "currentTr": "etkisiz kılmak, devre dışı bırakmak",
+   "currentBeispiel": "Technische Voreinstellungen hebeln bestehende Schutzrechte faktisch aus.",
+   "currentBeispielTr": "Teknik ön ayarlar mevcut koruma haklarını fiilen etkisiz kılıyor."
   },
   {
    "id": 7238,
@@ -362,9 +362,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat vorausgesetzt",
-   "mevcutTr": "varsaymak, önkoşul saymak",
-   "mevcutBeispiel": "Diese Argumentation setzt voraus, dass Daten neutral seien.",
-   "mevcutBeispielTr": "Bu akıl yürütme, verilerin tarafsız olduğunu peşinen varsayıyor."
+   "currentTr": "varsaymak, önkoşul saymak",
+   "currentBeispiel": "Diese Argumentation setzt voraus, dass Daten neutral seien.",
+   "currentBeispielTr": "Bu akıl yürütme, verilerin tarafsız olduğunu peşinen varsayıyor."
   },
   {
    "id": 7239,
@@ -372,9 +372,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat eingehegt",
-   "mevcutTr": "sınırlarını çizmek, denetim altına almak",
-   "mevcutBeispiel": "Der Gesetzgeber versucht, die Macht der Plattformen rechtlich einzuhegen.",
-   "mevcutBeispielTr": "Yasa koyucu platformların gücünü hukuken sınırlamaya çalışıyor."
+   "currentTr": "sınırlarını çizmek, denetim altına almak",
+   "currentBeispiel": "Der Gesetzgeber versucht, die Macht der Plattformen rechtlich einzuhegen.",
+   "currentBeispielTr": "Yasa koyucu platformların gücünü hukuken sınırlamaya çalışıyor."
   },
   {
    "id": 7240,
@@ -382,9 +382,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "öğrenme yeteneği olan",
-   "mevcutBeispiel": "Ein lernfähiges System verändert sein Verhalten nach der Zulassung.",
-   "mevcutBeispielTr": "Öğrenebilen bir sistem, onaydan sonra davranışını değiştirir."
+   "currentTr": "öğrenme yeteneği olan",
+   "currentBeispiel": "Ein lernfähiges System verändert sein Verhalten nach der Zulassung.",
+   "currentBeispielTr": "Öğrenebilen bir sistem, onaydan sonra davranışını değiştirir."
   },
   {
    "id": 7241,
@@ -392,9 +392,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hataya açık, arızaya yatkın",
-   "mevcutBeispiel": "Gerade bei seltenen Fällen bleibt die Erkennung fehleranfällig.",
-   "mevcutBeispielTr": "Özellikle ender durumlarda tanıma işlemi hataya açık kalıyor."
+   "currentTr": "hataya açık, arızaya yatkın",
+   "currentBeispiel": "Gerade bei seltenen Fällen bleibt die Erkennung fehleranfällig.",
+   "currentBeispielTr": "Özellikle ender durumlarda tanıma işlemi hataya açık kalıyor."
   },
   {
    "id": 7242,
@@ -402,9 +402,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "veriye dayalı",
-   "mevcutBeispiel": "Datengetriebene Verwaltung verspricht Effizienz und riskiert zugleich Kontrollverluste.",
-   "mevcutBeispielTr": "Veriye dayalı yönetim verimlilik vaat ederken denetim kaybı riskini de doğuruyor."
+   "currentTr": "veriye dayalı",
+   "currentBeispiel": "Datengetriebene Verwaltung verspricht Effizienz und riskiert zugleich Kontrollverluste.",
+   "currentBeispielTr": "Veriye dayalı yönetim verimlilik vaat ederken denetim kaybı riskini de doğuruyor."
   },
   {
    "id": 7243,
@@ -412,9 +412,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "her yerde olan, her yanı sarmış",
-   "mevcutBeispiel": "Die Erfassung von Daten ist im Alltag längst allgegenwärtig geworden.",
-   "mevcutBeispielTr": "Veri toplama gündelik hayatta çoktan her yere sinmiş durumda."
+   "currentTr": "her yerde olan, her yanı sarmış",
+   "currentBeispiel": "Die Erfassung von Daten ist im Alltag längst allgegenwärtig geworden.",
+   "currentBeispielTr": "Veri toplama gündelik hayatta çoktan her yere sinmiş durumda."
   },
   {
    "id": 7244,
@@ -422,10 +422,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kişisel, kişiye ilişkin",
-   "mevcutBeispiel": "Auch scheinbar harmlose Angaben können personenbezogen sein.",
-   "mevcutBeispielTr": "Görünüşte zararsız bilgiler de kişisel veri niteliği taşıyabilir.",
-   "cakisan": [
+   "currentTr": "kişisel, kişiye ilişkin",
+   "currentBeispiel": "Auch scheinbar harmlose Angaben können personenbezogen sein.",
+   "currentBeispielTr": "Görünüşte zararsız bilgiler de kişisel veri niteliği taşıyabilir.",
+   "overlapping": [
     "persönlich (B1)"
    ]
   },
@@ -435,10 +435,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kaçınılmaz olarak, ister istemez",
-   "mevcutBeispiel": "Mehr Rechenleistung führt nicht zwangsläufig zu besseren Entscheidungen.",
-   "mevcutBeispielTr": "Daha fazla işlem gücü, kaçınılmaz olarak daha iyi kararlar getirmez.",
-   "cakisan": [
+   "currentTr": "kaçınılmaz olarak, ister istemez",
+   "currentBeispiel": "Mehr Rechenleistung führt nicht zwangsläufig zu besseren Entscheidungen.",
+   "currentBeispielTr": "Daha fazla işlem gücü, kaçınılmaz olarak daha iyi kararlar getirmez.",
+   "overlapping": [
     "unweigerlich (C1)"
    ]
   },
@@ -448,10 +448,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Befugnisse",
-   "mevcutTr": "yetki, salahiyet",
-   "mevcutBeispiel": "Der Ausschuss überschritt seine Befugnisse bei der Vergabe der Mittel.",
-   "mevcutBeispielTr": "Komisyon, kaynakların dağıtımında yetkilerini aştı.",
-   "cakisan": [
+   "currentTr": "yetki, salahiyet",
+   "currentBeispiel": "Der Ausschuss überschritt seine Befugnisse bei der Vergabe der Mittel.",
+   "currentBeispielTr": "Komisyon, kaynakların dağıtımında yetkilerini aştı.",
+   "overlapping": [
     "die Berechtigung (B2)",
     "die Machtbefugnis (C1)"
    ]
@@ -462,10 +462,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bewilligungen",
-   "mevcutTr": "onay, tahsis, izin",
-   "mevcutBeispiel": "Ohne die Bewilligung der Fördermittel kann das Projekt nicht starten.",
-   "mevcutBeispielTr": "Destek ödeneğinin tahsisi olmadan proje başlayamaz.",
-   "cakisan": [
+   "currentTr": "onay, tahsis, izin",
+   "currentBeispiel": "Ohne die Bewilligung der Fördermittel kann das Projekt nicht starten.",
+   "currentBeispielTr": "Destek ödeneğinin tahsisi olmadan proje başlayamaz.",
+   "overlapping": [
     "die Bestätigung (B1)",
     "die Zustimmung (B1)",
     "die Beglaubigung (B2)",
@@ -478,9 +478,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "bürokrasinin azaltılması",
-   "mevcutBeispiel": "Der versprochene Bürokratieabbau blieb bislang weitgehend folgenlos.",
-   "mevcutBeispielTr": "Vaat edilen bürokrasi azaltımı şimdiye dek büyük ölçüde sonuçsuz kaldı."
+   "currentTr": "bürokrasinin azaltılması",
+   "currentBeispiel": "Der versprochene Bürokratieabbau blieb bislang weitgehend folgenlos.",
+   "currentBeispielTr": "Vaat edilen bürokrasi azaltımı şimdiye dek büyük ölçüde sonuçsuz kaldı."
   },
   {
    "id": 7249,
@@ -488,9 +488,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Dienstwege",
-   "mevcutTr": "resmî prosedür, hiyerarşik yol",
-   "mevcutBeispiel": "Beschwerden müssen zunächst auf dem üblichen Dienstweg eingereicht werden.",
-   "mevcutBeispielTr": "Şikâyetler önce olağan resmî yoldan iletilmelidir."
+   "currentTr": "resmî prosedür, hiyerarşik yol",
+   "currentBeispiel": "Beschwerden müssen zunächst auf dem üblichen Dienstweg eingereicht werden.",
+   "currentBeispielTr": "Şikâyetler önce olağan resmî yoldan iletilmelidir."
   },
   {
    "id": 7250,
@@ -498,9 +498,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kontrollinstanzen",
-   "mevcutTr": "denetim mercii",
-   "mevcutBeispiel": "Ohne unabhängige Kontrollinstanz bleibt jede Reform reine Absichtserklärung.",
-   "mevcutBeispielTr": "Bağımsız bir denetim mercii olmadan her reform sadece niyet beyanı olarak kalır."
+   "currentTr": "denetim mercii",
+   "currentBeispiel": "Ohne unabhängige Kontrollinstanz bleibt jede Reform reine Absichtserklärung.",
+   "currentBeispielTr": "Bağımsız bir denetim mercii olmadan her reform sadece niyet beyanı olarak kalır."
   },
   {
    "id": 7251,
@@ -508,9 +508,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Ombudsstellen",
-   "mevcutTr": "kamu denetçiliği birimi, arabulucu makam",
-   "mevcutBeispiel": "Bürger können sich bei Konflikten mit Ämtern an die Ombudsstelle wenden.",
-   "mevcutBeispielTr": "Vatandaşlar dairelerle yaşadıkları anlaşmazlıklarda kamu denetçiliğine başvurabilir."
+   "currentTr": "kamu denetçiliği birimi, arabulucu makam",
+   "currentBeispiel": "Bürger können sich bei Konflikten mit Ämtern an die Ombudsstelle wenden.",
+   "currentBeispielTr": "Vatandaşlar dairelerle yaşadıkları anlaşmazlıklarda kamu denetçiliğine başvurabilir."
   },
   {
    "id": 7252,
@@ -518,9 +518,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Regelwerke",
-   "mevcutTr": "kurallar bütünü, mevzuat",
-   "mevcutBeispiel": "Das Regelwerk ist über die Jahre unübersichtlich und widersprüchlich geworden.",
-   "mevcutBeispielTr": "Kurallar bütünü yıllar içinde karmaşık ve çelişkili hâle geldi."
+   "currentTr": "kurallar bütünü, mevzuat",
+   "currentBeispiel": "Das Regelwerk ist über die Jahre unübersichtlich und widersprüchlich geworden.",
+   "currentBeispielTr": "Kurallar bütünü yıllar içinde karmaşık ve çelişkili hâle geldi."
   }
  ]
 }

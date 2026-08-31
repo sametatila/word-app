@@ -7,7 +7,7 @@
   "gsw": "Summe",
   "gswArtikel": "d",
   "gswBeispiel": "D Summe schiint mir z hööch!",
-  "ayniLehce": [
+  "sameDialect": [
    "summen (A2)"
   ]
  },
@@ -208,7 +208,7 @@
   "gsw": "tuusche",
   "gswArtikel": null,
   "gswBeispiel": "1. Ich würd miin Chueche gäge dis Broot tuusche. 2. Wänd mir d Plätz tuusche?",
-  "ayniLehce": [
+  "sameDialect": [
    "austauschen (A2)"
   ]
  },
@@ -256,7 +256,7 @@
   "gsw": "Täil",
   "gswArtikel": "s",
   "gswBeispiel": "Das Täil müend mir zerscht bschtele.",
-  "ayniLehce": [
+  "sameDialect": [
    "Teil (A1)"
   ]
  },
@@ -502,7 +502,7 @@
   "gsw": "Tram",
   "gswArtikel": "s",
   "gswBeispiel": "Fahred mir mit em Tram oder mit em Bus?",
-  "ayniLehce": [
+  "sameDialect": [
    "Straßenbahn (A1)"
   ]
  },
@@ -577,7 +577,7 @@
   "gsw": "Schtägehuus",
   "gswArtikel": "s",
   "gswBeispiel": "Im Schtägehuus hät s kei Liecht.",
-  "ayniLehce": [
+  "sameDialect": [
    "Stiegenhaus (B1)"
   ]
  },
@@ -634,7 +634,7 @@
   "gsw": "Trottoir",
   "gswArtikel": "s",
   "gswBeispiel": "S Velofahre uf em Trottoir isch nöd erlaubt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Gehsteig (B1)",
    "Bürgersteig (A2)",
    "Gehweg (A2)"
@@ -657,7 +657,7 @@
   "gsw": "trotzdem",
   "gswArtikel": null,
   "gswBeispiel": "Es isch zimli chalt gsii. Trotzdem bin ich go schwüme.",
-  "ayniLehce": [
+  "sameDialect": [
    "dessenungeachtet (C1)"
   ]
  },
@@ -858,7 +858,7 @@
   "gsw": "überzüüge",
   "gswArtikel": null,
   "gswBeispiel": "Ire Vorschlag überzüügt mi gar nöd.",
-  "ayniLehce": [
+  "sameDialect": [
    "überzeugen (B2)"
   ]
  },

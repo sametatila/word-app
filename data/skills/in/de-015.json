@@ -1,7 +1,7 @@
 {
- "paket": "de-015",
+ "packet": "de-015",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "b2-l5",
    "skill": "listening",
@@ -9,72 +9,72 @@
    "title": "Radiodiskussion: Braucht Deutschland mehr Zuwanderung?",
    "genre": "Radyo tartışması",
    "intro": "Bir akşam programında göç araştırmacısı ve esnaf odası temsilcisi, nitelikli iş gücü göçünü tartışıyor; iki konuğun vurgularını karşılaştır.",
-   "metin": "Moderatorin: Guten Abend und willkommen zum „Forum am Abend“. Bis zum Jahr zweitausendfünfunddreißig werden in Deutschland nach Berechnungen des Instituts für Arbeitsmarktforschung rund sieben Millionen Arbeitskräfte fehlen. Darüber spreche ich mit dem Migrationsforscher Professor Cem Arslan und mit Petra Berger von der Handwerkskammer. Herr Professor, lässt sich diese Lücke ohne Zuwanderung schließen?\nProfessor Arslan: Nein, das zeigen alle seriösen Berechnungen. Selbst wenn mehr Frauen arbeiten würden und die Menschen länger im Beruf blieben, bliebe eine erhebliche Lücke. Deutschland braucht nach unseren Modellen eine Zuwanderung von etwa vierhunderttausend Menschen pro Jahr. Die eigentliche Frage ist also nicht, ob wir Zuwanderung brauchen, sondern wie wir sie gestalten.\nModeratorin: Frau Berger, wie erleben die Betriebe die Situation?\nFrau Berger: Bei uns im Handwerk ist der Mangel längst Alltag. Viele Betriebe finden seit Jahren keine Auszubildenden mehr. Wir haben sehr gute Erfahrungen mit Fachkräften aus dem Ausland gemacht, aber die Verfahren dauern viel zu lange. Wenn ein Betrieb acht Monate auf ein Visum wartet, hat sich die Bewerberin längst für Kanada entschieden. Da wird an unserer Zukunft gespart, und zwar am falschen Ende.\nProfessor Arslan: Dem stimme ich zu. Ich möchte aber ergänzen: Mit der Anwerbung allein ist es nicht getan. Wer Fachkräfte gewinnen will, muss auch dafür sorgen, dass sie bleiben. Dazu gehören Sprachkurse, die Anerkennung ausländischer Abschlüsse und eine Kultur, in der sich Menschen willkommen fühlen. Sonst wandern viele nach wenigen Jahren wieder ab.",
+   "text": "Moderatorin: Guten Abend und willkommen zum „Forum am Abend“. Bis zum Jahr zweitausendfünfunddreißig werden in Deutschland nach Berechnungen des Instituts für Arbeitsmarktforschung rund sieben Millionen Arbeitskräfte fehlen. Darüber spreche ich mit dem Migrationsforscher Professor Cem Arslan und mit Petra Berger von der Handwerkskammer. Herr Professor, lässt sich diese Lücke ohne Zuwanderung schließen?\nProfessor Arslan: Nein, das zeigen alle seriösen Berechnungen. Selbst wenn mehr Frauen arbeiten würden und die Menschen länger im Beruf blieben, bliebe eine erhebliche Lücke. Deutschland braucht nach unseren Modellen eine Zuwanderung von etwa vierhunderttausend Menschen pro Jahr. Die eigentliche Frage ist also nicht, ob wir Zuwanderung brauchen, sondern wie wir sie gestalten.\nModeratorin: Frau Berger, wie erleben die Betriebe die Situation?\nFrau Berger: Bei uns im Handwerk ist der Mangel längst Alltag. Viele Betriebe finden seit Jahren keine Auszubildenden mehr. Wir haben sehr gute Erfahrungen mit Fachkräften aus dem Ausland gemacht, aber die Verfahren dauern viel zu lange. Wenn ein Betrieb acht Monate auf ein Visum wartet, hat sich die Bewerberin längst für Kanada entschieden. Da wird an unserer Zukunft gespart, und zwar am falschen Ende.\nProfessor Arslan: Dem stimme ich zu. Ich möchte aber ergänzen: Mit der Anwerbung allein ist es nicht getan. Wer Fachkräfte gewinnen will, muss auch dafür sorgen, dass sie bleiben. Dazu gehören Sprachkurse, die Anerkennung ausländischer Abschlüsse und eine Kultur, in der sich Menschen willkommen fühlen. Sonst wandern viele nach wenigen Jahren wieder ab.",
    "gloss": [
     {
      "de": "die Zuwanderung",
-     "mevcutTr": "göç",
-     "havuz": {
+     "currentTr": "göç",
+     "pool": {
       "tr": "göç",
       "en": "immigration"
      }
     },
     {
      "de": "die Arbeitskraft",
-     "mevcutTr": "çalışan"
+     "currentTr": "çalışan"
     },
     {
      "de": "die Lücke",
-     "mevcutTr": "açık"
+     "currentTr": "açık"
     },
     {
      "de": "das Handwerk",
-     "mevcutTr": "zanaat sektörü"
+     "currentTr": "zanaat sektörü"
     },
     {
      "de": "der Auszubildende",
-     "mevcutTr": "çırak",
-     "havuz": {
+     "currentTr": "çırak",
+     "pool": {
       "tr": "çırak",
       "en": "trainee"
      }
     },
     {
      "de": "das Verfahren",
-     "mevcutTr": "prosedür",
-     "havuz": {
+     "currentTr": "prosedür",
+     "pool": {
       "tr": "dava",
       "en": "case"
      }
     },
     {
      "de": "die Anwerbung",
-     "mevcutTr": "işe alım"
+     "currentTr": "işe alım"
     },
     {
      "de": "die Anerkennung",
-     "mevcutTr": "tanınma",
-     "havuz": {
+     "currentTr": "tanınma",
+     "pool": {
       "tr": "tanınma",
       "en": "recognition"
      }
     },
     {
      "de": "der Abschluss",
-     "mevcutTr": "diploma",
-     "havuz": {
+     "currentTr": "diploma",
+     "pool": {
       "tr": "mezuniyet",
       "en": "graduation"
      }
     },
     {
      "de": "abwandern",
-     "mevcutTr": "göç edip gitmek"
+     "currentTr": "göç edip gitmek"
     },
     {
      "de": "gestalten",
-     "mevcutTr": "şekillendirmek",
-     "havuz": {
+     "currentTr": "şekillendirmek",
+     "pool": {
       "tr": "tasarlamak",
       "en": "to design"
      }
@@ -88,56 +88,56 @@
    "title": "Experteninterview: Verschwindet das Bargeld?",
    "genre": "Uzman röportajı",
    "intro": "Ödeme alışkanlıkları üzerine bir uzman söyleşisini dinleyeceksin; sayısal karşılaştırmalara ve uzmanın temkinli tavrına dikkat et.",
-   "metin": "Moderator: Immer mehr Menschen bezahlen mit Karte oder Smartphone. Verschwindet das Bargeld bald ganz? Darüber spreche ich mit Frau Doktor Anna Lehmann, die bei der Deutschen Bundesbank den Zahlungsverkehr erforscht. Frau Lehmann, wie bezahlen die Deutschen heute?\nFrau Doktor Lehmann: Der Wandel ist deutlich messbar. Vor zehn Jahren wurden noch etwa drei Viertel aller Einkäufe bar bezahlt, heute ist es nur noch die Hälfte. Bei jungen Erwachsenen ist das Smartphone inzwischen das beliebteste Zahlungsmittel. Trotzdem hängen die Deutschen im europäischen Vergleich noch immer stark am Bargeld.\nModerator: Woran liegt das Ihrer Meinung nach?\nFrau Doktor Lehmann: An drei Dingen. Bargeld schützt die Privatsphäre, denn eine Barzahlung hinterlässt keine Datenspur. Es hilft vielen Menschen, den Überblick über ihre Ausgaben zu behalten, denn was ausgegeben ist, sieht man im Portemonnaie sofort. Und es funktioniert auch dann, wenn die Technik versagt. Beim großen Stromausfall in Spanien konnten zeitweise nur noch diejenigen einkaufen, die Scheine und Münzen dabeihatten.\nModerator: Also bleibt uns das Bargeld erhalten?\nFrau Doktor Lehmann: Davon gehe ich aus, allerdings mit sinkender Bedeutung. Wichtig ist aus unserer Sicht die Wahlfreiheit: Niemand sollte gezwungen werden, digital zu bezahlen, aber auch niemand, Bargeld zu benutzen. Sorgen bereitet uns eher die Infrastruktur. Wenn immer mehr Bankfilialen und Geldautomaten schließen, wird es vor allem auf dem Land schwieriger, überhaupt an Bargeld zu kommen.",
+   "text": "Moderator: Immer mehr Menschen bezahlen mit Karte oder Smartphone. Verschwindet das Bargeld bald ganz? Darüber spreche ich mit Frau Doktor Anna Lehmann, die bei der Deutschen Bundesbank den Zahlungsverkehr erforscht. Frau Lehmann, wie bezahlen die Deutschen heute?\nFrau Doktor Lehmann: Der Wandel ist deutlich messbar. Vor zehn Jahren wurden noch etwa drei Viertel aller Einkäufe bar bezahlt, heute ist es nur noch die Hälfte. Bei jungen Erwachsenen ist das Smartphone inzwischen das beliebteste Zahlungsmittel. Trotzdem hängen die Deutschen im europäischen Vergleich noch immer stark am Bargeld.\nModerator: Woran liegt das Ihrer Meinung nach?\nFrau Doktor Lehmann: An drei Dingen. Bargeld schützt die Privatsphäre, denn eine Barzahlung hinterlässt keine Datenspur. Es hilft vielen Menschen, den Überblick über ihre Ausgaben zu behalten, denn was ausgegeben ist, sieht man im Portemonnaie sofort. Und es funktioniert auch dann, wenn die Technik versagt. Beim großen Stromausfall in Spanien konnten zeitweise nur noch diejenigen einkaufen, die Scheine und Münzen dabeihatten.\nModerator: Also bleibt uns das Bargeld erhalten?\nFrau Doktor Lehmann: Davon gehe ich aus, allerdings mit sinkender Bedeutung. Wichtig ist aus unserer Sicht die Wahlfreiheit: Niemand sollte gezwungen werden, digital zu bezahlen, aber auch niemand, Bargeld zu benutzen. Sorgen bereitet uns eher die Infrastruktur. Wenn immer mehr Bankfilialen und Geldautomaten schließen, wird es vor allem auf dem Land schwieriger, überhaupt an Bargeld zu kommen.",
    "gloss": [
     {
      "de": "der Zahlungsverkehr",
-     "mevcutTr": "ödeme sistemi"
+     "currentTr": "ödeme sistemi"
     },
     {
      "de": "das Zahlungsmittel",
-     "mevcutTr": "ödeme aracı"
+     "currentTr": "ödeme aracı"
     },
     {
      "de": "die Barzahlung",
-     "mevcutTr": "nakit ödeme"
+     "currentTr": "nakit ödeme"
     },
     {
      "de": "die Datenspur",
-     "mevcutTr": "veri izi"
+     "currentTr": "veri izi"
     },
     {
      "de": "die Ausgaben",
-     "mevcutTr": "harcamalar"
+     "currentTr": "harcamalar"
     },
     {
      "de": "versagen",
-     "mevcutTr": "arıza yapmak",
-     "havuz": {
+     "currentTr": "arıza yapmak",
+     "pool": {
       "tr": "başarısız olmak",
       "en": "to fail"
      }
     },
     {
      "de": "der Stromausfall",
-     "mevcutTr": "elektrik kesintisi",
-     "havuz": {
+     "currentTr": "elektrik kesintisi",
+     "pool": {
       "tr": "elektrik kesintisi",
       "en": "power outage"
      }
     },
     {
      "de": "die Wahlfreiheit",
-     "mevcutTr": "seçme özgürlüğü"
+     "currentTr": "seçme özgürlüğü"
     },
     {
      "de": "die Bankfiliale",
-     "mevcutTr": "banka şubesi"
+     "currentTr": "banka şubesi"
     },
     {
      "de": "der Geldautomat",
-     "mevcutTr": "bankamatik",
-     "havuz": {
+     "currentTr": "bankamatik",
+     "pool": {
       "tr": "bankamatik",
       "en": "ATM"
      }
@@ -151,68 +151,68 @@
    "title": "Das Interview",
    "genre": "Röportaj",
    "intro": "Hikâyenin devamı: Nora, ihbarı yazan kişiyle konuşuyor. Gazetecinin nasıl soru sorduğuna ve neyi söz verdiğine dikkat et.",
-   "metin": "Nora: Danke, dass Sie gekommen sind. Bevor wir anfangen: Was Sie mir sagen, schützt der Quellenschutz. Ich nenne Ihren Namen nicht — auch nicht meiner Redaktion gegenüber, wenn Sie das wollen.\nQuelle: Das will ich. Meine Chefin liest jede Zeile über die Firma.\nNora: Verstanden. Dann zu den Schichtplänen. Ich sehe hier bei vier Personen einen deutlichen Rückgang ab November. Können Sie mir sagen, was diese vier gemeinsam haben?\nQuelle: Alle vier waren im Oktober bei der Betriebsversammlung und haben etwas gesagt. Zwei zur Pausenregelung, zwei zu den Umkleidezeiten.\nNora: Waren Sie selbst dabei?\nQuelle: Ja. Ich habe nichts gesagt. Deshalb habe ich noch meine Schichten.\nNora: Das ist ein starker Satz. Ich muss trotzdem ehrlich sein: Vier Fälle sind ein Muster, aber kein Beweis. Es könnte auch am Bedarf liegen.\nQuelle: Das sagt die Firma sicher auch. Aber im November wurden gleichzeitig sechs neue Leute eingestellt. Wenn der Bedarf fällt, stellt man nicht ein.\nNora: Das ist der Punkt, an dem die Geschichte belastbar wird. Können Sie das belegen?\nQuelle: Die Einstellungen standen im internen Newsletter. Den habe ich.\nNora: Gut. Dann sage ich Ihnen, wie es weitergeht: Ich frage die Firma schriftlich, und ich gebe ihr Zeit zu antworten. Erst danach entscheide ich, ob ich veröffentliche. Das kann drei Wochen dauern.\nQuelle: Und wenn die Firma merkt, wer geredet hat?\nNora: Deshalb frage ich nach Dingen, die viele wissen — nicht nach Details, die nur Sie kennen können. Das Risiko wird dadurch kleiner. Null wird es nicht.",
+   "text": "Nora: Danke, dass Sie gekommen sind. Bevor wir anfangen: Was Sie mir sagen, schützt der Quellenschutz. Ich nenne Ihren Namen nicht — auch nicht meiner Redaktion gegenüber, wenn Sie das wollen.\nQuelle: Das will ich. Meine Chefin liest jede Zeile über die Firma.\nNora: Verstanden. Dann zu den Schichtplänen. Ich sehe hier bei vier Personen einen deutlichen Rückgang ab November. Können Sie mir sagen, was diese vier gemeinsam haben?\nQuelle: Alle vier waren im Oktober bei der Betriebsversammlung und haben etwas gesagt. Zwei zur Pausenregelung, zwei zu den Umkleidezeiten.\nNora: Waren Sie selbst dabei?\nQuelle: Ja. Ich habe nichts gesagt. Deshalb habe ich noch meine Schichten.\nNora: Das ist ein starker Satz. Ich muss trotzdem ehrlich sein: Vier Fälle sind ein Muster, aber kein Beweis. Es könnte auch am Bedarf liegen.\nQuelle: Das sagt die Firma sicher auch. Aber im November wurden gleichzeitig sechs neue Leute eingestellt. Wenn der Bedarf fällt, stellt man nicht ein.\nNora: Das ist der Punkt, an dem die Geschichte belastbar wird. Können Sie das belegen?\nQuelle: Die Einstellungen standen im internen Newsletter. Den habe ich.\nNora: Gut. Dann sage ich Ihnen, wie es weitergeht: Ich frage die Firma schriftlich, und ich gebe ihr Zeit zu antworten. Erst danach entscheide ich, ob ich veröffentliche. Das kann drei Wochen dauern.\nQuelle: Und wenn die Firma merkt, wer geredet hat?\nNora: Deshalb frage ich nach Dingen, die viele wissen — nicht nach Details, die nur Sie kennen können. Das Risiko wird dadurch kleiner. Null wird es nicht.",
    "gloss": [
     {
      "de": "der Quellenschutz",
-     "mevcutTr": "kaynak gizliliği",
-     "havuz": {
+     "currentTr": "kaynak gizliliği",
+     "pool": {
       "tr": "kaynak gizliliği",
       "en": "source protection"
      }
     },
     {
      "de": "die Zusage",
-     "mevcutTr": "olumlu cevap",
-     "havuz": {
+     "currentTr": "olumlu cevap",
+     "pool": {
       "tr": "olumlu cevap",
       "en": "acceptance"
      }
     },
     {
      "de": "nachvollziehbar",
-     "mevcutTr": "makul",
-     "havuz": {
+     "currentTr": "makul",
+     "pool": {
       "tr": "makul",
       "en": "understandable"
      }
     },
     {
      "de": "die Aussage",
-     "mevcutTr": "ifade",
-     "havuz": {
+     "currentTr": "ifade",
+     "pool": {
       "tr": "ifade",
       "en": "statement"
      }
     },
     {
      "de": "belastbar",
-     "mevcutTr": "sağlam",
-     "havuz": {
+     "currentTr": "sağlam",
+     "pool": {
       "tr": "dayanıklı",
       "en": "resilient"
      }
     },
     {
      "de": "abwägen",
-     "mevcutTr": "ölçüp biçmek",
-     "havuz": {
+     "currentTr": "ölçüp biçmek",
+     "pool": {
       "tr": "ölçüp biçmek",
       "en": "to weigh up"
      }
     },
     {
      "de": "das Risiko",
-     "mevcutTr": "risk",
-     "havuz": {
+     "currentTr": "risk",
+     "pool": {
       "tr": "risk",
       "en": "risk"
      }
     },
     {
      "de": "veröffentlichen",
-     "mevcutTr": "yayımlamak",
-     "havuz": {
+     "currentTr": "yayımlamak",
+     "pool": {
       "tr": "yayımlamak",
       "en": "to publish"
      }
@@ -226,48 +226,48 @@
    "title": "Gehaltsverhandlung",
    "genre": "Görüşme",
    "intro": "Maaş görüşmesi Almanca'nın en zor konuşmalarından biri: doğrudan olacaksın ama sertleşmeyeceksin.",
-   "metin": "Frau Reuter: Sie wollten über Ihr Gehalt sprechen. Schießen Sie los.\nYusuf: Gern. Ich bin seit zwei Jahren hier. In der Zeit ist mein Bereich von zwei auf fünf Projekte gewachsen, und seit Januar bilde ich die neuen Kolleginnen ein. Mein Gehalt ist seit dem Eintritt unverändert.\nFrau Reuter: Das stimmt. An welche Zahl denken Sie?\nYusuf: 58.000. Marktüblich sind für diese Rolle 55 bis 62, und ich mache die Einarbeitung zusätzlich.\nFrau Reuter: Ich sage Ihnen offen: 58 kann ich in diesem Jahr nicht zusagen. Das Budget ist bis März verteilt.\nYusuf: Was können Sie zusagen?\nFrau Reuter: 54.500 ab Juli. Und ich kann Ihnen etwas anderes anbieten: die Zertifizierung, über die wir im Herbst gesprochen haben. Die kostet 4.000 und zwei Wochen Arbeitszeit.\nYusuf: Die Zertifizierung interessiert mich, aber sie ersetzt kein Gehalt. Kann ich beides bekommen — 54.500 jetzt und eine feste Zusage für die 58 im nächsten Zyklus?\nFrau Reuter: Eine feste Zusage über ein Jahr hinaus darf ich nicht geben. Was ich kann: Wir setzen im Januar einen Termin an, und ich halte im Protokoll fest, dass 58.000 das Ziel ist, wenn die Einarbeitung bei Ihnen bleibt.\nYusuf: Schriftlich?\nFrau Reuter: Schriftlich. Das ist keine Garantie, aber es verschwindet nicht.\nYusuf: Dann machen wir das so.",
+   "text": "Frau Reuter: Sie wollten über Ihr Gehalt sprechen. Schießen Sie los.\nYusuf: Gern. Ich bin seit zwei Jahren hier. In der Zeit ist mein Bereich von zwei auf fünf Projekte gewachsen, und seit Januar bilde ich die neuen Kolleginnen ein. Mein Gehalt ist seit dem Eintritt unverändert.\nFrau Reuter: Das stimmt. An welche Zahl denken Sie?\nYusuf: 58.000. Marktüblich sind für diese Rolle 55 bis 62, und ich mache die Einarbeitung zusätzlich.\nFrau Reuter: Ich sage Ihnen offen: 58 kann ich in diesem Jahr nicht zusagen. Das Budget ist bis März verteilt.\nYusuf: Was können Sie zusagen?\nFrau Reuter: 54.500 ab Juli. Und ich kann Ihnen etwas anderes anbieten: die Zertifizierung, über die wir im Herbst gesprochen haben. Die kostet 4.000 und zwei Wochen Arbeitszeit.\nYusuf: Die Zertifizierung interessiert mich, aber sie ersetzt kein Gehalt. Kann ich beides bekommen — 54.500 jetzt und eine feste Zusage für die 58 im nächsten Zyklus?\nFrau Reuter: Eine feste Zusage über ein Jahr hinaus darf ich nicht geben. Was ich kann: Wir setzen im Januar einen Termin an, und ich halte im Protokoll fest, dass 58.000 das Ziel ist, wenn die Einarbeitung bei Ihnen bleibt.\nYusuf: Schriftlich?\nFrau Reuter: Schriftlich. Das ist keine Garantie, aber es verschwindet nicht.\nYusuf: Dann machen wir das so.",
    "gloss": [
     {
      "de": "die Gehaltsverhandlung",
-     "mevcutTr": "maaş görüşmesi"
+     "currentTr": "maaş görüşmesi"
     },
     {
      "de": "das Argument",
-     "mevcutTr": "argüman"
+     "currentTr": "argüman"
     },
     {
      "de": "der Verantwortungsbereich",
-     "mevcutTr": "sorumluluk alanı",
-     "havuz": {
+     "currentTr": "sorumluluk alanı",
+     "pool": {
       "tr": "sorumluluk alanı",
       "en": "area of responsibility"
      }
     },
     {
      "de": "die Marktüblichkeit",
-     "mevcutTr": "piyasa ortalaması"
+     "currentTr": "piyasa ortalaması"
     },
     {
      "de": "das Budget",
-     "mevcutTr": "bütçe"
+     "currentTr": "bütçe"
     },
     {
      "de": "die Perspektive",
-     "mevcutTr": "bakış açısı",
-     "havuz": {
+     "currentTr": "bakış açısı",
+     "pool": {
       "tr": "bakış açısı",
       "en": "perspective"
      }
     },
     {
      "de": "einen Schritt zugehen",
-     "mevcutTr": "bir adım atmak"
+     "currentTr": "bir adım atmak"
     },
     {
      "de": "verbindlich",
-     "mevcutTr": "bağlayıcı",
-     "havuz": {
+     "currentTr": "bağlayıcı",
+     "pool": {
       "tr": "bağlayıcı",
       "en": "binding"
      }
@@ -281,52 +281,52 @@
    "title": "Vortrag: Warum wir Nachrichten meiden",
    "genre": "Sınav formatı",
    "intro": "B2 dinleme bölümünün uzun formatı: bir konferans konuşması ve içerik soruları. Not alarak dinlemeyi dene.",
-   "metin": "Referentin: Ich fange mit einer Zahl an: In Deutschland sagt inzwischen etwa ein Drittel der Befragten, dass es Nachrichten aktiv aus dem Weg geht. Vor zehn Jahren war es halb so viel.\nReferentin: Die naheliegende Erklärung wäre Desinteresse. Sie ist falsch. Die Gruppe, die am stärksten meidet, ist nicht die uninteressierte, sondern die belastete: Menschen mit wenig Zeit, wenig Geld und wenig Kontrolle über die eigene Lage.\nReferentin: In den Interviews taucht immer wieder dasselbe Wort auf: Ohnmacht. Nicht „Ich verstehe es nicht“, sondern „Ich kann sowieso nichts tun“.\nReferentin: Der zweite Grund ist die Wiederholung. Wer denselben Konflikt jeden Tag in derselben Form sieht, ohne dass sich die Information verändert, lernt nichts dazu — er spürt nur wieder dasselbe. Das Gehirn nennt das Belastung, nicht Wissen.\nReferentin: Was hilft, ist gut untersucht und wird selten gemacht. Erstens Einordnung: nicht nur, was passiert ist, sondern warum es passiert und was daraus folgt. Zweitens Handlungswissen: Was können Betroffene konkret tun? Drittens, und das ist unbequem: weniger, aber vollständiger berichten.\nReferentin: Ich sage ausdrücklich nicht: nur gute Nachrichten. Das ist die schlechteste Antwort auf ein echtes Problem. Menschen meiden Nachrichten nicht, weil sie schlecht sind, sondern weil sie folgenlos wirken.\nReferentin: Und eine Einschränkung: Unsere Daten stammen aus Befragungen. Was Menschen über ihr Verhalten sagen, ist nicht immer das, was sie tun. Die Richtung ist stabil, die genaue Höhe wäre ich vorsichtig zu zitieren.",
+   "text": "Referentin: Ich fange mit einer Zahl an: In Deutschland sagt inzwischen etwa ein Drittel der Befragten, dass es Nachrichten aktiv aus dem Weg geht. Vor zehn Jahren war es halb so viel.\nReferentin: Die naheliegende Erklärung wäre Desinteresse. Sie ist falsch. Die Gruppe, die am stärksten meidet, ist nicht die uninteressierte, sondern die belastete: Menschen mit wenig Zeit, wenig Geld und wenig Kontrolle über die eigene Lage.\nReferentin: In den Interviews taucht immer wieder dasselbe Wort auf: Ohnmacht. Nicht „Ich verstehe es nicht“, sondern „Ich kann sowieso nichts tun“.\nReferentin: Der zweite Grund ist die Wiederholung. Wer denselben Konflikt jeden Tag in derselben Form sieht, ohne dass sich die Information verändert, lernt nichts dazu — er spürt nur wieder dasselbe. Das Gehirn nennt das Belastung, nicht Wissen.\nReferentin: Was hilft, ist gut untersucht und wird selten gemacht. Erstens Einordnung: nicht nur, was passiert ist, sondern warum es passiert und was daraus folgt. Zweitens Handlungswissen: Was können Betroffene konkret tun? Drittens, und das ist unbequem: weniger, aber vollständiger berichten.\nReferentin: Ich sage ausdrücklich nicht: nur gute Nachrichten. Das ist die schlechteste Antwort auf ein echtes Problem. Menschen meiden Nachrichten nicht, weil sie schlecht sind, sondern weil sie folgenlos wirken.\nReferentin: Und eine Einschränkung: Unsere Daten stammen aus Befragungen. Was Menschen über ihr Verhalten sagen, ist nicht immer das, was sie tun. Die Richtung ist stabil, die genaue Höhe wäre ich vorsichtig zu zitieren.",
    "gloss": [
     {
      "de": "die Nachrichtenvermeidung",
-     "mevcutTr": "haberden kaçınma"
+     "currentTr": "haberden kaçınma"
     },
     {
      "de": "der Anteil",
-     "mevcutTr": "pay",
-     "havuz": {
+     "currentTr": "pay",
+     "pool": {
       "tr": "pay",
       "en": "share"
      }
     },
     {
      "de": "die Ohnmacht",
-     "mevcutTr": "çaresizlik",
-     "havuz": {
+     "currentTr": "çaresizlik",
+     "pool": {
       "tr": "baygınlık",
       "en": "fainting"
      }
     },
     {
      "de": "die Wiederholung",
-     "mevcutTr": "tekrar",
-     "havuz": {
+     "currentTr": "tekrar",
+     "pool": {
       "tr": "tekrar",
       "en": "repetition"
      }
     },
     {
      "de": "das Gegenmittel",
-     "mevcutTr": "panzehir"
+     "currentTr": "panzehir"
     },
     {
      "de": "die Einordnung",
-     "mevcutTr": "bağlama oturtma"
+     "currentTr": "bağlama oturtma"
     },
     {
      "de": "der Ausweg",
-     "mevcutTr": "çıkış yolu"
+     "currentTr": "çıkış yolu"
     },
     {
      "de": "die Zielgruppe",
-     "mevcutTr": "hedef kitle",
-     "havuz": {
+     "currentTr": "hedef kitle",
+     "pool": {
       "tr": "hedef kitle",
       "en": "target audience"
      }
@@ -340,52 +340,52 @@
    "title": "Streitgespräch: Gendern",
    "genre": "Tartışma",
    "intro": "Almanya'da yıllardır süren dil tartışması. İki taraf da klişe değil — kimin nerede taviz verdiğine dikkat et.",
-   "metin": "Moderatorin: Frau Adam, Sie sind für das Gendern in Behörden. Warum sollte der Staat das vorschreiben?\nAdam: Ich bin nicht für Vorschriften, ich bin für Klarheit. Wenn in einem Formular „der Antragsteller“ steht, denken Menschen an einen Mann — das ist gemessen, nicht gefühlt. In der Verwaltung geht es um Rechte. Da darf Sprache nicht mehrdeutig sein.\nModeratorin: Herr Volkmann, Sie halten dagegen.\nVolkmann: Ich halte gegen die Methode, nicht gegen das Ziel. Sprachwandel funktioniert von unten. „Studierende“ hat sich durchgesetzt, weil es praktisch war — niemand musste es anordnen. Sternchen und Doppelpunkte dagegen sind Schrift, keine Sprache. Man kann sie nicht sprechen.\nAdam: Man kann. Mit einer kurzen Pause. Das machen Nachrichtensprecher längst.\nVolkmann: Und ein großer Teil der Bevölkerung lehnt es ab. Wenn eine Maßnahme für Gleichheit dazu führt, dass Gleichheit unbeliebt wird, hat sie ihr Ziel verfehlt.\nAdam: Das Argument nehme ich ernst, ehrlich. Aber die Ablehnung war bei jeder sprachlichen Änderung groß. „Frau Doktor“ war einmal lächerlich.\nVolkmann: Richtig. Und ich sage nicht, dass es so bleiben muss. Ich sage: Lasst es wachsen, statt es zu verordnen. In Formularen bin ich sogar bei Ihnen — dort geht es um Recht, nicht um Stil.\nModeratorin: Also Einigkeit bei Formularen?\nVolkmann: Bei Formularen ja.\nAdam: Dann haben wir mehr gemeinsam, als das Publikum erwartet hat.",
+   "text": "Moderatorin: Frau Adam, Sie sind für das Gendern in Behörden. Warum sollte der Staat das vorschreiben?\nAdam: Ich bin nicht für Vorschriften, ich bin für Klarheit. Wenn in einem Formular „der Antragsteller“ steht, denken Menschen an einen Mann — das ist gemessen, nicht gefühlt. In der Verwaltung geht es um Rechte. Da darf Sprache nicht mehrdeutig sein.\nModeratorin: Herr Volkmann, Sie halten dagegen.\nVolkmann: Ich halte gegen die Methode, nicht gegen das Ziel. Sprachwandel funktioniert von unten. „Studierende“ hat sich durchgesetzt, weil es praktisch war — niemand musste es anordnen. Sternchen und Doppelpunkte dagegen sind Schrift, keine Sprache. Man kann sie nicht sprechen.\nAdam: Man kann. Mit einer kurzen Pause. Das machen Nachrichtensprecher längst.\nVolkmann: Und ein großer Teil der Bevölkerung lehnt es ab. Wenn eine Maßnahme für Gleichheit dazu führt, dass Gleichheit unbeliebt wird, hat sie ihr Ziel verfehlt.\nAdam: Das Argument nehme ich ernst, ehrlich. Aber die Ablehnung war bei jeder sprachlichen Änderung groß. „Frau Doktor“ war einmal lächerlich.\nVolkmann: Richtig. Und ich sage nicht, dass es so bleiben muss. Ich sage: Lasst es wachsen, statt es zu verordnen. In Formularen bin ich sogar bei Ihnen — dort geht es um Recht, nicht um Stil.\nModeratorin: Also Einigkeit bei Formularen?\nVolkmann: Bei Formularen ja.\nAdam: Dann haben wir mehr gemeinsam, als das Publikum erwartet hat.",
    "gloss": [
     {
      "de": "gendern",
-     "mevcutTr": "cinsiyete duyarlı dil kullanmak"
+     "currentTr": "cinsiyete duyarlı dil kullanmak"
     },
     {
      "de": "die Sprachpflege",
-     "mevcutTr": "dili koruma"
+     "currentTr": "dili koruma"
     },
     {
      "de": "der Sprachwandel",
-     "mevcutTr": "dil değişimi",
-     "havuz": {
+     "currentTr": "dil değişimi",
+     "pool": {
       "tr": "dil değişimi",
       "en": "language change"
      }
     },
     {
      "de": "die Vorschrift",
-     "mevcutTr": "kural",
-     "havuz": {
+     "currentTr": "kural",
+     "pool": {
       "tr": "yönetmelik",
       "en": "regulation"
      }
     },
     {
      "de": "die Sichtbarkeit",
-     "mevcutTr": "görünürlük"
+     "currentTr": "görünürlük"
     },
     {
      "de": "die Ablehnung",
-     "mevcutTr": "reddetme",
-     "havuz": {
+     "currentTr": "reddetme",
+     "pool": {
       "tr": "reddetme",
       "en": "rejection"
      }
     },
     {
      "de": "das Amtsdeutsch",
-     "mevcutTr": "resmî kurum dili"
+     "currentTr": "resmî kurum dili"
     },
     {
      "de": "sich durchsetzen",
-     "mevcutTr": "yerleşmek",
-     "havuz": {
+     "currentTr": "yerleşmek",
+     "pool": {
       "tr": "kendini kabul ettirmek",
       "en": "to assert oneself"
      }
@@ -399,64 +399,64 @@
    "title": "Beim Betriebsrat",
    "genre": "Danışma",
    "intro": "Almanya'da çalışanın en güçlü aracı: işyeri temsilciliği. Bir danışma görüşmesini dinleyeceksin.",
-   "metin": "Betriebsrat: Setzen Sie sich. Und vorweg: Alles hier unterliegt der Schweigepflicht.\nMitarbeiterin: Danke. Mir wurde gestern gesagt, dass ich ab Mai in die Nachtschicht wechsle. Ohne Gespräch, per Mail.\nBetriebsrat: Dauerhaft oder befristet?\nMitarbeiterin: Dauerhaft. Ich habe zwei Kinder, sieben und zehn.\nBetriebsrat: Dann sind wir mitten in der Mitbestimmung. Eine dauerhafte Versetzung in die Nachtschicht ist keine Kleinigkeit — der Arbeitgeber muss uns vorher anhören, und wir müssen zustimmen.\nMitarbeiterin: Haben Sie zugestimmt?\nBetriebsrat: Wir wurden gar nicht gefragt. Das heißt: Die Anordnung ist so nicht wirksam. Sie müssen im Mai nicht in die Nachtschicht.\nMitarbeiterin: Und wenn ich einfach nicht komme?\nBetriebsrat: Das rate ich Ihnen nicht. Wir schreiben stattdessen heute ein Schreiben: Wir weisen darauf hin, dass die Beteiligung fehlt, und bitten um ein Gespräch zu dritt. In neun von zehn Fällen ist die Sache damit erledigt.\nMitarbeiterin: Und im zehnten?\nBetriebsrat: Dann geht es zur Einigungsstelle. Das dauert, ist aber keine Katastrophe. Wichtig ist jetzt nur eins: Antworten Sie auf die Mail sachlich und schriftlich — kein Streit per Telefon, nichts, was später niemand belegen kann.",
+   "text": "Betriebsrat: Setzen Sie sich. Und vorweg: Alles hier unterliegt der Schweigepflicht.\nMitarbeiterin: Danke. Mir wurde gestern gesagt, dass ich ab Mai in die Nachtschicht wechsle. Ohne Gespräch, per Mail.\nBetriebsrat: Dauerhaft oder befristet?\nMitarbeiterin: Dauerhaft. Ich habe zwei Kinder, sieben und zehn.\nBetriebsrat: Dann sind wir mitten in der Mitbestimmung. Eine dauerhafte Versetzung in die Nachtschicht ist keine Kleinigkeit — der Arbeitgeber muss uns vorher anhören, und wir müssen zustimmen.\nMitarbeiterin: Haben Sie zugestimmt?\nBetriebsrat: Wir wurden gar nicht gefragt. Das heißt: Die Anordnung ist so nicht wirksam. Sie müssen im Mai nicht in die Nachtschicht.\nMitarbeiterin: Und wenn ich einfach nicht komme?\nBetriebsrat: Das rate ich Ihnen nicht. Wir schreiben stattdessen heute ein Schreiben: Wir weisen darauf hin, dass die Beteiligung fehlt, und bitten um ein Gespräch zu dritt. In neun von zehn Fällen ist die Sache damit erledigt.\nMitarbeiterin: Und im zehnten?\nBetriebsrat: Dann geht es zur Einigungsstelle. Das dauert, ist aber keine Katastrophe. Wichtig ist jetzt nur eins: Antworten Sie auf die Mail sachlich und schriftlich — kein Streit per Telefon, nichts, was später niemand belegen kann.",
    "gloss": [
     {
      "de": "der Betriebsrat",
-     "mevcutTr": "işçi konseyi",
-     "havuz": {
+     "currentTr": "işçi konseyi",
+     "pool": {
       "tr": "işçi konseyi",
       "en": "works council"
      }
     },
     {
      "de": "die Mitbestimmung",
-     "mevcutTr": "söz hakkı",
-     "havuz": {
+     "currentTr": "söz hakkı",
+     "pool": {
       "tr": "söz hakkı",
       "en": "codetermination"
      }
     },
     {
      "de": "die Versetzung",
-     "mevcutTr": "görev değişikliği",
-     "havuz": {
+     "currentTr": "görev değişikliği",
+     "pool": {
       "tr": "sınıf geçme",
       "en": "grade promotion"
      }
     },
     {
      "de": "anhören",
-     "mevcutTr": "görüşünü almak"
+     "currentTr": "görüşünü almak"
     },
     {
      "de": "die Zustimmung",
-     "mevcutTr": "onay",
-     "havuz": {
+     "currentTr": "onay",
+     "pool": {
       "tr": "onay",
       "en": "consent"
      }
     },
     {
      "de": "die Schweigepflicht",
-     "mevcutTr": "sır saklama yükümlülüğü",
-     "havuz": {
+     "currentTr": "sır saklama yükümlülüğü",
+     "pool": {
       "tr": "sır saklama yükümlülüğü",
       "en": "confidentiality"
      }
     },
     {
      "de": "das Protokoll",
-     "mevcutTr": "tutanak",
-     "havuz": {
+     "currentTr": "tutanak",
+     "pool": {
       "tr": "tutanak",
       "en": "minutes"
      }
     },
     {
      "de": "eskalieren",
-     "mevcutTr": "çığırından çıkmak",
-     "havuz": {
+     "currentTr": "çığırından çıkmak",
+     "pool": {
       "tr": "çığırından çıkmak",
       "en": "to escalate"
      }
@@ -470,59 +470,59 @@
    "title": "Die Pressekonferenz",
    "genre": "Basın toplantısı",
    "intro": "Hikâyenin sonu: yazı çıktı. Şirket basın toplantısı düzenliyor ve Nora salonda.",
-   "metin": "Sprecher: Guten Tag. Die Berichterstattung der letzten Woche hat uns Anlass gegeben, unsere Prozesse zu überprüfen. Ich sage vorweg: Nicht alles, was berichtet wurde, teilen wir.\nSprecher: Wir räumen allerdings ein, dass die Regelung zu den Umkleidezeiten bei unseren Dienstleistern uneinheitlich war. Diese Zeiten werden ab dem 1. des kommenden Monats einheitlich vergütet, und zwar rückwirkend für zwölf Monate.\nSprecher: Den Vorwurf, dass Beschäftigte wegen einer Beschwerde weniger Schichten erhalten haben, halten wir weiterhin für nicht belegt. Eine externe Kanzlei prüft die Vorgänge; das Ergebnis werden wir veröffentlichen.\nJournalist 1: Warum die Rückzahlung, wenn nichts falsch war?\nSprecher: Weil uneinheitlich nicht gleich rechtswidrig ist. Wir wollen die Frage nicht über Jahre vor Gericht klären, sondern sie beenden.\nNora: Wie viele Beschäftigte betrifft die Rückzahlung, und wie hoch ist sie?\nSprecher: Etwa 380 Personen. Zur Summe sage ich heute nichts.\nNora: Und die sechs Einstellungen im November — waren die dem Vorstand bekannt?\nSprecher: Das ist Gegenstand der Prüfung. Ich bitte um Verständnis, dass ich dem nicht vorgreife.\nJournalist 2: Gibt es personelle Konsequenzen?\nSprecher: Heute nicht. Wir warten das Ergebnis ab.",
+   "text": "Sprecher: Guten Tag. Die Berichterstattung der letzten Woche hat uns Anlass gegeben, unsere Prozesse zu überprüfen. Ich sage vorweg: Nicht alles, was berichtet wurde, teilen wir.\nSprecher: Wir räumen allerdings ein, dass die Regelung zu den Umkleidezeiten bei unseren Dienstleistern uneinheitlich war. Diese Zeiten werden ab dem 1. des kommenden Monats einheitlich vergütet, und zwar rückwirkend für zwölf Monate.\nSprecher: Den Vorwurf, dass Beschäftigte wegen einer Beschwerde weniger Schichten erhalten haben, halten wir weiterhin für nicht belegt. Eine externe Kanzlei prüft die Vorgänge; das Ergebnis werden wir veröffentlichen.\nJournalist 1: Warum die Rückzahlung, wenn nichts falsch war?\nSprecher: Weil uneinheitlich nicht gleich rechtswidrig ist. Wir wollen die Frage nicht über Jahre vor Gericht klären, sondern sie beenden.\nNora: Wie viele Beschäftigte betrifft die Rückzahlung, und wie hoch ist sie?\nSprecher: Etwa 380 Personen. Zur Summe sage ich heute nichts.\nNora: Und die sechs Einstellungen im November — waren die dem Vorstand bekannt?\nSprecher: Das ist Gegenstand der Prüfung. Ich bitte um Verständnis, dass ich dem nicht vorgreife.\nJournalist 2: Gibt es personelle Konsequenzen?\nSprecher: Heute nicht. Wir warten das Ergebnis ab.",
    "gloss": [
     {
      "de": "die Pressekonferenz",
-     "mevcutTr": "basın toplantısı",
-     "havuz": {
+     "currentTr": "basın toplantısı",
+     "pool": {
       "tr": "basın toplantısı",
       "en": "press conference"
      }
     },
     {
      "de": "die Berichterstattung",
-     "mevcutTr": "habercilik",
-     "havuz": {
+     "currentTr": "habercilik",
+     "pool": {
       "tr": "habercilik",
       "en": "reporting"
      }
     },
     {
      "de": "einräumen",
-     "mevcutTr": "kabul etmek",
-     "havuz": {
+     "currentTr": "kabul etmek",
+     "pool": {
       "tr": "kabul etmek",
       "en": "to concede"
      }
     },
     {
      "de": "die Konsequenz",
-     "mevcutTr": "sonuç"
+     "currentTr": "sonuç"
     },
     {
      "de": "die Prüfung",
-     "mevcutTr": "inceleme",
-     "havuz": {
+     "currentTr": "inceleme",
+     "pool": {
       "tr": "sınav",
       "en": "exam"
      }
     },
     {
      "de": "extern",
-     "mevcutTr": "dışarıdan"
+     "currentTr": "dışarıdan"
     },
     {
      "de": "rückwirkend",
-     "mevcutTr": "geriye dönük",
-     "havuz": {
+     "currentTr": "geriye dönük",
+     "pool": {
       "tr": "geriye dönük",
       "en": "retroactive"
      }
     },
     {
      "de": "der Einzelfall",
-     "mevcutTr": "münferit olay"
+     "currentTr": "münferit olay"
     }
    ]
   }

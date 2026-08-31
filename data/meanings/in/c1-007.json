@@ -1,16 +1,16 @@
 {
- "paket": "c1-007",
+ "packet": "c1-007",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 3696,
    "de": "vereinnahmen",
    "typ": "Verb",
    "niveau": "C1",
    "formen": "vereinnahmt, hat vereinnahmt",
-   "mevcutTr": "kendine mal etmek, sahiplenmek",
-   "mevcutBeispiel": "Die Partei versucht, das Thema politisch zu vereinnahmen.",
-   "mevcutBeispielTr": "Parti, konuyu siyaseten sahiplenmeye çalışıyor."
+   "currentTr": "kendine mal etmek, sahiplenmek",
+   "currentBeispiel": "Die Partei versucht, das Thema politisch zu vereinnahmen.",
+   "currentBeispielTr": "Parti, konuyu siyaseten sahiplenmeye çalışıyor."
   },
   {
    "id": 3699,
@@ -18,9 +18,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "schlägt sich nieder, hat sich niedergeschlagen",
-   "mevcutTr": "yansımak, etkisini göstermek",
-   "mevcutBeispiel": "Die Krise schlägt sich in sinkenden Umsätzen nieder.",
-   "mevcutBeispielTr": "Kriz, düşen cirolara yansıyor."
+   "currentTr": "yansımak, etkisini göstermek",
+   "currentBeispiel": "Die Krise schlägt sich in sinkenden Umsätzen nieder.",
+   "currentBeispielTr": "Kriz, düşen cirolara yansıyor."
   },
   {
    "id": 3701,
@@ -28,10 +28,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Beweggründe",
-   "mevcutTr": "sebep, güdü, saik",
-   "mevcutBeispiel": "Seine wahren Beweggründe blieben lange im Dunkeln.",
-   "mevcutBeispielTr": "Gerçek saikleri uzun süre karanlıkta kaldı.",
-   "cakisan": [
+   "currentTr": "sebep, güdü, saik",
+   "currentBeispiel": "Seine wahren Beweggründe blieben lange im Dunkeln.",
+   "currentBeispielTr": "Gerçek saikleri uzun süre karanlıkta kaldı.",
+   "overlapping": [
     "der Grund (B1)"
    ]
   },
@@ -41,9 +41,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Missstände",
-   "mevcutTr": "aksaklık, kötü durum",
-   "mevcutBeispiel": "Die Reportage deckt gravierende Missstände im System auf.",
-   "mevcutBeispielTr": "Haber dosyası, sistemdeki vahim aksaklıkları ortaya çıkarıyor."
+   "currentTr": "aksaklık, kötü durum",
+   "currentBeispiel": "Die Reportage deckt gravierende Missstände im System auf.",
+   "currentBeispielTr": "Haber dosyası, sistemdeki vahim aksaklıkları ortaya çıkarıyor."
   },
   {
    "id": 3706,
@@ -51,9 +51,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Tücken",
-   "mevcutTr": "sinsi zorluk, gizli sorun",
-   "mevcutBeispiel": "Die Software hat einige technische Tücken.",
-   "mevcutBeispielTr": "Yazılımın bazı sinsi teknik zorlukları var."
+   "currentTr": "sinsi zorluk, gizli sorun",
+   "currentBeispiel": "Die Software hat einige technische Tücken.",
+   "currentBeispielTr": "Yazılımın bazı sinsi teknik zorlukları var."
   },
   {
    "id": 3710,
@@ -61,10 +61,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Tragfähigkeiten",
-   "mevcutTr": "sağlamlık, taşıma gücü",
-   "mevcutBeispiel": "Die Tragfähigkeit des Konzepts ist noch fraglich.",
-   "mevcutBeispielTr": "Konseptin sürdürülebilirliği hâlâ tartışmalı.",
-   "cakisan": [
+   "currentTr": "sağlamlık, taşıma gücü",
+   "currentBeispiel": "Die Tragfähigkeit des Konzepts ist noch fraglich.",
+   "currentBeispielTr": "Konseptin sürdürülebilirliği hâlâ tartışmalı.",
+   "overlapping": [
     "die Robustheit (C1)"
    ]
   },
@@ -74,9 +74,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Unzulänglichkeiten",
-   "mevcutTr": "yetersizlik, eksiklik",
-   "mevcutBeispiel": "Die Unzulänglichkeiten des Plans wurden schnell sichtbar.",
-   "mevcutBeispielTr": "Planın yetersizlikleri çabucak görünür oldu."
+   "currentTr": "yetersizlik, eksiklik",
+   "currentBeispiel": "Die Unzulänglichkeiten des Plans wurden schnell sichtbar.",
+   "currentBeispielTr": "Planın yetersizlikleri çabucak görünür oldu."
   },
   {
    "id": 3713,
@@ -84,10 +84,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ciddi, ağır",
-   "mevcutBeispiel": "Der Fehler hatte gravierende Folgen für das Unternehmen.",
-   "mevcutBeispielTr": "Hata, şirket için ağır sonuçlar doğurdu.",
-   "cakisan": [
+   "currentTr": "ciddi, ağır",
+   "currentBeispiel": "Der Fehler hatte gravierende Folgen für das Unternehmen.",
+   "currentBeispielTr": "Hata, şirket için ağır sonuçlar doğurdu.",
+   "overlapping": [
     "ernst (B1)",
     "ernsthaft (B1)"
    ]
@@ -98,10 +98,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "tartışmasız",
-   "mevcutBeispiel": "Der Erfolg der Maßnahme ist keineswegs unumstritten.",
-   "mevcutBeispielTr": "Önlemin başarısı hiç de tartışmasız değil.",
-   "cakisan": [
+   "currentTr": "tartışmasız",
+   "currentBeispiel": "Der Erfolg der Maßnahme ist keineswegs unumstritten.",
+   "currentBeispielTr": "Önlemin başarısı hiç de tartışmasız değil.",
+   "overlapping": [
     "unbestritten (C1)"
    ]
   },
@@ -111,9 +111,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çok katmanlı, karmaşık",
-   "mevcutBeispiel": "Das Thema ist weitaus vielschichtiger, als es zunächst scheint.",
-   "mevcutBeispielTr": "Konu ilk bakışta göründüğünden çok daha katmanlı."
+   "currentTr": "çok katmanlı, karmaşık",
+   "currentBeispiel": "Das Thema ist weitaus vielschichtiger, als es zunächst scheint.",
+   "currentBeispielTr": "Konu ilk bakışta göründüğünden çok daha katmanlı."
   },
   {
    "id": 3720,
@@ -121,10 +121,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hassas, patlayıcı nitelikte",
-   "mevcutBeispiel": "Das Dokument enthält politisch brisante Details.",
-   "mevcutBeispielTr": "Belge, siyaseten son derece hassas ayrıntılar içeriyor.",
-   "cakisan": [
+   "currentTr": "hassas, patlayıcı nitelikte",
+   "currentBeispiel": "Das Dokument enthält politisch brisante Details.",
+   "currentBeispielTr": "Belge, siyaseten son derece hassas ayrıntılar içeriyor.",
+   "overlapping": [
     "anfällig (B2)",
     "heikel (C1)"
    ]
@@ -135,10 +135,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yaygın, geçerli",
-   "mevcutBeispiel": "Diese Methode ist in der Branche längst gängige Praxis.",
-   "mevcutBeispielTr": "Bu yöntem sektörde çoktandır yaygın bir uygulama.",
-   "cakisan": [
+   "currentTr": "yaygın, geçerli",
+   "currentBeispiel": "Diese Methode ist in der Branche längst gängige Praxis.",
+   "currentBeispielTr": "Bu yöntem sektörde çoktandır yaygın bir uygulama.",
+   "overlapping": [
     "gebräuchlich (C1)"
    ]
   },
@@ -148,9 +148,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "güvencesiz, istikrarsız",
-   "mevcutBeispiel": "Viele Freiberufler leben in einer prekären finanziellen Lage.",
-   "mevcutBeispielTr": "Birçok serbest çalışan, mali açıdan güç bir durumda yaşıyor."
+   "currentTr": "güvencesiz, istikrarsız",
+   "currentBeispiel": "Viele Freiberufler leben in einer prekären finanziellen Lage.",
+   "currentBeispielTr": "Birçok serbest çalışan, mali açıdan güç bir durumda yaşıyor."
   },
   {
    "id": 3728,
@@ -158,9 +158,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "köklü, derinlemesine",
-   "mevcutBeispiel": "Die Reform bringt tiefgreifende Veränderungen mit sich.",
-   "mevcutBeispielTr": "Reform, beraberinde köklü değişiklikler getiriyor."
+   "currentTr": "köklü, derinlemesine",
+   "currentBeispiel": "Die Reform bringt tiefgreifende Veränderungen mit sich.",
+   "currentBeispielTr": "Reform, beraberinde köklü değişiklikler getiriyor."
   },
   {
    "id": 3729,
@@ -168,9 +168,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "buna rağmen",
-   "mevcutBeispiel": "Die Warnungen waren deutlich, dessenungeachtet handelte niemand.",
-   "mevcutBeispielTr": "Uyarılar gayet açıktı; buna rağmen kimse harekete geçmedi."
+   "currentTr": "buna rağmen",
+   "currentBeispiel": "Die Warnungen waren deutlich, dessenungeachtet handelte niemand.",
+   "currentBeispielTr": "Uyarılar gayet açıktı; buna rağmen kimse harekete geçmedi."
   },
   {
    "id": 3731,
@@ -178,9 +178,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "suya düşmek, iptal olmak",
-   "mevcutBeispiel": "Wegen des schlechten Wetters ist das Fest ins Wasser gefallen.",
-   "mevcutBeispielTr": "Kötü hava yüzünden şenlik suya düştü."
+   "currentTr": "suya düşmek, iptal olmak",
+   "currentBeispiel": "Wegen des schlechten Wetters ist das Fest ins Wasser gefallen.",
+   "currentBeispielTr": "Kötü hava yüzünden şenlik suya düştü."
   },
   {
    "id": 3732,
@@ -188,9 +188,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ilk seferde, hemen",
-   "mevcutBeispiel": "Sie hat die Prüfung auf Anhieb bestanden.",
-   "mevcutBeispielTr": "Sınavı ilk seferde geçti."
+   "currentTr": "ilk seferde, hemen",
+   "currentBeispiel": "Sie hat die Prüfung auf Anhieb bestanden.",
+   "currentBeispielTr": "Sınavı ilk seferde geçti."
   },
   {
    "id": 3884,
@@ -198,9 +198,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Wettbewerbsvorteile",
-   "mevcutTr": "rekabet avantajı",
-   "mevcutBeispiel": "Durch Innovation sichert sich das Unternehmen einen Wettbewerbsvorteil.",
-   "mevcutBeispielTr": "Şirket, inovasyonla rekabet avantajı sağlıyor."
+   "currentTr": "rekabet avantajı",
+   "currentBeispiel": "Durch Innovation sichert sich das Unternehmen einen Wettbewerbsvorteil.",
+   "currentBeispielTr": "Şirket, inovasyonla rekabet avantajı sağlıyor."
   },
   {
    "id": 3885,
@@ -208,9 +208,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "pazara nüfuz etme",
-   "mevcutBeispiel": "Die Marktdurchdringung in Asien verlief schleppender als erwartet.",
-   "mevcutBeispielTr": "Asya pazarına nüfuz etme beklenenden yavaş ilerledi."
+   "currentTr": "pazara nüfuz etme",
+   "currentBeispiel": "Die Marktdurchdringung in Asien verlief schleppender als erwartet.",
+   "currentBeispielTr": "Asya pazarına nüfuz etme beklenenden yavaş ilerledi."
   },
   {
    "id": 3886,
@@ -218,9 +218,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Alleinstellungsmerkmale",
-   "mevcutTr": "ayırt edici özellik, benzersiz satış noktası",
-   "mevcutBeispiel": "Ohne klares Alleinstellungsmerkmal geht das Produkt im Markt unter.",
-   "mevcutBeispielTr": "Net bir ayırt edici özellik olmadan ürün pazarda kaybolur."
+   "currentTr": "ayırt edici özellik, benzersiz satış noktası",
+   "currentBeispiel": "Ohne klares Alleinstellungsmerkmal geht das Produkt im Markt unter.",
+   "currentBeispielTr": "Net bir ayırt edici özellik olmadan ürün pazarda kaybolur."
   },
   {
    "id": 3889,
@@ -228,9 +228,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Positionierungen",
-   "mevcutTr": "konumlandırma",
-   "mevcutBeispiel": "Die strategische Positionierung der Marke muss überdacht werden.",
-   "mevcutBeispielTr": "Markanın stratejik konumlandırması yeniden düşünülmeli."
+   "currentTr": "konumlandırma",
+   "currentBeispiel": "Die strategische Positionierung der Marke muss überdacht werden.",
+   "currentBeispielTr": "Markanın stratejik konumlandırması yeniden düşünülmeli."
   },
   {
    "id": 3890,
@@ -238,9 +238,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "geleceğe yönelik, öncü",
-   "mevcutBeispiel": "Das Unternehmen verfolgt einen zukunftsweisenden Ansatz.",
-   "mevcutBeispielTr": "Şirket geleceğe yön veren bir yaklaşım izliyor."
+   "currentTr": "geleceğe yönelik, öncü",
+   "currentBeispiel": "Das Unternehmen verfolgt einen zukunftsweisenden Ansatz.",
+   "currentBeispielTr": "Şirket geleceğe yön veren bir yaklaşım izliyor."
   },
   {
    "id": 3891,
@@ -248,9 +248,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Weichenstellungen",
-   "mevcutTr": "yön belirleyici karar",
-   "mevcutBeispiel": "Diese Weichenstellung entscheidet über die nächsten zehn Jahre.",
-   "mevcutBeispielTr": "Bu karar, önümüzdeki on yılın yönünü belirleyecek."
+   "currentTr": "yön belirleyici karar",
+   "currentBeispiel": "Diese Weichenstellung entscheidet über die nächsten zehn Jahre.",
+   "currentBeispielTr": "Bu karar, önümüzdeki on yılın yönünü belirleyecek."
   },
   {
    "id": 3892,
@@ -258,9 +258,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kerngeschäfte",
-   "mevcutTr": "asıl iş kolu, çekirdek iş",
-   "mevcutBeispiel": "Das Unternehmen konzentriert sich wieder auf sein Kerngeschäft.",
-   "mevcutBeispielTr": "Şirket yeniden asıl iş koluna odaklanıyor."
+   "currentTr": "asıl iş kolu, çekirdek iş",
+   "currentBeispiel": "Das Unternehmen konzentriert sich wieder auf sein Kerngeschäft.",
+   "currentBeispielTr": "Şirket yeniden asıl iş koluna odaklanıyor."
   },
   {
    "id": 3894,
@@ -268,9 +268,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zugeständnisse",
-   "mevcutTr": "taviz",
-   "mevcutBeispiel": "Ein weiteres Zugeständnis wollte die Geschäftsführung nicht machen.",
-   "mevcutBeispielTr": "Yönetim bir taviz daha vermek istemedi."
+   "currentTr": "taviz",
+   "currentBeispiel": "Ein weiteres Zugeständnis wollte die Geschäftsführung nicht machen.",
+   "currentBeispielTr": "Yönetim bir taviz daha vermek istemedi."
   },
   {
    "id": 3895,
@@ -278,9 +278,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verhandlungsmassen",
-   "mevcutTr": "pazarlık kozu, pazarlıkta verilecek şey",
-   "mevcutBeispiel": "Der Bonus diente als zusätzliche Verhandlungsmasse.",
-   "mevcutBeispielTr": "İkramiye, pazarlıkta ek koz olarak kullanıldı."
+   "currentTr": "pazarlık kozu, pazarlıkta verilecek şey",
+   "currentBeispiel": "Der Bonus diente als zusätzliche Verhandlungsmasse.",
+   "currentBeispielTr": "İkramiye, pazarlıkta ek koz olarak kullanıldı."
   },
   {
    "id": 3899,
@@ -288,9 +288,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Schlichtungen",
-   "mevcutTr": "arabuluculuk, uzlaştırma",
-   "mevcutBeispiel": "Der Tarifstreit wurde durch eine Schlichtung beigelegt.",
-   "mevcutBeispielTr": "Toplu sözleşme anlaşmazlığı arabuluculukla çözüldü."
+   "currentTr": "arabuluculuk, uzlaştırma",
+   "currentBeispiel": "Der Tarifstreit wurde durch eine Schlichtung beigelegt.",
+   "currentBeispielTr": "Toplu sözleşme anlaşmazlığı arabuluculukla çözüldü."
   },
   {
    "id": 3900,
@@ -298,9 +298,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "risk alma eğilimi",
-   "mevcutBeispiel": "Die Risikobereitschaft der Investoren ist deutlich gesunken.",
-   "mevcutBeispielTr": "Yatırımcıların risk iştahı belirgin biçimde azaldı."
+   "currentTr": "risk alma eğilimi",
+   "currentBeispiel": "Die Risikobereitschaft der Investoren ist deutlich gesunken.",
+   "currentBeispielTr": "Yatırımcıların risk iştahı belirgin biçimde azaldı."
   },
   {
    "id": 3901,
@@ -308,9 +308,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "federt ab, hat abgefedert",
-   "mevcutTr": "etkisini yumuşatmak",
-   "mevcutBeispiel": "Rücklagen sollen den Umsatzeinbruch abfedern.",
-   "mevcutBeispielTr": "Yedek akçeler ciro düşüşünün etkisini yumuşatacak."
+   "currentTr": "etkisini yumuşatmak",
+   "currentBeispiel": "Rücklagen sollen den Umsatzeinbruch abfedern.",
+   "currentBeispielTr": "Yedek akçeler ciro düşüşünün etkisini yumuşatacak."
   },
   {
    "id": 3903,
@@ -318,9 +318,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Ausfallrisiken",
-   "mevcutTr": "temerrüt riski",
-   "mevcutBeispiel": "Die Bank bewertet das Ausfallrisiko des Kreditnehmers neu.",
-   "mevcutBeispielTr": "Banka, kredi alanın temerrüt riskini yeniden değerlendiriyor."
+   "currentTr": "temerrüt riski",
+   "currentBeispiel": "Die Bank bewertet das Ausfallrisiko des Kreditnehmers neu.",
+   "currentBeispielTr": "Banka, kredi alanın temerrüt riskini yeniden değerlendiriyor."
   },
   {
    "id": 3904,
@@ -328,9 +328,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rücklagen",
-   "mevcutTr": "yedek akçe",
-   "mevcutBeispiel": "Die Firma bildet Rücklagen für schlechtere Zeiten.",
-   "mevcutBeispielTr": "Şirket kötü günler için yedek akçe ayırıyor."
+   "currentTr": "yedek akçe",
+   "currentBeispiel": "Die Firma bildet Rücklagen für schlechtere Zeiten.",
+   "currentBeispielTr": "Şirket kötü günler için yedek akçe ayırıyor."
   },
   {
    "id": 3905,
@@ -338,9 +338,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hesaplanamaz, öngörülemez",
-   "mevcutBeispiel": "Die politischen Entwicklungen machen das Geschäft unkalkulierbar.",
-   "mevcutBeispielTr": "Siyasi gelişmeler işi öngörülemez hâle getiriyor."
+   "currentTr": "hesaplanamaz, öngörülemez",
+   "currentBeispiel": "Die politischen Entwicklungen machen das Geschäft unkalkulierbar.",
+   "currentBeispielTr": "Siyasi gelişmeler işi öngörülemez hâle getiriyor."
   },
   {
    "id": 3906,
@@ -348,9 +348,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Fallstricke",
-   "mevcutTr": "gizli tuzak",
-   "mevcutBeispiel": "Der Vertrag enthält einige rechtliche Fallstricke.",
-   "mevcutBeispielTr": "Sözleşmede birkaç hukuki tuzak var."
+   "currentTr": "gizli tuzak",
+   "currentBeispiel": "Der Vertrag enthält einige rechtliche Fallstricke.",
+   "currentBeispielTr": "Sözleşmede birkaç hukuki tuzak var."
   },
   {
    "id": 3909,
@@ -358,9 +358,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "CO2-Fußabdrücke",
-   "mevcutTr": "karbon ayak izi",
-   "mevcutBeispiel": "Der Konzern will seinen CO2-Fußabdruck bis 2030 halbieren.",
-   "mevcutBeispielTr": "Şirket, karbon ayak izini 2030'a kadar yarıya indirmek istiyor."
+   "currentTr": "karbon ayak izi",
+   "currentBeispiel": "Der Konzern will seinen CO2-Fußabdruck bis 2030 halbieren.",
+   "currentBeispielTr": "Şirket, karbon ayak izini 2030'a kadar yarıya indirmek istiyor."
   },
   {
    "id": 3910,
@@ -368,9 +368,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kaynak tasarrufu",
-   "mevcutBeispiel": "Ressourcenschonung gehört inzwischen zur Unternehmensstrategie.",
-   "mevcutBeispielTr": "Kaynak tasarrufu artık şirket stratejisinin bir parçası."
+   "currentTr": "kaynak tasarrufu",
+   "currentBeispiel": "Ressourcenschonung gehört inzwischen zur Unternehmensstrategie.",
+   "currentBeispielTr": "Kaynak tasarrufu artık şirket stratejisinin bir parçası."
   },
   {
    "id": 3911,
@@ -378,9 +378,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "iklim nötr, karbon nötr",
-   "mevcutBeispiel": "Die Produktion soll bis 2035 klimaneutral werden.",
-   "mevcutBeispielTr": "Üretim 2035'e kadar iklim nötr olacak."
+   "currentTr": "iklim nötr, karbon nötr",
+   "currentBeispiel": "Die Produktion soll bis 2035 klimaneutral werden.",
+   "currentBeispielTr": "Üretim 2035'e kadar iklim nötr olacak."
   },
   {
    "id": 3912,
@@ -388,9 +388,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "döngüsel ekonomi",
-   "mevcutBeispiel": "Das Startup setzt konsequent auf Kreislaufwirtschaft.",
-   "mevcutBeispielTr": "Girişim kararlılıkla döngüsel ekonomiye yöneliyor."
+   "currentTr": "döngüsel ekonomi",
+   "currentBeispiel": "Das Startup setzt konsequent auf Kreislaufwirtschaft.",
+   "currentBeispielTr": "Girişim kararlılıkla döngüsel ekonomiye yöneliyor."
   },
   {
    "id": 3913,
@@ -398,9 +398,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Nachhaltigkeitsziele",
-   "mevcutTr": "sürdürülebilirlik hedefi",
-   "mevcutBeispiel": "Die Nachhaltigkeitsziele wurden im Geschäftsbericht verankert.",
-   "mevcutBeispielTr": "Sürdürülebilirlik hedefleri faaliyet raporuna işlendi."
+   "currentTr": "sürdürülebilirlik hedefi",
+   "currentBeispiel": "Die Nachhaltigkeitsziele wurden im Geschäftsbericht verankert.",
+   "currentBeispielTr": "Sürdürülebilirlik hedefleri faaliyet raporuna işlendi."
   },
   {
    "id": 3914,
@@ -408,9 +408,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Umweltauflagen",
-   "mevcutTr": "çevre yükümlülüğü",
-   "mevcutBeispiel": "Strengere Umweltauflagen erhöhen die Produktionskosten.",
-   "mevcutBeispielTr": "Daha sıkı çevre yükümlülükleri üretim maliyetlerini artırıyor."
+   "currentTr": "çevre yükümlülüğü",
+   "currentBeispiel": "Strengere Umweltauflagen erhöhen die Produktionskosten.",
+   "currentBeispielTr": "Daha sıkı çevre yükümlülükleri üretim maliyetlerini artırıyor."
   },
   {
    "id": 3915,
@@ -418,9 +418,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Emissionsminderungen",
-   "mevcutTr": "emisyon azaltma",
-   "mevcutBeispiel": "Das Werk investiert in Anlagen zur Emissionsminderung.",
-   "mevcutBeispielTr": "Fabrika, emisyon azaltma tesislerine yatırım yapıyor."
+   "currentTr": "emisyon azaltma",
+   "currentBeispiel": "Das Werk investiert in Anlagen zur Emissionsminderung.",
+   "currentBeispielTr": "Fabrika, emisyon azaltma tesislerine yatırım yapıyor."
   },
   {
    "id": 3916,
@@ -428,9 +428,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "aşırı sömürü, talan",
-   "mevcutBeispiel": "Kritiker werfen dem Konzern Raubbau an natürlichen Ressourcen vor.",
-   "mevcutBeispielTr": "Eleştirmenler şirketi doğal kaynakları talan etmekle suçluyor."
+   "currentTr": "aşırı sömürü, talan",
+   "currentBeispiel": "Kritiker werfen dem Konzern Raubbau an natürlichen Ressourcen vor.",
+   "currentBeispielTr": "Eleştirmenler şirketi doğal kaynakları talan etmekle suçluyor."
   },
   {
    "id": 3918,
@@ -438,9 +438,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çevre bilinci",
-   "mevcutBeispiel": "Das gestiegene Umweltbewusstsein der Kunden verändert die Nachfrage.",
-   "mevcutBeispielTr": "Müşterilerin artan çevre bilinci talebi değiştiriyor."
+   "currentTr": "çevre bilinci",
+   "currentBeispiel": "Das gestiegene Umweltbewusstsein der Kunden verändert die Nachfrage.",
+   "currentBeispielTr": "Müşterilerin artan çevre bilinci talebi değiştiriyor."
   },
   {
    "id": 3919,
@@ -448,9 +448,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Automatisierungen",
-   "mevcutTr": "otomasyon",
-   "mevcutBeispiel": "Durch Automatisierung sollen Produktionskosten gesenkt werden.",
-   "mevcutBeispielTr": "Otomasyonla üretim maliyetleri düşürülecek."
+   "currentTr": "otomasyon",
+   "currentBeispiel": "Durch Automatisierung sollen Produktionskosten gesenkt werden.",
+   "currentBeispielTr": "Otomasyonla üretim maliyetleri düşürülecek."
   },
   {
    "id": 3920,
@@ -458,9 +458,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ölçeklenebilirlik",
-   "mevcutBeispiel": "Investoren achten besonders auf die Skalierbarkeit des Geschäftsmodells.",
-   "mevcutBeispielTr": "Yatırımcılar özellikle iş modelinin ölçeklenebilirliğine bakıyor."
+   "currentTr": "ölçeklenebilirlik",
+   "currentBeispiel": "Investoren achten besonders auf die Skalierbarkeit des Geschäftsmodells.",
+   "currentBeispielTr": "Yatırımcılar özellikle iş modelinin ölçeklenebilirliğine bakıyor."
   },
   {
    "id": 3921,
@@ -468,9 +468,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "digitalisiert, hat digitalisiert",
-   "mevcutTr": "dijitalleştirmek",
-   "mevcutBeispiel": "Das Unternehmen hat sämtliche Prozesse digitalisiert.",
-   "mevcutBeispielTr": "Şirket bütün süreçleri dijitalleştirdi."
+   "currentTr": "dijitalleştirmek",
+   "currentBeispiel": "Das Unternehmen hat sämtliche Prozesse digitalisiert.",
+   "currentBeispielTr": "Şirket bütün süreçleri dijitalleştirdi."
   },
   {
    "id": 3922,
@@ -478,9 +478,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Datenfluten",
-   "mevcutTr": "veri seli, bilgi bombardımanı",
-   "mevcutBeispiel": "Die Datenflut überfordert viele Abteilungen ohne geeignete Tools.",
-   "mevcutBeispielTr": "Uygun araçlar olmadan veri seli birçok bölümü aşıyor."
+   "currentTr": "veri seli, bilgi bombardımanı",
+   "currentBeispiel": "Die Datenflut überfordert viele Abteilungen ohne geeignete Tools.",
+   "currentBeispielTr": "Uygun araçlar olmadan veri seli birçok bölümü aşıyor."
   },
   {
    "id": 3923,
@@ -488,9 +488,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Geschäftsmodelle",
-   "mevcutTr": "iş modeli",
-   "mevcutBeispiel": "Das bisherige Geschäftsmodell steht zunehmend unter Druck.",
-   "mevcutBeispielTr": "Mevcut iş modeli giderek baskı altına giriyor."
+   "currentTr": "iş modeli",
+   "currentBeispiel": "Das bisherige Geschäftsmodell steht zunehmend unter Druck.",
+   "currentBeispielTr": "Mevcut iş modeli giderek baskı altına giriyor."
   },
   {
    "id": 3924,
@@ -498,10 +498,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yıkıcı, çığır açan",
-   "mevcutBeispiel": "Die Branche wird derzeit von disruptiven Technologien erschüttert.",
-   "mevcutBeispielTr": "Sektör şu sıralar yıkıcı teknolojilerle sarsılıyor.",
-   "cakisan": [
+   "currentTr": "yıkıcı, çığır açan",
+   "currentBeispiel": "Die Branche wird derzeit von disruptiven Technologien erschüttert.",
+   "currentBeispielTr": "Sektör şu sıralar yıkıcı teknolojilerle sarsılıyor.",
+   "overlapping": [
     "verheerend (B2)"
    ]
   },
@@ -511,9 +511,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vernetzungen",
-   "mevcutTr": "ağ oluşturma, bağlantılandırma",
-   "mevcutBeispiel": "Die zunehmende Vernetzung der Lieferketten birgt neue Risiken.",
-   "mevcutBeispielTr": "Tedarik zincirlerinin artan bağlantılılığı yeni riskler doğuruyor."
+   "currentTr": "ağ oluşturma, bağlantılandırma",
+   "currentBeispiel": "Die zunehmende Vernetzung der Lieferketten birgt neue Risiken.",
+   "currentBeispielTr": "Tedarik zincirlerinin artan bağlantılılığı yeni riskler doğuruyor."
   },
   {
    "id": 3926,
@@ -521,9 +521,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "siber suç",
-   "mevcutBeispiel": "Cyberkriminalität verursacht jährlich Milliardenschäden.",
-   "mevcutBeispielTr": "Siber suçlar her yıl milyarlarca zarara yol açıyor."
+   "currentTr": "siber suç",
+   "currentBeispiel": "Cyberkriminalität verursacht jährlich Milliardenschäden.",
+   "currentBeispielTr": "Siber suçlar her yıl milyarlarca zarara yol açıyor."
   }
  ]
 }

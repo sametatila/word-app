@@ -55,7 +55,7 @@ packets.forEach((chunk, i) => {
       gsw: z.gsw,
       gswArtikel: z.artikel,
       gswBeispiel: z.beispiel || "",
-      ...(twins.length ? { ayniLehce: twins } : {}),
+      ...(twins.length ? { sameDialect: twins } : {}),
     };
   });
   writeFileSync(`${dir}/${slug}-${String(i + 1).padStart(2, "0")}.json`, JSON.stringify(body, null, 1) + "\n");

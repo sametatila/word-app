@@ -1,16 +1,16 @@
 {
- "paket": "c1-042",
+ "packet": "c1-042",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 7303,
    "de": "der Vermögenswert",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vermögenswerte",
-   "mevcutTr": "varlık, mal varlığı unsuru",
-   "mevcutBeispiel": "In unsicheren Zeiten flüchten Anleger in reale Vermögenswerte.",
-   "mevcutBeispielTr": "Belirsiz zamanlarda yatırımcılar reel varlıklara sığınır."
+   "currentTr": "varlık, mal varlığı unsuru",
+   "currentBeispiel": "In unsicheren Zeiten flüchten Anleger in reale Vermögenswerte.",
+   "currentBeispielTr": "Belirsiz zamanlarda yatırımcılar reel varlıklara sığınır."
   },
   {
    "id": 7304,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "reel ekonomi",
-   "mevcutBeispiel": "Die Krise sprang schnell vom Finanzsektor auf die Realwirtschaft über.",
-   "mevcutBeispielTr": "Kriz finans sektöründen hızla reel ekonomiye sıçradı."
+   "currentTr": "reel ekonomi",
+   "currentBeispiel": "Die Krise sprang schnell vom Finanzsektor auf die Realwirtschaft über.",
+   "currentBeispielTr": "Kriz finans sektöründen hızla reel ekonomiye sıçradı."
   },
   {
    "id": 7305,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Abschwünge",
-   "mevcutTr": "gerileme, daralma dönemi",
-   "mevcutBeispiel": "Der Abschwung traf die exportorientierte Industrie besonders hart.",
-   "mevcutBeispielTr": "Daralma en ağır biçimde ihracata dayalı sanayiyi vurdu."
+   "currentTr": "gerileme, daralma dönemi",
+   "currentBeispiel": "Der Abschwung traf die exportorientierte Industrie besonders hart.",
+   "currentBeispielTr": "Daralma en ağır biçimde ihracata dayalı sanayiyi vurdu."
   },
   {
    "id": 7306,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Arbeitslosenquoten",
-   "mevcutTr": "işsizlik oranı",
-   "mevcutBeispiel": "Trotz des Wachstums sank die Arbeitslosenquote nur geringfügig.",
-   "mevcutBeispielTr": "Büyümeye rağmen işsizlik oranı yalnızca çok az geriledi."
+   "currentTr": "işsizlik oranı",
+   "currentBeispiel": "Trotz des Wachstums sank die Arbeitslosenquote nur geringfügig.",
+   "currentBeispielTr": "Büyümeye rağmen işsizlik oranı yalnızca çok az geriledi."
   },
   {
    "id": 7307,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Tarifabschlüsse",
-   "mevcutTr": "toplu sözleşme anlaşması",
-   "mevcutBeispiel": "Der Tarifabschluss sieht Lohnerhöhungen in zwei Stufen vor.",
-   "mevcutBeispielTr": "Toplu sözleşme, iki aşamada ücret artışı öngörüyor."
+   "currentTr": "toplu sözleşme anlaşması",
+   "currentBeispiel": "Der Tarifabschluss sieht Lohnerhöhungen in zwei Stufen vor.",
+   "currentBeispielTr": "Toplu sözleşme, iki aşamada ücret artışı öngörüyor."
   },
   {
    "id": 7308,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Teuerungen",
-   "mevcutTr": "hayat pahalılığı, fiyat artışı",
-   "mevcutBeispiel": "Vor allem Mieten und Lebensmittel treiben die Teuerung derzeit an.",
-   "mevcutBeispielTr": "Şu sıralar hayat pahalılığını başta kiralar ve gıda körüklüyor."
+   "currentTr": "hayat pahalılığı, fiyat artışı",
+   "currentBeispiel": "Vor allem Mieten und Lebensmittel treiben die Teuerung derzeit an.",
+   "currentBeispielTr": "Şu sıralar hayat pahalılığını başta kiralar ve gıda körüklüyor."
   },
   {
    "id": 7309,
@@ -68,10 +68,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat besteuert",
-   "mevcutTr": "vergilendirmek",
-   "mevcutBeispiel": "Kapitalerträge werden in vielen Ländern niedriger besteuert als Arbeitseinkommen.",
-   "mevcutBeispielTr": "Sermaye gelirleri birçok ülkede emek gelirlerinden daha düşük vergilendiriliyor.",
-   "cakisan": [
+   "currentTr": "vergilendirmek",
+   "currentBeispiel": "Kapitalerträge werden in vielen Ländern niedriger besteuert als Arbeitseinkommen.",
+   "currentBeispielTr": "Sermaye gelirleri birçok ülkede emek gelirlerinden daha düşük vergilendiriliyor.",
+   "overlapping": [
     "veranlagen (B2)"
    ]
   },
@@ -81,9 +81,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gedämpft",
-   "mevcutTr": "frenlemek, hafifletmek, yavaşlatmak",
-   "mevcutBeispiel": "Höhere Zinsen dämpfen den Konsum der privaten Haushalte.",
-   "mevcutBeispielTr": "Yüksek faizler hanehalklarının tüketimini frenler."
+   "currentTr": "frenlemek, hafifletmek, yavaşlatmak",
+   "currentBeispiel": "Höhere Zinsen dämpfen den Konsum der privaten Haushalte.",
+   "currentBeispielTr": "Yüksek faizler hanehalklarının tüketimini frenler."
   },
   {
    "id": 7311,
@@ -91,9 +91,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat verzinst",
-   "mevcutTr": "faiz işletmek, faiz ödemek",
-   "mevcutBeispiel": "Das Guthaben wird mit knapp zwei Prozent jährlich verzinst.",
-   "mevcutBeispielTr": "Mevduata yıllık yüzde ikiye yakın faiz işletiliyor."
+   "currentTr": "faiz işletmek, faiz ödemek",
+   "currentBeispiel": "Das Guthaben wird mit knapp zwei Prozent jährlich verzinst.",
+   "currentBeispielTr": "Mevduata yıllık yüzde ikiye yakın faiz işletiliyor."
   },
   {
    "id": 7312,
@@ -101,9 +101,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gehortet",
-   "mevcutTr": "istiflemek, biriktirmek",
-   "mevcutBeispiel": "Aus Angst vor der Krise horteten viele Haushalte Bargeld.",
-   "mevcutBeispielTr": "Kriz korkusuyla birçok hane nakit istifledi."
+   "currentTr": "istiflemek, biriktirmek",
+   "currentBeispiel": "Aus Angst vor der Krise horteten viele Haushalte Bargeld.",
+   "currentBeispielTr": "Kriz korkusuyla birçok hane nakit istifledi."
   },
   {
    "id": 7313,
@@ -111,9 +111,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat ausgeschüttet",
-   "mevcutTr": "kâr dağıtmak, ödeme yapmak",
-   "mevcutBeispiel": "Der Vorstand will einen größeren Teil des Gewinns ausschütten.",
-   "mevcutBeispielTr": "Yönetim kurulu kârın daha büyük bir bölümünü dağıtmak istiyor."
+   "currentTr": "kâr dağıtmak, ödeme yapmak",
+   "currentBeispiel": "Der Vorstand will einen größeren Teil des Gewinns ausschütten.",
+   "currentBeispielTr": "Yönetim kurulu kârın daha büyük bir bölümünü dağıtmak istiyor."
   },
   {
    "id": 7314,
@@ -121,10 +121,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat verzerrt",
-   "mevcutTr": "çarpıtmak, bozmak",
-   "mevcutBeispiel": "Staatliche Eingriffe können den Wettbewerb erheblich verzerren.",
-   "mevcutBeispielTr": "Devlet müdahaleleri rekabeti önemli ölçüde bozabilir.",
-   "cakisan": [
+   "currentTr": "çarpıtmak, bozmak",
+   "currentBeispiel": "Staatliche Eingriffe können den Wettbewerb erheblich verzerren.",
+   "currentBeispielTr": "Devlet müdahaleleri rekabeti önemli ölçüde bozabilir.",
+   "overlapping": [
     "entstellen (C1)"
    ]
   },
@@ -134,9 +134,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "parasal",
-   "mevcutBeispiel": "Rein monetäre Erklärungen greifen bei dieser Krise deutlich zu kurz.",
-   "mevcutBeispielTr": "Salt parasal açıklamalar bu krizde açıkça yetersiz kalıyor."
+   "currentTr": "parasal",
+   "currentBeispiel": "Rein monetäre Erklärungen greifen bei dieser Krise deutlich zu kurz.",
+   "currentBeispielTr": "Salt parasal açıklamalar bu krizde açıkça yetersiz kalıyor."
   },
   {
    "id": 7316,
@@ -144,9 +144,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "piyasa ekonomisine dayalı",
-   "mevcutBeispiel": "Er verteidigt marktwirtschaftliche Lösungen auch im Gesundheitswesen.",
-   "mevcutBeispielTr": "O, sağlık alanında da piyasa ekonomisine dayalı çözümleri savunuyor."
+   "currentTr": "piyasa ekonomisine dayalı",
+   "currentBeispiel": "Er verteidigt marktwirtschaftliche Lösungen auch im Gesundheitswesen.",
+   "currentBeispielTr": "O, sağlık alanında da piyasa ekonomisine dayalı çözümleri savunuyor."
   },
   {
    "id": 7317,
@@ -154,9 +154,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "oynak, dalgalı",
-   "mevcutBeispiel": "Die Rohstoffmärkte blieben über das ganze Jahr hinweg volatil.",
-   "mevcutBeispielTr": "Emtia piyasaları yıl boyunca oynak kaldı."
+   "currentTr": "oynak, dalgalı",
+   "currentBeispiel": "Die Rohstoffmärkte blieben über das ganze Jahr hinweg volatil.",
+   "currentBeispielTr": "Emtia piyasaları yıl boyunca oynak kaldı."
   },
   {
    "id": 7318,
@@ -164,9 +164,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "konjonktüre ters yönde, antisiklik",
-   "mevcutBeispiel": "Der Staat sollte antizyklisch investieren, also gerade in schlechten Zeiten.",
-   "mevcutBeispielTr": "Devlet konjonktüre ters yönde, yani tam da kötü zamanlarda yatırım yapmalı."
+   "currentTr": "konjonktüre ters yönde, antisiklik",
+   "currentBeispiel": "Der Staat sollte antizyklisch investieren, also gerade in schlechten Zeiten.",
+   "currentBeispielTr": "Devlet konjonktüre ters yönde, yani tam da kötü zamanlarda yatırım yapmalı."
   },
   {
    "id": 7319,
@@ -174,9 +174,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ödeme gücü olan, borcunu ödeyebilen",
-   "mevcutBeispiel": "Nur solvente Kunden erhalten von der Bank größere Kredite.",
-   "mevcutBeispielTr": "Bankadan büyük kredileri yalnızca ödeme gücü olan müşteriler alabiliyor."
+   "currentTr": "ödeme gücü olan, borcunu ödeyebilen",
+   "currentBeispiel": "Nur solvente Kunden erhalten von der Bank größere Kredite.",
+   "currentBeispielTr": "Bankadan büyük kredileri yalnızca ödeme gücü olan müşteriler alabiliyor."
   },
   {
    "id": 7320,
@@ -184,9 +184,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "nominal, itibari",
-   "mevcutBeispiel": "Die Löhne stiegen nominal spürbar, real jedoch kaum.",
-   "mevcutBeispielTr": "Ücretler nominal olarak hissedilir biçimde arttı, ama reel olarak neredeyse hiç."
+   "currentTr": "nominal, itibari",
+   "currentBeispiel": "Die Löhne stiegen nominal spürbar, real jedoch kaum.",
+   "currentBeispielTr": "Ücretler nominal olarak hissedilir biçimde arttı, ama reel olarak neredeyse hiç."
   },
   {
    "id": 7321,
@@ -194,9 +194,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "genişletici, yayılmacı",
-   "mevcutBeispiel": "Eine expansive Geldpolitik verbilligt Kredite für Unternehmen und Haushalte.",
-   "mevcutBeispielTr": "Genişletici para politikası şirketler ve haneler için kredileri ucuzlatır."
+   "currentTr": "genişletici, yayılmacı",
+   "currentBeispiel": "Eine expansive Geldpolitik verbilligt Kredite für Unternehmen und Haushalte.",
+   "currentBeispielTr": "Genişletici para politikası şirketler ve haneler için kredileri ucuzlatır."
   },
   {
    "id": 7322,
@@ -204,9 +204,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sıkı, kısıtlayıcı",
-   "mevcutBeispiel": "Die Zentralbank verfolgt seit Monaten einen ausgesprochen restriktiven Kurs.",
-   "mevcutBeispielTr": "Merkez bankası aylardır belirgin biçimde sıkı bir çizgi izliyor."
+   "currentTr": "sıkı, kısıtlayıcı",
+   "currentBeispiel": "Die Zentralbank verfolgt seit Monaten einen ausgesprochen restriktiven Kurs.",
+   "currentBeispielTr": "Merkez bankası aylardır belirgin biçimde sıkı bir çizgi izliyor."
   },
   {
    "id": 7323,
@@ -214,9 +214,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "aşırı borçlu, borç batağında",
-   "mevcutBeispiel": "Überschuldete Haushalte finden nur schwer aus der Zinsfalle heraus.",
-   "mevcutBeispielTr": "Aşırı borçlu haneler faiz tuzağından zor kurtuluyor."
+   "currentTr": "aşırı borçlu, borç batağında",
+   "currentBeispiel": "Überschuldete Haushalte finden nur schwer aus der Zinsfalle heraus.",
+   "currentBeispielTr": "Aşırı borçlu haneler faiz tuzağından zor kurtuluyor."
   },
   {
    "id": 7324,
@@ -224,9 +224,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kayırmacılık, adam kayırma",
-   "mevcutBeispiel": "Bei der Vergabe der Posten herrschte offenkundig Vetternwirtschaft.",
-   "mevcutBeispielTr": "Kadroların dağıtımında açıkça kayırmacılık hüküm sürüyordu."
+   "currentTr": "kayırmacılık, adam kayırma",
+   "currentBeispiel": "Bei der Vergabe der Posten herrschte offenkundig Vetternwirtschaft.",
+   "currentBeispielTr": "Kadroların dağıtımında açıkça kayırmacılık hüküm sürüyordu."
   },
   {
    "id": 7325,
@@ -234,9 +234,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Hinweisgeber",
-   "mevcutTr": "ihbarcı, bilgi uçuran kişi",
-   "mevcutBeispiel": "Der Hinweisgeber machte die Bestechungszahlungen der Tochterfirma öffentlich.",
-   "mevcutBeispielTr": "İhbarcı, yan şirketin rüşvet ödemelerini kamuoyuna açıkladı."
+   "currentTr": "ihbarcı, bilgi uçuran kişi",
+   "currentBeispiel": "Der Hinweisgeber machte die Bestechungszahlungen der Tochterfirma öffentlich.",
+   "currentBeispielTr": "İhbarcı, yan şirketin rüşvet ödemelerini kamuoyuna açıkladı."
   },
   {
    "id": 7326,
@@ -244,9 +244,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "usulsüz davranış, kusurlu davranış",
-   "mevcutBeispiel": "Systematisches Fehlverhalten im Einkauf blieb jahrelang unentdeckt.",
-   "mevcutBeispielTr": "Satın almadaki sistematik usulsüz davranış yıllarca fark edilmedi."
+   "currentTr": "usulsüz davranış, kusurlu davranış",
+   "currentBeispiel": "Systematisches Fehlverhalten im Einkauf blieb jahrelang unentdeckt.",
+   "currentBeispielTr": "Satın almadaki sistematik usulsüz davranış yıllarca fark edilmedi."
   },
   {
    "id": 7327,
@@ -254,9 +254,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Schmiergelder",
-   "mevcutTr": "rüşvet parası",
-   "mevcutBeispiel": "Über Beraterverträge flossen jahrelang Schmiergelder an lokale Beamte.",
-   "mevcutBeispielTr": "Danışmanlık sözleşmeleri üzerinden yıllarca yerel memurlara rüşvet aktı."
+   "currentTr": "rüşvet parası",
+   "currentBeispiel": "Über Beraterverträge flossen jahrelang Schmiergelder an lokale Beamte.",
+   "currentBeispielTr": "Danışmanlık sözleşmeleri üzerinden yıllarca yerel memurlara rüşvet aktı."
   },
   {
    "id": 7328,
@@ -264,9 +264,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vorteilsnahmen",
-   "mevcutTr": "çıkar sağlama, menfaat temini",
-   "mevcutBeispiel": "Gegen den Abteilungsleiter wird wegen Vorteilsnahme im Amt ermittelt.",
-   "mevcutBeispielTr": "Bölüm müdürü hakkında görevde çıkar sağlama nedeniyle soruşturma yürütülüyor."
+   "currentTr": "çıkar sağlama, menfaat temini",
+   "currentBeispiel": "Gegen den Abteilungsleiter wird wegen Vorteilsnahme im Amt ermittelt.",
+   "currentBeispielTr": "Bölüm müdürü hakkında görevde çıkar sağlama nedeniyle soruşturma yürütülüyor."
   },
   {
    "id": 7329,
@@ -274,9 +274,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Machtmissbräuche",
-   "mevcutTr": "yetki kötüye kullanımı, güç suistimali",
-   "mevcutBeispiel": "Die Untersuchung ergab klare Hinweise auf Machtmissbrauch in der Personalabteilung.",
-   "mevcutBeispielTr": "İnceleme, insan kaynaklarında yetki kötüye kullanımına dair açık işaretler ortaya koydu."
+   "currentTr": "yetki kötüye kullanımı, güç suistimali",
+   "currentBeispiel": "Die Untersuchung ergab klare Hinweise auf Machtmissbrauch in der Personalabteilung.",
+   "currentBeispielTr": "İnceleme, insan kaynaklarında yetki kötüye kullanımına dair açık işaretler ortaya koydu."
   },
   {
    "id": 7330,
@@ -284,9 +284,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Seilschaften",
-   "mevcutTr": "çıkar ağı, klik, dayanışma grubu",
-   "mevcutBeispiel": "Alte Seilschaften bestimmten weiterhin, wer in den Aufsichtsrat einzog.",
-   "mevcutBeispielTr": "Denetim kuruluna kimin gireceğini hâlâ eski çıkar ağları belirliyordu."
+   "currentTr": "çıkar ağı, klik, dayanışma grubu",
+   "currentBeispiel": "Alte Seilschaften bestimmten weiterhin, wer in den Aufsichtsrat einzog.",
+   "currentBeispielTr": "Denetim kuruluna kimin gireceğini hâlâ eski çıkar ağları belirliyordu."
   },
   {
    "id": 7331,
@@ -294,9 +294,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "şeffaflık eksikliği, kapalılık",
-   "mevcutBeispiel": "Die Intransparenz der Zahlungsströme erschwerte jede unabhängige Prüfung erheblich.",
-   "mevcutBeispielTr": "Para akışlarının şeffaf olmayışı her bağımsız denetimi hayli zorlaştırdı."
+   "currentTr": "şeffaflık eksikliği, kapalılık",
+   "currentBeispiel": "Die Intransparenz der Zahlungsströme erschwerte jede unabhängige Prüfung erheblich.",
+   "currentBeispielTr": "Para akışlarının şeffaf olmayışı her bağımsız denetimi hayli zorlaştırdı."
   },
   {
    "id": 7332,
@@ -304,10 +304,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Offenlegungen",
-   "mevcutTr": "açıklama, ifşa etme, kamuya duyurma",
-   "mevcutBeispiel": "Die vollständige Offenlegung der Nebeneinkünfte ist inzwischen verpflichtend.",
-   "mevcutBeispielTr": "Ek gelirlerin eksiksiz açıklanması artık zorunlu hâle geldi.",
-   "cakisan": [
+   "currentTr": "açıklama, ifşa etme, kamuya duyurma",
+   "currentBeispiel": "Die vollständige Offenlegung der Nebeneinkünfte ist inzwischen verpflichtend.",
+   "currentBeispielTr": "Ek gelirlerin eksiksiz açıklanması artık zorunlu hâle geldi.",
+   "overlapping": [
     "die Beschreibung (B1)",
     "die Erklärung (B1)"
    ]
@@ -318,9 +318,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Nachhaltigkeitsberichte",
-   "mevcutTr": "sürdürülebilirlik raporu",
-   "mevcutBeispiel": "Der Nachhaltigkeitsbericht nennt beeindruckende Zahlen ohne überprüfbare Grundlage.",
-   "mevcutBeispielTr": "Sürdürülebilirlik raporu doğrulanabilir bir temel olmadan etkileyici rakamlar veriyor."
+   "currentTr": "sürdürülebilirlik raporu",
+   "currentBeispiel": "Der Nachhaltigkeitsbericht nennt beeindruckende Zahlen ohne überprüfbare Grundlage.",
+   "currentBeispielTr": "Sürdürülebilirlik raporu doğrulanabilir bir temel olmadan etkileyici rakamlar veriyor."
   },
   {
    "id": 7334,
@@ -328,9 +328,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yeşil aklama, çevreci gösterme",
-   "mevcutBeispiel": "Kritiker werfen dem Konzern reine Grünfärberei ohne echte Emissionsminderung vor.",
-   "mevcutBeispielTr": "Eleştirmenler holdingi, gerçek emisyon azaltımı olmadan salt yeşil aklama yapmakla suçluyor."
+   "currentTr": "yeşil aklama, çevreci gösterme",
+   "currentBeispiel": "Kritiker werfen dem Konzern reine Grünfärberei ohne echte Emissionsminderung vor.",
+   "currentBeispielTr": "Eleştirmenler holdingi, gerçek emisyon azaltımı olmadan salt yeşil aklama yapmakla suçluyor."
   },
   {
    "id": 7335,
@@ -338,9 +338,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Etikettenschwindel",
-   "mevcutTr": "etiket aldatmacası, göz boyama",
-   "mevcutBeispiel": "Das angeblich klimaneutrale Produkt entpuppte sich als reiner Etikettenschwindel.",
-   "mevcutBeispielTr": "İklim nötr olduğu söylenen ürün, düpedüz bir etiket aldatmacası çıktı."
+   "currentTr": "etiket aldatmacası, göz boyama",
+   "currentBeispiel": "Das angeblich klimaneutrale Produkt entpuppte sich als reiner Etikettenschwindel.",
+   "currentBeispielTr": "İklim nötr olduğu söylenen ürün, düpedüz bir etiket aldatmacası çıktı."
   },
   {
    "id": 7336,
@@ -348,9 +348,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çifte standart, ikiyüzlü ahlak",
-   "mevcutBeispiel": "Wer Menschenrechte predigt und Zulieferer presst, betreibt Doppelmoral.",
-   "mevcutBeispielTr": "İnsan haklarından dem vurup tedarikçiyi sıkıştıran, çifte standart uyguluyordur."
+   "currentTr": "çifte standart, ikiyüzlü ahlak",
+   "currentBeispiel": "Wer Menschenrechte predigt und Zulieferer presst, betreibt Doppelmoral.",
+   "currentBeispielTr": "İnsan haklarından dem vurup tedarikçiyi sıkıştıran, çifte standart uyguluyordur."
   },
   {
    "id": 7337,
@@ -358,9 +358,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Reputationsrisiken",
-   "mevcutTr": "itibar riski",
-   "mevcutBeispiel": "Das Reputationsrisiko wog am Ende schwerer als der erwartete Gewinn.",
-   "mevcutBeispielTr": "Sonuçta itibar riski, beklenen kârdan daha ağır bastı."
+   "currentTr": "itibar riski",
+   "currentBeispiel": "Das Reputationsrisiko wog am Ende schwerer als der erwartete Gewinn.",
+   "currentBeispielTr": "Sonuçta itibar riski, beklenen kârdan daha ağır bastı."
   },
   {
    "id": 7338,
@@ -368,9 +368,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Grauzonen",
-   "mevcutTr": "gri alan, belirsiz alan",
-   "mevcutBeispiel": "Solche Geschenke bewegen sich in einer rechtlichen Grauzone.",
-   "mevcutBeispielTr": "Bu tür hediyeler hukuki bir gri alanda geziniyor."
+   "currentTr": "gri alan, belirsiz alan",
+   "currentBeispiel": "Solche Geschenke bewegen sich in einer rechtlichen Grauzone.",
+   "currentBeispielTr": "Bu tür hediyeler hukuki bir gri alanda geziniyor."
   },
   {
    "id": 7339,
@@ -378,9 +378,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sorumluluk bilinci",
-   "mevcutBeispiel": "Ihm fehlte jedes Verantwortungsbewusstsein für die Folgen seiner Entscheidungen.",
-   "mevcutBeispielTr": "Kararlarının sonuçlarına dair hiçbir sorumluluk bilinci yoktu."
+   "currentTr": "sorumluluk bilinci",
+   "currentBeispiel": "Ihm fehlte jedes Verantwortungsbewusstsein für die Folgen seiner Entscheidungen.",
+   "currentBeispielTr": "Kararlarının sonuçlarına dair hiçbir sorumluluk bilinci yoktu."
   },
   {
    "id": 7340,
@@ -388,9 +388,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Insidergeschäfte",
-   "mevcutTr": "içeriden öğrenenlerin ticareti",
-   "mevcutBeispiel": "Die Aufsicht prüft mögliche Insidergeschäfte kurz vor der Übernahmeankündigung.",
-   "mevcutBeispielTr": "Denetim kurumu, devralma duyurusundan hemen önceki olası içeriden ticareti inceliyor."
+   "currentTr": "içeriden öğrenenlerin ticareti",
+   "currentBeispiel": "Die Aufsicht prüft mögliche Insidergeschäfte kurz vor der Übernahmeankündigung.",
+   "currentBeispielTr": "Denetim kurumu, devralma duyurusundan hemen önceki olası içeriden ticareti inceliyor."
   },
   {
    "id": 7341,
@@ -398,9 +398,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bilanzfälschungen",
-   "mevcutTr": "bilanço tahrifatı",
-   "mevcutBeispiel": "Die jahrelange Bilanzfälschung flog erst durch einen internen Hinweis auf.",
-   "mevcutBeispielTr": "Yıllardır süren bilanço tahrifatı ancak bir iç ihbarla ortaya çıktı."
+   "currentTr": "bilanço tahrifatı",
+   "currentBeispiel": "Die jahrelange Bilanzfälschung flog erst durch einen internen Hinweis auf.",
+   "currentBeispielTr": "Yıllardır süren bilanço tahrifatı ancak bir iç ihbarla ortaya çıktı."
   },
   {
    "id": 7342,
@@ -408,9 +408,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Veruntreuungen",
-   "mevcutTr": "zimmete geçirme, emniyeti suistimal",
-   "mevcutBeispiel": "Wegen Veruntreuung von Fördermitteln wurde die Geschäftsführerin entlassen.",
-   "mevcutBeispielTr": "Teşvik fonlarını zimmete geçirdiği için genel müdür görevden alındı."
+   "currentTr": "zimmete geçirme, emniyeti suistimal",
+   "currentBeispiel": "Wegen Veruntreuung von Fördermitteln wurde die Geschäftsführerin entlassen.",
+   "currentBeispielTr": "Teşvik fonlarını zimmete geçirdiği için genel müdür görevden alındı."
   },
   {
    "id": 7343,
@@ -418,9 +418,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kara para aklama",
-   "mevcutBeispiel": "Die Bank verschärfte ihre Kontrollen gegen Geldwäsche erheblich.",
-   "mevcutBeispielTr": "Banka kara para aklamaya karşı kontrollerini ciddi biçimde sıkılaştırdı."
+   "currentTr": "kara para aklama",
+   "currentBeispiel": "Die Bank verschärfte ihre Kontrollen gegen Geldwäsche erheblich.",
+   "currentBeispielTr": "Banka kara para aklamaya karşı kontrollerini ciddi biçimde sıkılaştırdı."
   },
   {
    "id": 7344,
@@ -428,9 +428,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Anspruchsgruppen",
-   "mevcutTr": "paydaş, menfaat sahibi grup",
-   "mevcutBeispiel": "Die Strategie berücksichtigt die Erwartungen aller relevanten Anspruchsgruppen.",
-   "mevcutBeispielTr": "Strateji, ilgili tüm paydaş gruplarının beklentilerini dikkate alıyor."
+   "currentTr": "paydaş, menfaat sahibi grup",
+   "currentBeispiel": "Die Strategie berücksichtigt die Erwartungen aller relevanten Anspruchsgruppen.",
+   "currentBeispielTr": "Strateji, ilgili tüm paydaş gruplarının beklentilerini dikkate alıyor."
   },
   {
    "id": 7345,
@@ -438,10 +438,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rechtfertigungen",
-   "mevcutTr": "gerekçe, haklı çıkarma, mazeret",
-   "mevcutBeispiel": "Der Wettbewerbsdruck taugt nicht als Rechtfertigung für gefälschte Prüfberichte.",
-   "mevcutBeispielTr": "Rekabet baskısı, sahte denetim raporları için gerekçe olamaz.",
-   "cakisan": [
+   "currentTr": "gerekçe, haklı çıkarma, mazeret",
+   "currentBeispiel": "Der Wettbewerbsdruck taugt nicht als Rechtfertigung für gefälschte Prüfberichte.",
+   "currentBeispielTr": "Rekabet baskısı, sahte denetim raporları için gerekçe olamaz.",
+   "overlapping": [
     "die Begründung (B1)"
    ]
   },
@@ -451,9 +451,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Meldestellen",
-   "mevcutTr": "bildirim birimi, ihbar merkezi",
-   "mevcutBeispiel": "Verdachtsfälle können anonym an die interne Meldestelle gerichtet werden.",
-   "mevcutBeispielTr": "Şüpheli durumlar iç bildirim birimine isimsiz olarak iletilebilir."
+   "currentTr": "bildirim birimi, ihbar merkezi",
+   "currentBeispiel": "Verdachtsfälle können anonym an die interne Meldestelle gerichtet werden.",
+   "currentBeispielTr": "Şüpheli durumlar iç bildirim birimine isimsiz olarak iletilebilir."
   },
   {
    "id": 7347,
@@ -461,9 +461,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Nebentätigkeiten",
-   "mevcutTr": "yan iş, ek görev",
-   "mevcutBeispiel": "Jede bezahlte Nebentätigkeit muss der Compliance-Abteilung angezeigt werden.",
-   "mevcutBeispielTr": "Ücretli her yan iş uyum birimine bildirilmek zorundadır."
+   "currentTr": "yan iş, ek görev",
+   "currentBeispiel": "Jede bezahlte Nebentätigkeit muss der Compliance-Abteilung angezeigt werden.",
+   "currentBeispielTr": "Ücretli her yan iş uyum birimine bildirilmek zorundadır."
   },
   {
    "id": 7348,
@@ -471,10 +471,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gegenleistungen",
-   "mevcutTr": "karşılık, karşı edim",
-   "mevcutBeispiel": "Für die Spende wurde offenbar eine politische Gegenleistung erwartet.",
-   "mevcutBeispielTr": "Bağış karşılığında görünüşe göre siyasi bir karşılık bekleniyordu.",
-   "cakisan": [
+   "currentTr": "karşılık, karşı edim",
+   "currentBeispiel": "Für die Spende wurde offenbar eine politische Gegenleistung erwartet.",
+   "currentBeispielTr": "Bağış karşılığında görünüşe göre siyasi bir karşılık bekleniyordu.",
+   "overlapping": [
     "die Entgegnung (C1)"
    ]
   },
@@ -484,9 +484,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Preisabsprachen",
-   "mevcutTr": "fiyat anlaşması, danışıklı fiyatlandırma",
-   "mevcutBeispiel": "Die Preisabsprachen kosteten die Verbraucher jährlich Millionenbeträge.",
-   "mevcutBeispielTr": "Danışıklı fiyatlandırmalar tüketicilere yılda milyonlarca euroya mal oldu."
+   "currentTr": "fiyat anlaşması, danışıklı fiyatlandırma",
+   "currentBeispiel": "Die Preisabsprachen kosteten die Verbraucher jährlich Millionenbeträge.",
+   "currentBeispielTr": "Danışıklı fiyatlandırmalar tüketicilere yılda milyonlarca euroya mal oldu."
   },
   {
    "id": 7350,
@@ -494,9 +494,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Monopolstellungen",
-   "mevcutTr": "tekel konumu",
-   "mevcutBeispiel": "Der Anbieter nutzte seine Monopolstellung zulasten kleinerer Händler aus.",
-   "mevcutBeispielTr": "Sağlayıcı, tekel konumunu küçük satıcıların aleyhine kullandı."
+   "currentTr": "tekel konumu",
+   "currentBeispiel": "Der Anbieter nutzte seine Monopolstellung zulasten kleinerer Händler aus.",
+   "currentBeispielTr": "Sağlayıcı, tekel konumunu küçük satıcıların aleyhine kullandı."
   },
   {
    "id": 7351,
@@ -504,9 +504,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Deckmäntel",
-   "mevcutTr": "kılıf, perde, bahane",
-   "mevcutBeispiel": "Unter dem Deckmantel der Forschung wurden Werbekampagnen finanziert.",
-   "mevcutBeispielTr": "Araştırma kılıfı altında reklam kampanyaları finanse edildi."
+   "currentTr": "kılıf, perde, bahane",
+   "currentBeispiel": "Unter dem Deckmantel der Forschung wurden Werbekampagnen finanziert.",
+   "currentBeispielTr": "Araştırma kılıfı altında reklam kampanyaları finanse edildi."
   },
   {
    "id": 7352,
@@ -514,9 +514,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat bestochen",
-   "mevcutTr": "rüşvet vermek, satın almak",
-   "mevcutBeispiel": "Der Vertriebsleiter soll mehrere Zollbeamte bestochen haben.",
-   "mevcutBeispielTr": "Satış müdürünün birkaç gümrük memuruna rüşvet verdiği ileri sürülüyor."
+   "currentTr": "rüşvet vermek, satın almak",
+   "currentBeispiel": "Der Vertriebsleiter soll mehrere Zollbeamte bestochen haben.",
+   "currentBeispielTr": "Satış müdürünün birkaç gümrük memuruna rüşvet verdiği ileri sürülüyor."
   }
  ]
 }

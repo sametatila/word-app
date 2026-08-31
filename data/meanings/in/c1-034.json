@@ -1,16 +1,16 @@
 {
- "paket": "c1-034",
+ "packet": "c1-034",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 6903,
    "de": "nominieren",
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat nominiert",
-   "mevcutTr": "aday göstermek",
-   "mevcutBeispiel": "Die Partei nominierte überraschend eine parteilose Kandidatin.",
-   "mevcutBeispielTr": "Parti sürpriz biçimde partisiz bir kadın adayı gösterdi."
+   "currentTr": "aday göstermek",
+   "currentBeispiel": "Die Partei nominierte überraschend eine parteilose Kandidatin.",
+   "currentBeispielTr": "Parti sürpriz biçimde partisiz bir kadın adayı gösterdi."
   },
   {
    "id": 6904,
@@ -18,9 +18,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat entmachtet",
-   "mevcutTr": "yetkisiz bırakmak, iktidardan düşürmek",
-   "mevcutBeispiel": "Die Reform entmachtet die Kammer faktisch zugunsten der Regierung.",
-   "mevcutBeispielTr": "Reform, meclisi hükümet lehine fiilen yetkisiz bırakıyor."
+   "currentTr": "yetkisiz bırakmak, iktidardan düşürmek",
+   "currentBeispiel": "Die Reform entmachtet die Kammer faktisch zugunsten der Regierung.",
+   "currentBeispielTr": "Reform, meclisi hükümet lehine fiilen yetkisiz bırakıyor."
   },
   {
    "id": 6905,
@@ -28,10 +28,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat ausgehöhlt",
-   "mevcutTr": "içini boşaltmak, işlevsiz kılmak",
-   "mevcutBeispiel": "Zahlreiche Ausnahmen höhlen den Schutz der Verfassung nach und nach aus.",
-   "mevcutBeispielTr": "Sayısız istisna, anayasanın koruyuculuğunu yavaş yavaş içten boşaltıyor.",
-   "cakisan": [
+   "currentTr": "içini boşaltmak, işlevsiz kılmak",
+   "currentBeispiel": "Zahlreiche Ausnahmen höhlen den Schutz der Verfassung nach und nach aus.",
+   "currentBeispielTr": "Sayısız istisna, anayasanın koruyuculuğunu yavaş yavaş içten boşaltıyor.",
+   "overlapping": [
     "entkernen (C1)"
    ]
   },
@@ -41,9 +41,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "parlamenter, meclise ilişkin",
-   "mevcutBeispiel": "Der Untersuchungsausschuss ist ein scharfes parlamentarisches Kontrollinstrument.",
-   "mevcutBeispielTr": "Araştırma komisyonu keskin bir parlamenter denetim aracıdır."
+   "currentTr": "parlamenter, meclise ilişkin",
+   "currentBeispiel": "Der Untersuchungsausschuss ist ein scharfes parlamentarisches Kontrollinstrument.",
+   "currentBeispielTr": "Araştırma komisyonu keskin bir parlamenter denetim aracıdır."
   },
   {
    "id": 6907,
@@ -51,9 +51,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kamu otoritesine dayalı, egemenlik yetkisiyle",
-   "mevcutBeispiel": "Diese Aufgaben darf allein der Staat hoheitlich wahrnehmen.",
-   "mevcutBeispielTr": "Bu görevleri yalnızca devlet kamu otoritesi olarak yerine getirebilir."
+   "currentTr": "kamu otoritesine dayalı, egemenlik yetkisiyle",
+   "currentBeispiel": "Diese Aufgaben darf allein der Staat hoheitlich wahrnehmen.",
+   "currentBeispielTr": "Bu görevleri yalnızca devlet kamu otoritesi olarak yerine getirebilir."
   },
   {
    "id": 6908,
@@ -61,9 +61,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "talimata bağlı",
-   "mevcutBeispiel": "Die Staatsanwaltschaft ist gegenüber dem Justizministerium weisungsgebunden.",
-   "mevcutBeispielTr": "Savcılık, Adalet Bakanlığı'nın talimatlarına bağlıdır."
+   "currentTr": "talimata bağlı",
+   "currentBeispiel": "Die Staatsanwaltschaft ist gegenüber dem Justizministerium weisungsgebunden.",
+   "currentBeispielTr": "Savcılık, Adalet Bakanlığı'nın talimatlarına bağlıdır."
   },
   {
    "id": 6909,
@@ -71,9 +71,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "popülist",
-   "mevcutBeispiel": "Mit populistischen Parolen lassen sich komplexe Probleme nicht lösen.",
-   "mevcutBeispielTr": "Popülist sloganlarla karmaşık sorunlar çözülemez."
+   "currentTr": "popülist",
+   "currentBeispiel": "Mit populistischen Parolen lassen sich komplexe Probleme nicht lösen.",
+   "currentBeispielTr": "Popülist sloganlarla karmaşık sorunlar çözülemez."
   },
   {
    "id": 6910,
@@ -81,9 +81,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hatırlama yetisi, anımsama gücü",
-   "mevcutBeispiel": "Mit zunehmendem Alter lässt das Erinnerungsvermögen allmählich nach.",
-   "mevcutBeispielTr": "Yaş ilerledikçe hatırlama yetisi yavaş yavaş zayıflar."
+   "currentTr": "hatırlama yetisi, anımsama gücü",
+   "currentBeispiel": "Mit zunehmendem Alter lässt das Erinnerungsvermögen allmählich nach.",
+   "currentBeispielTr": "Yaş ilerledikçe hatırlama yetisi yavaş yavaş zayıflar."
   },
   {
    "id": 6911,
@@ -91,9 +91,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verzerrungen",
-   "mevcutTr": "çarpıtma, sapma",
-   "mevcutBeispiel": "Systematische Verzerrungen im Denken lassen sich kaum vollständig vermeiden.",
-   "mevcutBeispielTr": "Düşüncedeki sistematik sapmalardan tümüyle kaçınmak neredeyse imkânsızdır."
+   "currentTr": "çarpıtma, sapma",
+   "currentBeispiel": "Systematische Verzerrungen im Denken lassen sich kaum vollständig vermeiden.",
+   "currentBeispielTr": "Düşüncedeki sistematik sapmalardan tümüyle kaçınmak neredeyse imkânsızdır."
   },
   {
    "id": 6912,
@@ -101,9 +101,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Voreingenommenheiten",
-   "mevcutTr": "peşin hüküm, taraflılık",
-   "mevcutBeispiel": "Die Studie untersucht, wie Voreingenommenheit die Bewertung von Bewerbern verfälscht.",
-   "mevcutBeispielTr": "Çalışma, peşin hükmün aday değerlendirmesini nasıl bozduğunu inceliyor."
+   "currentTr": "peşin hüküm, taraflılık",
+   "currentBeispiel": "Die Studie untersucht, wie Voreingenommenheit die Bewertung von Bewerbern verfälscht.",
+   "currentBeispielTr": "Çalışma, peşin hükmün aday değerlendirmesini nasıl bozduğunu inceliyor."
   },
   {
    "id": 6913,
@@ -111,9 +111,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Entscheidungsfindungen",
-   "mevcutTr": "karar verme süreci",
-   "mevcutBeispiel": "Unter Zeitdruck folgt die Entscheidungsfindung eher einfachen Faustregeln.",
-   "mevcutBeispielTr": "Zaman baskısı altında karar verme süreci daha çok basit kestirmeleri izler."
+   "currentTr": "karar verme süreci",
+   "currentBeispiel": "Unter Zeitdruck folgt die Entscheidungsfindung eher einfachen Faustregeln.",
+   "currentBeispielTr": "Zaman baskısı altında karar verme süreci daha çok basit kestirmeleri izler."
   },
   {
    "id": 6914,
@@ -121,9 +121,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "bilinç, farkındalık",
-   "mevcutBeispiel": "Wie aus neuronaler Aktivität Bewusstsein entsteht, ist bis heute ungeklärt.",
-   "mevcutBeispielTr": "Nöral etkinlikten bilincin nasıl doğduğu bugün hâlâ aydınlatılamamıştır."
+   "currentTr": "bilinç, farkındalık",
+   "currentBeispiel": "Wie aus neuronaler Aktivität Bewusstsein entsteht, ist bis heute ungeklärt.",
+   "currentBeispielTr": "Nöral etkinlikten bilincin nasıl doğduğu bugün hâlâ aydınlatılamamıştır."
   },
   {
    "id": 6915,
@@ -131,10 +131,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bedürfnisse",
-   "mevcutTr": "ihtiyaç, gereksinim",
-   "mevcutBeispiel": "Das Bedürfnis nach Anerkennung treibt viele Menschen unbemerkt an.",
-   "mevcutBeispielTr": "Takdir edilme ihtiyacı birçok insanı fark ettirmeden yönlendirir.",
-   "cakisan": [
+   "currentTr": "ihtiyaç, gereksinim",
+   "currentBeispiel": "Das Bedürfnis nach Anerkennung treibt viele Menschen unbemerkt an.",
+   "currentBeispielTr": "Takdir edilme ihtiyacı birçok insanı fark ettirmeden yönlendirir.",
+   "overlapping": [
     "der Bedarf (B1)"
    ]
   },
@@ -144,9 +144,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Reize",
-   "mevcutTr": "uyaran, uyarıcı",
-   "mevcutBeispiel": "Das Gehirn filtert die meisten Reize aus, bevor sie bewusst werden.",
-   "mevcutBeispielTr": "Beyin, uyaranların çoğunu bilince ulaşmadan önce süzer."
+   "currentTr": "uyaran, uyarıcı",
+   "currentBeispiel": "Das Gehirn filtert die meisten Reize aus, bevor sie bewusst werden.",
+   "currentBeispielTr": "Beyin, uyaranların çoğunu bilince ulaşmadan önce süzer."
   },
   {
    "id": 6917,
@@ -154,9 +154,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Denkfehler",
-   "mevcutTr": "düşünme hatası, akıl yürütme yanlışı",
-   "mevcutBeispiel": "Dieser Denkfehler tritt selbst bei erfahrenen Fachleuten regelmäßig auf.",
-   "mevcutBeispielTr": "Bu düşünme hatası deneyimli uzmanlarda bile düzenli olarak görülür."
+   "currentTr": "düşünme hatası, akıl yürütme yanlışı",
+   "currentBeispiel": "Dieser Denkfehler tritt selbst bei erfahrenen Fachleuten regelmäßig auf.",
+   "currentBeispielTr": "Bu düşünme hatası deneyimli uzmanlarda bile düzenli olarak görülür."
   },
   {
    "id": 6918,
@@ -164,9 +164,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "muhakeme yetisi, yargı gücü",
-   "mevcutBeispiel": "Starke Emotionen trüben das Urteilsvermögen mehr, als uns lieb ist.",
-   "mevcutBeispielTr": "Güçlü duygular muhakeme yetisini hoşumuza gidenden fazla bulandırır."
+   "currentTr": "muhakeme yetisi, yargı gücü",
+   "currentBeispiel": "Starke Emotionen trüben das Urteilsvermögen mehr, als uns lieb ist.",
+   "currentBeispielTr": "Güçlü duygular muhakeme yetisini hoşumuza gidenden fazla bulandırır."
   },
   {
    "id": 6919,
@@ -174,9 +174,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Selbstbilder",
-   "mevcutTr": "benlik imgesi, kendilik algısı",
-   "mevcutBeispiel": "Ihr Selbstbild stimmt kaum mit dem Eindruck der Kollegen überein.",
-   "mevcutBeispielTr": "Onun benlik imgesi meslektaşlarının izlenimiyle pek örtüşmüyor."
+   "currentTr": "benlik imgesi, kendilik algısı",
+   "currentBeispiel": "Ihr Selbstbild stimmt kaum mit dem Eindruck der Kollegen überein.",
+   "currentBeispielTr": "Onun benlik imgesi meslektaşlarının izlenimiyle pek örtüşmüyor."
   },
   {
    "id": 6920,
@@ -184,10 +184,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Identitäten",
-   "mevcutTr": "kimlik",
-   "mevcutBeispiel": "In der Jugend wird die eigene Identität immer wieder neu ausgehandelt.",
-   "mevcutBeispielTr": "Gençlikte kişinin kendi kimliği durmadan yeniden müzakere edilir.",
-   "cakisan": [
+   "currentTr": "kimlik",
+   "currentBeispiel": "In der Jugend wird die eigene Identität immer wieder neu ausgehandelt.",
+   "currentBeispielTr": "Gençlikte kişinin kendi kimliği durmadan yeniden müzakere edilir.",
+   "overlapping": [
     "der Ausweis (A1)"
    ]
   },
@@ -197,9 +197,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Konditionierungen",
-   "mevcutTr": "koşullanma, şartlanma",
-   "mevcutBeispiel": "Pawlow zeigte die Konditionierung anhand eines einfachen Glockensignals.",
-   "mevcutBeispielTr": "Pavlov koşullanmayı basit bir zil sinyaliyle gösterdi."
+   "currentTr": "koşullanma, şartlanma",
+   "currentBeispiel": "Pawlow zeigte die Konditionierung anhand eines einfachen Glockensignals.",
+   "currentBeispielTr": "Pavlov koşullanmayı basit bir zil sinyaliyle gösterdi."
   },
   {
    "id": 6922,
@@ -207,9 +207,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verstärkungen",
-   "mevcutTr": "pekiştirme, takviye",
-   "mevcutBeispiel": "Positive Verstärkung wirkt langfristig besser als jede Form von Strafe.",
-   "mevcutBeispielTr": "Olumlu pekiştirme uzun vadede her tür cezadan daha iyi işler."
+   "currentTr": "pekiştirme, takviye",
+   "currentBeispiel": "Positive Verstärkung wirkt langfristig besser als jede Form von Strafe.",
+   "currentBeispielTr": "Olumlu pekiştirme uzun vadede her tür cezadan daha iyi işler."
   },
   {
    "id": 6923,
@@ -217,9 +217,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Belohnungssysteme",
-   "mevcutTr": "ödül sistemi",
-   "mevcutBeispiel": "Soziale Netzwerke sprechen gezielt das Belohnungssystem im Gehirn an.",
-   "mevcutBeispielTr": "Sosyal ağlar beyindeki ödül sistemini bilinçli olarak hedefler."
+   "currentTr": "ödül sistemi",
+   "currentBeispiel": "Soziale Netzwerke sprechen gezielt das Belohnungssystem im Gehirn an.",
+   "currentBeispielTr": "Sosyal ağlar beyindeki ödül sistemini bilinçli olarak hedefler."
   },
   {
    "id": 6924,
@@ -227,9 +227,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Neurosen",
-   "mevcutTr": "nevroz",
-   "mevcutBeispiel": "Der Begriff Neurose gilt in der heutigen Diagnostik als überholt.",
-   "mevcutBeispielTr": "Nevroz kavramı bugünkü tanı sisteminde geçerliliğini yitirmiş sayılır."
+   "currentTr": "nevroz",
+   "currentBeispiel": "Der Begriff Neurose gilt in der heutigen Diagnostik als überholt.",
+   "currentBeispielTr": "Nevroz kavramı bugünkü tanı sisteminde geçerliliğini yitirmiş sayılır."
   },
   {
    "id": 6925,
@@ -237,9 +237,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bewältigungsstrategien",
-   "mevcutTr": "başa çıkma stratejisi",
-   "mevcutBeispiel": "Humor ist für viele eine erstaunlich wirksame Bewältigungsstrategie.",
-   "mevcutBeispielTr": "Mizah birçok kişi için şaşırtıcı derecede etkili bir başa çıkma stratejisidir."
+   "currentTr": "başa çıkma stratejisi",
+   "currentBeispiel": "Humor ist für viele eine erstaunlich wirksame Bewältigungsstrategie.",
+   "currentBeispielTr": "Mizah birçok kişi için şaşırtıcı derecede etkili bir başa çıkma stratejisidir."
   },
   {
    "id": 6926,
@@ -247,9 +247,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Abwehrmechanismen",
-   "mevcutTr": "savunma mekanizması",
-   "mevcutBeispiel": "Leugnen ist ein Abwehrmechanismus, der kurzfristig entlastet.",
-   "mevcutBeispielTr": "İnkâr, kısa vadede rahatlatan bir savunma mekanizmasıdır."
+   "currentTr": "savunma mekanizması",
+   "currentBeispiel": "Leugnen ist ein Abwehrmechanismus, der kurzfristig entlastet.",
+   "currentBeispielTr": "İnkâr, kısa vadede rahatlatan bir savunma mekanizmasıdır."
   },
   {
    "id": 6927,
@@ -257,9 +257,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Projektionen",
-   "mevcutTr": "yansıtma",
-   "mevcutBeispiel": "Wer ständig Neid unterstellt, betreibt womöglich selbst eine Projektion.",
-   "mevcutBeispielTr": "Sürekli kıskançlık isnat eden kişi belki de kendisi yansıtma yapıyordur."
+   "currentTr": "yansıtma",
+   "currentBeispiel": "Wer ständig Neid unterstellt, betreibt womöglich selbst eine Projektion.",
+   "currentBeispielTr": "Sürekli kıskançlık isnat eden kişi belki de kendisi yansıtma yapıyordur."
   },
   {
    "id": 6928,
@@ -267,10 +267,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Übertragungen",
-   "mevcutTr": "aktarım",
-   "mevcutBeispiel": "In der Analyse richtet sich die Übertragung oft auf den Therapeuten.",
-   "mevcutBeispielTr": "Analizde aktarım çoğu zaman terapiste yönelir.",
-   "cakisan": [
+   "currentTr": "aktarım",
+   "currentBeispiel": "In der Analyse richtet sich die Übertragung oft auf den Therapeuten.",
+   "currentBeispielTr": "Analizde aktarım çoğu zaman terapiste yönelir.",
+   "overlapping": [
     "die Überlieferung (C1)"
    ]
   },
@@ -280,9 +280,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verhaltenstherapien",
-   "mevcutTr": "davranış terapisi",
-   "mevcutBeispiel": "Die Verhaltenstherapie setzt weniger an der Kindheit als an aktuellen Mustern an.",
-   "mevcutBeispielTr": "Davranış terapisi çocukluktan çok güncel örüntülere odaklanır."
+   "currentTr": "davranış terapisi",
+   "currentBeispiel": "Die Verhaltenstherapie setzt weniger an der Kindheit als an aktuellen Mustern an.",
+   "currentBeispielTr": "Davranış terapisi çocukluktan çok güncel örüntülere odaklanır."
   },
   {
    "id": 6930,
@@ -290,9 +290,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "psikanaliz",
-   "mevcutBeispiel": "Die Psychoanalyse hat unser Bild vom Seelenleben nachhaltig verändert.",
-   "mevcutBeispielTr": "Psikanaliz, ruhsal yaşama dair bakışımızı kalıcı biçimde değiştirdi."
+   "currentTr": "psikanaliz",
+   "currentBeispiel": "Die Psychoanalyse hat unser Bild vom Seelenleben nachhaltig verändert.",
+   "currentBeispielTr": "Psikanaliz, ruhsal yaşama dair bakışımızı kalıcı biçimde değiştirdi."
   },
   {
    "id": 6931,
@@ -300,9 +300,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Krankheitsbilder",
-   "mevcutTr": "hastalık tablosu, klinik tablo",
-   "mevcutBeispiel": "Das Krankheitsbild äußert sich bei Kindern anders als bei Erwachsenen.",
-   "mevcutBeispielTr": "Hastalık tablosu çocuklarda yetişkinlerdekinden farklı belirti verir."
+   "currentTr": "hastalık tablosu, klinik tablo",
+   "currentBeispiel": "Das Krankheitsbild äußert sich bei Kindern anders als bei Erwachsenen.",
+   "currentBeispielTr": "Hastalık tablosu çocuklarda yetişkinlerdekinden farklı belirti verir."
   },
   {
    "id": 6932,
@@ -310,9 +310,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bindungstheorien",
-   "mevcutTr": "bağlanma kuramı",
-   "mevcutBeispiel": "Die Bindungstheorie erklärt, warum frühe Beziehungen so prägend wirken.",
-   "mevcutBeispielTr": "Bağlanma kuramı erken ilişkilerin neden bu denli belirleyici olduğunu açıklar."
+   "currentTr": "bağlanma kuramı",
+   "currentBeispiel": "Die Bindungstheorie erklärt, warum frühe Beziehungen so prägend wirken.",
+   "currentBeispielTr": "Bağlanma kuramı erken ilişkilerin neden bu denli belirleyici olduğunu açıklar."
   },
   {
    "id": 6933,
@@ -320,10 +320,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Ablösungen",
-   "mevcutTr": "ayrışma, kopuş",
-   "mevcutBeispiel": "Die Ablösung vom Elternhaus verläuft selten ohne Konflikte.",
-   "mevcutBeispielTr": "Aile evinden ayrışma nadiren çatışmasız geçer.",
-   "cakisan": [
+   "currentTr": "ayrışma, kopuş",
+   "currentBeispiel": "Die Ablösung vom Elternhaus verläuft selten ohne Konflikte.",
+   "currentBeispielTr": "Aile evinden ayrışma nadiren çatışmasız geçer.",
+   "overlapping": [
     "die Segregation (C1)",
     "die Zersetzung (C1)",
     "die Verwitterung (C1)"
@@ -335,9 +335,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "uyum yeteneği, uyum sağlama becerisi",
-   "mevcutBeispiel": "Die Anpassungsfähigkeit des Menschen an neue Umgebungen ist bemerkenswert.",
-   "mevcutBeispielTr": "İnsanın yeni ortamlara uyum yeteneği dikkate değerdir."
+   "currentTr": "uyum yeteneği, uyum sağlama becerisi",
+   "currentBeispiel": "Die Anpassungsfähigkeit des Menschen an neue Umgebungen ist bemerkenswert.",
+   "currentBeispielTr": "İnsanın yeni ortamlara uyum yeteneği dikkate değerdir."
   },
   {
    "id": 6935,
@@ -345,10 +345,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "dayanıklılık, psikolojik sağlamlık",
-   "mevcutBeispiel": "Stabile Beziehungen stärken die psychische Widerstandsfähigkeit erheblich.",
-   "mevcutBeispielTr": "İstikrarlı ilişkiler ruhsal dayanıklılığı belirgin biçimde güçlendirir.",
-   "cakisan": [
+   "currentTr": "dayanıklılık, psikolojik sağlamlık",
+   "currentBeispiel": "Stabile Beziehungen stärken die psychische Widerstandsfähigkeit erheblich.",
+   "currentBeispielTr": "İstikrarlı ilişkiler ruhsal dayanıklılığı belirgin biçimde güçlendirir.",
+   "overlapping": [
     "die Belastbarkeit (B2)",
     "die Resilienz (C1)",
     "die Ausdauer (B2)"
@@ -360,9 +360,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "öz düzenleme, kendini düzenleme",
-   "mevcutBeispiel": "Kinder lernen Selbstregulation vor allem durch verlässliche Bezugspersonen.",
-   "mevcutBeispielTr": "Çocuklar öz düzenlemeyi en çok güvenilir bakım verenler aracılığıyla öğrenir."
+   "currentTr": "öz düzenleme, kendini düzenleme",
+   "currentBeispiel": "Kinder lernen Selbstregulation vor allem durch verlässliche Bezugspersonen.",
+   "currentBeispielTr": "Çocuklar öz düzenlemeyi en çok güvenilir bakım verenler aracılığıyla öğrenir."
   },
   {
    "id": 6937,
@@ -370,9 +370,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "dürtü kontrolü",
-   "mevcutBeispiel": "Müdigkeit schwächt die Impulskontrolle deutlich stärker als vermutet.",
-   "mevcutBeispielTr": "Yorgunluk dürtü kontrolünü sanılandan çok daha fazla zayıflatır."
+   "currentTr": "dürtü kontrolü",
+   "currentBeispiel": "Müdigkeit schwächt die Impulskontrolle deutlich stärker als vermutet.",
+   "currentBeispielTr": "Yorgunluk dürtü kontrolünü sanılandan çok daha fazla zayıflatır."
   },
   {
    "id": 6938,
@@ -380,10 +380,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Frustrationen",
-   "mevcutTr": "hayal kırıklığı, engellenmişlik",
-   "mevcutBeispiel": "Anhaltende Frustration schlägt nicht selten in Aggression um.",
-   "mevcutBeispielTr": "Süregelen engellenmişlik duygusu çoğu zaman saldırganlığa dönüşür.",
-   "cakisan": [
+   "currentTr": "hayal kırıklığı, engellenmişlik",
+   "currentBeispiel": "Anhaltende Frustration schlägt nicht selten in Aggression um.",
+   "currentBeispielTr": "Süregelen engellenmişlik duygusu çoğu zaman saldırganlığa dönüşür.",
+   "overlapping": [
     "die Enttäuschung (B1)"
    ]
   },
@@ -393,9 +393,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Affekte",
-   "mevcutTr": "duygulanım, ani duygu patlaması",
-   "mevcutBeispiel": "Im Affekt getroffene Entscheidungen bereut man meistens später.",
-   "mevcutBeispielTr": "Ani duygu patlamasıyla verilen kararlardan çoğunlukla sonradan pişman olunur."
+   "currentTr": "duygulanım, ani duygu patlaması",
+   "currentBeispiel": "Im Affekt getroffene Entscheidungen bereut man meistens später.",
+   "currentBeispielTr": "Ani duygu patlamasıyla verilen kararlardan çoğunlukla sonradan pişman olunur."
   },
   {
    "id": 6940,
@@ -403,10 +403,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Emotionen",
-   "mevcutTr": "duygu",
-   "mevcutBeispiel": "Emotionen liefern Informationen, die dem Verstand allein entgehen.",
-   "mevcutBeispielTr": "Duygular, yalnızca akla gizli kalan bilgiler sunar.",
-   "cakisan": [
+   "currentTr": "duygu",
+   "currentBeispiel": "Emotionen liefern Informationen, die dem Verstand allein entgehen.",
+   "currentBeispielTr": "Duygular, yalnızca akla gizli kalan bilgiler sunar.",
+   "overlapping": [
     "das Gefühl (B1)"
    ]
   },
@@ -416,9 +416,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Abneigungen",
-   "mevcutTr": "hoşlanmama, antipati, tiksinti",
-   "mevcutBeispiel": "Seine Abneigung gegen große Gruppen wurde mit den Jahren stärker.",
-   "mevcutBeispielTr": "Kalabalık gruplara karşı hoşnutsuzluğu yıllar içinde arttı."
+   "currentTr": "hoşlanmama, antipati, tiksinti",
+   "currentBeispiel": "Seine Abneigung gegen große Gruppen wurde mit den Jahren stärker.",
+   "currentBeispielTr": "Kalabalık gruplara karşı hoşnutsuzluğu yıllar içinde arttı."
   },
   {
    "id": 6942,
@@ -426,9 +426,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "utanç",
-   "mevcutBeispiel": "Scham hindert viele Betroffene daran, überhaupt Hilfe zu suchen.",
-   "mevcutBeispielTr": "Utanç, birçok kişinin yardım aramasının önüne geçer."
+   "currentTr": "utanç",
+   "currentBeispiel": "Scham hindert viele Betroffene daran, überhaupt Hilfe zu suchen.",
+   "currentBeispielTr": "Utanç, birçok kişinin yardım aramasının önüne geçer."
   },
   {
    "id": 6943,
@@ -436,10 +436,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat abgespeichert",
-   "mevcutTr": "kaydetmek, belleğe almak",
-   "mevcutBeispiel": "Das Gehirn speichert vor allem emotional geladene Szenen dauerhaft ab.",
-   "mevcutBeispielTr": "Beyin özellikle duygusal yüklü sahneleri kalıcı olarak belleğe alır.",
-   "cakisan": [
+   "currentTr": "kaydetmek, belleğe almak",
+   "currentBeispiel": "Das Gehirn speichert vor allem emotional geladene Szenen dauerhaft ab.",
+   "currentBeispielTr": "Beyin özellikle duygusal yüklü sahneleri kalıcı olarak belleğe alır.",
+   "overlapping": [
     "speichern (A2)",
     "verzeichnen (B2)",
     "erfassen (B2)"
@@ -451,9 +451,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat ausgeblendet",
-   "mevcutTr": "görmezden gelmek, dikkate almamak",
-   "mevcutBeispiel": "Im Gespräch blenden wir störende Geräusche fast vollständig aus.",
-   "mevcutBeispielTr": "Konuşma sırasında rahatsız edici sesleri neredeyse tümüyle dikkate almayız."
+   "currentTr": "görmezden gelmek, dikkate almamak",
+   "currentBeispiel": "Im Gespräch blenden wir störende Geräusche fast vollständig aus.",
+   "currentBeispielTr": "Konuşma sırasında rahatsız edici sesleri neredeyse tümüyle dikkate almayız."
   },
   {
    "id": 6945,
@@ -461,9 +461,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gesteuert",
-   "mevcutTr": "yönlendirmek, yönetmek",
-   "mevcutBeispiel": "Erwartungen steuern die Wahrnehmung stärker, als uns bewusst ist.",
-   "mevcutBeispielTr": "Beklentiler algıyı farkında olduğumuzdan daha güçlü yönlendirir."
+   "currentTr": "yönlendirmek, yönetmek",
+   "currentBeispiel": "Erwartungen steuern die Wahrnehmung stärker, als uns bewusst ist.",
+   "currentBeispielTr": "Beklentiler algıyı farkında olduğumuzdan daha güçlü yönlendirir."
   },
   {
    "id": 6946,
@@ -471,10 +471,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gehemmt",
-   "mevcutTr": "engellemek, ketlemek",
-   "mevcutBeispiel": "Zu strenge Kritik hemmt die Kreativität von Schülern erheblich.",
-   "mevcutBeispielTr": "Aşırı sert eleştiri öğrencilerin yaratıcılığını ciddi ölçüde ketler.",
-   "cakisan": [
+   "currentTr": "engellemek, ketlemek",
+   "currentBeispiel": "Zu strenge Kritik hemmt die Kreativität von Schülern erheblich.",
+   "currentBeispielTr": "Aşırı sert eleştiri öğrencilerin yaratıcılığını ciddi ölçüde ketler.",
+   "overlapping": [
     "behindern (B1)",
     "unterbinden (C1)",
     "sperren (B2)",
@@ -487,9 +487,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat hervorgerufen",
-   "mevcutTr": "meydana getirmek, doğurmak",
-   "mevcutBeispiel": "Widersprüchliche Botschaften rufen bei Kindern große Verunsicherung hervor.",
-   "mevcutBeispielTr": "Çelişkili mesajlar çocuklarda büyük bir güvensizlik doğurur."
+   "currentTr": "meydana getirmek, doğurmak",
+   "currentBeispiel": "Widersprüchliche Botschaften rufen bei Kindern große Verunsicherung hervor.",
+   "currentBeispielTr": "Çelişkili mesajlar çocuklarda büyük bir güvensizlik doğurur."
   },
   {
    "id": 6948,
@@ -497,9 +497,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat bewirkt",
-   "mevcutTr": "yol açmak, sağlamak, meydana getirmek",
-   "mevcutBeispiel": "Schon kleine Veränderungen im Alltag bewirken oft erstaunlich viel.",
-   "mevcutBeispielTr": "Günlük hayattaki küçük değişiklikler bile çoğu zaman şaşırtıcı ölçüde etki eder."
+   "currentTr": "yol açmak, sağlamak, meydana getirmek",
+   "currentBeispiel": "Schon kleine Veränderungen im Alltag bewirken oft erstaunlich viel.",
+   "currentBeispielTr": "Günlük hayattaki küçük değişiklikler bile çoğu zaman şaşırtıcı ölçüde etki eder."
   },
   {
    "id": 6949,
@@ -507,9 +507,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat sich hineinversetzt",
-   "mevcutTr": "kendini birinin yerine koymak",
-   "mevcutBeispiel": "Erst ab etwa vier Jahren können Kinder sich in andere hineinversetzen.",
-   "mevcutBeispielTr": "Çocuklar ancak dört yaş civarında kendilerini başkasının yerine koyabilir."
+   "currentTr": "kendini birinin yerine koymak",
+   "currentBeispiel": "Erst ab etwa vier Jahren können Kinder sich in andere hineinversetzen.",
+   "currentBeispielTr": "Çocuklar ancak dört yaş civarında kendilerini başkasının yerine koyabilir."
   },
   {
    "id": 6950,
@@ -517,10 +517,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gedeutet",
-   "mevcutTr": "yorumlamak, anlamlandırmak",
-   "mevcutBeispiel": "Dasselbe Verhalten wird je nach Erwartung völlig anders gedeutet.",
-   "mevcutBeispielTr": "Aynı davranış, beklentiye göre bambaşka yorumlanır.",
-   "cakisan": [
+   "currentTr": "yorumlamak, anlamlandırmak",
+   "currentBeispiel": "Dasselbe Verhalten wird je nach Erwartung völlig anders gedeutet.",
+   "currentBeispielTr": "Aynı davranış, beklentiye göre bambaşka yorumlanır.",
+   "overlapping": [
     "interpretieren (C1)",
     "kommentieren (C1)"
    ]
@@ -531,10 +531,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat überschätzt",
-   "mevcutTr": "abartmak, olduğundan fazla görmek",
-   "mevcutBeispiel": "Anfänger überschätzen ihr Können häufig, Fachleute eher das Gegenteil.",
-   "mevcutBeispielTr": "Yeni başlayanlar becerilerini sıkça abartır, uzmanlar ise tersini yapar.",
-   "cakisan": [
+   "currentTr": "abartmak, olduğundan fazla görmek",
+   "currentBeispiel": "Anfänger überschätzen ihr Können häufig, Fachleute eher das Gegenteil.",
+   "currentBeispielTr": "Yeni başlayanlar becerilerini sıkça abartır, uzmanlar ise tersini yapar.",
+   "overlapping": [
     "übertreiben (B1)",
     "dramatisieren (C1)",
     "aufbauschen (C1)"
@@ -546,9 +546,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "takıntılı, saplantılı",
-   "mevcutBeispiel": "Sein zwanghaftes Kontrollieren der Türen kostete ihn jeden Abend Zeit.",
-   "mevcutBeispielTr": "Kapıları takıntılı biçimde kontrol etmesi her akşam zamanını alıyordu."
+   "currentTr": "takıntılı, saplantılı",
+   "currentBeispiel": "Sein zwanghaftes Kontrollieren der Türen kostete ihn jeden Abend Zeit.",
+   "currentBeispielTr": "Kapıları takıntılı biçimde kontrol etmesi her akşam zamanını alıyordu."
   }
  ]
 }

@@ -46,7 +46,7 @@
   "tr": "anons, duyuru",
   "formen": "-n",
   "beispiel": "Ich habe die Durchsage nicht verstanden.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Ansage (A1)"
   ]
  },
@@ -65,7 +65,7 @@
   "tr": "duş almak",
   "formen": "",
   "beispiel": "Ich bade nicht so gern, ich dusche lieber.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "duschen (A1)"
   ]
  },
@@ -84,7 +84,7 @@
   "tr": "köşe",
   "formen": "-n",
   "beispiel": "An der nächsten Ecke links.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Eck (B1)"
   ]
  },
@@ -143,7 +143,7 @@
   "tr": "e-posta",
   "formen": "-s",
   "beispiel": "Ich habe Ihre E-Mail nicht bekommen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Mail (A1)",
    "die (E-)Mail (A2)"
   ]
@@ -171,7 +171,7 @@
   "tr": "bitmek, sona ermek",
   "formen": "",
   "beispiel": "Die Straße endet hier.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "aufhören (A1)"
   ]
  },
@@ -198,7 +198,7 @@
   "tr": "yetişkin",
   "formen": "-n",
   "beispiel": "Dieser Film ist nur für Erwachsene.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "r/e Erwachsene (A1)"
   ]
  },
@@ -225,7 +225,7 @@
   "tr": "medeni hâl",
   "formen": "",
   "beispiel": "Bei „Familienstand“ musst du „ledig“ ankreuzen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Personenstand D (B1)",
    "der Zivilstand (CH) (B1)"
   ]
@@ -277,7 +277,7 @@
   "tr": "ateş",
   "formen": "",
   "beispiel": "1. Der Schaden durch das Feuer war sehr groß. 2. Haben Sie Feuer?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Fieber (A1)"
   ]
  },
@@ -288,7 +288,7 @@
   "tr": "ateş",
   "formen": "",
   "beispiel": "Mein Mann hat noch immer Fieber.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Feuer (A1)"
   ]
  },
@@ -339,7 +339,7 @@
   "tr": "yabancı",
   "formen": "",
   "beispiel": "Das weiß ich nicht; ich bin fremd hier.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Ausländer (A1)",
    "ausländisch (A1)"
   ]
@@ -415,7 +415,7 @@
   "tr": "seve seve, memnuniyetle",
   "formen": "",
   "beispiel": "Ich gehe gerne einkaufen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "gern/gerne (B1)"
   ]
  },
@@ -482,7 +482,7 @@
   "tr": "mangal yapmak, ızgara yapmak",
   "formen": "",
   "beispiel": "Heute grillen wir im Garten.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "grillieren (B1)"
   ]
  },
@@ -501,7 +501,7 @@
   "tr": "büyükanne",
   "formen": "",
   "beispiel": "Meine Großmutter heißt Eva.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Oma (A1)"
   ]
  },
@@ -512,7 +512,7 @@
   "tr": "büyükbaba",
   "formen": "",
   "beispiel": "Mein Großvater ist schon 80.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Opa (A1)"
   ]
  },
@@ -539,7 +539,7 @@
   "tr": "uygun fiyatlı, ucuz",
   "formen": "",
   "beispiel": "Dort gibt es günstige Angebote.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "preiswert (A2)"
   ]
  },
@@ -550,7 +550,7 @@
   "tr": "piliç, tavuk",
   "formen": "-",
   "beispiel": "Ein Hähnchen mit Pommes bitte!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Hähnchen/Hühnchen (B1)",
    "das Hend(e)l (B1)"
   ]
@@ -682,7 +682,7 @@
   "tr": "her",
   "formen": "",
   "beispiel": "Blumen kannst du in jedem Bahnhof kaufen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "jeder (A1)"
   ]
  },
@@ -765,7 +765,7 @@
   "tr": "almak, elde etmek",
   "formen": "",
   "beispiel": "Ich kriege 15 Euro in der Stunde für meine Arbeit.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "bekommen (A1)",
    "erhalten (B1)"
   ]
@@ -785,7 +785,7 @@
   "tr": "ilgilenmek, bakmak",
   "formen": "",
   "beispiel": "Jede Mutter kümmert sich um ihre kleinen Kinder.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "sich kümmern um (B2)"
   ]
  },
@@ -804,7 +804,7 @@
   "tr": "dükkân, mağaza",
   "formen": "-ä",
   "beispiel": "Im Buchladen können Sie Bücher kaufen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Geschäft (A1)"
   ]
  },
@@ -855,7 +855,7 @@
   "tr": "koymak, yerleştirmek",
   "formen": "",
   "beispiel": "Legen Sie das Buch auf den Tisch.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "stellen (A1)"
   ]
  },
@@ -882,7 +882,7 @@
   "tr": "son",
   "formen": "",
   "beispiel": "Morgen ist der letzte Kurstag.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Ende (A1)"
   ]
  },
@@ -917,7 +917,7 @@
   "tr": "kamyon",
   "formen": "-s",
   "beispiel": "Dieser Lastkraftwagen ist sehr groß.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Laster (B1)"
   ]
  },
@@ -960,7 +960,7 @@
   "tr": "deniz",
   "formen": "",
   "beispiel": "Wir machen Urlaub am Meer.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die See (A2)"
   ]
  },
@@ -979,7 +979,7 @@
   "tr": "insan",
   "formen": "-en",
   "beispiel": "Die Menschen sind hier anders als bei uns.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "man (A1)"
   ]
  },
@@ -1022,7 +1022,7 @@
   "tr": "istemek",
   "formen": "",
   "beispiel": "Was möchten Sie trinken?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "wollen (A1)"
   ]
  },
@@ -1057,7 +1057,7 @@
   "tr": "gelecek, bir sonraki",
   "formen": "",
   "beispiel": "Sehen wir uns nächste Woche?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "nächste (A1)"
   ]
  }

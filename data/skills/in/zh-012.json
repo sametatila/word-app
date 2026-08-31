@@ -1,7 +1,7 @@
 {
- "paket": "zh-012",
+ "packet": "zh-012",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-b1-w1",
    "skill": "writing",
@@ -9,65 +9,65 @@
    "title": "En Grillaabig im Innehoof",
    "genre": "Mesaj",
    "intro": "Apartmanın avlusunda mangal akşamı düzenliyorsun — önce cümle kur, sonra komşuların mesaj grubuna davet yaz.",
-   "metin": "Am Samschtigaabig grilliered mir im Innehoof.\n\nJede cha öppis z trinke mitbringe.\n\nHoi zäme!\n\nIch bi de Deniz us em dritte Schtock — ich wohne siit em Früelig da. Am Samschtig ab de Sächsi mached mir en chliine Grillaabig im Innehoof, und ihr sind alli härzlich iiglade!\n\nWürscht und Broot händ mir gnueg, aber es wär schöön, wenn jede na öppis z trinke oder en Salaat mitbringt. Käi Angscht wäge em Lärm: Um di Zääni ruumed mir uf, versproche. Wenn s rägnet, verschiebed mir s eifach uf de nöchscht Samschtig.\n\nGänd mir doch churz Bschäid, wär chunt. Ich fröi mi uf eu!\n\nDeniz",
+   "text": "Am Samschtigaabig grilliered mir im Innehoof.\n\nJede cha öppis z trinke mitbringe.\n\nHoi zäme!\n\nIch bi de Deniz us em dritte Schtock — ich wohne siit em Früelig da. Am Samschtig ab de Sächsi mached mir en chliine Grillaabig im Innehoof, und ihr sind alli härzlich iiglade!\n\nWürscht und Broot händ mir gnueg, aber es wär schöön, wenn jede na öppis z trinke oder en Salaat mitbringt. Käi Angscht wäge em Lärm: Um di Zääni ruumed mir uf, versproche. Wenn s rägnet, verschiebed mir s eifach uf de nöchscht Samschtig.\n\nGänd mir doch churz Bschäid, wär chunt. Ich fröi mi uf eu!\n\nDeniz",
    "gloss": [
     {
      "de": "grilliere",
-     "mevcutTr": "mangal yapmak (İsviçre)"
+     "currentTr": "mangal yapmak (İsviçre)"
     },
     {
      "de": "de Innehoof",
-     "mevcutTr": "iç avlu"
+     "currentTr": "iç avlu"
     },
     {
      "de": "mitbringe",
-     "mevcutTr": "yanında getirmek"
+     "currentTr": "yanında getirmek"
     },
     {
      "de": "de Lärm",
-     "mevcutTr": "gürültü",
-     "havuz": {
+     "currentTr": "gürültü",
+     "pool": {
       "tr": "gürültü",
       "en": "noise"
      }
     },
     {
      "de": "ufruume",
-     "mevcutTr": "toplamak, temizlemek"
+     "currentTr": "toplamak, temizlemek"
     },
     {
      "de": "verschiebe",
-     "mevcutTr": "ertelemek"
+     "currentTr": "ertelemek"
     },
     {
      "de": "Bschäid gää",
-     "mevcutTr": "haber vermek"
+     "currentTr": "haber vermek"
     }
    ],
    "phrases": [
     {
      "de": "Ich bi de/d … us em dritte Schtock.",
-     "mevcutTr": "Üçüncü kattan … benim."
+     "currentTr": "Üçüncü kattan … benim."
     },
     {
      "de": "Ihr sind alli härzlich iiglade!",
-     "mevcutTr": "Hepiniz davetlisiniz!"
+     "currentTr": "Hepiniz davetlisiniz!"
     },
     {
      "de": "Es wär schöön, wenn jede … mitbringt.",
-     "mevcutTr": "Herkes … getirse ne güzel olur."
+     "currentTr": "Herkes … getirse ne güzel olur."
     },
     {
      "de": "Käi Angscht wäge em Lärm.",
-     "mevcutTr": "Gürültü konusunda merak etmeyin."
+     "currentTr": "Gürültü konusunda merak etmeyin."
     },
     {
      "de": "Wenn s rägnet, verschiebed mir s.",
-     "mevcutTr": "Yağmur yağarsa erteleriz."
+     "currentTr": "Yağmur yağarsa erteleriz."
     },
     {
      "de": "Gänd mir churz Bschäid, wär chunt.",
-     "mevcutTr": "Kimin geleceğini kısaca bildirin."
+     "currentTr": "Kimin geleceğini kısaca bildirin."
     }
    ]
   },
@@ -78,69 +78,69 @@
    "title": "E Reklamation schriibe",
    "genre": "Şikâyet",
    "intro": "Bir üründen memnun kalmadın ve yazılı olarak bildiriyorsun. Lehçede yazarken bile net ve kibar kalmak esas.",
-   "metin": "D Lampe, wo ich bstellt han, isch beschädiget aacho.\n\nE Kopie vo de Rächnig schick ich im Aahang mit.\n\nIch erwarte innerhalb vo ere Wuche e Lösig.\n\nGrüezi mitenand\n\nAm zwölfte März han ich bi Ine e Schriibtischlampe bstellt (Bstellnummere A-7732). S Paket isch am Friitig aacho, aber d Lampe, wo ich bstellt han, isch beschädiget: de Fuess isch broche und s Kabel hät en Riss.\n\nIch han scho am Samschtig aaglüte, aber niemert isch erreichbar gsii. E Kopie vo de Rächnig schick ich im Aahang mit, sowie zwäi Fotene.\n\nIch bitte Si um en Ersatz. Wänn Si käine meh händ, hetti ich au gärn s Gäld zrugg. Ich erwarte innerhalb vo ere Wuche e Lösig.\n\nFründlichi Grüess\nMurat Aydın",
+   "text": "D Lampe, wo ich bstellt han, isch beschädiget aacho.\n\nE Kopie vo de Rächnig schick ich im Aahang mit.\n\nIch erwarte innerhalb vo ere Wuche e Lösig.\n\nGrüezi mitenand\n\nAm zwölfte März han ich bi Ine e Schriibtischlampe bstellt (Bstellnummere A-7732). S Paket isch am Friitig aacho, aber d Lampe, wo ich bstellt han, isch beschädiget: de Fuess isch broche und s Kabel hät en Riss.\n\nIch han scho am Samschtig aaglüte, aber niemert isch erreichbar gsii. E Kopie vo de Rächnig schick ich im Aahang mit, sowie zwäi Fotene.\n\nIch bitte Si um en Ersatz. Wänn Si käine meh händ, hetti ich au gärn s Gäld zrugg. Ich erwarte innerhalb vo ere Wuche e Lösig.\n\nFründlichi Grüess\nMurat Aydın",
    "gloss": [
     {
      "de": "d Reklamation",
-     "mevcutTr": "şikâyet",
-     "havuz": {
+     "currentTr": "şikâyet",
+     "pool": {
       "tr": "şikâyet",
       "en": "complaint"
      }
     },
     {
      "de": "d Bstellig",
-     "mevcutTr": "sipariş"
+     "currentTr": "sipariş"
     },
     {
      "de": "beschädiget",
-     "mevcutTr": "hasarlı"
+     "currentTr": "hasarlı"
     },
     {
      "de": "de Ersatz",
-     "mevcutTr": "değişim",
-     "havuz": {
+     "currentTr": "değişim",
+     "pool": {
       "tr": "yedek",
       "en": "replacement"
      }
     },
     {
      "de": "d Frischt",
-     "mevcutTr": "süre"
+     "currentTr": "süre"
     },
     {
      "de": "erwarte",
-     "mevcutTr": "beklemek"
+     "currentTr": "beklemek"
     },
     {
      "de": "d Lösig",
-     "mevcutTr": "çözüm"
+     "currentTr": "çözüm"
     }
    ],
    "phrases": [
     {
      "de": "Ich han am … bi Ine … bstellt.",
-     "mevcutTr": "… tarihinde sizden … sipariş ettim."
+     "currentTr": "… tarihinde sizden … sipariş ettim."
     },
     {
      "de": "Läider isch … beschädiget aacho.",
-     "mevcutTr": "Maalesef … hasarlı geldi."
+     "currentTr": "Maalesef … hasarlı geldi."
     },
     {
      "de": "Ich han scho am … aaglüte.",
-     "mevcutTr": "… tarihinde zaten aramıştım."
+     "currentTr": "… tarihinde zaten aramıştım."
     },
     {
      "de": "Ich bitte Si um en Ersatz.",
-     "mevcutTr": "Sizden değişim rica ediyorum."
+     "currentTr": "Sizden değişim rica ediyorum."
     },
     {
      "de": "Ich erwarte bis am … e Antwort.",
-     "mevcutTr": "…'e kadar yanıt bekliyorum."
+     "currentTr": "…'e kadar yanıt bekliyorum."
     },
     {
      "de": "Fründlichi Grüess",
-     "mevcutTr": "Saygılarımla"
+     "currentTr": "Saygılarımla"
     }
    ]
   },
@@ -151,57 +151,57 @@
    "title": "Läserbrief: Meh Bäum i de Stadt",
    "genre": "Okur mektubu",
    "intro": "Yerel gazeteye kısa bir okur mektubu yazacaksın: bir görüş belirtip gerekçelendireceksin.",
-   "metin": "Ich finde, d Stadt bruucht meh Bäum.\n\nIm Summer isch s im Schatte füf Grad chüeler.\n\nDrum schlaa ich vor, dass me i jedere nöie Strass Bäum pflanzt.\n\nZu Ihrem Artikel vom letschte Samschtig über d Hitz i de Stadt:\n\nIch bi ganz iiverstande, dass mir es Problem händ — aber d Lösig isch günschtiger, als vill mäined. Mir bruuched äifach meh Bäum.\n\nZerscht: Im Summer isch s im Schatte füf bis siebe Grad chüeler. Wär im Chreis 4 wohnt und käi Balkon hät, gspürt de Unterschid sofort. Zwäitens: Bäum schlucked Wasser. Bi eme starche Gwitter lauft weniger uf d Strass, und d Kanalisation haltet besser.\n\nEs cha doch nöd sii, dass mir bi jedem Umbau zerscht Bäum fälled und denn über d Hitz klaged.\n\nDrum schlaa ich vor, dass me i jedere nöie Strass Bäum pflanzt und für jede gfällt Baum zwäi nöii setzt.\n\nAndrea Bühler, Züri-Wiedike",
+   "text": "Ich finde, d Stadt bruucht meh Bäum.\n\nIm Summer isch s im Schatte füf Grad chüeler.\n\nDrum schlaa ich vor, dass me i jedere nöie Strass Bäum pflanzt.\n\nZu Ihrem Artikel vom letschte Samschtig über d Hitz i de Stadt:\n\nIch bi ganz iiverstande, dass mir es Problem händ — aber d Lösig isch günschtiger, als vill mäined. Mir bruuched äifach meh Bäum.\n\nZerscht: Im Summer isch s im Schatte füf bis siebe Grad chüeler. Wär im Chreis 4 wohnt und käi Balkon hät, gspürt de Unterschid sofort. Zwäitens: Bäum schlucked Wasser. Bi eme starche Gwitter lauft weniger uf d Strass, und d Kanalisation haltet besser.\n\nEs cha doch nöd sii, dass mir bi jedem Umbau zerscht Bäum fälled und denn über d Hitz klaged.\n\nDrum schlaa ich vor, dass me i jedere nöie Strass Bäum pflanzt und für jede gfällt Baum zwäi nöii setzt.\n\nAndrea Bühler, Züri-Wiedike",
    "gloss": [
     {
      "de": "de Läserbrief",
-     "mevcutTr": "okur mektubu"
+     "currentTr": "okur mektubu"
     },
     {
      "de": "de Schatte",
-     "mevcutTr": "gölge"
+     "currentTr": "gölge"
     },
     {
      "de": "d Hitz",
-     "mevcutTr": "sıcak, sıcaklık"
+     "currentTr": "sıcak, sıcaklık"
     },
     {
      "de": "d Meinig",
-     "mevcutTr": "görüş"
+     "currentTr": "görüş"
     },
     {
      "de": "iiverstande",
-     "mevcutTr": "hemfikir"
+     "currentTr": "hemfikir"
     },
     {
      "de": "s Argumänt",
-     "mevcutTr": "argüman"
+     "currentTr": "argüman"
     },
     {
      "de": "vorschlaa",
-     "mevcutTr": "önermek"
+     "currentTr": "önermek"
     }
    ],
    "phrases": [
     {
      "de": "Zu Ihrem Artikel vom …",
-     "mevcutTr": "…tarihli yazınıza dair"
+     "currentTr": "…tarihli yazınıza dair"
     },
     {
      "de": "Ich bi ganz iiverstande, dass …",
-     "mevcutTr": "…konusunda tamamen hemfikirim."
+     "currentTr": "…konusunda tamamen hemfikirim."
     },
     {
      "de": "Zerscht: … Zwäitens: …",
-     "mevcutTr": "Birincisi: … İkincisi: …"
+     "currentTr": "Birincisi: … İkincisi: …"
     },
     {
      "de": "Es cha doch nöd sii, dass …",
-     "mevcutTr": "Olacak şey değil ki …"
+     "currentTr": "Olacak şey değil ki …"
     },
     {
      "de": "Drum schlaa ich vor, dass …",
-     "mevcutTr": "Bu yüzden … öneriyorum."
+     "currentTr": "Bu yüzden … öneriyorum."
     }
    ]
   },
@@ -212,57 +212,57 @@
    "title": "Min erschte Monet z Züri",
    "genre": "Anlatı",
    "intro": "Zürih'teki ilk ayını anlatan kişisel bir metin yazacaksın: olaylar, duygular ve bir sonuç.",
-   "metin": "Am Aafang isch mer alles sehr tüür vorcho.\n\nEs isch mer uufgfalle, wie pünktlich d Lüüt sind.\n\nHüt fühl ich mi da vill wooler.\n\nIch bi im Auguscht z Züri aacho, mit zwäi Koffere und käim einzige Bekannte. Am Aafang isch mer alles sehr tüür vorcho — de erscht Iichauf im Coop han ich fascht nöd glaubt.\n\nAm schwiirigschte isch d Sprach gsii. Ich han Hochdüütsch glernt, aber i de Migros händ d Lüüt Mundart gredt, und ich han nume Bahnhof verstande. Zwäi Wuche lang han ich am Aabig Häimweh gha.\n\nDenn isch mer öppis uufgfalle: Wänn ich gfrögt han, händ alli gärn ghulfe — nume vo sich uus säit niemert öppis. Und ich han gschtuunet, wie pünktlich s Tram chunt. Uf d Sekunde.\n\nUnderdesse han ich mi iiglebt. Ich kenne mini Nochbere, ich verstaan im Gschäft s mäischte, und hüt fühl ich mi da vill wooler als am Aafang.",
+   "text": "Am Aafang isch mer alles sehr tüür vorcho.\n\nEs isch mer uufgfalle, wie pünktlich d Lüüt sind.\n\nHüt fühl ich mi da vill wooler.\n\nIch bi im Auguscht z Züri aacho, mit zwäi Koffere und käim einzige Bekannte. Am Aafang isch mer alles sehr tüür vorcho — de erscht Iichauf im Coop han ich fascht nöd glaubt.\n\nAm schwiirigschte isch d Sprach gsii. Ich han Hochdüütsch glernt, aber i de Migros händ d Lüüt Mundart gredt, und ich han nume Bahnhof verstande. Zwäi Wuche lang han ich am Aabig Häimweh gha.\n\nDenn isch mer öppis uufgfalle: Wänn ich gfrögt han, händ alli gärn ghulfe — nume vo sich uus säit niemert öppis. Und ich han gschtuunet, wie pünktlich s Tram chunt. Uf d Sekunde.\n\nUnderdesse han ich mi iiglebt. Ich kenne mini Nochbere, ich verstaan im Gschäft s mäischte, und hüt fühl ich mi da vill wooler als am Aafang.",
    "gloss": [
     {
      "de": "de Aafang",
-     "mevcutTr": "başlangıç"
+     "currentTr": "başlangıç"
     },
     {
      "de": "sich gwöhne",
-     "mevcutTr": "alışmak"
+     "currentTr": "alışmak"
     },
     {
      "de": "ungwont",
-     "mevcutTr": "alışılmadık"
+     "currentTr": "alışılmadık"
     },
     {
      "de": "s Hämmli",
-     "mevcutTr": "burukluk, ev özlemi (Heimweh → s Häimweh)"
+     "currentTr": "burukluk, ev özlemi (Heimweh → s Häimweh)"
     },
     {
      "de": "uffalle",
-     "mevcutTr": "dikkat çekmek, göze çarpmak"
+     "currentTr": "dikkat çekmek, göze çarpmak"
     },
     {
      "de": "schtuune",
-     "mevcutTr": "şaşırmak"
+     "currentTr": "şaşırmak"
     },
     {
      "de": "sich iiläbe",
-     "mevcutTr": "yerleşmek, alışmak"
+     "currentTr": "yerleşmek, alışmak"
     }
    ],
    "phrases": [
     {
      "de": "Am Aafang isch alles … gsii.",
-     "mevcutTr": "Başlangıçta her şey … idi."
+     "currentTr": "Başlangıçta her şey … idi."
     },
     {
      "de": "Am schwiirigschte isch … gsii.",
-     "mevcutTr": "En zoru … idi."
+     "currentTr": "En zoru … idi."
     },
     {
      "de": "Es isch mer uufgfalle, dass …",
-     "mevcutTr": "… olduğu dikkatimi çekti."
+     "currentTr": "… olduğu dikkatimi çekti."
     },
     {
      "de": "Ich han gschtuunet, wie …",
-     "mevcutTr": "Ne kadar … olduğuna şaşırdım."
+     "currentTr": "Ne kadar … olduğuna şaşırdım."
     },
     {
      "de": "Underdesse han ich mi iiglebt.",
-     "mevcutTr": "Bu arada alıştım."
+     "currentTr": "Bu arada alıştım."
     }
    ]
   },
@@ -273,69 +273,69 @@
    "title": "D Kündigung schriibe",
    "genre": "Resmî yazı",
    "intro": "Kira sözleşmesini feshetmek: kısa, tarihli ve biçime uygun olmalı — yoksa geçersiz sayılır.",
-   "metin": "Ich kündige d Wonig uf de nächschtmöglich Termin.\n\nIch bitte Si um e Bestätigung.\n\nIch chan Ine Nachmieter vorschlaa, zum vorziitig uszüge.\n\nSehr geehrti Frau Bächtold\n\nHiermit kündige ich d 3-Zimmer-Wonig a de Bertastrass 9, 2. Schtock, links, uf de nächschtmöglich Termin, also uf de 30. Septämber.\n\nIch bitte Si um e schriftlichi Bestätigung vo dere Kündigung.\n\nGärn würd ich scho früener uszüge. Wänn Si iiverstande sind, schlaa ich Ine Nachmieter vor, wo zaalungsfähig sind und de Vertrag zu de gliiche Konditione übernämed.\n\nFür d Wonigsabgab bin ich ab Mitti Juli verfüegbar, am liebschte am Vormittag. Bitte gänd Si mer rächtziitig Bschäid, damit ich d Endreinigung cha organisiere.\n\nFründlichi Grüess\nYusuf Demir\n\nZüri, 20. Mai",
+   "text": "Ich kündige d Wonig uf de nächschtmöglich Termin.\n\nIch bitte Si um e Bestätigung.\n\nIch chan Ine Nachmieter vorschlaa, zum vorziitig uszüge.\n\nSehr geehrti Frau Bächtold\n\nHiermit kündige ich d 3-Zimmer-Wonig a de Bertastrass 9, 2. Schtock, links, uf de nächschtmöglich Termin, also uf de 30. Septämber.\n\nIch bitte Si um e schriftlichi Bestätigung vo dere Kündigung.\n\nGärn würd ich scho früener uszüge. Wänn Si iiverstande sind, schlaa ich Ine Nachmieter vor, wo zaalungsfähig sind und de Vertrag zu de gliiche Konditione übernämed.\n\nFür d Wonigsabgab bin ich ab Mitti Juli verfüegbar, am liebschte am Vormittag. Bitte gänd Si mer rächtziitig Bschäid, damit ich d Endreinigung cha organisiere.\n\nFründlichi Grüess\nYusuf Demir\n\nZüri, 20. Mai",
    "gloss": [
     {
      "de": "kündige",
-     "mevcutTr": "feshetmek"
+     "currentTr": "feshetmek"
     },
     {
      "de": "de Kündigungstermin",
-     "mevcutTr": "fesih tarihi"
+     "currentTr": "fesih tarihi"
     },
     {
      "de": "iigschriibe",
-     "mevcutTr": "iadeli taahhütlü"
+     "currentTr": "iadeli taahhütlü"
     },
     {
      "de": "de Nachmieter",
-     "mevcutTr": "devralacak kiracı",
-     "havuz": {
+     "currentTr": "devralacak kiracı",
+     "pool": {
       "tr": "sonraki kiracı",
       "en": "next tenant"
      }
     },
     {
      "de": "d Bestätigung",
-     "mevcutTr": "onay",
-     "havuz": {
+     "currentTr": "onay",
+     "pool": {
       "tr": "teyit",
       "en": "confirmation"
      }
     },
     {
      "de": "d Abgab",
-     "mevcutTr": "teslim"
+     "currentTr": "teslim"
     },
     {
      "de": "vorziitig",
-     "mevcutTr": "erken"
+     "currentTr": "erken"
     }
    ],
    "phrases": [
     {
      "de": "Hiermit kündige ich …",
-     "mevcutTr": "İşbu yazıyla …'i feshediyorum."
+     "currentTr": "İşbu yazıyla …'i feshediyorum."
     },
     {
      "de": "uf de nächschtmöglich Termin, also uf de …",
-     "mevcutTr": "bir sonraki mümkün tarihe, yani …'e"
+     "currentTr": "bir sonraki mümkün tarihe, yani …'e"
     },
     {
      "de": "Ich bitte Si um e schriftlichi Bestätigung.",
-     "mevcutTr": "Yazılı onay rica ediyorum."
+     "currentTr": "Yazılı onay rica ediyorum."
     },
     {
      "de": "Gärn schlaa ich Ine Nachmieter vor.",
-     "mevcutTr": "Memnuniyetle kiracı önerebilirim."
+     "currentTr": "Memnuniyetle kiracı önerebilirim."
     },
     {
      "de": "Für d Abgab bin ich ab em … verfüegbar.",
-     "mevcutTr": "Teslim için …'den itibaren müsaitim."
+     "currentTr": "Teslim için …'den itibaren müsaitim."
     },
     {
      "de": "Fründlichi Grüess",
-     "mevcutTr": "Saygılarımla"
+     "currentTr": "Saygılarımla"
     }
    ]
   },
@@ -346,61 +346,61 @@
    "title": "Forumsbiitrag mit Meinig",
    "genre": "Sınav formatı",
    "intro": "Sınavın klasik yazma görevi: bir forum yazısına kendi görüşünle cevap ver — görüş, gerekçe, örnek, öneri.",
-   "metin": "Miner Meinig nach sötted d Schuele d Händy nöd verbüüte.\n\nEinersiits lenkt das ab, anderersiits hilft s au bim Lerne.\n\nDrum schlaa ich vor, dass es klari Regle git.\n\nIch han de Biitrag vo lehrer_zh gläse und find d Frag würkli spannend.\n\nMiner Meinig nach söll im Underricht Hochdüütsch gredt wärde, in de Pause aber Mundart. De wichtigscht Grund isch s Schriibe: D Chind schriibed später Hochdüütsch, und wär s nie ghört, hät en Nachtäil. De zwäit Grund isch d Grächtigkäit — Chind, wo dihäi käi Mundart ghöred, sind susch doppelt im Rückschtand.\n\nBi mir isch s so gsii, dass ich Hochdüütsch us de Schuel kennt han und Mundart erscht uf em Pauseplatz glernt han. Das hät funktioniert, aber d Pause isch entschäidend gsii — dört isch d Sprooch würkli passiert.\n\nNatürli git s au s Argumänt, dass Mundart zur Identität ghört. Das stimmt, und drum wär s falsch, si us de Schuel z verbanne.\n\nDrum schlaa ich vor, dass es klari Regle git: Underricht uf Hochdüütsch, Pause und Turne uf Mundart. So lerned alli bäides — und niemert mues sich für sini Sprooch schäme.",
+   "text": "Miner Meinig nach sötted d Schuele d Händy nöd verbüüte.\n\nEinersiits lenkt das ab, anderersiits hilft s au bim Lerne.\n\nDrum schlaa ich vor, dass es klari Regle git.\n\nIch han de Biitrag vo lehrer_zh gläse und find d Frag würkli spannend.\n\nMiner Meinig nach söll im Underricht Hochdüütsch gredt wärde, in de Pause aber Mundart. De wichtigscht Grund isch s Schriibe: D Chind schriibed später Hochdüütsch, und wär s nie ghört, hät en Nachtäil. De zwäit Grund isch d Grächtigkäit — Chind, wo dihäi käi Mundart ghöred, sind susch doppelt im Rückschtand.\n\nBi mir isch s so gsii, dass ich Hochdüütsch us de Schuel kennt han und Mundart erscht uf em Pauseplatz glernt han. Das hät funktioniert, aber d Pause isch entschäidend gsii — dört isch d Sprooch würkli passiert.\n\nNatürli git s au s Argumänt, dass Mundart zur Identität ghört. Das stimmt, und drum wär s falsch, si us de Schuel z verbanne.\n\nDrum schlaa ich vor, dass es klari Regle git: Underricht uf Hochdüütsch, Pause und Turne uf Mundart. So lerned alli bäides — und niemert mues sich für sini Sprooch schäme.",
    "gloss": [
     {
      "de": "de Biitrag",
-     "mevcutTr": "gönderi"
+     "currentTr": "gönderi"
     },
     {
      "de": "d Meinig",
-     "mevcutTr": "görüş"
+     "currentTr": "görüş"
     },
     {
      "de": "de Vortäil",
-     "mevcutTr": "avantaj"
+     "currentTr": "avantaj"
     },
     {
      "de": "de Nachtäil",
-     "mevcutTr": "dezavantaj"
+     "currentTr": "dezavantaj"
     },
     {
      "de": "einersiits … anderersiits",
-     "mevcutTr": "bir yandan … öte yandan"
+     "currentTr": "bir yandan … öte yandan"
     },
     {
      "de": "vorschlaa",
-     "mevcutTr": "önermek"
+     "currentTr": "önermek"
     },
     {
      "de": "d Erfaarig",
-     "mevcutTr": "deneyim"
+     "currentTr": "deneyim"
     }
    ],
    "phrases": [
     {
      "de": "Ich han de Biitrag vo … gläse.",
-     "mevcutTr": "…'in yazısını okudum."
+     "currentTr": "…'in yazısını okudum."
     },
     {
      "de": "Miner Meinig nach …",
-     "mevcutTr": "Bence …"
+     "currentTr": "Bence …"
     },
     {
      "de": "De wichtigscht Grund isch …",
-     "mevcutTr": "En önemli neden …"
+     "currentTr": "En önemli neden …"
     },
     {
      "de": "Bi mir isch s so gsii, dass …",
-     "mevcutTr": "Bende şöyle oldu: …"
+     "currentTr": "Bende şöyle oldu: …"
     },
     {
      "de": "Natürli git s au …",
-     "mevcutTr": "Elbette … de var."
+     "currentTr": "Elbette … de var."
     },
     {
      "de": "Drum schlaa ich vor, dass …",
-     "mevcutTr": "Bu yüzden … öneriyorum."
+     "currentTr": "Bu yüzden … öneriyorum."
     }
    ]
   },
@@ -411,36 +411,36 @@
    "title": "Mehrsprachigkäit: dini Erfaarig",
    "genre": "Kültür",
    "intro": "zh-b1-r9'daki konuyu kendi deneyiminle yazacaksın: diller arasında yaşamak nasıl bir şey?",
-   "metin": "Am Aafang han ich mich gschämt z rede.\n\nD Lüüt sind sofort uf Hochdüütsch gwächslet.\n\nHüt gseh ich min Akzent nöd als Problem.\n\nAls ich nöi da gsii bi, han ich im Gschäft en Satz uf Mundart probiert. Ich han gsäit: „Chunsch au go Mittag ässe?“ Di Kollegin hät gnickt — und denn uf Hochdüütsch gantwortet.\n\nDas isch nöd bös gmeint gsii. Aber ich han mich gschämt und han drei Wuche nüüt meh probiert. D Lüüt sind sowieso sofort uf Hochdüütsch gwächslet, sobald si min Akzent ghört händ, und ich han gläbt, wie i eme Zimmer, wo alli höflich sind und niemert eim rediglaat.\n\nGänderet hät s en Kollege us em Lager. Er hät äifach wiiter Mundart gredt, au wänn ich uf Hochdüütsch gantwortet han. Nach zwäi Mönet han ich gmerkt, dass ich alles verstaan. Nach sächs Mönet han ich gantwortet.\n\nUnderdesse redt ich Mundart mit em halbe Team. Hüt gseh ich min Akzent nöd als Problem — er säit nur, wo ich härchume.\n\nMin Rat wär: Säged de Lüüt, si sölled Mundart wiiterrede. Di mäischte fröied sich sogar — si wüssed nur nöd, öb si dörfed.",
+   "text": "Am Aafang han ich mich gschämt z rede.\n\nD Lüüt sind sofort uf Hochdüütsch gwächslet.\n\nHüt gseh ich min Akzent nöd als Problem.\n\nAls ich nöi da gsii bi, han ich im Gschäft en Satz uf Mundart probiert. Ich han gsäit: „Chunsch au go Mittag ässe?“ Di Kollegin hät gnickt — und denn uf Hochdüütsch gantwortet.\n\nDas isch nöd bös gmeint gsii. Aber ich han mich gschämt und han drei Wuche nüüt meh probiert. D Lüüt sind sowieso sofort uf Hochdüütsch gwächslet, sobald si min Akzent ghört händ, und ich han gläbt, wie i eme Zimmer, wo alli höflich sind und niemert eim rediglaat.\n\nGänderet hät s en Kollege us em Lager. Er hät äifach wiiter Mundart gredt, au wänn ich uf Hochdüütsch gantwortet han. Nach zwäi Mönet han ich gmerkt, dass ich alles verstaan. Nach sächs Mönet han ich gantwortet.\n\nUnderdesse redt ich Mundart mit em halbe Team. Hüt gseh ich min Akzent nöd als Problem — er säit nur, wo ich härchume.\n\nMin Rat wär: Säged de Lüüt, si sölled Mundart wiiterrede. Di mäischte fröied sich sogar — si wüssed nur nöd, öb si dörfed.",
    "gloss": [
     {
      "de": "d Mehrsprachigkäit",
-     "mevcutTr": "çok dillilik"
+     "currentTr": "çok dillilik"
     },
     {
      "de": "sich schäme",
-     "mevcutTr": "utanmak"
+     "currentTr": "utanmak"
     },
     {
      "de": "de Akzent",
-     "mevcutTr": "aksan"
+     "currentTr": "aksan"
     },
     {
      "de": "wächsle",
-     "mevcutTr": "geçmek, değiştirmek"
+     "currentTr": "geçmek, değiştirmek"
     },
     {
      "de": "sich verbessere",
-     "mevcutTr": "gelişmek"
+     "currentTr": "gelişmek"
     },
     {
      "de": "s Selbstvertraue",
-     "mevcutTr": "özgüven"
+     "currentTr": "özgüven"
     },
     {
      "de": "de Rat",
-     "mevcutTr": "tavsiye",
-     "havuz": {
+     "currentTr": "tavsiye",
+     "pool": {
       "tr": "tavsiye",
       "en": "advice"
      }
@@ -449,23 +449,23 @@
    "phrases": [
     {
      "de": "Als ich nöi da gsii bi, …",
-     "mevcutTr": "Buraya yeni geldiğimde …"
+     "currentTr": "Buraya yeni geldiğimde …"
     },
     {
      "de": "Ich han mich gschämt, …",
-     "mevcutTr": "… konusunda utandım."
+     "currentTr": "… konusunda utandım."
     },
     {
      "de": "D Lüüt sind sofort uf … gwächslet.",
-     "mevcutTr": "İnsanlar hemen …'a geçti."
+     "currentTr": "İnsanlar hemen …'a geçti."
     },
     {
      "de": "Underdesse …",
-     "mevcutTr": "Bu arada …"
+     "currentTr": "Bu arada …"
     },
     {
      "de": "Min Rat wär: …",
-     "mevcutTr": "Tavsiyem şu olurdu: …"
+     "currentTr": "Tavsiyem şu olurdu: …"
     }
    ]
   },
@@ -476,61 +476,61 @@
    "title": "S Schriibe wäge de Kaution",
    "genre": "Şikâyet",
    "intro": "Hikâyenin son parçası: Yusuf'un yerine geçip depozito kesintisine itiraz mektubunu yazacaksın. Nesnel kal — bu mektup işe yarayanı gösteriyor.",
-   "metin": "Ich bin mit em Abzug vo 450 Franke nöd iiverstande.\n\nDe Chratzer isch am Iizugstag scho da gsii.\n\nIch setze Ine e Frischt bis am 10. Auguscht.\n\nSehr geehrti Frau Bächtold\n\nIch beziehe mich uf s Abgabeprotokoll vom 28. Juli, wo ich mit Vorbehalt unterschriibe han.\n\nMit em Abzug vo 450 Franke für de Chratzer im Parkett bin ich nöd iiverstande. De Chratzer isch am Iizugstag scho da gsii. Im Iizugsprotokoll staat er nöd — das schtimmt, ich han en damals nöd bemerkt. Als Nachwiis lege ich es Foti bii, wo am 1. April 2022 uufgnoo worde isch; s Datum isch i de Bilddatei gspeicheret und d Stell isch klar erkennbar.\n\nMit de andere Punkt im Protokoll bin ich iiverstande. De Abzug vo 180 Franke für s Silikon im Bad akzeptier ich.\n\nIch bitte Si drum, mir vo de Kaution vo 5'280 Franke insgesamt 5'100 Franke uszzaale, und setze Ine e Frischt bis am 10. Auguscht.\n\nSötted mir üs nöd einig wärde, wärd ich d Schlichtigsbehörde in Mietsache aarüefe. Ich gaa aber devo uus, dass mir das nöd bruuched.\n\nFründlichi Grüess\nYusuf Demir",
+   "text": "Ich bin mit em Abzug vo 450 Franke nöd iiverstande.\n\nDe Chratzer isch am Iizugstag scho da gsii.\n\nIch setze Ine e Frischt bis am 10. Auguscht.\n\nSehr geehrti Frau Bächtold\n\nIch beziehe mich uf s Abgabeprotokoll vom 28. Juli, wo ich mit Vorbehalt unterschriibe han.\n\nMit em Abzug vo 450 Franke für de Chratzer im Parkett bin ich nöd iiverstande. De Chratzer isch am Iizugstag scho da gsii. Im Iizugsprotokoll staat er nöd — das schtimmt, ich han en damals nöd bemerkt. Als Nachwiis lege ich es Foti bii, wo am 1. April 2022 uufgnoo worde isch; s Datum isch i de Bilddatei gspeicheret und d Stell isch klar erkennbar.\n\nMit de andere Punkt im Protokoll bin ich iiverstande. De Abzug vo 180 Franke für s Silikon im Bad akzeptier ich.\n\nIch bitte Si drum, mir vo de Kaution vo 5'280 Franke insgesamt 5'100 Franke uszzaale, und setze Ine e Frischt bis am 10. Auguscht.\n\nSötted mir üs nöd einig wärde, wärd ich d Schlichtigsbehörde in Mietsache aarüefe. Ich gaa aber devo uus, dass mir das nöd bruuched.\n\nFründlichi Grüess\nYusuf Demir",
    "gloss": [
     {
      "de": "de Abzug",
-     "mevcutTr": "kesinti"
+     "currentTr": "kesinti"
     },
     {
      "de": "s Iizugsprotokoll",
-     "mevcutTr": "giriş tutanağı"
+     "currentTr": "giriş tutanağı"
     },
     {
      "de": "de Nachwiis",
-     "mevcutTr": "kanıt"
+     "currentTr": "kanıt"
     },
     {
      "de": "d Frischt setze",
-     "mevcutTr": "süre vermek"
+     "currentTr": "süre vermek"
     },
     {
      "de": "d Uszaalig",
-     "mevcutTr": "ödeme, iade"
+     "currentTr": "ödeme, iade"
     },
     {
      "de": "d Schlichtigsbehörde",
-     "mevcutTr": "uzlaştırma makamı"
+     "currentTr": "uzlaştırma makamı"
     },
     {
      "de": "iiverstande",
-     "mevcutTr": "hemfikir"
+     "currentTr": "hemfikir"
     }
    ],
    "phrases": [
     {
      "de": "Ich beziehe mich uf s Abgabeprotokoll vom …",
-     "mevcutTr": "…tarihli teslim tutanağına atıfla"
+     "currentTr": "…tarihli teslim tutanağına atıfla"
     },
     {
      "de": "Mit em Abzug vo … bin ich nöd iiverstande.",
-     "mevcutTr": "… kesintisine katılmıyorum."
+     "currentTr": "… kesintisine katılmıyorum."
     },
     {
      "de": "Als Nachwiis lege ich … bii.",
-     "mevcutTr": "Kanıt olarak … ekliyorum."
+     "currentTr": "Kanıt olarak … ekliyorum."
     },
     {
      "de": "Mit de andere Punkt bin ich iiverstande.",
-     "mevcutTr": "Diğer kalemlere itirazım yok."
+     "currentTr": "Diğer kalemlere itirazım yok."
     },
     {
      "de": "Ich bitte Si, … uszzaale.",
-     "mevcutTr": "…'i ödemenizi rica ediyorum."
+     "currentTr": "…'i ödemenizi rica ediyorum."
     },
     {
      "de": "Andernfalls wärd ich d Schlichtigsbehörde aarüefe.",
-     "mevcutTr": "Aksi hâlde uzlaştırma makamına başvuracağım."
+     "currentTr": "Aksi hâlde uzlaştırma makamına başvuracağım."
     }
    ]
   }

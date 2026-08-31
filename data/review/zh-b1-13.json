@@ -115,7 +115,7 @@
   "gsw": "Aktion",
   "gswArtikel": null,
   "gswBeispiel": "Das isch e Aktion: 25 Prozänt billiger.",
-  "ayniLehce": [
+  "sameDialect": [
    "Aktion (B1)"
   ]
  },
@@ -370,7 +370,7 @@
   "gsw": "gumpe",
   "gswArtikel": null,
   "gswBeispiel": "Mir sind i de Badi gsii. Min Soon isch immer wider is Wasser gumpet.",
-  "ayniLehce": [
+  "sameDialect": [
    "hüpfen (A2)"
   ]
  },
@@ -382,7 +382,7 @@
   "gsw": "Schpritze",
   "gswArtikel": "d",
   "gswBeispiel": "Ich ha hüt vom Dokter e Schpritze gäge d Schmärze überchoo.",
-  "ayniLehce": [
+  "sameDialect": [
    "spritzen (B2)"
   ]
  },
@@ -700,7 +700,7 @@
   "gsw": "Schtäge",
   "gswArtikel": "d",
   "gswBeispiel": "1. Wo isch s WC? – D Schtäge ue und dänn links. 2. Miini Groosmueter cha nöd guet Schtäge schtiige.",
-  "ayniLehce": [
+  "sameDialect": [
    "Treppe (A1)"
   ]
  },
@@ -712,7 +712,7 @@
   "gsw": "Schtägehuus",
   "gswArtikel": "s",
   "gswBeispiel": "Im Schtägehuus hät s kei Liecht.",
-  "ayniLehce": [
+  "sameDialect": [
    "Treppenhaus (B1)"
   ]
  },
@@ -841,7 +841,7 @@
   "gsw": "Zündhölzli",
   "gswArtikel": "s",
   "gswBeispiel": "Ich hett gärn e Schachtle Zündhölzli.",
-  "ayniLehce": [
+  "sameDialect": [
    "Zünder (B1)",
    "Zündholz (B1)"
   ]
@@ -872,7 +872,7 @@
   "gsw": "schtriite",
   "gswArtikel": null,
   "gswBeispiel": "D Chind schtriited sich oft.",
-  "ayniLehce": [
+  "sameDialect": [
    "streiten (A2)"
   ]
  },

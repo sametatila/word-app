@@ -1,16 +1,16 @@
 {
- "paket": "a2-026",
+ "packet": "a2-026",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 8240,
    "de": "rollen",
    "typ": "Verb",
    "niveau": "A2",
    "formen": "rollt, ist gerollt",
-   "mevcutTr": "yuvarlanmak, tekerlek üstünde gitmek",
-   "mevcutBeispiel": "Der Ball ist unter das Auto gerollt.",
-   "mevcutBeispielTr": "Top arabanın altına yuvarlandı."
+   "currentTr": "yuvarlanmak, tekerlek üstünde gitmek",
+   "currentBeispiel": "Der Ball ist unter das Auto gerollt.",
+   "currentBeispielTr": "Top arabanın altına yuvarlandı."
   },
   {
    "id": 8241,
@@ -18,10 +18,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "rutscht, ist gerutscht",
-   "mevcutTr": "kaymak",
-   "mevcutBeispiel": "Im Winter rutschen die Autos oft auf der Straße.",
-   "mevcutBeispielTr": "Kışın arabalar sokakta sık sık kayıyor.",
-   "cakisan": [
+   "currentTr": "kaymak",
+   "currentBeispiel": "Im Winter rutschen die Autos oft auf der Straße.",
+   "currentBeispielTr": "Kışın arabalar sokakta sık sık kayıyor.",
+   "overlapping": [
     "abgleiten (C1)"
    ]
   },
@@ -31,9 +31,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "hüpft, ist gehüpft",
-   "mevcutTr": "zıplamak, sekmek",
-   "mevcutBeispiel": "Die Kinder hüpfen im Garten herum.",
-   "mevcutBeispielTr": "Çocuklar bahçede zıplayıp duruyor."
+   "currentTr": "zıplamak, sekmek",
+   "currentBeispiel": "Die Kinder hüpfen im Garten herum.",
+   "currentBeispielTr": "Çocuklar bahçede zıplayıp duruyor."
   },
   {
    "id": 8243,
@@ -41,10 +41,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "fährt hin, ist hingefahren",
-   "mevcutTr": "oraya gitmek (araçla)",
-   "mevcutBeispiel": "Der Markt ist weit, wir fahren mit dem Bus hin.",
-   "mevcutBeispielTr": "Pazar uzak, oraya otobüsle gidiyoruz.",
-   "cakisan": [
+   "currentTr": "oraya gitmek (araçla)",
+   "currentBeispiel": "Der Markt ist weit, wir fahren mit dem Bus hin.",
+   "currentBeispielTr": "Pazar uzak, oraya otobüsle gidiyoruz.",
+   "overlapping": [
     "hingehen (A2)"
    ]
   },
@@ -54,10 +54,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "fährt zurück, ist zurückgefahren",
-   "mevcutTr": "geri dönmek (araçla)",
-   "mevcutBeispiel": "Am Sonntag fahre ich nach München zurück.",
-   "mevcutBeispielTr": "Pazar günü Münih'e geri dönüyorum.",
-   "cakisan": [
+   "currentTr": "geri dönmek (araçla)",
+   "currentBeispiel": "Am Sonntag fahre ich nach München zurück.",
+   "currentBeispielTr": "Pazar günü Münih'e geri dönüyorum.",
+   "overlapping": [
     "umkehren (A2)"
    ]
   },
@@ -67,10 +67,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "fährt weg, ist weggefahren",
-   "mevcutTr": "(araçla) ayrılmak, çekip gitmek",
-   "mevcutBeispiel": "Der Lkw ist gerade vom Hof weggefahren.",
-   "mevcutBeispielTr": "Kamyon az önce avludan gitti.",
-   "cakisan": [
+   "currentTr": "(araçla) ayrılmak, çekip gitmek",
+   "currentBeispiel": "Der Lkw ist gerade vom Hof weggefahren.",
+   "currentBeispielTr": "Kamyon az önce avludan gitti.",
+   "overlapping": [
     "sich trennen (B1)",
     "ausscheiden (B2)"
    ]
@@ -81,10 +81,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "lenkt, hat gelenkt",
-   "mevcutTr": "(aracı) kullanmak, yönlendirmek",
-   "mevcutBeispiel": "Mein Onkel lenkt den Bus sehr ruhig.",
-   "mevcutBeispielTr": "Amcam otobüsü çok sakin kullanıyor.",
-   "cakisan": [
+   "currentTr": "(aracı) kullanmak, yönlendirmek",
+   "currentBeispiel": "Mein Onkel lenkt den Bus sehr ruhig.",
+   "currentBeispielTr": "Amcam otobüsü çok sakin kullanıyor.",
+   "overlapping": [
     "benutzen (A1)",
     "gebrauchen (B1)",
     "nutzen (B1)",
@@ -97,10 +97,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "transportiert, hat transportiert",
-   "mevcutTr": "taşımak, nakletmek",
-   "mevcutBeispiel": "Die Firma transportiert die Möbel in die neue Wohnung.",
-   "mevcutBeispielTr": "Firma mobilyaları yeni daireye taşıyor.",
-   "cakisan": [
+   "currentTr": "taşımak, nakletmek",
+   "currentBeispiel": "Die Firma transportiert die Möbel in die neue Wohnung.",
+   "currentBeispielTr": "Firma mobilyaları yeni daireye taşıyor.",
+   "overlapping": [
     "tragen (A1)"
    ]
   },
@@ -110,10 +110,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "trifft ein, ist eingetroffen",
-   "mevcutTr": "varmak, ulaşmak",
-   "mevcutBeispiel": "Das Paket ist gestern im Lager eingetroffen.",
-   "mevcutBeispielTr": "Paket dün depoya ulaştı.",
-   "cakisan": [
+   "currentTr": "varmak, ulaşmak",
+   "currentBeispiel": "Das Paket ist gestern im Lager eingetroffen.",
+   "currentBeispielTr": "Paket dün depoya ulaştı.",
+   "overlapping": [
     "ankommen (A1)"
    ]
   },
@@ -123,9 +123,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "bringt weg, hat weggebracht",
-   "mevcutTr": "götürmek, başka yere götürmek",
-   "mevcutBeispiel": "Ich bringe den Müll schnell weg.",
-   "mevcutBeispielTr": "Çöpü hızlıca götürüyorum."
+   "currentTr": "götürmek, başka yere götürmek",
+   "currentBeispiel": "Ich bringe den Müll schnell weg.",
+   "currentBeispielTr": "Çöpü hızlıca götürüyorum."
   },
   {
    "id": 8250,
@@ -133,9 +133,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "bringt zurück, hat zurückgebracht",
-   "mevcutTr": "geri götürmek, iade etmek",
-   "mevcutBeispiel": "Bringst du die Bücher heute in die Bibliothek zurück?",
-   "mevcutBeispielTr": "Kitapları bugün kütüphaneye geri götürüyor musun?"
+   "currentTr": "geri götürmek, iade etmek",
+   "currentBeispiel": "Bringst du die Bücher heute in die Bibliothek zurück?",
+   "currentBeispielTr": "Kitapları bugün kütüphaneye geri götürüyor musun?"
   },
   {
    "id": 8251,
@@ -143,10 +143,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schickt weg, hat weggeschickt",
-   "mevcutTr": "geri çevirmek, başka yere yollamak",
-   "mevcutBeispiel": "Der Kellner hat den Gast ohne Reservierung weggeschickt.",
-   "mevcutBeispielTr": "Garson rezervasyonu olmayan misafiri geri çevirdi.",
-   "cakisan": [
+   "currentTr": "geri çevirmek, başka yere yollamak",
+   "currentBeispiel": "Der Kellner hat den Gast ohne Reservierung weggeschickt.",
+   "currentBeispielTr": "Garson rezervasyonu olmayan misafiri geri çevirdi.",
+   "overlapping": [
     "zurückweisen (B2)"
    ]
   },
@@ -156,9 +156,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "verspätet sich, hat sich verspätet",
-   "mevcutTr": "gecikmek, geç kalmak",
-   "mevcutBeispiel": "Der Zug nach Köln verspätet sich um zwanzig Minuten.",
-   "mevcutBeispielTr": "Köln'e giden tren yirmi dakika gecikiyor."
+   "currentTr": "gecikmek, geç kalmak",
+   "currentBeispiel": "Der Zug nach Köln verspätet sich um zwanzig Minuten.",
+   "currentBeispielTr": "Köln'e giden tren yirmi dakika gecikiyor."
   },
   {
    "id": 8253,
@@ -166,9 +166,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "macht weiter, hat weitergemacht",
-   "mevcutTr": "devam etmek, sürdürmek",
-   "mevcutBeispiel": "Nach der Pause machen wir mit der Arbeit weiter.",
-   "mevcutBeispielTr": "Moladan sonra işe devam ediyoruz."
+   "currentTr": "devam etmek, sürdürmek",
+   "currentBeispiel": "Nach der Pause machen wir mit der Arbeit weiter.",
+   "currentBeispielTr": "Moladan sonra işe devam ediyoruz."
   },
   {
    "id": 8254,
@@ -176,9 +176,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "arbeitet zusammen, hat zusammengearbeitet",
-   "mevcutTr": "birlikte çalışmak, iş birliği yapmak",
-   "mevcutBeispiel": "Unser Team arbeitet gut mit der Technik zusammen.",
-   "mevcutBeispielTr": "Ekibimiz teknik bölümle iyi çalışıyor."
+   "currentTr": "birlikte çalışmak, iş birliği yapmak",
+   "currentBeispiel": "Unser Team arbeitet gut mit der Technik zusammen.",
+   "currentBeispielTr": "Ekibimiz teknik bölümle iyi çalışıyor."
   },
   {
    "id": 8255,
@@ -186,9 +186,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "hilft aus, hat ausgeholfen",
-   "mevcutTr": "geçici olarak yardım etmek, yardıma gitmek",
-   "mevcutBeispiel": "Am Samstag helfe ich im Laden aus.",
-   "mevcutBeispielTr": "Cumartesi günü dükkânda yardım ediyorum."
+   "currentTr": "geçici olarak yardım etmek, yardıma gitmek",
+   "currentBeispiel": "Am Samstag helfe ich im Laden aus.",
+   "currentBeispielTr": "Cumartesi günü dükkânda yardım ediyorum."
   },
   {
    "id": 8256,
@@ -196,9 +196,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "teilt auf, hat aufgeteilt",
-   "mevcutTr": "paylaştırmak, bölüştürmek",
-   "mevcutBeispiel": "Wir teilen die Arbeit unter drei Kollegen auf.",
-   "mevcutBeispielTr": "İşi üç iş arkadaşı arasında paylaştırıyoruz."
+   "currentTr": "paylaştırmak, bölüştürmek",
+   "currentBeispiel": "Wir teilen die Arbeit unter drei Kollegen auf.",
+   "currentBeispielTr": "İşi üç iş arkadaşı arasında paylaştırıyoruz."
   },
   {
    "id": 8257,
@@ -206,9 +206,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "sortiert, hat sortiert",
-   "mevcutTr": "sıralamak, tasnif etmek",
-   "mevcutBeispiel": "Ich sortiere die Rechnungen nach Datum.",
-   "mevcutBeispielTr": "Faturaları tarihe göre sıralıyorum."
+   "currentTr": "sıralamak, tasnif etmek",
+   "currentBeispiel": "Ich sortiere die Rechnungen nach Datum.",
+   "currentBeispielTr": "Faturaları tarihe göre sıralıyorum."
   },
   {
    "id": 8258,
@@ -216,9 +216,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "stapelt, hat gestapelt",
-   "mevcutTr": "üst üste yığmak, istiflemek",
-   "mevcutBeispiel": "Der Praktikant stapelt die Kisten im Lager.",
-   "mevcutBeispielTr": "Stajyer kutuları depoda istifliyor."
+   "currentTr": "üst üste yığmak, istiflemek",
+   "currentBeispiel": "Der Praktikant stapelt die Kisten im Lager.",
+   "currentBeispielTr": "Stajyer kutuları depoda istifliyor."
   },
   {
    "id": 8259,
@@ -226,9 +226,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schraubt, hat geschraubt",
-   "mevcutTr": "vidalamak",
-   "mevcutBeispiel": "Mein Bruder schraubt das Regal an die Wand.",
-   "mevcutBeispielTr": "Kardeşim rafı duvara vidalıyor."
+   "currentTr": "vidalamak",
+   "currentBeispiel": "Mein Bruder schraubt das Regal an die Wand.",
+   "currentBeispielTr": "Kardeşim rafı duvara vidalıyor."
   },
   {
    "id": 8260,
@@ -236,9 +236,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "hämmert, hat gehämmert",
-   "mevcutTr": "çekiçlemek",
-   "mevcutBeispiel": "Der Nachbar hämmert seit einer Stunde in der Garage.",
-   "mevcutBeispielTr": "Komşu bir saattir garajda çekiçliyor."
+   "currentTr": "çekiçlemek",
+   "currentBeispiel": "Der Nachbar hämmert seit einer Stunde in der Garage.",
+   "currentBeispielTr": "Komşu bir saattir garajda çekiçliyor."
   },
   {
    "id": 8261,
@@ -246,9 +246,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "befestigt, hat befestigt",
-   "mevcutTr": "sabitlemek, tutturmak",
-   "mevcutBeispiel": "Wir befestigen die Lampe über dem Tisch.",
-   "mevcutBeispielTr": "Lambayı masanın üstüne sabitliyoruz."
+   "currentTr": "sabitlemek, tutturmak",
+   "currentBeispiel": "Wir befestigen die Lampe über dem Tisch.",
+   "currentBeispielTr": "Lambayı masanın üstüne sabitliyoruz."
   },
   {
    "id": 8262,
@@ -256,10 +256,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "baut auf, hat aufgebaut",
-   "mevcutTr": "kurmak, monte etmek",
-   "mevcutBeispiel": "Die Kollegen bauen das Zelt für das Fest auf.",
-   "mevcutBeispielTr": "İş arkadaşları şenlik için çadırı kuruyor.",
-   "cakisan": [
+   "currentTr": "kurmak, monte etmek",
+   "currentBeispiel": "Die Kollegen bauen das Zelt für das Fest auf.",
+   "currentBeispielTr": "İş arkadaşları şenlik için çadırı kuruyor.",
+   "overlapping": [
     "installieren (B1)",
     "decken (A2)",
     "zusammenbauen (A2)"
@@ -271,10 +271,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "stellt auf, hat aufgestellt",
-   "mevcutTr": "yerleştirmek, dizmek",
-   "mevcutBeispiel": "Der Hausmeister stellt die Stühle im Saal auf.",
-   "mevcutBeispielTr": "Kapıcı sandalyeleri salonda yerleştiriyor.",
-   "cakisan": [
+   "currentTr": "yerleştirmek, dizmek",
+   "currentBeispiel": "Der Hausmeister stellt die Stühle im Saal auf.",
+   "currentBeispielTr": "Kapıcı sandalyeleri salonda yerleştiriyor.",
+   "overlapping": [
     "ansiedeln (C1)",
     "unterbringen (C1)",
     "verstauen (A2)"
@@ -286,9 +286,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "hängt auf, hat aufgehängt",
-   "mevcutTr": "asmak",
-   "mevcutBeispiel": "Meine Mutter hängt die Wäsche auf dem Balkon auf.",
-   "mevcutBeispielTr": "Annem çamaşırları balkonda asıyor."
+   "currentTr": "asmak",
+   "currentBeispiel": "Meine Mutter hängt die Wäsche auf dem Balkon auf.",
+   "currentBeispielTr": "Annem çamaşırları balkonda asıyor."
   },
   {
    "id": 8265,
@@ -296,9 +296,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "gräbt, hat gegraben",
-   "mevcutTr": "kazmak",
-   "mevcutBeispiel": "Die Arbeiter graben ein Loch für den neuen Baum.",
-   "mevcutBeispielTr": "İşçiler yeni ağaç için bir çukur kazıyor."
+   "currentTr": "kazmak",
+   "currentBeispiel": "Die Arbeiter graben ein Loch für den neuen Baum.",
+   "currentBeispielTr": "İşçiler yeni ağaç için bir çukur kazıyor."
   },
   {
    "id": 8266,
@@ -306,9 +306,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "fegt, hat gefegt",
-   "mevcutTr": "süpürmek",
-   "mevcutBeispiel": "Jeden Morgen fegt er den Hof vor dem Laden.",
-   "mevcutBeispielTr": "Her sabah dükkânın önündeki avluyu süpürüyor."
+   "currentTr": "süpürmek",
+   "currentBeispiel": "Jeden Morgen fegt er den Hof vor dem Laden.",
+   "currentBeispielTr": "Her sabah dükkânın önündeki avluyu süpürüyor."
   },
   {
    "id": 8267,
@@ -316,10 +316,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "wischt ab, hat abgewischt",
-   "mevcutTr": "silmek, silip temizlemek",
-   "mevcutBeispiel": "Der Kellner wischt den Tisch schnell ab.",
-   "mevcutBeispielTr": "Garson masayı hızlıca siliyor.",
-   "cakisan": [
+   "currentTr": "silmek, silip temizlemek",
+   "currentBeispiel": "Der Kellner wischt den Tisch schnell ab.",
+   "currentBeispielTr": "Garson masayı hızlıca siliyor.",
+   "overlapping": [
     "löschen (B1)",
     "aufwischen (A2)",
     "wischen (A2)"
@@ -331,10 +331,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "faltet, hat gefaltet",
-   "mevcutTr": "katlamak",
-   "mevcutBeispiel": "Sie faltet die Handtücher und legt sie in den Schrank.",
-   "mevcutBeispielTr": "Havluları katlıyor ve dolaba koyuyor.",
-   "cakisan": [
+   "currentTr": "katlamak",
+   "currentBeispiel": "Sie faltet die Handtücher und legt sie in den Schrank.",
+   "currentBeispielTr": "Havluları katlıyor ve dolaba koyuyor.",
+   "overlapping": [
     "zusammenlegen (A2)"
    ]
   },
@@ -344,10 +344,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "lässt los, hat losgelassen",
-   "mevcutTr": "bırakmak, elinden bırakmak",
-   "mevcutBeispiel": "Lass das Seil bitte nicht los!",
-   "mevcutBeispielTr": "Lütfen ipi bırakma!",
-   "cakisan": [
+   "currentTr": "bırakmak, elinden bırakmak",
+   "currentBeispiel": "Lass das Seil bitte nicht los!",
+   "currentBeispielTr": "Lütfen ipi bırakma!",
+   "overlapping": [
     "lassen (A1)",
     "abstellen (B2)"
    ]
@@ -358,9 +358,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schleppt, hat geschleppt",
-   "mevcutTr": "sürüklemek, güçlükle taşımak",
-   "mevcutBeispiel": "Wir schleppen die schweren Koffer in den dritten Stock.",
-   "mevcutBeispielTr": "Ağır bavulları üçüncü kata taşıyoruz."
+   "currentTr": "sürüklemek, güçlükle taşımak",
+   "currentBeispiel": "Wir schleppen die schweren Koffer in den dritten Stock.",
+   "currentBeispielTr": "Ağır bavulları üçüncü kata taşıyoruz."
   },
   {
    "id": 8271,
@@ -368,10 +368,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "hebt an, hat angehoben",
-   "mevcutTr": "kaldırmak, yükseltmek",
-   "mevcutBeispiel": "Hebst du den Tisch kurz an, bitte?",
-   "mevcutBeispielTr": "Masayı kısaca kaldırır mısın, lütfen?",
-   "cakisan": [
+   "currentTr": "kaldırmak, yükseltmek",
+   "currentBeispiel": "Hebst du den Tisch kurz an, bitte?",
+   "currentBeispielTr": "Masayı kısaca kaldırır mısın, lütfen?",
+   "overlapping": [
     "aufheben (B1)",
     "heben (B1)",
     "abschaffen (B2)"
@@ -383,9 +383,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "hebt hoch, hat hochgehoben",
-   "mevcutTr": "yukarı kaldırmak",
-   "mevcutBeispiel": "Der Vater hebt seine Tochter hoch.",
-   "mevcutBeispielTr": "Baba kızını yukarı kaldırıyor."
+   "currentTr": "yukarı kaldırmak",
+   "currentBeispiel": "Der Vater hebt seine Tochter hoch.",
+   "currentBeispielTr": "Baba kızını yukarı kaldırıyor."
   },
   {
    "id": 8273,
@@ -393,9 +393,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "legt sich hin, hat sich hingelegt",
-   "mevcutTr": "uzanmak, yatmak",
-   "mevcutBeispiel": "Nach der Schicht lege ich mich eine Stunde hin.",
-   "mevcutBeispielTr": "Vardiyadan sonra bir saat uzanıyorum."
+   "currentTr": "uzanmak, yatmak",
+   "currentBeispiel": "Nach der Schicht lege ich mich eine Stunde hin.",
+   "currentBeispielTr": "Vardiyadan sonra bir saat uzanıyorum."
   },
   {
    "id": 8274,
@@ -403,10 +403,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "setzt sich hin, hat sich hingesetzt",
-   "mevcutTr": "oturmak, oturuvermek",
-   "mevcutBeispiel": "Setz dich bitte hier hin, der Arzt kommt gleich.",
-   "mevcutBeispielTr": "Lütfen buraya otur, doktor birazdan geliyor.",
-   "cakisan": [
+   "currentTr": "oturmak, oturuvermek",
+   "currentBeispiel": "Setz dich bitte hier hin, der Arzt kommt gleich.",
+   "currentBeispielTr": "Lütfen buraya otur, doktor birazdan geliyor.",
+   "overlapping": [
     "wohnen (A1)",
     "sitzen (A1)",
     "sich setzen (A2)"
@@ -418,10 +418,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "stellt hin, hat hingestellt",
-   "mevcutTr": "koymak, oraya bırakmak",
-   "mevcutBeispiel": "Stell die Kiste bitte neben die Tür hin.",
-   "mevcutBeispielTr": "Kutuyu lütfen kapının yanına koy.",
-   "cakisan": [
+   "currentTr": "koymak, oraya bırakmak",
+   "currentBeispiel": "Stell die Kiste bitte neben die Tür hin.",
+   "currentBeispielTr": "Kutuyu lütfen kapının yanına koy.",
+   "overlapping": [
     "legen (A1)",
     "stellen (A1)"
    ]
@@ -432,9 +432,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "lagert, hat gelagert",
-   "mevcutTr": "depolamak, saklamak",
-   "mevcutBeispiel": "Wir lagern die Getränke im Keller.",
-   "mevcutBeispielTr": "İçecekleri bodrumda depoluyoruz."
+   "currentTr": "depolamak, saklamak",
+   "currentBeispiel": "Wir lagern die Getränke im Keller.",
+   "currentBeispielTr": "İçecekleri bodrumda depoluyoruz."
   },
   {
    "id": 8277,
@@ -442,10 +442,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "verstaut, hat verstaut",
-   "mevcutTr": "yerleştirmek, istifleyip koymak",
-   "mevcutBeispiel": "Der Fahrer verstaut die Taschen im Kofferraum.",
-   "mevcutBeispielTr": "Şoför çantaları bagaja yerleştiriyor.",
-   "cakisan": [
+   "currentTr": "yerleştirmek, istifleyip koymak",
+   "currentBeispiel": "Der Fahrer verstaut die Taschen im Kofferraum.",
+   "currentBeispielTr": "Şoför çantaları bagaja yerleştiriyor.",
+   "overlapping": [
     "ansiedeln (C1)",
     "unterbringen (C1)",
     "aufstellen (A2)"
@@ -457,10 +457,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "lädt ab, hat abgeladen",
-   "mevcutTr": "boşaltmak, indirmek",
-   "mevcutBeispiel": "Die Männer laden die Möbel vor dem Haus ab.",
-   "mevcutBeispielTr": "Adamlar mobilyaları evin önünde indiriyor.",
-   "cakisan": [
+   "currentTr": "boşaltmak, indirmek",
+   "currentBeispiel": "Die Männer laden die Möbel vor dem Haus ab.",
+   "currentBeispielTr": "Adamlar mobilyaları evin önünde indiriyor.",
+   "overlapping": [
     "räumen (B2)",
     "ausräumen (A2)",
     "ausleeren (A2)",
@@ -473,10 +473,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "belädt, hat beladen",
-   "mevcutTr": "yüklemek, doldurmak",
-   "mevcutBeispiel": "Wir beladen den Wagen mit Kisten.",
-   "mevcutBeispielTr": "Arabayı kutularla yüklüyoruz.",
-   "cakisan": [
+   "currentTr": "yüklemek, doldurmak",
+   "currentBeispiel": "Wir beladen den Wagen mit Kisten.",
+   "currentBeispielTr": "Arabayı kutularla yüklüyoruz.",
+   "overlapping": [
     "hochladen (B1)",
     "verladen (B2)",
     "auferlegen (C1)"
@@ -488,10 +488,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "sammelt ein, hat eingesammelt",
-   "mevcutTr": "toplamak, toplayıp almak",
-   "mevcutBeispiel": "Der Lehrer sammelt die Hefte am Ende der Stunde ein.",
-   "mevcutBeispielTr": "Öğretmen defterleri dersin sonunda topluyor.",
-   "cakisan": [
+   "currentTr": "toplamak, toplayıp almak",
+   "currentBeispiel": "Der Lehrer sammelt die Hefte am Ende der Stunde ein.",
+   "currentBeispielTr": "Öğretmen defterleri dersin sonunda topluyor.",
+   "overlapping": [
     "aufräumen (A1)",
     "sammeln (A2)",
     "erheben (B2)",
@@ -504,9 +504,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "räumt weg, hat weggeräumt",
-   "mevcutTr": "toplayıp yerine kaldırmak, kaldırmak",
-   "mevcutBeispiel": "Räum bitte die Werkzeuge nach der Arbeit weg.",
-   "mevcutBeispielTr": "Lütfen işten sonra aletleri kaldır."
+   "currentTr": "toplayıp yerine kaldırmak, kaldırmak",
+   "currentBeispiel": "Räum bitte die Werkzeuge nach der Arbeit weg.",
+   "currentBeispielTr": "Lütfen işten sonra aletleri kaldır."
   },
   {
    "id": 8282,
@@ -514,10 +514,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "füllt, hat gefüllt",
-   "mevcutTr": "doldurmak",
-   "mevcutBeispiel": "Sie füllt die Flasche mit kaltem Wasser.",
-   "mevcutBeispielTr": "Şişeyi soğuk suyla dolduruyor.",
-   "cakisan": [
+   "currentTr": "doldurmak",
+   "currentBeispiel": "Sie füllt die Flasche mit kaltem Wasser.",
+   "currentBeispielTr": "Şişeyi soğuk suyla dolduruyor.",
+   "overlapping": [
     "abfüllen (B2)",
     "auffüllen (A2)",
     "einschenken (A2)"
@@ -529,10 +529,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "leert, hat geleert",
-   "mevcutTr": "boşaltmak",
-   "mevcutBeispiel": "Der Hausmeister leert die Mülltonnen am Dienstag.",
-   "mevcutBeispielTr": "Kapıcı çöp kovalarını salı günü boşaltıyor.",
-   "cakisan": [
+   "currentTr": "boşaltmak",
+   "currentBeispiel": "Der Hausmeister leert die Mülltonnen am Dienstag.",
+   "currentBeispielTr": "Kapıcı çöp kovalarını salı günü boşaltıyor.",
+   "overlapping": [
     "räumen (B2)",
     "ausräumen (A2)",
     "ausleeren (A2)",
@@ -545,9 +545,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "kippt, hat gekippt",
-   "mevcutTr": "yana yatırmak, devirmek",
-   "mevcutBeispiel": "Im Büro kippen wir das Fenster für frische Luft.",
-   "mevcutBeispielTr": "Büroda temiz hava için pencereyi yana yatırıyoruz."
+   "currentTr": "yana yatırmak, devirmek",
+   "currentBeispiel": "Im Büro kippen wir das Fenster für frische Luft.",
+   "currentBeispielTr": "Büroda temiz hava için pencereyi yana yatırıyoruz."
   },
   {
    "id": 8285,
@@ -555,10 +555,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "verringert, hat verringert",
-   "mevcutTr": "azaltmak, düşürmek",
-   "mevcutBeispiel": "Die Firma verringert die Kosten für Papier.",
-   "mevcutBeispielTr": "Firma kâğıt masraflarını azaltıyor.",
-   "cakisan": [
+   "currentTr": "azaltmak, düşürmek",
+   "currentBeispiel": "Die Firma verringert die Kosten für Papier.",
+   "currentBeispielTr": "Firma kâğıt masraflarını azaltıyor.",
+   "overlapping": [
     "reduzieren (B1)",
     "schmälern (C1)",
     "verknappen (C1)"
@@ -570,9 +570,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schaukelt, hat geschaukelt",
-   "mevcutTr": "sallanmak, salıncakta sallanmak",
-   "mevcutBeispiel": "Das Kind schaukelt gern auf dem Spielplatz.",
-   "mevcutBeispielTr": "Çocuk oyun alanında sallanmayı seviyor."
+   "currentTr": "sallanmak, salıncakta sallanmak",
+   "currentBeispiel": "Das Kind schaukelt gern auf dem Spielplatz.",
+   "currentBeispielTr": "Çocuk oyun alanında sallanmayı seviyor."
   },
   {
    "id": 8287,
@@ -580,10 +580,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "spaziert, ist spaziert",
-   "mevcutTr": "gezinmek, yürüyüş yapmak",
-   "mevcutBeispiel": "Am Sonntag spazieren wir durch den Park.",
-   "mevcutBeispielTr": "Pazar günü parkta yürüyüş yapıyoruz.",
-   "cakisan": [
+   "currentTr": "gezinmek, yürüyüş yapmak",
+   "currentBeispiel": "Am Sonntag spazieren wir durch den Park.",
+   "currentBeispielTr": "Pazar günü parkta yürüyüş yapıyoruz.",
+   "overlapping": [
     "bummeln (A2)"
    ]
   },
@@ -593,10 +593,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "betont, hat betont",
-   "mevcutTr": "vurgulamak, altını çizmek",
-   "mevcutBeispiel": "Der Lehrer betont, dass die Hausaufgabe wichtig ist.",
-   "mevcutBeispielTr": "Öğretmen ödevin önemli olduğunu vurguluyor.",
-   "cakisan": [
+   "currentTr": "vurgulamak, altını çizmek",
+   "currentBeispiel": "Der Lehrer betont, dass die Hausaufgabe wichtig ist.",
+   "currentBeispielTr": "Öğretmen ödevin önemli olduğunu vurguluyor.",
+   "overlapping": [
     "hervorheben (C1)",
     "akzentuieren (C1)"
    ]
@@ -607,9 +607,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "erwähnt, hat erwähnt",
-   "mevcutTr": "bahsetmek, söz etmek",
-   "mevcutBeispiel": "Sie erwähnt den neuen Termin mit keinem Wort.",
-   "mevcutBeispielTr": "Yeni randevudan tek kelimeyle bile bahsetmiyor."
+   "currentTr": "bahsetmek, söz etmek",
+   "currentBeispiel": "Sie erwähnt den neuen Termin mit keinem Wort.",
+   "currentBeispielTr": "Yeni randevudan tek kelimeyle bile bahsetmiyor."
   }
  ]
 }

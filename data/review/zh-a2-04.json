@@ -115,7 +115,7 @@
   "gsw": "super",
   "gswArtikel": null,
   "gswBeispiel": "De Film isch super. Er cha super tanze.",
-  "ayniLehce": [
+  "sameDialect": [
    "klasse (B1)"
   ]
  },
@@ -163,7 +163,7 @@
   "gsw": "tuusche",
   "gswArtikel": null,
   "gswBeispiel": "Chönd mer bitte d Plätz tuusche? Chönd mer öisi Adrässe uustuusche?",
-  "ayniLehce": [
+  "sameDialect": [
    "tauschen (B1)"
   ]
  },
@@ -247,7 +247,7 @@
   "gsw": "Pfanne",
   "gswArtikel": "d",
   "gswBeispiel": "Häsch käi grösseri Pfanne? Ich möcht Härdöpfel choche.",
-  "ayniLehce": [
+  "sameDialect": [
    "Pfanne (B1)"
   ]
  },
@@ -493,7 +493,7 @@
   "gsw": "abmache",
   "gswArtikel": null,
   "gswBeispiel": "Chömmer en Termin abmache?",
-  "ayniLehce": [
+  "sameDialect": [
    "abmachen (B1)",
    "sich verabreden (B1)"
   ]
@@ -542,7 +542,7 @@
   "gsw": "verpasse",
   "gswArtikel": null,
   "gswBeispiel": "Ich ha de Zug verpasst.",
-  "ayniLehce": [
+  "sameDialect": [
    "versäumen (B1)"
   ]
  },
@@ -662,7 +662,7 @@
   "gsw": "vorhär",
   "gswArtikel": null,
   "gswBeispiel": "Ich chume mit is Kafi. Vorhär mues ich aber na uf d Bank.",
-  "ayniLehce": [
+  "sameDialect": [
    "vorhin (B1)"
   ]
  },
@@ -800,7 +800,7 @@
   "gsw": "weetue",
   "gswArtikel": null,
   "gswBeispiel": "Wo tuets weh? Ich wott der nöd weetue.",
-  "ayniLehce": [
+  "sameDialect": [
    "weh tun (A1)"
   ]
  },
@@ -830,7 +830,7 @@
   "gsw": "brüele",
   "gswArtikel": null,
   "gswBeispiel": "Warum brüelet s Baby? Brüel bitte nöd!",
-  "ayniLehce": [
+  "sameDialect": [
    "schreien (B1)",
    "brüllen (A2)"
   ]
@@ -852,7 +852,7 @@
   "gsw": "wänn",
   "gswArtikel": null,
   "gswBeispiel": "Wänn ich nöd schaffe mues, chume ich.",
-  "ayniLehce": [
+  "sameDialect": [
    "wann (A1)"
   ]
  },

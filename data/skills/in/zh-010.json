@@ -1,7 +1,7 @@
 {
- "paket": "zh-010",
+ "packet": "zh-010",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-b1-r9",
    "skill": "reading",
@@ -9,44 +9,44 @@
    "title": "Es Land, vier Sprooche",
    "genre": "Kültür",
    "intro": "İsviçre'nin dört resmî dili var — ama günlük hayatta bu nasıl işliyor? „Röstigraben“ ne demek?",
-   "metin": "D Schwiiz hät vier Amtssprooche: Tüütsch, Französisch, Italienisch und Rätoromanisch. Öppe 62 Prozänt reded Tüütsch, 23 Französisch, 8 Italienisch — und weniger als äi Prozänt Rätoromanisch.\n\nWichtig isch s Territorialprinzip: Nöd d Person hät e Sprooch, sondern de Ort. Wär vo Züri uf Losanne zieht, chunt in e französischi Gmeind — d Schuel, s Amt und d Strassenäme wächsled, nöd d Lüüt.\n\nDe Uusdruck «Röstigrabe» beschriibt di kulturelli Gränze zwüsche de tüütsch- und französischsprachige Schwiiz. Er chunt vom Rösti, wo im Oschte gässe wird. Sichtbar wird er bi Abstimmige: D Welschschwiiz stimmt hüüfiger für meh Staat und für Europa, di Tüütschschwiiz zruckhaltender. Bi öppe jedere zwänzgschte Vorlag entschäided di zwei Landestäil verschiide.\n\nIm Alltag isch d Mehrsprachigkäit weniger romantisch, als me dänkt. Vill Tüütschschwiizer reded besser Änglisch als Französisch, und umgekehrt. A Sitzige mit gmischte Team wird drum hüüfig Änglisch gredt — was offiziell niemert gärn zuegit.\n\nS Rätoromanisch isch de schwierigscht Fall. Es hät fünf Idiome und öppe 40'000 Schprächer. Ohni staatlichi Unterstützig wär s wahrschiinlich scho verschwunde. Genau das isch aber au s Argumänt für d Unterstützig: E Sprooch mit 40'000 Lüüt cha sich nöd sälber trage.",
+   "text": "D Schwiiz hät vier Amtssprooche: Tüütsch, Französisch, Italienisch und Rätoromanisch. Öppe 62 Prozänt reded Tüütsch, 23 Französisch, 8 Italienisch — und weniger als äi Prozänt Rätoromanisch.\n\nWichtig isch s Territorialprinzip: Nöd d Person hät e Sprooch, sondern de Ort. Wär vo Züri uf Losanne zieht, chunt in e französischi Gmeind — d Schuel, s Amt und d Strassenäme wächsled, nöd d Lüüt.\n\nDe Uusdruck «Röstigrabe» beschriibt di kulturelli Gränze zwüsche de tüütsch- und französischsprachige Schwiiz. Er chunt vom Rösti, wo im Oschte gässe wird. Sichtbar wird er bi Abstimmige: D Welschschwiiz stimmt hüüfiger für meh Staat und für Europa, di Tüütschschwiiz zruckhaltender. Bi öppe jedere zwänzgschte Vorlag entschäided di zwei Landestäil verschiide.\n\nIm Alltag isch d Mehrsprachigkäit weniger romantisch, als me dänkt. Vill Tüütschschwiizer reded besser Änglisch als Französisch, und umgekehrt. A Sitzige mit gmischte Team wird drum hüüfig Änglisch gredt — was offiziell niemert gärn zuegit.\n\nS Rätoromanisch isch de schwierigscht Fall. Es hät fünf Idiome und öppe 40'000 Schprächer. Ohni staatlichi Unterstützig wär s wahrschiinlich scho verschwunde. Genau das isch aber au s Argumänt für d Unterstützig: E Sprooch mit 40'000 Lüüt cha sich nöd sälber trage.",
    "gloss": [
     {
      "de": "d Amtssprooch",
-     "mevcutTr": "resmî dil"
+     "currentTr": "resmî dil"
     },
     {
      "de": "de Röstigrabe",
-     "mevcutTr": "Almanca-Fransızca kültürel sınır"
+     "currentTr": "Almanca-Fransızca kültürel sınır"
     },
     {
      "de": "s Rätoromanisch",
-     "mevcutTr": "Romanşça"
+     "currentTr": "Romanşça"
     },
     {
      "de": "d Minderheit",
-     "mevcutTr": "azınlık",
-     "havuz": {
+     "currentTr": "azınlık",
+     "pool": {
       "tr": "azınlık",
       "en": "minority"
      }
     },
     {
      "de": "s Territorialprinzip",
-     "mevcutTr": "bölgesellik ilkesi"
+     "currentTr": "bölgesellik ilkesi"
     },
     {
      "de": "d Abstimmig",
-     "mevcutTr": "referandum"
+     "currentTr": "referandum"
     },
     {
      "de": "übersetze",
-     "mevcutTr": "çevirmek"
+     "currentTr": "çevirmek"
     },
     {
      "de": "s Verständnis",
-     "mevcutTr": "anlayış",
-     "havuz": {
+     "currentTr": "anlayış",
+     "pool": {
       "tr": "anlayış",
       "en": "understanding"
      }
@@ -60,39 +60,39 @@
    "title": "Überschrifte zueordne",
    "genre": "Sınav formatı",
    "intro": "Beş kısa haber, altı başlık — biri fazla. Sınavın klasik eşleştirme görevi.",
-   "metin": "TEXT 1: Ab Septämber fahrt s Tram Nummere 8 au am Wuchenänd alli zää Minute. D Stadt reagiert damit uf vill Reklamatione us de Ussequartier.\n\nTEXT 2: Nach drüü Jaar isch d Sanierig vom Schuelhuus Nord fertig. D Klasse zügled i de Ferie zrugg, de Underricht fangt wie planet aa.\n\nTEXT 3: D Zaal vo de Velodiebstähl isch im letschte Jaar um achtzää Prozänt gsunke. D Polizei erklärt das mit de nöie Veloparkplätz am Bahnhof.\n\nTEXT 4: Am Quartierfäscht sind 12'400 Franke zämecho. S Gäld gaat as Fraueshuus, wo siit Jaare z wenig Platz hät.\n\nTEXT 5: Wär Hilf bim Heize bruucht, cha bis Ändi Oktober en Aatrag stelle. Formular git s online und im Chräiszbüro.\n\nÜBERSCHRIFTE:\na) Weniger Velo gschtole\nb) Meh Tram am Wuchenänd\nc) Schuelhuus wider offe\nd) Fescht bringt Gäld für en guete Zwäck\ne) Nöii Bauschtell am Bahnhof\nf) Underschtützig beaatrage — d Frischt lauft",
+   "text": "TEXT 1: Ab Septämber fahrt s Tram Nummere 8 au am Wuchenänd alli zää Minute. D Stadt reagiert damit uf vill Reklamatione us de Ussequartier.\n\nTEXT 2: Nach drüü Jaar isch d Sanierig vom Schuelhuus Nord fertig. D Klasse zügled i de Ferie zrugg, de Underricht fangt wie planet aa.\n\nTEXT 3: D Zaal vo de Velodiebstähl isch im letschte Jaar um achtzää Prozänt gsunke. D Polizei erklärt das mit de nöie Veloparkplätz am Bahnhof.\n\nTEXT 4: Am Quartierfäscht sind 12'400 Franke zämecho. S Gäld gaat as Fraueshuus, wo siit Jaare z wenig Platz hät.\n\nTEXT 5: Wär Hilf bim Heize bruucht, cha bis Ändi Oktober en Aatrag stelle. Formular git s online und im Chräiszbüro.\n\nÜBERSCHRIFTE:\na) Weniger Velo gschtole\nb) Meh Tram am Wuchenänd\nc) Schuelhuus wider offe\nd) Fescht bringt Gäld für en guete Zwäck\ne) Nöii Bauschtell am Bahnhof\nf) Underschtützig beaatrage — d Frischt lauft",
    "gloss": [
     {
      "de": "d Überschrift",
-     "mevcutTr": "başlık",
-     "havuz": {
+     "currentTr": "başlık",
+     "pool": {
       "tr": "başlık",
       "en": "headline"
      }
     },
     {
      "de": "zueordne",
-     "mevcutTr": "eşleştirmek"
+     "currentTr": "eşleştirmek"
     },
     {
      "de": "d Spänd",
-     "mevcutTr": "bağış"
+     "currentTr": "bağış"
     },
     {
      "de": "d Sanierig",
-     "mevcutTr": "yenileme"
+     "currentTr": "yenileme"
     },
     {
      "de": "sinke",
-     "mevcutTr": "düşmek"
+     "currentTr": "düşmek"
     },
     {
      "de": "de Aatrag",
-     "mevcutTr": "başvuru"
+     "currentTr": "başvuru"
     },
     {
      "de": "d Frischt",
-     "mevcutTr": "süre"
+     "currentTr": "süre"
     }
    ]
   },
@@ -103,56 +103,56 @@
    "title": "S Protokoll vo de Abgab",
    "genre": "Tutanak",
    "intro": "Hikâyenin devamı: teslim yapıldı. Tutanağı ve Yusuf'un eklediği notu okuyacaksın.",
-   "metin": "ABGABEPROTOKOLL — Bertastrass 9, 2. Schtock — 28. Juli\n\nAawesend: R. Bächtold (Verwaltig), Y. Demir (Mieter)\n\nChuchi: i Ornig. Backofe suuber.\nBad: Silikonfuge bi de Dusche mit Schimmel → Ersatz, zulaschte vom Mieter: 180 Fr.\nZimmer 1: Chratzer im Parkett, öppe 30 cm, nöd im Iizugsprotokoll → zulaschte vom Mieter: 450 Fr.\nZimmer 2: i Ornig.\nWohnzimmer: Wand mit zwäi Löcher (Regal) → gspachtlet, in Ornig.\nFänschter: gputzt.\nTeppich Gang: stark abgnutzt, Alter 9 Jaar → normali Abnutzig, käi Abzug.\n\nTotal zulaschte vom Mieter: 630 Fr.\nKaution: 5'280 Fr. Uszaalig nach Abzug: 4'650 Fr.\n\nBEMERKIG VOM MIETER (mit Vorbehalt unterschriibe):\nDe Chratzer im Parkett isch bim Iizug scho da gsii. Im Iizugsprotokoll staat er nöd, das schtimmt — ich han damals nüüt bemerkt. Ich han aber es Foti vom Iizugstag, wo me d Stell gseet. Ich schick s bis am 4. Auguscht und bitte um e neui Prüefig vo dem Punkt. Mit em Rest bin ich iiverstande.\n\nY. Demir",
+   "text": "ABGABEPROTOKOLL — Bertastrass 9, 2. Schtock — 28. Juli\n\nAawesend: R. Bächtold (Verwaltig), Y. Demir (Mieter)\n\nChuchi: i Ornig. Backofe suuber.\nBad: Silikonfuge bi de Dusche mit Schimmel → Ersatz, zulaschte vom Mieter: 180 Fr.\nZimmer 1: Chratzer im Parkett, öppe 30 cm, nöd im Iizugsprotokoll → zulaschte vom Mieter: 450 Fr.\nZimmer 2: i Ornig.\nWohnzimmer: Wand mit zwäi Löcher (Regal) → gspachtlet, in Ornig.\nFänschter: gputzt.\nTeppich Gang: stark abgnutzt, Alter 9 Jaar → normali Abnutzig, käi Abzug.\n\nTotal zulaschte vom Mieter: 630 Fr.\nKaution: 5'280 Fr. Uszaalig nach Abzug: 4'650 Fr.\n\nBEMERKIG VOM MIETER (mit Vorbehalt unterschriibe):\nDe Chratzer im Parkett isch bim Iizug scho da gsii. Im Iizugsprotokoll staat er nöd, das schtimmt — ich han damals nüüt bemerkt. Ich han aber es Foti vom Iizugstag, wo me d Stell gseet. Ich schick s bis am 4. Auguscht und bitte um e neui Prüefig vo dem Punkt. Mit em Rest bin ich iiverstande.\n\nY. Demir",
    "gloss": [
     {
      "de": "de Mangel",
-     "mevcutTr": "kusur",
-     "havuz": {
+     "currentTr": "kusur",
+     "pool": {
       "tr": "eksiklik",
       "en": "lack"
      }
     },
     {
      "de": "de Chratzer",
-     "mevcutTr": "çizik"
+     "currentTr": "çizik"
     },
     {
      "de": "de Schimmel",
-     "mevcutTr": "küf",
-     "havuz": {
+     "currentTr": "küf",
+     "pool": {
       "tr": "küf",
       "en": "mold"
      }
     },
     {
      "de": "d Silikonfuge",
-     "mevcutTr": "silikon derz"
+     "currentTr": "silikon derz"
     },
     {
      "de": "zulaschte vo",
-     "mevcutTr": "…in hesabına"
+     "currentTr": "…in hesabına"
     },
     {
      "de": "de Vorbehalt",
-     "mevcutTr": "ihtirazi kayıt",
-     "havuz": {
+     "currentTr": "ihtirazi kayıt",
+     "pool": {
       "tr": "çekince",
       "en": "reservation"
      }
     },
     {
      "de": "d Bestätigung",
-     "mevcutTr": "onay",
-     "havuz": {
+     "currentTr": "onay",
+     "pool": {
       "tr": "teyit",
       "en": "confirmation"
      }
     },
     {
      "de": "de Ersatz",
-     "mevcutTr": "yenisiyle değiştirme",
-     "havuz": {
+     "currentTr": "yenisiyle değiştirme",
+     "pool": {
       "tr": "yedek",
       "en": "replacement"
      }
@@ -166,43 +166,43 @@
    "title": "D Stüürerklärig",
    "genre": "Rehber",
    "intro": "İsviçre'de vergi beyannamesi kendin doldurulur — ve çoğu kişi hakkı olan indirimleri bilmez.",
-   "metin": "D Stüüre wärded i de Schwiiz uf drei Ebene zaalt: Bund, Kanton und Gmeind. Wie vill me zaalt, hänkt drum stark devo ab, wo me wohnt — zwüsche zwo Nachbargmeinde chan de Underschid zwänzg Prozänt betrage.\n\nWär e Uufenthaltsbewilligung B hät, zaalt mäistens Quellestüür: De Arbetgeber zieht d Stüür direkt vom Loon ab. Vill dänked, denn seiged si fertig. Das stimmt nöd immer: Ab eme gwüsse Iikomme (im Kanton Züri 120'000 Franke) mues me trotzdem e Stüürerklärig mache — und wär Abzüg gältend mache wott, cha das freiwillig verlange.\n\nDenn nämli chunt de wichtig Täil: d Abzüg. Hüüfig vergässe wärded Fahrchoschte zur Arbet, Uuswärtsverpflegig, Wiiterbildige, Chinderbetreuig, Spändä und Chrankechoschte über eme Sälbstbehalt. Au d Prämie vo de Chrankekasse cha me abzüge — bis zu eme Maximum.\n\nWichtig für alli: D Frischt isch mäistens de 31. März. Me cha si aber ganz äifach verlängere, online und ohni Begründig, mäistens bis im Septämber. Das choschtet nüüt und isch nöd verdächtig.\n\nWär öppis nöd sicher weiss, schriibt es dezue statt es wägzloo. E falschi Zaal wird korrigiert; e verschwiegeni Iinaam isch es Problem.",
+   "text": "D Stüüre wärded i de Schwiiz uf drei Ebene zaalt: Bund, Kanton und Gmeind. Wie vill me zaalt, hänkt drum stark devo ab, wo me wohnt — zwüsche zwo Nachbargmeinde chan de Underschid zwänzg Prozänt betrage.\n\nWär e Uufenthaltsbewilligung B hät, zaalt mäistens Quellestüür: De Arbetgeber zieht d Stüür direkt vom Loon ab. Vill dänked, denn seiged si fertig. Das stimmt nöd immer: Ab eme gwüsse Iikomme (im Kanton Züri 120'000 Franke) mues me trotzdem e Stüürerklärig mache — und wär Abzüg gältend mache wott, cha das freiwillig verlange.\n\nDenn nämli chunt de wichtig Täil: d Abzüg. Hüüfig vergässe wärded Fahrchoschte zur Arbet, Uuswärtsverpflegig, Wiiterbildige, Chinderbetreuig, Spändä und Chrankechoschte über eme Sälbstbehalt. Au d Prämie vo de Chrankekasse cha me abzüge — bis zu eme Maximum.\n\nWichtig für alli: D Frischt isch mäistens de 31. März. Me cha si aber ganz äifach verlängere, online und ohni Begründig, mäistens bis im Septämber. Das choschtet nüüt und isch nöd verdächtig.\n\nWär öppis nöd sicher weiss, schriibt es dezue statt es wägzloo. E falschi Zaal wird korrigiert; e verschwiegeni Iinaam isch es Problem.",
    "gloss": [
     {
      "de": "d Stüürerklärig",
-     "mevcutTr": "vergi beyannamesi"
+     "currentTr": "vergi beyannamesi"
     },
     {
      "de": "de Abzug",
-     "mevcutTr": "indirim"
+     "currentTr": "indirim"
     },
     {
      "de": "d Quellestüür",
-     "mevcutTr": "kaynakta kesilen vergi"
+     "currentTr": "kaynakta kesilen vergi"
     },
     {
      "de": "s Vermöge",
-     "mevcutTr": "servet"
+     "currentTr": "servet"
     },
     {
      "de": "d Frischt verlängere",
-     "mevcutTr": "süre uzatmak"
+     "currentTr": "süre uzatmak"
     },
     {
      "de": "d Beleg",
-     "mevcutTr": "belge",
-     "havuz": {
+     "currentTr": "belge",
+     "pool": {
       "tr": "fiş",
       "en": "receipt"
      }
     },
     {
      "de": "provisorisch",
-     "mevcutTr": "geçici"
+     "currentTr": "geçici"
     },
     {
      "de": "nachzaale",
-     "mevcutTr": "ek ödeme yapmak"
+     "currentTr": "ek ödeme yapmak"
     }
    ]
   },
@@ -213,39 +213,39 @@
    "title": "In de Znüni-Pause",
    "genre": "Diyalog",
    "intro": "Reto ile Nadja iş yerinde kuşluk molasında konuşuyor: ertelenen bir toplantı ve bir veda kutlaması.",
-   "metin": "Reto: Du Nadja, häsch scho ghört? D Sitzig vo morn am Zäni isch verschobe — d Chefin isch de ganz Tag in Basel.\nNadja: Aha, uf wänn dänn?\nReto: Uf Donnschtig am Zwäi. Und mir sölled bis dänn d Zaale vom letschte Quartal parat haa.\nNadja: Guet z wüsse. Ich schaffe am Donnschtig übrigens im Homeoffice — ich chume dänn eifach online dezue.\nReto: Käis Problem. Ah, und na öppis: Am Friitig nach de Arbet mached mir en chliine Apéro für de Markus — är gaat i Pension. Chunsch au?\nNadja: Klar chume ich! Söll ich öppis mitbringe?\nReto: Wenn du magsch, es Dessert. D Getränk zaalt d Firma.",
+   "text": "Reto: Du Nadja, häsch scho ghört? D Sitzig vo morn am Zäni isch verschobe — d Chefin isch de ganz Tag in Basel.\nNadja: Aha, uf wänn dänn?\nReto: Uf Donnschtig am Zwäi. Und mir sölled bis dänn d Zaale vom letschte Quartal parat haa.\nNadja: Guet z wüsse. Ich schaffe am Donnschtig übrigens im Homeoffice — ich chume dänn eifach online dezue.\nReto: Käis Problem. Ah, und na öppis: Am Friitig nach de Arbet mached mir en chliine Apéro für de Markus — är gaat i Pension. Chunsch au?\nNadja: Klar chume ich! Söll ich öppis mitbringe?\nReto: Wenn du magsch, es Dessert. D Getränk zaalt d Firma.",
    "gloss": [
     {
      "de": "d Sitzig",
-     "mevcutTr": "toplantı"
+     "currentTr": "toplantı"
     },
     {
      "de": "verschobe",
-     "mevcutTr": "ertelenmiş"
+     "currentTr": "ertelenmiş"
     },
     {
      "de": "d Zaale",
-     "mevcutTr": "rakamlar, sayılar"
+     "currentTr": "rakamlar, sayılar"
     },
     {
      "de": "s Quartal",
-     "mevcutTr": "çeyrek (üç aylık dönem)"
+     "currentTr": "çeyrek (üç aylık dönem)"
     },
     {
      "de": "parat",
-     "mevcutTr": "hazır"
+     "currentTr": "hazır"
     },
     {
      "de": "de Apéro",
-     "mevcutTr": "kutlama içeceği, aperitif buluşması"
+     "currentTr": "kutlama içeceği, aperitif buluşması"
     },
     {
      "de": "i Pension gaa",
-     "mevcutTr": "emekli olmak"
+     "currentTr": "emekli olmak"
     },
     {
      "de": "zaale",
-     "mevcutTr": "ödemek"
+     "currentTr": "ödemek"
     }
    ]
   },
@@ -256,39 +256,39 @@
    "title": "Was isch s Sächsilüüte?",
    "genre": "Diyalog",
    "intro": "Zürih'e yeni taşınan Elif, iş arkadaşı Käthi'ye şehrin bahar festivalini soruyor.",
-   "metin": "Elif: Du Käthi, was isch äigentli das Sächsilüüte, wo grad alli devoo reded?\nKäthi: Das isch s Zürcher Früeligsfäscht, immer am dritte Mäntig im April. D Zünft laufed in ihrne alte Chläider dur d Schtadt, und am Aabig verbränned si de Böögg.\nElif: De Böögg? Was isch dänn das?\nKäthi: En groosse Schneemaa us Watte, mit Chracher im Chopf. Är schtaat uf em Sächsilüüteplatz uf eme hoche Hufe Holz, und am Punkt Sächsi zünded si s Füür aa.\nElif: Und warum macht me das?\nKäthi: De Böögg isch s Symbol vom Winter. Je schnäller sin Chopf explodiert, descht schööner wird de Summer — säged d Lüüt. Letscht Jaar hät s öppe zwänzg Minuute duuret, das isch lang.\nElif: Spannend! Und cha me das eifach go zueluege?\nKäthi: Klar, es choschtet nüüt. Aber gang früe hii, susch gseesch nüüt — es hät mega vil Lüüt. Mir chönd ja zäme gaa, wenn d magsch.",
+   "text": "Elif: Du Käthi, was isch äigentli das Sächsilüüte, wo grad alli devoo reded?\nKäthi: Das isch s Zürcher Früeligsfäscht, immer am dritte Mäntig im April. D Zünft laufed in ihrne alte Chläider dur d Schtadt, und am Aabig verbränned si de Böögg.\nElif: De Böögg? Was isch dänn das?\nKäthi: En groosse Schneemaa us Watte, mit Chracher im Chopf. Är schtaat uf em Sächsilüüteplatz uf eme hoche Hufe Holz, und am Punkt Sächsi zünded si s Füür aa.\nElif: Und warum macht me das?\nKäthi: De Böögg isch s Symbol vom Winter. Je schnäller sin Chopf explodiert, descht schööner wird de Summer — säged d Lüüt. Letscht Jaar hät s öppe zwänzg Minuute duuret, das isch lang.\nElif: Spannend! Und cha me das eifach go zueluege?\nKäthi: Klar, es choschtet nüüt. Aber gang früe hii, susch gseesch nüüt — es hät mega vil Lüüt. Mir chönd ja zäme gaa, wenn d magsch.",
    "gloss": [
     {
      "de": "d Zunft",
-     "mevcutTr": "lonca (tarihî esnaf birliği)"
+     "currentTr": "lonca (tarihî esnaf birliği)"
     },
     {
      "de": "verbränne",
-     "mevcutTr": "yakmak"
+     "currentTr": "yakmak"
     },
     {
      "de": "de Böögg",
-     "mevcutTr": "Böögg: yakılan kardan adam figürü"
+     "currentTr": "Böögg: yakılan kardan adam figürü"
     },
     {
      "de": "d Watte",
-     "mevcutTr": "pamuk"
+     "currentTr": "pamuk"
     },
     {
      "de": "de Chracher",
-     "mevcutTr": "patlayıcı, maytap"
+     "currentTr": "patlayıcı, maytap"
     },
     {
      "de": "aazünde",
-     "mevcutTr": "tutuşturmak, ateşlemek"
+     "currentTr": "tutuşturmak, ateşlemek"
     },
     {
      "de": "explodiere",
-     "mevcutTr": "patlamak"
+     "currentTr": "patlamak"
     },
     {
      "de": "zueluege",
-     "mevcutTr": "izlemek, seyretmek"
+     "currentTr": "izlemek, seyretmek"
     }
    ]
   },
@@ -299,43 +299,43 @@
    "title": "Bim Coiffeur",
    "genre": "Diyalog",
    "intro": "Elif kuaförde ne istediğini anlatıyor. Konuşmayı dinleyeceksin.",
-   "metin": "Coiffeuse: Grüezi Frau Demir, chömed Si grad ane. Was mached mir hüt?\nElif: Grüezi. Nöd z vill, bitte — nume d Schpitze. Si sind trocke worde.\nCoiffeuse: Also öppe zwäi Zentimeter? Und d Läng suscht so laa?\nElif: Genau. Und de Pony chönted Si es bitzeli chürzer mache, aber würkli nume es bitzeli.\nCoiffeuse: Alles klar. Wänd Si nachhär föne, oder lönd Si s lieber lufttrochne?\nElif: Föne, bitte. Ich mues nachhär grad no a e Sitzig.\nCoiffeuse: Guet. Denn bruuched mir öppe vierzg Minute. Wänd Si en Kafi?\nElif: Sehr gärn, merci. Und chönt ich grad de nöchscht Termin abmache?\nCoiffeuse: Sicher. I öppe zwölf Wuche? Denn hettemer am Dunschtig am vieri Platz.\nElif: Das passt mer guet.",
+   "text": "Coiffeuse: Grüezi Frau Demir, chömed Si grad ane. Was mached mir hüt?\nElif: Grüezi. Nöd z vill, bitte — nume d Schpitze. Si sind trocke worde.\nCoiffeuse: Also öppe zwäi Zentimeter? Und d Läng suscht so laa?\nElif: Genau. Und de Pony chönted Si es bitzeli chürzer mache, aber würkli nume es bitzeli.\nCoiffeuse: Alles klar. Wänd Si nachhär föne, oder lönd Si s lieber lufttrochne?\nElif: Föne, bitte. Ich mues nachhär grad no a e Sitzig.\nCoiffeuse: Guet. Denn bruuched mir öppe vierzg Minute. Wänd Si en Kafi?\nElif: Sehr gärn, merci. Und chönt ich grad de nöchscht Termin abmache?\nCoiffeuse: Sicher. I öppe zwölf Wuche? Denn hettemer am Dunschtig am vieri Platz.\nElif: Das passt mer guet.",
    "gloss": [
     {
      "de": "de Coiffeur",
-     "mevcutTr": "kuaför (İsviçre'de Friseur yerine)",
-     "havuz": {
+     "currentTr": "kuaför (İsviçre'de Friseur yerine)",
+     "pool": {
       "tr": "kuaför",
       "en": "hairdresser"
      }
     },
     {
      "de": "d Schpitze",
-     "mevcutTr": "saç uçları"
+     "currentTr": "saç uçları"
     },
     {
      "de": "schniide",
-     "mevcutTr": "kesmek"
+     "currentTr": "kesmek"
     },
     {
      "de": "de Pony",
-     "mevcutTr": "kâkül"
+     "currentTr": "kâkül"
     },
     {
      "de": "föne",
-     "mevcutTr": "fön çekmek"
+     "currentTr": "fön çekmek"
     },
     {
      "de": "de Termin",
-     "mevcutTr": "randevu",
-     "havuz": {
+     "currentTr": "randevu",
+     "pool": {
       "tr": "randevu",
       "en": "appointment"
      }
     },
     {
      "de": "zwäg mache",
-     "mevcutTr": "hazırlamak, yapmak (saç)"
+     "currentTr": "hazırlamak, yapmak (saç)"
     }
    ]
   },
@@ -346,47 +346,47 @@
    "title": "Elteraabig i de Schuel",
    "genre": "Konuşma",
    "intro": "Bir Zürih ilkokulunda veli toplantısında öğretmenin açılış konuşmasını dinleyeceksin.",
-   "metin": "Lehrerin: Grüezi mitenand und härzlich willkomme zum Elteraabig. Schöön, dass so vill choo sind.\nLehrerin: Zerscht es paar Wort zum Alltag: D Chind händ jetz jede Tag öppe zwänzg bis drissg Minute Uufgabe. Wänn s dihäi lenger duuret, schriibed Si mer s — denn passed mir s aa.\nLehrerin: S Zügnis chunt im Februar. Vorher git s Elterngspröch; d Termin chönd Si ab nächschter Wuche online usläse.\nLehrerin: Im Mai gömmer is Klasselager uf d Lenzerheide, vo Määndig bis Friitig. De Beitrag isch hundertsächzg Franke. Wänn das für e Familie schwiirig isch, mäldet Si sich bi mir — es git en Fonds, und das bliibt under üs.\nLehrerin: Und zum Schluss: Für d Exkursion im Juni sueched mir zwäi Eltere für d Betreuig. Wär cha, schriibt sich hinde uf de Lischte ii.",
+   "text": "Lehrerin: Grüezi mitenand und härzlich willkomme zum Elteraabig. Schöön, dass so vill choo sind.\nLehrerin: Zerscht es paar Wort zum Alltag: D Chind händ jetz jede Tag öppe zwänzg bis drissg Minute Uufgabe. Wänn s dihäi lenger duuret, schriibed Si mer s — denn passed mir s aa.\nLehrerin: S Zügnis chunt im Februar. Vorher git s Elterngspröch; d Termin chönd Si ab nächschter Wuche online usläse.\nLehrerin: Im Mai gömmer is Klasselager uf d Lenzerheide, vo Määndig bis Friitig. De Beitrag isch hundertsächzg Franke. Wänn das für e Familie schwiirig isch, mäldet Si sich bi mir — es git en Fonds, und das bliibt under üs.\nLehrerin: Und zum Schluss: Für d Exkursion im Juni sueched mir zwäi Eltere für d Betreuig. Wär cha, schriibt sich hinde uf de Lischte ii.",
    "gloss": [
     {
      "de": "de Elteraabig",
-     "mevcutTr": "veli toplantısı"
+     "currentTr": "veli toplantısı"
     },
     {
      "de": "d Uufgab",
-     "mevcutTr": "ödev, görev"
+     "currentTr": "ödev, görev"
     },
     {
      "de": "s Zügnis",
-     "mevcutTr": "karne"
+     "currentTr": "karne"
     },
     {
      "de": "d Exkursion",
-     "mevcutTr": "gezi"
+     "currentTr": "gezi"
     },
     {
      "de": "s Lager",
-     "mevcutTr": "okul kampı (İsviçre klasiği)",
-     "havuz": {
+     "currentTr": "okul kampı (İsviçre klasiği)",
+     "pool": {
       "tr": "depo",
       "en": "warehouse"
      }
     },
     {
      "de": "de Beitrag",
-     "mevcutTr": "katkı payı",
-     "havuz": {
+     "currentTr": "katkı payı",
+     "pool": {
       "tr": "aidat",
       "en": "membership fee"
      }
     },
     {
      "de": "sich mälde",
-     "mevcutTr": "haber vermek, başvurmak"
+     "currentTr": "haber vermek, başvurmak"
     },
     {
      "de": "d Betreuig",
-     "mevcutTr": "gözetim, refakat"
+     "currentTr": "gözetim, refakat"
     }
    ]
   }

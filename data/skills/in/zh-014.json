@@ -1,7 +1,7 @@
 {
- "paket": "zh-014",
+ "packet": "zh-014",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-b2-r9",
    "skill": "reading",
@@ -9,48 +9,48 @@
    "title": "D Schwiiz und Europa",
    "genre": "Açıklayıcı yazı",
    "intro": "İsviçre AB üyesi değil ama tam ortasında. Bu ilişkinin neden bu kadar karmaşık olduğunu anlatan bir yazı.",
-   "metin": "D Schwiiz isch nöd i de EU — und trotzdem enger mit ere verbunde als mängs Mitgliedsland. Das tönt widersprüchlich und isch s au.\n\nS System heisst biilaterale Wäg. Statt eme Beitritt git s über hundert einzelni Verträg: Persoonefreizügigkäit, Landverchehr, Forschig, technischi Handelshemmnis. Zäme gänd si de Schwiizer Firme fascht de gliich Zuegang zum Binnemärt wie eme Mitglied.\n\nDe Priis isch weniger sichtbar. Erschtens git s d Guillotine-Klausel: Wär äine vo de sibe Verträg vo 1999 kündigt, bringt automatisch alli zum Falle. Das schränkt de politisch Spielruum stark ii — au wänn s Volch e einzelni Frag anders entschäidet.\n\nZwäitens mues d Schwiiz vill EU-Recht nachvollzieh, ohni bim Uusarbeite debii z sii. Kritiker nänned das „Recht übernää ohni mitzredde“. Befürworter antwortet: Genau das isch de Priis vom Zuegang, und er isch günschtiger als Isolation.\n\nSiit Jaare stoot d Verhandlig über es institutionells Abkomme im Zäntrum. D EU wott klari Regle, wie nöis Recht übernoo und Streit entschide wird. Für vill Schwiizer berüehrt das d Souveränität; für vill Firme isch d Unsicherheit s grösser Problem als jede Kompromiss.\n\nDe Text will kä Antwort gää. Er will nur zäige, warum d Debatte nöd zwüsche „defür“ und „degäge“ verlauft, sondern zwüsche verschiidene Vorstellige devo, was Unabhängigkäit i me chliine Land überhaupt häisst.",
+   "text": "D Schwiiz isch nöd i de EU — und trotzdem enger mit ere verbunde als mängs Mitgliedsland. Das tönt widersprüchlich und isch s au.\n\nS System heisst biilaterale Wäg. Statt eme Beitritt git s über hundert einzelni Verträg: Persoonefreizügigkäit, Landverchehr, Forschig, technischi Handelshemmnis. Zäme gänd si de Schwiizer Firme fascht de gliich Zuegang zum Binnemärt wie eme Mitglied.\n\nDe Priis isch weniger sichtbar. Erschtens git s d Guillotine-Klausel: Wär äine vo de sibe Verträg vo 1999 kündigt, bringt automatisch alli zum Falle. Das schränkt de politisch Spielruum stark ii — au wänn s Volch e einzelni Frag anders entschäidet.\n\nZwäitens mues d Schwiiz vill EU-Recht nachvollzieh, ohni bim Uusarbeite debii z sii. Kritiker nänned das „Recht übernää ohni mitzredde“. Befürworter antwortet: Genau das isch de Priis vom Zuegang, und er isch günschtiger als Isolation.\n\nSiit Jaare stoot d Verhandlig über es institutionells Abkomme im Zäntrum. D EU wott klari Regle, wie nöis Recht übernoo und Streit entschide wird. Für vill Schwiizer berüehrt das d Souveränität; für vill Firme isch d Unsicherheit s grösser Problem als jede Kompromiss.\n\nDe Text will kä Antwort gää. Er will nur zäige, warum d Debatte nöd zwüsche „defür“ und „degäge“ verlauft, sondern zwüsche verschiidene Vorstellige devo, was Unabhängigkäit i me chliine Land überhaupt häisst.",
    "gloss": [
     {
      "de": "de Biilaterale Wäg",
-     "mevcutTr": "ikili anlaşmalar yolu"
+     "currentTr": "ikili anlaşmalar yolu"
     },
     {
      "de": "de Bertrag",
-     "mevcutTr": "anlaşma"
+     "currentTr": "anlaşma"
     },
     {
      "de": "de Binnemärt",
-     "mevcutTr": "iç pazar"
+     "currentTr": "iç pazar"
     },
     {
      "de": "d Persoonefreizügigkäit",
-     "mevcutTr": "serbest dolaşım"
+     "currentTr": "serbest dolaşım"
     },
     {
      "de": "d Guillotine-Klausel",
-     "mevcutTr": "giyotin maddesi (biri düşerse hepsi düşer)"
+     "currentTr": "giyotin maddesi (biri düşerse hepsi düşer)"
     },
     {
      "de": "d Souveränität",
-     "mevcutTr": "egemenlik",
-     "havuz": {
+     "currentTr": "egemenlik",
+     "pool": {
       "tr": "egemenlik",
       "en": "sovereignty"
      }
     },
     {
      "de": "nachvollzieh",
-     "mevcutTr": "sonradan uyum sağlamak"
+     "currentTr": "sonradan uyum sağlamak"
     },
     {
      "de": "d Sackgass",
-     "mevcutTr": "çıkmaz"
+     "currentTr": "çıkmaz"
     },
     {
      "de": "d Unsicherheit",
-     "mevcutTr": "belirsizlik",
-     "havuz": {
+     "currentTr": "belirsizlik",
+     "pool": {
       "tr": "belirsizlik",
       "en": "uncertainty"
      }
@@ -64,47 +64,47 @@
    "title": "Vier Meinige zum Dienschtjaar",
    "genre": "Sınav formatı",
    "intro": "Aynı konuda dört görüş — kısmen örtüşüyorlar. Kimin neyi kabul edip neyi reddettiğini ayır.",
-   "metin": "Thema: Sölled alli — Fraue und Männer — es Dienschtjaar leischte?\n\nNORA (Studentin): Ich bi defür, aber nöd us militärische Gründ. Mir händ es Problem mit em Zämehalt: Mir wohned neb enand und rededed nöd mitenand. Es Jaar, wo alli öppis für d Gsellschaft mached, wär s einzige Ort, wo sich Lüüt begägned, wo sich susch nie träffed. Militär oder Pflege isch mir egal.\n\nMARKUS (Unternehmer): Ich bi degäge, und zwar wäge de Choschte. Es ganzes Jaar us em Arbetsmärt — für e ganzi Generation. Mir händ scho hüt z wenig Fachlüüt. Wär das fordered, mues au säge, wär s zaalt.\n\nSELIN (Pflegefachfrau): Ich bi teilwiis defür. Aber ich warne devor, d Pflege als Lückebüesser z bruuche. Junge Lüüt, wo es Jaar bliibed und käi Uusbildig händ, entlaschted üs nöd — si bruuched Betreuig. Wänn me s macht, denn richtig: mit Uusbildig und Bezaalig.\n\nTOBIAS (Rekrutierigsoffizier): Ich bi skeptisch. S Militär bruucht nöd meh Lüüt, es bruucht di richtige. E Pflicht für alli produziert Lüüt, wo nöd wänd — und die kosted meh, als si bringed. Freiwilligkäit funktioniert bi eus besser, als di mäischte dänked.",
+   "text": "Thema: Sölled alli — Fraue und Männer — es Dienschtjaar leischte?\n\nNORA (Studentin): Ich bi defür, aber nöd us militärische Gründ. Mir händ es Problem mit em Zämehalt: Mir wohned neb enand und rededed nöd mitenand. Es Jaar, wo alli öppis für d Gsellschaft mached, wär s einzige Ort, wo sich Lüüt begägned, wo sich susch nie träffed. Militär oder Pflege isch mir egal.\n\nMARKUS (Unternehmer): Ich bi degäge, und zwar wäge de Choschte. Es ganzes Jaar us em Arbetsmärt — für e ganzi Generation. Mir händ scho hüt z wenig Fachlüüt. Wär das fordered, mues au säge, wär s zaalt.\n\nSELIN (Pflegefachfrau): Ich bi teilwiis defür. Aber ich warne devor, d Pflege als Lückebüesser z bruuche. Junge Lüüt, wo es Jaar bliibed und käi Uusbildig händ, entlaschted üs nöd — si bruuched Betreuig. Wänn me s macht, denn richtig: mit Uusbildig und Bezaalig.\n\nTOBIAS (Rekrutierigsoffizier): Ich bi skeptisch. S Militär bruucht nöd meh Lüüt, es bruucht di richtige. E Pflicht für alli produziert Lüüt, wo nöd wänd — und die kosted meh, als si bringed. Freiwilligkäit funktioniert bi eus besser, als di mäischte dänked.",
    "gloss": [
     {
      "de": "s Dienschtjaar",
-     "mevcutTr": "hizmet yılı"
+     "currentTr": "hizmet yılı"
     },
     {
      "de": "de Zivildienscht",
-     "mevcutTr": "sivil hizmet"
+     "currentTr": "sivil hizmet"
     },
     {
      "de": "d Pflicht",
-     "mevcutTr": "zorunluluk",
-     "havuz": {
+     "currentTr": "zorunluluk",
+     "pool": {
       "tr": "yükümlülük",
       "en": "duty"
      }
     },
     {
      "de": "freiwillig",
-     "mevcutTr": "gönüllü",
-     "havuz": {
+     "currentTr": "gönüllü",
+     "pool": {
       "tr": "gönüllü",
       "en": "voluntary"
      }
     },
     {
      "de": "de Zämehalt",
-     "mevcutTr": "toplumsal bağ"
+     "currentTr": "toplumsal bağ"
     },
     {
      "de": "d Belaschtig",
-     "mevcutTr": "yük"
+     "currentTr": "yük"
     },
     {
      "de": "d Grächtigkäit",
-     "mevcutTr": "adalet"
+     "currentTr": "adalet"
     },
     {
      "de": "iischränke",
-     "mevcutTr": "kısıtlamak"
+     "currentTr": "kısıtlamak"
     }
    ]
   },
@@ -115,39 +115,39 @@
    "title": "D Absaag — und was drin staat",
    "genre": "Yazışma",
    "intro": "Hikâyenin devamı: Amina yedi ret aldı. Bu ikisi arasındaki fark, iş arayan herkesin bilmesi gerekeni gösteriyor.",
-   "metin": "ABSAAG 1 — Drogerie Wettstein\n\nGuete Tag Frau Bekele\n\nBesten Dank für Ihri Bewärbig als Drogistin EFZ. Mir händ üs für e anderi Kandidatin entschide.\n\nMir wünsched Ine für d Zuekunft alles Guete.\n\nFründlichi Grüess\nPersonaldienscht\n\n\nABSAAG 2 — Apotheke am Limmatplatz\n\nGuete Tag Frau Bekele\n\nMir händ Ihri Bewärbig sorgfältig aagluegt und üs schwer taa. Am Schluss händ mir e Kandidatin gnoo, wo scho es Jaar i de Branche gschafft hät.\n\nWil Si üs bi de Schnupperlehr uufgfalle sind, schriib ich Ine meh als üblich:\n\nIhri Stärchi isch de Umgang mit Lüüt. D Frau Kern hät gsäit, Si heiged Chunde zuegloost, wo süsch niemert zuelost. Das cha me nöd lerne.\n\nWas Ihri Bewärbig schwächt: S Motivationsschriibe isch sehr allgemäin. Si schriibed, Si «intressiered sich für Gsundheit» — das schriibed alli. Ihres Erläbnis mit em Dosiere, wo Si im Schnupperbricht beschriibed, chunt im Schriibe gar nöd vor. Genau das wär interessant gsii.\n\nMir händ im Auguscht wider e Lehrstell offe. Ich würd mich fröie, wänn Si sich nomal mälded — und ich stand für e Frag zur Verfüegig.\n\nFründlichi Grüess\nB. Kern",
+   "text": "ABSAAG 1 — Drogerie Wettstein\n\nGuete Tag Frau Bekele\n\nBesten Dank für Ihri Bewärbig als Drogistin EFZ. Mir händ üs für e anderi Kandidatin entschide.\n\nMir wünsched Ine für d Zuekunft alles Guete.\n\nFründlichi Grüess\nPersonaldienscht\n\n\nABSAAG 2 — Apotheke am Limmatplatz\n\nGuete Tag Frau Bekele\n\nMir händ Ihri Bewärbig sorgfältig aagluegt und üs schwer taa. Am Schluss händ mir e Kandidatin gnoo, wo scho es Jaar i de Branche gschafft hät.\n\nWil Si üs bi de Schnupperlehr uufgfalle sind, schriib ich Ine meh als üblich:\n\nIhri Stärchi isch de Umgang mit Lüüt. D Frau Kern hät gsäit, Si heiged Chunde zuegloost, wo süsch niemert zuelost. Das cha me nöd lerne.\n\nWas Ihri Bewärbig schwächt: S Motivationsschriibe isch sehr allgemäin. Si schriibed, Si «intressiered sich für Gsundheit» — das schriibed alli. Ihres Erläbnis mit em Dosiere, wo Si im Schnupperbricht beschriibed, chunt im Schriibe gar nöd vor. Genau das wär interessant gsii.\n\nMir händ im Auguscht wider e Lehrstell offe. Ich würd mich fröie, wänn Si sich nomal mälded — und ich stand für e Frag zur Verfüegig.\n\nFründlichi Grüess\nB. Kern",
    "gloss": [
     {
      "de": "d Absaag",
-     "mevcutTr": "ret"
+     "currentTr": "ret"
     },
     {
      "de": "d Bewärbig",
-     "mevcutTr": "başvuru"
+     "currentTr": "başvuru"
     },
     {
      "de": "de Iidruck",
-     "mevcutTr": "izlenim"
+     "currentTr": "izlenim"
     },
     {
      "de": "d Rückmäldig",
-     "mevcutTr": "geri bildirim"
+     "currentTr": "geri bildirim"
     },
     {
      "de": "d Dossierprüefig",
-     "mevcutTr": "dosya incelemesi"
+     "currentTr": "dosya incelemesi"
     },
     {
      "de": "konkret",
-     "mevcutTr": "somut"
+     "currentTr": "somut"
     },
     {
      "de": "d Empfehlig",
-     "mevcutTr": "tavsiye"
+     "currentTr": "tavsiye"
     },
     {
      "de": "sich mälde",
-     "mevcutTr": "haber vermek"
+     "currentTr": "haber vermek"
     }
    ]
   },
@@ -158,43 +158,43 @@
    "title": "Di drei Süüle",
    "genre": "Rehber",
    "intro": "İsviçre emeklilik sistemi üç sütun üzerine kuruludur — ve üçüncüsü kimsenin anlatmadığı vergi avantajıdır.",
-   "metin": "Di erschti Süüle (AHV) isch staatlich und obligatorisch. Si söll d Existänz sichere — nöd meh. E maximali AHV-Rente lit bi öppe 2'520 Franke im Monet. Wär nur die hät, chunt z Züri nöd dure.\n\nDi zwäiti Süüle (Pensionskasse, BVG) isch obligatorisch ab eme Jaresloon vo 22'680 Franke. Zäme mit de AHV söll si öppe 60 Prozänt vom letschte Loon erreiche. S Gäld ghört eim, aber me chunt normalerwiis nöd dra — mit zwo Uusnaame: Wär Wohneigentum chauft oder sich sälbständig macht, cha s vorbezieh.\n\nDi dritti Süüle (3a) isch freiwillig und stüürlich privilegiert. Wär aagschtellt isch, cha 2025 bis 7'258 Franke im Jaar iizaale und dää Betrag vom stüürbare Iikomme abzieh. S Gäld isch bis füf Jaar vor de Pensionierig gsperrt.\n\nBsunders wichtig isch das für zwo Gruppe. Erschtens für Lüüt mit Lücke i de zwäite Süüle: Wär e Ziit im Uusland gschafft hät oder Tiilzitt arbetet, hät automatisch weniger. Zwäitens für Fraue: Underbrüch wäge Chind wirked sich direkt uf d Rente uus, und de Koordinationsabzug trifft tiefi Pänsum zuesätzlich.\n\nEs praktischs Detail, wo vill nöd wüssed: Es lohnt sich, meh als äi 3a-Konto z haa. Bim Bezug wird jedes Konto einzeln bestüüret, und well de Stüürsatz progressiv isch, zaalt me mit drei chliinere Konte deutlich weniger als mit eme grosse.",
+   "text": "Di erschti Süüle (AHV) isch staatlich und obligatorisch. Si söll d Existänz sichere — nöd meh. E maximali AHV-Rente lit bi öppe 2'520 Franke im Monet. Wär nur die hät, chunt z Züri nöd dure.\n\nDi zwäiti Süüle (Pensionskasse, BVG) isch obligatorisch ab eme Jaresloon vo 22'680 Franke. Zäme mit de AHV söll si öppe 60 Prozänt vom letschte Loon erreiche. S Gäld ghört eim, aber me chunt normalerwiis nöd dra — mit zwo Uusnaame: Wär Wohneigentum chauft oder sich sälbständig macht, cha s vorbezieh.\n\nDi dritti Süüle (3a) isch freiwillig und stüürlich privilegiert. Wär aagschtellt isch, cha 2025 bis 7'258 Franke im Jaar iizaale und dää Betrag vom stüürbare Iikomme abzieh. S Gäld isch bis füf Jaar vor de Pensionierig gsperrt.\n\nBsunders wichtig isch das für zwo Gruppe. Erschtens für Lüüt mit Lücke i de zwäite Süüle: Wär e Ziit im Uusland gschafft hät oder Tiilzitt arbetet, hät automatisch weniger. Zwäitens für Fraue: Underbrüch wäge Chind wirked sich direkt uf d Rente uus, und de Koordinationsabzug trifft tiefi Pänsum zuesätzlich.\n\nEs praktischs Detail, wo vill nöd wüssed: Es lohnt sich, meh als äi 3a-Konto z haa. Bim Bezug wird jedes Konto einzeln bestüüret, und well de Stüürsatz progressiv isch, zaalt me mit drei chliinere Konte deutlich weniger als mit eme grosse.",
    "gloss": [
     {
      "de": "d Vorsorg",
-     "mevcutTr": "emeklilik/geleceğe hazırlık"
+     "currentTr": "emeklilik/geleceğe hazırlık"
     },
     {
      "de": "d Süüle",
-     "mevcutTr": "sütun"
+     "currentTr": "sütun"
     },
     {
      "de": "d Existänzsicherig",
-     "mevcutTr": "asgari geçim güvencesi"
+     "currentTr": "asgari geçim güvencesi"
     },
     {
      "de": "d Lebensschtandard",
-     "mevcutTr": "yaşam standardı"
+     "currentTr": "yaşam standardı"
     },
     {
      "de": "de Bezug",
-     "mevcutTr": "çekim, ödeme alma"
+     "currentTr": "çekim, ödeme alma"
     },
     {
      "de": "s Wohneigentum",
-     "mevcutTr": "konut mülkiyeti"
+     "currentTr": "konut mülkiyeti"
     },
     {
      "de": "de Stüürabzug",
-     "mevcutTr": "vergi indirimi"
+     "currentTr": "vergi indirimi"
     },
     {
      "de": "sperre",
-     "mevcutTr": "bloke etmek"
+     "currentTr": "bloke etmek"
     },
     {
      "de": "d Lücke",
-     "mevcutTr": "boşluk, açık"
+     "currentTr": "boşluk, açık"
     }
    ]
   },
@@ -205,51 +205,51 @@
    "title": "Abstimmigssunntig: D Velorouten-Initiative",
    "genre": "Sohbet",
    "intro": "İki arkadaş, pazar günü oylanacak bisiklet yolları girişimini tartışıyor; kimin hangi gerekçeyi savunduğunu takip et.",
-   "metin": "Reto: Du Sandra, häsch scho abgschtimt? Am Sunntig isch ja wider Abstimmigssunntig.\nSandra: Na nöd. Um was gaat s äigetlich gnau? Ich ha nu s Couvert gsee, aber s Büechli na nöd gläse.\nReto: Es gaat um d Velorouten-Initiative. D Stadt wott es Netz vo sichere Velowääge baue, wo vo de Autoschtraasse tränt sind. Choschtepunkt: rund drüühundert Millione über zwänzg Jaar.\nSandra: Puh, das isch vil Gäld. Und wär zaalt das?\nReto: D Stadt, also mir alli über d Schtüüre. Aber ich find, s lohnt sich: Hüt traut sich doch fascht niemert mit em Velo dur d Stadt, wil s äifach z gföörlich isch. Sit ich sicher fahre cha, bruuch ich s Tram fascht nüme.\nSandra: Ich wäiss nöd rächt. Ich fahre sälber Auto – und wänn überall Velowääge sind, hät s ja na weniger Platz und na meh Stau.\nReto: Da bin ich anderer Mäinig. Weniger Autofahrte häisst am Änd weniger Stau, nöd meh. Und lueg emal uf Basel: Sit s dört meh Velowääge git, sind d Unfallzaale klaar zruggange.\nSandra: Hm, s Argumänt mit de Sicherhäit zieht bi mir. Ich lise s Büechli hüt am Aabig – aber ich versprich der nüüt!",
+   "text": "Reto: Du Sandra, häsch scho abgschtimt? Am Sunntig isch ja wider Abstimmigssunntig.\nSandra: Na nöd. Um was gaat s äigetlich gnau? Ich ha nu s Couvert gsee, aber s Büechli na nöd gläse.\nReto: Es gaat um d Velorouten-Initiative. D Stadt wott es Netz vo sichere Velowääge baue, wo vo de Autoschtraasse tränt sind. Choschtepunkt: rund drüühundert Millione über zwänzg Jaar.\nSandra: Puh, das isch vil Gäld. Und wär zaalt das?\nReto: D Stadt, also mir alli über d Schtüüre. Aber ich find, s lohnt sich: Hüt traut sich doch fascht niemert mit em Velo dur d Stadt, wil s äifach z gföörlich isch. Sit ich sicher fahre cha, bruuch ich s Tram fascht nüme.\nSandra: Ich wäiss nöd rächt. Ich fahre sälber Auto – und wänn überall Velowääge sind, hät s ja na weniger Platz und na meh Stau.\nReto: Da bin ich anderer Mäinig. Weniger Autofahrte häisst am Änd weniger Stau, nöd meh. Und lueg emal uf Basel: Sit s dört meh Velowääge git, sind d Unfallzaale klaar zruggange.\nSandra: Hm, s Argumänt mit de Sicherhäit zieht bi mir. Ich lise s Büechli hüt am Aabig – aber ich versprich der nüüt!",
    "gloss": [
     {
      "de": "abschtime",
-     "mevcutTr": "oy kullanmak, oylamak"
+     "currentTr": "oy kullanmak, oylamak"
     },
     {
      "de": "d Abstimmig",
-     "mevcutTr": "halk oylaması"
+     "currentTr": "halk oylaması"
     },
     {
      "de": "s Büechli",
-     "mevcutTr": "oylama kitapçığı (resmi bilgilendirme)"
+     "currentTr": "oylama kitapçığı (resmi bilgilendirme)"
     },
     {
      "de": "de Velowääg",
-     "mevcutTr": "bisiklet yolu"
+     "currentTr": "bisiklet yolu"
     },
     {
      "de": "tränt",
-     "mevcutTr": "ayrılmış, ayrı"
+     "currentTr": "ayrılmış, ayrı"
     },
     {
      "de": "d Schtüüre",
-     "mevcutTr": "vergiler"
+     "currentTr": "vergiler"
     },
     {
      "de": "gföörlich",
-     "mevcutTr": "tehlikeli"
+     "currentTr": "tehlikeli"
     },
     {
      "de": "de Stau",
-     "mevcutTr": "trafik sıkışıklığı",
-     "havuz": {
+     "currentTr": "trafik sıkışıklığı",
+     "pool": {
       "tr": "trafik sıkışıklığı",
       "en": "traffic jam"
      }
     },
     {
      "de": "d Unfallzaale",
-     "mevcutTr": "kaza sayıları"
+     "currentTr": "kaza sayıları"
     },
     {
      "de": "zruggaa",
-     "mevcutTr": "geri gitmek, azalmak"
+     "currentTr": "geri gitmek, azalmak"
     }
    ]
   },
@@ -260,47 +260,47 @@
    "title": "Stadt oder Land? Es Gsprööch i de Znünipause",
    "genre": "Diyalog",
    "intro": "İki iş arkadaşı, şehirden köye taşınmayı tartışıyor; her birinin gerekçelerini ve planı dinle.",
-   "metin": "Mirjam: Du Luca, ich han ghöört, ir wänd us de Stadt zügle? Isch das ernscht?\nLuca: Ja, mir händ es Huus im Zürioberland gfunde, z Hinwil. Mit eme Garte, für d Chind. D Wonig i de Stadt isch eus äifach z chlii worde – und e grööseri chönd mir eus nöd läischte.\nMirjam: Das verschtaan ich. Aber dänk a s Pendle! Du fahrsch dänn jede Tag ewig lang.\nLuca: Mit de S-Baan sind s föifevierzg Minute bis Züri HB. Und ich cha zwäi Täg i de Wuche im Homeoffice schaffe. Das gaat scho.\nMirjam: Und s kulturell Läbe? Kino, Konzärt, Beize – uf em Land isch am Aabig doch äifach nüüt los.\nLuca: Stimmt scho. Aber ehrlich gsäit: Sit mir Chind händ, gönd mir eh fascht nüme us. Und d Natur vor de Huustüür isch für eus hüt meh wärt als es Kino um s Egg.\nMirjam: Verschtande. Mir würd d Stadt trotzdem fääle. Und wänn zügled er?\nLuca: Änds Monet scho! Aber mir mached es Iiweihigsfäscht – und du bisch natüürli iiglade.",
+   "text": "Mirjam: Du Luca, ich han ghöört, ir wänd us de Stadt zügle? Isch das ernscht?\nLuca: Ja, mir händ es Huus im Zürioberland gfunde, z Hinwil. Mit eme Garte, für d Chind. D Wonig i de Stadt isch eus äifach z chlii worde – und e grööseri chönd mir eus nöd läischte.\nMirjam: Das verschtaan ich. Aber dänk a s Pendle! Du fahrsch dänn jede Tag ewig lang.\nLuca: Mit de S-Baan sind s föifevierzg Minute bis Züri HB. Und ich cha zwäi Täg i de Wuche im Homeoffice schaffe. Das gaat scho.\nMirjam: Und s kulturell Läbe? Kino, Konzärt, Beize – uf em Land isch am Aabig doch äifach nüüt los.\nLuca: Stimmt scho. Aber ehrlich gsäit: Sit mir Chind händ, gönd mir eh fascht nüme us. Und d Natur vor de Huustüür isch für eus hüt meh wärt als es Kino um s Egg.\nMirjam: Verschtande. Mir würd d Stadt trotzdem fääle. Und wänn zügled er?\nLuca: Änds Monet scho! Aber mir mached es Iiweihigsfäscht – und du bisch natüürli iiglade.",
    "gloss": [
     {
      "de": "zügle",
-     "mevcutTr": "taşınmak"
+     "currentTr": "taşınmak"
     },
     {
      "de": "s Zürioberland",
-     "mevcutTr": "Zürih'in doğusundaki kırsal bölge"
+     "currentTr": "Zürih'in doğusundaki kırsal bölge"
     },
     {
      "de": "sich öppis läischte",
-     "mevcutTr": "bir şeyi karşılayabilmek"
+     "currentTr": "bir şeyi karşılayabilmek"
     },
     {
      "de": "s Pendle",
-     "mevcutTr": "işe gidip gelme"
+     "currentTr": "işe gidip gelme"
     },
     {
      "de": "d S-Baan",
-     "mevcutTr": "banliyö treni"
+     "currentTr": "banliyö treni"
     },
     {
      "de": "d Beiz",
-     "mevcutTr": "meyhane, lokanta (İsviçre)"
+     "currentTr": "meyhane, lokanta (İsviçre)"
     },
     {
      "de": "nüüt los",
-     "mevcutTr": "hiçbir şey olmuyor, ortalık ölü"
+     "currentTr": "hiçbir şey olmuyor, ortalık ölü"
     },
     {
      "de": "d Huustüür",
-     "mevcutTr": "evin kapısı"
+     "currentTr": "evin kapısı"
     },
     {
      "de": "s Iiweihigsfäscht",
-     "mevcutTr": "yeni ev kutlaması"
+     "currentTr": "yeni ev kutlaması"
     },
     {
      "de": "iiglade",
-     "mevcutTr": "davetli"
+     "currentTr": "davetli"
     }
    ]
   },
@@ -311,39 +311,39 @@
    "title": "S Vorstellungsgspröch",
    "genre": "İş görüşmesi",
    "intro": "Bir iş görüşmesini dinleyeceksin. İsviçre'de görüşme çoğu zaman lehçeyle başlar — kalıpları not et.",
-   "metin": "Frau Baumann: Grüezi Frau Yıldız, schöön sind Si da. Händ Si guet häre gfunde?\nFrau Yıldız: Grüezi. Ja, merci — s Tram haltet grad vor em Huus.\nFrau Baumann: Perfäkt. Denn fangemer aa: Verzelled Si üs churz, warum Si sich uf die Stell bewärbed.\nFrau Yıldız: Ich schaffe siit füf Jaar i de Logischtik und ha di letschte zwäi Jaar es chliises Team gfüehrt. Was mer fählt, isch d Verantwortig für es ganzes Projäkt — und genau das gseh ich bi Ine.\nFrau Baumann: Mir schaffed stark im Team, mit vill Abschtimmig. Wo lit da Ihri Stärchi — und wo Ihri Schwächi?\nFrau Yıldız: Stärchi: Ich plane gärn und dänke wiit vorus. Schwächi: Ich han lang Müe gha, Uufgabe abzgää — ich han lieber sälber gmacht. Underdesse deleghier ich bewusst, aber s bliibt öppis, wo ich beobachte.\nFrau Baumann: Danke für di ehrlich Antwort. D Stell isch uf achtzg Prozänt uusgschriibe. Wär das für Si en Themepunkt?\nFrau Yıldız: Achtzg passt mer sehr guet. Wichtig wär mer, dass ich d Täg fescht chan iiteile.\nFrau Baumann: Das lat sich mache. Und wänn chönted Si iischtiige?\nFrau Yıldız: Mini Kündigungsfrischt isch zwäi Mönet, also uf de erscht Auguscht.\nFrau Baumann: Guet. Mir mälded üs bis Ändi nächschti Wuche — mir händ na drei Gspröch.",
+   "text": "Frau Baumann: Grüezi Frau Yıldız, schöön sind Si da. Händ Si guet häre gfunde?\nFrau Yıldız: Grüezi. Ja, merci — s Tram haltet grad vor em Huus.\nFrau Baumann: Perfäkt. Denn fangemer aa: Verzelled Si üs churz, warum Si sich uf die Stell bewärbed.\nFrau Yıldız: Ich schaffe siit füf Jaar i de Logischtik und ha di letschte zwäi Jaar es chliises Team gfüehrt. Was mer fählt, isch d Verantwortig für es ganzes Projäkt — und genau das gseh ich bi Ine.\nFrau Baumann: Mir schaffed stark im Team, mit vill Abschtimmig. Wo lit da Ihri Stärchi — und wo Ihri Schwächi?\nFrau Yıldız: Stärchi: Ich plane gärn und dänke wiit vorus. Schwächi: Ich han lang Müe gha, Uufgabe abzgää — ich han lieber sälber gmacht. Underdesse deleghier ich bewusst, aber s bliibt öppis, wo ich beobachte.\nFrau Baumann: Danke für di ehrlich Antwort. D Stell isch uf achtzg Prozänt uusgschriibe. Wär das für Si en Themepunkt?\nFrau Yıldız: Achtzg passt mer sehr guet. Wichtig wär mer, dass ich d Täg fescht chan iiteile.\nFrau Baumann: Das lat sich mache. Und wänn chönted Si iischtiige?\nFrau Yıldız: Mini Kündigungsfrischt isch zwäi Mönet, also uf de erscht Auguscht.\nFrau Baumann: Guet. Mir mälded üs bis Ändi nächschti Wuche — mir händ na drei Gspröch.",
    "gloss": [
     {
      "de": "s Vorstellungsgspröch",
-     "mevcutTr": "iş görüşmesi"
+     "currentTr": "iş görüşmesi"
     },
     {
      "de": "d Stell",
-     "mevcutTr": "pozisyon"
+     "currentTr": "pozisyon"
     },
     {
      "de": "d Stärchi",
-     "mevcutTr": "güçlü yön"
+     "currentTr": "güçlü yön"
     },
     {
      "de": "d Schwächi",
-     "mevcutTr": "zayıf yön"
+     "currentTr": "zayıf yön"
     },
     {
      "de": "d Kündigungsfrischt",
-     "mevcutTr": "ihbar süresi"
+     "currentTr": "ihbar süresi"
     },
     {
      "de": "s Päntum",
-     "mevcutTr": "çalışma oranı (%80 gibi)"
+     "currentTr": "çalışma oranı (%80 gibi)"
     },
     {
      "de": "iischtiige",
-     "mevcutTr": "işe başlamak"
+     "currentTr": "işe başlamak"
     },
     {
      "de": "de Iidruck",
-     "mevcutTr": "izlenim"
+     "currentTr": "izlenim"
     }
    ]
   },
@@ -354,47 +354,47 @@
    "title": "Podcast: Zwäisprachig ufwachse",
    "genre": "Podcast",
    "intro": "İki dilli büyüyen çocuklar üzerine bir podcast bölümünü dinleyeceksin — Zürih'te çok tanıdık bir konu.",
-   "metin": "Moderatorin: Bi eus im Studio isch d Sprachforscherin Nadja Frei. Frau Frei, di grooss Angscht vo vilne Eltere: Verwirrt me s Chind, wänn me deheim zwäi Sprooche redt?\nNadja Frei: Nei. Das isch di häufigscht Frag und di äifachscht Antwort. Chinderhirn sind für Mehrsprachigkäit bout — weltwiit wachst d Mehrheit vo de Chind mit zwäi oder meh Sprooche uuf.\nModeratorin: Aber es git doch Chind, wo spöter aafanged rede.\nNadja Frei: Das schtimmt — und es hät nüüt mit Verwirrig z tue. Zwäisprachigi Chind händ am Aafang pro Sprooch en chliinere Wortschatz. Zellt me beid Sprooche zäme, sind si gliich wiit oder wiiter. De Rückschtand pro Sprooch hole si bis öppe zum Schuelaafang uuf.\nModeratorin: Und wänn s Chind d Sprooche mischt, mitte im Satz?\nNadja Frei: Das isch käis Zeiche vo Schwächi, sondern vo Kompetänz. S Chind wählt s Wort, wo grad passt. Erwachseni Zwäisprachigi mached genau s gliiche.\nModeratorin: Was ratet Si de Eltere konkret?\nNadja Frei: Redet mit em Chind d Sprooch, wo ihr am beschte chönd — au wänn s nöd Düütsch isch. E halbi Sprooch vom Vater bringt weniger als e ganzi. Und sind konsequänt: äi Person, äi Sprooch funktioniert am beschte.\nNadja Frei: Und s Wichtigschte, wo z wenig gsäit wird: E Sprooch überläbt nöd wäge Grammatik, sondern wäge Bezieige. Wänn s Chind d Sprooch mit de Grosseltere verbindet, mit Gschichte, mit Ässe — denn bliibt si.",
+   "text": "Moderatorin: Bi eus im Studio isch d Sprachforscherin Nadja Frei. Frau Frei, di grooss Angscht vo vilne Eltere: Verwirrt me s Chind, wänn me deheim zwäi Sprooche redt?\nNadja Frei: Nei. Das isch di häufigscht Frag und di äifachscht Antwort. Chinderhirn sind für Mehrsprachigkäit bout — weltwiit wachst d Mehrheit vo de Chind mit zwäi oder meh Sprooche uuf.\nModeratorin: Aber es git doch Chind, wo spöter aafanged rede.\nNadja Frei: Das schtimmt — und es hät nüüt mit Verwirrig z tue. Zwäisprachigi Chind händ am Aafang pro Sprooch en chliinere Wortschatz. Zellt me beid Sprooche zäme, sind si gliich wiit oder wiiter. De Rückschtand pro Sprooch hole si bis öppe zum Schuelaafang uuf.\nModeratorin: Und wänn s Chind d Sprooche mischt, mitte im Satz?\nNadja Frei: Das isch käis Zeiche vo Schwächi, sondern vo Kompetänz. S Chind wählt s Wort, wo grad passt. Erwachseni Zwäisprachigi mached genau s gliiche.\nModeratorin: Was ratet Si de Eltere konkret?\nNadja Frei: Redet mit em Chind d Sprooch, wo ihr am beschte chönd — au wänn s nöd Düütsch isch. E halbi Sprooch vom Vater bringt weniger als e ganzi. Und sind konsequänt: äi Person, äi Sprooch funktioniert am beschte.\nNadja Frei: Und s Wichtigschte, wo z wenig gsäit wird: E Sprooch überläbt nöd wäge Grammatik, sondern wäge Bezieige. Wänn s Chind d Sprooch mit de Grosseltere verbindet, mit Gschichte, mit Ässe — denn bliibt si.",
    "gloss": [
     {
      "de": "zwäisprachig",
-     "mevcutTr": "iki dilli"
+     "currentTr": "iki dilli"
     },
     {
      "de": "d Muettersprooch",
-     "mevcutTr": "ana dil"
+     "currentTr": "ana dil"
     },
     {
      "de": "mische",
-     "mevcutTr": "karıştırmak"
+     "currentTr": "karıştırmak"
     },
     {
      "de": "de Wortschatz",
-     "mevcutTr": "kelime hazinesi",
-     "havuz": {
+     "currentTr": "kelime hazinesi",
+     "pool": {
       "tr": "kelime hazinesi",
       "en": "vocabulary"
      }
     },
     {
      "de": "de Rückschtand",
-     "mevcutTr": "gerilik, geri kalma"
+     "currentTr": "gerilik, geri kalma"
     },
     {
      "de": "uufhole",
-     "mevcutTr": "yetişmek, açığı kapatmak"
+     "currentTr": "yetişmek, açığı kapatmak"
     },
     {
      "de": "d Identität",
-     "mevcutTr": "kimlik",
-     "havuz": {
+     "currentTr": "kimlik",
+     "pool": {
       "tr": "kimlik",
       "en": "identity"
      }
     },
     {
      "de": "konsequänt",
-     "mevcutTr": "tutarlı"
+     "currentTr": "tutarlı"
     }
    ]
   }

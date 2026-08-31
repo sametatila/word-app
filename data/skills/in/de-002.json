@@ -1,7 +1,7 @@
 {
- "paket": "de-002",
+ "packet": "de-002",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "a1-r9",
    "skill": "reading",
@@ -9,51 +9,51 @@
    "title": "Flohmarkt im Stadtpark",
    "genre": "Duyuru",
    "intro": "Almanya'nın en sevilen hafta sonu geleneklerinden biri: bit pazarı. Parktaki duyuruyu okuyacaksın.",
-   "metin": "FLOHMARKT IM STADTPARK\nSamstag, 8. Juni, 9–16 Uhr\n\nAlles ist gebraucht: Bücher, Kleidung, Fahrräder, Spielzeug, Geschirr.\n\nSie möchten selbst verkaufen? Ein Stand kostet 15 Euro (3 Meter). Bitte bis Mittwoch anmelden: flohmarkt@stadtpark-verein.de\n\nWichtig: Kein Verkauf von neuen Waren. Bitte bringen Sie Ihren eigenen Tisch mit.\n\nFür Kinder unter 14 ist der Stand kostenlos.\n\nEssen und Kaffee gibt es am Eingang Nord.\n\nBei Regen: Der Flohmarkt ist am Sonntag.",
+   "text": "FLOHMARKT IM STADTPARK\nSamstag, 8. Juni, 9–16 Uhr\n\nAlles ist gebraucht: Bücher, Kleidung, Fahrräder, Spielzeug, Geschirr.\n\nSie möchten selbst verkaufen? Ein Stand kostet 15 Euro (3 Meter). Bitte bis Mittwoch anmelden: flohmarkt@stadtpark-verein.de\n\nWichtig: Kein Verkauf von neuen Waren. Bitte bringen Sie Ihren eigenen Tisch mit.\n\nFür Kinder unter 14 ist der Stand kostenlos.\n\nEssen und Kaffee gibt es am Eingang Nord.\n\nBei Regen: Der Flohmarkt ist am Sonntag.",
    "gloss": [
     {
      "de": "der Flohmarkt",
-     "mevcutTr": "bit pazarı",
-     "havuz": {
+     "currentTr": "bit pazarı",
+     "pool": {
       "tr": "bit pazarı",
       "en": "flea market"
      }
     },
     {
      "de": "verkaufen",
-     "mevcutTr": "satmak",
-     "havuz": {
+     "currentTr": "satmak",
+     "pool": {
       "tr": "satmak",
       "en": "to sell"
      }
     },
     {
      "de": "der Stand",
-     "mevcutTr": "tezgâh"
+     "currentTr": "tezgâh"
     },
     {
      "de": "anmelden",
-     "mevcutTr": "kaydolmak"
+     "currentTr": "kaydolmak"
     },
     {
      "de": "gebraucht",
-     "mevcutTr": "ikinci el",
-     "havuz": {
+     "currentTr": "ikinci el",
+     "pool": {
       "tr": "ikinci el",
       "en": "used"
      }
     },
     {
      "de": "die Kasse",
-     "mevcutTr": "kasa",
-     "havuz": {
+     "currentTr": "kasa",
+     "pool": {
       "tr": "kasa",
       "en": "checkout"
      }
     },
     {
      "de": "bei Regen",
-     "mevcutTr": "yağmur olursa"
+     "currentTr": "yağmur olursa"
     }
    ]
   },
@@ -64,60 +64,60 @@
    "title": "Vier Anzeigen — wer passt?",
    "genre": "Sınav formatı",
    "intro": "Goethe A1 sınavındaki klasik görev: kısa ilanları okuyup kimin neye ihtiyacı olduğunu eşleştirmek. Önce ilanları oku, sonra soruları çöz.",
-   "metin": "A) Deutsch lernen? Ich bin Studentin und gebe Unterricht. 12 Euro pro Stunde. Nur am Wochenende. Tel. 0176 555 12 12\n\nB) Fahrrad zu verkaufen, blau, 3 Jahre alt, fährt gut. 60 Euro. Nur Abholung, kein Versand. Tel. 0171 888 40 40\n\nC) Wir suchen eine Person für den Garten. Samstag, 4 Stunden, 15 Euro pro Stunde. Bitte bei Familie Roth melden: 0421 55 66 77\n\nD) Kinderbetreuung: Ich passe montags und mittwochs nachmittags auf Ihr Kind auf. Ich habe Erfahrung. Tel. 0160 222 33 44",
+   "text": "A) Deutsch lernen? Ich bin Studentin und gebe Unterricht. 12 Euro pro Stunde. Nur am Wochenende. Tel. 0176 555 12 12\n\nB) Fahrrad zu verkaufen, blau, 3 Jahre alt, fährt gut. 60 Euro. Nur Abholung, kein Versand. Tel. 0171 888 40 40\n\nC) Wir suchen eine Person für den Garten. Samstag, 4 Stunden, 15 Euro pro Stunde. Bitte bei Familie Roth melden: 0421 55 66 77\n\nD) Kinderbetreuung: Ich passe montags und mittwochs nachmittags auf Ihr Kind auf. Ich habe Erfahrung. Tel. 0160 222 33 44",
    "gloss": [
     {
      "de": "die Anzeige",
-     "mevcutTr": "ilan",
-     "havuz": {
+     "currentTr": "ilan",
+     "pool": {
       "tr": "ilan",
       "en": "ad"
      }
     },
     {
      "de": "suchen",
-     "mevcutTr": "aramak",
-     "havuz": {
+     "currentTr": "aramak",
+     "pool": {
       "tr": "aramak",
       "en": "to look for"
      }
     },
     {
      "de": "der Unterricht",
-     "mevcutTr": "ders",
-     "havuz": {
+     "currentTr": "ders",
+     "pool": {
       "tr": "ders",
       "en": "class"
      }
     },
     {
      "de": "abholen",
-     "mevcutTr": "gidip almak",
-     "havuz": {
+     "currentTr": "gidip almak",
+     "pool": {
       "tr": "gidip almak",
       "en": "to pick up"
      }
     },
     {
      "de": "die Stunde",
-     "mevcutTr": "saat",
-     "havuz": {
+     "currentTr": "saat",
+     "pool": {
       "tr": "saat",
       "en": "hour"
      }
     },
     {
      "de": "günstig",
-     "mevcutTr": "uygun fiyatlı",
-     "havuz": {
+     "currentTr": "uygun fiyatlı",
+     "pool": {
       "tr": "uygun fiyatlı",
       "en": "affordable"
      }
     },
     {
      "de": "melden",
-     "mevcutTr": "iletişime geçmek",
-     "havuz": {
+     "currentTr": "iletişime geçmek",
+     "pool": {
       "tr": "bildirmek",
       "en": "to report"
      }
@@ -131,60 +131,60 @@
    "title": "Ein Zettel von Frau Wagner",
    "genre": "Not",
    "intro": "Hikâyenin ikinci bölümü: Amir eve gelince kapısında bir not buluyor.",
-   "metin": "Lieber Herr Amir,\n\nheute war der Postbote da. Sie waren nicht zu Hause, also habe ich Ihr Paket angenommen. Es ist bei mir.\n\nIch bin ab 17 Uhr da. Klingeln Sie einfach — zweimal, dann weiß ich, dass Sie es sind.\n\nUnd noch etwas: Sie haben doch keinen Tisch, oder? Mein Sohn hat einen kleinen Tisch im Keller. Er braucht ihn nicht mehr. Wenn Sie wollen, gehört er Ihnen.\n\nTrinken Sie Tee? Ich habe immer welchen da.\n\nIhre Nachbarin\nH. Wagner (Wohnung 3)",
+   "text": "Lieber Herr Amir,\n\nheute war der Postbote da. Sie waren nicht zu Hause, also habe ich Ihr Paket angenommen. Es ist bei mir.\n\nIch bin ab 17 Uhr da. Klingeln Sie einfach — zweimal, dann weiß ich, dass Sie es sind.\n\nUnd noch etwas: Sie haben doch keinen Tisch, oder? Mein Sohn hat einen kleinen Tisch im Keller. Er braucht ihn nicht mehr. Wenn Sie wollen, gehört er Ihnen.\n\nTrinken Sie Tee? Ich habe immer welchen da.\n\nIhre Nachbarin\nH. Wagner (Wohnung 3)",
    "gloss": [
     {
      "de": "der Zettel",
-     "mevcutTr": "not kâğıdı",
-     "havuz": {
+     "currentTr": "not kâğıdı",
+     "pool": {
       "tr": "not kâğıdı",
       "en": "note"
      }
     },
     {
      "de": "das Paket",
-     "mevcutTr": "paket",
-     "havuz": {
+     "currentTr": "paket",
+     "pool": {
       "tr": "paket",
       "en": "package"
      }
     },
     {
      "de": "annehmen",
-     "mevcutTr": "teslim almak",
-     "havuz": {
+     "currentTr": "teslim almak",
+     "pool": {
       "tr": "varsaymak",
       "en": "to assume"
      }
     },
     {
      "de": "vorbeikommen",
-     "mevcutTr": "uğramak",
-     "havuz": {
+     "currentTr": "uğramak",
+     "pool": {
       "tr": "uğramak",
       "en": "to come by"
      }
     },
     {
      "de": "die Tasse",
-     "mevcutTr": "fincan",
-     "havuz": {
+     "currentTr": "fincan",
+     "pool": {
       "tr": "fincan",
       "en": "cup"
      }
     },
     {
      "de": "leihen",
-     "mevcutTr": "ödünç vermek",
-     "havuz": {
+     "currentTr": "ödünç vermek",
+     "pool": {
       "tr": "ödünç vermek",
       "en": "to lend"
      }
     },
     {
      "de": "der Schlüssel",
-     "mevcutTr": "anahtar",
-     "havuz": {
+     "currentTr": "anahtar",
+     "pool": {
       "tr": "anahtar",
       "en": "key"
      }
@@ -198,56 +198,56 @@
    "title": "Die Hausordnung",
    "genre": "Kurallar",
    "intro": "Almanya'da her binada asılı olan metin: ev kuralları. Amir'in binasındaki listeyi okuyacaksın.",
-   "metin": "HAUSORDNUNG — Lindenstraße 8\n\n1. Ruhezeiten: 22–7 Uhr und sonntags den ganzen Tag. Bitte keine Waschmaschine und keine laute Musik.\n\n2. Müll: Bitte trennen! Gelber Sack (Plastik), blaue Tonne (Papier), braune Tonne (Bio), graue Tonne (Rest). Glas kommt in den Container an der Ecke.\n\n3. Waschküche: Jede Wohnung hat einen Tag. Der Plan hängt an der Tür. Bitte die Maschine nach dem Waschen sauber machen.\n\n4. Fahrräder: nur im Keller, nicht im Treppenhaus.\n\n5. Grillen auf dem Balkon ist verboten. Im Garten ist es erlaubt — bitte vorher bei den Nachbarn Bescheid sagen.\n\n6. Fragen? Hausmeister Klose, Wohnung 1, oder 0421 33 44 55.",
+   "text": "HAUSORDNUNG — Lindenstraße 8\n\n1. Ruhezeiten: 22–7 Uhr und sonntags den ganzen Tag. Bitte keine Waschmaschine und keine laute Musik.\n\n2. Müll: Bitte trennen! Gelber Sack (Plastik), blaue Tonne (Papier), braune Tonne (Bio), graue Tonne (Rest). Glas kommt in den Container an der Ecke.\n\n3. Waschküche: Jede Wohnung hat einen Tag. Der Plan hängt an der Tür. Bitte die Maschine nach dem Waschen sauber machen.\n\n4. Fahrräder: nur im Keller, nicht im Treppenhaus.\n\n5. Grillen auf dem Balkon ist verboten. Im Garten ist es erlaubt — bitte vorher bei den Nachbarn Bescheid sagen.\n\n6. Fragen? Hausmeister Klose, Wohnung 1, oder 0421 33 44 55.",
    "gloss": [
     {
      "de": "die Hausordnung",
-     "mevcutTr": "apartman kuralları",
-     "havuz": {
+     "currentTr": "apartman kuralları",
+     "pool": {
       "tr": "apartman kuralları",
       "en": "house rules"
      }
     },
     {
      "de": "die Ruhezeit",
-     "mevcutTr": "sessizlik saati"
+     "currentTr": "sessizlik saati"
     },
     {
      "de": "der Müll",
-     "mevcutTr": "çöp",
-     "havuz": {
+     "currentTr": "çöp",
+     "pool": {
       "tr": "çöp",
       "en": "trash"
      }
     },
     {
      "de": "trennen",
-     "mevcutTr": "ayrıştırmak"
+     "currentTr": "ayrıştırmak"
     },
     {
      "de": "die Waschküche",
-     "mevcutTr": "çamaşırhane"
+     "currentTr": "çamaşırhane"
     },
     {
      "de": "der Keller",
-     "mevcutTr": "bodrum",
-     "havuz": {
+     "currentTr": "bodrum",
+     "pool": {
       "tr": "bodrum",
       "en": "basement"
      }
     },
     {
      "de": "erlaubt",
-     "mevcutTr": "serbest",
-     "havuz": {
+     "currentTr": "serbest",
+     "pool": {
       "tr": "serbest",
       "en": "allowed"
      }
     },
     {
      "de": "verboten",
-     "mevcutTr": "yasak",
-     "havuz": {
+     "currentTr": "yasak",
+     "pool": {
       "tr": "yasak",
       "en": "forbidden"
      }
@@ -261,60 +261,60 @@
    "title": "Auf dem Markt",
    "genre": "Diyalog",
    "intro": "Lena manavda alışveriş yapıyor; satıcıyla konuşmasını dinleyeceksin.",
-   "metin": "Verkäufer: Guten Tag! Kann ich Ihnen helfen?\nLena: Ja, gern. Ich suche Äpfel.\nVerkäufer: Ja, hier bitte. Ein Kilo kostet 2 Euro 50.\nLena: Gut, dann nehme ich zwei Kilo. Und haben Sie auch frisches Brot?\nVerkäufer: Nein, leider nicht. Aber die Bäckerei ist gleich neben dem Markt.\nLena: Ah, danke. Dann zahle ich nur die Äpfel. Hier sind 5 Euro.\nVerkäufer: Vielen Dank und auf Wiedersehen!",
+   "text": "Verkäufer: Guten Tag! Kann ich Ihnen helfen?\nLena: Ja, gern. Ich suche Äpfel.\nVerkäufer: Ja, hier bitte. Ein Kilo kostet 2 Euro 50.\nLena: Gut, dann nehme ich zwei Kilo. Und haben Sie auch frisches Brot?\nVerkäufer: Nein, leider nicht. Aber die Bäckerei ist gleich neben dem Markt.\nLena: Ah, danke. Dann zahle ich nur die Äpfel. Hier sind 5 Euro.\nVerkäufer: Vielen Dank und auf Wiedersehen!",
    "gloss": [
     {
      "de": "suchen",
-     "mevcutTr": "aramak",
-     "havuz": {
+     "currentTr": "aramak",
+     "pool": {
       "tr": "aramak",
       "en": "to look for"
      }
     },
     {
      "de": "der Apfel",
-     "mevcutTr": "elma",
-     "havuz": {
+     "currentTr": "elma",
+     "pool": {
       "tr": "elma",
       "en": "apple"
      }
     },
     {
      "de": "das Kilo",
-     "mevcutTr": "kilo",
-     "havuz": {
+     "currentTr": "kilo",
+     "pool": {
       "tr": "kilo",
       "en": "kilo"
      }
     },
     {
      "de": "frisch",
-     "mevcutTr": "taze",
-     "havuz": {
+     "currentTr": "taze",
+     "pool": {
       "tr": "taze",
       "en": "fresh"
      }
     },
     {
      "de": "leider",
-     "mevcutTr": "maalesef",
-     "havuz": {
+     "currentTr": "maalesef",
+     "pool": {
       "tr": "maalesef",
       "en": "unfortunately"
      }
     },
     {
      "de": "zahlen",
-     "mevcutTr": "ödemek",
-     "havuz": {
+     "currentTr": "ödemek",
+     "pool": {
       "tr": "ödemek",
       "en": "to pay"
      }
     },
     {
      "de": "die Bäckerei",
-     "mevcutTr": "fırın",
-     "havuz": {
+     "currentTr": "fırın",
+     "pool": {
       "tr": "fırın",
       "en": "bakery"
      }
@@ -328,55 +328,55 @@
    "title": "Anruf bei der Arztpraxis",
    "genre": "Telesekreter",
    "intro": "Bir doktor muayenehanesinin telesekreter kaydını dinleyeceksin.",
-   "metin": "Guten Tag. Hier ist die Praxis von Doktor Meyer. Unsere Praxis ist von Montag bis Freitag von 8 bis 12 Uhr geöffnet, am Dienstag und Donnerstag auch von 15 bis 18 Uhr. Am Mittwochnachmittag ist die Praxis geschlossen. Möchten Sie einen Termin? Dann rufen Sie bitte am Vormittag an oder schreiben Sie uns eine E-Mail. In Notfällen wählen Sie bitte die 112. Vielen Dank und auf Wiederhören.",
+   "text": "Guten Tag. Hier ist die Praxis von Doktor Meyer. Unsere Praxis ist von Montag bis Freitag von 8 bis 12 Uhr geöffnet, am Dienstag und Donnerstag auch von 15 bis 18 Uhr. Am Mittwochnachmittag ist die Praxis geschlossen. Möchten Sie einen Termin? Dann rufen Sie bitte am Vormittag an oder schreiben Sie uns eine E-Mail. In Notfällen wählen Sie bitte die 112. Vielen Dank und auf Wiederhören.",
    "gloss": [
     {
      "de": "die Praxis",
-     "mevcutTr": "muayenehane",
-     "havuz": {
+     "currentTr": "muayenehane",
+     "pool": {
       "tr": "muayenehane",
       "en": "doctor's office"
      }
     },
     {
      "de": "geöffnet",
-     "mevcutTr": "açık",
-     "havuz": {
+     "currentTr": "açık",
+     "pool": {
       "tr": "açık",
       "en": "open"
      }
     },
     {
      "de": "der Termin",
-     "mevcutTr": "randevu",
-     "havuz": {
+     "currentTr": "randevu",
+     "pool": {
       "tr": "randevu",
       "en": "appointment"
      }
     },
     {
      "de": "der Vormittag",
-     "mevcutTr": "öğleden önce"
+     "currentTr": "öğleden önce"
     },
     {
      "de": "der Notfall",
-     "mevcutTr": "acil durum",
-     "havuz": {
+     "currentTr": "acil durum",
+     "pool": {
       "tr": "acil durum",
       "en": "emergency"
      }
     },
     {
      "de": "wählen",
-     "mevcutTr": "numara çevirmek",
-     "havuz": {
+     "currentTr": "numara çevirmek",
+     "pool": {
       "tr": "seçmek",
       "en": "to choose"
      }
     },
     {
      "de": "Auf Wiederhören",
-     "mevcutTr": "hoşça kalın"
+     "currentTr": "hoşça kalın"
     }
    ]
   },
@@ -387,51 +387,51 @@
    "title": "Durchsage am Flughafen",
    "genre": "Anons",
    "intro": "Havaalanında İstanbul uçuşuyla ilgili bir anons dinleyeceksin.",
-   "metin": "Achtung, eine wichtige Durchsage für alle Passagiere nach Istanbul. Der Flug TK 1624 hat 40 Minuten Verspätung. Das Flugzeug startet nicht um 14:20 Uhr, sondern um 15 Uhr. Bitte gehen Sie erst um 14:15 Uhr zum Gate. Achtung, das Gate ist neu: Der Flug startet heute von Gate B12, nicht von Gate B7. Wir wünschen Ihnen einen guten Flug.",
+   "text": "Achtung, eine wichtige Durchsage für alle Passagiere nach Istanbul. Der Flug TK 1624 hat 40 Minuten Verspätung. Das Flugzeug startet nicht um 14:20 Uhr, sondern um 15 Uhr. Bitte gehen Sie erst um 14:15 Uhr zum Gate. Achtung, das Gate ist neu: Der Flug startet heute von Gate B12, nicht von Gate B7. Wir wünschen Ihnen einen guten Flug.",
    "gloss": [
     {
      "de": "die Durchsage",
-     "mevcutTr": "anons",
-     "havuz": {
+     "currentTr": "anons",
+     "pool": {
       "tr": "anons",
       "en": "announcement"
      }
     },
     {
      "de": "der Passagier",
-     "mevcutTr": "yolcu",
-     "havuz": {
+     "currentTr": "yolcu",
+     "pool": {
       "tr": "yolcu",
       "en": "passenger"
      }
     },
     {
      "de": "der Flug",
-     "mevcutTr": "uçuş",
-     "havuz": {
+     "currentTr": "uçuş",
+     "pool": {
       "tr": "uçuş",
       "en": "flight"
      }
     },
     {
      "de": "die Verspätung",
-     "mevcutTr": "gecikme",
-     "havuz": {
+     "currentTr": "gecikme",
+     "pool": {
       "tr": "gecikme",
       "en": "delay"
      }
     },
     {
      "de": "starten",
-     "mevcutTr": "kalkmak",
-     "havuz": {
+     "currentTr": "kalkmak",
+     "pool": {
       "tr": "başlamak",
       "en": "to start"
      }
     },
     {
      "de": "das Gate",
-     "mevcutTr": "biniş kapısı"
+     "currentTr": "biniş kapısı"
     }
    ]
   },
@@ -442,52 +442,52 @@
    "title": "Im Restaurant",
    "genre": "Diyalog",
    "intro": "Emre ile bir garson arasındaki restoran konuşmasını dinleyeceksin.",
-   "metin": "Kellner: Guten Abend! Was möchten Sie bestellen?\nEmre: Guten Abend. Ich nehme die Tomatensuppe und danach das Hähnchen mit Reis.\nKellner: Gern. Und was möchten Sie trinken?\nEmre: Ein Mineralwasser, bitte. Und meine Frau nimmt den Salat mit Käse und einen Apfelsaft.\nKellner: Also eine Tomatensuppe, ein Hähnchen mit Reis, ein Salat mit Käse, ein Mineralwasser und ein Apfelsaft. Kommt sofort!\nEmre: Danke schön! Ach, eine Frage: Wo sind die Toiletten?\nKellner: Gleich links neben der Bar.",
+   "text": "Kellner: Guten Abend! Was möchten Sie bestellen?\nEmre: Guten Abend. Ich nehme die Tomatensuppe und danach das Hähnchen mit Reis.\nKellner: Gern. Und was möchten Sie trinken?\nEmre: Ein Mineralwasser, bitte. Und meine Frau nimmt den Salat mit Käse und einen Apfelsaft.\nKellner: Also eine Tomatensuppe, ein Hähnchen mit Reis, ein Salat mit Käse, ein Mineralwasser und ein Apfelsaft. Kommt sofort!\nEmre: Danke schön! Ach, eine Frage: Wo sind die Toiletten?\nKellner: Gleich links neben der Bar.",
    "gloss": [
     {
      "de": "bestellen",
-     "mevcutTr": "sipariş etmek",
-     "havuz": {
+     "currentTr": "sipariş etmek",
+     "pool": {
       "tr": "sipariş etmek",
       "en": "to order"
      }
     },
     {
      "de": "die Tomatensuppe",
-     "mevcutTr": "domates çorbası"
+     "currentTr": "domates çorbası"
     },
     {
      "de": "das Hähnchen",
-     "mevcutTr": "piliç",
-     "havuz": {
+     "currentTr": "piliç",
+     "pool": {
       "tr": "piliç",
       "en": "chicken"
      }
     },
     {
      "de": "der Reis",
-     "mevcutTr": "pilav",
-     "havuz": {
+     "currentTr": "pilav",
+     "pool": {
       "tr": "pirinç",
       "en": "rice"
      }
     },
     {
      "de": "der Apfelsaft",
-     "mevcutTr": "elma suyu"
+     "currentTr": "elma suyu"
     },
     {
      "de": "sofort",
-     "mevcutTr": "hemen",
-     "havuz": {
+     "currentTr": "hemen",
+     "pool": {
       "tr": "hemen",
       "en": "immediately"
      }
     },
     {
      "de": "die Toilette",
-     "mevcutTr": "tuvalet",
-     "havuz": {
+     "currentTr": "tuvalet",
+     "pool": {
       "tr": "tuvalet",
       "en": "toilet"
      }

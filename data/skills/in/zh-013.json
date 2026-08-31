@@ -1,7 +1,7 @@
 {
- "paket": "zh-013",
+ "packet": "zh-013",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-b2-r1",
    "skill": "reading",
@@ -9,51 +9,51 @@
    "title": "Wonigsnoot z Züri: Wär cha sich d Stadt na läischte?",
    "genre": "Köşe yazısı",
    "intro": "Zürih'teki konut sıkıntısı üzerine bir köşe yazısı okuyacaksın; yazarın önerilerine ve tutumuna dikkat et.",
-   "metin": "Wär hüt z Züri e Wonig suecht, bruucht starchi Närve: Uf jedes Inserat mälded sich hunderti vo Lüüt, und bi de Bsichtigunge schtaat mer i de Schlange bis uf d Straass. D Läärwonigsziffere liit siit Jaare under äim Prozänt – so tüüf wie i kän andere Schwiizer Stadt.\n\nD Gründ sind bekannt: D Stadt wachst, aber baue tuet mer z wenig. Und wänn öppis Neus baut wird, sind s mäischtens tüüri Wonige, wo sich normali Familie nöd chönd läischte. Wär e alti, günschtigi Wonig hät, git si nüme her – au wänn d Chind scho lang uszoge sind. Das nännt mer de Lock-in-Effäkt: D Lüüt bliibed sitze, wil alles andere tüürer wär.\n\nEn Liechtblick sind d Gnosseschafte. Rund en Viertel vo de Züriwonige ghöört ene – und dört isch de Mietzins im Schnitt fascht d Hälfti günschtiger als uf em freie Markt. Aber d Wartelischte sind lang, und wär nöd scho lang z Züri wont, hät chuum e Chance.\n\nWas also tue? Nu jammere bringt nüüt. D Stadt mues meh Land für de gmäinnützig Wonigsbau zur Verfüegig schtele, und d Gnosseschafte müend schneller baue chöne. Susch wird Züri e Stadt, wo sich am Änd nu na Guetverdiener chönd läischte – und das wär für alli en Verluscht.",
+   "text": "Wär hüt z Züri e Wonig suecht, bruucht starchi Närve: Uf jedes Inserat mälded sich hunderti vo Lüüt, und bi de Bsichtigunge schtaat mer i de Schlange bis uf d Straass. D Läärwonigsziffere liit siit Jaare under äim Prozänt – so tüüf wie i kän andere Schwiizer Stadt.\n\nD Gründ sind bekannt: D Stadt wachst, aber baue tuet mer z wenig. Und wänn öppis Neus baut wird, sind s mäischtens tüüri Wonige, wo sich normali Familie nöd chönd läischte. Wär e alti, günschtigi Wonig hät, git si nüme her – au wänn d Chind scho lang uszoge sind. Das nännt mer de Lock-in-Effäkt: D Lüüt bliibed sitze, wil alles andere tüürer wär.\n\nEn Liechtblick sind d Gnosseschafte. Rund en Viertel vo de Züriwonige ghöört ene – und dört isch de Mietzins im Schnitt fascht d Hälfti günschtiger als uf em freie Markt. Aber d Wartelischte sind lang, und wär nöd scho lang z Züri wont, hät chuum e Chance.\n\nWas also tue? Nu jammere bringt nüüt. D Stadt mues meh Land für de gmäinnützig Wonigsbau zur Verfüegig schtele, und d Gnosseschafte müend schneller baue chöne. Susch wird Züri e Stadt, wo sich am Änd nu na Guetverdiener chönd läischte – und das wär für alli en Verluscht.",
    "gloss": [
     {
      "de": "d Wonigsnoot",
-     "mevcutTr": "konut sıkıntısı"
+     "currentTr": "konut sıkıntısı"
     },
     {
      "de": "s Inserat",
-     "mevcutTr": "ilan",
-     "havuz": {
+     "currentTr": "ilan",
+     "pool": {
       "tr": "gazete ilanı",
       "en": "newspaper ad"
      }
     },
     {
      "de": "d Bsichtigung",
-     "mevcutTr": "daireyi gezip görme"
+     "currentTr": "daireyi gezip görme"
     },
     {
      "de": "d Läärwonigsziffere",
-     "mevcutTr": "boş konut oranı"
+     "currentTr": "boş konut oranı"
     },
     {
      "de": "sich öppis läischte",
-     "mevcutTr": "bir şeyi (maddi olarak) karşılayabilmek"
+     "currentTr": "bir şeyi (maddi olarak) karşılayabilmek"
     },
     {
      "de": "d Gnosseschaft",
-     "mevcutTr": "(konut) kooperatifi"
+     "currentTr": "(konut) kooperatifi"
     },
     {
      "de": "de Mietzins",
-     "mevcutTr": "kira bedeli (İsviçre'de yaygın terim)"
+     "currentTr": "kira bedeli (İsviçre'de yaygın terim)"
     },
     {
      "de": "d Wartelischte",
-     "mevcutTr": "bekleme listesi"
+     "currentTr": "bekleme listesi"
     },
     {
      "de": "gmäinnützig",
-     "mevcutTr": "kâr amacı gütmeyen"
+     "currentTr": "kâr amacı gütmeyen"
     },
     {
      "de": "de Verluscht",
-     "mevcutTr": "kayıp"
+     "currentTr": "kayıp"
     }
    ]
   },
@@ -64,47 +64,47 @@
    "title": "Bewärbe uf Schwiizerisch: Was bi eus anderscht lauft",
    "genre": "Rehber",
    "intro": "İsviçre'de iş başvurusu ve mülakat kültürünü anlatan bir rehber metni okuyacaksın; kültürel farklara dikkat et.",
-   "metin": "Wär us em Usland i d Schwiiz chunt und sich do bewirbt, merkt schnäll: Es lauft äiniges anderscht. S fangt scho bim Dossier aa. I de Schwiiz erwartet mer es vollschtändigs Bewärbigsdossier mit Läbeslauf, Zügnis und Diplom – alles suuber zämegschtelt. Wär nu schnäll es Mail mit äim Satz schickt, hät chuum e Chance.\n\nBim Gsprööch sälber gilt: Pünktlichkäit isch s A und O. Wär z spaat chunt, mues scho fascht nüme cho. Am beschte isch mer zää Minute vorhär dört. Au wichtig: nöd z fescht ufträäge. D Schwiizer mööged käi Aagäber – wär z grooss vo sich sälber redt, wirkt schnäll unsympathisch. Bschäidehäit chunt besser aa als groossi Wort.\n\nEs häikligs Thema isch d Spraach. I vilne Firme wird im Alltag Mundart gredt. Als Bewärber mues mer käi Züritüütsch chöne – aber es macht en guete Iidruck, wänn mer zäigt, dass mer d Lüüt verschtaat oder s wenigschtens lehre wott. Vili Chefs lueged gnau druf, öb öpper sich integriere wott.\n\nUnd nach em Gsprööch? En churze Dankesbrief oder es Mail isch nöd Pflicht, aber gärn gsee. Und dänn häisst s: warte. D Schwiizer Firme lönd sich Ziit mit em Entschäid – das isch käis schlächts Zäiche, sondern ganz normal.",
+   "text": "Wär us em Usland i d Schwiiz chunt und sich do bewirbt, merkt schnäll: Es lauft äiniges anderscht. S fangt scho bim Dossier aa. I de Schwiiz erwartet mer es vollschtändigs Bewärbigsdossier mit Läbeslauf, Zügnis und Diplom – alles suuber zämegschtelt. Wär nu schnäll es Mail mit äim Satz schickt, hät chuum e Chance.\n\nBim Gsprööch sälber gilt: Pünktlichkäit isch s A und O. Wär z spaat chunt, mues scho fascht nüme cho. Am beschte isch mer zää Minute vorhär dört. Au wichtig: nöd z fescht ufträäge. D Schwiizer mööged käi Aagäber – wär z grooss vo sich sälber redt, wirkt schnäll unsympathisch. Bschäidehäit chunt besser aa als groossi Wort.\n\nEs häikligs Thema isch d Spraach. I vilne Firme wird im Alltag Mundart gredt. Als Bewärber mues mer käi Züritüütsch chöne – aber es macht en guete Iidruck, wänn mer zäigt, dass mer d Lüüt verschtaat oder s wenigschtens lehre wott. Vili Chefs lueged gnau druf, öb öpper sich integriere wott.\n\nUnd nach em Gsprööch? En churze Dankesbrief oder es Mail isch nöd Pflicht, aber gärn gsee. Und dänn häisst s: warte. D Schwiizer Firme lönd sich Ziit mit em Entschäid – das isch käis schlächts Zäiche, sondern ganz normal.",
    "gloss": [
     {
      "de": "sich bewärbe",
-     "mevcutTr": "başvurmak"
+     "currentTr": "başvurmak"
     },
     {
      "de": "s Bewärbigsdossier",
-     "mevcutTr": "başvuru dosyası"
+     "currentTr": "başvuru dosyası"
     },
     {
      "de": "s Zügnis",
-     "mevcutTr": "bonservis, çalışma belgesi"
+     "currentTr": "bonservis, çalışma belgesi"
     },
     {
      "de": "d Pünktlichkäit",
-     "mevcutTr": "dakiklik"
+     "currentTr": "dakiklik"
     },
     {
      "de": "ufträäge",
-     "mevcutTr": "abartmak, şişirmek"
+     "currentTr": "abartmak, şişirmek"
     },
     {
      "de": "de Aagäber",
-     "mevcutTr": "kendini beğenmiş, hava atan kişi"
+     "currentTr": "kendini beğenmiş, hava atan kişi"
     },
     {
      "de": "d Bschäidehäit",
-     "mevcutTr": "alçakgönüllülük"
+     "currentTr": "alçakgönüllülük"
     },
     {
      "de": "häikel",
-     "mevcutTr": "hassas, nazik (konu)"
+     "currentTr": "hassas, nazik (konu)"
     },
     {
      "de": "de Iidruck",
-     "mevcutTr": "izlenim"
+     "currentTr": "izlenim"
     },
     {
      "de": "de Entschäid",
-     "mevcutTr": "karar"
+     "currentTr": "karar"
     }
    ]
   },
@@ -115,60 +115,60 @@
    "title": "Lehr oder Gymi? De Schwiizer Sunderwäg",
    "genre": "Analiz",
    "intro": "İsviçre eğitim sisteminin en yabancı gelen yanı: çıraklık. Bu analiz yazısını okuyacaksın.",
-   "metin": "Wär us em Uusland chunt, verstaat s zerscht nöd: Nume öppe zwänzg Prozänt vo de Jugendliche im Kanton Züri gönd is Gymi. Di andere mached e Lehr — drei bis vier Jaar im Betrieb, dezue äi bis zwäi Täg Berüefsschuel i de Wuche. Und das isch käi Nootlösig, sondern de normal Wäg.\n\nFür vill Uusländer tönt das nach eme Abschtiig. I de Schwiiz isch es s Gägetäil: E Lehr als Polymechaniker oder Informatiker isch aagseh, und wär früeh im Betrieb schafft, verdient früeh äiges Gäld. D Jugendarbetslosigkäit isch bi eus tüüf — genau wil d Lüüt scho während de Uusbildig im Arbetsmarkt drin sind.\n\nS entschäidende Argumänt heisst aber Durchlässigkäit. E Lehr isch käi Sackgass. Mit ere Berüefsmatur chunt me a d Fachhochschuel, und vo dört wiiter a d Uni. Es git Chefärzt und Profässore, wo mit ere Lehr aagfange händ. De Wäg duuret lenger — aber er isch offe.\n\nKritik git s trotzdem. Erschtens hänged d Chance stark vo de Familie ab: Chind vo Akademiker gönd deutlich hüüfiger is Gymi, au bi gliiche Note. Zwäitens händ Jugendlichi mit uusländischem Name messbar meh Müe, e Lehrstell z finde — glichi Bewärbig, anderi Quote. Und dritens klaged d Betriib, si fänded für gwüssi Berüef fascht niemert meh.\n\nD Antwort vo de Bildigsdiräktion isch bis jetz zruckhaltend: Me setzt uf Information statt uf Vorschrifte. Öb das gnueg isch, wird di nächscht Generation zäige.",
+   "text": "Wär us em Uusland chunt, verstaat s zerscht nöd: Nume öppe zwänzg Prozänt vo de Jugendliche im Kanton Züri gönd is Gymi. Di andere mached e Lehr — drei bis vier Jaar im Betrieb, dezue äi bis zwäi Täg Berüefsschuel i de Wuche. Und das isch käi Nootlösig, sondern de normal Wäg.\n\nFür vill Uusländer tönt das nach eme Abschtiig. I de Schwiiz isch es s Gägetäil: E Lehr als Polymechaniker oder Informatiker isch aagseh, und wär früeh im Betrieb schafft, verdient früeh äiges Gäld. D Jugendarbetslosigkäit isch bi eus tüüf — genau wil d Lüüt scho während de Uusbildig im Arbetsmarkt drin sind.\n\nS entschäidende Argumänt heisst aber Durchlässigkäit. E Lehr isch käi Sackgass. Mit ere Berüefsmatur chunt me a d Fachhochschuel, und vo dört wiiter a d Uni. Es git Chefärzt und Profässore, wo mit ere Lehr aagfange händ. De Wäg duuret lenger — aber er isch offe.\n\nKritik git s trotzdem. Erschtens hänged d Chance stark vo de Familie ab: Chind vo Akademiker gönd deutlich hüüfiger is Gymi, au bi gliiche Note. Zwäitens händ Jugendlichi mit uusländischem Name messbar meh Müe, e Lehrstell z finde — glichi Bewärbig, anderi Quote. Und dritens klaged d Betriib, si fänded für gwüssi Berüef fascht niemert meh.\n\nD Antwort vo de Bildigsdiräktion isch bis jetz zruckhaltend: Me setzt uf Information statt uf Vorschrifte. Öb das gnueg isch, wird di nächscht Generation zäige.",
    "gloss": [
     {
      "de": "d Lehr",
-     "mevcutTr": "çıraklık eğitimi (Berufslehre)"
+     "currentTr": "çıraklık eğitimi (Berufslehre)"
     },
     {
      "de": "s Gymi",
-     "mevcutTr": "lise (Gymnasium)",
-     "havuz": {
+     "currentTr": "lise (Gymnasium)",
+     "pool": {
       "tr": "lise",
       "en": "high school"
      },
-     "hdAdayi": "Gymnasium"
+     "hdCandidate": "Gymnasium"
     },
     {
      "de": "de Betrieb",
-     "mevcutTr": "işletme, firma",
-     "havuz": {
+     "currentTr": "işletme, firma",
+     "pool": {
       "tr": "işletme",
       "en": "company"
      }
     },
     {
      "de": "d Berüefsschuel",
-     "mevcutTr": "meslek okulu"
+     "currentTr": "meslek okulu"
     },
     {
      "de": "de Abschluss",
-     "mevcutTr": "mezuniyet, diploma",
-     "havuz": {
+     "currentTr": "mezuniyet, diploma",
+     "pool": {
       "tr": "mezuniyet",
       "en": "graduation"
      }
     },
     {
      "de": "d Durchlässigkäit",
-     "mevcutTr": "geçişkenlik (sistemler arası)"
+     "currentTr": "geçişkenlik (sistemler arası)"
     },
     {
      "de": "de Sackgass",
-     "mevcutTr": "çıkmaz sokak"
+     "currentTr": "çıkmaz sokak"
     },
     {
      "de": "d Quote",
-     "mevcutTr": "oran",
-     "havuz": {
+     "currentTr": "oran",
+     "pool": {
       "tr": "oran",
       "en": "rate"
      }
     },
     {
      "de": "s Vorurtäil",
-     "mevcutTr": "önyargı"
+     "currentTr": "önyargı"
     }
    ]
   },
@@ -179,47 +179,47 @@
    "title": "Milizsystem: Wär macht eigentlich Politik?",
    "genre": "Açıklayıcı yazı",
    "intro": "İsviçre siyasetinin temel taşı olan 'milis sistemi' üzerine bir yazı okuyacaksın.",
-   "metin": "I de mäischte Länder isch Politik en Bruef. I de Schwiiz isch si — offiziell — es Näbeamt. De Gmeinderaat vo de mäischte Gmeinde tagt am Aabig, d Mitglieder händ tagsüber en normale Job, und d Entschädigung dekt knapp de Uufwand. Das heisst Milizsystem.\n\nD Idee dehinter isch alt und äifach: Wär Politik macht, söll im gliiche Läbe schtaa wie di, wo er vertritt. En Lehrer, e Wirtin und en Buur entschäided anderscht als drei Berüefspolitiker. Und wil s Amt zitlich begränzt isch, chunt me gar nöd i Versuechig, s ganze Läbe druff uufzboue.\n\nDoch s System chunt a d Gränze. D Dossiers sind komplizierter worde: Baurächt, Datenschutz, Finanze. Wär näbebruefliech drüü Stund im Monet hät, list nöd zweihundert Siite. D Folg: D Verwaltig — also di feschtaagstellte Fachlüüt — bereitet alles vor, und s Parlamänt nickt ab. Wär entschäidet denn würkli?\n\nDezue chunt s Nochwuchsproblem. Immer meh chliini Gmeinde findet für ihri Ämter niemert meh. Junge Familie mit zwäi Job händ am Aabig käi Ziit, und wer sälbständig isch, cha sich s Amt schlicht nöd läischte.\n\nEs git zwäi Antworte. Di äi säit: Mir müend d Ämter professionalisiere und aaständig zaale. Di ander wehrt sich genau degäge — dänn verlüürt s System sin Sinn. Wahrschiinlich chunt s uf öppis derzwüsche uus: bessri Entschädigung, meh Unterschtützig, aber s Amt bliibt es Näbeamt.",
+   "text": "I de mäischte Länder isch Politik en Bruef. I de Schwiiz isch si — offiziell — es Näbeamt. De Gmeinderaat vo de mäischte Gmeinde tagt am Aabig, d Mitglieder händ tagsüber en normale Job, und d Entschädigung dekt knapp de Uufwand. Das heisst Milizsystem.\n\nD Idee dehinter isch alt und äifach: Wär Politik macht, söll im gliiche Läbe schtaa wie di, wo er vertritt. En Lehrer, e Wirtin und en Buur entschäided anderscht als drei Berüefspolitiker. Und wil s Amt zitlich begränzt isch, chunt me gar nöd i Versuechig, s ganze Läbe druff uufzboue.\n\nDoch s System chunt a d Gränze. D Dossiers sind komplizierter worde: Baurächt, Datenschutz, Finanze. Wär näbebruefliech drüü Stund im Monet hät, list nöd zweihundert Siite. D Folg: D Verwaltig — also di feschtaagstellte Fachlüüt — bereitet alles vor, und s Parlamänt nickt ab. Wär entschäidet denn würkli?\n\nDezue chunt s Nochwuchsproblem. Immer meh chliini Gmeinde findet für ihri Ämter niemert meh. Junge Familie mit zwäi Job händ am Aabig käi Ziit, und wer sälbständig isch, cha sich s Amt schlicht nöd läischte.\n\nEs git zwäi Antworte. Di äi säit: Mir müend d Ämter professionalisiere und aaständig zaale. Di ander wehrt sich genau degäge — dänn verlüürt s System sin Sinn. Wahrschiinlich chunt s uf öppis derzwüsche uus: bessri Entschädigung, meh Unterschtützig, aber s Amt bliibt es Näbeamt.",
    "gloss": [
     {
      "de": "s Milizsystem",
-     "mevcutTr": "yarı zamanlı gönüllü görev sistemi"
+     "currentTr": "yarı zamanlı gönüllü görev sistemi"
     },
     {
      "de": "s Amt",
-     "mevcutTr": "görev, makam",
-     "havuz": {
+     "currentTr": "görev, makam",
+     "pool": {
       "tr": "resmi daire",
       "en": "government office"
      }
     },
     {
      "de": "näbebruefliech",
-     "mevcutTr": "asıl işin yanında"
+     "currentTr": "asıl işin yanında"
     },
     {
      "de": "de Gmeinderaat",
-     "mevcutTr": "belediye meclisi"
+     "currentTr": "belediye meclisi"
     },
     {
      "de": "d Entschädigung",
-     "mevcutTr": "huzur hakkı, tazminat",
-     "havuz": {
+     "currentTr": "huzur hakkı, tazminat",
+     "pool": {
       "tr": "tazminat",
       "en": "compensation"
      }
     },
     {
      "de": "d Belaschtig",
-     "mevcutTr": "yük"
+     "currentTr": "yük"
     },
     {
      "de": "de Nochwuchs",
-     "mevcutTr": "yeni nesil, aday bulma"
+     "currentTr": "yeni nesil, aday bulma"
     },
     {
      "de": "d Verwaltig",
-     "mevcutTr": "idare"
+     "currentTr": "idare"
     }
    ]
   },
@@ -230,51 +230,51 @@
    "title": "D Stadt wachst — und denn?",
    "genre": "Haber analizi",
    "intro": "Zürih'in nüfus artışını ve sonuçlarını sayılarla ele alan bir haber analizini okuyacaksın.",
-   "metin": "D Stadt Züri wachst wiiter: Ändi letscht Jaar händ da vierehundertdriissgtuusig Lüüt gwohnt, öppe zwölftuusig meh als vor füf Jaar. D Prognose vom Statistische Amt gaat bis zwäitusigvierzg vo öppe füfhunderttuusig uus.\n\nInteressant isch, wohär s Wachstum chunt. Nöd primär vom Zuezug us em Uusland — de isch siit Jaare stabil. Es lit vor allem dra, dass d Lüüt lenger dableibed und weniger uf s Land use zügled. Und dass pro Person meh Wonflächi bruucht wird: hüt öppe fufezwänzg Quadratmeter, vor drissg Jaar warens no zwänzg.\n\nGenau das isch de Chnackpunkt. Me cha nöd gliichziitig meh Lüüt in d Stadt laa und meh Platz pro Person haa, ohni z verdichte. D Stadt bout drum in d Höchi und ersetzt alti Sidlige. Nume: Wo nöi bout wird, staat d Miete am Schluss hööcher — und di alte Bewohner findet sich im nöie Huus nüme.\n\nUnder Druck chunt au d Infrastruktur. Schuelhüüser sind s dringendschte Thema: Sibe nöii bruucht d Stadt bis zwäituusigfüfedrissg, und Bouland hät si fascht käis meh. S Tramnetz isch vo de Kapazität her a de Gränze, obwohl d Stadt scho hüt äini vo de höchschte ÖV-Quote vo Europa hät.\n\nD Massnaame sind bekannt und umstritte: meh gmeinnützige Wonigsbou, höcheri Uusnützig, Tempo dreissg für weniger Lärm. Käini devo löst s Problem elleige. Aber d Alternative — nöd wachse — cha e Stadt nöd beschliesse.",
+   "text": "D Stadt Züri wachst wiiter: Ändi letscht Jaar händ da vierehundertdriissgtuusig Lüüt gwohnt, öppe zwölftuusig meh als vor füf Jaar. D Prognose vom Statistische Amt gaat bis zwäitusigvierzg vo öppe füfhunderttuusig uus.\n\nInteressant isch, wohär s Wachstum chunt. Nöd primär vom Zuezug us em Uusland — de isch siit Jaare stabil. Es lit vor allem dra, dass d Lüüt lenger dableibed und weniger uf s Land use zügled. Und dass pro Person meh Wonflächi bruucht wird: hüt öppe fufezwänzg Quadratmeter, vor drissg Jaar warens no zwänzg.\n\nGenau das isch de Chnackpunkt. Me cha nöd gliichziitig meh Lüüt in d Stadt laa und meh Platz pro Person haa, ohni z verdichte. D Stadt bout drum in d Höchi und ersetzt alti Sidlige. Nume: Wo nöi bout wird, staat d Miete am Schluss hööcher — und di alte Bewohner findet sich im nöie Huus nüme.\n\nUnder Druck chunt au d Infrastruktur. Schuelhüüser sind s dringendschte Thema: Sibe nöii bruucht d Stadt bis zwäituusigfüfedrissg, und Bouland hät si fascht käis meh. S Tramnetz isch vo de Kapazität her a de Gränze, obwohl d Stadt scho hüt äini vo de höchschte ÖV-Quote vo Europa hät.\n\nD Massnaame sind bekannt und umstritte: meh gmeinnützige Wonigsbou, höcheri Uusnützig, Tempo dreissg für weniger Lärm. Käini devo löst s Problem elleige. Aber d Alternative — nöd wachse — cha e Stadt nöd beschliesse.",
    "gloss": [
     {
      "de": "s Wachstum",
-     "mevcutTr": "büyüme"
+     "currentTr": "büyüme"
     },
     {
      "de": "d Prognose",
-     "mevcutTr": "öngörü",
-     "havuz": {
+     "currentTr": "öngörü",
+     "pool": {
       "tr": "öngörü",
       "en": "forecast"
      }
     },
     {
      "de": "de Zuezug",
-     "mevcutTr": "göç, gelenler"
+     "currentTr": "göç, gelenler"
     },
     {
      "de": "verdichte",
-     "mevcutTr": "yoğunlaştırmak (inşaat)"
+     "currentTr": "yoğunlaştırmak (inşaat)"
     },
     {
      "de": "d Iischtufig",
-     "mevcutTr": "kademelendirme, sınıflandırma"
+     "currentTr": "kademelendirme, sınıflandırma"
     },
     {
      "de": "d Infrastruktur",
-     "mevcutTr": "altyapı",
-     "havuz": {
+     "currentTr": "altyapı",
+     "pool": {
       "tr": "altyapı",
       "en": "infrastructure"
      }
     },
     {
      "de": "de Druck",
-     "mevcutTr": "baskı",
-     "havuz": {
+     "currentTr": "baskı",
+     "pool": {
       "tr": "baskı",
       "en": "pressure"
      }
     },
     {
      "de": "d Massnaam",
-     "mevcutTr": "önlem"
+     "currentTr": "önlem"
     }
    ]
   },
@@ -285,55 +285,55 @@
    "title": "Zwäi Läserbrief: Sunntigsverchauf",
    "genre": "Okur mektupları",
    "intro": "Aynı konuda karşıt iki okur mektubu okuyacaksın: pazar günleri mağazalar açık olmalı mı?",
-   "metin": "PRO — Vreni Iseli, Züri-Oerlike\n\nMir läbed nüme im Jaar nüünzähundertsibzg. Wär hüt zwäi Job hät oder Schicht schafft, chunt under de Wuche schlicht nöd zum Iichaufe. De Sunntig isch für die Lüüt de äinzig Tag, wo s gaat.\n\nUnd redemer ehrlich: Online chunt s Paket au am Sunntig. Mir verbüüted em chliine Lade vor Ort genau das, wo de grooss Konzern im Netz sowiso macht. Das isch nöd Schutz vom Personal, das isch Schutz vor de Konkurränz — und am Schluss verlüüred üsi Quartierläde.\n\nWär am Sunntig nöd schaffe wott, mues nöd. Aber verbüüte söll me s au niemertem.\n\nKONTRA — Beat Hofstetter, Züri-Affoltere\n\nD Frau Iseli redt vo Freiwilligkäit. Ich han zwölf Jaar im Verchauf gschafft und cha Ine säge: Freiwillig isch das nie. Wär de Sunntig ablehnt, überchunt s nächscht Jaar en schlächtere Plan und weniger Stunde. Niemert schriibt das ufe — aber alli wüssed s.\n\nZum Umsatz: D Studie zäiged, dass d Lüüt nöd meh chaufed, si chaufed nume anderscht verteilt. De Umsatz verschiebt sich, er wachst nöd. Es gwünnt niemert usser em, wo scho grooss isch.\n\nUnd s Wichtigschte: Es git en Grund, warum e Gsellschaft äi gmeinsame ruhige Tag hät. Nöd us religiöse Gründ — sondern wil Familie, Verein und Fründe äi Tag bruuched, wo alli gliichziitig frei händ. Dää Tag git s käis zwäits Mal.",
+   "text": "PRO — Vreni Iseli, Züri-Oerlike\n\nMir läbed nüme im Jaar nüünzähundertsibzg. Wär hüt zwäi Job hät oder Schicht schafft, chunt under de Wuche schlicht nöd zum Iichaufe. De Sunntig isch für die Lüüt de äinzig Tag, wo s gaat.\n\nUnd redemer ehrlich: Online chunt s Paket au am Sunntig. Mir verbüüted em chliine Lade vor Ort genau das, wo de grooss Konzern im Netz sowiso macht. Das isch nöd Schutz vom Personal, das isch Schutz vor de Konkurränz — und am Schluss verlüüred üsi Quartierläde.\n\nWär am Sunntig nöd schaffe wott, mues nöd. Aber verbüüte söll me s au niemertem.\n\nKONTRA — Beat Hofstetter, Züri-Affoltere\n\nD Frau Iseli redt vo Freiwilligkäit. Ich han zwölf Jaar im Verchauf gschafft und cha Ine säge: Freiwillig isch das nie. Wär de Sunntig ablehnt, überchunt s nächscht Jaar en schlächtere Plan und weniger Stunde. Niemert schriibt das ufe — aber alli wüssed s.\n\nZum Umsatz: D Studie zäiged, dass d Lüüt nöd meh chaufed, si chaufed nume anderscht verteilt. De Umsatz verschiebt sich, er wachst nöd. Es gwünnt niemert usser em, wo scho grooss isch.\n\nUnd s Wichtigschte: Es git en Grund, warum e Gsellschaft äi gmeinsame ruhige Tag hät. Nöd us religiöse Gründ — sondern wil Familie, Verein und Fründe äi Tag bruuched, wo alli gliichziitig frei händ. Dää Tag git s käis zwäits Mal.",
    "gloss": [
     {
      "de": "de Sunntigsverchauf",
-     "mevcutTr": "pazar günü satış"
+     "currentTr": "pazar günü satış"
     },
     {
      "de": "s Personal",
-     "mevcutTr": "personel",
-     "havuz": {
+     "currentTr": "personel",
+     "pool": {
       "tr": "personel",
       "en": "staff"
      }
     },
     {
      "de": "de Umsatz",
-     "mevcutTr": "ciro",
-     "havuz": {
+     "currentTr": "ciro",
+     "pool": {
       "tr": "ciro",
       "en": "revenue"
      }
     },
     {
      "de": "freiwillig",
-     "mevcutTr": "gönüllü",
-     "havuz": {
+     "currentTr": "gönüllü",
+     "pool": {
       "tr": "gönüllü",
       "en": "voluntary"
      }
     },
     {
      "de": "de Druck",
-     "mevcutTr": "baskı",
-     "havuz": {
+     "currentTr": "baskı",
+     "pool": {
       "tr": "baskı",
       "en": "pressure"
      }
     },
     {
      "de": "d Ruumaziit",
-     "mevcutTr": "dinlenme zamanı"
+     "currentTr": "dinlenme zamanı"
     },
     {
      "de": "verbüüte",
-     "mevcutTr": "yasaklamak"
+     "currentTr": "yasaklamak"
     },
     {
      "de": "de Zueschlag",
-     "mevcutTr": "ek ücret, zam"
+     "currentTr": "ek ücret, zam"
     }
    ]
   },
@@ -344,51 +344,51 @@
    "title": "De Schnupperbricht",
    "genre": "Rapor",
    "intro": "İsviçre'de çıraklık öncesi deneme haftası (Schnupperlehre) zorunlu bir adımdır. Amina'nın raporunu okuyacaksın.",
-   "metin": "Schnupperbricht — Amina Bekele, 3. Sek B\nBetrieb: Apotheke am Limmatplatz · 3 Täg\n\nMini Erwartig vorher\n\nIch han dänkt, i de Apothek bediene me Chunde und suecht Medikamänt usem Gstell. Ich han mich uf de Kontakt mit Lüüt gfröit und Angscht gha vor de Chemie.\n\nWas ich gmacht han\n\nAm erschte Tag han ich zuegluegt und Ware iigruumt. Am zwäite Tag han ich sälber Chunde begrüesst und Rezäpt entgäge gnoo. Am dritte Tag han ich im Labor gsee, wie e Salbe agrüehrt wird.\n\nWas anders gsii isch als dänkt\n\nDrei Sache händ mich überrascht. Erschtens: De grössere Täil vo de Arbet isch Beratig, nöd Verchauf. Zwäitens: Me mues sehr genau schriibe und rächne — es Fähler bim Dosiere isch kä chline Fähler. Drittens: Es isch körperlich aaschtrengender, als ich dänkt han; me staat de ganz Tag.\n\nD Rückmäldig vom Betrieb\n\nD Frau Kern hät gsäit, ich seig fründlich mit de Chunde gsii und heig guet zueglost. Verbessere mues ich s Tempo bim Iigrüume und s Fachvokabular.\n\nMis Fazit\n\nIch wott die Lehr mache. Nöd wäge em Verchauf, sondern wäge de Beratig. Was ich no abklärä mues: öb ich mit de Verantwortig bim Dosiere umgaa cha — das isch de Punkt, wo ich am mäischte Respäkt han.",
+   "text": "Schnupperbricht — Amina Bekele, 3. Sek B\nBetrieb: Apotheke am Limmatplatz · 3 Täg\n\nMini Erwartig vorher\n\nIch han dänkt, i de Apothek bediene me Chunde und suecht Medikamänt usem Gstell. Ich han mich uf de Kontakt mit Lüüt gfröit und Angscht gha vor de Chemie.\n\nWas ich gmacht han\n\nAm erschte Tag han ich zuegluegt und Ware iigruumt. Am zwäite Tag han ich sälber Chunde begrüesst und Rezäpt entgäge gnoo. Am dritte Tag han ich im Labor gsee, wie e Salbe agrüehrt wird.\n\nWas anders gsii isch als dänkt\n\nDrei Sache händ mich überrascht. Erschtens: De grössere Täil vo de Arbet isch Beratig, nöd Verchauf. Zwäitens: Me mues sehr genau schriibe und rächne — es Fähler bim Dosiere isch kä chline Fähler. Drittens: Es isch körperlich aaschtrengender, als ich dänkt han; me staat de ganz Tag.\n\nD Rückmäldig vom Betrieb\n\nD Frau Kern hät gsäit, ich seig fründlich mit de Chunde gsii und heig guet zueglost. Verbessere mues ich s Tempo bim Iigrüume und s Fachvokabular.\n\nMis Fazit\n\nIch wott die Lehr mache. Nöd wäge em Verchauf, sondern wäge de Beratig. Was ich no abklärä mues: öb ich mit de Verantwortig bim Dosiere umgaa cha — das isch de Punkt, wo ich am mäischte Respäkt han.",
    "gloss": [
     {
      "de": "d Schnupperlehr",
-     "mevcutTr": "deneme stajı"
+     "currentTr": "deneme stajı"
     },
     {
      "de": "de Bricht",
-     "mevcutTr": "rapor"
+     "currentTr": "rapor"
     },
     {
      "de": "de Betrieb",
-     "mevcutTr": "işletme",
-     "havuz": {
+     "currentTr": "işletme",
+     "pool": {
       "tr": "işletme",
       "en": "company"
      }
     },
     {
      "de": "d Erwartig",
-     "mevcutTr": "beklenti"
+     "currentTr": "beklenti"
     },
     {
      "de": "sich vorstelle",
-     "mevcutTr": "hayal etmek"
+     "currentTr": "hayal etmek"
     },
     {
      "de": "d Rückmäldig",
-     "mevcutTr": "geri bildirim"
+     "currentTr": "geri bildirim"
     },
     {
      "de": "iiteile",
-     "mevcutTr": "görevlendirmek, ayırmak"
+     "currentTr": "görevlendirmek, ayırmak"
     },
     {
      "de": "überrascht",
-     "mevcutTr": "şaşırmış",
-     "havuz": {
+     "currentTr": "şaşırmış",
+     "pool": {
       "tr": "şaşırmış",
       "en": "surprised"
      }
     },
     {
      "de": "d Belaschtig",
-     "mevcutTr": "zorlanma, yük"
+     "currentTr": "zorlanma, yük"
     }
    ]
   },
@@ -399,43 +399,43 @@
    "title": "D Loonabrächnig verstaa",
    "genre": "Rehber",
    "intro": "Brüt maaşla banka hesabına düşen tutar arasındaki fark nereye gidiyor? İsviçre bordrosunun kısaltmaları.",
-   "metin": "Uf de erschte Loonabrächnig staat es Dutzend Abkürzige, und di mäischte Lüüt frooged nie nach. Das lohnt sich aber, well zwo devo direkt beeinflussbar sind.\n\nAHV/IV/EO: 5,3 Prozänt vom Bruttoloon. De Arbetgeber zaalt gliich vill dezue. Das isch di erschti Süüle, also d staatlichi Rente. Si isch für alli gliich uufbaut und nöd verhandelbar.\n\nALV: 1,1 Prozänt für d Arbetslosigkäitsversicherig. Au hier zaalt de Arbetgeber d Hälfti.\n\nBVG (Pensionskasse): Das isch di zwäiti Süüle, und do wird s interessant. De Biitrag hänkt vom Alter ab und schtiigt mit de Jaar. Wichtig isch de Koordinationsabzug: Nöd de ganz Loon isch versicheret, sondern nur de Täil über öppe 26'000 Franke. Wär Tiilzitt schafft, verlüürt drum überproportional — vill Firme händ das underdesse gänderet, aber nöd alli. Do lohnt sich frooge.\n\nNBU: Nicht-Berufsunfall. Zaalt de Arbetnehmer sälber, öppe 1 bis 2 Prozänt.\n\nQuellestüür: Nur bi gwüsse Bewilligige. Si ersetzt d Stüürerklärig — bis zu eme Iikomme vo 120'000. Drüber mues me trotzdem e Erklärig mache.\n\nDe zwäit Punkt, wo me beeinflusse cha, isch di dritti Süüle (3a): freiwillig, mit Stüürabzug. Wär ihn nöd nutzt, verschänkt jedes Jaar Gäld — bi eme mittlere Iikomme öppe 1'500 bis 2'000 Franke Stüüre.",
+   "text": "Uf de erschte Loonabrächnig staat es Dutzend Abkürzige, und di mäischte Lüüt frooged nie nach. Das lohnt sich aber, well zwo devo direkt beeinflussbar sind.\n\nAHV/IV/EO: 5,3 Prozänt vom Bruttoloon. De Arbetgeber zaalt gliich vill dezue. Das isch di erschti Süüle, also d staatlichi Rente. Si isch für alli gliich uufbaut und nöd verhandelbar.\n\nALV: 1,1 Prozänt für d Arbetslosigkäitsversicherig. Au hier zaalt de Arbetgeber d Hälfti.\n\nBVG (Pensionskasse): Das isch di zwäiti Süüle, und do wird s interessant. De Biitrag hänkt vom Alter ab und schtiigt mit de Jaar. Wichtig isch de Koordinationsabzug: Nöd de ganz Loon isch versicheret, sondern nur de Täil über öppe 26'000 Franke. Wär Tiilzitt schafft, verlüürt drum überproportional — vill Firme händ das underdesse gänderet, aber nöd alli. Do lohnt sich frooge.\n\nNBU: Nicht-Berufsunfall. Zaalt de Arbetnehmer sälber, öppe 1 bis 2 Prozänt.\n\nQuellestüür: Nur bi gwüsse Bewilligige. Si ersetzt d Stüürerklärig — bis zu eme Iikomme vo 120'000. Drüber mues me trotzdem e Erklärig mache.\n\nDe zwäit Punkt, wo me beeinflusse cha, isch di dritti Süüle (3a): freiwillig, mit Stüürabzug. Wär ihn nöd nutzt, verschänkt jedes Jaar Gäld — bi eme mittlere Iikomme öppe 1'500 bis 2'000 Franke Stüüre.",
    "gloss": [
     {
      "de": "d Loonabrächnig",
-     "mevcutTr": "maaş bordrosu"
+     "currentTr": "maaş bordrosu"
     },
     {
      "de": "de Bruttoloon",
-     "mevcutTr": "brüt maaş"
+     "currentTr": "brüt maaş"
     },
     {
      "de": "de Nettoloon",
-     "mevcutTr": "net maaş"
+     "currentTr": "net maaş"
     },
     {
      "de": "d AHV",
-     "mevcutTr": "yaşlılık ve dul sigortası (1. sütun)"
+     "currentTr": "yaşlılık ve dul sigortası (1. sütun)"
     },
     {
      "de": "d ALV",
-     "mevcutTr": "işsizlik sigortası"
+     "currentTr": "işsizlik sigortası"
     },
     {
      "de": "d Pensionskasse",
-     "mevcutTr": "emeklilik kasası (2. sütun)"
+     "currentTr": "emeklilik kasası (2. sütun)"
     },
     {
      "de": "de Koordinationsabzug",
-     "mevcutTr": "koordinasyon indirimi"
+     "currentTr": "koordinasyon indirimi"
     },
     {
      "de": "d Quellestüür",
-     "mevcutTr": "kaynakta kesilen vergi"
+     "currentTr": "kaynakta kesilen vergi"
     },
     {
      "de": "obligatorisch",
-     "mevcutTr": "zorunlu"
+     "currentTr": "zorunlu"
     }
    ]
   }

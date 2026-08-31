@@ -1,17 +1,17 @@
 {
- "paket": "c1-002",
+ "packet": "c1-002",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 3478,
    "de": "die Interpretation",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Interpretationen",
-   "mevcutTr": "yorum, yorumlama",
-   "mevcutBeispiel": "Die Daten lassen mehrere Interpretationen zu.",
-   "mevcutBeispielTr": "Veriler birden fazla yoruma açık.",
-   "cakisan": [
+   "currentTr": "yorum, yorumlama",
+   "currentBeispiel": "Die Daten lassen mehrere Interpretationen zu.",
+   "currentBeispielTr": "Veriler birden fazla yoruma açık.",
+   "overlapping": [
     "der Kommentar (B2)",
     "die Deutung (B2)"
    ]
@@ -22,9 +22,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "handelt aus, hat ausgehandelt",
-   "mevcutTr": "müzakere ederek anlaşmak",
-   "mevcutBeispiel": "Die Gewerkschaft hat bessere Konditionen ausgehandelt.",
-   "mevcutBeispielTr": "Sendika, müzakerelerle daha iyi koşullar elde etti."
+   "currentTr": "müzakere ederek anlaşmak",
+   "currentBeispiel": "Die Gewerkschaft hat bessere Konditionen ausgehandelt.",
+   "currentBeispielTr": "Sendika, müzakerelerle daha iyi koşullar elde etti."
   },
   {
    "id": 4014,
@@ -32,9 +32,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "önyargılı",
-   "mevcutBeispiel": "Der Algorithmus erwies sich als überraschend voreingenommen.",
-   "mevcutBeispielTr": "Algoritmanın şaşırtıcı derecede önyargılı olduğu ortaya çıktı."
+   "currentTr": "önyargılı",
+   "currentBeispiel": "Der Algorithmus erwies sich als überraschend voreingenommen.",
+   "currentBeispielTr": "Algoritmanın şaşırtıcı derecede önyargılı olduğu ortaya çıktı."
   },
   {
    "id": 3569,
@@ -42,9 +42,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vorlagen",
-   "mevcutTr": "ibraz, sunum",
-   "mevcutBeispiel": "Die Vorlage der vollständigen Unterlagen ist zwingend erforderlich.",
-   "mevcutBeispielTr": "Belgelerin eksiksiz ibrazı zorunludur."
+   "currentTr": "ibraz, sunum",
+   "currentBeispiel": "Die Vorlage der vollständigen Unterlagen ist zwingend erforderlich.",
+   "currentBeispielTr": "Belgelerin eksiksiz ibrazı zorunludur."
   },
   {
    "id": 3647,
@@ -52,10 +52,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "interpretiert, hat interpretiert",
-   "mevcutTr": "yorumlamak",
-   "mevcutBeispiel": "Kritiker interpretieren das Ende des Romans völlig unterschiedlich.",
-   "mevcutBeispielTr": "Eleştirmenler romanın sonunu bambaşka biçimlerde yorumluyor.",
-   "cakisan": [
+   "currentTr": "yorumlamak",
+   "currentBeispiel": "Kritiker interpretieren das Ende des Romans völlig unterschiedlich.",
+   "currentBeispielTr": "Eleştirmenler romanın sonunu bambaşka biçimlerde yorumluyor.",
+   "overlapping": [
     "kommentieren (C1)",
     "deuten (C1)"
    ]
@@ -66,9 +66,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "giderek artan şekilde",
-   "mevcutBeispiel": "Die Nachfrage steigt zunehmend seit Beginn des Jahres.",
-   "mevcutBeispielTr": "Talep yıl başından beri giderek artıyor."
+   "currentTr": "giderek artan şekilde",
+   "currentBeispiel": "Die Nachfrage steigt zunehmend seit Beginn des Jahres.",
+   "currentBeispielTr": "Talep yıl başından beri giderek artıyor."
   },
   {
    "id": 4031,
@@ -76,10 +76,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "verschmilzt, ist verschmolzen",
-   "mevcutTr": "kaynaşmak, birleşmek",
-   "mevcutBeispiel": "Die beiden Firmen verschmolzen zu einem einzigen Konzern.",
-   "mevcutBeispielTr": "İki şirket tek bir holding çatısında birleşti.",
-   "cakisan": [
+   "currentTr": "kaynaşmak, birleşmek",
+   "currentBeispiel": "Die beiden Firmen verschmolzen zu einem einzigen Konzern.",
+   "currentBeispielTr": "İki şirket tek bir holding çatısında birleşti.",
+   "overlapping": [
     "zusammenwachsen (C1)"
    ]
   },
@@ -89,9 +89,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "beeinträchtigt, hat beeinträchtigt",
-   "mevcutTr": "olumsuz etkilemek",
-   "mevcutBeispiel": "Lärm kann die Konzentration erheblich beeinträchtigen.",
-   "mevcutBeispielTr": "Gürültü, konsantrasyonu ciddi biçimde bozabilir."
+   "currentTr": "olumsuz etkilemek",
+   "currentBeispiel": "Lärm kann die Konzentration erheblich beeinträchtigen.",
+   "currentBeispielTr": "Gürültü, konsantrasyonu ciddi biçimde bozabilir."
   },
   {
    "id": 3552,
@@ -99,10 +99,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Dienststellen",
-   "mevcutTr": "resmi daire, birim",
-   "mevcutBeispiel": "Die zuständige Dienststelle bearbeitet Anträge innerhalb von sechs Wochen.",
-   "mevcutBeispielTr": "Yetkili birim, başvuruları altı hafta içinde işleme alıyor.",
-   "cakisan": [
+   "currentTr": "resmi daire, birim",
+   "currentBeispiel": "Die zuständige Dienststelle bearbeitet Anträge innerhalb von sechs Wochen.",
+   "currentBeispielTr": "Yetkili birim, başvuruları altı hafta içinde işleme alıyor.",
+   "overlapping": [
     "die Behörde (B1)"
    ]
   },
@@ -112,10 +112,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "grenzt ein, hat eingegrenzt",
-   "mevcutTr": "sınırlamak, daraltmak",
-   "mevcutBeispiel": "Zunächst muss das Thema klar eingegrenzt werden.",
-   "mevcutBeispielTr": "Önce konunun net biçimde sınırlanması gerekiyor.",
-   "cakisan": [
+   "currentTr": "sınırlamak, daraltmak",
+   "currentBeispiel": "Zunächst muss das Thema klar eingegrenzt werden.",
+   "currentBeispielTr": "Önce konunun net biçimde sınırlanması gerekiyor.",
+   "overlapping": [
     "beschränken (B1)",
     "eindämmen (B2)",
     "einschränken (B2)"
@@ -127,9 +127,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "bölünmüş, ikiye ayrılmış",
-   "mevcutBeispiel": "In dieser Frage zeigt sich die Gesellschaft tief gespalten.",
-   "mevcutBeispielTr": "Bu konuda toplum derin biçimde bölünmüş durumda."
+   "currentTr": "bölünmüş, ikiye ayrılmış",
+   "currentBeispiel": "In dieser Frage zeigt sich die Gesellschaft tief gespalten.",
+   "currentBeispielTr": "Bu konuda toplum derin biçimde bölünmüş durumda."
   },
   {
    "id": 3618,
@@ -137,10 +137,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Anspielungen",
-   "mevcutTr": "ima, gönderme",
-   "mevcutBeispiel": "Der Text enthält zahlreiche Anspielungen auf die Bibel.",
-   "mevcutBeispielTr": "Metinde İncil'e çok sayıda gönderme var.",
-   "cakisan": [
+   "currentTr": "ima, gönderme",
+   "currentBeispiel": "Der Text enthält zahlreiche Anspielungen auf die Bibel.",
+   "currentBeispielTr": "Metinde İncil'e çok sayıda gönderme var.",
+   "overlapping": [
     "die Andeutung (C1)"
    ]
   },
@@ -150,10 +150,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "widerlegt, hat widerlegt",
-   "mevcutTr": "çürütmek",
-   "mevcutBeispiel": "Die neuen Daten widerlegen die ursprüngliche Hypothese.",
-   "mevcutBeispielTr": "Yeni veriler baştaki hipotezi çürütüyor.",
-   "cakisan": [
+   "currentTr": "çürütmek",
+   "currentBeispiel": "Die neuen Daten widerlegen die ursprüngliche Hypothese.",
+   "currentBeispielTr": "Yeni veriler baştaki hipotezi çürütüyor.",
+   "overlapping": [
     "entkräften (C1)"
    ]
   },
@@ -163,9 +163,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "dar görüşlü, kısa vadeli düşünen",
-   "mevcutBeispiel": "Eine rein kurzsichtige Klimapolitik löst keine langfristigen Probleme.",
-   "mevcutBeispielTr": "Salt kısa vadeli bir iklim politikası uzun vadeli sorunları çözmez."
+   "currentTr": "dar görüşlü, kısa vadeli düşünen",
+   "currentBeispiel": "Eine rein kurzsichtige Klimapolitik löst keine langfristigen Probleme.",
+   "currentBeispielTr": "Salt kısa vadeli bir iklim politikası uzun vadeli sorunları çözmez."
   },
   {
    "id": 3727,
@@ -173,10 +173,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "aceleci, düşünmeden",
-   "mevcutBeispiel": "Man sollte keine vorschnellen Schlüsse ziehen.",
-   "mevcutBeispielTr": "Aceleci sonuçlara varmamak gerekir.",
-   "cakisan": [
+   "currentTr": "aceleci, düşünmeden",
+   "currentBeispiel": "Man sollte keine vorschnellen Schlüsse ziehen.",
+   "currentBeispielTr": "Aceleci sonuçlara varmamak gerekir.",
+   "overlapping": [
     "voreilig (C1)"
    ]
   },
@@ -186,9 +186,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "aydınlatıcı, bilgilendirici",
-   "mevcutBeispiel": "Die Studie liefert aufschlussreiche Einblicke in das Verhalten.",
-   "mevcutBeispielTr": "Araştırma, davranışa dair aydınlatıcı bilgiler sunuyor."
+   "currentTr": "aydınlatıcı, bilgilendirici",
+   "currentBeispiel": "Die Studie liefert aufschlussreiche Einblicke in das Verhalten.",
+   "currentBeispielTr": "Araştırma, davranışa dair aydınlatıcı bilgiler sunuyor."
   },
   {
    "id": 4022,
@@ -196,10 +196,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "unterbindet, hat unterbunden",
-   "mevcutTr": "engellemek, önlemek",
-   "mevcutBeispiel": "Neue Gesetze sollen Betrug wirksam unterbinden.",
-   "mevcutBeispielTr": "Yeni yasalar dolandırıcılığı etkili biçimde önleyecek.",
-   "cakisan": [
+   "currentTr": "engellemek, önlemek",
+   "currentBeispiel": "Neue Gesetze sollen Betrug wirksam unterbinden.",
+   "currentBeispielTr": "Yeni yasalar dolandırıcılığı etkili biçimde önleyecek.",
+   "overlapping": [
     "behindern (B1)",
     "sperren (B2)",
     "blockieren (B2)",
@@ -212,10 +212,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Einwände",
-   "mevcutTr": "itiraz, karşı görüş",
-   "mevcutBeispiel": "Gegen diesen Einwand lässt sich kaum etwas vorbringen.",
-   "mevcutBeispielTr": "Bu itiraza karşı söylenebilecek pek bir şey yok.",
-   "cakisan": [
+   "currentTr": "itiraz, karşı görüş",
+   "currentBeispiel": "Gegen diesen Einwand lässt sich kaum etwas vorbringen.",
+   "currentBeispielTr": "Bu itiraza karşı söylenebilecek pek bir şey yok.",
+   "overlapping": [
     "der Einspruch (B2)"
    ]
   },
@@ -225,9 +225,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Ermessen",
-   "mevcutTr": "takdir yetkisi",
-   "mevcutBeispiel": "Die Behörde übte ihr Ermessen pflichtgemäß aus.",
-   "mevcutBeispielTr": "Kurum, takdir yetkisini usulüne uygun kullandı."
+   "currentTr": "takdir yetkisi",
+   "currentBeispiel": "Die Behörde übte ihr Ermessen pflichtgemäß aus.",
+   "currentBeispielTr": "Kurum, takdir yetkisini usulüne uygun kullandı."
   },
   {
    "id": 4018,
@@ -235,10 +235,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "vollzieht, hat vollzogen",
-   "mevcutTr": "yerine getirmek, uygulamak; (sich ~) gerçekleşmek",
-   "mevcutBeispiel": "Der Wandel vollzieht sich schleichend, aber stetig.",
-   "mevcutBeispielTr": "Değişim sinsi ama istikrarlı biçimde gerçekleşiyor.",
-   "cakisan": [
+   "currentTr": "yerine getirmek, uygulamak; (sich ~) gerçekleşmek",
+   "currentBeispiel": "Der Wandel vollzieht sich schleichend, aber stetig.",
+   "currentBeispielTr": "Değişim sinsi ama istikrarlı biçimde gerçekleşiyor.",
+   "overlapping": [
     "erfüllen (B1)"
    ]
   },
@@ -248,10 +248,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yine de, buna rağmen",
-   "mevcutBeispiel": "Die Datenlage war dünn, nichtsdestotrotz zog man vorsichtige Schlüsse.",
-   "mevcutBeispielTr": "Veriler zayıftı; buna rağmen temkinli sonuçlar çıkarıldı.",
-   "cakisan": [
+   "currentTr": "yine de, buna rağmen",
+   "currentBeispiel": "Die Datenlage war dünn, nichtsdestotrotz zog man vorsichtige Schlüsse.",
+   "currentBeispielTr": "Veriler zayıftı; buna rağmen temkinli sonuçlar çıkarıldı.",
+   "overlapping": [
     "trotzdem (B1)",
     "gleichwohl (C1)",
     "dennoch (C1)",
@@ -264,9 +264,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verordnungen",
-   "mevcutTr": "yönetmelik",
-   "mevcutBeispiel": "Die neue Verordnung tritt zum Jahresbeginn in Kraft.",
-   "mevcutBeispielTr": "Yeni yönetmelik yıl başında yürürlüğe giriyor."
+   "currentTr": "yönetmelik",
+   "currentBeispiel": "Die neue Verordnung tritt zum Jahresbeginn in Kraft.",
+   "currentBeispielTr": "Yeni yönetmelik yıl başında yürürlüğe giriyor."
   },
   {
    "id": 3500,
@@ -274,10 +274,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "erörtert, hat erörtert",
-   "mevcutTr": "tartışmak, ele almak",
-   "mevcutBeispiel": "Die Autoren erörtern das Problem aus verschiedenen Blickwinkeln.",
-   "mevcutBeispielTr": "Yazarlar sorunu farklı açılardan ele alıyor.",
-   "cakisan": [
+   "currentTr": "tartışmak, ele almak",
+   "currentBeispiel": "Die Autoren erörtern das Problem aus verschiedenen Blickwinkeln.",
+   "currentBeispielTr": "Yazarlar sorunu farklı açılardan ele alıyor.",
+   "overlapping": [
     "diskutieren (A2)",
     "streiten (A2)"
    ]
@@ -288,9 +288,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ordnet an, hat angeordnet",
-   "mevcutTr": "emretmek, talimat vermek",
-   "mevcutBeispiel": "Das Ministerium ordnete eine sofortige Überprüfung an.",
-   "mevcutBeispielTr": "Bakanlık derhâl inceleme başlatılması talimatını verdi."
+   "currentTr": "emretmek, talimat vermek",
+   "currentBeispiel": "Das Ministerium ordnete eine sofortige Überprüfung an.",
+   "currentBeispielTr": "Bakanlık derhâl inceleme başlatılması talimatını verdi."
   },
   {
    "id": 3655,
@@ -298,9 +298,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "inszeniert, hat inszeniert",
-   "mevcutTr": "sahneye koymak, kurgulamak",
-   "mevcutBeispiel": "Der Regisseur inszeniert das Drama in einem kargen Bühnenbild.",
-   "mevcutBeispielTr": "Yönetmen, oyunu yalın bir sahne tasarımıyla sahneliyor."
+   "currentTr": "sahneye koymak, kurgulamak",
+   "currentBeispiel": "Der Regisseur inszeniert das Drama in einem kargen Bühnenbild.",
+   "currentBeispielTr": "Yönetmen, oyunu yalın bir sahne tasarımıyla sahneliyor."
   },
   {
    "id": 3902,
@@ -308,9 +308,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Absicherungen",
-   "mevcutTr": "güvence, teminat altına alma",
-   "mevcutBeispiel": "Zur Absicherung wurde eine zusätzliche Versicherung abgeschlossen.",
-   "mevcutBeispielTr": "Güvence için ek bir sigorta yaptırıldı."
+   "currentTr": "güvence, teminat altına alma",
+   "currentBeispiel": "Zur Absicherung wurde eine zusätzliche Versicherung abgeschlossen.",
+   "currentBeispielTr": "Güvence için ek bir sigorta yaptırıldı."
   },
   {
    "id": 3553,
@@ -318,10 +318,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Erlasse",
-   "mevcutTr": "genelge, kararname",
-   "mevcutBeispiel": "Der Erlass regelt die Vergabe öffentlicher Aufträge.",
-   "mevcutBeispielTr": "Kararname, kamu ihalelerinin verilmesini düzenliyor.",
-   "cakisan": [
+   "currentTr": "genelge, kararname",
+   "currentBeispiel": "Der Erlass regelt die Vergabe öffentlicher Aufträge.",
+   "currentBeispielTr": "Kararname, kamu ihalelerinin verilmesini düzenliyor.",
+   "overlapping": [
     "das Rundschreiben (B2)"
    ]
   },
@@ -331,10 +331,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "kompensiert, hat kompensiert",
-   "mevcutTr": "telafi etmek, dengelemek",
-   "mevcutBeispiel": "Der Konzern will nicht vermeidbare Emissionen kompensieren.",
-   "mevcutBeispielTr": "Şirket, önlenemeyen emisyonları telafi etmek istiyor.",
-   "cakisan": [
+   "currentTr": "telafi etmek, dengelemek",
+   "currentBeispiel": "Der Konzern will nicht vermeidbare Emissionen kompensieren.",
+   "currentBeispielTr": "Şirket, önlenemeyen emisyonları telafi etmek istiyor.",
+   "overlapping": [
     "nachholen (B2)"
    ]
   },
@@ -344,9 +344,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "akla yatkın, inandırıcı",
-   "mevcutBeispiel": "Die Erklärung klingt plausibel, bedarf aber weiterer Belege.",
-   "mevcutBeispielTr": "Açıklama akla yatkın geliyor ama daha fazla kanıt gerektiriyor."
+   "currentTr": "akla yatkın, inandırıcı",
+   "currentBeispiel": "Die Erklärung klingt plausibel, bedarf aber weiterer Belege.",
+   "currentBeispielTr": "Açıklama akla yatkın geliyor ama daha fazla kanıt gerektiriyor."
   },
   {
    "id": 3566,
@@ -354,10 +354,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gesuche",
-   "mevcutTr": "dilekçe, talep",
-   "mevcutBeispiel": "Er reichte ein Gesuch um Aufschub der Zahlungsfrist ein.",
-   "mevcutBeispielTr": "Ödeme süresinin ertelenmesi için dilekçe verdi.",
-   "cakisan": [
+   "currentTr": "dilekçe, talep",
+   "currentBeispiel": "Er reichte ein Gesuch um Aufschub der Zahlungsfrist ein.",
+   "currentBeispielTr": "Ödeme süresinin ertelenmesi için dilekçe verdi.",
+   "overlapping": [
     "die Petition (B2)"
    ]
   },
@@ -367,9 +367,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Dienstaufsichten",
-   "mevcutTr": "idari denetim (amirin memur üzerindeki)",
-   "mevcutBeispiel": "Die Dienstaufsicht prüfte das Verhalten des Beamten.",
-   "mevcutBeispielTr": "Hizmet denetimi, memurun davranışını inceledi."
+   "currentTr": "idari denetim (amirin memur üzerindeki)",
+   "currentBeispiel": "Die Dienstaufsicht prüfte das Verhalten des Beamten.",
+   "currentBeispielTr": "Hizmet denetimi, memurun davranışını inceledi."
   },
   {
    "id": 3604,
@@ -377,9 +377,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Epochen",
-   "mevcutTr": "çağ, dönem",
-   "mevcutBeispiel": "Jede literarische Epoche prägt ihre eigene Formensprache.",
-   "mevcutBeispielTr": "Her edebi dönem kendi biçim dilini yaratır."
+   "currentTr": "çağ, dönem",
+   "currentBeispiel": "Jede literarische Epoche prägt ihre eigene Formensprache.",
+   "currentBeispielTr": "Her edebi dönem kendi biçim dilini yaratır."
   },
   {
    "id": 3704,
@@ -387,10 +387,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zwickmühlen",
-   "mevcutTr": "ikilem, çıkmaz",
-   "mevcutBeispiel": "Er steckt in einer echten Zwickmühle zwischen Job und Familie.",
-   "mevcutBeispielTr": "İşiyle ailesi arasında tam bir ikilemde sıkışıp kaldı.",
-   "cakisan": [
+   "currentTr": "ikilem, çıkmaz",
+   "currentBeispiel": "Er steckt in einer echten Zwickmühle zwischen Job und Familie.",
+   "currentBeispielTr": "İşiyle ailesi arasında tam bir ikilemde sıkışıp kaldı.",
+   "overlapping": [
     "das Dilemma (C1)"
    ]
   },
@@ -400,10 +400,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Manifeste",
-   "mevcutTr": "bildiri, manifesto",
-   "mevcutBeispiel": "Das Manifest der Avantgarde forderte einen radikalen Traditionsbruch.",
-   "mevcutBeispielTr": "Avangardın manifestosu gelenekten köklü bir kopuş çağrısı yapıyordu.",
-   "cakisan": [
+   "currentTr": "bildiri, manifesto",
+   "currentBeispiel": "Das Manifest der Avantgarde forderte einen radikalen Traditionsbruch.",
+   "currentBeispielTr": "Avangardın manifestosu gelenekten köklü bir kopuş çağrısı yapıyordu.",
+   "overlapping": [
     "die Mitteilung (B2)"
    ]
   },
@@ -413,9 +413,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "vertagt, hat vertagt",
-   "mevcutTr": "ertelemek (toplantı, oturum)",
-   "mevcutBeispiel": "Die Sitzung wurde auf nächste Woche vertagt.",
-   "mevcutBeispielTr": "Toplantı gelecek haftaya ertelendi."
+   "currentTr": "ertelemek (toplantı, oturum)",
+   "currentBeispiel": "Die Sitzung wurde auf nächste Woche vertagt.",
+   "currentBeispielTr": "Toplantı gelecek haftaya ertelendi."
   },
   {
    "id": 3518,
@@ -423,9 +423,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "zweifelt an, hat angezweifelt",
-   "mevcutTr": "kuşkuyla karşılamak, sorgulamak",
-   "mevcutBeispiel": "Kritiker zweifeln die Aussagekraft der Studie an.",
-   "mevcutBeispielTr": "Eleştirmenler çalışmanın anlamlılığından şüphe duyuyor."
+   "currentTr": "kuşkuyla karşılamak, sorgulamak",
+   "currentBeispiel": "Kritiker zweifeln die Aussagekraft der Studie an.",
+   "currentBeispielTr": "Eleştirmenler çalışmanın anlamlılığından şüphe duyuyor."
   },
   {
    "id": 3698,
@@ -433,9 +433,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "legt aus, hat ausgelegt",
-   "mevcutTr": "yorumlamak (yasa, metin)",
-   "mevcutBeispiel": "Man kann das Gesetz unterschiedlich auslegen.",
-   "mevcutBeispielTr": "Yasa farklı biçimlerde yorumlanabilir."
+   "currentTr": "yorumlamak (yasa, metin)",
+   "currentBeispiel": "Man kann das Gesetz unterschiedlich auslegen.",
+   "currentBeispielTr": "Yasa farklı biçimlerde yorumlanabilir."
   },
   {
    "id": 3595,
@@ -443,9 +443,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gremien",
-   "mevcutTr": "kurul, heyet",
-   "mevcutBeispiel": "Ein unabhängiges Gremium prüft die erhobenen Vorwürfe.",
-   "mevcutBeispielTr": "Bağımsız bir kurul, öne sürülen suçlamaları inceliyor."
+   "currentTr": "kurul, heyet",
+   "currentBeispiel": "Ein unabhängiges Gremium prüft die erhobenen Vorwürfe.",
+   "currentBeispielTr": "Bağımsız bir kurul, öne sürülen suçlamaları inceliyor."
   },
   {
    "id": 4046,
@@ -453,10 +453,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Auswirkungen",
-   "mevcutTr": "etki, sonuç",
-   "mevcutBeispiel": "Der Klimawandel hat spürbare Auswirkungen auf die Region.",
-   "mevcutBeispielTr": "İklim değişikliğinin bölge üzerinde hissedilir etkileri var.",
-   "cakisan": [
+   "currentTr": "etki, sonuç",
+   "currentBeispiel": "Der Klimawandel hat spürbare Auswirkungen auf die Region.",
+   "currentBeispielTr": "İklim değişikliğinin bölge üzerinde hissedilir etkileri var.",
+   "overlapping": [
     "der Einfluss (B1)",
     "die Wirkung (B1)"
    ]
@@ -467,9 +467,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "paradoksal, çelişkili",
-   "mevcutBeispiel": "Es klingt paradox, doch der Verlust brachte künstlerische Freiheit.",
-   "mevcutBeispielTr": "Kulağa paradoksal geliyor ama bu kayıp ona sanatsal özgürlük getirdi."
+   "currentTr": "paradoksal, çelişkili",
+   "currentBeispiel": "Es klingt paradox, doch der Verlust brachte künstlerische Freiheit.",
+   "currentBeispielTr": "Kulağa paradoksal geliyor ama bu kayıp ona sanatsal özgürlük getirdi."
   },
   {
    "id": 3542,
@@ -477,10 +477,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Klauseln",
-   "mevcutTr": "şart, madde",
-   "mevcutBeispiel": "Die Klausel wurde für unwirksam erklärt.",
-   "mevcutBeispielTr": "Sözleşme maddesi geçersiz sayıldı.",
-   "cakisan": [
+   "currentTr": "şart, madde",
+   "currentBeispiel": "Die Klausel wurde für unwirksam erklärt.",
+   "currentBeispielTr": "Sözleşme maddesi geçersiz sayıldı.",
+   "overlapping": [
     "die Bedingung (B1)",
     "die Vorgabe (B2)"
    ]
@@ -491,9 +491,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "–",
-   "mevcutTr": "Rönesans",
-   "mevcutBeispiel": "Die Renaissance rückte den Menschen ins Zentrum des Denkens.",
-   "mevcutBeispielTr": "Rönesans, insanı düşüncenin merkezine yerleştirdi."
+   "currentTr": "Rönesans",
+   "currentBeispiel": "Die Renaissance rückte den Menschen ins Zentrum des Denkens.",
+   "currentBeispielTr": "Rönesans, insanı düşüncenin merkezine yerleştirdi."
   },
   {
    "id": 3525,
@@ -501,10 +501,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "bazen, kimi zaman",
-   "mevcutBeispiel": "Empirische Befunde widersprechen mitunter der gängigen Theorie.",
-   "mevcutBeispielTr": "Deneysel bulgular kimi zaman yaygın teoriyle çelişir.",
-   "cakisan": [
+   "currentTr": "bazen, kimi zaman",
+   "currentBeispiel": "Empirische Befunde widersprechen mitunter der gängigen Theorie.",
+   "currentBeispielTr": "Deneysel bulgular kimi zaman yaygın teoriyle çelişir.",
+   "overlapping": [
     "manchmal (A1)"
    ]
   },
@@ -514,9 +514,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "bu bakımdan, bu ölçüde",
-   "mevcutBeispiel": "Insofern lässt sich die Hypothese als bestätigt betrachten.",
-   "mevcutBeispielTr": "Bu bakımdan hipotez doğrulanmış sayılabilir."
+   "currentTr": "bu bakımdan, bu ölçüde",
+   "currentBeispiel": "Insofern lässt sich die Hypothese als bestätigt betrachten.",
+   "currentBeispielTr": "Bu bakımdan hipotez doğrulanmış sayılabilir."
   },
   {
    "id": 3896,
@@ -524,9 +524,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "feilscht, hat gefeilscht",
-   "mevcutTr": "pazarlık etmek",
-   "mevcutBeispiel": "Um den Preis wurde bis zuletzt gefeilscht.",
-   "mevcutBeispielTr": "Fiyat üzerinde son ana kadar pazarlık edildi."
+   "currentTr": "pazarlık etmek",
+   "currentBeispiel": "Um den Preis wurde bis zuletzt gefeilscht.",
+   "currentBeispielTr": "Fiyat üzerinde son ana kadar pazarlık edildi."
   },
   {
    "id": 3527,
@@ -534,9 +534,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "buna göre, buna uygun olarak",
-   "mevcutBeispiel": "Die Methodik wurde dementsprechend angepasst.",
-   "mevcutBeispielTr": "Metodoloji buna uygun olarak uyarlandı."
+   "currentTr": "buna göre, buna uygun olarak",
+   "currentBeispiel": "Die Methodik wurde dementsprechend angepasst.",
+   "currentBeispielTr": "Metodoloji buna uygun olarak uyarlandı."
   },
   {
    "id": 3615,
@@ -544,9 +544,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Monologe",
-   "mevcutTr": "monolog",
-   "mevcutBeispiel": "Im inneren Monolog offenbart die Figur ihre verborgenen Ängste.",
-   "mevcutBeispielTr": "Karakter, iç monologda gizli korkularını açığa vuruyor."
+   "currentTr": "monolog",
+   "currentBeispiel": "Im inneren Monolog offenbart die Figur ihre verborgenen Ängste.",
+   "currentBeispielTr": "Karakter, iç monologda gizli korkularını açığa vuruyor."
   },
   {
    "id": 3468,
@@ -554,10 +554,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Fazits",
-   "mevcutTr": "sonuç, özet",
-   "mevcutBeispiel": "Zum Fazit kommt der Forscher erst im letzten Kapitel.",
-   "mevcutBeispielTr": "Araştırmacı sonuca ancak son bölümde varıyor.",
-   "cakisan": [
+   "currentTr": "sonuç, özet",
+   "currentBeispiel": "Zum Fazit kommt der Forscher erst im letzten Kapitel.",
+   "currentBeispielTr": "Araştırmacı sonuca ancak son bölümde varıyor.",
+   "overlapping": [
     "das Ergebnis (A1)",
     "die Folge (B1)"
    ]
@@ -568,10 +568,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "şüpheli, tartışmalı",
-   "mevcutBeispiel": "Seine Methoden erscheinen vielen als fragwürdig.",
-   "mevcutBeispielTr": "Yöntemleri birçok kişiye şüpheli görünüyor.",
-   "cakisan": [
+   "currentTr": "şüpheli, tartışmalı",
+   "currentBeispiel": "Seine Methoden erscheinen vielen als fragwürdig.",
+   "currentBeispielTr": "Yöntemleri birçok kişiye şüpheli görünüyor.",
+   "overlapping": [
     "verdächtig (B1)",
     "dubios (C1)"
    ]
@@ -582,10 +582,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kaçınılmaz olarak, ister istemez",
-   "mevcutBeispiel": "Solche Fehler führen unweigerlich zu ernsten Problemen.",
-   "mevcutBeispielTr": "Bu tür hatalar kaçınılmaz olarak ciddi sorunlara yol açar.",
-   "cakisan": [
+   "currentTr": "kaçınılmaz olarak, ister istemez",
+   "currentBeispiel": "Solche Fehler führen unweigerlich zu ernsten Problemen.",
+   "currentBeispielTr": "Bu tür hatalar kaçınılmaz olarak ciddi sorunlara yol açar.",
+   "overlapping": [
     "zwangsläufig (C1)"
    ]
   }

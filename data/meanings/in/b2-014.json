@@ -1,16 +1,16 @@
 {
- "paket": "b2-014",
+ "packet": "b2-014",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4293,
    "de": "die Registratur",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Registraturen",
-   "mevcutTr": "arşiv birimi, kayıt bürosu",
-   "mevcutBeispiel": "Alte Akten lagern seit Jahren unten in der Registratur.",
-   "mevcutBeispielTr": "Eski dosyalar yıllardır alt kattaki arşiv biriminde duruyor."
+   "currentTr": "arşiv birimi, kayıt bürosu",
+   "currentBeispiel": "Alte Akten lagern seit Jahren unten in der Registratur.",
+   "currentBeispielTr": "Eski dosyalar yıllardır alt kattaki arşiv biriminde duruyor."
   },
   {
    "id": 4294,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Posteingänge",
-   "mevcutTr": "gelen evrak, gelen kutusu",
-   "mevcutBeispiel": "Jeden Morgen sortiert sie zuerst den Posteingang der Abteilung.",
-   "mevcutBeispielTr": "Her sabah önce bölümün gelen evrakını ayırıyor."
+   "currentTr": "gelen evrak, gelen kutusu",
+   "currentBeispiel": "Jeden Morgen sortiert sie zuerst den Posteingang der Abteilung.",
+   "currentBeispielTr": "Her sabah önce bölümün gelen evrakını ayırıyor."
   },
   {
    "id": 4295,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verteiler",
-   "mevcutTr": "dağıtım listesi",
-   "mevcutBeispiel": "Setzen Sie die Rechtsabteilung bitte mit auf den Verteiler.",
-   "mevcutBeispielTr": "Lütfen hukuk birimini de dağıtım listesine ekleyin."
+   "currentTr": "dağıtım listesi",
+   "currentBeispiel": "Setzen Sie die Rechtsabteilung bitte mit auf den Verteiler.",
+   "currentBeispielTr": "Lütfen hukuk birimini de dağıtım listesine ekleyin."
   },
   {
    "id": 4296,
@@ -38,10 +38,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rundschreiben",
-   "mevcutTr": "genelge, sirküler",
-   "mevcutBeispiel": "Im letzten Rundschreiben ging es um die neuen Arbeitszeiten.",
-   "mevcutBeispielTr": "Son genelgede yeni çalışma saatleri ele alınıyordu.",
-   "cakisan": [
+   "currentTr": "genelge, sirküler",
+   "currentBeispiel": "Im letzten Rundschreiben ging es um die neuen Arbeitszeiten.",
+   "currentBeispielTr": "Son genelgede yeni çalışma saatleri ele alınıyordu.",
+   "overlapping": [
     "der Erlass (C1)"
    ]
   },
@@ -51,9 +51,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Aktennotizen",
-   "mevcutTr": "dosya notu, not tutanağı",
-   "mevcutBeispiel": "Zu dem Telefonat habe ich eine kurze Aktennotiz verfasst.",
-   "mevcutBeispielTr": "Bu telefon görüşmesi için kısa bir dosya notu hazırladım."
+   "currentTr": "dosya notu, not tutanağı",
+   "currentBeispiel": "Zu dem Telefonat habe ich eine kurze Aktennotiz verfasst.",
+   "currentBeispielTr": "Bu telefon görüşmesi için kısa bir dosya notu hazırladım."
   },
   {
    "id": 4298,
@@ -61,9 +61,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zuarbeiten",
-   "mevcutTr": "hazırlık katkısı, destek çalışması",
-   "mevcutBeispiel": "Ohne die Zuarbeit der Fachbereiche wird der Bericht nicht fertig.",
-   "mevcutBeispielTr": "Uzmanlık birimlerinin katkısı olmadan rapor bitmez."
+   "currentTr": "hazırlık katkısı, destek çalışması",
+   "currentBeispiel": "Ohne die Zuarbeit der Fachbereiche wird der Bericht nicht fertig.",
+   "currentBeispielTr": "Uzmanlık birimlerinin katkısı olmadan rapor bitmez."
   },
   {
    "id": 4299,
@@ -71,10 +71,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Absprachen",
-   "mevcutTr": "anlaşma, mutabakat, kararlaştırma",
-   "mevcutBeispiel": "Nach Absprache mit dem Kunden verschieben wir den Liefertermin.",
-   "mevcutBeispielTr": "Müşteriyle görüşerek teslim tarihini erteliyoruz.",
-   "cakisan": [
+   "currentTr": "anlaşma, mutabakat, kararlaştırma",
+   "currentBeispiel": "Nach Absprache mit dem Kunden verschieben wir den Liefertermin.",
+   "currentBeispielTr": "Müşteriyle görüşerek teslim tarihini erteliyoruz.",
+   "overlapping": [
     "die Verständigung (B2)",
     "die Vereinbarung (A2)"
    ]
@@ -85,9 +85,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "harekete geçme gereği, müdahale ihtiyacı",
-   "mevcutBeispiel": "Bei den Lieferzeiten sehen wir dringenden Handlungsbedarf.",
-   "mevcutBeispielTr": "Teslim sürelerinde acilen harekete geçilmesi gerektiğini görüyoruz."
+   "currentTr": "harekete geçme gereği, müdahale ihtiyacı",
+   "currentBeispiel": "Bei den Lieferzeiten sehen wir dringenden Handlungsbedarf.",
+   "currentBeispielTr": "Teslim sürelerinde acilen harekete geçilmesi gerektiğini görüyoruz."
   },
   {
    "id": 4301,
@@ -95,9 +95,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "açıklığa kavuşturma ihtiyacı",
-   "mevcutBeispiel": "Zu den Kosten besteht noch erheblicher Klärungsbedarf.",
-   "mevcutBeispielTr": "Maliyetler konusunda hâlâ ciddi bir açıklığa kavuşturma ihtiyacı var."
+   "currentTr": "açıklığa kavuşturma ihtiyacı",
+   "currentBeispiel": "Zu den Kosten besteht noch erheblicher Klärungsbedarf.",
+   "currentBeispielTr": "Maliyetler konusunda hâlâ ciddi bir açıklığa kavuşturma ihtiyacı var."
   },
   {
    "id": 4302,
@@ -105,9 +105,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Engpässe",
-   "mevcutTr": "darboğaz, sıkışıklık",
-   "mevcutBeispiel": "Im Sommer gibt es regelmäßig personelle Engpässe.",
-   "mevcutBeispielTr": "Yazın düzenli olarak personel darboğazları yaşanıyor."
+   "currentTr": "darboğaz, sıkışıklık",
+   "currentBeispiel": "Im Sommer gibt es regelmäßig personelle Engpässe.",
+   "currentBeispielTr": "Yazın düzenli olarak personel darboğazları yaşanıyor."
   },
   {
    "id": 4303,
@@ -115,9 +115,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zeitfenster",
-   "mevcutTr": "zaman aralığı, uygun zaman dilimi",
-   "mevcutBeispiel": "Für die Umstellung bleibt uns nur ein enges Zeitfenster.",
-   "mevcutBeispielTr": "Geçiş için elimizde yalnızca dar bir zaman aralığı var."
+   "currentTr": "zaman aralığı, uygun zaman dilimi",
+   "currentBeispiel": "Für die Umstellung bleibt uns nur ein enges Zeitfenster.",
+   "currentBeispielTr": "Geçiş için elimizde yalnızca dar bir zaman aralığı var."
   },
   {
    "id": 4304,
@@ -125,9 +125,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Pufferzeiten",
-   "mevcutTr": "yedek süre, tampon zaman",
-   "mevcutBeispiel": "Plane für die Endabnahme unbedingt etwas Pufferzeit ein.",
-   "mevcutBeispielTr": "Son kabul için mutlaka biraz yedek süre planla."
+   "currentTr": "yedek süre, tampon zaman",
+   "currentBeispiel": "Plane für die Endabnahme unbedingt etwas Pufferzeit ein.",
+   "currentBeispielTr": "Son kabul için mutlaka biraz yedek süre planla."
   },
   {
    "id": 4305,
@@ -135,9 +135,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Priorisierungen",
-   "mevcutTr": "önceliklendirme",
-   "mevcutBeispiel": "Ohne klare Priorisierung verzetteln wir uns in Kleinigkeiten.",
-   "mevcutBeispielTr": "Net bir önceliklendirme olmadan ayrıntılarda boğuluyoruz."
+   "currentTr": "önceliklendirme",
+   "currentBeispiel": "Ohne klare Priorisierung verzetteln wir uns in Kleinigkeiten.",
+   "currentBeispielTr": "Net bir önceliklendirme olmadan ayrıntılarda boğuluyoruz."
   },
   {
    "id": 4306,
@@ -145,9 +145,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "aciliyet",
-   "mevcutBeispiel": "Die Aufgaben werden nach ihrer Dringlichkeit sortiert.",
-   "mevcutBeispielTr": "Görevler aciliyetlerine göre sıralanıyor."
+   "currentTr": "aciliyet",
+   "currentBeispiel": "Die Aufgaben werden nach ihrer Dringlichkeit sortiert.",
+   "currentBeispielTr": "Görevler aciliyetlerine göre sıralanıyor."
   },
   {
    "id": 4307,
@@ -155,9 +155,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Arbeitsabläufe",
-   "mevcutTr": "iş akışı",
-   "mevcutBeispiel": "Die neuen Formulare haben unsere Arbeitsabläufe deutlich vereinfacht.",
-   "mevcutBeispielTr": "Yeni formlar iş akışlarımızı belirgin biçimde kolaylaştırdı."
+   "currentTr": "iş akışı",
+   "currentBeispiel": "Die neuen Formulare haben unsere Arbeitsabläufe deutlich vereinfacht.",
+   "currentBeispielTr": "Yeni formlar iş akışlarımızı belirgin biçimde kolaylaştırdı."
   },
   {
    "id": 4308,
@@ -165,9 +165,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Geschäftsprozesse",
-   "mevcutTr": "iş süreci",
-   "mevcutBeispiel": "Alle Geschäftsprozesse werden derzeit auf Papierverzicht geprüft.",
-   "mevcutBeispielTr": "Tüm iş süreçleri şu anda kâğıtsız çalışma açısından inceleniyor."
+   "currentTr": "iş süreci",
+   "currentBeispiel": "Alle Geschäftsprozesse werden derzeit auf Papierverzicht geprüft.",
+   "currentBeispielTr": "Tüm iş süreçleri şu anda kâğıtsız çalışma açısından inceleniyor."
   },
   {
    "id": 4309,
@@ -175,9 +175,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verantwortungsbereiche",
-   "mevcutTr": "sorumluluk alanı",
-   "mevcutBeispiel": "Die Budgetplanung fällt nicht in meinen Verantwortungsbereich.",
-   "mevcutBeispielTr": "Bütçe planlaması benim sorumluluk alanıma girmiyor."
+   "currentTr": "sorumluluk alanı",
+   "currentBeispiel": "Die Budgetplanung fällt nicht in meinen Verantwortungsbereich.",
+   "currentBeispielTr": "Bütçe planlaması benim sorumluluk alanıma girmiyor."
   },
   {
    "id": 4310,
@@ -185,9 +185,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Stellvertretungen",
-   "mevcutTr": "vekâlet, yerine bakma",
-   "mevcutBeispiel": "Während meines Urlaubs übernimmt Frau Kern die Stellvertretung.",
-   "mevcutBeispielTr": "İzindeyken yerime Kern Hanım bakacak."
+   "currentTr": "vekâlet, yerine bakma",
+   "currentBeispiel": "Während meines Urlaubs übernimmt Frau Kern die Stellvertretung.",
+   "currentBeispielTr": "İzindeyken yerime Kern Hanım bakacak."
   },
   {
    "id": 4311,
@@ -195,9 +195,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Aufgabenverteilungen",
-   "mevcutTr": "görev dağılımı",
-   "mevcutBeispiel": "Über die Aufgabenverteilung im Team gab es einige Diskussionen.",
-   "mevcutBeispielTr": "Ekipteki görev dağılımı üzerine bazı tartışmalar oldu."
+   "currentTr": "görev dağılımı",
+   "currentBeispiel": "Über die Aufgabenverteilung im Team gab es einige Diskussionen.",
+   "currentBeispielTr": "Ekipteki görev dağılımı üzerine bazı tartışmalar oldu."
   },
   {
    "id": 4312,
@@ -205,9 +205,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Weisungen",
-   "mevcutTr": "talimat, emir",
-   "mevcutBeispiel": "Er hat die Unterlagen auf Weisung der Leitung vernichtet.",
-   "mevcutBeispielTr": "Belgeleri yönetimin talimatıyla imha etti."
+   "currentTr": "talimat, emir",
+   "currentBeispiel": "Er hat die Unterlagen auf Weisung der Leitung vernichtet.",
+   "currentBeispielTr": "Belgeleri yönetimin talimatıyla imha etti."
   },
   {
    "id": 4313,
@@ -215,10 +215,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vorgaben",
-   "mevcutTr": "şart, belirlenen ölçüt, hedef",
-   "mevcutBeispiel": "Die zeitlichen Vorgaben der Zentrale sind kaum zu schaffen.",
-   "mevcutBeispielTr": "Merkezin koyduğu zaman hedeflerini tutturmak neredeyse imkânsız.",
-   "cakisan": [
+   "currentTr": "şart, belirlenen ölçüt, hedef",
+   "currentBeispiel": "Die zeitlichen Vorgaben der Zentrale sind kaum zu schaffen.",
+   "currentBeispielTr": "Merkezin koyduğu zaman hedeflerini tutturmak neredeyse imkânsız.",
+   "overlapping": [
     "die Bedingung (B1)",
     "die Klausel (C1)"
    ]
@@ -229,9 +229,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Richtlinien",
-   "mevcutTr": "yönerge, kılavuz ilke",
-   "mevcutBeispiel": "Für Dienstreisen gelten seit Januar strengere Richtlinien.",
-   "mevcutBeispielTr": "Görev seyahatleri için ocaktan beri daha sıkı yönergeler geçerli."
+   "currentTr": "yönerge, kılavuz ilke",
+   "currentBeispiel": "Für Dienstreisen gelten seit Januar strengere Richtlinien.",
+   "currentBeispielTr": "Görev seyahatleri için ocaktan beri daha sıkı yönergeler geçerli."
   },
   {
    "id": 4315,
@@ -239,9 +239,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Formblätter",
-   "mevcutTr": "matbu form, standart form",
-   "mevcutBeispiel": "Den Antrag reichen Sie bitte auf dem beiliegenden Formblatt ein.",
-   "mevcutBeispielTr": "Başvuruyu lütfen ekteki standart formla verin."
+   "currentTr": "matbu form, standart form",
+   "currentBeispiel": "Den Antrag reichen Sie bitte auf dem beiliegenden Formblatt ein.",
+   "currentBeispielTr": "Başvuruyu lütfen ekteki standart formla verin."
   },
   {
    "id": 4316,
@@ -249,9 +249,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Entwürfe",
-   "mevcutTr": "taslak",
-   "mevcutBeispiel": "Der erste Entwurf des Vertrags geht morgen an die Rechtsabteilung.",
-   "mevcutBeispielTr": "Sözleşmenin ilk taslağı yarın hukuk birimine gidiyor."
+   "currentTr": "taslak",
+   "currentBeispiel": "Der erste Entwurf des Vertrags geht morgen an die Rechtsabteilung.",
+   "currentBeispielTr": "Sözleşmenin ilk taslağı yarın hukuk birimine gidiyor."
   },
   {
    "id": 4317,
@@ -259,9 +259,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fassungen",
-   "mevcutTr": "sürüm, versiyon, metin hâli",
-   "mevcutBeispiel": "Bitte arbeiten Sie nur mit der aktuellen Fassung des Handbuchs.",
-   "mevcutBeispielTr": "Lütfen yalnızca el kitabının güncel sürümüyle çalışın."
+   "currentTr": "sürüm, versiyon, metin hâli",
+   "currentBeispiel": "Bitte arbeiten Sie nur mit der aktuellen Fassung des Handbuchs.",
+   "currentBeispielTr": "Lütfen yalnızca el kitabının güncel sürümüyle çalışın."
   },
   {
    "id": 4318,
@@ -269,10 +269,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Freigaben",
-   "mevcutTr": "onay, serbest bırakma",
-   "mevcutBeispiel": "Ohne die Freigabe des Vorstands drucken wir nichts.",
-   "mevcutBeispielTr": "Yönetim kurulunun onayı olmadan hiçbir şey basmıyoruz.",
-   "cakisan": [
+   "currentTr": "onay, serbest bırakma",
+   "currentBeispiel": "Ohne die Freigabe des Vorstands drucken wir nichts.",
+   "currentBeispielTr": "Yönetim kurulunun onayı olmadan hiçbir şey basmıyoruz.",
+   "overlapping": [
     "die Bestätigung (B1)",
     "die Zustimmung (B1)",
     "die Beglaubigung (B2)",
@@ -285,9 +285,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rückmeldungen",
-   "mevcutTr": "geri bildirim, dönüş",
-   "mevcutBeispiel": "Ich warte noch auf die Rückmeldung aus dem Einkauf.",
-   "mevcutBeispielTr": "Hâlâ satın alma biriminden dönüş bekliyorum."
+   "currentTr": "geri bildirim, dönüş",
+   "currentBeispiel": "Ich warte noch auf die Rückmeldung aus dem Einkauf.",
+   "currentBeispielTr": "Hâlâ satın alma biriminden dönüş bekliyorum."
   },
   {
    "id": 4320,
@@ -295,10 +295,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abweichungen",
-   "mevcutTr": "sapma, farklılık",
-   "mevcutBeispiel": "Jede Abweichung vom Zeitplan muss schriftlich begründet werden.",
-   "mevcutBeispielTr": "Takvimden her sapma yazılı olarak gerekçelendirilmeli.",
-   "cakisan": [
+   "currentTr": "sapma, farklılık",
+   "currentBeispiel": "Jede Abweichung vom Zeitplan muss schriftlich begründet werden.",
+   "currentBeispielTr": "Takvimden her sapma yazılı olarak gerekçelendirilmeli.",
+   "overlapping": [
     "die Devianz (C1)"
    ]
   },
@@ -308,10 +308,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kennzahlen",
-   "mevcutTr": "gösterge, performans rakamı",
-   "mevcutBeispiel": "Die wichtigsten Kennzahlen stehen auf der ersten Seite des Berichts.",
-   "mevcutBeispielTr": "En önemli göstergeler raporun ilk sayfasında yer alıyor.",
-   "cakisan": [
+   "currentTr": "gösterge, performans rakamı",
+   "currentBeispiel": "Die wichtigsten Kennzahlen stehen auf der ersten Seite des Berichts.",
+   "currentBeispielTr": "En önemli göstergeler raporun ilk sayfasında yer alıyor.",
+   "overlapping": [
     "der Indikator (C1)"
    ]
   },
@@ -321,9 +321,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Dokumentationen",
-   "mevcutTr": "belgeleme, dokümantasyon",
-   "mevcutBeispiel": "Eine saubere Dokumentation spart bei Rückfragen viel Zeit.",
-   "mevcutBeispielTr": "Düzgün bir belgeleme, sonradan gelen sorularda çok zaman kazandırır."
+   "currentTr": "belgeleme, dokümantasyon",
+   "currentBeispiel": "Eine saubere Dokumentation spart bei Rückfragen viel Zeit.",
+   "currentBeispielTr": "Düzgün bir belgeleme, sonradan gelen sorularda çok zaman kazandırır."
   },
   {
    "id": 4323,
@@ -331,9 +331,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Konsense",
-   "mevcutTr": "uzlaşı, görüş birliği",
-   "mevcutBeispiel": "Nach langer Diskussion fanden die Abteilungen endlich einen Konsens.",
-   "mevcutBeispielTr": "Uzun tartışmadan sonra bölümler nihayet bir uzlaşıya vardı."
+   "currentTr": "uzlaşı, görüş birliği",
+   "currentBeispiel": "Nach langer Diskussion fanden die Abteilungen endlich einen Konsens.",
+   "currentBeispielTr": "Uzun tartışmadan sonra bölümler nihayet bir uzlaşıya vardı."
   },
   {
    "id": 4324,
@@ -341,9 +341,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vorbehalte",
-   "mevcutTr": "çekince, şerh",
-   "mevcutBeispiel": "Wir stimmen dem Angebot unter Vorbehalt der Prüfung zu.",
-   "mevcutBeispielTr": "Teklifi inceleme şartı çekincesiyle kabul ediyoruz."
+   "currentTr": "çekince, şerh",
+   "currentBeispiel": "Wir stimmen dem Angebot unter Vorbehalt der Prüfung zu.",
+   "currentBeispielTr": "Teklifi inceleme şartı çekincesiyle kabul ediyoruz."
   },
   {
    "id": 4325,
@@ -351,9 +351,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "iş yoğunluğu, kapasite kullanımı",
-   "mevcutBeispiel": "Die Auslastung des Teams liegt seit Wochen bei hundert Prozent.",
-   "mevcutBeispielTr": "Ekibin iş yoğunluğu haftalardır yüzde yüz seviyesinde."
+   "currentTr": "iş yoğunluğu, kapasite kullanımı",
+   "currentBeispiel": "Die Auslastung des Teams liegt seit Wochen bei hundert Prozent.",
+   "currentBeispielTr": "Ekibin iş yoğunluğu haftalardır yüzde yüz seviyesinde."
   },
   {
    "id": 4326,
@@ -361,9 +361,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kapazitäten",
-   "mevcutTr": "kapasite, iş gücü",
-   "mevcutBeispiel": "Für zusätzliche Aufgaben haben wir derzeit keine freien Kapazitäten.",
-   "mevcutBeispielTr": "Ek görevler için şu anda boş kapasitemiz yok."
+   "currentTr": "kapasite, iş gücü",
+   "currentBeispiel": "Für zusätzliche Aufgaben haben wir derzeit keine freien Kapazitäten.",
+   "currentBeispielTr": "Ek görevler için şu anda boş kapasitemiz yok."
   },
   {
    "id": 4327,
@@ -371,9 +371,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Terminüberschneidungen",
-   "mevcutTr": "randevu çakışması",
-   "mevcutBeispiel": "Wegen einer Terminüberschneidung kann ich erst später dazukommen.",
-   "mevcutBeispielTr": "Randevu çakışması yüzünden ancak daha sonra katılabilirim."
+   "currentTr": "randevu çakışması",
+   "currentBeispiel": "Wegen einer Terminüberschneidung kann ich erst später dazukommen.",
+   "currentBeispielTr": "Randevu çakışması yüzünden ancak daha sonra katılabilirim."
   },
   {
    "id": 4328,
@@ -381,9 +381,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat einberufen",
-   "mevcutTr": "toplantıya çağırmak, toplamak",
-   "mevcutBeispiel": "Der Betriebsrat hat für Freitag eine Versammlung einberufen.",
-   "mevcutBeispielTr": "İşçi temsilciliği cuma günü için bir toplantı çağrısı yaptı."
+   "currentTr": "toplantıya çağırmak, toplamak",
+   "currentBeispiel": "Der Betriebsrat hat für Freitag eine Versammlung einberufen.",
+   "currentBeispielTr": "İşçi temsilciliği cuma günü için bir toplantı çağrısı yaptı."
   },
   {
    "id": 4329,
@@ -391,10 +391,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat beauftragt",
-   "mevcutTr": "görevlendirmek, sipariş vermek",
-   "mevcutBeispiel": "Man hat eine externe Firma mit der Auswertung beauftragt.",
-   "mevcutBeispielTr": "Değerlendirme işiyle dışarıdan bir firma görevlendirildi.",
-   "cakisan": [
+   "currentTr": "görevlendirmek, sipariş vermek",
+   "currentBeispiel": "Man hat eine externe Firma mit der Auswertung beauftragt.",
+   "currentBeispielTr": "Değerlendirme işiyle dışarıdan bir firma görevlendirildi.",
+   "overlapping": [
     "einsetzen (B1)"
    ]
   },
@@ -404,9 +404,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgearbeitet",
-   "mevcutTr": "sırayla bitirmek, tamamlamak",
-   "mevcutBeispiel": "Bis Mittag hat sie die halbe Liste abgearbeitet.",
-   "mevcutBeispielTr": "Öğlene kadar listenin yarısını bitirmişti."
+   "currentTr": "sırayla bitirmek, tamamlamak",
+   "currentBeispiel": "Bis Mittag hat sie die halbe Liste abgearbeitet.",
+   "currentBeispielTr": "Öğlene kadar listenin yarısını bitirmişti."
   },
   {
    "id": 4331,
@@ -414,9 +414,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat terminiert",
-   "mevcutTr": "tarih belirlemek, zamana bağlamak",
-   "mevcutBeispiel": "Die Abnahme ist auf den zweiten Mai terminiert.",
-   "mevcutBeispielTr": "Kabul işlemi iki mayıs tarihine ayarlandı."
+   "currentTr": "tarih belirlemek, zamana bağlamak",
+   "currentBeispiel": "Die Abnahme ist auf den zweiten Mai terminiert.",
+   "currentBeispielTr": "Kabul işlemi iki mayıs tarihine ayarlandı."
   },
   {
    "id": 4332,
@@ -424,10 +424,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat strukturiert",
-   "mevcutTr": "düzenlemek, yapılandırmak",
-   "mevcutBeispiel": "Wir müssen die Besprechungen besser strukturieren.",
-   "mevcutBeispielTr": "Toplantıları daha iyi yapılandırmamız gerekiyor.",
-   "cakisan": [
+   "currentTr": "düzenlemek, yapılandırmak",
+   "currentBeispiel": "Wir müssen die Besprechungen besser strukturieren.",
+   "currentBeispielTr": "Toplantıları daha iyi yapılandırmamız gerekiyor.",
+   "overlapping": [
     "ordnen (B1)",
     "regeln (B1)",
     "regulieren (C1)",
@@ -440,9 +440,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gebündelt",
-   "mevcutTr": "birleştirmek, tek elde toplamak",
-   "mevcutBeispiel": "Wir bündeln alle Anfragen in einem gemeinsamen Postfach.",
-   "mevcutBeispielTr": "Bütün talepleri ortak bir posta kutusunda topluyoruz."
+   "currentTr": "birleştirmek, tek elde toplamak",
+   "currentBeispiel": "Wir bündeln alle Anfragen in einem gemeinsamen Postfach.",
+   "currentBeispielTr": "Bütün talepleri ortak bir posta kutusunda topluyoruz."
   },
   {
    "id": 4334,
@@ -450,10 +450,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat weitergeleitet",
-   "mevcutTr": "iletmek, yönlendirmek",
-   "mevcutBeispiel": "Ich habe deine Anfrage an die Fachabteilung weitergeleitet.",
-   "mevcutBeispielTr": "Talebini ilgili birime ilettim.",
-   "cakisan": [
+   "currentTr": "iletmek, yönlendirmek",
+   "currentBeispiel": "Ich habe deine Anfrage an die Fachabteilung weitergeleitet.",
+   "currentBeispielTr": "Talebini ilgili birime ilettim.",
+   "overlapping": [
     "ausrichten (B1)",
     "mitteilen (B1)",
     "übermitteln (C1)"
@@ -465,9 +465,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat archiviert",
-   "mevcutTr": "arşivlemek",
-   "mevcutBeispiel": "Abgeschlossene Vorgänge werden nach einem Jahr archiviert.",
-   "mevcutBeispielTr": "Kapanan işlemler bir yıl sonra arşivleniyor."
+   "currentTr": "arşivlemek",
+   "currentBeispiel": "Abgeschlossene Vorgänge werden nach einem Jahr archiviert.",
+   "currentBeispielTr": "Kapanan işlemler bir yıl sonra arşivleniyor."
   },
   {
    "id": 4336,
@@ -475,10 +475,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgesegnet",
-   "mevcutTr": "onaylamak, imzasını vermek",
-   "mevcutBeispiel": "Die Leitung muss das Konzept noch absegnen.",
-   "mevcutBeispielTr": "Yönetimin konsepti henüz onaylaması gerekiyor.",
-   "cakisan": [
+   "currentTr": "onaylamak, imzasını vermek",
+   "currentBeispiel": "Die Leitung muss das Konzept noch absegnen.",
+   "currentBeispielTr": "Yönetimin konsepti henüz onaylaması gerekiyor.",
+   "overlapping": [
     "bestätigen (A2)",
     "genehmigen (B1)",
     "bewilligen (B2)",
@@ -492,9 +492,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat nachgehakt",
-   "mevcutTr": "üstelemek, üzerine gitmek",
-   "mevcutBeispiel": "Wenn niemand antwortet, hake ich morgen noch einmal nach.",
-   "mevcutBeispielTr": "Kimse cevap vermezse yarın bir daha üstüne düşerim."
+   "currentTr": "üstelemek, üzerine gitmek",
+   "currentBeispiel": "Wenn niemand antwortet, hake ich morgen noch einmal nach.",
+   "currentBeispielTr": "Kimse cevap vermezse yarın bir daha üstüne düşerim."
   },
   {
    "id": 4338,
@@ -502,9 +502,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat nachgefasst",
-   "mevcutTr": "takibini yapmak, tekrar sormak",
-   "mevcutBeispiel": "Beim Kunden sollten wir nächste Woche höflich nachfassen.",
-   "mevcutBeispielTr": "Müşteride önümüzdeki hafta nazikçe takibini yapmalıyız."
+   "currentTr": "takibini yapmak, tekrar sormak",
+   "currentBeispiel": "Beim Kunden sollten wir nächste Woche höflich nachfassen.",
+   "currentBeispielTr": "Müşteride önümüzdeki hafta nazikçe takibini yapmalıyız."
   },
   {
    "id": 4339,
@@ -512,10 +512,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat angemahnt",
-   "mevcutTr": "ihtar etmek, hatırlatarak istemek",
-   "mevcutBeispiel": "Die Zentrale hat die fehlenden Berichte bereits zweimal angemahnt.",
-   "mevcutBeispielTr": "Merkez, eksik raporları çoktan iki kez ihtar etti.",
-   "cakisan": [
+   "currentTr": "ihtar etmek, hatırlatarak istemek",
+   "currentBeispiel": "Die Zentrale hat die fehlenden Berichte bereits zweimal angemahnt.",
+   "currentBeispielTr": "Merkez, eksik raporları çoktan iki kez ihtar etti.",
+   "overlapping": [
     "mahnen (B2)"
    ]
   },
@@ -525,10 +525,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat überzogen",
-   "mevcutTr": "aşmak, süreyi geçirmek",
-   "mevcutBeispiel": "Der Referent hat seine Redezeit um zehn Minuten überzogen.",
-   "mevcutBeispielTr": "Konuşmacı konuşma süresini on dakika aştı.",
-   "cakisan": [
+   "currentTr": "aşmak, süreyi geçirmek",
+   "currentBeispiel": "Der Referent hat seine Redezeit um zehn Minuten überzogen.",
+   "currentBeispielTr": "Konuşmacı konuşma süresini on dakika aştı.",
+   "overlapping": [
     "transzendieren (C1)",
     "übertreffen (B2)",
     "überschreiten (B2)"
@@ -540,10 +540,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat aufgeschoben",
-   "mevcutTr": "ertelemek, sonraya bırakmak",
-   "mevcutBeispiel": "Unangenehme Aufgaben schiebt er gern bis Freitag auf.",
-   "mevcutBeispielTr": "Hoşuna gitmeyen işleri cumaya kadar ertelemeyi seviyor.",
-   "cakisan": [
+   "currentTr": "ertelemek, sonraya bırakmak",
+   "currentBeispiel": "Unangenehme Aufgaben schiebt er gern bis Freitag auf.",
+   "currentBeispielTr": "Hoşuna gitmeyen işleri cumaya kadar ertelemeyi seviyor.",
+   "overlapping": [
     "verschieben (A2)"
    ]
   },
@@ -553,9 +553,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat entlastet",
-   "mevcutTr": "yükünü hafifletmek, rahatlatmak",
-   "mevcutBeispiel": "Eine zusätzliche Kraft würde das ganze Sekretariat entlasten.",
-   "mevcutBeispielTr": "Ek bir eleman tüm sekreterliğin yükünü hafifletirdi."
+   "currentTr": "yükünü hafifletmek, rahatlatmak",
+   "currentBeispiel": "Eine zusätzliche Kraft würde das ganze Sekretariat entlasten.",
+   "currentBeispielTr": "Ek bir eleman tüm sekreterliğin yükünü hafifletirdi."
   }
  ]
 }

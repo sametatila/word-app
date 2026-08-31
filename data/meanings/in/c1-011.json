@@ -1,16 +1,16 @@
 {
- "paket": "c1-011",
+ "packet": "c1-011",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 5753,
    "de": "das Tabu",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Tabus",
-   "mevcutTr": "tabu, yasak",
-   "mevcutBeispiel": "Jede Gesellschaft schützt ihre Ordnung durch unausgesprochene Tabus.",
-   "mevcutBeispielTr": "Her toplum kendi düzenini dile getirilmeyen tabularla korur."
+   "currentTr": "tabu, yasak",
+   "currentBeispiel": "Jede Gesellschaft schützt ihre Ordnung durch unausgesprochene Tabus.",
+   "currentBeispielTr": "Her toplum kendi düzenini dile getirilmeyen tabularla korur."
   },
   {
    "id": 5754,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Deutungsmuster",
-   "mevcutTr": "yorumlama kalıbı, anlamlandırma şeması",
-   "mevcutBeispiel": "Solche Deutungsmuster werden schon in der Kindheit erworben.",
-   "mevcutBeispielTr": "Bu tür yorumlama kalıpları daha çocuklukta edinilir."
+   "currentTr": "yorumlama kalıbı, anlamlandırma şeması",
+   "currentBeispiel": "Solche Deutungsmuster werden schon in der Kindheit erworben.",
+   "currentBeispielTr": "Bu tür yorumlama kalıpları daha çocuklukta edinilir."
   },
   {
    "id": 5755,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Feldforschungen",
-   "mevcutTr": "alan araştırması, saha çalışması",
-   "mevcutBeispiel": "Ihre Feldforschung in den Anden dauerte insgesamt vierzehn Monate.",
-   "mevcutBeispielTr": "And Dağları'ndaki alan araştırması toplam on dört ay sürdü."
+   "currentTr": "alan araştırması, saha çalışması",
+   "currentBeispiel": "Ihre Feldforschung in den Anden dauerte insgesamt vierzehn Monate.",
+   "currentBeispielTr": "And Dağları'ndaki alan araştırması toplam on dört ay sürdü."
   },
   {
    "id": 5756,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verwandtschaften",
-   "mevcutTr": "akrabalık, hısımlık",
-   "mevcutBeispiel": "Verwandtschaft ist keine biologische Tatsache, sondern eine soziale Ordnung.",
-   "mevcutBeispielTr": "Akrabalık biyolojik bir olgu değil, toplumsal bir düzendir."
+   "currentTr": "akrabalık, hısımlık",
+   "currentBeispiel": "Verwandtschaft ist keine biologische Tatsache, sondern eine soziale Ordnung.",
+   "currentBeispielTr": "Akrabalık biyolojik bir olgu değil, toplumsal bir düzendir."
   },
   {
    "id": 5757,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Abstammungen",
-   "mevcutTr": "soy, köken",
-   "mevcutBeispiel": "Die Abstammung wird in dieser Gruppe über die Mutter berechnet.",
-   "mevcutBeispielTr": "Bu grupta soy anne üzerinden hesaplanır."
+   "currentTr": "soy, köken",
+   "currentBeispiel": "Die Abstammung wird in dieser Gruppe über die Mutter berechnet.",
+   "currentBeispielTr": "Bu grupta soy anne üzerinden hesaplanır."
   },
   {
    "id": 5758,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yabancılık, ötekilik",
-   "mevcutBeispiel": "Fremdheit entsteht erst im Blick des Beobachters.",
-   "mevcutBeispielTr": "Yabancılık ancak gözlemcinin bakışında ortaya çıkar."
+   "currentTr": "yabancılık, ötekilik",
+   "currentBeispiel": "Fremdheit entsteht erst im Blick des Beobachters.",
+   "currentBeispielTr": "Yabancılık ancak gözlemcinin bakışında ortaya çıkar."
   },
   {
    "id": 5759,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Andersartigkeiten",
-   "mevcutTr": "farklılık, başkalık",
-   "mevcutBeispiel": "Die Ausstellung betont die Andersartigkeit statt der Gemeinsamkeiten.",
-   "mevcutBeispielTr": "Sergi, ortak yönler yerine farklılığı öne çıkarıyor."
+   "currentTr": "farklılık, başkalık",
+   "currentBeispiel": "Die Ausstellung betont die Andersartigkeit statt der Gemeinsamkeiten.",
+   "currentBeispielTr": "Sergi, ortak yönler yerine farklılığı öne çıkarıyor."
   },
   {
    "id": 5760,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "etnosantrizm, kendi kültürünü merkeze alma",
-   "mevcutBeispiel": "Ein unbemerkter Ethnozentrismus prägt viele ältere Reiseberichte.",
-   "mevcutBeispielTr": "Fark edilmeyen bir etnosantrizm birçok eski seyahat anlatısına damgasını vurur."
+   "currentTr": "etnosantrizm, kendi kültürünü merkeze alma",
+   "currentBeispiel": "Ein unbemerkter Ethnozentrismus prägt viele ältere Reiseberichte.",
+   "currentBeispielTr": "Fark edilmeyen bir etnosantrizm birçok eski seyahat anlatısına damgasını vurur."
   },
   {
    "id": 5761,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kültürel görelilik",
-   "mevcutBeispiel": "Der Kulturrelativismus verbietet es, fremde Praktiken vorschnell zu bewerten.",
-   "mevcutBeispielTr": "Kültürel görelilik, yabancı pratikleri aceleyle değerlendirmeyi yasaklar."
+   "currentTr": "kültürel görelilik",
+   "currentBeispiel": "Der Kulturrelativismus verbietet es, fremde Praktiken vorschnell zu bewerten.",
+   "currentBeispielTr": "Kültürel görelilik, yabancı pratikleri aceleyle değerlendirmeyi yasaklar."
   },
   {
    "id": 5762,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Akkulturationen",
-   "mevcutTr": "kültürleşme, kültürel uyum",
-   "mevcutBeispiel": "Die Akkulturation verlief in der zweiten Generation deutlich schneller.",
-   "mevcutBeispielTr": "Kültürleşme ikinci kuşakta belirgin biçimde daha hızlı gerçekleşti."
+   "currentTr": "kültürleşme, kültürel uyum",
+   "currentBeispiel": "Die Akkulturation verlief in der zweiten Generation deutlich schneller.",
+   "currentBeispielTr": "Kültürleşme ikinci kuşakta belirgin biçimde daha hızlı gerçekleşti."
   },
   {
    "id": 5763,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Assimilationen",
-   "mevcutTr": "asimilasyon, benzeşme",
-   "mevcutBeispiel": "Assimilation wurde lange als selbstverständliches Ziel der Einwanderungspolitik gesehen.",
-   "mevcutBeispielTr": "Asimilasyon uzun süre göç politikasının doğal hedefi olarak görüldü."
+   "currentTr": "asimilasyon, benzeşme",
+   "currentBeispiel": "Assimilation wurde lange als selbstverständliches Ziel der Einwanderungspolitik gesehen.",
+   "currentBeispielTr": "Asimilasyon uzun süre göç politikasının doğal hedefi olarak görüldü."
   },
   {
    "id": 5764,
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "melezlik, karma yapı",
-   "mevcutBeispiel": "Die Hybridität städtischer Musikszenen widerlegt jedes reine Kulturmodell.",
-   "mevcutBeispielTr": "Kentli müzik sahnelerinin melezliği her saf kültür modelini çürütür."
+   "currentTr": "melezlik, karma yapı",
+   "currentBeispiel": "Die Hybridität städtischer Musikszenen widerlegt jedes reine Kulturmodell.",
+   "currentBeispielTr": "Kentli müzik sahnelerinin melezliği her saf kültür modelini çürütür."
   },
   {
    "id": 5765,
@@ -128,9 +128,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "toplumsallaşma, sosyalleşme",
-   "mevcutBeispiel": "Werte werden in der frühen Sozialisation eher beiläufig als ausdrücklich vermittelt.",
-   "mevcutBeispielTr": "Değerler erken toplumsallaşmada açıkça değil, daha çok dolaylı olarak aktarılır."
+   "currentTr": "toplumsallaşma, sosyalleşme",
+   "currentBeispiel": "Werte werden in der frühen Sozialisation eher beiläufig als ausdrücklich vermittelt.",
+   "currentBeispielTr": "Değerler erken toplumsallaşmada açıkça değil, daha çok dolaylı olarak aktarılır."
   },
   {
    "id": 5766,
@@ -138,10 +138,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vermächtnisse",
-   "mevcutTr": "miras, bırakılan kültürel birikim",
-   "mevcutBeispiel": "Diese Erzählungen sind das eigentliche Vermächtnis der Dorfgemeinschaft.",
-   "mevcutBeispielTr": "Bu anlatılar köy topluluğunun asıl mirasıdır.",
-   "cakisan": [
+   "currentTr": "miras, bırakılan kültürel birikim",
+   "currentBeispiel": "Diese Erzählungen sind das eigentliche Vermächtnis der Dorfgemeinschaft.",
+   "currentBeispielTr": "Bu anlatılar köy topluluğunun asıl mirasıdır.",
+   "overlapping": [
     "die Erbschaft (B2)"
    ]
   },
@@ -151,9 +151,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Erinnerungskulturen",
-   "mevcutTr": "hatırlama kültürü, anma kültürü",
-   "mevcutBeispiel": "Die Erinnerungskultur eines Landes zeigt sich an seinen Denkmälern.",
-   "mevcutBeispielTr": "Bir ülkenin hatırlama kültürü anıtlarında görünür olur."
+   "currentTr": "hatırlama kültürü, anma kültürü",
+   "currentBeispiel": "Die Erinnerungskultur eines Landes zeigt sich an seinen Denkmälern.",
+   "currentBeispielTr": "Bir ülkenin hatırlama kültürü anıtlarında görünür olur."
   },
   {
    "id": 5768,
@@ -161,9 +161,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kosmologien",
-   "mevcutTr": "kozmoloji, evren tasavvuru",
-   "mevcutBeispiel": "In ihrer Kosmologie sind Tiere und Menschen keine getrennten Kategorien.",
-   "mevcutBeispielTr": "Onların evren tasavvurunda hayvanlar ve insanlar ayrı kategoriler değildir."
+   "currentTr": "kozmoloji, evren tasavvuru",
+   "currentBeispiel": "In ihrer Kosmologie sind Tiere und Menschen keine getrennten Kategorien.",
+   "currentBeispielTr": "Onların evren tasavvurunda hayvanlar ve insanlar ayrı kategoriler değildir."
   },
   {
    "id": 5769,
@@ -171,9 +171,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kulte",
-   "mevcutTr": "kült, tapınma",
-   "mevcutBeispiel": "Der Kult um die Ahnen strukturiert den gesamten Festkalender.",
-   "mevcutBeispielTr": "Atalar kültü bütün bayram takvimini biçimlendirir."
+   "currentTr": "kült, tapınma",
+   "currentBeispiel": "Der Kult um die Ahnen strukturiert den gesamten Festkalender.",
+   "currentBeispielTr": "Atalar kültü bütün bayram takvimini biçimlendirir."
   },
   {
    "id": 5770,
@@ -181,9 +181,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Initiationen",
-   "mevcutTr": "erginleme, kabul töreni",
-   "mevcutBeispiel": "Nach der Initiation darf der Jugendliche an den Beratungen teilnehmen.",
-   "mevcutBeispielTr": "Erginlemeden sonra genç, istişarelere katılabilir."
+   "currentTr": "erginleme, kabul töreni",
+   "currentBeispiel": "Nach der Initiation darf der Jugendliche an den Beratungen teilnehmen.",
+   "currentBeispielTr": "Erginlemeden sonra genç, istişarelere katılabilir."
   },
   {
    "id": 5771,
@@ -191,9 +191,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Lebenswelten",
-   "mevcutTr": "yaşam dünyası, gündelik yaşam alanı",
-   "mevcutBeispiel": "Der Forscher wollte die Lebenswelt der Fischer von innen verstehen.",
-   "mevcutBeispielTr": "Araştırmacı balıkçıların yaşam dünyasını içeriden anlamak istedi."
+   "currentTr": "yaşam dünyası, gündelik yaşam alanı",
+   "currentBeispiel": "Der Forscher wollte die Lebenswelt der Fischer von innen verstehen.",
+   "currentBeispielTr": "Araştırmacı balıkçıların yaşam dünyasını içeriden anlamak istedi."
   },
   {
    "id": 5772,
@@ -201,9 +201,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Alltagspraktiken",
-   "mevcutTr": "gündelik pratik, günlük uygulama",
-   "mevcutBeispiel": "Große Weltbilder zeigen sich am deutlichsten in banaler Alltagspraxis.",
-   "mevcutBeispielTr": "Büyük dünya görüşleri en açık biçimde sıradan gündelik pratikte görünür."
+   "currentTr": "gündelik pratik, günlük uygulama",
+   "currentBeispiel": "Große Weltbilder zeigen sich am deutlichsten in banaler Alltagspraxis.",
+   "currentBeispielTr": "Büyük dünya görüşleri en açık biçimde sıradan gündelik pratikte görünür."
   },
   {
    "id": 5773,
@@ -211,9 +211,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Handlungsmuster",
-   "mevcutTr": "davranış kalıbı, eylem örüntüsü",
-   "mevcutBeispiel": "Dieselben Handlungsmuster wiederholen sich über mehrere Generationen hinweg.",
-   "mevcutBeispielTr": "Aynı davranış kalıpları birkaç kuşak boyunca yinelenir."
+   "currentTr": "davranış kalıbı, eylem örüntüsü",
+   "currentBeispiel": "Dieselben Handlungsmuster wiederholen sich über mehrere Generationen hinweg.",
+   "currentBeispielTr": "Aynı davranış kalıpları birkaç kuşak boyunca yinelenir."
   },
   {
    "id": 5774,
@@ -221,9 +221,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verhaltenskodexe",
-   "mevcutTr": "davranış kuralları, davranış kodu",
-   "mevcutBeispiel": "Ein ungeschriebener Verhaltenskodex regelt, wer zuerst spricht.",
-   "mevcutBeispielTr": "Yazılı olmayan bir davranış kuralı, kimin önce konuşacağını belirler."
+   "currentTr": "davranış kuralları, davranış kodu",
+   "currentBeispiel": "Ein ungeschriebener Verhaltenskodex regelt, wer zuerst spricht.",
+   "currentBeispielTr": "Yazılı olmayan bir davranış kuralı, kimin önce konuşacağını belirler."
   },
   {
    "id": 5775,
@@ -231,9 +231,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "saflık, temizlik, arılık",
-   "mevcutBeispiel": "Vorstellungen von Reinheit trennen das Essbare vom Verbotenen.",
-   "mevcutBeispielTr": "Arılık tasavvurları yenilebilir olanı yasak olandan ayırır."
+   "currentTr": "saflık, temizlik, arılık",
+   "currentBeispiel": "Vorstellungen von Reinheit trennen das Essbare vom Verbotenen.",
+   "currentBeispielTr": "Arılık tasavvurları yenilebilir olanı yasak olandan ayırır."
   },
   {
    "id": 5776,
@@ -241,9 +241,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Sippen",
-   "mevcutTr": "sülale, klan",
-   "mevcutBeispiel": "Die Sippe entscheidet gemeinsam über die Verteilung des Landes.",
-   "mevcutBeispielTr": "Sülale, toprağın paylaşımına birlikte karar verir."
+   "currentTr": "sülale, klan",
+   "currentBeispiel": "Die Sippe entscheidet gemeinsam über die Verteilung des Landes.",
+   "currentBeispielTr": "Sülale, toprağın paylaşımına birlikte karar verir."
   },
   {
    "id": 5777,
@@ -251,9 +251,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "karşılıklılık",
-   "mevcutBeispiel": "Reziprozität hält das Netz gegenseitiger Verpflichtungen zusammen.",
-   "mevcutBeispielTr": "Karşılıklılık, karşılıklı yükümlülükler ağını bir arada tutar."
+   "currentTr": "karşılıklılık",
+   "currentBeispiel": "Reziprozität hält das Netz gegenseitiger Verpflichtungen zusammen.",
+   "currentBeispielTr": "Karşılıklılık, karşılıklı yükümlülükler ağını bir arada tutar."
   },
   {
    "id": 5778,
@@ -261,9 +261,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gaben",
-   "mevcutTr": "armağan, hediye",
-   "mevcutBeispiel": "Eine Gabe verpflichtet den Empfänger zu einer späteren Gegenleistung.",
-   "mevcutBeispielTr": "Bir armağan, alıcıyı ileride bir karşılık vermeye mecbur bırakır."
+   "currentTr": "armağan, hediye",
+   "currentBeispiel": "Eine Gabe verpflichtet den Empfänger zu einer späteren Gegenleistung.",
+   "currentBeispielTr": "Bir armağan, alıcıyı ileride bir karşılık vermeye mecbur bırakır."
   },
   {
    "id": 5779,
@@ -271,10 +271,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rangordnungen",
-   "mevcutTr": "hiyerarşi, sıra düzeni",
-   "mevcutBeispiel": "Die Sitzordnung bei Festen bildet die soziale Rangordnung ab.",
-   "mevcutBeispielTr": "Şölenlerdeki oturma düzeni toplumsal sıra düzenini yansıtır.",
-   "cakisan": [
+   "currentTr": "hiyerarşi, sıra düzeni",
+   "currentBeispiel": "Die Sitzordnung bei Festen bildet die soziale Rangordnung ab.",
+   "currentBeispielTr": "Şölenlerdeki oturma düzeni toplumsal sıra düzenini yansıtır.",
+   "overlapping": [
     "die Hierarchie (C1)"
    ]
   },
@@ -284,9 +284,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Machtgefüge",
-   "mevcutTr": "güç yapısı, iktidar düzeni",
-   "mevcutBeispiel": "Der Forscher übersah lange das Machtgefüge hinter den Interviews.",
-   "mevcutBeispielTr": "Araştırmacı görüşmelerin ardındaki güç yapısını uzun süre görmedi."
+   "currentTr": "güç yapısı, iktidar düzeni",
+   "currentBeispiel": "Der Forscher übersah lange das Machtgefüge hinter den Interviews.",
+   "currentBeispielTr": "Araştırmacı görüşmelerin ardındaki güç yapısını uzun süre görmedi."
   },
   {
    "id": 5781,
@@ -294,9 +294,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zuschreibungen",
-   "mevcutTr": "atıf, yakıştırma",
-   "mevcutBeispiel": "Solche Zuschreibungen sagen mehr über uns als über die Beschriebenen.",
-   "mevcutBeispielTr": "Bu tür atıflar, betimlenenlerden çok bizim hakkımızda konuşur."
+   "currentTr": "atıf, yakıştırma",
+   "currentBeispiel": "Solche Zuschreibungen sagen mehr über uns als über die Beschriebenen.",
+   "currentBeispielTr": "Bu tür atıflar, betimlenenlerden çok bizim hakkımızda konuşur."
   },
   {
    "id": 5782,
@@ -304,9 +304,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Stereotype",
-   "mevcutTr": "basmakalıp yargı, klişe",
-   "mevcutBeispiel": "Das Stereotyp hält sich, obwohl keine Studie es bestätigt.",
-   "mevcutBeispielTr": "Hiçbir çalışma doğrulamasa da bu basmakalıp yargı varlığını sürdürüyor."
+   "currentTr": "basmakalıp yargı, klişe",
+   "currentBeispiel": "Das Stereotyp hält sich, obwohl keine Studie es bestätigt.",
+   "currentBeispielTr": "Hiçbir çalışma doğrulamasa da bu basmakalıp yargı varlığını sürdürüyor."
   },
   {
    "id": 5783,
@@ -314,9 +314,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Stigmata",
-   "mevcutTr": "damga, damgalanma",
-   "mevcutBeispiel": "Das Stigma haftet an der Familie noch nach zwei Generationen.",
-   "mevcutBeispielTr": "Damga, iki kuşak sonra bile aileye yapışık kalıyor."
+   "currentTr": "damga, damgalanma",
+   "currentBeispiel": "Das Stigma haftet an der Familie noch nach zwei Generationen.",
+   "currentBeispielTr": "Damga, iki kuşak sonra bile aileye yapışık kalıyor."
   },
   {
    "id": 5784,
@@ -324,9 +324,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "egzotiklik, egzotizm",
-   "mevcutBeispiel": "Die Exotik der Bilder verstellt den Blick auf den Alltag.",
-   "mevcutBeispielTr": "Fotoğrafların egzotikliği gündelik hayata bakışı engelliyor."
+   "currentTr": "egzotiklik, egzotizm",
+   "currentBeispiel": "Die Exotik der Bilder verstellt den Blick auf den Alltag.",
+   "currentBeispielTr": "Fotoğrafların egzotikliği gündelik hayata bakışı engelliyor."
   },
   {
    "id": 5785,
@@ -334,9 +334,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verflechtungen",
-   "mevcutTr": "iç içe geçme, karşılıklı bağlantı",
-   "mevcutBeispiel": "Die Verflechtung von Religion und Wirtschaft ist hier kaum aufzulösen.",
-   "mevcutBeispielTr": "Burada din ile ekonominin iç içe geçmişliğini ayırmak neredeyse imkânsız."
+   "currentTr": "iç içe geçme, karşılıklı bağlantı",
+   "currentBeispiel": "Die Verflechtung von Religion und Wirtschaft ist hier kaum aufzulösen.",
+   "currentBeispielTr": "Burada din ile ekonominin iç içe geçmişliğini ayırmak neredeyse imkânsız."
   },
   {
    "id": 5786,
@@ -344,9 +344,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çok katmanlılık",
-   "mevcutBeispiel": "Die Vielschichtigkeit des Festes erschließt sich erst nach Wochen.",
-   "mevcutBeispielTr": "Şenliğin çok katmanlılığı ancak haftalar sonra anlaşılıyor."
+   "currentTr": "çok katmanlılık",
+   "currentBeispiel": "Die Vielschichtigkeit des Festes erschließt sich erst nach Wochen.",
+   "currentBeispielTr": "Şenliğin çok katmanlılığı ancak haftalar sonra anlaşılıyor."
   },
   {
    "id": 5787,
@@ -354,9 +354,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "anlam kurma, anlam yaratma",
-   "mevcutBeispiel": "Rituale dienen der Sinnstiftung in Zeiten großer Unsicherheit.",
-   "mevcutBeispielTr": "Ritüeller büyük belirsizlik zamanlarında anlam kurmaya hizmet eder."
+   "currentTr": "anlam kurma, anlam yaratma",
+   "currentBeispiel": "Rituale dienen der Sinnstiftung in Zeiten großer Unsicherheit.",
+   "currentBeispielTr": "Ritüeller büyük belirsizlik zamanlarında anlam kurmaya hizmet eder."
   },
   {
    "id": 5788,
@@ -364,9 +364,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "habitus, yerleşik davranış tarzı",
-   "mevcutBeispiel": "Der akademische Habitus verrät sich schon an der Wortwahl.",
-   "mevcutBeispielTr": "Akademik habitus daha sözcük seçiminde kendini ele veriyor."
+   "currentTr": "habitus, yerleşik davranış tarzı",
+   "currentBeispiel": "Der akademische Habitus verrät sich schon an der Wortwahl.",
+   "currentBeispielTr": "Akademik habitus daha sözcük seçiminde kendini ele veriyor."
   },
   {
    "id": 5789,
@@ -374,9 +374,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Milieus",
-   "mevcutTr": "sosyal çevre, muhit",
-   "mevcutBeispiel": "In diesem Milieu gilt offene Zurschaustellung von Reichtum als peinlich.",
-   "mevcutBeispielTr": "Bu çevrede zenginliği açıkça sergilemek ayıp sayılır."
+   "currentTr": "sosyal çevre, muhit",
+   "currentBeispiel": "In diesem Milieu gilt offene Zurschaustellung von Reichtum als peinlich.",
+   "currentBeispielTr": "Bu çevrede zenginliği açıkça sergilemek ayıp sayılır."
   },
   {
    "id": 5790,
@@ -384,10 +384,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Distinktionen",
-   "mevcutTr": "ayrım, seçkinlik gösterisi",
-   "mevcutBeispiel": "Geschmack dient hier vor allem der sozialen Distinktion.",
-   "mevcutBeispielTr": "Zevk burada her şeyden önce toplumsal ayrıma hizmet eder.",
-   "cakisan": [
+   "currentTr": "ayrım, seçkinlik gösterisi",
+   "currentBeispiel": "Geschmack dient hier vor allem der sozialen Distinktion.",
+   "currentBeispielTr": "Zevk burada her şeyden önce toplumsal ayrıma hizmet eder.",
+   "overlapping": [
     "die Differenzierung (C1)"
    ]
   },
@@ -397,9 +397,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Randgruppen",
-   "mevcutTr": "marjinal grup, kenarda kalmış topluluk",
-   "mevcutBeispiel": "Die Studie gibt einer lange übersehenen Randgruppe eine Stimme.",
-   "mevcutBeispielTr": "Çalışma, uzun süre göz ardı edilmiş marjinal bir gruba ses veriyor."
+   "currentTr": "marjinal grup, kenarda kalmış topluluk",
+   "currentBeispiel": "Die Studie gibt einer lange übersehenen Randgruppe eine Stimme.",
+   "currentBeispielTr": "Çalışma, uzun süre göz ardı edilmiş marjinal bir gruba ses veriyor."
   },
   {
    "id": 5792,
@@ -407,9 +407,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Mehrheitsgesellschaften",
-   "mevcutTr": "çoğunluk toplumu",
-   "mevcutBeispiel": "Die Mehrheitsgesellschaft hält ihre eigenen Normen für neutral.",
-   "mevcutBeispielTr": "Çoğunluk toplumu kendi normlarını tarafsız sanır."
+   "currentTr": "çoğunluk toplumu",
+   "currentBeispiel": "Die Mehrheitsgesellschaft hält ihre eigenen Normen für neutral.",
+   "currentBeispielTr": "Çoğunluk toplumu kendi normlarını tarafsız sanır."
   },
   {
    "id": 5793,
@@ -417,9 +417,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kendini algılayış, kendini tanımlama biçimi",
-   "mevcutBeispiel": "Das Selbstverständnis der Zunft beruht auf jahrhundertealten Erzählungen.",
-   "mevcutBeispielTr": "Loncanın kendini algılayışı yüzyıllık anlatılara dayanıyor."
+   "currentTr": "kendini algılayış, kendini tanımlama biçimi",
+   "currentBeispiel": "Das Selbstverständnis der Zunft beruht auf jahrhundertealten Erzählungen.",
+   "currentBeispielTr": "Loncanın kendini algılayışı yüzyıllık anlatılara dayanıyor."
   },
   {
    "id": 5794,
@@ -427,9 +427,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Artefakte",
-   "mevcutTr": "insan yapımı nesne, eser",
-   "mevcutBeispiel": "Jedes Artefakt im Depot trägt eine Geschichte seiner Aneignung.",
-   "mevcutBeispielTr": "Depodaki her nesne, kendisine el konuluşunun hikâyesini taşır."
+   "currentTr": "insan yapımı nesne, eser",
+   "currentBeispiel": "Jedes Artefakt im Depot trägt eine Geschichte seiner Aneignung.",
+   "currentBeispielTr": "Depodaki her nesne, kendisine el konuluşunun hikâyesini taşır."
   },
   {
    "id": 5795,
@@ -437,9 +437,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Glaubenssysteme",
-   "mevcutTr": "inanç sistemi",
-   "mevcutBeispiel": "Ein Glaubenssystem lässt sich nicht in einzelne Sätze zerlegen.",
-   "mevcutBeispielTr": "Bir inanç sistemi tek tek cümlelere ayrıştırılamaz."
+   "currentTr": "inanç sistemi",
+   "currentBeispiel": "Ein Glaubenssystem lässt sich nicht in einzelne Sätze zerlegen.",
+   "currentBeispielTr": "Bir inanç sistemi tek tek cümlelere ayrıştırılamaz."
   },
   {
    "id": 5796,
@@ -447,10 +447,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat tradiert",
-   "mevcutTr": "kuşaktan kuşağa aktarmak",
-   "mevcutBeispiel": "Diese Formeln werden mündlich tradiert und nie aufgeschrieben.",
-   "mevcutBeispielTr": "Bu formüller sözlü olarak aktarılır ve hiç yazıya geçirilmez.",
-   "cakisan": [
+   "currentTr": "kuşaktan kuşağa aktarmak",
+   "currentBeispiel": "Diese Formeln werden mündlich tradiert und nie aufgeschrieben.",
+   "currentBeispielTr": "Bu formüller sözlü olarak aktarılır ve hiç yazıya geçirilmez.",
+   "overlapping": [
     "überliefern (C1)"
    ]
   },
@@ -460,10 +460,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat wiederbelebt",
-   "mevcutTr": "canlandırmak, yeniden diriltmek",
-   "mevcutBeispiel": "Der Verein hat einen fast vergessenen Tanz wiederbelebt.",
-   "mevcutBeispielTr": "Dernek, neredeyse unutulmuş bir dansı yeniden canlandırdı.",
-   "cakisan": [
+   "currentTr": "canlandırmak, yeniden diriltmek",
+   "currentBeispiel": "Der Verein hat einen fast vergessenen Tanz wiederbelebt.",
+   "currentBeispielTr": "Dernek, neredeyse unutulmuş bir dansı yeniden canlandırdı.",
+   "overlapping": [
     "revitalisieren (C1)"
    ]
   },
@@ -473,10 +473,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist entstammt",
-   "mevcutTr": "-den gelmek, kökeni -e dayanmak",
-   "mevcutBeispiel": "Der Brauch entstammt einer weit älteren bäuerlichen Ordnung.",
-   "mevcutBeispielTr": "Bu âdet çok daha eski bir köylü düzeninden gelir.",
-   "cakisan": [
+   "currentTr": "-den gelmek, kökeni -e dayanmak",
+   "currentBeispiel": "Der Brauch entstammt einer weit älteren bäuerlichen Ordnung.",
+   "currentBeispielTr": "Bu âdet çok daha eski bir köylü düzeninden gelir.",
+   "overlapping": [
     "stammen (B1)"
    ]
   },
@@ -486,10 +486,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat weitergegeben",
-   "mevcutTr": "aktarmak, iletmek",
-   "mevcutBeispiel": "Die Großmütter geben die Lieder ohne jede Notenschrift weiter.",
-   "mevcutBeispielTr": "Nineler şarkıları hiçbir nota yazısı olmadan aktarıyor.",
-   "cakisan": [
+   "currentTr": "aktarmak, iletmek",
+   "currentBeispiel": "Die Großmütter geben die Lieder ohne jede Notenschrift weiter.",
+   "currentBeispielTr": "Nineler şarkıları hiçbir nota yazısı olmadan aktarıyor.",
+   "overlapping": [
     "vermitteln (B2)",
     "wiedergeben (B2)"
    ]
@@ -500,10 +500,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat abgeleitet",
-   "mevcutTr": "çıkarmak, çıkarsamak, türetmek",
-   "mevcutBeispiel": "Aus einem einzigen Fall lässt sich keine Regel ableiten.",
-   "mevcutBeispielTr": "Tek bir vakadan bir kural çıkarsanamaz.",
-   "cakisan": [
+   "currentTr": "çıkarmak, çıkarsamak, türetmek",
+   "currentBeispiel": "Aus einem einzigen Fall lässt sich keine Regel ableiten.",
+   "currentBeispielTr": "Tek bir vakadan bir kural çıkarsanamaz.",
+   "overlapping": [
     "abnehmen (B1)",
     "ausziehen (B1)",
     "erlassen (B2)",
@@ -516,9 +516,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gestiftet",
-   "mevcutTr": "yaratmak, oluşturmak, bağışlamak",
-   "mevcutBeispiel": "Gemeinsame Mahlzeiten stiften Zusammengehörigkeit über alle Konflikte hinweg.",
-   "mevcutBeispielTr": "Ortak yemekler bütün çatışmalara rağmen birliktelik duygusu yaratır."
+   "currentTr": "yaratmak, oluşturmak, bağışlamak",
+   "currentBeispiel": "Gemeinsame Mahlzeiten stiften Zusammengehörigkeit über alle Konflikte hinweg.",
+   "currentBeispielTr": "Ortak yemekler bütün çatışmalara rağmen birliktelik duygusu yaratır."
   },
   {
    "id": 5802,
@@ -526,10 +526,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat geächtet",
-   "mevcutTr": "dışlamak, lanetlemek, yasaklamak",
-   "mevcutBeispiel": "Wer gegen das Schweigegebot verstieß, wurde von allen geächtet.",
-   "mevcutBeispielTr": "Sessizlik kuralını çiğneyen herkes tarafından dışlanırdı.",
-   "cakisan": [
+   "currentTr": "dışlamak, lanetlemek, yasaklamak",
+   "currentBeispiel": "Wer gegen das Schweigegebot verstieß, wurde von allen geächtet.",
+   "currentBeispielTr": "Sessizlik kuralını çiğneyen herkes tarafından dışlanırdı.",
+   "overlapping": [
     "ausgrenzen (C1)"
    ]
   }

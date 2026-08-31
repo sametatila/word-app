@@ -37,13 +37,13 @@ const files = fs.existsSync(outDir)
 
 const seen = new Map<string, string>(); // norm(de) -> ilk gören dosya
 const kept: Record<string, unknown>[] = [];
-const stats = { dosya: 0, madde: 0, red: 0 };
+const stats = { files: 0, items: 0, rejected: 0 };
 const reasons: Record<string, number> = {};
 /** Cümlede kökü görünmeyenler — elenmez, gözle denetlenir. */
 const suspect: string[] = [];
 
 const reject = (file: string, item: Record<string, unknown> | undefined, why: string) => {
-  stats.red++;
+  stats.rejected++;
   reasons[why] = (reasons[why] ?? 0) + 1;
   if (VERBOSE) console.log(`   ${file} "${item?.de ?? "?"}" → ${why}`);
 };
@@ -60,7 +60,7 @@ for (const file of files) {
     console.log(`${file.padEnd(22)} ✗ dizi değil`);
     continue;
   }
-  stats.dosya++;
+  stats.files++;
   let ok = 0;
 
   for (const raw of arr) {
@@ -68,7 +68,7 @@ for (const file of files) {
       de?: string; artikel?: string; tr?: string; formen?: string;
       typ?: string; beispiel?: string; beispielTr?: string;
     };
-    stats.madde++;
+    stats.items++;
     const de = String(it?.de ?? "").trim();
     const key = norm(de);
 
@@ -107,8 +107,8 @@ for (const file of files) {
 
 // Sıklık kapısı: A2 günlük dildir, listede hiç geçmeyen kelime şüphelidir.
 const rare = kept.filter((k) => k._freq === 0);
-console.log(`\ntoplam: ${stats.madde} üretildi · ${kept.length} kabul · ${stats.red} elendi`);
-if (stats.red) {
+console.log(`\ntoplam: ${stats.items} üretildi · ${kept.length} kabul · ${stats.rejected} elendi`);
+if (stats.rejected) {
   console.log("elenme nedenleri:");
   for (const [why, n] of Object.entries(reasons).sort((a, b) => b[1] - a[1]))
     console.log(`  ${String(n).padStart(4)}  ${why}`);

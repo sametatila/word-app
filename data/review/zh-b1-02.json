@@ -160,7 +160,7 @@
   "gsw": "länge",
   "gswArtikel": null,
   "gswBeispiel": "S Gäld mues bis im März länge. Sini Kenntniss länged für die Arbet.",
-  "ayniLehce": [
+  "sameDialect": [
    "genügen (B1)",
    "reichen (B1)"
   ]
@@ -173,7 +173,7 @@
   "gsw": "gnueg",
   "gswArtikel": null,
   "gswBeispiel": "Mir händ gnueg Gäld für d Räis.",
-  "ayniLehce": [
+  "sameDialect": [
    "genug (A1)",
    "genügend (A2)"
   ]
@@ -195,7 +195,7 @@
   "gsw": "sich erhole",
   "gswArtikel": null,
   "gswBeispiel": "Si erholed sich vo de Arbet. Häsch di guet erholt?",
-  "ayniLehce": [
+  "sameDialect": [
    "sich erholen (B1)"
   ]
  },
@@ -216,7 +216,7 @@
   "gsw": "nume",
   "gswArtikel": null,
   "gswBeispiel": "Tuet mer läid, mir händ nume Nichtraucherzimmer.",
-  "ayniLehce": [
+  "sameDialect": [
    "nur (A1)",
    "bloß (B1)"
   ]
@@ -373,7 +373,7 @@
   "gsw": "Bar",
   "gswArtikel": "d",
   "gswBeispiel": "Sitzemer doch a d Bar! Ich triffe mini Fründin i de Hotelbar.",
-  "ayniLehce": [
+  "sameDialect": [
    "bar (A1)"
   ]
  },
@@ -511,7 +511,7 @@
   "gsw": "pressiere",
   "gswArtikel": null,
   "gswBeispiel": "Mir müend pressiere. Susch verpassed mer de Zug.",
-  "ayniLehce": [
+  "sameDialect": [
    "eilen (B1)"
   ]
  },
@@ -568,7 +568,7 @@
   "gsw": "Aafang",
   "gswArtikel": "de",
   "gswBeispiel": "Am Aafang vo de Schtund begrüesst d Leererin iri Schüeler.",
-  "ayniLehce": [
+  "sameDialect": [
    "Anfang (A1)"
   ]
  },
@@ -661,7 +661,7 @@
   "gsw": "fascht",
   "gswArtikel": null,
   "gswBeispiel": "Ich ha hüt fascht de Bus verpasst.",
-  "ayniLehce": [
+  "sameDialect": [
    "fast (A2)"
   ]
  },
@@ -736,7 +736,7 @@
   "gsw": "merke",
   "gswArtikel": null,
   "gswBeispiel": "Ich ha nöd gmerkt, dass s Fänschter offe isch.",
-  "ayniLehce": [
+  "sameDialect": [
    "merken (A2)"
   ]
  },
@@ -757,7 +757,7 @@
   "gsw": "bruuche",
   "gswArtikel": null,
   "gswBeispiel": "Säged Si Bschäid, wänn Si na öppis bruuched.",
-  "ayniLehce": [
+  "sameDialect": [
    "brauchen (A1)",
    "benutzen (A1)",
    "gebrauchen (B1)"
@@ -825,7 +825,7 @@
   "gsw": "scho",
   "gswArtikel": null,
   "gswBeispiel": "Bitte mäld di bi de Frau Kaiser. Si hät scho drüümal aaglüte.",
-  "ayniLehce": [
+  "sameDialect": [
    "schon (A1)"
   ]
  },
@@ -945,7 +945,7 @@
   "gsw": "reklamiere",
   "gswArtikel": null,
   "gswBeispiel": "Wo chönd mer reklamiere?",
-  "ayniLehce": [
+  "sameDialect": [
    "reklamieren (B2)"
   ]
  },
@@ -993,7 +993,7 @@
   "gsw": "Sitzig",
   "gswArtikel": "d",
   "gswBeispiel": "Tuet mer läid, de Herr Schmidt isch na in ere Sitzig.",
-  "ayniLehce": [
+  "sameDialect": [
    "Sitzung (B2)"
   ]
  },
@@ -1005,7 +1005,7 @@
   "gsw": "Besserig",
   "gswArtikel": "d",
   "gswBeispiel": "Gueti Besserig!",
-  "ayniLehce": [
+  "sameDialect": [
    "Genesung (B2)"
   ]
  },
@@ -1017,7 +1017,7 @@
   "gsw": "Beschtätigig",
   "gswArtikel": "d",
   "gswBeispiel": "Ich bruuche e schriftlichi Beschtätigig für s Amt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Bescheinigung (B2)"
   ]
  },

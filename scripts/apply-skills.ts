@@ -29,43 +29,43 @@ import { execFileSync } from "node:child_process";
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, "data", "skills", "out");
 const CONTENT = path.join(ROOT, "src", "lib", "skills", "content");
-const HEDEF = (process.argv[2] ?? "all").toLowerCase();
+const TARGET = (process.argv[2] ?? "all").toLowerCase();
 const DRY = process.argv.includes("--dry");
 
-type Alan = { de: string; tr: string; en?: string; hd?: string; note?: string };
-type Kayit = {
+type Field = { de: string; tr: string; en?: string; hd?: string; note?: string };
+type Entry = {
   id: string;
-  gloss?: Alan[];
-  phrases?: Alan[];
-  targets?: Alan[];
-  tasks?: Alan[];
+  gloss?: Field[];
+  phrases?: Field[];
+  targets?: Field[];
+  tasks?: Field[];
 };
 
 /** Bir egzersizin bütün alanları: `de` → yeni değerler. */
-type Sozluk = Map<string, Alan>;
+type Glossary = Map<string, Field>;
 
-function oku(filtre: string): Map<string, Sozluk> {
-  const out = new Map<string, Sozluk>();
+function readOutputs(filter: string): Map<string, Glossary> {
+  const out = new Map<string, Glossary>();
   if (!existsSync(OUT)) return out;
   for (const f of readdirSync(OUT)
     .filter((f) => f.endsWith(".json"))
     .sort()) {
     const slug = f.replace(/\.json$/, "");
-    if (filtre !== "all" && slug !== filtre && !slug.startsWith(`${filtre}-`))
+    if (filter !== "all" && slug !== filter && !slug.startsWith(`${filter}-`))
       continue;
-    for (const kayit of JSON.parse(
+    for (const entry of JSON.parse(
       readFileSync(path.join(OUT, f), "utf8"),
-    ) as Kayit[]) {
-      const s: Sozluk = out.get(kayit.id) ?? new Map();
-      for (const alan of [
-        kayit.gloss,
-        kayit.phrases,
-        kayit.targets,
-        kayit.tasks,
+    ) as Entry[]) {
+      const s: Glossary = out.get(entry.id) ?? new Map();
+      for (const field of [
+        entry.gloss,
+        entry.phrases,
+        entry.targets,
+        entry.tasks,
       ]) {
-        for (const a of alan ?? []) s.set(a.de, a);
+        for (const a of field ?? []) s.set(a.de, a);
       }
-      out.set(kayit.id, s);
+      out.set(entry.id, s);
     }
   }
   return out;
@@ -75,74 +75,74 @@ function oku(filtre: string): Map<string, Sozluk> {
 const lit = (s: string) => JSON.stringify(s);
 
 /** `{ de: "…", tr: "…" }` — kaçışlı tırnakları da tanır. */
-const TEK_SATIR =
+const ONE_LINE =
   /^(\s*)\{\s*de:\s*("(?:[^"\\]|\\.)*")\s*,\s*tr:\s*("(?:[^"\\]|\\.)*")\s*(?:,\s*en:\s*"(?:[^"\\]|\\.)*"\s*)?(?:,\s*hd:\s*"(?:[^"\\]|\\.)*"\s*)?(?:,\s*note:\s*"(?:[^"\\]|\\.)*"\s*)?,?\s*\},?\s*$/;
-const ID_SATIRI = /^\s*id:\s*"([^"]+)",\s*$/;
-const DE_SATIRI = /^(\s*)de:\s*("(?:[^"\\]|\\.)*"),\s*$/;
-const TR_SATIRI = /^(\s*)tr:\s*("(?:[^"\\]|\\.)*"),\s*$/;
+const ID_LINE = /^\s*id:\s*"([^"]+)",\s*$/;
+const DE_LINE = /^(\s*)de:\s*("(?:[^"\\]|\\.)*"),\s*$/;
+const TR_LINE = /^(\s*)tr:\s*("(?:[^"\\]|\\.)*"),\s*$/;
 
-function yaz(dosya: string, sozlukler: Map<string, Sozluk>) {
-  const satirlar = readFileSync(dosya, "utf8").split("\n");
+function rewrite(file: string, glossaries: Map<string, Glossary>) {
+  const lines = readFileSync(file, "utf8").split("\n");
   let exId: string | null = null;
-  let sonDe: string | null = null;
-  let degisen = 0;
-  const cikti: string[] = [];
+  let lastDe: string | null = null;
+  let changed = 0;
+  const output: string[] = [];
 
-  for (const satir of satirlar) {
-    const idm = satir.match(ID_SATIRI);
+  for (const line of lines) {
+    const idm = line.match(ID_LINE);
     if (idm) {
       exId = idm[1];
-      sonDe = null;
-      cikti.push(satir);
+      lastDe = null;
+      output.push(line);
       continue;
     }
-    const s = exId ? sozlukler.get(exId) : undefined;
+    const s = exId ? glossaries.get(exId) : undefined;
 
-    const tekm = satir.match(TEK_SATIR);
-    if (tekm && s) {
-      const de = JSON.parse(tekm[2]) as string;
-      const yeni = s.get(de);
-      if (yeni) {
-        const parca = [`de: ${lit(de)}`, `tr: ${lit(yeni.tr)}`];
-        if (yeni.en) parca.push(`en: ${lit(yeni.en)}`);
-        if (yeni.hd) parca.push(`hd: ${lit(yeni.hd)}`);
-        if (yeni.note) parca.push(`note: ${lit(yeni.note)}`);
-        cikti.push(`${tekm[1]}{ ${parca.join(", ")} },`);
-        degisen++;
+    const oneLineMatch = line.match(ONE_LINE);
+    if (oneLineMatch && s) {
+      const de = JSON.parse(oneLineMatch[2]) as string;
+      const updated = s.get(de);
+      if (updated) {
+        const parts = [`de: ${lit(de)}`, `tr: ${lit(updated.tr)}`];
+        if (updated.en) parts.push(`en: ${lit(updated.en)}`);
+        if (updated.hd) parts.push(`hd: ${lit(updated.hd)}`);
+        if (updated.note) parts.push(`note: ${lit(updated.note)}`);
+        output.push(`${oneLineMatch[1]}{ ${parts.join(", ")} },`);
+        changed++;
         continue;
       }
     }
 
     // Konuşma görevi: `de:` ve `tr:` ayrı satırlarda, arada başka alan yok.
-    const dem = satir.match(DE_SATIRI);
+    const dem = line.match(DE_LINE);
     if (dem) {
-      sonDe = JSON.parse(dem[2]) as string;
-      cikti.push(satir);
+      lastDe = JSON.parse(dem[2]) as string;
+      output.push(line);
       continue;
     }
-    const trm = satir.match(TR_SATIRI);
-    if (trm && sonDe && s) {
-      const yeni = s.get(sonDe);
-      if (yeni) {
-        cikti.push(`${trm[1]}tr: ${lit(yeni.tr)},`);
-        if (yeni.en) cikti.push(`${trm[1]}en: ${lit(yeni.en)},`);
-        degisen++;
-        sonDe = null;
+    const trm = line.match(TR_LINE);
+    if (trm && lastDe && s) {
+      const updated = s.get(lastDe);
+      if (updated) {
+        output.push(`${trm[1]}tr: ${lit(updated.tr)},`);
+        if (updated.en) output.push(`${trm[1]}en: ${lit(updated.en)},`);
+        changed++;
+        lastDe = null;
         continue;
       }
     }
     // `en:` satırı zaten varsa ve yeniden yazıyorsak tekrarı önle.
-    if (/^\s*en:\s*"/.test(satir) && sonDe === null && degisen) continue;
+    if (/^\s*en:\s*"/.test(line) && lastDe === null && changed) continue;
 
-    cikti.push(satir);
+    output.push(line);
   }
 
-  return { metin: cikti.join("\n"), degisen };
+  return { text: output.join("\n"), changed };
 }
 
 async function main() {
   try {
-    execFileSync("node", ["data/skills/check.mjs", HEDEF], {
+    execFileSync("node", ["data/skills/check.mjs", TARGET], {
       stdio: "inherit",
     });
   } catch {
@@ -150,37 +150,37 @@ async function main() {
     process.exit(1);
   }
 
-  const sozlukler = oku(HEDEF);
-  if (!sozlukler.size) {
+  const glossaries = readOutputs(TARGET);
+  if (!glossaries.size) {
     console.log("Uygulanacak egzersiz yok.");
     return;
   }
-  const beklenen = [...sozlukler.values()].reduce((s, m) => s + m.size, 0);
+  const expected = [...glossaries.values()].reduce((s, m) => s + m.size, 0);
   console.log(
-    `\n${sozlukler.size} egzersiz, ${beklenen} alan${DRY ? " (deneme)" : ""}.`,
+    `\n${glossaries.size} egzersiz, ${expected} alan${DRY ? " (deneme)" : ""}.`,
   );
 
-  let toplam = 0;
-  const yazilacak: [string, string][] = [];
+  let total = 0;
+  const toWrite: [string, string][] = [];
   for (const f of readdirSync(CONTENT).filter((f) => f.endsWith(".ts"))) {
-    const yol = path.join(CONTENT, f);
-    const { metin, degisen } = yaz(yol, sozlukler);
-    if (!degisen) continue;
-    toplam += degisen;
-    yazilacak.push([yol, metin]);
-    console.log(`  ${f}: ${degisen} alan`);
+    const filePath = path.join(CONTENT, f);
+    const { text, changed } = rewrite(filePath, glossaries);
+    if (!changed) continue;
+    total += changed;
+    toWrite.push([filePath, text]);
+    console.log(`  ${f}: ${changed} alan`);
   }
 
-  if (toplam !== beklenen) {
+  if (total !== expected) {
     console.error(
-      `\nUYUŞMAZLIK: ${beklenen} alan bekleniyordu, ${toplam} satır eşleşti. ` +
+      `\nUYUŞMAZLIK: ${expected} alan bekleniyordu, ${total} satır eşleşti. ` +
         `Kaynakta tanınmayan biçim var — yazma iptal.`,
     );
     process.exit(1);
   }
   if (DRY) return;
 
-  for (const [yol, metin] of yazilacak) writeFileSync(yol, metin);
+  for (const [filePath, text] of toWrite) writeFileSync(filePath, text);
 
   // Yazdığını oku: içerik yeniden yüklenip üretilen JSON ile karşılaştırılıyor.
   const dump = path.join(ROOT, "data", "skills", ".verify.json");
@@ -195,15 +195,15 @@ async function main() {
     ],
     { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] },
   );
-  const yuklenen = JSON.parse(readFileSync(dump, "utf8")) as Record<
+  const loaded = JSON.parse(readFileSync(dump, "utf8")) as Record<
     string,
     unknown
   >[];
-  const sapma: string[] = [];
-  for (const e of yuklenen as any[]) {
-    const s = sozlukler.get(e.id as string);
+  const drift: string[] = [];
+  for (const e of loaded as any[]) {
+    const s = glossaries.get(e.id as string);
     if (!s) continue;
-    const hepsi: Alan[] = [
+    const allFields: Field[] = [
       ...(e.gloss ?? []),
       ...(e.targets ?? []),
       // Konuşma görevlerinin `de` alanı var; yazma görevlerinin yok, onların
@@ -215,29 +215,29 @@ async function main() {
           )
         : []),
     ];
-    for (const a of hepsi) {
+    for (const a of allFields) {
       const y = s.get(a.de);
       if (!y) continue;
       // Dört alan da karşılaştırılıyor. Önce yalnızca `tr` ile `en` bakılıyordu
       // ve bu, Züritüütsch'ün tam da yeni olan kısmını doğrulama dışında
       // bırakıyordu: `hd` köprüsü ya da `note` yazılmasa doğrulama yine
       // "tamam" derdi. Yazdığını okumayan doğrulama doğrulama değil.
-      for (const alan of ["tr", "en", "hd", "note"] as const) {
-        if ((y[alan] ?? null) !== ((a[alan] as string | undefined) ?? null))
-          sapma.push(
-            `${e.id} ${a.de} · ${alan}: yazılan "${a[alan] ?? "—"}" ≠ beklenen "${y[alan] ?? "—"}"`,
+      for (const field of ["tr", "en", "hd", "note"] as const) {
+        if ((y[field] ?? null) !== ((a[field] as string | undefined) ?? null))
+          drift.push(
+            `${e.id} ${a.de} · ${field}: yazılan "${a[field] ?? "—"}" ≠ beklenen "${y[field] ?? "—"}"`,
           );
       }
     }
   }
-  if (sapma.length) {
-    console.error(`\nDOĞRULAMA BAŞARISIZ (${sapma.length} sapma):`);
-    sapma.slice(0, 10).forEach((s) => console.error("  " + s));
+  if (drift.length) {
+    console.error(`\nDOĞRULAMA BAŞARISIZ (${drift.length} sapma):`);
+    drift.slice(0, 10).forEach((s) => console.error("  " + s));
     process.exit(1);
   }
 
   console.log(
-    `Uygulama tamam: ${toplam} alan yazıldı ve geri okunarak doğrulandı.`,
+    `Uygulama tamam: ${total} alan yazıldı ve geri okunarak doğrulandı.`,
   );
 }
 

@@ -1,17 +1,17 @@
 {
- "paket": "c1-025",
+ "packet": "c1-025",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 6453,
    "de": "abrutschen",
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist abgerutscht",
-   "mevcutTr": "düşmek, aşağı kaymak",
-   "mevcutBeispiel": "Ohne Betreuung rutschen viele Jugendliche in kriminelle Gruppen ab.",
-   "mevcutBeispielTr": "Rehberlik olmadan birçok genç suç gruplarına kayıyor.",
-   "cakisan": [
+   "currentTr": "düşmek, aşağı kaymak",
+   "currentBeispiel": "Ohne Betreuung rutschen viele Jugendliche in kriminelle Gruppen ab.",
+   "currentBeispielTr": "Rehberlik olmadan birçok genç suç gruplarına kayıyor.",
+   "overlapping": [
     "fallen (A2)",
     "stürzen (B1)"
    ]
@@ -22,10 +22,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat untergebracht",
-   "mevcutTr": "yerleştirmek, barındırmak",
-   "mevcutBeispiel": "Junge Gefangene werden getrennt von Erwachsenen untergebracht.",
-   "mevcutBeispielTr": "Genç mahkûmlar yetişkinlerden ayrı olarak barındırılıyor.",
-   "cakisan": [
+   "currentTr": "yerleştirmek, barındırmak",
+   "currentBeispiel": "Junge Gefangene werden getrennt von Erwachsenen untergebracht.",
+   "currentBeispielTr": "Genç mahkûmlar yetişkinlerden ayrı olarak barındırılıyor.",
+   "overlapping": [
     "ansiedeln (C1)",
     "aufstellen (A2)",
     "verstauen (A2)"
@@ -37,9 +37,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat verbüßt",
-   "mevcutTr": "cezasını çekmek, hapis yatmak",
-   "mevcutBeispiel": "Er verbüßte zwei Drittel seiner Strafe und kam dann frei.",
-   "mevcutBeispielTr": "Cezasının üçte ikisini çekti ve ardından serbest kaldı."
+   "currentTr": "cezasını çekmek, hapis yatmak",
+   "currentBeispiel": "Er verbüßte zwei Drittel seiner Strafe und kam dann frei.",
+   "currentBeispielTr": "Cezasının üçte ikisini çekti ve ardından serbest kaldı."
   },
   {
    "id": 6456,
@@ -47,10 +47,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat bewacht",
-   "mevcutTr": "korumak, gözetim altında tutmak, nöbet tutmak",
-   "mevcutBeispiel": "Nachts bewachen nur wenige Beamte den gesamten Trakt.",
-   "mevcutBeispielTr": "Geceleri tüm koğuş bloğunu yalnızca birkaç görevli gözetliyor.",
-   "cakisan": [
+   "currentTr": "korumak, gözetim altında tutmak, nöbet tutmak",
+   "currentBeispiel": "Nachts bewachen nur wenige Beamte den gesamten Trakt.",
+   "currentBeispielTr": "Geceleri tüm koğuş bloğunu yalnızca birkaç görevli gözetliyor.",
+   "overlapping": [
     "schützen (B1)",
     "beschützen (B2)",
     "bewahren (B2)"
@@ -62,9 +62,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat isoliert",
-   "mevcutTr": "tecrit etmek, yalıtmak",
-   "mevcutBeispiel": "Wer Gefangene isoliert, zerstört genau die Bindungen, die sie halten.",
-   "mevcutBeispielTr": "Mahkûmları tecrit eden, onları ayakta tutan bağları yok eder."
+   "currentTr": "tecrit etmek, yalıtmak",
+   "currentBeispiel": "Wer Gefangene isoliert, zerstört genau die Bindungen, die sie halten.",
+   "currentBeispielTr": "Mahkûmları tecrit eden, onları ayakta tutan bağları yok eder."
   },
   {
    "id": 6458,
@@ -72,9 +72,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat aufgearbeitet",
-   "mevcutTr": "yüzleşmek, gözden geçirip işlemek",
-   "mevcutBeispiel": "In der Therapie arbeitet er seine Tat Schritt für Schritt auf.",
-   "mevcutBeispielTr": "Terapide işlediği suçla adım adım yüzleşiyor."
+   "currentTr": "yüzleşmek, gözden geçirip işlemek",
+   "currentBeispiel": "In der Therapie arbeitet er seine Tat Schritt für Schritt auf.",
+   "currentBeispielTr": "Terapide işlediği suçla adım adım yüzleşiyor."
   },
   {
    "id": 6459,
@@ -82,9 +82,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat deeskaliert",
-   "mevcutTr": "gerginliği azaltmak, yatıştırmak",
-   "mevcutBeispiel": "Geschulte Beamte deeskalieren Konflikte, bevor Gewalt entsteht.",
-   "mevcutBeispielTr": "Eğitimli görevliler, şiddet doğmadan önce çatışmaları yatıştırıyor."
+   "currentTr": "gerginliği azaltmak, yatıştırmak",
+   "currentBeispiel": "Geschulte Beamte deeskalieren Konflikte, bevor Gewalt entsteht.",
+   "currentBeispielTr": "Eğitimli görevliler, şiddet doğmadan önce çatışmaları yatıştırıyor."
   },
   {
    "id": 6460,
@@ -92,9 +92,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat abgeschottet",
-   "mevcutTr": "dış dünyaya kapatmak, yalıtmak",
-   "mevcutBeispiel": "Die Anstalt schottet ihre Insassen fast vollständig von außen ab.",
-   "mevcutBeispielTr": "Kurum, mahkûmlarını dış dünyadan neredeyse tümüyle kopartıyor."
+   "currentTr": "dış dünyaya kapatmak, yalıtmak",
+   "currentBeispiel": "Die Anstalt schottet ihre Insassen fast vollständig von außen ab.",
+   "currentBeispielTr": "Kurum, mahkûmlarını dış dünyadan neredeyse tümüyle kopartıyor."
   },
   {
    "id": 6461,
@@ -102,9 +102,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat rehabilitiert",
-   "mevcutTr": "topluma yeniden kazandırmak, itibarını iade etmek",
-   "mevcutBeispiel": "Der Staat sollte Straffällige nicht nur bestrafen, sondern auch rehabilitieren.",
-   "mevcutBeispielTr": "Devlet suç işleyenleri yalnızca cezalandırmakla kalmayıp topluma da kazandırmalı."
+   "currentTr": "topluma yeniden kazandırmak, itibarını iade etmek",
+   "currentBeispiel": "Der Staat sollte Straffällige nicht nur bestrafen, sondern auch rehabilitieren.",
+   "currentBeispielTr": "Devlet suç işleyenleri yalnızca cezalandırmakla kalmayıp topluma da kazandırmalı."
   },
   {
    "id": 6462,
@@ -112,10 +112,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist entgleist",
-   "mevcutTr": "kontrolden çıkmak, çığırından çıkmak",
-   "mevcutBeispiel": "Die Auseinandersetzung entgleiste innerhalb weniger Minuten völlig.",
-   "mevcutBeispielTr": "Tartışma birkaç dakika içinde tamamen çığırından çıktı.",
-   "cakisan": [
+   "currentTr": "kontrolden çıkmak, çığırından çıkmak",
+   "currentBeispiel": "Die Auseinandersetzung entgleiste innerhalb weniger Minuten völlig.",
+   "currentBeispielTr": "Tartışma birkaç dakika içinde tamamen çığırından çıktı.",
+   "overlapping": [
     "ausufern (C1)"
    ]
   },
@@ -125,9 +125,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat schikaniert",
-   "mevcutTr": "eziyet etmek, kasten zorluk çıkarmak",
-   "mevcutBeispiel": "Mitgefangene schikanierten ihn systematisch wegen seines Delikts.",
-   "mevcutBeispielTr": "Diğer mahkûmlar işlediği suç yüzünden ona sistemli biçimde eziyet ettiler."
+   "currentTr": "eziyet etmek, kasten zorluk çıkarmak",
+   "currentBeispiel": "Mitgefangene schikanierten ihn systematisch wegen seines Delikts.",
+   "currentBeispielTr": "Diğer mahkûmlar işlediği suç yüzünden ona sistemli biçimde eziyet ettiler."
   },
   {
    "id": 6464,
@@ -135,9 +135,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "suç işlemiş, suça bulaşmış",
-   "mevcutBeispiel": "Die meisten straffällig gewordenen Jugendlichen bleiben nicht dauerhaft auffällig.",
-   "mevcutBeispielTr": "Suça bulaşmış gençlerin çoğu kalıcı olarak sorunlu kalmıyor."
+   "currentTr": "suç işlemiş, suça bulaşmış",
+   "currentBeispiel": "Die meisten straffällig gewordenen Jugendlichen bleiben nicht dauerhaft auffällig.",
+   "currentBeispielTr": "Suça bulaşmış gençlerin çoğu kalıcı olarak sorunlu kalmıyor."
   },
   {
    "id": 6465,
@@ -145,9 +145,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "tekrar suç işleyen, nüksetmiş",
-   "mevcutBeispiel": "Fast die Hälfte der Entlassenen wird binnen drei Jahren rückfällig.",
-   "mevcutBeispielTr": "Tahliye edilenlerin neredeyse yarısı üç yıl içinde yeniden suç işliyor."
+   "currentTr": "tekrar suç işleyen, nüksetmiş",
+   "currentBeispiel": "Fast die Hälfte der Entlassenen wird binnen drei Jahren rückfällig.",
+   "currentBeispielTr": "Tahliye edilenlerin neredeyse yarısı üç yıl içinde yeniden suç işliyor."
   },
   {
    "id": 6466,
@@ -155,9 +155,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "şiddete eğilimli",
-   "mevcutBeispiel": "Nur eine kleine, gewaltbereite Minderheit prägt das öffentliche Bild.",
-   "mevcutBeispielTr": "Kamusal imgeyi yalnızca küçük ve şiddete eğilimli bir azınlık belirliyor."
+   "currentTr": "şiddete eğilimli",
+   "currentBeispiel": "Nur eine kleine, gewaltbereite Minderheit prägt das öffentliche Bild.",
+   "currentBeispielTr": "Kamusal imgeyi yalnızca küçük ve şiddete eğilimli bir azınlık belirliyor."
   },
   {
    "id": 6467,
@@ -165,9 +165,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sabıkalı",
-   "mevcutBeispiel": "Wer vorbestraft ist, findet auf dem Arbeitsmarkt kaum eine Chance.",
-   "mevcutBeispielTr": "Sabıkalı olan kişi iş piyasasında neredeyse hiç şans bulamıyor."
+   "currentTr": "sabıkalı",
+   "currentBeispiel": "Wer vorbestraft ist, findet auf dem Arbeitsmarkt kaum eine Chance.",
+   "currentBeispielTr": "Sabıkalı olan kişi iş piyasasında neredeyse hiç şans bulamıyor."
   },
   {
    "id": 6468,
@@ -175,9 +175,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çevre kaynaklı",
-   "mevcutBeispiel": "Solche Konflikte sind eher milieubedingt als persönlich verschuldet.",
-   "mevcutBeispielTr": "Bu tür çatışmalar kişisel kusurdan çok çevre kaynaklıdır."
+   "currentTr": "çevre kaynaklı",
+   "currentBeispiel": "Solche Konflikte sind eher milieubedingt als persönlich verschuldet.",
+   "currentBeispielTr": "Bu tür çatışmalar kişisel kusurdan çok çevre kaynaklıdır."
   },
   {
    "id": 6469,
@@ -185,9 +185,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "suça yol açan",
-   "mevcutBeispiel": "Beengter Wohnraum und Armut wirken zusammen kriminogen.",
-   "mevcutBeispielTr": "Dar konut koşulları ve yoksulluk birlikte suça yol açıcı etki yapar."
+   "currentTr": "suça yol açan",
+   "currentBeispiel": "Beengter Wohnraum und Armut wirken zusammen kriminogen.",
+   "currentBeispielTr": "Dar konut koşulları ve yoksulluk birlikte suça yol açıcı etki yapar."
   },
   {
    "id": 6470,
@@ -195,9 +195,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "zorla, cebren",
-   "mevcutBeispiel": "Niemand darf zwangsweise an einer Therapie teilnehmen müssen.",
-   "mevcutBeispielTr": "Hiç kimse bir terapiye zorla katılmak zorunda bırakılamaz."
+   "currentTr": "zorla, cebren",
+   "currentBeispiel": "Niemand darf zwangsweise an einer Therapie teilnehmen müssen.",
+   "currentBeispielTr": "Hiç kimse bir terapiye zorla katılmak zorunda bırakılamaz."
   },
   {
    "id": 6471,
@@ -205,9 +205,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "önleyici",
-   "mevcutBeispiel": "Sozialarbeit in Brennpunkten wirkt präventiv und spart langfristig Kosten.",
-   "mevcutBeispielTr": "Sorunlu bölgelerdeki sosyal hizmet önleyici etki yapar ve uzun vadede maliyet düşürür."
+   "currentTr": "önleyici",
+   "currentBeispiel": "Sozialarbeit in Brennpunkten wirkt präventiv und spart langfristig Kosten.",
+   "currentBeispielTr": "Sorunlu bölgelerdeki sosyal hizmet önleyici etki yapar ve uzun vadede maliyet düşürür."
   },
   {
    "id": 6472,
@@ -215,9 +215,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bühnenbilder",
-   "mevcutTr": "sahne tasarımı, dekor",
-   "mevcutBeispiel": "Das karge Bühnenbild lenkt den Blick ganz auf die Sprache.",
-   "mevcutBeispielTr": "Yalın dekor, dikkati bütünüyle dile yöneltiyor."
+   "currentTr": "sahne tasarımı, dekor",
+   "currentBeispiel": "Das karge Bühnenbild lenkt den Blick ganz auf die Sprache.",
+   "currentBeispielTr": "Yalın dekor, dikkati bütünüyle dile yöneltiyor."
   },
   {
    "id": 6473,
@@ -225,9 +225,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Uraufführungen",
-   "mevcutTr": "dünya prömiyeri, ilk gösterim",
-   "mevcutBeispiel": "Die Uraufführung wurde vom Publikum zwiespältig aufgenommen.",
-   "mevcutBeispielTr": "İlk gösterim seyirci tarafından ikircikli biçimde karşılandı."
+   "currentTr": "dünya prömiyeri, ilk gösterim",
+   "currentBeispiel": "Die Uraufführung wurde vom Publikum zwiespältig aufgenommen.",
+   "currentBeispielTr": "İlk gösterim seyirci tarafından ikircikli biçimde karşılandı."
   },
   {
    "id": 6474,
@@ -235,9 +235,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Dramaturgien",
-   "mevcutTr": "dramaturji, kurgu düzeni",
-   "mevcutBeispiel": "Die Dramaturgie des Abends wirkt streckenweise überladen.",
-   "mevcutBeispielTr": "Gecenin dramaturjisi yer yer fazla yüklü duruyor."
+   "currentTr": "dramaturji, kurgu düzeni",
+   "currentBeispiel": "Die Dramaturgie des Abends wirkt streckenweise überladen.",
+   "currentBeispielTr": "Gecenin dramaturjisi yer yer fazla yüklü duruyor."
   },
   {
    "id": 6475,
@@ -245,9 +245,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kunstkritiken",
-   "mevcutTr": "sanat eleştirisi",
-   "mevcutBeispiel": "Die Kunstkritik hat sein Frühwerk lange übersehen.",
-   "mevcutBeispielTr": "Sanat eleştirisi onun erken dönem işlerini uzun süre görmezden geldi."
+   "currentTr": "sanat eleştirisi",
+   "currentBeispiel": "Die Kunstkritik hat sein Frühwerk lange übersehen.",
+   "currentBeispielTr": "Sanat eleştirisi onun erken dönem işlerini uzun süre görmezden geldi."
   },
   {
    "id": 6476,
@@ -255,9 +255,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kulturpolitiken",
-   "mevcutTr": "kültür politikası",
-   "mevcutBeispiel": "Die Kulturpolitik der Stadt bevorzugt seit Jahren große Häuser.",
-   "mevcutBeispielTr": "Kentin kültür politikası yıllardır büyük kurumları kayırıyor."
+   "currentTr": "kültür politikası",
+   "currentBeispiel": "Die Kulturpolitik der Stadt bevorzugt seit Jahren große Häuser.",
+   "currentBeispielTr": "Kentin kültür politikası yıllardır büyük kurumları kayırıyor."
   },
   {
    "id": 6477,
@@ -265,9 +265,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zuschauerschaften",
-   "mevcutTr": "izleyici kitlesi, seyirciler",
-   "mevcutBeispiel": "Die Zuschauerschaft des Hauses ist deutlich jünger geworden.",
-   "mevcutBeispielTr": "Kurumun izleyici kitlesi belirgin biçimde gençleşti."
+   "currentTr": "izleyici kitlesi, seyirciler",
+   "currentBeispiel": "Die Zuschauerschaft des Hauses ist deutlich jünger geworden.",
+   "currentBeispielTr": "Kurumun izleyici kitlesi belirgin biçimde gençleşti."
   },
   {
    "id": 6478,
@@ -275,9 +275,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bildsprachen",
-   "mevcutTr": "görsel dil, imge dili",
-   "mevcutBeispiel": "Ihre Bildsprache schöpft aus mittelalterlichen Vorlagen.",
-   "mevcutBeispielTr": "Onun görsel dili ortaçağ örneklerinden besleniyor."
+   "currentTr": "görsel dil, imge dili",
+   "currentBeispiel": "Ihre Bildsprache schöpft aus mittelalterlichen Vorlagen.",
+   "currentBeispielTr": "Onun görsel dili ortaçağ örneklerinden besleniyor."
   },
   {
    "id": 6479,
@@ -285,9 +285,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gattungen",
-   "mevcutTr": "tür (edebî, sanatsal), cins",
-   "mevcutBeispiel": "Das Stück sprengt die Grenzen der klassischen Gattungen.",
-   "mevcutBeispielTr": "Oyun, klasik türlerin sınırlarını zorluyor."
+   "currentTr": "tür (edebî, sanatsal), cins",
+   "currentBeispiel": "Das Stück sprengt die Grenzen der klassischen Gattungen.",
+   "currentBeispielTr": "Oyun, klasik türlerin sınırlarını zorluyor."
   },
   {
    "id": 6480,
@@ -295,9 +295,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Stilrichtungen",
-   "mevcutTr": "üslup akımı, stil yönelimi",
-   "mevcutBeispiel": "Der Maler lässt sich keiner einzigen Stilrichtung zuordnen.",
-   "mevcutBeispielTr": "Ressam tek bir üslup akımına yerleştirilemiyor."
+   "currentTr": "üslup akımı, stil yönelimi",
+   "currentBeispiel": "Der Maler lässt sich keiner einzigen Stilrichtung zuordnen.",
+   "currentBeispielTr": "Ressam tek bir üslup akımına yerleştirilemiyor."
   },
   {
    "id": 6481,
@@ -305,9 +305,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kunstgriffe",
-   "mevcutTr": "ustaca çözüm, kurnaz numara",
-   "mevcutBeispiel": "Mit einem einfachen Kunstgriff verdoppelt der Regisseur die Hauptfigur.",
-   "mevcutBeispielTr": "Yönetmen basit bir hileyle ana karakteri ikiye katlıyor."
+   "currentTr": "ustaca çözüm, kurnaz numara",
+   "currentBeispiel": "Mit einem einfachen Kunstgriff verdoppelt der Regisseur die Hauptfigur.",
+   "currentBeispielTr": "Yönetmen basit bir hileyle ana karakteri ikiye katlıyor."
   },
   {
    "id": 6482,
@@ -315,9 +315,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "virtüözlük, teknik ustalık",
-   "mevcutBeispiel": "Seine Virtuosität am Klavier verdeckt manchmal die Interpretation.",
-   "mevcutBeispielTr": "Piyanodaki virtüözlüğü kimi zaman yorumu gölgeliyor."
+   "currentTr": "virtüözlük, teknik ustalık",
+   "currentBeispiel": "Seine Virtuosität am Klavier verdeckt manchmal die Interpretation.",
+   "currentBeispielTr": "Piyanodaki virtüözlüğü kimi zaman yorumu gölgeliyor."
   },
   {
    "id": 6483,
@@ -325,9 +325,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Improvisationen",
-   "mevcutTr": "doğaçlama",
-   "mevcutBeispiel": "Der zweite Teil des Konzerts besteht fast nur aus Improvisation.",
-   "mevcutBeispielTr": "Konserin ikinci bölümü neredeyse tümüyle doğaçlamadan oluşuyor."
+   "currentTr": "doğaçlama",
+   "currentBeispiel": "Der zweite Teil des Konzerts besteht fast nur aus Improvisation.",
+   "currentBeispielTr": "Konserin ikinci bölümü neredeyse tümüyle doğaçlamadan oluşuyor."
   },
   {
    "id": 6484,
@@ -335,9 +335,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Lesarten",
-   "mevcutTr": "okuma biçimi, yorum",
-   "mevcutBeispiel": "Diese Lesart des Dramas ist gewagt, aber überzeugend.",
-   "mevcutBeispielTr": "Oyunun bu okuması cüretkâr ama inandırıcı."
+   "currentTr": "okuma biçimi, yorum",
+   "currentBeispiel": "Diese Lesart des Dramas ist gewagt, aber überzeugend.",
+   "currentBeispielTr": "Oyunun bu okuması cüretkâr ama inandırıcı."
   },
   {
    "id": 6485,
@@ -345,9 +345,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Werkbegriffe",
-   "mevcutTr": "yapıt kavramı",
-   "mevcutBeispiel": "Die Installation stellt den traditionellen Werkbegriff radikal infrage.",
-   "mevcutBeispielTr": "Yerleştirme, geleneksel yapıt kavramını kökten sorguluyor."
+   "currentTr": "yapıt kavramı",
+   "currentBeispiel": "Die Installation stellt den traditionellen Werkbegriff radikal infrage.",
+   "currentBeispielTr": "Yerleştirme, geleneksel yapıt kavramını kökten sorguluyor."
   },
   {
    "id": 6486,
@@ -355,9 +355,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Autorschaften",
-   "mevcutTr": "yazarlık, eser sahipliği",
-   "mevcutBeispiel": "Bei kollektiven Projekten verschwimmt die Frage der Autorschaft.",
-   "mevcutBeispielTr": "Kolektif projelerde eser sahipliği sorusu bulanıklaşıyor."
+   "currentTr": "yazarlık, eser sahipliği",
+   "currentBeispiel": "Bei kollektiven Projekten verschwimmt die Frage der Autorschaft.",
+   "currentBeispielTr": "Kolektif projelerde eser sahipliği sorusu bulanıklaşıyor."
   },
   {
    "id": 6487,
@@ -365,10 +365,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "özgünlük",
-   "mevcutBeispiel": "Der Jury fehlte in diesem Entwurf jede Originalität.",
-   "mevcutBeispielTr": "Jüri bu tasarımda hiçbir özgünlük bulamadı.",
-   "cakisan": [
+   "currentTr": "özgünlük",
+   "currentBeispiel": "Der Jury fehlte in diesem Entwurf jede Originalität.",
+   "currentBeispielTr": "Jüri bu tasarımda hiçbir özgünlük bulamadı.",
+   "overlapping": [
     "die Authentizität (C1)"
    ]
   },
@@ -378,9 +378,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verfremdungen",
-   "mevcutTr": "yabancılaştırma",
-   "mevcutBeispiel": "Die Verfremdung hindert das Publikum am bequemen Mitfühlen.",
-   "mevcutBeispielTr": "Yabancılaştırma, seyircinin rahatça özdeşleşmesini engelliyor."
+   "currentTr": "yabancılaştırma",
+   "currentBeispiel": "Die Verfremdung hindert das Publikum am bequemen Mitfühlen.",
+   "currentBeispielTr": "Yabancılaştırma, seyircinin rahatça özdeşleşmesini engelliyor."
   },
   {
    "id": 6489,
@@ -388,9 +388,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Tabubrüche",
-   "mevcutTr": "tabuyu yıkma, tabu ihlali",
-   "mevcutBeispiel": "Der Tabubruch allein macht noch keine gute Kunst.",
-   "mevcutBeispielTr": "Yalnızca tabu yıkmak henüz iyi sanat yapmaz."
+   "currentTr": "tabuyu yıkma, tabu ihlali",
+   "currentBeispiel": "Der Tabubruch allein macht noch keine gute Kunst.",
+   "currentBeispielTr": "Yalnızca tabu yıkmak henüz iyi sanat yapmaz."
   },
   {
    "id": 6490,
@@ -398,9 +398,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rezeptionsgeschichten",
-   "mevcutTr": "alımlanma tarihi",
-   "mevcutBeispiel": "Die Rezeptionsgeschichte des Romans verlief äußerst wechselhaft.",
-   "mevcutBeispielTr": "Romanın alımlanma tarihi son derece değişken seyretti."
+   "currentTr": "alımlanma tarihi",
+   "currentBeispiel": "Die Rezeptionsgeschichte des Romans verlief äußerst wechselhaft.",
+   "currentBeispielTr": "Romanın alımlanma tarihi son derece değişken seyretti."
   },
   {
    "id": 6491,
@@ -408,9 +408,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Geschmacksurteile",
-   "mevcutTr": "beğeni yargısı",
-   "mevcutBeispiel": "Ein Geschmacksurteil lässt sich selten zwingend begründen.",
-   "mevcutBeispielTr": "Bir beğeni yargısı nadiren zorunlu biçimde gerekçelendirilebilir."
+   "currentTr": "beğeni yargısı",
+   "currentBeispiel": "Ein Geschmacksurteil lässt sich selten zwingend begründen.",
+   "currentBeispielTr": "Bir beğeni yargısı nadiren zorunlu biçimde gerekçelendirilebilir."
   },
   {
    "id": 6492,
@@ -418,9 +418,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "uzmanlık, erbaplık",
-   "mevcutBeispiel": "Seine Kennerschaft der Barockmalerei ist im Fach unbestritten.",
-   "mevcutBeispielTr": "Barok resim konusundaki uzmanlığı alanda tartışmasızdır."
+   "currentTr": "uzmanlık, erbaplık",
+   "currentBeispiel": "Seine Kennerschaft der Barockmalerei ist im Fach unbestritten.",
+   "currentBeispielTr": "Barok resim konusundaki uzmanlığı alanda tartışmasızdır."
   },
   {
    "id": 6493,
@@ -428,9 +428,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Mäzene",
-   "mevcutTr": "sanat hamisi, mesen",
-   "mevcutBeispiel": "Ohne private Mäzene wäre die Sammlung nie entstanden.",
-   "mevcutBeispielTr": "Özel hamiler olmasaydı koleksiyon hiç oluşmazdı."
+   "currentTr": "sanat hamisi, mesen",
+   "currentBeispiel": "Ohne private Mäzene wäre die Sammlung nie entstanden.",
+   "currentBeispielTr": "Özel hamiler olmasaydı koleksiyon hiç oluşmazdı."
   },
   {
    "id": 6494,
@@ -438,9 +438,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kulturbetriebe",
-   "mevcutTr": "kültür sektörü, sanat camiası",
-   "mevcutBeispiel": "Im Kulturbetrieb zählen Netzwerke oft mehr als Talent.",
-   "mevcutBeispielTr": "Kültür camiasında ilişkiler çoğu zaman yetenekten daha çok sayılır."
+   "currentTr": "kültür sektörü, sanat camiası",
+   "currentBeispiel": "Im Kulturbetrieb zählen Netzwerke oft mehr als Talent.",
+   "currentBeispielTr": "Kültür camiasında ilişkiler çoğu zaman yetenekten daha çok sayılır."
   },
   {
    "id": 6495,
@@ -448,9 +448,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kunstmärkte",
-   "mevcutTr": "sanat piyasası",
-   "mevcutBeispiel": "Der Kunstmarkt reagiert empfindlich auf jede Krise.",
-   "mevcutBeispielTr": "Sanat piyasası her krize duyarlı tepki veriyor."
+   "currentTr": "sanat piyasası",
+   "currentBeispiel": "Der Kunstmarkt reagiert empfindlich auf jede Krise.",
+   "currentBeispielTr": "Sanat piyasası her krize duyarlı tepki veriyor."
   },
   {
    "id": 6496,
@@ -458,9 +458,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Retrospektiven",
-   "mevcutTr": "retrospektif, geriye dönük sergi",
-   "mevcutBeispiel": "Das Museum widmet der Fotografin eine große Retrospektive.",
-   "mevcutBeispielTr": "Müze, fotoğrafçıya büyük bir retrospektif ayırıyor."
+   "currentTr": "retrospektif, geriye dönük sergi",
+   "currentBeispiel": "Das Museum widmet der Fotografin eine große Retrospektive.",
+   "currentBeispielTr": "Müze, fotoğrafçıya büyük bir retrospektif ayırıyor."
   },
   {
    "id": 6497,
@@ -468,9 +468,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vernissagen",
-   "mevcutTr": "sergi açılışı",
-   "mevcutBeispiel": "Zur Vernissage kamen mehr Journalisten als erwartet.",
-   "mevcutBeispielTr": "Sergi açılışına beklenenden çok gazeteci geldi."
+   "currentTr": "sergi açılışı",
+   "currentBeispiel": "Zur Vernissage kamen mehr Journalisten als erwartet.",
+   "currentBeispielTr": "Sergi açılışına beklenenden çok gazeteci geldi."
   },
   {
    "id": 6498,
@@ -478,9 +478,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "anıt koruma, tarihi eser bakımı",
-   "mevcutBeispiel": "Die Denkmalpflege hat den Umbau der Fassade untersagt.",
-   "mevcutBeispielTr": "Anıtlar kurulu cephenin değiştirilmesini yasakladı."
+   "currentTr": "anıt koruma, tarihi eser bakımı",
+   "currentBeispiel": "Die Denkmalpflege hat den Umbau der Fassade untersagt.",
+   "currentBeispielTr": "Anıtlar kurulu cephenin değiştirilmesini yasakladı."
   },
   {
    "id": 6499,
@@ -488,9 +488,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Dissonanzen",
-   "mevcutTr": "uyumsuzluk, disonans",
-   "mevcutBeispiel": "Die unaufgelöste Dissonanz am Schluss verstört viele Hörer.",
-   "mevcutBeispielTr": "Sondaki çözülmemiş disonans birçok dinleyiciyi rahatsız ediyor."
+   "currentTr": "uyumsuzluk, disonans",
+   "currentBeispiel": "Die unaufgelöste Dissonanz am Schluss verstört viele Hörer.",
+   "currentBeispielTr": "Sondaki çözülmemiş disonans birçok dinleyiciyi rahatsız ediyor."
   },
   {
    "id": 6500,
@@ -498,9 +498,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Partituren",
-   "mevcutTr": "partisyon, nota metni",
-   "mevcutBeispiel": "Der Dirigent kennt die Partitur bis in jede Nebenstimme.",
-   "mevcutBeispielTr": "Şef partisyonu en ufak ara sese kadar biliyor."
+   "currentTr": "partisyon, nota metni",
+   "currentBeispiel": "Der Dirigent kennt die Partitur bis in jede Nebenstimme.",
+   "currentBeispielTr": "Şef partisyonu en ufak ara sese kadar biliyor."
   },
   {
    "id": 6501,
@@ -508,9 +508,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kompositionen",
-   "mevcutTr": "kompozisyon, düzenleniş, beste",
-   "mevcutBeispiel": "Die Komposition des Bildes folgt einer strengen Diagonale.",
-   "mevcutBeispielTr": "Resmin kompozisyonu katı bir köşegeni izliyor."
+   "currentTr": "kompozisyon, düzenleniş, beste",
+   "currentBeispiel": "Die Komposition des Bildes folgt einer strengen Diagonale.",
+   "currentBeispielTr": "Resmin kompozisyonu katı bir köşegeni izliyor."
   },
   {
    "id": 6502,
@@ -518,9 +518,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Adaptionen",
-   "mevcutTr": "uyarlama",
-   "mevcutBeispiel": "Die filmische Adaption bleibt hinter der Vorlage zurück.",
-   "mevcutBeispielTr": "Sinema uyarlaması özgün metnin gerisinde kalıyor."
+   "currentTr": "uyarlama",
+   "currentBeispiel": "Die filmische Adaption bleibt hinter der Vorlage zurück.",
+   "currentBeispielTr": "Sinema uyarlaması özgün metnin gerisinde kalıyor."
   }
  ]
 }

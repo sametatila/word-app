@@ -1,16 +1,16 @@
 {
- "paket": "b2-011",
+ "packet": "b2-011",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4143,
    "de": "mangelhaft",
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kusurlu, eksik, yetersiz",
-   "mevcutBeispiel": "Die Dokumentation der Versuche war mangelhaft.",
-   "mevcutBeispielTr": "Deneylerin belgelenmesi kusurluydu."
+   "currentTr": "kusurlu, eksik, yetersiz",
+   "currentBeispiel": "Die Dokumentation der Versuche war mangelhaft.",
+   "currentBeispielTr": "Deneylerin belgelenmesi kusurluydu."
   },
   {
    "id": 4144,
@@ -18,10 +18,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "mükemmel, üstün, çok iyi",
-   "mevcutBeispiel": "Sie hat die Prüfung mit einem hervorragenden Ergebnis bestanden.",
-   "mevcutBeispielTr": "Sınavı mükemmel bir sonuçla geçti.",
-   "cakisan": [
+   "currentTr": "mükemmel, üstün, çok iyi",
+   "currentBeispiel": "Sie hat die Prüfung mit einem hervorragenden Ergebnis bestanden.",
+   "currentBeispielTr": "Sınavı mükemmel bir sonuçla geçti.",
+   "overlapping": [
     "ausgezeichnet (B1)",
     "perfekt (B1)"
    ]
@@ -32,9 +32,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kabul edilebilir, makul",
-   "mevcutBeispiel": "Für diesen Preis ist die Qualität durchaus akzeptabel.",
-   "mevcutBeispielTr": "Bu fiyata kalite gayet kabul edilebilir."
+   "currentTr": "kabul edilebilir, makul",
+   "currentBeispiel": "Für diesen Preis ist die Qualität durchaus akzeptabel.",
+   "currentBeispielTr": "Bu fiyata kalite gayet kabul edilebilir."
   },
   {
    "id": 4146,
@@ -42,10 +42,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "çeşitli, çok yönlü",
-   "mevcutBeispiel": "Die Ursachen des Problems sind vielfältig und schwer zu trennen.",
-   "mevcutBeispielTr": "Sorunun nedenleri çeşitli ve birbirinden ayrılması zor.",
-   "cakisan": [
+   "currentTr": "çeşitli, çok yönlü",
+   "currentBeispiel": "Die Ursachen des Problems sind vielfältig und schwer zu trennen.",
+   "currentBeispielTr": "Sorunun nedenleri çeşitli ve birbirinden ayrılması zor.",
+   "overlapping": [
     "abwechslungsreich (B2)"
    ]
   },
@@ -55,10 +55,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "anlamlı, kayda değer",
-   "mevcutBeispiel": "Zwischen beiden Gruppen bestand kein signifikanter Unterschied.",
-   "mevcutBeispielTr": "İki grup arasında anlamlı bir fark yoktu.",
-   "cakisan": [
+   "currentTr": "anlamlı, kayda değer",
+   "currentBeispiel": "Zwischen beiden Gruppen bestand kein signifikanter Unterschied.",
+   "currentBeispielTr": "İki grup arasında anlamlı bir fark yoktu.",
+   "overlapping": [
     "sinnvoll (B1)",
     "aussagekräftig (C1)"
    ]
@@ -69,9 +69,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sabit, değişmeyen",
-   "mevcutBeispiel": "Die Temperatur blieb über Stunden konstant.",
-   "mevcutBeispielTr": "Sıcaklık saatlerce sabit kaldı."
+   "currentTr": "sabit, değişmeyen",
+   "currentBeispiel": "Die Temperatur blieb über Stunden konstant.",
+   "currentBeispielTr": "Sıcaklık saatlerce sabit kaldı."
   },
   {
    "id": 4149,
@@ -79,9 +79,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "muazzam, çok büyük",
-   "mevcutBeispiel": "Der Aufwand für die Umstellung war enorm.",
-   "mevcutBeispielTr": "Geçiş için harcanan emek muazzamdı."
+   "currentTr": "muazzam, çok büyük",
+   "currentBeispiel": "Der Aufwand für die Umstellung war enorm.",
+   "currentBeispielTr": "Geçiş için harcanan emek muazzamdı."
   },
   {
    "id": 4150,
@@ -89,9 +89,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "cılız, kıt, yetersiz",
-   "mevcutBeispiel": "Die Ausbeute des Versuchs fiel ziemlich dürftig aus.",
-   "mevcutBeispielTr": "Deneyin verimi oldukça cılız çıktı."
+   "currentTr": "cılız, kıt, yetersiz",
+   "currentBeispiel": "Die Ausbeute des Versuchs fiel ziemlich dürftig aus.",
+   "currentBeispielTr": "Deneyin verimi oldukça cılız çıktı."
   },
   {
    "id": 4151,
@@ -99,9 +99,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "tek tük, münferit",
-   "mevcutBeispiel": "Vereinzelt gab es Kritik an dem neuen Verfahren.",
-   "mevcutBeispielTr": "Yeni yönteme tek tük eleştiri geldi."
+   "currentTr": "tek tük, münferit",
+   "currentBeispiel": "Vereinzelt gab es Kritik an dem neuen Verfahren.",
+   "currentBeispielTr": "Yeni yönteme tek tük eleştiri geldi."
   },
   {
    "id": 4152,
@@ -109,10 +109,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sınırlı, kolayca kavranabilir",
-   "mevcutBeispiel": "Der finanzielle Schaden blieb bislang überschaubar.",
-   "mevcutBeispielTr": "Mali zarar şimdilik sınırlı kaldı.",
-   "cakisan": [
+   "currentTr": "sınırlı, kolayca kavranabilir",
+   "currentBeispiel": "Der finanzielle Schaden blieb bislang überschaubar.",
+   "currentBeispielTr": "Mali zarar şimdilik sınırlı kaldı.",
+   "overlapping": [
     "begrenzt (B1)"
    ]
   },
@@ -122,9 +122,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kayda değer, anmaya değer",
-   "mevcutBeispiel": "Nennenswerte Fortschritte gab es in diesem Bereich nicht.",
-   "mevcutBeispielTr": "Bu alanda kayda değer bir ilerleme olmadı."
+   "currentTr": "kayda değer, anmaya değer",
+   "currentBeispiel": "Nennenswerte Fortschritte gab es in diesem Bereich nicht.",
+   "currentBeispielTr": "Bu alanda kayda değer bir ilerleme olmadı."
   },
   {
    "id": 4154,
@@ -132,9 +132,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "gözle görülür biçimde, gitgide",
-   "mevcutBeispiel": "Die Lage auf dem Wohnungsmarkt spitzt sich zusehends zu.",
-   "mevcutBeispielTr": "Konut piyasasındaki durum gitgide keskinleşiyor."
+   "currentTr": "gözle görülür biçimde, gitgide",
+   "currentBeispiel": "Die Lage auf dem Wohnungsmarkt spitzt sich zusehends zu.",
+   "currentBeispielTr": "Konut piyasasındaki durum gitgide keskinleşiyor."
   },
   {
    "id": 4155,
@@ -142,9 +142,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kademeli olarak, peyderpey",
-   "mevcutBeispiel": "Die Förderung wird in den nächsten Jahren sukzessive zurückgefahren.",
-   "mevcutBeispielTr": "Destek önümüzdeki yıllarda kademeli olarak azaltılacak."
+   "currentTr": "kademeli olarak, peyderpey",
+   "currentBeispiel": "Die Förderung wird in den nächsten Jahren sukzessive zurückgefahren.",
+   "currentBeispielTr": "Destek önümüzdeki yıllarda kademeli olarak azaltılacak."
   },
   {
    "id": 4156,
@@ -152,9 +152,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "adım adım, aşamalı olarak",
-   "mevcutBeispiel": "Die strengen Regeln sollen schrittweise gelockert werden.",
-   "mevcutBeispielTr": "Sıkı kuralların adım adım gevşetilmesi planlanıyor."
+   "currentTr": "adım adım, aşamalı olarak",
+   "currentBeispiel": "Die strengen Regeln sollen schrittweise gelockert werden.",
+   "currentBeispielTr": "Sıkı kuralların adım adım gevşetilmesi planlanıyor."
   },
   {
    "id": 4157,
@@ -162,9 +162,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "orantısız biçimde fazla, orantısız yüksek",
-   "mevcutBeispiel": "Junge Familien sind von den Kosten überproportional betroffen.",
-   "mevcutBeispielTr": "Genç aileler maliyetlerden orantısız biçimde fazla etkileniyor."
+   "currentTr": "orantısız biçimde fazla, orantısız yüksek",
+   "currentBeispiel": "Junge Familien sind von den Kosten überproportional betroffen.",
+   "currentBeispielTr": "Genç aileler maliyetlerden orantısız biçimde fazla etkileniyor."
   },
   {
    "id": 4158,
@@ -172,10 +172,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "belirleyici, tayin edici",
-   "mevcutBeispiel": "Für die Entscheidung war letztlich der Preis ausschlaggebend.",
-   "mevcutBeispielTr": "Karar için nihayetinde fiyat belirleyici oldu.",
-   "cakisan": [
+   "currentTr": "belirleyici, tayin edici",
+   "currentBeispiel": "Für die Entscheidung war letztlich der Preis ausschlaggebend.",
+   "currentBeispielTr": "Karar için nihayetinde fiyat belirleyici oldu.",
+   "overlapping": [
     "maßgeblich (B2)"
    ]
   },
@@ -185,9 +185,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "eksik, boşluklarla dolu",
-   "mevcutBeispiel": "Die Angaben in der Akte sind an mehreren Stellen lückenhaft.",
-   "mevcutBeispielTr": "Dosyadaki bilgiler birçok yerde eksik."
+   "currentTr": "eksik, boşluklarla dolu",
+   "currentBeispiel": "Die Angaben in der Akte sind an mehreren Stellen lückenhaft.",
+   "currentBeispielTr": "Dosyadaki bilgiler birçok yerde eksik."
   },
   {
    "id": 4160,
@@ -195,9 +195,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kusursuz, sorunsuz",
-   "mevcutBeispiel": "Das Gerät funktionierte während der gesamten Prüfung einwandfrei.",
-   "mevcutBeispielTr": "Cihaz test boyunca kusursuz çalıştı."
+   "currentTr": "kusursuz, sorunsuz",
+   "currentBeispiel": "Das Gerät funktionierte während der gesamten Prüfung einwandfrei.",
+   "currentBeispielTr": "Cihaz test boyunca kusursuz çalıştı."
   },
   {
    "id": 4161,
@@ -205,9 +205,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "en iyi ihtimalle, olsa olsa",
-   "mevcutBeispiel": "Die Einsparung beträgt bestenfalls ein paar hundert Franken.",
-   "mevcutBeispielTr": "Tasarruf en iyi ihtimalle birkaç yüz frank tutar."
+   "currentTr": "en iyi ihtimalle, olsa olsa",
+   "currentBeispiel": "Die Einsparung beträgt bestenfalls ein paar hundert Franken.",
+   "currentBeispielTr": "Tasarruf en iyi ihtimalle birkaç yüz frank tutar."
   },
   {
    "id": 4162,
@@ -215,9 +215,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat sich verschärft",
-   "mevcutTr": "keskinleşmek, ağırlaşmak",
-   "mevcutBeispiel": "Der Wettbewerb in der Branche hat sich deutlich verschärft.",
-   "mevcutBeispielTr": "Sektördeki rekabet belirgin biçimde sertleşti."
+   "currentTr": "keskinleşmek, ağırlaşmak",
+   "currentBeispiel": "Der Wettbewerb in der Branche hat sich deutlich verschärft.",
+   "currentBeispielTr": "Sektördeki rekabet belirgin biçimde sertleşti."
   },
   {
    "id": 4163,
@@ -225,10 +225,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gesteigert",
-   "mevcutTr": "artırmak, yükseltmek (kademeli olarak)",
-   "mevcutBeispiel": "Der Betrieb konnte seinen Absatz um zwölf Prozent steigern.",
-   "mevcutBeispielTr": "İşletme satışlarını yüzde on iki artırmayı başardı.",
-   "cakisan": [
+   "currentTr": "artırmak, yükseltmek (kademeli olarak)",
+   "currentBeispiel": "Der Betrieb konnte seinen Absatz um zwölf Prozent steigern.",
+   "currentBeispielTr": "İşletme satışlarını yüzde on iki artırmayı başardı.",
+   "overlapping": [
     "erhöhen (B1)"
    ]
   },
@@ -238,9 +238,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gesenkt",
-   "mevcutTr": "düşürmek, indirmek",
-   "mevcutBeispiel": "Die Bank hat die Zinsen zum zweiten Mal gesenkt.",
-   "mevcutBeispielTr": "Banka faizleri ikinci kez indirdi."
+   "currentTr": "düşürmek, indirmek",
+   "currentBeispiel": "Die Bank hat die Zinsen zum zweiten Mal gesenkt.",
+   "currentBeispielTr": "Banka faizleri ikinci kez indirdi."
   },
   {
    "id": 4165,
@@ -248,9 +248,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist geschrumpft",
-   "mevcutTr": "küçülmek, daralmak",
-   "mevcutBeispiel": "Die Zahl der Mitglieder ist in zehn Jahren stark geschrumpft.",
-   "mevcutBeispielTr": "Üye sayısı on yılda büyük ölçüde azaldı."
+   "currentTr": "küçülmek, daralmak",
+   "currentBeispiel": "Die Zahl der Mitglieder ist in zehn Jahren stark geschrumpft.",
+   "currentBeispielTr": "Üye sayısı on yılda büyük ölçüde azaldı."
   },
   {
    "id": 4166,
@@ -258,9 +258,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat stagniert",
-   "mevcutTr": "durgunlaşmak, yerinde saymak",
-   "mevcutBeispiel": "Die Löhne stagnieren in dieser Branche seit Jahren.",
-   "mevcutBeispielTr": "Bu sektörde ücretler yıllardır yerinde sayıyor."
+   "currentTr": "durgunlaşmak, yerinde saymak",
+   "currentBeispiel": "Die Löhne stagnieren in dieser Branche seit Jahren.",
+   "currentBeispielTr": "Bu sektörde ücretler yıllardır yerinde sayıyor."
   },
   {
    "id": 4167,
@@ -268,10 +268,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist zurückgegangen",
-   "mevcutTr": "azalmak, gerilemek",
-   "mevcutBeispiel": "Die Unfallzahlen sind im vergangenen Jahr deutlich zurückgegangen.",
-   "mevcutBeispielTr": "Kaza sayıları geçen yıl belirgin biçimde geriledi.",
-   "cakisan": [
+   "currentTr": "azalmak, gerilemek",
+   "currentBeispiel": "Die Unfallzahlen sind im vergangenen Jahr deutlich zurückgegangen.",
+   "currentBeispielTr": "Kaza sayıları geçen yıl belirgin biçimde geriledi.",
+   "overlapping": [
     "nachlassen (B2)"
    ]
   },
@@ -281,10 +281,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat übertroffen",
-   "mevcutTr": "aşmak, geçmek, geride bırakmak",
-   "mevcutBeispiel": "Das Ergebnis hat alle Erwartungen der Geschäftsleitung übertroffen.",
-   "mevcutBeispielTr": "Sonuç yönetimin bütün beklentilerini aştı.",
-   "cakisan": [
+   "currentTr": "aşmak, geçmek, geride bırakmak",
+   "currentBeispiel": "Das Ergebnis hat alle Erwartungen der Geschäftsleitung übertroffen.",
+   "currentBeispielTr": "Sonuç yönetimin bütün beklentilerini aştı.",
+   "overlapping": [
     "transzendieren (C1)",
     "überschreiten (B2)",
     "überziehen (B2)"
@@ -296,10 +296,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat überschritten",
-   "mevcutTr": "aşmak, sınırı geçmek",
-   "mevcutBeispiel": "Der Lärmpegel überschreitet nachts den erlaubten Wert.",
-   "mevcutBeispielTr": "Gürültü düzeyi geceleri izin verilen değeri aşıyor.",
-   "cakisan": [
+   "currentTr": "aşmak, sınırı geçmek",
+   "currentBeispiel": "Der Lärmpegel überschreitet nachts den erlaubten Wert.",
+   "currentBeispielTr": "Gürültü düzeyi geceleri izin verilen değeri aşıyor.",
+   "overlapping": [
     "transzendieren (C1)",
     "übertreffen (B2)",
     "überziehen (B2)"
@@ -311,9 +311,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat eingestuft",
-   "mevcutTr": "sınıflandırmak, derecelendirmek",
-   "mevcutBeispiel": "Der Fall wurde von der Behörde als dringend eingestuft.",
-   "mevcutBeispielTr": "Vaka kurum tarafından acil olarak sınıflandırıldı."
+   "currentTr": "sınıflandırmak, derecelendirmek",
+   "currentBeispiel": "Der Fall wurde von der Behörde als dringend eingestuft.",
+   "currentBeispielTr": "Vaka kurum tarafından acil olarak sınıflandırıldı."
   },
   {
    "id": 4171,
@@ -321,9 +321,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gewürdigt",
-   "mevcutTr": "takdir etmek, değerini teslim etmek",
-   "mevcutBeispiel": "Die Jury würdigte vor allem den Mut der Autorin.",
-   "mevcutBeispielTr": "Jüri her şeyden çok yazarın cesaretini takdir etti."
+   "currentTr": "takdir etmek, değerini teslim etmek",
+   "currentBeispiel": "Die Jury würdigte vor allem den Mut der Autorin.",
+   "currentBeispielTr": "Jüri her şeyden çok yazarın cesaretini takdir etti."
   },
   {
    "id": 4172,
@@ -331,10 +331,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat beanstandet",
-   "mevcutTr": "kusur bulmak, itiraz etmek",
-   "mevcutBeispiel": "Der Prüfer beanstandete mehrere Posten in der Abrechnung.",
-   "mevcutBeispielTr": "Denetçi hesaptaki birkaç kalemi kusurlu buldu.",
-   "cakisan": [
+   "currentTr": "kusur bulmak, itiraz etmek",
+   "currentBeispiel": "Der Prüfer beanstandete mehrere Posten in der Abrechnung.",
+   "currentBeispielTr": "Denetçi hesaptaki birkaç kalemi kusurlu buldu.",
+   "overlapping": [
     "monieren (C1)"
    ]
   },
@@ -344,9 +344,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat sich verschlechtert",
-   "mevcutTr": "kötüleşmek, fenalaşmak",
-   "mevcutBeispiel": "Der Zustand des Gebäudes hat sich rasch verschlechtert.",
-   "mevcutBeispielTr": "Binanın durumu hızla kötüleşti."
+   "currentTr": "kötüleşmek, fenalaşmak",
+   "currentBeispiel": "Der Zustand des Gebäudes hat sich rasch verschlechtert.",
+   "currentBeispielTr": "Binanın durumu hızla kötüleşti."
   },
   {
    "id": 4174,
@@ -354,9 +354,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat sich verdoppelt",
-   "mevcutTr": "iki katına çıkmak",
-   "mevcutBeispiel": "Die Zahl der Anfragen hat sich innerhalb eines Jahres verdoppelt.",
-   "mevcutBeispielTr": "Talep sayısı bir yıl içinde iki katına çıktı."
+   "currentTr": "iki katına çıkmak",
+   "currentBeispiel": "Die Zahl der Anfragen hat sich innerhalb eines Jahres verdoppelt.",
+   "currentBeispielTr": "Talep sayısı bir yıl içinde iki katına çıktı."
   },
   {
    "id": 4175,
@@ -364,9 +364,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat halbiert",
-   "mevcutTr": "yarıya indirmek, ikiye bölmek",
-   "mevcutBeispiel": "Die Firma will ihren Energieverbrauch bis 2030 halbieren.",
-   "mevcutBeispielTr": "Şirket enerji tüketimini 2030'a kadar yarıya indirmek istiyor."
+   "currentTr": "yarıya indirmek, ikiye bölmek",
+   "currentBeispiel": "Die Firma will ihren Energieverbrauch bis 2030 halbieren.",
+   "currentBeispielTr": "Şirket enerji tüketimini 2030'a kadar yarıya indirmek istiyor."
   },
   {
    "id": 4176,
@@ -374,9 +374,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat ausgeglichen",
-   "mevcutTr": "dengelemek, telafi etmek",
-   "mevcutBeispiel": "Die Einnahmen im Sommer gleichen die Verluste im Winter aus.",
-   "mevcutBeispielTr": "Yazın elde edilen gelirler kıştaki zararları dengeliyor."
+   "currentTr": "dengelemek, telafi etmek",
+   "currentBeispiel": "Die Einnahmen im Sommer gleichen die Verluste im Winter aus.",
+   "currentBeispielTr": "Yazın elde edilen gelirler kıştaki zararları dengeliyor."
   },
   {
    "id": 4177,
@@ -384,10 +384,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat sich belaufen",
-   "mevcutTr": "tutmak, (bir miktarı) bulmak, -e ulaşmak",
-   "mevcutBeispiel": "Der Schaden beläuft sich auf mehrere hunderttausend Franken.",
-   "mevcutBeispielTr": "Zarar birkaç yüz bin frangı buluyor.",
-   "cakisan": [
+   "currentTr": "tutmak, (bir miktarı) bulmak, -e ulaşmak",
+   "currentBeispiel": "Der Schaden beläuft sich auf mehrere hunderttausend Franken.",
+   "currentBeispielTr": "Zarar birkaç yüz bin frangı buluyor.",
+   "overlapping": [
     "kosten (A1)",
     "greifen (B1)",
     "betragen (B2)"
@@ -399,10 +399,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat betragen",
-   "mevcutTr": "tutmak, etmek, olmak",
-   "mevcutBeispiel": "Die Wartezeit beträgt derzeit rund drei Wochen.",
-   "mevcutBeispielTr": "Bekleme süresi şu anda yaklaşık üç hafta.",
-   "cakisan": [
+   "currentTr": "tutmak, etmek, olmak",
+   "currentBeispiel": "Die Wartezeit beträgt derzeit rund drei Wochen.",
+   "currentBeispielTr": "Bekleme süresi şu anda yaklaşık üç hafta.",
+   "overlapping": [
     "kosten (A1)",
     "greifen (B1)",
     "sich belaufen (B2)"
@@ -414,9 +414,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gewichtet",
-   "mevcutTr": "ağırlıklandırmak, önem derecesi vermek",
-   "mevcutBeispiel": "Die Prüfung gewichtet die schriftliche Leistung doppelt.",
-   "mevcutBeispielTr": "Sınav yazılı performansı iki kat ağırlıklı sayıyor."
+   "currentTr": "ağırlıklandırmak, önem derecesi vermek",
+   "currentBeispiel": "Die Prüfung gewichtet die schriftliche Leistung doppelt.",
+   "currentBeispielTr": "Sınav yazılı performansı iki kat ağırlıklı sayıyor."
   },
   {
    "id": 4180,
@@ -424,10 +424,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat nachgelassen",
-   "mevcutTr": "azalmak, hafiflemek, zayıflamak",
-   "mevcutBeispiel": "Gegen Abend ließ der Wind deutlich nach.",
-   "mevcutBeispielTr": "Akşama doğru rüzgâr belirgin biçimde hafifledi.",
-   "cakisan": [
+   "currentTr": "azalmak, hafiflemek, zayıflamak",
+   "currentBeispiel": "Gegen Abend ließ der Wind deutlich nach.",
+   "currentBeispielTr": "Akşama doğru rüzgâr belirgin biçimde hafifledi.",
+   "overlapping": [
     "zurückgehen (B2)"
    ]
   },
@@ -437,10 +437,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat zugelegt",
-   "mevcutTr": "artmak, artırmak, yükselmek",
-   "mevcutBeispiel": "Der Anbieter hat bei den Nutzerzahlen kräftig zugelegt.",
-   "mevcutBeispielTr": "Sağlayıcı kullanıcı sayılarında ciddi biçimde arttı.",
-   "cakisan": [
+   "currentTr": "artmak, artırmak, yükselmek",
+   "currentBeispiel": "Der Anbieter hat bei den Nutzerzahlen kräftig zugelegt.",
+   "currentBeispielTr": "Sağlayıcı kullanıcı sayılarında ciddi biçimde arttı.",
+   "overlapping": [
     "sich häufen (C1)"
    ]
   },
@@ -450,9 +450,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat sich abgeschwächt",
-   "mevcutTr": "zayıflamak, hız kesmek",
-   "mevcutBeispiel": "Das Wachstum hat sich im zweiten Halbjahr abgeschwächt.",
-   "mevcutBeispielTr": "Büyüme yılın ikinci yarısında hız kesti."
+   "currentTr": "zayıflamak, hız kesmek",
+   "currentBeispiel": "Das Wachstum hat sich im zweiten Halbjahr abgeschwächt.",
+   "currentBeispielTr": "Büyüme yılın ikinci yarısında hız kesti."
   },
   {
    "id": 4183,
@@ -460,10 +460,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verstärkt",
-   "mevcutTr": "güçlendirmek, artırmak, pekiştirmek",
-   "mevcutBeispiel": "Die Gemeinde will die Kontrollen an Wochenenden verstärken.",
-   "mevcutBeispielTr": "Belediye hafta sonları denetimleri artırmak istiyor.",
-   "cakisan": [
+   "currentTr": "güçlendirmek, artırmak, pekiştirmek",
+   "currentBeispiel": "Die Gemeinde will die Kontrollen an Wochenenden verstärken.",
+   "currentBeispielTr": "Belediye hafta sonları denetimleri artırmak istiyor.",
+   "overlapping": [
     "stärken (B2)",
     "ertüchtigen (C1)"
    ]
@@ -474,10 +474,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat ausgeweitet",
-   "mevcutTr": "genişletmek, yaymak",
-   "mevcutBeispiel": "Der Betrieb hat sein Angebot auf drei Kantone ausgeweitet.",
-   "mevcutBeispielTr": "İşletme hizmetini üç kantona genişletti.",
-   "cakisan": [
+   "currentTr": "genişletmek, yaymak",
+   "currentBeispiel": "Der Betrieb hat sein Angebot auf drei Kantone ausgeweitet.",
+   "currentBeispielTr": "İşletme hizmetini üç kantona genişletti.",
+   "overlapping": [
     "erweitern (B2)",
     "ausbauen (B2)"
    ]
@@ -488,10 +488,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat eingedämmt",
-   "mevcutTr": "sınırlamak, önüne geçmek, frenlemek",
-   "mevcutBeispiel": "Mit strengen Auflagen will die Stadt den Verkehr eindämmen.",
-   "mevcutBeispielTr": "Kent sıkı koşullarla trafiğin önüne geçmek istiyor.",
-   "cakisan": [
+   "currentTr": "sınırlamak, önüne geçmek, frenlemek",
+   "currentBeispiel": "Mit strengen Auflagen will die Stadt den Verkehr eindämmen.",
+   "currentBeispielTr": "Kent sıkı koşullarla trafiğin önüne geçmek istiyor.",
+   "overlapping": [
     "beschränken (B1)",
     "eingrenzen (C1)",
     "einschränken (B2)"
@@ -503,10 +503,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat ermittelt",
-   "mevcutTr": "tespit etmek, belirlemek, saptamak",
-   "mevcutBeispiel": "Die Kommission ermittelte den Mittelwert aller eingegangenen Angebote.",
-   "mevcutBeispielTr": "Komisyon gelen bütün tekliflerin ortalamasını hesapladı.",
-   "cakisan": [
+   "currentTr": "tespit etmek, belirlemek, saptamak",
+   "currentBeispiel": "Die Kommission ermittelte den Mittelwert aller eingegangenen Angebote.",
+   "currentBeispielTr": "Komisyon gelen bütün tekliflerin ortalamasını hesapladı.",
+   "overlapping": [
     "feststellen (B1)",
     "konstatieren (C1)"
    ]
@@ -517,9 +517,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat aufgewertet",
-   "mevcutTr": "değerini artırmak, itibarını yükseltmek",
-   "mevcutBeispiel": "Der neue Bahnhof hat das ganze Quartier aufgewertet.",
-   "mevcutBeispielTr": "Yeni istasyon bütün mahallenin değerini artırdı."
+   "currentTr": "değerini artırmak, itibarını yükseltmek",
+   "currentBeispiel": "Der neue Bahnhof hat das ganze Quartier aufgewertet.",
+   "currentBeispielTr": "Yeni istasyon bütün mahallenin değerini artırdı."
   },
   {
    "id": 4188,
@@ -527,9 +527,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat beziffert",
-   "mevcutTr": "rakamla belirtmek, miktarını vermek",
-   "mevcutBeispiel": "Die Versicherung beziffert den Schaden auf zwei Millionen.",
-   "mevcutBeispielTr": "Sigorta zararı iki milyon olarak belirtiyor."
+   "currentTr": "rakamla belirtmek, miktarını vermek",
+   "currentBeispiel": "Die Versicherung beziffert den Schaden auf zwei Millionen.",
+   "currentBeispielTr": "Sigorta zararı iki milyon olarak belirtiyor."
   },
   {
    "id": 4189,
@@ -537,10 +537,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zunahmen",
-   "mevcutTr": "artış, çoğalma",
-   "mevcutBeispiel": "Die Statistik zeigt eine deutliche Zunahme der Fernarbeit.",
-   "mevcutBeispielTr": "İstatistik uzaktan çalışmada belirgin bir artış gösteriyor.",
-   "cakisan": [
+   "currentTr": "artış, çoğalma",
+   "currentBeispiel": "Die Statistik zeigt eine deutliche Zunahme der Fernarbeit.",
+   "currentBeispielTr": "İstatistik uzaktan çalışmada belirgin bir artış gösteriyor.",
+   "overlapping": [
     "die Erhöhung (B1)"
    ]
   },
@@ -550,9 +550,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rückgänge",
-   "mevcutTr": "düşüş, gerileme",
-   "mevcutBeispiel": "Der Rückgang der Besucherzahlen bereitet dem Museum Sorgen.",
-   "mevcutBeispielTr": "Ziyaretçi sayılarındaki düşüş müzeyi kaygılandırıyor."
+   "currentTr": "düşüş, gerileme",
+   "currentBeispiel": "Der Rückgang der Besucherzahlen bereitet dem Museum Sorgen.",
+   "currentBeispielTr": "Ziyaretçi sayılarındaki düşüş müzeyi kaygılandırıyor."
   },
   {
    "id": 4191,
@@ -560,9 +560,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Umfänge",
-   "mevcutTr": "kapsam, hacim, boyut",
-   "mevcutBeispiel": "Der Umfang der Arbeiten war zu Beginn nicht absehbar.",
-   "mevcutBeispielTr": "İşlerin kapsamı başlangıçta öngörülemiyordu."
+   "currentTr": "kapsam, hacim, boyut",
+   "currentBeispiel": "Der Umfang der Arbeiten war zu Beginn nicht absehbar.",
+   "currentBeispielTr": "İşlerin kapsamı başlangıçta öngörülemiyordu."
   },
   {
    "id": 4192,
@@ -570,9 +570,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anteile",
-   "mevcutTr": "pay, oran, hisse",
-   "mevcutBeispiel": "Der Anteil erneuerbarer Energien wächst seit Jahren.",
-   "mevcutBeispielTr": "Yenilenebilir enerjilerin payı yıllardır büyüyor."
+   "currentTr": "pay, oran, hisse",
+   "currentBeispiel": "Der Anteil erneuerbarer Energien wächst seit Jahren.",
+   "currentBeispielTr": "Yenilenebilir enerjilerin payı yıllardır büyüyor."
   }
  ]
 }

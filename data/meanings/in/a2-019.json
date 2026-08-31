@@ -1,16 +1,16 @@
 {
- "paket": "a2-019",
+ "packet": "a2-019",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 7888,
    "de": "musizieren",
    "typ": "Verb",
    "niveau": "A2",
    "formen": "musiziert, hat musiziert",
-   "mevcutTr": "müzik yapmak, çalgı çalmak",
-   "mevcutBeispiel": "Am Wochenende musizieren wir zusammen im Wohnzimmer.",
-   "mevcutBeispielTr": "Hafta sonu oturma odasında birlikte müzik yapıyoruz."
+   "currentTr": "müzik yapmak, çalgı çalmak",
+   "currentBeispiel": "Am Wochenende musizieren wir zusammen im Wohnzimmer.",
+   "currentBeispielTr": "Hafta sonu oturma odasında birlikte müzik yapıyoruz."
   },
   {
    "id": 7889,
@@ -18,9 +18,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "trommelt, hat getrommelt",
-   "mevcutTr": "davul çalmak, trampet çalmak",
-   "mevcutBeispiel": "Der Junge trommelt laut auf einem alten Eimer.",
-   "mevcutBeispielTr": "Çocuk eski bir kovanın üstünde yüksek sesle davul çalıyor."
+   "currentTr": "davul çalmak, trampet çalmak",
+   "currentBeispiel": "Der Junge trommelt laut auf einem alten Eimer.",
+   "currentBeispielTr": "Çocuk eski bir kovanın üstünde yüksek sesle davul çalıyor."
   },
   {
    "id": 7890,
@@ -28,9 +28,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "blättert, hat geblättert",
-   "mevcutTr": "sayfa çevirmek, karıştırmak (kitap)",
-   "mevcutBeispiel": "Im Wartezimmer blättere ich gern in einer Zeitschrift.",
-   "mevcutBeispielTr": "Bekleme odasında bir dergiyi karıştırmayı severim."
+   "currentTr": "sayfa çevirmek, karıştırmak (kitap)",
+   "currentBeispiel": "Im Wartezimmer blättere ich gern in einer Zeitschrift.",
+   "currentBeispielTr": "Bekleme odasında bir dergiyi karıştırmayı severim."
   },
   {
    "id": 7891,
@@ -38,10 +38,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "leiht aus, hat ausgeliehen",
-   "mevcutTr": "ödünç almak, ödünç vermek",
-   "mevcutBeispiel": "Ich möchte drei Bücher für zwei Wochen ausleihen.",
-   "mevcutBeispielTr": "Üç kitabı iki haftalığına ödünç almak istiyorum.",
-   "cakisan": [
+   "currentTr": "ödünç almak, ödünç vermek",
+   "currentBeispiel": "Ich möchte drei Bücher für zwei Wochen ausleihen.",
+   "currentBeispielTr": "Üç kitabı iki haftalığına ödünç almak istiyorum.",
+   "overlapping": [
     "entlehnen (C1)"
    ]
   },
@@ -51,9 +51,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "jubelt, hat gejubelt",
-   "mevcutTr": "sevinç çığlığı atmak, tezahürat yapmak",
-   "mevcutBeispiel": "Nach dem letzten Tor jubelten alle im Stadion.",
-   "mevcutBeispielTr": "Son golden sonra stattaki herkes sevinç çığlıkları attı."
+   "currentTr": "sevinç çığlığı atmak, tezahürat yapmak",
+   "currentBeispiel": "Nach dem letzten Tor jubelten alle im Stadion.",
+   "currentBeispielTr": "Son golden sonra stattaki herkes sevinç çığlıkları attı."
   },
   {
    "id": 7893,
@@ -61,10 +61,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "klatscht, hat geklatscht",
-   "mevcutTr": "alkışlamak, el çırpmak",
-   "mevcutBeispiel": "Am Ende des Konzerts klatschte das Publikum sehr lange.",
-   "mevcutBeispielTr": "Konserin sonunda seyirciler çok uzun süre alkışladı.",
-   "cakisan": [
+   "currentTr": "alkışlamak, el çırpmak",
+   "currentBeispiel": "Am Ende des Konzerts klatschte das Publikum sehr lange.",
+   "currentBeispielTr": "Konserin sonunda seyirciler çok uzun süre alkışladı.",
+   "overlapping": [
     "applaudieren (B2)"
    ]
   },
@@ -74,9 +74,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "pfeift, hat gepfiffen",
-   "mevcutTr": "ıslık çalmak, düdük çalmak",
-   "mevcutBeispiel": "Der Schiedsrichter pfeift und das Spiel ist zu Ende.",
-   "mevcutBeispielTr": "Hakem düdüğünü çalıyor ve maç bitiyor."
+   "currentTr": "ıslık çalmak, düdük çalmak",
+   "currentBeispiel": "Der Schiedsrichter pfeift und das Spiel ist zu Ende.",
+   "currentBeispielTr": "Hakem düdüğünü çalıyor ve maç bitiyor."
   },
   {
    "id": 7895,
@@ -84,10 +84,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "plaudert, hat geplaudert",
-   "mevcutTr": "sohbet etmek, çene çalmak",
-   "mevcutBeispiel": "Nach dem Kurs plaudern wir noch eine halbe Stunde im Café.",
-   "mevcutBeispielTr": "Kurstan sonra kafede yarım saat daha sohbet ediyoruz.",
-   "cakisan": [
+   "currentTr": "sohbet etmek, çene çalmak",
+   "currentBeispiel": "Nach dem Kurs plaudern wir noch eine halbe Stunde im Café.",
+   "currentBeispielTr": "Kurstan sonra kafede yarım saat daha sohbet ediyoruz.",
+   "overlapping": [
     "chatten (A2)",
     "sich unterhalten (B1)"
    ]
@@ -98,10 +98,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "bummelt, ist gebummelt",
-   "mevcutTr": "gezinmek, dolaşmak (vitrin gezmek)",
-   "mevcutBeispiel": "Am Samstag bummeln wir gern durch die Altstadt.",
-   "mevcutBeispielTr": "Cumartesi günleri eski şehirde dolaşmayı severiz.",
-   "cakisan": [
+   "currentTr": "gezinmek, dolaşmak (vitrin gezmek)",
+   "currentBeispiel": "Am Samstag bummeln wir gern durch die Altstadt.",
+   "currentBeispielTr": "Cumartesi günleri eski şehirde dolaşmayı severiz.",
+   "overlapping": [
     "spazieren (A2)"
    ]
   },
@@ -111,10 +111,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "probiert aus, hat ausprobiert",
-   "mevcutTr": "denemek, tecrübe etmek",
-   "mevcutBeispiel": "Ich möchte dieses Jahr eine neue Sportart ausprobieren.",
-   "mevcutBeispielTr": "Bu yıl yeni bir spor dalı denemek istiyorum.",
-   "cakisan": [
+   "currentTr": "denemek, tecrübe etmek",
+   "currentBeispiel": "Ich möchte dieses Jahr eine neue Sportart ausprobieren.",
+   "currentBeispielTr": "Bu yıl yeni bir spor dalı denemek istiyorum.",
+   "overlapping": [
     "probieren (A2)",
     "versuchen (A2)",
     "erproben (C1)",
@@ -127,9 +127,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schaut an, hat angeschaut",
-   "mevcutTr": "izlemek, bakmak",
-   "mevcutBeispiel": "Heute Abend schauen wir einen alten Film an.",
-   "mevcutBeispielTr": "Bu akşam eski bir film izliyoruz."
+   "currentTr": "izlemek, bakmak",
+   "currentBeispiel": "Heute Abend schauen wir einen alten Film an.",
+   "currentBeispielTr": "Bu akşam eski bir film izliyoruz."
   },
   {
    "id": 7899,
@@ -137,9 +137,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "dehnt, hat gedehnt",
-   "mevcutTr": "germek, esnetmek",
-   "mevcutBeispiel": "Nach dem Laufen dehne ich immer meine Beine.",
-   "mevcutBeispielTr": "Koşudan sonra bacaklarımı hep gererim."
+   "currentTr": "germek, esnetmek",
+   "currentBeispiel": "Nach dem Laufen dehne ich immer meine Beine.",
+   "currentBeispielTr": "Koşudan sonra bacaklarımı hep gererim."
   },
   {
    "id": 7900,
@@ -147,9 +147,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "atletik",
-   "mevcutBeispiel": "Sein Bruder ist groß und sehr athletisch.",
-   "mevcutBeispielTr": "Erkek kardeşi uzun boylu ve çok atletik."
+   "currentTr": "atletik",
+   "currentBeispiel": "Sein Bruder ist groß und sehr athletisch.",
+   "currentBeispielTr": "Erkek kardeşi uzun boylu ve çok atletik."
   },
   {
    "id": 7901,
@@ -157,10 +157,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "yaratıcı, buluşçu",
-   "mevcutBeispiel": "Deine Geschenkidee ist wirklich einfallsreich.",
-   "mevcutBeispielTr": "Hediye fikrin gerçekten yaratıcı.",
-   "cakisan": [
+   "currentTr": "yaratıcı, buluşçu",
+   "currentBeispiel": "Deine Geschenkidee ist wirklich einfallsreich.",
+   "currentBeispielTr": "Hediye fikrin gerçekten yaratıcı.",
+   "overlapping": [
     "kreativ (B1)"
    ]
   },
@@ -170,9 +170,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "haftalık, haftada bir",
-   "mevcutBeispiel": "Der Chor trifft sich wöchentlich am Mittwochabend.",
-   "mevcutBeispielTr": "Koro her hafta çarşamba akşamı buluşuyor."
+   "currentTr": "haftalık, haftada bir",
+   "currentBeispiel": "Der Chor trifft sich wöchentlich am Mittwochabend.",
+   "currentBeispielTr": "Koro her hafta çarşamba akşamı buluşuyor."
   },
   {
    "id": 7903,
@@ -180,10 +180,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "günlük, her gün",
-   "mevcutBeispiel": "Er spielt täglich eine Stunde Gitarre.",
-   "mevcutBeispielTr": "Her gün bir saat gitar çalıyor.",
-   "cakisan": [
+   "currentTr": "günlük, her gün",
+   "currentBeispiel": "Er spielt täglich eine Stunde Gitarre.",
+   "currentBeispielTr": "Her gün bir saat gitar çalıyor.",
+   "overlapping": [
     "alltäglich (B1)"
    ]
   },
@@ -193,9 +193,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "öğleden sonraları",
-   "mevcutBeispiel": "Nachmittags gehe ich mit den Kindern auf den Sportplatz.",
-   "mevcutBeispielTr": "Öğleden sonraları çocuklarla spor sahasına giderim."
+   "currentTr": "öğleden sonraları",
+   "currentBeispiel": "Nachmittags gehe ich mit den Kindern auf den Sportplatz.",
+   "currentBeispielTr": "Öğleden sonraları çocuklarla spor sahasına giderim."
   },
   {
    "id": 7905,
@@ -203,9 +203,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "formda, zinde",
-   "mevcutBeispiel": "Mit dem Rad zur Arbeit zu fahren hält mich fit.",
-   "mevcutBeispielTr": "İşe bisikletle gitmek beni formda tutuyor."
+   "currentTr": "formda, zinde",
+   "currentBeispiel": "Mit dem Rad zur Arbeit zu fahren hält mich fit.",
+   "currentBeispielTr": "İşe bisikletle gitmek beni formda tutuyor."
   },
   {
    "id": 7906,
@@ -213,10 +213,10 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "oyuncu, oyunbaz",
-   "mevcutBeispiel": "Unser junger Hund ist noch sehr verspielt.",
-   "mevcutBeispielTr": "Genç köpeğimiz hâlâ çok oyuncu.",
-   "cakisan": [
+   "currentTr": "oyuncu, oyunbaz",
+   "currentBeispiel": "Unser junger Hund ist noch sehr verspielt.",
+   "currentBeispielTr": "Genç köpeğimiz hâlâ çok oyuncu.",
+   "overlapping": [
     "der Schauspieler (B1)",
     "der Spieler (B1)",
     "der Darsteller (B2)"
@@ -228,9 +228,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "spor kulübü",
-   "mevcutBeispiel": "Mein Sohn ist seit einem Jahr in einem Sportverein.",
-   "mevcutBeispielTr": "Oğlum bir yıldır bir spor kulübünde."
+   "currentTr": "spor kulübü",
+   "currentBeispiel": "Mein Sohn ist seit einem Jahr in einem Sportverein.",
+   "currentBeispielTr": "Oğlum bir yıldır bir spor kulübünde."
   },
   {
    "id": 7908,
@@ -238,10 +238,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "spor salonu (okul)",
-   "mevcutBeispiel": "Bei Regen findet das Training in der Turnhalle statt.",
-   "mevcutBeispielTr": "Yağmurda antrenman spor salonunda yapılıyor.",
-   "cakisan": [
+   "currentTr": "spor salonu (okul)",
+   "currentBeispiel": "Bei Regen findet das Training in der Turnhalle statt.",
+   "currentBeispielTr": "Yağmurda antrenman spor salonunda yapılıyor.",
+   "overlapping": [
     "die Sporthalle (A2)",
     "das Fitnessstudio (A2)"
    ]
@@ -252,10 +252,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "spor salonu, fitness merkezi",
-   "mevcutBeispiel": "Ich gehe dreimal pro Woche ins Fitnessstudio.",
-   "mevcutBeispielTr": "Haftada üç kez spor salonuna gidiyorum.",
-   "cakisan": [
+   "currentTr": "spor salonu, fitness merkezi",
+   "currentBeispiel": "Ich gehe dreimal pro Woche ins Fitnessstudio.",
+   "currentBeispielTr": "Haftada üç kez spor salonuna gidiyorum.",
+   "overlapping": [
     "die Sporthalle (A2)",
     "die Turnhalle (A2)"
    ]
@@ -266,10 +266,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-nen",
-   "mevcutTr": "antrenör (kadın)",
-   "mevcutBeispiel": "Unsere Trainerin erklärt die Übung noch einmal.",
-   "mevcutBeispielTr": "Antrenörümüz hareketi bir kez daha açıklıyor.",
-   "cakisan": [
+   "currentTr": "antrenör (kadın)",
+   "currentBeispiel": "Unsere Trainerin erklärt die Übung noch einmal.",
+   "currentBeispielTr": "Antrenörümüz hareketi bir kez daha açıklıyor.",
+   "overlapping": [
     "der Trainer (B1)"
    ]
   },
@@ -279,9 +279,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "giriş bileti",
-   "mevcutBeispiel": "Die Eintrittskarte für das Konzert kostet zwanzig Euro.",
-   "mevcutBeispielTr": "Konserin giriş bileti yirmi euro."
+   "currentTr": "giriş bileti",
+   "currentBeispiel": "Die Eintrittskarte für das Konzert kostet zwanzig Euro.",
+   "currentBeispielTr": "Konserin giriş bileti yirmi euro."
   },
   {
    "id": 7912,
@@ -289,9 +289,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "keman",
-   "mevcutBeispiel": "Meine Tochter lernt seit zwei Jahren Geige.",
-   "mevcutBeispielTr": "Kızım iki yıldır keman öğreniyor."
+   "currentTr": "keman",
+   "currentBeispiel": "Meine Tochter lernt seit zwei Jahren Geige.",
+   "currentBeispielTr": "Kızım iki yıldır keman öğreniyor."
   },
   {
    "id": 7913,
@@ -299,9 +299,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "bateri, davul takımı",
-   "mevcutBeispiel": "Sein Schlagzeug steht im Keller, weil es so laut ist.",
-   "mevcutBeispielTr": "Baterisi bodrumda duruyor, çünkü çok gürültülü."
+   "currentTr": "bateri, davul takımı",
+   "currentBeispiel": "Sein Schlagzeug steht im Keller, weil es so laut ist.",
+   "currentBeispielTr": "Baterisi bodrumda duruyor, çünkü çok gürültülü."
   },
   {
    "id": 7914,
@@ -309,9 +309,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "koro",
-   "mevcutBeispiel": "Sie singt seit fünf Jahren in einem kleinen Chor.",
-   "mevcutBeispielTr": "Beş yıldır küçük bir koroda şarkı söylüyor."
+   "currentTr": "koro",
+   "currentBeispiel": "Sie singt seit fünf Jahren in einem kleinen Chor.",
+   "currentBeispielTr": "Beş yıldır küçük bir koroda şarkı söylüyor."
   },
   {
    "id": 7915,
@@ -319,9 +319,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "kutu oyunu, masa oyunu",
-   "mevcutBeispiel": "Am Abend spielen wir oft ein Brettspiel mit den Kindern.",
-   "mevcutBeispielTr": "Akşamları çocuklarla sık sık kutu oyunu oynuyoruz."
+   "currentTr": "kutu oyunu, masa oyunu",
+   "currentBeispiel": "Am Abend spielen wir oft ein Brettspiel mit den Kindern.",
+   "currentBeispielTr": "Akşamları çocuklarla sık sık kutu oyunu oynuyoruz."
   },
   {
    "id": 7916,
@@ -329,9 +329,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "satranç",
-   "mevcutBeispiel": "Mein Großvater hat mir Schach beigebracht.",
-   "mevcutBeispielTr": "Dedem bana satranç öğretti."
+   "currentTr": "satranç",
+   "currentBeispiel": "Mein Großvater hat mir Schach beigebracht.",
+   "currentBeispielTr": "Dedem bana satranç öğretti."
   },
   {
    "id": 7917,
@@ -339,9 +339,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "yapboz, puzzle",
-   "mevcutBeispiel": "Das Puzzle hat tausend Teile und ist ziemlich schwer.",
-   "mevcutBeispielTr": "Yapbozun bin parçası var ve epey zor."
+   "currentTr": "yapboz, puzzle",
+   "currentBeispiel": "Das Puzzle hat tausend Teile und ist ziemlich schwer.",
+   "currentBeispielTr": "Yapbozun bin parçası var ve epey zor."
   },
   {
    "id": 7918,
@@ -349,9 +349,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "zar, küp",
-   "mevcutBeispiel": "Ein Würfel fehlt, wir können nicht anfangen.",
-   "mevcutBeispielTr": "Bir zar eksik, başlayamıyoruz."
+   "currentTr": "zar, küp",
+   "currentBeispiel": "Ein Würfel fehlt, wir können nicht anfangen.",
+   "currentBeispielTr": "Bir zar eksik, başlayamıyoruz."
   },
   {
    "id": 7919,
@@ -359,9 +359,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "lunapark, eğlence parkı",
-   "mevcutBeispiel": "Im Sommer fahren wir mit der Klasse in einen Freizeitpark.",
-   "mevcutBeispielTr": "Yazın sınıfça bir lunaparka gidiyoruz."
+   "currentTr": "lunapark, eğlence parkı",
+   "currentBeispiel": "Im Sommer fahren wir mit der Klasse in einen Freizeitpark.",
+   "currentBeispielTr": "Yazın sınıfça bir lunaparka gidiyoruz."
   },
   {
    "id": 7920,
@@ -369,9 +369,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "kamp ateşi",
-   "mevcutBeispiel": "Am Lagerfeuer haben wir bis Mitternacht Lieder gesungen.",
-   "mevcutBeispielTr": "Kamp ateşinin başında gece yarısına kadar şarkı söyledik."
+   "currentTr": "kamp ateşi",
+   "currentBeispiel": "Am Lagerfeuer haben wir bis Mitternacht Lieder gesungen.",
+   "currentBeispielTr": "Kamp ateşinin başında gece yarısına kadar şarkı söyledik."
   },
   {
    "id": 7921,
@@ -379,10 +379,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "fırça (boya)",
-   "mevcutBeispiel": "Wasch bitte den Pinsel nach dem Malen aus.",
-   "mevcutBeispielTr": "Lütfen boyadıktan sonra fırçayı yıka.",
-   "cakisan": [
+   "currentTr": "fırça (boya)",
+   "currentBeispiel": "Wasch bitte den Pinsel nach dem Malen aus.",
+   "currentBeispielTr": "Lütfen boyadıktan sonra fırçayı yıka.",
+   "overlapping": [
     "die Bürste (B1)"
    ]
   },
@@ -392,9 +392,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "spor ayakkabısı",
-   "mevcutBeispiel": "Für den Kurs brauchst du saubere Turnschuhe.",
-   "mevcutBeispielTr": "Kurs için temiz spor ayakkabılarına ihtiyacın var."
+   "currentTr": "spor ayakkabısı",
+   "currentBeispiel": "Für den Kurs brauchst du saubere Turnschuhe.",
+   "currentBeispielTr": "Kurs için temiz spor ayakkabılarına ihtiyacın var."
   },
   {
    "id": 7923,
@@ -402,9 +402,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "forma",
-   "mevcutBeispiel": "Er trägt das rote Trikot mit der Nummer neun.",
-   "mevcutBeispielTr": "Dokuz numaralı kırmızı formayı giyiyor."
+   "currentTr": "forma",
+   "currentBeispiel": "Er trägt das rote Trikot mit der Nummer neun.",
+   "currentBeispielTr": "Dokuz numaralı kırmızı formayı giyiyor."
   },
   {
    "id": 7924,
@@ -412,9 +412,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "kaleci",
-   "mevcutBeispiel": "Unser Torwart hat heute sehr gut gespielt.",
-   "mevcutBeispielTr": "Kalecimiz bugün çok iyi oynadı."
+   "currentTr": "kaleci",
+   "currentBeispiel": "Unser Torwart hat heute sehr gut gespielt.",
+   "currentBeispielTr": "Kalecimiz bugün çok iyi oynadı."
   },
   {
    "id": 7925,
@@ -422,9 +422,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "devre, devre arası",
-   "mevcutBeispiel": "In der zweiten Halbzeit fielen drei Tore.",
-   "mevcutBeispielTr": "İkinci devrede üç gol oldu."
+   "currentTr": "devre, devre arası",
+   "currentBeispiel": "In der zweiten Halbzeit fielen drei Tore.",
+   "currentBeispielTr": "İkinci devrede üç gol oldu."
   },
   {
    "id": 7926,
@@ -432,9 +432,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "kâğıt oyunu, iskambil oyunu",
-   "mevcutBeispiel": "Kennst du ein einfaches Kartenspiel für vier Personen?",
-   "mevcutBeispielTr": "Dört kişilik basit bir kâğıt oyunu biliyor musun?"
+   "currentTr": "kâğıt oyunu, iskambil oyunu",
+   "currentBeispiel": "Kennst du ein einfaches Kartenspiel für vier Personen?",
+   "currentBeispielTr": "Dört kişilik basit bir kâğıt oyunu biliyor musun?"
   },
   {
    "id": 7927,
@@ -442,10 +442,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "dil",
-   "mevcutBeispiel": "Der Arzt sagt: Bitte zeigen Sie mir Ihre Zunge!",
-   "mevcutBeispielTr": "Doktor diyor ki: Lütfen bana dilinizi gösterin!",
-   "cakisan": [
+   "currentTr": "dil",
+   "currentBeispiel": "Der Arzt sagt: Bitte zeigen Sie mir Ihre Zunge!",
+   "currentBeispielTr": "Doktor diyor ki: Lütfen bana dilinizi gösterin!",
+   "overlapping": [
     "die Sprache (A1)"
    ]
   },
@@ -455,9 +455,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "başparmak",
-   "mevcutBeispiel": "Beim Kochen habe ich mir den Daumen verletzt.",
-   "mevcutBeispielTr": "Yemek yaparken başparmağımı yaraladım."
+   "currentTr": "başparmak",
+   "currentBeispiel": "Beim Kochen habe ich mir den Daumen verletzt.",
+   "currentBeispielTr": "Yemek yaparken başparmağımı yaraladım."
   },
   {
    "id": 7929,
@@ -465,9 +465,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "çene",
-   "mevcutBeispiel": "Er ist gefallen und hat jetzt eine Wunde am Kinn.",
-   "mevcutBeispielTr": "Düştü ve şimdi çenesinde bir yara var."
+   "currentTr": "çene",
+   "currentBeispiel": "Er ist gefallen und hat jetzt eine Wunde am Kinn.",
+   "currentBeispielTr": "Düştü ve şimdi çenesinde bir yara var."
   },
   {
    "id": 7930,
@@ -475,9 +475,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "alın",
-   "mevcutBeispiel": "Die Mutter legt dem Kind die Hand auf die Stirn.",
-   "mevcutBeispielTr": "Anne elini çocuğun alnına koyuyor."
+   "currentTr": "alın",
+   "currentBeispiel": "Die Mutter legt dem Kind die Hand auf die Stirn.",
+   "currentBeispielTr": "Anne elini çocuğun alnına koyuyor."
   },
   {
    "id": 7931,
@@ -485,9 +485,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "yanak",
-   "mevcutBeispiel": "Nach dem Sport sind seine Wangen ganz rot.",
-   "mevcutBeispielTr": "Spordan sonra yanakları kıpkırmızı."
+   "currentTr": "yanak",
+   "currentBeispiel": "Nach dem Sport sind seine Wangen ganz rot.",
+   "currentBeispielTr": "Spordan sonra yanakları kıpkırmızı."
   },
   {
    "id": 7932,
@@ -495,9 +495,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "ayak parmağı",
-   "mevcutBeispiel": "Ich bin gegen den Tisch gelaufen, jetzt tut mein Zeh weh.",
-   "mevcutBeispielTr": "Masaya çarptım, şimdi ayak parmağım ağrıyor."
+   "currentTr": "ayak parmağı",
+   "currentBeispiel": "Ich bin gegen den Tisch gelaufen, jetzt tut mein Zeh weh.",
+   "currentBeispielTr": "Masaya çarptım, şimdi ayak parmağım ağrıyor."
   },
   {
    "id": 7933,
@@ -505,9 +505,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "dirsek",
-   "mevcutBeispiel": "Beim Fahrradfahren ist er gestürzt und hat sich den Ellenbogen aufgeschlagen.",
-   "mevcutBeispielTr": "Bisiklet sürerken düştü ve dirseğini yardı."
+   "currentTr": "dirsek",
+   "currentBeispiel": "Beim Fahrradfahren ist er gestürzt und hat sich den Ellenbogen aufgeschlagen.",
+   "currentBeispielTr": "Bisiklet sürerken düştü ve dirseğini yardı."
   },
   {
    "id": 7934,
@@ -515,9 +515,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "ense, boyun arkası",
-   "mevcutBeispiel": "Nach der Arbeit am Computer tut mir der Nacken weh.",
-   "mevcutBeispielTr": "Bilgisayarda çalıştıktan sonra ensem ağrıyor."
+   "currentTr": "ense, boyun arkası",
+   "currentBeispiel": "Nach der Arbeit am Computer tut mir der Nacken weh.",
+   "currentBeispielTr": "Bilgisayarda çalıştıktan sonra ensem ağrıyor."
   },
   {
    "id": 7935,
@@ -525,9 +525,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "kalça",
-   "mevcutBeispiel": "Meine Oma hat Schmerzen in der Hüfte.",
-   "mevcutBeispielTr": "Babaannemin kalçasında ağrı var."
+   "currentTr": "kalça",
+   "currentBeispiel": "Meine Oma hat Schmerzen in der Hüfte.",
+   "currentBeispielTr": "Babaannemin kalçasında ağrı var."
   },
   {
    "id": 7936,
@@ -535,9 +535,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "akciğer",
-   "mevcutBeispiel": "Rauchen ist schlecht für die Lunge.",
-   "mevcutBeispielTr": "Sigara içmek akciğer için kötüdür."
+   "currentTr": "akciğer",
+   "currentBeispiel": "Rauchen ist schlecht für die Lunge.",
+   "currentBeispielTr": "Sigara içmek akciğer için kötüdür."
   },
   {
    "id": 7937,
@@ -545,9 +545,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "karaciğer",
-   "mevcutBeispiel": "Zu viel Alkohol schadet der Leber.",
-   "mevcutBeispielTr": "Çok fazla alkol karaciğere zarar verir."
+   "currentTr": "karaciğer",
+   "currentBeispiel": "Zu viel Alkohol schadet der Leber.",
+   "currentBeispielTr": "Çok fazla alkol karaciğere zarar verir."
   }
  ]
 }

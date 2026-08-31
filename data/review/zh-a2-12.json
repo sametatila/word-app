@@ -97,7 +97,7 @@
   "gsw": "bürschte",
   "gswArtikel": null,
   "gswBeispiel": "Vor de Arbet bürschte ich mini schwarze Schue.",
-  "ayniLehce": [
+  "sameDialect": [
    "Bürste (B1)"
   ]
  },
@@ -415,7 +415,7 @@
   "gsw": "rolle",
   "gswArtikel": null,
   "gswBeispiel": "De Ball isch under s Auto grollt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Rolle (B1)"
   ]
  },
@@ -436,7 +436,7 @@
   "gsw": "gumpe",
   "gswArtikel": null,
   "gswBeispiel": "D Chind gumped im Garte ume.",
-  "ayniLehce": [
+  "sameDialect": [
    "springen (B1)"
   ]
  },
@@ -592,7 +592,7 @@
   "gsw": "schruube",
   "gswArtikel": null,
   "gswBeispiel": "Min Brüeder schruubt s Gschtell a d Wand.",
-  "ayniLehce": [
+  "sameDialect": [
    "Schraube (A2)"
   ]
  },

@@ -43,7 +43,7 @@
   "gsw": "überzüüge",
   "gswArtikel": null,
   "gswBeispiel": "Si hät de Chef vo irere neue Idee chöne überzüüge.",
-  "ayniLehce": [
+  "sameDialect": [
    "sich überzeugen (B1)"
   ]
  },
@@ -343,7 +343,7 @@
   "gsw": "Prüefig",
   "gswArtikel": "d",
   "gswBeispiel": "D Prüefig gaat nüünzg Minute.",
-  "ayniLehce": [
+  "sameDialect": [
    "Klassenarbeit (A1)",
    "Prüfung (A1)",
    "Schularbeit (B1)"
@@ -492,7 +492,7 @@
   "gsw": "Beschtätigig",
   "gswArtikel": "d",
   "gswBeispiel": "Für d Aamäldig bruucht me e Beschtätigig vo de Uni.",
-  "ayniLehce": [
+  "sameDialect": [
    "Bestätigung (B1)"
   ]
  },
@@ -540,7 +540,7 @@
   "gsw": "Bewilligig",
   "gswArtikel": "d",
   "gswBeispiel": "Ooni Bewilligig darf d Bauschtell nöd aafange.",
-  "ayniLehce": [
+  "sameDialect": [
    "Erlaubnis (A2)",
    "Bewilligung (C1)"
   ]
@@ -769,7 +769,7 @@
   "gsw": "Lehrling",
   "gswArtikel": "de",
   "gswBeispiel": "D Firma stellt das Jaar zwölf Lehrling aa.",
-  "ayniLehce": [
+  "sameDialect": [
    "Azubi (A2)"
   ]
  },

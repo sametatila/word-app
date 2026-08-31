@@ -97,7 +97,7 @@
   "gsw": "Schtell",
   "gswArtikel": "d",
   "gswBeispiel": "Ich ha e neui Schtell.",
-  "ayniLehce": [
+  "sameDialect": [
    "Arbeitsstelle (B1)"
   ]
  },
@@ -127,7 +127,7 @@
   "gsw": "Tram",
   "gswArtikel": "s",
   "gswBeispiel": "Wo faart s Tram ab?",
-  "ayniLehce": [
+  "sameDialect": [
    "Tram (B1)"
   ]
  },
@@ -184,7 +184,7 @@
   "gsw": "Täil",
   "gswArtikel": "de",
   "gswBeispiel": "Lis bitte au de zwäit Täil.",
-  "ayniLehce": [
+  "sameDialect": [
    "Teil (B1)"
   ]
  },
@@ -250,7 +250,7 @@
   "gsw": "Tomate",
   "gswArtikel": "d",
   "gswBeispiel": "D Tomate isch na grüen.",
-  "ayniLehce": [
+  "sameDialect": [
    "Paradeiser (B1)"
   ]
  },
@@ -280,7 +280,7 @@
   "gsw": "Schtäge",
   "gswArtikel": "d",
   "gswBeispiel": "S WC? D Schtäge duruf und dänn links.",
-  "ayniLehce": [
+  "sameDialect": [
    "Stiege (B1)"
   ]
  },
@@ -328,7 +328,7 @@
   "gsw": "zügle",
   "gswArtikel": null,
   "gswBeispiel": "Nächschte Monet zügled mer.",
-  "ayniLehce": [
+  "sameDialect": [
    "zügeln (B2)"
   ]
  },
@@ -376,7 +376,7 @@
   "gsw": "Ferie",
   "gswArtikel": "d",
   "gswBeispiel": "Ich nime im Septämber Ferie.",
-  "ayniLehce": [
+  "sameDialect": [
    "Ferien (A1)"
   ]
  },
@@ -460,7 +460,7 @@
   "gsw": "Verwandte",
   "gswArtikel": "de",
   "gswBeispiel": "De Peter bsuecht sini Verwandte z Pole.",
-  "ayniLehce": [
+  "sameDialect": [
    "Verwandte (B1)"
   ]
  },

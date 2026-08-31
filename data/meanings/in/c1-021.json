@@ -1,16 +1,16 @@
 {
- "paket": "c1-021",
+ "packet": "c1-021",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 6253,
    "de": "die Kontinuität",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "süreklilik, devamlılık",
-   "mevcutBeispiel": "Der Forscher betont die personelle Kontinuität in den Behörden nach 1945.",
-   "mevcutBeispielTr": "Araştırmacı 1945 sonrasında kurumlardaki kadro sürekliliğini vurguluyor."
+   "currentTr": "süreklilik, devamlılık",
+   "currentBeispiel": "Der Forscher betont die personelle Kontinuität in den Behörden nach 1945.",
+   "currentBeispielTr": "Araştırmacı 1945 sonrasında kurumlardaki kadro sürekliliğini vurguluyor."
   },
   {
    "id": 6254,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Brüche",
-   "mevcutTr": "kopuş, kırılma",
-   "mevcutBeispiel": "Ob das Jahr wirklich einen Bruch markiert, ist unter Fachleuten strittig.",
-   "mevcutBeispielTr": "O yılın gerçekten bir kopuşu simgeleyip simgelemediği uzmanlar arasında tartışmalı."
+   "currentTr": "kopuş, kırılma",
+   "currentBeispiel": "Ob das Jahr wirklich einen Bruch markiert, ist unter Fachleuten strittig.",
+   "currentBeispielTr": "O yılın gerçekten bir kopuşu simgeleyip simgelemediği uzmanlar arasında tartışmalı."
   },
   {
    "id": 6255,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sömürgecilik",
-   "mevcutBeispiel": "Der Kolonialismus wirkt in Handelsstrukturen und Sprachpolitik bis heute nach.",
-   "mevcutBeispielTr": "Sömürgecilik ticaret yapılarında ve dil politikasında bugüne dek etkisini sürdürüyor."
+   "currentTr": "sömürgecilik",
+   "currentBeispiel": "Der Kolonialismus wirkt in Handelsstrukturen und Sprachpolitik bis heute nach.",
+   "currentBeispielTr": "Sömürgecilik ticaret yapılarında ve dil politikasında bugüne dek etkisini sürdürüyor."
   },
   {
    "id": 6256,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Archive",
-   "mevcutTr": "arşiv",
-   "mevcutBeispiel": "Im Archiv lagern Akten, die noch nie jemand ausgewertet hat.",
-   "mevcutBeispielTr": "Arşivde henüz kimsenin incelemediği dosyalar duruyor."
+   "currentTr": "arşiv",
+   "currentBeispiel": "Im Archiv lagern Akten, die noch nie jemand ausgewertet hat.",
+   "currentBeispielTr": "Arşivde henüz kimsenin incelemediği dosyalar duruyor."
   },
   {
    "id": 6257,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yüzleşme, hesaplaşma, ele alıp işleme",
-   "mevcutBeispiel": "Die Aufarbeitung der Diktatur begann erst zwei Jahrzehnte später.",
-   "mevcutBeispielTr": "Diktatörlükle yüzleşme ancak yirmi yıl sonra başladı."
+   "currentTr": "yüzleşme, hesaplaşma, ele alıp işleme",
+   "currentBeispiel": "Die Aufarbeitung der Diktatur begann erst zwei Jahrzehnte später.",
+   "currentBeispielTr": "Diktatörlükle yüzleşme ancak yirmi yıl sonra başladı."
   },
   {
    "id": 6258,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "geçmişle hesaplaşma",
-   "mevcutBeispiel": "Vergangenheitsbewältigung lässt sich nicht per Gesetz verordnen.",
-   "mevcutBeispielTr": "Geçmişle hesaplaşma yasayla dayatılabilecek bir şey değildir."
+   "currentTr": "geçmişle hesaplaşma",
+   "currentBeispiel": "Vergangenheitsbewältigung lässt sich nicht per Gesetz verordnen.",
+   "currentBeispielTr": "Geçmişle hesaplaşma yasayla dayatılabilecek bir şey değildir."
   },
   {
    "id": 6259,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yorum üstünlüğü, anlamlandırma tekeli",
-   "mevcutBeispiel": "Um die Deutungshoheit über das Gedenken wird bis heute gerungen.",
-   "mevcutBeispielTr": "Anma üzerindeki yorum üstünlüğü için bugün hâlâ mücadele ediliyor."
+   "currentTr": "yorum üstünlüğü, anlamlandırma tekeli",
+   "currentBeispiel": "Um die Deutungshoheit über das Gedenken wird bis heute gerungen.",
+   "currentBeispielTr": "Anma üzerindeki yorum üstünlüğü için bugün hâlâ mücadele ediliyor."
   },
   {
    "id": 6260,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Narrative",
-   "mevcutTr": "anlatı, hâkim söylem",
-   "mevcutBeispiel": "Das nationale Narrativ vom ewigen Opfer hält sich hartnäckig.",
-   "mevcutBeispielTr": "Ebedî mağduriyet üzerine kurulu ulusal anlatı inatla varlığını koruyor."
+   "currentTr": "anlatı, hâkim söylem",
+   "currentBeispiel": "Das nationale Narrativ vom ewigen Opfer hält sich hartnäckig.",
+   "currentBeispielTr": "Ebedî mağduriyet üzerine kurulu ulusal anlatı inatla varlığını koruyor."
   },
   {
    "id": 6261,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verklärungen",
-   "mevcutTr": "yüceltme, pembeye boyama",
-   "mevcutBeispiel": "Seine Rede war eine Verklärung einer Epoche, die er nie erlebt hat.",
-   "mevcutBeispielTr": "Konuşması, hiç yaşamadığı bir dönemin yüceltilmesinden ibaretti."
+   "currentTr": "yüceltme, pembeye boyama",
+   "currentBeispiel": "Seine Rede war eine Verklärung einer Epoche, die er nie erlebt hat.",
+   "currentBeispielTr": "Konuşması, hiç yaşamadığı bir dönemin yüceltilmesinden ibaretti."
   },
   {
    "id": 6262,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Mahnmale",
-   "mevcutTr": "uyarı anıtı, ibret anıtı",
-   "mevcutBeispiel": "Das Mahnmal steht bewusst mitten im Alltag der Stadt.",
-   "mevcutBeispielTr": "Anıt bilinçli olarak şehrin gündelik hayatının tam ortasında duruyor."
+   "currentTr": "uyarı anıtı, ibret anıtı",
+   "currentBeispiel": "Das Mahnmal steht bewusst mitten im Alltag der Stadt.",
+   "currentBeispielTr": "Anıt bilinçli olarak şehrin gündelik hayatının tam ortasında duruyor."
   },
   {
    "id": 6263,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gedenkstätten",
-   "mevcutTr": "anma yeri, anıt mekân",
-   "mevcutBeispiel": "Die Gedenkstätte empfängt jedes Jahr Tausende von Schulklassen.",
-   "mevcutBeispielTr": "Anma mekânı her yıl binlerce okul sınıfını ağırlıyor."
+   "currentTr": "anma yeri, anıt mekân",
+   "currentBeispiel": "Die Gedenkstätte empfängt jedes Jahr Tausende von Schulklassen.",
+   "currentBeispielTr": "Anma mekânı her yıl binlerce okul sınıfını ağırlıyor."
   },
   {
    "id": 6264,
@@ -118,10 +118,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Restitutionen",
-   "mevcutTr": "iade, geri verme",
-   "mevcutBeispiel": "Die Restitution der Bronzen wurde nach langen Verhandlungen beschlossen.",
-   "mevcutBeispielTr": "Bronzların iadesi uzun görüşmelerin ardından karara bağlandı.",
-   "cakisan": [
+   "currentTr": "iade, geri verme",
+   "currentBeispiel": "Die Restitution der Bronzen wurde nach langen Verhandlungen beschlossen.",
+   "currentBeispielTr": "Bronzların iadesi uzun görüşmelerin ardından karara bağlandı.",
+   "overlapping": [
     "die Rückgabe (A2)"
    ]
   },
@@ -131,10 +131,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Provenienzen",
-   "mevcutTr": "köken, geliş yolu",
-   "mevcutBeispiel": "Bei mehreren Objekten ist die Provenienz bis heute ungeklärt.",
-   "mevcutBeispielTr": "Birçok nesnenin kökeni bugün hâlâ aydınlatılmış değil.",
-   "cakisan": [
+   "currentTr": "köken, geliş yolu",
+   "currentBeispiel": "Bei mehreren Objekten ist die Provenienz bis heute ungeklärt.",
+   "currentBeispielTr": "Birçok nesnenin kökeni bugün hâlâ aydınlatılmış değil.",
+   "overlapping": [
     "die Herkunft (B1)"
    ]
   },
@@ -144,9 +144,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yağmalanmış sanat eseri",
-   "mevcutBeispiel": "Das Museum prüft seine Sammlung systematisch auf Raubkunst.",
-   "mevcutBeispielTr": "Müze koleksiyonunu yağmalanmış eserler açısından sistemli biçimde inceliyor."
+   "currentTr": "yağmalanmış sanat eseri",
+   "currentBeispiel": "Das Museum prüft seine Sammlung systematisch auf Raubkunst.",
+   "currentBeispielTr": "Müze koleksiyonunu yağmalanmış eserler açısından sistemli biçimde inceliyor."
   },
   {
    "id": 6267,
@@ -154,9 +154,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yakın dönem tarihi",
-   "mevcutBeispiel": "Sie lehrt Zeitgeschichte und forscht zu den Nachkriegsjahren.",
-   "mevcutBeispielTr": "Yakın dönem tarihi dersleri veriyor ve savaş sonrası yıllar üzerine araştırma yapıyor."
+   "currentTr": "yakın dönem tarihi",
+   "currentBeispiel": "Sie lehrt Zeitgeschichte und forscht zu den Nachkriegsjahren.",
+   "currentBeispielTr": "Yakın dönem tarihi dersleri veriyor ve savaş sonrası yıllar üzerine araştırma yapıyor."
   },
   {
    "id": 6268,
@@ -164,9 +164,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Historiker",
-   "mevcutTr": "tarihçi",
-   "mevcutBeispiel": "Zwei Historiker widersprachen der offiziellen Darstellung entschieden.",
-   "mevcutBeispielTr": "İki tarihçi resmî anlatıya kararlı biçimde karşı çıktı."
+   "currentTr": "tarihçi",
+   "currentBeispiel": "Zwei Historiker widersprachen der offiziellen Darstellung entschieden.",
+   "currentBeispielTr": "İki tarihçi resmî anlatıya kararlı biçimde karşı çıktı."
   },
   {
    "id": 6269,
@@ -174,9 +174,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rekonstruktionen",
-   "mevcutTr": "yeniden kurma, canlandırma",
-   "mevcutBeispiel": "Die Rekonstruktion der Ereignisse stützt sich auf drei unabhängige Quellen.",
-   "mevcutBeispielTr": "Olayların yeniden kurgulanması birbirinden bağımsız üç kaynağa dayanıyor."
+   "currentTr": "yeniden kurma, canlandırma",
+   "currentBeispiel": "Die Rekonstruktion der Ereignisse stützt sich auf drei unabhängige Quellen.",
+   "currentBeispielTr": "Olayların yeniden kurgulanması birbirinden bağımsız üç kaynağa dayanıyor."
   },
   {
    "id": 6270,
@@ -184,9 +184,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Fälschungen",
-   "mevcutTr": "sahte (belge, eser), sahtecilik",
-   "mevcutBeispiel": "Erst die Papieranalyse entlarvte das Tagebuch als plumpe Fälschung.",
-   "mevcutBeispielTr": "Günlüğün kaba bir sahtecilik olduğunu ancak kâğıt analizi ortaya çıkardı."
+   "currentTr": "sahte (belge, eser), sahtecilik",
+   "currentBeispiel": "Erst die Papieranalyse entlarvte das Tagebuch als plumpe Fälschung.",
+   "currentBeispielTr": "Günlüğün kaba bir sahtecilik olduğunu ancak kâğıt analizi ortaya çıkardı."
   },
   {
    "id": 6271,
@@ -194,10 +194,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "özgünlük, gerçeklik",
-   "mevcutBeispiel": "Die Authentizität des Dokuments wird von mehreren Fachleuten bezweifelt.",
-   "mevcutBeispielTr": "Belgenin özgünlüğü birçok uzman tarafından şüpheyle karşılanıyor.",
-   "cakisan": [
+   "currentTr": "özgünlük, gerçeklik",
+   "currentBeispiel": "Die Authentizität des Dokuments wird von mehreren Fachleuten bezweifelt.",
+   "currentBeispielTr": "Belgenin özgünlüğü birçok uzman tarafından şüpheyle karşılanıyor.",
+   "overlapping": [
     "die Originalität (C1)"
    ]
   },
@@ -207,9 +207,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Fremdherrschaften",
-   "mevcutTr": "yabancı egemenliği, işgal yönetimi",
-   "mevcutBeispiel": "Vier Jahrhunderte Fremdherrschaft prägen das Selbstbild der Region.",
-   "mevcutBeispielTr": "Dört yüzyıllık yabancı egemenliği bölgenin kendine bakışını biçimlendiriyor."
+   "currentTr": "yabancı egemenliği, işgal yönetimi",
+   "currentBeispiel": "Vier Jahrhunderte Fremdherrschaft prägen das Selbstbild der Region.",
+   "currentBeispielTr": "Dört yüzyıllık yabancı egemenliği bölgenin kendine bakışını biçimlendiriyor."
   },
   {
    "id": 6273,
@@ -217,9 +217,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sömürü",
-   "mevcutBeispiel": "Der Wohlstand der Metropole beruhte auf der Ausbeutung der Kolonien.",
-   "mevcutBeispielTr": "Metropolün refahı sömürgelerin sömürülmesine dayanıyordu."
+   "currentTr": "sömürü",
+   "currentBeispiel": "Der Wohlstand der Metropole beruhte auf der Ausbeutung der Kolonien.",
+   "currentBeispielTr": "Metropolün refahı sömürgelerin sömürülmesine dayanıyordu."
   },
   {
    "id": 6274,
@@ -227,10 +227,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "uzlaşma, barışma",
-   "mevcutBeispiel": "Die Aussöhnung beider Länder begann mit einem stillen Kniefall.",
-   "mevcutBeispielTr": "İki ülkenin uzlaşması sessiz bir diz çöküşle başladı.",
-   "cakisan": [
+   "currentTr": "uzlaşma, barışma",
+   "currentBeispiel": "Die Aussöhnung beider Länder begann mit einem stillen Kniefall.",
+   "currentBeispielTr": "İki ülkenin uzlaşması sessiz bir diz çöküşle başladı.",
+   "overlapping": [
     "der Kompromiss (B1)"
    ]
   },
@@ -240,9 +240,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "telafi, zararın giderilmesi",
-   "mevcutBeispiel": "Materielle Wiedergutmachung ersetzt keine ehrliche Entschuldigung.",
-   "mevcutBeispielTr": "Maddi telafi, içten bir özrün yerini tutmaz."
+   "currentTr": "telafi, zararın giderilmesi",
+   "currentBeispiel": "Materielle Wiedergutmachung ersetzt keine ehrliche Entschuldigung.",
+   "currentBeispielTr": "Maddi telafi, içten bir özrün yerini tutmaz."
   },
   {
    "id": 6276,
@@ -250,9 +250,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "faillik, suçu işlemiş olma",
-   "mevcutBeispiel": "Die Akten belegen eine aktive Täterschaft, nicht bloßes Mitlaufen.",
-   "mevcutBeispielTr": "Dosyalar sadece uyum sağlamayı değil, etkin bir failliği ortaya koyuyor."
+   "currentTr": "faillik, suçu işlemiş olma",
+   "currentBeispiel": "Die Akten belegen eine aktive Täterschaft, nicht bloßes Mitlaufen.",
+   "currentBeispielTr": "Dosyalar sadece uyum sağlamayı değil, etkin bir failliği ortaya koyuyor."
   },
   {
    "id": 6277,
@@ -260,9 +260,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Opferrollen",
-   "mevcutTr": "mağdur rolü, kurban rolü",
-   "mevcutBeispiel": "Die Nachkriegsgesellschaft flüchtete sich bequem in die Opferrolle.",
-   "mevcutBeispielTr": "Savaş sonrası toplumu rahatça mağdur rolüne sığındı."
+   "currentTr": "mağdur rolü, kurban rolü",
+   "currentBeispiel": "Die Nachkriegsgesellschaft flüchtete sich bequem in die Opferrolle.",
+   "currentBeispielTr": "Savaş sonrası toplumu rahatça mağdur rolüne sığındı."
   },
   {
    "id": 6278,
@@ -270,9 +270,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Relativierungen",
-   "mevcutTr": "göreceleştirme, hafifletme",
-   "mevcutBeispiel": "Solche Vergleiche laufen auf eine Relativierung der Verbrechen hinaus.",
-   "mevcutBeispielTr": "Bu tür karşılaştırmalar suçların göreceleştirilmesine varıp dayanıyor."
+   "currentTr": "göreceleştirme, hafifletme",
+   "currentBeispiel": "Solche Vergleiche laufen auf eine Relativierung der Verbrechen hinaus.",
+   "currentBeispielTr": "Bu tür karşılaştırmalar suçların göreceleştirilmesine varıp dayanıyor."
   },
   {
    "id": 6279,
@@ -280,9 +280,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Vereinnahmungen",
-   "mevcutTr": "sahiplenme, kendi amacına alet etme",
-   "mevcutBeispiel": "Die Familie wehrte sich gegen die politische Vereinnahmung des Gedenkens.",
-   "mevcutBeispielTr": "Aile, anmanın siyasi olarak sahiplenilmesine karşı çıktı."
+   "currentTr": "sahiplenme, kendi amacına alet etme",
+   "currentBeispiel": "Die Familie wehrte sich gegen die politische Vereinnahmung des Gedenkens.",
+   "currentBeispielTr": "Aile, anmanın siyasi olarak sahiplenilmesine karşı çıktı."
   },
   {
    "id": 6280,
@@ -290,9 +290,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kahraman kültü, kahraman yüceltmesi",
-   "mevcutBeispiel": "Statt Heldenverehrung fordern die Autoren eine nüchterne Bilanz.",
-   "mevcutBeispielTr": "Yazarlar kahraman yüceltmesi yerine serinkanlı bir bilanço istiyor."
+   "currentTr": "kahraman kültü, kahraman yüceltmesi",
+   "currentBeispiel": "Statt Heldenverehrung fordern die Autoren eine nüchterne Bilanz.",
+   "currentBeispielTr": "Yazarlar kahraman yüceltmesi yerine serinkanlı bir bilanço istiyor."
   },
   {
    "id": 6281,
@@ -300,9 +300,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "nostalji, geçmiş özlemi",
-   "mevcutBeispiel": "Hinter der Nostalgie verbirgt sich oft eine sehr selektive Erinnerung.",
-   "mevcutBeispielTr": "Nostaljinin ardında çoğu zaman son derece seçici bir hafıza gizlenir."
+   "currentTr": "nostalji, geçmiş özlemi",
+   "currentBeispiel": "Hinter der Nostalgie verbirgt sich oft eine sehr selektive Erinnerung.",
+   "currentBeispielTr": "Nostaljinin ardında çoğu zaman son derece seçici bir hafıza gizlenir."
   },
   {
    "id": 6282,
@@ -310,9 +310,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Nachwirkungen",
-   "mevcutTr": "kalıcı etki, sonradan ortaya çıkan etki",
-   "mevcutBeispiel": "Die Nachwirkungen der Teilung zeigen sich noch in den Wahlergebnissen.",
-   "mevcutBeispielTr": "Bölünmenin kalıcı etkileri seçim sonuçlarında hâlâ görülüyor."
+   "currentTr": "kalıcı etki, sonradan ortaya çıkan etki",
+   "currentBeispiel": "Die Nachwirkungen der Teilung zeigen sich noch in den Wahlergebnissen.",
+   "currentBeispielTr": "Bölünmenin kalıcı etkileri seçim sonuçlarında hâlâ görülüyor."
   },
   {
    "id": 6283,
@@ -320,9 +320,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çöküş, gerileme",
-   "mevcutBeispiel": "Der Niedergang des Reiches vollzog sich über mehrere Generationen.",
-   "mevcutBeispielTr": "İmparatorluğun çöküşü birkaç kuşak boyunca gerçekleşti."
+   "currentTr": "çöküş, gerileme",
+   "currentBeispiel": "Der Niedergang des Reiches vollzog sich über mehrere Generationen.",
+   "currentBeispielTr": "İmparatorluğun çöküşü birkaç kuşak boyunca gerçekleşti."
   },
   {
    "id": 6284,
@@ -330,9 +330,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sekülerleşme, dünyevileşme",
-   "mevcutBeispiel": "Die Säkularisierung veränderte auch die Formen des öffentlichen Gedenkens.",
-   "mevcutBeispielTr": "Sekülerleşme kamusal anmanın biçimlerini de değiştirdi."
+   "currentTr": "sekülerleşme, dünyevileşme",
+   "currentBeispiel": "Die Säkularisierung veränderte auch die Formen des öffentlichen Gedenkens.",
+   "currentBeispielTr": "Sekülerleşme kamusal anmanın biçimlerini de değiştirdi."
   },
   {
    "id": 6285,
@@ -340,9 +340,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Machtergreifungen",
-   "mevcutTr": "iktidarı ele geçirme",
-   "mevcutBeispiel": "Der Begriff Machtergreifung verschleiert, wie viele mitgeholfen haben.",
-   "mevcutBeispielTr": "İktidarı ele geçirme ifadesi, kaç kişinin buna yardım ettiğini gizliyor."
+   "currentTr": "iktidarı ele geçirme",
+   "currentBeispiel": "Der Begriff Machtergreifung verschleiert, wie viele mitgeholfen haben.",
+   "currentBeispielTr": "İktidarı ele geçirme ifadesi, kaç kişinin buna yardım ettiğini gizliyor."
   },
   {
    "id": 6286,
@@ -350,9 +350,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Diktaturen",
-   "mevcutTr": "diktatörlük",
-   "mevcutBeispiel": "Zwei Diktaturen innerhalb eines Jahrhunderts haben das Land gezeichnet.",
-   "mevcutBeispielTr": "Bir yüzyıl içindeki iki diktatörlük ülkeye derin izler bıraktı."
+   "currentTr": "diktatörlük",
+   "currentBeispiel": "Zwei Diktaturen innerhalb eines Jahrhunderts haben das Land gezeichnet.",
+   "currentBeispielTr": "Bir yüzyıl içindeki iki diktatörlük ülkeye derin izler bıraktı."
   },
   {
    "id": 6287,
@@ -360,9 +360,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Aufstände",
-   "mevcutTr": "ayaklanma, isyan",
-   "mevcutBeispiel": "Der Aufstand wurde binnen weniger Tage blutig niedergeschlagen.",
-   "mevcutBeispielTr": "Ayaklanma birkaç gün içinde kanlı biçimde bastırıldı."
+   "currentTr": "ayaklanma, isyan",
+   "currentBeispiel": "Der Aufstand wurde binnen weniger Tage blutig niedergeschlagen.",
+   "currentBeispielTr": "Ayaklanma birkaç gün içinde kanlı biçimde bastırıldı."
   },
   {
    "id": 6288,
@@ -370,9 +370,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verschwörungen",
-   "mevcutTr": "komplo, gizli tertip",
-   "mevcutBeispiel": "Die Verschwörung scheiterte, doch ihr Andenken wurde später politisch genutzt.",
-   "mevcutBeispielTr": "Komplo başarısız oldu ama anısı sonradan siyasi amaçla kullanıldı."
+   "currentTr": "komplo, gizli tertip",
+   "currentBeispiel": "Die Verschwörung scheiterte, doch ihr Andenken wurde später politisch genutzt.",
+   "currentBeispielTr": "Komplo başarısız oldu ama anısı sonradan siyasi amaçla kullanıldı."
   },
   {
    "id": 6289,
@@ -380,9 +380,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "tek tipleştirme, tümüyle denetime alma",
-   "mevcutBeispiel": "Die Gleichschaltung der Presse dauerte kaum ein halbes Jahr.",
-   "mevcutBeispielTr": "Basının tek tipleştirilmesi yarım yıl bile sürmedi."
+   "currentTr": "tek tipleştirme, tümüyle denetime alma",
+   "currentBeispiel": "Die Gleichschaltung der Presse dauerte kaum ein halbes Jahr.",
+   "currentBeispielTr": "Basının tek tipleştirilmesi yarım yıl bile sürmedi."
   },
   {
    "id": 6290,
@@ -390,9 +390,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Deportationen",
-   "mevcutTr": "sürgün etme, toplu sevk",
-   "mevcutBeispiel": "Die Deportationen wurden von örtlichen Beamten sorgfältig organisiert.",
-   "mevcutBeispielTr": "Sürgünler yerel memurlar tarafından titizlikle örgütlendi."
+   "currentTr": "sürgün etme, toplu sevk",
+   "currentBeispiel": "Die Deportationen wurden von örtlichen Beamten sorgfältig organisiert.",
+   "currentBeispielTr": "Sürgünler yerel memurlar tarafından titizlikle örgütlendi."
   },
   {
    "id": 6291,
@@ -400,9 +400,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Völkermorde",
-   "mevcutTr": "soykırım",
-   "mevcutBeispiel": "Das Parlament stufte die Verbrechen offiziell als Völkermord ein.",
-   "mevcutBeispielTr": "Parlamento bu suçları resmen soykırım olarak nitelendirdi."
+   "currentTr": "soykırım",
+   "currentBeispiel": "Das Parlament stufte die Verbrechen offiziell als Völkermord ein.",
+   "currentBeispielTr": "Parlamento bu suçları resmen soykırım olarak nitelendirdi."
   },
   {
    "id": 6292,
@@ -410,10 +410,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat erforscht",
-   "mevcutTr": "araştırmak, incelemek",
-   "mevcutBeispiel": "Ein Team erforscht die Rolle der Kirche in jenen Jahren.",
-   "mevcutBeispielTr": "Bir ekip kilisenin o yıllardaki rolünü araştırıyor.",
-   "cakisan": [
+   "currentTr": "araştırmak, incelemek",
+   "currentBeispiel": "Ein Team erforscht die Rolle der Kirche in jenen Jahren.",
+   "currentBeispielTr": "Bir ekip kilisenin o yıllardaki rolünü araştırıyor.",
+   "overlapping": [
     "recherchieren (B2)",
     "abklären (B2)"
    ]
@@ -424,9 +424,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat ergründet",
-   "mevcutTr": "derinlemesine araştırmak, künhüne varmak",
-   "mevcutBeispiel": "Die Studie versucht, die Motive der Mitläufer zu ergründen.",
-   "mevcutBeispielTr": "Çalışma, sürüklenip gidenlerin saiklerini derinlemesine anlamaya çalışıyor."
+   "currentTr": "derinlemesine araştırmak, künhüne varmak",
+   "currentBeispiel": "Die Studie versucht, die Motive der Mitläufer zu ergründen.",
+   "currentBeispielTr": "Çalışma, sürüklenip gidenlerin saiklerini derinlemesine anlamaya çalışıyor."
   },
   {
    "id": 6294,
@@ -434,9 +434,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat nachgezeichnet",
-   "mevcutTr": "adım adım ortaya koymak, izini sürmek",
-   "mevcutBeispiel": "Das Buch zeichnet den Weg der Familie durch drei Länder nach.",
-   "mevcutBeispielTr": "Kitap ailenin üç ülke boyunca izlediği yolu adım adım ortaya koyuyor."
+   "currentTr": "adım adım ortaya koymak, izini sürmek",
+   "currentBeispiel": "Das Buch zeichnet den Weg der Familie durch drei Länder nach.",
+   "currentBeispielTr": "Kitap ailenin üç ülke boyunca izlediği yolu adım adım ortaya koyuyor."
   },
   {
    "id": 6295,
@@ -444,9 +444,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat eingeordnet",
-   "mevcutTr": "bağlamına oturtmak, sınıflandırmak",
-   "mevcutBeispiel": "Ohne Kontext lässt sich die Quelle kaum sinnvoll einordnen.",
-   "mevcutBeispielTr": "Bağlam olmadan bu kaynağı anlamlı biçimde yerine oturtmak zor."
+   "currentTr": "bağlamına oturtmak, sınıflandırmak",
+   "currentBeispiel": "Ohne Kontext lässt sich die Quelle kaum sinnvoll einordnen.",
+   "currentBeispielTr": "Bağlam olmadan bu kaynağı anlamlı biçimde yerine oturtmak zor."
   },
   {
    "id": 6296,
@@ -454,10 +454,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gesichtet",
-   "mevcutTr": "gözden geçirmek, taramak",
-   "mevcutBeispiel": "Sie hat monatelang Akten gesichtet, bevor sie zu schreiben begann.",
-   "mevcutBeispielTr": "Yazmaya başlamadan önce aylarca dosyaları gözden geçirdi.",
-   "cakisan": [
+   "currentTr": "gözden geçirmek, taramak",
+   "currentBeispiel": "Sie hat monatelang Akten gesichtet, bevor sie zu schreiben begann.",
+   "currentBeispielTr": "Yazmaya başlamadan önce aylarca dosyaları gözden geçirdi.",
+   "overlapping": [
     "revidieren (C1)",
     "durchgehen (A2)"
    ]
@@ -468,10 +468,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat geleugnet",
-   "mevcutTr": "inkâr etmek",
-   "mevcutBeispiel": "Wer die Massenmorde leugnet, macht sich hier strafbar.",
-   "mevcutBeispielTr": "Toplu katliamları inkâr eden burada suç işlemiş olur.",
-   "cakisan": [
+   "currentTr": "inkâr etmek",
+   "currentBeispiel": "Wer die Massenmorde leugnet, macht sich hier strafbar.",
+   "currentBeispielTr": "Toplu katliamları inkâr eden burada suç işlemiş olur.",
+   "overlapping": [
     "bestreiten (B2)"
    ]
   },
@@ -481,10 +481,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat eingestanden",
-   "mevcutTr": "itiraf etmek, kabullenmek",
-   "mevcutBeispiel": "Der Staat gestand seine Mitverantwortung erst sehr spät ein.",
-   "mevcutBeispielTr": "Devlet ortak sorumluluğunu ancak çok geç kabul etti.",
-   "cakisan": [
+   "currentTr": "itiraf etmek, kabullenmek",
+   "currentBeispiel": "Der Staat gestand seine Mitverantwortung erst sehr spät ein.",
+   "currentBeispielTr": "Devlet ortak sorumluluğunu ancak çok geç kabul etti.",
+   "overlapping": [
     "zugeben (B2)",
     "gestehen (A2)"
    ]
@@ -495,9 +495,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gesühnt",
-   "mevcutTr": "kefaretini ödemek, bedelini ödemek",
-   "mevcutBeispiel": "Kein Denkmal kann sühnen, was damals geschehen ist.",
-   "mevcutBeispielTr": "Hiçbir anıt o zaman olanların kefaretini ödeyemez."
+   "currentTr": "kefaretini ödemek, bedelini ödemek",
+   "currentBeispiel": "Kein Denkmal kann sühnen, was damals geschehen ist.",
+   "currentBeispielTr": "Hiçbir anıt o zaman olanların kefaretini ödeyemez."
   },
   {
    "id": 6300,
@@ -505,9 +505,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat sich aufgelehnt",
-   "mevcutTr": "başkaldırmak, isyan etmek",
-   "mevcutBeispiel": "Die Studenten lehnten sich gegen das Schweigen ihrer Eltern auf.",
-   "mevcutBeispielTr": "Öğrenciler ebeveynlerinin suskunluğuna başkaldırdı."
+   "currentTr": "başkaldırmak, isyan etmek",
+   "currentBeispiel": "Die Studenten lehnten sich gegen das Schweigen ihrer Eltern auf.",
+   "currentBeispielTr": "Öğrenciler ebeveynlerinin suskunluğuna başkaldırdı."
   },
   {
    "id": 6301,
@@ -515,9 +515,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat zensiert",
-   "mevcutTr": "sansürlemek",
-   "mevcutBeispiel": "Ganze Passagen des Berichts wurden nachträglich zensiert.",
-   "mevcutBeispielTr": "Raporun bütün pasajları sonradan sansürlendi."
+   "currentTr": "sansürlemek",
+   "currentBeispiel": "Ganze Passagen des Berichts wurden nachträglich zensiert.",
+   "currentBeispielTr": "Raporun bütün pasajları sonradan sansürlendi."
   },
   {
    "id": 6302,
@@ -525,9 +525,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat fortbestanden",
-   "mevcutTr": "varlığını sürdürmek, devam etmek",
-   "mevcutBeispiel": "Alte Netzwerke bestanden auch nach dem Systemwechsel fort.",
-   "mevcutBeispielTr": "Eski ağlar rejim değişikliğinden sonra da varlığını sürdürdü."
+   "currentTr": "varlığını sürdürmek, devam etmek",
+   "currentBeispiel": "Alte Netzwerke bestanden auch nach dem Systemwechsel fort.",
+   "currentBeispielTr": "Eski ağlar rejim değişikliğinden sonra da varlığını sürdürdü."
   }
  ]
 }

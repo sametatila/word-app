@@ -52,7 +52,7 @@
   "gsw": "Abgas",
   "gswArtikel": null,
   "gswBeispiel": "D Abgas vo de Induschtrii und vo de Huushalt verschmutzed d Luft.",
-  "ayniLehce": [
+  "sameDialect": [
    "Abgas (B2)"
   ]
  },
@@ -100,7 +100,7 @@
   "gsw": "Matur",
   "gswArtikel": "d",
   "gswBeispiel": "Mini Tochter hät grad d Matur gmacht.",
-  "ayniLehce": [
+  "sameDialect": [
    "Matura (B1)"
   ]
  },
@@ -121,7 +121,7 @@
   "gsw": "abmache",
   "gswArtikel": null,
   "gswBeispiel": "Mir händ doch abgmacht, dass du d Getränk bsorgsch.",
-  "ayniLehce": [
+  "sameDialect": [
    "vereinbaren (A2)",
    "sich verabreden (B1)"
   ]
@@ -233,7 +233,7 @@
   "gsw": "Abwart",
   "gswArtikel": "de",
   "gswBeispiel": "De Abwart hät mer ghulfe, de Schrank i d Wonig z träge.",
-  "ayniLehce": [
+  "sameDialect": [
    "Hausmeister (B1)"
   ]
  },
@@ -263,7 +263,7 @@
   "gsw": "abwäsche",
   "gswArtikel": null,
   "gswBeispiel": "Ich mues na s Gschirr abwäsche.",
-  "ayniLehce": [
+  "sameDialect": [
    "abspülen (A2)"
   ]
  },
@@ -311,7 +311,7 @@
   "gsw": "Aktion",
   "gswArtikel": "d",
   "gswBeispiel": "D Schtadt sött e Aktion für Familie plane.",
-  "ayniLehce": [
+  "sameDialect": [
    "Sonderangebot (B1)"
   ]
  },
@@ -539,7 +539,7 @@
   "gsw": "Aaghörig",
   "gswArtikel": "de",
   "gswBeispiel": "De Dokter git nume de nöchschte Aaghörige Uskunft.",
-  "ayniLehce": [
+  "sameDialect": [
    "Angehörige (B1)"
   ]
  },
@@ -551,7 +551,7 @@
   "gsw": "Aaghörig",
   "gswArtikel": "d",
   "gswBeispiel": "De Dokter git nume de nöchschte Aaghörige Uskunft.",
-  "ayniLehce": [
+  "sameDialect": [
    "Angehörige (B1)"
   ]
  },
@@ -626,7 +626,7 @@
   "gsw": "Inserat",
   "gswArtikel": "s",
   "gswBeispiel": "Ich ha jedes Inserat gläse, aber d Wonige sind z tüür.",
-  "ayniLehce": [
+  "sameDialect": [
    "Anzeige (A1)"
   ]
  },
@@ -782,7 +782,7 @@
   "gsw": "Aprikose",
   "gswArtikel": "d",
   "gswBeispiel": "Schmöcked der d Aprikose?",
-  "ayniLehce": [
+  "sameDialect": [
    "Marille (B1)"
   ]
  },
@@ -821,7 +821,7 @@
   "gsw": "Schtell",
   "gswArtikel": "d",
   "gswBeispiel": "Mini Frau hät e neui Schtell gfunde.",
-  "ayniLehce": [
+  "sameDialect": [
    "Stelle (A1)"
   ]
  },
@@ -1013,7 +1013,7 @@
   "gsw": "ufnää",
   "gswArtikel": null,
   "gswBeispiel": "Mir wänd d Aneta i üsen Veräin ufnää. Ich ha de Film i de Ferie ufgnaa.",
-  "ayniLehce": [
+  "sameDialect": [
    "wischen (A2)"
   ]
  },

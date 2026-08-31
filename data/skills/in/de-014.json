@@ -1,7 +1,7 @@
 {
- "paket": "de-014",
+ "packet": "de-014",
  "course": "de",
- "egzersizler": [
+ "exercises": [
   {
    "id": "b2-r9",
    "skill": "reading",
@@ -9,51 +9,51 @@
    "title": "Stolpersteine",
    "genre": "Kültür",
    "intro": "Alman şehirlerinde kaldırımlara gömülü küçük pirinç taşlar. Bu yazı, dünyanın en büyük anıtının neden merkezde değil ayaklarınızın altında olduğunu anlatıyor.",
-   "metin": "Wer in einer deutschen Stadt auf den Boden schaut, findet sie irgendwann: kleine Messingplatten im Gehweg, zehn mal zehn Zentimeter. Darauf steht „Hier wohnte“, ein Name, ein Geburtsjahr — und was mit diesem Menschen geschah.\n\nDie Stolpersteine sind das größte dezentrale Denkmal der Welt. Über 100.000 liegen inzwischen in mehr als 30 Ländern. Der Künstler Gunter Demnig verlegt sie seit 1992, meist selbst, meist vor dem letzten frei gewählten Wohnort der Opfer des Nationalsozialismus.\n\nDie Idee dahinter ist genau durchdacht. Ein zentrales Denkmal besucht man — man fährt hin, steht davor, geht wieder. Ein Stolperstein dagegen liegt auf dem Weg zur Arbeit. Man begegnet ihm ohne Absicht. Und wer den Namen lesen will, muss sich bücken. Diese Geste ist Teil des Werks.\n\nEs gibt auch Widerstand. München erlaubt bis heute keine Verlegung auf öffentlichem Grund; die Israelitische Kultusgemeinde dort argumentiert, dass Namen von Ermordeten nicht mit Füßen getreten werden sollten. Andere kritisieren, dass Hausbesitzer die Verlegung verhindern können, weil sie Wertverlust fürchten.\n\nGerade dieser Streit gehört zum Denkmal. Es fragt nicht nur, wer damals verschwunden ist, sondern auch, wie eine Gesellschaft heute mit dieser Abwesenheit umgehen will — an ihrer eigenen Haustür.",
+   "text": "Wer in einer deutschen Stadt auf den Boden schaut, findet sie irgendwann: kleine Messingplatten im Gehweg, zehn mal zehn Zentimeter. Darauf steht „Hier wohnte“, ein Name, ein Geburtsjahr — und was mit diesem Menschen geschah.\n\nDie Stolpersteine sind das größte dezentrale Denkmal der Welt. Über 100.000 liegen inzwischen in mehr als 30 Ländern. Der Künstler Gunter Demnig verlegt sie seit 1992, meist selbst, meist vor dem letzten frei gewählten Wohnort der Opfer des Nationalsozialismus.\n\nDie Idee dahinter ist genau durchdacht. Ein zentrales Denkmal besucht man — man fährt hin, steht davor, geht wieder. Ein Stolperstein dagegen liegt auf dem Weg zur Arbeit. Man begegnet ihm ohne Absicht. Und wer den Namen lesen will, muss sich bücken. Diese Geste ist Teil des Werks.\n\nEs gibt auch Widerstand. München erlaubt bis heute keine Verlegung auf öffentlichem Grund; die Israelitische Kultusgemeinde dort argumentiert, dass Namen von Ermordeten nicht mit Füßen getreten werden sollten. Andere kritisieren, dass Hausbesitzer die Verlegung verhindern können, weil sie Wertverlust fürchten.\n\nGerade dieser Streit gehört zum Denkmal. Es fragt nicht nur, wer damals verschwunden ist, sondern auch, wie eine Gesellschaft heute mit dieser Abwesenheit umgehen will — an ihrer eigenen Haustür.",
    "gloss": [
     {
      "de": "der Stolperstein",
-     "mevcutTr": "tökezleme taşı"
+     "currentTr": "tökezleme taşı"
     },
     {
      "de": "das Denkmal",
-     "mevcutTr": "anıt",
-     "havuz": {
+     "currentTr": "anıt",
+     "pool": {
       "tr": "anıt",
       "en": "monument"
      }
     },
     {
      "de": "die Erinnerung",
-     "mevcutTr": "anı",
-     "havuz": {
+     "currentTr": "anı",
+     "pool": {
       "tr": "anı",
       "en": "memory"
      }
     },
     {
      "de": "verschleppen",
-     "mevcutTr": "zorla götürmek"
+     "currentTr": "zorla götürmek"
     },
     {
      "de": "die Messingplatte",
-     "mevcutTr": "pirinç levha"
+     "currentTr": "pirinç levha"
     },
     {
      "de": "sich bücken",
-     "mevcutTr": "eğilmek"
+     "currentTr": "eğilmek"
     },
     {
      "de": "der Widerstand",
-     "mevcutTr": "direniş",
-     "havuz": {
+     "currentTr": "direniş",
+     "pool": {
       "tr": "direniş",
       "en": "resistance"
      }
     },
     {
      "de": "die Verlegung",
-     "mevcutTr": "döşeme"
+     "currentTr": "döşeme"
     }
    ]
   },
@@ -64,48 +64,48 @@
    "title": "Vier Meinungen zuordnen",
    "genre": "Sınav formatı",
    "intro": "B2 sınavının tipik görevi: aynı konuda dört görüş, sonra „kim ne diyor?“ soruları. Görüşler kısmen örtüşür — fark ayrıntıda.",
-   "metin": "Thema: Sollte die Vier-Tage-Woche zum Standard werden?\n\nANNIKA (Softwareentwicklerin): Wir haben es zwei Jahre gemacht, bei vollem Lohn. Die Produktivität ist nicht gefallen — sie ist leicht gestiegen. Der Grund ist banal: Wir haben aufgehört, sinnlose Meetings zu machen. Aber ich sage bewusst „wir“. Ich sitze am Rechner. In der Pflege ist meine Erfahrung wertlos.\n\nBERND (Pflegedienstleiter): Genau das ist mein Punkt. Bei uns kann man Arbeit nicht verdichten — ein Mensch braucht die Zeit, die er braucht. Vier Tage würden bedeuten: mehr Personal. Das gibt der Markt nicht her. Ich bin nicht dagegen, ich halte es bei uns schlicht für unmöglich.\n\nCLAUDIA (Unternehmerin, Handwerk): Ich bin skeptisch, aber aus einem anderen Grund. Meine Leute wollen das Geld, nicht den Tag. Als ich vier Tage angeboten habe, wollten drei von elf. Wir reden hier oft über die Wünsche von Akademikern und nennen das dann „die Beschäftigten“.\n\nDANIEL (Arbeitsforscher): Die Datenlage ist besser, als viele denken, aber sie ist eng. Fast alle Studien kommen aus Bürojobs und aus Betrieben, die freiwillig teilgenommen haben. Was wir sehen: weniger Krankmeldungen, gleiche Leistung. Was wir nicht wissen: ob das auch gilt, wenn ein Betrieb es nicht will.",
+   "text": "Thema: Sollte die Vier-Tage-Woche zum Standard werden?\n\nANNIKA (Softwareentwicklerin): Wir haben es zwei Jahre gemacht, bei vollem Lohn. Die Produktivität ist nicht gefallen — sie ist leicht gestiegen. Der Grund ist banal: Wir haben aufgehört, sinnlose Meetings zu machen. Aber ich sage bewusst „wir“. Ich sitze am Rechner. In der Pflege ist meine Erfahrung wertlos.\n\nBERND (Pflegedienstleiter): Genau das ist mein Punkt. Bei uns kann man Arbeit nicht verdichten — ein Mensch braucht die Zeit, die er braucht. Vier Tage würden bedeuten: mehr Personal. Das gibt der Markt nicht her. Ich bin nicht dagegen, ich halte es bei uns schlicht für unmöglich.\n\nCLAUDIA (Unternehmerin, Handwerk): Ich bin skeptisch, aber aus einem anderen Grund. Meine Leute wollen das Geld, nicht den Tag. Als ich vier Tage angeboten habe, wollten drei von elf. Wir reden hier oft über die Wünsche von Akademikern und nennen das dann „die Beschäftigten“.\n\nDANIEL (Arbeitsforscher): Die Datenlage ist besser, als viele denken, aber sie ist eng. Fast alle Studien kommen aus Bürojobs und aus Betrieben, die freiwillig teilgenommen haben. Was wir sehen: weniger Krankmeldungen, gleiche Leistung. Was wir nicht wissen: ob das auch gilt, wenn ein Betrieb es nicht will.",
    "gloss": [
     {
      "de": "die Vier-Tage-Woche",
-     "mevcutTr": "dört günlük çalışma haftası"
+     "currentTr": "dört günlük çalışma haftası"
     },
     {
      "de": "die Produktivität",
-     "mevcutTr": "üretkenlik",
-     "havuz": {
+     "currentTr": "üretkenlik",
+     "pool": {
       "tr": "üretkenlik",
       "en": "productivity"
      }
     },
     {
      "de": "die Belastung",
-     "mevcutTr": "yük",
-     "havuz": {
+     "currentTr": "yük",
+     "pool": {
       "tr": "yük",
       "en": "burden"
      }
     },
     {
      "de": "der Ausgleich",
-     "mevcutTr": "denge",
-     "havuz": {
+     "currentTr": "denge",
+     "pool": {
       "tr": "denge",
       "en": "counterbalance"
      }
     },
     {
      "de": "skeptisch",
-     "mevcutTr": "şüpheci"
+     "currentTr": "şüpheci"
     },
     {
      "de": "die Branche",
-     "mevcutTr": "sektör"
+     "currentTr": "sektör"
     },
     {
      "de": "verdichten",
-     "mevcutTr": "yoğunlaştırmak",
-     "havuz": {
+     "currentTr": "yoğunlaştırmak",
+     "pool": {
       "tr": "yoğunlaştırmak",
       "en": "to densify"
      }
@@ -119,56 +119,56 @@
    "title": "Die Stellungnahme der Firma",
    "genre": "Basın açıklaması",
    "intro": "Hikâyenin devamı: Nora sorularını gönderdi, şirket yazılı cevap verdi. Kurumsal dilin ne söylediğine ve neyi söylemediğine dikkat et.",
-   "metin": "Stellungnahme der Nordkamp Logistik GmbH\n\nSehr geehrte Frau Weiß,\n\nzu Ihren Fragen nehmen wir wie folgt Stellung.\n\nDie Nordkamp Logistik GmbH hält sich an geltendes Recht. Sämtliche Arbeitszeiten werden gesetzeskonform erfasst und vergütet. Den Vorwurf, Mitarbeitende würden wegen einer Beschwerde benachteiligt, weisen wir entschieden zurück. Für derartige Unterstellungen liegen uns keine Belege vor.\n\nZur Frage nach den Umkleidezeiten: Die Rahmenbedingungen für Beschäftigte externer Dienstleister werden zwischen dem jeweiligen Dienstleister und seinen Mitarbeitenden geregelt. Diese Unternehmen sind eigenständige Arbeitgeber. Für deren Vertragsgestaltung sind wir nicht verantwortlich.\n\nZur Frage nach Vertragsverlängerungen: Über den Einsatz von Beschäftigten der Dienstleister entscheiden diese eigenständig, unter Berücksichtigung des jeweiligen Bedarfs. Zahlen zur Fluktuation externer Kräfte liegen uns nicht vor.\n\nWir bitten um Verständnis, dass wir zu einzelnen Personen grundsätzlich keine Auskunft geben.\n\nFür Rückfragen stehen wir gern zur Verfügung.\n\nMit freundlichen Grüßen\nUnternehmenskommunikation",
+   "text": "Stellungnahme der Nordkamp Logistik GmbH\n\nSehr geehrte Frau Weiß,\n\nzu Ihren Fragen nehmen wir wie folgt Stellung.\n\nDie Nordkamp Logistik GmbH hält sich an geltendes Recht. Sämtliche Arbeitszeiten werden gesetzeskonform erfasst und vergütet. Den Vorwurf, Mitarbeitende würden wegen einer Beschwerde benachteiligt, weisen wir entschieden zurück. Für derartige Unterstellungen liegen uns keine Belege vor.\n\nZur Frage nach den Umkleidezeiten: Die Rahmenbedingungen für Beschäftigte externer Dienstleister werden zwischen dem jeweiligen Dienstleister und seinen Mitarbeitenden geregelt. Diese Unternehmen sind eigenständige Arbeitgeber. Für deren Vertragsgestaltung sind wir nicht verantwortlich.\n\nZur Frage nach Vertragsverlängerungen: Über den Einsatz von Beschäftigten der Dienstleister entscheiden diese eigenständig, unter Berücksichtigung des jeweiligen Bedarfs. Zahlen zur Fluktuation externer Kräfte liegen uns nicht vor.\n\nWir bitten um Verständnis, dass wir zu einzelnen Personen grundsätzlich keine Auskunft geben.\n\nFür Rückfragen stehen wir gern zur Verfügung.\n\nMit freundlichen Grüßen\nUnternehmenskommunikation",
    "gloss": [
     {
      "de": "die Stellungnahme",
-     "mevcutTr": "açıklama",
-     "havuz": {
+     "currentTr": "açıklama",
+     "pool": {
       "tr": "açıklama",
       "en": "statement"
      }
     },
     {
      "de": "die Unterstellung",
-     "mevcutTr": "asılsız suçlama",
-     "havuz": {
+     "currentTr": "asılsız suçlama",
+     "pool": {
       "tr": "asılsız suçlama",
       "en": "insinuation"
      }
     },
     {
      "de": "entschieden zurückweisen",
-     "mevcutTr": "kesinlikle reddetmek"
+     "currentTr": "kesinlikle reddetmek"
     },
     {
      "de": "die Rahmenbedingungen",
-     "mevcutTr": "genel koşullar"
+     "currentTr": "genel koşullar"
     },
     {
      "de": "der Dienstleister",
-     "mevcutTr": "hizmet sağlayıcı",
-     "havuz": {
+     "currentTr": "hizmet sağlayıcı",
+     "pool": {
       "tr": "hizmet sağlayıcı",
       "en": "service provider"
      }
     },
     {
      "de": "gesetzeskonform",
-     "mevcutTr": "yasaya uygun"
+     "currentTr": "yasaya uygun"
     },
     {
      "de": "unabhängig",
-     "mevcutTr": "bağımsız",
-     "havuz": {
+     "currentTr": "bağımsız",
+     "pool": {
       "tr": "bağımsız",
       "en": "independent"
      }
     },
     {
      "de": "die Fluktuation",
-     "mevcutTr": "personel devri",
-     "havuz": {
+     "currentTr": "personel devri",
+     "pool": {
       "tr": "personel devri",
       "en": "staff turnover"
      }
@@ -182,64 +182,64 @@
    "title": "Datenschutz am Arbeitsplatz",
    "genre": "Rehber",
    "intro": "İşveren neyi izleyebilir, neyi izleyemez? Çalışan haklarının en çok merak edilen alanı.",
-   "metin": "Darf der Arbeitgeber die E-Mails lesen? Die Antwort lautet fast immer: es kommt darauf an — und zwar auf drei Dinge.\n\nErstens auf den Zweck. Eine Maßnahme muss einem legitimen Ziel dienen, etwa der Sicherheit der IT-Systeme. „Wir wollen wissen, wie fleißig jemand ist“ ist kein solches Ziel.\n\nZweitens auf die Verhältnismäßigkeit. Selbst bei einem legitimen Zweck muss die Maßnahme das mildeste geeignete Mittel sein. Eine dauerhafte Videoüberwachung des Arbeitsplatzes ist deshalb praktisch immer unzulässig, eine Kamera am Wareneingang dagegen oft erlaubt. Bei einem konkreten Verdacht auf eine Straftat gelten andere Regeln — aber eben nur dann.\n\nDrittens auf die Beteiligung. Wo ein Betriebsrat existiert, muss er technischen Einrichtungen zustimmen, die Verhalten oder Leistung überwachen können. Das gilt auch für Software, die das nur nebenbei tut: Ein Projektmanagement-Tool, das jede Bearbeitungszeit protokolliert, fällt darunter.\n\nEin verbreiteter Irrtum betrifft die Einwilligung. Viele Arbeitgeber lassen sich eine Unterschrift geben und halten das Thema damit für erledigt. Im Arbeitsverhältnis ist eine Einwilligung aber nur wirksam, wenn sie wirklich freiwillig ist — und Freiwilligkeit setzt voraus, dass ein Nein keine Nachteile hat. Genau das lässt sich selten belegen.\n\nWer unsicher ist, kann sich an den Betriebsrat oder an die Datenschutzaufsicht des Bundeslandes wenden. Diese Beratung ist kostenlos und anonym möglich.",
+   "text": "Darf der Arbeitgeber die E-Mails lesen? Die Antwort lautet fast immer: es kommt darauf an — und zwar auf drei Dinge.\n\nErstens auf den Zweck. Eine Maßnahme muss einem legitimen Ziel dienen, etwa der Sicherheit der IT-Systeme. „Wir wollen wissen, wie fleißig jemand ist“ ist kein solches Ziel.\n\nZweitens auf die Verhältnismäßigkeit. Selbst bei einem legitimen Zweck muss die Maßnahme das mildeste geeignete Mittel sein. Eine dauerhafte Videoüberwachung des Arbeitsplatzes ist deshalb praktisch immer unzulässig, eine Kamera am Wareneingang dagegen oft erlaubt. Bei einem konkreten Verdacht auf eine Straftat gelten andere Regeln — aber eben nur dann.\n\nDrittens auf die Beteiligung. Wo ein Betriebsrat existiert, muss er technischen Einrichtungen zustimmen, die Verhalten oder Leistung überwachen können. Das gilt auch für Software, die das nur nebenbei tut: Ein Projektmanagement-Tool, das jede Bearbeitungszeit protokolliert, fällt darunter.\n\nEin verbreiteter Irrtum betrifft die Einwilligung. Viele Arbeitgeber lassen sich eine Unterschrift geben und halten das Thema damit für erledigt. Im Arbeitsverhältnis ist eine Einwilligung aber nur wirksam, wenn sie wirklich freiwillig ist — und Freiwilligkeit setzt voraus, dass ein Nein keine Nachteile hat. Genau das lässt sich selten belegen.\n\nWer unsicher ist, kann sich an den Betriebsrat oder an die Datenschutzaufsicht des Bundeslandes wenden. Diese Beratung ist kostenlos und anonym möglich.",
    "gloss": [
     {
      "de": "der Datenschutz",
-     "mevcutTr": "veri koruma",
-     "havuz": {
+     "currentTr": "veri koruma",
+     "pool": {
       "tr": "veri koruma",
       "en": "data protection"
      }
     },
     {
      "de": "die Überwachung",
-     "mevcutTr": "gözetim",
-     "havuz": {
+     "currentTr": "gözetim",
+     "pool": {
       "tr": "gözetim",
       "en": "surveillance"
      }
     },
     {
      "de": "die Einwilligung",
-     "mevcutTr": "rıza",
-     "havuz": {
+     "currentTr": "rıza",
+     "pool": {
       "tr": "rıza",
       "en": "consent"
      }
     },
     {
      "de": "verhältnismäßig",
-     "mevcutTr": "ölçülü"
+     "currentTr": "ölçülü"
     },
     {
      "de": "der Betriebsrat",
-     "mevcutTr": "işçi konseyi",
-     "havuz": {
+     "currentTr": "işçi konseyi",
+     "pool": {
       "tr": "işçi konseyi",
       "en": "works council"
      }
     },
     {
      "de": "protokollieren",
-     "mevcutTr": "kayda geçirmek",
-     "havuz": {
+     "currentTr": "kayda geçirmek",
+     "pool": {
       "tr": "kayda geçirmek",
       "en": "to log"
      }
     },
     {
      "de": "der Verdacht",
-     "mevcutTr": "şüphe",
-     "havuz": {
+     "currentTr": "şüphe",
+     "pool": {
       "tr": "şüphe",
       "en": "suspicion"
      }
     },
     {
      "de": "unzulässig",
-     "mevcutTr": "hukuka aykırı",
-     "havuz": {
+     "currentTr": "hukuka aykırı",
+     "pool": {
       "tr": "kabul edilemez",
       "en": "inadmissible"
      }
@@ -253,76 +253,76 @@
    "title": "Radiodiskussion: Wie erkennt man Falschnachrichten?",
    "genre": "Radyo tartışması",
    "intro": "Bir radyo programında medya bilimci ve gazeteci, yalan haberlerin nasıl yayıldığını tartışıyor; kimin hangi görüşü savunduğunu takip et.",
-   "metin": "Moderator: Willkommen bei unserer Sendung „Medien im Blick“. Falschnachrichten verbreiten sich in sozialen Netzwerken schneller als je zuvor. Bei mir im Studio sind die Medienwissenschaftlerin Doktor Sabine Klein und der Journalist Emre Yilmaz. Frau Klein, warum fallen so viele Menschen auf Falschmeldungen herein?\nFrau Doktor Klein: Das liegt vor allem an unseren Emotionen. Meldungen, die Wut oder Angst auslösen, werden nach unseren Untersuchungen etwa sechsmal häufiger geteilt als sachliche Nachrichten. Wer emotional reagiert, prüft die Quelle meistens nicht mehr. Dazu kommt der Zeitdruck: Die meisten Menschen entscheiden innerhalb weniger Sekunden, ob sie etwas weiterleiten.\nModerator: Herr Yilmaz, Sie leiten ein Team, das Fakten überprüft. Wie gehen Sie konkret vor?\nHerr Yilmaz: Wir stellen immer drei Fragen: Wer hat die Meldung zuerst veröffentlicht? Gibt es eine zweite, unabhängige Quelle? Und passen Bild und Text überhaupt zusammen? Sehr oft werden nämlich echte Fotos in einen völlig falschen Zusammenhang gestellt. Mit einer einfachen Rückwärtssuche für Bilder lässt sich das in wenigen Minuten überprüfen.\nFrau Doktor Klein: Genau deshalb fordern wir, dass Medienkompetenz ein festes Schulfach wird. Kinder lernen Rechnen und Schreiben, aber kaum jemand bringt ihnen bei, Quellen zu bewerten.\nModerator: Und was raten Sie unseren Hörerinnen und Hörern zum Schluss?\nHerr Yilmaz: Erst prüfen, dann teilen. Wenn eine Meldung starke Gefühle auslöst, ist das kein Beweis, dass sie falsch ist – aber ein guter Grund, genauer hinzuschauen.",
+   "text": "Moderator: Willkommen bei unserer Sendung „Medien im Blick“. Falschnachrichten verbreiten sich in sozialen Netzwerken schneller als je zuvor. Bei mir im Studio sind die Medienwissenschaftlerin Doktor Sabine Klein und der Journalist Emre Yilmaz. Frau Klein, warum fallen so viele Menschen auf Falschmeldungen herein?\nFrau Doktor Klein: Das liegt vor allem an unseren Emotionen. Meldungen, die Wut oder Angst auslösen, werden nach unseren Untersuchungen etwa sechsmal häufiger geteilt als sachliche Nachrichten. Wer emotional reagiert, prüft die Quelle meistens nicht mehr. Dazu kommt der Zeitdruck: Die meisten Menschen entscheiden innerhalb weniger Sekunden, ob sie etwas weiterleiten.\nModerator: Herr Yilmaz, Sie leiten ein Team, das Fakten überprüft. Wie gehen Sie konkret vor?\nHerr Yilmaz: Wir stellen immer drei Fragen: Wer hat die Meldung zuerst veröffentlicht? Gibt es eine zweite, unabhängige Quelle? Und passen Bild und Text überhaupt zusammen? Sehr oft werden nämlich echte Fotos in einen völlig falschen Zusammenhang gestellt. Mit einer einfachen Rückwärtssuche für Bilder lässt sich das in wenigen Minuten überprüfen.\nFrau Doktor Klein: Genau deshalb fordern wir, dass Medienkompetenz ein festes Schulfach wird. Kinder lernen Rechnen und Schreiben, aber kaum jemand bringt ihnen bei, Quellen zu bewerten.\nModerator: Und was raten Sie unseren Hörerinnen und Hörern zum Schluss?\nHerr Yilmaz: Erst prüfen, dann teilen. Wenn eine Meldung starke Gefühle auslöst, ist das kein Beweis, dass sie falsch ist – aber ein guter Grund, genauer hinzuschauen.",
    "gloss": [
     {
      "de": "die Falschmeldung",
-     "mevcutTr": "yalan haber",
-     "havuz": {
+     "currentTr": "yalan haber",
+     "pool": {
       "tr": "yalan haber",
       "en": "false report"
      }
     },
     {
      "de": "hereinfallen auf",
-     "mevcutTr": "kanmak"
+     "currentTr": "kanmak"
     },
     {
      "de": "auslösen",
-     "mevcutTr": "tetiklemek",
-     "havuz": {
+     "currentTr": "tetiklemek",
+     "pool": {
       "tr": "tetiklemek",
       "en": "to trigger"
      }
     },
     {
      "de": "die Quelle",
-     "mevcutTr": "kaynak",
-     "havuz": {
+     "currentTr": "kaynak",
+     "pool": {
       "tr": "kaynak",
       "en": "source"
      }
     },
     {
      "de": "weiterleiten",
-     "mevcutTr": "iletmek",
-     "havuz": {
+     "currentTr": "iletmek",
+     "pool": {
       "tr": "iletmek",
       "en": "to forward"
      }
     },
     {
      "de": "unabhängig",
-     "mevcutTr": "bağımsız",
-     "havuz": {
+     "currentTr": "bağımsız",
+     "pool": {
       "tr": "bağımsız",
       "en": "independent"
      }
     },
     {
      "de": "der Zusammenhang",
-     "mevcutTr": "bağlam",
-     "havuz": {
+     "currentTr": "bağlam",
+     "pool": {
       "tr": "bağlantı",
       "en": "connection"
      }
     },
     {
      "de": "die Rückwärtssuche",
-     "mevcutTr": "tersine arama"
+     "currentTr": "tersine arama"
     },
     {
      "de": "bewerten",
-     "mevcutTr": "değerlendirmek",
-     "havuz": {
+     "currentTr": "değerlendirmek",
+     "pool": {
       "tr": "değerlendirmek",
       "en": "to assess"
      }
     },
     {
      "de": "der Beweis",
-     "mevcutTr": "kanıt",
-     "havuz": {
+     "currentTr": "kanıt",
+     "pool": {
       "tr": "kanıt",
       "en": "proof"
      }
@@ -336,76 +336,76 @@
    "title": "Experteninterview: Warum Schlaf unterschätzt wird",
    "genre": "Uzman röportajı",
    "intro": "Bir sağlık programında uyku araştırmacısıyla yapılan söyleşiyi dinleyeceksin; önerileri ve gerekçelerini ayırt et.",
-   "metin": "Moderatorin: In unserer Reihe „Gesund durch den Alltag“ sprechen wir heute über das Schlafen. Zu Gast ist der Schlafforscher Professor Martin Weber vom Universitätsklinikum Freiburg. Herr Professor, wie viel Schlaf braucht der Mensch wirklich?\nProfessor Weber: Das ist individuell verschieden, aber für die meisten Erwachsenen liegt der Bedarf zwischen sieben und neun Stunden. Entscheidend ist allerdings nicht nur die Dauer, sondern auch die Qualität. Wer acht Stunden im Bett liegt, aber ständig aufwacht, erholt sich schlechter als jemand, der sieben Stunden durchschläft.\nModeratorin: Viele Menschen schlafen am Wochenende länger, um Schlaf nachzuholen. Funktioniert das?\nProfessor Weber: Nur begrenzt. Ein kurzfristiges Defizit lässt sich teilweise ausgleichen. Wer aber die ganze Woche zu wenig schläft, kann das am Wochenende nicht vollständig reparieren. Problematischer ist, dass durch das lange Ausschlafen der Schlafrhythmus verschoben wird. Fachleute sprechen vom sozialen Jetlag: Am Montag fühlt man sich dann wie nach einer Fernreise.\nModeratorin: Was raten Sie Menschen mit Einschlafproblemen?\nProfessor Weber: Drei Dinge. Erstens: jeden Tag ungefähr zur gleichen Zeit aufstehen, auch am Wochenende. Zweitens: abends helles Licht und Bildschirme meiden, denn das blaue Licht unterdrückt das Schlafhormon Melatonin. Und drittens: Das Bett sollte nur zum Schlafen genutzt werden, nicht zum Arbeiten oder Fernsehen. Von Schlafmitteln rate ich ohne ärztliche Begleitung dringend ab. Sie bekämpfen nur die Symptome, nicht die Ursachen.",
+   "text": "Moderatorin: In unserer Reihe „Gesund durch den Alltag“ sprechen wir heute über das Schlafen. Zu Gast ist der Schlafforscher Professor Martin Weber vom Universitätsklinikum Freiburg. Herr Professor, wie viel Schlaf braucht der Mensch wirklich?\nProfessor Weber: Das ist individuell verschieden, aber für die meisten Erwachsenen liegt der Bedarf zwischen sieben und neun Stunden. Entscheidend ist allerdings nicht nur die Dauer, sondern auch die Qualität. Wer acht Stunden im Bett liegt, aber ständig aufwacht, erholt sich schlechter als jemand, der sieben Stunden durchschläft.\nModeratorin: Viele Menschen schlafen am Wochenende länger, um Schlaf nachzuholen. Funktioniert das?\nProfessor Weber: Nur begrenzt. Ein kurzfristiges Defizit lässt sich teilweise ausgleichen. Wer aber die ganze Woche zu wenig schläft, kann das am Wochenende nicht vollständig reparieren. Problematischer ist, dass durch das lange Ausschlafen der Schlafrhythmus verschoben wird. Fachleute sprechen vom sozialen Jetlag: Am Montag fühlt man sich dann wie nach einer Fernreise.\nModeratorin: Was raten Sie Menschen mit Einschlafproblemen?\nProfessor Weber: Drei Dinge. Erstens: jeden Tag ungefähr zur gleichen Zeit aufstehen, auch am Wochenende. Zweitens: abends helles Licht und Bildschirme meiden, denn das blaue Licht unterdrückt das Schlafhormon Melatonin. Und drittens: Das Bett sollte nur zum Schlafen genutzt werden, nicht zum Arbeiten oder Fernsehen. Von Schlafmitteln rate ich ohne ärztliche Begleitung dringend ab. Sie bekämpfen nur die Symptome, nicht die Ursachen.",
    "gloss": [
     {
      "de": "der Bedarf",
-     "mevcutTr": "ihtiyaç",
-     "havuz": {
+     "currentTr": "ihtiyaç",
+     "pool": {
       "tr": "talep",
       "en": "demand"
      }
     },
     {
      "de": "durchschlafen",
-     "mevcutTr": "kesintisiz uyumak",
-     "havuz": {
+     "currentTr": "kesintisiz uyumak",
+     "pool": {
       "tr": "kesintisiz uyumak",
       "en": "to sleep through"
      }
     },
     {
      "de": "nachholen",
-     "mevcutTr": "telafi etmek",
-     "havuz": {
+     "currentTr": "telafi etmek",
+     "pool": {
       "tr": "telafi etmek",
       "en": "to catch up on"
      }
     },
     {
      "de": "ausgleichen",
-     "mevcutTr": "dengelemek",
-     "havuz": {
+     "currentTr": "dengelemek",
+     "pool": {
       "tr": "dengelemek",
       "en": "to balance out"
      }
     },
     {
      "de": "das Defizit",
-     "mevcutTr": "açık",
-     "havuz": {
+     "currentTr": "açık",
+     "pool": {
       "tr": "açık",
       "en": "deficit"
      }
     },
     {
      "de": "verschieben",
-     "mevcutTr": "kaydırmak",
-     "havuz": {
+     "currentTr": "kaydırmak",
+     "pool": {
       "tr": "ertelemek",
       "en": "to postpone"
      }
     },
     {
      "de": "unterdrücken",
-     "mevcutTr": "bastırmak",
-     "havuz": {
+     "currentTr": "bastırmak",
+     "pool": {
       "tr": "bastırmak",
       "en": "to suppress"
      }
     },
     {
      "de": "das Schlafmittel",
-     "mevcutTr": "uyku ilacı"
+     "currentTr": "uyku ilacı"
     },
     {
      "de": "abraten von",
-     "mevcutTr": "önermemek"
+     "currentTr": "önermemek"
     },
     {
      "de": "die Ursache",
-     "mevcutTr": "sebep",
-     "havuz": {
+     "currentTr": "sebep",
+     "pool": {
       "tr": "sebep",
       "en": "cause"
      }
@@ -419,72 +419,72 @@
    "title": "Vortrag: Grüne Städte gegen die Sommerhitze",
    "genre": "Sunum",
    "intro": "Şehir planlaması üzerine bir akşam etkinliğinde verilen konferansın giriş bölümünü dinleyeceksin; kavramları ve örnek şehirleri not et.",
-   "metin": "Meine Damen und Herren, herzlich willkommen zu unserem Themenabend über klimaangepasste Stadtplanung. In meinem Vortrag möchte ich Ihnen zeigen, warum Stadtgrün weit mehr ist als Dekoration.\nBeginnen wir mit einem Vergleich. An heißen Sommertagen wurden in der Frankfurter Innenstadt bis zu acht Grad höhere Temperaturen gemessen als im grünen Umland. Fachleute nennen dieses Phänomen den Wärmeinseleffekt: Asphalt und Beton speichern tagsüber die Hitze und geben sie nachts wieder ab. Für ältere Menschen und Kleinkinder kann das zur ernsthaften Gesundheitsgefahr werden.\nDie gute Nachricht lautet: Städte können gegensteuern. Ein einziger ausgewachsener Straßenbaum verdunstet an einem Sommertag mehrere hundert Liter Wasser und kühlt seine Umgebung dadurch messbar ab. Er wirkt wie eine natürliche Klimaanlage. Begrünte Dächer und Fassaden senken zusätzlich die Temperatur in den Gebäuden und speichern Regenwasser, das bei Starkregen sonst die Kanalisation überlasten würde.\nEinige Städte machen bereits vor, wie es geht. In Wien wird bei jedem Neubauprojekt geprüft, ob eine Dachbegrünung möglich ist, und Paris hat angekündigt, bis zum Jahr zweitausenddreißig über hundertsiebzigtausend zusätzliche Bäume zu pflanzen. Auch bei uns wäre vieles machbar, vorausgesetzt, die Politik stellt die nötigen Mittel bereit. Was jede und jeder Einzelne von Ihnen beitragen kann, darauf komme ich im zweiten Teil meines Vortrags zurück.",
+   "text": "Meine Damen und Herren, herzlich willkommen zu unserem Themenabend über klimaangepasste Stadtplanung. In meinem Vortrag möchte ich Ihnen zeigen, warum Stadtgrün weit mehr ist als Dekoration.\nBeginnen wir mit einem Vergleich. An heißen Sommertagen wurden in der Frankfurter Innenstadt bis zu acht Grad höhere Temperaturen gemessen als im grünen Umland. Fachleute nennen dieses Phänomen den Wärmeinseleffekt: Asphalt und Beton speichern tagsüber die Hitze und geben sie nachts wieder ab. Für ältere Menschen und Kleinkinder kann das zur ernsthaften Gesundheitsgefahr werden.\nDie gute Nachricht lautet: Städte können gegensteuern. Ein einziger ausgewachsener Straßenbaum verdunstet an einem Sommertag mehrere hundert Liter Wasser und kühlt seine Umgebung dadurch messbar ab. Er wirkt wie eine natürliche Klimaanlage. Begrünte Dächer und Fassaden senken zusätzlich die Temperatur in den Gebäuden und speichern Regenwasser, das bei Starkregen sonst die Kanalisation überlasten würde.\nEinige Städte machen bereits vor, wie es geht. In Wien wird bei jedem Neubauprojekt geprüft, ob eine Dachbegrünung möglich ist, und Paris hat angekündigt, bis zum Jahr zweitausenddreißig über hundertsiebzigtausend zusätzliche Bäume zu pflanzen. Auch bei uns wäre vieles machbar, vorausgesetzt, die Politik stellt die nötigen Mittel bereit. Was jede und jeder Einzelne von Ihnen beitragen kann, darauf komme ich im zweiten Teil meines Vortrags zurück.",
    "gloss": [
     {
      "de": "der Wärmeinseleffekt",
-     "mevcutTr": "ısı adası etkisi"
+     "currentTr": "ısı adası etkisi"
     },
     {
      "de": "speichern",
-     "mevcutTr": "depolamak",
-     "havuz": {
+     "currentTr": "depolamak",
+     "pool": {
       "tr": "kaydetmek",
       "en": "to save"
      }
     },
     {
      "de": "abgeben",
-     "mevcutTr": "salmak",
-     "havuz": {
+     "currentTr": "salmak",
+     "pool": {
       "tr": "teslim etmek",
       "en": "to hand in"
      }
     },
     {
      "de": "verdunsten",
-     "mevcutTr": "buharlaştırmak",
-     "havuz": {
+     "currentTr": "buharlaştırmak",
+     "pool": {
       "tr": "buharlaşmak",
       "en": "to evaporate"
      }
     },
     {
      "de": "die Begrünung",
-     "mevcutTr": "yeşillendirme"
+     "currentTr": "yeşillendirme"
     },
     {
      "de": "die Fassade",
-     "mevcutTr": "cephe",
-     "havuz": {
+     "currentTr": "cephe",
+     "pool": {
       "tr": "cephe",
       "en": "facade"
      }
     },
     {
      "de": "die Kanalisation",
-     "mevcutTr": "kanalizasyon"
+     "currentTr": "kanalizasyon"
     },
     {
      "de": "überlasten",
-     "mevcutTr": "aşırı yüklemek",
-     "havuz": {
+     "currentTr": "aşırı yüklemek",
+     "pool": {
       "tr": "aşırı yüklemek",
       "en": "to overload"
      }
     },
     {
      "de": "gegensteuern",
-     "mevcutTr": "karşı önlem almak",
-     "havuz": {
+     "currentTr": "karşı önlem almak",
+     "pool": {
       "tr": "karşı önlem almak",
       "en": "to counteract"
      }
     },
     {
      "de": "die Mittel",
-     "mevcutTr": "ödenek",
-     "havuz": {
+     "currentTr": "ödenek",
+     "pool": {
       "tr": "ilaç",
       "en": "remedy"
      }
@@ -498,68 +498,68 @@
    "title": "Nachrichtenanalyse: Die Vier-Tage-Woche im Test",
    "genre": "Haber analizi",
    "intro": "Haber stüdyosunda ekonomi muhabiri, dört günlük çalışma haftası pilot projesinin sonuçlarını değerlendiriyor; olumlu bulgularla sınırlamaları ayır.",
-   "metin": "Nachrichtensprecher: In Deutschland ist das bislang größte Pilotprojekt zur Vier-Tage-Woche zu Ende gegangen. Sechs Monate lang haben fünfundvierzig Unternehmen getestet, ob weniger Arbeitszeit bei vollem Gehalt funktioniert. Unsere Wirtschaftsredakteurin Julia Hoffmann hat die Ergebnisse analysiert. Frau Hoffmann, wie fällt die Bilanz aus?\nFrau Hoffmann: Überwiegend positiv, aber mit wichtigen Einschränkungen. Zunächst die guten Nachrichten: In den meisten Betrieben blieb die Produktivität stabil oder stieg sogar leicht an. Die Beschäftigten berichteten von weniger Stress und besserem Schlaf, und die Zahl der Krankheitstage ging um etwa ein Fünftel zurück. Rund siebzig Prozent der teilnehmenden Firmen wollen das Modell deshalb fortführen.\nNachrichtensprecher: Und worin bestehen die Einschränkungen?\nFrau Hoffmann: Das Modell passt nicht zu jeder Branche. Teilgenommen haben vor allem Firmen aus der Verwaltung und der Informationstechnologie, wo sich Besprechungen kürzen und Abläufe digitalisieren lassen. In der Pflege oder in der Produktion, wo rund um die Uhr Personal gebraucht wird, lässt sich Arbeitszeit nicht einfach streichen. Dort würde eine Vier-Tage-Woche zusätzliches Personal erfordern, das derzeit fehlt. Kritiker weisen außerdem darauf hin, dass sich fünfundvierzig freiwillig teilnehmende Firmen kaum auf die gesamte Wirtschaft übertragen lassen.\nNachrichtensprecher: Wie geht es jetzt weiter?\nFrau Hoffmann: Die Forschungsgruppe plant eine Langzeitstudie über mehrere Jahre. Ob aus dem Experiment ein flächendeckendes Modell wird, dürfte am Ende allerdings weniger die Wissenschaft als der Arbeitsmarkt entscheiden.",
+   "text": "Nachrichtensprecher: In Deutschland ist das bislang größte Pilotprojekt zur Vier-Tage-Woche zu Ende gegangen. Sechs Monate lang haben fünfundvierzig Unternehmen getestet, ob weniger Arbeitszeit bei vollem Gehalt funktioniert. Unsere Wirtschaftsredakteurin Julia Hoffmann hat die Ergebnisse analysiert. Frau Hoffmann, wie fällt die Bilanz aus?\nFrau Hoffmann: Überwiegend positiv, aber mit wichtigen Einschränkungen. Zunächst die guten Nachrichten: In den meisten Betrieben blieb die Produktivität stabil oder stieg sogar leicht an. Die Beschäftigten berichteten von weniger Stress und besserem Schlaf, und die Zahl der Krankheitstage ging um etwa ein Fünftel zurück. Rund siebzig Prozent der teilnehmenden Firmen wollen das Modell deshalb fortführen.\nNachrichtensprecher: Und worin bestehen die Einschränkungen?\nFrau Hoffmann: Das Modell passt nicht zu jeder Branche. Teilgenommen haben vor allem Firmen aus der Verwaltung und der Informationstechnologie, wo sich Besprechungen kürzen und Abläufe digitalisieren lassen. In der Pflege oder in der Produktion, wo rund um die Uhr Personal gebraucht wird, lässt sich Arbeitszeit nicht einfach streichen. Dort würde eine Vier-Tage-Woche zusätzliches Personal erfordern, das derzeit fehlt. Kritiker weisen außerdem darauf hin, dass sich fünfundvierzig freiwillig teilnehmende Firmen kaum auf die gesamte Wirtschaft übertragen lassen.\nNachrichtensprecher: Wie geht es jetzt weiter?\nFrau Hoffmann: Die Forschungsgruppe plant eine Langzeitstudie über mehrere Jahre. Ob aus dem Experiment ein flächendeckendes Modell wird, dürfte am Ende allerdings weniger die Wissenschaft als der Arbeitsmarkt entscheiden.",
    "gloss": [
     {
      "de": "das Pilotprojekt",
-     "mevcutTr": "pilot proje"
+     "currentTr": "pilot proje"
     },
     {
      "de": "die Bilanz",
-     "mevcutTr": "bilanço",
-     "havuz": {
+     "currentTr": "bilanço",
+     "pool": {
       "tr": "bilanço",
       "en": "balance sheet"
      }
     },
     {
      "de": "die Einschränkung",
-     "mevcutTr": "sınırlama"
+     "currentTr": "sınırlama"
     },
     {
      "de": "die Produktivität",
-     "mevcutTr": "üretkenlik",
-     "havuz": {
+     "currentTr": "üretkenlik",
+     "pool": {
       "tr": "üretkenlik",
       "en": "productivity"
      }
     },
     {
      "de": "der Krankheitstag",
-     "mevcutTr": "hastalık izni günü"
+     "currentTr": "hastalık izni günü"
     },
     {
      "de": "fortführen",
-     "mevcutTr": "sürdürmek"
+     "currentTr": "sürdürmek"
     },
     {
      "de": "die Branche",
-     "mevcutTr": "sektör"
+     "currentTr": "sektör"
     },
     {
      "de": "der Ablauf",
-     "mevcutTr": "işleyiş",
-     "havuz": {
+     "currentTr": "işleyiş",
+     "pool": {
       "tr": "işleyiş",
       "en": "process"
      }
     },
     {
      "de": "streichen",
-     "mevcutTr": "kesmek",
-     "havuz": {
+     "currentTr": "kesmek",
+     "pool": {
       "tr": "boyamak",
       "en": "to paint"
      }
     },
     {
      "de": "übertragen auf",
-     "mevcutTr": "genellemek"
+     "currentTr": "genellemek"
     },
     {
      "de": "flächendeckend",
-     "mevcutTr": "her yeri kapsayan",
-     "havuz": {
+     "currentTr": "her yeri kapsayan",
+     "pool": {
       "tr": "her yeri kapsayan",
       "en": "across the board"
      }

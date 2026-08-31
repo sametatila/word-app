@@ -2,7 +2,7 @@
  * Gözden geçirme paketlerini üretir: `node data/review/make-packets.mjs A2`
  *
  * Her paket, ajanın bir oturumda gerçekten okuyabileceği kadar madde taşır.
- * `ayniAnlam` alanı kritik: havuzun tamamında birebir aynı Türkçe karşılığı
+ * `sameMeaning` alanı kritik: havuzun tamamında birebir aynı Türkçe karşılığı
  * taşıyan diğer maddeleri listeler, böylece ajan ayrım gerektiren yerleri
  * aramak zorunda kalmaz — önüne gelir.
  */
@@ -44,7 +44,7 @@ for (let i = 0; i < rows.length; i += SIZE) {
         tr: w.tr,
         formen: w.formen || "",
         beispiel: w.beispiel || "",
-        ...(twins.length ? { ayniAnlam: twins } : {}),
+        ...(twins.length ? { sameMeaning: twins } : {}),
       };
     }),
   );

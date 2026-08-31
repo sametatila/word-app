@@ -11,7 +11,7 @@ for (const f of fs.readdirSync(path.join(ROOT, "data/zurich")).filter(f => /^chu
 
 const dir = path.join(SP, "zh-out");
 const rows = [];
-const bad = { id: [], artikel: [], sz: [], leer: [], kelimeyok: [] };
+const bad = { id: [], artikel: [], sz: [], leer: [], wordMissing: [] };
 for (const f of (fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith(".json")).sort() : [])) {
   let arr;
   try { arr = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")); }
@@ -25,16 +25,16 @@ for (const f of (fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith
     if (/ß/.test(JSON.stringify(g))) bad.sz.push(`${f}: ${g.id}`);
     const stem = String(g.gsw).replace(/^(de|d|s)\s+/, "").slice(0, 5);
     if (g.beispiel && stem.length >= 4 && !g.beispiel.toLowerCase().includes(stem.toLowerCase()))
-      bad.kelimeyok.push(`${g.gsw} → ${g.beispiel}`);
+      bad.wordMissing.push(`${g.gsw} → ${g.beispiel}`);
     rows.push({ id: g.id, gsw: String(g.gsw).trim(), artikel: g.artikel ?? null, beispiel: (g.beispiel || "").trim() });
   }
 }
 rows.sort((a, b) => a.id - b.id);
 console.log("yeni gsw madde:", rows.length);
 console.log("HATA — bilinmeyen id:", bad.id.length, "| artikel:", bad.artikel.length, "| ß:", bad.sz.length, "| boş gsw:", bad.leer.length);
-console.log("UYARI — cümlede kelime yok:", bad.kelimeyok.length, bad.kelimeyok.slice(0, 5));
-const eksik = src.filter(r => !have.has(r.id) && !rows.some(x => x.id === r.id));
-console.log("hâlâ gsw karşılığı olmayan kaynak madde:", eksik.length);
+console.log("UYARI — cümlede kelime yok:", bad.wordMissing.length, bad.wordMissing.slice(0, 5));
+const missing = src.filter(r => !have.has(r.id) && !rows.some(x => x.id === r.id));
+console.log("hâlâ gsw karşılığı olmayan kaynak madde:", missing.length);
 if (DRY) { console.log("(kuru çalıştırma)"); process.exit(0); }
 
 const line = r => `{ "id": ${r.id}, "gsw": ${JSON.stringify(r.gsw)}, "artikel": ${JSON.stringify(r.artikel)}, "beispiel": ${JSON.stringify(r.beispiel)} }`;

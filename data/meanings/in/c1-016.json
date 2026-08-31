@@ -1,16 +1,16 @@
 {
- "paket": "c1-016",
+ "packet": "c1-016",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 6003,
    "de": "leistungsbezogen",
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "performansa dayalı",
-   "mevcutBeispiel": "Ein Teil des Budgets wird leistungsbezogen vergeben.",
-   "mevcutBeispielTr": "Bütçenin bir kısmı performansa dayalı olarak dağıtılıyor."
+   "currentTr": "performansa dayalı",
+   "currentBeispiel": "Ein Teil des Budgets wird leistungsbezogen vergeben.",
+   "currentBeispielTr": "Bütçenin bir kısmı performansa dayalı olarak dağıtılıyor."
   },
   {
    "id": 6004,
@@ -18,9 +18,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "disiplinler arası",
-   "mevcutBeispiel": "Interdisziplinäre Projekte haben es bei der Begutachtung oft schwer.",
-   "mevcutBeispielTr": "Disiplinler arası projeler değerlendirme aşamasında çoğu kez zorlanıyor."
+   "currentTr": "disiplinler arası",
+   "currentBeispiel": "Interdisziplinäre Projekte haben es bei der Begutachtung oft schwer.",
+   "currentBeispielTr": "Disiplinler arası projeler değerlendirme aşamasında çoğu kez zorlanıyor."
   },
   {
    "id": 6005,
@@ -28,9 +28,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sosyal kökenden kaynaklanan",
-   "mevcutBeispiel": "Herkunftsbedingte Unterschiede zeigen sich schon in der Grundschule.",
-   "mevcutBeispielTr": "Sosyal kökenden kaynaklanan farklar daha ilkokulda ortaya çıkıyor."
+   "currentTr": "sosyal kökenden kaynaklanan",
+   "currentBeispiel": "Herkunftsbedingte Unterschiede zeigen sich schon in der Grundschule.",
+   "currentBeispielTr": "Sosyal kökenden kaynaklanan farklar daha ilkokulda ortaya çıkıyor."
   },
   {
    "id": 6006,
@@ -38,9 +38,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "belirli amaca bağlı, tahsisli",
-   "mevcutBeispiel": "Die zusätzlichen Gelder sind streng zweckgebunden und nicht übertragbar.",
-   "mevcutBeispielTr": "Ek ödenekler kesinlikle belirli bir amaca bağlı ve aktarılamaz."
+   "currentTr": "belirli amaca bağlı, tahsisli",
+   "currentBeispiel": "Die zusätzlichen Gelder sind streng zweckgebunden und nicht übertragbar.",
+   "currentBeispielTr": "Ek ödenekler kesinlikle belirli bir amaca bağlı ve aktarılamaz."
   },
   {
    "id": 6007,
@@ -48,9 +48,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "-e rağmen, dikkate almaksızın",
-   "mevcutBeispiel": "Ungeachtet aller Reformen bleibt der Zusammenhang zwischen Herkunft und Erfolg bestehen.",
-   "mevcutBeispielTr": "Bütün reformlara rağmen köken ile başarı arasındaki bağ sürüyor."
+   "currentTr": "-e rağmen, dikkate almaksızın",
+   "currentBeispiel": "Ungeachtet aller Reformen bleibt der Zusammenhang zwischen Herkunft und Erfolg bestehen.",
+   "currentBeispielTr": "Bütün reformlara rağmen köken ile başarı arasındaki bağ sürüyor."
   },
   {
    "id": 6008,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "nüfusun yaşlanması, aşırı yaşlanma",
-   "mevcutBeispiel": "Die Überalterung der Gesellschaft stellt das Rentensystem vor kaum lösbare Probleme.",
-   "mevcutBeispielTr": "Toplumun aşırı yaşlanması, emeklilik sistemini neredeyse çözülemez sorunlarla karşı karşıya bırakıyor."
+   "currentTr": "nüfusun yaşlanması, aşırı yaşlanma",
+   "currentBeispiel": "Die Überalterung der Gesellschaft stellt das Rentensystem vor kaum lösbare Probleme.",
+   "currentBeispielTr": "Toplumun aşırı yaşlanması, emeklilik sistemini neredeyse çözülemez sorunlarla karşı karşıya bırakıyor."
   },
   {
    "id": 6009,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Geburtenrückgänge",
-   "mevcutTr": "doğumlardaki düşüş, doğurganlık gerilemesi",
-   "mevcutBeispiel": "Der Geburtenrückgang macht sich zuerst in den Grundschulen bemerkbar.",
-   "mevcutBeispielTr": "Doğumlardaki düşüş kendini ilk olarak ilkokullarda hissettiriyor."
+   "currentTr": "doğumlardaki düşüş, doğurganlık gerilemesi",
+   "currentBeispiel": "Der Geburtenrückgang macht sich zuerst in den Grundschulen bemerkbar.",
+   "currentBeispielTr": "Doğumlardaki düşüş kendini ilk olarak ilkokullarda hissettiriyor."
   },
   {
    "id": 6010,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Fruchtbarkeitsziffern",
-   "mevcutTr": "doğurganlık hızı, doğurganlık oranı",
-   "mevcutBeispiel": "Die zusammengefasste Fruchtbarkeitsziffer liegt deutlich unter dem bestandserhaltenden Niveau.",
-   "mevcutBeispielTr": "Toplam doğurganlık hızı, nüfusu koruyacak düzeyin belirgin biçimde altında."
+   "currentTr": "doğurganlık hızı, doğurganlık oranı",
+   "currentBeispiel": "Die zusammengefasste Fruchtbarkeitsziffer liegt deutlich unter dem bestandserhaltenden Niveau.",
+   "currentBeispielTr": "Toplam doğurganlık hızı, nüfusu koruyacak düzeyin belirgin biçimde altında."
   },
   {
    "id": 6011,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Bevölkerungsprognosen",
-   "mevcutTr": "nüfus projeksiyonu, nüfus tahmini",
-   "mevcutBeispiel": "Jede Bevölkerungsprognose beruht auf Annahmen, die sich als falsch erweisen können.",
-   "mevcutBeispielTr": "Her nüfus projeksiyonu, yanlış çıkabilecek varsayımlara dayanır."
+   "currentTr": "nüfus projeksiyonu, nüfus tahmini",
+   "currentBeispiel": "Jede Bevölkerungsprognose beruht auf Annahmen, die sich als falsch erweisen können.",
+   "currentBeispielTr": "Her nüfus projeksiyonu, yanlış çıkabilecek varsayımlara dayanır."
   },
   {
    "id": 6012,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Altersstrukturen",
-   "mevcutTr": "yaş yapısı, yaş dağılımı",
-   "mevcutBeispiel": "Die Altersstruktur der Belegschaft hat sich in zehn Jahren erheblich verschoben.",
-   "mevcutBeispielTr": "Personelin yaş yapısı on yılda hatırı sayılır ölçüde değişti."
+   "currentTr": "yaş yapısı, yaş dağılımı",
+   "currentBeispiel": "Die Altersstruktur der Belegschaft hat sich in zehn Jahren erheblich verschoben.",
+   "currentBeispielTr": "Personelin yaş yapısı on yılda hatırı sayılır ölçüde değişti."
   },
   {
    "id": 6013,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Abwanderungen",
-   "mevcutTr": "göç etme, dışarı göç",
-   "mevcutBeispiel": "Die Abwanderung gut ausgebildeter Fachkräfte kostet die Region ihre Zukunft.",
-   "mevcutBeispielTr": "İyi eğitimli uzmanların göç etmesi bölgeye geleceğine mal oluyor."
+   "currentTr": "göç etme, dışarı göç",
+   "currentBeispiel": "Die Abwanderung gut ausgebildeter Fachkräfte kostet die Region ihre Zukunft.",
+   "currentBeispielTr": "İyi eğitimli uzmanların göç etmesi bölgeye geleceğine mal oluyor."
   },
   {
    "id": 6014,
@@ -118,10 +118,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Binnenwanderungen",
-   "mevcutTr": "iç göç",
-   "mevcutBeispiel": "Die Binnenwanderung verläuft weiterhin von Ost nach West.",
-   "mevcutBeispielTr": "İç göç halen doğudan batıya doğru ilerliyor.",
-   "cakisan": [
+   "currentTr": "iç göç",
+   "currentBeispiel": "Die Binnenwanderung verläuft weiterhin von Ost nach West.",
+   "currentBeispielTr": "İç göç halen doğudan batıya doğru ilerliyor.",
+   "overlapping": [
     "die Binnenmigration (C1)"
    ]
   },
@@ -131,9 +131,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ölüm oranı, ölümlülük",
-   "mevcutBeispiel": "Die sinkende Sterblichkeit im hohen Alter verlängert die Rentenbezugsdauer.",
-   "mevcutBeispielTr": "İleri yaşta düşen ölüm oranı, emeklilik aylığı alınan süreyi uzatıyor."
+   "currentTr": "ölüm oranı, ölümlülük",
+   "currentBeispiel": "Die sinkende Sterblichkeit im hohen Alter verlängert die Rentenbezugsdauer.",
+   "currentBeispielTr": "İleri yaşta düşen ölüm oranı, emeklilik aylığı alınan süreyi uzatıyor."
   },
   {
    "id": 6016,
@@ -141,9 +141,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kohorten",
-   "mevcutTr": "kuşak grubu, kohort",
-   "mevcutBeispiel": "Die geburtenstarken Kohorten der Sechzigerjahre gehen jetzt in den Ruhestand.",
-   "mevcutBeispielTr": "Altmışlı yılların kalabalık kuşakları şimdi emekliye ayrılıyor."
+   "currentTr": "kuşak grubu, kohort",
+   "currentBeispiel": "Die geburtenstarken Kohorten der Sechzigerjahre gehen jetzt in den Ruhestand.",
+   "currentBeispielTr": "Altmışlı yılların kalabalık kuşakları şimdi emekliye ayrılıyor."
   },
   {
    "id": 6017,
@@ -151,9 +151,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "demografi, nüfus bilimi",
-   "mevcutBeispiel": "Die Demografie liefert Argumente, aber sie ersetzt keine politische Entscheidung.",
-   "mevcutBeispielTr": "Demografi argüman sunar, ama siyasi bir kararın yerini tutmaz."
+   "currentTr": "demografi, nüfus bilimi",
+   "currentBeispiel": "Die Demografie liefert Argumente, aber sie ersetzt keine politische Entscheidung.",
+   "currentBeispielTr": "Demografi argüman sunar, ama siyasi bir kararın yerini tutmaz."
   },
   {
    "id": 6018,
@@ -161,9 +161,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Wanderungssalden",
-   "mevcutTr": "net göç, göç dengesi",
-   "mevcutBeispiel": "Nur ein positiver Wanderungssaldo hält die Einwohnerzahl derzeit stabil.",
-   "mevcutBeispielTr": "Şu anda nüfusu istikrarlı tutan tek şey artı yönlü net göç."
+   "currentTr": "net göç, göç dengesi",
+   "currentBeispiel": "Nur ein positiver Wanderungssaldo hält die Einwohnerzahl derzeit stabil.",
+   "currentBeispielTr": "Şu anda nüfusu istikrarlı tutan tek şey artı yönlü net göç."
   },
   {
    "id": 6019,
@@ -171,9 +171,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Erwerbsquoten",
-   "mevcutTr": "işgücüne katılım oranı",
-   "mevcutBeispiel": "Eine höhere Erwerbsquote der Frauen könnte den Rückgang teilweise auffangen.",
-   "mevcutBeispielTr": "Kadınların işgücüne katılım oranının artması düşüşü kısmen telafi edebilirdi."
+   "currentTr": "işgücüne katılım oranı",
+   "currentBeispiel": "Eine höhere Erwerbsquote der Frauen könnte den Rückgang teilweise auffangen.",
+   "currentBeispielTr": "Kadınların işgücüne katılım oranının artması düşüşü kısmen telafi edebilirdi."
   },
   {
    "id": 6020,
@@ -181,9 +181,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rentenniveaus",
-   "mevcutTr": "emekli aylığı düzeyi",
-   "mevcutBeispiel": "Ein stabiles Rentenniveau ist ohne höhere Beiträge kaum zu halten.",
-   "mevcutBeispielTr": "Emekli aylığı düzeyini sabit tutmak, primler artmadan neredeyse imkânsız."
+   "currentTr": "emekli aylığı düzeyi",
+   "currentBeispiel": "Ein stabiles Rentenniveau ist ohne höhere Beiträge kaum zu halten.",
+   "currentBeispielTr": "Emekli aylığı düzeyini sabit tutmak, primler artmadan neredeyse imkânsız."
   },
   {
    "id": 6021,
@@ -191,9 +191,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Beitragssätze",
-   "mevcutTr": "prim oranı, katkı payı oranı",
-   "mevcutBeispiel": "Der Beitragssatz zur Pflegeversicherung wurde erneut angehoben.",
-   "mevcutBeispielTr": "Bakım sigortası prim oranı yeniden yükseltildi."
+   "currentTr": "prim oranı, katkı payı oranı",
+   "currentBeispiel": "Der Beitragssatz zur Pflegeversicherung wurde erneut angehoben.",
+   "currentBeispielTr": "Bakım sigortası prim oranı yeniden yükseltildi."
   },
   {
    "id": 6022,
@@ -201,9 +201,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Umlageverfahren",
-   "mevcutTr": "dağıtım esaslı emeklilik sistemi (çalışanların primiyle ödeme)",
-   "mevcutBeispiel": "Das Umlageverfahren funktioniert nur, solange genügend Beitragszahler nachkommen.",
-   "mevcutBeispielTr": "Dağıtım esaslı sistem, ancak yeterince prim ödeyen geldiği sürece işler."
+   "currentTr": "dağıtım esaslı emeklilik sistemi (çalışanların primiyle ödeme)",
+   "currentBeispiel": "Das Umlageverfahren funktioniert nur, solange genügend Beitragszahler nachkommen.",
+   "currentBeispielTr": "Dağıtım esaslı sistem, ancak yeterince prim ödeyen geldiği sürece işler."
   },
   {
    "id": 6023,
@@ -211,9 +211,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yaşlılıkta yoksulluk",
-   "mevcutBeispiel": "Altersarmut trifft vor allem Frauen mit unterbrochenen Erwerbsbiografien.",
-   "mevcutBeispielTr": "Yaşlılıkta yoksulluk özellikle çalışma geçmişi kesintili kadınları vuruyor."
+   "currentTr": "yaşlılıkta yoksulluk",
+   "currentBeispiel": "Altersarmut trifft vor allem Frauen mit unterbrochenen Erwerbsbiografien.",
+   "currentBeispielTr": "Yaşlılıkta yoksulluk özellikle çalışma geçmişi kesintili kadınları vuruyor."
   },
   {
    "id": 6024,
@@ -221,9 +221,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "bakıma muhtaçlık",
-   "mevcutBeispiel": "Die Zahl der Menschen mit Pflegebedürftigkeit wird sich bis 2050 verdoppeln.",
-   "mevcutBeispielTr": "Bakıma muhtaç insanların sayısı 2050'ye kadar ikiye katlanacak."
+   "currentTr": "bakıma muhtaçlık",
+   "currentBeispiel": "Die Zahl der Menschen mit Pflegebedürftigkeit wird sich bis 2050 verdoppeln.",
+   "currentBeispielTr": "Bakıma muhtaç insanların sayısı 2050'ye kadar ikiye katlanacak."
   },
   {
    "id": 6025,
@@ -231,9 +231,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çocuksuzluk",
-   "mevcutBeispiel": "Gewollte Kinderlosigkeit gilt längst nicht mehr als gesellschaftlicher Makel.",
-   "mevcutBeispielTr": "İsteyerek çocuksuz kalmak çoktandır toplumsal bir kusur sayılmıyor."
+   "currentTr": "çocuksuzluk",
+   "currentBeispiel": "Gewollte Kinderlosigkeit gilt längst nicht mehr als gesellschaftlicher Makel.",
+   "currentBeispielTr": "İsteyerek çocuksuz kalmak çoktandır toplumsal bir kusur sayılmıyor."
   },
   {
    "id": 6026,
@@ -241,9 +241,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "aile politikası",
-   "mevcutBeispiel": "Eine wirksame Familienpolitik braucht Geld, Betreuungsplätze und flexible Arbeitszeiten.",
-   "mevcutBeispielTr": "Etkili bir aile politikası para, bakım kontenjanı ve esnek çalışma saati ister."
+   "currentTr": "aile politikası",
+   "currentBeispiel": "Eine wirksame Familienpolitik braucht Geld, Betreuungsplätze und flexible Arbeitszeiten.",
+   "currentBeispielTr": "Etkili bir aile politikası para, bakım kontenjanı ve esnek çalışma saati ister."
   },
   {
    "id": 6027,
@@ -251,9 +251,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "temel kamu hizmetlerinin sağlanması",
-   "mevcutBeispiel": "Der Staat ist auch in leeren Regionen zur Daseinsvorsorge verpflichtet.",
-   "mevcutBeispielTr": "Devlet, boşalmış bölgelerde de temel kamu hizmetlerini sağlamakla yükümlüdür."
+   "currentTr": "temel kamu hizmetlerinin sağlanması",
+   "currentBeispiel": "Der Staat ist auch in leeren Regionen zur Daseinsvorsorge verpflichtet.",
+   "currentBeispielTr": "Devlet, boşalmış bölgelerde de temel kamu hizmetlerini sağlamakla yükümlüdür."
   },
   {
    "id": 6028,
@@ -261,10 +261,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Szenarien",
-   "mevcutTr": "senaryo",
-   "mevcutBeispiel": "Selbst im optimistischen Szenario sinkt die Einwohnerzahl nach 2040.",
-   "mevcutBeispielTr": "İyimser senaryoda bile nüfus 2040'tan sonra azalıyor.",
-   "cakisan": [
+   "currentTr": "senaryo",
+   "currentBeispiel": "Selbst im optimistischen Szenario sinkt die Einwohnerzahl nach 2040.",
+   "currentBeispielTr": "İyimser senaryoda bile nüfus 2040'tan sonra azalıyor.",
+   "overlapping": [
     "das Drehbuch (B2)"
    ]
   },
@@ -274,9 +274,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Trendwenden",
-   "mevcutTr": "eğilim değişimi, gidişatın tersine dönmesi",
-   "mevcutBeispiel": "Von einer echten Trendwende kann bei diesen Zahlen keine Rede sein.",
-   "mevcutBeispielTr": "Bu rakamlarla gerçek bir eğilim değişiminden söz edilemez."
+   "currentTr": "eğilim değişimi, gidişatın tersine dönmesi",
+   "currentBeispiel": "Von einer echten Trendwende kann bei diesen Zahlen keine Rede sein.",
+   "currentBeispielTr": "Bu rakamlarla gerçek bir eğilim değişiminden söz edilemez."
   },
   {
    "id": 6030,
@@ -284,9 +284,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Regelaltersgrenzen",
-   "mevcutTr": "yasal emeklilik yaşı",
-   "mevcutBeispiel": "Eine Anhebung der Regelaltersgrenze stößt bei den Gewerkschaften auf Widerstand.",
-   "mevcutBeispielTr": "Yasal emeklilik yaşının yükseltilmesi sendikalarda direnişle karşılaşıyor."
+   "currentTr": "yasal emeklilik yaşı",
+   "currentBeispiel": "Eine Anhebung der Regelaltersgrenze stößt bei den Gewerkschaften auf Widerstand.",
+   "currentBeispielTr": "Yasal emeklilik yaşının yükseltilmesi sendikalarda direnişle karşılaşıyor."
   },
   {
    "id": 6031,
@@ -294,9 +294,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Frühverrentungen",
-   "mevcutTr": "erken emeklilik",
-   "mevcutBeispiel": "Jahrzehntelang galt Frühverrentung als bequemes Mittel gegen Arbeitslosigkeit.",
-   "mevcutBeispielTr": "Onlarca yıl boyunca erken emeklilik, işsizliğe karşı kolay bir çare sayıldı."
+   "currentTr": "erken emeklilik",
+   "currentBeispiel": "Jahrzehntelang galt Frühverrentung als bequemes Mittel gegen Arbeitslosigkeit.",
+   "currentBeispielTr": "Onlarca yıl boyunca erken emeklilik, işsizliğe karşı kolay bir çare sayıldı."
   },
   {
    "id": 6032,
@@ -304,9 +304,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Lebensarbeitszeiten",
-   "mevcutTr": "çalışma ömrü, toplam çalışma süresi",
-   "mevcutBeispiel": "Eine längere Lebensarbeitszeit ist rechnerisch plausibel und politisch heikel.",
-   "mevcutBeispielTr": "Ömür boyu çalışma süresinin uzaması hesaben makul, siyaseten nazik bir konu."
+   "currentTr": "çalışma ömrü, toplam çalışma süresi",
+   "currentBeispiel": "Eine längere Lebensarbeitszeit ist rechnerisch plausibel und politisch heikel.",
+   "currentBeispielTr": "Ömür boyu çalışma süresinin uzaması hesaben makul, siyaseten nazik bir konu."
   },
   {
    "id": 6033,
@@ -314,9 +314,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "dayanışma ilkesi",
-   "mevcutBeispiel": "Das Solidarprinzip gerät unter Druck, wenn immer weniger einzahlen.",
-   "mevcutBeispielTr": "Giderek daha az kişi ödeme yaptığında dayanışma ilkesi baskı altına giriyor."
+   "currentTr": "dayanışma ilkesi",
+   "currentBeispiel": "Das Solidarprinzip gerät unter Druck, wenn immer weniger einzahlen.",
+   "currentBeispielTr": "Giderek daha az kişi ödeme yaptığında dayanışma ilkesi baskı altına giriyor."
   },
   {
    "id": 6034,
@@ -324,9 +324,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kuşaklar arası adalet",
-   "mevcutBeispiel": "Im Namen der Generationengerechtigkeit fordert er einen Umbau des Systems.",
-   "mevcutBeispielTr": "Kuşaklar arası adalet adına sistemin yeniden yapılandırılmasını talep ediyor."
+   "currentTr": "kuşaklar arası adalet",
+   "currentBeispiel": "Im Namen der Generationengerechtigkeit fordert er einen Umbau des Systems.",
+   "currentBeispielTr": "Kuşaklar arası adalet adına sistemin yeniden yapılandırılmasını talep ediyor."
   },
   {
    "id": 6035,
@@ -334,9 +334,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Finanzierungslücken",
-   "mevcutTr": "finansman açığı",
-   "mevcutBeispiel": "Die Finanzierungslücke in der Pflegeversicherung wächst schneller als erwartet.",
-   "mevcutBeispielTr": "Bakım sigortasındaki finansman açığı beklenenden hızlı büyüyor."
+   "currentTr": "finansman açığı",
+   "currentBeispiel": "Die Finanzierungslücke in der Pflegeversicherung wächst schneller als erwartet.",
+   "currentBeispielTr": "Bakım sigortasındaki finansman açığı beklenenden hızlı büyüyor."
   },
   {
    "id": 6036,
@@ -344,9 +344,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "nüfus politikası",
-   "mevcutBeispiel": "Jede Bevölkerungspolitik bewegt sich zwischen Anreiz und Übergriff.",
-   "mevcutBeispielTr": "Her nüfus politikası teşvik ile müdahale arasında gidip gelir."
+   "currentTr": "nüfus politikası",
+   "currentBeispiel": "Jede Bevölkerungspolitik bewegt sich zwischen Anreiz und Übergriff.",
+   "currentBeispielTr": "Her nüfus politikası teşvik ile müdahale arasında gidip gelir."
   },
   {
    "id": 6037,
@@ -354,9 +354,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "üreme, yeniden üretim",
-   "mevcutBeispiel": "Für die einfache Reproduktion einer Gesellschaft sind gut zwei Kinder nötig.",
-   "mevcutBeispielTr": "Bir toplumun kendini yenilemesi için iki çocuktan biraz fazlası gerekir."
+   "currentTr": "üreme, yeniden üretim",
+   "currentBeispiel": "Für die einfache Reproduktion einer Gesellschaft sind gut zwei Kinder nötig.",
+   "currentBeispielTr": "Bir toplumun kendini yenilemesi için iki çocuktan biraz fazlası gerekir."
   },
   {
    "id": 6038,
@@ -364,9 +364,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Haushaltsgrößen",
-   "mevcutTr": "hane büyüklüğü",
-   "mevcutBeispiel": "Die durchschnittliche Haushaltsgröße ist auf unter zwei Personen gefallen.",
-   "mevcutBeispielTr": "Ortalama hane büyüklüğü iki kişinin altına düştü."
+   "currentTr": "hane büyüklüğü",
+   "currentBeispiel": "Die durchschnittliche Haushaltsgröße ist auf unter zwei Personen gefallen.",
+   "currentBeispielTr": "Ortalama hane büyüklüğü iki kişinin altına düştü."
   },
   {
    "id": 6039,
@@ -374,9 +374,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Mehrgenerationenhaushalte",
-   "mevcutTr": "çok kuşaklı hane",
-   "mevcutBeispiel": "Der Mehrgenerationenhaushalt ist in Westeuropa fast vollständig verschwunden.",
-   "mevcutBeispielTr": "Çok kuşaklı hane Batı Avrupa'da neredeyse tümüyle ortadan kalktı."
+   "currentTr": "çok kuşaklı hane",
+   "currentBeispiel": "Der Mehrgenerationenhaushalt ist in Westeuropa fast vollständig verschwunden.",
+   "currentBeispielTr": "Çok kuşaklı hane Batı Avrupa'da neredeyse tümüyle ortadan kalktı."
   },
   {
    "id": 6040,
@@ -384,9 +384,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Sozialstaaten",
-   "mevcutTr": "sosyal devlet",
-   "mevcutBeispiel": "Der Sozialstaat wurde für eine junge, wachsende Bevölkerung entworfen.",
-   "mevcutBeispielTr": "Sosyal devlet, genç ve büyüyen bir nüfus için tasarlanmıştı."
+   "currentTr": "sosyal devlet",
+   "currentBeispiel": "Der Sozialstaat wurde für eine junge, wachsende Bevölkerung entworfen.",
+   "currentBeispielTr": "Sosyal devlet, genç ve büyüyen bir nüfus için tasarlanmıştı."
   },
   {
    "id": 6041,
@@ -394,9 +394,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Umverteilungen",
-   "mevcutTr": "yeniden dağıtım",
-   "mevcutBeispiel": "Hinter der Rentenfrage steht immer eine Umverteilung zwischen den Generationen.",
-   "mevcutBeispielTr": "Emeklilik meselesinin ardında her zaman kuşaklar arası bir yeniden dağıtım vardır."
+   "currentTr": "yeniden dağıtım",
+   "currentBeispiel": "Hinter der Rentenfrage steht immer eine Umverteilung zwischen den Generationen.",
+   "currentBeispielTr": "Emeklilik meselesinin ardında her zaman kuşaklar arası bir yeniden dağıtım vardır."
   },
   {
    "id": 6042,
@@ -404,9 +404,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "nüfusun boşalması, ıssızlaşma",
-   "mevcutBeispiel": "Die Entvölkerung ganzer Landstriche lässt sich kaum noch aufhalten.",
-   "mevcutBeispielTr": "Koca yörelerin boşalmasını artık durdurmak pek mümkün değil."
+   "currentTr": "nüfusun boşalması, ıssızlaşma",
+   "currentBeispiel": "Die Entvölkerung ganzer Landstriche lässt sich kaum noch aufhalten.",
+   "currentBeispielTr": "Koca yörelerin boşalmasını artık durdurmak pek mümkün değil."
   },
   {
    "id": 6043,
@@ -414,9 +414,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Arbeitskräftereserven",
-   "mevcutTr": "işgücü rezervi",
-   "mevcutBeispiel": "Die letzte große Arbeitskräftereserve sind ältere Beschäftigte und Teilzeitkräfte.",
-   "mevcutBeispielTr": "Son büyük işgücü rezervi, yaşlı çalışanlar ve yarı zamanlı personeldir."
+   "currentTr": "işgücü rezervi",
+   "currentBeispiel": "Die letzte große Arbeitskräftereserve sind ältere Beschäftigte und Teilzeitkräfte.",
+   "currentBeispielTr": "Son büyük işgücü rezervi, yaşlı çalışanlar ve yarı zamanlı personeldir."
   },
   {
    "id": 6044,
@@ -424,9 +424,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rentenreformen",
-   "mevcutTr": "emeklilik reformu",
-   "mevcutBeispiel": "Jede Rentenreform verschiebt Lasten, ohne sie wirklich zu beseitigen.",
-   "mevcutBeispielTr": "Her emeklilik reformu yükleri gerçekten ortadan kaldırmadan yalnızca kaydırır."
+   "currentTr": "emeklilik reformu",
+   "currentBeispiel": "Jede Rentenreform verschiebt Lasten, ohne sie wirklich zu beseitigen.",
+   "currentBeispielTr": "Her emeklilik reformu yükleri gerçekten ortadan kaldırmadan yalnızca kaydırır."
   },
   {
    "id": 6045,
@@ -434,10 +434,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist ausgewandert",
-   "mevcutTr": "göç etmek, ülkeden ayrılmak",
-   "mevcutBeispiel": "Jährlich wandern Zehntausende gut qualifizierte Akademiker aus.",
-   "mevcutBeispielTr": "Her yıl on binlerce nitelikli akademisyen ülkeden göç ediyor.",
-   "cakisan": [
+   "currentTr": "göç etmek, ülkeden ayrılmak",
+   "currentBeispiel": "Jährlich wandern Zehntausende gut qualifizierte Akademiker aus.",
+   "currentBeispielTr": "Her yıl on binlerce nitelikli akademisyen ülkeden göç ediyor.",
+   "overlapping": [
     "einwandern (B2)"
    ]
   },
@@ -447,10 +447,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat prognostiziert",
-   "mevcutTr": "öngörmek, tahmin etmek",
-   "mevcutBeispiel": "Das Institut prognostiziert einen Verlust von zwei Millionen Erwerbstätigen.",
-   "mevcutBeispielTr": "Enstitü, iki milyon çalışanın kaybedileceğini öngörüyor.",
-   "cakisan": [
+   "currentTr": "öngörmek, tahmin etmek",
+   "currentBeispiel": "Das Institut prognostiziert einen Verlust von zwei Millionen Erwerbstätigen.",
+   "currentBeispielTr": "Enstitü, iki milyon çalışanın kaybedileceğini öngörüyor.",
+   "overlapping": [
     "veranschlagen (C1)"
    ]
   },
@@ -460,9 +460,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat hochgerechnet",
-   "mevcutTr": "çıkarım yaparak hesaplamak, projeksiyon yapmak",
-   "mevcutBeispiel": "Die Forscher haben die Stichprobe auf die Gesamtbevölkerung hochgerechnet.",
-   "mevcutBeispielTr": "Araştırmacılar örneklemi toplam nüfusa oranlayarak hesapladı."
+   "currentTr": "çıkarım yaparak hesaplamak, projeksiyon yapmak",
+   "currentBeispiel": "Die Forscher haben die Stichprobe auf die Gesamtbevölkerung hochgerechnet.",
+   "currentBeispielTr": "Araştırmacılar örneklemi toplam nüfusa oranlayarak hesapladı."
   },
   {
    "id": 6048,
@@ -470,9 +470,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat fortgeschrieben",
-   "mevcutTr": "sürdürerek güncellemek, aynı yönde ilerletmek",
-   "mevcutBeispiel": "Wer den heutigen Trend einfach fortschreibt, unterschätzt mögliche Brüche.",
-   "mevcutBeispielTr": "Bugünkü eğilimi olduğu gibi ileriye taşıyan, olası kırılmaları küçümser."
+   "currentTr": "sürdürerek güncellemek, aynı yönde ilerletmek",
+   "currentBeispiel": "Wer den heutigen Trend einfach fortschreibt, unterschätzt mögliche Brüche.",
+   "currentBeispielTr": "Bugünkü eğilimi olduğu gibi ileriye taşıyan, olası kırılmaları küçümser."
   },
   {
    "id": 6049,
@@ -480,9 +480,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat gegengesteuert",
-   "mevcutTr": "karşı önlem almak, gidişata karşı koymak",
-   "mevcutBeispiel": "Die Kommunen versuchen mit günstigem Bauland gegenzusteuern.",
-   "mevcutBeispielTr": "Belediyeler ucuz arsa sunarak gidişata karşı koymaya çalışıyor."
+   "currentTr": "karşı önlem almak, gidişata karşı koymak",
+   "currentBeispiel": "Die Kommunen versuchen mit günstigem Bauland gegenzusteuern.",
+   "currentBeispielTr": "Belediyeler ucuz arsa sunarak gidişata karşı koymaya çalışıyor."
   },
   {
    "id": 6050,
@@ -490,9 +490,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat verjüngt",
-   "mevcutTr": "gençleştirmek",
-   "mevcutBeispiel": "Kein Programm kann eine alternde Gesellschaft binnen weniger Jahre verjüngen.",
-   "mevcutBeispielTr": "Hiçbir program yaşlanan bir toplumu birkaç yılda gençleştiremez."
+   "currentTr": "gençleştirmek",
+   "currentBeispiel": "Kein Programm kann eine alternde Gesellschaft binnen weniger Jahre verjüngen.",
+   "currentBeispielTr": "Hiçbir program yaşlanan bir toplumu birkaç yılda gençleştiremez."
   },
   {
    "id": 6051,
@@ -500,9 +500,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat aufrechterhalten",
-   "mevcutTr": "sürdürmek, ayakta tutmak",
-   "mevcutBeispiel": "Das jetzige Leistungsniveau lässt sich auf Dauer kaum aufrechterhalten.",
-   "mevcutBeispielTr": "Şimdiki hizmet düzeyini uzun vadede sürdürmek neredeyse imkânsız."
+   "currentTr": "sürdürmek, ayakta tutmak",
+   "currentBeispiel": "Das jetzige Leistungsniveau lässt sich auf Dauer kaum aufrechterhalten.",
+   "currentBeispielTr": "Şimdiki hizmet düzeyini uzun vadede sürdürmek neredeyse imkânsız."
   },
   {
    "id": 6052,
@@ -510,9 +510,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist ausgeblutet",
-   "mevcutTr": "kan kaybetmek, tükenmek",
-   "mevcutBeispiel": "Ohne Arbeitsplätze bluten die kleinen Gemeinden im Osten aus.",
-   "mevcutBeispielTr": "İş imkânı olmayınca doğudaki küçük beldeler kan kaybediyor."
+   "currentTr": "kan kaybetmek, tükenmek",
+   "currentBeispiel": "Ohne Arbeitsplätze bluten die kleinen Gemeinden im Osten aus.",
+   "currentBeispielTr": "İş imkânı olmayınca doğudaki küçük beldeler kan kaybediyor."
   }
  ]
 }

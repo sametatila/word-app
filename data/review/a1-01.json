@@ -22,7 +22,7 @@
   "tr": "hareket etmek, kalkmak",
   "formen": "",
   "beispiel": "Der Zug fährt gleich ab.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "(ab)fahren (A2)"
   ]
  },
@@ -41,7 +41,7 @@
   "tr": "almak, karşılamak",
   "formen": "",
   "beispiel": "Ich hole dich am Bahnhof ab.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "empfangen (B1)"
   ]
  },
@@ -52,7 +52,7 @@
   "tr": "dikkat",
   "formen": "(Sg.)",
   "beispiel": "Achtung! Jetzt fängt es an.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Vorsicht (A1)"
   ]
  },
@@ -87,7 +87,7 @@
   "tr": "yalnız",
   "formen": "",
   "beispiel": "Er arbeitet gern allein.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "einsam (B1)"
   ]
  },
@@ -138,7 +138,7 @@
   "tr": "başlangıç",
   "formen": "ä, -e",
   "beispiel": "Am Anfang ist das Buch langweilig.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Beginn (B1)"
   ]
  },
@@ -149,7 +149,7 @@
   "tr": "başlamak",
   "formen": "",
   "beispiel": "Fangt bitte mit Übung 12 an. / Fängst du an?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "beginnen (A1)"
   ]
  },
@@ -216,7 +216,7 @@
   "tr": "ilan",
   "formen": "-n",
   "beispiel": "Lies bitte die Anzeige in der Zeitung!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Inserat (B1)"
   ]
  },
@@ -323,7 +323,7 @@
   "tr": "açmak",
   "formen": "",
   "beispiel": "Kannst du bitte das Fenster aufmachen?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "anmachen (A1)",
    "öffnen (A1)",
    "einschalten (B1)",
@@ -337,7 +337,7 @@
   "tr": "dikkat etmek",
   "formen": "",
   "beispiel": "Könnt ihr bitte aufpassen? Ich zeige euch, wie es geht.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "achten (B1)"
   ]
  },
@@ -356,7 +356,7 @@
   "tr": "açık olmak",
   "formen": "",
   "beispiel": "Das Fenster ist auf.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "an sein (A1)"
   ]
  },
@@ -455,7 +455,7 @@
   "tr": "banyo",
   "formen": "ä, -er",
   "beispiel": "Wir haben kein großes Bad.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Badezimmer (A2)"
   ]
  },
@@ -474,7 +474,7 @@
   "tr": "peron",
   "formen": "-e",
   "beispiel": "Der Zug kommt auf Bahnsteig zehn an.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Perron (B1)"
   ]
  },
@@ -573,7 +573,7 @@
   "tr": "almak, elde etmek",
   "formen": "",
   "beispiel": "Was bekommst du zum Geburtstag?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "kriegen (A1)",
    "erhalten (B1)"
   ]
@@ -617,7 +617,7 @@
   "tr": "en iyi",
   "formen": "",
   "beispiel": "der beste Schüler, die beste Freundin, das beste Buch",
-  "ayniAnlam": [
+  "sameMeaning": [
    "best- (A1)"
   ]
  },
@@ -644,7 +644,7 @@
   "tr": "ödemek",
   "formen": "",
   "beispiel": "Wo muss ich bezahlen?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "zahlen (A1)"
   ]
  },
@@ -679,7 +679,7 @@
   "tr": "biraz",
   "formen": "",
   "beispiel": "Ich helfe dir ein bisschen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "ein bisschen (B1)"
   ]
  },
@@ -770,7 +770,7 @@
   "tr": "küçük ekmek, sandviç ekmeği",
   "formen": "-",
   "beispiel": "Ich esse lieber Brötchen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Semmel (B1)"
   ]
  },
@@ -805,7 +805,7 @@
   "tr": "çizgi roman",
   "formen": "-s",
   "beispiel": "Liest du gern Comics?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der/das Comic (A2)"
   ]
  },
@@ -840,7 +840,7 @@
   "tr": "teşekkür etmek",
   "formen": "",
   "beispiel": "Die CD ist wunderbar, ich danke dir.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "sich bedanken (B1)"
   ]
  },
@@ -867,7 +867,7 @@
   "tr": "düşünmek",
   "formen": "",
   "beispiel": "Ich denke, die Hausaufgaben sind sehr einfach.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "nachdenken (B1)"
   ]
  },
@@ -886,7 +886,7 @@
   "tr": "bu yüzden, bu nedenle",
   "formen": "",
   "beispiel": "Ich muss lernen, deshalb bleibe ich zu Hause.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "daher (B1)"
   ]
  },
@@ -905,7 +905,7 @@
   "tr": "disko, diskotek",
   "formen": "-s (-thek, -en)",
   "beispiel": "Sie geht gern in die Diskothek.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Diskothek (B1)"
   ]
  },
@@ -964,7 +964,7 @@
   "tr": "duş almak",
   "formen": "",
   "beispiel": "Erst dusche ich, dann gehe ich zum Frühstück.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "sich duschen (A1)"
   ]
  },

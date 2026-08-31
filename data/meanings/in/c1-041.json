@@ -1,16 +1,16 @@
 {
- "paket": "c1-041",
+ "packet": "c1-041",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 7253,
    "de": "die Satzung",
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Satzungen",
-   "mevcutTr": "tüzük, ana sözleşme",
-   "mevcutBeispiel": "Die Satzung des Vereins wurde auf der Mitgliederversammlung grundlegend geändert.",
-   "mevcutBeispielTr": "Derneğin tüzüğü genel kurulda esaslı biçimde değiştirildi."
+   "currentTr": "tüzük, ana sözleşme",
+   "currentBeispiel": "Die Satzung des Vereins wurde auf der Mitgliederversammlung grundlegend geändert.",
+   "currentBeispielTr": "Derneğin tüzüğü genel kurulda esaslı biçimde değiştirildi."
   },
   {
    "id": 7254,
@@ -18,10 +18,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verantwortlichkeiten",
-   "mevcutTr": "sorumluluk, mesuliyet",
-   "mevcutBeispiel": "Die Verantwortlichkeiten zwischen Bund und Ländern sind kaum klar abgegrenzt.",
-   "mevcutBeispielTr": "Federal devlet ile eyaletler arasındaki sorumluluklar pek net ayrılmış değil.",
-   "cakisan": [
+   "currentTr": "sorumluluk, mesuliyet",
+   "currentBeispiel": "Die Verantwortlichkeiten zwischen Bund und Ländern sind kaum klar abgegrenzt.",
+   "currentBeispielTr": "Federal devlet ile eyaletler arasındaki sorumluluklar pek net ayrılmış değil.",
+   "overlapping": [
     "die Verantwortung (B1)"
    ]
   },
@@ -31,9 +31,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verwaltungsapparate",
-   "mevcutTr": "yönetim aygıtı, bürokratik yapı",
-   "mevcutBeispiel": "Ein aufgeblähter Verwaltungsapparat verschlingt einen Großteil der Haushaltsmittel.",
-   "mevcutBeispielTr": "Şişkin bir yönetim aygıtı bütçe kaynaklarının büyük bölümünü yutuyor."
+   "currentTr": "yönetim aygıtı, bürokratik yapı",
+   "currentBeispiel": "Ein aufgeblähter Verwaltungsapparat verschlingt einen Großteil der Haushaltsmittel.",
+   "currentBeispielTr": "Şişkin bir yönetim aygıtı bütçe kaynaklarının büyük bölümünü yutuyor."
   },
   {
    "id": 7256,
@@ -41,9 +41,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Verwaltungsreformen",
-   "mevcutTr": "kamu yönetimi reformu",
-   "mevcutBeispiel": "Die angekündigte Verwaltungsreform scheiterte am Widerstand der Ministerien.",
-   "mevcutBeispielTr": "Duyurulan kamu yönetimi reformu bakanlıkların direnişine takıldı."
+   "currentTr": "kamu yönetimi reformu",
+   "currentBeispiel": "Die angekündigte Verwaltungsreform scheiterte am Widerstand der Ministerien.",
+   "currentBeispielTr": "Duyurulan kamu yönetimi reformu bakanlıkların direnişine takıldı."
   },
   {
    "id": 7257,
@@ -51,10 +51,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zuständigkeitsbereiche",
-   "mevcutTr": "yetki alanı, görev sahası",
-   "mevcutBeispiel": "Diese Frage liegt außerhalb des Zuständigkeitsbereichs unserer Abteilung.",
-   "mevcutBeispielTr": "Bu soru bölümümüzün yetki alanının dışında kalıyor.",
-   "cakisan": [
+   "currentTr": "yetki alanı, görev sahası",
+   "currentBeispiel": "Diese Frage liegt außerhalb des Zuständigkeitsbereichs unserer Abteilung.",
+   "currentBeispielTr": "Bu soru bölümümüzün yetki alanının dışında kalıyor.",
+   "overlapping": [
     "die Zuständigkeit (B2)"
    ]
   },
@@ -64,9 +64,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "bürokratik hantallık, kırtasiyecilik",
-   "mevcutBeispiel": "Bei jedem Formular wiehert wieder der Amtsschimmel.",
-   "mevcutBeispielTr": "Her formda kırtasiyecilik yine kendini gösteriyor."
+   "currentTr": "bürokratik hantallık, kırtasiyecilik",
+   "currentBeispiel": "Bei jedem Formular wiehert wieder der Amtsschimmel.",
+   "currentBeispielTr": "Her formda kırtasiyecilik yine kendini gösteriyor."
   },
   {
    "id": 7259,
@@ -74,9 +74,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "memurluk kurumu, memur sınıfı",
-   "mevcutBeispiel": "Das preußische Beamtentum galt lange als Vorbild an Pflichttreue.",
-   "mevcutBeispielTr": "Prusya memurluk geleneği uzun süre görev bağlılığında örnek sayıldı."
+   "currentTr": "memurluk kurumu, memur sınıfı",
+   "currentBeispiel": "Das preußische Beamtentum galt lange als Vorbild an Pflichttreue.",
+   "currentBeispielTr": "Prusya memurluk geleneği uzun süre görev bağlılığında örnek sayıldı."
   },
   {
    "id": 7260,
@@ -84,9 +84,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Auskunftspflichten",
-   "mevcutTr": "bilgi verme yükümlülüğü",
-   "mevcutBeispiel": "Gegenüber dem Untersuchungsausschuss besteht eine umfassende Auskunftspflicht.",
-   "mevcutBeispielTr": "Soruşturma komisyonuna karşı kapsamlı bir bilgi verme yükümlülüğü vardır."
+   "currentTr": "bilgi verme yükümlülüğü",
+   "currentBeispiel": "Gegenüber dem Untersuchungsausschuss besteht eine umfassende Auskunftspflicht.",
+   "currentBeispielTr": "Soruşturma komisyonuna karşı kapsamlı bir bilgi verme yükümlülüğü vardır."
   },
   {
    "id": 7261,
@@ -94,9 +94,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Dezentralisierungen",
-   "mevcutTr": "yerelleşme, yetki dağıtımı",
-   "mevcutBeispiel": "Die Dezentralisierung der Zuständigkeiten hat die Verfahren spürbar beschleunigt.",
-   "mevcutBeispielTr": "Yetkilerin yerelleştirilmesi süreçleri hissedilir biçimde hızlandırdı."
+   "currentTr": "yerelleşme, yetki dağıtımı",
+   "currentBeispiel": "Die Dezentralisierung der Zuständigkeiten hat die Verfahren spürbar beschleunigt.",
+   "currentBeispielTr": "Yetkilerin yerelleştirilmesi süreçleri hissedilir biçimde hızlandırdı."
   },
   {
    "id": 7262,
@@ -104,9 +104,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "gizlilik, mahremiyet",
-   "mevcutBeispiel": "Die Vertraulichkeit der Personalakten muss unbedingt gewahrt bleiben.",
-   "mevcutBeispielTr": "Personel dosyalarının gizliliği mutlaka korunmalıdır."
+   "currentTr": "gizlilik, mahremiyet",
+   "currentBeispiel": "Die Vertraulichkeit der Personalakten muss unbedingt gewahrt bleiben.",
+   "currentBeispielTr": "Personel dosyalarının gizliliği mutlaka korunmalıdır."
   },
   {
    "id": 7263,
@@ -114,9 +114,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kurumlar arası yardım, idari destek",
-   "mevcutBeispiel": "Die Polizei leistete dem Finanzamt bei der Durchsuchung Amtshilfe.",
-   "mevcutBeispielTr": "Polis, aramada vergi dairesine idari destek sağladı."
+   "currentTr": "kurumlar arası yardım, idari destek",
+   "currentBeispiel": "Die Polizei leistete dem Finanzamt bei der Durchsuchung Amtshilfe.",
+   "currentBeispielTr": "Polis, aramada vergi dairesine idari destek sağladı."
   },
   {
    "id": 7264,
@@ -124,9 +124,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Prüfberichte",
-   "mevcutTr": "denetim raporu",
-   "mevcutBeispiel": "Der Prüfbericht deckte erhebliche Mängel in der Mittelverwendung auf.",
-   "mevcutBeispielTr": "Denetim raporu kaynak kullanımında ciddi eksiklikler ortaya çıkardı."
+   "currentTr": "denetim raporu",
+   "currentBeispiel": "Der Prüfbericht deckte erhebliche Mängel in der Mittelverwendung auf.",
+   "currentBeispielTr": "Denetim raporu kaynak kullanımında ciddi eksiklikler ortaya çıkardı."
   },
   {
    "id": 7265,
@@ -134,9 +134,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rechnungshöfe",
-   "mevcutTr": "sayıştay",
-   "mevcutBeispiel": "Der Rechnungshof kritisierte die Vergabepraxis mehrerer Landesbehörden.",
-   "mevcutBeispielTr": "Sayıştay, birkaç eyalet kurumunun ihale uygulamasını eleştirdi."
+   "currentTr": "sayıştay",
+   "currentBeispiel": "Der Rechnungshof kritisierte die Vergabepraxis mehrerer Landesbehörden.",
+   "currentBeispielTr": "Sayıştay, birkaç eyalet kurumunun ihale uygulamasını eleştirdi."
   },
   {
    "id": 7266,
@@ -144,9 +144,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat verfügt",
-   "mevcutTr": "resmen karar vermek, emretmek; (über +A) sahip olmak",
-   "mevcutBeispiel": "Die Behörde verfügte die sofortige Schließung des Betriebs.",
-   "mevcutBeispielTr": "Kurum, işletmenin derhal kapatılmasına karar verdi."
+   "currentTr": "resmen karar vermek, emretmek; (über +A) sahip olmak",
+   "currentBeispiel": "Die Behörde verfügte die sofortige Schließung des Betriebs.",
+   "currentBeispielTr": "Kurum, işletmenin derhal kapatılmasına karar verdi."
   },
   {
    "id": 7267,
@@ -154,10 +154,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist eingeschritten",
-   "mevcutTr": "müdahale etmek, işe karışmak",
-   "mevcutBeispiel": "Die Aufsicht schritt erst ein, als der Schaden längst entstanden war.",
-   "mevcutBeispielTr": "Denetim organı ancak zarar çoktan oluştuktan sonra müdahale etti.",
-   "cakisan": [
+   "currentTr": "müdahale etmek, işe karışmak",
+   "currentBeispiel": "Die Aufsicht schritt erst ein, als der Schaden längst entstanden war.",
+   "currentBeispielTr": "Denetim organı ancak zarar çoktan oluştuktan sonra müdahale etti.",
+   "overlapping": [
     "eingreifen (C1)"
    ]
   },
@@ -167,9 +167,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat anberaumt",
-   "mevcutTr": "gün belirlemek, (toplantı, duruşma için) tarih tayin etmek",
-   "mevcutBeispiel": "Für kommende Woche wurde eine außerordentliche Sitzung anberaumt.",
-   "mevcutBeispielTr": "Gelecek hafta için olağanüstü bir oturum günü belirlendi."
+   "currentTr": "gün belirlemek, (toplantı, duruşma için) tarih tayin etmek",
+   "currentBeispiel": "Für kommende Woche wurde eine außerordentliche Sitzung anberaumt.",
+   "currentBeispielTr": "Gelecek hafta için olağanüstü bir oturum günü belirlendi."
   },
   {
    "id": 7269,
@@ -177,9 +177,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat zuwidergehandelt",
-   "mevcutTr": "aykırı davranmak, ihlal etmek",
-   "mevcutBeispiel": "Wer den Auflagen zuwiderhandelt, muss mit einem Bußgeld rechnen.",
-   "mevcutBeispielTr": "Şartlara aykırı davranan, para cezasını göze almalıdır."
+   "currentTr": "aykırı davranmak, ihlal etmek",
+   "currentBeispiel": "Wer den Auflagen zuwiderhandelt, muss mit einem Bußgeld rechnen.",
+   "currentBeispielTr": "Şartlara aykırı davranan, para cezasını göze almalıdır."
   },
   {
    "id": 7270,
@@ -187,10 +187,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat erwirkt",
-   "mevcutTr": "elde etmek, çıkarttırmak",
-   "mevcutBeispiel": "Die Initiative erwirkte einen Baustopp für das umstrittene Gelände.",
-   "mevcutBeispielTr": "Girişim, tartışmalı arazi için inşaat durdurma kararı çıkarttı.",
-   "cakisan": [
+   "currentTr": "elde etmek, çıkarttırmak",
+   "currentBeispiel": "Die Initiative erwirkte einen Baustopp für das umstrittene Gelände.",
+   "currentBeispielTr": "Girişim, tartışmalı arazi için inşaat durdurma kararı çıkarttı.",
+   "overlapping": [
     "erzielen (B2)"
    ]
   },
@@ -200,9 +200,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "biçimsel, resmî",
-   "mevcutBeispiel": "Formell war alles korrekt, inhaltlich blieb die Entscheidung fragwürdig.",
-   "mevcutBeispielTr": "Biçimsel olarak her şey doğruydu, içerik olarak karar tartışmalı kaldı."
+   "currentTr": "biçimsel, resmî",
+   "currentBeispiel": "Formell war alles korrekt, inhaltlich blieb die Entscheidung fragwürdig.",
+   "currentBeispielTr": "Biçimsel olarak her şey doğruydu, içerik olarak karar tartışmalı kaldı."
   },
   {
    "id": 7272,
@@ -210,9 +210,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hantal, ağır işleyen",
-   "mevcutBeispiel": "Der Apparat reagiert auf neue Anforderungen ausgesprochen schwerfällig.",
-   "mevcutBeispielTr": "Aygıt, yeni taleplere son derece hantal biçimde tepki veriyor."
+   "currentTr": "hantal, ağır işleyen",
+   "currentBeispiel": "Der Apparat reagiert auf neue Anforderungen ausgesprochen schwerfällig.",
+   "currentBeispielTr": "Aygıt, yeni taleplere son derece hantal biçimde tepki veriyor."
   },
   {
    "id": 7273,
@@ -220,9 +220,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "başvuru hakkı olan",
-   "mevcutBeispiel": "Antragsberechtigt sind nur Einrichtungen mit Sitz im Inland.",
-   "mevcutBeispielTr": "Başvuru hakkı yalnızca yurt içinde merkezi bulunan kuruluşlara aittir."
+   "currentTr": "başvuru hakkı olan",
+   "currentBeispiel": "Antragsberechtigt sind nur Einrichtungen mit Sitz im Inland.",
+   "currentBeispielTr": "Başvuru hakkı yalnızca yurt içinde merkezi bulunan kuruluşlara aittir."
   },
   {
    "id": 7274,
@@ -230,9 +230,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "tarafından (resmî dil)",
-   "mevcutBeispiel": "Seitens der Verwaltung gab es bislang keine belastbare Stellungnahme.",
-   "mevcutBeispielTr": "İdare tarafından şimdiye dek sağlam bir açıklama gelmedi."
+   "currentTr": "tarafından (resmî dil)",
+   "currentBeispiel": "Seitens der Verwaltung gab es bislang keine belastbare Stellungnahme.",
+   "currentBeispielTr": "İdare tarafından şimdiye dek sağlam bir açıklama gelmedi."
   },
   {
    "id": 7275,
@@ -240,9 +240,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yokluğundan dolayı, bulunmaması nedeniyle",
-   "mevcutBeispiel": "Das Verfahren wurde mangels hinreichender Beweise eingestellt.",
-   "mevcutBeispielTr": "Süreç, yeterli delil bulunmaması nedeniyle durduruldu."
+   "currentTr": "yokluğundan dolayı, bulunmaması nedeniyle",
+   "currentBeispiel": "Das Verfahren wurde mangels hinreichender Beweise eingestellt.",
+   "currentBeispielTr": "Süreç, yeterli delil bulunmaması nedeniyle durduruldu."
   },
   {
    "id": 7276,
@@ -250,9 +250,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Deflationen",
-   "mevcutTr": "deflasyon, fiyatların genel düşüşü",
-   "mevcutBeispiel": "Eine anhaltende Deflation kann die Konjunktur stärker lähmen als moderate Preissteigerungen.",
-   "mevcutBeispielTr": "Süregelen bir deflasyon, ekonomiyi ılımlı fiyat artışlarından daha çok felce uğratabilir."
+   "currentTr": "deflasyon, fiyatların genel düşüşü",
+   "currentBeispiel": "Eine anhaltende Deflation kann die Konjunktur stärker lähmen als moderate Preissteigerungen.",
+   "currentBeispielTr": "Süregelen bir deflasyon, ekonomiyi ılımlı fiyat artışlarından daha çok felce uğratabilir."
   },
   {
    "id": 7277,
@@ -260,10 +260,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Stagnationen",
-   "mevcutTr": "durgunluk, duraklama",
-   "mevcutBeispiel": "Nach zwei Jahren der Stagnation wächst die Wirtschaft endlich wieder leicht.",
-   "mevcutBeispielTr": "İki yıllık durgunluğun ardından ekonomi nihayet yeniden hafifçe büyüyor.",
-   "cakisan": [
+   "currentTr": "durgunluk, duraklama",
+   "currentBeispiel": "Nach zwei Jahren der Stagnation wächst die Wirtschaft endlich wieder leicht.",
+   "currentBeispielTr": "İki yıllık durgunluğun ardından ekonomi nihayet yeniden hafifçe büyüyor.",
+   "overlapping": [
     "die Rezession (B2)"
    ]
   },
@@ -273,9 +273,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "maliye politikası",
-   "mevcutBeispiel": "Über die richtige Fiskalpolitik streiten Ökonomen seit der letzten Rezession.",
-   "mevcutBeispielTr": "İktisatçılar son resesyondan bu yana doğru maliye politikasının ne olduğunu tartışıyor."
+   "currentTr": "maliye politikası",
+   "currentBeispiel": "Über die richtige Fiskalpolitik streiten Ökonomen seit der letzten Rezession.",
+   "currentBeispielTr": "İktisatçılar son resesyondan bu yana doğru maliye politikasının ne olduğunu tartışıyor."
   },
   {
    "id": 7279,
@@ -283,9 +283,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Anleihen",
-   "mevcutTr": "tahvil, borçlanma senedi",
-   "mevcutBeispiel": "Die Notenbank kauft Anleihen auf, um die langfristigen Zinsen zu senken.",
-   "mevcutBeispielTr": "Merkez bankası uzun vadeli faizleri düşürmek için tahvil satın alıyor."
+   "currentTr": "tahvil, borçlanma senedi",
+   "currentBeispiel": "Die Notenbank kauft Anleihen auf, um die langfristigen Zinsen zu senken.",
+   "currentBeispielTr": "Merkez bankası uzun vadeli faizleri düşürmek için tahvil satın alıyor."
   },
   {
    "id": 7280,
@@ -293,9 +293,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Kapitalmärkte",
-   "mevcutTr": "sermaye piyasası",
-   "mevcutBeispiel": "Die Kapitalmärkte reagierten nervös auf die überraschende Zinsentscheidung.",
-   "mevcutBeispielTr": "Sermaye piyasaları beklenmedik faiz kararına gergin tepki verdi."
+   "currentTr": "sermaye piyasası",
+   "currentBeispiel": "Die Kapitalmärkte reagierten nervös auf die überraschende Zinsentscheidung.",
+   "currentBeispielTr": "Sermaye piyasaları beklenmedik faiz kararına gergin tepki verdi."
   },
   {
    "id": 7281,
@@ -303,9 +303,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Haushaltsdefizite",
-   "mevcutTr": "bütçe açığı",
-   "mevcutBeispiel": "Das Haushaltsdefizit stieg im vergangenen Jahr auf vier Prozent der Wirtschaftsleistung.",
-   "mevcutBeispielTr": "Bütçe açığı geçen yıl milli gelirin yüzde dördüne çıktı."
+   "currentTr": "bütçe açığı",
+   "currentBeispiel": "Das Haushaltsdefizit stieg im vergangenen Jahr auf vier Prozent der Wirtschaftsleistung.",
+   "currentBeispielTr": "Bütçe açığı geçen yıl milli gelirin yüzde dördüne çıktı."
   },
   {
    "id": 7282,
@@ -313,9 +313,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Konjunkturzyklen",
-   "mevcutTr": "konjonktür döngüsü, ekonomik çevrim",
-   "mevcutBeispiel": "Jeder Konjunkturzyklus durchläuft Phasen des Aufschwungs und der Abkühlung.",
-   "mevcutBeispielTr": "Her konjonktür döngüsü canlanma ve soğuma evrelerinden geçer."
+   "currentTr": "konjonktür döngüsü, ekonomik çevrim",
+   "currentBeispiel": "Jeder Konjunkturzyklus durchläuft Phasen des Aufschwungs und der Abkühlung.",
+   "currentBeispielTr": "Her konjonktür döngüsü canlanma ve soğuma evrelerinden geçer."
   },
   {
    "id": 7283,
@@ -323,10 +323,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "verimlilik, üretkenlik",
-   "mevcutBeispiel": "Ohne Investitionen in Bildung stagniert die Produktivität einer Volkswirtschaft.",
-   "mevcutBeispielTr": "Eğitime yatırım yapılmazsa bir ülke ekonomisinin verimliliği yerinde sayar.",
-   "cakisan": [
+   "currentTr": "verimlilik, üretkenlik",
+   "currentBeispiel": "Ohne Investitionen in Bildung stagniert die Produktivität einer Volkswirtschaft.",
+   "currentBeispielTr": "Eğitime yatırım yapılmazsa bir ülke ekonomisinin verimliliği yerinde sayar.",
+   "overlapping": [
     "die Effizienz (B2)"
    ]
   },
@@ -336,9 +336,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "fiyat istikrarı",
-   "mevcutBeispiel": "Das oberste Ziel der Notenbank bleibt die Preisstabilität im Euroraum.",
-   "mevcutBeispielTr": "Merkez bankasının başlıca hedefi Euro Bölgesi'nde fiyat istikrarı olmayı sürdürüyor."
+   "currentTr": "fiyat istikrarı",
+   "currentBeispiel": "Das oberste Ziel der Notenbank bleibt die Preisstabilität im Euroraum.",
+   "currentBeispielTr": "Merkez bankasının başlıca hedefi Euro Bölgesi'nde fiyat istikrarı olmayı sürdürüyor."
   },
   {
    "id": 7285,
@@ -346,9 +346,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Sozialtransfers",
-   "mevcutTr": "sosyal transfer, sosyal yardım ödemesi",
-   "mevcutBeispiel": "Ohne staatliche Sozialtransfers läge die Armutsquote deutlich höher.",
-   "mevcutBeispielTr": "Devletin sosyal transferleri olmasa yoksulluk oranı çok daha yüksek olurdu."
+   "currentTr": "sosyal transfer, sosyal yardım ödemesi",
+   "currentBeispiel": "Ohne staatliche Sozialtransfers läge die Armutsquote deutlich höher.",
+   "currentBeispielTr": "Devletin sosyal transferleri olmasa yoksulluk oranı çok daha yüksek olurdu."
   },
   {
    "id": 7286,
@@ -356,9 +356,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "mali denetim kurumu, finansal denetim",
-   "mevcutBeispiel": "Die Finanzaufsicht prüft, ob die Institute genügend Rücklagen bilden.",
-   "mevcutBeispielTr": "Finansal denetim kurumu, kuruluşların yeterli karşılık ayırıp ayırmadığını denetliyor."
+   "currentTr": "mali denetim kurumu, finansal denetim",
+   "currentBeispiel": "Die Finanzaufsicht prüft, ob die Institute genügend Rücklagen bilden.",
+   "currentBeispielTr": "Finansal denetim kurumu, kuruluşların yeterli karşılık ayırıp ayırmadığını denetliyor."
   },
   {
    "id": 7287,
@@ -366,9 +366,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ödeme gücü, borcunu ödeyebilme",
-   "mevcutBeispiel": "Zweifel an der Zahlungsfähigkeit des Staates trieben die Zinsen nach oben.",
-   "mevcutBeispielTr": "Devletin ödeme gücüne duyulan kuşku faizleri yukarı itti."
+   "currentTr": "ödeme gücü, borcunu ödeyebilme",
+   "currentBeispiel": "Zweifel an der Zahlungsfähigkeit des Staates trieben die Zinsen nach oben.",
+   "currentBeispielTr": "Devletin ödeme gücüne duyulan kuşku faizleri yukarı itti."
   },
   {
    "id": 7288,
@@ -376,9 +376,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Spekulationsblasen",
-   "mevcutTr": "spekülasyon balonu",
-   "mevcutBeispiel": "Kurz vor dem Platzen einer Spekulationsblase wirkt der Markt besonders euphorisch.",
-   "mevcutBeispielTr": "Bir spekülasyon balonu patlamadan hemen önce piyasa özellikle coşkulu görünür."
+   "currentTr": "spekülasyon balonu",
+   "currentBeispiel": "Kurz vor dem Platzen einer Spekulationsblase wirkt der Markt besonders euphorisch.",
+   "currentBeispielTr": "Bir spekülasyon balonu patlamadan hemen önce piyasa özellikle coşkulu görünür."
   },
   {
    "id": 7289,
@@ -386,9 +386,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Finanzkrisen",
-   "mevcutTr": "finansal kriz",
-   "mevcutBeispiel": "Die Finanzkrise von 2008 erschütterte das Vertrauen in die Banken dauerhaft.",
-   "mevcutBeispielTr": "2008 finansal krizi bankalara duyulan güveni kalıcı biçimde sarstı."
+   "currentTr": "finansal kriz",
+   "currentBeispiel": "Die Finanzkrise von 2008 erschütterte das Vertrauen in die Banken dauerhaft.",
+   "currentBeispielTr": "2008 finansal krizi bankalara duyulan güveni kalıcı biçimde sarstı."
   },
   {
    "id": 7290,
@@ -396,9 +396,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Systemrisiken",
-   "mevcutTr": "sistemik risk",
-   "mevcutBeispiel": "Sehr große Institute bergen ein Systemrisiko für die gesamte Volkswirtschaft.",
-   "mevcutBeispielTr": "Çok büyük kuruluşlar tüm ülke ekonomisi için sistemik risk taşır."
+   "currentTr": "sistemik risk",
+   "currentBeispiel": "Sehr große Institute bergen ein Systemrisiko für die gesamte Volkswirtschaft.",
+   "currentBeispielTr": "Çok büyük kuruluşlar tüm ülke ekonomisi için sistemik risk taşır."
   },
   {
    "id": 7291,
@@ -406,9 +406,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Rettungspakete",
-   "mevcutTr": "kurtarma paketi",
-   "mevcutBeispiel": "Das Parlament billigte ein Rettungspaket in Höhe von zwanzig Milliarden Euro.",
-   "mevcutBeispielTr": "Meclis yirmi milyar euroluk bir kurtarma paketini onayladı."
+   "currentTr": "kurtarma paketi",
+   "currentBeispiel": "Das Parlament billigte ein Rettungspaket in Höhe von zwanzig Milliarden Euro.",
+   "currentBeispielTr": "Meclis yirmi milyar euroluk bir kurtarma paketini onayladı."
   },
   {
    "id": 7292,
@@ -416,9 +416,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Notenbanken",
-   "mevcutTr": "merkez bankası",
-   "mevcutBeispiel": "Die Notenbank handelt formal unabhängig von den Wünschen der Regierung.",
-   "mevcutBeispielTr": "Merkez bankası resmen hükümetin isteklerinden bağımsız hareket eder."
+   "currentTr": "merkez bankası",
+   "currentBeispiel": "Die Notenbank handelt formal unabhängig von den Wünschen der Regierung.",
+   "currentBeispielTr": "Merkez bankası resmen hükümetin isteklerinden bağımsız hareket eder."
   },
   {
    "id": 7293,
@@ -426,9 +426,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Geldmengen",
-   "mevcutTr": "para arzı, para miktarı",
-   "mevcutBeispiel": "Eine rasch wachsende Geldmenge gilt vielen Ökonomen als Warnsignal.",
-   "mevcutBeispielTr": "Hızla büyüyen para arzı birçok iktisatçı için bir uyarı işaretidir."
+   "currentTr": "para arzı, para miktarı",
+   "currentBeispiel": "Eine rasch wachsende Geldmenge gilt vielen Ökonomen als Warnsignal.",
+   "currentBeispielTr": "Hızla büyüyen para arzı birçok iktisatçı için bir uyarı işaretidir."
   },
   {
    "id": 7294,
@@ -436,9 +436,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Abwertungen",
-   "mevcutTr": "değer kaybı, devalüasyon",
-   "mevcutBeispiel": "Die Abwertung der Landeswährung verteuerte sämtliche Importe schlagartig.",
-   "mevcutBeispielTr": "Yerli paranın değer kaybı bütün ithalatı bir anda pahalılaştırdı."
+   "currentTr": "değer kaybı, devalüasyon",
+   "currentBeispiel": "Die Abwertung der Landeswährung verteuerte sämtliche Importe schlagartig.",
+   "currentBeispielTr": "Yerli paranın değer kaybı bütün ithalatı bir anda pahalılaştırdı."
   },
   {
    "id": 7295,
@@ -446,9 +446,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Handelsbilanzen",
-   "mevcutTr": "dış ticaret dengesi, ticaret bilançosu",
-   "mevcutBeispiel": "Das Land weist seit Jahren eine deutlich positive Handelsbilanz auf.",
-   "mevcutBeispielTr": "Ülke yıllardır belirgin biçimde fazla veren bir dış ticaret dengesine sahip."
+   "currentTr": "dış ticaret dengesi, ticaret bilançosu",
+   "currentBeispiel": "Das Land weist seit Jahren eine deutlich positive Handelsbilanz auf.",
+   "currentBeispielTr": "Ülke yıllardır belirgin biçimde fazla veren bir dış ticaret dengesine sahip."
   },
   {
    "id": 7296,
@@ -456,9 +456,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "serbest ticaret",
-   "mevcutBeispiel": "Befürworter des Freihandels versprechen niedrigere Preise für alle Verbraucher.",
-   "mevcutBeispielTr": "Serbest ticaret savunucuları bütün tüketicilere daha düşük fiyatlar vaat ediyor."
+   "currentTr": "serbest ticaret",
+   "currentBeispiel": "Befürworter des Freihandels versprechen niedrigere Preise für alle Verbraucher.",
+   "currentBeispielTr": "Serbest ticaret savunucuları bütün tüketicilere daha düşük fiyatlar vaat ediyor."
   },
   {
    "id": 7297,
@@ -466,9 +466,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "marjinal fayda",
-   "mevcutBeispiel": "Der Grenznutzen jedes weiteren Glases Wasser nimmt rasch ab.",
-   "mevcutBeispielTr": "Her fazladan bir bardak suyun marjinal faydası hızla azalır."
+   "currentTr": "marjinal fayda",
+   "currentBeispiel": "Der Grenznutzen jedes weiteren Glases Wasser nimmt rasch ab.",
+   "currentBeispielTr": "Her fazladan bir bardak suyun marjinal faydası hızla azalır."
   },
   {
    "id": 7298,
@@ -476,9 +476,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "fırsat maliyeti",
-   "mevcutBeispiel": "Wer studiert, trägt Opportunitätskosten in Form entgangener Löhne.",
-   "mevcutBeispielTr": "Üniversite okuyan kişi, kazanamadığı ücretler biçiminde bir fırsat maliyeti üstlenir."
+   "currentTr": "fırsat maliyeti",
+   "currentBeispiel": "Wer studiert, trägt Opportunitätskosten in Form entgangener Löhne.",
+   "currentBeispielTr": "Üniversite okuyan kişi, kazanamadığı ücretler biçiminde bir fırsat maliyeti üstlenir."
   },
   {
    "id": 7299,
@@ -486,9 +486,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "piyasa başarısızlığı",
-   "mevcutBeispiel": "Umweltschäden gelten in der Theorie als klassisches Beispiel für Marktversagen.",
-   "mevcutBeispielTr": "Çevre zararları kuramda piyasa başarısızlığının klasik örneği sayılır."
+   "currentTr": "piyasa başarısızlığı",
+   "currentBeispiel": "Umweltschäden gelten in der Theorie als klassisches Beispiel für Marktversagen.",
+   "currentBeispielTr": "Çevre zararları kuramda piyasa başarısızlığının klasik örneği sayılır."
   },
   {
    "id": 7300,
@@ -496,9 +496,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Allokationen",
-   "mevcutTr": "tahsis, kaynakların dağılımı",
-   "mevcutBeispiel": "Der Preis sorgt in der Theorie für eine effiziente Allokation knapper Güter.",
-   "mevcutBeispielTr": "Kuramda fiyat, kıt malların etkin biçimde dağıtılmasını sağlar."
+   "currentTr": "tahsis, kaynakların dağılımı",
+   "currentBeispiel": "Der Preis sorgt in der Theorie für eine effiziente Allokation knapper Güter.",
+   "currentBeispielTr": "Kuramda fiyat, kıt malların etkin biçimde dağıtılmasını sağlar."
   },
   {
    "id": 7301,
@@ -506,9 +506,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Sparquoten",
-   "mevcutTr": "tasarruf oranı",
-   "mevcutBeispiel": "Die Sparquote der privaten Haushalte ist auf ein Rekordhoch geklettert.",
-   "mevcutBeispielTr": "Hanehalklarının tasarruf oranı rekor düzeye tırmandı."
+   "currentTr": "tasarruf oranı",
+   "currentBeispiel": "Die Sparquote der privaten Haushalte ist auf ein Rekordhoch geklettert.",
+   "currentBeispielTr": "Hanehalklarının tasarruf oranı rekor düzeye tırmandı."
   },
   {
    "id": 7302,
@@ -516,10 +516,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gewinnmargen",
-   "mevcutTr": "kâr marjı",
-   "mevcutBeispiel": "Steigende Rohstoffpreise drücken die Gewinnmargen der Hersteller.",
-   "mevcutBeispielTr": "Yükselen hammadde fiyatları üreticilerin kâr marjlarını baskılıyor.",
-   "cakisan": [
+   "currentTr": "kâr marjı",
+   "currentBeispiel": "Steigende Rohstoffpreise drücken die Gewinnmargen der Hersteller.",
+   "currentBeispielTr": "Yükselen hammadde fiyatları üreticilerin kâr marjlarını baskılıyor.",
+   "overlapping": [
     "die Marge (B2)"
    ]
   }

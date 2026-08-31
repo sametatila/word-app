@@ -1,16 +1,16 @@
 {
- "paket": "a2-021",
+ "packet": "a2-021",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 7988,
    "de": "das Telefongespräch",
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "telefon konuşması",
-   "mevcutBeispiel": "Nach dem Telefongespräch war meine Mutter viel ruhiger.",
-   "mevcutBeispielTr": "Telefon konuşmasından sonra annem çok daha sakindi."
+   "currentTr": "telefon konuşması",
+   "currentBeispiel": "Nach dem Telefongespräch war meine Mutter viel ruhiger.",
+   "currentBeispielTr": "Telefon konuşmasından sonra annem çok daha sakindi."
   },
   {
    "id": 7989,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-er",
-   "mevcutTr": "telefon rehberi",
-   "mevcutBeispiel": "Die Nummer der Praxis steht im Telefonbuch.",
-   "mevcutBeispielTr": "Muayenehanenin numarası telefon rehberinde yazıyor."
+   "currentTr": "telefon rehberi",
+   "currentBeispiel": "Die Nummer der Praxis steht im Telefonbuch.",
+   "currentBeispielTr": "Muayenehanenin numarası telefon rehberinde yazıyor."
   },
   {
    "id": 7990,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "kısa mesaj, SMS",
-   "mevcutBeispiel": "Ich schreibe dir später eine SMS.",
-   "mevcutBeispielTr": "Sana daha sonra bir kısa mesaj yazarım."
+   "currentTr": "kısa mesaj, SMS",
+   "currentBeispiel": "Ich schreibe dir später eine SMS.",
+   "currentBeispielTr": "Sana daha sonra bir kısa mesaj yazarım."
   },
   {
    "id": 7991,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "sesli mesaj",
-   "mevcutBeispiel": "Meine Oma schickt lieber eine Sprachnachricht als eine SMS.",
-   "mevcutBeispielTr": "Babaannem kısa mesaj yerine sesli mesaj göndermeyi tercih ediyor."
+   "currentTr": "sesli mesaj",
+   "currentBeispiel": "Meine Oma schickt lieber eine Sprachnachricht als eine SMS.",
+   "currentBeispielTr": "Babaannem kısa mesaj yerine sesli mesaj göndermeyi tercih ediyor."
   },
   {
    "id": 7992,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "zil sesi",
-   "mevcutBeispiel": "Dein Klingelton ist wirklich sehr laut.",
-   "mevcutBeispielTr": "Zil sesin gerçekten çok yüksek."
+   "currentTr": "zil sesi",
+   "currentBeispiel": "Dein Klingelton ist wirklich sehr laut.",
+   "currentBeispielTr": "Zil sesin gerçekten çok yüksek."
   },
   {
    "id": 7993,
@@ -58,9 +58,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "legt auf, hat aufgelegt",
-   "mevcutTr": "telefonu kapatmak",
-   "mevcutBeispiel": "Bitte leg nicht auf, ich bin gleich zurück.",
-   "mevcutBeispielTr": "Lütfen telefonu kapatma, hemen döneceğim."
+   "currentTr": "telefonu kapatmak",
+   "currentBeispiel": "Bitte leg nicht auf, ich bin gleich zurück.",
+   "currentBeispielTr": "Lütfen telefonu kapatma, hemen döneceğim."
   },
   {
    "id": 7994,
@@ -68,9 +68,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "ruft zurück, hat zurückgerufen",
-   "mevcutTr": "geri aramak",
-   "mevcutBeispiel": "Ich rufe dich heute Abend zurück.",
-   "mevcutBeispielTr": "Seni bu akşam geri arayacağım."
+   "currentTr": "geri aramak",
+   "currentBeispiel": "Ich rufe dich heute Abend zurück.",
+   "currentBeispielTr": "Seni bu akşam geri arayacağım."
   },
   {
    "id": 7995,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "akıllı telefon",
-   "mevcutBeispiel": "Mein neues Smartphone hat eine sehr gute Kamera.",
-   "mevcutBeispielTr": "Yeni akıllı telefonumun kamerası çok iyi."
+   "currentTr": "akıllı telefon",
+   "currentBeispiel": "Mein neues Smartphone hat eine sehr gute Kamera.",
+   "currentBeispielTr": "Yeni akıllı telefonumun kamerası çok iyi."
   },
   {
    "id": 7996,
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "batarya, pil",
-   "mevcutBeispiel": "Mein Akku ist fast leer.",
-   "mevcutBeispielTr": "Şarjım neredeyse bitti."
+   "currentTr": "batarya, pil",
+   "currentBeispiel": "Mein Akku ist fast leer.",
+   "currentBeispielTr": "Şarjım neredeyse bitti."
   },
   {
    "id": 7997,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "şarj kablosu",
-   "mevcutBeispiel": "Hast du ein Ladekabel für mein Handy?",
-   "mevcutBeispielTr": "Telefonum için bir şarj kablon var mı?"
+   "currentTr": "şarj kablosu",
+   "currentBeispiel": "Hast du ein Ladekabel für mein Handy?",
+   "currentBeispielTr": "Telefonum için bir şarj kablon var mı?"
   },
   {
    "id": 7998,
@@ -108,9 +108,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "dizüstü bilgisayar",
-   "mevcutBeispiel": "Ich nehme meinen Laptop mit ins Büro.",
-   "mevcutBeispielTr": "Dizüstü bilgisayarımı ofise götürüyorum."
+   "currentTr": "dizüstü bilgisayar",
+   "currentBeispiel": "Ich nehme meinen Laptop mit ins Büro.",
+   "currentBeispielTr": "Dizüstü bilgisayarımı ofise götürüyorum."
   },
   {
    "id": 7999,
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "fare (bilgisayar), fare (hayvan)",
-   "mevcutBeispiel": "Die Maus von meinem Computer funktioniert nicht mehr.",
-   "mevcutBeispielTr": "Bilgisayarımın faresi artık çalışmıyor."
+   "currentTr": "fare (bilgisayar), fare (hayvan)",
+   "currentBeispiel": "Die Maus von meinem Computer funktioniert nicht mehr.",
+   "currentBeispielTr": "Bilgisayarımın faresi artık çalışmıyor."
   },
   {
    "id": 8000,
@@ -128,9 +128,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "kulaklık",
-   "mevcutBeispiel": "Im Zug höre ich Musik mit Kopfhörern.",
-   "mevcutBeispielTr": "Trende kulaklıkla müzik dinliyorum."
+   "currentTr": "kulaklık",
+   "currentBeispiel": "Im Zug höre ich Musik mit Kopfhörern.",
+   "currentBeispielTr": "Trende kulaklıkla müzik dinliyorum."
   },
   {
    "id": 8001,
@@ -138,9 +138,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "mikrofon",
-   "mevcutBeispiel": "Dein Mikrofon ist aus, ich höre dich nicht.",
-   "mevcutBeispielTr": "Mikrofonun kapalı, seni duymuyorum."
+   "currentTr": "mikrofon",
+   "currentBeispiel": "Dein Mikrofon ist aus, ich höre dich nicht.",
+   "currentBeispielTr": "Mikrofonun kapalı, seni duymuyorum."
   },
   {
    "id": 8002,
@@ -148,9 +148,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "web kamerası",
-   "mevcutBeispiel": "Für das Videogespräch brauchst du eine Webcam.",
-   "mevcutBeispielTr": "Görüntülü görüşme için bir web kamerasına ihtiyacın var."
+   "currentTr": "web kamerası",
+   "currentBeispiel": "Für das Videogespräch brauchst du eine Webcam.",
+   "currentBeispielTr": "Görüntülü görüşme için bir web kamerasına ihtiyacın var."
   },
   {
    "id": 8003,
@@ -158,9 +158,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "tarayıcı (cihaz)",
-   "mevcutBeispiel": "Der Scanner steht neben dem Drucker.",
-   "mevcutBeispielTr": "Tarayıcı yazıcının yanında duruyor."
+   "currentTr": "tarayıcı (cihaz)",
+   "currentBeispiel": "Der Scanner steht neben dem Drucker.",
+   "currentBeispielTr": "Tarayıcı yazıcının yanında duruyor."
   },
   {
    "id": 8004,
@@ -168,9 +168,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "scannt, hat gescannt",
-   "mevcutTr": "taramak",
-   "mevcutBeispiel": "Bitte scannen Sie den Vertrag und schicken Sie ihn mir.",
-   "mevcutBeispielTr": "Lütfen sözleşmeyi tarayın ve bana gönderin."
+   "currentTr": "taramak",
+   "currentBeispiel": "Bitte scannen Sie den Vertrag und schicken Sie ihn mir.",
+   "currentBeispielTr": "Lütfen sözleşmeyi tarayın ve bana gönderin."
   },
   {
    "id": 8005,
@@ -178,9 +178,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "modem, yönlendirici",
-   "mevcutBeispiel": "Der Router im Wohnzimmer ist kaputt.",
-   "mevcutBeispielTr": "Oturma odasındaki modem bozuk."
+   "currentTr": "modem, yönlendirici",
+   "currentBeispiel": "Der Router im Wohnzimmer ist kaputt.",
+   "currentBeispielTr": "Oturma odasındaki modem bozuk."
   },
   {
    "id": 8006,
@@ -188,9 +188,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "kablosuz internet, wifi",
-   "mevcutBeispiel": "Gibt es hier im Café ein kostenloses WLAN?",
-   "mevcutBeispielTr": "Burada kafede ücretsiz kablosuz internet var mı?"
+   "currentTr": "kablosuz internet, wifi",
+   "currentBeispiel": "Gibt es hier im Café ein kostenloses WLAN?",
+   "currentBeispielTr": "Burada kafede ücretsiz kablosuz internet var mı?"
   },
   {
    "id": 8007,
@@ -198,9 +198,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "yazılım",
-   "mevcutBeispiel": "Die neue Software ist einfach zu bedienen.",
-   "mevcutBeispielTr": "Yeni yazılımın kullanımı kolay."
+   "currentTr": "yazılım",
+   "currentBeispiel": "Die neue Software ist einfach zu bedienen.",
+   "currentBeispielTr": "Yeni yazılımın kullanımı kolay."
   },
   {
    "id": 8008,
@@ -208,9 +208,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "bellek, hafıza",
-   "mevcutBeispiel": "Der Speicher von meinem Handy ist voll.",
-   "mevcutBeispielTr": "Telefonumun hafızası dolu."
+   "currentTr": "bellek, hafıza",
+   "currentBeispiel": "Der Speicher von meinem Handy ist voll.",
+   "currentBeispielTr": "Telefonumun hafızası dolu."
   },
   {
    "id": 8009,
@@ -218,10 +218,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "uygulama",
-   "mevcutBeispiel": "Ich habe eine neue App zum Deutschlernen.",
-   "mevcutBeispielTr": "Almanca öğrenmek için yeni bir uygulamam var.",
-   "cakisan": [
+   "currentTr": "uygulama",
+   "currentBeispiel": "Ich habe eine neue App zum Deutschlernen.",
+   "currentBeispielTr": "Almanca öğrenmek için yeni bir uygulamam var.",
+   "overlapping": [
     "der Vollzug (C1)",
     "die Anwendung (B2)"
    ]
@@ -232,9 +232,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "güncelleme",
-   "mevcutBeispiel": "Das Update dauert ungefähr zehn Minuten.",
-   "mevcutBeispielTr": "Güncelleme yaklaşık on dakika sürüyor."
+   "currentTr": "güncelleme",
+   "currentBeispiel": "Das Update dauert ungefähr zehn Minuten.",
+   "currentBeispielTr": "Güncelleme yaklaşık on dakika sürüyor."
   },
   {
    "id": 8011,
@@ -242,9 +242,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "internet sitesi",
-   "mevcutBeispiel": "Auf der Website der Schule findest du alle Termine.",
-   "mevcutBeispielTr": "Okulun internet sitesinde bütün tarihleri bulabilirsin."
+   "currentTr": "internet sitesi",
+   "currentBeispiel": "Auf der Website der Schule findest du alle Termine.",
+   "currentBeispielTr": "Okulun internet sitesinde bütün tarihleri bulabilirsin."
   },
   {
    "id": 8012,
@@ -252,10 +252,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "kullanıcı",
-   "mevcutBeispiel": "Jeder Benutzer bekommt ein eigenes Passwort.",
-   "mevcutBeispielTr": "Her kullanıcı kendine ait bir şifre alıyor.",
-   "cakisan": [
+   "currentTr": "kullanıcı",
+   "currentBeispiel": "Jeder Benutzer bekommt ein eigenes Passwort.",
+   "currentBeispielTr": "Her kullanıcı kendine ait bir şifre alıyor.",
+   "overlapping": [
     "der Nutzer (B2)"
    ]
   },
@@ -265,9 +265,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "kullanıcı adı",
-   "mevcutBeispiel": "Ich habe meinen Benutzernamen vergessen.",
-   "mevcutBeispielTr": "Kullanıcı adımı unuttum."
+   "currentTr": "kullanıcı adı",
+   "currentBeispiel": "Ich habe meinen Benutzernamen vergessen.",
+   "currentBeispielTr": "Kullanıcı adımı unuttum."
   },
   {
    "id": 8014,
@@ -275,9 +275,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "meldet sich ab, hat sich abgemeldet",
-   "mevcutTr": "çıkış yapmak, kaydını sildirmek",
-   "mevcutBeispiel": "Vergiss nicht, dich am Computer abzumelden.",
-   "mevcutBeispielTr": "Bilgisayarda çıkış yapmayı unutma."
+   "currentTr": "çıkış yapmak, kaydını sildirmek",
+   "currentBeispiel": "Vergiss nicht, dich am Computer abzumelden.",
+   "currentBeispielTr": "Bilgisayarda çıkış yapmayı unutma."
   },
   {
    "id": 8015,
@@ -285,9 +285,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "çevrimdışı",
-   "mevcutBeispiel": "Mein Bruder war den ganzen Tag offline.",
-   "mevcutBeispielTr": "Kardeşim bütün gün çevrimdışıydı."
+   "currentTr": "çevrimdışı",
+   "currentBeispiel": "Mein Bruder war den ganzen Tag offline.",
+   "currentBeispielTr": "Kardeşim bütün gün çevrimdışıydı."
   },
   {
    "id": 8016,
@@ -295,10 +295,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "sohbet (yazışma)",
-   "mevcutBeispiel": "In unserem Chat schreiben wir jeden Tag.",
-   "mevcutBeispielTr": "Sohbetimizde her gün yazışıyoruz.",
-   "cakisan": [
+   "currentTr": "sohbet (yazışma)",
+   "currentBeispiel": "In unserem Chat schreiben wir jeden Tag.",
+   "currentBeispielTr": "Sohbetimizde her gün yazışıyoruz.",
+   "overlapping": [
     "die Unterhaltung (B1)"
    ]
   },
@@ -308,9 +308,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "profil",
-   "mevcutBeispiel": "Auf meinem Profil ist ein Foto vom Urlaub.",
-   "mevcutBeispielTr": "Profilimde tatilden bir fotoğraf var."
+   "currentTr": "profil",
+   "currentBeispiel": "Auf meinem Profil ist ein Foto vom Urlaub.",
+   "currentBeispielTr": "Profilimde tatilden bir fotoğraf var."
   },
   {
    "id": 8018,
@@ -318,9 +318,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "özçekim, selfie",
-   "mevcutBeispiel": "Wir haben vor dem Museum ein Selfie gemacht.",
-   "mevcutBeispielTr": "Müzenin önünde bir özçekim yaptık."
+   "currentTr": "özçekim, selfie",
+   "currentBeispiel": "Wir haben vor dem Museum ein Selfie gemacht.",
+   "currentBeispielTr": "Müzenin önünde bir özçekim yaptık."
   },
   {
    "id": 8019,
@@ -328,9 +328,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "ek (e-postada), ilave",
-   "mevcutBeispiel": "Die Rechnung ist im Anhang.",
-   "mevcutBeispielTr": "Fatura ekte."
+   "currentTr": "ek (e-postada), ilave",
+   "currentBeispiel": "Die Rechnung ist im Anhang.",
+   "currentBeispielTr": "Fatura ekte."
   },
   {
    "id": 8020,
@@ -338,10 +338,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "konu (yazışmada)",
-   "mevcutBeispiel": "Schreib bitte einen kurzen Betreff in die E-Mail.",
-   "mevcutBeispielTr": "Lütfen e-postaya kısa bir konu yaz.",
-   "cakisan": [
+   "currentTr": "konu (yazışmada)",
+   "currentBeispiel": "Schreib bitte einen kurzen Betreff in die E-Mail.",
+   "currentBeispielTr": "Lütfen e-postaya kısa bir konu yaz.",
+   "overlapping": [
     "das Thema (A1)"
    ]
   },
@@ -351,9 +351,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "istenmeyen posta, spam",
-   "mevcutBeispiel": "Diese Nachricht war leider Spam.",
-   "mevcutBeispielTr": "Bu mesaj maalesef istenmeyen postaydı."
+   "currentTr": "istenmeyen posta, spam",
+   "currentBeispiel": "Diese Nachricht war leider Spam.",
+   "currentBeispielTr": "Bu mesaj maalesef istenmeyen postaydı."
   },
   {
    "id": 8022,
@@ -361,10 +361,10 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schickt ab, hat abgeschickt",
-   "mevcutTr": "göndermek, yollamak",
-   "mevcutBeispiel": "Ich habe das Formular gestern abgeschickt.",
-   "mevcutBeispielTr": "Formu dün gönderdim.",
-   "cakisan": [
+   "currentTr": "göndermek, yollamak",
+   "currentBeispiel": "Ich habe das Formular gestern abgeschickt.",
+   "currentBeispielTr": "Formu dün gönderdim.",
+   "overlapping": [
     "schicken (A1)",
     "senden (B1)",
     "entsenden (C1)",
@@ -378,10 +378,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "zarf",
-   "mevcutBeispiel": "Der Brief liegt in einem weißen Umschlag.",
-   "mevcutBeispielTr": "Mektup beyaz bir zarfın içinde duruyor.",
-   "cakisan": [
+   "currentTr": "zarf",
+   "currentBeispiel": "Der Brief liegt in einem weißen Umschlag.",
+   "currentBeispielTr": "Mektup beyaz bir zarfın içinde duruyor.",
+   "overlapping": [
     "der Briefumschlag (B1)",
     "das Couvert (B1)",
     "das Kuvert (B1)"
@@ -393,9 +393,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "mektup kâğıdı",
-   "mevcutBeispiel": "Meine Tante schreibt immer auf schönem Briefpapier.",
-   "mevcutBeispielTr": "Teyzem her zaman güzel mektup kâğıdına yazar."
+   "currentTr": "mektup kâğıdı",
+   "currentBeispiel": "Meine Tante schreibt immer auf schönem Briefpapier.",
+   "currentBeispielTr": "Teyzem her zaman güzel mektup kâğıdına yazar."
   },
   {
    "id": 8025,
@@ -403,9 +403,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "küçük paket, koli",
-   "mevcutBeispiel": "Für meine Schwester ist ein Päckchen gekommen.",
-   "mevcutBeispielTr": "Kız kardeşime bir küçük paket geldi."
+   "currentTr": "küçük paket, koli",
+   "currentBeispiel": "Für meine Schwester ist ein Päckchen gekommen.",
+   "currentBeispielTr": "Kız kardeşime bir küçük paket geldi."
   },
   {
    "id": 8026,
@@ -413,9 +413,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "posta ücreti",
-   "mevcutBeispiel": "Das Porto für den Brief kostet einen Euro.",
-   "mevcutBeispielTr": "Mektubun posta ücreti bir euro tutuyor."
+   "currentTr": "posta ücreti",
+   "currentBeispiel": "Das Porto für den Brief kostet einen Euro.",
+   "currentBeispielTr": "Mektubun posta ücreti bir euro tutuyor."
   },
   {
    "id": 8027,
@@ -423,10 +423,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-er",
-   "mevcutTr": "postane",
-   "mevcutBeispiel": "Das Postamt ist samstags nur bis zwölf Uhr offen.",
-   "mevcutBeispielTr": "Postane cumartesileri sadece saat on ikiye kadar açık.",
-   "cakisan": [
+   "currentTr": "postane",
+   "currentBeispiel": "Das Postamt ist samstags nur bis zwölf Uhr offen.",
+   "currentBeispielTr": "Postane cumartesileri sadece saat on ikiye kadar açık.",
+   "overlapping": [
     "die Post (A1)"
    ]
   },
@@ -436,10 +436,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-er",
-   "mevcutTr": "posta kutusu (abone kutusu)",
-   "mevcutBeispiel": "Schicken Sie den Brief bitte an unser Postfach.",
-   "mevcutBeispielTr": "Lütfen mektubu posta kutumuza gönderin.",
-   "cakisan": [
+   "currentTr": "posta kutusu (abone kutusu)",
+   "currentBeispiel": "Schicken Sie den Brief bitte an unser Postfach.",
+   "currentBeispielTr": "Lütfen mektubu posta kutumuza gönderin.",
+   "overlapping": [
     "der Briefkasten (B1)"
    ]
   },
@@ -449,9 +449,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "kapı numarası, bina numarası",
-   "mevcutBeispiel": "Du hast die Hausnummer im Formular vergessen.",
-   "mevcutBeispielTr": "Formda kapı numarasını unutmuşsun."
+   "currentTr": "kapı numarası, bina numarası",
+   "currentBeispiel": "Du hast die Hausnummer im Formular vergessen.",
+   "currentBeispielTr": "Formda kapı numarasını unutmuşsun."
   },
   {
    "id": 8030,
@@ -459,9 +459,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "gazete yazısı, gazete haberi",
-   "mevcutBeispiel": "Der Zeitungsartikel über unsere Stadt war sehr interessant.",
-   "mevcutBeispielTr": "Şehrimiz hakkındaki gazete yazısı çok ilginçti."
+   "currentTr": "gazete yazısı, gazete haberi",
+   "currentBeispiel": "Der Zeitungsartikel über unsere Stadt war sehr interessant.",
+   "currentBeispielTr": "Şehrimiz hakkındaki gazete yazısı çok ilginçti."
   },
   {
    "id": 8031,
@@ -469,9 +469,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "günlük gazete",
-   "mevcutBeispiel": "Mein Vater liest jeden Morgen die Tageszeitung.",
-   "mevcutBeispielTr": "Babam her sabah günlük gazeteyi okur."
+   "currentTr": "günlük gazete",
+   "currentBeispiel": "Mein Vater liest jeden Morgen die Tageszeitung.",
+   "currentBeispielTr": "Babam her sabah günlük gazeteyi okur."
   },
   {
    "id": 8032,
@@ -479,10 +479,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "televizyon programı (yayın akışı)",
-   "mevcutBeispiel": "Heute ist das Fernsehprogramm wirklich langweilig.",
-   "mevcutBeispielTr": "Bugün televizyon programı gerçekten sıkıcı.",
-   "cakisan": [
+   "currentTr": "televizyon programı (yayın akışı)",
+   "currentBeispiel": "Heute ist das Fernsehprogramm wirklich langweilig.",
+   "currentBeispielTr": "Bugün televizyon programı gerçekten sıkıcı.",
+   "overlapping": [
     "die Fernsehsendung (A2)"
    ]
   },
@@ -492,10 +492,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "televizyon programı, yayın",
-   "mevcutBeispiel": "Diese Fernsehsendung läuft immer am Sonntagabend.",
-   "mevcutBeispielTr": "Bu televizyon programı hep pazar akşamı yayınlanıyor.",
-   "cakisan": [
+   "currentTr": "televizyon programı, yayın",
+   "currentBeispiel": "Diese Fernsehsendung läuft immer am Sonntagabend.",
+   "currentBeispielTr": "Bu televizyon programı hep pazar akşamı yayınlanıyor.",
+   "overlapping": [
     "das Fernsehprogramm (A2)"
    ]
   },
@@ -505,9 +505,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "radyo istasyonu, radyo kanalı",
-   "mevcutBeispiel": "Im Auto höre ich immer denselben Radiosender.",
-   "mevcutBeispielTr": "Arabada hep aynı radyo istasyonunu dinliyorum."
+   "currentTr": "radyo istasyonu, radyo kanalı",
+   "currentBeispiel": "Im Auto höre ich immer denselben Radiosender.",
+   "currentBeispielTr": "Arabada hep aynı radyo istasyonunu dinliyorum."
   },
   {
    "id": 8035,
@@ -515,9 +515,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "podcast",
-   "mevcutBeispiel": "Beim Kochen höre ich gern einen Podcast.",
-   "mevcutBeispielTr": "Yemek yaparken severek bir podcast dinliyorum."
+   "currentTr": "podcast",
+   "currentBeispiel": "Beim Kochen höre ich gern einen Podcast.",
+   "currentBeispielTr": "Yemek yaparken severek bir podcast dinliyorum."
   },
   {
    "id": 8036,
@@ -525,9 +525,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "ses seviyesi, ses yüksekliği",
-   "mevcutBeispiel": "Kannst du bitte die Lautstärke leiser machen?",
-   "mevcutBeispielTr": "Ses seviyesini biraz kısabilir misin?"
+   "currentTr": "ses seviyesi, ses yüksekliği",
+   "currentBeispiel": "Kannst du bitte die Lautstärke leiser machen?",
+   "currentBeispielTr": "Ses seviyesini biraz kısabilir misin?"
   },
   {
    "id": 8037,
@@ -535,9 +535,9 @@
    "typ": "Verb",
    "niveau": "A2",
    "formen": "schaltet um, hat umgeschaltet",
-   "mevcutTr": "kanal değiştirmek",
-   "mevcutBeispiel": "Bitte schalte auf einen anderen Sender um.",
-   "mevcutBeispielTr": "Lütfen başka bir kanala geç."
+   "currentTr": "kanal değiştirmek",
+   "currentBeispiel": "Bitte schalte auf einen anderen Sender um.",
+   "currentBeispielTr": "Lütfen başka bir kanala geç."
   }
  ]
 }

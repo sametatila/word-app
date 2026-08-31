@@ -1,7 +1,7 @@
 {
- "paket": "zh-003",
+ "packet": "zh-003",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-a1-l5",
    "skill": "listening",
@@ -9,31 +9,31 @@
    "title": "Durchsaag im Bahnhof",
    "genre": "Anons",
    "intro": "Zürih Hauptbahnhof'ta bir peron anonsunu dinleyeceksin.",
-   "metin": "Achtung uf Gläis sibe: De Interregio uf Sanggalle, Abfaart am halbi zää, fahrt hüt vo Gläis nüün ab.\nDe Zug hät öppe füf Minute Verspaatig.\nIm vordere Täil vom Zug hät s Plätz i de erschte Klass, im hindere Täil i de zwäite Klass.\nMir bitted Si, uf d Aazäige z achte. Guet Reis!",
+   "text": "Achtung uf Gläis sibe: De Interregio uf Sanggalle, Abfaart am halbi zää, fahrt hüt vo Gläis nüün ab.\nDe Zug hät öppe füf Minute Verspaatig.\nIm vordere Täil vom Zug hät s Plätz i de erschte Klass, im hindere Täil i de zwäite Klass.\nMir bitted Si, uf d Aazäige z achte. Guet Reis!",
    "gloss": [
     {
      "de": "d Durchsaag",
-     "mevcutTr": "anons"
+     "currentTr": "anons"
     },
     {
      "de": "s Gläis",
-     "mevcutTr": "peron, ray"
+     "currentTr": "peron, ray"
     },
     {
      "de": "d Abfaart",
-     "mevcutTr": "kalkış"
+     "currentTr": "kalkış"
     },
     {
      "de": "öppe",
-     "mevcutTr": "yaklaşık"
+     "currentTr": "yaklaşık"
     },
     {
      "de": "de Täil",
-     "mevcutTr": "bölüm, kısım"
+     "currentTr": "bölüm, kısım"
     },
     {
      "de": "achte uf",
-     "mevcutTr": "…e dikkat etmek"
+     "currentTr": "…e dikkat etmek"
     }
    ]
   },
@@ -44,32 +44,32 @@
    "title": "E Sprachnachricht vom Deniz",
    "genre": "Mesaj",
    "intro": "Deniz, Elif'e sesli mesaj bırakıyor. Ne istediğini dinleyeceksin.",
-   "metin": "Deniz: Hoi Elif, ich bi s, de Deniz.\nDeniz: Du, ich chume hüt es bitzeli spöter — öppe füfzää Minute. Ich bi na im Büro.\nDeniz: Chasch du scho emal en Tisch reserviere? Am beschte drusse, s isch so schöön warm.\nDeniz: Und bring bitte s Buech mit, wo ich der ggää ha. Ich bruuch s morn.\nDeniz: Bis gliich!",
+   "text": "Deniz: Hoi Elif, ich bi s, de Deniz.\nDeniz: Du, ich chume hüt es bitzeli spöter — öppe füfzää Minute. Ich bi na im Büro.\nDeniz: Chasch du scho emal en Tisch reserviere? Am beschte drusse, s isch so schöön warm.\nDeniz: Und bring bitte s Buech mit, wo ich der ggää ha. Ich bruuch s morn.\nDeniz: Bis gliich!",
    "gloss": [
     {
      "de": "es bitzeli",
-     "mevcutTr": "biraz"
+     "currentTr": "biraz"
     },
     {
      "de": "spöter",
-     "mevcutTr": "daha geç"
+     "currentTr": "daha geç"
     },
     {
      "de": "drusse",
-     "mevcutTr": "dışarıda"
+     "currentTr": "dışarıda"
     },
     {
      "de": "gää",
-     "mevcutTr": "vermek (geben)",
-     "havuz": {
+     "currentTr": "vermek (geben)",
+     "pool": {
       "tr": "vermek",
       "en": "to give"
      },
-     "hdAdayi": "geben"
+     "hdCandidate": "geben"
     },
     {
      "de": "Bis gliich!",
-     "mevcutTr": "Birazdan görüşürüz!"
+     "currentTr": "Birazdan görüşürüz!"
     }
    ]
   },
@@ -80,39 +80,39 @@
    "title": "Am Elterekafi",
    "genre": "Diyalog",
    "intro": "Hikâyenin üçüncü bölümü: Meral, anaokulunun veli kahvesinde başka bir anneyle tanışıyor.",
-   "metin": "Sandra: Grüezi! Sind Si au nöi da? Ich han Si na nie gseh.\nMeral: Grüezi. Ja, min Sohn hät letschti Wuche aagfange. Ich bi d Meral.\nSandra: Sandra. Mini Tochter isch scho s zwäite Jaar da. Wie gaat s em Chliine?\nMeral: Guet, glaub ich. Er redt na nöd vill Tüütsch. Ich mach mer es bitzeli Sorge.\nSandra: Das gaat schnäll. Mini Tochter hät im Auguscht käis Wort gredt und im Dezämber hät si mich korrigiert.\nMeral: Wörkli?\nSandra: Wörkli. Aber ich gib Ine en Tipp: Mälded Si sich für de Hort aa, au wänn Si en jetz nöd bruuched.\nMeral: Warum?\nSandra: D Warteliste isch lang. Wär im Auguscht aafangt, mues sich im Januar mälde. Das säit eim niemert.\nMeral: Merci vilmal. Das han ich würkli nöd gwüsst.",
+   "text": "Sandra: Grüezi! Sind Si au nöi da? Ich han Si na nie gseh.\nMeral: Grüezi. Ja, min Sohn hät letschti Wuche aagfange. Ich bi d Meral.\nSandra: Sandra. Mini Tochter isch scho s zwäite Jaar da. Wie gaat s em Chliine?\nMeral: Guet, glaub ich. Er redt na nöd vill Tüütsch. Ich mach mer es bitzeli Sorge.\nSandra: Das gaat schnäll. Mini Tochter hät im Auguscht käis Wort gredt und im Dezämber hät si mich korrigiert.\nMeral: Wörkli?\nSandra: Wörkli. Aber ich gib Ine en Tipp: Mälded Si sich für de Hort aa, au wänn Si en jetz nöd bruuched.\nMeral: Warum?\nSandra: D Warteliste isch lang. Wär im Auguscht aafangt, mues sich im Januar mälde. Das säit eim niemert.\nMeral: Merci vilmal. Das han ich würkli nöd gwüsst.",
    "gloss": [
     {
      "de": "s Elterekafi",
-     "mevcutTr": "veli kahvesi (okulda tanışma)"
+     "currentTr": "veli kahvesi (okulda tanışma)"
     },
     {
      "de": "de Hort",
-     "mevcutTr": "okul sonrası bakım"
+     "currentTr": "okul sonrası bakım"
     },
     {
      "de": "d Aamäldig",
-     "mevcutTr": "kayıt"
+     "currentTr": "kayıt"
     },
     {
      "de": "d Warteliste",
-     "mevcutTr": "bekleme listesi"
+     "currentTr": "bekleme listesi"
     },
     {
      "de": "sich melde",
-     "mevcutTr": "başvurmak"
+     "currentTr": "başvurmak"
     },
     {
      "de": "de Tipp",
-     "mevcutTr": "tavsiye",
-     "havuz": {
+     "currentTr": "tavsiye",
+     "pool": {
       "tr": "tavsiye",
       "en": "tip"
      }
     },
     {
      "de": "nöi da",
-     "mevcutTr": "yeni gelmiş"
+     "currentTr": "yeni gelmiş"
     }
    ]
   },
@@ -123,39 +123,39 @@
    "title": "A de Kasse",
    "genre": "Diyalog",
    "intro": "Coop kasasında bir konuşma — İsviçre'de günde bir kez duyduğun cümleler.",
-   "metin": "Kassiererin: Grüezi. Händ Si e Superkarte?\nMeral: Grüezi. Nei, han ich nöd.\nKassiererin: Bruuched Si es Sackli?\nMeral: Ja, äis bitte.\nKassiererin: Das macht denn füfeddriissg Franke zwänzg.\nMeral: Cha ich mit Twint zaale?\nKassiererin: Sicher. Do isch de Code.\nMeral: So … es hät klappt.\nKassiererin: Perfäkt. Wänd Si de Bon?\nMeral: Nei, merci. Schöne Tag!",
+   "text": "Kassiererin: Grüezi. Händ Si e Superkarte?\nMeral: Grüezi. Nei, han ich nöd.\nKassiererin: Bruuched Si es Sackli?\nMeral: Ja, äis bitte.\nKassiererin: Das macht denn füfeddriissg Franke zwänzg.\nMeral: Cha ich mit Twint zaale?\nKassiererin: Sicher. Do isch de Code.\nMeral: So … es hät klappt.\nKassiererin: Perfäkt. Wänd Si de Bon?\nMeral: Nei, merci. Schöne Tag!",
    "gloss": [
     {
      "de": "s Sackli",
-     "mevcutTr": "poşet"
+     "currentTr": "poşet"
     },
     {
      "de": "d Kasse",
-     "mevcutTr": "kasa",
-     "havuz": {
+     "currentTr": "kasa",
+     "pool": {
       "tr": "kasa",
       "en": "checkout"
      }
     },
     {
      "de": "s Kleingäld",
-     "mevcutTr": "bozuk para"
+     "currentTr": "bozuk para"
     },
     {
      "de": "de Bon",
-     "mevcutTr": "fiş"
+     "currentTr": "fiş"
     },
     {
      "de": "s Twint",
-     "mevcutTr": "İsviçre'nin telefonla ödeme uygulaması"
+     "currentTr": "İsviçre'nin telefonla ödeme uygulaması"
     },
     {
      "de": "d Superkarte",
-     "mevcutTr": "market puan kartı"
+     "currentTr": "market puan kartı"
     },
     {
      "de": "iipacke",
-     "mevcutTr": "poşete koymak"
+     "currentTr": "poşete koymak"
     }
    ]
   },
@@ -166,35 +166,35 @@
    "title": "Drüü Durchsäge",
    "genre": "Sınav formatı",
    "intro": "Üç kısa anons, her birine bir soru. Anonslar birbirinden bağımsız — her birini ayrı dinleyebilirsin.",
-   "metin": "Durchsaag 1: Achtung uf Gläis füf: De Zug uf Winterthur, Abfaart am zwölfi zwänzg, hät hüt öppe zää Minute Verspaatig.\nDurchsaag 2: Liebi Chundschaft, üse Lade schlüsst hüt scho am sächsi, nöd am achti. Bitte chömed Si a d Kasse. Morn sind mir wider normal für Si da.\nDurchsaag 3: Mir händ es chliises Mäitli gfunde, öppe vier Jaar alt, rot Jagge. Es wartet bim Iigang Nord näb de Information.",
+   "text": "Durchsaag 1: Achtung uf Gläis füf: De Zug uf Winterthur, Abfaart am zwölfi zwänzg, hät hüt öppe zää Minute Verspaatig.\nDurchsaag 2: Liebi Chundschaft, üse Lade schlüsst hüt scho am sächsi, nöd am achti. Bitte chömed Si a d Kasse. Morn sind mir wider normal für Si da.\nDurchsaag 3: Mir händ es chliises Mäitli gfunde, öppe vier Jaar alt, rot Jagge. Es wartet bim Iigang Nord näb de Information.",
    "gloss": [
     {
      "de": "d Durchsaag",
-     "mevcutTr": "anons"
+     "currentTr": "anons"
     },
     {
      "de": "s Gläis",
-     "mevcutTr": "peron"
+     "currentTr": "peron"
     },
     {
      "de": "d Verspaatig",
-     "mevcutTr": "gecikme"
+     "currentTr": "gecikme"
     },
     {
      "de": "zue",
-     "mevcutTr": "kapalı"
+     "currentTr": "kapalı"
     },
     {
      "de": "s Aagebot",
-     "mevcutTr": "kampanya"
+     "currentTr": "kampanya"
     },
     {
      "de": "de Iigang",
-     "mevcutTr": "giriş"
+     "currentTr": "giriş"
     },
     {
      "de": "verlore",
-     "mevcutTr": "kayıp"
+     "currentTr": "kayıp"
     }
    ]
   },
@@ -205,39 +205,39 @@
    "title": "Was isch en Apéro?",
    "genre": "Kültür",
    "intro": "İsviçre'de her davetin adı: Apéro. Ne demek, ne zaman biter, ne giyilir — kısa bir açıklama.",
-   "metin": "Meral: Sandra, ich bi zu me Apéro iiglade. Was isch das genau?\nSandra: Es isch käis Ässe. Me trinkt öppis, isst chliini Sache — Salzstängeli, Chääs, Oliven — und me staat.\nMeral: Me sitzt nöd?\nSandra: Mäischtens nöd. Drum cha me au äifach vo eim zum andere gaa.\nMeral: Und wie lang gaat das?\nSandra: Öppe zwo Stund. Wänn s am sibni aafangt, isch s am nüüni fertig — und denn isch s würkli fertig.\nMeral: Mues ich öppis mitbringe?\nSandra: E Flasche Wii isch immer richtig. Aber niemert erwartet s.\nMeral: Und pünktlich?\nSandra: Ja. Nöd zwänzg Minute z spaat wie a de Party — bim Apéro chunt me pünktlich.",
+   "text": "Meral: Sandra, ich bi zu me Apéro iiglade. Was isch das genau?\nSandra: Es isch käis Ässe. Me trinkt öppis, isst chliini Sache — Salzstängeli, Chääs, Oliven — und me staat.\nMeral: Me sitzt nöd?\nSandra: Mäischtens nöd. Drum cha me au äifach vo eim zum andere gaa.\nMeral: Und wie lang gaat das?\nSandra: Öppe zwo Stund. Wänn s am sibni aafangt, isch s am nüüni fertig — und denn isch s würkli fertig.\nMeral: Mues ich öppis mitbringe?\nSandra: E Flasche Wii isch immer richtig. Aber niemert erwartet s.\nMeral: Und pünktlich?\nSandra: Ja. Nöd zwänzg Minute z spaat wie a de Party — bim Apéro chunt me pünktlich.",
    "gloss": [
     {
      "de": "de Apéro",
-     "mevcutTr": "içki-atıştırmalık buluşması"
+     "currentTr": "içki-atıştırmalık buluşması"
     },
     {
      "de": "s Salzstängeli",
-     "mevcutTr": "tuzlu çubuk kraker"
+     "currentTr": "tuzlu çubuk kraker"
     },
     {
      "de": "aastoosse",
-     "mevcutTr": "kadeh kaldırmak"
+     "currentTr": "kadeh kaldırmak"
     },
     {
      "de": "s Ässe",
-     "mevcutTr": "yemek"
+     "currentTr": "yemek"
     },
     {
      "de": "stoo",
-     "mevcutTr": "ayakta durmak"
+     "currentTr": "ayakta durmak"
     },
     {
      "de": "pünktlich",
-     "mevcutTr": "dakik",
-     "havuz": {
+     "currentTr": "dakik",
+     "pool": {
       "tr": "dakik",
       "en": "punctual"
      }
     },
     {
      "de": "nachhär",
-     "mevcutTr": "sonrasında"
+     "currentTr": "sonrasında"
     }
    ]
   },
@@ -248,43 +248,43 @@
    "title": "En Termin bim Zaanarzt",
    "genre": "Telefon",
    "intro": "Diş hekiminden randevu almak — telefonda ilk yapılan konuşmalardan biri.",
-   "metin": "Praxis: Zaanarztpraxis Meier, grüezi.\nMeral: Grüezi. Ich hett gärn en Termin. Ich han sit gescht Zaanweh.\nPraxis: Isch es starch?\nMeral: Am Aabig isch es schlimmer. Ich han schlächt gschlaafe.\nPraxis: Denn nämed mir Si hüt. Chönd Si am halbi drüü choo?\nMeral: Ja, das gaat.\nPraxis: Guet. Sind Si scho emal bi eus gsii?\nMeral: Nei, s isch s erschte Mal.\nPraxis: Denn bringed Si bitte d Versicherigskarte mit und chömed Si zää Minute früener — s git es Formular.\nMeral: Alles klar. Merci vilmal!",
+   "text": "Praxis: Zaanarztpraxis Meier, grüezi.\nMeral: Grüezi. Ich hett gärn en Termin. Ich han sit gescht Zaanweh.\nPraxis: Isch es starch?\nMeral: Am Aabig isch es schlimmer. Ich han schlächt gschlaafe.\nPraxis: Denn nämed mir Si hüt. Chönd Si am halbi drüü choo?\nMeral: Ja, das gaat.\nPraxis: Guet. Sind Si scho emal bi eus gsii?\nMeral: Nei, s isch s erschte Mal.\nPraxis: Denn bringed Si bitte d Versicherigskarte mit und chömed Si zää Minute früener — s git es Formular.\nMeral: Alles klar. Merci vilmal!",
    "gloss": [
     {
      "de": "de Zaanarzt",
-     "mevcutTr": "diş hekimi"
+     "currentTr": "diş hekimi"
     },
     {
      "de": "d Zaanweh",
-     "mevcutTr": "diş ağrısı"
+     "currentTr": "diş ağrısı"
     },
     {
      "de": "de Termin",
-     "mevcutTr": "randevu",
-     "havuz": {
+     "currentTr": "randevu",
+     "pool": {
       "tr": "randevu",
       "en": "appointment"
      }
     },
     {
      "de": "dringend",
-     "mevcutTr": "acil",
-     "havuz": {
+     "currentTr": "acil",
+     "pool": {
       "tr": "acil",
       "en": "urgent"
      }
     },
     {
      "de": "d Kontroll",
-     "mevcutTr": "kontrol"
+     "currentTr": "kontrol"
     },
     {
      "de": "vorbiicho",
-     "mevcutTr": "uğramak"
+     "currentTr": "uğramak"
     },
     {
      "de": "d Versicherigskarte",
-     "mevcutTr": "sigorta kartı"
+     "currentTr": "sigorta kartı"
     }
    ]
   },
@@ -295,39 +295,39 @@
    "title": "Meral rüeft d Frau Suter aa",
    "genre": "Telefon",
    "intro": "Hikâyenin dördüncü bölümü: Meral, öğretmenin notuna telefonla cevap veriyor.",
-   "metin": "Frau Suter: Chindsgi Hardau, Suter.\nMeral: Grüezi Frau Suter, do isch d Meral Yıldız, d Mueter vom Kerem.\nFrau Suter: Grüezi Frau Yıldız! Sie händ min Zettel gläse?\nMeral: Ja, merci. De Kerem chunt gärn am Ussflug mit. Ich han au d Jagge gfunde — si isch under em Bett gsii.\nFrau Suter: Perfäkt. Denn schriib ich en uf d Lischte.\nMeral: Bruucht er Gummistifeli? Mir händ käini.\nFrau Suter: Wär ideal, aber alti Schueh gönd au. Mir händ im Chindsgi zwäi Paar zum Uusleihe — welli Grössi hät er?\nMeral: Vierezwänzg.\nFrau Suter: Das passt. Ich leg s bereit.\nMeral: Merci vilmal. Und … danke au für das, wo Si über s Rede gschriibe händ. Das hät mer guet taa.\nFrau Suter: Das han ich gärn gschriibe. Es stimmt ja.",
+   "text": "Frau Suter: Chindsgi Hardau, Suter.\nMeral: Grüezi Frau Suter, do isch d Meral Yıldız, d Mueter vom Kerem.\nFrau Suter: Grüezi Frau Yıldız! Sie händ min Zettel gläse?\nMeral: Ja, merci. De Kerem chunt gärn am Ussflug mit. Ich han au d Jagge gfunde — si isch under em Bett gsii.\nFrau Suter: Perfäkt. Denn schriib ich en uf d Lischte.\nMeral: Bruucht er Gummistifeli? Mir händ käini.\nFrau Suter: Wär ideal, aber alti Schueh gönd au. Mir händ im Chindsgi zwäi Paar zum Uusleihe — welli Grössi hät er?\nMeral: Vierezwänzg.\nFrau Suter: Das passt. Ich leg s bereit.\nMeral: Merci vilmal. Und … danke au für das, wo Si über s Rede gschriibe händ. Das hät mer guet taa.\nFrau Suter: Das han ich gärn gschriibe. Es stimmt ja.",
    "gloss": [
     {
      "de": "de Ussflug",
-     "mevcutTr": "gezi"
+     "currentTr": "gezi"
     },
     {
      "de": "mitcho",
-     "mevcutTr": "birlikte gelmek"
+     "currentTr": "birlikte gelmek"
     },
     {
      "de": "d Jagge",
-     "mevcutTr": "mont"
+     "currentTr": "mont"
     },
     {
      "de": "s Gummistifeli",
-     "mevcutTr": "yağmur çizmesi"
+     "currentTr": "yağmur çizmesi"
     },
     {
      "de": "sich fröie",
-     "mevcutTr": "sevinmek"
+     "currentTr": "sevinmek"
     },
     {
      "de": "de Rucksack",
-     "mevcutTr": "sırt çantası",
-     "havuz": {
+     "currentTr": "sırt çantası",
+     "pool": {
       "tr": "sırt çantası",
       "en": "backpack"
      }
     },
     {
      "de": "Merci vilmal",
-     "mevcutTr": "çok teşekkürler"
+     "currentTr": "çok teşekkürler"
     }
    ]
   }

@@ -19,7 +19,7 @@ düzeltme öneriyorsan büyük ihtimalle üslup tercihini hata sanıyorsun.
    değil. Doğrusu `"çalıştırmak, açmak (cihaz)"`.
 
 2. **Eksik ayrım.** İki Almanca kelimenin Türkçesi birebir aynıysa öğrenci
-   ikisini ayırt edemez. Girdide `ayniAnlam` alanı varsa bu durumdasın.
+   ikisini ayırt edemez. Girdide `sameMeaning` alanı varsa bu durumdasın.
    - Gerçekten eşanlamlıysa (`anfangen`/`beginnen`) dokunma, sorun yok.
    - Değillerse ayırt ediciyi parantezle ekle:
      `auf sein → "açık olmak (dükkân, kapı)"`, `an sein → "açık olmak (cihaz)"`.
@@ -37,13 +37,13 @@ düzeltme öneriyorsan büyük ihtimalle üslup tercihini hata sanıyorsun.
    almak"` yanlış sıradadır; `"almak, elde etmek"` doğrudur.
 
 6. **Bozuk başlık.** `de` alanında `(s Fahrrad)`, `(Fahr)Rad` gibi artık varsa
-   `deDuzeltme` alanıyla temiz biçimi öner.
+   `deCorrection` alanıyla temiz biçimi öner.
 
 7. **Yinelenen kayıt.** Kaynak PDF satır sonlarından ve kısaltmalarından
    bozuk kopyalar üretti: `"die Lebens-"` + `"mittel"` aynı kelimenin iki
-   parçası, `"trifft"` ise `treffen`'in çekimli hâli. `ayniAnlam` listesinde
+   parçası, `"trifft"` ise `treffen`'in çekimli hâli. `sameMeaning` listesinde
    **aynı kelimenin başka bir yazımı** duruyorsa bu bir çeviri sorunu değil,
-   fazladan kayıttır: `"yinelenen": true` de ve **başlığı düzeltmeye çalışma**
+   fazladan kayıttır: `"duplicate": true` de ve **başlığı düzeltmeye çalışma**
    — düzeltmek ikinci bir kopya yaratır, karar merkezde verilir.
 
 ## Neyi hata SAYMAYACAKSIN
@@ -62,13 +62,13 @@ Sana söylenen dosyaya, yalnızca geçerli bir JSON dizisi. Değişmeyecek madde
 ```json
 [
   { "id": 542, "tr": "çalıştırmak, açmak (cihaz)",
-    "neden": "anmachen cihaz çalıştırmaktır; 'açmak' öffnen ile karışıyor (aynı anlam: öffnen, aufmachen)" },
-  { "id": 374, "deDuzeltme": "das Fahrrad",
-    "neden": "başlıkta '(s Fahrrad)' artığı var" }
+    "reason": "anmachen cihaz çalıştırmaktır; 'açmak' öffnen ile karışıyor (aynı anlam: öffnen, aufmachen)" },
+  { "id": 374, "deCorrection": "das Fahrrad",
+    "reason": "başlıkta '(s Fahrrad)' artığı var" }
 ]
 ```
 
-Alanlar: `id` (zorunlu), `tr` ve/veya `deDuzeltme`, `neden` (zorunlu, tek cümle,
+Alanlar: `id` (zorunlu), `tr` ve/veya `deCorrection`, `reason` (zorunlu, tek cümle,
 neyin neden yanlış olduğunu söyler).
 
 Bitince yalnızca şu satırı döndür: `<dosya>: <öneri sayısı>/<incelenen>`

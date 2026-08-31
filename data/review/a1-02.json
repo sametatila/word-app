@@ -6,7 +6,7 @@
   "tr": "dondurma",
   "formen": "(Sg.)",
   "beispiel": "Ich möchte ein großes Eis.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die/das Glace/Glacé (B1)"
   ]
  },
@@ -25,7 +25,7 @@
   "tr": "son",
   "formen": "(Sg)",
   "beispiel": "Das Ende war sehr traurig.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "letzt- (A1)"
   ]
  },
@@ -36,7 +36,7 @@
   "tr": "sonunda, nihayet",
   "formen": "",
   "beispiel": "Wann antwortest du endlich?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "schließlich (B1)"
   ]
  },
@@ -79,7 +79,7 @@
   "tr": "yetişkin",
   "formen": "-n",
   "beispiel": "Dieser Film ist nur für Erwachsene.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Erwachsene (A1)"
   ]
  },
@@ -154,7 +154,7 @@
   "tr": "bilet",
   "formen": "-n",
   "beispiel": "Sie brauchen eine Fahrkarte.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Ticket (A1)",
    "das Billett (B1)"
   ]
@@ -174,7 +174,7 @@
   "tr": "bisiklet",
   "formen": "ä, -er",
   "beispiel": "Wir kommen mit dem Fahrrad.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "(s Fahrrad) (A1)",
    "das (Fahr)Rad (A2)",
    "das Velo (B1)"
@@ -235,7 +235,7 @@
   "tr": "televizyon",
   "formen": "(Sg.)",
   "beispiel": "Was gibt es heute im Fernsehen?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Fernseher (A2)"
   ]
  },
@@ -566,7 +566,7 @@
   "tr": "dükkân, mağaza",
   "formen": "-e",
   "beispiel": "Meine Mutter wartet vor dem Geschäft.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Laden (A1)"
   ]
  },
@@ -593,7 +593,7 @@
   "tr": "kapalı olmak",
   "formen": "",
   "beispiel": "Die Apotheke ist heute geschlossen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "zu sein (A1)"
   ]
  },
@@ -612,7 +612,7 @@
   "tr": "kazanmak",
   "formen": "",
   "beispiel": "Man kann eine Reise gewinnen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "verdienen (A1)"
   ]
  },
@@ -671,7 +671,7 @@
   "tr": "tebrik",
   "formen": "ü, -e",
   "beispiel": "Herzlichen Glückwunsch!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Gratulation (B1)"
   ]
  },
@@ -762,7 +762,7 @@
   "tr": "cep telefonu",
   "formen": "-s",
   "beispiel": "Du kannst mit dem Handy telefonieren.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Mobiltelefon (A2)"
   ]
  },
@@ -957,7 +957,7 @@
   "tr": "bilgi",
   "formen": "-en",
   "beispiel": "Hier kann man Informationen bekommen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Wissen (B1)"
   ]
  },
@@ -1016,7 +1016,7 @@
   "tr": "her",
   "formen": "-e, -s",
   "beispiel": "Wir fahren jeden Sommer nach München.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "jed- (A1)"
   ]
  }

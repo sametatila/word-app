@@ -1,16 +1,16 @@
 {
- "paket": "b2-024",
+ "packet": "b2-024",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4794,
    "de": "ungesund",
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sağlıksız",
-   "mevcutBeispiel": "So wenig zu schlafen ist auf Dauer ziemlich ungesund.",
-   "mevcutBeispielTr": "Bu kadar az uyumak uzun vadede oldukça sağlıksız."
+   "currentTr": "sağlıksız",
+   "currentBeispiel": "So wenig zu schlafen ist auf Dauer ziemlich ungesund.",
+   "currentBeispielTr": "Bu kadar az uyumak uzun vadede oldukça sağlıksız."
   },
   {
    "id": 4795,
@@ -18,9 +18,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "iyi gelen, rahatlatıcı",
-   "mevcutBeispiel": "Ein warmes Bad ist nach einem langen Tag wohltuend.",
-   "mevcutBeispielTr": "Uzun bir günün ardından sıcak bir banyo insana iyi gelir."
+   "currentTr": "iyi gelen, rahatlatıcı",
+   "currentBeispiel": "Ein warmes Bad ist nach einem langen Tag wohltuend.",
+   "currentBeispielTr": "Uzun bir günün ardından sıcak bir banyo insana iyi gelir."
   },
   {
    "id": 4796,
@@ -28,10 +28,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "dik (duruş)",
-   "mevcutBeispiel": "Versuch, beim Tippen aufrecht auf dem Stuhl zu sitzen.",
-   "mevcutBeispielTr": "Yazarken sandalyede dik oturmaya çalış.",
-   "cakisan": [
+   "currentTr": "dik (duruş)",
+   "currentBeispiel": "Versuch, beim Tippen aufrecht auf dem Stuhl zu sitzen.",
+   "currentBeispielTr": "Yazarken sandalyede dik oturmaya çalış.",
+   "overlapping": [
     "steil (B1)"
    ]
   },
@@ -41,10 +41,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ölçülü, aşırıya kaçmayan",
-   "mevcutBeispiel": "Er trinkt Alkohol nur maßvoll und selten.",
-   "mevcutBeispielTr": "Alkolü sadece ölçülü ve nadiren içiyor.",
-   "cakisan": [
+   "currentTr": "ölçülü, aşırıya kaçmayan",
+   "currentBeispiel": "Er trinkt Alkohol nur maßvoll und selten.",
+   "currentBeispielTr": "Alkolü sadece ölçülü ve nadiren içiyor.",
+   "overlapping": [
     "bedächtig (C1)"
    ]
   },
@@ -54,9 +54,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kaufverträge",
-   "mevcutTr": "satış sözleşmesi",
-   "mevcutBeispiel": "Mit dem Klick auf den Button kommt ein Kaufvertrag zustande.",
-   "mevcutBeispielTr": "Düğmeye tıklamakla bir satış sözleşmesi kurulmuş olur."
+   "currentTr": "satış sözleşmesi",
+   "currentBeispiel": "Mit dem Klick auf den Button kommt ein Kaufvertrag zustande.",
+   "currentBeispielTr": "Düğmeye tıklamakla bir satış sözleşmesi kurulmuş olur."
   },
   {
    "id": 4799,
@@ -64,9 +64,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Widerrufe",
-   "mevcutTr": "cayma, geri alma",
-   "mevcutBeispiel": "Der Widerruf muss innerhalb von vierzehn Tagen erklärt werden.",
-   "mevcutBeispielTr": "Cayma bildirimi on dört gün içinde yapılmalıdır."
+   "currentTr": "cayma, geri alma",
+   "currentBeispiel": "Der Widerruf muss innerhalb von vierzehn Tagen erklärt werden.",
+   "currentBeispielTr": "Cayma bildirimi on dört gün içinde yapılmalıdır."
   },
   {
    "id": 4800,
@@ -74,10 +74,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rückerstattungen",
-   "mevcutTr": "geri ödeme, iade",
-   "mevcutBeispiel": "Die Rückerstattung des Kaufpreises dauerte fast drei Wochen.",
-   "mevcutBeispielTr": "Satış bedelinin geri ödenmesi neredeyse üç hafta sürdü.",
-   "cakisan": [
+   "currentTr": "geri ödeme, iade",
+   "currentBeispiel": "Die Rückerstattung des Kaufpreises dauerte fast drei Wochen.",
+   "currentBeispielTr": "Satış bedelinin geri ödenmesi neredeyse üç hafta sürdü.",
+   "overlapping": [
     "die Erstattung (C1)"
    ]
   },
@@ -87,9 +87,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kaufbelege",
-   "mevcutTr": "satın alma belgesi, fiş",
-   "mevcutBeispiel": "Ohne Kaufbeleg nimmt der Händler die Ware nicht zurück.",
-   "mevcutBeispielTr": "Satın alma belgesi olmadan satıcı ürünü geri almıyor."
+   "currentTr": "satın alma belgesi, fiş",
+   "currentBeispiel": "Ohne Kaufbeleg nimmt der Händler die Ware nicht zurück.",
+   "currentBeispielTr": "Satın alma belgesi olmadan satıcı ürünü geri almıyor."
   },
   {
    "id": 4802,
@@ -97,9 +97,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Preisnachlässe",
-   "mevcutTr": "fiyat indirimi",
-   "mevcutBeispiel": "Wegen des Kratzers gewährte uns der Verkäufer einen Preisnachlass.",
-   "mevcutBeispielTr": "Çizik yüzünden satıcı bize bir fiyat indirimi yaptı."
+   "currentTr": "fiyat indirimi",
+   "currentBeispiel": "Wegen des Kratzers gewährte uns der Verkäufer einen Preisnachlass.",
+   "currentBeispielTr": "Çizik yüzünden satıcı bize bir fiyat indirimi yaptı."
   },
   {
    "id": 4803,
@@ -107,9 +107,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Dienstleister",
-   "mevcutTr": "hizmet sağlayıcı",
-   "mevcutBeispiel": "Der Dienstleister haftet für Schäden, die seine Mitarbeiter verursachen.",
-   "mevcutBeispielTr": "Hizmet sağlayıcı, çalışanlarının yol açtığı zararlardan sorumludur."
+   "currentTr": "hizmet sağlayıcı",
+   "currentBeispiel": "Der Dienstleister haftet für Schäden, die seine Mitarbeiter verursachen.",
+   "currentBeispielTr": "Hizmet sağlayıcı, çalışanlarının yol açtığı zararlardan sorumludur."
   },
   {
    "id": 4804,
@@ -117,9 +117,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kundendienste",
-   "mevcutTr": "müşteri hizmetleri, teknik servis",
-   "mevcutBeispiel": "Der Kundendienst war stundenlang telefonisch nicht zu erreichen.",
-   "mevcutBeispielTr": "Müşteri hizmetlerine saatlerce telefonla ulaşılamadı."
+   "currentTr": "müşteri hizmetleri, teknik servis",
+   "currentBeispiel": "Der Kundendienst war stundenlang telefonisch nicht zu erreichen.",
+   "currentBeispielTr": "Müşteri hizmetlerine saatlerce telefonla ulaşılamadı."
   },
   {
    "id": 4805,
@@ -127,9 +127,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schlichtungsstellen",
-   "mevcutTr": "uzlaştırma kurulu, hakem heyeti",
-   "mevcutBeispiel": "Bei Streit mit der Airline hilft eine unabhängige Schlichtungsstelle weiter.",
-   "mevcutBeispielTr": "Havayoluyla anlaşmazlıkta bağımsız bir uzlaştırma kurulu yardımcı olur."
+   "currentTr": "uzlaştırma kurulu, hakem heyeti",
+   "currentBeispiel": "Bei Streit mit der Airline hilft eine unabhängige Schlichtungsstelle weiter.",
+   "currentBeispielTr": "Havayoluyla anlaşmazlıkta bağımsız bir uzlaştırma kurulu yardımcı olur."
   },
   {
    "id": 4806,
@@ -137,9 +137,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verbraucherzentralen",
-   "mevcutTr": "tüketici danışma merkezi",
-   "mevcutBeispiel": "Die Verbraucherzentrale warnt vor unseriösen Anrufen angeblicher Gewinnspiele.",
-   "mevcutBeispielTr": "Tüketici danışma merkezi, sözde çekilişlerin şüpheli aramalarına karşı uyarıyor."
+   "currentTr": "tüketici danışma merkezi",
+   "currentBeispiel": "Die Verbraucherzentrale warnt vor unseriösen Anrufen angeblicher Gewinnspiele.",
+   "currentBeispielTr": "Tüketici danışma merkezi, sözde çekilişlerin şüpheli aramalarına karşı uyarıyor."
   },
   {
    "id": 4807,
@@ -147,9 +147,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Preisvergleiche",
-   "mevcutTr": "fiyat karşılaştırması",
-   "mevcutBeispiel": "Ein kurzer Preisvergleich im Netz spart oft hundert Euro.",
-   "mevcutBeispielTr": "İnternette kısa bir fiyat karşılaştırması çoğu zaman yüz euro tasarruf ettirir."
+   "currentTr": "fiyat karşılaştırması",
+   "currentBeispiel": "Ein kurzer Preisvergleich im Netz spart oft hundert Euro.",
+   "currentBeispielTr": "İnternette kısa bir fiyat karşılaştırması çoğu zaman yüz euro tasarruf ettirir."
   },
   {
    "id": 4808,
@@ -157,9 +157,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Versandkosten",
-   "mevcutTr": "kargo ücreti, gönderim masrafı",
-   "mevcutBeispiel": "Ab einem Bestellwert von fünfzig Euro entfallen die Versandkosten.",
-   "mevcutBeispielTr": "Elli euroluk sipariş tutarından itibaren kargo ücreti alınmıyor."
+   "currentTr": "kargo ücreti, gönderim masrafı",
+   "currentBeispiel": "Ab einem Bestellwert von fünfzig Euro entfallen die Versandkosten.",
+   "currentBeispielTr": "Elli euroluk sipariş tutarından itibaren kargo ücreti alınmıyor."
   },
   {
    "id": 4809,
@@ -167,9 +167,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gutschriften",
-   "mevcutTr": "alacak kaydı, hesaba geçirme",
-   "mevcutBeispiel": "Statt Bargeld erhielt sie eine Gutschrift über achtzig Euro.",
-   "mevcutBeispielTr": "Nakit yerine seksen euroluk bir alacak kaydı aldı."
+   "currentTr": "alacak kaydı, hesaba geçirme",
+   "currentBeispiel": "Statt Bargeld erhielt sie eine Gutschrift über achtzig Euro.",
+   "currentBeispielTr": "Nakit yerine seksen euroluk bir alacak kaydı aldı."
   },
   {
    "id": 4810,
@@ -177,9 +177,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gutscheine",
-   "mevcutTr": "hediye çeki, kupon",
-   "mevcutBeispiel": "Der Gutschein ist drei Jahre lang in allen Filialen gültig.",
-   "mevcutBeispielTr": "Hediye çeki üç yıl boyunca bütün şubelerde geçerli."
+   "currentTr": "hediye çeki, kupon",
+   "currentBeispiel": "Der Gutschein ist drei Jahre lang in allen Filialen gültig.",
+   "currentBeispielTr": "Hediye çeki üç yıl boyunca bütün şubelerde geçerli."
   },
   {
    "id": 4811,
@@ -187,9 +187,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "raf ömrü, dayanıklılık",
-   "mevcutBeispiel": "Die Haltbarkeit des Produkts steht klein auf der Rückseite.",
-   "mevcutBeispielTr": "Ürünün raf ömrü arka yüzde küçük harflerle yazıyor."
+   "currentTr": "raf ömrü, dayanıklılık",
+   "currentBeispiel": "Die Haltbarkeit des Produkts steht klein auf der Rückseite.",
+   "currentBeispielTr": "Ürünün raf ömrü arka yüzde küçük harflerle yazıyor."
   },
   {
    "id": 4813,
@@ -197,9 +197,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "müşteri bağlılığı sağlama",
-   "mevcutBeispiel": "Rabattaktionen dienen vor allem der langfristigen Kundenbindung.",
-   "mevcutBeispielTr": "İndirim kampanyaları her şeyden önce uzun vadeli müşteri bağlılığına hizmet eder."
+   "currentTr": "müşteri bağlılığı sağlama",
+   "currentBeispiel": "Rabattaktionen dienen vor allem der langfristigen Kundenbindung.",
+   "currentBeispielTr": "İndirim kampanyaları her şeyden önce uzun vadeli müşteri bağlılığına hizmet eder."
   },
   {
    "id": 4814,
@@ -207,9 +207,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Tarife",
-   "mevcutTr": "tarife, ücret planı",
-   "mevcutBeispiel": "Wir haben in einen günstigeren Tarif ohne Mindestlaufzeit gewechselt.",
-   "mevcutBeispielTr": "Asgari süresi olmayan daha uygun bir tarifeye geçtik."
+   "currentTr": "tarife, ücret planı",
+   "currentBeispiel": "Wir haben in einen günstigeren Tarif ohne Mindestlaufzeit gewechselt.",
+   "currentBeispielTr": "Asgari süresi olmayan daha uygun bir tarifeye geçtik."
   },
   {
    "id": 4815,
@@ -217,9 +217,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Grundgebühren",
-   "mevcutTr": "sabit ücret, abonelik bedeli",
-   "mevcutBeispiel": "Neben der Grundgebühr zahlen Sie für jede Minute extra.",
-   "mevcutBeispielTr": "Sabit ücretin yanı sıra her dakika için ayrıca ödeme yapıyorsunuz."
+   "currentTr": "sabit ücret, abonelik bedeli",
+   "currentBeispiel": "Neben der Grundgebühr zahlen Sie für jede Minute extra.",
+   "currentBeispielTr": "Sabit ücretin yanı sıra her dakika için ayrıca ödeme yapıyorsunuz."
   },
   {
    "id": 4816,
@@ -227,9 +227,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "iyi niyet gösterme, esneklik",
-   "mevcutBeispiel": "Aus Kulanz reparierte die Firma das Gerät trotzdem kostenfrei.",
-   "mevcutBeispielTr": "Firma iyi niyet göstererek cihazı yine de ücretsiz onardı."
+   "currentTr": "iyi niyet gösterme, esneklik",
+   "currentBeispiel": "Aus Kulanz reparierte die Firma das Gerät trotzdem kostenfrei.",
+   "currentBeispielTr": "Firma iyi niyet göstererek cihazı yine de ücretsiz onardı."
   },
   {
    "id": 4817,
@@ -237,9 +237,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sigorta teminatı",
-   "mevcutBeispiel": "Der Versicherungsschutz erlischt, wenn Sie die Prämie nicht zahlen.",
-   "mevcutBeispielTr": "Primi ödemezseniz sigorta teminatı sona erer."
+   "currentTr": "sigorta teminatı",
+   "currentBeispiel": "Der Versicherungsschutz erlischt, wenn Sie die Prämie nicht zahlen.",
+   "currentBeispielTr": "Primi ödemezseniz sigorta teminatı sona erer."
   },
   {
    "id": 4818,
@@ -247,9 +247,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Auftraggeber",
-   "mevcutTr": "iş veren taraf, sipariş veren",
-   "mevcutBeispiel": "Der Auftraggeber muss die Arbeiten innerhalb einer Woche abnehmen.",
-   "mevcutBeispielTr": "Sipariş veren, işleri bir hafta içinde teslim almak zorunda."
+   "currentTr": "iş veren taraf, sipariş veren",
+   "currentBeispiel": "Der Auftraggeber muss die Arbeiten innerhalb einer Woche abnehmen.",
+   "currentBeispielTr": "Sipariş veren, işleri bir hafta içinde teslim almak zorunda."
   },
   {
    "id": 4819,
@@ -257,10 +257,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ansprechpartner",
-   "mevcutTr": "muhatap, ilgili kişi",
-   "mevcutBeispiel": "Für Beschwerden ist Frau Krüger die zuständige Ansprechpartnerin.",
-   "mevcutBeispielTr": "Şikâyetler için yetkili muhatap Bayan Krüger'dir.",
-   "cakisan": [
+   "currentTr": "muhatap, ilgili kişi",
+   "currentBeispiel": "Für Beschwerden ist Frau Krüger die zuständige Ansprechpartnerin.",
+   "currentBeispielTr": "Şikâyetler için yetkili muhatap Bayan Krüger'dir.",
+   "overlapping": [
     "der Gesprächspartner (B2)"
    ]
   },
@@ -270,9 +270,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Filialen",
-   "mevcutTr": "şube (mağaza, banka)",
-   "mevcutBeispiel": "Online gekaufte Kleidung können Sie in jeder Filiale zurückgeben.",
-   "mevcutBeispielTr": "İnternetten aldığınız giysileri her şubede iade edebilirsiniz."
+   "currentTr": "şube (mağaza, banka)",
+   "currentBeispiel": "Online gekaufte Kleidung können Sie in jeder Filiale zurückgeben.",
+   "currentBeispielTr": "İnternetten aldığınız giysileri her şubede iade edebilirsiniz."
   },
   {
    "id": 4821,
@@ -280,9 +280,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "perakende ticaret",
-   "mevcutBeispiel": "Der stationäre Einzelhandel leidet seit Jahren unter dem Onlinegeschäft.",
-   "mevcutBeispielTr": "Fiziksel perakende ticaret yıllardır çevrim içi satıştan zarar görüyor."
+   "currentTr": "perakende ticaret",
+   "currentBeispiel": "Der stationäre Einzelhandel leidet seit Jahren unter dem Onlinegeschäft.",
+   "currentBeispielTr": "Fiziksel perakende ticaret yıllardır çevrim içi satıştan zarar görüyor."
   },
   {
    "id": 4822,
@@ -290,9 +290,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Warenkörbe",
-   "mevcutTr": "alışveriş sepeti",
-   "mevcutBeispiel": "Viele Kunden brechen den Kauf mit vollem Warenkorb ab.",
-   "mevcutBeispielTr": "Birçok müşteri sepeti doluyken alışverişi yarıda bırakıyor."
+   "currentTr": "alışveriş sepeti",
+   "currentBeispiel": "Viele Kunden brechen den Kauf mit vollem Warenkorb ab.",
+   "currentBeispielTr": "Birçok müşteri sepeti doluyken alışverişi yarıda bırakıyor."
   },
   {
    "id": 4823,
@@ -300,9 +300,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sortimente",
-   "mevcutTr": "ürün yelpazesi, çeşit",
-   "mevcutBeispiel": "Der Discounter hat sein Sortiment um regionale Produkte erweitert.",
-   "mevcutBeispielTr": "İndirim marketi ürün yelpazesini yöresel ürünlerle genişletti."
+   "currentTr": "ürün yelpazesi, çeşit",
+   "currentBeispiel": "Der Discounter hat sein Sortiment um regionale Produkte erweitert.",
+   "currentBeispielTr": "İndirim marketi ürün yelpazesini yöresel ürünlerle genişletti."
   },
   {
    "id": 4824,
@@ -310,9 +310,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nutzungsbedingungen",
-   "mevcutTr": "kullanım koşulları",
-   "mevcutBeispiel": "Kaum jemand liest die Nutzungsbedingungen vor der Anmeldung durch.",
-   "mevcutBeispielTr": "Kayıt olmadan önce kullanım koşullarını neredeyse kimse okumuyor."
+   "currentTr": "kullanım koşulları",
+   "currentBeispiel": "Kaum jemand liest die Nutzungsbedingungen vor der Anmeldung durch.",
+   "currentBeispielTr": "Kayıt olmadan önce kullanım koşullarını neredeyse kimse okumuyor."
   },
   {
    "id": 4825,
@@ -320,9 +320,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vertragspartner",
-   "mevcutTr": "sözleşme tarafı",
-   "mevcutBeispiel": "Ihr Vertragspartner ist nicht der Hersteller, sondern der Händler.",
-   "mevcutBeispielTr": "Sözleşmedeki karşı taraf üretici değil, satıcıdır."
+   "currentTr": "sözleşme tarafı",
+   "currentBeispiel": "Ihr Vertragspartner ist nicht der Hersteller, sondern der Händler.",
+   "currentBeispielTr": "Sözleşmedeki karşı taraf üretici değil, satıcıdır."
   },
   {
    "id": 4826,
@@ -330,9 +330,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rückgaberechte",
-   "mevcutTr": "iade hakkı",
-   "mevcutBeispiel": "Im Laden besteht kein gesetzliches Rückgaberecht für einwandfreie Ware.",
-   "mevcutBeispielTr": "Mağazada kusursuz ürün için yasal bir iade hakkı yoktur."
+   "currentTr": "iade hakkı",
+   "currentBeispiel": "Im Laden besteht kein gesetzliches Rückgaberecht für einwandfreie Ware.",
+   "currentBeispielTr": "Mağazada kusursuz ürün için yasal bir iade hakkı yoktur."
   },
   {
    "id": 4827,
@@ -340,9 +340,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rücktritte",
-   "mevcutTr": "sözleşmeden dönme, vazgeçme",
-   "mevcutBeispiel": "Der Rücktritt vom Vertrag kostet je nach Zeitpunkt unterschiedlich viel.",
-   "mevcutBeispielTr": "Sözleşmeden dönmenin bedeli zamanlamaya göre değişiyor."
+   "currentTr": "sözleşmeden dönme, vazgeçme",
+   "currentBeispiel": "Der Rücktritt vom Vertrag kostet je nach Zeitpunkt unterschiedlich viel.",
+   "currentBeispielTr": "Sözleşmeden dönmenin bedeli zamanlamaya göre değişiyor."
   },
   {
    "id": 4828,
@@ -350,9 +350,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Treueprogramme",
-   "mevcutTr": "sadakat programı",
-   "mevcutBeispiel": "Im Treueprogramm sammeln Kunden Punkte für spätere Einkäufe.",
-   "mevcutBeispielTr": "Sadakat programında müşteriler sonraki alışverişler için puan topluyor."
+   "currentTr": "sadakat programı",
+   "currentBeispiel": "Im Treueprogramm sammeln Kunden Punkte für spätere Einkäufe.",
+   "currentBeispielTr": "Sadakat programında müşteriler sonraki alışverişler için puan topluyor."
   },
   {
    "id": 4829,
@@ -360,10 +360,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat reklamiert",
-   "mevcutTr": "şikâyet etmek, arızalı ürünü bildirmek",
-   "mevcutBeispiel": "Ich habe die defekte Kaffeemaschine sofort beim Händler reklamiert.",
-   "mevcutBeispielTr": "Bozuk kahve makinesini hemen satıcıya şikâyet ettim.",
-   "cakisan": [
+   "currentTr": "şikâyet etmek, arızalı ürünü bildirmek",
+   "currentBeispiel": "Ich habe die defekte Kaffeemaschine sofort beim Händler reklamiert.",
+   "currentBeispielTr": "Bozuk kahve makinesini hemen satıcıya şikâyet ettim.",
+   "overlapping": [
     "sich beklagen (A2)"
    ]
   },
@@ -373,10 +373,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat nachgebessert",
-   "mevcutTr": "düzeltmek, sonradan iyileştirmek",
-   "mevcutBeispiel": "Der Handwerker musste die schiefe Fliesenreihe kostenlos nachbessern.",
-   "mevcutBeispielTr": "Usta, eğri fayans sırasını ücretsiz düzeltmek zorunda kaldı.",
-   "cakisan": [
+   "currentTr": "düzeltmek, sonradan iyileştirmek",
+   "currentBeispiel": "Der Handwerker musste die schiefe Fliesenreihe kostenlos nachbessern.",
+   "currentBeispielTr": "Usta, eğri fayans sırasını ücretsiz düzeltmek zorunda kaldı.",
+   "overlapping": [
     "korrigieren (B1)",
     "richtigstellen (C1)",
     "glätten (A2)"
@@ -388,10 +388,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gemahnt",
-   "mevcutTr": "ihtar etmek, uyarı göndermek",
-   "mevcutBeispiel": "Der Verlag mahnte den Kunden wegen zweier offener Beträge.",
-   "mevcutBeispielTr": "Yayınevi, ödenmemiş iki tutar için müşteriye ihtar gönderdi.",
-   "cakisan": [
+   "currentTr": "ihtar etmek, uyarı göndermek",
+   "currentBeispiel": "Der Verlag mahnte den Kunden wegen zweier offener Beträge.",
+   "currentBeispielTr": "Yayınevi, ödenmemiş iki tutar için müşteriye ihtar gönderdi.",
+   "overlapping": [
     "anmahnen (B2)"
    ]
   },
@@ -401,9 +401,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgeraten",
-   "mevcutTr": "vazgeçirmeye çalışmak, tavsiye etmemek",
-   "mevcutBeispiel": "Der Berater riet uns von der teuren Zusatzversicherung ab.",
-   "mevcutBeispielTr": "Danışman bizi pahalı ek sigortadan vazgeçirmeye çalıştı."
+   "currentTr": "vazgeçirmeye çalışmak, tavsiye etmemek",
+   "currentBeispiel": "Der Berater riet uns von der teuren Zusatzversicherung ab.",
+   "currentBeispielTr": "Danışman bizi pahalı ek sigortadan vazgeçirmeye çalıştı."
   },
   {
    "id": 4833,
@@ -411,9 +411,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat eingelöst",
-   "mevcutTr": "kullanmak (kupon, çek), bozdurmak, yerine getirmek",
-   "mevcutBeispiel": "Den Gutschein kann man auch in mehreren Teilbeträgen einlösen.",
-   "mevcutBeispielTr": "Hediye çeki birden çok kısmi tutarda da kullanılabiliyor."
+   "currentTr": "kullanmak (kupon, çek), bozdurmak, yerine getirmek",
+   "currentBeispiel": "Den Gutschein kann man auch in mehreren Teilbeträgen einlösen.",
+   "currentBeispielTr": "Hediye çeki birden çok kısmi tutarda da kullanılabiliyor."
   },
   {
    "id": 4834,
@@ -421,9 +421,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verpflichtet",
-   "mevcutTr": "yükümlü kılmak, zorunda bırakmak",
-   "mevcutBeispiel": "Das Gesetz verpflichtet Händler zu einer verständlichen Preisauszeichnung.",
-   "mevcutBeispielTr": "Yasa, satıcıları anlaşılır fiyat etiketlemesine yükümlü kılıyor."
+   "currentTr": "yükümlü kılmak, zorunda bırakmak",
+   "currentBeispiel": "Das Gesetz verpflichtet Händler zu einer verständlichen Preisauszeichnung.",
+   "currentBeispielTr": "Yasa, satıcıları anlaşılır fiyat etiketlemesine yükümlü kılıyor."
   },
   {
    "id": 4835,
@@ -431,10 +431,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat getäuscht",
-   "mevcutTr": "aldatmak, yanıltmak",
-   "mevcutBeispiel": "Mit der halb leeren Packung täuscht der Hersteller die Käufer.",
-   "mevcutBeispielTr": "Yarısı boş ambalajla üretici alıcıları aldatıyor.",
-   "cakisan": [
+   "currentTr": "aldatmak, yanıltmak",
+   "currentBeispiel": "Mit der halb leeren Packung täuscht der Hersteller die Käufer.",
+   "currentBeispielTr": "Yarısı boş ambalajla üretici alıcıları aldatıyor.",
+   "overlapping": [
     "betrügen (B1)"
    ]
   },
@@ -444,9 +444,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat behoben",
-   "mevcutTr": "gidermek (arıza, hata, sorun)",
-   "mevcutBeispiel": "Der Techniker konnte die Störung erst nach zwei Besuchen beheben.",
-   "mevcutBeispielTr": "Teknisyen arızayı ancak iki ziyaretten sonra giderebildi."
+   "currentTr": "gidermek (arıza, hata, sorun)",
+   "currentBeispiel": "Der Techniker konnte die Störung erst nach zwei Besuchen beheben.",
+   "currentBeispielTr": "Teknisyen arızayı ancak iki ziyaretten sonra giderebildi."
   },
   {
    "id": 4837,
@@ -454,9 +454,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat geworben",
-   "mevcutTr": "reklam yapmak, tanıtmak",
-   "mevcutBeispiel": "Die Kette wirbt seit Wochen mit angeblich unschlagbaren Preisen.",
-   "mevcutBeispielTr": "Zincir haftalardır sözde rakipsiz fiyatlarla reklam yapıyor."
+   "currentTr": "reklam yapmak, tanıtmak",
+   "currentBeispiel": "Die Kette wirbt seit Wochen mit angeblich unschlagbaren Preisen.",
+   "currentBeispielTr": "Zincir haftalardır sözde rakipsiz fiyatlarla reklam yapıyor."
   },
   {
    "id": 4838,
@@ -464,9 +464,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat zugesichert",
-   "mevcutTr": "taahhüt etmek, güvence vermek",
-   "mevcutBeispiel": "Der Verkäufer hatte uns eine Lieferung binnen drei Tagen zugesichert.",
-   "mevcutBeispielTr": "Satıcı bize üç gün içinde teslimat sözü vermişti."
+   "currentTr": "taahhüt etmek, güvence vermek",
+   "currentBeispiel": "Der Verkäufer hatte uns eine Lieferung binnen drei Tagen zugesichert.",
+   "currentBeispielTr": "Satıcı bize üç gün içinde teslimat sözü vermişti."
   },
   {
    "id": 4839,
@@ -474,9 +474,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgerechnet",
-   "mevcutTr": "faturalandırmak, hesabını çıkarmak",
-   "mevcutBeispiel": "Die Beratung wird nach Stunden und nicht pauschal abgerechnet.",
-   "mevcutBeispielTr": "Danışmanlık götürü değil, saat başına faturalandırılıyor."
+   "currentTr": "faturalandırmak, hesabını çıkarmak",
+   "currentBeispiel": "Die Beratung wird nach Stunden und nicht pauschal abgerechnet.",
+   "currentBeispielTr": "Danışmanlık götürü değil, saat başına faturalandırılıyor."
   },
   {
    "id": 4840,
@@ -484,10 +484,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat zurückgesendet",
-   "mevcutTr": "geri göndermek",
-   "mevcutBeispiel": "Bitte senden Sie die Ware in der Originalverpackung zurück.",
-   "mevcutBeispielTr": "Lütfen ürünü orijinal ambalajında geri gönderin.",
-   "cakisan": [
+   "currentTr": "geri göndermek",
+   "currentBeispiel": "Bitte senden Sie die Ware in der Originalverpackung zurück.",
+   "currentBeispielTr": "Lütfen ürünü orijinal ambalajında geri gönderin.",
+   "overlapping": [
     "zurückschicken (A2)"
    ]
   },
@@ -497,10 +497,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat angepriesen",
-   "mevcutTr": "övmek, pazarlamak",
-   "mevcutBeispiel": "Im Fernsehen wird das Mittel als Wunderkur angepriesen.",
-   "mevcutBeispielTr": "Televizyonda bu ilaç mucize tedavi diye pazarlanıyor.",
-   "cakisan": [
+   "currentTr": "övmek, pazarlamak",
+   "currentBeispiel": "Im Fernsehen wird das Mittel als Wunderkur angepriesen.",
+   "currentBeispielTr": "Televizyonda bu ilaç mucize tedavi diye pazarlanıyor.",
+   "overlapping": [
     "loben (B1)"
    ]
   },
@@ -510,9 +510,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ücretli, ücrete tabi",
-   "mevcutBeispiel": "Nach dem Probemonat wird das Angebot automatisch kostenpflichtig.",
-   "mevcutBeispielTr": "Deneme ayından sonra teklif otomatik olarak ücretli hale geliyor."
+   "currentTr": "ücretli, ücrete tabi",
+   "currentBeispiel": "Nach dem Probemonat wird das Angebot automatisch kostenpflichtig.",
+   "currentBeispielTr": "Deneme ayından sonra teklif otomatik olarak ücretli hale geliyor."
   },
   {
    "id": 4843,
@@ -520,9 +520,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "bağlayıcı olmayan, taahhütsüz",
-   "mevcutBeispiel": "Lassen Sie sich zunächst unverbindlich ein Angebot erstellen.",
-   "mevcutBeispielTr": "Önce hiçbir taahhüde girmeden bir teklif hazırlatın."
+   "currentTr": "bağlayıcı olmayan, taahhütsüz",
+   "currentBeispiel": "Lassen Sie sich zunächst unverbindlich ein Angebot erstellen.",
+   "currentBeispielTr": "Önce hiçbir taahhüde girmeden bir teklif hazırlatın."
   },
   {
    "id": 4844,
@@ -530,9 +530,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yanıltıcı",
-   "mevcutBeispiel": "Das Gericht hielt die Bezeichnung für irreführend und verbot sie.",
-   "mevcutBeispielTr": "Mahkeme bu adlandırmayı yanıltıcı buldu ve yasakladı."
+   "currentTr": "yanıltıcı",
+   "currentBeispiel": "Das Gericht hielt die Bezeichnung für irreführend und verbot sie.",
+   "currentBeispielTr": "Mahkeme bu adlandırmayı yanıltıcı buldu ve yasakladı."
   }
  ]
 }

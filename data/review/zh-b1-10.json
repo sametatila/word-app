@@ -106,7 +106,7 @@
   "gsw": "Combox",
   "gswArtikel": "d",
   "gswBeispiel": "Ich ha zwäi Nachrichte uf minere Combox.",
-  "ayniLehce": [
+  "sameDialect": [
    "Mailbox (A2)"
   ]
  },
@@ -154,7 +154,7 @@
   "gsw": "Rüebli",
   "gswArtikel": "s",
   "gswBeispiel": "D Haase frässed gärn Rüebli.",
-  "ayniLehce": [
+  "sameDialect": [
    "Karotte (B1)",
    "Rüebli (B1)"
   ]
@@ -212,7 +212,7 @@
   "gsw": "Güselchübel",
   "gswArtikel": "de",
   "gswBeispiel": "De Güselchübel isch voll.",
-  "ayniLehce": [
+  "sameDialect": [
    "Mülleimer (A2)"
   ]
  },
@@ -359,7 +359,7 @@
   "gsw": "Dessert",
   "gswArtikel": "s",
   "gswBeispiel": "Nach em Ässe hät s na es fiins Dessert ggää.",
-  "ayniLehce": [
+  "sameDialect": [
    "Dessert (B1)",
    "Nachtisch (B2)"
   ]
@@ -597,7 +597,7 @@
   "gsw": "niene",
   "gswArtikel": null,
   "gswBeispiel": "Ich finde d Schlüssel niene.",
-  "ayniLehce": [
+  "sameDialect": [
    "nirgends (A2)"
   ]
  },
@@ -672,7 +672,7 @@
   "gsw": "jetz",
   "gswArtikel": null,
   "gswBeispiel": "Schad, dass du schaffe muesch. – Das isch jetz halt eso.",
-  "ayniLehce": [
+  "sameDialect": [
    "jetzt (A1)"
   ]
  },
@@ -720,7 +720,7 @@
   "gsw": "Kellner",
   "gswArtikel": "de",
   "gswBeispiel": "Ich bi Kellner vo Bruef.",
-  "ayniLehce": [
+  "sameDialect": [
    "Kellner (B1)"
   ]
  },
@@ -732,7 +732,7 @@
   "gsw": "Raam",
   "gswArtikel": "de",
   "gswBeispiel": "Ich hett gärn es Schtuck Torte mit Raam.",
-  "ayniLehce": [
+  "sameDialect": [
    "Rahm (B1)"
   ]
  },
@@ -744,7 +744,7 @@
   "gsw": "obwool",
   "gswArtikel": null,
   "gswBeispiel": "Obwool mini Kollegin chrank isch, gaat si go schaffe.",
-  "ayniLehce": [
+  "sameDialect": [
    "obgleich (C1)"
   ]
  },
@@ -756,7 +756,7 @@
   "gsw": "Ofe",
   "gswArtikel": "de",
   "gswBeispiel": "Ich ha grad e Pizza gmacht. Si isch ganz frisch us em Ofe.",
-  "ayniLehce": [
+  "sameDialect": [
    "(Back-)Rohr (B1)",
    "Ofen (A2)"
   ]
@@ -895,7 +895,7 @@
   "gsw": "Praxis",
   "gswArtikel": "d",
   "gswBeispiel": "D Praxis bliibt bis am 7. Januar zue.",
-  "ayniLehce": [
+  "sameDialect": [
    "Praxis (A1)"
   ]
  },
@@ -934,7 +934,7 @@
   "gsw": "Original",
   "gswArtikel": "s",
   "gswBeispiel": "S Original isch für Si. Mir überchömed d Kopie.",
-  "ayniLehce": [
+  "sameDialect": [
    "original (B1)"
   ]
  },
@@ -946,7 +946,7 @@
   "gsw": "original",
   "gswArtikel": null,
   "gswBeispiel": "Ich mues s originale Dokumänt abgää.",
-  "ayniLehce": [
+  "sameDialect": [
    "Original (B1)"
   ]
  },
@@ -994,7 +994,7 @@
   "gsw": "Tomate",
   "gswArtikel": "d",
   "gswBeispiel": "Poscht bitte na Tomate uf em Märt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Tomate (A1)"
   ]
  },

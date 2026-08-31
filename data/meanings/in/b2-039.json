@@ -1,16 +1,16 @@
 {
- "paket": "b2-039",
+ "packet": "b2-039",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 5546,
    "de": "kompostieren",
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat kompostiert",
-   "mevcutTr": "kompost yapmak, gübreye dönüştürmek",
-   "mevcutBeispiel": "Küchenreste kompostieren wir im Garten hinter dem Haus.",
-   "mevcutBeispielTr": "Mutfak artıklarını evin arkasındaki bahçede komposta çeviriyoruz."
+   "currentTr": "kompost yapmak, gübreye dönüştürmek",
+   "currentBeispiel": "Küchenreste kompostieren wir im Garten hinter dem Haus.",
+   "currentBeispielTr": "Mutfak artıklarını evin arkasındaki bahçede komposta çeviriyoruz."
   },
   {
    "id": 5547,
@@ -18,10 +18,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verwertet",
-   "mevcutTr": "değerlendirmek, geri kazanmak",
-   "mevcutBeispiel": "Fast neunzig Prozent des Altpapiers werden erneut verwertet.",
-   "mevcutBeispielTr": "Atık kâğıdın neredeyse yüzde doksanı yeniden değerlendiriliyor.",
-   "cakisan": [
+   "currentTr": "değerlendirmek, geri kazanmak",
+   "currentBeispiel": "Fast neunzig Prozent des Altpapiers werden erneut verwertet.",
+   "currentBeispielTr": "Atık kâğıdın neredeyse yüzde doksanı yeniden değerlendiriliyor.",
+   "overlapping": [
     "einschätzen (B2)",
     "beurteilen (B2)",
     "auswerten (B2)",
@@ -34,9 +34,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat zurückgewonnen",
-   "mevcutTr": "geri kazanmak, geri elde etmek",
-   "mevcutBeispiel": "Aus alten Handys lassen sich wertvolle Metalle zurückgewinnen.",
-   "mevcutBeispielTr": "Eski cep telefonlarından değerli metaller geri kazanılabiliyor."
+   "currentTr": "geri kazanmak, geri elde etmek",
+   "currentBeispiel": "Aus alten Handys lassen sich wertvolle Metalle zurückgewinnen.",
+   "currentBeispielTr": "Eski cep telefonlarından değerli metaller geri kazanılabiliyor."
   },
   {
    "id": 5549,
@@ -44,10 +44,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgebaut",
-   "mevcutTr": "çıkarmak (maden), ayrıştırmak, azaltmak",
-   "mevcutBeispiel": "In dieser Gegend wird seit hundert Jahren Kohle abgebaut.",
-   "mevcutBeispielTr": "Bu bölgede yüz yıldır kömür çıkarılıyor.",
-   "cakisan": [
+   "currentTr": "çıkarmak (maden), ayrıştırmak, azaltmak",
+   "currentBeispiel": "In dieser Gegend wird seit hundert Jahren Kohle abgebaut.",
+   "currentBeispielTr": "Bu bölgede yüz yıldır kömür çıkarılıyor.",
+   "overlapping": [
     "abnehmen (B1)",
     "ausziehen (B1)",
     "erlassen (B2)",
@@ -60,9 +60,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "çevreye zararlı",
-   "mevcutBeispiel": "Diese Reinigungsmittel gelten als besonders umweltschädlich.",
-   "mevcutBeispielTr": "Bu temizlik maddeleri özellikle çevreye zararlı sayılıyor."
+   "currentTr": "çevreye zararlı",
+   "currentBeispiel": "Diese Reinigungsmittel gelten als besonders umweltschädlich.",
+   "currentBeispielTr": "Bu temizlik maddeleri özellikle çevreye zararlı sayılıyor."
   },
   {
    "id": 5551,
@@ -70,9 +70,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "fosil (yakıt)",
-   "mevcutBeispiel": "Der Ausstieg aus fossilen Brennstoffen dauert länger als erhofft.",
-   "mevcutBeispielTr": "Fosil yakıtlardan çıkış umulandan uzun sürüyor."
+   "currentTr": "fosil (yakıt)",
+   "currentBeispiel": "Der Ausstieg aus fossilen Brennstoffen dauert länger als erhofft.",
+   "currentBeispielTr": "Fosil yakıtlardan çıkış umulandan uzun sürüyor."
   },
   {
    "id": 5552,
@@ -80,9 +80,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "enerji verimli",
-   "mevcutBeispiel": "Das Bürogebäude wurde besonders energieeffizient geplant.",
-   "mevcutBeispielTr": "Ofis binası özellikle enerji verimli olacak şekilde planlandı."
+   "currentTr": "enerji verimli",
+   "currentBeispiel": "Das Bürogebäude wurde besonders energieeffizient geplant.",
+   "currentBeispielTr": "Ofis binası özellikle enerji verimli olacak şekilde planlandı."
   },
   {
    "id": 5553,
@@ -90,9 +90,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yeniden kullanılabilir",
-   "mevcutBeispiel": "Im Café gibt es Kaffee nur noch in wiederverwendbaren Bechern.",
-   "mevcutBeispielTr": "Kafede kahve artık yalnızca yeniden kullanılabilir bardaklarda veriliyor."
+   "currentTr": "yeniden kullanılabilir",
+   "currentBeispiel": "Im Café gibt es Kaffee nur noch in wiederverwendbaren Bechern.",
+   "currentBeispielTr": "Kafede kahve artık yalnızca yeniden kullanılabilir bardaklarda veriliyor."
   },
   {
    "id": 5554,
@@ -100,9 +100,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "savurgan, israfçı",
-   "mevcutBeispiel": "Wir gehen mit Wasser und Energie noch immer verschwenderisch um.",
-   "mevcutBeispielTr": "Suyu ve enerjiyi hâlâ savurganca kullanıyoruz."
+   "currentTr": "savurgan, israfçı",
+   "currentBeispiel": "Wir gehen mit Wasser und Energie noch immer verschwenderisch um.",
+   "currentBeispielTr": "Suyu ve enerjiyi hâlâ savurganca kullanıyoruz."
   },
   {
    "id": 5555,
@@ -110,10 +110,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yıkıcı, felaket boyutunda",
-   "mevcutBeispiel": "Der Sturm hatte für die Küstendörfer verheerende Folgen.",
-   "mevcutBeispielTr": "Fırtınanın kıyı köyleri için yıkıcı sonuçları oldu.",
-   "cakisan": [
+   "currentTr": "yıkıcı, felaket boyutunda",
+   "currentBeispiel": "Der Sturm hatte für die Küstendörfer verheerende Folgen.",
+   "currentBeispielTr": "Fırtınanın kıyı köyleri için yıkıcı sonuçları oldu.",
+   "overlapping": [
     "disruptiv (C1)"
    ]
   },
@@ -123,9 +123,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "türüne göre ayrılmış, karışımsız",
-   "mevcutBeispiel": "Nur sortenrein gesammelte Kunststoffe lassen sich gut wiederverwerten.",
-   "mevcutBeispielTr": "Yalnızca türüne göre ayrılmış plastikler iyi geri dönüştürülebiliyor."
+   "currentTr": "türüne göre ayrılmış, karışımsız",
+   "currentBeispiel": "Nur sortenrein gesammelte Kunststoffe lassen sich gut wiederverwerten.",
+   "currentBeispielTr": "Yalnızca türüne göre ayrılmış plastikler iyi geri dönüştürülebiliyor."
   },
   {
    "id": 5557,
@@ -133,9 +133,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "iklim dostu",
-   "mevcutBeispiel": "Mit dem Zug zu reisen ist deutlich klimafreundlicher als zu fliegen.",
-   "mevcutBeispielTr": "Trenle seyahat etmek uçmaktan çok daha iklim dostudur."
+   "currentTr": "iklim dostu",
+   "currentBeispiel": "Mit dem Zug zu reisen ist deutlich klimafreundlicher als zu fliegen.",
+   "currentBeispielTr": "Trenle seyahat etmek uçmaktan çok daha iklim dostudur."
   },
   {
    "id": 5558,
@@ -143,10 +143,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Mieterhöhungen",
-   "mevcutTr": "kira artışı, kira zammı",
-   "mevcutBeispiel": "Der Vermieter muss die Mieterhöhung schriftlich begründen.",
-   "mevcutBeispielTr": "Ev sahibi kira artışını yazılı olarak gerekçelendirmek zorunda.",
-   "cakisan": [
+   "currentTr": "kira artışı, kira zammı",
+   "currentBeispiel": "Der Vermieter muss die Mieterhöhung schriftlich begründen.",
+   "currentBeispielTr": "Ev sahibi kira artışını yazılı olarak gerekçelendirmek zorunda.",
+   "overlapping": [
     "der Mietanstieg (B2)"
    ]
   },
@@ -156,9 +156,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Mietminderungen",
-   "mevcutTr": "kira indirimi, kirada indirim talebi",
-   "mevcutBeispiel": "Wegen des Schimmels im Bad verlangt sie eine Mietminderung.",
-   "mevcutBeispielTr": "Banyodaki küf yüzünden kirada indirim talep ediyor."
+   "currentTr": "kira indirimi, kirada indirim talebi",
+   "currentBeispiel": "Wegen des Schimmels im Bad verlangt sie eine Mietminderung.",
+   "currentBeispielTr": "Banyodaki küf yüzünden kirada indirim talep ediyor."
   },
   {
    "id": 5560,
@@ -166,9 +166,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nachmieter",
-   "mevcutTr": "sonraki kiracı, devralan kiracı",
-   "mevcutBeispiel": "Wenn du einen Nachmieter findest, kommst du früher aus dem Vertrag.",
-   "mevcutBeispielTr": "Yerine bir kiracı bulursan sözleşmeden daha erken çıkabilirsin."
+   "currentTr": "sonraki kiracı, devralan kiracı",
+   "currentBeispiel": "Wenn du einen Nachmieter findest, kommst du früher aus dem Vertrag.",
+   "currentBeispielTr": "Yerine bir kiracı bulursan sözleşmeden daha erken çıkabilirsin."
   },
   {
    "id": 5561,
@@ -176,9 +176,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Widerrufsrechte",
-   "mevcutTr": "cayma hakkı",
-   "mevcutBeispiel": "Bei Bestellungen im Internet haben Sie ein Widerrufsrecht von vierzehn Tagen.",
-   "mevcutBeispielTr": "İnternetten verilen siparişlerde on dört günlük cayma hakkınız var."
+   "currentTr": "cayma hakkı",
+   "currentBeispiel": "Bei Bestellungen im Internet haben Sie ein Widerrufsrecht von vierzehn Tagen.",
+   "currentBeispielTr": "İnternetten verilen siparişlerde on dört günlük cayma hakkınız var."
   },
   {
    "id": 5562,
@@ -186,9 +186,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Restbeträge",
-   "mevcutTr": "kalan tutar, bakiye",
-   "mevcutBeispiel": "Den Restbetrag überweisen Sie bitte innerhalb von zehn Tagen.",
-   "mevcutBeispielTr": "Kalan tutarı lütfen on gün içinde havale edin."
+   "currentTr": "kalan tutar, bakiye",
+   "currentBeispiel": "Den Restbetrag überweisen Sie bitte innerhalb von zehn Tagen.",
+   "currentBeispielTr": "Kalan tutarı lütfen on gün içinde havale edin."
   },
   {
    "id": 5563,
@@ -196,9 +196,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Inkassos",
-   "mevcutTr": "alacak tahsili, tahsilat takibi",
-   "mevcutBeispiel": "Nach der dritten Mahnung übergibt die Firma die Forderung dem Inkasso.",
-   "mevcutBeispielTr": "Üçüncü ihtardan sonra firma alacağı tahsilat şirketine devrediyor."
+   "currentTr": "alacak tahsili, tahsilat takibi",
+   "currentBeispiel": "Nach der dritten Mahnung übergibt die Firma die Forderung dem Inkasso.",
+   "currentBeispielTr": "Üçüncü ihtardan sonra firma alacağı tahsilat şirketine devrediyor."
   },
   {
    "id": 5564,
@@ -206,9 +206,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Hausordnungen",
-   "mevcutTr": "bina yönetim kuralları, apartman yönetmeliği",
-   "mevcutBeispiel": "Die Hausordnung verbietet lautes Musizieren nach zweiundzwanzig Uhr.",
-   "mevcutBeispielTr": "Apartman yönetmeliği saat yirmi ikiden sonra yüksek sesle müzik yapmayı yasaklıyor."
+   "currentTr": "bina yönetim kuralları, apartman yönetmeliği",
+   "currentBeispiel": "Die Hausordnung verbietet lautes Musizieren nach zweiundzwanzig Uhr.",
+   "currentBeispielTr": "Apartman yönetmeliği saat yirmi ikiden sonra yüksek sesle müzik yapmayı yasaklıyor."
   },
   {
    "id": 5565,
@@ -216,9 +216,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ruhestörungen",
-   "mevcutTr": "huzur bozma, gürültüyle rahatsız etme",
-   "mevcutBeispiel": "Die Nachbarn meldeten die nächtliche Ruhestörung der Polizei.",
-   "mevcutBeispielTr": "Komşular gece huzurun bozulmasını polise bildirdi."
+   "currentTr": "huzur bozma, gürültüyle rahatsız etme",
+   "currentBeispiel": "Die Nachbarn meldeten die nächtliche Ruhestörung der Polizei.",
+   "currentBeispielTr": "Komşular gece huzurun bozulmasını polise bildirdi."
   },
   {
    "id": 5566,
@@ -226,9 +226,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vertragsstrafen",
-   "mevcutTr": "cezai şart",
-   "mevcutBeispiel": "Wer zu spät liefert, muss eine Vertragsstrafe zahlen.",
-   "mevcutBeispielTr": "Geç teslim eden taraf cezai şart ödemek zorunda."
+   "currentTr": "cezai şart",
+   "currentBeispiel": "Wer zu spät liefert, muss eine Vertragsstrafe zahlen.",
+   "currentBeispielTr": "Geç teslim eden taraf cezai şart ödemek zorunda."
   },
   {
    "id": 5567,
@@ -236,9 +236,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Beweislasten",
-   "mevcutTr": "ispat yükü",
-   "mevcutBeispiel": "Im ersten Jahr nach dem Kauf liegt die Beweislast beim Verkäufer.",
-   "mevcutBeispielTr": "Satıştan sonraki ilk yılda ispat yükü satıcıdadır."
+   "currentTr": "ispat yükü",
+   "currentBeispiel": "Im ersten Jahr nach dem Kauf liegt die Beweislast beim Verkäufer.",
+   "currentBeispielTr": "Satıştan sonraki ilk yılda ispat yükü satıcıdadır."
   },
   {
    "id": 5568,
@@ -246,9 +246,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Streitfälle",
-   "mevcutTr": "uyuşmazlık, ihtilaf",
-   "mevcutBeispiel": "Im Streitfall entscheidet das Gericht am Sitz des Anbieters.",
-   "mevcutBeispielTr": "Uyuşmazlık hâlinde sağlayıcının merkezindeki mahkeme karar verir."
+   "currentTr": "uyuşmazlık, ihtilaf",
+   "currentBeispiel": "Im Streitfall entscheidet das Gericht am Sitz des Anbieters.",
+   "currentBeispielTr": "Uyuşmazlık hâlinde sağlayıcının merkezindeki mahkeme karar verir."
   },
   {
    "id": 5569,
@@ -256,9 +256,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "genel işlem şartları, sözleşme koşulları",
-   "mevcutBeispiel": "Die allgemeinen Geschäftsbedingungen stehen klein gedruckt auf der Rückseite.",
-   "mevcutBeispielTr": "Genel işlem şartları arka sayfada küçük puntolarla yazıyor."
+   "currentTr": "genel işlem şartları, sözleşme koşulları",
+   "currentBeispiel": "Die allgemeinen Geschäftsbedingungen stehen klein gedruckt auf der Rückseite.",
+   "currentBeispielTr": "Genel işlem şartları arka sayfada küçük puntolarla yazıyor."
   },
   {
    "id": 5570,
@@ -266,9 +266,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rechtsansprüche",
-   "mevcutTr": "yasal hak, hukuki talep hakkı",
-   "mevcutBeispiel": "Auf eine kostenlose Reparatur besteht in diesem Fall kein Rechtsanspruch.",
-   "mevcutBeispielTr": "Bu durumda ücretsiz onarım için yasal bir hak yok."
+   "currentTr": "yasal hak, hukuki talep hakkı",
+   "currentBeispiel": "Auf eine kostenlose Reparatur besteht in diesem Fall kein Rechtsanspruch.",
+   "currentBeispielTr": "Bu durumda ücretsiz onarım için yasal bir hak yok."
   },
   {
    "id": 5571,
@@ -276,9 +276,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Betriebskostenabrechnungen",
-   "mevcutTr": "işletme giderleri dökümü, aidat hesabı",
-   "mevcutBeispiel": "Die Betriebskostenabrechnung kam erst ein Jahr später ins Haus.",
-   "mevcutBeispielTr": "İşletme giderleri dökümü ancak bir yıl sonra elimize ulaştı."
+   "currentTr": "işletme giderleri dökümü, aidat hesabı",
+   "currentBeispiel": "Die Betriebskostenabrechnung kam erst ein Jahr später ins Haus.",
+   "currentBeispielTr": "İşletme giderleri dökümü ancak bir yıl sonra elimize ulaştı."
   },
   {
    "id": 5572,
@@ -286,9 +286,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kendi ihtiyacı (için tahliye)",
-   "mevcutBeispiel": "Der Vermieter kündigte die Wohnung wegen Eigenbedarf.",
-   "mevcutBeispielTr": "Ev sahibi kendi ihtiyacı nedeniyle daireyi tahliye ettirdi."
+   "currentTr": "kendi ihtiyacı (için tahliye)",
+   "currentBeispiel": "Der Vermieter kündigte die Wohnung wegen Eigenbedarf.",
+   "currentBeispielTr": "Ev sahibi kendi ihtiyacı nedeniyle daireyi tahliye ettirdi."
   },
   {
    "id": 5573,
@@ -296,9 +296,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Übergabeprotokolle",
-   "mevcutTr": "teslim tutanağı",
-   "mevcutBeispiel": "Beim Auszug haben wir jeden Kratzer im Übergabeprotokoll vermerkt.",
-   "mevcutBeispielTr": "Taşınırken her çiziği teslim tutanağına kaydettik."
+   "currentTr": "teslim tutanağı",
+   "currentBeispiel": "Beim Auszug haben wir jeden Kratzer im Übergabeprotokoll vermerkt.",
+   "currentBeispielTr": "Taşınırken her çiziği teslim tutanağına kaydettik."
   },
   {
    "id": 5574,
@@ -306,9 +306,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zusatzvereinbarungen",
-   "mevcutTr": "ek anlaşma, ek protokol",
-   "mevcutBeispiel": "Die Haltung von Haustieren regelt eine gesonderte Zusatzvereinbarung.",
-   "mevcutBeispielTr": "Evcil hayvan beslemeyi ayrı bir ek anlaşma düzenliyor."
+   "currentTr": "ek anlaşma, ek protokol",
+   "currentBeispiel": "Die Haltung von Haustieren regelt eine gesonderte Zusatzvereinbarung.",
+   "currentBeispielTr": "Evcil hayvan beslemeyi ayrı bir ek anlaşma düzenliyor."
   },
   {
    "id": 5575,
@@ -316,9 +316,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Preisanpassungen",
-   "mevcutTr": "fiyat güncellemesi, zam",
-   "mevcutBeispiel": "Der Anbieter kündigte eine Preisanpassung zum Jahreswechsel an.",
-   "mevcutBeispielTr": "Sağlayıcı yılbaşında bir fiyat güncellemesi olacağını duyurdu."
+   "currentTr": "fiyat güncellemesi, zam",
+   "currentBeispiel": "Der Anbieter kündigte eine Preisanpassung zum Jahreswechsel an.",
+   "currentBeispielTr": "Sağlayıcı yılbaşında bir fiyat güncellemesi olacağını duyurdu."
   },
   {
    "id": 5576,
@@ -326,9 +326,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Willenserklärungen",
-   "mevcutTr": "irade beyanı",
-   "mevcutBeispiel": "Ein Vertrag entsteht durch zwei übereinstimmende Willenserklärungen.",
-   "mevcutBeispielTr": "Sözleşme, birbirine uygun iki irade beyanıyla doğar."
+   "currentTr": "irade beyanı",
+   "currentBeispiel": "Ein Vertrag entsteht durch zwei übereinstimmende Willenserklärungen.",
+   "currentBeispielTr": "Sözleşme, birbirine uygun iki irade beyanıyla doğar."
   },
   {
    "id": 5577,
@@ -336,9 +336,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gepfändet",
-   "mevcutTr": "haczetmek",
-   "mevcutBeispiel": "Der Gerichtsvollzieher darf einen Teil des Lohns pfänden.",
-   "mevcutBeispielTr": "İcra memuru maaşın bir kısmını haczedebilir."
+   "currentTr": "haczetmek",
+   "currentBeispiel": "Der Gerichtsvollzieher darf einen Teil des Lohns pfänden.",
+   "currentBeispielTr": "İcra memuru maaşın bir kısmını haczedebilir."
   },
   {
    "id": 5578,
@@ -346,10 +346,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat geräumt",
-   "mevcutTr": "boşaltmak, tahliye etmek (konut, mekân)",
-   "mevcutBeispiel": "Der Mieter muss die Wohnung bis Monatsende räumen.",
-   "mevcutBeispielTr": "Kiracı daireyi ay sonuna kadar boşaltmak zorunda.",
-   "cakisan": [
+   "currentTr": "boşaltmak, tahliye etmek (konut, mekân)",
+   "currentBeispiel": "Der Mieter muss die Wohnung bis Monatsende räumen.",
+   "currentBeispielTr": "Kiracı daireyi ay sonuna kadar boşaltmak zorunda.",
+   "overlapping": [
     "ausräumen (A2)",
     "ausleeren (A2)",
     "abladen (A2)",
@@ -362,9 +362,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat beurkundet",
-   "mevcutTr": "resmî olarak tasdik etmek, noterde düzenlemek",
-   "mevcutBeispiel": "Der Kaufvertrag wird im Beisein beider Parteien beurkundet.",
-   "mevcutBeispielTr": "Satış sözleşmesi her iki tarafın huzurunda resmen tasdik ediliyor."
+   "currentTr": "resmî olarak tasdik etmek, noterde düzenlemek",
+   "currentBeispiel": "Der Kaufvertrag wird im Beisein beider Parteien beurkundet.",
+   "currentBeispielTr": "Satış sözleşmesi her iki tarafın huzurunda resmen tasdik ediliyor."
   },
   {
    "id": 5580,
@@ -372,10 +372,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat bestritten",
-   "mevcutTr": "inkâr etmek, reddetmek (iddiayı)",
-   "mevcutBeispiel": "Die Firma bestreitet, den Schaden verursacht zu haben.",
-   "mevcutBeispielTr": "Firma zarara yol açtığını reddediyor.",
-   "cakisan": [
+   "currentTr": "inkâr etmek, reddetmek (iddiayı)",
+   "currentBeispiel": "Die Firma bestreitet, den Schaden verursacht zu haben.",
+   "currentBeispielTr": "Firma zarara yol açtığını reddediyor.",
+   "overlapping": [
     "leugnen (C1)"
    ]
   },
@@ -385,9 +385,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgetreten",
-   "mevcutTr": "devretmek, temlik etmek",
-   "mevcutBeispiel": "Er hat seine Forderung an ein anderes Unternehmen abgetreten.",
-   "mevcutBeispielTr": "Alacağını başka bir şirkete devretti."
+   "currentTr": "devretmek, temlik etmek",
+   "currentBeispiel": "Er hat seine Forderung an ein anderes Unternehmen abgetreten.",
+   "currentBeispielTr": "Alacağını başka bir şirkete devretti."
   },
   {
    "id": 5582,
@@ -395,9 +395,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat hinterlegt",
-   "mevcutTr": "depozito olarak bırakmak, tevdi etmek",
-   "mevcutBeispiel": "Die Kaution wird auf einem gesonderten Konto hinterlegt.",
-   "mevcutBeispielTr": "Depozito ayrı bir hesapta bloke ediliyor."
+   "currentTr": "depozito olarak bırakmak, tevdi etmek",
+   "currentBeispiel": "Die Kaution wird auf einem gesonderten Konto hinterlegt.",
+   "currentBeispielTr": "Depozito ayrı bir hesapta bloke ediliyor."
   },
   {
    "id": 5583,
@@ -405,9 +405,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat zugestanden",
-   "mevcutTr": "hakkı olmak, hakkı doğmak",
-   "mevcutBeispiel": "Ihnen steht in diesem Fall eine volle Rückzahlung zu.",
-   "mevcutBeispielTr": "Bu durumda tam iade almaya hakkınız var."
+   "currentTr": "hakkı olmak, hakkı doğmak",
+   "currentBeispiel": "Ihnen steht in diesem Fall eine volle Rückzahlung zu.",
+   "currentBeispielTr": "Bu durumda tam iade almaya hakkınız var."
   },
   {
    "id": 5584,
@@ -415,9 +415,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gutgeschrieben",
-   "mevcutTr": "hesaba geçirmek, alacak kaydetmek",
-   "mevcutBeispiel": "Der Betrag wird Ihrem Konto in zwei Tagen gutgeschrieben.",
-   "mevcutBeispielTr": "Tutar iki gün içinde hesabınıza alacak olarak geçilecek."
+   "currentTr": "hesaba geçirmek, alacak kaydetmek",
+   "currentBeispiel": "Der Betrag wird Ihrem Konto in zwei Tagen gutgeschrieben.",
+   "currentBeispielTr": "Tutar iki gün içinde hesabınıza alacak olarak geçilecek."
   },
   {
    "id": 5585,
@@ -425,9 +425,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sözleşmeye dayalı, sözleşmeyle belirlenmiş",
-   "mevcutBeispiel": "Die Reinigung des Treppenhauses ist vertraglich klar geregelt.",
-   "mevcutBeispielTr": "Merdiven boşluğunun temizliği sözleşmede açıkça düzenlenmiş."
+   "currentTr": "sözleşmeye dayalı, sözleşmeyle belirlenmiş",
+   "currentBeispiel": "Die Reinigung des Treppenhauses ist vertraglich klar geregelt.",
+   "currentBeispielTr": "Merdiven boşluğunun temizliği sözleşmede açıkça düzenlenmiş."
   },
   {
    "id": 5586,
@@ -435,10 +435,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "geçersiz, hükümsüz",
-   "mevcutBeispiel": "Eine solche Klausel ist nach ständiger Rechtsprechung unwirksam.",
-   "mevcutBeispielTr": "Böyle bir madde yerleşik içtihada göre geçersizdir.",
-   "cakisan": [
+   "currentTr": "geçersiz, hükümsüz",
+   "currentBeispiel": "Eine solche Klausel ist nach ständiger Rechtsprechung unwirksam.",
+   "currentBeispielTr": "Böyle bir madde yerleşik içtihada göre geçersizdir.",
+   "overlapping": [
     "ungültig (B2)"
    ]
   },
@@ -448,9 +448,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kesinleşmiş, kesin hüküm hâline gelmiş",
-   "mevcutBeispiel": "Das Urteil ist seit letzter Woche rechtskräftig.",
-   "mevcutBeispielTr": "Karar geçen haftadan beri kesinleşmiş durumda."
+   "currentTr": "kesinleşmiş, kesin hüküm hâline gelmiş",
+   "currentBeispiel": "Das Urteil ist seit letzter Woche rechtskräftig.",
+   "currentBeispielTr": "Karar geçen haftadan beri kesinleşmiş durumda."
   },
   {
    "id": 5588,
@@ -458,9 +458,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "zımnen, üstü kapalı biçimde",
-   "mevcutBeispiel": "Der Vertrag verlängert sich stillschweigend um ein weiteres Jahr.",
-   "mevcutBeispielTr": "Sözleşme zımnen bir yıl daha uzuyor."
+   "currentTr": "zımnen, üstü kapalı biçimde",
+   "currentBeispiel": "Der Vertrag verlängert sich stillschweigend um ein weiteres Jahr.",
+   "currentBeispielTr": "Sözleşme zımnen bir yıl daha uzuyor."
   },
   {
    "id": 5589,
@@ -468,9 +468,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yasal, kanuni",
-   "mevcutBeispiel": "Die gesetzliche Frist für die Rückgabe beträgt vierzehn Tage.",
-   "mevcutBeispielTr": "İade için yasal süre on dört gündür."
+   "currentTr": "yasal, kanuni",
+   "currentBeispiel": "Die gesetzliche Frist für die Rückgabe beträgt vierzehn Tage.",
+   "currentBeispielTr": "İade için yasal süre on dört gündür."
   },
   {
    "id": 5590,
@@ -478,9 +478,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "karşılıklı rızayla, mutabakatla",
-   "mevcutBeispiel": "Beide Seiten haben den Vertrag einvernehmlich aufgehoben.",
-   "mevcutBeispielTr": "İki taraf da sözleşmeyi karşılıklı rızayla sona erdirdi."
+   "currentTr": "karşılıklı rızayla, mutabakatla",
+   "currentBeispiel": "Beide Seiten haben den Vertrag einvernehmlich aufgehoben.",
+   "currentBeispielTr": "İki taraf da sözleşmeyi karşılıklı rızayla sona erdirdi."
   },
   {
    "id": 5591,
@@ -488,10 +488,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Margen",
-   "mevcutTr": "kâr marjı, marj",
-   "mevcutBeispiel": "Bei diesem Produkt ist die Marge erschreckend gering.",
-   "mevcutBeispielTr": "Bu üründe kâr marjı ürkütücü derecede düşük.",
-   "cakisan": [
+   "currentTr": "kâr marjı, marj",
+   "currentBeispiel": "Bei diesem Produkt ist die Marge erschreckend gering.",
+   "currentBeispielTr": "Bu üründe kâr marjı ürkütücü derecede düşük.",
+   "overlapping": [
     "die Gewinnmarge (C1)"
    ]
   },
@@ -501,10 +501,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vertriebe",
-   "mevcutTr": "satış, dağıtım, satış bölümü",
-   "mevcutBeispiel": "Der Vertrieb meldet steigende Bestellungen aus Osteuropa.",
-   "mevcutBeispielTr": "Satış bölümü Doğu Avrupa'dan artan siparişler bildiriyor.",
-   "cakisan": [
+   "currentTr": "satış, dağıtım, satış bölümü",
+   "currentBeispiel": "Der Vertrieb meldet steigende Bestellungen aus Osteuropa.",
+   "currentBeispielTr": "Satış bölümü Doğu Avrupa'dan artan siparişler bildiriyor.",
+   "overlapping": [
     "der Absatz (B2)"
    ]
   },
@@ -514,9 +514,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "toptan ticaret, toptancılık",
-   "mevcutBeispiel": "Wir beziehen unsere Waren direkt aus dem Großhandel.",
-   "mevcutBeispielTr": "Mallarımızı doğrudan toptancıdan temin ediyoruz."
+   "currentTr": "toptan ticaret, toptancılık",
+   "currentBeispiel": "Wir beziehen unsere Waren direkt aus dem Großhandel.",
+   "currentBeispielTr": "Mallarımızı doğrudan toptancıdan temin ediyoruz."
   },
   {
    "id": 5594,
@@ -524,9 +524,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ausschreibungen",
-   "mevcutTr": "ihale, ilan",
-   "mevcutBeispiel": "Die Firma hat sich an der öffentlichen Ausschreibung beteiligt.",
-   "mevcutBeispielTr": "Firma kamu ihalesine katıldı."
+   "currentTr": "ihale, ilan",
+   "currentBeispiel": "Die Firma hat sich an der öffentlichen Ausschreibung beteiligt.",
+   "currentBeispielTr": "Firma kamu ihalesine katıldı."
   },
   {
    "id": 5595,
@@ -534,10 +534,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ausfuhren",
-   "mevcutTr": "ihracat, dışsatım",
-   "mevcutBeispiel": "Die Ausfuhr bestimmter Technologien unterliegt strengen Kontrollen.",
-   "mevcutBeispielTr": "Bazı teknolojilerin ihracatı sıkı denetime tabidir.",
-   "cakisan": [
+   "currentTr": "ihracat, dışsatım",
+   "currentBeispiel": "Die Ausfuhr bestimmter Technologien unterliegt strengen Kontrollen.",
+   "currentBeispielTr": "Bazı teknolojilerin ihracatı sıkı denetime tabidir.",
+   "overlapping": [
     "der Export (B1)"
    ]
   }

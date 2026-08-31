@@ -1,16 +1,16 @@
 {
- "paket": "b2-022",
+ "packet": "b2-022",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4694,
    "de": "die Fehlerquote",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fehlerquoten",
-   "mevcutTr": "hata oranı",
-   "mevcutBeispiel": "Nach der Schulung sank die Fehlerquote auf unter ein Prozent.",
-   "mevcutBeispielTr": "Eğitimden sonra hata oranı yüzde birin altına indi."
+   "currentTr": "hata oranı",
+   "currentBeispiel": "Nach der Schulung sank die Fehlerquote auf unter ein Prozent.",
+   "currentBeispielTr": "Eğitimden sonra hata oranı yüzde birin altına indi."
   },
   {
    "id": 4695,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Arbeitsgänge",
-   "mevcutTr": "iş adımı, işlem aşaması",
-   "mevcutBeispiel": "Dieser Arbeitsgang lässt sich mit dem nächsten zusammenlegen.",
-   "mevcutBeispielTr": "Bu iş adımı bir sonrakiyle birleştirilebilir."
+   "currentTr": "iş adımı, işlem aşaması",
+   "currentBeispiel": "Dieser Arbeitsgang lässt sich mit dem nächsten zusammenlegen.",
+   "currentBeispielTr": "Bu iş adımı bir sonrakiyle birleştirilebilir."
   },
   {
    "id": 4696,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zertifizierungen",
-   "mevcutTr": "belgelendirme, sertifikasyon",
-   "mevcutBeispiel": "Ohne Zertifizierung dürfen wir gar nicht erst anbieten.",
-   "mevcutBeispielTr": "Sertifikasyon olmadan teklif bile veremeyiz."
+   "currentTr": "belgelendirme, sertifikasyon",
+   "currentBeispiel": "Ohne Zertifizierung dürfen wir gar nicht erst anbieten.",
+   "currentBeispielTr": "Sertifikasyon olmadan teklif bile veremeyiz."
   },
   {
    "id": 4697,
@@ -38,10 +38,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abnahmen",
-   "mevcutTr": "kabul, teslim kontrolü",
-   "mevcutBeispiel": "Die Abnahme durch den Kunden findet kommenden Freitag statt.",
-   "mevcutBeispielTr": "Müşteri kabulü önümüzdeki cuma yapılacak.",
-   "cakisan": [
+   "currentTr": "kabul, teslim kontrolü",
+   "currentBeispiel": "Die Abnahme durch den Kunden findet kommenden Freitag statt.",
+   "currentBeispielTr": "Müşteri kabulü önümüzdeki cuma yapılacak.",
+   "overlapping": [
     "die Zulassung (B2)"
    ]
   },
@@ -51,9 +51,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Reklamationen",
-   "mevcutTr": "şikâyet, iade talebi",
-   "mevcutBeispiel": "Die Reklamation betraf eine ganze Charge fehlerhafter Teile.",
-   "mevcutBeispielTr": "Şikâyet, hatalı parçalardan oluşan bir partinin tamamıyla ilgiliydi."
+   "currentTr": "şikâyet, iade talebi",
+   "currentBeispiel": "Die Reklamation betraf eine ganze Charge fehlerhafter Teile.",
+   "currentBeispielTr": "Şikâyet, hatalı parçalardan oluşan bir partinin tamamıyla ilgiliydi."
   },
   {
    "id": 4699,
@@ -61,10 +61,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ausfälle",
-   "mevcutTr": "arıza, devre dışı kalma",
-   "mevcutBeispiel": "Der Ausfall der Kühlung legte die Produktion einen Tag lahm.",
-   "mevcutBeispielTr": "Soğutmanın devre dışı kalması üretimi bir gün felç etti.",
-   "cakisan": [
+   "currentTr": "arıza, devre dışı kalma",
+   "currentBeispiel": "Der Ausfall der Kühlung legte die Produktion einen Tag lahm.",
+   "currentBeispielTr": "Soğutmanın devre dışı kalması üretimi bir gün felç etti.",
+   "overlapping": [
     "die Panne (B1)"
    ]
   },
@@ -74,10 +74,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gewährleistungen",
-   "mevcutTr": "garanti, ayıba karşı sorumluluk",
-   "mevcutBeispiel": "Die Gewährleistung läuft zwei Jahre ab dem Lieferdatum.",
-   "mevcutBeispielTr": "Garanti, teslim tarihinden itibaren iki yıl geçerli.",
-   "cakisan": [
+   "currentTr": "garanti, ayıba karşı sorumluluk",
+   "currentBeispiel": "Die Gewährleistung läuft zwei Jahre ab dem Lieferdatum.",
+   "currentBeispielTr": "Garanti, teslim tarihinden itibaren iki yıl geçerli.",
+   "overlapping": [
     "die Garantie (B1)"
    ]
   },
@@ -87,10 +87,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ausbeuten",
-   "mevcutTr": "verim, elde edilen miktar",
-   "mevcutBeispiel": "Bei dünnem Blech ist die Ausbeute pro Tafel deutlich schlechter.",
-   "mevcutBeispielTr": "İnce sacda levha başına verim belirgin biçimde daha kötü.",
-   "cakisan": [
+   "currentTr": "verim, elde edilen miktar",
+   "currentBeispiel": "Bei dünnem Blech ist die Ausbeute pro Tafel deutlich schlechter.",
+   "currentBeispielTr": "İnce sacda levha başına verim belirgin biçimde daha kötü.",
+   "overlapping": [
     "der Ertrag (B2)",
     "der Wirkungsgrad (B2)"
    ]
@@ -101,9 +101,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Werkbänke",
-   "mevcutTr": "tezgâh, çalışma tezgâhı",
-   "mevcutBeispiel": "Auf der Werkbank lagen Werkzeuge und halbfertige Teile durcheinander.",
-   "mevcutBeispielTr": "Tezgâhın üstünde aletler ve yarım kalmış parçalar karmakarışık duruyordu."
+   "currentTr": "tezgâh, çalışma tezgâhı",
+   "currentBeispiel": "Auf der Werkbank lagen Werkzeuge und halbfertige Teile durcheinander.",
+   "currentBeispielTr": "Tezgâhın üstünde aletler ve yarım kalmış parçalar karmakarışık duruyordu."
   },
   {
    "id": 4703,
@@ -111,9 +111,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gefräst",
-   "mevcutTr": "frezelemek",
-   "mevcutBeispiel": "Die Nut wird in einem Durchgang sauber gefräst.",
-   "mevcutBeispielTr": "Kanal tek geçişte temiz bir şekilde frezeleniyor."
+   "currentTr": "frezelemek",
+   "currentBeispiel": "Die Nut wird in einem Durchgang sauber gefräst.",
+   "currentBeispielTr": "Kanal tek geçişte temiz bir şekilde frezeleniyor."
   },
   {
    "id": 4704,
@@ -121,9 +121,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gebohrt",
-   "mevcutTr": "delmek, delik açmak",
-   "mevcutBeispiel": "Bevor du bohrst, prüfe bitte noch einmal die Maße.",
-   "mevcutBeispielTr": "Delmeden önce lütfen ölçüleri bir kez daha kontrol et."
+   "currentTr": "delmek, delik açmak",
+   "currentBeispiel": "Bevor du bohrst, prüfe bitte noch einmal die Maße.",
+   "currentBeispielTr": "Delmeden önce lütfen ölçüleri bir kez daha kontrol et."
   },
   {
    "id": 4705,
@@ -131,9 +131,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat geschliffen",
-   "mevcutTr": "zımparalamak, taşlamak",
-   "mevcutBeispiel": "Die Kanten müssen noch geschliffen werden, sonst verletzt sich jemand.",
-   "mevcutBeispielTr": "Kenarların zımparalanması gerek, yoksa biri yaralanır."
+   "currentTr": "zımparalamak, taşlamak",
+   "currentBeispiel": "Die Kanten müssen noch geschliffen werden, sonst verletzt sich jemand.",
+   "currentBeispielTr": "Kenarların zımparalanması gerek, yoksa biri yaralanır."
   },
   {
    "id": 4706,
@@ -141,9 +141,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat geschmiedet",
-   "mevcutTr": "dövmek, demir dövmek",
-   "mevcutBeispiel": "Früher wurden solche Beschläge von Hand geschmiedet.",
-   "mevcutBeispielTr": "Eskiden böyle aksamlar elle dövülürdü."
+   "currentTr": "dövmek, demir dövmek",
+   "currentBeispiel": "Früher wurden solche Beschläge von Hand geschmiedet.",
+   "currentBeispielTr": "Eskiden böyle aksamlar elle dövülürdü."
   },
   {
    "id": 4707,
@@ -151,10 +151,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat eingebaut",
-   "mevcutTr": "monte etmek, yerleştirmek",
-   "mevcutBeispiel": "Der Techniker baut morgen einen stärkeren Motor ein.",
-   "mevcutBeispielTr": "Teknisyen yarın daha güçlü bir motor monte edecek.",
-   "cakisan": [
+   "currentTr": "monte etmek, yerleştirmek",
+   "currentBeispiel": "Der Techniker baut morgen einen stärkeren Motor ein.",
+   "currentBeispielTr": "Teknisyen yarın daha güçlü bir motor monte edecek.",
+   "overlapping": [
     "montieren (A2)"
    ]
   },
@@ -164,9 +164,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat nachgerüstet",
-   "mevcutTr": "sonradan takmak, güncelleyip donatmak",
-   "mevcutBeispiel": "Die alten Pressen wurden mit einer Schutzeinrichtung nachgerüstet.",
-   "mevcutBeispielTr": "Eski preslere sonradan bir koruma düzeneği takıldı."
+   "currentTr": "sonradan takmak, güncelleyip donatmak",
+   "currentBeispiel": "Die alten Pressen wurden mit einer Schutzeinrichtung nachgerüstet.",
+   "currentBeispielTr": "Eski preslere sonradan bir koruma düzeneği takıldı."
   },
   {
    "id": 4709,
@@ -174,9 +174,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat justiert",
-   "mevcutTr": "ayarlamak, ince ayar yapmak",
-   "mevcutBeispiel": "Der Anschlag muss nach jedem Werkzeugwechsel neu justiert werden.",
-   "mevcutBeispielTr": "Dayama, her takım değişiminden sonra yeniden ayarlanmalı."
+   "currentTr": "ayarlamak, ince ayar yapmak",
+   "currentBeispiel": "Der Anschlag muss nach jedem Werkzeugwechsel neu justiert werden.",
+   "currentBeispielTr": "Dayama, her takım değişiminden sonra yeniden ayarlanmalı."
   },
   {
    "id": 4710,
@@ -184,9 +184,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat kalibriert",
-   "mevcutTr": "kalibre etmek",
-   "mevcutBeispiel": "Die Waage wird jedes Jahr von einem externen Institut kalibriert.",
-   "mevcutBeispielTr": "Terazi her yıl dışarıdan bir kuruluş tarafından kalibre ediliyor."
+   "currentTr": "kalibre etmek",
+   "currentBeispiel": "Die Waage wird jedes Jahr von einem externen Institut kalibriert.",
+   "currentBeispielTr": "Terazi her yıl dışarıdan bir kuruluş tarafından kalibre ediliyor."
   },
   {
    "id": 4711,
@@ -194,10 +194,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat sich abgenutzt",
-   "mevcutTr": "aşınmak (kullanımdan), yıpranmak",
-   "mevcutBeispiel": "Die Schneide nutzt sich bei hartem Material schnell ab.",
-   "mevcutBeispielTr": "Sert malzemede kesici ağız çabuk aşınıyor.",
-   "cakisan": [
+   "currentTr": "aşınmak (kullanımdan), yıpranmak",
+   "currentBeispiel": "Die Schneide nutzt sich bei hartem Material schnell ab.",
+   "currentBeispielTr": "Sert malzemede kesici ağız çabuk aşınıyor.",
+   "overlapping": [
     "erodieren (C1)"
    ]
   },
@@ -207,10 +207,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verladen",
-   "mevcutTr": "yüklemek, araca yüklemek",
-   "mevcutBeispiel": "Die Container werden noch heute Abend auf Lastwagen verladen.",
-   "mevcutBeispielTr": "Konteynerler bu akşam kamyonlara yüklenecek.",
-   "cakisan": [
+   "currentTr": "yüklemek, araca yüklemek",
+   "currentBeispiel": "Die Container werden noch heute Abend auf Lastwagen verladen.",
+   "currentBeispielTr": "Konteynerler bu akşam kamyonlara yüklenecek.",
+   "overlapping": [
     "hochladen (B1)",
     "auferlegen (C1)",
     "beladen (A2)"
@@ -222,10 +222,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat ausgeliefert",
-   "mevcutTr": "teslim etmek, sevk etmek",
-   "mevcutBeispiel": "Die Maschinen werden erst nach der Endprüfung ausgeliefert.",
-   "mevcutBeispielTr": "Makineler ancak son kontrolden sonra sevk ediliyor.",
-   "cakisan": [
+   "currentTr": "teslim etmek, sevk etmek",
+   "currentBeispiel": "Die Maschinen werden erst nach der Endprüfung ausgeliefert.",
+   "currentBeispielTr": "Makineler ancak son kontrolden sonra sevk ediliyor.",
+   "overlapping": [
     "abgeben (A1)",
     "liefern (A2)"
    ]
@@ -236,10 +236,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat zugeschnitten",
-   "mevcutTr": "kesmek, ölçüye göre kesmek",
-   "mevcutBeispiel": "Das Blech wird per Laser exakt auf Maß zugeschnitten.",
-   "mevcutBeispielTr": "Sac, lazerle tam ölçüsünde kesiliyor.",
-   "cakisan": [
+   "currentTr": "kesmek, ölçüye göre kesmek",
+   "currentBeispiel": "Das Blech wird per Laser exakt auf Maß zugeschnitten.",
+   "currentBeispielTr": "Sac, lazerle tam ölçüsünde kesiliyor.",
+   "overlapping": [
     "sich schneiden (B1)",
     "unterbrechen (B1)",
     "schlachten (B2)",
@@ -254,9 +254,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gestanzt",
-   "mevcutTr": "presle delmek, kalıpla kesmek",
-   "mevcutBeispiel": "In einem Hub werden vier Löcher gleichzeitig gestanzt.",
-   "mevcutBeispielTr": "Tek strokta aynı anda dört delik açılıyor."
+   "currentTr": "presle delmek, kalıpla kesmek",
+   "currentBeispiel": "In einem Hub werden vier Löcher gleichzeitig gestanzt.",
+   "currentBeispielTr": "Tek strokta aynı anda dört delik açılıyor."
   },
   {
    "id": 4716,
@@ -264,9 +264,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gehärtet",
-   "mevcutTr": "sertleştirmek",
-   "mevcutBeispiel": "Die Zahnräder werden anschließend im Ofen gehärtet.",
-   "mevcutBeispielTr": "Dişliler ardından fırında sertleştiriliyor."
+   "currentTr": "sertleştirmek",
+   "currentBeispiel": "Die Zahnräder werden anschließend im Ofen gehärtet.",
+   "currentBeispielTr": "Dişliler ardından fırında sertleştiriliyor."
   },
   {
    "id": 4717,
@@ -274,10 +274,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat lackiert",
-   "mevcutTr": "boyamak, verniklemek",
-   "mevcutBeispiel": "Die Rahmen werden in zwei Schichten pulverbeschichtet lackiert.",
-   "mevcutBeispielTr": "Kasalar iki kat toz boyayla boyanıyor.",
-   "cakisan": [
+   "currentTr": "boyamak, verniklemek",
+   "currentBeispiel": "Die Rahmen werden in zwei Schichten pulverbeschichtet lackiert.",
+   "currentBeispielTr": "Kasalar iki kat toz boyayla boyanıyor.",
+   "overlapping": [
     "streichen (A2)"
    ]
   },
@@ -287,9 +287,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat beschichtet",
-   "mevcutTr": "kaplamak, kaplama yapmak",
-   "mevcutBeispiel": "Die Oberfläche wird mit einer dünnen Keramikschicht beschichtet.",
-   "mevcutBeispielTr": "Yüzey ince bir seramik tabakayla kaplanıyor."
+   "currentTr": "kaplamak, kaplama yapmak",
+   "currentBeispiel": "Die Oberfläche wird mit einer dünnen Keramikschicht beschichtet.",
+   "currentBeispielTr": "Yüzey ince bir seramik tabakayla kaplanıyor."
   },
   {
    "id": 4719,
@@ -297,9 +297,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat stillgelegt",
-   "mevcutTr": "faaliyeti durdurmak, kapatmak",
-   "mevcutBeispiel": "Das Werk wurde nach vierzig Jahren endgültig stillgelegt.",
-   "mevcutBeispielTr": "Fabrika kırk yıl sonra tamamen kapatıldı."
+   "currentTr": "faaliyeti durdurmak, kapatmak",
+   "currentBeispiel": "Das Werk wurde nach vierzig Jahren endgültig stillgelegt.",
+   "currentBeispielTr": "Fabrika kırk yıl sonra tamamen kapatıldı."
   },
   {
    "id": 4720,
@@ -307,10 +307,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat festgezogen",
-   "mevcutTr": "sıkmak, sıkıştırmak",
-   "mevcutBeispiel": "Ziehen Sie die Schrauben über Kreuz gleichmäßig fest.",
-   "mevcutBeispielTr": "Vidaları çapraz sırayla eşit şekilde sıkın.",
-   "cakisan": [
+   "currentTr": "sıkmak, sıkıştırmak",
+   "currentBeispiel": "Ziehen Sie die Schrauben über Kreuz gleichmäßig fest.",
+   "currentBeispielTr": "Vidaları çapraz sırayla eşit şekilde sıkın.",
+   "overlapping": [
     "pressen (A2)"
    ]
   },
@@ -320,10 +320,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat vermessen",
-   "mevcutTr": "ölçmek, ölçümünü yapmak",
-   "mevcutBeispiel": "Jedes zehnte Werkstück wird im Labor genau vermessen.",
-   "mevcutBeispielTr": "Her onuncu parça laboratuvarda titizlikle ölçülüyor.",
-   "cakisan": [
+   "currentTr": "ölçmek, ölçümünü yapmak",
+   "currentBeispiel": "Jedes zehnte Werkstück wird im Labor genau vermessen.",
+   "currentBeispielTr": "Her onuncu parça laboratuvarda titizlikle ölçülüyor.",
+   "overlapping": [
     "messen (B1)"
    ]
   },
@@ -333,10 +333,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gedrosselt",
-   "mevcutTr": "kısmak, düşürmek (üretim, hız)",
-   "mevcutBeispiel": "Wegen der hohen Energiepreise hat der Betrieb die Produktion gedrosselt.",
-   "mevcutBeispielTr": "Yüksek enerji fiyatları yüzünden işletme üretimi kıstı.",
-   "cakisan": [
+   "currentTr": "kısmak, düşürmek (üretim, hız)",
+   "currentBeispiel": "Wegen der hohen Energiepreise hat der Betrieb die Produktion gedrosselt.",
+   "currentBeispielTr": "Yüksek enerji fiyatları yüzünden işletme üretimi kıstı.",
+   "overlapping": [
     "kürzen (B2)"
    ]
   },
@@ -346,9 +346,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "seri üretime hazır",
-   "mevcutBeispiel": "Das Verfahren ist vielversprechend, aber noch nicht serienreif.",
-   "mevcutBeispielTr": "Yöntem umut verici ama henüz seri üretime hazır değil."
+   "currentTr": "seri üretime hazır",
+   "currentBeispiel": "Das Verfahren ist vielversprechend, aber noch nicht serienreif.",
+   "currentBeispielTr": "Yöntem umut verici ama henüz seri üretime hazır değil."
   },
   {
    "id": 4724,
@@ -356,9 +356,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "çalışmaya hazır, işletmeye hazır",
-   "mevcutBeispiel": "Nach der Reparatur ist die Anlage wieder betriebsbereit.",
-   "mevcutBeispielTr": "Onarımdan sonra tesis yeniden çalışmaya hazır."
+   "currentTr": "çalışmaya hazır, işletmeye hazır",
+   "currentBeispiel": "Nach der Reparatur ist die Anlage wieder betriebsbereit.",
+   "currentBeispielTr": "Onarımdan sonra tesis yeniden çalışmaya hazır."
   },
   {
    "id": 4725,
@@ -366,9 +366,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "hava koşullarına dayanıklı",
-   "mevcutBeispiel": "Für den Außenbereich brauchen wir ein witterungsbeständiges Material.",
-   "mevcutBeispielTr": "Dış mekân için hava koşullarına dayanıklı bir malzeme gerekiyor."
+   "currentTr": "hava koşullarına dayanıklı",
+   "currentBeispiel": "Für den Außenbereich brauchen wir ein witterungsbeständiges Material.",
+   "currentBeispielTr": "Dış mekân için hava koşullarına dayanıklı bir malzeme gerekiyor."
   },
   {
    "id": 4726,
@@ -376,9 +376,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "paslanmaz",
-   "mevcutBeispiel": "Die Behälter bestehen komplett aus rostfreiem Stahl.",
-   "mevcutBeispielTr": "Kaplar tamamen paslanmaz çelikten yapılmış."
+   "currentTr": "paslanmaz",
+   "currentBeispiel": "Die Behälter bestehen komplett aus rostfreiem Stahl.",
+   "currentBeispielTr": "Kaplar tamamen paslanmaz çelikten yapılmış."
   },
   {
    "id": 4727,
@@ -386,10 +386,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "usulüne uygun, tekniğine uygun",
-   "mevcutBeispiel": "Altöl muss fachgerecht entsorgt werden, nicht einfach ausgeschüttet.",
-   "mevcutBeispielTr": "Atık yağ usulüne uygun bertaraf edilmeli, öylece dökülmemeli.",
-   "cakisan": [
+   "currentTr": "usulüne uygun, tekniğine uygun",
+   "currentBeispiel": "Altöl muss fachgerecht entsorgt werden, nicht einfach ausgeschüttet.",
+   "currentBeispielTr": "Atık yağ usulüne uygun bertaraf edilmeli, öylece dökülmemeli.",
+   "overlapping": [
     "sachgemäß (B2)",
     "ordnungsgemäß (B2)"
    ]
@@ -400,9 +400,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "el işçiliğine dayalı, zanaatla ilgili",
-   "mevcutBeispiel": "Die Tür ist handwerklich sauber gearbeitet und hält Jahrzehnte.",
-   "mevcutBeispielTr": "Kapı el işçiliği açısından temiz yapılmış ve onlarca yıl dayanır."
+   "currentTr": "el işçiliğine dayalı, zanaatla ilgili",
+   "currentBeispiel": "Die Tür ist handwerklich sauber gearbeitet und hält Jahrzehnte.",
+   "currentBeispielTr": "Kapı el işçiliği açısından temiz yapılmış ve onlarca yıl dayanır."
   },
   {
    "id": 4729,
@@ -410,9 +410,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "makineyle, makine ile yapılan",
-   "mevcutBeispiel": "Diese Naht wird maschinell gesetzt, nicht mehr von Hand.",
-   "mevcutBeispielTr": "Bu dikiş artık elle değil, makineyle yapılıyor."
+   "currentTr": "makineyle, makine ile yapılan",
+   "currentBeispiel": "Diese Naht wird maschinell gesetzt, nicht mehr von Hand.",
+   "currentBeispielTr": "Bu dikiş artık elle değil, makineyle yapılıyor."
   },
   {
    "id": 4730,
@@ -420,9 +420,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "arızaya yatkın",
-   "mevcutBeispiel": "Die ältere Steuerung gilt als besonders störanfällig.",
-   "mevcutBeispielTr": "Eski kumanda sistemi özellikle arızaya yatkın sayılıyor."
+   "currentTr": "arızaya yatkın",
+   "currentBeispiel": "Die ältere Steuerung gilt als besonders störanfällig.",
+   "currentBeispielTr": "Eski kumanda sistemi özellikle arızaya yatkın sayılıyor."
   },
   {
    "id": 4731,
@@ -430,10 +430,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kırılgan, gevrek",
-   "mevcutBeispiel": "Bei Kälte wird der Kunststoff spröde und bricht leicht.",
-   "mevcutBeispielTr": "Soğukta plastik kırılganlaşıyor ve kolayca kırılıyor.",
-   "cakisan": [
+   "currentTr": "kırılgan, gevrek",
+   "currentBeispiel": "Bei Kälte wird der Kunststoff spröde und bricht leicht.",
+   "currentBeispielTr": "Soğukta plastik kırılganlaşıyor ve kolayca kırılıyor.",
+   "overlapping": [
     "zerbrechlich (A2)"
    ]
   },
@@ -443,10 +443,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "dayanıklılık, sebat",
-   "mevcutBeispiel": "Mit regelmäßigem Training verbessert sich deine Ausdauer erstaunlich schnell.",
-   "mevcutBeispielTr": "Düzenli antrenmanla dayanıklılığın şaşırtıcı derecede hızlı gelişir.",
-   "cakisan": [
+   "currentTr": "dayanıklılık, sebat",
+   "currentBeispiel": "Mit regelmäßigem Training verbessert sich deine Ausdauer erstaunlich schnell.",
+   "currentBeispielTr": "Düzenli antrenmanla dayanıklılığın şaşırtıcı derecede hızlı gelişir.",
+   "overlapping": [
     "die Belastbarkeit (B2)",
     "die Resilienz (C1)",
     "die Widerstandsfähigkeit (C1)"
@@ -458,10 +458,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Beweglichkeiten",
-   "mevcutTr": "hareketlilik, hareket kabiliyeti",
-   "mevcutBeispiel": "Im Alter nimmt die Beweglichkeit der Gelenke deutlich ab.",
-   "mevcutBeispielTr": "Yaşlandıkça eklemlerin hareket kabiliyeti belirgin biçimde azalır.",
-   "cakisan": [
+   "currentTr": "hareketlilik, hareket kabiliyeti",
+   "currentBeispiel": "Im Alter nimmt die Beweglichkeit der Gelenke deutlich ab.",
+   "currentBeispielTr": "Yaşlandıkça eklemlerin hareket kabiliyeti belirgin biçimde azalır.",
+   "overlapping": [
     "die Mobilität (B1)"
    ]
   },
@@ -471,9 +471,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Muskelkater",
-   "mevcutTr": "kas ağrısı (antrenman sonrası)",
-   "mevcutBeispiel": "Nach dem ersten Lauftraining hatte ich drei Tage Muskelkater.",
-   "mevcutBeispielTr": "İlk koşu antrenmanından sonra üç gün kas ağrım vardı."
+   "currentTr": "kas ağrısı (antrenman sonrası)",
+   "currentBeispiel": "Nach dem ersten Lauftraining hatte ich drei Tage Muskelkater.",
+   "currentBeispielTr": "İlk koşu antrenmanından sonra üç gün kas ağrım vardı."
   },
   {
    "id": 4735,
@@ -481,9 +481,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Entlastungen",
-   "mevcutTr": "yükün hafifletilmesi, rahatlama",
-   "mevcutBeispiel": "Ein höhenverstellbarer Schreibtisch sorgt für Entlastung des Rückens.",
-   "mevcutBeispielTr": "Yüksekliği ayarlanabilir bir masa sırtın yükünü hafifletir."
+   "currentTr": "yükün hafifletilmesi, rahatlama",
+   "currentBeispiel": "Ein höhenverstellbarer Schreibtisch sorgt für Entlastung des Rückens.",
+   "currentBeispielTr": "Yüksekliği ayarlanabilir bir masa sırtın yükünü hafifletir."
   },
   {
    "id": 4736,
@@ -491,9 +491,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Regenerationen",
-   "mevcutTr": "toparlanma, yenilenme",
-   "mevcutBeispiel": "Ohne ausreichende Regeneration bringt hartes Training gar nichts.",
-   "mevcutBeispielTr": "Yeterli toparlanma olmadan sert antrenmanın hiçbir faydası olmaz."
+   "currentTr": "toparlanma, yenilenme",
+   "currentBeispiel": "Ohne ausreichende Regeneration bringt hartes Training gar nichts.",
+   "currentBeispielTr": "Yeterli toparlanma olmadan sert antrenmanın hiçbir faydası olmaz."
   },
   {
    "id": 4737,
@@ -501,9 +501,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gleichgewichte",
-   "mevcutTr": "denge",
-   "mevcutBeispiel": "Auf dem schmalen Balken verlor sie kurz das Gleichgewicht.",
-   "mevcutBeispielTr": "Dar denge tahtasında bir an dengesini kaybetti."
+   "currentTr": "denge",
+   "currentBeispiel": "Auf dem schmalen Balken verlor sie kurz das Gleichgewicht.",
+   "currentBeispielTr": "Dar denge tahtasında bir an dengesini kaybetti."
   },
   {
    "id": 4738,
@@ -511,10 +511,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kan dolaşımı (bir bölgedeki), kanlanma",
-   "mevcutBeispiel": "Ein kurzer Spaziergang fördert die Durchblutung der Beine.",
-   "mevcutBeispielTr": "Kısa bir yürüyüş bacaklardaki kan dolaşımını destekler.",
-   "cakisan": [
+   "currentTr": "kan dolaşımı (bir bölgedeki), kanlanma",
+   "currentBeispiel": "Ein kurzer Spaziergang fördert die Durchblutung der Beine.",
+   "currentBeispielTr": "Kısa bir yürüyüş bacaklardaki kan dolaşımını destekler.",
+   "overlapping": [
     "der Kreislauf (B2)"
    ]
   },
@@ -524,9 +524,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "nefes alıp verme, solunum",
-   "mevcutBeispiel": "Beim Yoga achtet man vor allem auf eine ruhige Atmung.",
-   "mevcutBeispielTr": "Yogada her şeyden çok sakin bir nefes alışa dikkat edilir."
+   "currentTr": "nefes alıp verme, solunum",
+   "currentBeispiel": "Beim Yoga achtet man vor allem auf eine ruhige Atmung.",
+   "currentBeispielTr": "Yogada her şeyden çok sakin bir nefes alışa dikkat edilir."
   },
   {
    "id": 4740,
@@ -534,9 +534,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anspannungen",
-   "mevcutTr": "gerginlik, gerilim",
-   "mevcutBeispiel": "Nach der Prüfung fiel die ganze Anspannung endlich von ihm ab.",
-   "mevcutBeispielTr": "Sınavdan sonra üzerindeki bütün gerginlik nihayet dağıldı."
+   "currentTr": "gerginlik, gerilim",
+   "currentBeispiel": "Nach der Prüfung fiel die ganze Anspannung endlich von ihm ab.",
+   "currentBeispielTr": "Sınavdan sonra üzerindeki bütün gerginlik nihayet dağıldı."
   },
   {
    "id": 4741,
@@ -544,9 +544,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gelenke",
-   "mevcutTr": "eklem",
-   "mevcutBeispiel": "Beim Joggen auf Asphalt werden die Gelenke stark beansprucht.",
-   "mevcutBeispielTr": "Asfaltta koşarken eklemler ciddi biçimde zorlanır."
+   "currentTr": "eklem",
+   "currentBeispiel": "Beim Joggen auf Asphalt werden die Gelenke stark beansprucht.",
+   "currentBeispielTr": "Asfaltta koşarken eklemler ciddi biçimde zorlanır."
   },
   {
    "id": 4742,
@@ -554,9 +554,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sehnen",
-   "mevcutTr": "kiriş, tendon",
-   "mevcutBeispiel": "Er hat sich beim Tennis eine Sehne im Ellenbogen gereizt.",
-   "mevcutBeispielTr": "Tenis oynarken dirseğindeki bir tendonu tahriş etmiş."
+   "currentTr": "kiriş, tendon",
+   "currentBeispiel": "Er hat sich beim Tennis eine Sehne im Ellenbogen gereizt.",
+   "currentBeispielTr": "Tenis oynarken dirseğindeki bir tendonu tahriş etmiş."
   },
   {
    "id": 4743,
@@ -564,9 +564,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Muskulaturen",
-   "mevcutTr": "kas yapısı, kaslar",
-   "mevcutBeispiel": "Eine kräftige Muskulatur stützt die Wirbelsäule im Alltag.",
-   "mevcutBeispielTr": "Güçlü bir kas yapısı gündelik hayatta omurgayı destekler."
+   "currentTr": "kas yapısı, kaslar",
+   "currentBeispiel": "Eine kräftige Muskulatur stützt die Wirbelsäule im Alltag.",
+   "currentBeispielTr": "Güçlü bir kas yapısı gündelik hayatta omurgayı destekler."
   }
  ]
 }

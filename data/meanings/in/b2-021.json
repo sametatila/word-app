@@ -1,16 +1,16 @@
 {
- "paket": "b2-021",
+ "packet": "b2-021",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4644,
    "de": "stabilisieren",
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat stabilisiert",
-   "mevcutTr": "stabil hâle getirmek, dengede tutmak",
-   "mevcutBeispiel": "Der Zustand des Patienten hat sich über Nacht stabilisiert.",
-   "mevcutBeispielTr": "Hastanın durumu gece boyunca dengelendi."
+   "currentTr": "stabil hâle getirmek, dengede tutmak",
+   "currentBeispiel": "Der Zustand des Patienten hat sich über Nacht stabilisiert.",
+   "currentBeispielTr": "Hastanın durumu gece boyunca dengelendi."
   },
   {
    "id": 4645,
@@ -18,9 +18,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat betäubt",
-   "mevcutTr": "uyuşturmak, anestezi uygulamak",
-   "mevcutBeispiel": "Der Zahnarzt betäubt die Stelle vor dem Bohren.",
-   "mevcutBeispielTr": "Diş hekimi delmeden önce o bölgeyi uyuşturuyor."
+   "currentTr": "uyuşturmak, anestezi uygulamak",
+   "currentBeispiel": "Der Zahnarzt betäubt die Stelle vor dem Bohren.",
+   "currentBeispielTr": "Diş hekimi delmeden önce o bölgeyi uyuşturuyor."
   },
   {
    "id": 4646,
@@ -28,9 +28,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gespritzt",
-   "mevcutTr": "iğne yapmak, enjekte etmek",
-   "mevcutBeispiel": "Sie muss sich täglich Insulin in den Bauch spritzen.",
-   "mevcutBeispielTr": "Her gün karnına insülin iğnesi yapmak zorunda."
+   "currentTr": "iğne yapmak, enjekte etmek",
+   "currentBeispiel": "Sie muss sich täglich Insulin in den Bauch spritzen.",
+   "currentBeispielTr": "Her gün karnına insülin iğnesi yapmak zorunda."
   },
   {
    "id": 4647,
@@ -38,9 +38,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat desinfiziert",
-   "mevcutTr": "dezenfekte etmek",
-   "mevcutBeispiel": "Vor jedem Eingriff werden die Hände gründlich desinfiziert.",
-   "mevcutBeispielTr": "Her müdahaleden önce eller iyice dezenfekte ediliyor."
+   "currentTr": "dezenfekte etmek",
+   "currentBeispiel": "Vor jedem Eingriff werden die Hände gründlich desinfiziert.",
+   "currentBeispielTr": "Her müdahaleden önce eller iyice dezenfekte ediliyor."
   },
   {
    "id": 4648,
@@ -48,10 +48,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gebessert",
-   "mevcutTr": "iyileşmek, düzelmek",
-   "mevcutBeispiel": "Ihr Husten hat sich nach dem Urlaub deutlich gebessert.",
-   "mevcutBeispielTr": "Öksürüğü tatilden sonra belirgin şekilde düzeldi.",
-   "cakisan": [
+   "currentTr": "iyileşmek, düzelmek",
+   "currentBeispiel": "Ihr Husten hat sich nach dem Urlaub deutlich gebessert.",
+   "currentBeispielTr": "Öksürüğü tatilden sonra belirgin şekilde düzeldi.",
+   "overlapping": [
     "genesen (B2)"
    ]
   },
@@ -61,9 +61,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist erkrankt",
-   "mevcutTr": "hastalanmak",
-   "mevcutBeispiel": "Jedes Jahr erkranken Tausende Menschen an dieser Infektion.",
-   "mevcutBeispielTr": "Her yıl binlerce insan bu enfeksiyona yakalanıyor."
+   "currentTr": "hastalanmak",
+   "currentBeispiel": "Jedes Jahr erkranken Tausende Menschen an dieser Infektion.",
+   "currentBeispielTr": "Her yıl binlerce insan bu enfeksiyona yakalanıyor."
   },
   {
    "id": 4650,
@@ -71,10 +71,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat vorgebeugt",
-   "mevcutTr": "önlemek, önlem almak",
-   "mevcutBeispiel": "Mit Sport und guter Ernährung kann man vielen Krankheiten vorbeugen.",
-   "mevcutBeispielTr": "Spor ve iyi beslenmeyle birçok hastalığın önüne geçilebilir.",
-   "cakisan": [
+   "currentTr": "önlemek, önlem almak",
+   "currentBeispiel": "Mit Sport und guter Ernährung kann man vielen Krankheiten vorbeugen.",
+   "currentBeispielTr": "Spor ve iyi beslenmeyle birçok hastalığın önüne geçilebilir.",
+   "overlapping": [
     "verhindern (B1)",
     "abwenden (C1)"
    ]
@@ -85,9 +85,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kronik, süreğen",
-   "mevcutBeispiel": "Er lebt seit seiner Jugend mit einer chronischen Krankheit.",
-   "mevcutBeispielTr": "Gençliğinden beri kronik bir hastalıkla yaşıyor."
+   "currentTr": "kronik, süreğen",
+   "currentBeispiel": "Er lebt seit seiner Jugend mit einer chronischen Krankheit.",
+   "currentBeispielTr": "Gençliğinden beri kronik bir hastalıkla yaşıyor."
   },
   {
    "id": 4652,
@@ -95,9 +95,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "akut, ivedi",
-   "mevcutBeispiel": "Bei akuten Schmerzen hilft nur der Notdienst am Wochenende.",
-   "mevcutBeispielTr": "Akut ağrılarda hafta sonu sadece nöbetçi servis yardımcı olur."
+   "currentTr": "akut, ivedi",
+   "currentBeispiel": "Bei akuten Schmerzen hilft nur der Notdienst am Wochenende.",
+   "currentBeispielTr": "Akut ağrılarda hafta sonu sadece nöbetçi servis yardımcı olur."
   },
   {
    "id": 4653,
@@ -105,9 +105,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ayakta tedavi ile ilgili, hastaneye yatmadan",
-   "mevcutBeispiel": "Die meisten dieser Operationen werden heute ambulant durchgeführt.",
-   "mevcutBeispielTr": "Bu ameliyatların çoğu bugün ayakta tedaviyle yapılıyor."
+   "currentTr": "ayakta tedavi ile ilgili, hastaneye yatmadan",
+   "currentBeispiel": "Die meisten dieser Operationen werden heute ambulant durchgeführt.",
+   "currentBeispielTr": "Bu ameliyatların çoğu bugün ayakta tedaviyle yapılıyor."
   },
   {
    "id": 4654,
@@ -115,9 +115,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yatarak tedavi ile ilgili",
-   "mevcutBeispiel": "Nach dem Sturz wurde sie zwei Wochen stationär aufgenommen.",
-   "mevcutBeispielTr": "Düşmeden sonra iki hafta yatarak tedaviye alındı."
+   "currentTr": "yatarak tedavi ile ilgili",
+   "currentBeispiel": "Nach dem Sturz wurde sie zwei Wochen stationär aufgenommen.",
+   "currentBeispielTr": "Düşmeden sonra iki hafta yatarak tedaviye alındı."
   },
   {
    "id": 4655,
@@ -125,9 +125,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "reçeteye tabi",
-   "mevcutBeispiel": "Dieses starke Schlafmittel ist in Deutschland rezeptpflichtig.",
-   "mevcutBeispielTr": "Bu güçlü uyku ilacı Almanya'da reçeteye tabidir."
+   "currentTr": "reçeteye tabi",
+   "currentBeispiel": "Dieses starke Schlafmittel ist in Deutschland rezeptpflichtig.",
+   "currentBeispielTr": "Bu güçlü uyku ilacı Almanya'da reçeteye tabidir."
   },
   {
    "id": 4656,
@@ -135,10 +135,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ruhsal, psikolojik",
-   "mevcutBeispiel": "Psychisch war das letzte Jahr für die Familie sehr anstrengend.",
-   "mevcutBeispielTr": "Geçen yıl aile için ruhsal açıdan çok yorucuydu.",
-   "cakisan": [
+   "currentTr": "ruhsal, psikolojik",
+   "currentBeispiel": "Psychisch war das letzte Jahr für die Familie sehr anstrengend.",
+   "currentBeispielTr": "Geçen yıl aile için ruhsal açıdan çok yorucuydu.",
+   "overlapping": [
     "seelisch (B2)"
    ]
   },
@@ -148,10 +148,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "hassas, yatkın",
-   "mevcutBeispiel": "Im Winter bin ich besonders anfällig für Erkältungen.",
-   "mevcutBeispielTr": "Kışın soğuk algınlığına karşı özellikle hassasım.",
-   "cakisan": [
+   "currentTr": "hassas, yatkın",
+   "currentBeispiel": "Im Winter bin ich besonders anfällig für Erkältungen.",
+   "currentBeispielTr": "Kışın soğuk algınlığına karşı özellikle hassasım.",
+   "overlapping": [
     "brisant (C1)",
     "heikel (C1)"
    ]
@@ -162,9 +162,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "çalışamaz durumda, iş göremez",
-   "mevcutBeispiel": "Der Arzt schrieb ihn für zehn Tage arbeitsunfähig.",
-   "mevcutBeispielTr": "Doktor ona on gün iş göremez raporu yazdı."
+   "currentTr": "çalışamaz durumda, iş göremez",
+   "currentBeispiel": "Der Arzt schrieb ihn für zehn Tage arbeitsunfähig.",
+   "currentBeispielTr": "Doktor ona on gün iş göremez raporu yazdı."
   },
   {
    "id": 4659,
@@ -172,9 +172,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "aç karnına, ayık",
-   "mevcutBeispiel": "Zur Blutabnahme müssen Sie morgen nüchtern erscheinen.",
-   "mevcutBeispielTr": "Kan alımı için yarın aç karnına gelmeniz gerekiyor."
+   "currentTr": "aç karnına, ayık",
+   "currentBeispiel": "Zur Blutabnahme müssen Sie morgen nüchtern erscheinen.",
+   "currentBeispielTr": "Kan alımı için yarın aç karnına gelmeniz gerekiyor."
   },
   {
    "id": 4660,
@@ -182,10 +182,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "bulaşıcı, aktarılabilir",
-   "mevcutBeispiel": "Diese Krankheit ist nur durch direkten Kontakt übertragbar.",
-   "mevcutBeispielTr": "Bu hastalık sadece doğrudan temasla bulaşabiliyor.",
-   "cakisan": [
+   "currentTr": "bulaşıcı, aktarılabilir",
+   "currentBeispiel": "Diese Krankheit ist nur durch direkten Kontakt übertragbar.",
+   "currentBeispielTr": "Bu hastalık sadece doğrudan temasla bulaşabiliyor.",
+   "overlapping": [
     "ansteckend (A2)"
    ]
   },
@@ -195,9 +195,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fertigungen",
-   "mevcutTr": "imalat, üretim",
-   "mevcutBeispiel": "Die Fertigung läuft seit Montag wieder im Zweischichtbetrieb.",
-   "mevcutBeispielTr": "Üretim pazartesiden beri yeniden iki vardiyalı çalışıyor."
+   "currentTr": "imalat, üretim",
+   "currentBeispiel": "Die Fertigung läuft seit Montag wieder im Zweischichtbetrieb.",
+   "currentBeispielTr": "Üretim pazartesiden beri yeniden iki vardiyalı çalışıyor."
   },
   {
    "id": 4662,
@@ -205,10 +205,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Werkstoffe",
-   "mevcutTr": "malzeme, yapı malzemesi",
-   "mevcutBeispiel": "Für das Gehäuse haben wir einen leichteren Werkstoff gewählt.",
-   "mevcutBeispielTr": "Gövde için daha hafif bir malzeme seçtik.",
-   "cakisan": [
+   "currentTr": "malzeme, yapı malzemesi",
+   "currentBeispiel": "Für das Gehäuse haben wir einen leichteren Werkstoff gewählt.",
+   "currentBeispielTr": "Gövde için daha hafif bir malzeme seçtik.",
+   "overlapping": [
     "das Material (B1)",
     "die Zutat (B2)"
    ]
@@ -219,9 +219,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "aşınma, yıpranma",
-   "mevcutBeispiel": "Der Verschleiß an den Lagern ist deutlich höher als erwartet.",
-   "mevcutBeispielTr": "Yataklardaki aşınma beklenenden belirgin biçimde fazla."
+   "currentTr": "aşınma, yıpranma",
+   "currentBeispiel": "Der Verschleiß an den Lagern ist deutlich höher als erwartet.",
+   "currentBeispielTr": "Yataklardaki aşınma beklenenden belirgin biçimde fazla."
   },
   {
    "id": 4664,
@@ -229,10 +229,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wartungen",
-   "mevcutTr": "bakım",
-   "mevcutBeispiel": "Während der Wartung steht die gesamte Linie still.",
-   "mevcutBeispielTr": "Bakım sırasında bütün hat duruyor.",
-   "cakisan": [
+   "currentTr": "bakım",
+   "currentBeispiel": "Während der Wartung steht die gesamte Linie still.",
+   "currentBeispielTr": "Bakım sırasında bütün hat duruyor.",
+   "overlapping": [
     "die Instandhaltung (B2)"
    ]
   },
@@ -242,9 +242,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schweißnähte",
-   "mevcutTr": "kaynak dikişi",
-   "mevcutBeispiel": "Der Prüfer entdeckte einen feinen Riss in der Schweißnaht.",
-   "mevcutBeispielTr": "Denetçi kaynak dikişinde ince bir çatlak buldu."
+   "currentTr": "kaynak dikişi",
+   "currentBeispiel": "Der Prüfer entdeckte einen feinen Riss in der Schweißnaht.",
+   "currentBeispielTr": "Denetçi kaynak dikişinde ince bir çatlak buldu."
   },
   {
    "id": 4666,
@@ -252,9 +252,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schmierstoffe",
-   "mevcutTr": "yağlayıcı madde, madeni yağ",
-   "mevcutBeispiel": "Bei hohen Temperaturen versagt dieser Schmierstoff sehr schnell.",
-   "mevcutBeispielTr": "Yüksek sıcaklıklarda bu yağlayıcı çok çabuk işlevini yitiriyor."
+   "currentTr": "yağlayıcı madde, madeni yağ",
+   "currentBeispiel": "Bei hohen Temperaturen versagt dieser Schmierstoff sehr schnell.",
+   "currentBeispielTr": "Yüksek sıcaklıklarda bu yağlayıcı çok çabuk işlevini yitiriyor."
   },
   {
    "id": 4667,
@@ -262,9 +262,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Legierungen",
-   "mevcutTr": "alaşım",
-   "mevcutBeispiel": "Die neue Legierung ist leichter und trotzdem sehr belastbar.",
-   "mevcutBeispielTr": "Yeni alaşım daha hafif ama yine de çok dayanıklı."
+   "currentTr": "alaşım",
+   "currentBeispiel": "Die neue Legierung ist leichter und trotzdem sehr belastbar.",
+   "currentBeispielTr": "Yeni alaşım daha hafif ama yine de çok dayanıklı."
   },
   {
    "id": 4668,
@@ -272,9 +272,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vorrichtungen",
-   "mevcutTr": "tertibat, aparat",
-   "mevcutBeispiel": "Ohne diese Vorrichtung lässt sich das Bauteil kaum einspannen.",
-   "mevcutBeispielTr": "Bu aparat olmadan parçayı sıkıştırmak neredeyse imkânsız."
+   "currentTr": "tertibat, aparat",
+   "currentBeispiel": "Ohne diese Vorrichtung lässt sich das Bauteil kaum einspannen.",
+   "currentBeispielTr": "Bu aparat olmadan parçayı sıkıştırmak neredeyse imkânsız."
   },
   {
    "id": 4669,
@@ -282,9 +282,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Baugruppen",
-   "mevcutTr": "modül, montaj grubu",
-   "mevcutBeispiel": "Jede Baugruppe wird vor dem Einbau einzeln getestet.",
-   "mevcutBeispielTr": "Her modül montajdan önce ayrı ayrı test ediliyor."
+   "currentTr": "modül, montaj grubu",
+   "currentBeispiel": "Jede Baugruppe wird vor dem Einbau einzeln getestet.",
+   "currentBeispielTr": "Her modül montajdan önce ayrı ayrı test ediliyor."
   },
   {
    "id": 4670,
@@ -292,10 +292,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bauteile",
-   "mevcutTr": "parça, bileşen",
-   "mevcutBeispiel": "Das defekte Bauteil stammt aus einer älteren Serie.",
-   "mevcutBeispielTr": "Arızalı parça daha eski bir seriden geliyor.",
-   "cakisan": [
+   "currentTr": "parça, bileşen",
+   "currentBeispiel": "Das defekte Bauteil stammt aus einer älteren Serie.",
+   "currentBeispielTr": "Arızalı parça daha eski bir seriden geliyor.",
+   "overlapping": [
     "das Stück (A1)",
     "der Teil (A1)",
     "das Fragment (C1)"
@@ -307,9 +307,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nacharbeiten",
-   "mevcutTr": "düzeltme işi, yeniden işleme",
-   "mevcutBeispiel": "Die Nacharbeit kostet uns jeden Monat mehrere Tausend Euro.",
-   "mevcutBeispielTr": "Düzeltme işleri bize her ay birkaç bin euroya mal oluyor."
+   "currentTr": "düzeltme işi, yeniden işleme",
+   "currentBeispiel": "Die Nacharbeit kostet uns jeden Monat mehrere Tausend Euro.",
+   "currentBeispielTr": "Düzeltme işleri bize her ay birkaç bin euroya mal oluyor."
   },
   {
    "id": 4672,
@@ -317,9 +317,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Prüfstände",
-   "mevcutTr": "test tezgâhı, deney düzeneği",
-   "mevcutBeispiel": "Der Motor lief auf dem Prüfstand über vierzig Stunden.",
-   "mevcutBeispielTr": "Motor test tezgâhında kırk saatten fazla çalıştı."
+   "currentTr": "test tezgâhı, deney düzeneği",
+   "currentBeispiel": "Der Motor lief auf dem Prüfstand über vierzig Stunden.",
+   "currentBeispielTr": "Motor test tezgâhında kırk saatten fazla çalıştı."
   },
   {
    "id": 4673,
@@ -327,9 +327,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Messgeräte",
-   "mevcutTr": "ölçüm aleti",
-   "mevcutBeispiel": "Das Messgerät muss einmal im Jahr überprüft werden.",
-   "mevcutBeispielTr": "Ölçüm aletinin yılda bir kez kontrol edilmesi gerekiyor."
+   "currentTr": "ölçüm aleti",
+   "currentBeispiel": "Das Messgerät muss einmal im Jahr überprüft werden.",
+   "currentBeispielTr": "Ölçüm aletinin yılda bir kez kontrol edilmesi gerekiyor."
   },
   {
    "id": 4674,
@@ -337,9 +337,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Toleranzen",
-   "mevcutTr": "tolerans, izin verilen sapma",
-   "mevcutBeispiel": "Die Toleranz liegt bei zwei Zehntelmillimetern, nicht mehr.",
-   "mevcutBeispielTr": "Tolerans iki onda bir milimetre, daha fazlası değil."
+   "currentTr": "tolerans, izin verilen sapma",
+   "currentBeispiel": "Die Toleranz liegt bei zwei Zehntelmillimetern, nicht mehr.",
+   "currentBeispielTr": "Tolerans iki onda bir milimetre, daha fazlası değil."
   },
   {
    "id": 4675,
@@ -347,10 +347,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zulieferer",
-   "mevcutTr": "tedarikçi, yan sanayi firması",
-   "mevcutBeispiel": "Unser wichtigster Zulieferer sitzt keine dreißig Kilometer entfernt.",
-   "mevcutBeispielTr": "En önemli tedarikçimiz otuz kilometre bile uzakta değil.",
-   "cakisan": [
+   "currentTr": "tedarikçi, yan sanayi firması",
+   "currentBeispiel": "Unser wichtigster Zulieferer sitzt keine dreißig Kilometer entfernt.",
+   "currentBeispielTr": "En önemli tedarikçimiz otuz kilometre bile uzakta değil.",
+   "overlapping": [
     "der Lieferant (B2)"
    ]
   },
@@ -360,10 +360,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Lagerbestände",
-   "mevcutTr": "stok, depo mevcudu",
-   "mevcutBeispiel": "Der Lagerbestand reicht höchstens noch für zwei Wochen.",
-   "mevcutBeispielTr": "Stok en fazla iki hafta daha yeter.",
-   "cakisan": [
+   "currentTr": "stok, depo mevcudu",
+   "currentBeispiel": "Der Lagerbestand reicht höchstens noch für zwei Wochen.",
+   "currentBeispielTr": "Stok en fazla iki hafta daha yeter.",
+   "overlapping": [
     "der Vorrat (A2)"
    ]
   },
@@ -373,9 +373,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gabelstapler",
-   "mevcutTr": "forklift",
-   "mevcutBeispiel": "In der Halle darf den Gabelstapler nur geschultes Personal fahren.",
-   "mevcutBeispielTr": "Depoda forklifti yalnızca eğitimli personel kullanabilir."
+   "currentTr": "forklift",
+   "currentBeispiel": "In der Halle darf den Gabelstapler nur geschultes Personal fahren.",
+   "currentBeispielTr": "Depoda forklifti yalnızca eğitimli personel kullanabilir."
   },
   {
    "id": 4678,
@@ -383,9 +383,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fließbänder",
-   "mevcutTr": "montaj bandı, üretim bandı",
-   "mevcutBeispiel": "Am Fließband bleibt für jeden Handgriff nur eine Minute.",
-   "mevcutBeispielTr": "Bantta her hareket için sadece bir dakika var."
+   "currentTr": "montaj bandı, üretim bandı",
+   "currentBeispiel": "Am Fließband bleibt für jeden Handgriff nur eine Minute.",
+   "currentBeispielTr": "Bantta her hareket için sadece bir dakika var."
   },
   {
    "id": 4679,
@@ -393,9 +393,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Frühschichten",
-   "mevcutTr": "sabah vardiyası",
-   "mevcutBeispiel": "Meine Frühschicht beginnt schon um halb sechs.",
-   "mevcutBeispielTr": "Sabah vardiyam daha beş buçukta başlıyor."
+   "currentTr": "sabah vardiyası",
+   "currentBeispiel": "Meine Frühschicht beginnt schon um halb sechs.",
+   "currentBeispielTr": "Sabah vardiyam daha beş buçukta başlıyor."
   },
   {
    "id": 4680,
@@ -403,9 +403,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Durchlaufzeiten",
-   "mevcutTr": "üretim süresi, geçiş süresi",
-   "mevcutBeispiel": "Durch die neue Software sank die Durchlaufzeit um ein Drittel.",
-   "mevcutBeispielTr": "Yeni yazılım sayesinde üretim süresi üçte bir azaldı."
+   "currentTr": "üretim süresi, geçiş süresi",
+   "currentBeispiel": "Durch die neue Software sank die Durchlaufzeit um ein Drittel.",
+   "currentBeispielTr": "Yeni yazılım sayesinde üretim süresi üçte bir azaldı."
   },
   {
    "id": 4681,
@@ -413,9 +413,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rohstoffe",
-   "mevcutTr": "hammadde",
-   "mevcutBeispiel": "Die Preise für wichtige Rohstoffe sind erneut gestiegen.",
-   "mevcutBeispielTr": "Önemli hammaddelerin fiyatları yeniden yükseldi."
+   "currentTr": "hammadde",
+   "currentBeispiel": "Die Preise für wichtige Rohstoffe sind erneut gestiegen.",
+   "currentBeispielTr": "Önemli hammaddelerin fiyatları yeniden yükseldi."
   },
   {
    "id": 4682,
@@ -423,9 +423,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "korozyon, paslanma",
-   "mevcutBeispiel": "Gegen Korrosion hilft nur eine ordentliche Schutzschicht.",
-   "mevcutBeispielTr": "Korozyona karşı ancak düzgün bir koruyucu tabaka işe yarar."
+   "currentTr": "korozyon, paslanma",
+   "currentBeispiel": "Gegen Korrosion hilft nur eine ordentliche Schutzschicht.",
+   "currentBeispielTr": "Korozyona karşı ancak düzgün bir koruyucu tabaka işe yarar."
   },
   {
    "id": 4683,
@@ -433,9 +433,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Montagen",
-   "mevcutTr": "montaj, kurulum",
-   "mevcutBeispiel": "Die Montage der Anlage dauert voraussichtlich drei Tage.",
-   "mevcutBeispielTr": "Tesisin montajı tahminen üç gün sürecek."
+   "currentTr": "montaj, kurulum",
+   "currentBeispiel": "Die Montage der Anlage dauert voraussichtlich drei Tage.",
+   "currentBeispielTr": "Tesisin montajı tahminen üç gün sürecek."
   },
   {
    "id": 4684,
@@ -443,9 +443,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Betriebsstätten",
-   "mevcutTr": "işletme tesisi, üretim yeri",
-   "mevcutBeispiel": "Das Unternehmen unterhält drei Betriebsstätten in Süddeutschland.",
-   "mevcutBeispielTr": "Şirketin Güney Almanya'da üç üretim tesisi var."
+   "currentTr": "işletme tesisi, üretim yeri",
+   "currentBeispiel": "Das Unternehmen unterhält drei Betriebsstätten in Süddeutschland.",
+   "currentBeispielTr": "Şirketin Güney Almanya'da üç üretim tesisi var."
   },
   {
    "id": 4685,
@@ -453,9 +453,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Dichtungen",
-   "mevcutTr": "conta, sızdırmazlık elemanı",
-   "mevcutBeispiel": "Die poröse Dichtung war die Ursache für den Ölverlust.",
-   "mevcutBeispielTr": "Gözenekli conta yağ kaybının nedeniydi."
+   "currentTr": "conta, sızdırmazlık elemanı",
+   "currentBeispiel": "Die poröse Dichtung war die Ursache für den Ölverlust.",
+   "currentBeispielTr": "Gözenekli conta yağ kaybının nedeniydi."
   },
   {
    "id": 4686,
@@ -463,9 +463,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Steuerungen",
-   "mevcutTr": "kumanda, kontrol sistemi",
-   "mevcutBeispiel": "Die Steuerung der Presse wird nächstes Jahr komplett erneuert.",
-   "mevcutBeispielTr": "Presin kumanda sistemi gelecek yıl tamamen yenilenecek."
+   "currentTr": "kumanda, kontrol sistemi",
+   "currentBeispiel": "Die Steuerung der Presse wird nächstes Jahr komplett erneuert.",
+   "currentBeispielTr": "Presin kumanda sistemi gelecek yıl tamamen yenilenecek."
   },
   {
    "id": 4687,
@@ -473,9 +473,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Betriebsanleitungen",
-   "mevcutTr": "kullanım kılavuzu (makine, tesis)",
-   "mevcutBeispiel": "Lesen Sie die Betriebsanleitung, bevor Sie die Maschine einschalten.",
-   "mevcutBeispielTr": "Makineyi çalıştırmadan önce kullanım kılavuzunu okuyun."
+   "currentTr": "kullanım kılavuzu (makine, tesis)",
+   "currentBeispiel": "Lesen Sie die Betriebsanleitung, bevor Sie die Maschine einschalten.",
+   "currentBeispielTr": "Makineyi çalıştırmadan önce kullanım kılavuzunu okuyun."
   },
   {
    "id": 4688,
@@ -483,9 +483,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gefahrstoffe",
-   "mevcutTr": "tehlikeli madde",
-   "mevcutBeispiel": "Gefahrstoffe werden in einem separaten Raum aufbewahrt.",
-   "mevcutBeispielTr": "Tehlikeli maddeler ayrı bir odada saklanıyor."
+   "currentTr": "tehlikeli madde",
+   "currentBeispiel": "Gefahrstoffe werden in einem separaten Raum aufbewahrt.",
+   "currentBeispielTr": "Tehlikeli maddeler ayrı bir odada saklanıyor."
   },
   {
    "id": 4689,
@@ -493,10 +493,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wirkungsgrade",
-   "mevcutTr": "verim, verimlilik oranı",
-   "mevcutBeispiel": "Der Wirkungsgrad des alten Kessels liegt unter sechzig Prozent.",
-   "mevcutBeispielTr": "Eski kazanın verimi yüzde altmışın altında.",
-   "cakisan": [
+   "currentTr": "verim, verimlilik oranı",
+   "currentBeispiel": "Der Wirkungsgrad des alten Kessels liegt unter sechzig Prozent.",
+   "currentBeispielTr": "Eski kazanın verimi yüzde altmışın altında.",
+   "overlapping": [
     "der Ertrag (B2)",
     "die Ausbeute (B2)"
    ]
@@ -507,9 +507,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Prototypen",
-   "mevcutTr": "prototip, ilk örnek",
-   "mevcutBeispiel": "Der erste Prototyp wird im Herbst der Geschäftsleitung vorgestellt.",
-   "mevcutBeispielTr": "İlk prototip sonbaharda yönetime sunulacak."
+   "currentTr": "prototip, ilk örnek",
+   "currentBeispiel": "Der erste Prototyp wird im Herbst der Geschäftsleitung vorgestellt.",
+   "currentBeispielTr": "İlk prototip sonbaharda yönetime sunulacak."
   },
   {
    "id": 4691,
@@ -517,9 +517,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ersatzteile",
-   "mevcutTr": "yedek parça",
-   "mevcutBeispiel": "Für dieses Modell gibt es kaum noch passende Ersatzteile.",
-   "mevcutBeispielTr": "Bu model için neredeyse hiç uygun yedek parça kalmadı."
+   "currentTr": "yedek parça",
+   "currentBeispiel": "Für dieses Modell gibt es kaum noch passende Ersatzteile.",
+   "currentBeispielTr": "Bu model için neredeyse hiç uygun yedek parça kalmadı."
   },
   {
    "id": 4692,
@@ -527,9 +527,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rüstzeiten",
-   "mevcutTr": "hazırlık süresi, ayar süresi",
-   "mevcutBeispiel": "Kürzere Rüstzeiten machen auch kleine Serien wieder rentabel.",
-   "mevcutBeispielTr": "Kısa hazırlık süreleri küçük serileri de yeniden kârlı kılıyor."
+   "currentTr": "hazırlık süresi, ayar süresi",
+   "currentBeispiel": "Kürzere Rüstzeiten machen auch kleine Serien wieder rentabel.",
+   "currentBeispielTr": "Kısa hazırlık süreleri küçük serileri de yeniden kârlı kılıyor."
   },
   {
    "id": 4693,
@@ -537,9 +537,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Stückzahlen",
-   "mevcutTr": "adet, üretim adedi",
-   "mevcutBeispiel": "Ab einer bestimmten Stückzahl sinkt der Preis pro Teil deutlich.",
-   "mevcutBeispielTr": "Belli bir adedin üstünde parça başına fiyat belirgin şekilde düşüyor."
+   "currentTr": "adet, üretim adedi",
+   "currentBeispiel": "Ab einer bestimmten Stückzahl sinkt der Preis pro Teil deutlich.",
+   "currentBeispielTr": "Belli bir adedin üstünde parça başına fiyat belirgin şekilde düşüyor."
   }
  ]
 }

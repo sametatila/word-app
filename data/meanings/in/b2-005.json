@@ -1,17 +1,17 @@
 {
- "paket": "b2-005",
+ "packet": "b2-005",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 3199,
    "de": "die Insolvenz",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Insolvenzen",
-   "mevcutTr": "iflas",
-   "mevcutBeispiel": "Wegen hoher Schulden musste die Firma Insolvenz anmelden.",
-   "mevcutBeispielTr": "Yüksek borçları yüzünden şirket iflas başvurusunda bulunmak zorunda kaldı.",
-   "cakisan": [
+   "currentTr": "iflas",
+   "currentBeispiel": "Wegen hoher Schulden musste die Firma Insolvenz anmelden.",
+   "currentBeispielTr": "Yüksek borçları yüzünden şirket iflas başvurusunda bulunmak zorunda kaldı.",
+   "overlapping": [
     "der Konkurs (B2)"
    ]
   },
@@ -21,10 +21,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Innovationen",
-   "mevcutTr": "yenilik, inovasyon",
-   "mevcutBeispiel": "Die Firma investiert stark in technologische Innovation.",
-   "mevcutBeispielTr": "Firma teknolojik inovasyona büyük yatırım yapıyor.",
-   "cakisan": [
+   "currentTr": "yenilik, inovasyon",
+   "currentBeispiel": "Die Firma investiert stark in technologische Innovation.",
+   "currentBeispielTr": "Firma teknolojik inovasyona büyük yatırım yapıyor.",
+   "overlapping": [
     "die Neuerung (B2)"
    ]
   },
@@ -34,9 +34,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Moleküle",
-   "mevcutTr": "molekül",
-   "mevcutBeispiel": "Das Molekül besteht aus mehreren Atomen.",
-   "mevcutBeispielTr": "Molekül birden fazla atomdan oluşur."
+   "currentTr": "molekül",
+   "currentBeispiel": "Das Molekül besteht aus mehreren Atomen.",
+   "currentBeispielTr": "Molekül birden fazla atomdan oluşur."
   },
   {
    "id": 3237,
@@ -44,9 +44,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Verbraucher",
-   "mevcutTr": "tüketici",
-   "mevcutBeispiel": "Steigende Preise belasten vor allem einkommensschwache Verbraucher.",
-   "mevcutBeispielTr": "Artan fiyatlar en çok dar gelirli tüketicileri zorluyor."
+   "currentTr": "tüketici",
+   "currentBeispiel": "Steigende Preise belasten vor allem einkommensschwache Verbraucher.",
+   "currentBeispielTr": "Artan fiyatlar en çok dar gelirli tüketicileri zorluyor."
   },
   {
    "id": 3307,
@@ -54,10 +54,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "nesnellik, objektiflik",
-   "mevcutBeispiel": "Die Objektivität der Presse wird häufig angezweifelt.",
-   "mevcutBeispielTr": "Basının tarafsızlığından sık sık şüphe ediliyor.",
-   "cakisan": [
+   "currentTr": "nesnellik, objektiflik",
+   "currentBeispiel": "Die Objektivität der Presse wird häufig angezweifelt.",
+   "currentBeispielTr": "Basının tarafsızlığından sık sık şüphe ediliyor.",
+   "overlapping": [
     "die Sachlichkeit (C1)"
    ]
   },
@@ -67,9 +67,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "belirgin, gelişmiş",
-   "mevcutBeispiel": "Sie hat ein ausgeprägtes Interesse an fremden Sprachen.",
-   "mevcutBeispielTr": "Yabancı dillere karşı belirgin bir ilgisi var."
+   "currentTr": "belirgin, gelişmiş",
+   "currentBeispiel": "Sie hat ein ausgeprägtes Interesse an fremden Sprachen.",
+   "currentBeispielTr": "Yabancı dillere karşı belirgin bir ilgisi var."
   },
   {
    "id": 3424,
@@ -77,9 +77,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "bitki örtüsü",
-   "mevcutBeispiel": "Die Vegetation der Region hat sich stark verändert.",
-   "mevcutBeispielTr": "Bölgenin bitki örtüsü büyük ölçüde değişti."
+   "currentTr": "bitki örtüsü",
+   "currentBeispiel": "Die Vegetation der Region hat sich stark verändert.",
+   "currentBeispielTr": "Bölgenin bitki örtüsü büyük ölçüde değişti."
   },
   {
    "id": 3250,
@@ -87,10 +87,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "verzeichnet, hat verzeichnet",
-   "mevcutTr": "kaydetmek, göstermek",
-   "mevcutBeispiel": "Das Unternehmen verzeichnet in diesem Quartal einen deutlichen Gewinnanstieg.",
-   "mevcutBeispielTr": "Şirket bu çeyrekte belirgin bir kâr artışı kaydediyor.",
-   "cakisan": [
+   "currentTr": "kaydetmek, göstermek",
+   "currentBeispiel": "Das Unternehmen verzeichnet in diesem Quartal einen deutlichen Gewinnanstieg.",
+   "currentBeispielTr": "Şirket bu çeyrekte belirgin bir kâr artışı kaydediyor.",
+   "overlapping": [
     "speichern (A2)",
     "erfassen (B2)",
     "abspeichern (C1)"
@@ -102,10 +102,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sachbearbeiter",
-   "mevcutTr": "memur, işlem görevlisi",
-   "mevcutBeispiel": "Der zuständige Sachbearbeiter prüft den Antrag.",
-   "mevcutBeispielTr": "İlgili memur başvuruyu inceliyor.",
-   "cakisan": [
+   "currentTr": "memur, işlem görevlisi",
+   "currentBeispiel": "Der zuständige Sachbearbeiter prüft den Antrag.",
+   "currentBeispielTr": "İlgili memur başvuruyu inceliyor.",
+   "overlapping": [
     "der Beamte (A1)",
     "der Angestellte (B1)",
     "die Angestellte (B1)",
@@ -118,9 +118,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "iklim değişikliği",
-   "mevcutBeispiel": "Der Klimawandel bedroht viele Küstenregionen weltweit.",
-   "mevcutBeispielTr": "İklim değişikliği dünya genelinde birçok kıyı bölgesini tehdit ediyor."
+   "currentTr": "iklim değişikliği",
+   "currentBeispiel": "Der Klimawandel bedroht viele Küstenregionen weltweit.",
+   "currentBeispielTr": "İklim değişikliği dünya genelinde birçok kıyı bölgesini tehdit ediyor."
   },
   {
    "id": 3860,
@@ -128,10 +128,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bescheinigungen",
-   "mevcutTr": "belge, yazı",
-   "mevcutBeispiel": "Für die Anmeldung braucht man eine Bescheinigung der Uni.",
-   "mevcutBeispielTr": "Kayıt için üniversiteden bir belge gerekiyor.",
-   "cakisan": [
+   "currentTr": "belge, yazı",
+   "currentBeispiel": "Für die Anmeldung braucht man eine Bescheinigung der Uni.",
+   "currentBeispielTr": "Kayıt için üniversiteden bir belge gerekiyor.",
+   "overlapping": [
     "der Beleg (B1)",
     "das Dokument (B1)",
     "die Urkunde (B1)",
@@ -144,9 +144,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Schnittstellen",
-   "mevcutTr": "arayüz",
-   "mevcutBeispiel": "Die neue Schnittstelle verbindet beide Programme reibungslos.",
-   "mevcutBeispielTr": "Yeni arayüz iki programı sorunsuz birbirine bağlıyor."
+   "currentTr": "arayüz",
+   "currentBeispiel": "Die neue Schnittstelle verbindet beide Programme reibungslos.",
+   "currentBeispielTr": "Yeni arayüz iki programı sorunsuz birbirine bağlıyor."
   },
   {
    "id": 3427,
@@ -154,9 +154,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Naturkatastrophen",
-   "mevcutTr": "doğal afet",
-   "mevcutBeispiel": "Die Naturkatastrophe hat ganze Dörfer zerstört.",
-   "mevcutBeispielTr": "Doğal afet köyleri baştan başa yıktı."
+   "currentTr": "doğal afet",
+   "currentBeispiel": "Die Naturkatastrophe hat ganze Dörfer zerstört.",
+   "currentBeispielTr": "Doğal afet köyleri baştan başa yıktı."
   },
   {
    "id": 3740,
@@ -164,9 +164,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ek masraflar, aidat",
-   "mevcutBeispiel": "Die Nebenkosten sind im letzten Jahr deutlich gestiegen.",
-   "mevcutBeispielTr": "Yan giderler geçen yıl belirgin biçimde arttı."
+   "currentTr": "ek masraflar, aidat",
+   "currentBeispiel": "Die Nebenkosten sind im letzten Jahr deutlich gestiegen.",
+   "currentBeispielTr": "Yan giderler geçen yıl belirgin biçimde arttı."
   },
   {
    "id": 3414,
@@ -174,10 +174,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "recycelt, hat recycelt",
-   "mevcutTr": "geri dönüştürmek",
-   "mevcutBeispiel": "In dieser Stadt wird fast der ganze Müll recycelt.",
-   "mevcutBeispielTr": "Bu şehirde çöpün neredeyse tamamı geri dönüştürülüyor.",
-   "cakisan": [
+   "currentTr": "geri dönüştürmek",
+   "currentBeispiel": "In dieser Stadt wird fast der ganze Müll recycelt.",
+   "currentBeispielTr": "Bu şehirde çöpün neredeyse tamamı geri dönüştürülüyor.",
+   "overlapping": [
     "wiederverwerten (C1)"
    ]
   },
@@ -187,9 +187,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Verdrängungen",
-   "mevcutTr": "bastırma",
-   "mevcutBeispiel": "Verdrängung ist ein bekannter Abwehrmechanismus der Psyche.",
-   "mevcutBeispielTr": "Bastırma, ruhun bilinen bir savunma mekanizmasıdır."
+   "currentTr": "bastırma",
+   "currentBeispiel": "Verdrängung ist ein bekannter Abwehrmechanismus der Psyche.",
+   "currentBeispielTr": "Bastırma, ruhun bilinen bir savunma mekanizmasıdır."
   },
   {
    "id": 3236,
@@ -197,9 +197,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Aufschwünge",
-   "mevcutTr": "ekonomik canlanma",
-   "mevcutBeispiel": "Nach der Krise erlebte die Branche einen überraschenden Aufschwung.",
-   "mevcutBeispielTr": "Krizin ardından sektör beklenmedik bir canlanma yaşadı."
+   "currentTr": "ekonomik canlanma",
+   "currentBeispiel": "Nach der Krise erlebte die Branche einen überraschenden Aufschwung.",
+   "currentBeispielTr": "Krizin ardından sektör beklenmedik bir canlanma yaşadı."
   },
   {
    "id": 3365,
@@ -207,9 +207,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "güvenilirlik (sözünde durma, işi aksatmama)",
-   "mevcutBeispiel": "Seine Zuverlässigkeit machte ihn zum idealen Kollegen.",
-   "mevcutBeispielTr": "Güvenilirliği onu ideal bir çalışma arkadaşı yapıyordu."
+   "currentTr": "güvenilirlik (sözünde durma, işi aksatmama)",
+   "currentBeispiel": "Seine Zuverlässigkeit machte ihn zum idealen Kollegen.",
+   "currentBeispielTr": "Güvenilirliği onu ideal bir çalışma arkadaşı yapıyordu."
   },
   {
    "id": 3817,
@@ -217,9 +217,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sürdürülebilir, kalıcı",
-   "mevcutBeispiel": "Die Firma setzt konsequent auf eine nachhaltige Produktion.",
-   "mevcutBeispielTr": "Şirket kararlılıkla sürdürülebilir üretime yöneliyor."
+   "currentTr": "sürdürülebilir, kalıcı",
+   "currentBeispiel": "Die Firma setzt konsequent auf eine nachhaltige Produktion.",
+   "currentBeispielTr": "Şirket kararlılıkla sürdürülebilir üretime yöneliyor."
   },
   {
    "id": 3242,
@@ -227,9 +227,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "fusioniert, ist fusioniert",
-   "mevcutTr": "birleşmek (şirket)",
-   "mevcutBeispiel": "Die beiden Banken sind letztes Jahr zu einem großen Institut fusioniert.",
-   "mevcutBeispielTr": "İki banka geçen yıl birleşerek büyük bir kurum hâline geldi."
+   "currentTr": "birleşmek (şirket)",
+   "currentBeispiel": "Die beiden Banken sind letztes Jahr zu einem großen Institut fusioniert.",
+   "currentBeispielTr": "İki banka geçen yıl birleşerek büyük bir kurum hâline geldi."
   },
   {
    "id": 3302,
@@ -237,9 +237,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ifade özgürlüğü",
-   "mevcutBeispiel": "Meinungsfreiheit ist ein grundlegendes Menschenrecht.",
-   "mevcutBeispielTr": "İfade özgürlüğü temel bir insan hakkıdır."
+   "currentTr": "ifade özgürlüğü",
+   "currentBeispiel": "Meinungsfreiheit ist ein grundlegendes Menschenrecht.",
+   "currentBeispielTr": "İfade özgürlüğü temel bir insan hakkıdır."
   },
   {
    "id": 3750,
@@ -247,9 +247,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "würzt, hat gewürzt",
-   "mevcutTr": "baharatlamak",
-   "mevcutBeispiel": "Sie würzt die Suppe gern mit frischem Ingwer.",
-   "mevcutBeispielTr": "Çorbayı taze zencefille tatlandırmayı seviyor."
+   "currentTr": "baharatlamak",
+   "currentBeispiel": "Sie würzt die Suppe gern mit frischem Ingwer.",
+   "currentBeispielTr": "Çorbayı taze zencefille tatlandırmayı seviyor."
   },
   {
    "id": 3325,
@@ -257,9 +257,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "dezavantajlı",
-   "mevcutBeispiel": "Benachteiligte Kinder brauchen zusätzliche Unterstützung in der Schule.",
-   "mevcutBeispielTr": "Dezavantajlı çocukların okulda ek desteğe ihtiyacı var."
+   "currentTr": "dezavantajlı",
+   "currentBeispiel": "Benachteiligte Kinder brauchen zusätzliche Unterstützung in der Schule.",
+   "currentBeispielTr": "Dezavantajlı çocukların okulda ek desteğe ihtiyacı var."
   },
   {
    "id": 3197,
@@ -267,9 +267,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Renditen",
-   "mevcutTr": "getiri",
-   "mevcutBeispiel": "Diese Aktie bringt eine höhere Rendite als das Sparkonto.",
-   "mevcutBeispielTr": "Bu hisse, tasarruf hesabından daha yüksek getiri sağlıyor."
+   "currentTr": "getiri",
+   "currentBeispiel": "Diese Aktie bringt eine höhere Rendite als das Sparkonto.",
+   "currentBeispielTr": "Bu hisse, tasarruf hesabından daha yüksek getiri sağlıyor."
   },
   {
    "id": 3762,
@@ -277,9 +277,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Fremdenführer",
-   "mevcutTr": "turist rehberi",
-   "mevcutBeispiel": "Ein Fremdenführer zeigte uns die historische Altstadt.",
-   "mevcutBeispielTr": "Bir turist rehberi bize tarihi eski şehri gezdirdi."
+   "currentTr": "turist rehberi",
+   "currentBeispiel": "Ein Fremdenführer zeigte uns die historische Altstadt.",
+   "currentBeispielTr": "Bir turist rehberi bize tarihi eski şehri gezdirdi."
   },
   {
    "id": 3748,
@@ -287,9 +287,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "stöbert, hat gestöbert",
-   "mevcutTr": "karıştırıp bakmak, gezinmek",
-   "mevcutBeispiel": "Sie stöbert am liebsten in den Regalen des Buchladens.",
-   "mevcutBeispielTr": "En çok kitapçının raflarını karıştırmayı seviyor."
+   "currentTr": "karıştırıp bakmak, gezinmek",
+   "currentBeispiel": "Sie stöbert am liebsten in den Regalen des Buchladens.",
+   "currentBeispielTr": "En çok kitapçının raflarını karıştırmayı seviyor."
   },
   {
    "id": 3330,
@@ -297,9 +297,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ansteckungen",
-   "mevcutTr": "bulaşma, enfeksiyon",
-   "mevcutBeispiel": "Um eine Ansteckung zu vermeiden, trug sie eine Maske.",
-   "mevcutBeispielTr": "Hastalık bulaşmasın diye maske taktı."
+   "currentTr": "bulaşma, enfeksiyon",
+   "currentBeispiel": "Um eine Ansteckung zu vermeiden, trug sie eine Maske.",
+   "currentBeispielTr": "Hastalık bulaşmasın diye maske taktı."
   },
   {
    "id": 3198,
@@ -307,9 +307,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Aktienmärkte",
-   "mevcutTr": "hisse senedi piyasası",
-   "mevcutBeispiel": "Nach der schlechten Nachricht reagierte der Aktienmarkt nervös.",
-   "mevcutBeispielTr": "Kötü haberin ardından hisse senedi piyasası gergin tepki verdi."
+   "currentTr": "hisse senedi piyasası",
+   "currentBeispiel": "Nach der schlechten Nachricht reagierte der Aktienmarkt nervös.",
+   "currentBeispielTr": "Kötü haberin ardından hisse senedi piyasası gergin tepki verdi."
   },
   {
    "id": 3245,
@@ -317,9 +317,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "delegiert, hat delegiert",
-   "mevcutTr": "yetki devretmek",
-   "mevcutBeispiel": "Ein guter Chef delegiert Aufgaben und kontrolliert nicht jedes Detail.",
-   "mevcutBeispielTr": "İyi bir patron görevleri devreder, her ayrıntıyı denetlemez."
+   "currentTr": "yetki devretmek",
+   "currentBeispiel": "Ein guter Chef delegiert Aufgaben und kontrolliert nicht jedes Detail.",
+   "currentBeispielTr": "İyi bir patron görevleri devreder, her ayrıntıyı denetlemez."
   },
   {
    "id": 3193,
@@ -327,9 +327,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Arbeitsverträge",
-   "mevcutTr": "iş sözleşmesi",
-   "mevcutBeispiel": "Bevor sie anfängt, muss sie den Arbeitsvertrag genau durchlesen.",
-   "mevcutBeispielTr": "İşe başlamadan önce iş sözleşmesini dikkatle okuması gerekiyor."
+   "currentTr": "iş sözleşmesi",
+   "currentBeispiel": "Bevor sie anfängt, muss sie den Arbeitsvertrag genau durchlesen.",
+   "currentBeispielTr": "İşe başlamadan önce iş sözleşmesini dikkatle okuması gerekiyor."
   },
   {
    "id": 3231,
@@ -337,9 +337,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Wechselkurse",
-   "mevcutTr": "döviz kuru",
-   "mevcutBeispiel": "Der schwankende Wechselkurs erschwert die Planung im Auslandsgeschäft.",
-   "mevcutBeispielTr": "Dalgalanan döviz kuru, yurt dışı işlerinde planlamayı zorlaştırıyor."
+   "currentTr": "döviz kuru",
+   "currentBeispiel": "Der schwankende Wechselkurs erschwert die Planung im Auslandsgeschäft.",
+   "currentBeispielTr": "Dalgalanan döviz kuru, yurt dışı işlerinde planlamayı zorlaştırıyor."
   },
   {
    "id": 3413,
@@ -347,9 +347,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Ressourcen",
-   "mevcutTr": "kaynak (doğal, ekonomik)",
-   "mevcutBeispiel": "Wir müssen natürliche Ressourcen sparsamer nutzen.",
-   "mevcutBeispielTr": "Doğal kaynakları daha tutumlu kullanmalıyız."
+   "currentTr": "kaynak (doğal, ekonomik)",
+   "currentBeispiel": "Wir müssen natürliche Ressourcen sparsamer nutzen.",
+   "currentBeispielTr": "Doğal kaynakları daha tutumlu kullanmalıyız."
   },
   {
    "id": 3246,
@@ -357,10 +357,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "optimiert, hat optimiert",
-   "mevcutTr": "iyileştirmek",
-   "mevcutBeispiel": "Die Abteilung soll die internen Arbeitsabläufe deutlich optimieren.",
-   "mevcutBeispielTr": "Bölümün iç iş akışlarını ciddi biçimde iyileştirmesi gerekiyor.",
-   "cakisan": [
+   "currentTr": "iyileştirmek",
+   "currentBeispiel": "Die Abteilung soll die internen Arbeitsabläufe deutlich optimieren.",
+   "currentBeispielTr": "Bölümün iç iş akışlarını ciddi biçimde iyileştirmesi gerekiyor.",
+   "overlapping": [
     "heilen (B2)"
    ]
   },
@@ -370,9 +370,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Abschiebungen",
-   "mevcutTr": "sınır dışı etme",
-   "mevcutBeispiel": "Die Abschiebung wurde vom Gericht vorerst gestoppt.",
-   "mevcutBeispielTr": "Sınır dışı işlemi mahkemece şimdilik durduruldu."
+   "currentTr": "sınır dışı etme",
+   "currentBeispiel": "Die Abschiebung wurde vom Gericht vorerst gestoppt.",
+   "currentBeispielTr": "Sınır dışı işlemi mahkemece şimdilik durduruldu."
   },
   {
    "id": 3279,
@@ -380,9 +380,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Staatsoberhäupter",
-   "mevcutTr": "devlet başkanı",
-   "mevcutBeispiel": "Das Staatsoberhaupt hielt eine Rede zur Lage der Nation.",
-   "mevcutBeispielTr": "Devlet başkanı ülkenin durumuna ilişkin bir konuşma yaptı."
+   "currentTr": "devlet başkanı",
+   "currentBeispiel": "Das Staatsoberhaupt hielt eine Rede zur Lage der Nation.",
+   "currentBeispielTr": "Devlet başkanı ülkenin durumuna ilişkin bir konuşma yaptı."
   },
   {
    "id": 3448,
@@ -390,9 +390,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "konut alanı, yaşam alanı",
-   "mevcutBeispiel": "In Großstädten fehlt es zunehmend an bezahlbarem Wohnraum.",
-   "mevcutBeispielTr": "Büyük şehirlerde uygun fiyatlı konut giderek azalıyor."
+   "currentTr": "konut alanı, yaşam alanı",
+   "currentBeispiel": "In Großstädten fehlt es zunehmend an bezahlbarem Wohnraum.",
+   "currentBeispielTr": "Büyük şehirlerde uygun fiyatlı konut giderek azalıyor."
   },
   {
    "id": 3851,
@@ -400,9 +400,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abschlussarbeiten",
-   "mevcutTr": "bitirme tezi",
-   "mevcutBeispiel": "Für die Abschlussarbeit braucht sie noch drei Monate.",
-   "mevcutBeispielTr": "Bitirme tezi için üç aya daha ihtiyacı var."
+   "currentTr": "bitirme tezi",
+   "currentBeispiel": "Für die Abschlussarbeit braucht sie noch drei Monate.",
+   "currentBeispielTr": "Bitirme tezi için üç aya daha ihtiyacı var."
   },
   {
    "id": 3739,
@@ -410,10 +410,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "bakım, bakım-onarım",
-   "mevcutBeispiel": "Die Instandhaltung des alten Hauses kostet viel Geld.",
-   "mevcutBeispielTr": "Eski evin bakımı çok paraya mal oluyor.",
-   "cakisan": [
+   "currentTr": "bakım, bakım-onarım",
+   "currentBeispiel": "Die Instandhaltung des alten Hauses kostet viel Geld.",
+   "currentBeispielTr": "Eski evin bakımı çok paraya mal oluyor.",
+   "overlapping": [
     "die Wartung (B2)"
    ]
   },
@@ -423,10 +423,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Bemühungen",
-   "mevcutTr": "çaba, gayret",
-   "mevcutBeispiel": "Trotz aller Bemühungen blieb der gewünschte Erfolg aus.",
-   "mevcutBeispielTr": "Bütün çabalara rağmen istenen başarı gelmedi.",
-   "cakisan": [
+   "currentTr": "çaba, gayret",
+   "currentBeispiel": "Trotz aller Bemühungen blieb der gewünschte Erfolg aus.",
+   "currentBeispielTr": "Bütün çabalara rağmen istenen başarı gelmedi.",
+   "overlapping": [
     "die Mühe (B1)",
     "das Streben (C1)"
    ]
@@ -437,9 +437,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Konjunkturen",
-   "mevcutTr": "ekonomik konjonktür",
-   "mevcutBeispiel": "Bei guter Konjunktur stellen viele Unternehmen neue Mitarbeiter ein.",
-   "mevcutBeispielTr": "Konjonktür iyi olduğunda birçok şirket yeni çalışan alıyor."
+   "currentTr": "ekonomik konjonktür",
+   "currentBeispiel": "Bei guter Konjunktur stellen viele Unternehmen neue Mitarbeiter ein.",
+   "currentBeispielTr": "Konjonktür iyi olduğunda birçok şirket yeni çalışan alıyor."
   },
   {
    "id": 3201,
@@ -447,9 +447,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Arbeitsmärkte",
-   "mevcutTr": "iş piyasası",
-   "mevcutBeispiel": "Der Arbeitsmarkt für IT-Fachkräfte ist zurzeit sehr angespannt.",
-   "mevcutBeispielTr": "BT uzmanları için iş piyasası şu sıralar oldukça hareketli."
+   "currentTr": "iş piyasası",
+   "currentBeispiel": "Der Arbeitsmarkt für IT-Fachkräfte ist zurzeit sehr angespannt.",
+   "currentBeispielTr": "BT uzmanları için iş piyasası şu sıralar oldukça hareketli."
   },
   {
    "id": 3211,
@@ -457,9 +457,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Zielvereinbarungen",
-   "mevcutTr": "hedef anlaşması",
-   "mevcutBeispiel": "In der Zielvereinbarung wurde ein Umsatzziel für das Jahr festgelegt.",
-   "mevcutBeispielTr": "Hedef anlaşmasında yıl için bir ciro hedefi belirlendi."
+   "currentTr": "hedef anlaşması",
+   "currentBeispiel": "In der Zielvereinbarung wurde ein Umsatzziel für das Jahr festgelegt.",
+   "currentBeispielTr": "Hedef anlaşmasında yıl için bir ciro hedefi belirlendi."
   },
   {
    "id": 3215,
@@ -467,9 +467,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Sozialabgaben",
-   "mevcutTr": "sosyal güvenlik kesintisi",
-   "mevcutBeispiel": "Vom Bruttolohn werden Steuern und Sozialabgaben automatisch abgezogen.",
-   "mevcutBeispielTr": "Brüt maaştan vergiler ve sosyal güvenlik kesintileri otomatik düşülüyor."
+   "currentTr": "sosyal güvenlik kesintisi",
+   "currentBeispiel": "Vom Bruttolohn werden Steuern und Sozialabgaben automatisch abgezogen.",
+   "currentBeispielTr": "Brüt maaştan vergiler ve sosyal güvenlik kesintileri otomatik düşülüyor."
   },
   {
    "id": 3216,
@@ -477,9 +477,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "nitelikli işgücü eksikliği",
-   "mevcutBeispiel": "Der Fachkräftemangel trifft besonders die Pflege- und IT-Branche.",
-   "mevcutBeispielTr": "Nitelikli işgücü eksikliği en çok bakım ve BT sektörünü vuruyor."
+   "currentTr": "nitelikli işgücü eksikliği",
+   "currentBeispiel": "Der Fachkräftemangel trifft besonders die Pflege- und IT-Branche.",
+   "currentBeispielTr": "Nitelikli işgücü eksikliği en çok bakım ve BT sektörünü vuruyor."
   },
   {
    "id": 3217,
@@ -487,9 +487,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "dijitalleşme",
-   "mevcutBeispiel": "Die Digitalisierung verändert viele klassische Berufsbilder grundlegend.",
-   "mevcutBeispielTr": "Dijitalleşme birçok klasik mesleği kökten değiştiriyor."
+   "currentTr": "dijitalleşme",
+   "currentBeispiel": "Die Digitalisierung verändert viele klassische Berufsbilder grundlegend.",
+   "currentBeispielTr": "Dijitalleşme birçok klasik mesleği kökten değiştiriyor."
   },
   {
    "id": 3219,
@@ -497,9 +497,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Niederlassungen",
-   "mevcutTr": "şube, temsilcilik (firmanın kendi birimi)",
-   "mevcutBeispiel": "Die Firma hat inzwischen Niederlassungen in fünf verschiedenen Ländern.",
-   "mevcutBeispielTr": "Firmanın artık beş farklı ülkede şubesi var."
+   "currentTr": "şube, temsilcilik (firmanın kendi birimi)",
+   "currentBeispiel": "Die Firma hat inzwischen Niederlassungen in fünf verschiedenen Ländern.",
+   "currentBeispielTr": "Firmanın artık beş farklı ülkede şubesi var."
   },
   {
    "id": 3221,
@@ -507,9 +507,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Lieferketten",
-   "mevcutTr": "tedarik zinciri",
-   "mevcutBeispiel": "Die globale Lieferkette wurde durch die Krise stark unterbrochen.",
-   "mevcutBeispielTr": "Küresel tedarik zinciri kriz nedeniyle ciddi biçimde kesintiye uğradı."
+   "currentTr": "tedarik zinciri",
+   "currentBeispiel": "Die globale Lieferkette wurde durch die Krise stark unterbrochen.",
+   "currentBeispielTr": "Küresel tedarik zinciri kriz nedeniyle ciddi biçimde kesintiye uğradı."
   },
   {
    "id": 3222,
@@ -517,9 +517,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Marktanteile",
-   "mevcutTr": "pazar payı",
-   "mevcutBeispiel": "Der Konzern konnte seinen Marktanteil im letzten Jahr deutlich ausbauen.",
-   "mevcutBeispielTr": "Şirket geçen yıl pazar payını belirgin şekilde artırdı."
+   "currentTr": "pazar payı",
+   "currentBeispiel": "Der Konzern konnte seinen Marktanteil im letzten Jahr deutlich ausbauen.",
+   "currentBeispielTr": "Şirket geçen yıl pazar payını belirgin şekilde artırdı."
   },
   {
    "id": 3223,
@@ -527,9 +527,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Jahresabschlüsse",
-   "mevcutTr": "yıl sonu finansal tabloları, yıllık hesap kapanışı",
-   "mevcutBeispiel": "Der Jahresabschluss wird derzeit von der Buchhaltung erstellt.",
-   "mevcutBeispielTr": "Yıl sonu bilançosu şu anda muhasebe tarafından hazırlanıyor."
+   "currentTr": "yıl sonu finansal tabloları, yıllık hesap kapanışı",
+   "currentBeispiel": "Der Jahresabschluss wird derzeit von der Buchhaltung erstellt.",
+   "currentBeispielTr": "Yıl sonu bilançosu şu anda muhasebe tarafından hazırlanıyor."
   },
   {
    "id": 3225,
@@ -537,9 +537,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Verschuldungen",
-   "mevcutTr": "borçlanma",
-   "mevcutBeispiel": "Die hohe Verschuldung des Unternehmens bereitet den Investoren Sorgen.",
-   "mevcutBeispielTr": "Şirketin yüksek borçlanması yatırımcıları endişelendiriyor."
+   "currentTr": "borçlanma",
+   "currentBeispiel": "Die hohe Verschuldung des Unternehmens bereitet den Investoren Sorgen.",
+   "currentBeispielTr": "Şirketin yüksek borçlanması yatırımcıları endişelendiriyor."
   }
  ]
 }

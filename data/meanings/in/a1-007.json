@@ -1,17 +1,17 @@
 {
- "paket": "a1-007",
+ "packet": "a1-007",
  "niveau": "A1",
- "kelimeler": [
+ "words": [
   {
    "id": 706,
    "de": "sich kümmern",
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "ilgilenmek, bakmak",
-   "mevcutBeispiel": "Jede Mutter kümmert sich um ihre kleinen Kinder.",
-   "mevcutBeispielTr": "Her anne küçük çocuklarıyla ilgilenir.",
-   "cakisan": [
+   "currentTr": "ilgilenmek, bakmak",
+   "currentBeispiel": "Jede Mutter kümmert sich um ihre kleinen Kinder.",
+   "currentBeispielTr": "Her anne küçük çocuklarıyla ilgilenir.",
+   "overlapping": [
     "sich interessieren (A2)",
     "sich beschäftigen mit (B2)"
    ]
@@ -22,9 +22,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "gürültülü, yüksek sesle",
-   "mevcutBeispiel": "Nicht so laut! Das Baby schläft.",
-   "mevcutBeispielTr": "Bu kadar gürültü yapma! Bebek uyuyor."
+   "currentTr": "gürültülü, yüksek sesle",
+   "currentBeispiel": "Nicht so laut! Das Baby schläft.",
+   "currentBeispielTr": "Bu kadar gürültü yapma! Bebek uyuyor."
   },
   {
    "id": 794,
@@ -32,10 +32,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "oturmak",
-   "mevcutBeispiel": "Wo möchten Sie sitzen? – Bitte ganz hinten.",
-   "mevcutBeispielTr": "Nerede oturmak istersiniz? — En arkada lütfen.",
-   "cakisan": [
+   "currentTr": "oturmak",
+   "currentBeispiel": "Wo möchten Sie sitzen? – Bitte ganz hinten.",
+   "currentBeispielTr": "Nerede oturmak istersiniz? — En arkada lütfen.",
+   "overlapping": [
     "wohnen (A1)",
     "sich setzen (A2)",
     "sich hinsetzen (A2)"
@@ -47,9 +47,9 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "–",
-   "mevcutTr": "anahtar",
-   "mevcutBeispiel": "Ich gebe Ihnen noch den Zimmerschlüssel.",
-   "mevcutBeispielTr": "Size oda anahtarını da vereyim."
+   "currentTr": "anahtar",
+   "currentBeispiel": "Ich gebe Ihnen noch den Zimmerschlüssel.",
+   "currentBeispielTr": "Size oda anahtarını da vereyim."
   },
   {
    "id": 360,
@@ -57,10 +57,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "olmak, meydana gelmek",
-   "mevcutBeispiel": "Wie ist der Unfall passiert? Was ist passiert?",
-   "mevcutBeispielTr": "Kaza nasıl oldu? Ne oldu?",
-   "cakisan": [
+   "currentTr": "olmak, meydana gelmek",
+   "currentBeispiel": "Wie ist der Unfall passiert? Was ist passiert?",
+   "currentBeispielTr": "Kaza nasıl oldu? Ne oldu?",
+   "overlapping": [
     "sein (A1)",
     "werden (A1)",
     "geschehen (B1)",
@@ -73,10 +73,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "yazmak",
-   "mevcutBeispiel": "Erika schreibt mir jeden Tag.",
-   "mevcutBeispielTr": "Erika bana her gün yazıyor.",
-   "cakisan": [
+   "currentTr": "yazmak",
+   "currentBeispiel": "Erika schreibt mir jeden Tag.",
+   "currentBeispielTr": "Erika bana her gün yazıyor.",
+   "overlapping": [
     "aufschreiben (B1)"
    ]
   },
@@ -86,10 +86,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "kızgın, öfkeli",
-   "mevcutBeispiel": "Sie ist böse auf mich.",
-   "mevcutBeispielTr": "Bana kızgın.",
-   "cakisan": [
+   "currentTr": "kızgın, öfkeli",
+   "currentBeispiel": "Sie ist böse auf mich.",
+   "currentBeispielTr": "Bana kızgın.",
+   "overlapping": [
     "verärgert (A2)"
    ]
   },
@@ -99,9 +99,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "(sich)",
-   "mevcutTr": "tanıtmak, takdim etmek",
-   "mevcutBeispiel": "Darf ich Ihnen meinen Kollegen vorstellen?",
-   "mevcutBeispielTr": "Size meslektaşımı tanıtabilir miyim?"
+   "currentTr": "tanıtmak, takdim etmek",
+   "currentBeispiel": "Darf ich Ihnen meinen Kollegen vorstellen?",
+   "currentBeispielTr": "Size meslektaşımı tanıtabilir miyim?"
   },
   {
    "id": 842,
@@ -109,9 +109,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "kendini tanıtmak",
-   "mevcutBeispiel": "Wir wollen uns kennenlernen. Können Sie sich bitte vorstellen?",
-   "mevcutBeispielTr": "Tanışmak istiyoruz. Kendinizi tanıtır mısınız lütfen?"
+   "currentTr": "kendini tanıtmak",
+   "currentBeispiel": "Wir wollen uns kennenlernen. Können Sie sich bitte vorstellen?",
+   "currentBeispielTr": "Tanışmak istiyoruz. Kendinizi tanıtır mısınız lütfen?"
   },
   {
    "id": 513,
@@ -119,10 +119,10 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-en",
-   "mevcutTr": "daire, ev",
-   "mevcutBeispiel": "Unsere Wohnung hat drei Zimmer.",
-   "mevcutBeispielTr": "Dairemiz üç odalı.",
-   "cakisan": [
+   "currentTr": "daire, ev",
+   "currentBeispiel": "Unsere Wohnung hat drei Zimmer.",
+   "currentBeispielTr": "Dairemiz üç odalı.",
+   "overlapping": [
     "das Amt (B1)",
     "der Kreis (B1)"
    ]
@@ -133,9 +133,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "adı olmak, denmek",
-   "mevcutBeispiel": "Ich heiße Charlotte Meier. Wie heißt das auf Deutsch?",
-   "mevcutBeispielTr": "Adım Charlotte Meier. Bunun Almancası ne?"
+   "currentTr": "adı olmak, denmek",
+   "currentBeispiel": "Ich heiße Charlotte Meier. Wie heißt das auf Deutsch?",
+   "currentBeispielTr": "Adım Charlotte Meier. Bunun Almancası ne?"
   },
   {
    "id": 277,
@@ -143,9 +143,9 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "ä, -er",
-   "mevcutTr": "hastane",
-   "mevcutBeispiel": "Meine Freundin ist im Krankenhaus.",
-   "mevcutBeispielTr": "Arkadaşım hastanede."
+   "currentTr": "hastane",
+   "currentBeispiel": "Meine Freundin ist im Krankenhaus.",
+   "currentBeispielTr": "Arkadaşım hastanede."
   },
   {
    "id": 266,
@@ -153,10 +153,10 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-n",
-   "mevcutTr": "sınıf",
-   "mevcutBeispiel": "In unserer Klasse sind 25 Teilnehmende.",
-   "mevcutBeispielTr": "Sınıfımızda 25 kişi var.",
-   "cakisan": [
+   "currentTr": "sınıf",
+   "currentBeispiel": "In unserer Klasse sind 25 Teilnehmende.",
+   "currentBeispielTr": "Sınıfımızda 25 kişi var.",
+   "overlapping": [
     "das Klassenzimmer (A2)"
    ]
   },
@@ -166,10 +166,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "taşımak, giymek",
-   "mevcutBeispiel": "Ich kann den Koffer nicht tragen, er ist zu schwer. Er trägt heute einen blauen Anzug.",
-   "mevcutBeispielTr": "Valizi taşıyamıyorum, çok ağır. Bugün mavi bir takım elbise giyiyor.",
-   "cakisan": [
+   "currentTr": "taşımak, giymek",
+   "currentBeispiel": "Ich kann den Koffer nicht tragen, er ist zu schwer. Er trägt heute einen blauen Anzug.",
+   "currentBeispielTr": "Valizi taşıyamıyorum, çok ağır. Bugün mavi bir takım elbise giyiyor.",
+   "overlapping": [
     "transportieren (A2)"
    ]
   },
@@ -179,10 +179,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "özellikle",
-   "mevcutBeispiel": "Das finde ich besonders interessant.",
-   "mevcutBeispielTr": "Bunu özellikle ilginç buluyorum.",
-   "cakisan": [
+   "currentTr": "özellikle",
+   "currentBeispiel": "Das finde ich besonders interessant.",
+   "currentBeispielTr": "Bunu özellikle ilginç buluyorum.",
+   "overlapping": [
     "vor allem (B1)",
     "insbesondere (A2)"
    ]
@@ -193,10 +193,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "göndermek",
-   "mevcutBeispiel": "Bitte schicken Sie mir eine E-Mail.",
-   "mevcutBeispielTr": "Lütfen bana bir e-posta gönderin.",
-   "cakisan": [
+   "currentTr": "göndermek",
+   "currentBeispiel": "Bitte schicken Sie mir eine E-Mail.",
+   "currentBeispielTr": "Lütfen bana bir e-posta gönderin.",
+   "overlapping": [
     "senden (B1)",
     "entsenden (C1)",
     "abschicken (A2)",
@@ -210,10 +210,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "aramak, telefon etmek",
-   "mevcutBeispiel": "Ich rufe dich morgen an.",
-   "mevcutBeispielTr": "Seni yarın ararım.",
-   "cakisan": [
+   "currentTr": "aramak, telefon etmek",
+   "currentBeispiel": "Ich rufe dich morgen an.",
+   "currentBeispielTr": "Seni yarın ararım.",
+   "overlapping": [
     "suchen (A1)",
     "durchsuchen (A2)"
    ]
@@ -224,9 +224,9 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "ağız",
-   "mevcutBeispiel": "Öffnen Sie den Mund.",
-   "mevcutBeispielTr": "Ağzınızı açın."
+   "currentTr": "ağız",
+   "currentBeispiel": "Öffnen Sie den Mund.",
+   "currentBeispielTr": "Ağzınızı açın."
   },
   {
    "id": 284,
@@ -234,9 +234,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "gülmek",
-   "mevcutBeispiel": "Lisa lacht immer viel.",
-   "mevcutBeispielTr": "Lisa hep çok güler."
+   "currentTr": "gülmek",
+   "currentBeispiel": "Lisa lacht immer viel.",
+   "currentBeispielTr": "Lisa hep çok güler."
   },
   {
    "id": 306,
@@ -244,10 +244,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "komik, eğlenceli",
-   "mevcutBeispiel": "Jan ist nett und lustig.",
-   "mevcutBeispielTr": "Jan kibar ve eğlenceli biri.",
-   "cakisan": [
+   "currentTr": "komik, eğlenceli",
+   "currentBeispiel": "Jan ist nett und lustig.",
+   "currentBeispielTr": "Jan kibar ve eğlenceli biri.",
+   "overlapping": [
     "komisch (A2)"
    ]
   },
@@ -257,10 +257,10 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-ä",
-   "mevcutTr": "dükkân, mağaza",
-   "mevcutBeispiel": "Im Buchladen können Sie Bücher kaufen.",
-   "mevcutBeispielTr": "Kitapçıda kitap satın alabilirsiniz.",
-   "cakisan": [
+   "currentTr": "dükkân, mağaza",
+   "currentBeispiel": "Im Buchladen können Sie Bücher kaufen.",
+   "currentBeispielTr": "Kitapçıda kitap satın alabilirsiniz.",
+   "overlapping": [
     "das Geschäft (A1)"
    ]
   },
@@ -270,9 +270,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "ölmüş, vefat etmiş",
-   "mevcutBeispiel": "Meine Frau ist gestern gestorben.",
-   "mevcutBeispielTr": "Eşim dün vefat etti."
+   "currentTr": "ölmüş, vefat etmiş",
+   "currentBeispiel": "Meine Frau ist gestern gestorben.",
+   "currentBeispielTr": "Eşim dün vefat etti."
   },
   {
    "id": 298,
@@ -280,9 +280,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "okumak",
-   "mevcutBeispiel": "Ich lese ein Buch von García Márquez.",
-   "mevcutBeispielTr": "García Márquez'in bir kitabını okuyorum."
+   "currentTr": "okumak",
+   "currentBeispiel": "Ich lese ein Buch von García Márquez.",
+   "currentBeispielTr": "García Márquez'in bir kitabını okuyorum."
   },
   {
    "id": 190,
@@ -290,10 +290,10 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-e",
-   "mevcutTr": "dükkân, mağaza",
-   "mevcutBeispiel": "Meine Mutter wartet vor dem Geschäft.",
-   "mevcutBeispielTr": "Annem dükkânın önünde bekliyor.",
-   "cakisan": [
+   "currentTr": "dükkân, mağaza",
+   "currentBeispiel": "Meine Mutter wartet vor dem Geschäft.",
+   "currentBeispielTr": "Annem dükkânın önünde bekliyor.",
+   "overlapping": [
     "der Laden (A1)"
    ]
   },
@@ -303,9 +303,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "uçmak",
-   "mevcutBeispiel": "Wir fliegen nach Athen.",
-   "mevcutBeispielTr": "Atina'ya uçuyoruz."
+   "currentTr": "uçmak",
+   "currentBeispiel": "Wir fliegen nach Athen.",
+   "currentBeispielTr": "Atina'ya uçuyoruz."
   },
   {
    "id": 782,
@@ -313,10 +313,10 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "son, bitiş",
-   "mevcutBeispiel": "Ich muss jetzt Schluss machen. Zum Schluss gibt er uns allen die Hand.",
-   "mevcutBeispielTr": "Artık kapatmam gerekiyor. Sonunda hepimizle tokalaşıyor.",
-   "cakisan": [
+   "currentTr": "son, bitiş",
+   "currentBeispiel": "Ich muss jetzt Schluss machen. Zum Schluss gibt er uns allen die Hand.",
+   "currentBeispielTr": "Artık kapatmam gerekiyor. Sonunda hepimizle tokalaşıyor.",
+   "overlapping": [
     "das Ende (A1)",
     "letzte (A1)"
    ]
@@ -327,9 +327,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "hoşlanmak, sevmek, istemek",
-   "mevcutBeispiel": "Ich mag gern Spaghetti und Fleisch.",
-   "mevcutBeispielTr": "Spagetti ve eti çok severim."
+   "currentTr": "hoşlanmak, sevmek, istemek",
+   "currentBeispiel": "Ich mag gern Spaghetti und Fleisch.",
+   "currentBeispielTr": "Spagetti ve eti çok severim."
   },
   {
    "id": 213,
@@ -337,10 +337,10 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-s",
-   "mevcutTr": "cep telefonu",
-   "mevcutBeispiel": "Du kannst mit dem Handy telefonieren.",
-   "mevcutBeispielTr": "Cep telefonuyla arama yapabilirsin.",
-   "cakisan": [
+   "currentTr": "cep telefonu",
+   "currentBeispiel": "Du kannst mit dem Handy telefonieren.",
+   "currentBeispielTr": "Cep telefonuyla arama yapabilirsin.",
+   "overlapping": [
     "das Mobiltelefon (A2)"
    ]
   },
@@ -350,9 +350,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "arkada, arkasında",
-   "mevcutBeispiel": "Die Tür zum Aussteigen ist hinten.",
-   "mevcutBeispielTr": "İniş kapısı arkada."
+   "currentTr": "arkada, arkasında",
+   "currentBeispiel": "Die Tür zum Aussteigen ist hinten.",
+   "currentBeispielTr": "İniş kapısı arkada."
   },
   {
    "id": 588,
@@ -360,9 +360,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "rica etmek",
-   "mevcutBeispiel": "Darf ich Sie um etwas bitten?",
-   "mevcutBeispielTr": "Sizden bir şey rica edebilir miyim?"
+   "currentTr": "rica etmek",
+   "currentBeispiel": "Darf ich Sie um etwas bitten?",
+   "currentBeispielTr": "Sizden bir şey rica edebilir miyim?"
   },
   {
    "id": 451,
@@ -370,9 +370,9 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-e",
-   "mevcutTr": "masa",
-   "mevcutBeispiel": "Am Fenster ist ein Tisch.",
-   "mevcutBeispielTr": "Pencerenin yanında bir masa var."
+   "currentTr": "masa",
+   "currentBeispiel": "Am Fenster ist ein Tisch.",
+   "currentBeispielTr": "Pencerenin yanında bir masa var."
   },
   {
    "id": 721,
@@ -380,9 +380,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "yatmak, bulunmak",
-   "mevcutBeispiel": "Um neun Uhr liegt Judith noch im Bett. Frankfurt liegt am Main.",
-   "mevcutBeispielTr": "Judith saat dokuzda hâlâ yatakta. Frankfurt, Main Nehri kıyısında."
+   "currentTr": "yatmak, bulunmak",
+   "currentBeispiel": "Um neun Uhr liegt Judith noch im Bett. Frankfurt liegt am Main.",
+   "currentBeispielTr": "Judith saat dokuzda hâlâ yatakta. Frankfurt, Main Nehri kıyısında."
   },
   {
    "id": 836,
@@ -390,9 +390,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "satmak",
-   "mevcutBeispiel": "Er verkauft sein altes Auto.",
-   "mevcutBeispielTr": "Eski arabasını satıyor."
+   "currentTr": "satmak",
+   "currentBeispiel": "Er verkauft sein altes Auto.",
+   "currentBeispielTr": "Eski arabasını satıyor."
   },
   {
    "id": 17,
@@ -400,10 +400,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "başlamak",
-   "mevcutBeispiel": "Fangt bitte mit Übung 12 an. / Fängst du an?",
-   "mevcutBeispielTr": "Lütfen 12. alıştırmayla başlayın. / Sen mi başlıyorsun?",
-   "cakisan": [
+   "currentTr": "başlamak",
+   "currentBeispiel": "Fangt bitte mit Übung 12 an. / Fängst du an?",
+   "currentBeispielTr": "Lütfen 12. alıştırmayla başlayın. / Sen mi başlıyorsun?",
+   "overlapping": [
     "beginnen (A1)"
    ]
   },
@@ -413,9 +413,9 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-s",
-   "mevcutTr": "otel",
-   "mevcutBeispiel": "Im Urlaub sind wir in einem Hotel am Meer.",
-   "mevcutBeispielTr": "Tatilde deniz kenarında bir oteldeyiz."
+   "currentTr": "otel",
+   "currentBeispiel": "Im Urlaub sind wir in einem Hotel am Meer.",
+   "currentBeispielTr": "Tatilde deniz kenarında bir oteldeyiz."
   },
   {
    "id": 23,
@@ -423,9 +423,9 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-en",
-   "mevcutTr": "cevap, yanıt",
-   "mevcutBeispiel": "Weißt du die Antwort?",
-   "mevcutBeispielTr": "Cevabı biliyor musun?"
+   "currentTr": "cevap, yanıt",
+   "currentBeispiel": "Weißt du die Antwort?",
+   "currentBeispielTr": "Cevabı biliyor musun?"
   },
   {
    "id": 195,
@@ -433,9 +433,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "kazanmak (oyun, ödül, yarışma)",
-   "mevcutBeispiel": "Man kann eine Reise gewinnen.",
-   "mevcutBeispielTr": "Bir seyahat kazanılabiliyor."
+   "currentTr": "kazanmak (oyun, ödül, yarışma)",
+   "currentBeispiel": "Man kann eine Reise gewinnen.",
+   "currentBeispielTr": "Bir seyahat kazanılabiliyor."
   },
   {
    "id": 109,
@@ -443,10 +443,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "aptal, saçma",
-   "mevcutBeispiel": "Ich finde den Film dumm. Entschuldigung, das war dumm von mir. Das ist mir zu dumm.",
-   "mevcutBeispielTr": "Filmi saçma buluyorum. Pardon, bu benim aptallığımdı. Bu bana fazla saçma.",
-   "cakisan": [
+   "currentTr": "aptal, saçma",
+   "currentBeispiel": "Ich finde den Film dumm. Entschuldigung, das war dumm von mir. Das ist mir zu dumm.",
+   "currentBeispielTr": "Filmi saçma buluyorum. Pardon, bu benim aptallığımdı. Bu bana fazla saçma.",
+   "overlapping": [
     "blöd (A1)"
    ]
   },
@@ -456,10 +456,10 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-er",
-   "mevcutTr": "resim",
-   "mevcutBeispiel": "Hast du ein Bild von deinem Sohn?",
-   "mevcutBeispielTr": "Oğlunun bir fotoğrafı var mı?",
-   "cakisan": [
+   "currentTr": "resim",
+   "currentBeispiel": "Hast du ein Bild von deinem Sohn?",
+   "currentBeispielTr": "Oğlunun bir fotoğrafı var mı?",
+   "overlapping": [
     "die Abbildung (B1)"
    ]
   },
@@ -469,9 +469,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "yeni",
-   "mevcutBeispiel": "Ist der Computer neu?",
-   "mevcutBeispielTr": "Bilgisayar yeni mi?"
+   "currentTr": "yeni",
+   "currentBeispiel": "Ist der Computer neu?",
+   "currentBeispielTr": "Bilgisayar yeni mi?"
   },
   {
    "id": 75,
@@ -479,10 +479,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "ödemek",
-   "mevcutBeispiel": "Wo muss ich bezahlen?",
-   "mevcutBeispielTr": "Nerede ödemem gerekiyor?",
-   "cakisan": [
+   "currentTr": "ödemek",
+   "currentBeispiel": "Wo muss ich bezahlen?",
+   "currentBeispielTr": "Nerede ödemem gerekiyor?",
+   "overlapping": [
     "zahlen (A1)",
     "begleichen (B2)",
     "entrichten (B2)"
@@ -494,9 +494,9 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-n",
-   "mevcutTr": "göz",
-   "mevcutBeispiel": "Seine Augen sind grün.",
-   "mevcutBeispielTr": "Gözleri yeşil."
+   "currentTr": "göz",
+   "currentBeispiel": "Seine Augen sind grün.",
+   "currentBeispielTr": "Gözleri yeşil."
   },
   {
    "id": 835,
@@ -504,9 +504,9 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "evli",
-   "mevcutBeispiel": "Ich bin verheiratet und habe drei Kinder.",
-   "mevcutBeispielTr": "Evliyim ve üç çocuğum var."
+   "currentTr": "evli",
+   "currentBeispiel": "Ich bin verheiratet und habe drei Kinder.",
+   "currentBeispielTr": "Evliyim ve üç çocuğum var."
   },
   {
    "id": 146,
@@ -514,9 +514,9 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-",
-   "mevcutTr": "pencere",
-   "mevcutBeispiel": "Ich möchte einen Platz am Fenster.",
-   "mevcutBeispielTr": "Cam kenarında bir yer istiyorum."
+   "currentTr": "pencere",
+   "currentBeispiel": "Ich möchte einen Platz am Fenster.",
+   "currentBeispielTr": "Cam kenarında bir yer istiyorum."
   },
   {
    "id": 852,
@@ -524,10 +524,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "ödemek",
-   "mevcutBeispiel": "Entschuldigung, zahlen bitte!",
-   "mevcutBeispielTr": "Affedersiniz, hesap lütfen!",
-   "cakisan": [
+   "currentTr": "ödemek",
+   "currentBeispiel": "Entschuldigung, zahlen bitte!",
+   "currentBeispielTr": "Affedersiniz, hesap lütfen!",
+   "overlapping": [
     "bezahlen (A1)",
     "begleichen (B2)",
     "entrichten (B2)"
@@ -539,10 +539,10 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "ä, -e",
-   "mevcutTr": "başlangıç",
-   "mevcutBeispiel": "Am Anfang ist das Buch langweilig.",
-   "mevcutBeispielTr": "Kitap başlangıçta sıkıcı.",
-   "cakisan": [
+   "currentTr": "başlangıç",
+   "currentBeispiel": "Am Anfang ist das Buch langweilig.",
+   "currentBeispielTr": "Kitap başlangıçta sıkıcı.",
+   "overlapping": [
     "der Beginn (B1)"
    ]
   },
@@ -552,10 +552,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "koymak (yatırarak), yatırmak",
-   "mevcutBeispiel": "Legen Sie das Buch auf den Tisch.",
-   "mevcutBeispielTr": "Kitabı masanın üzerine koyun.",
-   "cakisan": [
+   "currentTr": "koymak (yatırarak), yatırmak",
+   "currentBeispiel": "Legen Sie das Buch auf den Tisch.",
+   "currentBeispielTr": "Kitabı masanın üzerine koyun.",
+   "overlapping": [
     "stellen (A1)",
     "hinstellen (A2)"
    ]
@@ -566,10 +566,10 @@
    "typ": "Sonstiges",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "açık",
-   "mevcutBeispiel": "Jetzt ist die Tür offen.",
-   "mevcutBeispielTr": "Kapı şimdi açık.",
-   "cakisan": [
+   "currentTr": "açık",
+   "currentBeispiel": "Jetzt ist die Tür offen.",
+   "currentBeispielTr": "Kapı şimdi açık.",
+   "overlapping": [
     "geöffnet (A1)",
     "deutlich (A2)",
     "das Defizit (C1)",
@@ -582,9 +582,9 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "",
-   "mevcutTr": "bira",
-   "mevcutBeispiel": "Noch ein Bier bitte.",
-   "mevcutBeispielTr": "Bir bira daha lütfen."
+   "currentTr": "bira",
+   "currentBeispiel": "Noch ein Bier bitte.",
+   "currentBeispielTr": "Bir bira daha lütfen."
   },
   {
    "id": 748,
@@ -592,10 +592,10 @@
    "typ": "Nomen",
    "niveau": "A1",
    "formen": "-/",
-   "mevcutTr": "partner, eş (erkek)",
-   "mevcutBeispiel": "Veronika ist meine Partnerin.",
-   "mevcutBeispielTr": "Veronika benim partnerim.",
-   "cakisan": [
+   "currentTr": "partner, eş (erkek)",
+   "currentBeispiel": "Veronika ist meine Partnerin.",
+   "currentBeispielTr": "Veronika benim partnerim.",
+   "overlapping": [
     "die Partnerin (A1)"
    ]
   }

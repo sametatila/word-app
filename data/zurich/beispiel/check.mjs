@@ -136,9 +136,9 @@ function roots(part) {
 
 function contains(sentence, headword) {
   const hay = flat(sentence);
-  const kelime = (t) => new RegExp(`(?<![a-z])${t}(?![a-z])`).test(hay);
-  const bas = (t) => new RegExp(`(?<![a-z])${t}`).test(hay);
-  const kok = (r) => hay.includes(r.slice(0, Math.max(4, r.length - 2)));
+  const hasWord = (t) => new RegExp(`(?<![a-z])${t}(?![a-z])`).test(hay);
+  const hasStart = (t) => new RegExp(`(?<![a-z])${t}`).test(hay);
+  const hasRoot = (r) => hay.includes(r.slice(0, Math.max(4, r.length - 2)));
 
   /**
    * Aramanın katılığı kökün değil **madde başlığının** uzunluğuna bakar.
@@ -149,69 +149,69 @@ function contains(sentence, headword) {
    * olmalı ("ab" gövde sayılsa "aber" de sayılırdı), üç harfli madde bileşik
    * içinde de durabilir, dörtten uzunu serbest gövdedir.
    */
-  const ara = (r, uzunluk) => {
+  const search = (r, headLen) => {
     if (!r) return false;
-    if (uzunluk <= 2) return kelime(r);
-    if (uzunluk === 3) return bas(r) || hay.includes(r);
-    return kok(r);
+    if (headLen <= 2) return hasWord(r);
+    if (headLen === 3) return hasStart(r) || hay.includes(r);
+    return hasRoot(r);
   };
 
-  const parcaVar = (part) => {
+  const partPresent = (part) => {
     const bare = flatKey(part);
     if (!bare) return true;
-    const uzunluk = part.replace(/[^\p{L}]/gu, "").length;
-    if (roots(part).some((r) => ara(r, uzunluk))) return true;
+    const headLen = part.replace(/[^\p{L}]/gu, "").length;
+    if (roots(part).some((r) => search(r, headLen))) return true;
 
     const sep = bare.match(SEPARABLE);
-    if (sep && kelime(sep[1])) {
-      const govde = sep[2];
-      if (roots(govde).some((r) => ara(r, govde.length))) return true;
+    if (sep && hasWord(sep[1])) {
+      const stem = sep[2];
+      if (roots(stem).some((r) => search(r, stem.length))) return true;
       const irrSep = IRREGULAR[sep[2]];
-      if (irrSep?.some((f) => ara(flatKey(f), flatKey(f).length))) return true;
+      if (irrSep?.some((f) => search(flatKey(f), flatKey(f).length))) return true;
     }
 
     const irr = IRREGULAR[bare];
-    return irr ? irr.some((f) => ara(flatKey(f), flatKey(f).length)) : false;
+    return irr ? irr.some((f) => search(flatKey(f), flatKey(f).length)) : false;
   };
 
-  return forms(headword).some((form) => form.split(/\s+/).every(parcaVar));
+  return forms(headword).some((form) => form.split(/\s+/).every(partPresent));
 }
 
 const words_ = (s) => s.trim().split(/\s+/).filter(Boolean).length;
-const sayilar = (s) => (s.match(/\d+/g) ?? []).sort().join(",");
+const numbers = (s) => (s.match(/\d+/g) ?? []).sort().join(",");
 
-function denetle(paket) {
-  const src = JSON.parse(readFileSync(`${IN}/${paket}.json`, "utf8"));
-  const hatalar = [];
-  const uyarilar = [];
-  if (!existsSync(`${OUT}/${paket}.json`)) return { paket, yok: true, hatalar, uyarilar };
+function inspect(packet) {
+  const src = JSON.parse(readFileSync(`${IN}/${packet}.json`, "utf8"));
+  const errors = [];
+  const warnings = [];
+  if (!existsSync(`${OUT}/${packet}.json`)) return { packet, absent: true, errors, warnings };
 
   let out;
   try {
-    out = JSON.parse(readFileSync(`${OUT}/${paket}.json`, "utf8"));
+    out = JSON.parse(readFileSync(`${OUT}/${packet}.json`, "utf8"));
   } catch (e) {
-    return { paket, hatalar: [`  [bozuk json] ${e.message}`], uyarilar, madde: 0 };
+    return { packet, errors: [`  [bozuk json] ${e.message}`], warnings, items: 0 };
   }
 
   const byId = new Map(out.map((r) => [r.id, r]));
-  const eksik = src.kelimeler.filter((k) => !byId.has(k.id)).map((k) => k.id);
-  if (eksik.length) hatalar.push(`  [eksik madde] ${eksik.join(", ")}`);
-  const fazla = out.map((r) => r.id).filter((id) => !src.kelimeler.some((k) => k.id === id));
-  if (fazla.length) hatalar.push(`  [pakete ait olmayan] ${fazla.join(", ")}`);
+  const missing = src.words.filter((k) => !byId.has(k.id)).map((k) => k.id);
+  if (missing.length) errors.push(`  [eksik madde] ${missing.join(", ")}`);
+  const extra = out.map((r) => r.id).filter((id) => !src.words.some((k) => k.id === id));
+  if (extra.length) errors.push(`  [pakete ait olmayan] ${extra.join(", ")}`);
 
-  let korunan = 0;
-  for (const k of src.kelimeler) {
+  let kept = 0;
+  for (const k of src.words) {
     const r = byId.get(k.id);
     if (!r) continue;
     const b = (r.beispiel ?? "").trim();
-    const H = (etiket, mesaj) => hatalar.push(`  [${etiket}] ${k.id} ${k.gsw} — ${mesaj}`);
-    const U = (etiket, mesaj) => uyarilar.push(`  [${etiket}] ${k.id} ${k.gsw} — ${mesaj}`);
+    const H = (label, message) => errors.push(`  [${label}] ${k.id} ${k.gsw} — ${message}`);
+    const U = (label, message) => warnings.push(`  [${label}] ${k.id} ${k.gsw} — ${message}`);
 
     if (!b) {
       H("boş cümle", "beispiel yok");
       continue;
     }
-    if (b === k.mevcutGsw) korunan++;
+    if (b === k.currentGsw) kept++;
     if (!/[.!?]$/.test(b)) H("bozuk cümle", `sonu noktalama değil: "${b}"`);
     if (/^\d+[.)]/.test(b) || /\s\d+\.\s/.test(b)) H("numaralı derleme", `"${b}"`);
     if (/[.!?]\s+\S/.test(b.replace(/[.!?]$/, ""))) H("çok cümleli", `"${b}"`);
@@ -220,51 +220,51 @@ function denetle(paket) {
     if (n < 3 || n > 13) H("cümle uzunluğu", `${n} kelime: "${b}"`);
     if (!contains(b, k.gsw)) H("kelime cümlede yok", `"${k.gsw}" ∉ "${b}"`);
     // Çeviri Almanca cümleden devralınıyor: sayılar örtüşmezse çeviri yalan söyler.
-    if (sayilar(b) !== sayilar(k.beispielDe))
+    if (numbers(b) !== numbers(k.beispielDe))
       H("sayı uyuşmazlığı", `"${k.beispielDe}" ↔ "${b}" — çeviri devralınamaz`);
     if (/\?$/.test(b) !== /\?$/.test(k.beispielDe))
       U("soru uyuşmazlığı", `"${k.beispielDe}" ↔ "${b}"`);
   }
 
-  return { paket, hatalar, uyarilar, madde: out.length, korunan };
+  return { packet, errors, warnings, items: out.length, kept };
 }
 
-const hepsi = readdirSync(IN)
+const all = readdirSync(IN)
   .filter((f) => f.endsWith(".json"))
   .map((f) => f.replace(/\.json$/, ""))
   .sort();
-const secili = ARG === "all" ? hepsi : hepsi.filter((p) => p === ARG || p.startsWith(`${ARG}-`));
-if (!secili.length) {
+const selected = ARG === "all" ? all : all.filter((p) => p === ARG || p.startsWith(`${ARG}-`));
+if (!selected.length) {
   console.error(`"${ARG}" ile eşleşen paket yok.`);
   process.exit(1);
 }
 
-let hata = 0;
-let uyari = 0;
-let bekleyen = 0;
-let madde = 0;
-let korunan = 0;
-for (const p of secili) {
-  const r = denetle(p);
-  if (r.yok) {
-    bekleyen++;
-    if (secili.length === 1) console.log(`${p}: çıktı yok`);
+let errorCount = 0;
+let warningCount = 0;
+let pending = 0;
+let items = 0;
+let kept = 0;
+for (const p of selected) {
+  const r = inspect(p);
+  if (r.absent) {
+    pending++;
+    if (selected.length === 1) console.log(`${p}: çıktı yok`);
     continue;
   }
-  hata += r.hatalar.length;
-  uyari += r.uyarilar.length;
-  madde += r.madde;
-  korunan += r.korunan ?? 0;
-  if (r.hatalar.length || r.uyarilar.length) {
-    console.log(`\n${p}  (${r.madde} madde)`);
-    r.hatalar.forEach((h) => console.log(h));
-    r.uyarilar.forEach((u) => console.log(u));
-  } else if (secili.length === 1) {
-    console.log(`${p}: ${r.madde} madde, temiz (${r.korunan} korundu).`);
+  errorCount += r.errors.length;
+  warningCount += r.warnings.length;
+  items += r.items;
+  kept += r.kept ?? 0;
+  if (r.errors.length || r.warnings.length) {
+    console.log(`\n${p}  (${r.items} madde)`);
+    r.errors.forEach((h) => console.log(h));
+    r.warnings.forEach((u) => console.log(u));
+  } else if (selected.length === 1) {
+    console.log(`${p}: ${r.items} madde, temiz (${r.kept} korundu).`);
   }
 }
 
 console.log(
-  `\nözet: ${secili.length - bekleyen}/${secili.length} paket üretilmiş, ${madde} madde (${korunan} korundu) · ${hata} hata · ${uyari} uyarı`,
+  `\nözet: ${selected.length - pending}/${selected.length} paket üretilmiş, ${items} madde (${kept} korundu) · ${errorCount} hata · ${warningCount} uyarı`,
 );
-process.exit(hata ? 1 : 0);
+process.exit(errorCount ? 1 : 0);

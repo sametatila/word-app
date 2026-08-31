@@ -43,7 +43,7 @@
   "gsw": "Zivilschtand",
   "gswArtikel": "de",
   "gswBeispiel": "Bi «Zivilschtand» muesch «ledig» aachrüüzle.",
-  "ayniLehce": [
+  "sameDialect": [
    "Personenstand (B1)"
   ]
  },
@@ -163,7 +163,7 @@
   "gsw": "Zündhölzli",
   "gswArtikel": "s",
   "gswBeispiel": "Ich hett gern e Schachtle Zündhölzli.",
-  "ayniLehce": [
+  "sameDialect": [
    "Streichholz (B1)",
    "Zündholz (B1)"
   ]
@@ -176,7 +176,7 @@
   "gsw": "Zündhölzli",
   "gswArtikel": "s",
   "gswBeispiel": "Ich hett gern e Schachtle Zündhölzli.",
-  "ayniLehce": [
+  "sameDialect": [
    "Streichholz (B1)",
    "Zünder (B1)"
   ]
@@ -324,7 +324,7 @@
   "gsw": "Zvieri",
   "gswArtikel": null,
   "gswBeispiel": "Es isch Ziit für es chliises Zvieri.",
-  "ayniLehce": [
+  "sameDialect": [
    "Jause (B1)"
   ]
  },

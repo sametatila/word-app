@@ -5,7 +5,7 @@
  * ilk paketler öğrencinin en çok gördüğü kelimeleri taşır, yani işin değeri
  * baştan itibaren birikir ve kalite erken görülebilir.
  *
- * `cakisan` alanı kritik. Tek karşılığa inince çakışma sayısı kendiliğinden
+ * `overlapping` alanı kritik. Tek karşılığa inince çakışma sayısı kendiliğinden
  * artıyor: "öğrenci" hem Schüler hem Student için doğru bir ilk cevaptır. Ajan
  * bunu aramak zorunda kalmasın diye, havuzun tamamında **aynı ilk anlamı**
  * taşıyan diğer maddeler önüne konuyor. Karşılaştırma mevcut çevirinin ilk
@@ -49,7 +49,7 @@ mkdirSync(`${ROOT}data/meanings/in`, { recursive: true });
 mkdirSync(`${ROOT}data/meanings/out`, { recursive: true });
 
 const index = [];
-let toplam = 0;
+let total = 0;
 for (const niveau of LEVELS) {
   const rows = words
     .filter((w) => w.niveau === niveau)
@@ -57,8 +57,8 @@ for (const niveau of LEVELS) {
 
   for (let i = 0; i < rows.length; i += SIZE) {
     const slug = `${niveau.toLowerCase()}-${String(Math.floor(i / SIZE) + 1).padStart(3, "0")}`;
-    const kelimeler = rows.slice(i, i + SIZE).map((w) => {
-      const cakisan = (byMeaning.get(firstMeaning(w.tr)) ?? [])
+    const packetWords = rows.slice(i, i + SIZE).map((w) => {
+      const overlapping = (byMeaning.get(firstMeaning(w.tr)) ?? [])
         .filter((o) => o.id !== w.id)
         .map((o) => `${o.artikel ? o.artikel + " " : ""}${o.de} (${o.niveau})`);
       return {
@@ -67,28 +67,28 @@ for (const niveau of LEVELS) {
         typ: w.typ,
         niveau: w.niveau,
         formen: w.formen || "",
-        mevcutTr: w.tr,
-        mevcutBeispiel: w.beispiel || "",
-        mevcutBeispielTr: beispielTr.get(w.id) || "",
+        currentTr: w.tr,
+        currentBeispiel: w.beispiel || "",
+        currentBeispielTr: beispielTr.get(w.id) || "",
         // Uzun listeler paketi şişiriyor ve okunmuyor; sekiz taneden fazlası
         // zaten "bu kelime çok genel bir karşılık almış" demek.
-        ...(cakisan.length ? { cakisan: cakisan.slice(0, 8) } : {}),
+        ...(overlapping.length ? { overlapping: overlapping.slice(0, 8) } : {}),
       };
     });
 
     const path = `${ROOT}data/meanings/in/${slug}.json`;
-    writeFileSync(path, JSON.stringify({ paket: slug, niveau, kelimeler }, null, 1) + "\n");
-    index.push({ paket: slug, niveau, madde: kelimeler.length });
-    toplam += kelimeler.length;
+    writeFileSync(path, JSON.stringify({ packet: slug, niveau, words: packetWords }, null, 1) + "\n");
+    index.push({ packet: slug, niveau, items: packetWords.length });
+    total += packetWords.length;
   }
 }
 
 writeFileSync(`${ROOT}data/meanings/in/_index.json`, JSON.stringify(index, null, 1) + "\n");
 
-const bitmis = index.filter((p) => existsSync(`${ROOT}data/meanings/out/${p.paket}.json`)).length;
-console.log(`${toplam} madde → ${index.length} paket (${SIZE}'lik)`);
+const finished = index.filter((p) => existsSync(`${ROOT}data/meanings/out/${p.packet}.json`)).length;
+console.log(`${total} madde → ${index.length} paket (${SIZE}'lik)`);
 for (const niveau of LEVELS) {
   const p = index.filter((x) => x.niveau === niveau);
-  console.log(`  ${niveau}: ${p.length} paket, ${p.reduce((s, x) => s + x.madde, 0)} madde`);
+  console.log(`  ${niveau}: ${p.length} paket, ${p.reduce((s, x) => s + x.items, 0)} madde`);
 }
-console.log(`çıktısı hazır olan: ${bitmis}/${index.length}`);
+console.log(`çıktısı hazır olan: ${finished}/${index.length}`);

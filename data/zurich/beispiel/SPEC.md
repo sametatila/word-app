@@ -15,7 +15,7 @@ için 352 maddede çeviri hiç gösterilemiyor.
 Her madde için tek bir alan üretirsin: `beispiel` — Almanca cümlenin doğal
 Züritüütsch karşılığı.
 
-**Önce elindekine bak.** Pakette `mevcutGsw` alanı var: o maddenin bugünkü
+**Önce elindekine bak.** Pakette `currentGsw` alanı var: o maddenin bugünkü
 lehçe cümlesi. Bu cümle
 - yeni Almanca cümlenin sadık bir karşılığıysa,
 - tek cümleyse,

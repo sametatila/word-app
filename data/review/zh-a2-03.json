@@ -115,7 +115,7 @@
   "gsw": "niene",
   "gswArtikel": null,
   "gswBeispiel": "Da cha me niene parkiere. Wo isch de Stefan? Ich gsee ne niene.",
-  "ayniLehce": [
+  "sameDialect": [
    "nirgendwo (B1)"
   ]
  },
@@ -217,7 +217,7 @@
   "gsw": "es paar",
   "gswArtikel": null,
   "gswBeispiel": "Mir fahred es paar Täg as Meer. Häsch es paar Minute Ziit?",
-  "ayniLehce": [
+  "sameDialect": [
    "einige (A2)"
   ]
  },
@@ -283,7 +283,7 @@
   "gsw": "Pflanze",
   "gswArtikel": "d",
   "gswBeispiel": "Chönd Si bitte zu öisne Pflanze luege? Mir sind nöchschti Wuche i de Ferie.",
-  "ayniLehce": [
+  "sameDialect": [
    "pflanzen (B1)"
   ]
  },
@@ -349,7 +349,7 @@
   "gsw": "günschtig",
   "gswArtikel": null,
   "gswBeispiel": "D Jagge isch sehr günschtig. Si choschtet nur füfzää Franke.",
-  "ayniLehce": [
+  "sameDialect": [
    "günstig (A1)"
   ]
  },
@@ -460,7 +460,7 @@
   "gsw": "rede",
   "gswArtikel": null,
   "gswBeispiel": "Mit minere Fründin chan ich über alles rede. Red nöd so vil!",
-  "ayniLehce": [
+  "sameDialect": [
    "sprechen (A1)"
   ]
  },
@@ -517,7 +517,7 @@
   "gsw": "Pensionär",
   "gswArtikel": "de",
   "gswBeispiel": "Min Unggle schaffet nüme. Er isch Pensionär.",
-  "ayniLehce": [
+  "sameDialect": [
    "Pensionist (B1)"
   ]
  },
@@ -673,7 +673,7 @@
   "gsw": "schaffe",
   "gswArtikel": null,
   "gswBeispiel": "Chasch mer bitte hälfe? Ich schaffe das nöd eläi. Gschafft! S Projäkt isch ändli fertig.",
-  "ayniLehce": [
+  "sameDialect": [
    "arbeiten (A1)"
   ]
  },
@@ -748,7 +748,7 @@
   "gsw": "dräckig",
   "gswArtikel": null,
   "gswBeispiel": "S Handtuech isch dräckig.",
-  "ayniLehce": [
+  "sameDialect": [
    "dreckig (A2)"
   ]
  },
@@ -832,7 +832,7 @@
   "gsw": "Meer",
   "gswArtikel": "s",
   "gswBeispiel": "S Meer isch hüt ruig. Mir mached Ferie a de Nordsee.",
-  "ayniLehce": [
+  "sameDialect": [
    "Meer (A1)"
   ]
  },
@@ -853,7 +853,7 @@
   "gsw": "sälber",
   "gswArtikel": null,
   "gswBeispiel": "Du muesch mer nöd hälfe, ich mache das sälber.",
-  "ayniLehce": [
+  "sameDialect": [
    "selber (B1)"
   ]
  },
@@ -937,7 +937,7 @@
   "gsw": "susch",
   "gswArtikel": null,
   "gswBeispiel": "Händ Si susch na en Wunsch? – Näi danke, das isch alles. Mach schnäll, susch chöme mer z schpaat!",
-  "ayniLehce": [
+  "sameDialect": [
    "ansonsten (A2)"
   ]
  },

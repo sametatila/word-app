@@ -54,7 +54,7 @@
   "tr": "cüzdan",
   "formen": "-n",
   "beispiel": "Sie hat ihre Geldbörse verloren.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Brieftasche (B1)",
    "das Portemonnaie/Portmonee (B1)"
   ]
@@ -82,7 +82,7 @@
   "tr": "yemek",
   "formen": "-e",
   "beispiel": "Mein Lieblingsgericht ist Pizza.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "Speise (B1)"
   ]
  },
@@ -149,7 +149,7 @@
   "tr": "geçerli olmak",
   "formen": "ist gültig, war gültig, ist gültig gewesen",
   "beispiel": "Der Pass ist nicht mehr gültig.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "gelten (B1)"
   ]
  },
@@ -200,7 +200,7 @@
   "tr": "başkent",
   "formen": "¨-e",
   "beispiel": "Berlin ist die Hauptstadt von Deutschland.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "Hauptdie Hauptstadt (B1)"
   ]
  },
@@ -251,7 +251,7 @@
   "tr": "dışarı",
   "formen": "",
   "beispiel": "Möchtet ihr nicht rauskommen? Das Wetter ist so schön. Kannst du bitte den Müll rausbringen?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "heraus- (B1)",
    "raus (B1)"
   ]
@@ -263,7 +263,7 @@
   "tr": "içeri",
   "formen": "",
   "beispiel": "Herein! Die Tür ist offen. Möchtest du nicht reinkommen? Ich kann uns einen Tee machen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "herein- (B1)"
   ]
  },
@@ -274,7 +274,7 @@
   "tr": "üretmek",
   "formen": "stellt her, hat hergestellt",
   "beispiel": "In unserer Firma stellen wir Möbel her.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "produzieren (B1)"
   ]
  },
@@ -373,7 +373,7 @@
   "tr": "ilgilenmek",
   "formen": "interessiert, hat interessiert interessant",
   "beispiel": "Ich interessiere mich für Fußball. Den Artikel über Brasilien finde ich sehr interessant. Ich lese gerade ein interessan",
-  "ayniAnlam": [
+  "sameMeaning": [
    "sich interessieren für (B2)"
   ]
  },
@@ -536,7 +536,7 @@
   "tr": "sağlık sigortası",
   "formen": "-n",
   "beispiel": "Bei welcher Krankenkasse sind Sie?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Krankenversicherung (B2)"
   ]
  },
@@ -619,7 +619,7 @@
   "tr": "dizüstü bilgisayar",
   "formen": "-s",
   "beispiel": "Ich brauche einen neuen Laptop.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Laptop (A2)"
   ]
  },
@@ -742,7 +742,7 @@
   "tr": "ilaç",
   "formen": "-e",
   "beispiel": "Nehmen Sie dieses Medikament dreimal pro Tag!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Arzneimittel (B2)"
   ]
  },
@@ -769,7 +769,7 @@
   "tr": "çoğunlukla, genellikle",
   "formen": "",
   "beispiel": "Meistens trinke ich zum Frühstück nur einen Kaffee.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "meist(ens) (B1)"
   ]
  },
@@ -836,7 +836,7 @@
   "tr": "cep telefonu",
   "formen": "-e",
   "beispiel": "Wie kann ich Sie erreichen? Haben Sie ein Mobiltelefon?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Handy (A1)"
   ]
  },
@@ -983,7 +983,7 @@
   "tr": "hiçbir yerde",
   "formen": "",
   "beispiel": "Hier kann man nirgends parken. Wo ist Stefan? Ich kann ihn nirgends sehen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "nirgendwo (B1)"
   ]
  },
@@ -1010,7 +1010,7 @@
   "tr": "gerekli",
   "formen": "",
   "beispiel": "Muss ich noch einmal kommen? – Nein, das ist nicht notwendig.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "erforderlich (B1)",
    "nötig (B1)"
   ]

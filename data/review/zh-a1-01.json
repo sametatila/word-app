@@ -16,7 +16,7 @@
   "gsw": "aber",
   "gswArtikel": null,
   "gswBeispiel": "De Film isch truurig, aber sehr schöön.",
-  "ayniLehce": [
+  "sameDialect": [
    "jedoch (B1)"
   ]
  },
@@ -145,7 +145,7 @@
   "gsw": "Aafang",
   "gswArtikel": "de",
   "gswBeispiel": "Am Aafang isch s Buech langwiilig.",
-  "ayniLehce": [
+  "sameDialect": [
    "Beginn (B1)"
   ]
  },
@@ -157,7 +157,7 @@
   "gsw": "aafange",
   "gswArtikel": null,
   "gswBeispiel": "Chömer bitte mit de Üebig zwölf aafange?",
-  "ayniLehce": [
+  "sameDialect": [
    "beginnen (A1)"
   ]
  },
@@ -232,7 +232,7 @@
   "gsw": "Inserat",
   "gswArtikel": "s",
   "gswBeispiel": "Lis bitte s Inserat i de Ziitig!",
-  "ayniLehce": [
+  "sameDialect": [
    "Annonce (B1)"
   ]
  },
@@ -280,7 +280,7 @@
   "gsw": "schaffe",
   "gswArtikel": null,
   "gswBeispiel": "Min Vatter schaffet bi ere Autofirma.",
-  "ayniLehce": [
+  "sameDialect": [
    "schaffen (A2)"
   ]
  },
@@ -301,7 +301,7 @@
   "gsw": "Arm",
   "gswArtikel": "de",
   "gswBeispiel": "Min Fründ hät de Arm broche.",
-  "ayniLehce": [
+  "sameDialect": [
    "arm (A2)"
   ]
  },
@@ -358,7 +358,7 @@
   "gsw": "ufmache",
   "gswArtikel": null,
   "gswBeispiel": "Chasch bitte s Fänschter ufmache?",
-  "ayniLehce": [
+  "sameDialect": [
    "öffnen (A1)"
   ]
  },
@@ -514,7 +514,7 @@
   "gsw": "Perron",
   "gswArtikel": "de",
   "gswBeispiel": "De Zug chunt am Perron zää aa.",
-  "ayniLehce": [
+  "sameDialect": [
    "Perron (B1)"
   ]
  },
@@ -625,7 +625,7 @@
   "gsw": "überchoo",
   "gswArtikel": null,
   "gswBeispiel": "Was häsch zum Geburtstag überchoo?",
-  "ayniLehce": [
+  "sameDialect": [
    "kriegen (A1)"
   ]
  },
@@ -745,7 +745,7 @@
   "gsw": "bitte",
   "gswArtikel": null,
   "gswBeispiel": "Chönd Si mer bitte hälfe? Bitte chum schnäll!",
-  "ayniLehce": [
+  "sameDialect": [
    "bitten (A1)"
   ]
  },
@@ -802,7 +802,7 @@
   "gsw": "bruuche",
   "gswArtikel": null,
   "gswBeispiel": "Ich bruuche en Taschenrächner.",
-  "ayniLehce": [
+  "sameDialect": [
    "benutzen (A1)",
    "benötigen (B1)",
    "gebrauchen (B1)"
@@ -843,7 +843,7 @@
   "gsw": "Brötli",
   "gswArtikel": "s",
   "gswBeispiel": "Ich isse lieber Brötli.",
-  "ayniLehce": [
+  "sameDialect": [
    "Brötli (B1)"
   ]
  },
@@ -900,7 +900,7 @@
   "gsw": "da",
   "gswArtikel": null,
   "gswBeispiel": "D Ziitig isch da uf em Tisch. Isch d Erika au da?",
-  "ayniLehce": [
+  "sameDialect": [
    "hier (A1)"
   ]
  },
@@ -921,7 +921,7 @@
   "gsw": "danke",
   "gswArtikel": null,
   "gswBeispiel": "D CD isch wunderbar, ich danke der.",
-  "ayniLehce": [
+  "sameDialect": [
    "danke (A1)"
   ]
  },
@@ -969,7 +969,7 @@
   "gsw": "drum",
   "gswArtikel": null,
   "gswBeispiel": "Ich mues lerne, drum bliib ich dihäi.",
-  "ayniLehce": [
+  "sameDialect": [
    "daher (B1)",
    "darum (A2)"
   ]
@@ -991,7 +991,7 @@
   "gsw": "Disco",
   "gswArtikel": "d",
   "gswBeispiel": "Si gaat gern i d Disco.",
-  "ayniLehce": [
+  "sameDialect": [
    "Diskothek (B1)"
   ]
  },

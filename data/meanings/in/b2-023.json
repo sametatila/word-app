@@ -1,16 +1,16 @@
 {
- "paket": "b2-023",
+ "packet": "b2-023",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4744,
    "de": "die Wirbelsäule",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wirbelsäulen",
-   "mevcutTr": "omurga",
-   "mevcutBeispiel": "Langes Sitzen belastet die Wirbelsäule mehr als schweres Heben.",
-   "mevcutBeispielTr": "Uzun süre oturmak omurgayı ağır kaldırmaktan daha çok yorar."
+   "currentTr": "omurga",
+   "currentBeispiel": "Langes Sitzen belastet die Wirbelsäule mehr als schweres Heben.",
+   "currentBeispielTr": "Uzun süre oturmak omurgayı ağır kaldırmaktan daha çok yorar."
   },
   {
    "id": 4745,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "vücut direnci, savunma gücü",
-   "mevcutBeispiel": "Frische Luft und Bewegung stärken die Abwehrkräfte im Winter.",
-   "mevcutBeispielTr": "Temiz hava ve hareket kışın vücut direncini güçlendirir."
+   "currentTr": "vücut direnci, savunma gücü",
+   "currentBeispiel": "Frische Luft und Bewegung stärken die Abwehrkräfte im Winter.",
+   "currentBeispielTr": "Temiz hava ve hareket kışın vücut direncini güçlendirir."
   },
   {
    "id": 4746,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Essgewohnheiten",
-   "mevcutTr": "beslenme alışkanlığı",
-   "mevcutBeispiel": "Alte Essgewohnheiten lassen sich nur mit viel Geduld ändern.",
-   "mevcutBeispielTr": "Eski beslenme alışkanlıkları ancak çok sabırla değiştirilebilir."
+   "currentTr": "beslenme alışkanlığı",
+   "currentBeispiel": "Alte Essgewohnheiten lassen sich nur mit viel Geduld ändern.",
+   "currentBeispielTr": "Eski beslenme alışkanlıkları ancak çok sabırla değiştirilebilir."
   },
   {
    "id": 4747,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sindirim",
-   "mevcutBeispiel": "Nach dem üppigen Essen brauchte seine Verdauung eine Weile.",
-   "mevcutBeispielTr": "Ağır yemekten sonra sindirimi biraz zaman aldı."
+   "currentTr": "sindirim",
+   "currentBeispiel": "Nach dem üppigen Essen brauchte seine Verdauung eine Weile.",
+   "currentBeispielTr": "Ağır yemekten sonra sindirimi biraz zaman aldı."
   },
   {
    "id": 4748,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ani açlık krizi, kurt gibi acıkma",
-   "mevcutBeispiel": "Am späten Abend überfällt mich oft der Heißhunger auf Süßes.",
-   "mevcutBeispielTr": "Akşamın geç saatlerinde beni sık sık tatlı krizi basar."
+   "currentTr": "ani açlık krizi, kurt gibi acıkma",
+   "currentBeispiel": "Am späten Abend überfällt mich oft der Heißhunger auf Süßes.",
+   "currentBeispielTr": "Akşamın geç saatlerinde beni sık sık tatlı krizi basar."
   },
   {
    "id": 4749,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sättigungen",
-   "mevcutTr": "doyma, tokluk",
-   "mevcutBeispiel": "Das Gefühl der Sättigung setzt erst nach zwanzig Minuten ein.",
-   "mevcutBeispielTr": "Tokluk hissi ancak yirmi dakika sonra başlar."
+   "currentTr": "doyma, tokluk",
+   "currentBeispiel": "Das Gefühl der Sättigung setzt erst nach zwanzig Minuten ein.",
+   "currentBeispielTr": "Tokluk hissi ancak yirmi dakika sonra başlar."
   },
   {
    "id": 4750,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Flüssigkeitszufuhren",
-   "mevcutTr": "sıvı alımı",
-   "mevcutBeispiel": "An heißen Tagen ist eine ausreichende Flüssigkeitszufuhr besonders wichtig.",
-   "mevcutBeispielTr": "Sıcak günlerde yeterli sıvı alımı özellikle önemlidir."
+   "currentTr": "sıvı alımı",
+   "currentBeispiel": "An heißen Tagen ist eine ausreichende Flüssigkeitszufuhr besonders wichtig.",
+   "currentBeispielTr": "Sıcak günlerde yeterli sıvı alımı özellikle önemlidir."
   },
   {
    "id": 4751,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Genussmittel",
-   "mevcutTr": "keyif verici madde (kahve, alkol, sigara)",
-   "mevcutBeispiel": "Kaffee und Alkohol gelten als Genussmittel, nicht als Nahrung.",
-   "mevcutBeispielTr": "Kahve ve alkol besin değil, keyif verici madde sayılır."
+   "currentTr": "keyif verici madde (kahve, alkol, sigara)",
+   "currentBeispiel": "Kaffee und Alkohol gelten als Genussmittel, nicht als Nahrung.",
+   "currentBeispielTr": "Kahve ve alkol besin değil, keyif verici madde sayılır."
   },
   {
    "id": 4752,
@@ -88,10 +88,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abhängigkeiten",
-   "mevcutTr": "bağımlılık",
-   "mevcutBeispiel": "Der Übergang vom Genuss zur Abhängigkeit verläuft oft unbemerkt.",
-   "mevcutBeispielTr": "Keyiften bağımlılığa geçiş çoğu zaman fark edilmeden olur.",
-   "cakisan": [
+   "currentTr": "bağımlılık",
+   "currentBeispiel": "Der Übergang vom Genuss zur Abhängigkeit verläuft oft unbemerkt.",
+   "currentBeispielTr": "Keyiften bağımlılığa geçiş çoğu zaman fark edilmeden olur.",
+   "overlapping": [
     "die Sucht (B1)"
    ]
   },
@@ -101,9 +101,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Biorhythmen",
-   "mevcutTr": "biyolojik ritim",
-   "mevcutBeispiel": "Nachtschichten bringen den Biorhythmus komplett durcheinander.",
-   "mevcutBeispielTr": "Gece vardiyaları biyolojik ritmi tamamen alt üst eder."
+   "currentTr": "biyolojik ritim",
+   "currentBeispiel": "Nachtschichten bringen den Biorhythmus komplett durcheinander.",
+   "currentBeispielTr": "Gece vardiyaları biyolojik ritmi tamamen alt üst eder."
   },
   {
    "id": 4754,
@@ -111,9 +111,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Nickerchen",
-   "mevcutTr": "kısa uyku, şekerleme",
-   "mevcutBeispiel": "Ein kurzes Nickerchen nach dem Mittagessen macht erstaunlich wach.",
-   "mevcutBeispielTr": "Öğle yemeğinden sonraki kısa bir şekerleme insanı şaşırtıcı derecede diriltir."
+   "currentTr": "kısa uyku, şekerleme",
+   "currentBeispiel": "Ein kurzes Nickerchen nach dem Mittagessen macht erstaunlich wach.",
+   "currentBeispielTr": "Öğle yemeğinden sonraki kısa bir şekerleme insanı şaşırtıcı derecede diriltir."
   },
   {
    "id": 4755,
@@ -121,9 +121,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "performans, verim gücü",
-   "mevcutBeispiel": "Am Nachmittag sinkt die geistige Leistungsfähigkeit bei vielen Menschen.",
-   "mevcutBeispielTr": "Öğleden sonra birçok insanda zihinsel performans düşer."
+   "currentTr": "performans, verim gücü",
+   "currentBeispiel": "Am Nachmittag sinkt die geistige Leistungsfähigkeit bei vielen Menschen.",
+   "currentBeispielTr": "Öğleden sonra birçok insanda zihinsel performans düşer."
   },
   {
    "id": 4756,
@@ -131,10 +131,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Überlastungen",
-   "mevcutTr": "aşırı yüklenme, aşırı zorlanma",
-   "mevcutBeispiel": "Die Schmerzen im Knie sind eine klassische Folge von Überlastung.",
-   "mevcutBeispielTr": "Dizdeki ağrılar aşırı zorlanmanın klasik bir sonucu.",
-   "cakisan": [
+   "currentTr": "aşırı yüklenme, aşırı zorlanma",
+   "currentBeispiel": "Die Schmerzen im Knie sind eine klassische Folge von Überlastung.",
+   "currentBeispielTr": "Dizdeki ağrılar aşırı zorlanmanın klasik bir sonucu.",
+   "overlapping": [
     "die Überforderung (B2)"
    ]
   },
@@ -144,9 +144,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "koruyucu bakım, önlem",
-   "mevcutBeispiel": "Zur Vorsorge geht sie einmal im Jahr zum Zahnarzt.",
-   "mevcutBeispielTr": "Koruyucu bakım için yılda bir kez diş hekimine gidiyor."
+   "currentTr": "koruyucu bakım, önlem",
+   "currentBeispiel": "Zur Vorsorge geht sie einmal im Jahr zum Zahnarzt.",
+   "currentBeispielTr": "Koruyucu bakım için yılda bir kez diş hekimine gidiyor."
   },
   {
    "id": 4758,
@@ -154,9 +154,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Trainingspläne",
-   "mevcutTr": "antrenman programı",
-   "mevcutBeispiel": "Sein Trainingsplan sieht drei Einheiten pro Woche vor.",
-   "mevcutBeispielTr": "Antrenman programı haftada üç seans öngörüyor."
+   "currentTr": "antrenman programı",
+   "currentBeispiel": "Sein Trainingsplan sieht drei Einheiten pro Woche vor.",
+   "currentBeispielTr": "Antrenman programı haftada üç seans öngörüyor."
   },
   {
    "id": 4759,
@@ -164,9 +164,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zerrungen",
-   "mevcutTr": "kas zorlanması, incinme",
-   "mevcutBeispiel": "Ohne Aufwärmen holt man sich schnell eine Zerrung.",
-   "mevcutBeispielTr": "Isınmadan hemen kas zorlanması yaşarsın."
+   "currentTr": "kas zorlanması, incinme",
+   "currentBeispiel": "Ohne Aufwärmen holt man sich schnell eine Zerrung.",
+   "currentBeispielTr": "Isınmadan hemen kas zorlanması yaşarsın."
   },
   {
    "id": 4760,
@@ -174,9 +174,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Prellungen",
-   "mevcutTr": "berelenme, ezik",
-   "mevcutBeispiel": "Der Sturz endete zum Glück nur mit einer Prellung.",
-   "mevcutBeispielTr": "Düşme neyse ki sadece bir berelenmeyle atlatıldı."
+   "currentTr": "berelenme, ezik",
+   "currentBeispiel": "Der Sturz endete zum Glück nur mit einer Prellung.",
+   "currentBeispielTr": "Düşme neyse ki sadece bir berelenmeyle atlatıldı."
   },
   {
    "id": 4761,
@@ -184,10 +184,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Heilungen",
-   "mevcutTr": "iyileşme, şifa",
-   "mevcutBeispiel": "Die Heilung des Bruchs dauerte länger als erwartet.",
-   "mevcutBeispielTr": "Kırığın iyileşmesi beklenenden uzun sürdü.",
-   "cakisan": [
+   "currentTr": "iyileşme, şifa",
+   "currentBeispiel": "Die Heilung des Bruchs dauerte länger als erwartet.",
+   "currentBeispielTr": "Kırığın iyileşmesi beklenenden uzun sürdü.",
+   "overlapping": [
     "die Besserung (B1)",
     "die Genesung (B2)"
    ]
@@ -198,10 +198,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Auszeiten",
-   "mevcutTr": "mola, ara verme",
-   "mevcutBeispiel": "Nach dem stressigen Jahr nahm er sich eine längere Auszeit.",
-   "mevcutBeispielTr": "Stresli yılın ardından kendine uzunca bir mola verdi.",
-   "cakisan": [
+   "currentTr": "mola, ara verme",
+   "currentBeispiel": "Nach dem stressigen Jahr nahm er sich eine längere Auszeit.",
+   "currentBeispielTr": "Stresli yılın ardından kendine uzunca bir mola verdi.",
+   "overlapping": [
     "die Pause (A1)"
    ]
   },
@@ -211,9 +211,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Achtsamkeiten",
-   "mevcutTr": "farkındalık, dikkatli olma",
-   "mevcutBeispiel": "Mit etwas Achtsamkeit merkt man früher, wann der Körper Pause braucht.",
-   "mevcutBeispielTr": "Biraz farkındalıkla bedenin ne zaman mola istediğini daha erken fark edersin."
+   "currentTr": "farkındalık, dikkatli olma",
+   "currentBeispiel": "Mit etwas Achtsamkeit merkt man früher, wann der Körper Pause braucht.",
+   "currentBeispielTr": "Biraz farkındalıkla bedenin ne zaman mola istediğini daha erken fark edersin."
   },
   {
    "id": 4764,
@@ -221,9 +221,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Körperhaltungen",
-   "mevcutTr": "duruş, vücut duruşu",
-   "mevcutBeispiel": "Eine schlechte Körperhaltung am Bildschirm führt oft zu Nackenschmerzen.",
-   "mevcutBeispielTr": "Ekran başındaki kötü duruş çoğu zaman boyun ağrısına yol açar."
+   "currentTr": "duruş, vücut duruşu",
+   "currentBeispiel": "Eine schlechte Körperhaltung am Bildschirm führt oft zu Nackenschmerzen.",
+   "currentBeispielTr": "Ekran başındaki kötü duruş çoğu zaman boyun ağrısına yol açar."
   },
   {
    "id": 4765,
@@ -231,9 +231,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Körpergefühle",
-   "mevcutTr": "beden algısı, beden hissi",
-   "mevcutBeispiel": "Tanzen hat ihr ein ganz neues Körpergefühl gegeben.",
-   "mevcutBeispielTr": "Dans ona bambaşka bir beden algısı kazandırdı."
+   "currentTr": "beden algısı, beden hissi",
+   "currentBeispiel": "Tanzen hat ihr ein ganz neues Körpergefühl gegeben.",
+   "currentBeispielTr": "Dans ona bambaşka bir beden algısı kazandırdı."
   },
   {
    "id": 4766,
@@ -241,9 +241,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ausgleiche",
-   "mevcutTr": "denge sağlama, telafi",
-   "mevcutBeispiel": "Schwimmen ist für ihn der perfekte Ausgleich zum Bürojob.",
-   "mevcutBeispielTr": "Yüzmek onun için ofis işinin mükemmel dengeleyicisi."
+   "currentTr": "denge sağlama, telafi",
+   "currentBeispiel": "Schwimmen ist für ihn der perfekte Ausgleich zum Bürojob.",
+   "currentBeispielTr": "Yüzmek onun için ofis işinin mükemmel dengeleyicisi."
   },
   {
    "id": 4767,
@@ -251,9 +251,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "gece uykusu, gece dinlenmesi",
-   "mevcutBeispiel": "Der Lärm der Nachbarn stört regelmäßig meine Nachtruhe.",
-   "mevcutBeispielTr": "Komşuların gürültüsü gece uykumu düzenli olarak bölüyor."
+   "currentTr": "gece uykusu, gece dinlenmesi",
+   "currentBeispiel": "Der Lärm der Nachbarn stört regelmäßig meine Nachtruhe.",
+   "currentBeispielTr": "Komşuların gürültüsü gece uykumu düzenli olarak bölüyor."
   },
   {
    "id": 4768,
@@ -261,9 +261,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "derin uyku",
-   "mevcutBeispiel": "Im Tiefschlaf erholt sich der Körper am gründlichsten.",
-   "mevcutBeispielTr": "Beden en iyi derin uykuda toparlanır."
+   "currentTr": "derin uyku",
+   "currentBeispiel": "Im Tiefschlaf erholt sich der Körper am gründlichsten.",
+   "currentBeispielTr": "Beden en iyi derin uykuda toparlanır."
   },
   {
    "id": 4769,
@@ -271,9 +271,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "öz disiplin",
-   "mevcutBeispiel": "Frühsport verlangt am Anfang eine Menge Selbstdisziplin.",
-   "mevcutBeispielTr": "Sabah sporu başlangıçta epeyce öz disiplin ister."
+   "currentTr": "öz disiplin",
+   "currentBeispiel": "Frühsport verlangt am Anfang eine Menge Selbstdisziplin.",
+   "currentBeispielTr": "Sabah sporu başlangıçta epeyce öz disiplin ister."
   },
   {
    "id": 4770,
@@ -281,9 +281,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gedehnt",
-   "mevcutTr": "germe hareketi yapmak, esnemek (spor)",
-   "mevcutBeispiel": "Nach dem Laufen solltest du dich gründlich dehnen.",
-   "mevcutBeispielTr": "Koşudan sonra iyice germe hareketi yapmalısın."
+   "currentTr": "germe hareketi yapmak, esnemek (spor)",
+   "currentBeispiel": "Nach dem Laufen solltest du dich gründlich dehnen.",
+   "currentBeispielTr": "Koşudan sonra iyice germe hareketi yapmalısın."
   },
   {
    "id": 4771,
@@ -291,9 +291,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verausgabt",
-   "mevcutTr": "kendini tüketmek, gücünü aşırı harcamak",
-   "mevcutBeispiel": "Er hat sich im ersten Kilometer völlig verausgabt.",
-   "mevcutBeispielTr": "İlk kilometrede kendini tamamen tüketti."
+   "currentTr": "kendini tüketmek, gücünü aşırı harcamak",
+   "currentBeispiel": "Er hat sich im ersten Kilometer völlig verausgabt.",
+   "currentBeispielTr": "İlk kilometrede kendini tamamen tüketti."
   },
   {
    "id": 4772,
@@ -301,9 +301,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist ermüdet",
-   "mevcutTr": "yorulmak, yormak",
-   "mevcutBeispiel": "Die Augen ermüden schnell, wenn das Licht zu schwach ist.",
-   "mevcutBeispielTr": "Işık çok zayıf olduğunda gözler çabuk yorulur."
+   "currentTr": "yorulmak, yormak",
+   "currentBeispiel": "Die Augen ermüden schnell, wenn das Licht zu schwach ist.",
+   "currentBeispielTr": "Işık çok zayıf olduğunda gözler çabuk yorulur."
   },
   {
    "id": 4773,
@@ -311,9 +311,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgewöhnt",
-   "mevcutTr": "bir alışkanlığı bırakmak",
-   "mevcutBeispiel": "Das späte Naschen habe ich mir mühsam abgewöhnt.",
-   "mevcutBeispielTr": "Geç saatte atıştırma alışkanlığını zorlukla bıraktım."
+   "currentTr": "bir alışkanlığı bırakmak",
+   "currentBeispiel": "Das späte Naschen habe ich mir mühsam abgewöhnt.",
+   "currentBeispielTr": "Geç saatte atıştırma alışkanlığını zorlukla bıraktım."
   },
   {
    "id": 4774,
@@ -321,9 +321,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat durchgeschlafen",
-   "mevcutTr": "kesintisiz uyumak",
-   "mevcutBeispiel": "Seit Wochen kann sie nachts nicht mehr durchschlafen.",
-   "mevcutBeispielTr": "Haftalardır geceleri kesintisiz uyuyamıyor."
+   "currentTr": "kesintisiz uyumak",
+   "currentBeispiel": "Seit Wochen kann sie nachts nicht mehr durchschlafen.",
+   "currentBeispielTr": "Haftalardır geceleri kesintisiz uyuyamıyor."
   },
   {
    "id": 4775,
@@ -331,10 +331,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gestärkt",
-   "mevcutTr": "güçlendirmek, kuvvetlendirmek",
-   "mevcutBeispiel": "Diese Übung stärkt vor allem den unteren Rücken.",
-   "mevcutBeispielTr": "Bu egzersiz özellikle bel bölgesini güçlendirir.",
-   "cakisan": [
+   "currentTr": "güçlendirmek, kuvvetlendirmek",
+   "currentBeispiel": "Diese Übung stärkt vor allem den unteren Rücken.",
+   "currentBeispielTr": "Bu egzersiz özellikle bel bölgesini güçlendirir.",
+   "overlapping": [
     "verstärken (B2)",
     "ertüchtigen (C1)"
    ]
@@ -345,9 +345,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verkrampft",
-   "mevcutTr": "kasılmak, kramp girmek",
-   "mevcutBeispiel": "Beim Schwimmen ist ihm plötzlich die Wade verkrampft.",
-   "mevcutBeispielTr": "Yüzerken birden baldırına kramp girdi."
+   "currentTr": "kasılmak, kramp girmek",
+   "currentBeispiel": "Beim Schwimmen ist ihm plötzlich die Wade verkrampft.",
+   "currentBeispielTr": "Yüzerken birden baldırına kramp girdi."
   },
   {
    "id": 4777,
@@ -355,9 +355,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat aufgewärmt",
-   "mevcutTr": "ısınmak (spor öncesi)",
-   "mevcutBeispiel": "Vor dem Spiel wärmt sich die Mannschaft zwanzig Minuten auf.",
-   "mevcutBeispielTr": "Maçtan önce takım yirmi dakika ısınıyor."
+   "currentTr": "ısınmak (spor öncesi)",
+   "currentBeispiel": "Vor dem Spiel wärmt sich die Mannschaft zwanzig Minuten auf.",
+   "currentBeispielTr": "Maçtan önce takım yirmi dakika ısınıyor."
   },
   {
    "id": 4778,
@@ -365,10 +365,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist zusammengebrochen",
-   "mevcutTr": "çökmek, yığılmak",
-   "mevcutBeispiel": "Kurz vor dem Ziel brach der Läufer erschöpft zusammen.",
-   "mevcutBeispielTr": "Bitişe az kala koşucu bitkin hâlde yere yığıldı.",
-   "cakisan": [
+   "currentTr": "çökmek, yığılmak",
+   "currentBeispiel": "Kurz vor dem Ziel brach der Läufer erschöpft zusammen.",
+   "currentBeispielTr": "Bitişe az kala koşucu bitkin hâlde yere yığıldı.",
+   "overlapping": [
     "einstürzen (B2)",
     "abstürzen (B2)"
    ]
@@ -379,9 +379,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gezügelt",
-   "mevcutTr": "dizginlemek, frenlemek",
-   "mevcutBeispiel": "Beim Buffet muss ich meinen Appetit wirklich zügeln.",
-   "mevcutBeispielTr": "Açık büfede iştahımı gerçekten dizginlemem gerekiyor."
+   "currentTr": "dizginlemek, frenlemek",
+   "currentBeispiel": "Beim Buffet muss ich meinen Appetit wirklich zügeln.",
+   "currentBeispielTr": "Açık büfede iştahımı gerçekten dizginlemem gerekiyor."
   },
   {
    "id": 4780,
@@ -389,10 +389,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat unterdrückt",
-   "mevcutTr": "bastırmak, tutmak",
-   "mevcutBeispiel": "Im Meeting konnte er ein Gähnen kaum unterdrücken.",
-   "mevcutBeispielTr": "Toplantıda esnemesini zar zor bastırabildi.",
-   "cakisan": [
+   "currentTr": "bastırmak, tutmak",
+   "currentBeispiel": "Im Meeting konnte er ein Gähnen kaum unterdrücken.",
+   "currentBeispielTr": "Toplantıda esnemesini zar zor bastırabildi.",
+   "overlapping": [
     "verdrängen (B2)"
    ]
   },
@@ -402,9 +402,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat aufgerafft",
-   "mevcutTr": "kendini toparlayıp harekete geçmek",
-   "mevcutBeispiel": "Abends kann ich mich kaum noch zum Sport aufraffen.",
-   "mevcutBeispielTr": "Akşamları kendimi zar zor spora ikna edebiliyorum."
+   "currentTr": "kendini toparlayıp harekete geçmek",
+   "currentBeispiel": "Abends kann ich mich kaum noch zum Sport aufraffen.",
+   "currentBeispielTr": "Akşamları kendimi zar zor spora ikna edebiliyorum."
   },
   {
    "id": 4782,
@@ -412,10 +412,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat durchgehalten",
-   "mevcutTr": "dayanmak, sürdürmek",
-   "mevcutBeispiel": "Die letzten zwei Kilometer hat sie tapfer durchgehalten.",
-   "mevcutBeispielTr": "Son iki kilometreye cesurca dayandı.",
-   "cakisan": [
+   "currentTr": "dayanmak, sürdürmek",
+   "currentBeispiel": "Die letzten zwei Kilometer hat sie tapfer durchgehalten.",
+   "currentBeispielTr": "Son iki kilometreye cesurca dayandı.",
+   "overlapping": [
     "beruhen (B2)",
     "aushalten (B2)",
     "sich berufen (C1)"
@@ -427,10 +427,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat umgestellt",
-   "mevcutTr": "değiştirmek, düzenini değiştirmek",
-   "mevcutBeispiel": "Nach der Diagnose hat er seine Ernährung komplett umgestellt.",
-   "mevcutBeispielTr": "Teşhisten sonra beslenmesini tamamen değiştirdi.",
-   "cakisan": [
+   "currentTr": "değiştirmek, düzenini değiştirmek",
+   "currentBeispiel": "Nach der Diagnose hat er seine Ernährung komplett umgestellt.",
+   "currentBeispielTr": "Teşhisten sonra beslenmesini tamamen değiştirdi.",
+   "overlapping": [
     "ändern (A2)",
     "wechseln (A2)",
     "tauschen (B1)",
@@ -444,10 +444,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gemieden",
-   "mevcutTr": "kaçınmak, uzak durmak",
-   "mevcutBeispiel": "Seit der Diät meidet sie Zucker fast vollständig.",
-   "mevcutBeispielTr": "Diyetten beri şekerden neredeyse tamamen uzak duruyor.",
-   "cakisan": [
+   "currentTr": "kaçınmak, uzak durmak",
+   "currentBeispiel": "Seit der Diät meidet sie Zucker fast vollständig.",
+   "currentBeispielTr": "Diyetten beri şekerden neredeyse tamamen uzak duruyor.",
+   "overlapping": [
     "unterlassen (B1)",
     "vermeiden (B1)"
    ]
@@ -458,9 +458,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gegönnt",
-   "mevcutTr": "kendine tanımak, kendine izin vermek",
-   "mevcutBeispiel": "Am Wochenende gönnt er sich eine lange Mittagspause.",
-   "mevcutBeispielTr": "Hafta sonu kendine uzun bir öğle molası tanıyor."
+   "currentTr": "kendine tanımak, kendine izin vermek",
+   "currentBeispiel": "Am Wochenende gönnt er sich eine lange Mittagspause.",
+   "currentBeispielTr": "Hafta sonu kendine uzun bir öğle molası tanıyor."
   },
   {
    "id": 4786,
@@ -468,9 +468,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gedöst",
-   "mevcutTr": "uyuklamak, hafif uyuklamak",
-   "mevcutBeispiel": "Im Zug döste ich zwei Stunden vor mich hin.",
-   "mevcutBeispielTr": "Trende iki saat boyunca kendi hâlimde uyukladım."
+   "currentTr": "uyuklamak, hafif uyuklamak",
+   "currentBeispiel": "Im Zug döste ich zwei Stunden vor mich hin.",
+   "currentBeispielTr": "Trende iki saat boyunca kendi hâlimde uyukladım."
   },
   {
    "id": 4787,
@@ -478,10 +478,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat angekurbelt",
-   "mevcutTr": "hızlandırmak, canlandırmak",
-   "mevcutBeispiel": "Ein kalter Guss am Morgen kurbelt den Kreislauf an.",
-   "mevcutBeispielTr": "Sabah soğuk duş dolaşımı canlandırır.",
-   "cakisan": [
+   "currentTr": "hızlandırmak, canlandırmak",
+   "currentBeispiel": "Ein kalter Guss am Morgen kurbelt den Kreislauf an.",
+   "currentBeispielTr": "Sabah soğuk duş dolaşımı canlandırır.",
+   "overlapping": [
     "beschleunigen (B2)"
    ]
   },
@@ -491,9 +491,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "ist gehumpelt",
-   "mevcutTr": "topallamak",
-   "mevcutBeispiel": "Nach dem Sturz humpelte er den ganzen Weg nach Hause.",
-   "mevcutBeispielTr": "Düştükten sonra eve kadar bütün yol topalladı."
+   "currentTr": "topallamak",
+   "currentBeispiel": "Nach dem Sturz humpelte er den ganzen Weg nach Hause.",
+   "currentBeispielTr": "Düştükten sonra eve kadar bütün yol topalladı."
   },
   {
    "id": 4789,
@@ -501,9 +501,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "dinlenmiş, dinç",
-   "mevcutBeispiel": "Nach dem Urlaub wirkte sie endlich wieder ausgeruht.",
-   "mevcutBeispielTr": "Tatilden sonra nihayet yeniden dinç görünüyordu."
+   "currentTr": "dinlenmiş, dinç",
+   "currentBeispiel": "Nach dem Urlaub wirkte sie endlich wieder ausgeruht.",
+   "currentBeispielTr": "Tatilden sonra nihayet yeniden dinç görünüyordu."
   },
   {
    "id": 4790,
@@ -511,10 +511,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ağır, uyuşuk, hantal",
-   "mevcutBeispiel": "Nach dem schweren Essen fühlte ich mich richtig träge.",
-   "mevcutBeispielTr": "Ağır yemekten sonra kendimi iyice uyuşuk hissettim.",
-   "cakisan": [
+   "currentTr": "ağır, uyuşuk, hantal",
+   "currentBeispiel": "Nach dem schweren Essen fühlte ich mich richtig träge.",
+   "currentBeispielTr": "Ağır yemekten sonra kendimi iyice uyuşuk hissettim.",
+   "overlapping": [
     "schwerwiegend (C1)"
    ]
   },
@@ -524,9 +524,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "zinde, neşeli, uyanık",
-   "mevcutBeispiel": "Nach zwei Tassen Kaffee war er wieder munter.",
-   "mevcutBeispielTr": "İki fincan kahveden sonra yeniden zinde oldu."
+   "currentTr": "zinde, neşeli, uyanık",
+   "currentBeispiel": "Nach zwei Tassen Kaffee war er wieder munter.",
+   "currentBeispielTr": "İki fincan kahveden sonra yeniden zinde oldu."
   },
   {
    "id": 4792,
@@ -534,9 +534,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "dengeli",
-   "mevcutBeispiel": "Eine ausgewogene Ernährung ist wichtiger als jede Diät.",
-   "mevcutBeispielTr": "Dengeli bir beslenme her diyetten daha önemlidir."
+   "currentTr": "dengeli",
+   "currentBeispiel": "Eine ausgewogene Ernährung ist wichtiger als jede Diät.",
+   "currentBeispielTr": "Dengeli bir beslenme her diyetten daha önemlidir."
   },
   {
    "id": 4793,
@@ -544,10 +544,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ruhsal, manevi",
-   "mevcutBeispiel": "Dauerstress belastet den Menschen körperlich und seelisch.",
-   "mevcutBeispielTr": "Sürekli stres insanı hem bedensel hem ruhsal olarak yıpratır.",
-   "cakisan": [
+   "currentTr": "ruhsal, manevi",
+   "currentBeispiel": "Dauerstress belastet den Menschen körperlich und seelisch.",
+   "currentBeispielTr": "Sürekli stres insanı hem bedensel hem ruhsal olarak yıpratır.",
+   "overlapping": [
     "psychisch (B2)"
    ]
   }

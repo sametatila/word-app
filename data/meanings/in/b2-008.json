@@ -1,16 +1,16 @@
 {
- "paket": "b2-008",
+ "packet": "b2-008",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 3761,
    "de": "die Stornierung",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Stornierungen",
-   "mevcutTr": "iptal etme",
-   "mevcutBeispiel": "Die Stornierung ist bis 24 Stunden vorher kostenlos.",
-   "mevcutBeispielTr": "İptal, 24 saat öncesine kadar ücretsiz."
+   "currentTr": "iptal etme",
+   "currentBeispiel": "Die Stornierung ist bis 24 Stunden vorher kostenlos.",
+   "currentBeispielTr": "İptal, 24 saat öncesine kadar ücretsiz."
   },
   {
    "id": 3764,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Ferienwohnungen",
-   "mevcutTr": "tatil evi, kiralık daire",
-   "mevcutBeispiel": "Wir haben eine Ferienwohnung direkt am Meer gemietet.",
-   "mevcutBeispielTr": "Denizin hemen kıyısında bir tatil evi kiraladık."
+   "currentTr": "tatil evi, kiralık daire",
+   "currentBeispiel": "Wir haben eine Ferienwohnung direkt am Meer gemietet.",
+   "currentBeispielTr": "Denizin hemen kıyısında bir tatil evi kiraladık."
   },
   {
    "id": 3766,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Freizeitbeschäftigungen",
-   "mevcutTr": "boş zaman etkinliği",
-   "mevcutBeispiel": "Lesen ist meine liebste Freizeitbeschäftigung im Winter.",
-   "mevcutBeispielTr": "Kışın en sevdiğim boş zaman etkinliği kitap okumak."
+   "currentTr": "boş zaman etkinliği",
+   "currentBeispiel": "Lesen ist meine liebste Freizeitbeschäftigung im Winter.",
+   "currentBeispielTr": "Kışın en sevdiğim boş zaman etkinliği kitap okumak."
   },
   {
    "id": 3770,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "boş vakit, huzurlu zaman",
-   "mevcutBeispiel": "Endlich habe ich Muße, ein gutes Buch zu lesen.",
-   "mevcutBeispielTr": "Sonunda güzel bir kitap okuyacak boş vaktim var."
+   "currentTr": "boş vakit, huzurlu zaman",
+   "currentBeispiel": "Endlich habe ich Muße, ein gutes Buch zu lesen.",
+   "currentBeispielTr": "Sonunda güzel bir kitap okuyacak boş vaktim var."
   },
   {
    "id": 3771,
@@ -48,9 +48,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "führt zurück, hat zurückgeführt",
-   "mevcutTr": "bir şeye bağlamak, dayandırmak",
-   "mevcutBeispiel": "Der Erfolg lässt sich auf harte Arbeit zurückführen.",
-   "mevcutBeispielTr": "Bu başarı sıkı çalışmaya bağlanabilir."
+   "currentTr": "bir şeye bağlamak, dayandırmak",
+   "currentBeispiel": "Der Erfolg lässt sich auf harte Arbeit zurückführen.",
+   "currentBeispielTr": "Bu başarı sıkı çalışmaya bağlanabilir."
   },
   {
    "id": 3772,
@@ -58,10 +58,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "trägt bei, hat beigetragen",
-   "mevcutTr": "katkıda bulunmak",
-   "mevcutBeispiel": "Jeder kann zum Klimaschutz beitragen.",
-   "mevcutBeispielTr": "Herkes iklimin korunmasına katkıda bulunabilir.",
-   "cakisan": [
+   "currentTr": "katkıda bulunmak",
+   "currentBeispiel": "Jeder kann zum Klimaschutz beitragen.",
+   "currentBeispielTr": "Herkes iklimin korunmasına katkıda bulunabilir.",
+   "overlapping": [
     "mitwirken (B2)"
    ]
   },
@@ -71,9 +71,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "setzt sich durch, hat sich durchgesetzt",
-   "mevcutTr": "kendini kabul ettirmek, üstün gelmek",
-   "mevcutBeispiel": "Die neue Technik hat sich schnell durchgesetzt.",
-   "mevcutBeispielTr": "Yeni teknoloji kısa sürede kendini kabul ettirdi."
+   "currentTr": "kendini kabul ettirmek, üstün gelmek",
+   "currentBeispiel": "Die neue Technik hat sich schnell durchgesetzt.",
+   "currentBeispielTr": "Yeni teknoloji kısa sürede kendini kabul ettirdi."
   },
   {
    "id": 3774,
@@ -81,9 +81,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "setzt sich auseinander, hat sich auseinandergesetzt",
-   "mevcutTr": "bir konuyla uğraşmak, ele almak",
-   "mevcutBeispiel": "Die Schüler setzen sich mit dem Thema Migration auseinander.",
-   "mevcutBeispielTr": "Öğrenciler göç konusunu derinlemesine ele alıyor."
+   "currentTr": "bir konuyla uğraşmak, ele almak",
+   "currentBeispiel": "Die Schüler setzen sich mit dem Thema Migration auseinander.",
+   "currentBeispielTr": "Öğrenciler göç konusunu derinlemesine ele alıyor."
   },
   {
    "id": 3779,
@@ -91,10 +91,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "beruht, hat beruht",
-   "mevcutTr": "dayanmak, temellenmek",
-   "mevcutBeispiel": "Die Theorie beruht auf jahrelangen Forschungen.",
-   "mevcutBeispielTr": "Kuram, yıllar süren araştırmalara dayanıyor.",
-   "cakisan": [
+   "currentTr": "dayanmak, temellenmek",
+   "currentBeispiel": "Die Theorie beruht auf jahrelangen Forschungen.",
+   "currentBeispielTr": "Kuram, yıllar süren araştırmalara dayanıyor.",
+   "overlapping": [
     "aushalten (B2)",
     "durchhalten (B2)",
     "sich berufen (C1)"
@@ -106,10 +106,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "besteht, hat bestanden",
-   "mevcutTr": "oluşmak, meydana gelmek",
-   "mevcutBeispiel": "Das Team besteht aus zehn Mitgliedern.",
-   "mevcutBeispielTr": "Takım on üyeden oluşuyor.",
-   "cakisan": [
+   "currentTr": "oluşmak, meydana gelmek",
+   "currentBeispiel": "Das Team besteht aus zehn Mitgliedern.",
+   "currentBeispielTr": "Takım on üyeden oluşuyor.",
+   "overlapping": [
     "entstehen (B1)",
     "sich herausbilden (C1)"
    ]
@@ -120,10 +120,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "bewirbt sich, hat sich beworben",
-   "mevcutTr": "başvurmak",
-   "mevcutBeispiel": "Sie bewirbt sich um ein Stipendium im Ausland.",
-   "mevcutBeispielTr": "Yurt dışında bir burs için başvuruyor.",
-   "cakisan": [
+   "currentTr": "başvurmak",
+   "currentBeispiel": "Sie bewirbt sich um ein Stipendium im Ausland.",
+   "currentBeispielTr": "Yurt dışında bir burs için başvuruyor.",
+   "overlapping": [
     "beantragen (B1)",
     "heranziehen (C1)"
    ]
@@ -134,9 +134,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "verlässt sich, hat sich verlassen",
-   "mevcutTr": "bel bağlamak, güvenip dayanmak",
-   "mevcutBeispiel": "Du kannst dich jederzeit auf meine Hilfe verlassen.",
-   "mevcutBeispielTr": "Yardımıma her zaman güvenebilirsin."
+   "currentTr": "bel bağlamak, güvenip dayanmak",
+   "currentBeispiel": "Du kannst dich jederzeit auf meine Hilfe verlassen.",
+   "currentBeispielTr": "Yardımıma her zaman güvenebilirsin."
   },
   {
    "id": 3787,
@@ -144,10 +144,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "bezieht sich, hat sich bezogen",
-   "mevcutTr": "atıfta bulunmak, ilgili olmak",
-   "mevcutBeispiel": "Diese Frage bezieht sich auf den letzten Abschnitt.",
-   "mevcutBeispielTr": "Bu soru son bölümle ilgili.",
-   "cakisan": [
+   "currentTr": "atıfta bulunmak, ilgili olmak",
+   "currentBeispiel": "Diese Frage bezieht sich auf den letzten Abschnitt.",
+   "currentBeispielTr": "Bu soru son bölümle ilgili.",
+   "overlapping": [
     "verweisen (C1)"
    ]
   },
@@ -157,10 +157,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "engagiert sich, hat sich engagiert",
-   "mevcutTr": "kendini adamak, faal çalışmak",
-   "mevcutBeispiel": "Sie engagiert sich seit Jahren für den Umweltschutz.",
-   "mevcutBeispielTr": "Yıllardır çevre koruması için aktif çalışıyor.",
-   "cakisan": [
+   "currentTr": "kendini adamak, faal çalışmak",
+   "currentBeispiel": "Sie engagiert sich seit Jahren für den Umweltschutz.",
+   "currentBeispielTr": "Yıllardır çevre koruması için aktif çalışıyor.",
+   "overlapping": [
     "sich engagieren (B2)",
     "sich widmen (B2)"
    ]
@@ -171,9 +171,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "orientiert sich, hat sich orientiert",
-   "mevcutTr": "örnek almak, yön belirlemek",
-   "mevcutBeispiel": "Junge Designer orientieren sich oft an bekannten Vorbildern.",
-   "mevcutBeispielTr": "Genç tasarımcılar çoğu zaman tanınmış örnekleri kendine rehber alıyor."
+   "currentTr": "örnek almak, yön belirlemek",
+   "currentBeispiel": "Junge Designer orientieren sich oft an bekannten Vorbildern.",
+   "currentBeispielTr": "Genç tasarımcılar çoğu zaman tanınmış örnekleri kendine rehber alıyor."
   },
   {
    "id": 3790,
@@ -181,10 +181,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "richtet sich, hat sich gerichtet",
-   "mevcutTr": "uymak, göre hareket etmek",
-   "mevcutBeispiel": "Der Preis richtet sich nach der Nachfrage.",
-   "mevcutBeispielTr": "Fiyat, talebe göre belirleniyor.",
-   "cakisan": [
+   "currentTr": "uymak, göre hareket etmek",
+   "currentBeispiel": "Der Preis richtet sich nach der Nachfrage.",
+   "currentBeispielTr": "Fiyat, talebe göre belirleniyor.",
+   "overlapping": [
     "passen (A2)",
     "einhalten (B2)"
    ]
@@ -195,10 +195,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "weist hin, hat hingewiesen",
-   "mevcutTr": "dikkat çekmek, işaret etmek",
-   "mevcutBeispiel": "Der Arzt weist auf die Risiken der Behandlung hin.",
-   "mevcutBeispielTr": "Doktor, tedavinin risklerine dikkat çekiyor.",
-   "cakisan": [
+   "currentTr": "dikkat çekmek, işaret etmek",
+   "currentBeispiel": "Der Arzt weist auf die Risiken der Behandlung hin.",
+   "currentBeispielTr": "Doktor, tedavinin risklerine dikkat çekiyor.",
+   "overlapping": [
     "auffallen (B1)",
     "hinweisen (B1)"
    ]
@@ -209,10 +209,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "resultiert, hat resultiert",
-   "mevcutTr": "kaynaklanmak, -den doğmak",
-   "mevcutBeispiel": "Der Streit resultierte aus einem einfachen Missverständnis.",
-   "mevcutBeispielTr": "Kavga basit bir yanlış anlamadan kaynaklandı.",
-   "cakisan": [
+   "currentTr": "kaynaklanmak, -den doğmak",
+   "currentBeispiel": "Der Streit resultierte aus einem einfachen Missverständnis.",
+   "currentBeispielTr": "Kavga basit bir yanlış anlamadan kaynaklandı.",
+   "overlapping": [
     "resultieren (C1)"
    ]
   },
@@ -222,9 +222,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "neigt, hat geneigt",
-   "mevcutTr": "eğiliminde olmak",
-   "mevcutBeispiel": "Er neigt dazu, kleine Probleme zu übertreiben.",
-   "mevcutBeispielTr": "Küçük sorunları abartma eğiliminde."
+   "currentTr": "eğiliminde olmak",
+   "currentBeispiel": "Er neigt dazu, kleine Probleme zu übertreiben.",
+   "currentBeispielTr": "Küçük sorunları abartma eğiliminde."
   },
   {
    "id": 3796,
@@ -232,10 +232,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "verfügt, hat verfügt",
-   "mevcutTr": "sahip olmak, tasarrufunda bulundurmak",
-   "mevcutBeispiel": "Die Firma verfügt über modernste Technik.",
-   "mevcutBeispielTr": "Şirket en modern teknolojiye sahip.",
-   "cakisan": [
+   "currentTr": "sahip olmak, tasarrufunda bulundurmak",
+   "currentBeispiel": "Die Firma verfügt über modernste Technik.",
+   "currentBeispielTr": "Şirket en modern teknolojiye sahip.",
+   "overlapping": [
     "haben (A1)"
    ]
   },
@@ -245,9 +245,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "leidet, hat gelitten",
-   "mevcutTr": "-den muzdarip olmak, çekmek",
-   "mevcutBeispiel": "Sie leidet seit Jahren an einer seltenen Krankheit.",
-   "mevcutBeispielTr": "Yıllardır nadir bir hastalıktan muzdarip."
+   "currentTr": "-den muzdarip olmak, çekmek",
+   "currentBeispiel": "Sie leidet seit Jahren an einer seltenen Krankheit.",
+   "currentBeispielTr": "Yıllardır nadir bir hastalıktan muzdarip."
   },
   {
    "id": 3800,
@@ -255,10 +255,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "erinnert sich, hat sich erinnert",
-   "mevcutTr": "hatırlamak, anımsamak",
-   "mevcutBeispiel": "Ich erinnere mich kaum an meine frühe Kindheit.",
-   "mevcutBeispielTr": "Erken çocukluğumu neredeyse hiç hatırlamıyorum.",
-   "cakisan": [
+   "currentTr": "hatırlamak, anımsamak",
+   "currentBeispiel": "Ich erinnere mich kaum an meine frühe Kindheit.",
+   "currentBeispielTr": "Erken çocukluğumu neredeyse hiç hatırlamıyorum.",
+   "overlapping": [
     "sich erinnern (A2)"
    ]
   },
@@ -268,10 +268,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "entscheidet sich, hat sich entschieden",
-   "mevcutTr": "karar vermek, seçmek",
-   "mevcutBeispiel": "Wir haben uns für die günstigere Variante entschieden.",
-   "mevcutBeispielTr": "Daha uygun fiyatlı seçenekte karar kıldık.",
-   "cakisan": [
+   "currentTr": "karar vermek, seçmek",
+   "currentBeispiel": "Wir haben uns für die günstigere Variante entschieden.",
+   "currentBeispielTr": "Daha uygun fiyatlı seçenekte karar kıldık.",
+   "overlapping": [
     "beschließen (B1)",
     "entscheiden (B1)",
     "sich entschließen (B1)"
@@ -283,10 +283,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "setzt sich ein, hat sich eingesetzt",
-   "mevcutTr": "savunmak, mücadele etmek (bir amaç için)",
-   "mevcutBeispiel": "Die Organisation setzt sich für Menschenrechte ein.",
-   "mevcutBeispielTr": "Örgüt, insan hakları için mücadele ediyor.",
-   "cakisan": [
+   "currentTr": "savunmak, mücadele etmek (bir amaç için)",
+   "currentBeispiel": "Die Organisation setzt sich für Menschenrechte ein.",
+   "currentBeispielTr": "Örgüt, insan hakları için mücadele ediyor.",
+   "overlapping": [
     "plädieren (C1)"
    ]
   },
@@ -296,9 +296,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "konzentriert sich, hat sich konzentriert",
-   "mevcutTr": "odaklanmak, yoğunlaşmak",
-   "mevcutBeispiel": "Er muss sich besser auf die Prüfung konzentrieren.",
-   "mevcutBeispielTr": "Sınava daha iyi odaklanması gerekiyor."
+   "currentTr": "odaklanmak, yoğunlaşmak",
+   "currentBeispiel": "Er muss sich besser auf die Prüfung konzentrieren.",
+   "currentBeispielTr": "Sınava daha iyi odaklanması gerekiyor."
   },
   {
    "id": 3815,
@@ -306,10 +306,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "scheitert, ist gescheitert",
-   "mevcutTr": "başarısız olmak, takılıp kalmak",
-   "mevcutBeispiel": "Das Projekt ist letztendlich an fehlendem Geld gescheitert.",
-   "mevcutBeispielTr": "Proje en sonunda para yokluğundan başarısız oldu.",
-   "cakisan": [
+   "currentTr": "başarısız olmak, takılıp kalmak",
+   "currentBeispiel": "Das Projekt ist letztendlich an fehlendem Geld gescheitert.",
+   "currentBeispielTr": "Proje en sonunda para yokluğundan başarısız oldu.",
+   "overlapping": [
     "durchfallen (B2)",
     "scheitern (B2)"
    ]
@@ -320,10 +320,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "findet sich ab, hat sich abgefunden",
-   "mevcutTr": "razı olmak, kabullenmek",
-   "mevcutBeispiel": "Sie musste sich mit dem Verlust ihres Jobs abfinden.",
-   "mevcutBeispielTr": "İşini kaybetmeyi kabullenmek zorunda kaldı.",
-   "cakisan": [
+   "currentTr": "razı olmak, kabullenmek",
+   "currentBeispiel": "Sie musste sich mit dem Verlust ihres Jobs abfinden.",
+   "currentBeispielTr": "İşini kaybetmeyi kabullenmek zorunda kaldı.",
+   "overlapping": [
     "sich etwas gefallen lassen (B1)"
    ]
   },
@@ -333,9 +333,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fremdsprachenkenntnisse",
-   "mevcutTr": "yabancı dil bilgisi",
-   "mevcutBeispiel": "Gute Fremdsprachenkenntnisse sind für das Praktikum wichtig.",
-   "mevcutBeispielTr": "İyi yabancı dil bilgisi staj için önemli."
+   "currentTr": "yabancı dil bilgisi",
+   "currentBeispiel": "Gute Fremdsprachenkenntnisse sind für das Praktikum wichtig.",
+   "currentBeispielTr": "İyi yabancı dil bilgisi staj için önemli."
   },
   {
    "id": 3836,
@@ -343,9 +343,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sprachniveaus",
-   "mevcutTr": "dil seviyesi",
-   "mevcutBeispiel": "Für das Studium wird das Sprachniveau B2 verlangt.",
-   "mevcutBeispielTr": "Bu bölüm için B2 dil seviyesi isteniyor."
+   "currentTr": "dil seviyesi",
+   "currentBeispiel": "Für das Studium wird das Sprachniveau B2 verlangt.",
+   "currentBeispielTr": "Bu bölüm için B2 dil seviyesi isteniyor."
   },
   {
    "id": 3837,
@@ -353,9 +353,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sprachprüfungen",
-   "mevcutTr": "dil sınavı",
-   "mevcutBeispiel": "Ohne bestandene Sprachprüfung ist keine Immatrikulation möglich.",
-   "mevcutBeispielTr": "Dil sınavını geçmeden üniversiteye kayıt mümkün değil."
+   "currentTr": "dil sınavı",
+   "currentBeispiel": "Ohne bestandene Sprachprüfung ist keine Immatrikulation möglich.",
+   "currentBeispielTr": "Dil sınavını geçmeden üniversiteye kayıt mümkün değil."
   },
   {
    "id": 3839,
@@ -363,9 +363,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Lernstrategien",
-   "mevcutTr": "öğrenme stratejisi",
-   "mevcutBeispiel": "Eine gute Lernstrategie erleichtert die Prüfungsvorbereitung.",
-   "mevcutBeispielTr": "İyi bir öğrenme stratejisi sınav hazırlığını kolaylaştırır."
+   "currentTr": "öğrenme stratejisi",
+   "currentBeispiel": "Eine gute Lernstrategie erleichtert die Prüfungsvorbereitung.",
+   "currentBeispielTr": "İyi bir öğrenme stratejisi sınav hazırlığını kolaylaştırır."
   },
   {
    "id": 3840,
@@ -373,9 +373,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kendi kendine çalışma",
-   "mevcutBeispiel": "Vieles muss man im Selbststudium nachholen.",
-   "mevcutBeispielTr": "Çoğu şeyi kendi kendine çalışarak tamamlamak gerekiyor."
+   "currentTr": "kendi kendine çalışma",
+   "currentBeispiel": "Vieles muss man im Selbststudium nachholen.",
+   "currentBeispielTr": "Çoğu şeyi kendi kendine çalışarak tamamlamak gerekiyor."
   },
   {
    "id": 3842,
@@ -383,9 +383,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Prüfungsordnungen",
-   "mevcutTr": "sınav yönetmeliği",
-   "mevcutBeispiel": "Die Prüfungsordnung regelt alle Modalitäten der Klausur.",
-   "mevcutBeispielTr": "Sınav yönetmeliği, sınavın bütün ayrıntılarını düzenler."
+   "currentTr": "sınav yönetmeliği",
+   "currentBeispiel": "Die Prüfungsordnung regelt alle Modalitäten der Klausur.",
+   "currentBeispielTr": "Sınav yönetmeliği, sınavın bütün ayrıntılarını düzenler."
   },
   {
    "id": 3843,
@@ -393,9 +393,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wiederholungsprüfungen",
-   "mevcutTr": "bütünleme sınavı",
-   "mevcutBeispiel": "Wer durchfällt, kann an der Wiederholungsprüfung teilnehmen.",
-   "mevcutBeispielTr": "Kalan öğrenciler bütünleme sınavına girebilir."
+   "currentTr": "bütünleme sınavı",
+   "currentBeispiel": "Wer durchfällt, kann an der Wiederholungsprüfung teilnehmen.",
+   "currentBeispielTr": "Kalan öğrenciler bütünleme sınavına girebilir."
   },
   {
    "id": 3846,
@@ -403,9 +403,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Prüfungsausschüsse",
-   "mevcutTr": "sınav kurulu",
-   "mevcutBeispiel": "Der Prüfungsausschuss entscheidet über die Anerkennung.",
-   "mevcutBeispielTr": "Denklik konusunda sınav kurulu karar verir."
+   "currentTr": "sınav kurulu",
+   "currentBeispiel": "Der Prüfungsausschuss entscheidet über die Anerkennung.",
+   "currentBeispielTr": "Denklik konusunda sınav kurulu karar verir."
   },
   {
    "id": 3847,
@@ -413,9 +413,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Immatrikulationen",
-   "mevcutTr": "üniversiteye kayıt",
-   "mevcutBeispiel": "Die Immatrikulation muss bis Ende September erfolgen.",
-   "mevcutBeispielTr": "Üniversite kaydının eylül sonuna kadar yapılması gerekiyor."
+   "currentTr": "üniversiteye kayıt",
+   "currentBeispiel": "Die Immatrikulation muss bis Ende September erfolgen.",
+   "currentBeispielTr": "Üniversite kaydının eylül sonuna kadar yapılması gerekiyor."
   },
   {
    "id": 3848,
@@ -423,9 +423,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Exmatrikulationen",
-   "mevcutTr": "üniversite kaydını sildirme",
-   "mevcutBeispiel": "Nach dem Abschluss folgt die Exmatrikulation.",
-   "mevcutBeispielTr": "Mezuniyetin ardından üniversite kaydı silinir."
+   "currentTr": "üniversite kaydını sildirme",
+   "currentBeispiel": "Nach dem Abschluss folgt die Exmatrikulation.",
+   "currentBeispielTr": "Mezuniyetin ardından üniversite kaydı silinir."
   },
   {
    "id": 3852,
@@ -433,9 +433,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Studiengänge",
-   "mevcutTr": "öğrenim programı, bölüm",
-   "mevcutBeispiel": "Der Studiengang ist sehr praxisorientiert aufgebaut.",
-   "mevcutBeispielTr": "Bölüm, uygulamaya çok ağırlık veren bir yapıda."
+   "currentTr": "öğrenim programı, bölüm",
+   "currentBeispiel": "Der Studiengang ist sehr praxisorientiert aufgebaut.",
+   "currentBeispielTr": "Bölüm, uygulamaya çok ağırlık veren bir yapıda."
   },
   {
    "id": 3853,
@@ -443,9 +443,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zulassungsvoraussetzungen",
-   "mevcutTr": "kabul şartı",
-   "mevcutBeispiel": "Deutschkenntnisse sind eine wichtige Zulassungsvoraussetzung.",
-   "mevcutBeispielTr": "Almanca bilgisi önemli bir kabul şartıdır."
+   "currentTr": "kabul şartı",
+   "currentBeispiel": "Deutschkenntnisse sind eine wichtige Zulassungsvoraussetzung.",
+   "currentBeispielTr": "Almanca bilgisi önemli bir kabul şartıdır."
   },
   {
    "id": 3854,
@@ -453,9 +453,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Praktikumsstellen",
-   "mevcutTr": "staj yeri",
-   "mevcutBeispiel": "Er hat endlich eine passende Praktikumsstelle gefunden.",
-   "mevcutBeispielTr": "Sonunda kendine uygun bir staj yeri buldu."
+   "currentTr": "staj yeri",
+   "currentBeispiel": "Er hat endlich eine passende Praktikumsstelle gefunden.",
+   "currentBeispielTr": "Sonunda kendine uygun bir staj yeri buldu."
   },
   {
    "id": 3855,
@@ -463,9 +463,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Praktikumszeugnisse",
-   "mevcutTr": "staj belgesi",
-   "mevcutBeispiel": "Am Ende erhält jeder Praktikant ein Praktikumszeugnis.",
-   "mevcutBeispielTr": "Staj sonunda her stajyere bir staj belgesi verilir."
+   "currentTr": "staj belgesi",
+   "currentBeispiel": "Am Ende erhält jeder Praktikant ein Praktikumszeugnis.",
+   "currentBeispielTr": "Staj sonunda her stajyere bir staj belgesi verilir."
   },
   {
    "id": 3856,
@@ -473,9 +473,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bewerbungsunterlagen",
-   "mevcutTr": "başvuru evrakı",
-   "mevcutBeispiel": "Die vollständigen Bewerbungsunterlagen müssen fristgerecht eingehen.",
-   "mevcutBeispielTr": "Eksiksiz başvuru evrakının süresi içinde ulaşması gerekiyor."
+   "currentTr": "başvuru evrakı",
+   "currentBeispiel": "Die vollständigen Bewerbungsunterlagen müssen fristgerecht eingehen.",
+   "currentBeispielTr": "Eksiksiz başvuru evrakının süresi içinde ulaşması gerekiyor."
   },
   {
    "id": 3858,
@@ -483,9 +483,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bewerbungsfristen",
-   "mevcutTr": "başvuru süresi",
-   "mevcutBeispiel": "Die Bewerbungsfrist läuft Ende des Monats ab.",
-   "mevcutBeispielTr": "Başvuru süresi ay sonunda doluyor."
+   "currentTr": "başvuru süresi",
+   "currentBeispiel": "Die Bewerbungsfrist läuft Ende des Monats ab.",
+   "currentBeispielTr": "Başvuru süresi ay sonunda doluyor."
   },
   {
    "id": 3861,
@@ -493,9 +493,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abmeldungen",
-   "mevcutTr": "kayıt sildirme, çıkış bildirimi",
-   "mevcutBeispiel": "Bei einem Umzug ist eine Abmeldung erforderlich.",
-   "mevcutBeispielTr": "Taşınma durumunda çıkış bildirimi yapmak zorunlu."
+   "currentTr": "kayıt sildirme, çıkış bildirimi",
+   "currentBeispiel": "Bei einem Umzug ist eine Abmeldung erforderlich.",
+   "currentBeispielTr": "Taşınma durumunda çıkış bildirimi yapmak zorunlu."
   },
   {
    "id": 3864,
@@ -503,10 +503,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Beglaubigungen",
-   "mevcutTr": "onay, tasdik",
-   "mevcutBeispiel": "Für die Beglaubigung der Kopie fällt eine Gebühr an.",
-   "mevcutBeispielTr": "Kopyanın tasdiki için ücret alınıyor.",
-   "cakisan": [
+   "currentTr": "onay, tasdik",
+   "currentBeispiel": "Für die Beglaubigung der Kopie fällt eine Gebühr an.",
+   "currentBeispielTr": "Kopyanın tasdiki için ücret alınıyor.",
+   "overlapping": [
     "die Bestätigung (B1)",
     "die Zustimmung (B1)",
     "die Freigabe (B2)",
@@ -519,10 +519,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "verständigt sich, hat sich verständigt",
-   "mevcutTr": "anlaşmak, iletişim kurmak",
-   "mevcutBeispiel": "Wir konnten uns notfalls auf Englisch verständigen.",
-   "mevcutBeispielTr": "Gerektiğinde İngilizce anlaşabildik.",
-   "cakisan": [
+   "currentTr": "anlaşmak, iletişim kurmak",
+   "currentBeispiel": "Wir konnten uns notfalls auf Englisch verständigen.",
+   "currentBeispielTr": "Gerektiğinde İngilizce anlaşabildik.",
+   "overlapping": [
     "sich einigen (B1)"
    ]
   },
@@ -532,9 +532,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "dolmetscht, hat gedolmetscht",
-   "mevcutTr": "sözlü çevirmek, tercümanlık yapmak",
-   "mevcutBeispiel": "Er hat beim Termin für die Familie gedolmetscht.",
-   "mevcutBeispielTr": "Randevuda aile için tercümanlık yaptı."
+   "currentTr": "sözlü çevirmek, tercümanlık yapmak",
+   "currentBeispiel": "Er hat beim Termin für die Familie gedolmetscht.",
+   "currentBeispielTr": "Randevuda aile için tercümanlık yaptı."
   },
   {
    "id": 3871,
@@ -542,10 +542,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "eignet sich an, hat sich angeeignet",
-   "mevcutTr": "edinmek, öğrenmek",
-   "mevcutBeispiel": "Innerhalb eines Jahres hat sie sich die Sprache angeeignet.",
-   "mevcutBeispielTr": "Bir yıl içinde dili öğrenip kendine mal etti.",
-   "cakisan": [
+   "currentTr": "edinmek, öğrenmek",
+   "currentBeispiel": "Innerhalb eines Jahres hat sie sich die Sprache angeeignet.",
+   "currentBeispielTr": "Bir yıl içinde dili öğrenip kendine mal etti.",
+   "overlapping": [
     "anschaffen (B1)"
    ]
   },
@@ -555,10 +555,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "bildet sich fort, hat sich fortgebildet",
-   "mevcutTr": "kendini geliştirmek",
-   "mevcutBeispiel": "Lehrer müssen sich regelmäßig fortbilden.",
-   "mevcutBeispielTr": "Öğretmenlerin düzenli olarak kendilerini geliştirmeleri gerekiyor.",
-   "cakisan": [
+   "currentTr": "kendini geliştirmek",
+   "currentBeispiel": "Lehrer müssen sich regelmäßig fortbilden.",
+   "currentBeispielTr": "Öğretmenlerin düzenli olarak kendilerini geliştirmeleri gerekiyor.",
+   "overlapping": [
     "sich verbessern (B1)"
    ]
   },
@@ -568,9 +568,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "benotet, hat benotet",
-   "mevcutTr": "notlandırmak",
-   "mevcutBeispiel": "Die Hausarbeit wird von zwei Dozenten benotet.",
-   "mevcutBeispielTr": "Dönem ödevi iki öğretim görevlisi tarafından notlandırılıyor."
+   "currentTr": "notlandırmak",
+   "currentBeispiel": "Die Hausarbeit wird von zwei Dozenten benotet.",
+   "currentBeispielTr": "Dönem ödevi iki öğretim görevlisi tarafından notlandırılıyor."
   }
  ]
 }

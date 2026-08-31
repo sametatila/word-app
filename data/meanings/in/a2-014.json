@@ -1,16 +1,16 @@
 {
- "paket": "a2-014",
+ "packet": "a2-014",
  "niveau": "A2",
- "kelimeler": [
+ "words": [
   {
    "id": 7638,
    "de": "ansonsten",
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "aksi takdirde, onun dışında",
-   "mevcutBeispiel": "Ruf mich bitte an, ansonsten warte ich umsonst.",
-   "mevcutBeispielTr": "Lütfen beni ara, aksi takdirde boşuna beklerim."
+   "currentTr": "aksi takdirde, onun dışında",
+   "currentBeispiel": "Ruf mich bitte an, ansonsten warte ich umsonst.",
+   "currentBeispielTr": "Lütfen beni ara, aksi takdirde boşuna beklerim."
   },
   {
    "id": 7639,
@@ -18,9 +18,9 @@
    "typ": "Sonstiges",
    "niveau": "A2",
    "formen": "",
-   "mevcutTr": "gerekirse, icabında",
-   "mevcutBeispiel": "Notfalls nehmen wir ein Taxi zum Bahnhof.",
-   "mevcutBeispielTr": "Gerekirse gara taksiyle gideriz."
+   "currentTr": "gerekirse, icabında",
+   "currentBeispiel": "Notfalls nehmen wir ein Taxi zum Bahnhof.",
+   "currentBeispielTr": "Gerekirse gara taksiyle gideriz."
   },
   {
    "id": 7640,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "fırıncı",
-   "mevcutBeispiel": "Mein Vater ist Bäcker und steht jeden Morgen um drei Uhr auf.",
-   "mevcutBeispielTr": "Babam fırıncı ve her sabah saat üçte kalkıyor."
+   "currentTr": "fırıncı",
+   "currentBeispiel": "Mein Vater ist Bäcker und steht jeden Morgen um drei Uhr auf.",
+   "currentBeispielTr": "Babam fırıncı ve her sabah saat üçte kalkıyor."
   },
   {
    "id": 7641,
@@ -38,10 +38,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "kasiyer",
-   "mevcutBeispiel": "Der Kassierer im Supermarkt war heute sehr freundlich.",
-   "mevcutBeispielTr": "Süpermarketteki kasiyer bugün çok kibardı.",
-   "cakisan": [
+   "currentTr": "kasiyer",
+   "currentBeispiel": "Der Kassierer im Supermarkt war heute sehr freundlich.",
+   "currentBeispielTr": "Süpermarketteki kasiyer bugün çok kibardı.",
+   "overlapping": [
     "die Kassiererin (A2)"
    ]
   },
@@ -51,9 +51,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "elektrikçi",
-   "mevcutBeispiel": "Wir haben einen Elektriker gerufen, weil das Licht nicht geht.",
-   "mevcutBeispielTr": "Işık çalışmadığı için bir elektrikçi çağırdık."
+   "currentTr": "elektrikçi",
+   "currentBeispiel": "Wir haben einen Elektriker gerufen, weil das Licht nicht geht.",
+   "currentBeispielTr": "Işık çalışmadığı için bir elektrikçi çağırdık."
   },
   {
    "id": 7643,
@@ -61,9 +61,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "tesisatçı",
-   "mevcutBeispiel": "Der Klempner repariert morgen unsere Dusche.",
-   "mevcutBeispielTr": "Tesisatçı yarın duşumuzu tamir ediyor."
+   "currentTr": "tesisatçı",
+   "currentBeispiel": "Der Klempner repariert morgen unsere Dusche.",
+   "currentBeispielTr": "Tesisatçı yarın duşumuzu tamir ediyor."
   },
   {
    "id": 7644,
@@ -71,9 +71,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "marangoz",
-   "mevcutBeispiel": "Der Tischler baut mir einen neuen Schrank aus Holz.",
-   "mevcutBeispielTr": "Marangoz bana ahşaptan yeni bir dolap yapıyor."
+   "currentTr": "marangoz",
+   "currentBeispiel": "Der Tischler baut mir einen neuen Schrank aus Holz.",
+   "currentBeispielTr": "Marangoz bana ahşaptan yeni bir dolap yapıyor."
   },
   {
    "id": 7645,
@@ -81,9 +81,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "bahçıvan",
-   "mevcutBeispiel": "Der Gärtner arbeitet im Sommer oft von früh bis spät.",
-   "mevcutBeispielTr": "Bahçıvan yazın çoğu zaman sabahtan akşama kadar çalışır."
+   "currentTr": "bahçıvan",
+   "currentBeispiel": "Der Gärtner arbeitet im Sommer oft von früh bis spät.",
+   "currentBeispielTr": "Bahçıvan yazın çoğu zaman sabahtan akşama kadar çalışır."
   },
   {
    "id": 7646,
@@ -91,9 +91,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "otobüs şoförü",
-   "mevcutBeispiel": "Der Busfahrer hat mir gesagt, wo ich aussteigen muss.",
-   "mevcutBeispielTr": "Otobüs şoförü bana nerede inmem gerektiğini söyledi."
+   "currentTr": "otobüs şoförü",
+   "currentBeispiel": "Der Busfahrer hat mir gesagt, wo ich aussteigen muss.",
+   "currentBeispielTr": "Otobüs şoförü bana nerede inmem gerektiğini söyledi."
   },
   {
    "id": 7647,
@@ -101,9 +101,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "taksi şoförü",
-   "mevcutBeispiel": "Mein Bruder arbeitet seit zwei Jahren als Taxifahrer.",
-   "mevcutBeispielTr": "Ağabeyim iki yıldır taksi şoförü olarak çalışıyor."
+   "currentTr": "taksi şoförü",
+   "currentBeispiel": "Mein Bruder arbeitet seit zwei Jahren als Taxifahrer.",
+   "currentBeispielTr": "Ağabeyim iki yıldır taksi şoförü olarak çalışıyor."
   },
   {
    "id": 7648,
@@ -111,9 +111,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "eczacı",
-   "mevcutBeispiel": "Der Apotheker hat mir eine gute Salbe empfohlen.",
-   "mevcutBeispielTr": "Eczacı bana iyi bir merhem tavsiye etti."
+   "currentTr": "eczacı",
+   "currentBeispiel": "Der Apotheker hat mir eine gute Salbe empfohlen.",
+   "currentBeispielTr": "Eczacı bana iyi bir merhem tavsiye etti."
   },
   {
    "id": 7649,
@@ -121,9 +121,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "diş hekimi, dişçi",
-   "mevcutBeispiel": "Ich habe am Montag einen Termin beim Zahnarzt.",
-   "mevcutBeispielTr": "Pazartesi günü diş hekiminde bir randevum var."
+   "currentTr": "diş hekimi, dişçi",
+   "currentBeispiel": "Ich habe am Montag einen Termin beim Zahnarzt.",
+   "currentBeispielTr": "Pazartesi günü diş hekiminde bir randevum var."
   },
   {
    "id": 7650,
@@ -131,9 +131,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "veteriner",
-   "mevcutBeispiel": "Unsere Katze ist krank, wir gehen zum Tierarzt.",
-   "mevcutBeispielTr": "Kedimiz hasta, veterinere gidiyoruz."
+   "currentTr": "veteriner",
+   "currentBeispiel": "Unsere Katze ist krank, wir gehen zum Tierarzt.",
+   "currentBeispielTr": "Kedimiz hasta, veterinere gidiyoruz."
   },
   {
    "id": 7651,
@@ -141,9 +141,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-leute",
-   "mevcutTr": "itfaiyeci",
-   "mevcutBeispiel": "Mein Sohn möchte später Feuerwehrmann werden.",
-   "mevcutBeispielTr": "Oğlum ileride itfaiyeci olmak istiyor."
+   "currentTr": "itfaiyeci",
+   "currentBeispiel": "Mein Sohn möchte später Feuerwehrmann werden.",
+   "currentBeispielTr": "Oğlum ileride itfaiyeci olmak istiyor."
   },
   {
    "id": 7652,
@@ -151,10 +151,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "postacı",
-   "mevcutBeispiel": "Der Postbote bringt die Pakete meistens am Vormittag.",
-   "mevcutBeispielTr": "Postacı paketleri genellikle öğleden önce getiriyor.",
-   "cakisan": [
+   "currentTr": "postacı",
+   "currentBeispiel": "Der Postbote bringt die Pakete meistens am Vormittag.",
+   "currentBeispielTr": "Postacı paketleri genellikle öğleden önce getiriyor.",
+   "overlapping": [
     "der Briefträger (B1)",
     "der Pöstler (B1)"
    ]
@@ -165,9 +165,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "inşaat işçisi",
-   "mevcutBeispiel": "Die Bauarbeiter machen um zwölf Uhr Pause.",
-   "mevcutBeispielTr": "İnşaat işçileri saat on ikide mola veriyor."
+   "currentTr": "inşaat işçisi",
+   "currentBeispiel": "Die Bauarbeiter machen um zwölf Uhr Pause.",
+   "currentBeispielTr": "İnşaat işçileri saat on ikide mola veriyor."
   },
   {
    "id": 7654,
@@ -175,9 +175,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "temizlikçi kadın",
-   "mevcutBeispiel": "Die Putzfrau kommt zweimal in der Woche ins Büro.",
-   "mevcutBeispielTr": "Temizlikçi kadın haftada iki kez ofise geliyor."
+   "currentTr": "temizlikçi kadın",
+   "currentBeispiel": "Die Putzfrau kommt zweimal in der Woche ins Büro.",
+   "currentBeispielTr": "Temizlikçi kadın haftada iki kez ofise geliyor."
   },
   {
    "id": 7655,
@@ -185,9 +185,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "duvarcı",
-   "mevcutBeispiel": "Als Maurer muss man den ganzen Tag schwer arbeiten.",
-   "mevcutBeispielTr": "Duvarcı olarak bütün gün ağır çalışmak gerekiyor."
+   "currentTr": "duvarcı",
+   "currentBeispiel": "Als Maurer muss man den ganzen Tag schwer arbeiten.",
+   "currentBeispielTr": "Duvarcı olarak bütün gün ağır çalışmak gerekiyor."
   },
   {
    "id": 7656,
@@ -195,9 +195,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "yazılımcı, programcı",
-   "mevcutBeispiel": "Als Programmierer sitze ich den ganzen Tag am Computer.",
-   "mevcutBeispielTr": "Yazılımcı olarak bütün gün bilgisayar başında oturuyorum."
+   "currentTr": "yazılımcı, programcı",
+   "currentBeispiel": "Als Programmierer sitze ich den ganzen Tag am Computer.",
+   "currentBeispielTr": "Yazılımcı olarak bütün gün bilgisayar başında oturuyorum."
   },
   {
    "id": 7657,
@@ -205,9 +205,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "anaokulu öğretmeni, eğitmen",
-   "mevcutBeispiel": "Im Kindergarten arbeiten drei Erzieher und zwei Erzieherinnen.",
-   "mevcutBeispielTr": "Anaokulunda üç erkek ve iki kadın anaokulu öğretmeni çalışıyor."
+   "currentTr": "anaokulu öğretmeni, eğitmen",
+   "currentBeispiel": "Im Kindergarten arbeiten drei Erzieher und zwei Erzieherinnen.",
+   "currentBeispielTr": "Anaokulunda üç erkek ve iki kadın anaokulu öğretmeni çalışıyor."
   },
   {
    "id": 7658,
@@ -215,9 +215,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "pilot",
-   "mevcutBeispiel": "Der Pilot hat uns gesagt, dass wir pünktlich landen.",
-   "mevcutBeispielTr": "Pilot bize zamanında ineceğimizi söyledi."
+   "currentTr": "pilot",
+   "currentBeispiel": "Der Pilot hat uns gesagt, dass wir pünktlich landen.",
+   "currentBeispielTr": "Pilot bize zamanında ineceğimizi söyledi."
   },
   {
    "id": 7659,
@@ -225,9 +225,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "muhasebeci",
-   "mevcutBeispiel": "Unser Buchhalter kontrolliert jeden Monat alle Rechnungen.",
-   "mevcutBeispielTr": "Muhasebecimiz her ay bütün faturaları kontrol ediyor."
+   "currentTr": "muhasebeci",
+   "currentBeispiel": "Unser Buchhalter kontrolliert jeden Monat alle Rechnungen.",
+   "currentBeispielTr": "Muhasebecimiz her ay bütün faturaları kontrol ediyor."
   },
   {
    "id": 7660,
@@ -235,9 +235,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "şube müdürü",
-   "mevcutBeispiel": "Der Filialleiter hat mir am Freitag frei gegeben.",
-   "mevcutBeispielTr": "Şube müdürü bana cuma günü izin verdi."
+   "currentTr": "şube müdürü",
+   "currentBeispiel": "Der Filialleiter hat mir am Freitag frei gegeben.",
+   "currentBeispielTr": "Şube müdürü bana cuma günü izin verdi."
   },
   {
    "id": 7661,
@@ -245,10 +245,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "iş görüşmesi, mülakat",
-   "mevcutBeispiel": "Ich habe morgen um zehn Uhr ein Bewerbungsgespräch.",
-   "mevcutBeispielTr": "Yarın saat onda bir iş görüşmem var.",
-   "cakisan": [
+   "currentTr": "iş görüşmesi, mülakat",
+   "currentBeispiel": "Ich habe morgen um zehn Uhr ein Bewerbungsgespräch.",
+   "currentBeispielTr": "Yarın saat onda bir iş görüşmem var.",
+   "overlapping": [
     "das Vorstellungsgespräch (B1)"
    ]
   },
@@ -258,9 +258,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "terfi",
-   "mevcutBeispiel": "Nach der Beförderung verdient sie viel mehr Geld.",
-   "mevcutBeispielTr": "Terfiden sonra çok daha fazla para kazanıyor."
+   "currentTr": "terfi",
+   "currentBeispiel": "Nach der Beförderung verdient sie viel mehr Geld.",
+   "currentBeispielTr": "Terfiden sonra çok daha fazla para kazanıyor."
   },
   {
    "id": 7663,
@@ -268,9 +268,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-er",
-   "mevcutTr": "iş bulma kurumu",
-   "mevcutBeispiel": "Er sucht beim Arbeitsamt nach einer neuen Stelle.",
-   "mevcutBeispielTr": "İş bulma kurumunda yeni bir iş arıyor."
+   "currentTr": "iş bulma kurumu",
+   "currentBeispiel": "Er sucht beim Arbeitsamt nach einer neuen Stelle.",
+   "currentBeispielTr": "İş bulma kurumunda yeni bir iş arıyor."
   },
   {
    "id": 7664,
@@ -278,9 +278,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "ek iş, yan iş",
-   "mevcutBeispiel": "Am Wochenende habe ich einen Nebenjob in einem Café.",
-   "mevcutBeispielTr": "Hafta sonu bir kafede ek işim var."
+   "currentTr": "ek iş, yan iş",
+   "currentBeispiel": "Am Wochenende habe ich einen Nebenjob in einem Café.",
+   "currentBeispielTr": "Hafta sonu bir kafede ek işim var."
   },
   {
    "id": 7665,
@@ -288,9 +288,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "yazı masası, çalışma masası",
-   "mevcutBeispiel": "Auf meinem Schreibtisch liegen zu viele Papiere.",
-   "mevcutBeispielTr": "Çalışma masamın üstünde çok fazla kâğıt duruyor."
+   "currentTr": "yazı masası, çalışma masası",
+   "currentBeispiel": "Auf meinem Schreibtisch liegen zu viele Papiere.",
+   "currentBeispielTr": "Çalışma masamın üstünde çok fazla kâğıt duruyor."
   },
   {
    "id": 7666,
@@ -298,9 +298,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "çalışma odası",
-   "mevcutBeispiel": "Mein Mann arbeitet oft im Arbeitszimmer zu Hause.",
-   "mevcutBeispielTr": "Kocam sık sık evdeki çalışma odasında çalışıyor."
+   "currentTr": "çalışma odası",
+   "currentBeispiel": "Mein Mann arbeitet oft im Arbeitszimmer zu Hause.",
+   "currentBeispielTr": "Kocam sık sık evdeki çalışma odasında çalışıyor."
   },
   {
    "id": 7667,
@@ -308,9 +308,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "dosya dolabı",
-   "mevcutBeispiel": "Die alten Verträge sind im Aktenschrank.",
-   "mevcutBeispielTr": "Eski sözleşmeler dosya dolabında."
+   "currentTr": "dosya dolabı",
+   "currentBeispiel": "Die alten Verträge sind im Aktenschrank.",
+   "currentBeispielTr": "Eski sözleşmeler dosya dolabında."
   },
   {
    "id": 7668,
@@ -318,9 +318,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "ataç",
-   "mevcutBeispiel": "Kannst du mir bitte eine Büroklammer geben?",
-   "mevcutBeispielTr": "Bana bir ataç verebilir misin lütfen?"
+   "currentTr": "ataç",
+   "currentBeispiel": "Kannst du mir bitte eine Büroklammer geben?",
+   "currentBeispielTr": "Bana bir ataç verebilir misin lütfen?"
   },
   {
    "id": 7669,
@@ -328,9 +328,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "bloknot, not defteri",
-   "mevcutBeispiel": "Ich schreibe die Telefonnummer in meinen Notizblock.",
-   "mevcutBeispielTr": "Telefon numarasını not bloknotuma yazıyorum."
+   "currentTr": "bloknot, not defteri",
+   "currentBeispiel": "Ich schreibe die Telefonnummer in meinen Notizblock.",
+   "currentBeispielTr": "Telefon numarasını not bloknotuma yazıyorum."
   },
   {
    "id": 7670,
@@ -338,9 +338,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "depo binası, ambar",
-   "mevcutBeispiel": "In der Lagerhalle ist es im Winter sehr kalt.",
-   "mevcutBeispielTr": "Depoda kışın çok soğuk oluyor."
+   "currentTr": "depo binası, ambar",
+   "currentBeispiel": "In der Lagerhalle ist es im Winter sehr kalt.",
+   "currentBeispielTr": "Depoda kışın çok soğuk oluyor."
   },
   {
    "id": 7671,
@@ -348,9 +348,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "kasap dükkânı",
-   "mevcutBeispiel": "Meine Tante arbeitet in einer Metzgerei am Markt.",
-   "mevcutBeispielTr": "Teyzem pazardaki bir kasap dükkânında çalışıyor."
+   "currentTr": "kasap dükkânı",
+   "currentBeispiel": "Meine Tante arbeitet in einer Metzgerei am Markt.",
+   "currentBeispielTr": "Teyzem pazardaki bir kasap dükkânında çalışıyor."
   },
   {
    "id": 7672,
@@ -358,9 +358,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-s",
-   "mevcutTr": "kuaför salonu",
-   "mevcutBeispiel": "Der Friseursalon ist montags immer geschlossen.",
-   "mevcutBeispielTr": "Kuaför salonu pazartesileri her zaman kapalı."
+   "currentTr": "kuaför salonu",
+   "currentBeispiel": "Der Friseursalon ist montags immer geschlossen.",
+   "currentBeispielTr": "Kuaför salonu pazartesileri her zaman kapalı."
   },
   {
    "id": 7673,
@@ -368,10 +368,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-praxen",
-   "mevcutTr": "muayenehane",
-   "mevcutBeispiel": "Sie arbeitet als Sekretärin in einer Arztpraxis.",
-   "mevcutBeispielTr": "Bir muayenehanede sekreter olarak çalışıyor.",
-   "cakisan": [
+   "currentTr": "muayenehane",
+   "currentBeispiel": "Sie arbeitet als Sekretärin in einer Arztpraxis.",
+   "currentBeispielTr": "Bir muayenehanede sekreter olarak çalışıyor.",
+   "overlapping": [
     "die Praxis (A1)",
     "die Ordination (B1)"
    ]
@@ -382,9 +382,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "öğle molası",
-   "mevcutBeispiel": "In der Mittagspause esse ich meistens in der Kantine.",
-   "mevcutBeispielTr": "Öğle molasında çoğunlukla yemekhanede yemek yiyorum."
+   "currentTr": "öğle molası",
+   "currentBeispiel": "In der Mittagspause esse ich meistens in der Kantine.",
+   "currentBeispielTr": "Öğle molasında çoğunlukla yemekhanede yemek yiyorum."
   },
   {
    "id": 7675,
@@ -392,9 +392,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "kahve molası",
-   "mevcutBeispiel": "Wir machen um halb vier eine kurze Kaffeepause.",
-   "mevcutBeispielTr": "Üç buçukta kısa bir kahve molası veriyoruz."
+   "currentTr": "kahve molası",
+   "currentBeispiel": "Wir machen um halb vier eine kurze Kaffeepause.",
+   "currentBeispielTr": "Üç buçukta kısa bir kahve molası veriyoruz."
   },
   {
    "id": 7676,
@@ -402,9 +402,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "gece vardiyası",
-   "mevcutBeispiel": "Diese Woche habe ich Nachtschicht im Krankenhaus.",
-   "mevcutBeispielTr": "Bu hafta hastanede gece vardiyasındayım."
+   "currentTr": "gece vardiyası",
+   "currentBeispiel": "Diese Woche habe ich Nachtschicht im Krankenhaus.",
+   "currentBeispielTr": "Bu hafta hastanede gece vardiyasındayım."
   },
   {
    "id": 7677,
@@ -412,9 +412,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-en",
-   "mevcutTr": "akşam vardiyası",
-   "mevcutBeispiel": "Nach der Spätschicht komme ich erst um elf nach Hause.",
-   "mevcutBeispielTr": "Akşam vardiyasından sonra eve ancak on birde geliyorum."
+   "currentTr": "akşam vardiyası",
+   "currentBeispiel": "Nach der Spätschicht komme ich erst um elf nach Hause.",
+   "currentBeispielTr": "Akşam vardiyasından sonra eve ancak on birde geliyorum."
   },
   {
    "id": 7678,
@@ -422,9 +422,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "iş günü, çalışma günü",
-   "mevcutBeispiel": "Heute war ein langer und schwerer Arbeitstag.",
-   "mevcutBeispielTr": "Bugün uzun ve zor bir iş günüydü."
+   "currentTr": "iş günü, çalışma günü",
+   "currentBeispiel": "Heute war ein langer und schwerer Arbeitstag.",
+   "currentBeispielTr": "Bugün uzun ve zor bir iş günüydü."
   },
   {
    "id": 7679,
@@ -432,9 +432,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "hafta sonu",
-   "mevcutBeispiel": "Am Wochenende muss ich zum Glück nicht arbeiten.",
-   "mevcutBeispielTr": "Neyse ki hafta sonu çalışmam gerekmiyor."
+   "currentTr": "hafta sonu",
+   "currentBeispiel": "Am Wochenende muss ich zum Glück nicht arbeiten.",
+   "currentBeispielTr": "Neyse ki hafta sonu çalışmam gerekmiyor."
   },
   {
    "id": 7680,
@@ -442,9 +442,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "¨-e",
-   "mevcutTr": "vardiya çizelgesi, çalışma planı",
-   "mevcutBeispiel": "Der neue Dienstplan hängt schon an der Tür.",
-   "mevcutBeispielTr": "Yeni vardiya çizelgesi çoktan kapıda asılı."
+   "currentTr": "vardiya çizelgesi, çalışma planı",
+   "currentBeispiel": "Der neue Dienstplan hängt schon an der Tür.",
+   "currentBeispielTr": "Yeni vardiya çizelgesi çoktan kapıda asılı."
   },
   {
    "id": 7681,
@@ -452,9 +452,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "izin günü",
-   "mevcutBeispiel": "Ich habe dieses Jahr noch fünf Urlaubstage.",
-   "mevcutBeispielTr": "Bu yıl daha beş izin günüm var."
+   "currentTr": "izin günü",
+   "currentBeispiel": "Ich habe dieses Jahr noch fünf Urlaubstage.",
+   "currentBeispielTr": "Bu yıl daha beş izin günüm var."
   },
   {
    "id": 7682,
@@ -462,10 +462,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-e",
-   "mevcutTr": "kazanç, gelir",
-   "mevcutBeispiel": "Der Verdienst ist klein, aber die Arbeit macht Spaß.",
-   "mevcutBeispielTr": "Kazanç az, ama iş keyifli.",
-   "cakisan": [
+   "currentTr": "kazanç, gelir",
+   "currentBeispiel": "Der Verdienst ist klein, aber die Arbeit macht Spaß.",
+   "currentBeispielTr": "Kazanç az, ama iş keyifli.",
+   "overlapping": [
     "der Gewinn (B1)"
    ]
   },
@@ -475,10 +475,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-se",
-   "mevcutTr": "prim, bonus",
-   "mevcutBeispiel": "Im Dezember bekommen alle Mitarbeiter einen Bonus.",
-   "mevcutBeispielTr": "Aralıkta bütün çalışanlar bir prim alıyor.",
-   "cakisan": [
+   "currentTr": "prim, bonus",
+   "currentBeispiel": "Im Dezember bekommen alle Mitarbeiter einen Bonus.",
+   "currentBeispielTr": "Aralıkta bütün çalışanlar bir prim alıyor.",
+   "overlapping": [
     "die Prämie (B2)"
    ]
   },
@@ -488,9 +488,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "(Sg.)",
-   "mevcutTr": "yılbaşı ikramiyesi",
-   "mevcutBeispiel": "Von meinem Weihnachtsgeld kaufe ich eine neue Waschmaschine.",
-   "mevcutBeispielTr": "Yılbaşı ikramiyemle yeni bir çamaşır makinesi alıyorum."
+   "currentTr": "yılbaşı ikramiyesi",
+   "currentBeispiel": "Von meinem Weihnachtsgeld kaufe ich eine neue Waschmaschine.",
+   "currentBeispielTr": "Yılbaşı ikramiyemle yeni bir çamaşır makinesi alıyorum."
   },
   {
    "id": 7685,
@@ -498,9 +498,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "hesap numarası",
-   "mevcutBeispiel": "Bitte schreiben Sie Ihre Kontonummer auf das Formular.",
-   "mevcutBeispielTr": "Lütfen hesap numaranızı forma yazın."
+   "currentTr": "hesap numarası",
+   "currentBeispiel": "Bitte schreiben Sie Ihre Kontonummer auf das Formular.",
+   "currentBeispielTr": "Lütfen hesap numaranızı forma yazın."
   },
   {
    "id": 7686,
@@ -508,10 +508,10 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-n",
-   "mevcutTr": "iş arkadaşı",
-   "mevcutBeispiel": "Mein Arbeitskollege hilft mir immer bei schweren Aufgaben.",
-   "mevcutBeispielTr": "İş arkadaşım zor görevlerde bana hep yardım ediyor.",
-   "cakisan": [
+   "currentTr": "iş arkadaşı",
+   "currentBeispiel": "Mein Arbeitskollege hilft mir immer bei schweren Aufgaben.",
+   "currentBeispielTr": "İş arkadaşım zor görevlerde bana hep yardım ediyor.",
+   "overlapping": [
     "der Kollege (A1)"
    ]
   },
@@ -521,9 +521,9 @@
    "typ": "Nomen",
    "niveau": "A2",
    "formen": "-",
-   "mevcutTr": "genel müdür, işletme müdürü",
-   "mevcutBeispiel": "Der Geschäftsführer kommt morgen in unsere Abteilung.",
-   "mevcutBeispielTr": "Genel müdür yarın bizim bölüme geliyor."
+   "currentTr": "genel müdür, işletme müdürü",
+   "currentBeispiel": "Der Geschäftsführer kommt morgen in unsere Abteilung.",
+   "currentBeispielTr": "Genel müdür yarın bizim bölüme geliyor."
   }
  ]
 }

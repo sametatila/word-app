@@ -1,7 +1,7 @@
 {
- "paket": "zh-002",
+ "packet": "zh-002",
  "course": "gsw-zh",
- "egzersizler": [
+ "exercises": [
   {
    "id": "zh-a1-r9",
    "skill": "reading",
@@ -9,39 +9,39 @@
    "title": "De Samichlaus chunt",
    "genre": "Kültür",
    "intro": "6 Aralık'ta İsviçre'de kapıya gelen figür: Samichlaus. Mahalle duyurusunu okuyacaksın.",
-   "metin": "Samichlaus im Quartier\n\nAm 6. Dezämber chunt de Samichlaus mit em Schmutzli is Quartier. Si chömed zu Ine hei, vo de füfi bis am achti am Aabig.\n\nDe Bsuech duuret öppe zää Minute. D Chind chönd es Värsli säge — si müend aber nöd. De Samichlaus hät Nüss, Mandarindli und Schoggi im Sack.\n\nDe Bsuech choschtet 40 Franke. S Gäld gaat a de Quartierverein.\n\nAamäldig bis am 25. Novämber: samichlaus@quartier-hardau.ch\n\nWichtig für nöii Familie: De Samichlaus isch nöd böös. Wänn es Chind Angscht hät, bliibt er a de Tür.",
+   "text": "Samichlaus im Quartier\n\nAm 6. Dezämber chunt de Samichlaus mit em Schmutzli is Quartier. Si chömed zu Ine hei, vo de füfi bis am achti am Aabig.\n\nDe Bsuech duuret öppe zää Minute. D Chind chönd es Värsli säge — si müend aber nöd. De Samichlaus hät Nüss, Mandarindli und Schoggi im Sack.\n\nDe Bsuech choschtet 40 Franke. S Gäld gaat a de Quartierverein.\n\nAamäldig bis am 25. Novämber: samichlaus@quartier-hardau.ch\n\nWichtig für nöii Familie: De Samichlaus isch nöd böös. Wänn es Chind Angscht hät, bliibt er a de Tür.",
    "gloss": [
     {
      "de": "de Samichlaus",
-     "mevcutTr": "Noel Baba'nın İsviçre hâli (6 Aralık)"
+     "currentTr": "Noel Baba'nın İsviçre hâli (6 Aralık)"
     },
     {
      "de": "de Schmutzli",
-     "mevcutTr": "Samichlaus'un siyah giysili yardımcısı"
+     "currentTr": "Samichlaus'un siyah giysili yardımcısı"
     },
     {
      "de": "de Sack",
-     "mevcutTr": "çuval",
-     "havuz": {
+     "currentTr": "çuval",
+     "pool": {
       "tr": "çuval",
       "en": "sack"
      }
     },
     {
      "de": "s Värsli",
-     "mevcutTr": "kısa şiir, tekerleme"
+     "currentTr": "kısa şiir, tekerleme"
     },
     {
      "de": "d Nuss",
-     "mevcutTr": "ceviz, fındık"
+     "currentTr": "ceviz, fındık"
     },
     {
      "de": "s Mandarindli",
-     "mevcutTr": "küçük mandalina"
+     "currentTr": "küçük mandalina"
     },
     {
      "de": "aamälde",
-     "mevcutTr": "kaydolmak"
+     "currentTr": "kaydolmak"
     }
    ]
   },
@@ -52,36 +52,36 @@
    "title": "Vier Aazäige",
    "genre": "Sınav formatı",
    "intro": "Kısa ilanları okuyup kimin neye ihtiyacı olduğunu eşleştireceksin. Önce dördünü de oku.",
-   "metin": "A) Züritüütsch für Aafänger. Ich bi Schtudäntin und gib Schtunde. 30 Franke pro Schtund, nur am Wuchenänd. Tel. 076 555 12 12\n\nB) Velo z verchaufe, blau, drei Jaar alt, fahrt guet. 120 Franke. Nur abhole, käi Poscht. Tel. 079 888 40 40\n\nC) Mir verschänked es Bett (140 cm) und en Tisch. Alles guet erhalte. Sofort abhole im Chreis 4. Tel. 044 240 33 22\n\nD) Hüetdienscht: Ich lueg am Määndig und Mittwuch am Namitag zu Irem Chind. Ich han Erfaarig. Tel. 078 222 33 44",
+   "text": "A) Züritüütsch für Aafänger. Ich bi Schtudäntin und gib Schtunde. 30 Franke pro Schtund, nur am Wuchenänd. Tel. 076 555 12 12\n\nB) Velo z verchaufe, blau, drei Jaar alt, fahrt guet. 120 Franke. Nur abhole, käi Poscht. Tel. 079 888 40 40\n\nC) Mir verschänked es Bett (140 cm) und en Tisch. Alles guet erhalte. Sofort abhole im Chreis 4. Tel. 044 240 33 22\n\nD) Hüetdienscht: Ich lueg am Määndig und Mittwuch am Namitag zu Irem Chind. Ich han Erfaarig. Tel. 078 222 33 44",
    "gloss": [
     {
      "de": "d Aazäig",
-     "mevcutTr": "ilan"
+     "currentTr": "ilan"
     },
     {
      "de": "sueche",
-     "mevcutTr": "aramak"
+     "currentTr": "aramak"
     },
     {
      "de": "verschänke",
-     "mevcutTr": "bedava vermek"
+     "currentTr": "bedava vermek"
     },
     {
      "de": "abhole",
-     "mevcutTr": "gelip almak"
+     "currentTr": "gelip almak"
     },
     {
      "de": "d Stund",
-     "mevcutTr": "saat, ders saati"
+     "currentTr": "saat, ders saati"
     },
     {
      "de": "de Hüetdienscht",
-     "mevcutTr": "çocuk bakımı"
+     "currentTr": "çocuk bakımı"
     },
     {
      "de": "gratis",
-     "mevcutTr": "ücretsiz",
-     "havuz": {
+     "currentTr": "ücretsiz",
+     "pool": {
       "tr": "bedava",
       "en": "free"
      }
@@ -95,43 +95,43 @@
    "title": "En Zettel vo de Frau Suter",
    "genre": "Not",
    "intro": "Hikâyenin ikinci bölümü: Meral, Kerem'in çantasında bir not buluyor.",
-   "metin": "Liebi Frau Yıldız\n\nDrü chliini Sache:\n\n1. De Kerem hät sini Jagge scho zwäimal vergässe. Si hanget na bi eus. Bitte am Määndig dra dänke.\n\n2. Am Dunschtig mached mir en Ussflug id Wald. Bitte warmi Chläider und guet Schueh — s isch nass. S Znüni nämed mir mit.\n\n3. De Kerem redt underdesse vill meh. Er hät hüt em Nachbarschind ghulfe, d Finkli z finde. Das wett ich Ine grad säge.\n\nGänd Si mir bitte bis am Mittwuch Bschäid, öb de Kerem am Ussflug cha mitcho.\n\nFründlichi Grüess\nR. Suter",
+   "text": "Liebi Frau Yıldız\n\nDrü chliini Sache:\n\n1. De Kerem hät sini Jagge scho zwäimal vergässe. Si hanget na bi eus. Bitte am Määndig dra dänke.\n\n2. Am Dunschtig mached mir en Ussflug id Wald. Bitte warmi Chläider und guet Schueh — s isch nass. S Znüni nämed mir mit.\n\n3. De Kerem redt underdesse vill meh. Er hät hüt em Nachbarschind ghulfe, d Finkli z finde. Das wett ich Ine grad säge.\n\nGänd Si mir bitte bis am Mittwuch Bschäid, öb de Kerem am Ussflug cha mitcho.\n\nFründlichi Grüess\nR. Suter",
    "gloss": [
     {
      "de": "de Zettel",
-     "mevcutTr": "not",
-     "havuz": {
+     "currentTr": "not",
+     "pool": {
       "tr": "not kâğıdı",
       "en": "note"
      }
     },
     {
      "de": "d Jagge",
-     "mevcutTr": "mont, ceket"
+     "currentTr": "mont, ceket"
     },
     {
      "de": "vergässe",
-     "mevcutTr": "unutmak"
+     "currentTr": "unutmak"
     },
     {
      "de": "de Ussflug",
-     "mevcutTr": "gezi"
+     "currentTr": "gezi"
     },
     {
      "de": "de Wald",
-     "mevcutTr": "orman",
-     "havuz": {
+     "currentTr": "orman",
+     "pool": {
       "tr": "orman",
       "en": "forest"
      }
     },
     {
      "de": "warmi Chläider",
-     "mevcutTr": "kalın giysi"
+     "currentTr": "kalın giysi"
     },
     {
      "de": "Bschäid gää",
-     "mevcutTr": "haber vermek"
+     "currentTr": "haber vermek"
     }
    ]
   },
@@ -142,43 +142,43 @@
    "title": "S Billett und d Zone",
    "genre": "Bilgi yazısı",
    "intro": "Zürih'te bilet sistemi bölge (Zone) mantığıyla çalışır. En sık yapılan hatayı önleyen kısa bilgi.",
-   "metin": "Billett und Zone — s Wichtigschte\n\nD Stadt Züri isch d Zone 110. Für alli Fahrte i de Stadt bruuchsch nur die äi Zone.\n\nEs Billett für äi Zone giltet 30 Minute. Für zwo Zone giltet s äi Stund. Du chasch i dere Ziit so oft umschtiige, wie du wottsch — au mit em Tram, Bus, Zug oder Schiff.\n\nAb drei Fahrte am Tag lohnt sich s Tageskarte.\n\nWichtig: S Billett muesch VOR em Iischtiige löse. Es git käi Verchauf im Tram. Wänn du käis häsch, choschtet s 100 Franke Buess — au wänn du s vergässe häsch.\n\nMit em Halbtax zaalsch überall d Hälfti. S choschtet 190 Franke im Jaar und lohnt sich scho ab öppe zwänzg Fahrte.",
+   "text": "Billett und Zone — s Wichtigschte\n\nD Stadt Züri isch d Zone 110. Für alli Fahrte i de Stadt bruuchsch nur die äi Zone.\n\nEs Billett für äi Zone giltet 30 Minute. Für zwo Zone giltet s äi Stund. Du chasch i dere Ziit so oft umschtiige, wie du wottsch — au mit em Tram, Bus, Zug oder Schiff.\n\nAb drei Fahrte am Tag lohnt sich s Tageskarte.\n\nWichtig: S Billett muesch VOR em Iischtiige löse. Es git käi Verchauf im Tram. Wänn du käis häsch, choschtet s 100 Franke Buess — au wänn du s vergässe häsch.\n\nMit em Halbtax zaalsch überall d Hälfti. S choschtet 190 Franke im Jaar und lohnt sich scho ab öppe zwänzg Fahrte.",
    "gloss": [
     {
      "de": "s Billett",
-     "mevcutTr": "bilet",
-     "havuz": {
+     "currentTr": "bilet",
+     "pool": {
       "tr": "bilet",
       "en": "ticket"
      }
     },
     {
      "de": "d Zone",
-     "mevcutTr": "bölge",
-     "havuz": {
+     "currentTr": "bölge",
+     "pool": {
       "tr": "bölge",
       "en": "zone"
      }
     },
     {
      "de": "gälte",
-     "mevcutTr": "geçerli olmak"
+     "currentTr": "geçerli olmak"
     },
     {
      "de": "s Tageskarte",
-     "mevcutTr": "günlük bilet"
+     "currentTr": "günlük bilet"
     },
     {
      "de": "kontrolliere",
-     "mevcutTr": "denetlemek"
+     "currentTr": "denetlemek"
     },
     {
      "de": "d Buess",
-     "mevcutTr": "ceza"
+     "currentTr": "ceza"
     },
     {
      "de": "s Halbtax",
-     "mevcutTr": "yarım ücret kartı (İsviçre)"
+     "currentTr": "yarım ücret kartı (İsviçre)"
     }
    ]
   },
@@ -189,40 +189,40 @@
    "title": "Im Kafi",
    "genre": "Diyalog",
    "intro": "Elif Zürih'te bir kafede sipariş veriyor; garsonla konuşmasını dinleyeceksin.",
-   "metin": "Serviererin: Grüezi! Was törfs sii?\nElif: Grüezi. Ich hett gärn en Kafi crème, bitte.\nServiererin: Gärn. Möchted Si au öppis z ässe? Mir händ frischi Gipfeli.\nElif: Ja, es Gipfeli, bitte. Was choschtet das zäme?\nServiererin: De Kafi choschtet vier Franke füfzg und s Gipfeli äis füfzg — macht zäme sächs Franke.\nElif: Da sind zää Franke.\nServiererin: Merci vilmal. Und vier Franke zrugg. En schööne Taag no!",
+   "text": "Serviererin: Grüezi! Was törfs sii?\nElif: Grüezi. Ich hett gärn en Kafi crème, bitte.\nServiererin: Gärn. Möchted Si au öppis z ässe? Mir händ frischi Gipfeli.\nElif: Ja, es Gipfeli, bitte. Was choschtet das zäme?\nServiererin: De Kafi choschtet vier Franke füfzg und s Gipfeli äis füfzg — macht zäme sächs Franke.\nElif: Da sind zää Franke.\nServiererin: Merci vilmal. Und vier Franke zrugg. En schööne Taag no!",
    "gloss": [
     {
      "de": "Was törfs sii?",
-     "mevcutTr": "Ne alırdınız? (sipariş kalıbı)"
+     "currentTr": "Ne alırdınız? (sipariş kalıbı)"
     },
     {
      "de": "Ich hett gärn …",
-     "mevcutTr": "… rica ediyorum / … alayım"
+     "currentTr": "… rica ediyorum / … alayım"
     },
     {
      "de": "de Kafi crème",
-     "mevcutTr": "sütlü kahve (İsviçre klasiği)"
+     "currentTr": "sütlü kahve (İsviçre klasiği)"
     },
     {
      "de": "s Gipfeli",
-     "mevcutTr": "kruvasan"
+     "currentTr": "kruvasan"
     },
     {
      "de": "choschte",
-     "mevcutTr": "fiyatı … olmak (kosten)",
-     "havuz": {
+     "currentTr": "fiyatı … olmak (kosten)",
+     "pool": {
       "tr": "tutmak",
       "en": "to cost"
      },
-     "hdAdayi": "kosten"
+     "hdCandidate": "kosten"
     },
     {
      "de": "zrugg",
-     "mevcutTr": "geri (para üstü)"
+     "currentTr": "geri (para üstü)"
     },
     {
      "de": "Merci vilmal",
-     "mevcutTr": "çok teşekkürler (İsviçre'de yaygın)"
+     "currentTr": "çok teşekkürler (İsviçre'de yaygın)"
     }
    ]
   },
@@ -233,50 +233,50 @@
    "title": "A de Tramhaltstell",
    "genre": "Diyalog",
    "intro": "Herr Yılmaz tramvay durağında komşusu Frau Keller ile karşılaşıyor; konuşmalarını dinleyeceksin.",
-   "metin": "Frau Keller: Grüezi Herr Yilmaz! Warted Si au ufs Tram?\nHerr Yilmaz: Grüezi Frau Keller. Ja, ufs Tram Nummere vier, Richtig Hauptbahnhof.\nFrau Keller: S Tram hät hüt Verspaatig — zää Minute, staat da a de Aazäig.\nHerr Yilmaz: Oje. Ich mues am nüüni bi de Arbet sii.\nFrau Keller: Denn nämed Si doch de Bus Nummere 31, de fahrt au zum Hauptbahnhof.\nHerr Yilmaz: Gueti Idee! Wo isch d Bushaltstell?\nFrau Keller: Grad um d Egge, näb de Migros.\nHerr Yilmaz: Merci vilmal! Ade!",
+   "text": "Frau Keller: Grüezi Herr Yilmaz! Warted Si au ufs Tram?\nHerr Yilmaz: Grüezi Frau Keller. Ja, ufs Tram Nummere vier, Richtig Hauptbahnhof.\nFrau Keller: S Tram hät hüt Verspaatig — zää Minute, staat da a de Aazäig.\nHerr Yilmaz: Oje. Ich mues am nüüni bi de Arbet sii.\nFrau Keller: Denn nämed Si doch de Bus Nummere 31, de fahrt au zum Hauptbahnhof.\nHerr Yilmaz: Gueti Idee! Wo isch d Bushaltstell?\nFrau Keller: Grad um d Egge, näb de Migros.\nHerr Yilmaz: Merci vilmal! Ade!",
    "gloss": [
     {
      "de": "warte uf",
-     "mevcutTr": "…i beklemek"
+     "currentTr": "…i beklemek"
     },
     {
      "de": "d Verspaatig",
-     "mevcutTr": "rötar, gecikme (Verspätung)",
-     "havuz": {
+     "currentTr": "rötar, gecikme (Verspätung)",
+     "pool": {
       "tr": "gecikme",
       "en": "delay"
      },
-     "hdAdayi": "Verspätung"
+     "hdCandidate": "Verspätung"
     },
     {
      "de": "d Aazäig",
-     "mevcutTr": "gösterge, pano (Anzeige)",
-     "havuz": {
+     "currentTr": "gösterge, pano (Anzeige)",
+     "pool": {
       "tr": "ilan",
       "en": "ad"
      },
-     "hdAdayi": "Anzeige"
+     "hdCandidate": "Anzeige"
     },
     {
      "de": "go schaffe",
-     "mevcutTr": "işe (çalışmaya) gitmek"
+     "currentTr": "işe (çalışmaya) gitmek"
     },
     {
      "de": "d Egge",
-     "mevcutTr": "köşe"
+     "currentTr": "köşe"
     },
     {
      "de": "näb",
-     "mevcutTr": "yanında (neben)",
-     "havuz": {
+     "currentTr": "yanında (neben)",
+     "pool": {
       "tr": "yanında",
       "en": "next to"
      },
-     "hdAdayi": "neben"
+     "hdCandidate": "neben"
     },
     {
      "de": "Ade",
-     "mevcutTr": "hoşça kal (İsviçre vedası)"
+     "currentTr": "hoşça kal (İsviçre vedası)"
     }
    ]
   },
@@ -287,44 +287,44 @@
    "title": "Uf em Märt",
    "genre": "Diyalog",
    "intro": "Ayşe, Bürkliplatz'taki pazarda alışveriş yapıyor. Satıcıyla konuşmasını dinleyeceksin.",
-   "metin": "Verchäufer: Grüezi! Was törf s sii?\nAyşe: Grüezi. Ich bruuche äis Kilo Tomate und es halbs Kilo Rüebli.\nVerchäufer: Gärn. D Tomate sind hüt bsunders guet — die sind us em Tessin.\nAyşe: Und was choschtet s Chörbli Ärdbeeri?\nVerchäufer: Sibe Franke. Wänn Si zwäi nämed, choschted si zäme zwölf.\nAyşe: Guet, denn nime ich zwäi Chörbli. Und äin Bund Peterli, bitte.\nVerchäufer: Zäme macht das nüünzää Franke füfzg.\nAyşe: Da sind zwänzg. Merci!",
+   "text": "Verchäufer: Grüezi! Was törf s sii?\nAyşe: Grüezi. Ich bruuche äis Kilo Tomate und es halbs Kilo Rüebli.\nVerchäufer: Gärn. D Tomate sind hüt bsunders guet — die sind us em Tessin.\nAyşe: Und was choschtet s Chörbli Ärdbeeri?\nVerchäufer: Sibe Franke. Wänn Si zwäi nämed, choschted si zäme zwölf.\nAyşe: Guet, denn nime ich zwäi Chörbli. Und äin Bund Peterli, bitte.\nVerchäufer: Zäme macht das nüünzää Franke füfzg.\nAyşe: Da sind zwänzg. Merci!",
    "gloss": [
     {
      "de": "de Märt",
-     "mevcutTr": "pazar (Markt)",
-     "havuz": {
+     "currentTr": "pazar (Markt)",
+     "pool": {
       "tr": "pazar",
       "en": "market"
      },
-     "hdAdayi": "Markt"
+     "hdCandidate": "Markt"
     },
     {
      "de": "s Rüebli",
-     "mevcutTr": "havuç",
-     "havuz": {
+     "currentTr": "havuç",
+     "pool": {
       "tr": "havuç",
       "en": "carrot"
      }
     },
     {
      "de": "s Chörbli",
-     "mevcutTr": "küçük sepet, kutu"
+     "currentTr": "küçük sepet, kutu"
     },
     {
      "de": "d Ärdbeeri",
-     "mevcutTr": "çilek"
+     "currentTr": "çilek"
     },
     {
      "de": "de Peterli",
-     "mevcutTr": "maydanoz"
+     "currentTr": "maydanoz"
     },
     {
      "de": "de Bund",
-     "mevcutTr": "demet"
+     "currentTr": "demet"
     },
     {
      "de": "bsunders",
-     "mevcutTr": "özellikle"
+     "currentTr": "özellikle"
     }
    ]
   },
@@ -335,52 +335,52 @@
    "title": "Aaruef i de Arztpraxis",
    "genre": "Telesekreter",
    "intro": "Bir doktor muayenehanesinin telesekreter mesajını dinleyeceksin.",
-   "metin": "Grüezi und härzlich willkomme i de Praxis vom Doktor Baumann.\nÜsi Öffnigsziite: Määndig bis Friitig vo de achti bis am zwölfi und vo de zwäi bis am füfi. Am Mittwuch Namitag isch d Praxis zue.\nFür en Termin drucked Si d Äis. Für es Rezäpt drucked Si d Zwäi.\nI dringende Fäll wähled Si bitte d Nummere hundertvierevierzg.\nMerci für Ihre Aaruef und en schööne Tag.",
+   "text": "Grüezi und härzlich willkomme i de Praxis vom Doktor Baumann.\nÜsi Öffnigsziite: Määndig bis Friitig vo de achti bis am zwölfi und vo de zwäi bis am füfi. Am Mittwuch Namitag isch d Praxis zue.\nFür en Termin drucked Si d Äis. Für es Rezäpt drucked Si d Zwäi.\nI dringende Fäll wähled Si bitte d Nummere hundertvierevierzg.\nMerci für Ihre Aaruef und en schööne Tag.",
    "gloss": [
     {
      "de": "de Aaruef",
-     "mevcutTr": "telefon araması"
+     "currentTr": "telefon araması"
     },
     {
      "de": "de Termin",
-     "mevcutTr": "randevu",
-     "havuz": {
+     "currentTr": "randevu",
+     "pool": {
       "tr": "randevu",
       "en": "appointment"
      }
     },
     {
      "de": "s Rezäpt",
-     "mevcutTr": "reçete"
+     "currentTr": "reçete"
     },
     {
      "de": "dringend",
-     "mevcutTr": "acil",
-     "havuz": {
+     "currentTr": "acil",
+     "pool": {
       "tr": "acil",
       "en": "urgent"
      }
     },
     {
      "de": "de Fall",
-     "mevcutTr": "durum, vaka",
-     "havuz": {
+     "currentTr": "durum, vaka",
+     "pool": {
       "tr": "durum",
       "en": "case"
      }
     },
     {
      "de": "wähle",
-     "mevcutTr": "(numara) çevirmek"
+     "currentTr": "(numara) çevirmek"
     },
     {
      "de": "drucke",
-     "mevcutTr": "basmak (drücken)",
-     "havuz": {
+     "currentTr": "basmak (drücken)",
+     "pool": {
       "tr": "basmak",
       "en": "to press"
      },
-     "hdAdayi": "drücken"
+     "hdCandidate": "drücken"
     }
    ]
   }

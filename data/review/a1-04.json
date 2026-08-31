@@ -62,7 +62,7 @@
   "tr": "bisiklet",
   "formen": "",
   "beispiel": "",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Fahrrad (A1)",
    "das (Fahr)Rad (A2)",
    "das Velo (B1)"
@@ -195,7 +195,7 @@
   "tr": "sakin",
   "formen": "",
   "beispiel": "Seid jetzt bitte ruhig!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Einwohnerin (B1)"
   ]
  },
@@ -374,7 +374,7 @@
   "tr": "çok",
   "formen": "",
   "beispiel": "Ich liebe ihn sehr./Das ist sehr wichtig.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "viel (A1)",
    "viel/viele (B1)"
   ]
@@ -506,7 +506,7 @@
   "tr": "dil",
   "formen": "-n",
   "beispiel": "Er spricht fünf Sprachen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Zunge (A2)"
   ]
  },
@@ -517,7 +517,7 @@
   "tr": "konuşmak",
   "formen": "",
   "beispiel": "Sie spricht mit dem Lehrer.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "reden (A2)"
   ]
  },
@@ -584,7 +584,7 @@
   "tr": "tatlı",
   "formen": "",
   "beispiel": "Der Kaffee ist zu süß./Der neue Tennislehrer ist wirklich süß!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Dessert (B1)"
   ]
  },
@@ -715,7 +715,7 @@
   "tr": "harika, muhteşem",
   "formen": "",
   "beispiel": "In den Ferien war es toll.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "fantastisch (A2)"
   ]
  },
@@ -734,7 +734,7 @@
   "tr": "üzgün",
   "formen": "",
   "beispiel": "Ich bin oft traurig.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "leid (A1)"
   ]
  },
@@ -745,7 +745,7 @@
   "tr": "buluşmak, karşılaşmak",
   "formen": "",
   "beispiel": "Am Nachmittag treffe ich meine Freunde.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "trifft (A2)"
   ]
  },
@@ -868,7 +868,7 @@
   "tr": "kazanmak",
   "formen": "",
   "beispiel": "In den Ferien möchte ich ein bisschen Geld verdienen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "gewinnen (A1)"
   ]
  },
@@ -895,7 +895,7 @@
   "tr": "anlamak",
   "formen": "",
   "beispiel": "Ich verstehe dich nicht.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "sich verstehen (B1)"
   ]
  },
@@ -906,7 +906,7 @@
   "tr": "çok",
   "formen": "-e",
   "beispiel": "Hast du viele Freunde?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "sehr (A1)",
    "viel/viele (B1)"
   ]
@@ -950,7 +950,7 @@
   "tr": "kendini tanıtmak",
   "formen": "(sich)",
   "beispiel": "Stell dich bitte vor!",
-  "ayniAnlam": [
+  "sameMeaning": [
    "sich vorstellen (A1)"
   ]
  },
@@ -1009,7 +1009,7 @@
   "tr": "neden, niçin",
   "formen": "",
   "beispiel": "Warum antwortest du nicht?",
-  "ayniAnlam": [
+  "sameMeaning": [
    "wieso (B1)"
   ]
  },

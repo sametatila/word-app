@@ -286,7 +286,7 @@
   "gsw": "brüele",
   "gswArtikel": null,
   "gswBeispiel": "De Trainer brüelet über de ganz Platz.",
-  "ayniLehce": [
+  "sameDialect": [
    "weinen (A2)",
    "schreien (B1)"
   ]
@@ -434,7 +434,7 @@
   "gsw": "Ofe",
   "gswArtikel": "de",
   "gswBeispiel": "Im Winter mached mir jede Aabig de Ofe aa.",
-  "ayniLehce": [
+  "sameDialect": [
    "(Back-)Ofen (B1)",
    "(Back-)Rohr (B1)"
   ]
@@ -528,7 +528,7 @@
   "gsw": "Bode",
   "gswArtikel": "de",
   "gswBeispiel": "De Bode im Gang isch us Holz.",
-  "ayniLehce": [
+  "sameDialect": [
    "Boden (B1)"
   ]
  },
@@ -558,7 +558,7 @@
   "gsw": "Güselchübel",
   "gswArtikel": "de",
   "gswBeispiel": "Chasch bitte de Güselchübel lääre?",
-  "ayniLehce": [
+  "sameDialect": [
    "Mülltonne (B1)"
   ]
  },
@@ -579,7 +579,7 @@
   "gsw": "ufnää",
   "gswArtikel": null,
   "gswBeispiel": "Am Samschtig tue ich de Bode i de Chuchi ufnää.",
-  "ayniLehce": [
+  "sameDialect": [
    "aufnehmen (B1)"
   ]
  },
@@ -618,7 +618,7 @@
   "gsw": "Schruube",
   "gswArtikel": "d",
   "gswBeispiel": "Ich bruuch na e chlini Schruube für s Gschtell.",
-  "ayniLehce": [
+  "sameDialect": [
    "schrauben (A2)"
   ]
  },
@@ -675,7 +675,7 @@
   "gsw": "glätte",
   "gswArtikel": null,
   "gswBeispiel": "Ich glätte am Aabig mini Hemp.",
-  "ayniLehce": [
+  "sameDialect": [
    "glätten (A2)"
   ]
  },

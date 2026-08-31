@@ -34,7 +34,7 @@
   "gsw": "Wiiterbildig",
   "gswArtikel": "d",
   "gswBeispiel": "D Wiiterbildig, won ich mache will, isch sehr tüür.",
-  "ayniLehce": [
+  "sameDialect": [
    "Weiterbildung (B1)"
   ]
  },
@@ -172,7 +172,7 @@
   "gsw": "Coiffeur",
   "gswArtikel": "de",
   "gswBeispiel": "1. Du gseesch toll uus! Wer isch din Coiffeur? 2. Mini Tochter will Coiffeuse wärde.",
-  "ayniLehce": [
+  "sameDialect": [
    "Coiffeur (B1)"
   ]
  },
@@ -184,7 +184,7 @@
   "gsw": "Coiffeuse",
   "gswArtikel": "d",
   "gswBeispiel": "Mini Tochter will Coiffeuse wärde.",
-  "ayniLehce": [
+  "sameDialect": [
    "Coiffeuse (B1)"
   ]
  },
@@ -232,7 +232,7 @@
   "gsw": "Frücht",
   "gswArtikel": null,
   "gswBeispiel": "Frücht chauf ich am liebschte uf em Märt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Obst (A1)"
   ]
  },
@@ -334,7 +334,7 @@
   "gsw": "Gang",
   "gswArtikel": "de",
   "gswBeispiel": "1. Mir warted dusse im Gang. 2. Schalted Si jetz bitte in dritte Gang.",
-  "ayniLehce": [
+  "sameDialect": [
    "Flur (B1)",
    "Korridor (B1)"
   ]
@@ -392,7 +392,7 @@
   "gsw": "Beiz",
   "gswArtikel": "d",
   "gswBeispiel": "Gömmer na in e Beiz go es Bier trinke?",
-  "ayniLehce": [
+  "sameDialect": [
    "Lokal (A1)",
    "Kneipe (B1)"
   ]
@@ -459,7 +459,7 @@
   "gsw": "bruuche",
   "gswArtikel": null,
   "gswBeispiel": "1. Mir chönd die Möbel guet bruuche. 2. Ich ha s Auto als Occasion kauft.",
-  "ayniLehce": [
+  "sameDialect": [
    "brauchen (A1)",
    "benutzen (A1)",
    "benötigen (B1)"
@@ -617,7 +617,7 @@
   "gsw": "Trottoir",
   "gswArtikel": "s",
   "gswBeispiel": "S Velofaare uf em Trottoir isch nöd erlaubt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Trottoir (B1)",
    "Bürgersteig (A2)",
    "Gehweg (A2)"
@@ -667,7 +667,7 @@
   "gsw": "zäme",
   "gswArtikel": null,
   "gswBeispiel": "1. Du muesch d Wonig renoviere? Ich hilf der. Mir chönd das zäme mache. 2. Mir bruuched d Garage zäme.",
-  "ayniLehce": [
+  "sameDialect": [
    "zusammen (A1)"
   ]
  },
@@ -697,7 +697,7 @@
   "gsw": "bewillige",
   "gswArtikel": null,
   "gswBeispiel": "Min Chef hät mer sächs Wuche Ferie bewilligt.",
-  "ayniLehce": [
+  "sameDialect": [
    "bewilligen (B2)"
   ]
  },
@@ -727,7 +727,7 @@
   "gsw": "länge",
   "gswArtikel": null,
   "gswBeispiel": "Wie vil Zimmer bruuched Si? – Mir längt e 2-Zimmer-Wonig.",
-  "ayniLehce": [
+  "sameDialect": [
    "ausreichen (B1)",
    "reichen (B1)"
   ]
@@ -956,7 +956,7 @@
   "gsw": "Glace",
   "gswArtikel": "d",
   "gswBeispiel": "Zum Dessert git s Schoggi-Glace.",
-  "ayniLehce": [
+  "sameDialect": [
    "Eis (A1)"
   ]
  },
@@ -977,7 +977,7 @@
   "gsw": "gliichfalls",
   "gswArtikel": null,
   "gswBeispiel": "Schöni Fiirtäg! – Merci, gliichfalls.",
-  "ayniLehce": [
+  "sameDialect": [
    "ebenfalls (B1)"
   ]
  },

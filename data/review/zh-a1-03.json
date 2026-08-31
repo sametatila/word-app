@@ -16,7 +16,7 @@
   "gsw": "da",
   "gswArtikel": null,
   "gswBeispiel": "Da isch d Pamela Linke am Telefon. Da wohn ich.",
-  "ayniLehce": [
+  "sameDialect": [
    "da (A1)"
   ]
  },
@@ -217,7 +217,7 @@
   "gsw": "jetz",
   "gswArtikel": null,
   "gswBeispiel": "Das isch jetz nüme wichtig.",
-  "ayniLehce": [
+  "sameDialect": [
    "nun (B1)"
   ]
  },
@@ -238,7 +238,7 @@
   "gsw": "Bueb",
   "gswArtikel": "de",
   "gswBeispiel": "De Bueb isch nöi i öisere Klass.",
-  "ayniLehce": [
+  "sameDialect": [
    "Bub (B1)"
   ]
  },
@@ -304,7 +304,7 @@
   "gsw": "Härdöpfel",
   "gswArtikel": "de",
   "gswBeispiel": "Ich möcht käi Härdöpfel.",
-  "ayniLehce": [
+  "sameDialect": [
    "Erdapfel (B1)"
   ]
  },
@@ -334,7 +334,7 @@
   "gsw": "chaufe",
   "gswArtikel": null,
   "gswBeispiel": "Ich möcht en CD-Player chaufe.",
-  "ayniLehce": [
+  "sameDialect": [
    "sich etwas kaufen (B1)"
   ]
  },
@@ -418,7 +418,7 @@
   "gsw": "Prüefig",
   "gswArtikel": "d",
   "gswBeispiel": "Ich mues lerne, morn schriibed mir e Prüefig.",
-  "ayniLehce": [
+  "sameDialect": [
    "Prüfung (A1)",
    "Schularbeit (B1)",
    "Klausur (B2)"
@@ -549,7 +549,7 @@
   "gsw": "Chugelschriiber",
   "gswArtikel": "de",
   "gswBeispiel": "Wo isch min Chugelschriiber?",
-  "ayniLehce": [
+  "sameDialect": [
    "Kuli (B1)"
   ]
  },
@@ -606,7 +606,7 @@
   "gsw": "lang",
   "gswArtikel": null,
   "gswBeispiel": "S Chläid isch z lang.",
-  "ayniLehce": [
+  "sameDialect": [
    "lange (A1)"
   ]
  },
@@ -618,7 +618,7 @@
   "gsw": "lang",
   "gswArtikel": null,
   "gswBeispiel": "Wartisch scho lang?/Ich bi scho lang daa.",
-  "ayniLehce": [
+  "sameDialect": [
    "lang (A1)"
   ]
  },
@@ -666,7 +666,7 @@
   "gsw": "läbe",
   "gswArtikel": null,
   "gswBeispiel": "Si läbt bi irere Schwöschter. Iri Eltere läbed nüme.",
-  "ayniLehce": [
+  "sameDialect": [
    "Leben (A1)"
   ]
  },
@@ -876,7 +876,7 @@
   "gsw": "Gonfi",
   "gswArtikel": "d",
   "gswBeispiel": "Ich isse Broot mit Gonfi.",
-  "ayniLehce": [
+  "sameDialect": [
    "Konfitüre (B1)"
   ]
  },

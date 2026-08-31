@@ -25,7 +25,7 @@
   "gsw": "gratis",
   "gswArtikel": null,
   "gswBeispiel": "Die Reparatur choschtet Si gar nüüt, mir mached das gratis für Si.",
-  "ayniLehce": [
+  "sameDialect": [
    "kostenlos (A2)"
   ]
  },
@@ -55,7 +55,7 @@
   "gsw": "grilliere",
   "gswArtikel": null,
   "gswBeispiel": "Hüt wänd mir im Garte grilliere.",
-  "ayniLehce": [
+  "sameDialect": [
    "grillen (A1)"
   ]
  },
@@ -130,7 +130,7 @@
   "gsw": "luege",
   "gswArtikel": null,
   "gswBeispiel": "1. Chum cho luege! Es schniit. 2. Was häisst das Wort? – Chasch im Wörterbuech naaluege.",
-  "ayniLehce": [
+  "sameDialect": [
    "schauen (B1)"
   ]
  },
@@ -151,7 +151,7 @@
   "gsw": "Ghackets",
   "gswArtikel": "s",
   "gswBeispiel": "Gänd Si mir bitte 500 Gramm Ghackets.",
-  "ayniLehce": [
+  "sameDialect": [
    "Faschiertes (B1)"
   ]
  },
@@ -217,7 +217,7 @@
   "gsw": "halt",
   "gswArtikel": null,
   "gswBeispiel": "Es git läider keini Charte me. – Schad. Da cha me nüüt mache. Das isch halt eso.",
-  "ayniLehce": [
+  "sameDialect": [
    "Halt (B1)"
   ]
  },
@@ -238,7 +238,7 @@
   "gsw": "Halt",
   "gswArtikel": "de",
   "gswBeispiel": "De nöchscht Halt isch am Hauptbaanhof.",
-  "ayniLehce": [
+  "sameDialect": [
    "halt (B1)"
   ]
  },
@@ -322,7 +322,7 @@
   "gsw": "Huusfrau",
   "gswArtikel": "d",
   "gswBeispiel": "Mini Frau isch Huusfrau und luegt zu de Chind.",
-  "ayniLehce": [
+  "sameDialect": [
    "Hausfrau (A1)"
   ]
  },
@@ -334,7 +334,7 @@
   "gsw": "Abwart",
   "gswArtikel": "de",
   "gswBeispiel": "De Abwart hät mir ghulfe, de Chaschte i d Wonig z träge.",
-  "ayniLehce": [
+  "sameDialect": [
    "Abwart (B1)"
   ]
  },
@@ -706,7 +706,7 @@
   "gsw": "hupe",
   "gswArtikel": null,
   "gswBeispiel": "Daa isch es Schpital. Daa dörfsch nöd hupe.",
-  "ayniLehce": [
+  "sameDialect": [
    "Hupe (A2)"
   ]
  },
@@ -718,7 +718,7 @@
   "gsw": "Hueschte",
   "gswArtikel": "de",
   "gswBeispiel": "Händ Si es Medikamänt gäge Hueschte?",
-  "ayniLehce": [
+  "sameDialect": [
    "husten (A2)"
   ]
  },
@@ -820,7 +820,7 @@
   "gsw": "informiere",
   "gswArtikel": null,
   "gswBeispiel": "Mir informiered Si rächtziitig über di neue Prüefigstermin.",
-  "ayniLehce": [
+  "sameDialect": [
    "sich informieren (A2)"
   ]
  },
@@ -850,7 +850,7 @@
   "gsw": "inklusive",
   "gswArtikel": null,
   "gswBeispiel": "De Zimmerpriis isch inklusive Zmorge.",
-  "ayniLehce": [
+  "sameDialect": [
    "einschließlich (B1)"
   ]
  },

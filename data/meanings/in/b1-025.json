@@ -1,16 +1,16 @@
 {
- "paket": "b1-025",
+ "packet": "b1-025",
  "niveau": "B1",
- "kelimeler": [
+ "words": [
   {
    "id": 2586,
    "de": "die Richterin",
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-nen",
-   "mevcutTr": "kadın hakim",
-   "mevcutBeispiel": "Der Richter hat noch kein Urteil gesprochen.",
-   "mevcutBeispielTr": "Hakim henüz karar vermedi."
+   "currentTr": "kadın hakim",
+   "currentBeispiel": "Der Richter hat noch kein Urteil gesprochen.",
+   "currentBeispielTr": "Hakim henüz karar vermedi."
   },
   {
    "id": 1429,
@@ -18,10 +18,10 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-en",
-   "mevcutTr": "mimar (erkek)",
-   "mevcutBeispiel": "Dieses Haus hat eine berühmte Architektin gebaut.",
-   "mevcutBeispielTr": "Bu evi ünlü bir mimar inşa etti.",
-   "cakisan": [
+   "currentTr": "mimar (erkek)",
+   "currentBeispiel": "Dieses Haus hat eine berühmte Architektin gebaut.",
+   "currentBeispielTr": "Bu evi ünlü bir mimar inşa etti.",
+   "overlapping": [
     "die Architektin (B1)"
    ]
   },
@@ -31,9 +31,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-n",
-   "mevcutTr": "fren",
-   "mevcutBeispiel": "Du musst unbedingt die Bremsen kontrollieren lassen.",
-   "mevcutBeispielTr": "Frenleri mutlaka kontrol ettirmelisin."
+   "currentTr": "fren",
+   "currentBeispiel": "Du musst unbedingt die Bremsen kontrollieren lassen.",
+   "currentBeispielTr": "Frenleri mutlaka kontrol ettirmelisin."
   },
   {
    "id": 1828,
@@ -41,10 +41,10 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "erzieht, erzog, hat erzogen",
-   "mevcutTr": "yetiştirmek, eğitmek",
-   "mevcutBeispiel": "Kinder zu erziehen ist nicht leicht.",
-   "mevcutBeispielTr": "Çocuk yetiştirmek kolay değil.",
-   "cakisan": [
+   "currentTr": "yetiştirmek, eğitmek",
+   "currentBeispiel": "Kinder zu erziehen ist nicht leicht.",
+   "currentBeispielTr": "Çocuk yetiştirmek kolay değil.",
+   "overlapping": [
     "anbauen (C1)",
     "züchten (C1)",
     "ausbilden (A2)"
@@ -56,10 +56,10 @@
    "typ": "Sonstiges",
    "niveau": "B1",
    "formen": "",
-   "mevcutTr": "sınırlı",
-   "mevcutBeispiel": "Die Teilnehmerzahl ist auf 12 begrenzt.",
-   "mevcutBeispielTr": "Katılımcı sayısı 12 ile sınırlı.",
-   "cakisan": [
+   "currentTr": "sınırlı",
+   "currentBeispiel": "Die Teilnehmerzahl ist auf 12 begrenzt.",
+   "currentBeispielTr": "Katılımcı sayısı 12 ile sınırlı.",
+   "overlapping": [
     "überschaubar (B2)"
    ]
   },
@@ -69,9 +69,9 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "löst auf, löste auf, hat aufgelöst",
-   "mevcutTr": "eritmek, çözmek",
-   "mevcutBeispiel": "Die Tablette bitte in Wasser auflösen.",
-   "mevcutBeispielTr": "Tableti lütfen suda eritin."
+   "currentTr": "eritmek, çözmek",
+   "currentBeispiel": "Die Tablette bitte in Wasser auflösen.",
+   "currentBeispielTr": "Tableti lütfen suda eritin."
   },
   {
    "id": 2306,
@@ -79,10 +79,10 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "fährt los, fuhr los, ist losgefahren",
-   "mevcutTr": "yola çıkmak (araçla), hareket etmek",
-   "mevcutBeispiel": "Wir fahren um 8 Uhr los. Sei bitte pünktlich.",
-   "mevcutBeispielTr": "Saat 8'de yola çıkıyoruz. Lütfen dakik ol.",
-   "cakisan": [
+   "currentTr": "yola çıkmak (araçla), hareket etmek",
+   "currentBeispiel": "Wir fahren um 8 Uhr los. Sei bitte pünktlich.",
+   "currentBeispielTr": "Saat 8'de yola çıkıyoruz. Lütfen dakik ol.",
+   "overlapping": [
     "aufbrechen (B2)",
     "abreisen (A2)",
     "losgehen (A2)"
@@ -94,9 +94,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-e",
-   "mevcutTr": "tatil günü, bayram günü",
-   "mevcutBeispiel": "1. Am Montag ist Feiertag. 2. Schöne Feiertage.",
-   "mevcutBeispielTr": "1. Pazartesi resmî tatil. 2. İyi bayramlar!"
+   "currentTr": "tatil günü, bayram günü",
+   "currentBeispiel": "1. Am Montag ist Feiertag. 2. Schöne Feiertage.",
+   "currentBeispielTr": "1. Pazartesi resmî tatil. 2. İyi bayramlar!"
   },
   {
    "id": 1348,
@@ -104,9 +104,9 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "hebt ab, hob ab, hat abgehoben",
-   "mevcutTr": "para çekmek, kaldırmak",
-   "mevcutBeispiel": "Für die Reise habe ich 500 Euro von meinem Konto abgehoben.",
-   "mevcutBeispielTr": "Seyahat için hesabımdan 500 euro çektim."
+   "currentTr": "para çekmek, kaldırmak",
+   "currentBeispiel": "Für die Reise habe ich 500 Euro von meinem Konto abgehoben.",
+   "currentBeispielTr": "Seyahat için hesabımdan 500 euro çektim."
   },
   {
    "id": 2851,
@@ -114,9 +114,9 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "tippt, tippte, hat getippt",
-   "mevcutTr": "klavyede yazmak, tuşlamak",
-   "mevcutBeispiel": "Wie schnell kannst du tippen?",
-   "mevcutBeispielTr": "Ne kadar hızlı yazabiliyorsun?"
+   "currentTr": "klavyede yazmak, tuşlamak",
+   "currentBeispiel": "Wie schnell kannst du tippen?",
+   "currentBeispielTr": "Ne kadar hızlı yazabiliyorsun?"
   },
   {
    "id": 2183,
@@ -124,10 +124,10 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "klickt, klickte, hat geklickt",
-   "mevcutTr": "tıklamak",
-   "mevcutBeispiel": "Wenn du die Datei öffnen willst, musst du mit der Maus zweimal klicken.",
-   "mevcutBeispielTr": "Dosyayı açmak istiyorsan fareyle çift tıklaman gerekiyor.",
-   "cakisan": [
+   "currentTr": "tıklamak",
+   "currentBeispiel": "Wenn du die Datei öffnen willst, musst du mit der Maus zweimal klicken.",
+   "currentBeispielTr": "Dosyayı açmak istiyorsan fareyle çift tıklaman gerekiyor.",
+   "overlapping": [
     "anklicken (A1)"
    ]
   },
@@ -137,10 +137,10 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "wiegt, wog, hat gewogen",
-   "mevcutTr": "tartmak, ağırlığında olmak",
-   "mevcutBeispiel": "1. Wie viel wiegst du? 2. Der Brief wiegt mehr als 20 Gramm.",
-   "mevcutBeispielTr": "1. Kaç kilosun? 2. Mektup 20 gramdan fazla geliyor.",
-   "cakisan": [
+   "currentTr": "tartmak, ağırlığında olmak",
+   "currentBeispiel": "1. Wie viel wiegst du? 2. Der Brief wiegt mehr als 20 Gramm.",
+   "currentBeispielTr": "1. Kaç kilosun? 2. Mektup 20 gramdan fazla geliyor.",
+   "overlapping": [
     "abwägen (C1)"
    ]
   },
@@ -150,9 +150,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-nen",
-   "mevcutTr": "kadın gazeteci",
-   "mevcutBeispiel": "Meine Tochter möchte Journalistin werden.",
-   "mevcutBeispielTr": "Kızım gazeteci olmak istiyor."
+   "currentTr": "kadın gazeteci",
+   "currentBeispiel": "Meine Tochter möchte Journalistin werden.",
+   "currentBeispielTr": "Kızım gazeteci olmak istiyor."
   },
   {
    "id": 2680,
@@ -160,9 +160,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-e",
-   "mevcutTr": "seminer",
-   "mevcutBeispiel": "Ich möchte dieses Seminar unbedingt besuchen.",
-   "mevcutBeispielTr": "Bu seminere mutlaka katılmak istiyorum."
+   "currentTr": "seminer",
+   "currentBeispiel": "Ich möchte dieses Seminar unbedingt besuchen.",
+   "currentBeispielTr": "Bu seminere mutlaka katılmak istiyorum."
   },
   {
    "id": 1480,
@@ -170,10 +170,10 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "wählt aus, wählte aus, hat ausgewählt",
-   "mevcutTr": "seçmek",
-   "mevcutBeispiel": "Für die Aufgabe können Sie aus drei Themen auswählen.",
-   "mevcutBeispielTr": "Bu görev için üç konu arasından seçim yapabilirsiniz.",
-   "cakisan": [
+   "currentTr": "seçmek",
+   "currentBeispiel": "Für die Aufgabe können Sie aus drei Themen auswählen.",
+   "currentBeispielTr": "Bu görev için üç konu arasından seçim yapabilirsiniz.",
+   "overlapping": [
     "wählen (A2)",
     "sich etwas aussuchen (B1)"
    ]
@@ -184,9 +184,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "",
-   "mevcutTr": "ağrı kesici",
-   "mevcutBeispiel": "- Sie haben Zahnschmerzen? Ich verschreibe Ihnen ein Schmerzmittel.",
-   "mevcutBeispielTr": "Dişleriniz mi ağrıyor? Size bir ağrı kesici yazıyorum."
+   "currentTr": "ağrı kesici",
+   "currentBeispiel": "- Sie haben Zahnschmerzen? Ich verschreibe Ihnen ein Schmerzmittel.",
+   "currentBeispielTr": "Dişleriniz mi ağrıyor? Size bir ağrı kesici yazıyorum."
   },
   {
    "id": 1667,
@@ -194,10 +194,10 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-nen",
-   "mevcutTr": "müdür (kadın)",
-   "mevcutBeispiel": "Ich möchte gern mit dem Direktor sprechen.",
-   "mevcutBeispielTr": "Müdürle görüşmek istiyorum.",
-   "cakisan": [
+   "currentTr": "müdür (kadın)",
+   "currentBeispiel": "Ich möchte gern mit dem Direktor sprechen.",
+   "currentBeispielTr": "Müdürle görüşmek istiyorum.",
+   "overlapping": [
     "der Direktor (B1)",
     "der Leiter (B1)"
    ]
@@ -208,10 +208,10 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "reduziert, reduzierte, hat reduziert",
-   "mevcutTr": "azaltmak, indirmek",
-   "mevcutBeispiel": "1. Wir haben jetzt unsere Preise reduziert. 2. Ist dieser Pullover auch reduziert?",
-   "mevcutBeispielTr": "1. Fiyatlarımızı indirdik. 2. Bu kazak da indirimli mi?",
-   "cakisan": [
+   "currentTr": "azaltmak, indirmek",
+   "currentBeispiel": "1. Wir haben jetzt unsere Preise reduziert. 2. Ist dieser Pullover auch reduziert?",
+   "currentBeispielTr": "1. Fiyatlarımızı indirdik. 2. Bu kazak da indirimli mi?",
+   "overlapping": [
     "schmälern (C1)",
     "verknappen (C1)",
     "verringern (A2)"
@@ -223,10 +223,10 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "erleichtert, erleichterte, hat erleichtert",
-   "mevcutTr": "kolaylaştırmak, rahatlatmak",
-   "mevcutBeispiel": "1. Ich bin erleichtert, dass alles so gut geklappt hat. 2. Das Internet erleichtert mir die Arbeit sehr.",
-   "mevcutBeispielTr": "1. Her şey bu kadar iyi gittiği için rahatladım. 2. İnternet işimi çok kolaylaştırıyor.",
-   "cakisan": [
+   "currentTr": "kolaylaştırmak, rahatlatmak",
+   "currentBeispiel": "1. Ich bin erleichtert, dass alles so gut geklappt hat. 2. Das Internet erleichtert mir die Arbeit sehr.",
+   "currentBeispielTr": "1. Her şey bu kadar iyi gittiği için rahatladım. 2. İnternet işimi çok kolaylaştırıyor.",
+   "overlapping": [
     "begünstigen (C1)"
    ]
   },
@@ -236,10 +236,10 @@
    "typ": "Sonstiges",
    "niveau": "B1",
    "formen": "",
-   "mevcutTr": "en fazla, azami",
-   "mevcutBeispiel": "1. Wie lange braucht ein Brief? – Maximal zwei Tage. 2. Wie schwer darf der Brief sein? – Maximal 20 g.",
-   "mevcutBeispielTr": "1. Bir mektup ne kadar sürer? – En fazla iki gün. 2. Mektup en fazla ne kadar ağır olabilir? – En fazla 20 gram.",
-   "cakisan": [
+   "currentTr": "en fazla, azami",
+   "currentBeispiel": "1. Wie lange braucht ein Brief? – Maximal zwei Tage. 2. Wie schwer darf der Brief sein? – Maximal 20 g.",
+   "currentBeispielTr": "1. Bir mektup ne kadar sürer? – En fazla iki gün. 2. Mektup en fazla ne kadar ağır olabilir? – En fazla 20 gram.",
+   "overlapping": [
     "höchstens (B1)"
    ]
   },
@@ -249,9 +249,9 @@
    "typ": "Sonstiges",
    "niveau": "B1",
    "formen": "",
-   "mevcutTr": "iyimser",
-   "mevcutBeispiel": "Glaubst du, dass du den Job bekommst. – Ja, ich bin ganz optimistisch.",
-   "mevcutBeispielTr": "İşi alacağına inanıyor musun? – Evet, oldukça iyimserim."
+   "currentTr": "iyimser",
+   "currentBeispiel": "Glaubst du, dass du den Job bekommst. – Ja, ich bin ganz optimistisch.",
+   "currentBeispielTr": "İşi alacağına inanıyor musun? – Evet, oldukça iyimserim."
   },
   {
    "id": 3184,
@@ -259,9 +259,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "(Pl.)",
-   "mevcutTr": "malzemeler",
-   "mevcutBeispiel": "Welche Zutaten braucht man für diesen Kuchen?",
-   "mevcutBeispielTr": "Bu kek için hangi malzemeler gerekiyor?"
+   "currentTr": "malzemeler",
+   "currentBeispiel": "Welche Zutaten braucht man für diesen Kuchen?",
+   "currentBeispielTr": "Bu kek için hangi malzemeler gerekiyor?"
   },
   {
    "id": 1881,
@@ -269,10 +269,10 @@
    "typ": "Sonstiges",
    "niveau": "B1",
    "formen": "",
-   "mevcutTr": "mali, parasal, finansal",
-   "mevcutBeispiel": "Finanziell geht es meinem Neffen jetzt besser.",
-   "mevcutBeispielTr": "Yeğenim maddi açıdan artık daha iyi durumda.",
-   "cakisan": [
+   "currentTr": "mali, parasal, finansal",
+   "currentBeispiel": "Finanziell geht es meinem Neffen jetzt besser.",
+   "currentBeispielTr": "Yeğenim maddi açıdan artık daha iyi durumda.",
+   "overlapping": [
     "fiskalisch (C1)"
    ]
   },
@@ -282,10 +282,10 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "Zündholz",
-   "mevcutTr": "kibrit (Avusturya)",
-   "mevcutBeispiel": "Ich hätte gern eine Schachtel Zünder.",
-   "mevcutBeispielTr": "Bir kutu kibrit almak istiyorum.",
-   "cakisan": [
+   "currentTr": "kibrit (Avusturya)",
+   "currentBeispiel": "Ich hätte gern eine Schachtel Zünder.",
+   "currentBeispielTr": "Bir kutu kibrit almak istiyorum.",
+   "overlapping": [
     "das Streichholz (B1)",
     "das Zündholz (B1)"
    ]
@@ -296,10 +296,10 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-e (D, CH) → Gang, D: Flur",
-   "mevcutTr": "koridor",
-   "mevcutBeispiel": "Wir warten draußen im Korridor.",
-   "mevcutBeispielTr": "Dışarıda, koridorda bekliyoruz.",
-   "cakisan": [
+   "currentTr": "koridor",
+   "currentBeispiel": "Wir warten draußen im Korridor.",
+   "currentBeispielTr": "Dışarıda, koridorda bekliyoruz.",
+   "overlapping": [
     "der Flur (B1)",
     "der Gang (B1)"
    ]
@@ -310,9 +310,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-n",
-   "mevcutTr": "çorap (kısa)",
-   "mevcutBeispiel": "Im Winter brauche ich warme Socken.",
-   "mevcutBeispielTr": "Kışın kalın çoraplara ihtiyacım oluyor."
+   "currentTr": "çorap (kısa)",
+   "currentBeispiel": "Im Winter brauche ich warme Socken.",
+   "currentBeispielTr": "Kışın kalın çoraplara ihtiyacım oluyor."
   },
   {
    "id": 1463,
@@ -320,9 +320,9 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "fällt aus, fiel aus, ist ausgefallen",
-   "mevcutTr": "iptal olmak, gerçekleşmemek",
-   "mevcutBeispiel": "Nächste Woche fällt der Kurs aus.",
-   "mevcutBeispielTr": "Gelecek hafta kurs yapılmayacak."
+   "currentTr": "iptal olmak, gerçekleşmemek",
+   "currentBeispiel": "Nächste Woche fällt der Kurs aus.",
+   "currentBeispielTr": "Gelecek hafta kurs yapılmayacak."
   },
   {
    "id": 2499,
@@ -330,9 +330,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-en",
-   "mevcutTr": "planlama",
-   "mevcutBeispiel": "Unsere Planung für das Sommerfest steht schon lange.",
-   "mevcutBeispielTr": "Yaz şenliği planımız çoktan hazır."
+   "currentTr": "planlama",
+   "currentBeispiel": "Unsere Planung für das Sommerfest steht schon lange.",
+   "currentBeispielTr": "Yaz şenliği planımız çoktan hazır."
   },
   {
    "id": 2507,
@@ -340,10 +340,10 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-s (D, CH) Brieftasche, A: Geldbörse",
-   "mevcutTr": "cüzdan",
-   "mevcutBeispiel": "Ich habe nur Kleingeld in meinem Portemonnaie.",
-   "mevcutBeispielTr": "Cüzdanımda yalnızca bozuk para var.",
-   "cakisan": [
+   "currentTr": "cüzdan",
+   "currentBeispiel": "Ich habe nur Kleingeld in meinem Portemonnaie.",
+   "currentBeispielTr": "Cüzdanımda yalnızca bozuk para var.",
+   "overlapping": [
     "die Geldbörse (A2)",
     "die Brieftasche (B1)",
     "der Geldbeutel (A2)"
@@ -355,9 +355,9 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "tankt, tankte, hat getankt",
-   "mevcutTr": "benzin almak, yakıt almak",
-   "mevcutBeispiel": "1. Wir müssen unbedingt tanken. Wir haben fast kein Benzin mehr. 2. Bitte einmal volltanken!",
-   "mevcutBeispielTr": "1. Mutlaka benzin almamız lazım; neredeyse hiç benzin kalmadı. 2. Depoyu doldurun lütfen!"
+   "currentTr": "benzin almak, yakıt almak",
+   "currentBeispiel": "1. Wir müssen unbedingt tanken. Wir haben fast kein Benzin mehr. 2. Bitte einmal volltanken!",
+   "currentBeispielTr": "1. Mutlaka benzin almamız lazım; neredeyse hiç benzin kalmadı. 2. Depoyu doldurun lütfen!"
   },
   {
    "id": 1537,
@@ -365,10 +365,10 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "berechnet, berechnete, hat berechnet",
-   "mevcutTr": "hesaplamak",
-   "mevcutBeispiel": "Die Kosten für die Fahrt müssen erst berechnet werden.",
-   "mevcutBeispielTr": "Yol masrafının önce hesaplanması gerekiyor.",
-   "cakisan": [
+   "currentTr": "hesaplamak",
+   "currentBeispiel": "Die Kosten für die Fahrt müssen erst berechnet werden.",
+   "currentBeispielTr": "Yol masrafının önce hesaplanması gerekiyor.",
+   "overlapping": [
     "kalkulieren (B2)"
    ]
   },
@@ -378,9 +378,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-n",
-   "mevcutTr": "çayır, çimenlik",
-   "mevcutBeispiel": "Vor unserem Haus ist eine Wiese mit Bäumen.",
-   "mevcutBeispielTr": "Evimizin önünde ağaçlı bir çayır var."
+   "currentTr": "çayır, çimenlik",
+   "currentBeispiel": "Vor unserem Haus ist eine Wiese mit Bäumen.",
+   "currentBeispielTr": "Evimizin önünde ağaçlı bir çayır var."
   },
   {
    "id": 2488,
@@ -388,9 +388,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "",
-   "mevcutTr": "karabiber",
-   "mevcutBeispiel": "Bringen Sie uns bitte Pfeffer und Salz.",
-   "mevcutBeispielTr": "Bize karabiber ve tuz getirir misiniz lütfen."
+   "currentTr": "karabiber",
+   "currentBeispiel": "Bringen Sie uns bitte Pfeffer und Salz.",
+   "currentBeispielTr": "Bize karabiber ve tuz getirir misiniz lütfen."
   },
   {
    "id": 2753,
@@ -398,9 +398,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-s",
-   "mevcutTr": "trafik sıkışıklığı",
-   "mevcutBeispiel": "1. Auf der A3 gibt es wegen eines Unfalls 5 km Stau. 2. Wir standen eine Stunde im Stau.",
-   "mevcutBeispielTr": "1. A3 otoyolunda bir kaza yüzünden 5 km kuyruk var. 2. Bir saat trafikte bekledik."
+   "currentTr": "trafik sıkışıklığı",
+   "currentBeispiel": "1. Auf der A3 gibt es wegen eines Unfalls 5 km Stau. 2. Wir standen eine Stunde im Stau.",
+   "currentBeispielTr": "1. A3 otoyolunda bir kaza yüzünden 5 km kuyruk var. 2. Bir saat trafikte bekledik."
   },
   {
    "id": 2005,
@@ -408,9 +408,9 @@
    "typ": "Sonstiges",
    "niveau": "B1",
    "formen": "",
-   "mevcutTr": "zehirli",
-   "mevcutBeispiel": "Vorsicht, das ist giftig!",
-   "mevcutBeispielTr": "Dikkat, bu zehirli!"
+   "currentTr": "zehirli",
+   "currentBeispiel": "Vorsicht, das ist giftig!",
+   "currentBeispielTr": "Dikkat, bu zehirli!"
   },
   {
    "id": 2348,
@@ -418,10 +418,10 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "- → A: Fleischhauer",
-   "mevcutTr": "kasap",
-   "mevcutBeispiel": "Dieser Metzger hat sehr gute Wurst.",
-   "mevcutBeispielTr": "Bu kasapta çok iyi sosis var.",
-   "cakisan": [
+   "currentTr": "kasap",
+   "currentBeispiel": "Dieser Metzger hat sehr gute Wurst.",
+   "currentBeispielTr": "Bu kasapta çok iyi sosis var.",
+   "overlapping": [
     "der Fleischhauer (B1)"
    ]
   },
@@ -431,9 +431,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-e",
-   "mevcutTr": "diyalog, karşılıklı konuşma",
-   "mevcutBeispiel": "Sie hören jetzt einen Dialog.",
-   "mevcutBeispielTr": "Şimdi bir diyalog dinleyeceksiniz."
+   "currentTr": "diyalog, karşılıklı konuşma",
+   "currentBeispiel": "Sie hören jetzt einen Dialog.",
+   "currentBeispielTr": "Şimdi bir diyalog dinleyeceksiniz."
   },
   {
    "id": 2733,
@@ -441,9 +441,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "die Sportlerin, -nen",
-   "mevcutTr": "sporcu",
-   "mevcutBeispiel": "- Sie ist eine gute Sportlerin.",
-   "mevcutBeispielTr": "O iyi bir sporcu."
+   "currentTr": "sporcu",
+   "currentBeispiel": "- Sie ist eine gute Sportlerin.",
+   "currentBeispielTr": "O iyi bir sporcu."
   },
   {
    "id": 1499,
@@ -451,10 +451,10 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "beantragt, beantragte, hat beantragt",
-   "mevcutTr": "başvurmak, talep etmek (resmi belge, izin)",
-   "mevcutBeispiel": "Hast du schon einen neuen Pass beantragt?",
-   "mevcutBeispielTr": "Yeni pasaport başvurusu yaptın mı?",
-   "cakisan": [
+   "currentTr": "başvurmak, talep etmek (resmi belge, izin)",
+   "currentBeispiel": "Hast du schon einen neuen Pass beantragt?",
+   "currentBeispielTr": "Yeni pasaport başvurusu yaptın mı?",
+   "overlapping": [
     "sich bewerben um (B2)",
     "heranziehen (C1)"
    ]
@@ -465,9 +465,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-e",
-   "mevcutTr": "protesto",
-   "mevcutBeispiel": "Alle Proteste haben nichts genützt.",
-   "mevcutBeispielTr": "Bütün protestolar işe yaramadı."
+   "currentTr": "protesto",
+   "currentBeispiel": "Alle Proteste haben nichts genützt.",
+   "currentBeispielTr": "Bütün protestolar işe yaramadı."
   },
   {
    "id": 2465,
@@ -475,10 +475,10 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-n",
-   "mevcutTr": "arıza",
-   "mevcutBeispiel": "1. Kurz vor München hatten wir eine Panne mit dem Auto. 2. Die Reise war schlecht organisiert, es gab mehrere Pannen.",
-   "mevcutBeispielTr": "1. Münih'e az kala arabamız arıza yaptı. 2. Gezi kötü organize edilmişti; birçok aksaklık oldu.",
-   "cakisan": [
+   "currentTr": "arıza",
+   "currentBeispiel": "1. Kurz vor München hatten wir eine Panne mit dem Auto. 2. Die Reise war schlecht organisiert, es gab mehrere Pannen.",
+   "currentBeispielTr": "1. Münih'e az kala arabamız arıza yaptı. 2. Gezi kötü organize edilmişti; birçok aksaklık oldu.",
+   "overlapping": [
     "der Ausfall (B2)"
    ]
   },
@@ -488,10 +488,10 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "biegt ab, bog ab, ist abgebogen",
-   "mevcutTr": "dönmek, sapmak",
-   "mevcutBeispiel": "An der nächsten Kreuzung müssen Sie links abbiegen.",
-   "mevcutBeispielTr": "Bir sonraki kavşaktan sola dönmeniz gerekiyor.",
-   "cakisan": [
+   "currentTr": "dönmek, sapmak",
+   "currentBeispiel": "An der nächsten Kreuzung müssen Sie links abbiegen.",
+   "currentBeispielTr": "Bir sonraki kavşaktan sola dönmeniz gerekiyor.",
+   "overlapping": [
     "sich umdrehen (B1)",
     "rotieren (C1)"
    ]
@@ -502,10 +502,10 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-e",
-   "mevcutTr": "uzlaşma, orta yol",
-   "mevcutBeispiel": "Alle wollen etwas anderes. Wir müssen einen Kompromiss finden.",
-   "mevcutBeispielTr": "Herkes başka bir şey istiyor; bir orta yol bulmalıyız.",
-   "cakisan": [
+   "currentTr": "uzlaşma, orta yol",
+   "currentBeispiel": "Alle wollen etwas anderes. Wir müssen einen Kompromiss finden.",
+   "currentBeispielTr": "Herkes başka bir şey istiyor; bir orta yol bulmalıyız.",
+   "overlapping": [
     "die Aussöhnung (C1)"
    ]
   },
@@ -515,9 +515,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-n",
-   "mevcutTr": "sanayi, endüstri",
-   "mevcutBeispiel": "In dieser Gegend gibt es viel Industrie.",
-   "mevcutBeispielTr": "Bu bölgede çok sanayi var."
+   "currentTr": "sanayi, endüstri",
+   "currentBeispiel": "In dieser Gegend gibt es viel Industrie.",
+   "currentBeispielTr": "Bu bölgede çok sanayi var."
   },
   {
    "id": 2042,
@@ -525,9 +525,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "die Handwerkerin, -nen",
-   "mevcutTr": "zanaatkâr, usta",
-   "mevcutBeispiel": "- Morgen sind bei uns die Handwerker. Wir bekommen eine neue Badewanne.",
-   "mevcutBeispielTr": "Yarın bizde ustalar var. Yeni bir küvet takılacak."
+   "currentTr": "zanaatkâr, usta",
+   "currentBeispiel": "- Morgen sind bei uns die Handwerker. Wir bekommen eine neue Badewanne.",
+   "currentBeispielTr": "Yarın bizde ustalar var. Yeni bir küvet takılacak."
   },
   {
    "id": 1478,
@@ -535,9 +535,9 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "stellt aus, stellte aus, hat ausgestellt",
-   "mevcutTr": "sergilemek, düzenlemek",
-   "mevcutBeispiel": "1. Im Schaufenster sind Winterschuhe ausgestellt. 2. Das Zeugnis wird bis nächste Woche ausgestellt.",
-   "mevcutBeispielTr": "Vitrinde kışlık ayakkabılar sergileniyor."
+   "currentTr": "sergilemek, düzenlemek",
+   "currentBeispiel": "1. Im Schaufenster sind Winterschuhe ausgestellt. 2. Das Zeugnis wird bis nächste Woche ausgestellt.",
+   "currentBeispielTr": "Vitrinde kışlık ayakkabılar sergileniyor."
   },
   {
    "id": 2487,
@@ -545,10 +545,10 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "-n (CH) → D, A: Topf",
-   "mevcutTr": "tencere (İsviçre), tava",
-   "mevcutBeispiel": "Hast du keine größere Pfanne? Ich möchte Kartoffeln kochen.",
-   "mevcutBeispielTr": "Daha büyük bir tavan yok mu? Patates pişirmek istiyorum.",
-   "cakisan": [
+   "currentTr": "tencere (İsviçre), tava",
+   "currentBeispiel": "Hast du keine größere Pfanne? Ich möchte Kartoffeln kochen.",
+   "currentBeispielTr": "Daha büyük bir tavan yok mu? Patates pişirmek istiyorum.",
+   "overlapping": [
     "der Topf (A2)"
    ]
   },
@@ -558,9 +558,9 @@
    "typ": "Sonstiges",
    "niveau": "B1",
    "formen": "",
-   "mevcutTr": "nezleli, soğuk algınlığı olan",
-   "mevcutBeispiel": "Ich bin stark erkältet.",
-   "mevcutBeispielTr": "Fena hâlde üşüttüm."
+   "currentTr": "nezleli, soğuk algınlığı olan",
+   "currentBeispiel": "Ich bin stark erkältet.",
+   "currentBeispielTr": "Fena hâlde üşüttüm."
   },
   {
    "id": 2185,
@@ -568,9 +568,9 @@
    "typ": "Nomen",
    "niveau": "B1",
    "formen": "",
-   "mevcutTr": "iklim",
-   "mevcutBeispiel": "Alle sagen, dass sich das Klima ändert.",
-   "mevcutBeispielTr": "Herkes iklimin değiştiğini söylüyor."
+   "currentTr": "iklim",
+   "currentBeispiel": "Alle sagen, dass sich das Klima ändert.",
+   "currentBeispielTr": "Herkes iklimin değiştiğini söylüyor."
   },
   {
    "id": 2876,
@@ -578,9 +578,9 @@
    "typ": "Verb",
    "niveau": "B1",
    "formen": "trocknet, trocknete, hat/ist getrocknet",
-   "mevcutTr": "kurutmak, kurumak",
-   "mevcutBeispiel": "1. Ich habe mir die Haare getrocknet. 2. Die Farbe ist schnell getrocknet.",
-   "mevcutBeispielTr": "1. Saçımı kuruttum. 2. Boya çabuk kurudu."
+   "currentTr": "kurutmak, kurumak",
+   "currentBeispiel": "1. Ich habe mir die Haare getrocknet. 2. Die Farbe ist schnell getrocknet.",
+   "currentBeispielTr": "1. Saçımı kuruttum. 2. Boya çabuk kurudu."
   }
  ]
 }

@@ -1,16 +1,16 @@
 {
- "paket": "c1-022",
+ "packet": "c1-022",
  "niveau": "C1",
- "kelimeler": [
+ "words": [
   {
    "id": 6303,
    "de": "überdauern",
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat überdauert",
-   "mevcutTr": "ayakta kalmak, günümüze ulaşmak",
-   "mevcutBeispiel": "Nur wenige Handschriften haben die Jahrhunderte überdauert.",
-   "mevcutBeispielTr": "Yüzyıllara ancak birkaç el yazması dayanabildi."
+   "currentTr": "ayakta kalmak, günümüze ulaşmak",
+   "currentBeispiel": "Nur wenige Handschriften haben die Jahrhunderte überdauert.",
+   "currentBeispielTr": "Yüzyıllara ancak birkaç el yazması dayanabildi."
   },
   {
    "id": 6304,
@@ -18,10 +18,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist verblasst",
-   "mevcutTr": "solmak, silikleşmek",
-   "mevcutBeispiel": "Mit dem Tod der Beteiligten verblasst auch die Erinnerung.",
-   "mevcutBeispielTr": "Olaya karışanların ölümüyle birlikte hatıra da siliniyor.",
-   "cakisan": [
+   "currentTr": "solmak, silikleşmek",
+   "currentBeispiel": "Mit dem Tod der Beteiligten verblasst auch die Erinnerung.",
+   "currentBeispielTr": "Olaya karışanların ölümüyle birlikte hatıra da siliniyor.",
+   "overlapping": [
     "welken (B2)"
    ]
   },
@@ -31,9 +31,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat angeknüpft",
-   "mevcutTr": "bağlanmak, kaldığı yerden sürdürmek",
-   "mevcutBeispiel": "Die neue Regierung knüpfte bewusst an ältere Traditionen an.",
-   "mevcutBeispielTr": "Yeni hükûmet bilinçli olarak daha eski geleneklere bağlandı."
+   "currentTr": "bağlanmak, kaldığı yerden sürdürmek",
+   "currentBeispiel": "Die neue Regierung knüpfte bewusst an ältere Traditionen an.",
+   "currentBeispielTr": "Yeni hükûmet bilinçli olarak daha eski geleneklere bağlandı."
   },
   {
    "id": 6306,
@@ -41,9 +41,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat umgedeutet",
-   "mevcutTr": "başka anlama çekmek, yeniden yorumlamak",
-   "mevcutBeispiel": "Eine Niederlage wurde nachträglich zum heroischen Opfer umgedeutet.",
-   "mevcutBeispielTr": "Bir yenilgi sonradan kahramanca bir fedakârlığa dönüştürülerek yorumlandı."
+   "currentTr": "başka anlama çekmek, yeniden yorumlamak",
+   "currentBeispiel": "Eine Niederlage wurde nachträglich zum heroischen Opfer umgedeutet.",
+   "currentBeispielTr": "Bir yenilgi sonradan kahramanca bir fedakârlığa dönüştürülerek yorumlandı."
   },
   {
    "id": 6307,
@@ -51,9 +51,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "belgelenmiş, kanıtlı",
-   "mevcutBeispiel": "Als historisch verbürgt gilt allein das Datum der Ankunft.",
-   "mevcutBeispielTr": "Tarihsel olarak kanıtlanmış sayılan tek şey varış tarihidir."
+   "currentTr": "belgelenmiş, kanıtlı",
+   "currentBeispiel": "Als historisch verbürgt gilt allein das Datum der Ankunft.",
+   "currentBeispielTr": "Tarihsel olarak kanıtlanmış sayılan tek şey varış tarihidir."
   },
   {
    "id": 6308,
@@ -61,9 +61,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sonuçları ağır, etkisi büyük",
-   "mevcutBeispiel": "Diese scheinbar kleine Entscheidung erwies sich als äußerst folgenreich.",
-   "mevcutBeispielTr": "Görünüşte küçük olan bu karar son derece ağır sonuçlar doğurdu."
+   "currentTr": "sonuçları ağır, etkisi büyük",
+   "currentBeispiel": "Diese scheinbar kleine Entscheidung erwies sich als äußerst folgenreich.",
+   "currentBeispielTr": "Görünüşte küçük olan bu karar son derece ağır sonuçlar doğurdu."
   },
   {
    "id": 6309,
@@ -71,9 +71,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "geriye dönüp bakıldığında",
-   "mevcutBeispiel": "Rückblickend erscheint der Konflikt fast unausweichlich gewesen zu sein.",
-   "mevcutBeispielTr": "Geriye dönüp bakıldığında çatışma neredeyse kaçınılmaz görünüyor."
+   "currentTr": "geriye dönüp bakıldığında",
+   "currentBeispiel": "Rückblickend erscheint der Konflikt fast unausweichlich gewesen zu sein.",
+   "currentBeispielTr": "Geriye dönüp bakıldığında çatışma neredeyse kaçınılmaz görünüyor."
   },
   {
    "id": 6310,
@@ -81,10 +81,10 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çelişkili, ikircikli",
-   "mevcutBeispiel": "Sein Nachruhm bleibt bis heute außerordentlich zwiespältig.",
-   "mevcutBeispielTr": "Ardında bıraktığı ün bugün hâlâ son derece ikircikli.",
-   "cakisan": [
+   "currentTr": "çelişkili, ikircikli",
+   "currentBeispiel": "Sein Nachruhm bleibt bis heute außerordentlich zwiespältig.",
+   "currentBeispielTr": "Ardında bıraktığı ün bugün hâlâ son derece ikircikli.",
+   "overlapping": [
     "widersprüchlich (C1)"
    ]
   },
@@ -94,9 +94,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "acımasızca, hiç yumuşatmadan",
-   "mevcutBeispiel": "Der Bericht benennt die Versäumnisse der Behörden schonungslos.",
-   "mevcutBeispielTr": "Rapor kurumların ihmallerini hiç yumuşatmadan adlandırıyor."
+   "currentTr": "acımasızca, hiç yumuşatmadan",
+   "currentBeispiel": "Der Bericht benennt die Versäumnisse der Behörden schonungslos.",
+   "currentBeispielTr": "Rapor kurumların ihmallerini hiç yumuşatmadan adlandırıyor."
   },
   {
    "id": 6312,
@@ -104,9 +104,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "dünya ticareti, küresel ticaret",
-   "mevcutBeispiel": "Der Welthandel hat sich seit den neunziger Jahren grundlegend verändert.",
-   "mevcutBeispielTr": "Dünya ticareti doksanlı yıllardan bu yana köklü biçimde değişti."
+   "currentTr": "dünya ticareti, küresel ticaret",
+   "currentBeispiel": "Der Welthandel hat sich seit den neunziger Jahren grundlegend verändert.",
+   "currentBeispielTr": "Dünya ticareti doksanlı yıllardan bu yana köklü biçimde değişti."
   },
   {
    "id": 6313,
@@ -114,9 +114,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "yoksullukla mücadele",
-   "mevcutBeispiel": "Bildung gilt als wirksamstes Instrument der langfristigen Armutsbekämpfung.",
-   "mevcutBeispielTr": "Eğitim, uzun vadeli yoksullukla mücadelenin en etkili aracı sayılıyor."
+   "currentTr": "yoksullukla mücadele",
+   "currentBeispiel": "Bildung gilt als wirksamstes Instrument der langfristigen Armutsbekämpfung.",
+   "currentBeispielTr": "Eğitim, uzun vadeli yoksullukla mücadelenin en etkili aracı sayılıyor."
   },
   {
    "id": 6314,
@@ -124,9 +124,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Schwellenländer",
-   "mevcutTr": "yükselen ekonomi, eşik ülke",
-   "mevcutBeispiel": "Mehrere Schwellenländer treten inzwischen selbstbewusst als Investoren auf.",
-   "mevcutBeispielTr": "Birçok yükselen ekonomi artık özgüvenli birer yatırımcı olarak sahneye çıkıyor."
+   "currentTr": "yükselen ekonomi, eşik ülke",
+   "currentBeispiel": "Mehrere Schwellenländer treten inzwischen selbstbewusst als Investoren auf.",
+   "currentBeispielTr": "Birçok yükselen ekonomi artık özgüvenli birer yatırımcı olarak sahneye çıkıyor."
   },
   {
    "id": 6315,
@@ -134,9 +134,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Entwicklungsländer",
-   "mevcutTr": "gelişmekte olan ülke",
-   "mevcutBeispiel": "Viele Entwicklungsländer tragen die Folgen einer Krise, die sie nicht verursacht haben.",
-   "mevcutBeispielTr": "Birçok gelişmekte olan ülke, kendi yol açmadığı bir krizin sonuçlarını taşıyor."
+   "currentTr": "gelişmekte olan ülke",
+   "currentBeispiel": "Viele Entwicklungsländer tragen die Folgen einer Krise, die sie nicht verursacht haben.",
+   "currentBeispielTr": "Birçok gelişmekte olan ülke, kendi yol açmadığı bir krizin sonuçlarını taşıyor."
   },
   {
    "id": 6316,
@@ -144,9 +144,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "korumacılık, himayecilik",
-   "mevcutBeispiel": "Wachsender Protektionismus gefährdet die Exporte kleinerer Volkswirtschaften.",
-   "mevcutBeispielTr": "Artan korumacılık küçük ekonomilerin ihracatını tehlikeye atıyor."
+   "currentTr": "korumacılık, himayecilik",
+   "currentBeispiel": "Wachsender Protektionismus gefährdet die Exporte kleinerer Volkswirtschaften.",
+   "currentBeispielTr": "Artan korumacılık küçük ekonomilerin ihracatını tehlikeye atıyor."
   },
   {
    "id": 6317,
@@ -154,9 +154,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Zollschranken",
-   "mevcutTr": "gümrük engeli, tarife duvarı",
-   "mevcutBeispiel": "Hohe Zollschranken halten verarbeitete Produkte aus dem Süden vom Markt fern.",
-   "mevcutBeispielTr": "Yüksek gümrük engelleri güneyden gelen işlenmiş ürünleri pazardan uzak tutuyor."
+   "currentTr": "gümrük engeli, tarife duvarı",
+   "currentBeispiel": "Hohe Zollschranken halten verarbeitete Produkte aus dem Süden vom Markt fern.",
+   "currentBeispielTr": "Yüksek gümrük engelleri güneyden gelen işlenmiş ürünleri pazardan uzak tutuyor."
   },
   {
    "id": 6318,
@@ -164,9 +164,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "çocuk işçiliği",
-   "mevcutBeispiel": "Kinderarbeit lässt sich nur bekämpfen, wenn Familien ein Auskommen haben.",
-   "mevcutBeispielTr": "Çocuk işçiliğiyle ancak ailelerin geçimi sağlandığında mücadele edilebilir."
+   "currentTr": "çocuk işçiliği",
+   "currentBeispiel": "Kinderarbeit lässt sich nur bekämpfen, wenn Familien ein Auskommen haben.",
+   "currentBeispielTr": "Çocuk işçiliğiyle ancak ailelerin geçimi sağlandığında mücadele edilebilir."
   },
   {
    "id": 6319,
@@ -174,9 +174,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Sorgfaltspflichten",
-   "mevcutTr": "özen yükümlülüğü, durum tespiti yükümlülüğü",
-   "mevcutBeispiel": "Das Gesetz verpflichtet Konzerne zu einer Sorgfaltspflicht entlang ihrer Zulieferkette.",
-   "mevcutBeispielTr": "Yasa, şirketleri tedarik zinciri boyunca özen yükümlülüğüne tabi tutuyor."
+   "currentTr": "özen yükümlülüğü, durum tespiti yükümlülüğü",
+   "currentBeispiel": "Das Gesetz verpflichtet Konzerne zu einer Sorgfaltspflicht entlang ihrer Zulieferkette.",
+   "currentBeispielTr": "Yasa, şirketleri tedarik zinciri boyunca özen yükümlülüğüne tabi tutuyor."
   },
   {
    "id": 6320,
@@ -184,9 +184,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kaynak tüketimi",
-   "mevcutBeispiel": "Der Ressourcenverbrauch der reichen Länder übersteigt jedes vertretbare Maß.",
-   "mevcutBeispielTr": "Zengin ülkelerin kaynak tüketimi savunulabilir her ölçüyü aşıyor."
+   "currentTr": "kaynak tüketimi",
+   "currentBeispiel": "Der Ressourcenverbrauch der reichen Länder übersteigt jedes vertretbare Maß.",
+   "currentBeispielTr": "Zengin ülkelerin kaynak tüketimi savunulabilir her ölçüyü aşıyor."
   },
   {
    "id": 6321,
@@ -194,9 +194,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Schuldenerlasse",
-   "mevcutTr": "borç silme, borç affı",
-   "mevcutBeispiel": "Ohne einen umfassenden Schuldenerlass bleibt jede Reform wirkungslos.",
-   "mevcutBeispielTr": "Kapsamlı bir borç affı olmadan her reform etkisiz kalır."
+   "currentTr": "borç silme, borç affı",
+   "currentBeispiel": "Ohne einen umfassenden Schuldenerlass bleibt jede Reform wirkungslos.",
+   "currentBeispielTr": "Kapsamlı bir borç affı olmadan her reform etkisiz kalır."
   },
   {
    "id": 6322,
@@ -204,9 +204,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Direktinvestitionen",
-   "mevcutTr": "doğrudan yatırım",
-   "mevcutBeispiel": "Ausländische Direktinvestitionen fließen vor allem in den Bergbau.",
-   "mevcutBeispielTr": "Yabancı doğrudan yatırımlar öncelikle madenciliğe akıyor."
+   "currentTr": "doğrudan yatırım",
+   "currentBeispiel": "Ausländische Direktinvestitionen fließen vor allem in den Bergbau.",
+   "currentBeispielTr": "Yabancı doğrudan yatırımlar öncelikle madenciliğe akıyor."
   },
   {
    "id": 6323,
@@ -214,9 +214,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Weltordnungen",
-   "mevcutTr": "dünya düzeni",
-   "mevcutBeispiel": "Die alte Weltordnung verliert an Verbindlichkeit, eine neue zeichnet sich kaum ab.",
-   "mevcutBeispielTr": "Eski dünya düzeni bağlayıcılığını yitiriyor, yenisi ise henüz belirmiyor."
+   "currentTr": "dünya düzeni",
+   "currentBeispiel": "Die alte Weltordnung verliert an Verbindlichkeit, eine neue zeichnet sich kaum ab.",
+   "currentBeispielTr": "Eski dünya düzeni bağlayıcılığını yitiriyor, yenisi ise henüz belirmiyor."
   },
   {
    "id": 6324,
@@ -224,9 +224,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "rekabet gücü",
-   "mevcutBeispiel": "Niedrige Löhne sichern kurzfristig die Wettbewerbsfähigkeit, aber keinen Wohlstand.",
-   "mevcutBeispielTr": "Düşük ücretler kısa vadede rekabet gücünü sağlar, ama refahı değil."
+   "currentTr": "rekabet gücü",
+   "currentBeispiel": "Niedrige Löhne sichern kurzfristig die Wettbewerbsfähigkeit, aber keinen Wohlstand.",
+   "currentBeispielTr": "Düşük ücretler kısa vadede rekabet gücünü sağlar, ama refahı değil."
   },
   {
    "id": 6325,
@@ -234,9 +234,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Handelsdefizite",
-   "mevcutTr": "ticaret açığı",
-   "mevcutBeispiel": "Das chronische Handelsdefizit zwingt das Land zu immer neuen Krediten.",
-   "mevcutBeispielTr": "Kronik ticaret açığı ülkeyi sürekli yeni kredilere zorluyor."
+   "currentTr": "ticaret açığı",
+   "currentBeispiel": "Das chronische Handelsdefizit zwingt das Land zu immer neuen Krediten.",
+   "currentBeispielTr": "Kronik ticaret açığı ülkeyi sürekli yeni kredilere zorluyor."
   },
   {
    "id": 6326,
@@ -244,9 +244,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Binnenmärkte",
-   "mevcutTr": "iç pazar",
-   "mevcutBeispiel": "Ein funktionierender Binnenmarkt macht die Region weniger anfällig für Schocks.",
-   "mevcutBeispielTr": "İşleyen bir iç pazar bölgeyi şoklara karşı daha az kırılgan yapar."
+   "currentTr": "iç pazar",
+   "currentBeispiel": "Ein funktionierender Binnenmarkt macht die Region weniger anfällig für Schocks.",
+   "currentBeispielTr": "İşleyen bir iç pazar bölgeyi şoklara karşı daha az kırılgan yapar."
   },
   {
    "id": 6327,
@@ -254,9 +254,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Migrationsbewegungen",
-   "mevcutTr": "göç hareketi",
-   "mevcutBeispiel": "Klimawandel und Armut verstärken die Migrationsbewegungen innerhalb des Kontinents.",
-   "mevcutBeispielTr": "İklim değişikliği ve yoksulluk kıta içindeki göç hareketlerini güçlendiriyor."
+   "currentTr": "göç hareketi",
+   "currentBeispiel": "Klimawandel und Armut verstärken die Migrationsbewegungen innerhalb des Kontinents.",
+   "currentBeispielTr": "İklim değişikliği ve yoksulluk kıta içindeki göç hareketlerini güçlendiriyor."
   },
   {
    "id": 6328,
@@ -264,9 +264,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kentleşme, şehirleşme",
-   "mevcutBeispiel": "Die rasante Urbanisierung überholt jede staatliche Planung.",
-   "mevcutBeispielTr": "Hızlı kentleşme her türlü devlet planlamasını geride bırakıyor."
+   "currentTr": "kentleşme, şehirleşme",
+   "currentBeispiel": "Die rasante Urbanisierung überholt jede staatliche Planung.",
+   "currentBeispielTr": "Hızlı kentleşme her türlü devlet planlamasını geride bırakıyor."
   },
   {
    "id": 6329,
@@ -274,10 +274,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Hungersnöte",
-   "mevcutTr": "kıtlık, açlık felaketi",
-   "mevcutBeispiel": "Die Hungersnot war keine Naturkatastrophe, sondern politisch verschuldet.",
-   "mevcutBeispielTr": "Kıtlık bir doğal afet değil, siyasi olarak yaratılmış bir felaketti.",
-   "cakisan": [
+   "currentTr": "kıtlık, açlık felaketi",
+   "currentBeispiel": "Die Hungersnot war keine Naturkatastrophe, sondern politisch verschuldet.",
+   "currentBeispielTr": "Kıtlık bir doğal afet değil, siyasi olarak yaratılmış bir felaketti.",
+   "overlapping": [
     "die Knappheit (C1)"
    ]
   },
@@ -287,9 +287,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Technologietransfers",
-   "mevcutTr": "teknoloji aktarımı",
-   "mevcutBeispiel": "Ohne Technologietransfer bleibt die Energiewende im Süden Theorie.",
-   "mevcutBeispielTr": "Teknoloji aktarımı olmadan güneydeki enerji dönüşümü teoride kalır."
+   "currentTr": "teknoloji aktarımı",
+   "currentBeispiel": "Ohne Technologietransfer bleibt die Energiewende im Süden Theorie.",
+   "currentBeispielTr": "Teknoloji aktarımı olmadan güneydeki enerji dönüşümü teoride kalır."
   },
   {
    "id": 6331,
@@ -297,9 +297,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Interdependenzen",
-   "mevcutTr": "karşılıklı bağımlılık",
-   "mevcutBeispiel": "Die Pandemie hat die Interdependenz der Volkswirtschaften schmerzhaft sichtbar gemacht.",
-   "mevcutBeispielTr": "Pandemi ekonomilerin karşılıklı bağımlılığını acı biçimde görünür kıldı."
+   "currentTr": "karşılıklı bağımlılık",
+   "currentBeispiel": "Die Pandemie hat die Interdependenz der Volkswirtschaften schmerzhaft sichtbar gemacht.",
+   "currentBeispielTr": "Pandemi ekonomilerin karşılıklı bağımlılığını acı biçimde görünür kıldı."
   },
   {
    "id": 6332,
@@ -307,9 +307,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gütesiegel",
-   "mevcutTr": "kalite etiketi, sertifika işareti",
-   "mevcutBeispiel": "Das Gütesiegel garantiert faire Preise, sagt aber nichts über Arbeitszeiten.",
-   "mevcutBeispielTr": "Kalite etiketi adil fiyat garantisi veriyor, ama çalışma saatleri hakkında bir şey söylemiyor."
+   "currentTr": "kalite etiketi, sertifika işareti",
+   "currentBeispiel": "Das Gütesiegel garantiert faire Preise, sagt aber nichts über Arbeitszeiten.",
+   "currentBeispielTr": "Kalite etiketi adil fiyat garantisi veriyor, ama çalışma saatleri hakkında bir şey söylemiyor."
   },
   {
    "id": 6333,
@@ -317,9 +317,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kalkınma işbirliği",
-   "mevcutBeispiel": "Moderne Entwicklungszusammenarbeit versteht sich als Partnerschaft auf Augenhöhe.",
-   "mevcutBeispielTr": "Modern kalkınma işbirliği kendini eşitler arası bir ortaklık olarak görüyor."
+   "currentTr": "kalkınma işbirliği",
+   "currentBeispiel": "Moderne Entwicklungszusammenarbeit versteht sich als Partnerschaft auf Augenhöhe.",
+   "currentBeispielTr": "Modern kalkınma işbirliği kendini eşitler arası bir ortaklık olarak görüyor."
   },
   {
    "id": 6334,
@@ -327,9 +327,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Nichtregierungsorganisationen",
-   "mevcutTr": "sivil toplum kuruluşu",
-   "mevcutBeispiel": "Mehrere Nichtregierungsorganisationen haben den Bericht gemeinsam veröffentlicht.",
-   "mevcutBeispielTr": "Birkaç sivil toplum kuruluşu raporu birlikte yayımladı."
+   "currentTr": "sivil toplum kuruluşu",
+   "currentBeispiel": "Mehrere Nichtregierungsorganisationen haben den Bericht gemeinsam veröffentlicht.",
+   "currentBeispielTr": "Birkaç sivil toplum kuruluşu raporu birlikte yayımladı."
   },
   {
    "id": 6335,
@@ -337,9 +337,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Fluchtursachen",
-   "mevcutTr": "göçe zorlayan neden, kaçış nedeni",
-   "mevcutBeispiel": "Wer Fluchtursachen bekämpfen will, muss über Handelspolitik reden.",
-   "mevcutBeispielTr": "Göçe zorlayan nedenlerle mücadele etmek isteyen, ticaret politikasını konuşmalı."
+   "currentTr": "göçe zorlayan neden, kaçış nedeni",
+   "currentBeispiel": "Wer Fluchtursachen bekämpfen will, muss über Handelspolitik reden.",
+   "currentBeispielTr": "Göçe zorlayan nedenlerle mücadele etmek isteyen, ticaret politikasını konuşmalı."
   },
   {
    "id": 6336,
@@ -347,9 +347,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Wohlstandsgefälle",
-   "mevcutTr": "refah uçurumu",
-   "mevcutBeispiel": "Das Wohlstandsgefälle innerhalb der Länder wächst schneller als zwischen ihnen.",
-   "mevcutBeispielTr": "Ülkelerin içindeki refah uçurumu, aralarındakinden daha hızlı büyüyor."
+   "currentTr": "refah uçurumu",
+   "currentBeispiel": "Das Wohlstandsgefälle innerhalb der Länder wächst schneller als zwischen ihnen.",
+   "currentBeispielTr": "Ülkelerin içindeki refah uçurumu, aralarındakinden daha hızlı büyüyor."
   },
   {
    "id": 6337,
@@ -357,10 +357,10 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "toprak gaspı",
-   "mevcutBeispiel": "Investoren betreiben Landraub, während die Behörden wegsehen.",
-   "mevcutBeispielTr": "Yatırımcılar toprak gaspı yaparken yetkililer görmezden geliyor.",
-   "cakisan": [
+   "currentTr": "toprak gaspı",
+   "currentBeispiel": "Investoren betreiben Landraub, während die Behörden wegsehen.",
+   "currentBeispielTr": "Yatırımcılar toprak gaspı yaparken yetkililer görmezden geliyor.",
+   "overlapping": [
     "die Landnahme (C1)"
    ]
   },
@@ -370,9 +370,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Steueroasen",
-   "mevcutTr": "vergi cenneti",
-   "mevcutBeispiel": "Über Steueroasen entziehen sich Konzerne ihrer Verantwortung gegenüber der Allgemeinheit.",
-   "mevcutBeispielTr": "Şirketler vergi cennetleri üzerinden topluma karşı sorumluluklarından kaçıyor."
+   "currentTr": "vergi cenneti",
+   "currentBeispiel": "Über Steueroasen entziehen sich Konzerne ihrer Verantwortung gegenüber der Allgemeinheit.",
+   "currentBeispielTr": "Şirketler vergi cennetleri üzerinden topluma karşı sorumluluklarından kaçıyor."
   },
   {
    "id": 6339,
@@ -380,9 +380,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "Gewinnverlagerungen",
-   "mevcutTr": "kâr kaydırma",
-   "mevcutBeispiel": "Durch Gewinnverlagerung entgehen den Herkunftsländern Milliarden an Steuern.",
-   "mevcutBeispielTr": "Kâr kaydırma yüzünden köken ülkeler milyarlarca vergiden oluyor."
+   "currentTr": "kâr kaydırma",
+   "currentBeispiel": "Durch Gewinnverlagerung entgehen den Herkunftsländern Milliarden an Steuern.",
+   "currentBeispielTr": "Kâr kaydırma yüzünden köken ülkeler milyarlarca vergiden oluyor."
   },
   {
    "id": 6340,
@@ -390,9 +390,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sermaye kaçışı",
-   "mevcutBeispiel": "Nach der Wahl setzte eine massive Kapitalflucht ins Ausland ein.",
-   "mevcutBeispielTr": "Seçimden sonra yurt dışına büyük bir sermaye kaçışı başladı."
+   "currentTr": "sermaye kaçışı",
+   "currentBeispiel": "Nach der Wahl setzte eine massive Kapitalflucht ins Ausland ein.",
+   "currentBeispielTr": "Seçimden sonra yurt dışına büyük bir sermaye kaçışı başladı."
   },
   {
    "id": 6341,
@@ -400,10 +400,10 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat angeglichen",
-   "mevcutTr": "denkleştirmek, uyumlaştırmak",
-   "mevcutBeispiel": "Die Union will die Sozialstandards ihrer Mitglieder schrittweise angleichen.",
-   "mevcutBeispielTr": "Birlik, üyelerinin sosyal standartlarını adım adım uyumlaştırmak istiyor.",
-   "cakisan": [
+   "currentTr": "denkleştirmek, uyumlaştırmak",
+   "currentBeispiel": "Die Union will die Sozialstandards ihrer Mitglieder schrittweise angleichen.",
+   "currentBeispielTr": "Birlik, üyelerinin sosyal standartlarını adım adım uyumlaştırmak istiyor.",
+   "overlapping": [
     "aufbringen (B2)"
    ]
   },
@@ -413,9 +413,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat boykottiert",
-   "mevcutTr": "boykot etmek",
-   "mevcutBeispiel": "Mehrere Staaten boykottieren die Konferenz aus politischen Gründen.",
-   "mevcutBeispielTr": "Birkaç devlet konferansı siyasi gerekçelerle boykot ediyor."
+   "currentTr": "boykot etmek",
+   "currentBeispiel": "Mehrere Staaten boykottieren die Konferenz aus politischen Gründen.",
+   "currentBeispielTr": "Birkaç devlet konferansı siyasi gerekçelerle boykot ediyor."
   },
   {
    "id": 6343,
@@ -423,9 +423,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat sanktioniert",
-   "mevcutTr": "yaptırım uygulamak, cezalandırmak",
-   "mevcutBeispiel": "Verstöße gegen die Auflagen werden bisher kaum sanktioniert.",
-   "mevcutBeispielTr": "Koşullara aykırılıklara şimdiye kadar neredeyse hiç yaptırım uygulanmıyor."
+   "currentTr": "yaptırım uygulamak, cezalandırmak",
+   "currentBeispiel": "Verstöße gegen die Auflagen werden bisher kaum sanktioniert.",
+   "currentBeispielTr": "Koşullara aykırılıklara şimdiye kadar neredeyse hiç yaptırım uygulanmıyor."
   },
   {
    "id": 6344,
@@ -433,9 +433,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat privatisiert",
-   "mevcutTr": "özelleştirmek",
-   "mevcutBeispiel": "Die Wasserversorgung wurde privatisiert, und die Preise stiegen sofort.",
-   "mevcutBeispielTr": "Su hizmeti özelleştirildi ve fiyatlar hemen yükseldi."
+   "currentTr": "özelleştirmek",
+   "currentBeispiel": "Die Wasserversorgung wurde privatisiert, und die Preise stiegen sofort.",
+   "currentBeispielTr": "Su hizmeti özelleştirildi ve fiyatlar hemen yükseldi."
   },
   {
    "id": 6345,
@@ -443,9 +443,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "hat verstaatlicht",
-   "mevcutTr": "devletleştirmek, kamulaştırmak",
-   "mevcutBeispiel": "Die Regierung drohte damit, die Ölförderung zu verstaatlichen.",
-   "mevcutBeispielTr": "Hükümet petrol üretimini devletleştirmekle tehdit etti."
+   "currentTr": "devletleştirmek, kamulaştırmak",
+   "currentBeispiel": "Die Regierung drohte damit, die Ölförderung zu verstaatlichen.",
+   "currentBeispielTr": "Hükümet petrol üretimini devletleştirmekle tehdit etti."
   },
   {
    "id": 6346,
@@ -453,9 +453,9 @@
    "typ": "Verb",
    "niveau": "C1",
    "formen": "ist zugutegekommen",
-   "mevcutTr": "yararına olmak, işine yaramak",
-   "mevcutBeispiel": "Das Wachstum ist bislang nur einer schmalen Oberschicht zugutegekommen.",
-   "mevcutBeispielTr": "Büyüme şimdiye dek yalnızca dar bir üst tabakanın yararına oldu."
+   "currentTr": "yararına olmak, işine yaramak",
+   "currentBeispiel": "Das Wachstum ist bislang nur einer schmalen Oberschicht zugutegekommen.",
+   "currentBeispielTr": "Büyüme şimdiye dek yalnızca dar bir üst tabakanın yararına oldu."
   },
   {
    "id": 6347,
@@ -463,9 +463,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "sınır ötesi, sınır aşan",
-   "mevcutBeispiel": "Steuerflucht ist ein grenzüberschreitendes Problem und verlangt gemeinsame Antworten.",
-   "mevcutBeispielTr": "Vergi kaçışı sınır ötesi bir sorundur ve ortak yanıtlar gerektirir."
+   "currentTr": "sınır ötesi, sınır aşan",
+   "currentBeispiel": "Steuerflucht ist ein grenzüberschreitendes Problem und verlangt gemeinsame Antworten.",
+   "currentBeispielTr": "Vergi kaçışı sınır ötesi bir sorundur ve ortak yanıtlar gerektirir."
   },
   {
    "id": 6348,
@@ -473,9 +473,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "ikili, iki taraflı",
-   "mevcutBeispiel": "Die beiden Staaten regeln ihre Handelsbeziehungen bilateral.",
-   "mevcutBeispielTr": "İki devlet ticaret ilişkilerini ikili olarak düzenliyor."
+   "currentTr": "ikili, iki taraflı",
+   "currentBeispiel": "Die beiden Staaten regeln ihre Handelsbeziehungen bilateral.",
+   "currentBeispielTr": "İki devlet ticaret ilişkilerini ikili olarak düzenliyor."
   },
   {
    "id": 6349,
@@ -483,9 +483,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "eşit olmayan, eşitsiz",
-   "mevcutBeispiel": "Die Lasten des Klimawandels sind extrem ungleich verteilt.",
-   "mevcutBeispielTr": "İklim değişikliğinin yükleri son derece eşitsiz dağılmış durumda."
+   "currentTr": "eşit olmayan, eşitsiz",
+   "currentBeispiel": "Die Lasten des Klimawandels sind extrem ungleich verteilt.",
+   "currentBeispielTr": "İklim değişikliğinin yükleri son derece eşitsiz dağılmış durumda."
   },
   {
    "id": 6350,
@@ -493,9 +493,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "kamu yararına, kâr amacı gütmeyen",
-   "mevcutBeispiel": "Die Stiftung arbeitet gemeinnützig und legt ihre Finanzen offen.",
-   "mevcutBeispielTr": "Vakıf kamu yararına çalışıyor ve mali durumunu açıklıyor."
+   "currentTr": "kamu yararına, kâr amacı gütmeyen",
+   "currentBeispiel": "Die Stiftung arbeitet gemeinnützig und legt ihre Finanzen offen.",
+   "currentBeispielTr": "Vakıf kamu yararına çalışıyor ve mali durumunu açıklıyor."
   },
   {
    "id": 6351,
@@ -503,9 +503,9 @@
    "typ": "Sonstiges",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "lehine, yararına",
-   "mevcutBeispiel": "Die Regeln wurden zugunsten der Exporteure geändert.",
-   "mevcutBeispielTr": "Kurallar ihracatçıların lehine değiştirildi."
+   "currentTr": "lehine, yararına",
+   "currentBeispiel": "Die Regeln wurden zugunsten der Exporteure geändert.",
+   "currentBeispielTr": "Kurallar ihracatçıların lehine değiştirildi."
   },
   {
    "id": 6352,
@@ -513,9 +513,9 @@
    "typ": "Nomen",
    "niveau": "C1",
    "formen": "",
-   "mevcutTr": "hukuk devleti ilkesi, hukukun üstünlüğü",
-   "mevcutBeispiel": "Die Reform stellt die Rechtsstaatlichkeit des gesamten Verfahrens infrage.",
-   "mevcutBeispielTr": "Reform, tüm sürecin hukuk devleti niteliğini tartışmaya açıyor."
+   "currentTr": "hukuk devleti ilkesi, hukukun üstünlüğü",
+   "currentBeispiel": "Die Reform stellt die Rechtsstaatlichkeit des gesamten Verfahrens infrage.",
+   "currentBeispielTr": "Reform, tüm sürecin hukuk devleti niteliğini tartışmaya açıyor."
   }
  ]
 }

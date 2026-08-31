@@ -1,16 +1,16 @@
 {
- "paket": "b2-009",
+ "packet": "b2-009",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 3877,
    "de": "sich immatrikulieren",
    "typ": "Verb",
    "niveau": "B2",
    "formen": "immatrikuliert sich, hat sich immatrikuliert",
-   "mevcutTr": "üniversiteye kayıt olmak",
-   "mevcutBeispiel": "Neue Studierende müssen sich online immatrikulieren.",
-   "mevcutBeispielTr": "Yeni öğrencilerin çevrimiçi kayıt yaptırması gerekiyor."
+   "currentTr": "üniversiteye kayıt olmak",
+   "currentBeispiel": "Neue Studierende müssen sich online immatrikulieren.",
+   "currentBeispielTr": "Yeni öğrencilerin çevrimiçi kayıt yaptırması gerekiyor."
   },
   {
    "id": 3879,
@@ -18,9 +18,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "iki dilli",
-   "mevcutBeispiel": "Die Familie erzieht ihre Kinder zweisprachig.",
-   "mevcutBeispielTr": "Aile, çocuklarını iki dilli yetiştiriyor."
+   "currentTr": "iki dilli",
+   "currentBeispiel": "Die Familie erzieht ihre Kinder zweisprachig.",
+   "currentBeispielTr": "Aile, çocuklarını iki dilli yetiştiriyor."
   },
   {
    "id": 3880,
@@ -28,9 +28,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "süresi içinde, zamanında",
-   "mevcutBeispiel": "Der Antrag muss fristgerecht eingereicht werden.",
-   "mevcutBeispielTr": "Başvurunun süresi içinde yapılması gerekiyor."
+   "currentTr": "süresi içinde, zamanında",
+   "currentBeispiel": "Der Antrag muss fristgerecht eingereicht werden.",
+   "currentBeispielTr": "Başvurunun süresi içinde yapılması gerekiyor."
   },
   {
    "id": 3882,
@@ -38,9 +38,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "bağlayıcı, kesin",
-   "mevcutBeispiel": "Die Anmeldung ist ab sofort verbindlich.",
-   "mevcutBeispielTr": "Kayıt bu andan itibaren bağlayıcıdır."
+   "currentTr": "bağlayıcı, kesin",
+   "currentBeispiel": "Die Anmeldung ist ab sofort verbindlich.",
+   "currentBeispielTr": "Kayıt bu andan itibaren bağlayıcıdır."
   },
   {
    "id": 4047,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Tarifverträge",
-   "mevcutTr": "toplu iş sözleşmesi",
-   "mevcutBeispiel": "Der neue Tarifvertrag gilt für alle Beschäftigten der Branche.",
-   "mevcutBeispielTr": "Yeni toplu iş sözleşmesi sektördeki bütün çalışanlar için geçerli."
+   "currentTr": "toplu iş sözleşmesi",
+   "currentBeispiel": "Der neue Tarifvertrag gilt für alle Beschäftigten der Branche.",
+   "currentBeispielTr": "Yeni toplu iş sözleşmesi sektördeki bütün çalışanlar için geçerli."
   },
   {
    "id": 4048,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Arbeitgeber",
-   "mevcutTr": "işveren",
-   "mevcutBeispiel": "Mein Arbeitgeber übernimmt die Kosten für die Weiterbildung.",
-   "mevcutBeispielTr": "İşverenim eğitim masraflarını üstleniyor."
+   "currentTr": "işveren",
+   "currentBeispiel": "Mein Arbeitgeber übernimmt die Kosten für die Weiterbildung.",
+   "currentBeispielTr": "İşverenim eğitim masraflarını üstleniyor."
   },
   {
    "id": 4049,
@@ -68,10 +68,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Arbeitnehmer",
-   "mevcutTr": "işçi, çalışan",
-   "mevcutBeispiel": "Jeder Arbeitnehmer hat Anspruch auf bezahlten Urlaub.",
-   "mevcutBeispielTr": "Her çalışanın ücretli izin hakkı vardır.",
-   "cakisan": [
+   "currentTr": "işçi, çalışan",
+   "currentBeispiel": "Jeder Arbeitnehmer hat Anspruch auf bezahlten Urlaub.",
+   "currentBeispielTr": "Her çalışanın ücretli izin hakkı vardır.",
+   "overlapping": [
     "der Arbeiter (B1)"
    ]
   },
@@ -81,9 +81,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Personalabteilungen",
-   "mevcutTr": "insan kaynakları departmanı",
-   "mevcutBeispiel": "Wenden Sie sich mit Ihren Fragen bitte an die Personalabteilung.",
-   "mevcutBeispielTr": "Sorularınız için lütfen insan kaynakları departmanına başvurun."
+   "currentTr": "insan kaynakları departmanı",
+   "currentBeispiel": "Wenden Sie sich mit Ihren Fragen bitte an die Personalabteilung.",
+   "currentBeispielTr": "Sorularınız için lütfen insan kaynakları departmanına başvurun."
   },
   {
    "id": 4051,
@@ -91,9 +91,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fachkräfte",
-   "mevcutTr": "uzman eleman, nitelikli işgücü",
-   "mevcutBeispiel": "In der Pflege fehlen seit Jahren ausgebildete Fachkräfte.",
-   "mevcutBeispielTr": "Bakım sektöründe yıllardır eğitimli uzman eleman eksikliği var."
+   "currentTr": "uzman eleman, nitelikli işgücü",
+   "currentBeispiel": "In der Pflege fehlen seit Jahren ausgebildete Fachkräfte.",
+   "currentBeispielTr": "Bakım sektöründe yıllardır eğitimli uzman eleman eksikliği var."
   },
   {
    "id": 4052,
@@ -101,9 +101,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Führungskräfte",
-   "mevcutTr": "yönetici, üst düzey yönetici",
-   "mevcutBeispiel": "Als Führungskraft muss man auch unangenehme Entscheidungen treffen.",
-   "mevcutBeispielTr": "Yönetici olarak insan hoş olmayan kararlar da almak zorunda."
+   "currentTr": "yönetici, üst düzey yönetici",
+   "currentBeispiel": "Als Führungskraft muss man auch unangenehme Entscheidungen treffen.",
+   "currentBeispielTr": "Yönetici olarak insan hoş olmayan kararlar da almak zorunda."
   },
   {
    "id": 4053,
@@ -111,9 +111,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abteilungsleiter",
-   "mevcutTr": "departman müdürü, bölüm şefi",
-   "mevcutBeispiel": "Der Abteilungsleiter hat den Urlaubsantrag noch nicht unterschrieben.",
-   "mevcutBeispielTr": "Departman müdürü izin dilekçesini henüz imzalamadı."
+   "currentTr": "departman müdürü, bölüm şefi",
+   "currentBeispiel": "Der Abteilungsleiter hat den Urlaubsantrag noch nicht unterschrieben.",
+   "currentBeispielTr": "Departman müdürü izin dilekçesini henüz imzalamadı."
   },
   {
    "id": 4054,
@@ -121,10 +121,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Auszubildenden",
-   "mevcutTr": "çırak, meslek eğitimi öğrencisi",
-   "mevcutBeispiel": "Die Firma stellt in diesem Jahr zwölf Auszubildende ein.",
-   "mevcutBeispielTr": "Firma bu yıl on iki çırak alıyor.",
-   "cakisan": [
+   "currentTr": "çırak, meslek eğitimi öğrencisi",
+   "currentBeispiel": "Die Firma stellt in diesem Jahr zwölf Auszubildende ein.",
+   "currentBeispielTr": "Firma bu yıl on iki çırak alıyor.",
+   "overlapping": [
     "der Lehrling (B1)",
     "der Azubi (A2)"
    ]
@@ -135,9 +135,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "iş ortamı, çalışma atmosferi",
-   "mevcutBeispiel": "Seit dem Wechsel der Leitung hat sich das Arbeitsklima deutlich verbessert.",
-   "mevcutBeispielTr": "Yönetim değişikliğinden bu yana çalışma atmosferi belirgin şekilde düzeldi."
+   "currentTr": "iş ortamı, çalışma atmosferi",
+   "currentBeispiel": "Seit dem Wechsel der Leitung hat sich das Arbeitsklima deutlich verbessert.",
+   "currentBeispielTr": "Yönetim değişikliğinden bu yana çalışma atmosferi belirgin şekilde düzeldi."
   },
   {
    "id": 4056,
@@ -145,9 +145,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Arbeitszeiten",
-   "mevcutTr": "çalışma süresi, mesai saati",
-   "mevcutBeispiel": "Die wöchentliche Arbeitszeit wurde auf 38 Stunden gesenkt.",
-   "mevcutBeispielTr": "Haftalık çalışma süresi 38 saate indirildi."
+   "currentTr": "çalışma süresi, mesai saati",
+   "currentBeispiel": "Die wöchentliche Arbeitszeit wurde auf 38 Stunden gesenkt.",
+   "currentBeispielTr": "Haftalık çalışma süresi 38 saate indirildi."
   },
   {
    "id": 4057,
@@ -155,9 +155,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "esnek mesai, kayan çalışma saati",
-   "mevcutBeispiel": "Dank der Gleitzeit kann ich meine Kinder morgens zur Schule bringen.",
-   "mevcutBeispielTr": "Esnek mesai sayesinde sabahları çocuklarımı okula bırakabiliyorum."
+   "currentTr": "esnek mesai, kayan çalışma saati",
+   "currentBeispiel": "Dank der Gleitzeit kann ich meine Kinder morgens zur Schule bringen.",
+   "currentBeispielTr": "Esnek mesai sayesinde sabahları çocuklarımı okula bırakabiliyorum."
   },
   {
    "id": 4058,
@@ -165,9 +165,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "vardiyalı çalışma",
-   "mevcutBeispiel": "Ständige Schichtarbeit belastet auf Dauer den Schlafrhythmus.",
-   "mevcutBeispielTr": "Sürekli vardiyalı çalışma uzun vadede uyku düzenini bozar."
+   "currentTr": "vardiyalı çalışma",
+   "currentBeispiel": "Ständige Schichtarbeit belastet auf Dauer den Schlafrhythmus.",
+   "currentBeispielTr": "Sürekli vardiyalı çalışma uzun vadede uyku düzenini bozar."
   },
   {
    "id": 4059,
@@ -175,9 +175,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kısa çalışma, kısmi çalışma",
-   "mevcutBeispiel": "Während der Krise musste der Betrieb Kurzarbeit anmelden.",
-   "mevcutBeispielTr": "Kriz sırasında işletme kısa çalışmaya başvurmak zorunda kaldı."
+   "currentTr": "kısa çalışma, kısmi çalışma",
+   "currentBeispiel": "Während der Krise musste der Betrieb Kurzarbeit anmelden.",
+   "currentBeispielTr": "Kriz sırasında işletme kısa çalışmaya başvurmak zorunda kaldı."
   },
   {
    "id": 4060,
@@ -185,9 +185,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Probezeiten",
-   "mevcutTr": "deneme süresi",
-   "mevcutBeispiel": "In der Probezeit kann der Vertrag mit kurzer Frist beendet werden.",
-   "mevcutBeispielTr": "Deneme süresinde sözleşme kısa bir süreyle sonlandırılabilir."
+   "currentTr": "deneme süresi",
+   "currentBeispiel": "In der Probezeit kann der Vertrag mit kurzer Frist beendet werden.",
+   "currentBeispielTr": "Deneme süresinde sözleşme kısa bir süreyle sonlandırılabilir."
   },
   {
    "id": 4061,
@@ -195,9 +195,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Befristungen",
-   "mevcutTr": "süre sınırlaması, geçici sözleşme",
-   "mevcutBeispiel": "Viele junge Wissenschaftler leiden unter der ständigen Befristung ihrer Stellen.",
-   "mevcutBeispielTr": "Birçok genç bilim insanı kadrolarının sürekli süreli olmasından muzdarip."
+   "currentTr": "süre sınırlaması, geçici sözleşme",
+   "currentBeispiel": "Viele junge Wissenschaftler leiden unter der ständigen Befristung ihrer Stellen.",
+   "currentBeispielTr": "Birçok genç bilim insanı kadrolarının sürekli süreli olmasından muzdarip."
   },
   {
    "id": 4062,
@@ -205,9 +205,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Festanstellungen",
-   "mevcutTr": "kadrolu iş, daimi istihdam",
-   "mevcutBeispiel": "Nach zwei Praktika bekam sie endlich eine Festanstellung.",
-   "mevcutBeispielTr": "İki stajdan sonra nihayet kadrolu bir iş buldu."
+   "currentTr": "kadrolu iş, daimi istihdam",
+   "currentBeispiel": "Nach zwei Praktika bekam sie endlich eine Festanstellung.",
+   "currentBeispielTr": "İki stajdan sonra nihayet kadrolu bir iş buldu."
   },
   {
    "id": 4063,
@@ -215,10 +215,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vergütungen",
-   "mevcutTr": "ücret, ödeme",
-   "mevcutBeispiel": "Über die Höhe der Vergütung wird im zweiten Gespräch verhandelt.",
-   "mevcutBeispielTr": "Ücretin miktarı ikinci görüşmede pazarlık edilecek.",
-   "cakisan": [
+   "currentTr": "ücret, ödeme",
+   "currentBeispiel": "Über die Höhe der Vergütung wird im zweiten Gespräch verhandelt.",
+   "currentBeispielTr": "Ücretin miktarı ikinci görüşmede pazarlık edilecek.",
+   "overlapping": [
     "die Gebühr (B1)",
     "der Lohn (B1)"
    ]
@@ -229,9 +229,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Stundenlöhne",
-   "mevcutTr": "saat ücreti",
-   "mevcutBeispiel": "Der Stundenlohn liegt in dieser Branche deutlich unter dem Durchschnitt.",
-   "mevcutBeispielTr": "Bu sektörde saat ücreti ortalamanın belirgin şekilde altında."
+   "currentTr": "saat ücreti",
+   "currentBeispiel": "Der Stundenlohn liegt in dieser Branche deutlich unter dem Durchschnitt.",
+   "currentBeispielTr": "Bu sektörde saat ücreti ortalamanın belirgin şekilde altında."
   },
   {
    "id": 4065,
@@ -239,9 +239,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "hastalıkta ücret ödemesinin sürmesi",
-   "mevcutBeispiel": "Im Krankheitsfall besteht sechs Wochen lang Anspruch auf Lohnfortzahlung.",
-   "mevcutBeispielTr": "Hastalık durumunda altı hafta boyunca ücretin ödenmesi hakkı vardır."
+   "currentTr": "hastalıkta ücret ödemesinin sürmesi",
+   "currentBeispiel": "Im Krankheitsfall besteht sechs Wochen lang Anspruch auf Lohnfortzahlung.",
+   "currentBeispielTr": "Hastalık durumunda altı hafta boyunca ücretin ödenmesi hakkı vardır."
   },
   {
    "id": 4066,
@@ -249,10 +249,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Prämien",
-   "mevcutTr": "prim, ikramiye",
-   "mevcutBeispiel": "Für das gute Jahresergebnis erhielten alle Beschäftigten eine Prämie.",
-   "mevcutBeispielTr": "İyi yıllık sonuç için bütün çalışanlar prim aldı.",
-   "cakisan": [
+   "currentTr": "prim, ikramiye",
+   "currentBeispiel": "Für das gute Jahresergebnis erhielten alle Beschäftigten eine Prämie.",
+   "currentBeispielTr": "İyi yıllık sonuç için bütün çalışanlar prim aldı.",
+   "overlapping": [
     "der Bonus (A2)"
    ]
   },
@@ -262,9 +262,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kündigungsfristen",
-   "mevcutTr": "ihbar süresi, fesih bildirim süresi",
-   "mevcutBeispiel": "Die Kündigungsfrist beträgt in meinem Fall drei Monate zum Quartalsende.",
-   "mevcutBeispielTr": "Benim durumumda ihbar süresi çeyrek sonuna kadar üç ay."
+   "currentTr": "ihbar süresi, fesih bildirim süresi",
+   "currentBeispiel": "Die Kündigungsfrist beträgt in meinem Fall drei Monate zum Quartalsende.",
+   "currentBeispielTr": "Benim durumumda ihbar süresi çeyrek sonuna kadar üç ay."
   },
   {
    "id": 4068,
@@ -272,9 +272,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Aufhebungsverträge",
-   "mevcutTr": "ikale sözleşmesi, karşılıklı fesih anlaşması",
-   "mevcutBeispiel": "Statt einer Klage einigten sich beide Seiten auf einen Aufhebungsvertrag.",
-   "mevcutBeispielTr": "Dava yerine iki taraf karşılıklı bir fesih anlaşmasında uzlaştı."
+   "currentTr": "ikale sözleşmesi, karşılıklı fesih anlaşması",
+   "currentBeispiel": "Statt einer Klage einigten sich beide Seiten auf einen Aufhebungsvertrag.",
+   "currentBeispielTr": "Dava yerine iki taraf karşılıklı bir fesih anlaşmasında uzlaştı."
   },
   {
    "id": 4069,
@@ -282,9 +282,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Arbeitszeugnisse",
-   "mevcutTr": "çalışma belgesi, iş referans belgesi",
-   "mevcutBeispiel": "Ein wohlwollend formuliertes Arbeitszeugnis erleichtert die nächste Bewerbung.",
-   "mevcutBeispielTr": "Olumlu yazılmış bir çalışma belgesi sonraki başvuruyu kolaylaştırır."
+   "currentTr": "çalışma belgesi, iş referans belgesi",
+   "currentBeispiel": "Ein wohlwollend formuliertes Arbeitszeugnis erleichtert die nächste Bewerbung.",
+   "currentBeispielTr": "Olumlu yazılmış bir çalışma belgesi sonraki başvuruyu kolaylaştırır."
   },
   {
    "id": 4070,
@@ -292,9 +292,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Stellenanzeigen",
-   "mevcutTr": "iş ilanı",
-   "mevcutBeispiel": "In der Stellenanzeige stand nichts über das Gehalt.",
-   "mevcutBeispielTr": "İş ilanında maaşla ilgili hiçbir şey yazmıyordu."
+   "currentTr": "iş ilanı",
+   "currentBeispiel": "In der Stellenanzeige stand nichts über das Gehalt.",
+   "currentBeispielTr": "İş ilanında maaşla ilgili hiçbir şey yazmıyordu."
   },
   {
    "id": 4071,
@@ -302,9 +302,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Anforderungsprofile",
-   "mevcutTr": "aranan nitelikler, pozisyon gereklilikleri",
-   "mevcutBeispiel": "Sein Lebenslauf passt genau auf das Anforderungsprofil der Stelle.",
-   "mevcutBeispielTr": "Özgeçmişi pozisyonun aradığı niteliklere tam olarak uyuyor."
+   "currentTr": "aranan nitelikler, pozisyon gereklilikleri",
+   "currentBeispiel": "Sein Lebenslauf passt genau auf das Anforderungsprofil der Stelle.",
+   "currentBeispielTr": "Özgeçmişi pozisyonun aradığı niteliklere tam olarak uyuyor."
   },
   {
    "id": 4072,
@@ -312,9 +312,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Auswahlverfahren",
-   "mevcutTr": "seçim süreci, eleme süreci",
-   "mevcutBeispiel": "Das Auswahlverfahren zog sich über mehrere Wochen hin.",
-   "mevcutBeispielTr": "Seçim süreci haftalarca uzadı."
+   "currentTr": "seçim süreci, eleme süreci",
+   "currentBeispiel": "Das Auswahlverfahren zog sich über mehrere Wochen hin.",
+   "currentBeispielTr": "Seçim süreci haftalarca uzadı."
   },
   {
    "id": 4073,
@@ -322,9 +322,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Eignungstests",
-   "mevcutTr": "yetenek testi, uygunluk sınavı",
-   "mevcutBeispiel": "Vor der Einladung müssen alle Kandidaten einen Eignungstest absolvieren.",
-   "mevcutBeispielTr": "Davetten önce bütün adayların bir yetenek testinden geçmesi gerekiyor."
+   "currentTr": "yetenek testi, uygunluk sınavı",
+   "currentBeispiel": "Vor der Einladung müssen alle Kandidaten einen Eignungstest absolvieren.",
+   "currentBeispielTr": "Davetten önce bütün adayların bir yetenek testinden geçmesi gerekiyor."
   },
   {
    "id": 4074,
@@ -332,9 +332,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Referenzen",
-   "mevcutTr": "referans, tavsiye",
-   "mevcutBeispiel": "Bitte geben Sie zwei Referenzen aus früheren Anstellungen an.",
-   "mevcutBeispielTr": "Lütfen önceki işlerinizden iki referans belirtin."
+   "currentTr": "referans, tavsiye",
+   "currentBeispiel": "Bitte geben Sie zwei Referenzen aus früheren Anstellungen an.",
+   "currentBeispielTr": "Lütfen önceki işlerinizden iki referans belirtin."
   },
   {
    "id": 4075,
@@ -342,9 +342,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Personalakten",
-   "mevcutTr": "özlük dosyası, personel dosyası",
-   "mevcutBeispiel": "Die Abmahnung wurde in die Personalakte aufgenommen.",
-   "mevcutBeispielTr": "Uyarı yazısı özlük dosyasına işlendi."
+   "currentTr": "özlük dosyası, personel dosyası",
+   "currentBeispiel": "Die Abmahnung wurde in die Personalakte aufgenommen.",
+   "currentBeispielTr": "Uyarı yazısı özlük dosyasına işlendi."
   },
   {
    "id": 4076,
@@ -352,9 +352,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "mesleki tecrübe, iş deneyimi",
-   "mevcutBeispiel": "Für diese Position wird mehrjährige Berufserfahrung im Ausland erwartet.",
-   "mevcutBeispielTr": "Bu pozisyon için yurt dışında birkaç yıllık iş deneyimi bekleniyor."
+   "currentTr": "mesleki tecrübe, iş deneyimi",
+   "currentBeispiel": "Für diese Position wird mehrjährige Berufserfahrung im Ausland erwartet.",
+   "currentBeispielTr": "Bu pozisyon için yurt dışında birkaç yıllık iş deneyimi bekleniyor."
   },
   {
    "id": 4077,
@@ -362,9 +362,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Aufstiegschancen",
-   "mevcutTr": "yükselme fırsatı, terfi imkânı",
-   "mevcutBeispiel": "In kleinen Betrieben sind die Aufstiegschancen oft begrenzt.",
-   "mevcutBeispielTr": "Küçük işletmelerde yükselme fırsatları çoğu zaman sınırlıdır."
+   "currentTr": "yükselme fırsatı, terfi imkânı",
+   "currentBeispiel": "In kleinen Betrieben sind die Aufstiegschancen oft begrenzt.",
+   "currentBeispielTr": "Küçük işletmelerde yükselme fırsatları çoğu zaman sınırlıdır."
   },
   {
    "id": 4078,
@@ -372,9 +372,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kendi işini kurma, serbest çalışma",
-   "mevcutBeispiel": "Nach zehn Jahren im Konzern wagte er den Schritt in die Selbstständigkeit.",
-   "mevcutBeispielTr": "Holdingde geçen on yıldan sonra kendi işini kurma adımını attı."
+   "currentTr": "kendi işini kurma, serbest çalışma",
+   "currentBeispiel": "Nach zehn Jahren im Konzern wagte er den Schritt in die Selbstständigkeit.",
+   "currentBeispielTr": "Holdingde geçen on yıldan sonra kendi işini kurma adımını attı."
   },
   {
    "id": 4079,
@@ -382,9 +382,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "işsizlik maaşı, işsizlik ödeneği",
-   "mevcutBeispiel": "Sie bezog ein halbes Jahr lang Arbeitslosengeld, bevor sie etwas fand.",
-   "mevcutBeispielTr": "Bir şey bulana kadar altı ay boyunca işsizlik maaşı aldı."
+   "currentTr": "işsizlik maaşı, işsizlik ödeneği",
+   "currentBeispiel": "Sie bezog ein halbes Jahr lang Arbeitslosengeld, bevor sie etwas fand.",
+   "currentBeispielTr": "Bir şey bulana kadar altı ay boyunca işsizlik maaşı aldı."
   },
   {
    "id": 4080,
@@ -392,9 +392,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sozialversicherungen",
-   "mevcutTr": "sosyal sigorta, sosyal güvenlik",
-   "mevcutBeispiel": "Die Beiträge zur Sozialversicherung werden direkt vom Gehalt abgezogen.",
-   "mevcutBeispielTr": "Sosyal sigorta primleri doğrudan maaştan kesiliyor."
+   "currentTr": "sosyal sigorta, sosyal güvenlik",
+   "currentBeispiel": "Die Beiträge zur Sozialversicherung werden direkt vom Gehalt abgezogen.",
+   "currentBeispielTr": "Sosyal sigorta primleri doğrudan maaştan kesiliyor."
   },
   {
    "id": 4081,
@@ -402,9 +402,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Betriebsrenten",
-   "mevcutTr": "işyeri emeklilik aylığı, kurumsal emeklilik",
-   "mevcutBeispiel": "Neben der gesetzlichen Rente bekommt er eine kleine Betriebsrente.",
-   "mevcutBeispielTr": "Yasal emekli aylığının yanında küçük bir işyeri emeklilik aylığı alıyor."
+   "currentTr": "işyeri emeklilik aylığı, kurumsal emeklilik",
+   "currentBeispiel": "Neben der gesetzlichen Rente bekommt er eine kleine Betriebsrente.",
+   "currentBeispielTr": "Yasal emekli aylığının yanında küçük bir işyeri emeklilik aylığı alıyor."
   },
   {
    "id": 4082,
@@ -412,9 +412,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "emeklilik birikimi, yaşlılık güvencesi",
-   "mevcutBeispiel": "Mit der privaten Altersvorsorge sollte man möglichst früh beginnen.",
-   "mevcutBeispielTr": "Bireysel emeklilik birikimine mümkün olduğunca erken başlamak gerekir."
+   "currentTr": "emeklilik birikimi, yaşlılık güvencesi",
+   "currentBeispiel": "Mit der privaten Altersvorsorge sollte man möglichst früh beginnen.",
+   "currentBeispielTr": "Bireysel emeklilik birikimine mümkün olduğunca erken başlamak gerekir."
   },
   {
    "id": 4083,
@@ -422,9 +422,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "ebeveyn izni",
-   "mevcutBeispiel": "Immer mehr Väter nehmen inzwischen mehrere Monate Elternzeit.",
-   "mevcutBeispielTr": "Artık giderek daha çok baba birkaç aylık ebeveyn izni kullanıyor."
+   "currentTr": "ebeveyn izni",
+   "currentBeispiel": "Immer mehr Väter nehmen inzwischen mehrere Monate Elternzeit.",
+   "currentBeispielTr": "Artık giderek daha çok baba birkaç aylık ebeveyn izni kullanıyor."
   },
   {
    "id": 4084,
@@ -432,9 +432,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "doğum öncesi ve sonrası koruma, analık izni",
-   "mevcutBeispiel": "Während des Mutterschutzes darf der Betrieb ihr nicht kündigen.",
-   "mevcutBeispielTr": "Analık izni süresince işletme onu işten çıkaramaz."
+   "currentTr": "doğum öncesi ve sonrası koruma, analık izni",
+   "currentBeispiel": "Während des Mutterschutzes darf der Betrieb ihr nicht kündigen.",
+   "currentBeispielTr": "Analık izni süresince işletme onu işten çıkaramaz."
   },
   {
    "id": 4085,
@@ -442,9 +442,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Urlaubsansprüche",
-   "mevcutTr": "izin hakkı",
-   "mevcutBeispiel": "Der gesetzliche Urlaubsanspruch beträgt mindestens zwanzig Arbeitstage.",
-   "mevcutBeispielTr": "Yasal izin hakkı en az yirmi iş günüdür."
+   "currentTr": "izin hakkı",
+   "currentBeispiel": "Der gesetzliche Urlaubsanspruch beträgt mindestens zwanzig Arbeitstage.",
+   "currentBeispielTr": "Yasal izin hakkı en az yirmi iş günüdür."
   },
   {
    "id": 4086,
@@ -452,9 +452,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Betriebsvereinbarungen",
-   "mevcutTr": "işyeri anlaşması, işyeri toplu düzenlemesi",
-   "mevcutBeispiel": "Eine neue Betriebsvereinbarung regelt das mobile Arbeiten von zu Hause.",
-   "mevcutBeispielTr": "Yeni bir işyeri anlaşması evden çalışmayı düzenliyor."
+   "currentTr": "işyeri anlaşması, işyeri toplu düzenlemesi",
+   "currentBeispiel": "Eine neue Betriebsvereinbarung regelt das mobile Arbeiten von zu Hause.",
+   "currentBeispielTr": "Yeni bir işyeri anlaşması evden çalışmayı düzenliyor."
   },
   {
    "id": 4087,
@@ -462,9 +462,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Interessenvertretungen",
-   "mevcutTr": "çıkarların temsili, temsil organı",
-   "mevcutBeispiel": "Ohne eine starke Interessenvertretung haben die Beschäftigten kaum Einfluss.",
-   "mevcutBeispielTr": "Güçlü bir temsil organı olmadan çalışanların neredeyse hiç etkisi olmaz."
+   "currentTr": "çıkarların temsili, temsil organı",
+   "currentBeispiel": "Ohne eine starke Interessenvertretung haben die Beschäftigten kaum Einfluss.",
+   "currentBeispielTr": "Güçlü bir temsil organı olmadan çalışanların neredeyse hiç etkisi olmaz."
   },
   {
    "id": 4088,
@@ -472,9 +472,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Warnstreiks",
-   "mevcutTr": "uyarı grevi",
-   "mevcutBeispiel": "Ein zweistündiger Warnstreik legte den gesamten Nahverkehr lahm.",
-   "mevcutBeispielTr": "İki saatlik bir uyarı grevi bütün toplu taşımayı felç etti."
+   "currentTr": "uyarı grevi",
+   "currentBeispiel": "Ein zweistündiger Warnstreik legte den gesamten Nahverkehr lahm.",
+   "currentBeispielTr": "İki saatlik bir uyarı grevi bütün toplu taşımayı felç etti."
   },
   {
    "id": 4089,
@@ -482,9 +482,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Arbeitskämpfe",
-   "mevcutTr": "işçi mücadelesi, grev ve lokavt süreci",
-   "mevcutBeispiel": "Der Arbeitskampf dauerte drei Wochen und kostete Millionen.",
-   "mevcutBeispielTr": "İşçi mücadelesi üç hafta sürdü ve milyonlara mal oldu."
+   "currentTr": "işçi mücadelesi, grev ve lokavt süreci",
+   "currentBeispiel": "Der Arbeitskampf dauerte drei Wochen und kostete Millionen.",
+   "currentBeispielTr": "İşçi mücadelesi üç hafta sürdü ve milyonlara mal oldu."
   },
   {
    "id": 4090,
@@ -492,9 +492,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "iş sağlığı ve güvenliği",
-   "mevcutBeispiel": "Die Aufsichtsbehörde prüft regelmäßig den Arbeitsschutz im Betrieb.",
-   "mevcutBeispielTr": "Denetim kurumu işletmedeki iş güvenliğini düzenli olarak denetliyor."
+   "currentTr": "iş sağlığı ve güvenliği",
+   "currentBeispiel": "Die Aufsichtsbehörde prüft regelmäßig den Arbeitsschutz im Betrieb.",
+   "currentBeispielTr": "Denetim kurumu işletmedeki iş güvenliğini düzenli olarak denetliyor."
   },
   {
    "id": 4091,
@@ -502,9 +502,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Arbeitsunfälle",
-   "mevcutTr": "iş kazası",
-   "mevcutBeispiel": "Jeder Arbeitsunfall muss innerhalb weniger Tage gemeldet werden.",
-   "mevcutBeispielTr": "Her iş kazası birkaç gün içinde bildirilmek zorundadır."
+   "currentTr": "iş kazası",
+   "currentBeispiel": "Jeder Arbeitsunfall muss innerhalb weniger Tage gemeldet werden.",
+   "currentBeispielTr": "Her iş kazası birkaç gün içinde bildirilmek zorundadır."
   },
   {
    "id": 4092,
@@ -512,9 +512,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sicherheitsvorschriften",
-   "mevcutTr": "güvenlik talimatı, güvenlik kuralı",
-   "mevcutBeispiel": "Wer die Sicherheitsvorschriften missachtet, gefährdet auch seine Kollegen.",
-   "mevcutBeispielTr": "Güvenlik kurallarını hiçe sayan kişi meslektaşlarını da tehlikeye atar."
+   "currentTr": "güvenlik talimatı, güvenlik kuralı",
+   "currentBeispiel": "Wer die Sicherheitsvorschriften missachtet, gefährdet auch seine Kollegen.",
+   "currentBeispielTr": "Güvenlik kurallarını hiçe sayan kişi meslektaşlarını da tehlikeye atar."
   }
  ]
 }

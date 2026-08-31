@@ -394,7 +394,7 @@
   "gsw": "sithär",
   "gswArtikel": null,
   "gswBeispiel": "Si isch letscht Jaar umzoge und sithär gsehnd mir öis sälte.",
-  "ayniLehce": [
+  "sameDialect": [
    "seitdem (B1)"
   ]
  },
@@ -631,7 +631,7 @@
   "gsw": "gnueg",
   "gswArtikel": null,
   "gswBeispiel": "Mir händ gnueg Schtüel für alli Gescht.",
-  "ayniLehce": [
+  "sameDialect": [
    "genug (A1)",
    "ausreichend (B1)"
   ]
@@ -887,7 +887,7 @@
   "gsw": "drum",
   "gswArtikel": null,
   "gswBeispiel": "Ich han käs Bargäld gha, drum han ich mit de Charte zahlt.",
-  "ayniLehce": [
+  "sameDialect": [
    "deshalb (A1)",
    "daher (B1)"
   ]
@@ -945,7 +945,7 @@
   "gsw": "susch",
   "gswArtikel": null,
   "gswBeispiel": "Rüef mich bitte aa, susch warte ich vergäbe.",
-  "ayniLehce": [
+  "sameDialect": [
    "sonst (A2)"
   ]
  },
@@ -966,7 +966,7 @@
   "gsw": "Beck",
   "gswArtikel": "de",
   "gswBeispiel": "Min Vatter isch Beck und schtaat jede Morge am drüü Uhr uf.",
-  "ayniLehce": [
+  "sameDialect": [
    "Bäckerei (A1)"
   ]
  },

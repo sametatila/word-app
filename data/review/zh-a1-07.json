@@ -25,7 +25,7 @@
   "gsw": "günschtig",
   "gswArtikel": null,
   "gswBeispiel": "Det git s günschtigi Aagebot.",
-  "ayniLehce": [
+  "sameDialect": [
    "preiswert (A2)"
   ]
  },
@@ -37,7 +37,7 @@
   "gsw": "Poulet",
   "gswArtikel": "s",
   "gswBeispiel": "Es Poulet mit Pommes frites, bitte!",
-  "ayniLehce": [
+  "sameDialect": [
    "Poulet (B1)"
   ]
  },
@@ -76,7 +76,7 @@
   "gsw": "Huusfrau",
   "gswArtikel": "d",
   "gswBeispiel": "",
-  "ayniLehce": [
+  "sameDialect": [
    "Hausfrau/Hausmann (B1)"
   ]
  },
@@ -196,7 +196,7 @@
   "gsw": "Jugendliche",
   "gswArtikel": "de",
   "gswBeispiel": "Vil Jugendlichi poschted gern.",
-  "ayniLehce": [
+  "sameDialect": [
    "Jugendliche (B1)"
   ]
  },
@@ -271,7 +271,7 @@
   "gsw": "überchoo",
   "gswArtikel": null,
   "gswBeispiel": "Ich überchume füfzä Franke i de Schtund für mini Arbet.",
-  "ayniLehce": [
+  "sameDialect": [
    "bekommen (A1)"
   ]
  },
@@ -328,7 +328,7 @@
   "gsw": "Läbe",
   "gswArtikel": "s",
   "gswBeispiel": "S Läbe i dem Land isch tüür.",
-  "ayniLehce": [
+  "sameDialect": [
    "leben (A1)"
   ]
  },
@@ -412,7 +412,7 @@
   "gsw": "Laschtwage",
   "gswArtikel": "de",
   "gswBeispiel": "Dä Laschtwage isch sehr grooss.",
-  "ayniLehce": [
+  "sameDialect": [
    "Laster (B1)"
   ]
  },
@@ -424,7 +424,7 @@
   "gsw": "Beiz",
   "gswArtikel": "d",
   "gswBeispiel": "I öisere Straass git s e nöii Beiz.",
-  "ayniLehce": [
+  "sameDialect": [
    "Gasthaus (B1)",
    "Kneipe (B1)"
   ]
@@ -464,7 +464,7 @@
   "gsw": "Meer",
   "gswArtikel": "s",
   "gswBeispiel": "Mir mached Ferie am Meer.",
-  "ayniLehce": [
+  "sameDialect": [
    "See (A2)"
   ]
  },
@@ -494,7 +494,7 @@
   "gsw": "miete",
   "gswArtikel": null,
   "gswBeispiel": "Ich möcht es Auto miete.",
-  "ayniLehce": [
+  "sameDialect": [
    "Miete (A1)"
   ]
  },
@@ -506,7 +506,7 @@
   "gsw": "Miete",
   "gswArtikel": "d",
   "gswBeispiel": "D Miete für die Wonig isch sächshundert Franke.",
-  "ayniLehce": [
+  "sameDialect": [
    "mieten (A1)"
   ]
  },
@@ -581,7 +581,7 @@
   "gsw": "ufmache",
   "gswArtikel": null,
   "gswBeispiel": "Chasch bitte d Tür ufmache?",
-  "ayniLehce": [
+  "sameDialect": [
    "aufmachen (A1)"
   ]
  },
@@ -593,7 +593,7 @@
   "gsw": "offe",
   "gswArtikel": null,
   "gswBeispiel": "De Lade isch am Samschtig bis am vieri offe.",
-  "ayniLehce": [
+  "sameDialect": [
    "offen (A1)"
   ]
  },
@@ -641,7 +641,7 @@
   "gsw": "Papier",
   "gswArtikel": "s",
   "gswBeispiel": "Da sind Papier und Bliischtift.",
-  "ayniLehce": [
+  "sameDialect": [
    "Papiere (A1)"
   ]
  },
@@ -653,7 +653,7 @@
   "gsw": "Papier",
   "gswArtikel": "d",
   "gswBeispiel": "Händ Si Iri Papier debii?",
-  "ayniLehce": [
+  "sameDialect": [
    "Papier (A1)"
   ]
  },
@@ -737,7 +737,7 @@
   "gsw": "Praxis",
   "gswArtikel": "d",
   "gswBeispiel": "D Praxis isch ab de Achti offe.",
-  "ayniLehce": [
+  "sameDialect": [
    "Ordination (B1)"
   ]
  },
@@ -767,7 +767,7 @@
   "gsw": "Prüefig",
   "gswArtikel": "d",
   "gswBeispiel": "D Prüefig isch am Määntig am Achti.",
-  "ayniLehce": [
+  "sameDialect": [
    "Klassenarbeit (A1)",
    "Schularbeit (B1)",
    "Klausur (B2)"
@@ -925,7 +925,7 @@
   "gsw": "schicke",
   "gswArtikel": null,
   "gswBeispiel": "Bitte schicked Si mer es E-Mail.",
-  "ayniLehce": [
+  "sameDialect": [
    "senden (B1)"
   ]
  },
@@ -955,7 +955,7 @@
   "gsw": "zuemache",
   "gswArtikel": null,
   "gswBeispiel": "Chasch bitte d Tür zuemache?",
-  "ayniLehce": [
+  "sameDialect": [
    "zumachen (A1)"
   ]
  },
@@ -994,7 +994,7 @@
   "gsw": "Chaschte",
   "gswArtikel": "de",
   "gswBeispiel": "D Gläser sind im Chaschte.",
-  "ayniLehce": [
+  "sameDialect": [
    "Kasten (B1)"
   ]
  },

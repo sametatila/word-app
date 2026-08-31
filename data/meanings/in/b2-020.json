@@ -1,16 +1,16 @@
 {
- "paket": "b2-020",
+ "packet": "b2-020",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4594,
    "de": "die Einwilligung",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Einwilligungen",
-   "mevcutTr": "rıza, muvafakat (resmî/hukuki izin)",
-   "mevcutBeispiel": "Ohne schriftliche Einwilligung darf der Arzt nicht operieren.",
-   "mevcutBeispielTr": "Yazılı onay olmadan doktor ameliyat yapamaz."
+   "currentTr": "rıza, muvafakat (resmî/hukuki izin)",
+   "currentBeispiel": "Ohne schriftliche Einwilligung darf der Arzt nicht operieren.",
+   "currentBeispielTr": "Yazılı onay olmadan doktor ameliyat yapamaz."
   },
   {
    "id": 4595,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Befunde",
-   "mevcutTr": "tetkik sonucu, bulgu",
-   "mevcutBeispiel": "Der Befund war zum Glück völlig unauffällig.",
-   "mevcutBeispielTr": "Sonuç neyse ki tamamen normal çıktı."
+   "currentTr": "tetkik sonucu, bulgu",
+   "currentBeispiel": "Der Befund war zum Glück völlig unauffällig.",
+   "currentBeispielTr": "Sonuç neyse ki tamamen normal çıktı."
   },
   {
    "id": 4596,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "tansiyon, kan basıncı",
-   "mevcutBeispiel": "Mein Vater misst seinen Blutdruck jeden Morgen vor dem Frühstück.",
-   "mevcutBeispielTr": "Babam her sabah kahvaltıdan önce tansiyonunu ölçüyor."
+   "currentTr": "tansiyon, kan basıncı",
+   "currentBeispiel": "Mein Vater misst seinen Blutdruck jeden Morgen vor dem Frühstück.",
+   "currentBeispielTr": "Babam her sabah kahvaltıdan önce tansiyonunu ölçüyor."
   },
   {
    "id": 4597,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "hareketsizlik",
-   "mevcutBeispiel": "Bewegungsmangel im Büroalltag schadet dem Rücken auf Dauer.",
-   "mevcutBeispielTr": "Ofis hayatındaki hareketsizlik uzun vadede bele zarar veriyor."
+   "currentTr": "hareketsizlik",
+   "currentBeispiel": "Bewegungsmangel im Büroalltag schadet dem Rücken auf Dauer.",
+   "currentBeispielTr": "Ofis hayatındaki hareketsizlik uzun vadede bele zarar veriyor."
   },
   {
    "id": 4598,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "fazla kilo, aşırı kilo",
-   "mevcutBeispiel": "Starkes Übergewicht erhöht das Risiko für Diabetes deutlich.",
-   "mevcutBeispielTr": "Aşırı kilo diyabet riskini belirgin biçimde artırıyor."
+   "currentTr": "fazla kilo, aşırı kilo",
+   "currentBeispiel": "Starkes Übergewicht erhöht das Risiko für Diabetes deutlich.",
+   "currentBeispielTr": "Aşırı kilo diyabet riskini belirgin biçimde artırıyor."
   },
   {
    "id": 4599,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Entzüge",
-   "mevcutTr": "yoksunluk, bağımlılık tedavisi",
-   "mevcutBeispiel": "Der Entzug war hart, aber er hat es geschafft.",
-   "mevcutBeispielTr": "Yoksunluk dönemi zordu ama üstesinden geldi."
+   "currentTr": "yoksunluk, bağımlılık tedavisi",
+   "currentBeispiel": "Der Entzug war hart, aber er hat es geschafft.",
+   "currentBeispielTr": "Yoksunluk dönemi zordu ama üstesinden geldi."
   },
   {
    "id": 4600,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Erreger",
-   "mevcutTr": "hastalık etkeni, patojen",
-   "mevcutBeispiel": "Der Erreger wird vor allem über die Hände weitergegeben.",
-   "mevcutBeispielTr": "Etken özellikle eller yoluyla başkasına geçiyor."
+   "currentTr": "hastalık etkeni, patojen",
+   "currentBeispiel": "Der Erreger wird vor allem über die Hände weitergegeben.",
+   "currentBeispielTr": "Etken özellikle eller yoluyla başkasına geçiyor."
   },
   {
    "id": 4601,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Entzündungen",
-   "mevcutTr": "iltihap, enflamasyon",
-   "mevcutBeispiel": "Die Entzündung im Knie ist nach zwei Wochen zurückgegangen.",
-   "mevcutBeispielTr": "Dizdeki iltihap iki hafta sonra geriledi."
+   "currentTr": "iltihap, enflamasyon",
+   "currentBeispiel": "Die Entzündung im Knie ist nach zwei Wochen zurückgegangen.",
+   "currentBeispielTr": "Dizdeki iltihap iki hafta sonra geriledi."
   },
   {
    "id": 4602,
@@ -88,10 +88,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Arzneimittel",
-   "mevcutTr": "ilaç",
-   "mevcutBeispiel": "Neue Arzneimittel werden vor der Zulassung jahrelang geprüft.",
-   "mevcutBeispielTr": "Yeni ilaçlar ruhsat almadan önce yıllarca denetleniyor.",
-   "cakisan": [
+   "currentTr": "ilaç",
+   "currentBeispiel": "Neue Arzneimittel werden vor der Zulassung jahrelang geprüft.",
+   "currentBeispielTr": "Yeni ilaçlar ruhsat almadan önce yıllarca denetleniyor.",
+   "overlapping": [
     "das Medikament (A2)",
     "die Medizin (B1)"
    ]
@@ -102,9 +102,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Dosierungen",
-   "mevcutTr": "doz, dozaj",
-   "mevcutBeispiel": "Bitte halten Sie sich genau an die vorgeschriebene Dosierung.",
-   "mevcutBeispielTr": "Lütfen belirtilen doza tam olarak uyun."
+   "currentTr": "doz, dozaj",
+   "currentBeispiel": "Bitte halten Sie sich genau an die vorgeschriebene Dosierung.",
+   "currentBeispielTr": "Lütfen belirtilen doza tam olarak uyun."
   },
   {
    "id": 4604,
@@ -112,9 +112,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Packungsbeilagen",
-   "mevcutTr": "prospektüs, kullanma talimatı",
-   "mevcutBeispiel": "Lesen Sie die Packungsbeilage, bevor Sie die Tabletten nehmen.",
-   "mevcutBeispielTr": "Hapları almadan önce prospektüsü okuyun."
+   "currentTr": "prospektüs, kullanma talimatı",
+   "currentBeispiel": "Lesen Sie die Packungsbeilage, bevor Sie die Tabletten nehmen.",
+   "currentBeispielTr": "Hapları almadan önce prospektüsü okuyun."
   },
   {
    "id": 4605,
@@ -122,9 +122,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wirkstoffe",
-   "mevcutTr": "etken madde",
-   "mevcutBeispiel": "Beide Tabletten enthalten denselben Wirkstoff, kosten aber unterschiedlich viel.",
-   "mevcutBeispielTr": "İki hap da aynı etken maddeyi içeriyor ama fiyatları farklı."
+   "currentTr": "etken madde",
+   "currentBeispiel": "Beide Tabletten enthalten denselben Wirkstoff, kosten aber unterschiedlich viel.",
+   "currentBeispielTr": "İki hap da aynı etken maddeyi içeriyor ama fiyatları farklı."
   },
   {
    "id": 4606,
@@ -132,9 +132,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Allergien",
-   "mevcutTr": "alerji",
-   "mevcutBeispiel": "Im Frühling macht ihm seine Allergie besonders zu schaffen.",
-   "mevcutBeispielTr": "İlkbaharda alerjisi onu özellikle zorluyor."
+   "currentTr": "alerji",
+   "currentBeispiel": "Im Frühling macht ihm seine Allergie besonders zu schaffen.",
+   "currentBeispielTr": "İlkbaharda alerjisi onu özellikle zorluyor."
   },
   {
    "id": 4607,
@@ -142,10 +142,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Eingriffe",
-   "mevcutTr": "müdahale, ameliyat",
-   "mevcutBeispiel": "Der Eingriff dauert nur zwanzig Minuten und gilt als harmlos.",
-   "mevcutBeispielTr": "Müdahale sadece yirmi dakika sürüyor ve zararsız sayılıyor.",
-   "cakisan": [
+   "currentTr": "müdahale, ameliyat",
+   "currentBeispiel": "Der Eingriff dauert nur zwanzig Minuten und gilt als harmlos.",
+   "currentBeispielTr": "Müdahale sadece yirmi dakika sürüyor ve zararsız sayılıyor.",
+   "overlapping": [
     "die Intervention (C1)"
    ]
   },
@@ -155,9 +155,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Narkosen",
-   "mevcutTr": "anestezi, narkoz",
-   "mevcutBeispiel": "Nach der Narkose fühlte sie sich noch stundenlang benommen.",
-   "mevcutBeispielTr": "Narkozdan sonra saatlerce kendini sersem hissetti."
+   "currentTr": "anestezi, narkoz",
+   "currentBeispiel": "Nach der Narkose fühlte sie sich noch stundenlang benommen.",
+   "currentBeispielTr": "Narkozdan sonra saatlerce kendini sersem hissetti."
   },
   {
    "id": 4609,
@@ -165,9 +165,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "bayılma, baygınlık",
-   "mevcutBeispiel": "Aus der Ohnmacht erwachte er erst im Krankenwagen.",
-   "mevcutBeispielTr": "Baygınlıktan ancak ambulansta uyandı."
+   "currentTr": "bayılma, baygınlık",
+   "currentBeispiel": "Aus der Ohnmacht erwachte er erst im Krankenwagen.",
+   "currentBeispielTr": "Baygınlıktan ancak ambulansta uyandı."
   },
   {
    "id": 4610,
@@ -175,9 +175,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "baş dönmesi",
-   "mevcutBeispiel": "Beim schnellen Aufstehen bekomme ich manchmal Schwindel.",
-   "mevcutBeispielTr": "Hızlı ayağa kalkınca bazen başım dönüyor."
+   "currentTr": "baş dönmesi",
+   "currentBeispiel": "Beim schnellen Aufstehen bekomme ich manchmal Schwindel.",
+   "currentBeispielTr": "Hızlı ayağa kalkınca bazen başım dönüyor."
   },
   {
    "id": 4611,
@@ -185,9 +185,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "mide bulantısı",
-   "mevcutBeispiel": "Die Übelkeit trat kurz nach der ersten Tablette auf.",
-   "mevcutBeispielTr": "Mide bulantısı ilk haptan kısa süre sonra başladı."
+   "currentTr": "mide bulantısı",
+   "currentBeispiel": "Die Übelkeit trat kurz nach der ersten Tablette auf.",
+   "currentBeispielTr": "Mide bulantısı ilk haptan kısa süre sonra başladı."
   },
   {
    "id": 4612,
@@ -195,9 +195,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "nefes darlığı",
-   "mevcutBeispiel": "Bei plötzlicher Atemnot sollten Sie sofort den Notruf wählen.",
-   "mevcutBeispielTr": "Ani nefes darlığında hemen acil çağrı numarasını aramalısınız."
+   "currentTr": "nefes darlığı",
+   "currentBeispiel": "Bei plötzlicher Atemnot sollten Sie sofort den Notruf wählen.",
+   "currentBeispielTr": "Ani nefes darlığında hemen acil çağrı numarasını aramalısınız."
   },
   {
    "id": 4613,
@@ -205,9 +205,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Krankschreibungen",
-   "mevcutTr": "istirahat raporu",
-   "mevcutBeispiel": "Der Arzt hat mir eine Krankschreibung für drei Tage gegeben.",
-   "mevcutBeispielTr": "Doktor bana üç günlük istirahat raporu verdi."
+   "currentTr": "istirahat raporu",
+   "currentBeispiel": "Der Arzt hat mir eine Krankschreibung für drei Tage gegeben.",
+   "currentBeispielTr": "Doktor bana üç günlük istirahat raporu verdi."
   },
   {
    "id": 4614,
@@ -215,9 +215,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Atteste",
-   "mevcutTr": "sağlık raporu, belge",
-   "mevcutBeispiel": "Für den Sportunterricht braucht mein Sohn ein ärztliches Attest.",
-   "mevcutBeispielTr": "Beden eğitimi dersi için oğlumun doktor raporuna ihtiyacı var."
+   "currentTr": "sağlık raporu, belge",
+   "currentBeispiel": "Für den Sportunterricht braucht mein Sohn ein ärztliches Attest.",
+   "currentBeispielTr": "Beden eğitimi dersi için oğlumun doktor raporuna ihtiyacı var."
   },
   {
    "id": 4615,
@@ -225,9 +225,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yatak istirahati",
-   "mevcutBeispiel": "Der Arzt verschrieb ihr eine Woche strenge Bettruhe.",
-   "mevcutBeispielTr": "Doktor ona bir hafta sıkı yatak istirahati verdi."
+   "currentTr": "yatak istirahati",
+   "currentBeispiel": "Der Arzt verschrieb ihr eine Woche strenge Bettruhe.",
+   "currentBeispielTr": "Doktor ona bir hafta sıkı yatak istirahati verdi."
   },
   {
    "id": 4616,
@@ -235,9 +235,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vorsorgeuntersuchungen",
-   "mevcutTr": "kontrol muayenesi, tarama muayenesi",
-   "mevcutBeispiel": "Ab vierzig zahlt die Kasse jährlich eine Vorsorgeuntersuchung.",
-   "mevcutBeispielTr": "Kırk yaşından sonra sigorta yılda bir kontrol muayenesini karşılıyor."
+   "currentTr": "kontrol muayenesi, tarama muayenesi",
+   "currentBeispiel": "Ab vierzig zahlt die Kasse jährlich eine Vorsorgeuntersuchung.",
+   "currentBeispielTr": "Kırk yaşından sonra sigorta yılda bir kontrol muayenesini karşılıyor."
   },
   {
    "id": 4617,
@@ -245,9 +245,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "erken teşhis",
-   "mevcutBeispiel": "Bei Krebs entscheidet die Früherkennung oft über die Heilungschancen.",
-   "mevcutBeispielTr": "Kanserde iyileşme şansını çoğu zaman erken teşhis belirliyor."
+   "currentTr": "erken teşhis",
+   "currentBeispiel": "Bei Krebs entscheidet die Früherkennung oft über die Heilungschancen.",
+   "currentBeispielTr": "Kanserde iyileşme şansını çoğu zaman erken teşhis belirliyor."
   },
   {
    "id": 4618,
@@ -255,9 +255,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Hausärzte",
-   "mevcutTr": "aile hekimi",
-   "mevcutBeispiel": "Mein Hausarzt kennt meine Krankengeschichte seit zwanzig Jahren.",
-   "mevcutBeispielTr": "Aile hekimim yirmi yıldır hastalık geçmişimi biliyor."
+   "currentTr": "aile hekimi",
+   "currentBeispiel": "Mein Hausarzt kennt meine Krankengeschichte seit zwanzig Jahren.",
+   "currentBeispielTr": "Aile hekimim yirmi yıldır hastalık geçmişimi biliyor."
   },
   {
    "id": 4619,
@@ -265,9 +265,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fachärzte",
-   "mevcutTr": "uzman hekim",
-   "mevcutBeispiel": "Auf einen Termin beim Facharzt wartet man hier ewig.",
-   "mevcutBeispielTr": "Burada uzman hekim randevusu için sonsuza kadar bekleniyor."
+   "currentTr": "uzman hekim",
+   "currentBeispiel": "Auf einen Termin beim Facharzt wartet man hier ewig.",
+   "currentBeispielTr": "Burada uzman hekim randevusu için sonsuza kadar bekleniyor."
   },
   {
    "id": 4620,
@@ -275,9 +275,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Pflegekräfte",
-   "mevcutTr": "bakım görevlisi, hemşire",
-   "mevcutBeispiel": "In vielen Kliniken fehlen ausgebildete Pflegekräfte für die Nachtschicht.",
-   "mevcutBeispielTr": "Birçok klinikte gece vardiyası için eğitimli bakım personeli eksik."
+   "currentTr": "bakım görevlisi, hemşire",
+   "currentBeispiel": "In vielen Kliniken fehlen ausgebildete Pflegekräfte für die Nachtschicht.",
+   "currentBeispielTr": "Birçok klinikte gece vardiyası için eğitimli bakım personeli eksik."
   },
   {
    "id": 4621,
@@ -285,9 +285,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Sanitäter",
-   "mevcutTr": "sağlık görevlisi, paramedik",
-   "mevcutBeispiel": "Die Sanitäter waren schon nach sechs Minuten vor Ort.",
-   "mevcutBeispielTr": "Sağlık görevlileri altı dakika içinde olay yerindeydi."
+   "currentTr": "sağlık görevlisi, paramedik",
+   "currentBeispiel": "Die Sanitäter waren schon nach sechs Minuten vor Ort.",
+   "currentBeispielTr": "Sağlık görevlileri altı dakika içinde olay yerindeydi."
   },
   {
    "id": 4622,
@@ -295,9 +295,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rettungsdienste",
-   "mevcutTr": "acil yardım servisi",
-   "mevcutBeispiel": "Der Rettungsdienst wurde noch in der Nacht alarmiert.",
-   "mevcutBeispielTr": "Acil yardım servisi daha gece vakti göreve çağrıldı."
+   "currentTr": "acil yardım servisi",
+   "currentBeispiel": "Der Rettungsdienst wurde noch in der Nacht alarmiert.",
+   "currentBeispielTr": "Acil yardım servisi daha gece vakti göreve çağrıldı."
   },
   {
    "id": 4623,
@@ -305,9 +305,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wartezimmer",
-   "mevcutTr": "bekleme odası",
-   "mevcutBeispiel": "Im Wartezimmer saßen an diesem Morgen fast zwanzig Patienten.",
-   "mevcutBeispielTr": "O sabah bekleme odasında neredeyse yirmi hasta oturuyordu."
+   "currentTr": "bekleme odası",
+   "currentBeispiel": "Im Wartezimmer saßen an diesem Morgen fast zwanzig Patienten.",
+   "currentBeispielTr": "O sabah bekleme odasında neredeyse yirmi hasta oturuyordu."
   },
   {
    "id": 4624,
@@ -315,9 +315,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Selbsthilfegruppen",
-   "mevcutTr": "destek grubu, dayanışma grubu",
-   "mevcutBeispiel": "In der Selbsthilfegruppe spricht er offen über seine Krankheit.",
-   "mevcutBeispielTr": "Destek grubunda hastalığı hakkında açıkça konuşuyor."
+   "currentTr": "destek grubu, dayanışma grubu",
+   "currentBeispiel": "In der Selbsthilfegruppe spricht er offen über seine Krankheit.",
+   "currentBeispielTr": "Destek grubunda hastalığı hakkında açıkça konuşuyor."
   },
   {
    "id": 4625,
@@ -325,9 +325,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sağlık sistemi, sağlık hizmetleri",
-   "mevcutBeispiel": "Das deutsche Gesundheitswesen steht vor großen finanziellen Problemen.",
-   "mevcutBeispielTr": "Alman sağlık sistemi büyük mali sorunlarla karşı karşıya."
+   "currentTr": "sağlık sistemi, sağlık hizmetleri",
+   "currentBeispiel": "Das deutsche Gesundheitswesen steht vor großen finanziellen Problemen.",
+   "currentBeispielTr": "Alman sağlık sistemi büyük mali sorunlarla karşı karşıya."
   },
   {
    "id": 4626,
@@ -335,9 +335,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kostenübernahmen",
-   "mevcutTr": "masrafların karşılanması, ödemenin üstlenilmesi",
-   "mevcutBeispiel": "Die Kasse hat die Kostenübernahme für die Brille abgelehnt.",
-   "mevcutBeispielTr": "Sigorta gözlük masrafını karşılamayı reddetti."
+   "currentTr": "masrafların karşılanması, ödemenin üstlenilmesi",
+   "currentBeispiel": "Die Kasse hat die Kostenübernahme für die Brille abgelehnt.",
+   "currentBeispielTr": "Sigorta gözlük masrafını karşılamayı reddetti."
   },
   {
    "id": 4627,
@@ -345,9 +345,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Quarantänen",
-   "mevcutTr": "karantina",
-   "mevcutBeispiel": "Nach dem positiven Test musste die ganze Familie in Quarantäne.",
-   "mevcutBeispielTr": "Pozitif testten sonra bütün aile karantinaya girmek zorunda kaldı."
+   "currentTr": "karantina",
+   "currentBeispiel": "Nach dem positiven Test musste die ganze Familie in Quarantäne.",
+   "currentBeispielTr": "Pozitif testten sonra bütün aile karantinaya girmek zorunda kaldı."
   },
   {
    "id": 4628,
@@ -355,9 +355,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Pandemien",
-   "mevcutTr": "pandemi, salgın",
-   "mevcutBeispiel": "Während der Pandemie arbeiteten viele Ärzte an der Belastungsgrenze.",
-   "mevcutBeispielTr": "Pandemi sırasında birçok doktor dayanma sınırında çalıştı."
+   "currentTr": "pandemi, salgın",
+   "currentBeispiel": "Während der Pandemie arbeiteten viele Ärzte an der Belastungsgrenze.",
+   "currentBeispielTr": "Pandemi sırasında birçok doktor dayanma sınırında çalıştı."
   },
   {
    "id": 4629,
@@ -365,9 +365,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Immunsysteme",
-   "mevcutTr": "bağışıklık sistemi",
-   "mevcutBeispiel": "Schlafmangel schwächt das Immunsystem stärker als viele denken.",
-   "mevcutBeispielTr": "Uykusuzluk bağışıklık sistemini çoğu kişinin sandığından fazla zayıflatıyor."
+   "currentTr": "bağışıklık sistemi",
+   "currentBeispiel": "Schlafmangel schwächt das Immunsystem stärker als viele denken.",
+   "currentBeispielTr": "Uykusuzluk bağışıklık sistemini çoğu kişinin sandığından fazla zayıflatıyor."
   },
   {
    "id": 4630,
@@ -375,9 +375,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yaşam beklentisi, ortalama ömür",
-   "mevcutBeispiel": "Die Lebenserwartung ist in den letzten Jahrzehnten deutlich gestiegen.",
-   "mevcutBeispielTr": "Ortalama ömür son on yıllarda belirgin biçimde arttı."
+   "currentTr": "yaşam beklentisi, ortalama ömür",
+   "currentBeispiel": "Die Lebenserwartung ist in den letzten Jahrzehnten deutlich gestiegen.",
+   "currentBeispielTr": "Ortalama ömür son on yıllarda belirgin biçimde arttı."
   },
   {
    "id": 4631,
@@ -385,9 +385,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Beruhigungsmittel",
-   "mevcutTr": "sakinleştirici",
-   "mevcutBeispiel": "Beruhigungsmittel sollte man niemals ohne ärztlichen Rat nehmen.",
-   "mevcutBeispielTr": "Sakinleştirici asla doktor tavsiyesi olmadan alınmamalı."
+   "currentTr": "sakinleştirici",
+   "currentBeispiel": "Beruhigungsmittel sollte man niemals ohne ärztlichen Rat nehmen.",
+   "currentBeispielTr": "Sakinleştirici asla doktor tavsiyesi olmadan alınmamalı."
   },
   {
    "id": 4632,
@@ -395,9 +395,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schlafstörungen",
-   "mevcutTr": "uyku bozukluğu",
-   "mevcutBeispiel": "Seit dem Umzug plagen ihn heftige Schlafstörungen.",
-   "mevcutBeispielTr": "Taşınmadan beri şiddetli uyku bozuklukları onu perişan ediyor."
+   "currentTr": "uyku bozukluğu",
+   "currentBeispiel": "Seit dem Umzug plagen ihn heftige Schlafstörungen.",
+   "currentBeispielTr": "Taşınmadan beri şiddetli uyku bozuklukları onu perişan ediyor."
   },
   {
    "id": 4633,
@@ -405,10 +405,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat geheilt",
-   "mevcutTr": "iyileştirmek, iyileşmek",
-   "mevcutBeispiel": "Die Wunde ist ohne Narbe vollständig geheilt.",
-   "mevcutBeispielTr": "Yara iz bırakmadan tamamen iyileşti.",
-   "cakisan": [
+   "currentTr": "iyileştirmek, iyileşmek",
+   "currentBeispiel": "Die Wunde ist ohne Narbe vollständig geheilt.",
+   "currentBeispielTr": "Yara iz bırakmadan tamamen iyileşti.",
+   "overlapping": [
     "optimieren (B2)"
    ]
   },
@@ -418,10 +418,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gelindert",
-   "mevcutTr": "hafifletmek, dindirmek",
-   "mevcutBeispiel": "Diese Salbe lindert den Juckreiz schon nach wenigen Minuten.",
-   "mevcutBeispielTr": "Bu merhem kaşıntıyı birkaç dakika içinde hafifletiyor.",
-   "cakisan": [
+   "currentTr": "hafifletmek, dindirmek",
+   "currentBeispiel": "Diese Salbe lindert den Juckreiz schon nach wenigen Minuten.",
+   "currentBeispielTr": "Bu merhem kaşıntıyı birkaç dakika içinde hafifletiyor.",
+   "overlapping": [
     "abmildern (C1)"
    ]
   },
@@ -431,10 +431,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat versorgt",
-   "mevcutTr": "tedavi etmek, bakımını üstlenmek, ihtiyacını karşılamak",
-   "mevcutBeispiel": "Die Ärztin versorgte die Verletzten direkt an der Unfallstelle.",
-   "mevcutBeispielTr": "Doktor yaralılara doğrudan kaza yerinde müdahale etti.",
-   "cakisan": [
+   "currentTr": "tedavi etmek, bakımını üstlenmek, ihtiyacını karşılamak",
+   "currentBeispiel": "Die Ärztin versorgte die Verletzten direkt an der Unfallstelle.",
+   "currentBeispielTr": "Doktor yaralılara doğrudan kaza yerinde müdahale etti.",
+   "overlapping": [
     "behandeln (B1)"
    ]
   },
@@ -444,9 +444,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat eingeliefert",
-   "mevcutTr": "hastaneye kaldırmak, yatırmak",
-   "mevcutBeispiel": "Der Patient wurde gestern Abend mit hohem Fieber eingeliefert.",
-   "mevcutBeispielTr": "Hasta dün akşam yüksek ateşle hastaneye kaldırıldı."
+   "currentTr": "hastaneye kaldırmak, yatırmak",
+   "currentBeispiel": "Der Patient wurde gestern Abend mit hohem Fieber eingeliefert.",
+   "currentBeispielTr": "Hasta dün akşam yüksek ateşle hastaneye kaldırıldı."
   },
   {
    "id": 4637,
@@ -454,10 +454,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verordnet",
-   "mevcutTr": "reçete yazmak, (tedavi) öngörmek",
-   "mevcutBeispiel": "Der Arzt verordnete ihm sechs Wochen Krankengymnastik.",
-   "mevcutBeispielTr": "Doktor ona altı hafta fizik tedavi yazdı.",
-   "cakisan": [
+   "currentTr": "reçete yazmak, (tedavi) öngörmek",
+   "currentBeispiel": "Der Arzt verordnete ihm sechs Wochen Krankengymnastik.",
+   "currentBeispielTr": "Doktor ona altı hafta fizik tedavi yazdı.",
+   "overlapping": [
     "verschreiben (B1)"
    ]
   },
@@ -467,10 +467,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat angesteckt",
-   "mevcutTr": "bulaştırmak, (hastalığı) geçirmek",
-   "mevcutBeispiel": "Ich möchte im Büro niemanden mit meiner Erkältung anstecken.",
-   "mevcutBeispielTr": "Ofiste kimseye soğuk algınlığımı bulaştırmak istemiyorum.",
-   "cakisan": [
+   "currentTr": "bulaştırmak, (hastalığı) geçirmek",
+   "currentBeispiel": "Ich möchte im Büro niemanden mit meiner Erkältung anstecken.",
+   "currentBeispielTr": "Ofiste kimseye soğuk algınlığımı bulaştırmak istemiyorum.",
+   "overlapping": [
     "kontaminieren (C1)"
    ]
   },
@@ -480,9 +480,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat überlastet",
-   "mevcutTr": "aşırı yüklemek, zorlamak",
-   "mevcutBeispiel": "Wer den Rücken ständig überlastet, bekommt früher oder später Probleme.",
-   "mevcutBeispielTr": "Belini sürekli zorlayan er ya da geç sorun yaşar."
+   "currentTr": "aşırı yüklemek, zorlamak",
+   "currentBeispiel": "Wer den Rücken ständig überlastet, bekommt früher oder später Probleme.",
+   "currentBeispielTr": "Belini sürekli zorlayan er ya da geç sorun yaşar."
   },
   {
    "id": 4640,
@@ -490,9 +490,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat ertragen",
-   "mevcutTr": "katlanmak, dayanmak",
-   "mevcutBeispiel": "Die Schmerzen waren kaum noch zu ertragen.",
-   "mevcutBeispielTr": "Ağrılara neredeyse artık dayanılamıyordu."
+   "currentTr": "katlanmak, dayanmak",
+   "currentBeispiel": "Die Schmerzen waren kaum noch zu ertragen.",
+   "currentBeispielTr": "Ağrılara neredeyse artık dayanılamıyordu."
   },
   {
    "id": 4641,
@@ -500,10 +500,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgeklärt",
-   "mevcutTr": "araştırmak, netleştirmek",
-   "mevcutBeispiel": "Solche Beschwerden sollte man unbedingt beim Arzt abklären lassen.",
-   "mevcutBeispielTr": "Böyle şikâyetler mutlaka doktorda araştırılmalı.",
-   "cakisan": [
+   "currentTr": "araştırmak, netleştirmek",
+   "currentBeispiel": "Solche Beschwerden sollte man unbedingt beim Arzt abklären lassen.",
+   "currentBeispielTr": "Böyle şikâyetler mutlaka doktorda araştırılmalı.",
+   "overlapping": [
     "recherchieren (B2)",
     "erforschen (C1)"
    ]
@@ -514,10 +514,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verweigert",
-   "mevcutTr": "reddetmek, kabul etmemek",
-   "mevcutBeispiel": "Der Patient verweigerte die Behandlung aus religiösen Gründen.",
-   "mevcutBeispielTr": "Hasta dini nedenlerle tedaviyi reddetti.",
-   "cakisan": [
+   "currentTr": "reddetmek, kabul etmemek",
+   "currentBeispiel": "Der Patient verweigerte die Behandlung aus religiösen Gründen.",
+   "currentBeispielTr": "Hasta dini nedenlerle tedaviyi reddetti.",
+   "overlapping": [
     "ablehnen (B1)",
     "sich weigern (B1)",
     "verwerfen (C1)"
@@ -529,9 +529,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verschlimmert",
-   "mevcutTr": "kötüleştirmek, ağırlaştırmak",
-   "mevcutBeispiel": "Durch das lange Warten hat sich sein Zustand verschlimmert.",
-   "mevcutBeispielTr": "Uzun bekleme yüzünden durumu ağırlaştı."
+   "currentTr": "kötüleştirmek, ağırlaştırmak",
+   "currentBeispiel": "Durch das lange Warten hat sich sein Zustand verschlimmert.",
+   "currentBeispielTr": "Uzun bekleme yüzünden durumu ağırlaştı."
   }
  ]
 }

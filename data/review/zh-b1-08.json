@@ -7,7 +7,7 @@
   "gsw": "Zvieri",
   "gswArtikel": "de",
   "gswBeispiel": "Es isch Ziit für en chliine Zvieri.",
-  "ayniLehce": [
+  "sameDialect": [
    "das/der Zvieri/Znüni (B1)"
   ]
  },
@@ -55,7 +55,7 @@
   "gsw": "aber",
   "gswArtikel": null,
   "gswBeispiel": "Si lüütet immer wider aa, aber ooni Erfolg.",
-  "ayniLehce": [
+  "sameDialect": [
    "aber (A1)"
   ]
  },
@@ -112,7 +112,7 @@
   "gsw": "Jugendliche",
   "gswArtikel": "d",
   "gswBeispiel": "1. D Jugendliche gönd gärn in Uusgang. 2. De Iitritt isch für Chind und Jugendliche bis 16 gratis.",
-  "ayniLehce": [
+  "sameDialect": [
    "Jugendliche (A1)"
   ]
  },
@@ -142,7 +142,7 @@
   "gsw": "Kafi",
   "gswArtikel": "s",
   "gswBeispiel": "Grad i de Nöchi isch es Kafi. Chum, mir gönd döt en Kafi go trinke.",
-  "ayniLehce": [
+  "sameDialect": [
    "Café (A1)"
   ]
  },
@@ -244,7 +244,7 @@
   "gsw": "Fasnacht",
   "gswArtikel": "d",
   "gswBeispiel": "Döt hanget mis Koschtüm für de Fasnachtsumzug.",
-  "ayniLehce": [
+  "sameDialect": [
    "Fasching (B1)",
    "Fasnacht (B1)"
   ]
@@ -257,7 +257,7 @@
   "gsw": "Rüebli",
   "gswArtikel": "s",
   "gswBeispiel": "Hase frässed gärn Rüebli.",
-  "ayniLehce": [
+  "sameDialect": [
    "Möhre (B1)",
    "Rüebli (B1)"
   ]
@@ -297,7 +297,7 @@
   "gsw": "Chaschte",
   "gswArtikel": "de",
   "gswBeispiel": "D Handtüecher sind im Chaschte.",
-  "ayniLehce": [
+  "sameDialect": [
    "Schrank (A1)"
   ]
  },
@@ -327,7 +327,7 @@
   "gsw": "chaufe",
   "gswArtikel": null,
   "gswBeispiel": "1. Im Supermärt cha me günschtig iichaufe. 2. Ich ha mir en Pullover gchauft.",
-  "ayniLehce": [
+  "sameDialect": [
    "kaufen (A1)"
   ]
  },
@@ -366,7 +366,7 @@
   "gsw": "Kellner",
   "gswArtikel": "de",
   "gswBeispiel": "Er isch Kellner vo Beruef.",
-  "ayniLehce": [
+  "sameDialect": [
    "Ober (B1)"
   ]
  },
@@ -450,7 +450,7 @@
   "gsw": "super",
   "gswArtikel": null,
   "gswBeispiel": "Ich find euse Leerer super.",
-  "ayniLehce": [
+  "sameDialect": [
    "super (A2)"
   ]
  },
@@ -561,7 +561,7 @@
   "gsw": "Knödel",
   "gswArtikel": "de",
   "gswBeispiel": "Möchted Si zum Fläisch Härdöpfel oder Knödel? – Knödel, bitte.",
-  "ayniLehce": [
+  "sameDialect": [
    "Knödel (B1)"
   ]
  },
@@ -582,7 +582,7 @@
   "gsw": "Beiz",
   "gswArtikel": "d",
   "gswBeispiel": "Gömmer no in e Beiz go es Bier trinke?",
-  "ayniLehce": [
+  "sameDialect": [
    "Lokal (A1)",
    "Gasthaus (B1)"
   ]
@@ -613,7 +613,7 @@
   "gsw": "Knödel",
   "gswArtikel": "de",
   "gswBeispiel": "Möchted Si zum Fläisch Härdöpfel oder Knödel? – Knödel, bitte.",
-  "ayniLehce": [
+  "sameDialect": [
    "Kloß (B1)"
   ]
  },
@@ -706,7 +706,7 @@
   "gsw": "Gonfi",
   "gswArtikel": "d",
   "gswBeispiel": "Bring bitte no es Glaas Gonfi mit.",
-  "ayniLehce": [
+  "sameDialect": [
    "Marmelade (A1)"
   ]
  },
@@ -844,7 +844,7 @@
   "gsw": "Gang",
   "gswArtikel": "de",
   "gswBeispiel": "Mir warted dusse im Gang.",
-  "ayniLehce": [
+  "sameDialect": [
    "Flur (B1)",
    "Gang (B1)"
   ]
@@ -956,7 +956,7 @@
   "gsw": "Ambulanz",
   "gswArtikel": "d",
   "gswBeispiel": "Mir händ e Ambulanz müese rüefe.",
-  "ayniLehce": [
+  "sameDialect": [
    "Rettungswagen (A2)"
   ]
  },

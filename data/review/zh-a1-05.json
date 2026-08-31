@@ -331,7 +331,7 @@
   "gsw": "waar",
   "gswArtikel": null,
   "gswBeispiel": "Das isch sicher nöd waar./Das schmeckt guet, oder?",
-  "ayniLehce": [
+  "sameDialect": [
    "Ware (B1)"
   ]
  },
@@ -361,7 +361,7 @@
   "gsw": "wänn",
   "gswArtikel": null,
   "gswBeispiel": "Wänn häsch du Geburtstag?",
-  "ayniLehce": [
+  "sameDialect": [
    "wenn (A2)"
   ]
  },
@@ -436,7 +436,7 @@
   "gsw": "weetue",
   "gswArtikel": null,
   "gswBeispiel": "Min Chopf! Das mues doch weetue!",
-  "ayniLehce": [
+  "sameDialect": [
    "wehtun (A2)"
   ]
  },
@@ -466,7 +466,7 @@
   "gsw": "wele",
   "gswArtikel": null,
   "gswBeispiel": "Wele Film wotsch luege?",
-  "ayniLehce": [
+  "sameDialect": [
    "wollen (A1)"
   ]
  },
@@ -586,7 +586,7 @@
   "gsw": "wüsse",
   "gswArtikel": null,
   "gswBeispiel": "Wäisch du, wie er häisst?",
-  "ayniLehce": [
+  "sameDialect": [
    "Wissen (B1)"
   ]
  },
@@ -652,7 +652,7 @@
   "gsw": "wele",
   "gswArtikel": null,
   "gswBeispiel": "Wotsch mini Fründe kennelerne?",
-  "ayniLehce": [
+  "sameDialect": [
    "welche (A1)"
   ]
  },
@@ -781,7 +781,7 @@
   "gsw": "zuemache",
   "gswArtikel": null,
   "gswBeispiel": "Chasch bitte s Fänschter zuemache?",
-  "ayniLehce": [
+  "sameDialect": [
    "schließen (A1)"
   ]
  },
@@ -793,7 +793,7 @@
   "gsw": "zäme",
   "gswArtikel": null,
   "gswBeispiel": "Mir mached zäme Huusufgabe.",
-  "ayniLehce": [
+  "sameDialect": [
    "gemeinsam (B1)"
   ]
  },
@@ -805,7 +805,7 @@
   "gsw": "zue sii",
   "gswArtikel": null,
   "gswBeispiel": "D Bibliothek isch i de Ferie zue.",
-  "ayniLehce": [
+  "sameDialect": [
    "geschlossen sein (A1)"
   ]
  },
@@ -988,7 +988,7 @@
   "gsw": "Lift",
   "gswArtikel": "de",
   "gswBeispiel": "I dem Huus git s kän Lift.",
-  "ayniLehce": [
+  "sameDialect": [
    "Lift (B1)"
   ]
  },

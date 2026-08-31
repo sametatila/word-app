@@ -43,7 +43,7 @@
   "gsw": "Richtig",
   "gswArtikel": "d",
   "gswBeispiel": "Wo isch de Baanhof? I weli Richtig mues ich gaa?",
-  "ayniLehce": [
+  "sameDialect": [
    "richtig (A1)"
   ]
  },
@@ -82,7 +82,7 @@
   "gsw": "Ofe",
   "gswArtikel": "de",
   "gswBeispiel": "Ich ha grad e Pizza gmacht. Si isch ganz früsch us em Ofe.",
-  "ayniLehce": [
+  "sameDialect": [
    "(Back-)Ofen (B1)",
    "Ofen (A2)"
   ]
@@ -95,7 +95,7 @@
   "gsw": "Rolle",
   "gswArtikel": "d",
   "gswBeispiel": "D Schauschpilerin hät iri Rolle sehr guet gschpilt.",
-  "ayniLehce": [
+  "sameDialect": [
    "rollen (A2)"
   ]
  },
@@ -152,7 +152,7 @@
   "gsw": "Rüebli",
   "gswArtikel": "s",
   "gswBeispiel": "Hase frässed gärn Rüebli.",
-  "ayniLehce": [
+  "sameDialect": [
    "Karotte (B1)",
    "Möhre (B1)"
   ]
@@ -165,7 +165,7 @@
   "gsw": "Telefonnummere",
   "gswArtikel": "d",
   "gswBeispiel": "Mir wetted Sii gärn aalüüte. Wie isch Iri Telefonnummere?",
-  "ayniLehce": [
+  "sameDialect": [
    "Telefonnummer (A2)"
   ]
  },
@@ -312,7 +312,7 @@
   "gsw": "schade",
   "gswArtikel": null,
   "gswBeispiel": "Es chliises Glaas Wii cha nöd schade.",
-  "ayniLehce": [
+  "sameDialect": [
    "Schaden (B1)"
   ]
  },
@@ -324,7 +324,7 @@
   "gsw": "Schade",
   "gswArtikel": "de",
   "gswBeispiel": "Ich ha en Unfall mit em Auto gha. Jetz mues ich de Schade de Versicherig mälde.",
-  "ayniLehce": [
+  "sameDialect": [
    "schaden (B1)"
   ]
  },
@@ -363,7 +363,7 @@
   "gsw": "luege",
   "gswArtikel": null,
   "gswBeispiel": "Chasch mal luege? Dört vorne isch no en Platz frii.",
-  "ayniLehce": [
+  "sameDialect": [
    "gucken (B1)"
   ]
  },
@@ -438,7 +438,7 @@
   "gsw": "Note",
   "gswArtikel": "d",
   "gswBeispiel": "Chasch mer e Note i Münz wächsle?",
-  "ayniLehce": [
+  "sameDialect": [
    "Note (A1)"
   ]
  },
@@ -558,7 +558,7 @@
   "gsw": "Dräck",
   "gswArtikel": "de",
   "gswBeispiel": "Du häsch Dräck a dine Schue.",
-  "ayniLehce": [
+  "sameDialect": [
    "Dreck (B1)"
   ]
  },
@@ -624,7 +624,7 @@
   "gsw": "Schriibe",
   "gswArtikel": "s",
   "gswBeispiel": "Händ Sii mis Schriibe vom 3. März überchoo?",
-  "ayniLehce": [
+  "sameDialect": [
    "schreiben (A1)"
   ]
  },
@@ -636,7 +636,7 @@
   "gsw": "brüele",
   "gswArtikel": null,
   "gswBeispiel": "Üses Baby hät die ganz Nacht brüelet.",
-  "ayniLehce": [
+  "sameDialect": [
    "weinen (A2)",
    "brüllen (A2)"
   ]
@@ -676,7 +676,7 @@
   "gsw": "Schuld",
   "gswArtikel": "d",
   "gswBeispiel": "Es isch nöd mini Schuld, dass das nöd klappet hät.",
-  "ayniLehce": [
+  "sameDialect": [
    "schuld (B1)"
   ]
  },
@@ -688,7 +688,7 @@
   "gsw": "schuld",
   "gswArtikel": null,
   "gswBeispiel": "Ich ha en Unfall gha. Aber ich bi nöd schuld gsii.",
-  "ayniLehce": [
+  "sameDialect": [
    "Schuld (B1)"
   ]
  },
@@ -718,7 +718,7 @@
   "gsw": "Prüefig",
   "gswArtikel": "d",
   "gswBeispiel": "Min Soon schriibt i de Prüefige immer gueti Note.",
-  "ayniLehce": [
+  "sameDialect": [
    "Klassenarbeit (A1)",
    "Prüfung (A1)",
    "Klausur (B2)"
@@ -777,7 +777,7 @@
   "gsw": "Pilz",
   "gswArtikel": "de",
   "gswBeispiel": "Händ Sii früschi Pilz?",
-  "ayniLehce": [
+  "sameDialect": [
    "Pilz (B1)"
   ]
  },
@@ -843,7 +843,7 @@
   "gsw": "sithär",
   "gswArtikel": null,
   "gswBeispiel": "Ich bi vor zwäi Jaar i d Schwiiz choo und lerne sithär Tüütsch.",
-  "ayniLehce": [
+  "sameDialect": [
    "seither (A2)"
   ]
  },
@@ -873,7 +873,7 @@
   "gsw": "sälber",
   "gswArtikel": null,
   "gswBeispiel": "Si wott das sälber mache.",
-  "ayniLehce": [
+  "sameDialect": [
    "selbst (A2)"
   ]
  },
@@ -903,7 +903,7 @@
   "gsw": "komisch",
   "gswArtikel": null,
   "gswBeispiel": "Es isch komisch, dass min Brüeder no nöd daa isch.",
-  "ayniLehce": [
+  "sameDialect": [
    "komisch (A2)"
   ]
  },
@@ -942,7 +942,7 @@
   "gsw": "schicke",
   "gswArtikel": null,
   "gswBeispiel": "Bitte schicked Sii üs d Unterlaage per E-Mail.",
-  "ayniLehce": [
+  "sameDialect": [
    "schicken (A1)"
   ]
  },
@@ -999,7 +999,7 @@
   "gsw": "Fauteuil",
   "gswArtikel": "de",
   "gswBeispiel": "Ich hett gärn en bequeme Fauteuil.",
-  "ayniLehce": [
+  "sameDialect": [
    "Fauteuil (B1)"
   ]
  },
@@ -1038,7 +1038,7 @@
   "gsw": "gwünne",
   "gswArtikel": null,
   "gswBeispiel": "D Mannschaft gwünnt 2:0.",
-  "ayniLehce": [
+  "sameDialect": [
    "gewinnen (A1)"
   ]
  },

@@ -126,7 +126,7 @@
   "tr": "kaldırım",
   "formen": "-e",
   "beispiel": "Auf dem Bürgersteig darf man nicht parken.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Gehsteig (B1)",
    "das Trottoir (B1)"
   ]
@@ -482,7 +482,7 @@
   "tr": "temizlemek",
   "formen": "säubert, hat gesäubert",
   "beispiel": "Wir säubern den Strand von Plastik und Papier.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "putzen (A2)",
    "reinigen (B1)"
   ]
@@ -510,7 +510,7 @@
   "tr": "tartışmak, kavga etmek",
   "formen": "streitet, hat gestritten",
   "beispiel": "Die Nachbarn streiten oft über den Lärm.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "sich streiten über (B2)"
   ]
  },
@@ -569,7 +569,7 @@
   "tr": "canlı, hareketli",
   "formen": "",
   "beispiel": "Abends ist die Innenstadt sehr lebendig.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "lebhaft (A2)"
   ]
  },
@@ -644,7 +644,7 @@
   "tr": "organik, biyolojik",
   "formen": "",
   "beispiel": "Dieses Gemüse kommt aus biologischem Anbau.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "bio(logisch) (B1)"
   ]
  },
@@ -767,7 +767,7 @@
   "tr": "boşaltmak",
   "formen": "leert aus, hat ausgeleert",
   "beispiel": "Am Morgen leere ich den Briefkasten aus.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "leeren (A2)"
   ]
  },
@@ -778,7 +778,7 @@
   "tr": "karıştırmak",
   "formen": "rührt um, hat umgerührt",
   "beispiel": "Ich rühre die Suppe mit einem Löffel langsam um.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "mischen (B1)",
    "verwechseln (B1)",
    "rühren (A2)"
@@ -791,7 +791,7 @@
   "tr": "kızartmak, kavurmak",
   "formen": "röstet, hat geröstet",
   "beispiel": "Ich röste das Brot in der Pfanne, bis es braun ist.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "braten (A2)"
   ]
  },
@@ -954,7 +954,7 @@
   "tr": "monte etmek, kurmak",
   "formen": "baut zusammen, hat zusammengebaut",
   "beispiel": "Wir bauen das neue Regal am Wochenende zusammen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "montieren (A2)"
   ]
  },

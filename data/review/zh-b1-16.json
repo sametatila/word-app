@@ -52,7 +52,7 @@
   "gsw": "Quartier",
   "gswArtikel": "s",
   "gswBeispiel": "Mir wohned imene schööne Quartier.",
-  "ayniLehce": [
+  "sameDialect": [
    "Quartier (B1)",
    "Wohnviertel (B2)",
    "Stadtteil (A2)"
@@ -219,7 +219,7 @@
   "gsw": "vorhär",
   "gswArtikel": null,
   "gswBeispiel": "Vorhär hät d Heidrun aaglüte. Du sölltisch si zruggrüefe.",
-  "ayniLehce": [
+  "sameDialect": [
    "vorher (A2)"
   ]
  },
@@ -393,7 +393,7 @@
   "gsw": "Waar",
   "gswArtikel": "d",
   "gswBeispiel": "Mir liefered Ine d Waar diräkt is Huus.",
-  "ayniLehce": [
+  "sameDialect": [
    "wahr (A1)"
   ]
  },
@@ -459,7 +459,7 @@
   "gsw": "Wiiterbildig",
   "gswArtikel": "d",
   "gswBeispiel": "Ich möcht e Wiiterbildig mache.",
-  "ayniLehce": [
+  "sameDialect": [
    "Fortbildung (B1)"
   ]
  },
@@ -525,7 +525,7 @@
   "gsw": "wärt",
   "gswArtikel": null,
   "gswBeispiel": "S Auto isch villicht na tuusig Franke wärt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Wert (B1)"
   ]
  },
@@ -537,7 +537,7 @@
   "gsw": "Wärt",
   "gswArtikel": "de",
   "gswBeispiel": "1. S Huus hät en Wärt vo öppe äinere Million Franke. 2. Uf Ires Urtäil leg ich groosse Wärt.",
-  "ayniLehce": [
+  "sameDialect": [
    "wert (B1)"
   ]
  },
@@ -729,7 +729,7 @@
   "gsw": "Wüsse",
   "gswArtikel": "s",
   "gswBeispiel": "1. Si hät es groosses Wüsse über Pflanze. 2. Ich mache nüt ohni dis Wüsse.",
-  "ayniLehce": [
+  "sameDialect": [
    "wissen (A1)"
   ]
  },

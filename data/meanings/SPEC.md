@@ -54,7 +54,7 @@ Biçim kuralları:
 
 İki farklı Almanca kelimenin karşılığı birebir aynı çıkıyorsa ve kelimeler
 gerçekten farklı şeyler demekse, **parantezle dipnot düşme** — daha kesin bir
-Türkçe ifade seç. Pakette bunu görmen için `cakisan` alanı var.
+Türkçe ifade seç. Pakette bunu görmen için `overlapping` alanı var.
 
 ```
 Schüler   →  "öğrenci"                 Student   →  "üniversite öğrencisi"
@@ -65,7 +65,7 @@ Bein      →  "bacak"                   Fuß       →  "ayak"
 Kelimeler gerçekten eşanlamlıysa (`anfangen` / `beginnen`) ikisi de aynı
 karşılığı alır; zorlama ayrım yaratma. İngilizce alan zaten ayırıyor.
 
-`cakisan` listesi **paketinin dışındaki** maddeleri de gösteriyor: `man` A1'in
+`overlapping` listesi **paketinin dışındaki** maddeleri de gösteriyor: `man` A1'in
 ilk paketinde, `Mensch` çok sonrasında ve ikisi de "insan" almaya aday. Kendi
 maddende en kesin karşılığı seçmen yeterli; diğerini düzeltmek senin işin değil.
 

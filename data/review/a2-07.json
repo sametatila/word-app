@@ -54,7 +54,7 @@
   "tr": "kelime, sözcük",
   "formen": "-n",
   "beispiel": "Ich lerne jeden Tag zwanzig neue Vokabeln.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "das Wort (A1)"
   ]
  },
@@ -161,7 +161,7 @@
   "tr": "ders vermek, öğretmek",
   "formen": "lehrt, hat gelehrt",
   "beispiel": "Er lehrt seit zehn Jahren an einer Schule.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "unterrichten (B1)"
   ]
  },
@@ -196,7 +196,7 @@
   "tr": "dağıtmak",
   "formen": "teilt aus, hat ausgeteilt",
   "beispiel": "Der Lehrer teilt die Blätter für den Test aus.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "austragen (A2)",
    "verteilen (B1)"
   ]
@@ -552,7 +552,7 @@
   "tr": "kasa fişi",
   "formen": "-",
   "beispiel": "Ohne Kassenzettel kann ich die Hose nicht zurückbringen.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Kassenbon (B2)"
   ]
  },
@@ -619,7 +619,7 @@
   "tr": "patates kızartması",
   "formen": "(Pl.)",
   "beispiel": "Mein Sohn isst am liebsten Pommes mit Ketchup.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Pommes frites (Pl.) (A2)"
   ]
  },
@@ -630,7 +630,7 @@
   "tr": "ana yemek",
   "formen": "-e",
   "beispiel": "Als Hauptgericht nehme ich Fisch mit Kartoffeln.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Hauptgang (B2)"
   ]
  },
@@ -713,7 +713,7 @@
   "tr": "karıştırmak",
   "formen": "rührt, hat gerührt",
   "beispiel": "Rühr die Soße, damit sie nicht anbrennt.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "mischen (B1)",
    "verwechseln (B1)",
    "umrühren (A2)"
@@ -878,7 +878,7 @@
   "tr": "geri göndermek",
   "formen": "schickt zurück, hat zurückgeschickt",
   "beispiel": "Die Jacke passt nicht, ich schicke sie zurück.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "zurücksenden (B2)"
   ]
  },
@@ -889,7 +889,7 @@
   "tr": "depozito",
   "formen": "¨-er",
   "beispiel": "Auf die Flasche zahlst du 25 Cent Pfand.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "die Kaution (B2)"
   ]
  },
@@ -932,7 +932,7 @@
   "tr": "torun",
   "formen": "-er",
   "beispiel": "Meine Großeltern haben fünf Enkelkinder.",
-  "ayniAnlam": [
+  "sameMeaning": [
    "der Enkel (B1)",
    "die Enkelin (B1)"
   ]

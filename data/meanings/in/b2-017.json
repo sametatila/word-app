@@ -1,16 +1,16 @@
 {
- "paket": "b2-017",
+ "packet": "b2-017",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 4443,
    "de": "die Ersparnis",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Ersparnisse",
-   "mevcutTr": "tasarruf, birikim",
-   "mevcutBeispiel": "Die Familie hat ihre Ersparnisse in die Renovierung gesteckt.",
-   "mevcutBeispielTr": "Aile birikimlerini tadilata yatırdı."
+   "currentTr": "tasarruf, birikim",
+   "currentBeispiel": "Die Familie hat ihre Ersparnisse in die Renovierung gesteckt.",
+   "currentBeispielTr": "Aile birikimlerini tadilata yatırdı."
   },
   {
    "id": 4444,
@@ -18,9 +18,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Haushaltspläne",
-   "mevcutTr": "bütçe planı, bütçe",
-   "mevcutBeispiel": "Der Stadtrat verabschiedet den Haushaltsplan für das kommende Jahr.",
-   "mevcutBeispielTr": "Belediye meclisi gelecek yılın bütçesini onaylıyor."
+   "currentTr": "bütçe planı, bütçe",
+   "currentBeispiel": "Der Stadtrat verabschiedet den Haushaltsplan für das kommende Jahr.",
+   "currentBeispielTr": "Belediye meclisi gelecek yılın bütçesini onaylıyor."
   },
   {
    "id": 4445,
@@ -28,9 +28,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Mahngebühren",
-   "mevcutTr": "gecikme ihtar ücreti, ihtarname bedeli",
-   "mevcutBeispiel": "Wer zu spät zahlt, muss mit einer Mahngebühr rechnen.",
-   "mevcutBeispielTr": "Geç ödeyen kişi ihtar ücretiyle karşılaşmayı beklemeli."
+   "currentTr": "gecikme ihtar ücreti, ihtarname bedeli",
+   "currentBeispiel": "Wer zu spät zahlt, muss mit einer Mahngebühr rechnen.",
+   "currentBeispielTr": "Geç ödeyen kişi ihtar ücretiyle karşılaşmayı beklemeli."
   },
   {
    "id": 4446,
@@ -38,9 +38,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zahlungsfristen",
-   "mevcutTr": "ödeme süresi, vade",
-   "mevcutBeispiel": "Die Zahlungsfrist läuft am Ende des Monats ab.",
-   "mevcutBeispielTr": "Ödeme süresi ay sonunda doluyor."
+   "currentTr": "ödeme süresi, vade",
+   "currentBeispiel": "Die Zahlungsfrist läuft am Ende des Monats ab.",
+   "currentBeispielTr": "Ödeme süresi ay sonunda doluyor."
   },
   {
    "id": 4447,
@@ -48,9 +48,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Fälligkeiten",
-   "mevcutTr": "vade, muacceliyet",
-   "mevcutBeispiel": "Bei Fälligkeit der Rechnung wird der Betrag automatisch abgezogen.",
-   "mevcutBeispielTr": "Faturanın vadesi geldiğinde tutar otomatik olarak çekiliyor."
+   "currentTr": "vade, muacceliyet",
+   "currentBeispiel": "Bei Fälligkeit der Rechnung wird der Betrag automatisch abgezogen.",
+   "currentBeispielTr": "Faturanın vadesi geldiğinde tutar otomatik olarak çekiliyor."
   },
   {
    "id": 4448,
@@ -58,9 +58,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zahlungsverzüge",
-   "mevcutTr": "ödeme gecikmesi, temerrüt",
-   "mevcutBeispiel": "Bei Zahlungsverzug behält sich das Unternehmen rechtliche Schritte vor.",
-   "mevcutBeispielTr": "Ödeme gecikmesi hâlinde şirket yasal yollara başvurma hakkını saklı tutuyor."
+   "currentTr": "ödeme gecikmesi, temerrüt",
+   "currentBeispiel": "Bei Zahlungsverzug behält sich das Unternehmen rechtliche Schritte vor.",
+   "currentBeispielTr": "Ödeme gecikmesi hâlinde şirket yasal yollara başvurma hakkını saklı tutuyor."
   },
   {
    "id": 4449,
@@ -68,9 +68,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Pfändungen",
-   "mevcutTr": "haciz",
-   "mevcutBeispiel": "Nach dem Urteil drohte ihm die Pfändung seines Gehalts.",
-   "mevcutBeispielTr": "Karardan sonra maaşına haciz konulma tehlikesiyle karşılaştı."
+   "currentTr": "haciz",
+   "currentBeispiel": "Nach dem Urteil drohte ihm die Pfändung seines Gehalts.",
+   "currentBeispielTr": "Karardan sonra maaşına haciz konulma tehlikesiyle karşılaştı."
   },
   {
    "id": 4450,
@@ -78,9 +78,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Gläubiger",
-   "mevcutTr": "alacaklı",
-   "mevcutBeispiel": "Die Gläubiger stimmten dem Sanierungsplan der Firma schließlich zu.",
-   "mevcutBeispielTr": "Alacaklılar sonunda şirketin yeniden yapılanma planını onayladı."
+   "currentTr": "alacaklı",
+   "currentBeispiel": "Die Gläubiger stimmten dem Sanierungsplan der Firma schließlich zu.",
+   "currentBeispielTr": "Alacaklılar sonunda şirketin yeniden yapılanma planını onayladı."
   },
   {
    "id": 4451,
@@ -88,10 +88,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Schuldner",
-   "mevcutTr": "borçlu",
-   "mevcutBeispiel": "Der Schuldner konnte die vereinbarten Raten nicht mehr aufbringen.",
-   "mevcutBeispielTr": "Borçlu, kararlaştırılan taksitleri artık karşılayamadı.",
-   "cakisan": [
+   "currentTr": "borçlu",
+   "currentBeispiel": "Der Schuldner konnte die vereinbarten Raten nicht mehr aufbringen.",
+   "currentBeispielTr": "Borçlu, kararlaştırılan taksitleri artık karşılayamadı.",
+   "overlapping": [
     "schuldig (B1)"
    ]
   },
@@ -101,9 +101,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Bonitäten",
-   "mevcutTr": "kredi notu, ödeme gücü",
-   "mevcutBeispiel": "Vor der Vergabe prüft die Bank sorgfältig die Bonität des Kunden.",
-   "mevcutBeispielTr": "Banka kredi vermeden önce müşterinin ödeme gücünü dikkatle inceliyor."
+   "currentTr": "kredi notu, ödeme gücü",
+   "currentBeispiel": "Vor der Vergabe prüft die Bank sorgfältig die Bonität des Kunden.",
+   "currentBeispielTr": "Banka kredi vermeden önce müşterinin ödeme gücünü dikkatle inceliyor."
   },
   {
    "id": 4453,
@@ -111,9 +111,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Hypotheken",
-   "mevcutTr": "ipotek",
-   "mevcutBeispiel": "Auf dem Haus liegt noch eine Hypothek von 200.000 Euro.",
-   "mevcutBeispielTr": "Evin üzerinde hâlâ 200.000 euroluk bir ipotek var."
+   "currentTr": "ipotek",
+   "currentBeispiel": "Auf dem Haus liegt noch eine Hypothek von 200.000 Euro.",
+   "currentBeispielTr": "Evin üzerinde hâlâ 200.000 euroluk bir ipotek var."
   },
   {
    "id": 4454,
@@ -121,9 +121,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Aktien",
-   "mevcutTr": "hisse senedi",
-   "mevcutBeispiel": "Die Aktien des Konzerns verloren nach der Meldung deutlich an Wert.",
-   "mevcutBeispielTr": "Şirketin hisseleri haberin ardından belirgin biçimde değer kaybetti."
+   "currentTr": "hisse senedi",
+   "currentBeispiel": "Die Aktien des Konzerns verloren nach der Meldung deutlich an Wert.",
+   "currentBeispielTr": "Şirketin hisseleri haberin ardından belirgin biçimde değer kaybetti."
   },
   {
    "id": 4455,
@@ -131,9 +131,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Wertpapiere",
-   "mevcutTr": "menkul kıymet",
-   "mevcutBeispiel": "Er hat sein Erbe in sichere Wertpapiere investiert.",
-   "mevcutBeispielTr": "Mirasını güvenli menkul kıymetlere yatırdı."
+   "currentTr": "menkul kıymet",
+   "currentBeispiel": "Er hat sein Erbe in sichere Wertpapiere investiert.",
+   "currentBeispielTr": "Mirasını güvenli menkul kıymetlere yatırdı."
   },
   {
    "id": 4456,
@@ -141,9 +141,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Spekulationen",
-   "mevcutTr": "spekülasyon, vurgunculuk",
-   "mevcutBeispiel": "Die Spekulation mit Wohnraum treibt die Mieten in die Höhe.",
-   "mevcutBeispielTr": "Konut üzerinden spekülasyon kiraları yukarı çekiyor."
+   "currentTr": "spekülasyon, vurgunculuk",
+   "currentBeispiel": "Die Spekulation mit Wohnraum treibt die Mieten in die Höhe.",
+   "currentBeispielTr": "Konut üzerinden spekülasyon kiraları yukarı çekiyor."
   },
   {
    "id": 4457,
@@ -151,9 +151,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kontostände",
-   "mevcutTr": "hesap bakiyesi",
-   "mevcutBeispiel": "Kurz vor Monatsende sieht er lieber nicht auf den Kontostand.",
-   "mevcutBeispielTr": "Ay sonuna doğru hesap bakiyesine bakmamayı tercih ediyor."
+   "currentTr": "hesap bakiyesi",
+   "currentBeispiel": "Kurz vor Monatsende sieht er lieber nicht auf den Kontostand.",
+   "currentBeispielTr": "Ay sonuna doğru hesap bakiyesine bakmamayı tercih ediyor."
   },
   {
    "id": 4458,
@@ -161,9 +161,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Freibeträge",
-   "mevcutTr": "vergiden muaf tutar, istisna tutarı",
-   "mevcutBeispiel": "Bis zu diesem Freibetrag bleiben Kapitalerträge völlig unversteuert.",
-   "mevcutBeispielTr": "Bu istisna tutarına kadar sermaye gelirleri hiç vergilendirilmiyor."
+   "currentTr": "vergiden muaf tutar, istisna tutarı",
+   "currentBeispiel": "Bis zu diesem Freibetrag bleiben Kapitalerträge völlig unversteuert.",
+   "currentBeispielTr": "Bu istisna tutarına kadar sermaye gelirleri hiç vergilendirilmiyor."
   },
   {
    "id": 4459,
@@ -171,9 +171,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Abgaben",
-   "mevcutTr": "kesinti (vergi ve primler), harç, resim",
-   "mevcutBeispiel": "Von seinem Lohn gehen fast vierzig Prozent für Abgaben ab.",
-   "mevcutBeispielTr": "Maaşının neredeyse yüzde kırkı kesintilere gidiyor."
+   "currentTr": "kesinti (vergi ve primler), harç, resim",
+   "currentBeispiel": "Von seinem Lohn gehen fast vierzig Prozent für Abgaben ab.",
+   "currentBeispielTr": "Maaşının neredeyse yüzde kırkı kesintilere gidiyor."
   },
   {
    "id": 4460,
@@ -181,9 +181,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Einkommensteuern",
-   "mevcutTr": "gelir vergisi",
-   "mevcutBeispiel": "Selbstständige zahlen die Einkommensteuer meist in vierteljährlichen Vorauszahlungen.",
-   "mevcutBeispielTr": "Serbest çalışanlar gelir vergisini genellikle üç aylık peşin ödemelerle yatırır."
+   "currentTr": "gelir vergisi",
+   "currentBeispiel": "Selbstständige zahlen die Einkommensteuer meist in vierteljährlichen Vorauszahlungen.",
+   "currentBeispielTr": "Serbest çalışanlar gelir vergisini genellikle üç aylık peşin ödemelerle yatırır."
   },
   {
    "id": 4461,
@@ -191,9 +191,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Finanzämter",
-   "mevcutTr": "vergi dairesi",
-   "mevcutBeispiel": "Das Finanzamt hat seinen Einspruch gegen den Bescheid zurückgewiesen.",
-   "mevcutBeispielTr": "Vergi dairesi, tebligata karşı yaptığı itirazı reddetti."
+   "currentTr": "vergi dairesi",
+   "currentBeispiel": "Das Finanzamt hat seinen Einspruch gegen den Bescheid zurückgewiesen.",
+   "currentBeispielTr": "Vergi dairesi, tebligata karşı yaptığı itirazı reddetti."
   },
   {
    "id": 4462,
@@ -201,9 +201,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Steuerhinterziehungen",
-   "mevcutTr": "vergi kaçırma",
-   "mevcutBeispiel": "Wegen Steuerhinterziehung wurde der Unternehmer zu einer Geldstrafe verurteilt.",
-   "mevcutBeispielTr": "İş insanı vergi kaçırmaktan para cezasına çarptırıldı."
+   "currentTr": "vergi kaçırma",
+   "currentBeispiel": "Wegen Steuerhinterziehung wurde der Unternehmer zu einer Geldstrafe verurteilt.",
+   "currentBeispielTr": "İş insanı vergi kaçırmaktan para cezasına çarptırıldı."
   },
   {
    "id": 4463,
@@ -211,9 +211,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vertragslaufzeiten",
-   "mevcutTr": "sözleşme süresi",
-   "mevcutBeispiel": "Die Vertragslaufzeit beträgt zwei Jahre und verlängert sich automatisch.",
-   "mevcutBeispielTr": "Sözleşme süresi iki yıl ve kendiliğinden uzuyor."
+   "currentTr": "sözleşme süresi",
+   "currentBeispiel": "Die Vertragslaufzeit beträgt zwei Jahre und verlängert sich automatisch.",
+   "currentBeispielTr": "Sözleşme süresi iki yıl ve kendiliğinden uzuyor."
   },
   {
    "id": 4464,
@@ -221,9 +221,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Policen",
-   "mevcutTr": "poliçe, sigorta sözleşmesi",
-   "mevcutBeispiel": "In der Police steht genau, welche Schäden ersetzt werden.",
-   "mevcutBeispielTr": "Poliçede hangi hasarların karşılanacağı tam olarak yazıyor."
+   "currentTr": "poliçe, sigorta sözleşmesi",
+   "currentBeispiel": "In der Police steht genau, welche Schäden ersetzt werden.",
+   "currentBeispielTr": "Poliçede hangi hasarların karşılanacağı tam olarak yazıyor."
   },
   {
    "id": 4465,
@@ -231,9 +231,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Selbstbeteiligungen",
-   "mevcutTr": "muafiyet tutarı, katılım payı",
-   "mevcutBeispiel": "Bei diesem Tarif liegt die Selbstbeteiligung bei 300 Euro pro Schaden.",
-   "mevcutBeispielTr": "Bu tarifede hasar başına katılım payı 300 euro."
+   "currentTr": "muafiyet tutarı, katılım payı",
+   "currentBeispiel": "Bei diesem Tarif liegt die Selbstbeteiligung bei 300 Euro pro Schaden.",
+   "currentBeispielTr": "Bu tarifede hasar başına katılım payı 300 euro."
   },
   {
    "id": 4466,
@@ -241,9 +241,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sorumluluk sigortası, mali mesuliyet",
-   "mevcutBeispiel": "Den zerbrochenen Spiegel übernimmt zum Glück meine Haftpflicht.",
-   "mevcutBeispielTr": "Kırılan aynayı neyse ki sorumluluk sigortam karşılıyor."
+   "currentTr": "sorumluluk sigortası, mali mesuliyet",
+   "currentBeispiel": "Den zerbrochenen Spiegel übernimmt zum Glück meine Haftpflicht.",
+   "currentBeispielTr": "Kırılan aynayı neyse ki sorumluluk sigortam karşılıyor."
   },
   {
    "id": 4467,
@@ -251,9 +251,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Rentenversicherungen",
-   "mevcutTr": "emeklilik sigortası",
-   "mevcutBeispiel": "In die gesetzliche Rentenversicherung zahlt jeder Angestellte automatisch ein.",
-   "mevcutBeispielTr": "Yasal emeklilik sigortasına her çalışan otomatik olarak katkı yapar."
+   "currentTr": "emeklilik sigortası",
+   "currentBeispiel": "In die gesetzliche Rentenversicherung zahlt jeder Angestellte automatisch ein.",
+   "currentBeispielTr": "Yasal emeklilik sigortasına her çalışan otomatik olarak katkı yapar."
   },
   {
    "id": 4468,
@@ -261,9 +261,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "iş göremezlik, mesleğini yapamaz duruma gelme",
-   "mevcutBeispiel": "Gegen Berufsunfähigkeit sollte man sich möglichst früh versichern lassen.",
-   "mevcutBeispielTr": "İş göremezliğe karşı olabildiğince erken sigorta yaptırmak gerekir."
+   "currentTr": "iş göremezlik, mesleğini yapamaz duruma gelme",
+   "currentBeispiel": "Gegen Berufsunfähigkeit sollte man sich möglichst früh versichern lassen.",
+   "currentBeispielTr": "İş göremezliğe karşı olabildiğince erken sigorta yaptırmak gerekir."
   },
   {
    "id": 4469,
@@ -271,9 +271,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "emeklilik dönemi",
-   "mevcutBeispiel": "Nach vierzig Berufsjahren geht sie im Herbst in den Ruhestand.",
-   "mevcutBeispielTr": "Kırk yıllık çalışma hayatının ardından sonbaharda emekliye ayrılıyor."
+   "currentTr": "emeklilik dönemi",
+   "currentBeispiel": "Nach vierzig Berufsjahren geht sie im Herbst in den Ruhestand.",
+   "currentBeispielTr": "Kırk yıllık çalışma hayatının ardından sonbaharda emekliye ayrılıyor."
   },
   {
    "id": 4470,
@@ -281,9 +281,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Zuschüsse",
-   "mevcutTr": "destek ödemesi, hibe",
-   "mevcutBeispiel": "Für die neue Heizung gibt es einen staatlichen Zuschuss.",
-   "mevcutBeispielTr": "Yeni kalorifer sistemi için devlet desteği veriliyor."
+   "currentTr": "destek ödemesi, hibe",
+   "currentBeispiel": "Für die neue Heizung gibt es einen staatlichen Zuschuss.",
+   "currentBeispielTr": "Yeni kalorifer sistemi için devlet desteği veriliyor."
   },
   {
    "id": 4471,
@@ -291,10 +291,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "tazminat",
-   "mevcutBeispiel": "Der Mieter fordert Schadenersatz für die beschädigten Möbel.",
-   "mevcutBeispielTr": "Kiracı zarar gören mobilyalar için tazminat talep ediyor.",
-   "cakisan": [
+   "currentTr": "tazminat",
+   "currentBeispiel": "Der Mieter fordert Schadenersatz für die beschädigten Möbel.",
+   "currentBeispielTr": "Kiracı zarar gören mobilyalar için tazminat talep ediyor.",
+   "overlapping": [
     "die Abfindung (B2)",
     "die Entschädigung (B2)"
    ]
@@ -305,9 +305,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Antragsteller",
-   "mevcutTr": "başvuru sahibi",
-   "mevcutBeispiel": "Der Antragsteller muss seine Einkünfte der letzten drei Monate nachweisen.",
-   "mevcutBeispielTr": "Başvuru sahibi son üç aylık gelirini belgelemek zorunda."
+   "currentTr": "başvuru sahibi",
+   "currentBeispiel": "Der Antragsteller muss seine Einkünfte der letzten drei Monate nachweisen.",
+   "currentBeispielTr": "Başvuru sahibi son üç aylık gelirini belgelemek zorunda."
   },
   {
    "id": 4473,
@@ -315,10 +315,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Provisionen",
-   "mevcutTr": "komisyon (ücret), aracılık ücreti",
-   "mevcutBeispiel": "Der Makler erhält eine Provision von drei Prozent des Kaufpreises.",
-   "mevcutBeispielTr": "Emlakçı satış bedelinin yüzde üçü oranında komisyon alıyor.",
-   "cakisan": [
+   "currentTr": "komisyon (ücret), aracılık ücreti",
+   "currentBeispiel": "Der Makler erhält eine Provision von drei Prozent des Kaufpreises.",
+   "currentBeispielTr": "Emlakçı satış bedelinin yüzde üçü oranında komisyon alıyor.",
+   "overlapping": [
     "der Ausschuss (C1)",
     "die Kommission (C1)"
    ]
@@ -329,9 +329,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "sermaye, anapara",
-   "mevcutBeispiel": "Für die Gründung fehlt ihm schlicht das nötige Kapital.",
-   "mevcutBeispielTr": "Şirket kurmak için ona basitçe gerekli sermaye eksik."
+   "currentTr": "sermaye, anapara",
+   "currentBeispiel": "Für die Gründung fehlt ihm schlicht das nötige Kapital.",
+   "currentBeispielTr": "Şirket kurmak için ona basitçe gerekli sermaye eksik."
   },
   {
    "id": 4475,
@@ -339,9 +339,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Vermögen",
-   "mevcutTr": "servet, varlık, mal varlığı",
-   "mevcutBeispiel": "Sein Vermögen ist breit über mehrere Anlageformen verteilt.",
-   "mevcutBeispielTr": "Serveti birden fazla yatırım aracına geniş biçimde dağıtılmış."
+   "currentTr": "servet, varlık, mal varlığı",
+   "currentBeispiel": "Sein Vermögen ist breit über mehrere Anlageformen verteilt.",
+   "currentBeispielTr": "Serveti birden fazla yatırım aracına geniş biçimde dağıtılmış."
   },
   {
    "id": 4476,
@@ -349,9 +349,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "likidite, nakit gücü",
-   "mevcutBeispiel": "Der Betrieb geriet trotz voller Auftragsbücher in Schwierigkeiten mit der Liquidität.",
-   "mevcutBeispielTr": "İşletme sipariş defteri dolu olmasına rağmen likidite sıkıntısına düştü."
+   "currentTr": "likidite, nakit gücü",
+   "currentBeispiel": "Der Betrieb geriet trotz voller Auftragsbücher in Schwierigkeiten mit der Liquidität.",
+   "currentBeispielTr": "İşletme sipariş defteri dolu olmasına rağmen likidite sıkıntısına düştü."
   },
   {
    "id": 4477,
@@ -359,9 +359,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Kostenvoranschläge",
-   "mevcutTr": "maliyet tahmini, fiyat teklifi",
-   "mevcutBeispiel": "Vor der Reparatur bat sie um einen schriftlichen Kostenvoranschlag.",
-   "mevcutBeispielTr": "Tamirden önce yazılı bir fiyat teklifi istedi."
+   "currentTr": "maliyet tahmini, fiyat teklifi",
+   "currentBeispiel": "Vor der Reparatur bat sie um einen schriftlichen Kostenvoranschlag.",
+   "currentBeispielTr": "Tamirden önce yazılı bir fiyat teklifi istedi."
   },
   {
    "id": 4478,
@@ -369,9 +369,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Währungen",
-   "mevcutTr": "para birimi",
-   "mevcutBeispiel": "Die Währung des Landes hat innerhalb weniger Wochen stark verloren.",
-   "mevcutBeispielTr": "Ülkenin para birimi birkaç hafta içinde ciddi biçimde değer kaybetti."
+   "currentTr": "para birimi",
+   "currentBeispiel": "Die Währung des Landes hat innerhalb weniger Wochen stark verloren.",
+   "currentBeispielTr": "Ülkenin para birimi birkaç hafta içinde ciddi biçimde değer kaybetti."
   },
   {
    "id": 4479,
@@ -379,9 +379,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Etats",
-   "mevcutTr": "bütçe, ödenek",
-   "mevcutBeispiel": "Der Etat für Kultur wurde in diesem Jahr erneut gekürzt.",
-   "mevcutBeispielTr": "Kültür bütçesi bu yıl yeniden kısıldı."
+   "currentTr": "bütçe, ödenek",
+   "currentBeispiel": "Der Etat für Kultur wurde in diesem Jahr erneut gekürzt.",
+   "currentBeispielTr": "Kültür bütçesi bu yıl yeniden kısıldı."
   },
   {
    "id": 4480,
@@ -389,9 +389,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "muhasebe, defter tutma",
-   "mevcutBeispiel": "Eine ordentliche Buchführung erspart am Jahresende viel Ärger.",
-   "mevcutBeispielTr": "Düzgün bir muhasebe yıl sonunda çok dert azaltır."
+   "currentTr": "muhasebe, defter tutma",
+   "currentBeispiel": "Eine ordentliche Buchführung erspart am Jahresende viel Ärger.",
+   "currentBeispielTr": "Düzgün bir muhasebe yıl sonunda çok dert azaltır."
   },
   {
    "id": 4481,
@@ -399,9 +399,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat getilgt",
-   "mevcutTr": "borç ödemek, itfa etmek",
-   "mevcutBeispiel": "In zwölf Jahren hatte das Paar den gesamten Kredit getilgt.",
-   "mevcutBeispielTr": "Çift on iki yılda kredinin tamamını kapattı."
+   "currentTr": "borç ödemek, itfa etmek",
+   "currentBeispiel": "In zwölf Jahren hatte das Paar den gesamten Kredit getilgt.",
+   "currentBeispielTr": "Çift on iki yılda kredinin tamamını kapattı."
   },
   {
    "id": 4482,
@@ -409,9 +409,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgebucht",
-   "mevcutTr": "hesaptan çekmek, hesaba borç kaydetmek",
-   "mevcutBeispiel": "Der Beitrag wird jeweils zum Ersten des Monats abgebucht.",
-   "mevcutBeispielTr": "Aidat her ayın birinde hesaptan çekiliyor."
+   "currentTr": "hesaptan çekmek, hesaba borç kaydetmek",
+   "currentBeispiel": "Der Beitrag wird jeweils zum Ersten des Monats abgebucht.",
+   "currentBeispielTr": "Aidat her ayın birinde hesaptan çekiliyor."
   },
   {
    "id": 4483,
@@ -419,9 +419,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat aufgestockt",
-   "mevcutTr": "artırmak (bütçe, sayı, kadro), takviye etmek",
-   "mevcutBeispiel": "Die Regierung will die Zuschüsse für Familien deutlich aufstocken.",
-   "mevcutBeispielTr": "Hükümet ailelere verilen destekleri belirgin biçimde artırmak istiyor."
+   "currentTr": "artırmak (bütçe, sayı, kadro), takviye etmek",
+   "currentBeispiel": "Die Regierung will die Zuschüsse für Familien deutlich aufstocken.",
+   "currentBeispielTr": "Hükümet ailelere verilen destekleri belirgin biçimde artırmak istiyor."
   },
   {
    "id": 4484,
@@ -429,9 +429,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat entwertet",
-   "mevcutTr": "değersizleştirmek, değerini düşürmek",
-   "mevcutBeispiel": "Eine hohe Inflation entwertet die Ersparnisse der kleinen Sparer.",
-   "mevcutBeispielTr": "Yüksek enflasyon küçük tasarruf sahiplerinin birikimlerini değersizleştiriyor."
+   "currentTr": "değersizleştirmek, değerini düşürmek",
+   "currentBeispiel": "Eine hohe Inflation entwertet die Ersparnisse der kleinen Sparer.",
+   "currentBeispielTr": "Yüksek enflasyon küçük tasarruf sahiplerinin birikimlerini değersizleştiriyor."
   },
   {
    "id": 4485,
@@ -439,10 +439,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat aufgewendet",
-   "mevcutTr": "harcamak, sarf etmek",
-   "mevcutBeispiel": "Für die Sanierung mussten sie erhebliche Mittel aufwenden.",
-   "mevcutBeispielTr": "Tadilat için hatırı sayılır bir kaynak harcamak zorunda kaldılar.",
-   "cakisan": [
+   "currentTr": "harcamak, sarf etmek",
+   "currentBeispiel": "Für die Sanierung mussten sie erhebliche Mittel aufwenden.",
+   "currentBeispielTr": "Tadilat için hatırı sayılır bir kaynak harcamak zorunda kaldılar.",
+   "overlapping": [
     "ausgeben (A2)"
    ]
   },
@@ -452,9 +452,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat erstattet",
-   "mevcutTr": "geri ödemek, iade etmek",
-   "mevcutBeispiel": "Die Kasse erstattet die Kosten für die Behandlung vollständig.",
-   "mevcutBeispielTr": "Sigorta, tedavi masraflarını eksiksiz olarak geri ödüyor."
+   "currentTr": "geri ödemek, iade etmek",
+   "currentBeispiel": "Die Kasse erstattet die Kosten für die Behandlung vollständig.",
+   "currentBeispielTr": "Sigorta, tedavi masraflarını eksiksiz olarak geri ödüyor."
   },
   {
    "id": 4487,
@@ -462,10 +462,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat beglichen",
-   "mevcutTr": "ödemek, kapatmak",
-   "mevcutBeispiel": "Bitte begleichen Sie die offene Rechnung bis kommenden Freitag.",
-   "mevcutBeispielTr": "Lütfen ödenmemiş faturayı önümüzdeki cumaya kadar kapatın.",
-   "cakisan": [
+   "currentTr": "ödemek, kapatmak",
+   "currentBeispiel": "Bitte begleichen Sie die offene Rechnung bis kommenden Freitag.",
+   "currentBeispielTr": "Lütfen ödenmemiş faturayı önümüzdeki cumaya kadar kapatın.",
+   "overlapping": [
     "bezahlen (A1)",
     "zahlen (A1)",
     "entrichten (B2)"
@@ -477,10 +477,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat entrichtet",
-   "mevcutTr": "ödemek, yatırmak",
-   "mevcutBeispiel": "Für den Grundbucheintrag ist eine Gebühr zu entrichten.",
-   "mevcutBeispielTr": "Tapu kaydı için bir harç ödenmesi gerekiyor.",
-   "cakisan": [
+   "currentTr": "ödemek, yatırmak",
+   "currentBeispiel": "Für den Grundbucheintrag ist eine Gebühr zu entrichten.",
+   "currentBeispielTr": "Tapu kaydı için bir harç ödenmesi gerekiyor.",
+   "overlapping": [
     "bezahlen (A1)",
     "zahlen (A1)",
     "begleichen (B2)"
@@ -492,9 +492,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat abgesetzt",
-   "mevcutTr": "vergiden düşmek, mahsup etmek",
-   "mevcutBeispiel": "Das Arbeitszimmer kann sie teilweise von der Steuer absetzen.",
-   "mevcutBeispielTr": "Çalışma odasını kısmen vergiden düşebiliyor."
+   "currentTr": "vergiden düşmek, mahsup etmek",
+   "currentBeispiel": "Das Arbeitszimmer kann sie teilweise von der Steuer absetzen.",
+   "currentBeispielTr": "Çalışma odasını kısmen vergiden düşebiliyor."
   },
   {
    "id": 4490,
@@ -502,10 +502,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat kalkuliert",
-   "mevcutTr": "hesaplamak, maliyet çıkarmak",
-   "mevcutBeispiel": "Der Betrieb hat die Preise offenbar zu knapp kalkuliert.",
-   "mevcutBeispielTr": "İşletme fiyatları belli ki fazla dar hesaplamış.",
-   "cakisan": [
+   "currentTr": "hesaplamak, maliyet çıkarmak",
+   "currentBeispiel": "Der Betrieb hat die Preise offenbar zu knapp kalkuliert.",
+   "currentBeispielTr": "İşletme fiyatları belli ki fazla dar hesaplamış.",
+   "overlapping": [
     "berechnen (B1)"
    ]
   },
@@ -515,9 +515,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat verrechnet",
-   "mevcutTr": "mahsup etmek, karşılıklı düşmek",
-   "mevcutBeispiel": "Die Anzahlung wird mit der Schlussrechnung verrechnet.",
-   "mevcutBeispielTr": "Peşinat, son faturadan mahsup edilecek."
+   "currentTr": "mahsup etmek, karşılıklı düşmek",
+   "currentBeispiel": "Die Anzahlung wird mit der Schlussrechnung verrechnet.",
+   "currentBeispielTr": "Peşinat, son faturadan mahsup edilecek."
   },
   {
    "id": 4492,
@@ -525,10 +525,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "hat gestreut",
-   "mevcutTr": "dağıtmak, yaymak",
-   "mevcutBeispiel": "Wer sein Risiko streut, verliert bei einem Kurssturz weniger.",
-   "mevcutBeispielTr": "Riskini dağıtan kişi ani düşüşte daha az kaybeder.",
-   "cakisan": [
+   "currentTr": "dağıtmak, yaymak",
+   "currentBeispiel": "Wer sein Risiko streut, verliert bei einem Kurssturz weniger.",
+   "currentBeispielTr": "Riskini dağıtan kişi ani düşüşte daha az kaybeder.",
+   "overlapping": [
     "verteilen (B1)"
    ]
   }

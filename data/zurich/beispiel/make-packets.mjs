@@ -31,51 +31,51 @@ const IN = `${ROOT}data/zurich/beispiel/in`;
 mkdirSync(IN, { recursive: true });
 mkdirSync(`${ROOT}data/zurich/beispiel/out`, { recursive: true });
 
-const hazir = readdirSync(`${ROOT}data/meanings/out`)
+const ready = readdirSync(`${ROOT}data/meanings/out`)
   .filter((f) => f.endsWith(".json"))
   .map((f) => f.replace(/\.json$/, ""))
   .filter((slug) => ARG === "all" || slug === ARG || slug.startsWith(`${ARG}-`))
   .sort();
 
-if (!hazir.length) {
+if (!ready.length) {
   console.log("Almancası yenilenmiş paket yok — önce data/meanings/out doldurulmalı.");
   process.exit(0);
 }
 
-let toplam = 0;
-let eksik = 0;
-for (const slug of hazir) {
+let total = 0;
+let missing = 0;
+for (const slug of ready) {
   const de = JSON.parse(readFileSync(`${ROOT}data/meanings/out/${slug}.json`, "utf8"));
-  const kelimeler = [];
+  const packetWords = [];
   for (const m of de) {
     const src = words.get(m.id);
     const z = gsw.get(m.id);
     // Lehçe karşılığı olmayan madde atlanır: kaynağı olmayan bir kayıt
     // üretmek, seed-zurich'in yüklemeyi durdurması demek.
     if (!src || !z) {
-      eksik++;
+      missing++;
       continue;
     }
-    kelimeler.push({
+    packetWords.push({
       id: m.id,
       gsw: z.gsw,
       artikel: z.artikel ?? null,
       hd: `${src.artikel ? src.artikel + " " : ""}${src.de}`,
       niveau: src.niveau,
       beispielDe: m.beispiel,
-      mevcutGsw: z.beispiel || "",
+      currentGsw: z.beispiel || "",
     });
   }
-  if (!kelimeler.length) continue;
+  if (!packetWords.length) continue;
   writeFileSync(
     `${IN}/${slug}.json`,
-    JSON.stringify({ paket: slug, kelimeler }, null, 1) + "\n",
+    JSON.stringify({ packet: slug, words: packetWords }, null, 1) + "\n",
   );
-  toplam += kelimeler.length;
+  total += packetWords.length;
 }
 
-const bitmis = hazir.filter((s) =>
+const finished = ready.filter((s) =>
   existsSync(`${ROOT}data/zurich/beispiel/out/${s}.json`),
 ).length;
-console.log(`${hazir.length} paket, ${toplam} madde${eksik ? ` (${eksik} maddenin lehçe karşılığı yok)` : ""}`);
-console.log(`çıktısı hazır olan: ${bitmis}/${hazir.length}`);
+console.log(`${ready.length} paket, ${total} madde${missing ? ` (${missing} maddenin lehçe karşılığı yok)` : ""}`);
+console.log(`çıktısı hazır olan: ${finished}/${ready.length}`);

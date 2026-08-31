@@ -27,7 +27,7 @@ yazım tercihini hata sanıyorsun.
    demez; `Grüezi` der, `Grüessech` demez.
 
 3. **Anlam kayması.** Lehçe karşılık Almanca maddenin anlamını vermiyorsa.
-   `ayniLehce` alanı varsa başka bir Almanca kelime aynı lehçe karşılığını
+   `sameDialect` alanı varsa başka bir Almanca kelime aynı lehçe karşılığını
    taşıyor demektir — gerçekten aynı kelimeyse sorun yok, değilse biri yanlış.
 
 4. **Örnek cümle lehçede değil.** `gswBeispiel` Hochdeutsch kalmışsa ya da
@@ -57,15 +57,15 @@ Sana söylenen dosyaya, yalnızca geçerli bir JSON dizisi. Değişmeyecek madde
 ```json
 [
   { "id": 717, "gsw": "letscht",
-    "neden": "başlıkta sondaki tire artığı var; Almanca tarafı 'letzte' olarak düzeltildi" },
+    "reason": "başlıkta sondaki tire artığı var; Almanca tarafı 'letzte' olarak düzeltildi" },
   { "id": 1042, "gswBeispiel": "Vill Jugendlichi ghööred de ganz Tag Musig.",
-    "neden": "örnek cümle Hochdeutsch kalmış" },
+    "reason": "örnek cümle Hochdeutsch kalmış" },
   { "id": 254, "gswArtikel": "d",
-    "neden": "die Karte dişil, Züritüütsch artikeli 'd' olmalı" }
+    "reason": "die Karte dişil, Züritüütsch artikeli 'd' olmalı" }
 ]
 ```
 
 Alanlar: `id` (zorunlu), `gsw` / `gswArtikel` / `gswBeispiel` (en az biri),
-`neden` (zorunlu, tek cümle).
+`reason` (zorunlu, tek cümle).
 
 Bitince yalnızca şu satırı döndür: `<dosya>: <öneri sayısı>/<incelenen>`

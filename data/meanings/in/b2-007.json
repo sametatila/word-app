@@ -1,17 +1,17 @@
 {
- "paket": "b2-007",
+ "packet": "b2-007",
  "niveau": "B2",
- "kelimeler": [
+ "words": [
   {
    "id": 3366,
    "de": "die Selbstsicherheit",
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "özgüven",
-   "mevcutBeispiel": "Mit wachsender Selbstsicherheit trat sie vor das Publikum.",
-   "mevcutBeispielTr": "Artan özgüveniyle seyircinin karşısına çıktı.",
-   "cakisan": [
+   "currentTr": "özgüven",
+   "currentBeispiel": "Mit wachsender Selbstsicherheit trat sie vor das Publikum.",
+   "currentBeispielTr": "Artan özgüveniyle seyircinin karşısına çıktı.",
+   "overlapping": [
     "das Selbstbewusstsein (B2)",
     "das Selbstvertrauen (B2)"
    ]
@@ -22,9 +22,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Empfindlichkeiten",
-   "mevcutTr": "hassasiyet, alınganlık",
-   "mevcutBeispiel": "Seine Empfindlichkeit gegenüber Kritik überraschte mich.",
-   "mevcutBeispielTr": "Eleştiriye karşı alınganlığı beni şaşırttı."
+   "currentTr": "hassasiyet, alınganlık",
+   "currentBeispiel": "Seine Empfindlichkeit gegenüber Kritik überraschte mich.",
+   "currentBeispielTr": "Eleştiriye karşı alınganlığı beni şaşırttı."
   },
   {
    "id": 3368,
@@ -32,10 +32,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Charakterzüge",
-   "mevcutTr": "karakter özelliği",
-   "mevcutBeispiel": "Neugier ist ein typischer Charakterzug von ihm.",
-   "mevcutBeispielTr": "Merak onun tipik bir karakter özelliğidir.",
-   "cakisan": [
+   "currentTr": "karakter özelliği",
+   "currentBeispiel": "Neugier ist ein typischer Charakterzug von ihm.",
+   "currentBeispielTr": "Merak onun tipik bir karakter özelliğidir.",
+   "overlapping": [
     "der Wesenszug (C1)"
    ]
   },
@@ -45,9 +45,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "uzaklaşma, yabancılaşma",
-   "mevcutBeispiel": "Die Entfremdung zwischen den Eltern und dem Sohn wuchs.",
-   "mevcutBeispielTr": "Anne babayla oğul arasındaki uzaklaşma giderek büyüdü."
+   "currentTr": "uzaklaşma, yabancılaşma",
+   "currentBeispiel": "Die Entfremdung zwischen den Eltern und dem Sohn wuchs.",
+   "currentBeispielTr": "Anne babayla oğul arasındaki uzaklaşma giderek büyüdü."
   },
   {
    "id": 3382,
@@ -55,9 +55,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "versöhnt sich, hat sich versöhnt",
-   "mevcutTr": "barışmak",
-   "mevcutBeispiel": "Die Geschwister haben sich nach dem Streit versöhnt.",
-   "mevcutBeispielTr": "Kardeşler kavgadan sonra barıştı."
+   "currentTr": "barışmak",
+   "currentBeispiel": "Die Geschwister haben sich nach dem Streit versöhnt.",
+   "currentBeispielTr": "Kardeşler kavgadan sonra barıştı."
   },
   {
    "id": 3383,
@@ -65,9 +65,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "entfremdet sich, hat sich entfremdet",
-   "mevcutTr": "yabancılaşmak, uzaklaşmak",
-   "mevcutBeispiel": "Die Freunde haben sich im Laufe der Jahre entfremdet.",
-   "mevcutBeispielTr": "Arkadaşlar yıllar içinde birbirinden uzaklaştı."
+   "currentTr": "yabancılaşmak, uzaklaşmak",
+   "currentBeispiel": "Die Freunde haben sich im Laufe der Jahre entfremdet.",
+   "currentBeispielTr": "Arkadaşlar yıllar içinde birbirinden uzaklaştı."
   },
   {
    "id": 3384,
@@ -75,10 +75,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "setzt sich auseinander, hat sich auseinandergesetzt",
-   "mevcutTr": "ele almak, kafa yormak",
-   "mevcutBeispiel": "Er musste sich intensiv mit dem Konflikt auseinandersetzen.",
-   "mevcutBeispielTr": "Bu çatışmayla enine boyuna yüzleşmek zorunda kaldı.",
-   "cakisan": [
+   "currentTr": "ele almak, kafa yormak",
+   "currentBeispiel": "Er musste sich intensiv mit dem Konflikt auseinandersetzen.",
+   "currentBeispielTr": "Bu çatışmayla enine boyuna yüzleşmek zorunda kaldı.",
+   "overlapping": [
     "aufgreifen (B2)"
    ]
   },
@@ -88,9 +88,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "Prägungen",
-   "mevcutTr": "biçimlenme, şekillenme (erken etkilerle)",
-   "mevcutBeispiel": "Die frühkindliche Prägung beeinflusst das spätere Verhalten.",
-   "mevcutBeispielTr": "Erken çocukluktaki biçimlenme, sonraki davranışları etkiler."
+   "currentTr": "biçimlenme, şekillenme (erken etkilerle)",
+   "currentBeispiel": "Die frühkindliche Prägung beeinflusst das spätere Verhalten.",
+   "currentBeispielTr": "Erken çocukluktaki biçimlenme, sonraki davranışları etkiler."
   },
   {
    "id": 3390,
@@ -98,9 +98,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "başa çıkma, üstesinden gelme",
-   "mevcutBeispiel": "Die Bewältigung von Stress erfordert bestimmte Strategien.",
-   "mevcutBeispielTr": "Stresle başa çıkmak belirli stratejiler gerektirir."
+   "currentTr": "başa çıkma, üstesinden gelme",
+   "currentBeispiel": "Die Bewältigung von Stress erfordert bestimmte Strategien.",
+   "currentBeispielTr": "Stresle başa çıkmak belirli stratejiler gerektirir."
   },
   {
    "id": 3398,
@@ -108,10 +108,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "wirkt sich aus, hat sich ausgewirkt",
-   "mevcutTr": "etkilemek, yansımak",
-   "mevcutBeispiel": "Stress kann sich negativ auf die Gesundheit auswirken.",
-   "mevcutBeispielTr": "Stres sağlığa olumsuz yansıyabilir.",
-   "cakisan": [
+   "currentTr": "etkilemek, yansımak",
+   "currentBeispiel": "Stress kann sich negativ auf die Gesundheit auswirken.",
+   "currentBeispielTr": "Stres sağlığa olumsuz yansıyabilir.",
+   "overlapping": [
     "beeinflussen (B1)",
     "beeindrucken (B2)"
    ]
@@ -122,9 +122,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "veri koruma, gizlilik",
-   "mevcutBeispiel": "Der Datenschutz spielt bei neuen Apps eine wichtige Rolle.",
-   "mevcutBeispielTr": "Yeni uygulamalarda veri koruması önemli bir rol oynuyor."
+   "currentTr": "veri koruma, gizlilik",
+   "currentBeispiel": "Der Datenschutz spielt bei neuen Apps eine wichtige Rolle.",
+   "currentBeispielTr": "Yeni uygulamalarda veri koruması önemli bir rol oynuyor."
   },
   {
    "id": 3405,
@@ -132,9 +132,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Halbleiter",
-   "mevcutTr": "yarı iletken",
-   "mevcutBeispiel": "Ohne Halbleiter könnten moderne Computer nicht funktionieren.",
-   "mevcutBeispielTr": "Yarı iletkenler olmadan modern bilgisayarlar çalışamazdı."
+   "currentTr": "yarı iletken",
+   "currentBeispiel": "Ohne Halbleiter könnten moderne Computer nicht funktionieren.",
+   "currentBeispielTr": "Yarı iletkenler olmadan modern bilgisayarlar çalışamazdı."
   },
   {
    "id": 3406,
@@ -142,9 +142,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "automatisiert, hat automatisiert",
-   "mevcutTr": "otomatikleştirmek",
-   "mevcutBeispiel": "Die Fabrik will ihre Produktion vollständig automatisieren.",
-   "mevcutBeispielTr": "Fabrika, üretimini tamamen otomatikleştirmek istiyor."
+   "currentTr": "otomatikleştirmek",
+   "currentBeispiel": "Die Fabrik will ihre Produktion vollständig automatisieren.",
+   "currentBeispielTr": "Fabrika, üretimini tamamen otomatikleştirmek istiyor."
   },
   {
    "id": 3407,
@@ -152,9 +152,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "vernetzt, hat vernetzt",
-   "mevcutTr": "ağa bağlamak, bağlantılandırmak",
-   "mevcutBeispiel": "Smarte Geräte lassen sich heutzutage einfach vernetzen.",
-   "mevcutBeispielTr": "Akıllı cihazlar günümüzde kolayca birbirine bağlanabiliyor."
+   "currentTr": "ağa bağlamak, bağlantılandırmak",
+   "currentBeispiel": "Smarte Geräte lassen sich heutzutage einfach vernetzen.",
+   "currentBeispielTr": "Akıllı cihazlar günümüzde kolayca birbirine bağlanabiliyor."
   },
   {
    "id": 3408,
@@ -162,10 +162,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "kablosuz",
-   "mevcutBeispiel": "Die Kopfhörer übertragen den Ton völlig drahtlos.",
-   "mevcutBeispielTr": "Kulaklıklar sesi tamamen kablosuz aktarıyor.",
-   "cakisan": [
+   "currentTr": "kablosuz",
+   "currentBeispiel": "Die Kopfhörer übertragen den Ton völlig drahtlos.",
+   "currentBeispielTr": "Kulaklıklar sesi tamamen kablosuz aktarıyor.",
+   "overlapping": [
     "kabellos (B2)"
    ]
   },
@@ -175,9 +175,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "sürdürülebilirlik",
-   "mevcutBeispiel": "Nachhaltigkeit wird für viele Unternehmen immer wichtiger.",
-   "mevcutBeispielTr": "Sürdürülebilirlik birçok şirket için giderek önem kazanıyor."
+   "currentTr": "sürdürülebilirlik",
+   "currentBeispiel": "Nachhaltigkeit wird für viele Unternehmen immer wichtiger.",
+   "currentBeispielTr": "Sürdürülebilirlik birçok şirket için giderek önem kazanıyor."
   },
   {
    "id": 3411,
@@ -185,9 +185,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "sera etkisi",
-   "mevcutBeispiel": "Der Treibhauseffekt verstärkt die globale Erwärmung.",
-   "mevcutBeispielTr": "Sera etkisi küresel ısınmayı şiddetlendiriyor."
+   "currentTr": "sera etkisi",
+   "currentBeispiel": "Der Treibhauseffekt verstärkt die globale Erwärmung.",
+   "currentBeispielTr": "Sera etkisi küresel ısınmayı şiddetlendiriyor."
   },
   {
    "id": 3412,
@@ -195,9 +195,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Emissionen",
-   "mevcutTr": "emisyon, salım",
-   "mevcutBeispiel": "Die Stadt will die Emissionen des Verkehrs deutlich senken.",
-   "mevcutBeispielTr": "Şehir, trafik kaynaklı emisyonları ciddi ölçüde azaltmak istiyor."
+   "currentTr": "emisyon, salım",
+   "currentBeispiel": "Die Stadt will die Emissionen des Verkehrs deutlich senken.",
+   "currentBeispielTr": "Şehir, trafik kaynaklı emisyonları ciddi ölçüde azaltmak istiyor."
   },
   {
    "id": 3416,
@@ -205,10 +205,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "yenilenebilir",
-   "mevcutBeispiel": "Immer mehr Strom stammt aus erneuerbaren Energien.",
-   "mevcutBeispielTr": "Elektriğin giderek daha büyük bölümü yenilenebilir enerjiden geliyor.",
-   "cakisan": [
+   "currentTr": "yenilenebilir",
+   "currentBeispiel": "Immer mehr Strom stammt aus erneuerbaren Energien.",
+   "currentBeispielTr": "Elektriğin giderek daha büyük bölümü yenilenebilir enerjiden geliyor.",
+   "overlapping": [
     "regenerativ (C1)"
    ]
   },
@@ -218,9 +218,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "çevre dostu",
-   "mevcutBeispiel": "Viele Kunden bevorzugen mittlerweile umweltfreundliche Produkte.",
-   "mevcutBeispielTr": "Artık birçok müşteri çevre dostu ürünleri tercih ediyor."
+   "currentTr": "çevre dostu",
+   "currentBeispiel": "Viele Kunden bevorzugen mittlerweile umweltfreundliche Produkte.",
+   "currentBeispielTr": "Artık birçok müşteri çevre dostu ürünleri tercih ediyor."
   },
   {
    "id": 3418,
@@ -228,9 +228,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "karbondioksit salımı",
-   "mevcutBeispiel": "Der CO2-Ausstoß der Industrie sinkt nur langsam.",
-   "mevcutBeispielTr": "Sanayinin karbondioksit salımı ancak yavaş yavaş düşüyor."
+   "currentTr": "karbondioksit salımı",
+   "currentBeispiel": "Der CO2-Ausstoß der Industrie sinkt nur langsam.",
+   "currentBeispielTr": "Sanayinin karbondioksit salımı ancak yavaş yavaş düşüyor."
   },
   {
    "id": 3419,
@@ -238,9 +238,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "güneş enerjisi",
-   "mevcutBeispiel": "Solarenergie deckt inzwischen einen großen Teil des Bedarfs.",
-   "mevcutBeispielTr": "Güneş enerjisi artık ihtiyacın büyük bölümünü karşılıyor."
+   "currentTr": "güneş enerjisi",
+   "currentBeispiel": "Solarenergie deckt inzwischen einen großen Teil des Bedarfs.",
+   "currentBeispielTr": "Güneş enerjisi artık ihtiyacın büyük bölümünü karşılıyor."
   },
   {
    "id": 3420,
@@ -248,9 +248,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "rüzgar enerjisi",
-   "mevcutBeispiel": "Die Region setzt stark auf Windkraft und Solaranlagen.",
-   "mevcutBeispielTr": "Bölge büyük ölçüde rüzgar ve güneş enerjisine yöneliyor."
+   "currentTr": "rüzgar enerjisi",
+   "currentBeispiel": "Die Region setzt stark auf Windkraft und Solaranlagen.",
+   "currentBeispielTr": "Bölge büyük ölçüde rüzgar ve güneş enerjisine yöneliyor."
   },
   {
    "id": 3421,
@@ -258,9 +258,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "tür çeşitliliği, biyoçeşitlilik",
-   "mevcutBeispiel": "Der Regenwald bietet eine enorme Artenvielfalt.",
-   "mevcutBeispielTr": "Yağmur ormanı muazzam bir tür çeşitliliği barındırır."
+   "currentTr": "tür çeşitliliği, biyoçeşitlilik",
+   "currentBeispiel": "Der Regenwald bietet eine enorme Artenvielfalt.",
+   "currentBeispielTr": "Yağmur ormanı muazzam bir tür çeşitliliği barındırır."
   },
   {
    "id": 3426,
@@ -268,9 +268,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "permafrost, sürekli donmuş toprak",
-   "mevcutBeispiel": "Der auftauende Permafrost setzt gefährliches Methan frei.",
-   "mevcutBeispielTr": "Çözülen permafrost, tehlikeli metan gazı açığa çıkarıyor."
+   "currentTr": "permafrost, sürekli donmuş toprak",
+   "currentBeispiel": "Der auftauende Permafrost setzt gefährliches Methan frei.",
+   "currentBeispielTr": "Çözülen permafrost, tehlikeli metan gazı açığa çıkarıyor."
   },
   {
    "id": 3429,
@@ -278,9 +278,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "bewässert, hat bewässert",
-   "mevcutTr": "sulamak",
-   "mevcutBeispiel": "Die Bauern bewässern die Felder mit modernen Anlagen.",
-   "mevcutBeispielTr": "Çiftçiler tarlaları modern sistemlerle suluyor."
+   "currentTr": "sulamak",
+   "currentBeispiel": "Die Bauern bewässern die Felder mit modernen Anlagen.",
+   "currentBeispielTr": "Çiftçiler tarlaları modern sistemlerle suluyor."
   },
   {
    "id": 3438,
@@ -288,9 +288,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "toplu taşıma, şehir içi ulaşım",
-   "mevcutBeispiel": "Der öffentliche Nahverkehr wird in der Stadt ausgebaut.",
-   "mevcutBeispielTr": "Şehirde toplu taşıma ağı genişletiliyor."
+   "currentTr": "toplu taşıma, şehir içi ulaşım",
+   "currentBeispiel": "Der öffentliche Nahverkehr wird in der Stadt ausgebaut.",
+   "currentBeispielTr": "Şehirde toplu taşıma ağı genişletiliyor."
   },
   {
    "id": 3439,
@@ -298,9 +298,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "trafik çöküşü, trafik kilitlenmesi",
-   "mevcutBeispiel": "Der Unfall führte zu einem totalen Verkehrskollaps.",
-   "mevcutBeispielTr": "Kaza, trafiğin tamamen kilitlenmesine yol açtı."
+   "currentTr": "trafik çöküşü, trafik kilitlenmesi",
+   "currentBeispiel": "Der Unfall führte zu einem totalen Verkehrskollaps.",
+   "currentBeispielTr": "Kaza, trafiğin tamamen kilitlenmesine yol açtı."
   },
   {
    "id": 3441,
@@ -308,9 +308,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "elektrikli ulaşım",
-   "mevcutBeispiel": "Die Elektromobilität wächst in den Städten rasant.",
-   "mevcutBeispielTr": "Elektrikli ulaşım şehirlerde hızla yaygınlaşıyor."
+   "currentTr": "elektrikli ulaşım",
+   "currentBeispiel": "Die Elektromobilität wächst in den Städten rasant.",
+   "currentBeispielTr": "Elektrikli ulaşım şehirlerde hızla yaygınlaşıyor."
   },
   {
    "id": 3442,
@@ -318,10 +318,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Ladestationen",
-   "mevcutTr": "şarj istasyonu",
-   "mevcutBeispiel": "An dieser Ladestation kann man E-Autos aufladen.",
-   "mevcutBeispielTr": "Bu istasyonda elektrikli arabalar şarj edilebiliyor.",
-   "cakisan": [
+   "currentTr": "şarj istasyonu",
+   "currentBeispiel": "An dieser Ladestation kann man E-Autos aufladen.",
+   "currentBeispielTr": "Bu istasyonda elektrikli arabalar şarj edilebiliyor.",
+   "overlapping": [
     "die Ladesäule (B2)"
    ]
   },
@@ -331,10 +331,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "trafik yoğunluğu",
-   "mevcutBeispiel": "Die Verkehrsdichte nimmt zur Rushhour deutlich zu.",
-   "mevcutBeispielTr": "Trafik yoğunluğu zirve saatlerde belirgin biçimde artıyor.",
-   "cakisan": [
+   "currentTr": "trafik yoğunluğu",
+   "currentBeispiel": "Die Verkehrsdichte nimmt zur Rushhour deutlich zu.",
+   "currentBeispielTr": "Trafik yoğunluğu zirve saatlerde belirgin biçimde artıyor.",
+   "overlapping": [
     "das Verkehrsaufkommen (B2)"
    ]
   },
@@ -344,9 +344,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "şehir planlaması",
-   "mevcutBeispiel": "Die moderne Stadtplanung berücksichtigt den Klimaschutz.",
-   "mevcutBeispielTr": "Modern şehir planlaması iklim korumasını da gözetiyor."
+   "currentTr": "şehir planlaması",
+   "currentBeispiel": "Die moderne Stadtplanung berücksichtigt den Klimaschutz.",
+   "currentBeispielTr": "Modern şehir planlaması iklim korumasını da gözetiyor."
   },
   {
    "id": 3449,
@@ -354,10 +354,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Mietanstiege",
-   "mevcutTr": "kira artışı",
-   "mevcutBeispiel": "Der starke Mietanstieg trifft vor allem junge Familien.",
-   "mevcutBeispielTr": "Sert kira artışı en çok genç aileleri vuruyor.",
-   "cakisan": [
+   "currentTr": "kira artışı",
+   "currentBeispiel": "Der starke Mietanstieg trifft vor allem junge Familien.",
+   "currentBeispielTr": "Sert kira artışı en çok genç aileleri vuruyor.",
+   "overlapping": [
     "die Mieterhöhung (B2)"
    ]
   },
@@ -367,9 +367,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "soylulaştırma",
-   "mevcutBeispiel": "Die Gentrifizierung verändert das Viertel spürbar.",
-   "mevcutBeispielTr": "Soylulaştırma semti gözle görülür biçimde değiştiriyor."
+   "currentTr": "soylulaştırma",
+   "currentBeispiel": "Die Gentrifizierung verändert das Viertel spürbar.",
+   "currentBeispielTr": "Soylulaştırma semti gözle görülür biçimde değiştiriyor."
   },
   {
    "id": 3451,
@@ -377,9 +377,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Wohnviertel",
-   "mevcutTr": "yerleşim bölgesi, mahalle",
-   "mevcutBeispiel": "Das Wohnviertel wurde in den letzten Jahren saniert.",
-   "mevcutBeispielTr": "Mahalle son yıllarda baştan sona yenilendi."
+   "currentTr": "yerleşim bölgesi, mahalle",
+   "currentBeispiel": "Das Wohnviertel wurde in den letzten Jahren saniert.",
+   "currentBeispielTr": "Mahalle son yıllarda baştan sona yenilendi."
   },
   {
    "id": 3454,
@@ -387,9 +387,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Ballungsräume",
-   "mevcutTr": "yoğun nüfuslu bölge, metropol alanı",
-   "mevcutBeispiel": "Im Ballungsraum leben Millionen Menschen auf engem Raum.",
-   "mevcutBeispielTr": "Metropol alanında milyonlarca insan dar bir alanda yaşıyor."
+   "currentTr": "yoğun nüfuslu bölge, metropol alanı",
+   "currentBeispiel": "Im Ballungsraum leben Millionen Menschen auf engem Raum.",
+   "currentBeispielTr": "Metropol alanında milyonlarca insan dar bir alanda yaşıyor."
   },
   {
    "id": 3455,
@@ -397,9 +397,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "nüfus yoğunluğu",
-   "mevcutBeispiel": "Die Bevölkerungsdichte ist im Zentrum besonders hoch.",
-   "mevcutBeispielTr": "Nüfus yoğunluğu merkezde özellikle yüksek."
+   "currentTr": "nüfus yoğunluğu",
+   "currentBeispiel": "Die Bevölkerungsdichte ist im Zentrum besonders hoch.",
+   "currentBeispielTr": "Nüfus yoğunluğu merkezde özellikle yüksek."
   },
   {
    "id": 3456,
@@ -407,9 +407,9 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "verdichtet, hat verdichtet",
-   "mevcutTr": "yoğunlaştırmak",
-   "mevcutBeispiel": "Die Stadt will die Bebauung im Zentrum verdichten.",
-   "mevcutBeispielTr": "Şehir, merkezdeki yapılaşmayı yoğunlaştırmak istiyor."
+   "currentTr": "yoğunlaştırmak",
+   "currentBeispiel": "Die Stadt will die Bebauung im Zentrum verdichten.",
+   "currentBeispielTr": "Şehir, merkezdeki yapılaşmayı yoğunlaştırmak istiyor."
   },
   {
    "id": 3457,
@@ -417,9 +417,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "nur Singular",
-   "mevcutTr": "konut sıkıntısı",
-   "mevcutBeispiel": "Die Wohnungsnot verschärft sich in vielen Metropolen.",
-   "mevcutBeispielTr": "Konut sıkıntısı birçok metropolde derinleşiyor."
+   "currentTr": "konut sıkıntısı",
+   "currentBeispiel": "Die Wohnungsnot verschärft sich in vielen Metropolen.",
+   "currentBeispielTr": "Konut sıkıntısı birçok metropolde derinleşiyor."
   },
   {
    "id": 3458,
@@ -427,10 +427,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "saniert, hat saniert",
-   "mevcutTr": "yenilemek, restore etmek",
-   "mevcutBeispiel": "Die Stadt lässt die alten Gebäude energetisch sanieren.",
-   "mevcutBeispielTr": "Şehir, eski binaları enerji verimliliği açısından yeniletiyor.",
-   "cakisan": [
+   "currentTr": "yenilemek, restore etmek",
+   "currentBeispiel": "Die Stadt lässt die alten Gebäude energetisch sanieren.",
+   "currentBeispielTr": "Şehir, eski binaları enerji verimliliği açısından yeniletiyor.",
+   "overlapping": [
     "renovieren (A2)"
    ]
   },
@@ -440,9 +440,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Grünflächen",
-   "mevcutTr": "yeşil alan",
-   "mevcutBeispiel": "Neue Grünflächen sollen das Stadtklima verbessern.",
-   "mevcutBeispielTr": "Yeni yeşil alanların şehir iklimini iyileştirmesi hedefleniyor."
+   "currentTr": "yeşil alan",
+   "currentBeispiel": "Neue Grünflächen sollen das Stadtklima verbessern.",
+   "currentBeispielTr": "Yeni yeşil alanların şehir iklimini iyileştirmesi hedefleniyor."
   },
   {
    "id": 3733,
@@ -450,9 +450,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Erledigungen",
-   "mevcutTr": "yapılacak iş, halledilecek iş",
-   "mevcutBeispiel": "Ich muss heute noch ein paar Erledigungen machen.",
-   "mevcutBeispielTr": "Bugün halletmem gereken birkaç iş daha var."
+   "currentTr": "yapılacak iş, halledilecek iş",
+   "currentBeispiel": "Ich muss heute noch ein paar Erledigungen machen.",
+   "currentBeispielTr": "Bugün halletmem gereken birkaç iş daha var."
   },
   {
    "id": 3734,
@@ -460,10 +460,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "gewöhnt sich, hat sich gewöhnt",
-   "mevcutTr": "alışmak",
-   "mevcutBeispiel": "Ich habe mich schnell an den neuen Alltag gewöhnt.",
-   "mevcutBeispielTr": "Yeni günlük düzene çabuk alıştım.",
-   "cakisan": [
+   "currentTr": "alışmak",
+   "currentBeispiel": "Ich habe mich schnell an den neuen Alltag gewöhnt.",
+   "currentBeispielTr": "Yeni günlük düzene çabuk alıştım.",
+   "overlapping": [
     "gewöhnen (B1)",
     "sich einleben (C1)"
    ]
@@ -474,9 +474,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "zaman darlığı",
-   "mevcutBeispiel": "Wegen Zeitmangel schaffe ich das heute nicht.",
-   "mevcutBeispielTr": "Zaman darlığından bunu bugün yetiştiremem."
+   "currentTr": "zaman darlığı",
+   "currentBeispiel": "Wegen Zeitmangel schaffe ich das heute nicht.",
+   "currentBeispielTr": "Zaman darlığından bunu bugün yetiştiremem."
   },
   {
    "id": 3738,
@@ -484,10 +484,10 @@
    "typ": "Verb",
    "niveau": "B2",
    "formen": "beschäftigt sich, hat sich beschäftigt",
-   "mevcutTr": "ilgilenmek, uğraşmak",
-   "mevcutBeispiel": "Sie beschäftigt sich in ihrer Freizeit mit Fotografie.",
-   "mevcutBeispielTr": "Boş zamanlarında fotoğrafçılıkla uğraşıyor.",
-   "cakisan": [
+   "currentTr": "ilgilenmek, uğraşmak",
+   "currentBeispiel": "Sie beschäftigt sich in ihrer Freizeit mit Fotografie.",
+   "currentBeispielTr": "Boş zamanlarında fotoğrafçılıkla uğraşıyor.",
+   "overlapping": [
     "sich kümmern (A1)",
     "sich interessieren (A2)"
    ]
@@ -498,9 +498,9 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Wohngemeinschaften",
-   "mevcutTr": "paylaşımlı ev, öğrenci evi",
-   "mevcutBeispiel": "Sie lebt seit zwei Jahren in einer Wohngemeinschaft.",
-   "mevcutBeispielTr": "İki yıldır paylaşımlı bir evde oturuyor."
+   "currentTr": "paylaşımlı ev, öğrenci evi",
+   "currentBeispiel": "Sie lebt seit zwei Jahren in einer Wohngemeinschaft.",
+   "currentBeispielTr": "İki yıldır paylaşımlı bir evde oturuyor."
   },
   {
    "id": 3747,
@@ -508,10 +508,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Kassenbons",
-   "mevcutTr": "kasa fişi",
-   "mevcutBeispiel": "Bewahren Sie den Kassenbon für einen Umtausch auf.",
-   "mevcutBeispielTr": "Değişim için kasa fişini saklayın.",
-   "cakisan": [
+   "currentTr": "kasa fişi",
+   "currentBeispiel": "Bewahren Sie den Kassenbon für einen Umtausch auf.",
+   "currentBeispielTr": "Değişim için kasa fişini saklayın.",
+   "overlapping": [
     "der Kassenzettel (A2)"
    ]
   },
@@ -521,9 +521,9 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "doyurucu, ağır (yemek)",
-   "mevcutBeispiel": "Nach der Wanderung wollten wir etwas Deftiges essen.",
-   "mevcutBeispielTr": "Yürüyüşten sonra doyurucu bir şeyler yemek istedik."
+   "currentTr": "doyurucu, ağır (yemek)",
+   "currentBeispiel": "Nach der Wanderung wollten wir etwas Deftiges essen.",
+   "currentBeispielTr": "Yürüyüşten sonra doyurucu bir şeyler yemek istedik."
   },
   {
    "id": 3754,
@@ -531,10 +531,10 @@
    "typ": "Sonstiges",
    "niveau": "B2",
    "formen": "",
-   "mevcutTr": "tuzlu, baharatlı (tatlının zıddı)",
-   "mevcutBeispiel": "Ich esse lieber herzhafte als süße Speisen.",
-   "mevcutBeispielTr": "Tatlıdan çok tuzlu yiyecekleri tercih ederim.",
-   "cakisan": [
+   "currentTr": "tuzlu, baharatlı (tatlının zıddı)",
+   "currentBeispiel": "Ich esse lieber herzhafte als süße Speisen.",
+   "currentBeispielTr": "Tatlıdan çok tuzlu yiyecekleri tercih ederim.",
+   "overlapping": [
     "salzig (B1)"
    ]
   },
@@ -544,10 +544,10 @@
    "typ": "Nomen",
    "niveau": "B2",
    "formen": "die Buchungen",
-   "mevcutTr": "rezervasyon (işlemi)",
-   "mevcutBeispiel": "Die Buchung des Hotels war ganz unkompliziert.",
-   "mevcutBeispielTr": "Otel rezervasyonu hiç zahmetsizdi.",
-   "cakisan": [
+   "currentTr": "rezervasyon (işlemi)",
+   "currentBeispiel": "Die Buchung des Hotels war ganz unkompliziert.",
+   "currentBeispielTr": "Otel rezervasyonu hiç zahmetsizdi.",
+   "overlapping": [
     "die Reservierung (B1)"
    ]
   }

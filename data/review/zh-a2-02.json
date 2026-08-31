@@ -106,7 +106,7 @@
   "gsw": "Loon",
   "gswArtikel": "de",
   "gswBeispiel": "Si isch mit irem Loon zfride.",
-  "ayniLehce": [
+  "sameDialect": [
    "Lohn (B1)"
   ]
  },
@@ -118,7 +118,7 @@
   "gsw": "Portmonee",
   "gswArtikel": "s",
   "gswBeispiel": "Si hät ires Portmonee verlore.",
-  "ayniLehce": [
+  "sameDialect": [
    "Brieftasche (B1)",
    "Portemonnaie/Portmonee (B1)"
   ]
@@ -329,7 +329,7 @@
   "gsw": "use",
   "gswArtikel": null,
   "gswBeispiel": "Wänd er nöd usechoo? S Wätter isch so schöön. Chasch bitte de Güsel usebringe?",
-  "ayniLehce": [
+  "sameDialect": [
    "raus (B1)"
   ]
  },
@@ -413,7 +413,7 @@
   "gsw": "hueschte",
   "gswArtikel": null,
   "gswBeispiel": "Si hueschtet sit zwee Täg. Si isch chrank.",
-  "ayniLehce": [
+  "sameDialect": [
    "Husten (B1)"
   ]
  },
@@ -515,7 +515,7 @@
   "gsw": "Warehuus",
   "gswArtikel": "s",
   "gswBeispiel": "Mini Pullover chauf ich immer im Warehuus.",
-  "ayniLehce": [
+  "sameDialect": [
    "Warenhaus (A2)"
   ]
  },
@@ -581,7 +581,7 @@
   "gsw": "komisch",
   "gswArtikel": null,
   "gswBeispiel": "De Film isch sehr komisch gsii. Mir händ vil glachet. E grüeni Hose und gälbi Schue? Das gseet komisch us.",
-  "ayniLehce": [
+  "sameDialect": [
    "seltsam (B1)"
   ]
  },
@@ -638,7 +638,7 @@
   "gsw": "gratis",
   "gswArtikel": null,
   "gswBeispiel": "Die Ziitschrift choschtet nüüt. Si isch gratis.",
-  "ayniLehce": [
+  "sameDialect": [
    "gratis (B1)"
   ]
  },
@@ -758,7 +758,7 @@
   "gsw": "läid tue",
   "gswArtikel": null,
   "gswBeispiel": "Es tuet mer läid, dass ich nöd cha choo.",
-  "ayniLehce": [
+  "sameDialect": [
    "leid tun (B1)"
   ]
  },
@@ -788,7 +788,7 @@
   "gsw": "Link",
   "gswArtikel": "de",
   "gswBeispiel": "Ich schicke der en Link zu Tüütschüebige.",
-  "ayniLehce": [
+  "sameDialect": [
    "linke (B1)"
   ]
  },
@@ -836,7 +836,7 @@
   "gsw": "Combox",
   "gswArtikel": "d",
   "gswBeispiel": "Da isch d Combox vo de Susanne König. Ich ha der uf d Combox gredt.",
-  "ayniLehce": [
+  "sameDialect": [
    "Mobilbox (B1)"
   ]
  },
@@ -920,7 +920,7 @@
   "gsw": "merke",
   "gswArtikel": null,
   "gswBeispiel": "Ich cha mer käi Zale merke. Ich vergisse si sofort. Merksch, dass es wermer wird?",
-  "ayniLehce": [
+  "sameDialect": [
    "bemerken (B1)"
   ]
  },
