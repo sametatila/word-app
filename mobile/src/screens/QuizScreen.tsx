@@ -66,7 +66,7 @@ export function QuizScreen() {
         </View>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+      <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>
           {isCheckpoint ? "Üniteyi bitir: bu ünitenin kelime ve kalıplarını karışık hatırla." : "Bu ünitenin kelime ve kalıplarından karışık hatırlama."}
         </Text>

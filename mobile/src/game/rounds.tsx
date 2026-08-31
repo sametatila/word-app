@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, TextInput } from "react-native";
+import { View, TextInput, KeyboardAvoidingView, Platform } from "react-native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
@@ -195,6 +195,8 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
           placeholder="Yaz..."
           placeholderTextColor={colors.textFaint}
           onSubmitEditing={check}
+          returnKeyType="done"
+          blurOnSubmit={false}
           style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: checked === null ? colors.border : checked ? colors.success : colors.danger, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
         />
         {checked !== null && (
@@ -562,9 +564,9 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
 
 const INTERACTIVE = new Set(["choice", "artikel", "truefalse", "typing", "cloze", "plural", "listen", "scramble", "order", "translate", "match"]);
 
-/** Tur türüne göre doğru oynatıcıyı seçer. */
-export function RoundView({ round, onDone }: { round: Round; onDone: Done }) {
-  const { colors } = useTheme();
+/** Tur türüne göre doğru oynatıcıyı seçer. Yazma turlarında kutunun klavye
+    üstüne çıkması için KeyboardAvoidingView (Android adjustResize, iOS padding). */
+function pickRound(round: Round, onDone: Done, colors: Palette) {
   if (round.game === "choice" && round.options?.length) return <ChoiceRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "artikel" && round.word?.artikel) return <ArtikelRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "truefalse") return <TrueFalseRound round={round} onDone={onDone} colors={colors} />;
@@ -577,6 +579,15 @@ export function RoundView({ round, onDone }: { round: Round; onDone: Done }) {
   if (round.game === "translate" && round.sentence) return <TranslateRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "match" && (round.words?.length ?? 0) >= 2) return <MatchRound round={round} onDone={onDone} colors={colors} />;
   return <SelfAssess round={round} onDone={onDone} colors={colors} />;
+}
+
+export function RoundView({ round, onDone }: { round: Round; onDone: Done }) {
+  const { colors } = useTheme();
+  return (
+    <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "ios" ? "padding" : undefined} keyboardVerticalOffset={0}>
+      {pickRound(round, onDone, colors)}
+    </KeyboardAvoidingView>
+  );
 }
 
 export { INTERACTIVE };
