@@ -14,15 +14,15 @@
  */
 
 export type Group =
-  | "seri"
-  | "kelime"
-  | "oyun"
-  | "dilbilgisi"
-  | "ders"
-  | "sınav"
-  | "beceri"
-  | "tur"
-  | "keşif";
+  | "streak"
+  | "vocab"
+  | "games"
+  | "grammar"
+  | "lessons"
+  | "exams"
+  | "skills"
+  | "rounds"
+  | "discovery";
 
 /**
  * Sekme sırası.
@@ -32,25 +32,25 @@ export type Group =
  * beceriler), seyrek olanlar sonda (turlar, keşif).
  */
 export const GROUP_ORDER: Group[] = [
-  "seri",
-  "kelime",
-  "oyun",
-  "dilbilgisi",
-  "ders",
-  "sınav",
-  "beceri",
-  "tur",
-  "keşif",
+  "streak",
+  "vocab",
+  "games",
+  "grammar",
+  "lessons",
+  "exams",
+  "skills",
+  "rounds",
+  "discovery",
 ];
 
 export const GROUP_LABELS: Record<Group, string> = {
-  seri: "Seri",
-  kelime: "Kelime",
-  oyun: "Oyunlar",
-  dilbilgisi: "Dilbilgisi",
-  ders: "Dersler",
-  "sınav": "Sınavlar",
-  beceri: "Beceriler",
-  tur: "Turlar",
-  "keşif": "Keşif",
+  streak: "Seri",
+  vocab: "Kelime",
+  games: "Oyunlar",
+  grammar: "Dilbilgisi",
+  lessons: "Dersler",
+  exams: "Sınavlar",
+  skills: "Beceriler",
+  rounds: "Turlar",
+  discovery: "Keşif",
 };

@@ -59,7 +59,7 @@ export function AchievementsScreen() {
   const list = remote ?? DEMO_ACHIEVEMENTS;
   const earned = list.filter((a) => a.unlocked).length;
   const groups = useMemo(() => {
-    const g: Record<AchGroup, Achievement[]> = { seri: [], kelime: [], oyun: [] };
+    const g: Record<AchGroup, Achievement[]> = { streak: [], vocab: [], games: [] };
     for (const a of list) (g[a.group] ??= []).push(a);
     return g;
   }, [list]);
