@@ -124,6 +124,7 @@ export function WalkModeScreen() {
       let result: "correct" | "wrong" | "skip" | "unheard";
       let said = "";
       if (mic) {
+        sfx("tap"); // mikrofon açıldı ipucu (web onOpen cue)
         const res = await Promise.race([
           listenOnce("de-DE", 8000).then((h) => ({ k: "v" as const, said: (h ?? "").trim() })),
           waitManual().then((m) => ({ k: "m" as const, m })),
