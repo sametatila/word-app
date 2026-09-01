@@ -27,9 +27,14 @@ export async function sttAvailable(): Promise<boolean> {
   try { return !!(await Voice.isAvailable()); } catch { return false; }
 }
 
+// TANI: son STT sonucunun neden boş döndüğü (timeout / hata kodu / start hatası).
+let lastSttError = "";
+export function getLastSttError(): string { return lastSttError; }
+
 /** Tek atışlık dinleme: ilk sonucu (ya da zaman aşımı/hata) döndürür. */
 export function listenOnce(locale = "de-DE", timeoutMs = 6000): Promise<string | null> {
   return new Promise((resolve) => {
+    lastSttError = "";
     let done = false;
     const finish = (t: string | null) => {
       if (done) return;
@@ -40,11 +45,14 @@ export function listenOnce(locale = "de-DE", timeoutMs = 6000): Promise<string |
       Voice.onSpeechError = () => {};
       resolve(t);
     };
-    const timer = setTimeout(() => finish(null), timeoutMs);
+    const timer = setTimeout(() => { lastSttError = "timeout(8s)"; finish(null); }, timeoutMs);
     Voice.onSpeechResults = (e: { value?: string[] }) => finish(e?.value?.[0] ?? null);
-    Voice.onSpeechError = () => finish(null);
+    Voice.onSpeechError = (e: unknown) => {
+      try { lastSttError = "err:" + JSON.stringify((e as { error?: unknown })?.error ?? e); } catch { lastSttError = "err"; }
+      finish(null);
+    };
     (async () => {
-      try { await Voice.start(locale); } catch { finish(null); }
+      try { await Voice.start(locale); } catch (err) { lastSttError = "start:" + String((err as Error)?.message ?? err); finish(null); }
     })();
   });
 }
