@@ -83,9 +83,11 @@ export function todayStr(): string {
 /** Günün turu (gerçek). Oturum yoksa ApiError(401) fırlar — çağıran girişe yönlendirir.
     `game`: tek-oyun pratiği (web'deki oyun seçici — ör. yalnız "artikel").
     `fresh`: "yeni tura başla" — önce kayıtlı turu atar, sonra yenisini kurar. */
-export async function fetchSession(day = todayStr(), opts?: { extra?: boolean; walk?: boolean; game?: string; fresh?: boolean }): Promise<SessionPayload> {
+export async function fetchSession(day = todayStr(), opts?: { extra?: boolean; walk?: boolean; game?: string; fresh?: boolean; skip?: number[] }): Promise<SessionPayload> {
   if (opts?.fresh) { try { await api("/api/session", { method: "DELETE" }); } catch { /* yut */ } }
-  const q = `${opts?.extra ? "&extra=1" : ""}${opts?.walk ? "&walk=1" : ""}${opts?.game ? `&game=${opts.game}` : ""}`;
+  // walk devam turları: sorulan kelimeleri hariç tut (sunucu en fazla 200 alır).
+  const skip = opts?.skip && opts.skip.length ? `&skip=${opts.skip.slice(-200).join(",")}` : "";
+  const q = `${opts?.extra ? "&extra=1" : ""}${opts?.walk ? "&walk=1" : ""}${opts?.game ? `&game=${opts.game}` : ""}${skip}`;
   return api<SessionPayload>(`/api/session?day=${day}${q}`);
 }
 
