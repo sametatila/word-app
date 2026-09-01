@@ -410,7 +410,7 @@
 {"id":413,"de":"sein","artikel":"","tr":"olmak","formen":"","typ":"Sonstiges","niveau":"A1","beispiel":"Ich bin 13 Jahre alt./Das ist mein Bruder./ Er ist Student./ Die Kinder sind im Garten.","rank":56},
 {"id":414,"de":"Seite","artikel":"die","tr":"sayfa","formen":"-n","typ":"Nomen","niveau":"A1","beispiel":"Das steht auf Seite 3.","rank":533},
 {"id":415,"de":"sicher","artikel":"","tr":"emin, kesin, güvenli","formen":"","typ":"Sonstiges","niveau":"A1","beispiel":"Du bist sicher gut in der Schule.","rank":151},
-{"id":416,"de":"sie","artikel":"","tr":"o, onlar","formen":"","typ":"Sonstiges","niveau":"A1","beispiel":"Das ist Frau Meyer, sie wohnt hier.","rank":2},
+{"id":416,"de":"sie","artikel":"","tr":"o (kadın), onlar","formen":"","typ":"Sonstiges","niveau":"A1","beispiel":"Das ist Frau Meyer, sie wohnt hier.","rank":2},
 {"id":417,"de":"Sie","artikel":"","tr":"siz","formen":"","typ":"Sonstiges","niveau":"A1","beispiel":"Sind Sie der neue Lehrer?/Wie geht es Ihnen? (vergl. Grammatik)","rank":2},
 {"id":418,"de":"so","artikel":"","tr":"böyle, bu kadar, o kadar","formen":"","typ":"Sonstiges","niveau":"A1","beispiel":"Ich mache das nicht so./Das schmeckt so gut./ Sie ist so alt wie ich.","rank":27},
 {"id":419,"de":"sofort","artikel":"","tr":"hemen, derhal","formen":"","typ":"Sonstiges","niveau":"A1","beispiel":"Warte, ich komme sofort!","rank":306},
