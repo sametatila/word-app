@@ -1,6 +1,13 @@
 package com.nomi.speech
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
+import android.media.AudioFormat
+import android.media.AudioRecord
+import android.media.MediaRecorder
+import android.os.Build
 import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
@@ -72,6 +79,109 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
         else activity.window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
       } catch (_: Exception) { /* yut */ }
     }
+  }
+
+  // --- Ham ses kaydı (Azure/sunucu STT için): 16 kHz mono PCM → WAV. Ekran-kapalı/cepte yolu. ---
+  private var recorder: AudioRecord? = null
+  @Volatile private var recording = false
+  private var recordThread: Thread? = null
+  private var pcm: java.io.ByteArrayOutputStream? = null
+  private val sampleRate = 16000
+
+  @ReactMethod
+  fun startRecording(promise: Promise) {
+    try {
+      if (recording) { promise.resolve(false); return }
+      val minBuf = AudioRecord.getMinBufferSize(sampleRate, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT)
+      @Suppress("MissingPermission")
+      val ar = AudioRecord(MediaRecorder.AudioSource.VOICE_RECOGNITION, sampleRate, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT, Math.max(minBuf, 8192))
+      if (ar.state != AudioRecord.STATE_INITIALIZED) { ar.release(); promise.reject("init", "AudioRecord başlatılamadı"); return }
+      val out = java.io.ByteArrayOutputStream()
+      pcm = out; recorder = ar; recording = true
+      ar.startRecording()
+      recordThread = Thread {
+        val buf = ByteArray(8192)
+        while (recording) {
+          val n = ar.read(buf, 0, buf.size)
+          if (n > 0) synchronized(out) { out.write(buf, 0, n) }
+        }
+      }.also { it.start() }
+      promise.resolve(true)
+    } catch (e: Exception) { recording = false; promise.reject("record", e.message, e) }
+  }
+
+  /** Kaydı durdur, WAV'ı cache'e yaz, dosya yolunu döndür (JS FormData ile /api/stt'e gönderir). */
+  @ReactMethod
+  fun stopRecording(promise: Promise) {
+    try {
+      recording = false
+      try { recordThread?.join(600) } catch (_: Exception) {}
+      recordThread = null
+      val ar = recorder; recorder = null
+      try { ar?.stop() } catch (_: Exception) {}
+      try { ar?.release() } catch (_: Exception) {}
+      val out = pcm; pcm = null
+      if (out == null) { promise.resolve(null); return }
+      val data = synchronized(out) { out.toByteArray() }
+      if (data.isEmpty()) { promise.resolve(null); return }
+      val file = java.io.File(reactCtx.cacheDir, "walk_clip.wav")
+      file.writeBytes(wavFromPcm(data, sampleRate))
+      promise.resolve(file.absolutePath)
+    } catch (e: Exception) { promise.reject("stop", e.message, e) }
+  }
+
+  private fun wavFromPcm(pcmData: ByteArray, rate: Int): ByteArray {
+    val ch = 1; val bits = 16
+    val byteRate = rate * ch * bits / 8
+    val out = java.io.ByteArrayOutputStream()
+    val dataLen = pcmData.size
+    fun ascii(s: String) = out.write(s.toByteArray(Charsets.US_ASCII))
+    fun i32(v: Int) { out.write(v and 0xff); out.write((v shr 8) and 0xff); out.write((v shr 16) and 0xff); out.write((v shr 24) and 0xff) }
+    fun i16(v: Int) { out.write(v and 0xff); out.write((v shr 8) and 0xff) }
+    ascii("RIFF"); i32(36 + dataLen); ascii("WAVE"); ascii("fmt "); i32(16); i16(1); i16(ch); i32(rate); i32(byteRate); i16(ch * bits / 8); i16(bits); ascii("data"); i32(dataLen); out.write(pcmData)
+    return out.toByteArray()
+  }
+
+  // --- Ekran-kapalı yürüyüş: foreground service (arka planda mic açık) + ekran on/off algılama ---
+  private var screenReceiver: BroadcastReceiver? = null
+
+  /** Mikrofonlu foreground service'i başlat — güç tuşuyla ekran kapansa da mic açık kalsın. */
+  @ReactMethod
+  fun startWalkService() {
+    try {
+      val i = Intent(reactCtx, NomiWalkService::class.java)
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) reactCtx.startForegroundService(i) else reactCtx.startService(i)
+    } catch (_: Exception) { /* yut */ }
+  }
+
+  @ReactMethod
+  fun stopWalkService() {
+    try { reactCtx.stopService(Intent(reactCtx, NomiWalkService::class.java)) } catch (_: Exception) { /* yut */ }
+  }
+
+  /** Ekran güç tuşuyla kapandı/açıldı olaylarını JS'e yay (NomiScreenOff / NomiScreenOn). */
+  @ReactMethod
+  fun startScreenWatch() {
+    if (screenReceiver != null) return
+    val r = object : BroadcastReceiver() {
+      override fun onReceive(context: Context?, intent: Intent?) {
+        when (intent?.action) {
+          Intent.ACTION_SCREEN_OFF -> emit("NomiScreenOff", null)
+          Intent.ACTION_SCREEN_ON -> emit("NomiScreenOn", null)
+        }
+      }
+    }
+    val filter = IntentFilter().apply {
+      addAction(Intent.ACTION_SCREEN_OFF)
+      addAction(Intent.ACTION_SCREEN_ON)
+    }
+    try { reactCtx.registerReceiver(r, filter); screenReceiver = r } catch (_: Exception) { /* yut */ }
+  }
+
+  @ReactMethod
+  fun stopScreenWatch() {
+    screenReceiver?.let { try { reactCtx.unregisterReceiver(it) } catch (_: Exception) { /* yut */ } }
+    screenReceiver = null
   }
 
   @ReactMethod

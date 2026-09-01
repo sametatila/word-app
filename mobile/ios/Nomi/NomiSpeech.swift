@@ -46,6 +46,50 @@ class NomiSpeech: RCTEventEmitter {
     DispatchQueue.main.async { UIApplication.shared.isIdleTimerDisabled = on }
   }
 
+  // --- Ham ses kaydı (Azure/sunucu STT için): 16 kHz mono WAV. Ekran-kapalı/cepte yolu. ---
+  private var audioRecorder: AVAudioRecorder?
+  private var recordURL: URL?
+
+  @objc(startRecording:rejecter:)
+  func startRecording(_ resolve: @escaping RCTPromiseResolveBlock,
+                      rejecter reject: @escaping RCTPromiseRejectBlock) {
+    DispatchQueue.main.async {
+      do {
+        let session = AVAudioSession.sharedInstance()
+        try session.setCategory(.playAndRecord, mode: .measurement, options: [.duckOthers, .defaultToSpeaker])
+        try session.setActive(true)
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("walk_clip.wav")
+        let settings: [String: Any] = [
+          AVFormatIDKey: Int(kAudioFormatLinearPCM),
+          AVSampleRateKey: 16000,
+          AVNumberOfChannelsKey: 1,
+          AVLinearPCMBitDepthKey: 16,
+          AVLinearPCMIsFloatKey: false,
+          AVLinearPCMIsBigEndianKey: false,
+        ]
+        let rec = try AVAudioRecorder(url: url, settings: settings)
+        rec.record()
+        self.audioRecorder = rec
+        self.recordURL = url
+        resolve(true)
+      } catch {
+        reject("record", error.localizedDescription, error)
+      }
+    }
+  }
+
+  @objc(stopRecording:rejecter:)
+  func stopRecording(_ resolve: @escaping RCTPromiseResolveBlock,
+                     rejecter reject: @escaping RCTPromiseRejectBlock) {
+    DispatchQueue.main.async {
+      self.audioRecorder?.stop()
+      self.audioRecorder = nil
+      let path = self.recordURL?.path
+      self.recordURL = nil
+      resolve(path)
+    }
+  }
+
   @objc(start:resolver:rejecter:)
   func start(_ locale: String,
              resolver resolve: @escaping RCTPromiseResolveBlock,

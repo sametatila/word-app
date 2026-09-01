@@ -15,7 +15,7 @@ import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } fro
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { TURKISH_VOICE } from "../lib/voices";
-import { ensureMicPermission, listenOnce, stopListening, setKeepAwake } from "../lib/stt";
+import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState } from "../lib/stt";
 import { spokenMatches, parseSkipDe, encourage, parseConfirm } from "../lib/voiceMatch";
 import { sfx } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
@@ -77,6 +77,8 @@ export function WalkModeScreen() {
   const [greeting, setGreeting] = useState(false); // Başla sonrası kısa TTS karşılama
   const pocketRef = useRef(false);
   const setPocketMode = (on: boolean) => { pocketRef.current = on; setPocket(on); };
+  const screenOffRef = useRef(false); // güç tuşuyla ekran kapalı → Azure kaynağı
+  const nativeListeningRef = useRef(false); // şu an native dinliyor mu (ekran kapanınca hızlı kesmek için)
 
   const runToken = useRef(0);
   const mounted = useRef(true);
@@ -121,7 +123,18 @@ export function WalkModeScreen() {
   useEffect(() => {
     track("walk_start", 0);
     mounted.current = true;
-    return () => { mounted.current = false; runToken.current++; stopListening(); setKeepAwake(false); flush(true); };
+    return () => { mounted.current = false; runToken.current++; stopListening(); setKeepAwake(false); stopWalkService(); flush(true); };
+  }, []);
+
+  // Güç-tuşu ekran on/off izle: kapalı→Azure, açık→native (kelime sınırında geçer, kesmez).
+  // Ekran native dinleme SIRASINDA kapanırsa recognizer ölür → dinlemeyi hızlı kes ki
+  // kelime Azure ile tekrar sorulabilsin (bkz. judgeSpeak).
+  useEffect(() => {
+    const unsub = onScreenState((off) => {
+      screenOffRef.current = off;
+      if (off && nativeListeningRef.current) { try { stopListening(); } catch { /* yut */ } }
+    });
+    return () => { unsub(); stopWalkService(); };
   }, []);
 
   // Nabız halkası — YALNIZ dinlerken (mikrofon açıkken); konuşurken sakin.
@@ -169,13 +182,24 @@ export function WalkModeScreen() {
     setPhase("listening");
     // TRICK: önce mic AÇILIR, ~180ms SONRA "şimdi konuş" sesi çalar. Böylece kullanıcı sesi
     // duyar duymaz başlasa bile mic zaten açık → kısa kelimenin ilk hecesi kaçmaz (güvenli).
+    // Kaynak: cebe koy YA DA güç tuşuyla ekran kapalı → sunucu (Azure) STT (paralı). Ekran açık → ücretsiz native.
+    const useAzure = pocketRef.current || screenOffRef.current;
+    nativeListeningRef.current = !useAzure;
     const listenP = Promise.race([
-      listenOnce("de-DE", 8000).then((h) => ({ k: "v" as const, heard: h ?? [] })),
+      (useAzure ? azureListenOnce(withArtikel(w), 3500) : listenOnce("de-DE", 8000)).then((h) => ({ k: "v" as const, heard: h ?? [] })),
       waitManual().then(() => ({ k: "m" as const })),
     ]);
     const miconTimer = setTimeout(() => sfx("micon"), 180);
-    const res = await listenP;
+    let res = await listenP;
     clearTimeout(miconTimer);
+    nativeListeningRef.current = false;
+    // Native dinleme SIRASINDA güç tuşuyla ekran kapandıysa recognizer ölür → kelime kesilmiş
+    // olabilir. Sonuç boşsa kesme yaşatmadan aynı kelimeyi bir kez daha oku, Azure ile sor.
+    if (!useAzure && res.k === "v" && res.heard.length === 0 && screenOffRef.current && alive()) {
+      await sayTR(w.tr);
+      const h2 = await azureListenOnce(withArtikel(w), 3500);
+      res = { k: "v" as const, heard: h2 ?? [] };
+    }
     stopListening();
     sfx("micoff");
     manualResolve.current = null;
@@ -209,7 +233,7 @@ export function WalkModeScreen() {
       if (unheardWin.current.filter(Boolean).length >= UNHEARD_LIMIT) {
         setVerdict("unheard"); setPhase("judging");
         await sayTR("Sesini duyamıyorum. Turu durdurdum; mikrofonu kontrol edip hazır olunca devam et.");
-        setKeepAwake(false); setPocketMode(false);
+        setKeepAwake(false); stopWalkService(); setPocketMode(false);
         if (alive()) setPhase("stopped");
         return "stopped";
       }
@@ -275,7 +299,7 @@ export function WalkModeScreen() {
     sfx("finish"); // tamamlanma sesi
     // Cepte (eller serbest) → sesli "Devam edelim mi?"; ekran açık → görsel özet + butonlar.
     if (pocketRef.current) { await askContinue(alive); return; }
-    setKeepAwake(false);
+    setKeepAwake(false); stopWalkService();
     setPhase("done");
     void sayTR(`Tur bitti. ${tallyRef.current.total} sorudan ${tallyRef.current.correct} doğru.`);
   }
@@ -284,6 +308,7 @@ export function WalkModeScreen() {
     const granted = await ensureMicPermission();
     if (!granted) { setPhase("denied"); return; }
     setKeepAwake(true); // ekran turu boyunca sönmesin
+    startWalkService(); // güç tuşuyla ekran kapansa da arka planda mic açık kalsın (Azure yolu)
     startedAt.current = Date.now();
     tallyRef.current = { correct: 0, total: 0 }; setTally(tallyRef.current);
     unheardWin.current = [];
@@ -309,7 +334,7 @@ export function WalkModeScreen() {
     } catch { setPhase("done"); }
   }
 
-  function finishDone() { setKeepAwake(false); setPocketMode(false); setPhase("done"); }
+  function finishDone() { setKeepAwake(false); stopWalkService(); setPocketMode(false); setPhase("done"); }
 
   /** Cepte tur sonu: mikrofonu bir kez açıp evet/hayır dinle (parseConfirm). */
   async function listenConfirm(alive: () => boolean): Promise<boolean | null> {
@@ -355,7 +380,7 @@ export function WalkModeScreen() {
     else { if (yes === false) await sayTR("Tamam, iyi günler."); finishDone(); }
   }
 
-  function stopAndLeave() { runToken.current++; stopListening(); setKeepAwake(false); nav.goBack(); }
+  function stopAndLeave() { runToken.current++; stopListening(); setKeepAwake(false); stopWalkService(); nav.goBack(); }
   function skipNow() { resolveManual("skip"); }
 
   const scale = pulse.interpolate({ inputRange: [0, 1], outputRange: [1, 1.1] });

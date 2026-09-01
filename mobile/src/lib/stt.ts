@@ -11,6 +11,7 @@
  * ekran açıkken kusursuz.
  */
 import { NativeEventEmitter, NativeModules, PermissionsAndroid, Platform } from "react-native";
+import { API_BASE } from "../api/client";
 
 type SpeechNative = {
   start(locale: string): Promise<boolean>;
@@ -19,6 +20,12 @@ type SpeechNative = {
   destroy(): void;
   isAvailable(): Promise<boolean>;
   setKeepAwake(on: boolean): void;
+  startRecording(): Promise<boolean>;
+  stopRecording(): Promise<string | null>;
+  startWalkService(): void;
+  stopWalkService(): void;
+  startScreenWatch(): void;
+  stopScreenWatch(): void;
 };
 
 const Native = NativeModules.NomiSpeech as SpeechNative | undefined;
@@ -103,4 +110,51 @@ export function stopListening(): void {
 /** Ekran uykusunu engelle/bırak (yürüyüş turu boyunca ekran sönmesin). */
 export function setKeepAwake(on: boolean): void {
   try { Native?.setKeepAwake(on); } catch { /* yut */ }
+}
+
+/** Mikrofonlu foreground service — güç tuşuyla ekran kapansa da arka planda mic açık kalsın. */
+export function startWalkService(): void { try { Native?.startWalkService(); } catch { /* yut */ } }
+export function stopWalkService(): void { try { Native?.stopWalkService(); } catch { /* yut */ } }
+
+/** Ekran güç-tuşu on/off olaylarını dinle. cb(true)=kapandı, cb(false)=açıldı. Aboneliği kapatan fonksiyon döner. */
+export function onScreenState(cb: (off: boolean) => void): () => void {
+  try { Native?.startScreenWatch(); } catch { /* yut */ }
+  if (!emitter) return () => { try { Native?.stopScreenWatch(); } catch { /* yut */ } };
+  const a = emitter.addListener("NomiScreenOff", () => cb(true));
+  const b = emitter.addListener("NomiScreenOn", () => cb(false));
+  return () => { a.remove(); b.remove(); try { Native?.stopScreenWatch(); } catch { /* yut */ } };
+}
+
+/**
+ * Sunucu (Azure) STT — ekran-kapalı/cepte yolu. Ham ses kaydeder (16 kHz mono WAV),
+ * /api/stt'e (mode=walk, Azure önde) gönderir, metni döndürür. Ekran AÇIKken ücretsiz
+ * native kullanılır (bkz. listenOnce); bu YALNIZ cepte/ekran-kapalı için (paralı).
+ * VAD yok — sabit pencere kaydeder; kullanıcı o sürede söyler. Auth çerezle (paylaşımlı jar).
+ */
+export async function azureListenOnce(target: string, windowMs = 3500): Promise<string[] | null> {
+  if (!Native) return null;
+  try {
+    const ok = await Native.startRecording().catch((e) => { console.log("AZURE start fail:", String(e)); return false; });
+    if (!ok) return null;
+    await new Promise<void>((r) => setTimeout(() => r(), windowMs));
+    const path = await Native.stopRecording().catch(() => null);
+    console.log("AZURE clip:", path);
+    if (!path) return null;
+    const form = new FormData();
+    // RN FormData dosya parçası: file:// uri + tip. Sunucu Azure için WAV bekliyor.
+    form.append("audio", { uri: "file://" + path, name: "clip.wav", type: "audio/wav" } as unknown as Blob);
+    form.append("language", "de");
+    form.append("mode", "walk");
+    if (target) form.append("expected", target);
+    const res = await fetch(`${API_BASE}/api/stt`, { method: "POST", body: form });
+    const body = await res.text().catch(() => "");
+    console.log("AZURE resp:", res.status, body.slice(0, 180));
+    if (!res.ok) return null;
+    const j = JSON.parse(body) as { text?: string };
+    const t = (j?.text ?? "").trim();
+    return t ? [t] : null;
+  } catch (e) {
+    console.log("AZURE err:", String(e));
+    return null;
+  }
 }
