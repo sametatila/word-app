@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, ExamIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, WriteIcon } from "../ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, WriteIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatDuration, formatXp } from "../lib/useMe";
@@ -167,7 +167,6 @@ export function ProfileScreen() {
           <Row icon={CheckIcon} label="Neler yapabilirim" tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
           <Row icon={WriteIcon} label="Yazılarım" tint={colors.info} colors={colors} onPress={() => nav.navigate("Writings")} />
           <Row icon={PodiumIcon} label="Haftalık sıralama" tint={colors.info} colors={colors} onPress={() => nav.navigate("Leaderboard")} />
-          <Row icon={ExamIcon} label="Sınav hazırlık" tint={colors.accent} colors={colors} onPress={() => nav.navigate("ExamPrep")} />
           <Row icon={ShareIcon} label="Arkadaşını davet et" tint={colors.success} colors={colors} onPress={() => shareInvite()} />
           <Row icon={BellIcon} label="Bildirimler" tint={colors.info} colors={colors} onPress={() => nav.navigate("Notifications")} last />
         </Card>
