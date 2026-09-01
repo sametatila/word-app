@@ -11,6 +11,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
 import { KIND_LABEL } from "../data/demoUnit";
+import { AppHeader } from "../ui/AppHeader";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
@@ -69,7 +70,7 @@ export function PathScreen() {
     // Düz spinner yerine patika şeklinde iskelet (algılanan hız).
     return (
       <Screen>
-        <Text variant="display" style={{ marginBottom: spacing.lg }}>Patika</Text>
+        <AppHeader title="Patika" />
         <Skeleton height={10} radius={5} style={{ marginBottom: 8 }} />
         <Skeleton height={14} width="55%" radius={7} style={{ marginBottom: spacing.lg }} />
         <Skeleton height={196} radius={radii.xl} style={{ marginBottom: spacing.lg }} />
@@ -90,12 +91,7 @@ export function PathScreen() {
 
   return (
     <Screen>
-      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.md }}>
-        <Text variant="display">Patika</Text>
-        <View style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7 }}>
-          <Text variant="caption" color={colors.textMuted}>{path.level}</Text>
-        </View>
-      </View>
+      <AppHeader title="Patika" />
       <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: 6 }}>
         <View style={{ height: "100%", width: `${Math.max(2, pctAll)}%`, borderRadius: 5, backgroundColor: colors.success }} />
       </View>

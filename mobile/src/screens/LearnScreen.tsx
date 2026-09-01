@@ -7,11 +7,12 @@ import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, CheckIcon, RepeatIcon } from "../ui/icons";
+import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, CheckIcon, RepeatIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
 import { useUpdate } from "../lib/useUpdate";
 import { Mascot } from "../ui/Mascot";
+import { AppHeader } from "../ui/AppHeader";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 /** Alt aksiyon satırı — dil odaklı, sade. */
@@ -57,7 +58,6 @@ export function LearnScreen() {
   const { user } = useAuth();
   const { me } = useMe();
   const update = useUpdate();
-  const initial = ((user?.name ?? "Öğrenci").trim()[0] ?? "Ö").toUpperCase();
   const greeting = user?.name ? `Merhaba ${user.name.split(" ")[0]}` : "Merhaba";
   const level = me?.level ?? "A1";
   const mastered = me?.mastered ?? 0;
@@ -85,23 +85,7 @@ export function LearnScreen() {
           </View>
         </PressableScale>
       )}
-      {/* başlık */}
-      <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.lg }}>
-        <View>
-          <Text variant="caption" color={colors.textMuted}>{greeting}</Text>
-          <Text variant="display">Almanca öğren</Text>
-        </View>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-          {streak > 0 && (
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 8 }}>
-              <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{streak}</Text>
-            </View>
-          )}
-          <PressableScale onPress={() => nav.navigate("Profile")} accessibilityLabel="Profil" style={[{ width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 6)]}>
-            <Text variant="h3" color="#fff">{initial}</Text>
-          </PressableScale>
-        </View>
-      </View>
+      <AppHeader title="Almanca öğren" subtitle={greeting} />
 
       {/* GÜNLÜK TUR — dil-içerik öncelikli kahraman (fitness halkası değil) */}
       <PressableScale onPress={() => nav.navigate("Game")}>
