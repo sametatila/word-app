@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ChevronRightIcon, WalkIcon, MicIcon, SpeakerIcon, CheckIcon, XIcon } from "../ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { DEMO_WORDS, type Word } from "../data/demoWords";
@@ -118,15 +118,19 @@ export function WalkModeScreen() {
       await sayTR(w.tr); // Türkçe ipucu (Emel)
       if (!alive()) return;
 
-      // Cevabı topla: SESLİ (STT). "Atla" ile ses olmadan da geçilebilir.
+      // Cevabı topla: SESLİ (STT). Açılış sesi → kısa bekle (kendi TTS/tık sesimizi
+      // mikrofona kaptırmayalım) → mikrofonu AKTİF et ve dinle → bitince kapanış sesi.
+      // "Atla" ile ses olmadan da geçilebilir.
+      sfx("micon"); // açılış: yükselen ton (pasif→aktif)
+      await gap(400); // TTS kuyruğu + ses otursun ki tanıyıcı kendi sesimizi kapıp erken kapanmasın
+      if (!alive()) return;
       setPhase("listening");
-      sfx("tap"); // mikrofon açıldı ipucu (web onOpen cue)
       const res = await Promise.race([
         listenOnce("de-DE", 8000).then((h) => ({ k: "v" as const, said: (h ?? "").trim() })),
         waitManual().then(() => ({ k: "m" as const })),
       ]);
       stopListening();
-      sfx("tap"); // mikrofon kapandı ipucu (web onClose cue)
+      sfx("micoff"); // kapanış: inen ton (aktif→pasif)
       manualResolve.current = null;
       if (!alive()) return;
       let result: "correct" | "wrong" | "skip" | "unheard";
@@ -202,7 +206,8 @@ export function WalkModeScreen() {
   const ringScale = pulse.interpolate({ inputRange: [0, 1], outputRange: [1, 1.5] });
   const showAnswer = phase === "judging";
   const listening = phase === "listening";
-  const dotColor = verdict === "wrong" ? colors.danger : verdict === "correct" ? colors.success : verdict === "unheard" ? colors.textMuted : listening ? colors.primary : colors.info;
+  // Tek mikrofon: dinlerken AKTİF (turuncu + nabız), diğer her durumda PASİF (koyu).
+  const dotColor = verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primary : colors.surface2;
   const stepLabel = phase === "speaking" ? "İpucu okunuyor…" : phase === "listening" ? "Şimdi Almancasını söyle" : verdict === "unheard" ? "Duyamadım" : verdict === "skip" ? "Atlandı" : verdict === "correct" ? "Doğru!" : verdict === "wrong" ? "Doğrusu" : "";
 
   return (
@@ -284,8 +289,8 @@ export function WalkModeScreen() {
             {/* Nabız halkası YALNIZ dinlerken — mikrofonun gerçekten açık olduğu an. */}
             {listening ? <Animated.View style={{ position: "absolute", width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, opacity: ringOpacity, transform: [{ scale: ringScale }] }} /> : null}
             <Animated.View style={{ transform: [{ scale: listening ? scale : 1 }] }}>
-              <View style={[{ width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, softShadow(dotColor, 14)]}>
-                {verdict === "correct" ? <CheckIcon color="#fff" size={40} /> : verdict === "wrong" ? <XIcon color="#fff" size={40} /> : phase === "speaking" ? <SpeakerIcon color="#fff" size={40} /> : <MicIcon color="#fff" size={40} />}
+              <View style={[{ width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, listening ? softShadow(colors.primary, 14) : {}]}>
+                {verdict === "correct" ? <CheckIcon color="#fff" size={40} /> : verdict === "wrong" ? <XIcon color="#fff" size={40} /> : <MicIcon color={listening ? "#fff" : colors.textFaint} size={40} />}
               </View>
             </Animated.View>
           </View>

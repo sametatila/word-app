@@ -1,5 +1,6 @@
 import Sound from "react-native-sound";
 import { Platform } from "react-native";
+import { bridgeReady, bridgeSfx, type SfxKind } from "./ttsBridge";
 
 /**
  * Kısa ses efektleri (doğru/yanlış/dokunuş) — haptikle birlikte geri bildirim.
@@ -26,11 +27,16 @@ function preload(name: string): void {
 // Modül açılışında önden yükle.
 (["correct", "wrong", "tap"] as const).forEach(preload);
 
-export function sfx(kind: "correct" | "wrong" | "tap"): void {
+export function sfx(kind: SfxKind): void {
   try {
-    const s = cache[kind];
-    if (s === undefined) { preload(kind); return; }
+    // Öncelik: WebAudio köprüsü — web ile birebir sentez, çalıştığı KANITLI çıkış
+    // (TTS de buradan çalıyor), res/raw yok.
+    if (bridgeReady()) { bridgeSfx(kind); return; }
+    // Yedek: cihazda react-native-sound. micon/micoff için dosya yok → tap'e düş.
+    const name = kind === "micon" || kind === "micoff" ? "tap" : kind;
+    const s = cache[name];
+    if (s === undefined) { preload(name); return; }
     if (!s) return;
-    s.stop(() => { s.setVolume(kind === "tap" ? 0.4 : 0.85); s.play(); });
+    s.stop(() => { s.setVolume(name === "tap" ? 0.4 : 0.85); s.play(); });
   } catch { /* yut */ }
 }
