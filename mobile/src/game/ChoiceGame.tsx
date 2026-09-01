@@ -5,6 +5,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon } from "../ui/icons";
 import { SpeakButton } from "../ui/SpeakButton";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { haptic } from "../lib/haptics";
 
 export type ChoiceRound = {
   wordId: number;
@@ -43,6 +44,7 @@ export function ChoiceGame({ round, onDone }: { round: ChoiceRound; onDone: (cor
     if (picked) return;
     setPicked(opt);
     const correct = opt === round.answer;
+    haptic(correct ? "correct" : "wrong"); // haptik + SFX (tüm oyunlarla aynı geri bildirim)
     setTimeout(() => onDone(correct), correct ? 700 : 1150);
   }
 

@@ -15,6 +15,7 @@ import type { Round, AnswerOut } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { sfx } from "../lib/sfx";
 
 type Phase = "loading" | "auth" | "error" | "play" | "submitting" | "done";
 
@@ -79,6 +80,7 @@ export function WeeklyScreen() {
     submitted.current = true;
     setPhase("submitting");
     track("session_done", answers.current.filter((a) => a.correct).length, "weekly");
+    if (answers.current.length > 0) sfx("finish"); // tamamlanma sesi
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
     try {
       const res = await submitWeekly(answers.current, day.current, secs);

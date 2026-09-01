@@ -17,6 +17,7 @@ import { API_BASE } from "../api/client";
 import { todayStr } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { sfx } from "../lib/sfx";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
   read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />, write: (p) => <WriteIcon {...p} />,
@@ -92,6 +93,7 @@ export function ItemScreen() {
   async function recordAndFinish(c: number) {
     setCorrect(c);
     setFinished(true);
+    setTimeout(() => sfx("finish"), 600); // son cevabın sesinden sonra tamamlanma sesi
     if (!exercise || saved.current) return;
     saved.current = true;
     void markItemDone(exercise.id);

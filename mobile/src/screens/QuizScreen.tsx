@@ -13,6 +13,7 @@ import { QuestionList } from "../game/skillQuiz";
 import { markItemDone } from "../game/lessonProgress";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { sfx } from "../lib/sfx";
 
 /**
  * Ünite quiz (Tekrar) / checkpoint (Kontrol Noktası) oynatıcısı — sorular
@@ -39,6 +40,7 @@ export function QuizScreen() {
   function recordAndFinish(c: number) {
     setCorrect(c);
     setFinished(true);
+    setTimeout(() => sfx("finish"), 600); // son cevabın sesinden sonra tamamlanma sesi
     if (saved.current) return;
     saved.current = true;
     void markItemDone(params.itemId);

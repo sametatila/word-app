@@ -21,6 +21,7 @@ import { updateProfile } from "../lib/updateProfile";
 import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { sfx } from "../lib/sfx";
 
 const withArtikel = (a: string | null, de: string) => (a ? `${a} ${de}` : de);
 
@@ -86,6 +87,7 @@ export function PlacementScreen() {
     if (ok) setCorrect((c) => c + 1);
     const next = idx + 1;
     setIdx(next);
+    if (next >= total) sfx("finish"); // tamamlanma sesi (sonuç ekranı)
     // Son soru bittiğinde gerçek modda cevapları sunucuya ver.
     if (next >= total && usingReal && user) {
       setSubmitting(true);

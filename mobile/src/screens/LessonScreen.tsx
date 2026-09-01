@@ -17,6 +17,7 @@ import { haptic } from "../lib/haptics";
 import { api, API_BASE } from "../api/client";
 import { todayStr } from "../game/session";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { sfx } from "../lib/sfx";
 
 /**
  * Ders oynatıcısı — anlatım → konuşma → özet. Web'in lesson-player'ının mobil
@@ -227,6 +228,7 @@ export function LessonScreen() {
     setPhase("summary");
     if (saved) return;
     setSaved(true);
+    sfx("finish"); // tamamlanma sesi (özet; saved koruması sayesinde bir kez)
     void markItemDone(lesson.id);
     void clearLessonResume(lesson.id);
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
