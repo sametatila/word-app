@@ -25,7 +25,9 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
   return (
     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.lg }}>
       <View style={{ flex: 1 }}>
-        {subtitle ? <Text variant="caption" color={colors.textMuted}>{subtitle}</Text> : null}
+        {/* Alt satır her zaman ayrılır (boşsa da) ki başlık yüksekliği ve sağdaki
+            seri/profil konumu Learn, Patika ve Beceriler'de birebir aynı hizada olsun. */}
+        <Text variant="caption" color={colors.textMuted}>{subtitle ?? " "}</Text>
         <Text variant="display">{title}</Text>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
