@@ -11,7 +11,7 @@ import { AnswerPulse } from "@/components/answer-pulse";
 import { AchievementFlash, Confetti, CountUp } from "@/components/celebrate";
 import { vibrate } from "@/lib/fx";
 import { play, resetCombo } from "@/lib/sfx";
-import { AlertIcon, FlameIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 
 /** Başlangıç süresi kısa: süreyi doğru cevaplarla kazanırsın. */
@@ -391,9 +391,9 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
                 className="flex items-center gap-1 text-xs font-black"
-                style={{ color: "var(--color-flame)" }}
+                style={{ color: "var(--color-violet)" }}
               >
-                <FlameIcon size={13} /> {combo} seri · {mult}x
+                <SparkIcon size={13} /> {combo} üst üste · {mult}x
               </motion.span>
             ) : (
               <span className="muted text-xs font-semibold">Seri kur, puanın katlansın</span>

@@ -9,7 +9,7 @@ import { FitBox } from "@/components/fit-box";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { scoreAnswer } from "@/lib/daily-score";
 import { ShareResult } from "@/components/share-result";
-import { AlertIcon, FlameIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 
 /**
@@ -221,11 +221,11 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
                   animate={{ scale: 1 }}
                   className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-black"
                   style={{
-                    background: "color-mix(in srgb, var(--color-flame) 16%, transparent)",
-                    color: "var(--color-flame)",
+                    background: "color-mix(in srgb, var(--color-violet) 16%, transparent)",
+                    color: "var(--color-violet)",
                   }}
                 >
-                  <FlameIcon size={12} /> {combo}
+                  <SparkIcon size={12} /> {combo}
                 </motion.span>
               ) : null}
               <span className="font-black" style={{ color: "var(--color-brand)" }}>

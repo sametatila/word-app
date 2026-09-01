@@ -43,7 +43,7 @@ import { WalkPlayer } from "@/components/walk-player";
 import { QuestCard } from "@/components/quest-card";
 import { PlanCard } from "@/components/plan-card";
 import { CoachBubble } from "@/components/coach-bubble";
-import { AlertIcon, FlameIcon, RefreshIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon } from "@/components/icons";
 import { readCache, writeCache } from "@/lib/use-cached";
 
 type Status =
@@ -812,11 +812,11 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
               transition={{ type: "spring", stiffness: 420, damping: 16 }}
               className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-black"
               style={{
-                background: "color-mix(in srgb, var(--color-flame) 16%, transparent)",
-                color: "var(--color-flame)",
+                background: "color-mix(in srgb, var(--color-violet) 16%, transparent)",
+                color: "var(--color-violet)",
               }}
             >
-              <FlameIcon size={12} /> {combo} üst üste
+              <SparkIcon size={12} /> {combo} üst üste
             </motion.span>
           ) : (
             <span className="muted">
