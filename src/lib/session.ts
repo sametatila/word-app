@@ -185,6 +185,31 @@ async function pickSingleGameFiller(
     picked.push(...more);
   }
 
+  // Son çare: hâlâ eksikse (birkaç kelimelik koleksiyon; hepsi az önce
+  // çalışılmış ya da tekrarı günler sonraya planlı) recency VE "vakti gelmemiş"
+  // kısıtını tümden kaldır — az-aktif, yeni kelime görmeyen kullanıcı için aynı
+  // kelimeleri tekrar sormak, boş turdan ("bugünlük bu kadar 0/0") çok daha
+  // iyidir; tekrar zaten pratik. Yalnız KITLIKTA tetiklenir: bol kelimeli
+  // kullanıcıda önceki bantlar `want`'ı doldurur, buraya hiç gelinmez (SM-2
+  // aralıkları da bozulmaz — bu tur cevapları yine normal yazılır).
+  if (picked.length < want) {
+    const have = [...exclude, ...picked.map((r) => r.w.id)];
+    const more = await db
+      .select({ w: words, uw: userWords })
+      .from(userWords)
+      .innerJoin(words, eq(words.id, userWords.wordId))
+      .where(
+        and(
+          eq(userWords.userId, userId),
+          eq(words.course, course),
+          have.length ? notInArray(userWords.wordId, have) : undefined,
+        ),
+      )
+      .orderBy(sql`random()`)
+      .limit(want - picked.length);
+    picked.push(...more);
+  }
+
   // Bantlar sırayla eklendi; turda yaklaşanlar önde yığılmasın.
   for (let i = picked.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
