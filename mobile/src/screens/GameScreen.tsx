@@ -53,13 +53,18 @@ export function GameScreen() {
   const idxRef = useRef(0);
   // Yarım kalan turdan devam ederken önceki (sunucudaki) sayaç tabanı.
   const resumeBase = useRef({ correct: 0, total: 0, xp: 0 });
+  // Gösterim TUR-bazlı: üstteki sayaç idx/rounds.length (tur) sayıyor; done da tur saysın.
+  // (answers KELİME sayar — match turu 1 tur ama 4 kelime; SRS için doğru, ama done'da 20→24
+  //  gösterirdi. roundsSeen/Right yalnız gösterim için; SRS/XP hâlâ answers'tan.)
+  const roundsSeen = useRef(0);
+  const roundsRight = useRef(0);
 
   /** Şu ana kadarki ilerleme — cevaplarla gidip sunucu index'ini ilerletir. */
   function progressNow(): SessionProgress {
     return {
       index: idxRef.current,
-      correct: resumeBase.current.correct + answers.current.filter((a) => a.correct).length,
-      total: resumeBase.current.total + answers.current.length,
+      correct: resumeBase.current.correct + roundsRight.current,
+      total: resumeBase.current.total + roundsSeen.current,
       xp: resumeBase.current.xp,
     };
   }
@@ -78,6 +83,7 @@ export function GameScreen() {
         list = p.rounds ?? [];
       }
       answers.current = [];
+      roundsSeen.current = 0; roundsRight.current = 0;
       submitted.current = false;
       setCombo(0);
       // Yarım kalan turdan devam yalnız karışık turda (pratik taze başlar).
@@ -124,6 +130,8 @@ export function GameScreen() {
       const wordId = r?.word?.id ?? r?.words?.[0]?.id ?? 0;
       if (wordId && r) answers.current.push({ wordId, game: r.game, correct: ok, latencyMs: lat });
     }
+    roundsSeen.current += 1;
+    if (ok) roundsRight.current += 1;
     if (ok && (combo + 1) % 5 === 0) setPop((x) => x + 1);
     setCombo((c) => (ok ? c + 1 : 0));
     roundStart.current = Date.now();
@@ -134,8 +142,8 @@ export function GameScreen() {
   }
 
   async function finish() {
-    const totalCorrect = resumeBase.current.correct + answers.current.filter((a) => a.correct).length;
-    const total = resumeBase.current.total + answers.current.length;
+    const totalCorrect = resumeBase.current.correct + roundsRight.current;
+    const total = resumeBase.current.total + roundsSeen.current;
     setFinalCorrect(totalCorrect);
     setFinalTotal(total);
     setPhase("done");
