@@ -4,8 +4,8 @@ import { WebView } from "react-native-webview";
 import { API_BASE } from "../api/client";
 import type { VoiceId } from "./voices";
 
-/** Köprüde kullandığımız tek yöntem — WebView tipinin jeneriğine takılmamak için yapısal. */
-type Injectable = { injectJavaScript: (script: string) => void };
+/** Köprüde kullandığımız yöntemler — WebView tipinin jeneriğine takılmamak için yapısal. */
+type Injectable = { injectJavaScript: (script: string) => void; reload?: () => void };
 
 /**
  * TTS köprüsü — gizli bir WebView web'in `/tts-bridge` sayfasını yükler ve
@@ -33,6 +33,26 @@ export function bridgeSpeak(voice: VoiceId, text: string, slow: boolean): void {
 export function bridgeStop(): void {
   if (!bridgeReady()) return;
   try { viewRef!.injectJavaScript("window.ttsStop && window.ttsStop(); true;"); } catch { /* yut */ }
+}
+
+let lastReloadAt = 0;
+/**
+ * Köprüyü tazeler: WebView'i yeniden yükler ve sağlık bayraklarını sıfırlar.
+ *
+ * Girişte çağrılır (force=true): köprü uygulama kökünde girişten ÖNCE yüklenip
+ * oturumsuz kalıyor (taze kurulum/silip-yükle). Giriş sonrası oturum çerezi artık
+ * CookieManager'da (Android'de fetch ile paylaşımlı; iOS'ta sharedCookies) olduğundan
+ * reload köprüyü kimlikli hâle getirir — Katja/Conrad/Emel yeni kurulumda da çalışır.
+ * Hata-zehirlenmesinde de (force=false, 8sn throttle) kendini iyileştirmek için çağrılır,
+ * ki geçici bir 401/ağ o oturumu kalıcı olarak cihaz TTS'ine düşürmesin.
+ */
+export function bridgeRefresh(force = false): void {
+  const now = Date.now();
+  if (!force && now - lastReloadAt < 8000) return; // reload döngüsünü engelle
+  lastReloadAt = now;
+  ready = false; healthy = true; errors = 0;
+  finishPending();
+  try { viewRef?.reload?.(); } catch { /* yut */ }
 }
 
 export type SfxKind = "correct" | "wrong" | "tap" | "micon" | "micoff";
@@ -102,7 +122,12 @@ export function TtsBridge() {
           if (m === "ready") { ready = true; healthy = true; errors = 0; }
           else if (m === "play") { healthy = true; errors = 0; }
           else if (m === "end") { healthy = true; errors = 0; finishPending(); } // bekleyen speak-and-wait'i çöz
-          else if (m === "error") { if (++errors >= 2) healthy = false; finishPending(); } // üst üste hata → cihaz TTS'i
+          else if (m === "error") {
+            // Üst üste hata → cihaz TTS'ine düş; ama köprüyü bir kez tazeleyerek (throttle'lı)
+            // kendini iyileştirmeyi dene — geçici 401/ağ o oturumu kalıcı susturmasın.
+            if (++errors >= 2) { healthy = false; bridgeRefresh(false); }
+            finishPending();
+          }
         }}
         onError={() => { ready = false; }}
         onHttpError={() => { ready = false; }}

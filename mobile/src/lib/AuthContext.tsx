@@ -4,6 +4,7 @@ import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardin
 import { updateProfile } from "./updateProfile";
 import { configureBilling } from "./billing";
 import { googleSignOut } from "./googleAuth";
+import { bridgeRefresh } from "./ttsBridge";
 
 type Ctx = {
   user: AuthUser | null;
@@ -56,6 +57,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Kullanıcı değişince RevenueCat'i Neon kimliğiyle başlat/güncelle (web+mobil
   // aynı entitlement). Anahtar yoksa güvenle no-op.
   useEffect(() => { void configureBilling(user?.id ?? null); }, [user?.id]);
+
+  // Giriş yapılınca (veya açılışta oturum geri yüklenince) TTS köprüsünü tazele.
+  // Köprü uygulama kökünde girişten ÖNCE yükleniyor; taze kurulum/silip-yükle
+  // sonrası oturumsuz kalıp o oturumu cihaz TTS'ine kilitliyordu. Giriş sonrası
+  // oturum çerezi artık paylaşımlı depoda (Android CookieManager / iOS shared)
+  // olduğundan reload köprüyü kimlikli yapar → Katja/Conrad/Emel yeni kurulumda da çalışır.
+  useEffect(() => { if (user?.id) bridgeRefresh(true); }, [user?.id]);
 
   const signIn = useCallback(async (email: string, password: string) => {
     const r = await apiSignIn(email, password);
