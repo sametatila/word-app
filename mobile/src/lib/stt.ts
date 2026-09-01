@@ -31,6 +31,7 @@ type SpeechNative = {
   delay(ms: number): Promise<boolean>;
   uploadStt(url: string, wavPath: string, language: string, expected: string): Promise<string | null>;
   playSfx(kind: string): void;
+  httpGet(url: string): Promise<string | null>;
 };
 
 const Native = NativeModules.NomiSpeech as SpeechNative | undefined;
@@ -160,7 +161,7 @@ export function onScreenState(cb: (off: boolean) => void): () => void {
  * native kullanılır (bkz. listenOnce); bu YALNIZ cepte/ekran-kapalı için (paralı).
  * VAD yok — sabit pencere kaydeder; kullanıcı o sürede söyler. Auth çerezle (paylaşımlı jar).
  */
-export async function azureListenOnce(target: string, windowMs = 3000, onStop?: () => void): Promise<string[] | null> {
+export async function azureListenOnce(target: string, windowMs = 3000, onStop?: () => void, lang = "de"): Promise<string[] | null> {
   if (!Native) return null;
   try {
     const ok = await Native.startRecording().catch(() => false);
@@ -170,9 +171,15 @@ export async function azureListenOnce(target: string, windowMs = 3000, onStop?: 
     onStop?.(); // mic kapandı — micoff burada (upload'dan ÖNCE; verdict'le çakışmaz)
     if (!path) return null;
     // POST'u NATIVE yap — RN fetch ekran-kapalı (arka plan) takılıyor; native thread çalışır.
-    const text = await Native.uploadStt(`${API_BASE}/api/stt`, path, "de", target ?? "").catch(() => null);
+    const text = await Native.uploadStt(`${API_BASE}/api/stt`, path, lang, target ?? "").catch(() => null);
     return text ? [text.trim()] : null;
   } catch {
     return null;
   }
+}
+
+/** Ekran-kapalı devam turunda /api/session GET (RN fetch arka planda takılıyor). Gövde ya da null. */
+export async function nativeHttpGet(url: string): Promise<string | null> {
+  try { if (Native?.httpGet) return await Native.httpGet(url); } catch { /* yut */ }
+  return null;
 }

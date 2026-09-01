@@ -14,8 +14,10 @@ import { shareResult } from "../lib/share";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } from "../game/session";
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
+import { bridgeReady } from "../lib/ttsBridge";
 import { TURKISH_VOICE } from "../lib/voices";
-import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, speakServerTts, nativeDelay } from "../lib/stt";
+import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
+import { API_BASE } from "../api/client";
 import { spokenMatches, parseSkipDe, encourage, parseConfirm } from "../lib/voiceMatch";
 import { sfx, setSfxScreenOff } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
@@ -94,9 +96,11 @@ export function WalkModeScreen() {
   const answers = useRef<AnswerOut[]>([]);
   const askedIds = useRef<Set<number>>(new Set());
 
-  // Ekran kapalıyken TTS'i NATIVE MediaPlayer'la çal (WebView köprüsü askıda/sessiz); açıkken köprü.
-  const sayTR = (t: string) => (screenOffRef.current ? speakServerTts(TURKISH_VOICE, t) : speakAndWaitVoiced(t, TURKISH_VOICE));
-  const sayDE = (t: string) => (screenOffRef.current ? speakServerTts(currentVoiceId(), t) : speakAndWaitVoiced(t, currentVoiceId()));
+  // TTS: ekran kapalı YA DA köprü (WebView) hazır değilse (ekran yeni uyandı, bildirim vb.) NATIVE
+  // /api/tts (neural, arka planda çalar) — cihaz-TTS'e (robotik) düşmeden, durmadan, sesi koruyarak.
+  // Köprü hazırsa (normal ekran-açık) köprüyü kullan.
+  const sayTR = (t: string) => (screenOffRef.current || !bridgeReady() ? speakServerTts(TURKISH_VOICE, t) : speakAndWaitVoiced(t, TURKISH_VOICE));
+  const sayDE = (t: string) => (screenOffRef.current || !bridgeReady() ? speakServerTts(currentVoiceId(), t) : speakAndWaitVoiced(t, currentVoiceId()));
 
   /** Biriken cevapları SRS'e yaz (progress YOK — walk stateless). Tur sonunda + çıkışta. */
   function flush(final = false) {
@@ -270,18 +274,23 @@ export function WalkModeScreen() {
     } else if (result === "skip") {
       setVerdict("skip");
       await sayTR(encourage()); await sayDE(target);
-      // atla: SRS'e yazılmaz
+      bumpTally(false); // atla: SRS'e yazılmaz ama tur sayısına dahil (sayaç /toplam tutarlı)
     } else {
       setVerdict("unheard");
       await sayTR("Duyamadım."); await sayDE(target);
-      // duyulmadı: SRS'e yazılmaz (kelime due kalır, sonraki yürüyüşte gelir) — web ile aynı
+      bumpTally(false); // duyulmadı: SRS'e yazılmaz (kelime due kalır) ama tur sayısına dahil
     }
     return "ok";
   }
 
-  function recordSpeak(w: WalkWord, ok: boolean) {
+  // Gösterim sayacı (correct/total) — TUR-bazlı: her tur (doğru/yanlış/atla/duyamadım) toplama
+  // girer ki üstteki idx/rounds sayacıyla tutarlı olsun. SRS'e ayrı yazılır (yalnız doğru/yanlış).
+  function bumpTally(ok: boolean) {
     tallyRef.current = { correct: tallyRef.current.correct + (ok ? 1 : 0), total: tallyRef.current.total + 1 };
     setTally(tallyRef.current);
+  }
+  function recordSpeak(w: WalkWord, ok: boolean) {
+    bumpTally(ok);
     if (user && typeof w.id === "number") {
       answers.current.push({ wordId: w.id, game: "speak", correct: ok, latencyMs: Math.max(0, Date.now() - wordStart.current) });
     }
@@ -310,8 +319,8 @@ export function WalkModeScreen() {
     if (!alive()) return;
     flush(true); // tur bitti — SRS'e yaz
     sfx("finish"); // tamamlanma sesi
-    // Cepte (eller serbest) → sesli "Devam edelim mi?"; ekran açık → görsel özet + butonlar.
-    if (pocketRef.current) { await askContinue(alive); return; }
+    // Cepte YA DA güç tuşuyla ekran kapalı (eller serbest) → sesli "Devam edelim mi?"; ekran açık → görsel özet + butonlar.
+    if (pocketRef.current || screenOffRef.current) { await askContinue(alive); return; }
     setKeepAwake(false); stopWalkService();
     setPhase("done");
     void sayTR(`Tur bitti. ${tallyRef.current.total} sorudan ${tallyRef.current.correct} doğru.`);
@@ -353,8 +362,14 @@ export function WalkModeScreen() {
   async function listenConfirm(alive: () => boolean): Promise<boolean | null> {
     setPhase("continue");
     sfx("micon");
-    const heard = await listenOnce("de-DE", 7000);
-    sfx("micoff");
+    // Cepte/ekran-kapalı → Azure (Türkçe evet/hayır); ekran açık → native.
+    let heard: string[] | null;
+    if (pocketRef.current || screenOffRef.current) {
+      heard = await azureListenOnce("", 4000, () => sfx("micoff"), "tr");
+    } else {
+      heard = await listenOnce("de-DE", 7000);
+      sfx("micoff");
+    }
     if (!alive() || !heard) return null;
     for (const s of heard) { const c = parseConfirm(s); if (c !== null) return c; }
     return null;
@@ -363,8 +378,17 @@ export function WalkModeScreen() {
   /** Sorulanları skip ederek taze walk kuyruğu getir, döngüyü sürdür. */
   async function continueTour(alive: () => boolean) {
     try {
-      const p = await fetchSession(day.current, { walk: true, skip: Array.from(askedIds.current) });
-      const wr = mapRounds(p.rounds ?? []);
+      let payload: { rounds?: Round[] } | null;
+      if (pocketRef.current || screenOffRef.current) {
+        // ekran-kapalı: native GET (RN fetch arka planda takılıyor)
+        const skip = Array.from(askedIds.current).slice(-200).join(",");
+        const url = `${API_BASE}/api/session?day=${day.current}&walk=1${skip ? `&skip=${skip}` : ""}`;
+        const body = await nativeHttpGet(url);
+        payload = body ? (JSON.parse(body) as { rounds?: Round[] }) : null;
+      } else {
+        payload = await fetchSession(day.current, { walk: true, skip: Array.from(askedIds.current) });
+      }
+      const wr = mapRounds(payload?.rounds ?? []);
       if (!alive()) return;
       if (wr.length) {
         tallyRef.current = { correct: 0, total: 0 }; setTally(tallyRef.current);
@@ -404,7 +428,9 @@ export function WalkModeScreen() {
   const listening = phase === "listening";
   const dotColor = verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primary : colors.surface2;
   const stepLabel = teaching ? "Yeni kelime" : phase === "speaking" ? "İpucu okunuyor…" : phase === "listening" ? "Şimdi Almancasını söyle" : verdict === "unheard" ? "Duyamadım" : verdict === "skip" ? "Atlandı" : verdict === "correct" ? "Doğru!" : verdict === "wrong" ? "Doğrusu" : "";
-  const total = rounds.length;
+  // Sayaç SORU (speak) turlarını gösterir; intro (öğretme) turları soru değil — done (tally) ile tutarlı.
+  const speakTotal = rounds.filter((r) => r.kind === "speak").length || rounds.length;
+  const speakStep = Math.min(speakTotal, rounds.slice(0, idx).filter((r) => r.kind === "speak").length + (rounds[idx]?.kind === "speak" ? 1 : 0));
   const donePct = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
   const donePad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
 
@@ -416,9 +442,9 @@ export function WalkModeScreen() {
       {withProgress ? (
         <>
           <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
-            <View style={{ height: "100%", width: `${Math.round(((idx + 1) / Math.max(1, total)) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
+            <View style={{ height: "100%", width: `${Math.round((speakStep / Math.max(1, speakTotal)) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
           </View>
-          <Text variant="bodyStrong" color={colors.textMuted}>{idx + 1}/{total}</Text>
+          <Text variant="bodyStrong" color={colors.textMuted}>{speakStep}/{speakTotal}</Text>
         </>
       ) : (
         <View style={{ flex: 1 }} />

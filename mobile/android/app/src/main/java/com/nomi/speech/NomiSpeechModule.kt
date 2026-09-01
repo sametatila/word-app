@@ -155,6 +155,25 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
     }.start()
   }
 
+  /** Basit GET (JSON) — ekran-kapalı devam turunda /api/session için (RN fetch arka planda takılıyor).
+   *  Çerez CookieManager'dan. 200 ise gövde, değilse null. */
+  @ReactMethod
+  fun httpGet(url: String, promise: Promise) {
+    Thread {
+      try {
+        val cookie = try { android.webkit.CookieManager.getInstance().getCookie(url) } catch (_: Exception) { null }
+        val conn = java.net.URL(url).openConnection() as java.net.HttpURLConnection
+        conn.connectTimeout = 15000; conn.readTimeout = 20000
+        if (!cookie.isNullOrEmpty()) conn.setRequestProperty("Cookie", cookie)
+        conn.setRequestProperty("accept", "application/json")
+        val code = conn.responseCode
+        val body = (if (code == 200) conn.inputStream else conn.errorStream)?.bufferedReader()?.use { it.readText() } ?: ""
+        conn.disconnect()
+        promise.resolve(if (code == 200) body else null)
+      } catch (e: Exception) { promise.resolve(null) }
+    }.start()
+  }
+
   @ReactMethod
   fun stopRecording(promise: Promise) {
     try {
