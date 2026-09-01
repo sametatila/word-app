@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ChevronRightIcon, WalkIcon, CheckIcon, XIcon } from "../ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { DEMO_WORDS, type Word } from "../data/demoWords";
@@ -13,7 +13,7 @@ import { fetchSession, submitAnswers, todayStr, type AnswerOut } from "../game/s
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { TURKISH_VOICE } from "../lib/voices";
-import { ensureMicPermission, sttAvailable, listenOnce, stopListening } from "../lib/stt";
+import { ensureMicPermission, listenOnce, stopListening } from "../lib/stt";
 import { spokenMatches, parseSkipDe, encourage } from "../lib/voiceMatch";
 import { sfx } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
@@ -22,7 +22,7 @@ import { useTheme, spacing, radii, softShadow } from "../theme";
 const withArtikel = (w: { artikel?: string | null; de: string }) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 const gap = (ms = 650) => new Promise<void>((r) => setTimeout(r, ms));
 
-type Phase = "intro" | "speaking" | "listening" | "judging" | "done" | "stopped";
+type Phase = "intro" | "speaking" | "listening" | "judging" | "done" | "stopped" | "denied";
 type Verdict = "correct" | "wrong" | "skip" | "unheard" | null;
 
 // "Duyamadım" penceresi: son 4 turun 3'ü sessizse turu durdur (web ile aynı).
@@ -48,7 +48,6 @@ export function WalkModeScreen() {
   const [verdict, setVerdict] = useState<Verdict>(null);
   const [heard, setHeard] = useState("");
   const [tally, setTally] = useState({ correct: 0, total: 0 });
-  const [micOn, setMicOn] = useState(false);
 
   const runToken = useRef(0);
   const mounted = useRef(true);
@@ -107,7 +106,7 @@ export function WalkModeScreen() {
     }
   }
 
-  async function runLoop(words: Word[], startIdx: number, mic: boolean) {
+  async function runLoop(words: Word[], startIdx: number) {
     const my = ++runToken.current;
     const alive = () => my === runToken.current && mounted.current;
     for (let i = startIdx; i < words.length; i++) {
@@ -119,32 +118,26 @@ export function WalkModeScreen() {
       await sayTR(w.tr); // Türkçe ipucu (Emel)
       if (!alive()) return;
 
-      // Cevabı topla: sesli (STT) + elle (yarış). Mikrofon yoksa yalnız elle.
+      // Cevabı topla: SESLİ (STT). "Atla" ile ses olmadan da geçilebilir.
       setPhase("listening");
+      sfx("tap"); // mikrofon açıldı ipucu (web onOpen cue)
+      const res = await Promise.race([
+        listenOnce("de-DE", 8000).then((h) => ({ k: "v" as const, said: (h ?? "").trim() })),
+        waitManual().then(() => ({ k: "m" as const })),
+      ]);
+      stopListening();
+      manualResolve.current = null;
+      if (!alive()) return;
       let result: "correct" | "wrong" | "skip" | "unheard";
       let said = "";
-      if (mic) {
-        sfx("tap"); // mikrofon açıldı ipucu (web onOpen cue)
-        const res = await Promise.race([
-          listenOnce("de-DE", 8000).then((h) => ({ k: "v" as const, said: (h ?? "").trim() })),
-          waitManual().then((m) => ({ k: "m" as const, m })),
-        ]);
-        stopListening();
-        manualResolve.current = null;
-        if (!alive()) return;
-        if (res.k === "m") {
-          result = res.m === "skip" ? "skip" : res.m ? "correct" : "wrong";
-        } else {
-          said = res.said;
-          const unheard = !said;
-          const ok = !unheard && spokenMatches([said], [withArtikel(w), w.de]);
-          const skipped = !unheard && !ok && parseSkipDe(said);
-          result = unheard ? "unheard" : skipped ? "skip" : ok ? "correct" : "wrong";
-        }
+      if (res.k === "m") {
+        result = "skip"; // Atla
       } else {
-        const m = await waitManual();
-        if (!alive()) return;
-        result = m === "skip" ? "skip" : m ? "correct" : "wrong";
+        said = res.said;
+        const unheard = !said;
+        const ok = !unheard && spokenMatches([said], [withArtikel(w), w.de]);
+        const skipped = !unheard && !ok && parseSkipDe(said);
+        result = unheard ? "unheard" : skipped ? "skip" : ok ? "correct" : "wrong";
       }
 
       // "Duyamadım" penceresi — üst üste sessizlikte turu durdur.
@@ -190,12 +183,13 @@ export function WalkModeScreen() {
   }
 
   async function start(fromIdx: number) {
+    // Sesli mod mikrofon ister. Voice.isAvailable()'a GÜVENMİYORUZ (bazı cihazlarda
+    // tanıyıcı kurulu olsa da yanlış false dönüyor); izin varsa doğrudan dinleriz.
     const granted = await ensureMicPermission();
-    const mic = granted && (await sttAvailable());
-    setMicOn(mic);
+    if (!granted) { setPhase("denied"); return; }
     startedAt.current = Date.now();
     if (fromIdx === 0) { tallyRef.current = { correct: 0, total: 0 }; setTally(tallyRef.current); unheardWin.current = []; }
-    void runLoop(list, fromIdx, mic);
+    void runLoop(list, fromIdx);
   }
 
   function stopAndLeave() { runToken.current++; stopListening(); nav.goBack(); }
@@ -206,7 +200,7 @@ export function WalkModeScreen() {
   const ringScale = pulse.interpolate({ inputRange: [0, 1], outputRange: [1, 1.5] });
   const showAnswer = phase === "judging";
   const dotColor = verdict === "wrong" ? colors.danger : verdict === "correct" ? colors.success : verdict === "unheard" ? colors.textMuted : colors.primary;
-  const stepLabel = phase === "speaking" ? "İpucu okunuyor…" : phase === "listening" ? (micOn ? "Şimdi Almancasını söyle" : "Almancasını hatırla, sonra işaretle") : verdict === "unheard" ? "Duyamadım" : verdict === "skip" ? "Atlandı" : verdict === "correct" ? "Doğru!" : verdict === "wrong" ? "Doğrusu" : "";
+  const stepLabel = phase === "speaking" ? "İpucu okunuyor…" : phase === "listening" ? "Şimdi Almancasını söyle" : verdict === "unheard" ? "Duyamadım" : verdict === "skip" ? "Atlandı" : verdict === "correct" ? "Doğru!" : verdict === "wrong" ? "Doğrusu" : "";
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -254,6 +248,18 @@ export function WalkModeScreen() {
             <Text variant="bodyStrong" color={colors.textMuted}>Bitir</Text>
           </PressableScale>
         </View>
+      ) : phase === "denied" ? (
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
+          <MicIcon color={colors.textMuted} size={64} />
+          <Text variant="h2" style={{ textAlign: "center" }}>Mikrofon gerekli</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>Yürüyüş modu sesli çalışır. Devam etmek için mikrofon iznini ver.</Text>
+          <PressableScale onPress={() => start(0)} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+            <Text variant="h3" color="#fff">İzin ver ve başla</Text>
+          </PressableScale>
+          <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
+            <Text variant="bodyStrong" color={colors.textMuted}>Vazgeç</Text>
+          </PressableScale>
+        </View>
       ) : (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.info + "1e", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7 }}>
@@ -275,28 +281,18 @@ export function WalkModeScreen() {
             <Animated.View style={{ position: "absolute", width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, opacity: ringOpacity, transform: [{ scale: ringScale }] }} />
             <Animated.View style={{ transform: [{ scale }] }}>
               <View style={[{ width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 14)]}>
-                {verdict === "correct" ? <CheckIcon color="#fff" size={40} /> : verdict === "wrong" ? <XIcon color="#fff" size={40} /> : <WalkIcon color="#fff" size={40} />}
+                {verdict === "correct" ? <CheckIcon color="#fff" size={40} /> : verdict === "wrong" ? <XIcon color="#fff" size={40} /> : <MicIcon color="#fff" size={40} />}
               </View>
             </Animated.View>
           </View>
 
-          {/* Elle onay — sesli modda da yedek (STT ıskalarsa dokun). */}
+          {/* Web'de elle onay YOK — yalnız sesli. Sesle geçmek istemezsen "Atla". */}
           {phase === "listening" ? (
-            <View style={{ alignSelf: "stretch", marginTop: spacing.xl, gap: spacing.md }}>
-              <View style={{ flexDirection: "row", gap: spacing.md }}>
-                <PressableScale onPress={() => resolveManual(false)} style={{ flex: 1, borderRadius: radii.lg, backgroundColor: colors.surface, borderWidth: 1.5, borderColor: colors.danger, paddingVertical: 15, alignItems: "center" }}>
-                  <Text variant="bodyStrong" color={colors.danger}>Bilemedim</Text>
-                </PressableScale>
-                <PressableScale onPress={() => resolveManual(true)} style={[{ flex: 1, borderRadius: radii.lg, backgroundColor: colors.success, paddingVertical: 15, alignItems: "center" }, softShadow(colors.success, 8)]}>
-                  <Text variant="bodyStrong" color="#fff">Bildim</Text>
-                </PressableScale>
-              </View>
-              <PressableScale onPress={skipNow} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, paddingVertical: spacing.sm }}>
-                <Text variant="bodyStrong" color={colors.textMuted}>Atla</Text><ChevronRightIcon color={colors.textMuted} size={18} />
-              </PressableScale>
-            </View>
+            <PressableScale onPress={skipNow} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, marginTop: spacing.xl, paddingVertical: spacing.sm }}>
+              <Text variant="bodyStrong" color={colors.textMuted}>Atla</Text><ChevronRightIcon color={colors.textMuted} size={18} />
+            </PressableScale>
           ) : (
-            <View style={{ height: 120 }} />
+            <View style={{ height: 60 }} />
           )}
         </View>
       )}

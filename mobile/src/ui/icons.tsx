@@ -28,6 +28,9 @@ export const CheckIcon = ({ color = "#000", size }: P) => (
 export const SpeakerIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M4 9v6h4l5 4V5L8 9H4z" {...stroke(color)} /><Path d="M16 8.5a4 4 0 010 7M18.5 6a7 7 0 010 12" {...stroke(color)} /></S>
 );
+export const MicIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Rect x="9" y="3" width="6" height="11" rx="3" {...stroke(color)} /><Path d="M6 11a6 6 0 0012 0M12 17v4M9 21h6" {...stroke(color)} /></S>
+);
 export const LockIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Rect x="5" y="11" width="14" height="9" rx="2" {...stroke(color)} /><Path d="M8 11V8a4 4 0 018 0v3" {...stroke(color)} /></S>
 );
