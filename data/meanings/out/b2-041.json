@@ -57,7 +57,7 @@
  },
  {
   "id": 5653,
-  "tr": "trafik yoğunluğu",
+  "tr": "trafik hacmi",
   "en": "traffic volume",
   "beispiel": "Am Freitagnachmittag ist das Verkehrsaufkommen besonders hoch.",
   "beispielTr": "Cuma öğleden sonraları trafik yoğunluğu özellikle yüksek oluyor.",
@@ -249,8 +249,8 @@
  },
  {
   "id": 5677,
-  "tr": "bırakmak",
-  "en": "to leave",
+  "tr": "koymak",
+  "en": "to set down",
   "beispiel": "Fahrräder dürfen nicht im Treppenhaus abgestellt werden.",
   "beispielTr": "Bisikletler merdiven boşluğuna bırakılamaz.",
   "beispielEn": "Bicycles may not be left in the stairwell."

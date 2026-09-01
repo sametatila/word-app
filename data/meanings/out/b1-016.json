@@ -33,7 +33,7 @@
   },
   {
     "id": 1993,
-    "tr": "meraklı",
+    "tr": "merakla bekleyen",
     "en": "eager",
     "beispiel": "Ich bin gespannt, wer bei diesem Spiel gewinnt.",
     "beispielTr": "Bu maçı kimin kazanacağını merak ediyorum.",
@@ -65,7 +65,7 @@
   },
   {
     "id": 2303,
-    "tr": "maaş",
+    "tr": "ücret",
     "en": "wage",
     "beispiel": "Sie bekommen Ihren Lohn immer am Ende des Monats.",
     "beispielTr": "Maaşınızı her zaman ay sonunda alırsınız.",
@@ -73,7 +73,7 @@
   },
   {
     "id": 3182,
-    "tr": "hemfikir olmak",
+    "tr": "katılmak",
     "en": "to agree",
     "beispiel": "Ich stimme dir in dieser Sache völlig zu.",
     "beispielTr": "Bu konuda seninle tamamen hemfikirim.",
@@ -153,7 +153,7 @@
   },
   {
     "id": 1936,
-    "tr": "beslemek",
+    "tr": "yedirmek",
     "en": "to feed",
     "beispiel": "Es ist im Zoo nicht erlaubt, die Tiere zu füttern.",
     "beispielTr": "Hayvanat bahçesinde hayvanları beslemek yasak.",
@@ -177,7 +177,7 @@
   },
   {
     "id": 1552,
-    "tr": "açıklama",
+    "tr": "tarif",
     "en": "description",
     "beispiel": "Eine Beschreibung des Geräts liegt bei.",
     "beispielTr": "Cihazın açıklaması ekte.",
@@ -313,7 +313,7 @@
   },
   {
     "id": 1503,
-    "tr": "kullanmak",
+    "tr": "çalıştırmak",
     "en": "to operate",
     "beispiel": "Die Kaffeemaschine ist ganz leicht zu bedienen.",
     "beispielTr": "Kahve makinesini kullanmak çok kolay.",
@@ -353,7 +353,7 @@
   },
   {
     "id": 1655,
-    "tr": "ayrıntı",
+    "tr": "detay",
     "en": "detail",
     "beispiel": "Ich habe alles bis ins kleinste Detail geplant.",
     "beispielTr": "Her şeyi en ince ayrıntısına kadar planladım.",
@@ -377,8 +377,8 @@
   },
   {
     "id": 2904,
-    "tr": "yaygın",
-    "en": "common",
+    "tr": "alışılmış",
+    "en": "usual",
     "beispiel": "In Deutschland ist es üblich, früh zu Abend zu essen.",
     "beispielTr": "Almanya'da akşam yemeğini erken yemek yaygındır.",
     "beispielEn": "In Germany it is common to eat dinner early."

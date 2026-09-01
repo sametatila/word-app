@@ -161,7 +161,7 @@
   },
   {
     "id": 6373,
-    "tr": "takdir yetkisi",
+    "tr": "takdir marjı",
     "en": "margin of discretion",
     "beispiel": "Der Behörde bleibt bei dieser Entscheidung ein erheblicher Ermessensspielraum.",
     "beispielTr": "İdarenin bu kararda hatırı sayılır bir takdir yetkisi kalıyor.",
@@ -369,7 +369,7 @@
   },
   {
     "id": 6399,
-    "tr": "başvurmak",
+    "tr": "yararlanmak",
     "en": "to draw on",
     "beispiel": "Zur Begründung zog das Gericht ältere Entscheidungen heran.",
     "beispielTr": "Mahkeme, gerekçesinde daha eski kararlara başvurdu.",
@@ -385,7 +385,7 @@
   },
   {
     "id": 6401,
-    "tr": "atfetmek",
+    "tr": "yüklemek",
     "en": "to attribute",
     "beispiel": "Der Schaden wird dem Unternehmen als Ganzem zugerechnet.",
     "beispielTr": "Zarar, bir bütün olarak şirkete atfediliyor.",

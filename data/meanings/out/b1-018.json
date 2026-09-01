@@ -225,7 +225,7 @@
   },
   {
     "id": 3133,
-    "tr": "sayı",
+    "tr": "adet",
     "en": "number",
     "beispiel": "Die Anzahl der Teilnehmer war größer als erwartet.",
     "beispielTr": "Katılımcı sayısı beklenenden fazlaydı.",
@@ -241,8 +241,8 @@
   },
   {
     "id": 1409,
-    "tr": "takmak",
-    "en": "to plug in",
+    "tr": "bağlamak",
+    "en": "to connect",
     "beispiel": "Wo kann ich hier meinen Laptop anschließen?",
     "beispielTr": "Dizüstü bilgisayarımı burada nereye takabilirim?",
     "beispielEn": "Where can I plug in my laptop here?"
@@ -321,7 +321,7 @@
   },
   {
     "id": 1798,
-    "tr": "iyileşmek",
+    "tr": "toparlanmak",
     "en": "to recover",
     "beispiel": "Nach der Operation hat er sich schnell erholt.",
     "beispielTr": "Ameliyattan sonra çabuk iyileşti.",

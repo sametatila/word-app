@@ -121,7 +121,7 @@
   },
   {
     "id": 6968,
-    "tr": "inatçı",
+    "tr": "azimli",
     "en": "dogged",
     "beispiel": "Sie kämpfte verbissen um jeden einzelnen Punkt.",
     "beispielTr": "Her bir puan için inatla mücadele etti.",
@@ -185,15 +185,15 @@
   },
   {
     "id": 6976,
-    "tr": "örtük",
-    "en": "underlying",
+    "tr": "belli belirsiz",
+    "en": "subliminal",
     "beispiel": "In dem Bericht schwingt unterschwellig eine Warnung mit.",
     "beispielTr": "Raporda örtük bir uyarı sezilir.",
     "beispielEn": "An underlying warning runs through the report."
   },
   {
     "id": 6977,
-    "tr": "gizli",
+    "tr": "gizil",
     "en": "latent",
     "beispiel": "Der Konflikt blieb jahrelang latent, bevor er ausbrach.",
     "beispielTr": "Çatışma patlak vermeden önce yıllarca gizli kaldı.",
@@ -257,7 +257,7 @@
   },
   {
     "id": 6985,
-    "tr": "çekingen",
+    "tr": "ürkek",
     "en": "timid",
     "beispiel": "Zaghaft klopfte er an die Tür des Chefs.",
     "beispielTr": "Patronun kapısını çekingen bir tavırla çaldı.",
@@ -313,7 +313,7 @@
   },
   {
     "id": 6992,
-    "tr": "vazgeçmek",
+    "tr": "kaçınmak",
     "en": "to refrain",
     "beispiel": "Von einer Klage hat das Unternehmen vorerst abgesehen.",
     "beispielTr": "Şirket şimdilik dava açmaktan vazgeçti.",
@@ -377,7 +377,7 @@
   },
   {
     "id": 7000,
-    "tr": "sezmek",
+    "tr": "sezinlemek",
     "en": "to sense",
     "beispiel": "Die Tragweite dieser Entscheidung lässt sich nur erahnen.",
     "beispielTr": "Bu kararın kapsamı ancak sezilebiliyor.",

@@ -169,7 +169,7 @@
   },
   {
     "id": 7609,
-    "tr": "ağırlıklı olarak",
+    "tr": "esas olarak",
     "en": "mainly",
     "beispiel": "Ich esse hauptsächlich Gemüse und Obst.",
     "beispielTr": "Ağırlıklı olarak sebze ve meyve yiyorum.",
@@ -177,7 +177,7 @@
   },
   {
     "id": 7610,
-    "tr": "özellikle",
+    "tr": "bilhassa",
     "en": "in particular",
     "beispiel": "Der Kurs hilft insbesondere den Anfängern.",
     "beispielTr": "Kurs özellikle yeni başlayanlara yardımcı oluyor.",
@@ -306,7 +306,7 @@
   {
     "id": 7626,
     "tr": "o kadar",
-    "en": "the",
+    "en": "the more",
     "beispiel": "Je früher wir losfahren, desto weniger Verkehr haben wir.",
     "beispielTr": "Ne kadar erken yola çıkarsak o kadar az trafiğe takılırız.",
     "beispielEn": "The earlier we leave the less traffic we have."
@@ -353,7 +353,7 @@
   },
   {
     "id": 7632,
-    "tr": "bu yüzden",
+    "tr": "o yüzden",
     "en": "therefore",
     "beispiel": "Ich hatte kein Bargeld, darum habe ich mit Karte bezahlt.",
     "beispielTr": "Nakit param yoktu, bu yüzden kartla ödedim.",
@@ -377,7 +377,7 @@
   },
   {
     "id": 7635,
-    "tr": "yine de",
+    "tr": "hiç değilse",
     "en": "at least",
     "beispiel": "Das Essen war teuer, aber immerhin war es lecker.",
     "beispielTr": "Yemek pahalıydı ama yine de lezzetliydi.",
@@ -393,7 +393,7 @@
   },
   {
     "id": 7637,
-    "tr": "örneğin",
+    "tr": "mesela",
     "en": "for instance",
     "beispiel": "Du kannst beispielsweise am Wochenende vorbeikommen.",
     "beispielTr": "Örneğin hafta sonu uğrayabilirsin.",

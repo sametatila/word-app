@@ -97,7 +97,7 @@
   },
   {
     "id": 3190,
-    "tr": "şüphe",
+    "tr": "kuşku",
     "en": "doubt",
     "beispiel": "Sie hatte Zweifel, ob die Entscheidung richtig war.",
     "beispielTr": "Kararın doğru olup olmadığından şüphe duyuyordu.",
@@ -122,7 +122,7 @@
   {
     "id": 2494,
     "tr": "yükümlülük",
-    "en": "duty",
+    "en": "obligation",
     "beispiel": "Jeder Bürger hat Rechte und Pflichten.",
     "beispielTr": "Her vatandaşın hakları ve yükümlülükleri vardır.",
     "beispielEn": "Every citizen has rights and duties."
@@ -177,7 +177,7 @@
   },
   {
     "id": 2985,
-    "tr": "engellemek",
+    "tr": "önlemek",
     "en": "to prevent",
     "beispiel": "Wir konnten den Unfall leider nicht verhindern.",
     "beispielTr": "Kazayı maalesef engelleyemedik.",
@@ -265,8 +265,8 @@
   },
   {
     "id": 2917,
-    "tr": "boşuna",
-    "en": "in vain",
+    "tr": "boşuna; bedava",
+    "en": "in vain; for free",
     "beispiel": "Wir haben umsonst auf ihn gewartet.",
     "beispielTr": "Onu boşuna bekledik.",
     "beispielEn": "We waited for him in vain."
@@ -385,8 +385,8 @@
   },
   {
     "id": 1583,
-    "tr": "sunmak",
-    "en": "to offer",
+    "tr": "sağlamak",
+    "en": "to provide",
     "beispiel": "Die Firma bietet ihren Mitarbeitern kostenlose Sprachkurse.",
     "beispielTr": "Şirket çalışanlarına ücretsiz dil kursları sunuyor.",
     "beispielEn": "The company offers its employees free language courses."

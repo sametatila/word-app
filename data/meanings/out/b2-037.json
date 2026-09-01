@@ -33,7 +33,7 @@
  },
  {
   "id": 5450,
-  "tr": "erişilebilirlik",
+  "tr": "kullanılabilirlik",
   "en": "availability",
   "beispiel": "Der Vertrag sichert uns eine Verfügbarkeit von fast hundert Prozent zu.",
   "beispielTr": "Sözleşme bize neredeyse yüzde yüz erişilebilirlik güvencesi veriyor.",
@@ -90,7 +90,7 @@
  {
   "id": 5457,
   "tr": "yenilik",
-  "en": "innovation",
+  "en": "novelty",
   "beispiel": "Die wichtigste Neuerung betrifft den Schutz persönlicher Daten.",
   "beispielTr": "En önemli yenilik kişisel verilerin korunmasıyla ilgili.",
   "beispielEn": "The most important innovation concerns the protection of personal data."
@@ -290,7 +290,7 @@
  {
   "id": 5482,
   "tr": "girmek",
-  "en": "to enter",
+  "en": "to input",
   "beispiel": "Geben Sie bitte den Bestätigungscode aus der Nachricht ein.",
   "beispielTr": "Lütfen mesajdaki onay kodunu girin.",
   "beispielEn": "Please enter the confirmation code from the message."

@@ -73,8 +73,8 @@
   },
   {
     "id": 6162,
-    "tr": "değerlendirme",
-    "en": "assessment",
+    "tr": "özet",
+    "en": "summary",
     "beispiel": "Zum Schluss zog die Moderatorin ein nüchternes Resümee.",
     "beispielTr": "Sonunda moderatör serinkanlı bir değerlendirme yaptı.",
     "beispielEn": "At the end the moderator gave a sober assessment."
@@ -177,7 +177,7 @@
   },
   {
     "id": 6175,
-    "tr": "karşı çıkmak",
+    "tr": "karşılık vermek",
     "en": "to counter",
     "beispiel": "Dem hielt die Kritikerin eine ganze Reihe neuerer Studien entgegen.",
     "beispielTr": "Eleştirmen buna bir dizi yeni çalışmayla karşı çıktı.",
@@ -289,8 +289,8 @@
   },
   {
     "id": 6189,
-    "tr": "geçerli",
-    "en": "valid",
+    "tr": "sağlam",
+    "en": "sound",
     "beispiel": "Für diese Annahme gibt es bislang kein stichhaltiges Argument.",
     "beispielTr": "Bu varsayım için şimdiye dek geçerli bir argüman yok.",
     "beispielEn": "So far there is no valid argument for this assumption."

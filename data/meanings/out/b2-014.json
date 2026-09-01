@@ -161,7 +161,7 @@
   },
   {
     "id": 4313,
-    "tr": "şart",
+    "tr": "belirlenen kural",
     "en": "requirement",
     "beispiel": "An die Vorgaben der Zentrale müssen sich alle halten.",
     "beispielTr": "Merkezin koyduğu şartlara herkesin uyması gerekiyor.",
@@ -345,7 +345,7 @@
   },
   {
     "id": 4336,
-    "tr": "onaylamak",
+    "tr": "onaydan geçirmek",
     "en": "to sign off",
     "beispiel": "Die Leitung muss das Konzept noch absegnen.",
     "beispielTr": "Konsepti bir de yönetimin onaylaması gerekiyor.",

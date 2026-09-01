@@ -137,7 +137,7 @@
   },
   {
     "id": 6820,
-    "tr": "tüketmek",
+    "tr": "tüketip bitirmek",
     "en": "to deplete",
     "beispiel": "Die intensive Fischerei hat die Bestände in der Nordsee erschöpft.",
     "beispielTr": "Yoğun balıkçılık, Kuzey Denizi'ndeki stokları tüketti.",
@@ -177,8 +177,8 @@
   },
   {
     "id": 6825,
-    "tr": "geri dönüştürmek",
-    "en": "to recycle",
+    "tr": "geri kazanmak",
+    "en": "to reclaim",
     "beispiel": "Bislang wird nur ein Bruchteil der Kunststoffe tatsächlich wiederverwertet.",
     "beispielTr": "Şimdiye dek plastiklerin ancak küçük bir kısmı gerçekten geri dönüştürülüyor.",
     "beispielEn": "So far only a fraction of plastics is actually recycled."

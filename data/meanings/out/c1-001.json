@@ -105,7 +105,7 @@
   },
   {
     "id": 3730,
-    "tr": "şayet",
+    "tr": "-mesi şartıyla",
     "en": "provided that",
     "beispiel": "Sofern es nicht regnet, grillen wir im Garten.",
     "beispielTr": "Şayet yağmur yağmazsa bahçede mangal yaparız.",
@@ -153,7 +153,7 @@
   },
   {
     "id": 3594,
-    "tr": "komisyon",
+    "tr": "komite",
     "en": "committee",
     "beispiel": "Der Ausschuss tagt am Dienstag im kleinen Sitzungssaal.",
     "beispielTr": "Komisyon salı günü küçük toplantı salonunda toplanıyor.",
@@ -209,7 +209,7 @@
   },
   {
     "id": 3572,
-    "tr": "sunmak",
+    "tr": "teslim etmek",
     "en": "to submit",
     "beispiel": "Ich habe meinen Antrag gestern online eingereicht.",
     "beispielTr": "Başvurumu dün internet üzerinden sundum.",
@@ -233,7 +233,7 @@
   },
   {
     "id": 3505,
-    "tr": "kanıtlamak",
+    "tr": "belgelemek",
     "en": "to substantiate",
     "beispiel": "Neue Zahlen belegen den Rückgang der Arbeitslosigkeit.",
     "beispielTr": "Yeni rakamlar işsizlikteki düşüşü kanıtlıyor.",
@@ -289,7 +289,7 @@
   },
   {
     "id": 4034,
-    "tr": "önlemek",
+    "tr": "savuşturmak",
     "en": "to avert",
     "beispiel": "Die Feuerwehr konnte eine Katastrophe im letzten Moment abwenden.",
     "beispielTr": "İtfaiye, bir felaketi son anda önleyebildi.",
@@ -329,7 +329,7 @@
   },
   {
     "id": 3670,
-    "tr": "düşünmek",
+    "tr": "değerlendirmek",
     "en": "to consider",
     "beispiel": "Wir erwägen, den Vertrag früher zu kündigen.",
     "beispielTr": "Sözleşmeyi daha erken feshetmeyi düşünüyoruz.",

@@ -33,8 +33,8 @@
  },
  {
   "id": 6707,
-  "tr": "taşkınlık",
-  "en": "abuse",
+  "tr": "saldırı",
+  "en": "assault",
   "beispiel": "Übergriffe der Polizei wurden monatelang nicht untersucht.",
   "beispielTr": "Polisin taşkınlıkları aylarca soruşturulmadı.",
   "beispielEn": "Abuses by the police went uninvestigated for months."
@@ -57,7 +57,7 @@
  },
  {
   "id": 6710,
-  "tr": "suçlamak",
+  "tr": "itham etmek",
   "en": "to indict",
   "beispiel": "Zwei ehemalige Minister wurden wegen schwerer Korruption angeklagt.",
   "beispielTr": "İki eski bakan ağır yolsuzlukla suçlandı.",

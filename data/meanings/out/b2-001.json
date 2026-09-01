@@ -113,7 +113,7 @@
   },
   {
     "id": 3351,
-    "tr": "şefkat",
+    "tr": "merhamet",
     "en": "compassion",
     "beispiel": "Der Arzt zeigte viel Mitgefühl für die Angehörigen.",
     "beispielTr": "Doktor, hasta yakınlarına büyük şefkat gösterdi.",
@@ -161,8 +161,8 @@
   },
   {
     "id": 3819,
-    "tr": "makul",
-    "en": "reasonable",
+    "tr": "uygun",
+    "en": "appropriate",
     "beispiel": "Der Preis für die Wohnung scheint mir angemessen.",
     "beispielTr": "Daire için istenen fiyat bana makul geliyor.",
     "beispielEn": "The price for the apartment seems reasonable to me."
@@ -201,7 +201,7 @@
   },
   {
     "id": 3808,
-    "tr": "aşmak",
+    "tr": "üstesinden gelmek",
     "en": "to overcome",
     "beispiel": "Sie hat ihre Angst vor dem Fliegen überwunden.",
     "beispielTr": "Uçak korkusunu aştı.",
@@ -265,8 +265,8 @@
   },
   {
     "id": 3394,
-    "tr": "davranış",
-    "en": "conduct",
+    "tr": "muamele",
+    "en": "dealings",
     "beispiel": "Sein freundlicher Umgang mit Kunden fällt allen auf.",
     "beispielTr": "Müşterilere karşı nazik davranışı herkesin dikkatini çekiyor.",
     "beispielEn": "His friendly conduct toward customers stands out to everyone."

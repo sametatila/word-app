@@ -185,8 +185,8 @@
   },
   {
     "id": 5218,
-    "tr": "dava",
-    "en": "case",
+    "tr": "yargılama",
+    "en": "proceedings",
     "beispiel": "Das Verfahren gegen den Konzern wurde nach zwei Jahren eingestellt.",
     "beispielTr": "Şirkete karşı açılan dava iki yıl sonra düştü.",
     "beispielEn": "The case against the corporation was dropped after two years."
@@ -329,8 +329,8 @@
   },
   {
     "id": 5236,
-    "tr": "sunmak",
-    "en": "to file",
+    "tr": "itiraz etmek",
+    "en": "to lodge",
     "beispiel": "Wir haben gegen die Entscheidung fristgerecht Beschwerde eingelegt.",
     "beispielTr": "Karara karşı süresi içinde şikâyet dilekçesi sunduk.",
     "beispielEn": "We filed a complaint against the decision on time."

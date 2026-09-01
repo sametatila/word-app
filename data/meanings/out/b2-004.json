@@ -1,7 +1,7 @@
 [
   {
     "id": 3746,
-    "tr": "sezon sonu indirimi",
+    "tr": "tasfiye satışı",
     "en": "clearance sale",
     "beispiel": "Im Ausverkauf habe ich diese Jacke günstig bekommen.",
     "beispielTr": "Sezon sonu indiriminde bu ceketi ucuza aldım.",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3241,
-    "tr": "büyümek",
+    "tr": "genişlemek",
     "en": "to expand",
     "beispiel": "Der Betrieb expandiert seit Jahren stetig.",
     "beispielTr": "İşletme yıllardır istikrarlı biçimde büyüyor.",
@@ -361,7 +361,7 @@
   },
   {
     "id": 3878,
-    "tr": "bitirmek",
+    "tr": "tamamlamak",
     "en": "to complete",
     "beispiel": "Sie hat ihr Studium in vier Jahren absolviert.",
     "beispielTr": "Üniversiteyi dört yılda bitirdi.",

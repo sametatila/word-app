@@ -233,8 +233,8 @@
   },
   {
     "id": 1352,
-    "tr": "anlaşmak",
-    "en": "to agree",
+    "tr": "kararlaştırmak",
+    "en": "to arrange",
     "beispiel": "Wir hatten doch abgemacht, dass du die Getränke besorgst.",
     "beispielTr": "Hani içecekleri senin alacağında anlaşmıştık.",
     "beispielEn": "We had agreed that you would bring the drinks."
@@ -297,7 +297,7 @@
   },
   {
     "id": 1771,
-    "tr": "karar vermek",
+    "tr": "kesin karar vermek",
     "en": "to make up one's mind",
     "beispiel": "Endlich entschließt er sich, den Job zu wechseln.",
     "beispielTr": "Sonunda iş değiştirmeye karar veriyor.",
@@ -321,7 +321,7 @@
   },
   {
     "id": 1727,
-    "tr": "gelir",
+    "tr": "hasılat",
     "en": "revenue",
     "beispiel": "Unsere Einnahmen waren diesen Monat höher als sonst.",
     "beispielTr": "Bu ay gelirimiz her zamankinden yüksekti.",
@@ -393,7 +393,7 @@
   },
   {
     "id": 3051,
-    "tr": "tahminen",
+    "tr": "muhtemelen",
     "en": "expected",
     "beispiel": "Der Zug hat voraussichtlich 20 Minuten Verspätung.",
     "beispielTr": "Trenin tahminen 20 dakika rötarı var.",

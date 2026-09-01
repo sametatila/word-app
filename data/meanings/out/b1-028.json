@@ -10,7 +10,7 @@
   {
     "id": 3026,
     "tr": "vekâlet",
-    "en": "substitution",
+    "en": "cover",
     "beispiel": "Während meines Urlaubs übernimmt eine Kollegin die Vertretung.",
     "beispielTr": "İzindeyken bir meslektaşım bana vekâlet edecek.",
     "beispielEn": "While I'm on vacation, a colleague will fill in for me."
@@ -113,7 +113,7 @@
   },
   {
     "id": 2946,
-    "tr": "sertifika",
+    "tr": "belge",
     "en": "certificate",
     "beispiel": "Wenn wir das Spiel gewinnen, bekommen wir eine Urkunde.",
     "beispielTr": "Maçı kazanırsak bir sertifika alacağız.",
@@ -137,7 +137,7 @@
   },
   {
     "id": 2938,
-    "tr": "yasak",
+    "tr": "yasaklanmış",
     "en": "prohibited",
     "beispiel": "Es ist untersagt, hier zu rauchen.",
     "beispielTr": "Burada sigara içmek yasaktır.",

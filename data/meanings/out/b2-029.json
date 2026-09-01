@@ -17,7 +17,7 @@
   },
   {
     "id": 5047,
-    "tr": "belgelemek",
+    "tr": "tasdik etmek",
     "en": "to certify",
     "beispiel": "Der Kursleiter bescheinigt uns die regelmäßige Teilnahme am Unterricht.",
     "beispielTr": "Kurs öğretmeni derse düzenli katıldığımızı belgeliyor.",
@@ -65,7 +65,7 @@
   },
   {
     "id": 5053,
-    "tr": "eklemek",
+    "tr": "iliştirmek",
     "en": "to enclose",
     "beispiel": "Bitte fügen Sie Ihrer Bewerbung ein aktuelles Foto bei.",
     "beispielTr": "Lütfen başvurunuza güncel bir fotoğraf ekleyin.",
@@ -89,7 +89,7 @@
   },
   {
     "id": 5056,
-    "tr": "yasal",
+    "tr": "meşru",
     "en": "lawful",
     "beispiel": "Sie lebt seit sieben Jahren rechtmäßig in Deutschland.",
     "beispielTr": "Yedi yıldır Almanya'da yasal olarak yaşıyor.",
@@ -201,7 +201,7 @@
   },
   {
     "id": 5070,
-    "tr": "sıcaklık değişimi",
+    "tr": "sıcaklık dalgalanması",
     "en": "temperature fluctuation",
     "beispiel": "Die starken Temperaturschwankungen machen den Pflanzen zu schaffen.",
     "beispielTr": "Sert sıcaklık değişimleri bitkileri epey zorluyor.",

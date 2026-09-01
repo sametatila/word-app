@@ -121,7 +121,7 @@
   },
   {
     "id": 6868,
-    "tr": "gerektirmek",
+    "tr": "zorunlu kılmak",
     "en": "to demand",
     "beispiel": "Der Zustand der Brücke gebietet eine sofortige Sperrung.",
     "beispielTr": "Köprünün durumu derhal kapatılmasını gerektiriyor.",
@@ -145,8 +145,8 @@
   },
   {
     "id": 6871,
-    "tr": "hayır demek",
-    "en": "to say no",
+    "tr": "olumsuzlamak",
+    "en": "to negate",
     "beispiel": "Die Frage nach einem Zeugen verneinte er knapp.",
     "beispielTr": "Tanık olup olmadığı sorusuna kısaca hayır dedi.",
     "beispielEn": "He curtly said no to the question about a witness."
@@ -193,8 +193,8 @@
   },
   {
     "id": 6877,
-    "tr": "akla yatkın",
-    "en": "plausible",
+    "tr": "inandırıcı",
+    "en": "convincing",
     "beispiel": "Seine Erklärung klang einleuchtend, stimmte aber nicht.",
     "beispielTr": "Açıklaması akla yatkın geldi, ama doğru değildi.",
     "beispielEn": "His explanation sounded plausible, but it was not true."

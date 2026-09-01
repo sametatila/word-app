@@ -145,7 +145,7 @@
  },
  {
   "id": 4411,
-  "tr": "mal sağlamak",
+  "tr": "tedarik etmek",
   "en": "to supply",
   "beispiel": "Der Betrieb beliefert mehrere Kantinen in der Stadt.",
   "beispielTr": "İşletme şehirdeki birkaç yemekhaneye mal sağlıyor.",
@@ -265,7 +265,7 @@
  },
  {
   "id": 4426,
-  "tr": "kazanmak",
+  "tr": "kazanc elde etmek",
   "en": "to generate",
   "beispiel": "Der Hof erwirtschaftet den größten Teil seines Umsatzes im Hofladen.",
   "beispielTr": "Çiftlik cirosunun büyük bölümünü çiftlik dükkânında kazanıyor.",
@@ -281,7 +281,7 @@
  },
  {
   "id": 4428,
-  "tr": "geleneksel",
+  "tr": "konvansiyonel",
   "en": "conventional",
   "beispiel": "Konventionell angebaute Ware ist im Schnitt deutlich billiger.",
   "beispielTr": "Geleneksel yöntemle yetişen ürün ortalamada çok daha ucuz.",
@@ -338,7 +338,7 @@
  {
   "id": 4435,
   "tr": "bol",
-  "en": "plenty",
+  "en": "ample",
   "beispiel": "In diesem Jahr gab es reichlich Obst aus der Region.",
   "beispielTr": "Bu yıl yöreden bol miktarda meyve çıktı.",
   "beispielEn": "This year there was plenty of fruit from the region."

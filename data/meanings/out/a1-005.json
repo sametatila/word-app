@@ -74,7 +74,7 @@
   {
     "id": 739,
     "tr": "yukarıda",
-    "en": "upstairs",
+    "en": "above; up there",
     "beispiel": "Ich wohne oben im vierten Stock.",
     "beispielTr": "Yukarıda, dördüncü katta oturuyorum.",
     "beispielEn": "I live upstairs on the fourth floor."
@@ -129,7 +129,7 @@
   },
   {
     "id": 690,
-    "tr": "getirmek",
+    "tr": "gidip getirmek",
     "en": "to fetch",
     "beispiel": "Ich hole zwei Flaschen Wasser aus der Küche.",
     "beispielTr": "Mutfaktan iki şişe su getiriyorum.",
@@ -137,7 +137,7 @@
   },
   {
     "id": 340,
-    "tr": "hoş",
+    "tr": "cana yakın",
     "en": "nice",
     "beispiel": "Unsere neue Nachbarin ist sehr nett.",
     "beispielTr": "Yeni komşumuz çok hoş biri.",
@@ -273,7 +273,7 @@
   },
   {
     "id": 127,
-    "tr": "affetmek",
+    "tr": "mazur görmek",
     "en": "to excuse",
     "beispiel": "Bitte entschuldigen Sie meinen Fehler!",
     "beispielTr": "Lütfen hatamı affedin!",
@@ -346,14 +346,14 @@
   {
     "id": 827,
     "tr": "aşağıda",
-    "en": "downstairs",
+    "en": "below; down there",
     "beispiel": "Er wohnt unten im Erdgeschoss.",
     "beispielTr": "Aşağıda, zemin katta oturuyor.",
     "beispielEn": "He lives downstairs on the ground floor."
   },
   {
     "id": 810,
-    "tr": "bölüm",
+    "tr": "parça",
     "en": "part",
     "beispiel": "Lies bitte auch den zweiten Teil.",
     "beispielTr": "Lütfen ikinci bölümü de oku.",

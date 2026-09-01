@@ -217,7 +217,7 @@
  },
  {
   "id": 2601,
-  "tr": "tur",
+  "tr": "şehir turu",
   "en": "sightseeing tour",
   "beispiel": "Am ersten Tag haben wir eine Rundfahrt durch die Stadt gemacht.",
   "beispielTr": "İlk gün şehirde bir tur yaptık.",
@@ -241,7 +241,7 @@
  },
  {
   "id": 1359,
-  "tr": "gönderen",
+  "tr": "kadın gönderen",
   "en": "female sender",
   "beispiel": "Auf dem Umschlag fehlt der Name der Absenderin.",
   "beispielTr": "Zarfın üzerinde gönderenin adı yok.",
@@ -297,7 +297,7 @@
  },
  {
   "id": 1479,
-  "tr": "seçmek",
+  "tr": "kendine seçmek",
   "en": "to pick out",
   "beispiel": "Such dir etwas Schönes aus!",
   "beispielTr": "Kendine güzel bir şey seç!",

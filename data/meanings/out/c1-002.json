@@ -129,8 +129,8 @@
   },
   {
     "id": 4022,
-    "tr": "önlemek",
-    "en": "to prevent",
+    "tr": "engellemek",
+    "en": "to suppress",
     "beispiel": "Der Lehrer unterbindet jedes Gespräch während der Prüfung.",
     "beispielTr": "Öğretmen sınav boyunca her türlü konuşmayı önlüyor.",
     "beispielEn": "The teacher prevents any talking during the exam."
@@ -153,7 +153,7 @@
   },
   {
     "id": 4018,
-    "tr": "uygulamak",
+    "tr": "yerine getirmek",
     "en": "to carry out",
     "beispiel": "Die Strafe wurde erst nach zwei Jahren vollzogen.",
     "beispielTr": "Ceza ancak iki yıl sonra uygulandı.",
@@ -249,7 +249,7 @@
   },
   {
     "id": 3604,
-    "tr": "dönem",
+    "tr": "çağ",
     "en": "era",
     "beispiel": "Das Museum zeigt Möbel aus einer vergessenen Epoche.",
     "beispielTr": "Müze, unutulmuş bir döneme ait mobilyalar sergiliyor.",
@@ -257,8 +257,8 @@
   },
   {
     "id": 3704,
-    "tr": "çıkmaz",
-    "en": "predicament",
+    "tr": "ikilem",
+    "en": "dilemma",
     "beispiel": "Zwischen Job und Familie steckt er in einer Zwickmühle.",
     "beispielTr": "İşiyle ailesi arasında bir çıkmazda kaldı.",
     "beispielEn": "He is caught in a predicament between job and family."
@@ -281,7 +281,7 @@
   },
   {
     "id": 3518,
-    "tr": "sorgulamak",
+    "tr": "şüphe etmek",
     "en": "to call into question",
     "beispiel": "Kritiker zweifeln die Ergebnisse der Studie an.",
     "beispielTr": "Eleştirmenler, çalışmanın sonuçlarını sorguluyor.",

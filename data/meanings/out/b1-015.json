@@ -289,7 +289,7 @@
   },
   {
     "id": 2809,
-    "tr": "tutar",
+    "tr": "toplam",
     "en": "sum",
     "beispiel": "Die Summe auf der Rechnung scheint mir zu hoch.",
     "beispielTr": "Faturadaki tutar bana çok yüksek geliyor.",
@@ -322,7 +322,7 @@
   {
     "id": 1571,
     "tr": "aldatmak",
-    "en": "to deceive",
+    "en": "to cheat",
     "beispiel": "Ich würde meine Familie niemals betrügen.",
     "beispielTr": "Ailemi asla aldatmam.",
     "beispielEn": "I would never deceive my family."

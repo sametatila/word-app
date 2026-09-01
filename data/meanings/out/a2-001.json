@@ -257,8 +257,8 @@
   },
   {
     "id": 935,
-    "tr": "nesne",
-    "en": "object",
+    "tr": "şey",
+    "en": "thing",
     "beispiel": "Was macht man mit diesem Ding?",
     "beispielTr": "Bu nesne ne işe yarıyor?",
     "beispielEn": "What do you do with this object?"
@@ -273,7 +273,7 @@
   },
   {
     "id": 881,
-    "tr": "dışında",
+    "tr": "hariç",
     "en": "except",
     "beispiel": "Alle sind gekommen außer Tom.",
     "beispielTr": "Tom dışında herkes geldi.",

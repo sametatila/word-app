@@ -121,7 +121,7 @@
  },
  {
   "id": 4108,
-  "tr": "sunmak",
+  "tr": "ibraz etmek",
   "en": "to present",
   "beispiel": "Bitte legen Sie am ersten Arbeitstag Ihre Zeugnisse im Original vor.",
   "beispielTr": "Lütfen ilk iş gününde belgelerinizin asıllarını sunun.",
@@ -225,7 +225,7 @@
  },
  {
   "id": 4121,
-  "tr": "gönüllü",
+  "tr": "fahri",
   "en": "voluntary",
   "beispiel": "Viele Mitglieder der Kommission arbeiten rein ehrenamtlich.",
   "beispielTr": "Komisyon üyelerinin çoğu tamamen gönüllü olarak çalışıyor.",
@@ -297,7 +297,7 @@
  },
  {
   "id": 4130,
-  "tr": "kayda değer",
+  "tr": "hatırı sayılır",
   "en": "considerable",
   "beispiel": "Das Projekt verschlang einen beträchtlichen Teil des Budgets.",
   "beispielTr": "Proje bütçenin kayda değer bir kısmını yuttu.",
@@ -313,7 +313,7 @@
  },
  {
   "id": 4132,
-  "tr": "belirgin",
+  "tr": "fark edilir",
   "en": "perceptible",
   "beispiel": "Das Tempo der Verhandlungen hat merklich abgenommen.",
   "beispielTr": "Müzakerelerin hızı belirgin biçimde azaldı.",
@@ -321,7 +321,7 @@
  },
  {
   "id": 4133,
-  "tr": "çarpıcı",
+  "tr": "sert",
   "en": "drastic",
   "beispiel": "Die Behörde hat die Gebühren drastisch angehoben.",
   "beispielTr": "Kurum harçları çarpıcı biçimde yükseltti.",
@@ -369,7 +369,7 @@
  },
  {
   "id": 4139,
-  "tr": "aşırı",
+  "tr": "gereğinden fazla",
   "en": "excessive",
   "beispiel": "Er trinkt übermäßig viel Kaffee, wenn er Stress hat.",
   "beispielTr": "Stresliyken aşırı miktarda kahve içiyor.",

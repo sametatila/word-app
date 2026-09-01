@@ -377,8 +377,8 @@
  },
  {
   "id": 6000,
-  "tr": "belirlemek",
-  "en": "to determine",
+  "tr": "ölçüp belirlemek",
+  "en": "to gauge",
   "beispiel": "Der Zuschuss wird nach der Zahl der Absolventen bemessen.",
   "beispielTr": "Ödenek, mezun sayısına göre belirleniyor.",
   "beispielEn": "The subsidy is determined by the number of graduates."

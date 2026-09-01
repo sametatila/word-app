@@ -65,7 +65,7 @@
   },
   {
     "id": 4953,
-    "tr": "konuşma",
+    "tr": "hitabe",
     "en": "address",
     "beispiel": "Die Ansprache des Bürgermeisters dauerte kaum zehn Minuten.",
     "beispielTr": "Belediye başkanının konuşması on dakikayı zor buldu.",
@@ -185,7 +185,7 @@
   },
   {
     "id": 4968,
-    "tr": "duyurmak",
+    "tr": "açıklamak",
     "en": "to announce",
     "beispiel": "Die Jury will den Gewinner erst am Abend bekanntgeben.",
     "beispielTr": "Jüri kazananı ancak akşam duyurmak istiyor.",
@@ -273,7 +273,7 @@
   },
   {
     "id": 4979,
-    "tr": "anlatmak",
+    "tr": "betimlemek",
     "en": "to describe",
     "beispiel": "Augenzeugen schilderten den Ablauf des Abends sehr unterschiedlich.",
     "beispielTr": "Görgü tanıkları akşamın gidişatını çok farklı anlattı.",
@@ -337,7 +337,7 @@
   },
   {
     "id": 4987,
-    "tr": "ölçülü",
+    "tr": "nesnel",
     "en": "matter-of-fact",
     "beispiel": "Trotz der Aufregung blieb die Diskussion erstaunlich sachlich.",
     "beispielTr": "Bütün gerginliğe rağmen tartışma şaşırtıcı biçimde ölçülü kaldı.",
@@ -353,8 +353,8 @@
   },
   {
     "id": 4989,
-    "tr": "anlaşılır",
-    "en": "clear",
+    "tr": "somut",
+    "en": "vivid",
     "beispiel": "Die Grafik erklärt den Zusammenhang sehr anschaulich.",
     "beispielTr": "Grafik, bağlantıyı çok anlaşılır biçimde açıklıyor.",
     "beispielEn": "The graphic explains the connection very clearly."

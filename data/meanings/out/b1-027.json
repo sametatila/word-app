@@ -97,7 +97,7 @@
   },
   {
     "id": 1520,
-    "tr": "engellemek",
+    "tr": "engel olmak",
     "en": "to obstruct",
     "beispiel": "Bitte parken Sie so, dass Sie niemanden behindern.",
     "beispielTr": "Lütfen kimseyi engellemeyecek şekilde park edin.",
@@ -201,7 +201,7 @@
   },
   {
     "id": 2119,
-    "tr": "kurmak",
+    "tr": "yüklemek",
     "en": "to install",
     "beispiel": "Ich muss das Programm noch auf dem Laptop installieren.",
     "beispielTr": "Programı dizüstü bilgisayara kurmam gerekiyor.",
@@ -265,8 +265,8 @@
   },
   {
     "id": 2456,
-    "tr": "düzenlemek",
-    "en": "to organize",
+    "tr": "düzene sokmak",
+    "en": "to arrange",
     "beispiel": "Am Wochenende habe ich meine Papiere geordnet.",
     "beispielTr": "Hafta sonu evraklarımı düzenledim.",
     "beispielEn": "I organized my papers over the weekend."

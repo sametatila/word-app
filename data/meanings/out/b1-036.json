@@ -41,8 +41,8 @@
   },
   {
     "id": 2670,
-    "tr": "Kuzey Denizi",
-    "en": "North Sea",
+    "tr": "Kuzey Denizi; Baltık Denizi",
+    "en": "North Sea; Baltic Sea",
     "beispiel": "Im Sommer fahren wir jedes Jahr an die Nordsee.",
     "beispielTr": "Yazın her yıl Kuzey Denizi'ne gideriz.",
     "beispielEn": "In summer we go to the North Sea every year."
@@ -81,7 +81,7 @@
   },
   {
     "id": 2709,
-    "tr": "indirim",
+    "tr": "kampanya",
     "en": "special offer",
     "beispiel": "Die Jacke war ein Sonderangebot und kostete zwanzig Euro.",
     "beispielTr": "Ceket indirimdeydi ve yirmi euro tuttu.",
@@ -193,7 +193,7 @@
   },
   {
     "id": 2850,
-    "tr": "hayvanat bahçesi",
+    "tr": "hayvan parkı",
     "en": "animal park",
     "beispiel": "Wollen wir am Samstag mit den Kindern in den Tierpark gehen?",
     "beispielTr": "Cumartesi çocuklarla hayvanat bahçesine gidelim mi?",
@@ -297,7 +297,7 @@
   },
   {
     "id": 3048,
-    "tr": "özellikle",
+    "tr": "başta; özellikle",
     "en": "above all",
     "beispiel": "Grüßen Sie alle von mir, vor allem Frau Meier.",
     "beispielTr": "Herkese benden selam söyleyin, özellikle Bayan Meier'e.",
@@ -329,8 +329,8 @@
   },
   {
     "id": 3110,
-    "tr": "kaç tane",
-    "en": "how many",
+    "tr": "ne kadar; kaç tane",
+    "en": "how much; how many",
     "beispiel": "Wie viele Kinder haben Sie?",
     "beispielTr": "Kaç çocuğunuz var?",
     "beispielEn": "How many children do you have?"

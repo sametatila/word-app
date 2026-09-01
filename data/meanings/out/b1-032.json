@@ -9,8 +9,8 @@
   },
   {
     "id": 1428,
-    "tr": "iş",
-    "en": "job",
+    "tr": "iş yeri",
+    "en": "place of work",
     "beispiel": "Meine Frau hat eine neue Arbeitsstelle gefunden.",
     "beispielTr": "Eşim yeni bir iş buldu.",
     "beispielEn": "My wife has found a new job."
@@ -33,7 +33,7 @@
   },
   {
     "id": 2813,
-    "tr": "tablo",
+    "tr": "çizelge",
     "en": "table",
     "beispiel": "Die wichtigsten Zahlen findest du in der Tabelle.",
     "beispielTr": "En önemli sayıları tabloda bulabilirsin.",
@@ -90,7 +90,7 @@
   {
     "id": 2009,
     "tr": "eşit haklara sahip",
-    "en": "equal",
+    "en": "having equal rights",
     "beispiel": "Männer und Frauen sind vor dem Gesetz gleichberechtigt.",
     "beispielTr": "Kadınlar ve erkekler yasa önünde eşit haklara sahiptir.",
     "beispielEn": "Men and women are equal before the law."
@@ -345,7 +345,7 @@
   },
   {
     "id": 2535,
-    "tr": "bisikletli",
+    "tr": "bisiklet sürücüsü",
     "en": "cyclist",
     "beispiel": "Ein Radfahrer fuhr bei Rot über die Kreuzung.",
     "beispielTr": "Bir bisikletli kırmızı ışıkta kavşaktan geçti.",

@@ -9,7 +9,7 @@
  },
  {
   "id": 3404,
-  "tr": "yenilik",
+  "tr": "inovasyon",
   "en": "innovation",
   "beispiel": "Die Firma investiert stark in technologische Innovation.",
   "beispielTr": "Şirket teknolojik yeniliğe büyük yatırım yapıyor.",
@@ -65,8 +65,8 @@
  },
  {
   "id": 3862,
-  "tr": "işlem memuru",
-  "en": "case worker",
+  "tr": "büro görevlisi",
+  "en": "clerk",
   "beispiel": "Der zuständige Sachbearbeiter prüft den Antrag.",
   "beispielTr": "İlgili işlem memuru başvuruyu inceliyor.",
   "beispielEn": "The responsible case worker is reviewing the application."
@@ -81,7 +81,7 @@
  },
  {
   "id": 3860,
-  "tr": "belge",
+  "tr": "onay belgesi",
   "en": "certificate",
   "beispiel": "Für die Anmeldung braucht man eine Bescheinigung der Uni.",
   "beispielTr": "Kayıt için üniversiteden bir belge gerekiyor.",
@@ -201,7 +201,7 @@
  },
  {
   "id": 3748,
-  "tr": "karıştırmak",
+  "tr": "göz gezdirmek",
   "en": "to browse",
   "beispiel": "Sie stöbert am liebsten in den Regalen des Buchladens.",
   "beispielTr": "En çok kitapçının raflarını karıştırmayı seviyor.",
@@ -297,7 +297,7 @@
  },
  {
   "id": 3739,
-  "tr": "bakım",
+  "tr": "bakım onarım",
   "en": "upkeep",
   "beispiel": "Die Instandhaltung des alten Hauses kostet viel Geld.",
   "beispielTr": "Eski evin bakımı çok paraya mal oluyor.",

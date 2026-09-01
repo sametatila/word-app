@@ -89,7 +89,7 @@
   },
   {
     "id": 438,
-    "tr": "şekerleme",
+    "tr": "şekerlemeler",
     "en": "sweets",
     "beispiel": "Am liebsten esse ich Süßigkeiten.",
     "beispielTr": "En çok şekerleme yemeyi severim.",
@@ -137,8 +137,8 @@
   },
   {
     "id": 749,
-    "tr": "partner",
-    "en": "partner",
+    "tr": "kadın partner",
+    "en": "female partner",
     "beispiel": "Ich komme mit meiner Partnerin.",
     "beispielTr": "Partnerimle birlikte geliyorum.",
     "beispielEn": "I'm coming with my partner."
@@ -177,7 +177,7 @@
   },
   {
     "id": 483,
-    "tr": "yürüyüş yapmak",
+    "tr": "doğa yürüyüşü yapmak",
     "en": "to hike",
     "beispiel": "Am Wochenende wandern wir in den Bergen.",
     "beispielTr": "Hafta sonu dağlarda yürüyüş yapıyoruz.",
@@ -186,7 +186,7 @@
   {
     "id": 654,
     "tr": "yabancı",
-    "en": "foreign",
+    "en": "unfamiliar",
     "beispiel": "Die Stadt ist mir noch fremd.",
     "beispielTr": "Şehir bana hâlâ yabancı.",
     "beispielEn": "The city is still foreign to me."
@@ -217,8 +217,8 @@
   },
   {
     "id": 591,
-    "tr": "form",
-    "en": "form",
+    "tr": "kâğıt",
+    "en": "sheet",
     "beispiel": "Bitte füllen Sie diesen Bogen aus.",
     "beispielTr": "Lütfen bu formu doldurun.",
     "beispielEn": "Please fill out this form."

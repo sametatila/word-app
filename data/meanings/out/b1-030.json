@@ -145,7 +145,7 @@
  },
  {
   "id": 1441,
-  "tr": "talep",
+  "tr": "çağrı",
   "en": "request",
   "beispiel": "Wir haben eine schriftliche Aufforderung zur Zahlung bekommen.",
   "beispielTr": "Yazılı bir ödeme talebi aldık.",
@@ -161,7 +161,7 @@
  },
  {
   "id": 1529,
-  "tr": "fiş",
+  "tr": "makbuz",
   "en": "receipt",
   "beispiel": "Bewahren Sie den Beleg auf, falls Sie umtauschen möchten.",
   "beispielTr": "Değişim yapmak isterseniz fişi saklayın.",
@@ -193,7 +193,7 @@
  },
  {
   "id": 1440,
-  "tr": "istemek",
+  "tr": "çağırmak",
   "en": "to ask",
   "beispiel": "Der Lehrer forderte mich auf, lauter zu sprechen.",
   "beispielTr": "Öğretmen benden daha yüksek sesle konuşmamı istedi.",
@@ -209,7 +209,7 @@
  },
  {
   "id": 1649,
-  "tr": "süslemek",
+  "tr": "dekore etmek",
   "en": "to decorate",
   "beispiel": "Wir haben den Saal für die Hochzeit dekoriert.",
   "beispielTr": "Salonu düğün için süsledik.",
@@ -377,7 +377,7 @@
  },
  {
   "id": 2353,
-  "tr": "hafif",
+  "tr": "yumuşak",
   "en": "mild",
   "beispiel": "Die Soße ist mild, du kannst sie ruhig probieren.",
   "beispielTr": "Sos hafif, rahatça deneyebilirsin.",
@@ -385,7 +385,7 @@
  },
  {
   "id": 3005,
-  "tr": "paketlemek",
+  "tr": "ambalajlamak",
   "en": "to package",
   "beispiel": "Die Gläser müssen gut verpackt werden.",
   "beispielTr": "Bardakların iyi paketlenmesi gerekiyor.",

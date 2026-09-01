@@ -25,7 +25,7 @@
   },
   {
     "id": 3002,
-    "tr": "tahmin etmek",
+    "tr": "sanmak",
     "en": "to suspect",
     "beispiel": "Ich vermute, dass sie den Termin vergessen hat.",
     "beispielTr": "Randevuyu unuttuğunu tahmin ediyorum.",
@@ -49,7 +49,7 @@
   },
   {
     "id": 2230,
-    "tr": "hasta",
+    "tr": "erkek hasta",
     "en": "sick man",
     "beispiel": "Der Kranke muss noch eine Woche im Bett bleiben.",
     "beispielTr": "Hastanın bir hafta daha yatakta kalması gerekiyor.",
@@ -161,7 +161,7 @@
   },
   {
     "id": 2602,
-    "tr": "salon",
+    "tr": "büyük salon",
     "en": "hall",
     "beispiel": "Für unsere Familienfeier haben wir einen kleinen Saal gemietet.",
     "beispielTr": "Aile kutlamamız için küçük bir salon kiraladık.",
@@ -186,7 +186,7 @@
   {
     "id": 1812,
     "tr": "beslemek",
-    "en": "to feed",
+    "en": "to nourish",
     "beispiel": "Die Mutter ernährt ihr Baby mit Muttermilch.",
     "beispielTr": "Anne bebeğini anne sütüyle besliyor.",
     "beispielEn": "The mother feeds her baby with breast milk."

@@ -361,7 +361,7 @@
   },
   {
     "id": 5591,
-    "tr": "kâr marjı",
+    "tr": "marj",
     "en": "margin",
     "beispiel": "Bei diesem Produkt ist die Marge erschreckend gering.",
     "beispielTr": "Bu üründe kâr marjı ürkütücü derecede düşük.",
@@ -393,7 +393,7 @@
   },
   {
     "id": 5595,
-    "tr": "ihracat",
+    "tr": "dışsatım",
     "en": "export",
     "beispiel": "Die Ausfuhr bestimmter Technologien unterliegt strengen Kontrollen.",
     "beispielTr": "Bazı teknolojilerin ihracatı sıkı denetim altında.",

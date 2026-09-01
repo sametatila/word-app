@@ -161,8 +161,8 @@
   },
   {
     "id": 5773,
-    "tr": "davranış kalıbı",
-    "en": "behavior pattern",
+    "tr": "eylem kalıbı",
+    "en": "action pattern",
     "beispiel": "In der Krise fiel er in alte Handlungsmuster zurück.",
     "beispielTr": "Krizde eski davranış kalıplarına geri döndü.",
     "beispielEn": "In the crisis he fell back into old behavior patterns."
@@ -329,7 +329,7 @@
   },
   {
     "id": 5794,
-    "tr": "eser",
+    "tr": "artefakt",
     "en": "artifact",
     "beispiel": "Das älteste Artefakt der Sammlung stammt aus einem Grab.",
     "beispielTr": "Koleksiyonun en eski eseri bir mezardan çıkmış.",

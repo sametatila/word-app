@@ -73,8 +73,8 @@
   },
   {
     "id": 2404,
-    "tr": "çünkü",
-    "en": "because",
+    "tr": "yani; çünkü",
+    "en": "namely; you see",
     "beispiel": "Ich muss leider gehen, ich habe nämlich noch einen Termin.",
     "beispielTr": "Maalesef gitmem gerek, çünkü başka bir randevum var.",
     "beispielEn": "I have to leave, because I still have an appointment."
@@ -193,8 +193,8 @@
   },
   {
     "id": 2757,
-    "tr": "koymak",
-    "en": "to put",
+    "tr": "sokmak",
+    "en": "to stick; to put",
     "beispiel": "Ich habe den Schlüssel in die Tasche gesteckt.",
     "beispielTr": "Anahtarı çantanın içine koydum.",
     "beispielEn": "I put the key into my bag."
@@ -337,7 +337,7 @@
   },
   {
     "id": 2540,
-    "tr": "tavsiye",
+    "tr": "öğüt",
     "en": "advice",
     "beispiel": "Können Sie mir einen guten Rat geben?",
     "beispielTr": "Bana iyi bir tavsiye verebilir misiniz?",

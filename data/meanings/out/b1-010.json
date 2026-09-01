@@ -74,7 +74,7 @@
  {
   "id": 1711,
   "tr": "net",
-  "en": "clear",
+  "en": "unambiguous",
   "beispiel": "Das Ergebnis der Wahl war völlig eindeutig.",
   "beispielTr": "Seçim sonucu tamamen netti.",
   "beispielEn": "The result of the election was completely clear."
@@ -122,7 +122,7 @@
  {
   "id": 1915,
   "tr": "yemek",
-  "en": "to feed",
+  "en": "to eat",
   "beispiel": "Hat der Hund schon etwas zu fressen bekommen?",
   "beispielTr": "Köpek yiyecek bir şey aldı mı?",
   "beispielEn": "Has the dog had something to eat yet?"
@@ -297,7 +297,7 @@
  },
  {
   "id": 2287,
-  "tr": "merdiven",
+  "tr": "el merdiveni",
   "en": "ladder",
   "beispiel": "Er stellte die Leiter an die Wand.",
   "beispielTr": "Merdiveni duvara dayadı.",

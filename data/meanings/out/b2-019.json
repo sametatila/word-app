@@ -9,7 +9,7 @@
   },
   {
     "id": 4544,
-    "tr": "şefkat",
+    "tr": "sevgi, ilgi",
     "en": "affection",
     "beispiel": "Alte Menschen brauchen mehr Zuwendung, als viele Angehörige glauben.",
     "beispielTr": "Yaşlılar birçok yakınının sandığından daha fazla şefkate ihtiyaç duyar.",
@@ -217,7 +217,7 @@
   },
   {
     "id": 4570,
-    "tr": "büyümek",
+    "tr": "yetişmek",
     "en": "to grow up",
     "beispiel": "Sie ist bei ihren Großeltern auf dem Land aufgewachsen.",
     "beispielTr": "Köyde büyükanne ve büyükbabasının yanında büyüdü.",
@@ -281,7 +281,7 @@
   },
   {
     "id": 4578,
-    "tr": "hoşgörülü",
+    "tr": "müsamahakâr",
     "en": "lenient",
     "beispiel": "Bei den Enkeln ist er viel nachsichtiger als früher bei den Kindern.",
     "beispielTr": "Torunlarına karşı eskiden çocuklarına olduğundan çok daha hoşgörülü.",
@@ -329,7 +329,7 @@
   },
   {
     "id": 4584,
-    "tr": "sokulgan",
+    "tr": "sosyal",
     "en": "sociable",
     "beispiel": "Ihr Mann ist eher still, sie dagegen sehr gesellig.",
     "beispielTr": "Kocası daha sessiz, o ise oldukça sokulgan.",

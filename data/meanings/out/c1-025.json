@@ -1,8 +1,8 @@
 [
   {
     "id": 6453,
-    "tr": "kaymak",
-    "en": "to slip",
+    "tr": "aşağı kaymak",
+    "en": "to slip off",
     "beispiel": "Beim Abstieg rutschte er auf dem nassen Fels ab.",
     "beispielTr": "İnişte ıslak kayanın üstünde ayağı kaydı.",
     "beispielEn": "On the way down he slipped on the wet rock."
@@ -49,7 +49,7 @@
   },
   {
     "id": 6459,
-    "tr": "yatıştırmak",
+    "tr": "gerginliği azaltmak",
     "en": "to de-escalate",
     "beispiel": "Der Beamte deeskalierte die Lage mit ruhiger Stimme.",
     "beispielTr": "Görevli, sakin sesiyle ortamı yatıştırdı.",

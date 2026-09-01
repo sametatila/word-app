@@ -2,7 +2,7 @@
   {
     "id": 221,
     "tr": "içten",
-    "en": "warm",
+    "en": "cordial",
     "beispiel": "Unsere Nachbarn haben uns herzlich begrüßt.",
     "beispielTr": "Komşularımız bizi içtenlikle karşıladı.",
     "beispielEn": "Our neighbors welcomed us warmly."
@@ -17,7 +17,7 @@
   },
   {
     "id": 324,
-    "tr": "getirmek",
+    "tr": "beraberinde getirmek",
     "en": "to bring along",
     "beispiel": "Ich bringe dir etwas aus Italien mit.",
     "beispielTr": "Sana İtalya'dan bir şey getireceğim.",
@@ -66,7 +66,7 @@
   {
     "id": 491,
     "tr": "uyandırmak",
-    "en": "to wake up",
+    "en": "to wake someone up",
     "beispiel": "Meine Mutter weckt mich jeden Morgen.",
     "beispielTr": "Annem beni her sabah uyandırıyor.",
     "beispielEn": "My mother wakes me up every morning."
@@ -345,8 +345,8 @@
   },
   {
     "id": 569,
-    "tr": "demiryolu",
-    "en": "railway",
+    "tr": "tren",
+    "en": "train",
     "beispiel": "Die Bahn ist oft unpünktlich.",
     "beispielTr": "Demiryolu sık sık gecikiyor.",
     "beispielEn": "The railway is often late."

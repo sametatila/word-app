@@ -9,7 +9,7 @@
  },
  {
   "id": 4194,
-  "tr": "fazla",
+  "tr": "fazlalık",
   "en": "surplus",
   "beispiel": "Die Gemeinde schloss das Jahr mit einem kleinen Überschuss ab.",
   "beispielTr": "Belediye yılı küçük bir fazlayla kapattı.",
@@ -57,8 +57,8 @@
  },
  {
   "id": 4200,
-  "tr": "uçurum",
-  "en": "gap",
+  "tr": "fark",
+  "en": "disparity",
   "beispiel": "Zwischen Stadt und Land besteht ein deutliches Gefälle bei den Löhnen.",
   "beispielTr": "Şehir ile kır arasında ücretlerde belirgin bir uçurum var.",
   "beispielEn": "There is a clear gap in wages between city and countryside."
@@ -73,7 +73,7 @@
  },
  {
   "id": 4202,
-  "tr": "kayıp",
+  "tr": "zarar",
   "en": "loss",
   "beispiel": "Der Sturm führte zu erheblichen Einbußen bei der Ernte.",
   "beispielTr": "Fırtına hasatta ciddi kayıplara yol açtı.",
@@ -97,7 +97,7 @@
  },
  {
   "id": 4205,
-  "tr": "kurs",
+  "tr": "eğitim programı",
   "en": "training course",
   "beispiel": "Der Lehrgang dauert sechs Wochen und endet mit einer Prüfung.",
   "beispielTr": "Kurs altı hafta sürüyor ve bir sınavla bitiyor.",
@@ -177,7 +177,7 @@
  },
  {
   "id": 4215,
-  "tr": "uygulama bağı",
+  "tr": "uygulamayla bağlantı",
   "en": "practical relevance",
   "beispiel": "Vielen Studiengängen fehlt es an echtem Praxisbezug.",
   "beispielTr": "Birçok bölümde gerçek bir uygulama bağı yok.",
@@ -281,8 +281,8 @@
  },
  {
   "id": 4228,
-  "tr": "çıraklık yeri",
-  "en": "apprenticeship position",
+  "tr": "meslek eğitimi yeri",
+  "en": "training position",
   "beispiel": "In der Region bleiben viele Ausbildungsplätze unbesetzt.",
   "beispielTr": "Bölgede birçok çıraklık yeri boş kalıyor.",
   "beispielEn": "In the region many apprenticeship positions remain unfilled."
@@ -377,7 +377,7 @@
  },
  {
   "id": 4240,
-  "tr": "yetenek",
+  "tr": "kabiliyet",
   "en": "gift",
   "beispiel": "Ihre musikalische Begabung zeigte sich schon im Kindergarten.",
   "beispielTr": "Müzik yeteneği daha anaokulunda belli oldu.",
@@ -385,7 +385,7 @@
  },
  {
   "id": 4241,
-  "tr": "diploma",
+  "tr": "mezuniyet belgesi",
   "en": "graduation certificate",
   "beispiel": "Das Abschlusszeugnis wird im Original bei der Bewerbung verlangt.",
   "beispielTr": "Başvuruda diplomanın aslı isteniyor.",

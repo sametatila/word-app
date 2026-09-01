@@ -177,7 +177,7 @@
   },
   {
     "id": 3064,
-    "tr": "yönetmelik",
+    "tr": "kural",
     "en": "regulation",
     "beispiel": "Die neue Vorschrift gilt ab dem ersten Januar.",
     "beispielTr": "Yeni yönetmelik bir Ocak'ta yürürlüğe giriyor.",
@@ -257,7 +257,7 @@
   },
   {
     "id": 1809,
-    "tr": "deneyim",
+    "tr": "yaşantı",
     "en": "experience",
     "beispiel": "Die Reise nach Island war ein tolles Erlebnis.",
     "beispielTr": "İzlanda yolculuğu harika bir deneyimdi.",
@@ -329,7 +329,7 @@
   },
   {
     "id": 3028,
-    "tr": "yönetim",
+    "tr": "idare",
     "en": "administration",
     "beispiel": "Bitte wenden Sie sich an die Verwaltung.",
     "beispielTr": "Lütfen yönetime başvurun.",
@@ -346,7 +346,7 @@
   {
     "id": 3060,
     "tr": "geçici",
-    "en": "temporary",
+    "en": "provisional",
     "beispiel": "Das ist nur eine vorläufige Entscheidung.",
     "beispielTr": "Bu sadece geçici bir karar.",
     "beispielEn": "This is only a temporary decision."

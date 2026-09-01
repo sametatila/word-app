@@ -97,7 +97,7 @@
  },
  {
   "id": 2332,
-  "tr": "birkaç",
+  "tr": "birden fazla",
   "en": "several",
   "beispiel": "Ich habe mehrere Bewerbungen geschrieben, aber keine Antwort bekommen.",
   "beispielTr": "Birkaç iş başvurusu yaptım ama hiç cevap gelmedi.",
@@ -217,7 +217,7 @@
  },
  {
   "id": 2136,
-  "tr": "her zaman",
+  "tr": "her an",
   "en": "anytime",
   "beispiel": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.",
   "beispielTr": "Yardıma ihtiyacın olursa beni her zaman arayabilirsin.",
@@ -265,7 +265,7 @@
  },
  {
   "id": 2129,
-  "tr": "bu arada",
+  "tr": "bu sırada",
   "en": "meanwhile",
   "beispiel": "Ich koche, du kannst inzwischen den Tisch decken.",
   "beispielTr": "Ben yemek yapıyorum, sen bu arada masayı hazırla.",
@@ -369,7 +369,7 @@
  },
  {
   "id": 2262,
-  "tr": "inmek",
+  "tr": "iniş yapmak",
   "en": "to land",
   "beispiel": "Unser Flugzeug ist pünktlich in Hamburg gelandet.",
   "beispielTr": "Uçağımız Hamburg'a zamanında indi.",

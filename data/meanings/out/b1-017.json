@@ -49,7 +49,7 @@
   },
   {
     "id": 2705,
-    "tr": "bu yüzden",
+    "tr": "öyle ki",
     "en": "so that",
     "beispiel": "Es regnete stark, sodass wir zu Hause blieben.",
     "beispielTr": "Şiddetli yağmur yağdı, bu yüzden evde kaldık.",
@@ -298,7 +298,7 @@
   {
     "id": 1404,
     "tr": "ek",
-    "en": "attachment",
+    "en": "enclosure",
     "beispiel": "In der Anlage finden Sie meinen Lebenslauf.",
     "beispielTr": "Ekte özgeçmişimi bulabilirsiniz.",
     "beispielEn": "You will find my resume in the attachment."

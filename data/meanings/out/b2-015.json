@@ -25,7 +25,7 @@
  },
  {
   "id": 4346,
-  "tr": "izlemek",
+  "tr": "gözetlemek",
   "en": "to monitor",
   "beispiel": "Kameras überwachen den Eingang rund um die Uhr.",
   "beispielTr": "Kameralar girişi gece gündüz izliyor.",
@@ -297,7 +297,7 @@
  },
  {
   "id": 4380,
-  "tr": "damga",
+  "tr": "mühür",
   "en": "seal",
   "beispiel": "Das grüne Siegel sagt allein noch nichts über die Tierhaltung aus.",
   "beispielTr": "Yeşil damga tek başına hayvancılık hakkında bir şey söylemiyor.",
@@ -329,7 +329,7 @@
  },
  {
   "id": 4384,
-  "tr": "zararlı böcek",
+  "tr": "zararlı",
   "en": "pest",
   "beispiel": "Gegen diesen Schädling hilft nur eine frühe Behandlung.",
   "beispielTr": "Bu zararlı böceğe karşı sadece erken ilaçlama işe yarar.",

@@ -9,7 +9,7 @@
   },
   {
     "id": 1985,
-    "tr": "olmak",
+    "tr": "meydana gelmek",
     "en": "to happen",
     "beispiel": "Niemand weiß genau, was in jener Nacht geschehen ist.",
     "beispielTr": "O gece tam olarak ne olduğunu kimse bilmiyor.",
@@ -41,7 +41,7 @@
   },
   {
     "id": 2828,
-    "tr": "gerçekten",
+    "tr": "gerçekten de",
     "en": "actually",
     "beispiel": "Die Hose ist tatsächlich zu klein, obwohl sie so groß aussieht.",
     "beispielTr": "Pantolon büyük görünse de gerçekten çok küçük.",
@@ -57,7 +57,7 @@
   },
   {
     "id": 1517,
-    "tr": "saklamak",
+    "tr": "alıkoymak",
     "en": "to keep",
     "beispiel": "Darf ich die Zeitschrift behalten?",
     "beispielTr": "Dergi bende kalabilir mi?",
@@ -89,7 +89,7 @@
   },
   {
     "id": 2438,
-    "tr": "rağmen",
+    "tr": "olmasına rağmen",
     "en": "although",
     "beispiel": "Obwohl meine Kollegin krank ist, geht sie arbeiten.",
     "beispielTr": "İş arkadaşım hasta olmasına rağmen işe gidiyor.",

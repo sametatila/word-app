@@ -121,8 +121,8 @@
   },
   {
     "id": 910,
-    "tr": "başvuru",
-    "en": "application",
+    "tr": "iş başvurusu",
+    "en": "job application",
     "beispiel": "Kannst du mir bei meiner Bewerbung helfen?",
     "beispielTr": "Başvurumda bana yardım edebilir misin?",
     "beispielEn": "Can you help me with my application?"
@@ -145,7 +145,7 @@
   },
   {
     "id": 1075,
-    "tr": "bağlantı",
+    "tr": "link",
     "en": "link",
     "beispiel": "Ich schicke dir den Link per E-Mail.",
     "beispielTr": "Sana bağlantıyı e-postayla göndereceğim.",
@@ -218,7 +218,7 @@
   {
     "id": 1230,
     "tr": "hap",
-    "en": "pill",
+    "en": "tablet",
     "beispiel": "Du sollst am Abend zwei Tabletten nehmen.",
     "beispielTr": "Akşam iki hap alman gerekiyor.",
     "beispielEn": "You should take two pills in the evening."

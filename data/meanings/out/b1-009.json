@@ -49,8 +49,8 @@
  },
  {
   "id": 1948,
-  "tr": "alan",
-  "en": "field",
+  "tr": "bölge",
+  "en": "region",
   "beispiel": "Auf dem Gebiet der Medizin gibt es große Fortschritte.",
   "beispielTr": "Tıp alanında büyük ilerlemeler var.",
   "beispielEn": "There is great progress in the field of medicine."
@@ -257,7 +257,7 @@
  },
  {
   "id": 1465,
-  "tr": "harika",
+  "tr": "mükemmel",
   "en": "excellent",
   "beispiel": "Das Essen im Hotel war wirklich ausgezeichnet.",
   "beispielTr": "Oteldeki yemekler gerçekten harikaydı.",

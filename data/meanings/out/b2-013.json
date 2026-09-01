@@ -113,8 +113,8 @@
   },
   {
     "id": 4257,
-    "tr": "öğrenmek",
-    "en": "to learn",
+    "tr": "öğrenip edinmek",
+    "en": "to acquire",
     "beispiel": "Sie hat ihren Beruf in einem kleinen Betrieb erlernt.",
     "beispielTr": "Mesleğini küçük bir işletmede öğrendi.",
     "beispielEn": "She learned her trade at a small company."
@@ -137,7 +137,7 @@
   },
   {
     "id": 4260,
-    "tr": "açıklamak",
+    "tr": "ayrıntılı açıklamak",
     "en": "to explain in detail",
     "beispiel": "Bitte erläutern Sie Ihre Methode in wenigen Sätzen.",
     "beispielTr": "Lütfen yönteminizi birkaç cümleyle açıklayın.",
@@ -225,8 +225,8 @@
   },
   {
     "id": 4271,
-    "tr": "alıştırma yapmak",
-    "en": "to practice",
+    "tr": "prova etmek",
+    "en": "to rehearse",
     "beispiel": "Die Klasse hat den Dialog für die Prüfung eingeübt.",
     "beispielTr": "Sınıf sınav için diyaloğun alıştırmasını yaptı.",
     "beispielEn": "The class practiced the dialogue for the exam."

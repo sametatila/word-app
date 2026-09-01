@@ -17,7 +17,7 @@
  },
  {
   "id": 3649,
-  "tr": "temsil etmek",
+  "tr": "cisimleştirmek",
   "en": "to embody",
   "beispiel": "Der Gründer verkörpert für viele den amerikanischen Traum.",
   "beispielTr": "Kurucu, çoğu kişi için Amerikan rüyasını temsil ediyor.",
@@ -89,7 +89,7 @@
  },
  {
   "id": 3689,
-  "tr": "kabul etmek",
+  "tr": "itiraf etmek",
   "en": "to concede",
   "beispiel": "Der Minister räumte Fehler in der Planung ein.",
   "beispielTr": "Bakan, planlamadaki hataları kabul etti.",
@@ -153,7 +153,7 @@
  },
  {
   "id": 3471,
-  "tr": "polemik",
+  "tr": "tartışma",
   "en": "controversy",
   "beispiel": "Die Kontroverse zwischen den beiden Autoren dauert seit Jahren.",
   "beispielTr": "İki yazar arasındaki polemik yıllardır sürüyor.",
@@ -202,14 +202,14 @@
  {
   "id": 4016,
   "tr": "açıkça göstermek",
-  "en": "to illustrate",
+  "en": "to make clear",
   "beispiel": "Die Grafik verdeutlicht den Rückgang der Geburtenrate.",
   "beispielTr": "Grafik, doğum oranındaki düşüşü açıkça gösteriyor.",
   "beispielEn": "The chart clearly shows the drop in births."
  },
  {
   "id": 3717,
-  "tr": "makul",
+  "tr": "anlaşılır",
   "en": "understandable",
   "beispiel": "Seine Entscheidung ist angesichts der Umstände nachvollziehbar.",
   "beispielTr": "Koşullar göz önüne alınınca kararı gayet makul.",
@@ -226,7 +226,7 @@
  {
   "id": 3574,
   "tr": "şerh",
-  "en": "memo",
+  "en": "note",
   "beispiel": "Der Sachbearbeiter fügte der Akte einen Vermerk hinzu.",
   "beispielTr": "Memur, dosyaya bir şerh düştü.",
   "beispielEn": "The clerk added a memo to the file."
@@ -329,7 +329,7 @@
  },
  {
   "id": 3543,
-  "tr": "sorumluluk",
+  "tr": "yasal sorumluluk",
   "en": "liability",
   "beispiel": "Die Haftung des Herstellers ist gesetzlich geregelt.",
   "beispielTr": "Üreticinin sorumluluğu yasayla düzenlenmiştir.",
@@ -353,7 +353,7 @@
  },
  {
   "id": 3662,
-  "tr": "tartışmalı",
+  "tr": "ihtilaflı",
   "en": "controversial",
   "beispiel": "Der Vorschlag bleibt in der Partei kontrovers.",
   "beispielTr": "Öneri parti içinde hâlâ tartışmalı.",
@@ -385,7 +385,7 @@
  },
  {
   "id": 3725,
-  "tr": "ağır",
+  "tr": "vahim",
   "en": "grave",
   "beispiel": "Der Vorfall hatte schwerwiegende Folgen für alle Beteiligten.",
   "beispielTr": "Olay, ilgili herkes için ağır sonuçlar doğurdu.",

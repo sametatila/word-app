@@ -81,7 +81,7 @@
   },
   {
     "id": 525,
-    "tr": "çok",
+    "tr": "fazla",
     "en": "too",
     "beispiel": "Die Hose ist mir zu groß.",
     "beispielTr": "Pantolon bana çok büyük.",
@@ -185,7 +185,7 @@
   },
   {
     "id": 477,
-    "tr": "-in",
+    "tr": "-in; -den",
     "en": "of",
     "beispiel": "Das ist das Fahrrad von meinem Bruder.",
     "beispielTr": "Bu kardeşimin bisikleti.",
@@ -225,8 +225,8 @@
   },
   {
     "id": 14,
-    "tr": "yanında",
-    "en": "by",
+    "tr": "-de; kenarında",
+    "en": "at",
     "beispiel": "Jemand steht an der Tür.",
     "beispielTr": "Kapının yanında biri duruyor.",
     "beispielEn": "Someone is standing by the door."
@@ -281,7 +281,7 @@
   },
   {
     "id": 36,
-    "tr": "de",
+    "tr": "da; ayrıca",
     "en": "also",
     "beispiel": "Ich möchte auch mitspielen.",
     "beispielTr": "Ben de oynamak istiyorum.",
@@ -337,7 +337,7 @@
   },
   {
     "id": 466,
-    "tr": "-de",
+    "tr": "saat …-de; için",
     "en": "at",
     "beispiel": "Der Zug kommt um sieben Uhr.",
     "beispielTr": "Tren saat yedide geliyor.",
@@ -369,7 +369,7 @@
   },
   {
     "id": 334,
-    "tr": "-e",
+    "tr": "-e doğru; sonra",
     "en": "to",
     "beispiel": "Wir fliegen morgen nach Italien.",
     "beispielTr": "Yarın İtalya'ya uçuyoruz.",
@@ -393,7 +393,7 @@
   },
   {
     "id": 498,
-    "tr": "olmak",
+    "tr": "olmak; haline gelmek",
     "en": "to become",
     "beispiel": "Ich möchte Architekt werden.",
     "beispielTr": "Mimar olmak istiyorum.",

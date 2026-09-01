@@ -81,7 +81,7 @@
   },
   {
     "id": 7163,
-    "tr": "özellik",
+    "tr": "nitelik",
     "en": "characteristic",
     "beispiel": "Alter und Bildungsstand wurden als zentrale Merkmale erfasst.",
     "beispielTr": "Yaş ve eğitim düzeyi temel özellikler olarak kaydedildi.",
@@ -89,7 +89,7 @@
   },
   {
     "id": 7164,
-    "tr": "görünüm biçimi",
+    "tr": "ortaya çıkış biçimi",
     "en": "form",
     "beispiel": "Die Krankheit tritt bei Kindern in milderer Ausprägung auf.",
     "beispielTr": "Hastalık çocuklarda daha hafif bir biçimde ortaya çıkıyor.",
@@ -385,7 +385,7 @@
   },
   {
     "id": 7201,
-    "tr": "güçlendirmek",
+    "tr": "pekiştirmek",
     "en": "to substantiate",
     "beispiel": "Neuere Daten erhärten den Verdacht auf einen systematischen Fehler.",
     "beispielTr": "Yeni veriler, sistematik bir hata şüphesini güçlendiriyor.",
@@ -393,8 +393,8 @@
   },
   {
     "id": 7202,
-    "tr": "temsil etmek",
-    "en": "to represent",
+    "tr": "yansıtmak",
+    "en": "to depict",
     "beispiel": "Der Index bildet die tatsächliche Belastung nur unvollständig ab.",
     "beispielTr": "Endeks, gerçek yükü ancak eksik biçimde temsil ediyor.",
     "beispielEn": "The index represents the actual burden only incompletely."

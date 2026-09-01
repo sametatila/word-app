@@ -33,7 +33,7 @@
  },
  {
   "id": 4698,
-  "tr": "şikâyet",
+  "tr": "reklamasyon",
   "en": "complaint",
   "beispiel": "Die Reklamation betraf eine ganze Lieferung fehlerhafter Teile.",
   "beispielTr": "Şikâyet, hatalı parçalardan oluşan bütün bir sevkiyatla ilgiliydi.",
@@ -41,8 +41,8 @@
  },
  {
   "id": 4699,
-  "tr": "arıza",
-  "en": "failure",
+  "tr": "kesinti",
+  "en": "outage",
   "beispiel": "Der Ausfall der Kühlung legte die Produktion einen Tag lahm.",
   "beispielTr": "Soğutmanın arızası üretimi bir gün felç etti.",
   "beispielEn": "The failure of the cooling shut down production for a day."
@@ -105,7 +105,7 @@
  },
  {
   "id": 4707,
-  "tr": "takmak",
+  "tr": "monte etmek",
   "en": "to install",
   "beispiel": "Der Techniker baut morgen einen stärkeren Motor ein.",
   "beispielTr": "Teknisyen yarın daha güçlü bir motor takacak.",
@@ -266,7 +266,7 @@
  {
   "id": 4727,
   "tr": "tekniğine uygun",
-  "en": "professional",
+  "en": "proper",
   "beispiel": "Altöl muss fachgerecht entsorgt werden, nicht einfach ausgeschüttet.",
   "beispielTr": "Atık yağ tekniğine uygun şekilde imha edilmeli, öylece dökülmemeli.",
   "beispielEn": "Waste oil must be disposed of professionally, not simply poured away."
@@ -314,7 +314,7 @@
  {
   "id": 4733,
   "tr": "hareket kabiliyeti",
-  "en": "flexibility",
+  "en": "mobility",
   "beispiel": "Im Alter nimmt die Beweglichkeit der Gelenke deutlich ab.",
   "beispielTr": "Yaşlandıkça eklemlerin hareket kabiliyeti belirgin biçimde azalır.",
   "beispielEn": "With age the flexibility of the joints clearly decreases."

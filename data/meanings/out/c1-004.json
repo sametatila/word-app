@@ -9,7 +9,7 @@
  },
  {
   "id": 3546,
-  "tr": "durum",
+  "tr": "vakıa",
   "en": "state of affairs",
   "beispiel": "Bitte schildern Sie den Sachverhalt aus Ihrer Sicht.",
   "beispielTr": "Lütfen durumu kendi bakış açınızdan anlatın.",
@@ -41,8 +41,8 @@
  },
  {
   "id": 3641,
-  "tr": "gelenek",
-  "en": "tradition",
+  "tr": "aktarım",
+  "en": "lore",
   "beispiel": "Die mündliche Überlieferung hielt die alten Lieder lebendig.",
   "beispielTr": "Sözlü gelenek eski şarkıları yaşattı.",
   "beispielEn": "Oral tradition kept the old songs alive."
@@ -105,8 +105,8 @@
  },
  {
   "id": 3702,
-  "tr": "önem",
-  "en": "importance",
+  "tr": "ağırlık",
+  "en": "significance",
   "beispiel": "Die Tragweite seiner Entscheidung erkannte er zu spät.",
   "beispielTr": "Kararının önemini çok geç fark etti.",
   "beispielEn": "He realized the importance of his decision too late."
@@ -201,7 +201,7 @@
  },
  {
   "id": 3480,
-  "tr": "ayrıştırma",
+  "tr": "ayrım",
   "en": "differentiation",
   "beispiel": "Hier fehlt eine klare Differenzierung zwischen beiden Begriffen.",
   "beispielTr": "Burada iki kavram arasında net bir ayrıştırma eksik.",
@@ -281,7 +281,7 @@
  },
  {
   "id": 3491,
-  "tr": "varsayım",
+  "tr": "postülat",
   "en": "postulate",
   "beispiel": "Dieses Postulat blieb jahrzehntelang unbestritten.",
   "beispielTr": "Bu varsayım onlarca yıl tartışılmadan kabul gördü.",
@@ -361,7 +361,7 @@
  },
  {
   "id": 3503,
-  "tr": "somutlaştırmak",
+  "tr": "gözler önüne sermek",
   "en": "to illustrate",
   "beispiel": "Eine Grafik veranschaulicht die Entwicklung der Preise.",
   "beispielTr": "Bir grafik, fiyatların gelişimini somutlaştırıyor.",

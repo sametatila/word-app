@@ -25,7 +25,7 @@
   },
   {
     "id": 65,
-    "tr": "yanında",
+    "tr": "yanında; -de",
     "en": "at",
     "beispiel": "Ich schlafe heute bei meiner Oma.",
     "beispielTr": "Bugün anneannemin yanında kalıyorum.",
@@ -193,8 +193,8 @@
   },
   {
     "id": 463,
-    "tr": "hakkında",
-    "en": "about",
+    "tr": "üstünde; hakkında",
+    "en": "over; about",
     "beispiel": "Wir sprechen über das Wetter.",
     "beispielTr": "Hava durumu hakkında konuşuyoruz.",
     "beispielEn": "We're talking about the weather."

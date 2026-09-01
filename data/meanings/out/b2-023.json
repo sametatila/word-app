@@ -58,7 +58,7 @@
  {
   "id": 4751,
   "tr": "keyif verici madde",
-  "en": "stimulant",
+  "en": "indulgence",
   "beispiel": "Kaffee und Alkohol gelten als Genussmittel, nicht als Nahrung.",
   "beispielTr": "Kahve ve alkol besin değil, keyif verici madde sayılır.",
   "beispielEn": "Coffee and alcohol count as stimulants, not as food."
@@ -81,7 +81,7 @@
  },
  {
   "id": 4754,
-  "tr": "şekerleme",
+  "tr": "kestirme",
   "en": "nap",
   "beispiel": "Ein kurzes Nickerchen nach dem Mittagessen macht erstaunlich wach.",
   "beispielTr": "Öğle yemeğinden sonra kısa bir şekerleme insanı şaşırtıcı derecede açar.",
@@ -89,8 +89,8 @@
  },
  {
   "id": 4755,
-  "tr": "performans",
-  "en": "performance",
+  "tr": "verimlilik",
+  "en": "efficiency",
   "beispiel": "Am Nachmittag sinkt die geistige Leistungsfähigkeit bei vielen Menschen.",
   "beispielTr": "Öğleden sonra birçok insanda zihinsel performans düşer.",
   "beispielEn": "In the afternoon mental performance drops for many people."
@@ -177,7 +177,7 @@
  },
  {
   "id": 4766,
-  "tr": "denge",
+  "tr": "dengeleyici",
   "en": "counterbalance",
   "beispiel": "Schwimmen ist für ihn der perfekte Ausgleich zum Bürojob.",
   "beispielTr": "Yüzmek onun için ofis işinin mükemmel dengeleyicisi.",

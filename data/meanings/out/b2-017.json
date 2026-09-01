@@ -73,13 +73,12 @@
  },
  {
   "id": 4452,
-  "tr": "ödeme gücü",
+  "tr": "kredi değerliliği",
   "en": "creditworthiness",
   "beispiel": "Vor der Vergabe prüft die Bank sorgfältig die Bonität des Kunden.",
   "beispielTr": "Banka kredi vermeden önce müşterinin ödeme gücünü dikkatle inceliyor.",
   "beispielEn": "Before granting the loan, the bank carefully checks the customer's creditworthiness."
- }
-,
+ },
  {
   "id": 4453,
   "tr": "ipotek",
@@ -159,8 +158,7 @@
   "beispiel": "Wegen Steuerhinterziehung wurde der Unternehmer zu einer Geldstrafe verurteilt.",
   "beispielTr": "İş insanı vergi kaçırmaktan para cezasına çarptırıldı.",
   "beispielEn": "The entrepreneur was fined for tax evasion."
- }
-,
+ },
  {
   "id": 4463,
   "tr": "sözleşme süresi",
@@ -219,7 +217,7 @@
  },
  {
   "id": 4470,
-  "tr": "destek",
+  "tr": "sübvansiyon",
   "en": "subsidy",
   "beispiel": "Für die neue Heizung gibt es einen staatlichen Zuschuss.",
   "beispielTr": "Yeni kalorifer için devlet desteği veriliyor.",
@@ -227,7 +225,7 @@
  },
  {
   "id": 4471,
-  "tr": "tazminat",
+  "tr": "zarar tazminatı",
   "en": "damages",
   "beispiel": "Der Mieter fordert Schadenersatz für die beschädigten Möbel.",
   "beispielTr": "Kiracı zarar gören mobilyalar için tazminat talep ediyor.",
@@ -240,8 +238,7 @@
   "beispiel": "Der Antragsteller muss seine Einkünfte der letzten drei Monate nachweisen.",
   "beispielTr": "Başvuru sahibi son üç aylık gelirini belgelemek zorunda.",
   "beispielEn": "The applicant must prove his income for the last three months."
- }
-,
+ },
  {
   "id": 4473,
   "tr": "komisyon",
@@ -308,7 +305,7 @@
  },
  {
   "id": 4481,
-  "tr": "kapatmak",
+  "tr": "itfa etmek",
   "en": "to pay off",
   "beispiel": "In zwölf Jahren hatte das Paar den gesamten Kredit getilgt.",
   "beispielTr": "Çift on iki yılda kredinin tamamını kapattı.",
@@ -321,11 +318,10 @@
   "beispiel": "Der Beitrag wird jeweils zum Ersten des Monats abgebucht.",
   "beispielTr": "Aidat her ayın birinde hesaptan çekiliyor.",
   "beispielEn": "The fee is debited on the first of each month."
- }
-,
+ },
  {
   "id": 4483,
-  "tr": "artırmak",
+  "tr": "takviye etmek",
   "en": "to top up",
   "beispiel": "Die Regierung will die Zuschüsse für Familien deutlich aufstocken.",
   "beispielTr": "Hükümet ailelere verilen destekleri belirgin biçimde artırmak istiyor.",
@@ -341,7 +337,7 @@
  },
  {
   "id": 4485,
-  "tr": "harcamak",
+  "tr": "sarf etmek",
   "en": "to expend",
   "beispiel": "Für die Sanierung mussten sie erhebliche Mittel aufwenden.",
   "beispielTr": "Tadilat için hatırı sayılır bir kaynak harcamak zorunda kaldılar.",
@@ -357,7 +353,7 @@
  },
  {
   "id": 4487,
-  "tr": "ödemek",
+  "tr": "kapatmak",
   "en": "to settle",
   "beispiel": "Bitte begleichen Sie die offene Rechnung bis kommenden Freitag.",
   "beispielTr": "Lütfen ödenmemiş faturayı önümüzdeki cumaya kadar ödeyin.",
@@ -397,7 +393,7 @@
  },
  {
   "id": 4492,
-  "tr": "dağıtmak",
+  "tr": "saçmak",
   "en": "to spread",
   "beispiel": "Wer sein Risiko streut, verliert bei einem Kurssturz weniger.",
   "beispielTr": "Riskini dağıtan kişi ani düşüşte daha az kaybeder.",

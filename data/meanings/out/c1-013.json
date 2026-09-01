@@ -121,8 +121,8 @@
  },
  {
   "id": 5868,
-  "tr": "ödüllendirmek",
-  "en": "to reward",
+  "tr": "takdir etmek",
+  "en": "to recognize",
   "beispiel": "Niemand hat ihre Mehrarbeit am Wochenende honoriert.",
   "beispielTr": "Hafta sonundaki fazla mesaisini kimse ödüllendirmedi.",
   "beispielEn": "Nobody rewarded her extra work on the weekend."
@@ -153,7 +153,7 @@
  },
  {
   "id": 5872,
-  "tr": "örtbas etmek",
+  "tr": "perdelemek",
   "en": "to obscure",
   "beispiel": "Die schönen Zahlen verschleiern den Zustand der Werkstatt.",
   "beispielTr": "Güzel rakamlar atölyenin gerçek durumunu örtbas ediyor.",
@@ -185,8 +185,8 @@
  },
  {
   "id": 5876,
-  "tr": "dış kaynağa vermek",
-  "en": "to outsource",
+  "tr": "bünyeden ayırmak",
+  "en": "to spin off",
   "beispiel": "Die Klinik hat die Reinigung an eine Fremdfirma ausgegliedert.",
   "beispielTr": "Klinik, temizlik işini dışarıdan bir firmaya verdi.",
   "beispielEn": "The clinic outsourced the cleaning to an outside company."
@@ -249,7 +249,7 @@
  },
  {
   "id": 5884,
-  "tr": "katı",
+  "tr": "esnemez",
   "en": "rigid",
   "beispiel": "Der Zeitplan ist zu starr für spontane Änderungen.",
   "beispielTr": "Program ani değişiklikler için fazla katı.",

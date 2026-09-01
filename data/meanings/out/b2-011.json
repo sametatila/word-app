@@ -1,15 +1,15 @@
 [
   {
     "id": 4143,
-    "tr": "yetersiz",
-    "en": "inadequate",
+    "tr": "kusurlu",
+    "en": "deficient",
     "beispiel": "Seine Vorbereitung auf die Prüfung war mangelhaft.",
     "beispielTr": "Sınava hazırlığı yetersizdi.",
     "beispielEn": "His preparation for the exam was inadequate."
   },
   {
     "id": 4144,
-    "tr": "olağanüstü",
+    "tr": "mükemmel",
     "en": "outstanding",
     "beispiel": "Der Koch hat gestern ein hervorragendes Menü serviert.",
     "beispielTr": "Aşçı dün olağanüstü bir menü sundu.",
@@ -26,7 +26,7 @@
   {
     "id": 4146,
     "tr": "çeşitli",
-    "en": "varied",
+    "en": "diverse",
     "beispiel": "Die Aufgaben in diesem Beruf sind sehr vielfältig.",
     "beispielTr": "Bu meslekteki görevler çok çeşitli.",
     "beispielEn": "The tasks in this job are very varied."
@@ -73,7 +73,7 @@
   },
   {
     "id": 4152,
-    "tr": "sınırlı",
+    "tr": "idare edilebilir",
     "en": "manageable",
     "beispiel": "Der finanzielle Schaden blieb bislang überschaubar.",
     "beispielTr": "Mali zarar şimdilik sınırlı kaldı.",
@@ -153,7 +153,7 @@
   },
   {
     "id": 4162,
-    "tr": "sertleşmek",
+    "tr": "şiddetlenmek",
     "en": "to intensify",
     "beispiel": "Der Wettbewerb in der Branche hat sich deutlich verschärft.",
     "beispielTr": "Sektördeki rekabet belirgin biçimde sertleşti.",
@@ -321,7 +321,7 @@
   },
   {
     "id": 4183,
-    "tr": "güçlendirmek",
+    "tr": "takviye etmek",
     "en": "to reinforce",
     "beispiel": "Die Mauer wurde mit Stahl verstärkt.",
     "beispielTr": "Duvar çelikle güçlendirildi.",
@@ -345,8 +345,8 @@
   },
   {
     "id": 4186,
-    "tr": "belirlemek",
-    "en": "to determine",
+    "tr": "tespit etmek",
+    "en": "to ascertain",
     "beispiel": "Die Polizei konnte den Halter des Wagens ermitteln.",
     "beispielTr": "Polis aracın sahibini belirleyebildi.",
     "beispielEn": "The police were able to determine the owner of the car."

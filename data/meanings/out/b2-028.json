@@ -9,7 +9,7 @@
   },
   {
     "id": 4996,
-    "tr": "oturma izni",
+    "tr": "oturma statüsü",
     "en": "residence title",
     "beispiel": "Ohne gültigen Aufenthaltstitel darfst du hier nicht arbeiten.",
     "beispielTr": "Geçerli bir oturma izni olmadan burada çalışamazsın.",
@@ -345,7 +345,7 @@
   },
   {
     "id": 5038,
-    "tr": "göç",
+    "tr": "içe göç",
     "en": "immigration",
     "beispiel": "Die Wirtschaft ist auf gezielte Zuwanderung dringend angewiesen.",
     "beispielTr": "Ekonominin planlı göçe acilen ihtiyacı var.",

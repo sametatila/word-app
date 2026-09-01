@@ -33,7 +33,7 @@
  },
  {
   "id": 165,
-  "tr": "boş",
+  "tr": "özgür; boş",
   "en": "free",
   "beispiel": "Ist dieser Platz noch frei?",
   "beispielTr": "Bu yer hâlâ boş mu?",
@@ -257,7 +257,7 @@
  },
  {
   "id": 801,
-  "tr": "iş",
+  "tr": "pozisyon",
   "en": "position",
   "beispiel": "Ich habe eine neue Stelle gefunden.",
   "beispielTr": "Yeni bir iş buldum.",
@@ -313,7 +313,7 @@
  },
  {
   "id": 169,
-  "tr": "memnun",
+  "tr": "sevinçli",
   "en": "glad",
   "beispiel": "Ich bin froh über meine neue Wohnung.",
   "beispielTr": "Yeni evimden çok memnunum.",

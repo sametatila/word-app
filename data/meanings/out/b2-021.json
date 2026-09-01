@@ -1,7 +1,7 @@
 [
   {
     "id": 4644,
-    "tr": "dengelemek",
+    "tr": "istikrara kavuşturmak",
     "en": "to stabilize",
     "beispiel": "Die Regierung will die Preise mit Subventionen stabilisieren.",
     "beispielTr": "Hükümet fiyatları desteklerle dengelemek istiyor.",
@@ -129,7 +129,7 @@
   },
   {
     "id": 4660,
-    "tr": "bulaşıcı",
+    "tr": "bulaşabilir",
     "en": "transmissible",
     "beispiel": "Diese Krankheit ist nur durch direkten Kontakt übertragbar.",
     "beispielTr": "Bu hastalık sadece doğrudan temasla bulaşıyor.",
@@ -257,7 +257,7 @@
   },
   {
     "id": 4676,
-    "tr": "stok",
+    "tr": "stok mevcudu",
     "en": "inventory",
     "beispiel": "Der Lagerbestand reicht höchstens noch für zwei Wochen.",
     "beispielTr": "Stok en fazla iki hafta daha yeter.",
@@ -345,7 +345,7 @@
   },
   {
     "id": 4687,
-    "tr": "kullanım kılavuzu",
+    "tr": "işletme kılavuzu",
     "en": "operating manual",
     "beispiel": "Lesen Sie die Betriebsanleitung, bevor Sie die Maschine einschalten.",
     "beispielTr": "Makineyi çalıştırmadan önce kullanım kılavuzunu okuyun.",

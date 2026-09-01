@@ -25,8 +25,8 @@
  },
  {
   "id": 1501,
-  "tr": "talep",
-  "en": "demand",
+  "tr": "ihtiyaç",
+  "en": "need",
   "beispiel": "An diesem Produkt besteht großer Bedarf.",
   "beispielTr": "Bu ürüne büyük talep var.",
   "beispielEn": "There is a great demand for this product."
@@ -145,7 +145,7 @@
  },
  {
   "id": 2797,
-  "tr": "araştırma",
+  "tr": "çalışma",
   "en": "study",
   "beispiel": "Eine neue Studie zeigt, dass die Umweltverschmutzung zunimmt.",
   "beispielTr": "Yeni bir araştırma çevre kirliliğinin arttığını gösteriyor.",
@@ -193,15 +193,15 @@
  },
  {
   "id": 3068,
-  "tr": "sunum",
-  "en": "presentation",
+  "tr": "konuşma",
+  "en": "talk",
   "beispiel": "Ihr Vortrag war sehr interessant.",
   "beispielTr": "Sunumunuz çok ilginçti.",
   "beispielEn": "Your presentation was very interesting."
  },
  {
   "id": 1401,
-  "tr": "korkak",
+  "tr": "ürkek",
   "en": "fearful",
   "beispiel": "Meine Mutter ist etwas ängstlich und geht selten allein aus.",
   "beispielTr": "Annem biraz korkaktır ve nadiren yalnız dışarı çıkar.",

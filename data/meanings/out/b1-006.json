@@ -9,7 +9,7 @@
  },
  {
   "id": 3143,
-  "tr": "zaman",
+  "tr": "an",
   "en": "point in time",
   "beispiel": "Das ist gerade kein guter Zeitpunkt für ein Gespräch.",
   "beispielTr": "Şu an konuşmak için uygun bir zaman değil.",
@@ -41,7 +41,7 @@
  },
  {
   "id": 3131,
-  "tr": "istemek",
+  "tr": "dilemek",
   "en": "to wish for",
   "beispiel": "Was wünschst du dir zum Geburtstag?",
   "beispielTr": "Doğum günün için ne istiyorsun?",
@@ -153,7 +153,7 @@
  },
  {
   "id": 2892,
-  "tr": "gözden geçirmek",
+  "tr": "kontrol etmek",
   "en": "to check",
   "beispiel": "Ich habe den Vertrag noch einmal genau überprüft.",
   "beispielTr": "Sözleşmeyi bir kez daha dikkatlice gözden geçirdim.",
@@ -169,7 +169,7 @@
  },
  {
   "id": 1932,
-  "tr": "çalışmak",
+  "tr": "işlemek",
   "en": "to function",
   "beispiel": "Der Automat funktioniert leider nicht mehr.",
   "beispielTr": "Otomat maalesef artık çalışmıyor.",
@@ -193,7 +193,7 @@
  },
  {
   "id": 2516,
-  "tr": "harika",
+  "tr": "süper",
   "en": "terrific",
   "beispiel": "Deine Idee finde ich prima!",
   "beispielTr": "Fikrini harika buluyorum!",
@@ -209,7 +209,7 @@
  },
  {
   "id": 2390,
-  "tr": "düşünmek",
+  "tr": "kafa yormak",
   "en": "to think about",
   "beispiel": "Ich muss über deinen Vorschlag noch einmal nachdenken.",
   "beispielTr": "Önerini bir kez daha düşünmem gerek.",
@@ -233,7 +233,7 @@
  },
  {
   "id": 2077,
-  "tr": "bırakmak",
+  "tr": "geride bırakmak",
   "en": "to leave behind",
   "beispiel": "Möchten Sie eine Nachricht hinterlassen?",
   "beispielTr": "Mesaj bırakmak ister misiniz?",
@@ -345,7 +345,7 @@
  },
  {
   "id": 3180,
-  "tr": "durum",
+  "tr": "hâl",
   "en": "condition",
   "beispiel": "Das Haus war in einem ziemlich schlechten Zustand.",
   "beispielTr": "Ev oldukça kötü bir durumdaydı.",
@@ -353,7 +353,7 @@
  },
  {
   "id": 1723,
-  "tr": "anlaşmak",
+  "tr": "uzlaşmak",
   "en": "to agree",
   "beispiel": "Am Ende konnten wir uns auf einen Preis einigen.",
   "beispielTr": "Sonunda bir fiyat üzerinde anlaştık.",
@@ -385,7 +385,7 @@
  },
  {
   "id": 3073,
-  "tr": "inanılmaz",
+  "tr": "aşırı",
   "en": "incredibly",
   "beispiel": "Die neue Wohnung ist wahnsinnig teuer.",
   "beispielTr": "Yeni daire inanılmaz pahalı.",

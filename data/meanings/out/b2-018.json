@@ -9,8 +9,8 @@
  },
  {
   "id": 4494,
-  "tr": "onaylamak",
-  "en": "to approve",
+  "tr": "kabul etmek",
+  "en": "to grant",
   "beispiel": "Die Behörde hat den Antrag auf Wohngeld schließlich bewilligt.",
   "beispielTr": "Kurum, kira yardımı başvurusunu sonunda onayladı.",
   "beispielEn": "The authority finally approved the housing benefit application."
@@ -41,7 +41,7 @@
  },
  {
   "id": 4498,
-  "tr": "biriktirmek",
+  "tr": "kenara koymak",
   "en": "to set aside",
   "beispiel": "Jeden Monat legt er hundert Euro für Notfälle zurück.",
   "beispielTr": "Her ay acil durumlar için yüz euro biriktiriyor.",
@@ -57,15 +57,15 @@
  },
  {
   "id": 4500,
-  "tr": "yiyip bitirmek",
-  "en": "to eat up",
+  "tr": "tüketmek",
+  "en": "to use up",
   "beispiel": "Die hohen Nebenkosten zehren sein ganzes Gehalt auf.",
   "beispielTr": "Yüksek ek giderler bütün maaşını yiyip bitiriyor.",
   "beispielEn": "The high extra costs eat up his entire salary."
  },
  {
   "id": 4501,
-  "tr": "masrafsız",
+  "tr": "ücretsiz",
   "en": "free of charge",
   "beispiel": "Überweisungen innerhalb Europas sind bei dieser Bank gebührenfrei.",
   "beispielTr": "Bu bankada Avrupa içi havaleler masrafsız.",
@@ -153,7 +153,7 @@
  },
  {
   "id": 4512,
-  "tr": "ilgi",
+  "tr": "şefkat",
   "en": "care",
   "beispiel": "Ohne die Fürsorge seiner Tochter könnte er nicht allein wohnen.",
   "beispielTr": "Kızının ilgisi olmasa tek başına yaşayamazdı.",
@@ -233,8 +233,8 @@
  },
  {
   "id": 4522,
-  "tr": "öfke",
-  "en": "anger",
+  "tr": "gazap",
+  "en": "wrath",
   "beispiel": "Sie ließ ihren Zorn an den falschen Menschen aus.",
   "beispielTr": "Öfkesini yanlış insanlardan çıkardı.",
   "beispielEn": "She took her anger out on the wrong people."

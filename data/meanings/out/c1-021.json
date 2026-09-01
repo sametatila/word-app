@@ -97,7 +97,7 @@
   },
   {
     "id": 6265,
-    "tr": "köken",
+    "tr": "menşe",
     "en": "provenance",
     "beispiel": "Bei mehreren Objekten ist die Provenienz bis heute ungeklärt.",
     "beispielTr": "Birçok nesnenin kökeni bugün hâlâ aydınlatılmış değil.",
@@ -145,7 +145,7 @@
   },
   {
     "id": 6271,
-    "tr": "gerçeklik",
+    "tr": "özgünlük",
     "en": "authenticity",
     "beispiel": "Die Authentizität des Dokuments wird von mehreren Fachleuten bezweifelt.",
     "beispielTr": "Belgenin gerçekliği birçok uzman tarafından şüpheyle karşılanıyor.",
@@ -169,7 +169,7 @@
   },
   {
     "id": 6274,
-    "tr": "barışma",
+    "tr": "uzlaşma",
     "en": "reconciliation",
     "beispiel": "Die Aussöhnung beider Länder begann mit einem stillen Kniefall.",
     "beispielTr": "İki ülkenin barışması sessiz bir diz çöküşle başladı.",
@@ -345,7 +345,7 @@
   },
   {
     "id": 6296,
-    "tr": "taramak",
+    "tr": "gözden geçirmek",
     "en": "to sift through",
     "beispiel": "Sie hat monatelang Akten gesichtet, bevor sie zu schreiben begann.",
     "beispielTr": "Yazmaya başlamadan önce aylarca dosyaları taradı.",
@@ -361,7 +361,7 @@
   },
   {
     "id": 6298,
-    "tr": "kabullenmek",
+    "tr": "itiraf etmek",
     "en": "to admit",
     "beispiel": "Der Staat gestand seine Mitverantwortung erst sehr spät ein.",
     "beispielTr": "Devlet ortak sorumluluğunu ancak çok geç kabullendi.",

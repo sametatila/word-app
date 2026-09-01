@@ -25,8 +25,8 @@
  },
  {
   "id": 3989,
-  "tr": "gizlemek",
-  "en": "to conceal",
+  "tr": "üstünü örtmek",
+  "en": "to cover up",
   "beispiel": "Mit warmen Worten kaschierte er das eigentliche Problem.",
   "beispielTr": "Tatlı sözlerle asıl sorunu gizledi.",
   "beispielEn": "With warm words he concealed the real problem."
@@ -58,7 +58,7 @@
  {
   "id": 3994,
   "tr": "telkin etmek",
-  "en": "to suggest",
+  "en": "to imply",
   "beispiel": "Die Werbung suggeriert, Glück sei käuflich.",
   "beispielTr": "Reklam, mutluluğun satın alınabileceğini telkin ediyor.",
   "beispielEn": "The ad suggests that happiness can be bought."
@@ -177,8 +177,8 @@
  },
  {
   "id": 4024,
-  "tr": "kurgulamak",
-  "en": "to conceive",
+  "tr": "tasarlamak",
+  "en": "to design",
   "beispiel": "Das Projekt wurde für ein internationales Publikum konzipiert.",
   "beispielTr": "Proje, uluslararası bir kitle için kurgulandı.",
   "beispielEn": "The project was conceived for an international audience."

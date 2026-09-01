@@ -113,8 +113,8 @@
   },
   {
     "id": 7217,
-    "tr": "öğrenme yöntemi",
-    "en": "learning method",
+    "tr": "öğrenme yordamı",
+    "en": "learning procedure",
     "beispiel": "Das Labor testet ein neues Lernverfahren an alten Röntgenbildern.",
     "beispielTr": "Laboratuvar yeni bir öğrenme yöntemini eski röntgen görüntülerinde deniyor.",
     "beispielEn": "The lab is testing a new learning method on old X-rays."
@@ -217,7 +217,7 @@
   },
   {
     "id": 7230,
-    "tr": "sayısallaştırma",
+    "tr": "nicelleştirme",
     "en": "quantification",
     "beispiel": "Die Quantifizierung von Bildung verkennt, was sich schwer messen lässt.",
     "beispielTr": "Eğitimin sayısallaştırılması, zor ölçülen şeyleri görmezden geliyor.",
@@ -257,8 +257,8 @@
   },
   {
     "id": 7235,
-    "tr": "yeniden üretmek",
-    "en": "to replicate",
+    "tr": "benzerini oluşturmak",
+    "en": "to recreate",
     "beispiel": "Maschinen bilden sprachliche Muster nach, ohne sie zu verstehen.",
     "beispielTr": "Makineler dilsel kalıpları anlamadan yeniden üretiyor.",
     "beispielEn": "Machines replicate linguistic patterns without understanding them."
@@ -281,7 +281,7 @@
   },
   {
     "id": 7238,
-    "tr": "varsaymak",
+    "tr": "peşinen varsaymak",
     "en": "to presuppose",
     "beispiel": "Diese Argumentation setzt voraus, dass Daten neutral sind.",
     "beispielTr": "Bu akıl yürütme, verilerin tarafsız olduğunu peşinen varsayıyor.",
@@ -289,8 +289,8 @@
   },
   {
     "id": 7239,
-    "tr": "dizginlemek",
-    "en": "to rein in",
+    "tr": "denetim altına almak",
+    "en": "to contain",
     "beispiel": "Der Gesetzgeber versucht, die Macht der Plattformen rechtlich einzuhegen.",
     "beispielTr": "Yasa koyucu, platformların gücünü hukuken dizginlemeye çalışıyor.",
     "beispielEn": "The legislator is trying to rein in the platforms' power legally."

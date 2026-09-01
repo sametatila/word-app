@@ -185,7 +185,7 @@
  },
  {
   "id": 2947,
-  "tr": "sebep",
+  "tr": "neden",
   "en": "cause",
   "beispiel": "Die Ursache des Brandes ist noch nicht bekannt.",
   "beispielTr": "Yangının sebebi henüz bilinmiyor.",
@@ -313,8 +313,8 @@
  },
  {
   "id": 2783,
-  "tr": "arıza",
-  "en": "malfunction",
+  "tr": "aksaklık",
+  "en": "disruption",
   "beispiel": "Wegen einer technischen Störung fällt der Zug aus.",
   "beispielTr": "Teknik bir arıza yüzünden tren iptal edildi.",
   "beispielEn": "The train is canceled because of a technical malfunction."

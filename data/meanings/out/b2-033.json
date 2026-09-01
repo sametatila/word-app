@@ -9,7 +9,7 @@
  },
  {
   "id": 5246,
-  "tr": "yasaklamak",
+  "tr": "men etmek",
   "en": "to prohibit",
   "beispiel": "Der Stadt wurde untersagt, das Grundstück weiter zu bebauen.",
   "beispielTr": "Şehre, arsanın üzerine yeni yapı yapması yasaklandı.",
@@ -17,7 +17,7 @@
  },
  {
   "id": 5247,
-  "tr": "izin vermek",
+  "tr": "müsaade etmek",
   "en": "to permit",
   "beispiel": "Der Vermieter gestattet die Haltung eines Hundes nur ausnahmsweise.",
   "beispielTr": "Ev sahibi köpek beslenmesine ancak istisnai olarak izin veriyor.",
@@ -122,7 +122,7 @@
  {
   "id": 5260,
   "tr": "tur gezisi",
-  "en": "round trip",
+  "en": "round tour",
   "beispiel": "Auf unserer Rundreise durch Sizilien haben wir zwölf Orte besucht.",
   "beispielTr": "Sicilya turumuzda on iki yeri gezdik.",
   "beispielEn": "On our round trip through Sicily we visited twelve places."
@@ -393,8 +393,8 @@
  },
  {
   "id": 5294,
-  "tr": "yolunu kaybetmek",
-  "en": "to lose one's way",
+  "tr": "kaybolmak",
+  "en": "to get lost",
   "beispiel": "Im dichten Nebel haben sich zwei Wanderer im Gebirge verirrt.",
   "beispielTr": "Yoğun siste iki yürüyüşçü dağda yolunu kaybetti.",
   "beispielEn": "In thick fog two hikers lost their way in the mountains."

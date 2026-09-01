@@ -66,7 +66,7 @@
   {
     "id": 8147,
     "tr": "şiddetli",
-    "en": "heavy",
+    "en": "intense",
     "beispiel": "Gestern hatten wir einen heftigen Sturm.",
     "beispielTr": "Dün şiddetli bir fırtına vardı.",
     "beispielEn": "We had a heavy storm yesterday."
@@ -209,7 +209,7 @@
   },
   {
     "id": 8165,
-    "tr": "süpürmek",
+    "tr": "elektrik süpürgesi çekmek",
     "en": "to vacuum",
     "beispiel": "Ich sauge jeden Freitag den Teppich im Wohnzimmer.",
     "beispielTr": "Her cuma oturma odasındaki halıyı süpürüyorum.",
