@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon } from "../ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon, WalkIcon, MicIcon, SpeakerIcon, CheckIcon, XIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { DEMO_WORDS, type Word } from "../data/demoWords";
@@ -74,9 +74,9 @@ export function WalkModeScreen() {
     return () => { alive = false; mounted.current = false; runToken.current++; stopListening(); };
   }, [user]);
 
-  // Nabız halkası — konuşurken/dinlerken.
+  // Nabız halkası — YALNIZ dinlerken (mikrofon açıkken); konuşurken sakin.
   useEffect(() => {
-    const active = phase === "speaking" || phase === "listening";
+    const active = phase === "listening";
     if (!active) { pulse.stopAnimation(); pulse.setValue(0); return; }
     const loop = Animated.loop(Animated.sequence([
       Animated.timing(pulse, { toValue: 1, duration: 1100, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),
@@ -201,7 +201,8 @@ export function WalkModeScreen() {
   const ringOpacity = pulse.interpolate({ inputRange: [0, 1], outputRange: [0.3, 0] });
   const ringScale = pulse.interpolate({ inputRange: [0, 1], outputRange: [1, 1.5] });
   const showAnswer = phase === "judging";
-  const dotColor = verdict === "wrong" ? colors.danger : verdict === "correct" ? colors.success : verdict === "unheard" ? colors.textMuted : colors.primary;
+  const listening = phase === "listening";
+  const dotColor = verdict === "wrong" ? colors.danger : verdict === "correct" ? colors.success : verdict === "unheard" ? colors.textMuted : listening ? colors.primary : colors.info;
   const stepLabel = phase === "speaking" ? "İpucu okunuyor…" : phase === "listening" ? "Şimdi Almancasını söyle" : verdict === "unheard" ? "Duyamadım" : verdict === "skip" ? "Atlandı" : verdict === "correct" ? "Doğru!" : verdict === "wrong" ? "Doğrusu" : "";
 
   return (
@@ -280,10 +281,11 @@ export function WalkModeScreen() {
           </View>
 
           <View style={{ alignItems: "center", justifyContent: "center", height: 120 }}>
-            <Animated.View style={{ position: "absolute", width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, opacity: ringOpacity, transform: [{ scale: ringScale }] }} />
-            <Animated.View style={{ transform: [{ scale }] }}>
-              <View style={[{ width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 14)]}>
-                {verdict === "correct" ? <CheckIcon color="#fff" size={40} /> : verdict === "wrong" ? <XIcon color="#fff" size={40} /> : <MicIcon color="#fff" size={40} />}
+            {/* Nabız halkası YALNIZ dinlerken — mikrofonun gerçekten açık olduğu an. */}
+            {listening ? <Animated.View style={{ position: "absolute", width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, opacity: ringOpacity, transform: [{ scale: ringScale }] }} /> : null}
+            <Animated.View style={{ transform: [{ scale: listening ? scale : 1 }] }}>
+              <View style={[{ width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, softShadow(dotColor, 14)]}>
+                {verdict === "correct" ? <CheckIcon color="#fff" size={40} /> : verdict === "wrong" ? <XIcon color="#fff" size={40} /> : phase === "speaking" ? <SpeakerIcon color="#fff" size={40} /> : <MicIcon color="#fff" size={40} />}
               </View>
             </Animated.View>
           </View>
