@@ -604,18 +604,22 @@ export function sttProviders(mode: SttMode = "default"): SttProvider[] {
   }
   if (mode === "walk") {
     /*
-      Cep yolu: dürüstlük önce, ama biçim de belirleyici.
+      Ekran-kapalı/cep yolu (mobil native): modül 16 kHz mono WAV yolluyor
+      (AudioRecord → WAV). Azure'un kısa-ses REST ucu WAV'ı KABUL EDİYOR — eski
+      "webm almıyor, o yüzden zincirde yok" gerekçesi web'in webm yoluna aitti,
+      native WAV yoluna değil. Bu yüzden Azure burada listeye EKLENİR (yalnız
+      walk; ekranlı yollara girmez) ve deneme olarak ÖNE alınır.
 
-      Klip GEÇERLİ webm olarak geliyor (pocket-mic recordFreshClip) ve
-      istemcide WAV'a çevrilmiyor: çeviri `AudioContext`e dayanıyordu ve o
-      kilitli ekranda askıya alınıyor — cep yolu sahada tamamen ölüydü
-      (`stt:decode`). Azure'un kısa-ses ucu webm ALMIYOR (yalnız WAV/OGG), o
-      yüzden cep zincirine hiç girmiyor. Deepgram webm'i ham çözüyor ve —
-      önemlisi — başı-kesik seste UYDURMUYOR, boş dönüyor (ölçüldü); Whisper
-      tabanlılar (Groq, Cloudflare, Mistral) uyduruyor ("der Großvater" →
-      "Wolfsfatter"). Bu yüzden Deepgram önde; Whisper'lar yalnız o düşerse.
+      Sıra: Azure (deneme) → Deepgram (başı-kesik seste uydurmaz, boş döner —
+      ölçüldü, güvenli yedek) → Whisper tabanlılar (Groq/Cloudflare/Mistral;
+      uydurma eğilimi: "der Großvater" → "Wolfsfatter"). STT_ORDER ile ezilebilir.
     */
-    const rank = (p: SttProvider) => (p.name === "deepgram" ? 0 : p.name === "groq" ? 1 : p.name === "cloudflare" ? 2 : 3);
+    const azKey = process.env.AZURE_SPEECH_KEY;
+    const azRegion = process.env.AZURE_SPEECH_REGION;
+    if (azKey && azRegion) {
+      out.push({ name: "azure", dialect: "azure", baseUrl: `https://${azRegion}.stt.speech.microsoft.com`, key: azKey, model: "short-audio" });
+    }
+    const rank = (p: SttProvider) => (p.name === "azure" ? 0 : p.name === "deepgram" ? 1 : p.name === "groq" ? 2 : p.name === "cloudflare" ? 3 : 4);
     out.sort((a, b) => rank(a) - rank(b));
   }
   /*
