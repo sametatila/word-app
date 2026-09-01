@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { RootTabs } from "./RootTabs";
 import { GameScreen } from "../screens/GameScreen";
 import { ProfileScreen } from "../screens/ProfileScreen";
+import { AvatarScreen } from "../screens/AvatarScreen";
 import { ExamPrepScreen } from "../screens/ExamPrepScreen";
 import { WalkModeScreen } from "../screens/WalkModeScreen";
 import { PaywallScreen } from "../screens/PaywallScreen";
@@ -13,6 +14,7 @@ import { UnitScreen } from "../screens/UnitScreen";
 import { AuthScreen } from "../screens/AuthScreen";
 import { WordsScreen } from "../screens/WordsScreen";
 import { AchievementsScreen } from "../screens/AchievementsScreen";
+import { ProgressScreen } from "../screens/ProgressScreen";
 import { SettingsScreen } from "../screens/SettingsScreen";
 import { PlacementScreen } from "../screens/PlacementScreen";
 import { LeaderboardScreen } from "../screens/LeaderboardScreen";
@@ -34,6 +36,7 @@ export type RootStackParams = {
   Tabs: undefined;
   Game: { game?: string } | undefined;
   Profile: undefined;
+  Avatar: undefined;
   ExamPrep: undefined;
   Walk: undefined;
   Paywall: undefined;
@@ -43,6 +46,7 @@ export type RootStackParams = {
   Auth: undefined;
   Words: undefined;
   Achievements: undefined;
+  Progress: undefined;
   Settings: undefined;
   Placement: { onboarding?: boolean } | undefined;
   Leaderboard: undefined;
@@ -66,6 +70,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Tabs" component={RootTabs} />
       <Stack.Screen name="Game" component={GameScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="Avatar" component={AvatarScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="ExamPrep" component={ExamPrepScreen} />
       <Stack.Screen name="Walk" component={WalkModeScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />
@@ -75,6 +80,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Auth" component={AuthScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Words" component={WordsScreen} />
       <Stack.Screen name="Achievements" component={AchievementsScreen} />
+      <Stack.Screen name="Progress" component={ProgressScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
       <Stack.Screen name="Placement" component={PlacementScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Leaderboard" component={LeaderboardScreen} />

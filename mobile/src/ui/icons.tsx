@@ -96,6 +96,9 @@ export const RepeatIcon = ({ color = "#000", size }: P) => (
 export const PodiumIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M9 20V9h6v11M15 20V4h5v16M9 20V13H4v7M2 20h20" {...stroke(color)} /></S>
 );
+export const FaceIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Circle cx="12" cy="12" r="9" {...stroke(color)} /><Path d="M8.5 14a4 4 0 007 0" {...stroke(color)} /><Circle cx="9" cy="10" r="1" fill={color} /><Circle cx="15" cy="10" r="1" fill={color} /></S>
+);
 
 /** Google "G" logosu (4 renk) — sosyal giriş düğmesi için. */
 export const GoogleIcon = ({ size = 20 }: { size?: number }) => (

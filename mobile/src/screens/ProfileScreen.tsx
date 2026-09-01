@@ -7,7 +7,8 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, WriteIcon } from "../ui/icons";
+import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, WriteIcon, FaceIcon } from "../ui/icons";
+import { Avatar } from "../ui/Avatar";
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatDuration, formatXp } from "../lib/useMe";
@@ -45,7 +46,6 @@ export function ProfileScreen() {
   const premium = usePremium();
   // Misafir modu yok: kullanıcı her zaman var. Adı yoksa e-posta adından türet.
   const displayName = user?.name?.trim() || user?.email?.split("@")[0] || "Öğrenci";
-  const initial = (displayName.trim()[0] ?? "Ö").toUpperCase();
   const [confirmOut, setConfirmOut] = useState(false);
   async function reallySignOut() { setConfirmOut(false); await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
   const streak = me ? me.streak : 7;
@@ -67,9 +67,9 @@ export function ProfileScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {/* kimlik kartı */}
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
-          <View style={[{ width: 76, height: 76, borderRadius: 38, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 10)]}>
-            <Text variant="display" color="#fff">{initial}</Text>
-          </View>
+          <PressableScale onPress={() => nav.navigate("Avatar")} accessibilityLabel="Avatarını düzenle" style={softShadow(colors.primary, 10)}>
+            <Avatar size={76} />
+          </PressableScale>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
           <Text variant="caption" color={colors.textMuted}>{user?.email ?? "Henüz giriş yapmadın"}</Text>
           {me ? (
@@ -125,6 +125,7 @@ export function ProfileScreen() {
 
         {/* ayar satırları — görünüm / okuma sesi / dil artık Ayarlar'da */}
         <Card padded style={{ paddingVertical: 0 }}>
+          <Row icon={FaceIcon} label="Avatarını düzenle" tint={colors.primary} colors={colors} onPress={() => nav.navigate("Avatar")} />
           <Row icon={LearnIcon} label="Kelimelerim" tint={colors.primary} colors={colors} onPress={() => nav.navigate("Words")} />
           <Row icon={TrophyIcon} label="Başarımlar" tint={colors.streak} colors={colors} onPress={() => nav.navigate("Achievements")} />
           <Row icon={CheckIcon} label="Neler yapabilirim" tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
