@@ -1,15 +1,30 @@
 /**
- * Konuşma tanıma (STT) — @react-native-voice/voice. Yürüyüş modunun aktif
- * hatırlama döngüsü bunu kullanır: kullanıcı cevabı SÖYLER, metne çevrilir.
+ * Konuşma tanıma (STT) — kendi native modülümüz `NomiSpeech` (Android
+ * SpeechRecognizer / iOS SFSpeechRecognizer). @react-native-voice (2022, bakımsız)
+ * yerine geçer. Yürüyüş modunun aktif hatırlama döngüsü kullanır: kullanıcı cevabı
+ * SÖYLER, metne çevrilir.
+ *
+ * Modül kelime başına TAZE recognizer kuruyor → eski kütüphanedeki "ikinci kelimede
+ * mikrofon hiç açılmıyor" ve "sonuç null gelince çöküyor" sorunları kökten yok.
  *
  * Cihaz notu: HyperOS ekran kapanınca mikrofonu susturuyor (cep modu bloklu);
- * ekran açıkken kusursuz. Tanıma yoksa çağıran elle "bildim/bilmedim"e düşer.
+ * ekran açıkken kusursuz.
  */
-import Voice from "@react-native-voice/voice";
-import { PermissionsAndroid, Platform } from "react-native";
+import { NativeEventEmitter, NativeModules, PermissionsAndroid, Platform } from "react-native";
+
+type SpeechNative = {
+  start(locale: string): Promise<boolean>;
+  stop(): void;
+  cancel(): void;
+  destroy(): void;
+  isAvailable(): Promise<boolean>;
+};
+
+const Native = NativeModules.NomiSpeech as SpeechNative | undefined;
+const emitter = Native ? new NativeEventEmitter(NativeModules.NomiSpeech) : null;
 
 export async function ensureMicPermission(): Promise<boolean> {
-  if (Platform.OS !== "android") return true;
+  if (Platform.OS !== "android") return true; // iOS izinleri native tarafta (SFSpeech) istenir
   try {
     const g = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO, {
       title: "Mikrofon izni",
@@ -24,39 +39,52 @@ export async function ensureMicPermission(): Promise<boolean> {
 }
 
 export async function sttAvailable(): Promise<boolean> {
-  try { return !!(await Voice.isAvailable()); } catch { return false; }
+  try { return !!(await Native?.isAvailable()); } catch { return false; }
 }
 
 /**
- * TEK temiz mekanizma: kelime başına TEK oturum. Tanıyıcının erken kapanmaması için
- * "minimum kayıt süresi" ve "konuşma sonrası sessizlik" seçenekleriyle açılır (mic
- * kullanıcıya yeter süre açık kalsın). Sonuç gelince döner; hata/sessizlik olursa
- * null (yeniden açma YOK — restart tanıyıcı durumunu bozup sonraki kelimede mic'i
- * hiç açmıyordu). Her kelime taze bir başlatma alır.
+ * Kelime başına TEK oturum. Final sonuç gelince döner; final gelmezse en iyi
+ * ara-sonuç (partial); hata/sessizlik/timeout olursa en iyi partial ya da null.
+ * Bitişte modül yok edilir (destroy) — sonraki kelime taze bir başlatma alır.
  */
 export function listenOnce(locale = "de-DE", windowMs = 9000): Promise<string | null> {
   return new Promise((resolve) => {
+    if (!Native || !emitter) { resolve(null); return; }
     let done = false;
+    let best = "";
+    let endTimer: ReturnType<typeof setTimeout> | null = null;
+
     const finish = (t: string | null) => {
       if (done) return;
       done = true;
       clearTimeout(timer);
-      Voice.onSpeechResults = () => {};
-      Voice.onSpeechError = () => {};
-      try { Voice.stop(); } catch { /* yut */ }
+      if (endTimer) clearTimeout(endTimer);
+      subs.forEach((s) => s.remove());
+      try { Native.destroy(); } catch { /* yut */ }
       resolve(t);
     };
-    const timer = setTimeout(() => finish(null), windowMs); // güvenlik üst sınırı
-    Voice.onSpeechResults = (e: { value?: string[] }) => finish((e?.value?.[0] ?? "").trim() || null);
-    Voice.onSpeechError = () => finish(null);
-    Voice.start(locale, {
-      EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS: 6000,
-      EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS: 2200,
-      EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS: 2200,
-    }).catch(() => finish(null));
+
+    const subs = [
+      emitter.addListener("NomiSpeechResults", (e: { value?: string[] }) =>
+        finish((e?.value?.[0] ?? "").trim() || best || null),
+      ),
+      emitter.addListener("NomiSpeechPartial", (e: { value?: string[] }) => {
+        const t = (e?.value?.[0] ?? "").trim();
+        if (t) best = t;
+      }),
+      emitter.addListener("NomiSpeechEnd", () => {
+        // Konuşma bitti; final birazdan gelmeli. Gelmezse kısa emniyetle partial'a düş.
+        if (endTimer) clearTimeout(endTimer);
+        endTimer = setTimeout(() => finish(best || null), 1500);
+      }),
+      emitter.addListener("NomiSpeechError", () => finish(best || null)),
+    ];
+
+    const timer = setTimeout(() => finish(best || null), windowMs); // güvenlik üst sınırı
+    Native.start(locale).catch(() => finish(null));
   });
 }
 
 export function stopListening(): void {
-  try { void Voice.stop(); } catch { /* yut */ }
+  try { Native?.stop(); } catch { /* yut */ }
 }
