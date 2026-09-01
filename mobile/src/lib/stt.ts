@@ -26,6 +26,11 @@ type SpeechNative = {
   stopWalkService(): void;
   startScreenWatch(): void;
   stopScreenWatch(): void;
+  playTtsUrl(url: string): Promise<boolean>;
+  stopTts(): void;
+  delay(ms: number): Promise<boolean>;
+  uploadStt(url: string, wavPath: string, language: string, expected: string): Promise<string | null>;
+  playSfx(kind: string): void;
 };
 
 const Native = NativeModules.NomiSpeech as SpeechNative | undefined;
@@ -112,6 +117,30 @@ export function setKeepAwake(on: boolean): void {
   try { Native?.setKeepAwake(on); } catch { /* yut */ }
 }
 
+/**
+ * Ekran-kapalı TTS — /api/tts MP3'ünü NATIVE MediaPlayer ile çalar (arka planda çalışır;
+ * WebView köprüsü ekran kapanınca askıya alınıp susuyor). Neural ses (Katja/Emel) korunur.
+ * Bitene kadar bekler. Çerez native tarafta CookieManager'dan alınır (auth).
+ */
+export async function speakServerTts(voice: string, text: string, slow = false): Promise<void> {
+  if (!Native || !text) return;
+  const url = `${API_BASE}/api/tts?v=${encodeURIComponent(voice)}&t=${encodeURIComponent(text)}${slow ? "&r=slow" : ""}`;
+  try { await Native.playTtsUrl(url); } catch { /* yut */ }
+}
+export function stopServerTts(): void { try { Native?.stopTts(); } catch { /* yut */ } }
+
+/**
+ * Arka planda da çalışan gecikme. RN'in setTimeout'u app arka plana (ekran kapalı) geçince
+ * DURUYOR → yürüyüş döngüsü takılıyordu. Native Handler (foreground-service ile süreç canlı)
+ * durmaz. Native yoksa (iOS/eski) setTimeout'a düşer.
+ */
+export function nativeDelay(ms: number): Promise<void> {
+  try {
+    if (Native?.delay) return Native.delay(ms).then(() => undefined).catch(() => undefined);
+  } catch { /* yut */ }
+  return new Promise<void>((r) => setTimeout(() => r(), ms));
+}
+
 /** Mikrofonlu foreground service — güç tuşuyla ekran kapansa da arka planda mic açık kalsın. */
 export function startWalkService(): void { try { Native?.startWalkService(); } catch { /* yut */ } }
 export function stopWalkService(): void { try { Native?.stopWalkService(); } catch { /* yut */ } }
@@ -131,30 +160,19 @@ export function onScreenState(cb: (off: boolean) => void): () => void {
  * native kullanılır (bkz. listenOnce); bu YALNIZ cepte/ekran-kapalı için (paralı).
  * VAD yok — sabit pencere kaydeder; kullanıcı o sürede söyler. Auth çerezle (paylaşımlı jar).
  */
-export async function azureListenOnce(target: string, windowMs = 3500): Promise<string[] | null> {
+export async function azureListenOnce(target: string, windowMs = 3000, onStop?: () => void): Promise<string[] | null> {
   if (!Native) return null;
   try {
-    const ok = await Native.startRecording().catch((e) => { console.log("AZURE start fail:", String(e)); return false; });
+    const ok = await Native.startRecording().catch(() => false);
     if (!ok) return null;
-    await new Promise<void>((r) => setTimeout(() => r(), windowMs));
+    await nativeDelay(windowMs);
     const path = await Native.stopRecording().catch(() => null);
-    console.log("AZURE clip:", path);
+    onStop?.(); // mic kapandı — micoff burada (upload'dan ÖNCE; verdict'le çakışmaz)
     if (!path) return null;
-    const form = new FormData();
-    // RN FormData dosya parçası: file:// uri + tip. Sunucu Azure için WAV bekliyor.
-    form.append("audio", { uri: "file://" + path, name: "clip.wav", type: "audio/wav" } as unknown as Blob);
-    form.append("language", "de");
-    form.append("mode", "walk");
-    if (target) form.append("expected", target);
-    const res = await fetch(`${API_BASE}/api/stt`, { method: "POST", body: form });
-    const body = await res.text().catch(() => "");
-    console.log("AZURE resp:", res.status, body.slice(0, 180));
-    if (!res.ok) return null;
-    const j = JSON.parse(body) as { text?: string };
-    const t = (j?.text ?? "").trim();
-    return t ? [t] : null;
-  } catch (e) {
-    console.log("AZURE err:", String(e));
+    // POST'u NATIVE yap — RN fetch ekran-kapalı (arka plan) takılıyor; native thread çalışır.
+    const text = await Native.uploadStt(`${API_BASE}/api/stt`, path, "de", target ?? "").catch(() => null);
+    return text ? [text.trim()] : null;
+  } catch {
     return null;
   }
 }

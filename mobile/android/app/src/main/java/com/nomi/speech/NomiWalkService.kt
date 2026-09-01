@@ -48,7 +48,7 @@ class NomiWalkService : Service() {
       } else {
         startForeground(7, notif)
       }
-    } catch (_: Exception) { /* yut — bazı cihazlar kısıtlayabilir */ }
+    } catch (e: Exception) { android.util.Log.e("NomiWalk", "startForeground HATA: ${e.message}", e) }
     return START_STICKY
   }
 }

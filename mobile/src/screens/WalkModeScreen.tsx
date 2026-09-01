@@ -15,14 +15,14 @@ import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } fro
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { TURKISH_VOICE } from "../lib/voices";
-import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState } from "../lib/stt";
+import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, speakServerTts, nativeDelay } from "../lib/stt";
 import { spokenMatches, parseSkipDe, encourage, parseConfirm } from "../lib/voiceMatch";
-import { sfx } from "../lib/sfx";
+import { sfx, setSfxScreenOff } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 const withArtikel = (w: { artikel?: string | null; de: string }) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
-const gap = (ms = 850) => new Promise<void>((r) => setTimeout(r, ms)); // web GAP_MS: turlar arası nefes
+const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır; RN setTimeout ekran-kapalıda durur)
 
 type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "continue" | "done" | "stopped" | "denied";
 type Verdict = "correct" | "wrong" | "skip" | "unheard" | null;
@@ -94,8 +94,9 @@ export function WalkModeScreen() {
   const answers = useRef<AnswerOut[]>([]);
   const askedIds = useRef<Set<number>>(new Set());
 
-  const sayTR = (t: string) => speakAndWaitVoiced(t, TURKISH_VOICE);
-  const sayDE = (t: string) => speakAndWaitVoiced(t, currentVoiceId());
+  // Ekran kapalıyken TTS'i NATIVE MediaPlayer'la çal (WebView köprüsü askıda/sessiz); açıkken köprü.
+  const sayTR = (t: string) => (screenOffRef.current ? speakServerTts(TURKISH_VOICE, t) : speakAndWaitVoiced(t, TURKISH_VOICE));
+  const sayDE = (t: string) => (screenOffRef.current ? speakServerTts(currentVoiceId(), t) : speakAndWaitVoiced(t, currentVoiceId()));
 
   /** Biriken cevapları SRS'e yaz (progress YOK — walk stateless). Tur sonunda + çıkışta. */
   function flush(final = false) {
@@ -132,6 +133,7 @@ export function WalkModeScreen() {
   useEffect(() => {
     const unsub = onScreenState((off) => {
       screenOffRef.current = off;
+      setSfxScreenOff(off); // ekran kapalı → SFX native res/raw (köprü susar)
       if (off && nativeListeningRef.current) { try { stopListening(); } catch { /* yut */ } }
     });
     return () => { unsub(); stopWalkService(); };
@@ -185,23 +187,34 @@ export function WalkModeScreen() {
     // Kaynak: cebe koy YA DA güç tuşuyla ekran kapalı → sunucu (Azure) STT (paralı). Ekran açık → ücretsiz native.
     const useAzure = pocketRef.current || screenOffRef.current;
     nativeListeningRef.current = !useAzure;
-    const listenP = Promise.race([
-      (useAzure ? azureListenOnce(withArtikel(w), 3500) : listenOnce("de-DE", 8000)).then((h) => ({ k: "v" as const, heard: h ?? [] })),
-      waitManual().then(() => ({ k: "m" as const })),
-    ]);
-    const miconTimer = setTimeout(() => sfx("micon"), 180);
-    let res = await listenP;
-    clearTimeout(miconTimer);
-    nativeListeningRef.current = false;
-    // Native dinleme SIRASINDA güç tuşuyla ekran kapandıysa recognizer ölür → kelime kesilmiş
-    // olabilir. Sonuç boşsa kesme yaşatmadan aynı kelimeyi bir kez daha oku, Azure ile sor.
-    if (!useAzure && res.k === "v" && res.heard.length === 0 && screenOffRef.current && alive()) {
-      await sayTR(w.tr);
-      const h2 = await azureListenOnce(withArtikel(w), 3500);
-      res = { k: "v" as const, heard: h2 ?? [] };
+    let res: { k: "v"; heard: string[] } | { k: "m" };
+    if (useAzure) {
+      // Azure: micon HEMEN (setTimeout arka planda durur); micoff kayıt biter bitmez (upload'dan
+      // ÖNCE) → verdict'le çakışmaz. Sonra ~1sn upload, sonra verdict.
+      sfx("micon");
+      res = await Promise.race([
+        azureListenOnce(withArtikel(w), 3000, () => sfx("micoff")).then((h) => ({ k: "v" as const, heard: h ?? [] })),
+        waitManual().then(() => ({ k: "m" as const })),
+      ]);
+    } else {
+      // Native: mic-aç trick — mic açıldıktan ~180ms sonra micon (ilk hece kaçmasın).
+      const listenP = Promise.race([
+        listenOnce("de-DE", 8000).then((h) => ({ k: "v" as const, heard: h ?? [] })),
+        waitManual().then(() => ({ k: "m" as const })),
+      ]);
+      const miconTimer = setTimeout(() => sfx("micon"), 180);
+      res = await listenP;
+      clearTimeout(miconTimer);
+      stopListening();
+      sfx("micoff");
+      // Native dinleme SIRASINDA ekran kapandıysa recognizer ölür → boşsa aynı kelimeyi Azure ile tekrar.
+      if (res.k === "v" && res.heard.length === 0 && screenOffRef.current && alive()) {
+        await sayTR(w.tr);
+        const h2 = await azureListenOnce(withArtikel(w), 3000, () => sfx("micoff"));
+        res = { k: "v" as const, heard: h2 ?? [] };
+      }
     }
-    stopListening();
-    sfx("micoff");
+    nativeListeningRef.current = false;
     manualResolve.current = null;
     if (!alive()) return "ok";
 
