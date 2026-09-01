@@ -57,7 +57,7 @@ function nextWeekly(weekday: number, hhmm: string): number {
 
 async function schedule(id: string, body: string, timestamp: number, freq: RepeatFrequency): Promise<void> {
   await notifee.createTriggerNotification(
-    { id, title: "Nomi", body, android: { channelId: CHANNEL_ID, smallIcon: "ic_launcher", pressAction: { id: "default" } } },
+    { id, title: "Nomi", body, android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } } },
     { type: TriggerType.TIMESTAMP, timestamp, repeatFrequency: freq },
   );
 }
@@ -144,7 +144,7 @@ export async function showTestNotification(): Promise<boolean> {
   await notifee.displayNotification({
     title: "Nomi",
     body: "Bildirimler açık — her gün nazikçe hatırlatacağız.",
-    android: { channelId: CHANNEL_ID, smallIcon: "ic_launcher", pressAction: { id: "default" } },
+    android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } },
   });
   return true;
 }
