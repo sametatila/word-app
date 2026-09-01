@@ -91,6 +91,21 @@ export function LearnScreen() {
       {/* GÜNLÜK TUR — dil-içerik öncelikli kahraman (fitness halkası değil) */}
       <PressableScale onPress={() => nav.navigate("Game")}>
         <View style={[{ borderRadius: radii.xl, overflow: "hidden", backgroundColor: colors.primary, marginBottom: spacing.xl }, softShadow(colors.primary, 14)]}>
+          {/* Kısa rozetler — kartın sağ üstünde (tekrar / yeni) */}
+          {hasToday && (dueCount > 0 || newToday > 0) && (
+            <View style={{ position: "absolute", top: spacing.md, right: spacing.md, flexDirection: "row", gap: 6, zIndex: 2 }}>
+              {dueCount > 0 && (
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 4, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: 4 }}>
+                  <RepeatIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{dueCount} tekrar</Text>
+                </View>
+              )}
+              {newToday > 0 && (
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 4, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: 4 }}>
+                  <BoltIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{newToday} yeni</Text>
+                </View>
+              )}
+            </View>
+          )}
           <View style={{ padding: spacing.xl, flexDirection: "row", alignItems: "flex-end", gap: spacing.md }}>
             <View style={{ flex: 1 }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginBottom: spacing.sm }}>
@@ -123,21 +138,6 @@ export function LearnScreen() {
           )}
         </View>
       </PressableScale>
-
-      {hasToday && (dueCount > 0 || newToday > 0) && (
-        <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
-          {dueCount > 0 && (
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
-              <RepeatIcon color={colors.streak} size={15} /><Text variant="caption" color={colors.streak}><Text variant="bodyStrong" color={colors.streak}>{dueCount}</Text> tekrar bekliyor</Text>
-            </View>
-          )}
-          {newToday > 0 && (
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
-              <BoltIcon color={colors.primary} size={15} /><Text variant="caption" color={colors.primary}><Text variant="bodyStrong" color={colors.primary}>{newToday}</Text> yeni bugün</Text>
-            </View>
-          )}
-        </View>
-      )}
 
       {/* dil ilerlemesi — sade satır (fitness metresi değil). Yalnız gerçek veri
           gelince; yoksa (misafir / uç henüz deploy değil) yanıltıcı 0 gösterme. */}
