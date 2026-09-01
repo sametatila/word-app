@@ -55,18 +55,20 @@ export function bridgeRefresh(force = false): void {
   try { viewRef?.reload?.(); } catch { /* yut */ }
 }
 
-export type SfxKind = "correct" | "wrong" | "tap" | "micon" | "micoff";
+export type SfxKind = "correct" | "wrong" | "tap" | "micon" | "micoff" | "finish";
 
 /**
- * Ses efektini WebView'de WebAudio ile SENTEZLER ve çalar — web `src/lib/sfx.ts`
- * ile BİREBİR sentez (note() üstel zarf + 0.55 master; correct pentatonik combo
- * merdiveni, wrong inen). Ek olarak yürüyüş için micon (yükselen "dinliyorum") ve
- * micoff (inen "bitti"). Dosya/res-raw gerektirmez; köprü hazırsa en güvenilir yol
- * (TTS sesi zaten bu WebView'den çalıyor). Tanım bir kez enjekte edilir + çağrılır.
+ * Ses efektini WebView'de WebAudio ile SENTEZLER ve çalar. Kademeli (combo) mantık YOK —
+ * correct/wrong SABİT sesler. Marka sesleri (Duolingo gibi akılda kalıcı, "Nomi"):
+ *  - correct: net YÜKSELEN majör üçlü (E–G#–B) + oktav parıltı → belirgin mutlu/olumlu.
+ *  - wrong: yumuşak İNEN iki nota → "bu değildi" ama cezalandırmayan (sert/sawtooth değil).
+ *  - finish: tamamlanma fanfarı (C–E–G–C majör arpej + parıltı) → tur/etap bitişi.
+ *  - micon/micoff: yürüyüş mic aç/kapa; tap: kısa dokunuş.
+ * Dosya/res-raw gerektirmez; köprü hazırsa en güvenilir yol. Tanım bir kez enjekte + çağrılır.
  */
 export function bridgeSfx(kind: SfxKind): void {
   if (!bridgeReady()) return;
-  const def = "(function(){if(window.__nomiSfx)return;var A=window.AudioContext||window.webkitAudioContext;if(!A)return;var ctx,master,combo=0,lastC=0;var L=[523.25,587.33,659.25,783.99,880,1046.5,1174.66,1318.51,1567.98];function bus(){if(!ctx)ctx=new A();if(ctx.state==='suspended'){try{ctx.resume();}catch(e){}}if(!master){master=ctx.createGain();master.gain.value=0.55;master.connect(ctx.destination);}return ctx;}function note(at,f,d,p,w,to){var c=bus();if(!c)return;var t=c.currentTime+at;var o=c.createOscillator(),g=c.createGain();o.type=w||'sine';o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(Math.max(20,to),t+d);g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(p,t+0.008);g.gain.exponentialRampToValueAtTime(0.0001,t+d);o.connect(g).connect(master);o.start(t);o.stop(t+d+0.03);}window.__nomiSfx=function(k){try{if(k==='correct'){var n=Date.now();if(n-lastC>25000)combo=0;lastC=n;var r=L[Math.min(combo,L.length-1)];combo++;note(0,r,0.1,0.2);note(0.05,r*1.5,0.17,0.15);if(combo>=4)note(0.05,r*3,0.12,0.05,'triangle');}else if(k==='wrong'){combo=0;note(0,233.08,0.18,0.16,'triangle',174.61);note(0.03,116.54,0.22,0.08);}else if(k==='micon'){note(0,587.33,0.09,0.13);note(0.07,880,0.12,0.11);}else if(k==='micoff'){note(0,587.33,0.08,0.11);note(0.06,392,0.14,0.1);}else{note(0,1174.66,0.05,0.09);}}catch(e){}};})();";
+  const def = "(function(){if(window.__nomiSfx)return;var A=window.AudioContext||window.webkitAudioContext;if(!A)return;var ctx,master;function bus(){if(!ctx)ctx=new A();if(ctx.state==='suspended'){try{ctx.resume();}catch(e){}}if(!master){master=ctx.createGain();master.gain.value=0.55;master.connect(ctx.destination);}return ctx;}function note(at,f,d,p,w,to){var c=bus();if(!c)return;var t=c.currentTime+at;var o=c.createOscillator(),g=c.createGain();o.type=w||'sine';o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(Math.max(20,to),t+d);g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(p,t+0.008);g.gain.exponentialRampToValueAtTime(0.0001,t+d);o.connect(g).connect(master);o.start(t);o.stop(t+d+0.03);}window.__nomiSfx=function(k){try{if(k==='correct'){note(0,659.25,0.09,0.22);note(0.075,830.61,0.09,0.2);note(0.15,987.77,0.22,0.22);note(0.15,1975.53,0.16,0.05,'triangle');}else if(k==='wrong'){note(0,311.13,0.16,0.16,'sine',261.63);note(0.09,196,0.22,0.09,'sine');}else if(k==='finish'){note(0,523.25,0.12,0.2);note(0.1,659.25,0.12,0.2);note(0.2,783.99,0.12,0.2);note(0.3,1046.5,0.32,0.24);note(0.3,1567.98,0.4,0.07,'triangle');}else if(k==='micon'){note(0,587.33,0.09,0.13);note(0.07,880,0.12,0.11);}else if(k==='micoff'){note(0,587.33,0.08,0.11);note(0.06,392,0.14,0.1);}else{note(0,1174.66,0.05,0.09);}}catch(e){}};})();";
   const js = def + " window.__nomiSfx&&window.__nomiSfx(" + JSON.stringify(kind) + "); true;";
   try { viewRef!.injectJavaScript(js); } catch { /* yut */ }
 }

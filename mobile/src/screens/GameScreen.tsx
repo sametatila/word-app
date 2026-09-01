@@ -139,7 +139,7 @@ export function GameScreen() {
     setFinalCorrect(totalCorrect);
     setFinalTotal(total);
     setPhase("done");
-    if (total > 0 && totalCorrect / total >= 0.6) sfx("correct"); // iyi sonuçta bitiş kutlama sesi
+    if (total > 0) sfx("finish"); // tamamlanma sesi (Duolingo tarzı bitiş)
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
     track("session_done", totalCorrect, "session");
     if (submitted.current) return;

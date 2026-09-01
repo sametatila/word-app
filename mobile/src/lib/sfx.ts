@@ -32,8 +32,8 @@ export function sfx(kind: SfxKind): void {
     // Öncelik: WebAudio köprüsü — web ile birebir sentez, çalıştığı KANITLI çıkış
     // (TTS de buradan çalıyor), res/raw yok.
     if (bridgeReady()) { bridgeSfx(kind); return; }
-    // Yedek: cihazda react-native-sound. micon/micoff için dosya yok → tap'e düş.
-    const name = kind === "micon" || kind === "micoff" ? "tap" : kind;
+    // Yedek: cihazda react-native-sound. micon/micoff → tap, finish → correct (dosya yok).
+    const name = kind === "micon" || kind === "micoff" ? "tap" : kind === "finish" ? "correct" : kind;
     const s = cache[name];
     if (s === undefined) { preload(name); return; }
     if (!s) return;
