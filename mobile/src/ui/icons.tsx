@@ -82,7 +82,13 @@ export const ShareIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Circle cx="6" cy="12" r="2.4" {...stroke(color)} /><Circle cx="17" cy="6" r="2.4" {...stroke(color)} /><Circle cx="17" cy="18" r="2.4" {...stroke(color)} /><Path d="M8.1 10.9l6.8-3.8M8.1 13.1l6.8 3.8" {...stroke(color)} /></S>
 );
 export const SettingsIcon = ({ color = "#000", size }: P) => (
-  <S size={size}><Circle cx="12" cy="12" r="3" {...stroke(color)} /><Path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" {...stroke(color)} /></S>
+  <S size={size}>
+    <Circle cx="12" cy="12" r="3" {...stroke(color)} />
+    <Path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" {...stroke(color)} />
+  </S>
+);
+export const RepeatIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M3 12a9 9 0 0115-6.7L21 8M21 12a9 9 0 01-15 6.7L3 16" {...stroke(color)} /><Path d="M21 4v4h-4M3 20v-4h4" {...stroke(color)} /></S>
 );
 export const PodiumIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M9 20V9h6v11M15 20V4h5v16M9 20V13H4v7M2 20h20" {...stroke(color)} /></S>
