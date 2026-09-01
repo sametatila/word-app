@@ -7,7 +7,7 @@ import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, CheckIcon } from "../ui/icons";
+import { FlameIcon, BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, CheckIcon, RepeatIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
 import { useUpdate } from "../lib/useUpdate";
@@ -143,7 +143,7 @@ export function LearnScreen() {
         <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
           {dueCount > 0 && (
             <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
-              <FlameIcon color={colors.streak} size={15} /><Text variant="caption" color={colors.streak}><Text variant="bodyStrong" color={colors.streak}>{dueCount}</Text> tekrar bekliyor</Text>
+              <RepeatIcon color={colors.streak} size={15} /><Text variant="caption" color={colors.streak}><Text variant="bodyStrong" color={colors.streak}>{dueCount}</Text> tekrar bekliyor</Text>
             </View>
           )}
           {newToday > 0 && (
@@ -173,10 +173,13 @@ export function LearnScreen() {
         </Card>
       )}
 
+      {/* GÜNÜN GÖREVLERİ — öne çıkanın ÜSTÜNDE (web'deki gibi belirgin) */}
+      <ActionRow title="Günün görevleri" subtitle="Günlük hedefler · XP kazan" tint={colors.streak} icon={CheckIcon} onPress={() => nav.navigate("Quests")} />
+
       {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
-      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>Öne çıkan</Text>
+      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>Öne çıkan</Text>
       <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
-        <WedgeTile title="Yürüyüş modu" pitch="Kulakla öğren, eller serbest" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
+        <WedgeTile title="Yürüyüş modu" pitch="Kulakla öğren, yürürken çalış" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
         <WedgeTile title="Sınav hazırlık" pitch="Goethe & telc — hedefe yönelik" tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
       </View>
 
@@ -185,7 +188,6 @@ export function LearnScreen() {
       <ActionRow title="Pratik" subtitle="Tek bir oyunu kendi kelimelerinle çalış" tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
       <ActionRow title="Günün turu" subtitle="Herkesle aynı yarışma · sıralamaya gir" tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
       <ActionRow title="Haftalık sınav" subtitle="Öğrendiklerini ölç · haftada bir" tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
-      <ActionRow title="Günün görevleri" subtitle="Günlük hedefler · XP kazan" tint={colors.streak} icon={CheckIcon} onPress={() => nav.navigate("Quests")} />
     </Screen>
   );
 }
