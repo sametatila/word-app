@@ -7,12 +7,13 @@ import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, CheckIcon, RepeatIcon } from "../ui/icons";
+import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, RepeatIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
 import { useUpdate } from "../lib/useUpdate";
 import { Mascot } from "../ui/Mascot";
 import { AppHeader } from "../ui/AppHeader";
+import { DailyQuests } from "../ui/DailyQuests";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 /** Alt aksiyon satırı — dil odaklı, sade. */
@@ -157,8 +158,8 @@ export function LearnScreen() {
         </Card>
       )}
 
-      {/* GÜNÜN GÖREVLERİ — öne çıkanın ÜSTÜNDE (web'deki gibi belirgin) */}
-      <ActionRow title="Günün görevleri" subtitle="Günlük hedefler · XP kazan" tint={colors.streak} icon={CheckIcon} onPress={() => nav.navigate("Quests")} />
+      {/* GÜNÜN GÖREVLERİ — öne çıkanın ÜSTÜNDE, gömülü kutular (ayrı ekran yok) */}
+      <DailyQuests />
 
       {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>Öne çıkan</Text>

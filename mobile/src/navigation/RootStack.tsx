@@ -21,7 +21,6 @@ import { ItemScreen } from "../screens/ItemScreen";
 import { DailyScreen } from "../screens/DailyScreen";
 import { WeeklyScreen } from "../screens/WeeklyScreen";
 import { PracticeScreen } from "../screens/PracticeScreen";
-import { QuestsScreen } from "../screens/QuestsScreen";
 import { CandoScreen } from "../screens/CandoScreen";
 import { WritingsScreen } from "../screens/WritingsScreen";
 import { LessonScreen } from "../screens/LessonScreen";
@@ -51,7 +50,6 @@ export type RootStackParams = {
   Daily: undefined;
   Weekly: undefined;
   Practice: undefined;
-  Quests: undefined;
   Cando: undefined;
   Writings: undefined;
   Item: { id: string; kind: string; title: string };
@@ -85,7 +83,6 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Daily" component={DailyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="Quests" component={QuestsScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Cando" component={CandoScreen} />
       <Stack.Screen name="Writings" component={WritingsScreen} />
     </Stack.Navigator>
