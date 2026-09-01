@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
+import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
@@ -32,6 +33,16 @@ function Chip({ label, active, onPress, colors }: { label: string; active: boole
     <PressableScale onPress={onPress} style={{ paddingHorizontal: 16, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
       <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{label}</Text>
     </PressableScale>
+  );
+}
+
+/** Ayar bölümü — başlık + kart. Görsel gruplama için tutarlı çerçeve. */
+function Section({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
+  return (
+    <View style={{ marginTop: spacing.xl }}>
+      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, letterSpacing: 0.5 }}>{title}</Text>
+      <Card padded>{children}</Card>
+    </View>
   );
 }
 
@@ -99,56 +110,65 @@ export function SettingsScreen() {
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, marginBottom: spacing.sm, marginLeft: 4 }}>PROFİL</Text>
-        <TextInput
-          value={name}
-          onChangeText={setName}
-          placeholder="Görünen ad"
-          placeholderTextColor={colors.textFaint}
-          autoCapitalize="words"
-          style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 14, color: colors.text, fontSize: 16 }}
-        />
+        <Section title="HESAP" colors={colors}>
+          <TextInput
+            value={name}
+            onChangeText={setName}
+            placeholder="Görünen ad"
+            placeholderTextColor={colors.textFaint}
+            autoCapitalize="words"
+            style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
+          />
+        </Section>
 
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, marginBottom: spacing.sm, marginLeft: 4 }}>GÜNLÜK HEDEF (tekrar / gün)</Text>
-        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-          {Array.from(new Set([...GOALS, goal])).sort((a, b) => a - b).map((g) => <Chip key={g} label={String(g)} active={goal === g} onPress={() => setGoal(g)} colors={colors} />)}
-        </View>
-
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, marginBottom: spacing.sm, marginLeft: 4 }}>SEVİYE</Text>
-        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-          {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => setLevel(l)} colors={colors} />)}
-        </View>
-        <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
-          <Text variant="bodyStrong" color={colors.primary}>Emin değil misin? Seviye testini çöz →</Text>
-        </PressableScale>
-
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, marginBottom: spacing.sm, marginLeft: 4 }}>ÖĞRENİLECEK DİL</Text>
-        <View style={{ gap: spacing.sm }}>
-          {COURSE_OPTIONS.map((c) => {
+        <Section title="ÖĞRENİLECEK DİL" colors={colors}>
+          {COURSE_OPTIONS.map((c, i) => {
             const active = course === c.key;
             return (
-              <PressableScale key={c.key} onPress={() => pickCourse(c.key)} style={{ paddingHorizontal: spacing.lg, paddingVertical: 14, borderRadius: radii.lg, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
-                <Text variant="bodyStrong" color={active ? colors.primary : colors.text}>{c.label}</Text>
-                <Text variant="caption" color={colors.textMuted}>{c.sub}</Text>
+              <PressableScale key={c.key} onPress={() => pickCourse(c.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
+                <View style={{ flex: 1 }}>
+                  <Text variant="bodyStrong" color={active ? colors.primary : colors.text}>{c.label}</Text>
+                  <Text variant="caption" color={colors.textMuted}>{c.sub}</Text>
+                </View>
+                <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
+                  {active ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: colors.primary }} /> : null}
+                </View>
               </PressableScale>
             );
           })}
-        </View>
+        </Section>
 
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, marginBottom: spacing.sm, marginLeft: 4 }}>OKUMA SESİ</Text>
-        <VoicePicker course={course} value={voice} onChange={pickVoice} />
+        <Section title="SEVİYE" colors={colors}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+            {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => setLevel(l)} colors={colors} />)}
+          </View>
+          <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
+            <Text variant="bodyStrong" color={colors.primary}>Emin değil misin? Seviye testini çöz →</Text>
+          </PressableScale>
+        </Section>
 
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, marginBottom: spacing.sm, marginLeft: 4 }}>GÖRÜNÜM</Text>
-        <View style={{ flexDirection: "row", backgroundColor: colors.surface2, borderRadius: radii.lg, padding: 4 }}>
-          {THEME_OPTIONS.map((o) => {
-            const active = mode === o.key;
-            return (
-              <PressableScale key={o.key} onPress={() => setMode(o.key)} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.md, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? softShadow("#5a3418", 4) : {}) }}>
-                <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{o.label}</Text>
-              </PressableScale>
-            );
-          })}
-        </View>
+        <Section title="GÜNLÜK HEDEF · tekrar / gün" colors={colors}>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+            {Array.from(new Set([...GOALS, goal])).sort((a, b) => a - b).map((g) => <Chip key={g} label={String(g)} active={goal === g} onPress={() => setGoal(g)} colors={colors} />)}
+          </View>
+        </Section>
+
+        <Section title="OKUMA SESİ" colors={colors}>
+          <VoicePicker course={course} value={voice} onChange={pickVoice} />
+        </Section>
+
+        <Section title="GÖRÜNÜM" colors={colors}>
+          <View style={{ flexDirection: "row", backgroundColor: colors.surface2, borderRadius: radii.md, padding: 4 }}>
+            {THEME_OPTIONS.map((o) => {
+              const active = mode === o.key;
+              return (
+                <PressableScale key={o.key} onPress={() => setMode(o.key)} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? softShadow("#5a3418", 4) : {}) }}>
+                  <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{o.label}</Text>
+                </PressableScale>
+              );
+            })}
+          </View>
+        </Section>
 
         {!user && (
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl }}>
