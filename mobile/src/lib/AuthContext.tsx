@@ -3,6 +3,7 @@ import { getSession, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSig
 import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
 import { updateProfile } from "./updateProfile";
 import { configureBilling } from "./billing";
+import { googleSignOut } from "./googleAuth";
 
 type Ctx = {
   user: AuthUser | null;
@@ -68,7 +69,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return r;
   }, []);
 
-  const signOut = useCallback(async () => { await apiSignOut(); setUser(null); }, []);
+  const signOut = useCallback(async () => {
+    await apiSignOut();
+    // Google SDK oturumunu da kapat ki tekrar girişte hesap seçici açılsın
+    // (yoksa önceki hesaba sessizce girilir). Hata olsa da çıkışı sürdür.
+    try { await googleSignOut(); } catch { /* yut */ }
+    setUser(null);
+  }, []);
 
   const socialComplete = useCallback(async () => {
     const u = await getSession();

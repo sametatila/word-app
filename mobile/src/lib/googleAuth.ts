@@ -22,6 +22,15 @@ function ensureConfigured() {
 }
 
 /**
+ * Google SDK oturumunu kapatır — önbellekteki hesabı temizler ki bir sonraki
+ * girişte cihaz hesap SEÇİCİSİ tekrar açılsın (aksi halde SDK son hesabı sessizce
+ * seçip aynı hesaba giriyor). better-auth oturumundan bağımsızdır. Sessiz.
+ */
+export async function googleSignOut(): Promise<void> {
+  try { ensureConfigured(); await GoogleSignin.signOut(); } catch { /* yut */ }
+}
+
+/**
  * Cihaz hesap seçiciyi açar, idToken alır, better-auth'a idToken ile giriş yapar.
  * İptal edilirse sessiz (CANCELLED). Play Services yoksa net mesaj döner.
  */
