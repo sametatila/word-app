@@ -4,11 +4,13 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon } from "../ui/icons";
+import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
+import { ProgressRing } from "../ui/ProgressRing";
 import { DEMO_WORDS, type Word } from "../data/demoWords";
 import { track } from "../lib/track";
+import { shareResult } from "../lib/share";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } from "../game/session";
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
@@ -72,6 +74,7 @@ export function WalkModeScreen() {
   const [tally, setTally] = useState({ correct: 0, total: 0 });
   const [noMore, setNoMore] = useState(false);
   const [pocket, setPocket] = useState(false); // "cebe koy": ekran siyah ama AÇIK (tanıyıcı çalışsın)
+  const [greeting, setGreeting] = useState(false); // Başla sonrası kısa TTS karşılama
   const pocketRef = useRef(false);
   const setPocketMode = (on: boolean) => { pocketRef.current = on; setPocket(on); };
 
@@ -161,17 +164,18 @@ export function WalkModeScreen() {
     await sayTR(w.tr); // Türkçe ipucu (Emel)
     if (!alive()) return "ok";
 
-    // Önce TTS kuyruğu otursun (mic kendi sesimizi kapmasın); SONRA "go" sesi ile mic AYNI ANDA
-    // açılır. Kritik: micon ile mic açılışı arasına boşluk KOYMA — yoksa kısa kelimeyi (er/es/du)
-    // mic açılmadan söyleyip kaçırırsın (no_match). Uzun kelimeler kısmen yakalanır ama kısalar kaçar.
-    await gap(300);
+    await gap(150); // TTS kuyruğu kısaca otursun (mic kendi sesimizi kapmasın)
     if (!alive()) return "ok";
-    sfx("micon"); // "şimdi konuş" işareti — mic hemen ardından açılıyor
     setPhase("listening");
-    const res = await Promise.race([
+    // TRICK: önce mic AÇILIR, ~180ms SONRA "şimdi konuş" sesi çalar. Böylece kullanıcı sesi
+    // duyar duymaz başlasa bile mic zaten açık → kısa kelimenin ilk hecesi kaçmaz (güvenli).
+    const listenP = Promise.race([
       listenOnce("de-DE", 8000).then((h) => ({ k: "v" as const, heard: h ?? [] })),
       waitManual().then(() => ({ k: "m" as const })),
     ]);
+    const miconTimer = setTimeout(() => sfx("micon"), 180);
+    const res = await listenP;
+    clearTimeout(miconTimer);
     stopListening();
     sfx("micoff");
     manualResolve.current = null;
@@ -268,6 +272,7 @@ export function WalkModeScreen() {
     }
     if (!alive()) return;
     flush(true); // tur bitti — SRS'e yaz
+    sfx("finish"); // tamamlanma sesi
     // Cepte (eller serbest) → sesli "Devam edelim mi?"; ekran açık → görsel özet + butonlar.
     if (pocketRef.current) { await askContinue(alive); return; }
     setKeepAwake(false);
@@ -275,24 +280,31 @@ export function WalkModeScreen() {
     void sayTR(`Tur bitti. ${tallyRef.current.total} sorudan ${tallyRef.current.correct} doğru.`);
   }
 
-  async function start(rs: WalkRound[]) {
+  async function start(rs: WalkRound[], greet = true) {
     const granted = await ensureMicPermission();
     if (!granted) { setPhase("denied"); return; }
     setKeepAwake(true); // ekran turu boyunca sönmesin
     startedAt.current = Date.now();
     tallyRef.current = { correct: 0, total: 0 }; setTally(tallyRef.current);
     unheardWin.current = [];
+    if (greet) {
+      // Kısa TTS karşılama — doğrudan ilk kelimeye dalmadan.
+      setVerdict(null); setHeard(""); setGreeting(true); setPhase("speaking");
+      await sayTR("Hazırsan başlıyoruz. Türkçesini duy, Almancasını söyle.");
+      setGreeting(false);
+      if (!mounted.current) return;
+    }
     void runLoop(rs, 0);
   }
 
   // Devam / yeni tur: sorulanları skip ederek taze walk kuyruğu getir. Tekrar kalmadıysa bildir.
   async function newTour() {
-    if (!user) { start(DEMO_ROUNDS); return; }
+    if (!user) { start(DEMO_ROUNDS, false); return; }
     setPhase("intro"); setNoMore(false);
     try {
       const p = await fetchSession(day.current, { walk: true, skip: Array.from(askedIds.current) });
       const wr = mapRounds(p.rounds ?? []);
-      if (wr.length) { setRounds(wr); setCurWord(wr[0].word); start(wr); return; }
+      if (wr.length) { setRounds(wr); setCurWord(wr[0].word); start(wr, false); return; }
       setNoMore(true); setPhase("done"); void sayTR("Bugünlük tekrar kalmadı.");
     } catch { setPhase("done"); }
   }
@@ -355,6 +367,8 @@ export function WalkModeScreen() {
   const dotColor = verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primary : colors.surface2;
   const stepLabel = teaching ? "Yeni kelime" : phase === "speaking" ? "İpucu okunuyor…" : phase === "listening" ? "Şimdi Almancasını söyle" : verdict === "unheard" ? "Duyamadım" : verdict === "skip" ? "Atlandı" : verdict === "correct" ? "Doğru!" : verdict === "wrong" ? "Doğrusu" : "";
   const total = rounds.length;
+  const donePct = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
+  const donePad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
 
   const topBar = (withProgress: boolean) => (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, marginBottom: spacing.xl }}>
@@ -391,19 +405,32 @@ export function WalkModeScreen() {
           </View>
         </>
       ) : phase === "done" ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
-          <Celebrate show />
-          <Mascot mood="celebrate" size={110} />
-          <Text variant="display">Tur bitti</Text>
-          <Text variant="h2" color={colors.primary}>{tally.correct}/{tally.total} doğru</Text>
-          {noMore ? <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>Bugünlük tekrar kalmadı.</Text> : (
-            <PressableScale onPress={newTour} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color="#fff">Devam et</Text>
-            </PressableScale>
-          )}
-          <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>Bitir</Text>
-          </PressableScale>
+        // Diğer oyunlarla (GameScreen) bütünlük: sağ üst X, ProgressRing, mascot, Tur bitti + Devam/Paylaş/Bitir.
+        <View style={donePad}>
+          <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
+            <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+          </View>
+          <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+            <Celebrate show={tally.total > 0 && donePct >= 60} />
+            <Mascot mood={tally.total > 0 ? (donePct >= 60 ? "celebrate" : "happy") : "idle"} size={104} />
+            <ProgressRing size={150} stroke={14} pct={donePct} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
+              <Text variant="display" color={colors.primary}>{tally.correct}/{tally.total || 0}</Text>
+              <Text variant="micro" color={colors.textMuted}>doğru</Text>
+            </ProgressRing>
+            <Text variant="h1" style={{ marginTop: spacing.xl }}>{noMore ? "Bugünlük bu kadar" : "Tur bitti!"}</Text>
+            <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
+              {noMore ? "Şu an tekrar edilecek kelime yok — yarın yeniden gel." : "İlerlemen kaydedildi."}
+            </Text>
+            {!noMore && (
+              <PressableScale onPress={newTour} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">Devam et</Text></PressableScale>
+            )}
+            {tally.total > 0 && (
+              <PressableScale onPress={() => shareResult(tally.correct, tally.total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
+                <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>Paylaş</Text>
+              </PressableScale>
+            )}
+            <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}><Text variant="bodyStrong" color={colors.textMuted}>Bitir</Text></PressableScale>
+          </View>
         </View>
       ) : phase === "stopped" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
@@ -429,45 +456,65 @@ export function WalkModeScreen() {
             <Text variant="bodyStrong" color={colors.textMuted}>Vazgeç</Text>
           </PressableScale>
         </View>
+      ) : greeting ? (
+        <>
+          {topBar(true)}
+          <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl, gap: spacing.lg }}>
+            <Mascot mood="wave" size={124} />
+            <Text variant="h1">Başlıyoruz</Text>
+            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>Dinle… birazdan ilk kelime.</Text>
+          </View>
+        </>
       ) : (
         <>
           {topBar(true)}
-          <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: (teaching ? colors.primary : colors.info) + "1e", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7 }}>
-              <WalkIcon color={teaching ? colors.primary : colors.info} size={16} /><Text variant="caption" color={teaching ? colors.primary : colors.info}>{teaching ? "Yeni kelime öğreniyoruz" : "Yürürken çalış · ekrana bakmadan"}</Text>
+          <View style={{ flex: 1, paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.md }}>
+            {/* durum rozeti */}
+            <View style={{ alignItems: "center" }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: (teaching ? colors.primary : colors.info) + "1e", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7 }}>
+                <WalkIcon color={teaching ? colors.primary : colors.info} size={15} />
+                <Text variant="caption" color={teaching ? colors.primary : colors.info}>{teaching ? "Yeni kelime öğreniyoruz" : "Yürürken çalış · ekrana bakmadan"}</Text>
+              </View>
             </View>
 
-            <View style={{ alignItems: "center", marginTop: spacing.xxxl, marginBottom: spacing.xl, minHeight: 150, justifyContent: "center" }}>
-              <Text variant="display" color={reveal ? colors.text : colors.textMuted} style={{ marginTop: spacing.sm, textAlign: "center" }}>
-                {reveal ? withArtikel(curWord) : curWord.tr}
-              </Text>
-              {/* İngilizce gloss — diğer oyunlardaki gibi (belirsiz/kısa kelimede hangi Almanca beklendiğini netleştirir). */}
-              {!reveal && curWord.en ? <Text variant="body" color={colors.textFaint} style={{ marginTop: 4, textAlign: "center" }}>{curWord.en}</Text> : null}
-              {reveal && <Text variant="h3" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{curWord.en ? `${curWord.tr} · ${curWord.en}` : curWord.tr}</Text>}
-              {heard ? <Text variant="caption" color={verdict === "correct" ? colors.success : colors.danger} style={{ marginTop: spacing.sm }}>duyduğum: “{heard}”</Text> : null}
-              <Text variant="caption" color={verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : colors.textMuted} style={{ marginTop: spacing.md }}>{stepLabel}</Text>
+            {/* orta: kelime + mikrofon + durum */}
+            <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.xxl }}>
+              <View style={{ alignItems: "center", gap: 6, minHeight: 96, justifyContent: "center" }}>
+                <Text variant="display" color={colors.text} style={{ textAlign: "center" }}>{reveal ? withArtikel(curWord) : curWord.tr}</Text>
+                {/* İngilizce gloss — diğer oyunlardaki gibi (kısa/belirsiz kelimede hangi Almanca beklendiğini netleştirir). */}
+                {!reveal && curWord.en ? <Text variant="h3" color={colors.textFaint} style={{ textAlign: "center" }}>{curWord.en}</Text> : null}
+                {reveal ? <Text variant="h3" color={colors.textMuted} style={{ textAlign: "center" }}>{curWord.en ? `${curWord.tr} · ${curWord.en}` : curWord.tr}</Text> : null}
+              </View>
+
+              <View style={{ alignItems: "center", justifyContent: "center", height: 104 }}>
+                {listening ? <Animated.View style={{ position: "absolute", width: 96, height: 96, borderRadius: 48, backgroundColor: dotColor, opacity: ringOpacity, transform: [{ scale: ringScale }] }} /> : null}
+                <Animated.View style={{ transform: [{ scale: listening ? scale : 1 }] }}>
+                  <View style={[{ width: 96, height: 96, borderRadius: 48, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, listening ? softShadow(colors.primary, 14) : {}]}>
+                    {verdict === "correct" ? <CheckIcon color="#fff" size={42} /> : verdict === "wrong" ? <XIcon color="#fff" size={42} /> : <MicIcon color={listening ? "#fff" : colors.textFaint} size={42} />}
+                  </View>
+                </Animated.View>
+              </View>
+
+              <View style={{ alignItems: "center", gap: 4, minHeight: 46 }}>
+                <Text variant="bodyStrong" color={verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primary : colors.textMuted}>{stepLabel}</Text>
+                {heard ? <Text variant="caption" color={verdict === "correct" ? colors.success : colors.danger}>duyduğum: “{heard}”</Text> : null}
+              </View>
             </View>
 
-            <View style={{ alignItems: "center", justifyContent: "center", height: 120 }}>
-              {listening ? <Animated.View style={{ position: "absolute", width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, opacity: ringOpacity, transform: [{ scale: ringScale }] }} /> : null}
-              <Animated.View style={{ transform: [{ scale: listening ? scale : 1 }] }}>
-                <View style={[{ width: 92, height: 92, borderRadius: 46, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, listening ? softShadow(colors.primary, 14) : {}]}>
-                  {verdict === "correct" ? <CheckIcon color="#fff" size={40} /> : verdict === "wrong" ? <XIcon color="#fff" size={40} /> : <MicIcon color={listening ? "#fff" : colors.textFaint} size={40} />}
-                </View>
-              </Animated.View>
-            </View>
-
-            {phase === "listening" ? (
-              <PressableScale onPress={skipNow} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, marginTop: spacing.xl, paddingVertical: spacing.sm }}>
-                <Text variant="bodyStrong" color={colors.textMuted}>Atla</Text><ChevronRightIcon color={colors.textMuted} size={18} />
+            {/* alt: Atla + Cebe koy */}
+            <View style={{ alignItems: "center", gap: spacing.xs }}>
+              {phase === "listening" ? (
+                <PressableScale onPress={skipNow} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, paddingVertical: spacing.sm }}>
+                  <Text variant="bodyStrong" color={colors.textMuted}>Atla</Text><ChevronRightIcon color={colors.textMuted} size={18} />
+                </PressableScale>
+              ) : (
+                <View style={{ height: 40 }} />
+              )}
+              {/* Cebe koy: ekran siyah ama AÇIK kalır (tanıyıcı çalışsın); eller serbest, tur sonunda sesli devam. */}
+              <PressableScale onPress={() => setPocketMode(true)} style={{ paddingVertical: spacing.sm }}>
+                <Text variant="caption" color={colors.textMuted}>Cebe koy · ekranı karart</Text>
               </PressableScale>
-            ) : (
-              <View style={{ height: 60 }} />
-            )}
-            {/* Cebe koy: ekran siyah ama AÇIK kalır (tanıyıcı çalışsın); eller serbest, tur sonunda sesli devam. */}
-            <PressableScale onPress={() => setPocketMode(true)} style={{ marginTop: spacing.md, paddingVertical: spacing.sm }}>
-              <Text variant="caption" color={colors.textMuted}>Cebe koy · ekranı karart</Text>
-            </PressableScale>
+            </View>
           </View>
         </>
       )}
