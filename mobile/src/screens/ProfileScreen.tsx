@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -12,18 +12,8 @@ import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatDuration, formatXp } from "../lib/useMe";
 import { usePremium } from "../lib/usePremium";
-import { useTheme, spacing, radii, softShadow, type ThemeMode, type Palette } from "../theme";
-import { VoicePicker } from "../ui/VoicePicker";
-import { loadVoicePref, setVoicePref } from "../lib/tts";
-import { defaultVoice, type VoiceId } from "../lib/voices";
-import { updateProfile } from "../lib/updateProfile";
+import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
-
-const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
-  { key: "system", label: "Sistem" },
-  { key: "light", label: "Açık" },
-  { key: "dark", label: "Koyu" },
-];
 
 function StatTile({ value, label, color, colors }: { value: string; label: string; color: string; colors: Palette }) {
   return (
@@ -47,20 +37,12 @@ function Row({ icon: Icon, label, tint, colors, last, onPress }: { icon: (p: { c
 }
 
 export function ProfileScreen() {
-  const { colors, mode, setMode } = useTheme();
+  const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user, signOut } = useAuth();
   const { me } = useMe();
   const premium = usePremium();
-  const course = me?.course ?? "de";
-  const [voice, setVoice] = useState<VoiceId>(defaultVoice(course));
-  useEffect(() => { void loadVoicePref(course).then(setVoice); }, [course]);
-  function pickVoice(v: VoiceId) {
-    setVoice(v);
-    void setVoicePref(course, v);
-    void updateProfile({ voice: v });
-  }
   // Misafir modu yok: kullanıcı her zaman var. Adı yoksa e-posta adından türet.
   const displayName = user?.name?.trim() || user?.email?.split("@")[0] || "Öğrenci";
   const initial = (displayName.trim()[0] ?? "Ö").toUpperCase();
@@ -141,26 +123,7 @@ export function ProfileScreen() {
           </PressableScale>
         )}
 
-        {/* görünüm — tema geçişi */}
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>GÖRÜNÜM</Text>
-        <View style={{ flexDirection: "row", backgroundColor: colors.surface2, borderRadius: radii.lg, padding: 4, marginBottom: spacing.lg }}>
-          {THEME_OPTIONS.map((o) => {
-            const active = mode === o.key;
-            return (
-              <PressableScale key={o.key} onPress={() => setMode(o.key)} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.md, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? softShadow("#5a3418", 4) : {}) }}>
-                <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{o.label}</Text>
-              </PressableScale>
-            );
-          })}
-        </View>
-
-        {/* ses — okuma sesi seçimi (web ile aynı iki ses) */}
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>OKUMA SESİ</Text>
-        <View style={{ marginBottom: spacing.lg }}>
-          <VoicePicker course={course} value={voice} onChange={pickVoice} />
-        </View>
-
-        {/* ayar satırları */}
+        {/* ayar satırları — görünüm / okuma sesi / dil artık Ayarlar'da */}
         <Card padded style={{ paddingVertical: 0 }}>
           <Row icon={LearnIcon} label="Kelimelerim" tint={colors.primary} colors={colors} onPress={() => nav.navigate("Words")} />
           <Row icon={TrophyIcon} label="Başarımlar" tint={colors.streak} colors={colors} onPress={() => nav.navigate("Achievements")} />

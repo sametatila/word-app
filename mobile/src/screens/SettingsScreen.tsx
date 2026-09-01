@@ -10,10 +10,22 @@ import { ChevronLeftIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
 import { updateProfile } from "../lib/updateProfile";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { VoicePicker } from "../ui/VoicePicker";
+import { loadVoicePref, setVoicePref } from "../lib/tts";
+import { defaultVoice, type VoiceId } from "../lib/voices";
+import { useTheme, spacing, radii, softShadow, type Palette, type ThemeMode } from "../theme";
 
 const GOALS = [10, 20, 30, 50];
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
+const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
+  { key: "system", label: "Sistem" },
+  { key: "light", label: "Açık" },
+  { key: "dark", label: "Koyu" },
+];
+const COURSE_OPTIONS: { key: string; label: string; sub: string }[] = [
+  { key: "de", label: "Almanca", sub: "Hochdeutsch · Goethe A1–C1" },
+  { key: "gsw-zh", label: "Zürih Almancası", sub: "Züritüütsch · İsviçre lehçesi" },
+];
 
 function Chip({ label, active, onPress, colors }: { label: string; active: boolean; onPress: () => void; colors: Palette }) {
   return (
@@ -24,7 +36,7 @@ function Chip({ label, active, onPress, colors }: { label: string; active: boole
 }
 
 export function SettingsScreen() {
-  const { colors } = useTheme();
+  const { colors, mode, setMode } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user, refresh } = useAuth();
@@ -33,6 +45,8 @@ export function SettingsScreen() {
   const [name, setName] = useState(me?.name ?? user?.name ?? "");
   const [goal, setGoal] = useState<number>(me?.dailyGoal ?? 20);
   const [level, setLevel] = useState<string>(me?.level ?? "A1");
+  const [course, setCourse] = useState<string>(me?.course ?? "de");
+  const [voice, setVoice] = useState<VoiceId>(defaultVoice(me?.course ?? "de"));
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
@@ -47,8 +61,22 @@ export function SettingsScreen() {
       setName((n) => n || me.name || user?.name || "");
       setGoal(me.dailyGoal);
       setLevel(me.level);
+      setCourse(me.course ?? "de");
+      void loadVoicePref(me.course ?? "de").then(setVoice);
     }
   }, [me, user]);
+
+  // Görünüm / ses / dil ANINDA uygulanır (kaydet butonu ad/hedef/seviye için).
+  function pickVoice(v: VoiceId) { setVoice(v); void setVoicePref(course, v); void updateProfile({ voice: v }); }
+  async function pickCourse(c: string) {
+    if (c === course) return;
+    setCourse(c);
+    const v = defaultVoice(c); // kurs değişince o kursun varsayılan sesine dön
+    setVoice(v);
+    void setVoicePref(c, v);
+    await updateProfile({ course: c, voice: v });
+    await refresh();
+  }
 
   async function save() {
     if (busy) return;
@@ -93,6 +121,34 @@ export function SettingsScreen() {
         <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
           <Text variant="bodyStrong" color={colors.primary}>Emin değil misin? Seviye testini çöz →</Text>
         </PressableScale>
+
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, marginBottom: spacing.sm, marginLeft: 4 }}>ÖĞRENİLECEK DİL</Text>
+        <View style={{ gap: spacing.sm }}>
+          {COURSE_OPTIONS.map((c) => {
+            const active = course === c.key;
+            return (
+              <PressableScale key={c.key} onPress={() => pickCourse(c.key)} style={{ paddingHorizontal: spacing.lg, paddingVertical: 14, borderRadius: radii.lg, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
+                <Text variant="bodyStrong" color={active ? colors.primary : colors.text}>{c.label}</Text>
+                <Text variant="caption" color={colors.textMuted}>{c.sub}</Text>
+              </PressableScale>
+            );
+          })}
+        </View>
+
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, marginBottom: spacing.sm, marginLeft: 4 }}>OKUMA SESİ</Text>
+        <VoicePicker course={course} value={voice} onChange={pickVoice} />
+
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl, marginBottom: spacing.sm, marginLeft: 4 }}>GÖRÜNÜM</Text>
+        <View style={{ flexDirection: "row", backgroundColor: colors.surface2, borderRadius: radii.lg, padding: 4 }}>
+          {THEME_OPTIONS.map((o) => {
+            const active = mode === o.key;
+            return (
+              <PressableScale key={o.key} onPress={() => setMode(o.key)} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.md, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? softShadow("#5a3418", 4) : {}) }}>
+                <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{o.label}</Text>
+              </PressableScale>
+            );
+          })}
+        </View>
 
         {!user && (
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl }}>
