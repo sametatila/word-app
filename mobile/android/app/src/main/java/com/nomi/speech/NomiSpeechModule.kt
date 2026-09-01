@@ -255,64 +255,110 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   //     arka planda codec/OMX yüzünden çalmıyor; ham PCM codec gerektirmez, kesin çalar. ---
   @ReactMethod
   fun playSfx(kind: String) {
-    // Köprü (ekran-açık WebAudio) ile BİREBİR: her nota [freq, start, dur, peak, wave(0=sine,1=triangle), to(glide,0=yok)].
+    // Nota tablosu src/lib/sfxNotes.ts ile BİREBİR (tek kaynak orası; `python3 scripts/render-sfx.py --kotlin`
+    // çıktısı). Nota: [freq, start, dur, peak, wave(0 sine,1 tri,2 square), glide(hedef Hz, 0 yok),
+    // lp(alçak geçiren Hz, 0 yok), attack(sn), hold(0 pluck / 1 tut), release(sn)].
     val notes: List<DoubleArray> = when (kind) {
-      "correct" -> listOf( // başarı AKORU (aynı anda majör — micon'un yükselen süpürmesinden belirgin farklı)
-        doubleArrayOf(523.25, 0.0, 0.28, 0.16, 0.0, 0.0),
-        doubleArrayOf(659.25, 0.0, 0.28, 0.15, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.0, 0.3, 0.15, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.0, 0.32, 0.12, 0.0, 0.0),
-        doubleArrayOf(1567.98, 0.14, 0.26, 0.06, 1.0, 0.0),
+      "correct" -> listOf(
+        doubleArrayOf(523.25, 0.0, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(523.25, 0.0, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(659.25, 0.08, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(659.25, 0.08, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(783.99, 0.16, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(783.99, 0.16, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1046.5, 0.24, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1046.5, 0.24, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
       )
       "wrong" -> listOf(
-        doubleArrayOf(392.0, 0.0, 0.16, 0.17, 0.0, 293.66),
-        doubleArrayOf(196.0, 0.1, 0.3, 0.11, 0.0, 0.0),
-      )
-      "finish" -> listOf(
-        doubleArrayOf(523.25, 0.0, 0.12, 0.2, 0.0, 0.0),
-        doubleArrayOf(659.25, 0.1, 0.12, 0.2, 0.0, 0.0),
-        doubleArrayOf(783.99, 0.2, 0.12, 0.2, 0.0, 0.0),
-        doubleArrayOf(1046.5, 0.3, 0.32, 0.24, 0.0, 0.0),
-        doubleArrayOf(1567.98, 0.3, 0.4, 0.07, 1.0, 0.0),
-      )
-      "micoff" -> listOf(
-        doubleArrayOf(587.33, 0.0, 0.08, 0.11, 0.0, 0.0),
-        doubleArrayOf(392.0, 0.06, 0.14, 0.1, 0.0, 0.0),
+        doubleArrayOf(392.0, 0.0, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(392.0, 0.0, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(311.13, 0.09, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(311.13, 0.09, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(261.63, 0.18, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(261.63, 0.18, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
       )
       "micon" -> listOf(
-        doubleArrayOf(587.33, 0.0, 0.09, 0.13, 0.0, 0.0),
-        doubleArrayOf(880.0, 0.07, 0.12, 0.11, 0.0, 0.0),
+        doubleArrayOf(523.25, 0.0, 0.17, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(523.25, 0.0, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(783.99, 0.06, 0.17, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(783.99, 0.06, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
       )
-      else -> listOf(doubleArrayOf(1174.66, 0.0, 0.05, 0.09, 0.0, 0.0)) // tap
+      "micoff" -> listOf(
+        doubleArrayOf(783.99, 0.0, 0.17, 0.05, 2.0, 0.0, 1800.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(783.99, 0.0, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(523.25, 0.06, 0.17, 0.05, 2.0, 0.0, 1800.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(523.25, 0.06, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      )
+      "finish" -> listOf(
+        doubleArrayOf(523.25, 0.0, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(523.25, 0.0, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(659.25, 0.075, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(659.25, 0.075, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(783.99, 0.15, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(783.99, 0.15, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1046.5, 0.225, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1046.5, 0.225, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(698.46, 0.42, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(698.46, 0.42, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(880.0, 0.495, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(880.0, 0.495, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1046.5, 0.57, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1046.5, 0.57, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1396.91, 0.645, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1396.91, 0.645, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1046.5, 0.92, 0.68, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1046.5, 0.92, 0.8, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1318.51, 0.92, 0.68, 0.03, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(1318.51, 0.92, 0.8, 0.1, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(261.63, 0.92, 0.8, 0.07, 1.0, 0.0, 1400.0, 0.03, 1.0, 0.4),
+        doubleArrayOf(392.0, 0.92, 0.8, 0.07, 1.0, 0.0, 1400.0, 0.03, 1.0, 0.4),
+      )
+      "tap" -> listOf(
+        doubleArrayOf(1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0),
+      )
+      else -> listOf(doubleArrayOf(1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0))
     }
     playNotes(notes)
   }
 
-  /** Köprünün note() sentezini birebir: üstel zarf (0.0001→peak @0.008s → 0.0001 @dur), sine/triangle,
-   *  glide (to), 0.55 master. AudioTrack MODE_STREAM + USAGE_MEDIA (arka planda çalar). */
+  /** Köprünün (sfxNotes.ts) sentezini birebir: üstel zarf (0.0001→peak @attack; pluck: dur sonunda
+   *  0.0001'e üstel iniş; hold: peak'te tut, son `release` saniyede in), sine/triangle/square, üstel
+   *  glide, RBJ alçak geçiren (Q 0.707 ≈ WebAudio lowpass Q 0.7), 0.8 master (SFX_MASTER).
+   *  AudioTrack MODE_STREAM + USAGE_MEDIA (arka planda çalar). */
   private fun playNotes(notes: List<DoubleArray>) {
     Thread {
       try {
         val rate = 44100
-        val master = 0.55
+        val master = 0.8
+        val floor = 0.0001
         val total = notes.maxOf { it[1] + it[2] } + 0.06
         val n = (total * rate).toInt().coerceAtLeast(1)
         val mix = DoubleArray(n)
         for (nt in notes) {
-          val freq = nt[0]; val start = nt[1]; val dur = nt[2]; val peak = nt[3]; val tri = nt[4] >= 0.5; val to = nt[5]
+          val freq = nt[0]; val start = nt[1]; val dur = nt[2]; val peak = nt[3]; val wave = nt[4].toInt()
+          val to = nt[5]; val lp = nt[6]; val attack = if (nt[7] > 0) nt[7] else 0.004; val hold = nt[8] >= 0.5; val release = nt[9]
           val s0 = (start * rate).toInt()
           val len = (dur * rate).toInt()
-          val attack = 0.008
+          val raw = DoubleArray(len)
           var phase = 0.0
           for (i in 0 until len) {
             val t = i.toDouble() / rate
             val f = if (to > 0) freq * Math.pow(to / freq, t / dur) else freq
             phase += 2 * Math.PI * f / rate
-            val s = if (tri) { val p = (phase / (2 * Math.PI)) % 1.0; 2 * Math.abs(2 * p - 1) - 1 } else Math.sin(phase)
-            val env = if (t < attack) 0.0001 * Math.pow(peak / 0.0001, t / attack)
-              else peak * Math.pow(0.0001 / peak, (t - attack) / (dur - attack))
+            raw[i] = when (wave) {
+              1 -> { val p = (phase / (2 * Math.PI)) % 1.0; 2 * Math.abs(2 * p - 1) - 1 }
+              2 -> if (Math.sin(phase) >= 0) 1.0 else -1.0
+              else -> Math.sin(phase)
+            }
+          }
+          if (lp > 0) lowpass(raw, lp, rate)
+          for (i in 0 until len) {
+            val t = i.toDouble() / rate
+            val env = if (t < attack) floor * Math.pow(peak / floor, t / attack)
+              else if (hold) { val rs = dur - release; if (t < rs) peak else peak * Math.pow(floor / peak, (t - rs) / release) }
+              else peak * Math.pow(floor / peak, (t - attack) / (dur - attack))
             val idx = s0 + i
-            if (idx in 0 until n) mix[idx] += s * env * master
+            if (idx in 0 until n) mix[idx] += raw[i] * env * master
           }
         }
         val buf = ShortArray(n)
@@ -331,6 +377,24 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
         at.release()
       } catch (e: Exception) { android.util.Log.e("NomiWalk", "playNotes ex ${e.message}") }
     }.start()
+  }
+
+  /** RBJ 2. derece alçak geçiren (yerinde), Q 0.707 — köprüdeki BiquadFilter lowpass'ın karşılığı. */
+  private fun lowpass(x: DoubleArray, fc: Double, rate: Int) {
+    val q = 0.7071
+    val w0 = 2 * Math.PI * fc / rate
+    val alpha = Math.sin(w0) / (2 * q)
+    val cw = Math.cos(w0)
+    val a0 = 1 + alpha
+    val b0 = (1 - cw) / 2 / a0; val b1 = (1 - cw) / a0; val b2 = (1 - cw) / 2 / a0
+    val a1 = -2 * cw / a0; val a2 = (1 - alpha) / a0
+    var x1 = 0.0; var x2 = 0.0; var y1 = 0.0; var y2 = 0.0
+    for (i in x.indices) {
+      val v = b0 * x[i] + b1 * x1 + b2 * x2 - a1 * y1 - a2 * y2
+      x2 = x1; x1 = x[i]
+      y2 = y1; y1 = v
+      x[i] = v
+    }
   }
 
   /** Arka planda da çalışan gecikme. RN'in setTimeout'u app arka plana geçince DURUYOR; native

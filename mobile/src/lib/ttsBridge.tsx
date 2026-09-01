@@ -3,6 +3,9 @@ import { View } from "react-native";
 import { WebView } from "react-native-webview";
 import { API_BASE } from "../api/client";
 import type { VoiceId } from "./voices";
+import { SFX_MASTER, SFX_NOTES, type SfxKind } from "./sfxNotes";
+
+export type { SfxKind } from "./sfxNotes";
 
 /** Köprüde kullandığımız yöntemler — WebView tipinin jeneriğine takılmamak için yapısal. */
 type Injectable = { injectJavaScript: (script: string) => void; reload?: () => void };
@@ -55,21 +58,32 @@ export function bridgeRefresh(force = false): void {
   try { viewRef?.reload?.(); } catch { /* yut */ }
 }
 
-export type SfxKind = "correct" | "wrong" | "tap" | "micon" | "micoff" | "finish";
-
 /**
- * Ses efektini WebView'de WebAudio ile SENTEZLER ve çalar. Kademeli (combo) mantık YOK —
- * correct/wrong SABİT sesler. Marka sesleri (Duolingo gibi akılda kalıcı, "Nomi"):
- *  - correct: net YÜKSELEN majör üçlü (E–G#–B) + oktav parıltı → belirgin mutlu/olumlu.
- *  - wrong: yumuşak İNEN iki nota → "bu değildi" ama cezalandırmayan (sert/sawtooth değil).
- *  - finish: tamamlanma fanfarı (C–E–G–C majör arpej + parıltı) → tur/etap bitişi.
- *  - micon/micoff: yürüyüş mic aç/kapa; tap: kısa dokunuş.
+ * Ses efektini WebView'de WebAudio ile SENTEZLER ve çalar. Nota tablosu ve sentez modeli
+ * `sfxNotes.ts`'te (TEK KAYNAK); native ekran-kapalı yol (NomiSpeechModule.playSfx) ve
+ * res/raw mp3 yedeği aynı tabloyu aynı zarf/filtre modeliyle üretir → üç yol birebir aynı ses.
+ * Kademeli (combo) mantık YOK — correct/wrong SABİT. Marka sesleri ksilofon ailesi:
+ *  - correct: Do–Mi–Sol–Do yükselen staccato · wrong: Sol–Mi♭–Do inen minör
+ *  - micon/micoff: Do–Sol / Sol–Do iki nota (yürüyüş mic aç/kapa) · finish: soru–cevap jingle'ı
  * Dosya/res-raw gerektirmez; köprü hazırsa en güvenilir yol. Tanım bir kez enjekte + çağrılır.
  */
+const SFX_DEF =
+  "(function(){if(window.__nomiSfx)return;var A=window.AudioContext||window.webkitAudioContext;if(!A)return;" +
+  "var T=" + JSON.stringify(SFX_NOTES) + ";var M=" + SFX_MASTER + ";var ctx,master;" +
+  "function bus(){if(!ctx)ctx=new A();if(ctx.state==='suspended'){try{ctx.resume();}catch(e){}}" +
+  "if(!master){master=ctx.createGain();master.gain.value=M;master.connect(ctx.destination);}return ctx;}" +
+  // n = [freq, start, dur, peak, wave, glide, lp, attack, hold, release] — bkz. sfxNotes.ts
+  "function note(t0,n){var c=bus();if(!c)return;var f=n[0],t=t0+n[1],d=n[2],p=n[3],w=n[4],to=n[5],lp=n[6],a=n[7]||0.004,h=n[8],r=n[9];" +
+  "var o=c.createOscillator(),g=c.createGain();o.type=w===2?'square':w===1?'triangle':'sine';o.frequency.setValueAtTime(f,t);" +
+  "if(to>0)o.frequency.exponentialRampToValueAtTime(Math.max(20,to),t+d);var src=o;" +
+  "if(lp>0){var q=c.createBiquadFilter();q.type='lowpass';q.Q.value=0.7;q.frequency.setValueAtTime(lp,t);o.connect(q);src=q;}" +
+  "g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(p,t+a);" +
+  "if(h>=0.5){g.gain.setValueAtTime(p,t+d-r);g.gain.exponentialRampToValueAtTime(0.0001,t+d);}else{g.gain.exponentialRampToValueAtTime(0.0001,t+d);}" +
+  "src.connect(g).connect(master);o.start(t);o.stop(t+d+0.03);}" +
+  "window.__nomiSfx=function(k){try{var ns=T[k]||T.tap;var c=bus();if(!c)return;var t0=c.currentTime+0.01;for(var i=0;i<ns.length;i++)note(t0,ns[i]);}catch(e){}};})();";
 export function bridgeSfx(kind: SfxKind): void {
   if (!bridgeReady()) return;
-  const def = "(function(){if(window.__nomiSfx)return;var A=window.AudioContext||window.webkitAudioContext;if(!A)return;var ctx,master;function bus(){if(!ctx)ctx=new A();if(ctx.state==='suspended'){try{ctx.resume();}catch(e){}}if(!master){master=ctx.createGain();master.gain.value=0.55;master.connect(ctx.destination);}return ctx;}function note(at,f,d,p,w,to){var c=bus();if(!c)return;var t=c.currentTime+at;var o=c.createOscillator(),g=c.createGain();o.type=w||'sine';o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(Math.max(20,to),t+d);g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(p,t+0.008);g.gain.exponentialRampToValueAtTime(0.0001,t+d);o.connect(g).connect(master);o.start(t);o.stop(t+d+0.03);}window.__nomiSfx=function(k){try{if(k==='correct'){note(0,523.25,0.28,0.16);note(0,659.25,0.28,0.15);note(0,783.99,0.3,0.15);note(0,1046.5,0.32,0.12);note(0.14,1567.98,0.26,0.06,'triangle');}else if(k==='wrong'){note(0,392,0.16,0.17,'sine',293.66);note(0.1,196,0.3,0.11,'sine');}else if(k==='finish'){note(0,523.25,0.12,0.2);note(0.1,659.25,0.12,0.2);note(0.2,783.99,0.12,0.2);note(0.3,1046.5,0.32,0.24);note(0.3,1567.98,0.4,0.07,'triangle');}else if(k==='micon'){note(0,587.33,0.09,0.13);note(0.07,880,0.12,0.11);}else if(k==='micoff'){note(0,587.33,0.08,0.11);note(0.06,392,0.14,0.1);}else{note(0,1174.66,0.05,0.09);}}catch(e){}};})();";
-  const js = def + " window.__nomiSfx&&window.__nomiSfx(" + JSON.stringify(kind) + "); true;";
+  const js = SFX_DEF + " window.__nomiSfx&&window.__nomiSfx(" + JSON.stringify(kind) + "); true;";
   try { viewRef!.injectJavaScript(js); } catch { /* yut */ }
 }
 

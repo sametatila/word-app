@@ -6,8 +6,10 @@ import { bridgeReady, bridgeSfx, type SfxKind } from "./ttsBridge";
 const NomiSfx = NativeModules.NomiSpeech as { playSfx?: (kind: string) => void } | undefined;
 
 /**
- * Kısa ses efektleri (doğru/yanlış/dokunuş) — haptikle birlikte geri bildirim.
- * Sesler android/app/src/main/res/raw'da. ÖNEMLİ: Android res/raw kaynağı UZANTISIZ
+ * Kısa ses efektleri (doğru/yanlış/dokunuş/mic aç-kapa/bitiş) — haptikle birlikte geri bildirim.
+ * Üç çalma yolu da `sfxNotes.ts`'teki aynı nota tablosunu çalar (ekran-kapalı native sentez,
+ * WebView köprüsü, res/raw mp3 yedeği) → her yerde aynı ses.
+ * Yedek mp3'ler android/app/src/main/res/raw'da (`scripts/render-sfx.py` üretir). ÖNEMLİ: Android res/raw kaynağı UZANTISIZ
  * adla bulunur ("correct"); ".mp3" ile aranırsa bulunamaz ve hiç çalmaz. iOS'ta
  * bundle uzantılı ister. Ayrıca modül açılırken önden yüklenir ki ilk çağrıda hazır
  * olsun. Ses açılamazsa sessizce yutulur (haptik yine çalışır).
@@ -28,7 +30,7 @@ function preload(name: string): void {
 }
 
 // Modül açılışında önden yükle.
-(["correct", "wrong", "tap"] as const).forEach(preload);
+(["correct", "wrong", "tap", "micon", "micoff", "finish"] as const).forEach(preload);
 
 // Ekran-kapalı: WebView köprüsü askıya alınıp sustuğu için native res/raw'a düş (arka planda çalar).
 let screenOffMode = false;
@@ -45,11 +47,10 @@ export function sfx(kind: SfxKind): void {
     if (screenOffMode) { try { NomiSfx?.playSfx?.(kind); } catch { /* yut */ } return; }
     // Öncelik: WebAudio köprüsü — web ile birebir sentez, çalıştığı KANITLI çıkış (TTS de buradan).
     if (bridgeReady()) { bridgeSfx(kind); return; }
-    // Yedek: cihazda react-native-sound. micon/micoff → tap, finish → correct (dosya yok).
-    const name = kind === "micon" || kind === "micoff" ? "tap" : kind === "finish" ? "correct" : kind;
-    const s = cache[name];
-    if (s === undefined) { preload(name); return; }
+    // Yedek: cihazda react-native-sound (her tür için kendi mp3'ü var).
+    const s = cache[kind];
+    if (s === undefined) { preload(kind); return; }
     if (!s) return;
-    s.stop(() => { s.setVolume(name === "tap" ? 0.4 : 0.85); s.play(); });
+    s.stop(() => { s.setVolume(kind === "tap" ? 0.4 : 0.85); s.play(); });
   } catch { /* yut */ }
 }
