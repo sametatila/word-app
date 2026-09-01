@@ -1,6 +1,7 @@
 import Foundation
 import Speech
 import AVFoundation
+import UIKit
 
 /**
  * Kendi konuşma tanıma (STT) modülümüz — iOS `SFSpeechRecognizer` + `AVAudioEngine`.
@@ -37,6 +38,12 @@ class NomiSpeech: RCTEventEmitter {
                    rejecter reject: @escaping RCTPromiseRejectBlock) {
     let r = SFSpeechRecognizer(locale: Locale(identifier: "de-DE"))
     resolve(r?.isAvailable ?? false)
+  }
+
+  /** Ekran uykusunu engelle/bırak (Wake Lock karşılığı) — yürüyüş turu boyunca ekran sönmesin. */
+  @objc(setKeepAwake:)
+  func setKeepAwake(_ on: Bool) {
+    DispatchQueue.main.async { UIApplication.shared.isIdleTimerDisabled = on }
   }
 
   @objc(start:resolver:rejecter:)

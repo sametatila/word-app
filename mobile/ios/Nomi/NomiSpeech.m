@@ -10,6 +10,7 @@ RCT_EXTERN_METHOD(start:(NSString *)locale
                   rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(isAvailable:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(setKeepAwake:(BOOL)on)
 RCT_EXTERN_METHOD(stop)
 RCT_EXTERN_METHOD(cancel)
 RCT_EXTERN_METHOD(destroy)

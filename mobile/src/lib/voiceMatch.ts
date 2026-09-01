@@ -36,10 +36,17 @@ const CONTAINS_MIN = 3; // fazla kelime bağışlanır ama yalnız ≥3 harfli h
  * (hedef ≥3 harf) kelime-sınırlı içerme ("ähm die Katze bitte" → Katze).
  */
 export function spokenMatches(heard: string[], candidates: string[]): boolean {
-  const forms = candidates.flatMap(acceptedForms).map(foldSpelling).filter(Boolean);
+  // Hedef/duyulan yalnız artikelse (der/die/das) foldSpelling onu silip boşaltıyor →
+  // asla eşleşmez. Boşalırsa artikeli silmeyen düz küçültmeye düş.
+  const foldKeep = (s: string): string => {
+    const f = foldSpelling(s);
+    if (f) return f;
+    return (s || "").toLocaleLowerCase("de-DE").replace(/[.,!?;:"'’]/g, " ").replace(/\s+/g, " ").trim();
+  };
+  const forms = candidates.flatMap(acceptedForms).map(foldKeep).filter(Boolean);
   if (!forms.length) return false;
   const test = (said: string): boolean => {
-    const f = foldSpelling(said);
+    const f = foldKeep(said);
     if (!f) return false;
     return forms.some((form) => f === form || (form.length >= CONTAINS_MIN && ` ${f} `.includes(` ${form} `)));
   };

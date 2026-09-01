@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.view.WindowManager
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
@@ -61,6 +62,18 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
     }
   }
 
+  /** Ekran uykusunu engelle/bırak (Wake Lock karşılığı) — yürüyüş turu boyunca ekran sönmesin. */
+  @ReactMethod
+  fun setKeepAwake(on: Boolean) {
+    val activity = reactCtx.currentActivity ?: return
+    UiThreadUtil.runOnUiThread {
+      try {
+        if (on) activity.window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        else activity.window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+      } catch (_: Exception) { /* yut */ }
+    }
+  }
+
   @ReactMethod
   fun start(locale: String, promise: Promise) {
     UiThreadUtil.runOnUiThread {
@@ -76,19 +89,21 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
         sr.setRecognitionListener(this)
         recognizer = sr
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-          putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+          // WEB_SEARCH kısa sorgular için ayarlı — tek/kısa kelimeyi (er/es/zu) FREE_FORM'dan
+          // (dikte) daha iyi çözüyor; yürüyüşün cevapları zaten tek kelime.
+          putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH)
           putExtra(RecognizerIntent.EXTRA_LANGUAGE, locale)
           putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, locale)
           putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, false)
           putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
           putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5)
           putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, reactCtx.packageName)
-          // Erken kapanmayı geciktiren ipuçları (motor destekliyorsa): en az kayıt
-          // süresi + konuşma sonrası beklenecek sessizlik. Google bazılarını yok
-          // sayabilir; yine de destekleyen motorlarda mikrofon yeterince açık kalır.
-          putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS, 4000L)
-          putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 1800L)
-          putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 1800L)
+          // Konuşma sonrası ~1200ms sessizlik bekle: kısa kelimeyi (içindeki mikro-duraklama
+          // dahil, ör. "dann") tam yakalayıp erken kesip no_match dememesi için. 500ms motoru
+          // 8sn takmıştı; 1200 güvenli aralık (1800 çalışıyordu). JS'te 1200ms quiet-timer + 8sn
+          // pencere yine de takılmaya karşı emniyet.
+          putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 1200L)
+          putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 1200L)
         }
         sr.startListening(intent)
         promise.resolve(true)
