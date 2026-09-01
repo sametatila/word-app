@@ -36,6 +36,31 @@ export function bridgeStop(): void {
 }
 
 /**
+ * Speak-and-WAIT — yürüyüş modu için: konuşma BİTENE ("end" mesajı) kadar bekler.
+ * Sıralı çağrılır (aynı anda tek utterance) → tek bekleyen resolver yeterli.
+ * "end"/"error" gelmezse metin uzunluğuna göre bir üst sınırla yine de çözülür.
+ */
+let pendingResolve: (() => void) | null = null;
+let pendingTimer: ReturnType<typeof setTimeout> | null = null;
+function finishPending(): void {
+  if (pendingTimer) { clearTimeout(pendingTimer); pendingTimer = null; }
+  const r = pendingResolve;
+  pendingResolve = null;
+  if (r) r();
+}
+export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow = false): Promise<void> {
+  return new Promise((resolve) => {
+    if (!bridgeReady() || !text) { resolve(); return; }
+    finishPending(); // önceki bekleyeni serbest bırak
+    pendingResolve = resolve;
+    const cap = Math.min(14000, Math.max(3000, text.length * 120));
+    pendingTimer = setTimeout(finishPending, cap);
+    const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${slow ? "true" : "false"}); true;`;
+    try { viewRef!.injectJavaScript(js); } catch { finishPending(); }
+  });
+}
+
+/**
  * Uygulama kökünde bir kez mount edilir; GÖRÜNMEZ ve SIFIR YERLEŞİM AYAK İZİ.
  *
  * WebView'in kendisi 0×0'a güvenilmez (react-native-webview bunu düzgün
@@ -59,8 +84,9 @@ export function TtsBridge() {
         onMessage={(e) => {
           const m = e.nativeEvent.data;
           if (m === "ready") { ready = true; healthy = true; errors = 0; }
-          else if (m === "play" || m === "end") { healthy = true; errors = 0; } // başarı sağlığı geri getirir
-          else if (m === "error") { if (++errors >= 2) healthy = false; } // üst üste hata → cihaz TTS'i
+          else if (m === "play") { healthy = true; errors = 0; }
+          else if (m === "end") { healthy = true; errors = 0; finishPending(); } // bekleyen speak-and-wait'i çöz
+          else if (m === "error") { if (++errors >= 2) healthy = false; finishPending(); } // üst üste hata → cihaz TTS'i
         }}
         onError={() => { ready = false; }}
         onHttpError={() => { ready = false; }}

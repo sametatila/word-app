@@ -1,7 +1,7 @@
 import Tts from "react-native-tts";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
-import { bridgeReady, bridgeSpeak } from "./ttsBridge";
+import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait } from "./ttsBridge";
 
 /**
  * Almanca sesli okuma (TTS) — cihazın TextToSpeech motoru.
@@ -155,6 +155,18 @@ export function speakWithVoice(text: string, voice: VoiceId): void {
  * sıralaması için (önce konuş, sonra dinle). Almanca ise kullanıcı sesini
  * uygular; Türkçe (anlatım) sabit.
  */
+/**
+ * Belirli bir SESLE seslendirir ve BİTİNCE resolve olur (yürüyüş modu). Önce Edge
+ * köprüsü — web'le birebir: Türkçe ipucu Emel, Almanca cevap kullanıcının seçtiği
+ * Katja/Conrad. Köprü hazır değilse cihaz TTS'ine düşer (dil sesten türetilir).
+ */
+export async function speakAndWaitVoiced(text: string, voice: VoiceId): Promise<void> {
+  if (!text) return;
+  if (bridgeReady()) { await bridgeSpeakAndWait(voice, text); return; }
+  const lang = voice.startsWith("tr") ? "tr-TR" : "de-DE";
+  await speakAndWait(text, lang);
+}
+
 export function speakAndWait(text: string, lang: "de-DE" | "tr-TR" = "de-DE"): Promise<void> {
   return new Promise((resolve) => {
     void ttsAvailable().then(async (ok) => {
