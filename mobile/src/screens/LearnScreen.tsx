@@ -164,7 +164,7 @@ export function LearnScreen() {
       {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>Öne çıkan</Text>
       <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
-        <WedgeTile title="Yürüyüş modu" pitch="Kulakla öğren, yürürken çalış" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
+        <WedgeTile title="Yürüyüş modu" pitch="Dinle ve söyle, ekrana bakmadan" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
         <WedgeTile title="Sınav hazırlık" pitch="Goethe & telc — hedefe yönelik" tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
       </View>
 

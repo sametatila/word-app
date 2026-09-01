@@ -1605,7 +1605,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           style={{ background: "#000", touchAction: "none" }}
         >
           <p className="mb-24 px-8 text-center text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.22)" }}>
-            Ekran karanlık ama açık — dinliyorum, akış kulakta.
+            Ekran karanlık ama açık — seni dinliyorum.
             <br />
             Çıkmak için üç kez dokun.
           </p>

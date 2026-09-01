@@ -223,7 +223,7 @@ export function WalkModeScreen() {
       {phase === "intro" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl, gap: spacing.lg }}>
           <Mascot mood="wave" size={120} />
-          <Text variant="display" style={{ textAlign: "center" }}>Kulakla öğren</Text>
+          <Text variant="display" style={{ textAlign: "center" }}>Dinle ve söyle</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>
             Türkçe ipucunu duyacaksın, sen Almancasını söyleyeceksin. Doğrusunu birlikte dinleriz. Yürürken, otururken — ekrana bakmadan.
           </Text>
@@ -271,7 +271,7 @@ export function WalkModeScreen() {
       ) : (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.info + "1e", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7 }}>
-            <WalkIcon color={colors.info} size={16} /><Text variant="caption" color={colors.info}>Kulakla öğren · yürürken çalış</Text>
+            <WalkIcon color={colors.info} size={16} /><Text variant="caption" color={colors.info}>Yürürken çalış · ekrana bakmadan</Text>
           </View>
 
           {/* Gösterim SESLE senkron: konuşurken/dinlerken Türkçe ipucu; cevap
