@@ -13,10 +13,13 @@ type Row = {
   de: string;
   artikel: string;
   tr: string;
+  en?: string | null;
   formen: string;
   typ: string;
   niveau: string;
   beispiel: string;
+  beispielTr?: string | null;
+  beispielEn?: string | null;
   rank?: number | null;
 };
 
@@ -44,11 +47,13 @@ async function main() {
   /**
    * Yenilenen anlamlar ve örnek cümleler (data/meanings/out/*.json).
    *
-   * Kaynak Goethe listesi bir kelimeye üç dört anlam veriyor, örnek cümlelerin
-   * bir kısmı kelimeyi hiç içermiyor ve İngilizce hiç yok. Düzeltmeler ayrı
-   * dosyalarda duruyor ve burada **kaynağın üzerine biniyor**: words.json ham
-   * kaynak olarak dokunulmadan kalıyor, böylece bir düzeltmenin neyi
-   * değiştirdiği tek bir yerden görülebiliyor.
+   * Tarihçe: kaynak Goethe listesi bir kelimeye üç dört anlam veriyordu, örnek
+   * cümlelerin bir kısmı kelimeyi içermiyor ve İngilizce hiç yoktu; bu düzeltme
+   * dosyaları ham kaynağın üzerine biniyordu. Artık **words.json canlı Netcup
+   * DB'sinin tam anlık görüntüsü** (tr/en/beispiel/beispielTr/beispielEn dahil),
+   * yani tek başına seed prod'u üretir. Bu overlay geriye dönük uyumluluk ve
+   * bir düzeltmenin neyi değiştirdiğinin tek yerden izlenmesi için tutuluyor;
+   * words.json ile aynı değerlere sahip olduğundan seed sonucunu değiştirmez.
    */
   const meanings = new Map(readMeanings().map((m) => [m.id, m]));
   if (meanings.size) console.log(`${meanings.size} yenilenmiş anlam okundu.`);
@@ -66,13 +71,13 @@ async function main() {
       de: cleanHeadword(r.de),
       artikel: r.artikel || null,
       tr: m?.tr ?? r.tr,
-      en: m?.en ?? null,
+      en: m?.en ?? r.en ?? null,
       formen: r.formen || null,
       typ: inferTyp(m ? { ...r, tr: m.tr } : r),
       niveau: r.niveau.startsWith("A1") ? "A1" : r.niveau,
       beispiel: m?.beispiel ?? r.beispiel ?? null,
-      beispielTr: m?.beispielTr ?? beispielTr.get(r.id) ?? null,
-      beispielEn: m?.beispielEn ?? null,
+      beispielTr: m?.beispielTr ?? r.beispielTr ?? beispielTr.get(r.id) ?? null,
+      beispielEn: m?.beispielEn ?? r.beispielEn ?? null,
       rank: r.rank ?? null,
     };
   });
