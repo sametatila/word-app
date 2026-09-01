@@ -1,4 +1,5 @@
 import React from "react";
+import { View } from "react-native";
 import { WebView } from "react-native-webview";
 import { API_BASE } from "../api/client";
 import type { VoiceId } from "./voices";
@@ -34,29 +35,37 @@ export function bridgeStop(): void {
   try { viewRef!.injectJavaScript("window.ttsStop && window.ttsStop(); true;"); } catch { /* yut */ }
 }
 
-/** Uygulama kökünde bir kez mount edilir; görünmez. */
+/**
+ * Uygulama kökünde bir kez mount edilir; GÖRÜNMEZ ve SIFIR YERLEŞİM AYAK İZİ.
+ *
+ * WebView'in kendisi 0×0'a güvenilmez (react-native-webview bunu düzgün
+ * uygulamıyor ve ekranın üstünü kaplayıp içeriği aşağı itebiliyordu). Bu yüzden
+ * mutlak konumlu, ekran DIŞINDA, 0 boyutlu, overflow-hidden bir sarmalayıcıya
+ * alınır; WebView 1×1 olarak içeride çalışır (JS/ses çalışır) ama düzeni etkilemez.
+ */
 export function TtsBridge() {
   return (
-    <WebView
-      ref={(r) => { viewRef = r; }}
-      source={{ uri: `${API_BASE}/tts-bridge` }}
-      sharedCookiesEnabled
-      thirdPartyCookiesEnabled
-      javaScriptEnabled
-      domStorageEnabled
-      mediaPlaybackRequiresUserAction={false}
-      allowsInlineMediaPlayback
-      cacheEnabled
-      onMessage={(e) => {
-        const m = e.nativeEvent.data;
-        if (m === "ready") { ready = true; healthy = true; errors = 0; }
-        else if (m === "play" || m === "end") { healthy = true; errors = 0; } // başarı sağlığı geri getirir
-        else if (m === "error") { if (++errors >= 2) healthy = false; } // üst üste hata → cihaz TTS'i
-      }}
-      onError={() => { ready = false; }}
-      onHttpError={() => { ready = false; }}
-      style={{ width: 0, height: 0, position: "absolute", top: -1000, opacity: 0 }}
-      pointerEvents="none"
-    />
+    <View style={{ position: "absolute", width: 0, height: 0, top: -10000, left: -10000, overflow: "hidden" }} pointerEvents="none">
+      <WebView
+        ref={(r) => { viewRef = r; }}
+        source={{ uri: `${API_BASE}/tts-bridge` }}
+        sharedCookiesEnabled
+        thirdPartyCookiesEnabled
+        javaScriptEnabled
+        domStorageEnabled
+        mediaPlaybackRequiresUserAction={false}
+        allowsInlineMediaPlayback
+        cacheEnabled
+        onMessage={(e) => {
+          const m = e.nativeEvent.data;
+          if (m === "ready") { ready = true; healthy = true; errors = 0; }
+          else if (m === "play" || m === "end") { healthy = true; errors = 0; } // başarı sağlığı geri getirir
+          else if (m === "error") { if (++errors >= 2) healthy = false; } // üst üste hata → cihaz TTS'i
+        }}
+        onError={() => { ready = false; }}
+        onHttpError={() => { ready = false; }}
+        style={{ width: 1, height: 1 }}
+      />
+    </View>
   );
 }
