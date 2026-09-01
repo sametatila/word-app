@@ -17,6 +17,7 @@ import { RoundView } from "../game/rounds";
 import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type SessionMeta, type AnswerOut, type SessionProgress } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
+import { sfx } from "../lib/sfx";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 type Phase = "loading" | "auth" | "error" | "play" | "done";
@@ -134,9 +135,11 @@ export function GameScreen() {
 
   async function finish() {
     const totalCorrect = resumeBase.current.correct + answers.current.filter((a) => a.correct).length;
+    const total = resumeBase.current.total + answers.current.length;
     setFinalCorrect(totalCorrect);
-    setFinalTotal(resumeBase.current.total + answers.current.length);
+    setFinalTotal(total);
     setPhase("done");
+    if (total > 0 && totalCorrect / total >= 0.6) sfx("correct"); // iyi sonuçta bitiş kutlama sesi
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
     track("session_done", totalCorrect, "session");
     if (submitted.current) return;

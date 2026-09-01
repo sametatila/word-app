@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, TextInput, KeyboardAvoidingView, Platform, Animated } from "react-native";
+import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { Mascot, type Mood } from "../ui/Mascot";
 import { haptic } from "../lib/haptics";
+import { sfx } from "../lib/sfx";
+import { useKeyboardHeight } from "../lib/useKeyboardHeight";
 import { whyMeaning, whyArticle, whyPlural } from "./why";
 import { speakGerman, ttsAvailable } from "../lib/tts";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -36,6 +39,17 @@ function skeleton(s: string): string {
     .join("   ");
 }
 
+/**
+ * Cloze: boşluklu cümleye doğru cevabı yerleştirip TAM cümleyi kurar
+ * (web: `${before}${answer}${after}`). Boşluk web'de "_____"; güvenli olsun diye
+ * 2+ alt çizgi dizisini cevapla değiştiririz, yoksa cevabı sona ekleriz.
+ */
+function fillBlank(sentence: string | undefined, answer: string): string {
+  const s = sentence ?? "";
+  if (/_{2,}/.test(s)) return s.replace(/_{2,}/, answer).replace(/\s+/g, " ").trim();
+  return `${s} ${answer}`.replace(/\s+/g, " ").trim();
+}
+
 /** Örnek cümle bloğu — Almanca (italik) + Türkçe + (varsa) İngilizce. */
 function ExampleBlock({ de, tr, en, colors }: { de: string | null; tr: string | null; en: string | null; colors: Palette }) {
   const d = firstExample(de), t = firstExample(tr), e = firstExample(en);
@@ -57,12 +71,25 @@ type Done = (correct: boolean, batch?: { wordId: number; correct: boolean }[]) =
 /** Cevap sonrası geri bildirim verisi — web VerdictBar'ın taşıdığı bilgi. */
 type Feedback = {
   correct: boolean;
-  answerDe?: string | null; // doğru Almanca cevap
+  answerDe?: string | null; // doğru Almanca cevap (belirgin gösterilir)
+  speakDe?: string | null;  // hoparlör tıklanınca okunacak (yoksa answerDe) — cloze/order tam cümle
   tr?: string | null;       // Türkçe anlam (BELİRGİN gösterilir)
   en?: string | null;
   why?: string | null;      // yalnız yanlışta: neden yanlış
   note?: string | null;     // özet (match gibi tek cevabı olmayan turlar)
 };
+
+/**
+ * Cevap işaretlendiğinde ortak yan etkiler: haptik + ses efekti + (varsa) doğru
+ * Almanca cevabı otomatik seslendir. Web'de doğru cevap doğru da yanlış da sesli
+ * okunur; Almanca'nın SORU olduğu turlarda (choice de-tr, truefalse, listen)
+ * mount'ta okunduğundan burada tekrar okunmaz (speak=null).
+ */
+function markAnswer(ok: boolean, speak?: string | null): void {
+  haptic(ok ? "correct" : "wrong");
+  sfx(ok ? "correct" : "wrong");
+  if (speak) speakGerman(speak);
+}
 
 /** Almanca metnin yanında küçük hoparlör. */
 function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palette; size?: number }) {
@@ -75,46 +102,80 @@ function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palett
 }
 
 /**
- * Geri bildirim + DEVAM şeridi (Duolingo mantığı): cevaptan sonra doğru/yanlış,
- * doğru Almanca cevap (hoparlörlü), TÜRKÇE anlam BELİRGİN, yanlışta kısa neden;
- * altta "Devam" düğmesi ile bir sonraki tura geçilir (otomatik değil).
+ * Tur iskeleti — içerik üstte (kaydırılabilir; kısa ise dikey doldurur), AKSİYON
+ * alanı (geri bildirim + Devam, ya da yazma turlarında input+ipucu+buton) ALTTA
+ * sabit ve klavye açılınca yukarı kalkar. Böylece tek elle Devam'a ulaşılır ve
+ * yazarken input klavyenin üstünde görünür (edge-to-edge'de adjustResize yetmiyor).
  */
-function FeedbackBar({ data, onContinue, colors }: { data: Feedback; onContinue: () => void; colors: Palette }) {
+function RoundShell({ children, footer, scroll = true }: { children: React.ReactNode; footer?: React.ReactNode; scroll?: boolean }) {
+  const kb = useKeyboardHeight();
+  const insets = useSafeAreaInsets();
+  // Host (GameScreen/DailyScreen) zaten insets.bottom + spacing.lg alt padding
+  // veriyor. Klavye açılınca footer'ı klavyenin üstüne çıkacak kadar kaldır +
+  // ekstra pay: öneri/araç şeridi çoğu Android klavyesinde keyboardDidShow
+  // yüksekliğine DAHİL değil, o yüzden "Kontrol et" butonunu örtmesin diye tampon.
+  const lift = kb > 0 ? Math.max(0, kb - insets.bottom) + spacing.xxl : 0;
+  return (
+    <View style={{ flex: 1 }}>
+      {scroll ? (
+        <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
+          {children}
+        </ScrollView>
+      ) : (
+        <View style={{ flex: 1 }}>{children}</View>
+      )}
+      {footer ? <View style={{ marginBottom: lift, paddingTop: spacing.md }}>{footer}</View> : null}
+    </View>
+  );
+}
+
+/**
+ * Geri bildirim (Duolingo mantığı): cevaptan sonra KOMPAKT şerit — maskot +
+ * doğru/yanlış, doğru Almanca cevap (hoparlörlü), TÜRKÇE anlam BELİRGİN, yanlışta
+ * kısa neden. "Devam" düğmesi şeridin ALTINDA, ekranın en altında (tek el).
+ */
+function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContinue: () => void; colors: Palette }) {
   const ok = data.correct;
   const tone = ok ? colors.success : colors.danger;
+  const speakText = data.speakDe ?? data.answerDe ?? undefined;
   return (
-    <View style={{ marginTop: spacing.md, backgroundColor: ok ? colors.successSoft : colors.dangerSoft, borderRadius: radii.lg, borderWidth: 1.5, borderColor: tone, padding: spacing.lg, gap: spacing.xs }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-        {ok ? <CheckIcon color={colors.success} size={22} /> : <XIcon color={colors.danger} size={22} />}
-        <Text variant="bodyStrong" color={tone}>{ok ? "Doğru!" : "Doğrusu"}</Text>
-        <View style={{ flex: 1 }} />
-        {data.answerDe ? <SpeakButton text={data.answerDe} colors={colors} size={22} /> : null}
+    <View style={{ gap: spacing.sm }}>
+      {/* Web VerdictBar: kompakt yatay şerit — maskot + tek akan satır (etiket +
+          kalın Almanca cevap + · Türkçe), yanlışta ikinci küçük satır (neden). */}
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: ok ? colors.successSoft : colors.dangerSoft, borderRadius: radii.lg, borderWidth: 1.5, borderColor: tone, paddingVertical: spacing.sm, paddingHorizontal: spacing.sm, minHeight: 60 }}>
+        <Mascot mood={ok ? "thumbsup" : "sad"} size={44} />
+        <View style={{ flex: 1 }}>
+          <Text variant="body" style={{ lineHeight: 21 }}>
+            <Text variant="body" color={tone} style={{ fontWeight: "800" }}>{ok ? "Doğru! " : "Doğrusu: "}</Text>
+            {data.answerDe ? <Text variant="body" color={colors.text} style={{ fontWeight: "800" }}>{data.answerDe}</Text> : null}
+            {data.tr ? <Text variant="body" color={colors.textMuted}>{`  ·  ${data.tr}`}</Text> : null}
+            {data.note ? <Text variant="body" color={colors.text} style={{ fontWeight: "800" }}>{data.note}</Text> : null}
+          </Text>
+          {!ok && data.why ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{data.why}</Text> : null}
+        </View>
+        {speakText ? <SpeakButton text={speakText} colors={colors} size={20} /> : null}
       </View>
-      {data.answerDe ? <Text variant="h3" color={colors.text}>{data.answerDe}</Text> : null}
-      {data.tr ? <Text variant="h2" color={colors.primary}>{data.tr}</Text> : null}
-      {data.en ? <Text variant="caption" color={colors.textMuted}>{data.en}</Text> : null}
-      {data.note ? <Text variant="bodyStrong" color={colors.text}>{data.note}</Text> : null}
-      {!ok && data.why ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{data.why}</Text> : null}
-      <PressableScale onPress={onContinue} style={[{ marginTop: spacing.sm, borderRadius: radii.lg, backgroundColor: ok ? colors.success : colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(ok ? colors.success : colors.primary, 8)]}>
+      <PressableScale onPress={onContinue} style={[{ borderRadius: radii.lg, backgroundColor: ok ? colors.success : colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(ok ? colors.success : colors.primary, 8)]}>
         <Text variant="h3" color="#fff">Devam</Text>
       </PressableScale>
     </View>
   );
 }
 
-/** Almanca istemli turlarda bir kez otomatik okuma. */
+/** Almanca SORU olan turlarda bir kez otomatik okuma (web: mount + ~320ms). */
 function useAutoSpeak(text: string | null | undefined, key: string | number) {
   useEffect(() => {
     if (!text) return;
-    const t = setTimeout(() => speakGerman(text), 260);
+    const t = setTimeout(() => speakGerman(text), 320);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
 }
 
-/** Ortadaki maskot — soru ile şıklar arasını doldurur; cevaba göre mood. */
+/** Ortadaki maskot — soru ile şıklar arasını doldurur; cevaba göre mood.
+ *  Cevaplanınca gizlenir ama BOŞLUĞU korur ki şıklar yerinden zıplamasın. */
 function MascotMid({ mood, hidden }: { mood?: Mood; hidden?: boolean }) {
-  if (hidden) return null;
+  if (hidden) return <View style={{ flex: 1, minHeight: spacing.md }} />;
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center", minHeight: 72 }}>
       <Mascot mood={mood ?? "idle"} size={78} />
@@ -177,11 +238,13 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     if (picked) return;
     const ok = o.text === answer;
     setPicked(o.text);
-    haptic(ok ? "correct" : "wrong");
+    // Almanca CEVAP olduğunda (tr-de) doğru Almanca'yı oku; de-tr'de Almanca zaten
+    // soru olarak mount'ta okundu → tekrar okuma.
+    markAnswer(ok, deSide ? null : withArtikel(word));
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
   }
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label={deSide ? "Türkçesi?" : "Almancası?"} big={question} speakText={deSide ? question : null} sub={!deSide ? word.en : null} colors={colors} />
       <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
@@ -190,8 +253,7 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
           return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => choose(o)} colors={colors} />;
         })}
       </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
@@ -203,11 +265,11 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
     if (picked) return;
     const ok = a === word.artikel;
     setPicked(a);
-    haptic(ok ? "correct" : "wrong");
+    markAnswer(ok, withArtikel(word)); // doğru artikel+kelime (Almanca = cevap)
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyArticle(word) });
   }
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label="Hangi artikel?" big={word.de} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
       <MascotMid mood={picked ? (picked === word.artikel ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
@@ -216,8 +278,7 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
           return <View key={a} style={{ flex: 1 }}><OptionButton text={a} state={st} idleTint={ARTIKEL_TONE[a]} onPress={() => choose(a)} colors={colors} /></View>;
         })}
       </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
@@ -225,15 +286,16 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
   const word = round.word!;
   const [ans, setAns] = useState<boolean | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
+  useAutoSpeak(withArtikel(word), round.id); // Almanca = soru → mount'ta oku
   function choose(v: boolean) {
     if (ans !== null) return;
     const ok = v === round.isTrue;
     setAns(v);
-    haptic(ok ? "correct" : "wrong");
+    markAnswer(ok, null); // Almanca zaten mount'ta okundu
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, null) });
   }
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label="Doğru mu?" big={withArtikel(word)} speakText={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />
       <MascotMid mood={ans !== null ? (ans === round.isTrue ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
@@ -242,8 +304,7 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
           return <View key={l} style={{ flex: 1 }}><OptionButton text={l} state={st} onPress={() => choose(v)} colors={colors} /></View>;
         })}
       </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
@@ -270,55 +331,54 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   function check() {
     if (fb) return;
     const ok = norm(val) === norm(word.de) || norm(val) === norm(withArtikel(word));
-    haptic(ok ? "correct" : "wrong");
+    Keyboard.dismiss();
+    markAnswer(ok, withArtikel(word)); // doğru kelimeyi oku (Almanca = cevap)
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, null) });
   }
+  const inputBlock = (
+    <View>
+      <TextInput
+        value={val}
+        onChangeText={setVal}
+        autoCapitalize="none"
+        autoCorrect={false}
+        placeholder="Yaz..."
+        placeholderTextColor={colors.textFaint}
+        onSubmitEditing={check}
+        returnKeyType="done"
+        blurOnSubmit={false}
+        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
+      />
+      <HintRow answer={word.de} colors={colors} />
+      <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+        <Text variant="h3" color="#fff">Kontrol et</Text>
+      </PressableScale>
+    </View>
+  );
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : inputBlock}>
       <Prompt label="Almancasını yaz" big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
-      <View>
-        <TextInput
-          value={val}
-          onChangeText={setVal}
-          editable={fb === null}
-          autoCapitalize="none"
-          autoCorrect={false}
-          placeholder="Yaz..."
-          placeholderTextColor={colors.textFaint}
-          onSubmitEditing={check}
-          returnKeyType="done"
-          blurOnSubmit={false}
-          style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: fb === null ? colors.border : fb.correct ? colors.success : colors.danger, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
-        />
-        {fb === null && (
-          <>
-            <HintRow answer={word.de} colors={colors} />
-            <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-              <Text variant="h3" color="#fff">Kontrol et</Text>
-            </PressableScale>
-          </>
-        )}
-      </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
 function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const opts = (round.options as unknown as string[] | undefined) ?? [];
   const answer = round.answer ?? "";
+  const full = fillBlank(round.sentence, answer);
   const [picked, setPicked] = useState<string | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
   function choose(o: string) {
     if (picked) return;
     const ok = o === answer;
     setPicked(o);
-    haptic(ok ? "correct" : "wrong");
-    setFb({ correct: ok, answerDe: answer, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null });
+    markAnswer(ok, full); // web: cevapta TAM tamamlanmış cümleyi oku
+    // Geri bildirimde de sadece kelimeyi değil TAM cümleyi göster (çeviri anlamlı olsun).
+    setFb({ correct: ok, answerDe: full, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null });
   }
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>Boşluğu doldur</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
@@ -334,8 +394,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
           return <OptionButton key={o} text={o} state={st} onPress={() => choose(o)} colors={colors} />;
         })}
       </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
@@ -345,15 +404,16 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const opts = (round.options as unknown as string[] | undefined) ?? [];
   const [picked, setPicked] = useState<string | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
+  useAutoSpeak(withArtikel(word), round.id); // tekil hâli mount'ta oku
   function choose(o: string) {
     if (picked) return;
     const ok = o === answer;
     setPicked(o);
-    haptic(ok ? "correct" : "wrong");
+    markAnswer(ok, `die ${answer}`); // doğru çoğulu oku
     setFb({ correct: ok, answerDe: `die ${answer}`, tr: word.tr, en: word.en, why: ok ? null : whyPlural(answer) });
   }
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label="Çoğulu?" big={withArtikel(word)} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
       <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
@@ -362,8 +422,7 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
           return <OptionButton key={o} text={`die ${o}`} state={st} onPress={() => choose(o)} colors={colors} />;
         })}
       </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
@@ -382,8 +441,18 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round.id]);
   if (!word) return <View style={{ flex: 1 }} />;
+  const footer = !reveal ? (
+    <PressableScale onPress={() => setReveal(true)} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+      <Text variant="h3" color="#fff">Cevabı göster</Text>
+    </PressableScale>
+  ) : (
+    <View style={{ flexDirection: "row", gap: spacing.md }}>
+      <View style={{ flex: 1 }}><OptionButton text="Zorlandım" state="idle" onPress={() => onDone(false)} colors={colors} /></View>
+      <View style={{ flex: 1 }}><OptionButton text="Bildim" state="idle" onPress={() => onDone(true)} colors={colors} /></View>
+    </View>
+  );
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={footer}>
       <Prompt label={round.game === "intro" ? "Yeni kelime" : "Hatırla"} big={withArtikel(word)} speakText={withArtikel(word)} sub={round.sentence ?? null} colors={colors} />
       {reveal ? (
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
@@ -392,19 +461,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
         </View>
       ) : null}
       <MascotMid mood={reveal ? "happy" : "idle"} />
-      <View>
-        {!reveal ? (
-          <PressableScale onPress={() => setReveal(true)} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="h3" color="#fff">Cevabı göster</Text>
-          </PressableScale>
-        ) : (
-          <View style={{ flexDirection: "row", gap: spacing.md }}>
-            <View style={{ flex: 1 }}><OptionButton text="Zorlandım" state="idle" onPress={() => onDone(false)} colors={colors} /></View>
-            <View style={{ flex: 1 }}><OptionButton text="Bildim" state="idle" onPress={() => onDone(true)} colors={colors} /></View>
-          </View>
-        )}
-      </View>
-    </View>
+    </RoundShell>
   );
 }
 
@@ -429,11 +486,11 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     if (picked) return;
     const ok = o.text === word.tr;
     setPicked(o.text);
-    haptic(ok ? "correct" : "wrong");
+    markAnswer(ok, null); // dinleme turu: Almanca zaten çalındı
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
   }
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>Dinle · anlamını seç</Text>
         {hideWord ? (
@@ -454,8 +511,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
           return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => choose(o)} colors={colors} />;
         })}
       </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
@@ -472,19 +528,31 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
   const [placed, setPlaced] = useState<{ id: number; char: string }[]>([]);
   const [fb, setFb] = useState<Feedback | null>(null);
   const usedIds = new Set(placed.map((t) => t.id));
-  function tap(t: { id: number; char: string }) {
-    if (fb || usedIds.has(t.id)) return;
+  // Bir harf yerleştir; tamamlanınca değerlendir (hem dokunuş hem ipucu buradan geçer).
+  function place(t: { id: number; char: string }) {
     const np = [...placed, t];
     setPlaced(np);
     if (np.length === target.length) {
       const ok = norm(np.map((x) => x.char).join("")) === compareTarget;
-      haptic(ok ? "correct" : "wrong");
+      markAnswer(ok, withArtikel(word)); // tamamlanınca doğru kelimeyi oku
       setFb({ correct: ok, answerDe: word.de, tr: word.tr, en: word.en });
+    } else {
+      sfx("tap");
     }
+  }
+  function tapPool(t: { id: number; char: string }) { if (fb || usedIds.has(t.id)) return; place(t); }
+  function backspace() { if (fb || placed.length === 0) return; sfx("tap"); setPlaced((p) => p.slice(0, -1)); }
+  // İpucu (web): sıradaki DOĞRU harfi havuzdan bulup otomatik yerleştirir.
+  function useHint() {
+    if (fb || placed.length >= target.length) return;
+    const needed = target[placed.length];
+    const tile = pool.find((t) => !usedIds.has(t.id) && t.char === needed)
+      ?? pool.find((t) => !usedIds.has(t.id) && t.char.toLowerCase() === needed.toLowerCase());
+    if (tile) place(tile);
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label="Harfleri sırala" big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
@@ -492,11 +560,20 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>Harflere dokun…</Text> : placed.map((t, i) => <Tile key={i} label={t.char} colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
         </View>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-          {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
+          {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tapPool(t)} colors={colors} />)}
         </View>
+        {!fb ? (
+          <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
+            <PressableScale onPress={backspace} disabled={placed.length === 0} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length === 0 ? 0.4 : 1 }}>
+              <Text variant="caption" color={colors.textMuted}>Sil</Text>
+            </PressableScale>
+            <PressableScale onPress={useHint} disabled={placed.length >= target.length} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length >= target.length ? 0.4 : 1 }}>
+              <Text variant="caption" color={colors.textMuted}>İpucu</Text>
+            </PressableScale>
+          </View>
+        ) : null}
       </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
@@ -515,13 +592,16 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     setPlaced(np);
     if (np.length === answer.length) {
       const ok = np.map((x) => x.text).join(" ") === answer.join(" ");
-      haptic(ok ? "correct" : "wrong");
-      setFb({ correct: ok, answerDe: full, tr: round.sentenceTr ?? word.tr, en: round.sentenceEn ?? null });
+      markAnswer(ok, full); // tamamlanınca tam cümleyi oku
+      setFb({ correct: ok, answerDe: full, speakDe: full, tr: round.sentenceTr ?? word.tr, en: round.sentenceEn ?? null });
+    } else {
+      sfx("tap");
+      speakGerman(t.text); // web: her yerleştirilen kelimeyi oku
     }
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label="Cümleyi sıraya diz" big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
@@ -532,8 +612,7 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
           {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
         </View>
       </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
@@ -547,36 +626,33 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     if (fb) return;
     const t = sn(val);
     const ok = !!t && (t === sn(s.de) || alts.some((a) => sn(a) === t));
-    haptic(ok ? "correct" : "wrong");
-    setFb({ correct: ok, answerDe: s.de, tr: s.tr, en: s.en });
+    Keyboard.dismiss();
+    markAnswer(ok, s.de); // doğru Almanca cümleyi oku
+    setFb({ correct: ok, answerDe: s.de, speakDe: s.de, tr: s.tr, en: s.en });
   }
+  const inputBlock = (
+    <View>
+      <TextInput
+        value={val}
+        onChangeText={setVal}
+        multiline
+        autoCapitalize="sentences"
+        autoCorrect={false}
+        placeholder="Almanca cümleyi yaz…"
+        placeholderTextColor={colors.textFaint}
+        style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
+      />
+      <HintRow answer={s.de} colors={colors} />
+      <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+        <Text variant="h3" color="#fff">Kontrol et</Text>
+      </PressableScale>
+    </View>
+  );
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : inputBlock}>
       <Prompt label="Almancaya çevir" big={s.tr} sub={s.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
-      <View>
-        <TextInput
-          value={val}
-          onChangeText={setVal}
-          editable={fb === null}
-          multiline
-          autoCapitalize="sentences"
-          autoCorrect={false}
-          placeholder="Almanca cümleyi yaz…"
-          placeholderTextColor={colors.textFaint}
-          style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: fb === null ? colors.border : fb.correct ? colors.success : colors.danger, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
-        />
-        {fb === null && (
-          <>
-            <HintRow answer={s.de} colors={colors} />
-            <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-              <Text variant="h3" color="#fff">Kontrol et</Text>
-            </PressableScale>
-          </>
-        )}
-      </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
@@ -625,18 +701,24 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   const [fb, setFb] = useState<Feedback | null>(null);
   const wrongBefore = useRef<Set<number>>(new Set());
 
-  function pickLeft(id: number) { if (matched.has(id) || fb) return; setSelLeft(id); setWrong(null); }
+  function pickLeft(id: number) {
+    if (matched.has(id) || fb) return;
+    sfx("tap");
+    const w = words.find((x) => x.id === id);
+    if (w) speakGerman(withArtikel(w)); // web: Almanca kutusuna dokununca oku
+    setSelLeft(id); setWrong(null);
+  }
   function pickRight(r: { wordId: number; text: string }) {
     if (fb || selLeft == null || matched.has(r.wordId)) return;
     if (r.wordId === selLeft) {
-      const nm = new Set(matched); nm.add(selLeft); setMatched(nm); setSelLeft(null); haptic("correct");
+      const nm = new Set(matched); nm.add(selLeft); setMatched(nm); setSelLeft(null); haptic("correct"); sfx("correct");
       if (nm.size === words.length) {
         const batch = words.map((w) => ({ wordId: w.id, correct: !wrongBefore.current.has(w.id) }));
         const okCount = batch.filter((b) => b.correct).length;
         setFb({ correct: batch.every((b) => b.correct), note: `${okCount}/${words.length} kelime ilk denemede`, tr: null, answerDe: null });
       }
     } else {
-      wrongBefore.current.add(selLeft); haptic("wrong");
+      wrongBefore.current.add(selLeft); haptic("wrong"); sfx("wrong");
       const l = selLeft;
       setWrong({ left: l, right: r.wordId });
       setSelLeft(null);
@@ -646,19 +728,15 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   const batch = words.map((w) => ({ wordId: w.id, correct: !wrongBefore.current.has(w.id) }));
 
   return (
-    <View style={{ flex: 1 }}>
+    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, batch)} colors={colors} /> : undefined}>
       <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md, marginTop: spacing.md, textAlign: "center" }}>Eşleştir</Text>
       <MascotMid mood={fb ? (fb.correct ? "happy" : "idle") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         <View style={{ flex: 1, gap: spacing.sm }}>
           {words.map((w) => {
             const st = matched.has(w.id) ? "correct" : wrong?.left === w.id ? "wrong" : selLeft === w.id ? "sel" : "idle";
-            return (
-              <View key={w.id} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
-                <View style={{ flex: 1 }}><MatchCard text={withArtikel(w)} state={st} onPress={() => pickLeft(w.id)} colors={colors} /></View>
-                <SpeakButton text={withArtikel(w)} colors={colors} size={18} />
-              </View>
-            );
+            // Kutuya dokununca zaten sesli okunuyor → ayrı hoparlör ikonu gereksiz.
+            return <MatchCard key={w.id} text={withArtikel(w)} state={st} onPress={() => pickLeft(w.id)} colors={colors} />;
           })}
         </View>
         <View style={{ flex: 1, gap: spacing.sm }}>
@@ -668,8 +746,7 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
           })}
         </View>
       </View>
-      {fb ? <FeedbackBar data={fb} onContinue={() => onDone(fb.correct, batch)} colors={colors} /> : null}
-    </View>
+    </RoundShell>
   );
 }
 
@@ -690,14 +767,11 @@ function pickRound(round: Round, onDone: Done, colors: Palette) {
   return <SelfAssess round={round} onDone={onDone} colors={colors} />;
 }
 
-/** Tur türüne göre doğru oynatıcıyı seçer; yazma turlarında kutu klavye üstüne çıksın diye KeyboardAvoidingView. */
+/** Tur türüne göre doğru oynatıcıyı seçer. Klavye + alt-sabit aksiyon alanı her
+ *  turun kendi RoundShell'inde yönetilir (edge-to-edge'de manuel klavye kaldırma). */
 export function RoundView({ round, onDone }: { round: Round; onDone: Done }) {
   const { colors } = useTheme();
-  return (
-    <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "ios" ? "padding" : undefined} keyboardVerticalOffset={0}>
-      {pickRound(round, onDone, colors)}
-    </KeyboardAvoidingView>
-  );
+  return pickRound(round, onDone, colors);
 }
 
 export { INTERACTIVE };
