@@ -126,6 +126,7 @@ export function WalkModeScreen() {
         waitManual().then(() => ({ k: "m" as const })),
       ]);
       stopListening();
+      sfx("tap"); // mikrofon kapandı ipucu (web onClose cue)
       manualResolve.current = null;
       if (!alive()) return;
       let result: "correct" | "wrong" | "skip" | "unheard";
@@ -155,11 +156,12 @@ export function WalkModeScreen() {
         if (unheardWin.current.length > UNHEARD_WINDOW) unheardWin.current.shift();
       }
 
-      // Geri bildirim — doğru cevap HER ZAMAN sesli okunur (web ile birebir).
+      // Geri bildirim (web akışı): DOĞRU ise kısa "Doğru" (Almancayı tekrar okumaya
+      // gerek yok — bildin); YANLIŞ/atla/duyulmadı ise "Doğrusu:" + doğru Almanca okunur.
       setPhase("judging");
       if (result === "correct") {
         setVerdict("correct"); haptic("correct"); sfx("correct");
-        await sayDE(withArtikel(w));
+        await sayTR("Doğru.");
         record(w, true);
       } else if (result === "wrong") {
         setVerdict("wrong"); setHeard(said); haptic("wrong"); sfx("wrong");
