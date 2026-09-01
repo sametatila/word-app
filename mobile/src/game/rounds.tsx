@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, TextInput, KeyboardAvoidingView, Platform, Animated, ScrollView } from "react-native";
+import { View, TextInput, KeyboardAvoidingView, Platform, Animated } from "react-native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
@@ -113,10 +113,11 @@ function useAutoSpeak(text: string | null | undefined, key: string | number) {
 }
 
 /** Ortadaki maskot — soru ile şıklar arasını doldurur; cevaba göre mood. */
-function MascotMid({ mood }: { mood?: Mood }) {
+function MascotMid({ mood, hidden }: { mood?: Mood; hidden?: boolean }) {
+  if (hidden) return null;
   return (
-    <View style={{ height: 104, alignItems: "center", justifyContent: "center", marginVertical: spacing.xs }}>
-      <Mascot mood={mood ?? "idle"} size={72} />
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center", minHeight: 72 }}>
+      <Mascot mood={mood ?? "idle"} size={78} />
     </View>
   );
 }
@@ -180,9 +181,9 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
   }
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <Prompt label={deSide ? "Türkçesi?" : "Almancası?"} big={question} speakText={deSide ? question : null} sub={!deSide ? word.en : null} colors={colors} />
-      <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} />
+      <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
         {(round.options ?? []).map((o) => {
           const st = picked ? (o.text === answer ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
@@ -206,9 +207,9 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyArticle(word) });
   }
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <Prompt label="Hangi artikel?" big={word.de} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
-      <MascotMid mood={picked ? (picked === word.artikel ? "thumbsup" : "sad") : "idle"} />
+      <MascotMid mood={picked ? (picked === word.artikel ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {["der", "die", "das"].map((a) => {
           const st = picked ? (a === word.artikel ? "correct" : a === picked ? "wrong" : "idle") : "idle";
@@ -232,9 +233,9 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, null) });
   }
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <Prompt label="Doğru mu?" big={withArtikel(word)} speakText={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />
-      <MascotMid mood={ans !== null ? (ans === round.isTrue ? "thumbsup" : "sad") : "idle"} />
+      <MascotMid mood={ans !== null ? (ans === round.isTrue ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {[{ v: true, l: "Doğru" }, { v: false, l: "Yanlış" }].map(({ v, l }) => {
           const st = ans !== null ? (v === round.isTrue ? "correct" : v === ans ? "wrong" : "idle") : "idle";
@@ -273,9 +274,9 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, null) });
   }
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <Prompt label="Almancasını yaz" big={word.tr} sub={word.en} colors={colors} />
-      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} />
+      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <TextInput
           value={val}
@@ -317,7 +318,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     setFb({ correct: ok, answerDe: answer, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null });
   }
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>Boşluğu doldur</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
@@ -326,7 +327,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
         </View>
         {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}
       </View>
-      <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} />
+      <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
         {opts.map((o) => {
           const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
@@ -352,9 +353,9 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: `die ${answer}`, tr: word.tr, en: word.en, why: ok ? null : whyPlural(answer) });
   }
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <Prompt label="Çoğulu?" big={withArtikel(word)} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
-      <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} />
+      <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
         {opts.map((o) => {
           const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
@@ -382,7 +383,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   }, [round.id]);
   if (!word) return <View style={{ flex: 1 }} />;
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <Prompt label={round.game === "intro" ? "Yeni kelime" : "Hatırla"} big={withArtikel(word)} speakText={withArtikel(word)} sub={round.sentence ?? null} colors={colors} />
       {reveal ? (
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
@@ -398,8 +399,8 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
           </PressableScale>
         ) : (
           <View style={{ flexDirection: "row", gap: spacing.md }}>
-            <View style={{ flexGrow: 1 }}><OptionButton text="Zorlandım" state="idle" onPress={() => onDone(false)} colors={colors} /></View>
-            <View style={{ flexGrow: 1 }}><OptionButton text="Bildim" state="idle" onPress={() => onDone(true)} colors={colors} /></View>
+            <View style={{ flex: 1 }}><OptionButton text="Zorlandım" state="idle" onPress={() => onDone(false)} colors={colors} /></View>
+            <View style={{ flex: 1 }}><OptionButton text="Bildim" state="idle" onPress={() => onDone(true)} colors={colors} /></View>
           </View>
         )}
       </View>
@@ -432,7 +433,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
   }
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>Dinle · anlamını seç</Text>
         {hideWord ? (
@@ -446,7 +447,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
           </View>
         )}
       </View>
-      <MascotMid mood={picked ? (picked === word.tr ? "thumbsup" : "sad") : "idle"} />
+      <MascotMid mood={picked ? (picked === word.tr ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
         {(round.options ?? []).map((o) => {
           const st = picked ? (o.text === word.tr ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
@@ -483,9 +484,9 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <Prompt label="Harfleri sırala" big={word.tr} sub={word.en} colors={colors} />
-      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} />
+      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>Harflere dokun…</Text> : placed.map((t, i) => <Tile key={i} label={t.char} colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
@@ -520,9 +521,9 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <Prompt label="Cümleyi sıraya diz" big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
-      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} />
+      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>Kelimelere dokun…</Text> : placed.map((t, i) => <Tile key={i} label={t.text} colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
@@ -550,9 +551,9 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     setFb({ correct: ok, answerDe: s.de, tr: s.tr, en: s.en });
   }
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <Prompt label="Almancaya çevir" big={s.tr} sub={s.en} colors={colors} />
-      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} />
+      <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <TextInput
           value={val}
@@ -645,16 +646,16 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   const batch = words.map((w) => ({ wordId: w.id, correct: !wrongBefore.current.has(w.id) }));
 
   return (
-    <View style={{ flexGrow: 1 }}>
+    <View style={{ flex: 1 }}>
       <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md, marginTop: spacing.md, textAlign: "center" }}>Eşleştir</Text>
-      <MascotMid mood={fb ? (fb.correct ? "happy" : "idle") : "idle"} />
+      <MascotMid mood={fb ? (fb.correct ? "happy" : "idle") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         <View style={{ flex: 1, gap: spacing.sm }}>
           {words.map((w) => {
             const st = matched.has(w.id) ? "correct" : wrong?.left === w.id ? "wrong" : selLeft === w.id ? "sel" : "idle";
             return (
               <View key={w.id} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
-                <View style={{ flexGrow: 1 }}><MatchCard text={withArtikel(w)} state={st} onPress={() => pickLeft(w.id)} colors={colors} /></View>
+                <View style={{ flex: 1 }}><MatchCard text={withArtikel(w)} state={st} onPress={() => pickLeft(w.id)} colors={colors} /></View>
                 <SpeakButton text={withArtikel(w)} colors={colors} size={18} />
               </View>
             );
@@ -694,14 +695,7 @@ export function RoundView({ round, onDone }: { round: Round; onDone: Done }) {
   const { colors } = useTheme();
   return (
     <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "ios" ? "padding" : undefined} keyboardVerticalOffset={0}>
-      <ScrollView
-        style={{ flex: 1 }}
-        contentContainerStyle={{ flexGrow: 1, paddingBottom: spacing.lg }}
-        keyboardShouldPersistTaps="handled"
-        showsVerticalScrollIndicator={false}
-      >
-        {pickRound(round, onDone, colors)}
-      </ScrollView>
+      {pickRound(round, onDone, colors)}
     </KeyboardAvoidingView>
   );
 }
