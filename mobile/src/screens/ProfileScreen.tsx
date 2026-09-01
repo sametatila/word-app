@@ -17,6 +17,7 @@ import { VoicePicker } from "../ui/VoicePicker";
 import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, type VoiceId } from "../lib/voices";
 import { updateProfile } from "../lib/updateProfile";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
 
 const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
   { key: "system", label: "Sistem" },
@@ -63,7 +64,8 @@ export function ProfileScreen() {
   // Misafir modu yok: kullanıcı her zaman var. Adı yoksa e-posta adından türet.
   const displayName = user?.name?.trim() || user?.email?.split("@")[0] || "Öğrenci";
   const initial = (displayName.trim()[0] ?? "Ö").toUpperCase();
-  async function doSignOut() { await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
+  const [confirmOut, setConfirmOut] = useState(false);
+  async function reallySignOut() { setConfirmOut(false); await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
   const streak = me ? me.streak : 7;
   const xpLabel = me ? formatXp(me.xp) : "1.2k";
 
@@ -170,11 +172,22 @@ export function ProfileScreen() {
           <Row icon={BellIcon} label="Bildirimler" tint={colors.info} colors={colors} onPress={() => nav.navigate("Notifications")} last />
         </Card>
 
-        <PressableScale onPress={doSignOut} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
+        <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
           <LogoutIcon color={colors.danger} size={20} />
           <Text variant="bodyStrong" color={colors.danger}>Çıkış yap</Text>
         </PressableScale>
       </ScrollView>
+
+      <ConfirmDialog
+        visible={confirmOut}
+        title="Çıkış yap"
+        message="Hesabından çıkmak istediğine emin misin?"
+        confirmLabel="Çıkış yap"
+        cancelLabel="Vazgeç"
+        destructive
+        onConfirm={reallySignOut}
+        onCancel={() => setConfirmOut(false)}
+      />
     </View>
   );
 }
