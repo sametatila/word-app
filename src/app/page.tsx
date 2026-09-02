@@ -243,6 +243,11 @@ export default function Home() {
         Kelime kaynağı: A1–B1 Goethe-Institut resmî Wortliste; B2–C1 konu bazlı hazırlanmış set.
         <br />
         Zürih kursu, aynı listenin Züritüütsch karşılığıdır (Dieth temelli sadeleştirilmiş yazım).
+        <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
+          <Link href="/privacy" prefetch={false} className="underline-offset-4 hover:underline">Gizlilik politikası</Link>
+          <Link href="/terms" prefetch={false} className="underline-offset-4 hover:underline">Kullanım şartları</Link>
+          <Link href="/account/delete" prefetch={false} className="underline-offset-4 hover:underline">Hesabını sil</Link>
+        </div>
       </footer>
     </div>
   );

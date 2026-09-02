@@ -106,9 +106,16 @@ export function AuthForm() {
           : "Birkaç saniye sürer, ilk kelimen hazır."
       }
       footer={
-        <Link href="/" className="underline-offset-4 hover:underline">
-          Ana sayfaya dön
-        </Link>
+        <>
+          <p className="mb-3 text-xs leading-relaxed">
+            Devam ederek{" "}
+            <Link href="/terms" prefetch={false} className="underline underline-offset-4">Kullanım Şartları</Link>&apos;nı ve{" "}
+            <Link href="/privacy" prefetch={false} className="underline underline-offset-4">Gizlilik Politikası</Link>&apos;nı kabul etmiş olursun.
+          </p>
+          <Link href="/" className="underline-offset-4 hover:underline">
+            Ana sayfaya dön
+          </Link>
+        </>
       }
     >
       <button
