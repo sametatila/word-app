@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, FlameIcon } from "../ui/icons";
+import { ArrowBackIcon, FlameIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
 import { DEMO_LEADERBOARD, type LeaderboardWeek, type LeaderboardRow } from "../data/demoLeaderboard";
@@ -36,8 +36,8 @@ export function LeaderboardScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ChevronLeftIcon color={colors.text} size={24} />
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h2">Sıralama</Text>
@@ -72,7 +72,7 @@ export function LeaderboardScreen() {
               <View style={{ width: 30, alignItems: "center" }}>
                 <Text variant="h3" color={mc}>{r.rank}</Text>
               </View>
-              <View style={{ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center", backgroundColor: r.isMe ? colors.primary : colors.surface2 }}>
+              <View style={{ width: 44, height: 44, borderRadius: 20, alignItems: "center", justifyContent: "center", backgroundColor: r.isMe ? colors.primary : colors.surface2 }}>
                 <Text variant="bodyStrong" color={r.isMe ? "#fff" : colors.textMuted}>{initial}</Text>
               </View>
               <View style={{ flex: 1 }}>

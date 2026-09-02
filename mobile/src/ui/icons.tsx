@@ -60,6 +60,10 @@ export const GrammarIcon = ({ color = "#000", size }: P) => (
 export const QuizIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Circle cx="12" cy="12" r="9" {...stroke(color)} /><Path d="M9 9a3 3 0 114 2.8c-1 .4-1 1-1 2.2M12 17.5v.5" {...stroke(color)} /></S>
 );
+/** Android geri oku (Material "arrow back") — ekran başlıklarındaki geri düğmesi. */
+export const ArrowBackIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M19 12H5" {...stroke(color, 2.2)} /><Path d="M11 6l-6 6 6 6" {...stroke(color, 2.2)} /></S>
+);
 export const ChevronLeftIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M15 6l-6 6 6 6" {...stroke(color, 2.2)} /></S>
 );

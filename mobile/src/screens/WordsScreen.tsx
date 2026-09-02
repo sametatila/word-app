@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon } from "../ui/icons";
+import { ArrowBackIcon } from "../ui/icons";
 import { SpeakButton } from "../ui/SpeakButton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
@@ -57,8 +57,8 @@ export function WordsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ChevronLeftIcon color={colors.text} size={24} />
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <Text variant="h2">Kelimelerim</Text>
       </View>

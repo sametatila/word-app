@@ -7,7 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, ChevronLeftIcon, BoltIcon, GoogleIcon, AppleIcon, FacebookIcon, MailIcon } from "../ui/icons";
+import { XIcon, ArrowBackIcon, BoltIcon, GoogleIcon, AppleIcon, FacebookIcon, MailIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { signInSocial, requestPasswordReset } from "../lib/auth";
 import { googleSignIn } from "../lib/googleAuth";
@@ -129,8 +129,8 @@ export function AuthScreen() {
           Yalnız e-posta formundan sağlayıcı listesine geri dönülür. */}
       <View style={{ flexDirection: "row", alignItems: "center", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, minHeight: 44 }}>
         {view === "email" && (
-          <PressableScale onPress={() => { setView("options"); setError(null); }} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-            <ChevronLeftIcon color={colors.text} size={24} />
+          <PressableScale hitSlop={4} onPress={() => { setView("options"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+            <ArrowBackIcon color={colors.text} size={24} />
           </PressableScale>
         )}
       </View>
@@ -236,7 +236,7 @@ export function AuthScreen() {
       <Modal visible={!!socialUrl} animationType="slide" onRequestClose={() => setSocialUrl(null)}>
         <View style={{ flex: 1, backgroundColor: colors.bg }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-            <PressableScale onPress={() => setSocialUrl(null)} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+            <PressableScale hitSlop={4} onPress={() => setSocialUrl(null)} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
               <XIcon color={colors.text} size={22} />
             </PressableScale>
             <Text variant="h3">Sosyal giriş</Text>

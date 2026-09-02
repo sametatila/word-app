@@ -58,7 +58,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
             const tone = reactionTone(k, colors);
             const mine = s.mine === k;
             return (
-              <PressableScale key={k} onPress={() => void pick(k)} accessibilityLabel={REACTION_LABELS[k]} style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 6) : {}]}>
+              <PressableScale hitSlop={4} key={k} onPress={() => void pick(k)} accessibilityLabel={REACTION_LABELS[k]} style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 6) : {}]}>
                 <ReactionGlyph kind={k} size={22} colors={colors} color={mine ? "#fff" : undefined} />
               </PressableScale>
             );

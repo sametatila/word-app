@@ -43,7 +43,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
       )}
       {next && NextIcon && (
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.md, padding: spacing.md, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
-          <View style={{ width: 40, height: 40, borderRadius: radii.md, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }}>
+          <View style={{ width: 44, height: 44, borderRadius: radii.md, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }}>
             {NextIcon({ color: "#fff", size: 20 })}
           </View>
           <View style={{ flex: 1 }}>
@@ -105,7 +105,7 @@ export function PathScreen() {
         {path.units.map((u) => (
           <PressableScale key={u.id} style={{ width: "47.5%" }} onPress={() => openUnit(u)}>
             <Card padded style={{ minHeight: 116, opacity: u.locked ? 0.6 : 1, borderColor: u.index === path.currentIndex ? colors.primary : colors.border, borderWidth: u.index === path.currentIndex ? 2 : 1 }}>
-              <View style={{ width: 40, height: 40, borderRadius: 20, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
+              <View style={{ width: 44, height: 44, borderRadius: 20, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                 {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === path.currentIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
               </View>
               <Text variant="bodyStrong" style={{ marginTop: 8 }} numberOfLines={2}>{u.theme}</Text>

@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, WriteIcon, FaceIcon, HandshakeIcon, InboxIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, WriteIcon, FaceIcon, HandshakeIcon, InboxIcon } from "../ui/icons";
 import { Avatar } from "../ui/Avatar";
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
@@ -55,11 +55,11 @@ export function ProfileScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {/* başlık */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ChevronLeftIcon color={colors.text} size={24} />
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <Text variant="h2" style={{ flex: 1 }}>Profil</Text>
-        <PressableScale onPress={() => nav.navigate("Settings")} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.navigate("Settings")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <SettingsIcon color={colors.text} size={22} />
         </PressableScale>
       </View>

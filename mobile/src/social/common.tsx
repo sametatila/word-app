@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, HeartIcon, StarIcon, PartyIcon, SparkIcon, FlameIcon, BoltIcon } from "../ui/icons";
+import { ArrowBackIcon, HeartIcon, StarIcon, PartyIcon, SparkIcon, FlameIcon, BoltIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import type { Palette } from "../theme/colors";
 import type { ReactionKind } from "../api/social";
@@ -25,8 +25,8 @@ export function ScreenHeader({ title, subtitle, right }: { title: string; subtit
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-      <PressableScale onPress={() => (nav.canGoBack() ? nav.goBack() : nav.navigate("Tabs"))} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-        <ChevronLeftIcon color={colors.text} size={24} />
+      <PressableScale hitSlop={4} onPress={() => (nav.canGoBack() ? nav.goBack() : nav.navigate("Tabs"))} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <ArrowBackIcon color={colors.text} size={24} />
       </PressableScale>
       <View style={{ flex: 1 }}>
         <Text variant="h2">{title}</Text>
@@ -41,7 +41,7 @@ export function ScreenHeader({ title, subtitle, right }: { title: string; subtit
 export function HeaderButton({ icon: Icon, onPress, label }: { icon: IconCmp; onPress: () => void; label: string }) {
   const { colors } = useTheme();
   return (
-    <PressableScale onPress={onPress} accessibilityLabel={label} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+    <PressableScale hitSlop={4} onPress={onPress} accessibilityLabel={label} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
       <Icon color={colors.text} size={22} />
     </PressableScale>
   );

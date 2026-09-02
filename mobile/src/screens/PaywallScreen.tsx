@@ -100,7 +100,7 @@ export function PaywallScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ alignItems: "flex-end", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
-        <PressableScale onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel="Kapat" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel="Kapat" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <XIcon color={colors.textMuted} size={22} />
         </PressableScale>
       </View>
@@ -117,7 +117,7 @@ export function PaywallScreen() {
 
         {/* ücretsiz deneme şeridi */}
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.successSoft, borderRadius: radii.lg, padding: spacing.lg, marginBottom: spacing.lg }}>
-          <View style={{ width: 40, height: 40, borderRadius: 20, alignItems: "center", justifyContent: "center", backgroundColor: colors.success }}>
+          <View style={{ width: 44, height: 44, borderRadius: 20, alignItems: "center", justifyContent: "center", backgroundColor: colors.success }}>
             <CheckIcon color="#fff" size={22} />
           </View>
           <View style={{ flex: 1 }}>

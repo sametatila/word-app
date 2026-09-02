@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, View, StyleSheet } from "react-native";
+import { useWindowDimensions, View, StyleSheet } from "react-native";
 import ConfettiCannon from "react-native-confetti-cannon";
 
 /**
@@ -7,8 +7,9 @@ import ConfettiCannon from "react-native-confetti-cannon";
  * (Animated), native modül yok. pointerEvents kapalı: altındaki butonları engellemez.
  */
 export function Celebrate({ show }: { show: boolean }) {
+  // Döndürme/yeniden boyutlanmada (tablet, yatay) güncel genişlik.
+  const { width } = useWindowDimensions();
   if (!show) return null;
-  const { width } = Dimensions.get("window");
   return (
     <View pointerEvents="none" style={StyleSheet.absoluteFill}>
       <ConfettiCannon

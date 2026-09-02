@@ -22,7 +22,7 @@ function ActionTile({ icon: Icon, label, tint, onPress, disabled }: { icon: Icon
   const { colors } = useTheme();
   return (
     <PressableScale onPress={onPress} disabled={disabled} accessibilityLabel={label} style={{ alignItems: "center", gap: 4, opacity: disabled ? 0.4 : 1 }}>
-      <View style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>
+      <View style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>
         <Icon color={tint} size={20} />
       </View>
       <Text variant="micro" color={colors.textMuted}>{label}</Text>

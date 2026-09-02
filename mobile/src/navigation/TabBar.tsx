@@ -26,6 +26,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
           const Icon = ICONS[route.name];
           return (
             <PressableScale key={route.key} onPress={() => { const e = navigation.emit({ type: "tabPress", target: route.key, canPreventDefault: true }); if (!focused && !e.defaultPrevented) { track("nav", i, NAV_KEY[route.name]); navigation.navigate(route.name); } }}
+              accessibilityRole="tab" accessibilityLabel={label} accessibilityState={{ selected: focused }}
               style={{ flex: 1, alignItems: "center", paddingVertical: 9, borderRadius: radii.lg, backgroundColor: focused ? colors.primarySoft : "transparent" }}>
               {Icon?.({ color: focused ? colors.primary : colors.textMuted, size: 23 })}
               <Text variant="micro" color={focused ? colors.primary : colors.textMuted} style={{ marginTop: 3 }}>{label}</Text>

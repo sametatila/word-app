@@ -231,7 +231,8 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint }: { text: s
   }, [state]);
   return (
     <Animated.View style={{ transform: [{ translateX: shake }, { scale: pop }] }}>
-      <PressableScale onPress={onPress} style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
+      <PressableScale onPress={onPress} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ disabled: state !== "idle", selected: state !== "idle" }} accessibilityHint={state === "correct" ? "Doğru cevap" : state === "wrong" ? "Yanlış cevap" : undefined}
+        style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
         <View style={{ flex: 1 }}>
           <Text variant="bodyStrong" color={fg}>{text}</Text>
           {sub ? <Text variant="caption" color={colors.textMuted}>{sub}</Text> : null}
@@ -485,7 +486,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
 /** Küçük harf/kelime karosu — scramble ve order. */
 function Tile({ label, onPress, dim, colors }: { label: string; onPress?: () => void; dim?: boolean; colors: Palette }) {
   return (
-    <PressableScale onPress={onPress} disabled={dim} style={{ paddingHorizontal: 14, paddingVertical: 12, borderRadius: radii.md, backgroundColor: dim ? colors.surface2 : colors.surface, borderWidth: 1.5, borderColor: colors.border, opacity: dim ? 0.4 : 1 }}>
+    <PressableScale onPress={onPress} disabled={dim} accessibilityLabel={label} accessibilityState={{ disabled: !!dim }} style={{ paddingHorizontal: 14, paddingVertical: 12, borderRadius: radii.md, backgroundColor: dim ? colors.surface2 : colors.surface, borderWidth: 1.5, borderColor: colors.border, opacity: dim ? 0.4 : 1 }}>
       <Text variant="bodyStrong" color={colors.text}>{label}</Text>
     </PressableScale>
   );
@@ -683,7 +684,7 @@ function MatchCard({ text, sub, state, onPress, colors }: { text: string; sub?: 
   }, [state]);
   return (
     <Animated.View style={{ transform: [{ translateX: shake }] }}>
-      <PressableScale onPress={onPress} disabled={state === "correct"} style={{ borderWidth: 1.5, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.md, paddingHorizontal: spacing.md, opacity: state === "correct" ? 0.5 : 1, minHeight: 60, justifyContent: "center" }}>
+      <PressableScale onPress={onPress} disabled={state === "correct"} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ selected: state === "sel", disabled: state === "correct" }} style={{ borderWidth: 1.5, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.md, paddingHorizontal: spacing.md, opacity: state === "correct" ? 0.5 : 1, minHeight: 60, justifyContent: "center" }}>
         <Text variant="bodyStrong" color={colors.text}>{text}</Text>
         {sub ? <Text variant="body" color={colors.textMuted} style={{ fontSize: 12 }}>{sub}</Text> : null}
       </PressableScale>

@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon } from "../ui/icons";
+import { ArrowBackIcon } from "../ui/icons";
 import { Avatar } from "../ui/Avatar";
 import { HATS, GLASSES, MUSTACHES, HAT_COLORS } from "../ui/avatarParts";
 import { getAvatar, saveAvatar, DEFAULT_AVATAR, type AvatarConfig } from "../lib/avatar";
@@ -49,8 +49,8 @@ export function AvatarScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ChevronLeftIcon color={colors.text} size={24} />
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <Text variant="h2">Avatarın</Text>
       </View>
@@ -75,7 +75,7 @@ export function AvatarScreen() {
               {HAT_COLORS.map((col) => {
                 const sel = cfg.hatColor === col;
                 return (
-                  <PressableScale key={col} onPress={() => setCfg((c) => ({ ...c, hatColor: col }))} style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : "transparent" }} />
+                  <PressableScale hitSlop={4} key={col} onPress={() => setCfg((c) => ({ ...c, hatColor: col }))} style={{ width: 44, height: 44, borderRadius: 20, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : "transparent" }} />
                 );
               })}
             </View>

@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, BoltIcon, QuizIcon, GrammarIcon, WriteIcon, ListenIcon, CheckIcon, SkillsIcon, LearnIcon, ReadIcon, ArrowRightIcon } from "../ui/icons";
+import { ArrowBackIcon, BoltIcon, QuizIcon, GrammarIcon, WriteIcon, ListenIcon, CheckIcon, SkillsIcon, LearnIcon, ReadIcon, ArrowRightIcon } from "../ui/icons";
 import { practiceGamesFor } from "../game/session";
 import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -38,8 +38,8 @@ export function PracticeScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ChevronLeftIcon color={colors.text} size={24} />
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h2">Pratik</Text>
