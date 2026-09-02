@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { authApi } from "@/lib/auth/api";
@@ -339,6 +340,13 @@ export function ProfileForm({
             sub="Neon Auth anahtarları eklendiğinde giriş ve çoklu cihaz senkronizasyonu kendiliğinden açılır."
           />
         )}
+        {authEnabled ? (
+          <SettingRow title="Hesabı sil" sub="Tüm verilerinle birlikte, geri alınamaz.">
+            <Link href="/account/delete" prefetch={false} className="btn btn-ghost h-9 px-3.5 text-xs" style={{ color: "var(--color-rose-500)" }}>
+              Sil
+            </Link>
+          </SettingRow>
+        ) : null}
       </section>
     </div>
   );

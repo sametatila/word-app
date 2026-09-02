@@ -5,6 +5,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/lib/db";
 import { user, session, account, verification } from "@/lib/db/auth-schema";
 import { emailConfigured, sendEmail, verificationEmail, resetEmail } from "@/lib/email";
+import { purgeUserData } from "@/lib/account/purge";
 
 /**
  * Self-hosted Better Auth (Neon Auth yerine). Oturumlar/kullanıcılar KENDİ
@@ -58,6 +59,21 @@ export const auth = betterAuth({
     expiresIn: 60 * 60 * 24 * 30, // 30 gün
     updateAge: 60 * 60 * 24, // günde bir tazele
     cookieCache: { enabled: true, maxAge: 900 }, // 15 dk çerez-önbelleği (dış isteği azaltır)
+    // Hesap silme gibi yıkıcı işlemler parola verilmezse "taze" oturum ister:
+    // oturum 24 saatten eskiyse yeniden giriş gerekir (çalınan çerezle silme olmasın).
+    freshAge: 60 * 60 * 24,
+  },
+  /**
+   * Hesap silme (Play "hesap silme" zorunluluğu). Uç: POST /api/auth/delete-user
+   * — parola hesabında `password` ister, sosyal hesapta taze oturum yeter.
+   * Better Auth user/session/account satırlarını siler; uygulama verisi
+   * `beforeDelete`te tek transaction'da temizlenir (bkz. lib/account/purge.ts).
+   */
+  user: {
+    deleteUser: {
+      enabled: true,
+      beforeDelete: async (u) => { await purgeUserData(u.id); },
+    },
   },
   /**
    * Hız sınırı. Ölçüldü: sınır yokken /sign-in/email'e art arda 8 yanlış parola

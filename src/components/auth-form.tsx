@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
 import { authApi, type SignUpResponse } from "@/lib/auth/api";
 import { isEmailNotVerified, translateAuthError } from "@/lib/auth/errors";
@@ -11,6 +11,10 @@ type Mode = "signin" | "signup";
 
 export function AuthForm() {
   const router = useRouter();
+  // Girişten sonra dönülecek yer (ör. /account/delete). Yalnız site içi yol kabul edilir.
+  const params = useSearchParams();
+  const nextParam = params.get("next");
+  const next = nextParam && /^\/[a-z0-9\-\/]*$/i.test(nextParam) && !nextParam.startsWith("//") ? nextParam : "/learn";
   const [mode, setMode] = useState<Mode>("signin");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -41,7 +45,7 @@ export function AuthForm() {
           setError(translateAuthError(res));
           return;
         }
-        router.push("/learn");
+        router.push(next);
         router.refresh();
         return;
       }
@@ -60,7 +64,7 @@ export function AuthForm() {
       const verified = res.data?.user?.emailVerified === true;
       const hasSession = Boolean(res.data?.token) || verified;
       if (hasSession) {
-        router.push("/learn");
+        router.push(next);
         router.refresh();
       } else {
         router.push(`/verify-email?email=${encodeURIComponent(email)}&status=new`);

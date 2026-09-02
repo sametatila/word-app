@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { authEnabled, getUserId } from "@/lib/auth/server";
 import { AuthForm } from "@/components/auth-form";
@@ -23,5 +24,6 @@ export default async function LoginPage() {
   const userId = await getUserId();
   if (userId) redirect("/learn");
 
-  return <AuthForm />;
+  // AuthForm useSearchParams okuyor (?next=): Suspense sınırı gerekir.
+  return <Suspense fallback={null}><AuthForm /></Suspense>;
 }
