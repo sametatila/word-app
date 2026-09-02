@@ -162,7 +162,8 @@ async function azure(p: SttProvider, file: File, language: string): Promise<Raw>
       : null;
   if (!type) throw httpError(400, `azure: desteklenmeyen biçim ${file.type || "bilinmiyor"}`);
   const locale = AZURE_LOCALE[language] ?? `${language}-${language.toUpperCase()}`;
-  const query = new URLSearchParams({ language: locale, format: "detailed", profanity: "raw" });
+  // Küfür maskelenir: tanınan metin ekranda "duyduğum: …" olarak yansıyor.
+  const query = new URLSearchParams({ language: locale, format: "detailed", profanity: "masked" });
   const res = await fetch(`${p.baseUrl}/speech/recognition/conversation/cognitiveservices/v1?${query}`, {
     method: "POST",
     headers: { "Ocp-Apim-Subscription-Key": p.key, "content-type": type, accept: "application/json" },
