@@ -68,7 +68,7 @@ react {
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
  */
-def enableProguardInReleaseBuilds = false
+def enableProguardInReleaseBuilds = true
 
 /**
  * The preferred build flavor of JavaScriptCore (JSC)
@@ -90,7 +90,9 @@ android {
 
     namespace "com.nomi"
     defaultConfig {
-        applicationId "com.nomi"
+        // Paket adı: "com.nomi" tek başına fazla genel (Play'de çakışma riski). Alan adına
+        // bağlı DEĞİL — pazarlama alanı sonradan değişebilir; paket adı yayından sonra değişemez.
+        applicationId "com.nomi.learn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 13
@@ -122,7 +124,14 @@ android {
             // yapı için keystore.properties ZORUNLU.
             signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
+            shrinkResources enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+    packaging {
+        jniLibs {
+            // 16 KB sayfa boyutu (Play zorunluluğu): .so'lar sıkıştırılmadan, hizalı paketlenir.
+            useLegacyPackaging = false
         }
     }
 }
@@ -135,6 +144,9 @@ dependencies {
     // eklentisini varsayılan getirmiyor; olmadan WebP tek karede donuyor.
     implementation("com.facebook.fresco:animated-webp:3.7.0")
     implementation("com.facebook.fresco:webpsupport:3.7.0")
+
+    // Android 12+ sistem açılış ekranı (marka rengi + ikon); eski sürümlerde uyumluluk katmanı.
+    implementation("androidx.core:core-splashscreen:1.0.1")
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
