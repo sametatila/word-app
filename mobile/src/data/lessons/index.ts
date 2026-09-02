@@ -3,6 +3,7 @@
  * LESSONS'ından, seviye başına bir JSON). Web dersi koddan okuyor; mobil de
  * öyle çünkü /api/lesson yalnız SONUCU kaydeder, içeriği sunmaz.
  */
+import { courseOrDefault, currentCourseId } from "../../lib/courses";
 import a1 from "./de-a1.json";
 import a2 from "./de-a2.json";
 import b1 from "./de-b1.json";
@@ -27,14 +28,40 @@ export type Lesson = {
   vocab: VocabItem[]; patterns: PatternItem[]; lecture: LectureStep[]; roleplay: LessonRoleplay;
 };
 
-const BY_LEVEL: Record<string, Lesson[]> = {
-  A1: a1 as Lesson[], A2: a2 as Lesson[], B1: b1 as Lesson[], B2: b2 as Lesson[], C1: c1 as Lesson[],
+/**
+ * Paketler kurs → seviye biçiminde. Bugün yalnız Almanca paketi var; yeni bir
+ * dilin paketi eklendiğinde buraya bir satır giriyor.
+ */
+const BY_COURSE: Record<string, Record<string, Lesson[]>> = {
+  de: { A1: a1 as Lesson[], A2: a2 as Lesson[], B1: b1 as Lesson[], B2: b2 as Lesson[], C1: c1 as Lesson[] },
 };
-const ALL: Lesson[] = ([] as Lesson[]).concat(a1 as Lesson[], a2 as Lesson[], b1 as Lesson[], b2 as Lesson[], c1 as Lesson[]);
+
+/**
+ * Kursun ders paketi.
+ *
+ * Yükleyici eskiden kursu hiç bilmiyordu: "Zürih Almancası" seçen kullanıcı
+ * Hochdeutsch dersleri görüyordu. Aynı hedef dili paylaşan bir kursun paketine
+ * düşmek meşru (gsw-zh → de: ikisi de Almanca, lehçe farkı), ama **farklı bir
+ * dile asla düşülmez** — İngilizce kursta Almanca ders göstermektense hiç ders
+ * göstermemek doğrudur.
+ */
+function bundleFor(course: string): Record<string, Lesson[]> | undefined {
+  const own = BY_COURSE[course];
+  if (own) return own;
+  const target = courseOrDefault(course).targetLang;
+  for (const id of Object.keys(BY_COURSE)) {
+    if (courseOrDefault(id).targetLang === target) return BY_COURSE[id];
+  }
+  return undefined;
+}
+
+const ALL: Lesson[] = Object.values(BY_COURSE).flatMap((byLevel) => Object.values(byLevel).flat());
 const INDEX: Record<string, Lesson> = {};
 for (const l of ALL) INDEX[l.id] = l;
 
-export function lessonsForLevel(level: string): Lesson[] { return BY_LEVEL[level] ?? []; }
+export function lessonsForLevel(level: string, course: string = currentCourseId()): Lesson[] {
+  return bundleFor(course)?.[level] ?? [];
+}
 export function findLesson(id: string): Lesson | undefined { return INDEX[id]; }
 
 /** Puanlanan adım sayısı — ders kaydının paydası (üretim + doğru/yanlış). */

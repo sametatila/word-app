@@ -14,7 +14,19 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 const out = join(process.cwd(), "mobile/src/data/lessons");
 mkdirSync(out, { recursive: true });
 
-const all = lessonsFor("de");
+/**
+ * Dökülecek kurs: `npm run dump:lessons -- <kurs>` (varsayılan "de").
+ *
+ * Kurs sabit "de" yazılıydı ve dosya adı da öyle üretiliyordu; ikinci bir dil
+ * eklendiğinde bu betik sessizce yine Almanca paketi yazardı. Mobil yükleyici
+ * paketleri kurs adına göre ayırıyor (data/lessons/index.ts).
+ */
+const course = (process.argv[2] ?? "de").toLowerCase();
+const all = lessonsFor(course);
+if (!all.length) {
+  console.error(`"${course}" kursu için ders yok — paket yazılmadı.`);
+  process.exit(1);
+}
 let total = 0;
 for (const level of LEVELS) {
   const lessons = all
@@ -29,9 +41,9 @@ for (const level of LEVELS) {
         lecture: l.lecture, roleplay,
       };
     });
-  const file = join(out, `de-${level.toLowerCase()}.json`);
+  const file = join(out, `${course}-${level.toLowerCase()}.json`);
   writeFileSync(file, JSON.stringify(lessons));
   total += lessons.length;
   console.log(level.padEnd(3), String(lessons.length).padStart(4), "ders");
 }
-console.log("toplam", total);
+console.log(course, "toplam", total);

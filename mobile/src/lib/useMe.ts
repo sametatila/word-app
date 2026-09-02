@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { setCurrentCourse } from "./courses";
 import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
 import { todayStr } from "../game/session";
@@ -52,7 +53,15 @@ export function useMe(): { me: Me | null; loading: boolean } {
     let alive = true;
     setLoading(true);
     api<Me>("/api/me")
-      .then((d) => { if (alive) setMe(d); })
+      .then((d) => {
+        if (!alive) return;
+        // Seçili kursu süreç genelinde kur: TTS yerel kodu, STT tanıma dili,
+        // ders/beceri paketi ve tur elemesi hep buradan okuyor. Eskiden yalnız
+        // Ayarlar ekranı açılınca kuruluyordu, yani uygulama açılışında kurs
+        // bilinmiyor ve her şey Almanca varsayılanına düşüyordu.
+        setCurrentCourse(d.course);
+        setMe(d);
+      })
       .catch(async () => {
         // /api/me yok (404) → gerçek veriyi session meta'sından türet.
         try {
