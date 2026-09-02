@@ -83,6 +83,22 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   }
 
   /** Ekran uykusunu engelle/bırak (Wake Lock karşılığı) — yürüyüş turu boyunca ekran sönmesin. */
+  // --- Ağ güvenliği: native HTTP (uploadStt/httpGet/playTtsUrl) yalnız uygulamanın kendi API
+  //     sunucusuna, yalnız https ile çıkar. Oturum çerezi ve ses kaydı başka bir hosta gidemez;
+  //     JS'ten gelen URL'e körü körüne güvenilmez. Host JS'ten bir kez ayarlanır (API_BASE). ---
+  @Volatile private var apiHost: String? = null
+
+  @ReactMethod
+  fun setApiBase(base: String) {
+    apiHost = try { java.net.URL(base).host } catch (_: Exception) { null }
+  }
+
+  private fun allowedUrl(url: String): Boolean {
+    val host = apiHost ?: return false
+    val u = try { java.net.URL(url) } catch (_: Exception) { return false }
+    return u.protocol == "https" && u.host.equals(host, ignoreCase = true)
+  }
+
   @ReactMethod
   fun setKeepAwake(on: Boolean) {
     val activity = reactCtx.currentActivity ?: return
@@ -130,6 +146,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   fun uploadStt(url: String, wavPath: String, language: String, expected: String, promise: Promise) {
     Thread {
       try {
+        if (!allowedUrl(url)) { android.util.Log.e("NomiWalk", "uploadStt: izin verilmeyen adres"); promise.resolve(null); return@Thread }
         val file = java.io.File(wavPath)
         if (!file.exists() || file.length() == 0L) { promise.resolve(null); return@Thread }
         val boundary = "----NomiBoundary${System.currentTimeMillis()}"
@@ -171,6 +188,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   fun httpGet(url: String, promise: Promise) {
     Thread {
       try {
+        if (!allowedUrl(url)) { android.util.Log.e("NomiWalk", "httpGet: izin verilmeyen adres"); promise.resolve(null); return@Thread }
         val cookie = try { android.webkit.CookieManager.getInstance().getCookie(url) } catch (_: Exception) { null }
         val conn = java.net.URL(url).openConnection() as java.net.HttpURLConnection
         conn.connectTimeout = 15000; conn.readTimeout = 20000
@@ -226,6 +244,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
       var settled = false
       fun finishP(ok: Boolean) { synchronized(this) { if (!settled) { settled = true; promise.resolve(ok) } } }
       try {
+        if (!allowedUrl(url)) { android.util.Log.e("NomiWalk", "playTts: izin verilmeyen adres"); finishP(false); return@Thread }
         // Çerezi CookieManager'dan al (WebView/RN paylaşımlı) → /api/tts kimlik doğrular.
         val cookie = try { android.webkit.CookieManager.getInstance().getCookie(url) } catch (_: Exception) { null }
         val conn = java.net.URL(url).openConnection() as java.net.HttpURLConnection
