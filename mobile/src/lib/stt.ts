@@ -11,6 +11,7 @@
  * ekran açıkken kusursuz.
  */
 import { NativeEventEmitter, NativeModules, PermissionsAndroid, Platform } from "react-native";
+import { currentTargetLocale, currentTargetLang } from "./courses";
 import { API_BASE } from "../api/client";
 
 type SpeechNative = {
@@ -18,7 +19,7 @@ type SpeechNative = {
   stop(): void;
   cancel(): void;
   destroy(): void;
-  isAvailable(): Promise<boolean>;
+  isAvailable(locale: string): Promise<boolean>;
   setKeepAwake(on: boolean): void;
   startRecording(): Promise<boolean>;
   stopRecording(): Promise<string | null>;
@@ -52,8 +53,10 @@ export async function ensureMicPermission(): Promise<boolean> {
   }
 }
 
-export async function sttAvailable(): Promise<boolean> {
-  try { return !!(await Native?.isAvailable()); } catch { return false; }
+export async function sttAvailable(locale = currentTargetLocale()): Promise<boolean> {
+  // Yerel kod artık native tarafa geçiyor: kontrol sabit "de-DE" ile yapılırsa
+  // İngilizce kursta, cihazda Almanca tanıma yoksa mikrofon hiç açılmıyordu.
+  try { return !!(await Native?.isAvailable(locale)); } catch { return false; }
 }
 
 /**
@@ -61,7 +64,7 @@ export async function sttAvailable(): Promise<boolean> {
  * ara-sonuç (partial); hata/sessizlik/timeout olursa en iyi partial ya da null.
  * Bitişte modül yok edilir (destroy) — sonraki kelime taze bir başlatma alır.
  */
-export function listenOnce(locale = "de-DE", windowMs = 9000): Promise<string[] | null> {
+export function listenOnce(locale = currentTargetLocale(), windowMs = 9000): Promise<string[] | null> {
   return new Promise((resolve) => {
     if (!Native || !emitter) { resolve(null); return; }
     let done = false;
@@ -161,7 +164,7 @@ export function onScreenState(cb: (off: boolean) => void): () => void {
  * native kullanılır (bkz. listenOnce); bu YALNIZ cepte/ekran-kapalı için (paralı).
  * VAD yok — sabit pencere kaydeder; kullanıcı o sürede söyler. Auth çerezle (paylaşımlı jar).
  */
-export async function azureListenOnce(target: string, windowMs = 3000, onStop?: () => void, lang = "de"): Promise<string[] | null> {
+export async function azureListenOnce(target: string, windowMs = 3000, onStop?: () => void, lang = currentTargetLang()): Promise<string[] | null> {
   if (!Native) return null;
   try {
     const ok = await Native.startRecording().catch(() => false);

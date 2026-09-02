@@ -1,4 +1,5 @@
 import { api } from "../api/client";
+import { supportsGame } from "../lib/courses";
 
 /**
  * GERÇEK oyun oturumu — web API'siyle aynı sözleşme (Neon'dan gerçek kelimeler
@@ -105,6 +106,20 @@ export const PRACTICE_GAMES: { game: string; label: string }[] = [
   { game: "plural", label: "Çoğul Bilmece" },
   { game: "translate", label: "Çevir" },
 ];
+
+/**
+ * Kursta gerçekten oynanabilecek türler.
+ *
+ * Artikel Yarışı ve Çoğul Bilmece Almancanın cinsiyetli isim sistemine
+ * dayanıyor (der/die/das ve "die …" çoğulu); İngilizcede karşılıkları yok.
+ * Sunucu böyle bir tur zaten üretmiyor (artikel alanı boşsa tur `null` dönüyor),
+ * ama seçim ekranı listeyi sabit gösterdiği için kullanıcı boş bir turu
+ * seçebiliyordu. Eleme burada, kurs kayıt defterindeki `hasArticles` bayrağına
+ * göre yapılıyor.
+ */
+export function practiceGamesFor(course: string | null | undefined) {
+  return PRACTICE_GAMES.filter((g) => supportsGame(course, g.game));
+}
 
 /** Cevapları sunucuya yazar (SRS + XP + seri güncellenir). `progress` verilirse
     oturum konumu da (index) kaydedilir — kaldığın yerden devam için. */

@@ -33,10 +33,14 @@ class NomiSpeech: RCTEventEmitter {
     if hasListeners { sendEvent(withName: name, body: body) }
   }
 
-  @objc(isAvailable:rejecter:)
-  func isAvailable(_ resolve: @escaping RCTPromiseResolveBlock,
+  /// Tanıyıcı bu dilde kullanılabilir mi. Yerel kod JS'ten geliyor: sabit
+  /// "de-DE" yazılıydı ve İngilizce kursta, cihazda Almanca tanıma yoksa
+  /// "kullanılamaz" denip mikrofon hiç açılmıyordu.
+  @objc(isAvailable:resolver:rejecter:)
+  func isAvailable(_ locale: String,
+                   resolver resolve: @escaping RCTPromiseResolveBlock,
                    rejecter reject: @escaping RCTPromiseRejectBlock) {
-    let r = SFSpeechRecognizer(locale: Locale(identifier: "de-DE"))
+    let r = SFSpeechRecognizer(locale: Locale(identifier: locale))
     resolve(r?.isAvailable ?? false)
   }
 

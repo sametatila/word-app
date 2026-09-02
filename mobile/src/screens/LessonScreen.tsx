@@ -12,7 +12,7 @@ import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
-import { speakGerman } from "../lib/tts";
+import { speakTarget } from "../lib/tts";
 import { haptic } from "../lib/haptics";
 import { api, API_BASE } from "../api/client";
 import { todayStr } from "../game/session";
@@ -118,7 +118,7 @@ export function LessonScreen() {
     setTries(0);
     setAnswered(false);
     const spoken = add.map((b) => (b.role === "teacher" ? deText(b.segments) : "")).filter(Boolean).join(". ");
-    if (spoken) speakGerman(spoken);
+    if (spoken) speakTarget(spoken);
     if (k >= lesson.lecture.length) enterRoleplay();
     scrollDown();
   }
@@ -131,7 +131,7 @@ export function LessonScreen() {
   function onConfirm() { advance(); }
 
   function onRepeatDone() {
-    if (expect?.kind === "repeat") speakGerman(expect.target);
+    if (expect?.kind === "repeat") speakTarget(expect.target);
     advance();
   }
 
@@ -146,7 +146,7 @@ export function LessonScreen() {
       haptic("correct");
       setCorrect((c) => c + 1);
       push({ role: "teacher", segments: [{ lang: "tr", text: PRAISE[correct % PRAISE.length] }] });
-      speakGerman(expect.target);
+      speakTarget(expect.target);
       setTimeout(advance, 500);
     } else {
       haptic("wrong");
@@ -154,7 +154,7 @@ export function LessonScreen() {
       setTries(t);
       if (t >= 3) {
         push({ role: "teacher", segments: [{ lang: "tr", text: "Doğrusu:" }, { lang: "de", text: expect.target }], tone: "hint" });
-        speakGerman(expect.target);
+        speakTarget(expect.target);
         setTimeout(advance, 900);
       } else if (expect.hint?.length) {
         push({ role: "teacher", segments: expect.hint, tone: "hint" });
@@ -186,7 +186,7 @@ export function LessonScreen() {
     if (opening) {
       push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(lesson.roleplay.openingTr ? [{ lang: "tr" as const, text: lesson.roleplay.openingTr }] : [])] });
       setRoleMsgs([{ role: "assistant", content: opening }]);
-      speakGerman(opening);
+      speakTarget(opening);
     }
     scrollDown();
   }
@@ -210,7 +210,7 @@ export function LessonScreen() {
       setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
       push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], fix: parsed.corrections.length ? parsed.corrections : undefined });
       setSuggestions(parsed.suggestions);
-      if (bodyText) speakGerman(bodyText);
+      if (bodyText) speakTarget(bodyText);
     } catch {
       push({ role: "teacher", segments: [{ lang: "tr", text: "[Bağlantı sorunu — tekrar dener misin?]" }], tone: "hint" });
     } finally {
@@ -357,7 +357,7 @@ function BubbleView({ b, colors }: { b: Bubble; colors: Palette }) {
         ) : null}
       </View>
       {deText(b.segments) ? (
-        <PressableScale onPress={() => speakGerman(deText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4, marginTop: 4, marginLeft: 4 }}>
+        <PressableScale onPress={() => speakTarget(deText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4, marginTop: 4, marginLeft: 4 }}>
           <SpeakerIcon color={colors.textMuted} size={15} /><Text variant="micro" color={colors.textMuted}>Dinle</Text>
         </PressableScale>
       ) : null}
@@ -385,7 +385,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onRepeatDo
   if (expect.kind === "repeat") {
     return (
       <View style={{ gap: spacing.sm }}>
-        <PressableScale onPress={() => speakGerman(expect.target)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, paddingVertical: 10, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
+        <PressableScale onPress={() => speakTarget(expect.target)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, paddingVertical: 10, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
           <SpeakerIcon color={colors.primary} size={20} /><Text variant="bodyStrong" color={colors.primary}>{expect.target}</Text>
         </PressableScale>
         <BigButton label="Söyledim →" onPress={onRepeatDone} tint={colors.info} colors={colors} />

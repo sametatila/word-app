@@ -2,7 +2,7 @@ import React from "react";
 import { PressableScale } from "./PressableScale";
 import { SpeakerIcon } from "./icons";
 import { useTheme, radii } from "../theme";
-import { speakGerman } from "../lib/tts";
+import { speakTarget } from "../lib/tts";
 
 /**
  * Hoparlör düğmesi — Almanca metni kullanıcının seçtiği sesle okur.
@@ -29,7 +29,7 @@ export function SpeakButton({
     <PressableScale
       accessibilityLabel="Sesli oku"
       hitSlop={8}
-      onPress={() => speakGerman(text, { slow })}
+      onPress={() => speakTarget(text, { slow })}
       style={{
         width: size,
         height: size,

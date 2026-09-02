@@ -12,7 +12,7 @@ import { KIND_LABEL, type ItemKind } from "../data/demoUnit";
 import { getExercise, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { markItemDone } from "../game/lessonProgress";
-import { speakGerman } from "../lib/tts";
+import { speakTarget } from "../lib/tts";
 import { API_BASE } from "../api/client";
 import { todayStr } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -29,7 +29,7 @@ function ReadingText({ text, colors }: { text: string; colors: Palette }) {
   return (
     <Card style={{ marginTop: spacing.md }}>
       <View style={{ flexDirection: "row", justifyContent: "flex-end", marginBottom: spacing.xs }}>
-        <PressableScale onPress={() => speakGerman(text)} hitSlop={8} accessibilityLabel="Metni sesli oku"
+        <PressableScale onPress={() => speakTarget(text)} hitSlop={8} accessibilityLabel="Metni sesli oku"
           style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
           <SpeakerIcon color={colors.primary} size={18} />
           <Text variant="caption" color={colors.primary}>Sesli oku</Text>
@@ -49,7 +49,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
   return (
     <>
       <Card style={{ alignItems: "center", marginTop: spacing.md, paddingVertical: spacing.xl }}>
-        <PressableScale onPress={() => speakGerman(full)} style={[{ width: 80, height: 80, borderRadius: 40, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
+        <PressableScale onPress={() => speakTarget(full)} style={[{ width: 80, height: 80, borderRadius: 40, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
           <SpeakerIcon color="#fff" size={34} />
         </PressableScale>
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>Dinle ve anla</Text>
@@ -61,7 +61,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
         <Card style={{ marginTop: spacing.sm }}>
           {segments.map((s, i) => (
             <View key={i} style={{ marginTop: i > 0 ? spacing.md : 0, flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
-              <PressableScale onPress={() => speakGerman(s.text)} hitSlop={6} style={{ marginTop: 2 }}><SpeakerIcon color={colors.textMuted} size={16} /></PressableScale>
+              <PressableScale onPress={() => speakTarget(s.text)} hitSlop={6} style={{ marginTop: 2 }}><SpeakerIcon color={colors.textMuted} size={16} /></PressableScale>
               <View style={{ flex: 1 }}>
                 {s.speaker ? <Text variant="micro" color={colors.textMuted}>{s.speaker}</Text> : null}
                 <Text variant="body" style={{ lineHeight: 24 }}>{s.text}</Text>

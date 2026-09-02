@@ -63,8 +63,17 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
     emit(event, m)
   }
 
+  /**
+   * Tanıma kullanılabilir mi.
+   *
+   * `locale` iOS ile imza eşitliği için alınıyor: orada kontrol dile bağlı
+   * (SFSpeechRecognizer bir Locale ile kuruluyor), Android'de ise
+   * `isRecognitionAvailable` dilden bağımsız — motorun kurulu olup olmadığına
+   * bakıyor. Dil desteği burada ayrıca sorulamadığı için parametre bilerek
+   * kullanılmıyor; asıl dil seçimi `start(locale)` sırasında yapılıyor.
+   */
   @ReactMethod
-  fun isAvailable(promise: Promise) {
+  fun isAvailable(locale: String, promise: Promise) {
     try {
       promise.resolve(SpeechRecognizer.isRecognitionAvailable(reactCtx))
     } catch (_: Exception) {

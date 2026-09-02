@@ -17,8 +17,9 @@ import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeReady } from "../lib/ttsBridge";
 import { TURKISH_VOICE } from "../lib/voices";
 import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
+import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
-import { spokenMatches, parseSkipDe, encourage, parseConfirm } from "../lib/voiceMatch";
+import { spokenMatches, parseSkip, encourage, parseConfirm } from "../lib/voiceMatch";
 import { sfx, setSfxScreenOff } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -203,7 +204,7 @@ export function WalkModeScreen() {
     } else {
       // Native: mic-aç trick — mic açıldıktan ~180ms sonra micon (ilk hece kaçmasın).
       const listenP = Promise.race([
-        listenOnce("de-DE", 8000).then((h) => ({ k: "v" as const, heard: h ?? [] })),
+        listenOnce(currentTargetLocale(), 8000).then((h) => ({ k: "v" as const, heard: h ?? [] })),
         waitManual().then(() => ({ k: "m" as const })),
       ]);
       const miconTimer = setTimeout(() => sfx("micon"), 180);
@@ -239,7 +240,9 @@ export function WalkModeScreen() {
       const cands = heard.flatMap((h) => [h, ...h.split(/\s+/)]).filter(Boolean);
       const unheard = heard.length === 0;
       const ok = !unheard && spokenMatches(cands, [withArtikel(w), w.de]);
-      const skipped = !unheard && !ok && heard.some(parseSkipDe);
+      // Sarmalayıcı şart: parseSkip'in ikinci parametresi dil, ama .some()
+      // ikinci argüman olarak dizinin index'ini geçirir.
+      const skipped = !unheard && !ok && heard.some((h) => parseSkip(h));
       result = unheard ? "unheard" : skipped ? "skip" : ok ? "correct" : "wrong";
     }
 
@@ -367,7 +370,7 @@ export function WalkModeScreen() {
     if (pocketRef.current || screenOffRef.current) {
       heard = await azureListenOnce("", 4000, () => sfx("micoff"), "tr");
     } else {
-      heard = await listenOnce("de-DE", 7000);
+      heard = await listenOnce(currentTargetLocale(), 7000);
       sfx("micoff");
     }
     if (!alive() || !heard) return null;

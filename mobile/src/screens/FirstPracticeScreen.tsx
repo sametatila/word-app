@@ -7,7 +7,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { SpeakerIcon, CheckIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
-import { speakGerman } from "../lib/tts";
+import { speakTarget } from "../lib/tts";
 import { haptic } from "../lib/haptics";
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -72,7 +72,7 @@ export function FirstPracticeScreen() {
   const last = idx + 1 >= words.length;
   const kicker = level === "A1" ? "İlk kelimelerin" : `${level} · kısa ısınma`;
 
-  useEffect(() => { track("first_practice", idx, level); speakGerman(withArtikel(w)); setSeen(false); /* eslint-disable-next-line */ }, [idx]);
+  useEffect(() => { track("first_practice", idx, level); speakTarget(withArtikel(w)); setSeen(false); /* eslint-disable-next-line */ }, [idx]);
 
   function primary() {
     haptic("tap");
@@ -94,7 +94,7 @@ export function FirstPracticeScreen() {
         <Text variant="caption" color={colors.primary} style={{ letterSpacing: 1, textTransform: "uppercase" }}>{kicker}</Text>
         <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(w)}</Text>
 
-        <PressableScale onPress={() => speakGerman(withArtikel(w))} accessibilityRole="button" accessibilityLabel={`${w.de} kelimesini dinle`} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 16, paddingVertical: 9 }}>
+        <PressableScale onPress={() => speakTarget(withArtikel(w))} accessibilityRole="button" accessibilityLabel={`${w.de} kelimesini dinle`} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 16, paddingVertical: 9 }}>
           <SpeakerIcon color={colors.primary} size={18} /><Text variant="bodyStrong" color={colors.primary}>Dinle</Text>
         </PressableScale>
 

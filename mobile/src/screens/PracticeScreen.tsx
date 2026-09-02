@@ -8,7 +8,8 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ChevronLeftIcon, BoltIcon, QuizIcon, GrammarIcon, WriteIcon, ListenIcon, CheckIcon, SkillsIcon, LearnIcon, ReadIcon, ArrowRightIcon } from "../ui/icons";
-import { PRACTICE_GAMES } from "../game/session";
+import { practiceGamesFor } from "../game/session";
+import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 /** Oyun → ikon + renk (görsel çeşitlilik). */
@@ -30,6 +31,9 @@ export function PracticeScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  // Tek-oyun listesi kursa göre eleniyor: artikel/çoğul yalnız artikelli
+  // dillerde anlamlı (bkz. game/session.ts practiceGamesFor).
+  const { me } = useMe();
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -62,7 +66,7 @@ export function PracticeScreen() {
 
         <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, textTransform: "uppercase", letterSpacing: 1 }}>Tek oyun</Text>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
-          {PRACTICE_GAMES.map((g) => {
+          {practiceGamesFor(me?.course).map((g) => {
             const m = META[g.game] ?? { icon: (p: { color: string; size: number }) => <QuizIcon {...p} />, tint: "primary" as keyof Palette };
             const tint = colors[m.tint] as string;
             return (

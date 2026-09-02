@@ -136,6 +136,34 @@ export function speechLocaleOf(id: string | null | undefined): string {
 }
 
 /**
+ * Seçili kurs — süreç içi tek durum.
+ *
+ * Konuşma sentezi (tts) ve tanıma (stt) aynı yerel koda ihtiyaç duyuyor ama
+ * birbirini import etmemeli. İkisi de burayı okuyor; kurs değiştiğinde
+ * `setCurrentCourse` tek noktadan güncelleniyor (profil yüklenince ve
+ * ayarlardan kurs değiştirilince).
+ */
+let current: CourseId = "de";
+
+export function setCurrentCourse(id: string | null | undefined): void {
+  current = courseOrDefault(id).id;
+}
+
+export function currentCourseId(): CourseId {
+  return current;
+}
+
+/** Seçili kursun konuşma yerel kodu — TTS okuması ve STT tanıması için. */
+export function currentTargetLocale(): string {
+  return courseOrDefault(current).speechLocale;
+}
+
+/** Seçili kursun iki harfli dil kodu — sunucu STT'sine (`/api/stt`) gider. */
+export function currentTargetLang(): string {
+  return courseOrDefault(current).targetLang;
+}
+
+/**
  * Bu tur tipi bu kursta üretilebilir mi?
  *
  * `artikel` ve `plural` Almancanın cinsiyetli isim sistemine dayanıyor;

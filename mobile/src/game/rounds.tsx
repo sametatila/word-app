@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { currentTargetLang } from "../lib/courses";
 import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../ui/Text";
@@ -9,14 +10,30 @@ import { haptic } from "../lib/haptics";
 import { sfx } from "../lib/sfx";
 import { useKeyboardHeight } from "../lib/useKeyboardHeight";
 import { whyMeaning, whyArticle, whyPlural } from "./why";
-import { speakGerman, ttsAvailable } from "../lib/tts";
+import { speakTarget, ttsAvailable } from "../lib/tts";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
 const withArtikel = (w: RoundWord) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 
+/** Baştaki tanımlık — hedef dile göre. */
+const LEAD_ARTICLE: Record<string, RegExp> = {
+  de: /^(der|die|das)\s+/,
+  en: /^(the|an|a)\s+/,
+};
+
+/**
+ * Yazılan cevabın karşılaştırma biçimi. Tanımlık ve (Almancada) umlaut
+ * katlaması hedef dile göre uygulanıyor; sabit der/die/das + umlaut yazılıydı,
+ * yani İngilizce kursta "the door" yazan kullanıcı yanlış sayılırdı.
+ */
 function norm(s: string): string {
-  return s.trim().toLowerCase().replace(/^(der|die|das)\s+/, "").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss").replace(/\s+/g, " ");
+  const lang = currentTargetLang();
+  const base = s.trim().toLowerCase().replace(LEAD_ARTICLE[lang] ?? LEAD_ARTICLE.de, "");
+  const folded = lang === "de"
+    ? base.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
+    : base;
+  return folded.replace(/\s+/g, " ");
 }
 
 /** Anlam satırı: Türkçe + (varsa) İngilizce ayırt edici. */
@@ -88,14 +105,14 @@ type Feedback = {
 function markAnswer(ok: boolean, speak?: string | null): void {
   haptic(ok ? "correct" : "wrong");
   sfx(ok ? "correct" : "wrong");
-  if (speak) speakGerman(speak);
+  if (speak) speakTarget(speak);
 }
 
 /** Almanca metnin yanında küçük hoparlör. */
 function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palette; size?: number }) {
   if (!text?.trim()) return null;
   return (
-    <PressableScale onPress={() => speakGerman(text)} hitSlop={8} style={{ padding: 4 }}>
+    <PressableScale onPress={() => speakTarget(text)} hitSlop={8} style={{ padding: 4 }}>
       <SpeakerIcon color={colors.primary} size={size} />
     </PressableScale>
   );
@@ -166,7 +183,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
 function useAutoSpeak(text: string | null | undefined, key: string | number) {
   useEffect(() => {
     if (!text) return;
-    const t = setTimeout(() => speakGerman(text), 320);
+    const t = setTimeout(() => speakTarget(text), 320);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
@@ -432,7 +449,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   const [reveal, setReveal] = useState(false);
   const spoke = useRef(false);
   useEffect(() => {
-    if (round.game === "intro" && word && !spoke.current) { spoke.current = true; speakGerman(withArtikel(word)); }
+    if (round.game === "intro" && word && !spoke.current) { spoke.current = true; speakTarget(withArtikel(word)); }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round.id]);
   // Kelime yoksa turu güvenle atla (render sırasında değil, efektte).
@@ -480,7 +497,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const [fb, setFb] = useState<Feedback | null>(null);
   const [audible, setAudible] = useState<boolean | null>(null);
   useEffect(() => { ttsAvailable().then(setAudible); }, []);
-  useEffect(() => { if (audible) speakGerman(withArtikel(word)); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [audible, round.id]);
+  useEffect(() => { if (audible) speakTarget(withArtikel(word)); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [audible, round.id]);
   const hideWord = audible === true && !picked;
   function choose(o: Option) {
     if (picked) return;
@@ -494,7 +511,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>Dinle · anlamını seç</Text>
         {hideWord ? (
-          <PressableScale onPress={() => speakGerman(withArtikel(word))} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
+          <PressableScale onPress={() => speakTarget(withArtikel(word))} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
             <SpeakerIcon color="#fff" size={38} />
           </PressableScale>
         ) : (
@@ -596,7 +613,7 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
       setFb({ correct: ok, answerDe: full, speakDe: full, tr: round.sentenceTr ?? word.tr, en: round.sentenceEn ?? null });
     } else {
       sfx("tap");
-      speakGerman(t.text); // web: her yerleştirilen kelimeyi oku
+      speakTarget(t.text); // web: her yerleştirilen kelimeyi oku
     }
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
@@ -705,7 +722,7 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     if (matched.has(id) || fb) return;
     sfx("tap");
     const w = words.find((x) => x.id === id);
-    if (w) speakGerman(withArtikel(w)); // web: Almanca kutusuna dokununca oku
+    if (w) speakTarget(withArtikel(w)); // web: Almanca kutusuna dokununca oku
     setSelLeft(id); setWrong(null);
   }
   function pickRight(r: { wordId: number; text: string }) {

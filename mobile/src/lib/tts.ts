@@ -1,6 +1,7 @@
 import Tts from "react-native-tts";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
+import { speechLocaleOf, setCurrentCourse } from "./courses";
 import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait } from "./ttsBridge";
 
 /**
@@ -18,7 +19,8 @@ import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait } from "./ttsBridge";
  */
 const VOICE_KEY = "nomi-voice";
 let ready: Promise<boolean> | null = null;
-export let germanReady = false;
+/** Cihaz TTS'i hedef dilde konuşmaya hazır mı (dil paketi kurulu mu). */
+export let targetReady = false;
 
 let currentCourse = "de";
 let currentVoice: VoiceId = defaultVoice("de");
@@ -36,10 +38,12 @@ async function init(): Promise<boolean> {
     return false;
   }
   try {
-    await Tts.setDefaultLanguage("de-DE");
-    germanReady = true;
+    // Hedef dil kurstan geliyor (de-DE / de-CH / en-US); sabit "de-DE" yazılıydı
+    // ve İngilizce kursta cihaz yanlış dil paketini hazırlardı.
+    await Tts.setDefaultLanguage(speechLocaleOf(currentCourse));
+    targetReady = true;
   } catch {
-    germanReady = false;
+    targetReady = false;
     try { (Tts as { requestInstallData?: () => void }).requestInstallData?.(); } catch { /* yut */ }
   }
   try { await Tts.setDefaultRate(deviceRate(false)); } catch { /* yut */ }
@@ -57,7 +61,7 @@ export function ttsAvailable(): Promise<boolean> {
 
 /** Saklı ses tercihini yükler (uygulama açılışında bir kez). */
 export async function loadVoicePref(course?: string): Promise<VoiceId> {
-  if (course) currentCourse = course;
+  if (course) { currentCourse = course; setCurrentCourse(course); }
   if (!voiceLoaded) {
     try {
       const saved = await AsyncStorage.getItem(VOICE_KEY);
@@ -77,6 +81,7 @@ export async function loadVoicePref(course?: string): Promise<VoiceId> {
 /** Ses tercihini ayarlar + saklar (profil seçimi buradan geçer). */
 export async function setVoicePref(course: string, voice: VoiceId): Promise<void> {
   currentCourse = course;
+  setCurrentCourse(course);
   currentVoice = resolveVoice(course, voice);
   voiceLoaded = true;
   try { await AsyncStorage.setItem(VOICE_KEY, currentVoice); } catch { /* yut */ }
@@ -122,7 +127,7 @@ async function applyVoice(voice: VoiceId): Promise<string> {
  * Metni seslendirir (fire-and-forget). Ses/hız kullanıcı tercihinden; `opts.voice`
  * verilirse onu kullanır (ön izleme), `opts.slow` telaffuz için yavaşlatır.
  */
-export function speakGerman(text: string, opts?: { slow?: boolean; voice?: VoiceId }): void {
+export function speakTarget(text: string, opts?: { slow?: boolean; voice?: VoiceId }): void {
   if (!text) return;
   const voice = opts?.voice ?? currentVoice;
   // Önce Edge köprüsü (web ile birebir aynı ses); hazır değilse cihaz TTS'i.
@@ -147,7 +152,7 @@ export function speakGerman(text: string, opts?: { slow?: boolean; voice?: Voice
 
 /** Ön izleme: belirli bir sesi hemen çalar (profil seçim ekranı). */
 export function speakWithVoice(text: string, voice: VoiceId): void {
-  speakGerman(text, { voice });
+  speakTarget(text, { voice });
 }
 
 /**
@@ -163,11 +168,16 @@ export function speakWithVoice(text: string, voice: VoiceId): void {
 export async function speakAndWaitVoiced(text: string, voice: VoiceId): Promise<void> {
   if (!text) return;
   if (bridgeReady()) { await bridgeSpeakAndWait(voice, text); return; }
-  const lang = voice.startsWith("tr") ? "tr-TR" : "de-DE";
-  await speakAndWait(text, lang);
+  // Yerel kod sesin id'sinden türüyor (langOf); eskiden "tr değilse de-DE"
+  // yazılıydı ve İngilizce ses Almanca okunurdu.
+  await speakAndWait(text, langOf(voice));
 }
 
-export function speakAndWait(text: string, lang: "de-DE" | "tr-TR" = "de-DE"): Promise<void> {
+/**
+ * @param lang Okunacak yerel kod. Varsayılan, kursun hedef dili — anlatım
+ * (Türkçe) için çağıran açıkça "tr-TR" geçer.
+ */
+export function speakAndWait(text: string, lang: string = speechLocaleOf(currentCourse)): Promise<void> {
   return new Promise((resolve) => {
     void ttsAvailable().then(async (ok) => {
       if (!ok || !text) { resolve(); return; }
@@ -178,7 +188,11 @@ export function speakAndWait(text: string, lang: "de-DE" | "tr-TR" = "de-DE"): P
       try { sub = Tts.addEventListener("tts-finish", finish) as unknown as { remove?: () => void }; } catch { /* yut */ }
       try {
         Tts.stop();
-        if (lang === "de-DE") {
+        // Hedef dilde kullanıcının seçtiği ses uygulanır; anlatım (Türkçe)
+        // sabit olduğu için yalnız dil ayarlanır. Ayrım artık "de-DE mi"
+        // diye değil, "anlatım dili mi" diye yapılıyor — böylece İngilizce
+        // kursta da kullanıcının sesi çalıyor.
+        if (lang !== "tr-TR") {
           await applyVoice(currentVoice);
         } else {
           await Tts.setDefaultLanguage(lang).catch(() => {});

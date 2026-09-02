@@ -59,9 +59,12 @@ export function resolveVoice(course: string, voice: string | null | undefined): 
 
 /** Ses id'sinden BCP-47 dil etiketi (cihaz sesi eşleştirmesi için). */
 export function langOf(voice: VoiceId): string {
-  if (voice.startsWith("de-CH")) return "de-CH";
-  if (voice.startsWith("tr")) return "tr-TR";
-  return "de-DE";
+  // Ses id'leri her zaman `<dil>-<BÖLGE>-<Ad>Neural` biçiminde; yerel kodu
+  // doğrudan id'den okumak yeni bir dil eklendiğinde burayı düzenlemeyi
+  // gereksiz kılıyor. Eskiden liste elle yazılıydı ve tanınmayan her ses
+  // "de-DE" sayılıyordu — İngilizce ses eklenince Almanca okunurdu.
+  const m = /^([a-z]{2}-[A-Z]{2})/.exec(voice);
+  return m ? m[1] : "de-DE";
 }
 
 /** Cihaz TTS okuma hızı (react-native-tts 0..1). Yavaş = telaffuz çalışması. */

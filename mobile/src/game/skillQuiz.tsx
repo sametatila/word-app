@@ -4,7 +4,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
-import { speakGerman } from "../lib/tts";
+import { speakTarget } from "../lib/tts";
 import { haptic } from "../lib/haptics";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
@@ -115,7 +115,7 @@ function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; k
   return (
     <View style={{ marginTop: spacing.md }}>
       {kind === "dictation" ? (
-        <PressableScale onPress={() => speakGerman(accept[0] ?? "")} style={{ flexDirection: "row", alignItems: "center", gap: 6, alignSelf: "flex-start", marginBottom: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 7 }}>
+        <PressableScale onPress={() => speakTarget(accept[0] ?? "")} style={{ flexDirection: "row", alignItems: "center", gap: 6, alignSelf: "flex-start", marginBottom: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 7 }}>
           <SpeakerIcon color={colors.primary} size={15} /><Text variant="caption" color={colors.primary}>Cümleyi dinle</Text>
         </PressableScale>
       ) : null}
@@ -191,7 +191,7 @@ export function GlossPanel({ gloss, colors }: { gloss: Gloss[]; colors: Palette 
       {open ? (
         <View style={{ marginTop: spacing.md, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
           {gloss.map((g) => (
-            <PressableScale key={g.de} onPress={() => speakGerman(g.de)} style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 7 }}>
+            <PressableScale key={g.de} onPress={() => speakTarget(g.de)} style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 7 }}>
               <SpeakerIcon color={colors.textMuted} size={13} />
               <Text variant="caption" color={colors.text}><Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{g.de}</Text> · {g.tr}{g.hd ? ` (${g.hd})` : ""}</Text>
             </PressableScale>
@@ -278,7 +278,7 @@ function FreeCard({ t, n, done, onSettle, colors }: { t: FreeTask; n: number; do
       {t.phrases?.length ? (
         <View style={{ marginTop: spacing.sm, flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
           {t.phrases.map((p) => (
-            <PressableScale key={p.de} onPress={() => speakGerman(p.de)} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 5 }}>
+            <PressableScale key={p.de} onPress={() => speakTarget(p.de)} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 5 }}>
               <Text variant="micro" color={colors.text}>{p.de} · {p.tr}</Text>
             </PressableScale>
           ))}

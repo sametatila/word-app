@@ -1,18 +1,29 @@
 /**
  * Konuşma eşleştirme + niyet çözümleme — web (games/types spokenMatches,
- * voice-intent parseSkipDe/parseConfirm) portu. Yürüyüş modu STT hükmü bunu kullanır.
+ * voice-intent parseSkip/parseConfirm) portu. Yürüyüş modu STT hükmü bunu kullanır.
  */
+import { currentTargetLang } from "./courses";
 
-/** Almanca söyleniş normalizasyonu: küçült, artikel at, umlaut katla, noktalama boşluk. */
-export function foldSpelling(s: string): string {
-  return (s || "")
-    .toLocaleLowerCase("de-DE")
+/**
+ * Hedef dilin tanımlıkları — eşleştirmede atılır ki "die Katze" ile "Katze"
+ * aynı sayılsın. Sabit der/die/das yazılıydı; İngilizce kursta "the" kalıyor
+ * ve "the door" hiçbir zaman "door" ile eşleşmiyordu.
+ */
+const ARTICLES: Record<string, RegExp> = {
+  de: /\b(der|die|das)\b/g,
+  en: /\b(the|an|a)\b/g,
+};
+
+/** Söyleniş normalizasyonu: küçült, tanımlık at, (Almancada) umlaut katla. */
+export function foldSpelling(s: string, lang: string = currentTargetLang()): string {
+  const lower = (s || "").toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US");
+  // Umlaut/ß katlaması yalnız Almancada anlamlı; İngilizcede yapacak iş yok.
+  const folded = lang === "de"
+    ? lower.replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue")
+    : lower;
+  return folded
     .replace(/[.,!?;:"'’]/g, " ")
-    .replace(/\b(der|die|das)\b/g, " ")
-    .replace(/ß/g, "ss")
-    .replace(/ä/g, "ae")
-    .replace(/ö/g, "oe")
-    .replace(/ü/g, "ue")
+    .replace(ARTICLES[lang] ?? ARTICLES.de, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -38,10 +49,11 @@ const CONTAINS_MIN = 3; // fazla kelime bağışlanır ama yalnız ≥3 harfli h
 export function spokenMatches(heard: string[], candidates: string[]): boolean {
   // Hedef/duyulan yalnız artikelse (der/die/das) foldSpelling onu silip boşaltıyor →
   // asla eşleşmez. Boşalırsa artikeli silmeyen düz küçültmeye düş.
+  const lang = currentTargetLang();
   const foldKeep = (s: string): string => {
-    const f = foldSpelling(s);
+    const f = foldSpelling(s, lang);
     if (f) return f;
-    return (s || "").toLocaleLowerCase("de-DE").replace(/[.,!?;:"'’]/g, " ").replace(/\s+/g, " ").trim();
+    return (s || "").toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US").replace(/[.,!?;:"'’]/g, " ").replace(/\s+/g, " ").trim();
   };
   const forms = candidates.flatMap(acceptedForms).map(foldKeep).filter(Boolean);
   if (!forms.length) return false;
@@ -53,11 +65,25 @@ export function spokenMatches(heard: string[], candidates: string[]): boolean {
   return heard.some((h) => test(h));
 }
 
-/** "Bilmiyorum / geç" niyeti (Almanca — tanıyıcı de-DE çalıştığı için). */
-export function parseSkipDe(said: string): boolean {
+/**
+ * "Bilmiyorum / geç" niyeti — tanıyıcı hangi dilde çalışıyorsa o dilin
+ * kalıplarıyla. Eskiden yalnız Almanca kalıplar vardı (adı da parseSkipDe'ydi),
+ * yani İngilizce kursta "skip" desen tur atlanmazdı.
+ */
+const SKIP: Record<string, RegExp[]> = {
+  de: [
+    /\b(weiter|überspringen|ueberspringen|nächste|naechste|nächstes|naechstes)\b/,
+    /(weiss nicht|weiß nicht|keine ahnung|keine idee|kein plan)/,
+  ],
+  en: [
+    /\b(next|skip|pass)\b/,
+    /(don't know|dont know|do not know|no idea|dunno|not sure)/,
+  ],
+};
+
+export function parseSkip(said: string, lang: string = currentTargetLang()): boolean {
   const s = (said || "").toLowerCase();
-  return /\b(weiter|überspringen|ueberspringen|nächste|naechste|nächstes|naechstes)\b/.test(s)
-    || /(weiss nicht|weiß nicht|keine ahnung|keine idee|kein plan)/.test(s);
+  return (SKIP[lang] ?? SKIP.de).some((re) => re.test(s));
 }
 
 /** Türkçe aksan katlama (evet/hayır niyeti için). */
