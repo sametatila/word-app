@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { API_BASE } from "../api/client";
 
 /**
@@ -24,7 +25,21 @@ export type EventName =
   | "purchase_start"
   | "purchase_done";
 
+/** Analitik tercihi (Gizlilik Politikası §8) — cihazda, varsayılan açık; açılışta yüklenir. */
+const ANALYTICS_KEY = "nomi:analytics";
+let analyticsOn = true;
+export async function loadAnalyticsPref(): Promise<boolean> {
+  try { analyticsOn = (await AsyncStorage.getItem(ANALYTICS_KEY)) !== "off"; } catch { analyticsOn = true; }
+  return analyticsOn;
+}
+export function analyticsEnabled(): boolean { return analyticsOn; }
+export async function setAnalyticsEnabled(on: boolean): Promise<void> {
+  analyticsOn = on;
+  try { if (on) await AsyncStorage.removeItem(ANALYTICS_KEY); else await AsyncStorage.setItem(ANALYTICS_KEY, "off"); } catch { /* yut */ }
+}
+
 export function track(name: EventName, value = 0, kind?: string): void {
+  if (!analyticsOn) return; // kullanıcı kapattı: hiçbir olay gitmez
   const d = new Date();
   const day = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   try {

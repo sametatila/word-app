@@ -10,7 +10,7 @@ import { ONBOARDED_KEY } from "./src/lib/onboarding";
 import { migrateLegacyKeys } from "./src/lib/storageMigration";
 import { loadVoicePref } from "./src/lib/tts";
 import { TtsBridge } from "./src/lib/ttsBridge";
-import { track } from "./src/lib/track";
+import { track, loadAnalyticsPref } from "./src/lib/track";
 
 function Nav() {
   const { colors, isDark } = useTheme();
@@ -21,11 +21,13 @@ function Nav() {
   useEffect(() => {
     migrateLegacyKeys()
       .then(() => loadVoicePref())
+      .then(() => loadAnalyticsPref())
+      // Günün ilk açılışı (§4 funnel) — kind platform:görünüm, value ekran genişliği.
+      // Analitik tercihi yüklendikten SONRA: kullanıcı kapattıysa bu olay da gitmez.
+      .then(() => track("app_open", Math.round(Dimensions.get("window").width), "android:standalone"))
       .then(() => AsyncStorage.getItem(ONBOARDED_KEY))
       .then((v) => setOnboarded(v === "1"))
       .catch(() => setOnboarded(false));
-    // Günün ilk açılışı (§4 funnel) — kind platform:görünüm, value ekran genişliği.
-    track("app_open", Math.round(Dimensions.get("window").width), "android:standalone");
   }, []);
 
   const base = isDark ? DarkTheme : DefaultTheme;

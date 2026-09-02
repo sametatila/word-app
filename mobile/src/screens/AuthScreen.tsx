@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { View, TextInput, ScrollView, Modal, ActivityIndicator } from "react-native";
+import { View, TextInput, ScrollView, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
-import { WebView, type WebViewNavigation } from "react-native-webview";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, ArrowBackIcon, BoltIcon, GoogleIcon, AppleIcon, FacebookIcon, MailIcon } from "../ui/icons";
+import { ArrowBackIcon, BoltIcon, GoogleIcon, MailIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
-import { signInSocial, requestPasswordReset } from "../lib/auth";
+import { requestPasswordReset } from "../lib/auth";
+import { openLegal } from "../lib/legal";
 import { googleSignIn } from "../lib/googleAuth";
 import { notifPrimeNeeded } from "../lib/notifications";
 import { translateAuthError } from "../lib/authErrors";
@@ -18,28 +18,16 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 type Mode = "signin" | "signup";
 type View2 = "options" | "email" | "forgot";
 
-/** OAuth bitişinde gidilen adres — WebView buraya ulaşınca akış tamamdır. */
-const SOCIAL_CALLBACK = "https://www.exfe.me/learn";
-
 /**
- * Giriş / kayıt. Önce sağlayıcı listesi (Google / Apple / Facebook / E-posta);
- * e-posta formu DOĞRUDAN açık değil, "E-posta ile devam et"e basınca gelir.
- * Google NATIVE akışta (cihaz hesap seçici → idToken → better-auth); Apple/Facebook
- * (şimdilik kapalı) etkinleşince WebView redirect yolunu kullanır.
- *
- * `enabled:false` sağlayıcılar sunucuda (better-auth) henüz açık değil ("yakında");
- * creds girilip provider eklenince aktifleşir.
+ * Giriş / kayıt. Önce sağlayıcı listesi (Google / E-posta); e-posta formu "E-posta ile
+ * devam et"e basınca gelir. Google NATIVE akışta (cihaz hesap seçici → idToken → better-auth).
+ * Apple/Facebook: sunucuda açılmadığı için listede YOK — çalışmayan "yakında" düğmesi
+ * Play "bozuk işlevsellik" sayılır; sağlayıcı eklenince buraya geri gelir.
  */
-const PROVIDERS = [
-  { id: "google", label: "Google", enabled: true },
-  { id: "apple", label: "Apple", enabled: false },
-  { id: "facebook", label: "Facebook", enabled: false },
-] as const;
+const PROVIDERS = [{ id: "google", label: "Google" }] as const;
 
 function providerIcon(id: string, colors: Palette) {
   if (id === "google") return <GoogleIcon size={22} />;
-  if (id === "apple") return <AppleIcon color={colors.text} size={22} />;
-  if (id === "facebook") return <FacebookIcon size={22} />;
   return <MailIcon color={colors.text} size={22} />;
 }
 
@@ -60,7 +48,6 @@ export function AuthScreen() {
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [socialUrl, setSocialUrl] = useState<string | null>(null);
   const [socialBusy, setSocialBusy] = useState<string | null>(null);
   const [resetSent, setResetSent] = useState(false);
   const [resetBusy, setResetBusy] = useState(false);
@@ -85,37 +72,21 @@ export function AuthScreen() {
   }
 
   async function startSocial(provider: string) {
-    if (socialBusy) return;
+    if (socialBusy || provider !== "google") return;
     setSocialBusy(provider);
     setError(null);
-    if (provider === "google") {
-      // NATIVE Google: cihaz hesap seçici → idToken → better-auth. WebView yok
-      // (Google embedded WebView OAuth'u engelliyor + cihaz hesaplarını göstermiyordu).
-      const r = await googleSignIn();
-      if (r.ok) {
-        const done = await socialComplete(); // oturumu tazele + onboarding prefs
-        setSocialBusy(null);
-        if (done) void toApp();
-        else setError("Giriş tamamlanamadı. Tekrar dener misin?");
-      } else {
-        setSocialBusy(null);
-        if (r.code !== "CANCELLED") setError(r.message);
-      }
-      return;
+    // NATIVE Google: cihaz hesap seçici → idToken → better-auth. WebView yok
+    // (Google embedded WebView OAuth'u engelliyor + cihaz hesaplarını göstermiyordu).
+    const r = await googleSignIn();
+    if (r.ok) {
+      const done = await socialComplete(); // oturumu tazele + onboarding prefs
+      setSocialBusy(null);
+      if (done) void toApp();
+      else setError("Giriş tamamlanamadı. Tekrar dener misin?");
+    } else {
+      setSocialBusy(null);
+      if (r.code !== "CANCELLED") setError(r.message);
     }
-    // Diğer sağlayıcılar (apple/facebook — şimdilik kapalı): WebView redirect yolu.
-    const url = await signInSocial(provider, SOCIAL_CALLBACK);
-    setSocialBusy(null);
-    if (url) setSocialUrl(url);
-    else setError("Bu sağlayıcı şu an kullanılamıyor. Google ya da e-posta ile girebilirsin.");
-  }
-
-  async function onWebNav(navState: WebViewNavigation) {
-    if (!socialUrl || !navState.url.startsWith(SOCIAL_CALLBACK)) return;
-    setSocialUrl(null);
-    const ok = await socialComplete();
-    if (ok) void toApp();
-    else setError("Giriş tamamlanamadı. Tekrar dener misin?");
   }
 
   const input = {
@@ -151,17 +122,12 @@ export function AuthScreen() {
         {view === "options" ? (
           <View style={{ gap: spacing.md }}>
             {PROVIDERS.map((p) => (
-              <PressableScale key={p.id} onPress={p.enabled ? () => startSocial(p.id) : undefined}
-                style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, paddingHorizontal: spacing.lg, opacity: p.enabled ? 1 : 0.55 }}>
+              <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={`${p.label} ile devam et`}
+                style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, paddingHorizontal: spacing.lg }}>
                 <View style={{ width: 24, alignItems: "center" }}>
                   {socialBusy === p.id ? <ActivityIndicator color={colors.textMuted} /> : providerIcon(p.id, colors)}
                 </View>
                 <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{p.label} ile devam et</Text>
-                {!p.enabled && (
-                  <View style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 4 }}>
-                    <Text variant="micro" color={colors.textMuted}>yakında</Text>
-                  </View>
-                )}
               </PressableScale>
             ))}
 
@@ -232,33 +198,16 @@ export function AuthScreen() {
         )}
       </ScrollView>
 
-      {/* Sosyal giriş WebView'i */}
-      <Modal visible={!!socialUrl} animationType="slide" onRequestClose={() => setSocialUrl(null)}>
-        <View style={{ flex: 1, backgroundColor: colors.bg }}>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-            <PressableScale hitSlop={4} onPress={() => setSocialUrl(null)} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-              <XIcon color={colors.text} size={22} />
-            </PressableScale>
-            <Text variant="h3">Sosyal giriş</Text>
-          </View>
-          {socialUrl ? (
-            <WebView
-              source={{ uri: socialUrl }}
-              onNavigationStateChange={onWebNav}
-              javaScriptEnabled
-              domStorageEnabled
-              thirdPartyCookiesEnabled
-              sharedCookiesEnabled
-              startInLoadingState
-              renderLoading={() => (
-                <View style={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0, alignItems: "center", justifyContent: "center" }}>
-                  <ActivityIndicator color={colors.primary} size="large" />
-                </View>
-              )}
-            />
-          ) : null}
-        </View>
-      </Modal>
+      {/* Hukuki kabul: Play, politikanın uygulama içinden erişilebilir olmasını ister. */}
+      <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.md }}>
+        <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", lineHeight: 18 }}>
+          Devam ederek{" "}
+          <Text variant="micro" color={colors.textMuted} style={{ textDecorationLine: "underline" }} onPress={() => openLegal("terms")}>Kullanım Şartları</Text>
+          {"'nı ve "}
+          <Text variant="micro" color={colors.textMuted} style={{ textDecorationLine: "underline" }} onPress={() => openLegal("privacy")}>Gizlilik Politikası</Text>
+          {"'nı kabul etmiş olursun."}
+        </Text>
+      </View>
     </View>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { View, TextInput, ScrollView } from "react-native";
+import { View, TextInput, ScrollView, Switch } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -16,6 +16,10 @@ import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, type VoiceId } from "../lib/voices";
 import { enabledCourses, DEFAULT_NATIVE } from "../lib/courses";
 import { useTheme, spacing, radii, softShadow, type Palette, type ThemeMode } from "../theme";
+import { analyticsEnabled, setAnalyticsEnabled } from "../lib/track";
+import { hasMicConsent, setMicConsent } from "../lib/micConsent";
+import { openLegal } from "../lib/legal";
+import { APP_VERSION } from "../version";
 
 const GOALS = [10, 20, 30, 50];
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
@@ -65,6 +69,9 @@ export function SettingsScreen() {
   const [voice, setVoice] = useState<VoiceId>(defaultVoice(me?.course ?? "de"));
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
+  const [analytics, setAnalytics] = useState(analyticsEnabled());
+  const [micConsent, setMicConsentState] = useState<boolean | null>(null);
+  useEffect(() => { void hasMicConsent().then(setMicConsentState); }, []);
 
   // useMe async gelir: ilk render'da me=null olduğu için state'ler yedeğe
   // (A1 / 20) düşüyordu ve gerçek değer (ör. A2) sonradan gelince useState'in
@@ -181,6 +188,34 @@ export function SettingsScreen() {
               );
             })}
           </View>
+        </Section>
+
+        <Section title="GİZLİLİK" colors={colors}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}>
+            <View style={{ flex: 1 }}>
+              <Text variant="bodyStrong">Kullanım verisi gönder</Text>
+              <Text variant="caption" color={colors.textMuted}>Hangi özelliklerin kullanıldığı; üçüncü tarafa gitmez</Text>
+            </View>
+            <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel="Kullanım verisi gönder" />
+          </View>
+          {micConsent ? (
+            <PressableScale onPress={() => { void setMicConsent(false); setMicConsentState(false); }} accessibilityLabel="Mikrofon onayını geri al" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong">Mikrofon onayını geri al</Text>
+                <Text variant="caption" color={colors.textMuted}>Yürüyüş modunda ses verisi açıklaması yeniden sorulur</Text>
+              </View>
+              <ChevronRightIcon color={colors.textFaint} size={20} />
+            </PressableScale>
+          ) : null}
+          <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+            <Text variant="bodyStrong" style={{ flex: 1 }}>Gizlilik politikası</Text>
+            <ChevronRightIcon color={colors.textFaint} size={20} />
+          </PressableScale>
+          <PressableScale onPress={() => openLegal("terms")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+            <Text variant="bodyStrong" style={{ flex: 1 }}>Kullanım şartları</Text>
+            <ChevronRightIcon color={colors.textFaint} size={20} />
+          </PressableScale>
+          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>Nomi {APP_VERSION}</Text>
         </Section>
 
         {!user && (
