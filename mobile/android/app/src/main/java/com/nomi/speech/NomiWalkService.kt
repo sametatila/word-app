@@ -3,6 +3,7 @@ package com.nomi.speech
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.app.Service
 import android.content.Context
 import android.content.Intent
@@ -10,6 +11,7 @@ import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import com.nomi.R
 
 /**
  * Yürüyüş "ekran kapalı" modu için MİKROFONLU foreground service.
@@ -27,18 +29,25 @@ class NomiWalkService : Service() {
       val nm = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
       if (nm.getNotificationChannel(chId) == null) {
         nm.createNotificationChannel(
-          NotificationChannel(chId, "Yürüyüş modu", NotificationManager.IMPORTANCE_LOW).apply {
+          NotificationChannel(chId, getString(R.string.walk_channel_name), NotificationManager.IMPORTANCE_LOW).apply {
             setShowBadge(false)
           },
         )
       }
     }
-    val iconRes = resources.getIdentifier("ic_notification", "drawable", packageName)
-      .let { if (it != 0) it else applicationInfo.icon }
+    // Bildirime dokununca uygulamaya (yürüyüş ekranına) dön.
+    val launch = packageManager.getLaunchIntentForPackage(packageName)?.apply {
+      addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+    }
+    val content = launch?.let {
+      PendingIntent.getActivity(this, 0, it, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+    }
     val notif: Notification = NotificationCompat.Builder(this, chId)
-      .setContentTitle("Yürüyüş modu")
-      .setContentText("Dinliyorum — ekran kapalıyken de çalışır")
-      .setSmallIcon(iconRes)
+      .setContentTitle(getString(R.string.walk_notification_title))
+      .setContentText(getString(R.string.walk_notification_text))
+      .setStyle(NotificationCompat.BigTextStyle().bigText(getString(R.string.walk_notification_text)))
+      .setSmallIcon(R.drawable.ic_notification)
+      .setContentIntent(content)
       .setOngoing(true)
       .setPriority(NotificationCompat.PRIORITY_LOW)
       .build()

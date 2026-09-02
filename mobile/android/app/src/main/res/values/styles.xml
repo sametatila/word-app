@@ -1,9 +1,17 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Uygulama teması: DayNight, sistem çubukları RN edge-to-edge ile yönetilir. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        <item name="android:windowBackground">@color/window_bg</item>
+    </style>
+
+    <!-- Açılış ekranı (Android 12+ SplashScreen API, altında uyumluluk): marka turuncusu
+         üzerinde launcher ikonu; ardından AppTheme'e geçer (MainActivity.installSplashScreen). -->
+    <style name="Theme.Nomi.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/ic_launcher_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
 
 </resources>

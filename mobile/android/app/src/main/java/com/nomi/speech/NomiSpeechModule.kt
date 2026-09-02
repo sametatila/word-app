@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import androidx.core.content.ContextCompat
 import android.media.AudioAttributes
 import android.media.AudioFormat
 import android.media.AudioRecord
@@ -448,7 +449,12 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
       addAction(Intent.ACTION_SCREEN_OFF)
       addAction(Intent.ACTION_SCREEN_ON)
     }
-    try { reactCtx.registerReceiver(r, filter); screenReceiver = r } catch (_: Exception) { /* yut */ }
+    // targetSdk 34+: çalışma zamanında kaydedilen alıcı dışa açıklığını belirtmeli. Ekran olayları
+    // yalnız sistemden gelir → NOT_EXPORTED.
+    try {
+      ContextCompat.registerReceiver(reactCtx, r, filter, ContextCompat.RECEIVER_NOT_EXPORTED)
+      screenReceiver = r
+    } catch (e: Exception) { android.util.Log.e("NomiWalk", "screen receiver HATA: ${e.message}") }
   }
 
   @ReactMethod
