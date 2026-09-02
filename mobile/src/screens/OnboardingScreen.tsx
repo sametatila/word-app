@@ -10,6 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
 import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
+import { enabledCourses, DEFAULT_NATIVE } from "../lib/courses";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
@@ -44,10 +45,13 @@ const STEPS: Step[] = [
     key: "course", icon: SkillsIcon,
     title: "Hangi kursla başlayalım?",
     subtitle: "Şimdilik Almanca ve Zürih Almancası var; yeni diller yakında eklenecek. Sonradan değiştirebilirsin.",
-    options: [
-      { key: "de", label: "Almanca", sub: "Hochdeutsch · Goethe A1–C1" },
-      { key: "gsw-zh", label: "Zürih Almancası", sub: "Züritüütsch · İsviçre lehçesi" },
-    ],
+    // Kurs kayıt defterinden türüyor (lib/courses.ts): içeriği hazır olmayan
+    // kurs listede görünmez, yeni dil açıldığında burası kendiliğinden doğrular.
+    options: enabledCourses().map((c) => ({
+      key: c.id,
+      label: c.label[DEFAULT_NATIVE],
+      sub: c.sub[DEFAULT_NATIVE],
+    })),
   },
   {
     key: "level", icon: ExamIcon,

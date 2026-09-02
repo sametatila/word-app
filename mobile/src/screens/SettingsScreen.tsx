@@ -14,6 +14,7 @@ import { updateProfile } from "../lib/updateProfile";
 import { VoicePicker } from "../ui/VoicePicker";
 import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, type VoiceId } from "../lib/voices";
+import { enabledCourses, DEFAULT_NATIVE } from "../lib/courses";
 import { useTheme, spacing, radii, softShadow, type Palette, type ThemeMode } from "../theme";
 
 const GOALS = [10, 20, 30, 50];
@@ -23,10 +24,14 @@ const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
   { key: "light", label: "Açık" },
   { key: "dark", label: "Koyu" },
 ];
-const COURSE_OPTIONS: { key: string; label: string; sub: string }[] = [
-  { key: "de", label: "Almanca", sub: "Hochdeutsch · Goethe A1–C1" },
-  { key: "gsw-zh", label: "Zürih Almancası", sub: "Züritüütsch · İsviçre lehçesi" },
-];
+// Liste kurs kayıt defterinden türüyor: yeni bir dil açıldığında burayı da
+// düzenlemek gerekmesin diye. Etiket şimdilik Türkçe; i18n gelince kullanıcının
+// anadili seçilecek (bkz. lib/courses.ts, NativeLang).
+const COURSE_OPTIONS: { key: string; label: string; sub: string }[] = enabledCourses().map((c) => ({
+  key: c.id,
+  label: c.label[DEFAULT_NATIVE],
+  sub: c.sub[DEFAULT_NATIVE],
+}));
 
 function Chip({ label, active, onPress, colors }: { label: string; active: boolean; onPress: () => void; colors: Palette }) {
   return (

@@ -7,6 +7,8 @@
  * deviceVoiceFor); ama kullanıcıya gösterilen seçim ve saklanan tercih web ile
  * birebir aynı — kurs başına iki ses.
  */
+import { courseOrDefault, type CourseId } from "./courses";
+
 export type VoiceId =
   | "de-DE-KatjaNeural"
   | "de-DE-ConradNeural"
@@ -22,7 +24,7 @@ export type Voice = {
   label: string;
   gender: "kadın" | "erkek";
   note: string;
-  course: "de" | "gsw-zh";
+  course: CourseId;
 };
 
 export const VOICES: Voice[] = [
@@ -34,19 +36,24 @@ export const VOICES: Voice[] = [
 
 /** Kursun sesleri — seçim ekranı bunu listeler. */
 export function voicesFor(course: string): Voice[] {
-  const key = course === "gsw-zh" ? "gsw-zh" : "de";
-  return VOICES.filter((v) => v.course === key);
+  return VOICES.filter((v) => v.course === courseOrDefault(course).id);
 }
 
-/** Kursun varsayılanı: her ikisinde de kadın ses. */
+/**
+ * Kursun varsayılanı: listedeki ilk ses (her kursta kadın ses başta).
+ *
+ * Eskiden burada `course === "gsw-zh" ? Leni : Katja` yazıyordu; üçüncü bir
+ * kurs eklendiğinde sessizce Almanca sese düşerdi. Artık katalogdan
+ * türetiliyor, yani yeni kursun sesi eklendiği anda doğru cevabı veriyor.
+ */
 export function defaultVoice(course: string): VoiceId {
-  return course === "gsw-zh" ? "de-CH-LeniNeural" : "de-DE-KatjaNeural";
+  return voicesFor(course)[0]?.id ?? "de-DE-KatjaNeural";
 }
 
 /** Seçilen sesi doğrular ve kursa uygun hâle getirir (web resolveVoice ile aynı). */
 export function resolveVoice(course: string, voice: string | null | undefined): VoiceId {
   const found = VOICES.find((v) => v.id === voice);
-  if (found && found.course === (course === "gsw-zh" ? "gsw-zh" : "de")) return found.id;
+  if (found && found.course === courseOrDefault(course).id) return found.id;
   return defaultVoice(course);
 }
 

@@ -5,15 +5,20 @@ import { PressableScale } from "./PressableScale";
 import { SpeakerIcon } from "./icons";
 import { useTheme, spacing, radii } from "../theme";
 import { voicesFor, resolveVoice, type VoiceId } from "../lib/voices";
+import { courseOrDefault } from "../lib/courses";
 import { speakWithVoice } from "../lib/tts";
 
 /**
  * Ses seçimi — web VoicePicker'ın mobil karşılığı. Kurs başına iki ses
  * (Katja/Conrad ya da Leni/Jan); kart seçer, hoparlör dinletir (seçmez).
  */
+// Kurs id'sine göre örnek cümle. Yeni bir kurs eklendiğinde buraya da bir
+// satır gerekiyor; eksikse kursun kendi diline düşmek yerine sessizce Almanca
+// cümle okunmasın diye aşağıda açıkça ele alınıyor.
 const SAMPLE: Record<string, string> = {
   "gsw-zh": "De nöi Vertrag gilt für alli Bschäftigte.",
   de: "Der neue Vertrag gilt für alle Beschäftigten.",
+  en: "The new contract applies to all employees.",
 };
 
 export function VoicePicker({
@@ -28,7 +33,7 @@ export function VoicePicker({
   const { colors } = useTheme();
   const options = voicesFor(course);
   const selected = resolveVoice(course, value);
-  const sample = SAMPLE[course === "gsw-zh" ? "gsw-zh" : "de"];
+  const sample = SAMPLE[courseOrDefault(course).id] ?? SAMPLE.de;
 
   return (
     <View style={{ flexDirection: "row", gap: spacing.sm }}>
