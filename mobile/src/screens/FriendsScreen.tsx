@@ -13,9 +13,9 @@ import { Card } from "../ui/Card";
 import { Skeleton } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
-import { SettingsIcon, ShareIcon } from "../ui/icons";
-import { useTheme, spacing, radii } from "../theme";
-import { EmptyCard, ErrorText, PrimaryButton, ScreenHeader } from "../social/common";
+import { SettingsIcon, ShareIcon, HandshakeIcon, UserPlusIcon, InboxIcon, ChevronRightIcon } from "../ui/icons";
+import { useTheme, spacing, radii, softShadow } from "../theme";
+import { Chip, EmptyCard, ErrorText, HeaderButton, Pill, ScreenHeader, StatPill } from "../social/common";
 import { FriendRows } from "../social/FriendRows";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { FeedList } from "../social/FeedList";
@@ -32,7 +32,11 @@ const TABS: { key: Tab; label: string }[] = [
   { key: "find", label: "Bul" },
 ];
 
-/** Sosyal merkez — web'deki /friends ile aynı beş sekme. Misafir için giriş daveti. */
+/**
+ * Sosyal merkez — Profil ekranıyla aynı kurgu: başlık, ortalanmış kimlik kartı
+ * (arma + ad + pill rozetler), Premium-blok tarzı davet CTA'sı, Ayarlar çipleriyle
+ * sekmeler, altında kartlar. Misafir için giriş daveti.
+ */
 export function FriendsScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -62,17 +66,15 @@ export function FriendsScreen() {
   async function share() {
     if (!me) return;
     track("share", 0, "profile");
-    try {
-      await Share.share({ message: `Nomi'de Almanca çalışıyorum. Arkadaş ol, birlikte hedef tutturalım: ${API_BASE}/u/${me.username}` });
-    } catch { /* paylaşım kapatıldı */ }
+    try { await Share.share({ message: `Nomi'de Almanca çalışıyorum. Arkadaş ol, birlikte hedef tutturalım: ${API_BASE}/u/${me.username}` }); } catch { /* kapatıldı */ }
   }
 
   if (!user) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         <ScreenHeader title="Arkadaşlar" />
-        <View style={{ paddingHorizontal: spacing.lg }}>
-          <EmptyCard title="Arkadaşlar için giriş yap" text="Arkadaş ekle, akışta tepki ver, birlikte haftalık hedef tuttur. Hesabın cihazlar arasında ortak." action="Giriş yap" onAction={() => nav.navigate("Auth")} />
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
+          <EmptyCard icon={HandshakeIcon} tint={colors.success} title="Arkadaşlar için giriş yap" text="Arkadaş ekle, akışta tepki ver, birlikte haftalık hedef tuttur. Hesabın cihazlar arasında ortak." action="Giriş yap" onAction={() => nav.navigate("Auth")} />
         </View>
       </View>
     );
@@ -81,64 +83,54 @@ export function FriendsScreen() {
   const incoming = data?.incoming.length ?? me?.counts.incoming ?? 0;
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader
-        title="Arkadaşlar"
-        subtitle={me ? `@${me.username} · ${me.counts.friends} arkadaş` : undefined}
-        right={
-          <PressableScale onPress={() => nav.navigate("SocialSettings")} accessibilityLabel="Sosyal ayarlar" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-            <SettingsIcon color={colors.text} size={20} />
-          </PressableScale>
-        }
-      />
+      <ScreenHeader title="Arkadaşlar" right={<HeaderButton icon={SettingsIcon} label="Sosyal ayarlar" onPress={() => nav.navigate("SocialSettings")} />} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         {me ? (
-          <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.md }}>
-            <PersonAvatar userId={me.userId} name={me.name} size={44} />
-            <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong" numberOfLines={1}>{me.name ?? "İsimsiz öğrenci"}</Text>
-              <Text variant="micro" color={colors.textMuted}>Profil bağlantın: /u/{me.username}</Text>
+          <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
+            <View style={softShadow(colors.primary, 10)}><PersonAvatar userId={me.userId} name={me.name} size={76} /></View>
+            <Text variant="h2" style={{ marginTop: spacing.md }}>{me.name ?? "İsimsiz öğrenci"}</Text>
+            <Text variant="caption" color={colors.textMuted}>@{me.username}</Text>
+            <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
+              <StatPill icon={HandshakeIcon} label={`${me.counts.friends} arkadaş`} tint={colors.success} soft={colors.successSoft} />
+              {incoming > 0 ? <StatPill icon={UserPlusIcon} label={`${incoming} istek`} tint={colors.streak} /> : null}
+              {me.counts.unread > 0 ? <StatPill icon={InboxIcon} label={`${me.counts.unread} yeni`} tint={colors.primary} soft={colors.primarySoft} /> : null}
             </View>
-            <PressableScale onPress={() => void share()} style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primary, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 8 }}>
-              <ShareIcon color={colors.onPrimary} size={15} />
-              <Text variant="caption" color={colors.onPrimary} style={{ fontWeight: "700" }}>Davet et</Text>
-            </PressableScale>
           </Card>
-        ) : <Skeleton height={68} style={{ marginBottom: spacing.md }} />}
+        ) : <Skeleton height={190} radius={26} style={{ marginTop: spacing.sm, marginBottom: spacing.lg }} />}
 
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6, paddingBottom: spacing.md }}>
-          {TABS.map((t) => {
-            const active = tab === t.key;
-            return (
-              <PressableScale key={t.key} onPress={() => setTab(t.key)} style={{ flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: active ? colors.primary : colors.surface2 }}>
-                <Text variant="caption" color={active ? colors.onPrimary : colors.text} style={{ fontWeight: "700" }}>{t.label}</Text>
-                {t.key === "requests" && incoming > 0 ? (
-                  <View style={{ minWidth: 18, height: 18, borderRadius: 9, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center", paddingHorizontal: 4 }}>
-                    <Text variant="micro" color="#fff" style={{ fontWeight: "800", fontSize: 10, lineHeight: 12 }}>{incoming}</Text>
-                  </View>
-                ) : null}
-              </PressableScale>
-            );
-          })}
+        <PressableScale onPress={() => void share()} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>
+          <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff2e" }}>
+            <ShareIcon color="#fff" size={24} />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text variant="h3" color="#fff">Arkadaşını davet et</Text>
+            <Text variant="caption" color="#ffffffcc">Profil bağlantını gönder, aynı hafta birlikte çalışın</Text>
+          </View>
+          <ChevronRightIcon color="#fff" size={22} />
+        </PressableScale>
+
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm, paddingBottom: spacing.lg }}>
+          {TABS.map((t) => <Chip key={t.key} label={t.label} active={tab === t.key} onPress={() => setTab(t.key)} badge={t.key === "requests" ? incoming : undefined} />)}
         </ScrollView>
 
-        <ErrorText text={err} />
         {tab === "friends" ? (
-          data === null ? <View style={{ gap: spacing.sm }}><Skeleton height={72} /><Skeleton height={72} /></View> : (
-            <View style={{ gap: spacing.lg }}>
+          data === null ? <View style={{ gap: spacing.md }}><Skeleton height={150} radius={26} /><Skeleton height={150} radius={26} /></View> : (
+            <View>
               {data.friends.length ? (
                 <FriendRows friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
               ) : (
-                <EmptyCard title="Henüz arkadaşın yok" text="Kullanıcı adıyla ara ya da davet bağlantını gönder. Arkadaşlar birbirinin serisini görür, tepki verir, birlikte görev yapar." action="Arkadaş bul" onAction={() => setTab("find")} />
+                <EmptyCard icon={UserPlusIcon} tint={colors.success} title="Henüz arkadaşın yok" text="Kullanıcı adıyla ara ya da davet bağlantını gönder. Arkadaşlar birbirinin serisini görür, tepki verir, birlikte görev yapar." action="Arkadaş bul" onAction={() => setTab("find")} />
               )}
               <FriendsBoard />
             </View>
           )
         ) : null}
         {tab === "feed" ? <FeedList onFindFriends={() => setTab("find")} /> : null}
-        {tab === "quests" ? (data === null || !me ? <Skeleton height={110} /> : <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} />) : null}
-        {tab === "requests" ? (data === null ? <Skeleton height={72} /> : <Requests incoming={data.incoming} outgoing={data.outgoing} onChanged={() => void reload()} />) : null}
+        {tab === "quests" ? (data === null || !me ? <Skeleton height={150} radius={26} /> : <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} />) : null}
+        {tab === "requests" ? (data === null ? <Skeleton height={120} radius={26} /> : <Requests incoming={data.incoming} outgoing={data.outgoing} onChanged={() => void reload()} />) : null}
         {tab === "find" ? <Find onChanged={() => void reload()} /> : null}
-        {err ? <View style={{ marginTop: spacing.md }}><PrimaryButton label="Tekrar dene" tone="ghost" onPress={() => void reload()} /></View> : null}
+        <ErrorText text={err} />
+        {err ? <View style={{ marginTop: spacing.md, alignItems: "center" }}><Pill label="Tekrar dene" tone="ghost" onPress={() => void reload()} /></View> : null}
       </ScrollView>
     </View>
   );

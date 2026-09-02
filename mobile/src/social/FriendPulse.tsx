@@ -9,9 +9,11 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
+import { ArrowRightIcon } from "../ui/icons";
 import { useTheme, spacing } from "../theme";
+import { Bar } from "./common";
 
-/** Öğren ekranı nabzı: yalnız bu haftanın ortak görevi/daveti varsa çizilir. */
+/** Öğren ekranı nabzı — ActionRow biçimi: arma, h3, caption/çubuk, ok. Yalnız görev/davet varsa. */
 export function FriendPulse() {
   const { colors } = useTheme();
   const { user } = useAuth();
@@ -25,19 +27,20 @@ export function FriendPulse() {
   const invited = q.status === "invited";
   return (
     <PressableScale onPress={() => nav.navigate("Friends", { tab: "quests" })} style={{ marginBottom: spacing.xl }}>
-      <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-        <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={36} ring={colors.info} />
+      <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: invited ? colors.info : colors.primary, borderWidth: 1.5 }}>
+        <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={44} ring={invited ? colors.info : colors.primary} />
         <View style={{ flex: 1 }}>
-          <Text variant="bodyStrong" numberOfLines={1}>{invited ? (q.invitedByMe ? "Görev daveti bekliyor" : `${q.partner.name ?? "Arkadaşın"} seni göreve çağırdı`) : `${q.partner.name ?? "Arkadaşın"} ile ortak görev`}</Text>
+          <Text variant="h3" numberOfLines={1}>{invited ? (q.invitedByMe ? "Görev daveti bekliyor" : `${q.partner.name?.split(" ")[0] ?? "Arkadaşın"} seni göreve çağırdı`) : `${q.partner.name?.split(" ")[0] ?? "Arkadaşın"} ile ortak görev`}</Text>
           {invited ? (
-            <Text variant="micro" color={colors.textMuted}>Hedef birlikte {formatXp(q.targetXp)} XP · {q.invitedByMe ? "cevap bekleniyor" : "kabul et"}</Text>
+            <Text variant="caption" color={colors.textMuted}>Hedef birlikte {formatXp(q.targetXp)} XP · {q.invitedByMe ? "cevap bekleniyor" : "kabul et"}</Text>
           ) : (
-            <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: 5 }}>
-              <View style={{ height: "100%", width: `${q.pct}%`, backgroundColor: colors.primary }} />
+            <View style={{ marginTop: 6 }}>
+              <Bar pct={q.pct} tint={colors.primary} />
+              <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{formatXp(q.totalXp)}/{formatXp(q.targetXp)} XP · {q.daysLeft} gün</Text>
             </View>
           )}
         </View>
-        {!invited ? <Text variant="bodyStrong" color={colors.primary}>{q.pct}%</Text> : null}
+        {!invited ? <Text variant="h3" color={colors.primary}>{q.pct}%</Text> : <ArrowRightIcon color={colors.textFaint} size={20} />}
       </Card>
     </PressableScale>
   );

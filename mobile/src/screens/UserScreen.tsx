@@ -12,13 +12,23 @@ import { Card } from "../ui/Card";
 import { Skeleton } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, HandshakeIcon, TrophyIcon } from "../ui/icons";
-import { useTheme, spacing } from "../theme";
-import { EmptyCard, ErrorText, PrimaryButton, ScreenHeader } from "../social/common";
+import { FlameIcon, HandshakeIcon, BellIcon, TargetIcon, LockIcon, XIcon } from "../ui/icons";
+import { useTheme, spacing, radii, softShadow } from "../theme";
+import type { Palette } from "../theme/colors";
+import { EmptyCard, ErrorText, Pill, ScreenHeader, SectionTitle, StatPill } from "../social/common";
 import { FeedCard } from "../social/FeedList";
 import { UserActionButton } from "../social/UserActionButton";
 
-/** Herkese açık profil (/u/<kullanıcıadı>). Görünürlük sunucuda uygulanır. */
+function StatTile({ value, label, color, colors }: { value: string; label: string; color: string; colors: Palette }) {
+  return (
+    <Card padded style={{ width: "47.5%", gap: 2 }}>
+      <Text variant="h1" color={color}>{value}</Text>
+      <Text variant="caption" color={colors.textMuted}>{label}</Text>
+    </Card>
+  );
+}
+
+/** Kişi profili — Profil ekranının kurgusu: ortalanmış kimlik kartı, StatTile ızgarası, kartlar. */
 export function UserScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -37,9 +47,7 @@ export function UserScreen() {
 
   useEffect(() => {
     if (!user) return;
-    social.profile(username).then((d) => { setData(d); setRel(d.relation); }).catch((e) => {
-      if (e instanceof ApiError && e.status === 404) setNotFound(true); else setErr(errorText(e));
-    });
+    social.profile(username).then((d) => { setData(d); setRel(d.relation); }).catch((e) => { if (e instanceof ApiError && e.status === 404) setNotFound(true); else setErr(errorText(e)); });
   }, [username, user]);
 
   async function act(fn: () => Promise<unknown>, done: string) {
@@ -48,84 +56,87 @@ export function UserScreen() {
     try { await fn(); setMsg(done); setOk(true); } catch (e) { setMsg(errorText(e)); setOk(false); } finally { setBusy(false); }
   }
 
-  if (!user) return <View style={{ flex: 1, backgroundColor: colors.bg }}><ScreenHeader title="Profil" /><View style={{ paddingHorizontal: spacing.lg }}><EmptyCard title="Giriş gerekli" text="Profilleri görmek için giriş yap." action="Giriş yap" onAction={() => nav.navigate("Auth")} /></View></View>;
-  if (notFound) return <View style={{ flex: 1, backgroundColor: colors.bg }}><ScreenHeader title="Profil" /><View style={{ paddingHorizontal: spacing.lg }}><EmptyCard title="Kullanıcı bulunamadı" text="Bağlantı eski olabilir ya da bu profil sana kapalı." /></View></View>;
-  if (!data) return <View style={{ flex: 1, backgroundColor: colors.bg }}><ScreenHeader title="Profil" /><View style={{ paddingHorizontal: spacing.lg, gap: spacing.md }}><Skeleton height={120} /><Skeleton height={80} /><ErrorText text={err} /></View></View>;
+  const wrap = (child: React.ReactNode) => (
+    <View style={{ flex: 1, backgroundColor: colors.bg }}>
+      <ScreenHeader title="Profil" />
+      <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, gap: spacing.md }}>{child}</View>
+    </View>
+  );
+  if (!user) return wrap(<EmptyCard icon={LockIcon} title="Giriş gerekli" text="Profilleri görmek için giriş yap." action="Giriş yap" onAction={() => nav.navigate("Auth")} />);
+  if (notFound) return wrap(<EmptyCard icon={XIcon} tint={colors.danger} title="Kullanıcı bulunamadı" text="Bağlantı eski olabilir ya da bu profil sana kapalı." />);
+  if (!data) return wrap(<><Skeleton height={220} radius={26} /><Skeleton height={100} radius={26} /><ErrorText text={err} /></>);
 
   const u = data.user;
   const isSelf = data.relation === "self";
   const friends = rel === "friends";
-  const stat = (label: string, value: string, tone: string, icon?: React.ReactNode) => (
-    <Card padded style={{ flex: 1, minWidth: "30%", alignItems: "center", paddingVertical: 10 }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>{icon}<Text variant="h3" color={tone}>{value}</Text></View>
-      <Text variant="micro" color={colors.textMuted}>{label}</Text>
-    </Card>
-  );
-
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScreenHeader title="Profil" />
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }} showsVerticalScrollIndicator={false}>
-        <Card padded>
-          <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "flex-start" }}>
-            <PersonAvatar userId={u.userId} name={u.name} size={64} ring={friends ? colors.success : null} />
-            <View style={{ flex: 1 }}>
-              <Text variant="h2" numberOfLines={1}>{u.name ?? "İsimsiz öğrenci"}</Text>
-              <Text variant="caption" color={colors.textMuted}>@{u.username} · {u.level}</Text>
-              {data.bio ? <Text variant="body" style={{ marginTop: 6, lineHeight: 20 }}>{data.bio}</Text> : null}
-              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 10, marginTop: 8 }}>
-                {data.mutual > 0 ? <Text variant="micro" color={colors.textMuted}>{data.mutual} ortak arkadaş</Text> : null}
-                {data.friendStreak > 0 ? <View style={{ flexDirection: "row", alignItems: "center", gap: 3 }}><HandshakeIcon color={colors.success} size={12} /><Text variant="micro" color={colors.success}>{data.friendStreak} gün birlikte</Text></View> : null}
-                <Text variant="micro" color={colors.textFaint}>Katılım {new Date(data.joined).toLocaleDateString("tr-TR", { month: "short", year: "numeric" })}</Text>
-              </View>
+      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+        <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
+          <View style={softShadow(friends ? colors.success : colors.primary, 10)}><PersonAvatar userId={u.userId} name={u.name} size={76} ring={friends ? colors.success : null} /></View>
+          <Text variant="h2" style={{ marginTop: spacing.md }}>{u.name ?? "İsimsiz öğrenci"}</Text>
+          <Text variant="caption" color={colors.textMuted}>@{u.username} · {u.level} · {new Date(data.joined).toLocaleDateString("tr-TR", { month: "short", year: "numeric" })}</Text>
+          {data.bio ? <Text variant="body" color={colors.text} style={{ marginTop: spacing.sm, textAlign: "center", lineHeight: 21 }}>{data.bio}</Text> : null}
+          {(data.mutual > 0 || data.friendStreak > 0) ? (
+            <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginTop: spacing.md }}>
+              {data.mutual > 0 ? <StatPill icon={HandshakeIcon} label={`${data.mutual} ortak arkadaş`} tint={colors.info} /> : null}
+              {data.friendStreak > 0 ? <StatPill icon={FlameIcon} label={`${data.friendStreak} gün birlikte`} tint={colors.success} soft={colors.successSoft} /> : null}
             </View>
-          </View>
+          ) : null}
           {!isSelf ? (
-            <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginTop: spacing.lg }}>
               <UserActionButton userId={u.userId} relation={rel} friendshipId={data.friendshipId} canRequest={data.canRequest} onChange={setRel} small={false} />
               {friends ? (
                 <>
-                  <PrimaryButton label="Dürt" tone="ghost" disabled={busy} onPress={() => void act(() => social.nudge(u.userId, "remind"), "Dürttün")} />
-                  <PrimaryButton label="Ortak görev" tone="ghost" disabled={busy} onPress={() => void act(() => social.inviteQuest(u.userId), "Görev daveti gitti")} />
+                  <Pill label="Dürt" tone="ghost" icon={BellIcon} disabled={busy} onPress={() => void act(() => social.nudge(u.userId, "remind"), "Dürttün")} />
+                  <Pill label="Görev" tone="ghost" icon={TargetIcon} disabled={busy} onPress={() => void act(() => social.inviteQuest(u.userId), "Görev daveti gitti")} />
                 </>
               ) : null}
-              <PressableScale onPress={() => setMore((m) => !m)} style={{ marginLeft: "auto" }}><Text variant="micro" color={colors.textFaint}>Daha fazla</Text></PressableScale>
             </View>
           ) : null}
-          {msg ? <Text variant="caption" color={ok ? colors.success : colors.danger} style={{ marginTop: 6 }}>{msg}</Text> : null}
-          {more && !isSelf ? (
-            <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-              <PrimaryButton label="Engelle" small tone="danger" disabled={busy} onPress={() => Alert.alert("Engelle", `${u.name ?? "Bu kişi"} engellensin mi? Arkadaşlık ve görevler silinir; kendisine bildirim gitmez.`, [
-                { text: "Vazgeç", style: "cancel" },
-                { text: "Engelle", style: "destructive", onPress: () => void act(async () => { await social.block(u.userId); nav.goBack(); }, "Engellendi") },
-              ])} />
-              <PrimaryButton label="Şikayet et" small tone="ghost" disabled={busy} onPress={() => Alert.alert("Şikayet sebebi", undefined, [
-                { text: "Spam", onPress: () => void act(() => social.report(u.userId, "spam"), "Şikayet alındı") },
-                { text: "Taciz", onPress: () => void act(() => social.report(u.userId, "abuse"), "Şikayet alındı") },
-                { text: "Sahte hesap", onPress: () => void act(() => social.report(u.userId, "impersonation"), "Şikayet alındı") },
-                { text: "Vazgeç", style: "cancel" },
-              ])} />
-            </View>
-          ) : null}
+          {msg ? <Text variant="caption" color={ok ? colors.success : colors.danger} style={{ marginTop: spacing.sm }}>{msg}</Text> : null}
         </Card>
 
         {data.stats ? (
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-            {stat("Seri", String(data.stats.currentStreak), colors.streak, <FlameIcon color={colors.streak} size={14} />)}
-            {stat("Bu hafta", `${formatXp(data.stats.weeklyXp)}`, colors.primary)}
-            {stat("Toplam XP", formatXp(data.stats.totalXp), colors.primary)}
-            {stat("En uzun seri", String(data.stats.longestStreak), colors.streak)}
-            {stat("Rozet", String(data.stats.achievements), colors.accent, <TrophyIcon color={colors.accent} size={14} />)}
-            {stat("Son aktif", data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString("tr-TR", { day: "numeric", month: "short" }) : "—", colors.textMuted)}
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
+            <StatTile value={String(data.stats.currentStreak)} label="Gün serisi" color={colors.streak} colors={colors} />
+            <StatTile value={formatXp(data.stats.weeklyXp)} label="Bu hafta XP" color={colors.primary} colors={colors} />
+            <StatTile value={formatXp(data.stats.totalXp)} label="Toplam XP" color={colors.success} colors={colors} />
+            <StatTile value={String(data.stats.achievements)} label="Rozet" color={colors.accent} colors={colors} />
           </View>
         ) : (
-          <Card padded style={{ alignItems: "center" }}><Text variant="body" color={colors.textMuted}>{data.visibility === "friends" ? "İstatistikler yalnız arkadaşlarına açık." : "Bu profil gizli."}</Text></Card>
+          <View style={{ marginBottom: spacing.lg }}>
+            <EmptyCard icon={LockIcon} tint={colors.textMuted} title={data.visibility === "friends" ? "Yalnız arkadaşlarına açık" : "Gizli profil"} text={data.visibility === "friends" ? "Arkadaş olunca seri, XP ve rozetlerini görürsün." : "Bu kişi istatistiklerini paylaşmıyor."} />
+          </View>
         )}
 
         {data.recent.length ? (
           <View>
-            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, fontWeight: "700" }}>SON KİLOMETRE TAŞLARI</Text>
+            <SectionTitle title="Son kilometre taşları" />
             {data.recent.map((it) => <FeedCard key={it.id} item={friends || isSelf ? it : { ...it, isMine: true }} />)}
+          </View>
+        ) : null}
+
+        {!isSelf ? (
+          <View style={{ marginTop: spacing.lg, alignItems: "center" }}>
+            <PressableScale onPress={() => setMore((m) => !m)} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+              <Text variant="caption" color={colors.textMuted}>{more ? "Gizle" : "Engelle / Şikayet et"}</Text>
+            </PressableScale>
+            {more ? (
+              <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
+                <Pill label="Engelle" tone="danger" disabled={busy} onPress={() => Alert.alert("Engelle", `${u.name ?? "Bu kişi"} engellensin mi? Arkadaşlık ve görevler silinir; kendisine bildirim gitmez.`, [
+                  { text: "Vazgeç", style: "cancel" },
+                  { text: "Engelle", style: "destructive", onPress: () => void act(async () => { await social.block(u.userId); nav.goBack(); }, "Engellendi") },
+                ])} />
+                <Pill label="Şikayet et" tone="ghost" disabled={busy} onPress={() => Alert.alert("Şikayet sebebi", undefined, [
+                  { text: "Spam", onPress: () => void act(() => social.report(u.userId, "spam"), "Şikayet alındı") },
+                  { text: "Taciz", onPress: () => void act(() => social.report(u.userId, "abuse"), "Şikayet alındı") },
+                  { text: "Sahte hesap", onPress: () => void act(() => social.report(u.userId, "impersonation"), "Şikayet alındı") },
+                  { text: "Vazgeç", style: "cancel" },
+                ])} />
+              </View>
+            ) : null}
           </View>
         ) : null}
       </ScrollView>

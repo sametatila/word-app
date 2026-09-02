@@ -3,11 +3,11 @@ import { View } from "react-native";
 import { REACTION_KINDS, REACTION_LABELS, social, errorText, type ReactionKind, type ReactionSummary } from "../api/social";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { useTheme, spacing, radii } from "../theme";
+import { useTheme, spacing, radii, softShadow } from "../theme";
 import { ErrorText, ReactionGlyph, reactionTone } from "./common";
 import { haptic } from "../lib/haptics";
 
-/** Tepki çubuğu — web'dekiyle aynı davranış: sayılar, "+" ile altı seçenek, aynı ikona ikinci dokunuş geri alır. */
+/** Tepkiler: mevcut olanlar pill rozet (tint+22); "+" ile altı ikon karosu. Benimki dolu renk. */
 export function ReactionBar({ eventId, summary, disabled }: { eventId: number; summary: ReactionSummary; disabled?: boolean }) {
   const { colors } = useTheme();
   const [s, setS] = useState(summary);
@@ -33,32 +33,36 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
   const present = REACTION_KINDS.filter((k) => (s.counts[k] ?? 0) > 0);
   const who = s.names.length ? `${s.names.join(", ")}${s.total > s.names.length ? ` ve ${s.total - s.names.length} kişi` : ""}` : "";
   return (
-    <View style={{ marginTop: spacing.sm }}>
+    <View style={{ marginTop: spacing.md }}>
       <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
         {present.map((k) => {
           const mine = s.mine === k;
           const tone = reactionTone(k, colors);
           return (
-            <PressableScale key={k} onPress={() => void pick(k)} disabled={disabled || busy} accessibilityLabel={`${REACTION_LABELS[k]} ${s.counts[k]}`} style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingHorizontal: 9, paddingVertical: 5, borderRadius: radii.pill, backgroundColor: mine ? tone + "2a" : colors.surface2, borderWidth: 1, borderColor: mine ? tone : colors.hairline }}>
-              <ReactionGlyph kind={k} size={14} colors={colors} />
-              <Text variant="micro" color={mine ? tone : colors.textMuted}>{s.counts[k]}</Text>
+            <PressableScale key={k} onPress={() => void pick(k)} disabled={disabled || busy} accessibilityLabel={`${REACTION_LABELS[k]} ${s.counts[k]}`} style={[{ flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: 10, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 4) : {}]}>
+              <ReactionGlyph kind={k} size={14} colors={colors} color={mine ? "#fff" : undefined} />
+              <Text variant="caption" color={mine ? "#fff" : tone}>{s.counts[k]}</Text>
             </PressableScale>
           );
         })}
         {!disabled ? (
-          <PressableScale onPress={() => setOpen((o) => !o)} disabled={busy} accessibilityLabel="Tepki ver" style={{ paddingHorizontal: 10, paddingVertical: 5, borderRadius: radii.pill, backgroundColor: colors.surface2, borderWidth: 1, borderColor: colors.hairline }}>
-            <Text variant="micro" color={colors.textMuted}>{s.mine ? "Değiştir" : "Tepki ver"}</Text>
+          <PressableScale onPress={() => setOpen((o) => !o)} disabled={busy} accessibilityLabel="Tepki ver" style={{ paddingHorizontal: 12, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+            <Text variant="caption" color={colors.textMuted}>{s.mine ? "Değiştir" : "Tepki ver"}</Text>
           </PressableScale>
         ) : null}
-        {who ? <Text variant="micro" color={colors.textFaint}>{who}</Text> : null}
       </View>
+      {who ? <Text variant="micro" color={colors.textFaint} style={{ marginTop: 6 }}>{who}</Text> : null}
       {open ? (
-        <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.sm, padding: 6, borderRadius: radii.lg, backgroundColor: colors.surface2, alignSelf: "flex-start" }}>
-          {REACTION_KINDS.map((k) => (
-            <PressableScale key={k} onPress={() => void pick(k)} accessibilityLabel={REACTION_LABELS[k]} style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: s.mine === k ? reactionTone(k, colors) + "2a" : "transparent" }}>
-              <ReactionGlyph kind={k} size={20} colors={colors} />
-            </PressableScale>
-          ))}
+        <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: spacing.sm }}>
+          {REACTION_KINDS.map((k) => {
+            const tone = reactionTone(k, colors);
+            const mine = s.mine === k;
+            return (
+              <PressableScale key={k} onPress={() => void pick(k)} accessibilityLabel={REACTION_LABELS[k]} style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 6) : {}]}>
+                <ReactionGlyph kind={k} size={22} colors={colors} color={mine ? "#fff" : undefined} />
+              </PressableScale>
+            );
+          })}
         </View>
       ) : null}
       <ErrorText text={err} />

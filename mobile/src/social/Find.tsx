@@ -8,12 +8,13 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { Skeleton } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
-import { FlameIcon, SearchIcon } from "../ui/icons";
+import { PressableScale } from "../ui/PressableScale";
+import { FlameIcon, SearchIcon, XIcon, HandshakeIcon } from "../ui/icons";
 import { useTheme, spacing, radii } from "../theme";
-import { ErrorText, PersonRow } from "./common";
+import { ErrorText, SectionTitle, StatPill } from "./common";
 import { UserActionButton } from "./UserActionButton";
 
-/** Bul: arama (350 ms beklemeli, 2+ karakter) + öneriler. */
+/** Bul: Ayarlar'daki giriş kutusu + her sonuç kendi kartı (kimlik + rozet + pill düğme). */
 export function Find({ onChanged }: { onChanged?: () => void }) {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
@@ -28,57 +29,50 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
     if (timer.current) clearTimeout(timer.current);
     const text = q.trim();
     if (text.length < 2) { setHits(null); setErr(null); return; }
-    timer.current = setTimeout(() => {
-      social.search(text).then((r) => { setHits(r.hits); setErr(null); }).catch((e) => setErr(errorText(e)));
-    }, 350);
+    timer.current = setTimeout(() => { social.search(text).then((r) => { setHits(r.hits); setErr(null); }).catch((e) => setErr(errorText(e))); }, 350);
     return () => { if (timer.current) clearTimeout(timer.current); };
   }, [q]);
 
   const open = (username: string | null) => { if (username) nav.navigate("User", { username }); };
-  const row = (u: { userId: string; name: string | null; username: string | null }, note: string, streak: number, right: React.ReactNode, last: boolean) => (
-    <PersonRow
-      key={u.userId}
-      colors={colors}
-      last={last}
-      onPress={() => open(u.username)}
-      avatar={<PersonAvatar userId={u.userId} name={u.name} size={42} />}
-      title={<Text variant="bodyStrong" numberOfLines={1}>{u.name ?? "İsimsiz öğrenci"} <Text variant="micro" color={colors.textMuted}>{u.username ? `@${u.username}` : ""}</Text></Text>}
-      subtitle={
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
-          <Text variant="micro" color={colors.textMuted}>{note}</Text>
-          {streak > 0 ? <View style={{ flexDirection: "row", alignItems: "center", gap: 2 }}><FlameIcon color={colors.streak} size={11} /><Text variant="micro" color={colors.streak}>{streak}</Text></View> : null}
+  const card = (u: { userId: string; name: string | null; username: string | null; level: string }, note: { label: string; tint: string; icon?: typeof FlameIcon } | null, streak: number, right: React.ReactNode) => (
+    <Card key={u.userId} padded style={{ marginBottom: spacing.md }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+        <PressableScale onPress={() => open(u.username)}><PersonAvatar userId={u.userId} name={u.name} size={48} /></PressableScale>
+        <PressableScale onPress={() => open(u.username)} style={{ flex: 1 }}>
+          <Text variant="h3" numberOfLines={1}>{u.name ?? "İsimsiz öğrenci"}</Text>
+          <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{u.username ? `@${u.username} · ` : ""}{u.level}</Text>
+        </PressableScale>
+        {right}
+      </View>
+      {note || streak > 0 ? (
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.md }}>
+          {note ? <StatPill icon={note.icon} label={note.label} tint={note.tint} /> : null}
+          {streak > 0 ? <StatPill icon={FlameIcon} label={`${streak} gün seri`} tint={colors.streak} /> : null}
         </View>
-      }
-      right={right}
-    />
+      ) : null}
+    </Card>
   );
 
   return (
-    <View style={{ gap: spacing.lg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, paddingHorizontal: spacing.md }}>
-        <SearchIcon color={colors.textMuted} size={18} />
-        <TextInput
-          value={q}
-          onChangeText={setQ}
-          placeholder="Kullanıcı adı ya da isim"
-          placeholderTextColor={colors.textFaint}
-          autoCapitalize="none"
-          autoCorrect={false}
-          style={{ flex: 1, paddingVertical: 12, color: colors.text, fontSize: 15 }}
-          accessibilityLabel="Kullanıcı ara"
-        />
+    <View>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg }}>
+        <SearchIcon color={colors.textMuted} size={20} />
+        <TextInput value={q} onChangeText={setQ} placeholder="Kullanıcı adı ya da isim" placeholderTextColor={colors.textFaint} autoCapitalize="none" autoCorrect={false} style={{ flex: 1, paddingVertical: 13, color: colors.text, fontSize: 16 }} accessibilityLabel="Kullanıcı ara" />
+        {q ? <PressableScale onPress={() => setQ("")} accessibilityLabel="Temizle"><XIcon color={colors.textMuted} size={18} /></PressableScale> : null}
       </View>
       <ErrorText text={err} />
       {q.trim().length >= 2 ? (
-        hits === null ? <Skeleton height={64} /> : hits.length ? (
-          <Card padded={false}>{hits.map((h, i) => row(h, h.level, h.currentStreak, <UserActionButton userId={h.userId} relation={h.relation} onChange={onChanged} />, i === hits.length - 1))}</Card>
-        ) : <Text variant="body" color={colors.textMuted}>Sonuç yok. Gizli profiller yalnız tam kullanıcı adıyla bulunur.</Text>
+        <View style={{ marginTop: spacing.lg }}>
+          {hits === null ? <Skeleton height={96} radius={26} /> : hits.length ? hits.map((h) => card(h, null, h.currentStreak, <UserActionButton userId={h.userId} relation={h.relation} onChange={onChanged} />)) : (
+            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>Sonuç yok. Gizli profiller yalnız tam kullanıcı adıyla bulunur.</Text>
+          )}
+        </View>
       ) : (
         <View>
-          <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, fontWeight: "700" }}>TANIYOR OLABİLİRSİN</Text>
-          {sugg === null ? <Skeleton height={64} /> : sugg.length ? (
-            <Card padded={false}>{sugg.map((s, i) => row(s, s.reason === "mutual" ? `${s.mutual} ortak arkadaş` : s.reason === "level" ? `Aynı seviye (${s.level})` : "Bu hafta aktif", s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />, i === sugg.length - 1))}</Card>
-          ) : <Text variant="body" color={colors.textMuted}>Şimdilik öneri yok. Kullanıcı adıyla ara ya da davet bağlantını paylaş.</Text>}
+          <SectionTitle title="Tanıyor olabilirsin" />
+          {sugg === null ? <Skeleton height={96} radius={26} /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: `${s.mutual} ortak arkadaş`, tint: colors.success, icon: HandshakeIcon } : s.reason === "level" ? { label: `Aynı seviye · ${s.level}`, tint: colors.info } : { label: "Bu hafta aktif", tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
+            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>Şimdilik öneri yok. Kullanıcı adıyla ara ya da davet bağlantını paylaş.</Text>
+          )}
         </View>
       )}
     </View>

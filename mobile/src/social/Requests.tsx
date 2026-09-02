@@ -4,31 +4,22 @@ import { social, errorText, timeAgo, type PendingView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PersonAvatar } from "../ui/PersonAvatar";
+import { UserPlusIcon } from "../ui/icons";
 import { useTheme, spacing } from "../theme";
-import { EmptyCard, ErrorText, PersonRow, PrimaryButton } from "./common";
+import { EmptyCard, ErrorText, Pill, SectionTitle } from "./common";
 
 export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingView[]; outgoing: PendingView[]; onChanged: () => void }) {
   const { colors } = useTheme();
-  if (!incoming.length && !outgoing.length) return <EmptyCard title="Bekleyen istek yok" text="Gelen istekler burada birikir; gönderdiklerini de buradan iptal edersin." />;
+  if (!incoming.length && !outgoing.length) return <EmptyCard icon={UserPlusIcon} tint={colors.info} title="Bekleyen istek yok" text="Gelen istekler burada birikir; gönderdiklerini de buradan iptal edersin." />;
   return (
-    <View style={{ gap: spacing.lg }}>
-      {incoming.length ? (
-        <View>
-          <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, fontWeight: "700" }}>GELEN</Text>
-          <Card padded={false}>{incoming.map((r, i) => <Row key={r.friendshipId} r={r} incoming onChanged={onChanged} last={i === incoming.length - 1} />)}</Card>
-        </View>
-      ) : null}
-      {outgoing.length ? (
-        <View>
-          <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, fontWeight: "700" }}>GÖNDERİLEN</Text>
-          <Card padded={false}>{outgoing.map((r, i) => <Row key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} last={i === outgoing.length - 1} />)}</Card>
-        </View>
-      ) : null}
+    <View>
+      {incoming.length ? (<><SectionTitle title="Gelen" right={`${incoming.length}`} />{incoming.map((r) => <RequestCard key={r.friendshipId} r={r} incoming onChanged={onChanged} />)}</>) : null}
+      {outgoing.length ? (<><SectionTitle title="Gönderilen" right={`${outgoing.length}`} />{outgoing.map((r) => <RequestCard key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} />)}</>) : null}
     </View>
   );
 }
 
-function Row({ r, incoming, onChanged, last }: { r: PendingView; incoming: boolean; onChanged: () => void; last: boolean }) {
+function RequestCard({ r, incoming, onChanged }: { r: PendingView; incoming: boolean; onChanged: () => void }) {
   const { colors } = useTheme();
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
@@ -39,23 +30,25 @@ function Row({ r, incoming, onChanged, last }: { r: PendingView; incoming: boole
     try { await fn(); onChanged(); } catch (e) { setErr(errorText(e)); setBusy(false); }
   }
   return (
-    <PersonRow
-      colors={colors}
-      last={last}
-      avatar={<PersonAvatar userId={r.user.userId} name={r.user.name} size={42} />}
-      title={<Text variant="bodyStrong" numberOfLines={1}>{r.user.name ?? "İsimsiz öğrenci"} <Text variant="micro" color={colors.textMuted}>{r.user.username ? `@${r.user.username}` : ""}</Text></Text>}
-      subtitle={<Text variant="micro" color={colors.textMuted}>{r.user.level} · {timeAgo(r.createdAt)}</Text>}
-      note={<ErrorText text={err} />}
-      right={
-        incoming ? (
-          <View style={{ gap: 6 }}>
-            <PrimaryButton label="Kabul et" small disabled={busy} onPress={() => void act(() => social.respond(r.friendshipId, "accept"))} />
-            <PrimaryButton label="Reddet" small tone="ghost" disabled={busy} onPress={() => void act(() => social.respond(r.friendshipId, "decline"))} />
-          </View>
+    <Card padded style={{ marginBottom: spacing.md }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+        <PersonAvatar userId={r.user.userId} name={r.user.name} size={48} />
+        <View style={{ flex: 1 }}>
+          <Text variant="h3" numberOfLines={1}>{r.user.name ?? "İsimsiz öğrenci"}</Text>
+          <Text variant="caption" color={colors.textMuted}>{r.user.username ? `@${r.user.username} · ` : ""}{r.user.level} · {timeAgo(r.createdAt)}</Text>
+        </View>
+      </View>
+      <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
+        {incoming ? (
+          <>
+            <View style={{ flex: 1 }}><Pill label="Kabul et" block disabled={busy} onPress={() => void act(() => social.respond(r.friendshipId, "accept"))} /></View>
+            <Pill label="Reddet" tone="ghost" disabled={busy} onPress={() => void act(() => social.respond(r.friendshipId, "decline"))} />
+          </>
         ) : (
-          <PrimaryButton label="İptal" small tone="ghost" disabled={busy} onPress={() => void act(() => social.remove(r.user.userId))} />
-        )
-      }
-    />
+          <Pill label="İsteği iptal et" tone="ghost" block disabled={busy} onPress={() => void act(() => social.remove(r.user.userId))} />
+        )}
+      </View>
+      <ErrorText text={err} />
+    </Card>
   );
 }

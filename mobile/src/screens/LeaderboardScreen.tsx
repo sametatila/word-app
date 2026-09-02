@@ -45,10 +45,11 @@ export function LeaderboardScreen() {
         </View>
       </View>
 
-      <View style={{ flexDirection: "row", gap: 6, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+      {/* Ayarlar'daki Chip dili: kenarlıklı, radius md; pill değil. */}
+      <View style={{ flexDirection: "row", gap: spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
         {([["all", "Herkes"], ["friends", "Arkadaşlar"]] as const).map(([k, label]) => (
-          <PressableScale key={k} onPress={() => setMode(k)} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: mode === k ? colors.primary : colors.surface2 }}>
-            <Text variant="caption" color={mode === k ? colors.onPrimary : colors.text} style={{ fontWeight: "700" }}>{label}</Text>
+          <PressableScale key={k} onPress={() => setMode(k)} style={{ paddingHorizontal: 16, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: mode === k ? colors.primary : colors.border, backgroundColor: mode === k ? colors.primarySoft : colors.surface }}>
+            <Text variant="bodyStrong" color={mode === k ? colors.primary : colors.textMuted}>{label}</Text>
           </PressableScale>
         ))}
       </View>

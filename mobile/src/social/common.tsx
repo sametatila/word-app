@@ -7,13 +7,18 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon } from "../ui/icons";
-import { useTheme, spacing, radii } from "../theme";
-import type { ReactionKind } from "../api/social";
-import { HeartIcon, StarIcon, PartyIcon, SparkIcon, FlameIcon, BoltIcon } from "../ui/icons";
+import { ChevronLeftIcon, HeartIcon, StarIcon, PartyIcon, SparkIcon, FlameIcon, BoltIcon } from "../ui/icons";
+import { useTheme, spacing, radii, softShadow } from "../theme";
 import type { Palette } from "../theme/colors";
+import type { ReactionKind } from "../api/social";
 
-/** Sosyal ekranların ortak başlığı: geri + başlık + isteğe bağlı sağ öğe. */
+/**
+ * Sosyal ekranların mobil tasarım sözlüğü — Profil/Ayarlar/Başarımlar ile aynı:
+ * kart (radius xl, hairline, yumuşak gölge), tint+"22" ikon karosu, pill rozet,
+ * kenarlıklı Chip, caption büyük-harf bölüm başlığı. Web'in çizgili listeleri YOK.
+ */
+export type IconCmp = (p: { color: string; size: number }) => React.ReactElement;
+
 export function ScreenHeader({ title, subtitle, right }: { title: string; subtitle?: string; right?: React.ReactNode }) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -32,33 +37,92 @@ export function ScreenHeader({ title, subtitle, right }: { title: string; subtit
   );
 }
 
-export function EmptyCard({ title, text, action, onAction }: { title: string; text: string; action?: string; onAction?: () => void }) {
+/** Başlık sağındaki kare düğme (Profil'deki dişli gibi). */
+export function HeaderButton({ icon: Icon, onPress, label }: { icon: IconCmp; onPress: () => void; label: string }) {
   const { colors } = useTheme();
   return (
-    <Card padded style={{ alignItems: "center", gap: spacing.sm }}>
-      <Text variant="h3" style={{ textAlign: "center" }}>{title}</Text>
-      <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 20 }}>{text}</Text>
-      {action && onAction ? <PrimaryButton label={action} onPress={onAction} /> : null}
-    </Card>
+    <PressableScale onPress={onPress} accessibilityLabel={label} style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+      <Icon color={colors.text} size={22} />
+    </PressableScale>
   );
 }
 
-export function PrimaryButton({ label, onPress, disabled, small, tone }: { label: string; onPress: () => void; disabled?: boolean; small?: boolean; tone?: "primary" | "ghost" | "danger" }) {
+/** Bölüm başlığı: caption, büyük harf, hafif aralık (Ayarlar/Başarımlar ile aynı). */
+export function SectionTitle({ title, right }: { title: string; right?: string }) {
   const { colors } = useTheme();
-  const t = tone ?? "primary";
-  const bg = t === "primary" ? colors.primary : t === "danger" ? colors.dangerSoft : colors.surface2;
-  const fg = t === "primary" ? colors.onPrimary : t === "danger" ? colors.danger : colors.text;
   return (
-    <PressableScale onPress={onPress} disabled={disabled} style={{ opacity: disabled ? 0.5 : 1, backgroundColor: bg, borderRadius: radii.pill, paddingHorizontal: small ? 12 : 18, paddingVertical: small ? 7 : 11, alignItems: "center", justifyContent: "center" }}>
-      <Text variant={small ? "caption" : "bodyStrong"} color={fg} style={{ fontWeight: "700" }}>{label}</Text>
+    <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", marginBottom: spacing.sm, marginLeft: 4, marginTop: spacing.lg }}>
+      <Text variant="caption" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{title.toLocaleUpperCase("tr-TR")}</Text>
+      {right ? <Text variant="caption" color={colors.textMuted}>{right}</Text> : null}
+    </View>
+  );
+}
+
+/** Renkli ikon karosu — solid (beyaz ikon + gölge) ya da yumuşak (tint+22). */
+export function IconTile({ icon: Icon, tint, size = 42, solid = false, iconSize }: { icon: IconCmp; tint: string; size?: number; solid?: boolean; iconSize?: number }) {
+  return (
+    <View style={[{ width: size, height: size, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: solid ? tint : tint + "22" }, solid ? softShadow(tint, 6) : {}]}>
+      <Icon color={solid ? "#fff" : tint} size={iconSize ?? Math.round(size * 0.5)} />
+    </View>
+  );
+}
+
+/** Pill rozet: seri / XP / ortak seri gibi küçük sayılar (Profil'deki gibi). */
+export function StatPill({ icon: Icon, label, tint, soft }: { icon?: IconCmp; label: string; tint: string; soft?: string }) {
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft ?? tint + "22", borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}>
+      {Icon ? <Icon color={tint} size={14} /> : null}
+      <Text variant="caption" color={tint}>{label}</Text>
+    </View>
+  );
+}
+
+/** Düğme: primary (dolu, gölgeli) · soft (primarySoft) · ghost (surface2) · danger (dangerSoft). Hep pill. */
+export function Pill({ label, onPress, tone = "primary", disabled, icon: Icon, block, small }: { label: string; onPress: () => void; tone?: "primary" | "soft" | "ghost" | "danger"; disabled?: boolean; icon?: IconCmp; block?: boolean; small?: boolean }) {
+  const { colors } = useTheme();
+  const bg = tone === "primary" ? colors.primary : tone === "soft" ? colors.primarySoft : tone === "danger" ? colors.dangerSoft : colors.surface2;
+  const fg = tone === "primary" ? colors.onPrimary : tone === "soft" ? colors.primary : tone === "danger" ? colors.danger : colors.text;
+  return (
+    <PressableScale onPress={onPress} disabled={disabled} accessibilityLabel={label} style={[{ opacity: disabled ? 0.5 : 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, backgroundColor: bg, borderRadius: radii.pill, paddingHorizontal: small ? 14 : 20, paddingVertical: small ? 8 : 11, alignSelf: block ? "stretch" : "auto" }, tone === "primary" && !disabled ? softShadow(colors.primary, 6) : {}]}>
+      {Icon ? <Icon color={fg} size={small ? 14 : 18} /> : null}
+      <Text variant={small ? "caption" : "bodyStrong"} color={fg}>{label}</Text>
     </PressableScale>
+  );
+}
+
+/** Kenarlıklı seçim çipi — Ayarlar'daki Chip ile aynı (pill DEĞİL, radius md, 1.5 kenar). */
+export function Chip({ label, active, onPress, badge }: { label: string; active: boolean; onPress: () => void; badge?: number }) {
+  const { colors } = useTheme();
+  return (
+    <PressableScale onPress={onPress} accessibilityState={{ selected: active }} style={{ flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: 14, paddingVertical: 9, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
+      <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{label}</Text>
+      {badge ? (
+        <View style={{ minWidth: 18, height: 18, borderRadius: 9, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center", paddingHorizontal: 4 }}>
+          <Text variant="micro" color="#fff" style={{ fontSize: 10, lineHeight: 12 }}>{badge}</Text>
+        </View>
+      ) : null}
+    </PressableScale>
+  );
+}
+
+/** Boş durum: ikon karosu + başlık + açıklama + isteğe bağlı düğme (Öğren'deki ActionRow gibi). */
+export function EmptyCard({ icon, tint, title, text, action, onAction }: { icon: IconCmp; tint?: string; title: string; text: string; action?: string; onAction?: () => void }) {
+  const { colors } = useTheme();
+  const t = tint ?? colors.primary;
+  return (
+    <Card padded style={{ alignItems: "center", gap: spacing.sm }}>
+      <IconTile icon={icon} tint={t} size={52} solid />
+      <Text variant="h3" style={{ textAlign: "center", marginTop: spacing.xs }}>{title}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 18 }}>{text}</Text>
+      {action && onAction ? <View style={{ marginTop: spacing.sm }}><Pill label={action} onPress={onAction} /></View> : null}
+    </Card>
   );
 }
 
 export function ErrorText({ text }: { text: string | null }) {
   const { colors } = useTheme();
   if (!text) return null;
-  return <Text variant="caption" color={colors.danger} style={{ marginTop: spacing.xs }}>{text}</Text>;
+  return <Text variant="caption" color={colors.danger} style={{ marginTop: spacing.sm, textAlign: "center" }}>{text}</Text>;
 }
 
 export function reactionTone(kind: ReactionKind, colors: Palette): string {
@@ -67,35 +131,29 @@ export function reactionTone(kind: ReactionKind, colors: Palette): string {
     case "heart": return colors.danger;
     case "strong": return colors.accent;
     case "wow": return colors.info;
+    case "star": return colors.streak;
     default: return colors.primary;
   }
 }
 
-export function ReactionGlyph({ kind, size = 16, colors }: { kind: ReactionKind; size?: number; colors: Palette }) {
-  const color = reactionTone(kind, colors);
+export function ReactionGlyph({ kind, size = 16, colors, color }: { kind: ReactionKind; size?: number; colors: Palette; color?: string }) {
+  const c = color ?? reactionTone(kind, colors);
   switch (kind) {
-    case "cheer": return <PartyIcon color={color} size={size} />;
-    case "fire": return <FlameIcon color={color} size={size} />;
-    case "heart": return <HeartIcon color={color} size={size} />;
-    case "strong": return <BoltIcon color={color} size={size} />;
-    case "star": return <StarIcon color={color} size={size} />;
-    default: return <SparkIcon color={color} size={size} />;
+    case "cheer": return <PartyIcon color={c} size={size} />;
+    case "fire": return <FlameIcon color={c} size={size} />;
+    case "heart": return <HeartIcon color={c} size={size} />;
+    case "strong": return <BoltIcon color={c} size={size} />;
+    case "star": return <StarIcon color={c} size={size} />;
+    default: return <SparkIcon color={c} size={size} />;
   }
 }
 
-/** Satır düzeni: avatar + iki satır metin + sağ eylem. Tüm listeler bunu kullanır. */
-export function PersonRow({ avatar, title, subtitle, right, onPress, note, colors, last }: { avatar: React.ReactNode; title: React.ReactNode; subtitle?: React.ReactNode; right?: React.ReactNode; onPress?: () => void; note?: React.ReactNode; colors: Palette; last?: boolean }) {
+/** Tek satır ilerleme çubuğu (Günün görevleri ile aynı ölçü). */
+export function Bar({ pct, tint, height = 6 }: { pct: number; tint: string; height?: number }) {
+  const { colors } = useTheme();
   return (
-    <View style={{ borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, paddingHorizontal: spacing.md }}>
-        <PressableScale onPress={onPress} disabled={!onPress}>{avatar}</PressableScale>
-        <PressableScale onPress={onPress} disabled={!onPress} style={{ flex: 1, minWidth: 0 }}>
-          <View>{title}</View>
-          {subtitle ? <View style={{ marginTop: 2 }}>{subtitle}</View> : null}
-          {note ? <View style={{ marginTop: 2 }}>{note}</View> : null}
-        </PressableScale>
-        {right}
-      </View>
+    <View style={{ height, borderRadius: height / 2, backgroundColor: colors.surface2, overflow: "hidden" }}>
+      <View style={{ height: "100%", width: `${Math.max(3, Math.min(100, pct))}%`, backgroundColor: tint, borderRadius: height / 2 }} />
     </View>
   );
 }
