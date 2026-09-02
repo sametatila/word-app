@@ -10,6 +10,7 @@ import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
 import { PushSettings } from "@/components/push-settings";
 import { SoundSettings } from "@/components/sound-settings";
+import { AnalyticsSettings } from "@/components/analytics-settings";
 import { InviteCard } from "@/components/invite-card";
 import { PageBack } from "@/components/page-back";
 import { Disclosure } from "@/components/disclosure";
@@ -303,6 +304,15 @@ export function ProfileForm({
         <ThemeSetting />
         <SoundSettings bare />
         <PushSettings bare />
+      </section>
+
+      {/* Gizlilik: analitik anahtarı ve hukuki metinler (Play: politika uygulama içinden erişilebilir olmalı). */}
+      <section className="card">
+        <AnalyticsSettings bare />
+        <SettingRow title="Gizlilik ve şartlar" sub="Hangi veriyi neden işlediğimiz, hakların">
+          <Link href="/privacy" prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">Gizlilik</Link>
+          <Link href="/terms" prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">Şartlar</Link>
+        </SettingRow>
       </section>
 
       {/* Davet kendi kartında kalıyor: bir ayar değil, bir çağrı. */}
