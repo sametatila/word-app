@@ -11,8 +11,9 @@ import { SessionKeeper } from "./session-keeper";
 import { Telemetry } from "./telemetry";
 import { AchievementUnlock } from "./achievement-unlock";
 import { track } from "@/lib/track";
-import { CardsIcon, CompassIcon, FlameIcon, ListIcon, SparkIcon, StarIcon, UserIcon } from "./icons";
+import { BellIcon, CardsIcon, CompassIcon, FlameIcon, HandshakeIcon, ListIcon, SparkIcon, StarIcon, UserIcon } from "./icons";
 import { Avatar } from "@/components/avatar";
+import { NotificationBell } from "@/components/social/notification-bell";
 
 /**
  * Alt gezinme: ÜÇ sekme.
@@ -41,6 +42,8 @@ const NAV = [
 /** Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor. */
 const SECONDARY = [
   { href: "/words", label: "Kelimelerim", Icon: ListIcon },
+  { href: "/friends", label: "Arkadaşlar", Icon: HandshakeIcon },
+  { href: "/notifications", label: "Bildirimler", Icon: BellIcon },
   { href: "/profile", label: "Profil", Icon: UserIcon },
 ];
 
@@ -301,6 +304,8 @@ export function AppShell({
           </Link>
           <div className="flex items-center gap-2">
             <StatPills streak={stats.streak} xp={stats.xp} />
+            {/* Sosyal gelen kutusu: arkadaşlık isteği, tepki, dürtme. Rozet sayısı kişiye özel. */}
+            <NotificationBell className="muted" />
             {/*
               Profilin girişi: alt sekme değil, başlıktaki avatar.
 

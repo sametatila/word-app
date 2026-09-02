@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronRightIcon, PenIcon, WrenchIcon } from "@/components/icons";
+import { BellIcon, ChevronRightIcon, HandshakeIcon, PenIcon, WrenchIcon } from "@/components/icons";
 
 /**
  * Profilin sonundaki iki satır.
@@ -16,6 +16,20 @@ import { ChevronRightIcon, PenIcon, WrenchIcon } from "@/components/icons";
  * var, yazılar ise ayrı bir arşiv.
  */
 const ITEMS = [
+  {
+    href: "/friends",
+    label: "Arkadaşlar",
+    detail: "Arkadaş ekle, akış, tepki, ortak görev",
+    Icon: HandshakeIcon,
+    tone: "var(--color-mint)",
+  },
+  {
+    href: "/notifications",
+    label: "Bildirimler",
+    detail: "İstekler, tepkiler, dürtmeler",
+    Icon: BellIcon,
+    tone: "var(--color-flame)",
+  },
   {
     href: "/profile/settings",
     label: "Ayarlar",

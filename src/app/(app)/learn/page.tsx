@@ -4,6 +4,7 @@ import { Leaderboard } from "@/components/leaderboard";
 import { getUserId } from "@/lib/auth/server";
 import { getLeaderboard, type LeaderboardWeek } from "@/lib/session";
 import { CardSkeleton } from "@/components/skeleton";
+import { FriendPulse } from "@/components/social/friend-pulse";
 
 export const dynamic = "force-dynamic";
 
@@ -40,5 +41,10 @@ async function LeaderboardSlot() {
     // Sıralama okunamazsa oturum yine açılır — bu bilgi ikincildir.
     console.error("[learn] sıralama okunamadı", err);
   }
-  return week ? <Leaderboard week={week} /> : null;
+  return (
+    <>
+      {week ? <Leaderboard week={week} /> : null}
+      <FriendPulse />
+    </>
+  );
 }

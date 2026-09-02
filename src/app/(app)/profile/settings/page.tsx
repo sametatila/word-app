@@ -1,6 +1,8 @@
 import { getUserInfo, authEnabled } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { ProfileForm } from "@/components/profile-form";
+import { SocialSettings } from "@/components/social/social-settings";
+import { socialMe } from "@/lib/social/profile";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Ayarlar" };
@@ -12,7 +14,14 @@ export default async function SettingsPage() {
 
   try {
     const profile = await ensureProfile(user.id, user.name);
+    // Sosyal ayarlar aynı sayfada, formun altında (#social). Ayrı sayfa, iki
+    // "ayarlar" demekti; kullanıcı hangisinde ne var bilemezdi.
+    const me = await socialMe(user.id).catch((err) => {
+      console.error("[settings page] sosyal", err);
+      return null;
+    });
     return (
+      <>
       <ProfileForm
         authEnabled={authEnabled}
         accountName={user.name}
@@ -29,6 +38,12 @@ export default async function SettingsPage() {
           totalXp: profile.totalXp,
         }}
       />
+      {me ? (
+        <div className="mx-auto w-full max-w-md">
+          <SocialSettings initial={me} />
+        </div>
+      ) : null}
+      </>
     );
   } catch (err) {
     console.error("[settings page]", err);
