@@ -349,6 +349,23 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
                 <BarList max={Math.max(1, ...d.ai.map((a) => a.errors))} items={d.ai.filter((a) => a.errors > 0).map((a) => ({ label: a.provider, value: a.errors, right: `${a.errors} / ${fmt(a.calls)}`, tone: "#dc2626" }))} />}
             </Section>
           </div>
+          <Section title="İçerik bildirimleri" hint="Yapay zekâ yanıtı / değerlendirme için kullanıcı bildirimleri (açık olanlar). Play üretken yapay zekâ politikası: insan inceler.">
+            {d.reports.length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Açık bildirim yok.</div> : (
+              <div className="space-y-2">
+                {d.reports.map((r) => (
+                  <div key={r.id} className="rounded-xl border p-3 text-xs" style={{ borderColor: "var(--border)" }}>
+                    <div className="flex flex-wrap gap-x-3" style={{ color: "var(--text-muted)" }}>
+                      <span className="tabular-nums">#{r.id} · {r.day}</span>
+                      <span className="font-semibold" style={{ color: "var(--text)" }}>{r.kind} · {r.reason}</span>
+                      <span className="font-mono">{r.ref}</span>
+                      <span className="font-mono">{r.userId.slice(0, 10)}…</span>
+                    </div>
+                    {r.content ? <p className="mt-1 whitespace-pre-wrap">{r.content}</p> : null}
+                  </div>
+                ))}
+              </div>
+            )}
+          </Section>
           <Section title="Son olaylar" hint="En yeni 40 telemetri olayı (ham).">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">

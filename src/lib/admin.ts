@@ -69,6 +69,8 @@ export type AdminData = {
   premiumGates: { feature: string; count: number }[];
   notifications: { optinYes: number; optinNo: number; sent: number; opened: number };
   ai: { provider: string; calls: number; okPct: number; avgMs: number; errors: number; tokens: number }[];
+  /** İçerik bildirimleri (yapay zekâ yanıtı / değerlendirme): açık olanlar, en yeni önce. */
+  reports: { id: number; day: string; kind: string; ref: string; reason: string; content: string; userId: string }[];
   generatedAt: string;
 };
 
@@ -135,6 +137,11 @@ export async function getAdminData(): Promise<AdminData> {
     `),
   ]);
 
+  const reports = await rows(sql`
+    select id, to_char(created_at,'YYYY-MM-DD') as day, kind, ref, reason, coalesce(content,'') as content, user_id
+    from content_reports where status = 'open' order by id desc limit 50
+  `).catch(() => [] as Record<string, unknown>[]);
+
   const [platform, screens, sess, onb, walk, production, clientErrors, prem, premGates, notif, ai] = await Promise.all([
     rows(sql`select coalesce(kind,'?') k, count(*)::int c, count(distinct user_id)::int u from events where name='app_open' and day >= current_date - 29 group by kind order by c desc`),
     rows(sql`select coalesce(kind,'?') screen, count(*) filter (where name='page_view')::int views, coalesce(avg(value) filter (where name='time_spent'),0)::int avg_sec from events where name in ('page_view','time_spent') and day >= current_date - 29 group by kind order by views desc limit 20`),
@@ -182,6 +189,7 @@ export async function getAdminData(): Promise<AdminData> {
     premiumGates: premGates.map((r) => ({ feature: str(r.feature), count: num(r.c) })),
     notifications: { optinYes: num(notif[0]?.optin_yes), optinNo: num(notif[0]?.optin_no), sent: num(notif[0]?.sent), opened: num(notif[0]?.opened) },
     ai: ai.map((r) => ({ provider: str(r.provider), calls: num(r.calls), okPct: num(r.ok_pct), avgMs: num(r.avg_ms), errors: num(r.errors), tokens: num(r.tokens) })),
+    reports: reports.map((r) => ({ id: num(r.id), day: str(r.day), kind: str(r.kind), ref: str(r.ref), reason: str(r.reason), content: str(r.content), userId: str(r.user_id) })),
     generatedAt: new Date().toISOString(),
   };
 }

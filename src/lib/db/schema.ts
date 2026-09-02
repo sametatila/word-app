@@ -962,6 +962,31 @@ export const socialNotifications = pgTable(
 );
 
 /**
+ * İçerik bildirimleri — yapay zekâ yanıtı (rol yapma) ya da değerlendirme çıktısı
+ * için "bildir" (Play üretken yapay zekâ politikası: uygulama içi bildirme yolu).
+ * Bildirilen metin burada da saklanır: roleplay_logs 30 günde silinir, inceleme
+ * ona bağlı kalmasın. Yaptırım yok; yönetim panosunda insan okur, `status` ile kapatır.
+ */
+export const contentReports = pgTable(
+  "content_reports",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** roleplay | assessment | user */
+    kind: text("kind").notNull(),
+    /** roleplay: "<lessonId>:<turn>" · assessment: kayıt kimliği · user: kullanıcı kimliği */
+    ref: text("ref").notNull(),
+    /** inappropriate | offensive | wrong | other */
+    reason: text("reason").notNull(),
+    content: text("content"),
+    /** open | closed */
+    status: text("status").notNull().default("open"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("content_reports_status_idx").on(t.status, t.createdAt), index("content_reports_user_idx").on(t.userId, t.createdAt)],
+);
+
+/**
  * Hız sınırı sayaçları — DB'de, çünkü renk başına üç Node instance var ve
  * bellek-içi sayaç üçe bölünürdü. Tek atomik upsert (lib/social/ratelimit.ts).
  * Anahtar: "<kapsam>:<userId>" (ör. "friend_request:day:u1").
