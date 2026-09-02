@@ -8,6 +8,7 @@ import { chatConfigured } from "@/lib/chat-providers";
 import { FREQUENT_ERROR_WEIGHT, frequentErrorTypes } from "@/lib/error-analytics";
 import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
+import { onActivityAwarded } from "@/lib/social/hooks";
 import { xpForChallengeRecord, xpForWager } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
 import { pluralChoices } from "@/lib/german";
@@ -1689,6 +1690,9 @@ export async function submitAnswers(
       ...(streakRepaired ? { streakRepairAt: today } : {}),
     })
     .where(eq(profiles.userId, userId));
+
+  // Sosyal katman: seri eşiği ve ortak görev kontrolü (award.ts ile aynı kanca).
+  await onActivityAwarded(userId, today, profile.currentStreak, currentStreak);
 
   // Yarın kaç kelimenin tekrarı var — geri dönmek için somut bir sebep.
   // Bu turda cevaplanan kelimelerin yeni zamanları yukarıda yazıldığı için

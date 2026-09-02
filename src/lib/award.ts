@@ -2,6 +2,7 @@ import "server-only";
 import { eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats, profiles } from "@/lib/db/schema";
+import { onActivityAwarded } from "@/lib/social/hooks";
 
 /**
  * Bir çalışmanın hesaba işlenmesi: XP, günlük istatistik ve seri.
@@ -175,6 +176,10 @@ export async function awardActivity(
       ...(streak.repaired ? { streakRepairAt: today } : {}),
     })
     .where(eq(profiles.userId, userId));
+
+  // Sosyal katman: seri eşiği geçildiyse akışa olay, aktif ortak görev hedefe
+  // ulaştıysa tamamlanma. Hata fırlatmaz (bkz. lib/social/hooks.ts).
+  await onActivityAwarded(userId, today, profile.currentStreak, streak.currentStreak);
 
   return { ...streak, xpGained: xp, totalXp: profile.totalXp + xp };
 }

@@ -144,8 +144,30 @@ export const profiles = pgTable("profiles", {
    * ile yazacak; şimdilik altyapı hazır, kaynak bağlı değil (WP-90).
    */
   premiumUntil: timestamp("premium_until", { withTimezone: true }),
+  /**
+   * Sosyal kimlik ve gizlilik (bkz. lib/social, docs/plan/social.md).
+   *
+   * `username` insanların birbirini BULMASI için var; `displayName` serbest
+   * metin ve tekrar edebilir, o yüzden arkadaş eklemenin adresi olamaz.
+   * Küçük harf, 3-20 karakter, [a-z0-9_]; yazılırken normalize edilir, bu
+   * yüzden düz benzersiz indeks yeter. Null = kullanıcı henüz seçmedi;
+   * sosyal ekrana ilk girişte seçtirilir.
+   *
+   * Görünürlük: public (herkes profil+akış görür) · friends (yalnız
+   * arkadaşlar akış/istatistik) · private (yalnız ad; istek ancak izinliyse).
+   * Öneriye çıkma ve akış üretme ayrı ayrı kapatılabilir — "arkadaşlarım
+   * görsün ama yabancılara önerilmeyeyim" meşru bir istek.
+   */
+  username: text("username"),
+  bio: text("bio"),
+  visibility: text("visibility").notNull().default("public"),
+  allowRequests: boolean("allow_requests").notNull().default(true),
+  showInSuggestions: boolean("show_in_suggestions").notNull().default(true),
+  showActivity: boolean("show_activity").notNull().default(true),
+  /** Kullanıcı adı 14 günde bir değişebilir — sık değişen ad, bulunamayan addır. */
+  usernameChangedAt: timestamp("username_changed_at", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
-});
+}, (t) => [uniqueIndex("profiles_username_idx").on(t.username)]);
 
 /**
  * Web push abonelikleri — cihaz başına bir satır.
@@ -778,3 +800,174 @@ export const exams = pgTable(
     uniqueIndex("exams_user_kind_week_idx").on(t.userId, t.kind, t.week),
   ],
 );
+
+/*
+ * ───────────────────────────── Sosyal katman ─────────────────────────────
+ * Arkadaşlık, tepki, dürtme, ortak görev, bildirim, engel (docs/plan/social.md).
+ * Sohbet YOK: etkileşim yalnız bu kapalı biçimlerle olur. `user_id` sütunları
+ * dosyanın geri kalanıyla aynı kuralda: düz text, FK yok.
+ */
+
+/**
+ * Arkadaşlık istek/kabul modeli (takip değil): Duolingo'nun tek yönlü takibi
+ * "beni kim izliyor" belirsizliği üretiyor; burada iki taraf da onayladığı
+ * için akış ve istatistik paylaşımı meşru. Tek satır iki yönü de temsil eder:
+ * requester istedi, addressee cevapladı. Ters yönde ikinci satır AÇILMAZ —
+ * ekleme öncesi iki yön de kontrol edilir (lib/social/friends.ts).
+ */
+export const friendships = pgTable(
+  "friendships",
+  {
+    id: serial("id").primaryKey(),
+    requesterId: text("requester_id").notNull(),
+    addresseeId: text("addressee_id").notNull(),
+    /** pending | accepted | declined — reddedilen 7 gün sonra yeniden istenebilir. */
+    status: text("status").notNull().default("pending"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    respondedAt: timestamp("responded_at", { withTimezone: true }),
+  },
+  (t) => [
+    uniqueIndex("friendships_pair_idx").on(t.requesterId, t.addresseeId),
+    index("friendships_addressee_idx").on(t.addresseeId, t.status),
+    index("friendships_requester_idx").on(t.requesterId, t.status),
+  ],
+);
+
+/** Engel: simetrik gizler, arkadaşlığı ve bekleyen isteği siler. Engelleyen bilir, engellenen bilmez. */
+export const userBlocks = pgTable(
+  "user_blocks",
+  {
+    blockerId: text("blocker_id").notNull(),
+    blockedId: text("blocked_id").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.blockerId, t.blockedId] }), index("user_blocks_blocked_idx").on(t.blockedId)],
+);
+
+/** Şikayet: incelenmek üzere kayıt; otomatik yaptırım yok (yedi kişilik toplulukta ilk şikayet insan okur). */
+export const userReports = pgTable(
+  "user_reports",
+  {
+    id: serial("id").primaryKey(),
+    reporterId: text("reporter_id").notNull(),
+    reportedId: text("reported_id").notNull(),
+    /** spam | abuse | impersonation | other */
+    reason: text("reason").notNull(),
+    detail: text("detail"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("user_reports_reported_idx").on(t.reportedId, t.createdAt)],
+);
+
+/**
+ * Akış olayları — arkadaşların gördüğü kilometre taşları. `events` tablosu
+ * ölçüm içindir ve serbest içerik almaz; akış ayrı tutulur ki iki amaç
+ * birbirini bozmasın. Yalnız ANLAMLI olaylar yazılır (seri 7/30/100, rozet,
+ * ortak görev, haftanın ilk üçü); her ders bitişi yazılsaydı akış gürültü olurdu.
+ */
+export const activityEvents = pgTable(
+  "activity_events",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** streak_milestone | achievement | friend_joined | quest_completed | weekly_top | friend_streak */
+    type: text("type").notNull(),
+    payload: jsonb("payload").$type<Record<string, unknown>>().notNull().default({}),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("activity_events_user_idx").on(t.userId, t.createdAt)],
+);
+
+/** Tepki: olay başına kişi başına TEK satır; tür değiştirilebilir. Sohbetin yerine geçen tek ifade biçimi. */
+export const eventReactions = pgTable(
+  "event_reactions",
+  {
+    eventId: integer("event_id").notNull(),
+    fromUserId: text("from_user_id").notNull(),
+    /** cheer | fire | heart | strong | star | wow */
+    kind: text("kind").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.eventId, t.fromUserId] }),
+    index("event_reactions_from_idx").on(t.fromUserId, t.createdAt),
+  ],
+);
+
+/** Dürtme: "bugün çalışmadın" / "aferin" — yalnız arkadaşa, günde bir. Satır hız sınırının kendisidir. */
+export const nudges = pgTable(
+  "nudges",
+  {
+    id: serial("id").primaryKey(),
+    fromUserId: text("from_user_id").notNull(),
+    toUserId: text("to_user_id").notNull(),
+    /** remind | cheer */
+    kind: text("kind").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index("nudges_from_idx").on(t.fromUserId, t.createdAt),
+    index("nudges_to_idx").on(t.toUserId, t.createdAt),
+  ],
+);
+
+/**
+ * Ortak görev: iki arkadaş bir haftada birlikte hedef XP toplar. İlerleme
+ * `daily_stats`ten okunur (yeni sayaç yok — bkz. getLeaderboard gerekçesi).
+ * Çift başına haftada tek görev; davet edilen kabul edince aktif olur.
+ * Tamamlanma XP yazan yerde (award/submitAnswers) anında kontrol edilir; süre
+ * dolmuş görev ilk okumada kapanır — cron'a bağımlı değil.
+ */
+export const friendQuests = pgTable(
+  "friend_quests",
+  {
+    id: serial("id").primaryKey(),
+    userAId: text("user_a_id").notNull(),
+    userBId: text("user_b_id").notNull(),
+    weekStart: date("week_start").notNull(),
+    targetXp: integer("target_xp").notNull(),
+    /** invited | active | completed | failed | cancelled */
+    status: text("status").notNull().default("invited"),
+    invitedBy: text("invited_by").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    respondedAt: timestamp("responded_at", { withTimezone: true }),
+    completedAt: timestamp("completed_at", { withTimezone: true }),
+  },
+  (t) => [
+    index("friend_quests_a_idx").on(t.userAId, t.weekStart),
+    index("friend_quests_b_idx").on(t.userBId, t.weekStart),
+  ],
+);
+
+/**
+ * Bildirim merkezi: sosyal olaylar uygulama içinde bir gelen kutusuna düşer;
+ * web push bunun aynasıdır. Mobilde uzak push olmadığı için gelen kutusu tek
+ * güvenilir teslim yoludur (uygulama açılınca çekilir).
+ */
+export const socialNotifications = pgTable(
+  "social_notifications",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** friend_request | friend_accepted | reaction | nudge | quest_invite | quest_accepted | quest_completed | friend_milestone */
+    type: text("type").notNull(),
+    actorId: text("actor_id"),
+    /** friendship | event | nudge | quest */
+    refType: text("ref_type"),
+    refId: integer("ref_id"),
+    read: boolean("read").notNull().default(false),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("social_notifications_user_idx").on(t.userId, t.read, t.createdAt)],
+);
+
+/**
+ * Hız sınırı sayaçları — DB'de, çünkü renk başına üç Node instance var ve
+ * bellek-içi sayaç üçe bölünürdü. Tek atomik upsert (lib/social/ratelimit.ts).
+ * Anahtar: "<kapsam>:<userId>" (ör. "friend_request:day:u1").
+ */
+export const rateLimits = pgTable("rate_limits", {
+  key: text("key").primaryKey(),
+  count: integer("count").notNull().default(0),
+  resetAt: timestamp("reset_at", { withTimezone: true }).notNull(),
+});

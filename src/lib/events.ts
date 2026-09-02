@@ -129,6 +129,20 @@ export const EVENT_NAMES = [
   "premium_gate", // premium özellik kilide takıldı (kind = özellik)
   "purchase_start", // satın alma başladı (kind = plan)
   "purchase_done", // satın alma tamamlandı (kind = plan, value = aylık kuruş)
+  /*
+    Sosyal katman (docs/plan/social.md). Huni: arkadaş isteği → kabul →
+    tepki/dürtme/görev. "Arkadaşı olan kullanıcı daha çok kalıyor mu" sorusu
+    ancak bu olaylar `session_done` ile yan yana konunca cevaplanır.
+  */
+  "friend_request", // arkadaşlık isteği gönderildi
+  "friend_accept", // istek kabul edildi
+  "reaction_send", // bir akış olayına tepki verildi (kind = tepki türü)
+  "nudge_send", // arkadaş dürtüldü (kind = remind|cheer)
+  "quest_invite", // ortak görev daveti gönderildi
+  "quest_complete", // ortak görev tamamlandı (value = hedef XP)
+  "feed_view", // arkadaş akışı açıldı (value = gösterilen olay sayısı)
+  "block_user", // kullanıcı engellendi
+  "social_settings", // kullanıcı adı/görünürlük değişti (kind = alan)
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];

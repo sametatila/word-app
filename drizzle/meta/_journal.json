@@ -253,6 +253,13 @@
       "when": 1787698117049,
       "tag": "0035_premium_until",
       "breakpoints": true
+    },
+    {
+      "idx": 36,
+      "version": "7",
+      "when": 1788368880105,
+      "tag": "0036_social",
+      "breakpoints": true
     }
   ]
 }

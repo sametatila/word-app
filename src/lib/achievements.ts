@@ -3,6 +3,7 @@ import { and, count, desc, eq, gt, gte, inArray, isNotNull, sql } from "drizzle-
 import { db } from "@/lib/db";
 import { PLAYABLE_GAMES } from "@/lib/types";
 import { GROUP_LABELS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
+import { onAchievementsUnlocked } from "@/lib/social/hooks";
 import {
   achievements,
   assessments,
@@ -447,6 +448,11 @@ export async function achievementBoard(userId: string): Promise<AchievementBoard
       const at = stamps.get(r.id);
       if (at) r.unlockedAt = at;
     }
+    // Gerçekten bu istekte yazılanlar (yarışta kaybeden yazmadı) arkadaş akışına düşer.
+    await onAchievementsUnlocked(
+      userId,
+      missing.filter((m) => stamps.has(m.id)).map((m) => ({ id: m.id, title: m.title, tier: m.tier })),
+    );
   }
 
   // Kutlanmayı bekleyenler: yeni yazılanlar + daha önce yazılıp gösterilmemişler.
