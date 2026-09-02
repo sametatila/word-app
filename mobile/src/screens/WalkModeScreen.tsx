@@ -23,6 +23,8 @@ import { spokenMatches, parseSkip, encourage, parseConfirm } from "../lib/voiceM
 import { sfx, setSfxScreenOff } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { useBackConfirm } from "../lib/useBackConfirm";
 
 const withArtikel = (w: { artikel?: string | null; de: string }) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır; RN setTimeout ekran-kapalıda durur)
@@ -421,6 +423,10 @@ export function WalkModeScreen() {
   }
 
   function stopAndLeave() { runToken.current++; stopListening(); setKeepAwake(false); stopWalkService(); nav.goBack(); }
+  // Tur sürerken çıkış onaylı (donanım geri + X): mikrofon açık ve tur yarım.
+  const inSession = phase === "teaching" || phase === "speaking" || phase === "listening" || phase === "judging" || phase === "continue" || phase === "stopped";
+  const back = useBackConfirm(inSession);
+  function onBackPress() { if (inSession) back.ask(); else stopAndLeave(); }
   function skipNow() { resolveManual("skip"); }
 
   const scale = pulse.interpolate({ inputRange: [0, 1], outputRange: [1, 1.1] });
@@ -439,7 +445,7 @@ export function WalkModeScreen() {
 
   const topBar = (withProgress: boolean) => (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, marginBottom: spacing.xl }}>
-      <PressableScale onPress={stopAndLeave} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+      <PressableScale hitSlop={4} onPress={onBackPress} accessibilityLabel="Yürüyüşten çık" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
         <XIcon color={colors.textMuted} size={22} />
       </PressableScale>
       {withProgress ? (
@@ -475,7 +481,7 @@ export function WalkModeScreen() {
         // Diğer oyunlarla (GameScreen) bütünlük: sağ üst X, ProgressRing, mascot, Tur bitti + Devam/Paylaş/Bitir.
         <View style={donePad}>
           <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-            <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+            <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
           </View>
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
             <Celebrate show={tally.total > 0 && donePct >= 60} />
@@ -553,7 +559,7 @@ export function WalkModeScreen() {
                 {reveal ? <Text variant="h3" color={colors.textMuted} style={{ textAlign: "center" }}>{curWord.en ? `${curWord.tr} · ${curWord.en}` : curWord.tr}</Text> : null}
               </View>
 
-              <View style={{ alignItems: "center", justifyContent: "center", height: 104 }}>
+              <View style={{ alignItems: "center", justifyContent: "center", minHeight: 104 }}>
                 {listening ? <Animated.View style={{ position: "absolute", width: 96, height: 96, borderRadius: 48, backgroundColor: dotColor, opacity: ringOpacity, transform: [{ scale: ringScale }] }} /> : null}
                 <Animated.View style={{ transform: [{ scale: listening ? scale : 1 }] }}>
                   <View style={[{ width: 96, height: 96, borderRadius: 48, backgroundColor: dotColor, alignItems: "center", justifyContent: "center" }, listening ? softShadow(colors.primary, 14) : {}]}>
@@ -594,6 +600,16 @@ export function WalkModeScreen() {
           <Text variant="caption" color="#2a2a2a" style={{ marginTop: 14 }}>dinliyorum · dokun ve uyandır</Text>
         </Pressable>
       ) : null}
+      <ConfirmDialog
+        visible={back.visible}
+        title="Yürüyüşü bitir?"
+        message="Bu tur yarım kalır; öğrendiklerin kaydedilir."
+        confirmLabel="Bitir"
+        cancelLabel="Devam et"
+        destructive
+        onConfirm={() => { back.cancel(); stopAndLeave(); }}
+        onCancel={back.cancel}
+      />
     </View>
   );
 }

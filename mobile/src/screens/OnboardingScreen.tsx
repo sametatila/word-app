@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { View } from "react-native";
+import React, { useCallback, useEffect, useState } from "react";
+import { View, BackHandler } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { track } from "../lib/track";
@@ -110,6 +110,13 @@ export function OnboardingScreen() {
     }
   }
   function next() { if (last) void finish(); else if (canNext) setI((n) => n + 1); }
+  // Android geri tuşu: adım geri (ilk adımda sistem davranışı — uygulamadan çıkar).
+  useFocusEffect(
+    useCallback(() => {
+      const sub = BackHandler.addEventListener("hardwareBackPress", () => { if (i > 0) { setI((n) => n - 1); return true; } return false; });
+      return () => sub.remove();
+    }, [i]),
+  );
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.lg, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>

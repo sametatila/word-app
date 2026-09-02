@@ -19,6 +19,8 @@ import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { useBackConfirm } from "../lib/useBackConfirm";
 
 type Phase = "loading" | "auth" | "error" | "play" | "done";
 
@@ -58,6 +60,9 @@ export function GameScreen() {
   //  gösterirdi. roundsSeen/Right yalnız gösterim için; SRS/XP hâlâ answers'tan.)
   const roundsSeen = useRef(0);
   const roundsRight = useRef(0);
+  // Yarım turdan çıkış onaylı (donanım geri + X): cevaplar unmount'ta zaten yazılıyor,
+  // ama kullanıcı yanlışlıkla çıkıp turu bölmesin.
+  const back = useBackConfirm(phase === "play");
 
   /** Şu ana kadarki ilerleme — cevaplarla gidip sunucu index'ini ilerletir. */
   function progressNow(): SessionProgress {
@@ -191,7 +196,7 @@ export function GameScreen() {
     return (
       <View style={pad}>
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-          <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         </View>
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <Celebrate show={total > 0 && pct >= 60} />
@@ -220,7 +225,7 @@ export function GameScreen() {
   return (
     <View style={pad}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
-        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+        <PressableScale hitSlop={4} onPress={back.ask} accessibilityLabel="Turdan çık" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>
@@ -231,6 +236,16 @@ export function GameScreen() {
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />
       <AmbientPeek />
       <MascotPop trigger={pop} />
+      <ConfirmDialog
+        visible={back.visible}
+        title="Turdan çık?"
+        message="Cevapladıkların kaydedilir; kalan turlara sonra devam edersin."
+        confirmLabel="Çık"
+        cancelLabel="Devam et"
+        destructive
+        onConfirm={() => { back.cancel(); nav.goBack(); }}
+        onCancel={back.cancel}
+      />
     </View>
   );
 }
