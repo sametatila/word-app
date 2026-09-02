@@ -19,6 +19,10 @@ import { SettingsScreen } from "../screens/SettingsScreen";
 import { PlacementScreen } from "../screens/PlacementScreen";
 import { LeaderboardScreen } from "../screens/LeaderboardScreen";
 import { NotificationsScreen } from "../screens/NotificationsScreen";
+import { FriendsScreen } from "../screens/FriendsScreen";
+import { UserScreen } from "../screens/UserScreen";
+import { InboxScreen } from "../screens/InboxScreen";
+import { SocialSettingsScreen } from "../screens/SocialSettingsScreen";
 import { ItemScreen } from "../screens/ItemScreen";
 import { DailyScreen } from "../screens/DailyScreen";
 import { WeeklyScreen } from "../screens/WeeklyScreen";
@@ -57,6 +61,11 @@ export type RootStackParams = {
   Cando: undefined;
   Writings: undefined;
   Item: { id: string; kind: string; title: string };
+  /** Sosyal katman: arkadaş merkezi (sekme), herkese açık profil, gelen kutusu, sosyal ayarlar. */
+  Friends: { tab?: "friends" | "feed" | "quests" | "requests" | "find" } | undefined;
+  User: { username: string };
+  Inbox: undefined;
+  SocialSettings: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -91,6 +100,10 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Cando" component={CandoScreen} />
       <Stack.Screen name="Writings" component={WritingsScreen} />
+      <Stack.Screen name="Friends" component={FriendsScreen} />
+      <Stack.Screen name="User" component={UserScreen} />
+      <Stack.Screen name="Inbox" component={InboxScreen} />
+      <Stack.Screen name="SocialSettings" component={SocialSettingsScreen} />
     </Stack.Navigator>
   );
 }

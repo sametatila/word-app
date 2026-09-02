@@ -9,6 +9,7 @@ import { FlameIcon } from "./icons";
 import { Avatar } from "./Avatar";
 import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { InboxBell } from "../social/InboxBell";
 
 /**
  * Sekmeler arası ortak üst başlık (Learn / Patika / Beceriler): solda başlık
@@ -35,6 +36,8 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
             <Text variant="bodyStrong" color={colors.streak}>{streak}</Text>
           </PressableScale>
         )}
+        {/* Sosyal gelen kutusu: istek, tepki, dürtme. Mobilde uzak push yok; rozet buradan. */}
+        <InboxBell />
         <PressableScale onPress={() => nav.navigate("Profile")} accessibilityLabel="Profil" style={softShadow(colors.primary, 6)}>
           <Avatar size={44} />
         </PressableScale>

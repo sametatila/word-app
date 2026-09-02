@@ -14,6 +14,7 @@ import { useUpdate } from "../lib/useUpdate";
 import { Mascot } from "../ui/Mascot";
 import { AppHeader } from "../ui/AppHeader";
 import { DailyQuests } from "../ui/DailyQuests";
+import { FriendPulse } from "../social/FriendPulse";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 /** Alt aksiyon satırı — dil odaklı, sade. */
@@ -160,6 +161,9 @@ export function LearnScreen() {
 
       {/* GÜNÜN GÖREVLERİ — öne çıkanın ÜSTÜNDE, gömülü kutular (ayrı ekran yok) */}
       <DailyQuests />
+
+      {/* Bu haftanın ortak görevi/daveti varsa tek satır nabız; yoksa hiç çizilmez. */}
+      <FriendPulse />
 
       {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>Öne çıkan</Text>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { View, FlatList } from "react-native";
+import { View, FlatList, ScrollView } from "react-native";
+import { FriendsBoard } from "../social/FriendsBoard";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -20,6 +21,8 @@ export function LeaderboardScreen() {
   const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
   const [week, setWeek] = useState<LeaderboardWeek>(DEMO_LEADERBOARD);
+  // Herkes | Arkadaşlar — aynı hafta, iki küme. Arkadaş tablosu sosyal API'den.
+  const [mode, setMode] = useState<"all" | "friends">("all");
 
   useEffect(() => {
     if (!user) { setWeek(DEMO_LEADERBOARD); return; }
@@ -42,6 +45,19 @@ export function LeaderboardScreen() {
         </View>
       </View>
 
+      <View style={{ flexDirection: "row", gap: 6, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+        {([["all", "Herkes"], ["friends", "Arkadaşlar"]] as const).map(([k, label]) => (
+          <PressableScale key={k} onPress={() => setMode(k)} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: mode === k ? colors.primary : colors.surface2 }}>
+            <Text variant="caption" color={mode === k ? colors.onPrimary : colors.text} style={{ fontWeight: "700" }}>{label}</Text>
+          </PressableScale>
+        ))}
+      </View>
+
+      {mode === "friends" ? (
+        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+          {user ? <FriendsBoard compact /> : <Text variant="body" color={colors.textMuted}>Arkadaş tablosu için giriş yap.</Text>}
+        </ScrollView>
+      ) : (
       <FlatList
         data={week.rows}
         keyExtractor={(r) => r.userId}
@@ -71,6 +87,7 @@ export function LeaderboardScreen() {
           );
         }}
       />
+      )}
     </View>
   );
 }

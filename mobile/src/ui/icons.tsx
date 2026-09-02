@@ -129,3 +129,32 @@ export const FacebookIcon = ({ size = 20 }: { size?: number }) => (
 export const MailIcon = ({ color = "#000", size = 20 }: { color?: string; size?: number }) => (
   <S size={size}><Rect x="3" y="5" width="18" height="14" rx="2" {...stroke(color)} /><Path d="M4 7l8 6 8-6" {...stroke(color)} /></S>
 );
+
+// ── Sosyal katman ikonları (tepkiler + arkadaş/arama) — aynı ızgara, aynı çizgi.
+export const HeartIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" {...stroke(color)} /></S>
+);
+export const StarIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7L12 3z" {...stroke(color)} /></S>
+);
+export const PartyIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M5 21l4-12 7 7-11 5z" {...stroke(color)} /><Path d="M13 4l1 2M18 6l-1.5 1.5M20 12l-2 .5M15 2.5l-.5 2" {...stroke(color)} /></S>
+);
+export const SparkIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M6.5 17.5L9 15M15 9l2.5-2.5" {...stroke(color)} /></S>
+);
+export const HandshakeIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M3 10l4-4 5 3 5-3 4 4-3 6-6 4-6-4-3-6z" {...stroke(color)} /><Path d="M9 13l3 2 3-2" {...stroke(color)} /></S>
+);
+export const TargetIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Circle cx="12" cy="12" r="8" {...stroke(color)} /><Circle cx="12" cy="12" r="4" {...stroke(color)} /><Circle cx="12" cy="12" r="1" fill={color} /></S>
+);
+export const SearchIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Circle cx="11" cy="11" r="6" {...stroke(color)} /><Path d="M20 20l-4.5-4.5" {...stroke(color)} /></S>
+);
+export const UserPlusIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Circle cx="10" cy="8" r="4" {...stroke(color)} /><Path d="M3 20c0-3.5 3-6 7-6s7 2.5 7 6" {...stroke(color)} /><Path d="M19 8v6M16 11h6" {...stroke(color)} /></S>
+);
+export const InboxIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M4 13l2-8h12l2 8v6H4v-6z" {...stroke(color)} /><Path d="M4 13h5a3 3 0 006 0h5" {...stroke(color)} /></S>
+);
