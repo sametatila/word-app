@@ -33,17 +33,21 @@ type SpeechNative = {
   uploadStt(url: string, wavPath: string, language: string, expected: string): Promise<string | null>;
   playSfx(kind: string): void;
   httpGet(url: string): Promise<string | null>;
+  /** Native HTTP yalnız bu adrese çıkar (çerez başka hosta gitmez). */
+  setApiBase(base: string): void;
 };
 
 const Native = NativeModules.NomiSpeech as SpeechNative | undefined;
 const emitter = Native ? new NativeEventEmitter(NativeModules.NomiSpeech) : null;
+// Native HTTP allowlist: uploadStt/httpGet/playTtsUrl yalnız API sunucusuna (https) çıkar.
+try { Native?.setApiBase?.(API_BASE); } catch { /* yut */ }
 
 export async function ensureMicPermission(): Promise<boolean> {
   if (Platform.OS !== "android") return true; // iOS izinleri native tarafta (SFSpeech) istenir
   try {
     const g = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO, {
       title: "Mikrofon izni",
-      message: "Konuşarak cevap verebilmen için mikrofon erişimi gerekiyor.",
+      message: "Yürüyüş modunda söylediğin kelimeyi tanımak için mikrofon gerekiyor. Ekran kapalıyken de dinler; ses kaydı tanıma için sunucuya gönderilir, saklanmaz.",
       buttonPositive: "İzin ver",
       buttonNegative: "Vazgeç",
     });

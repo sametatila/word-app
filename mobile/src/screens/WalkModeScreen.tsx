@@ -25,6 +25,8 @@ import { haptic } from "../lib/haptics";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
+import { MicDisclosure } from "../ui/MicDisclosure";
+import { hasMicConsent, setMicConsent } from "../lib/micConsent";
 
 const withArtikel = (w: { artikel?: string | null; de: string }) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır; RN setTimeout ekran-kapalıda durur)
@@ -74,6 +76,7 @@ export function WalkModeScreen() {
   const [idx, setIdx] = useState(0);
   const [curWord, setCurWord] = useState<WalkWord>(DEMO_WORDS[0]);
   const [phase, setPhase] = useState<Phase>("intro");
+  const [disclosure, setDisclosure] = useState(false); // belirgin açıklama ve rıza (ilk kullanım)
   const [verdict, setVerdict] = useState<Verdict>(null);
   const [heard, setHeard] = useState("");
   const [tally, setTally] = useState({ correct: 0, total: 0 });
@@ -331,6 +334,17 @@ export function WalkModeScreen() {
     void sayTR(`Tur bitti. ${tallyRef.current.total} sorudan ${tallyRef.current.correct} doğru.`);
   }
 
+  /** Başla: önce uygulama içi açıklama ve onay (bir kez), sonra sistem izni ve tur. */
+  async function beginWalk() {
+    if (await hasMicConsent()) { await start(rounds); return; }
+    setDisclosure(true);
+  }
+  async function acceptDisclosure() {
+    await setMicConsent(true);
+    setDisclosure(false);
+    await start(rounds);
+  }
+
   async function start(rs: WalkRound[], greet = true) {
     const granted = await ensureMicPermission();
     if (!granted) { setPhase("denied"); return; }
@@ -472,8 +486,11 @@ export function WalkModeScreen() {
             <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>
               Türkçe ipucunu duyacaksın, sen Almancasını söyleyeceksin. Yeni kelimeyi önce birlikte öğreniriz. Yürürken, otururken — ekrana bakmadan.
             </Text>
-            <PressableScale onPress={() => start(rounds)} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
+            <PressableScale onPress={() => { void beginWalk(); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color="#fff">Başla</Text>
+            </PressableScale>
+            <PressableScale onPress={() => setDisclosure(true)} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.xs }}>
+              <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>Mikrofon ve ses verisi hakkında</Text>
             </PressableScale>
           </View>
         </>
@@ -610,6 +627,7 @@ export function WalkModeScreen() {
         onConfirm={() => { back.cancel(); stopAndLeave(); }}
         onCancel={back.cancel}
       />
+      <MicDisclosure visible={disclosure} onAccept={() => { void acceptDisclosure(); }} onCancel={() => setDisclosure(false)} />
     </View>
   );
 }
