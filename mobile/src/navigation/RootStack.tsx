@@ -16,6 +16,7 @@ import { WordsScreen } from "../screens/WordsScreen";
 import { AchievementsScreen } from "../screens/AchievementsScreen";
 import { ProgressScreen } from "../screens/ProgressScreen";
 import { SettingsScreen } from "../screens/SettingsScreen";
+import { DeleteAccountScreen } from "../screens/DeleteAccountScreen";
 import { PlacementScreen } from "../screens/PlacementScreen";
 import { LeaderboardScreen } from "../screens/LeaderboardScreen";
 import { NotificationsScreen } from "../screens/NotificationsScreen";
@@ -52,6 +53,8 @@ export type RootStackParams = {
   Achievements: undefined;
   Progress: undefined;
   Settings: undefined;
+  /** Hesap silme (Play zorunluluğu) — Ayarlar › Hesap. */
+  DeleteAccount: undefined;
   Placement: { onboarding?: boolean } | undefined;
   Leaderboard: undefined;
   Notifications: undefined;
@@ -91,6 +94,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Achievements" component={AchievementsScreen} />
       <Stack.Screen name="Progress" component={ProgressScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
+      <Stack.Screen name="DeleteAccount" component={DeleteAccountScreen} />
       <Stack.Screen name="Placement" component={PlacementScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Leaderboard" component={LeaderboardScreen} />
       <Stack.Screen name="Notifications" component={NotificationsScreen} />

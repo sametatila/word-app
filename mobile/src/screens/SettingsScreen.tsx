@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
 import { updateProfile } from "../lib/updateProfile";
@@ -108,8 +108,8 @@ export function SettingsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ChevronLeftIcon color={colors.text} size={24} />
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <Text variant="h2">Ayarlar</Text>
       </View>
@@ -124,6 +124,14 @@ export function SettingsScreen() {
             autoCapitalize="words"
             style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
           />
+          {/* Hesap silme (Play zorunluluğu): ayrı ekran, iki adımlı onay. */}
+          <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel="Hesabı sil" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+            <View style={{ flex: 1 }}>
+              <Text variant="bodyStrong" color={colors.danger}>Hesabı sil</Text>
+              <Text variant="caption" color={colors.textMuted}>Tüm verilerinle birlikte, geri alınamaz</Text>
+            </View>
+            <ChevronRightIcon color={colors.textFaint} size={20} />
+          </PressableScale>
         </Section>
 
         <Section title="ÖĞRENİLECEK DİL" colors={colors}>

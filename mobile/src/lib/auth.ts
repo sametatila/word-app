@@ -115,3 +115,40 @@ export async function requestPasswordReset(email: string): Promise<boolean> {
     return false;
   }
 }
+
+/** Hesaba bağlı sağlayıcılar (credential = e-posta/parola, google …). */
+export async function listAccounts(): Promise<{ providerId: string }[]> {
+  try {
+    const res = await fetch(`${API_BASE}/api/auth/list-accounts`, { headers: { accept: "application/json" } });
+    if (!res.ok) return [];
+    const j = JSON.parse(await res.text()) as { providerId?: string }[];
+    return Array.isArray(j) ? j.filter((a) => typeof a.providerId === "string").map((a) => ({ providerId: a.providerId! })) : [];
+  } catch {
+    return [];
+  }
+}
+
+export type DeleteOutcome = { ok: true } | { ok: false; code: "PASSWORD" | "FRESH" | "NETWORK" | "OTHER"; message: string };
+
+/**
+ * Hesabı KALICI olarak siler — web'le aynı Better Auth ucu (delete-user).
+ * Parola hesabı parolasını verir; yalnız Google ile girmiş hesapta parola yok,
+ * sunucu "taze" oturum (24 saat) ister — eskiyse FRESH döner, çağıran yeniden
+ * Google girişi yaptırıp tekrar dener. Sunucu tarafı tüm veriyi temizler
+ * (bkz. web lib/account/purge.ts).
+ */
+export async function deleteAccount(password?: string): Promise<DeleteOutcome> {
+  try {
+    const res = await post("delete-user", password ? { password } : {});
+    if (res.ok) return { ok: true };
+    const text = await res.text().catch(() => "");
+    let message = text.slice(0, 200);
+    try { message = (JSON.parse(text) as { message?: string }).message ?? message; } catch { /* düz metin */ }
+    const m = message.toLowerCase();
+    if (m.includes("password")) return { ok: false, code: "PASSWORD", message: "Parola yanlış." };
+    if (m.includes("session") || m.includes("expired")) return { ok: false, code: "FRESH", message: "Güvenlik için yeniden giriş gerekiyor." };
+    return { ok: false, code: "OTHER", message: message || "Silinemedi." };
+  } catch {
+    return { ok: false, code: "NETWORK", message: "Bağlantı kurulamadı" };
+  }
+}
