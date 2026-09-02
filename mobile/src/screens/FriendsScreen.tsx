@@ -138,9 +138,7 @@ export function FriendsScreen() {
         {tab === "quests" ? (data === null || !me ? <Skeleton height={110} /> : <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} />) : null}
         {tab === "requests" ? (data === null ? <Skeleton height={72} /> : <Requests incoming={data.incoming} outgoing={data.outgoing} onChanged={() => void reload()} />) : null}
         {tab === "find" ? <Find onChanged={() => void reload()} /> : null}
-        {tab === "friends" && data && !data.friends.length ? null : <View style={{ height: spacing.md }} />}
-        {tab === "feed" || tab === "find" ? null : <View />}
-        {err && !data ? <PrimaryButton label="Tekrar dene" tone="ghost" onPress={() => void reload()} /> : null}
+        {err ? <View style={{ marginTop: spacing.md }}><PrimaryButton label="Tekrar dene" tone="ghost" onPress={() => void reload()} /></View> : null}
       </ScrollView>
     </View>
   );
