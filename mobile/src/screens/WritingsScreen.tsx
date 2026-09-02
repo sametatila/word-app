@@ -5,7 +5,8 @@ import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, WriteIcon } from "../ui/icons";
+import { ReportSheet } from "../ui/ReportSheet";
+import { ArrowBackIcon, WriteIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { fetchWritings, type Writing } from "../game/writings";
 import { useTheme, spacing, radii, type Palette } from "../theme";
@@ -17,7 +18,7 @@ function scoreTone(score: number | null, colors: Palette): string {
   return score >= 70 ? colors.success : score >= 40 ? colors.streak : colors.danger;
 }
 
-function WritingCard({ w, colors }: { w: Writing; colors: Palette }) {
+function WritingCard({ w, colors, onReport }: { w: Writing; colors: Palette; onReport: (w: Writing) => void }) {
   const [open, setOpen] = useState(false);
   const score = w.result?.score?.overall ?? null;
   const tone = scoreTone(score, colors);
@@ -34,6 +35,11 @@ function WritingCard({ w, colors }: { w: Writing; colors: Palette }) {
           </View>
         </View>
         {open && score === null ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>Puanlanacak.</Text> : null}
+        {open && score !== null ? (
+          <PressableScale onPress={() => onReport(w)} hitSlop={8} accessibilityLabel="Değerlendirmeyi bildir" style={{ alignSelf: "flex-start", marginTop: spacing.sm }}>
+            <Text variant="micro" color={colors.textFaint}>Değerlendirmeyi bildir</Text>
+          </PressableScale>
+        ) : null}
         <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>{w.day}</Text>
       </Card>
     </PressableScale>
@@ -47,6 +53,7 @@ export function WritingsScreen() {
   const { user } = useAuth();
   const [items, setItems] = useState<Writing[] | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
+  const [report, setReport] = useState<Writing | null>(null); // "Bildir" açık olan değerlendirme
 
   useEffect(() => {
     if (!user) { setPhase("error"); return; }
@@ -58,8 +65,8 @@ export function WritingsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ChevronLeftIcon color={colors.text} size={24} />
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <Text variant="h2">Yazılarım</Text>
       </View>
@@ -72,9 +79,10 @@ export function WritingsScreen() {
         </View>
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-          {(items ?? []).map((w) => <WritingCard key={w.id} w={w} colors={colors} />)}
+          {(items ?? []).map((w) => <WritingCard key={w.id} w={w} colors={colors} onReport={setReport} />)}
         </ScrollView>
       )}
+      <ReportSheet visible={!!report} kind="assessment" refId={report ? String(report.id) : ""} content={report ? JSON.stringify(report.result ?? {}) : ""} onClose={() => setReport(null)} />
     </View>
   );
 }

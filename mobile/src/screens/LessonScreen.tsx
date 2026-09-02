@@ -5,8 +5,9 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
+import { ReportSheet } from "../ui/ReportSheet";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronLeftIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon } from "../ui/icons";
+import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
@@ -29,8 +30,10 @@ import { sfx } from "../lib/sfx";
 type Phase = "lecture" | "roleplay" | "summary";
 
 /** Anlatım/konuşma akışındaki baloncuk. */
+/** Yapay zekâ yanıtı için bildirme bilgisi: ref = "<lessonId>:<tur>", text = gösterilen metin. */
+type ReportRef = { ref: string; text: string };
 type BubbleData =
-  | { role: "teacher"; segments: Segment[]; tone?: "hint" | "why"; fix?: string[] }
+  | { role: "teacher"; segments: Segment[]; tone?: "hint" | "why"; fix?: string[]; report?: ReportRef }
   | { role: "student"; text: string; ok?: boolean };
 type Bubble = BubbleData & { id: number };
 
@@ -80,6 +83,7 @@ export function LessonScreen() {
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [saved, setSaved] = useState(false);
   const [resumeOffer, setResumeOffer] = useState<{ cursor: number; correct: number } | null>(null);
+  const [report, setReport] = useState<ReportRef | null>(null); // "Bildir" açık olan yapay zekâ yanıtı
 
   const scoreTotal = lesson ? scoredSteps(lesson) : 0;
   const scrollDown = () => setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 60);
@@ -201,14 +205,15 @@ export function LessonScreen() {
     setBusy(true);
     const next: ChatMsg[] = [...roleMsgs, { role: "user", content: text }];
     setRoleMsgs(next);
-    setRoleTurns((n) => n + 1);
+    const turn = roleTurns + 1;
+    setRoleTurns(turn);
     scrollDown();
     try {
       const reply = await sendRoleplay(lesson.id, next);
       const parsed = parseReply(reply || "…");
       const bodyText = parsed.body || reply || "…";
       setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
-      push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], fix: parsed.corrections.length ? parsed.corrections : undefined });
+      push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], fix: parsed.corrections.length ? parsed.corrections : undefined, report: { ref: `${lesson.id}:${turn}`, text: reply } });
       setSuggestions(parsed.suggestions);
       if (bodyText) speakTarget(bodyText);
     } catch {
@@ -262,8 +267,8 @@ export function LessonScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm }}>
       {/* Başlık + ilerleme */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 40, height: 40, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ChevronLeftIcon color={colors.text} size={24} />
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{lesson.title}</Text>
@@ -301,7 +306,7 @@ export function LessonScreen() {
       ) : (
         <>
           <ScrollView ref={scrollRef} automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: false })}>
-            {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} />)}
+            {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} onReport={setReport} />)}
             {busy && (
               <View style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: 8, marginTop: 4 }}>
                 <ActivityIndicator color={colors.primary} size="small" /><Text variant="caption" color={colors.textMuted}>yazıyor…</Text>
@@ -323,13 +328,14 @@ export function LessonScreen() {
           </View>
         </>
       )}
+      <ReportSheet visible={!!report} kind="roleplay" refId={report?.ref ?? ""} content={report?.text ?? ""} onClose={() => setReport(null)} />
     </View>
   );
 }
 
 const PRAISE = ["Çok iyi!", "Harika!", "Süper!", "Çok güzel söyledin!", "Mükemmel!"];
 
-function BubbleView({ b, colors }: { b: Bubble; colors: Palette }) {
+function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onReport?: (r: ReportRef) => void }) {
   if (b.role === "student") {
     return (
       <View style={{ alignSelf: "flex-end", maxWidth: "84%", marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: 6 }}>
@@ -356,11 +362,18 @@ function BubbleView({ b, colors }: { b: Bubble; colors: Palette }) {
           </View>
         ) : null}
       </View>
-      {deText(b.segments) ? (
-        <PressableScale onPress={() => speakTarget(deText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4, marginTop: 4, marginLeft: 4 }}>
-          <SpeakerIcon color={colors.textMuted} size={15} /><Text variant="micro" color={colors.textMuted}>Dinle</Text>
-        </PressableScale>
-      ) : null}
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: 4, marginLeft: 4 }}>
+        {deText(b.segments) ? (
+          <PressableScale onPress={() => speakTarget(deText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+            <SpeakerIcon color={colors.textMuted} size={15} /><Text variant="micro" color={colors.textMuted}>Dinle</Text>
+          </PressableScale>
+        ) : null}
+        {b.report && onReport ? (
+          <PressableScale onPress={() => onReport(b.report!)} hitSlop={8} accessibilityLabel="Bu yanıtı bildir">
+            <Text variant="micro" color={colors.textFaint}>Bildir</Text>
+          </PressableScale>
+        ) : null}
+      </View>
     </View>
   );
 }
