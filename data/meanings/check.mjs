@@ -93,8 +93,15 @@ function inspect(packet) {
     const bspTr = (r.beispielTr ?? "").trim();
     const bspEn = (r.beispielEn ?? "").trim();
 
-    /* tr — tek karşılık */
-    if (/[,;/]/.test(tr)) H("çok anlamlı tr", `"${tr}" — virgül/çizgi ile ikinci anlam`);
+    /* tr — tek karşılık (işlev sözcüğünde "; " ile iki çekirdek anlam serbest) */
+    if (/[,/]/.test(tr)) H("çok anlamlı tr", `"${tr}" — virgül/çizgi ile ikinci anlam`);
+    // Noktalı virgül yalnız işlev sözcüğünde (Sonstiges) ve tam iki parçada
+    // gloss ayırıcısıdır; içerik sözcüğünde ya da ikiden fazla parçada hata.
+    if (/;/.test(tr)) {
+      const parts = tr.split(";").map((s) => s.trim()).filter(Boolean);
+      if (k.typ !== "Sonstiges" || parts.length !== 2)
+        H("çok anlamlı tr", `"${tr}" — ";" yalnız işlev sözcüğünde iki çekirdek anlam için`);
+    }
     if (/[()[\]]/.test(tr)) H("parantezli tr", `"${tr}"`);
     if (/\s(ya da|veya)\s/i.test(tr)) H("çok anlamlı tr", `"${tr}" — "ya da" ile ikinci anlam`);
     if (tr.length > 40) H("uzun tr", `${tr.length} karakter: "${tr}"`);
@@ -105,8 +112,13 @@ function inspect(packet) {
     if (k.typ === "Nomen" && /^bir\s/i.test(tr)) U("şüpheli tr", `"${tr}"`);
     if (/^(the|a|an)\s/i.test(tr)) U("şüpheli tr", `"${tr}" — İngilizce sızmış olabilir`);
 
-    /* en — tek karşılık, fiiller "to" ile */
-    if (/[,;/]/.test(en)) H("çok anlamlı en", `"${en}"`);
+    /* en — tek karşılık, fiiller "to" ile (işlev sözcüğünde "; " serbest) */
+    if (/[,/]/.test(en)) H("çok anlamlı en", `"${en}"`);
+    if (/;/.test(en)) {
+      const parts = en.split(";").map((s) => s.trim()).filter(Boolean);
+      if (k.typ !== "Sonstiges" || parts.length !== 2)
+        H("çok anlamlı en", `"${en}" — ";" yalnız işlev sözcüğünde iki çekirdek anlam için`);
+    }
     if (/[()[\]]/.test(en)) H("parantezli en", `"${en}"`);
     if (en.length > 40) H("uzun en", `${en.length} karakter: "${en}"`);
     if (TR_LETTER.test(en)) H("dil karışması", `en alanında Türkçe harf: "${en}"`);

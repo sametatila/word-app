@@ -28,15 +28,19 @@ ayrışıyor (`er`/`sie`/`es` üçü de "o", ama `he` / `she` / `it`; `das Essen
 
 ## `tr` — tek doğal Türkçe karşılık
 
-**Tek karşılık.** Virgül, noktalı virgül, eğik çizgi ve parantez **yasak**.
+**İçerik sözcüklerinde tek karşılık.** İsim, fiil, sıfat, zarf: virgül, noktalı
+virgül, eğik çizgi ve parantez **yasak**. İşlev sözcükleri (edat, bağlaç, zamir,
+tanımlık) bunun tek istisnasıdır — bkz. aşağıda "İşlev sözcükleri: doğal kısa
+gloss". Parantez ise **her durumda** yasak; işlev sözcüğünde bile netleştirme
+parantezle değil, gloss'un kendisiyle yapılır.
 
 Ölçüt: bir Türk'e "bu Almanca kelime ne demek?" diye sorsan vereceği **ilk ve
 tek** cevap. Sözlük maddesi değil, konuşma cevabı.
 
 ```
-zu        →  "çok"           (değil: "çok, fazla; -e, -a")
-es        →  "o"             (değil: "o (nötr, cansız)")
-sie       →  "o"             (değil: "o, onlar")
+Frau      →  "kadın"         (değil: "kadın, bayan, eş")
+Gegenstand→  "nesne"         (değil: "nesne, şey, cisim")
+schön     →  "güzel"         (değil: "güzel, hoş, iyi")
 wohl      →  "galiba"        (değil: "iyi; galiba, herhalde")
 bekommen  →  "almak"         (değil: "elde etmek, almak")
 ```
@@ -49,6 +53,36 @@ Biçim kuralları:
 - Sıfat sıfat kalır, zarf zarf kalır.
 - En fazla üç kelime; deyim niteliğindeki maddeler bunun dışında
   (`zum Beispiel → "örneğin"`, `Rad fahren → "bisiklete binmek"`).
+
+### İşlev sözcükleri: doğal kısa gloss
+
+Edat, bağlaç, zamir ve tanımlıklarda tek bir çıplak ek — `"-e"`, `"-de"`,
+`"-in"` — çoğu zaman **kripto** kalır: öğrenci `"-e"` görüp hangi Almanca
+kelime olduğunu hatırlayamaz. Bu maddelerde tek karşılık zorunluluğu gevşer:
+en doğal, öğrenilebilir karşılığı ver ve **gerektiğinde en çok iki çekirdek
+anlamı** noktalı virgülle ayır (`"; "`). Çıplak eki asla tek başına bırakma;
+doğal bir kelimeyle eşle.
+
+```
+von   →  "-in; -den"            nach  →  "-e doğru; sonra"
+auch  →  "da; ayrıca"           um    →  "saat …-de; için"
+bis   →  "-e kadar"             als   →  "-den; olarak"
+```
+
+Sınırlar:
+
+- **Parantez yok.** Netleştirme gloss'un kendisiyle; `nach → "-e doğru; sonra"`,
+  `nach → "-e (yön)"` **değil**.
+- **En çok iki çekirdek anlam.** Sözlükteki her kullanımı sıralama;
+  öğrencinin gerçekten ihtiyaç duyduğu iki temel anlamla sınırlı kal.
+- **Tek anlamlı işlev sözcüğü yine tek kalır:** `seit → "-den beri"`,
+  `ohne → "-siz"`. Gloss zorunluluk değil, gerçekten iki çekirdeği olana ait.
+- **İçerik sözcükleri bu istisnanın dışında** — isim/fiil/sıfat/zarf tek
+  karşılık kuralına tabidir; `"; "` yalnız işlev sözcüğünde.
+
+Zamirlerde `er`/`sie`/`es` çakışması öncelikle İngilizceyle ayrışır
+(`he`/`she`/`it`; bkz. giriş). `sie` gibi gerçekten iki çekirdeği olan (dişil
+"o" + çoğul "onlar") bir zamirde `"o; onlar"` glossu uygundur.
 
 ### Anlam çakışması: parantez değil, daha kesin Türkçe
 
@@ -86,6 +120,9 @@ yanlış olurdu. Bunu yalnızca gerçekten karşılığı olmayan maddelerde yap
 ## `en` — tek doğal İngilizce karşılık
 
 Aynı kurallar: tek karşılık, virgül/parantez yok, küçük harf (özel isim değilse).
+İşlev sözcüklerinde aynı gloss istisnası geçerli — en çok iki çekirdek anlam
+`"; "` ile (`über → "over; about"`, `oben → "above; up there"`,
+`desto → "the more"`). Parantez burada da yasak.
 
 - **Fiiller `to` ile yazılır**: `essen → "to eat"`. Bu bir üslup tercihi değil:
   Almancada isim/fiil çiftleri çok yaygın (`das Essen`/`essen`,
