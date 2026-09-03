@@ -14,6 +14,7 @@ import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatDuration, formatXp } from "../lib/useMe";
 import { usePremium } from "../lib/usePremium";
+import { billingAvailable } from "../lib/billing";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 
@@ -49,8 +50,7 @@ export function ProfileScreen() {
   const displayName = user?.name?.trim() || user?.email?.split("@")[0] || "Öğrenci";
   const [confirmOut, setConfirmOut] = useState(false);
   async function reallySignOut() { setConfirmOut(false); await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
-  // Veri gelmeden rakam gösterilmez (uydurma 7 gün / 1.2k yoktu artık): yükleniyor kartı var.
-  const streak = me ? me.streak : 0;
+  // Veri gelmeden rakam gösterilmez (uydurma "1.2k" yok): yükleniyor kartı var.
   const xpLabel = me ? formatXp(me.xp) : "—";
 
   return (
@@ -100,8 +100,8 @@ export function ProfileScreen() {
           </Card>
         )}
 
-        {/* premium: üye ise rozet, değilse yükseltme bandı (§4) */}
-        {premium ? (
+        {/* premium: yalnız mağaza entegrasyonu canlıyken (satın alınamayan şey vaat edilmez) */}
+        {!billingAvailable() ? null : premium ? (
           <View style={{ borderRadius: radii.xl, backgroundColor: colors.successSoft, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
             <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.success }}>
               <CrownIcon color="#fff" size={26} />

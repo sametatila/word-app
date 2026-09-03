@@ -11,6 +11,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, ReadIcon, ListenIcon, WriteIcon, BoltIcon, LockIcon } from "../ui/icons";
 import { useMe } from "../lib/useMe";
 import { usePremium } from "../lib/usePremium";
+import { billingAvailable } from "../lib/billing";
 import { listSkillMeta } from "../data/skills";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -35,7 +36,9 @@ export function ExamPrepScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [exam, setExam] = useState(0);
   const { me } = useMe();
-  const premium = usePremium();
+  // Mağaza entegrasyonu canlı değilken kilit yok: satın alınamayan bir şeyin arkasına
+  // içerik saklanmaz (Play "bozuk işlevsellik"). Canlıysa premium modüller kilitli.
+  const premium = usePremium() || !billingAvailable();
   // Misafirde yerleştirme sınavının belirlediği seviye (prefs); yoksa A1.
   const [guestLevel, setGuestLevel] = useState<string | null>(null);
   useEffect(() => { if (!me) void loadOnboardingPrefs().then((p) => setGuestLevel(p.level ?? null)); }, [me]);
@@ -95,7 +98,8 @@ export function ExamPrepScreen() {
             // İçeriği olmayan modül hiç çizilmez: çalışmayan "yakında" satırı yok.
             const tint = colors[m.tint as keyof Palette] as string;
             const n = countFor(m);
-            const sub = `${m.tr} · ${t("examprep.alistirma", { n })}${m.premium ? " · Premium" : ""}`;
+            const gated = m.premium && billingAvailable();
+            const sub = `${m.tr} · ${t("examprep.alistirma", { n })}${gated ? " · Premium" : ""}`;
             return (
               <PressableScale key={m.key} onPress={() => openModule(m)}>
                 <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
@@ -105,7 +109,7 @@ export function ExamPrepScreen() {
                   <View style={{ flex: 1 }}>
                     <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
                       <Text variant="h3">{m.label}</Text>
-                      {m.premium && (
+                      {gated && (
                         <View style={{ backgroundColor: colors.streak + "26", borderRadius: radii.pill, paddingHorizontal: 8, paddingVertical: 2 }}>
                           <Text variant="micro" color={colors.streak}>{t("examprep.premium")}</Text>
                         </View>
@@ -113,16 +117,18 @@ export function ExamPrepScreen() {
                     </View>
                     <Text variant="caption" color={colors.textMuted}>{sub}</Text>
                   </View>
-                  {m.premium && !premium ? <LockIcon color={colors.streak} size={20} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
+                  {gated && !premium ? <LockIcon color={colors.streak} size={20} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
                 </Card>
               </PressableScale>
             );
           })}
         </View>
 
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg, textAlign: "center", lineHeight: 18 }}>
-          {t("examprep.ucretsiz_premium_notu")}
-        </Text>
+        {billingAvailable() ? (
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg, textAlign: "center", lineHeight: 18 }}>
+            {t("examprep.ucretsiz_premium_notu")}
+          </Text>
+        ) : null}
       </ScrollView>
     </View>
   );
