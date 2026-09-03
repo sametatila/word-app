@@ -148,8 +148,11 @@ export function PrivacyEnBody() {
 
       <h2>8. Product analytics and switching them off</h2>
       <p>
-        To understand which features are used, Nomi writes short usage events to its own server (e.g. &quot;round completed&quot;). The
-        events come from a closed list, contain no free text and go to no third party. You can switch this off with the &quot;Send usage
+        To understand which features are used, Nomi writes short usage events to its own server (e.g. &quot;round completed&quot;). The event
+        names come from a closed list. Each event may carry a technical label of at most 32 characters (e.g.
+        &quot;single:artikel&quot;, &quot;level:B1&quot;); the label accepts only letters, digits, underscore, colon and hyphen and
+        cannot consist of digits alone, so it can hold no e-mail address, link or phone number. Nothing else is sent as free
+        text, and the events go to no third party. You can switch this off with the &quot;Send usage
         data&quot; toggle under Settings &rsaquo; Privacy (right to object, KVKK and Art. 21 GDPR); once off, only the records strictly
         necessary for the service are kept.
       </p>

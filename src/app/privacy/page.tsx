@@ -153,7 +153,7 @@ export default function PrivacyPage() {
       <h2>8. Ürün analitiği ve kapatma</h2>
       <p>
         Nomi, hangi özelliklerin kullanıldığını anlamak için kendi sunucusuna kısa kullanım olayları yazar (ör. &quot;tur tamamlandı&quot;).
-        Olaylar kapalı bir listeden gelir, serbest metin içermez ve üçüncü tarafa gitmez. Ayarlar › Gizlilik bölümünden &quot;Kullanım verisi
+        Olay adları kapalı bir listeden gelir. Her olay yanında en çok 32 karakterlik teknik bir etiket taşıyabilir (ör. &quot;single:artikel&quot;, &quot;level:B1&quot;); etiket yalnız harf, rakam, alt çizgi, iki nokta ve tire kabul eder ve salt rakamdan oluşamaz, dolayısıyla e-posta, bağlantı ya da telefon numarası taşıyamaz. Bunun dışında serbest metin gönderilmez ve olaylar üçüncü tarafa gitmez. Ayarlar › Gizlilik bölümünden &quot;Kullanım verisi
         gönder&quot; anahtarıyla bunu kapatabilirsin (KVKK ve GDPR m.21 itiraz hakkı); kapatınca yalnız hizmet için zorunlu kayıtlar tutulur.
       </p>
 

@@ -155,7 +155,11 @@ export function PrivacyDeBody() {
       <h2>8. Produktanalyse und Abschalten</h2>
       <p>
         Um zu verstehen, welche Funktionen genutzt werden, schreibt Nomi kurze Nutzungsereignisse auf den eigenen Server (z. B. &quot;Runde
-        abgeschlossen&quot;). Die Ereignisse stammen aus einer geschlossenen Liste, enthalten keinen Freitext und gehen an keinen Dritten.
+        abgeschlossen&quot;). Die Ereignisnamen stammen aus einer geschlossenen Liste. Jedes
+        Ereignis kann eine technische Kennzeichnung von höchstens 32 Zeichen tragen (z. B. &quot;single:artikel&quot;,
+        &quot;level:B1&quot;); die Kennzeichnung lässt nur Buchstaben, Ziffern, Unterstrich, Doppelpunkt und Bindestrich zu und darf
+        nicht ausschließlich aus Ziffern bestehen, kann also weder eine E-Mail-Adresse noch einen Link oder eine Telefonnummer
+        enthalten. Darüber hinaus wird kein Freitext gesendet, und die Ereignisse gehen an keinen Dritten.
         Über den Schalter &quot;Nutzungsdaten senden&quot; unter Einstellungen &rsaquo; Datenschutz kannst du das abschalten
         (Widerspruchsrecht nach KVKK und Art. 21 DSGVO); danach werden nur die für den Dienst zwingend erforderlichen Datensätze geführt.
       </p>

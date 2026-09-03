@@ -158,13 +158,27 @@ export function isEventName(name: string): name is EventName {
  * karakter. Bu bir serbest metin alanı DEĞİL — oyun adı, hata tipi, "level:B1"
  * gibi kapalı sözlük etiketleri için var. Uymayan değer sessizce düşer; olay
  * yine yazılır çünkü etiket bilgi katmanı, olayın kendisi değil.
+ *
+ * BU KARAKTER KÜMESİ GİZLİLİK POLİTİKASINDA VERİLMİŞ BİR SÖZ (§8). Etiketin
+ * ne olabileceğini o cümle tarif ediyor; kümeyi genişletmek politikayı
+ * değiştirmek demektir. Küme boşluk, nokta, "@" ve "+" kabul etmediği için
+ * e-posta, bağlantı ve ayraçlı telefon numarası yazılamıyor.
  */
 const KIND_RE = /^[a-z0-9_:-]{1,32}$/i;
+
+/**
+ * Salt rakamdan oluşan etiket reddediliyor: hiçbir meşru etiket çıplak bir
+ * sayı değil (egzersiz kimlikleri "a1-l1" biçiminde, oyun ve ekran adları
+ * harfli), buna karşılık ayraçsız bir telefon numarası karakter kümesinden
+ * geçebiliyordu. Kümenin tek açık kalan kişisel-veri şekli buydu.
+ */
+const DIGITS_ONLY = /^\d+$/;
 
 export function cleanKind(kind: unknown): string | null {
   if (typeof kind !== "string") return null;
   const k = kind.trim();
-  return KIND_RE.test(k) ? k : null;
+  if (!KIND_RE.test(k)) return null;
+  return DIGITS_ONLY.test(k) ? null : k;
 }
 
 /**
