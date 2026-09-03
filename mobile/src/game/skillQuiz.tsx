@@ -122,7 +122,7 @@ function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; k
       ) : null}
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
         <TextInput value={typed} onChangeText={setTyped} editable={!done} autoCapitalize="none" spellCheck={false}
-          placeholder={kind === "dictation" ? "Duyduğun cümleyi yaz…" : kind === "gapfill" ? "Boşluğa gelen kelime…" : "Kısa cevap…"} placeholderTextColor={colors.textFaint}
+          placeholder={tx(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")} placeholderTextColor={colors.textFaint}
           style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (
           <PressableScale onPress={() => { if (typed.trim()) onSettle(written(typed, accept)); }} disabled={!typed.trim()}
@@ -132,7 +132,7 @@ function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; k
         ) : null}
       </View>
       {done && !ok ? (
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 6 }}>Doğrusu: <Text variant="caption" color={colors.text}>{accept[0]}</Text></Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 6 }}>{tx("common.answer_is")} <Text variant="caption" color={colors.text}>{accept[0]}</Text></Text>
       ) : null}
     </View>
   );
@@ -186,8 +186,8 @@ export function GlossPanel({ gloss, colors }: { gloss: Gloss[]; colors: Palette 
   return (
     <Card padded style={{ marginTop: spacing.md }}>
       <PressableScale onPress={() => setOpen((v) => !v)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-        <Text variant="bodyStrong">Sözlükçe <Text variant="caption" color={colors.textMuted}>({gloss.length} kelime)</Text></Text>
-        <Text variant="caption" color={colors.textMuted}>{open ? "Gizle" : "Göster"}</Text>
+        <Text variant="bodyStrong">{tx("skillquiz.glossary")} <Text variant="caption" color={colors.textMuted}>{tx("skillquiz.word_count", { n: gloss.length })}</Text></Text>
+        <Text variant="caption" color={colors.textMuted}>{tx(open ? "user.hide" : "common.show")}</Text>
       </PressableScale>
       {open ? (
         <View style={{ marginTop: spacing.md, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
@@ -250,7 +250,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
       </View>
       {done ? (
         <View style={{ marginTop: spacing.sm }}>
-          {!ok ? <Text variant="caption" color={colors.textMuted}>Doğrusu: <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
+          {!ok ? <Text variant="caption" color={colors.textMuted}>{tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
           {t.hint ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t.hint}</Text> : null}
         </View>
       ) : null}

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t as tx, targetLangName } from "../lib/i18n";
+import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { currentTargetLang } from "../lib/courses";
 import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -164,7 +164,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
         <Mascot mood={ok ? "thumbsup" : "sad"} size={44} />
         <View style={{ flex: 1 }}>
           <Text variant="body" style={{ lineHeight: 21 }}>
-            <Text variant="body" color={tone} style={{ fontWeight: "800" }}>{ok ? "Doğru! " : "Doğrusu: "}</Text>
+            <Text variant="body" color={tone} style={{ fontWeight: "800" }}>{tx(ok ? "rounds.correct_excl" : "rounds.answer_is")}</Text>
             {data.answerDe ? <Text variant="body" color={colors.text} style={{ fontWeight: "800" }}>{data.answerDe}</Text> : null}
             {data.tr ? <Text variant="body" color={colors.textMuted}>{`  ·  ${data.tr}`}</Text> : null}
             {data.note ? <Text variant="body" color={colors.text} style={{ fontWeight: "800" }}>{data.note}</Text> : null}
@@ -232,7 +232,7 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint }: { text: s
   }, [state]);
   return (
     <Animated.View style={{ transform: [{ translateX: shake }, { scale: pop }] }}>
-      <PressableScale onPress={onPress} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ disabled: state !== "idle", selected: state !== "idle" }} accessibilityHint={state === "correct" ? "Doğru cevap" : state === "wrong" ? "Yanlış cevap" : undefined}
+      <PressableScale onPress={onPress} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ disabled: state !== "idle", selected: state !== "idle" }} accessibilityHint={state === "correct" ? tx("rounds.a11y_correct") : state === "wrong" ? tx("rounds.a11y_wrong") : undefined}
         style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
         <View style={{ flex: 1 }}>
           <Text variant="bodyStrong" color={fg}>{text}</Text>
@@ -264,7 +264,7 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   }
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
-      <Prompt label={deSide ? "Türkçesi?" : "Almancası?"} big={question} speakText={deSide ? question : null} sub={!deSide ? word.en : null} colors={colors} />
+      <Prompt label={deSide ? tx("rounds.ask_native", { anadil: nativeLangName() }) : tx("rounds.ask_target", { hedef: targetLangName() })} big={question} speakText={deSide ? question : null} sub={!deSide ? word.en : null} colors={colors} />
       <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
         {(round.options ?? []).map((o) => {
@@ -318,7 +318,7 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
       <Prompt label={tx("rounds.dogru_mu")} big={withArtikel(word)} speakText={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />
       <MascotMid mood={ans !== null ? (ans === round.isTrue ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
-        {[{ v: true, l: "Doğru" }, { v: false, l: "Yanlış" }].map(({ v, l }) => {
+        {[{ v: true, l: tx("common.correct") }, { v: false, l: tx("common.wrong") }].map(({ v, l }) => {
           const st = ans !== null ? (v === round.isTrue ? "correct" : v === ans ? "wrong" : "idle") : "idle";
           return <View key={l} style={{ flex: 1 }}><OptionButton text={l} state={st} onPress={() => choose(v)} colors={colors} /></View>;
         })}
@@ -472,7 +472,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   );
   return (
     <RoundShell footer={footer}>
-      <Prompt label={round.game === "intro" ? "Yeni kelime" : "Hatırla"} big={withArtikel(word)} speakText={withArtikel(word)} sub={round.sentence ?? null} colors={colors} />
+      <Prompt label={tx(round.game === "intro" ? "rounds.new_word" : "rounds.recall")} big={withArtikel(word)} speakText={withArtikel(word)} sub={round.sentence ?? null} colors={colors} />
       {reveal ? (
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
           <Text variant="h3">{meaningLine(word)}</Text>

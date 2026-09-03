@@ -154,7 +154,7 @@ export function LessonScreen() {
     if (ok) {
       haptic("correct");
       setCorrect((c) => c + 1);
-      push({ role: "teacher", segments: [{ lang: "tr", text: PRAISE[correct % PRAISE.length] }] });
+      push({ role: "teacher", segments: [{ lang: "tr", text: tx(PRAISE_KEYS[correct % PRAISE_KEYS.length]) }] });
       speakTarget(expect.target);
       setTimeout(advance, 500);
     } else {
@@ -162,7 +162,7 @@ export function LessonScreen() {
       const t = tries + 1;
       setTries(t);
       if (t >= 3) {
-        push({ role: "teacher", segments: [{ lang: "tr", text: "Doğrusu:" }, { lang: "de", text: expect.target }], tone: "hint" });
+        push({ role: "teacher", segments: [{ lang: "tr", text: tx("common.answer_is") }, { lang: "de", text: expect.target }], tone: "hint" });
         speakTarget(expect.target);
         setTimeout(advance, 900);
       } else if (expect.hint?.length) {
@@ -176,7 +176,7 @@ export function LessonScreen() {
     if (expect?.kind !== "truefalse" || answered) return;
     setAnswered(true);
     const ok = pick === expect.answer;
-    push({ role: "student", text: pick ? "Doğru" : "Yanlış", ok });
+    push({ role: "student", text: tx(pick ? "common.correct" : "common.wrong"), ok });
     haptic(ok ? "correct" : "wrong");
     if (ok) setCorrect((c) => c + 1);
     push({ role: "teacher", segments: expect.why, tone: "why" });
@@ -191,7 +191,7 @@ export function LessonScreen() {
     void clearLessonResume(lesson.id);
     const opening = lesson.roleplay.opening;
     setFeed([]);
-    push({ role: "teacher", segments: [{ lang: "tr", text: `Konuşma: ${lesson.roleplay.scene}` }] });
+    push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.scene", { sahne: lesson.roleplay.scene }) }] });
     if (opening) {
       push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(lesson.roleplay.openingTr ? [{ lang: "tr" as const, text: lesson.roleplay.openingTr }] : [])] });
       setRoleMsgs([{ role: "assistant", content: opening }]);
@@ -222,7 +222,7 @@ export function LessonScreen() {
       setSuggestions(parsed.suggestions);
       if (bodyText) speakTarget(bodyText);
     } catch {
-      push({ role: "teacher", segments: [{ lang: "tr", text: "[Bağlantı sorunu — tekrar dener misin?]" }], tone: "hint" });
+      push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.connection_problem") }], tone: "hint" });
     } finally {
       setBusy(false);
       scrollDown();
@@ -278,7 +278,7 @@ export function LessonScreen() {
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{lesson.title}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>
-            {phase === "lecture" ? "Anlatım" : phase === "roleplay" ? "Konuşma pratiği" : "Özet"} · {lesson.titleTr}
+            {tx(phase === "lecture" ? "lesson.phase_lecture" : phase === "roleplay" ? "lesson.phase_roleplay" : "lesson.phase_summary")} · {lesson.titleTr}
           </Text>
         </View>
       </View>
@@ -353,7 +353,8 @@ export function LessonScreen() {
   );
 }
 
-const PRAISE = ["Çok iyi!", "Harika!", "Süper!", "Çok güzel söyledin!", "Mükemmel!"];
+/** Övgü satırları — t() çağrı anında (dil modül yüklenirken hazır değil). */
+const PRAISE_KEYS = ["lesson.praise_1", "lesson.praise_2", "lesson.praise_3", "lesson.praise_4", "lesson.praise_5"];
 
 function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onReport?: (r: ReportRef) => void }) {
   if (b.role === "student") {
@@ -378,7 +379,7 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
         </Text>
         {b.fix?.length ? (
           <View style={{ marginTop: 8, gap: 2, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: 6 }}>
-            {b.fix.map((f, i) => <Text key={i} variant="micro" color={colors.textMuted}>Düzeltme: {f}</Text>)}
+            {b.fix.map((f, i) => <Text key={i} variant="micro" color={colors.textMuted}>{tx("lesson.fix", { metin: f })}</Text>)}
           </View>
         ) : null}
       </View>
@@ -480,7 +481,7 @@ function RoleplayControls({ input, setInput, busy, onSend, suggestions, onSugges
       {ready ? (
         <BigButton label={tx("lesson.konusmayi_bitir_ozet")} onPress={onFinish} tint={colors.success} colors={colors} />
       ) : (
-        <Text variant="caption" color={colors.textMuted}>Konuşmayı sürdür · {turns}/{minTurns} tur</Text>
+        <Text variant="caption" color={colors.textMuted}>{tx("lesson.keep_talking", { n: turns, hedef: minTurns })}</Text>
       )}
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
         <TextInput value={input} onChangeText={setInput} editable={!busy} placeholder={tx("lesson.hedef_dilde_yaz", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}

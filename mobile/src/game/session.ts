@@ -92,19 +92,23 @@ export async function fetchSession(day = todayStr(), opts?: { extra?: boolean; w
   return api<SessionPayload>(`/api/session?day=${day}${q}`);
 }
 
-/** Tek-oyun pratiğinde oynanabilecek türler (web PLAYABLE_GAMES ile aynı) + Türkçe adlar. */
+/**
+ * Tek-oyun pratiğinde oynanabilecek türler (web PLAYABLE_GAMES ile aynı).
+ * Etiket ANAHTAR tutuyor: sabit dizi modül yüklenirken kurulur ve o an dil tercihi
+ * (loadLang) henüz okunmamış olur — t() burada çağrılsaydı adlar Türkçe donardı.
+ */
 export const PRACTICE_GAMES: { game: string; label: string }[] = [
-  { game: "choice", label: "Doğru Anlam" },
-  { game: "artikel", label: "Artikel Yarışı" },
-  { game: "cloze", label: "Cümleyi Tamamla" },
-  { game: "typing", label: "Yazarak Hatırla" },
-  { game: "listen", label: "Kulaktan Tanı" },
-  { game: "truefalse", label: "Doğru mu Yanlış mı" },
-  { game: "match", label: "Eşleştirme" },
-  { game: "scramble", label: "Harf Bulmacası" },
-  { game: "order", label: "Cümleyi Diz" },
-  { game: "plural", label: "Çoğul Bilmece" },
-  { game: "translate", label: "Çevir" },
+  { game: "choice", label: "games.choice" },
+  { game: "artikel", label: "games.artikel" },
+  { game: "cloze", label: "games.cloze" },
+  { game: "typing", label: "games.typing" },
+  { game: "listen", label: "games.listen" },
+  { game: "truefalse", label: "games.truefalse" },
+  { game: "match", label: "games.match" },
+  { game: "scramble", label: "games.scramble" },
+  { game: "order", label: "games.order" },
+  { game: "plural", label: "games.plural" },
+  { game: "translate", label: "games.translate" },
 ];
 
 /**

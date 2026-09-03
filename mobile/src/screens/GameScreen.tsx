@@ -37,7 +37,8 @@ export function GameScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const route = useRoute<RouteProp<RootStackParams, "Game">>();
   const onlyGame = route.params?.game ?? null;
-  const gameLabel = onlyGame ? PRACTICE_GAMES.find((g) => g.game === onlyGame)?.label ?? null : null;
+  const gameKey = onlyGame ? PRACTICE_GAMES.find((g) => g.game === onlyGame)?.label ?? null : null;
+  const gameLabel = gameKey ? t(gameKey) : null;
   const [phase, setPhase] = useState<Phase>("loading");
   const [rounds, setRounds] = useState<Round[]>([]);
   const [idx, setIdx] = useState(0);

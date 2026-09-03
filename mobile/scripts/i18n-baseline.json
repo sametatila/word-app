@@ -1,14 +1,10 @@
 {
-  "total": 306,
+  "total": 261,
   "files": {
     "src/data/demoPlacement.ts": 13,
     "src/data/words.ts": 2,
     "src/game/immersionQuiz.ts": 41,
     "src/game/immersionTrack.ts": 44,
-    "src/game/rounds.tsx": 9,
-    "src/game/session.ts": 11,
-    "src/game/skillQuiz.tsx": 7,
-    "src/game/why.ts": 4,
     "src/lib/auth.ts": 6,
     "src/lib/courses.ts": 7,
     "src/lib/googleAuth.ts": 4,
@@ -26,7 +22,6 @@
     "src/screens/GameScreen.tsx": 5,
     "src/screens/ItemScreen.tsx": 5,
     "src/screens/LearnScreen.tsx": 5,
-    "src/screens/LessonScreen.tsx": 14,
     "src/screens/NotificationsScreen.tsx": 4,
     "src/screens/PathScreen.tsx": 8,
     "src/screens/PlacementScreen.tsx": 4,
