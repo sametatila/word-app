@@ -13,10 +13,11 @@ import { useTheme, spacing, radii } from "../theme";
 import type { Palette } from "../theme/colors";
 import { Pill, ScreenHeader } from "../social/common";
 
+/** Görünürlük seçenekleri — anahtar tutar, çeviri render sırasında çözülür. */
 const VIS: { key: Visibility; label: string; sub: string }[] = [
-  { key: "public", label: "Herkese açık", sub: "Profil ve kilometre taşları herkese görünür" },
-  { key: "friends", label: "Arkadaşlar", sub: "İstatistik ve akış yalnız arkadaşlarına" },
-  { key: "private", label: "Gizli", sub: "Yalnız adın; aramada tam kullanıcı adıyla" },
+  { key: "public", label: "socialsettings.vis_public", sub: "socialsettings.vis_public_sub" },
+  { key: "friends", label: "social.tab_friends", sub: "socialsettings.vis_friends_sub" },
+  { key: "private", label: "socialsettings.vis_private", sub: "socialsettings.vis_private_sub" },
 ];
 
 /** Ayarlar ekranındaki Section: caption büyük-harf başlık + kart. */
@@ -88,10 +89,10 @@ export function SocialSettingsScreen() {
             <Section title={tx("socialsettings.kullanici_adi")} colors={colors}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
                 <TextInput value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={20} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.kullaniciadi")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
-                <Pill label={tx("common.kaydet")} small disabled={busy || username.trim() === me.username || me.usernameChangeAvailableIn > 0} onPress={() => void save({ username: username.trim() }, "Kullanıcı adı güncellendi")} />
+                <Pill label={tx("common.kaydet")} small disabled={busy || username.trim() === me.username || me.usernameChangeAvailableIn > 0} onPress={() => void save({ username: username.trim() }, tx("socialsettings.username_updated"))} />
               </View>
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>3-20 karakter; küçük harf, rakam, alt çizgi. {me.usernameChangeAvailableIn > 0 ? `${me.usernameChangeAvailableIn} gün sonra değiştirilebilir.` : "14 günde bir değişir."}</Text>
-              <Text variant="caption" color={colors.textMuted}>Profil bağlantın: /u/{me.username}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("socialsettings.username_rule")} {me.usernameChangeAvailableIn > 0 ? tx("socialsettings.username_wait", { n: me.usernameChangeAvailableIn }) : tx("socialsettings.username_cooldown")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.profile_link", { yol: `/u/${me.username}` })}</Text>
             </Section>
 
             <Section title={tx("socialsettings.kisa_tanitim")} colors={colors}>
@@ -108,8 +109,8 @@ export function SocialSettingsScreen() {
                 return (
                   <PressableScale key={v.key} onPress={() => void save({ visibility: v.key })} disabled={busy} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                     <View style={{ flex: 1 }}>
-                      <Text variant="bodyStrong" color={active ? colors.primary : colors.text}>{v.label}</Text>
-                      <Text variant="caption" color={colors.textMuted}>{v.sub}</Text>
+                      <Text variant="bodyStrong" color={active ? colors.primary : colors.text}>{tx(v.label)}</Text>
+                      <Text variant="caption" color={colors.textMuted}>{tx(v.sub)}</Text>
                     </View>
                     <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                       {active ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: colors.primary }} /> : null}
@@ -120,17 +121,17 @@ export function SocialSettingsScreen() {
             </Section>
 
             <Section title={tx("socialsettings.izinler")} colors={colors}>
-              {toggle("Arkadaşlık isteği kabul et", "Kapalıysa seni kimse ekleyemez; sen ekleyebilirsin", me.allowRequests, (v) => void save({ allowRequests: v }), true)}
-              {toggle("Önerilerde görün", "Ortak arkadaşı olanlara ve aynı seviyedekilere önerilirsin", me.showInSuggestions, (v) => void save({ showInSuggestions: v }))}
-              {toggle("Kilometre taşlarımı paylaş", "Seri, rozet ve görev haberlerin arkadaşlarının akışına düşer", me.showActivity, (v) => void save({ showActivity: v }))}
+              {toggle(tx("socialsettings.perm_requests"), tx("socialsettings.perm_requests_sub"), me.allowRequests, (v) => void save({ allowRequests: v }), true)}
+              {toggle(tx("socialsettings.perm_suggest"), tx("socialsettings.perm_suggest_sub"), me.showInSuggestions, (v) => void save({ showInSuggestions: v }))}
+              {toggle(tx("socialsettings.perm_activity"), tx("socialsettings.perm_activity_sub"), me.showActivity, (v) => void save({ showActivity: v }))}
             </Section>
 
-            <Section title="ENGELLENENLER" colors={colors}>
+            <Section title={tx("socialsettings.blocked_title")} colors={colors}>
               {blocked === null ? <SkeletonLine variant="caption" width="60%" /> : blocked.length ? blocked.map((b, i) => (
                 <View key={b.userId} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                   <PersonAvatar userId={b.userId} name={b.name} size={36} />
                   <View style={{ flex: 1 }}>
-                    <Text variant="bodyStrong" numberOfLines={1}>{b.name ?? "İsimsiz"}</Text>
+                    <Text variant="bodyStrong" numberOfLines={1}>{b.name ?? tx("social.unnamed_short")}</Text>
                     {b.username ? <Text variant="caption" color={colors.textMuted}>@{b.username}</Text> : null}
                   </View>
                   <Pill label={tx("socialsettings.kaldir")} small tone="ghost" disabled={busy} onPress={() => { setBusy(true); social.unblock(b.userId).then(() => setBlocked((p) => (p ?? []).filter((x) => x.userId !== b.userId))).catch((e) => setMsg(errorText(e))).finally(() => setBusy(false)); }} />

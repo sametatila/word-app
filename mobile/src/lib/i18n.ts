@@ -163,6 +163,13 @@ export function useLang(): NativeLang {
  * yerine "{lang} karşılığını yaz"): ek uyumu dile göre değişiyor
  * (Almanca+sını / İngilizce+sini) ve yer tutucuyla doğru üretilemez.
  */
+/** Arayüz dilinin kendi adı — "{anadil} ipucunu duyacaksın" gibi metinler için. */
+const NATIVE_LANG_NAMES: Record<NativeLang, string> = { tr: "Türkçe", en: "English", de: "Deutsch" };
+
+export function nativeLangName(): string {
+  return NATIVE_LANG_NAMES[lang];
+}
+
 export function targetLangName(): string {
   return courseOrDefault(currentCourseId()).label[currentLang()];
 }

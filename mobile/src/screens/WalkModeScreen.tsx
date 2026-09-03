@@ -16,6 +16,7 @@ import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeReady } from "../lib/ttsBridge";
 import { TURKISH_VOICE } from "../lib/voices";
+import { nativeLangName, targetLangName } from "../lib/i18n";
 import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
@@ -460,7 +461,7 @@ export function WalkModeScreen() {
   const reveal = phase === "judging" || teaching; // Almanca göster: cevap açılınca veya öğretirken
   const listening = phase === "listening";
   const dotColor = verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primary : colors.surface2;
-  const stepLabel = teaching ? "Yeni kelime" : phase === "speaking" ? "İpucu okunuyor…" : phase === "listening" ? "Şimdi Almancasını söyle" : verdict === "unheard" ? "Duyamadım" : verdict === "skip" ? "Atlandı" : verdict === "correct" ? "Doğru!" : verdict === "wrong" ? "Doğrusu" : "";
+  const stepLabel = teaching ? tx("walkmode.step_new_word") : phase === "speaking" ? tx("walkmode.step_hint") : phase === "listening" ? tx("walkmode.step_say_now", { hedef: targetLangName() }) : verdict === "unheard" ? tx("walkmode.step_unheard") : verdict === "skip" ? tx("walkmode.step_skipped") : verdict === "correct" ? tx("walkmode.step_correct") : verdict === "wrong" ? tx("walkmode.step_answer") : "";
   // Sayaç SORU (speak) turlarını gösterir; intro (öğretme) turları soru değil — done (tally) ile tutarlı.
   const speakTotal = rounds.filter((r) => r.kind === "speak").length || rounds.length;
   const speakStep = Math.min(speakTotal, rounds.slice(0, idx).filter((r) => r.kind === "speak").length + (rounds[idx]?.kind === "speak" ? 1 : 0));
@@ -494,7 +495,7 @@ export function WalkModeScreen() {
             <Mascot mood="wave" size={120} />
             <Text variant="display" style={{ textAlign: "center" }}>{tx("walkmode.dinle_ve_soyle")}</Text>
             <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>
-              Türkçe ipucunu duyacaksın, sen Almancasını söyleyeceksin. Yeni kelimeyi önce birlikte öğreniriz. Yürürken, otururken — ekrana bakmadan.
+              {tx("walkmode.intro_text", { anadil: nativeLangName(), hedef: targetLangName() })}
             </Text>
             <PressableScale onPress={() => { void beginWalk(); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color="#fff">{tx("common.basla")}</Text>
@@ -517,9 +518,9 @@ export function WalkModeScreen() {
               <Text variant="display" color={colors.primary}>{tally.correct}/{tally.total || 0}</Text>
               <Text variant="micro" color={colors.textMuted}>{tx("walkmode.dogru")}</Text>
             </ProgressRing>
-            <Text variant="h1" style={{ marginTop: spacing.xl }}>{noMore ? "Bugünlük bu kadar" : "Tur bitti!"}</Text>
+            <Text variant="h1" style={{ marginTop: spacing.xl }}>{tx(noMore ? "walkmode.done_no_more" : "walkmode.done_title")}</Text>
             <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
-              {noMore ? "Şu an tekrar edilecek kelime yok — yarın yeniden gel." : "İlerlemen kaydedildi."}
+              {tx(noMore ? "walkmode.done_no_more_sub" : "walkmode.done_saved")}
             </Text>
             {!noMore && (
               <PressableScale onPress={newTour} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">{tx("walkmode.devam_et")}</Text></PressableScale>
@@ -573,7 +574,7 @@ export function WalkModeScreen() {
             <View style={{ alignItems: "center" }}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: (teaching ? colors.primary : colors.info) + "1e", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7 }}>
                 <WalkIcon color={teaching ? colors.primary : colors.info} size={15} />
-                <Text variant="caption" color={teaching ? colors.primary : colors.info}>{teaching ? "Yeni kelime öğreniyoruz" : "Yürürken çalış · ekrana bakmadan"}</Text>
+                <Text variant="caption" color={teaching ? colors.primary : colors.info}>{tx(teaching ? "walkmode.badge_teaching" : "walkmode.badge_walking")}</Text>
               </View>
             </View>
 
@@ -597,7 +598,7 @@ export function WalkModeScreen() {
 
               <View style={{ alignItems: "center", gap: 4, minHeight: 46 }}>
                 <Text variant="bodyStrong" color={verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primary : colors.textMuted}>{stepLabel}</Text>
-                {heard ? <Text variant="caption" color={verdict === "correct" ? colors.success : colors.danger}>duyduğum: “{heard}”</Text> : null}
+                {heard ? <Text variant="caption" color={verdict === "correct" ? colors.success : colors.danger}>{tx("walkmode.heard", { metin: heard })}</Text> : null}
               </View>
             </View>
 
@@ -630,9 +631,9 @@ export function WalkModeScreen() {
       <ConfirmDialog
         visible={back.visible}
         title={tx("walkmode.yuruyusu_bitir")}
-        message="Bu tur yarım kalır; öğrendiklerin kaydedilir."
-        confirmLabel="Bitir"
-        cancelLabel="Devam et"
+        message={tx("walkmode.back_message")}
+        confirmLabel={tx("common.bitir")}
+        cancelLabel={tx("common.devam_et")}
         destructive
         onConfirm={() => { back.cancel(); stopAndLeave(); }}
         onCancel={back.cancel}
