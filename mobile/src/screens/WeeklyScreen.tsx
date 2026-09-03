@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, ActivityIndicator } from "react-native";
+import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -15,6 +15,7 @@ import { todayStr } from "../game/session";
 import type { Round, AnswerOut } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
+import { RoundSkeleton } from "../game/RoundSkeleton";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { sfx } from "../lib/sfx";
 
@@ -97,9 +98,7 @@ export function WeeklyScreen() {
 
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
 
-  if (phase === "loading" || phase === "submitting") {
-    return <View style={[pad, { alignItems: "center", justifyContent: "center" }]}><ActivityIndicator size="large" color={colors.primary} /><Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{phase === "submitting" ? "Sonucun işleniyor..." : "Haftalık sınav yükleniyor..."}</Text></View>;
-  }
+  if (phase === "loading" || phase === "submitting") return <RoundSkeleton />;
 
   if (phase === "auth") {
     return (

@@ -8,6 +8,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon } from "../ui/icons";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
+import { RoundSkeleton } from "../game/RoundSkeleton";
 import { DEMO_PLACEMENT, estimateLevel } from "../data/demoPlacement";
 import {
   startPlacement,
@@ -130,14 +131,7 @@ export function PlacementScreen() {
     );
   }
 
-  if (loading) {
-    return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center" }}>
-        <ActivityIndicator color={colors.primary} />
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("placement.seviye_testin_hazirlaniyor")}</Text>
-      </View>
-    );
-  }
+  if (loading) return <RoundSkeleton label />;
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>

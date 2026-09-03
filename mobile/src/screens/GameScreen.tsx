@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, ActivityIndicator } from "react-native";
+import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -19,6 +19,7 @@ import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
+import { RoundSkeleton } from "../game/RoundSkeleton";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
@@ -163,9 +164,7 @@ export function GameScreen() {
 
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
 
-  if (phase === "loading") {
-    return <View style={[pad, { alignItems: "center", justifyContent: "center" }]}><ActivityIndicator size="large" color={colors.primary} /><Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{t("game.turun_hazirlaniyor")}</Text></View>;
-  }
+  if (phase === "loading") return <RoundSkeleton label={!!gameLabel} />;
 
   if (phase === "auth") {
     return (
