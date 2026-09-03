@@ -98,6 +98,19 @@ export function PathScreen() {
     );
   }
 
+  // Ders paketi olmayan kursta ünite üretilemez (bkz. data/lessons). Sessizce boş
+  // bir Patika göstermek yerine sebebi ve çalışan yolları söylüyoruz.
+  if (!path.units.length) {
+    return (
+      <Screen>
+        <AppHeader title={t("path.patika")} />
+        <Card padded style={{ marginTop: spacing.lg }}>
+          <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("path.no_units")}</Text>
+        </Card>
+      </Screen>
+    );
+  }
+
   const featured = path.units.find((u) => u.index === path.currentIndex) ?? path.units[0];
   const pctAll = path.totalUnits ? Math.round((path.doneUnits / path.totalUnits) * 100) : 0;
 

@@ -352,6 +352,7 @@ export const de: Record<string, string> = {
   "path.finish_previous": "Beende zuerst die vorherige Einheit",
   "path.lessons_done": "{n}/{toplam} Lektionen",
   "path.next": "ALS NÄCHSTES · {tur}",
+  "path.no_units": "Für diesen Kurs gibt es noch keinen Lektionspfad; Wortrunden und Gehmodus sind verfügbar.",
   "path.now": "JETZT",
   "path.patika": "Pfad",
   "path.progress_local": " · Fortschritt auf diesem Gerät",
