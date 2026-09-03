@@ -4,7 +4,7 @@ import { View, Modal, Pressable } from "react-native";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { CheckIcon } from "./icons";
-import { REPORT_REASONS, sendReport, type ReportKind, type ReportReason } from "../lib/report";
+import { reasonsFor, sendReport, type ReportKind, type ReportReason } from "../lib/report";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 /**
@@ -45,7 +45,7 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
               <Text variant="h2">{t("reportsheet.bu_icerigi_bildir")}</Text>
               <Text variant="caption" color={colors.textMuted}>{t("reportsheet.yapay_zeka_yaniti_sana_uygunsuz_ya")}</Text>
               <View style={{ gap: spacing.xs, marginTop: spacing.sm }}>
-                {REPORT_REASONS.map((r) => {
+                {reasonsFor(kind).map((r) => {
                   const active = reason === r.key;
                   return (
                     <PressableScale key={r.key} onPress={() => setReason(r.key)} accessibilityRole="radio" accessibilityState={{ selected: active }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10, paddingHorizontal: spacing.md, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>

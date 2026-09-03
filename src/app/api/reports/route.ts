@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
  *   POST { kind, ref, reason, content }
  *     kind    "roleplay" | "assessment"   (ileride "user" — lider tablosu adı)
  *     ref     roleplay: "<lessonId>:<turn>" · assessment: kayıt kimliği
- *     reason  "inappropriate" | "offensive" | "wrong" | "other"
+ *     reason  "inappropriate" | "offensive" | "wrong" | "impersonation" | "other"
  *     content bildirilen metin (≤ 4000 karakter) — roleplay_logs 30 günde silindiği
  *             için metin burada da saklanır; inceleme kaydın süresine bağlı kalmaz.
  *
@@ -22,7 +22,7 @@ export const dynamic = "force-dynamic";
  * okur. Günde kullanıcı başına 20 bildirim (kötüye kullanım sınırı).
  */
 const KINDS = new Set(["roleplay", "assessment", "user"]);
-const REASONS = new Set(["inappropriate", "offensive", "wrong", "other"]);
+const REASONS = new Set(["inappropriate", "offensive", "wrong", "impersonation", "other"]);
 const DAILY_LIMIT = 20;
 const MAX_CONTENT = 4000;
 

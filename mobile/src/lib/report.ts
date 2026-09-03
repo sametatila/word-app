@@ -5,15 +5,22 @@ import { api } from "../api/client";
  * politikası: kullanıcı rahatsız edici bir yapay zekâ yanıtını uygulamadan çıkmadan
  * bildirebilmeli. Kayıt yönetim panosunda insan tarafından okunur.
  */
-export type ReportKind = "roleplay" | "assessment";
-export type ReportReason = "inappropriate" | "offensive" | "wrong" | "other";
+export type ReportKind = "roleplay" | "assessment" | "user";
+export type ReportReason = "inappropriate" | "offensive" | "wrong" | "impersonation" | "other";
 
-export const REPORT_REASONS: { key: ReportReason; label: string; sub: string }[] = [
+const AI_REASONS: { key: ReportReason; label: string; sub: string }[] = [
   { key: "inappropriate", label: "Uygunsuz içerik", sub: "Cinsel, şiddet içeren ya da yasa dışı" },
   { key: "offensive", label: "Rahatsız edici", sub: "Hakaret, aşağılama, nefret söylemi" },
   { key: "wrong", label: "Yanlış bilgi", sub: "Dil bilgisi ya da içerik olarak hatalı" },
   { key: "other", label: "Başka bir şey", sub: "Yukarıdakilere uymuyor" },
 ];
+const USER_REASONS: { key: ReportReason; label: string; sub: string }[] = [
+  { key: "inappropriate", label: "Uygunsuz ad", sub: "Cinsel, şiddet içeren ya da yasa dışı" },
+  { key: "offensive", label: "Hakaret ya da nefret", sub: "Aşağılayıcı, ayrımcı ifade" },
+  { key: "impersonation", label: "Kimliğe bürünme", sub: "Başkasının ya da bir markanın adı" },
+  { key: "other", label: "Başka bir şey", sub: "Yukarıdakilere uymuyor" },
+];
+export function reasonsFor(kind: ReportKind) { return kind === "user" ? USER_REASONS : AI_REASONS; }
 
 export async function sendReport(kind: ReportKind, ref: string, reason: ReportReason, content: string): Promise<boolean> {
   try {

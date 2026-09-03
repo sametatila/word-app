@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, FlatList, ScrollView, ActivityIndicator } from "react-native";
+import { View, FlatList, ScrollView, ActivityIndicator, Pressable } from "react-native";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
+import { ReportSheet } from "../ui/ReportSheet";
 import { ArrowBackIcon, FlameIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
@@ -24,6 +25,7 @@ export function LeaderboardScreen() {
   const [week, setWeek] = useState<LeaderboardWeek | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
   const [attempt, setAttempt] = useState(0);
+  const [report, setReport] = useState<LeaderboardRow | null>(null); // basılı tutulan satır (UGC bildirimi)
   // Herkes | Arkadaşlar — aynı hafta, iki küme. Arkadaş tablosu sosyal API'den.
   const [mode, setMode] = useState<"all" | "friends">("all");
 
@@ -84,7 +86,7 @@ export function LeaderboardScreen() {
           const mc = medalColor(r.rank, colors);
           const initial = ((r.name ?? "?").trim()[0] ?? "?").toUpperCase();
           return (
-            <View style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 12, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
+            <Pressable onLongPress={r.isMe ? undefined : () => setReport(r)} delayLongPress={400} accessibilityLabel={r.isMe ? undefined : `${r.name ?? "Öğrenci"}, bildirmek için basılı tut`} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 12, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
               <View style={{ width: 30, alignItems: "center" }}>
                 <Text variant="h3" color={mc}>{r.rank}</Text>
               </View>
@@ -100,11 +102,12 @@ export function LeaderboardScreen() {
               </View>
               <Text variant="h3" color={r.isMe ? colors.primary : colors.text}>{String(r.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</Text>
               <Text variant="micro" color={colors.textMuted}>XP</Text>
-            </View>
+            </Pressable>
           );
         }}
       />
       )}
+      <ReportSheet visible={!!report} kind="user" refId={report?.userId ?? ""} content={report?.name ?? ""} onClose={() => setReport(null)} />
     </View>
   );
 }

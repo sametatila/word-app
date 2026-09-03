@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { displayNameAllowed } from "@/lib/moderation";
 import { acceptsCourse } from "@/lib/courses";
 import { resolveVoice } from "@/lib/tts/voices";
 import { eq, sql } from "drizzle-orm";
@@ -51,7 +52,10 @@ export async function POST(req: Request) {
   if (typeof body.displayName === "string") {
     const name = body.displayName.trim().replace(/\s+/g, " ");
     if (name.length < 2) return NextResponse.json({ error: "name_required" }, { status: 400 });
-    patch.displayName = name.slice(0, 60);
+    // Görünen ad başkalarına görünür (sıralama, arkadaşlar): bağlantı, e-posta, kontrol
+    // karakteri ve küfür kabul edilmez (Play UGC: başkalarına görünen metin için moderasyon).
+    if (!displayNameAllowed(name)) return NextResponse.json({ error: "name_invalid" }, { status: 400 });
+    patch.displayName = name.slice(0, 40);
   }
   if (typeof body.dailyGoal === "number") patch.dailyGoal = clampInt(body.dailyGoal, 5, 120);
   if (typeof body.goal === "string" && ["work", "daily", "exam", "swiss"].includes(body.goal)) patch.goal = body.goal;
