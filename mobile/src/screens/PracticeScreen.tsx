@@ -9,6 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, BoltIcon, QuizIcon, GrammarIcon, WriteIcon, ListenIcon, CheckIcon, SkillsIcon, LearnIcon, ReadIcon, ArrowRightIcon } from "../ui/icons";
+import { Skeleton } from "../ui/Skeleton";
 import { practiceGamesFor } from "../game/session";
 import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -34,7 +35,7 @@ export function PracticeScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   // Tek-oyun listesi kursa göre eleniyor: artikel/çoğul yalnız artikelli
   // dillerde anlamlı (bkz. game/session.ts practiceGamesFor).
-  const { me } = useMe();
+  const { me, loading: meLoading } = useMe();
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -66,8 +67,12 @@ export function PracticeScreen() {
         </PressableScale>
 
         <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, textTransform: "uppercase", letterSpacing: 1 }}>{t("practice.tek_oyun")}</Text>
+        {/* Oyun listesi kursa bağlı: kurs bilinmeden çizilirse karo sayısı
+            sonradan değişip ızgara boyunu oynatıyor. Önce aynı boyda iskelet. */}
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
-          {practiceGamesFor(me?.course).map((g) => {
+          {meLoading ? [0, 1, 2, 3, 4, 5].map((i) => (
+            <Skeleton key={i} height={116} width="47.5%" radius={radii.xl} />
+          )) : practiceGamesFor(me?.course).map((g) => {
             const m = META[g.game] ?? { icon: (p: { color: string; size: number }) => <QuizIcon {...p} />, tint: "primary" as keyof Palette };
             const tint = colors[m.tint] as string;
             return (

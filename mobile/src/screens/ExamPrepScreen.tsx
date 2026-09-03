@@ -9,6 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, ReadIcon, ListenIcon, WriteIcon, BoltIcon, LockIcon } from "../ui/icons";
+import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { usePremium } from "../lib/usePremium";
 import { billingAvailable } from "../lib/billing";
@@ -35,14 +36,21 @@ export function ExamPrepScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [exam, setExam] = useState(0);
-  const { me } = useMe();
+  const { me, loading: meLoading } = useMe();
   // Mağaza entegrasyonu canlı değilken kilit yok: satın alınamayan bir şeyin arkasına
   // içerik saklanmaz (Play "bozuk işlevsellik"). Canlıysa premium modüller kilitli.
   const premium = usePremium() || !billingAvailable();
   // Misafirde yerleştirme sınavının belirlediği seviye (prefs); yoksa A1.
   const [guestLevel, setGuestLevel] = useState<string | null>(null);
-  useEffect(() => { if (!me) void loadOnboardingPrefs().then((p) => setGuestLevel(p.level ?? null)); }, [me]);
+  const [prefsRead, setPrefsRead] = useState(false);
+  useEffect(() => {
+    if (meLoading || me) return;
+    void loadOnboardingPrefs().then((p) => { setGuestLevel(p.level ?? null); setPrefsRead(true); });
+  }, [me, meLoading]);
   const level = me?.level ?? guestLevel ?? "A1";
+  // Modül listesi seviyeye bağlı: seviye kesinleşmeden çizilirse liste sonradan
+  // uzayıp kısalıyor. Kesinleşene dek aynı boyda iskelet durur.
+  const levelReady = !meLoading && (!!me || prefsRead);
   const overallPct = me && me.totalWords ? Math.min(100, Math.round((me.mastered / me.totalWords) * 100)) : null;
 
   function openModule(m: (typeof MODULES)[number]) {
@@ -73,12 +81,17 @@ export function ExamPrepScreen() {
               <Text variant="micro" color={colors.textMuted}>{t("examprep.seviye")}</Text>
               <Text variant="h1" color={colors.primary}>{level}</Text>
             </View>
-            {overallPct !== null && (
+            {meLoading ? (
+              <View style={{ alignItems: "flex-end" }}>
+                <SkeletonLine variant="micro" width={92} />
+                <SkeletonLine variant="h1" width={56} />
+              </View>
+            ) : overallPct !== null ? (
               <View style={{ alignItems: "flex-end" }}>
                 <Text variant="micro" color={colors.textMuted}>{t("examprep.kelime_kapsamasi")}</Text>
                 <Text variant="h1">%{overallPct}</Text>
               </View>
-            )}
+            ) : null}
           </View>
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
             {EXAMS.map((e, i) => {
@@ -94,7 +107,16 @@ export function ExamPrepScreen() {
 
         <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{t("examprep.moduller")}</Text>
         <View style={{ gap: spacing.md }}>
-          {MODULES.filter((m) => countFor(m) > 0).map((m) => {
+          {!levelReady ? [0, 1, 2].map((i) => (
+            <SkeletonCard key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+              <SkeletonTile size={48} />
+              <View style={{ flex: 1 }}>
+                <SkeletonLine variant="h3" width={92} />
+                <SkeletonLine variant="caption" width="62%" />
+              </View>
+              <SkeletonLine variant="h3" width={20} />
+            </SkeletonCard>
+          )) : MODULES.filter((m) => countFor(m) > 0).map((m) => {
             // İçeriği olmayan modül hiç çizilmez: çalışmayan "yakında" satırı yok.
             const tint = colors[m.tint as keyof Palette] as string;
             const n = countFor(m);

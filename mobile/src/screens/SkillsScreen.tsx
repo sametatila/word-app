@@ -9,6 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { AppHeader } from "../ui/AppHeader";
+import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
 import { ReadIcon, ListenIcon, WriteIcon, WalkIcon, ChevronRightIcon, CheckIcon, PathIcon } from "../ui/icons";
 import { useMe } from "../lib/useMe";
 import { listSkillMeta, type SkillMeta } from "../data/skills";
@@ -63,11 +64,18 @@ function SpeakingRow({ title, subtitle, icon: Icon, tint, onPress, colors }: { t
 export function SkillsScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const { me } = useMe();
+  const { me, loading: meLoading } = useMe();
   const [guestLevel, setGuestLevel] = useState<string | null>(null);
+  const [prefsRead, setPrefsRead] = useState(false);
   const [level, setLevel] = useState<string | null>(null);
-  useEffect(() => { if (!me) void loadOnboardingPrefs().then((p) => setGuestLevel(p.level ?? null)); }, [me]);
+  useEffect(() => {
+    if (meLoading || me) return;
+    void loadOnboardingPrefs().then((p) => { setGuestLevel(p.level ?? null); setPrefsRead(true); });
+  }, [me, meLoading]);
   const activeLevel = level ?? me?.level ?? guestLevel ?? "A1";
+  // Seviye bilinmeden liste çizilmez: A1 listesini gösterip A2'ye atlamak
+  // ekranı boyundan boyuna değiştiriyordu (kayan konteynerlerin kaynağı).
+  const levelReady = !!level || (!meLoading && (!!me || prefsRead));
 
   const lists = useMemo(
     () => SKILLS.map((s) => ({ ...s, items: listSkillMeta(activeLevel, s.key) })),
@@ -83,7 +91,37 @@ export function SkillsScreen() {
       <SpeakingRow title={t("skills.yuruyus_modu")} subtitle={t("skills.yuruyus_alt")} icon={WalkIcon} tint={colors.accent} onPress={() => nav.navigate("Walk")} colors={colors} />
       <SpeakingRow title={t("skills.ders_konusmasi")} subtitle={t("skills.ders_konusmasi_alt")} icon={PathIcon} tint={colors.primary} onPress={() => nav.navigate("Tabs")} colors={colors} />
 
-      {hasExercises ? (
+      {!levelReady ? (
+        <>
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.lg, marginBottom: spacing.sm, marginLeft: 4 }}>
+            <SkeletonLine variant="caption" width={54} />
+          </View>
+          <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
+            {LEVELS.map((l) => <Skeleton key={l} height={20 + textHeight("bodyStrong")} radius={radii.md} style={{ flex: 1 }} />)}
+          </View>
+          {SKILLS.map((s) => (
+            <View key={s.key} style={{ marginBottom: spacing.xl }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: 4 }}>
+                <Skeleton height={18} width={18} radius={9} />
+                <SkeletonLine variant="h3" width={92} />
+                <SkeletonLine variant="caption" width={74} />
+              </View>
+              <SkeletonCard padded style={{ paddingVertical: 4 }}>
+                {[0, 1, 2].map((i) => (
+                  <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderBottomWidth: i === 2 ? 0 : 1, borderBottomColor: colors.hairline }}>
+                    <Skeleton height={8} width={8} radius={4} />
+                    <View style={{ flex: 1 }}>
+                      <SkeletonLine variant="bodyStrong" width="70%" />
+                      <SkeletonLine variant="caption" width="40%" />
+                    </View>
+                    <Skeleton height={20} width={20} radius={10} />
+                  </View>
+                ))}
+              </SkeletonCard>
+            </View>
+          ))}
+        </>
+      ) : hasExercises ? (
         <>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.lg, marginBottom: spacing.sm, marginLeft: 4 }}>
             <Text variant="caption" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{t("skills.seviye")}</Text>
