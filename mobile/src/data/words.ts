@@ -1,6 +1,7 @@
 /**
- * "Kelimelerim" ekranı için demo kelime listesi (API'siz / misafir). Gerçek
- * liste authed'de /api/words'ten gelir. Durum SRS'ten türer: new/learning/mastered.
+ * "Kelimelerim" ekranının paylaşılan tipleri. Liste /api/words'ten gelir —
+ * burada veri YOK; misafir modu kalktığında demo liste de kaldırılmıştı ama
+ * bu başlık hâlâ onu anlatıyordu. Durum SRS'ten türer: new/learning/mastered.
  */
 export type WordStatus = "new" | "learning" | "mastered";
 export type WordRow = {
