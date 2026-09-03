@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, ScrollView, ActivityIndicator } from "react-native";
+import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, CheckIcon } from "../ui/icons";
+import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { fetchCando, type CandoData, type CandoItem } from "../game/cando";
 import { useTheme, spacing, radii, type Palette } from "../theme";
@@ -59,7 +60,36 @@ export function CandoScreen() {
         <Text variant="h2">{t("cando.neler_yapabilirim")}</Text>
       </View>
       {phase === "loading" ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}><ActivityIndicator color={colors.primary} /></View>
+        // İçeriğin şekli: seviye özeti kartı + iki grup listesi (spinner değil).
+        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+          <SkeletonCard style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
+            {[0, 1].map((i) => (
+              <View key={i} style={{ marginBottom: spacing.sm }}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 4 }}>
+                  <SkeletonLine variant="bodyStrong" width={28} />
+                  <SkeletonLine variant="caption" width={78} />
+                </View>
+                <SkeletonBar height={7} />
+              </View>
+            ))}
+          </SkeletonCard>
+          {[0, 1].map((g) => (
+            <View key={g} style={{ marginBottom: spacing.lg }}>
+              <SkeletonLine variant="caption" width={26} style={{ marginBottom: spacing.xs, marginLeft: 4 }} />
+              <SkeletonCard padded>
+                {[0, 1, 2, 3].map((i) => (
+                  <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10 }}>
+                    <SkeletonTile size={26} radius={13} />
+                    <View style={{ flex: 1 }}>
+                      <SkeletonLine variant="body" width="80%" />
+                      <SkeletonLine variant="micro" width="30%" />
+                    </View>
+                  </View>
+                ))}
+              </SkeletonCard>
+            </View>
+          ))}
+        </ScrollView>
       ) : phase === "error" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}><Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("cando.giris_yapip_ders_ve_alistirmalari_bitirdikce")}</Text></View>
       ) : (

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, ScrollView, ActivityIndicator } from "react-native";
+import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -8,6 +8,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ReportSheet } from "../ui/ReportSheet";
 import { ArrowBackIcon, WriteIcon } from "../ui/icons";
+import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { fetchWritings, type Writing } from "../game/writings";
 import { useTheme, spacing, radii, type Palette } from "../theme";
@@ -72,7 +73,21 @@ export function WritingsScreen() {
         <Text variant="h2">{t("writings.yazilarim")}</Text>
       </View>
       {phase === "loading" ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}><ActivityIndicator color={colors.primary} /></View>
+        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+          {[0, 1, 2, 3].map((i) => (
+            <SkeletonCard key={i} style={{ marginBottom: spacing.md }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+                <SkeletonTile size={48} />
+                <View style={{ flex: 1 }}>
+                  <SkeletonLine variant="bodyStrong" width="45%" />
+                  <SkeletonLine variant="caption" width="100%" />
+                  <SkeletonLine variant="caption" width="70%" />
+                </View>
+              </View>
+              <SkeletonLine variant="micro" width={72} style={{ marginTop: spacing.sm }} />
+            </SkeletonCard>
+          ))}
+        </ScrollView>
       ) : phase === "error" || (items && items.length === 0) ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
           <View style={{ width: 80, height: 80, borderRadius: 24, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}><WriteIcon color={colors.primary} size={36} /></View>

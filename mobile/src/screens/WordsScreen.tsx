@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, TextInput, FlatList, ActivityIndicator } from "react-native";
+import { View, TextInput, FlatList } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon } from "../ui/icons";
 import { SpeakButton } from "../ui/SpeakButton";
+import { Skeleton, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
 import { STATUS_LABEL, type WordRow, type WordStatus } from "../data/words";
@@ -88,7 +89,21 @@ export function WordsScreen() {
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={
           phase === "loading" ? (
-            <ActivityIndicator color={colors.primary} style={{ marginTop: spacing.xxl }} />
+            // Spinner yerine satır iskeleti: liste dolunca yükseklik değişmiyor.
+            <View style={{ gap: spacing.sm }}>
+              {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+                <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: 12 }}>
+                  <View style={{ flex: 1 }}>
+                    <SkeletonLine variant="bodyStrong" width="55%" />
+                    <SkeletonLine variant="caption" width="35%" />
+                  </View>
+                  <SkeletonTile size={34} radius={17} />
+                  <Skeleton height={textHeight("micro") + 4} width={30} radius={radii.sm} />
+                  <Skeleton height={9} width={9} radius={5} />
+                  <SkeletonLine variant="micro" width={40} />
+                </View>
+              ))}
+            </View>
           ) : phase === "error" ? (
             <View style={{ alignItems: "center", gap: spacing.md, marginTop: spacing.xxl }}>
               <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("words.yuklenemedi")}</Text>

@@ -9,7 +9,7 @@ import { social, errorText, notificationText, timeAgo, type NotificationView, ty
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { Skeleton } from "../ui/Skeleton";
+import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { UserPlusIcon, HandshakeIcon, BellIcon, TargetIcon, CheckIcon, FlameIcon, InboxIcon, LockIcon, ChevronRightIcon } from "../ui/icons";
@@ -66,7 +66,21 @@ export function InboxScreen() {
   const body = !user
     ? <EmptyCard icon={LockIcon} title={t("inbox.giris_gerekli")} text={t("inbox.bildirimler_hesabina_bagli")} action={t("inbox.giris_yap")} onAction={() => nav.navigate("Auth")} />
     : items === null
-      ? <Skeleton height={260} radius={26} />
+      ? (
+        // Gerçek listeyle aynı kap: tek kart, hairline satırlar (40'lık arma).
+        <Card padded style={{ paddingVertical: 0 }}>
+          {[0, 1, 2, 3, 4].map((i) => (
+            <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === 4 ? 0 : 1, borderBottomColor: colors.hairline }}>
+              <SkeletonTile size={40} radius={20} />
+              <View style={{ flex: 1 }}>
+                <SkeletonLine variant="body" width="85%" />
+                <SkeletonLine variant="micro" width={64} style={{ marginTop: 2 }} />
+              </View>
+              <SkeletonTile size={34} radius={17} />
+            </View>
+          ))}
+        </Card>
+      )
       : !items.length
         ? <EmptyCard icon={InboxIcon} title={t("inbox.bildirim_yok")} text={t("inbox.arkadaslik_istekleri_tepkiler_durtmeler_ve_g")} />
         : (

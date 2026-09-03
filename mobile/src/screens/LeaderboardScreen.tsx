@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, FlatList, ScrollView, ActivityIndicator, Pressable } from "react-native";
+import { View, FlatList, ScrollView, Pressable } from "react-native";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ReportSheet } from "../ui/ReportSheet";
+import { SkeletonRows } from "../ui/Skeleton";
 import { ArrowBackIcon, FlameIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
@@ -65,16 +66,15 @@ export function LeaderboardScreen() {
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           {user ? <FriendsBoard compact /> : <Text variant="body" color={colors.textMuted}>{t("leaderboard.arkadas_tablosu_icin_giris_yap")}</Text>}
         </ScrollView>
+      ) : phase === "loading" ? (
+        // Satır iskeleti gerçek satırla aynı yükseklikte (44 arma + 12+12 dolgu).
+        <SkeletonRows count={9} height={68} style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md }} />
       ) : phase !== "ready" || !week ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }}>
-          {phase === "loading" ? <ActivityIndicator color={colors.primary} /> : (
-            <>
-              <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("leaderboard.yuklenemedi")}</Text>
-              <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-                <Text variant="bodyStrong" color={colors.primary}>{t("common.tekrar_dene")}</Text>
-              </PressableScale>
-            </>
-          )}
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("leaderboard.yuklenemedi")}</Text>
+          <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
+            <Text variant="bodyStrong" color={colors.primary}>{t("common.tekrar_dene")}</Text>
+          </PressableScale>
         </View>
       ) : (
       <FlatList

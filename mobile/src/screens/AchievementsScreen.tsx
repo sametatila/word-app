@@ -1,11 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, ScrollView, ActivityIndicator } from "react-native";
+import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, TrophyIcon, CheckIcon } from "../ui/icons";
+import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
 import { GROUP_LABEL, type Achievement, type Tier, type AchGroup } from "../data/achievements";
@@ -81,16 +82,25 @@ export function AchievementsScreen() {
         </View>
       </View>
 
-      {phase !== "ready" ? (
+      {phase === "loading" ? (
+        // Ortalanmış spinner yerine tahtanın kendi iskeleti: içerik gelince
+        // rozetler ortadan yukarı sıçramıyor, oldukları yerde beliriyor.
+        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+          {[0, 1, 2].map((g) => (
+            <View key={g} style={{ marginTop: spacing.lg }}>
+              <SkeletonLine variant="caption" width={96} style={{ marginBottom: spacing.sm, marginLeft: 4 }} />
+              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+                {[0, 1].map((i) => <Skeleton key={i} height={140} width="47.5%" radius={radii.lg} />)}
+              </View>
+            </View>
+          ))}
+        </ScrollView>
+      ) : phase !== "ready" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }}>
-          {phase === "loading" ? <ActivityIndicator color={colors.primary} /> : (
-            <>
-              <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("achievements.yuklenemedi")}</Text>
-              <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-                <Text variant="bodyStrong" color={colors.primary}>{t("common.tekrar_dene")}</Text>
-              </PressableScale>
-            </>
-          )}
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("achievements.yuklenemedi")}</Text>
+          <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
+            <Text variant="bodyStrong" color={colors.primary}>{t("common.tekrar_dene")}</Text>
+          </PressableScale>
         </View>
       ) : (
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
