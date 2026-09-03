@@ -92,7 +92,10 @@ function candidates(raw) {
   for (const m of line.matchAll(strings)) out.push(m[1] ?? m[2] ?? m[3] ?? "");
   const rest = line
     .replace(strings, '""')       // dizgiler zaten sayıldı
-    .replace(/\/(?:\\.|\[[^\]]*\]|[^/\n\\])+\/[gimsuyd]*/g, " ") // regex sabitleri: /ç/g, /[A-ZÇĞİÖŞÜ]/ kod, metin değil
+    // Regex sabitleri (/ç/g, /[A-ZÇĞİÖŞÜ]/) kod, metin değil. Gövdede < ve > YASAK:
+    // olmasaydı JSX'teki "/>" ile "</" arası regex sanılıp aradaki metin yutuluyordu
+    // (NotifPrime'ın "Hatırlatma = daha uzun seri" satırı böyle kaçmıştı).
+    .replace(/\/(?:\\.|\[[^\]]*\]|[^/\n\\<>])+\/[gimsuyd]*/g, " ")
     .replace(/\{[^{}]*\}/g, " ")  // {ifade}
     .replace(/<[^<>]*>/g, "\u0001"); // etiketler → ayraç
   for (const piece of rest.split("\u0001")) out.push(piece);
