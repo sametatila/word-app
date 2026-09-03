@@ -13,6 +13,7 @@ import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
 import { updateProfile } from "../lib/updateProfile";
 import { VoicePicker } from "../ui/VoicePicker";
+import { SkeletonLine } from "../ui/Skeleton";
 import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, type VoiceId } from "../lib/voices";
 import { enabledCourses, DEFAULT_NATIVE, NATIVE_LANGS, type NativeLang } from "../lib/courses";
@@ -218,7 +219,17 @@ export function SettingsScreen() {
             </View>
             <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("settings.kullanim_verisi_gonder")} />
           </View>
-          {micConsent ? (
+          {micConsent === null ? (
+            // Onay durumu okunana dek satır yerini tutar: gelince Gizlilik
+            // bölümü uzayıp altındaki bağlantıları aşağı itmesin.
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+              <View style={{ flex: 1 }}>
+                <SkeletonLine variant="bodyStrong" width="55%" />
+                <SkeletonLine variant="caption" width="85%" />
+              </View>
+              <SkeletonLine variant="h3" width={20} />
+            </View>
+          ) : micConsent ? (
             <PressableScale onPress={() => { void setMicConsent(false); setMicConsentState(false); }} accessibilityLabel={t("settings.mikrofon_onayini_geri_al")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("settings.mikrofon_onayini_geri_al")}</Text>

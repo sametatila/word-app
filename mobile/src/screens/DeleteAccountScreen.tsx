@@ -14,6 +14,7 @@ import { ArrowBackIcon, CheckIcon, XIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { listAccounts, deleteAccount } from "../lib/auth";
 import { googleSignIn } from "../lib/googleAuth";
+import { Skeleton } from "../ui/Skeleton";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const LOSSES = [
@@ -158,7 +159,11 @@ export function DeleteAccountScreen() {
               />
             ) : hasPassword === false ? (
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{tx("deleteaccount.google_ile_girdigin_icin_parola_gerekmiyor")}</Text>
-            ) : null}
+            ) : (
+              // Hesabın parolası var mı okunana dek alan yerini tutar: sonra
+              // beliren kutu onay kutucuğunu ve sil düğmesini aşağı itmesin.
+              <Skeleton height={48} radius={radii.md} style={{ marginTop: spacing.lg }} />
+            )}
 
             <PressableScale onPress={() => setAgree((a) => !a)} accessibilityRole="checkbox" accessibilityState={{ checked: agree }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, marginTop: spacing.sm }}>
               <View style={{ width: 26, height: 26, borderRadius: radii.sm, borderWidth: 2, borderColor: agree ? colors.danger : colors.border, backgroundColor: agree ? colors.danger : "transparent", alignItems: "center", justifyContent: "center" }}>

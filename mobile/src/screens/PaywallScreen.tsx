@@ -7,6 +7,7 @@ import type { PurchasesPackage } from "react-native-purchases";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, CheckIcon, CrownIcon, ExamIcon } from "../ui/icons";
+import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
 import { billingAvailable, getPackages, purchase, restore } from "../lib/billing";
@@ -149,7 +150,20 @@ export function PaywallScreen() {
         </View>
 
         {pkgs === null ? (
-          <ActivityIndicator color={colors.primary} />
+          // Plan satırları gelene dek aynı boyda iskelet: liste dolunca kaydırma
+          // konumu ve alttaki düğme yerinden oynamıyor.
+          <View style={{ gap: spacing.md }}>
+            {[0, 1].map((i) => (
+              <View key={i} style={{ borderRadius: radii.lg, borderWidth: 2, borderColor: colors.border, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+                <SkeletonTile size={24} radius={12} />
+                <View style={{ flex: 1 }}>
+                  <SkeletonLine variant="h3" width="45%" />
+                  <SkeletonLine variant="caption" width="65%" />
+                </View>
+                <SkeletonLine variant="h3" width={72} />
+              </View>
+            ))}
+          </View>
         ) : (
           <View style={{ gap: spacing.md }}>
             {pkgs.map((p) => {

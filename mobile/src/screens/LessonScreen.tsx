@@ -7,6 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { ReportSheet } from "../ui/ReportSheet";
+import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
@@ -84,6 +85,9 @@ export function LessonScreen() {
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [saved, setSaved] = useState(false);
   const [resumeOffer, setResumeOffer] = useState<{ cursor: number; correct: number } | null>(null);
+  // Yarım kayıt okunana dek boş sohbet kabuğu çizilmez: ya "devam et" ekranı ya
+  // da ilk baloncuklar geliyor, ikisi de boş kabuğun yerine geçip ekranı zıplatır.
+  const [resumeChecked, setResumeChecked] = useState(false);
   const [report, setReport] = useState<ReportRef | null>(null); // "Bildir" açık olan yapay zekâ yanıtı
 
   const scoreTotal = lesson ? scoredSteps(lesson) : 0;
@@ -96,6 +100,7 @@ export function LessonScreen() {
     loadLessonResume(lesson.id).then((r) => {
       if (r && r.cursor < lesson.lecture.length) setResumeOffer({ cursor: r.cursor, correct: r.correct });
       else presentFrom(0);
+      setResumeChecked(true);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lesson]);
@@ -286,7 +291,22 @@ export function LessonScreen() {
         </View>
       )}
 
-      {phase === "summary" ? (
+      {!resumeChecked ? (
+        // Sohbet kabuğunun iskeleti: öğretmen baloncukları + alt eylem alanı.
+        <>
+          <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
+            {["78%", "62%", "88%"].map((w, i) => (
+              <View key={i} style={{ alignSelf: "flex-start", width: w, marginBottom: spacing.md }}>
+                <Skeleton height={22 + 2 + 18 * 2} radius={radii.lg} />
+                <SkeletonLine variant="micro" width={54} style={{ marginTop: 4, marginLeft: 4 }} />
+              </View>
+            ))}
+          </View>
+          <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline, backgroundColor: colors.bg }}>
+            <Skeleton height={53} radius={radii.lg} />
+          </View>
+        </>
+      ) : phase === "summary" ? (
         <Summary lesson={lesson} correct={correct} total={scoreTotal} next={nextLesson} colors={colors} insets={insets}
           onBack={() => nav.goBack()}
           onNext={nextLesson ? () => nav.replace("Lesson", { id: nextLesson.id }) : undefined} />
