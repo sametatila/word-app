@@ -76,7 +76,7 @@ export function QuizScreen() {
 
         {total === 0 ? (
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center" }}>
-            <Text variant="body" color={colors.textMuted}>{t("quiz.bu_unitenin_icerigi_yayina_alininca_burada")}</Text>
+            <Text variant="body" color={colors.textMuted}>{t("quiz.henuz_soru_yok")}</Text>
           </Card>
         ) : (
           <QuestionList key={round} questions={questions} onAllAnswered={recordAndFinish} colors={colors} />

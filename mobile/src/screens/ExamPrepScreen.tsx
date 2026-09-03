@@ -91,13 +91,13 @@ export function ExamPrepScreen() {
 
         <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{t("examprep.moduller")}</Text>
         <View style={{ gap: spacing.md }}>
-          {MODULES.map((m) => {
+          {MODULES.filter((m) => countFor(m) > 0).map((m) => {
+            // İçeriği olmayan modül hiç çizilmez: çalışmayan "yakında" satırı yok.
             const tint = colors[m.tint as keyof Palette] as string;
             const n = countFor(m);
-            const soon = !m.premium && n === 0; // ücretsiz ama içerik yok
-            const sub = m.premium ? `${m.tr} · Premium` : n > 0 ? `${m.tr} · ${n} alıştırma` : `${m.tr} · yakında`;
+            const sub = `${m.tr} · ${t("examprep.alistirma", { n })}${m.premium ? " · Premium" : ""}`;
             return (
-              <PressableScale key={m.key} onPress={() => (soon ? undefined : openModule(m))} style={{ opacity: soon ? 0.6 : 1 }}>
+              <PressableScale key={m.key} onPress={() => openModule(m)}>
                 <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <View style={[{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
                     <m.icon color="#fff" size={24} />
@@ -121,7 +121,7 @@ export function ExamPrepScreen() {
         </View>
 
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg, textAlign: "center", lineHeight: 18 }}>
-          Lesen ve Hören ücretsiz; Schreiben ve Sprechen Premium'da. Tam Goethe/telc deneme sınavı yakında.
+          {t("examprep.ucretsiz_premium_notu")}
         </Text>
       </ScrollView>
     </View>

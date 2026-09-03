@@ -121,9 +121,12 @@ export function NotificationsScreen() {
           </PressableScale>
         )}
 
-        <PressableScale onPress={async () => { const ok = await showTestNotification(); if (!ok) fail(); else setMsg("Test bildirimi gönderildi."); }} style={{ marginTop: spacing.xl, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 14, alignItems: "center" }}>
-          <Text variant="bodyStrong" color={colors.text}>{tx("notifications.test_bildirimi_gonder")}</Text>
-        </PressableScale>
+        {/* Geliştirici aracı: üretim derlemesinde yok (Play "test" kalıntısı saymasın). */}
+        {__DEV__ ? (
+          <PressableScale onPress={async () => { const ok = await showTestNotification(); if (!ok) fail(); else setMsg("Test bildirimi gönderildi."); }} style={{ marginTop: spacing.xl, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 14, alignItems: "center" }}>
+            <Text variant="bodyStrong" color={colors.text}>{tx("notifications.test_bildirimi_gonder")}</Text>
+          </PressableScale>
+        ) : null}
       </ScrollView>
     </View>
   );

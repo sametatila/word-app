@@ -38,13 +38,13 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 const STEPS: Step[] = [
   {
     key: "welcome", icon: BoltIcon,
-    title: "Nomi'e hoş geldin",
+    title: "Nomi'ye hoş geldin",
     subtitle: "Kısa turlarla, oyun gibi öğren. Birkaç dakikada başlarsın; düzenli çalışınca ilerleme kalıcı olur.",
   },
   {
     key: "course", icon: SkillsIcon,
     title: "Hangi kursla başlayalım?",
-    subtitle: "Şimdilik Almanca ve Zürih Almancası var; yeni diller yakında eklenecek. Sonradan değiştirebilirsin.",
+    subtitle: "Kursunu seç; sonradan Ayarlar'dan değiştirebilirsin.",
     // Kurs kayıt defterinden türüyor (lib/courses.ts): içeriği hazır olmayan
     // kurs listede görünmez, yeni dil açıldığında burası kendiliğinden doğrular.
     options: enabledCourses().map((c) => ({

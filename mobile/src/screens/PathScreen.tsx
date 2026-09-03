@@ -11,7 +11,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
-import { KIND_LABEL } from "../data/demoUnit";
+import { KIND_LABEL } from "../data/unit";
 import { AppHeader } from "../ui/AppHeader";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 

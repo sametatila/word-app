@@ -9,7 +9,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { XIcon, ReadIcon, ListenIcon, WriteIcon, SpeakerIcon } from "../ui/icons";
-import { KIND_LABEL, type ItemKind } from "../data/demoUnit";
+import { KIND_LABEL, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { markItemDone } from "../game/lessonProgress";
@@ -117,7 +117,7 @@ export function ItemScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={90} />
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("item.bu_icerik_yayina_alininca_burada_acilacak")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("item.alistirma_acilamiyor")}</Text>
         <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primary}>{t("item.geri_don")}</Text></PressableScale>
       </View>
     );
