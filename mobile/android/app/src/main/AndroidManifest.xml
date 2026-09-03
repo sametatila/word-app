@@ -25,6 +25,12 @@
         </intent>
     </queries>
 
+    <!-- Tahminli geri (predictive back): targetSdk 36'da varsayilan zaten acik, bayrak
+         BEYANI acik tutuyor ki targetSdk bir gun dusurulurse davranis sessizce degismesin.
+         Ekranlar arasi onizleme ANIMASYONU bununla gelmiyor: RN 0.87.1 ReactActivity surekli
+         etkin, duz bir OnBackPressedCallback kaydediyor (OnBackAnimationCallback degil) ve
+         react-native-screens 4.27.0'da hicbir geri-animasyon geri cagrisi yok. Sistem bu yuzden
+         mIsAnimationCallback=false gosteriyor; onizleme icin kitaplik destegi gerekiyor. -->
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -32,6 +38,7 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:localeConfig="@xml/locales_config"
+      android:enableOnBackInvokedCallback="true"
       android:theme="@style/Theme.Nomi.Splash"
       android:usesCleartextTraffic="${usesCleartextTraffic}"
       android:supportsRtl="true">
