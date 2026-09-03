@@ -118,6 +118,7 @@ export const en: Record<string, string> = {
   "deleteaccount.yazilarin_konusma_kayitlarin_ve_de": "Your writing, speaking records and assessments",
   "examprep.alistirma": "{n} exercises",
   "examprep.kelime_kapsamasi": "WORD COVERAGE",
+  "examprep.kurs_sinav_yok": "This course has no exam preparation pack yet; word rounds, lessons and walk mode are available.",
   "examprep.moduller": "MODULES",
   "examprep.premium": "Premium",
   "examprep.seviye": "LEVEL",

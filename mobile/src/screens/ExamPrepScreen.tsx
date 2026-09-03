@@ -15,6 +15,8 @@ import { usePremium } from "../lib/usePremium";
 import { billingAvailable } from "../lib/billing";
 import { useMicrophone } from "../lib/useMicrophone";
 import { listSkillMeta } from "../data/skills";
+import { currentCourseId } from "../lib/courses";
+import { examCatalogFor, type ExamModule } from "../data/exams";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -23,18 +25,13 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
  * Lesen/Hören (ücretsiz, gerçek okuma/dinleme alıştırmaları) + Schreiben/Sprechen
  * (premium). Uydurma ilerleme yok; modüller gerçek içeriğe bağlı.
  */
-const EXAMS = ["Goethe-Zertifikat", "telc Deutsch"];
-
-/**
- * Sınav modülleri. `label` sınavın kendi terimi (Goethe/telc Almanca adları) —
- * çevrilmez; `subKey` ise altındaki beceri adı, arayüz dilinde gösterilir.
- */
-const MODULES = [
-  { key: "lesen", label: "Lesen", subKey: "unitkind.read", icon: ReadIcon, tint: "info", skill: "reading", kind: "read", premium: false },
-  { key: "hoeren", label: "Hören", subKey: "unitkind.listen", icon: ListenIcon, tint: "accent", skill: "listening", kind: "listen", premium: false },
-  { key: "schreiben", label: "Schreiben", subKey: "unitkind.write", icon: WriteIcon, tint: "success", skill: "writing", kind: "write", premium: true },
-  { key: "sprechen", label: "Sprechen", subKey: "unitkind.speaking", icon: BoltIcon, tint: "primary", skill: "speaking", kind: "speak", premium: true },
-] as const;
+/** Beceriden ikona — katalog veri, ikon görünüm; ikisi ayrı dosyada durur. */
+const SKILL_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
+  reading: (p) => <ReadIcon {...p} />,
+  listening: (p) => <ListenIcon {...p} />,
+  writing: (p) => <WriteIcon {...p} />,
+  speaking: (p) => <BoltIcon {...p} />,
+};
 
 export function ExamPrepScreen() {
   const mic = useMicrophone();
@@ -47,6 +44,9 @@ export function ExamPrepScreen() {
   // içerik saklanmaz (Play "bozuk işlevsellik"). Canlıysa premium modüller kilitli.
   const premium = usePremium() || !billingAvailable();
   // Misafirde yerleştirme sınavının belirlediği seviye (prefs); yoksa A1.
+  // Sınav kataloğu kursun HEDEF diline bağlı: İngilizce kursu seçen kullanıcıya
+  // Goethe/telc gösterilmiyor (bkz. data/exams).
+  const catalog = examCatalogFor(currentCourseId());
   const [guestLevel, setGuestLevel] = useState<string | null>(null);
   const [prefsRead, setPrefsRead] = useState(false);
   useEffect(() => {
@@ -59,13 +59,13 @@ export function ExamPrepScreen() {
   const levelReady = !meLoading && (!!me || prefsRead);
   const overallPct = me && me.totalWords ? Math.min(100, Math.round((me.mastered / me.totalWords) * 100)) : null;
 
-  function openModule(m: (typeof MODULES)[number]) {
+  function openModule(m: ExamModule) {
     if (m.premium && !premium) { nav.navigate("Paywall"); return; }
     const ex = listSkillMeta(level, m.skill as "reading" | "listening" | "writing")[0];
     if (ex) nav.navigate("Item", { id: ex.id, kind: m.kind, title: ex.title ?? m.label });
   }
 
-  function countFor(m: (typeof MODULES)[number]): number {
+  function countFor(m: ExamModule): number {
     if (m.skill === "speaking") return 0;
     return listSkillMeta(level, m.skill as "reading" | "listening" | "writing").length;
   }
@@ -100,7 +100,7 @@ export function ExamPrepScreen() {
             ) : null}
           </View>
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
-            {EXAMS.map((e, i) => {
+            {catalog.exams.map((e, i) => {
               const active = exam === i;
               return (
                 <PressableScale key={e} onPress={() => setExam(i)} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.md, alignItems: "center", borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : "transparent" }}>
@@ -122,7 +122,7 @@ export function ExamPrepScreen() {
               </View>
               <SkeletonLine variant="h3" width={20} />
             </SkeletonCard>
-          )) : MODULES.filter((m) => countFor(m) > 0 && (mic || m.skill !== "speaking")).map((m) => {
+          )) : catalog.modules.filter((m) => countFor(m) > 0 && (mic || m.skill !== "speaking")).map((m) => {
             // İçeriği olmayan modül hiç çizilmez: çalışmayan "yakında" satırı yok.
             const tint = colors[m.tint as keyof Palette] as string;
             const n = countFor(m);
@@ -132,7 +132,7 @@ export function ExamPrepScreen() {
               <PressableScale key={m.key} onPress={() => openModule(m)}>
                 <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <View style={[{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
-                    <m.icon color="#fff" size={24} />
+                    {SKILL_ICON[m.skill]({ color: "#fff", size: 24 })}
                   </View>
                   <View style={{ flex: 1 }}>
                     <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
@@ -150,6 +150,14 @@ export function ExamPrepScreen() {
               </PressableScale>
             );
           })}
+          {/* Kursun sınav kataloğu yoksa liste sessizce boş kalırdı; sebebi
+              yazılıyor. Katalog var ama seviyede içerik yoksa modül satırı
+              zaten çizilmiyor (yukarıdaki countFor süzgeci). */}
+          {levelReady && !catalog.modules.length ? (
+            <Card padded>
+              <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("examprep.kurs_sinav_yok")}</Text>
+            </Card>
+          ) : null}
         </View>
 
         {billingAvailable() ? (

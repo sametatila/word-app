@@ -123,6 +123,7 @@ export const tr: Record<string, string> = {
   "deleteaccount.yazilarin_konusma_kayitlarin_ve_de": "Yazıların, konuşma kayıtların ve değerlendirmelerin",
   "examprep.alistirma": "{n} alıştırma",
   "examprep.kelime_kapsamasi": "KELİME KAPSAMASI",
+  "examprep.kurs_sinav_yok": "Bu kursun sınav hazırlık paketi henüz yok; kelime turları, dersler ve yürüyüş modu açık.",
   "examprep.moduller": "MODÜLLER",
   "examprep.premium": "Premium",
   "examprep.seviye": "SEVİYE",

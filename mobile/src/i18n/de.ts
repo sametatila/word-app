@@ -118,6 +118,7 @@ export const de: Record<string, string> = {
   "deleteaccount.yazilarin_konusma_kayitlarin_ve_de": "Deine Texte, Sprechaufzeichnungen und Bewertungen",
   "examprep.alistirma": "{n} Übungen",
   "examprep.kelime_kapsamasi": "WORTABDECKUNG",
+  "examprep.kurs_sinav_yok": "Für diesen Kurs gibt es noch kein Prüfungsvorbereitungspaket; Wortrunden, Lektionen und Gehmodus sind verfügbar.",
   "examprep.moduller": "MODULE",
   "examprep.premium": "Premium",
   "examprep.seviye": "NIVEAU",
