@@ -62,7 +62,7 @@ export function AchievementsScreen() {
     return () => { alive = false; };
   }, [user, attempt]);
 
-  const list = remote ?? [];
+  const list = useMemo(() => remote ?? [], [remote]);
   const earned = list.filter((a) => a.unlocked).length;
   const groups = useMemo(() => {
     const g: Record<AchGroup, Achievement[]> = { streak: [], vocab: [], games: [] };

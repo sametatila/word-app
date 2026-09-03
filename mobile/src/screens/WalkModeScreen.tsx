@@ -132,9 +132,16 @@ export function WalkModeScreen() {
 
   // Mount/unmount — çıkışta biriken cevapları yaz.
   useEffect(() => {
+    // Ref NESNELERİ kopyalanır, .current değil: temizlik çıkış anındaki canlı
+    // değerleri okur.
+    const mountedRef = mounted;
+    const tokenRef = runToken;
     track("walk_start", 0);
-    mounted.current = true;
-    return () => { mounted.current = false; runToken.current++; stopListening(); setKeepAwake(false); stopWalkService(); flush(true); };
+    mountedRef.current = true;
+    return () => { mountedRef.current = false; tokenRef.current++; stopListening(); setKeepAwake(false); stopWalkService(); flush(true); };
+    // flush bilerek bağımlılıkta değil: efekt yalnız mount/unmount içindir, onu
+    // eklemek her render'da temizliği çalıştırıp cevapları erkenden gönderirdi.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Güç-tuşu ekran on/off izle: kapalı→Azure, açık→native (kelime sınırında geçer, kesmez).
@@ -159,7 +166,7 @@ export function WalkModeScreen() {
     ]));
     loop.start();
     return () => loop.stop();
-  }, [phase]);
+  }, [phase, pulse]);
 
   function waitManual(): Promise<boolean | "skip"> {
     return new Promise((resolve) => { manualResolve.current = resolve; });

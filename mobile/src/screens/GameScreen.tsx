@@ -108,19 +108,27 @@ export function GameScreen() {
       setPhase(e instanceof ApiError && e.status === 401 ? "auth" : "error");
     }
   }
+  // Yalnız açılışta bir kez; load ayrıca "tekrar dene" düğmesinden çağrılıyor.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { load(); }, []);
 
   // Yarım kalan turu terk edince (X / donanım geri / kaydırma) toplanan
   // cevapları yaz — web'deki çıkışta-flush (sendBeacon) gibi. Yoksa 15/20'de
   // çıkan kullanıcının emeği ve SRS/XP güncellemesi tümden yok olurdu.
   useEffect(() => {
+    // Ref NESNELERİ kopyalanır, .current değil: temizlik çıkış anındaki canlı
+    // değerleri okur (mount'taki kopya boş cevap listesi olurdu).
+    const submittedRef = submitted;
+    const answersRef = answers;
+    const startedRef = startedAt;
+    const dayRef = day;
     return () => {
-      if (submitted.current) return;
-      const pending = answers.current;
+      if (submittedRef.current) return;
+      const pending = answersRef.current;
       if (!pending.length) return;
-      submitted.current = true;
-      const secs = Math.round((Date.now() - startedAt.current) / 1000);
-      void submitAnswers(pending, day.current, secs, progressNow()).catch(() => { /* sessizce düşer */ });
+      submittedRef.current = true;
+      const secs = Math.round((Date.now() - startedRef.current) / 1000);
+      void submitAnswers(pending, dayRef.current, secs, progressNow()).catch(() => { /* sessizce düşer */ });
     };
   }, []);
 

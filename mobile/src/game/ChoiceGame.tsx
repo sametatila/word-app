@@ -38,7 +38,7 @@ export function ChoiceGame({ round, onDone }: { round: ChoiceRound; onDone: (cor
       Animated.timing(fade, { toValue: 1, duration: 260, useNativeDriver: true }),
       Animated.spring(slide, { toValue: 0, useNativeDriver: true, speed: 14, bounciness: 6 }),
     ]).start();
-  }, [round.wordId]);
+  }, [round.wordId, fade, slide]);
 
   function choose(opt: string) {
     if (picked) return;

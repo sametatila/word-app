@@ -73,7 +73,10 @@ export function FirstPracticeScreen() {
   const last = idx + 1 >= words.length;
   const kicker = level === "A1" ? "İlk kelimelerin" : `${level} · kısa ısınma`;
 
-  useEffect(() => { track("first_practice", idx, level); speakTarget(withArtikel(w)); setSeen(false); /* eslint-disable-next-line */ }, [idx]);
+  // Kelime basina bir kez: level params'tan, w idx'ten turuyor; ikisini
+  // bagimliliga eklemek ayni kelimeyi tekrar okutur.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { track("first_practice", idx, level); speakTarget(withArtikel(w)); setSeen(false); }, [idx]);
 
   function primary() {
     haptic("tap");

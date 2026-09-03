@@ -499,7 +499,10 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const [fb, setFb] = useState<Feedback | null>(null);
   const [audible, setAudible] = useState<boolean | null>(null);
   useEffect(() => { ttsAvailable().then(setAudible); }, []);
-  useEffect(() => { if (audible) speakTarget(withArtikel(word)); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [audible, round.id]);
+  // Tur basina bir kez oku: word zaten round.id'den turuyor, bagimliliga
+  // eklemek ayni turda tekrar okumaya yol acabilir.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { if (audible) speakTarget(withArtikel(word)); }, [audible, round.id]);
   const hideWord = audible === true && !picked;
   function choose(o: Option) {
     if (picked) return;
@@ -601,7 +604,7 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   const answer = (round.answer as unknown as string[] | undefined) ?? [];
   const tail = round.tail ?? "";
   const full = [...answer, tail].filter(Boolean).join(" ");
-  const pool = React.useMemo(() => (round.tokens ?? []).map((text, id) => ({ id, text })), [round.id]);
+  const pool = React.useMemo(() => (round.tokens ?? []).map((text, id) => ({ id, text })), [round.tokens]);
   const [placed, setPlaced] = useState<{ id: number; text: string }[]>([]);
   const [fb, setFb] = useState<Feedback | null>(null);
   const usedIds = new Set(placed.map((t) => t.id));

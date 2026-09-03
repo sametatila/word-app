@@ -69,13 +69,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const r = await apiSignIn(email, password);
     if (r.ok) { setUser(r.user ?? (await getSession())); await applyPrefs(); }
     return r;
-  }, []);
+  }, [applyPrefs]);
 
   const signUp = useCallback(async (name: string, email: string, password: string) => {
     const r = await apiSignUp(name, email, password);
     if (r.ok) { setUser(r.user ?? (await getSession())); await applyPrefs(); }
     return r;
-  }, []);
+  }, [applyPrefs]);
 
   const signOut = useCallback(async () => {
     await apiSignOut();
