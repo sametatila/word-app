@@ -89,9 +89,13 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
           ref: meta?.id ?? null,
         });
       } else if (kind === "quiz" || kind === "checkpoint") {
-        // Quiz/checkpoint ünitenin ders içeriğinden CİHAZDA türetilir → oynanır.
+        // Quiz/checkpoint ünitenin ders içeriğinden CİHAZDA türetilir. Ünitede
+        // hiç ders yoksa türetecek bir şey de yok: "oynanır" demek boş bir tur
+        // açmak olurdu. Ders paketi olmayan kurslarda (ör. İngilizce, henüz
+        // ders içeriği yazılmadı) tüm ünite bu durumda.
         const t = SLOT_TITLE[kind];
-        items.push({ id, kind, title: t.title, titleTr: t.titleTr, playable: true, done: done.has(id), ref: unitId });
+        const derivable = unitLessons.length > 0;
+        items.push({ id, kind, title: t.title, titleTr: t.titleTr, playable: derivable, done: derivable && done.has(id), ref: derivable ? unitId : null });
       } else {
         // grammar — elle yazılmış içerik gerekir, henüz yok → "Yakında".
         const t = SLOT_TITLE[kind];
