@@ -8,12 +8,18 @@ import { MicIcon, CheckIcon } from "./icons";
 import { openLegal } from "../lib/legal";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
-const POINTS = [
-  "Yürüyüş modunu sen başlatırsın; mikrofon yalnız o sırada açıktır ve sürekli bir bildirimden bunu görürsün.",
-  "Ekran kapalıyken ya da telefon cebindeyken de dinlemeye devam eder; bitirmek için uygulamaya dönüp durdurursun.",
-  "Ekran kapalıyken söylediklerin, yazıya çevrilmek için kısa ses kayıtları olarak sunucumuza ve konuşma tanıma sağlayıcılarımıza (Microsoft Azure ve benzeri) gönderilir.",
-  "Ses kaydı saklanmaz; yalnız tanınan metin ve beklenen kelime tutulur.",
-];
+/**
+ * Açıklama maddeleri — sabit dizi değil FONKSİYON: t() modül yüklenirken çağrılsaydı
+ * dil tercihi (loadLang) henüz okunmamış olurdu ve metin her zaman Türkçe donardı.
+ */
+function points(): string[] {
+  return [
+    t("micdisclosure.yuruyus_modunu_sen_baslatirsin_mik"),
+    t("micdisclosure.ekran_kapaliyken_ya_da_telefon_ceb"),
+    t("micdisclosure.ekran_kapaliyken_soylediklerin_yaz"),
+    t("micdisclosure.ses_kaydi_saklanmaz_yalniz_taninan"),
+  ];
+}
 
 function Point({ text, colors }: { text: string; colors: Palette }) {
   return (
@@ -43,10 +49,10 @@ export function MicDisclosure({ visible, onAccept, onCancel }: { visible: boolea
           </View>
           <Text variant="display" style={{ textAlign: "center" }}>{t("micdisclosure.mikrofon_ve_ses_verisi")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>
-            Yürüyüş modu sesle çalışır. Başlamadan önce sesinin nasıl kullanıldığını bil.
+            {t("micdisclosure.yuruyus_modu_sesle_calisir_baslama")}
           </Text>
           <View style={{ gap: spacing.md, marginTop: spacing.sm }}>
-            {POINTS.map((p) => <Point key={p} text={p} colors={colors} />)}
+            {points().map((p) => <Point key={p} text={p} colors={colors} />)}
           </View>
           <PressableScale onPress={() => openLegal("privacy")} hitSlop={6} accessibilityRole="link" style={{ alignSelf: "center", paddingVertical: spacing.sm }}>
             <Text variant="bodyStrong" color={colors.primary}>{t("micdisclosure.gizlilik_politikasini_oku")}</Text>

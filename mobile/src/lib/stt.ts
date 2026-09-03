@@ -12,6 +12,7 @@
  */
 import { NativeEventEmitter, NativeModules, PermissionsAndroid, Platform } from "react-native";
 import { currentTargetLocale, currentTargetLang } from "./courses";
+import { t } from "./i18n";
 import { API_BASE } from "../api/client";
 
 type SpeechNative = {
@@ -46,10 +47,10 @@ export async function ensureMicPermission(): Promise<boolean> {
   if (Platform.OS !== "android") return true; // iOS izinleri native tarafta (SFSpeech) istenir
   try {
     const g = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO, {
-      title: "Mikrofon izni",
-      message: "Yürüyüş modunda söylediğin kelimeyi tanımak için mikrofon gerekiyor. Ekran kapalıyken de dinler; ses kaydı tanıma için sunucuya gönderilir, saklanmaz.",
-      buttonPositive: "İzin ver",
-      buttonNegative: "Vazgeç",
+      title: t("micperm.mikrofon_izni"),
+      message: t("micperm.yuruyus_modunda_soyledigin_kelimey"),
+      buttonPositive: t("micperm.izin_ver"),
+      buttonNegative: t("common.vazgec"),
     });
     return g === PermissionsAndroid.RESULTS.GRANTED;
   } catch {

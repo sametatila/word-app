@@ -17,12 +17,15 @@ import { googleSignIn } from "../lib/googleAuth";
 import { Skeleton } from "../ui/Skeleton";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
-const LOSSES = [
-  "Kelime ilerlemen, serilerin, XP ve başarımların",
-  "Yazıların, konuşma kayıtların ve değerlendirmelerin",
-  "Arkadaşlıkların ve gelen kutun",
-  "Hesabın ve e-posta adresin",
-];
+/** Silinecekler — t() çağrı anında okunsun diye fonksiyon (dil modül yüklenirken hazır değil). */
+function losses(): string[] {
+  return [
+    tx("deleteaccount.kelime_ilerlemen_serilerin_xp_ve_b"),
+    tx("deleteaccount.yazilarin_konusma_kayitlarin_ve_de"),
+    tx("deleteaccount.arkadasliklarin_ve_gelen_kutun"),
+    tx("deleteaccount.hesabin_ve_e_posta_adresin"),
+  ];
+}
 
 function LossRow({ text, colors }: { text: string; colors: Palette }) {
   return (
@@ -121,16 +124,16 @@ export function DeleteAccountScreen() {
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 22 }}>
-          {user?.email ? `${user.email} hesabı` : "Hesabın"} ve ona bağlı her şey kalıcı olarak silinir. Bu işlem geri alınamaz.
+          {tx("deleteaccount.hesap_ve_ona_bagli_her_sey_kalici", { hesap: user?.email ? tx("deleteaccount.eposta_hesabi", { eposta: user.email }) : tx("deleteaccount.hesabin") })}
         </Text>
 
         <Card padded style={{ marginTop: spacing.lg, paddingVertical: spacing.sm }}>
-          {LOSSES.map((t) => <LossRow key={t} text={t} colors={colors} />)}
+          {losses().map((text) => <LossRow key={text} text={text} colors={colors} />)}
         </Card>
 
         <Card padded style={{ marginTop: spacing.md, backgroundColor: colors.surface2, borderColor: "transparent" }}>
           <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>
-            Google Play üzerinden abonelik aldıysan, aboneliği Play Store › Ödemeler ve abonelikler bölümünden ayrıca iptal etmen gerekir; hesap silmek aboneliği durdurmaz.
+            {tx("deleteaccount.google_play_uzerinden_abonelik_ald")}
           </Text>
         </Card>
 
@@ -139,7 +142,7 @@ export function DeleteAccountScreen() {
             <Text variant="h3">{tx("deleteaccount.once_yeniden_giris_yap")}</Text>
             <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>{tx("deleteaccount.guvenlik_icin_hesap_silme_son_24")}</Text>
             <PressableScale onPress={reauthAndRetry} disabled={busy} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }, softShadow(colors.primary, 8)]}>
-              <Text variant="bodyStrong" color="#fff">{busy ? "..." : "Google ile yeniden gir ve sil"}</Text>
+              <Text variant="bodyStrong" color="#fff">{busy ? "..." : tx("deleteaccount.google_ile_yeniden_gir_ve_sil")}</Text>
             </PressableScale>
           </Card>
         ) : (
@@ -175,7 +178,7 @@ export function DeleteAccountScreen() {
             {error ? <Text variant="bodyStrong" color={colors.danger} style={{ marginTop: spacing.sm }}>{error}</Text> : null}
 
             <PressableScale onPress={() => setConfirm(true)} disabled={!ready} accessibilityState={{ disabled: !ready }} style={[{ borderRadius: radii.lg, backgroundColor: ready ? colors.danger : colors.surface2, paddingVertical: 16, alignItems: "center", marginTop: spacing.lg }, ready ? softShadow(colors.danger, 10) : {}]}>
-              <Text variant="h3" color={ready ? "#fff" : colors.textFaint}>{busy ? "Siliniyor..." : "Hesabımı kalıcı olarak sil"}</Text>
+              <Text variant="h3" color={ready ? "#fff" : colors.textFaint}>{busy ? tx("deleteaccount.siliniyor") : tx("deleteaccount.hesabimi_kalici_olarak_sil")}</Text>
             </PressableScale>
             <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.vazgec")}</Text>
@@ -187,9 +190,9 @@ export function DeleteAccountScreen() {
       <ConfirmDialog
         visible={confirm}
         title={tx("deleteaccount.son_kez_soruyoruz")}
-        message="Hesabın ve tüm verilerin silinecek. Geri alınamaz."
-        confirmLabel="Evet, sil"
-        cancelLabel="Vazgeç"
+        message={tx("deleteaccount.hesabin_ve_tum_verilerin_silinecek")}
+        confirmLabel={tx("deleteaccount.evet_sil")}
+        cancelLabel={tx("common.vazgec")}
         destructive
         onConfirm={run}
         onCancel={() => setConfirm(false)}
