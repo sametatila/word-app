@@ -10,19 +10,46 @@ import { Card } from "../ui/Card";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowRightIcon } from "../ui/icons";
+import { SkeletonBar, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useTheme, spacing } from "../theme";
 import { Bar } from "./common";
 
-/** Öğren ekranı nabzı — ActionRow biçimi: arma, h3, caption/çubuk, ok. Yalnız görev/davet varsa. */
+/**
+ * Öğren ekranı nabzı — ActionRow biçimi: arma, h3, caption/çubuk, ok. Yalnız
+ * görev/davet varsa. Yüklenirken aynı yükseklikte iskelet: cevap gelince satır
+ * araya girip altındaki bölümleri aşağı itmesin.
+ */
 export function FriendPulse() {
   const { colors } = useTheme();
   const { user } = useAuth();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [q, setQ] = useState<QuestView | null>(null);
+  const [loading, setLoading] = useState(() => !!user);
   useEffect(() => {
-    if (!user) { setQ(null); return; }
-    social.quests().then((r) => setQ(r.quests.find((x) => x.status === "active" || x.status === "invited") ?? null)).catch(() => setQ(null));
+    if (!user) { setQ(null); setLoading(false); return; }
+    let alive = true;
+    setLoading(true);
+    social.quests()
+      .then((r) => { if (alive) setQ(r.quests.find((x) => x.status === "active" || x.status === "invited") ?? null); })
+      .catch(() => { if (alive) setQ(null); })
+      .finally(() => { if (alive) setLoading(false); });
+    return () => { alive = false; };
   }, [user]);
+  if (loading) {
+    return (
+      <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: 1.5, borderColor: colors.hairline, marginBottom: spacing.xl }}>
+        <SkeletonTile size={44} radius={22} />
+        <View style={{ flex: 1 }}>
+          <SkeletonLine variant="h3" width="72%" />
+          <View style={{ marginTop: 6 }}>
+            <SkeletonBar height={6} />
+            <SkeletonLine variant="micro" width="45%" style={{ marginTop: 3 }} />
+          </View>
+        </View>
+        <SkeletonLine variant="h3" width={34} />
+      </Card>
+    );
+  }
   if (!q) return null;
   const invited = q.status === "invited";
   return (

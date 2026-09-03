@@ -6,6 +6,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
+import { Skeleton, SkeletonBar, SkeletonLine, textHeight } from "../ui/Skeleton";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, RepeatIcon } from "../ui/icons";
@@ -59,7 +60,7 @@ export function LearnScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
-  const { me } = useMe();
+  const { me, loading: meLoading } = useMe();
   const update = useUpdate();
   const greeting = user?.name ? `Merhaba ${user.name.split(" ")[0]}` : "Merhaba";
   const level = me?.level ?? "A1";
@@ -127,7 +128,17 @@ export function LearnScreen() {
             </View>
             <Mascot mood={streak > 0 ? "happy" : (me?.xp ?? 0) > 0 ? "sleep" : "wave"} size={66} />
           </View>
-          {hasToday && dailyGoal > 0 && (
+          {/* Hedef şeridi kahramanın İÇİNDE: veri gelmeden de aynı yeri kaplar,
+              yoksa kart yükleme sonrası uzayıp altındaki her şeyi aşağı itiyordu. */}
+          {meLoading ? (
+            <View style={{ paddingHorizontal: spacing.xl, paddingBottom: spacing.lg, marginTop: -spacing.sm }}>
+              <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 6 }}>
+                <Skeleton height={textHeight("micro")} width={78} radius={6} style={{ backgroundColor: "#ffffff40" }} />
+                <Skeleton height={textHeight("micro")} width={40} radius={6} style={{ backgroundColor: "#ffffff40" }} />
+              </View>
+              <View style={{ height: 6, borderRadius: 3, backgroundColor: "#ffffff40" }} />
+            </View>
+          ) : hasToday && dailyGoal > 0 ? (
             <View style={{ paddingHorizontal: spacing.xl, paddingBottom: spacing.lg, marginTop: -spacing.sm }}>
               <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 6 }}>
                 <Text variant="micro" color="#ffffffdd">{t("learn.gunluk_hedef")}</Text>
@@ -137,13 +148,24 @@ export function LearnScreen() {
                 <View style={{ height: "100%", width: `${Math.max(3, goalPct)}%`, backgroundColor: "#fff", borderRadius: 3 }} />
               </View>
             </View>
-          )}
+          ) : null}
         </View>
       </PressableScale>
 
       {/* dil ilerlemesi — sade satır (fitness metresi değil). Yalnız gerçek veri
           gelince; yoksa (misafir / uç henüz deploy değil) yanıltıcı 0 gösterme. */}
-      {me && (
+      {meLoading ? (
+        <Card style={{ marginBottom: spacing.xl }}>
+          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+              <Skeleton height={textHeight("bodyStrong") + 8} width={44} radius={radii.sm} />
+              <SkeletonLine variant="bodyStrong" width={150} />
+            </View>
+            <SkeletonLine variant="caption" width={56} />
+          </View>
+          <SkeletonBar height={8} />
+        </Card>
+      ) : me ? (
         <Card style={{ marginBottom: spacing.xl }}>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
@@ -158,7 +180,7 @@ export function LearnScreen() {
             <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
           </View>
         </Card>
-      )}
+      ) : null}
 
       {/* GÜNÜN GÖREVLERİ — öne çıkanın ÜSTÜNDE, gömülü kutular (ayrı ekran yok) */}
       <DailyQuests />

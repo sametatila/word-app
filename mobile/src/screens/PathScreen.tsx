@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Screen } from "../ui/Screen";
-import { Skeleton } from "../ui/Skeleton";
+import { Skeleton, SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
@@ -72,9 +72,25 @@ export function PathScreen() {
     return (
       <Screen>
         <AppHeader title={t("path.patika")} />
-        <Skeleton height={10} radius={5} style={{ marginBottom: 8 }} />
-        <Skeleton height={14} width="55%" radius={7} style={{ marginBottom: spacing.lg }} />
-        <Skeleton height={196} radius={radii.xl} style={{ marginBottom: spacing.lg }} />
+        {/* Gerçek düzenin ölçüleriyle: üst çubuk, alt yazı, öne çıkan ünite
+            kartı, ünite ızgarası. Veri gelince hiçbiri yerinden oynamıyor. */}
+        <SkeletonBar height={10} style={{ marginBottom: 6 }} />
+        <SkeletonLine variant="caption" width="55%" style={{ marginBottom: spacing.lg }} />
+        <SkeletonCard style={{ marginBottom: spacing.lg, borderWidth: 2, borderColor: colors.hairline }}>
+          <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "center" }}>
+            <SkeletonTile size={54} />
+            <View style={{ flex: 1 }}>
+              <SkeletonLine variant="micro" width={128} />
+              <SkeletonLine variant="h2" width="70%" />
+              <SkeletonLine variant="caption" width={92} />
+            </View>
+          </View>
+          <View style={{ flexDirection: "row", gap: 4, marginTop: spacing.md }}>
+            {[0, 1, 2, 3, 4, 5].map((i) => <Skeleton key={i} height={10} radius={5} style={{ flex: 1 }} />)}
+          </View>
+          <Skeleton height={68} radius={radii.lg} style={{ marginTop: spacing.md }} />
+          <Skeleton height={textHeight("h3") + 30} radius={radii.lg} style={{ marginTop: spacing.md }} />
+        </SkeletonCard>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
           {[0, 1, 2, 3].map((i) => <Skeleton key={i} height={116} width="47.5%" radius={radii.lg} />)}
         </View>

@@ -10,6 +10,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, WriteIcon, FaceIcon, HandshakeIcon, InboxIcon } from "../ui/icons";
 import { Avatar } from "../ui/Avatar";
+import { SkeletonCard, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatDuration, formatXp } from "../lib/useMe";
@@ -44,7 +45,7 @@ export function ProfileScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user, signOut } = useAuth();
-  const { me } = useMe();
+  const { me, loading: meLoading } = useMe();
   const premium = usePremium();
   // Misafir modu yok: kullanıcı her zaman var. Adı yoksa e-posta adından türet.
   const displayName = user?.name?.trim() || user?.email?.split("@")[0] || "Öğrenci";
@@ -74,7 +75,14 @@ export function ProfileScreen() {
           </PressableScale>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
           <Text variant="caption" color={colors.textMuted}>{user?.email ?? "Henüz giriş yapmadın"}</Text>
-          {me ? (
+          {/* Rozetler yüklenmeden de yerini tutar: sonradan belirince kimlik
+              kartı uzayıp altındaki her şeyi aşağı itmesin. */}
+          {meLoading ? (
+            <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
+              <SkeletonPill width={104} height={textHeight("bodyStrong") + 12} />
+              <SkeletonPill width={96} height={textHeight("bodyStrong") + 12} />
+            </View>
+          ) : me ? (
             <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
                 <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{me.streak} gün</Text>
@@ -95,9 +103,16 @@ export function ProfileScreen() {
             <StatTile value={formatDuration(me.seconds)} label={t("profile.bu_hafta_sure")} color={colors.info} colors={colors} />
           </View>
         ) : (
-          <Card padded style={{ marginBottom: spacing.lg, alignItems: "center" }}>
-            <Text variant="caption" color={colors.textMuted}>{t("profile.istatistiklerin_yukleniyor")}</Text>
-          </Card>
+          // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: dört karo
+          // gelince ekran iki satır boyu uzamıyor.
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
+            {[0, 1, 2, 3].map((i) => (
+              <SkeletonCard key={i} style={{ width: "47.5%", gap: 2 }}>
+                <SkeletonLine variant="h1" width="60%" />
+                <SkeletonLine variant="caption" width="85%" />
+              </SkeletonCard>
+            ))}
+          </View>
         )}
 
         {/* premium: yalnız mağaza entegrasyonu canlıyken (satın alınamayan şey vaat edilmez) */}

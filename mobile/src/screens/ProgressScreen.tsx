@@ -10,6 +10,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, PodiumIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
+import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -70,9 +71,17 @@ export function ProgressScreen() {
             <Stat icon={TrophyIcon} value={level} label={t("progress.seviye")} tint={colors.accent} colors={colors} />
           </View>
         ) : (
-          <Card padded style={{ marginBottom: spacing.lg, alignItems: "center" }}>
-            <Text variant="caption" color={colors.textMuted}>{t("progress.gelisimin_yukleniyor")}</Text>
-          </Card>
+          // Izgaranın kendi iskeleti (tek satırlık "yükleniyor" kartı yerine):
+          // dört karo gelince ekran iki satır boyu uzamasın.
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
+            {[0, 1, 2, 3].map((i) => (
+              <SkeletonCard key={i} style={{ width: "47.5%", gap: 6 }}>
+                <SkeletonTile size={38} />
+                <SkeletonLine variant="h1" width="55%" />
+                <SkeletonLine variant="caption" width="85%" />
+              </SkeletonCard>
+            ))}
+          </View>
         )}
 
         {/* seviye ilerlemesi */}
@@ -86,7 +95,15 @@ export function ProgressScreen() {
               <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
             </View>
           </Card>
-        ) : null}
+        ) : (
+          <SkeletonCard style={{ marginBottom: spacing.lg }}>
+            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
+              <SkeletonLine variant="bodyStrong" width={130} />
+              <SkeletonLine variant="caption" width={62} />
+            </View>
+            <SkeletonBar height={8} />
+          </SkeletonCard>
+        )}
 
         {/* başarımlar */}
         <PressableScale onPress={() => nav.navigate("Achievements")}>
