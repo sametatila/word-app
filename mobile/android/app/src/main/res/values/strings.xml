@@ -4,5 +4,6 @@
     <!-- Yürüyüş modu foreground service (NomiWalkService) -->
     <string name="walk_channel_name">Yürüyüş modu</string>
     <string name="walk_notification_title">Yürüyüş modu açık</string>
-    <string name="walk_notification_text">Mikrofon dinliyor; söylediklerin tanıma için sunucuya gönderiliyor. Bitirmek için uygulamaya dön.</string>
+    <string name="walk_notification_text">Mikrofon dinliyor; söylediklerin tanıma için sunucuya gönderiliyor.</string>
+    <string name="walk_stop">Durdur</string>
 </resources>

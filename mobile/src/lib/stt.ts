@@ -153,6 +153,13 @@ export function nativeDelay(ms: number): Promise<void> {
 export function startWalkService(): void { try { Native?.startWalkService(); } catch { /* yut */ } }
 export function stopWalkService(): void { try { Native?.stopWalkService(); } catch { /* yut */ } }
 
+/** Bildirimdeki "Durdur" eylemi (foreground service) — JS oturumu kapatır. Aboneliği kapatan fonksiyon döner. */
+export function onWalkStop(cb: () => void): () => void {
+  if (!emitter) return () => {};
+  const sub = emitter.addListener("NomiWalkStop", cb);
+  return () => sub.remove();
+}
+
 /** Ekran güç-tuşu on/off olaylarını dinle. cb(true)=kapandı, cb(false)=açıldı. Aboneliği kapatan fonksiyon döner. */
 export function onScreenState(cb: (off: boolean) => void): () => void {
   try { Native?.startScreenWatch(); } catch { /* yut */ }

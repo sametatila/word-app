@@ -16,7 +16,7 @@ import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeReady } from "../lib/ttsBridge";
 import { TURKISH_VOICE } from "../lib/voices";
-import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
+import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
 import { spokenMatches, parseSkip, encourage, parseConfirm } from "../lib/voiceMatch";
@@ -436,6 +436,10 @@ export function WalkModeScreen() {
   }
 
   function stopAndLeave() { runToken.current++; stopListening(); setKeepAwake(false); stopWalkService(); nav.goBack(); }
+  // Bildirimdeki "Durdur": mikrofon kapanır, biriken cevaplar yazılır, tur özeti gösterilir.
+  const stopFromNotification = useRef<() => void>(() => {});
+  stopFromNotification.current = () => { runToken.current++; stopListening(); flush(true); finishDone(); };
+  useEffect(() => onWalkStop(() => stopFromNotification.current()), []);
   // Tur sürerken çıkış onaylı (donanım geri + X): mikrofon açık ve tur yarım.
   const inSession = phase === "teaching" || phase === "speaking" || phase === "listening" || phase === "judging" || phase === "continue" || phase === "stopped";
   const back = useBackConfirm(inSession);

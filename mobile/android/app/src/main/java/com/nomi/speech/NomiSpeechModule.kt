@@ -442,6 +442,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   @ReactMethod
   fun startWalkService() {
     try {
+      NomiWalkService.onStop = { emit("NomiWalkStop", null) }
       val i = Intent(reactCtx, NomiWalkService::class.java)
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) reactCtx.startForegroundService(i) else reactCtx.startService(i)
     } catch (e: Exception) { android.util.Log.e("NomiWalk", "startWalkService HATA: ${e.message}", e) }
@@ -449,6 +450,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
 
   @ReactMethod
   fun stopWalkService() {
+    NomiWalkService.onStop = null
     try { reactCtx.stopService(Intent(reactCtx, NomiWalkService::class.java)) } catch (_: Exception) { /* yut */ }
   }
 

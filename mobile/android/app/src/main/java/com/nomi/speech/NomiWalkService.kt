@@ -21,9 +21,22 @@ import com.nomi.R
  * arka planda da kayıt alabilir (Azure yolu). Kalıcı bildirim zorunlu.
  */
 class NomiWalkService : Service() {
+  companion object {
+    const val ACTION_STOP = "com.nomi.walk.STOP"
+    /** Bildirimdeki "Durdur" → JS'e haber (NomiSpeechModule kurar). Servisin JS'e tek yolu. */
+    @Volatile var onStop: (() -> Unit)? = null
+  }
+
   override fun onBind(intent: Intent?): IBinder? = null
 
   override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+    if (intent?.action == ACTION_STOP) {
+      // Kullanıcı bildirimden durdurdu: JS oturumu kapatır, servis kendini bitirir.
+      try { onStop?.invoke() } catch (_: Exception) { /* yut */ }
+      stopForeground(STOP_FOREGROUND_REMOVE)
+      stopSelf()
+      return START_NOT_STICKY
+    }
     val chId = "nomi_walk"
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
       val nm = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -42,12 +55,17 @@ class NomiWalkService : Service() {
     val content = launch?.let {
       PendingIntent.getActivity(this, 0, it, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
     }
+    val stop = PendingIntent.getService(
+      this, 1, Intent(this, NomiWalkService::class.java).setAction(ACTION_STOP),
+      PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+    )
     val notif: Notification = NotificationCompat.Builder(this, chId)
       .setContentTitle(getString(R.string.walk_notification_title))
       .setContentText(getString(R.string.walk_notification_text))
       .setStyle(NotificationCompat.BigTextStyle().bigText(getString(R.string.walk_notification_text)))
       .setSmallIcon(R.drawable.ic_notification)
       .setContentIntent(content)
+      .addAction(0, getString(R.string.walk_stop), stop)
       .setOngoing(true)
       .setPriority(NotificationCompat.PRIORITY_LOW)
       .build()
@@ -58,6 +76,13 @@ class NomiWalkService : Service() {
         startForeground(7, notif)
       }
     } catch (e: Exception) { android.util.Log.e("NomiWalk", "startForeground HATA: ${e.message}", e) }
-    return START_STICKY
+    // NOT_STICKY: süreç ölürse mikrofon servisi kullanıcı olmadan yeniden başlamaz (Play FGS
+    // kuralı: kullanıcının başlattığı, fark edip durdurabildiği kayıt).
+    return START_NOT_STICKY
+  }
+
+  override fun onDestroy() {
+    onStop = null
+    super.onDestroy()
   }
 }
