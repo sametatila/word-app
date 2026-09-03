@@ -204,15 +204,25 @@ export function AuthScreen() {
         )}
       </ScrollView>
 
-      {/* Hukuki kabul: Play, politikanın uygulama içinden erişilebilir olmasını ister. */}
-      <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.md }}>
+      {/* Hukuki kabul: Play, politikanın uygulama içinden erişilebilir olmasını ister.
+          Bağlantılar satır içi <Text onPress> idi: 18 dp yüksekliğinde dokunma hedefi
+          (ölçüldü) ve Text hitSlop almıyor. Ayrı düğmelere çıkarıldı — hem 48 dp
+          tabanını tutuyor hem cümle Türkçe eke bağlı kalmadan çevrilebiliyor. */}
+      <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.xs, gap: 2 }}>
         <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", lineHeight: 18 }}>
-          {t("auth.devam_ederek")}
-          <Text variant="micro" color={colors.textMuted} style={{ textDecorationLine: "underline" }} onPress={() => openLegal("terms")}>{t("auth.kullanim_sartlari")}</Text>
-          {t("auth.ni_ve")}
-          <Text variant="micro" color={colors.textMuted} style={{ textDecorationLine: "underline" }} onPress={() => openLegal("privacy")}>{t("auth.gizlilik_politikasi")}</Text>
-          {t("auth.ni_kabul_etmis_olursun")}
+          {t("auth.legal_notice")}
         </Text>
+        <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+          <PressableScale onPress={() => openLegal("terms")} accessibilityRole="link" accessibilityLabel={t("auth.kullanim_sartlari")}
+            style={{ minHeight: 48, justifyContent: "center", paddingHorizontal: spacing.md }}>
+            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.kullanim_sartlari")}</Text>
+          </PressableScale>
+          <Text variant="caption" color={colors.textFaint}>·</Text>
+          <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" accessibilityLabel={t("auth.gizlilik_politikasi")}
+            style={{ minHeight: 48, justifyContent: "center", paddingHorizontal: spacing.md }}>
+            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.gizlilik_politikasi")}</Text>
+          </PressableScale>
+        </View>
       </View>
     </View>
   );
