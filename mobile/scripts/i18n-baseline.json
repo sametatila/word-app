@@ -1,5 +1,5 @@
 {
-  "total": 308,
+  "total": 306,
   "files": {
     "src/data/demoPlacement.ts": 13,
     "src/data/words.ts": 2,
@@ -26,7 +26,7 @@
     "src/screens/GameScreen.tsx": 5,
     "src/screens/ItemScreen.tsx": 5,
     "src/screens/LearnScreen.tsx": 5,
-    "src/screens/LessonScreen.tsx": 16,
+    "src/screens/LessonScreen.tsx": 14,
     "src/screens/NotificationsScreen.tsx": 4,
     "src/screens/PathScreen.tsx": 8,
     "src/screens/PlacementScreen.tsx": 4,

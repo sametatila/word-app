@@ -99,7 +99,11 @@ function candidates(raw) {
     .replace(/\{[^{}]*\}/g, " ")  // {ifade}
     .replace(/<[^<>]*>/g, "\u0001"); // etiketler → ayraç
   for (const piece of rest.split("\u0001")) out.push(piece);
-  return out.map((s) => s.trim()).filter(Boolean);
+  // Metot çağrısı taşıyan aday koddur, metin değil. Tırnak İÇEREN bir regex sınıfı
+  // (/[.!?…,;:"\'»«]/g) dizgi ayrıştırıcısını kaydırıyor ve geriye ").replace(/ö/g, "
+  // gibi kırıntılar "dizgi" olarak kalıyor. Kullanıcı metninde ".replace(" bulunmaz.
+  const CODE = /\.\w+\(/;
+  return out.map((s) => s.trim()).filter((s) => s && !CODE.test(s));
 }
 
 function scan() {
