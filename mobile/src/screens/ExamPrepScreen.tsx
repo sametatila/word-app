@@ -13,6 +13,7 @@ import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { usePremium } from "../lib/usePremium";
 import { billingAvailable } from "../lib/billing";
+import { useMicrophone } from "../lib/useMicrophone";
 import { listSkillMeta } from "../data/skills";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -36,6 +37,7 @@ const MODULES = [
 ] as const;
 
 export function ExamPrepScreen() {
+  const mic = useMicrophone();
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
@@ -120,7 +122,7 @@ export function ExamPrepScreen() {
               </View>
               <SkeletonLine variant="h3" width={20} />
             </SkeletonCard>
-          )) : MODULES.filter((m) => countFor(m) > 0).map((m) => {
+          )) : MODULES.filter((m) => countFor(m) > 0 && (mic || m.skill !== "speaking")).map((m) => {
             // İçeriği olmayan modül hiç çizilmez: çalışmayan "yakında" satırı yok.
             const tint = colors[m.tint as keyof Palette] as string;
             const n = countFor(m);

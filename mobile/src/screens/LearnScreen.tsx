@@ -13,6 +13,7 @@ import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, Qu
 import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
 import { useUpdate } from "../lib/useUpdate";
+import { useMicrophone } from "../lib/useMicrophone";
 import { Mascot } from "../ui/Mascot";
 import { AppHeader } from "../ui/AppHeader";
 import { DailyQuests } from "../ui/DailyQuests";
@@ -57,6 +58,7 @@ function WedgeTile({ title, pitch, tint, icon: Icon, onPress }: { title: string;
 }
 
 export function LearnScreen() {
+  const mic = useMicrophone();
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
@@ -191,7 +193,7 @@ export function LearnScreen() {
       {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.one_cikan")}</Text>
       <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
-        <WedgeTile title={t("learn.yuruyus_modu")} pitch={t("learn.walk_pitch")} tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
+        {mic ? <WedgeTile title={t("learn.yuruyus_modu")} pitch={t("learn.walk_pitch")} tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} /> : null}
         <WedgeTile title={t("learn.sinav_hazirlik")} pitch={t("learn.exam_pitch")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
       </View>
 

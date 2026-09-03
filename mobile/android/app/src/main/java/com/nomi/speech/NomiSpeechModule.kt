@@ -65,6 +65,19 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   }
 
   /**
+   * Cihazda mikrofon donanımı var mı. Manifest'te `uses-feature required="false"`
+   * olduğu için mikrofonsuz cihazlar da uygulamayı kurabiliyor; arayüz mikrofonlu
+   * girişleri buna göre gizliyor.
+   */
+  @ReactMethod
+  fun hasMicrophone(promise: Promise) {
+    promise.resolve(
+      try { reactCtx.packageManager.hasSystemFeature(android.content.pm.PackageManager.FEATURE_MICROPHONE) }
+      catch (_: Exception) { true },
+    )
+  }
+
+  /**
    * Tanıma kullanılabilir mi.
    *
    * `locale` iOS ile imza eşitliği için alınıyor: orada kontrol dile bağlı

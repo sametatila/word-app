@@ -3,6 +3,12 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Mikrofon YALNIZ yürüyüş modu ve konuşma alıştırmaları için gerekli; uygulamanın
+         geri kalanı (kelime turları, dersler, okuma/dinleme/yazma) mikrofonsuz çalışır.
+         required="false" olmasaydı RECORD_AUDIO'dan zorunlu özellik çıkarsanır ve Play
+         mikrofonsuz cihazları dağıtım dışında bırakırdı. Karşılığında mikrofonsuz
+         cihazda mikrofonlu girişler gizleniyor (bkz. lib/useMicrophone.ts). -->
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <!-- Ekran-kapalı (güç tuşu) yürüyüş: arka planda mikrofon için mikrofon-tipli foreground service. -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />

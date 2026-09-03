@@ -21,6 +21,7 @@ type SpeechNative = {
   cancel(): void;
   destroy(): void;
   isAvailable(locale: string): Promise<boolean>;
+  hasMicrophone(): Promise<boolean>;
   setKeepAwake(on: boolean): void;
   startRecording(): Promise<boolean>;
   stopRecording(): Promise<string | null>;
@@ -56,6 +57,19 @@ export async function ensureMicPermission(): Promise<boolean> {
   } catch {
     return false;
   }
+}
+
+/**
+ * Cihazda mikrofon DONANIMI var mı (izin değil). Manifest mikrofonu zorunlu özellik
+ * saymıyor, yani mikrofonsuz cihaz da kurabiliyor; sonuç önbelleklenir çünkü donanım
+ * uygulama çalışırken değişmez. Sorulamıyorsa VAR sayılır — yanlışlıkla özellik
+ * gizlemektense göstermek yeğdir.
+ */
+let micHardware: Promise<boolean> | null = null;
+
+export function hasMicrophone(): Promise<boolean> {
+  if (!micHardware) micHardware = (Native?.hasMicrophone() ?? Promise.resolve(true)).catch(() => true);
+  return micHardware;
 }
 
 export async function sttAvailable(locale = currentTargetLocale()): Promise<boolean> {

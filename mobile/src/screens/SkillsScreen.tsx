@@ -12,6 +12,7 @@ import { AppHeader } from "../ui/AppHeader";
 import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
 import { ReadIcon, ListenIcon, WriteIcon, WalkIcon, ChevronRightIcon, CheckIcon, PathIcon } from "../ui/icons";
 import { useMe } from "../lib/useMe";
+import { useMicrophone } from "../lib/useMicrophone";
 import { listSkillMeta, type SkillMeta } from "../data/skills";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -62,6 +63,7 @@ function SpeakingRow({ title, subtitle, icon: Icon, tint, onPress, colors }: { t
  * yer tutucu, "yakında" ya da uydurma sayaç yok.
  */
 export function SkillsScreen() {
+  const mic = useMicrophone();
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { me, loading: meLoading } = useMe();
@@ -87,9 +89,14 @@ export function SkillsScreen() {
     <Screen>
       <AppHeader title={t("skills.beceriler")} subtitle={t("skills.aciklama")} />
 
-      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, letterSpacing: 0.5 }}>{t("skills.konusma").toUpperCase()}</Text>
-      <SpeakingRow title={t("skills.yuruyus_modu")} subtitle={t("skills.yuruyus_alt")} icon={WalkIcon} tint={colors.accent} onPress={() => nav.navigate("Walk")} colors={colors} />
-      <SpeakingRow title={t("skills.ders_konusmasi")} subtitle={t("skills.ders_konusmasi_alt")} icon={PathIcon} tint={colors.primary} onPress={() => nav.navigate("Tabs")} colors={colors} />
+      {/* Konuşma bölümü mikrofonsuz cihazda hiç çizilmez: iki satır da mikrofon ister. */}
+      {mic ? (
+        <>
+          <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, letterSpacing: 0.5 }}>{t("skills.konusma").toUpperCase()}</Text>
+          <SpeakingRow title={t("skills.yuruyus_modu")} subtitle={t("skills.yuruyus_alt")} icon={WalkIcon} tint={colors.accent} onPress={() => nav.navigate("Walk")} colors={colors} />
+          <SpeakingRow title={t("skills.ders_konusmasi")} subtitle={t("skills.ders_konusmasi_alt")} icon={PathIcon} tint={colors.primary} onPress={() => nav.navigate("Tabs")} colors={colors} />
+        </>
+      ) : null}
 
       {!levelReady ? (
         <>
