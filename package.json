@@ -32,6 +32,7 @@
     "db:seed": "tsx scripts/seed.ts",
     "db:seed:skills": "tsx scripts/seed-skills.ts",
     "db:seed:zurich": "tsx scripts/seed-zurich.ts",
+    "db:seed:en": "tsx scripts/seed-english.ts",
     "meanings:packets": "node data/meanings/make-packets.mjs",
     "meanings:check": "node data/meanings/check.mjs",
     "meanings:apply": "tsx scripts/apply-meanings.ts",
