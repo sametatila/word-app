@@ -15,6 +15,7 @@ import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game
 import { markItemDone } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { API_BASE } from "../api/client";
+import { AiNotice } from "../ui/AiNotice";
 import { todayStr } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -150,7 +151,12 @@ export function ItemScreen() {
         <GlossPanel gloss={exercise.gloss} colors={colors} />
 
         {exercise.skill === "writing" ? (
-          <WritingList key={round} tasks={(exercise.tasks ?? []) as WritingTask[]} onAllDone={recordAndFinish} colors={colors} />
+          // Yazma görevleri sunucuda dil modeliyle puanlanıyor; kimin
+          // değerlendirdiği yazmaya başlamadan önce söyleniyor.
+          <>
+            <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
+            <WritingList key={round} tasks={(exercise.tasks ?? []) as WritingTask[]} onAllDone={recordAndFinish} colors={colors} />
+          </>
         ) : (
           <QuestionList key={round} questions={exercise.questions ?? []} onAllAnswered={recordAndFinish} colors={colors} />
         )}

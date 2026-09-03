@@ -9,6 +9,8 @@ export const tr: Record<string, string> = {
   "achievements.earned_count": "{n}/{toplam} kazanıldı",
   "achievements.kazanildi": "Kazanıldı",
   "achievements.yuklenemedi": "Başarımlar yüklenemedi.",
+  "ai.notice_character": "Yapay zekâ ile konuşuyorsun. Karşındaki gerçek bir kişi değil; söyledikleri yanlış olabilir ve tıbbi, hukuki ya da mali tavsiye yerine geçmez.",
+  "ai.notice_output": "Bu değerlendirmeyi yapay zekâ üretti; puan ve düzeltmeler yanlış olabilir.",
   "appheader.gelisim": "Gelişim",
   "appheader.profil": "Profil",
   "auth.adin_istege_bagli": "Adın (isteğe bağlı)",

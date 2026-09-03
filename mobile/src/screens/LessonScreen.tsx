@@ -7,6 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { ReportSheet } from "../ui/ReportSheet";
+import { AiNotice } from "../ui/AiNotice";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon } from "../ui/icons";
@@ -282,6 +283,11 @@ export function LessonScreen() {
           </Text>
         </View>
       </View>
+      {/* Rol yapma boyunca EKRANDA KALIR — akışta kaybolan tek seferlik bir
+          baloncuk, konuşmanın ortasına dönen kullanıcıya hiçbir şey söylemez. */}
+      {phase === "roleplay" && (
+        <AiNotice variant="character" style={{ marginHorizontal: spacing.lg, marginBottom: spacing.xs }} />
+      )}
       {phase === "lecture" && (
         <View style={{ flexDirection: "row", gap: 3, paddingHorizontal: spacing.lg, marginBottom: spacing.xs }}>
           {lesson.lecture.map((s, i) => (

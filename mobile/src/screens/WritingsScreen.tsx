@@ -7,6 +7,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ReportSheet } from "../ui/ReportSheet";
+import { AiNotice } from "../ui/AiNotice";
 import { ArrowBackIcon, WriteIcon } from "../ui/icons";
 import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
@@ -96,6 +97,7 @@ export function WritingsScreen() {
         </View>
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+          <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
           {(items ?? []).map((w) => <WritingCard key={w.id} w={w} colors={colors} onReport={setReport} />)}
         </ScrollView>
       )}

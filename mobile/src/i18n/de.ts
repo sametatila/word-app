@@ -4,6 +4,8 @@ export const de: Record<string, string> = {
   "achievements.earned_count": "{n}/{toplam} erhalten",
   "achievements.kazanildi": "Erhalten",
   "achievements.yuklenemedi": "Erfolge konnten nicht geladen werden.",
+  "ai.notice_character": "Du sprichst mit einer KI. Sie ist keine echte Person; ihre Antworten können falsch sein und ersetzen keine medizinische, rechtliche oder finanzielle Beratung.",
+  "ai.notice_output": "Diese Bewertung stammt von einer KI; Punktzahl und Korrekturen können falsch sein.",
   "appheader.gelisim": "Fortschritt",
   "appheader.profil": "Profil",
   "auth.adin_istege_bagli": "Dein Name (optional)",

@@ -4,6 +4,8 @@ export const en: Record<string, string> = {
   "achievements.earned_count": "{n}/{toplam} earned",
   "achievements.kazanildi": "Earned",
   "achievements.yuklenemedi": "Couldn't load achievements.",
+  "ai.notice_character": "You are talking to an AI. It is not a real person; what it says can be wrong and is not medical, legal or financial advice.",
+  "ai.notice_output": "This assessment was produced by AI; the score and corrections can be wrong.",
   "appheader.gelisim": "Progress",
   "appheader.profil": "Profile",
   "auth.adin_istege_bagli": "Your name (optional)",
