@@ -11,6 +11,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
+import { useLayout } from "../lib/useLayout";
 import { KIND_KEY } from "../data/unit";
 import { AppHeader } from "../ui/AppHeader";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -66,6 +67,9 @@ export function PathScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { data: path, source } = useLearningPath();
+  // Tablette sütun genişleyince ünite kartları 2 yerine 3'e sığıyor; sabit
+  // %47.5 kalsaydı geniş ekranda yalnız iki şişkin kart olurdu.
+  const { gridItemWidth } = useLayout();
 
   if (!path) {
     // Düz spinner yerine patika şeklinde iskelet (algılanan hız).
@@ -92,7 +96,7 @@ export function PathScreen() {
           <Skeleton height={textHeight("h3") + 30} radius={radii.lg} style={{ marginTop: spacing.md }} />
         </SkeletonCard>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
-          {[0, 1, 2, 3].map((i) => <Skeleton key={i} height={116} width="47.5%" radius={radii.lg} />)}
+          {[0, 1, 2, 3].map((i) => <Skeleton key={i} height={116} width={gridItemWidth} radius={radii.lg} />)}
         </View>
       </Screen>
     );
@@ -133,7 +137,7 @@ export function PathScreen() {
 
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
         {path.units.map((u) => (
-          <PressableScale key={u.id} style={{ width: "47.5%" }} onPress={() => openUnit(u)}>
+          <PressableScale key={u.id} style={{ width: gridItemWidth }} onPress={() => openUnit(u)}>
             <Card padded style={{ minHeight: 116, opacity: u.locked ? 0.6 : 1, borderColor: u.index === path.currentIndex ? colors.primary : colors.border, borderWidth: u.index === path.currentIndex ? 2 : 1 }}>
               <View style={{ width: 44, height: 44, borderRadius: 20, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                 {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === path.currentIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}

@@ -13,10 +13,12 @@ import { Mascot } from "../ui/Mascot";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useLayout } from "../lib/useLayout";
 
 function Stat({ icon: Icon, value, label, tint, colors }: { icon: (p: { color: string; size: number }) => React.ReactElement; value: string; label: string; tint: string; colors: Palette }) {
+  const { gridItemWidth } = useLayout();
   return (
-    <Card padded style={{ width: "47.5%", gap: 6 }}>
+    <Card padded style={{ width: gridItemWidth, gap: 6 }}>
       <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>
         <Icon color={tint} size={20} />
       </View>
@@ -32,6 +34,7 @@ function Stat({ icon: Icon, value, label, tint, colors }: { icon: (p: { color: s
  */
 export function ProgressScreen() {
   const { colors } = useTheme();
+  const { gridItemWidth } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { me } = useMe();
@@ -75,7 +78,7 @@ export function ProgressScreen() {
           // dört karo gelince ekran iki satır boyu uzamasın.
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
             {[0, 1, 2, 3].map((i) => (
-              <SkeletonCard key={i} style={{ width: "47.5%", gap: 6 }}>
+              <SkeletonCard key={i} style={{ width: gridItemWidth, gap: 6 }}>
                 <SkeletonTile size={38} />
                 <SkeletonLine variant="h1" width="55%" />
                 <SkeletonLine variant="caption" width="85%" />

@@ -16,13 +16,15 @@ import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, HandshakeIcon, BellIcon, TargetIcon, LockIcon, XIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import type { Palette } from "../theme/colors";
+import { useLayout } from "../lib/useLayout";
 import { EmptyCard, ErrorText, Pill, ScreenHeader, SectionTitle, StatPill } from "../social/common";
 import { FeedCard } from "../social/FeedList";
 import { UserActionButton } from "../social/UserActionButton";
 
 function StatTile({ value, label, color, colors }: { value: string; label: string; color: string; colors: Palette }) {
+  const { gridItemWidth } = useLayout();
   return (
-    <Card padded style={{ width: "47.5%", gap: 2 }}>
+    <Card padded style={{ width: gridItemWidth, gap: 2 }}>
       <Text variant="h1" color={color}>{value}</Text>
       <Text variant="caption" color={colors.textMuted}>{label}</Text>
     </Card>
@@ -32,6 +34,7 @@ function StatTile({ value, label, color, colors }: { value: string; label: strin
 /** Kişi profili — Profil ekranının kurgusu: ortalanmış kimlik kartı, StatTile ızgarası, kartlar. */
 export function UserScreen() {
   const { colors } = useTheme();
+  const { gridItemWidth } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const route = useRoute<RouteProp<RootStackParams, "User">>();
@@ -79,7 +82,7 @@ export function UserScreen() {
       </SkeletonCard>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
         {[0, 1, 2, 3].map((i) => (
-          <SkeletonCard key={i} style={{ width: "47.5%", gap: 2 }}>
+          <SkeletonCard key={i} style={{ width: gridItemWidth, gap: 2 }}>
             <SkeletonLine variant="h1" width="55%" />
             <SkeletonLine variant="caption" width="80%" />
           </SkeletonCard>

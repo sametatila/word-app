@@ -18,10 +18,12 @@ import { usePremium } from "../lib/usePremium";
 import { billingAvailable } from "../lib/billing";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { useLayout } from "../lib/useLayout";
 
 function StatTile({ value, label, color, colors }: { value: string; label: string; color: string; colors: Palette }) {
+  const { gridItemWidth } = useLayout();
   return (
-    <Card padded style={{ width: "47.5%", gap: 2 }}>
+    <Card padded style={{ width: gridItemWidth, gap: 2 }}>
       <Text variant="h1" color={color}>{value}</Text>
       <Text variant="caption" color={colors.textMuted}>{label}</Text>
     </Card>
@@ -42,6 +44,7 @@ function Row({ icon: Icon, label, tint, colors, last, onPress }: { icon: (p: { c
 
 export function ProfileScreen() {
   const { colors } = useTheme();
+  const { gridItemWidth } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user, signOut } = useAuth();
@@ -107,7 +110,7 @@ export function ProfileScreen() {
           // gelince ekran iki satır boyu uzamıyor.
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
             {[0, 1, 2, 3].map((i) => (
-              <SkeletonCard key={i} style={{ width: "47.5%", gap: 2 }}>
+              <SkeletonCard key={i} style={{ width: gridItemWidth, gap: 2 }}>
                 <SkeletonLine variant="h1" width="60%" />
                 <SkeletonLine variant="caption" width="85%" />
               </SkeletonCard>

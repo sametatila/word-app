@@ -11,16 +11,18 @@ import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
 import { GROUP_LABEL, type Achievement, type Tier, type AchGroup } from "../data/achievements";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useLayout } from "../lib/useLayout";
 
 function tierColor(t: Tier, colors: Palette): string {
   return t === "bronze" ? "#b08d57" : t === "silver" ? "#9aa3ad" : t === "gold" ? colors.streak : colors.accent;
 }
 
 function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
+  const { gridItemWidth } = useLayout();
   const tc = tierColor(a.tier, colors);
   const pct = a.target ? Math.min(100, Math.round((a.progress / a.target) * 100)) : 0;
   return (
-    <View style={{ width: "47.5%", backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, opacity: a.unlocked ? 1 : 0.92 }}>
+    <View style={{ width: gridItemWidth, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, opacity: a.unlocked ? 1 : 0.92 }}>
       <View style={[{ width: 46, height: 46, borderRadius: 23, alignItems: "center", justifyContent: "center", backgroundColor: a.unlocked ? tc : colors.surface2 }, a.unlocked ? softShadow(tc, 6) : {}]}>
         {a.unlocked ? <TrophyIcon color="#fff" size={24} /> : <TrophyIcon color={colors.textFaint} size={24} />}
       </View>

@@ -13,6 +13,7 @@ import { Skeleton } from "../ui/Skeleton";
 import { practiceGamesFor } from "../game/session";
 import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useLayout } from "../lib/useLayout";
 
 /** Oyun → ikon + renk (görsel çeşitlilik). */
 const META: Record<string, { icon: (p: { color: string; size: number }) => React.ReactElement; tint: keyof Palette }> = {
@@ -31,6 +32,7 @@ const META: Record<string, { icon: (p: { color: string; size: number }) => React
 
 export function PracticeScreen() {
   const { colors } = useTheme();
+  const { gridItemWidth } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   // Tek-oyun listesi kursa göre eleniyor: artikel/çoğul yalnız artikelli
@@ -71,12 +73,12 @@ export function PracticeScreen() {
             sonradan değişip ızgara boyunu oynatıyor. Önce aynı boyda iskelet. */}
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
           {meLoading ? [0, 1, 2, 3, 4, 5].map((i) => (
-            <Skeleton key={i} height={116} width="47.5%" radius={radii.xl} />
+            <Skeleton key={i} height={116} width={gridItemWidth} radius={radii.xl} />
           )) : practiceGamesFor(me?.course).map((g) => {
             const m = META[g.game] ?? { icon: (p: { color: string; size: number }) => <QuizIcon {...p} />, tint: "primary" as keyof Palette };
             const tint = colors[m.tint] as string;
             return (
-              <PressableScale key={g.game} onPress={() => nav.navigate("Game", { game: g.game })} style={{ width: "47.5%" }}>
+              <PressableScale key={g.game} onPress={() => nav.navigate("Game", { game: g.game })} style={{ width: gridItemWidth }}>
                 <Card padded style={{ minHeight: 116, justifyContent: "space-between" }}>
                   <View style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
                     {m.icon({ color: "#fff", size: 22 })}
