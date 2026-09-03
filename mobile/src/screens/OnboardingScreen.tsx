@@ -10,7 +10,8 @@ import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
 import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
-import { enabledCourses, DEFAULT_NATIVE } from "../lib/courses";
+import { enabledCourses } from "../lib/courses";
+import { t, currentLang } from "../lib/i18n";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
@@ -35,45 +36,53 @@ type Step = {
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 
-const STEPS: Step[] = [
-  {
-    key: "welcome", icon: BoltIcon,
-    title: "Nomi'ye hoş geldin",
-    subtitle: "Kısa turlarla, oyun gibi öğren. Birkaç dakikada başlarsın; düzenli çalışınca ilerleme kalıcı olur.",
-  },
-  {
-    key: "course", icon: SkillsIcon,
-    title: "Hangi kursla başlayalım?",
-    subtitle: "Kursunu seç; sonradan Ayarlar'dan değiştirebilirsin.",
-    // Kurs kayıt defterinden türüyor (lib/courses.ts): içeriği hazır olmayan
-    // kurs listede görünmez, yeni dil açıldığında burası kendiliğinden doğrular.
-    options: enabledCourses().map((c) => ({
-      key: c.id,
-      label: c.label[DEFAULT_NATIVE],
-      sub: c.sub[DEFAULT_NATIVE],
-    })),
-  },
-  {
-    key: "level", icon: ExamIcon,
-    title: "Nereden başlayalım?",
-    subtitle: "Sıfırdan başla, kısa bir testle seviyeni belirle ya da seviyeni kendin seç.",
-    options: [
-      { key: "A1", label: "Sıfırdan", sub: "Yeni başlıyorum — ilk kelimelerle ısınalım" },
-      { key: "test", label: "Testle belirle", sub: "Kısa yerleştirme sınavı" },
-      { key: "pick", label: "Seviyeni seç", sub: "Seviyeni biliyorsan doğrudan seç" },
-    ],
-  },
-  {
-    key: "goal", icon: CheckIcon,
-    title: "Günlük hedefin ne olsun?",
-    subtitle: "İstediğin zaman değiştirebilirsin.",
-    options: [
-      { key: "5", label: "Rahat", sub: "5 dk / gün" },
-      { key: "10", label: "Kararlı", sub: "10 dk / gün" },
-      { key: "20", label: "Ciddi", sub: "20 dk / gün" },
-    ],
-  },
-];
+/**
+ * Adımlar — sabit dizi DEĞİL fonksiyon. İki sebep: t() modül yüklenirken çağrılsaydı
+ * dil tercihi (loadLang) henüz okunmamış olurdu; ve kurs adları arayüz diline bağlı,
+ * eskiden DEFAULT_NATIVE ile sabit Türkçe basılıyordu.
+ */
+function steps(): Step[] {
+  const lang = currentLang();
+  return [
+    {
+      key: "welcome", icon: BoltIcon,
+      title: t("onboarding.nomi_ye_hos_geldin"),
+      subtitle: t("onboarding.kisa_turlarla_oyun_gibi_ogren_birk"),
+    },
+    {
+      key: "course", icon: SkillsIcon,
+      title: t("onboarding.hangi_kursla_baslayalim"),
+      subtitle: t("onboarding.kursunu_sec_sonradan_ayarlar_dan_d"),
+      // Kurs kayıt defterinden türüyor (lib/courses.ts): içeriği hazır olmayan
+      // kurs listede görünmez, yeni dil açıldığında burası kendiliğinden doğrular.
+      options: enabledCourses().map((c) => ({
+        key: c.id,
+        label: c.label[lang],
+        sub: c.sub[lang],
+      })),
+    },
+    {
+      key: "level", icon: ExamIcon,
+      title: t("onboarding.nereden_baslayalim"),
+      subtitle: t("onboarding.sifirdan_basla_kisa_bir_testle_sev"),
+      options: [
+        { key: "A1", label: t("onboarding.sifirdan"), sub: t("onboarding.yeni_basliyorum_ilk_kelimelerle_is") },
+        { key: "test", label: t("onboarding.testle_belirle"), sub: t("onboarding.kisa_yerlestirme_sinavi") },
+        { key: "pick", label: t("onboarding.seviyeni_sec"), sub: t("onboarding.seviyeni_biliyorsan_dogrudan_sec") },
+      ],
+    },
+    {
+      key: "goal", icon: CheckIcon,
+      title: t("onboarding.gunluk_hedefin_ne_olsun"),
+      subtitle: t("onboarding.istedigin_zaman_degistirebilirsin"),
+      options: [
+        { key: "5", label: t("onboarding.rahat"), sub: t("onboarding.n_dk_gun", { n: 5 }) },
+        { key: "10", label: t("onboarding.kararli"), sub: t("onboarding.n_dk_gun", { n: 10 }) },
+        { key: "20", label: t("onboarding.ciddi"), sub: t("onboarding.n_dk_gun", { n: 20 }) },
+      ],
+    },
+  ];
+}
 
 export function OnboardingScreen() {
   const { colors } = useTheme();
@@ -82,10 +91,11 @@ export function OnboardingScreen() {
   const [i, setI] = useState(0);
   const [choices, setChoices] = useState<Record<string, string>>({});
   const [pickedLevel, setPickedLevel] = useState<string | null>(null);
-  const step = STEPS[i];
+  const allSteps = steps();
+  const step = allSteps[i];
 
   useEffect(() => { track("onboarding_step", i, step?.key); }, [i, step?.key]);
-  const last = i === STEPS.length - 1;
+  const last = i === allSteps.length - 1;
   const needsChoice = !!step.options;
   const chosen = choices[step.key];
   // Seviye adımında "Seviyeni seç" işaretliyse ayrıca bir seviye seçilmeli.
@@ -122,7 +132,7 @@ export function OnboardingScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.lg, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
       <View style={{ flexDirection: "row", alignItems: "center", marginBottom: spacing.xxl }}>
         <View style={{ flexDirection: "row", gap: 6 }}>
-          {STEPS.map((_, n) => (
+          {allSteps.map((_, n) => (
             <View key={n} style={{ height: 6, width: n === i ? 22 : 6, borderRadius: 3, backgroundColor: n === i ? colors.primary : colors.surface2 }} />
           ))}
         </View>
@@ -169,10 +179,10 @@ export function OnboardingScreen() {
       </View>
 
       <PressableScale onPress={next} style={[{ borderRadius: radii.lg, backgroundColor: canNext ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, canNext ? softShadow(colors.primary, 10) : {}]}>
-        <Text variant="h3" color={canNext ? "#fff" : colors.textFaint}>{last ? (choices.level === "test" ? "Teste başla" : "Devam et") : "Devam et"}</Text>
+        <Text variant="h3" color={canNext ? "#fff" : colors.textFaint}>{last && choices.level === "test" ? t("onboarding.teste_basla") : t("common.devam_et")}</Text>
       </PressableScale>
       <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
-        Birazdan hesabını açacaksın — serin, XP'n ve ilerlemen kaydolur.
+        {t("onboarding.birazdan_hesabini_acacaksin_serin")}
       </Text>
     </View>
   );

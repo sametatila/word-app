@@ -17,11 +17,14 @@ import { useTheme, spacing, radii, softShadow } from "../theme";
  * diyaloğundan ÖNCE nazikçe konumlar (priming) — elde tutmanın en güçlü kaldıracı.
  * Bir hatırlatma saati seçtirir; "Hatırlat" izin ister + günlük tetikleyici kurar.
  */
-const TIMES = [
-  { label: "Sabah", value: "09:00" },
-  { label: "Öğle", value: "13:00" },
-  { label: "Akşam", value: "20:00" },
-];
+/** Hatırlatma saatleri — etiket t() ile, çağrı anında (dil modül yüklenirken hazır değil). */
+function times(): { label: string; value: string }[] {
+  return [
+    { label: tx("notifprime.sabah"), value: "09:00" },
+    { label: tx("notifprime.ogle"), value: "13:00" },
+    { label: tx("notifprime.aksam"), value: "20:00" },
+  ];
+}
 
 export function NotifPrimeScreen() {
   const { colors } = useTheme();
@@ -54,15 +57,15 @@ export function NotifPrimeScreen() {
         </View>
         <Text variant="display" style={{ textAlign: "center" }}>{tx("notifprime.serini_koru")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 23, paddingHorizontal: spacing.md }}>
-          Günde bir nazik hatırlatma, çalışmayı sürdürmenin en kolay yolu. Düzenli çalışan öğrenciler serilerini çok daha uzun tutar.
+          {tx("notifprime.gunde_bir_nazik_hatirlatma_calisma")}
         </Text>
 
         <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.streak + "1e", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
-          <FlameIcon color={colors.streak} size={16} /><Text variant="caption" color={colors.streak}>Hatırlatma = daha uzun seri</Text>
+          <FlameIcon color={colors.streak} size={16} /><Text variant="caption" color={colors.streak}>{tx("notifprime.hatirlatma_daha_uzun_seri")}</Text>
         </View>
 
         <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.md }}>
-          {TIMES.map((t) => {
+          {times().map((t) => {
             const on = time === t.value;
             return (
               <PressableScale key={t.value} onPress={() => setTime(t.value)} accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={`${t.label} ${t.value}`} style={{ flex: 1, paddingVertical: 14, borderRadius: radii.lg, alignItems: "center", borderWidth: 2, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primarySoft : colors.surface }}>
@@ -75,7 +78,7 @@ export function NotifPrimeScreen() {
       </View>
 
       <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel={tx("notifprime.gunluk_hatirlatmayi_ac")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-        <Text variant="h3" color="#fff">{busy ? "..." : "Günde bir hatırlat"}</Text>
+        <Text variant="h3" color="#fff">{busy ? "..." : tx("notifprime.gunde_bir_hatirlat")}</Text>
       </PressableScale>
       <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel={tx("notifprime.simdilik_gec")} style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: 4 }}>
         <Text variant="bodyStrong" color={colors.textMuted}>{tx("notifprime.belki_sonra")}</Text>

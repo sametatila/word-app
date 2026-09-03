@@ -88,7 +88,7 @@ export function AuthScreen() {
       const done = await socialComplete(); // oturumu tazele + onboarding prefs
       setSocialBusy(null);
       if (done) void toApp();
-      else setError("Giriş tamamlanamadı. Tekrar dener misin?");
+      else setError(t("auth.giris_tamamlanamadi_tekrar_dener_m"));
     } else {
       setSocialBusy(null);
       if (r.code !== "CANCELLED") setError(r.message);
@@ -118,22 +118,22 @@ export function AuthScreen() {
             <BoltIcon color="#fff" size={38} />
           </View>
           <Text variant="display" style={{ marginTop: spacing.md }}>
-            {view === "forgot" ? "Parolanı mı unuttun?" : view === "options" ? "Giriş yap" : mode === "signin" ? "Tekrar hoş geldin" : "Hesap oluştur"}
+            {view === "forgot" ? t("auth.parolani_mi_unuttun") : view === "options" ? t("auth.giris_yap") : mode === "signin" ? t("auth.tekrar_hos_geldin") : t("auth.hesap_olustur")}
           </Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>
-            {view === "forgot" ? "E-postanı gir, sıfırlama bağlantısı gönderelim." : view === "options" ? "İlerlemen kaydolur, cihazlar arası devam eder." : mode === "signin" ? "Serini kaldığın yerden sürdür." : "Birkaç saniye sürer, ilerlemen kaydedilir."}
+            {view === "forgot" ? t("auth.e_postani_gir_sifirlama_baglantisi") : view === "options" ? t("auth.ilerlemen_kaydolur_cihazlar_arasi") : mode === "signin" ? t("auth.serini_kaldigin_yerden_surdur") : t("auth.birkac_saniye_surer_ilerlemen_kayd")}
           </Text>
         </View>
 
         {view === "options" ? (
           <View style={{ gap: spacing.md }}>
             {PROVIDERS.filter((p) => p.id !== "google" || googleOn).map((p) => (
-              <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={`${p.label} ile devam et`}
+              <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={t("auth.saglayici_ile_devam_et", { saglayici: p.label })}
                 style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, paddingHorizontal: spacing.lg }}>
                 <View style={{ width: 24, alignItems: "center" }}>
                   {socialBusy === p.id ? <ActivityIndicator color={colors.textMuted} /> : providerIcon(p.id, colors)}
                 </View>
-                <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{p.label} ile devam et</Text>
+                <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{t("auth.saglayici_ile_devam_et", { saglayici: p.label })}</Text>
               </PressableScale>
             ))}
 
@@ -155,14 +155,14 @@ export function AuthScreen() {
             {resetSent ? (
               <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.lg, padding: spacing.lg, gap: 6 }}>
                 <Text variant="bodyStrong" color={colors.success}>{t("auth.baglanti_gonderildi")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{email.trim() || "E-postana"} adresine bir sıfırlama bağlantısı gönderdik (adres kayıtlıysa). Gelen kutunu kontrol et.</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("auth.eposta_adresine_bir_sifirlama_bagl", { eposta: email.trim() || t("auth.e_postana") })}</Text>
               </View>
             ) : (
               <>
                 <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.e_posta")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
                 {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.danger}>{error}</Text></View>)}
                 <PressableScale onPress={doReset} accessibilityLabel={t("auth.sifirlama_baglantisi_gonder")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
-                  <Text variant="h3" color="#fff">{resetBusy ? "..." : "Sıfırlama bağlantısı gönder"}</Text>
+                  <Text variant="h3" color="#fff">{resetBusy ? "..." : t("auth.sifirlama_baglantisi_gonder")}</Text>
                 </PressableScale>
               </>
             )}
@@ -173,10 +173,10 @@ export function AuthScreen() {
         ) : (
           <View style={{ gap: spacing.md }}>
             {mode === "signup" && (
-              <TextInput value={name} onChangeText={setName} placeholder="Adın (isteğe bağlı)" placeholderTextColor={colors.textFaint} autoCapitalize="words" style={input} />
+              <TextInput value={name} onChangeText={setName} placeholder={t("auth.adin_istege_bagli")} placeholderTextColor={colors.textFaint} autoCapitalize="words" style={input} />
             )}
             <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.e_posta")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
-            <TextInput value={password} onChangeText={setPassword} placeholder="Parola (en az 8 karakter)" placeholderTextColor={colors.textFaint} secureTextEntry style={input} />
+            <TextInput value={password} onChangeText={setPassword} placeholder={t("auth.parola_en_az_8_karakter")} placeholderTextColor={colors.textFaint} secureTextEntry style={input} />
 
             {error && (
               <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
@@ -185,7 +185,7 @@ export function AuthScreen() {
             )}
 
             <PressableScale onPress={submit} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color="#fff">{busy ? "..." : mode === "signin" ? "Giriş yap" : "Hesap oluştur"}</Text>
+              <Text variant="h3" color="#fff">{busy ? "..." : mode === "signin" ? t("auth.giris_yap") : t("auth.hesap_olustur")}</Text>
             </PressableScale>
 
             {mode === "signin" && (
@@ -196,8 +196,8 @@ export function AuthScreen() {
 
             <PressableScale onPress={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
               <Text variant="body" color={colors.textMuted}>
-                {mode === "signin" ? "Hesabın yok mu? " : "Zaten hesabın var mı? "}
-                <Text variant="bodyStrong" color={colors.primary}>{mode === "signin" ? "Kayıt ol" : "Giriş yap"}</Text>
+                {mode === "signin" ? t("auth.hesabin_yok_mu") : t("auth.zaten_hesabin_var_mi")}
+                <Text variant="bodyStrong" color={colors.primary}>{mode === "signin" ? t("auth.kayit_ol") : t("auth.giris_yap")}</Text>
               </Text>
             </PressableScale>
           </View>
@@ -207,11 +207,11 @@ export function AuthScreen() {
       {/* Hukuki kabul: Play, politikanın uygulama içinden erişilebilir olmasını ister. */}
       <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.md }}>
         <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", lineHeight: 18 }}>
-          Devam ederek{" "}
+          {t("auth.devam_ederek")}
           <Text variant="micro" color={colors.textMuted} style={{ textDecorationLine: "underline" }} onPress={() => openLegal("terms")}>{t("auth.kullanim_sartlari")}</Text>
-          {"'nı ve "}
+          {t("auth.ni_ve")}
           <Text variant="micro" color={colors.textMuted} style={{ textDecorationLine: "underline" }} onPress={() => openLegal("privacy")}>{t("auth.gizlilik_politikasi")}</Text>
-          {"'nı kabul etmiş olursun."}
+          {t("auth.ni_kabul_etmis_olursun")}
         </Text>
       </View>
     </View>
