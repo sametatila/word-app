@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -115,7 +116,7 @@ export function PlacementScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center" }}>
         <ActivityIndicator color={colors.primary} />
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>Seviye testin hazırlanıyor…</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("placement.seviye_testin_hazirlaniyor")}</Text>
       </View>
     );
   }
@@ -142,7 +143,7 @@ export function PlacementScreen() {
       ) : submitting ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <ActivityIndicator color={colors.primary} />
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>Seviyen hesaplanıyor…</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("placement.seviyen_hesaplaniyor")}</Text>
         </View>
       ) : (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -153,12 +154,12 @@ export function PlacementScreen() {
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {total} sorudan {correct} doğru. Bu seviyeden başlayabilirsin.
           </Text>
-          {saved && <Text variant="bodyStrong" color={colors.success} style={{ marginBottom: spacing.md }}>Kaydedildi</Text>}
+          {saved && <Text variant="bodyStrong" color={colors.success} style={{ marginBottom: spacing.md }}>{t("placement.kaydedildi")}</Text>}
           <PressableScale onPress={applyLevel} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color="#fff">{user ? "Seviyemi ayarla" : "Anladım"}</Text>
           </PressableScale>
           <PressableScale onPress={leave} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>Kapat</Text>
+            <Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text>
           </PressableScale>
         </View>
       )}

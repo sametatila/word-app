@@ -98,8 +98,9 @@ export const COURSES: Course[] = [
     },
     // İngilizcede isimlerin cinsiyeti yok; artikel/çoğul turları anlamsız.
     hasArticles: false,
-    // İçerik hattı (kelime + ders + beceri) hazır olunca açılacak.
-    enabled: false,
+    // Kelime katmanı hazır (2049+ madde, 8 tur türü). Ders ve beceri içeriği
+    // henüz yok: Patika ve Beceriler ekranları bu kursta boş görünür.
+    enabled: true,
   },
 ];
 

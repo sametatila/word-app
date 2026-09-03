@@ -1,4 +1,5 @@
 import React from "react";
+import { t } from "../lib/i18n";
 import { PressableScale } from "./PressableScale";
 import { SpeakerIcon } from "./icons";
 import { useTheme, radii } from "../theme";
@@ -27,7 +28,7 @@ export function SpeakButton({
   const color = tone ?? colors.primary;
   return (
     <PressableScale
-      accessibilityLabel="Sesli oku"
+      accessibilityLabel={t("speakbutton.sesli_oku")}
       hitSlop={8}
       onPress={() => speakTarget(text, { slow })}
       style={{

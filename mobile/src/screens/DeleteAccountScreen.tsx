@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t as tx } from "../lib/i18n";
 import { View, TextInput, ScrollView } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -102,8 +103,8 @@ export function DeleteAccountScreen() {
         <View style={{ width: 72, height: 72, borderRadius: 36, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
           <CheckIcon color={colors.success} size={34} />
         </View>
-        <Text variant="h2" style={{ textAlign: "center" }}>Hesabın silindi</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>Verilerin kaldırıldı. Seni tanımak güzeldi.</Text>
+        <Text variant="h2" style={{ textAlign: "center" }}>{tx("deleteaccount.hesabin_silindi")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("deleteaccount.verilerin_kaldirildi_seni_tanimak_guzeldi")}</Text>
       </View>
     );
   }
@@ -111,10 +112,10 @@ export function DeleteAccountScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingBottom: spacing.sm, ...pad }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">Hesabı sil</Text>
+        <Text variant="h2">{tx("deleteaccount.hesabi_sil")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
@@ -134,8 +135,8 @@ export function DeleteAccountScreen() {
 
         {needsFresh ? (
           <Card padded style={{ marginTop: spacing.lg, gap: spacing.sm }}>
-            <Text variant="h3">Önce yeniden giriş yap</Text>
-            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>Güvenlik için hesap silme, son 24 saat içinde açılmış bir oturum ister.</Text>
+            <Text variant="h3">{tx("deleteaccount.once_yeniden_giris_yap")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>{tx("deleteaccount.guvenlik_icin_hesap_silme_son_24")}</Text>
             <PressableScale onPress={reauthAndRetry} disabled={busy} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }, softShadow(colors.primary, 8)]}>
               <Text variant="bodyStrong" color="#fff">{busy ? "..." : "Google ile yeniden gir ve sil"}</Text>
             </PressableScale>
@@ -146,24 +147,24 @@ export function DeleteAccountScreen() {
               <TextInput
                 value={password}
                 onChangeText={setPassword}
-                placeholder="Parolan"
+                placeholder={tx("deleteaccount.parolan")}
                 placeholderTextColor={colors.textFaint}
                 secureTextEntry
                 autoCapitalize="none"
                 autoCorrect={false}
                 textContentType="password"
-                accessibilityLabel="Parola"
+                accessibilityLabel={tx("deleteaccount.parola")}
                 style={{ marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
               />
             ) : hasPassword === false ? (
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>Google ile girdiğin için parola gerekmiyor.</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{tx("deleteaccount.google_ile_girdigin_icin_parola_gerekmiyor")}</Text>
             ) : null}
 
             <PressableScale onPress={() => setAgree((a) => !a)} accessibilityRole="checkbox" accessibilityState={{ checked: agree }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, marginTop: spacing.sm }}>
               <View style={{ width: 26, height: 26, borderRadius: radii.sm, borderWidth: 2, borderColor: agree ? colors.danger : colors.border, backgroundColor: agree ? colors.danger : "transparent", alignItems: "center", justifyContent: "center" }}>
                 {agree ? <CheckIcon color="#fff" size={16} /> : null}
               </View>
-              <Text variant="body" style={{ flex: 1 }}>Verilerimin kalıcı olarak silineceğini anladım.</Text>
+              <Text variant="body" style={{ flex: 1 }}>{tx("deleteaccount.verilerimin_kalici_olarak_silinecegini_anlad")}</Text>
             </PressableScale>
 
             {error ? <Text variant="bodyStrong" color={colors.danger} style={{ marginTop: spacing.sm }}>{error}</Text> : null}
@@ -172,7 +173,7 @@ export function DeleteAccountScreen() {
               <Text variant="h3" color={ready ? "#fff" : colors.textFaint}>{busy ? "Siliniyor..." : "Hesabımı kalıcı olarak sil"}</Text>
             </PressableScale>
             <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, alignItems: "center" }}>
-              <Text variant="bodyStrong" color={colors.textMuted}>Vazgeç</Text>
+              <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.vazgec")}</Text>
             </PressableScale>
           </>
         )}
@@ -180,7 +181,7 @@ export function DeleteAccountScreen() {
 
       <ConfirmDialog
         visible={confirm}
-        title="Son kez soruyoruz"
+        title={tx("deleteaccount.son_kez_soruyoruz")}
         message="Hesabın ve tüm verilerin silinecek. Geri alınamaz."
         confirmLabel="Evet, sil"
         cancelLabel="Vazgeç"

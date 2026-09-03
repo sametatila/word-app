@@ -1,4 +1,5 @@
 import React from "react";
+import { t } from "../lib/i18n";
 import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -70,7 +71,7 @@ export function PathScreen() {
     // Düz spinner yerine patika şeklinde iskelet (algılanan hız).
     return (
       <Screen>
-        <AppHeader title="Patika" />
+        <AppHeader title={t("path.patika")} />
         <Skeleton height={10} radius={5} style={{ marginBottom: 8 }} />
         <Skeleton height={14} width="55%" radius={7} style={{ marginBottom: spacing.lg }} />
         <Skeleton height={196} radius={radii.xl} style={{ marginBottom: spacing.lg }} />
@@ -91,7 +92,7 @@ export function PathScreen() {
 
   return (
     <Screen>
-      <AppHeader title="Patika" />
+      <AppHeader title={t("path.patika")} />
       <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: 6 }}>
         <View style={{ height: "100%", width: `${Math.max(2, pctAll)}%`, borderRadius: 5, backgroundColor: colors.success }} />
       </View>

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -26,7 +27,7 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{a.hint}</Text>
       {a.unlocked ? (
         <View style={{ flexDirection: "row", alignItems: "center", gap: 4, marginTop: spacing.sm }}>
-          <CheckIcon color={colors.success} size={14} /><Text variant="micro" color={colors.success}>Kazanıldı</Text>
+          <CheckIcon color={colors.success} size={14} /><Text variant="micro" color={colors.success}>{t("achievements.kazanildi")}</Text>
         </View>
       ) : (
         <View style={{ marginTop: spacing.sm }}>
@@ -67,11 +68,11 @@ export function AchievementsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h2">Başarımlar</Text>
+          <Text variant="h2">{t("achievements.basarimlar")}</Text>
           <Text variant="caption" color={colors.textMuted}>{earned}/{list.length} kazanıldı</Text>
         </View>
       </View>

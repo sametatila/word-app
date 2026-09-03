@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { t } from "../lib/i18n";
 import { View } from "react-native";
 import { social, errorText, timeAgo, type PendingView } from "../api/social";
 import { Text } from "../ui/Text";
@@ -10,11 +11,11 @@ import { EmptyCard, ErrorText, Pill, SectionTitle } from "./common";
 
 export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingView[]; outgoing: PendingView[]; onChanged: () => void }) {
   const { colors } = useTheme();
-  if (!incoming.length && !outgoing.length) return <EmptyCard icon={UserPlusIcon} tint={colors.info} title="Bekleyen istek yok" text="Gelen istekler burada birikir; gönderdiklerini de buradan iptal edersin." />;
+  if (!incoming.length && !outgoing.length) return <EmptyCard icon={UserPlusIcon} tint={colors.info} title={t("requests.bekleyen_istek_yok")} text="Gelen istekler burada birikir; gönderdiklerini de buradan iptal edersin." />;
   return (
     <View>
-      {incoming.length ? (<><SectionTitle title="Gelen" right={`${incoming.length}`} />{incoming.map((r) => <RequestCard key={r.friendshipId} r={r} incoming onChanged={onChanged} />)}</>) : null}
-      {outgoing.length ? (<><SectionTitle title="Gönderilen" right={`${outgoing.length}`} />{outgoing.map((r) => <RequestCard key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} />)}</>) : null}
+      {incoming.length ? (<><SectionTitle title={t("requests.gelen")} right={`${incoming.length}`} />{incoming.map((r) => <RequestCard key={r.friendshipId} r={r} incoming onChanged={onChanged} />)}</>) : null}
+      {outgoing.length ? (<><SectionTitle title={t("requests.gonderilen")} right={`${outgoing.length}`} />{outgoing.map((r) => <RequestCard key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} />)}</>) : null}
     </View>
   );
 }
@@ -41,11 +42,11 @@ function RequestCard({ r, incoming, onChanged }: { r: PendingView; incoming: boo
       <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
         {incoming ? (
           <>
-            <View style={{ flex: 1 }}><Pill label="Kabul et" block disabled={busy} onPress={() => void act(() => social.respond(r.friendshipId, "accept"))} /></View>
-            <Pill label="Reddet" tone="ghost" disabled={busy} onPress={() => void act(() => social.respond(r.friendshipId, "decline"))} />
+            <View style={{ flex: 1 }}><Pill label={t("requests.kabul_et")} block disabled={busy} onPress={() => void act(() => social.respond(r.friendshipId, "accept"))} /></View>
+            <Pill label={t("requests.reddet")} tone="ghost" disabled={busy} onPress={() => void act(() => social.respond(r.friendshipId, "decline"))} />
           </>
         ) : (
-          <Pill label="İsteği iptal et" tone="ghost" block disabled={busy} onPress={() => void act(() => social.remove(r.user.userId))} />
+          <Pill label={t("requests.istegi_iptal_et")} tone="ghost" block disabled={busy} onPress={() => void act(() => social.remove(r.user.userId))} />
         )}
       </View>
       <ErrorText text={err} />

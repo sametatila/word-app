@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { t } from "../lib/i18n";
 import { View, TextInput, ScrollView, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -135,7 +136,7 @@ export function AuthScreen() {
             <PressableScale onPress={() => { setView("email"); setError(null); }}
               style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, paddingHorizontal: spacing.lg }}>
               <View style={{ width: 24, alignItems: "center" }}><MailIcon color={colors.text} size={22} /></View>
-              <Text variant="h3" color={colors.text} style={{ flex: 1 }}>E-posta ile devam et</Text>
+              <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{t("auth.e_posta_ile_devam_et")}</Text>
             </PressableScale>
 
             {error && (
@@ -148,20 +149,20 @@ export function AuthScreen() {
           <View style={{ gap: spacing.md }}>
             {resetSent ? (
               <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.lg, padding: spacing.lg, gap: 6 }}>
-                <Text variant="bodyStrong" color={colors.success}>Bağlantı gönderildi</Text>
+                <Text variant="bodyStrong" color={colors.success}>{t("auth.baglanti_gonderildi")}</Text>
                 <Text variant="caption" color={colors.textMuted}>{email.trim() || "E-postana"} adresine bir sıfırlama bağlantısı gönderdik (adres kayıtlıysa). Gelen kutunu kontrol et.</Text>
               </View>
             ) : (
               <>
-                <TextInput value={email} onChangeText={setEmail} placeholder="E-posta" placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
+                <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.e_posta")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
                 {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.danger}>{error}</Text></View>)}
-                <PressableScale onPress={doReset} accessibilityLabel="Sıfırlama bağlantısı gönder" style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
+                <PressableScale onPress={doReset} accessibilityLabel={t("auth.sifirlama_baglantisi_gonder")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
                   <Text variant="h3" color="#fff">{resetBusy ? "..." : "Sıfırlama bağlantısı gönder"}</Text>
                 </PressableScale>
               </>
             )}
             <PressableScale onPress={() => { setView("email"); setResetSent(false); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
-              <Text variant="bodyStrong" color={colors.primary}>Girişe dön</Text>
+              <Text variant="bodyStrong" color={colors.primary}>{t("auth.girise_don")}</Text>
             </PressableScale>
           </View>
         ) : (
@@ -169,7 +170,7 @@ export function AuthScreen() {
             {mode === "signup" && (
               <TextInput value={name} onChangeText={setName} placeholder="Adın (isteğe bağlı)" placeholderTextColor={colors.textFaint} autoCapitalize="words" style={input} />
             )}
-            <TextInput value={email} onChangeText={setEmail} placeholder="E-posta" placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
+            <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.e_posta")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
             <TextInput value={password} onChangeText={setPassword} placeholder="Parola (en az 8 karakter)" placeholderTextColor={colors.textFaint} secureTextEntry style={input} />
 
             {error && (
@@ -184,7 +185,7 @@ export function AuthScreen() {
 
             {mode === "signin" && (
               <PressableScale onPress={() => { setView("forgot"); setError(null); setResetSent(false); }} style={{ alignItems: "center", paddingVertical: spacing.xs }}>
-                <Text variant="caption" color={colors.textMuted}>Parolanı mı unuttun?</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("auth.parolani_mi_unuttun")}</Text>
               </PressableScale>
             )}
 
@@ -202,9 +203,9 @@ export function AuthScreen() {
       <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.md }}>
         <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", lineHeight: 18 }}>
           Devam ederek{" "}
-          <Text variant="micro" color={colors.textMuted} style={{ textDecorationLine: "underline" }} onPress={() => openLegal("terms")}>Kullanım Şartları</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ textDecorationLine: "underline" }} onPress={() => openLegal("terms")}>{t("auth.kullanim_sartlari")}</Text>
           {"'nı ve "}
-          <Text variant="micro" color={colors.textMuted} style={{ textDecorationLine: "underline" }} onPress={() => openLegal("privacy")}>Gizlilik Politikası</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ textDecorationLine: "underline" }} onPress={() => openLegal("privacy")}>{t("auth.gizlilik_politikasi")}</Text>
           {"'nı kabul etmiş olursun."}
         </Text>
       </View>

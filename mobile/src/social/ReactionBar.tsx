@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { t } from "../lib/i18n";
 import { View } from "react-native";
 import { REACTION_KINDS, REACTION_LABELS, social, errorText, type ReactionKind, type ReactionSummary } from "../api/social";
 import { Text } from "../ui/Text";
@@ -46,7 +47,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
           );
         })}
         {!disabled ? (
-          <PressableScale onPress={() => setOpen((o) => !o)} disabled={busy} accessibilityLabel="Tepki ver" style={{ paddingHorizontal: 12, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+          <PressableScale onPress={() => setOpen((o) => !o)} disabled={busy} accessibilityLabel={t("reactionbar.tepki_ver")} style={{ paddingHorizontal: 12, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
             <Text variant="caption" color={colors.textMuted}>{s.mine ? "Değiştir" : "Tepki ver"}</Text>
           </PressableScale>
         ) : null}

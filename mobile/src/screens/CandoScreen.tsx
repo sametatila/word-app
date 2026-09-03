@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, ScrollView, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -52,15 +53,15 @@ export function CandoScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">Neler yapabilirim</Text>
+        <Text variant="h2">{t("cando.neler_yapabilirim")}</Text>
       </View>
       {phase === "loading" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}><ActivityIndicator color={colors.primary} /></View>
       ) : phase === "error" ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}><Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>Giriş yapıp ders ve alıştırmaları bitirdikçe "yapabilirim" ifadelerin burada kanıtlanır.</Text></View>
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}><Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("cando.giris_yapip_ders_ve_alistirmalari_bitirdikce")}</Text></View>
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           {/* seviye özeti */}

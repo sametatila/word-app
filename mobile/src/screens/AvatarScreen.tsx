@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -49,10 +50,10 @@ export function AvatarScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">Avatarın</Text>
+        <Text variant="h2">{t("avatar.avatarin")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
@@ -61,7 +62,7 @@ export function AvatarScreen() {
           <View style={softShadow(colors.primary, 12)}><Avatar size={140} config={cfg} /></View>
         </View>
 
-        <Group title="ŞAPKA" colors={colors}>
+        <Group title={t("avatar.sapka")} colors={colors}>
           <OptTile preview={none({ hat: null })} selected={cfg.hat === null} onPress={() => setCfg((c) => ({ ...c, hat: null }))} colors={colors} />
           {HATS.map((h) => (
             <OptTile key={h} preview={none({ hat: h })} selected={cfg.hat === h} onPress={() => setCfg((c) => ({ ...c, hat: h }))} colors={colors} />
@@ -70,7 +71,7 @@ export function AvatarScreen() {
 
         {cfg.hat ? (
           <View style={{ marginTop: spacing.lg }}>
-            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>ŞAPKA RENGİ</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{t("avatar.sapka_rengi")}</Text>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
               {HAT_COLORS.map((col) => {
                 const sel = cfg.hatColor === col;
@@ -82,7 +83,7 @@ export function AvatarScreen() {
           </View>
         ) : null}
 
-        <Group title="GÖZLÜK" colors={colors}>
+        <Group title={t("avatar.gozluk")} colors={colors}>
           <OptTile preview={none({ glasses: null })} selected={cfg.glasses === null} onPress={() => setCfg((c) => ({ ...c, glasses: null }))} colors={colors} />
           {GLASSES.map((g) => (
             <OptTile key={g} preview={none({ glasses: g })} selected={cfg.glasses === g} onPress={() => setCfg((c) => ({ ...c, glasses: g }))} colors={colors} />
@@ -97,7 +98,7 @@ export function AvatarScreen() {
         </Group>
 
         <PressableScale onPress={save} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color="#fff">Kaydet</Text>
+          <Text variant="h3" color="#fff">{t("common.kaydet")}</Text>
         </PressableScale>
       </ScrollView>
     </View>

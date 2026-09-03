@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t as tx } from "../lib/i18n";
 import { ScrollView, Switch, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { social, errorText, type PublicUser, type SocialMe, type Visibility } from "../api/social";
@@ -67,28 +68,28 @@ export function SocialSettingsScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title="Sosyal ve gizlilik" />
+      <ScreenHeader title={tx("socialsettings.sosyal_ve_gizlilik")} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         {!me ? <Skeleton height={220} radius={26} style={{ marginTop: spacing.xl }} /> : (
           <>
-            <Section title="KULLANICI ADI" colors={colors}>
+            <Section title={tx("socialsettings.kullanici_adi")} colors={colors}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-                <TextInput value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={20} autoCapitalize="none" autoCorrect={false} placeholder="kullaniciadi" placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
-                <Pill label="Kaydet" small disabled={busy || username.trim() === me.username || me.usernameChangeAvailableIn > 0} onPress={() => void save({ username: username.trim() }, "Kullanıcı adı güncellendi")} />
+                <TextInput value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={20} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.kullaniciadi")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
+                <Pill label={tx("common.kaydet")} small disabled={busy || username.trim() === me.username || me.usernameChangeAvailableIn > 0} onPress={() => void save({ username: username.trim() }, "Kullanıcı adı güncellendi")} />
               </View>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>3-20 karakter; küçük harf, rakam, alt çizgi. {me.usernameChangeAvailableIn > 0 ? `${me.usernameChangeAvailableIn} gün sonra değiştirilebilir.` : "14 günde bir değişir."}</Text>
               <Text variant="caption" color={colors.textMuted}>Profil bağlantın: /u/{me.username}</Text>
             </Section>
 
-            <Section title="KISA TANITIM" colors={colors}>
-              <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, 140))} multiline placeholder="Neden Almanca? Bir cümle yeter." placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
+            <Section title={tx("socialsettings.kisa_tanitim")} colors={colors}>
+              <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, 140))} multiline placeholder={tx("socialsettings.neden_almanca_bir_cumle_yeter")} placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
               <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
                 <Text variant="caption" color={colors.textMuted}>{bio.length}/140</Text>
-                <Pill label="Kaydet" small tone="soft" disabled={busy || (bio.trim() || "") === (me.bio ?? "")} onPress={() => void save({ bio: bio.trim() || null })} />
+                <Pill label={tx("common.kaydet")} small tone="soft" disabled={busy || (bio.trim() || "") === (me.bio ?? "")} onPress={() => void save({ bio: bio.trim() || null })} />
               </View>
             </Section>
 
-            <Section title="GÖRÜNÜRLÜK" colors={colors}>
+            <Section title={tx("socialsettings.gorunurluk")} colors={colors}>
               {VIS.map((v, i) => {
                 const active = me.visibility === v.key;
                 return (
@@ -105,7 +106,7 @@ export function SocialSettingsScreen() {
               })}
             </Section>
 
-            <Section title="İZİNLER" colors={colors}>
+            <Section title={tx("socialsettings.izinler")} colors={colors}>
               {toggle("Arkadaşlık isteği kabul et", "Kapalıysa seni kimse ekleyemez; sen ekleyebilirsin", me.allowRequests, (v) => void save({ allowRequests: v }), true)}
               {toggle("Önerilerde görün", "Ortak arkadaşı olanlara ve aynı seviyedekilere önerilirsin", me.showInSuggestions, (v) => void save({ showInSuggestions: v }))}
               {toggle("Kilometre taşlarımı paylaş", "Seri, rozet ve görev haberlerin arkadaşlarının akışına düşer", me.showActivity, (v) => void save({ showActivity: v }))}
@@ -119,9 +120,9 @@ export function SocialSettingsScreen() {
                     <Text variant="bodyStrong" numberOfLines={1}>{b.name ?? "İsimsiz"}</Text>
                     {b.username ? <Text variant="caption" color={colors.textMuted}>@{b.username}</Text> : null}
                   </View>
-                  <Pill label="Kaldır" small tone="ghost" disabled={busy} onPress={() => { setBusy(true); social.unblock(b.userId).then(() => setBlocked((p) => (p ?? []).filter((x) => x.userId !== b.userId))).catch((e) => setMsg(errorText(e))).finally(() => setBusy(false)); }} />
+                  <Pill label={tx("socialsettings.kaldir")} small tone="ghost" disabled={busy} onPress={() => { setBusy(true); social.unblock(b.userId).then(() => setBlocked((p) => (p ?? []).filter((x) => x.userId !== b.userId))).catch((e) => setMsg(errorText(e))).finally(() => setBusy(false)); }} />
                 </View>
-              )) : <Text variant="caption" color={colors.textMuted}>Kimseyi engellemedin.</Text>}
+              )) : <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.kimseyi_engellemedin")}</Text>}
             </Section>
           </>
         )}

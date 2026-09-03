@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -103,10 +104,10 @@ export function WeeklyScreen() {
   if (phase === "auth") {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="display" style={{ textAlign: "center" }}>Haftalık sınav için giriş yap</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>Öğrendiklerini haftada bir ölç — ilerlemeni gör.</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color="#fff">Giriş yap / Kayıt ol</Text></PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>Kapat</Text></PressableScale>
+        <Text variant="display" style={{ textAlign: "center" }}>{t("weekly.haftalik_sinav_icin_giris_yap")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("weekly.ogrendiklerini_haftada_bir_olc_ilerlemeni_go")}</Text>
+        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color="#fff">{t("weekly.giris_yap_kayit_ol")}</Text></PressableScale>
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text></PressableScale>
       </View>
     );
   }
@@ -114,9 +115,9 @@ export function WeeklyScreen() {
   if (phase === "error") {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="h2" style={{ textAlign: "center" }}>Haftalık sınav yüklenemedi</Text>
-        <PressableScale onPress={load} style={[{ marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color="#fff">Tekrar dene</Text></PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>Kapat</Text></PressableScale>
+        <Text variant="h2" style={{ textAlign: "center" }}>{t("weekly.haftalik_sinav_yuklenemedi")}</Text>
+        <PressableScale onPress={load} style={[{ marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color="#fff">{t("weekly.tekrar_dene")}</Text></PressableScale>
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text></PressableScale>
       </View>
     );
   }
@@ -127,18 +128,18 @@ export function WeeklyScreen() {
     return (
       <View style={pad}>
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         </View>
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <ProgressRing size={160} stroke={15} pct={score} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
             <Text variant="display" color={colors.primary}>%{score}</Text>
-            <Text variant="micro" color={colors.textMuted}>başarı</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("weekly.basari")}</Text>
           </ProgressRing>
           <Text variant="h1" style={{ marginTop: spacing.xl }}>{done ? "Bu haftalık bu kadar" : "Şu an sınav yok"}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {done ? `${result?.total} sorudan ${result?.correct} doğru. Haftada tek hak — gelecek hafta yeniden.` : "Yeterince pekişmiş kelimen olunca haftalık sınav açılır."}
           </Text>
-          <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color="#fff">Bitir</Text></PressableScale>
+          <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color="#fff">{t("common.bitir")}</Text></PressableScale>
         </View>
       </View>
     );
@@ -148,7 +149,7 @@ export function WeeklyScreen() {
   return (
     <View style={pad}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>

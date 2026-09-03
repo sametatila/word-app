@@ -11,15 +11,20 @@ import { migrateLegacyKeys } from "./src/lib/storageMigration";
 import { loadVoicePref } from "./src/lib/tts";
 import { TtsBridge } from "./src/lib/ttsBridge";
 import { track, loadAnalyticsPref } from "./src/lib/track";
+import { loadLang, useLang } from "./src/lib/i18n";
 
 function Nav() {
   const { colors, isDark } = useTheme();
   const { user, loading } = useAuth();
   const [onboarded, setOnboarded] = useState<boolean | null>(null);
+  // Arayüz dili: değiştiğinde tüm ağaç yeniden render edilsin diye tepede
+  // dinleniyor (t() modül düzeyinde okuduğu için tek başına tetiklemez).
+  useLang();
 
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {
     migrateLegacyKeys()
+      .then(() => loadLang())
       .then(() => loadVoicePref())
       .then(() => loadAnalyticsPref())
       // Günün ilk açılışı (§4 funnel) — kind platform:görünüm, value ekran genişliği.

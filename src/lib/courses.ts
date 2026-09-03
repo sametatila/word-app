@@ -31,8 +31,8 @@ export type Course = {
 export const COURSES: Course[] = [
   { id: "de", targetLang: "de", enabled: true },
   { id: "gsw-zh", targetLang: "de", enabled: true },
-  // İçerik hattı (kelime + ders + beceri) hazır olunca açılacak.
-  { id: "en", targetLang: "en", enabled: false },
+  // Kelime katmanı hazır; ders/beceri içeriği henüz yok.
+  { id: "en", targetLang: "en", enabled: true },
 ];
 
 const BY_ID = new Map<string, Course>(COURSES.map((c) => [c.id, c]));

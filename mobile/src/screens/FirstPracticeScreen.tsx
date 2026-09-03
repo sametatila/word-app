@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -95,7 +96,7 @@ export function FirstPracticeScreen() {
         <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(w)}</Text>
 
         <PressableScale onPress={() => speakTarget(withArtikel(w))} accessibilityRole="button" accessibilityLabel={`${w.de} kelimesini dinle`} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 16, paddingVertical: 9 }}>
-          <SpeakerIcon color={colors.primary} size={18} /><Text variant="bodyStrong" color={colors.primary}>Dinle</Text>
+          <SpeakerIcon color={colors.primary} size={18} /><Text variant="bodyStrong" color={colors.primary}>{t("firstpractice.dinle")}</Text>
         </PressableScale>
 
         {seen ? (

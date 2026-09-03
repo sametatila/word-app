@@ -1,4 +1,5 @@
 import React from "react";
+import { t } from "../lib/i18n";
 import { View, Linking } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -81,13 +82,13 @@ export function LearnScreen() {
             <BoltIcon color={colors.primary} size={20} />
             <View style={{ flex: 1 }}>
               <Text variant="bodyStrong" color={colors.primary}>Yeni sürüm hazır · v{update.version}</Text>
-              <Text variant="caption" color={colors.textMuted}>İndirmek için dokun</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("learn.indirmek_icin_dokun")}</Text>
             </View>
             <ArrowRightIcon color={colors.primary} size={18} />
           </View>
         </PressableScale>
       )}
-      <AppHeader title="Almanca öğren" subtitle={greeting} />
+      <AppHeader title={t("learn.almanca_ogren")} subtitle={greeting} />
 
       {/* GÜNLÜK TUR — dil-içerik öncelikli kahraman (fitness halkası değil) */}
       <PressableScale onPress={() => nav.navigate("Game")}>
@@ -113,14 +114,14 @@ export function LearnScreen() {
               <View style={{ width: 44, height: 44, borderRadius: radii.md, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
                 <BoltIcon color="#fff" size={22} />
               </View>
-              <Text variant="micro" color="#ffffffcc" style={{ textTransform: "uppercase", letterSpacing: 1 }}>Günlük tur</Text>
+              <Text variant="micro" color="#ffffffcc" style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("learn.gunluk_tur")}</Text>
             </View>
-            <Text variant="h1" color="#fff">Kelimelerini çalış</Text>
+            <Text variant="h1" color="#fff">{t("learn.kelimelerini_calis")}</Text>
             <Text variant="body" color="#ffffffdd" style={{ marginTop: 4 }}>
               Tekrar zamanı gelenleri pekiştir, yeni kelimeler öğren.
             </Text>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginTop: spacing.lg, backgroundColor: "#ffffff", borderRadius: radii.pill, alignSelf: "flex-start", paddingHorizontal: 20, paddingVertical: 11 }}>
-              <Text variant="bodyStrong" color={colors.primary}>Başla</Text>
+              <Text variant="bodyStrong" color={colors.primary}>{t("common.basla")}</Text>
               <ArrowRightIcon color={colors.primary} size={18} />
             </View>
             </View>
@@ -129,7 +130,7 @@ export function LearnScreen() {
           {hasToday && dailyGoal > 0 && (
             <View style={{ paddingHorizontal: spacing.xl, paddingBottom: spacing.lg, marginTop: -spacing.sm }}>
               <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 6 }}>
-                <Text variant="micro" color="#ffffffdd">Günlük hedef</Text>
+                <Text variant="micro" color="#ffffffdd">{t("learn.gunluk_hedef")}</Text>
                 <Text variant="micro" color="#ffffffdd">{reviewsToday}/{dailyGoal}</Text>
               </View>
               <View style={{ height: 6, borderRadius: 3, backgroundColor: "#ffffff40", overflow: "hidden" }}>
@@ -166,17 +167,17 @@ export function LearnScreen() {
       <FriendPulse />
 
       {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
-      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>Öne çıkan</Text>
+      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.one_cikan")}</Text>
       <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
-        <WedgeTile title="Yürüyüş modu" pitch="Dinle ve söyle, ekrana bakmadan" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
-        <WedgeTile title="Sınav hazırlık" pitch="Goethe & telc — hedefe yönelik" tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
+        <WedgeTile title={t("learn.yuruyus_modu")} pitch="Dinle ve söyle, ekrana bakmadan" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
+        <WedgeTile title={t("learn.sinav_hazirlik")} pitch="Goethe & telc — hedefe yönelik" tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
       </View>
 
       {/* diğer öğrenme yolları */}
-      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>Daha fazlası</Text>
-      <ActionRow title="Pratik" subtitle="Tek bir oyunu kendi kelimelerinle çalış" tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
-      <ActionRow title="Günün turu" subtitle="Herkesle aynı yarışma · sıralamaya gir" tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
-      <ActionRow title="Haftalık sınav" subtitle="Öğrendiklerini ölç · haftada bir" tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
+      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.daha_fazlasi")}</Text>
+      <ActionRow title={t("learn.pratik")} subtitle={t("learn.tek_bir_oyunu_kendi_kelimelerinle_calis")} tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
+      <ActionRow title={t("learn.gunun_turu")} subtitle={t("learn.herkesle_ayni_yarisma_siralamaya_gir")} tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
+      <ActionRow title={t("learn.haftalik_sinav")} subtitle={t("learn.ogrendiklerini_olc_haftada_bir")} tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
     </Screen>
   );
 }

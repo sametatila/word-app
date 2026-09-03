@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { t } from "../lib/i18n";
 import { Alert, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -61,8 +62,8 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
       </View>
       <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
         <ActionTile icon={BellIcon} label={sent ? "Dürtüldü" : "Dürt"} tint={colors.streak} disabled={busy || sent} onPress={() => void act(async () => { await social.nudge(f.userId, "remind"); setSent(true); }, "Dürttün")} />
-        <ActionTile icon={TargetIcon} label="Görev" tint={colors.primary} disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId), "Görev daveti gitti")} />
-        <ActionTile icon={XIcon} label="Çıkar" tint={colors.danger} disabled={busy} onPress={() => Alert.alert("Arkadaşlıktan çıkar", `${f.name ?? "Bu kişi"} çıkarılsın mı? Bildirim gitmez.`, [
+        <ActionTile icon={TargetIcon} label={t("friendrows.gorev")} tint={colors.primary} disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId), "Görev daveti gitti")} />
+        <ActionTile icon={XIcon} label={t("friendrows.cikar")} tint={colors.danger} disabled={busy} onPress={() => Alert.alert("Arkadaşlıktan çıkar", `${f.name ?? "Bu kişi"} çıkarılsın mı? Bildirim gitmez.`, [
           { text: "Vazgeç", style: "cancel" },
           { text: "Çıkar", style: "destructive", onPress: () => void act(async () => { await social.remove(f.userId); onChanged(); }, "Çıkarıldı") },
         ])} />

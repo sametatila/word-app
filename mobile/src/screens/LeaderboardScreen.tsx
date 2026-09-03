@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, FlatList, ScrollView } from "react-native";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -36,11 +37,11 @@ export function LeaderboardScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h2">Sıralama</Text>
+          <Text variant="h2">{t("leaderboard.siralama")}</Text>
           <Text variant="caption" color={colors.textMuted}>Bu hafta · {week.daysLeft} gün kaldı</Text>
         </View>
       </View>
@@ -56,7 +57,7 @@ export function LeaderboardScreen() {
 
       {mode === "friends" ? (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-          {user ? <FriendsBoard compact /> : <Text variant="body" color={colors.textMuted}>Arkadaş tablosu için giriş yap.</Text>}
+          {user ? <FriendsBoard compact /> : <Text variant="body" color={colors.textMuted}>{t("leaderboard.arkadas_tablosu_icin_giris_yap")}</Text>}
         </ScrollView>
       ) : (
       <FlatList

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, ScrollView, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -34,10 +35,10 @@ function WritingCard({ w, colors, onReport }: { w: Writing; colors: Palette; onR
             <Text variant="caption" color={colors.textMuted} numberOfLines={open ? undefined : 2}>{w.answer}</Text>
           </View>
         </View>
-        {open && score === null ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>Puanlanacak.</Text> : null}
+        {open && score === null ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{t("writings.puanlanacak")}</Text> : null}
         {open && score !== null ? (
-          <PressableScale onPress={() => onReport(w)} hitSlop={8} accessibilityLabel="Değerlendirmeyi bildir" style={{ alignSelf: "flex-start", marginTop: spacing.sm }}>
-            <Text variant="micro" color={colors.textFaint}>Değerlendirmeyi bildir</Text>
+          <PressableScale onPress={() => onReport(w)} hitSlop={8} accessibilityLabel={t("writings.degerlendirmeyi_bildir")} style={{ alignSelf: "flex-start", marginTop: spacing.sm }}>
+            <Text variant="micro" color={colors.textFaint}>{t("writings.degerlendirmeyi_bildir")}</Text>
           </PressableScale>
         ) : null}
         <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>{w.day}</Text>
@@ -65,17 +66,17 @@ export function WritingsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">Yazılarım</Text>
+        <Text variant="h2">{t("writings.yazilarim")}</Text>
       </View>
       {phase === "loading" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}><ActivityIndicator color={colors.primary} /></View>
       ) : phase === "error" || (items && items.length === 0) ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
           <View style={{ width: 80, height: 80, borderRadius: 24, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}><WriteIcon color={colors.primary} size={36} /></View>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>Henüz değerlendirilmiş yazın yok. Yazma alıştırması yapıp değerlendirt — buraya gelir.</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("writings.henuz_degerlendirilmis_yazin_yok_yazma_alist")}</Text>
         </View>
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>

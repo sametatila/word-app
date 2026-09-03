@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -25,13 +26,13 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
   const [board, setBoard] = useState<BoardView | null>(null);
   useEffect(() => { social.board().then(setBoard).catch(() => setBoard({ rows: [], start: "", daysLeft: 0 })); }, []);
   if (!board) return <Skeleton height={160} radius={20} />;
-  if (board.rows.length < 2) return <EmptyCard icon={PodiumIcon} tint={colors.info} title="Henüz yarışacak kimse yok" text="Arkadaş ekleyince bu haftanın XP'sinde birbirinizi görürsünüz." />;
+  if (board.rows.length < 2) return <EmptyCard icon={PodiumIcon} tint={colors.info} title={t("friendsboard.henuz_yarisacak_kimse_yok")} text={t("friendsboard.arkadas_ekleyince_bu_haftanin_xp_sinde")} />;
   const me = board.rows.find((r) => r.isMe);
   const above = me && me.rank > 1 ? board.rows.find((r) => r.rank === me.rank - 1) : null;
   const gap = me && above ? Math.max(0, above.xp - me.xp) : 0;
   return (
     <View>
-      {!compact ? <SectionTitle title="Arkadaşlar arasında bu hafta" right={board.daysLeft === 1 ? "son gün" : `${board.daysLeft} gün kaldı`} /> : null}
+      {!compact ? <SectionTitle title={t("friendsboard.arkadaslar_arasinda_bu_hafta")} right={board.daysLeft === 1 ? "son gün" : `${board.daysLeft} gün kaldı`} /> : null}
       <View style={{ gap: spacing.sm }}>
         {board.rows.map((r) => {
           const mc = medal(r.rank, colors);

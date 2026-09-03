@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t as tx } from "../lib/i18n";
 import { View, ScrollView, Switch } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -82,10 +83,10 @@ export function NotificationsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">Bildirimler</Text>
+        <Text variant="h2">{tx("notifications.bildirimler")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
@@ -93,11 +94,11 @@ export function NotificationsScreen() {
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.info }, softShadow(colors.info, 10)]}>
             <BellIcon color="#fff" size={36} />
           </View>
-          <Text variant="h2" style={{ marginTop: spacing.md }}>Hatırlatmalar</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>Serini korumak için nazik dürtmeler — istediğini aç.</Text>
+          <Text variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.hatirlatmalar")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{tx("notifications.serini_korumak_icin_nazik_durtmeler_istedigi")}</Text>
         </View>
 
-        <ToggleRow title="Günlük hatırlatma" subtitle={dailyOn ? `Açık · her gün ${dailyTime}` : "Her gün çalışmayı hatırlat"} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
+        <ToggleRow title={tx("notifications.gunluk_hatirlatma")} subtitle={dailyOn ? `Açık · her gün ${dailyTime}` : "Her gün çalışmayı hatırlat"} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
           {dailyOn && (
             <View style={{ marginTop: spacing.md }}>
               <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>SAAT</Text>
@@ -108,20 +109,20 @@ export function NotificationsScreen() {
           )}
         </ToggleRow>
 
-        <ToggleRow title="Seri koruma" subtitle="Her akşam 20:30 · günü kaçırma" value={streakOn} onValueChange={toggleStreak} colors={colors} />
+        <ToggleRow title={tx("notifications.seri_koruma")} subtitle={tx("notifications.her_aksam_20_30_gunu_kacirma")} value={streakOn} onValueChange={toggleStreak} colors={colors} />
 
-        <ToggleRow title="Haftalık sınav" subtitle="Her Pazar · ilerlemeni ölç" value={weeklyOn} onValueChange={toggleWeekly} colors={colors} />
+        <ToggleRow title={tx("notifications.haftalik_sinav")} subtitle={tx("notifications.her_pazar_ilerlemeni_olc")} value={weeklyOn} onValueChange={toggleWeekly} colors={colors} />
 
         {msg && <Text variant="bodyStrong" color={denied ? colors.danger : colors.primary} style={{ marginTop: spacing.sm }}>{msg}</Text>}
 
         {denied && (
           <PressableScale onPress={openNotificationSettings} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="bodyStrong" color="#fff">Bildirim ayarlarını aç</Text>
+            <Text variant="bodyStrong" color="#fff">{tx("notifications.bildirim_ayarlarini_ac")}</Text>
           </PressableScale>
         )}
 
         <PressableScale onPress={async () => { const ok = await showTestNotification(); if (!ok) fail(); else setMsg("Test bildirimi gönderildi."); }} style={{ marginTop: spacing.xl, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 14, alignItems: "center" }}>
-          <Text variant="bodyStrong" color={colors.text}>Test bildirimi gönder</Text>
+          <Text variant="bodyStrong" color={colors.text}>{tx("notifications.test_bildirimi_gonder")}</Text>
         </PressableScale>
       </ScrollView>
     </View>

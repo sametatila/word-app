@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -163,18 +164,18 @@ export function GameScreen() {
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
 
   if (phase === "loading") {
-    return <View style={[pad, { alignItems: "center", justifyContent: "center" }]}><ActivityIndicator size="large" color={colors.primary} /><Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.lg }}>Turun hazırlanıyor...</Text></View>;
+    return <View style={[pad, { alignItems: "center", justifyContent: "center" }]}><ActivityIndicator size="large" color={colors.primary} /><Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{t("game.turun_hazirlaniyor")}</Text></View>;
   }
 
   if (phase === "auth") {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="display" style={{ textAlign: "center" }}>İlerlemeni kaydetmek için giriş yap</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>Giriş yapınca kendi kelimelerinle çalışırsın ve serin, XP'n, ilerlemen hesabına kaydedilir.</Text>
+        <Text variant="display" style={{ textAlign: "center" }}>{t("game.ilerlemeni_kaydetmek_icin_giris_yap")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("game.giris_yapinca_kendi_kelimelerinle_calisirsin")}</Text>
         <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color="#fff">Giriş yap / Kayıt ol</Text>
+          <Text variant="h3" color="#fff">{t("game.giris_yap_kayit_ol")}</Text>
         </PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>Kapat</Text></PressableScale>
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text></PressableScale>
       </View>
     );
   }
@@ -182,10 +183,10 @@ export function GameScreen() {
   if (phase === "error") {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="h2" style={{ textAlign: "center" }}>Tur yüklenemedi</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, marginBottom: spacing.xxl }}>Bağlantını kontrol edip tekrar dene.</Text>
-        <PressableScale onPress={load} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color="#fff">Tekrar dene</Text></PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>Kapat</Text></PressableScale>
+        <Text variant="h2" style={{ textAlign: "center" }}>{t("game.tur_yuklenemedi")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, marginBottom: spacing.xxl }}>{t("game.baglantini_kontrol_edip_tekrar_dene")}</Text>
+        <PressableScale onPress={load} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color="#fff">{t("game.tekrar_dene")}</Text></PressableScale>
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text></PressableScale>
       </View>
     );
   }
@@ -196,26 +197,26 @@ export function GameScreen() {
     return (
       <View style={pad}>
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         </View>
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <Celebrate show={total > 0 && pct >= 60} />
           {total > 0 ? <Mascot mood={pct >= 60 ? "celebrate" : "happy"} size={104} /> : <Mascot mood="idle" size={104} />}
           <ProgressRing size={150} stroke={14} pct={pct} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
             <Text variant="display" color={colors.primary}>{finalCorrect}/{total || 0}</Text>
-            <Text variant="micro" color={colors.textMuted}>doğru</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("game.dogru")}</Text>
           </ProgressRing>
           <Text variant="h1" style={{ marginTop: spacing.xl }}>{total ? "Tur bitti!" : "Bugünlük bu kadar"}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {total ? "İlerlemen kaydedildi." : "Şu an tekrar edilecek kelime yok — yarın yeniden gel."}
           </Text>
-          <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">Devam et</Text></PressableScale>
+          <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">{t("game.devam_et")}</Text></PressableScale>
           {total > 0 && (
             <PressableScale onPress={() => shareResult(finalCorrect, total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
-              <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>Paylaş</Text>
+              <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.paylas")}</Text>
             </PressableScale>
           )}
-          <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}><Text variant="bodyStrong" color={colors.textMuted}>Bitir</Text></PressableScale>
+          <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.bitir")}</Text></PressableScale>
         </View>
       </View>
     );
@@ -225,7 +226,7 @@ export function GameScreen() {
   return (
     <View style={pad}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
-        <PressableScale hitSlop={4} onPress={back.ask} accessibilityLabel="Turdan çık" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+        <PressableScale hitSlop={4} onPress={back.ask} accessibilityLabel={t("game.turdan_cik")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>
@@ -238,7 +239,7 @@ export function GameScreen() {
       <MascotPop trigger={pop} />
       <ConfirmDialog
         visible={back.visible}
-        title="Turdan çık?"
+        title={t("game.turdan_cik_2")}
         message="Cevapladıkların kaydedilir; kalan turlara sonra devam edersin."
         confirmLabel="Çık"
         cancelLabel="Devam et"

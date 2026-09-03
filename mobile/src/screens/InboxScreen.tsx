@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { ScrollView, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -63,11 +64,11 @@ export function InboxScreen() {
   }
 
   const body = !user
-    ? <EmptyCard icon={LockIcon} title="Giriş gerekli" text="Bildirimler hesabına bağlı." action="Giriş yap" onAction={() => nav.navigate("Auth")} />
+    ? <EmptyCard icon={LockIcon} title={t("inbox.giris_gerekli")} text={t("inbox.bildirimler_hesabina_bagli")} action={t("inbox.giris_yap")} onAction={() => nav.navigate("Auth")} />
     : items === null
       ? <Skeleton height={260} radius={26} />
       : !items.length
-        ? <EmptyCard icon={InboxIcon} title="Bildirim yok" text="Arkadaşlık istekleri, tepkiler, dürtmeler ve görev haberleri burada toplanır." />
+        ? <EmptyCard icon={InboxIcon} title={t("inbox.bildirim_yok")} text={t("inbox.arkadaslik_istekleri_tepkiler_durtmeler_ve_g")} />
         : (
           <View>
             <Card padded style={{ paddingVertical: 0 }}>
@@ -99,7 +100,7 @@ export function InboxScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title="Gelen kutusu" subtitle="İstekler, tepkiler, dürtmeler, görevler" />
+      <ScreenHeader title={t("inbox.gelen_kutusu")} subtitle={t("inbox.istekler_tepkiler_durtmeler_gorevler")} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {body}
         <ErrorText text={err} />

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { t as tx } from "../lib/i18n";
 import { ScrollView, Share, View } from "react-native";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -72,9 +73,9 @@ export function FriendsScreen() {
   if (!user) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        <ScreenHeader title="Arkadaşlar" />
+        <ScreenHeader title={tx("friends.arkadaslar")} />
         <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
-          <EmptyCard icon={HandshakeIcon} tint={colors.success} title="Arkadaşlar için giriş yap" text="Arkadaş ekle, akışta tepki ver, birlikte haftalık hedef tuttur. Hesabın cihazlar arasında ortak." action="Giriş yap" onAction={() => nav.navigate("Auth")} />
+          <EmptyCard icon={HandshakeIcon} tint={colors.success} title={tx("friends.arkadaslar_icin_giris_yap")} text={tx("friends.arkadas_ekle_akista_tepki_ver_birlikte")} action={tx("friends.giris_yap")} onAction={() => nav.navigate("Auth")} />
         </View>
       </View>
     );
@@ -83,7 +84,7 @@ export function FriendsScreen() {
   const incoming = data?.incoming.length ?? me?.counts.incoming ?? 0;
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title="Arkadaşlar" right={<HeaderButton icon={SettingsIcon} label="Sosyal ayarlar" onPress={() => nav.navigate("SocialSettings")} />} />
+      <ScreenHeader title={tx("friends.arkadaslar")} right={<HeaderButton icon={SettingsIcon} label={tx("friends.sosyal_ayarlar")} onPress={() => nav.navigate("SocialSettings")} />} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         {me ? (
           <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
@@ -103,8 +104,8 @@ export function FriendsScreen() {
             <ShareIcon color="#fff" size={24} />
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="h3" color="#fff">Arkadaşını davet et</Text>
-            <Text variant="caption" color="#ffffffcc">Profil bağlantını gönder, aynı hafta birlikte çalışın</Text>
+            <Text variant="h3" color="#fff">{tx("friends.arkadasini_davet_et")}</Text>
+            <Text variant="caption" color="#ffffffcc">{tx("friends.profil_baglantini_gonder_ayni_hafta_birlikte")}</Text>
           </View>
           <ChevronRightIcon color="#fff" size={22} />
         </PressableScale>
@@ -119,7 +120,7 @@ export function FriendsScreen() {
               {data.friends.length ? (
                 <FriendRows friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
               ) : (
-                <EmptyCard icon={UserPlusIcon} tint={colors.success} title="Henüz arkadaşın yok" text="Kullanıcı adıyla ara ya da davet bağlantını gönder. Arkadaşlar birbirinin serisini görür, tepki verir, birlikte görev yapar." action="Arkadaş bul" onAction={() => setTab("find")} />
+                <EmptyCard icon={UserPlusIcon} tint={colors.success} title={tx("friends.henuz_arkadasin_yok")} text={tx("friends.kullanici_adiyla_ara_ya_da_davet")} action={tx("friends.arkadas_bul")} onAction={() => setTab("find")} />
               )}
               <FriendsBoard />
             </View>
@@ -130,7 +131,7 @@ export function FriendsScreen() {
         {tab === "requests" ? (data === null ? <Skeleton height={120} radius={26} /> : <Requests incoming={data.incoming} outgoing={data.outgoing} onChanged={() => void reload()} />) : null}
         {tab === "find" ? <Find onChanged={() => void reload()} /> : null}
         <ErrorText text={err} />
-        {err ? <View style={{ marginTop: spacing.md, alignItems: "center" }}><Pill label="Tekrar dene" tone="ghost" onPress={() => void reload()} /></View> : null}
+        {err ? <View style={{ marginTop: spacing.md, alignItems: "center" }}><Pill label={tx("friends.tekrar_dene")} tone="ghost" onPress={() => void reload()} /></View> : null}
       </ScrollView>
     </View>
   );

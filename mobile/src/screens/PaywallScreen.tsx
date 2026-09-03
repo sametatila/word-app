@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, ScrollView, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -100,7 +101,7 @@ export function PaywallScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ alignItems: "flex-end", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel="Kapat" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel={t("common.kapat")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <XIcon color={colors.textMuted} size={22} />
         </PressableScale>
       </View>
@@ -111,8 +112,8 @@ export function PaywallScreen() {
           <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <CrownIcon color="#fff" size={44} />
           </View>
-          <Text variant="display" style={{ marginTop: spacing.md }}>Nomi Premium</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>Sınırsız öğren, sınavına tam hazırlan</Text>
+          <Text variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("paywall.sinirsiz_ogren_sinavina_tam_hazirlan")}</Text>
         </View>
 
         {/* ücretsiz deneme şeridi */}
@@ -121,7 +122,7 @@ export function PaywallScreen() {
             <CheckIcon color="#fff" size={22} />
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="bodyStrong" color={colors.success}>7 gün ücretsiz dene</Text>
+            <Text variant="bodyStrong" color={colors.success}>{t("paywall.7_gun_ucretsiz_dene")}</Text>
             <Text variant="caption" color={colors.textMuted}>Deneme boyunca ücret alınmaz; dilediğin zaman iptal et.</Text>
           </View>
         </View>
@@ -129,15 +130,15 @@ export function PaywallScreen() {
         {/* ücretsiz vs premium karşılaştırma tablosu */}
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.lg, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.xl }}>
           <View style={{ flexDirection: "row", alignItems: "center", paddingBottom: spacing.sm, borderBottomWidth: 1.5, borderBottomColor: colors.border }}>
-            <Text variant="micro" color={colors.textMuted} style={{ flex: 1.5 }}>ÖZELLİK</Text>
-            <Text variant="micro" color={colors.textFaint} style={{ flex: 1, textAlign: "center" }}>ÜCRETSİZ</Text>
+            <Text variant="micro" color={colors.textMuted} style={{ flex: 1.5 }}>{t("paywall.ozellik")}</Text>
+            <Text variant="micro" color={colors.textFaint} style={{ flex: 1, textAlign: "center" }}>{t("paywall.ucretsiz")}</Text>
             <Text variant="micro" color={colors.primary} style={{ flex: 1, textAlign: "center" }}>PREMIUM</Text>
           </View>
           {COMPARE.map((r, i) => <CompareRow key={r.label} row={r} colors={colors} last={i === COMPARE.length - 1} />)}
         </View>
 
         {/* deneme zaman çizelgesi — kaygıyı azaltır (ne zaman ücret alınır) */}
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.md, marginLeft: 4 }}>NASIL İŞLER</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.md, marginLeft: 4 }}>{t("paywall.nasil_isler")}</Text>
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.lg, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.xl }}>
           <TimelineStep when="Bugün" what="Tam erişim açılır; tüm premium özellikler senin." colors={colors} />
           <TimelineStep when="5. gün" what="“2 gün kaldı” hatırlatması göndeririz." colors={colors} />
@@ -147,7 +148,7 @@ export function PaywallScreen() {
         {/* güven — Goethe/telc hizası (uydurma yorum/sayı yok) */}
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl, paddingHorizontal: 4 }}>
           <ExamIcon color={colors.accent} size={22} />
-          <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>İçerik CEFR A1–C1 ve Goethe/telc sınav formatlarına göre hazırlanır.</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{t("paywall.icerik_cefr_a1c1_ve_goethe_telc")}</Text>
         </View>
 
         {/* planlar */}
@@ -185,7 +186,7 @@ export function PaywallScreen() {
               <CheckIcon color="#fff" size={20} />
             </View>
             <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong" color={colors.success}>İlgin kaydedildi 🙌</Text>
+              <Text variant="bodyStrong" color={colors.success}>{t("paywall.ilgin_kaydedildi")}</Text>
               <Text variant="caption" color={colors.textMuted}>Premium çok yakında; hazır olduğunda ilk sen haberdar olacaksın.</Text>
             </View>
           </View>
@@ -198,8 +199,8 @@ export function PaywallScreen() {
               {hasTrial ? `7 gün ücretsiz, sonra ${(live ? pkgFor(plan)?.product.priceString : null) ?? selected.price} · ` : `${(live ? pkgFor(plan)?.product.priceString : null) ?? selected.price} · `}İstediğin zaman iptal · Otomatik yenilenir
             </Text>
             {live && (
-              <PressableScale onPress={doRestore} accessibilityLabel="Satın almayı geri yükle" style={{ alignItems: "center", paddingVertical: spacing.sm, marginTop: 2 }}>
-                <Text variant="caption" color={colors.textMuted}>Satın almayı geri yükle</Text>
+              <PressableScale onPress={doRestore} accessibilityLabel={t("paywall.satin_almayi_geri_yukle")} style={{ alignItems: "center", paddingVertical: spacing.sm, marginTop: 2 }}>
+                <Text variant="caption" color={colors.textMuted}>{t("paywall.satin_almayi_geri_yukle")}</Text>
               </PressableScale>
             )}
           </>

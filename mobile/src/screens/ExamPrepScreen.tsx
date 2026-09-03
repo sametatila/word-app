@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -55,10 +56,10 @@ export function ExamPrepScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">Sınav hazırlık</Text>
+        <Text variant="h2">{t("examprep.sinav_hazirlik")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
@@ -66,12 +67,12 @@ export function ExamPrepScreen() {
         <Card style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
             <View>
-              <Text variant="micro" color={colors.textMuted}>SEVİYE</Text>
+              <Text variant="micro" color={colors.textMuted}>{t("examprep.seviye")}</Text>
               <Text variant="h1" color={colors.primary}>{level}</Text>
             </View>
             {overallPct !== null && (
               <View style={{ alignItems: "flex-end" }}>
-                <Text variant="micro" color={colors.textMuted}>KELİME KAPSAMASI</Text>
+                <Text variant="micro" color={colors.textMuted}>{t("examprep.kelime_kapsamasi")}</Text>
                 <Text variant="h1">%{overallPct}</Text>
               </View>
             )}
@@ -88,7 +89,7 @@ export function ExamPrepScreen() {
           </View>
         </Card>
 
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>MODÜLLER</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{t("examprep.moduller")}</Text>
         <View style={{ gap: spacing.md }}>
           {MODULES.map((m) => {
             const tint = colors[m.tint as keyof Palette] as string;
@@ -106,7 +107,7 @@ export function ExamPrepScreen() {
                       <Text variant="h3">{m.label}</Text>
                       {m.premium && (
                         <View style={{ backgroundColor: colors.streak + "26", borderRadius: radii.pill, paddingHorizontal: 8, paddingVertical: 2 }}>
-                          <Text variant="micro" color={colors.streak}>Premium</Text>
+                          <Text variant="micro" color={colors.streak}>{t("examprep.premium")}</Text>
                         </View>
                       )}
                     </View>

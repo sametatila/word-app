@@ -1,4 +1,5 @@
 import React from "react";
+import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -47,7 +48,7 @@ export function UnitScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
@@ -83,11 +84,11 @@ export function UnitScreen() {
                     </View>
                   ) : soon ? (
                     <View style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 4 }}>
-                      <Text variant="micro" color={colors.textMuted}>Yakında</Text>
+                      <Text variant="micro" color={colors.textMuted}>{t("unit.yakinda")}</Text>
                     </View>
                   ) : it.current ? (
                     <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 4 }}>
-                      <Text variant="micro" color={colors.primary}>Şimdi</Text>
+                      <Text variant="micro" color={colors.primary}>{t("unit.simdi")}</Text>
                     </View>
                   ) : it.playable ? (
                     <ChevronRightIcon color={colors.textFaint} size={20} />

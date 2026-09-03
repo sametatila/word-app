@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { t as tx } from "../lib/i18n";
 import { currentTargetLang } from "../lib/courses";
 import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -173,7 +174,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
         {speakText ? <SpeakButton text={speakText} colors={colors} size={20} /> : null}
       </View>
       <PressableScale onPress={onContinue} style={[{ borderRadius: radii.lg, backgroundColor: ok ? colors.success : colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(ok ? colors.success : colors.primary, 8)]}>
-        <Text variant="h3" color="#fff">Devam</Text>
+        <Text variant="h3" color="#fff">{tx("common.devam")}</Text>
       </PressableScale>
     </View>
   );
@@ -288,7 +289,7 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
   }
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
-      <Prompt label="Hangi artikel?" big={word.de} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
+      <Prompt label={tx("rounds.hangi_artikel")} big={word.de} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
       <MascotMid mood={picked ? (picked === word.artikel ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {["der", "die", "das"].map((a) => {
@@ -314,7 +315,7 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
   }
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
-      <Prompt label="Doğru mu?" big={withArtikel(word)} speakText={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />
+      <Prompt label={tx("rounds.dogru_mu")} big={withArtikel(word)} speakText={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />
       <MascotMid mood={ans !== null ? (ans === round.isTrue ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {[{ v: true, l: "Doğru" }, { v: false, l: "Yanlış" }].map(({ v, l }) => {
@@ -335,7 +336,7 @@ function HintRow({ answer, colors }: { answer: string; colors: Palette }) {
         <Text variant="bodyStrong" color={colors.textMuted} style={{ fontFamily: Platform.OS === "ios" ? "Menlo" : "monospace", letterSpacing: 2, textAlign: "center" }}>{skeleton(answer)}</Text>
       ) : (
         <PressableScale onPress={() => setShown(true)} style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
-          <Text variant="caption" color={colors.textMuted}>İpucu göster</Text>
+          <Text variant="caption" color={colors.textMuted}>{tx("rounds.ipucu_goster")}</Text>
         </PressableScale>
       )}
     </View>
@@ -360,7 +361,7 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
         onChangeText={setVal}
         autoCapitalize="none"
         autoCorrect={false}
-        placeholder="Yaz..."
+        placeholder={tx("rounds.yaz")}
         placeholderTextColor={colors.textFaint}
         onSubmitEditing={check}
         returnKeyType="done"
@@ -369,13 +370,13 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
       />
       <HintRow answer={word.de} colors={colors} />
       <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-        <Text variant="h3" color="#fff">Kontrol et</Text>
+        <Text variant="h3" color="#fff">{tx("common.kontrol_et")}</Text>
       </PressableScale>
     </View>
   );
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : inputBlock}>
-      <Prompt label="Almancasını yaz" big={word.tr} sub={word.en} colors={colors} />
+      <Prompt label={tx("rounds.almancasini_yaz")} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
   );
@@ -398,7 +399,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
-        <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>Boşluğu doldur</Text>
+        <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>{tx("rounds.boslugu_doldur")}</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
           <Text variant="h2" style={{ flex: 1, lineHeight: 32 }}>{round.sentence}</Text>
           <SpeakButton text={round.sentence ?? ""} colors={colors} size={22} />
@@ -432,7 +433,7 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   }
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
-      <Prompt label="Çoğulu?" big={withArtikel(word)} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
+      <Prompt label={tx("rounds.cogulu")} big={withArtikel(word)} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
       <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
         {opts.map((o) => {
@@ -461,12 +462,12 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   if (!word) return <View style={{ flex: 1 }} />;
   const footer = !reveal ? (
     <PressableScale onPress={() => setReveal(true)} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-      <Text variant="h3" color="#fff">Cevabı göster</Text>
+      <Text variant="h3" color="#fff">{tx("rounds.cevabi_goster")}</Text>
     </PressableScale>
   ) : (
     <View style={{ flexDirection: "row", gap: spacing.md }}>
-      <View style={{ flex: 1 }}><OptionButton text="Zorlandım" state="idle" onPress={() => onDone(false)} colors={colors} /></View>
-      <View style={{ flex: 1 }}><OptionButton text="Bildim" state="idle" onPress={() => onDone(true)} colors={colors} /></View>
+      <View style={{ flex: 1 }}><OptionButton text={tx("rounds.zorlandim")} state="idle" onPress={() => onDone(false)} colors={colors} /></View>
+      <View style={{ flex: 1 }}><OptionButton text={tx("rounds.bildim")} state="idle" onPress={() => onDone(true)} colors={colors} /></View>
     </View>
   );
   return (
@@ -510,7 +511,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
-        <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>Dinle · anlamını seç</Text>
+        <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.dinle_anlamini_sec")}</Text>
         {hideWord ? (
           <PressableScale onPress={() => speakTarget(withArtikel(word))} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
             <SpeakerIcon color="#fff" size={38} />
@@ -571,11 +572,11 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
-      <Prompt label="Harfleri sırala" big={word.tr} sub={word.en} colors={colors} />
+      <Prompt label={tx("rounds.harfleri_sirala")} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
-          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>Harflere dokun…</Text> : placed.map((t, i) => <Tile key={i} label={t.char} colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
+          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.harflere_dokun")}</Text> : placed.map((t, i) => <Tile key={i} label={t.char} colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
         </View>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
           {pool.map((t) => <Tile key={t.id} label={t.char} dim={usedIds.has(t.id)} onPress={() => tapPool(t)} colors={colors} />)}
@@ -583,10 +584,10 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
         {!fb ? (
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
             <PressableScale onPress={backspace} disabled={placed.length === 0} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length === 0 ? 0.4 : 1 }}>
-              <Text variant="caption" color={colors.textMuted}>Sil</Text>
+              <Text variant="caption" color={colors.textMuted}>{tx("common.sil")}</Text>
             </PressableScale>
             <PressableScale onPress={useHint} disabled={placed.length >= target.length} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length >= target.length ? 0.4 : 1 }}>
-              <Text variant="caption" color={colors.textMuted}>İpucu</Text>
+              <Text variant="caption" color={colors.textMuted}>{tx("rounds.ipucu")}</Text>
             </PressableScale>
           </View>
         ) : null}
@@ -620,11 +621,11 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
-      <Prompt label="Cümleyi sıraya diz" big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
+      <Prompt label={tx("rounds.cumleyi_siraya_diz")} big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
         <View style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: 8, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
-          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>Kelimelere dokun…</Text> : placed.map((t, i) => <Tile key={i} label={t.text} colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
+          {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.kelimelere_dokun")}</Text> : placed.map((t, i) => <Tile key={i} label={t.text} colors={colors} onPress={() => { if (!fb) setPlaced((p) => p.slice(0, i)); }} />)}
         </View>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
           {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
@@ -656,19 +657,19 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         multiline
         autoCapitalize="sentences"
         autoCorrect={false}
-        placeholder="Almanca cümleyi yaz…"
+        placeholder={tx("rounds.almanca_cumleyi_yaz")}
         placeholderTextColor={colors.textFaint}
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
       />
       <HintRow answer={s.de} colors={colors} />
       <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-        <Text variant="h3" color="#fff">Kontrol et</Text>
+        <Text variant="h3" color="#fff">{tx("common.kontrol_et")}</Text>
       </PressableScale>
     </View>
   );
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : inputBlock}>
-      <Prompt label="Almancaya çevir" big={s.tr} sub={s.en} colors={colors} />
+      <Prompt label={tx("rounds.almancaya_cevir")} big={s.tr} sub={s.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
   );
@@ -747,7 +748,7 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
 
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, batch)} colors={colors} /> : undefined}>
-      <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md, marginTop: spacing.md, textAlign: "center" }}>Eşleştir</Text>
+      <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md, marginTop: spacing.md, textAlign: "center" }}>{tx("rounds.eslestir")}</Text>
       <MascotMid mood={fb ? (fb.correct ? "happy" : "idle") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         <View style={{ flex: 1, gap: spacing.sm }}>

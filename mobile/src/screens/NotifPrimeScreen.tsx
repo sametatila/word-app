@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { t as tx } from "../lib/i18n";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -51,7 +52,7 @@ export function NotifPrimeScreen() {
         <View style={[{ width: 88, height: 88, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
           <BellIcon color="#fff" size={44} />
         </View>
-        <Text variant="display" style={{ textAlign: "center" }}>Serini koru</Text>
+        <Text variant="display" style={{ textAlign: "center" }}>{tx("notifprime.serini_koru")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 23, paddingHorizontal: spacing.md }}>
           Günde bir nazik hatırlatma, çalışmayı sürdürmenin en kolay yolu. Düzenli çalışan öğrenciler serilerini çok daha uzun tutar.
         </Text>
@@ -73,11 +74,11 @@ export function NotifPrimeScreen() {
         </View>
       </View>
 
-      <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel="Günlük hatırlatmayı aç" style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+      <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel={tx("notifprime.gunluk_hatirlatmayi_ac")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 10)]}>
         <Text variant="h3" color="#fff">{busy ? "..." : "Günde bir hatırlat"}</Text>
       </PressableScale>
-      <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel="Şimdilik geç" style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: 4 }}>
-        <Text variant="bodyStrong" color={colors.textMuted}>Belki sonra</Text>
+      <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel={tx("notifprime.simdilik_gec")} style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: 4 }}>
+        <Text variant="bodyStrong" color={colors.textMuted}>{tx("notifprime.belki_sonra")}</Text>
       </PressableScale>
     </View>
   );

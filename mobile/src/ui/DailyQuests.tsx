@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { View } from "react-native";
 import { Text } from "./Text";
 import { Card } from "./Card";
@@ -54,7 +55,7 @@ export function DailyQuests() {
   return (
     <View style={{ marginBottom: spacing.xl }}>
       <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", marginBottom: spacing.md }}>
-        <Text variant="h3" color={colors.textMuted}>Günün görevleri</Text>
+        <Text variant="h3" color={colors.textMuted}>{t("dailyquests.gunun_gorevleri")}</Text>
         <Text variant="caption" color={colors.textMuted}>{doneCount}/{quests.length} tamam</Text>
       </View>
       {quests.map((q) => <QuestRow key={q.id} q={q} colors={colors} />)}

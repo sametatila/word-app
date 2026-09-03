@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -66,7 +67,7 @@ export function FeedList({ onFindFriends }: { onFindFriends?: () => void }) {
   useEffect(() => { void load(null); }, [load]);
 
   if (items === null) return <View style={{ gap: spacing.md }}><Skeleton height={140} radius={26} /><Skeleton height={140} radius={26} /></View>;
-  if (!items.length) return <EmptyCard icon={SparkIcon} tint={colors.primary} title="Akış henüz boş" text="Arkadaşlarının seri, rozet ve görev haberleri burada görünür; sen de tepki verirsin." action={onFindFriends ? "Arkadaş bul" : undefined} onAction={onFindFriends} />;
+  if (!items.length) return <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.akis_henuz_bos")} text="Arkadaşlarının seri, rozet ve görev haberleri burada görünür; sen de tepki verirsin." action={onFindFriends ? "Arkadaş bul" : undefined} onAction={onFindFriends} />;
   return (
     <View>
       {items.map((it) => <FeedCard key={it.id} item={it} />)}

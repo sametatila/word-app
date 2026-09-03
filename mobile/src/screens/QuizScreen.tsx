@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useState } from "react";
+import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -54,7 +55,7 @@ export function QuizScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <XIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
@@ -75,7 +76,7 @@ export function QuizScreen() {
 
         {total === 0 ? (
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center" }}>
-            <Text variant="body" color={colors.textMuted}>Bu ünitenin içeriği yayına alınınca burada açılır.</Text>
+            <Text variant="body" color={colors.textMuted}>{t("quiz.bu_unitenin_icerigi_yayina_alininca_burada")}</Text>
           </Card>
         ) : (
           <QuestionList key={round} questions={questions} onAllAnswered={recordAndFinish} colors={colors} />
@@ -89,10 +90,10 @@ export function QuizScreen() {
             <Text variant="caption" color={passed ? colors.success : colors.textMuted}>{passed ? `%${pct} — geçtin` : `%${pct} — biraz daha çalış`}</Text>
             <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
               <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-                <Text variant="bodyStrong" color={colors.text}>Tekrar dene</Text>
+                <Text variant="bodyStrong" color={colors.text}>{t("quiz.tekrar_dene")}</Text>
               </PressableScale>
               <PressableScale onPress={() => nav.goBack()} style={[{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-                <Text variant="bodyStrong" color={colors.onPrimary}>Patika'ya dön</Text>
+                <Text variant="bodyStrong" color={colors.onPrimary}>{t("quiz.patika_ya_don")}</Text>
               </PressableScale>
             </View>
           </Card>

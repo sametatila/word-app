@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { Alert, View } from "react-native";
 import { social, errorText, formatXp, type FriendRow, type QuestView } from "../api/social";
 import { Text } from "../ui/Text";
@@ -33,10 +34,10 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
       {current.map((q) => <QuestCard key={q.id} q={q} me={me} busy={busy} onAct={act} />)}
       {!current.length ? (
         <View>
-          <EmptyCard icon={TargetIcon} title="Bu hafta ortak görev yok" text={friends.length ? "Bir arkadaşınla bu hafta birlikte hedef XP topla. Hedef, geçen haftanızın biraz üstü." : "Önce bir arkadaş ekle; sonra birlikte hedef XP toplarsınız."} action={friends.length ? (pick ? "Vazgeç" : "Arkadaş seç") : undefined} onAction={friends.length ? () => setPick((p) => !p) : undefined} />
+          <EmptyCard icon={TargetIcon} title={t("quests.bu_hafta_ortak_gorev_yok")} text={friends.length ? "Bir arkadaşınla bu hafta birlikte hedef XP topla. Hedef, geçen haftanızın biraz üstü." : "Önce bir arkadaş ekle; sonra birlikte hedef XP toplarsınız."} action={friends.length ? (pick ? "Vazgeç" : "Arkadaş seç") : undefined} onAction={friends.length ? () => setPick((p) => !p) : undefined} />
           {pick ? (
             <View style={{ marginTop: spacing.md }}>
-              <SectionTitle title="Kiminle" />
+              <SectionTitle title={t("quests.kiminle")} />
               {friends.map((f) => (
                 <Card key={f.userId} padded style={{ marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <PersonAvatar userId={f.userId} name={f.name} size={44} />
@@ -44,7 +45,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
                     <Text variant="h3" numberOfLines={1}>{f.name ?? "İsimsiz öğrenci"}</Text>
                     <Text variant="caption" color={colors.textMuted}>{formatXp(f.weeklyXp)} XP bu hafta</Text>
                   </View>
-                  <Pill label="Davet et" small disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId))} />
+                  <Pill label={t("quests.davet_et")} small disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId))} />
                 </Card>
               ))}
             </View>
@@ -54,7 +55,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
       <ErrorText text={err} />
       {past.length ? (
         <View>
-          <SectionTitle title="Geçmiş haftalar" />
+          <SectionTitle title={t("quests.gecmis_haftalar")} />
           {past.map((q) => {
             const done = q.status === "completed";
             return (
@@ -92,20 +93,20 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
         </View>
         <View style={{ alignItems: "flex-end" }}>
           <Text variant="h2" color={colors.primary}>{formatXp(q.targetXp)}</Text>
-          <Text variant="micro" color={colors.textMuted}>HEDEF XP</Text>
+          <Text variant="micro" color={colors.textMuted}>{t("quests.hedef_xp")}</Text>
         </View>
       </View>
       {invited ? (
         <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg, alignItems: "center" }}>
           {q.invitedByMe ? (
             <>
-              <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>Cevap bekleniyor</Text>
-              <Pill label="İptal" tone="ghost" small disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "cancel"))} />
+              <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{t("quests.cevap_bekleniyor")}</Text>
+              <Pill label={t("common.iptal")} tone="ghost" small disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "cancel"))} />
             </>
           ) : (
             <>
-              <View style={{ flex: 1 }}><Pill label="Kabul et" block disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "accept"))} /></View>
-              <Pill label="Reddet" tone="ghost" disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "decline"))} />
+              <View style={{ flex: 1 }}><Pill label={t("quests.kabul_et")} block disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "accept"))} /></View>
+              <Pill label={t("quests.reddet")} tone="ghost" disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "decline"))} />
             </>
           )}
         </View>
@@ -121,7 +122,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
             <Text variant="caption" color={colors.info}>{q.partner.name?.split(" ")[0] ?? "O"} {formatXp(q.partnerXp)}</Text>
           </View>
           <PressableScale onPress={() => Alert.alert("Görevi bırak", "İkiniz için de iptal olur.", [{ text: "Vazgeç", style: "cancel" }, { text: "Bırak", style: "destructive", onPress: () => void onAct(() => social.questAction(q.id, "cancel")) }])} style={{ alignSelf: "flex-end", marginTop: spacing.sm, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
-            <Text variant="micro" color={colors.textMuted}>Görevi bırak</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("quests.gorevi_birak")}</Text>
           </PressableScale>
         </View>
       )}

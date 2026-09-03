@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { t } from "../lib/i18n";
 import { Alert, ScrollView, View } from "react-native";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -58,12 +59,12 @@ export function UserScreen() {
 
   const wrap = (child: React.ReactNode) => (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title="Profil" />
+      <ScreenHeader title={t("user.profil")} />
       <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, gap: spacing.md }}>{child}</View>
     </View>
   );
-  if (!user) return wrap(<EmptyCard icon={LockIcon} title="Giriş gerekli" text="Profilleri görmek için giriş yap." action="Giriş yap" onAction={() => nav.navigate("Auth")} />);
-  if (notFound) return wrap(<EmptyCard icon={XIcon} tint={colors.danger} title="Kullanıcı bulunamadı" text="Bağlantı eski olabilir ya da bu profil sana kapalı." />);
+  if (!user) return wrap(<EmptyCard icon={LockIcon} title={t("user.giris_gerekli")} text={t("user.profilleri_gormek_icin_giris_yap")} action={t("user.giris_yap")} onAction={() => nav.navigate("Auth")} />);
+  if (notFound) return wrap(<EmptyCard icon={XIcon} tint={colors.danger} title={t("user.kullanici_bulunamadi")} text={t("user.baglanti_eski_olabilir_ya_da_bu")} />);
   if (!data) return wrap(<><Skeleton height={220} radius={26} /><Skeleton height={100} radius={26} /><ErrorText text={err} /></>);
 
   const u = data.user;
@@ -71,7 +72,7 @@ export function UserScreen() {
   const friends = rel === "friends";
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title="Profil" />
+      <ScreenHeader title={t("user.profil")} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
           <View style={softShadow(friends ? colors.success : colors.primary, 10)}><PersonAvatar userId={u.userId} name={u.name} size={76} ring={friends ? colors.success : null} /></View>
@@ -89,8 +90,8 @@ export function UserScreen() {
               <UserActionButton userId={u.userId} relation={rel} friendshipId={data.friendshipId} canRequest={data.canRequest} onChange={setRel} small={false} />
               {friends ? (
                 <>
-                  <Pill label="Dürt" tone="ghost" icon={BellIcon} disabled={busy} onPress={() => void act(() => social.nudge(u.userId, "remind"), "Dürttün")} />
-                  <Pill label="Görev" tone="ghost" icon={TargetIcon} disabled={busy} onPress={() => void act(() => social.inviteQuest(u.userId), "Görev daveti gitti")} />
+                  <Pill label={t("user.durt")} tone="ghost" icon={BellIcon} disabled={busy} onPress={() => void act(() => social.nudge(u.userId, "remind"), "Dürttün")} />
+                  <Pill label={t("user.gorev")} tone="ghost" icon={TargetIcon} disabled={busy} onPress={() => void act(() => social.inviteQuest(u.userId), "Görev daveti gitti")} />
                 </>
               ) : null}
             </View>
@@ -100,10 +101,10 @@ export function UserScreen() {
 
         {data.stats ? (
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-            <StatTile value={String(data.stats.currentStreak)} label="Gün serisi" color={colors.streak} colors={colors} />
-            <StatTile value={formatXp(data.stats.weeklyXp)} label="Bu hafta XP" color={colors.primary} colors={colors} />
-            <StatTile value={formatXp(data.stats.totalXp)} label="Toplam XP" color={colors.success} colors={colors} />
-            <StatTile value={String(data.stats.achievements)} label="Rozet" color={colors.accent} colors={colors} />
+            <StatTile value={String(data.stats.currentStreak)} label={t("user.gun_serisi")} color={colors.streak} colors={colors} />
+            <StatTile value={formatXp(data.stats.weeklyXp)} label={t("user.bu_hafta_xp")} color={colors.primary} colors={colors} />
+            <StatTile value={formatXp(data.stats.totalXp)} label={t("user.toplam_xp")} color={colors.success} colors={colors} />
+            <StatTile value={String(data.stats.achievements)} label={t("user.rozet")} color={colors.accent} colors={colors} />
           </View>
         ) : (
           <View style={{ marginBottom: spacing.lg }}>
@@ -113,7 +114,7 @@ export function UserScreen() {
 
         {data.recent.length ? (
           <View>
-            <SectionTitle title="Son kilometre taşları" />
+            <SectionTitle title={t("user.son_kilometre_taslari")} />
             {data.recent.map((it) => <FeedCard key={it.id} item={friends || isSelf ? it : { ...it, isMine: true }} />)}
           </View>
         ) : null}
@@ -125,11 +126,11 @@ export function UserScreen() {
             </PressableScale>
             {more ? (
               <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
-                <Pill label="Engelle" tone="danger" disabled={busy} onPress={() => Alert.alert("Engelle", `${u.name ?? "Bu kişi"} engellensin mi? Arkadaşlık ve görevler silinir; kendisine bildirim gitmez.`, [
+                <Pill label={t("user.engelle")} tone="danger" disabled={busy} onPress={() => Alert.alert("Engelle", `${u.name ?? "Bu kişi"} engellensin mi? Arkadaşlık ve görevler silinir; kendisine bildirim gitmez.`, [
                   { text: "Vazgeç", style: "cancel" },
                   { text: "Engelle", style: "destructive", onPress: () => void act(async () => { await social.block(u.userId); nav.goBack(); }, "Engellendi") },
                 ])} />
-                <Pill label="Şikayet et" tone="ghost" disabled={busy} onPress={() => Alert.alert("Şikayet sebebi", undefined, [
+                <Pill label={t("user.sikayet_et")} tone="ghost" disabled={busy} onPress={() => Alert.alert("Şikayet sebebi", undefined, [
                   { text: "Spam", onPress: () => void act(() => social.report(u.userId, "spam"), "Şikayet alındı") },
                   { text: "Taciz", onPress: () => void act(() => social.report(u.userId, "abuse"), "Şikayet alındı") },
                   { text: "Sahte hesap", onPress: () => void act(() => social.report(u.userId, "impersonation"), "Şikayet alındı") },

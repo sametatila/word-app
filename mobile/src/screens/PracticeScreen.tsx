@@ -1,4 +1,5 @@
 import React from "react";
+import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -38,12 +39,12 @@ export function PracticeScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel="Geri" style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h2">Pratik</Text>
-          <Text variant="caption" color={colors.textMuted}>Tek bir oyunu kendi kelimelerinle çalış</Text>
+          <Text variant="h2">{t("practice.pratik")}</Text>
+          <Text variant="caption" color={colors.textMuted}>{t("practice.tek_bir_oyunu_kendi_kelimelerinle_calis")}</Text>
         </View>
       </View>
 
@@ -56,15 +57,15 @@ export function PracticeScreen() {
                 <BoltIcon color="#fff" size={24} />
               </View>
               <View style={{ flex: 1 }}>
-                <Text variant="h3" color="#fff">Karışık tur</Text>
-                <Text variant="caption" color="#ffffffdd">Tüm oyun türleri bir arada</Text>
+                <Text variant="h3" color="#fff">{t("practice.karisik_tur")}</Text>
+                <Text variant="caption" color="#ffffffdd">{t("practice.tum_oyun_turleri_bir_arada")}</Text>
               </View>
               <ArrowRightIcon color="#fff" size={20} />
             </View>
           </View>
         </PressableScale>
 
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, textTransform: "uppercase", letterSpacing: 1 }}>Tek oyun</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, textTransform: "uppercase", letterSpacing: 1 }}>{t("practice.tek_oyun")}</Text>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
           {practiceGamesFor(me?.course).map((g) => {
             const m = META[g.game] ?? { icon: (p: { color: string; size: number }) => <QuizIcon {...p} />, tint: "primary" as keyof Palette };

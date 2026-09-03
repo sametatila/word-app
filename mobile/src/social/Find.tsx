@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { t } from "../lib/i18n";
 import { TextInput, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -57,21 +58,21 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
     <View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg }}>
         <SearchIcon color={colors.textMuted} size={20} />
-        <TextInput value={q} onChangeText={setQ} placeholder="Kullanıcı adı ya da isim" placeholderTextColor={colors.textFaint} autoCapitalize="none" autoCorrect={false} style={{ flex: 1, paddingVertical: 13, color: colors.text, fontSize: 16 }} accessibilityLabel="Kullanıcı ara" />
-        {q ? <PressableScale onPress={() => setQ("")} accessibilityLabel="Temizle"><XIcon color={colors.textMuted} size={18} /></PressableScale> : null}
+        <TextInput value={q} onChangeText={setQ} placeholder={t("find.kullanici_adi_ya_da_isim")} placeholderTextColor={colors.textFaint} autoCapitalize="none" autoCorrect={false} style={{ flex: 1, paddingVertical: 13, color: colors.text, fontSize: 16 }} accessibilityLabel={t("find.kullanici_ara")} />
+        {q ? <PressableScale onPress={() => setQ("")} accessibilityLabel={t("find.temizle")}><XIcon color={colors.textMuted} size={18} /></PressableScale> : null}
       </View>
       <ErrorText text={err} />
       {q.trim().length >= 2 ? (
         <View style={{ marginTop: spacing.lg }}>
           {hits === null ? <Skeleton height={96} radius={26} /> : hits.length ? hits.map((h) => card(h, null, h.currentStreak, <UserActionButton userId={h.userId} relation={h.relation} onChange={onChanged} />)) : (
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>Sonuç yok. Gizli profiller yalnız tam kullanıcı adıyla bulunur.</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("find.sonuc_yok_gizli_profiller_yalniz_tam")}</Text>
           )}
         </View>
       ) : (
         <View>
-          <SectionTitle title="Tanıyor olabilirsin" />
+          <SectionTitle title={t("find.taniyor_olabilirsin")} />
           {sugg === null ? <Skeleton height={96} radius={26} /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: `${s.mutual} ortak arkadaş`, tint: colors.success, icon: HandshakeIcon } : s.reason === "level" ? { label: `Aynı seviye · ${s.level}`, tint: colors.info } : { label: "Bu hafta aktif", tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>Şimdilik öneri yok. Kullanıcı adıyla ara ya da davet bağlantını paylaş.</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("find.simdilik_oneri_yok_kullanici_adiyla_ara")}</Text>
           )}
         </View>
       )}

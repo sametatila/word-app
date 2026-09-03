@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { t as tx } from "../lib/i18n";
 import { View, TextInput } from "react-native";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
@@ -59,7 +60,7 @@ export function QuestionList({ questions, onAllAnswered, colors }: {
 
   return (
     <View style={{ marginTop: spacing.lg, gap: spacing.md }}>
-      <Text variant="h3">Sorular</Text>
+      <Text variant="h3">{tx("skillquiz.sorular")}</Text>
       {questions.map((q, qi) => {
         const kind = q.kind ?? "mcq";
         const done = results[qi] !== null;
@@ -116,7 +117,7 @@ function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; k
     <View style={{ marginTop: spacing.md }}>
       {kind === "dictation" ? (
         <PressableScale onPress={() => speakTarget(accept[0] ?? "")} style={{ flexDirection: "row", alignItems: "center", gap: 6, alignSelf: "flex-start", marginBottom: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 7 }}>
-          <SpeakerIcon color={colors.primary} size={15} /><Text variant="caption" color={colors.primary}>Cümleyi dinle</Text>
+          <SpeakerIcon color={colors.primary} size={15} /><Text variant="caption" color={colors.primary}>{tx("skillquiz.cumleyi_dinle")}</Text>
         </PressableScale>
       ) : null}
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
@@ -126,7 +127,7 @@ function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; k
         {!done ? (
           <PressableScale onPress={() => { if (typed.trim()) onSettle(written(typed, accept)); }} disabled={!typed.trim()}
             style={{ backgroundColor: typed.trim() ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
-            <Text variant="bodyStrong" color={typed.trim() ? colors.onPrimary : colors.textFaint}>Kontrol</Text>
+            <Text variant="bodyStrong" color={typed.trim() ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.kontrol")}</Text>
           </PressableScale>
         ) : null}
       </View>
@@ -157,7 +158,7 @@ function OrderInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: boo
 
   return (
     <View style={{ marginTop: spacing.md }}>
-      <Text variant="caption" color={colors.textMuted}>Doğru sıraya koy: iki maddeye dokununca yer değiştirir.</Text>
+      <Text variant="caption" color={colors.textMuted}>{tx("skillquiz.dogru_siraya_koy_iki_maddeye_dokununca")}</Text>
       <View style={{ marginTop: spacing.sm, gap: 6 }}>
         {order.map((v, pos) => {
           const bc = done ? (v === pos ? colors.success : colors.danger) : picked === pos ? colors.primary : colors.border;
@@ -171,7 +172,7 @@ function OrderInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: boo
       </View>
       {!done ? (
         <PressableScale onPress={() => onSettle(correct)} style={{ marginTop: spacing.sm, alignSelf: "flex-start", backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
-          <Text variant="bodyStrong" color={colors.onPrimary}>Kontrol</Text>
+          <Text variant="bodyStrong" color={colors.onPrimary}>{tx("skillquiz.kontrol")}</Text>
         </PressableScale>
       ) : null}
     </View>
@@ -219,7 +220,7 @@ export function WritingList({ tasks, onAllDone, colors }: { tasks: WritingTask[]
   }
   return (
     <View style={{ marginTop: spacing.lg, gap: spacing.md }}>
-      <Text variant="h3">Görevler</Text>
+      <Text variant="h3">{tx("skillquiz.gorevler")}</Text>
       {tasks.map((t, i) =>
         t.kind === "build"
           ? <BuildCard key={i} t={t} n={i + 1} done={results[i] !== null} onSettle={(ok) => settle(i, ok)} colors={colors} />
@@ -238,12 +239,12 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
       <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.tr}</Text>
       <View style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
         <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
-          placeholder="Almanca cümleyi yaz…" placeholderTextColor={colors.textFaint}
+          placeholder={tx("skillquiz.almanca_cumleyi_yaz")} placeholderTextColor={colors.textFaint}
           style={{ flex: 1, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (
           <PressableScale onPress={() => { if (typed.trim()) onSettle(written(typed, accept)); }} disabled={!typed.trim()}
             style={{ backgroundColor: typed.trim() ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
-            <Text variant="bodyStrong" color={typed.trim() ? colors.onPrimary : colors.textFaint}>Kontrol</Text>
+            <Text variant="bodyStrong" color={typed.trim() ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.kontrol")}</Text>
           </PressableScale>
         ) : null}
       </View>
@@ -285,20 +286,20 @@ function FreeCard({ t, n, done, onSettle, colors }: { t: FreeTask; n: number; do
         </View>
       ) : null}
       <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
-        placeholder="Cevabını Almanca yaz…" placeholderTextColor={colors.textFaint}
+        placeholder={tx("skillquiz.cevabini_almanca_yaz")} placeholderTextColor={colors.textFaint}
         style={{ marginTop: spacing.md, minHeight: 100, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm }}>
         <Text variant="micro" color={enough ? colors.success : colors.textMuted}>{words}/{t.minWords} kelime</Text>
         {!done ? (
           <PressableScale onPress={() => { if (enough) { setReveal(true); onSettle(true); } }} disabled={!enough}
             style={{ backgroundColor: enough ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 10 }}>
-            <Text variant="bodyStrong" color={enough ? colors.onPrimary : colors.textFaint}>Gönder</Text>
+            <Text variant="bodyStrong" color={enough ? colors.onPrimary : colors.textFaint}>{tx("common.gonder")}</Text>
           </PressableScale>
         ) : null}
       </View>
       {(done || reveal) && t.sample ? (
         <View style={{ marginTop: spacing.md, backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
-          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>ÖRNEK CEVAP</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("skillquiz.ornek_cevap")}</Text>
           <Text variant="body" color={colors.text} style={{ lineHeight: 22 }}>{t.sample}</Text>
         </View>
       ) : null}

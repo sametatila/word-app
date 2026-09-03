@@ -1,4 +1,5 @@
 import React from "react";
+import { t } from "../lib/i18n";
 import { View, Modal, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "./Text";
@@ -40,7 +41,7 @@ export function MicDisclosure({ visible, onAccept, onCancel }: { visible: boolea
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, alignSelf: "center" }, softShadow(colors.primary, 12)]}>
             <MicIcon color="#fff" size={36} />
           </View>
-          <Text variant="display" style={{ textAlign: "center" }}>Mikrofon ve ses verisi</Text>
+          <Text variant="display" style={{ textAlign: "center" }}>{t("micdisclosure.mikrofon_ve_ses_verisi")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>
             Yürüyüş modu sesle çalışır. Başlamadan önce sesinin nasıl kullanıldığını bil.
           </Text>
@@ -48,15 +49,15 @@ export function MicDisclosure({ visible, onAccept, onCancel }: { visible: boolea
             {POINTS.map((p) => <Point key={p} text={p} colors={colors} />)}
           </View>
           <PressableScale onPress={() => openLegal("privacy")} hitSlop={6} accessibilityRole="link" style={{ alignSelf: "center", paddingVertical: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.primary}>Gizlilik politikasını oku</Text>
+            <Text variant="bodyStrong" color={colors.primary}>{t("micdisclosure.gizlilik_politikasini_oku")}</Text>
           </PressableScale>
         </ScrollView>
         <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.lg, gap: spacing.sm }}>
           <PressableScale onPress={onAccept} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color="#fff">Kabul ediyorum, başla</Text>
+            <Text variant="h3" color="#fff">{t("micdisclosure.kabul_ediyorum_basla")}</Text>
           </PressableScale>
           <PressableScale onPress={onCancel} style={{ paddingVertical: spacing.md, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>Vazgeç</Text>
+            <Text variant="bodyStrong" color={colors.textMuted}>{t("common.vazgec")}</Text>
           </PressableScale>
         </View>
       </View>
