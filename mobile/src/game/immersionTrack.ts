@@ -9,6 +9,9 @@
  * useLearningPath onu tercih eder ve gerçek ilerleme/gating gelir.
  */
 import { lessonsForLevel } from "../data/lessons";
+import { moduleTheme } from "../data/moduleThemes";
+import { t } from "../lib/i18n";
+import { currentCourseId } from "../lib/courses";
 import { listSkillMeta, type SkillMeta } from "../data/skills";
 import type { LearningPath, LearningPathItem, LearningPathUnit } from "../lib/useLearningPath";
 
@@ -20,24 +23,18 @@ const MODULE_SIZE = 10;
 const BASE_PATTERN = ["lesson", "read", "lesson", "listen", "lesson", "write", "lesson", "read", "listen", "write"] as const;
 function slotPlan(): string[] { return [...BASE_PATTERN, "grammar", "quiz", "checkpoint"]; }
 
-const SKILL_TITLE: Record<string, string> = { read: "Okuma", listen: "Dinleme", write: "Yazma" };
-const SLOT_TITLE: Record<string, { title: string; titleTr: string }> = {
-  grammar: { title: "Dil bilgisi", titleTr: "Odak alıştırması" },
-  quiz: { title: "Tekrar", titleTr: "Karışık hatırlama" },
-  checkpoint: { title: "Kontrol Noktası", titleTr: "Üniteyi bitir" },
+/** Slot başlıkları çeviriden; `sub` Patika kartındaki ikinci satır. */
+const SKILL_KEY: Record<string, string> = { read: "unitkind.read", listen: "unitkind.listen", write: "unitkind.write" };
+const SLOT_KEY: Record<string, { title: string; sub: string }> = {
+  grammar: { title: "unitkind.grammar", sub: "path.slot_grammar_sub" },
+  quiz: { title: "unitkind.quiz", sub: "path.slot_quiz_sub" },
+  checkpoint: { title: "path.slot_checkpoint", sub: "path.slot_checkpoint_sub" },
 };
 
-const MODULE_THEMES: Record<string, string[]> = {
-  A1: ["Tanışma ve ben", "Aile ve insanlar", "Yeme-içme", "Günlük düzen", "Alışveriş", "Şehirde", "Ev ve yaşam", "Boş zaman", "Sağlık ve vücut", "İletişim ve geçmişe ilk adım"],
-  A2: ["Geçmişi anlatmak", "Benim hikâyem", "Sağlık", "Ev ve mahalle", "İş hayatı", "Alışveriş ve hizmetler", "Seyahat", "Kutlamalar ve ilişkiler", "Medya ve teknoloji", "Şehir ve resmî işler"],
-  B1: ["İş dünyası", "Ev ve kira dünyası", "Bağlaç ustalığı", "İlgi cümleleri", "Bürokrasi", "Eğitim ve gelişim", "Fikir ve tartışma", "Sağlık sistemi", "Çevre ve şehir yaşamı", "Duygular ve hayaller"],
-  B2: ["Profesyonel iletişim", "Müzakere ve şikâyet", "Edilgenin bütün hâlleri", "Medya ve aktarılan söz", "Bilim ve teknoloji", "Toplum ve ekonomi", "Kültür ve sanat", "Para ve kariyer stratejisi", "İnsan ilişkileri ve psikoloji", "Resmî yazışma ve kapanış"],
-  C1: ["Zarif iş iletişimi", "Kip parçacıkları", "Retorik ve sunum sanatı", "Deyimler ve mecazlar", "Basın ve akademik aktarım", "Hukuk ve sözleşme dili", "Karmaşık yapılar", "Toplumsal tartışma", "Mizah, ironi ve incelik", "Ustalık sahneleri"],
-};
 
 function unitTheme(level: string, firstLessonIndex: number, unitIndex: number): string {
-  const theme = MODULE_THEMES[level]?.[Math.floor(firstLessonIndex / MODULE_SIZE)];
-  return theme || `${level} · Ünite ${unitIndex}`;
+  const theme = moduleTheme(currentCourseId(), level, Math.floor(firstLessonIndex / MODULE_SIZE));
+  return theme || t("path.unit_fallback", { seviye: level, n: unitIndex });
 }
 
 /**
@@ -60,7 +57,9 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
 
   for (let u = 0; u < unitCount; u++) {
     const index = u + 1;
-    const unitId = `de-${level.toLowerCase()}-u${String(index).padStart(2, "0")}`;
+    // Kurs önekli: "de-a1-u01". Sabit "de-" olsaydı başka bir kursun üniteleri
+    // Almanca kursunun ilerlemesiyle aynı kimliği paylaşırdı.
+    const unitId = `${currentCourseId()}-${level.toLowerCase()}-u${String(index).padStart(2, "0")}`;
     const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
     const items: LearningPathItem[] = [];
     const counters: Record<string, number> = {};
@@ -77,8 +76,8 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
         const meta = pools[kind][cursors[kind]++];
         items.push({
           id, kind,
-          title: meta?.title ?? SKILL_TITLE[kind],
-          titleTr: meta?.genre ?? SKILL_TITLE[kind],
+          title: meta?.title ?? t(SKILL_KEY[kind]),
+          titleTr: meta?.genre ?? t(SKILL_KEY[kind]),
           playable: !!meta,
           done: meta ? done.has(meta.id) : false,
           ref: meta?.id ?? null,
@@ -88,13 +87,13 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
         // hiç ders yoksa türetecek bir şey de yok: "oynanır" demek boş bir tur
         // açmak olurdu. Ders paketi olmayan kurslarda (ör. İngilizce, henüz
         // ders içeriği yazılmadı) tüm ünite bu durumda.
-        const t = SLOT_TITLE[kind];
+        const slot = SLOT_KEY[kind];
         const derivable = unitLessons.length > 0;
-        items.push({ id, kind, title: t.title, titleTr: t.titleTr, playable: derivable, done: derivable && done.has(id), ref: derivable ? unitId : null });
+        items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: derivable, done: derivable && done.has(id), ref: derivable ? unitId : null });
       } else {
         // grammar — elle yazılmış içerik gerekir, henüz yok → "Yakında".
-        const t = SLOT_TITLE[kind];
-        items.push({ id, kind, title: t.title, titleTr: t.titleTr, playable: false, done: false, ref: null });
+        const slot = SLOT_KEY[kind];
+        items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: false, done: false, ref: null });
       }
     }
 

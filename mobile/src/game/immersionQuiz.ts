@@ -6,6 +6,9 @@
  * üretir; QuestionList aynen render eder.
  */
 import { lessonsForLevel } from "../data/lessons";
+import { moduleTheme } from "../data/moduleThemes";
+import { t, targetLangName } from "../lib/i18n";
+import { currentCourseId } from "../lib/courses";
 import type { SkillQuestion } from "../data/skills";
 
 const UNIT_LESSONS = 4;
@@ -13,13 +16,6 @@ const MODULE_SIZE = 10;
 type VocabItem = { de: string; tr: string };
 type PatternItem = { de: string; tr: string };
 
-const MODULE_THEMES: Record<string, string[]> = {
-  A1: ["Tanışma ve ben", "Aile ve insanlar", "Yeme-içme", "Günlük düzen", "Alışveriş", "Şehirde", "Ev ve yaşam", "Boş zaman", "Sağlık ve vücut", "İletişim ve geçmişe ilk adım"],
-  A2: ["Geçmişi anlatmak", "Benim hikâyem", "Sağlık", "Ev ve mahalle", "İş hayatı", "Alışveriş ve hizmetler", "Seyahat", "Kutlamalar ve ilişkiler", "Medya ve teknoloji", "Şehir ve resmî işler"],
-  B1: ["İş dünyası", "Ev ve kira dünyası", "Bağlaç ustalığı", "İlgi cümleleri", "Bürokrasi", "Eğitim ve gelişim", "Fikir ve tartışma", "Sağlık sistemi", "Çevre ve şehir yaşamı", "Duygular ve hayaller"],
-  B2: ["Profesyonel iletişim", "Müzakere ve şikâyet", "Edilgenin bütün hâlleri", "Medya ve aktarılan söz", "Bilim ve teknoloji", "Toplum ve ekonomi", "Kültür ve sanat", "Para ve kariyer stratejisi", "İnsan ilişkileri ve psikoloji", "Resmî yazışma ve kapanış"],
-  C1: ["Zarif iş iletişimi", "Kip parçacıkları", "Retorik ve sunum sanatı", "Deyimler ve mecazlar", "Basın ve akademik aktarım", "Hukuk ve sözleşme dili", "Karmaşık yapılar", "Toplumsal tartışma", "Mizah, ironi ve incelik", "Ustalık sahneleri"],
-};
 
 function dedupeBy<T>(xs: T[], key: (x: T) => string): T[] {
   const seen = new Set<string>();
@@ -34,7 +30,7 @@ export function buildUnitBrief(level: string, unitIndex: number): UnitBrief {
   const lessons = lessonsForLevel(level);
   const u = unitIndex - 1;
   const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
-  const theme = MODULE_THEMES[level]?.[Math.floor((u * UNIT_LESSONS) / MODULE_SIZE)] || `${level} · Ünite ${unitIndex}`;
+  const theme = moduleTheme(currentCourseId(), level, Math.floor((u * UNIT_LESSONS) / MODULE_SIZE)) || t("path.unit_fallback", { seviye: level, n: unitIndex });
   return {
     vocab: dedupeBy(unitLessons.flatMap((l) => l.vocab), (v) => v.de),
     patterns: dedupeBy(unitLessons.flatMap((l) => l.patterns), (p) => p.de),
@@ -81,12 +77,12 @@ export function deriveQuiz(brief: UnitBrief, pool: { vocab: VocabItem[]; pattern
   for (let i = 0; i < vocabTarget; i++) {
     const v = brief.vocab[i];
     const { options, answer } = placeAnswer(v.tr, pickDistractors(v.tr, trPool, i), i);
-    qs.push({ kind: "mcq", text: `«${v.de}» ne demek?`, options, answer, explain: `${v.de} = ${v.tr}.` });
+    qs.push({ kind: "mcq", text: t("quiz.what_means", { kelime: v.de }), options, answer, explain: `${v.de} = ${v.tr}.` });
   }
   for (let j = 0; j < patTarget && qs.length < count; j++) {
     const p = brief.patterns[j];
     const { options, answer } = placeAnswer(p.de, pickDistractors(p.de, dePatternPool, j), j);
-    qs.push({ kind: "mcq", text: `«${p.tr}» Almanca nasıl denir?`, options, answer, explain: `${p.tr} → ${p.de}` });
+    qs.push({ kind: "mcq", text: t("quiz.how_to_say", { kalip: p.tr, hedef: targetLangName() }), options, answer, explain: `${p.tr} → ${p.de}` });
   }
   return qs.slice(0, count);
 }

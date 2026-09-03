@@ -1,15 +1,13 @@
 {
-  "total": 161,
+  "total": 110,
   "files": {
     "src/data/demoPlacement.ts": 5,
     "src/data/firstWords.ts": 40,
-    "src/game/immersionQuiz.ts": 41,
-    "src/game/immersionTrack.ts": 44,
+    "src/data/moduleThemes.ts": 39,
     "src/lib/courses.ts": 7,
     "src/lib/i18n.ts": 1,
     "src/lib/voiceMatch.ts": 2,
     "src/screens/ExamPrepScreen.tsx": 1,
-    "src/screens/FirstPracticeScreen.tsx": 5,
     "src/screens/LearnScreen.tsx": 1,
     "src/screens/SettingsScreen.tsx": 1,
     "src/screens/WalkModeScreen.tsx": 11,

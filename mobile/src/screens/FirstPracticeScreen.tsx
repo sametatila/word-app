@@ -87,12 +87,12 @@ export function FirstPracticeScreen() {
         )}
       </View>
 
-      <PressableScale onPress={primary} accessibilityRole="button" accessibilityLabel={!seen ? "Anlamını gör" : last ? "Hesabımı aç ve kaydet" : "Sonraki kelime"} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.primary, 10)]}>
+      <PressableScale onPress={primary} accessibilityRole="button" accessibilityLabel={t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.primary, 10)]}>
         {seen && last && <CheckIcon color="#fff" size={20} />}
-        <Text variant="h3" color="#fff">{!seen ? "Anlamını gör" : last ? "Hesabımı aç ve kaydet" : "Sonraki kelime"}</Text>
+        <Text variant="h3" color="#fff">{t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")}</Text>
       </PressableScale>
       <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
-        Öğrendiklerini kaydetmek için birazdan hesabını açacaksın.
+        {t("firstpractice.save_note")}
       </Text>
     </View>
   );
