@@ -16,6 +16,8 @@ export type VoiceId =
   | "de-DE-ConradNeural"
   | "de-CH-LeniNeural"
   | "de-CH-JanNeural"
+  | "en-US-JennyNeural"
+  | "en-US-GuyNeural"
   | "tr-TR-EmelNeural";
 
 /**
@@ -51,7 +53,7 @@ export type Voice = {
   gender: "kadın" | "erkek";
   /** Kullanıcıya bu sesin farkını anlatan tek cümle. */
   note: string;
-  course: "de" | "gsw-zh";
+  course: "de" | "gsw-zh" | "en";
 };
 
 export const VOICES: Voice[] = [
@@ -92,17 +94,37 @@ export const VOICES: Voice[] = [
     note: "İsviçre aksanlı; Leni kadar lehçeye yakın değil",
     course: "gsw-zh",
   },
+  {
+    id: "en-US-JennyNeural",
+    label: "Jenny",
+    gender: "kadın",
+    note: "Net ve doğal Amerikan aksanı",
+    course: "en",
+  },
+  {
+    id: "en-US-GuyNeural",
+    label: "Guy",
+    gender: "erkek",
+    note: "Sakin ve tok Amerikan aksanı",
+    course: "en",
+  },
 ];
 
-/** Kursun sesleri — seçim ekranı bunu listeliyor. */
+/**
+ * Kursun sesleri — seçim ekranı bunu listeliyor.
+ *
+ * Eskiden `course === "gsw-zh" ? gsw : de` yazılıydı: tanınmayan her kurs
+ * Almanca sesleri alırdı. Artık katalogdan eşleşiyor; eşleşme yoksa Almancaya
+ * düşmek yalnızca son çare (de/gsw-zh davranışı birebir aynı).
+ */
 export function voicesFor(course: string): Voice[] {
-  const key = course === "gsw-zh" ? "gsw-zh" : "de";
-  return VOICES.filter((v) => v.course === key);
+  const own = VOICES.filter((v) => v.course === course);
+  return own.length ? own : VOICES.filter((v) => v.course === "de");
 }
 
-/** Kursun varsayılanı: her ikisinde de kadın ses (de-CH'de lehçeye en yakın olan). */
+/** Kursun varsayılanı: katalogdaki ilk sesi (her kursta kadın ses başta). */
 export function defaultVoice(course: string): VoiceId {
-  return course === "gsw-zh" ? "de-CH-LeniNeural" : "de-DE-KatjaNeural";
+  return voicesFor(course)[0]?.id ?? "de-DE-KatjaNeural";
 }
 
 /**
@@ -113,8 +135,9 @@ export function defaultVoice(course: string): VoiceId {
  * Alman aksanıyla okumak olurdu — tam da kaçındığımız şey.
  */
 export function resolveVoice(course: string, voice: string | null | undefined): VoiceId {
+  const allowed = new Set(voicesFor(course).map((v) => v.id));
   const found = VOICES.find((v) => v.id === voice);
-  if (found && found.course === (course === "gsw-zh" ? "gsw-zh" : "de")) return found.id;
+  if (found && allowed.has(found.id)) return found.id;
   return defaultVoice(course);
 }
 

@@ -1,4 +1,5 @@
 import type { Lesson } from "./types";
+import { isCourseId } from "../courses";
 import { deA1B01 } from "./content/de-a1-b01";
 import { deA1B02 } from "./content/de-a1-b02";
 import { deA1B03 } from "./content/de-a1-b03";
@@ -140,8 +141,18 @@ export function levelIndex(level: string): number {
   return at < 0 ? 0 : at;
 }
 
+/**
+ * Kursun dersleri.
+ *
+ * Eşleşme TAM: her kurs yalnız kendi derslerini alır. Eskiden
+ * `course === "gsw-zh" ? "gsw-zh" : "de"` yazılıydı, yani tanınmayan her kurs
+ * Almanca dersleri görürdü — İngilizce kursta bu, öğrenciye yanlış dilde ders
+ * göstermek olurdu. Yalnızca BİLİNMEYEN bir id Almancaya düşer (eski davranışla
+ * aynı). Not: gsw-zh'ın diskte hiç dersi yok, bu yüzden bugün olduğu gibi boş
+ * dönmeye devam ediyor.
+ */
 export function lessonsFor(course: string): Lesson[] {
-  const key = course === "gsw-zh" ? "gsw-zh" : "de";
+  const key = isCourseId(course) ? course : "de";
   return LESSONS.filter((l) => l.course === key).sort(
     (a, b) => LEVEL_ORDER.indexOf(a.level) - LEVEL_ORDER.indexOf(b.level),
   );

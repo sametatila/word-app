@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { acceptsCourse } from "@/lib/courses";
 import { resolveVoice } from "@/lib/tts/voices";
 import { eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
@@ -57,7 +58,10 @@ export async function POST(req: Request) {
   if (typeof body.newPerDay === "number") patch.newPerDay = clampInt(body.newPerDay, 0, 40);
   if (typeof body.level === "string" && ["A1", "A2", "B1", "B2", "C1"].includes(body.level))
     patch.level = body.level;
-  if (typeof body.course === "string" && ["de", "gsw-zh"].includes(body.course))
+  // Kabul edilen kurslar kayıt defterinden (lib/courses): literal liste
+  // burada ve UI'da ayrı ayrı duruyordu, yeni bir dil eklendiğinde API onu
+  // sessizce reddediyordu. `enabled` bayrağı ikisini birlikte açar.
+  if (typeof body.course === "string" && acceptsCourse(body.course))
     patch.course = body.course;
   // Ses, gideceği kursa göre doğrulanıyor: kurs ve ses aynı istekte
   // geliyorsa yeni kurs, gelmiyorsa kayıtlı kurs ölçü alınıyor. Aksi hâlde
