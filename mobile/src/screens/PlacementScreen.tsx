@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t, nativeLangName } from "../lib/i18n";
+import { t, currentLang, nativeLangName } from "../lib/i18n";
+import { currentCourseId } from "../lib/courses";
 import { View, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -9,7 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { XIcon } from "../ui/icons";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
 import { RoundSkeleton } from "../game/RoundSkeleton";
-import { DEMO_PLACEMENT, estimateLevel } from "../data/demoPlacement";
+import { demoPlacementFor, estimateLevel } from "../data/demoPlacement";
 import {
   startPlacement,
   finishPlacement,
@@ -38,8 +39,8 @@ function realQuestions(items: PlacementVocab[]): PQ[] {
   }));
 }
 function demoQuestions(): PQ[] {
-  return DEMO_PLACEMENT.map((q, i) => ({
-    round: { wordId: i, question: q.question, answer: q.answer, options: q.options, prompt: q.prompt },
+  return demoPlacementFor(currentLang(), currentCourseId()).map((q, i) => ({
+    round: { wordId: i, question: q.question, answer: q.answer, options: q.options, prompt: t(q.promptKey, { anadil: nativeLangName() }) },
     level: q.level,
     itemId: q.id,
   }));
@@ -117,6 +118,19 @@ export function PlacementScreen() {
     }
     setSaved(true);
     setTimeout(leave, 700);
+  }
+
+  // Misafir yolunda bu paritenin hazır seti yoksa soru üretilemez; sessiz boş
+  // ekran yerine sebebi söylenir (onboarding bu seçeneği zaten göstermiyor).
+  if (!user && !questions.length) {
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.no_demo")}</Text>
+        <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
+          <Text variant="bodyStrong" color="#fff">{t("common.kapat")}</Text>
+        </PressableScale>
+      </View>
+    );
   }
 
   if (user && !loading && loadError) {

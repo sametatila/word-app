@@ -32,6 +32,8 @@ export type NativeLang = "tr" | "en" | "de";
 
 export const NATIVE_LANGS: NativeLang[] = ["tr", "en", "de"];
 export const DEFAULT_NATIVE: NativeLang = "tr";
+/** Kurs seçilmeden önceki varsayılan — onboarding ilk adımda henüz seçim yokken kullanır. */
+export const DEFAULT_COURSE_ID: CourseId = "de";
 
 export type Course = {
   id: CourseId;

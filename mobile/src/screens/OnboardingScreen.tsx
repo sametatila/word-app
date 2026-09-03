@@ -10,7 +10,9 @@ import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
 import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
-import { enabledCourses } from "../lib/courses";
+import { enabledCourses, DEFAULT_COURSE_ID } from "../lib/courses";
+import { hasDemoPlacement } from "../data/demoPlacement";
+import { hasFirstWords } from "../data/firstWords";
 import { t, currentLang } from "../lib/i18n";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -41,8 +43,10 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
  * dil tercihi (loadLang) henüz okunmamış olurdu; ve kurs adları arayüz diline bağlı,
  * eskiden DEFAULT_NATIVE ile sabit Türkçe basılıyordu.
  */
-function steps(): Step[] {
+/** `course` seçilen kurs: seviye adımının seçenekleri o paritenin verisine bağlı. */
+function steps(course: string): Step[] {
   const lang = currentLang();
+  const canTest = hasDemoPlacement(lang, course);
   return [
     {
       key: "welcome", icon: BoltIcon,
@@ -65,9 +69,11 @@ function steps(): Step[] {
       key: "level", icon: ExamIcon,
       title: t("onboarding.nereden_baslayalim"),
       subtitle: t("onboarding.sifirdan_basla_kisa_bir_testle_sev"),
+      // "Testle belirle" yalnız o paritenin hazır seti varsa; yoksa seçenek hiç
+      // görünmez (seçilip boş bir teste düşmektense hiç sunulmamalı).
       options: [
         { key: "A1", label: t("onboarding.sifirdan"), sub: t("onboarding.yeni_basliyorum_ilk_kelimelerle_is") },
-        { key: "test", label: t("onboarding.testle_belirle"), sub: t("onboarding.kisa_yerlestirme_sinavi") },
+        ...(canTest ? [{ key: "test", label: t("onboarding.testle_belirle"), sub: t("onboarding.kisa_yerlestirme_sinavi") }] : []),
         { key: "pick", label: t("onboarding.seviyeni_sec"), sub: t("onboarding.seviyeni_biliyorsan_dogrudan_sec") },
       ],
     },
@@ -91,7 +97,7 @@ export function OnboardingScreen() {
   const [i, setI] = useState(0);
   const [choices, setChoices] = useState<Record<string, string>>({});
   const [pickedLevel, setPickedLevel] = useState<string | null>(null);
-  const allSteps = steps();
+  const allSteps = steps(choices.course ?? DEFAULT_COURSE_ID);
   const step = allSteps[i];
 
   useEffect(() => { track("onboarding_step", i, step?.key); }, [i, step?.key]);
@@ -116,7 +122,9 @@ export function OnboardingScreen() {
       // kısa bir ısınmadan (FirstPractice) geçer — her yola ilk-değer tadı.
       const lvl = levelChoice === "A1" ? "A1" : (pickedLevel ?? "A1");
       await saveOnboardingPrefs({ course, goal, level: lvl });
-      nav.reset({ index: 0, routes: [{ name: "FirstPractice", params: { level: lvl } }] });
+      // Isınma yalnız o paritenin kelimeleri varsa; yoksa doğrudan giriş duvarı.
+      const next = hasFirstWords(currentLang(), course) ? "FirstPractice" : "Auth";
+      nav.reset({ index: 0, routes: [next === "FirstPractice" ? { name: next, params: { level: lvl } } : { name: "Auth" }] });
     }
   }
   function next() { if (last) void finish(); else if (canNext) setI((n) => n + 1); }
