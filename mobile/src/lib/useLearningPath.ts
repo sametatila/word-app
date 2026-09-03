@@ -33,10 +33,10 @@ export function useLearningPath(): { data: LearningPath | null; loading: boolean
   const { me } = useMe();
   const [data, setData] = useState<LearningPath | null>(null);
   const [source, setSource] = useState<"api" | "local" | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(() => !!user);
 
   useEffect(() => {
-    if (!user) { setData(null); setSource(null); return; }
+    if (!user) { setData(null); setSource(null); setLoading(false); return; }
     let alive = true;
     setLoading(true);
     api<LearningPath>("/api/immersion")

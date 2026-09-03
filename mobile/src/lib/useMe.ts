@@ -46,10 +46,12 @@ type SessionMetaLite = {
 export function useMe(): { me: Me | null; loading: boolean } {
   const { user } = useAuth();
   const [me, setMe] = useState<Me | null>(null);
-  const [loading, setLoading] = useState(false);
+  // İlk render'da zaten "yükleniyor": oturum varken false başlasaydı ekranlar bir
+  // kare boyunca "veri yok" halini çizip sonra iskelete, sonra içeriğe geçerdi.
+  const [loading, setLoading] = useState(() => !!user);
 
   useEffect(() => {
-    if (!user) { setMe(null); return; }
+    if (!user) { setMe(null); setLoading(false); return; }
     let alive = true;
     setLoading(true);
     api<Me>("/api/me")
