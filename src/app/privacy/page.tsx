@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { EntityBlock, LegalShell, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING, LEGAL_PATHS, PROCESSORS } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
 
 export const metadata = {
   title: "Gizlilik Politikası",
   description: "Nomi'nin hangi verileri, neden ve ne kadar süreyle işlediği; KVKK ve GDPR kapsamındaki haklarınız; hesap silme.",
+  alternates: {
+    canonical: LEGAL_PATHS.privacy,
+    languages: { tr: legalPath("privacy"), en: legalPath("privacy", "en"), de: legalPath("privacy", "de") },
+  },
 };
 
 /**
@@ -27,7 +31,7 @@ export default function PrivacyPage() {
       </p>
       <EntityBlock withRepresentatives />
       <p>
-        Sunucularımız {LEGAL_HOSTING} üzerinde çalışır; veriler orada saklanır. Veri Sorumluları Sicili (VERBİS): <Ph k="verbis" />.
+        Sunucularımız {LEGAL_HOSTING_TEXT.tr} üzerinde çalışır; veriler orada saklanır. Veri Sorumluları Sicili (VERBİS): <Ph k="verbis" />.
       </p>
       <p>
         <strong>Toplama yöntemi ve hukuki sebep (KVKK m.10):</strong> Veriler, kayıt ve ayar formları, uygulama içi etkileşimler ve
@@ -130,9 +134,10 @@ export default function PrivacyPage() {
         <table>
           <thead><tr><th>Sağlayıcı</th><th>Ne için</th><th>Hangi veri</th><th>Bölge</th><th>Güvence</th><th>Ne zaman</th></tr></thead>
           <tbody>
-            {PROCESSORS.map((p) => (
-              <tr key={p.name}><td>{p.name}</td><td>{p.purpose}</td><td>{p.data}</td><td>{p.region}</td><td>{p.safeguard}</td><td>{p.when ?? "Her zaman"}</td></tr>
-            ))}
+            {PROCESSORS.map((p) => {
+              const r = processorRow(p, "tr");
+              return <tr key={p.name}><td>{r.name}</td><td>{r.purpose}</td><td>{r.data}</td><td>{r.region}</td><td>{r.safeguard}</td><td>{r.when}</td></tr>;
+            })}
           </tbody>
         </table>
       </div>
