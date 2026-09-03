@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { social, errorText, feedText, timeAgo, type FeedItem } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { Skeleton } from "../ui/Skeleton";
+import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, TrophyIcon, HandshakeIcon, TargetIcon, PodiumIcon, SparkIcon } from "../ui/icons";
@@ -49,6 +49,28 @@ export function FeedCard({ item }: { item: FeedItem }) {
   );
 }
 
+/** FeedCard'ın iskeleti — aynı kaplar, aynı yükseklik. */
+export function FeedCardSkeleton() {
+  return (
+    <SkeletonCard style={{ marginBottom: spacing.md }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+        <SkeletonTile size={44} radius={22} />
+        <View style={{ flex: 1 }}>
+          <SkeletonLine variant="h3" width="55%" />
+          <SkeletonLine variant="caption" width={64} />
+        </View>
+        <SkeletonTile size={40} />
+      </View>
+      <SkeletonLine variant="body" width="90%" style={{ height: 21, marginTop: spacing.md }} />
+      <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.md }}>
+        <SkeletonPill width={62} height={27} />
+        <SkeletonPill width={62} height={27} />
+        <SkeletonPill width={44} height={27} />
+      </View>
+    </SkeletonCard>
+  );
+}
+
 export function FeedList({ onFindFriends }: { onFindFriends?: () => void }) {
   const { colors } = useTheme();
   const [items, setItems] = useState<FeedItem[] | null>(null);
@@ -66,7 +88,7 @@ export function FeedList({ onFindFriends }: { onFindFriends?: () => void }) {
   }, []);
   useEffect(() => { void load(null); }, [load]);
 
-  if (items === null) return <View style={{ gap: spacing.md }}><Skeleton height={140} radius={26} /><Skeleton height={140} radius={26} /></View>;
+  if (items === null) return <View>{[0, 1, 2].map((i) => <FeedCardSkeleton key={i} />)}</View>;
   if (!items.length) return <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.akis_henuz_bos")} text="Arkadaşlarının seri, rozet ve görev haberleri burada görünür; sen de tepki verirsin." action={onFindFriends ? "Arkadaş bul" : undefined} onAction={onFindFriends} />;
   return (
     <View>

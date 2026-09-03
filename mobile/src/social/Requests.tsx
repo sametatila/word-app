@@ -6,6 +6,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { UserPlusIcon } from "../ui/icons";
+import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { useTheme, spacing } from "../theme";
 import { EmptyCard, ErrorText, Pill, SectionTitle } from "./common";
 
@@ -17,6 +18,25 @@ export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingV
       {incoming.length ? (<><SectionTitle title={t("requests.gelen")} right={`${incoming.length}`} />{incoming.map((r) => <RequestCard key={r.friendshipId} r={r} incoming onChanged={onChanged} />)}</>) : null}
       {outgoing.length ? (<><SectionTitle title={t("requests.gonderilen")} right={`${outgoing.length}`} />{outgoing.map((r) => <RequestCard key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} />)}</>) : null}
     </View>
+  );
+}
+
+/** RequestCard iskeleti — kimlik satırı + düğme şeridi. */
+export function RequestCardSkeleton() {
+  return (
+    <SkeletonCard style={{ marginBottom: spacing.md }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+        <SkeletonTile size={48} radius={24} />
+        <View style={{ flex: 1 }}>
+          <SkeletonLine variant="h3" width="55%" />
+          <SkeletonLine variant="caption" width="70%" />
+        </View>
+      </View>
+      <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
+        <SkeletonPill width="100%" height={40} style={{ flex: 1 }} />
+        <SkeletonPill width={96} height={40} />
+      </View>
+    </SkeletonCard>
   );
 }
 

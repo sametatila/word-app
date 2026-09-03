@@ -11,17 +11,17 @@ import { useAuth } from "../lib/AuthContext";
 import { track } from "../lib/track";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { Skeleton } from "../ui/Skeleton";
+import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { SettingsIcon, ShareIcon, HandshakeIcon, UserPlusIcon, InboxIcon, ChevronRightIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { Chip, EmptyCard, ErrorText, HeaderButton, Pill, ScreenHeader, StatPill } from "../social/common";
-import { FriendRows } from "../social/FriendRows";
+import { FriendRows, FriendCardSkeleton } from "../social/FriendRows";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { FeedList } from "../social/FeedList";
-import { Quests } from "../social/Quests";
-import { Requests } from "../social/Requests";
+import { Quests, QuestsSkeleton } from "../social/Quests";
+import { Requests, RequestCardSkeleton } from "../social/Requests";
 import { Find } from "../social/Find";
 
 type Tab = "friends" | "feed" | "quests" | "requests" | "find";
@@ -97,7 +97,18 @@ export function FriendsScreen() {
               {me.counts.unread > 0 ? <StatPill icon={InboxIcon} label={`${me.counts.unread} yeni`} tint={colors.primary} soft={colors.primarySoft} /> : null}
             </View>
           </Card>
-        ) : <Skeleton height={190} radius={26} style={{ marginTop: spacing.sm, marginBottom: spacing.lg }} />}
+        ) : (
+          // Kimlik kartı iskeleti: arma + ad + kullanıcı adı + rozet şeridi.
+          <SkeletonCard style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
+            <SkeletonTile size={76} radius={38} />
+            <SkeletonLine variant="h2" width={168} style={{ marginTop: spacing.md }} />
+            <SkeletonLine variant="caption" width={104} />
+            <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
+              <SkeletonPill width={104} height={25} />
+              <SkeletonPill width={82} height={25} />
+            </View>
+          </SkeletonCard>
+        )}
 
         <PressableScale onPress={() => void share()} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>
           <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff2e" }}>
@@ -115,7 +126,7 @@ export function FriendsScreen() {
         </ScrollView>
 
         {tab === "friends" ? (
-          data === null ? <View style={{ gap: spacing.md }}><Skeleton height={150} radius={26} /><Skeleton height={150} radius={26} /></View> : (
+          data === null ? <View>{[0, 1].map((i) => <FriendCardSkeleton key={i} />)}</View> : (
             <View>
               {data.friends.length ? (
                 <FriendRows friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
@@ -127,8 +138,8 @@ export function FriendsScreen() {
           )
         ) : null}
         {tab === "feed" ? <FeedList onFindFriends={() => setTab("find")} /> : null}
-        {tab === "quests" ? (data === null || !me ? <Skeleton height={150} radius={26} /> : <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} />) : null}
-        {tab === "requests" ? (data === null ? <Skeleton height={120} radius={26} /> : <Requests incoming={data.incoming} outgoing={data.outgoing} onChanged={() => void reload()} />) : null}
+        {tab === "quests" ? (data === null || !me ? <QuestsSkeleton /> : <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} />) : null}
+        {tab === "requests" ? (data === null ? <View>{[0, 1].map((i) => <RequestCardSkeleton key={i} />)}</View> : <Requests incoming={data.incoming} outgoing={data.outgoing} onChanged={() => void reload()} />) : null}
         {tab === "find" ? <Find onChanged={() => void reload()} /> : null}
         <ErrorText text={err} />
         {err ? <View style={{ marginTop: spacing.md, alignItems: "center" }}><Pill label={tx("friends.tekrar_dene")} tone="ghost" onPress={() => void reload()} /></View> : null}

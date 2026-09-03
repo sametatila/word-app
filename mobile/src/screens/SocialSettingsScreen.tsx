@@ -6,7 +6,7 @@ import { social, errorText, type PublicUser, type SocialMe, type Visibility } fr
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { Skeleton } from "../ui/Skeleton";
+import { Skeleton, SkeletonCard, SkeletonLine } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { useTheme, spacing, radii } from "../theme";
@@ -70,7 +70,20 @@ export function SocialSettingsScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <ScreenHeader title={tx("socialsettings.sosyal_ve_gizlilik")} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        {!me ? <Skeleton height={220} radius={26} style={{ marginTop: spacing.xl }} /> : (
+        {!me ? (
+          // Bölüm bölüm iskelet: kart tek parça gelince ekran boyu zıplamasın.
+          <>
+            {[0, 1, 2, 3].map((i) => (
+              <View key={i} style={{ marginTop: spacing.xl }}>
+                <SkeletonLine variant="caption" width={116} style={{ marginBottom: spacing.sm, marginLeft: 4 }} />
+                <SkeletonCard padded>
+                  <Skeleton height={48} radius={radii.md} />
+                  <SkeletonLine variant="caption" width="70%" style={{ marginTop: spacing.sm }} />
+                </SkeletonCard>
+              </View>
+            ))}
+          </>
+        ) : (
           <>
             <Section title={tx("socialsettings.kullanici_adi")} colors={colors}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
@@ -113,7 +126,7 @@ export function SocialSettingsScreen() {
             </Section>
 
             <Section title="ENGELLENENLER" colors={colors}>
-              {blocked === null ? <Skeleton height={40} /> : blocked.length ? blocked.map((b, i) => (
+              {blocked === null ? <SkeletonLine variant="caption" width="60%" /> : blocked.length ? blocked.map((b, i) => (
                 <View key={b.userId} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                   <PersonAvatar userId={b.userId} name={b.name} size={36} />
                   <View style={{ flex: 1 }}>

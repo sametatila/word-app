@@ -10,7 +10,7 @@ import { ApiError } from "../api/client";
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { Skeleton } from "../ui/Skeleton";
+import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, HandshakeIcon, BellIcon, TargetIcon, LockIcon, XIcon } from "../ui/icons";
@@ -65,7 +65,29 @@ export function UserScreen() {
   );
   if (!user) return wrap(<EmptyCard icon={LockIcon} title={t("user.giris_gerekli")} text={t("user.profilleri_gormek_icin_giris_yap")} action={t("user.giris_yap")} onAction={() => nav.navigate("Auth")} />);
   if (notFound) return wrap(<EmptyCard icon={XIcon} tint={colors.danger} title={t("user.kullanici_bulunamadi")} text={t("user.baglanti_eski_olabilir_ya_da_bu")} />);
-  if (!data) return wrap(<><Skeleton height={220} radius={26} /><Skeleton height={100} radius={26} /><ErrorText text={err} /></>);
+  if (!data) return wrap(
+    <>
+      {/* Kimlik kartı + istatistik ızgarası: gerçek düzenin ölçüleriyle. */}
+      <SkeletonCard style={{ alignItems: "center" }}>
+        <SkeletonTile size={76} radius={38} />
+        <SkeletonLine variant="h2" width={172} style={{ marginTop: spacing.md }} />
+        <SkeletonLine variant="caption" width={198} />
+        <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
+          <SkeletonPill width={124} height={41} />
+          <SkeletonPill width={84} height={41} />
+        </View>
+      </SkeletonCard>
+      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+        {[0, 1, 2, 3].map((i) => (
+          <SkeletonCard key={i} style={{ width: "47.5%", gap: 2 }}>
+            <SkeletonLine variant="h1" width="55%" />
+            <SkeletonLine variant="caption" width="80%" />
+          </SkeletonCard>
+        ))}
+      </View>
+      <ErrorText text={err} />
+    </>,
+  );
 
   const u = data.user;
   const isSelf = data.relation === "self";

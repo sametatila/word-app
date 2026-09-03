@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { social, formatXp, type BoardView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { Skeleton } from "../ui/Skeleton";
+import { SkeletonLine, SkeletonRows } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, PodiumIcon } from "../ui/icons";
@@ -25,7 +25,15 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [board, setBoard] = useState<BoardView | null>(null);
   useEffect(() => { social.board().then(setBoard).catch(() => setBoard({ rows: [], start: "", daysLeft: 0 })); }, []);
-  if (!board) return <Skeleton height={160} radius={20} />;
+  // Satır iskeleti gerçek satırla aynı yükseklikte (40 arma + 12+12 dolgu).
+  if (!board) {
+    return (
+      <View>
+        {!compact ? <SkeletonLine variant="caption" width={190} style={{ marginBottom: spacing.sm, marginLeft: 4, marginTop: spacing.lg }} /> : null}
+        <SkeletonRows count={4} height={64} />
+      </View>
+    );
+  }
   if (board.rows.length < 2) return <EmptyCard icon={PodiumIcon} tint={colors.info} title={t("friendsboard.henuz_yarisacak_kimse_yok")} text={t("friendsboard.arkadas_ekleyince_bu_haftanin_xp_sinde")} />;
   const me = board.rows.find((r) => r.isMe);
   const above = me && me.rank > 1 ? board.rows.find((r) => r.rank === me.rank - 1) : null;

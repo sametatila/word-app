@@ -7,13 +7,37 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { social, errorText, type SearchHit, type Suggestion } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { Skeleton } from "../ui/Skeleton";
+import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, SearchIcon, XIcon, HandshakeIcon } from "../ui/icons";
 import { useTheme, spacing, radii } from "../theme";
 import { ErrorText, SectionTitle, StatPill } from "./common";
 import { UserActionButton } from "./UserActionButton";
+
+/** Sonuç kartının iskeleti — kimlik satırı + rozet şeridi, aynı yükseklikte. */
+function SearchResultSkeleton() {
+  return (
+    <View>
+      {[0, 1].map((i) => (
+        <SkeletonCard key={i} style={{ marginBottom: spacing.md }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+            <SkeletonTile size={48} radius={24} />
+            <View style={{ flex: 1 }}>
+              <SkeletonLine variant="h3" width="60%" />
+              <SkeletonLine variant="caption" width="42%" />
+            </View>
+            <SkeletonPill width={84} height={31} />
+          </View>
+          <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.md }}>
+            <SkeletonPill width={104} height={25} />
+            <SkeletonPill width={78} height={25} />
+          </View>
+        </SkeletonCard>
+      ))}
+    </View>
+  );
+}
 
 /** Bul: Ayarlar'daki giriş kutusu + her sonuç kendi kartı (kimlik + rozet + pill düğme). */
 export function Find({ onChanged }: { onChanged?: () => void }) {
@@ -64,14 +88,14 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
       <ErrorText text={err} />
       {q.trim().length >= 2 ? (
         <View style={{ marginTop: spacing.lg }}>
-          {hits === null ? <Skeleton height={96} radius={26} /> : hits.length ? hits.map((h) => card(h, null, h.currentStreak, <UserActionButton userId={h.userId} relation={h.relation} onChange={onChanged} />)) : (
+          {hits === null ? <SearchResultSkeleton /> : hits.length ? hits.map((h) => card(h, null, h.currentStreak, <UserActionButton userId={h.userId} relation={h.relation} onChange={onChanged} />)) : (
             <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("find.sonuc_yok_gizli_profiller_yalniz_tam")}</Text>
           )}
         </View>
       ) : (
         <View>
           <SectionTitle title={t("find.taniyor_olabilirsin")} />
-          {sugg === null ? <Skeleton height={96} radius={26} /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: `${s.mutual} ortak arkadaş`, tint: colors.success, icon: HandshakeIcon } : s.reason === "level" ? { label: `Aynı seviye · ${s.level}`, tint: colors.info } : { label: "Bu hafta aktif", tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
+          {sugg === null ? <SearchResultSkeleton /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: `${s.mutual} ortak arkadaş`, tint: colors.success, icon: HandshakeIcon } : s.reason === "level" ? { label: `Aynı seviye · ${s.level}`, tint: colors.info } : { label: "Bu hafta aktif", tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
             <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("find.simdilik_oneri_yok_kullanici_adiyla_ara")}</Text>
           )}
         </View>

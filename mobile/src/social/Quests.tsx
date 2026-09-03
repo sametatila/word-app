@@ -4,7 +4,7 @@ import { Alert, View } from "react-native";
 import { social, errorText, formatXp, type FriendRow, type QuestView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { Skeleton } from "../ui/Skeleton";
+import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { TargetIcon, CheckIcon } from "../ui/icons";
@@ -26,7 +26,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
     setErr(null);
     try { await fn(); await load(); onChanged?.(); setPick(false); } catch (e) { setErr(errorText(e)); } finally { setBusy(false); }
   }
-  if (quests === null) return <Skeleton height={150} radius={26} />;
+  if (quests === null) return <QuestsSkeleton />;
   const current = quests.filter((q) => q.status === "invited" || q.status === "active");
   const past = quests.filter((q) => q.status === "completed" || q.status === "failed");
   return (
@@ -72,6 +72,38 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
         </View>
       ) : null}
     </View>
+  );
+}
+
+/** QuestCard iskeleti — iki arma, başlık, hedef, iki paylı çubuk; aynı yükseklik. */
+export function QuestsSkeleton() {
+  const { colors } = useTheme();
+  return (
+    <SkeletonCard style={{ marginBottom: spacing.md, borderWidth: 1.5, borderColor: colors.hairline }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+        <View style={{ flexDirection: "row" }}>
+          <SkeletonTile size={44} radius={22} />
+          <SkeletonTile size={44} radius={22} style={{ marginLeft: -12 }} />
+        </View>
+        <View style={{ flex: 1 }}>
+          <SkeletonLine variant="h3" width="80%" />
+          <SkeletonLine variant="caption" width="60%" />
+        </View>
+        <View style={{ alignItems: "flex-end" }}>
+          <SkeletonLine variant="h2" width={48} />
+          <SkeletonLine variant="micro" width={54} />
+        </View>
+      </View>
+      <View style={{ marginTop: spacing.lg }}>
+        <SkeletonBar height={10} />
+        <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 8 }}>
+          <SkeletonLine variant="caption" width={62} />
+          <SkeletonLine variant="bodyStrong" width={78} />
+          <SkeletonLine variant="caption" width={62} />
+        </View>
+        <SkeletonPill width={84} height={21} style={{ alignSelf: "flex-end", marginTop: spacing.sm }} />
+      </View>
+    </SkeletonCard>
   );
 }
 

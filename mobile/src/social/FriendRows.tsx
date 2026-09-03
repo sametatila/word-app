@@ -11,12 +11,42 @@ import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, HandshakeIcon, TargetIcon, BoltIcon, BellIcon, XIcon, ChevronRightIcon } from "../ui/icons";
 import { useTheme, spacing, radii } from "../theme";
+import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { StatPill, type IconCmp } from "./common";
 
 /** Her arkadaş kendi kartı (Sıralama/Günün görevleri gibi): kimlik + pill rozetler + ikon karolu eylemler. */
 export function FriendRows({ friends, nudgedToday, onChanged }: { friends: FriendRow[]; nudgedToday: string[]; onChanged: () => void }) {
   if (!friends.length) return null;
   return <View>{friends.map((f) => <FriendCard key={f.userId} f={f} nudged={nudgedToday.includes(f.userId)} onChanged={onChanged} />)}</View>;
+}
+
+/** FriendCard iskeleti — kimlik satırı + rozetler + eylem karoları, aynı yükseklikte. */
+export function FriendCardSkeleton() {
+  const { colors } = useTheme();
+  return (
+    <SkeletonCard style={{ marginBottom: spacing.md }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+        <SkeletonTile size={48} radius={24} />
+        <View style={{ flex: 1 }}>
+          <SkeletonLine variant="h3" width="60%" />
+          <SkeletonLine variant="caption" width="40%" />
+        </View>
+        <SkeletonLine variant="h3" width={20} />
+      </View>
+      <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.md }}>
+        <SkeletonPill width={116} height={25} />
+        <SkeletonPill width={72} height={25} />
+      </View>
+      <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+        {[0, 1, 2].map((i) => (
+          <View key={i} style={{ alignItems: "center", gap: 4 }}>
+            <SkeletonTile size={44} />
+            <SkeletonLine variant="micro" width={40} />
+          </View>
+        ))}
+      </View>
+    </SkeletonCard>
+  );
 }
 
 function ActionTile({ icon: Icon, label, tint, onPress, disabled }: { icon: IconCmp; label: string; tint: string; onPress: () => void; disabled?: boolean }) {
