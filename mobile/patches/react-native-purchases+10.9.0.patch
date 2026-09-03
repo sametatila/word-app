@@ -1,0 +1,23 @@
+diff --git a/node_modules/react-native-purchases/android/build.gradle b/node_modules/react-native-purchases/android/build.gradle
+index 840b485..4bbbf1b 100644
+--- a/node_modules/react-native-purchases/android/build.gradle
++++ b/node_modules/react-native-purchases/android/build.gradle
+@@ -23,6 +23,7 @@ def getExtOrIntegerDefault(name) {
+ }
+ 
+ android {
++    namespace "com.revenuecat.purchases.react"
+     compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
+ 
+     defaultConfig {
+diff --git a/node_modules/react-native-purchases/android/src/main/AndroidManifest.xml b/node_modules/react-native-purchases/android/src/main/AndroidManifest.xml
+index 7234ae0..2bf6e21 100644
+--- a/node_modules/react-native-purchases/android/src/main/AndroidManifest.xml
++++ b/node_modules/react-native-purchases/android/src/main/AndroidManifest.xml
+@@ -1,4 +1,4 @@
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-          package="com.revenuecat.purchases.react">
++<!-- AGP 8: package niteliği manifest'te yasak, namespace build.gradle'da. -->
++<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+ </manifest>
