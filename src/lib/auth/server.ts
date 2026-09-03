@@ -17,7 +17,7 @@ import { purgeUserData } from "@/lib/account/purge";
  * e-posta/parola tek başına çalışır. Parola sıfırlama e-postası şimdilik sunucu
  * log'una düşer (SMTP/Resend bağlanınca gerçek gönderim — bkz. sendResetPassword).
  */
-const googleConfigured = Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
+export const googleConfigured = Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
 
 export const authEnabled = Boolean(process.env.DATABASE_URL && process.env.BETTER_AUTH_SECRET);
 

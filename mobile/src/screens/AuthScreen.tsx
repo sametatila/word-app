@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
 import { View, TextInput, ScrollView, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -10,6 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, BoltIcon, GoogleIcon, MailIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset } from "../lib/auth";
+import { fetchServerConfig } from "../lib/serverConfig";
 import { openLegal } from "../lib/legal";
 import { googleSignIn } from "../lib/googleAuth";
 import { notifPrimeNeeded } from "../lib/notifications";
@@ -52,6 +53,10 @@ export function AuthScreen() {
   const [socialBusy, setSocialBusy] = useState<string | null>(null);
   const [resetSent, setResetSent] = useState(false);
   const [resetBusy, setResetBusy] = useState(false);
+  // Sunucuda Google OAuth kapalıysa düğme hiç çizilmez (çalışmayan düğme yok). Cevap
+  // gelene dek de çizilmez; yalnız e-posta görünür — ekran hiçbir an "bozuk" değildir.
+  const [googleOn, setGoogleOn] = useState(false);
+  useEffect(() => { let alive = true; void fetchServerConfig().then((c) => { if (alive) setGoogleOn(c.providers.google); }); return () => { alive = false; }; }, []);
 
   async function submit() {
     if (busy) return;
@@ -122,7 +127,7 @@ export function AuthScreen() {
 
         {view === "options" ? (
           <View style={{ gap: spacing.md }}>
-            {PROVIDERS.map((p) => (
+            {PROVIDERS.filter((p) => p.id !== "google" || googleOn).map((p) => (
               <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={`${p.label} ile devam et`}
                 style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, paddingHorizontal: spacing.lg }}>
                 <View style={{ width: 24, alignItems: "center" }}>
