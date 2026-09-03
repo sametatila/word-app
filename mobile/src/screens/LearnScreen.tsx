@@ -1,5 +1,5 @@
 import React from "react";
-import { t } from "../lib/i18n";
+import { t, targetLangName } from "../lib/i18n";
 import { View, Linking } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -88,7 +88,7 @@ export function LearnScreen() {
           </View>
         </PressableScale>
       )}
-      <AppHeader title={t("learn.almanca_ogren")} subtitle={greeting} />
+      <AppHeader title={t("learn.hedef_dili_ogren", { lang: targetLangName() })} subtitle={greeting} />
 
       {/* GÜNLÜK TUR — dil-içerik öncelikli kahraman (fitness halkası değil) */}
       <PressableScale onPress={() => nav.navigate("Game")}>

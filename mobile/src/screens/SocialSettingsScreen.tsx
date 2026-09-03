@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t as tx } from "../lib/i18n";
+import { t as tx, targetLangName } from "../lib/i18n";
 import { ScrollView, Switch, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { social, errorText, type PublicUser, type SocialMe, type Visibility } from "../api/social";
@@ -82,7 +82,7 @@ export function SocialSettingsScreen() {
             </Section>
 
             <Section title={tx("socialsettings.kisa_tanitim")} colors={colors}>
-              <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, 140))} multiline placeholder={tx("socialsettings.neden_almanca_bir_cumle_yeter")} placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
+              <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, 140))} multiline placeholder={tx("socialsettings.neden_bu_dil", { lang: targetLangName() })} placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
               <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
                 <Text variant="caption" color={colors.textMuted}>{bio.length}/140</Text>
                 <Pill label={tx("common.kaydet")} small tone="soft" disabled={busy || (bio.trim() || "") === (me.bio ?? "")} onPress={() => void save({ bio: bio.trim() || null })} />

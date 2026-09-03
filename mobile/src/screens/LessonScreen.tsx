@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { t as tx } from "../lib/i18n";
+import { t as tx, targetLangName } from "../lib/i18n";
 import { View, ScrollView, TextInput, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -431,7 +431,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onRepeatDo
     <View style={{ gap: spacing.sm }}>
       {tries > 0 && <Text variant="caption" color={colors.danger}>Tekrar dene ({tries}/3)</Text>}
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
-        <TextInput value={input} onChangeText={setInput} placeholder={tx("lesson.almanca_cevabini_yaz")} placeholderTextColor={colors.textFaint}
+        <TextInput value={input} onChangeText={setInput} placeholder={tx("lesson.hedef_cevabini_yaz", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
           multiline autoCapitalize="sentences" onSubmitEditing={onProduce}
           style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16 }} />
         <PressableScale onPress={onProduce} disabled={!input.trim()} style={[{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: input.trim() ? colors.primary : colors.surface2 }, input.trim() ? softShadow(colors.primary, 8) : {}]}>
@@ -464,7 +464,7 @@ function RoleplayControls({ input, setInput, busy, onSend, suggestions, onSugges
         <Text variant="caption" color={colors.textMuted}>Konuşmayı sürdür · {turns}/{minTurns} tur</Text>
       )}
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
-        <TextInput value={input} onChangeText={setInput} editable={!busy} placeholder={tx("lesson.almanca_yaz")} placeholderTextColor={colors.textFaint}
+        <TextInput value={input} onChangeText={setInput} editable={!busy} placeholder={tx("lesson.hedef_dilde_yaz", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
           multiline autoCapitalize="sentences"
           style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16 }} />
         <PressableScale onPress={onSend} disabled={busy || !input.trim()} style={[{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: input.trim() && !busy ? colors.primary : colors.surface2 }, input.trim() && !busy ? softShadow(colors.primary, 8) : {}]}>

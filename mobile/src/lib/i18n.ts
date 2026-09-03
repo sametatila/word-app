@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NativeModules, Platform } from "react-native";
 import type { NativeLang } from "./courses";
-import { NATIVE_LANGS, DEFAULT_NATIVE } from "./courses";
+import { NATIVE_LANGS, DEFAULT_NATIVE, courseOrDefault, currentCourseId } from "./courses";
 import { tr } from "../i18n/tr";
 import { en } from "../i18n/en";
 import { de } from "../i18n/de";
@@ -117,4 +117,19 @@ export function useLang(): NativeLang {
   const [value, setValue] = useState<NativeLang>(lang);
   useEffect(() => onLangChange(() => setValue(currentLang())), []);
   return value;
+}
+
+/**
+ * Öğrenilen dilin adı, kullanıcının arayüz dilinde.
+ *
+ * "Almanca öğren", "Almancaya çevir" gibi metinler sabit yazılıydı; İngilizce
+ * kurs açılınca öğrenciye yanlış dil adı gösteriyorlardı. Artık `{lang}` yer
+ * tutucusu bununla dolduruluyor.
+ *
+ * Türkçe metinler bilerek EK ALMAYACAK biçimde kuruldu ("Almancasını yaz"
+ * yerine "{lang} karşılığını yaz"): ek uyumu dile göre değişiyor
+ * (Almanca+sını / İngilizce+sini) ve yer tutucuyla doğru üretilemez.
+ */
+export function targetLangName(): string {
+  return courseOrDefault(currentCourseId()).label[currentLang()];
 }

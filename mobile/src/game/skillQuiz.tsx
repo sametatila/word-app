@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { t as tx } from "../lib/i18n";
+import { t as tx, targetLangName } from "../lib/i18n";
 import { View, TextInput } from "react-native";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
@@ -239,7 +239,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
       <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.tr}</Text>
       <View style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
         <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
-          placeholder={tx("skillquiz.almanca_cumleyi_yaz")} placeholderTextColor={colors.textFaint}
+          placeholder={tx("skillquiz.hedef_cumleyi_yaz", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
           style={{ flex: 1, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (
           <PressableScale onPress={() => { if (typed.trim()) onSettle(written(typed, accept)); }} disabled={!typed.trim()}
@@ -286,7 +286,7 @@ function FreeCard({ t, n, done, onSettle, colors }: { t: FreeTask; n: number; do
         </View>
       ) : null}
       <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
-        placeholder={tx("skillquiz.cevabini_almanca_yaz")} placeholderTextColor={colors.textFaint}
+        placeholder={tx("skillquiz.cevabini_hedef_dilde_yaz", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
         style={{ marginTop: spacing.md, minHeight: 100, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm }}>
         <Text variant="micro" color={enough ? colors.success : colors.textMuted}>{words}/{t.minWords} kelime</Text>

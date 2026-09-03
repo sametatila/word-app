@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t as tx } from "../lib/i18n";
+import { t as tx, targetLangName } from "../lib/i18n";
 import { currentTargetLang } from "../lib/courses";
 import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -376,7 +376,7 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   );
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : inputBlock}>
-      <Prompt label={tx("rounds.almancasini_yaz")} big={word.tr} sub={word.en} colors={colors} />
+      <Prompt label={tx("rounds.hedef_karsiligini_yaz", { lang: targetLangName() })} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
   );
@@ -657,7 +657,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         multiline
         autoCapitalize="sentences"
         autoCorrect={false}
-        placeholder={tx("rounds.almanca_cumleyi_yaz")}
+        placeholder={tx("rounds.hedef_cumleyi_yaz", { lang: targetLangName() })}
         placeholderTextColor={colors.textFaint}
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
       />
@@ -669,7 +669,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
   );
   return (
     <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : inputBlock}>
-      <Prompt label={tx("rounds.almancaya_cevir")} big={s.tr} sub={s.en} colors={colors} />
+      <Prompt label={tx("rounds.hedef_diline_cevir", { lang: targetLangName() })} big={s.tr} sub={s.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
   );
