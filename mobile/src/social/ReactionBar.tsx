@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { t } from "../lib/i18n";
 import { View } from "react-native";
-import { REACTION_KINDS, REACTION_LABELS, social, errorText, type ReactionKind, type ReactionSummary } from "../api/social";
+import { REACTION_KINDS, reactionLabel, social, errorText, type ReactionKind, type ReactionSummary } from "../api/social";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -32,7 +32,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
     }
   }
   const present = REACTION_KINDS.filter((k) => (s.counts[k] ?? 0) > 0);
-  const who = s.names.length ? `${s.names.join(", ")}${s.total > s.names.length ? ` ve ${s.total - s.names.length} kişi` : ""}` : "";
+  const who = s.names.length ? `${s.names.join(", ")}${s.total > s.names.length ? t("social.ve_n_kisi", { n: s.total - s.names.length }) : ""}` : "";
   return (
     <View style={{ marginTop: spacing.md }}>
       <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
@@ -40,7 +40,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
           const mine = s.mine === k;
           const tone = reactionTone(k, colors);
           return (
-            <PressableScale key={k} onPress={() => void pick(k)} disabled={disabled || busy} accessibilityLabel={`${REACTION_LABELS[k]} ${s.counts[k]}`} style={[{ flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: 10, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 4) : {}]}>
+            <PressableScale key={k} onPress={() => void pick(k)} disabled={disabled || busy} accessibilityLabel={`${reactionLabel(k)} ${s.counts[k]}`} style={[{ flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: 10, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 4) : {}]}>
               <ReactionGlyph kind={k} size={14} colors={colors} color={mine ? "#fff" : undefined} />
               <Text variant="caption" color={mine ? "#fff" : tone}>{s.counts[k]}</Text>
             </PressableScale>
@@ -48,7 +48,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
         })}
         {!disabled ? (
           <PressableScale onPress={() => setOpen((o) => !o)} disabled={busy} accessibilityLabel={t("reactionbar.tepki_ver")} style={{ paddingHorizontal: 12, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
-            <Text variant="caption" color={colors.textMuted}>{s.mine ? "Değiştir" : "Tepki ver"}</Text>
+            <Text variant="caption" color={colors.textMuted}>{s.mine ? t("social.reaction_change") : t("social.reaction_add")}</Text>
           </PressableScale>
         ) : null}
       </View>
@@ -59,7 +59,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
             const tone = reactionTone(k, colors);
             const mine = s.mine === k;
             return (
-              <PressableScale hitSlop={4} key={k} onPress={() => void pick(k)} accessibilityLabel={REACTION_LABELS[k]} style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 6) : {}]}>
+              <PressableScale hitSlop={4} key={k} onPress={() => void pick(k)} accessibilityLabel={reactionLabel(k)} style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 6) : {}]}>
                 <ReactionGlyph kind={k} size={22} colors={colors} color={mine ? "#fff" : undefined} />
               </PressableScale>
             );

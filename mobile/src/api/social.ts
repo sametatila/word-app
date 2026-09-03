@@ -1,4 +1,5 @@
 import { api, ApiError } from "./client";
+import { t, currentLang } from "../lib/i18n";
 
 /**
  * Sosyal API istemcisi — web'deki lib/social/client.ts'in aynası. Tipler
@@ -7,7 +8,10 @@ import { api, ApiError } from "./client";
  */
 export const REACTION_KINDS = ["cheer", "fire", "heart", "strong", "star", "wow"] as const;
 export type ReactionKind = (typeof REACTION_KINDS)[number];
-export const REACTION_LABELS: Record<ReactionKind, string> = { cheer: "Alkış", fire: "Ateş", heart: "Kalp", strong: "Güçlü", star: "Yıldız", wow: "Vay" };
+/** Tepki adı (erişilebilirlik etiketi). Sabit nesne DEĞİL: t() dil yüklenmeden çağrılamaz. */
+export function reactionLabel(kind: ReactionKind): string {
+  return t(`social.reaction_${kind}`);
+}
 
 export type Relation = "self" | "none" | "friends" | "outgoing" | "incoming" | "declined" | "blocked";
 export type Visibility = "public" | "friends" | "private";
@@ -66,80 +70,94 @@ export const social = {
   report: (userId: string, reason: string, detail?: string) => api<{ ok: true }>("/api/social/reports", { method: "POST", body: j({ userId, reason, detail }) }),
 };
 
-const ERROR_TEXT: Record<string, string> = {
-  unauthorized: "Oturum gerekli.",
-  forbidden: "Bu işlem için yetkin yok.",
-  self: "Kendinle yapamazsın.",
-  not_found: "Kullanıcı bulunamadı.",
-  requests_closed: "Bu kişi arkadaşlık isteği kabul etmiyor.",
-  declined_recent: "İsteğin reddedildi; bir hafta sonra yeniden deneyebilirsin.",
-  rate_limited: "Çok hızlı. Biraz sonra tekrar dene.",
-  not_friends: "Bunun için önce arkadaş olmalısınız.",
-  already_exists: "Bu hafta zaten bir görevin var.",
-  username_invalid: "Kullanıcı adı 3-20 karakter; küçük harf, rakam ve alt çizgi.",
-  username_taken: "Bu kullanıcı adı alınmış.",
-  username_cooldown: "Kullanıcı adı 14 günde bir değişir.",
-  week_over: "Bu haftanın süresi doldu.",
-  bad_request: "Geçersiz istek.",
-  database: "Bir şeyler ters gitti. Tekrar dene.",
+/** Sunucu hata kodu -> sözlük anahtarı. Kod bilinmiyorsa bağlantı hatası varsayılır. */
+const ERROR_KEY: Record<string, string> = {
+  unauthorized: "social.err_unauthorized",
+  forbidden: "social.err_forbidden",
+  self: "social.err_self",
+  not_found: "social.err_not_found",
+  requests_closed: "social.err_requests_closed",
+  declined_recent: "social.err_declined_recent",
+  rate_limited: "social.err_rate_limited",
+  not_friends: "social.err_not_friends",
+  already_exists: "social.err_already_exists",
+  username_invalid: "social.err_username_invalid",
+  username_taken: "social.err_username_taken",
+  username_cooldown: "social.err_username_cooldown",
+  week_over: "social.err_week_over",
+  bad_request: "social.err_bad_request",
+  database: "social.err_database",
 };
 
 export function errorText(err: unknown): string {
-  if (err instanceof ApiError) return ERROR_TEXT[err.message] ?? "Bağlantı kurulamadı.";
-  return "Bağlantı kurulamadı.";
+  const key = err instanceof ApiError ? ERROR_KEY[err.message] : undefined;
+  return t(key ?? "social.err_offline");
 }
 
 export const formatXp = (n: number) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+/** Tarih biçimi arayüz diline bağlı; eskiden "tr-TR" sabitti. */
+const DATE_LOCALE: Record<string, string> = { tr: "tr-TR", en: "en-US", de: "de-DE" };
+
 export function timeAgo(iso: string, now = Date.now()): string {
   const s = Math.max(0, Math.round((now - Date.parse(iso)) / 1000));
-  if (s < 60) return "az önce";
+  if (s < 60) return t("social.ago_now");
   const m = Math.round(s / 60);
-  if (m < 60) return `${m} dk önce`;
+  if (m < 60) return t("social.ago_min", { n: m });
   const h = Math.round(m / 60);
-  if (h < 24) return `${h} sa önce`;
+  if (h < 24) return t("social.ago_hour", { n: h });
   const d = Math.round(h / 24);
-  if (d < 7) return `${d} gün önce`;
-  return new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "short" });
+  if (d < 7) return t("social.ago_day", { n: d });
+  return new Date(iso).toLocaleDateString(DATE_LOCALE[currentLang()] ?? "en-US", { day: "numeric", month: "short" });
 }
 
-export function feedText(item: FeedItem): string {
-  const p = item.payload;
-  switch (item.type) {
-    case "streak_milestone": return `${Number(p.days ?? 0)} günlük seriye ulaştı`;
-    case "achievement": return `"${String(p.title ?? "rozet")}" rozetini açtı`;
-    case "friend_joined": return `${String(p.friendName ?? "biri")} ile arkadaş oldu`;
-    case "quest_completed": return `${String(p.partnerName ?? "arkadaşı")} ile ${formatXp(Number(p.targetXp ?? 0))} XP'lik ortak görevi tamamladı`;
-    case "weekly_top": return `geçen hafta ${Number(p.rank ?? 0)}. oldu (${formatXp(Number(p.xp ?? 0))} XP)`;
-    case "friend_streak": return `${String(p.friendName ?? "arkadaşı")} ile ${Number(p.days ?? 0)} günlük ortak seriye ulaştı`;
-    default: return "bir kilometre taşına ulaştı";
+/**
+ * Akış cümlesi — 3. şahıs, özneden SONRA gelen kısım ("... 7 günlük seriye ulaştı").
+ * Bildirim tarafı da bunu kullanıyor: arkadaşın kilometre taşı bildirimi eskiden
+ * 2. şahıs parçayı ("serine") yeniden kullanıyordu, yani "Ali senin serine ulaştı"
+ * gibi okunuyordu. Artık ikisi ayrı: burası 3. şahıs, `reactionTarget` 2. şahıs.
+ */
+function feedPhrase(type: string, p: Record<string, unknown>): string {
+  switch (type) {
+    case "streak_milestone": return t("social.feed_streak", { n: Number(p.days ?? 0) });
+    case "achievement": return t("social.feed_badge", { rozet: String(p.title ?? t("social.feed_a_badge")) });
+    case "friend_joined": return t("social.feed_friend", { ad: String(p.friendName ?? t("social.feed_someone")) });
+    case "quest_completed": return t("social.feed_quest", { ad: String(p.partnerName ?? t("social.feed_a_friend")), xp: formatXp(Number(p.targetXp ?? 0)) });
+    case "weekly_top": return t("social.feed_weekly", { sira: Number(p.rank ?? 0), xp: formatXp(Number(p.xp ?? 0)) });
+    case "friend_streak": return t("social.feed_costreak", { ad: String(p.friendName ?? t("social.feed_a_friend")), n: Number(p.days ?? 0) });
+    default: return t("social.feed_default");
   }
 }
 
-function describeShort(type: string, p: Record<string, unknown>): string {
+export function feedText(item: FeedItem): string {
+  return feedPhrase(item.type, item.payload);
+}
+
+/** Tepkinin NEYE verildiği — 2. şahıs ("senin ... "), cümleye yer tutucu olarak girer. */
+function reactionTarget(type: string, p: Record<string, unknown>): string {
   switch (type) {
-    case "streak_milestone": return `${Number(p.days ?? 0)} günlük serine`;
-    case "achievement": return `"${String(p.title ?? "rozet")}" rozetine`;
-    case "quest_completed": return "ortak görevine";
-    case "weekly_top": return `haftanın ${Number(p.rank ?? 0)}. sırasına`;
-    case "friend_joined": return "yeni arkadaşlığına";
-    default: return "paylaşımına";
+    case "streak_milestone": return t("social.on_streak", { n: Number(p.days ?? 0) });
+    case "achievement": return t("social.on_badge", { rozet: String(p.title ?? t("social.feed_a_badge")) });
+    case "quest_completed": return t("social.on_quest");
+    case "weekly_top": return t("social.on_weekly", { sira: Number(p.rank ?? 0) });
+    case "friend_joined": return t("social.on_friend");
+    default: return t("social.on_default");
   }
 }
 
 export function notificationText(n: NotificationView): string {
-  const who = n.actor?.name ?? "Biri";
+  const who = n.actor?.name ?? t("social.notif_someone");
   const d = n.detail;
   const payload = (d.payload as Record<string, unknown>) ?? {};
   switch (n.type) {
-    case "friend_request": return `${who} seni arkadaş olarak eklemek istiyor`;
-    case "friend_accepted": return `${who} arkadaşlık isteğini kabul etti`;
-    case "reaction": return `${who} ${d.eventType ? describeShort(String(d.eventType), payload) : "paylaşımına"} tepki gönderdi`;
-    case "nudge": return d.kind === "cheer" ? `${who} seni alkışladı` : `${who} seni dürttü: bugün bir tur?`;
-    case "quest_invite": return `${who} seni ${formatXp(Number(d.targetXp ?? 0))} XP'lik ortak göreve davet etti`;
-    case "quest_accepted": return `${who} ortak görevi kabul etti`;
-    case "quest_completed": return `${who} ile ortak görevi tamamladınız`;
-    case "friend_milestone": return `${who} ${d.eventType ? describeShort(String(d.eventType), payload) : "bir kilometre taşına"} ulaştı`;
-    default: return "Yeni bir şey oldu";
+    case "friend_request": return t("social.notif_friend_request", { who });
+    case "friend_accepted": return t("social.notif_friend_accepted", { who });
+    case "reaction": return t("social.notif_reaction", { who, sey: reactionTarget(String(d.eventType ?? ""), payload) });
+    case "nudge": return d.kind === "cheer" ? t("social.notif_cheer", { who }) : t("social.notif_nudge", { who });
+    case "quest_invite": return t("social.notif_quest_invite", { who, xp: formatXp(Number(d.targetXp ?? 0)) });
+    case "quest_accepted": return t("social.notif_quest_accepted", { who });
+    case "quest_completed": return t("social.notif_quest_done", { who });
+    case "friend_milestone": return t("social.notif_milestone", { who, olay: feedPhrase(String(d.eventType ?? ""), payload) });
+    default: return t("social.notif_default");
   }
 }
