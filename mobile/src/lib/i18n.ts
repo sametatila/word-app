@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { NativeModules, Platform } from "react-native";
+import { I18nManager, NativeModules, Platform } from "react-native";
 import type { NativeLang } from "./courses";
 import { NATIVE_LANGS, DEFAULT_NATIVE, courseOrDefault, currentCourseId } from "./courses";
 import { tr } from "../i18n/tr";
@@ -41,21 +41,44 @@ function isNativeLang(v: string): v is NativeLang {
 /**
  * Cihazın dili — ilk açılışta varsayılan.
  *
- * Bare RN'de dil için ek paket yok; iOS ayarlarından, Android'de I18nManager'dan
- * okunuyor. Desteklenmeyen bir dil çıkarsa Türkçeye düşülür.
+ * Yeni mimaride (newArchEnabled) yerel modül sabitleri `NativeModules.X` nesnesine
+ * DÜZLEŞTİRİLMİYOR: eski köprüde `NativeModules.I18nManager.localeIdentifier`
+ * çalışıyordu, TurboModule'de `undefined` geliyor ve dil sessizce Türkçeye
+ * düşüyordu — yani İngilizce/Almanca cihazda uygulama Türkçe açılıyordu.
+ * RN'in kendi sarmalayıcısı da sabitleri `getConstants()` ile okuyor
+ * (Libraries/ReactNative/I18nManager.js), burada da öyle yapılıyor.
+ *
+ * Sıra: RN sabiti → Hermes Intl → (iOS) SettingsManager. Her biri ayrı korumalı;
+ * biri patlarsa sonraki denenir, hiçbiri tutmazsa Türkçeye düşülür.
  */
 export function deviceLang(): NativeLang {
+  const candidates: (string | undefined)[] = [];
+
+  // 1) RN sabiti: Android'de "en_US", iOS'ta "en-US".
   try {
-    const raw =
-      Platform.OS === "ios"
-        ? (NativeModules.SettingsManager?.settings?.AppleLocale as string | undefined) ??
-          (NativeModules.SettingsManager?.settings?.AppleLanguages?.[0] as string | undefined)
-        : (NativeModules.I18nManager?.localeIdentifier as string | undefined);
-    const two = (raw ?? "").slice(0, 2).toLowerCase();
-    return isNativeLang(two) ? two : DEFAULT_NATIVE;
-  } catch {
-    return DEFAULT_NATIVE;
+    candidates.push(I18nManager.getConstants().localeIdentifier ?? undefined);
+  } catch { /* yut */ }
+
+  // 2) Hermes Intl (Android'de derlemeye dâhil) — mimariden bağımsız yedek.
+  try {
+    candidates.push(Intl.DateTimeFormat().resolvedOptions().locale);
+  } catch { /* yut */ }
+
+  // 3) iOS ayarları: kullanıcının tercih ettiği dil listesi RN sabitinden daha doğru.
+  if (Platform.OS === "ios") {
+    try {
+      const settings = NativeModules.SettingsManager?.settings as
+        | { AppleLocale?: string; AppleLanguages?: string[] }
+        | undefined;
+      candidates.push(settings?.AppleLanguages?.[0], settings?.AppleLocale);
+    } catch { /* yut */ }
   }
+
+  for (const raw of candidates) {
+    const two = (raw ?? "").slice(0, 2).toLowerCase();
+    if (isNativeLang(two)) return two;
+  }
+  return DEFAULT_NATIVE;
 }
 
 export function currentLang(): NativeLang {
