@@ -51,7 +51,7 @@ ayırt edici son ek şart. İngilizce kurs listelemede öne çıkacaksa: `Nomi: 
 ### Tam açıklama (en çok 4000 karakter)
 
 ```
-Nomi, Almanca öğrenmeyi günlük bir alışkanlığa çeviren bir uygulamadır: kısa kelime
+Nomi, dil öğrenmeyi günlük bir alışkanlığa çeviren bir uygulamadır: kısa kelime
 turları, gerçek derslerle konuşma pratiği ve Goethe/telc sınavlarına hedefli hazırlık.
 
 KELİME TURLARI

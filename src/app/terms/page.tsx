@@ -31,10 +31,10 @@ export default function TermsPage() {
 
       <h2>2. Hizmet</h2>
       <p>
-        Nomi, Almanca (Hochdeutsch ve Zürih Almancası) kelime, dinleme, konuşma ve yazma pratiği sunan bir öğrenme uygulamasıdır: aralıklı
-        tekrar turları, dersler, yapay zekâ ile konuşma pratiği, yürüyüş modu, yazma değerlendirmesi, sınav hazırlığı, haftalık sıralama ve
-        arkadaşlık özellikleri. Özellikler zamanla eklenebilir, değişebilir ya da kaldırılabilir; ücretli özellikleri etkileyen değişiklikleri
-        önceden duyururuz.
+        Nomi, kelime, dinleme, konuşma ve yazma pratiği sunan bir dil öğrenme uygulamasıdır: aralıklı tekrar turları, dersler, yapay zekâ ile
+        konuşma pratiği, yürüyüş modu, yazma değerlendirmesi, sınav hazırlığı, haftalık sıralama ve arkadaşlık özellikleri. Kurslar Almanca
+        (Hochdeutsch), Zürih Almancası ve İngilizcedir; kurs listesi zamanla değişebilir ve her kursta her özellik aynı anda hazır olmayabilir.
+        Özellikler zamanla eklenebilir, değişebilir ya da kaldırılabilir; ücretli özellikleri etkileyen değişiklikleri önceden duyururuz.
       </p>
 
       <h2>3. Hesap ve yaş</h2>
