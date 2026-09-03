@@ -15,6 +15,7 @@ export type SocialErrorCode =
   | "username_invalid"
   | "username_taken"
   | "username_cooldown"
+  | "bio_invalid"
   | "bad_request"
   | "week_over"
   | "database";

@@ -591,6 +591,7 @@ export const de: Record<string, string> = {
   "social.days_together": "{n} Tage zusammen",
   "social.err_already_exists": "Du hast diese Woche schon eine Aufgabe.",
   "social.err_bad_request": "Ungültige Anfrage.",
+  "social.err_bio_invalid": "Die Bio darf keine Links, Kontaktdaten oder beleidigende Sprache enthalten.",
   "social.err_database": "Etwas ist schiefgelaufen. Versuch es noch einmal.",
   "social.err_declined_recent": "Deine Anfrage wurde abgelehnt; in einer Woche kannst du es erneut versuchen.",
   "social.err_forbidden": "Dazu hast du keine Berechtigung.",

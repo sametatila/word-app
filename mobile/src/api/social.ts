@@ -84,6 +84,7 @@ const ERROR_KEY: Record<string, string> = {
   username_invalid: "social.err_username_invalid",
   username_taken: "social.err_username_taken",
   username_cooldown: "social.err_username_cooldown",
+  bio_invalid: "social.err_bio_invalid",
   week_over: "social.err_week_over",
   bad_request: "social.err_bad_request",
   database: "social.err_database",

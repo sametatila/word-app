@@ -591,6 +591,7 @@ export const en: Record<string, string> = {
   "social.days_together": "{n} days together",
   "social.err_already_exists": "You already have a quest this week.",
   "social.err_bad_request": "Invalid request.",
+  "social.err_bio_invalid": "A bio cannot contain links, contact details or offensive language.",
   "social.err_database": "Something went wrong. Try again.",
   "social.err_declined_recent": "Your request was declined; you can try again in a week.",
   "social.err_forbidden": "You're not allowed to do that.",

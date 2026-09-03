@@ -2,6 +2,7 @@ import { and, eq, ilike, inArray, ne, notInArray, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { profiles } from "@/lib/db/schema";
 import { achievementCount } from "@/lib/achievements";
+import { bioAllowed, usernameAllowed } from "@/lib/moderation";
 import { track } from "@/lib/events";
 import { feed } from "./activity";
 import { blockedEitherWay, blockedSet } from "./blocks";
@@ -98,6 +99,9 @@ export async function updateSocialSettings(userId: string, patch: SocialPatch): 
   if (patch.username !== undefined) {
     const u = normalizeUsername(patch.username);
     if (!u) throw new SocialError("username_invalid", 400);
+    // Kullanıcı adı herkese görünür ve arama sonucunda çıkar: karakter kümesi
+    // bağlantıyı zaten eliyor, küfür süzgeci burada (Play UGC).
+    if (!usernameAllowed(u)) throw new SocialError("username_invalid", 400);
     if (u !== p.username) {
       if (p.usernameChangedAt) {
         const since = daysBetween(new Date(p.usernameChangedAt).toISOString().slice(0, 10), serverToday());
@@ -113,7 +117,11 @@ export async function updateSocialSettings(userId: string, patch: SocialPatch): 
   if (patch.bio !== undefined) {
     if (patch.bio !== null && typeof patch.bio !== "string") throw new SocialError("bad_request", 400);
     if (typeof patch.bio === "string" && patch.bio.length > BIO_MAX * 4) throw new SocialError("bad_request", 400);
-    set.bio = normalizeBio(patch.bio);
+    const bio = normalizeBio(patch.bio);
+    // Biyografi profil sayfasında herkese açık tek serbest metin; bağlantı,
+    // e-posta, telefon ve küfür için görünen adla aynı süzgeçten geçiyor.
+    if (bio && !bioAllowed(bio)) throw new SocialError("bio_invalid", 400);
+    set.bio = bio;
     changed.push("bio");
   }
   if (patch.visibility !== undefined) {

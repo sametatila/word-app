@@ -596,6 +596,7 @@ export const tr: Record<string, string> = {
   "social.days_together": "{n} gün birlikte",
   "social.err_already_exists": "Bu hafta zaten bir görevin var.",
   "social.err_bad_request": "Geçersiz istek.",
+  "social.err_bio_invalid": "Biyografide bağlantı, iletişim bilgisi veya uygunsuz ifade olamaz.",
   "social.err_database": "Bir şeyler ters gitti. Tekrar dene.",
   "social.err_declined_recent": "İsteğin reddedildi; bir hafta sonra yeniden deneyebilirsin.",
   "social.err_forbidden": "Bu işlem için yetkin yok.",
