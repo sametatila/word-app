@@ -1,19 +1,12 @@
 {
-  "total": 261,
+  "total": 233,
   "files": {
     "src/data/demoPlacement.ts": 13,
-    "src/data/words.ts": 2,
     "src/game/immersionQuiz.ts": 41,
     "src/game/immersionTrack.ts": 44,
-    "src/lib/auth.ts": 6,
     "src/lib/courses.ts": 7,
-    "src/lib/googleAuth.ts": 4,
     "src/lib/i18n.ts": 1,
-    "src/lib/notifications.ts": 5,
-    "src/lib/share.ts": 3,
     "src/lib/voiceMatch.ts": 2,
-    "src/lib/voices.ts": 6,
-    "src/navigation/RootTabs.tsx": 1,
     "src/screens/AchievementsScreen.tsx": 1,
     "src/screens/CandoScreen.tsx": 1,
     "src/screens/DailyScreen.tsx": 2,
@@ -33,7 +26,6 @@
     "src/screens/WeeklyScreen.tsx": 4,
     "src/screens/WordsScreen.tsx": 4,
     "src/screens/WritingsScreen.tsx": 1,
-    "src/ui/ConfirmDialog.tsx": 1,
     "src/ui/VoicePicker.tsx": 2
   }
 }

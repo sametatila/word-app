@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { Text } from "./Text";
+import { t } from "../lib/i18n";
 import { PressableScale } from "./PressableScale";
 import { SpeakerIcon } from "./icons";
 import { useTheme, spacing, radii } from "../theme";
@@ -64,8 +65,8 @@ export function VoicePicker({
                 <SpeakerIcon color={colors.primary} size={20} />
               </PressableScale>
             </View>
-            <Text variant="caption" color={colors.textMuted}>{v.gender}</Text>
-            <Text variant="caption" color={colors.textFaint}>{v.note}</Text>
+            <Text variant="caption" color={colors.textMuted}>{t(v.gender === "female" ? "voices.female" : "voices.male")}</Text>
+            <Text variant="caption" color={colors.textFaint}>{t(v.note)}</Text>
           </PressableScale>
         );
       })}

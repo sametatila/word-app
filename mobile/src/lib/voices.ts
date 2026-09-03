@@ -22,16 +22,18 @@ export const TURKISH_VOICE: VoiceId = "tr-TR-EmelNeural";
 export type Voice = {
   id: VoiceId;
   label: string;
-  gender: "kadın" | "erkek";
+  /** Etiket değil ANAHTAR eşleşmesi: gösterim voices.female / voices.male ile çevrilir. */
+  gender: "female" | "male";
+  /** Sözlük anahtarı (voices.*_note). */
   note: string;
   course: CourseId;
 };
 
 export const VOICES: Voice[] = [
-  { id: "de-DE-KatjaNeural", label: "Katja", gender: "kadın", note: "Net ve anlaşılır kadın ses", course: "de" },
-  { id: "de-DE-ConradNeural", label: "Conrad", gender: "erkek", note: "Tok ve sakin erkek ses", course: "de" },
-  { id: "de-CH-LeniNeural", label: "Leni", gender: "kadın", note: "İsviçre Almancası kadın ses", course: "gsw-zh" },
-  { id: "de-CH-JanNeural", label: "Jan", gender: "erkek", note: "İsviçre aksanlı erkek ses", course: "gsw-zh" },
+  { id: "de-DE-KatjaNeural", label: "Katja", gender: "female", note: "voices.katja_note", course: "de" },
+  { id: "de-DE-ConradNeural", label: "Conrad", gender: "male", note: "voices.conrad_note", course: "de" },
+  { id: "de-CH-LeniNeural", label: "Leni", gender: "female", note: "voices.leni_note", course: "gsw-zh" },
+  { id: "de-CH-JanNeural", label: "Jan", gender: "male", note: "voices.jan_note", course: "gsw-zh" },
 ];
 
 /** Kursun sesleri — seçim ekranı bunu listeler. */

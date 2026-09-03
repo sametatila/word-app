@@ -1,5 +1,6 @@
 import notifee, { TriggerType, RepeatFrequency, AndroidImportance, AuthorizationStatus } from "@notifee/react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { t } from "./i18n";
 
 /**
  * Yerel bildirimler (§4 — push yeniden-etkileşim). Üç bağımsız kategori cihazda
@@ -27,7 +28,7 @@ const WEEKLY_DAY = 0; // 0 = Pazar
 const WEEKLY_TIME = "11:00";
 
 async function ensureChannel(): Promise<void> {
-  await notifee.createChannel({ id: CHANNEL_ID, name: "Hatırlatmalar", importance: AndroidImportance.HIGH });
+  await notifee.createChannel({ id: CHANNEL_ID, name: t("notif.channel"), importance: AndroidImportance.HIGH });
 }
 
 async function requirePermission(): Promise<boolean> {
@@ -78,7 +79,7 @@ export async function enableDailyReminder(hhmm: string): Promise<boolean> {
   if (!(await requirePermission())) return false;
   await ensureChannel();
   await notifee.cancelTriggerNotification(ID_DAILY);
-  await schedule(ID_DAILY, "Bugünkü turunu unutma — serini koru!", nextDaily(hhmm), RepeatFrequency.DAILY);
+  await schedule(ID_DAILY, t("notif.daily_body"), nextDaily(hhmm), RepeatFrequency.DAILY);
   try { await AsyncStorage.setItem(KEY_DAILY, hhmm); } catch { /* depolama kapalı */ }
   return true;
 }
@@ -100,7 +101,7 @@ export async function setStreakAlert(on: boolean): Promise<boolean> {
     if (!(await requirePermission())) return false;
     await ensureChannel();
     await notifee.cancelTriggerNotification(ID_STREAK);
-    await schedule(ID_STREAK, "Serini kaybetme! Kısa bir tur bugünü kurtarır.", nextDaily(STREAK_TIME), RepeatFrequency.DAILY);
+    await schedule(ID_STREAK, t("notif.streak_body"), nextDaily(STREAK_TIME), RepeatFrequency.DAILY);
     try { await AsyncStorage.setItem(KEY_STREAK, "1"); } catch { /* yut */ }
     return true;
   }
@@ -121,7 +122,7 @@ export async function setWeeklyReminder(on: boolean): Promise<boolean> {
     if (!(await requirePermission())) return false;
     await ensureChannel();
     await notifee.cancelTriggerNotification(ID_WEEKLY);
-    await schedule(ID_WEEKLY, "Haftalık sınav zamanı — bu hafta ne kadar ilerledin?", nextWeekly(WEEKLY_DAY, WEEKLY_TIME), RepeatFrequency.WEEKLY);
+    await schedule(ID_WEEKLY, t("notif.weekly_body"), nextWeekly(WEEKLY_DAY, WEEKLY_TIME), RepeatFrequency.WEEKLY);
     try { await AsyncStorage.setItem(KEY_WEEKLY, "1"); } catch { /* yut */ }
     return true;
   }
@@ -143,7 +144,7 @@ export async function showTestNotification(): Promise<boolean> {
   await ensureChannel();
   await notifee.displayNotification({
     title: "Nomi",
-    body: "Bildirimler açık — her gün nazikçe hatırlatacağız.",
+    body: t("notif.test_body"),
     android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } },
   });
   return true;

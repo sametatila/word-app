@@ -1,5 +1,6 @@
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { signInGoogleNative } from "./auth";
+import { t } from "./i18n";
 import type { AuthOutcome } from "./auth";
 
 /**
@@ -41,16 +42,16 @@ export async function googleSignIn(): Promise<AuthOutcome> {
     // v16: { type: "success", data: { idToken, ... } } | { type: "cancelled" }
     const res = (await GoogleSignin.signIn()) as
       | { type?: string; data?: { idToken?: string | null }; idToken?: string | null };
-    if (res?.type === "cancelled") return { ok: false, code: "CANCELLED", message: "İptal edildi" };
+    if (res?.type === "cancelled") return { ok: false, code: "CANCELLED", message: t("autherror.cancelled") };
     const idToken = res?.data?.idToken ?? res?.idToken ?? null;
-    if (!idToken) return { ok: false, code: "NO_TOKEN", message: "Google kimliği alınamadı" };
+    if (!idToken) return { ok: false, code: "NO_TOKEN", message: t("autherror.no_google_token") };
     return await signInGoogleNative(idToken);
   } catch (e) {
     const code = (e as { code?: string })?.code ?? "";
     // Kullanıcı iptali sessiz geçilir; gerisi net hata.
     if (code === "SIGN_IN_CANCELLED" || code === "-5" || code === "12501") {
-      return { ok: false, code: "CANCELLED", message: "İptal edildi" };
+      return { ok: false, code: "CANCELLED", message: t("autherror.cancelled") };
     }
-    return { ok: false, code: "GOOGLE", message: "Google girişi başarısız oldu. E-posta ile deneyebilirsin." };
+    return { ok: false, code: "GOOGLE", message: t("autherror.google_failed") };
   }
 }

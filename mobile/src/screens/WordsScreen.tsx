@@ -10,7 +10,7 @@ import { SpeakButton } from "../ui/SpeakButton";
 import { Skeleton, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
-import { STATUS_LABEL, type WordRow, type WordStatus } from "../data/words";
+import { STATUS_KEY, type WordRow, type WordStatus } from "../data/words";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
 const FILTERS: { key: "" | WordStatus; label: string }[] = [
@@ -128,7 +128,7 @@ export function WordsScreen() {
                 <Text variant="micro" color={colors.textMuted}>{w.niveau}</Text>
               </View>
               <View style={{ width: 9, height: 9, borderRadius: 5, backgroundColor: sc }} />
-              <Text variant="micro" color={sc}>{STATUS_LABEL[w.status]}</Text>
+              <Text variant="micro" color={sc}>{t(STATUS_KEY[w.status])}</Text>
             </View>
           );
         }}

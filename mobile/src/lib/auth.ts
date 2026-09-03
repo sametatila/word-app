@@ -1,4 +1,5 @@
 import { API_BASE } from "../api/client";
+import { t } from "./i18n";
 
 /**
  * Mobil kimlik doğrulama — web'le AYNI Better Auth uçları (www.exfe.me/api/auth/*).
@@ -38,7 +39,7 @@ export async function signIn(email: string, password: string): Promise<AuthOutco
   try {
     return await parse(await post("sign-in/email", { email, password, rememberMe: true }));
   } catch {
-    return { ok: false, code: "NETWORK", message: "Bağlantı kurulamadı" };
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
   }
 }
 
@@ -46,7 +47,7 @@ export async function signUp(name: string, email: string, password: string): Pro
   try {
     return await parse(await post("sign-up/email", { email, password, name: name.trim() || email.split("@")[0] }));
   } catch {
-    return { ok: false, code: "NETWORK", message: "Bağlantı kurulamadı" };
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
   }
 }
 
@@ -97,7 +98,7 @@ export async function signInGoogleNative(idToken: string): Promise<AuthOutcome> 
   try {
     return await parse(await post("sign-in/social", { provider: "google", idToken: { token: idToken } }));
   } catch {
-    return { ok: false, code: "NETWORK", message: "Bağlantı kurulamadı" };
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
   }
 }
 
@@ -145,10 +146,10 @@ export async function deleteAccount(password?: string): Promise<DeleteOutcome> {
     let message = text.slice(0, 200);
     try { message = (JSON.parse(text) as { message?: string }).message ?? message; } catch { /* düz metin */ }
     const m = message.toLowerCase();
-    if (m.includes("password")) return { ok: false, code: "PASSWORD", message: "Parola yanlış." };
-    if (m.includes("session") || m.includes("expired")) return { ok: false, code: "FRESH", message: "Güvenlik için yeniden giriş gerekiyor." };
-    return { ok: false, code: "OTHER", message: message || "Silinemedi." };
+    if (m.includes("password")) return { ok: false, code: "PASSWORD", message: t("autherror.password_wrong") };
+    if (m.includes("session") || m.includes("expired")) return { ok: false, code: "FRESH", message: t("autherror.fresh_login") };
+    return { ok: false, code: "OTHER", message: message || t("autherror.not_deleted") };
   } catch {
-    return { ok: false, code: "NETWORK", message: "Bağlantı kurulamadı" };
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
   }
 }

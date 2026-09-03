@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Modal, Pressable } from "react-native";
 import { Text } from "./Text";
+import { t } from "../lib/i18n";
 import { PressableScale } from "./PressableScale";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
@@ -14,8 +15,8 @@ export function ConfirmDialog({
   visible,
   title,
   message,
-  confirmLabel = "Onayla",
-  cancelLabel = "Vazgeç",
+  confirmLabel = t("common.confirm"),
+  cancelLabel = t("common.vazgec"),
   destructive,
   onConfirm,
   onCancel,

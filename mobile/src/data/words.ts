@@ -12,9 +12,10 @@ export type WordRow = {
   status: WordStatus;
 };
 
-export const STATUS_LABEL: Record<WordStatus, string> = {
-  new: "Yeni",
-  learning: "Öğreniyor",
-  mastered: "Pekişti",
+/** Durum -> sözlük anahtarı; etiket kullanım anında t() ile çözülür. */
+export const STATUS_KEY: Record<WordStatus, string> = {
+  new: "words.status_new",
+  learning: "words.status_learning",
+  mastered: "words.status_mastered",
 };
 
