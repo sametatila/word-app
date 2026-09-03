@@ -50,5 +50,10 @@
         android:name="com.nomi.speech.NomiWalkService"
         android:foregroundServiceType="microphone"
         android:exported="false" />
+
+      <!-- notifee kendi ön plan servisini (shortService) manifest'e ekliyor; biz onu hiç
+           başlatmıyoruz (yalnız kanal + tetikleyici bildirim kullanıyoruz). Kullanılmayan
+           bir FGS bileşeni Play tarafında gereksiz beyan ve inceleme sorusu demek. -->
+      <service android:name="app.notifee.core.ForegroundService" tools:node="remove" />
     </application>
 </manifest>
