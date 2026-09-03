@@ -53,15 +53,49 @@ function stripComments(src) {
     .replace(/^([ \t]*)\/\/.*$/gm, (m) => m.replace(/[^\n]/g, " "));
 }
 
-/** Bir satırdaki kullanıcıya görünebilecek metin adayları. */
-function candidates(line) {
+/**
+ * Satır sonu yorumunu keser — tırnak durumunu izleyerek.
+ *
+ * Kaba bir `/\/\/.*$/` iki yönden de yanlış: URL taşıyan bir dizgiyi ortadan
+ * böler, ve Türkçe yorumdaki kesme işareti ("upload'dan ÖNCE") sahte bir dizgi
+ * açtığı için yorum metni dizgi sanılıp sayılır. Karakter yürüyüşü ikisini de çözüyor.
+ */
+function stripLineComment(line) {
+  let quote = null;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (quote) {
+      if (c === "\\") i++;
+      else if (c === quote) quote = null;
+    } else if (c === '"' || c === "'" || c === "`") {
+      quote = c;
+    } else if (c === "/" && line[i + 1] === "/") {
+      return line.slice(0, i);
+    }
+  }
+  return line;
+}
+
+/**
+ * Bir satırdaki kullanıcıya görünebilecek metin adayları.
+ *
+ * İki geçiş: önce dizgi sabitleri, sonra ARTAKALAN. Artakalanı ayrıca aramak şart,
+ * çünkü JSX gövde metni kendi satırında durabiliyor ve ">…<" gibi tek satırlık bir
+ * desene hiç uymuyor — `MicDisclosure`ın açıklama paragrafı bu yüzden gözden
+ * kaçmıştı. Dizgiler, {ifadeler} ve etiketler çıkarıldıktan sonra geriye Türkçe
+ * bir şey kalıyorsa o, çevrilmemiş JSX metnidir (tanımlayıcılar İngilizce, AGENTS.md).
+ */
+function candidates(raw) {
+  const line = stripLineComment(raw);
   const out = [];
-  // Dizgi sabitleri: "…", '…', `…`
-  const re = /"((?:[^"\\]|\\.)*)"|'((?:[^'\\]|\\.)*)'|`([^`]*)`/g;
-  for (const m of line.matchAll(re)) out.push(m[1] ?? m[2] ?? m[3] ?? "");
-  // JSX metni: >…< (içindeki {ifade} çıkarılarak)
-  const bare = line.replace(/\{[^{}]*\}/g, "");
-  for (const m of bare.matchAll(/>([^<>"]*)</g)) out.push(m[1]);
+  const strings = /"((?:[^"\\]|\\.)*)"|'((?:[^'\\]|\\.)*)'|`([^`]*)`/g;
+  for (const m of line.matchAll(strings)) out.push(m[1] ?? m[2] ?? m[3] ?? "");
+  const rest = line
+    .replace(strings, '""')       // dizgiler zaten sayıldı
+    .replace(/\/(?:\\.|\[[^\]]*\]|[^/\n\\])+\/[gimsuyd]*/g, " ") // regex sabitleri: /ç/g, /[A-ZÇĞİÖŞÜ]/ kod, metin değil
+    .replace(/\{[^{}]*\}/g, " ")  // {ifade}
+    .replace(/<[^<>]*>/g, "\u0001"); // etiketler → ayraç
+  for (const piece of rest.split("\u0001")) out.push(piece);
   return out.map((s) => s.trim()).filter(Boolean);
 }
 
@@ -71,7 +105,14 @@ function scan() {
   for (const file of walk(SRC)) {
     const rel = path.relative(ROOT, file);
     const lines = stripComments(fs.readFileSync(file, "utf8")).split("\n");
+    // Çok satırlı şablon dizgisinin içi taranmıyor: oralarda gömülü JS (ttsBridge'in
+    // WebView'e enjekte ettiği SFX kodu) ve onun Türkçe yorumları var — metin değil.
+    let inTemplate = false;
     lines.forEach((line, i) => {
+      const ticks = (line.match(/(?<!\\)`/g) ?? []).length;
+      const wasInside = inTemplate;
+      if (ticks % 2 === 1) inTemplate = !inTemplate;
+      if (wasInside) return;
       for (const text of candidates(line)) {
         if (TURKISH_LETTERS.test(text)) {
           (hard[rel] ??= []).push({ line: i + 1, text });
@@ -116,6 +157,18 @@ if (mode === "--check") {
     process.exit(1);
   }
   console.log(`tamam: ${total} dizgi (taban ${base.total})`);
+  process.exit(0);
+}
+
+// --hits <parca>: tek dosyanın (ya da yol parçasının) satır satır dökümü — dalga
+// çalışırken "bu dosyada ne kaldı" sorusunun cevabı.
+const hitsArg = process.argv.indexOf("--hits");
+if (hitsArg !== -1) {
+  const needle = process.argv[hitsArg + 1] ?? "";
+  for (const [f, list] of Object.entries(hard)) {
+    if (!f.includes(needle)) continue;
+    for (const h of list) console.log(`${f}:${h.line}  ${h.text}`);
+  }
   process.exit(0);
 }
 
