@@ -58,6 +58,8 @@ export function PlacementScreen() {
   // Gerçek test (oturum açıksa Neon'dan). Yüklenene dek loading; hata → demo.
   const [real, setReal] = useState<PlacementVocab[] | null>(null);
   const [loading, setLoading] = useState<boolean>(!!user);
+  const [loadError, setLoadError] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const [idx, setIdx] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [result, setResult] = useState<PlacementRecord | null>(null);
@@ -69,14 +71,18 @@ export function PlacementScreen() {
     if (!user) { setReal(null); setLoading(false); return; }
     let alive = true;
     setLoading(true);
+    setLoadError(false);
+    // Oturumlu kullanıcıda gerçek test gelmezse "örnek" sorulara DÜŞÜLMEZ (uydurma sonuç
+    // seviyeyi yanlış ayarlardı); hata gösterilir, tekrar denenir. Misafir (onboarding)
+    // yerleşik soru setini kullanır — o akışın gerçek testi budur.
     startPlacement()
-      .then((items) => { if (alive) { setReal(items.length ? items : null); setLoading(false); } })
-      .catch(() => { if (alive) { setReal(null); setLoading(false); } });
+      .then((items) => { if (alive) { if (items.length) setReal(items); else setLoadError(true); setLoading(false); } })
+      .catch(() => { if (alive) { setLoadError(true); setLoading(false); } });
     return () => { alive = false; };
-  }, [user]);
+  }, [user, attempt]);
 
   const usingReal = !!real;
-  const questions = usingReal ? realQuestions(real) : demoQuestions();
+  const questions = usingReal ? realQuestions(real) : user ? [] : demoQuestions();
   const total = questions.length;
   const done = idx >= total;
   // Önerilen seviye: gerçek modda sunucudan (result), yoksa yerel tahmin.
@@ -110,6 +116,18 @@ export function PlacementScreen() {
     }
     setSaved(true);
     setTimeout(leave, 700);
+  }
+
+  if (user && !loading && loadError) {
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.yuklenemedi")}</Text>
+        <PressableScale onPress={() => setAttempt((n) => n + 1)} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
+          <Text variant="bodyStrong" color="#fff">{t("common.tekrar_dene")}</Text>
+        </PressableScale>
+        <PressableScale onPress={leave} style={{ paddingVertical: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text></PressableScale>
+      </View>
+    );
   }
 
   if (loading) {

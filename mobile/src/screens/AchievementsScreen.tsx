@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -8,7 +8,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, TrophyIcon, CheckIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
-import { DEMO_ACHIEVEMENTS, GROUP_LABEL, type Achievement, type Tier, type AchGroup } from "../data/demoAchievements";
+import { GROUP_LABEL, type Achievement, type Tier, type AchGroup } from "../data/achievements";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 function tierColor(t: Tier, colors: Palette): string {
@@ -47,17 +47,21 @@ export function AchievementsScreen() {
   const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
   const [remote, setRemote] = useState<Achievement[] | null>(null);
+  const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
+  const [attempt, setAttempt] = useState(0);
 
+  // Uydurma tahta yok: yüklenene dek boş, hata olursa "tekrar dene".
   useEffect(() => {
-    if (!user) { setRemote(null); return; }
+    if (!user) { setPhase("error"); return; }
     let alive = true;
+    setPhase("loading");
     api<{ rows: Achievement[] }>("/api/achievements")
-      .then((d) => { if (alive) setRemote(Array.isArray(d?.rows) ? d.rows : null); })
-      .catch(() => { if (alive) setRemote(null); });
+      .then((d) => { if (alive) { if (Array.isArray(d?.rows)) { setRemote(d.rows); setPhase("ready"); } else setPhase("error"); } })
+      .catch(() => { if (alive) setPhase("error"); });
     return () => { alive = false; };
-  }, [user]);
+  }, [user, attempt]);
 
-  const list = remote ?? DEMO_ACHIEVEMENTS;
+  const list = remote ?? [];
   const earned = list.filter((a) => a.unlocked).length;
   const groups = useMemo(() => {
     const g: Record<AchGroup, Achievement[]> = { streak: [], vocab: [], games: [] };
@@ -73,10 +77,22 @@ export function AchievementsScreen() {
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h2">{t("achievements.basarimlar")}</Text>
-          <Text variant="caption" color={colors.textMuted}>{earned}/{list.length} kazanıldı</Text>
+          {phase === "ready" ? <Text variant="caption" color={colors.textMuted}>{earned}/{list.length} kazanıldı</Text> : null}
         </View>
       </View>
 
+      {phase !== "ready" ? (
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }}>
+          {phase === "loading" ? <ActivityIndicator color={colors.primary} /> : (
+            <>
+              <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("achievements.yuklenemedi")}</Text>
+              <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
+                <Text variant="bodyStrong" color={colors.primary}>{t("common.tekrar_dene")}</Text>
+              </PressableScale>
+            </>
+          )}
+        </View>
+      ) : (
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {(Object.keys(groups) as AchGroup[]).map((gk) =>
           groups[gk].length ? (
@@ -89,6 +105,7 @@ export function AchievementsScreen() {
           ) : null,
         )}
       </ScrollView>
+      )}
     </View>
   );
 }

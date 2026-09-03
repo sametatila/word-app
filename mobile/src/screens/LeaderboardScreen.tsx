@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, FlatList, ScrollView } from "react-native";
+import { View, FlatList, ScrollView, ActivityIndicator } from "react-native";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -9,7 +9,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, FlameIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
-import { DEMO_LEADERBOARD, type LeaderboardWeek, type LeaderboardRow } from "../data/demoLeaderboard";
+import type { LeaderboardWeek, LeaderboardRow } from "../data/leaderboard";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 function medalColor(rank: number, colors: Palette): string {
@@ -21,18 +21,22 @@ export function LeaderboardScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
-  const [week, setWeek] = useState<LeaderboardWeek>(DEMO_LEADERBOARD);
+  const [week, setWeek] = useState<LeaderboardWeek | null>(null);
+  const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
+  const [attempt, setAttempt] = useState(0);
   // Herkes | Arkadaşlar — aynı hafta, iki küme. Arkadaş tablosu sosyal API'den.
   const [mode, setMode] = useState<"all" | "friends">("all");
 
+  // Uydurma tablo yok: yüklenene dek boş, hata olursa "tekrar dene".
   useEffect(() => {
-    if (!user) { setWeek(DEMO_LEADERBOARD); return; }
+    if (!user) { setPhase("error"); return; }
     let alive = true;
+    setPhase("loading");
     api<LeaderboardWeek>("/api/leaderboard")
-      .then((d) => { if (alive && d?.rows) setWeek(d); })
-      .catch(() => { if (alive) setWeek(DEMO_LEADERBOARD); });
+      .then((d) => { if (alive) { if (d?.rows) { setWeek(d); setPhase("ready"); } else setPhase("error"); } })
+      .catch(() => { if (alive) setPhase("error"); });
     return () => { alive = false; };
-  }, [user]);
+  }, [user, attempt]);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -42,7 +46,7 @@ export function LeaderboardScreen() {
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h2">{t("leaderboard.siralama")}</Text>
-          <Text variant="caption" color={colors.textMuted}>Bu hafta · {week.daysLeft} gün kaldı</Text>
+          <Text variant="caption" color={colors.textMuted}>{week ? `Bu hafta · ${week.daysLeft} gün kaldı` : "Bu hafta"}</Text>
         </View>
       </View>
 
@@ -59,6 +63,17 @@ export function LeaderboardScreen() {
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           {user ? <FriendsBoard compact /> : <Text variant="body" color={colors.textMuted}>{t("leaderboard.arkadas_tablosu_icin_giris_yap")}</Text>}
         </ScrollView>
+      ) : phase !== "ready" || !week ? (
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }}>
+          {phase === "loading" ? <ActivityIndicator color={colors.primary} /> : (
+            <>
+              <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("leaderboard.yuklenemedi")}</Text>
+              <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
+                <Text variant="bodyStrong" color={colors.primary}>{t("common.tekrar_dene")}</Text>
+              </PressableScale>
+            </>
+          )}
+        </View>
       ) : (
       <FlatList
         data={week.rows}

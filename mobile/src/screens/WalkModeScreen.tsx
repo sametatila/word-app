@@ -9,7 +9,6 @@ import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon } from
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { ProgressRing } from "../ui/ProgressRing";
-import { DEMO_WORDS, type Word } from "../data/demoWords";
 import { track } from "../lib/track";
 import { shareResult } from "../lib/share";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } from "../game/session";
@@ -36,7 +35,8 @@ type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "cont
 type Verdict = "correct" | "wrong" | "skip" | "unheard" | null;
 
 /** Yürüyüş kelimesi — demo Word + oyunların gösterdiği İngilizce gloss (`en`). */
-type WalkWord = { id: number; de: string; tr: string; artikel?: Word["artikel"]; en?: string | null };
+type Artikel = "der" | "die" | "das";
+type WalkWord = { id: number; de: string; tr: string; artikel?: Artikel; en?: string | null };
 /** Web walk turu: tek kelime + tür (intro = yeni kelimeyi öğret; speak = sor). */
 type WalkRound = { word: WalkWord; kind: "intro" | "speak" };
 
@@ -45,10 +45,9 @@ const UNHEARD_WINDOW = 4;
 const UNHEARD_LIMIT = 3;
 
 const mapWord = (w: { id: number; de: string; tr: string; artikel?: string | null; en?: string | null }): WalkWord =>
-  ({ id: w.id, de: w.de, tr: w.tr, artikel: (w.artikel as Word["artikel"]) ?? undefined, en: w.en ?? null });
+  ({ id: w.id, de: w.de, tr: w.tr, artikel: (w.artikel as Artikel | null) ?? undefined, en: w.en ?? null });
 const mapRounds = (rs: Round[]): WalkRound[] =>
   rs.filter((r) => r.word).map((r) => ({ word: mapWord(r.word!), kind: r.game === "intro" ? "intro" : "speak" }));
-const DEMO_ROUNDS: WalkRound[] = DEMO_WORDS.map((w) => ({ word: w, kind: "speak" as const }));
 
 /**
  * Yürüyüş modu — web `components/walk-player.tsx` akışının birebir mobil karşılığı.
@@ -73,9 +72,9 @@ export function WalkModeScreen() {
   const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
 
-  const [rounds, setRounds] = useState<WalkRound[]>(DEMO_ROUNDS);
+  const [rounds, setRounds] = useState<WalkRound[]>([]);
   const [idx, setIdx] = useState(0);
-  const [curWord, setCurWord] = useState<WalkWord>(DEMO_WORDS[0]);
+  const [curWord, setCurWord] = useState<WalkWord>({ id: 0, de: "", tr: "", en: null });
   const [phase, setPhase] = useState<Phase>("intro");
   const [disclosure, setDisclosure] = useState(false); // belirgin açıklama ve rıza (ilk kullanım)
   const [verdict, setVerdict] = useState<Verdict>(null);
@@ -366,7 +365,6 @@ export function WalkModeScreen() {
 
   // Devam / yeni tur: sorulanları skip ederek taze walk kuyruğu getir. Tekrar kalmadıysa bildir.
   async function newTour() {
-    if (!user) { start(DEMO_ROUNDS, false); return; }
     setPhase("intro"); setNoMore(false);
     try {
       const p = await fetchSession(day.current, { walk: true, skip: Array.from(askedIds.current) });

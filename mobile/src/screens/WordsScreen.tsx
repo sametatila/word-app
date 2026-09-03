@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, TextInput, FlatList } from "react-native";
+import { View, TextInput, FlatList, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -9,7 +9,7 @@ import { ArrowBackIcon } from "../ui/icons";
 import { SpeakButton } from "../ui/SpeakButton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
-import { DEMO_WORD_LIST, STATUS_LABEL, type WordRow, type WordStatus } from "../data/demoWordList";
+import { STATUS_LABEL, type WordRow, type WordStatus } from "../data/words";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
 const FILTERS: { key: "" | WordStatus; label: string }[] = [
@@ -31,29 +31,24 @@ export function WordsScreen() {
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState<"" | WordStatus>("");
   const [remote, setRemote] = useState<WordRow[] | null>(null);
+  const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
+  const [attempt, setAttempt] = useState(0);
 
-  // Authed: sunucudan getir (arama/süzgeç değişince). Misafir/hata: demo yerelde süzülür.
+  // Sunucudan getir (arama/süzgeç değişince). Hata: uydurma liste yok, "tekrar dene".
   useEffect(() => {
-    if (!user) { setRemote(null); return; }
+    if (!user) { setPhase("error"); return; }
     let alive = true;
+    setPhase("loading");
     const params = new URLSearchParams();
     if (q.trim()) params.set("q", q.trim());
     if (filter) params.set("status", filter);
     api<{ words: WordRow[] }>(`/api/words?${params.toString()}`)
-      .then((d) => { if (alive) setRemote(d.words ?? []); })
-      .catch(() => { if (alive) setRemote(null); });
+      .then((d) => { if (alive) { setRemote(d.words ?? []); setPhase("ready"); } })
+      .catch(() => { if (alive) setPhase("error"); });
     return () => { alive = false; };
-  }, [user, q, filter]);
+  }, [user, q, filter, attempt]);
 
-  const list = useMemo(() => {
-    if (remote) return remote;
-    // yerel (demo) süzme
-    const ql = q.trim().toLowerCase();
-    return DEMO_WORD_LIST.filter((w) =>
-      (!filter || w.status === filter) &&
-      (!ql || w.de.toLowerCase().includes(ql) || w.tr.toLowerCase().includes(ql)),
-    );
-  }, [remote, q, filter]);
+  const list = useMemo(() => remote ?? [], [remote]);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -91,7 +86,20 @@ export function WordsScreen() {
         contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.sm }}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={<Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.xxl }}>{t("words.kelime_bulunamadi")}</Text>}
+        ListEmptyComponent={
+          phase === "loading" ? (
+            <ActivityIndicator color={colors.primary} style={{ marginTop: spacing.xxl }} />
+          ) : phase === "error" ? (
+            <View style={{ alignItems: "center", gap: spacing.md, marginTop: spacing.xxl }}>
+              <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("words.yuklenemedi")}</Text>
+              <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
+                <Text variant="bodyStrong" color={colors.primary}>{t("common.tekrar_dene")}</Text>
+              </PressableScale>
+            </View>
+          ) : (
+            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.xxl }}>{t("words.kelime_bulunamadi")}</Text>
+          )
+        }
         renderItem={({ item: w }) => {
           const sc = statusColor(w.status, colors);
           return (

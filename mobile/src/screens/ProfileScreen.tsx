@@ -49,8 +49,9 @@ export function ProfileScreen() {
   const displayName = user?.name?.trim() || user?.email?.split("@")[0] || "Öğrenci";
   const [confirmOut, setConfirmOut] = useState(false);
   async function reallySignOut() { setConfirmOut(false); await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
-  const streak = me ? me.streak : 7;
-  const xpLabel = me ? formatXp(me.xp) : "1.2k";
+  // Veri gelmeden rakam gösterilmez (uydurma 7 gün / 1.2k yoktu artık): yükleniyor kartı var.
+  const streak = me ? me.streak : 0;
+  const xpLabel = me ? formatXp(me.xp) : "—";
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
