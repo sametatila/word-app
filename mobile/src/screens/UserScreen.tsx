@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, dateLocale } from "../lib/i18n";
 import { Alert, ScrollView, View } from "react-native";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -98,13 +98,13 @@ export function UserScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
           <View style={softShadow(friends ? colors.success : colors.primary, 10)}><PersonAvatar userId={u.userId} name={u.name} size={76} ring={friends ? colors.success : null} /></View>
-          <Text variant="h2" style={{ marginTop: spacing.md }}>{u.name ?? "İsimsiz öğrenci"}</Text>
-          <Text variant="caption" color={colors.textMuted}>@{u.username} · {u.level} · {new Date(data.joined).toLocaleDateString("tr-TR", { month: "short", year: "numeric" })}</Text>
+          <Text variant="h2" style={{ marginTop: spacing.md }}>{u.name ?? t("social.unnamed")}</Text>
+          <Text variant="caption" color={colors.textMuted}>@{u.username} · {u.level} · {new Date(data.joined).toLocaleDateString(dateLocale(), { month: "short", year: "numeric" })}</Text>
           {data.bio ? <Text variant="body" color={colors.text} style={{ marginTop: spacing.sm, textAlign: "center", lineHeight: 21 }}>{data.bio}</Text> : null}
           {(data.mutual > 0 || data.friendStreak > 0) ? (
             <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginTop: spacing.md }}>
-              {data.mutual > 0 ? <StatPill icon={HandshakeIcon} label={`${data.mutual} ortak arkadaş`} tint={colors.info} /> : null}
-              {data.friendStreak > 0 ? <StatPill icon={FlameIcon} label={`${data.friendStreak} gün birlikte`} tint={colors.success} soft={colors.successSoft} /> : null}
+              {data.mutual > 0 ? <StatPill icon={HandshakeIcon} label={t("social.mutual", { n: data.mutual })} tint={colors.info} /> : null}
+              {data.friendStreak > 0 ? <StatPill icon={FlameIcon} label={t("social.days_together", { n: data.friendStreak })} tint={colors.success} soft={colors.successSoft} /> : null}
             </View>
           ) : null}
           {!isSelf ? (
@@ -112,8 +112,8 @@ export function UserScreen() {
               <UserActionButton userId={u.userId} relation={rel} friendshipId={data.friendshipId} canRequest={data.canRequest} onChange={setRel} small={false} />
               {friends ? (
                 <>
-                  <Pill label={t("user.durt")} tone="ghost" icon={BellIcon} disabled={busy} onPress={() => void act(() => social.nudge(u.userId, "remind"), "Dürttün")} />
-                  <Pill label={t("user.gorev")} tone="ghost" icon={TargetIcon} disabled={busy} onPress={() => void act(() => social.inviteQuest(u.userId), "Görev daveti gitti")} />
+                  <Pill label={t("user.durt")} tone="ghost" icon={BellIcon} disabled={busy} onPress={() => void act(() => social.nudge(u.userId, "remind"), t("social.nudged_you"))} />
+                  <Pill label={t("user.gorev")} tone="ghost" icon={TargetIcon} disabled={busy} onPress={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))} />
                 </>
               ) : null}
             </View>
@@ -130,7 +130,7 @@ export function UserScreen() {
           </View>
         ) : (
           <View style={{ marginBottom: spacing.lg }}>
-            <EmptyCard icon={LockIcon} tint={colors.textMuted} title={data.visibility === "friends" ? "Yalnız arkadaşlarına açık" : "Gizli profil"} text={data.visibility === "friends" ? "Arkadaş olunca seri, XP ve rozetlerini görürsün." : "Bu kişi istatistiklerini paylaşmıyor."} />
+            <EmptyCard icon={LockIcon} tint={colors.textMuted} title={t(data.visibility === "friends" ? "user.visible_friends" : "user.private_profile")} text={t(data.visibility === "friends" ? "user.friends_see_stats" : "user.no_stats_shared")} />
           </View>
         )}
 
@@ -144,19 +144,19 @@ export function UserScreen() {
         {!isSelf ? (
           <View style={{ marginTop: spacing.lg, alignItems: "center" }}>
             <PressableScale onPress={() => setMore((m) => !m)} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
-              <Text variant="caption" color={colors.textMuted}>{more ? "Gizle" : "Engelle / Şikayet et"}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t(more ? "user.hide" : "user.block_or_report")}</Text>
             </PressableScale>
             {more ? (
               <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
-                <Pill label={t("user.engelle")} tone="danger" disabled={busy} onPress={() => Alert.alert("Engelle", `${u.name ?? "Bu kişi"} engellensin mi? Arkadaşlık ve görevler silinir; kendisine bildirim gitmez.`, [
-                  { text: "Vazgeç", style: "cancel" },
-                  { text: "Engelle", style: "destructive", onPress: () => void act(async () => { await social.block(u.userId); nav.goBack(); }, "Engellendi") },
+                <Pill label={t("user.engelle")} tone="danger" disabled={busy} onPress={() => Alert.alert(t("user.block"), t("user.block_confirm", { ad: u.name ?? t("social.this_person") }), [
+                  { text: t("common.vazgec"), style: "cancel" },
+                  { text: t("user.block"), style: "destructive", onPress: () => void act(async () => { await social.block(u.userId); nav.goBack(); }, t("user.blocked_done")) },
                 ])} />
-                <Pill label={t("user.sikayet_et")} tone="ghost" disabled={busy} onPress={() => Alert.alert("Şikayet sebebi", undefined, [
-                  { text: "Spam", onPress: () => void act(() => social.report(u.userId, "spam"), "Şikayet alındı") },
-                  { text: "Taciz", onPress: () => void act(() => social.report(u.userId, "abuse"), "Şikayet alındı") },
-                  { text: "Sahte hesap", onPress: () => void act(() => social.report(u.userId, "impersonation"), "Şikayet alındı") },
-                  { text: "Vazgeç", style: "cancel" },
+                <Pill label={t("user.sikayet_et")} tone="ghost" disabled={busy} onPress={() => Alert.alert(t("user.report_reason"), undefined, [
+                  { text: t("user.report_spam"), onPress: () => void act(() => social.report(u.userId, "spam"), t("user.report_done")) },
+                  { text: t("user.report_abuse"), onPress: () => void act(() => social.report(u.userId, "abuse"), t("user.report_done")) },
+                  { text: t("user.report_fake"), onPress: () => void act(() => social.report(u.userId, "impersonation"), t("user.report_done")) },
+                  { text: t("common.vazgec"), style: "cancel" },
                 ])} />
               </View>
             ) : null}

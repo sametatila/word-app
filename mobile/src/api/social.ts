@@ -1,5 +1,5 @@
 import { api, ApiError } from "./client";
-import { t, currentLang } from "../lib/i18n";
+import { t, dateLocale } from "../lib/i18n";
 
 /**
  * Sosyal API istemcisi — web'deki lib/social/client.ts'in aynası. Tipler
@@ -96,9 +96,6 @@ export function errorText(err: unknown): string {
 
 export const formatXp = (n: number) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-/** Tarih biçimi arayüz diline bağlı; eskiden "tr-TR" sabitti. */
-const DATE_LOCALE: Record<string, string> = { tr: "tr-TR", en: "en-US", de: "de-DE" };
-
 export function timeAgo(iso: string, now = Date.now()): string {
   const s = Math.max(0, Math.round((now - Date.parse(iso)) / 1000));
   if (s < 60) return t("social.ago_now");
@@ -108,7 +105,7 @@ export function timeAgo(iso: string, now = Date.now()): string {
   if (h < 24) return t("social.ago_hour", { n: h });
   const d = Math.round(h / 24);
   if (d < 7) return t("social.ago_day", { n: d });
-  return new Date(iso).toLocaleDateString(DATE_LOCALE[currentLang()] ?? "en-US", { day: "numeric", month: "short" });
+  return new Date(iso).toLocaleDateString(dateLocale(), { day: "numeric", month: "short" });
 }
 
 /**

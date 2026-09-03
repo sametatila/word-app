@@ -34,7 +34,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
       {current.map((q) => <QuestCard key={q.id} q={q} me={me} busy={busy} onAct={act} />)}
       {!current.length ? (
         <View>
-          <EmptyCard icon={TargetIcon} title={t("quests.bu_hafta_ortak_gorev_yok")} text={friends.length ? "Bir arkadaşınla bu hafta birlikte hedef XP topla. Hedef, geçen haftanızın biraz üstü." : "Önce bir arkadaş ekle; sonra birlikte hedef XP toplarsınız."} action={friends.length ? (pick ? "Vazgeç" : "Arkadaş seç") : undefined} onAction={friends.length ? () => setPick((p) => !p) : undefined} />
+          <EmptyCard icon={TargetIcon} title={t("quests.bu_hafta_ortak_gorev_yok")} text={t(friends.length ? "quests.empty_with_friends" : "quests.empty_no_friends")} action={friends.length ? t(pick ? "common.vazgec" : "quests.choose_friend") : undefined} onAction={friends.length ? () => setPick((p) => !p) : undefined} />
           {pick ? (
             <View style={{ marginTop: spacing.md }}>
               <SectionTitle title={t("quests.kiminle")} />
@@ -42,8 +42,8 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
                 <Card key={f.userId} padded style={{ marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <PersonAvatar userId={f.userId} name={f.name} size={44} />
                   <View style={{ flex: 1 }}>
-                    <Text variant="h3" numberOfLines={1}>{f.name ?? "İsimsiz öğrenci"}</Text>
-                    <Text variant="caption" color={colors.textMuted}>{formatXp(f.weeklyXp)} XP bu hafta</Text>
+                    <Text variant="h3" numberOfLines={1}>{f.name ?? t("social.unnamed")}</Text>
+                    <Text variant="caption" color={colors.textMuted}>{t("social.xp_this_week", { xp: formatXp(f.weeklyXp) })}</Text>
                   </View>
                   <Pill label={t("quests.davet_et")} small disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId))} />
                 </Card>
@@ -62,8 +62,8 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
               <Card key={q.id} padded style={{ marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: done ? colors.success : colors.hairline }}>
                 <IconTile icon={done ? CheckIcon : TargetIcon} tint={done ? colors.success : colors.textMuted} solid={done} />
                 <View style={{ flex: 1 }}>
-                  <Text variant="bodyStrong" numberOfLines={1}>{q.partner.name ?? "İsimsiz"} ile {formatXp(q.targetXp)} XP</Text>
-                  <Text variant="micro" color={colors.textMuted}>{done ? "Tamamlandı" : `${q.pct}% · ${formatXp(q.totalXp)} XP`}</Text>
+                  <Text variant="bodyStrong" numberOfLines={1}>{t("quests.past_row", { ad: q.partner.name ?? t("social.unnamed_short"), xp: formatXp(q.targetXp) })}</Text>
+                  <Text variant="micro" color={colors.textMuted}>{done ? t("quests.completed") : `${q.pct}% · ${formatXp(q.totalXp)} XP`}</Text>
                 </View>
                 <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={32} />
               </Card>
@@ -120,8 +120,8 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
           <View style={{ marginLeft: -12 }}><PersonAvatar userId={q.partner.userId} name={q.partner.name} size={44} ring={colors.info} /></View>
         </View>
         <View style={{ flex: 1 }}>
-          <Text variant="h3">{invited ? "Ortak görev daveti" : "Bu haftanın ortak görevi"}</Text>
-          <Text variant="caption" color={colors.textMuted}>{q.partner.name ?? "Arkadaşın"} ile · {q.daysLeft === 1 ? "son gün" : `${q.daysLeft} gün kaldı`}</Text>
+          <Text variant="h3">{t(invited ? "quests.invite_title" : "quests.week_title")}</Text>
+          <Text variant="caption" color={colors.textMuted}>{t("quests.with_partner", { ad: q.partner.name ?? t("social.your_friend"), kalan: q.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: q.daysLeft }) })}</Text>
         </View>
         <View style={{ alignItems: "flex-end" }}>
           <Text variant="h2" color={colors.primary}>{formatXp(q.targetXp)}</Text>
@@ -149,11 +149,11 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
             <View style={{ width: `${Math.round(q.pct * (1 - myShare))}%`, backgroundColor: colors.info }} />
           </View>
           <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 8 }}>
-            <Text variant="caption" color={colors.primary}>Sen {formatXp(q.myXp)}</Text>
+            <Text variant="caption" color={colors.primary}>{t("quests.my_xp", { xp: formatXp(q.myXp) })}</Text>
             <Text variant="bodyStrong">{formatXp(q.totalXp)} / {formatXp(q.targetXp)}</Text>
-            <Text variant="caption" color={colors.info}>{q.partner.name?.split(" ")[0] ?? "O"} {formatXp(q.partnerXp)}</Text>
+            <Text variant="caption" color={colors.info}>{q.partner.name?.split(" ")[0] ?? t("quests.partner_short")} {formatXp(q.partnerXp)}</Text>
           </View>
-          <PressableScale onPress={() => Alert.alert("Görevi bırak", "İkiniz için de iptal olur.", [{ text: "Vazgeç", style: "cancel" }, { text: "Bırak", style: "destructive", onPress: () => void onAct(() => social.questAction(q.id, "cancel")) }])} style={{ alignSelf: "flex-end", marginTop: spacing.sm, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+          <PressableScale onPress={() => Alert.alert(t("quests.leave_title"), t("quests.leave_text"), [{ text: t("common.vazgec"), style: "cancel" }, { text: t("quests.leave"), style: "destructive", onPress: () => void onAct(() => social.questAction(q.id, "cancel")) }])} style={{ alignSelf: "flex-end", marginTop: spacing.sm, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
             <Text variant="micro" color={colors.textMuted}>{t("quests.gorevi_birak")}</Text>
           </PressableScale>
         </View>

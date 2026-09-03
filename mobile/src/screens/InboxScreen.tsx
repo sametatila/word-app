@@ -108,7 +108,7 @@ export function InboxScreen() {
                 );
               })}
             </Card>
-            {cursor ? <View style={{ marginTop: spacing.lg, alignItems: "center" }}><Pill label={busy ? "Yükleniyor" : "Daha eski"} tone="ghost" disabled={busy} onPress={() => void load(cursor)} /></View> : null}
+            {cursor ? <View style={{ marginTop: spacing.lg, alignItems: "center" }}><Pill label={t(busy ? "social.loading" : "social.older")} tone="ghost" disabled={busy} onPress={() => void load(cursor)} /></View> : null}
           </View>
         );
 

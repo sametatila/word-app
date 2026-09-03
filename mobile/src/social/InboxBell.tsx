@@ -8,6 +8,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { InboxIcon } from "../ui/icons";
 import { useTheme, radii } from "../theme";
 import { useUnread } from "./useUnread";
+import { t } from "../lib/i18n";
 
 /** Başlıktaki gelen kutusu zili — okunmamış varsa rozet. */
 export function InboxBell() {
@@ -15,7 +16,7 @@ export function InboxBell() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const unread = useUnread();
   return (
-    <PressableScale hitSlop={4} onPress={() => nav.navigate("Inbox")} accessibilityLabel={unread ? `Gelen kutusu, ${unread} okunmamış` : "Gelen kutusu"} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+    <PressableScale hitSlop={4} onPress={() => nav.navigate("Inbox")} accessibilityLabel={unread ? t("inbox.bell_unread", { n: unread }) : t("inbox.bell")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
       <InboxIcon color={colors.text} size={20} />
       {unread > 0 ? (
         <View style={{ position: "absolute", top: -3, right: -3, minWidth: 18, height: 18, borderRadius: 9, paddingHorizontal: 4, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center" }}>

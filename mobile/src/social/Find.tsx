@@ -64,7 +64,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <PressableScale onPress={() => open(u.username)}><PersonAvatar userId={u.userId} name={u.name} size={48} /></PressableScale>
         <PressableScale onPress={() => open(u.username)} style={{ flex: 1 }}>
-          <Text variant="h3" numberOfLines={1}>{u.name ?? "İsimsiz öğrenci"}</Text>
+          <Text variant="h3" numberOfLines={1}>{u.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{u.username ? `@${u.username} · ` : ""}{u.level}</Text>
         </PressableScale>
         {right}
@@ -72,7 +72,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
       {note || streak > 0 ? (
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.md }}>
           {note ? <StatPill icon={note.icon} label={note.label} tint={note.tint} /> : null}
-          {streak > 0 ? <StatPill icon={FlameIcon} label={`${streak} gün seri`} tint={colors.streak} /> : null}
+          {streak > 0 ? <StatPill icon={FlameIcon} label={t("social.days_streak", { n: streak })} tint={colors.streak} /> : null}
         </View>
       ) : null}
     </Card>
@@ -95,7 +95,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
       ) : (
         <View>
           <SectionTitle title={t("find.taniyor_olabilirsin")} />
-          {sugg === null ? <SearchResultSkeleton /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: `${s.mutual} ortak arkadaş`, tint: colors.success, icon: HandshakeIcon } : s.reason === "level" ? { label: `Aynı seviye · ${s.level}`, tint: colors.info } : { label: "Bu hafta aktif", tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
+          {sugg === null ? <SearchResultSkeleton /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: t("social.mutual", { n: s.mutual }), tint: colors.success, icon: HandshakeIcon } : s.reason === "level" ? { label: t("find.same_level", { seviye: s.level }), tint: colors.info } : { label: t("find.active_week"), tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
             <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("find.simdilik_oneri_yok_kullanici_adiyla_ara")}</Text>
           )}
         </View>

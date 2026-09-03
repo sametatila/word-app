@@ -27,7 +27,7 @@ export function UserActionButton({ userId, relation, friendshipId, canRequest = 
 
   let btn: React.ReactNode;
   if (state === "friends") {
-    btn = <Pill label={t("useractionbutton.arkadas")} tone="soft" icon={CheckIcon} small={small} disabled={busy} onPress={() => Alert.alert("Arkadaşlıktan çıkar", "Bildirim gitmez.", [{ text: "Vazgeç", style: "cancel" }, { text: "Çıkar", style: "destructive", onPress: () => void run(async () => { await social.remove(userId); return "none"; }) }])} />;
+    btn = <Pill label={t("useractionbutton.arkadas")} tone="soft" icon={CheckIcon} small={small} disabled={busy} onPress={() => Alert.alert(t("social.unfriend"), t("useractionbutton.no_notice"), [{ text: t("common.vazgec"), style: "cancel" }, { text: t("social.remove"), style: "destructive", onPress: () => void run(async () => { await social.remove(userId); return "none"; }) }])} />;
   } else if (state === "outgoing") {
     btn = <Pill label={t("useractionbutton.istek_gonderildi")} tone="ghost" small={small} disabled={busy} onPress={() => void run(async () => { await social.remove(userId); return "none"; })} />;
   } else if (state === "incoming") {

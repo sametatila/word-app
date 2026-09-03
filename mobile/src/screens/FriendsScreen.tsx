@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { t as tx } from "../lib/i18n";
+import { t as tx, currentLang } from "../lib/i18n";
+import { courseOrDefault, currentCourseId } from "../lib/courses";
 import { ScrollView, Share, View } from "react-native";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -25,12 +26,13 @@ import { Requests, RequestCardSkeleton } from "../social/Requests";
 import { Find } from "../social/Find";
 
 type Tab = "friends" | "feed" | "quests" | "requests" | "find";
-const TABS: { key: Tab; label: string }[] = [
-  { key: "friends", label: "Arkadaşlar" },
-  { key: "feed", label: "Akış" },
-  { key: "quests", label: "Görevler" },
-  { key: "requests", label: "İstekler" },
-  { key: "find", label: "Bul" },
+/** Sekme etiketleri — t() çağrı anında (dil modül yüklenirken hazır değil). */
+const TAB_KEYS: { key: Tab; label: string }[] = [
+  { key: "friends", label: "social.tab_friends" },
+  { key: "feed", label: "friends.tab_feed" },
+  { key: "quests", label: "friends.tab_quests" },
+  { key: "requests", label: "friends.tab_requests" },
+  { key: "find", label: "friends.tab_find" },
 ];
 
 /**
@@ -45,7 +47,7 @@ export function FriendsScreen() {
   const route = useRoute<RouteProp<RootStackParams, "Friends">>();
   const { user } = useAuth();
   const initial = (route.params?.tab as Tab | undefined) ?? "friends";
-  const [tab, setTab] = useState<Tab>(TABS.some((t) => t.key === initial) ? initial : "friends");
+  const [tab, setTab] = useState<Tab>(TAB_KEYS.some((tab) => tab.key === initial) ? initial : "friends");
   const [me, setMe] = useState<SocialMe | null>(null);
   const [data, setData] = useState<FriendsView | null>(null);
   const [err, setErr] = useState<string | null>(null);
@@ -67,7 +69,7 @@ export function FriendsScreen() {
   async function share() {
     if (!me) return;
     track("share", 0, "profile");
-    try { await Share.share({ message: `Nomi'de Almanca çalışıyorum. Arkadaş ol, birlikte hedef tutturalım: ${API_BASE}/u/${me.username}` }); } catch { /* kapatıldı */ }
+    try { await Share.share({ message: tx("friends.share_text", { dil: courseOrDefault(currentCourseId()).label[currentLang()], link: `${API_BASE}/u/${me.username}` }) }); } catch { /* kapatıldı */ }
   }
 
   if (!user) {
@@ -89,12 +91,12 @@ export function FriendsScreen() {
         {me ? (
           <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
             <View style={softShadow(colors.primary, 10)}><PersonAvatar userId={me.userId} name={me.name} size={76} /></View>
-            <Text variant="h2" style={{ marginTop: spacing.md }}>{me.name ?? "İsimsiz öğrenci"}</Text>
+            <Text variant="h2" style={{ marginTop: spacing.md }}>{me.name ?? tx("social.unnamed")}</Text>
             <Text variant="caption" color={colors.textMuted}>@{me.username}</Text>
             <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
-              <StatPill icon={HandshakeIcon} label={`${me.counts.friends} arkadaş`} tint={colors.success} soft={colors.successSoft} />
-              {incoming > 0 ? <StatPill icon={UserPlusIcon} label={`${incoming} istek`} tint={colors.streak} /> : null}
-              {me.counts.unread > 0 ? <StatPill icon={InboxIcon} label={`${me.counts.unread} yeni`} tint={colors.primary} soft={colors.primarySoft} /> : null}
+              <StatPill icon={HandshakeIcon} label={tx("friends.count_friends", { n: me.counts.friends })} tint={colors.success} soft={colors.successSoft} />
+              {incoming > 0 ? <StatPill icon={UserPlusIcon} label={tx("friends.count_requests", { n: incoming })} tint={colors.streak} /> : null}
+              {me.counts.unread > 0 ? <StatPill icon={InboxIcon} label={tx("friends.count_new", { n: me.counts.unread })} tint={colors.primary} soft={colors.primarySoft} /> : null}
             </View>
           </Card>
         ) : (
@@ -122,7 +124,7 @@ export function FriendsScreen() {
         </PressableScale>
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm, paddingBottom: spacing.lg }}>
-          {TABS.map((t) => <Chip key={t.key} label={t.label} active={tab === t.key} onPress={() => setTab(t.key)} badge={t.key === "requests" ? incoming : undefined} />)}
+          {TAB_KEYS.map((it) => <Chip key={it.key} label={tx(it.label)} active={tab === it.key} onPress={() => setTab(it.key)} badge={it.key === "requests" ? incoming : undefined} />)}
         </ScrollView>
 
         {tab === "friends" ? (

@@ -80,22 +80,22 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
       <PressableScale onPress={open} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <PersonAvatar userId={f.userId} name={f.name} size={48} />
         <View style={{ flex: 1 }}>
-          <Text variant="h3" numberOfLines={1}>{f.name ?? "İsimsiz öğrenci"}</Text>
+          <Text variant="h3" numberOfLines={1}>{f.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{f.username ? `@${f.username} · ` : ""}{f.level}</Text>
         </View>
         <ChevronRightIcon color={colors.textFaint} size={20} />
       </PressableScale>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.md }}>
-        <StatPill icon={BoltIcon} label={`${formatXp(f.weeklyXp)} XP bu hafta`} tint={colors.primary} soft={colors.primarySoft} />
-        {f.currentStreak > 0 ? <StatPill icon={FlameIcon} label={`${f.currentStreak} gün`} tint={colors.streak} /> : null}
-        {f.friendStreak > 0 ? <StatPill icon={HandshakeIcon} label={`${f.friendStreak} gün birlikte`} tint={colors.success} soft={colors.successSoft} /> : null}
+        <StatPill icon={BoltIcon} label={t("social.xp_this_week", { xp: formatXp(f.weeklyXp) })} tint={colors.primary} soft={colors.primarySoft} />
+        {f.currentStreak > 0 ? <StatPill icon={FlameIcon} label={t("social.days", { n: f.currentStreak })} tint={colors.streak} /> : null}
+        {f.friendStreak > 0 ? <StatPill icon={HandshakeIcon} label={t("social.days_together", { n: f.friendStreak })} tint={colors.success} soft={colors.successSoft} /> : null}
       </View>
       <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-        <ActionTile icon={BellIcon} label={sent ? "Dürtüldü" : "Dürt"} tint={colors.streak} disabled={busy || sent} onPress={() => void act(async () => { await social.nudge(f.userId, "remind"); setSent(true); }, "Dürttün")} />
-        <ActionTile icon={TargetIcon} label={t("friendrows.gorev")} tint={colors.primary} disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId), "Görev daveti gitti")} />
-        <ActionTile icon={XIcon} label={t("friendrows.cikar")} tint={colors.danger} disabled={busy} onPress={() => Alert.alert("Arkadaşlıktan çıkar", `${f.name ?? "Bu kişi"} çıkarılsın mı? Bildirim gitmez.`, [
-          { text: "Vazgeç", style: "cancel" },
-          { text: "Çıkar", style: "destructive", onPress: () => void act(async () => { await social.remove(f.userId); onChanged(); }, "Çıkarıldı") },
+        <ActionTile icon={BellIcon} label={t(sent ? "friendrows.nudged" : "friendrows.nudge")} tint={colors.streak} disabled={busy || sent} onPress={() => void act(async () => { await social.nudge(f.userId, "remind"); setSent(true); }, t("social.nudged_you"))} />
+        <ActionTile icon={TargetIcon} label={t("friendrows.gorev")} tint={colors.primary} disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId), t("social.quest_sent"))} />
+        <ActionTile icon={XIcon} label={t("friendrows.cikar")} tint={colors.danger} disabled={busy} onPress={() => Alert.alert(t("social.unfriend"), t("friendrows.remove_confirm", { ad: f.name ?? t("social.this_person") }), [
+          { text: t("common.vazgec"), style: "cancel" },
+          { text: t("social.remove"), style: "destructive", onPress: () => void act(async () => { await social.remove(f.userId); onChanged(); }, t("social.removed")) },
         ])} />
       </View>
       {msg ? <Text variant="caption" color={ok ? colors.success : colors.danger} style={{ marginTop: spacing.sm, textAlign: "center" }}>{msg}</Text> : null}

@@ -12,7 +12,7 @@ import { EmptyCard, ErrorText, Pill, SectionTitle } from "./common";
 
 export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingView[]; outgoing: PendingView[]; onChanged: () => void }) {
   const { colors } = useTheme();
-  if (!incoming.length && !outgoing.length) return <EmptyCard icon={UserPlusIcon} tint={colors.info} title={t("requests.bekleyen_istek_yok")} text="Gelen istekler burada birikir; gönderdiklerini de buradan iptal edersin." />;
+  if (!incoming.length && !outgoing.length) return <EmptyCard icon={UserPlusIcon} tint={colors.info} title={t("requests.bekleyen_istek_yok")} text={t("requests.empty_text")} />;
   return (
     <View>
       {incoming.length ? (<><SectionTitle title={t("requests.gelen")} right={`${incoming.length}`} />{incoming.map((r) => <RequestCard key={r.friendshipId} r={r} incoming onChanged={onChanged} />)}</>) : null}
@@ -55,7 +55,7 @@ function RequestCard({ r, incoming, onChanged }: { r: PendingView; incoming: boo
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <PersonAvatar userId={r.user.userId} name={r.user.name} size={48} />
         <View style={{ flex: 1 }}>
-          <Text variant="h3" numberOfLines={1}>{r.user.name ?? "İsimsiz öğrenci"}</Text>
+          <Text variant="h3" numberOfLines={1}>{r.user.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted}>{r.user.username ? `@${r.user.username} · ` : ""}{r.user.level} · {timeAgo(r.createdAt)}</Text>
         </View>
       </View>

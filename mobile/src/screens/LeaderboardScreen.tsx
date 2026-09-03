@@ -49,15 +49,15 @@ export function LeaderboardScreen() {
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h2">{t("leaderboard.siralama")}</Text>
-          <Text variant="caption" color={colors.textMuted}>{week ? `Bu hafta · ${week.daysLeft} gün kaldı` : "Bu hafta"}</Text>
+          <Text variant="caption" color={colors.textMuted}>{week ? t("leaderboard.this_week_left", { n: week.daysLeft }) : t("leaderboard.this_week")}</Text>
         </View>
       </View>
 
       {/* Ayarlar'daki Chip dili: kenarlıklı, radius md; pill değil. */}
       <View style={{ flexDirection: "row", gap: spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        {([["all", "Herkes"], ["friends", "Arkadaşlar"]] as const).map(([k, label]) => (
+        {([["all", "leaderboard.everyone"], ["friends", "social.tab_friends"]] as const).map(([k, label]) => (
           <PressableScale key={k} onPress={() => setMode(k)} style={{ paddingHorizontal: 16, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: mode === k ? colors.primary : colors.border, backgroundColor: mode === k ? colors.primarySoft : colors.surface }}>
-            <Text variant="bodyStrong" color={mode === k ? colors.primary : colors.textMuted}>{label}</Text>
+            <Text variant="bodyStrong" color={mode === k ? colors.primary : colors.textMuted}>{t(label)}</Text>
           </PressableScale>
         ))}
       </View>
@@ -86,7 +86,7 @@ export function LeaderboardScreen() {
           const mc = medalColor(r.rank, colors);
           const initial = ((r.name ?? "?").trim()[0] ?? "?").toUpperCase();
           return (
-            <Pressable onLongPress={r.isMe ? undefined : () => setReport(r)} delayLongPress={400} accessibilityLabel={r.isMe ? undefined : `${r.name ?? "Öğrenci"}, bildirmek için basılı tut`} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 12, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
+            <Pressable onLongPress={r.isMe ? undefined : () => setReport(r)} delayLongPress={400} accessibilityLabel={r.isMe ? undefined : t("leaderboard.report_hint", { ad: r.name ?? t("social.student") })} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 12, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
               <View style={{ width: 30, alignItems: "center" }}>
                 <Text variant="h3" color={mc}>{r.rank}</Text>
               </View>
@@ -94,10 +94,10 @@ export function LeaderboardScreen() {
                 <Text variant="bodyStrong" color={r.isMe ? "#fff" : colors.textMuted}>{initial}</Text>
               </View>
               <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong" color={r.isMe ? colors.primary : colors.text}>{r.name ?? "Öğrenci"}{r.isMe ? " (sen)" : ""}</Text>
+                <Text variant="bodyStrong" color={r.isMe ? colors.primary : colors.text}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
                   <FlameIcon color={colors.streak} size={12} />
-                  <Text variant="micro" color={colors.textMuted}>{r.streak} gün seri</Text>
+                  <Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: r.streak })}</Text>
                 </View>
               </View>
               <Text variant="h3" color={r.isMe ? colors.primary : colors.text}>{String(r.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</Text>

@@ -38,7 +38,7 @@ export function FeedCard({ item }: { item: FeedItem }) {
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <PressableScale onPress={open}><PersonAvatar userId={item.user.userId} name={item.user.name} size={44} /></PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h3" numberOfLines={1}>{item.isMine ? "Sen" : item.user.name ?? "İsimsiz öğrenci"}</Text>
+          <Text variant="h3" numberOfLines={1}>{item.isMine ? t("social.you") : item.user.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted}>{timeAgo(item.createdAt)}</Text>
         </View>
         <IconTile icon={icon} tint={tint} size={40} />
@@ -89,11 +89,11 @@ export function FeedList({ onFindFriends }: { onFindFriends?: () => void }) {
   useEffect(() => { void load(null); }, [load]);
 
   if (items === null) return <View>{[0, 1, 2].map((i) => <FeedCardSkeleton key={i} />)}</View>;
-  if (!items.length) return <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.akis_henuz_bos")} text="Arkadaşlarının seri, rozet ve görev haberleri burada görünür; sen de tepki verirsin." action={onFindFriends ? "Arkadaş bul" : undefined} onAction={onFindFriends} />;
+  if (!items.length) return <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.akis_henuz_bos")} text={t("feedlist.empty_text")} action={onFindFriends ? t("feedlist.find_friends") : undefined} onAction={onFindFriends} />;
   return (
     <View>
       {items.map((it) => <FeedCard key={it.id} item={it} />)}
-      {cursor ? <Pill label={busy ? "Yükleniyor" : "Daha eski"} tone="ghost" block disabled={busy} onPress={() => void load(cursor)} /> : null}
+      {cursor ? <Pill label={t(busy ? "social.loading" : "social.older")} tone="ghost" block disabled={busy} onPress={() => void load(cursor)} /> : null}
       <ErrorText text={err} />
     </View>
   );

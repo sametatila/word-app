@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { social, formatXp, type QuestView } from "../api/social";
+import { t } from "../lib/i18n";
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
@@ -57,13 +58,13 @@ export function FriendPulse() {
       <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: invited ? colors.info : colors.primary, borderWidth: 1.5 }}>
         <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={44} ring={invited ? colors.info : colors.primary} />
         <View style={{ flex: 1 }}>
-          <Text variant="h3" numberOfLines={1}>{invited ? (q.invitedByMe ? "Görev daveti bekliyor" : `${q.partner.name?.split(" ")[0] ?? "Arkadaşın"} seni göreve çağırdı`) : `${q.partner.name?.split(" ")[0] ?? "Arkadaşın"} ile ortak görev`}</Text>
+          <Text variant="h3" numberOfLines={1}>{invited ? (q.invitedByMe ? t("friendpulse.waiting") : t("friendpulse.invited_you", { ad: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })) : t("friendpulse.shared", { ad: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })}</Text>
           {invited ? (
-            <Text variant="caption" color={colors.textMuted}>Hedef birlikte {formatXp(q.targetXp)} XP · {q.invitedByMe ? "cevap bekleniyor" : "kabul et"}</Text>
+            <Text variant="caption" color={colors.textMuted}>{t("friendpulse.target", { xp: formatXp(q.targetXp), durum: q.invitedByMe ? t("friendpulse.awaiting") : t("friendpulse.accept") })}</Text>
           ) : (
             <View style={{ marginTop: 6 }}>
               <Bar pct={q.pct} tint={colors.primary} />
-              <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{formatXp(q.totalXp)}/{formatXp(q.targetXp)} XP · {q.daysLeft} gün</Text>
+              <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{t("friendpulse.progress", { simdi: formatXp(q.totalXp), hedef: formatXp(q.targetXp), n: q.daysLeft })}</Text>
             </View>
           )}
         </View>

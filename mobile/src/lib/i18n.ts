@@ -81,6 +81,16 @@ export function deviceLang(): NativeLang {
   return DEFAULT_NATIVE;
 }
 
+/**
+ * Intl/Date için yerel kod. Tarih biçimleri eskiden sabit "tr-TR" ile üretiliyordu,
+ * yani arayüz İngilizce olsa da tarihler Türkçe basılıyordu.
+ */
+const DATE_LOCALE: Record<NativeLang, string> = { tr: "tr-TR", en: "en-US", de: "de-DE" };
+
+export function dateLocale(): string {
+  return DATE_LOCALE[lang] ?? "en-US";
+}
+
 export function currentLang(): NativeLang {
   return lang;
 }
