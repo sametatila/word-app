@@ -1,5 +1,5 @@
 import "server-only";
-import { eq, like, or } from "drizzle-orm";
+import { and, eq, like, ne, or } from "drizzle-orm";
 import { db } from "@/lib/db";
 import {
   achievements,
@@ -65,7 +65,12 @@ export async function purgeUserData(userId: string): Promise<void> {
     await tx.delete(assessments).where(eq(assessments.userId, userId));
     await tx.delete(placements).where(eq(placements.userId, userId));
     await tx.delete(exams).where(eq(exams.userId, userId));
-    await tx.delete(contentReports).where(eq(contentReports.userId, userId));
+    // İçerik bildirimleri: KAPANMIŞ olanlar silinir, AÇIK olanlar anonimleşir.
+    // Hepsini silmek, hesabını kapatan kullanıcının incelenmemiş bildirimini de
+    // yok ediyordu — oysa bildirim başkasının içeriği hakkında ve moderasyon
+    // kararı hâlâ verilecek. Anonimleşen satırda bildiren kişiye dair iz kalmaz.
+    await tx.delete(contentReports).where(and(eq(contentReports.userId, userId), ne(contentReports.status, "open")));
+    await tx.update(contentReports).set({ userId: "" }).where(eq(contentReports.userId, userId));
     // Sosyal katman
     await tx.delete(friendships).where(or(eq(friendships.requesterId, userId), eq(friendships.addresseeId, userId)));
     await tx.delete(userBlocks).where(or(eq(userBlocks.blockerId, userId), eq(userBlocks.blockedId, userId)));
