@@ -128,6 +128,13 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
+    androidResources {
+        // Uygulama yalnız tr/en/de konuşuyor; AndroidX kütüphaneleri 80'den fazla yerel
+        // taşıyor ve hepsi pakete giriyordu. Filtre yoksa localeConfig da desteklenmeyen
+        // dilleri sistem seçicisinde listeler.
+        localeFilters += ["tr", "en", "de"]
+    }
+
     packaging {
         jniLibs {
             // 16 KB sayfa boyutu (Play zorunluluğu): .so'lar sıkıştırılmadan, hizalı paketlenir.

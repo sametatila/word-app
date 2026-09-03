@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Uygulamanın desteklediği diller. Android 13+ bunu okuyup Ayarlar › Uygulamalar ›
+  Nomi › Dil altında uygulamaya özel dil seçicisi gösteriyor; kullanıcı sistem dilini
+  değiştirmeden yalnız Nomi'yi başka bir dile alabiliyor. Seçim hem Android kaynaklarını
+  (bildirim metinleri) hem de JS tarafını etkiliyor: lib/i18n.ts cihaz dilini
+  I18nManager sabitinden okuyor, o da uygulamanın yapılandırmasından geliyor.
+-->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="tr" />
+    <locale android:name="en" />
+    <locale android:name="de" />
+</locale-config>

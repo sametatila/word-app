@@ -1,0 +1,7 @@
+<resources>
+    <!-- Yürüyüş modu ön plan servisi (NomiWalkService). app_name çevrilmez: marka adı. -->
+    <string name="walk_channel_name">Walk mode</string>
+    <string name="walk_notification_title">Walk mode is on</string>
+    <string name="walk_notification_text">The microphone is listening; what you say is sent to our server to be transcribed.</string>
+    <string name="walk_stop">Stop</string>
+</resources>
