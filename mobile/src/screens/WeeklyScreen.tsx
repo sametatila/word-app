@@ -134,9 +134,9 @@ export function WeeklyScreen() {
             <Text variant="display" color={colors.primary}>%{score}</Text>
             <Text variant="micro" color={colors.textMuted}>{t("weekly.basari")}</Text>
           </ProgressRing>
-          <Text variant="h1" style={{ marginTop: spacing.xl }}>{done ? "Bu haftalık bu kadar" : "Şu an sınav yok"}</Text>
+          <Text variant="h1" style={{ marginTop: spacing.xl }}>{t(done ? "weekly.done_title" : "weekly.none_title")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
-            {done ? `${result?.total} sorudan ${result?.correct} doğru. Haftada tek hak — gelecek hafta yeniden.` : "Yeterince pekişmiş kelimen olunca haftalık sınav açılır."}
+            {done ? t("weekly.done_sub", { toplam: result?.total ?? 0, dogru: result?.correct ?? 0 }) : t("weekly.none_sub")}
           </Text>
           <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color="#fff">{t("common.bitir")}</Text></PressableScale>
         </View>

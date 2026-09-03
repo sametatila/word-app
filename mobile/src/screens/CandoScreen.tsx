@@ -13,7 +13,8 @@ import { fetchCando, type CandoData, type CandoItem } from "../game/cando";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
-const SKILL_LABEL: Record<string, string> = { reading: "Okuma", listening: "Dinleme", writing: "Yazma", speaking: "Konuşma", grammar: "Dil bilgisi", vocab: "Kelime" };
+/** Beceri -> sözlük anahtarı (Patika tür adlarıyla ortak). */
+const SKILL_KEY: Record<string, string> = { reading: "unitkind.read", listening: "unitkind.listen", writing: "unitkind.write", speaking: "unitkind.speaking", grammar: "unitkind.grammar", vocab: "unitkind.vocab" };
 
 function Row({ it, colors }: { it: CandoItem; colors: Palette }) {
   const tint = it.state === "proven" ? colors.success : it.state === "progressing" ? colors.primary : colors.textFaint;
@@ -24,7 +25,7 @@ function Row({ it, colors }: { it: CandoItem; colors: Palette }) {
       </View>
       <View style={{ flex: 1 }}>
         <Text variant="body" color={it.state === "none" ? colors.textMuted : colors.text}>{it.cando.tr}</Text>
-        <Text variant="micro" color={colors.textFaint}>{SKILL_LABEL[it.cando.skill] ?? it.cando.skill}</Text>
+        <Text variant="micro" color={colors.textFaint}>{t(SKILL_KEY[it.cando.skill] ?? "") || it.cando.skill}</Text>
       </View>
     </View>
   );

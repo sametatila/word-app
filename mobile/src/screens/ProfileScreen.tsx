@@ -48,7 +48,7 @@ export function ProfileScreen() {
   const { me, loading: meLoading } = useMe();
   const premium = usePremium();
   // Misafir modu yok: kullanıcı her zaman var. Adı yoksa e-posta adından türet.
-  const displayName = user?.name?.trim() || user?.email?.split("@")[0] || "Öğrenci";
+  const displayName = user?.name?.trim() || user?.email?.split("@")[0] || t("profile.student");
   const [confirmOut, setConfirmOut] = useState(false);
   async function reallySignOut() { setConfirmOut(false); await signOut(); nav.reset({ index: 0, routes: [{ name: "Auth" }] }); }
   // Veri gelmeden rakam gösterilmez (uydurma "1.2k" yok): yükleniyor kartı var.
@@ -74,7 +74,7 @@ export function ProfileScreen() {
             <Avatar size={76} />
           </PressableScale>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
-          <Text variant="caption" color={colors.textMuted}>{user?.email ?? "Henüz giriş yapmadın"}</Text>
+          <Text variant="caption" color={colors.textMuted}>{user?.email ?? t("profile.not_signed_in")}</Text>
           {/* Rozetler yüklenmeden de yerini tutar: sonradan belirince kimlik
               kartı uzayıp altındaki her şeyi aşağı itmesin. */}
           {meLoading ? (
@@ -85,7 +85,7 @@ export function ProfileScreen() {
           ) : me ? (
             <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
-                <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{me.streak} gün</Text>
+                <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{t("profile.days", { n: me.streak })}</Text>
               </View>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
                 <BoltIcon color={colors.primary} size={16} /><Text variant="bodyStrong" color={colors.primary}>{xpLabel} XP</Text>
@@ -163,9 +163,9 @@ export function ProfileScreen() {
       <ConfirmDialog
         visible={confirmOut}
         title={t("profile.cikis_yap")}
-        message="Hesabından çıkmak istediğine emin misin?"
-        confirmLabel="Çıkış yap"
-        cancelLabel="Vazgeç"
+        message={t("profile.signout_confirm")}
+        confirmLabel={t("profile.signout")}
+        cancelLabel={t("common.vazgec")}
         destructive
         onConfirm={reallySignOut}
         onCancel={() => setConfirmOut(false)}

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, dateLocale } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -38,10 +38,10 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
               <Text variant="bodyStrong" color={r.isMe ? "#fff" : colors.textMuted}>{initial}</Text>
             </View>
             <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong" color={r.isMe ? colors.primary : colors.text}>{r.name ?? "Öğrenci"}{r.isMe ? " (sen)" : ""}</Text>
-              <Text variant="micro" color={colors.textMuted}>{r.correct}/{r.total} doğru</Text>
+              <Text variant="bodyStrong" color={r.isMe ? colors.primary : colors.text}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
+              <Text variant="micro" color={colors.textMuted}>{t("common.n_correct", { dogru: r.correct, toplam: r.total })}</Text>
             </View>
-            <Text variant="h3" color={r.isMe ? colors.primary : colors.text}>{r.score.toLocaleString("tr-TR")}</Text>
+            <Text variant="h3" color={r.isMe ? colors.primary : colors.text}>{r.score.toLocaleString(dateLocale())}</Text>
           </View>
         );
       })}

@@ -29,10 +29,11 @@ const GOALS = [10, 20, 30, 50];
 // dilini tanıyıp seçebilsin diye (çevrilirse tam da aradığı satırı okuyamaz).
 const LANG_LABEL: Record<NativeLang, string> = { tr: "Türkçe", en: "English", de: "Deutsch" };
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
+/** Tema seçenekleri — etiket ANAHTAR tutar, çeviri render sırasında çözülür. */
 const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
-  { key: "system", label: "Sistem" },
-  { key: "light", label: "Açık" },
-  { key: "dark", label: "Koyu" },
+  { key: "system", label: "settings.theme_system" },
+  { key: "light", label: "settings.theme_light" },
+  { key: "dark", label: "settings.theme_dark" },
 ];
 // Liste kurs kayıt defterinden türüyor: yeni bir dil açıldığında burayı da
 // düzenlemek gerekmesin diye. Etiket şimdilik Türkçe; i18n gelince kullanıcının
@@ -204,7 +205,7 @@ export function SettingsScreen() {
               const active = mode === o.key;
               return (
                 <PressableScale key={o.key} onPress={() => setMode(o.key)} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? softShadow("#5a3418", 4) : {}) }}>
-                  <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{o.label}</Text>
+                  <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{t(o.label)}</Text>
                 </PressableScale>
               );
             })}
@@ -215,7 +216,7 @@ export function SettingsScreen() {
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}>
             <View style={{ flex: 1 }}>
               <Text variant="bodyStrong">{t("settings.kullanim_verisi_gonder")}</Text>
-              <Text variant="caption" color={colors.textMuted}>Hangi özelliklerin kullanıldığı; üçüncü tarafa gitmez</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("settings.analytics_sub")}</Text>
             </View>
             <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("settings.kullanim_verisi_gonder")} />
           </View>
@@ -251,13 +252,13 @@ export function SettingsScreen() {
 
         {!user && (
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl }}>
-            Ayarların hesabına kaydedilir. Kaydetmek için giriş yap.
+            {t("settings.signin_to_save")}
           </Text>
         )}
         {msg && <Text variant="bodyStrong" color={msg === "Kaydedildi" ? colors.success : colors.danger} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text>}
 
         <PressableScale onPress={save} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.xl }, softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color="#fff">{busy ? "..." : user ? "Kaydet" : "Giriş yap ve kaydet"}</Text>
+          <Text variant="h3" color="#fff">{busy ? "..." : t(user ? "common.kaydet" : "settings.signin_and_save")}</Text>
         </PressableScale>
       </ScrollView>
     </View>

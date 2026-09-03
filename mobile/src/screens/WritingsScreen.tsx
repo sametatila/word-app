@@ -13,7 +13,8 @@ import { useAuth } from "../lib/AuthContext";
 import { fetchWritings, type Writing } from "../game/writings";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
-const KIND_LABEL: Record<string, string> = { writing: "Yazma", speaking: "Konuşma" };
+/** Tür -> sözlük anahtarı. */
+const KIND_KEY: Record<string, string> = { writing: "unitkind.write", speaking: "unitkind.speaking" };
 
 function scoreTone(score: number | null, colors: Palette): string {
   if (score === null) return colors.textMuted;
@@ -32,7 +33,7 @@ function WritingCard({ w, colors, onReport }: { w: Writing; colors: Palette; onR
             <Text variant="h3" color={tone}>{score ?? "…"}</Text>
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="bodyStrong">{KIND_LABEL[w.kind] ?? w.kind} · {w.level}</Text>
+            <Text variant="bodyStrong">{t(KIND_KEY[w.kind] ?? "") || w.kind} · {w.level}</Text>
             <Text variant="caption" color={colors.textMuted} numberOfLines={open ? undefined : 2}>{w.answer}</Text>
           </View>
         </View>

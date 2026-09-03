@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, nativeLangName } from "../lib/i18n";
 import { View, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -32,7 +32,7 @@ type PQ = { round: ChoiceRound; level: PlacementAnswer["level"]; itemId: string 
 
 function realQuestions(items: PlacementVocab[]): PQ[] {
   return items.map((it, i) => ({
-    round: { wordId: i, question: withArtikel(it.artikel, it.de), answer: it.options[it.answer], options: it.options, prompt: "Türkçesi?" },
+    round: { wordId: i, question: withArtikel(it.artikel, it.de), answer: it.options[it.answer], options: it.options, prompt: t("rounds.ask_native", { anadil: nativeLangName() }) },
     level: it.level,
     itemId: it.id,
   }));
@@ -148,7 +148,7 @@ export function PlacementScreen() {
       {!done ? (
         <>
           <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>
-            Seviye testi{usingReal ? "" : " · örnek"}
+            {t("placement.title")}{usingReal ? "" : t("placement.sample")}
           </Text>
           <ChoiceGame key={idx} round={questions[idx].round} onDone={onDone} />
         </>
@@ -162,13 +162,13 @@ export function PlacementScreen() {
           <View style={[{ width: 110, height: 110, borderRadius: 55, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 14)]}>
             <Text variant="display" color="#fff" style={{ fontSize: 40 }}>{level}</Text>
           </View>
-          <Text variant="h1" style={{ marginTop: spacing.xl }}>Seviyen: {level}</Text>
+          <Text variant="h1" style={{ marginTop: spacing.xl }}>{t("placement.your_level", { seviye: level })}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
-            {total} sorudan {correct} doğru. Bu seviyeden başlayabilirsin.
+            {t("placement.result", { toplam: total, dogru: correct })}
           </Text>
           {saved && <Text variant="bodyStrong" color={colors.success} style={{ marginBottom: spacing.md }}>{t("placement.kaydedildi")}</Text>}
           <PressableScale onPress={applyLevel} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color="#fff">{user ? "Seviyemi ayarla" : "Anladım"}</Text>
+            <Text variant="h3" color="#fff">{t(user ? "placement.set_level" : "placement.understood")}</Text>
           </PressableScale>
           <PressableScale onPress={leave} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text>

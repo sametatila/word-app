@@ -6,12 +6,13 @@ export type ItemKind = "lesson" | "read" | "listen" | "write" | "grammar" | "qui
 export type ItemStatus = "done" | "current" | "locked";
 export type UnitItem = { id: string; kind: ItemKind; title: string; status: ItemStatus };
 
-export const KIND_LABEL: Record<ItemKind, string> = {
-  lesson: "Ders",
-  read: "Okuma",
-  listen: "Dinleme",
-  write: "Yazma",
-  grammar: "Dil bilgisi",
-  quiz: "Tekrar",
-  checkpoint: "Kontrol",
+/** Tür -> sözlük anahtarı; etiket kullanım anında t() ile çözülür. */
+export const KIND_KEY: Record<ItemKind, string> = {
+  lesson: "unitkind.lesson",
+  read: "unitkind.read",
+  listen: "unitkind.listen",
+  write: "unitkind.write",
+  grammar: "unitkind.grammar",
+  quiz: "unitkind.quiz",
+  checkpoint: "unitkind.checkpoint",
 };

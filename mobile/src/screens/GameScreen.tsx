@@ -212,9 +212,9 @@ export function GameScreen() {
             <Text variant="display" color={colors.primary}>{finalCorrect}/{total || 0}</Text>
             <Text variant="micro" color={colors.textMuted}>{t("game.dogru")}</Text>
           </ProgressRing>
-          <Text variant="h1" style={{ marginTop: spacing.xl }}>{total ? "Tur bitti!" : "Bugünlük bu kadar"}</Text>
+          <Text variant="h1" style={{ marginTop: spacing.xl }}>{t(total ? "common.round_done" : "game.done_no_more")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
-            {total ? "İlerlemen kaydedildi." : "Şu an tekrar edilecek kelime yok — yarın yeniden gel."}
+            {t(total ? "game.saved" : "game.nothing_to_review")}
           </Text>
           <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">{t("game.devam_et")}</Text></PressableScale>
           {total > 0 && (
@@ -239,16 +239,16 @@ export function GameScreen() {
         {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: colors.info + "22", borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><BoltIcon color={colors.info} size={15} /><Text variant="bodyStrong" color={colors.info}>{combo}</Text></View>}
         <Text variant="bodyStrong" color={colors.textMuted}>{idx + 1}/{rounds.length}</Text>
       </View>
-      {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>{gameLabel} · pratik</Text>}
+      {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>{t("game.practice_suffix", { oyun: gameLabel })}</Text>}
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />
       <AmbientPeek />
       <MascotPop trigger={pop} />
       <ConfirmDialog
         visible={back.visible}
         title={t("game.turdan_cik_2")}
-        message="Cevapladıkların kaydedilir; kalan turlara sonra devam edersin."
-        confirmLabel="Çık"
-        cancelLabel="Devam et"
+        message={t("game.exit_message")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.devam_et")}
         destructive
         onConfirm={() => { back.cancel(); nav.goBack(); }}
         onCancel={back.cancel}

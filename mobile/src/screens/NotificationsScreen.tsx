@@ -58,7 +58,7 @@ export function NotificationsScreen() {
     getWeeklyReminder().then(setWeeklyOn);
   }, []);
 
-  function fail() { setDenied(true); setMsg("Bildirim izni kapalı. Aşağıdan sistem ayarlarını açabilirsin."); }
+  function fail() { setDenied(true); setMsg(tx("notifications.permission_off")); }
 
   async function toggleDaily(on: boolean) {
     setMsg(null);
@@ -98,7 +98,7 @@ export function NotificationsScreen() {
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{tx("notifications.serini_korumak_icin_nazik_durtmeler_istedigi")}</Text>
         </View>
 
-        <ToggleRow title={tx("notifications.gunluk_hatirlatma")} subtitle={dailyOn ? `Açık · her gün ${dailyTime}` : "Her gün çalışmayı hatırlat"} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
+        <ToggleRow title={tx("notifications.gunluk_hatirlatma")} subtitle={dailyOn ? tx("notifications.daily_on", { saat: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
           {dailyOn && (
             <View style={{ marginTop: spacing.md }}>
               <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>SAAT</Text>
@@ -123,7 +123,7 @@ export function NotificationsScreen() {
 
         {/* Geliştirici aracı: üretim derlemesinde yok (Play "test" kalıntısı saymasın). */}
         {__DEV__ ? (
-          <PressableScale onPress={async () => { const ok = await showTestNotification(); if (!ok) fail(); else setMsg("Test bildirimi gönderildi."); }} style={{ marginTop: spacing.xl, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 14, alignItems: "center" }}>
+          <PressableScale onPress={async () => { const ok = await showTestNotification(); if (!ok) fail(); else setMsg(tx("notifications.test_sent")); }} style={{ marginTop: spacing.xl, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 14, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.text}>{tx("notifications.test_bildirimi_gonder")}</Text>
           </PressableScale>
         ) : null}

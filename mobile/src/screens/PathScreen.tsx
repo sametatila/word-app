@@ -11,7 +11,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
-import { KIND_LABEL } from "../data/unit";
+import { KIND_KEY } from "../data/unit";
 import { AppHeader } from "../ui/AppHeader";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -30,9 +30,9 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
           {unit.complete ? <CheckIcon color="#fff" size={26} /> : <Text variant="h1" color="#fff">{unit.index}</Text>}
         </View>
         <View style={{ flex: 1 }}>
-          <Text variant="micro" color={colors.primary}>{isCurrent ? "ŞU AN" : "ÜNİTE"} · ÜNİTE {unit.index}</Text>
+          <Text variant="micro" color={colors.primary}>{t(isCurrent ? "path.now" : "common.unit")} · {t("common.unit")} {unit.index}</Text>
           <Text variant="h2">{unit.theme}</Text>
-          <Text variant="caption" color={colors.textMuted}>{unit.complete ? "Tamamlandı" : `${unit.lessonsDone}/${unit.lessonsTotal} ders`}</Text>
+          <Text variant="caption" color={colors.textMuted}>{unit.complete ? t("common.completed") : t("path.lessons_done", { n: unit.lessonsDone, toplam: unit.lessonsTotal })}</Text>
         </View>
       </View>
       {unit.items.length > 0 && (
@@ -48,14 +48,14 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
             {NextIcon({ color: "#fff", size: 20 })}
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="micro" color={colors.textMuted}>SIRADAKİ · {(KIND_LABEL[next.kind as keyof typeof KIND_LABEL] ?? next.kind).toUpperCase()}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("path.next", { tur: t(KIND_KEY[next.kind as keyof typeof KIND_KEY] ?? "").toUpperCase() || next.kind.toUpperCase() })}</Text>
             <Text variant="bodyStrong" numberOfLines={1}>{next.title}</Text>
           </View>
         </View>
       )}
       <PressableScale style={{ marginTop: spacing.md }} onPress={onContinue}>
         <View style={[{ borderRadius: radii.lg, backgroundColor: unit.locked ? colors.surface2 : colors.primary, paddingVertical: 15, alignItems: "center" }, unit.locked ? {} : softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color={unit.locked ? colors.textFaint : colors.onPrimary}>{unit.locked ? "Önce önceki üniteyi bitir" : unit.complete ? "Tekrar et →" : "Devam et →"}</Text>
+          <Text variant="h3" color={unit.locked ? colors.textFaint : colors.onPrimary}>{t(unit.locked ? "path.finish_previous" : unit.complete ? "path.repeat" : "path.continue")}</Text>
         </View>
       </PressableScale>
     </Card>
@@ -113,7 +113,7 @@ export function PathScreen() {
         <View style={{ height: "100%", width: `${Math.max(2, pctAll)}%`, borderRadius: 5, backgroundColor: colors.success }} />
       </View>
       <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>
-        {path.level} · {path.doneUnits}/{path.totalUnits} ünite tamam{source === "local" ? " · ilerleme cihazda" : ""}
+        {t("path.units_done", { seviye: path.level, n: path.doneUnits, toplam: path.totalUnits })}{source === "local" ? t("path.progress_local") : ""}
       </Text>
 
       {featured && <Featured unit={featured} isCurrent={featured.index === path.currentIndex} colors={colors} onContinue={() => openUnit(featured)} />}
@@ -126,7 +126,7 @@ export function PathScreen() {
                 {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === path.currentIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
               </View>
               <Text variant="bodyStrong" style={{ marginTop: 8 }} numberOfLines={2}>{u.theme}</Text>
-              <Text variant="micro" color={u.complete ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? "Tamamlandı" : u.locked ? "Kilitli" : `${u.lessonsDone}/${u.lessonsTotal} ders`}</Text>
+              <Text variant="micro" color={u.complete ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.lessons_done", { n: u.lessonsDone, toplam: u.lessonsTotal })}</Text>
             </Card>
           </PressableScale>
         ))}

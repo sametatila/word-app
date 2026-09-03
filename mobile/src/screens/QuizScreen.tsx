@@ -62,7 +62,7 @@ export function QuizScreen() {
             {isCheckpoint ? <CheckIcon color="#fff" size={18} /> : <QuizIcon color="#fff" size={18} />}
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="micro" color={colors.textMuted}>{isCheckpoint ? "KONTROL NOKTASI" : "TEKRAR"} · ÜNİTE {params.unitIndex}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("quiz.header", { tur: t(isCheckpoint ? "quiz.checkpoint" : "quiz.review"), birim: t("common.unit"), n: params.unitIndex })}</Text>
             <Text variant="h3" numberOfLines={1}>{params.theme}</Text>
           </View>
         </View>
@@ -70,7 +70,7 @@ export function QuizScreen() {
 
       <ScrollView automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>
-          {isCheckpoint ? "Üniteyi bitir: bu ünitenin kelime ve kalıplarını karışık hatırla." : "Bu ünitenin kelime ve kalıplarından karışık hatırlama."}
+          {t(isCheckpoint ? "quiz.intro_checkpoint" : "quiz.intro_review")}
         </Text>
 
         {total === 0 ? (
@@ -85,8 +85,8 @@ export function QuizScreen() {
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={!!passed} />
             <Mascot mood={passed ? "celebrate" : "idle"} size={84} />
-            <Text variant="h2">{correct}/{total} doğru</Text>
-            <Text variant="caption" color={passed ? colors.success : colors.textMuted}>{passed ? `%${pct} — geçtin` : `%${pct} — biraz daha çalış`}</Text>
+            <Text variant="h2">{t("common.n_correct", { dogru: correct, toplam: total })}</Text>
+            <Text variant="caption" color={passed ? colors.success : colors.textMuted}>{t(passed ? "quiz.passed" : "quiz.try_more", { pct })}</Text>
             <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
               <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
                 <Text variant="bodyStrong" color={colors.text}>{t("quiz.tekrar_dene")}</Text>

@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, nativeLangName, targetLangName } from "../lib/i18n";
 import { View, TextInput, FlatList } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -13,11 +13,12 @@ import { api } from "../api/client";
 import { STATUS_KEY, type WordRow, type WordStatus } from "../data/words";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
+/** Filtreler — etiket ANAHTAR tutar (durum etiketleriyle aynı sözlük girdileri). */
 const FILTERS: { key: "" | WordStatus; label: string }[] = [
-  { key: "", label: "Tümü" },
-  { key: "new", label: "Yeni" },
-  { key: "learning", label: "Öğreniyor" },
-  { key: "mastered", label: "Pekişti" },
+  { key: "", label: "words.filter_all" },
+  { key: "new", label: "words.status_new" },
+  { key: "learning", label: "words.status_learning" },
+  { key: "mastered", label: "words.status_mastered" },
 ];
 
 function statusColor(s: WordStatus, colors: Palette): string {
@@ -64,7 +65,7 @@ export function WordsScreen() {
         <TextInput
           value={q}
           onChangeText={setQ}
-          placeholder="Kelime ara (Almanca / Türkçe)"
+          placeholder={t("words.search", { hedef: targetLangName(), anadil: nativeLangName() })}
           placeholderTextColor={colors.textFaint}
           autoCapitalize="none"
           style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 15 }}
@@ -74,7 +75,7 @@ export function WordsScreen() {
             const active = filter === f.key;
             return (
               <PressableScale key={f.key || "all"} onPress={() => setFilter(f.key)} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: active ? colors.primary : colors.surface2 }}>
-                <Text variant="caption" color={active ? "#fff" : colors.textMuted}>{f.label}</Text>
+                <Text variant="caption" color={active ? "#fff" : colors.textMuted}>{t(f.label)}</Text>
               </PressableScale>
             );
           })}

@@ -24,11 +24,15 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
  */
 const EXAMS = ["Goethe-Zertifikat", "telc Deutsch"];
 
+/**
+ * Sınav modülleri. `label` sınavın kendi terimi (Goethe/telc Almanca adları) —
+ * çevrilmez; `subKey` ise altındaki beceri adı, arayüz dilinde gösterilir.
+ */
 const MODULES = [
-  { key: "lesen", label: "Lesen", tr: "Okuma", icon: ReadIcon, tint: "info", skill: "reading", kind: "read", premium: false },
-  { key: "hoeren", label: "Hören", tr: "Dinleme", icon: ListenIcon, tint: "accent", skill: "listening", kind: "listen", premium: false },
-  { key: "schreiben", label: "Schreiben", tr: "Yazma", icon: WriteIcon, tint: "success", skill: "writing", kind: "write", premium: true },
-  { key: "sprechen", label: "Sprechen", tr: "Konuşma", icon: BoltIcon, tint: "primary", skill: "speaking", kind: "speak", premium: true },
+  { key: "lesen", label: "Lesen", subKey: "unitkind.read", icon: ReadIcon, tint: "info", skill: "reading", kind: "read", premium: false },
+  { key: "hoeren", label: "Hören", subKey: "unitkind.listen", icon: ListenIcon, tint: "accent", skill: "listening", kind: "listen", premium: false },
+  { key: "schreiben", label: "Schreiben", subKey: "unitkind.write", icon: WriteIcon, tint: "success", skill: "writing", kind: "write", premium: true },
+  { key: "sprechen", label: "Sprechen", subKey: "unitkind.speaking", icon: BoltIcon, tint: "primary", skill: "speaking", kind: "speak", premium: true },
 ] as const;
 
 export function ExamPrepScreen() {
@@ -121,7 +125,7 @@ export function ExamPrepScreen() {
             const tint = colors[m.tint as keyof Palette] as string;
             const n = countFor(m);
             const gated = m.premium && billingAvailable();
-            const sub = `${m.tr} · ${t("examprep.alistirma", { n })}${gated ? " · Premium" : ""}`;
+            const sub = `${t(m.subKey)} · ${t("examprep.alistirma", { n })}${gated ? " · Premium" : ""}`;
             return (
               <PressableScale key={m.key} onPress={() => openModule(m)}>
                 <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>

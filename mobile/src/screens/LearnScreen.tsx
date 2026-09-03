@@ -119,7 +119,7 @@ export function LearnScreen() {
             </View>
             <Text variant="h1" color="#fff">{t("learn.kelimelerini_calis")}</Text>
             <Text variant="body" color="#ffffffdd" style={{ marginTop: 4 }}>
-              Tekrar zamanı gelenleri pekiştir, yeni kelimeler öğren.
+              {t("learn.daily_pitch")}
             </Text>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginTop: spacing.lg, backgroundColor: "#ffffff", borderRadius: radii.pill, alignSelf: "flex-start", paddingHorizontal: 20, paddingVertical: 11 }}>
               <Text variant="bodyStrong" color={colors.primary}>{t("common.basla")}</Text>
@@ -172,7 +172,7 @@ export function LearnScreen() {
               <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 4 }}>
                 <Text variant="bodyStrong" color={colors.primary}>{level}</Text>
               </View>
-              <Text variant="bodyStrong">{mastered} kelime öğrenildi</Text>
+              <Text variant="bodyStrong">{t("learn.words_learned", { n: mastered })}</Text>
             </View>
             <Text variant="caption" color={colors.textMuted}>{formatXp(me.xp)} XP</Text>
           </View>
@@ -191,8 +191,8 @@ export function LearnScreen() {
       {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.one_cikan")}</Text>
       <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
-        <WedgeTile title={t("learn.yuruyus_modu")} pitch="Dinle ve söyle, ekrana bakmadan" tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
-        <WedgeTile title={t("learn.sinav_hazirlik")} pitch="Goethe & telc — hedefe yönelik" tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
+        <WedgeTile title={t("learn.yuruyus_modu")} pitch={t("learn.walk_pitch")} tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} />
+        <WedgeTile title={t("learn.sinav_hazirlik")} pitch={t("learn.exam_pitch")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
       </View>
 
       {/* diğer öğrenme yolları */}

@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, CheckIcon, LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, LockIcon } from "../ui/icons";
-import { KIND_LABEL, type ItemKind } from "../data/unit";
+import { KIND_KEY, type ItemKind } from "../data/unit";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const KIND_ICON: Record<ItemKind, (p: { color: string; size: number }) => React.ReactElement> = {
@@ -54,7 +54,7 @@ export function UnitScreen() {
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="micro" color={colors.textMuted}>{params.level} · ÜNİTE {params.index}</Text>
+          <Text variant="micro" color={colors.textMuted}>{t("unit.header", { seviye: params.level, birim: t("common.unit"), n: params.index })}</Text>
           <Text variant="h2">{params.theme}</Text>
         </View>
       </View>
@@ -63,7 +63,7 @@ export function UnitScreen() {
         <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginTop: spacing.sm, marginBottom: 6 }}>
           <View style={{ height: "100%", width: `${pct}%`, backgroundColor: colors.success, borderRadius: 5 }} />
         </View>
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>{done}/{items.length} adım tamam</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>{t("unit.steps_done", { n: done, toplam: items.length })}</Text>
 
         <View style={{ gap: spacing.md }}>
           {items.map((it) => {
@@ -76,7 +76,7 @@ export function UnitScreen() {
                     <Icon color="#fff" size={22} />
                   </View>
                   <View style={{ flex: 1 }}>
-                    <Text variant="micro" color={colors.textMuted}>{KIND_LABEL[it.kind] ?? it.kind}</Text>
+                    <Text variant="micro" color={colors.textMuted}>{t(KIND_KEY[it.kind] ?? "") || it.kind}</Text>
                     <Text variant="bodyStrong" numberOfLines={1}>{it.title}</Text>
                   </View>
                   {it.done ? (

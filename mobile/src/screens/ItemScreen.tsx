@@ -9,7 +9,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { XIcon, ReadIcon, ListenIcon, WriteIcon, SpeakerIcon } from "../ui/icons";
-import { KIND_LABEL, type ItemKind } from "../data/unit";
+import { KIND_KEY, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { markItemDone } from "../game/lessonProgress";
@@ -56,7 +56,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("item.dinle_ve_anla")}</Text>
       </Card>
       <PressableScale onPress={() => setReveal((v) => !v)} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
-        <Text variant="bodyStrong" color={colors.primary}>{reveal ? "Metni gizle" : "Metni göster"}</Text>
+        <Text variant="bodyStrong" color={colors.primary}>{t(reveal ? "item.hide_text" : "item.show_text")}</Text>
       </PressableScale>
       {reveal ? (
         <Card style={{ marginTop: spacing.sm }}>
@@ -135,7 +135,7 @@ export function ItemScreen() {
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
           {Icon && <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: tint, alignItems: "center", justifyContent: "center" }}>{Icon({ color: "#fff", size: 18 })}</View>}
           <View style={{ flex: 1 }}>
-            <Text variant="micro" color={colors.textMuted}>{KIND_LABEL[kind] ?? "İçerik"} · {exercise.genre}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t(KIND_KEY[kind as keyof typeof KIND_KEY] ?? "") || t("item.content")} · {exercise.genre}</Text>
             <Text variant="h3" numberOfLines={1}>{exercise.title}</Text>
           </View>
         </View>
@@ -159,8 +159,8 @@ export function ItemScreen() {
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={pct >= 70} />
             <Mascot mood={pct >= 70 ? "celebrate" : pct >= 40 ? "happy" : "idle"} size={84} />
-            <Text variant="h2">{exercise.skill === "writing" ? "Görevler bitti" : `${correct}/${total} doğru`}</Text>
-            {exercise.skill !== "writing" ? <Text variant="caption" color={colors.textMuted}>%{pct} başarı</Text> : null}
+            <Text variant="h2">{exercise.skill === "writing" ? t("item.tasks_done") : t("common.n_correct", { dogru: correct, toplam: total })}</Text>
+            {exercise.skill !== "writing" ? <Text variant="caption" color={colors.textMuted}>{t("item.score_pct", { pct })}</Text> : null}
             <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
               <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
                 <Text variant="bodyStrong" color={colors.text}>{t("item.tekrar_dene")}</Text>

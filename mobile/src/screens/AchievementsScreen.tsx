@@ -78,7 +78,7 @@ export function AchievementsScreen() {
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h2">{t("achievements.basarimlar")}</Text>
-          {phase === "ready" ? <Text variant="caption" color={colors.textMuted}>{earned}/{list.length} kazanıldı</Text> : null}
+          {phase === "ready" ? <Text variant="caption" color={colors.textMuted}>{t("achievements.earned_count", { n: earned, toplam: list.length })}</Text> : null}
         </View>
       </View>
 
