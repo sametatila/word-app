@@ -1,14 +1,49 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LogoMark } from "@/components/icons";
-import { LEGAL_EFFECTIVE_DATE, LEGAL_ENTITY, LEGAL_PATHS, LEGAL_VERSION, isLegalPlaceholder, type LegalField } from "@/lib/legal";
+import { LEGAL_EFFECTIVE_DATE, LEGAL_ENTITY, LEGAL_LOCALES, LEGAL_VERSION, isLegalPlaceholder, legalPath, type LegalField, type LegalLocale } from "@/lib/legal";
+
+/** Çerçevenin kendi metinleri — belge gövdesi değil, kabuk (gezinme, etiketler). */
+const CHROME: Record<LegalLocale, {
+  privacy: string; terms: string; deleteAccount: string;
+  effective: string; version: string; inBrief: string;
+  languageLabel: string; names: Record<LegalLocale, string>;
+  binding: string;
+}> = {
+  tr: {
+    privacy: "Gizlilik politikası", terms: "Kullanım şartları", deleteAccount: "Hesabını sil",
+    effective: "Yürürlük", version: "Sürüm", inBrief: "Kısaca",
+    languageLabel: "Dil", names: { tr: "Türkçe", en: "English", de: "Deutsch" },
+    binding: "",
+  },
+  en: {
+    privacy: "Privacy policy", terms: "Terms of use", deleteAccount: "Delete your account",
+    effective: "Effective", version: "Version", inBrief: "In brief",
+    languageLabel: "Language", names: { tr: "Türkçe", en: "English", de: "Deutsch" },
+    binding: "This is an informational translation. The binding text is the Turkish version.",
+  },
+  de: {
+    privacy: "Datenschutzerklärung", terms: "Nutzungsbedingungen", deleteAccount: "Konto löschen",
+    effective: "Gültig ab", version: "Version", inBrief: "Kurz gefasst",
+    languageLabel: "Sprache", names: { tr: "Türkçe", en: "English", de: "Deutsch" },
+    binding: "Dies ist eine informative Übersetzung. Verbindlich ist die türkische Fassung.",
+  },
+};
 
 /**
  * Hukuki sayfaların ortak çerçevesi (/privacy, /terms): okunur satır genişliği,
  * yürürlük tarihi, sayfalar arası geçiş. Uygulama kabuğu yok — bu sayfalar
  * oturumsuz da açılır (Play Console bağlantısı, mağaza listesi).
+ *
+ * `doc` ve `locale`, dil değiştiricinin AYNI belgenin öteki dilini göstermesi
+ * için gerekiyor; gezinme bağlantıları da okunan dilde kalıyor, yoksa İngilizce
+ * şartlardan Türkçe gizlilik politikasına düşülüyordu.
  */
-export function LegalShell({ title, summary, children }: { title: string; summary: string; children: ReactNode }) {
+export function LegalShell({ title, summary, children, doc, locale = "tr" }: {
+  title: string; summary: string; children: ReactNode;
+  doc: "privacy" | "terms"; locale?: LegalLocale;
+}) {
+  const c = CHROME[locale];
   return (
     <div className="mx-auto w-full max-w-2xl px-5 py-10">
       <Link href="/" className="mb-8 flex items-center gap-2">
@@ -16,16 +51,25 @@ export function LegalShell({ title, summary, children }: { title: string; summar
         <span className="text-base font-bold">Nomi</span>
       </Link>
       <nav className="muted mb-6 flex flex-wrap gap-x-4 gap-y-1 text-sm">
-        <Link href={LEGAL_PATHS.privacy} className="underline-offset-4 hover:underline">Gizlilik politikası</Link>
-        <Link href={LEGAL_PATHS.terms} className="underline-offset-4 hover:underline">Kullanım şartları</Link>
-        <Link href={LEGAL_PATHS.deleteAccount} className="underline-offset-4 hover:underline">Hesabını sil</Link>
+        <Link href={legalPath("privacy", locale)} className="underline-offset-4 hover:underline">{c.privacy}</Link>
+        <Link href={legalPath("terms", locale)} className="underline-offset-4 hover:underline">{c.terms}</Link>
+        <Link href={legalPath("deleteAccount", locale)} className="underline-offset-4 hover:underline">{c.deleteAccount}</Link>
       </nav>
       <h1 className="text-3xl font-extrabold tracking-tight">{title}</h1>
       <p className="muted mt-2 text-sm">
-        Yürürlük: {LEGAL_EFFECTIVE_DATE} · Sürüm {LEGAL_VERSION}
+        {c.effective}: {LEGAL_EFFECTIVE_DATE} · {c.version} {LEGAL_VERSION}
       </p>
+      <p className="muted mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+        <span>{c.languageLabel}:</span>
+        {LEGAL_LOCALES.map((l) => (
+          l === locale
+            ? <span key={l} className="font-semibold text-[var(--text)]">{c.names[l]}</span>
+            : <Link key={l} href={legalPath(doc, l)} hrefLang={l} className="underline-offset-4 hover:underline">{c.names[l]}</Link>
+        ))}
+      </p>
+      {c.binding ? <p className="muted mt-2 text-xs">{c.binding}</p> : null}
       <div className="card mt-6 p-5">
-        <p className="text-sm font-semibold">Kısaca</p>
+        <p className="text-sm font-semibold">{c.inBrief}</p>
         <p className="muted mt-1 text-sm leading-relaxed">{summary}</p>
       </div>
       <article className="legal mt-8">{children}</article>
@@ -60,20 +104,40 @@ export function Ph({ k }: { k: LegalField }) {
   return isLegalPlaceholder(v) ? <span className="ph">{v}</span> : <>{v}</>;
 }
 
+/** Kimlik bloğunun etiketleri — değerler dile bağlı değil, etiketler bağlı. */
+const ENTITY_LABELS: Record<LegalLocale, Record<"name" | "address" | "registry" | "privacy" | "support" | "kep" | "eu" | "uk", string>> = {
+  tr: {
+    name: "Ünvan", address: "Adres", registry: "Sicil / MERSİS",
+    privacy: "Gizlilik ve veri talepleri", support: "Destek", kep: "KEP",
+    eu: "AB temsilcisi (GDPR m.27)", uk: "Birleşik Krallık temsilcisi (UK GDPR m.27)",
+  },
+  en: {
+    name: "Legal name", address: "Address", registry: "Registry / MERSIS no",
+    privacy: "Privacy and data requests", support: "Support", kep: "Registered e-mail (KEP)",
+    eu: "EU representative (GDPR Art. 27)", uk: "UK representative (UK GDPR Art. 27)",
+  },
+  de: {
+    name: "Firmenname", address: "Adresse", registry: "Register / MERSIS-Nr.",
+    privacy: "Datenschutz- und Datenanfragen", support: "Support", kep: "Registrierte E-Mail (KEP)",
+    eu: "EU-Vertreter (Art. 27 DSGVO)", uk: "UK-Vertreter (Art. 27 UK GDPR)",
+  },
+};
+
 /** Veri sorumlusu / hizmet sağlayıcı kimlik bloğu (KVKK aydınlatma zorunlu unsuru). */
-export function EntityBlock({ withRepresentatives = false }: { withRepresentatives?: boolean }) {
+export function EntityBlock({ withRepresentatives = false, locale = "tr" }: { withRepresentatives?: boolean; locale?: LegalLocale }) {
+  const l = ENTITY_LABELS[locale];
   return (
     <dl className="entity">
-      <dt>Ünvan</dt><dd><Ph k="name" /></dd>
-      <dt>Adres</dt><dd><Ph k="address" /></dd>
-      <dt>Sicil / MERSİS</dt><dd><Ph k="registry" /></dd>
-      <dt>Gizlilik ve veri talepleri</dt><dd><Ph k="privacyEmail" /></dd>
-      <dt>Destek</dt><dd><Ph k="supportEmail" /></dd>
-      <dt>KEP</dt><dd><Ph k="kep" /></dd>
+      <dt>{l.name}</dt><dd><Ph k="name" /></dd>
+      <dt>{l.address}</dt><dd><Ph k="address" /></dd>
+      <dt>{l.registry}</dt><dd><Ph k="registry" /></dd>
+      <dt>{l.privacy}</dt><dd><Ph k="privacyEmail" /></dd>
+      <dt>{l.support}</dt><dd><Ph k="supportEmail" /></dd>
+      <dt>{l.kep}</dt><dd><Ph k="kep" /></dd>
       {withRepresentatives ? (
         <>
-          <dt>AB temsilcisi (GDPR m.27)</dt><dd><Ph k="euRepresentative" /></dd>
-          <dt>Birleşik Krallık temsilcisi (UK GDPR m.27)</dt><dd><Ph k="ukRepresentative" /></dd>
+          <dt>{l.eu}</dt><dd><Ph k="euRepresentative" /></dd>
+          <dt>{l.uk}</dt><dd><Ph k="ukRepresentative" /></dd>
         </>
       ) : null}
     </dl>

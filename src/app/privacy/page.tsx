@@ -16,6 +16,7 @@ export const metadata = {
 export default function PrivacyPage() {
   return (
     <LegalShell
+      doc="privacy"
       title="Gizlilik Politikası ve Aydınlatma Metni"
       summary="Nomi bir dil öğrenme uygulamasıdır (Almanca, Zürih Almancası ve İngilizce) ve Türkiye'de yerleşik bir geliştirici tarafından sunulur. Hesabını yürütmek için e-posta ve adını, öğrenmeni takip etmek için ilerleme verini işleriz. Yürüyüş modunda mikrofon sesin, açık rızanla, konuşmanı yazıya çevirmek için sunucumuza ve konuşma tanıma sağlayıcılarına gönderilir; ses kaydı saklanmaz. Reklam, reklam kimliği ve üçüncü taraf takip yoktur. Hesabını dilediğin an uygulamadan ya da web'den silebilirsin. Avrupa'daki kullanıcılar için GDPR, Türkiye'dekiler için KVKK hakları geçerlidir."
     >

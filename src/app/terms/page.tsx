@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { EntityBlock, LegalShell, Ph } from "@/components/legal-shell";
-import { FAIR_USE, LEGAL_PATHS } from "@/lib/legal";
+import { FAIR_USE, LEGAL_PATHS, legalPath } from "@/lib/legal";
 
 export const metadata = {
   title: "Kullanım Şartları",
   description: "Nomi'yi kullanmanın kuralları: hesap, kabul edilebilir kullanım, kullanıcı içeriği, yapay zekâ, abonelik, tüketici hakları.",
+  alternates: {
+    canonical: LEGAL_PATHS.terms,
+    languages: { tr: legalPath("terms"), en: legalPath("terms", "en"), de: legalPath("terms", "de") },
+  },
 };
 
 /**
@@ -17,6 +21,7 @@ export const metadata = {
 export default function TermsPage() {
   return (
     <LegalShell
+      doc="terms"
       title="Kullanım Şartları"
       summary="Nomi'yi kullanarak bu sözleşmeyi kabul edersin. Hizmet Türkiye'de yerleşik bir geliştirici tarafından sunulur ve Türk hukukuna tabidir; bulunduğun ülkenin zorunlu tüketici hakları saklıdır. Hesabın sana aittir ve başkalarına saygılı kullanılır; yazdıkların senin kalır. Yapay zekâ yanıtları hata yapabilir. Premium abonelik Google Play üzerinden alınır ve oradan iptal edilir."
     >

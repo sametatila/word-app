@@ -60,6 +60,30 @@ export const LEGAL_PATHS = {
   deleteAccount: "/account/delete",
 } as const;
 
+export type LegalDoc = keyof typeof LEGAL_PATHS;
+
+/**
+ * Hukuki metinlerin dilleri. Türkçe BAĞLAYICI metindir (şartlar §12b); en ve de
+ * bilgi amaçlı çeviridir. Uygulamanın arayüzü üç dilde olduğu için mobil,
+ * kullanıcının diline göre bağlantı veriyor — Türkçe olmayan bir arayüzden
+ * yalnız Türkçe bir gizlilik politikasına düşmek Play için de kabul edilebilir
+ * bir sunum değil.
+ */
+export const LEGAL_LOCALES = ["tr", "en", "de"] as const;
+export type LegalLocale = (typeof LEGAL_LOCALES)[number];
+export const LEGAL_DEFAULT_LOCALE: LegalLocale = "tr";
+
+export function isLegalLocale(value: string): value is LegalLocale {
+  return (LEGAL_LOCALES as readonly string[]).includes(value);
+}
+
+/** Türkçe kanonik yolda kalır (/terms); çeviriler alt yolda (/terms/en). */
+export function legalPath(doc: LegalDoc, locale: LegalLocale = LEGAL_DEFAULT_LOCALE): string {
+  const base = LEGAL_PATHS[doc];
+  if (locale === LEGAL_DEFAULT_LOCALE) return base;
+  return doc === "deleteAccount" ? base : `${base}/${locale}`;
+}
+
 export type Processor = {
   name: string;
   purpose: string;
