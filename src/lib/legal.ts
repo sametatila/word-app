@@ -1,16 +1,56 @@
 /**
- * Hukuki metinlerin tek kaynağı: kimlik, iletişim, yürürlük tarihi ve veri işleyen
+ * Hukuki metinlerin tek kaynağı: kimlik yer tutucuları, yürürlük tarihi ve veri işleyen
  * üçüncü taraflar. Gizlilik politikası (/privacy), kullanım şartları (/terms) ve Play
  * Veri Güvenliği beyanı (docs/play/data-safety.md) bu listeyle tutarlı olmalı — yeni
  * bir sağlayıcı eklenince önce burası güncellenir.
+ *
+ * Kimlik alanları [[...]] biçiminde YER TUTUCU: geliştirici/yayıncı Türkiye'de yerleşik,
+ * ünvan-adres-e-posta kesinleşince yalnız bu nesne doldurulur; sayfalar yer tutucuyu
+ * görünür bir etiketle basar ki yayından önce gözden kaçmasın (bkz. legal-shell Ph).
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-03";
-export const LEGAL_VERSION = "1.0";
+export const LEGAL_VERSION = "1.1";
 
-/** Veri sorumlusu. Şirketleşince ünvan ve adres buraya. */
-export const LEGAL_CONTROLLER = "Nomi — Samet Atila (bireysel geliştirici)";
-/** Gizlilik ve hesap talepleri için posta kutusu; gerçek bir kutu olmalı. */
-export const LEGAL_CONTACT_EMAIL = "destek@exfe.me";
+export const LEGAL_ENTITY = {
+  /** Veri sorumlusu ve hizmet sağlayıcı ünvanı (şirket ünvanı ya da ad soyad). */
+  name: "[[GELİŞTİRİCİ_ÜNVANI]]",
+  /** Tam posta adresi. */
+  address: "[[ADRES]]",
+  /** Ticaret sicil / MERSİS numarası (şahıs işletmesiyse vergi dairesi ve numarası). */
+  registry: "[[TİCARET_SİCİL_VEYA_MERSİS_NO]]",
+  /** Gizlilik ve veri hakları talepleri için e-posta. */
+  privacyEmail: "[[GİZLİLİK_E_POSTASI]]",
+  /** Genel destek e-postası. */
+  supportEmail: "[[DESTEK_E_POSTASI]]",
+  /** Kayıtlı elektronik posta (KEP) adresi — Türkiye'de resmi tebligat. */
+  kep: "[[KEP_ADRESİ]]",
+  /** GDPR m.27 AB temsilcisi (ad ve adres); atanmadıysa metin bunu söyler. */
+  euRepresentative: "[[AB_TEMSİLCİSİ_AD_VE_ADRES]]",
+  /** UK GDPR m.27 Birleşik Krallık temsilcisi; atanmadıysa metin bunu söyler. */
+  ukRepresentative: "[[BK_TEMSİLCİSİ_AD_VE_ADRES]]",
+  /** Uyuşmazlıklarda yetkili mahkeme ve icra dairelerinin bulunduğu şehir. */
+  court: "[[YETKİLİ_MAHKEME_ŞEHRİ]]",
+  /** VERBİS kayıt numarası (yükümlülük kapsamındaysa; değilse "kapsam dışı" yazılır). */
+  verbis: "[[VERBİS_KAYIT_NO_VEYA_KAPSAM_DIŞI]]",
+  /** Sunucu yedeklerinin en uzun saklama süresi (gün) — silinen hesabın yedekten düşme süresi. */
+  backupRetentionDays: "[[YEDEK_SAKLAMA_SÜRESİ_GÜN]]",
+} as const;
+
+/** Adil kullanım sınırları — koddaki gerçek kotalar (route dosyalarındaki sabitler). */
+export const FAIR_USE = {
+  roleplayTurnsPerDay: 300,
+  sttRequestsPerDay: 400,
+  pronounceRequestsPerDay: 120,
+  reportsPerDay: 20,
+} as const;
+
+export type LegalField = keyof typeof LEGAL_ENTITY;
+
+/** Yer tutucu mu (henüz doldurulmamış)? */
+export function isLegalPlaceholder(value: string): boolean {
+  return /^\[\[.+\]\]$/.test(value.trim());
+}
+
 /** Sunucuların bulunduğu yer (Netcup VPS). */
 export const LEGAL_HOSTING = "Netcup GmbH, Almanya (AB)";
 
@@ -25,23 +65,28 @@ export type Processor = {
   purpose: string;
   data: string;
   region: string;
+  /** Aktarım güvencesi (KVKK m.9 / GDPR Bölüm V). */
+  safeguard: string;
   /** Yalnız belirli özellikte devreye giren sağlayıcı. */
   when?: string;
 };
 
-/** Verinin ulaştığı hizmet sağlayıcılar (KVKK "aktarım", Play "paylaşım"). */
+const SCC = "Standart sözleşme hükümleri + veri işleme sözleşmesi";
+const EU = "AB içi (yeterlilik)";
+
+/** Verinin ulaştığı hizmet sağlayıcılar (KVKK "aktarım", GDPR "işleyici", Play "paylaşım"). */
 export const PROCESSORS: Processor[] = [
-  { name: "Microsoft Azure Speech", purpose: "Konuşma tanıma ve seslendirme", data: "Ses kaydı (geçici), seslendirilecek metin", region: "AB", when: "Yürüyüş modu (ekran kapalı / cepte) ve seslendirme" },
-  { name: "Groq", purpose: "Konuşma tanıma (Whisper) ve dil modeli", data: "Ses kaydı (geçici), konuşma ve değerlendirme metinleri", region: "ABD" },
-  { name: "Cloudflare Workers AI", purpose: "Konuşma tanıma (Whisper)", data: "Ses kaydı (geçici)", region: "Küresel ağ" },
-  { name: "Speechmatics", purpose: "Konuşma tanıma", data: "Ses kaydı (geçici)", region: "Birleşik Krallık" },
-  { name: "Deepgram", purpose: "Konuşma tanıma", data: "Ses kaydı (geçici)", region: "ABD" },
-  { name: "Mistral AI", purpose: "Konuşma tanıma ve dil modeli", data: "Ses kaydı (geçici), konuşma ve değerlendirme metinleri", region: "AB" },
-  { name: "Cerebras", purpose: "Dil modeli", data: "Konuşma ve değerlendirme metinleri", region: "ABD" },
-  { name: "Google Gemini", purpose: "Dil modeli", data: "Konuşma ve değerlendirme metinleri", region: "ABD" },
-  { name: "OpenRouter", purpose: "Dil modeli yönlendirme", data: "Konuşma ve değerlendirme metinleri", region: "ABD" },
-  { name: "Google (Sign-In)", purpose: "Google ile giriş", data: "Google hesabı kimliği, ad, e-posta", region: "ABD", when: "Google ile giriş seçilirse" },
-  { name: "Google Play", purpose: "Uygulama dağıtımı ve abonelik ödemeleri", data: "Satın alma bilgisi", region: "ABD", when: "Android uygulaması ve abonelik" },
-  { name: "RevenueCat", purpose: "Abonelik durumu yönetimi", data: "Kullanıcı kimliği, satın alma bilgisi", region: "ABD", when: "Premium abonelik açılınca" },
-  { name: "E-posta sağlayıcısı (SMTP)", purpose: "Doğrulama ve parola sıfırlama e-postaları", data: "E-posta adresi", region: "AB" },
+  { name: "Microsoft Azure Speech", purpose: "Konuşma tanıma ve seslendirme", data: "Ses kaydı (geçici), seslendirilecek metin", region: "AB", safeguard: EU, when: "Yürüyüş modu (ekran kapalı / cepte) ve seslendirme" },
+  { name: "Groq", purpose: "Konuşma tanıma (Whisper) ve dil modeli", data: "Ses kaydı (geçici), konuşma ve değerlendirme metinleri", region: "ABD", safeguard: SCC },
+  { name: "Cloudflare Workers AI", purpose: "Konuşma tanıma (Whisper)", data: "Ses kaydı (geçici)", region: "Küresel ağ", safeguard: SCC },
+  { name: "Speechmatics", purpose: "Konuşma tanıma", data: "Ses kaydı (geçici)", region: "Birleşik Krallık", safeguard: "Yeterlilik kararı + veri işleme sözleşmesi" },
+  { name: "Deepgram", purpose: "Konuşma tanıma", data: "Ses kaydı (geçici)", region: "ABD", safeguard: SCC },
+  { name: "Mistral AI", purpose: "Konuşma tanıma ve dil modeli", data: "Ses kaydı (geçici), konuşma ve değerlendirme metinleri", region: "AB", safeguard: EU },
+  { name: "Cerebras", purpose: "Dil modeli", data: "Konuşma ve değerlendirme metinleri", region: "ABD", safeguard: SCC },
+  { name: "Google Gemini", purpose: "Dil modeli", data: "Konuşma ve değerlendirme metinleri", region: "ABD", safeguard: SCC },
+  { name: "OpenRouter", purpose: "Dil modeli yönlendirme", data: "Konuşma ve değerlendirme metinleri", region: "ABD", safeguard: SCC },
+  { name: "Google (Sign-In)", purpose: "Google ile giriş", data: "Google hesabı kimliği, ad, e-posta", region: "ABD", safeguard: SCC, when: "Google ile giriş seçilirse" },
+  { name: "Google Play", purpose: "Uygulama dağıtımı ve abonelik ödemeleri", data: "Satın alma bilgisi", region: "ABD", safeguard: SCC, when: "Android uygulaması ve abonelik" },
+  { name: "RevenueCat", purpose: "Abonelik durumu yönetimi", data: "Kullanıcı kimliği, satın alma bilgisi", region: "ABD", safeguard: SCC, when: "Premium abonelik açılınca" },
+  { name: "E-posta sağlayıcısı (SMTP)", purpose: "Doğrulama ve parola sıfırlama e-postaları", data: "E-posta adresi", region: "AB", safeguard: EU },
 ];

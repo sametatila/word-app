@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LogoMark } from "@/components/icons";
-import { LEGAL_EFFECTIVE_DATE, LEGAL_PATHS, LEGAL_VERSION } from "@/lib/legal";
+import { LEGAL_EFFECTIVE_DATE, LEGAL_ENTITY, LEGAL_PATHS, LEGAL_VERSION, isLegalPlaceholder, type LegalField } from "@/lib/legal";
 
 /**
  * Hukuki sayfaların ortak çerçevesi (/privacy, /terms): okunur satır genişliği,
@@ -42,7 +42,40 @@ export function LegalShell({ title, summary, children }: { title: string; summar
         .legal .tablewrap { overflow-x: auto; }
         .legal a { text-decoration: underline; text-underline-offset: 4px; }
         .legal code { font-size: 0.85em; background: var(--surface-2); padding: 0.05em 0.35em; border-radius: 0.35rem; }
+        .legal .ph { font-family: ui-monospace, monospace; font-size: 0.85em; padding: 0.05em 0.4em; border-radius: 0.35rem; background: color-mix(in srgb, var(--color-flame-400) 22%, transparent); color: var(--text); white-space: nowrap; }
+        .legal .entity { margin: 0.75rem 0 1rem; }
+        .legal .entity dt { font-weight: 700; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.5rem; }
+        .legal .entity dd { margin: 0.1rem 0 0; font-size: 0.95rem; }
       `}</style>
     </div>
+  );
+}
+
+/**
+ * Kimlik alanı: dolduruldu ise düz metin, henüz [[YER_TUTUCU]] ise vurgulu etiket.
+ * Yayın öncesi gözden kaçmasın diye; doldurulunca vurgu kendiliğinden kalkar.
+ */
+export function Ph({ k }: { k: LegalField }) {
+  const v = LEGAL_ENTITY[k];
+  return isLegalPlaceholder(v) ? <span className="ph">{v}</span> : <>{v}</>;
+}
+
+/** Veri sorumlusu / hizmet sağlayıcı kimlik bloğu (KVKK aydınlatma zorunlu unsuru). */
+export function EntityBlock({ withRepresentatives = false }: { withRepresentatives?: boolean }) {
+  return (
+    <dl className="entity">
+      <dt>Ünvan</dt><dd><Ph k="name" /></dd>
+      <dt>Adres</dt><dd><Ph k="address" /></dd>
+      <dt>Sicil / MERSİS</dt><dd><Ph k="registry" /></dd>
+      <dt>Gizlilik ve veri talepleri</dt><dd><Ph k="privacyEmail" /></dd>
+      <dt>Destek</dt><dd><Ph k="supportEmail" /></dd>
+      <dt>KEP</dt><dd><Ph k="kep" /></dd>
+      {withRepresentatives ? (
+        <>
+          <dt>AB temsilcisi (GDPR m.27)</dt><dd><Ph k="euRepresentative" /></dd>
+          <dt>Birleşik Krallık temsilcisi (UK GDPR m.27)</dt><dd><Ph k="ukRepresentative" /></dd>
+        </>
+      ) : null}
+    </dl>
   );
 }

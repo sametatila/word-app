@@ -5,7 +5,7 @@ politikası `/privacy`. Yeni bir sağlayıcı ya da veri türü eklenince önce 
 sonra Console'daki form. "Paylaşım" Play tanımıyla: verinin üçüncü tarafa aktarılması —
 sunucumuz üzerinden konuşma tanıma ve dil modeli sağlayıcılarına giden veri de paylaşımdır.
 
-Son güncelleme: 2026-09-03.
+Son güncelleme: 2026-09-03. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'teki yer tutucular doldurulunca kesinleşir; Console'a girilecek e-posta da o dosyadaki gizlilik adresidir.
 
 ## Genel sorular
 
@@ -31,7 +31,8 @@ Sütunlar Console'daki sırayla: toplanıyor / paylaşılıyor / geçici işleme
 | Ses › Ses kayıtları | Evet | Evet (Microsoft Azure, Groq, Cloudflare, Speechmatics, Deepgram, Mistral) | Evet (saklanmaz) | İsteğe bağlı (yürüyüş modu, açık rıza) | Uygulama işlevi (konuşma tanıma) |
 | Mesajlar › Diğer uygulama içi mesajlar (yazılan ve söylenen metinler: yazma görevleri, konuşma pratiği, sınav cevapları) | Evet | Evet (Groq, Mistral, Cerebras, Google Gemini, OpenRouter) | Hayır | İsteğe bağlı | Uygulama işlevi (değerlendirme ve geri bildirim) |
 | Uygulama etkinliği › Uygulama içi etkileşimler (ilerleme, seri, XP, ekran görüntüleme olayları) | Evet | Hayır | Hayır | Zorunlu (ilerleme) / isteğe bağlı (olaylar, kapatılabilir) | Uygulama işlevi, analitik, kişiselleştirme |
-| Uygulama etkinliği › Diğer kullanıcı içeriği (görünen ad, içerik bildirimleri) | Evet | Hayır | Hayır | Zorunlu (ad) | Uygulama işlevi, kişiselleştirme (sıralama), güvenlik (moderasyon) |
+| Uygulama etkinliği › Diğer kullanıcı içeriği (görünen ad, kullanıcı adı, biyografi, içerik ve kullanıcı bildirimleri) | Evet | Hayır | Hayır | Zorunlu (ad) / isteğe bağlı (biyografi) | Uygulama işlevi, kişiselleştirme (sıralama, sosyal profil), güvenlik (moderasyon) |
+| Uygulama etkinliği › Diğer eylemler (arkadaşlık istekleri, tepkiler, dürtmeler, ortak görevler, engellemeler) | Evet | Hayır | Hayır | İsteğe bağlı | Uygulama işlevi (sosyal özellikler) |
 | Uygulama bilgisi ve performans › Diğer (ekran genişliği, platform etiketi) | Evet | Hayır | Hayır | İsteğe bağlı (kapatılabilir) | Analitik |
 | Finansal bilgi › Satın alma geçmişi | Evet (premium açılınca) | Evet (RevenueCat, Google Play) | Hayır | İsteğe bağlı | Uygulama işlevi (abonelik) |
 | Konum, kişiler, takvim, fotoğraf/video, sağlık, cihaz veya diğer kimlikler, çökme günlükleri, tanılama | Hayır | Hayır | — | — | Toplanmıyor |
