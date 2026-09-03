@@ -7,6 +7,7 @@ import { sendToUser } from "@/lib/push";
 import { weeklySummary } from "@/lib/growth";
 import { track } from "@/lib/events";
 import { shiftDay } from "@/lib/session";
+import { purgeExpiredRoleplayLogs } from "@/lib/lessons/log";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -41,8 +42,12 @@ export async function GET(req: Request) {
         console.error("[cron/summary]", r.userId, err);
       }
     }
-    console.log(`[cron/summary] hedef ${rows.length} · gönderilen ${sent}`);
-    return NextResponse.json({ targets: rows.length, sent });
+    // Saklama süresi dolan konuşma kayıtları (gizlilik politikası: 30 gün).
+    // Özet turuna asılı çünkü zaten günlük çalışıyor; ayrı bir zamanlayıcı
+    // kurmak yerine tek yerden yürütülüyor. Hatası özeti düşürmez.
+    const purged = await purgeExpiredRoleplayLogs();
+    console.log(`[cron/summary] hedef ${rows.length} · gönderilen ${sent} · silinen kayıt ${purged}`);
+    return NextResponse.json({ targets: rows.length, sent, purged });
   } catch (err) {
     console.error("[cron/summary]", err);
     return NextResponse.json({ error: "failed" }, { status: 500 });

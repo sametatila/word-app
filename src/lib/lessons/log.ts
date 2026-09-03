@@ -52,10 +52,23 @@ export async function logRoleplayTurn(
       limits: meta?.limits ?? null,
       expiresAt: sql`now() + (${RETENTION_DAYS} || ' days')::interval` as never,
     });
-    // Temizlik yazmaya bağlı: ayrı bir zamanlanmış iş kurmadan da kayıt
-    // penceresi kendini sınırlıyor.
-    await db.delete(roleplayLogs).where(lt(roleplayLogs.expiresAt, new Date()));
   } catch (err) {
     console.error("[roleplay-log] yazılamadı", err);
+  }
+}
+
+/**
+ * Süresi geçmiş kayıtları siler. Eskiden bu, her YAZMAYA bağlıydı; gizlilik
+ * politikası "30 gün sonra kendiliğinden silinir" diyor ama rol yapma trafiği
+ * durursa süresi geçmiş satırlar süresiz kalıyordu. Artık günlük cron çağırıyor
+ * (api/cron/summary), yani söz trafikten bağımsız tutuluyor.
+ */
+export async function purgeExpiredRoleplayLogs(): Promise<number> {
+  try {
+    const gone = await db.delete(roleplayLogs).where(lt(roleplayLogs.expiresAt, new Date()));
+    return (gone as unknown as { rowCount?: number }).rowCount ?? 0;
+  } catch (err) {
+    console.error("[roleplay-log] temizlik başarısız", err);
+    return 0;
   }
 }
