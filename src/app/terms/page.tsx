@@ -39,7 +39,7 @@ export default function TermsPage() {
 
       <h2>3. Hesap ve yaş</h2>
       <ul>
-        <li>Hesap açmak için 16 yaşını doldurmuş olman gerekir; 18 yaşından küçüksen ücretli abonelik için yasal temsilcinin onayı gerekir.</li>
+        <li>Nomi yetişkinlere yöneliktir: hesap açmak için 18 yaşını doldurmuş olman gerekir. 18 yaşından küçük olduğunu öğrendiğimiz hesapları kapatır ve verilerini sileriz.</li>
         <li>Hesap bilgilerin doğru olmalı; parolanı kimseyle paylaşma. Hesabınla yapılan işlemlerden sen sorumlusun; yetkisiz kullanımı fark edince bize bildir.</li>
         <li>Hesabını dilediğin an silebilirsin: uygulamada Profil › Ayarlar › Hesap ya da web&apos;de <Link href={LEGAL_PATHS.deleteAccount}>hesap silme sayfası</Link>. Silme geri alınamaz.</li>
       </ul>

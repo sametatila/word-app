@@ -8,7 +8,7 @@ rakip adı, uygulamada olmayan özellik ve abartılı iddia yok (Play "metadata"
 
 | Soru | Cevap | Gerekçe |
 |---|---|---|
-| Hedef yaş grupları | **18 ve üzeri** (gerekirse 16–17 de işaretlenebilir) | Kullanım şartları 16+; içerik CEFR A1–C1, Goethe/telc sınav hazırlığı, "Hukuk ve sözleşme dili", "Para ve kariyer" gibi yetişkin temalar |
+| Hedef yaş grupları | **Yalnız 18 ve üzeri** | Kullanım şartları §3 hesap açmayı 18 yaşla sınırlıyor. 16–17 işaretlenmemeli: altında bir yaş grubu seçmek uygulamayı Aileler politikası kapsamına alır ve açık uçlu yapay zekâ sohbeti ile serbest metinli sosyal katman o kapsamda ek gereklilik doğurur. İçerik de yetişkine dönük: CEFR A1–C1, Goethe/telc sınav hazırlığı, "Hukuk ve sözleşme dili", "Para ve kariyer" |
 | Uygulama çocuklara çekici mi | **Hayır** | Maskot (mirket) ve oyunlaştırma var ama listeleme yetişkin öğrenciye ve sınava odaklı; mağaza görsellerinde maskot ana unsur olmayacak |
 | Aileler politikası | Kapsam dışı | Yapay zekâ sohbeti ve kullanıcı etkileşimi çocuk kitlesiyle bağdaşmaz |
 | Beklenmeyen çocuk kullanıcı | Hesap ve veri silinir | Gizlilik politikası §12 |

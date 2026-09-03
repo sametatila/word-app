@@ -16,7 +16,7 @@ Son güncelleme: 2026-09-03. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'te
 | Kullanıcı veri silme talebinde bulunabiliyor mu | Evet — `https://www.exfe.me/account/delete` ve uygulama içi Ayarlar › Hesap › Hesabı sil |
 | Hesap oluşturma var mı | Evet (e-posta/parola, Google) |
 | Bağımsız güvenlik incelemesi (MASA) | Hayır |
-| Aileler politikasına tabi mi | Hayır (hedef kitle 18+; 16 yaş altına yönelik değil) |
+| Aileler politikasına tabi mi | Hayır (hedef kitle 18+; şartlar hesap açmayı 18 yaşla sınırlıyor) |
 
 ## Veri türleri
 

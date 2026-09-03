@@ -202,9 +202,10 @@ export default function PrivacyPage() {
 
       <h2>12. Çocuklar</h2>
       <p>
-        Nomi 16 yaşından küçükler için tasarlanmamıştır ve onlardan bilerek veri toplamaz; AB&apos;de GDPR m.8 kapsamındaki yaş sınırları ve
-        Türkiye&apos;de ergin olmayanlara ilişkin hükümler gözetilir. İçerik yetişkin öğrencilere ve Goethe/telc sınav hazırlığına yöneliktir. Bir
-        çocuğun hesap açtığını fark edersek hesabı ve verileri sileriz; ebeveynler <Ph k="privacyEmail" /> adresine yazabilir.
+        Nomi 18 yaşından küçükler için tasarlanmamıştır ve onlardan bilerek veri toplamaz; kullanım şartları hesap açmayı 18 yaş ve üzeriyle
+        sınırlar (bkz. şartlar §3). İçerik yetişkin öğrencilere ve Goethe/telc sınav hazırlığına yöneliktir; uygulamada açık uçlu yapay zekâ
+        konuşması ve kullanıcı etkileşimi bulunduğundan çocuk kitlesine uygun değildir. 18 yaşından küçük birinin hesap açtığını fark edersek
+        hesabı ve verileri sileriz; ebeveynler <Ph k="privacyEmail" /> adresine yazabilir.
       </p>
 
       <h2>13. Güvenlik</h2>
