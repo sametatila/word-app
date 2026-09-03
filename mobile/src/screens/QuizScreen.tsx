@@ -27,7 +27,6 @@ export function QuizScreen() {
   const nav = useNavigation<{ goBack: () => void }>();
   const { params } = useRoute<RouteProp<RootStackParams, "Quiz">>();
   const isCheckpoint = params.kind === "checkpoint";
-  const startedAt = useRef(Date.now());
   const saved = useRef(false);
   const [correct, setCorrect] = useState(0);
   const [finished, setFinished] = useState(false);

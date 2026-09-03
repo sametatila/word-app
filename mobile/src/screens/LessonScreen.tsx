@@ -17,7 +17,7 @@ import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { haptic } from "../lib/haptics";
-import { api, API_BASE } from "../api/client";
+import { API_BASE } from "../api/client";
 import { todayStr } from "../game/session";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
@@ -40,7 +40,6 @@ type BubbleData =
 type Bubble = BubbleData & { id: number };
 
 const deText = (segs: Segment[]): string => segs.filter((s) => s.lang === "de").map((s) => s.text).join(" ").trim();
-const allText = (segs: Segment[]): string => segs.map((s) => s.text).join(" ").trim();
 
 /** Almanca cevap karşılaştırması — noktalama, büyük/küçük, umlaut/ß toleranslı. */
 function sn(x: string): string {

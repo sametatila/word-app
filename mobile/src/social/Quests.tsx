@@ -9,7 +9,7 @@ import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { TargetIcon, CheckIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
-import { Bar, EmptyCard, ErrorText, IconTile, Pill, SectionTitle } from "./common";
+import { EmptyCard, ErrorText, IconTile, Pill, SectionTitle } from "./common";
 
 export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: string; onChanged?: () => void }) {
   const { colors } = useTheme();

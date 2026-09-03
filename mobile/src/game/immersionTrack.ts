@@ -12,11 +12,6 @@ import { lessonsForLevel } from "../data/lessons";
 import { listSkillMeta, type SkillMeta } from "../data/skills";
 import type { LearningPath, LearningPathItem, LearningPathUnit } from "../lib/useLearningPath";
 
-/** Track item türü → beceri kataloğu türü. */
-const SKILL_OF: Record<string, "reading" | "listening" | "writing"> = {
-  read: "reading", listen: "listening", write: "writing",
-};
-
 const UNIT_LESSONS = 4;
 const GROUP_SIZE = 10;
 const MODULE_SIZE = 10;

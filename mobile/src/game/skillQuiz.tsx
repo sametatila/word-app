@@ -7,7 +7,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { speakTarget } from "../lib/tts";
 import { haptic } from "../lib/haptics";
-import { useTheme, spacing, radii, type Palette } from "../theme";
+import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
 
 /**
