@@ -16,6 +16,7 @@ import { a2U14 } from "./a2-u14";
 import { a2U15 } from "./a2-u15";
 import { a2U16 } from "./a2-u16";
 import { a2U17 } from "./a2-u17";
+import { a2U18 } from "./a2-u18";
 
 /**
  * A2 — okuma, dinleme ve yazma egzersizleri.
@@ -43,6 +44,7 @@ export const a2: SkillExercise[] = [
   ...a2U15,
   ...a2U16,
   ...a2U17,
+  ...a2U18,
   // ---------------------------------------------------------------- OKUMA
   {
     id: "a2-r1",
