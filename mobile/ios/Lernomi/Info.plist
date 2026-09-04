@@ -33,6 +33,23 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<!-- Google Sign-In geri dönüş şeması: iOS OAuth istemcisinin TERS client id'si.
+	     Sır değil (uygulama paketinde zaten gömülü). Web client id ile karıştırılmamalı:
+	     idToken'ın aud'u web client id olmaya devam eder — bkz. lib/googleAuth.ts.
+	     DEĞER YER TUTUCU: gerçek istemci açılınca buradaki ve googleAuth.ts'teki
+	     IOS_CLIENT_ID BİRLİKTE doldurulur; biri dolup öteki boş kalırsa giriş
+	     "invalid client" ile düşer. -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.YER-TUTUCU</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<!-- HTTPS dışında şifreleme yok. Beyan burada durmazsa App Store Connect her

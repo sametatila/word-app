@@ -43,6 +43,7 @@
 		AB01F1002D4E51A700000024 /* micon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = micon.mp3; path = Lernomi/sfx/micon.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000025 /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = tap.mp3; path = Lernomi/sfx/tap.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000026 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = wrong.mp3; path = Lernomi/sfx/wrong.mp3; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000041 /* Lernomi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Lernomi.entitlements; path = Lernomi/Lernomi.entitlements; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -68,6 +69,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				AB01F1002D4E51A700000001 /* LernomiSpeech.swift */,
 				AB01F1002D4E51A700000002 /* LernomiSpeech.m */,
+				AB01F1002D4E51A700000041 /* Lernomi.entitlements */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				AB01F1002D4E51A700000020 /* sfx */,
 			);
@@ -318,6 +320,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Lernomi/Lernomi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = "";
@@ -350,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Lernomi/Lernomi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = "";
