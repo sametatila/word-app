@@ -23,6 +23,7 @@ zu in an auf aus bei mit nach von vor über unter für um durch gegen ohne seit 
 ist sind bin bist war waren hat habe haben hast wird werden kann können muss müssen will
 wurde wurden würde würden hatte hatten musste mussten konnte konnten wollte wollten sollte sollten durfte durften
 gewesen geworden musst kannst willst sollst darfst magst möchte möchten wisst weiß weißt wusste wussten
+wäre wären hätte hätten könnte könnten müsste müssten sollte wollte dürfte ginge käme gäbe
 auch noch nur schon sehr hier da dann jetzt heute sehr viel mehr alle etwas nichts
 guten tag morgen abend hallo bitte danke herr frau sie ihnen ihr
 null eins zwei drei vier fünf sechs sieben acht neun zehn elf zwölf zwanzig dreißig hundert tausend
@@ -243,6 +244,12 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
     // o yüzden "neu" öğretilmişken "neue" kayma sayılıyordu.
     if (w.length >= 3) {
       for (const son of ["e", "en", "es", "er", "em", "ere", "eren", "sten", "ste"]) izinCekim.add(w + son);
+      // Karşılaştırmada -el/-er ile biten sıfat bir e düşürür:
+      // teuer → teurer, dunkel → dunkler. Kural olmadan öğretilen sıfak kayıyordu.
+      if (/e[lr]$/.test(w)) {
+        const kis = w.slice(0, -2) + w.slice(-1);
+        for (const son of ["er", "ere", "eren", "e", "en", "es", "em"]) izinCekim.add(kis + son);
+      }
       // Karşılaştırmada gövde ünlüsü umlaut alır: lang → länger, alt → älter.
       for (const [a, b2] of [["a", "ä"], ["o", "ö"], ["u", "ü"]]) {
         const i = w.lastIndexOf(a);
@@ -253,8 +260,12 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
     }
   }
   const soyPrefix = (w) => { const m = w.match(AYRILABILIR); return m && w.length - m[0].length >= 4 ? w.slice(m[0].length) : null; };
+  // Ayrılabilen fiilin mastarında `zu` öneke ile gövde ARASINA girer:
+  // ausziehen → auszuziehen. Kural olmadan öğretilen fiil kayma sayılıyordu.
+  const soyZu = (w) => { const m = w.match(/^(an|auf|aus|ein|mit|nach|vor|zu|ab|bei|los|weg|zurück)zu(.+)$/); return m ? m[1] + m[2] : null; };
   const bilinir = (w) => izin.has(w) || ozelAd.has(w) || izinCekim.has(w) ||
     (soyPrefix(w) && (izin.has(soyPrefix(w)) || izinCekim.has(soyPrefix(w)))) ||
+    (soyZu(w) && (izin.has(soyZu(w)) || izinCekim.has(soyZu(w)))) ||
     izinKok.some((k) => w.startsWith(k.slice(0, Math.max(4, k.length - 2)))) ||
     (w.length >= 3 && izinKok.some((k) => k.startsWith(w)));
   const tok = (ham.toLowerCase().match(/[a-zäöüß]{2,}/g) || []);
