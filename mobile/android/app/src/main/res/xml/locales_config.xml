@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Uygulamanın desteklediği diller. Android 13+ bunu okuyup Ayarlar › Uygulamalar ›
-  Nomi › Dil altında uygulamaya özel dil seçicisi gösteriyor; kullanıcı sistem dilini
-  değiştirmeden yalnız Nomi'yi başka bir dile alabiliyor. Seçim hem Android kaynaklarını
+  Lernomi › Dil altında uygulamaya özel dil seçicisi gösteriyor; kullanıcı sistem dilini
+  değiştirmeden yalnız Lernomi'yi başka bir dile alabiliyor. Seçim hem Android kaynaklarını
   (bildirim metinleri) hem de JS tarafını etkiliyor: lib/i18n.ts cihaz dilini
   I18nManager sabitinden okuyor, o da uygulamanın yapılandırmasından geliyor.
 -->

@@ -10,9 +10,9 @@ import { FAIR_USE, legalPath } from "@/lib/legal";
  */
 export const TERMS_DE_TITLE = "Nutzungsbedingungen";
 export const TERMS_DE_DESCRIPTION =
-  "Die Regeln für die Nutzung von Nomi: Konto, zulässige Nutzung, Nutzerinhalte, KI, Abonnement, Verbraucherrechte.";
+  "Die Regeln für die Nutzung von Lernomi: Konto, zulässige Nutzung, Nutzerinhalte, KI, Abonnement, Verbraucherrechte.";
 export const TERMS_DE_SUMMARY = [
-  "Mit der Nutzung von Nomi nimmst du diese Vereinbarung an.",
+  "Mit der Nutzung von Lernomi nimmst du diese Vereinbarung an.",
   "Der Dienst wird aus der Türkei angeboten und unterliegt türkischem Recht. Die zwingenden Verbraucherrechte deines Landes bleiben unberührt.",
   "Dein Konto gehört dir und wird respektvoll gegenüber anderen genutzt. Was du schreibst, bleibt dein.",
   "KI-Antworten können falsch sein.",
@@ -24,8 +24,8 @@ export function TermsDeBody() {
     <>
       <h2>1. Parteien und Annahme</h2>
       <p>
-        Diese Vereinbarung besteht zwischen den unten bezeichneten Parteien (&quot;Nomi&quot;, &quot;wir&quot;) und der Person, die
-        die Nomi-Webanwendung (www.exfe.me) oder die Android-App nutzt (&quot;du&quot;). Wir sind zwei Personen: diejenige, die den Dienst
+        Diese Vereinbarung besteht zwischen den unten bezeichneten Parteien (&quot;Lernomi&quot;, &quot;wir&quot;) und der Person, die
+        die Lernomi-Webanwendung (www.exfe.me) oder die Android-App nutzt (&quot;du&quot;). Wir sind zwei Personen: diejenige, die den Dienst
         gestaltet, betreibt und für deine Daten verantwortlich ist, und diejenige, die die App bei Google Play veröffentlicht und die
         Abonnementeinnahmen vereinnahmt. Mit der Erstellung eines Kontos oder der Nutzung
         der App nimmst du diese Bedingungen und die <Link href={legalPath("privacy", "de")}>Datenschutzerklärung</Link> an. Nach dem
@@ -37,7 +37,7 @@ export function TermsDeBody() {
 
       <h2>2. Der Dienst</h2>
       <p>
-        Nomi ist eine Sprachlern-App mit Übungen zu Wortschatz, Hören, Sprechen und Schreiben: Wiederholungsrunden nach dem
+        Lernomi ist eine Sprachlern-App mit Übungen zu Wortschatz, Hören, Sprechen und Schreiben: Wiederholungsrunden nach dem
         Spaced-Repetition-Prinzip, Lektionen, Sprechpraxis mit KI, Gehmodus, Schreibbewertung, Prüfungsvorbereitung, eine
         Wochen-Rangliste und Freundesfunktionen. Die Kurse sind Deutsch (Hochdeutsch), Zürichdeutsch und Englisch; die Kursliste kann sich
         im Laufe der Zeit ändern, und nicht jede Funktion ist in jedem Kurs gleichzeitig verfügbar. Funktionen können hinzugefügt, geändert
@@ -46,7 +46,7 @@ export function TermsDeBody() {
 
       <h2>3. Konto und Alter</h2>
       <ul>
-        <li>Nomi richtet sich an Erwachsene: Für ein Konto musst du mindestens 18 Jahre alt sein. Konten, von denen wir erfahren, dass sie einer Person unter 18 gehören, schließen wir und löschen die Daten.</li>
+        <li>Lernomi richtet sich an Erwachsene: Für ein Konto musst du mindestens 18 Jahre alt sein. Konten, von denen wir erfahren, dass sie einer Person unter 18 gehören, schließen wir und löschen die Daten.</li>
         <li>Deine Kontodaten müssen richtig sein; gib dein Passwort niemals weiter. Für Aktivitäten über dein Konto bist du verantwortlich; melde uns unbefugte Nutzung.</li>
         <li>Du kannst dein Konto jederzeit löschen: in der App unter Profil &rsaquo; Einstellungen &rsaquo; Konto oder im Web über die <Link href={legalPath("deleteAccount", "de")}>Seite zur Kontolöschung</Link>. Die Löschung ist unwiderruflich.</li>
       </ul>
@@ -123,9 +123,9 @@ export function TermsDeBody() {
 
       <h2>8. Geistiges Eigentum</h2>
       <p>
-        Die App, das Design, das Maskottchen, die Soundeffekte und die Lektionsinhalte gehören Nomi und sind durch das türkische Gesetz
+        Die App, das Design, das Maskottchen, die Soundeffekte und die Lektionsinhalte gehören Lernomi und sind durch das türkische Gesetz
         Nr. 5846 über geistige und künstlerische Werke sowie durch internationale Abkommen geschützt. Der A1-B1-Teil der Wortlisten beruht
-        auf den offiziellen Wortlisten des Goethe-Instituts; Goethe-Institut und telc sind Marken ihrer jeweiligen Inhaber, und Nomi ist
+        auf den offiziellen Wortlisten des Goethe-Instituts; Goethe-Institut und telc sind Marken ihrer jeweiligen Inhaber, und Lernomi ist
         nicht mit ihnen verbunden. Über den persönlichen Lerngebrauch hinaus ist Kopieren, Verbreiten oder das Erstellen abgeleiteter Werke
         nicht erlaubt.
       </p>
@@ -140,7 +140,7 @@ export function TermsDeBody() {
 
       <h2>10. Haftungsbeschränkung</h2>
       <p>
-        Nomi ist ein Lernwerkzeug; es gibt keine Garantie für ein Prüfungsergebnis, ein Sprachniveau oder die Richtigkeit einer
+        Lernomi ist ein Lernwerkzeug; es gibt keine Garantie für ein Prüfungsergebnis, ein Sprachniveau oder die Richtigkeit einer
         Entscheidung. Außer bei Vorsatz und grober Fahrlässigkeit haften wir nicht für mittelbare Schäden aus dem Dienst; unsere
         Gesamthaftung ist auf die in den letzten 12 Monaten von dir gezahlten Abonnementgebühren begrenzt. Deine Rechte als Verbraucher
         nach türkischem Recht und nach den zwingenden Vorschriften deines Wohnsitzlandes bleiben unberührt; diese Ziffer schränkt sie nicht
@@ -149,7 +149,7 @@ export function TermsDeBody() {
 
       <h2>10a. Freistellung</h2>
       <p>
-        Machen Dritte gegenüber Nomi Ansprüche geltend, weil du diese Bedingungen oder geltendes Recht verletzt hast (z. B. Inhalte, die
+        Machen Dritte gegenüber Lernomi Ansprüche geltend, weil du diese Bedingungen oder geltendes Recht verletzt hast (z. B. Inhalte, die
         Rechte anderer verletzen, ein Angriff auf den Dienst, Betrug), haftest du im Umfang deines Verschuldens für diese Ansprüche und
         Schäden. Für Verbraucher gilt diese Ziffer nur bei Vorsatz und grober Fahrlässigkeit.
       </p>

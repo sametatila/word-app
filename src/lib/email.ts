@@ -15,7 +15,7 @@ const HOST = process.env.SMTP_HOST;
 const PORT = Number(process.env.SMTP_PORT) || 587;
 const USER = process.env.SMTP_USER;
 const PASS = process.env.SMTP_PASS;
-const FROM = process.env.SMTP_FROM || "Nomi <noreply@exfe.me>";
+const FROM = process.env.SMTP_FROM || "Lernomi <noreply@exfe.me>";
 
 export const emailConfigured = Boolean(HOST && USER && PASS);
 
@@ -50,7 +50,7 @@ function template(heading: string, body: string, cta: string, url: string): stri
   const safeUrl = url.replace(/"/g, "&quot;");
   return `<!doctype html><html lang="tr"><body style="margin:0;background:#faf9f5;font-family:-apple-system,Segoe UI,sans-serif;color:#141413">
   <div style="max-width:480px;margin:0 auto;padding:32px 24px">
-    <div style="font-size:22px;font-weight:800;color:#c87318;margin-bottom:16px">Nomi</div>
+    <div style="font-size:22px;font-weight:800;color:#c87318;margin-bottom:16px">Lernomi</div>
     <h1 style="font-size:20px;margin:0 0 12px">${heading}</h1>
     <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 24px">${body}</p>
     <a href="${safeUrl}" style="display:inline-block;background:#c87318;color:#fff;text-decoration:none;padding:12px 22px;border-radius:12px;font-weight:600;font-size:15px">${cta}</a>
@@ -60,16 +60,16 @@ function template(heading: string, body: string, cta: string, url: string): stri
 
 export function verificationEmail(url: string): { subject: string; html: string; text: string } {
   return {
-    subject: "Nomi — e-posta adresini doğrula",
-    html: template("E-postanı doğrula", "Nomi hesabını kullanmaya başlamak için e-posta adresini doğrula.", "E-postamı doğrula", url),
-    text: `Nomi e-posta doğrulama\n\nAdresini doğrulamak için: ${url}`,
+    subject: "Lernomi — e-posta adresini doğrula",
+    html: template("E-postanı doğrula", "Lernomi hesabını kullanmaya başlamak için e-posta adresini doğrula.", "E-postamı doğrula", url),
+    text: `Lernomi e-posta doğrulama\n\nAdresini doğrulamak için: ${url}`,
   };
 }
 
 export function resetEmail(url: string): { subject: string; html: string; text: string } {
   return {
-    subject: "Nomi — parola sıfırlama",
+    subject: "Lernomi — parola sıfırlama",
     html: template("Parolanı sıfırla", "Parolanı sıfırlamak için aşağıdaki bağlantıya dokun. İstemediysen bu e-postayı yok say.", "Parolamı sıfırla", url),
-    text: `Nomi parola sıfırlama\n\nParolanı sıfırlamak için: ${url}\n\nİstemediysen yok say.`,
+    text: `Lernomi parola sıfırlama\n\nParolanı sıfırlamak için: ${url}\n\nİstemediysen yok say.`,
   };
 }

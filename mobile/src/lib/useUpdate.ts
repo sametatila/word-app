@@ -8,7 +8,7 @@ import { APP_VERSION } from "../version";
 
 const LATEST_API = "https://api.github.com/repos/sametatila/word-app/releases/latest";
 /** Sürümden bağımsız kalıcı bağlantı — hep son sürümü verir. */
-export const APK_DOWNLOAD_URL = "https://github.com/sametatila/word-app/releases/latest/download/nomi.apk";
+export const APK_DOWNLOAD_URL = "https://github.com/sametatila/word-app/releases/latest/download/lernomi.apk";
 
 /** "1.2.0" > "1.1.5" → pozitif. Eksik parçalar 0. */
 function cmpVersion(a: string, b: string): number {

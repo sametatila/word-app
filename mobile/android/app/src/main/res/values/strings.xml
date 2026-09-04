@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Nomi</string>
+    <string name="app_name">Lernomi</string>
 
     <!-- Yürüyüş modu foreground service (LernomiWalkService) -->
     <string name="walk_channel_name">Yürüyüş modu</string>

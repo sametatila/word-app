@@ -211,7 +211,7 @@ export function AppShell({
       {/* Rozet kutlaması kabukta: rozet altı ayrı yerde kazanılabiliyor
           (kelime turu, ders, beceri, görev, günün turu, hayatta kalma) ve
           altısına ayrı kutlama koymak altı yerde unutulacak bir şey demekti.
-          Tetikleyici zaten var olan `nomi:stats` olayı. */}
+          Tetikleyici zaten var olan `lernomi:stats` olayı. */}
       <AchievementUnlock />
       <ScreenDiag />
       <TopProgress />
@@ -228,7 +228,7 @@ export function AppShell({
             ekranda bir mirket, uygulamanın içinde bir harf görüyordu.
           */}
           <img src="/logo-mark.png" alt="" width={36} height={36} className="rounded-xl" />
-          <span className="text-lg font-bold">Nomi</span>
+          <span className="text-lg font-bold">Lernomi</span>
         </Link>
 
         <nav className="flex flex-col gap-1">
@@ -300,7 +300,7 @@ export function AppShell({
               tema + avatar sığmıyordu: ad rozetin altına giriyordu. Logonun
               kendisi zaten kimliği taşıyor, ad ise tekrar.
             */}
-            <span className="hidden font-bold min-[380px]:inline">Nomi</span>
+            <span className="hidden font-bold min-[380px]:inline">Lernomi</span>
           </Link>
           <div className="flex items-center gap-2">
             <StatPills streak={stats.streak} xp={stats.xp} />

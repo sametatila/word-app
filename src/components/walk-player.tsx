@@ -528,7 +528,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const arm = useCallback(async (): Promise<boolean> => {
     if (armed.current) return true;
     if (!sttReady.current) return false;
-    startPocketAudio("Nomi · Yürürken", {});
+    startPocketAudio("Lernomi · Yürürken", {});
     if (!(await openMic())) {
       stopPocketAudio();
       track("walk_switch", 1, "arm-failed");

@@ -49,7 +49,7 @@ export function PremiumPaywall({
         <div className="flex h-20 w-20 items-center justify-center rounded-3xl text-white" style={{ background: "var(--color-brand)", boxShadow: "0 12px 24px -10px var(--color-brand)" }}>
           <CrownIcon size={42} />
         </div>
-        <h1 className="mt-4 text-3xl font-extrabold">Nomi Premium</h1>
+        <h1 className="mt-4 text-3xl font-extrabold">Lernomi Premium</h1>
         <p className="mt-1 muted">Sınırsız öğren, sınavına tam hazırlan</p>
       </div>
 

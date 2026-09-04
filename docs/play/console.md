@@ -1,4 +1,4 @@
-# Google Play Console — uygulama erişimi, giriş ve inceleme notları (Nomi, `com.nomi.learn`)
+# Google Play Console — uygulama erişimi, giriş ve inceleme notları (Lernomi, `com.nomi.learn`)
 
 Uygulamanın tüm içeriği hesap gerektirir (misafir modu yok). Play incelemesi bu yüzden
 test kimlik bilgisi ister; Google girişi de Play'in imzaladığı sürümde ancak doğru SHA-1
@@ -10,7 +10,7 @@ Seçim: "All or some functionality is restricted" → "Add new instructions".
 
 | Alan | Değer |
 |---|---|
-| Ad | Nomi inceleme hesabı |
+| Ad | Lernomi inceleme hesabı |
 | Kullanıcı adı / e-posta | `[[TEST_HESABI_E_POSTA]]` |
 | Parola | `[[TEST_HESABI_PAROLA]]` |
 | Diğer bilgiler | Aşağıdaki adımlar |
@@ -41,7 +41,7 @@ Google Cloud › APIs & Services › Credentials › Create credentials › OAut
 | İstemci | Paket adı | SHA-1 kaynağı |
 |---|---|---|
 | Debug | `com.nomi.learn` | `keytool -list -v -keystore mobile/android/app/debug.keystore -alias androiddebugkey -storepass android` |
-| Upload | `com.nomi.learn` | `keytool -list -v -keystore <upload.keystore> -alias nomi` |
+| Upload | `com.nomi.learn` | `keytool -list -v -keystore <upload.keystore> -alias lernomi` |
 | Play App Signing | `com.nomi.learn` | Console › Setup › App signing › "App signing key certificate" › SHA-1 |
 
 Sunucu tarafı: `GOOGLE_CLIENT_ID` (Web istemci) ve `GOOGLE_CLIENT_SECRET` prod `.env`'de

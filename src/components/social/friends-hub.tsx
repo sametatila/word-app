@@ -65,7 +65,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
 
   async function share() {
     const url = `${window.location.origin}/u/${me.username}`;
-    const text = `Nomi'de Almanca çalışıyorum. Arkadaş ol, birlikte hedef tutturalım: ${url}`;
+    const text = `Lernomi'de Almanca çalışıyorum. Arkadaş ol, birlikte hedef tutturalım: ${url}`;
     track("share", 0, "profile");
     try {
       if (navigator.share) {

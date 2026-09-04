@@ -59,7 +59,7 @@ export function LegalShell({ title, summary, children, doc, locale = "tr" }: {
     <div className="mx-auto w-full max-w-2xl px-5 py-10">
       <Link href="/" className="mb-8 flex items-center gap-2">
         <LogoMark size={32} />
-        <span className="text-base font-bold">Nomi</span>
+        <span className="text-base font-bold">Lernomi</span>
       </Link>
       <nav className="muted mb-6 flex flex-wrap gap-x-4 gap-y-1 text-sm">
         <Link href={legalPath("privacy", locale)} className="underline-offset-4 hover:underline">{c.privacy}</Link>

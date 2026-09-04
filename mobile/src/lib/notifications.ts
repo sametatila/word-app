@@ -58,7 +58,7 @@ function nextWeekly(weekday: number, hhmm: string): number {
 
 async function schedule(id: string, body: string, timestamp: number, freq: RepeatFrequency): Promise<void> {
   await notifee.createTriggerNotification(
-    { id, title: "Nomi", body, android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } } },
+    { id, title: "Lernomi", body, android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } } },
     { type: TriggerType.TIMESTAMP, timestamp, repeatFrequency: freq },
   );
 }
@@ -182,7 +182,7 @@ export async function showTestNotification(): Promise<boolean> {
   if (!(await requirePermission())) return false;
   await ensureChannel();
   await notifee.displayNotification({
-    title: "Nomi",
+    title: "Lernomi",
     body: t("notif.test_body"),
     android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } },
   });

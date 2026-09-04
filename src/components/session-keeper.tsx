@@ -45,8 +45,8 @@ const REFRESH_EVERY_MS = 6 * 60 * 60 * 1000;
 /**
  * Hesaba ait cihaz anahtarlarının önekleri.
  *
- * Tema (`nomi-theme`), kurulum/bildirim uyarılarının kapatılması
- * (`nomi:*-dismissed`) ve ders anlatımının eller serbest tercihi bilerek
+ * Tema (`lernomi-theme`), kurulum/bildirim uyarılarının kapatılması
+ * (`lernomi:*-dismissed`) ve ders anlatımının eller serbest tercihi bilerek
  * dışarıda: bunlar telefonun tercihi, hesabın değil.
  */
 const ACCOUNT_SCOPED_PREFIXES = [

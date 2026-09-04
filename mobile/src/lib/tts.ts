@@ -15,7 +15,7 @@ import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait } from "./ttsBridge";
  * GERÇEK ses: okuma önce Edge KÖPRÜSÜ'nden geçer (lib/ttsBridge → /api/tts),
  * yani web'le BİREBİR aynı Katja/Conrad/Leni/Jan çalar. Köprü hazır değilse
  * (yükleniyor/çevrimdışı) cihaz TTS'ine düşülür ve seçilen sesin dil+cinsiyet
- * en yakını cihazda uygulanır. Tercih `nomi-voice`'ta ve profiles.voice'ta.
+ * en yakını cihazda uygulanır. Tercih `lernomi-voice`'ta ve profiles.voice'ta.
  */
 const VOICE_KEY = "lernomi-voice";
 let ready: Promise<boolean> | null = null;

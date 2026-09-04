@@ -39,7 +39,7 @@
       android:allowBackup="false"
       android:localeConfig="@xml/locales_config"
       android:enableOnBackInvokedCallback="true"
-      android:theme="@style/Theme.Nomi.Splash"
+      android:theme="@style/Theme.Lernomi.Splash"
       android:usesCleartextTraffic="${usesCleartextTraffic}"
       android:supportsRtl="true">
       <activity

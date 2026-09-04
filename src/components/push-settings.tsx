@@ -76,7 +76,7 @@ export function PushSettings({ bare = false }: { bare?: boolean } = {}) {
       : state === "ios"
         ? "Önce “Ana ekrana ekle” adımlarını izle, sonra uygulamayı ana ekrandan aç."
         : state === "denied"
-          ? "Tarayıcının site ayarlarından Nomi'e bildirim izni ver."
+          ? "Tarayıcının site ayarlarından Lernomi'e bildirim izni ver."
           : null;
 
   /* `bare`: kendi kartını bırakıp uygulama ayarları kartının bir bölümü oluyor. */

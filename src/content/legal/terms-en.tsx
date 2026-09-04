@@ -9,9 +9,9 @@ import { FAIR_USE, legalPath } from "@/lib/legal";
  */
 export const TERMS_EN_TITLE = "Terms of Use";
 export const TERMS_EN_DESCRIPTION =
-  "The rules for using Nomi: account, acceptable use, user content, AI, subscription, consumer rights.";
+  "The rules for using Lernomi: account, acceptable use, user content, AI, subscription, consumer rights.";
 export const TERMS_EN_SUMMARY = [
-  "By using Nomi you accept this agreement.",
+  "By using Lernomi you accept this agreement.",
   "The service is provided from Türkiye and governed by Turkish law. The mandatory consumer rights of your own country are unaffected.",
   "Your account is yours, and is used with respect for others. What you write stays yours.",
   "AI answers can be wrong.",
@@ -23,7 +23,7 @@ export function TermsEnBody() {
     <>
       <h2>1. Parties and acceptance</h2>
       <p>
-        This agreement is between the parties identified below (&quot;Nomi&quot;, &quot;we&quot;) and the person using the Nomi
+        This agreement is between the parties identified below (&quot;Lernomi&quot;, &quot;we&quot;) and the person using the Lernomi
         web app (www.exfe.me) or Android app (&quot;you&quot;). There are two of us: the person who designs and operates the service and is
         responsible for your data, and the person who publishes the app on Google Play and collects the subscription revenue. By creating an account or using the app you accept these terms and the{" "}
         <Link href={legalPath("privacy", "en")}>Privacy Policy</Link>. Under Turkish Law no. 6563 this text is accessible and can be stored
@@ -34,7 +34,7 @@ export function TermsEnBody() {
 
       <h2>2. The service</h2>
       <p>
-        Nomi is a language learning app offering vocabulary, listening, speaking and writing practice: spaced repetition rounds, lessons,
+        Lernomi is a language learning app offering vocabulary, listening, speaking and writing practice: spaced repetition rounds, lessons,
         speaking practice with AI, walk mode, writing assessment, exam preparation, a weekly leaderboard and friend features. The courses
         are German (Hochdeutsch), Zurich German and English; the course list may change over time and not every feature is ready in every
         course at the same time. Features may be added, changed or removed; we announce changes affecting paid features in advance.
@@ -42,7 +42,7 @@ export function TermsEnBody() {
 
       <h2>3. Account and age</h2>
       <ul>
-        <li>Nomi is intended for adults: you must be 18 or older to create an account. We close accounts we learn belong to someone under 18 and delete their data.</li>
+        <li>Lernomi is intended for adults: you must be 18 or older to create an account. We close accounts we learn belong to someone under 18 and delete their data.</li>
         <li>Your account details must be accurate; never share your password. You are responsible for activity on your account; tell us if you notice unauthorised use.</li>
         <li>You can delete your account at any time: in the app under Profile &rsaquo; Settings &rsaquo; Account, or on the web via the <Link href={legalPath("deleteAccount", "en")}>account deletion page</Link>. Deletion cannot be undone.</li>
       </ul>
@@ -116,9 +116,9 @@ export function TermsEnBody() {
 
       <h2>8. Intellectual property</h2>
       <p>
-        The app, its design, the mascot, the sound effects and the lesson content belong to Nomi and are protected by Turkish Law no. 5846
+        The app, its design, the mascot, the sound effects and the lesson content belong to Lernomi and are protected by Turkish Law no. 5846
         on Intellectual and Artistic Works and by international conventions. The A1-B1 part of the word lists is based on the official
-        Goethe-Institut word lists; Goethe-Institut and telc are trademarks of their respective owners and Nomi is not affiliated with them.
+        Goethe-Institut word lists; Goethe-Institut and telc are trademarks of their respective owners and Lernomi is not affiliated with them.
         Copying, distributing or making derivative works is not permitted beyond personal learning use.
       </p>
 
@@ -131,7 +131,7 @@ export function TermsEnBody() {
 
       <h2>10. Limitation of liability</h2>
       <p>
-        Nomi is a learning tool; it gives no guarantee about an exam result, a level of language proficiency or the correctness of a
+        Lernomi is a learning tool; it gives no guarantee about an exam result, a level of language proficiency or the correctness of a
         decision. Except for intent and gross negligence, we are not liable for indirect damage arising from the service; our total
         liability is limited to the subscription fees you paid in the last 12 months. Your rights as a consumer under Turkish law and under
         the mandatory provisions of your country of residence are unaffected; this clause does not narrow them.
@@ -139,7 +139,7 @@ export function TermsEnBody() {
 
       <h2>10a. Indemnity</h2>
       <p>
-        If third parties bring claims against Nomi because you breached these terms or applicable law (e.g. content infringing someone
+        If third parties bring claims against Lernomi because you breached these terms or applicable law (e.g. content infringing someone
         else&apos;s rights, an attack on the service, cheating), you are responsible for those claims and damages to the extent of your
         fault. For consumers this clause applies only in cases of intent and gross negligence.
       </p>

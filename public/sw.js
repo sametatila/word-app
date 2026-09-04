@@ -1,5 +1,5 @@
 /**
- * Nomi service worker — yalnızca bildirim işi görür.
+ * Lernomi service worker — yalnızca bildirim işi görür.
  *
  * Bilerek dar tutuldu: çevrimdışı önbellek yok. Uygulamanın içeriği
  * (kelime kuyruğu, tekrar zamanları, ilerleme) sunucudan geliyor ve
@@ -28,7 +28,7 @@ self.addEventListener("push", (event) => {
   }
 
   event.waitUntil(
-    self.registration.showNotification(data.title || "Nomi", {
+    self.registration.showNotification(data.title || "Lernomi", {
       body: data.body || "",
       icon: "/icon-192.png",
       badge: "/icon-192.png",

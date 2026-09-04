@@ -1,4 +1,4 @@
-# Nomi — Almanca Kelime Uygulaması
+# Lernomi — Almanca Kelime Uygulaması
 
 A1'den C1'e, **iki kursla** çalışan, oyunlaştırılmış ve **tekrarı kendisi planlayan** Almanca
 uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıkar. Ana ekrana eklenince
@@ -393,7 +393,7 @@ Host: smtp.resend.com
 Port: 587            (veya 465 / 2465)
 User: resend
 Pass: <Resend API key>
-From: Nomi <noreply@exfe.me>
+From: Lernomi <noreply@exfe.me>
 ```
 
 Resend tarafında `exfe.me` alan adını doğrulaman (DKIM/SPF kayıtları) gerekir.

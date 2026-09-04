@@ -4,7 +4,7 @@ import { FAIR_USE, LEGAL_PATHS, legalPath } from "@/lib/legal";
 
 export const metadata = {
   title: "Kullanım Şartları",
-  description: "Nomi'yi kullanmanın kuralları: hesap, kabul edilebilir kullanım, kullanıcı içeriği, yapay zekâ, abonelik, tüketici hakları.",
+  description: "Lernomi'yi kullanmanın kuralları: hesap, kabul edilebilir kullanım, kullanıcı içeriği, yapay zekâ, abonelik, tüketici hakları.",
   alternates: {
     canonical: LEGAL_PATHS.terms,
     languages: { tr: legalPath("terms"), en: legalPath("terms", "en"), de: legalPath("terms", "de") },
@@ -24,7 +24,7 @@ export default function TermsPage() {
       doc="terms"
       title="Kullanım Şartları"
       summary={[
-        "Nomi'yi kullanarak bu sözleşmeyi kabul edersin.",
+        "Lernomi'yi kullanarak bu sözleşmeyi kabul edersin.",
         "Hizmet Türkiye'den sunulur ve Türk hukukuna tabidir. Bulunduğun ülkenin zorunlu tüketici hakları saklıdır.",
         "Hesabın sana aittir ve başkalarına saygılı kullanılır. Yazdıkların senin kalır.",
         "Yapay zekâ yanıtları hata yapabilir.",
@@ -33,7 +33,7 @@ export default function TermsPage() {
     >
       <h2>1. Taraflar ve kabul</h2>
       <p>
-        Bu sözleşme, aşağıda kimliği verilen taraflar (&quot;Nomi&quot;, &quot;biz&quot;) ile Nomi web uygulamasını (www.exfe.me) ya da Android
+        Bu sözleşme, aşağıda kimliği verilen taraflar (&quot;Lernomi&quot;, &quot;biz&quot;) ile Lernomi web uygulamasını (www.exfe.me) ya da Android
         uygulamasını kullanan kişi (&quot;sen&quot;) arasındadır. İki kişiyiz: hizmeti tasarlayan, işleten ve verinden sorumlu olan taraf ile
         uygulamayı Google Play&apos;de yayımlayan ve abonelik tahsilatını yürüten taraf. Hesap açarak ya da uygulamayı kullanarak bu şartları ve{" "}
         <Link href={LEGAL_PATHS.privacy}>Gizlilik Politikası</Link>&apos;nı kabul etmiş olursun; 6563 sayılı Kanun uyarınca bu metin
@@ -44,7 +44,7 @@ export default function TermsPage() {
 
       <h2>2. Hizmet</h2>
       <p>
-        Nomi, kelime, dinleme, konuşma ve yazma pratiği sunan bir dil öğrenme uygulamasıdır: aralıklı tekrar turları, dersler, yapay zekâ ile
+        Lernomi, kelime, dinleme, konuşma ve yazma pratiği sunan bir dil öğrenme uygulamasıdır: aralıklı tekrar turları, dersler, yapay zekâ ile
         konuşma pratiği, yürüyüş modu, yazma değerlendirmesi, sınav hazırlığı, haftalık sıralama ve arkadaşlık özellikleri. Kurslar Almanca
         (Hochdeutsch), Zürih Almancası ve İngilizcedir; kurs listesi zamanla değişebilir ve her kursta her özellik aynı anda hazır olmayabilir.
         Özellikler zamanla eklenebilir, değişebilir ya da kaldırılabilir; ücretli özellikleri etkileyen değişiklikleri önceden duyururuz.
@@ -52,7 +52,7 @@ export default function TermsPage() {
 
       <h2>3. Hesap ve yaş</h2>
       <ul>
-        <li>Nomi yetişkinlere yöneliktir: hesap açmak için 18 yaşını doldurmuş olman gerekir. 18 yaşından küçük olduğunu öğrendiğimiz hesapları kapatır ve verilerini sileriz.</li>
+        <li>Lernomi yetişkinlere yöneliktir: hesap açmak için 18 yaşını doldurmuş olman gerekir. 18 yaşından küçük olduğunu öğrendiğimiz hesapları kapatır ve verilerini sileriz.</li>
         <li>Hesap bilgilerin doğru olmalı; parolanı kimseyle paylaşma. Hesabınla yapılan işlemlerden sen sorumlusun; yetkisiz kullanımı fark edince bize bildir.</li>
         <li>Hesabını dilediğin an silebilirsin: uygulamada Profil › Ayarlar › Hesap ya da web&apos;de <Link href={LEGAL_PATHS.deleteAccount}>hesap silme sayfası</Link>. Silme geri alınamaz.</li>
       </ul>
@@ -126,9 +126,9 @@ export default function TermsPage() {
 
       <h2>8. Fikri mülkiyet</h2>
       <p>
-        Uygulama, tasarım, maskot, ses efektleri ve ders içerikleri Nomi&apos;ye aittir ve 5846 sayılı Fikir ve Sanat Eserleri Kanunu ile
+        Uygulama, tasarım, maskot, ses efektleri ve ders içerikleri Lernomi&apos;ye aittir ve 5846 sayılı Fikir ve Sanat Eserleri Kanunu ile
         uluslararası sözleşmelerle korunur. Kelime listelerinin A1–B1 bölümü Goethe-Institut resmî kelime listelerine dayanır; Goethe-Institut
-        ve telc, kendi sahiplerinin markalarıdır ve Nomi onlarla bağlı değildir. Kişisel öğrenme amacı dışında kopyalama, dağıtma ya da türev
+        ve telc, kendi sahiplerinin markalarıdır ve Lernomi onlarla bağlı değildir. Kişisel öğrenme amacı dışında kopyalama, dağıtma ya da türev
         ürün yapma izni yoktur.
       </p>
 
@@ -141,7 +141,7 @@ export default function TermsPage() {
 
       <h2>10. Sorumluluğun sınırı</h2>
       <p>
-        Nomi bir öğrenme aracıdır; sınav sonucu, dil yeterliği ya da bir kararın doğruluğu için garanti vermez. Kasıt ve ağır ihmal
+        Lernomi bir öğrenme aracıdır; sınav sonucu, dil yeterliği ya da bir kararın doğruluğu için garanti vermez. Kasıt ve ağır ihmal
         dışında, hizmetten kaynaklanan dolaylı zararlardan sorumlu değiliz; toplam sorumluluğumuz son 12 ayda ödediğin abonelik bedeliyle
         sınırlıdır. Tüketici olarak Türk hukukundan ve bulunduğun ülkenin zorunlu hükümlerinden doğan hakların saklıdır; bu madde onları
         daraltmaz.
@@ -150,7 +150,7 @@ export default function TermsPage() {
       <h2>10a. Tazmin</h2>
       <p>
         Bu şartları ya da yürürlükteki hukuku ihlal ederek (ör. başkasının haklarını çiğneyen içerik, hizmete saldırı, hile) üçüncü kişilerin
-        Nomi&apos;ye yönelttiği talep ve zararlardan, kusurun ölçüsünde sen sorumlusun. Tüketiciler için bu madde yalnız kasıt ve ağır ihmal
+        Lernomi&apos;ye yönelttiği talep ve zararlardan, kusurun ölçüsünde sen sorumlusun. Tüketiciler için bu madde yalnız kasıt ve ağır ihmal
         hâlinde uygulanır.
       </p>
 

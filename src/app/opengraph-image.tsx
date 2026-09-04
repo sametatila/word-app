@@ -9,7 +9,7 @@ import { ImageResponse } from "next/og";
  * dosyasını elle güncel tutmak, sayılar değiştikçe unutulan bir iş olurdu.
  */
 
-export const alt = "Nomi — Almanca kelimeleri oynayarak öğren";
+export const alt = "Lernomi — Almanca kelimeleri oynayarak öğren";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -55,7 +55,7 @@ export default function Image() {
           >
             W
           </div>
-          <div style={{ fontSize: 38, fontWeight: 700, letterSpacing: -0.5 }}>Nomi</div>
+          <div style={{ fontSize: 38, fontWeight: 700, letterSpacing: -0.5 }}>Lernomi</div>
         </div>
 
         <div

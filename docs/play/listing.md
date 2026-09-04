@@ -1,4 +1,4 @@
-# Google Play Console — hedef kitle, içerik derecelendirme ve mağaza listesi (Nomi)
+# Google Play Console — hedef kitle, içerik derecelendirme ve mağaza listesi (Lernomi)
 
 Console'a girilecek cevaplar ve metinler. Kimlik alanları ve alan adı kesinleşince
 `[[...]]` yer tutucuları doldurulur. Kaynak: uygulamadaki gerçek içerik ve özellikler;
@@ -39,10 +39,10 @@ etiketleriyle.
 
 ### Başlık (en çok 30 karakter)
 
-`Nomi: Almanca Öğren`
+`Lernomi: Almanca Öğren`
 
-Tek kelime "Nomi" Play'de başka bir uygulamayla (yapay zekâ arkadaş) çakışıyor;
-ayırt edici son ek şart. İngilizce kurs listelemede öne çıkacaksa: `Nomi: Almanca ve İngilizce`.
+Tek kelime "Lernomi" Play'de başka bir uygulamayla (yapay zekâ arkadaş) çakışıyor;
+ayırt edici son ek şart. İngilizce kurs listelemede öne çıkacaksa: `Lernomi: Almanca ve İngilizce`.
 
 ### Kısa açıklama (en çok 80 karakter)
 
@@ -51,7 +51,7 @@ ayırt edici son ek şart. İngilizce kurs listelemede öne çıkacaksa: `Nomi: 
 ### Tam açıklama (en çok 4000 karakter)
 
 ```
-Nomi, dil öğrenmeyi günlük bir alışkanlığa çeviren bir uygulamadır: kısa kelime
+Lernomi, dil öğrenmeyi günlük bir alışkanlığa çeviren bir uygulamadır: kısa kelime
 turları, gerçek derslerle konuşma pratiği ve Goethe/telc sınavlarına hedefli hazırlık.
 
 KELİME TURLARI
@@ -121,7 +121,7 @@ varsa uygulamadaki özelliği anlatır, fiyat ya da vaat içermez.
 
 ## 4. Marka ve fikri mülkiyet
 
-- "Nomi" adı: TÜRKPATENT ve EUIPO'da marka sorgusu yap; Play'deki "Nomi" (yapay zekâ arkadaş)
+- "Lernomi" adı: TÜRKPATENT ve EUIPO'da marka sorgusu yap; Play'deki "Lernomi" (yapay zekâ arkadaş)
   ile karışıklık itirazına karşı ayırt edici başlık kullan.
 - Maskot (mirket) özgün; başka bir dil uygulamasının maskotuna benzemiyor.
 - Goethe-Institut ve telc tescilli markalar: listelemede yalnız tanımlayıcı kullanım,

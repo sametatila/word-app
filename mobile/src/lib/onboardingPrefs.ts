@@ -7,7 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const KEY = "lernomi:onboarding-prefs";
 /**
- * `nativeLang` burada, canlı arayüz dilinin (i18n'in `nomi-lang` anahtarı)
+ * `nativeLang` burada, canlı arayüz dilinin (i18n'in `lernomi-lang` anahtarı)
  * KOPYASI değil: anlamı "bu seçim henüz hesaba devredilmedi". Devredilince
  * prefs temizleniyor ve sunucu yetkili hâle geliyor — kurs/seviye ile aynı
  * kural. İki anahtar farklı soruları yanıtlıyor: biri "arayüz şu an hangi

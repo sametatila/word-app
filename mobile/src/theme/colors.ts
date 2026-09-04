@@ -1,5 +1,5 @@
 /**
- * Nomi mobil palet — marka turuncusu (#f87612, logo zemininden) çekirdek;
+ * Lernomi mobil palet — marka turuncusu (#f87612, logo zemininden) çekirdek;
  * yumuşak/modern (fitness örneği) doku. Semantik renkler WEB paletiyle hizalı
  * (mint=doğru/A1, rose=yanlış/C1, sky=A2, violet=B1, flame=seri) ki iki uygulama
  * tutarlı olsun. Light + dark; dolu zeminde okunur tonlar sabit.

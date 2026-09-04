@@ -11,7 +11,7 @@ import com.facebook.react.defaults.DefaultReactActivityDelegate
 class MainActivity : ReactActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
-    // Sistem açılış ekranı (Theme.Nomi.Splash) → AppTheme. super'dan ÖNCE çağrılmalı.
+    // Sistem açılış ekranı (Theme.Lernomi.Splash) → AppTheme. super'dan ÖNCE çağrılmalı.
     installSplashScreen()
     // RN: ekran döndürme/yeniden boyutlanmada görünüm durumunu Android'e geri yüklettirmiyoruz.
     super.onCreate(null)
@@ -24,7 +24,7 @@ class MainActivity : ReactActivity() {
   }
 
   /** JS tarafında kayıtlı ana bileşenin adı. */
-  override fun getMainComponentName(): String = "Nomi"
+  override fun getMainComponentName(): String = "Lernomi"
 
   /** Yeni mimari (Fabric) açık ReactActivityDelegate. */
   override fun createReactActivityDelegate(): ReactActivityDelegate =

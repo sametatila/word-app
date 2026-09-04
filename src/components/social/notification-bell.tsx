@@ -6,7 +6,7 @@ import { BellIcon } from "@/components/icons";
 
 /**
  * Başlıktaki zil: okunmamış sayısı. Dakikada bir ve sekme görünür olunca
- * tazelenir; gelen kutusu açılınca `nomi:inbox-read` ile sıfırlanır. Sayı 9'u
+ * tazelenir; gelen kutusu açılınca `lernomi:inbox-read` ile sıfırlanır. Sayı 9'u
  * geçince "9+" — rozet genişleyip başlığı itmesin.
  */
 export function NotificationBell({ className = "" }: { className?: string }) {

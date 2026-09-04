@@ -5,15 +5,15 @@ import UIKit
 
 /**
  * Kendi konuşma tanıma (STT) modülümüz — iOS `SFSpeechRecognizer` + `AVAudioEngine`.
- * Android'deki NomiSpeechModule ile AYNI olay sözleşmesi: NomiSpeechReady/Begin/
+ * Android'deki LernomiSpeechModule ile AYNI olay sözleşmesi: LernomiSpeechReady/Begin/
  * Partial/Results/End/Error, sonuç dizileri { value: [...] }.
  *
  * Kelime başına taze oturum: her `start` öncekini temizler. Yetki (Speech + mic)
  * istenir; reddedilirse "permissions" hatası. Info.plist'te NSSpeechRecognitionUsage
  * ve NSMicrophoneUsage metinleri gerekir.
  */
-@objc(NomiSpeech)
-class NomiSpeech: RCTEventEmitter {
+@objc(LernomiSpeech)
+class LernomiSpeech: RCTEventEmitter {
 
   private let audioEngine = AVAudioEngine()
   private var recognizer: SFSpeechRecognizer?
@@ -24,8 +24,8 @@ class NomiSpeech: RCTEventEmitter {
   override static func requiresMainQueueSetup() -> Bool { return false }
 
   override func supportedEvents() -> [String]! {
-    return ["NomiSpeechReady", "NomiSpeechBegin", "NomiSpeechPartial",
-            "NomiSpeechResults", "NomiSpeechEnd", "NomiSpeechError"]
+    return ["LernomiSpeechReady", "LernomiSpeechBegin", "LernomiSpeechPartial",
+            "LernomiSpeechResults", "LernomiSpeechEnd", "LernomiSpeechError"]
   }
   override func startObserving() { hasListeners = true }
   override func stopObserving() { hasListeners = false }
@@ -101,7 +101,7 @@ class NomiSpeech: RCTEventEmitter {
     SFSpeechRecognizer.requestAuthorization { status in
       DispatchQueue.main.async {
         guard status == .authorized else {
-          self.send("NomiSpeechError", ["code": "permissions"])
+          self.send("LernomiSpeechError", ["code": "permissions"])
           reject("permissions", "Konuşma tanıma izni yok", nil)
           return
         }
@@ -109,7 +109,7 @@ class NomiSpeech: RCTEventEmitter {
           try self.beginSession(locale)
           resolve(true)
         } catch {
-          self.send("NomiSpeechError", ["code": "start_failed"])
+          self.send("LernomiSpeechError", ["code": "start_failed"])
           reject("start_failed", error.localizedDescription, error)
         }
       }
@@ -120,8 +120,8 @@ class NomiSpeech: RCTEventEmitter {
     cleanup() // kelime başına taze oturum
 
     guard let rec = SFSpeechRecognizer(locale: Locale(identifier: locale)), rec.isAvailable else {
-      send("NomiSpeechError", ["code": "unavailable"])
-      throw NSError(domain: "NomiSpeech", code: 1, userInfo: nil)
+      send("LernomiSpeechError", ["code": "unavailable"])
+      throw NSError(domain: "LernomiSpeech", code: 1, userInfo: nil)
     }
     recognizer = rec
 
@@ -141,21 +141,21 @@ class NomiSpeech: RCTEventEmitter {
     }
     audioEngine.prepare()
     try audioEngine.start()
-    send("NomiSpeechReady", nil)
+    send("LernomiSpeechReady", nil)
 
     task = rec.recognitionTask(with: req) { [weak self] result, error in
       guard let self = self else { return }
       if let result = result {
         let text = result.bestTranscription.formattedString
         if result.isFinal {
-          self.send("NomiSpeechResults", ["value": [text]])
+          self.send("LernomiSpeechResults", ["value": [text]])
         } else {
-          self.send("NomiSpeechPartial", ["value": [text]])
+          self.send("LernomiSpeechPartial", ["value": [text]])
         }
       }
       if error != nil || (result?.isFinal ?? false) {
-        self.send("NomiSpeechEnd", nil)
-        if error != nil { self.send("NomiSpeechError", ["code": "recognition"]) }
+        self.send("LernomiSpeechEnd", nil)
+        if error != nil { self.send("LernomiSpeechError", ["code": "recognition"]) }
         self.stopAudio()
       }
     }

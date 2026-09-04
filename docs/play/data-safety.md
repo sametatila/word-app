@@ -1,4 +1,4 @@
-# Google Play Console — Veri Güvenliği beyanı (Nomi, `com.nomi.learn`)
+# Google Play Console — Veri Güvenliği beyanı (Lernomi, `com.nomi.learn`)
 
 Kodda doğrulanan toplamaya göre hazırlandı; kaynak listesi `src/lib/legal.ts` ve gizlilik
 politikası `/privacy`. Yeni bir sağlayıcı ya da veri türü eklenince önce bu üçü güncellenir,

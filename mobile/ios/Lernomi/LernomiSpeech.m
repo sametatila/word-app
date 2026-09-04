@@ -1,9 +1,9 @@
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
 
-// NomiSpeech.swift'i RN'e tanıtır (RCT_EXTERN_MODULE). Android'deki NomiSpeechModule
+// LernomiSpeech.swift'i RN'e tanıtır (RCT_EXTERN_MODULE). Android'deki LernomiSpeechModule
 // ile aynı yöntemler/olaylar.
-@interface RCT_EXTERN_MODULE(NomiSpeech, RCTEventEmitter)
+@interface RCT_EXTERN_MODULE(LernomiSpeech, RCTEventEmitter)
 
 RCT_EXTERN_METHOD(start:(NSString *)locale
                   resolver:(RCTPromiseResolveBlock)resolve

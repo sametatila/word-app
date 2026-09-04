@@ -64,7 +64,7 @@ export function buildShareText(input: {
   score?: number;
 }): string {
   const daily = input.kind === "daily";
-  const head = daily ? `Nomi · Günün turu · ${input.level}` : `Nomi · ${input.level}`;
+  const head = daily ? `Lernomi · Günün turu · ${input.level}` : `Lernomi · ${input.level}`;
   const lines = [head, marksToGrid(input.marks)];
 
   const stats = daily

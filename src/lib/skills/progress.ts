@@ -92,7 +92,7 @@ function fromServer(progress: ServerStatus): SkillProgress {
 let syncing: Promise<SkillProgress> | null = null;
 
 /**
- * Sunucudan okur, önbellekle birleştirir, `nomi:skills` olayını atar.
+ * Sunucudan okur, önbellekle birleştirir, `lernomi:skills` olayını atar.
  * Aynı anda iki çağrı tek istek yapar. Ağ yoksa önbellek döner — hata yok.
  */
 export function syncSkillProgress(): Promise<SkillProgress> {

@@ -17,24 +17,24 @@ const description =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Nomi — Almanca Kelime",
+  title: "Lernomi — Almanca Kelime",
   description,
-  applicationName: "Nomi",
+  applicationName: "Lernomi",
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    siteName: "Nomi",
-    title: "Nomi — Almanca kelimeleri oynayarak öğren",
+    siteName: "Lernomi",
+    title: "Lernomi — Almanca kelimeleri oynayarak öğren",
     description,
     url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nomi — Almanca kelimeleri oynayarak öğren",
+    title: "Lernomi — Almanca kelimeleri oynayarak öğren",
     description,
   },
-  appleWebApp: { capable: true, title: "Nomi", statusBarStyle: "black-translucent" },
+  appleWebApp: { capable: true, title: "Lernomi", statusBarStyle: "black-translucent" },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },

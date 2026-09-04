@@ -83,7 +83,7 @@ export default function Home() {
       <header className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
         <div className="flex items-center gap-2">
           <LogoMark size={36} />
-          <span className="text-lg font-bold">Nomi</span>
+          <span className="text-lg font-bold">Lernomi</span>
         </div>
         <div className="flex items-center gap-2">
           <ThemeToggle />

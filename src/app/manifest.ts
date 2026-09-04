@@ -3,8 +3,8 @@ import type { MetadataRoute } from "next";
 /** Ana ekrana eklendiğinde uygulama gibi açılması için PWA tanımı. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Nomi — Almanca Kelime",
-    short_name: "Nomi",
+    name: "Lernomi — Almanca Kelime",
+    short_name: "Lernomi",
     description:
       "Goethe A1–C1 kelimeleriyle, tekrarı kendi planlayan oyunlaştırılmış Almanca kelime uygulaması.",
     start_url: "/learn",

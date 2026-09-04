@@ -219,7 +219,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
    * "Oyun ortasındayım" sinyali.
    *
    * Rozet kutlaması kabukta duruyor ve tetikleyicisi her turdan sonra atılan
-   * `nomi:stats`. Sinyal olmasaydı tam ekran bir kutlama 7. turun
+   * `lernomi:stats`. Sinyal olmasaydı tam ekran bir kutlama 7. turun
    * ortasında belirir, kutlama olmaktan çıkıp kesinti olurdu. Kabuk bu
    * bayrağı görünce kuyruğu tutuyor ve etap/özet ekranında salıyor.
    */

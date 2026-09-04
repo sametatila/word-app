@@ -26,7 +26,7 @@ import { useCallback, useEffect, useState } from "react";
  *      bir cihazda bir kullanıcı diğerinin görevlerini bir an bile görmemeli.
  *   3. **Her açılışta tazeleme.** Önbellek gösterilen şeyi hızlandırıyor,
  *      isteğin yerine geçmiyor.
- *   4. **Değişim olayı.** Tur bitince kabuk `nomi:stats` yayınlıyor;
+ *   4. **Değişim olayı.** Tur bitince kabuk `lernomi:stats` yayınlıyor;
  *      dinleyen her kanca o anda yeniden istiyor. Yani "bir tur oynadım ama
  *      görevler eski kaldı" durumu oluşmuyor.
  *

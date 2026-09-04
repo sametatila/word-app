@@ -9,9 +9,9 @@ import { LEGAL_HOSTING_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/l
  */
 export const PRIVACY_EN_TITLE = "Privacy Policy";
 export const PRIVACY_EN_DESCRIPTION =
-  "What data Nomi processes, why and for how long; your rights under GDPR and Turkish data protection law; deleting your account.";
+  "What data Lernomi processes, why and for how long; your rights under GDPR and Turkish data protection law; deleting your account.";
 export const PRIVACY_EN_SUMMARY = [
-  "Nomi is a language learning app: German, Zurich German and English.",
+  "Lernomi is a language learning app: German, Zurich German and English.",
   "We process your e-mail and name to run your account, and your progress data to track your learning.",
   "In walk mode, with your explicit consent, microphone audio is sent to be transcribed. The recording is not kept.",
   "No ads, no advertising identifier, no third-party tracking.",
@@ -26,7 +26,7 @@ export function PrivacyEnBody() {
       <p>
         The controller of the personal data covered by this policy, within the meaning of Turkish Law no. 6698 on the Protection of Personal
         Data (KVKK) and the European Union General Data Protection Regulation (GDPR), is the person identified below: they decide what data
-        is processed for what purpose, how long it is kept and which providers it goes to. The policy covers the Nomi web app
+        is processed for what purpose, how long it is kept and which providers it goes to. The policy covers the Lernomi web app
         (www.exfe.me) and the Android app.
       </p>
       <EntityBlock party="controller" contact locale="en" />
@@ -81,7 +81,7 @@ export function PrivacyEnBody() {
       </div>
       <p>
         <strong>What we do not collect:</strong> location, contacts, calendar, photos, advertising identifier, device identifier, crash
-        reports, special categories of personal data. Nomi shows no ads, contains no third-party analytics or tracking SDK, and sells no
+        reports, special categories of personal data. Lernomi shows no ads, contains no third-party analytics or tracking SDK, and sells no
         data.
       </p>
 
@@ -101,7 +101,7 @@ export function PrivacyEnBody() {
       <h3>Explicit consent text (microphone)</h3>
       <p>
         When you press &quot;I agree, start&quot; in the app you give the following declaration: &quot;I give my explicit consent to my
-        microphone recordings in walk mode being transferred to the Nomi server and to the speech recognition providers listed in section 6
+        microphone recordings in walk mode being transferred to the Lernomi server and to the speech recognition providers listed in section 6
         of this policy, some of which are located abroad, for the purpose of transcribing the word I said; and to the recording being
         deleted as soon as the operation finishes. I know that I can withdraw this consent at any time under Settings &rsaquo; Privacy.&quot;
       </p>
@@ -112,7 +112,7 @@ export function PrivacyEnBody() {
         <li>Your social profile (username, bio, level, streak) is <strong>public</strong> by default; under Settings &rsaquo; Social you can set it to &quot;friends only&quot; or &quot;private&quot;, and turn off friend requests and appearing in suggestions.</li>
         <li>The activity feed (round completion, streak milestone) is visible only to your friends; it is turned off with &quot;show my activity&quot;.</li>
         <li>When you block a user, neither side sees the other; when you report someone, the record is reviewed by a human. Block and report records are not shown to the other party.</li>
-        <li>Nomi has no private messaging; interaction happens only through reactions, nudges and shared quests.</li>
+        <li>Lernomi has no private messaging; interaction happens only through reactions, nudges and shared quests.</li>
       </ul>
 
       <h2>4b. Automated decision-making and profiling</h2>
@@ -129,7 +129,7 @@ export function PrivacyEnBody() {
         feedback. What is sent is only the text you wrote or said and the scenario of the lesson; your name and e-mail are not sent. The
         providers operate under API terms and data processing agreements in which they undertake not to use the data for model training. The
         app states clearly that AI characters are not real people (transparency under Art. 50 of the EU AI Act). Answers can contain
-        mistakes; you can send them to us with the &quot;Report&quot; button under each answer, and reports are reviewed by a human. Nomi
+        mistakes; you can send them to us with the &quot;Report&quot; button under each answer, and reports are reviewed by a human. Lernomi
         makes no decision about you that is based solely on automated processing and produces a legal effect.
       </p>
 
@@ -162,7 +162,7 @@ export function PrivacyEnBody() {
 
       <h2>8. Product analytics and switching them off</h2>
       <p>
-        To understand which features are used, Nomi writes short usage events to its own server (e.g. &quot;round completed&quot;).
+        To understand which features are used, Lernomi writes short usage events to its own server (e.g. &quot;round completed&quot;).
         What such an event may contain is tightly bounded:
       </p>
       <ul>
@@ -233,7 +233,7 @@ export function PrivacyEnBody() {
 
       <h2>12. Children</h2>
       <p>
-        Nomi is not designed for people under 18 and does not knowingly collect data from them; the terms of use limit account creation to
+        Lernomi is not designed for people under 18 and does not knowingly collect data from them; the terms of use limit account creation to
         people aged 18 and over (see terms, clause 3). The content is aimed at adult learners and at Goethe/telc exam preparation; because
         the app contains open-ended AI conversation and user interaction, it is not suitable for a child audience. If we discover that
         someone under 18 has created an account, we delete the account and the data; parents can write to <Ph k="privacyEmailEu" />.

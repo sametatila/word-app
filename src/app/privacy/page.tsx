@@ -4,7 +4,7 @@ import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PROCESSORS, legalPath, processorRow } 
 
 export const metadata = {
   title: "Gizlilik Politikası",
-  description: "Nomi'nin hangi verileri, neden ve ne kadar süreyle işlediği; KVKK ve GDPR kapsamındaki hakların; hesap silme.",
+  description: "Lernomi'nin hangi verileri, neden ve ne kadar süreyle işlediği; KVKK ve GDPR kapsamındaki hakların; hesap silme.",
   alternates: {
     canonical: LEGAL_PATHS.privacy,
     languages: { tr: legalPath("privacy"), en: legalPath("privacy", "en"), de: legalPath("privacy", "de") },
@@ -23,7 +23,7 @@ export default function PrivacyPage() {
       doc="privacy"
       title="Gizlilik Politikası ve Aydınlatma Metni"
       summary={[
-        "Nomi bir dil öğrenme uygulaması: Almanca, Zürih Almancası ve İngilizce.",
+        "Lernomi bir dil öğrenme uygulaması: Almanca, Zürih Almancası ve İngilizce.",
         "Hesabını yürütmek için e-posta ve adını, öğrenmeni izlemek için ilerleme verini işleriz.",
         "Yürüyüş modunda mikrofon sesin, açık rızanla, konuşmanı yazıya çevirmek için gönderilir. Ses kaydı saklanmaz.",
         "Reklam, reklam kimliği ve üçüncü taraf takip yok.",
@@ -35,7 +35,7 @@ export default function PrivacyPage() {
       <p>
         Bu politika kapsamındaki kişisel verilerin sorumlusu, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel
         Veri Koruma Tüzüğü (GDPR) anlamında aşağıdaki kişidir: hangi verinin hangi amaçla işleneceğine, ne kadar tutulacağına ve hangi
-        sağlayıcıya gideceğine o karar verir. Politika, Nomi web uygulamasını (www.exfe.me) ve Android uygulamasını kapsar.
+        sağlayıcıya gideceğine o karar verir. Politika, Lernomi web uygulamasını (www.exfe.me) ve Android uygulamasını kapsar.
       </p>
       <EntityBlock party="controller" contact />
       <p>
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
       </div>
       <p>
         <strong>Toplamadıklarımız:</strong> konum, rehber, takvim, fotoğraf, reklam kimliği, cihaz kimliği, çökme raporu, özel nitelikli
-        kişisel veri. Nomi reklam göstermez, üçüncü taraf analitik ya da takip SDK&apos;sı içermez, veri satmaz.
+        kişisel veri. Lernomi reklam göstermez, üçüncü taraf analitik ya da takip SDK&apos;sı içermez, veri satmaz.
       </p>
 
       <h2>4. Mikrofon ve ses kayıtları</h2>
@@ -108,7 +108,7 @@ export default function PrivacyPage() {
       <h3>Açık rıza metni (mikrofon)</h3>
       <p>
         Uygulamada &quot;Kabul ediyorum, başla&quot;ya bastığında şu beyanı vermiş olursun: &quot;Yürüyüş modunda mikrofon kayıtlarımın, söylediğim
-        kelimeyi yazıya çevirmek amacıyla Nomi sunucusuna ve bu politikanın 6. bölümünde listelenen, bir kısmı yurt dışında bulunan
+        kelimeyi yazıya çevirmek amacıyla Lernomi sunucusuna ve bu politikanın 6. bölümünde listelenen, bir kısmı yurt dışında bulunan
         konuşma tanıma sağlayıcılarına aktarılmasına; kaydın işlem biter bitmez silinmesine açık rıza veriyorum. Bu rızayı Ayarlar › Gizlilik
         bölümünden dilediğim an geri alabileceğimi biliyorum.&quot;
       </p>
@@ -119,7 +119,7 @@ export default function PrivacyPage() {
         <li>Sosyal profilin (kullanıcı adı, biyografi, seviye, seri) varsayılan olarak <strong>herkese açık</strong>tır; Ayarlar › Sosyal&apos;den &quot;yalnız arkadaşlar&quot; ya da &quot;gizli&quot; yapabilir, arkadaşlık isteklerini ve önerilerde görünmeyi kapatabilirsin.</li>
         <li>Etkinlik akışı (tur tamamlama, seri kilometre taşı) yalnız arkadaşlarına görünür; &quot;etkinliğimi göster&quot; ile kapatılır.</li>
         <li>Bir kullanıcıyı engellediğinde iki taraf birbirini görmez; bildirdiğinde kayıt insan tarafından incelenir. Engelleme ve bildirim kayıtları karşı tarafa gösterilmez.</li>
-        <li>Nomi&apos;de özel mesajlaşma yoktur; etkileşim yalnız tepkiler, dürtmeler ve ortak görevlerle olur.</li>
+        <li>Lernomi&apos;de özel mesajlaşma yoktur; etkileşim yalnız tepkiler, dürtmeler ve ortak görevlerle olur.</li>
       </ul>
 
       <h2>4b. Otomatik karar verme ve profilleme</h2>
@@ -135,7 +135,7 @@ export default function PrivacyPage() {
         Gönderilen şey yalnız senin yazdığın/söylediğin metin ve dersin senaryosudur; ad ya da e-posta gönderilmez. Sağlayıcılar, verileri
         model eğitiminde kullanmamayı taahhüt eden API şartlarıyla ve veri işleme sözleşmeleriyle çalışır. Yapay zekâ karakterlerinin gerçek
         kişi olmadığı uygulamada açıkça belirtilir (AB Yapay Zekâ Tüzüğü m.50 şeffaflık). Yanıtlar hata içerebilir; her yanıtın altındaki
-        &quot;Bildir&quot; ile bize iletebilirsin, bildirimler insan tarafından incelenir. Nomi hakkında yalnız otomatik işlemeye dayanan, hukuki
+        &quot;Bildir&quot; ile bize iletebilirsin, bildirimler insan tarafından incelenir. Lernomi hakkında yalnız otomatik işlemeye dayanan, hukuki
         sonuç doğuran bir karar vermez.
       </p>
 
@@ -168,7 +168,7 @@ export default function PrivacyPage() {
 
       <h2>8. Ürün analitiği ve kapatma</h2>
       <p>
-        Nomi, hangi özelliklerin kullanıldığını anlamak için kendi sunucusuna kısa kullanım olayları yazar (ör. &quot;tur tamamlandı&quot;).
+        Lernomi, hangi özelliklerin kullanıldığını anlamak için kendi sunucusuna kısa kullanım olayları yazar (ör. &quot;tur tamamlandı&quot;).
         Bu olayda ne bulunabileceği dar bir çerçeveyle sınırlı:
       </p>
       <ul>
@@ -234,7 +234,7 @@ export default function PrivacyPage() {
 
       <h2>12. Çocuklar</h2>
       <p>
-        Nomi 18 yaşından küçükler için tasarlanmamıştır ve onlardan bilerek veri toplamaz; kullanım şartları hesap açmayı 18 yaş ve üzeriyle
+        Lernomi 18 yaşından küçükler için tasarlanmamıştır ve onlardan bilerek veri toplamaz; kullanım şartları hesap açmayı 18 yaş ve üzeriyle
         sınırlar (bkz. şartlar §3). İçerik yetişkin öğrencilere ve Goethe/telc sınav hazırlığına yöneliktir; uygulamada açık uçlu yapay zekâ
         konuşması ve kullanıcı etkileşimi bulunduğundan çocuk kitlesine uygun değildir. 18 yaşından küçük birinin hesap açtığını fark edersek
         hesabı ve verileri sileriz; ebeveynler <Ph k="privacyEmailTr" /> adresine yazabilir.

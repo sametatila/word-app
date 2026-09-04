@@ -120,7 +120,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
         </span>
         <div className="min-w-0">
           <p className="text-sm font-bold">Uygulama kurulu</p>
-          <p className="muted text-xs">Nomi'i ana ekranından açıyorsun.</p>
+          <p className="muted text-xs">Lernomi'i ana ekranından açıyorsun.</p>
         </div>
       </div>
     );

@@ -10,9 +10,9 @@ import { LEGAL_HOSTING_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/l
  */
 export const PRIVACY_DE_TITLE = "Datenschutzerklärung";
 export const PRIVACY_DE_DESCRIPTION =
-  "Welche Daten Nomi verarbeitet, warum und wie lange; deine Rechte nach DSGVO und türkischem Datenschutzrecht; Konto löschen.";
+  "Welche Daten Lernomi verarbeitet, warum und wie lange; deine Rechte nach DSGVO und türkischem Datenschutzrecht; Konto löschen.";
 export const PRIVACY_DE_SUMMARY = [
-  "Nomi ist eine Sprachlern-App: Deutsch, Zürichdeutsch und Englisch.",
+  "Lernomi ist eine Sprachlern-App: Deutsch, Zürichdeutsch und Englisch.",
   "Wir verarbeiten deine E-Mail-Adresse und deinen Namen für dein Konto und deine Fortschrittsdaten für dein Lernen.",
   "Im Gehmodus wird Mikrofon-Audio mit deiner ausdrücklichen Einwilligung zur Verschriftlichung gesendet. Die Aufnahme wird nicht gespeichert.",
   "Keine Werbung, keine Werbe-ID, kein Tracking durch Dritte.",
@@ -28,7 +28,7 @@ export function PrivacyDeBody() {
         Verantwortlicher für die von dieser Erklärung erfassten personenbezogenen Daten im Sinne des türkischen Gesetzes Nr. 6698 zum
         Schutz personenbezogener Daten (KVKK) und der Datenschutz-Grundverordnung der Europäischen Union (DSGVO) ist die unten bezeichnete
         Person. Diese Person entscheidet, welche Daten zu welchem Zweck verarbeitet, wie lange sie gespeichert und an welche Anbieter sie übermittelt
-        werden. Die Erklärung gilt für die Nomi-Webanwendung (www.exfe.me) und die Android-App.
+        werden. Die Erklärung gilt für die Lernomi-Webanwendung (www.exfe.me) und die Android-App.
       </p>
       <EntityBlock party="controller" contact locale="de" />
       <p>
@@ -83,7 +83,7 @@ export function PrivacyDeBody() {
       </div>
       <p>
         <strong>Was wir nicht erheben:</strong> Standort, Kontakte, Kalender, Fotos, Werbe-ID, Geräte-ID, Absturzberichte, besondere
-        Kategorien personenbezogener Daten. Nomi zeigt keine Werbung, enthält kein Analyse- oder Tracking-SDK Dritter und verkauft keine
+        Kategorien personenbezogener Daten. Lernomi zeigt keine Werbung, enthält kein Analyse- oder Tracking-SDK Dritter und verkauft keine
         Daten.
       </p>
 
@@ -104,7 +104,7 @@ export function PrivacyDeBody() {
       <h3>Text der ausdrücklichen Einwilligung (Mikrofon)</h3>
       <p>
         Wenn du in der App auf &quot;Ich stimme zu, los&quot; tippst, gibst du folgende Erklärung ab: &quot;Ich willige ausdrücklich ein,
-        dass meine Mikrofonaufnahmen im Gehmodus zum Zweck der Verschriftlichung des von mir gesprochenen Wortes an den Nomi-Server und an
+        dass meine Mikrofonaufnahmen im Gehmodus zum Zweck der Verschriftlichung des von mir gesprochenen Wortes an den Lernomi-Server und an
         die in Abschnitt 6 dieser Erklärung aufgeführten, teils im Ausland ansässigen Spracherkennungsanbieter übermittelt werden und dass
         die Aufnahme unmittelbar nach dem Vorgang gelöscht wird. Mir ist bekannt, dass ich diese Einwilligung jederzeit unter Einstellungen
         &rsaquo; Datenschutz widerrufen kann.&quot;
@@ -116,7 +116,7 @@ export function PrivacyDeBody() {
         <li>Dein soziales Profil (Benutzername, Bio, Niveau, Serie) ist standardmäßig <strong>öffentlich</strong>; unter Einstellungen &rsaquo; Soziales kannst du es auf &quot;nur Freunde&quot; oder &quot;privat&quot; stellen und Freundschaftsanfragen sowie das Erscheinen in Vorschlägen abschalten.</li>
         <li>Der Aktivitäts-Feed (abgeschlossene Runde, Serien-Meilenstein) ist nur für deine Freunde sichtbar; er wird über &quot;Aktivität zeigen&quot; abgeschaltet.</li>
         <li>Blockierst du eine Person, sehen sich beide Seiten nicht mehr; meldest du jemanden, wird der Vorgang von einem Menschen geprüft. Blockier- und Meldevorgänge werden der Gegenseite nicht angezeigt.</li>
-        <li>Nomi hat keine privaten Nachrichten; Interaktion findet nur über Reaktionen, Anstöße und gemeinsame Aufgaben statt.</li>
+        <li>Lernomi hat keine privaten Nachrichten; Interaktion findet nur über Reaktionen, Anstöße und gemeinsame Aufgaben statt.</li>
       </ul>
 
       <h2>4b. Automatisierte Entscheidungen und Profiling</h2>
@@ -134,7 +134,7 @@ export function PrivacyDeBody() {
         E-Mail-Adresse werden nicht gesendet. Die Anbieter arbeiten unter API-Bedingungen und Auftragsverarbeitungsverträgen, in denen sie
         zusagen, die Daten nicht für Modelltraining zu verwenden. Die App weist deutlich darauf hin, dass KI-Figuren keine echten Personen
         sind (Transparenz nach Art. 50 der KI-Verordnung der EU). Antworten können Fehler enthalten; du kannst sie uns über die
-        Schaltfläche &quot;Melden&quot; unter jeder Antwort mitteilen, und Meldungen werden von einem Menschen geprüft. Nomi trifft über
+        Schaltfläche &quot;Melden&quot; unter jeder Antwort mitteilen, und Meldungen werden von einem Menschen geprüft. Lernomi trifft über
         dich keine ausschließlich auf automatisierter Verarbeitung beruhende Entscheidung mit rechtlicher Wirkung.
       </p>
 
@@ -169,7 +169,7 @@ export function PrivacyDeBody() {
 
       <h2>8. Produktanalyse und Abschalten</h2>
       <p>
-        Um zu verstehen, welche Funktionen genutzt werden, schreibt Nomi kurze Nutzungsereignisse auf den eigenen Server (z. B. &quot;Runde
+        Um zu verstehen, welche Funktionen genutzt werden, schreibt Lernomi kurze Nutzungsereignisse auf den eigenen Server (z. B. &quot;Runde
         abgeschlossen&quot;). Was ein solches Ereignis enthalten darf, ist eng begrenzt:
       </p>
       <ul>
@@ -241,7 +241,7 @@ export function PrivacyDeBody() {
 
       <h2>12. Kinder</h2>
       <p>
-        Nomi ist nicht für Personen unter 18 Jahren gestaltet und erhebt von ihnen wissentlich keine Daten. Die Nutzungsbedingungen
+        Lernomi ist nicht für Personen unter 18 Jahren gestaltet und erhebt von ihnen wissentlich keine Daten. Die Nutzungsbedingungen
         beschränken die Kontoerstellung auf Personen ab 18 Jahren (siehe Nutzungsbedingungen, Ziffer 3). Die Inhalte richten sich an
         erwachsene Lernende und an die Prüfungsvorbereitung für Goethe/telc; da die App offene KI-Gespräche und Interaktion zwischen Nutzern
         enthält, ist sie für ein kindliches Publikum nicht geeignet. Erfahren wir, dass eine Person unter 18 Jahren ein Konto erstellt hat,

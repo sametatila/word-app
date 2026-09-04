@@ -262,7 +262,7 @@ export function SettingsScreen() {
             <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.kullanim_sartlari")}</Text>
             <ChevronRightIcon color={colors.textFaint} size={20} />
           </PressableScale>
-          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>Nomi {APP_VERSION}</Text>
+          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>Lernomi {APP_VERSION}</Text>
         </Section>
 
         {!user && (

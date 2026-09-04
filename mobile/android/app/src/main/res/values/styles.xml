@@ -8,7 +8,7 @@
 
     <!-- Açılış ekranı (Android 12+ SplashScreen API, altında uyumluluk): marka turuncusu
          üzerinde launcher ikonu; ardından AppTheme'e geçer (MainActivity.installSplashScreen). -->
-    <style name="Theme.Nomi.Splash" parent="Theme.SplashScreen">
+    <style name="Theme.Lernomi.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/ic_launcher_background</item>
         <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
