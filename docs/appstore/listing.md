@@ -223,7 +223,8 @@ elinin altında.
 
 KURSLAR
 Almanca ve Zürih Almancası (Züritüütsch) kurslarında dersler, beceri alıştırmaları ve
-sınav hazırlığı hazır. İngilizce kursunda şimdilik yalnız kelime turları var.
+sınav hazırlığı hazır. İngilizce kursunda A1 ve A2 dersleri ve beceri alıştırmaları
+var; sınav hazırlığı ve B1-C1 seviyeleri henüz yok.
 
 GİZLİLİK
 Reklam yok, izleme yok, veri satışı yok. Hesabını uygulamanın içinden tek ekranda
@@ -234,7 +235,7 @@ Arayüz Türkçe, İngilizce ve Almanca.
 Gizlilik politikası: [[SITE]]/privacy
 Kullanım şartları: [[SITE]]/terms
 ```
-_1978/4000 karakter._
+_2036/4000 karakter._
 
 **What's New**
 
@@ -312,7 +313,8 @@ away on every screen.
 
 COURSES
 The German and Zurich German (Züritüütsch) courses have lessons, skill exercises and exam
-preparation. The English course currently has vocabulary rounds only.
+preparation. The English course has A1 and A2 lessons and skill exercises; exam
+preparation and the B1-C1 levels are not there yet.
 
 PRIVACY
 No ads, no tracking, no data selling. You can delete your account from inside the app, on
@@ -323,7 +325,7 @@ The interface is available in Turkish, English and German.
 Privacy policy: [[SITE]]/privacy
 Terms of use: [[SITE]]/terms
 ```
-_2045/4000 karakter._
+_2107/4000 karakter._
 
 **What's New**
 
@@ -334,14 +336,12 @@ _14/4000 karakter._
 
 ### 3.3 Almanca (de)
 
-> **Almanca vitrin için açık karar.** Almanca konuşan bir kullanıcının bu uygulamada
-> alabileceği kurslar İngilizce (şimdilik yalnız kelime turları) ve Zürih Almancası;
-> Almanca kursunun derin içeriği onun işine yaramaz. Yani üç vitrin arasında **arkasında
-> en az ürün olan** Almanca olan. İki seçenek var: (a) aşağıdaki dürüst metinle yayına
-> girmek, (b) İngilizce dersleri gelene kadar Almanca vitrini hiç açmamak — ama o zaman
-> uygulama arayüzünde olan bir dil mağazada olmaz. **(a) öneriliyor**; metin İngilizce
-> kursunun kelimeyle sınırlı olduğunu açıkça söylüyor, dolayısıyla 2.3 açısından temiz.
-> Karar ürün tarafının.
+> **Almanca vitrin neyi satıyor.** Almanca konuşan bir kullanıcı bu uygulamada Almanca
+> kursunu almaz; ona kalan İngilizce (uygulamada A1 ve A2 dersleri + beceri alıştırmaları)
+> ve Zürih Almancası. İkisi de gerçek ürün, yani Almanca vitrinin arkası boş değil —
+> yalnız Türkçe ve İngilizce vitrinlerden dar: sınav hazırlığı Almancayı hedefleyen
+> kurslara ait, İngilizcede henüz yok. Metin bunu açıkça söylüyor (2.3 açısından temiz)
+> ve bu yüzden Almanca vitrin **açılabilir**; ad da buna göre "Deutsch & Englisch".
 
 **App Name**
 
@@ -410,7 +410,8 @@ sind auf jedem Bildschirm erreichbar.
 
 KURSE
 In den Kursen Deutsch und Zürichdeutsch (Züritüütsch) gibt es Lektionen, Übungen und
-Prüfungsvorbereitung. Der Englischkurs enthält derzeit nur Vokabelrunden.
+Prüfungsvorbereitung. Der Englischkurs enthält Lektionen und Übungen für A1 und A2;
+Prüfungsvorbereitung und die Stufen B1 bis C1 gibt es noch nicht.
 
 DATENSCHUTZ
 Keine Werbung, kein Tracking, kein Datenverkauf. Dein Konto kannst du in der App auf einem
@@ -421,7 +422,7 @@ Die Oberfläche gibt es auf Türkisch, Englisch und Deutsch.
 Datenschutzerklärung: [[SITE]]/privacy
 Nutzungsbedingungen: [[SITE]]/terms
 ```
-_2190/4000 karakter._
+_2266/4000 karakter._
 
 **What's New**
 
@@ -501,16 +502,11 @@ aksi hâlde 3.1.2'den reddedilir.
   `zertifikat,niveau` (de/en) ve `sertifika,seviye` (tr) koy; açıklamadaki tanımlayıcı
   kullanım kalabilir. Bu bir yayın engeli değil, tek alanda geri adım.
 - **Abartı yok.** "En iyi", "1 numara", "garantili geçiş" gibi iddialar yok.
-- **Olmayan özellik yok.** Tam deneme sınavı, reklamsız premium ve İngilizce dersleri
-  metinlerde geçmiyor; İngilizce kursunun kelimeyle sınırlı olduğu üç dilde de yazılı.
+- **Olmayan özellik yok.** Tam deneme sınavı ve reklamsız premium metinlerde geçmiyor.
+  İngilizce kursunda sınav hazırlığı ve B1-C1'in bulunmadığı üç dilde de yazılı; kaynağı
+  `mobile/src/data/exams.ts` (katalog hedef dile bağlı, İngilizce için boş) ve
+  `mobile/src/data/lessons/` (yalnız `en-a1`, `en-a2`).
 - **Çocuk vurgusu yok** (§2.4).
-
-> **`docs/play/listing.md`'de düzeltilmesi gereken bir cümle var** ve bu belgenin konusu
-> değil, o yüzden burada yalnız not düşülüyor: Play'in tam açıklaması "Zürih Almancası
-> (Züritüütsch) kursu ve İngilizce kursu da mevcuttur" diyor. İngilizce kursunda ders ve
-> beceri içeriği yok, yalnız kelime turları var (`src/lib/courses.ts`: "Kelime katmanı
-> hazır; ders/beceri içeriği henüz yok"). Aynı cümle Play'de de eksik özellik beyanı
-> sayılabilir; Şerit T ya da Play belgelerinin sahibi düzeltmeli.
 
 ---
 
@@ -518,7 +514,20 @@ aksi hâlde 3.1.2'den reddedilir.
 
 | # | Karar | Kim verir |
 |---|---|---|
-| 1 | Almanca vitrin açılsın mı, yoksa İngilizce dersleri gelene kadar beklesin mi (§3.3) | Ürün |
+| 1 | **Web/uygulama İngilizce ayrışması kapatılacak mı** — aşağıya bak | Ürün |
 | 2 | `keywords`te `goethe,telc` denensin mi, baştan güvenli sürüm mü kullanılsın (§6) | Ürün |
 | 3 | App Preview videosu çekilecek mi — arka planda mikrofon isteyen bir uygulamada incelemeyi en hızlı geçiren şey | Ürün |
 | 4 | Hesaplanan yaş derecesi Connect'te görülünce bu belgeye yazılacak (§2.3) | Yayın günü |
+
+**1 numaralı karar — İngilizce kursu iki platformda aynı şey değil.**
+
+| Nerede | İngilizce kursunda ne var |
+|---|---|
+| Uygulama (iOS + Android, aynı JS paketi) | A1 ve A2 dersleri (`mobile/src/data/lessons/en-a1.json`, `en-a2.json`) + beceri alıştırmaları (`mobile/src/data/skills/exercises-en.json`) |
+| Web (www.lernomi.app) | Yalnız kelime katmanı — `src/lib/lessons/content/` içinde `de-*` dışında dosya yok, `src/lib/skills/content/` yalnız `a1..c1` ve `zh-*` taşıyor (`src/lib/courses.ts`: "Kelime katmanı hazır; ders/beceri içeriği henüz yok") |
+
+Bu bir vitrin hatası değil, **ürün ayrışması**: uygulamada kaydolup İngilizce çalışan
+biri siteye girdiğinde daha azını buluyor. Vitrin uygulamayı anlattığı için buradaki
+metinler doğru; ayrışmanın kendisi ayrı bir karar. Seçenekler: web'e ders/beceri
+içeriğini taşımak, ya da web'de İngilizce kursunu bugünkü sınırıyla açıkça anlatmak.
+Kapanana kadar bir yerde yazılı durması gerekiyordu, burası.
