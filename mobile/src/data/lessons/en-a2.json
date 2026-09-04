@@ -968,8 +968,7 @@
      "kind": "produce",
      "target": "What were you wearing?",
      "accept": [
-      "What were you wearing",
-      "What was she wearing?"
+      "What were you wearing"
      ],
      "hint": [
       {
@@ -4182,7 +4181,7 @@
      },
      {
       "lang": "tr",
-      "text": "Kolum ağrıdı, kolumu incittim. Lütfen söyle."
+      "text": "Kolumu incittim. Lütfen söyle."
      }
     ],
     "expect": {
@@ -5261,15 +5260,7 @@
      },
      {
       "lang": "tr",
-      "text": "artı fiilin üçüncü biçimi. Örneğin"
-     },
-     {
-      "lang": "en",
-      "text": "go"
-     },
-     {
-      "lang": "tr",
-      "text": "fiilinin üçüncü biçimi"
+      "text": "artı fiilin üçüncü biçimi. Bir yere gidip gelmiş olmayı anlatırken go değil, be fiilinin üçüncü biçimi kullanılır:"
      },
      {
       "lang": "en",
@@ -5277,7 +5268,15 @@
      },
      {
       "lang": "tr",
-      "text": "olur. Önce kelimeleri öğrenelim."
+      "text": "Yani"
+     },
+     {
+      "lang": "en",
+      "text": "Have you ever been abroad?"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. Önce kelimeleri öğrenelim."
      }
     ]
    },

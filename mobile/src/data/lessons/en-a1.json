@@ -46427,7 +46427,7 @@
      },
      {
       "lang": "en",
-      "text": "I call you in the evening."
+      "text": "I'll call you in the evening."
      },
      {
       "lang": "tr",
@@ -46863,7 +46863,7 @@
   "icon": "phone",
   "title": "Texting a friend",
   "titleTr": "Mesajlaşmak",
-  "summary": "Bir arkadaşına kısa mesaj yazmayı ve gelen mesaba kısaltmalarla hızlıca cevap vermeyi öğretir.",
+  "summary": "Bir arkadaşına kısa mesaj yazmayı ve gelen mesaja kısaltmalarla hızlıca cevap vermeyi öğretir.",
   "minutes": 8,
   "focusId": "Short forms",
   "vocab": [
@@ -47632,7 +47632,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yani: bir e-posta yazıyorum. Duydun mu, araya"
+      "text": "Yani: e-posta yazarım. Duydun mu, araya"
      },
      {
       "lang": "en",
@@ -47749,11 +47749,11 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I write an email.",
+     "target": "I'm writing an email.",
      "accept": [
-      "I write an email",
       "I am writing an email.",
-      "I'm writing an email."
+      "I'm writing an email",
+      "I write an email."
      ],
      "hint": [
       {
@@ -48324,7 +48324,6 @@
      "kind": "produce",
      "target": "Do you use the internet?",
      "accept": [
-      "Do you use internet?",
       "Do you use the internet"
      ],
      "hint": [
@@ -49186,7 +49185,9 @@
      "target": "I was at home yesterday.",
      "accept": [
       "Yesterday I was at home.",
-      "I was at home."
+      "I was at home.",
+      "I was home yesterday.",
+      "Yesterday I was home."
      ],
      "hint": [
       {
@@ -51208,7 +51209,9 @@
       "See you. Take care!",
       "See you soon, take care!",
       "Bye, take care!",
-      "See you take care"
+      "See you take care",
+      "See you later, take care!",
+      "See you later. Take care!"
      ],
      "hint": [
       {
