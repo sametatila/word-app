@@ -162,3 +162,92 @@ Her parça kendi commit'i olsun. Commit mesajı **ne yapıldığını değil ned
 yapıldığını** anlatsın; A1 tarafındaki commit'leri örnek al (`git log
 --grep="A1 havuzu"`). Sonunda kullanıcıya: neyin bittiği, neyin bilerek
 bırakıldığı, hangi sayının nereden geldiği.
+
+---
+
+## 7. Sonuç — 2026-09-05
+
+İş bitti. Aşağıdaki her sayı, brief'in Adım 6'sında sayılan doğrulayıcılarla
+ölçüldü; komutlar parantez içinde.
+
+### Hedef 1 — dersler havuzun A2 katmanından öğretsin
+
+100 ders × 8 kelime = **800 sözlükçe yuvası** (`scripts/check-lessons.ts`,
+A1 ve A2 için sekiz kelime zorunlu).
+
+| Ölçüt | Başlangıç (2026-09-04) | Şimdi |
+|---|---|---|
+| A2 katmanından | 249 (%49,8) | **792 (%99,0)** |
+| A1 katmanından | 133 (%26,6) | **8 (%1,0)** |
+| B1 / B2 / C1 | 144 / 31 / 4 | **0 / 0 / 0** |
+| Havuzda hiç yok | 72 | **0** |
+| A2 içinde tekrar eden | — | **0** |
+
+Kalan 8 A1 maddesi bilerek duruyor: `seit`, `vor`, `zwischen` (Dativ ve
+Wechselpräposition derslerinin konusu), `dürfen` (kipli fiil dersi), `denn`
+(bağlaç karşılaştırması), `gehören`, `vorstellen`, `schenken` (yönelme hâli
+dersleri). Bunlar A1'de tanıtılıp A2'de dilbilgisi konusu olarak geri geliyor;
+başka bir kelimeyle değiştirmek dersin kendisini bozardı.
+
+Seviyeler arası tekrar — hiçbir doğrulayıcının göremediği, çünkü tekrar
+denetimi seviye içinde çalışıyor — **57'den 3'e** indi (`overlap.ts`). Kalan üçü
+yukarıdaki listeden: `dürfen`, `zwischen`, `schenken`.
+
+### Hedef 2 — A2 katmanının kapsanması
+
+| Ölçüt | Başlangıç | Şimdi |
+|---|---|---|
+| A2 dersleriyle kapsanan | 115/1412 (%8,1) | **792/1416 (%55,9)** |
+| Hiçbir seviyenin dersinde geçmeyen | — | 556/1416 → **860 kapsandı (%60,7)** |
+
+Katman 1412'den 1416'ya çıktı: derste öğretilip havuzda olmayan 72 maddenin
+vetosundan sonra 36 gerçek başlık eklendi (id 8482-8517), geri kalanı türemiş
+biçim olduğu için `formen` alanına ait sayıldı ve havuza girmedi. `rank`
+uydurulmadı; `data/a2-expansion/de_50k.txt` satır numarasından okundu.
+
+%100 kapsama 100 × 8 = 800 yuvayla matematiksel olarak mümkün değil (katman
+1416). Kalan 624 madde ancak ders sayısı ya da sözlükçe boyu değişirse
+öğretilebilir — ikisi de brief'te sabit.
+
+### Hedef 3 ve 4 — beceri egzersizleri ve ExamPrep
+
+25 ünite × (2 okuma + 2 dinleme + 2 yazma) deseni **tamamlandı**:
+
+| | Başlangıç | Şimdi |
+|---|---|---|
+| Okuma | 12 | **50** |
+| Dinleme | 12 | **50** |
+| Yazma | 8 | **50** |
+
+118 eksik egzersizin tamamı yazıldı (`a2-u01.ts` … `a2-u21.ts`). Yerleşim
+`unit` etiketine değil **liste sırasına** bakıyor — `buildTrack` havuzları
+imleçle tüketiyor — o yüzden ünite dosyaları `a2.ts` içinde en başta duruyor,
+eski 32 genel egzersiz sonraki ünitelere köprü oluyor. ExamPrep aynı havuzdan
+beslendiği için hedef 4 kendiliğinden karşılandı.
+
+### Doğrulama
+
+`npm run check:lessons` → **hata yok**, 7 uyarı (hepsi B1, paralel oturuma ait).
+`npx tsc --noEmit` kökte ve `mobile/` içinde temiz. `npm run test:track` 55
+kontrol geçti. `npm run test:options` 8379 kelime 0 hata, 4672 isimde artikel
+eksiği yok. `npm run dump:skills` ile mobil paket yenilendi; fark yalnız A2'de
+(38/38/34 → 50/50/50), başka seviyeye dokunulmadı.
+
+### Yol boyunca düzeltilen iki doğrulayıcı hatası
+
+`scripts/check-lessons.ts` sözlükçe boyunu 5'e sabitlemişti; A1 ve A2 sekize
+çıkınca doğrulama kırmızıya döndü — seviyeye bağlı hâle getirildi.
+`scripts/check-content.ts` `minTurns` için 2-6 uyarıyordu, `check-lessons.ts`
+ise 6-9 dayatıyordu; iki doğrulayıcı aynı alan için farklı şey söylediğinden
+katalogda 426 sahte uyarı üretiyordu, eşik hizalandı.
+
+### Bilerek bırakılanlar
+
+- **A1 katmanının havuz boşlukları.** 12 ayın 11'i havuzda yok; `gelb` ve
+  `braun` yok ama `gelblich` var. Bunlar A1 oturumunun işi, buradan
+  dokunulmadı.
+- **`npm run test:content` hâlâ bütçe üstü.** Sekiz kategoriden yalnız biri
+  (6 çok anlamlı A2 sözlükçe maddesi) bu işe aitti ve düzeltildi; geri kalanı
+  A1/B1/B2/C1 ile beceri birikimine ait.
+- **Kalan 624 A2 maddesi.** Ders sayısı ve sözlükçe boyu sabit olduğu sürece
+  öğretilemez; kararı ders sayısını artırmak isteyen bir sonraki oturuma ait.
