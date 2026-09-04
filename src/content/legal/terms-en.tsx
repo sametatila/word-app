@@ -24,7 +24,7 @@ export function TermsEnBody() {
       <h2>1. Parties and acceptance</h2>
       <p>
         This agreement is between the parties identified below (&quot;Lernomi&quot;, &quot;we&quot;) and the person using the Lernomi
-        web app (www.exfe.me) or Android app (&quot;you&quot;). There are two of us: the person who designs and operates the service and is
+        web app (www.lernomi.app) or Android app (&quot;you&quot;). There are two of us: the person who designs and operates the service and is
         responsible for your data, and the person who publishes the app on Google Play and collects the subscription revenue. By creating an account or using the app you accept these terms and the{" "}
         <Link href={legalPath("privacy", "en")}>Privacy Policy</Link>. Under Turkish Law no. 6563 this text is accessible and can be stored
         before the contract is concluded. If you do not accept it, do not use the app.

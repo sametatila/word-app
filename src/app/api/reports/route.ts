@@ -18,7 +18,7 @@ export const dynamic = "force-dynamic";
  *     content bildirilen metin (≤ 4000 karakter) — roleplay_logs 30 günde silindiği
  *             için metin burada da saklanır; inceleme kaydın süresine bağlı kalmaz.
  *
- * Yaptırım otomatik değil: kayıt yönetim panosunda (exfe.me/admin › Loglar) insan
+ * Yaptırım otomatik değil: kayıt yönetim panosunda (lernomi.app/admin › Loglar) insan
  * okur. Günde kullanıcı başına 20 bildirim (kötüye kullanım sınırı).
  */
 const KINDS = new Set(["roleplay", "assessment", "user"]);

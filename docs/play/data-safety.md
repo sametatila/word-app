@@ -13,7 +13,7 @@ Son güncelleme: 2026-09-04. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'te
 |---|---|
 | Uygulama kullanıcı verisi topluyor ya da paylaşıyor mu | Evet |
 | Toplanan tüm veriler aktarımda şifreleniyor mu | Evet (HTTPS) |
-| Kullanıcı veri silme talebinde bulunabiliyor mu | Evet — `https://www.exfe.me/account/delete` ve uygulama içi Ayarlar › Hesap › Hesabı sil |
+| Kullanıcı veri silme talebinde bulunabiliyor mu | Evet — `https://www.lernomi.app/account/delete` ve uygulama içi Ayarlar › Hesap › Hesabı sil |
 | Hesap oluşturma var mı | Evet (e-posta/parola, Google) |
 | Bağımsız güvenlik incelemesi (MASA) | Hayır |
 | Aileler politikasına tabi mi | Hayır (hedef kitle 18+; şartlar hesap açmayı 18 yaşla sınırlıyor) |
@@ -53,9 +53,9 @@ Notlar:
 
 ## Bağlantılar
 
-- Gizlilik politikası: `https://www.exfe.me/privacy` (Türkçe kısayol `/gizlilik`)
-- Kullanım şartları: `https://www.exfe.me/terms`
-- Hesap silme: `https://www.exfe.me/account/delete` (`/hesap-sil`)
+- Gizlilik politikası: `https://www.lernomi.app/privacy` (Türkçe kısayol `/gizlilik`)
+- Kullanım şartları: `https://www.lernomi.app/terms`
+- Hesap silme: `https://www.lernomi.app/account/delete` (`/hesap-sil`)
 - Alan adı değişince üçünü de Console'da güncelle.
 
 ## Diğer beyanlarla tutarlılık

@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Yönetim" };
 export const dynamic = "force-dynamic";
 
 /**
- * exfe.me/admin — sahibin yönetim panosu. Sekmeli: Genel Bakış, Sunucu & Ops,
+ * lernomi.app/admin — sahibin yönetim panosu. Sekmeli: Genel Bakış, Sunucu & Ops,
  * Kullanıcı Deneyimi, Öğrenme & İçerik, Kullanıcılar, Loglar. Veri sunucuda tek
  * seferde çekilir; erişim ADMIN_EMAILS ile sınırlı (admin olmayana ret).
  */

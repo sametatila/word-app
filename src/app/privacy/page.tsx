@@ -35,7 +35,7 @@ export default function PrivacyPage() {
       <p>
         Bu politika kapsamındaki kişisel verilerin sorumlusu, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel
         Veri Koruma Tüzüğü (GDPR) anlamında aşağıdaki kişidir: hangi verinin hangi amaçla işleneceğine, ne kadar tutulacağına ve hangi
-        sağlayıcıya gideceğine o karar verir. Politika, Lernomi web uygulamasını (www.exfe.me) ve Android uygulamasını kapsar.
+        sağlayıcıya gideceğine o karar verir. Politika, Lernomi web uygulamasını (www.lernomi.app) ve Android uygulamasını kapsar.
       </p>
       <EntityBlock party="controller" contact />
       <p>
@@ -226,7 +226,7 @@ export default function PrivacyPage() {
       <h2>11. Hesabını ve verilerini silme</h2>
       <p>
         Hesabını iki yoldan silebilirsin: uygulamada <strong>Profil › Ayarlar › Hesap › Hesabı sil</strong>, ya da web&apos;de{" "}
-        <Link href={LEGAL_PATHS.deleteAccount}>www.exfe.me{LEGAL_PATHS.deleteAccount}</Link>. Silme anında hesabın, ilerlemen, yazıların,
+        <Link href={LEGAL_PATHS.deleteAccount}>www.lernomi.app{LEGAL_PATHS.deleteAccount}</Link>. Silme anında hesabın, ilerlemen, yazıların,
         konuşma kayıtların, kullanım olayların ve sosyal izlerin (arkadaşlıklar, tepkiler) kalıcı olarak silinir; geri alınamaz. Yasal
         saklama yükümlülüğü olan mali kayıtlar anonimleştirilerek tutulur. Google Play aboneliğin varsa onu Play Store üzerinden ayrıca
         iptal etmen gerekir.

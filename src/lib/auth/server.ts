@@ -21,7 +21,7 @@ export const googleConfigured = Boolean(process.env.GOOGLE_CLIENT_ID && process.
 
 export const authEnabled = Boolean(process.env.DATABASE_URL && process.env.BETTER_AUTH_SECRET);
 
-const BASE_URL = process.env.BETTER_AUTH_URL ?? "https://www.exfe.me";
+const BASE_URL = process.env.BETTER_AUTH_URL ?? "https://www.lernomi.app";
 
 export const auth = betterAuth({
   appName: "Lernomi",
@@ -30,7 +30,14 @@ export const auth = betterAuth({
   secret: process.env.BETTER_AUTH_SECRET ?? "build-time-placeholder-secret-change-me",
   baseURL: BASE_URL,
   basePath: "/api/auth",
-  trustedOrigins: [BASE_URL, "https://exfe.me", "https://www.exfe.me"],
+  // Eski alan adı LİSTEDE KALIR: yayımlanmış APK'lerde API adresi gömülü, o
+  // kurulumlar ömür boyu exfe.me'ye istek atacak. Çıkarılırsa eski sürümdeki
+  // herkesin girişi kırılır.
+  trustedOrigins: [
+    BASE_URL,
+    "https://lernomi.app", "https://www.lernomi.app",
+    "https://exfe.me", "https://www.exfe.me",
+  ],
   database: drizzleAdapter(db, { provider: "pg", schema: { user, session, account, verification } }),
   emailAndPassword: {
     enabled: true,

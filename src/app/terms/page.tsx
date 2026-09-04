@@ -33,7 +33,7 @@ export default function TermsPage() {
     >
       <h2>1. Taraflar ve kabul</h2>
       <p>
-        Bu sözleşme, aşağıda kimliği verilen taraflar (&quot;Lernomi&quot;, &quot;biz&quot;) ile Lernomi web uygulamasını (www.exfe.me) ya da Android
+        Bu sözleşme, aşağıda kimliği verilen taraflar (&quot;Lernomi&quot;, &quot;biz&quot;) ile Lernomi web uygulamasını (www.lernomi.app) ya da Android
         uygulamasını kullanan kişi (&quot;sen&quot;) arasındadır. İki kişiyiz: hizmeti tasarlayan, işleten ve verinden sorumlu olan taraf ile
         uygulamayı Google Play&apos;de yayımlayan ve abonelik tahsilatını yürüten taraf. Hesap açarak ya da uygulamayı kullanarak bu şartları ve{" "}
         <Link href={LEGAL_PATHS.privacy}>Gizlilik Politikası</Link>&apos;nı kabul etmiş olursun; 6563 sayılı Kanun uyarınca bu metin

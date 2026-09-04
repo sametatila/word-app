@@ -8,7 +8,7 @@ import { t, targetLangName } from "./i18n";
  * `invite_open` hunisiyle uyumlu (?ref=...); sonuç paylaşımı seriyi/başarıyı
  * yayar. Şimdilik ref kodu yerel/anonim — auth gelince kullanıcıya bağlanır.
  */
-const APP_URL = "https://www.exfe.me";
+const APP_URL = "https://www.lernomi.app";
 
 export async function shareInvite(): Promise<void> {
   try {

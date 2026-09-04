@@ -28,7 +28,7 @@ export function PrivacyDeBody() {
         Verantwortlicher für die von dieser Erklärung erfassten personenbezogenen Daten im Sinne des türkischen Gesetzes Nr. 6698 zum
         Schutz personenbezogener Daten (KVKK) und der Datenschutz-Grundverordnung der Europäischen Union (DSGVO) ist die unten bezeichnete
         Person. Diese Person entscheidet, welche Daten zu welchem Zweck verarbeitet, wie lange sie gespeichert und an welche Anbieter sie übermittelt
-        werden. Die Erklärung gilt für die Lernomi-Webanwendung (www.exfe.me) und die Android-App.
+        werden. Die Erklärung gilt für die Lernomi-Webanwendung (www.lernomi.app) und die Android-App.
       </p>
       <EntityBlock party="controller" contact locale="de" />
       <p>
@@ -233,7 +233,7 @@ export function PrivacyDeBody() {
       <p>
         Du kannst dein Konto auf zwei Wegen löschen: in der App unter <strong>Profil &rsaquo; Einstellungen &rsaquo; Konto &rsaquo; Konto
         löschen</strong> oder im Web unter{" "}
-        <Link href={legalPath("deleteAccount", "de")}>www.exfe.me{legalPath("deleteAccount", "de")}</Link>. Im Moment der Löschung werden
+        <Link href={legalPath("deleteAccount", "de")}>www.lernomi.app{legalPath("deleteAccount", "de")}</Link>. Im Moment der Löschung werden
         dein Konto, dein Fortschritt, deine Texte, deine Sprechprotokolle, deine Nutzungsereignisse und deine sozialen Spuren
         (Freundschaften, Reaktionen) dauerhaft gelöscht; das ist unwiderruflich. Finanzunterlagen, die einer gesetzlichen Aufbewahrungspflicht
         unterliegen, werden anonymisiert aufbewahrt. Hast du ein Google-Play-Abonnement, musst du es zusätzlich im Play Store kündigen.

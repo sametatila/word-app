@@ -10,7 +10,7 @@ import "./globals.css";
  * yoksa üretim adresi.
  */
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || process.env.BETTER_AUTH_URL || "https://www.exfe.me";
+  process.env.NEXT_PUBLIC_SITE_URL || process.env.BETTER_AUTH_URL || "https://www.lernomi.app";
 
 const description =
   "A1'den C1'e 7.392 kelime, on oyun ve kendi kendini ayarlayan tekrar sistemiyle Almanca kelime uygulaması. Hochdeutsch ve Zürih Almancası, Türkçe anlatımıyla.";

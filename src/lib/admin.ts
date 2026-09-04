@@ -5,7 +5,7 @@ import { getUserEmail } from "@/lib/auth/server";
 import { computeFunnel, type Funnel } from "@/lib/funnel";
 
 /**
- * Admin panosu veri katmanı (exfe.me/admin). Sahibin sistemi yönetmesi + tüm
+ * Admin panosu veri katmanı (lernomi.app/admin). Sahibin sistemi yönetmesi + tüm
  * istatistik/telemetriyi en ince detayına kadar görmesi için. Erişim yalnız
  * ADMIN_EMAILS ortam değişkenindeki e-postalara açık (virgülle ayrılmış).
  */

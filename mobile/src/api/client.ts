@@ -1,5 +1,5 @@
 /**
- * Mobil API istemcisi — canlı web API'sini çağırır (www.exfe.me; Neon + tüm
+ * Mobil API istemcisi — canlı web API'sini çağırır (www.lernomi.app; Neon + tüm
  * backend yeniden kullanılır, tek doğruluk kaynağı).
  *
  * Oturum ÇEREZLE taşınır: giriş yapılınca Better Auth Set-Cookie yazar, RN'in
@@ -8,7 +8,13 @@
  * 401 ayrı bir hata tipiyle döner ki çağıran "oturum yok"u diğer hatalardan
  * ayırabilsin (giriş ekranına yönlendirme kararı buna bağlı).
  */
-export const API_BASE = "https://www.exfe.me";
+/**
+ * DİKKAT: bu adres APK'ye gömülür. Yayımlanmış eski sürümler ömür boyu
+ * exfe.me'ye istek atmaya devam eder — o alan adı kapatılamaz, aynı sunucuda
+ * ikinci bir server_name olarak yaşamalı (yönlendirme yetmez: çerez alan adı
+ * ve POST gövdeleri yönlendirmede bozulur).
+ */
+export const API_BASE = "https://www.lernomi.app";
 
 export class ApiError extends Error {
   status: number;

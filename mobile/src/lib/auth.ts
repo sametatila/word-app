@@ -2,7 +2,7 @@ import { API_BASE } from "../api/client";
 import { t } from "./i18n";
 
 /**
- * Mobil kimlik doğrulama — web'le AYNI Better Auth uçları (www.exfe.me/api/auth/*).
+ * Mobil kimlik doğrulama — web'le AYNI Better Auth uçları (www.lernomi.app/api/auth/*).
  * Web'deki auth-form ile bire bir: sign-in/email, sign-up/email, get-session,
  * sign-out. Oturum çerezi RN'in yerel jar'ında saklanır; burada elle çerez
  * yönetimi yok. Başarıda kullanıcı döner, hata net kod/mesajla döner.
@@ -110,7 +110,7 @@ export async function signInGoogleNative(idToken: string): Promise<AuthOutcome> 
  */
 export async function requestPasswordReset(email: string): Promise<boolean> {
   try {
-    const res = await post("request-password-reset", { email, redirectTo: "https://www.exfe.me/reset-password" });
+    const res = await post("request-password-reset", { email, redirectTo: "https://www.lernomi.app/reset-password" });
     return res.ok;
   } catch {
     return false;

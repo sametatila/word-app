@@ -393,10 +393,10 @@ Host: smtp.resend.com
 Port: 587            (veya 465 / 2465)
 User: resend
 Pass: <Resend API key>
-From: Lernomi <noreply@exfe.me>
+From: Lernomi <noreply@lernomi.app>
 ```
 
-Resend tarafında `exfe.me` alan adını doğrulaman (DKIM/SPF kayıtları) gerekir.
+Resend tarafında `lernomi.app` alan adını doğrulaman (DKIM/SPF kayıtları) gerekir.
 
 ## 8. Kelime verisi
 

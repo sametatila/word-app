@@ -25,7 +25,7 @@ export function TermsDeBody() {
       <h2>1. Parteien und Annahme</h2>
       <p>
         Diese Vereinbarung besteht zwischen den unten bezeichneten Parteien (&quot;Lernomi&quot;, &quot;wir&quot;) und der Person, die
-        die Lernomi-Webanwendung (www.exfe.me) oder die Android-App nutzt (&quot;du&quot;). Wir sind zwei Personen: diejenige, die den Dienst
+        die Lernomi-Webanwendung (www.lernomi.app) oder die Android-App nutzt (&quot;du&quot;). Wir sind zwei Personen: diejenige, die den Dienst
         gestaltet, betreibt und für deine Daten verantwortlich ist, und diejenige, die die App bei Google Play veröffentlicht und die
         Abonnementeinnahmen vereinnahmt. Mit der Erstellung eines Kontos oder der Nutzung
         der App nimmst du diese Bedingungen und die <Link href={legalPath("privacy", "de")}>Datenschutzerklärung</Link> an. Nach dem

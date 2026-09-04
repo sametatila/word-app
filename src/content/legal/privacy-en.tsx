@@ -27,7 +27,7 @@ export function PrivacyEnBody() {
         The controller of the personal data covered by this policy, within the meaning of Turkish Law no. 6698 on the Protection of Personal
         Data (KVKK) and the European Union General Data Protection Regulation (GDPR), is the person identified below: they decide what data
         is processed for what purpose, how long it is kept and which providers it goes to. The policy covers the Lernomi web app
-        (www.exfe.me) and the Android app.
+        (www.lernomi.app) and the Android app.
       </p>
       <EntityBlock party="controller" contact locale="en" />
       <p>
@@ -225,7 +225,7 @@ export function PrivacyEnBody() {
       <p>
         You can delete your account in two ways: in the app under <strong>Profile &rsaquo; Settings &rsaquo; Account &rsaquo; Delete
         account</strong>, or on the web at{" "}
-        <Link href={legalPath("deleteAccount", "en")}>www.exfe.me{legalPath("deleteAccount", "en")}</Link>. At the moment of deletion your
+        <Link href={legalPath("deleteAccount", "en")}>www.lernomi.app{legalPath("deleteAccount", "en")}</Link>. At the moment of deletion your
         account, your progress, your texts, your speaking logs, your usage events and your social traces (friendships, reactions) are
         permanently deleted; this cannot be undone. Financial records subject to a statutory retention obligation are kept in anonymised
         form. If you have a Google Play subscription, you need to cancel it separately in the Play Store.

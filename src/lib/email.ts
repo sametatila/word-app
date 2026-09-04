@@ -15,7 +15,7 @@ const HOST = process.env.SMTP_HOST;
 const PORT = Number(process.env.SMTP_PORT) || 587;
 const USER = process.env.SMTP_USER;
 const PASS = process.env.SMTP_PASS;
-const FROM = process.env.SMTP_FROM || "Lernomi <noreply@exfe.me>";
+const FROM = process.env.SMTP_FROM || "Lernomi <noreply@lernomi.app>";
 
 export const emailConfigured = Boolean(HOST && USER && PASS);
 
