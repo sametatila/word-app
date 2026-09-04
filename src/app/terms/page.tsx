@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, LegalShell, Ph } from "@/components/legal-shell";
-import { FAIR_USE, LEGAL_PATHS, legalPath } from "@/lib/legal";
+import { FAIR_USE, LEGAL_PATHS, PLATFORM_TEXT, hasIos, legalPath } from "@/lib/legal";
 
 export const metadata = {
   title: "Kullanım Şartları",
@@ -28,14 +28,14 @@ export default function TermsPage() {
         "Hizmet Türkiye'den sunulur ve Türk hukukuna tabidir. Bulunduğun ülkenin zorunlu tüketici hakları saklıdır.",
         "Hesabın sana aittir ve başkalarına saygılı kullanılır. Yazdıkların senin kalır.",
         "Yapay zekâ yanıtları hata yapabilir.",
-        "Premium abonelik Google Play üzerinden alınır ve oradan iptal edilir.",
+        "Premium abonelik uygulamayı indirdiğin mağazadan alınır ve iptali de oradan yapılır.",
       ]}
     >
       <h2>1. Taraflar ve kabul</h2>
       <p>
         Bu sözleşme, aşağıda kimliği verilen taraflar (&quot;Lernomi&quot;, &quot;biz&quot;) ile Lernomi web uygulamasını (www.lernomi.app) ya da Android
         uygulamasını kullanan kişi (&quot;sen&quot;) arasındadır. İki kişiyiz: hizmeti tasarlayan, işleten ve verinden sorumlu olan taraf ile
-        uygulamayı Google Play&apos;de yayımlayan ve abonelik tahsilatını yürüten taraf. Hesap açarak ya da uygulamayı kullanarak bu şartları ve{" "}
+        uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf. Hesap açarak ya da uygulamayı kullanarak bu şartları ve{" "}
         <Link href={LEGAL_PATHS.privacy}>Gizlilik Politikası</Link>&apos;nı kabul etmiş olursun; 6563 sayılı Kanun uyarınca bu metin
         sözleşme kurulmadan önce erişilebilir durumdadır ve saklanabilir. Kabul etmiyorsan uygulamayı kullanma.
       </p>
@@ -101,11 +101,11 @@ export default function TermsPage() {
 
       <h2>7. Premium abonelik, ödeme ve cayma</h2>
       <ul>
-        <li><strong>Satın alma:</strong> Premium, Android&apos;de Google Play Faturalandırma ile satın alınır; ödeme Google Play tarafından işlenir ve Google Play Hizmet Şartları da geçerlidir. Fiyat, para birimi, süre, deneme koşulları ve vergiler satın alma anında Play tarafından gösterilir; bu bilgiler 6502 sayılı Kanun ve Mesafeli Sözleşmeler Yönetmeliği kapsamındaki ön bilgilendirmeyi oluşturur.</li>
-        <li><strong>Yenileme ve iptal:</strong> Abonelik, dönem sonundan en az 24 saat önce iptal edilmezse aynı süreyle yenilenir. İptal ve yönetim Play Store › Ödemeler ve abonelikler bölümündedir; hesap silmek aboneliği iptal etmez. Ücretsiz deneme bitmeden iptal edersen ücret alınmaz.</li>
-        <li><strong>Cayma hakkı:</strong> Dijital içerik hizmeti satın alma anında ifa edilmeye başlandığından, Mesafeli Sözleşmeler Yönetmeliği m.15/1-ğ ve AB Tüketici Hakları Direktifi m.16(m) uyarınca cayma hakkı, ifaya başlanmasına verdiğin onayla sona erer; satın alma ekranında bu onay istenir. Google Play&apos;in iade politikası ayrıca uygulanır; Play&apos;in kabul ettiği iadeleri biz de tanırız.</li>
-        <li><strong>Fiyat değişikliği:</strong> Fiyat değişikliğini yürürlükten önce Play üzerinden bildiririz; kabul etmezsen aboneliği iptal edebilirsin.</li>
-        <li><strong>Satış belgesi:</strong> Premium&apos;u Google Play üzerinden alırsın ve satış belgesini Google düzenleyip Play hesabındaki e-posta adresine gönderir; belge talebini Google Play desteğinden iletebilirsin. Yayıncı bir şirket değil, gerçek kişidir ve mobil uygulama geliştiriciliği kazanç istisnası kapsamında olduğundan ayrıca fatura düzenlemez.</li>
+        <li><strong>Satın alma:</strong> Premium, uygulamayı indirdiğin mağazanın kendi ödeme sistemiyle satın alınır: Android&apos;de Google Play Faturalandırma{hasIos() ? <>, iOS&apos;ta Apple uygulama içi satın alma</> : null}. Ödemeyi mağaza işler ve mağazanın kendi hizmet şartları da geçerlidir. Fiyat, para birimi, süre, deneme koşulları ve vergiler satın alma anında mağaza tarafından gösterilir; bu bilgiler 6502 sayılı Kanun ve Mesafeli Sözleşmeler Yönetmeliği kapsamındaki ön bilgilendirmeyi oluşturur.</li>
+        <li><strong>Yenileme ve iptal:</strong> Abonelik, dönem sonundan en az 24 saat önce iptal edilmezse aynı süreyle yenilenir. İptal, aboneliği aldığın mağazadan yapılır: Play Store &rsaquo; Ödemeler ve abonelikler{hasIos() ? <>, iOS&apos;ta Ayarlar &rsaquo; Apple Hesabı &rsaquo; Abonelikler</> : null}. Hesap silmek aboneliği iptal etmez. Ücretsiz deneme bitmeden iptal edersen ücret alınmaz.</li>
+        <li><strong>Cayma hakkı:</strong> Dijital içerik hizmeti satın alma anında ifa edilmeye başlandığından, Mesafeli Sözleşmeler Yönetmeliği m.15/1-ğ ve AB Tüketici Hakları Direktifi m.16(m) uyarınca cayma hakkı, ifaya başlanmasına verdiğin onayla sona erer; satın alma ekranında bu onay istenir. Mağazanın kendi iade politikası ayrıca uygulanır ve mağazanın kabul ettiği iadeleri biz de tanırız{hasIos() ? <> — Google Play için Play desteği, Apple için reportaproblem.apple.com</> : null}.</li>
+        <li><strong>Fiyat değişikliği:</strong> Fiyat değişikliğini yürürlükten önce mağaza üzerinden bildiririz; kabul etmezsen aboneliği iptal edebilirsin.</li>
+        <li><strong>Satış belgesi:</strong> Satışı mağaza yapar ve belgeyi mağaza düzenleyip mağaza hesabındaki e-posta adresine gönderir; belge talebini mağazanın desteğine iletirsin. Yayıncı bir şirket değil, gerçek kişidir ve mobil uygulama geliştiriciliği kazanç istisnası kapsamında olduğundan ayrıca fatura düzenlemez.</li>
       </ul>
 
       <h2>7a. Adil kullanım</h2>
@@ -119,8 +119,9 @@ export default function TermsPage() {
 
       <h2>7b. Üçüncü taraf hizmetler</h2>
       <p>
-        Google ile giriş (Google Hesap şartları), Google Play (Play Hizmet Şartları ve iade politikası) ve cihazının konuşma tanıma servisi
-        kendi sağlayıcılarının şartlarına tabidir. Yapay zekâ ve konuşma tanıma sağlayıcıları Gizlilik Politikası&apos;nda listelenir; bunlar
+        Google ile giriş (Google Hesap şartları), uygulamayı indirdiğin mağaza (Google Play Hizmet Şartları{hasIos() ? <>, Apple Media
+        Services Şartları</> : null} ve ilgili iade politikaları) ve cihazının konuşma tanıma servisi kendi sağlayıcılarının şartlarına
+        tabidir. Yapay zekâ ve konuşma tanıma sağlayıcıları Gizlilik Politikası&apos;nda listelenir; bunlar
         bizim alt işleyicilerimizdir ve seninle doğrudan sözleşme kurmazlar.
       </p>
 
@@ -187,6 +188,28 @@ export default function TermsPage() {
         <li><strong>Tebligat:</strong> Bize yapılacak bildirimler <Ph k="supportEmail" /> adresine; sana yapılacak bildirimler hesabındaki e-posta adresine ya da uygulama içi mesajla yapılır ve ulaştığı anda tebliğ edilmiş sayılır.</li>
         <li><strong>Saklama:</strong> Bu sözleşme elektronik ortamda saklanır; kabul ettiğin sürümü ve tarihini isteyebilirsin.</li>
       </ul>
+
+      {hasIos() ? (
+        <>
+          <h2>13a. Apple App Store için ek koşullar</h2>
+          <p>
+            Uygulamayı App Store&apos;dan indirdiysen aşağıdaki maddeler de geçerlidir. Bunlar Apple&apos;ın kendi EULA&apos;sını kullanmayan
+            geliştiricilerden istediği asgari koşullardır ve yalnız Apple sürümü için uygulanır; çelişki hâlinde bu bölüm öncelikli olur.
+          </p>
+          <ul>
+            <li><strong>Sözleşmenin tarafları:</strong> Bu sözleşme yalnız seninle bizim aramızdadır, Apple ile değil. Uygulamadan ve içeriğinden yalnız biz sorumluyuz.</li>
+            <li><strong>Lisansın kapsamı:</strong> Uygulamayı, App Store Hizmet Şartları&apos;ndaki Kullanım Kuralları çerçevesinde, sahibi ya da kullanıcısı olduğun Apple marka cihazlarda kullanman için devredilemez bir lisans veriyoruz.</li>
+            <li><strong>Bakım ve destek:</strong> Bakım ve destekten yalnız biz sorumluyuz; Apple&apos;ın böyle bir yükümlülüğü yoktur.</li>
+            <li><strong>Garanti:</strong> Garantiden yalnız biz sorumluyuz. Uygulama geçerli bir garantiye uymazsa durumu Apple&apos;a bildirebilirsin; Apple satın alma bedelini iade eder ve bunun ötesinde bir garanti yükümlülüğü taşımaz.</li>
+            <li><strong>Talepler:</strong> Uygulamaya ilişkin taleplerin (ürün sorumluluğu, hukuka uygunluk, tüketici koruması ve gizlilik dâhil) muhatabı Apple değil biziz.</li>
+            <li><strong>Fikri mülkiyet:</strong> Uygulamanın üçüncü bir kişinin fikri mülkiyet hakkını ihlal ettiği iddiasında araştırma, savunma ve uzlaşma yalnız bize aittir.</li>
+            <li><strong>Hukuka uygunluk:</strong> Uygulamayı kullanarak, ABD ambargosu uygulanan ya da ABD tarafından &quot;terörizmi destekleyen&quot; olarak belirlenmiş bir ülkede bulunmadığını ve ABD&apos;nin yasaklı taraflar listelerinde yer almadığını beyan edersin.</li>
+            <li><strong>İletişim:</strong> Soru, şikâyet ve taleplerin için 1. bölümdeki iletişim bilgileri geçerlidir.</li>
+            <li><strong>Üçüncü taraf şartları:</strong> Uygulamayı kullanırken geçerli üçüncü taraf şartlarına da uymayı kabul edersin.</li>
+            <li><strong>Üçüncü taraf lehtar:</strong> Apple ve bağlı şirketleri bu sözleşmenin üçüncü taraf lehtarıdır ve koşullarını sana karşı ileri sürme hakkına sahiptir.</li>
+          </ul>
+        </>
+      ) : null}
 
       <h2>13. Değişiklikler ve iletişim</h2>
       <p>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, LegalShell, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PLATFORM_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
 
 export const metadata = {
   title: "Gizlilik Politikası",
@@ -35,11 +35,11 @@ export default function PrivacyPage() {
       <p>
         Bu politika kapsamındaki kişisel verilerin sorumlusu, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel
         Veri Koruma Tüzüğü (GDPR) anlamında aşağıdaki kişidir: hangi verinin hangi amaçla işleneceğine, ne kadar tutulacağına ve hangi
-        sağlayıcıya gideceğine o karar verir. Politika, Lernomi web uygulamasını (www.lernomi.app) ve Android uygulamasını kapsar.
+        sağlayıcıya gideceğine o karar verir. Politika, Lernomi web uygulamasını (www.lernomi.app) ve {PLATFORM_TEXT.tr} kapsar.
       </p>
       <EntityBlock party="controller" contact />
       <p>
-        Uygulamayı Google Play&apos;de yayımlayan ve abonelik tahsilatını yürüten taraf ayrı bir kişidir. Yayıncı, veri sorumlusunun
+        Uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf ayrı bir kişidir. Yayıncı, veri sorumlusunun
         talimatı dışında kişisel veri işlemez; Play Console üzerinden eriştiği sipariş, abonelik ve yorum verisi bakımından
         <strong> veri işleyen</strong> sıfatını taşır ve aramızda bu kapsamda bir işleme sözleşmesi bulunur (GDPR m.28, KVKK m.12).
       </p>
@@ -80,8 +80,8 @@ export default function PrivacyPage() {
             <tr><td>Arkadaşlık istekleri, arkadaş listesi, engellemeler, kullanıcı bildirimleri</td><td>Sen ve arkadaşların</td><td>Arkadaşlık özellikleri, güvenlik ve moderasyon</td><td>Sözleşmenin ifası; meşru menfaat (güvenlik)</td><td>Hesap süresince; bildirimler inceleme kapanana kadar</td></tr>
             <tr><td>Etkinlik akışı, tepkiler, dürtmeler, ortak görevler, gelen kutusu bildirimleri</td><td>Uygulamayı kullanırken</td><td>Arkadaşlarınla ilerleme paylaşımı ve motivasyon (yalnız arkadaşlarına görünür)</td><td>Sözleşmenin ifası; &quot;etkinliğimi göster&quot; tercihiyle kapatılabilir</td><td>Hesap süresince</td></tr>
             <tr><td>Web push aboneliği (tarayıcı uç noktası ve şifreleme anahtarları)</td><td>Tarayıcın, izin verirsen</td><td>Web&apos;de hatırlatma bildirimleri</td><td>Rıza (tarayıcı izni)</td><td>İzin geri alınana ya da uç nokta geçersizleşene kadar</td></tr>
-            <tr><td>Bildirim izni ve hatırlatma saati (Android)</td><td>Sen</td><td>Yerel hatırlatmalar (cihazda planlanır, sunucuya gitmez)</td><td>Rıza</td><td>Cihazda</td></tr>
-            <tr><td>Satın alma ve abonelik durumu</td><td>Google Play / RevenueCat</td><td>Premium özellikleri açmak</td><td>Sözleşmenin ifası; yasal yükümlülük (muhasebe)</td><td>Hesap süresince; mali kayıtlar yasal süre boyunca</td></tr>
+            <tr><td>Bildirim izni ve hatırlatma saati</td><td>Sen</td><td>Yerel hatırlatmalar (cihazda planlanır, sunucuya gitmez)</td><td>Rıza</td><td>Cihazda</td></tr>
+            <tr><td>Satın alma ve abonelik durumu</td><td>Uygulama mağazası / RevenueCat</td><td>Premium özellikleri açmak</td><td>Sözleşmenin ifası; yasal yükümlülük (muhasebe)</td><td>Hesap süresince; mali kayıtlar yasal süre boyunca</td></tr>
             <tr><td>İçerik bildirimlerin</td><td>Sen (&quot;Bildir&quot;)</td><td>Uygunsuz yapay zekâ yanıtlarını incelemek</td><td>Meşru menfaat (güvenli hizmet)</td><td>İnceleme kapanana kadar</td></tr>
             <tr><td>Bize yazdığın destek ve hak talepleri</td><td>Sen</td><td>Talebi cevaplamak, yasal kayıt</td><td>Yasal yükümlülük (KVKK m.13, GDPR m.12)</td><td>Talep kapandıktan sonra 2 yıl</td></tr>
           </tbody>
@@ -94,14 +94,13 @@ export default function PrivacyPage() {
 
       <h2>4. Mikrofon ve ses kayıtları</h2>
       <p>
-        Yürüyüş modunda Türkçe ipucunu duyar, Almancasını söylersin. Ekran açıkken tanıma cihazında yapılır (Android konuşma tanıma
-        servisi). Ekran kapalıyken ya da telefon cebindeyken ses, 16 kHz mono kayıt olarak sunucumuza gönderilir ve aşağıdaki konuşma
+        Yürüyüş modunda Türkçe ipucunu duyar, Almancasını söylersin. Ekran açıkken tanıma cihazın kendi konuşma tanıma servisiyle, cihazda yapılır. Ekran kapalıyken ya da telefon cebindeyken ses, 16 kHz mono kayıt olarak sunucumuza gönderilir ve aşağıdaki konuşma
         tanıma sağlayıcılarından birine iletilir. Ses dosyası sunucuda ya da sağlayıcıda saklanmaz; yalnız tanınan metin, beklenen kelime ve
         klip süresi kullanım kaydına yazılır.
       </p>
       <ul>
         <li>Mikrofon yalnız sen yürüyüş modunu başlatınca açılır; sürekli bir bildirim görünür ve uygulamadan durdurabilirsin.</li>
-        <li>Ekran kapalıyken kayıt, Android&apos;in mikrofon tipli ön plan servisiyle yapılır; sistem mikrofon göstergesi açık kalır.</li>
+        <li>Ekran kapalıyken kayıt, işletim sisteminin bu iş için öngördüğü arka plan yoluyla yapılır (Android&apos;de mikrofon tipli ön plan servisi); sistem mikrofon göstergesi açık kalır.</li>
         <li>İlk kullanımda bu işlemi anlatan bir onay ekranı gösterilir; onaylamadan mod başlamaz. Onayı vermezsen mikrofon hiç kullanılmaz, uygulamanın geri kalanı çalışır.</li>
         <li>Tanıma sonucunda küfür maskelenir.</li>
       </ul>
@@ -228,8 +227,7 @@ export default function PrivacyPage() {
         Hesabını iki yoldan silebilirsin: uygulamada <strong>Profil › Ayarlar › Hesap › Hesabı sil</strong>, ya da web&apos;de{" "}
         <Link href={LEGAL_PATHS.deleteAccount}>www.lernomi.app{LEGAL_PATHS.deleteAccount}</Link>. Silme anında hesabın, ilerlemen, yazıların,
         konuşma kayıtların, kullanım olayların ve sosyal izlerin (arkadaşlıklar, tepkiler) kalıcı olarak silinir; geri alınamaz. Yasal
-        saklama yükümlülüğü olan mali kayıtlar anonimleştirilerek tutulur. Google Play aboneliğin varsa onu Play Store üzerinden ayrıca
-        iptal etmen gerekir.
+        saklama yükümlülüğü olan mali kayıtlar anonimleştirilerek tutulur. Mağaza aboneliğin varsa onu aldığın mağaza üzerinden ayrıca iptal etmen gerekir.
       </p>
 
       <h2>12. Çocuklar</h2>

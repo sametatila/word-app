@@ -139,6 +139,39 @@ export const LEGAL_PATHS = {
  * neresinin oynadığını anlamasının yolu yok. Yeni sürümde buraya bir kayıt
  * eklenmeden LEGAL_VERSION artırılmamalı. En yeni kayıt başa yazılır.
  */
+/**
+ * Yayımlandığı mağazalar.
+ *
+ * Metinler iOS için hazır yazıldı ama `ios` KAPALI: uygulama App Store'da
+ * yayımlanmadan "iOS uygulamamız" demek, denetimde kovaladığımız iddia/gerçek
+ * ayrışmasının ta kendisi olurdu. iOS yayına girdiği gün burası `true` yapılır,
+ * LEGAL_VERSION artırılır ve sürüm geçmişine kayıt düşülür — metnin kalanı
+ * kendiliğinden doğru hâle gelir.
+ *
+ * Bayrağın açılmasından ÖNCE bitmesi gereken iş (metin değil, ürün):
+ *   - Apple Developer hesabı ve gerçek bundle kimliği (şu an RN şablonunun
+ *     varsayılanı: org.reactjs.native.example.…).
+ *   - Apple ile Giriş: Google ile giriş sunulduğu için App Store Review
+ *     Guidelines 4.8 bunu istiyor.
+ *   - App Store Connect gizlilik etiketleri (Play'in Veri Güvenliği formundan
+ *     AYRI bir beyandır; bkz. docs/appstore/).
+ *   - iOS'ta konuşma tanımanın hangi yolla yapıldığının kesinleşmesi —
+ *     gizlilik politikası §4 cihaz içi tanıyıcıyı adıyla anlatıyor.
+ */
+export const LEGAL_PLATFORMS = { android: true, ios: false } as const;
+
+/** Metinlerde platformların sayıldığı yer — tek kaynak, üç dil. */
+export const PLATFORM_TEXT: Record<LegalLocale, string> = {
+  tr: LEGAL_PLATFORMS.ios ? "Android ve iOS uygulamalarını" : "Android uygulamasını",
+  en: LEGAL_PLATFORMS.ios ? "the Android and iOS apps" : "the Android app",
+  de: LEGAL_PLATFORMS.ios ? "die Android- und iOS-App" : "die Android-App",
+};
+
+/** iOS yayındaysa App Store'a özgü maddeler basılıyor. */
+export function hasIos(): boolean {
+  return LEGAL_PLATFORMS.ios;
+}
+
 export const LEGAL_CHANGELOG: readonly {
   version: string;
   date: string;
@@ -285,6 +318,7 @@ const OCCASIONS = {
   },
   googleSignInChosen: { tr: "Google ile giriş seçilirse", en: "If sign-in with Google is chosen", de: "Wenn die Anmeldung mit Google gewählt wird" },
   androidAndSubscription: { tr: "Android uygulaması ve abonelik", en: "Android app and subscription", de: "Android-App und Abonnement" },
+  iosAndSubscription: { tr: "iOS uygulaması ve abonelik", en: "iOS app and subscription", de: "iOS-App und Abonnement" },
   premiumEnabled: { tr: "Premium abonelik açılınca", en: "Once a Premium subscription is active", de: "Sobald ein Premium-Abonnement aktiv ist" },
 } as const satisfies Record<string, Trio>;
 
@@ -313,6 +347,11 @@ export const PROCESSORS: Processor[] = [
   { name: "OpenRouter", purpose: "llmRouting", data: "texts", region: "us", safeguard: "scc" },
   { name: "Google (Sign-In)", purpose: "googleSignIn", data: "googleIdentity", region: "us", safeguard: "scc", when: "googleSignInChosen" },
   { name: "Google Play", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "androidAndSubscription" },
+  // Apple satiri yalnizca iOS yayindayken basiliyor: yayimlanmamis bir magazayi
+  // alici olarak listelemek, olmayan bir aktarimi beyan etmek olurdu.
+  ...(LEGAL_PLATFORMS.ios
+    ? [{ name: "Apple (App Store)", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "iosAndSubscription" } as Processor]
+    : []),
   { name: "RevenueCat", purpose: "subscriptionState", data: "userAndPurchase", region: "us", safeguard: "scc", when: "premiumEnabled" },
   { name: "smtp", purpose: "transactionalMail", data: "email", region: "eu", safeguard: "euAdequacy" },
 ];

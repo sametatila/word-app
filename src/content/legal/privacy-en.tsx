@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, PLATFORM_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
 
 /**
  * Privacy policy — English. Informational translation; the Turkish text at
@@ -27,11 +27,11 @@ export function PrivacyEnBody() {
         The controller of the personal data covered by this policy, within the meaning of Turkish Law no. 6698 on the Protection of Personal
         Data (KVKK) and the European Union General Data Protection Regulation (GDPR), is the person identified below: they decide what data
         is processed for what purpose, how long it is kept and which providers it goes to. The policy covers the Lernomi web app
-        (www.lernomi.app) and the Android app.
+        (www.lernomi.app) and {PLATFORM_TEXT.en}.
       </p>
       <EntityBlock party="controller" contact locale="en" />
       <p>
-        The app is published on Google Play and the subscription revenue is collected by a different person. The publisher processes no
+        The app is published in the app stores and the subscription revenue is collected by a different person. The publisher processes no
         personal data except on the controller&apos;s instructions; for the order, subscription and review data they access through the Play
         Console they act as a <strong>processor</strong>, and a processing agreement between us covers this (Art. 28 GDPR, Art. 12 KVKK).
       </p>
@@ -72,8 +72,8 @@ export function PrivacyEnBody() {
             <tr><td>Friend requests, friend list, blocks, user reports</td><td>You and your friends</td><td>Friend features, safety and moderation</td><td>Performance of a contract; legitimate interest (safety)</td><td>For the life of the account; reports until the review closes</td></tr>
             <tr><td>Activity feed, reactions, nudges, shared quests, inbox notifications</td><td>While you use the app</td><td>Sharing progress with your friends and motivation (visible only to your friends)</td><td>Performance of a contract; can be switched off with the &quot;show my activity&quot; preference</td><td>For the life of the account</td></tr>
             <tr><td>Web push subscription (browser endpoint and encryption keys)</td><td>Your browser, if you allow it</td><td>Reminder notifications on the web</td><td>Consent (browser permission)</td><td>Until the permission is withdrawn or the endpoint expires</td></tr>
-            <tr><td>Notification permission and reminder time (Android)</td><td>You</td><td>Local reminders (scheduled on the device, not sent to the server)</td><td>Consent</td><td>On the device</td></tr>
-            <tr><td>Purchase and subscription state</td><td>Google Play / RevenueCat</td><td>Unlocking Premium features</td><td>Performance of a contract; legal obligation (accounting)</td><td>For the life of the account; financial records for the statutory period</td></tr>
+            <tr><td>Notification permission and reminder time</td><td>You</td><td>Local reminders (scheduled on the device, not sent to the server)</td><td>Consent</td><td>On the device</td></tr>
+            <tr><td>Purchase and subscription state</td><td>App store / RevenueCat</td><td>Unlocking Premium features</td><td>Performance of a contract; legal obligation (accounting)</td><td>For the life of the account; financial records for the statutory period</td></tr>
             <tr><td>Your content reports</td><td>You (&quot;Report&quot;)</td><td>Reviewing inappropriate AI answers</td><td>Legitimate interest (a safe service)</td><td>Until the review closes</td></tr>
             <tr><td>Support messages and rights requests you send us</td><td>You</td><td>Answering the request, statutory record</td><td>Legal obligation (KVKK Art. 13, GDPR Art. 12)</td><td>2 years after the request closes</td></tr>
           </tbody>
@@ -87,14 +87,13 @@ export function PrivacyEnBody() {
 
       <h2>4. Microphone and audio recordings</h2>
       <p>
-        In walk mode you hear a prompt in your own language and say the target-language word. While the screen is on, recognition happens on
-        your device (the Android speech recognition service). While the screen is off or the phone is in your pocket, audio is sent to our
+        In walk mode you hear a prompt in your own language and say the target-language word. While the screen is on, recognition happens on your device, using the device&apos;s own speech recognition service. While the screen is off or the phone is in your pocket, audio is sent to our
         server as a 16 kHz mono recording and passed to one of the speech recognition providers listed below. The audio file is not stored
         on our server or at the provider; only the recognised text, the expected word and the clip length are written to the usage record.
       </p>
       <ul>
         <li>The microphone opens only when you start walk mode; a persistent notification is shown and you can stop it from the app.</li>
-        <li>While the screen is off, recording runs through Android&apos;s microphone-type foreground service; the system microphone indicator stays on.</li>
+        <li>While the screen is off, recording runs through the background mechanism the operating system provides for this (on Android, a microphone-type foreground service); the system microphone indicator stays on.</li>
         <li>On first use a consent screen explains this processing; the mode does not start without your consent. If you decline, the microphone is never used and the rest of the app works.</li>
         <li>Profanity is masked in the recognition result.</li>
       </ul>
@@ -228,7 +227,7 @@ export function PrivacyEnBody() {
         <Link href={legalPath("deleteAccount", "en")}>www.lernomi.app{legalPath("deleteAccount", "en")}</Link>. At the moment of deletion your
         account, your progress, your texts, your speaking logs, your usage events and your social traces (friendships, reactions) are
         permanently deleted; this cannot be undone. Financial records subject to a statutory retention obligation are kept in anonymised
-        form. If you have a Google Play subscription, you need to cancel it separately in the Play Store.
+        form. If you have a store subscription, you need to cancel it separately in the store you bought it from.
       </p>
 
       <h2>12. Children</h2>

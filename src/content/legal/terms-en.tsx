@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { FAIR_USE, legalPath } from "@/lib/legal";
+import { FAIR_USE, hasIos, legalPath } from "@/lib/legal";
 
 /**
  * Terms of use — English. Informational translation; the Turkish text at
@@ -15,7 +15,7 @@ export const TERMS_EN_SUMMARY = [
   "The service is provided from Türkiye and governed by Turkish law. The mandatory consumer rights of your own country are unaffected.",
   "Your account is yours, and is used with respect for others. What you write stays yours.",
   "AI answers can be wrong.",
-  "Premium is bought through Google Play and cancelled there.",
+  "Premium is bought in the store you downloaded the app from, and cancelled there.",
 ] as const;
 
 export function TermsEnBody() {
@@ -92,11 +92,11 @@ export function TermsEnBody() {
 
       <h2>7. Premium subscription, payment and withdrawal</h2>
       <ul>
-        <li><strong>Purchase:</strong> Premium is bought on Android through Google Play Billing; payment is processed by Google Play and the Google Play Terms of Service also apply. Price, currency, term, trial conditions and taxes are shown by Play at the moment of purchase; this information constitutes the pre-contractual information required by Turkish Law no. 6502 and the Distance Contracts Regulation.</li>
-        <li><strong>Renewal and cancellation:</strong> Unless cancelled at least 24 hours before the end of the term, the subscription renews for the same period. Cancellation and management are in Play Store &rsaquo; Payments and subscriptions; deleting your account does not cancel the subscription. If you cancel before a free trial ends, you are not charged.</li>
-        <li><strong>Right of withdrawal:</strong> Because performance of a digital content service begins at the moment of purchase, under Art. 15/1-ğ of the Distance Contracts Regulation and Art. 16(m) of the EU Consumer Rights Directive the right of withdrawal ends with your consent to performance beginning; that consent is requested on the purchase screen. Google Play&apos;s refund policy applies in addition, and we honour refunds Play grants.</li>
-        <li><strong>Price changes:</strong> We notify price changes through Play before they take effect; if you do not accept one, you can cancel the subscription.</li>
-        <li><strong>Proof of purchase:</strong> You buy Premium through Google Play, and Google issues the receipt and sends it to the e-mail address on your Play account; you can request a copy through Google Play support. The publisher is not a company but a natural person, and because the earnings fall within the Turkish income tax exemption for mobile application development, no separate invoice is issued.</li>
+        <li><strong>Purchase:</strong> Premium is bought through the payment system of the store you downloaded the app from: Google Play Billing on Android{hasIos() ? <>, Apple in-app purchase on iOS</> : null}. Payment is processed by the store and the store's own terms of service also apply. Price, currency, term, trial conditions and taxes are shown by the store at the moment of purchase; this information constitutes the pre-contractual information required by Turkish Law no. 6502 and the Distance Contracts Regulation.</li>
+        <li><strong>Renewal and cancellation:</strong> Unless cancelled at least 24 hours before the end of the term, the subscription renews for the same period. You cancel in the store you bought it from: Play Store &rsaquo; Payments and subscriptions{hasIos() ? <>, or Settings &rsaquo; Apple Account &rsaquo; Subscriptions on iOS</> : null}. Deleting your account does not cancel the subscription. If you cancel before a free trial ends, you are not charged.</li>
+        <li><strong>Right of withdrawal:</strong> Because performance of a digital content service begins at the moment of purchase, under Art. 15/1-ğ of the Distance Contracts Regulation and Art. 16(m) of the EU Consumer Rights Directive the right of withdrawal ends with your consent to performance beginning; that consent is requested on the purchase screen. The store's own refund policy applies in addition, and we honour refunds the store grants{hasIos() ? <> — Play support for Google Play, reportaproblem.apple.com for Apple</> : null}.</li>
+        <li><strong>Price changes:</strong> We notify price changes through the store before they take effect; if you do not accept one, you can cancel the subscription.</li>
+        <li><strong>Proof of purchase:</strong> The sale is made by the store, which issues the receipt and sends it to the e-mail address on your store account; you can request a copy from the store's support. The publisher is not a company but a natural person, and because the earnings fall within the Turkish income tax exemption for mobile application development, no separate invoice is issued.</li>
       </ul>
 
       <h2>7a. Fair use</h2>
@@ -109,8 +109,7 @@ export function TermsEnBody() {
 
       <h2>7b. Third-party services</h2>
       <p>
-        Sign-in with Google (Google Account terms), Google Play (Play Terms of Service and refund policy) and your device&apos;s speech
-        recognition service are subject to their own providers&apos; terms. The AI and speech recognition providers are listed in the Privacy
+        Sign-in with Google (Google Account terms), the store you downloaded the app from (Google Play Terms of Service{hasIos() ? <>, Apple Media Services Terms</> : null} and the relevant refund policies) and your device&apos;s speech recognition service are subject to their own providers&apos; terms. The AI and speech recognition providers are listed in the Privacy
         Policy; they are our sub-processors and do not enter into a contract with you directly.
       </p>
 
@@ -178,6 +177,28 @@ export function TermsEnBody() {
         <li><strong>Notices:</strong> Notices to us go to <Ph k="supportEmail" />; notices to you go to the e-mail address on your account or as an in-app message, and are deemed served upon arrival.</li>
         <li><strong>Retention:</strong> This agreement is stored electronically; you may request the version you accepted and its date.</li>
       </ul>
+
+      {hasIos() ? (
+        <>
+          <h2>13a. Additional terms for the Apple App Store</h2>
+          <p>
+            If you downloaded the app from the App Store, the following also applies. These are the minimum terms Apple requires from
+            developers who do not use Apple&apos;s own EULA; they apply to the Apple version only and prevail in case of conflict.
+          </p>
+          <ul>
+            <li><strong>Parties:</strong> This agreement is between you and us only, not with Apple. We alone are responsible for the app and its content.</li>
+            <li><strong>Scope of the licence:</strong> We grant you a non-transferable licence to use the app on Apple-branded devices that you own or control, within the Usage Rules of the App Store Terms of Service.</li>
+            <li><strong>Maintenance and support:</strong> We alone are responsible for maintenance and support; Apple has no such obligation.</li>
+            <li><strong>Warranty:</strong> We alone are responsible for any warranty. If the app fails to conform to an applicable warranty you may notify Apple, and Apple will refund the purchase price; beyond that Apple has no warranty obligation.</li>
+            <li><strong>Claims:</strong> Claims relating to the app — including product liability, legal compliance, consumer protection and privacy — are addressed to us, not to Apple.</li>
+            <li><strong>Intellectual property:</strong> If a third party claims the app infringes their intellectual property rights, investigation, defence and settlement are ours alone.</li>
+            <li><strong>Legal compliance:</strong> By using the app you represent that you are not located in a country subject to a US embargo or designated by the US as &quot;terrorist supporting&quot;, and that you are not on any US list of prohibited parties.</li>
+            <li><strong>Contact:</strong> For questions, complaints and claims, the contact details in section 1 apply.</li>
+            <li><strong>Third-party terms:</strong> You agree to comply with applicable third-party terms when using the app.</li>
+            <li><strong>Third-party beneficiary:</strong> Apple and its subsidiaries are third-party beneficiaries of this agreement and have the right to enforce it against you.</li>
+          </ul>
+        </>
+      ) : null}
 
       <h2>13. Changes and contact</h2>
       <p>

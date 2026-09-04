@@ -127,6 +127,10 @@ varsa uygulamadaki özelliği anlatır, fiyat ya da vaat içermez.
 - Goethe-Institut ve telc tescilli markalar: listelemede yalnız tanımlayıcı kullanım,
   logo yok; Kullanım Şartları §8 bağlantısızlığı belirtiyor.
 
+> iOS için ayrı bir beyan seti gerekiyor; bkz. `docs/appstore/README.md`. Play'in Veri
+> Güvenliği formu ile App Store gizlilik etiketleri farklı sorular sorar, biri öbürüne
+> kopyalanamaz.
+
 ## 5. Geliştirici hesabı — şirketsiz gerçek kişi
 
 **İki taraf var, karıştırmayın.** Play hesabı ve mağazada görünen yayıncı **Musa Atila**

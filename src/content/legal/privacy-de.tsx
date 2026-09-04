@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, PLATFORM_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
 
 /**
  * Datenschutzerklärung — Deutsch. Informative Übersetzung; verbindlich ist der
@@ -28,11 +28,11 @@ export function PrivacyDeBody() {
         Verantwortlicher für die von dieser Erklärung erfassten personenbezogenen Daten im Sinne des türkischen Gesetzes Nr. 6698 zum
         Schutz personenbezogener Daten (KVKK) und der Datenschutz-Grundverordnung der Europäischen Union (DSGVO) ist die unten bezeichnete
         Person. Diese Person entscheidet, welche Daten zu welchem Zweck verarbeitet, wie lange sie gespeichert und an welche Anbieter sie übermittelt
-        werden. Die Erklärung gilt für die Lernomi-Webanwendung (www.lernomi.app) und die Android-App.
+        werden. Die Erklärung gilt für die Lernomi-Webanwendung (www.lernomi.app) und {PLATFORM_TEXT.de}.
       </p>
       <EntityBlock party="controller" contact locale="de" />
       <p>
-        Die App wird von einer anderen Person bei Google Play veröffentlicht, die auch die Abonnementeinnahmen vereinnahmt. Der Herausgeber
+        Die App wird von einer anderen Person in den App-Stores veröffentlicht, die auch die Abonnementeinnahmen vereinnahmt. Der Herausgeber
         verarbeitet personenbezogene Daten ausschließlich auf Weisung des Verantwortlichen; für die über die Play Console zugänglichen
         Bestell-, Abonnement- und Rezensionsdaten handelt er als <strong>Auftragsverarbeiter</strong>, und zwischen uns besteht dazu ein
         Auftragsverarbeitungsvertrag (Art. 28 DSGVO, Art. 12 KVKK).
@@ -74,8 +74,8 @@ export function PrivacyDeBody() {
             <tr><td>Freundschaftsanfragen, Freundesliste, Blockierungen, Nutzermeldungen</td><td>Du und deine Freunde</td><td>Freundesfunktionen, Sicherheit und Moderation</td><td>Erfüllung eines Vertrags; berechtigtes Interesse (Sicherheit)</td><td>Für die Dauer des Kontos; Meldungen bis zum Abschluss der Prüfung</td></tr>
             <tr><td>Aktivitäts-Feed, Reaktionen, Anstöße, gemeinsame Aufgaben, Posteingangs-Benachrichtigungen</td><td>Während der Nutzung der App</td><td>Teilen des Fortschritts mit deinen Freunden und Motivation (nur für deine Freunde sichtbar)</td><td>Erfüllung eines Vertrags; über die Einstellung &quot;Aktivität zeigen&quot; abschaltbar</td><td>Für die Dauer des Kontos</td></tr>
             <tr><td>Web-Push-Abonnement (Browser-Endpunkt und Verschlüsselungsschlüssel)</td><td>Dein Browser, wenn du es erlaubst</td><td>Erinnerungen im Web</td><td>Einwilligung (Browser-Berechtigung)</td><td>Bis zum Widerruf der Berechtigung oder zum Ungültigwerden des Endpunkts</td></tr>
-            <tr><td>Benachrichtigungsberechtigung und Erinnerungszeit (Android)</td><td>Du</td><td>Lokale Erinnerungen (auf dem Gerät geplant, nicht an den Server gesendet)</td><td>Einwilligung</td><td>Auf dem Gerät</td></tr>
-            <tr><td>Kauf- und Abonnementstatus</td><td>Google Play / RevenueCat</td><td>Freischalten der Premium-Funktionen</td><td>Erfüllung eines Vertrags; rechtliche Verpflichtung (Buchhaltung)</td><td>Für die Dauer des Kontos; Finanzunterlagen für die gesetzliche Frist</td></tr>
+            <tr><td>Benachrichtigungsberechtigung und Erinnerungszeit</td><td>Du</td><td>Lokale Erinnerungen (auf dem Gerät geplant, nicht an den Server gesendet)</td><td>Einwilligung</td><td>Auf dem Gerät</td></tr>
+            <tr><td>Kauf- und Abonnementstatus</td><td>App-Store / RevenueCat</td><td>Freischalten der Premium-Funktionen</td><td>Erfüllung eines Vertrags; rechtliche Verpflichtung (Buchhaltung)</td><td>Für die Dauer des Kontos; Finanzunterlagen für die gesetzliche Frist</td></tr>
             <tr><td>Deine Inhaltsmeldungen</td><td>Du (&quot;Melden&quot;)</td><td>Prüfung unangemessener KI-Antworten</td><td>Berechtigtes Interesse (sicherer Dienst)</td><td>Bis zum Abschluss der Prüfung</td></tr>
             <tr><td>Support-Nachrichten und Rechteanfragen an uns</td><td>Du</td><td>Beantwortung der Anfrage, gesetzliche Dokumentation</td><td>Rechtliche Verpflichtung (Art. 13 KVKK, Art. 12 DSGVO)</td><td>2 Jahre nach Abschluss der Anfrage</td></tr>
           </tbody>
@@ -89,15 +89,14 @@ export function PrivacyDeBody() {
 
       <h2>4. Mikrofon und Audioaufnahmen</h2>
       <p>
-        Im Gehmodus hörst du eine Vorgabe in deiner Sprache und sprichst das Wort in der Zielsprache. Bei eingeschaltetem Bildschirm findet
-        die Erkennung auf deinem Gerät statt (Spracherkennungsdienst von Android). Bei ausgeschaltetem Bildschirm oder wenn das Telefon in
+        Im Gehmodus hörst du eine Vorgabe in deiner Sprache und sprichst das Wort in der Zielsprache. Bei eingeschaltetem Bildschirm findet die Erkennung auf deinem Gerät statt, über den geräteeigenen Spracherkennungsdienst. Bei ausgeschaltetem Bildschirm oder wenn das Telefon in
         der Tasche steckt, wird das Audio als 16-kHz-Mono-Aufnahme an unseren Server gesendet und an einen der unten aufgeführten
         Spracherkennungsanbieter weitergegeben. Die Audiodatei wird weder auf dem Server noch beim Anbieter gespeichert; nur der erkannte
         Text, das erwartete Wort und die Cliplänge werden im Nutzungsdatensatz festgehalten.
       </p>
       <ul>
         <li>Das Mikrofon wird nur geöffnet, wenn du den Gehmodus startest; eine dauerhafte Benachrichtigung ist sichtbar, und du kannst ihn aus der App beenden.</li>
-        <li>Bei ausgeschaltetem Bildschirm läuft die Aufnahme über den Vordergrunddienst vom Typ &quot;Mikrofon&quot; von Android; die System-Mikrofonanzeige bleibt an.</li>
+        <li>Bei ausgeschaltetem Bildschirm läuft die Aufnahme über den Mechanismus, den das Betriebssystem dafür vorsieht (unter Android ein Vordergrunddienst vom Typ &quot;Mikrofon&quot;); die System-Mikrofonanzeige bleibt an.</li>
         <li>Beim ersten Mal erklärt ein Einwilligungsbildschirm diese Verarbeitung; ohne Einwilligung startet der Modus nicht. Erteilst du sie nicht, wird das Mikrofon nie genutzt, und der Rest der App funktioniert.</li>
         <li>Im Erkennungsergebnis werden Schimpfwörter maskiert.</li>
       </ul>
@@ -236,7 +235,7 @@ export function PrivacyDeBody() {
         <Link href={legalPath("deleteAccount", "de")}>www.lernomi.app{legalPath("deleteAccount", "de")}</Link>. Im Moment der Löschung werden
         dein Konto, dein Fortschritt, deine Texte, deine Sprechprotokolle, deine Nutzungsereignisse und deine sozialen Spuren
         (Freundschaften, Reaktionen) dauerhaft gelöscht; das ist unwiderruflich. Finanzunterlagen, die einer gesetzlichen Aufbewahrungspflicht
-        unterliegen, werden anonymisiert aufbewahrt. Hast du ein Google-Play-Abonnement, musst du es zusätzlich im Play Store kündigen.
+        unterliegen, werden anonymisiert aufbewahrt. Hast du ein Store-Abonnement, musst du es zusätzlich in dem Store kündigen, in dem du es gekauft hast.
       </p>
 
       <h2>12. Kinder</h2>

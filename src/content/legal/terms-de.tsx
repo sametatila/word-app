@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { FAIR_USE, legalPath } from "@/lib/legal";
+import { FAIR_USE, hasIos, legalPath } from "@/lib/legal";
 
 /**
  * Nutzungsbedingungen — Deutsch. Informative Übersetzung; verbindlich ist der
@@ -16,7 +16,7 @@ export const TERMS_DE_SUMMARY = [
   "Der Dienst wird aus der Türkei angeboten und unterliegt türkischem Recht. Die zwingenden Verbraucherrechte deines Landes bleiben unberührt.",
   "Dein Konto gehört dir und wird respektvoll gegenüber anderen genutzt. Was du schreibst, bleibt dein.",
   "KI-Antworten können falsch sein.",
-  "Premium wird über Google Play gekauft und dort gekündigt.",
+  "Premium wird in dem Store gekauft, aus dem du die App geladen hast, und dort gekündigt.",
 ] as const;
 
 export function TermsDeBody() {
@@ -98,11 +98,11 @@ export function TermsDeBody() {
 
       <h2>7. Premium-Abonnement, Zahlung und Widerruf</h2>
       <ul>
-        <li><strong>Kauf:</strong> Premium wird unter Android über Google Play Billing gekauft; die Zahlung wird von Google Play abgewickelt, und die Google Play-Nutzungsbedingungen gelten zusätzlich. Preis, Währung, Laufzeit, Testbedingungen und Steuern zeigt Play im Moment des Kaufs an; diese Angaben bilden die vorvertragliche Information nach dem türkischen Gesetz Nr. 6502 und der Fernabsatzverordnung.</li>
-        <li><strong>Verlängerung und Kündigung:</strong> Wird das Abonnement nicht mindestens 24 Stunden vor Ende der Laufzeit gekündigt, verlängert es sich um denselben Zeitraum. Kündigung und Verwaltung finden sich im Play Store &rsaquo; Zahlungen und Abos; das Löschen des Kontos kündigt das Abonnement nicht. Kündigst du vor Ende einer kostenlosen Testphase, fällt keine Gebühr an.</li>
-        <li><strong>Widerrufsrecht:</strong> Da die Erbringung eines digitalen Inhaltsdienstes im Moment des Kaufs beginnt, endet das Widerrufsrecht nach Art. 15/1-ğ der türkischen Fernabsatzverordnung und Art. 16(m) der EU-Verbraucherrechterichtlinie mit deiner Zustimmung zum Beginn der Erbringung; diese Zustimmung wird auf dem Kaufbildschirm eingeholt. Die Rückerstattungsrichtlinie von Google Play gilt zusätzlich, und von Play gewährte Rückerstattungen erkennen wir an.</li>
-        <li><strong>Preisänderung:</strong> Preisänderungen teilen wir vor ihrem Inkrafttreten über Play mit; nimmst du eine nicht an, kannst du das Abonnement kündigen.</li>
-        <li><strong>Kaufbeleg:</strong> Premium kaufst du über Google Play; den Beleg stellt Google aus und sendet ihn an die E-Mail-Adresse deines Play-Kontos. Eine Kopie kannst du über den Google-Play-Support anfordern. Der Herausgeber ist keine Gesellschaft, sondern eine natürliche Person; da die Einkünfte unter die türkische Einkommensteuerbefreiung für die Entwicklung mobiler Anwendungen fallen, wird keine gesonderte Rechnung ausgestellt.</li>
+        <li><strong>Kauf:</strong> Premium wird über das Zahlungssystem des Stores gekauft, aus dem du die App geladen hast: unter Android über Google Play Billing{hasIos() ? <>, unter iOS über den Apple In-App-Kauf</> : null}. Die Zahlung wickelt der Store ab, und dessen eigene Nutzungsbedingungen gelten zusätzlich. Preis, Währung, Laufzeit, Testbedingungen und Steuern zeigt der Store im Moment des Kaufs an; diese Angaben bilden die vorvertragliche Information nach dem türkischen Gesetz Nr. 6502 und der Fernabsatzverordnung.</li>
+        <li><strong>Verlängerung und Kündigung:</strong> Wird das Abonnement nicht mindestens 24 Stunden vor Ende der Laufzeit gekündigt, verlängert es sich um denselben Zeitraum. Gekündigt wird in dem Store, in dem du gekauft hast: Play Store &rsaquo; Zahlungen und Abos{hasIos() ? <>, unter iOS Einstellungen &rsaquo; Apple-Account &rsaquo; Abonnements</> : null}. Das Löschen des Kontos kündigt das Abonnement nicht. Kündigst du vor Ende einer kostenlosen Testphase, fällt keine Gebühr an.</li>
+        <li><strong>Widerrufsrecht:</strong> Da die Erbringung eines digitalen Inhaltsdienstes im Moment des Kaufs beginnt, endet das Widerrufsrecht nach Art. 15/1-ğ der türkischen Fernabsatzverordnung und Art. 16(m) der EU-Verbraucherrechterichtlinie mit deiner Zustimmung zum Beginn der Erbringung; diese Zustimmung wird auf dem Kaufbildschirm eingeholt. Die Rückerstattungsrichtlinie des jeweiligen Stores gilt zusätzlich, und von ihm gewährte Rückerstattungen erkennen wir an{hasIos() ? <> — für Google Play der Play-Support, für Apple reportaproblem.apple.com</> : null}.</li>
+        <li><strong>Preisänderung:</strong> Preisänderungen teilen wir vor ihrem Inkrafttreten über den Store mit; nimmst du eine nicht an, kannst du das Abonnement kündigen.</li>
+        <li><strong>Kaufbeleg:</strong> Den Verkauf tätigt der Store; er stellt den Beleg aus und sendet ihn an die E-Mail-Adresse deines Store-Kontos. Eine Kopie kannst du beim Support des Stores anfordern. Der Herausgeber ist keine Gesellschaft, sondern eine natürliche Person; da die Einkünfte unter die türkische Einkommensteuerbefreiung für die Entwicklung mobiler Anwendungen fallen, wird keine gesonderte Rechnung ausgestellt.</li>
       </ul>
 
       <h2>7a. Fair Use</h2>
@@ -116,8 +116,7 @@ export function TermsDeBody() {
 
       <h2>7b. Dienste Dritter</h2>
       <p>
-        Die Anmeldung mit Google (Google-Konto-Bedingungen), Google Play (Play-Nutzungsbedingungen und Rückerstattungsrichtlinie) und der
-        Spracherkennungsdienst deines Geräts unterliegen den Bedingungen ihrer jeweiligen Anbieter. Die KI- und Spracherkennungsanbieter
+        Die Anmeldung mit Google (Google-Konto-Bedingungen), der Store, aus dem du die App geladen hast (Google Play-Nutzungsbedingungen{hasIos() ? <>, Apple-Media-Services-Bedingungen</> : null} und die jeweiligen Rückerstattungsrichtlinien) und der Spracherkennungsdienst deines Geräts unterliegen den Bedingungen ihrer jeweiligen Anbieter. Die KI- und Spracherkennungsanbieter
         sind in der Datenschutzerklärung aufgeführt; sie sind unsere Unterauftragsverarbeiter und schließen keinen Vertrag direkt mit dir.
       </p>
 
@@ -189,6 +188,29 @@ export function TermsDeBody() {
         <li><strong>Zustellung:</strong> Mitteilungen an uns gehen an <Ph k="supportEmail" />; Mitteilungen an dich gehen an die E-Mail-Adresse deines Kontos oder erfolgen als Nachricht in der App und gelten mit Zugang als zugestellt.</li>
         <li><strong>Aufbewahrung:</strong> Diese Vereinbarung wird elektronisch aufbewahrt; du kannst die von dir angenommene Fassung und ihr Datum anfordern.</li>
       </ul>
+
+      {hasIos() ? (
+        <>
+          <h2>13a. Zusätzliche Bedingungen für den Apple App Store</h2>
+          <p>
+            Hast du die App aus dem App Store geladen, gilt zusätzlich Folgendes. Das sind die Mindestbedingungen, die Apple von
+            Entwicklern verlangt, die nicht Apples eigene EULA verwenden; sie gelten nur für die Apple-Fassung und gehen im
+            Widerspruchsfall vor.
+          </p>
+          <ul>
+            <li><strong>Vertragsparteien:</strong> Diese Vereinbarung besteht nur zwischen dir und uns, nicht mit Apple. Für die App und ihre Inhalte sind allein wir verantwortlich.</li>
+            <li><strong>Umfang der Lizenz:</strong> Wir gewähren dir eine nicht übertragbare Lizenz zur Nutzung der App auf Apple-Geräten, die du besitzt oder kontrollierst, im Rahmen der Nutzungsregeln der App Store-Nutzungsbedingungen.</li>
+            <li><strong>Wartung und Support:</strong> Für Wartung und Support sind allein wir verantwortlich; Apple trifft keine solche Pflicht.</li>
+            <li><strong>Gewährleistung:</strong> Für die Gewährleistung sind allein wir verantwortlich. Entspricht die App einer geltenden Gewährleistung nicht, kannst du Apple benachrichtigen; Apple erstattet den Kaufpreis und trifft darüber hinaus keine Gewährleistungspflicht.</li>
+            <li><strong>Ansprüche:</strong> Ansprüche im Zusammenhang mit der App — einschließlich Produkthaftung, Rechtskonformität, Verbraucherschutz und Datenschutz — richten sich an uns, nicht an Apple.</li>
+            <li><strong>Geistiges Eigentum:</strong> Macht ein Dritter geltend, die App verletze seine Rechte des geistigen Eigentums, obliegen Prüfung, Verteidigung und Beilegung allein uns.</li>
+            <li><strong>Rechtskonformität:</strong> Mit der Nutzung der App versicherst du, dich nicht in einem Land zu befinden, das einem US-Embargo unterliegt oder von den USA als &quot;terrorismusunterstützend&quot; eingestuft wird, und auf keiner US-Liste verbotener Parteien zu stehen.</li>
+            <li><strong>Kontakt:</strong> Für Fragen, Beschwerden und Ansprüche gelten die Kontaktangaben in Abschnitt 1.</li>
+            <li><strong>Bedingungen Dritter:</strong> Du verpflichtest dich, bei der Nutzung der App die geltenden Bedingungen Dritter einzuhalten.</li>
+            <li><strong>Begünstigte Dritte:</strong> Apple und seine Tochtergesellschaften sind begünstigte Dritte dieser Vereinbarung und berechtigt, sie dir gegenüber durchzusetzen.</li>
+          </ul>
+        </>
+      ) : null}
 
       <h2>13. Änderungen und Kontakt</h2>
       <p>
