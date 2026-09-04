@@ -56,10 +56,20 @@ export const LEGAL_ENTITY = {
 
   /**
    * KVKK veri sorumlusu temsilcisi: Türkiye'de yerleşik olmayan veri sorumlusu
-   * için zorunlu. Türkiye'de yerleşik yayıncı bu görevi üstlenebilir; ad ve adres
-   * atama kararı imzalanınca yazılır.
+   * için zorunlu. Bu görevi YAYINCI üstleniyor — aynı kişi, aynı adres; adres
+   * değişirse ikisini birlikte güncelle.
+   *
+   * Temsilci olabilmenin şartı Türkiye'de yerleşik Türk vatandaşı gerçek kişi ya
+   * da Türkiye'de kurulu tüzel kişi olmak; yayıncı bunu karşılıyor. Atama, veri
+   * sorumlusunun yazılı kararıyla yapılıp Kuruma bildiriliyor ve VERBİS kaydı
+   * temsilci üzerinden açılıyor. VERBİS ayrıca bir "irtibat kişisi" istiyor
+   * (Türkiye'de yerleşik Türk vatandaşı); bu alan Sicil'e girilen bir bilgi,
+   * yayımlanan metnin parçası değil.
+   *
+   * DİKKAT: aşağıdaki metin "temsilci atanmıştır" diyor. Atama kararı
+   * imzalanmadan yayına çıkarsa bu cümle doğru olmaz.
    */
-  trRepresentative: "[[KVKK_TÜRKİYE_TEMSİLCİSİ_AD_VE_ADRES]]",
+  trRepresentative: "Musa Atila, Akpınar Mah. Akpınar Merkez Küme Evler No:6, Tufanbeyli, Adana, Türkiye",
 
   /**
    * Veri hakları başvuruları iki ayrı adrese gidiyor çünkü iki ayrı rejim ve iki
