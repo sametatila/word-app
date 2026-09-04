@@ -30580,7 +30580,7 @@
      },
      {
       "lang": "en",
-      "text": "The guarantee has finished."
+      "text": "The guarantee has expired."
      }
     ]
    },
@@ -31381,8 +31381,8 @@
   "roleplay": {
    "scene": "Bir mağazadasın. İki çanta beğendin ama fiyatları farklı. Satıcıyla konuşup fiyatları karşılaştırıyor, indirim soruyor ve birini seçiyorsun.",
    "partner": "mağazadaki satıcı",
-   "opening": "Hi! Both bags are nice. Do you have a question?",
-   "openingTr": "Merhaba! İki çanta da güzel. Bir sorunuz mu var?",
+   "opening": "Hi! Both bags are nice. Can I help you?",
+   "openingTr": "Merhaba! İki çanta da güzel. Yardımcı olabilir miyim?",
    "goal": "Öğrenci iki ürünün fiyatını karşılaştırmalı (cheaper ya da more expensive kullanarak), indirim olup olmadığını sormalı ve sonunda hangisini aldığını söylemeli.",
    "minTurns": 7
   }
@@ -31394,7 +31394,7 @@
   "icon": "repair",
   "title": "Warranty and receipts",
   "titleTr": "Garanti ve fiş",
-  "summary": "Bozulan bir ürünü mağazaya götürüp fişini gösterek garanti hakkını kibarca kullanmayı öğreniyorsun.",
+  "summary": "Bozulan bir ürünü mağazaya götürüp fişini göstererek garanti hakkını kibarca kullanmayı öğreniyorsun.",
   "minutes": 9,
   "focusId": "Formal language",
   "vocab": [
@@ -31529,7 +31529,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıra sende. Görevlideye 'Bunu iki hafta önce buradan aldım' de."
+      "text": "Sıra sende. Görevliye 'Bunu iki hafta önce buradan aldım' de."
      }
     ],
     "expect": {
@@ -31762,9 +31762,7 @@
      "target": "It's still under warranty.",
      "accept": [
       "It is still under warranty.",
-      "The product is still under warranty.",
-      "It's still under the warranty.",
-      "it is still under the warranty."
+      "The product is still under warranty."
      ],
      "hint": [
       {
@@ -32187,7 +32185,11 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Does the price include breakfast?"
+     "target": "Does the price include breakfast?",
+     "accept": [
+      "Is breakfast included?",
+      "Is breakfast included in the price?"
+     ]
     }
    },
    {
@@ -32269,7 +32271,9 @@
      "target": "Does the price include breakfast?",
      "accept": [
       "Does it include breakfast?",
-      "Does that include breakfast?"
+      "Does that include breakfast?",
+      "Is breakfast included?",
+      "Is breakfast included in the price?"
      ],
      "hint": [
       {
@@ -32856,7 +32860,7 @@
      },
      {
       "lang": "en",
-      "text": "Flight TK one nine eight zero to Istanbul has a delay of thirty minutes."
+      "text": "Flight TK one nine eight zero to Istanbul is delayed by thirty minutes."
      },
      {
       "lang": "tr",
@@ -33387,7 +33391,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir kontrol. Şu cümleyi dinle ve söylediğim yorum doğru mu karar ver."
+      "text": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim; İngilizcesi doğru mu yanlış mı karar ver."
      },
      {
       "lang": "en",
@@ -38485,7 +38489,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Geceyi sırayla anlatmak için küçük bağlayıcılar var: first, then, after that, at the end."
+      "text": "Geceyi sırayla anlatmak için küçük bağlayıcılar var: first, then, after that, in the end."
      },
      {
       "lang": "en",
@@ -39007,7 +39011,9 @@
       "I'm going to visit my family tomorrow.",
       "I am going to visit my family tomorrow.",
       "Tomorrow I will visit my family.",
-      "Tomorrow I am going to visit my family."
+      "Tomorrow I am going to visit my family.",
+      "I will visit my family tomorrow.",
+      "I'll visit my family tomorrow."
      ],
      "hint": [
       {
@@ -39029,7 +39035,23 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Peki bayramda ne dilenir? Türkçedeki iyi bayramlar yerine İngilizler şunu der:"
+      "text": "Peki bayramda ne dilenir? Ramazan ve Kurban Bayramı için İngilizcede Arapçadan gelen kalıp kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "Eid Mubarak!"
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "Happy Eid!"
+     },
+     {
+      "lang": "tr",
+      "text": "Dikkat:"
      },
      {
       "lang": "en",
@@ -39037,7 +39059,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yeni yılda ise:"
+      "text": "bayram için değil, Noel ile yılbaşı arasındaki dönem için söylenir. Yeni yılda ise:"
      },
      {
       "lang": "en",
@@ -39049,12 +39071,12 @@
      },
      {
       "lang": "en",
-      "text": "Happy holidays!"
+      "text": "Eid Mubarak!"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Happy holidays!"
+     "target": "Eid Mubarak!"
     }
    },
    {
@@ -39932,7 +39954,7 @@
      },
      {
       "lang": "tr",
-      "text": "ise senin yaptığın işi anlatır ve arkasına fiilin -ing hâli gelir:"
+      "text": "ise neden özür dilediğini anlatır; arkasına isim de gelir, fiilin -ing hâli de:"
      },
      {
       "lang": "en",
@@ -40690,7 +40712,7 @@
      },
      {
       "lang": "tr",
-      "text": ". \"Gülmek\" demek. Sondaki g-h harfleri okunmuyor, kelime \"laf\" gibi çıkıyor. Şimdi:"
+      "text": ". \"Gülmek\" demek. Sondaki gh, f gibi okunur; kelime \"laaf\" gibi çıkar. Şimdi:"
      },
      {
       "lang": "en",
@@ -41607,7 +41629,7 @@
      },
      {
       "lang": "en",
-      "text": "No, I'm single, but I'm engaged."
+      "text": "No, I'm not, but I'm engaged."
      },
      {
       "lang": "tr",
