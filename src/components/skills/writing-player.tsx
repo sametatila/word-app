@@ -689,7 +689,7 @@ function fieldOk(typed: string, answer: string, accept: string[] = []): boolean 
 }
 
 /**
- * Form doldurma: Türkçe verilen bilgileri Almanca alanlara yaz. Goethe A1
+ * Form doldurma: Türkçe verilen bilgileri Almanca alanlara yaz. A1
  * "Schreiben Teil 1"in karşılığı — alan adını anlayıp doğru bilgiyi doğru
  * yere koymak. Alanların ≥ %70'i doğruysa görev tamam.
  */

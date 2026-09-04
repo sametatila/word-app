@@ -10,14 +10,14 @@ import { AlertIcon, CheckIcon, LogoMark } from "@/components/icons";
 import { track } from "@/lib/track";
 
 const COURSES = [
-  { id: "de", title: "Almanca", subtitle: "Hochdeutsch", desc: "Goethe A1–C1 kelime hazinesi, sınav formatında okuma, dinleme ve yazma." },
+  { id: "de", title: "Almanca", subtitle: "Hochdeutsch", desc: "CEFR A1–C1 kelime hazinesi, sınav formatında okuma, dinleme ve yazma." },
   { id: "gsw-zh", title: "Zürih Almancası", subtitle: "Züritüütsch", desc: "İsviçre'nin Zürih lehçesi: günlük konuşma dili, Hochdeutsch köprüsüyle." },
 ];
 
 const GOALS = [
   { id: "work", title: "İş", desc: "Toplantı, e-posta, görüşme — iş yerinde rahat konuşmak." },
   { id: "daily", title: "Günlük hayat", desc: "Komşu, market, doktor, resmi daire — yaşadığım yerde yaşamak." },
-  { id: "exam", title: "Sınav", desc: "Goethe / telc / ÖSD sertifikası, dil şartı." },
+  { id: "exam", title: "Sınav", desc: "Resmî dil sertifikası, dil şartı." },
   { id: "swiss", title: "İsviçre", desc: "Zürih'te yaşam: lehçeyi anlamak, Hochdeutsch ile yazmak." },
 ];
 

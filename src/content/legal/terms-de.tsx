@@ -123,8 +123,8 @@ export function TermsDeBody() {
       <h2>8. Geistiges Eigentum</h2>
       <p>
         Die App, das Design, das Maskottchen, die Soundeffekte und die Lektionsinhalte gehören Lernomi und sind durch das türkische Gesetz
-        Nr. 5846 über geistige und künstlerische Werke sowie durch internationale Abkommen geschützt. Der A1-B1-Teil der Wortlisten beruht
-        auf den offiziellen Wortlisten des Goethe-Instituts; Goethe-Institut und telc sind Marken ihrer jeweiligen Inhaber, und Lernomi ist
+        Nr. 5846 über geistige und künstlerische Werke sowie durch internationale Abkommen geschützt. Die Wortlisten wurden von Lernomi
+        erstellt. Die in der App genannten Prüfungsnamen sind Marken ihrer jeweiligen Inhaber, und Lernomi ist
         nicht mit ihnen verbunden. Über den persönlichen Lerngebrauch hinaus ist Kopieren, Verbreiten oder das Erstellen abgeleiteter Werke
         nicht erlaubt.
       </p>

@@ -116,8 +116,8 @@ export function TermsEnBody() {
       <h2>8. Intellectual property</h2>
       <p>
         The app, its design, the mascot, the sound effects and the lesson content belong to Lernomi and are protected by Turkish Law no. 5846
-        on Intellectual and Artistic Works and by international conventions. The A1-B1 part of the word lists is based on the official
-        Goethe-Institut word lists; Goethe-Institut and telc are trademarks of their respective owners and Lernomi is not affiliated with them.
+        on Intellectual and Artistic Works and by international conventions. The word lists were compiled by Lernomi. Any exam
+        names mentioned in the app are trademarks of their respective owners and Lernomi is not affiliated with them.
         Copying, distributing or making derivative works is not permitted beyond personal learning use.
       </p>
 

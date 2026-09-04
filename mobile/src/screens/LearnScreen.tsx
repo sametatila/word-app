@@ -69,7 +69,7 @@ export function LearnScreen() {
   const greeting = user?.name ? t("learn.greeting_named", { name: user.name.split(" ")[0] }) : t("learn.greeting");
   // Sınav hazırlık yalnız sınavı olan kursta. İngilizce kursunda katalog boş
   // (bkz. data/exams.ts) — kart açık kalsaydı kullanıcıyı boş bir ekrana
-  // götürür ve "Goethe & telc" diye o kursta karşılığı olmayan bir vaat verirdi.
+  // götürür ve sınav vaadi diye o kursta karşılığı olmayan bir vaat verirdi.
   const exams = hasExams(currentCourseId());
   const level = me?.level ?? "A1";
   const mastered = me?.mastered ?? 0;

@@ -128,8 +128,8 @@ export default function TermsPage() {
       <h2>8. Fikri mülkiyet</h2>
       <p>
         Uygulama, tasarım, maskot, ses efektleri ve ders içerikleri Lernomi&apos;ye aittir ve 5846 sayılı Fikir ve Sanat Eserleri Kanunu ile
-        uluslararası sözleşmelerle korunur. Kelime listelerinin A1–B1 bölümü Goethe-Institut resmî kelime listelerine dayanır; Goethe-Institut
-        ve telc, kendi sahiplerinin markalarıdır ve Lernomi onlarla bağlı değildir. Kişisel öğrenme amacı dışında kopyalama, dağıtma ya da türev
+        uluslararası sözleşmelerle korunur. Kelime listeleri Lernomi tarafından hazırlanmıştır. Uygulamada anılan sınav adları kendi
+        sahiplerinin markalarıdır ve Lernomi onlarla bağlı değildir. Kişisel öğrenme amacı dışında kopyalama, dağıtma ya da türev
         ürün yapma izni yoktur.
       </p>
 

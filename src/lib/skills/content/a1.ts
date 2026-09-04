@@ -481,7 +481,7 @@ export const a1: SkillExercise[] = [
     title: "Vier Anzeigen — wer passt?",
     genre: "Sınav formatı",
     intro:
-      "Goethe A1 sınavındaki klasik görev: kısa ilanları okuyup kimin neye ihtiyacı olduğunu eşleştirmek. Önce ilanları oku, sonra soruları çöz.",
+      "A1 sınavındaki klasik görev: kısa ilanları okuyup kimin neye ihtiyacı olduğunu eşleştirmek. Önce ilanları oku, sonra soruları çöz.",
     gloss: [
       { de: "die Anzeige", tr: "ilan", en: "ad" },
       { de: "suchen", tr: "aramak", en: "to look for" },
@@ -1122,7 +1122,7 @@ export const a1: SkillExercise[] = [
     title: "Drei Ansagen",
     genre: "Sınav formatı",
     intro:
-      "Goethe A1 dinleme bölümünün klasik görevi: üç kısa anons, her birine bir soru. Her anonsu ayrı dinleyebilirsin.",
+      "A1 dinleme bölümünün klasik görevi: üç kısa anons, her birine bir soru. Her anonsu ayrı dinleyebilirsin.",
     gloss: [
       { de: "die Ansage", tr: "duyuru", en: "announcement" },
       { de: "der Gleis", tr: "peron", en: "platform" },
@@ -1728,7 +1728,7 @@ export const a1: SkillExercise[] = [
     title: "Formular und kurze Nachricht",
     genre: "Sınav formatı",
     intro:
-      "Goethe A1 yazma bölümünün iki görevi: kısa bilgi alanlarını doldurmak ve üç noktaya değinen kısa bir mesaj yazmak. İkisini de burada çalışacaksın.",
+      "A1 yazma bölümünün iki görevi: kısa bilgi alanlarını doldurmak ve üç noktaya değinen kısa bir mesaj yazmak. İkisini de burada çalışacaksın.",
     gloss: [
       { de: "das Formular", tr: "form", en: "form" },
       { de: "der Familienname", tr: "soyadı", en: "last name" },

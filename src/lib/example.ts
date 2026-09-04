@@ -1,7 +1,7 @@
 /**
  * Örnek cümle ayıklama.
  *
- * Goethe listesindeki `beispiel` alanı çoğu maddede tek cümledir, ama 497
+ * Havuzdaki `beispiel` alanı çoğu maddede tek cümledir, ama 497
  * maddede numaralı bir derlemedir ("1. … 2. … 3. …") ve bir kısmı "- " ile
  * başlar. Doğrudan cümle sonuna göre bölmek bu maddelerde ilk parça olarak
  * "1." veriyordu: tanıtım kartı ve kelime listesi boş bir numara gösteriyor,

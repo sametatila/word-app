@@ -242,7 +242,7 @@ export function PrivacyDeBody() {
       <p>
         Lernomi ist nicht für Personen unter 18 Jahren gestaltet und erhebt von ihnen wissentlich keine Daten. Die Nutzungsbedingungen
         beschränken die Kontoerstellung auf Personen ab 18 Jahren (siehe Nutzungsbedingungen, Ziffer 3). Die Inhalte richten sich an
-        erwachsene Lernende und an die Prüfungsvorbereitung für Goethe/telc; da die App offene KI-Gespräche und Interaktion zwischen Nutzern
+        erwachsene Lernende und an die Vorbereitung auf offizielle Sprachprüfungen; da die App offene KI-Gespräche und Interaktion zwischen Nutzern
         enthält, ist sie für ein kindliches Publikum nicht geeignet. Erfahren wir, dass eine Person unter 18 Jahren ein Konto erstellt hat,
         löschen wir Konto und Daten; Eltern können an <Ph k="privacyEmailEu" /> schreiben.
       </p>

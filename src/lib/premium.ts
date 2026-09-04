@@ -7,7 +7,7 @@ import { profiles } from "@/lib/db/schema";
  * Premium yetki (entitlement) — TEK kaynak (dönüşüm planı §4).
  *
  * Gating'in tamamı buradan geçer: bir premium özelliği (sınırsız konuşma,
- * Goethe/telc tam sınav hazırlığı, sınırsız tur) kilitleyen her yer `isPremium`
+ * tam sınav hazırlığı, sınırsız tur) kilitleyen her yer `isPremium`
  * sorar. Böylece premium bir gün açıldığında tek bir yerin dönmesi yeter.
  *
  * Yetki `profiles.premium_until` sütununda: null ya da geçmiş → ücretsiz,
@@ -52,7 +52,7 @@ export async function revokePremium(userId: string): Promise<void> {
 /** Premium'a özel yetenekler — paywall ve kilit metinleri tek yerden. */
 export const PREMIUM_FEATURES = {
   speaking: "Sınırsız konuşma alıştırması",
-  exam_full: "Goethe & telc tam sınav hazırlığı",
+  exam_full: "Tam sınav hazırlığı",
   unlimited_tour: "Sınırsız kelime turu — günlük limit yok",
 } as const;
 

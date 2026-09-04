@@ -4615,7 +4615,7 @@
   "not": "A2 çeviri gözden geçirmesi: Untermieter'in Türkçedeki yerleşik karşılığı 'alt kiracı'dır; 'oda kiracısı' anlamı daraltıyor"
  },
  "_": "Madde başlığı düzeltmeleri. Anahtar: kelime id'si. 'de' yeni başlık, 'tr' yeni anlam (yalnızca gerekliyse). Her satırın gerekçesi 'not' alanında.",
- "_drop": "Aşağıdakiler aynı kelimenin ikinci kaydı. Goethe listeleri üst üste biniyor: A1/A2'de geçen kelime B1 listesinde tekrar ediyor. Öğrencinin ilk karşılaşması gereken yer düşük seviye olduğu için orada olan korunur.",
+ "_drop": "Aşağıdakiler aynı kelimenin ikinci kaydı. Seviye listeleri üst üste biniyor: A1/A2'de geçen kelime B1 listesinde tekrar ediyor. Öğrencinin ilk karşılaşması gereken yer düşük seviye olduğu için orada olan korunur.",
  "_pass2": "İkinci tur: ilk düzeltmelerden sonra ortaya çıkan tekrarlar ve der/die çiftlerinde ayırt edilmeyen anlamlar.",
  "_pass3": "Üçüncü tur: tireli kök maddeler tohumlamada tire kırpılınca düz kelimeyle çakışıyordu. Yalnızca gerçekten aynı kelime olanlar düşürüldü; erst-/erst (sıra sayısı ↔ 'ancak'), ober-/Ober (üst ↔ garson), recht-/recht (sağ ↔ haklı), link-/Link (sol ↔ bağlantı) ve Groß- (bağlı önek) farklı kelimeler olduğu için korundu.",
  "_pass4": "Denetim turu: 'X (sich)' biçimindeki dönüşlü fiiller. 16'sı zaten 'sich X' olarak havuzda vardı — öğrenci aynı fiili iki kez görüyordu. Kalan 5'i tutarlı biçime getirildi."

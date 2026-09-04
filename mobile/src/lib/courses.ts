@@ -99,9 +99,9 @@ export const COURSES: Course[] = [
     speechLocale: "de-DE",
     label: { tr: "Almanca", en: "German", de: "Deutsch" },
     sub: {
-      tr: "Hochdeutsch · Goethe A1–C1",
-      en: "Standard German · Goethe A1–C1",
-      de: "Hochdeutsch · Goethe A1–C1",
+      tr: "Hochdeutsch · CEFR A1–C1",
+      en: "Standard German · CEFR A1–C1",
+      de: "Hochdeutsch · CEFR A1–C1",
     },
     hasArticles: true,
     enabled: true,

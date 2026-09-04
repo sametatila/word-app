@@ -3,10 +3,10 @@ import { courseOrDefault, type CourseId } from "../lib/courses";
 /**
  * Sınav kataloğu — HEDEF DİLE göre.
  *
- * Sınav adları ve modül adları o sınavın kendi terimleridir (Goethe/telc
- * Almanca isimlendirir) ve çevrilmez; altlarındaki beceri adı arayüz dilinde
+ * Sınav adları ve modül adları o sınavın kendi terimleridir (Almanca
+ * isimlendirilir) ve çevrilmez; altlarındaki beceri adı arayüz dilinde
  * gösterilir. Katalog eskiden ExamPrepScreen'de sabit bir diziydi: İngilizce
- * kursu seçen kullanıcıya "Goethe-Zertifikat / telc Deutsch" ve "Lesen /
+ * kursu seçen kullanıcıya "telc Deutsch" ve "Lesen /
  * Hören" gösteriliyordu — o kursta karşılığı olmayan bir sınav vaadi.
  *
  * Hedef dile bağlanması bilinçli: Zürih Almancası kursunun hedefi de Almanca,
@@ -34,7 +34,7 @@ export type ExamCatalog = {
 };
 
 const GERMAN: ExamCatalog = {
-  exams: ["Goethe-Zertifikat", "telc Deutsch"],
+  exams: ["telc Deutsch"],
   modules: [
     { key: "lesen", label: "Lesen", subKey: "unitkind.read", skill: "reading", kind: "read", tint: "info", premium: false },
     { key: "hoeren", label: "Hören", subKey: "unitkind.listen", skill: "listening", kind: "listen", tint: "accent", premium: false },

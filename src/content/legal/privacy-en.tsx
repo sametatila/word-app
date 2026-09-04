@@ -233,7 +233,7 @@ export function PrivacyEnBody() {
       <h2>12. Children</h2>
       <p>
         Lernomi is not designed for people under 18 and does not knowingly collect data from them; the terms of use limit account creation to
-        people aged 18 and over (see terms, clause 3). The content is aimed at adult learners and at Goethe/telc exam preparation; because
+        people aged 18 and over (see terms, clause 3). The content is aimed at adult learners and at official language exam preparation; because
         the app contains open-ended AI conversation and user interaction, it is not suitable for a child audience. If we discover that
         someone under 18 has created an account, we delete the account and the data; parents can write to <Ph k="privacyEmailEu" />.
       </p>

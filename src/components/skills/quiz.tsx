@@ -9,7 +9,7 @@ import { CheckIcon, InfoIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { levenshtein } from "@/lib/errors";
 
 /**
- * Anlama soruları — Goethe kâğıdı gibi hepsi alt alta. Şık seçilince kilitlenir,
+ * Anlama soruları — sınav kâğıdı gibi hepsi alt alta. Şık seçilince kilitlenir,
  * doğru/yanlış anında boyanır ve Türkçe açıklama açılır. Tüm sorular
  * cevaplanınca üst bileşene toplam doğru sayısı bildirilir.
  *

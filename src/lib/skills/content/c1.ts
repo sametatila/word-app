@@ -2135,7 +2135,7 @@ export const c1: SkillExercise[] = [
     skill: "writing",
     title: "Grafikbeschreibung: Arbeiten im Homeoffice",
     genre: "Grafik yorumu",
-    intro: "Goethe C1'in klasik görevi: bir grafiği akademik dille betimleyip yorumlayacaksın — önce iki kalıp cümle kur, sonra kompozisyonu yaz.",
+    intro: "C1'in klasik görevi: bir grafiği akademik dille betimleyip yorumlayacaksın — önce iki kalıp cümle kur, sonra kompozisyonu yaz.",
     minutes: 14,
     gloss: [
       { de: "der Anteil", tr: "pay", en: "share" },
@@ -2264,7 +2264,7 @@ export const c1: SkillExercise[] = [
     skill: "writing",
     title: "Erörterung: Künstliche Intelligenz im Studium",
     genre: "Tartışmalı deneme",
-    intro: "Goethe C1 Schreiben'in kalbi: tartışmalı bir konuda tez-antitez-sentez kuran yapılandırılmış bir deneme yazacaksın.",
+    intro: "C1 Schreiben'in kalbi: tartışmalı bir konuda tez-antitez-sentez kuran yapılandırılmış bir deneme yazacaksın.",
     minutes: 16,
     gloss: [
       { de: "die Erörterung", tr: "tartışma yazısı", en: "argumentative essay" },
@@ -2377,7 +2377,7 @@ export const c1: SkillExercise[] = [
           { de: "für ein persönliches Gespräch stehe ich jederzeit zur Verfügung", tr: "kişisel bir görüşme için her zaman hazırım", en: "I am available at any time for a personal meeting" },
           { de: "über eine positive Rückmeldung würde ich mich sehr freuen", tr: "olumlu bir dönüş beni çok sevindirir", en: "I would be very pleased to receive a positive reply" },
         ],
-        sample: "Sehr geehrte Damen und Herren,\n\nmit großem Interesse habe ich Ihre Ausschreibung gelesen und bewerbe mich hiermit um eines der Teilstipendien für ein Austauschsemester zum kommenden Wintersemester.\n\nIch studiere im fünften Semester Wirtschaftsinformatik an der Universität Istanbul und beschäftige mich in meiner Studienarbeit mit dem Einsatz künstlicher Intelligenz in der öffentlichen Verwaltung. Mein Studienvorhaben besteht darin, an der Universität Leipzig die dort angebotenen Module zur Datenethik zu belegen – ein Schwerpunkt, den es in dieser Form an meiner Heimatuniversität nicht gibt. Ein Semester in Deutschland würde daher nicht nur wesentlich zur Vertiefung meiner sprachlichen Kompetenzen beitragen, sondern meinem Studienprofil eine fachliche Richtung geben, die mir sonst verschlossen bliebe.\n\nMeine Deutschkenntnisse habe ich zuletzt durch das Goethe-Zertifikat B2 mit der Note „sehr gut“ nachgewiesen; derzeit bereite ich mich auf die C1-Prüfung vor. Darüber hinaus bringe ich Erfahrung in der Beratung mit: Seit zwei Jahren betreue ich an meiner Fakultät Erstsemester als Mentorin. Umso mehr freue ich mich auf die Möglichkeit, nach meiner Rückkehr ehrenamtlich in der Studienberatung Ihrer Stiftung mitzuwirken und meine Erfahrungen an künftige Bewerberinnen und Bewerber weiterzugeben.\n\nFür ein persönliches Gespräch stehe ich jederzeit zur Verfügung. Über eine positive Rückmeldung würde ich mich sehr freuen.\n\nMit freundlichen Grüßen\nZeynep Kaya",
+        sample: "Sehr geehrte Damen und Herren,\n\nmit großem Interesse habe ich Ihre Ausschreibung gelesen und bewerbe mich hiermit um eines der Teilstipendien für ein Austauschsemester zum kommenden Wintersemester.\n\nIch studiere im fünften Semester Wirtschaftsinformatik an der Universität Istanbul und beschäftige mich in meiner Studienarbeit mit dem Einsatz künstlicher Intelligenz in der öffentlichen Verwaltung. Mein Studienvorhaben besteht darin, an der Universität Leipzig die dort angebotenen Module zur Datenethik zu belegen – ein Schwerpunkt, den es in dieser Form an meiner Heimatuniversität nicht gibt. Ein Semester in Deutschland würde daher nicht nur wesentlich zur Vertiefung meiner sprachlichen Kompetenzen beitragen, sondern meinem Studienprofil eine fachliche Richtung geben, die mir sonst verschlossen bliebe.\n\nMeine Deutschkenntnisse habe ich zuletzt durch ein Sprachzertifikat auf dem Niveau B2 mit der Note „sehr gut“ nachgewiesen; derzeit bereite ich mich auf die C1-Prüfung vor. Darüber hinaus bringe ich Erfahrung in der Beratung mit: Seit zwei Jahren betreue ich an meiner Fakultät Erstsemester als Mentorin. Umso mehr freue ich mich auf die Möglichkeit, nach meiner Rückkehr ehrenamtlich in der Studienberatung Ihrer Stiftung mitzuwirken und meine Erfahrungen an künftige Bewerberinnen und Bewerber weiterzugeben.\n\nFür ein persönliches Gespräch stehe ich jederzeit zur Verfügung. Über eine positive Rückmeldung würde ich mich sehr freuen.\n\nMit freundlichen Grüßen\nZeynep Kaya",
       },
     ],
   },

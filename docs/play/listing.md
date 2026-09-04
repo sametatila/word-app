@@ -8,7 +8,7 @@ rakip adı, uygulamada olmayan özellik ve abartılı iddia yok (Play "metadata"
 
 | Soru | Cevap | Gerekçe |
 |---|---|---|
-| Hedef yaş grupları | **Yalnız 18 ve üzeri** | Kullanım şartları §3 hesap açmayı 18 yaşla sınırlıyor. 16–17 işaretlenmemeli: altında bir yaş grubu seçmek uygulamayı Aileler politikası kapsamına alır ve açık uçlu yapay zekâ sohbeti ile serbest metinli sosyal katman o kapsamda ek gereklilik doğurur. İçerik de yetişkine dönük: CEFR A1–C1, Goethe/telc sınav hazırlığı, "Hukuk ve sözleşme dili", "Para ve kariyer" |
+| Hedef yaş grupları | **Yalnız 18 ve üzeri** | Kullanım şartları §3 hesap açmayı 18 yaşla sınırlıyor. 16–17 işaretlenmemeli: altında bir yaş grubu seçmek uygulamayı Aileler politikası kapsamına alır ve açık uçlu yapay zekâ sohbeti ile serbest metinli sosyal katman o kapsamda ek gereklilik doğurur. İçerik de yetişkine dönük: CEFR A1–C1, sınav hazırlığı, "Hukuk ve sözleşme dili", "Para ve kariyer" |
 | Uygulama çocuklara çekici mi | **Hayır** | Maskot (mirket) ve oyunlaştırma var ama listeleme yetişkin öğrenciye ve sınava odaklı; mağaza görsellerinde maskot ana unsur olmayacak |
 | Aileler politikası | Kapsam dışı | Yapay zekâ sohbeti ve kullanıcı etkileşimi çocuk kitlesiyle bağdaşmaz |
 | Beklenmeyen çocuk kullanıcı | Hesap ve veri silinir | Gizlilik politikası §12 |
@@ -46,13 +46,13 @@ ayırt edici son ek şart. İngilizce kurs listelemede öne çıkacaksa: `Lernom
 
 ### Kısa açıklama (en çok 80 karakter)
 
-`Almanca kelime, konuşma ve Goethe/telc hazırlığı. Kısa turlar, yürürken pratik.`
+`Almanca kelime, konuşma ve sınav hazırlığı. Kısa turlar, yürürken pratik.`
 
 ### Tam açıklama (en çok 4000 karakter)
 
 ```
 Lernomi, dil öğrenmeyi günlük bir alışkanlığa çeviren bir uygulamadır: kısa kelime
-turları, gerçek derslerle konuşma pratiği ve Goethe/telc sınavlarına hedefli hazırlık.
+turları, gerçek derslerle konuşma pratiği ve sınav formatına hedefli hazırlık.
 
 KELİME TURLARI
 Aralıklı tekrar (SRS) her kelimeyi tam unutmak üzereyken önüne getirir. A1'den C1'e
@@ -72,7 +72,7 @@ Her seviyede okuma ve dinleme parçaları, yazma görevleri; yazdıkların değe
 ve geri bildirim alırsın.
 
 SINAV HAZIRLIĞI
-Goethe-Zertifikat ve telc Deutsch formatına uygun Lesen ve Hören alıştırmaları.
+telc Deutsch formatına uygun Lesen ve Hören alıştırmaları.
 
 ARKADAŞLARINLA
 Haftalık sıralama, arkadaş ekleme, tepkiler ve ortak görevler. Özel mesajlaşma yoktur;
@@ -89,7 +89,7 @@ Kullanım şartları: [[SITE]]/terms
 ```
 
 Yasak: "Duolingo", "Babbel" gibi rakip adları; "en iyi", "1 numara" iddiaları; olmayan
-özellik (tam deneme sınavı, reklamsız premium). Goethe-Institut ve telc adları yalnız
+özellik (tam deneme sınavı, reklamsız premium). telc adı yalnız
 sınav formatını tarif etmek için, "onaylı/resmi" ima etmeden.
 
 ### Kategori ve etiketler
@@ -124,7 +124,7 @@ varsa uygulamadaki özelliği anlatır, fiyat ya da vaat içermez.
 - "Lernomi" adı: TÜRKPATENT ve EUIPO'da marka sorgusu yap; Play'deki "Lernomi" (yapay zekâ arkadaş)
   ile karışıklık itirazına karşı ayırt edici başlık kullan.
 - Maskot (mirket) özgün; başka bir dil uygulamasının maskotuna benzemiyor.
-- Goethe-Institut ve telc tescilli markalar: listelemede yalnız tanımlayıcı kullanım,
+- telc tescilli bir marka: listelemede yalnız tanımlayıcı kullanım,
   logo yok; Kullanım Şartları §8 bağlantısızlığı belirtiyor.
 
 > iOS için ayrı bir beyan seti gerekiyor; bkz. `docs/appstore/README.md`. Play'in Veri

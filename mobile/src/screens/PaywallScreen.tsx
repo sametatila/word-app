@@ -152,7 +152,7 @@ export function PaywallScreen() {
 
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl, paddingHorizontal: 4 }}>
           <ExamIcon color={colors.accent} size={22} />
-          {/* Sınav vaadi yalnız sınavı olan kursta: İngilizce kursunda Goethe/telc
+          {/* Sınav vaadi yalnız sınavı olan kursta: İngilizce kursunda sınav
               karşılığı yok, orada CEFR vaadi tek başına doğru olanı. */}
           <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>
             {t(hasExams(currentCourseId()) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}

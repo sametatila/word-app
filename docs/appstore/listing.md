@@ -40,7 +40,7 @@ adları. Bunun iki doğrudan sonucu var:
 
 Play'in 80 karakterlik kısa açıklaması (tr):
 
-> `Almanca kelime, konuşma ve Goethe/telc hazırlığı. Kısa turlar, yürürken pratik.`
+> `Almanca kelime, konuşma ve sınav hazırlığı. Kısa turlar, yürürken pratik.`
 
 Bu cümle iki şey söylüyor: **ne öğretiyor** (kelime + konuşma + sınav) ve **nasıl
 kullanılıyor** (kısa turlar, yürürken). 30 karakterlik Subtitle'a ikisi birden sığmıyor.
@@ -181,7 +181,7 @@ _115/170 karakter._
 **Keywords** (virgülle, virgülden sonra BOŞLUK YOK — boşluk da karakter sayılır)
 
 ```
-goethe,telc,sınav,a1,b1,b2,kelime,ezber,tekrar,gramer,dinleme,okuma,telaffuz,zürih,ingilizce
+telc,sınav,a1,b1,b2,kelime,ezber,tekrar,gramer,dinleme,okuma,telaffuz,zürih,ingilizce
 ```
 _92/100 karakter._
 
@@ -189,7 +189,7 @@ _92/100 karakter._
 
 ```
 Lernomi, dil öğrenmeyi günlük bir alışkanlığa çeviren bir uygulamadır: kısa kelime
-turları, gerçek sahnelerde konuşma pratiği ve Goethe/telc sınavlarına hedefli hazırlık.
+turları, gerçek sahnelerde konuşma pratiği ve sınav formatına hedefli hazırlık.
 
 YÜRÜRKEN ÇALIŞ
 Ekrana bakmadan öğren: Türkçe ipucunu duy, Almancasını sesli söyle. Telefon cebindeyken
@@ -212,7 +212,7 @@ Her seviyede okuma ve dinleme parçaları, yazma görevleri. Yazdıkların değe
 neyi neden düzeltmen gerektiğini görürsün.
 
 SINAV HAZIRLIĞI
-Goethe-Zertifikat ve telc Deutsch sınavlarının Lesen ve Hören bölümlerinin biçimine uygun
+telc Deutsch sınavının Lesen ve Hören bölümlerinin biçimine uygun
 alıştırmalar. Lernomi bu kurumlarla bağlantılı değildir ve onlar tarafından onaylanmamıştır;
 adlar yalnız sınav biçimini tarif etmek için geçiyor.
 
@@ -270,7 +270,7 @@ _147/170 karakter._
 **Keywords** (virgülle, virgülden sonra BOŞLUK YOK — boşluk da karakter sayılır)
 
 ```
-goethe,telc,exam,a1,b1,b2,vocabulary,flashcard,grammar,listening,reading,speaking,swiss
+telc,exam,a1,b1,b2,vocabulary,flashcard,grammar,listening,reading,speaking,swiss
 ```
 _87/100 karakter._
 
@@ -278,7 +278,7 @@ _87/100 karakter._
 
 ```
 Lernomi turns language learning into a daily habit: short vocabulary rounds, speaking
-practice in real scenes, and focused preparation for the Goethe and telc exams.
+practice in real scenes, and focused preparation for the telc exams.
 
 PRACTICE WHILE YOU WALK
 Learn without looking at the screen: hear the prompt in your language, say the German out
@@ -302,7 +302,7 @@ Reading and listening passages and writing tasks at every level. Your writing is
 and you see what to fix and why.
 
 EXAM PREPARATION
-Lesen and Hören exercises that follow the format of the Goethe-Zertifikat and telc Deutsch
+Lesen and Hören exercises that follow the format of the telc Deutsch
 exams. Lernomi is not affiliated with or endorsed by those institutions; the names appear
 only to describe the exam format.
 
@@ -367,7 +367,7 @@ _144/170 karakter._
 **Keywords** (virgülle, virgülden sonra BOŞLUK YOK — boşluk da karakter sayılır)
 
 ```
-goethe,telc,prüfung,a1,b1,b2,vokabeln,karteikarten,grammatik,hören,lesen,zürich,schweiz
+telc,prüfung,a1,b1,b2,vokabeln,karteikarten,grammatik,hören,lesen,zürich,schweiz
 ```
 _87/100 karakter._
 
@@ -375,7 +375,7 @@ _87/100 karakter._
 
 ```
 Lernomi macht Sprachenlernen zur täglichen Gewohnheit: kurze Vokabelrunden,
-Sprechpraxis in echten Szenen und gezielte Vorbereitung auf die Goethe- und telc-Prüfungen.
+Sprechpraxis in echten Szenen und gezielte Vorbereitung auf die telc-Prüfungen.
 
 UNTERWEGS ÜBEN
 Lernen ohne Bildschirm: Du hörst die Vorgabe in deiner Sprache und sprichst die Antwort
@@ -399,7 +399,7 @@ Lese- und Hörtexte sowie Schreibaufgaben auf jedem Niveau. Deine Texte werden b
 du siehst, was du warum ändern solltest.
 
 PRÜFUNGSVORBEREITUNG
-Lesen- und Hören-Aufgaben im Format der Prüfungen Goethe-Zertifikat und telc Deutsch.
+Lesen- und Hören-Aufgaben im Format der Prüfung telc Deutsch.
 Lernomi steht in keiner Verbindung zu diesen Institutionen und ist von ihnen nicht
 zertifiziert; die Namen beschreiben ausschließlich das Prüfungsformat.
 
@@ -495,10 +495,10 @@ aksi hâlde 3.1.2'den reddedilir.
 
 - **Rakip adı yok.** "Duolingo", "Babbel" gibi adlar ne açıklamada ne `keywords`te geçer.
   Apple, başkasının markasını anahtar kelime olarak kullanmayı reddediyor.
-- **Goethe / telc riski.** İki ad da tescilli marka. Açıklamada tanımlayıcı kullanım
+- **telc riski.** Ad tescilli bir marka. Açıklamada tanımlayıcı kullanım
   (sınav biçimini anlatmak) ve açık bir "bağlantılı değiliz" cümlesi var; bu savunulabilir.
-  `keywords` alanındaki `goethe,telc` ise daha riskli — Apple marka içeren anahtar
-  kelimeleri reddedebiliyor. **Reddedilirse:** ikisini `keywords`ten çıkar, yerine
+  `keywords` alanındaki `telc` ise daha riskli — Apple marka içeren anahtar
+  kelimeleri reddedebiliyor. **Reddedilirse:** onu `keywords`ten çıkar, yerine
   `zertifikat,niveau` (de/en) ve `sertifika,seviye` (tr) koy; açıklamadaki tanımlayıcı
   kullanım kalabilir. Bu bir yayın engeli değil, tek alanda geri adım.
 - **Abartı yok.** "En iyi", "1 numara", "garantili geçiş" gibi iddialar yok.
@@ -515,7 +515,7 @@ aksi hâlde 3.1.2'den reddedilir.
 | # | Karar | Kim verir |
 |---|---|---|
 | 1 | **Web/uygulama İngilizce ayrışması kapatılacak mı** — aşağıya bak | Ürün |
-| 2 | `keywords`te `goethe,telc` denensin mi, baştan güvenli sürüm mü kullanılsın (§6) | Ürün |
+| 2 | `keywords`te `telc` denensin mi, baştan güvenli sürüm mü kullanılsın (§6) | Ürün |
 | 3 | App Preview videosu çekilecek mi — arka planda mikrofon isteyen bir uygulamada incelemeyi en hızlı geçiren şey | Ürün |
 | 4 | Hesaplanan yaş derecesi Connect'te görülünce bu belgeye yazılacak (§2.3) | Yayın günü |
 

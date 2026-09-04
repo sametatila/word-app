@@ -21,7 +21,7 @@ import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 /**
- * Sınav hazırlık (§4 — sınav-hazırlığı ürünleştirme). Goethe/telc modülleri:
+ * Sınav hazırlık (§4 — sınav-hazırlığı ürünleştirme). Sınav modülleri:
  * Lesen/Hören (ücretsiz, gerçek okuma/dinleme alıştırmaları) + Schreiben/Sprechen
  * (premium). Uydurma ilerleme yok; modüller gerçek içeriğe bağlı.
  */
@@ -45,7 +45,7 @@ export function ExamPrepScreen() {
   const premium = usePremium() || !billingAvailable();
   // Misafirde yerleştirme sınavının belirlediği seviye (prefs); yoksa A1.
   // Sınav kataloğu kursun HEDEF diline bağlı: İngilizce kursu seçen kullanıcıya
-  // Goethe/telc gösterilmiyor (bkz. data/exams).
+  // Sınav adı gösterilmiyor (bkz. data/exams).
   const catalog = examCatalogFor(currentCourseId());
   const [guestLevel, setGuestLevel] = useState<string | null>(null);
   const [prefsRead, setPrefsRead] = useState(false);

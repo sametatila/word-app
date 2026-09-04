@@ -13,7 +13,7 @@ import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
 
 /**
- * Beceri soruları — web'in quiz.tsx'inin mobil karşılığı. Goethe kâğıdı gibi
+ * Beceri soruları — web'in quiz.tsx'inin mobil karşılığı. sınav kâğıdı gibi
  * hepsi alt alta; şık seçilince kilitlenir, doğru/yanlış boyanır, Türkçe
  * açıklama açılır. Yazılı türlerde toleranslı eşleşme (umlaut/büyük-küçük/tek
  * harf sapma). Hepsi cevaplanınca toplam doğru üst bileşene bildirilir.

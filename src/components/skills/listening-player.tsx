@@ -214,7 +214,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
             <p className="muted mt-0.5 text-xs">
               {hasAudio
                 ? "Gerçek lehçe kaydı — istediğin kadar tekrar dinle."
-                : "İstediğin kadar tekrar dinleyebilirsin. Goethe sınavında iki kez dinlersin."}
+                : "İstediğin kadar tekrar dinleyebilirsin. Sınavda iki kez dinlersin."}
             </p>
             <div className="mt-2 flex items-center gap-1.5">
               {exercise.segments.map((_, i) => (

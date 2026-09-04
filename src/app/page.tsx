@@ -35,7 +35,7 @@ const COURSES = [
   {
     name: "Almanca",
     sub: "Hochdeutsch",
-    body: "A1–B1 resmî Goethe listelerinden, B2–C1 alan bazlı hazırlanmış 7.392 kelime; her biri artikel, çoğul, örnek cümle ve cümlenin Türkçe çevirisiyle.",
+    body: "CEFR A1–C1 için alan bazlı hazırlanmış 7.392 kelime; her biri artikel, çoğul, örnek cümle ve cümlenin Türkçe çevirisiyle.",
   },
   {
     name: "Zürih Almancası",
@@ -240,7 +240,7 @@ export default function Home() {
       </main>
 
       <footer className="muted border-t px-5 py-8 text-center text-xs" style={{ borderColor: "var(--border)" }}>
-        Kelime kaynağı: A1–B1 Goethe-Institut resmî Wortliste; B2–C1 konu bazlı hazırlanmış set.
+        Kelime kaynağı: CEFR A1–C1 için konu bazlı hazırlanmış set.
         <br />
         Zürih kursu, aynı listenin Züritüütsch karşılığıdır (Dieth temelli sadeleştirilmiş yazım).
         <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">

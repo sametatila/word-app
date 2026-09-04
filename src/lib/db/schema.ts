@@ -48,7 +48,7 @@ export const words = pgTable(
     /**
      * Tek, tam ve kelimeyi **gerçekten içeren** bir örnek cümle.
      *
-     * Kaynak Goethe listesinde bu alan çoğu maddede numaralı bir derlemeydi
+     * Havuzun ilk hâlinde bu alan çoğu maddede numaralı bir derlemeydi
      * ("1. … 2. … 3. …") ve bir kısmı kelimeyi hiç taşımıyordu (lang →
      * "Das Kleid ist zu kurz."). Boşluk doldurma ve cümle dizme turları
      * cümleyi kelimeden kurduğu için bu, oyunun kendisini bozuyordu.

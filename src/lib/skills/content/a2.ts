@@ -498,7 +498,7 @@ export const a2: SkillExercise[] = [
     title: "Fünf Anzeigen — was passt?",
     genre: "Sınav formatı",
     intro:
-      "Goethe A2 okuma bölümünün eşleştirme görevi: kısa ilanlar ve kimin neye ihtiyacı olduğu. Önce hepsini oku.",
+      "A2 okuma bölümünün eşleştirme görevi: kısa ilanlar ve kimin neye ihtiyacı olduğu. Önce hepsini oku.",
     gloss: [
       { de: "die Nachhilfe", tr: "özel ders", en: "tutoring" },
       { de: "die Reparatur", tr: "tamir", en: "repair" },
@@ -1176,7 +1176,7 @@ export const a2: SkillExercise[] = [
     title: "Vier kurze Gespräche",
     genre: "Sınav formatı",
     intro:
-      "Goethe A2 dinleme bölümünün klasik görevi: dört kısa konuşma, her birine bir soru. Konuşmalar birbirinden bağımsız.",
+      "A2 dinleme bölümünün klasik görevi: dört kısa konuşma, her birine bir soru. Konuşmalar birbirinden bağımsız.",
     gloss: [
       { de: "das Gespräch", tr: "konuşma", en: "conversation" },
       { de: "die Größe", tr: "beden", en: "size" },
@@ -1817,7 +1817,7 @@ export const a2: SkillExercise[] = [
     title: "Auf eine Einladung antworten",
     genre: "Sınav formatı",
     intro:
-      "Goethe A2 yazma görevinin tam formatı: bir davete cevap ver, üç noktaya değin — teşekkür, kabul/ret ve bir öneri veya soru.",
+      "A2 yazma görevinin tam formatı: bir davete cevap ver, üç noktaya değin — teşekkür, kabul/ret ve bir öneri veya soru.",
     gloss: [
       { de: "die Einladung", tr: "davet", en: "invitation" },
       { de: "absagen", tr: "reddetmek", en: "to decline" },
