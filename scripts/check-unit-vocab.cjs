@@ -80,6 +80,12 @@ for (const e of hedef) {
     if (w.length >= 4) izinKok.push(w);
     const m = w.match(AYRILABILIR);
     if (m && w.length - m[0].length >= 4) izinKok.push(w.slice(m[0].length));
+    // Ayrılan ön ek metinde TEK BAŞINA geçiyor ("ich sehe fern", "steht auf"),
+    // o yüzden önekin kendisi de bilinen sayılmalı. "fern" ve "spazieren" gibi
+    // önek listesine girmeyenler için mastarın baş kısmını da ekliyoruz.
+    for (const on of ["fern", "spazieren", "statt", "teil", "heim", "frei"]) {
+      if (w.startsWith(on) && w.length > on.length + 2) izinKok.push(on);
+    }
   }
   // çekim toleransı: öğretilen kelimenin kökünü taşıyorsa bilinir say
   const bilinir = (w) => izin.has(w) || ozelAd.has(w) ||
