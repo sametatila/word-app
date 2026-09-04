@@ -14,6 +14,8 @@ import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
 import { useUpdate } from "../lib/useUpdate";
 import { useMicrophone } from "../lib/useMicrophone";
+import { hasExams } from "../data/exams";
+import { currentCourseId } from "../lib/courses";
 import { Mascot } from "../ui/Mascot";
 import { AppHeader } from "../ui/AppHeader";
 import { DailyQuests } from "../ui/DailyQuests";
@@ -64,7 +66,11 @@ export function LearnScreen() {
   const { user } = useAuth();
   const { me, loading: meLoading } = useMe();
   const update = useUpdate();
-  const greeting = user?.name ? `Merhaba ${user.name.split(" ")[0]}` : "Merhaba";
+  const greeting = user?.name ? t("learn.greeting_named", { ad: user.name.split(" ")[0] }) : t("learn.greeting");
+  // Sınav hazırlık yalnız sınavı olan kursta. İngilizce kursunda katalog boş
+  // (bkz. data/exams.ts) — kart açık kalsaydı kullanıcıyı boş bir ekrana
+  // götürür ve "Goethe & telc" diye o kursta karşılığı olmayan bir vaat verirdi.
+  const exams = hasExams(currentCourseId());
   const level = me?.level ?? "A1";
   const mastered = me?.mastered ?? 0;
   const totalWords = me?.totalWords ?? 0;
@@ -191,11 +197,15 @@ export function LearnScreen() {
       <FriendPulse />
 
       {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
-      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.one_cikan")}</Text>
-      <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
-        {mic ? <WedgeTile title={t("learn.yuruyus_modu")} pitch={t("learn.walk_pitch")} tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} /> : null}
-        <WedgeTile title={t("learn.sinav_hazirlik")} pitch={t("learn.exam_pitch")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} />
-      </View>
+      {mic || exams ? (
+        <>
+          <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.one_cikan")}</Text>
+          <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
+            {mic ? <WedgeTile title={t("learn.yuruyus_modu")} pitch={t("learn.walk_pitch")} tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} /> : null}
+            {exams ? <WedgeTile title={t("learn.sinav_hazirlik")} pitch={t("learn.exam_pitch")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} /> : null}
+          </View>
+        </>
+      ) : null}
 
       {/* diğer öğrenme yolları */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.daha_fazlasi")}</Text>

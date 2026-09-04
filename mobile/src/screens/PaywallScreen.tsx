@@ -12,6 +12,8 @@ import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
 import { billingAvailable, getPackages, purchase, restore } from "../lib/billing";
 import { openLegal } from "../lib/legal";
+import { hasExams } from "../data/exams";
+import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 /**
@@ -146,7 +148,11 @@ export function PaywallScreen() {
 
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl, paddingHorizontal: 4 }}>
           <ExamIcon color={colors.accent} size={22} />
-          <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{t("paywall.icerik_cefr_a1c1_ve_goethe_telc")}</Text>
+          {/* Sınav vaadi yalnız sınavı olan kursta: İngilizce kursunda Goethe/telc
+              karşılığı yok, orada CEFR vaadi tek başına doğru olanı. */}
+          <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>
+            {t(hasExams(currentCourseId()) ? "paywall.icerik_cefr_a1c1_ve_goethe_telc" : "paywall.icerik_cefr_a1c1")}
+          </Text>
         </View>
 
         {pkgs === null ? (
