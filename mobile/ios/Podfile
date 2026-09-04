@@ -17,6 +17,18 @@ end
 target 'Lernomi' do
   config = use_native_modules!
 
+  # GoogleSignIn 9.x kendisiyle birlikte AppCheckCore'u getiriyor ve o Swift.
+  # Podfile'da `use_frameworks!` YOK (statik kitaplık) — Swift bir pod'un statik
+  # kitaplıkta derlenebilmesi için bağımlılıklarının modül haritası üretmesi
+  # gerekiyor, bu ikisi varsayılan olarak üretmiyor. CocoaPods bu yüzden
+  # "Swift pods cannot yet be integrated as static libraries" ile duruyordu.
+  #
+  # `use_modular_headers!` global açılmıyor: React Native'in kendi pod'larının
+  # bir kısmı modüler başlıkla kırılıyor. Hatanın adıyla andığı iki pod hedefli
+  # olarak açılıyor.
+  pod 'GoogleUtilities', :modular_headers => true
+  pod 'RecaptchaInterop', :modular_headers => true
+
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.
