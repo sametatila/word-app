@@ -6522,7 +6522,9 @@
       "I have worked here for two years",
       "I've worked here for two years",
       "I've worked here for two years.",
-      "I have worked here for 2 years."
+      "I have worked here for 2 years.",
+      "I have been working here for two years.",
+      "I've been working here for two years."
      ],
      "hint": [
       {
@@ -18090,7 +18092,11 @@
      },
      {
       "lang": "tr",
-      "text": "Bu yanlış. Doğrusu: for two days."
+      "text": "Bu yanlış — hem since yerine for gelmeli hem de süregelen bir durum present perfect ister. Doğrusu:"
+     },
+     {
+      "lang": "en",
+      "text": "There's been no hot water for two days."
      }
     ]
    },
@@ -20255,7 +20261,9 @@
      "target": "Dogs are not allowed in the building",
      "accept": [
       "Dogs aren't allowed in the building",
-      "Dogs are not allowed inside the building"
+      "Dogs are not allowed inside the building",
+      "You mustn't bring dogs into the building",
+      "Dogs mustn't come into the building"
      ],
      "hint": [
       {
@@ -21891,7 +21899,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Büyük bir şirkette çalıştım ve hâlâ oradayım demek istiyorsun:"
+      "text": "Bir ara büyük bir şirkette çalışmışlığın olduğunu söylemek istiyorsun — ne zaman olduğu önemli değil:"
      },
      {
       "lang": "en",
@@ -21956,7 +21964,9 @@
      "accept": [
       "I've worked here for two years.",
       "I have worked here for 2 years.",
-      "I have worked here for two years"
+      "I have worked here for two years",
+      "I have been working here for two years.",
+      "I've been working here for two years."
      ],
      "hint": [
       {
@@ -22059,7 +22069,9 @@
      "accept": [
       "How long have you worked at this company?",
       "How long have you worked in this company?",
-      "How long have you worked here"
+      "How long have you worked here",
+      "How long have you been working here?",
+      "How long have you been working at this company?"
      ],
      "hint": [
       {
@@ -25822,7 +25834,7 @@
      },
      {
       "lang": "tr",
-      "text": "Duydun mu, dört kısa cümle yetti. İyi bir iş e-postası uzun değil, net olandır."
+      "text": "Duydun mu, üç kısa cümle yetti. İyi bir iş e-postası uzun değil, net olandır."
      }
     ]
    },
@@ -28054,7 +28066,7 @@
      },
      {
       "lang": "en",
-      "text": "Yes, of course. I ordered it last week, but it hasn't arrived yet."
+      "text": "Yes, of course. It's A-2-4-1-9. I ordered it last week, but it hasn't arrived yet."
      }
     ]
    },
@@ -28083,7 +28095,7 @@
    "scene": "İnternetten aldığın ayakkabı bir haftadır gelmedi. Mağazanın müşteri hizmetlerini arıyorsun ve siparişini takip ettirmek istiyorsun.",
    "partner": "Mağazanın müşteri hizmetleri görevlisi",
    "opening": "Good morning, this is Riverside Shoes. How can I help you?",
-   "openingTr": "Günaydın, Riverside Shoes'tan arıyorsunuz. Nasıl yardımcı olabilirim?",
+   "openingTr": "Günaydın, burası Riverside Shoes. Nasıl yardımcı olabilirim?",
    "goal": "Siparişini ne zaman verdiğini söyleyip paketin hâlâ gelmediğini anlatman, takip numaranı vermen ve teslimatın hangi gün olacağını öğrenmen.",
    "minTurns": 7
   }
@@ -28361,7 +28373,9 @@
       "Could I have my statement, please?",
       "Can I have a statement, please?",
       "Could I get a statement, please?",
-      "Could I have a statement?"
+      "Could I have a statement?",
+      "Can I have my statement, please?",
+      "Could I get my statement, please?"
      ],
      "hint": [
       {
