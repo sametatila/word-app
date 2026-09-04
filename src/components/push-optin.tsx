@@ -28,7 +28,7 @@ import {
  * şeyden söz ediyor: korunacak bir seri, tekrarı gelecek kelimeler.
  */
 
-const DISMISS_KEY = "nomi:push-dismissed";
+const DISMISS_KEY = "lernomi:push-dismissed";
 /** Kapatan kullanıcıya bir sonraki soru üç hafta sonra. */
 const DISMISS_DAYS = 21;
 

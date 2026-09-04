@@ -127,7 +127,7 @@ export function BossPlayer({
       if (!res.ok) return;
       const out = (await res.json()) as { totalXp: number; currentStreak: number };
       window.dispatchEvent(
-        new CustomEvent("nomi:stats", {
+        new CustomEvent("lernomi:stats", {
           detail: { xp: out.totalXp, streak: out.currentStreak },
         }),
       );

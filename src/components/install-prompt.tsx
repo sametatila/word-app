@@ -10,7 +10,7 @@ type InstallEvent = Event & {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 };
 
-const DISMISS_KEY = "nomi:install-dismissed";
+const DISMISS_KEY = "lernomi:install-dismissed";
 
 /**
  * Kapatmanın ömrü.

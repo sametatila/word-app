@@ -30,12 +30,12 @@ export function NotificationBell({ className = "" }: { className?: string }) {
     };
     const onRead = () => setUnread(0);
     document.addEventListener("visibilitychange", onVisible);
-    window.addEventListener("nomi:inbox-read", onRead);
+    window.addEventListener("lernomi:inbox-read", onRead);
     return () => {
       alive = false;
       clearInterval(timer);
       document.removeEventListener("visibilitychange", onVisible);
-      window.removeEventListener("nomi:inbox-read", onRead);
+      window.removeEventListener("lernomi:inbox-read", onRead);
     };
   }, []);
   return (

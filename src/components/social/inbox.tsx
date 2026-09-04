@@ -45,7 +45,7 @@ export function Inbox() {
       setCursor(page.nextCursor);
       if (!after && page.unread > 0) {
         await social.markRead("all");
-        window.dispatchEvent(new CustomEvent("nomi:inbox-read"));
+        window.dispatchEvent(new CustomEvent("lernomi:inbox-read"));
       }
     } catch (e) {
       setErr(errorText(e));

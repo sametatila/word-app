@@ -116,8 +116,8 @@ export function AchievementUnlock() {
       const detail = (e as CustomEvent<{ busy: boolean }>).detail;
       setBusy(Boolean(detail?.busy));
     };
-    window.addEventListener("nomi:busy", onBusy);
-    return () => window.removeEventListener("nomi:busy", onBusy);
+    window.addEventListener("lernomi:busy", onBusy);
+    return () => window.removeEventListener("lernomi:busy", onBusy);
   }, []);
 
   useEffect(() => {
@@ -136,11 +136,11 @@ export function AchievementUnlock() {
       // bir kez bakmak yeterli.
       timer.current = setTimeout(() => void check(), 1200);
     };
-    window.addEventListener("nomi:stats", onStats);
+    window.addEventListener("lernomi:stats", onStats);
     return () => {
       clearTimeout(first);
       if (timer.current) clearTimeout(timer.current);
-      window.removeEventListener("nomi:stats", onStats);
+      window.removeEventListener("lernomi:stats", onStats);
     };
   }, [check]);
 

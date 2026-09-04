@@ -15,8 +15,8 @@
  * PUT edilir (XP verilmez, bkz. lib/skills/record.ts) ve bayrak yazılır.
  */
 
-const KEY = "nomi-skills-v1";
-const MIGRATED_KEY = "nomi-skills-migrated";
+const KEY = "lernomi-skills-v1";
+const MIGRATED_KEY = "lernomi-skills-migrated";
 
 export type SkillRecord = {
   /** Doğru madde sayısı (en iyi deneme). */
@@ -44,7 +44,7 @@ export function readSkillProgress(): SkillProgress {
 function writeSkillProgress(all: SkillProgress) {
   try {
     localStorage.setItem(KEY, JSON.stringify(all));
-    window.dispatchEvent(new CustomEvent("nomi:skills", { detail: all }));
+    window.dispatchEvent(new CustomEvent("lernomi:skills", { detail: all }));
   } catch {
     /* depolama kapalıysa sessizce geç */
   }

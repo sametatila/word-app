@@ -12,7 +12,7 @@ const RESERVED = new Set([
   "admin", "administrator", "root", "system", "sistem", "nomi", "support", "destek", "help", "yardim",
   "moderator", "mod", "staff", "official", "resmi", "api", "www", "app", "null", "undefined", "me",
   "ben", "profile", "profil", "settings", "ayarlar", "friends", "arkadaslar", "feed", "akis", "login",
-  "giris", "signup", "kayit", "logout", "u", "user", "kullanici", "test", "premium", "wortspiel",
+  "giris", "signup", "kayit", "logout", "u", "user", "kullanici", "test", "premium", "wortspiel", "lernomi",
 ]);
 
 export const USERNAME_CHANGE_COOLDOWN_DAYS = 14;

@@ -17,8 +17,8 @@ import { TURKISH_VOICE, lessonVoice, resolveVoice, type VoiceId } from "@/lib/tt
  * Gerçek Mundart kayıtları dinleme egzersizlerinde ayrıca sunulur.
  */
 /** Kursun ve sesin cihazdaki aynası — çalma anında eşzamanlı okunmalı. */
-const COURSE_KEY = "nomi-course";
-const VOICE_KEY = "nomi-voice";
+const COURSE_KEY = "lernomi-course";
+const VOICE_KEY = "lernomi-voice";
 
 function readLocal(key: string): string | null {
   try {

@@ -104,7 +104,7 @@ export function pickIndex(count: number, recent: readonly number[], random: () =
   return pool[Math.floor(random() * pool.length)];
 }
 
-const SEEN_KEY = "nomi-coach-seen";
+const SEEN_KEY = "lernomi-coach-seen";
 
 function readSeen(): Partial<Record<CoachMoment, number[]>> {
   try {

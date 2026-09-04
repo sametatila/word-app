@@ -66,7 +66,7 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
         };
         recordSkillResult(exercise.id, correct, total, data.lastScore ?? score);
         window.dispatchEvent(
-          new CustomEvent("nomi:stats", {
+          new CustomEvent("lernomi:stats", {
             detail: { xp: data.totalXp, streak: data.currentStreak },
           }),
         );

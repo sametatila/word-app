@@ -78,7 +78,7 @@ const STAGE_SIZE = 5;
  * seçiyor, ertesi açılışta kendini karışık turda buluyordu. Oyun modu bir
  * tercih — kullanıcı değiştirene kadar geçerli kalmalı.
  */
-const GAME_MODE_KEY = "nomi-game-mode";
+const GAME_MODE_KEY = "lernomi-game-mode";
 
 function readGameMode(): PlayableGame | null {
   try {
@@ -226,7 +226,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
   useEffect(() => {
     const playing =
       status === "playing" || status === "challenge" || status === "daily" || status === "walk";
-    window.dispatchEvent(new CustomEvent("nomi:busy", { detail: { busy: playing } }));
+    window.dispatchEvent(new CustomEvent("lernomi:busy", { detail: { busy: playing } }));
   }, [status]);
 
   const load = useCallback(
@@ -447,7 +447,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
         if (wager) setWagerResult(data.wagerXp ?? 0);
         // üst bardaki seri/XP rozetlerini anında güncelle
         window.dispatchEvent(
-          new CustomEvent("nomi:stats", {
+          new CustomEvent("lernomi:stats", {
             detail: { xp: data.totalXp, streak: data.currentStreak },
           }),
         );

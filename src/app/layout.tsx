@@ -58,22 +58,38 @@ export const viewport: Viewport = {
 };
 
 /**
- * Uygulama adı Wortspiel'den Nomi'ye geçti (2026-08-31). Cihazdaki tercih ve
- * önbellek anahtarları eski önekle duruyor; tema okunmadan önce bir kez yeni
- * öneke taşınır ki kimse temasını, kursunu, ilerlemesini kaybetmesin.
+ * Uygulama adı iki kez değişti: Wortspiel -> Nomi (2026-08-31) -> Lernomi
+ * (2026-09-04). Cihazdaki tercih ve önbellek anahtarları eski öneklerle
+ * duruyor; tema okunmadan ÖNCE bir kez yeni öneke taşınır ki kimse temasını,
+ * kursunu, sesini ya da ilerlemesini kaybetmesin. Her iki eski önek de
+ * doğrudan Lernomi'ye gelir; "lernomi" öneki "nomi" ile başlamadığı için
+ * script kendi çıktısını yeniden işlemez.
+ *
+ * Anahtarlar her geçişte önce fotoğraflanır, sonra taşınır: döngü sırasında
+ * setItem yeni anahtar eklediği için indeks üzerinden gezmek atlama yapabilirdi.
+ *
+ * Önekler YENİDEN ESKİYE işlenir. İki dönemin anahtarı birden duruyorsa
+ * (yarım kalmış göç) çakışmada Nomi dönemindeki GÜNCEL değer kazanmalı;
+ * ters sırada Wortspiel dönemindeki bayat tercih yenisini eziyordu.
  */
 const themeScript = `
 try {
-  for (var i = localStorage.length - 1; i >= 0; i--) {
-    var k = localStorage.key(i);
-    if (!k || k.indexOf('wortspiel') !== 0) continue;
-    var nk = 'nomi' + k.slice('wortspiel'.length);
-    if (localStorage.getItem(nk) === null) localStorage.setItem(nk, localStorage.getItem(k));
-    localStorage.removeItem(k);
+  var pres = ['nomi', 'wortspiel'];
+  for (var pi = 0; pi < pres.length; pi++) {
+    var p = pres[pi];
+    var keys = [];
+    for (var i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i));
+    for (var j = 0; j < keys.length; j++) {
+      var k = keys[j];
+      if (!k || k.indexOf(p) !== 0) continue;
+      var nk = 'lernomi' + k.slice(p.length);
+      if (localStorage.getItem(nk) === null) localStorage.setItem(nk, localStorage.getItem(k));
+      localStorage.removeItem(k);
+    }
   }
 } catch (e) {}
 try {
-  var stored = localStorage.getItem('nomi-theme');
+  var stored = localStorage.getItem('lernomi-theme');
   var dark = stored ? stored === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
   if (dark) document.documentElement.classList.add('dark');
 } catch (e) {}

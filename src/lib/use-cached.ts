@@ -34,7 +34,7 @@ import { useCallback, useEffect, useState } from "react";
  * yaşıyor ve uygulamanın SOĞUK açılışında boş oluyor; oysa şikâyet edilen an
  * tam da orası, kullanıcının uygulamayı her açışı.
  */
-const PREFIX = "nomi:cache:";
+const PREFIX = "lernomi:cache:";
 
 function store(): Storage | null {
   try {
@@ -150,8 +150,8 @@ export function useCachedJson<T>(
   // Tur bitti, ödül alındı, XP değişti: veri artık eski.
   useEffect(() => {
     const onChange = () => void load();
-    window.addEventListener("nomi:stats", onChange);
-    return () => window.removeEventListener("nomi:stats", onChange);
+    window.addEventListener("lernomi:stats", onChange);
+    return () => window.removeEventListener("lernomi:stats", onChange);
   }, [load]);
 
   const put = useCallback(

@@ -79,9 +79,9 @@ export function AppShell({
   // ses çalınacağı anda eşzamanlı okunabilmeli, o an sunucuya sorulamaz.
   useEffect(() => {
     try {
-      localStorage.setItem("nomi-course", course);
-      if (voice) localStorage.setItem("nomi-voice", voice);
-      else localStorage.removeItem("nomi-voice");
+      localStorage.setItem("lernomi-course", course);
+      if (voice) localStorage.setItem("lernomi-voice", voice);
+      else localStorage.removeItem("lernomi-voice");
     } catch {
       /* depolama kapalıysa kursun varsayılan sesi kullanılır */
     }
@@ -177,8 +177,8 @@ export function AppShell({
       const detail = (e as CustomEvent<{ xp: number; streak: number }>).detail;
       if (detail) setStats({ streak: detail.streak, xp: detail.xp });
     };
-    window.addEventListener("nomi:stats", onStats);
-    return () => window.removeEventListener("nomi:stats", onStats);
+    window.addEventListener("lernomi:stats", onStats);
+    return () => window.removeEventListener("lernomi:stats", onStats);
   }, []);
 
   return (

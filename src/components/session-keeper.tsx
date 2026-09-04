@@ -29,9 +29,9 @@ import { useEffect } from "react";
  */
 
 /** Son tazelemenin zamanı — her açılışta sunucuya gitmemek için. */
-const REFRESHED_KEY = "nomi-session-refreshed";
+const REFRESHED_KEY = "lernomi-session-refreshed";
 /** Cihazdaki kopyaların hangi hesaba ait olduğu. */
-const ACCOUNT_KEY = "nomi-account";
+const ACCOUNT_KEY = "lernomi-account";
 
 /**
  * İki tazeleme arası en kısa süre.
@@ -50,16 +50,16 @@ const REFRESH_EVERY_MS = 6 * 60 * 60 * 1000;
  * dışarıda: bunlar telefonun tercihi, hesabın değil.
  */
 const ACCOUNT_SCOPED_PREFIXES = [
-  "nomi-course",
-  "nomi-voice",
-  "nomi-skills",
-  "nomi-lesson-progress",
-  "nomi-draft-",
-  "nomi-game",
-  "nomi-session-refreshed",
+  "lernomi-course",
+  "lernomi-voice",
+  "lernomi-skills",
+  "lernomi-lesson-progress",
+  "lernomi-draft-",
+  "lernomi-game",
+  "lernomi-session-refreshed",
   // Başlangıç ekranının önbelleği (bkz. lib/use-cached): plan ve görevler
   // kişiye ait, ortak cihazda diğer hesaba görünmemeli.
-  "nomi:cache:",
+  "lernomi:cache:",
 ];
 
 function forgetPreviousAccount() {

@@ -24,7 +24,7 @@ import { screenKey } from "@/lib/screens";
  */
 const MIN_SECONDS = 3;
 const ERROR_THROTTLE_MS = 60_000;
-const OPEN_KEY = "nomi-app-open";
+const OPEN_KEY = "lernomi-app-open";
 
 export function Telemetry() {
   const pathname = usePathname();

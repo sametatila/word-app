@@ -25,7 +25,7 @@ import type { EventName } from "@/lib/events";
 const once = new Set<string>();
 
 /** Kullanıcının analitik tercihi (Gizlilik Politikası §8). Cihazda; varsayılan açık. */
-const ANALYTICS_KEY = "nomi:analytics";
+const ANALYTICS_KEY = "lernomi:analytics";
 export function analyticsEnabled(): boolean {
   try { return typeof window !== "undefined" && window.localStorage.getItem(ANALYTICS_KEY) !== "off"; } catch { return true; }
 }

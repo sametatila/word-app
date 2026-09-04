@@ -34,7 +34,7 @@ self.addEventListener("push", (event) => {
       badge: "/icon-192.png",
       // Aynı etiket öncekinin yerine geçer: kaçırılan günler kilit
       // ekranında üst üste yığılmasın.
-      tag: data.tag || "nomi",
+      tag: data.tag || "lernomi",
       renotify: true,
       lang: "tr",
       data: { url: data.url || "/learn" },

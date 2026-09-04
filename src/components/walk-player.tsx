@@ -456,7 +456,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       if (!res.ok) return;
       const data = (await res.json()) as { totalXp: number; currentStreak: number };
       window.dispatchEvent(
-        new CustomEvent("nomi:stats", {
+        new CustomEvent("lernomi:stats", {
           detail: { xp: data.totalXp, streak: data.currentStreak },
         }),
       );
