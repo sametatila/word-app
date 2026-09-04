@@ -866,7 +866,10 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I'm fine, thanks."
+     "target": "I'm fine, thanks.",
+     "accept": [
+      "I am good, thank you."
+     ]
     }
    },
    {
@@ -893,7 +896,8 @@
       "I am fine, thank you.",
       "I'm good, thanks.",
       "I am good, thanks.",
-      "I'm good, thank you."
+      "I'm good, thank you.",
+      "I am good, thank you."
      ],
      "hint": [
       {
@@ -1558,9 +1562,7 @@
      "kind": "produce",
      "target": "Is she a teacher?",
      "accept": [
-      "Is he a teacher?",
-      "Is she a teacher",
-      "Is he a teacher"
+      "Is she a teacher"
      ],
      "hint": [
       {
@@ -4171,17 +4173,21 @@
      },
      {
       "lang": "en",
-      "text": "A doctor works in a school."
+      "text": "I am teacher."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "A doctor works in a school.",
+     "statement": "I am teacher.",
      "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Doktor okulda değil hastanede çalışır. Doğrusu: A doctor works in a hospital."
+       "text": "Yanlış. İngilizcede meslekten önce a gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "I am a teacher."
       }
      ]
     }
@@ -4821,7 +4827,7 @@
      },
      {
       "lang": "en",
-      "text": "My birthday is in the fifth month."
+      "text": "My birthday is in May."
      }
     ]
    },
@@ -5294,7 +5300,7 @@
      },
      {
       "lang": "en",
-      "text": "I live in the city of Izmir."
+      "text": "My city is Izmir."
      }
     ]
    },
@@ -6611,8 +6617,16 @@
       "text": "I don't know."
      },
      {
+      "lang": "en",
+      "text": "I don't drink coffee."
+     },
+     {
       "lang": "tr",
-      "text": "I don't drink. I don't have."
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "I don't have a car."
      },
      {
       "lang": "tr",
@@ -6808,7 +6822,6 @@
      "kind": "produce",
      "target": "She doesn't know me.",
      "accept": [
-      "He doesn't know me.",
       "She does not know me.",
       "She doesn't know me"
      ],
@@ -7684,7 +7697,7 @@
      },
      {
       "lang": "en",
-      "text": "This is my house here. That is my school there."
+      "text": "This is my house. That's my school over there."
      },
      {
       "lang": "tr",
@@ -8094,7 +8107,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dikkat et: sayı söyledin mi, kelimenin sonuna -s gelmek zorunda."
+      "text": "Dikkat et: birden büyük bir sayı söyledin mi kelimenin sonuna -s gelir; one ile tekil kalır."
      }
     ]
    },
@@ -8896,8 +8909,7 @@
      "kind": "produce",
      "target": "What does she look like?",
      "accept": [
-      "What does she look like",
-      "What's she like?"
+      "What does she look like"
      ],
      "hint": [
       {
@@ -9676,8 +9688,7 @@
      "kind": "produce",
      "target": "Ali's cousin",
      "accept": [
-      "Alis cousin",
-      "the cousin of Ali"
+      "Alis cousin"
      ],
      "hint": [
       {
@@ -11279,8 +11290,7 @@
      "target": "Do you eat cheese?",
      "accept": [
       "Do you eat cheese",
-      "Do you eat any cheese?",
-      "Do you eat some cheese?"
+      "Do you eat any cheese?"
      ],
      "hint": [
       {
