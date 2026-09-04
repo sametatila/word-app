@@ -318,10 +318,31 @@ Kritik iki kural:
 
 Açık ürün kararları:
 
-- **`LernomiWalkStop` karşılığı.** Android'de kalıcı bildirimde "Durdur" var. iOS'ta
-  karşılığı ya kilit ekranı Now Playing denetimi ya da "yok" kararı. Arka planda mikrofon
-  isteyen bir uygulamada inceleyenin ilk soracağı şey "kullanıcı bunu nasıl durduruyor"
-  olacağı için karar kayda geçmeli.
+- **`LernomiWalkStop` karşılığı — KARAR VERİLDİ (2026-09-04): kilit ekranı Now Playing
+  denetimi.** Android'de kalıcı bildirimde "Durdur" var; iOS'ta karşılığı
+  `MPNowPlayingInfoCenter` + `MPRemoteCommandCenter`. Üç sebep:
+
+  1. Ekran kapalı kullanım kesin olacak ve bugün turu bırakmanın tek yolu tur sonundaki
+     "devam edelim mi" sorusunu beklemek — 3-4 dakika. Telefon cepteyken bu, kullanıcıyı
+     kilidi açıp uygulamaya dönmeye zorluyor.
+  2. JS sözleşmesi hazır ve iOS'ta boşta: `stt.ts:174` `onWalkStop` abone,
+     `WalkModeScreen.tsx:499` mikrofonu kapatıp biriken cevapları yazıyor ve tur özetini
+     gösteriyor. Yani tur ortasında durdurmak veri kaybettirmiyor ve JS DEĞİŞMİYOR —
+     `startWalkService`'te olduğu gibi.
+  3. İnceleme: `docs/appstore/README.md` arka plan mikrofonunu en büyük risk sayıyor ve
+     App Review Information'a "kilit ekranında sürdüğü görünür, durdurulabilir"
+     yazılmasını şart koşuyor. Now Playing bunu iddia olmaktan çıkarıp görünür kılıyor.
+     `UIBackgroundModes: audio` tutup Now Playing yayımlamamak incelemede dikkat çeken
+     bir kalıp.
+
+  Yan kazanç: kulaklık/AirPods düğmesi de aynı yolla turu durduruyor — yürürken
+  Android'in bildirim düğmesinden daha erişilebilir.
+
+  Bilinen sınır: başlık metni Android'de `res/values-*/strings.xml`'den, yani CİHAZ
+  dilinden geliyor; kullanıcının uygulama içi dil seçimi farklıysa ikisi ayrışır. iOS
+  karşılığı aynı deseni izleyecek (`Localizable.strings`). Sözleşmeyi JS'ten metin
+  geçirecek şekilde değiştirmek ikisini de düzeltir ama Android'e dokunmayı gerektirir;
+  bu şeritlerin kapsamı dışında, ayrı iş.
 - **Ekran-kapalı modun maliyeti — sebebi artık somut.** İki platform farklı olayı
   ölçüyor: Android `ACTION_SCREEN_OFF` (yalnız güç tuşu), iOS
   `didEnterBackgroundNotification` (uygulama değiştirme, gelen çağrı ve kilit).
