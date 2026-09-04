@@ -14,6 +14,12 @@
 		AB01F1002D4E51A700000003 /* LernomiSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000001 /* LernomiSpeech.swift */; };
 		AB01F1002D4E51A700000004 /* LernomiSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000002 /* LernomiSpeech.m */; };
 		AB01F1002D4E51A700000015 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000011 /* InfoPlist.strings */; };
+		AB01F1002D4E51A700000031 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000021 /* correct.mp3 */; };
+		AB01F1002D4E51A700000032 /* finish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000022 /* finish.mp3 */; };
+		AB01F1002D4E51A700000033 /* micoff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000023 /* micoff.mp3 */; };
+		AB01F1002D4E51A700000034 /* micon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000024 /* micon.mp3 */; };
+		AB01F1002D4E51A700000035 /* tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000025 /* tap.mp3 */; };
+		AB01F1002D4E51A700000036 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000026 /* wrong.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,12 @@
 		AB01F1002D4E51A700000012 /* tr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = tr; path = Lernomi/tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000013 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Lernomi/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000014 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = Lernomi/de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000021 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = correct.mp3; path = Lernomi/sfx/correct.mp3; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000022 /* finish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = finish.mp3; path = Lernomi/sfx/finish.mp3; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000023 /* micoff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = micoff.mp3; path = Lernomi/sfx/micoff.mp3; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000024 /* micon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = micon.mp3; path = Lernomi/sfx/micon.mp3; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000025 /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = tap.mp3; path = Lernomi/sfx/tap.mp3; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000026 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = wrong.mp3; path = Lernomi/sfx/wrong.mp3; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -57,6 +69,7 @@
 				AB01F1002D4E51A700000001 /* LernomiSpeech.swift */,
 				AB01F1002D4E51A700000002 /* LernomiSpeech.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				AB01F1002D4E51A700000020 /* sfx */,
 			);
 			name = Lernomi;
 			sourceTree = "<group>";
@@ -97,6 +110,19 @@
 				13B07F961A680F5B00A75B9A /* Lernomi.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AB01F1002D4E51A700000020 /* sfx */ = {
+			isa = PBXGroup;
+			children = (
+				AB01F1002D4E51A700000021 /* correct.mp3 */,
+				AB01F1002D4E51A700000022 /* finish.mp3 */,
+				AB01F1002D4E51A700000023 /* micoff.mp3 */,
+				AB01F1002D4E51A700000024 /* micon.mp3 */,
+				AB01F1002D4E51A700000025 /* tap.mp3 */,
+				AB01F1002D4E51A700000026 /* wrong.mp3 */,
+			);
+			name = sfx;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -173,6 +199,12 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				AB01F1002D4E51A700000015 /* InfoPlist.strings in Resources */,
+				AB01F1002D4E51A700000031 /* correct.mp3 in Resources */,
+				AB01F1002D4E51A700000032 /* finish.mp3 in Resources */,
+				AB01F1002D4E51A700000033 /* micoff.mp3 in Resources */,
+				AB01F1002D4E51A700000034 /* micon.mp3 in Resources */,
+				AB01F1002D4E51A700000035 /* tap.mp3 in Resources */,
+				AB01F1002D4E51A700000036 /* wrong.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
