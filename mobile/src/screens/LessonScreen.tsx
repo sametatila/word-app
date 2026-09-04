@@ -14,6 +14,7 @@ import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon } from "..
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
+import { currentTargetLang } from "../lib/courses";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
@@ -164,7 +165,11 @@ export function LessonScreen() {
       const t = tries + 1;
       setTries(t);
       if (t >= 3) {
-        push({ role: "teacher", segments: [{ lang: "tr", text: tx("common.answer_is") }, { lang: "de", text: expect.target }], tone: "hint" });
+        // Doğru cevap balonu: dil etiketi KURSTAN gelir. Sabit "de" yazıyordu;
+        // çizim `lang !== "tr"` diye baktığı için görünürde bir şey bozulmuyordu
+        // ama İngilizce hedefi "Almanca" diye etiketlemek, dile göre dallanan
+        // bir okuyucu eklendiği anda sessizce yanlış sonuç verirdi.
+        push({ role: "teacher", segments: [{ lang: "tr", text: tx("common.answer_is") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }], tone: "hint" });
         speakTarget(expect.target);
         setTimeout(advance, 900);
       } else if (expect.hint?.length) {

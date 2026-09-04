@@ -298,6 +298,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "I live from Istanbul."
      }
     ],
     "expect": {
@@ -795,6 +799,10 @@
      {
       "lang": "tr",
       "text": "Şimdi dikkat testi. Sana bir cümle söyleyeceğim; doğru mu, söyle bakalım."
+     },
+     {
+      "lang": "en",
+      "text": "How you are?"
      }
     ],
     "expect": {
@@ -2894,6 +2902,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Birinin yaşını sormak istiyorsun. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "How much are you?"
      }
     ],
     "expect": {
@@ -4277,6 +4289,10 @@
      {
       "lang": "tr",
       "text": "Şimdi küçük bir kontrol. Şu İngilizce cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I have twenty years."
      }
     ],
     "expect": {
@@ -4362,6 +4378,26 @@
      "kind": "repeat",
      "target": "When is your birthday?"
     }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "month"
+     },
+     {
+      "lang": "tr",
+      "text": "yani ay demek. Doğum gününün hangi ayda olduğunu söylerken kullanırsın:"
+     },
+     {
+      "lang": "en",
+      "text": "My birthday is in the fifth month."
+     }
+    ]
    },
    {
     "say": [
@@ -4804,6 +4840,26 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "city"
+     },
+     {
+      "lang": "tr",
+      "text": "yani şehir demek. Formda adresin altında bu alan da olur:"
+     },
+     {
+      "lang": "en",
+      "text": "I live in the city of Izmir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Cevabı çok kısa."
      },
      {
@@ -4895,6 +4951,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim, doğru mu yanlış mı söyle."
+     },
+     {
+      "lang": "en",
+      "text": "\"Where do you live?\" asks about your age."
      }
     ],
     "expect": {
@@ -7741,6 +7801,10 @@
      {
       "lang": "tr",
       "text": "Şimdi bir cümle söyleyeceğim, doğru mu yanlış mı sen karar ver."
+     },
+     {
+      "lang": "en",
+      "text": "I have three childs."
      }
     ],
     "expect": {
@@ -8289,6 +8353,10 @@
      {
       "lang": "tr",
       "text": "Şimdi bir cümle söyleyeceğim, doğru mu yanlış mı karar ver."
+     },
+     {
+      "lang": "en",
+      "text": "Tom is short."
      }
     ],
     "expect": {
@@ -10051,6 +10119,26 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "order"
+     },
+     {
+      "lang": "tr",
+      "text": "yani sipariş demek. Garson gelince şunu duyarsın:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I take your order?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi bu yeni kalıpla su isteyelim. Nasıl dersin?"
      },
      {
@@ -10103,6 +10191,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim, sipariş verirken doğru mu değil mi, söyle bakalım."
+     },
+     {
+      "lang": "en",
+      "text": "I like a tea, please."
      }
     ],
     "expect": {
@@ -11913,6 +12005,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I like eat pizza."
      }
     ],
     "expect": {
@@ -13565,6 +13661,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "\"I'd like\" is short for \"I would like\"."
      }
     ],
     "expect": {
@@ -13599,8 +13699,8 @@
   "roleplay": {
    "scene": "Bir kafede tezgâhın önündesin, sıra sana geldi.",
    "partner": "kafede çalışan barista",
-   "opening": "Hello! What would you like?",
-   "openingTr": "Merhaba! Ne alırsınız?",
+   "opening": "Hi! What can I get you today?",
+   "openingTr": "Merhaba! Bugün ne alırsınız?",
    "goal": "Öğrenci I'd like ile bir içecek ısmarlar, sütlü mü sorusuna cevap verir ve teşekkür ederek siparişi tamamlar.",
    "minTurns": 7
   }
@@ -14021,6 +14121,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümleyi dinle ve doğru mu söyle."
+     },
+     {
+      "lang": "en",
+      "text": "I'd like two apple, please."
      }
     ],
     "expect": {
@@ -14059,8 +14163,8 @@
   "roleplay": {
    "scene": "Mahalledeki bir manavdasın. Tezgahta elma, domates ve patates var; akşam yemeği için alışveriş yapacaksın.",
    "partner": "manav tezgâhının arkasındaki satıcı",
-   "opening": "Hello! Can I help you?",
-   "openingTr": "Merhaba! Yardımcı olabilir miyim?",
+   "opening": "Morning! The apples are very fresh today.",
+   "openingTr": "Günaydın! Elmalar bugün çok taze.",
    "goal": "Öğrenci en az iki ürünü çoğul biçimiyle ve kilo belirterek istediğinde, tazelik ya da fiyat sorusu sorup cevabı anladığında konuşma başarılı sayılır.",
    "minTurns": 7
   }
@@ -14398,6 +14502,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir dilbilgisi kontrolü. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I want pay by card."
      }
     ],
     "expect": {
@@ -15301,6 +15409,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "It's half to seven."
      }
     ],
     "expect": {
@@ -15831,6 +15943,10 @@
      {
       "lang": "tr",
       "text": "Şimdi bir kontrol. Sana bir cümle söyleyeceğim; doğru mu yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "I go to school in Monday."
      }
     ],
     "expect": {
@@ -16766,6 +16882,10 @@
      {
       "lang": "tr",
       "text": "Şimdi küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "He eats never meat."
      }
     ],
     "expect": {
@@ -17356,6 +17476,10 @@
      {
       "lang": "tr",
       "text": "Şimdi kulak testi. Şu cümle mantıklı mı, doğru mu yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "First I go to work, and then I wake up."
      }
     ],
     "expect": {
@@ -17794,6 +17918,10 @@
      {
       "lang": "tr",
       "text": "Şimdi küçük bir kontrol. Sana bir cümle söylüyorum, doğru mu bak."
+     },
+     {
+      "lang": "en",
+      "text": "I go home in Monday."
      }
     ],
     "expect": {
@@ -19318,6 +19446,10 @@
      {
       "lang": "tr",
       "text": "Şimdi küçük bir kontrol. Bu İngilizce cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "What time you open?"
      }
     ],
     "expect": {
@@ -19816,6 +19948,26 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "buy"
+     },
+     {
+      "lang": "tr",
+      "text": "yani satın almak demek. Beğendiğin bir şey için:"
+     },
+     {
+      "lang": "en",
+      "text": "I want to buy this shirt."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Harika iş çıkardın. Bugün mağazada dört şey öğrendin: aradığını söylemek, I'm looking for a shirt. Bedenini söylemek, size. Denemek için izin istemek, Can I try it on? Ve fiyat sormak, How much is it?"
      },
      {
@@ -19828,8 +19980,8 @@
   "roleplay": {
    "scene": "Bir giyim mağazasındasın. Kendine bir gömlek arıyorsun ve görevli sana yaklaşıyor.",
    "partner": "Mağaza görevlisi",
-   "opening": "Hello! Can I help you?",
-   "openingTr": "Merhaba! Yardımcı olabilir miyim?",
+   "opening": "Hi! Are you looking for something special?",
+   "openingTr": "Merhaba! Özel bir şey mi arıyorsunuz?",
    "goal": "Bir gömlek aradığını söyler, bedenini belirtir, denemek için izin ister ve fiyatı sorarsan konuşma başarılı sayılır.",
    "minTurns": 7
   }
@@ -20277,6 +20429,10 @@
      {
       "lang": "tr",
       "text": "Şimdi kulağını çalıştıralım. Şu cümle doğru mu, dinle."
+     },
+     {
+      "lang": "en",
+      "text": "How size are you?"
      }
     ],
     "expect": {
@@ -20841,6 +20997,10 @@
      {
       "lang": "tr",
       "text": "Şimdi bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "I have a car blue."
      }
     ],
     "expect": {
@@ -21477,8 +21637,8 @@
   "roleplay": {
    "scene": "Küçük bir dükkândasın. Bir tişört beğendin, fiyatını sorup satın alıyorsun.",
    "partner": "Dükkân görevlisi",
-   "opening": "Hello! Can I help you?",
-   "openingTr": "Merhaba! Yardımcı olabilir miyim?",
+   "opening": "Hi! Do you like that T-shirt?",
+   "openingTr": "Merhaba! O tişörtü beğendiniz mi?",
    "goal": "En az bir kez fiyat sorup (How much is this? / How much are these?), fiyatı duyduktan sonra ucuz ya da pahalı olduğunu söylemek ve nasıl ödeyeceğini belirtmek.",
    "minTurns": 7
   }
@@ -22467,6 +22627,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim; doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "Can I have my money back?"
      }
     ],
     "expect": {
@@ -22987,6 +23151,10 @@
      {
       "lang": "tr",
       "text": "Dikkat! Türkçe düşünürsen buraya to koymak isteyebilirsin ama İngilizcede hediye alırken for kullanılır. Şimdi bir cümle söylüyorum, doğru mu yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "I want to buy a gift to my mother."
      }
     ],
     "expect": {
@@ -23104,8 +23272,8 @@
   "roleplay": {
    "scene": "Bir hediye dükkânındasın. Yakının için bir hediye arıyorsun ve satıcıya kime, hangi gün için aldığını anlatıyorsun.",
    "partner": "Yardımcı olmak isteyen bir dükkân görevlisi",
-   "opening": "Hello! Can I help you?",
-   "openingTr": "Merhaba! Yardımcı olabilir miyim?",
+   "opening": "Hello! Are you looking for a gift?",
+   "openingTr": "Merhaba! Hediye mi arıyorsunuz?",
    "goal": "Öğrenci bir hediye almak istediğini söyler, hediyenin kimin için olduğunu 'for' ile belirtir ve hangi gün için olduğunu (doğum günü gibi) anlatıp bir hediye seçerse konuşma başarılıdır.",
    "minTurns": 6
   }
@@ -23568,7 +23736,7 @@
   "level": "A1",
   "course": "en",
   "icon": "pill",
-  "title": "At the pharmacy",
+  "title": "Personal care items",
   "titleTr": "Kişisel bakım",
   "summary": "Eczanede ilaç, sabun ve diş macunu gibi kişisel bakım ürünlerini İngilizce isteyip sormayı öğretir.",
   "minutes": 8,
@@ -25855,6 +26023,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim, doğru mu yanlış mı karar ver."
+     },
+     {
+      "lang": "en",
+      "text": "A single ticket is for going and coming back."
      }
     ],
     "expect": {
@@ -25932,6 +26104,26 @@
      "kind": "repeat",
      "target": "a window seat"
     }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "buy"
+     },
+     {
+      "lang": "tr",
+      "text": "yani satın almak demek. Gişede en çok bunu söylersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I want to buy a ticket to Ankara."
+     }
+    ]
    },
    {
     "say": [
@@ -26453,8 +26645,8 @@
   "roleplay": {
    "scene": "Tren istasyonundasın. Panoda trenin geciktiği yazıyor ve bilgi bankosundaki görevliye durumu soruyorsun.",
    "partner": "İstasyon görevlisi",
-   "opening": "Hello! Can I help you?",
-   "openingTr": "Merhaba! Yardımcı olabilir miyim?",
+   "opening": "Hello. Are you waiting for the Ankara train?",
+   "openingTr": "Merhaba. Ankara trenini mi bekliyorsunuz?",
    "goal": "Öğrenci trenin geciktiğini söyleyip gecikmenin ne kadar olduğunu ve bir sonraki trenin saatini öğrenirse konuşma başarılı sayılır.",
    "minTurns": 7
   }
@@ -26821,6 +27013,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol yapalım. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "'How long does it take?' asks about the price."
      }
     ],
     "expect": {
@@ -27378,6 +27574,10 @@
      {
       "lang": "tr",
       "text": "Şimdi kulağını sınayalım. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The café is between the bank."
      }
     ],
     "expect": {
@@ -27901,6 +28101,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu iki cümleyi dinle ve mantıklı mı söyle."
+     },
+     {
+      "lang": "en",
+      "text": "The park is closed. You can visit the park now."
      }
     ],
     "expect": {
@@ -27982,8 +28186,8 @@
   "roleplay": {
    "scene": "Bir şehirde turizm danışma bürosundasın. Gezecek yer arıyorsun ve müzenin açık olup olmadığını öğrenmek istiyorsun.",
    "partner": "Danışma görevlisi",
-   "opening": "Hello! Can I help you?",
-   "openingTr": "Merhaba! Yardımcı olabilir miyim?",
+   "opening": "Welcome! Is this your first time in the city?",
+   "openingTr": "Hoş geldiniz! Şehre ilk kez mi geliyorsunuz?",
    "goal": "Öğrenci can ile en az bir soru sorup (Can I visit …? / Is the museum open?) görevlinin önerdiği yeri anladığını gösterirse konuşma başarılıdır.",
    "minTurns": 7
   }
@@ -28680,6 +28884,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "I go to school by foot."
      }
     ],
     "expect": {
@@ -29285,6 +29493,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Where the museum is?"
      }
     ],
     "expect": {
@@ -29385,8 +29597,8 @@
   "roleplay": {
    "scene": "Bir müzenin girişindesin. Danışmadaki görevliye tur hakkında soru soruyorsun.",
    "partner": "Danışma görevlisi",
-   "opening": "Good morning! How can I help you?",
-   "openingTr": "Günaydın! Size nasıl yardımcı olabilirim?",
+   "opening": "Good morning! Would you like information about our tours?",
+   "openingTr": "Günaydın! Turlarımız hakkında bilgi ister misiniz?",
    "goal": "Öğrenci Where, When ve How long sorularının üçünü de sorup tur hakkında bilgi aldığında konuşma başarılıdır.",
    "minTurns": 7
   }
@@ -29673,6 +29885,10 @@
      {
       "lang": "tr",
       "text": "Şimdi kulağını test edelim. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "There is two doors in my house."
      }
     ],
     "expect": {
@@ -30729,6 +30945,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Sana bir cümle söyleyeceğim. \"Kedi yatağın altında\" demek istiyoruz. Bu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The cat is under the bed."
      }
     ],
     "expect": {
@@ -31510,6 +31730,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "You must to be quiet."
      }
     ],
     "expect": {
@@ -31599,6 +31823,26 @@
      "kind": "repeat",
      "target": "You must be quiet. You mustn't make noise."
     }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "clean"
+     },
+     {
+      "lang": "tr",
+      "text": "yani temiz demek. Ortak mutfak için sık görülen kural:"
+     },
+     {
+      "lang": "en",
+      "text": "Please keep the kitchen clean."
+     }
+    ]
    },
    {
     "say": [
@@ -32006,6 +32250,10 @@
      {
       "lang": "tr",
       "text": "Şimdi küçük bir kontrol. Şu İngilizce cümle doğru mu:"
+     },
+     {
+      "lang": "en",
+      "text": "A bill is a room in your house."
      }
     ],
     "expect": {
@@ -34154,8 +34402,8 @@
   "roleplay": {
    "scene": "Bir otelde kalıyorsun. Odandaki klima çalışmıyor ve resepsiyona iniyorsun.",
    "partner": "otel resepsiyonisti",
-   "opening": "Good evening. How can I help you?",
-   "openingTr": "İyi akşamlar. Size nasıl yardımcı olabilirim?",
+   "opening": "Good evening. Is everything all right with your room?",
+   "openingTr": "İyi akşamlar. Odanızla ilgili bir sorun mu var?",
    "goal": "Öğrenci odasındaki sorunu bildirip (It's broken / It doesn't work) tamir ya da yardım istediğinde (Can you fix it? / Please call me.) konuşma başarılı sayılır.",
    "minTurns": 6
   }
@@ -35075,6 +35323,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "I go football every weekend."
      }
     ],
     "expect": {
@@ -36001,6 +36253,26 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "invite"
+     },
+     {
+      "lang": "tr",
+      "text": "yani davet etmek demek. Birini sinemaya çağırırken:"
+     },
+     {
+      "lang": "en",
+      "text": "I want to invite you to the cinema."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Burada bir kısaltma var:"
      },
      {
@@ -36582,6 +36854,10 @@
      {
       "lang": "tr",
       "text": "Şimdi bir kontrol. Sana bir cümle söyleyeceğim, mantıklı mı değil mi karar ver."
+     },
+     {
+      "lang": "en",
+      "text": "It's hot today, so I need a warm coat."
      }
     ],
     "expect": {
@@ -37125,6 +37401,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim; doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "There is two dogs in the park."
      }
     ],
     "expect": {
@@ -38476,6 +38756,26 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "thanks"
+     },
+     {
+      "lang": "tr",
+      "text": "yani teşekkürler demek. Kibarca hayır derken önce bunu söylersin:"
+     },
+     {
+      "lang": "en",
+      "text": "Thanks, but I can't come."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sebepli cümleye geri dönelim. Bugün meşgul olduğunu, özür dileyerek söyle."
      }
     ],
@@ -38500,6 +38800,10 @@
      {
       "lang": "tr",
       "text": "Şimdi küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim, doğru mu yanlış mı karar ver."
+     },
+     {
+      "lang": "en",
+      "text": "I don't want."
      }
     ],
     "expect": {
@@ -39370,6 +39674,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu İngilizce cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "A leg is a part of your head."
      }
     ],
     "expect": {
@@ -40399,6 +40707,10 @@
      {
       "lang": "tr",
       "text": "Şimdi küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim, doğru mu yanlış mı söyle."
+     },
+     {
+      "lang": "en",
+      "text": "I need a appointment."
      }
     ],
     "expect": {
@@ -40885,6 +41197,10 @@
      {
       "lang": "tr",
       "text": "Şimdi kısa bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "She have to go now."
      }
     ],
     "expect": {
@@ -41284,6 +41600,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümle doğru mu, karar ver."
+     },
+     {
+      "lang": "en",
+      "text": "Twice a day means two times a day."
      }
     ],
     "expect": {
@@ -41397,8 +41717,8 @@
   "roleplay": {
    "scene": "Yurt dışında küçük bir eczanedesin. Başın ağrıyor ve ilaç almak istiyorsun.",
    "partner": "Eczacı",
-   "opening": "Hello! How can I help you?",
-   "openingTr": "Merhaba! Nasıl yardımcı olabilirim?",
+   "opening": "Hello. Are you feeling unwell?",
+   "openingTr": "Merhaba. Kendinizi iyi hissetmiyor musunuz?",
    "goal": "Öğrenci baş ağrısını söyler, kibarca ilaç ister ve günde kaç kez alacağını sorar; sonunda teşekkür eder.",
    "minTurns": 7
   }
@@ -41860,6 +42180,10 @@
      {
       "lang": "tr",
       "text": "Şimdi küçük bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I'm feel sick."
      }
     ],
     "expect": {
@@ -42317,6 +42641,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "You should to drink water."
      }
     ],
     "expect": {
@@ -42745,6 +43073,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol yapalım. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "Call a ambulance!"
      }
     ],
     "expect": {
@@ -43808,6 +44140,10 @@
      {
       "lang": "tr",
       "text": "Bir doğru mu yanlış mı sorusu. Şu cümleyi dinle ve karar ver."
+     },
+     {
+      "lang": "en",
+      "text": "I has a toothache."
      }
     ],
     "expect": {
@@ -43881,8 +44217,8 @@
   "roleplay": {
    "scene": "Diş hekiminin muayenehanesindesin. Hekim seni koltuğa alıyor ve şikayetini soruyor.",
    "partner": "Diş hekimi",
-   "opening": "Hello! Please sit down. What's the problem?",
-   "openingTr": "Merhaba! Lütfen otur. Sorun ne?",
+   "opening": "Come in and sit down. Which tooth hurts?",
+   "openingTr": "Buyurun, oturun. Hangi dişiniz ağrıyor?",
    "goal": "Randevun olduğunu söyleyip ağrını anlatman: I have a toothache ve My tooth hurts kalıplarını kullanman, hekimin Does it hurt? sorusuna cevap vermen.",
    "minTurns": 7
   }
@@ -44998,6 +45334,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol yapalım. Sana bir cümle söyleyeceğim, doğru mu yanlış mı söyle."
+     },
+     {
+      "lang": "en",
+      "text": "\"I'm\" is the short form of \"I will\"."
      }
     ],
     "expect": {
@@ -45479,6 +45819,10 @@
      {
       "lang": "tr",
       "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "We write \"Dear Anna\" at the end of an email."
      }
     ],
     "expect": {
@@ -46001,6 +46345,10 @@
      {
       "lang": "tr",
       "text": "Şimdi kulağını sınayalım. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "He use the internet every day."
      }
     ],
     "expect": {
@@ -46480,6 +46828,10 @@
      {
       "lang": "tr",
       "text": "Şimdi küçük bir kontrol. Şu İngilizce cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "You put a stamp on a letter."
      }
     ],
     "expect": {
@@ -46550,8 +46902,8 @@
   "roleplay": {
    "scene": "Küçük bir postanedesin. Elinde bir mektup ve bir paket var, ayrıca pula ihtiyacın var.",
    "partner": "Postane görevlisi",
-   "opening": "Good morning! How can I help you?",
-   "openingTr": "Günaydın! Nasıl yardımcı olabilirim?",
+   "opening": "Next, please! What are you sending today?",
+   "openingTr": "Sıradaki, lütfen! Bugün ne göndereceksiniz?",
    "goal": "Öğrenci mektubu ve paketi göndermek istediğini söyleyip pul istediğinde ve fiyatı sorduğunda konuşma başarılı sayılır.",
    "minTurns": 7
   }
@@ -47801,6 +48153,10 @@
      {
       "lang": "tr",
       "text": "Şimdi bir kontrol. Şu cümleyi dinle ve doğru mu yanlış mı söyle."
+     },
+     {
+      "lang": "en",
+      "text": "Did you went to school yesterday?"
      }
     ],
     "expect": {
@@ -48728,6 +49084,10 @@
      {
       "lang": "tr",
       "text": "Bir cümle söyleyeceğim, doğru mu yanlış mı düşün."
+     },
+     {
+      "lang": "en",
+      "text": "\"I'll miss you\" means you are happy that the person is leaving."
      }
     ],
     "expect": {
