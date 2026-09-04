@@ -1,5 +1,5 @@
 {
-  "total": 137,
+  "total": 123,
   "files": {
     "src/data/demoPlacement.ts": 5,
     "src/data/exams.ts": 1,
@@ -8,12 +8,9 @@
     "src/lib/courses.ts": 7,
     "src/lib/i18n.ts": 1,
     "src/lib/numbers.ts": 10,
-    "src/lib/voiceMatch.ts": 2,
-    "src/screens/ExamPrepScreen.tsx": 1,
     "src/screens/LearnScreen.tsx": 1,
     "src/screens/OnboardingScreen.tsx": 1,
     "src/screens/SettingsScreen.tsx": 1,
-    "src/screens/WalkModeScreen.tsx": 11,
     "src/ui/VoicePicker.tsx": 2
   }
 }
