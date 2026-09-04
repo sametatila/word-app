@@ -6,6 +6,8 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { speakTarget } from "../lib/tts";
+import { currentTargetLang } from "../lib/courses";
+import { foldCompare } from "../lib/textFold";
 import { haptic } from "../lib/haptics";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
@@ -17,9 +19,13 @@ import type { Gloss, SkillQuestion } from "../data/skills";
  * harf sapma). Hepsi cevaplanınca toplam doğru üst bileşene bildirilir.
  */
 
+/**
+ * Sabit `de-DE` küçültme + koşulsuz umlaut katlaması yazılıydı, yani İngilizce
+ * beceri egzersizlerinde de Almanca kuralı işliyordu. Ortak katlama hedef dile
+ * bakıyor ve sayıları da indiriyor ("two" ↔ "2").
+ */
 function fold(s: string): string {
-  return s.toLocaleLowerCase("de-DE").replace(/[.,!?;:„“"'’]/g, "").replace(/\s+/g, " ").trim()
-    .replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue");
+  return foldCompare(s, currentTargetLang());
 }
 function levenshtein(a: string, b: string): number {
   const m = a.length, n = b.length;

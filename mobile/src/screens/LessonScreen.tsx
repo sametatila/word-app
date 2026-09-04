@@ -15,6 +15,7 @@ import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { currentTargetLang } from "../lib/courses";
+import { foldCompare, foldTight } from "../lib/textFold";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
@@ -44,13 +45,21 @@ type Bubble = BubbleData & { id: number };
 /** Segmentlerin HEDEF dil kısmı (anlatım "tr" dışındakiler) — okunacak/denetlenecek metin. */
 const targetText = (segs: Segment[]): string => segs.filter((s) => s.lang !== "tr").map((s) => s.text).join(" ").trim();
 
-/** Almanca cevap karşılaştırması — noktalama, büyük/küçük, umlaut/ß toleranslı. */
+/**
+ * Cevap karşılaştırması — noktalama, büyük/küçük, (Almancada) umlaut/ß ve sayı
+ * toleranslı. Sabit umlaut katlaması yazılıydı; ortak katlama hedef dile bakıyor.
+ */
 function sn(x: string): string {
-  return x.trim().toLowerCase().replace(/[.!?…,;:"'»«]/g, "").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss").replace(/\s+/g, " ").trim();
+  return foldCompare(x, currentTargetLang());
 }
 function matches(input: string, target: string, accept?: string[]): boolean {
-  const want = new Set([target, ...(accept ?? [])].map(sn));
-  return want.has(sn(input));
+  const cands = [target, ...(accept ?? [])];
+  if (new Set(cands.map(sn)).has(sn(input))) return true;
+  // Yedek: boşluksuz. Kesme işareti boşluğa döndüğü için "don't" → "don t";
+  // kesmesiz yazan ("dont") aksi halde reddedilirdi.
+  const lang = currentTargetLang();
+  const tight = foldTight(input, lang);
+  return !!tight && new Set(cands.map((c) => foldTight(c, lang))).has(tight);
 }
 
 /** Adım türü → ilerleme rengi (web STEP_TONE ile aynı dil). */

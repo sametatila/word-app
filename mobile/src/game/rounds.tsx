@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
+import { foldCase, foldCompare, foldTight } from "../lib/textFold";
 import { currentTargetLang } from "../lib/courses";
 import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -30,11 +31,12 @@ const LEAD_ARTICLE: Record<string, RegExp> = {
  */
 function norm(s: string): string {
   const lang = currentTargetLang();
-  const base = s.trim().toLowerCase().replace(LEAD_ARTICLE[lang] ?? LEAD_ARTICLE.de, "");
-  const folded = lang === "de"
-    ? base.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
-    : base;
-  return folded.replace(/\s+/g, " ");
+  // Baştaki tanımlık burada atılıyor (ortak katlamada değil), çünkü sözlük
+  // başlığı "die Tür" ama kullanıcının "Tür" yazması doğru sayılmalı.
+  // Küçültme ÖNCE gelmeli: LEAD_ARTICLE küçük harf arıyor, "Die Tür" aksi
+  // halde eşleşmiyor.
+  const base = foldCase(s.trim(), lang).replace(LEAD_ARTICLE[lang] ?? LEAD_ARTICLE.de, "");
+  return foldCompare(base, lang);
 }
 
 /** Anlam satırı: Türkçe + (varsa) İngilizce ayırt edici. */
@@ -349,7 +351,12 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const [fb, setFb] = useState<Feedback | null>(null);
   function check() {
     if (fb) return;
-    const ok = norm(val) === norm(word.de) || norm(val) === norm(withArtikel(word));
+    // Boşluksuz yedek: tireli başlıklarda ("t-shirt") tire boşluğa döndüğü için
+    // kullanıcının bitişik yazdığı "tshirt" aksi halde reddedilirdi.
+    const lang = currentTargetLang();
+    const t = norm(val);
+    const ok = (!!t && (t === norm(word.de) || t === norm(withArtikel(word))))
+      || (!!foldTight(val, lang) && foldTight(val, lang) === foldTight(word.de, lang));
     Keyboard.dismiss();
     markAnswer(ok, withArtikel(word)); // doğru kelimeyi oku (Almanca = cevap)
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, null) });
@@ -540,7 +547,8 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
 function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const word = round.word!;
   const target = React.useMemo(() => Array.from(word.de).filter((c) => c !== " "), [word.de]);
-  const compareTarget = React.useMemo(() => norm(word.de.replace(/\s+/g, "")), [word.de]);
+  // Harf döşemeleri boşluksuz diziliyor; karşılaştırma da boşluksuz biçimde.
+  const compareTarget = React.useMemo(() => foldTight(word.de, currentTargetLang()), [word.de]);
   const pool = React.useMemo(() => {
     const chars = Array.from(word.de).filter((c) => c !== " ").map((char, id) => ({ id, char }));
     for (let i = chars.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [chars[i], chars[j]] = [chars[j], chars[i]]; }
@@ -555,7 +563,7 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
     const np = [...placed, t];
     setPlaced(np);
     if (np.length === target.length) {
-      const ok = norm(np.map((x) => x.char).join("")) === compareTarget;
+      const ok = foldTight(np.map((x) => x.char).join(""), currentTargetLang()) === compareTarget;
       markAnswer(ok, withArtikel(word)); // tamamlanınca doğru kelimeyi oku
       setFb({ correct: ok, answerDe: word.de, tr: word.tr, en: word.en });
     } else {
@@ -643,7 +651,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
   const alts = round.alternatives ?? [];
   const [val, setVal] = useState("");
   const [fb, setFb] = useState<Feedback | null>(null);
-  const sn = (x: string) => x.trim().toLowerCase().replace(/[.!?…,;:]/g, "").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss").replace(/\s+/g, " ");
+  const sn = (x: string) => foldCompare(x, currentTargetLang());
   function check() {
     if (fb) return;
     const t = sn(val);

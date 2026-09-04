@@ -4,6 +4,7 @@
  */
 import { currentTargetLang } from "./courses";
 import { currentLang, t } from "./i18n";
+import { foldCompare, foldLetters } from "./textFold";
 
 /**
  * Hedef dilin tanımlıkları — eşleştirmede atılır ki "die Katze" ile "Katze"
@@ -15,15 +16,12 @@ const ARTICLES: Record<string, RegExp> = {
   en: /\b(the|an|a)\b/g,
 };
 
-/** Söyleniş normalizasyonu: küçült, tanımlık at, (Almancada) umlaut katla. */
+/** Söyleniş normalizasyonu: küçült, sayıları rakama indir, tanımlık at, (Almancada) umlaut katla. */
 export function foldSpelling(s: string, lang: string = currentTargetLang()): string {
-  const lower = (s || "").toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US");
-  // Umlaut/ß katlaması yalnız Almancada anlamlı; İngilizcede yapacak iş yok.
-  const folded = lang === "de"
-    ? lower.replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue")
-    : lower;
-  return folded
-    .replace(/[.,!?;:"'’]/g, " ")
+  // Ortak katlama (küçültme + umlaut + noktalama + sayı) textFold'da; burada
+  // yalnız SÖZLÜ karşılaştırmaya özgü ek var: tanımlık atılıyor, çünkü konuşurken
+  // "der Tisch" yerine sadece "Tisch" demek doğru sayılmalı.
+  return foldCompare(s, lang)
     .replace(ARTICLES[lang] ?? ARTICLES.de, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -58,10 +56,26 @@ export function spokenMatches(heard: string[], candidates: string[]): boolean {
   };
   const forms = candidates.flatMap(acceptedForms).map(foldKeep).filter(Boolean);
   if (!forms.length) return false;
+  // Boşluktan bağımsız ikinci biçim: tanıyıcı Almanca bileşikleri ayırıyor
+  // ("Anrufbeantworter" → "Anruf Beantworter", havuzda 2313 uzun bileşik) ve
+  // tireli başlıkları boşlukla yazıyor ("t-shirt" → "t shirt"). Boşlukları
+  // tamamen atınca iki yazım da aynı dizeye iniyor.
+  const sikis = (x: string) => x.replace(/\s+/g, "");
+  const forms2 = forms.map(sikis);
+  // Sıkıştırma sayı KATLANMADAN da yapılıyor: tanıyıcı bileşiği bölünce
+  // ("Fasnacht" → "Fasn acht") ikinci parça sayı sözcüğü olabiliyor ve
+  // katlanmış biçim ("fasn 8") artık orijinaline benzemiyor. Ham sıkıştırma
+  // o yolu da kapatıyor.
+  const ham = (x: string) => foldLetters(x, lang);
+  const forms3 = candidates.flatMap(acceptedForms).map(ham).filter(Boolean);
   const test = (said: string): boolean => {
     const f = foldKeep(said);
     if (!f) return false;
-    return forms.some((form) => f === form || (form.length >= CONTAINS_MIN && ` ${f} `.includes(` ${form} `)));
+    if (forms.some((form) => f === form || (form.length >= CONTAINS_MIN && ` ${f} `.includes(` ${form} `)))) return true;
+    const g = sikis(f);
+    if (forms2.some((form) => g === form || (form.length >= CONTAINS_MIN && g.includes(form)))) return true;
+    const h = ham(said);
+    return !!h && forms3.some((form) => h === form || (form.length >= CONTAINS_MIN && h.includes(form)));
   };
   return heard.some((h) => test(h));
 }

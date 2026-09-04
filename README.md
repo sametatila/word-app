@@ -783,6 +783,51 @@ ayırır.
 | Mikrofon bozukken tur yanıyor | Son dört turun üçü duyulmadıysa tur duruyor. Ölçüt bilerek "üst üste" değil: bozuk tanıyıcı arada çöp metin döndürüyor ve ardışıklık arayan bir sayaç onunla sıfırlanıyordu — ölçümde 45 saniyede altı tur yandı, sayaç hiç üçe ulaşmadı |
 | Tur bitince telefonu çıkarmak gerekiyor | "Devam edelim mi?" sesli soruluyor, cevap sesli alınıyor. Anlaşılmayan cevap ne evet ne hayır sayılıyor; soru bir kez tekrarlanıyor, sonra duruluyor |
 
+### Cevap karşılaştırması (konuşma + yazılı)
+
+Aynı katlama kodu beş ayrı yerde elle yeniden yazılmıştı ve hepsi ayrı ayrı eskimişti:
+`voiceMatch`, `skillQuiz.fold`, `rounds.norm`, `TranslateRound.sn`, `LessonScreen.sn`. Üçü sabit
+`de-DE` küçültme + koşulsuz umlaut katlaması yapıyordu — yani İngilizce kursta da Almanca kuralı
+işliyordu. Hiçbiri sayı katlamıyordu; sildikleri noktalama kümeleri birbirinden farklıydı.
+
+Tek kaynak artık `mobile/src/lib/textFold.ts`. Kural: katlamanın "doğru" olması değil **iki
+tarafa da aynı** uygulanması önemli — beklenen metin de duyulan/yazılan metin de aynı fonksiyondan
+geçiyor, o yüzden yön bağımsız.
+
+| Katman | Ne yapar | Neden |
+|---|---|---|
+| `foldCase` | küçültme + (yalnız Almancada) umlaut/ß | `de-DE` küçültmesi İngilizceye uygulanmamalı |
+| kesme işareti **silinir** | `don't`→`dont`, `I'm`→`Im` | mobilde kullanıcı çoğu zaman kesmesiz yazıyor; boşluğa çevirseydik `i m` çıkardı |
+| diğer noktalama **boşluğa** | `t-shirt`→`t shirt` | tanıyıcı tireyi boşluk yazıyor; silseydik `A/B` tek sözcük olurdu |
+| simge → sözcük | `%`→`prozent`/`percent`, `€`→`euro` | içerikte simge hiç yok ama kullanıcı `%20` yazıyor; simgeyi atmak `%20` ile `20`'yi aynı sayardı |
+| `foldNumbers` | `fünf`→`5`, `forty-two`→`42`, `achthundert`→`800`, `two hundred`→`200` | tanıyıcı sayıları rakam yazıyor, içerik sözcükle |
+| sıra sayısı ayrı kanon | `first`→`1st`, `4th`→`4th` | düz rakama indirseydik `first` ile `one` aynı olurdu ve **yanlış cevap doğru sayılırdı** |
+
+**Sıra önemli:** noktalama sayıdan ÖNCE sadeleşir. Tersi olursa asimetri doğuyor — hedefteki
+`one-way street`te tire koruması devreye girip `one` duruyor, tanıyıcının tiresiz çıktısında
+(`one way street`) girmiyor ve iki taraf farklı dizeye iniyordu.
+
+Konuşma tarafında iki ek geçiş var (yalnız birinci geçiş tutmazsa): boşluksuz karşılaştırma, ve
+**sayı katlamadan** boşluksuz karşılaştırma. İkincisi tanıyıcının uzun bileşiği bölmesi için —
+`Fasnacht` → `Fasn acht` → sayı katlanınca `fasn8` oluyor ve artık aslına benzemiyor.
+
+Bilerek yapılmayanlar: serbest sayı dizisi toplanmıyor (`one two three` = `1 2 3`, 6 değil);
+İngilizce/Almanca kısaltma denklikleri (`I'm`↔`I am`, `zum`↔`zu dem`) katlanmıyor çünkü bazı
+dersler tam da o ayrımı öğretiyor — onlar içerikteki `accept` maddeleriyle çözülüyor.
+
+#### Ölçüm
+
+| Tarama | Almanca | İngilizce |
+|---|---|---|
+| havuz başlığı, tanıyıcı yazım çeşitlemesi | 16283 deneme · 0 ret | 7377 deneme · 0 ret |
+| ders `produce` hedefi, kullanıcı yazımı | 9465 deneme · 0 ret | 10832 deneme · 0 ret |
+| beceri egzersizi cevabı | 467 deneme · 0 ret | 945 deneme · 0 ret |
+| **kasten bozulmuş cevap (yanlış kabul)** | 2084 deneme · 0 kabul | 896 deneme · 0 kabul |
+| ders içi anlam çakışması | 4992 adım · 0 | 1844 adım · 0 |
+
+Son iki satır kritik: tolerans arttıkça yanlış kabul de artar. Bozma kümesi olumsuzluğu siliyor,
+sayıyı değiştiriyor, artikeli/özneyi takas ediyor ve sıra sayısını kardinale çeviriyor.
+
 ### Modül sınavı
 
 On ders bitince hiçbir şey olmuyordu: pankartta bir kupa beliriyor, yol devam ediyordu. Sınav
