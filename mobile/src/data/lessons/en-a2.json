@@ -36170,5 +36170,5367 @@
    "goal": "Nereye gittiğini, ne zaman vardığını, nerede ve ne kadar kaldığını, havanın nasıl olduğunu anlatıp oraya yine gitmek isteyip istemediğini söylediğinde konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-a2-invitations",
+  "level": "A2",
+  "course": "en",
+  "icon": "party",
+  "title": "Inviting a friend",
+  "titleTr": "Davet etmek",
+  "summary": "Bir arkadaşını İngilizce davet etmeyi, daveti kabul etmeyi ve kibarca geri çevirmeyi öğreniyorsun.",
+  "minutes": 8,
+  "focusId": "Invitations",
+  "vocab": [
+   {
+    "de": "invite",
+    "tr": "davet etmek"
+   },
+   {
+    "de": "join",
+    "tr": "katılmak"
+   },
+   {
+    "de": "free",
+    "tr": "boş, müsait"
+   },
+   {
+    "de": "sorry",
+    "tr": "özür dilerim, kusura bakma"
+   },
+   {
+    "de": "maybe",
+    "tr": "belki"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Would you like to come?",
+    "tr": "birini kibarca davet ederken kullanılır"
+   },
+   {
+    "de": "Are you free on Saturday?",
+    "tr": "birinin belli bir gün müsait olup olmadığını sorarken kullanılır"
+   },
+   {
+    "de": "I'd love to, but I can't.",
+    "tr": "bir daveti kibarca geri çevirirken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün İngilizcede bir arkadaşını bir yere davet etmeyi öğreneceğiz. Hem daveti nasıl yaparsın, hem de sana bir davet geldiğinde nasıl kabul edip nasıl kibarca hayır dersin."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "invite"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Davet etmek\" demek. Mesela bir doğum gününe birini çağırıyorsun, onu davet ediyorsun. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "invite"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "invite"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "join"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Katılmak\" demek. Bir gruba, bir masaya, bir plana katılmak. Lütfen de:"
+     },
+     {
+      "lang": "en",
+      "text": "join"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "join"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi çok işine yarayacak bir kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "free"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Free\" sadece \"özgür\" demek değil; insanlar için kullanınca \"boş, müsait\" anlamına gelir. \"Yarın müsait misin?\" demek için:"
+     },
+     {
+      "lang": "en",
+      "text": "Are you free tomorrow?"
+     },
+     {
+      "lang": "tr",
+      "text": "Küçük ama önemli bir kural: günlerin adından önce İngilizcede \"on\" gelir."
+     },
+     {
+      "lang": "en",
+      "text": "on Friday"
+     },
+     {
+      "lang": "en",
+      "text": "on Saturday"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hadi sen kur. Arkadaşına \"Cumartesi günü müsait misin?\" diye soruyorsun. Nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Are you free on Saturday?",
+     "accept": [
+      "Are you free on Saturday",
+      "Are you free on saturday?",
+      "Are you free Saturday?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Are you free\" ile başla, sonra günü ekle. Günden önce \"on\" olduğunu unutma."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Kişi müsaitse artık davet edebilirsin. İngilizcede davet etmenin iki yolu var: biri kibar, biri daha samimi."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kibar olanı şu:"
+     },
+     {
+      "lang": "en",
+      "text": "Would you like to come?"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Gelmek ister misin?\" demek. \"Would you like\" kalıbı nazik bir tekliftir; yeni tanıştığın biriyle ya da bir iş arkadaşınla rahatça kullanırsın. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Would you like to come?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Would you like to come?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daha samimi olanı ise \"Do you want to…\" ile başlar. Yakın arkadaşlarla bunu kullanırsın:"
+     },
+     {
+      "lang": "en",
+      "text": "Do you want to come with us?"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Bizimle gelmek ister misin?\" demek. Nereye davet ettiğini de ekleyebilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "Do you want to come to my place?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Do you want to come with us?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Do you want to come with us?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Peki davet sana gelirse? Kabul etmenin en doğal yolu şu:"
+     },
+     {
+      "lang": "en",
+      "text": "Sure, I'd love to."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Tabii, çok isterim\" demek. Buradaki \"I'd\", \"I would\" kısaltmasıdır ve İngilizler bunu neredeyse her zaman kısaltarak söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Sure, I'd love to."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Sure, I'd love to."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bazen de gidemezsin. O zaman ilk kelimen"
+     },
+     {
+      "lang": "en",
+      "text": "sorry"
+     },
+     {
+      "lang": "tr",
+      "text": "olur. Ardından sebebini söylersin:"
+     },
+     {
+      "lang": "en",
+      "text": "Sorry, I can't. I'm busy."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani \"Kusura bakma, gelemem. Meşgulüm.\""
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Sorry, I can't."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Sorry, I can't."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daha yumuşak bir hayır için önce isteğini söylersin, sonra \"ama\" dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I'd love to, but I can't."
+     },
+     {
+      "lang": "tr",
+      "text": "Ve son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "maybe"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Belki\" demek. Kapıyı açık bırakmak için çok kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "Maybe next time."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. \"Çok isterdim ama gelemem\" cümlesini İngilizce söyle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I'd love to, but I can't.",
+     "accept": [
+      "I would love to, but I can't.",
+      "I'd love to but I can't",
+      "I'd love to, but I can't come."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"I'd love to\" ile başla, sonra \"but\" ve \"I can't\" ekle."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Are you free at Friday?",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Günlerin adından önce \"at\" değil \"on\" gelir. Doğrusu: Are you free on Friday?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Davet kabul edildiyse geriye saat ve yer kalır. Bunun için basit bir kalıp var:"
+     },
+     {
+      "lang": "en",
+      "text": "Let's meet at seven."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Yedide buluşalım\" demek. Saatlerden önce \"at\", yerlerden önce genelde \"in front of\" ya da \"at\" kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "Let's meet at seven in front of the cinema."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir tane sen kur. Bir arkadaşına \"Bize katılmak ister misin?\" diye kibarca soruyorsun."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Would you like to join us?",
+     "accept": [
+      "Would you like to join us",
+      "Do you want to join us?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kibar kalıp \"Would you like to…\" ile başlar; sonra \"join\" ve \"us\" gelir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harikasın. Bugün beş kelime öğrendik: invite, join, free, sorry ve maybe."
+     },
+     {
+      "lang": "tr",
+      "text": "Davet etmek için:"
+     },
+     {
+      "lang": "en",
+      "text": "Would you like to come?"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "Do you want to come with us?"
+     },
+     {
+      "lang": "tr",
+      "text": "Kabul etmek için:"
+     },
+     {
+      "lang": "en",
+      "text": "Sure, I'd love to."
+     },
+     {
+      "lang": "tr",
+      "text": "Kibarca hayır demek için:"
+     },
+     {
+      "lang": "en",
+      "text": "I'd love to, but I can't. Maybe next time."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunları gerçek bir konuşmada deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Cuma akşamı sinemaya gitmeyi planlıyorsun ve bir arkadaşını çağırmak istiyorsun. Onu davet et, gün ve saat üzerinde anlaşın.",
+   "partner": "seninle aynı sınıftan arkadaşın Emma",
+   "opening": "Hey! Do you have any plans for the weekend?",
+   "openingTr": "Selam! Hafta sonu için bir planın var mı?",
+   "goal": "Arkadaşını sinemaya davet edip günü ve buluşma saatini netleştirdiğinde konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-birthday",
+  "level": "A2",
+  "course": "en",
+  "icon": "cake",
+  "title": "Birthdays and gifts",
+  "titleTr": "Doğum günü ve hediye",
+  "summary": "Doğum gününü kutlamayı, hediye verip almayı ve hazırlıkları İngilizce anlatmayı öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Wishes",
+  "vocab": [
+   {
+    "de": "birthday",
+    "tr": "doğum günü"
+   },
+   {
+    "de": "present",
+    "tr": "hediye"
+   },
+   {
+    "de": "surprise",
+    "tr": "sürpriz"
+   },
+   {
+    "de": "celebrate",
+    "tr": "kutlamak"
+   },
+   {
+    "de": "candle",
+    "tr": "mum"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Happy birthday!",
+    "tr": "birinin doğum gününü kutlarken söylenir"
+   },
+   {
+    "de": "This is for you. I hope you like it.",
+    "tr": "hediye verirken söylenir"
+   },
+   {
+    "de": "I haven't bought a present yet.",
+    "tr": "henüz yapmadığın bir şeyi söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün doğum günü ve hediye konuşacağız."
+     },
+     {
+      "lang": "tr",
+      "text": "Ders bitince birine İngilizce doğum günü dileyebilecek, hediyeni uzatabilecek ve hazırlıklarından bahsedebileceksin."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz çok kolay:"
+     },
+     {
+      "lang": "en",
+      "text": "birthday"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani doğum günü. Lütfen sen de de:"
+     },
+     {
+      "lang": "en",
+      "text": "birthday"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "birthday"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birinin doğum gününü sormak istersen şöyle dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "When is your birthday?"
+     },
+     {
+      "lang": "tr",
+      "text": "Doğum günün ne zaman? Cevabı da genelde ay ile verilir:"
+     },
+     {
+      "lang": "en",
+      "text": "My birthday is in May."
+     },
+     {
+      "lang": "tr",
+      "text": "Doğum günüm mayısta. Dikkat et, ayla birlikte in kullanıyoruz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kutlamak fiilini alalım:"
+     },
+     {
+      "lang": "en",
+      "text": "celebrate"
+     },
+     {
+      "lang": "tr",
+      "text": "Kutlamak demek. Söyle bakalım:"
+     },
+     {
+      "lang": "en",
+      "text": "celebrate"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "celebrate"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir cümlede duyalım:"
+     },
+     {
+      "lang": "en",
+      "text": "We celebrate my birthday at home."
+     },
+     {
+      "lang": "tr",
+      "text": "Doğum günümü evde kutlarız."
+     },
+     {
+      "lang": "tr",
+      "text": "Planından bahsediyorsan going to çok işine yarar:"
+     },
+     {
+      "lang": "en",
+      "text": "We are going to celebrate on Saturday."
+     },
+     {
+      "lang": "tr",
+      "text": "Cumartesi kutlayacağız."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hediye kelimesi:"
+     },
+     {
+      "lang": "en",
+      "text": "present"
+     },
+     {
+      "lang": "tr",
+      "text": "Hediye demek. Aynı anlamda gift de duyarsın, ikisi de doğru. Şimdi tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "present"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "present"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hediye vermek için buy ve give fiillerini kullanırız:"
+     },
+     {
+      "lang": "en",
+      "text": "I bought a present for my sister."
+     },
+     {
+      "lang": "tr",
+      "text": "Kız kardeşime bir hediye aldım."
+     },
+     {
+      "lang": "en",
+      "text": "She gave me a beautiful present."
+     },
+     {
+      "lang": "tr",
+      "text": "Bana çok güzel bir hediye verdi."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "surprise"
+     },
+     {
+      "lang": "tr",
+      "text": "Sürpriz demek. Söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "surprise"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "surprise"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sürpriz parti demek istersen iki kelimeyi yan yana koyarsın:"
+     },
+     {
+      "lang": "en",
+      "text": "It's a surprise party. Please don't tell her."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu bir sürpriz parti. Lütfen ona söyleme."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Pastanın üstündeki şeyin adı:"
+     },
+     {
+      "lang": "en",
+      "text": "candle"
+     },
+     {
+      "lang": "tr",
+      "text": "Mum demek. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "candle"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "candle"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Doğum gününde mumları üflersin:"
+     },
+     {
+      "lang": "en",
+      "text": "Blow out the candles and make a wish!"
+     },
+     {
+      "lang": "tr",
+      "text": "Mumları üfle ve bir dilek tut! Buradaki wish, dilek demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin en önemli cümlesi:"
+     },
+     {
+      "lang": "en",
+      "text": "Happy birthday!"
+     },
+     {
+      "lang": "tr",
+      "text": "Doğum günün kutlu olsun. Sıcak bir sesle söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Happy birthday!"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Happy birthday!"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. Arkadaşını gördün ve doğum gününü kutluyorsun. Nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Happy birthday!",
+     "accept": [
+      "Happy birthday",
+      "Happy birthday to you",
+      "Happy birthday to you!"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki kelime: mutlu anlamında happy, sonra doğum günü."
+      },
+      {
+       "lang": "en",
+       "text": "Happy ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hediyeyi uzatırken şunu dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "This is for you. I hope you like it."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu senin için. Umarım beğenirsin."
+     },
+     {
+      "lang": "tr",
+      "text": "Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "This is for you."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This is for you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hediyeyi alan kişi ne der? Şöyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Thank you so much! It's lovely."
+     },
+     {
+      "lang": "tr",
+      "text": "Çok teşekkür ederim! Çok güzel."
+     },
+     {
+      "lang": "en",
+      "text": "You didn't have to!"
+     },
+     {
+      "lang": "tr",
+      "text": "Zahmet etmeseydin!"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen dene. Hediyeyi uzatıyorsun ve Bu senin için diyorsun."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This is for you.",
+     "accept": [
+      "This is for you",
+      "It's for you.",
+      "It is for you.",
+      "This is for you!"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu kelimesi this, senin için ise for you."
+      },
+      {
+       "lang": "en",
+       "text": "This is ... you."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hazırlıklardan bahsederken şu yapı çok işine yarar:"
+     },
+     {
+      "lang": "en",
+      "text": "I have already bought a present."
+     },
+     {
+      "lang": "tr",
+      "text": "Hediyeyi çoktan aldım. Already, çoktan demek."
+     },
+     {
+      "lang": "en",
+      "text": "I haven't bought a present yet."
+     },
+     {
+      "lang": "tr",
+      "text": "Henüz hediye almadım. Yet, olumsuz cümlenin sonunda henüz anlamına gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Parti yarın ama sen daha hediye almadın. Bunu söyle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I haven't bought a present yet.",
+     "accept": [
+      "I have not bought a present yet.",
+      "I haven't bought a present yet",
+      "I haven't bought a gift yet.",
+      "I haven't got a present yet."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "I haven't ile başla, buy fiilinin üçüncü hâli bought, sonuna yet koy."
+      },
+      {
+       "lang": "en",
+       "text": "I haven't ... a present ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Sana İngilizce bir cümle söyleyeceğim, doğru mu yanlış mı karar ver."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "A present is something you eat at a party.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Present hediye demek, yenilen bir şey değil."
+      },
+      {
+       "lang": "tr",
+       "text": "Partide yediğin şey pastadır:"
+      },
+      {
+       "lang": "en",
+       "text": "We eat cake at a birthday party."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika iş çıkardın. Bugün beş kelime öğrendik: birthday, present, surprise, celebrate, candle."
+     },
+     {
+      "lang": "tr",
+      "text": "Üç kalıbı da cebine koydun: Happy birthday, This is for you ve I haven't bought a present yet."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi kısa bir sahnede bunları birlikte kullanacağız. Rahat ol, hata yapabilirsin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Arkadaşının doğum günü partisine geldin. Kapıda seni o karşılıyor, elinde de senin getirdiğin hediye var.",
+   "partner": "doğum günü sahibi arkadaşın Emma",
+   "opening": "Hi! Thanks for coming to my party!",
+   "openingTr": "Selam! Partime geldiğin için teşekkürler!",
+   "goal": "Doğum gününü kutladıysan, hediyeyi uzatıp bir şey söylediysen ve partiyle ilgili en az bir soru sorduysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-wedding",
+  "level": "A2",
+  "course": "en",
+  "icon": "ring",
+  "title": "A wedding",
+  "titleTr": "Düğün",
+  "summary": "Bir düğünü ve töreni geçmiş zamanla anlatmayı, gelini, misafirleri ve gecenin akışını İngilizce betimlemeyi öğretir.",
+  "minutes": 9,
+  "focusId": "Describing events",
+  "vocab": [
+   {
+    "de": "wedding",
+    "tr": "düğün"
+   },
+   {
+    "de": "bride",
+    "tr": "gelin"
+   },
+   {
+    "de": "guest",
+    "tr": "misafir"
+   },
+   {
+    "de": "dance",
+    "tr": "dans etmek"
+   },
+   {
+    "de": "dress",
+    "tr": "elbise"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The wedding was in a garden.",
+    "tr": "geçmişte olan bir olayın nerede olduğunu söylerken kullanılır"
+   },
+   {
+    "de": "The bride wore a long white dress.",
+    "tr": "kural dışı geçmiş zaman fiiliyle birinin ne yaptığını anlatır"
+   },
+   {
+    "de": "I have been to three weddings this year.",
+    "tr": "bir deneyimi, o şeyi kaç kez yaşadığını anlatırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir düğünü anlatmayı öğreniyoruz: tören neredeydi, gelin ne giydi, misafirler ne yaptı."
+     },
+     {
+      "lang": "tr",
+      "text": "Hepsini geçmiş zamanla anlatacağız. Hazırsan başlıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz düğün demek:"
+     },
+     {
+      "lang": "en",
+      "text": "a wedding"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle: a wedding."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a wedding"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Evlenen kadına gelin diyoruz, İngilizcede:"
+     },
+     {
+      "lang": "en",
+      "text": "the bride"
+     },
+     {
+      "lang": "tr",
+      "text": "Damat ise the groom. Şimdi sen söyle: the bride."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "the bride"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Davetlilere misafir diyoruz: guest. Çoğulu guests."
+     },
+     {
+      "lang": "en",
+      "text": "two hundred guests"
+     },
+     {
+      "lang": "tr",
+      "text": "İki yüz misafir. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "two hundred guests"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Elbise: dress. Gelinin beyaz elbisesi:"
+     },
+     {
+      "lang": "en",
+      "text": "a white dress"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a white dress"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dans etmek: dance. Geçmişte olanı anlatırken sonuna -ed ekliyoruz:"
+     },
+     {
+      "lang": "en",
+      "text": "dance, danced"
+     },
+     {
+      "lang": "tr",
+      "text": "Aynı şekilde start–started, finish–finished, invite–invited."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bütün gece dans ettik demek için:"
+     },
+     {
+      "lang": "en",
+      "text": "We danced all night."
+     },
+     {
+      "lang": "tr",
+      "text": "Sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We danced all night."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de -di, -idi anlamındaki was ve were var. Tekil için was, çoğul için were."
+     },
+     {
+      "lang": "en",
+      "text": "The wedding was beautiful. The guests were happy."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani düğün güzeldi, misafirler mutluydu."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi cümleyi sen kur: Düğün çok güzeldi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The wedding was very beautiful.",
+     "accept": [
+      "The wedding was beautiful.",
+      "It was a very beautiful wedding.",
+      "The wedding was really beautiful.",
+      "The wedding was very nice."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "The wedding ile başla, sonra was koy."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bazı fiiller kural dışıdır, sonlarına -ed almazlar. Bunları ezberliyoruz:"
+     },
+     {
+      "lang": "en",
+      "text": "wear, wore. eat, ate. go, went. sing, sang. have, had."
+     },
+     {
+      "lang": "tr",
+      "text": "Giymek wore olur, yemek ate olur, gitmek went olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gelin uzun beyaz bir elbise giydi:"
+     },
+     {
+      "lang": "en",
+      "text": "She wore a long white dress."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She wore a long white dress."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: Misafirler bütün gece dans etti."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The guests danced all night.",
+     "accept": [
+      "The guests danced all night long.",
+      "All the guests danced all night.",
+      "The guests danced until morning."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Misafirler guests, dans etti danced."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "The guests are the two people who get married at a wedding."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The guests are the two people who get married at a wedding.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Evlenen iki kişi the bride ve the groom'dur. Guests ise davetliler, yani misafirlerdir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de deneyimden söz ederiz: hayatında kaç düğüne gittin?"
+     },
+     {
+      "lang": "en",
+      "text": "I have been to three weddings this year."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu yıl üç düğüne gittim demek. Have been to: bir yere gitmiş olmak."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hiç yapmadığın bir şey için never kullanırız. Şimdi sen söyle: Öyle bir elbiseyi hiç görmedim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have never seen a dress like that.",
+     "accept": [
+      "I've never seen a dress like that.",
+      "I have never seen a dress like this.",
+      "I've never seen a dress like this."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "I have never ile başla, görmek see, üçüncü hâli seen."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geceyi sırayla anlatmak için küçük bağlayıcılar var: first, then, after that, at the end."
+     },
+     {
+      "lang": "en",
+      "text": "First we went to the ceremony. Then we had dinner. After that, everyone danced."
+     },
+     {
+      "lang": "tr",
+      "text": "Önce törene gittik, sonra yemek yedik, ardından herkes dans etti."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi hepsini bir arada dinle. Kısa bir düğün hikâyesi:"
+     },
+     {
+      "lang": "en",
+      "text": "My cousin's wedding was in a garden near the sea. There were about a hundred guests. The bride wore a long white dress and the groom was very nervous. We ate, we sang, and we danced until midnight. It was the best wedding I have ever been to."
+     },
+     {
+      "lang": "tr",
+      "text": "Kuzenimin düğünü deniz kenarında bir bahçedeydi, yaklaşık yüz misafir vardı, gece yarısına kadar dans ettik."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: wedding düğün, bride gelin, guest misafir, dress elbise, dance dans etmek."
+     },
+     {
+      "lang": "tr",
+      "text": "Geçmişi anlatırken was ve were, düzenli fiillerde -ed, kural dışılarda wore, ate, went diyoruz. Deneyim için de I have been to."
+     },
+     {
+      "lang": "tr",
+      "text": "Çok iyiydin. Şimdi bunu bir sohbette deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Geçen hafta sonu bir düğüne gittin. Bugün işte bir arkadaşın merakla düğünü soruyor.",
+   "partner": "düğünü merak eden iş arkadaşın",
+   "opening": "So, how was the wedding last weekend?",
+   "openingTr": "Eee, geçen hafta sonu düğün nasıldı?",
+   "goal": "Düğünün nerede olduğunu, kaç misafir geldiğini, gelinin ne giydiğini ve gece neler yaptığınızı geçmiş zamanla anlatırsan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-festivals",
+  "level": "A2",
+  "course": "en",
+  "icon": "party",
+  "title": "Festivals and holidays",
+  "titleTr": "Bayramlar",
+  "summary": "Bayramları, gelenekleri ve bayramda yaptıklarını İngilizce anlatmayı öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Cultural talk",
+  "vocab": [
+   {
+    "de": "festival",
+    "tr": "festival, bayram"
+   },
+   {
+    "de": "tradition",
+    "tr": "gelenek"
+   },
+   {
+    "de": "family",
+    "tr": "aile"
+   },
+   {
+    "de": "special",
+    "tr": "özel"
+   },
+   {
+    "de": "food",
+    "tr": "yiyecek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "We celebrate … in …",
+    "tr": "bir bayramı ne zaman kutladığını söylerken kullanılır"
+   },
+   {
+    "de": "It's a tradition to …",
+    "tr": "bir geleneği anlatırken kullanılır"
+   },
+   {
+    "de": "Have you ever been to …?",
+    "tr": "karşındakinin daha önce bir yere gidip gitmediğini sorarken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bayramları ve gelenekleri İngilizce anlatmayı öğreneceğiz. Bir bayramı ne zaman kutladığını, ailenle ne yaptığını ve sofrada ne olduğunu söyleyebileceksin."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlıyoruz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "festival"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu kelime hem festival hem de bayram demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "festival"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "festival"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ikinci kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "tradition"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi gelenek demek. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "tradition"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "tradition"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir bayramı kutlamak için kullandığımız fiil:"
+     },
+     {
+      "lang": "en",
+      "text": "celebrate"
+     },
+     {
+      "lang": "tr",
+      "text": "kutlamak demek. Şimdi ilk kalıbımızı kuralım."
+     },
+     {
+      "lang": "en",
+      "text": "We celebrate this festival in spring."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Bu bayramı ilkbaharda kutlarız. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We celebrate this festival in spring."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük ama önemli bir nokta: aylarda ve mevsimlerde İngilizcede"
+     },
+     {
+      "lang": "en",
+      "text": "in"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır."
+     },
+     {
+      "lang": "en",
+      "text": "in May, in summer."
+     },
+     {
+      "lang": "tr",
+      "text": "Ama tek bir güne işaret ediyorsan"
+     },
+     {
+      "lang": "en",
+      "text": "on"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir."
+     },
+     {
+      "lang": "en",
+      "text": "on Friday, on the first day."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu İngilizce kur: Biz bu bayramı her yıl kutlarız."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We celebrate this festival every year.",
+     "accept": [
+      "We celebrate this holiday every year.",
+      "We celebrate it every year."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Fiil"
+      },
+      {
+       "lang": "en",
+       "text": "celebrate"
+      },
+      {
+       "lang": "tr",
+       "text": "ve sonunda"
+      },
+      {
+       "lang": "en",
+       "text": "every year"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bayramların en güzel yanı sofra, değil mi? İki kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "special"
+     },
+     {
+      "lang": "tr",
+      "text": "özel demek, ve"
+     },
+     {
+      "lang": "en",
+      "text": "food"
+     },
+     {
+      "lang": "tr",
+      "text": "yiyecek demek. Şimdi ikisini birleştirelim ve tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "My mother makes special food."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My mother makes special food."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir geleneği anlatmak için çok kullanışlı bir kalıp var:"
+     },
+     {
+      "lang": "en",
+      "text": "It's a tradition to visit our grandparents."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Büyükanne ve büyükbabamızı ziyaret etmek bir gelenektir. Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It's a tradition to visit our grandparents."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat et:"
+     },
+     {
+      "lang": "en",
+      "text": "It's a tradition to"
+     },
+     {
+      "lang": "tr",
+      "text": "dedikten sonra fiilin yalın hâli gelir."
+     },
+     {
+      "lang": "en",
+      "text": "to visit, to give, to eat."
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçedeki mek, mak eki gibi düşün."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Deneyelim. Şunu söyle: Aileyi ziyaret etmek bir gelenektir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It's a tradition to visit the family.",
+     "accept": [
+      "It is a tradition to visit the family.",
+      "It's a tradition to visit family."
+     ],
+     "hint": [
+      {
+       "lang": "en",
+       "text": "It's a tradition to"
+      },
+      {
+       "lang": "tr",
+       "text": "ile başla, sonra"
+      },
+      {
+       "lang": "en",
+       "text": "visit the family"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi çok işe yarayan bir soru. Birine daha önce bir yere gidip gitmediğini sormak istiyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you ever been to a Turkish festival?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Hiç bir Türk bayramında bulundun mu? Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Have you ever been to a Turkish festival?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu soru geçmişteki deneyimi sorar, ne zaman olduğunu değil. Cevapları da kısa:"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, I have."
+     },
+     {
+      "lang": "tr",
+      "text": "veya"
+     },
+     {
+      "lang": "en",
+      "text": "No, I haven't."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir de ekleyebilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "I've never been to one."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Hiç bulunmadım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ne zaman olduğunu söyleyeceksen artık geçmiş zamana geçersin:"
+     },
+     {
+      "lang": "en",
+      "text": "Last year I went to my village."
+     },
+     {
+      "lang": "tr",
+      "text": "Geçen yıl köyüme gittim."
+     },
+     {
+      "lang": "en",
+      "text": "We ate a lot and we talked all night."
+     },
+     {
+      "lang": "tr",
+      "text": "Çok yedik ve bütün gece konuştuk."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Have you ever been to a festival? — Yes, I went.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Bu soruya kısa cevap"
+      },
+      {
+       "lang": "en",
+       "text": "Yes, I have."
+      },
+      {
+       "lang": "tr",
+       "text": "olmalı. Soru hangi yardımcı fiille başlarsa cevap da onunla verilir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de plan yapalım. Yakın planlar için"
+     },
+     {
+      "lang": "en",
+      "text": "going to"
+     },
+     {
+      "lang": "tr",
+      "text": "çok doğal durur."
+     },
+     {
+      "lang": "en",
+      "text": "This year we're going to visit my aunt."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu yıl teyzemi ziyaret edeceğiz."
+     },
+     {
+      "lang": "en",
+      "text": "I think it will be a busy week."
+     },
+     {
+      "lang": "tr",
+      "text": "Sanırım yoğun bir hafta olacak."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir cümle kurma. Şunu söyle: Yarın ailemi ziyaret edeceğim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Tomorrow I'm going to visit my family.",
+     "accept": [
+      "I'm going to visit my family tomorrow.",
+      "I am going to visit my family tomorrow.",
+      "Tomorrow I will visit my family."
+     ],
+     "hint": [
+      {
+       "lang": "en",
+       "text": "going to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullan, sonra"
+      },
+      {
+       "lang": "en",
+       "text": "visit my family"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Peki bayramda ne dilenir? Türkçedeki iyi bayramlar yerine İngilizler şunu der:"
+     },
+     {
+      "lang": "en",
+      "text": "Happy holidays!"
+     },
+     {
+      "lang": "tr",
+      "text": "Yeni yılda ise:"
+     },
+     {
+      "lang": "en",
+      "text": "Happy New Year!"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Happy holidays!"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Happy holidays!"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hepsini birleştirelim, kısa bir sohbet gibi:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you ever been to a Turkish festival?"
+     },
+     {
+      "lang": "en",
+      "text": "No, I haven't. What do you do?"
+     },
+     {
+      "lang": "en",
+      "text": "We visit our family and we eat special food. It's a nice tradition."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ve karşındaki merak ederse detay ver:"
+     },
+     {
+      "lang": "en",
+      "text": "The children get money and sweets."
+     },
+     {
+      "lang": "tr",
+      "text": "Çocuklar para ve şeker alır."
+     },
+     {
+      "lang": "en",
+      "text": "It's the best day of the year for them."
+     },
+     {
+      "lang": "tr",
+      "text": "Onlar için yılın en güzel günü."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok iyi gidiyorsun. Bugün şunları öğrendik:"
+     },
+     {
+      "lang": "en",
+      "text": "We celebrate this festival in spring."
+     },
+     {
+      "lang": "en",
+      "text": "It's a tradition to visit our grandparents."
+     },
+     {
+      "lang": "en",
+      "text": "Have you ever been to a Turkish festival?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ve kelimeler: festival, tradition, family, special, food. Şimdi bunları gerçek bir sohbette kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İngiltere'den gelen bir arkadaşın sana bayramları soruyor. Ona bir bayramı, geleneklerini ve bu yıl ne yapacağını anlat.",
+   "partner": "Türkiye'yi merak eden İngiliz bir arkadaş",
+   "opening": "Have you ever been to a big festival in Turkey? Tell me about it.",
+   "openingTr": "Türkiye'de büyük bir bayramda hiç bulundun mu? Anlatsana.",
+   "goal": "Bir bayramın adını ve ne zaman kutlandığını söylemen, en az bir geleneği anlatman ve bu yıl ne yapacağını belirtmen hâlinde konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-congrats",
+  "level": "A2",
+  "course": "en",
+  "icon": "party",
+  "title": "Congratulations!",
+  "titleTr": "Tebrikler!",
+  "summary": "Tebrik etme ve iyi dilek kalıplarını öğretir: congratulations on, good luck with, I wish you all the best ve I'm proud of you.",
+  "minutes": 9,
+  "focusId": "Set phrases",
+  "vocab": [
+   {
+    "de": "congratulations",
+    "tr": "tebrikler"
+   },
+   {
+    "de": "luck",
+    "tr": "şans"
+   },
+   {
+    "de": "wish",
+    "tr": "dilemek"
+   },
+   {
+    "de": "proud",
+    "tr": "gururlu"
+   },
+   {
+    "de": "news",
+    "tr": "haber"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Congratulations on your new job!",
+    "tr": "birini bir başarısı için tebrik ederken kullanılır"
+   },
+   {
+    "de": "Good luck with your exam!",
+    "tr": "birine bir iş için şans dilerken kullanılır"
+   },
+   {
+    "de": "I'm so proud of you.",
+    "tr": "biriyle gurur duyduğunu söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bugün tebrik ve iyi dilek kalıplarını çalışıyoruz. Ders bitince bir arkadaşın sana güzel bir haber verdiğinde İngilizce ne diyeceğini bileceksin: tebrik edeceksin, şans dileyeceksin, gurur duyduğunu söyleyeceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "congratulations"
+     },
+     {
+      "lang": "tr",
+      "text": ". Türkçesi tebrikler demek. Sonundaki s'yi asla düşürme, İngilizcede bu kelime hep çoğuldur. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Congratulations!"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Congratulations!"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Neyi tebrik ettiğini de ekleyebilirsin. Bunun için "
+     },
+     {
+      "lang": "en",
+      "text": "on"
+     },
+     {
+      "lang": "tr",
+      "text": " edatını kullanırız. Yeni iş için tebrik edelim. Şunu de:"
+     },
+     {
+      "lang": "en",
+      "text": "Congratulations on your new job!"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Congratulations on your new job!"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat: "
+     },
+     {
+      "lang": "en",
+      "text": "on"
+     },
+     {
+      "lang": "tr",
+      "text": " edatından sonra bir isim gelir. "
+     },
+     {
+      "lang": "en",
+      "text": "Congratulations on your wedding."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani düğünün için tebrikler. Bir fiil kullanmak istersen fiile -ing takarsın: "
+     },
+     {
+      "lang": "en",
+      "text": "Congratulations on passing your exam."
+     },
+     {
+      "lang": "tr",
+      "text": " Sınavı geçtiğin için tebrikler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "news"
+     },
+     {
+      "lang": "tr",
+      "text": ", yani haber. Sonunda s var ama tekil sayılır; "
+     },
+     {
+      "lang": "en",
+      "text": "a news"
+     },
+     {
+      "lang": "tr",
+      "text": " denmez. Bir arkadaşın güzel bir şey anlattığında şöyle dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "That's great news!"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "That's great news!"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ikisini birleştir. Arkadaşın işe girdiğini söyledi. Ona İngilizce şunu söyle: Tebrikler! Harika haber."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Congratulations! That's great news.",
+     "accept": [
+      "Congratulations! That is great news.",
+      "Congratulations! That's wonderful news.",
+      "Congratulations! Great news."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tebrikler için tek kelime yeter, sonra That's ile başlayan kısa bir cümle."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi iyi dileklere geçiyoruz. Üçüncü kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "luck"
+     },
+     {
+      "lang": "tr",
+      "text": ", yani şans. En sık duyacağın kalıp: "
+     },
+     {
+      "lang": "en",
+      "text": "Good luck!"
+     },
+     {
+      "lang": "tr",
+      "text": " Yani iyi şanslar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Neyle ilgili şans dilediğini söylemek istersen "
+     },
+     {
+      "lang": "en",
+      "text": "with"
+     },
+     {
+      "lang": "tr",
+      "text": " kullanırsın. Arkadaşının yarın sınavı var. Şunu de:"
+     },
+     {
+      "lang": "en",
+      "text": "Good luck with your exam!"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Good luck with your exam!"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tebrikte "
+     },
+     {
+      "lang": "en",
+      "text": "on"
+     },
+     {
+      "lang": "tr",
+      "text": ", şans dilemede "
+     },
+     {
+      "lang": "en",
+      "text": "with"
+     },
+     {
+      "lang": "tr",
+      "text": ". Bunu aklında tut, çok karıştırılır. "
+     },
+     {
+      "lang": "en",
+      "text": "Congratulations on your new house."
+     },
+     {
+      "lang": "tr",
+      "text": " ama "
+     },
+     {
+      "lang": "en",
+      "text": "Good luck with the move."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "wish"
+     },
+     {
+      "lang": "tr",
+      "text": ", yani dilemek. Çok kibar bir kalıp: "
+     },
+     {
+      "lang": "en",
+      "text": "I wish you all the best."
+     },
+     {
+      "lang": "tr",
+      "text": " Sana en iyisini diliyorum demek. Lütfen tekrar et:"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I wish you all the best."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Arkadaşın yarın sınava giriyor. Ona iki cümle söyle: Sınavın için iyi şanslar. Sana en iyisini diliyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Good luck with your exam. I wish you all the best.",
+     "accept": [
+      "Good luck with your exam! I wish you all the best!",
+      "Good luck with the exam. I wish you all the best.",
+      "Good luck with your exam tomorrow. I wish you all the best."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İlk cümlede Good luck with, ikinci cümlede I wish you all the best."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşinci kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "proud"
+     },
+     {
+      "lang": "tr",
+      "text": ", yani gururlu. Birinin başarısından gurur duyduğunu söylemek çok içten bir tebriktir. Şunu de:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm so proud of you."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'm so proud of you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Burada edat "
+     },
+     {
+      "lang": "en",
+      "text": "of"
+     },
+     {
+      "lang": "tr",
+      "text": ". "
+     },
+     {
+      "lang": "en",
+      "text": "I'm proud of my sister."
+     },
+     {
+      "lang": "tr",
+      "text": " Kız kardeşimle gurur duyuyorum. Bir eylemden söz edeceksen yine -ing: "
+     },
+     {
+      "lang": "en",
+      "text": "She's proud of passing the test."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bir kontrol. Şu İngilizce cümle doğru mu?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I'm very proud for you.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. "
+      },
+      {
+       "lang": "en",
+       "text": "proud"
+      },
+      {
+       "lang": "tr",
+       "text": " kelimesi "
+      },
+      {
+       "lang": "en",
+       "text": "of"
+      },
+      {
+       "lang": "tr",
+       "text": " ile gelir. Doğrusu: "
+      },
+      {
+       "lang": "en",
+       "text": "I'm very proud of you."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birkaç kısa tebrik daha var. "
+     },
+     {
+      "lang": "en",
+      "text": "Well done!"
+     },
+     {
+      "lang": "tr",
+      "text": " aferin, iyi iş demek. "
+     },
+     {
+      "lang": "en",
+      "text": "Good job!"
+     },
+     {
+      "lang": "tr",
+      "text": " da aynı anlamda. Arkadaşlar arasında "
+     },
+     {
+      "lang": "en",
+      "text": "Congrats!"
+     },
+     {
+      "lang": "tr",
+      "text": " diye kısaltılır ama resmi bir ortamda tam söyle."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özel günlerde ise "
+     },
+     {
+      "lang": "en",
+      "text": "Happy"
+     },
+     {
+      "lang": "tr",
+      "text": " ile başlarsın: "
+     },
+     {
+      "lang": "en",
+      "text": "Happy birthday!"
+     },
+     {
+      "lang": "tr",
+      "text": " "
+     },
+     {
+      "lang": "en",
+      "text": "Happy new year!"
+     },
+     {
+      "lang": "tr",
+      "text": " "
+     },
+     {
+      "lang": "en",
+      "text": "Happy anniversary!"
+     },
+     {
+      "lang": "tr",
+      "text": " Yalnız Noel'de kalıp farklıdır: "
+     },
+     {
+      "lang": "en",
+      "text": "Merry Christmas!"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son alıştırma. Arkadaşın yeni bir işe girdi ve sen çok sevindin. Ona iki cümle söyle: Yeni işin için tebrikler! Seninle gurur duyuyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Congratulations on your new job! I'm so proud of you.",
+     "accept": [
+      "Congratulations on your new job! I am so proud of you.",
+      "Congratulations on the new job! I'm so proud of you.",
+      "Congratulations on your new job! I'm really proud of you."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tebrikte "
+      },
+      {
+       "lang": "en",
+       "text": "on"
+      },
+      {
+       "lang": "tr",
+       "text": ", gururda "
+      },
+      {
+       "lang": "en",
+       "text": "of"
+      },
+      {
+       "lang": "tr",
+       "text": " edatını kullan."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de sana tebrik gelirse ne diyeceğini bil. "
+     },
+     {
+      "lang": "en",
+      "text": "Thank you!"
+     },
+     {
+      "lang": "tr",
+      "text": " ya da daha sıcak biçimde "
+     },
+     {
+      "lang": "en",
+      "text": "Thanks, that's very kind of you."
+     },
+     {
+      "lang": "tr",
+      "text": " Haber kötüyse tebrik değil şu kullanılır: "
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry to hear that."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Tebrik: "
+     },
+     {
+      "lang": "en",
+      "text": "Congratulations on your new job!"
+     },
+     {
+      "lang": "tr",
+      "text": " Şans dileme: "
+     },
+     {
+      "lang": "en",
+      "text": "Good luck with your exam!"
+     },
+     {
+      "lang": "tr",
+      "text": " İyi dilek: "
+     },
+     {
+      "lang": "en",
+      "text": "I wish you all the best."
+     },
+     {
+      "lang": "tr",
+      "text": " Gurur: "
+     },
+     {
+      "lang": "en",
+      "text": "I'm so proud of you."
+     },
+     {
+      "lang": "tr",
+      "text": " Edatları unutma: on, with, of. Şimdi bunları küçük bir konuşmada kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Arkadaşın seni arayıp ehliyet sınavını geçtiğini söylüyor. Onu tebrik ediyor ve iyi dileklerini iletiyorsun.",
+   "partner": "ehliyet sınavını yeni geçmiş arkadaşın",
+   "opening": "Hey! I've got great news — I passed my driving test!",
+   "openingTr": "Selam! Harika bir haberim var — ehliyet sınavımı geçtim!",
+   "goal": "Arkadaşını tebrik edip haberin güzel olduğunu söylediğinde, onunla gurur duyduğunu belirttiğinde ve bundan sonrası için iyi dilekte bulunduğunda konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-apologies",
+  "level": "A2",
+  "course": "en",
+  "icon": "handshake",
+  "title": "Saying sorry",
+  "titleTr": "Özür dilemek",
+  "summary": "Özür dilemeyi ve bir özrü kabul etmeyi öğretir: I'm sorry about, I apologise, It was my fault ve That's OK gibi kalıplar.",
+  "minutes": 9,
+  "focusId": "Apologising",
+  "vocab": [
+   {
+    "de": "apologise",
+    "tr": "özür dilemek"
+   },
+   {
+    "de": "forget",
+    "tr": "unutmak"
+   },
+   {
+    "de": "late",
+    "tr": "geç"
+   },
+   {
+    "de": "mistake",
+    "tr": "hata"
+   },
+   {
+    "de": "promise",
+    "tr": "söz vermek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I'm sorry I'm late.",
+    "tr": "geç kaldığın için özür dilerken kullanılır"
+   },
+   {
+    "de": "I'm sorry about the …",
+    "tr": "belli bir şey için özür dilerken kullanılır"
+   },
+   {
+    "de": "That's OK, don't worry about it.",
+    "tr": "birinin özrünü kabul ederken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugün özür dilemeyi öğreneceğiz: bir hata yaptığında ne dersin, geç kaldığında ne dersin, ve karşındaki özür dilediğinde sen ne cevap verirsin."
+     },
+     {
+      "lang": "tr",
+      "text": "Kısa ve gerçek cümleler kuracağız, sen de benimle birlikte söyleyeceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "En temel özür: "
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani \"özür dilerim\". Tek başına "
+     },
+     {
+      "lang": "en",
+      "text": "Sorry."
+     },
+     {
+      "lang": "tr",
+      "text": " da denir ama tam cümlesi daha kibardır. Lütfen tekrar et: "
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'm sorry."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özrü güçlendirmek için araya bir kelime koyarız: "
+     },
+     {
+      "lang": "en",
+      "text": "I'm so sorry."
+     },
+     {
+      "lang": "tr",
+      "text": " ya da "
+     },
+     {
+      "lang": "en",
+      "text": "I'm really sorry."
+     },
+     {
+      "lang": "tr",
+      "text": " İkisi de \"çok özür dilerim\" demektir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Peki ne için özür diliyoruz? Bunu söylemek için "
+     },
+     {
+      "lang": "en",
+      "text": "about"
+     },
+     {
+      "lang": "tr",
+      "text": " kullanırız: "
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry about the noise."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani \"gürültü için özür dilerim\". Lütfen söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry about the noise."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'm sorry about the noise."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de "
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": " vardır. "
+     },
+     {
+      "lang": "en",
+      "text": "about"
+     },
+     {
+      "lang": "tr",
+      "text": " bir şey hakkında der; "
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": " ise senin yaptığın işi anlatır ve arkasına fiilin -ing hâli gelir: "
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry for shouting."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani \"bağırdığım için özür dilerim\"."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bugünün kelimesi: "
+     },
+     {
+      "lang": "en",
+      "text": "late"
+     },
+     {
+      "lang": "tr",
+      "text": ", yani \"geç\". Geç kaldığında en çok duyacağın cümle: "
+     },
+     {
+      "lang": "en",
+      "text": "Sorry I'm late."
+     },
+     {
+      "lang": "tr",
+      "text": " Lütfen tekrar et: "
+     },
+     {
+      "lang": "en",
+      "text": "Sorry I'm late."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Sorry I'm late."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sebebini de ekleyebilirsin: "
+     },
+     {
+      "lang": "en",
+      "text": "Sorry I'm late. The bus was very slow."
+     },
+     {
+      "lang": "tr",
+      "text": " Kısa bir sebep her zaman iyi karşılanır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Bir arkadaşına \"Geç kaldığım için özür dilerim\" de. Bu sefer tam cümle kur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I'm sorry I'm late.",
+     "accept": [
+      "I am sorry I am late.",
+      "Sorry I'm late.",
+      "I'm sorry that I'm late.",
+      "I'm sorry I am late.",
+      "I am sorry I'm late."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce özür: "
+      },
+      {
+       "lang": "en",
+       "text": "I'm sorry"
+      },
+      {
+       "lang": "tr",
+       "text": ", sonra sebebi aynı cümlenin içinde: "
+      },
+      {
+       "lang": "en",
+       "text": "I'm late"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "mistake"
+     },
+     {
+      "lang": "tr",
+      "text": ", yani \"hata\". Hatayı üstlenmek için iki kısa cümle vardır: "
+     },
+     {
+      "lang": "en",
+      "text": "It was my mistake."
+     },
+     {
+      "lang": "tr",
+      "text": " ve "
+     },
+     {
+      "lang": "en",
+      "text": "It was my fault."
+     },
+     {
+      "lang": "tr",
+      "text": " İkincisi \"benim suçumdu\" demek ve İngilizcede çok doğaldır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "forget"
+     },
+     {
+      "lang": "tr",
+      "text": ", yani \"unutmak\". Geçmiş hâli düzensizdir: "
+     },
+     {
+      "lang": "en",
+      "text": "forgot"
+     },
+     {
+      "lang": "tr",
+      "text": ". Örnek: "
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry, I forgot your birthday."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani \"özür dilerim, doğum gününü unuttum\"."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de kasten yapmadığını söylemek istersin. Bunun kalıbı: "
+     },
+     {
+      "lang": "en",
+      "text": "I didn't mean to …"
+     },
+     {
+      "lang": "tr",
+      "text": " Yani \"…mek istememiştim, kasten yapmadım\". Lütfen söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "I didn't mean to hurt you."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I didn't mean to hurt you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bir doğru-yanlış sorusu. Sana bir cümle söyleyeceğim, doğru mu yanlış mı söyle."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I sorry for the mistake.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. İngilizcede "
+      },
+      {
+       "lang": "en",
+       "text": "sorry"
+      },
+      {
+       "lang": "tr",
+       "text": " bir sıfattır, yanına mutlaka "
+      },
+      {
+       "lang": "en",
+       "text": "am"
+      },
+      {
+       "lang": "tr",
+       "text": " gerekir. Doğrusu: "
+      },
+      {
+       "lang": "en",
+       "text": "I'm sorry for the mistake."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi daha resmî bir kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "apologise"
+     },
+     {
+      "lang": "tr",
+      "text": ", yani \"özür dilemek\". İş yerinde, e-postada, bir müşteriye karşı kullanılır. Lütfen tekrar et: "
+     },
+     {
+      "lang": "en",
+      "text": "I apologise for the delay."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I apologise for the delay."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir yazım notu: İngiltere'de "
+     },
+     {
+      "lang": "en",
+      "text": "apologise"
+     },
+     {
+      "lang": "tr",
+      "text": ", Amerika'da "
+     },
+     {
+      "lang": "en",
+      "text": "apologize"
+     },
+     {
+      "lang": "tr",
+      "text": " yazılır. Söylenişi aynıdır, ikisi de doğrudur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi resmî hâlini sen kur. Bir müşteriye \"Gecikme için özür dilerim\" de."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I apologise for the delay.",
+     "accept": [
+      "I apologize for the delay.",
+      "I apologise for the delay",
+      "I apologize for the delay",
+      "I'm sorry for the delay.",
+      "I am sorry for the delay."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Resmî fiil "
+      },
+      {
+       "lang": "en",
+       "text": "I apologise"
+      },
+      {
+       "lang": "tr",
+       "text": ", sonra "
+      },
+      {
+       "lang": "en",
+       "text": "for"
+      },
+      {
+       "lang": "tr",
+       "text": " ve gecikme: "
+      },
+      {
+       "lang": "en",
+       "text": "the delay"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İyi bir özür genelde bir sözle biter. Bugünün son kelimesi: "
+     },
+     {
+      "lang": "en",
+      "text": "promise"
+     },
+     {
+      "lang": "tr",
+      "text": ", yani \"söz vermek\". Kalıp şudur: "
+     },
+     {
+      "lang": "en",
+      "text": "I promise it won't happen again."
+     },
+     {
+      "lang": "tr",
+      "text": " Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I promise it won't happen again."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi madalyonun diğer yüzü: biri senden özür dilerse ne dersin? En yaygınları: "
+     },
+     {
+      "lang": "en",
+      "text": "That's OK."
+     },
+     {
+      "lang": "tr",
+      "text": ", "
+     },
+     {
+      "lang": "en",
+      "text": "No problem."
+     },
+     {
+      "lang": "tr",
+      "text": ", "
+     },
+     {
+      "lang": "en",
+      "text": "It doesn't matter."
+     },
+     {
+      "lang": "tr",
+      "text": " ve "
+     },
+     {
+      "lang": "en",
+      "text": "Never mind."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "En sıcak olanı ise şudur: "
+     },
+     {
+      "lang": "en",
+      "text": "Don't worry about it."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani \"boş ver, dert etme\". Lütfen söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "Don't worry about it."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Don't worry about it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son alıştırma. Arkadaşın geç kaldığı için özür diledi. Sen \"Sorun değil, dert etme\" de."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "That's OK, don't worry about it.",
+     "accept": [
+      "That's OK. Don't worry about it.",
+      "That's okay, don't worry about it.",
+      "It's OK, don't worry about it.",
+      "No problem, don't worry about it.",
+      "That's OK don't worry about it"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce kabul: "
+      },
+      {
+       "lang": "en",
+       "text": "That's OK"
+      },
+      {
+       "lang": "tr",
+       "text": ", sonra rahatlatma: "
+      },
+      {
+       "lang": "en",
+       "text": "don't worry about it"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika iş çıkardın. Özetleyelim: özür "
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry"
+     },
+     {
+      "lang": "tr",
+      "text": ", sebebi "
+     },
+     {
+      "lang": "en",
+      "text": "about"
+     },
+     {
+      "lang": "tr",
+      "text": " ya da "
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": " ile. Hatayı üstlen: "
+     },
+     {
+      "lang": "en",
+      "text": "It was my fault."
+     },
+     {
+      "lang": "tr",
+      "text": " Resmîsi "
+     },
+     {
+      "lang": "en",
+      "text": "I apologise for …"
+     },
+     {
+      "lang": "tr",
+      "text": ", sözü "
+     },
+     {
+      "lang": "en",
+      "text": "I promise it won't happen again."
+     },
+     {
+      "lang": "tr",
+      "text": " Kabul ederken "
+     },
+     {
+      "lang": "en",
+      "text": "Don't worry about it."
+     },
+     {
+      "lang": "tr",
+      "text": " Şimdi bunları küçük bir sohbette kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla sinema önünde buluşacaktınız ama yarım saat geç kaldın ve biletleri almayı da unuttun. Yanına gidip özür diliyorsun.",
+   "partner": "Emma, yakın bir arkadaşın",
+   "opening": "There you are! I've been here for half an hour. What happened?",
+   "openingTr": "İşte buradasın! Yarım saattir buradayım. Ne oldu?",
+   "goal": "Öğrenci geç kaldığı ve biletleri unuttuğu için özür diler, sebebini kısaca söyler, hatayı üstlenir (It was my fault) ve bir daha olmayacağına dair söz verir; karşısındakinin özür kabul cümlelerine de doğal bir karşılık verir.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-friendship",
+  "level": "A2",
+  "course": "en",
+  "icon": "handshake",
+  "title": "My friends",
+  "titleTr": "Arkadaşlarım",
+  "summary": "Arkadaşlarını tanıtmayı, ne kadar süredir arkadaş olduğunuzu ve birlikte neler yaptığınızı İngilizce anlatmayı öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Describing people",
+  "vocab": [
+   {
+    "de": "close",
+    "tr": "yakın"
+   },
+   {
+    "de": "together",
+    "tr": "birlikte"
+   },
+   {
+    "de": "trust",
+    "tr": "güvenmek"
+   },
+   {
+    "de": "share",
+    "tr": "paylaşmak"
+   },
+   {
+    "de": "laugh",
+    "tr": "gülmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "She is a close friend of mine.",
+    "tr": "birinin senin yakın arkadaşın olduğunu söylerken kullanılır"
+   },
+   {
+    "de": "We have been friends for ten years.",
+    "tr": "ne kadar süredir arkadaş olduğunuzu söylerken kullanılır"
+   },
+   {
+    "de": "We met at school.",
+    "tr": "nerede tanıştığınızı anlatırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugünkü dersimizin adı: Arkadaşlarım."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu derste arkadaşlarını İngilizce tanıtmayı, ne kadar süredir arkadaş olduğunuzu ve birlikte neler yaptığınızı anlatmayı öğreneceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Önce beş kelime alacağız, sonra bu kelimelerle gerçek cümleler kuracağız. Acele etme, her seferinde sesli söyle."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "close"
+     },
+     {
+      "lang": "tr",
+      "text": ". Burada \"yakın\" demek. Bir arkadaşın için kullanınca \"yakın arkadaş\" olur. Lütfen tekrar et: "
+     },
+     {
+      "lang": "en",
+      "text": "She is a close friend."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She is a close friend."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok iyi. En yakın arkadaşın için ise "
+     },
+     {
+      "lang": "en",
+      "text": "my best friend"
+     },
+     {
+      "lang": "tr",
+      "text": " dersin. Yani: "
+     },
+     {
+      "lang": "en",
+      "text": "Ayşe is my best friend."
+     },
+     {
+      "lang": "tr",
+      "text": " Türkçesi: Ayşe benim en yakın arkadaşım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "together"
+     },
+     {
+      "lang": "tr",
+      "text": ". \"Birlikte\" demek. Şimdi tam bir cümle söyleyelim: "
+     },
+     {
+      "lang": "en",
+      "text": "We spend a lot of time together."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani: Birlikte çok vakit geçiriyoruz. Sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We spend a lot of time together."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "trust"
+     },
+     {
+      "lang": "tr",
+      "text": ". \"Güvenmek\" demek. Dikkat et: Türkçede \"ona güveniyorum\" derken \"-e\" eki var ama İngilizcede araya hiçbir şey koymuyorsun. Sadece "
+     },
+     {
+      "lang": "en",
+      "text": "I trust him."
+     },
+     {
+      "lang": "tr",
+      "text": " Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I trust him."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bunu biraz daha güçlü söylemek istersen: "
+     },
+     {
+      "lang": "en",
+      "text": "I can tell her everything."
+     },
+     {
+      "lang": "tr",
+      "text": " Ona her şeyi anlatabilirim. Arkadaşlıktan bahsederken çok kullanılan bir cümle."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "share"
+     },
+     {
+      "lang": "tr",
+      "text": ". \"Paylaşmak\" demek. Söyleyelim: "
+     },
+     {
+      "lang": "en",
+      "text": "We share everything."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We share everything."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşinci kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "laugh"
+     },
+     {
+      "lang": "tr",
+      "text": ". \"Gülmek\" demek. Sondaki g-h harfleri okunmuyor, kelime \"laf\" gibi çıkıyor. Şimdi: "
+     },
+     {
+      "lang": "en",
+      "text": "We laugh a lot."
+     },
+     {
+      "lang": "tr",
+      "text": " Çok gülüyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We laugh a lot."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beş kelimemiz tamam. Şimdi arkadaşlıkta en çok sorulan şeye geçiyoruz: ne kadar zamandır arkadaşsınız?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İngilizcede bunun için "
+     },
+     {
+      "lang": "en",
+      "text": "We have been friends"
+     },
+     {
+      "lang": "tr",
+      "text": " kalıbını kullanırız. Sonuna iki şeyden biri gelir: "
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": " süre uzunluğu için — "
+     },
+     {
+      "lang": "en",
+      "text": "for ten years"
+     },
+     {
+      "lang": "tr",
+      "text": ", on yıldır. "
+     },
+     {
+      "lang": "en",
+      "text": "since"
+     },
+     {
+      "lang": "tr",
+      "text": " ise başlangıç noktası için — "
+     },
+     {
+      "lang": "en",
+      "text": "since primary school"
+     },
+     {
+      "lang": "tr",
+      "text": ", ilkokuldan beri."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "We have been friends since primary school."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We have been friends since primary school."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika. Şimdi cümleyi sen kur. Şunu İngilizce söyle: Onu on yıldır tanıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have known him for ten years.",
+     "accept": [
+      "I have known her for ten years.",
+      "I've known him for ten years.",
+      "I've known her for ten years."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Tanımak\" fiili "
+      },
+      {
+       "lang": "en",
+       "text": "know"
+      },
+      {
+       "lang": "tr",
+       "text": ", bu kalıpta "
+      },
+      {
+       "lang": "en",
+       "text": "known"
+      },
+      {
+       "lang": "tr",
+       "text": " olur. Süre uzunluğu için "
+      },
+      {
+       "lang": "en",
+       "text": "for"
+      },
+      {
+       "lang": "tr",
+       "text": " kullan."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi arkadaşının nasıl biri olduğunu anlatalım. Dört sıfat veriyorum: "
+     },
+     {
+      "lang": "en",
+      "text": "kind"
+     },
+     {
+      "lang": "tr",
+      "text": " kibar, "
+     },
+     {
+      "lang": "en",
+      "text": "funny"
+     },
+     {
+      "lang": "tr",
+      "text": " komik, "
+     },
+     {
+      "lang": "en",
+      "text": "honest"
+     },
+     {
+      "lang": "tr",
+      "text": " dürüst, "
+     },
+     {
+      "lang": "en",
+      "text": "patient"
+     },
+     {
+      "lang": "tr",
+      "text": " sabırlı."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bunları ikişer ikişer birleştirebilirsin. Şimdi sen kur: O çok kibar ve komik. Bir erkek arkadaşından bahsediyorsun."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "He is very kind and funny.",
+     "accept": [
+      "He's very kind and funny.",
+      "He is very funny and kind.",
+      "He's very funny and kind."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"O\" erkek için "
+      },
+      {
+       "lang": "en",
+       "text": "he"
+      },
+      {
+       "lang": "tr",
+       "text": ", \"çok\" için "
+      },
+      {
+       "lang": "en",
+       "text": "very"
+      },
+      {
+       "lang": "tr",
+       "text": ", \"ve\" için "
+      },
+      {
+       "lang": "en",
+       "text": "and"
+      },
+      {
+       "lang": "tr",
+       "text": "."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi küçük bir kontrol. Şu İngilizce cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "We have been friends for 2015."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "We have been friends for 2015.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. 2015 bir başlangıç noktası, süre uzunluğu değil. Doğrusu "
+      },
+      {
+       "lang": "en",
+       "text": "We have been friends since 2015."
+      },
+      {
+       "lang": "tr",
+       "text": " Süre söyleyecek olsaydın "
+      },
+      {
+       "lang": "en",
+       "text": "for ten years"
+      },
+      {
+       "lang": "tr",
+       "text": " derdin."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de nerede tanıştığınızı anlatmak var. Bu geçmişte olup bitti, o yüzden geçmiş zaman kullanıyoruz: "
+     },
+     {
+      "lang": "en",
+      "text": "We met at school."
+     },
+     {
+      "lang": "tr",
+      "text": " Okulda tanıştık. Ya da "
+     },
+     {
+      "lang": "en",
+      "text": "We met at work."
+     },
+     {
+      "lang": "tr",
+      "text": " İşte tanıştık."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son cümleyi sen kur: Üniversitede tanıştık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We met at university.",
+     "accept": [
+      "We met at the university.",
+      "We met in university.",
+      "We met at college."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Tanışmak\" fiilinin geçmiş hâli "
+      },
+      {
+       "lang": "en",
+       "text": "met"
+      },
+      {
+       "lang": "tr",
+       "text": ", üniversite "
+      },
+      {
+       "lang": "en",
+       "text": "university"
+      },
+      {
+       "lang": "tr",
+       "text": "."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok güzel iş çıkardın. Kısaca toparlayalım: yakın arkadaşını tanıtmak için "
+     },
+     {
+      "lang": "en",
+      "text": "She is a close friend."
+     },
+     {
+      "lang": "tr",
+      "text": " Süre için "
+     },
+     {
+      "lang": "en",
+      "text": "We have been friends for ten years"
+     },
+     {
+      "lang": "tr",
+      "text": " ya da "
+     },
+     {
+      "lang": "en",
+      "text": "since 2015"
+     },
+     {
+      "lang": "tr",
+      "text": ". Tanışma yeri için "
+     },
+     {
+      "lang": "en",
+      "text": "We met at school."
+     },
+     {
+      "lang": "tr",
+      "text": " Ve beş kelimemiz: close, together, trust, share, laugh."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi öğrendiklerini konuşmada kullanma zamanı. Kolay gelsin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yeni bir dil kursundasın. Molada yanındaki kişi seninle sohbete başlıyor ve en yakın arkadaşını soruyor.",
+   "partner": "kursta tanıştığın arkadaş canlısı bir öğrenci",
+   "opening": "So, tell me about your best friend. What is he or she like?",
+   "openingTr": "Anlatsana, en yakın arkadaşın nasıl biri?",
+   "goal": "Arkadaşının kim olduğunu, nasıl bir insan olduğunu, ne kadar süredir arkadaş olduğunuzu ve birlikte neler yaptığınızı anlattığında konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-relationships",
+  "level": "A2",
+  "course": "en",
+  "icon": "family",
+  "title": "Family and relationships",
+  "titleTr": "Aile ve ilişkiler",
+  "summary": "İlişkileri ve hayat evrelerini İngilizce anlatmayı öğretir: nişanlanmak, evlenmek, boşanmak ve bir ilişkinin ne kadar zamandır sürdüğünü söylemek.",
+  "minutes": 9,
+  "focusId": "Life stages",
+  "vocab": [
+   {
+    "de": "relative",
+    "tr": "akraba"
+   },
+   {
+    "de": "couple",
+    "tr": "çift"
+   },
+   {
+    "de": "engaged",
+    "tr": "nişanlı"
+   },
+   {
+    "de": "marry",
+    "tr": "evlenmek"
+   },
+   {
+    "de": "divorce",
+    "tr": "boşanma"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "They got married in 2015.",
+    "tr": "birinin geçmişte ne zaman evlendiğini söylerken kullanılır"
+   },
+   {
+    "de": "They have been married for ten years.",
+    "tr": "bir ilişkinin ne kadar zamandır sürdüğünü söylerken kullanılır"
+   },
+   {
+    "de": "My cousin is going to get engaged next month.",
+    "tr": "ailedeki bir planı, yakın geleceği anlatırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün aile ve ilişkileri konuşacağız. Kim nişanlanmış, kim evlenmiş, kim kaç yıldır evli, kim boşanmış — hepsini İngilizce anlatmayı öğreneceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "relative"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi akraba demek. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "relative"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "relative"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çoğulu"
+     },
+     {
+      "lang": "en",
+      "text": "relatives"
+     },
+     {
+      "lang": "tr",
+      "text": "Mesela:"
+     },
+     {
+      "lang": "en",
+      "text": "I have a lot of relatives in Izmir."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: İzmir'de bir sürü akrabam var."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "couple"
+     },
+     {
+      "lang": "tr",
+      "text": "Çift demek: birlikte olan iki kişi. Genç bir çift dersen:"
+     },
+     {
+      "lang": "en",
+      "text": "a young couple"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen de:"
+     },
+     {
+      "lang": "en",
+      "text": "a young couple"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a young couple"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "engaged"
+     },
+     {
+      "lang": "tr",
+      "text": "Nişanlı demek. Nişanlanmak içinse fiil olarak"
+     },
+     {
+      "lang": "en",
+      "text": "get engaged"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Geçmişte:"
+     },
+     {
+      "lang": "en",
+      "text": "They got engaged last year."
+     },
+     {
+      "lang": "tr",
+      "text": "Geçen yıl nişanlandılar. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They got engaged last year."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şuna dikkat et: İngilizcede bir durumdan başka bir duruma geçerken çoğu zaman"
+     },
+     {
+      "lang": "en",
+      "text": "get"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır."
+     },
+     {
+      "lang": "en",
+      "text": "get engaged, get married, get divorced"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani nişanlanmak, evlenmek, boşanmak. Bu üçünü bir kalıp gibi aklında tut."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "marry"
+     },
+     {
+      "lang": "tr",
+      "text": "evlenmek. Günlük İngilizcede genelde"
+     },
+     {
+      "lang": "en",
+      "text": "get married"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz:"
+     },
+     {
+      "lang": "en",
+      "text": "They got married in June."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir de küçük bir tuzak var: İngilizcede 'marry with' YOK. Biriyle evlendi demek istersen"
+     },
+     {
+      "lang": "en",
+      "text": "She married Ali."
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "She got married to Ali."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Şunu İngilizce kur: Geçen yaz evlendiler."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They got married last summer.",
+     "accept": [
+      "They married last summer.",
+      "They got married last summer"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce özne: they. Sonra get'in geçmişi: got married. En sona zaman: last summer."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşinci kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "divorce"
+     },
+     {
+      "lang": "tr",
+      "text": "İsim olarak boşanma, fiil olarak boşanmak. Ama en sık duyacağın hâli yine get ile:"
+     },
+     {
+      "lang": "en",
+      "text": "They got divorced two years ago."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen de:"
+     },
+     {
+      "lang": "en",
+      "text": "They got divorced."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They got divorced."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi hayat evrelerine bakalım. İngilizcede bir hayatı sırayla anlatırken şu fiiller geçer:"
+     },
+     {
+      "lang": "en",
+      "text": "be born, grow up, study, get a job, get married, have children, retire"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: doğmak, büyümek, okumak, iş bulmak, evlenmek, çocuk sahibi olmak, emekli olmak."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Doğdum derken İngilizce çok net bir kalıp kullanır:"
+     },
+     {
+      "lang": "en",
+      "text": "I was born"
+     },
+     {
+      "lang": "tr",
+      "text": "'I am born' değil, 'I was born'. Lütfen de:"
+     },
+     {
+      "lang": "en",
+      "text": "I was born in Istanbul."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I was born in Istanbul."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Büyümek için"
+     },
+     {
+      "lang": "en",
+      "text": "grow up"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Geçmişi düzensizdir:"
+     },
+     {
+      "lang": "en",
+      "text": "I grew up in a small town."
+     },
+     {
+      "lang": "tr",
+      "text": "Küçük bir kasabada büyüdüm."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi çok işine yarayacak bir yapı. Bir durum geçmişte başladı ve hâlâ sürüyorsa,"
+     },
+     {
+      "lang": "en",
+      "text": "have been"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanırız. Lütfen de:"
+     },
+     {
+      "lang": "en",
+      "text": "They have been married for ten years."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They have been married for ten years."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkisini karıştırma:"
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": "süre içindir — on yıldır, iki aydır."
+     },
+     {
+      "lang": "en",
+      "text": "since"
+     },
+     {
+      "lang": "tr",
+      "text": "ise başlangıç noktası içindir — 2015'ten beri. Yani:"
+     },
+     {
+      "lang": "en",
+      "text": "for ten years"
+     },
+     {
+      "lang": "tr",
+      "text": "ama"
+     },
+     {
+      "lang": "en",
+      "text": "since 2015"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen kur bakalım: Beş yıldır nişanlılar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They have been engaged for five years.",
+     "accept": [
+      "They've been engaged for five years.",
+      "They have been engaged for 5 years."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "have been ile başla, sonra engaged, sonra süre için for kullan."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "When a couple get divorced, they are still married.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Boşanmak evliliğin bitmesi demek. Doğrusu: When a couple get divorced, they are not married any more."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aileyle ilgili planları anlatırken çoğunlukla"
+     },
+     {
+      "lang": "en",
+      "text": "going to"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanırız, çünkü karar önceden verilmiştir:"
+     },
+     {
+      "lang": "en",
+      "text": "My brother is going to get married in May."
+     },
+     {
+      "lang": "tr",
+      "text": "Abim mayısta evlenecek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son cümleyi sen kur: Kuzenim gelecek ay nişanlanacak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My cousin is going to get engaged next month.",
+     "accept": [
+      "My cousin will get engaged next month.",
+      "My cousin is getting engaged next month."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kuzen: my cousin. Plan olduğu için is going to, sonra get engaged, en sona next month."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de tanışırken çok duyacağın kısa bir alışveriş var:"
+     },
+     {
+      "lang": "en",
+      "text": "Are you married?"
+     },
+     {
+      "lang": "tr",
+      "text": "Cevabın:"
+     },
+     {
+      "lang": "en",
+      "text": "No, I'm single, but I'm engaged."
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, I've been married for three years."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Beş kelime öğrendik: relative, couple, engaged, marry, divorce. Değişimi anlatırken get kullanıyoruz: get engaged, get married, get divorced. Doğdum derken 'I was born'. Süren bir durum için 'have been ... for'. Plan için 'going to'. Şimdi bunları küçük bir sohbette deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir iş yemeğinde yeni tanıştığın yabancı bir meslektaşınla ailelerinizden söz ediyorsunuz.",
+   "partner": "İngiliz meslektaşın Emma",
+   "opening": "So, tell me about your family. Do you have a lot of relatives?",
+   "openingTr": "Anlat bakalım, ailen nasıl? Çok akraban var mı?",
+   "goal": "Ailenden en az iki kişiyi tanıtıp hayat evrelerini anlatırsan başarılı sayılır: kimin ne zaman evlendiğini, kimin nişanlı olduğunu ve bir ilişkinin kaç yıldır sürdüğünü söylemelisin.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-small-talk",
+  "level": "A2",
+  "course": "en",
+  "icon": "party",
+  "title": "Small talk at a party",
+  "titleTr": "Partide sohbet",
+  "summary": "Bir partide tanımadığın biriyle sohbeti nasıl başlatacağını, sürdüreceğini ve kibarca bitireceğini öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Conversation openers",
+  "vocab": [
+   {
+    "de": "party",
+    "tr": "parti"
+   },
+   {
+    "de": "meet",
+    "tr": "tanışmak, buluşmak"
+   },
+   {
+    "de": "know",
+    "tr": "bilmek, tanımak"
+   },
+   {
+    "de": "enjoy",
+    "tr": "tadını çıkarmak"
+   },
+   {
+    "de": "drink",
+    "tr": "içecek; içmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Nice to meet you.",
+    "tr": "biriyle ilk kez tanışırken söylenir"
+   },
+   {
+    "de": "How do you know …?",
+    "tr": "karşındakinin ev sahibini nereden tanıdığını sorar"
+   },
+   {
+    "de": "Have you been here before?",
+    "tr": "daha önce gelip gelmediğini sorar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün seni bir partiye götürüyorum. Kimseyi tanımıyorsun, elinde bir bardak var ve yanında biri duruyor. İşte tam o an lazım olan İngilizceyi çalışacağız."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlayalım."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu derste üç şeyi yapabileceksin: tanışmayı başlatmak, sohbeti sürdürmek için soru sormak ve konuşmayı kibarca bitirmek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz kolay. İngilizcede parti demek:"
+     },
+     {
+      "lang": "en",
+      "text": "party"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "party"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz: tanışmak, buluşmak."
+     },
+     {
+      "lang": "en",
+      "text": "meet"
+     },
+     {
+      "lang": "tr",
+      "text": "Birisiyle ilk kez tanıştığında İngilizler şunu söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "Nice to meet you."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Tanıştığımıza memnun oldum. Hadi söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Nice to meet you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ama önce kendini tanıtman lazım. İsmini söylemek çok kısa:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm Deniz. Nice to meet you."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunu sen söyle. İstersen kendi ismini kullan."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'm Deniz. Nice to meet you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karşındaki de sana aynısını söyleyecek. O zaman sen cevabına küçük bir kelime eklersin:"
+     },
+     {
+      "lang": "en",
+      "text": "too"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani ben de. Peki karşındaki sana Nice to meet you dedi. Ben de memnun oldum, nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Nice to meet you too.",
+     "accept": [
+      "Nice to meet you, too.",
+      "Nice to meet you too",
+      "It's nice to meet you too."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı cümlenin sonuna ben de anlamındaki kelimeyi ekle."
+      },
+      {
+       "lang": "en",
+       "text": "Nice to meet you …"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tanıştın. Şimdi en zor an geliyor: sessizlik. Sessizliği bozmanın en güvenli yolu, ikinizin de tanıdığı bir kişiden söz etmek. Yani ev sahibinden."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bunun için tanımak fiili lazım."
+     },
+     {
+      "lang": "en",
+      "text": "know"
+     },
+     {
+      "lang": "tr",
+      "text": "Ve partilerin klasik sorusu şu:"
+     },
+     {
+      "lang": "en",
+      "text": "How do you know Emma?"
+     },
+     {
+      "lang": "tr",
+      "text": "Kelimesi kelimesine Emma'yı nasıl tanıyorsun, ama Türkçesi Emma'yı nereden tanıyorsun. Söyle bakalım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "How do you know Emma?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat et: burada nereden değil, how yani nasıl kullanılıyor. Where do you know demek yanlış olur. Bu kalıbı olduğu gibi ezberle: How do you know … ve sonuna kişinin adını koy."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ev sahibinin adı Sarah olsun. Ona Sarah'ı nereden tanıyorsun diye sor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "How do you know Sarah?",
+     "accept": [
+      "How do you know Sarah"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Nasıl kelimesiyle başla, sonra do you know ve isim."
+      },
+      {
+       "lang": "en",
+       "text": "How do you … Sarah?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevap da hazır olsun. Sen Sarah'ı işten tanıyorsan:"
+     },
+     {
+      "lang": "en",
+      "text": "We work together."
+     },
+     {
+      "lang": "tr",
+      "text": "Okuldan tanıyorsan:"
+     },
+     {
+      "lang": "en",
+      "text": "We were at school together."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sohbeti uzatmak için ikinci bir soru daha var. Bu evde ya da bu partide daha önce bulundun mu diye sorarsın:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you been here before?"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdiye kadar hiç geldin mi demek. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Have you been here before?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevabı da öğrenelim. Geldiysen:"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, I have. I came last year."
+     },
+     {
+      "lang": "tr",
+      "text": "İlk kez geldiysen:"
+     },
+     {
+      "lang": "en",
+      "text": "No, this is my first time."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümleyi dinle ve doğru mu yanlış mı söyle."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Nice to meet you again.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Meet ilk tanışma içindir, o yüzden again ile birlikte kullanılmaz. Daha önce tanıştığın birini yeniden gördüğünde şöyle dersin:"
+      },
+      {
+       "lang": "en",
+       "text": "Nice to see you again."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi partinin ortasındasınız. Bir sonraki kelimemiz: içecek."
+     },
+     {
+      "lang": "en",
+      "text": "drink"
+     },
+     {
+      "lang": "tr",
+      "text": "Kibarca ikram etmek için:"
+     },
+     {
+      "lang": "en",
+      "text": "Would you like a drink?"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir şey içmek ister misin. Söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Would you like a drink?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevabı kısa tut. Evet için:"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, please."
+     },
+     {
+      "lang": "tr",
+      "text": "Hayır için:"
+     },
+     {
+      "lang": "en",
+      "text": "No, thanks. I'm fine."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz: tadını çıkarmak."
+     },
+     {
+      "lang": "en",
+      "text": "enjoy"
+     },
+     {
+      "lang": "tr",
+      "text": "Partide sık sorulan bir soru var:"
+     },
+     {
+      "lang": "en",
+      "text": "Are you enjoying the party?"
+     },
+     {
+      "lang": "tr",
+      "text": "Partide iyi vakit geçiriyor musun demek. Şimdi sen cevap ver: Partinin tadını çıkarıyorum, yani iyi vakit geçiriyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I'm enjoying the party.",
+     "accept": [
+      "I am enjoying the party.",
+      "Yes, I'm enjoying the party.",
+      "I'm enjoying the party a lot."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Şu anda oluyor, o yüzden am ve fiilin ing hâli."
+      },
+      {
+       "lang": "en",
+       "text": "I'm … the party."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de bitiriş lazım. Konuşmayı kaba görünmeden bırakmak için iki cümle yeter:"
+     },
+     {
+      "lang": "en",
+      "text": "It was nice talking to you."
+     },
+     {
+      "lang": "en",
+      "text": "I'm going to get another drink. See you later."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu ikisini birlikte söylersen kimse alınmaz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It was nice talking to you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım. Tanışırken Nice to meet you, sohbeti açarken How do you know Sarah ve Have you been here before, ikram ederken Would you like a drink, ayrılırken It was nice talking to you."
+     },
+     {
+      "lang": "tr",
+      "text": "Beş cümle, koca bir parti. Şimdi bunları gerçek bir sohbette deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşının ev partisindesin. Mutfakta kimseyi tanımıyorsun ve yanındaki kişi sana dönüp gülümsüyor.",
+   "partner": "partide tanımadığın bir misafir",
+   "opening": "Hi! I don't think we've met. I'm Emma.",
+   "openingTr": "Merhaba! Sanırım tanışmadık. Ben Emma.",
+   "goal": "Kendini tanıtıp Emma'nın ev sahibini nereden tanıdığını sor, daha önce gelip gelmediğini öğren ve konuşmayı kibarca bitir.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-thank-you",
+  "level": "A2",
+  "course": "en",
+  "icon": "handshake",
+  "title": "Saying thank you",
+  "titleTr": "Teşekkür etmek",
+  "summary": "İngilizcede teşekkür etmeyi ve teşekküre karşılık vermeyi öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Gratitude",
+  "vocab": [
+   {
+    "de": "thank",
+    "tr": "teşekkür etmek"
+   },
+   {
+    "de": "kind",
+    "tr": "iyi kalpli, nazik"
+   },
+   {
+    "de": "welcome",
+    "tr": "rica ederim (You're welcome)"
+   },
+   {
+    "de": "help",
+    "tr": "yardım, yardım etmek"
+   },
+   {
+    "de": "note",
+    "tr": "not, kısa yazı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Thank you for your help.",
+    "tr": "Birine yardımı için teşekkür ederken kullanılır."
+   },
+   {
+    "de": "Thanks for helping me.",
+    "tr": "Teşekkürün sebebi bir eylemse, fiile -ing eklenir."
+   },
+   {
+    "de": "You're welcome.",
+    "tr": "Teşekküre karşılık verirken kullanılır: rica ederim."
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün İngilizcede teşekkür etmeyi ve birisi sana teşekkür ettiğinde ne diyeceğini öğreneceğiz. Kısa, gerçek cümleler kuracağız."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlıyoruz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "thank"
+     },
+     {
+      "lang": "tr",
+      "text": "teşekkür etmek demek. En çok kullandığımız hali iki kelimedir:"
+     },
+     {
+      "lang": "en",
+      "text": "thank you"
+     },
+     {
+      "lang": "tr",
+      "text": "yani teşekkür ederim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daha güçlü söylemek istersen sona very much eklersin. Lütfen benimle söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Thank you very much."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Thank you very much."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Arkadaşlar arasında, günlük konuşmada daha kısası kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "Thanks."
+     },
+     {
+      "lang": "tr",
+      "text": "veya"
+     },
+     {
+      "lang": "en",
+      "text": "Thanks a lot."
+     },
+     {
+      "lang": "tr",
+      "text": "Thank you daha resmi, thanks daha samimidir. İkisi de kibardır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sebebini de söyleyelim. Bir isimden önce for kullanırız:"
+     },
+     {
+      "lang": "en",
+      "text": "Thank you for the coffee."
+     },
+     {
+      "lang": "tr",
+      "text": "Kahve için teşekkür ederim. Bir sonraki kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "help"
+     },
+     {
+      "lang": "tr",
+      "text": "yardım demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Thank you for your help."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Thank you for your help."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat: teşekkürün sebebi bir eylemse, İngilizcede fiile -ing ekleriz. Türkçede yardım ettiğin için deriz, İngilizcede for helping deriz. For to help denmez, bu çok yapılan bir hatadır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Thanks for helping me."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Thanks for helping me."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Birisi seni bekledi ve ona teşekkür ediyorsun. Şunu İngilizce söyle: Beklediğiniz için teşekkür ederim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Thank you for waiting.",
+     "accept": [
+      "Thanks for waiting.",
+      "Thank you for waiting",
+      "Thanks for waiting",
+      "Thank you very much for waiting."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "thank you for ile başla, sonra beklemek fiiline -ing ekle: wait, waiting."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Şimdi geçmişten bahsedelim. Şunu söyle: Dün bana yardım ettiğin için teşekkürler."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Thanks for helping me yesterday.",
+     "accept": [
+      "Thank you for helping me yesterday.",
+      "Thanks for helping me yesterday",
+      "Thank you for your help yesterday."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Thanks for helping me ile başla, sonuna yesterday ekle. Zaman kelimesi cümlenin sonuna gelir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "kind"
+     },
+     {
+      "lang": "tr",
+      "text": "iyi kalpli, nazik demek. Birisi senin için güzel bir şey yaptığında sık kullanılan bir cümle var:"
+     },
+     {
+      "lang": "en",
+      "text": "That's very kind of you."
+     },
+     {
+      "lang": "tr",
+      "text": "Çok naziksiniz anlamına gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "That's very kind of you."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "That's very kind of you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir teşekkürü daha da içten yapmak istersen appreciate fiilini kullanırsın; kıymetini bilmek, minnettar olmak demek."
+     },
+     {
+      "lang": "en",
+      "text": "I really appreciate it."
+     },
+     {
+      "lang": "tr",
+      "text": "Gerçekten minnettarım. İş yerinde ve arkadaşlar arasında çok duyarsın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I really appreciate it."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I really appreciate it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi diğer taraf: birisi sana teşekkür etti, ne dersin? En bilinen cevap:"
+     },
+     {
+      "lang": "en",
+      "text": "You're welcome."
+     },
+     {
+      "lang": "tr",
+      "text": "Rica ederim demek. Dikkat, buradaki welcome hoş geldiniz anlamında değil. Daha rahat cevaplar da var:"
+     },
+     {
+      "lang": "en",
+      "text": "No problem."
+     },
+     {
+      "lang": "en",
+      "text": "My pleasure."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "You're welcome."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You're welcome."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen cevap ver. Biri sana teşekkür etti. İki kısa cümleyle söyle: Rica ederim. Sorun değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "You're welcome. No problem.",
+     "accept": [
+      "You are welcome. No problem.",
+      "You're welcome, no problem.",
+      "No problem. You're welcome."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İlk cümle you're ile başlar, ikinci cümlede problem kelimesi geçer."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "note"
+     },
+     {
+      "lang": "tr",
+      "text": "kısa yazı, not demek. Bir hediye veya büyük bir yardım sonrası insanlar teşekkür notu yazar:"
+     },
+     {
+      "lang": "en",
+      "text": "I wrote her a thank-you note."
+     },
+     {
+      "lang": "tr",
+      "text": "Ona bir teşekkür notu yazdım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu İngilizce cümle doğru mu yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "You say 'You're welcome' when you want to thank someone."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "You say 'You're welcome' when you want to thank someone.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. You're welcome teşekkür etmek için değil, teşekküre cevap vermek için kullanılır: rica ederim. Teşekkür etmek için thank you veya thanks dersin."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika iş çıkardın. Bugün öğrendiklerimiz: thank you ve thanks ile teşekkür etmek, sebebi söylemek için for ve fiile -ing eklemek, that's very kind of you ve I really appreciate it ile içtenliği artırmak, karşılık olarak you're welcome, no problem ve my pleasure demek. Şimdi kısa bir sahnede bunları kullanacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Ağır çantalarını taşırken bir komşun sana yardım etti ve kapıyı açtı. Şimdi ona teşekkür ediyorsun.",
+   "partner": "yardım eden komşun",
+   "opening": "Here, let me help you with those bags.",
+   "openingTr": "Gel, şu çantalarda sana yardım edeyim.",
+   "goal": "Yardımı için teşekkür etmen, sebebini for ile söylemen ve komşunun teşekkürüne de karşılık vermen yeterli.",
+   "minTurns": 7
+  }
  }
 ]
