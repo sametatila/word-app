@@ -2,6 +2,7 @@ import "server-only";
 import { headers } from "next/headers";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { apple as appleProvider } from "better-auth/social-providers";
 import { db } from "@/lib/db";
 import { user, session, account, verification } from "@/lib/db/auth-schema";
 import { emailConfigured, sendEmail, verificationEmail, resetEmail } from "@/lib/email";
@@ -38,6 +39,24 @@ export const googleConfigured = Boolean(process.env.GOOGLE_CLIENT_ID && process.
  * doğrulama da ona bakar — bu yüzden sağlayıcıyı açan tek anahtar bundle kimliği.
  */
 export const appleConfigured = Boolean(process.env.APPLE_BUNDLE_ID);
+
+/**
+ * Apple sağlayıcısının varsayılan gövdesi — yalnız `verifyIdToken`'ını ödünç almak
+ * için kuruluyor.
+ *
+ * Neden: better-auth'un apple doğrulaması bozuk bir token'da `false` DÖNMÜYOR,
+ * fırlatıyor (jose: "Invalid Token or Protected Header formatting") ve uç 500
+ * veriyor. Ölçüldü: aynı çöp dizgi google'da temiz 401 INVALID_TOKEN dönerken
+ * apple'da 500 + SERVER_ERROR log'u üretti. Kimlik doğrulaması gerektirmeyen bir
+ * uçta, herkesin tetikleyebildiği bir 500 demek bu. Fırlatma yutulup `false`a
+ * çevriliyor; doğrulamanın kendisi DEĞİŞMİYOR (imza, iss, aud, yaş sınırı hepsi
+ * kütüphanenin kendi kodunda kalıyor).
+ */
+const appleDefaults = appleProvider({
+  clientId: process.env.APPLE_BUNDLE_ID ?? "",
+  clientSecret: "",
+  appBundleIdentifier: process.env.APPLE_BUNDLE_ID ?? "",
+});
 
 export const authEnabled = Boolean(process.env.DATABASE_URL && process.env.BETTER_AUTH_SECRET);
 
@@ -95,6 +114,14 @@ export const auth = betterAuth({
             clientId: process.env.APPLE_BUNDLE_ID!,
             clientSecret: "",
             appBundleIdentifier: process.env.APPLE_BUNDLE_ID!,
+            // Bozuk token 500 değil 401 olsun (bkz. appleDefaults).
+            verifyIdToken: async (token, nonce) => {
+              try {
+                return await appleDefaults.verifyIdToken(token, nonce);
+              } catch {
+                return false;
+              }
+            },
             /**
              * better-auth'un apple sağlayıcısı kullanıcıyı HER ZAMAN
              * `emailVerified: false` ile kuruyor (bkz. social-providers/index.mjs,
