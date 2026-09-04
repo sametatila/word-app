@@ -971,6 +971,8 @@ export const deA1B05: Lesson[] = [
       { de: "Das gefällt mir.", tr: "beğendiğini söylerken kullanılır" },
       { de: "Mir gefällt … besser.", tr: "iki şeyden birini seçerken kullanılır" },
       { de: "Wie findest du …?", tr: "karşındakinin fikrini sorarken kullanılır" },
+      { de: "Das gefällt ihm.", tr: "bir erkeğin beğendiğini söyler (er → ihm)" },
+      { de: "Das gefällt ihr.", tr: "bir kadının beğendiğini söyler (sie → ihr)" },
     ],
     lecture: [
       {

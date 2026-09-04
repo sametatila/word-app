@@ -3,14 +3,21 @@ import { courseOrDefault, type CourseId } from "../lib/courses";
 /**
  * Sınav kataloğu — HEDEF DİLE göre.
  *
- * Sınav adları ve modül adları o sınavın kendi terimleridir (Almanca
- * isimlendirilir) ve çevrilmez; altlarındaki beceri adı arayüz dilinde
- * gösterilir. Katalog eskiden ExamPrepScreen'de sabit bir diziydi: İngilizce
- * kursu seçen kullanıcıya "telc Deutsch" ve "Lesen /
- * Hören" gösteriliyordu — o kursta karşılığı olmayan bir sınav vaadi.
+ * Modül ve beceri adları sınavın kendi terimleridir (Almanca isimlendirilir)
+ * ve çevrilmez; altlarındaki beceri adı arayüz dilinde gösterilir. Katalog
+ * eskiden ExamPrepScreen'de sabit bir diziydi: İngilizce kursu seçen
+ * kullanıcıya Almanca sınav modülleri gösteriliyordu — o kursta karşılığı
+ * olmayan bir sınav vaadi.
+ *
+ * SINAV ADI ARTIK ÜÇÜNCÜ TARAF SERTİFİKASI DEĞİL. Burada "telc Deutsch"
+ * yazıyordu, ama o sınava özel bir hazırlık yapmıyoruz: bizim sınavımız
+ * `lib/exam.ts`teki modül sınavı (A1.1 … A1.10, her biri o modülün kendi
+ * sahnesinden) ve seviye sınavıdır. Bir sertifikanın adını yazmak
+ * hazırlamadığımız bir şeyin sözünü vermek olurdu; başlık artık sınavın ne
+ * olduğunu söylüyor, kimin olduğunu değil.
  *
  * Hedef dile bağlanması bilinçli: Zürih Almancası kursunun hedefi de Almanca,
- * dolayısıyla aynı sınavlara hazırlanır. İngilizcenin sınav içeriği henüz yok;
+ * dolayısıyla aynı sınava hazırlanır. İngilizcenin sınav içeriği henüz yok;
  * boş katalog ekranın dürüst boş durumunu açıyor.
  */
 export type ExamSkill = "reading" | "listening" | "writing" | "speaking";
@@ -34,7 +41,7 @@ export type ExamCatalog = {
 };
 
 const GERMAN: ExamCatalog = {
-  exams: ["telc Deutsch"],
+  exams: ["Deutschprüfung"],
   modules: [
     { key: "lesen", label: "Lesen", subKey: "unitkind.read", skill: "reading", kind: "read", tint: "info", premium: false },
     { key: "hoeren", label: "Hören", subKey: "unitkind.listen", skill: "listening", kind: "listen", tint: "accent", premium: false },

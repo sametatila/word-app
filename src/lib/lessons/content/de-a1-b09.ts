@@ -263,6 +263,7 @@ export const deA1B09: Lesson[] = [
     patterns: [
       { de: "Mein Kopf tut weh.", tr: "hangi yerinin ağrıdığını söyler" },
       { de: "Mir tut der Rücken weh.", tr: "aynı şeyi 'bana' diyerek söyler" },
+      { de: "Ihm tut der Hals weh.", tr: "başkasının ağrısını anlatır (er → ihm)" },
       { de: "Ich habe Schmerzen.", tr: "ağrın olduğunu genel olarak söyler" },
     ],
     lecture: [
