@@ -149,6 +149,7 @@ export const LEGAL_CHANGELOG: readonly {
     date: "2026-09-04",
     changes: {
       tr: [
+        "Uygulamanın adı Lernomi oldu ve adresi www.lernomi.app'e taşındı; eski adres çalışmaya devam ediyor.",
         "Hesap açma yaşı 16'dan 18'e çıkarıldı; içerik yetişkin öğrenciye yönelik.",
         "Kurslar doğru sayıldı: Almanca, Zürih Almancası ve İngilizce (metin yalnız Almanca diyordu).",
         "Veri sorumlusu ile uygulamayı Play'de yayımlayan taraf ayrı ayrı tanıtıldı.",
@@ -158,6 +159,7 @@ export const LEGAL_CHANGELOG: readonly {
         "Metinler İngilizce ve Almanca olarak da yayımlandı; bağlayıcı metin Türkçe.",
       ],
       en: [
+        "The app is now called Lernomi and moved to www.lernomi.app; the old address keeps working.",
         "The minimum age for an account was raised from 16 to 18; the content is aimed at adult learners.",
         "The courses are now stated correctly: German, Zurich German and English (the text said German only).",
         "The data controller and the person who publishes the app on Play are now identified separately.",
@@ -167,6 +169,7 @@ export const LEGAL_CHANGELOG: readonly {
         "The texts are also published in English and German; the binding text is Turkish.",
       ],
       de: [
+        "Die App heißt jetzt Lernomi und ist unter www.lernomi.app erreichbar; die alte Adresse funktioniert weiterhin.",
         "Das Mindestalter für ein Konto wurde von 16 auf 18 angehoben; die Inhalte richten sich an erwachsene Lernende.",
         "Die Kurse werden jetzt richtig genannt: Deutsch, Zürichdeutsch und Englisch (der Text nannte nur Deutsch).",
         "Der Verantwortliche und die Person, die die App bei Play veröffentlicht, werden getrennt ausgewiesen.",
