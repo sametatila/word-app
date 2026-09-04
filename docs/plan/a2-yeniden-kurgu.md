@@ -251,3 +251,83 @@ katalogda 426 sahte uyarı üretiyordu, eşik hizalandı.
   A1/B1/B2/C1 ile beceri birikimine ait.
 - **Kalan 624 A2 maddesi.** Ders sayısı ve sözlükçe boyu sabit olduğu sürece
   öğretilemez; kararı ders sayısını artırmak isteyen bir sonraki oturuma ait.
+
+---
+
+## 8. Pedagojik denetim ve kalan boşluk — 2026-09-05
+
+İş bittikten sonra "eğitim açısından mantıklı mı" diye bakıldı. Ölçümler
+aşağıda; biri kapatıldı, biri sınırlandı, biri açık kaldı.
+
+### Asıl kazanç kapsama yüzdesi değildi
+
+`src/lib/session.ts:476-549` — oyun/SRS kuyruğu `words` tablosundan `niveau`
+bandına göre kuruluyor (`[alt, seviye, üst]`, %70 seviyede). Yani **bir kelime
+havuzda ve doğru seviyedeyse aralıklı tekrara girer, değilse hiç girmez.**
+
+Başlangıçtaki 500 yuvanın **107'si (%21,4) tekrar motorunun erişemeyeceği
+yerdeydi**: havuzda olmayan 72 + B2 31 + C1 4. Bunlar derste bir kez gösterilip
+bir daha dönmüyordu. Şimdi 800 yuvanın tamamı bandın içinde. Yapılan işin
+pedagojik gerekçesi budur — kapsama yüzdesi bunun yan ürünü.
+
+İkinci ölçüm: ders sözlükçesindeki 800 kelimenin **743'ü (%92,9)** beceri
+egzersizlerinin metinlerinde en az bir kez geri dönüyor. Üç katman bağlı:
+ders (ilk karşılaşma) → SRS (aralıklı geri çağırma) → beceri (bağlamda tekrar).
+
+### §7'deki bir cümle yanlıştı
+
+"Kalan 624 madde ancak ders sayısı ya da sözlükçe boyu değişirse öğretilebilir"
+demiştim. **Yanlış.** O kelimeler havuzda ve A2 bandında, yani SRS kuyruğunda
+zaten öğreniliyor. Havuz bir müfredat değil, tekrar motorunun yakıtı; her
+kelimenin ders başlığı olması gerekmiyor. Doğrusu: *ders başlığı olarak
+sunulamaz, SRS üzerinden öğrenilir.*
+
+### Kapatılan: patikada birikimli tekrar yoktu (e6885d3)
+
+`deriveQuiz` soruları yalnız bitmekte olan ünitenin kelimelerinden üretiyordu —
+item'ın adı "Karışık hatırlama" olmasına rağmen karışık değildi. Ünite 3'te
+öğrenilen kelime ünite 4'ten sonra patika üzerinden bir daha hiç sorulmuyordu.
+Artık soruların üçte biri geçmiş ünitelerden geliyor ve seçim tüm geçmişe
+yayılıyor. Ölçüm: açığa çıkan farklı eski kelime 0 → 131 (A1/A2), 0 → 239 (B1).
+**Bu düzeltme seviyeden bağımsız; A1 ve B1 de kendiliğinden kazandı.**
+
+### Açık kalan: ünite 20-25 hizasız
+
+| Seviye | Ünite hizalı | Egzersiz (o/d/y) | Hedef | Yetim ders kelimesi |
+|---|---|---|---|---|
+| A1 | **25/25** | 62/62/58 | 50 | 27/800 |
+| A2 | **19/25** | 50/50/50 | 50 | 57/800 |
+| B1 | **4/45** | 20/20/16 | 90 | 386/1440 |
+
+A2'de ünite 20-25 hâlâ eski 32 genel egzersizle besleniyor: yanlış değiller,
+ama o ünitelerin derslerini ölçmüyorlar. 57 yetim kelimenin **39'u tam bu altı
+ünitede** — yani yetim sayısı bağımsız bir sorun değil, bu boşluğun belirtisi.
+
+**Kalan iş: 32 ünite hizalı egzersiz** (ünite 20-21'e okuma+dinleme, ünite
+22-25'e tam takım). Ünite 20-21'in yazması zaten yazıldı.
+
+### Bu işi yapacak oturum için — veri güvenliği uyarısı
+
+`user_skills` birincil anahtarı **`(user_id, exercise_id)`** (`schema.ts:366`),
+yani `user_lessons` ile aynı kural. **Eski 32 egzersiz silinemez, kimliği
+değiştirilemez** — canlı ilerleme gider.
+
+Doğru yöntem: yeni ünite dosyalarını `a2.ts` listesinde eskilerin **ÖNÜNE**
+ekle. `buildTrack` havuzları liste sırasıyla imleçle tüketir (`unit` etiketine
+bakmaz), o yüzden yeni içerik ünite yuvalarını kapar ve eski egzersizler 50.
+yuvanın ötesine düşer: kimlikleri durur, ilerleme kaydı çözülmeye devam eder,
+sadece patikada zamanlanmazlar. Silme değil, sıra değişikliği.
+
+### Bilerek kapatılmayanlar
+
+- **10 dakikalık derste 8 kelime yoğun** (~75 sn/kelime, tek tekrar adımı). Bu
+  bir sunum katmanı; edinim SRS'te ve beceri egzersizlerinde oluyor. Ayrıca 8
+  sayısı pedagojik değil aritmetik bir karardı (100×8=800) — savunulabilir ama
+  sıralaması ters. Ders sayısı sabit olduğu sürece değiştirilemez.
+- **Dilbilgisi sıralaması denetlenmedi.** Ders kimlikleri sabit olduğu için sıra
+  da sabitti; bu işin "pedagojik olarak tutarlı" iddiası kelime seçimi ve beceri
+  hizalaması için geçerli, müfredat sıralaması için değil.
+- **`speaking` egzersizleri patikaya girmiyor.** A1'de 8 tane var
+  (`a1-uNN-s1`), `BASE_PATTERN` içinde konuşma yuvası yok
+  (`build.ts:30`), yani `buildTrack` onları hiç yerleştirmiyor. A2'de hiç yok.
+  Yeni içerik yazmadan önce bu deseni sahibi karara bağlamalı.
