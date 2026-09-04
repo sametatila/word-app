@@ -287,6 +287,14 @@ karşılığıyla gösteriyor.
 Ayrım da orada korunuyor: bir adım geçmezse ona bağlı olanlar **"ölçülemedi"** yazılır,
 "başarısız" değil. İkisi karışırsa var olmayan bir kusur kovalanır.
 
+Arada bir katman daha var: **CI'daki simülatör**. `.github/workflows/ios-build.yml`
+her push'ta uygulamayı iPhone SE ve iPad'de açıp üç dilde ve iki temada kare alıyor
+(`scripts/ios-screenshots.sh`), ayrıca XCUITest'le onboarding'i tıklayarak geçip akışın
+karelerini çıkarıyor (`scripts/ios-flow-screenshots.sh`). Düzen, renk, koyu tema, metin
+uzunluğu ve akışın kendisi artık cihaz beklemeden görülüyor; kareler artifact olarak
+iniyor. Cihazda kalanlar mikrofon, konuşma tanıma, arka planda ses, kilit ekranı
+denetimi, haptik ve satın alma.
+
 Statik tarafta karşılığı `mobile/scripts/check-ios.py` (`npm run ios:check`, CI'da
 `checks.yml`): pbxproj bütünlüğü, sürüm üçlüsü, ikon ölçüleri, `.strings` sözlükleri,
 dil beyanı ve Swift/ObjC sözdizimi. Cihaz gerektirmeyen her şey oraya ait — runbook

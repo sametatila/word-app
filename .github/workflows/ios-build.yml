@@ -130,13 +130,11 @@ jobs:
         working-directory: mobile
         run: bash scripts/ios-screenshots.sh
 
-      # Onboarding'i tıklayarak geçer ve akışın karelerini alır. İlk kez
-      # koşuyor ve birkaç parçası (Ruby ile hedef üretimi, TEST_RUNNER_ ortam
-      # aktarımı, arka plan kare döngüsü) bu makinede sınanamadı — bu yüzden
-      # ŞİMDİLİK işi düşürmüyor: matris kareleri her hâlükârda insin. Çalıştığı
-      # görülünce continue-on-error kalkacak.
+      # Onboarding'i tıklayarak geçer ve akışın karelerini alır. continue-on-error
+      # kaldırıldı: koşu 33920804380'de uçtan uca çalıştı (TEST SUCCEEDED, dokuz
+      # uygulama karesi). Artık burada bir kırılma gerçek bir kırılma — ya test
+      # hedefi üretimi ya da uygulamanın açılış akışı bozulmuş demektir.
       - name: Akış kareleri (XCUITest)
-        continue-on-error: true
         working-directory: mobile
         run: bash scripts/ios-flow-screenshots.sh
 

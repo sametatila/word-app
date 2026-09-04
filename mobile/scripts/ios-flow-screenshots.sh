@@ -21,6 +21,10 @@ DEVICE_TYPE=${FLOW_DEVICE_TYPE:-com.apple.CoreSimulator.SimDeviceType.iPhone-SE-
 # değer akışın KENDİSİ. Üç dile çıkarmak bu listeye bir satır.
 FLOW_LANGS=${FLOW_LANGS:-tr}
 INTERVAL=${INTERVAL:-2}
+# Tema AÇIKÇA ayarlanıyor. İlk koşuda ayarlanmamıştı ve akış koyu temada çıktı —
+# çünkü matris betiği simülatörü en son koyuda bırakmıştı. Sessizce miras alınan
+# durum, karelerin neden öyle göründüğünü açıklamayan bir kayıt üretir.
+FLOW_APPEARANCE=${FLOW_APPEARANCE:-light}
 
 [ "$(uname -s)" = "Darwin" ] || { echo "Bu betik yalnız macOS'ta çalışır."; exit 1; }
 mkdir -p "$OUT"
@@ -52,6 +56,8 @@ xcrun simctl bootstatus "$UDID" -b
 xcrun simctl status_bar "$UDID" override \
   --time "09:41" --batteryState charged --batteryLevel 100 \
   --cellularMode active --cellularBars 4 --wifiMode active --wifiBars 3 >/dev/null 2>&1 || true
+xcrun simctl ui "$UDID" appearance "$FLOW_APPEARANCE" >/dev/null 2>&1 || true
+echo "Tema: $FLOW_APPEARANCE"
 
 for LANG_CODE in $FLOW_LANGS; do
   echo
