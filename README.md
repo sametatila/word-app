@@ -443,7 +443,54 @@ ulaşılamazsa gömülü kopya devreye girer — ekran hiçbir durumda boş kalm
 - **XP:** ilk tamamlamada tam verilir; tekrar çözümlerde yalnızca en iyi skorun farkı eklenir.
   Sonuçlar sunucuda (`user_skills`) tutulur, cihazlar arasında senkrondur.
 
-## 10. XP tablosu
+## 10. İngilizce kursu (tr → en)
+
+Almanca-Türkçe paritesi tek başına dar bir kitleye hitap ettiği için ikinci bir parite açıldı:
+**anadili Türkçe olan kullanıcı için İngilizce**. Model `mobile/src/lib/courses.ts` ve
+`src/lib/courses.ts`'te: `course` HEDEF dili tutar (`de` | `gsw-zh` | `en`), kullanıcının
+anadili (`nativeLang`: `tr` | `en` | `de`) ayrı bir eksendir; parite ikisinin bileşimidir.
+
+İçerik **yalnız mobilde**. Web Almanca kursuna hizmet etmeye devam ediyor ve bu paritenin
+hiçbir dosyasını okumuyor.
+
+| | A1 | A2 | B1 | B2 | C1 |
+|---|---|---|---|---|---|
+| Ders | 100 | 100 | — | — | — |
+| Okuma · dinleme · yazma | 12 · 12 · 8 | 12 · 12 · 8 | — | — | — |
+
+Kelime katmanı beş seviyeyi de kapsıyor (`data/app/words-en.json`, 6.975 madde; `course='en'`,
+id aralığı 200001+). Dersler `mobile/src/data/lessons/en-a1.json` ve `en-a2.json`, beceri
+egzersizleri `mobile/src/data/skills/exercises-en.json` dosyalarında.
+
+### Bilerek sonraya bırakılanlar
+
+- **B1, B2 ve C1 dersleri ile beceri egzersizleri.** A1 ve A2 Almanca ile tam paritede
+  bitirildi; üst seviyeler sonraki bir çalışmada üretilecek. Patika o seviyelerde ders
+  bulamadığı için üniteleri "Yakında" gösterir ve **Almanca içeriğe DÜŞMEZ**
+  (`bundleFor`/`poolFor`: yalnız aynı hedef dili paylaşan kursa düşülür).
+- **`en → de` paritesi** (anadili İngilizce olan kullanıcı için Almanca). Kelime verisi
+  hazır — satırlar üç dilli olduğundan yeni kelime toplamak gerekmiyor; eksik olan, anlatım
+  dili İngilizce olan ders metinleri.
+- **Kelime havuzu farkı.** İngilizce 6.975, Almanca 8.267 madde. Seyahat gibi bazı alanlarda
+  ders üretirken havuz dışı kelimeye başvurmak gerekti.
+
+### İçerik üretirken uyulan kurallar
+
+Bu kurallar üretim sırasında tek tek hataya yol açtıkları için yazıldı:
+
+- **Seviye sınırı makineyle denetlenir.** A1'de geçmiş zaman, A2'de koşul cümlesi/edilgen
+  çatı/dolaylı anlatım metinlere sızmamalı.
+- **`roleplay.partner` TÜRKÇE yazılır** — `src/lib/lessons/roleplay.ts` onu Türkçe bir cümlenin
+  içine koyuyor ("… rolündesin"), İngilizce yazılırsa bozuk okunur.
+- **`icon` yalnız `LESSON_ICONS` listesinden** (`src/lib/lessons/types.ts`). Mobil bu alanı
+  okumuyor ama web'in kapalı union'ı okuyor.
+- **Modül sınırı 10 derstir.** `moduleThemes` listesi GERÇEK içerik kadar uzun tutulur; olmayan
+  modüle başlık yazmak, ders eklendikçe sıranın kayıp başlığın içerikten ayrılmasına yol açar.
+- **Yazma görevlerinde kısaltmalar.** Puanlayıcı (`skillQuiz.tsx`, `written`/`fold`) "I am" ile
+  "I'm" arasında köprü kurmaz. Bir cümlede birden çok kısaltma varsa öğrenci karışık yazabilir,
+  bu yüzden tüm ara biçimler `alternatives` içinde bulunmalıdır.
+
+## 11. XP tablosu
 
 Puan **harcanan çabayı** ölçer, aktivitenin türünü değil: aynı beş dakika hangi yolla
 geçirilirse geçirilsin benzer XP kazandırır. Taban `src/lib/xp.ts` içinde tek yerde durur
@@ -467,7 +514,7 @@ ilerlemiyordu. Sıralamada yükselmek isteyen öğrenci kelime kartı çevirmek 
 XP, günlük istatistik ve seri tek geçitten yazılır (`src/lib/award.ts`); yeni bir öğrenme
 yolu eklenirken üç şeyi ayrı ayrı hatırlamak gerekmez.
 
-## 11. Oyun katmanı
+## 12. Oyun katmanı
 
 Uygulamada mekanik eksik değildi; eksik olan **geri bildirim, hatıra ve rekabet**ti. Bu bölüm
 o üçünü kuran parçaları ve neden öyle kurulduklarını anlatıyor.
