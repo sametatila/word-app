@@ -1,5 +1,6 @@
 import "server-only";
 import nodemailer, { type Transporter } from "nodemailer";
+import { LEGAL_ENTITY } from "@/lib/legal";
 
 /**
  * Giden e-posta — SMTP tek kaynak.
@@ -41,7 +42,10 @@ export async function sendEmail(to: string, subject: string, html: string, text:
     return;
   }
   try {
-    await transport().sendMail({ from: FROM, to, subject, html, text });
+    // Reply-To zorunlu: gönderen noreply@ ve Cloudflare'de catch-all "drop".
+    // Kullanıcı doğrulama postasına cevap yazarsa mesajı sessizce kaybederdik;
+    // cevaplar okunan kutuya, destek adresine gider.
+    await transport().sendMail({ from: FROM, replyTo: LEGAL_ENTITY.supportEmail, to, subject, html, text });
   } catch (err) {
     // Kayıt/sıfırlama akışı e-posta yüzünden 500 vermesin; hata log'lanır.
     console.error("[email] gönderim başarısız", err);
