@@ -43,9 +43,13 @@ LANGS=("tr|tr_TR" "en|en_US" "de|de_DE")
 
 APPEARANCES=(light dark)
 
-# Açılıştan kaç saniye sonra kare alınacak. Üç ayrı an denendi (3/9/15sn) ve
-# kareler bayt bayt aynı çıktı — ekran ilerlemediği için tek an yetiyor.
-SETTLE=${SETTLE:-9}
+# Açılıştan sonra ilk kareye kadar beklenen süre. Üç ayrı an denendi (3/9/15sn)
+# ve kareler bayt bayt aynı çıktı — ekran ilerlemediği için tek an yetiyor.
+# Ama sabit bekleme TEK BAŞINA yetmiyor: 12 karelik bir koşuda iPad'in bir karesi
+# uygulama daha ilk kareyi çizmeden alındı ve saf siyah çıktı. Bu yüzden aşağıda
+# kare içerik denetimiyle tekrarlanıyor; buradaki süre yalnız ilk deneme.
+SETTLE=${SETTLE:-8}
+RETRIES=${RETRIES:-5}
 
 [ "$(uname -s)" = "Darwin" ] || { echo "Bu betik yalnız macOS'ta çalışır (simctl gerekiyor)."; exit 1; }
 [ -d "$APP" ] || { echo "Uygulama yok: $APP — önce Release yapılandırmasıyla simülatöre derle."; exit 1; }
@@ -82,6 +86,24 @@ print(rs[-1]["identifier"] if rs else "")
   echo "$udid"
 }
 
+# Kareyi alır; uygulama henüz çizmediyse (saf siyah/beyaz) bekleyip tekrarlar.
+# Boşluk denetimi renk çeşitliliğine bakıyor, dosya boyutuna değil — ölçüldü:
+# gerçek karelerde 24-77 ayrı renk, çizilmemiş karede 2 (bkz. png-blank.py).
+capture() {
+  local file=$1 i
+  for ((i = 1; i <= RETRIES; i++)); do
+    xcrun simctl io "$UDID" screenshot "$file" >/dev/null
+    if python3 scripts/png-blank.py "$file" >/dev/null 2>&1; then
+      echo "  $(basename "$file")"
+      return 0
+    fi
+    echo "  bos kare ($i/$RETRIES), 4sn daha: $(basename "$file")"
+    sleep 4
+  done
+  # İşi düşürmüyoruz: boş kare de kanıt, artifact'a girsin ve günlükte görünsün.
+  echo "  UYARI kare hala bos: $(basename "$file")"
+}
+
 BOOTED=()
 cleanup() { for u in ${BOOTED[@]+"${BOOTED[@]}"}; do xcrun simctl shutdown "$u" >/dev/null 2>&1 || true; done; }
 trap cleanup EXIT
@@ -116,15 +138,16 @@ for ENTRY in "${DEVICES[@]}"; do
     LANG_CODE=${LANG_ENTRY%%|*}
     LOCALE=${LANG_ENTRY#*|}
     for APPEARANCE in "${APPEARANCES[@]}"; do
+      # Tema DEĞİŞİMİ önce ve tek başına: sistem genelinde yeniden çizim
+      # tetikliyor, hemen ardından gelen terminate/launch onunla yarışıyordu.
       xcrun simctl ui "$UDID" appearance "$APPEARANCE" >/dev/null 2>&1 || true
+      sleep 2
       xcrun simctl terminate "$UDID" "$BUNDLE_ID" >/dev/null 2>&1 || true
       sleep 1
       xcrun simctl launch "$UDID" "$BUNDLE_ID" \
         -AppleLanguages "($LANG_CODE)" -AppleLocale "$LOCALE" >/dev/null
       sleep "$SETTLE"
-      FILE="$OUT/${SLUG}-${LANG_CODE}-${APPEARANCE}.png"
-      xcrun simctl io "$UDID" screenshot "$FILE" >/dev/null
-      echo "  $(basename "$FILE")"
+      capture "$OUT/${SLUG}-${LANG_CODE}-${APPEARANCE}.png"
     done
   done
 
@@ -136,3 +159,8 @@ done
 echo
 echo "Kareler: $OUT"
 ls -1 "$OUT"
+
+# Son söz: hangi kare boş kaldı, tek bakışta görünsün (iş yeşil olsa da).
+echo
+echo "Kare içerik denetimi:"
+python3 scripts/png-blank.py "$OUT"/*.png || echo "UYARI: yukarıda BOS işaretli kare var."
