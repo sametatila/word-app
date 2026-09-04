@@ -7,7 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
  * tutulur; Ayarlar › Gizlilik'ten geri alınabilir (geri alınca ekran yeniden gelir).
  * Anahtardaki sürüm, açıklama metni anlamlı değişirse artırılır → yeniden onay.
  */
-const KEY = "nomi:mic-consent:v1";
+const KEY = "lernomi:mic-consent:v1";
 
 export async function hasMicConsent(): Promise<boolean> {
   try { return (await AsyncStorage.getItem(KEY)) !== null; } catch { return false; }

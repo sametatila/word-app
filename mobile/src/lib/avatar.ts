@@ -16,7 +16,7 @@ export type AvatarConfig = {
 
 export const DEFAULT_AVATAR: AvatarConfig = { hat: null, hatColor: "#c0392b", glasses: null, mustache: null };
 
-const KEY = "nomi-avatar";
+const KEY = "lernomi-avatar";
 
 let cache: AvatarConfig = DEFAULT_AVATAR;
 let loaded = false;

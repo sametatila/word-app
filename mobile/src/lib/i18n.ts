@@ -27,7 +27,7 @@ import { de } from "../i18n/de";
  * yarım çevrildiğinde ekranda boşluk değil anlaşılır metin kalır.
  */
 
-const KEY = "nomi-lang";
+const KEY = "lernomi-lang";
 
 const DICTS: Record<NativeLang, Record<string, string>> = { tr, en, de };
 

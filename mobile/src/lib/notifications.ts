@@ -14,13 +14,13 @@ import { t } from "./i18n";
 const CHANNEL_ID = "reminder";
 
 // Her kategori ayrı adreslenir (cancelTriggerNotification(id) ile tek tek iptal).
-const ID_DAILY = "nomi-daily";
-const ID_STREAK = "nomi-streak";
-const ID_WEEKLY = "nomi-weekly";
+const ID_DAILY = "lernomi-daily";
+const ID_STREAK = "lernomi-streak";
+const ID_WEEKLY = "lernomi-weekly";
 
-const KEY_DAILY = "nomi:reminder"; // "HH:MM" açık, "" kapalı (geri uyumlu)
-const KEY_STREAK = "nomi:notif:streak"; // "1" | ""
-const KEY_WEEKLY = "nomi:notif:weekly"; // "1" | ""
+const KEY_DAILY = "lernomi:reminder"; // "HH:MM" açık, "" kapalı (geri uyumlu)
+const KEY_STREAK = "lernomi:notif:streak"; // "1" | ""
+const KEY_WEEKLY = "lernomi:notif:weekly"; // "1" | ""
 
 // Seri koruma akşam, haftalık sınav Pazar öğlen — sabit, sade tutuldu.
 const STREAK_TIME = "20:30";
@@ -131,6 +131,45 @@ export async function setWeeklyReminder(on: boolean): Promise<boolean> {
   return true;
 }
 
+/* -------------------------------------------------------------- kimlik göçü */
+
+/** Eski marka adlarıyla zamanlanmış tetikleyiciler (Wortspiel, Nomi dönemleri). */
+const LEGACY_IDS = [
+  "wortspiel-daily", "wortspiel-streak", "wortspiel-weekly",
+  "nomi-daily", "nomi-streak", "nomi-weekly",
+] as const;
+const IDS_MIGRATED_KEY = "lernomi:notif-ids-v1";
+
+/**
+ * Bildirim kimlikleri marka adını taşıyor; ad değişince eski kimlikle
+ * zamanlanmış tetikleyici ÖKSÜZ kalır. İptal edilmezse kullanıcı hem eskisini
+ * hem yenisini alır; sadece iptal edilse bu kez hatırlatması sessizce kaybolur.
+ * Bu yüzden ikisi birden yapılır: eskiler iptal edilir, AÇIK olan kategoriler
+ * yeni kimlikle yeniden kurulur.
+ *
+ * İzin İSTEMEZ: tetikleyici zaten varsa izin de verilmişti. Kullanıcı izni
+ * sonradan kapattıysa notifee sessizce kurmaz, ayarlardan tekrar açılır.
+ * Bir kez çalışır (bayrak), yoksa her açılışta tetikleyiciler yeniden kurulurdu.
+ */
+export async function migrateReminderIds(): Promise<void> {
+  try {
+    if ((await AsyncStorage.getItem(IDS_MIGRATED_KEY)) === "1") return;
+    for (const id of LEGACY_IDS) {
+      try { await notifee.cancelTriggerNotification(id); } catch { /* yut */ }
+    }
+    const daily = await getReminder();
+    const streak = await getStreakAlert();
+    const weekly = await getWeeklyReminder();
+    if (daily || streak || weekly) await ensureChannel();
+    if (daily) await schedule(ID_DAILY, t("notif.daily_body"), nextDaily(daily), RepeatFrequency.DAILY);
+    if (streak) await schedule(ID_STREAK, t("notif.streak_body"), nextDaily(STREAK_TIME), RepeatFrequency.DAILY);
+    if (weekly) await schedule(ID_WEEKLY, t("notif.weekly_body"), nextWeekly(WEEKLY_DAY, WEEKLY_TIME), RepeatFrequency.WEEKLY);
+    await AsyncStorage.setItem(IDS_MIGRATED_KEY, "1");
+  } catch {
+    // sessiz: göç başarısızsa kullanıcı en kötü ihtimalle hatırlatmayı elle açar
+  }
+}
+
 /* ------------------------------------------------------------------- misc */
 
 /** OS bildirim ayarlarını açar (kullanıcı sistemden kapatmışsa). */
@@ -154,7 +193,7 @@ export async function showTestNotification(): Promise<boolean> {
  * İlk giriş sonrası bildirim izni "priming"i (§4 — elde tutmanın #1 kaldıracı).
  * Bir kez gösterilir; hatırlatma zaten kuruluysa ya da daha önce sorulduysa atlanır.
  */
-const PRIMED_KEY = "nomi:notif-primed";
+const PRIMED_KEY = "lernomi:notif-primed";
 
 export async function notifPrimeNeeded(): Promise<boolean> {
   try {

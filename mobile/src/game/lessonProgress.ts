@@ -6,7 +6,7 @@
  */
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const KEY = "nomi-items-done";
+const KEY = "lernomi-items-done";
 let cache: Set<string> | null = null;
 
 export async function getDoneItems(): Promise<Set<string>> {
@@ -36,7 +36,7 @@ export function isItemDoneSync(id: string): boolean {
  * Anlatım uzun; ortasında çıkan öğrenci baştan başlamamalı. Yalnız anlatım fazı
  * saklanır (konuşma sona yakın; gerekirse baştan). 3 günden eski kayıt atılır.
  */
-const RESUME_PREFIX = "nomi-lesson-resume:";
+const RESUME_PREFIX = "lernomi-lesson-resume:";
 const RESUME_TTL_MS = 3 * 86400000;
 
 export type LessonResume = { cursor: number; correct: number; at: number };

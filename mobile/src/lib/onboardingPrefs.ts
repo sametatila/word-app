@@ -5,7 +5,7 @@
  */
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const KEY = "nomi:onboarding-prefs";
+const KEY = "lernomi:onboarding-prefs";
 /**
  * `nativeLang` burada, canlı arayüz dilinin (i18n'in `nomi-lang` anahtarı)
  * KOPYASI değil: anlamı "bu seçim henüz hesaba devredilmedi". Devredilince

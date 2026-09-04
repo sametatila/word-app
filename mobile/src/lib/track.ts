@@ -26,7 +26,7 @@ export type EventName =
   | "purchase_done";
 
 /** Analitik tercihi (Gizlilik Politikası §8) — cihazda, varsayılan açık; açılışta yüklenir. */
-const ANALYTICS_KEY = "nomi:analytics";
+const ANALYTICS_KEY = "lernomi:analytics";
 let analyticsOn = true;
 export async function loadAnalyticsPref(): Promise<boolean> {
   try { analyticsOn = (await AsyncStorage.getItem(ANALYTICS_KEY)) !== "off"; } catch { analyticsOn = true; }

@@ -8,6 +8,7 @@ import { AuthProvider, useAuth } from "./src/lib/AuthContext";
 import { RootStack } from "./src/navigation/RootStack";
 import { ONBOARDED_KEY } from "./src/lib/onboarding";
 import { migrateLegacyKeys } from "./src/lib/storageMigration";
+import { migrateReminderIds } from "./src/lib/notifications";
 import { loadVoicePref } from "./src/lib/tts";
 import { TtsBridge } from "./src/lib/ttsBridge";
 import { track, loadAnalyticsPref } from "./src/lib/track";
@@ -26,6 +27,9 @@ function Nav() {
   useEffect(() => {
     migrateLegacyKeys()
       .then(() => loadLang())
+      // Anahtar göçünden SONRA (tercihler yeni önekten okunur) ve loadLang'den
+      // SONRA (hatırlatma metni kullanıcının dilinde kurulsun).
+      .then(() => migrateReminderIds())
       .then(() => loadVoicePref())
       .then(() => loadAnalyticsPref())
       // Günün ilk açılışı (§4 funnel) — kind platform:görünüm, value ekran genişliği.

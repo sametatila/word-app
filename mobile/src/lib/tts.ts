@@ -17,7 +17,7 @@ import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait } from "./ttsBridge";
  * (yükleniyor/çevrimdışı) cihaz TTS'ine düşülür ve seçilen sesin dil+cinsiyet
  * en yakını cihazda uygulanır. Tercih `nomi-voice`'ta ve profiles.voice'ta.
  */
-const VOICE_KEY = "nomi-voice";
+const VOICE_KEY = "lernomi-voice";
 let ready: Promise<boolean> | null = null;
 /** Cihaz TTS'i hedef dilde konuşmaya hazır mı (dil paketi kurulu mu). */
 export let targetReady = false;
