@@ -1,7 +1,7 @@
 # Lernomi — Almanca Kelime Uygulaması
 
 A1'den C1'e, **iki kursla** çalışan, oyunlaştırılmış ve **tekrarı kendisi planlayan** Almanca
-uygulaması. Next.js + Neon Postgres, Vercel'e tek komutla çıkar. Ana ekrana eklenince
+uygulaması. Next.js + PostgreSQL, Netcup'ta kendi sunucumuzda (blue-green deploy). Ana ekrana eklenince
 uygulama gibi tam ekran açılır (PWA).
 
 - **İki kurs, tek uygulama:**
@@ -136,7 +136,7 @@ uygulama gibi tam ekran açılır (PWA).
 
 ```bash
 npm install
-cp .env.example .env            # DATABASE_URL'i Neon'dan yapıştır
+cp .env.example .env            # DATABASE_URL'i yerel ya da sunucu Postgres'ten yapıştır
 npm run db:push                 # tabloları oluştur
 npm run db:seed                 # Almanca kursu: 7.392 kelime + örnek cümle çevirileri
 npm run db:seed:zurich          # Zürih kursu: 7.392 Züritüütsch madde
@@ -147,9 +147,11 @@ npm run dev                     # http://localhost:3000
 `.env` içeriği:
 
 ```bash
-DATABASE_URL="postgresql://user:pass@ep-xxx-pooler.<region>.aws.neon.tech/neondb?sslmode=require"
-NEON_AUTH_BASE_URL="https://ep-xxx.neonauth.<region>.aws.neon.tech/neondb/auth"
-NEON_AUTH_COOKIE_SECRET="openssl rand -base64 32 çıktısı"
+DATABASE_URL="postgresql://user:pass@localhost:5432/lernomi"
+# Kimlik doğrulama better-auth ile KENDİ sunucumuzda; Neon Auth / Stack Auth KULLANILMIYOR.
+# E-posta doğrulama ve parola sıfırlama nodemailer + SMTP üzerinden gider (SMTP_* anahtarları).
+BETTER_AUTH_SECRET="openssl rand -base64 32 çıktısı"
+CRON_SECRET="openssl rand -hex 32 çıktısı"   # zamanlanmış uçların Bearer sırrı
 
 # Ders içi rol yapma — üçünden biri yeter. Sıra: cerebras → groq → mistral.
 #
@@ -182,19 +184,23 @@ derslerin konuşma fazı kapalı görünür, uygulamanın geri kalanı etkilenme
 Anahtarlar **koda gömülmez** — bu depo GitHub'a push ediliyor ve GitHub kendi token biçimini
 tarayıp bulduğu anda iptal ediyor.
 
-`NEON_AUTH_*` boş bırakılırsa uygulama **demo modunda** tek kullanıcıyla çalışır — veritabanı
-bağlıysa tüm oyunlar, ilerleme ve streak çalışır. İki değer eklenince giriş/kayıt (`/giris`)
-kendiliğinden devreye girer.
+Kimlik doğrulama **better-auth** ile kendi sunucumuzda; kullanıcı, oturum ve hesap tabloları
+`DATABASE_URL`'in gösterdiği Postgres'te. `SMTP_*` boşken e-posta doğrulama **zorunlu
+tutulmaz** (gelmeyen bir postayı bekleyip kilitlenme olmasın) ve parola sıfırlama sessizce
+çalışmaz — beş SMTP anahtarı dolunca ikisi de kendiliğinden açılır.
 
 Faydalı adresler: `/` tanıtım · `/kurs-sec` ilk giriş kurs/seviye seçimi · `/learn` oturum ·
 `/words` kelime listesi · `/skills` okuma-dinleme-yazma-konuşma · `/lessons` ders yolu ·
 `/profile` ayarlar + ilerleme ·
 `/demo-games` on oyunun tek sayfada önizlemesi. (`/progress` artık `/profile`'a yönlenir.)
 
-## 2. Neon kurulumu (Postgres 18)
+## 2. Veritabanı kurulumu (PostgreSQL)
 
-1. [console.neon.tech](https://console.neon.tech) → yeni proje (Postgres 18).
-2. **Connection string** → *Pooled connection* olanı kopyala, `DATABASE_URL` yap.
+Üretimde Netcup sunucusundaki yerel PostgreSQL kullanılıyor; geliştirmede kendi
+makinendeki bir Postgres yeter. (Proje eskiden Neon üzerindeydi, **terk edildi**.)
+
+1. Bir PostgreSQL veritabanı oluştur (üretimde 17.x kullanılıyor).
+2. Bağlantı dizesini `DATABASE_URL` yap.
 3. `npm run db:push` → tablolar oluşur (`drizzle/*.sql` dosyaları da hazır, istersen SQL
    Editor'a sırayla yapıştırabilirsin).
 4. `npm run db:seed` → `data/app/words.json` içindeki 7.392 kelime + `data/app/beispiel-tr.json`
@@ -203,46 +209,15 @@ Faydalı adresler: `/` tanıtım · `/kurs-sec` ilk giriş kurs/seviye seçimi �
    `course='gsw-zh'` olarak yüklenir (kimlik: 100000 + kaynak id).
 6. `npm run db:seed:skills` → `src/lib/skills/content/*` içindeki beceri alıştırmaları yüklenir.
 
-## 3. Vercel'e deploy
+## 3. Deploy
 
-```bash
-npm i -g vercel
-vercel link
-vercel env add DATABASE_URL production                     # ve preview/development
-vercel env add NEON_AUTH_BASE_URL production
-vercel env add NEON_AUTH_COOKIE_SECRET production
-vercel env add CEREBRAS_API_KEY production                  # rol yapma için; yoksa yalnızca o faz kapalı
-vercel env add AZURE_SPEECH_KEY production                  # yürürken modu ekran kapalı çalışsın diye (+ AZURE_SPEECH_REGION)
+Vercel **bırakıldı**; üretim Netcup'ta kendi sunucumuzda, blue-green düzeniyle çalışıyor.
+Akış: `git push origin main` → GitHub webhook → sunucuda `deploy.sh` → boştaki renk derlenir,
+sağlık kontrolünden geçer, nginx zarifçe o renge döner. Ayrıntı ve komutlar `AGENTS.md`'de.
 
-# Hatırlatma bildirimleri — üçü birden gerekli, biri eksikse özellik kapalı kalır.
-npx web-push generate-vapid-keys --json                     # çıktıdaki iki anahtar
-vercel env add NEXT_PUBLIC_VAPID_PUBLIC_KEY production
-vercel env add VAPID_PRIVATE_KEY production
-vercel env add VAPID_SUBJECT production                     # mailto:seninadresin@ornek.com
-vercel env add CRON_SECRET production                       # openssl rand -hex 32
-
-vercel --prod
-```
-
-Deploy sonrası Neon Console → Auth → Configuration → **Domains** kısmına Vercel alan adını ekle
-(önizleme dağıtımları için `https://*-<takım>.vercel.app` gibi joker desen de kabul edilir).
-
-### Hatırlatma bildirimleri
-
-Turu `vercel.json` içindeki cron tetikliyor (`/api/cron/reminders`, günde bir kez 18:00 UTC).
-Vercel'in **Hobby** planı günde birden sık cron kabul etmiyor — `0 * * * *` gibi bir ifade
-deploy'da hata verir. Kod her iki duruma da hazır: tur ne zaman çalışırsa çalışsın, o an
-yerel saati `reminder_hour`'u geçmiş ve o gün hiç çalışmamış kullanıcılara gönderiyor.
-Pro planına geçilirse `schedule` saatliğe çekilebilir; başka değişiklik gerekmez.
-
-Kişi başına günde en fazla bir bildirim gider ve içeriği kullanıcının durumuna göre seçilir:
-serisi bugün kırılacaksa seri, haftalık tabloda **yakalanabilir** mesafede bir rakip varsa o,
-tekrar borcu varsa kelime sayısı, hiçbiri yoksa kısa bir davet. Rakip mesajı serinin altında
-(seri bugüne bağlı ve kaçırılırsa geri gelmiyor) ama borcun üstünde: borç her gün aynı cümleyi
-kuruyor, rakip mesajı ise hem nadir hem de her seferinde başka bir sayı taşıyor. 400 XP'den
-geride olana gönderilmiyor — ulaşılamayan fark hedef değil hüküm olur.
-İzin, oturum özet ekranında — kullanıcı bir tur bitirdikten sonra — isteniyor; profilden
-kapatılabiliyor.
+Zamanlanmış işler (hatırlatma, değerlendirme kuyruğu, haftalık özet) **systemd timer**
+ile çalışıyor: `lernomi-cron-reminders`, `lernomi-cron-assess`, `lernomi-cron-summary`.
+`vercel.json`'daki cron tanımları yalnızca kayıt olarak duruyor, çalıştıran onlar değil.
 
 ## 4. Testler
 
@@ -259,7 +234,7 @@ for f in drizzle/*.sql; do
 done
 # Testin dolu bir `words` tablosuna ihtiyacı var: tohumlanmamış veritabanında oturum
 # kurulamadığı için testlerin çoğu "0 tur üretildi" diye düşer ve sebebi kodmuş gibi görünür.
-# (`npm run db:seed` burada kullanılamaz — Neon'un HTTP sürücüsü düz PostgreSQL'e bağlanmaz.)
+# (`npm run db:seed` burada kullanılamaz — tohumlama betiği üretim bağlantısını bekliyor.)
 export TEST_DATABASE_URL="postgres://postgres:test@localhost:55432/wa"
 npm run test:seed
 npm run test:e2e
@@ -289,13 +264,13 @@ src/
     api/answers             cevapları işler (SRS + streak + istatistik)
     api/profile             ayar güncelleme
     api/words/known         "bunu zaten biliyorum" işaretlemesi
-    api/auth/[...path]      Neon Auth proxy (giriş, kayıt, oturum)
+    api/auth/[...path]      better-auth uçları (giriş, kayıt, oturum)
     giris                   giriş / kayıt ekranı
     sifremi-unuttum         parola sıfırlama isteği
     sifre-sifirla           e-postadaki bağlantıdan yeni parola
     eposta-dogrula          kayıt sonrası doğrulama bilgilendirmesi
   lib/
-    auth/                   Neon Auth sunucu + istemci sarmalayıcıları
+    auth/                   better-auth sunucu + istemci sarmalayıcıları
     srs.ts                  tekrar motoru (saf fonksiyonlar)
     session.ts              kuyruk kurgusu, cevap işleme, haftalık sıralama, ilerleme
     sfx.ts                  oyun sesleri (WebAudio; dosya yok, tonlar yerinde üretilir)
@@ -372,8 +347,11 @@ Seçilen seviyede görülmemiş kelime kalmazsa bir üst seviye devreye girer; �
 
 ## 7. E-posta akışları (parola sıfırlama, kayıt onayı)
 
-Doğrulama ve sıfırlama e-postalarını **Neon Auth sunucusu** gönderir; uygulama yalnızca
-akışı tetikler ve ekranları gösterir:
+Akışı **better-auth** yürütür, e-postayı **biz** göndeririz: `lib/auth/server.ts`'teki
+`sendResetPassword` / `sendVerificationEmail` kancaları `lib/email.ts`'i çağırır, o da
+nodemailer ile SMTP'ye verir. Yani gönderimi üstlenen bir dış kimlik servisi YOKTUR —
+`SMTP_HOST`, `SMTP_USER` ve `SMTP_PASS` doldurulmadan hiçbir e-posta çıkmaz (kod bunu
+log'a yazıp sessizce geçer).
 
 | Ekran | Ne yapar |
 |---|---|
@@ -381,22 +359,28 @@ akışı tetikler ve ekranları gösterir:
 | `/sifre-sifirla?token=…` | `resetPassword` → yeni parolayı kaydeder |
 | `/eposta-dogrula?email=…` | `sendVerificationEmail` ile doğrulama e-postasını yeniden yollar |
 
-Kayıt sonrası oturum açılmadıysa (Neon Auth'ta "require email verification" açıksa)
+Kayıt sonrası oturum açılmadıysa (SMTP bağlıyken `requireEmailVerification` açılır)
 kullanıcı otomatik olarak `/eposta-dogrula` ekranına yönlenir.
 
-**Gönderen adresi:** Varsayılan olarak Neon'un paylaşımlı sunucusu kullanılır
-(`noreply@stackframe.co`). Kendi alan adından göndermek için Neon Console → Auth →
-Configuration → **Email server → Custom SMTP** kısmına Resend SMTP bilgilerini gir:
+**Gönderen adresi ve SMTP:** Gönderimi biz yaparız, dış bir kimlik servisi değil.
+`.env`'deki beş anahtar doldurulur:
 
-```
-Host: smtp.resend.com
-Port: 587            (veya 465 / 2465)
-User: resend
-Pass: <Resend API key>
-From: Lernomi <noreply@lernomi.app>
+```bash
+SMTP_HOST="smtp.<saglayici>.com"
+SMTP_PORT="587"        # 587 STARTTLS, 465 örtük TLS
+SMTP_USER="..."
+SMTP_PASS="..."
+SMTP_FROM="Lernomi <noreply@lernomi.app>"
 ```
 
-Resend tarafında `lernomi.app` alan adını doğrulaman (DKIM/SPF kayıtları) gerekir.
+Üçü (`HOST`, `USER`, `PASS`) dolu değilse `emailConfigured` false olur: e-posta
+gönderilmez, log'a "SMTP tanımsız" düşer ve doğrulama zorunlu tutulmaz. Sağlayıcı
+serbest (Resend, Postmark, Brevo, SES…); kendi alan adından göndermek için o
+sağlayıcıda SPF ve DKIM kayıtlarını doğrulaman gerekir.
+
+> **Not:** Bu bölüm eskiden "e-postaları Neon Auth sunucusu gönderir" diyordu. Proje
+> Neon + Vercel'den Netcup'a taşınırken kimlik doğrulama better-auth'a geçti ve
+> platformun bedava gönderimi de gitti; belge geride kalmıştı.
 
 ## 8. Kelime verisi
 
