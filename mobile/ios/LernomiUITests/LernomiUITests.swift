@@ -41,7 +41,11 @@ final class LernomiUITests: XCTestCase {
     let app = launchApp()
 
     // 1) Onboarding + ilk kelimeler: ekranın en altındaki düğmeye basarak ilerle.
-    advance(app, rounds: 16)
+    //    Giriş ekranı görünür görünmez duruyor — orası "devam" mantığının değil
+    //    signIn()'in işi. Durmasaydı en alttaki düğmeye basmayı sürdürür ve giriş
+    //    formundaki mod değiştirme düğmesine basıp formu kayda çevirirdi (bir kez
+    //    öyle oldu; kare 28 kayıt formunu gösteriyordu).
+    advance(app, rounds: 16, stopAt: label("EMAIL_CTA"))
 
     // 2) Giriş duvarı. Kimlik bilgisi yoksa burada duruluyor — ki bu da bir ekran.
     signIn(app)
@@ -85,9 +89,22 @@ final class LernomiUITests: XCTestCase {
 
   // MARK: - ilerleme
 
+  /// Arayüz metni: elle yazılmıyor, src/i18n/<dil>.ts'ten okunup ortamla geliyor
+  /// (bkz. scripts/ios-flow-screenshots.sh). Boşsa eşleşme denenmez.
+  private func label(_ name: String) -> String {
+    (env["UI_TEST_L_" + name] ?? "").trimmingCharacters(in: .whitespaces)
+  }
+
+  private func button(_ app: XCUIApplication, labeled text: String) -> XCUIElement? {
+    guard !text.isEmpty else { return nil }
+    return buttons(app).first { $0.label.caseInsensitiveCompare(text) == .orderedSame }
+  }
+
   /// "Devam" düzeni: seçenek varsa ilkini seç, sonra en alttaki düğmeye bas.
-  private func advance(_ app: XCUIApplication, rounds: Int) {
+  /// `stopAt` etiketli bir düğme göründüğünde durur.
+  private func advance(_ app: XCUIApplication, rounds: Int, stopAt: String = "") {
     for _ in 0..<rounds {
+      if button(app, labeled: stopAt) != nil { return }
       let bs = buttons(app)
       guard let last = bs.last, last.isHittable else { return }
       if bs.count > 1 {
@@ -102,23 +119,36 @@ final class LernomiUITests: XCTestCase {
 
   /// E-posta ile giriş. Kimlik bilgisi verilmemişse yalnız giriş ekranını
   /// (sağlayıcı listesi + e-posta formu) gösterip döner — o da iki ekran.
+  ///
+  /// Bu adım konumsal DEĞİL etiketle çalışıyor, çünkü form iki modlu: giriş ve
+  /// kayıt. Konumla gidilirse hangi modda olunduğu bilinemez ve kayıt formunun
+  /// üç alanından ilkine (ADIN) e-posta yazılır. Etiketler yine elle değil
+  /// i18n'den geliyor.
   private func signIn(_ app: XCUIApplication) {
-    // "E-posta ile devam et" formu açsın: giriş ekranında en alttaki düğme o.
-    if let open = buttons(app).last, open.isHittable {
-      open.tap()
+    if let cta = button(app, labeled: label("EMAIL_CTA")), cta.isHittable {
+      cta.tap()
       sleep(dwell)
     }
     guard let email = env["UI_TEST_EMAIL"], let password = env["UI_TEST_PASSWORD"],
           !email.isEmpty, !password.isEmpty else { return }
 
+    // Kayıt modundaysak giriş moduna çevir: en alttaki düğme mod değiştiricisi.
+    if button(app, labeled: label("SIGNUP")) != nil {
+      if let toggle = buttons(app).last, toggle.isHittable {
+        toggle.tap()
+        sleep(2)
+      }
+    }
+
     let fields = app.textFields.allElementsBoundByIndex.filter { $0.exists && $0.isHittable }
     let secure = app.secureTextFields.allElementsBoundByIndex.filter { $0.exists && $0.isHittable }
-    guard let mail = fields.first, let pass = secure.first else { return }
+    // Giriş modunda tek metin alanı var (e-posta). Birden fazlaysa hâlâ kayıt
+    // formundayız demektir; yanlış alana yazmaktansa hiç yazma.
+    guard fields.count == 1, let mail = fields.first, let pass = secure.first else { return }
 
     mail.tap(); mail.typeText(email)
     pass.tap(); pass.typeText(password)
-    // Klavye açıkken "gönder" düğmesi kaymış olabilir; en alttakini yeniden bul.
-    if let submit = buttons(app).last, submit.isHittable {
+    if let submit = button(app, labeled: label("SIGNIN")), submit.isHittable {
       submit.tap()
     }
     sleep(dwell * 2) // oturum + ilk veri çekimi

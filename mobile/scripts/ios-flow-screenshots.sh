@@ -37,6 +37,14 @@ block_list() {
   python3 scripts/i18n-values.py "src/i18n/$1.ts" $BLOCK_KEYS
 }
 
+# Giriş adımının aradığı düğme etiketleri. Bunlar da elle yazılmıyor: form iki
+# modlu (giriş / kayıt) ve konumla gidilirse hangi modda olunduğu bilinemiyor —
+# kayıt formunun üç alanından ilkine (ADIN) e-posta yazılırdı. Bu üç düğmenin
+# uygulamada açık accessibilityLabel'ı var, o yüzden etiketle bulunabiliyorlar.
+i18n_value() {
+  python3 scripts/i18n-values.py "src/i18n/$1.ts" "$2"
+}
+
 [ "$(uname -s)" = "Darwin" ] || { echo "Bu betik yalnız macOS'ta çalışır."; exit 1; }
 mkdir -p "$OUT"
 
@@ -107,6 +115,9 @@ for LANG_CODE in $FLOW_LANGS; do
     CODE_SIGNING_ALLOWED=NO \
     TEST_RUNNER_UI_TEST_LANG="$LANG_CODE" \
     TEST_RUNNER_UI_TEST_BLOCK="$BLOCK" \
+    TEST_RUNNER_UI_TEST_L_EMAIL_CTA="$(i18n_value "$LANG_CODE" auth.continue_with_email)" \
+    TEST_RUNNER_UI_TEST_L_SIGNIN="$(i18n_value "$LANG_CODE" auth.sign_in)" \
+    TEST_RUNNER_UI_TEST_L_SIGNUP="$(i18n_value "$LANG_CODE" auth.create_account)" \
     TEST_RUNNER_UI_TEST_EMAIL="${UI_TEST_EMAIL:-}" \
     TEST_RUNNER_UI_TEST_PASSWORD="${UI_TEST_PASSWORD:-}" 2>&1 | tail -40
   TEST_RC=${PIPESTATUS[0]}
