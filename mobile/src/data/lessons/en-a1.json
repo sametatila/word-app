@@ -493,7 +493,9 @@
      "accept": [
       "Hello, I'm Deniz. I'm from Turkey.",
       "Hi, my name is Deniz. I'm from Turkey.",
-      "Hello, my name is Deniz. I am from Turkey."
+      "Hello, my name is Deniz. I am from Turkey.",
+      "Hi, I'm Deniz. I'm from Turkey.",
+      "Hi, I am Deniz. I am from Turkey."
      ],
      "hint": [
       {
@@ -563,7 +565,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. Bugün üç kalıp öğrendin: adın için \"My name is …\", nereli olduğun için \"I'm from …\", yaşadığın yer için \"I live in …\". Soru sorarken"
+      "text": "Toparlayalım. Bugün üç kalıp öğrendin: adın için"
+     },
+     {
+      "lang": "en",
+      "text": "My name is …"
+     },
+     {
+      "lang": "tr",
+      "text": ", nereli olduğun için \"I'm from …\", yaşadığın yer için \"I live in …\". Soru sorarken"
      },
      {
       "lang": "en",
@@ -3260,7 +3270,19 @@
      },
      {
       "lang": "tr",
-      "text": "Yaşını söylemeyi öğrendin: I'm twenty years old. Ve fiyat sormayı: How much is it?"
+      "text": "Yaşını söylemeyi öğrendin:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm twenty years old."
+     },
+     {
+      "lang": "tr",
+      "text": "Ve fiyat sormayı:"
+     },
+     {
+      "lang": "en",
+      "text": "How much is it?"
      },
      {
       "lang": "tr",
@@ -5122,7 +5144,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir not: what's aslında what is demek. İngilizcede konuşurken bu kısaltmalar çok kullanılır. What is your address da doğrudur ama günlük konuşmada what's daha doğal duyulur."
+      "text": "Küçük bir not: what's aslında what is demek. İngilizcede konuşurken bu kısaltmalar çok kullanılır."
+     },
+     {
+      "lang": "en",
+      "text": "What is your address"
+     },
+     {
+      "lang": "tr",
+      "text": "da doğrudur ama günlük konuşmada what's daha doğal duyulur."
      }
     ]
    },
@@ -5409,7 +5439,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özet: What ne, Where nerede, How old kaç yaşında. Yeni kelimeler: address adres, phone number telefon numarası, email address e-posta adresi. Kalıplar: What's your name? What's your address? I live in… Artık İngilizce bir formu anlayabilir ve doldurabilirsin. Çok iyiydin!"
+      "text": "Özet: What ne, Where nerede, How old kaç yaşında. Yeni kelimeler: address adres, phone number telefon numarası, email address e-posta adresi. Kalıplar:"
+     },
+     {
+      "lang": "en",
+      "text": "What's your name?"
+     },
+     {
+      "lang": "en",
+      "text": "What's your address?"
+     },
+     {
+      "lang": "tr",
+      "text": "I live in… Artık İngilizce bir formu anlayabilir ve doldurabilirsin. Çok iyiydin!"
      }
     ]
    }
@@ -6402,7 +6444,19 @@
      },
      {
       "lang": "tr",
-      "text": "Soru: Have you got a brother? Cevap: Yes, I have ya da No, I haven't."
+      "text": "Soru:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you got a brother?"
+     },
+     {
+      "lang": "tr",
+      "text": "Cevap: Yes, I have ya da"
+     },
+     {
+      "lang": "en",
+      "text": "No, I haven't."
      }
     ]
    },
@@ -6534,7 +6588,11 @@
      },
      {
       "lang": "tr",
-      "text": "Lütfen benimle söyle: I don't know."
+      "text": "Lütfen benimle söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I don't know."
      }
     ],
     "expect": {
@@ -6546,7 +6604,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kuralı yakala: önce kim, sonra don't, sonra fiil. I don't know. I don't drink. I don't have."
+      "text": "Kuralı yakala: önce kim, sonra don't, sonra fiil."
+     },
+     {
+      "lang": "en",
+      "text": "I don't know."
+     },
+     {
+      "lang": "tr",
+      "text": "I don't drink. I don't have."
      },
      {
       "lang": "tr",
@@ -6566,7 +6632,11 @@
      },
      {
       "lang": "tr",
-      "text": "Sen de söyle: I don't understand."
+      "text": "Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I don't understand."
      }
     ],
     "expect": {
@@ -6628,7 +6698,11 @@
      },
      {
       "lang": "tr",
-      "text": "Lütfen tekrar et: She doesn't work here."
+      "text": "Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "She doesn't work here."
      }
     ],
     "expect": {
@@ -6711,7 +6785,11 @@
      },
      {
       "lang": "tr",
-      "text": "Sen de söyle: I never forget."
+      "text": "Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I never forget."
      }
     ],
     "expect": {
@@ -6766,7 +6844,11 @@
      },
      {
       "lang": "tr",
-      "text": "Lütfen tekrar et: I drink tea without sugar."
+      "text": "Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I drink tea without sugar."
      }
     ],
     "expect": {
@@ -7868,7 +7950,11 @@
      },
      {
       "lang": "tr",
-      "text": "Takılırsan tek bir cümle yeter: This is my mother."
+      "text": "Takılırsan tek bir cümle yeter:"
+     },
+     {
+      "lang": "en",
+      "text": "This is my mother."
      }
     ]
    },
@@ -9748,7 +9834,15 @@
      },
      {
       "lang": "tr",
-      "text": "Kimin kimi olduğunu söylerken isme kesme işaretli s ekliyorsun: Ali's cousin, my mother's sister."
+      "text": "Kimin kimi olduğunu söylerken isme kesme işaretli s ekliyorsun: Ali's cousin,"
+     },
+     {
+      "lang": "en",
+      "text": "my mother's sister"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      },
      {
       "lang": "tr",
@@ -10153,7 +10247,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi soruyu sen sor: Is she nice?"
+      "text": "Şimdi soruyu sen sor:"
+     },
+     {
+      "lang": "en",
+      "text": "Is she nice?"
      }
     ],
     "expect": {
@@ -10748,7 +10846,23 @@
      },
      {
       "lang": "tr",
-      "text": "Ve iki sipariş kalıbı: 'I'd like a coffee, please.' ve 'I'll have a tea, please.' İkisi de kibar, ikisini de rahatça kullanabilirsin."
+      "text": "Ve iki sipariş kalıbı:"
+     },
+     {
+      "lang": "en",
+      "text": "I'd like a coffee, please."
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "I'll have a tea, please."
+     },
+     {
+      "lang": "tr",
+      "text": "İkisi de kibar, ikisini de rahatça kullanabilirsin."
      },
      {
       "lang": "tr",
@@ -11668,7 +11782,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Bugün üç şey öğrendik: kibarca istemek için Can I have … please, fiyat sormak için How much is it, ve almaya karar verince I'll take it."
+      "text": "Harika iş çıkardın. Bugün üç şey öğrendik: kibarca istemek için Can I have … please, fiyat sormak için How much is it, ve almaya karar verince"
+     },
+     {
+      "lang": "en",
+      "text": "I'll take it."
      },
      {
       "lang": "tr",
@@ -11852,7 +11970,11 @@
      },
      {
       "lang": "tr",
-      "text": "Söyle: A table for two, please."
+      "text": "Söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A table for two, please."
      }
     ],
     "expect": {
@@ -11900,7 +12022,11 @@
      },
      {
       "lang": "tr",
-      "text": "Şimdi sen söyle: I'd like a coffee, please."
+      "text": "Şimdi sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I'd like a coffee, please."
      }
     ],
     "expect": {
@@ -11995,7 +12121,11 @@
      },
      {
       "lang": "tr",
-      "text": "Lütfen söyle: Can I have the menu, please?"
+      "text": "Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I have the menu, please?"
      }
     ],
     "expect": {
@@ -12126,7 +12256,11 @@
      },
      {
       "lang": "tr",
-      "text": "Cümle şu: I'd like a apple juice."
+      "text": "Cümle şu:"
+     },
+     {
+      "lang": "en",
+      "text": "I'd like a apple juice."
      }
     ],
     "expect": {
@@ -12169,19 +12303,35 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kısa bir özet yapalım. Kapıda: A table for two, please."
+      "text": "Kısa bir özet yapalım. Kapıda:"
+     },
+     {
+      "lang": "en",
+      "text": "A table for two, please."
      },
      {
       "lang": "tr",
-      "text": "Sipariş verirken: I'd like a coffee, please."
+      "text": "Sipariş verirken:"
+     },
+     {
+      "lang": "en",
+      "text": "I'd like a coffee, please."
      },
      {
       "lang": "tr",
-      "text": "Bir şey isterken: Can I have the menu, please?"
+      "text": "Bir şey isterken:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I have the menu, please?"
      },
      {
       "lang": "tr",
-      "text": "Sonunda: Can I have the bill, please?"
+      "text": "Sonunda:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I have the bill, please?"
      },
      {
       "lang": "tr",
@@ -12847,7 +12997,11 @@
      },
      {
       "lang": "tr",
-      "text": "Bu ne kadar? Lütfen söyle: How much is it?"
+      "text": "Bu ne kadar? Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "How much is it?"
      }
     ],
     "expect": {
@@ -12917,7 +13071,15 @@
      },
      {
       "lang": "tr",
-      "text": "Lütfen tekrar et: a kilo of apples."
+      "text": "Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "a kilo of apples"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      }
     ],
     "expect": {
@@ -12988,7 +13150,11 @@
      },
      {
       "lang": "tr",
-      "text": "Kaç elma istiyorsun? Lütfen söyle: How many apples do you want?"
+      "text": "Kaç elma istiyorsun? Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "How many apples do you want?"
      }
     ],
     "expect": {
@@ -13113,7 +13279,23 @@
      },
      {
       "lang": "tr",
-      "text": "Cebinde şunlar var: How much is it? How many apples do you want? Two kilos, please. That's too expensive."
+      "text": "Cebinde şunlar var:"
+     },
+     {
+      "lang": "en",
+      "text": "How much is it?"
+     },
+     {
+      "lang": "en",
+      "text": "How many apples do you want?"
+     },
+     {
+      "lang": "tr",
+      "text": "Two kilos, please."
+     },
+     {
+      "lang": "en",
+      "text": "That's too expensive."
      },
      {
       "lang": "tr",
@@ -13624,7 +13806,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim. Yönerge verirken fiil başa gelir: cook, cut, wash. Yapmamasını istiyorsan başına don't koyarsın: don't touch it. Adımları first, then, after that ile sıralarsın. Ve hazır mı diye sorarsın: Is it ready?"
+      "text": "Özetleyelim. Yönerge verirken fiil başa gelir: cook, cut, wash. Yapmamasını istiyorsan başına don't koyarsın: don't touch it. Adımları first, then, after that ile sıralarsın. Ve hazır mı diye sorarsın:"
+     },
+     {
+      "lang": "en",
+      "text": "Is it ready?"
      },
      {
       "lang": "tr",
@@ -13840,7 +14026,15 @@
      },
      {
       "lang": "tr",
-      "text": "Kural bu kadar basit: a coffee, ama an orange juice."
+      "text": "Kural bu kadar basit: a coffee, ama"
+     },
+     {
+      "lang": "en",
+      "text": "an orange juice"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      }
     ]
    },
@@ -14107,11 +14301,31 @@
      },
      {
       "lang": "tr",
-      "text": "Kibarca istemek için I'd like a coffee, please. Teklif etmek için Would you like some tea?"
+      "text": "Kibarca istemek için"
+     },
+     {
+      "lang": "en",
+      "text": "I'd like a coffee, please."
      },
      {
       "lang": "tr",
-      "text": "Cevaplar da hazır: Yes, please ya da No, thank you. Şimdi bunu kafede deneyelim."
+      "text": "Teklif etmek için"
+     },
+     {
+      "lang": "en",
+      "text": "Would you like some tea?"
+     },
+     {
+      "lang": "tr",
+      "text": "Cevaplar da hazır: Yes, please ya da"
+     },
+     {
+      "lang": "en",
+      "text": "No, thank you."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunu kafede deneyelim."
      }
     ]
    }
@@ -14651,7 +14865,27 @@
      },
      {
       "lang": "tr",
-      "text": "Üç kalıbın var: I'd like a kilo of apples · Are the tomatoes fresh? · How much are the apples?"
+      "text": "Üç kalıbın var: I'd like"
+     },
+     {
+      "lang": "en",
+      "text": "a kilo of apples"
+     },
+     {
+      "lang": "tr",
+      "text": "·"
+     },
+     {
+      "lang": "en",
+      "text": "Are the tomatoes fresh?"
+     },
+     {
+      "lang": "tr",
+      "text": "·"
+     },
+     {
+      "lang": "en",
+      "text": "How much are the apples?"
      },
      {
       "lang": "tr",
@@ -16551,7 +16785,15 @@
      },
      {
       "lang": "tr",
-      "text": "Amerikalılar çoğu zaman 'on the weekend' der; ikisi de anlaşılır, ama biz at the weekend ile ilerleyelim."
+      "text": "Amerikalılar çoğu zaman 'on the weekend' der; ikisi de anlaşılır, ama biz"
+     },
+     {
+      "lang": "en",
+      "text": "at the weekend"
+     },
+     {
+      "lang": "tr",
+      "text": "ile ilerleyelim."
      }
     ]
    },
@@ -16606,7 +16848,15 @@
      },
      {
       "lang": "tr",
-      "text": "Sabahleyin demek. Sen de söyle: in the morning."
+      "text": "Sabahleyin demek. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "in the morning"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      }
     ],
     "expect": {
@@ -16724,7 +16974,11 @@
      },
      {
       "lang": "tr",
-      "text": "Bugün günlerden ne? Cevabı da artık biliyorsun: Today is Monday."
+      "text": "Bugün günlerden ne? Cevabı da artık biliyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "Today is Monday."
      }
     ]
    },
@@ -16736,7 +16990,23 @@
      },
      {
       "lang": "tr",
-      "text": "Ve üç edatı: gün için on, hafta sonu için at the weekend, sabah akşam için in the morning."
+      "text": "Ve üç edatı: gün için on, hafta sonu için"
+     },
+     {
+      "lang": "en",
+      "text": "at the weekend"
+     },
+     {
+      "lang": "tr",
+      "text": ", sabah akşam için"
+     },
+     {
+      "lang": "en",
+      "text": "in the morning"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      },
      {
       "lang": "tr",
@@ -18478,7 +18748,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün en çok işine yarayacak olan öğleden sonra. Lütfen in the afternoon de."
+      "text": "Bugün en çok işine yarayacak olan öğleden sonra. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "in the afternoon"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
      }
     ],
     "expect": {
@@ -20717,7 +20995,27 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Bugün mağazada dört şey öğrendin: aradığını söylemek, I'm looking for a shirt. Bedenini söylemek, size. Denemek için izin istemek, Can I try it on? Ve fiyat sormak, How much is it?"
+      "text": "Harika iş çıkardın. Bugün mağazada dört şey öğrendin: aradığını söylemek,"
+     },
+     {
+      "lang": "en",
+      "text": "I'm looking for a shirt."
+     },
+     {
+      "lang": "tr",
+      "text": "Bedenini söylemek, size. Denemek için izin istemek,"
+     },
+     {
+      "lang": "en",
+      "text": "Can I try it on?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ve fiyat sormak,"
+     },
+     {
+      "lang": "en",
+      "text": "How much is it?"
      },
      {
       "lang": "tr",
@@ -21568,7 +21866,6 @@
      "target": "It's blue.",
      "accept": [
       "It is blue.",
-      "Its blue.",
       "It's blue"
      ],
      "hint": [
@@ -24965,7 +25262,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bunları bir arada düşün: I'm sick. I need medicine. Do you have toothpaste? Bu üç cümleyle eczanede işini görürsün."
+      "text": "Şimdi bunları bir arada düşün:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm sick. I need medicine."
+     },
+     {
+      "lang": "en",
+      "text": "Do you have toothpaste?"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu üç cümleyle eczanede işini görürsün."
      }
     ]
    },
@@ -26824,7 +27133,11 @@
      },
      {
       "lang": "tr",
-      "text": "Sen de sor bakalım: Single or return?"
+      "text": "Sen de sor bakalım:"
+     },
+     {
+      "lang": "en",
+      "text": "Single or return?"
      }
     ],
     "expect": {
@@ -26978,7 +27291,15 @@
      },
      {
       "lang": "tr",
-      "text": "Pencere kenarı istiyorsan: a window seat."
+      "text": "Pencere kenarı istiyorsan:"
+     },
+     {
+      "lang": "en",
+      "text": "a window seat"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      }
     ]
    },
@@ -26990,7 +27311,15 @@
      },
      {
       "lang": "tr",
-      "text": "Tekrar et: a window seat."
+      "text": "Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "a window seat"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      }
     ],
     "expect": {
@@ -27046,7 +27375,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Bugün öğrendiklerimiz: I'd like ile kibarca bir şey istemek, ticket ve tickets, tek yön için single, gidiş-dönüş için return, fiyat sormak için How much is it, ve peronu sormak için Which platform."
+      "text": "Harika iş çıkardın. Bugün öğrendiklerimiz: I'd like ile kibarca bir şey istemek, ticket ve tickets, tek yön için single, gidiş-dönüş için return, fiyat sormak için"
+     },
+     {
+      "lang": "en",
+      "text": "How much is it"
+     },
+     {
+      "lang": "tr",
+      "text": ", ve peronu sormak için Which platform."
      },
      {
       "lang": "tr",
@@ -28355,7 +28692,6 @@
      "kind": "produce",
      "target": "The hotel is next to the bank.",
      "accept": [
-      "Hotel is next to the bank.",
       "The hotel is next to the bank"
      ],
      "hint": [
@@ -28508,7 +28844,6 @@
      "kind": "produce",
      "target": "The pharmacy is opposite the bank.",
      "accept": [
-      "Pharmacy is opposite the bank.",
       "The pharmacy is opposite the bank"
      ],
      "hint": [
@@ -30173,7 +30508,15 @@
      },
      {
       "lang": "tr",
-      "text": ". Sormak için \"How do you get to …?\"."
+      "text": ". Sormak için"
+     },
+     {
+      "lang": "en",
+      "text": "How do you get to …?"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      },
      {
       "lang": "tr",
@@ -32390,7 +32733,11 @@
      },
      {
       "lang": "tr",
-      "text": "Nerede oturduğunu söylerken lives kullanıyorsun: She lives next door."
+      "text": "Nerede oturduğunu söylerken lives kullanıyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "She lives next door."
      },
      {
       "lang": "tr",
@@ -32520,7 +32867,15 @@
      },
      {
       "lang": "tr",
-      "text": "Yan komşu için next door, tarif için quiet ve friendly, soru için Where do you live."
+      "text": "Yan komşu için next door, tarif için quiet ve friendly, soru için"
+     },
+     {
+      "lang": "en",
+      "text": "Where do you live"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      },
      {
       "lang": "tr",
@@ -32905,7 +33260,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir tekrar. Kural söylerken: You must. Yasak söylerken: You mustn't. İzin sorarken: Is it allowed?"
+      "text": "Son bir tekrar. Kural söylerken: You must. Yasak söylerken: You mustn't. İzin sorarken:"
+     },
+     {
+      "lang": "en",
+      "text": "Is it allowed?"
      },
      {
       "lang": "en",
@@ -34928,11 +35287,11 @@
      },
      {
       "lang": "en",
-      "text": "The sun is warm outside."
+      "text": "The sun is warm today."
      },
      {
       "lang": "tr",
-      "text": "'Dışarıda güneş sıcak.' demek. Balkonda otururken tam da söyleyeceğin cümle."
+      "text": "'Bugün güneş sıcak.' demek. Balkonda otururken tam da söyleyeceğin cümle."
      }
     ]
    },
@@ -35487,7 +35846,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özet: bozuk için It's broken, çalışmıyor için It doesn't work, yardım istemek için Can you fix it? dedin. Ayrıca doesn't'tan sonra fiilin yalın kaldığını öğrendin. Şimdi bunu bir sahnede deneyelim."
+      "text": "Özet: bozuk için It's broken, çalışmıyor için It doesn't work, yardım istemek için"
+     },
+     {
+      "lang": "en",
+      "text": "Can you fix it?"
+     },
+     {
+      "lang": "tr",
+      "text": "dedin. Ayrıca doesn't'tan sonra fiilin yalın kaldığını öğrendin. Şimdi bunu bir sahnede deneyelim."
      }
     ]
    }
@@ -36568,11 +36935,39 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. Top ve takım sporlarında play: I play football. Sonu -ing olan hareket sporlarında go: I go swimming, I go running. Gerisinde do: I do yoga."
+      "text": "Toparlayalım. Top ve takım sporlarında play:"
+     },
+     {
+      "lang": "en",
+      "text": "I play football."
      },
      {
       "lang": "tr",
-      "text": "Sormak için başa Do koyuyorsun: Do you play tennis? Cevap: Yes, I do ya da No, I don't."
+      "text": "Sonu -ing olan hareket sporlarında go:"
+     },
+     {
+      "lang": "en",
+      "text": "I go swimming"
+     },
+     {
+      "lang": "tr",
+      "text": ", I go running. Gerisinde do: I do yoga."
+     },
+     {
+      "lang": "tr",
+      "text": "Sormak için başa Do koyuyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "Do you play tennis?"
+     },
+     {
+      "lang": "tr",
+      "text": "Cevap: Yes, I do ya da"
+     },
+     {
+      "lang": "en",
+      "text": "No, I don't."
      },
      {
       "lang": "tr",
@@ -37046,7 +37441,31 @@
      },
      {
       "lang": "tr",
-      "text": "Üç de kalıp: I like this song, What music do you like ve I prefer pop music. Ve unutma, listen hep to ile gelir."
+      "text": "Üç de kalıp:"
+     },
+     {
+      "lang": "en",
+      "text": "I like this song"
+     },
+     {
+      "lang": "tr",
+      "text": ","
+     },
+     {
+      "lang": "en",
+      "text": "What music do you like"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "I prefer pop music."
+     },
+     {
+      "lang": "tr",
+      "text": "Ve unutma, listen hep to ile gelir."
      },
      {
       "lang": "tr",
@@ -38467,7 +38886,15 @@
      },
      {
       "lang": "tr",
-      "text": "Şimdi sen dene. Lütfen There is a dog. de."
+      "text": "Şimdi sen dene. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "There is a dog."
+     },
+     {
+      "lang": "tr",
+      "text": "de."
      }
     ],
     "expect": {
@@ -39926,7 +40353,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu cümle korkarım yapamam, maalesef olmaz demek. Lütfen sen de söyle: I'm afraid I can't."
+      "text": "Bu cümle korkarım yapamam, maalesef olmaz demek. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm afraid I can't."
      }
     ],
     "expect": {
@@ -39998,7 +40429,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de teşekkür eklersen ret gerçekten sıcak olur. Davet için teşekkür ediyoruz: Thanks for asking. Yani sorduğun için teşekkürler."
+      "text": "Bir de teşekkür eklersen ret gerçekten sıcak olur. Davet için teşekkür ediyoruz:"
+     },
+     {
+      "lang": "en",
+      "text": "Thanks for asking."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani sorduğun için teşekkürler."
      }
     ]
    },
@@ -40006,7 +40445,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Lütfen söyle: Thanks for asking."
+      "text": "Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Thanks for asking."
      }
     ],
     "expect": {
@@ -40905,7 +41348,15 @@
      },
      {
       "lang": "tr",
-      "text": "This bu demek, is ise -dir. This is my hand. Bu kalıba çok ihtiyacın olacak."
+      "text": "This bu demek, is ise -dir."
+     },
+     {
+      "lang": "en",
+      "text": "This is my hand."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu kalıba çok ihtiyacın olacak."
      }
     ]
    },
@@ -42669,11 +43120,35 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. Zorunluluk için must ya da have to, he ve she ile has to. Soru için başa do: Do I have to pay? Gerek yok demek için don't have to."
+      "text": "Toparlayalım. Zorunluluk için must ya da have to, he ve she ile has to. Soru için başa do:"
+     },
+     {
+      "lang": "en",
+      "text": "Do I have to pay?"
      },
      {
       "lang": "tr",
-      "text": "Cebinde artık dört güçlü cümle var: I must go. I have to work today. Do I have to wait? You don't have to pay. Harikasın, şimdi konuşma sırası sende."
+      "text": "Gerek yok demek için don't have to."
+     },
+     {
+      "lang": "tr",
+      "text": "Cebinde artık dört güçlü cümle var: I must go."
+     },
+     {
+      "lang": "en",
+      "text": "I have to work today."
+     },
+     {
+      "lang": "en",
+      "text": "Do I have to wait?"
+     },
+     {
+      "lang": "en",
+      "text": "You don't have to pay."
+     },
+     {
+      "lang": "tr",
+      "text": "Harikasın, şimdi konuşma sırası sende."
      }
     ]
    }
@@ -43125,7 +43600,23 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. Derdini söylerken I have a headache, kibarca isterken Can I have some medicine, please, kullanımı sorarken How many times a day."
+      "text": "Toparlayalım. Derdini söylerken"
+     },
+     {
+      "lang": "en",
+      "text": "I have a headache"
+     },
+     {
+      "lang": "tr",
+      "text": ", kibarca isterken Can I have some medicine, please, kullanımı sorarken"
+     },
+     {
+      "lang": "en",
+      "text": "How many times a day"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      },
      {
       "lang": "tr",
@@ -44221,7 +44712,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. Öğüt vermek için: You should artı fiil. Yapmamasını söylemek için: You shouldn't artı fiil. Öğüt istemek için: What should I do?"
+      "text": "Toparlayalım. Öğüt vermek için: You should artı fiil. Yapmamasını söylemek için: You shouldn't artı fiil. Öğüt istemek için:"
+     },
+     {
+      "lang": "en",
+      "text": "What should I do?"
      },
      {
       "lang": "tr",
@@ -44691,7 +45186,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim: İngilizcede emir cümlesi fiille başlar, özne yoktur. Olumsuzu don't ile kurulur. Elinde artık şunlar var: Help! Call an ambulance! Come fast! Don't move! Bunlar kısa ama güçlü cümleler. Şimdi telefon sahnesinde deneyelim."
+      "text": "Özetleyelim: İngilizcede emir cümlesi fiille başlar, özne yoktur. Olumsuzu don't ile kurulur. Elinde artık şunlar var: Help!"
+     },
+     {
+      "lang": "en",
+      "text": "Call an ambulance!"
+     },
+     {
+      "lang": "tr",
+      "text": "Come fast! Don't move! Bunlar kısa ama güçlü cümleler. Şimdi telefon sahnesinde deneyelim."
      }
     ]
    }
@@ -45701,7 +46204,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün diş hekiminde derdini anlatmayı öğrendin: tooth ve teeth, dentist, hurt ve clean. En önemlisi have ile ağrım var demeyi öğrendin: I have a toothache. Unutma, he, she, it için has. Şimdi bunu hekimle deneyelim."
+      "text": "Bugün diş hekiminde derdini anlatmayı öğrendin: tooth ve teeth, dentist, hurt ve clean. En önemlisi have ile ağrım var demeyi öğrendin:"
+     },
+     {
+      "lang": "en",
+      "text": "I have a toothache."
+     },
+     {
+      "lang": "tr",
+      "text": "Unutma, he, she, it için has. Şimdi bunu hekimle deneyelim."
      }
     ]
    }
@@ -49740,7 +50251,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Bugün üç şey öğrendin: soru için did you, olumsuz için I didn't, ve kısa cevap için Yes, I did ya da No, I didn't."
+      "text": "Harika iş çıkardın. Bugün üç şey öğrendin: soru için did you, olumsuz için I didn't, ve kısa cevap için Yes, I did ya da"
+     },
+     {
+      "lang": "en",
+      "text": "No, I didn't."
      },
      {
       "lang": "tr",
@@ -50210,7 +50725,15 @@
      },
      {
       "lang": "tr",
-      "text": "Ayrıca 'What did you do last weekend?' diye sormayı ve 'did' varken fiilin yalın kaldığını gördün."
+      "text": "Ayrıca"
+     },
+     {
+      "lang": "en",
+      "text": "What did you do last weekend?"
+     },
+     {
+      "lang": "tr",
+      "text": "diye sormayı ve 'did' varken fiilin yalın kaldığını gördün."
      },
      {
       "lang": "tr",
@@ -50406,7 +50929,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de 'yakında'yı ekleyelim: 'I'll call you soon.' Dikkat et, 'soon' cümlenin sonuna gidiyor. İngilizcede zaman sözcükleri genelde sona yakın durur."
+      "text": "Bir de 'yakında'yı ekleyelim:"
+     },
+     {
+      "lang": "en",
+      "text": "I'll call you soon."
+     },
+     {
+      "lang": "tr",
+      "text": "Dikkat et, 'soon' cümlenin sonuna gidiyor. İngilizcede zaman sözcükleri genelde sona yakın durur."
      }
     ]
    },
@@ -50664,7 +51195,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim: 'See you soon' yakında görüşürüz, 'I'll call you' seni ararım, 'Let's meet again' tekrar buluşalım, 'I'll miss you' seni özleyeceğim, 'Keep in touch' irtibatta kal ve 'Take care' kendine iyi bak."
+      "text": "Özetleyelim: 'See you soon' yakında görüşürüz, 'I'll call you' seni ararım,"
+     },
+     {
+      "lang": "en",
+      "text": "Let's meet again"
+     },
+     {
+      "lang": "tr",
+      "text": "tekrar buluşalım, 'I'll miss you' seni özleyeceğim, 'Keep in touch' irtibatta kal ve 'Take care' kendine iyi bak."
      },
      {
       "lang": "tr",

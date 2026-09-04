@@ -388,7 +388,7 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
               {/* Parçalar arasına boşluk konur — ama sonraki parça noktalama ile
                   başlıyorsa konmaz, yoksa ekranda "then . Sonra demek" gibi
                   noktadan önce boşluk çıkıyor. */}
-              {s.text}{i < b.segments.length - 1 && !/^[.,!?;:]/.test(b.segments[i + 1].text) ? " " : ""}
+              {s.text}{i < b.segments.length - 1 && !/^[.,!?;:…]/.test(b.segments[i + 1].text) ? " " : ""}
             </Text>
           ))}
         </Text>
