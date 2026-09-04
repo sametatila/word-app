@@ -22,6 +22,7 @@ import { a1U20 } from "./a1-u20";
 import { a1U21 } from "./a1-u21";
 import { a1U22 } from "./a1-u22";
 import { a1U23 } from "./a1-u23";
+import { a1U24 } from "./a1-u24";
 
 /** A1 — okuma, dinleme ve yazma egzersizleri. */
 export const a1: SkillExercise[] = [
@@ -51,6 +52,7 @@ export const a1: SkillExercise[] = [
   ...a1U21,
   ...a1U22,
   ...a1U23,
+  ...a1U24,
   // ─────────────────────────── OKUMA ───────────────────────────
   {
     id: "a1-r1",
