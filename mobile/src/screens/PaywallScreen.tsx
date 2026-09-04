@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, ScrollView, ActivityIndicator, Linking } from "react-native";
+import { View, ScrollView, ActivityIndicator, Linking, Platform } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { PurchasesPackage } from "react-native-purchases";
@@ -19,11 +19,15 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 /**
  * Paywall — YALNIZ mağaza entegrasyonu canlıyken (RevenueCat anahtarı) anlamlı; canlı
  * değilken hiçbir giriş noktası buraya gelmez (Profil bandı ve sınav kilidi gizli) ve
- * ekran açılsa bile satın alma vaadi vermez. Play Abonelikler politikası: fiyat, süre ve
- * deneme yalnız mağazadan (PurchasesPackage); sabit fiyat, uydurma avantaj ("reklamsız"),
- * gizli geri yükleme yok. Yalnız gerçekten kilitli olan şey listelenir.
+ * ekran açılsa bile satın alma vaadi vermez. Play ve App Store abonelik politikaları aynı
+ * şeyi istiyor: fiyat, süre ve deneme yalnız mağazadan (PurchasesPackage); sabit fiyat,
+ * uydurma avantaj ("reklamsız"), gizli geri yükleme yok. Yalnız gerçekten kilitli olan
+ * şey listelenir.
  */
-const PLAY_SUBSCRIPTIONS_URL = "https://play.google.com/store/account/subscriptions";
+/** "Aboneliği yönet" — abonelik hangi mağazadan alındıysa oranın abonelik ekranı. */
+const SUBSCRIPTIONS_URL = Platform.OS === "ios"
+  ? "https://apps.apple.com/account/subscriptions"
+  : "https://play.google.com/store/account/subscriptions";
 
 /** Gerçekten premium'a bağlı özellikler — ExamPrep'teki kilitle birebir. */
 const COMPARE: { key: string; free: string; premium: string }[] = [
@@ -197,16 +201,17 @@ export function PaywallScreen() {
         <PressableScale onPress={start} disabled={busy || !pkg} accessibilityRole="button" accessibilityLabel={trial ? t("paywall.ucretsiz_denemeyi_baslat") : t("paywall.abone_ol")} style={[{ borderRadius: radii.lg, backgroundColor: pkg ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, pkg ? softShadow(colors.primary, 12) : {}]}>
           {busy ? <ActivityIndicator color="#fff" /> : <Text variant="h3" color={pkg ? "#fff" : colors.textFaint}>{trial ? t("paywall.ucretsiz_denemeyi_baslat") : t("paywall.abone_ol")}</Text>}
         </PressableScale>
-        {/* Play Abonelikler politikası: süre, fiyat, yenileme ve iptal yolu satın almadan önce görünür. */}
+        {/* Abonelik politikası (Play ve App Store): süre, fiyat, yenileme ve iptal yolu
+            satın almadan önce görünür. İptal yolu mağazaya göre ayrı metin. */}
         <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 16 }}>
           {pkg ? (trial ? t("paywall.deneme_sonra_ucret", { sure: trial, fiyat: pkg.product.priceString }) : t("paywall.fiyat_donem", { fiyat: pkg.product.priceString })) : ""}
-          {" · "}{t("paywall.otomatik_yenilenir_play_iptal")}
+          {" · "}{t(Platform.OS === "ios" ? "paywall.renew_cancel_appstore" : "paywall.renew_cancel_play")}
         </Text>
         <View style={{ flexDirection: "row", justifyContent: "center", gap: spacing.lg, marginTop: spacing.xs }}>
           <PressableScale onPress={doRestore} hitSlop={6} accessibilityLabel={t("paywall.satin_almayi_geri_yukle")} style={{ paddingVertical: spacing.sm }}>
             <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.satin_almayi_geri_yukle")}</Text>
           </PressableScale>
-          <PressableScale onPress={() => Linking.openURL(PLAY_SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
+          <PressableScale onPress={() => Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
             <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.aboneligi_yonet")}</Text>
           </PressableScale>
           <PressableScale onPress={() => openLegal("terms")} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>

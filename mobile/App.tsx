@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StatusBar, View, Dimensions, useWindowDimensions } from "react-native";
+import { StatusBar, View, Dimensions, useWindowDimensions, Platform } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -33,8 +33,12 @@ function Nav() {
       .then(() => loadVoicePref())
       .then(() => loadAnalyticsPref())
       // Günün ilk açılışı (§4 funnel) — kind platform:görünüm, value ekran genişliği.
+      // Görünüm native pakette her zaman "standalone"; web tarafı (components/telemetry)
+      // aynı kalıbı display-mode'dan üretiyor ve yönetim panosu ikisini de tanıyor
+      // (app/admin/dashboard.tsx PLATFORM_LABEL: ios|android|desktop : standalone|browser).
+      // Platform sabit yazılıydı; iOS açılışları Android sayılıyordu.
       // Analitik tercihi yüklendikten SONRA: kullanıcı kapattıysa bu olay da gitmez.
-      .then(() => track("app_open", Math.round(Dimensions.get("window").width), "android:standalone"))
+      .then(() => track("app_open", Math.round(Dimensions.get("window").width), `${Platform.OS}:standalone`))
       .then(() => AsyncStorage.getItem(ONBOARDED_KEY))
       .then((v) => setOnboarded(v === "1"))
       .catch(() => setOnboarded(false));

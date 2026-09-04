@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t as tx } from "../lib/i18n";
-import { View, TextInput, ScrollView } from "react-native";
+import { View, TextInput, ScrollView, Platform } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -39,7 +39,7 @@ function LossRow({ text, colors }: { text: string; colors: Palette }) {
 }
 
 /**
- * Hesap silme (Play "hesap silme" zorunluluğu) — Ayarlar › Hesap › Hesabı sil.
+ * Hesap silme (Play "hesap silme" zorunluluğu, App Store 5.1.1(v)) — Ayarlar › Hesap › Hesabı sil.
  * Web'deki /account/delete ile aynı uç ve aynı kurallar: parola hesabı parolasını
  * yazar, Google hesabı taze oturum ister (eskiyse burada yeniden Google girişi
  * yaptırılır). Silme sunucuda tüm veriyi temizler; cihazdaki tercihler de silinir.
@@ -132,8 +132,11 @@ export function DeleteAccountScreen() {
         </Card>
 
         <Card padded style={{ marginTop: spacing.md, backgroundColor: colors.surface2, borderColor: "transparent" }}>
+          {/* Abonelik iptal yolu mağazaya göre değişir: Play Store › Ödemeler ve abonelikler,
+              App Store'da Ayarlar › Apple Hesabı › Abonelikler. Yanlışını göstermek
+              kullanıcıyı hiç var olmayan bir ekrana yolluyor. */}
           <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>
-            {tx("deleteaccount.google_play_uzerinden_abonelik_ald")}
+            {tx(Platform.OS === "ios" ? "deleteaccount.subscription_cancel_appstore" : "deleteaccount.subscription_cancel_play")}
           </Text>
         </Card>
 

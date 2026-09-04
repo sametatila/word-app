@@ -65,7 +65,7 @@ export function LearnScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
   const { me, loading: meLoading } = useMe();
-  const update = useUpdate();
+  const update = useUpdate();   // iOS'ta hep null (APK şeridi yok, bkz. lib/useUpdate)
   const greeting = user?.name ? t("learn.greeting_named", { ad: user.name.split(" ")[0] }) : t("learn.greeting");
   // Sınav hazırlık yalnız sınavı olan kursta. İngilizce kursunda katalog boş
   // (bkz. data/exams.ts) — kart açık kalsaydı kullanıcıyı boş bir ekrana

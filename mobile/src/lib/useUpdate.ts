@@ -2,8 +2,14 @@
  * Sürüm denetimi — GitHub'ın herkese açık "latest release" ucundan (push
  * gerektirmez, her an güncel). Yüklü sürüm (version.ts) son sürümden düşükse
  * indirme bağlantısını döndürür; ana ekran bir güncelleme şeridi gösterir.
+ *
+ * YALNIZ ANDROID. Dağıtılan dosya bir APK; iOS'ta hem anlamsız hem de App Review
+ * Guidelines 2.5.2'ye takılır (mağaza dışından kod/uygulama indirtmek). iOS'ta
+ * güncelleme App Store'un işi: kanca hiç istek atmaz ve hep null döner, şerit de
+ * (screens/LearnScreen) hiç çizilmez.
  */
 import { useEffect, useState } from "react";
+import { Platform } from "react-native";
 import { APP_VERSION } from "../version";
 
 const LATEST_API = "https://api.github.com/repos/sametatila/word-app/releases/latest";
@@ -23,6 +29,7 @@ export type UpdateInfo = { version: string; url: string; notes?: string };
 export function useUpdate(): UpdateInfo | null {
   const [info, setInfo] = useState<UpdateInfo | null>(null);
   useEffect(() => {
+    if (Platform.OS !== "android") return;   // bkz. dosya başı: APK yolu iOS'ta yok
     let alive = true;
     (async () => {
       try {
