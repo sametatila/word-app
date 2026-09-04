@@ -33,12 +33,15 @@ const pool = require(`${R}/data/app/words.json`);
 const havuzKok = new Set();
 for (const r of pool) for (const w of String(r.de).toLowerCase().match(/[a-zäöüß]{3,}/g) || []) havuzKok.add(w);
 
+// Tireli bileşik ("E-Mail", "Deutsch-Start") metinde parçalanıp geçiyor;
+// izin kümesine parçalarıyla girmeli, yoksa öğretilen sözcük kayma sayılır.
 const norm = (s) => String(s || "").toLowerCase().replace(/^(der|die|das)\s+/, "").trim();
+const parcala = (s) => norm(s).split(/[\s\-]+/).filter(Boolean);
 const cum = new Map();                       // ünite -> kümülatif kelime kümesi
 let acc = new Set();
 for (let u = 1; u <= 25; u++) {
   for (const l of L.slice((u - 1) * 4, u * 4)) {
-    for (const v of l.vocab || []) for (const w of norm(v.de).split(/\s+/)) acc.add(w);
+    for (const v of l.vocab || []) for (const w of parcala(v.de)) acc.add(w);
     for (const p of l.patterns || []) for (const w of String(p.de).toLowerCase().match(/[a-zäöüß]+/g) || []) acc.add(w);
   }
   cum.set(u, new Set(acc));
@@ -76,8 +79,8 @@ const genelDisi = new Map();
 for (const e of hedef) {
   const u = e.unit;
   const izin = new Set([...(cum.get(u) || [])]);
-  for (const g of e.gloss || []) for (const w of norm(g.de).split(/\s+/)) izin.add(w);   // egzersizin kendi sözlükçesi
-  for (const t of e.tasks || []) for (const g of t.phrases || t.words || []) for (const w of norm(g.de).split(/\s+/)) izin.add(w);
+  for (const g of e.gloss || []) for (const w of parcala(g.de)) izin.add(w);   // egzersizin kendi sözlükçesi
+  for (const t of e.tasks || []) for (const g of t.phrases || t.words || []) for (const w of parcala(g.de)) izin.add(w);
   // Türkçe harf taşıyan özel adlar ("Yılmaz") Almanca sözcük regexinde parçalanıp
   // sahte gövde bırakıyordu ("lmaz"). Böyle bir belirteci bütünüyle atıyoruz.
   const ham = almanca(e).split(/\s+/).filter((t) => !/[ışğİıŞĞçÇ]/.test(t)).join(" ");
