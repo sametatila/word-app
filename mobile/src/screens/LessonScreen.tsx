@@ -40,7 +40,8 @@ type BubbleData =
   | { role: "student"; text: string; ok?: boolean };
 type Bubble = BubbleData & { id: number };
 
-const deText = (segs: Segment[]): string => segs.filter((s) => s.lang === "de").map((s) => s.text).join(" ").trim();
+/** Segmentlerin HEDEF dil kısmı (anlatım "tr" dışındakiler) — okunacak/denetlenecek metin. */
+const targetText = (segs: Segment[]): string => segs.filter((s) => s.lang !== "tr").map((s) => s.text).join(" ").trim();
 
 /** Almanca cevap karşılaştırması — noktalama, büyük/küçük, umlaut/ß toleranslı. */
 function sn(x: string): string {
@@ -127,7 +128,7 @@ export function LessonScreen() {
     setCursor(k);
     setTries(0);
     setAnswered(false);
-    const spoken = add.map((b) => (b.role === "teacher" ? deText(b.segments) : "")).filter(Boolean).join(". ");
+    const spoken = add.map((b) => (b.role === "teacher" ? targetText(b.segments) : "")).filter(Boolean).join(". ");
     if (spoken) speakTarget(spoken);
     if (k >= lesson.lecture.length) enterRoleplay();
     scrollDown();
@@ -378,7 +379,7 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
       <View style={{ borderRadius: radii.lg, paddingVertical: 11, paddingHorizontal: spacing.md, backgroundColor: bg, borderWidth: 1, borderColor: colors.hairline }}>
         <Text variant="body">
           {b.segments.map((s, i) => (
-            <Text key={i} variant="body" color={s.lang === "de" ? colors.text : colors.textMuted} style={s.lang === "de" ? { fontWeight: "700" } : undefined}>
+            <Text key={i} variant="body" color={s.lang !== "tr" ? colors.text : colors.textMuted} style={s.lang !== "tr" ? { fontWeight: "700" } : undefined}>
               {s.text}{i < b.segments.length - 1 ? " " : ""}
             </Text>
           ))}
@@ -390,8 +391,8 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
         ) : null}
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: 4, marginLeft: 4 }}>
-        {deText(b.segments) ? (
-          <PressableScale onPress={() => speakTarget(deText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+        {targetText(b.segments) ? (
+          <PressableScale onPress={() => speakTarget(targetText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
             <SpeakerIcon color={colors.textMuted} size={15} /><Text variant="micro" color={colors.textMuted}>{tx("lesson.dinle")}</Text>
           </PressableScale>
         ) : null}

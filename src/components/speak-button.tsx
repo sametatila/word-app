@@ -237,7 +237,7 @@ export function speakSlowly(text: string, onEnd?: () => void) {
  * kabul edilebilir bir bozulma değil; parça hangi dildeyse o dilin nöral
  * sesiyle okunuyor.
  */
-export type SpeechSegment = { lang: "tr" | "de"; text: string };
+export type SpeechSegment = { lang: "tr" | "de" | "en"; text: string };
 
 /**
  * Parçanın sesi profil tercihinden BAĞIMSIZ: derste öncelik gecikme.

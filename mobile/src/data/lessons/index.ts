@@ -10,7 +10,15 @@ import b1 from "./de-b1.json";
 import b2 from "./de-b2.json";
 import c1 from "./de-c1.json";
 
-export type Segment = { lang: "tr" | "de"; text: string };
+/**
+ * Anlatım segmenti.
+ *
+ * `lang` ANLATIM mı HEDEF dil mi olduğunu ayırır: "tr" öğretmenin (anadil)
+ * sesi, diğerleri öğrenilen dil. Bu yüzden okuyucular "=== de" diye değil
+ * "!== tr" diye bakmalı — yoksa İngilizce dersler hedef dil sayılmaz ve ne
+ * seslendirilir ne de vurgulanır.
+ */
+export type Segment = { lang: "tr" | "de" | "en"; text: string };
 export type Expectation =
   | { kind: "confirm" }
   | { kind: "repeat"; target: string }

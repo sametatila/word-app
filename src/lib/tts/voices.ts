@@ -43,7 +43,10 @@ export const TURKISH_VOICE: VoiceId = "tr-TR-EmelNeural";
  * Katja zaten ölçülmüş en hızlı ses; Zürih kursunda lehçeyi doğru okuyan Leni.
  */
 export function lessonVoice(course: string): VoiceId {
-  return course === "gsw-zh" ? "de-CH-LeniNeural" : "de-DE-KatjaNeural";
+  // Katalogdan: ikili ternary yazılıyken tanınmayan her kurs Almanca sese
+  // düşüyordu, yani İngilizce dersler Almanca sesle anlatılırdı. Kursun ilk
+  // sesi zaten sabit olduğu için önbellek davranışı değişmiyor.
+  return defaultVoice(course);
 }
 
 export type Voice = {

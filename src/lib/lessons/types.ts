@@ -31,7 +31,15 @@ import type { CefrLevel } from "../skills/types";
  * dilden birinin telaffuzunu bozar ve bozulan telaffuz dersin öğrettiği şeyin
  * kendisidir.
  */
-export type Segment = { lang: "tr" | "de"; text: string };
+/**
+ * Anlatım segmenti.
+ *
+ * `lang` ANLATIM mı HEDEF dil mi olduğunu ayırır: "tr" öğretmenin (anadil)
+ * sesi, diğerleri öğrenilen dil. Bu yüzden okuyucular "=== de" diye değil
+ * "!== tr" diye bakmalı — yoksa İngilizce dersler hedef dil sayılmaz ve ne
+ * seslendirilir ne de vurgulanır.
+ */
+export type Segment = { lang: "tr" | "de" | "en"; text: string };
 
 /** İçerik dosyaları için kısayollar — segment yazımını okunur tutuyor. */
 export const tr = (text: string): Segment => ({ lang: "tr", text });

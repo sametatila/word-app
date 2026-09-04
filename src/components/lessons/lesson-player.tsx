@@ -1800,7 +1800,7 @@ function LectureBubble({
           >
             {item.segments.map((seg, i) => (
               <span key={i}>
-                {seg.lang === "de" ? (
+                {seg.lang !== "tr" ? (
                   <span className="brand-text font-bold">{seg.text}</span>
                 ) : (
                   seg.text
