@@ -15629,5 +15629,5210 @@
    "goal": "Neyin olduğunu ve ne kadar sürdüğünü geçmiş zamanla anlatıp, şu anki durumunu still, already ve almost kullanarak söylersen başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-a2-flat-hunting",
+  "level": "A2",
+  "course": "en",
+  "icon": "ask",
+  "title": "Looking for a flat",
+  "titleTr": "Ev ararken",
+  "summary": "İlanda gördüğün bir daire için kira, depozito, mobilya, kat ve faturaları İngilizce sormayı öğretir.",
+  "minutes": 9,
+  "focusId": "Questions",
+  "vocab": [
+   {
+    "de": "flat",
+    "tr": "daire"
+   },
+   {
+    "de": "rent",
+    "tr": "kira"
+   },
+   {
+    "de": "deposit",
+    "tr": "depozito"
+   },
+   {
+    "de": "furnished",
+    "tr": "mobilyalı"
+   },
+   {
+    "de": "floor",
+    "tr": "kat"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "How much is the rent?",
+    "tr": "kiranın ne kadar olduğunu sormak için"
+   },
+   {
+    "de": "Is the flat furnished?",
+    "tr": "dairenin mobilyalı olup olmadığını sormak için"
+   },
+   {
+    "de": "Can I see it on Saturday?",
+    "tr": "daireyi görmek için randevu istemek için"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir ilan gördün ve telefonu açıyorsun. Bu derste bir daire hakkında soru sormayı öğreneceğiz: kira ne kadar, depozito var mı, mobilyalı mı, kaçıncı katta."
+     },
+     {
+      "lang": "tr",
+      "text": "Sadece dinlemekle kalmayacaksın, birlikte söyleyeceğiz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "flat"
+     },
+     {
+      "lang": "tr",
+      "text": " — Türkçesi daire demek. Apartman dairesi. Lütfen sen de söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "flat"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "flat"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. İngilizler daireye "
+     },
+     {
+      "lang": "en",
+      "text": "flat"
+     },
+     {
+      "lang": "tr",
+      "text": " der, Amerikalılar "
+     },
+     {
+      "lang": "en",
+      "text": "apartment"
+     },
+     {
+      "lang": "tr",
+      "text": " der. İkisi de doğru. Bir tane derken önüne bir küçük kelime koyuyoruz: "
+     },
+     {
+      "lang": "en",
+      "text": "a flat"
+     },
+     {
+      "lang": "tr",
+      "text": " — bir daire."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi en önemli kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "rent"
+     },
+     {
+      "lang": "tr",
+      "text": " — kira. Söyle bakalım: "
+     },
+     {
+      "lang": "en",
+      "text": "rent"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "rent"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kirayı sormak için tek bir kalıp yeter: "
+     },
+     {
+      "lang": "en",
+      "text": "How much is the rent?"
+     },
+     {
+      "lang": "tr",
+      "text": " Yani kira ne kadar. Benimle birlikte: "
+     },
+     {
+      "lang": "en",
+      "text": "How much is the rent?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "How much is the rent?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karşı taraf muhtemelen şöyle cevap verir: "
+     },
+     {
+      "lang": "en",
+      "text": "It's six hundred pounds a month."
+     },
+     {
+      "lang": "tr",
+      "text": " Sondaki "
+     },
+     {
+      "lang": "en",
+      "text": "a month"
+     },
+     {
+      "lang": "tr",
+      "text": " ayda demek. Fiyat duyduğunda paniğe kapılma, sadece rakamı yakala."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sırada depozito var: "
+     },
+     {
+      "lang": "en",
+      "text": "deposit"
+     },
+     {
+      "lang": "tr",
+      "text": " — taşınmadan önce yatırdığın, çıkarken geri aldığın para. Söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "deposit"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "deposit"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Kirayı sorarken kullandığımız kalıbı hatırla ve depozitoyu sor: depozito ne kadar?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "How much is the deposit?",
+     "accept": [
+      "How much is the deposit",
+      "What is the deposit",
+      "How much deposit is there"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"How much is the …?\" ile başla, sonuna "
+      },
+      {
+       "lang": "en",
+       "text": "deposit"
+      },
+      {
+       "lang": "tr",
+       "text": " koy."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ev eşyalı mı, boş mu? Bunun kelimesi: "
+     },
+     {
+      "lang": "en",
+      "text": "furnished"
+     },
+     {
+      "lang": "tr",
+      "text": " — mobilyalı. Söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "furnished"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "furnished"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sorusu çok kolay, sadece kelimeleri yer değiştiriyoruz: "
+     },
+     {
+      "lang": "en",
+      "text": "Is the flat furnished?"
+     },
+     {
+      "lang": "tr",
+      "text": " Birlikte: "
+     },
+     {
+      "lang": "en",
+      "text": "Is the flat furnished?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Is the flat furnished?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevap iki türlü gelir: "
+     },
+     {
+      "lang": "en",
+      "text": "Yes, it is."
+     },
+     {
+      "lang": "tr",
+      "text": " ya da "
+     },
+     {
+      "lang": "en",
+      "text": "No, it isn't. It's empty."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani boş. Bir de yarı yarıya olanı var: "
+     },
+     {
+      "lang": "en",
+      "text": "It's partly furnished."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kat kelimesi: "
+     },
+     {
+      "lang": "en",
+      "text": "floor"
+     },
+     {
+      "lang": "tr",
+      "text": ". Mesela "
+     },
+     {
+      "lang": "en",
+      "text": "It's on the third floor."
+     },
+     {
+      "lang": "tr",
+      "text": " — üçüncü katta. Dikkat: İngiltere'de "
+     },
+     {
+      "lang": "en",
+      "text": "the ground floor"
+     },
+     {
+      "lang": "tr",
+      "text": " zemin kattır, "
+     },
+     {
+      "lang": "en",
+      "text": "the first floor"
+     },
+     {
+      "lang": "tr",
+      "text": " ise bizim birinci katımız."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen sor: kaçıncı katta?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Which floor is it on?",
+     "accept": [
+      "What floor is it on",
+      "Which floor is it on",
+      "What floor is the flat on",
+      "Which floor is the flat on"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Which floor …\" diye başla, "
+      },
+      {
+       "lang": "en",
+       "text": "is it on"
+      },
+      {
+       "lang": "tr",
+       "text": " ile bitir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir soru daha çok işine yarar: faturalar kiraya dahil mi? "
+     },
+     {
+      "lang": "en",
+      "text": "Are bills included?"
+     },
+     {
+      "lang": "tr",
+      "text": " Burada "
+     },
+     {
+      "lang": "en",
+      "text": "bills"
+     },
+     {
+      "lang": "tr",
+      "text": " faturalar, "
+     },
+     {
+      "lang": "en",
+      "text": "included"
+     },
+     {
+      "lang": "tr",
+      "text": " dahil demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim, doğru mu yanlış mı karar ver."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "If a flat is furnished, there is no furniture in it.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Tam tersi. "
+      },
+      {
+       "lang": "en",
+       "text": "furnished"
+      },
+      {
+       "lang": "tr",
+       "text": " mobilyalı demek; içinde yatak, masa, dolap vardır. Mobilyasız olana "
+      },
+      {
+       "lang": "en",
+       "text": "unfurnished"
+      },
+      {
+       "lang": "tr",
+       "text": " denir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daire hâlâ boşta mı, onu da sormalısın: "
+     },
+     {
+      "lang": "en",
+      "text": "Is it still available?"
+     },
+     {
+      "lang": "tr",
+      "text": " İlan eskiyse bu soru sana zaman kazandırır. Ve şunu ekleyebilirsin: "
+     },
+     {
+      "lang": "en",
+      "text": "I've already seen two flats this week."
+     },
+     {
+      "lang": "tr",
+      "text": " — bu hafta çoktan iki daire gördüm."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi işin en güzel kısmı: randevu. Cumartesi günü daireyi görmek istediğini söyle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Can I see the flat on Saturday?",
+     "accept": [
+      "Can I see it on Saturday",
+      "Can I see the flat on Saturday",
+      "Could I see the flat on Saturday",
+      "Can I visit the flat on Saturday"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Can I see …\" ile başla, günü "
+      },
+      {
+       "lang": "en",
+       "text": "on Saturday"
+      },
+      {
+       "lang": "tr",
+       "text": " diye söyle."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Telefonu kapatırken nazik ol: "
+     },
+     {
+      "lang": "en",
+      "text": "Thank you very much. See you on Saturday."
+     },
+     {
+      "lang": "tr",
+      "text": " Emin değilsen: "
+     },
+     {
+      "lang": "en",
+      "text": "I'll call you back tomorrow."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kira için "
+     },
+     {
+      "lang": "en",
+      "text": "How much is the rent?"
+     },
+     {
+      "lang": "tr",
+      "text": ", depozito için "
+     },
+     {
+      "lang": "en",
+      "text": "How much is the deposit?"
+     },
+     {
+      "lang": "tr",
+      "text": ", mobilya için "
+     },
+     {
+      "lang": "en",
+      "text": "Is the flat furnished?"
+     },
+     {
+      "lang": "tr",
+      "text": ", kat için "
+     },
+     {
+      "lang": "en",
+      "text": "Which floor is it on?"
+     },
+     {
+      "lang": "tr",
+      "text": " ve randevu için "
+     },
+     {
+      "lang": "en",
+      "text": "Can I see it on Saturday?"
+     },
+     {
+      "lang": "tr",
+      "text": " Beş soru, bir daire. Şimdi telefonu açalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir daire ilanı gördün ve ilandaki numarayı aradın. Kira, depozito, mobilya ve kat hakkında soru sorup görmek için randevu alıyorsun.",
+   "partner": "ilanı veren ev sahibi",
+   "opening": "Hello, you're calling about the flat in Green Street, right?",
+   "openingTr": "Merhaba, Green Street'teki daire için arıyorsunuz, değil mi?",
+   "goal": "Kira, depozito ve mobilya durumunu öğrenip cumartesi için görme randevusu aldıysan konuşma başarılıdır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-describe-home",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "My home",
+  "titleTr": "Evim",
+  "summary": "Evini ayrıntılı anlatmayı öğreniyorsun: aydınlık, sessiz, ferah gibi sıfatlarla odalarını betimlemek, balkonunu ve manzaranı anlatmak, iki odayı karşılaştırmak.",
+  "minutes": 9,
+  "focusId": "Descriptive language",
+  "vocab": [
+   {
+    "de": "bright",
+    "tr": "aydınlık"
+   },
+   {
+    "de": "quiet",
+    "tr": "sessiz"
+   },
+   {
+    "de": "spacious",
+    "tr": "ferah, geniş"
+   },
+   {
+    "de": "balcony",
+    "tr": "balkon"
+   },
+   {
+    "de": "view",
+    "tr": "görünüm, manzara"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I live in a bright flat.",
+    "tr": "nasıl bir evde oturduğunu tek cümleyle anlatırken kullanılır"
+   },
+   {
+    "de": "It has a balcony with a great view.",
+    "tr": "evinin bir özelliğini ve o özelliğin ayrıntısını eklerken kullanılır"
+   },
+   {
+    "de": "My kitchen is brighter than the living room.",
+    "tr": "evindeki iki yeri karşılaştırırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün evini İngilizce anlatmayı öğreniyoruz. Sadece \"benim bir evim var\" demek değil; evin nasıl, odaların nasıl, balkonun var mı, manzaran nasıl — bunları anlatacaksın."
+     },
+     {
+      "lang": "tr",
+      "text": "Beş yeni kelime, üç kalıp. Hazırsan başlıyoruz, hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "bright"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Aydınlık\" demek. Pencereden bol ışık giren bir oda için kullanılır. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "bright"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "bright"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "quiet"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Sessiz\" demek. Sokakta gürültü yoksa evin sessizdir. Sondaki t'yi yutma, hafifçe duyur. Söyle bakalım:"
+     },
+     {
+      "lang": "en",
+      "text": "quiet"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "quiet"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelime biraz uzun ama çok işine yarayacak:"
+     },
+     {
+      "lang": "en",
+      "text": "spacious"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Ferah, geniş\" demek. İçinde rahatça dolaşabildiğin bir oda için kullanılır. İki hecede düşün: spey-şıs. Sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "spacious"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "spacious"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir not: İngilizler apartman dairesine"
+     },
+     {
+      "lang": "en",
+      "text": "flat"
+     },
+     {
+      "lang": "tr",
+      "text": "der, Amerikalılar ise"
+     },
+     {
+      "lang": "en",
+      "text": "apartment"
+     },
+     {
+      "lang": "tr",
+      "text": "der. İkisi de doğru, ikisini de duyacaksın. Müstakil ev ise"
+     },
+     {
+      "lang": "en",
+      "text": "house"
+     },
+     {
+      "lang": "tr",
+      "text": "olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "balcony"
+     },
+     {
+      "lang": "tr",
+      "text": "Tahmin ettin: \"balkon\". Ama dikkat, vurgu ilk hecede: BAL-kı-ni. Söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "balcony"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "balcony"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşinci kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "view"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Manzara, görünüm\" demek. Pencereden dışarı baktığında gördüğün şey. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "view"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "view"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Nerede oturduğunu tek cümlede anlatmak için:"
+     },
+     {
+      "lang": "en",
+      "text": "I live in a bright flat."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Aydınlık bir dairede oturuyorum.\" Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I live in a bright flat."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I live in a bright flat."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat ettin mi: sıfat ismin ÖNÜNE geliyor. Türkçedeki gibi. \"a bright flat\", \"a quiet street\", \"a spacious kitchen\"."
+     },
+     {
+      "lang": "tr",
+      "text": "Ama sıfatı cümlenin sonunda da kullanabilirsin, o zaman araya \"is\" girer:"
+     },
+     {
+      "lang": "en",
+      "text": "My flat is bright."
+     },
+     {
+      "lang": "tr",
+      "text": "İki yol da doğru."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu İngilizce söyle: \"Evim sessiz.\""
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My home is quiet.",
+     "accept": [
+      "My house is quiet.",
+      "My flat is quiet.",
+      "My apartment is quiet."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Evim\" için"
+      },
+      {
+       "lang": "en",
+       "text": "my home"
+      },
+      {
+       "lang": "tr",
+       "text": "sonra"
+      },
+      {
+       "lang": "en",
+       "text": "is"
+      },
+      {
+       "lang": "tr",
+       "text": "ve sıfat."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Şimdi evinin neye sahip olduğunu anlatalım. İki yol var. Birincisi:"
+     },
+     {
+      "lang": "en",
+      "text": "It has a balcony."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Balkonu var.\" İkincisi:"
+     },
+     {
+      "lang": "en",
+      "text": "There is a balcony."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Bir balkon var.\" Konuşurken hangisi ağzına kolay gelirse onu kullan."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Deneyelim. \"Balkonumuz var\" nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We have a balcony.",
+     "accept": [
+      "We've got a balcony.",
+      "We have got a balcony.",
+      "There is a balcony.",
+      "There's a balcony."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Bizim\" için"
+      },
+      {
+       "lang": "en",
+       "text": "we"
+      },
+      {
+       "lang": "tr",
+       "text": "ile başla, sonra"
+      },
+      {
+       "lang": "en",
+       "text": "have a balcony"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi manzarayı ekleyelim. Manzaradan bahsederken \"with\" çok işe yarar:"
+     },
+     {
+      "lang": "en",
+      "text": "a balcony with a great view"
+     },
+     {
+      "lang": "tr",
+      "text": "\"harika manzaralı bir balkon\". Neyin manzarası olduğunu söylemek istersen \"of\" ekle:"
+     },
+     {
+      "lang": "en",
+      "text": "a view of the sea"
+     },
+     {
+      "lang": "tr",
+      "text": "deniz manzarası."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşte ikinci kalıbımız, tam hâliyle:"
+     },
+     {
+      "lang": "en",
+      "text": "It has a balcony with a great view."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu tek cümleyle hem odayı hem manzarayı anlatmış oluyorsun. Aynısını kendi evin için kurabilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "It has a small balcony with a view of the park."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de karşılaştırma yapalım. Evindeki iki odayı kıyaslarken sıfatın sonuna -er, arkasına da \"than\" gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "bright — brighter than"
+     },
+     {
+      "lang": "en",
+      "text": "quiet — quieter than"
+     },
+     {
+      "lang": "tr",
+      "text": "Ama uzun sıfatlarda -er kullanılmaz, önüne \"more\" gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "spacious — more spacious than"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kalıbımız bu:"
+     },
+     {
+      "lang": "en",
+      "text": "My kitchen is brighter than the living room."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Mutfağım oturma odasından daha aydınlık.\" Şimdi sen kur: \"Odam oturma odasından daha sessiz.\""
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My room is quieter than the living room.",
+     "accept": [
+      "My bedroom is quieter than the living room.",
+      "My room is quieter than the living-room."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"quiet\" kısa bir sıfat, sonuna -er ekle:"
+      },
+      {
+       "lang": "en",
+       "text": "quieter"
+      },
+      {
+       "lang": "tr",
+       "text": "sonra"
+      },
+      {
+       "lang": "en",
+       "text": "than the living room"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu İngilizce cümle doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "My bedroom is more bright than the kitchen.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "\"bright\" kısa bir sıfat, önüne \"more\" almaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "My bedroom is brighter than the kitchen."
+      },
+      {
+       "lang": "tr",
+       "text": "\"more\" sadece uzun sıfatlarda, mesela \"more spacious\"."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son olarak semtinden de bahsedebilirsin. Mahalle için"
+     },
+     {
+      "lang": "en",
+      "text": "neighbourhood"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. Mesela:"
+     },
+     {
+      "lang": "en",
+      "text": "I live in a quiet neighbourhood, but it isn't far from the centre."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Sessiz bir mahallede oturuyorum, ama merkeze uzak değil.\""
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ve bir de küçük bir kusur eklemek doğal durur — kimsenin evi kusursuz değil:"
+     },
+     {
+      "lang": "en",
+      "text": "It's a nice flat, but it's a bit small."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Güzel bir daire, ama biraz küçük.\" Bu \"but\" cümlesi anlattığını gerçek gösterir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: beş kelime aldın — bright, quiet, spacious, balcony, view. Üç kalıp öğrendin: nerede oturduğunu söylemek için \"I live in a bright flat\", özellik eklemek için \"It has a balcony with a great view\", karşılaştırmak için \"brighter than\"."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunları gerçek bir konuşmada kullanacaksın. Kolay gelsin!"
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yeni bir arkadaşın seni ilk kez evine davet etmeni bekliyor ve önce evini merak ediyor. Ona evini anlat: nasıl bir yer, kaç odalı, balkonun ve manzaran var mı, mahallen nasıl.",
+   "partner": "meraklı bir arkadaş",
+   "opening": "So, tell me about your place. What's it like?",
+   "openingTr": "Anlatsana, evin nasıl bir yer?",
+   "goal": "Evini en az üç özellikle anlattığında başarılı sayılır: bir sıfat (aydınlık, sessiz ya da ferah), balkon veya manzara, bir de karşılaştırma ya da mahalle hakkında bir cümle.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-furniture",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "Furniture and rooms",
+  "titleTr": "Mobilya ve odalar",
+  "summary": "Odalardaki eşyaları \"there is\" ve \"there are\" ile anlatmayı öğretir.",
+  "minutes": 9,
+  "focusId": "There is / there are",
+  "vocab": [
+   {
+    "de": "furniture",
+    "tr": "mobilya"
+   },
+   {
+    "de": "shelf",
+    "tr": "raf"
+   },
+   {
+    "de": "carpet",
+    "tr": "halı"
+   },
+   {
+    "de": "cupboard",
+    "tr": "dolap"
+   },
+   {
+    "de": "corner",
+    "tr": "köşe"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "There is a carpet in the living room.",
+    "tr": "bir odada tek bir şey olduğunu söylerken kullanılır"
+   },
+   {
+    "de": "There are two shelves on the wall.",
+    "tr": "bir yerde birden çok şey olduğunu söylerken kullanılır"
+   },
+   {
+    "de": "Is there a cupboard in the kitchen?",
+    "tr": "bir yerde bir şey var mı diye sorarken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün odaları ve içindeki eşyaları anlatmayı öğreneceğiz. Yani \"salonda bir halı var\", \"duvarda iki raf var\" gibi cümleler kuracağız."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlayalım."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İngilizcede bir yerde bir şeyin var olduğunu söylemek için iki küçük kalıp kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "there is"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "there are"
+     },
+     {
+      "lang": "tr",
+      "text": "Önce eşyaların adlarını öğrenelim, sonra bu kalıpları rahatça kullanacaksın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "furniture"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"mobilya\" demek. Bu kelimenin İngilizcede bir özelliği var: çoğulu yoktur ve önüne \"a\" gelmez. \"a furniture\" ya da \"furnitures\" denmez."
+     },
+     {
+      "lang": "tr",
+      "text": "Tek bir parçadan söz edeceksen"
+     },
+     {
+      "lang": "en",
+      "text": "a piece of furniture"
+     },
+     {
+      "lang": "tr",
+      "text": "dersin. Genel olarak konuşurken ise sadece"
+     },
+     {
+      "lang": "en",
+      "text": "The furniture is new."
+     },
+     {
+      "lang": "tr",
+      "text": "yani \"Mobilyalar yeni.\" dersin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "shelf"
+     },
+     {
+      "lang": "tr",
+      "text": "\"raf\" demek. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "shelf"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Bunun çoğulu biraz değişir:"
+     },
+     {
+      "lang": "en",
+      "text": "shelves"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani \"raflar\". Sondaki f harfi v'ye dönüşüyor. Şimdi sıradaki kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "carpet"
+     },
+     {
+      "lang": "tr",
+      "text": "\"halı\" demek. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "carpet"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok iyi. Şimdi:"
+     },
+     {
+      "lang": "en",
+      "text": "cupboard"
+     },
+     {
+      "lang": "tr",
+      "text": "\"dolap\" demek. Yazılışı uzun ama okunuşu kısadır. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "cupboard"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "corner"
+     },
+     {
+      "lang": "tr",
+      "text": "\"köşe\" demek. Odanın köşesi için"
+     },
+     {
+      "lang": "en",
+      "text": "in the corner"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. Şimdi bunu söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "in the corner"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi asıl konuya gelelim. Türkçede \"var\" deriz; İngilizcede bu \"var\" cümlenin başına gelir."
+     },
+     {
+      "lang": "tr",
+      "text": "Tek bir şey varsa"
+     },
+     {
+      "lang": "en",
+      "text": "There is"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır. Birden çok şey varsa"
+     },
+     {
+      "lang": "en",
+      "text": "There are"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır. Yani sayıya bakıp seçiyorsun."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Örnek:"
+     },
+     {
+      "lang": "en",
+      "text": "There is a carpet in the living room."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Salonda bir halı var.\" Lütfen bu cümleyi tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "There is a carpet in the living room."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika. Şimdi çoğul hâli. İki raf varsa \"is\" değil \"are\" kullanırız:"
+     },
+     {
+      "lang": "en",
+      "text": "There are two shelves on the wall."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Duvarda iki raf var.\" Duvarın üstünde bir şey varsa"
+     },
+     {
+      "lang": "en",
+      "text": "on the wall"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz; odanın içi için ise"
+     },
+     {
+      "lang": "en",
+      "text": "in the room"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. \"Mutfakta bir dolap var.\" cümlesini İngilizce kur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "There is a cupboard in the kitchen.",
+     "accept": [
+      "There's a cupboard in the kitchen.",
+      "There is a cupboard in the kitchen"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tek bir dolap var, o yüzden"
+      },
+      {
+       "lang": "en",
+       "text": "There is"
+      },
+      {
+       "lang": "tr",
+       "text": "ile başla, sonra"
+      },
+      {
+       "lang": "en",
+       "text": "a cupboard"
+      },
+      {
+       "lang": "tr",
+       "text": "ve en sona yeri ekle:"
+      },
+      {
+       "lang": "en",
+       "text": "in the kitchen"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok güzel. Yer bildiren küçük kelimelere bakalım. İçinde ise"
+     },
+     {
+      "lang": "en",
+      "text": "in"
+     },
+     {
+      "lang": "tr",
+      "text": "üstünde ise"
+     },
+     {
+      "lang": "en",
+      "text": "on"
+     },
+     {
+      "lang": "tr",
+      "text": "altında ise"
+     },
+     {
+      "lang": "en",
+      "text": "under"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani:"
+     },
+     {
+      "lang": "en",
+      "text": "The carpet is under the table."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Halı masanın altında.\""
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi köşeyi kullanalım. \"Köşede bir masa var.\" cümlesini söyle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "There is a table in the corner.",
+     "accept": [
+      "There's a table in the corner.",
+      "There is a table in the corner"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yine tek bir şey var. Köşe için"
+      },
+      {
+       "lang": "en",
+       "text": "in the corner"
+      },
+      {
+       "lang": "tr",
+       "text": "kalıbını hatırla."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi olumsuz hâli. Bir şey yoksa \"is\" ve \"are\" yanına \"not\" ekleriz:"
+     },
+     {
+      "lang": "en",
+      "text": "There isn't a TV in my bedroom."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Yatak odamda televizyon yok.\" Çoğulda ise:"
+     },
+     {
+      "lang": "en",
+      "text": "There aren't any chairs in the corner."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Köşede hiç sandalye yok.\""
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Buradaki"
+     },
+     {
+      "lang": "en",
+      "text": "any"
+     },
+     {
+      "lang": "tr",
+      "text": "kelimesine dikkat et. Olumsuz cümlelerde ve sorularda çoğul isimden önce kullanılır. Türkçedeki \"hiç\" gibi düşünebilirsin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Soru sormak için ise \"there\" ile \"is\" yer değiştirir:"
+     },
+     {
+      "lang": "en",
+      "text": "Are there any chairs in the kitchen?"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Mutfakta sandalye var mı?\" Lütfen bu soruyu tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Are there any chairs in the kitchen?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısa cevaplar da kolaydır. Varsa:"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, there is."
+     },
+     {
+      "lang": "tr",
+      "text": "Yoksa:"
+     },
+     {
+      "lang": "en",
+      "text": "No, there isn't."
+     },
+     {
+      "lang": "tr",
+      "text": "Çoğulda:"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, there are."
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "No, there aren't."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen sor. \"Salonda bir halı var mı?\" diye sor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Is there a carpet in the living room?",
+     "accept": [
+      "Is there a carpet in the livingroom?",
+      "Is there a carpet in the living room"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Soruda önce"
+      },
+      {
+       "lang": "en",
+       "text": "Is there"
+      },
+      {
+       "lang": "tr",
+       "text": "gelir, sonra"
+      },
+      {
+       "lang": "en",
+       "text": "a carpet"
+      },
+      {
+       "lang": "tr",
+       "text": "ve en sona yer:"
+      },
+      {
+       "lang": "en",
+       "text": "in the living room"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir kontrol. Şimdi sana bir cümle söyleyeceğim; dilbilgisi olarak doğru mu, söyle bakalım."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "There is two carpets in the room.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış, çünkü iki halıdan söz ediliyor. Çoğulda"
+      },
+      {
+       "lang": "en",
+       "text": "There are two carpets in the room."
+      },
+      {
+       "lang": "tr",
+       "text": "denmeliydi. Sayı birden fazlaysa her zaman \"there are\" kullanırsın."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok iyi iş çıkardın. Bugün odalardaki eşyaları anlatmayı öğrendin: tek şey için"
+     },
+     {
+      "lang": "en",
+      "text": "There is a cupboard in the corner."
+     },
+     {
+      "lang": "tr",
+      "text": "birden fazlası için"
+     },
+     {
+      "lang": "en",
+      "text": "There are two shelves on the wall."
+     },
+     {
+      "lang": "tr",
+      "text": "soru için"
+     },
+     {
+      "lang": "en",
+      "text": "Is there a carpet in the living room?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ayrıca \"furniture\" kelimesinin çoğul olmadığını da öğrendin. Şimdi bunu bir konuşmada deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yeni taşındığın eve arkadaşın video görüntülü arıyor ve odalarını merak ediyor. Sen odalarındaki eşyaları anlatıyorsun.",
+   "partner": "yeni evini merak eden bir arkadaşın",
+   "opening": "Nice, you moved! What's in your living room?",
+   "openingTr": "Süper, taşınmışsın! Salonunda neler var?",
+   "goal": "Odalarındaki en az üç eşyayı \"there is\" ve \"there are\" ile anlatman ve arkadaşına da onun odası hakkında bir soru sorman.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-home-problems",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "Reporting a problem",
+  "titleTr": "Arıza bildirmek",
+  "summary": "Evdeki bir arızayı ev sahibine İngilizce bildirmeyi, sorunun ne zamandır sürdüğünü anlatmayı ve kibarca tamir istemeyi öğretir.",
+  "minutes": 9,
+  "focusId": "Complaints",
+  "vocab": [
+   {
+    "de": "a leak",
+    "tr": "sızıntı"
+   },
+   {
+    "de": "the heating",
+    "tr": "kalorifer"
+   },
+   {
+    "de": "broken",
+    "tr": "bozuk"
+   },
+   {
+    "de": "to fix",
+    "tr": "tamir etmek"
+   },
+   {
+    "de": "immediately",
+    "tr": "hemen"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "There's a leak in the bathroom.",
+    "tr": "bir yerde sızıntı ya da arıza olduğunu bildirirken kullanılır"
+   },
+   {
+    "de": "The heating hasn't worked since Monday.",
+    "tr": "bozukluğun ne zamandır sürdüğünü anlatır"
+   },
+   {
+    "de": "Could you send someone today?",
+    "tr": "kibarca tamirci istemek için kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugün evdeki bir arızayı İngilizce bildirmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Ev sahibini arayacaksın: sorunun ne olduğunu söyleyeceksin, ne zamandır sürdüğünü anlatacaksın ve kibarca tamir isteyeceksin."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlayalım."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz sızıntı. İngilizcesi:"
+     },
+     {
+      "lang": "en",
+      "text": "a leak"
+     },
+     {
+      "lang": "tr",
+      "text": "Musluktan, borudan, tavandan sızan su için kullanılır. Lütfen sen de de:"
+     },
+     {
+      "lang": "en",
+      "text": "a leak"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a leak"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelime: kalorifer, yani evi ısıtan sistem."
+     },
+     {
+      "lang": "en",
+      "text": "the heating"
+     },
+     {
+      "lang": "tr",
+      "text": "İngilizcede genelde başında the ile söylenir. Şimdi sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "the heating"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "the heating"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelime: bozuk."
+     },
+     {
+      "lang": "en",
+      "text": "broken"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir şeyin çalışmadığını söylerken is ile birlikte kullanırız. Örneğin: buzdolabı bozuk."
+     },
+     {
+      "lang": "en",
+      "text": "The fridge is broken."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The fridge is broken."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelime: tamir etmek."
+     },
+     {
+      "lang": "en",
+      "text": "to fix"
+     },
+     {
+      "lang": "tr",
+      "text": "Bunu bir istekle birleştirelim: onu tamir edebilir misin?"
+     },
+     {
+      "lang": "en",
+      "text": "Can you fix it?"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Can you fix it?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşinci kelime: hemen."
+     },
+     {
+      "lang": "en",
+      "text": "immediately"
+     },
+     {
+      "lang": "tr",
+      "text": "Uzun bir kelime, acele etme. Hecelere böl: i-mmee-dii-it-li. Lütfen de:"
+     },
+     {
+      "lang": "en",
+      "text": "immediately"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "immediately"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sorunu bildirmenin en kolay yolunu görelim."
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçede banyoda bir sızıntı var deriz. İngilizcede bunun için there is kalıbını kullanırız:"
+     },
+     {
+      "lang": "en",
+      "text": "There is a leak in the bathroom."
+     },
+     {
+      "lang": "tr",
+      "text": "Konuşurken çoğu zaman kısaltılır:"
+     },
+     {
+      "lang": "en",
+      "text": "There's a leak in the bathroom."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Mutfakta bir sızıntı olduğunu söyle. Mutfak İngilizcede the kitchen."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "There's a leak in the kitchen.",
+     "accept": [
+      "There is a leak in the kitchen.",
+      "There's a leak in the kitchen"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "there's ile başla, sonra a leak, sonra in the kitchen."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Ev sahibi hemen şunu soracak: ne zamandır böyle?"
+     },
+     {
+      "lang": "tr",
+      "text": "İngilizcede geçmişte başlayıp hâlâ devam eden durumlar için present perfect kullanılır: have ya da has artı fiilin üçüncü hâli."
+     },
+     {
+      "lang": "tr",
+      "text": "Kalorifer pazartesiden beri çalışmıyor:"
+     },
+     {
+      "lang": "en",
+      "text": "The heating hasn't worked since Monday."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu cümle telefonda çok işine yarayacak. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The heating hasn't worked since Monday."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The heating hasn't worked since Monday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Burada küçük ama önemli bir ayrım var."
+     },
+     {
+      "lang": "tr",
+      "text": "since bir başlangıç noktası ister: since Monday, since yesterday, since last week. Yani pazartesiden beri."
+     },
+     {
+      "lang": "tr",
+      "text": "for ise bir süre ister: for three days, for a week. Yani üç gündür."
+     },
+     {
+      "lang": "en",
+      "text": "There's no hot water since two days."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu yanlış. Doğrusu: for two days."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Deneyelim. Kaloriferin üç gündür çalışmadığını söyle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The heating hasn't worked for three days.",
+     "accept": [
+      "The heating has not worked for three days.",
+      "The heating hasn't worked for 3 days."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "süre olduğu için for kullan: hasn't worked for three days."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kibarca yardım isteyelim."
+     },
+     {
+      "lang": "tr",
+      "text": "can yerine could dersen cümle daha nazik olur. Bugün birini gönderebilir misiniz:"
+     },
+     {
+      "lang": "en",
+      "text": "Could you send someone today?"
+     },
+     {
+      "lang": "tr",
+      "text": "Acilse şunu ekleyebilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "It's urgent."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Could you send someone today?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Could you send someone today?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Sana bir cümle söyleyeceğim, doğru mu söyle."
+     },
+     {
+      "lang": "en",
+      "text": "The heating is broken since Monday."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The heating is broken since Monday.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "since ile geniş zaman kullanılmaz. Doğrusu: The heating has been broken since Monday."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de beklerken işe yarayan iki kelime var: already ve yet."
+     },
+     {
+      "lang": "tr",
+      "text": "Zaten aradım demek için:"
+     },
+     {
+      "lang": "en",
+      "text": "I've already called you."
+     },
+     {
+      "lang": "tr",
+      "text": "Hâlâ kimse gelmedi demek için:"
+     },
+     {
+      "lang": "en",
+      "text": "Nobody has come yet."
+     },
+     {
+      "lang": "tr",
+      "text": "yet olumsuz cümlenin sonuna gelir ve beklenen şeyin hâlâ olmadığını anlatır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Hâlâ kimsenin gelmediğini söyle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Nobody has come yet.",
+     "accept": [
+      "Nobody has come yet",
+      "No one has come yet.",
+      "Nobody has arrived yet."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "nobody ile başla, has come de, cümleyi yet ile bitir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Telefonu kapatırken şu iki cümle yeter."
+     },
+     {
+      "lang": "en",
+      "text": "Thank you. I'll wait for your call."
+     },
+     {
+      "lang": "tr",
+      "text": "Teşekkürler, aramanızı bekleyeceğim. Burada will kullandık, çünkü kararı konuşma sırasında verdik."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısa bir özet. Sorunu bildirirken: There's a leak in the bathroom ya da The fridge is broken."
+     },
+     {
+      "lang": "tr",
+      "text": "Ne zamandır sürdüğünü söylerken: hasn't worked since Monday, ya da süre için for three days."
+     },
+     {
+      "lang": "tr",
+      "text": "Kibar istek: Could you send someone today? It's urgent."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunları gerçek bir telefon konuşmasında deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Evinde kalorifer üç gündür çalışmıyor ve banyoda küçük bir sızıntı var. Ev sahibini arayıp durumu anlatıyorsun.",
+   "partner": "ev sahibin Mr. Wilson",
+   "opening": "Hello, this is Mr. Wilson. Is everything all right at the flat?",
+   "openingTr": "Merhaba, ben Mr. Wilson. Dairede her şey yolunda mı?",
+   "goal": "Sorunu söyleyip ne zamandır sürdüğünü anlattığında ve kibarca tamirci istediğinde konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-neighbours2",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "Noisy neighbours",
+  "titleTr": "Gürültücü komşular",
+  "summary": "Gürültücü komşuna kibarca şikâyet etmeyi, sesi kısmasını rica etmeyi ve rahatsızlığını nazikçe anlatmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Polite complaints",
+  "vocab": [
+   {
+    "de": "noise",
+    "tr": "gürültü"
+   },
+   {
+    "de": "loud",
+    "tr": "yüksek sesli"
+   },
+   {
+    "de": "late",
+    "tr": "geç"
+   },
+   {
+    "de": "complain",
+    "tr": "şikâyet etmek"
+   },
+   {
+    "de": "polite",
+    "tr": "kibar"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Sorry to bother you, but …",
+    "tr": "kibarca şikâyete başlarken kullanılır"
+   },
+   {
+    "de": "Could you … , please?",
+    "tr": "birinden nazikçe bir şey yapmasını rica ederken kullanılır"
+   },
+   {
+    "de": "I haven't … since …",
+    "tr": "belli bir andan beri olmayan bir şeyi anlatır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba. Bugün üst kattaki komşun gece yarısı müziği sonuna kadar açtı ve sen uyuyamıyorsun. Kapısını çalıp kibarca şikâyet etmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Kızmadan, bağırmadan, ama derdini net söyleyerek. Başlayalım mı?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İngilizcede şikâyet ederken en önemli şey ses tonu ve birkaç kibar kelime. Aynı cümle, başına küçük bir ek koyunca kavga olmaktan çıkıp rica oluyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Önce birkaç kelime alalım, sonra bunları cümleye yerleştireceğiz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz gürültü demek."
+     },
+     {
+      "lang": "en",
+      "text": "noise"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle."
+     },
+     {
+      "lang": "en",
+      "text": "noise"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "noise"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yüksek sesli demek için"
+     },
+     {
+      "lang": "en",
+      "text": "loud"
+     },
+     {
+      "lang": "tr",
+      "text": "diyoruz. Müzik çok yüksek demek istiyorsan:"
+     },
+     {
+      "lang": "en",
+      "text": "It's very loud."
+     },
+     {
+      "lang": "tr",
+      "text": "Sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It's very loud."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geç demek"
+     },
+     {
+      "lang": "en",
+      "text": "late"
+     },
+     {
+      "lang": "tr",
+      "text": "Saat geç oldu demek istersen:"
+     },
+     {
+      "lang": "en",
+      "text": "It's very late."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu cümle tek başına bile bir şikâyet gibidir; komşu ne demek istediğini hemen anlar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şikâyet etmek fiili"
+     },
+     {
+      "lang": "en",
+      "text": "complain"
+     },
+     {
+      "lang": "tr",
+      "text": "Kibar ise"
+     },
+     {
+      "lang": "en",
+      "text": "polite"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi asıl işi yapacak kalıba geçiyoruz: kibar şikâyetin kapı anahtarı."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kapıyı çaldığında ilk cümlen şu olsun:"
+     },
+     {
+      "lang": "en",
+      "text": "Sorry to bother you."
+     },
+     {
+      "lang": "tr",
+      "text": "Rahatsız ettiğim için üzgünüm demek. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Sorry to bother you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bunun arkasına küçük bir ek geliyor:"
+     },
+     {
+      "lang": "en",
+      "text": "but"
+     },
+     {
+      "lang": "tr",
+      "text": "yani ama. Önce özür, sonra dert. İngilizcede kibar şikâyetin sırası budur."
+     },
+     {
+      "lang": "tr",
+      "text": "Tam cümle şöyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Sorry to bother you, but the music is very loud."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu cümleyi bir bütün olarak söylemeni istiyorum. Acele etme, iki parça hâlinde düşün: önce özür, sonra ama."
+     },
+     {
+      "lang": "en",
+      "text": "Sorry to bother you, but the music is very loud."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Sorry to bother you, but the music is very loud."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ricayı yapalım. İngilizcede birinden bir şey isterken en kibar kalıplardan biri"
+     },
+     {
+      "lang": "en",
+      "text": "Could you …, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sesi kısmak için"
+     },
+     {
+      "lang": "en",
+      "text": "turn down"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır. Tersi de var:"
+     },
+     {
+      "lang": "en",
+      "text": "turn up"
+     },
+     {
+      "lang": "tr",
+      "text": "yani sesi açmak."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "O zaman ricamız şu:"
+     },
+     {
+      "lang": "en",
+      "text": "Could you turn the music down, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Could you turn the music down, please?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi aynı kalıbı başka bir ricada kendin kur. Pencereyi kapatmasını rica et."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Could you close the window, please?",
+     "accept": [
+      "Could you close the window please?",
+      "Can you close the window, please?",
+      "Could you please close the window?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kalıbı hatırla: Could you, sonra fiil, sonra please."
+      },
+      {
+       "lang": "en",
+       "text": "Could you … the window, please?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şikâyetini güçlendirmenin en doğal yolu, ne kadar zamandır rahatsız olduğunu söylemek. Bunun için present perfect kullanıyoruz."
+     },
+     {
+      "lang": "en",
+      "text": "I haven't slept."
+     },
+     {
+      "lang": "tr",
+      "text": "Uyuyamadım, uyumadım demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üstüne bir de zamanı ekleyelim: gece yarısından beri."
+     },
+     {
+      "lang": "en",
+      "text": "I haven't slept since midnight."
+     },
+     {
+      "lang": "tr",
+      "text": "Sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I haven't slept since midnight."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Buradaki küçük ama önemli fark:"
+     },
+     {
+      "lang": "en",
+      "text": "since"
+     },
+     {
+      "lang": "tr",
+      "text": "başlangıç anını söyler; gece yarısından beri, saat ondan beri."
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": "ise süreyi söyler; iki saattir, üç gündür. Yani since bir saat, for bir uzunluk."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: müzik saat ondan beri yüksek."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The music has been loud since ten.",
+     "accept": [
+      "The music has been loud since ten o'clock.",
+      "It has been loud since ten.",
+      "The music's been loud since ten."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Özne müzik, sonra has been, sonra yüksek sesli, sonra saatten beri."
+      },
+      {
+       "lang": "en",
+       "text": "The music has been … since …"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "\"Turn it down\" means \"make it louder\".",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Hayır, tam tersi."
+      },
+      {
+       "lang": "en",
+       "text": "Turn it down"
+      },
+      {
+       "lang": "tr",
+       "text": "sesi kısmak demek. Sesi açmak"
+      },
+      {
+       "lang": "en",
+       "text": "turn it up"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Komşun büyük ihtimalle şöyle cevap verecek:"
+     },
+     {
+      "lang": "en",
+      "text": "Oh, sorry! I didn't know. I'll turn it down."
+     },
+     {
+      "lang": "tr",
+      "text": "Buradaki"
+     },
+     {
+      "lang": "en",
+      "text": "I'll"
+     },
+     {
+      "lang": "tr",
+      "text": "o anda verilen sözdür. Sen de kibarca kapatırsın:"
+     },
+     {
+      "lang": "en",
+      "text": "Thank you. Have a good night."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir cümle senden. Kapıyı çaldın, özür diliyorsun ve saatin çok geç olduğunu söylüyorsun."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Sorry to bother you, but it's very late.",
+     "accept": [
+      "Sorry to bother you, but it is very late.",
+      "I'm sorry to bother you, but it's very late.",
+      "Sorry to bother you, but it's really late."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce özür kalıbı, sonra ama, sonra saat geç."
+      },
+      {
+       "lang": "en",
+       "text": "Sorry to bother you, but …"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Şikâyete özürle başlıyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "Sorry to bother you, but the music is very loud."
+     },
+     {
+      "lang": "tr",
+      "text": "Ricanı kibar kalıpla yapıyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "Could you turn the music down, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ve ne kadardır rahatsız olduğunu söylüyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "I haven't slept since midnight."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi komşunun kapısını çalıyoruz. Hazırsan konuşalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Gece yarısı. Üst kattaki daireden yüksek müzik geliyor ve uyuyamıyorsun. Kapıyı çalıyorsun ve kibarca şikâyet ediyorsun.",
+   "partner": "üst kattaki komşun Dan",
+   "opening": "Oh, hi. Is everything okay?",
+   "openingTr": "Merhaba. Her şey yolunda mı?",
+   "goal": "Kibarca özür kalıbıyla başlayıp gürültüden şikâyet etmen, sesi kısmasını rica etmen ve konuşmayı teşekkür ederek bitirmen.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-moving-in",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "Moving in",
+  "titleTr": "Taşınmak",
+  "summary": "Taşınma adımlarını sırayla anlatmayı öğretir: first, then, after that, finally.",
+  "minutes": 9,
+  "focusId": "Sequencing",
+  "vocab": [
+   {
+    "de": "move",
+    "tr": "taşınmak, taşınma"
+   },
+   {
+    "de": "key",
+    "tr": "anahtar"
+   },
+   {
+    "de": "contract",
+    "tr": "sözleşme"
+   },
+   {
+    "de": "sign",
+    "tr": "imzalamak"
+   },
+   {
+    "de": "electricity",
+    "tr": "elektrik"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "First, we signed the contract.",
+    "tr": "sıradaki ilk adımı anlatırken kullanılır"
+   },
+   {
+    "de": "After that, we got the keys.",
+    "tr": "bir sonraki adımı eklerken kullanılır"
+   },
+   {
+    "de": "We haven't turned on the electricity yet.",
+    "tr": "henüz yapılmamış bir işi anlatırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün taşınmayı anlatacağız. Yeni bir eve geçerken bir sürü adım var: daireye bakmak, sözleşmeyi imzalamak, anahtarları almak, elektriği açtırmak."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu adımları sırayla anlatmayı öğreneceğiz: önce şunu yaptık, sonra bunu yaptık, en sonunda taşındık. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz taşınmanın kendisi."
+     },
+     {
+      "lang": "en",
+      "text": "move in"
+     },
+     {
+      "lang": "tr",
+      "text": "Yeni bir eve yerleşmek demek. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "move in"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "move in"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Taşınmanın en güzel anı anahtarları almaktır. Anahtar İngilizcede"
+     },
+     {
+      "lang": "en",
+      "text": "key"
+     },
+     {
+      "lang": "tr",
+      "text": "Çoğulu keys. Şimdi tam bir cümle söyleyelim:"
+     },
+     {
+      "lang": "en",
+      "text": "We got the keys."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We got the keys."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Anahtarları almadan önce bir kâğıt imzalanır. Sözleşme demek:"
+     },
+     {
+      "lang": "en",
+      "text": "contract"
+     },
+     {
+      "lang": "tr",
+      "text": "İmzalamak ise sign. İkisini birleştiriyoruz. De bakalım:"
+     },
+     {
+      "lang": "en",
+      "text": "sign the contract"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "sign the contract"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni evde ilk gün en çok bunu ararsın: elektrik."
+     },
+     {
+      "lang": "en",
+      "text": "electricity"
+     },
+     {
+      "lang": "tr",
+      "text": "Biraz uzun bir kelime, acele etme. Hecelere böl: e-lec-tri-ci-ty. Şimdi sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "electricity"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "electricity"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin asıl konusuna geliyoruz: sıralama. Bir olayı adım adım anlatırken İngilizcede dört küçük kelime kullanırız."
+     },
+     {
+      "lang": "tr",
+      "text": "Önce için first. Sonra için then. Ondan sonra için after that. Ve en sonunda için finally."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu dördünü sırayla, sakin sakin tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "First, then, after that, finally."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "First, then, after that, finally."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu kelimeler genelde cümlenin başında durur ve arkasından virgül gelir. Anlattığımız şey geçmişte olduğu için fiiller geçmiş zamanda."
+     },
+     {
+      "lang": "en",
+      "text": "First, we looked at the flat."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Önce daireye baktık. Look at bakmak demek, geçmişi looked."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Şunu İngilizce söyle: Önce daireye baktık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "First, we looked at the flat.",
+     "accept": [
+      "First we looked at the flat.",
+      "First, we looked at the apartment.",
+      "First we looked at the apartment.",
+      "We looked at the flat first."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce kelimesiyle başla: first."
+      },
+      {
+       "lang": "en",
+       "text": "First, we ..."
+      },
+      {
+       "lang": "tr",
+       "text": "Bakmak look at, geçmişi looked. Daire flat."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. İkinci adım için then diyoruz. Türkçedeki sonra ile aynı iş."
+     },
+     {
+      "lang": "en",
+      "text": "Then we talked to the owner."
+     },
+     {
+      "lang": "tr",
+      "text": "Sonra ev sahibiyle konuştuk. Dikkat et: then'den sonra virgül koymasan da olur, ikisi de doğru."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen dene. Şunu İngilizce kur: Sonra sözleşmeyi imzaladık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Then we signed the contract.",
+     "accept": [
+      "Then, we signed the contract.",
+      "And then we signed the contract."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sonra için then, cümlenin başında."
+      },
+      {
+       "lang": "en",
+       "text": "Then we ..."
+      },
+      {
+       "lang": "tr",
+       "text": "İmzalamak sign, geçmişi signed."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü adım için after that kullanırız: ondan sonra. Bu iki kelime hep birlikte gider."
+     },
+     {
+      "lang": "en",
+      "text": "After that, we paid the deposit."
+     },
+     {
+      "lang": "tr",
+      "text": "Ondan sonra depozitoyu ödedik. Pay ödemek, geçmişi paid."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu söyle: Ondan sonra anahtarları aldık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "After that, we got the keys.",
+     "accept": [
+      "After that we got the keys.",
+      "After that, we took the keys.",
+      "After that we took the keys."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ondan sonra: after that."
+      },
+      {
+       "lang": "en",
+       "text": "After that, we ..."
+      },
+      {
+       "lang": "tr",
+       "text": "Almak get, geçmişi got. Anahtarlar the keys."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ve son adım: finally. En sonunda, nihayet demek."
+     },
+     {
+      "lang": "en",
+      "text": "Finally, we moved in."
+     },
+     {
+      "lang": "tr",
+      "text": "En sonunda taşındık. Finally'yi sadece gerçekten son adım için kullan; hikâyenin ortasında kullanılmaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu İngilizce cümleyi dinle ve mantıklı mı söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Finally, we looked at the flat. Then we signed the contract."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Finally, we looked at the flat. Then we signed the contract.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış, çünkü finally son adımı anlatır ama burada daha arkasından başka bir adım geliyor."
+      },
+      {
+       "lang": "tr",
+       "text": "Doğrusu şöyle olurdu:"
+      },
+      {
+       "lang": "en",
+       "text": "First, we looked at the flat. Then we signed the contract."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Taşınmada bazı işler biter, bazıları hâlâ bekler. Biten bir iş için already, bekleyen bir iş için yet kullanırız."
+     },
+     {
+      "lang": "en",
+      "text": "We have already signed the contract."
+     },
+     {
+      "lang": "tr",
+      "text": "Sözleşmeyi çoktan imzaladık. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We have already signed the contract."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We have already signed the contract."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de bekleyen iş: elektrik hâlâ açılmadı."
+     },
+     {
+      "lang": "en",
+      "text": "The electricity isn't on yet."
+     },
+     {
+      "lang": "tr",
+      "text": "Yet cümlenin sonuna gelir ve henüz anlamını verir. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The electricity isn't on yet."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The electricity isn't on yet."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birine taşınıp taşınmadığını sormak istersen aynı yet'i soruda kullanırsın:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you moved in yet?"
+     },
+     {
+      "lang": "tr",
+      "text": "Taşındın mı artık? Sen de sor:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you moved in yet?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Have you moved in yet?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi hikâyenin tamamını baştan sona dinle, sıralama kelimelerine dikkat et:"
+     },
+     {
+      "lang": "en",
+      "text": "First, we looked at the flat. Then we signed the contract. After that, we got the keys. Finally, we moved in last Saturday."
+     },
+     {
+      "lang": "tr",
+      "text": "Dört adım, dört kelime. İşte bütün mesele bu."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: taşınma kelimelerini öğrendin — move in, key, contract, sign, electricity."
+     },
+     {
+      "lang": "tr",
+      "text": "Ve adımları sıraya dizmeyi öğrendin: first, then, after that, finally. Bittiyse already, bitmediyse yet."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunları gerçek bir konuşmada kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yeni taşındığın daireye ev sahibi uğradı ve taşınmanın nasıl geçtiğini soruyor. Sen adımları sırayla anlatıyorsun.",
+   "partner": "ev sahibi",
+   "opening": "Hi! Welcome to the building. So, how was the move?",
+   "openingTr": "Merhaba! Binamıza hoş geldin. Peki, taşınma nasıl geçti?",
+   "goal": "Taşınma adımlarını first, then, after that ve finally kullanarak sırayla anlatman ve elektrik gibi hâlâ bekleyen bir işi yet ile söylemen yeterli.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-repairs",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "Calling a repairman",
+  "titleTr": "Tamirci çağırmak",
+  "summary": "Bozulan bir eşyayı telefonda anlatmayı, tamirciyle gün ve saat sözleşmeyi ve ücreti sormayı öğretir.",
+  "minutes": 9,
+  "focusId": "Arranging",
+  "vocab": [
+   {
+    "de": "repair",
+    "tr": "tamir etmek"
+   },
+   {
+    "de": "tool",
+    "tr": "alet"
+   },
+   {
+    "de": "cost",
+    "tr": "mal olmak"
+   },
+   {
+    "de": "estimate",
+    "tr": "tahmini fiyat"
+   },
+   {
+    "de": "tomorrow",
+    "tr": "yarın"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "My washing machine isn't working.",
+    "tr": "bir şeyin bozulduğunu söylerken kullanılır"
+   },
+   {
+    "de": "Can you come tomorrow morning?",
+    "tr": "tamirciden belli bir gün ve vakit için randevu isterken kullanılır"
+   },
+   {
+    "de": "How much will it cost?",
+    "tr": "işin ne kadar tutacağını sorarken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Çamaşır makinen bozuldu ve tamirciyi arayacaksın. Bugün telefonda arızayı anlatmayı, bir gün ve saat sözleşmeyi ve ücreti sormayı öğreneceğiz. Başlamaya hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Böyle bir telefon görüşmesi üç parçadan oluşur: neyin bozuk olduğunu söylersin, ne zaman gelebileceğini sorarsın, sonra fiyatı sorarsın. İngilizcede bu üç parçanın her birinin kendi kalıbı var. Önce kelimeleri öğrenelim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "repair"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'tamir etmek' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "repair"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "repair"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "tool"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'alet' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "tool"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "tool"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "cost"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'mal olmak, tutmak' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "cost"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "cost"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "estimate"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'tahmini fiyat' demek; tamirci işe başlamadan önce verdiği rakama böyle der. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "estimate"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "estimate"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "tomorrow"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'yarın' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "tomorrow"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "tomorrow"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi arızayı anlatalım. Türkçede 'bozuldu' deriz; İngilizcede bunun en doğal karşılığı 'çalışmıyor' demektir:"
+     },
+     {
+      "lang": "en",
+      "text": "My washing machine isn't working."
+     },
+     {
+      "lang": "tr",
+      "text": "Daha kesin bir bozukluk için şunu da diyebilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "My washing machine is broken."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımızı birlikte söyleyelim. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "My washing machine isn't working"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My washing machine isn't working"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Bu sefer bozulan şey buzdolabın: 'Buzdolabım çalışmıyor.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My fridge isn't working",
+     "accept": [
+      "My fridge is not working",
+      "My refrigerator isn't working",
+      "My refrigerator is not working",
+      "My fridge is broken"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bozukluğu anlatırken 'isn't working' kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "My fridge isn't working."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci parça randevu. Tamirciden gelmesini isterken emir kipi kullanmayız, rica ederiz:"
+     },
+     {
+      "lang": "en",
+      "text": "Can you come tomorrow morning?"
+     },
+     {
+      "lang": "tr",
+      "text": "Vakit sözcüklerine dikkat et:"
+     },
+     {
+      "lang": "en",
+      "text": "tomorrow morning"
+     },
+     {
+      "lang": "tr",
+      "text": "yarın sabah,"
+     },
+     {
+      "lang": "en",
+      "text": "this afternoon"
+     },
+     {
+      "lang": "tr",
+      "text": "bugün öğleden sonra,"
+     },
+     {
+      "lang": "en",
+      "text": "on Monday"
+     },
+     {
+      "lang": "tr",
+      "text": "pazartesi günü. 'Tomorrow' kelimesinin önüne edat gelmez; 'on tomorrow' denmez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen sor: 'Yarın sabah gelebilir misin?'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Can you come tomorrow morning",
+     "accept": [
+      "Could you come tomorrow morning",
+      "Can you come tomorrow morning please",
+      "Can you come here tomorrow morning"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Rica 'Can you' ile başlar, zaman en sona gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "Can you come tomorrow morning?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tamirci cevap verirken iki farklı şey söyleyebilir. Müsait olup olmadığını anlatırken:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm busy tomorrow, but I can come on Friday."
+     },
+     {
+      "lang": "tr",
+      "text": "Söz verirken ise 'will' kullanır:"
+     },
+     {
+      "lang": "en",
+      "text": "I'll be there at ten o'clock."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'can' yapabilirliği, 'will' o anda verilen sözü anlatır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü parça para. Burada da 'will' var, çünkü henüz olmamış bir şeyi soruyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "How much will it cost?"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir dükkândaki hazır fiyatı sorsaydın"
+     },
+     {
+      "lang": "en",
+      "text": "How much does it cost?"
+     },
+     {
+      "lang": "tr",
+      "text": "derdin. Ama tamir işi daha yapılmadığı için 'will' daha doğaldır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Ne kadar tutacak?'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "How much will it cost",
+     "accept": [
+      "How much will this cost",
+      "How much will it cost to repair it",
+      "How much is it going to cost",
+      "How much will the repair cost"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Soru cümlesinde 'will' özneden önce gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "How much will it cost?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kesin rakam veremiyorsa tahmin isteyebilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "Can you give me an estimate?"
+     },
+     {
+      "lang": "tr",
+      "text": "Tamircinin sık verdiği cevap da şudur:"
+     },
+     {
+      "lang": "en",
+      "text": "It won't take long."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'uzun sürmez'."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir küçük ayrıntı: aletler. Tamirci gelirken yanında ne getirecek diye merak edersen"
+     },
+     {
+      "lang": "en",
+      "text": "Do you have the tools with you?"
+     },
+     {
+      "lang": "tr",
+      "text": "diye sorarsın. Cevabı genelde şudur:"
+     },
+     {
+      "lang": "en",
+      "text": "I have all my tools in the van."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kısa bir doğru-yanlış:"
+     },
+     {
+      "lang": "en",
+      "text": "How much it will cost?"
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesi doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "How much it will cost?",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Soruda 'will' özneden sonra değil önce gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "How much will it cost?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Artık arızayı anlatabiliyor, gün ve saat sözleşebiliyor ve ücreti sorabiliyorsun. Şimdi telefonu eline al: çamaşır makinen bozuk ve tamir servisini arıyorsun."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Çamaşır makinen bozuldu ve tamir servisini aradın. Neyin bozuk olduğunu anlat, yarın için bir gün ve saat üzerinde anlaş ve işin ne kadar tutacağını sor.",
+   "partner": "işini bilen, biraz aceleci ama yardımsever bir tamirci",
+   "opening": "Hello, this is Dave's Repairs. What seems to be the problem?",
+   "openingTr": "Merhaba, Dave Tamir Servisi. Sorun nedir?",
+   "goal": "Arıza anlatılmış, gelinecek gün ve saat üzerinde anlaşılmış ve ücret ya da tahmini fiyat sorulmuş olur.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-building-rules",
+  "level": "A2",
+  "course": "en",
+  "icon": "ask",
+  "title": "Building rules",
+  "titleTr": "Bina kuralları",
+  "summary": "Bina kurallarını must ve have to ile anlatmayı, mustn't ile yasağı ve don't have to ile gereksizliği ayırmayı öğretir.",
+  "minutes": 9,
+  "focusId": "must / have to",
+  "vocab": [
+   {
+    "de": "rule",
+    "tr": "kural"
+   },
+   {
+    "de": "allow",
+    "tr": "izin vermek"
+   },
+   {
+    "de": "forbidden",
+    "tr": "yasak"
+   },
+   {
+    "de": "rubbish",
+    "tr": "çöp"
+   },
+   {
+    "de": "quiet",
+    "tr": "sessiz"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "You have to …",
+    "tr": "uyulması gereken bir kuralı söyler"
+   },
+   {
+    "de": "You mustn't …",
+    "tr": "kesin yasağı söyler"
+   },
+   {
+    "de": "You don't have to …",
+    "tr": "bir şeyin zorunlu olmadığını söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bugün bina kurallarını konuşacağız: çöp ne zaman çıkar, saat kaçtan sonra sessiz olunur, nereye park edilmez. İngilizcede zorunluluğu must ve have to ile, yasağı mustn't ile anlatacağız. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni bir binaya taşındığında ilk duyacağın cümleler kurallardır. Kelimeleri bir bir alalım, sonra cümleyi kuralım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "rule"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'kural' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "rule"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "rule"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "allow"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'izin vermek' demek. Tabelalarda çoğunlukla 'allowed' biçimini görürsün: izin verilmiş. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "allow"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "allow"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "forbidden"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'yasak' demek. Sert bir kelimedir, tabelalarda ve resmî yazılarda geçer. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "forbidden"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "forbidden"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "rubbish"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'çöp' demek. Bu kelime İngiltere'de kullanılır; Amerika'da aynı şeye garbage veya trash denir. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "rubbish"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "rubbish"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "quiet"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'sessiz' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "quiet"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "quiet"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi zorunluluğa geçelim. İngilizcede iki yol var: must ve have to. İkisinden sonra da fiil çıplak gelir, yani 'to' koymazsın:"
+     },
+     {
+      "lang": "en",
+      "text": "You must be quiet."
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "You have to be quiet."
+     },
+     {
+      "lang": "tr",
+      "text": "Günlük konuşmada have to daha sık, must ise yazılı kurallarda ve tabelalarda daha çok geçer."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız kuralı söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "You have to be quiet after ten."
+     },
+     {
+      "lang": "tr",
+      "text": "'Ondan sonra sessiz olmak zorundasın' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "You have to be quiet after ten"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You have to be quiet after ten"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Çöpü pazartesi günü çıkarmak zorundayız.' demek için ne dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We have to take the rubbish out on Monday",
+     "accept": [
+      "We must take the rubbish out on Monday",
+      "We have to take out the rubbish on Monday",
+      "We have to take the rubbish out on Mondays"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Günlerin önünde 'on' kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "We have to take the rubbish out on Monday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin en önemli noktası geliyor, buna dikkat et. İngilizcede olumsuzda must ve have to aynı şeyi söylemez."
+     },
+     {
+      "lang": "en",
+      "text": "You mustn't smoke here."
+     },
+     {
+      "lang": "tr",
+      "text": "'Burada sigara içmek yasak' demektir. Ama"
+     },
+     {
+      "lang": "en",
+      "text": "You don't have to pay."
+     },
+     {
+      "lang": "tr",
+      "text": "'Ödemek zorunda değilsin' demektir; yani istersen ödersin, yasak yok."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısaca: mustn't yasak koyar, don't have to zorunluluğu kaldırır. Türkçede ikisi de 'zorunda değilsin' gibi çevrilebildiği için karışır; İngilizcede arasında dağlar kadar fark var."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yasak kalıbımız:"
+     },
+     {
+      "lang": "en",
+      "text": "You mustn't park in front of the door."
+     },
+     {
+      "lang": "tr",
+      "text": "'Kapının önüne park etmek yasak' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "You mustn't park in front of the door"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You mustn't park in front of the door"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen: 'Su için ödemek zorunda değilsin.' demek için ne dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "You don't have to pay for the water",
+     "accept": [
+      "You do not have to pay for the water",
+      "We don't have to pay for the water"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Burada yasak yok, sadece zorunluluk yok:"
+      },
+      {
+       "lang": "en",
+       "text": "You don't have to pay for the water."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tabelalar genelde kişiye seslenmez, kuralı düz söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "Smoking is not allowed."
+     },
+     {
+      "lang": "tr",
+      "text": "veya daha sert biçimiyle"
+     },
+     {
+      "lang": "en",
+      "text": "Smoking is forbidden."
+     },
+     {
+      "lang": "tr",
+      "text": "En kısası ise şudur:"
+     },
+     {
+      "lang": "en",
+      "text": "No smoking."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir deneme daha: 'Köpekler binaya alınmaz.' yani 'Köpeklere binada izin verilmiyor.' demek için ne dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Dogs are not allowed in the building",
+     "accept": [
+      "Dogs aren't allowed in the building",
+      "Dogs are not allowed inside the building"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kalıp şu: özne, sonra are not allowed:"
+      },
+      {
+       "lang": "en",
+       "text": "Dogs are not allowed in the building."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kuralı sormak istersen soruyu do ile kurarsın:"
+     },
+     {
+      "lang": "en",
+      "text": "Do I have to sort the rubbish?"
+     },
+     {
+      "lang": "tr",
+      "text": "'Çöpü ayırmak zorunda mıyım?' demek. Kısa cevaplar da hazır dursun:"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, you do."
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "No, you don't."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir doğru-yanlış alıştırması:"
+     },
+     {
+      "lang": "en",
+      "text": "You must to be quiet after ten."
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesi doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "You must to be quiet after ten.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. must'tan sonra 'to' gelmez. Doğrusu: You must be quiet after ten. 'to' yalnızca have to kalıbının içinde vardır."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: zorunluluk için have to ya da must, yasak için mustn't veya is not allowed, zorunlu olmayan için don't have to. Şimdi yeni binana taşındın ve kuralları öğreniyorsun."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yeni taşındığın binanın girişinde görevliyle konuşuyorsun. Çöpün ne zaman çıkarıldığını, sessizlik saatini ve neyin yasak olduğunu öğren; bir de kendin bir soru sor.",
+   "partner": "kuralları anlatmayı seven, güler yüzlü bir apartman görevlisi",
+   "opening": "Welcome to the building! Let me tell you the rules.",
+   "openingTr": "Binaya hoş geldin! Sana kuralları anlatayım.",
+   "goal": "Çöp günü ve sessizlik saati öğrenilmiş, en az bir yasak (mustn't ya da not allowed) duyulmuş ve öğrenci kendisi bir kural sorusu sormuş olur.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-neighbourhood",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "My neighbourhood",
+  "titleTr": "Mahallem",
+  "summary": "Mahalleni tanıtmayı öğretir: yakınında ne var, nerede, ne kadar uzakta, güvenli mi kalabalık mı ve ne zamandır orada oturuyorsun.",
+  "minutes": 9,
+  "focusId": "Location language",
+  "vocab": [
+   {
+    "de": "area",
+    "tr": "alan, bölge"
+   },
+   {
+    "de": "nearby",
+    "tr": "yakında"
+   },
+   {
+    "de": "crowded",
+    "tr": "kalabalık"
+   },
+   {
+    "de": "park",
+    "tr": "park"
+   },
+   {
+    "de": "safe",
+    "tr": "güvenli"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "There is a park nearby.",
+    "tr": "yakınında ne olduğunu anlatırken kullanılır"
+   },
+   {
+    "de": "It takes ten minutes on foot.",
+    "tr": "bir yerin ne kadar uzakta olduğunu süreyle söylerken kullanılır"
+   },
+   {
+    "de": "It's quieter than the city centre.",
+    "tr": "iki yeri karşılaştırırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün mahalleni anlatmayı öğreneceğiz: yakınında ne var, nerede duruyor, ne kadar uzakta ve nasıl bir yer. Hazır mısın, başlayalım mı?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: area. Türkçesi alan, bölge demek. Oturduğun yerden bahsederken de kullanılır. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "area"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "area"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Şimdi ikinci kelimemiz: nearby. Yakında, yakınlarda demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "nearby"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "nearby"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yerde ne olduğunu söylerken there is ve there are kullanırız. Tek bir şey için there is, birden fazlası için there are. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "There is a park. There are two schools."
+     },
+     {
+      "lang": "tr",
+      "text": "Duydun mu? Tek park: there is. İki okul: there are."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ikisini birleştirelim. Lütfen de:"
+     },
+     {
+      "lang": "en",
+      "text": "There is a park nearby."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "There is a park nearby."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni kelime: crowded. Kalabalık demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "crowded"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "crowded"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de safe var: güvenli demek. Mahalleni anlatırken çok işine yarayacak. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "My area is safe and quiet."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: mahallem güvenli ve sakin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Burası güvenli bir bölge. Bunu İngilizce kur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It's a safe area.",
+     "accept": [
+      "It is a safe area.",
+      "This is a safe area.",
+      "It's a safe neighbourhood.",
+      "It is a safe neighbourhood."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "It's ile başla, sonra sıfat, sonra area."
+      },
+      {
+       "lang": "en",
+       "text": "It's a … area."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bir şeyin tam olarak nerede olduğunu söyleyelim. next to yanında, opposite karşısında, between arasında demek. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "next to, opposite, between"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir örnek yapalım: fırın okulun yanında. Lütfen de:"
+     },
+     {
+      "lang": "en",
+      "text": "The bakery is next to the school."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The bakery is next to the school."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Peki ne kadar uzakta? İngilizcede bunu genelde süreyle söyleriz. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "It takes ten minutes on foot."
+     },
+     {
+      "lang": "tr",
+      "text": "Yürüyerek on dakika sürüyor. on foot, yürüyerek demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen söyle: Yürüyerek beş dakika sürüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It takes five minutes on foot.",
+     "accept": [
+      "It takes five minutes to walk.",
+      "It's five minutes on foot.",
+      "It is five minutes on foot.",
+      "It takes 5 minutes on foot."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "It takes ile başla, sonra süre, sonra on foot."
+      },
+      {
+       "lang": "en",
+       "text": "It takes … minutes on foot."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi karşılaştırma yapalım. Kısa sıfatlara -er ekleriz: quiet, quieter. Uzun sıfatların önüne more koyarız: crowded, more crowded. Sonra than gelir. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "quieter than, more crowded than"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tam bir cümle deneyelim: burası eski mahallemden daha kalabalık. Lütfen de:"
+     },
+     {
+      "lang": "en",
+      "text": "It's more crowded than my old neighbourhood."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It's more crowded than my old neighbourhood."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol yapalım. Şu cümle doğru mu?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "My street is more quiet than the main road.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "quiet kısa bir sıfat, o yüzden more quiet demeyiz, quieter deriz."
+      },
+      {
+       "lang": "en",
+       "text": "My street is quieter than the main road."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de ne zamandır orada oturduğunu söylemek var. Bunun için have lived kullanırız. Süre için for, başlangıç noktası için since. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "I have lived here for three years. I have lived here since 2020."
+     },
+     {
+      "lang": "tr",
+      "text": "Üç yıldır burada oturuyorum. İki bin yirmiden beri burada oturuyorum."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen dene: İki yıldır burada oturuyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have lived here for two years.",
+     "accept": [
+      "I've lived here for two years.",
+      "I have lived in this area for two years.",
+      "I've lived in this area for two years.",
+      "I have been living here for two years.",
+      "I've been living here for two years."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "have ve lived birlikte, sonra for ile süre."
+      },
+      {
+       "lang": "en",
+       "text": "I have lived here for … years."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son olarak, karşındaki kişiye de sorabilmen lazım. Mahallen nasıl bir yer sorusu İngilizcede şöyle:"
+     },
+     {
+      "lang": "en",
+      "text": "What's your neighbourhood like?"
+     },
+     {
+      "lang": "tr",
+      "text": "Cevap olarak da: It's quiet and safe. There are a lot of shops nearby. diyebilirsin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika iş çıkardın. Bugün mahalleni anlatmayı öğrendik: there is ve there are ile ne olduğunu, next to ve opposite ile nerede olduğunu, it takes ile ne kadar uzakta olduğunu, quieter ve more crowded ile karşılaştırmayı, bir de for ve since ile ne zamandır orada olduğunu. Şimdi rol yapma bölümünde kendi mahalleni anlat."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İşe yeni başlayan bir arkadaşın senin oturduğun semte taşınmayı düşünüyor. Kahve molasında mahalleni soruyor.",
+   "partner": "meraklı yeni iş arkadaşın",
+   "opening": "So, what's your neighbourhood like?",
+   "openingTr": "Peki, mahallen nasıl bir yer?",
+   "goal": "Mahallende yakınlarda ne olduğunu söyleyip bir yerin ne kadar uzakta olduğunu anlatınca, mahalleni başka bir yerle karşılaştırıp güvenli mi kalabalık mı olduğunu belirtince ve ne zamandır orada oturduğunu söyleyince konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-local-shops",
+  "level": "A2",
+  "course": "en",
+  "icon": "ask",
+  "title": "Local shops",
+  "titleTr": "Mahalle esnafı",
+  "summary": "Semtindeki dükkânların adlarını söylemeyi, açılış ve kapanış saatlerini sormayı ve bir işi hâlledip halletmediğini anlatmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Services",
+  "vocab": [
+   {
+    "de": "bakery",
+    "tr": "ekmek fırını"
+   },
+   {
+    "de": "corner shop",
+    "tr": "bakkal"
+   },
+   {
+    "de": "laundry",
+    "tr": "çamaşırhane"
+   },
+   {
+    "de": "open",
+    "tr": "açık, açılmak"
+   },
+   {
+    "de": "close",
+    "tr": "kapatmak, kapanmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What time do you open?",
+    "tr": "bir dükkânın kaçta açıldığını sormak için kullanılır"
+   },
+   {
+    "de": "I've already been to the bakery.",
+    "tr": "bir işi çoktan hallettiğini söylerken kullanılır"
+   },
+   {
+    "de": "Do you have any fresh bread?",
+    "tr": "dükkânda bir şeyin olup olmadığını sormak için kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugün mahalleni İngilizce anlatıyoruz: fırın, bakkal, çamaşırhane. Dükkânların adlarını söyleyeceksin, kaçta açılıp kapandıklarını soracaksın ve bir işi çoktan halledip halletmediğini anlatacaksın."
+     },
+     {
+      "lang": "tr",
+      "text": "Kulaklığın hazırsa başlayalım. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz ekmek fırını."
+     },
+     {
+      "lang": "en",
+      "text": "a bakery"
+     },
+     {
+      "lang": "tr",
+      "text": "Baştaki hece uzun: BEY-kı-ri. Lütfen sen de söyle."
+     },
+     {
+      "lang": "en",
+      "text": "a bakery"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a bakery"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bakkal için İngilizler iki kelime kullanır."
+     },
+     {
+      "lang": "en",
+      "text": "a corner shop"
+     },
+     {
+      "lang": "tr",
+      "text": "Kelimesi kelimesine köşedeki dükkân demek, çünkü bakkallar genelde sokak köşesindedir. Sen de söyle."
+     },
+     {
+      "lang": "en",
+      "text": "a corner shop"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a corner shop"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çamaşırhane ise şöyle."
+     },
+     {
+      "lang": "en",
+      "text": "a laundry"
+     },
+     {
+      "lang": "tr",
+      "text": "Dikkat: LON-dri diye okunur, ortadaki harf yutulur. Deneyelim."
+     },
+     {
+      "lang": "en",
+      "text": "a laundry"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a laundry"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi çok işine yarayacak iki kelime: açık ve kapalı."
+     },
+     {
+      "lang": "en",
+      "text": "open"
+     },
+     {
+      "lang": "en",
+      "text": "closed"
+     },
+     {
+      "lang": "tr",
+      "text": "Kapıdaki tabelada bunları görürsün. Cümle içinde şöyle geçer."
+     },
+     {
+      "lang": "en",
+      "text": "The bakery is open."
+     },
+     {
+      "lang": "en",
+      "text": "The laundry is closed today."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir dükkânın açık olup olmadığını sormak istersen sadece kelimelerin yerini değiştir."
+     },
+     {
+      "lang": "en",
+      "text": "Is the bakery open?"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de sor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Is the bakery open?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Bakkal saat sekizde açılıyor demek istiyorsun. Burada open bir fiil olarak da çalışır ve üçüncü tekil olduğu için sonuna s alır."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi kendin kur: Bakkal sekizde açılır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The corner shop opens at eight.",
+     "accept": [
+      "The corner shop opens at 8.",
+      "The corner shop opens at eight o'clock.",
+      "The corner shop opens at eight am."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce dükkân:"
+      },
+      {
+       "lang": "en",
+       "text": "the corner shop"
+      },
+      {
+       "lang": "tr",
+       "text": "sonra açılır:"
+      },
+      {
+       "lang": "en",
+       "text": "opens"
+      },
+      {
+       "lang": "tr",
+       "text": "saatten önce at gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "at eight"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kapanmak için close kullanılır. Bir de saati sormanın kalıbı var, bunu ezberle."
+     },
+     {
+      "lang": "en",
+      "text": "What time do you open?"
+     },
+     {
+      "lang": "en",
+      "text": "What time do you close?"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçede saat kaçta deriz, İngilizcede what time. Cevap da kısa gelir."
+     },
+     {
+      "lang": "en",
+      "text": "We close at seven."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kapanış saatini kendin söyleyebilmen lazım. Benden sonra tekrar et."
+     },
+     {
+      "lang": "en",
+      "text": "They close at seven."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They close at seven."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi İngilizceye özgü bir noktaya geliyoruz. Bir işi çoktan hallettiysen, yani saatini söylemeden sadece oldu bitti demek istiyorsan, have artı fiilin üçüncü hali kullanılır."
+     },
+     {
+      "lang": "en",
+      "text": "I have been to the bakery."
+     },
+     {
+      "lang": "tr",
+      "text": "Konuşurken kısaltılır."
+     },
+     {
+      "lang": "en",
+      "text": "I've been to the bakery."
+     },
+     {
+      "lang": "tr",
+      "text": "Fırına gittim, ekmek elimde demek. Türkçede sadece gittim deriz, İngilizcede bu yapı işin sonucunu vurgular."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Araya already koyarsan çoktan anlamı gelir. Lütfen tekrar et."
+     },
+     {
+      "lang": "en",
+      "text": "I've already been to the bakery."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I've already been to the bakery."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı yapının olumsuzu için haven't kullanılır ve cümlenin sonuna yet eklenir. Yet burada henüz demek."
+     },
+     {
+      "lang": "tr",
+      "text": "Sen kur: Henüz çamaşırhaneye gitmedim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I haven't been to the laundry yet.",
+     "accept": [
+      "I have not been to the laundry yet.",
+      "I haven't been to the laundry yet",
+      "I haven't gone to the laundry yet."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olumsuz başlangıç:"
+      },
+      {
+       "lang": "en",
+       "text": "I haven't been"
+      },
+      {
+       "lang": "tr",
+       "text": "nereye:"
+      },
+      {
+       "lang": "en",
+       "text": "to the laundry"
+      },
+      {
+       "lang": "tr",
+       "text": "ve sona henüz:"
+      },
+      {
+       "lang": "en",
+       "text": "yet"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu İngilizce cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "You wash your clothes at a bakery."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "You wash your clothes at a bakery.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Fırında ekmek alırsın, çamaşır yıkamazsın. Doğrusu şöyle:"
+      },
+      {
+       "lang": "en",
+       "text": "You wash your clothes at a laundry."
+      },
+      {
+       "lang": "en",
+       "text": "You buy bread at a bakery."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Planını anlatmak istersen going to yapısını kullan, bunu zaten biliyorsun."
+     },
+     {
+      "lang": "en",
+      "text": "I'm going to buy some bread."
+     },
+     {
+      "lang": "en",
+      "text": "I'm going to take these shirts to the laundry."
+     },
+     {
+      "lang": "tr",
+      "text": "Kararı o anda verdiysen will da olur."
+     },
+     {
+      "lang": "en",
+      "text": "I'll go to the corner shop later."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Mahalle esnafını karşılaştırmak da çok doğal. Kısa sıfatların sonuna er ekleyip than dersin."
+     },
+     {
+      "lang": "en",
+      "text": "The bakery is closer than the supermarket."
+     },
+     {
+      "lang": "en",
+      "text": "Their bread is fresher."
+     },
+     {
+      "lang": "tr",
+      "text": "Cheap yani ucuz kelimesi de aynı şekilde çalışır: cheaper."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bakkal süpermarketten daha ucuz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The corner shop is cheaper than the supermarket.",
+     "accept": [
+      "The corner shop is cheaper than the supermarket",
+      "A corner shop is cheaper than a supermarket.",
+      "The corner shop is cheaper than the supermarket ."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Özne:"
+      },
+      {
+       "lang": "en",
+       "text": "the corner shop"
+      },
+      {
+       "lang": "tr",
+       "text": "daha ucuz:"
+      },
+      {
+       "lang": "en",
+       "text": "is cheaper"
+      },
+      {
+       "lang": "tr",
+       "text": "neden daha ucuz:"
+      },
+      {
+       "lang": "en",
+       "text": "than the supermarket"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son olarak dükkânda işine yarayacak üç cümle. Bir şey var mı diye sorarken."
+     },
+     {
+      "lang": "en",
+      "text": "Do you have any fresh bread?"
+     },
+     {
+      "lang": "tr",
+      "text": "Fiyatı sorarken."
+     },
+     {
+      "lang": "en",
+      "text": "How much is it?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ve çıkarken."
+     },
+     {
+      "lang": "en",
+      "text": "Thanks, see you tomorrow."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım. Dükkânlar: bakery, corner shop, laundry. Açık kapalı: open ve closed. Saat sormak: What time do you open? Yaptığın işi anlatmak: I've already been to the bakery, I haven't been to the laundry yet. Bir de karşılaştırma: cheaper than, closer than."
+     },
+     {
+      "lang": "tr",
+      "text": "Çok iyi gitti. Şimdi fırıncıyla küçük bir konuşma yapalım, öğrendiklerini orada kullan."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Mahallendeki ekmek fırınına sabah uğradın. Ekmek alacaksın ve fırının hafta sonu kaçta açılıp kapandığını öğrenmek istiyorsun.",
+   "partner": "fırıncı",
+   "opening": "Good morning! What can I get you?",
+   "openingTr": "Günaydın! Ne verebilirim?",
+   "goal": "Ekmek istediğini söyleyip fiyatını sorman, fırının açılış veya kapanış saatini öğrenmen ve teşekkür ederek vedalaşman hâlinde konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]
