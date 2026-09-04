@@ -4,7 +4,7 @@ import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PROCESSORS, legalPath, processorRow } 
 
 export const metadata = {
   title: "Gizlilik Politikası",
-  description: "Nomi'nin hangi verileri, neden ve ne kadar süreyle işlediği; KVKK ve GDPR kapsamındaki haklarınız; hesap silme.",
+  description: "Nomi'nin hangi verileri, neden ve ne kadar süreyle işlediği; KVKK ve GDPR kapsamındaki hakların; hesap silme.",
   alternates: {
     canonical: LEGAL_PATHS.privacy,
     languages: { tr: legalPath("privacy"), en: legalPath("privacy", "en"), de: legalPath("privacy", "de") },

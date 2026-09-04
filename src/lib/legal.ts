@@ -41,8 +41,8 @@
  * iletişim kanalı yeterli. Doldurulmamış alanlar [[...]] biçiminde kalır ve
  * sayfalarda vurguyla basılır (bkz. legal-shell Ph).
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-03";
-export const LEGAL_VERSION = "1.1";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-04";
+export const LEGAL_VERSION = "1.2";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */

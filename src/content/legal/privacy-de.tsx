@@ -21,7 +21,7 @@ export function PrivacyDeBody() {
       <p>
         Verantwortlicher für die von dieser Erklärung erfassten personenbezogenen Daten im Sinne des türkischen Gesetzes Nr. 6698 zum
         Schutz personenbezogener Daten (KVKK) und der Datenschutz-Grundverordnung der Europäischen Union (DSGVO) ist die unten bezeichnete
-        Person: Sie entscheidet, welche Daten zu welchem Zweck verarbeitet, wie lange sie gespeichert und an welche Anbieter sie übermittelt
+        Person. Diese Person entscheidet, welche Daten zu welchem Zweck verarbeitet, wie lange sie gespeichert und an welche Anbieter sie übermittelt
         werden. Die Erklärung gilt für die Nomi-Webanwendung (www.exfe.me) und die Android-App.
       </p>
       <EntityBlock party="controller" contact locale="de" />
@@ -116,7 +116,7 @@ export function PrivacyDeBody() {
       <h2>4b. Automatisierte Entscheidungen und Profiling</h2>
       <p>
         Der Wiederholungsplan, der Inhalt der Tagesrunde, der Niveauvorschlag und die Wochen-Rangliste werden automatisch aus deinen
-        Lerndaten berechnet. Sie sind Teil der Funktionsweise des Produkts, erstellen kein umfassendes Profil von dir und entfalten dir
+        Lerndaten berechnet. Diese Berechnungen sind Teil der Funktionsweise des Produkts, erstellen kein umfassendes Profil von dir und entfalten dir
         gegenüber keine rechtliche oder ähnlich erhebliche Wirkung (es gibt keine Entscheidung im Sinne von Art. 22 DSGVO). Den
         vorgeschlagenen Niveauwert kannst du jederzeit selbst ändern.
       </p>
