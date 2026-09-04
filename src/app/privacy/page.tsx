@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, LegalShell, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PROCESSORS, hasKep, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
 
 export const metadata = {
   title: "Gizlilik Politikası",
@@ -38,9 +38,9 @@ export default function PrivacyPage() {
       </p>
       <EntityBlock party="publisher" />
       <p>
-        Sunucularımız {LEGAL_HOSTING_TEXT.tr} üzerinde çalışır; veriler orada saklanır. Veri sorumlusu Türkiye&apos;de yerleşik olmadığından
-        Veri Sorumluları Sicili&apos;ne (VERBİS) kayıtlıdır ve Türkiye&apos;de bir veri sorumlusu temsilcisi atamıştır; temsilci bilgisi
-        yukarıdadır. VERBİS kayıt numarası: <Ph k="verbis" />.
+        Sunucularımız {LEGAL_HOSTING_TEXT.tr} üzerinde çalışır; veriler orada saklanır. Veri sorumlusu Türkiye&apos;de yerleşik değildir;
+        Türkiye&apos;den yapılacak başvurular ve Kurumla yazışma için yukarıda bilgileri verilen veri sorumlusu temsilcisi
+        belirlenmiştir. Temsilcinin belirlenmesi veri sorumlusunun kendi sorumluluğunu ortadan kaldırmaz.
       </p>
       <p>
         <strong>Toplama yöntemi ve hukuki sebep (KVKK m.10):</strong> Veriler, kayıt ve ayar formları, uygulama içi etkileşimler ve
@@ -198,7 +198,7 @@ export default function PrivacyPage() {
       <p>
         <strong>Başvuru:</strong> KVKK kapsamındaki talepler için <Ph k="privacyEmailTr" />, GDPR ve UK GDPR kapsamındaki talepler için <Ph k="privacyEmailEu" /> adresine yaz; kimliğini doğrulamak için hesabındaki e-posta adresinden yazman
         yeterlidir. Türkiye&apos;de KVKK Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca ıslak imzalı yazılı başvuru,
-        güvenli elektronik imzalı başvuru ya da hesabında kayıtlı e-posta adresinden başvuru da yapılabilir{hasKep() ? <>; KEP adresimiz <Ph k="kep" /></> : null}. Talepleri en geç 30 gün içinde ücretsiz sonuçlandırırız; GDPR kapsamında bu süre gerekirse iki
+        güvenli elektronik imzalı başvuru ya da hesabında kayıtlı e-posta adresinden başvuru da yapılabilir. Talepleri en geç 30 gün içinde ücretsiz sonuçlandırırız; GDPR kapsamında bu süre gerekirse iki
         ay uzatılabilir ve sana bildirilir.
       </p>
       <p>

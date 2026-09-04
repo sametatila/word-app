@@ -21,13 +21,14 @@
  *      uygulanıyor, m.3(2) üzerinden değil. m.27 AB TEMSİLCİSİ YÜKÜMLÜLÜĞÜ YOK
  *      (m.27 yalnız m.3(2) hâlinde işliyor). Denetim otoritesi, yerleşim yerine
  *      göre Kuzey Ren-Vestfalya (LDI NRW).
- *   2. Buna karşılık veri sorumlusu Türkiye'de YERLEŞİK DEĞİL. Veri Sorumluları
- *      Sicili Hakkında Yönetmelik uyarınca Türkiye'de yerleşik olmayan veri
- *      sorumlusu VERBİS'e kaydolmak ve TÜRKİYE'DE BİR VERİ SORUMLUSU TEMSİLCİSİ
- *      atamak zorunda. Türkiye'de yerleşik olan yayıncı bu temsilci olabilir;
- *      atama yazılı karar + ıslak imzalı formla Kuruma bildiriliyor.
- *      Çalışan sayısı/mali bilanço istisnasının yurt dışında yerleşik veri
- *      sorumlusuna uygulanıp uygulanmadığı tartışmalı — teyit edilmeli.
+ *   2. Buna karşılık veri sorumlusu Türkiye'de YERLEŞİK DEĞİL ve Türkiye'deki
+ *      başvurular için bir veri sorumlusu temsilcisi belirlenmiştir (yayıncı).
+ *      VERBİS kaydı YAPILMAYACAK: yıllık çalışan sayısı 50'den az ve mali
+ *      bilanço eşiğinin altında kalan veri sorumluları Kurul kararlarıyla kayıt
+ *      yükümlülüğünden istisna tutuluyor. Bu istisnanın yurt dışında yerleşik
+ *      veri sorumlusuna da uygulanıp uygulanmadığı tartışmalı; karar bilinçli
+ *      alındı ve metin kayıtlı olduğunu İDDİA ETMİYOR — yalnız temsilciyi
+ *      gösteriyor. Kayıt yapılırsa bu not ve metin birlikte güncellenir.
  *
  * Vergi tarafı yayıncıya ait: Gelir Vergisi Kanunu mükerrer m.20/B'deki mobil
  * uygulama geliştiriciliği kazanç istisnası, platformdan kazancı elde eden kişiye
@@ -81,19 +82,23 @@ export const LEGAL_ENTITY = {
   privacyEmailEu: "gdpr@rumpuskit.com",
   /** Genel destek e-postası. */
   supportEmail: "support@rumpuskit.com",
-  /**
-   * Kayıtlı elektronik posta (KEP). Gerçek kişi için ZORUNLU DEĞİL — ama KVKK
-   * temsilci atama formu Kuruma posta ya da KEP ile gönderiliyor, o yüzden
-   * alınması işi kolaylaştırır. Yoksa boş dize bırak; satır ve ona atıf yapan
-   * cümleler kendiliğinden düşer.
-   */
-  kep: "[[KEP_ADRESİ_VARSA_YOKSA_BOŞ]]",
   /** Türkiye'deki uyuşmazlıklarda yetkili mahkeme ve icra dairelerinin ili. */
   court: "Adana",
-  /** VERBİS kayıt numarası — yurt dışında yerleşik veri sorumlusu için kayıt zorunlu. */
-  verbis: "[[VERBİS_KAYIT_NO]]",
-  /** Sunucu yedeklerinin en uzun saklama süresi (gün) — silinen hesabın yedekten düşme süresi. */
-  backupRetentionDays: "[[YEDEK_SAKLAMA_SÜRESİ_GÜN]]",
+  /**
+   * Sunucu yedeklerinin en uzun saklama süresi (gün) — silinen hesabın yedekten
+   * düşme süresi. 30 gün seçildi ve seçim keyfî değil:
+   *
+   *   - Uygulamadaki öteki iki saklama penceresiyle aynı (oturum kaydı en çok
+   *     30 gün, rol yapma kaydı 30 gün); tek bir üst sınır akılda kalıyor.
+   *   - KVKK m.13 otuz gün, GDPR m.12(3) bir ay içinde cevap istiyor. Yedek
+   *     penceresi de 30 gün olunca silme talebi cevaplandığında veri gerçekten
+   *     her yerden düşmüş oluyor; "sildik ama yedekte duruyor" boşluğu kalmıyor.
+   *   - Haftalar sonra fark edilen bir bozulmadan dönmeye yetecek kadar uzun.
+   *
+   * Bunu karşılayan basit bir düzen: gecelik pg_dump, 7 günlük + 3 haftalık
+   * kopya (en eskisi 28 gün) — hepsi 30 günün içinde kalır.
+   */
+  backupRetentionDays: "30",
 } as const;
 
 /** Adil kullanım sınırları — koddaki gerçek kotalar (route dosyalarındaki sabitler). */
@@ -120,10 +125,6 @@ export function isLegalOmitted(value: string): boolean {
   return value.trim() === "";
 }
 
-/** KEP adresi var mı — yoksa ona atıf yapan cümleler hiç yazılmıyor. */
-export function hasKep(): boolean {
-  return !isLegalOmitted(LEGAL_ENTITY.kep);
-}
 
 export const LEGAL_PATHS = {
   privacy: "/privacy",

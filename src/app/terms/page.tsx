@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, LegalShell, Ph } from "@/components/legal-shell";
-import { FAIR_USE, LEGAL_PATHS, hasKep, legalPath } from "@/lib/legal";
+import { FAIR_USE, LEGAL_PATHS, legalPath } from "@/lib/legal";
 
 export const metadata = {
   title: "Kullanım Şartları",
@@ -178,7 +178,7 @@ export default function TermsPage() {
         <li><strong>Devir:</strong> Hesabını ve bu sözleşmeden doğan haklarını başkasına devredemezsin. Biz, hizmetin devri ya da faaliyetin bir şirket yapısına taşınması hâlinde sözleşmeyi, haklarını koruyarak ve sana bildirerek devredebiliriz.</li>
         <li><strong>Feragat:</strong> Bir hakkın kullanılmaması ondan vazgeçildiği anlamına gelmez.</li>
         <li><strong>Dil:</strong> Sözleşmenin bağlayıcı dili Türkçedir; çeviriler bilgi içindir. Yorum farkında Türkçe metin esas alınır.</li>
-        <li><strong>Tebligat:</strong> Bize yapılacak bildirimler <Ph k="supportEmail" /> adresine{hasKep() ? <> ya da KEP adresine (<Ph k="kep" />)</> : null}; sana yapılacak bildirimler hesabındaki e-posta adresine ya da uygulama içi mesajla yapılır ve ulaştığı anda tebliğ edilmiş sayılır.</li>
+        <li><strong>Tebligat:</strong> Bize yapılacak bildirimler <Ph k="supportEmail" /> adresine; sana yapılacak bildirimler hesabındaki e-posta adresine ya da uygulama içi mesajla yapılır ve ulaştığı anda tebliğ edilmiş sayılır.</li>
         <li><strong>Saklama:</strong> Bu sözleşme elektronik ortamda saklanır; kabul ettiğin sürümü ve tarihini isteyebilirsin.</li>
       </ul>
 
@@ -186,7 +186,7 @@ export default function TermsPage() {
       <p>
         Şartları güncellediğimizde yürürlük tarihi ve sürüm değişir; senin aleyhine olan önemli değişiklikleri en az 30 gün önce uygulama
         içinde ve e-postayla duyururuz, kabul etmezsen hesabını kapatabilirsin. Sorular için: <Ph k="supportEmail" />.
-        {hasKep() ? <> Resmi tebligat için KEP: <Ph k="kep" />.</> : null}
+        
       </p>
     </LegalShell>
   );

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { FAIR_USE, hasKep, legalPath } from "@/lib/legal";
+import { FAIR_USE, legalPath } from "@/lib/legal";
 
 /**
  * Terms of use — English. Informational translation; the Turkish text at
@@ -170,7 +170,7 @@ export function TermsEnBody() {
         <li><strong>Assignment:</strong> You may not assign your account or your rights under this agreement. We may assign the agreement in the event of a transfer of the service or if the activity is moved into a company structure, preserving your rights and notifying you.</li>
         <li><strong>Waiver:</strong> Not exercising a right does not mean waiving it.</li>
         <li><strong>Language:</strong> The binding language of the agreement is Turkish; translations are for information. In case of a difference in interpretation, the Turkish text prevails.</li>
-        <li><strong>Notices:</strong> Notices to us go to <Ph k="supportEmail" />{hasKep() ? <> or to the registered e-mail (KEP) address (<Ph k="kep" />)</> : null}; notices to you go to the e-mail address on your account or as an in-app message, and are deemed served upon arrival.</li>
+        <li><strong>Notices:</strong> Notices to us go to <Ph k="supportEmail" />; notices to you go to the e-mail address on your account or as an in-app message, and are deemed served upon arrival.</li>
         <li><strong>Retention:</strong> This agreement is stored electronically; you may request the version you accepted and its date.</li>
       </ul>
 
@@ -178,7 +178,7 @@ export function TermsEnBody() {
       <p>
         When we update these terms, the effective date and version change; we announce material changes to your detriment at least 30 days
         in advance in the app and by e-mail, and you may close your account if you do not accept them. Questions: <Ph k="supportEmail" />.
-        {hasKep() ? <> For formal service of notice, KEP: <Ph k="kep" />.</> : null}
+        
       </p>
     </>
   );

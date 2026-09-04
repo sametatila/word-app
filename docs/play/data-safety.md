@@ -5,7 +5,7 @@ politikası `/privacy`. Yeni bir sağlayıcı ya da veri türü eklenince önce 
 sonra Console'daki form. "Paylaşım" Play tanımıyla: verinin üçüncü tarafa aktarılması —
 sunucumuz üzerinden konuşma tanıma ve dil modeli sağlayıcılarına giden veri de paylaşımdır.
 
-Son güncelleme: 2026-09-04. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'teki yer tutucular doldurulunca kesinleşir; Console'a girilecek e-posta da o dosyadaki gizlilik adresidir. Veri sorumlusu ile Play yayıncısı **ayrı kişiler** (bkz. `docs/play/listing.md` §5): Console'a girilecek kimlik yayıncınındır. Veri sorumlusu Almanya'da yerleşik olduğundan GDPR m.27 AB temsilcisi gerekmiyor; buna karşılık Türkiye'de yerleşik olmayan veri sorumlusu VERBİS'e kaydolmak ve Türkiye'de bir veri sorumlusu temsilcisi atamak zorunda.
+Son güncelleme: 2026-09-04. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'teki yer tutucular doldurulunca kesinleşir; Console'a girilecek e-posta da o dosyadaki gizlilik adresidir. Veri sorumlusu ile Play yayıncısı **ayrı kişiler** (bkz. `docs/play/listing.md` §5): Console'a girilecek kimlik yayıncınındır. Veri sorumlusu Almanya'da yerleşik olduğundan GDPR m.27 AB temsilcisi gerekmiyor; Türkiye'deki başvurular için yayıncı veri sorumlusu temsilcisi olarak belirlendi. VERBİS kaydı yapılmıyor (çalışan sayısı ve mali bilanço eşiklerine dayanan istisna) ve metinler kayıtlı olduğunu iddia etmiyor.
 
 ## Genel sorular
 

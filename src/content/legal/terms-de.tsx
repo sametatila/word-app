@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { FAIR_USE, hasKep, legalPath } from "@/lib/legal";
+import { FAIR_USE, legalPath } from "@/lib/legal";
 
 /**
  * Nutzungsbedingungen — Deutsch. Informative Übersetzung; verbindlich ist der
@@ -181,7 +181,7 @@ export function TermsDeBody() {
         <li><strong>Übertragung:</strong> Du darfst dein Konto und deine Rechte aus dieser Vereinbarung nicht übertragen. Wir dürfen die Vereinbarung bei einer Übertragung des Dienstes oder bei Überführung der Tätigkeit in eine Gesellschaftsform übertragen, wobei deine Rechte gewahrt bleiben und wir dich informieren.</li>
         <li><strong>Verzicht:</strong> Die Nichtausübung eines Rechts bedeutet keinen Verzicht darauf.</li>
         <li><strong>Sprache:</strong> Verbindliche Sprache der Vereinbarung ist Türkisch; Übersetzungen dienen der Information. Bei Auslegungsunterschieden ist der türkische Text maßgebend.</li>
-        <li><strong>Zustellung:</strong> Mitteilungen an uns gehen an <Ph k="supportEmail" />{hasKep() ? <> oder an die registrierte E-Mail-Adresse (KEP, <Ph k="kep" />)</> : null}; Mitteilungen an dich gehen an die E-Mail-Adresse deines Kontos oder erfolgen als Nachricht in der App und gelten mit Zugang als zugestellt.</li>
+        <li><strong>Zustellung:</strong> Mitteilungen an uns gehen an <Ph k="supportEmail" />; Mitteilungen an dich gehen an die E-Mail-Adresse deines Kontos oder erfolgen als Nachricht in der App und gelten mit Zugang als zugestellt.</li>
         <li><strong>Aufbewahrung:</strong> Diese Vereinbarung wird elektronisch aufbewahrt; du kannst die von dir angenommene Fassung und ihr Datum anfordern.</li>
       </ul>
 
@@ -190,7 +190,7 @@ export function TermsDeBody() {
         Wenn wir diese Bedingungen aktualisieren, ändern sich Gültigkeitsdatum und Version; wesentliche Änderungen zu deinem Nachteil
         kündigen wir mindestens 30 Tage vorher in der App und per E-Mail an, und du kannst dein Konto schließen, wenn du sie nicht
         annimmst. Fragen: <Ph k="supportEmail" />.
-        {hasKep() ? <> Für die förmliche Zustellung KEP: <Ph k="kep" />.</> : null}
+        
       </p>
     </>
   );

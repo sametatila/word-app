@@ -112,7 +112,7 @@ export function Ph({ k }: { k: LegalField }) {
  */
 type EntityLabelKey =
   | "controller" | "publisher" | "name" | "address" | "taxOffice"
-  | "trRep" | "privacy" | "privacyEu" | "support" | "kep";
+  | "trRep" | "privacy" | "privacyEu" | "support";
 
 const ENTITY_LABELS: Record<LegalLocale, Record<EntityLabelKey, string>> = {
   tr: {
@@ -120,21 +120,21 @@ const ENTITY_LABELS: Record<LegalLocale, Record<EntityLabelKey, string>> = {
     name: "Ad soyad", address: "Yazışma adresi", taxOffice: "Vergi dairesi",
     trRep: "Türkiye veri sorumlusu temsilcisi (KVKK)",
     privacy: "KVKK başvuruları", privacyEu: "GDPR başvuruları",
-    support: "Destek", kep: "KEP",
+    support: "Destek",
   },
   en: {
     controller: "Data controller", publisher: "Publisher and processor",
     name: "Name", address: "Postal address", taxOffice: "Tax office",
     trRep: "Representative in Türkiye (KVKK)",
     privacy: "KVKK requests (Türkiye)", privacyEu: "GDPR / UK GDPR requests",
-    support: "Support", kep: "Registered e-mail (KEP)",
+    support: "Support",
   },
   de: {
     controller: "Verantwortlicher", publisher: "Herausgeber und Auftragsverarbeiter",
     name: "Name", address: "Postanschrift", taxOffice: "Finanzamt",
     trRep: "Vertreter in der Türkei (KVKK)",
     privacy: "KVKK-Anträge (Türkei)", privacyEu: "DSGVO- / UK-GDPR-Anträge",
-    support: "Support", kep: "Registrierte E-Mail (KEP)",
+    support: "Support",
   },
 };
 
@@ -166,7 +166,6 @@ export function EntityBlock({ party, contact = false, locale = "tr" }: {
           {row(l.privacy, "privacyEmailTr")}
           {row(l.privacyEu, "privacyEmailEu")}
           {row(l.support, "supportEmail")}
-          {row(l.kep, "kep")}
         </>
       ) : null}
     </dl>

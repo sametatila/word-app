@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, PROCESSORS, hasKep, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
 
 /**
  * Privacy policy — English. Informational translation; the Turkish text at
@@ -31,9 +31,9 @@ export function PrivacyEnBody() {
       </p>
       <EntityBlock party="publisher" locale="en" />
       <p>
-        Our servers run on {LEGAL_HOSTING_TEXT.en}; the data is stored there. Because the controller is not established in Türkiye, they
-        are entered in the Turkish register of data controllers (VERBİS) and have appointed a representative in Türkiye, shown above.
-        VERBİS registration number: <Ph k="verbis" />.
+        Our servers run on {LEGAL_HOSTING_TEXT.en}; the data is stored there. The controller is not established in Türkiye; for applications made from
+        Türkiye and for correspondence with the Turkish authority, the representative identified above has been designated. Designating
+        a representative does not remove the controller&apos;s own responsibility.
       </p>
       <p>
         <strong>Collection method and legal ground (KVKK Art. 10):</strong> Data is collected electronically, by automated or partly
@@ -199,7 +199,7 @@ export function PrivacyEnBody() {
         <strong>Making a request:</strong> write to <Ph k="privacyEmailEu" /> for requests under the GDPR or UK GDPR, or to <Ph k="privacyEmailTr" /> for requests under Turkish data protection law (KVKK); writing from the e-mail address on your account is enough to
         verify your identity. In Türkiye, under the Communiqué on the Procedures for Applications to the Data Controller, you may also
         apply in writing with a wet signature, with a qualified electronic signature, or from the e-mail address registered on your
-        account{hasKep() ? <>; our registered e-mail (KEP) address is <Ph k="kep" /></> : null}. We resolve requests free of charge within 30 days at
+        account. We resolve requests free of charge within 30 days at
         the latest; under the GDPR this period may be extended by two months where necessary, and you will be told.
       </p>
       <p>
