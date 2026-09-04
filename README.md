@@ -811,6 +811,15 @@ Konuşma tarafında iki ek geçiş var (yalnız birinci geçiş tutmazsa): boşl
 **sayı katlamadan** boşluksuz karşılaştırma. İkincisi tanıyıcının uzun bileşiği bölmesi için —
 `Fasnacht` → `Fasn acht` → sayı katlanınca `fasn8` oluyor ve artık aslına benzemiyor.
 
+**Sözlü noktalama adı.** Tanıyıcı "Punkt" dendiğinde onu bir yazım komutu sayıp `.` yazıyor
+(Komma→`,`, Fragezeichen→`?`). Ama `der Punkt` başlı başına bir sözlük kelimesi: simge sonra
+katlamada silinince cevap ORTADAN kalkıyor ve hiçbir zaman eşleşmiyordu. İngilizcede de aynı —
+havuzda `limitation period`, `notice period`, `quote` gibi 7 başlık var ve tanıyıcı "period"
+dendiğinde `.` yazıyor. Simge geri sözcüğe açılıyor, ama **yalnız son okuma ve yalnız tam
+eşleşme** olarak: içerme aranırsa `Hund.` → `hund punkt` olur, içinde "punkt" geçer ve hedefi
+`Punkt` olan tur yanlışlıkla doğru sayılırdı. (Web'de 2026-08-28'de çözülmüştü, mobile hiç
+taşınmamıştı.)
+
 Bilerek yapılmayanlar: serbest sayı dizisi toplanmıyor (`one two three` = `1 2 3`, 6 değil);
 İngilizce/Almanca kısaltma denklikleri (`I'm`↔`I am`, `zum`↔`zu dem`) katlanmıyor çünkü bazı
 dersler tam da o ayrımı öğretiyor — onlar içerikteki `accept` maddeleriyle çözülüyor.

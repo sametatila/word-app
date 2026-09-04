@@ -27,6 +27,50 @@ export function foldSpelling(s: string, lang: string = currentTargetLang()): str
     .trim();
 }
 
+/**
+ * Tanıyıcının sözlü noktalama ADINI simgeye çevirmesini geri alır.
+ *
+ * Tanıyıcı "Punkt" dendiğinde onu bir yazım komutu sayıp "." yazıyor (aynı
+ * biçimde Komma→",", Fragezeichen→"?"). Ama "der Punkt" başlı başına bir sözlük
+ * kelimesi: simge sonra katlamada silinince cevap ORTADAN kalkıyor ve hiçbir
+ * zaman eşleşmiyordu ("der punkt diyorum, 'da' olarak duydu"). Web'de çözülmüştü,
+ * mobile hiç taşınmamıştı.
+ *
+ * İngilizcede de aynı: havuzda "limitation period", "notice period", "quote"
+ * gibi 7 başlık var ve tanıyıcı "period" dendiğinde "." yazıyor —
+ * "limitation period" → "limitation." → katlamada "limitation" kalıyor.
+ *
+ * Yalnızca EK bir okuma olarak deneniyor (asıl okuma önce), yani yanlışlıkla
+ * nokta eklenmiş normal bir cevaba zarar vermiyor.
+ */
+const RECOGNIZER_PUNCT: Record<string, Array<[RegExp, string]>> = {
+  de: [
+    [/\u2026|\.\.\./g, " punkt "],
+    [/\./g, " punkt "],
+    [/,/g, " komma "],
+    [/\?/g, " fragezeichen "],
+    [/!/g, " ausrufezeichen "],
+    [/:/g, " doppelpunkt "],
+    [/;/g, " semikolon "],
+  ],
+  en: [
+    [/\u2026|\.\.\./g, " period "],
+    [/\./g, " period "],
+    [/,/g, " comma "],
+    [/\?/g, " question mark "],
+    [/!/g, " exclamation mark "],
+    [/:/g, " colon "],
+    [/;/g, " semicolon "],
+    [/["\u201C\u201D]/g, " quote "],
+  ],
+};
+
+export function expandPunctuationWords(s: string, lang: string): string {
+  let out = s;
+  for (const [re, word] of RECOGNIZER_PUNCT[lang] ?? []) out = out.replace(re, word);
+  return out.replace(/\s+/g, " ").trim();
+}
+
 /** Sözlük başlığı varyantları: parantez, "/" alternatifleri, "sich" düşürme. */
 function acceptedForms(raw: string): string[] {
   const out = new Set<string>();
@@ -70,12 +114,25 @@ export function spokenMatches(heard: string[], candidates: string[]): boolean {
   const forms3 = candidates.flatMap(acceptedForms).map(ham).filter(Boolean);
   const test = (said: string): boolean => {
     const f = foldKeep(said);
-    if (!f) return false;
-    if (forms.some((form) => f === form || (form.length >= CONTAINS_MIN && ` ${f} `.includes(` ${form} `)))) return true;
-    const g = sikis(f);
-    if (forms2.some((form) => g === form || (form.length >= CONTAINS_MIN && g.includes(form)))) return true;
-    const h = ham(said);
-    return !!h && forms3.some((form) => h === form || (form.length >= CONTAINS_MIN && h.includes(form)));
+    // Boş katlama erken dönmüyor: kullanıcı yalnız "Punkt" deyince tanıyıcı
+    // sadece "." yazıyor ve katlama onu tamamen boşaltıyor — asıl kurtarılması
+    // gereken durum tam da bu.
+    if (f) {
+      if (forms.some((form) => f === form || (form.length >= CONTAINS_MIN && ` ${f} `.includes(` ${form} `)))) return true;
+      const g = sikis(f);
+      if (forms2.some((form) => g === form || (form.length >= CONTAINS_MIN && g.includes(form)))) return true;
+      const h = ham(said);
+      if (h && forms3.some((form) => h === form || (form.length >= CONTAINS_MIN && h.includes(form)))) return true;
+    }
+    // Son okuma: sözlü noktalama adı simgeden geri açılır. YALNIZ tam eşleşme —
+    // içerme aranırsa "Hund." → "hund punkt" olur, içinde "punkt" geçer ve
+    // hedefi "Punkt" olan tur yanlışlıkla doğru sayılırdı.
+    const genis = expandPunctuationWords(said, lang);
+    if (genis && genis !== said.trim()) {
+      const e = foldKeep(genis);
+      if (e && forms.some((form) => e === form)) return true;
+    }
+    return false;
   };
   return heard.some((h) => test(h));
 }
