@@ -18,7 +18,7 @@ const R = process.cwd();
 // çok sık işlev sözcükleri + sayı + selam: her ünitede serbest
 const SERBEST = new Set(`der die das den dem des ein eine einen einem einer eines kein keine keinen
 ich du er sie es wir ihr mich dich sich uns euch mir dir ihm ihn ihnen mein meine meinen meinem meiner
-dein deine sein seine ihre ihren unser euer und oder aber denn dass weil wenn als ob wie wo woher wohin
+dein deine deinen deinem deiner sein seine seinen seinem ihre ihren ihrem unser unsere euer eure und oder aber denn dass weil wenn als ob wie wo woher wohin
 zu in an auf aus bei mit nach von vor über unter für um durch gegen ohne seit bis nicht ja nein doch man
 ist sind bin bist war waren hat habe haben hast wird werden kann können muss müssen will
 auch noch nur schon sehr hier da dann jetzt heute sehr viel mehr alle etwas nichts
@@ -111,8 +111,11 @@ function olc(ham0, unit, ekIzin = []) {
   // Beş harfli mastarda önek toleransı yetmiyor ("sagen"→"sage", "sagt" tutmaz).
   // Öneki KISALTMAK çözüm değil: "geben"→"geb" öneki "gebracht"ı yutar ve tam
   // yakalanması gereken erken Perfekt kaçar. Çekimli biçimler TAM üretiliyor.
+  // Çekimler yalnız MASTARDAN üretiliyordu; ayrılabilen fiilin önekten soyulmuş
+  // gövdesi (aufhören → hören) izinKok'a giriyor ama çekimi üretilmiyordu, o
+  // yüzden metindeki "hört … auf" kayma sayılıyordu. Soyulmuş gövdeler de dahil.
   const izinCekim = new Set();
-  for (const w of izin) {
+  for (const w of [...izin, ...izinKok]) {
     if (w.length >= 4 && w.endsWith("en")) {
       const g = w.slice(0, -2);
       for (const son of ["t", "st", "e", "en"]) izinCekim.add(g + son);

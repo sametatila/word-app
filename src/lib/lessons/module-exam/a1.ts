@@ -43,9 +43,9 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Marco", de: "Woher kommst du, Elif?", tr: "Nerelisin Elif?" },
         { speaker: "Elif", de: "Ich komme aus der Türkei. Jetzt wohne ich in Köln.", tr: "Türkiyeliyim. Şimdi Köln'de oturuyorum." },
         { speaker: "Marco", de: "Und was bist du von Beruf?", tr: "Peki mesleğin ne?" },
-        { speaker: "Elif", de: "Ich bin Ärztin. Ich arbeite in einer Praxis.", tr: "Doktorum. Bir muayenehanede çalışıyorum." },
-        { speaker: "Marco", de: "Super. Wie schreibt man deinen Namen?", tr: "Harika. Adın nasıl yazılıyor?" },
-        { speaker: "Elif", de: "E-L-I-F. Ganz einfach.", tr: "E-L-I-F. Çok kolay." },
+        { speaker: "Elif", de: "Ich bin Ärztin. Ich arbeite hier in Köln.", tr: "Doktorum. Burada, Köln'de çalışıyorum." },
+        { speaker: "Marco", de: "Gut. Wie schreibt man deinen Namen?", tr: "Peki. Adın nasıl yazılıyor?" },
+        { speaker: "Elif", de: "E-L-I-F.", tr: "E-L-I-F." },
       ],
       questions: [
         { de: "Woher kommt Elif?", tr: "Elif nereli?", options: ["Aus Italien", "Aus der Türkei", "Aus Österreich", "Aus Köln"], answer: 1 },
@@ -57,7 +57,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       title: "Anmeldung – Sprachschule Köln",
       titleTr: "Kayıt formu",
       genre: "Form",
-      text: "Anmeldung – Sprachschule Köln\n\nVorname: Elif\nNachname: Yilmaz\nGeburtsjahr: 1996\nLand: Türkei\nWohnort: Köln\nStraße: Bahnhofstraße 12\nPostleitzahl: 50667\nTelefon: 0221 45 67 89\nBeruf: Ärztin",
+      text: "Anmeldung – Sprachschule Köln\n\nVorname: Elif\nNachname: Yilmaz\nAlter: 28\nLand: Türkei\nWohnort: Köln\nStraße: Bahnhofstraße 12\nPostleitzahl: 50667\nTelefon: 0221 45 67 89\nBeruf: Ärztin",
       questions: [
         { de: "Wie ist der Nachname?", tr: "Soyadı ne?", options: ["Elif", "Yilmaz", "Köln", "Ärztin"], answer: 1 },
         { de: "Wie ist die Postleitzahl?", tr: "Posta kodu kaç?", options: ["1996", "50667", "0221", "12"], answer: 1 },
@@ -84,7 +84,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { de: "Ich bin … von Beruf.", tr: "Mesleğim …", en: "I am a … by profession." },
       ],
       sample:
-        "Hallo! Ich heiße Elif Yilmaz. Ich komme aus der Türkei, aus Izmir. Jetzt wohne ich in Köln. Ich bin achtundzwanzig Jahre alt. Ich bin Ärztin von Beruf und ich arbeite in einer Praxis. Ich lerne Deutsch. Wann beginnt der Kurs?",
+        "Hallo! Ich heiße Elif Yilmaz. Ich komme aus der Türkei, aus Izmir. Jetzt wohne ich in Köln. Ich bin achtundzwanzig Jahre alt. Ich bin Ärztin von Beruf und ich arbeite in Köln. Ich lerne Deutsch. Wann beginnt der Kurs?",
     },
   },
 
@@ -114,7 +114,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Lena", de: "Ist das deine Familie auf dem Foto?", tr: "Fotoğraftaki senin ailen mi?" },
         { speaker: "Ahmet", de: "Ja, das ist meine Familie. Das sind meine Eltern.", tr: "Evet, bu benim ailem. Bunlar da annemle babam." },
-        { speaker: "Lena", de: "Und wer ist das Mädchen links?", tr: "Peki soldaki kız kim?" },
+        { speaker: "Lena", de: "Und wer ist das Mädchen hier?", tr: "Peki buradaki kız kim?" },
         { speaker: "Ahmet", de: "Das ist meine Schwester Ayse. Sie ist zwanzig Jahre alt.", tr: "O benim kız kardeşim Ayşe. Yirmi yaşında." },
         { speaker: "Lena", de: "Hast du auch einen Bruder?", tr: "Erkek kardeşin de var mı?" },
         { speaker: "Ahmet", de: "Nein, ich habe keinen Bruder. Aber wir haben einen Hund!", tr: "Hayır, erkek kardeşim yok. Ama bir köpeğimiz var!" },
@@ -129,10 +129,10 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       title: "Eine Einladung",
       titleTr: "Bir davet mesajı",
       genre: "Mesaj",
-      text: "Hallo Maria,\n\nam Samstag feiern wir ein Familienfest. Meine Oma wird achtzig! Meine Tante bringt einen Kuchen mit und mein Onkel macht Musik. Wir sind ungefähr zwanzig Personen. Kommst du auch? Bring bitte deine Schwester mit!\n\nLiebe Grüße\nNuray",
+      text: "Hallo Maria,\n\nam Samstag feiern wir ein Familienfest. Meine Oma wird achtzig! Meine Tante bringt einen Kuchen mit und mein Bruder kommt auch. Wir sind zwanzig Personen. Kommst du auch? Bring bitte deine Schwester mit!\n\nLiebe Grüße\nNuray",
       questions: [
-        { de: "Was feiert die Familie?", tr: "Aile ne kutluyor?", options: ["Den Geburtstag der Oma", "Eine Hochzeit", "Weihnachten", "Marias Geburtstag"], answer: 0 },
-        { de: "Wer bringt den Kuchen mit?", tr: "Pastayı kim getiriyor?", options: ["Die Oma", "Der Onkel", "Die Tante", "Maria"], answer: 2 },
+        { de: "Was feiert die Familie?", tr: "Aile ne kutluyor?", options: ["Den Geburtstag der Oma", "Eine Hochzeit", "Den Geburtstag der Tante", "Marias Geburtstag"], answer: 0 },
+        { de: "Wer bringt den Kuchen mit?", tr: "Pastayı kim getiriyor?", options: ["Die Oma", "Der Bruder", "Die Tante", "Maria"], answer: 2 },
       ],
     },
     speaking: [
@@ -156,7 +156,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { de: "Sie arbeitet bei …", tr: "… şirketinde çalışıyor", en: "She works at …" },
       ],
       sample:
-        "Meine Familie ist nicht groß. Das sind meine Eltern: mein Vater heißt Kemal und meine Mutter heißt Sevgi. Mein Vater ist Lehrer und meine Mutter arbeitet bei einer Firma. Ich habe eine Schwester. Sie heißt Ayse und sie ist zwanzig Jahre alt. Sie ist klein und sie hat braune Haare. Ich habe keinen Bruder. Wir haben aber einen Hund.",
+        "Meine Familie ist nicht groß. Das sind meine Eltern: mein Vater heißt Kemal und meine Mutter heißt Sevgi. Mein Vater ist Lehrer und meine Mutter arbeitet bei einer Firma. Ich habe eine Schwester. Sie heißt Ayse und sie ist zwanzig Jahre alt. Sie ist klein und sehr nett. Ich habe keinen Bruder. Wir haben aber einen Hund.",
     },
   },
 
@@ -192,9 +192,9 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Gast", de: "Nein, danke. Aber die Rechnung, bitte.", tr: "Hayır, teşekkürler. Ama hesabı alabilir miyim?" },
       ],
       questions: [
-        { de: "Was trinkt der Gast?", tr: "Konuk ne içiyor?", options: ["Einen Kaffee", "Ein Wasser", "Einen Tee", "Einen Wein"], answer: 1 },
-        { de: "Was isst der Gast als Vorspeise?", tr: "Konuk başlangıç olarak ne yiyor?", options: ["Einen Salat", "Eine Suppe", "Ein Brot", "Käse"], answer: 1 },
-        { de: "Warum möchte der Gast keine Zwiebeln?", tr: "Konuk neden soğan istemiyor?", options: ["Sie schmecken nicht", "Er ist allergisch", "Sie sind zu teuer", "Es gibt keine mehr"], answer: 1 },
+        { de: "Was trinkt die Person?", tr: "Kişi ne içiyor?", options: ["Einen Kaffee", "Ein Wasser", "Einen Tee", "Einen Wein"], answer: 1 },
+        { de: "Was isst die Person als Vorspeise?", tr: "Kişi başlangıç olarak ne yiyor?", options: ["Einen Salat", "Eine Suppe", "Ein Brot", "Käse"], answer: 1 },
+        { de: "Warum möchte die Person keine Zwiebeln?", tr: "Kişi neden soğan istemiyor?", options: ["Sie schmecken nicht", "Er ist allergisch", "Sie kosten zu viel", "Es gibt keine mehr"], answer: 1 },
       ],
     },
     reading: {
@@ -204,7 +204,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       text: "Café Sonne – Frühstück\n\nKleines Frühstück: Brot, Butter, Marmelade — 4,50 €\nGroßes Frühstück: Brot, Käse, Wurst, ein Ei — 7,90 €\n\nKaffee 2,80 € · Tee 2,50 € · Orangensaft 3,20 €\n\nFrühstück gibt es von 8 bis 11 Uhr.",
       questions: [
         { de: "Was kostet das große Frühstück?", tr: "Büyük kahvaltı kaç para?", options: ["4,50 €", "7,90 €", "2,80 €", "3,20 €"], answer: 1 },
-        { de: "Wann gibt es Frühstück?", tr: "Kahvaltı ne zaman var?", options: ["Von 8 bis 11 Uhr", "Von 11 bis 14 Uhr", "Den ganzen Tag", "Nur am Wochenende"], answer: 0 },
+        { de: "Wann gibt es Frühstück?", tr: "Kahvaltı ne zaman var?", options: ["Von 8 bis 11 Uhr", "Von 11 bis 14 Uhr", "Immer", "Nur am Morgen"], answer: 0 },
       ],
     },
     speaking: [
@@ -259,14 +259,14 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Sara", de: "Hallo Tom, hast du am Samstag Zeit?", tr: "Merhaba Tom, cumartesi vaktin var mı?" },
         { speaker: "Tom", de: "Am Samstag? Ich stehe spät auf, aber am Nachmittag habe ich frei.", tr: "Cumartesi mi? Geç kalkıyorum ama öğleden sonra boşum." },
         { speaker: "Sara", de: "Super. Um wie viel Uhr passt es dir?", tr: "Harika. Saat kaç sana uyar?" },
-        { speaker: "Tom", de: "Um halb vier. Vorher kaufe ich noch ein.", tr: "Üç buçukta. Ondan önce alışveriş yapacağım." },
+        { speaker: "Tom", de: "Um halb vier. Ich kaufe noch ein.", tr: "Üç buçukta. Bir de alışveriş yapacağım." },
         { speaker: "Sara", de: "Gut, dann treffen wir uns um halb vier am Bahnhof.", tr: "Tamam, o zaman üç buçukta garda buluşuyoruz." },
-        { speaker: "Tom", de: "Perfekt. Ich rufe dich vorher an.", tr: "Mükemmel. Öncesinde seni ararım." },
+        { speaker: "Tom", de: "Gut. Ich rufe dich an.", tr: "Tamam. Seni ararım." },
       ],
       questions: [
         { de: "Wann treffen sich Sara und Tom?", tr: "Sara ve Tom ne zaman buluşuyor?", options: ["Am Samstagvormittag", "Am Samstagnachmittag", "Am Sonntag", "Am Montag"], answer: 1 },
         { de: "Um wie viel Uhr treffen sie sich?", tr: "Saat kaçta buluşuyorlar?", options: ["Um drei Uhr", "Um halb vier", "Um vier Uhr", "Um halb fünf"], answer: 1 },
-        { de: "Was macht Tom vorher?", tr: "Tom öncesinde ne yapıyor?", options: ["Er schläft", "Er kauft ein", "Er arbeitet", "Er geht ins Kino"], answer: 1 },
+        { de: "Was macht Tom noch?", tr: "Tom bir de ne yapıyor?", options: ["Er kocht", "Er kauft ein", "Er arbeitet", "Er geht nach Hause"], answer: 1 },
       ],
     },
     reading: {
@@ -276,7 +276,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       text: "Liebe Anna,\n\nich stehe morgen um sechs Uhr auf und fahre früh zur Arbeit. Die Arbeit fängt um sieben an und hört um vier Uhr auf. Danach kaufe ich ein. Am Abend habe ich Zeit. Rufst du mich um acht an?\n\nBis morgen!\nMarkus",
       questions: [
         { de: "Wann fängt die Arbeit an?", tr: "İş ne zaman başlıyor?", options: ["Um sechs Uhr", "Um sieben Uhr", "Um vier Uhr", "Um acht Uhr"], answer: 1 },
-        { de: "Was macht Markus nach der Arbeit?", tr: "Markus işten sonra ne yapıyor?", options: ["Er schläft", "Er kauft ein", "Er geht ins Kino", "Er arbeitet weiter"], answer: 1 },
+        { de: "Was macht Markus nach der Arbeit?", tr: "Markus işten sonra ne yapıyor?", options: ["Er kocht", "Er kauft ein", "Er geht nach Hause", "Er arbeitet"], answer: 1 },
       ],
     },
     speaking: [
