@@ -62,7 +62,8 @@
     "logs:roleplay": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/roleplay-logs.ts",
     "check:lessons": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-lessons.ts",
     "audit": "tsx scripts/audit-quality.ts",
-    "audit:skills": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/audit-skills.ts"
+    "audit:skills": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/audit-skills.ts",
+    "test:options": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-options.ts"
   },
   "dependencies": {
     "better-auth": "^1.2.8",
