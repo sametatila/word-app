@@ -25,8 +25,11 @@ Adımlar (Notes alanına):
 3. Bildirim izni ekranında "Belki sonra" seçilebilir.
 4. Sekmeler: Öğren (günlük tur), Patika (dersler), Beceriler (okuma/dinleme/yazma, yürüyüş modu).
 5. **Yürüyüş modu / arka plan sesi:** Beceriler › Yürüyüş modu › Başla → mikrofon açıklama
-   ekranı → "Kabul ediyorum, başla" → sistem mikrofon izni. Modu kullanıcı başlatır,
-   kilit ekranında sürdüğü görünür ve uygulama içinden durdurulabilir.
+   ekranı → "Kabul ediyorum, başla" → sistem mikrofon izni. Modu kullanıcı başlatır.
+   Telefonu kilitleyin: kilit ekranında "Yürüyüş modu açık" kaydı ve sistemin mikrofon
+   göstergesi görünür. **Durdurmak için kilidi açmanız gerekmez** — kilit ekranındaki
+   durdur/duraklat (ya da kulaklık düğmesi) turu bitirir; uygulama içinden de
+   durdurulabilir.
 6. **Hesap silme:** Profil › Ayarlar › Hesap › Hesabı sil (5.1.1(v)). Test hesabını
    silmeyin; ayrı bir hesapla deneyin.
 

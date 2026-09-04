@@ -85,9 +85,20 @@ Cihazda sınanacak dört şey: (1) ekran kilitlendikten sonra tur devam ediyor m
 göstergesi görünüyor mu, (4) telefon çağrısı gelip bittiğinde oturum toparlanıyor mu.
 
 **İnceleme riski:** arka planda mikrofon isteyen bir uygulama App Review'da en çok
-sorgulanan şeydir. App Review Information alanına şu üçü açıkça yazılmalı: modu kullanıcı
-başlatır, kilit ekranında sürdüğü görünür, uygulama içinden durdurulabilir. Video eklemek
-en hızlı çözen yol.
+sorgulanan şeydir ve inceleyenin ilk sorusu "kullanıcı bunu nasıl durduruyor" olur. Üç
+cevabın üçü de artık kodda karşılığı olan cümleler ve App Review Information alanına
+açıkça yazılmalı:
+
+1. **Modu kullanıcı başlatır** — mikrofon açıklama ekranı + sistem izni olmadan tur başlamıyor.
+2. **Sürdüğü görünür** — kilit ekranında Now Playing kaydı duruyor ("Yürüyüş modu açık /
+   Mikrofon dinliyor; söylediklerin tanıma için sunucuya gönderiliyor", cihaz dilinde) ve
+   sistemin mikrofon göstergesi açık kalıyor.
+3. **Her an durdurulabilir** — uygulamanın içinden ya da **kilit ekranından**: durdur,
+   duraklat ve çal/durdur komutlarının üçü de turu bitiriyor, kulaklık düğmesi dahil
+   (`55411a3`). Android'deki kalıcı bildirimdeki "Durdur"un karşılığı bu; §6'daki açık
+   ürün kararı böyle kapandı.
+
+Video eklemek yine en hızlı çözen yol.
 
 
 ## Apple ile Giriş (Şerit A — 2026-09-04)
