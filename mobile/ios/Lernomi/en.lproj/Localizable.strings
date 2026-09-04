@@ -1,0 +1,5 @@
+/* Lock screen control (Now Playing) — the counterpart of the Android walk notification.
+   Identical to res/values-en/strings.xml; both platforms must say the same thing.
+   Read from the DEVICE language, not the in-app language choice (same on Android). */
+"walk_notification_title" = "Walk mode is on";
+"walk_notification_text" = "The microphone is listening; what you say is sent to our server to be transcribed.";

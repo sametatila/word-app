@@ -300,6 +300,14 @@ Kritik iki kural:
 14. İzin diyalogları cihaz diline göre üç dilde çıkıyor mu (P3).
 15. iPad'de yatay düzen bozulmuyor mu (`TARGETED_DEVICE_FAMILY = 1,2`, `M/src/lib/useLayout.ts`).
 
+**Kilit ekranı denetimi (Now Playing)** — §6'daki karardan; numaralar bozulmasın diye sona eklendi.
+16. Now Playing kaydı ses oturumu kategorisi değişirken titremeden duruyor mu: kayıt
+    `.playAndRecord`/`.measurement`, TTS `.playback`/`.spokenAudio` — tur boyunca ikisi
+    arasında gidip geliniyor.
+17. Kilit ekranında mikrofon göstergesi ile Now Playing kaydı **birlikte** görünüyor mu.
+    App Review Information'a yazılacak cümle tam olarak bu: kullanıcı arka planda
+    mikrofonun açık olduğunu görüyor ve turu oradan durdurabiliyor.
+
 ---
 
 ## 6. Yayın kapıları

@@ -20,6 +20,7 @@
 		AB01F1002D4E51A700000034 /* micon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000024 /* micon.mp3 */; };
 		AB01F1002D4E51A700000035 /* tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000025 /* tap.mp3 */; };
 		AB01F1002D4E51A700000036 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000026 /* wrong.mp3 */; };
+		AB01F1002D4E51A700000055 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000051 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,9 @@
 		AB01F1002D4E51A700000025 /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = tap.mp3; path = Lernomi/sfx/tap.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000026 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = wrong.mp3; path = Lernomi/sfx/wrong.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000041 /* Lernomi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Lernomi.entitlements; path = Lernomi/Lernomi.entitlements; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000052 /* tr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = tr; path = Lernomi/tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000053 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Lernomi/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000054 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = Lernomi/de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -66,6 +70,7 @@
 				761780EC2CA45674006654EE /* AppDelegate.swift */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AB01F1002D4E51A700000011 /* InfoPlist.strings */,
+				AB01F1002D4E51A700000051 /* Localizable.strings */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				AB01F1002D4E51A700000001 /* LernomiSpeech.swift */,
 				AB01F1002D4E51A700000002 /* LernomiSpeech.m */,
@@ -207,6 +212,7 @@
 				AB01F1002D4E51A700000034 /* micon.mp3 in Resources */,
 				AB01F1002D4E51A700000035 /* tap.mp3 in Resources */,
 				AB01F1002D4E51A700000036 /* wrong.mp3 in Resources */,
+				AB01F1002D4E51A700000055 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +315,16 @@
 				AB01F1002D4E51A700000014 /* de */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AB01F1002D4E51A700000051 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB01F1002D4E51A700000052 /* tr */,
+				AB01F1002D4E51A700000053 /* en */,
+				AB01F1002D4E51A700000054 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

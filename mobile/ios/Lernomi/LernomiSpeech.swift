@@ -1,5 +1,6 @@
 import Foundation
 import React
+import MediaPlayer
 import Speech
 import AVFoundation
 import UIKit
@@ -24,10 +25,11 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
 
   override static func requiresMainQueueSetup() -> Bool { return false }
 
-  /// JS'in abone olabildiği TÜM olay adları. `LernomiWalkStop` iOS'ta hiç YAYILMIYOR —
-  /// Android'de kalıcı bildirimdeki "Durdur" eylemi yayıyor, iOS'ta karşılığı yok (ürün
-  /// kararı, docs/plan/ios-parity.md §6). Yine de listede: `stt.ts:174` bu olaya koşulsuz
-  /// abone oluyor ve RCTEventEmitter listede olmayan bir ada abone olununca RCTLogError basıyor.
+  /// JS'in abone olabildiği TÜM olay adları; dokuzunun da yayan tarafı bu dosyada.
+  /// Liste eksik kalamaz: `stt.ts` hepsine abone oluyor ve RCTEventEmitter listede olmayan
+  /// bir ada abone olununca RCTLogError basıyor.
+  /// `LernomiWalkStop` iOS'ta kilit ekranı denetiminden geliyor — Android'de kalıcı
+  /// bildirimdeki "Durdur"un karşılığı; bkz. showNowPlaying / enableWalkRemoteCommands.
   override func supportedEvents() -> [String]! {
     return ["LernomiSpeechReady", "LernomiSpeechBegin", "LernomiSpeechPartial",
             "LernomiSpeechResults", "LernomiSpeechEnd", "LernomiSpeechError",
@@ -129,6 +131,9 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
         try session.setCategory(.playAndRecord, mode: .measurement, options: [.duckOthers, .defaultToSpeaker])
         try session.setActive(true)
         self.walkSessionHeld = true
+        // Oturum etkin OLDUKTAN sonra: kayıt olmadan kilit ekranı denetimi çizilmez.
+        self.showNowPlaying()
+        self.enableWalkRemoteCommands()
       } catch {
         self.send("LernomiSpeechError", ["code": "session"])
       }
@@ -139,8 +144,77 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   func stopWalkService() {
     DispatchQueue.main.async {
       self.walkSessionHeld = false
+      self.hideNowPlaying()
       try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }
+  }
+
+  // --- Kilit ekranı denetimi (Now Playing) — Android'deki "Durdur" düğmesinin karşılığı ---
+  //
+  // Android'de turu kalıcı bildirimdeki "Durdur" kapatıyor (LernomiWalkService → onStop →
+  // LernomiWalkStop). iOS'ta kalıcı bildirim yok; karşılığı kilit ekranındaki oynatma
+  // denetimi (karar: docs/plan/ios-parity.md §6, 2a4f7ca). Bu olmadan turu bırakmanın tek
+  // yolu tur sonundaki "devam edelim mi" sorusunu beklemek — 3-4 dakika, telefon cepteyken
+  // kilidi açıp uygulamaya dönmeyi gerektiriyor.
+  //
+  // Duraklat / durdur / aç-kapa AYNI olayı yayıyor. Sebep JS'te tek bir yol olması
+  // (WalkModeScreen.tsx:499 — mikrofon kapanır, biriken cevaplar yazılır, tur özeti
+  // gösterilir); "duraklatılmış tur" diye bir durum yok. Kulaklık/AirPods düğmesi de
+  // togglePlayPause'a düştüğü için aynı yerden çalışıyor.
+  private var walkRemoteTargets: [(command: MPRemoteCommand, target: Any)] = []
+
+  /**
+   * Kilit ekranı kaydını yazar.
+   *
+   * Metinler CİHAZ dilinden geliyor (Localizable.strings), kullanıcının uygulama içi dil
+   * seçiminden DEĞİL — Android'de de böyle (res/values-<dil>/strings.xml). İkisi ayrışabilir.
+   * Düzeltmek JS sözleşmesine metin parametresi eklemeyi ve Android'e dokunmayı gerektirir;
+   * §6'da ayrı iş olarak yazılı, bu şeridin kapsamında değil.
+   */
+  private func showNowPlaying() {
+    MPNowPlayingInfoCenter.default().nowPlayingInfo = [
+      MPMediaItemPropertyTitle: NSLocalizedString("walk_notification_title", comment: "Kilit ekranı kaydının başlığı"),
+      MPMediaItemPropertyArtist: NSLocalizedString("walk_notification_text", comment: "Kilit ekranı kaydının alt metni"),
+      // Canlı akış: yoksa kilit ekranı işe yaramaz bir konum kaydırıcısı çiziyor —
+      // turun süresi belli değil ve ileri/geri sarılamaz.
+      MPNowPlayingInfoPropertyIsLiveStream: true,
+      // 1.0 = "çalıyor". 0.0 yazılsaydı kilit ekranı turu duraklamış gösterirdi.
+      MPNowPlayingInfoPropertyPlaybackRate: 1.0,
+    ]
+  }
+
+  private func enableWalkRemoteCommands() {
+    guard walkRemoteTargets.isEmpty else { return } // iki kez kaydolma: her basış tek olay
+    let center = MPRemoteCommandCenter.shared()
+
+    for command in [center.pauseCommand, center.stopCommand, center.togglePlayPauseCommand] {
+      command.isEnabled = true
+      let target = command.addTarget { [weak self] _ in
+        self?.send("LernomiWalkStop", nil)
+        return .success
+      }
+      walkRemoteTargets.append((command, target))
+    }
+
+    // Geri kalanı AÇIKÇA kapatılıyor: açık bırakılan her komut kilit ekranında hiçbir şey
+    // yapmayan bir düğme çiziyor. playCommand da kapalı — durdurulan tur JS'te bitmiş
+    // sayılıyor (finishDone), "devam ettir" diye bir durum yok.
+    let unused: [MPRemoteCommand] = [
+      center.playCommand, center.nextTrackCommand, center.previousTrackCommand,
+      center.seekForwardCommand, center.seekBackwardCommand,
+      center.skipForwardCommand, center.skipBackwardCommand,
+      center.changePlaybackPositionCommand,
+    ]
+    for command in unused { command.isEnabled = false }
+  }
+
+  private func hideNowPlaying() {
+    MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
+    for (command, target) in walkRemoteTargets {
+      command.removeTarget(target)
+      command.isEnabled = false
+    }
+    walkRemoteTargets = []
   }
 
   // --- Ekran on/off — EŞDEĞER, BİREBİR DEĞİL ---
@@ -733,7 +807,10 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   override func invalidate() {
     stopScreenWatch()
     stopTts()
-    DispatchQueue.main.async { self.cleanup() }
+    DispatchQueue.main.async {
+      self.hideNowPlaying()
+      self.cleanup()
+    }
     super.invalidate()
   }
 }

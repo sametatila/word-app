@@ -1,0 +1,5 @@
+/* Sperrbildschirm-Steuerung (Now Playing) — das Gegenstück zur Android-Gehmodus-Benachrichtigung.
+   Identisch mit res/values-de/strings.xml; beide Plattformen müssen dasselbe sagen.
+   Wird aus der GERÄTE-Sprache gelesen, nicht aus der App-Spracheinstellung (wie bei Android). */
+"walk_notification_title" = "Gehmodus ist an";
+"walk_notification_text" = "Das Mikrofon hört zu; das Gesprochene wird zur Verschriftlichung an unseren Server gesendet.";

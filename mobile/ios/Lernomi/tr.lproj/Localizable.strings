@@ -1,0 +1,5 @@
+/* Kilit ekranı denetimi (Now Playing) — Android'deki yürüyüş bildiriminin karşılığı.
+   Metinler res/values/strings.xml ile birebir aynı; iki platform aynı şeyi söylemeli.
+   CİHAZ dilinden okunur, uygulama içi dil seçiminden değil (Android'de de öyle). */
+"walk_notification_title" = "Yürüyüş modu açık";
+"walk_notification_text" = "Mikrofon dinliyor; söylediklerin tanıma için sunucuya gönderiliyor.";
