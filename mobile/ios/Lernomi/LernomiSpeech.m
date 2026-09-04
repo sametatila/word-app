@@ -18,6 +18,16 @@ RCT_EXTERN_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(stopRecording:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(setApiBase:(NSString *)base)
+RCT_EXTERN_METHOD(uploadStt:(NSString *)url
+                  wavPath:(NSString *)wavPath
+                  language:(NSString *)language
+                  expected:(NSString *)expected
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(httpGet:(NSString *)url
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(startWalkService)
 RCT_EXTERN_METHOD(stopWalkService)
 RCT_EXTERN_METHOD(stop)

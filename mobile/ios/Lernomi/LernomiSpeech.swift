@@ -69,6 +69,40 @@ class LernomiSpeech: RCTEventEmitter {
     resolve(!inputs.isEmpty)
   }
 
+  // --- Ağ güvenliği: native HTTP (uploadStt/httpGet) yalnız uygulamanın kendi API
+  //     sunucusuna, yalnız https ile çıkar. Oturum çerezi ve ses kaydı başka bir hosta
+  //     gidemez; JS'ten gelen URL'e körü körüne güvenilmez. Host JS'ten bir kez ayarlanır
+  //     (stt.ts:45, API_BASE). Android'deki `allowedUrl` kuralının birebir karşılığı. ---
+  private let apiHostLock = NSLock()
+  private var apiHostValue: String?
+
+  @objc(setApiBase:)
+  func setApiBase(_ base: String) {
+    let host = URL(string: base)?.host
+    apiHostLock.lock(); apiHostValue = host; apiHostLock.unlock()
+  }
+
+  /// İzin verilen adres mi: https VE tam olarak API hostu. Değilse nil — çağıran null döner.
+  private func allowedUrl(_ url: String) -> URL? {
+    apiHostLock.lock(); let host = apiHostValue; apiHostLock.unlock()
+    guard let host = host, let u = URL(string: url),
+          u.scheme?.lowercased() == "https",
+          u.host?.lowercased() == host.lowercased() else { return nil }
+    return u
+  }
+
+  /// Native HTTP'nin ortak oturumu. Çerezi ELLE koymuyoruz: URLSession varsayılan
+  /// yapılandırması HTTPCookieStorage.shared'ı kullanıyor, RN'in fetch'i de aynı kavanoza
+  /// yazıyor → Better Auth oturum çerezi kendiliğinden gidiyor. Android'de bunun karşılığı
+  /// çerezi CookieManager'dan okuyup başlığa koymaktı; iOS'ta elle koymak çift başlık riski.
+  private lazy var http: URLSession = {
+    let cfg = URLSessionConfiguration.default
+    cfg.httpCookieStorage = HTTPCookieStorage.shared
+    cfg.httpShouldSetCookies = true
+    cfg.timeoutIntervalForRequest = 20
+    return URLSession(configuration: cfg)
+  }()
+
   /** Ekran uykusunu engelle/bırak (Wake Lock karşılığı) — yürüyüş turu boyunca ekran sönmesin. */
   @objc(setKeepAwake:)
   func setKeepAwake(_ on: Bool) {
@@ -151,6 +185,87 @@ class LernomiSpeech: RCTEventEmitter {
       self.recordURL = nil
       resolve(path)
     }
+  }
+
+  /**
+   * WAV klibini /api/stt'e NATIVE multipart POST'lar. RN fetch ekran-kapalı (arka plan)
+   * takılıyor; URLSession takılmaz. Alan adları Android'le BİREBİR aynı: `language`,
+   * `mode=walk`, `expected`, `audio`. 200 ve gövdede {text} varsa metin, aksi halde null —
+   * `stt.ts:203` zaten null'ı "duyamadım" sayıyor, hata fırlatılmıyor.
+   */
+  @objc(uploadStt:wavPath:language:expected:resolver:rejecter:)
+  func uploadStt(_ url: String, wavPath: String, language: String, expected: String,
+                 resolver resolve: @escaping RCTPromiseResolveBlock,
+                 rejecter reject: @escaping RCTPromiseRejectBlock) {
+    guard let u = allowedUrl(url) else {
+      NSLog("LernomiWalk uploadStt: izin verilmeyen adres")
+      resolve(nil)
+      return
+    }
+    guard let audio = FileManager.default.contents(atPath: wavPath), !audio.isEmpty else {
+      resolve(nil)
+      return
+    }
+
+    let boundary = "----LernomiBoundary\(Int(Date().timeIntervalSince1970 * 1000))"
+    var body = Data()
+    func raw(_ text: String) { body.append(Data(text.utf8)) }
+    func field(_ name: String, _ value: String) {
+      raw("--\(boundary)\r\n")
+      raw("Content-Disposition: form-data; name=\"\(name)\"\r\n\r\n")
+      raw(value)
+      raw("\r\n")
+    }
+    field("language", language)
+    field("mode", "walk")
+    if !expected.isEmpty { field("expected", expected) }
+    raw("--\(boundary)\r\n")
+    raw("Content-Disposition: form-data; name=\"audio\"; filename=\"clip.wav\"\r\n")
+    raw("Content-Type: audio/wav\r\n\r\n")
+    body.append(audio)
+    raw("\r\n--\(boundary)--\r\n")
+
+    var req = URLRequest(url: u)
+    req.httpMethod = "POST"
+    req.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+    http.uploadTask(with: req, from: body) { data, response, error in
+      let code = (response as? HTTPURLResponse)?.statusCode ?? 0
+      guard code == 200, let data = data else {
+        NSLog("%@", "LernomiWalk uploadStt HTTP \(code) \(error?.localizedDescription ?? "")")
+        resolve(nil)
+        return
+      }
+      let obj = try? JSONSerialization.jsonObject(with: data)
+      guard let json = obj as? [String: Any],
+            let text = json["text"] as? String, !text.isEmpty else {
+        resolve(nil)
+        return
+      }
+      resolve(text)
+    }.resume()
+  }
+
+  /** Sade GET (JSON) — ekran-kapalı devam turunda /api/session için (`stt.ts:212`).
+   *  200 ise gövde, değilse null. Çerez oturumun kendi kavanozundan gider. */
+  @objc(httpGet:resolver:rejecter:)
+  func httpGet(_ url: String,
+               resolver resolve: @escaping RCTPromiseResolveBlock,
+               rejecter reject: @escaping RCTPromiseRejectBlock) {
+    guard let u = allowedUrl(url) else {
+      NSLog("LernomiWalk httpGet: izin verilmeyen adres")
+      resolve(nil)
+      return
+    }
+    var req = URLRequest(url: u)
+    req.setValue("application/json", forHTTPHeaderField: "accept")
+    http.dataTask(with: req) { data, response, _ in
+      let code = (response as? HTTPURLResponse)?.statusCode ?? 0
+      guard code == 200, let data = data else {
+        resolve(nil)
+        return
+      }
+      resolve(String(data: data, encoding: .utf8))
+    }.resume()
   }
 
   @objc(start:resolver:rejecter:)
