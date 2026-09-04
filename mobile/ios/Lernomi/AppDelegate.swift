@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     reactNativeFactory = factory
 
     window = UIWindow(frame: UIScreen.main.bounds)
+    // Açılış ekranı kapandıktan sonra JS ilk kareyi çizene kadar pencere görünür kalır;
+    // varsayılanı sistem zemini (koyu temada siyah, açıkta beyaz) olduğu için tema
+    // renginin dışında bir flaş çakıyor. Android'de bunu AppTheme yapıyor
+    // (values/styles.xml → android:windowBackground = @color/window_bg); aynı iki değer
+    // Images.xcassets/WindowBackground.colorset içinde (açık #FBF7F2 / koyu #17120E).
+    window?.backgroundColor = UIColor(named: "WindowBackground") ?? .systemBackground
 
     factory.startReactNative(
       withModuleName: "Lernomi",
@@ -34,6 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
+  /// React Native kök görünümü zeminini kendi `systemBackgroundColor`'una ayarlıyor
+  /// (RCTRootViewFactory.mm). Pencereyi boyamak tek başına yetmiyor: kök görünüm onu
+  /// örtüyor. RN'in bunun için ayırdığı geçersiz kılma noktası burası.
+  override func customizeRootView(_ rootView: RCTRootView) {
+    rootView.backgroundColor = UIColor(named: "WindowBackground") ?? rootView.backgroundColor
+  }
+
   override func sourceURL(for bridge: RCTBridge) -> URL? {
     self.bundleURL()
   }
