@@ -1,4 +1,4 @@
-# Lernomi — Almanca Kelime Uygulaması
+# Lernomi — Almanca ve İngilizce Kelime Uygulaması
 
 A1'den C1'e, **iki kursla** çalışan, oyunlaştırılmış ve **tekrarı kendisi planlayan** Almanca
 uygulaması. Next.js + PostgreSQL, Netcup'ta kendi sunucumuzda (blue-green deploy). Ana ekrana eklenince

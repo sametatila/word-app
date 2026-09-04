@@ -53,7 +53,7 @@ export default function Image() {
               fontWeight: 800,
             }}
           >
-            W
+            L
           </div>
           <div style={{ fontSize: 38, fontWeight: 700, letterSpacing: -0.5 }}>Lernomi</div>
         </div>
