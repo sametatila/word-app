@@ -41,6 +41,13 @@
  * iletişim kanalı yeterli. Doldurulmamış alanlar [[...]] biçiminde kalır ve
  * sayfalarda vurguyla basılır (bkz. legal-shell Ph).
  */
+/**
+ * Yürürlük tarihi ve sürüm. İkisi de EN YENİ değişikliği anlatır ve
+ * LEGAL_CHANGELOG'un ilk kaydıyla aynı olmak zorundadır.
+ *
+ * iOS yayın gününde ikisi de değişecek (→ "1.3" ve o günün tarihi); ne yazılacağı
+ * ve kaydın metni IOS_LAUNCH_ENTRY'de hazır bekliyor.
+ */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-04";
 export const LEGAL_VERSION = "1.2";
 
@@ -180,11 +187,69 @@ export function hasIos(): boolean {
   return LEGAL_PLATFORMS.ios;
 }
 
-export const LEGAL_CHANGELOG: readonly {
+export type LegalChangelogEntry = {
   version: string;
   date: string;
   changes: Record<LegalLocale, readonly string[]>;
-}[] = [
+};
+
+/**
+ * iOS YAYIN GÜNÜ İÇİN HAZIR KAYIT — bugün hiçbir yerde basılmıyor.
+ *
+ * `LEGAL_PLATFORMS.ios` false olduğu sürece aşağıdaki koşullu yayılım bu kaydı
+ * listeye almıyor, yani metin bugünkü hâliyle doğru kalıyor. Amacı, bayrağın
+ * açıldığı gün "ne değişti"yi sıfırdan yazmak zorunda kalmamak: o gün metin
+ * gerçekten değişecek ve kayıt düşmeden sürüm artırmak bu dosyanın kendi
+ * kuralına aykırı.
+ *
+ * `date` sabit yazılmadı, `LEGAL_EFFECTIVE_DATE`'e bağlandı: en yeni kayıt her
+ * zaman o sürümün yürürlük tarihini taşır (1.2 için ikisi de 2026-09-04). Böylece
+ * unutulup eski bir tarih basılamıyor.
+ *
+ * O GÜN YAPILACAKLAR — üçü de bu dosyada, hepsi tek satır:
+ *   1. `LEGAL_PLATFORMS.ios` → `true`
+ *   2. `LEGAL_VERSION` → `"1.3"`
+ *   3. `LEGAL_EFFECTIVE_DATE` → yayın günü
+ *
+ * ÖNCE bitmesi gerekenler `docs/plan/ios-parity.md` §6'daki kapılar; ayrıca bu
+ * dosyanın DIŞINDA kalan tek metin işi: şartların "üçüncü taraf hizmetleri"
+ * maddesi (`src/app/terms/page.tsx` ve `src/content/legal/terms-{en,de}.tsx`)
+ * giriş sağlayıcısı olarak yalnız Google'ı sayıyor; iOS'ta Apple ile Giriş de
+ * sunulduğu için oraya `hasIos()` koşullu bir "Apple ile Giriş" eklenmeli.
+ * Alıcılar tablosundaki Apple (Sign-In) satırı bu dosyada zaten hazır ve aynı
+ * bayrağın arkasında duruyor.
+ */
+const IOS_LAUNCH_ENTRY: LegalChangelogEntry = {
+  version: "1.3",
+  date: LEGAL_EFFECTIVE_DATE,
+  changes: {
+    tr: [
+      "Uygulama App Store'da da yayımlandı; bu metinler artık iOS uygulamasını da kapsıyor.",
+      "Şartlara \"Apple App Store için ek koşullar\" bölümü eklendi: sözleşme yalnız seninle bizim aramızda, uygulamadan ve desteğinden yalnız biz sorumluyuz, Apple bu sözleşmenin üçüncü taraf lehtarı.",
+      "iOS'ta abonelik satın alma, yenileme, iptal ve iade Apple üzerinden yürüyor; metinler artık Ayarlar › Apple Hesabı › Abonelikler yolunu ve reportaproblem.apple.com adresini gösteriyor.",
+      "Apple ile Giriş eklendi. Bu yolu seçersen Apple'a kimliğin, adın ve e-postan üzerinden bir giriş yapılır; e-posta yerine Apple'ın gizli aktarma adresini kullanmayı seçebilirsin. Apple alıcılar tablosuna eklendi.",
+      "Ekran kapalıyken yürüyüş modunun iOS'ta arka plan ses oturumuyla çalıştığı yazıldı; Android'deki mikrofon tipli ön plan servisinin karşılığı bu.",
+    ],
+    en: [
+      "The app is now published on the App Store as well; these texts now cover the iOS app too.",
+      "The terms gained an \"Additional terms for the Apple App Store\" section: the agreement is between you and us only, we alone are responsible for the app and its support, and Apple is a third-party beneficiary of it.",
+      "On iOS, buying, renewing, cancelling and refunding a subscription goes through Apple; the texts now point to Settings › Apple Account › Subscriptions and to reportaproblem.apple.com.",
+      "Sign in with Apple was added. If you choose it, you sign in through your Apple identity, name and e-mail, and you may use Apple's private relay address instead of your own. Apple was added to the table of recipients.",
+      "It is now stated that walk mode with the screen off runs through a background audio session on iOS — the counterpart of the microphone-type foreground service on Android.",
+    ],
+    de: [
+      "Die App ist jetzt auch im App Store veröffentlicht; diese Texte gelten damit auch für die iOS-App.",
+      "Die Nutzungsbedingungen haben einen Abschnitt \"Zusätzliche Bedingungen für den Apple App Store\" bekommen: Der Vertrag besteht nur zwischen dir und uns, für die App und ihren Support sind allein wir verantwortlich, und Apple ist Drittbegünstigter dieses Vertrags.",
+      "Unter iOS laufen Kauf, Verlängerung, Kündigung und Erstattung eines Abonnements über Apple; die Texte verweisen jetzt auf Einstellungen › Apple-Account › Abonnements und auf reportaproblem.apple.com.",
+      "Die Anmeldung mit Apple wurde ergänzt. Wenn du sie wählst, meldest du dich über deine Apple-Identität, deinen Namen und deine E-Mail an und kannst statt deiner Adresse die private Weiterleitungsadresse von Apple verwenden. Apple wurde in die Empfängertabelle aufgenommen.",
+      "Es steht jetzt im Text, dass der Gehmodus bei ausgeschaltetem Bildschirm unter iOS über eine Hintergrund-Audiositzung läuft — das Gegenstück zum Vordergrunddienst vom Typ \"Mikrofon\" unter Android.",
+    ],
+  },
+};
+
+export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  // Bayrak kapalıyken bu kayıt listede YOK; açıldığı gün kendiliğinden başa gelir.
+  ...(LEGAL_PLATFORMS.ios ? [IOS_LAUNCH_ENTRY] : []),
   {
     version: "1.2",
     date: "2026-09-04",
@@ -280,6 +345,7 @@ const PURPOSES = {
   llm: { tr: "Dil modeli", en: "Language model", de: "Sprachmodell" },
   llmRouting: { tr: "Dil modeli yönlendirme", en: "Language model routing", de: "Weiterleitung an Sprachmodelle" },
   googleSignIn: { tr: "Google ile giriş", en: "Sign-in with Google", de: "Anmeldung mit Google" },
+  appleSignIn: { tr: "Apple ile giriş", en: "Sign-in with Apple", de: "Anmeldung mit Apple" },
   distribution: { tr: "Uygulama dağıtımı ve abonelik ödemeleri", en: "App distribution and subscription payments", de: "App-Vertrieb und Abonnementzahlungen" },
   subscriptionState: { tr: "Abonelik durumu yönetimi", en: "Subscription state management", de: "Verwaltung des Abonnementstatus" },
   transactionalMail: { tr: "Doğrulama ve parola sıfırlama e-postaları", en: "Verification and password reset e-mails", de: "Bestätigungs- und Passwort-Reset-E-Mails" },
@@ -291,6 +357,11 @@ const DATA_KINDS = {
   audio: { tr: "Ses kaydı (geçici)", en: "Audio recording (temporary)", de: "Audioaufnahme (temporär)" },
   texts: { tr: "Konuşma ve değerlendirme metinleri", en: "Conversation and assessment texts", de: "Gesprächs- und Bewertungstexte" },
   googleIdentity: { tr: "Google hesabı kimliği, ad, e-posta", en: "Google account id, name, e-mail", de: "Google-Konto-ID, Name, E-Mail" },
+  appleIdentity: {
+    tr: "Apple hesabı kimliği, ad, e-posta (kullanıcı isterse Apple'ın gizli aktarma adresi)",
+    en: "Apple account id, name, e-mail (Apple's private relay address if the user chooses it)",
+    de: "Apple-Konto-ID, Name, E-Mail (auf Wunsch die private Weiterleitungsadresse von Apple)",
+  },
   purchase: { tr: "Satın alma bilgisi", en: "Purchase information", de: "Kaufinformationen" },
   userAndPurchase: { tr: "Kullanıcı kimliği, satın alma bilgisi", en: "User id, purchase information", de: "Nutzer-ID, Kaufinformationen" },
   email: { tr: "E-posta adresi", en: "E-mail address", de: "E-Mail-Adresse" },
@@ -325,6 +396,7 @@ const OCCASIONS = {
     de: "Gehmodus (Bildschirm aus / in der Tasche) und Sprachausgabe",
   },
   googleSignInChosen: { tr: "Google ile giriş seçilirse", en: "If sign-in with Google is chosen", de: "Wenn die Anmeldung mit Google gewählt wird" },
+  appleSignInChosen: { tr: "Apple ile giriş seçilirse", en: "If sign-in with Apple is chosen", de: "Wenn die Anmeldung mit Apple gewählt wird" },
   androidAndSubscription: { tr: "Android uygulaması ve abonelik", en: "Android app and subscription", de: "Android-App und Abonnement" },
   iosAndSubscription: { tr: "iOS uygulaması ve abonelik", en: "iOS app and subscription", de: "iOS-App und Abonnement" },
   premiumEnabled: { tr: "Premium abonelik açılınca", en: "Once a Premium subscription is active", de: "Sobald ein Premium-Abonnement aktiv ist" },
@@ -355,10 +427,15 @@ export const PROCESSORS: Processor[] = [
   { name: "OpenRouter", purpose: "llmRouting", data: "texts", region: "us", safeguard: "scc" },
   { name: "Google (Sign-In)", purpose: "googleSignIn", data: "googleIdentity", region: "us", safeguard: "scc", when: "googleSignInChosen" },
   { name: "Google Play", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "androidAndSubscription" },
-  // Apple satiri yalnizca iOS yayindayken basiliyor: yayimlanmamis bir magazayi
-  // alici olarak listelemek, olmayan bir aktarimi beyan etmek olurdu.
+  // Iki Apple satiri da yalnizca iOS yayindayken basiliyor: yayimlanmamis bir
+  // magazayi ve yalnizca iOS uygulamasinda bulunan bir giris yolunu alici olarak
+  // listelemek, olmayan bir aktarimi beyan etmek olurdu. Apple ile Giris satiri
+  // Google (Sign-In) satirinin simetrigi -- ayni sey oluyor, saglayici farkli.
   ...(LEGAL_PLATFORMS.ios
-    ? [{ name: "Apple (App Store)", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "iosAndSubscription" } as Processor]
+    ? [
+        { name: "Apple (Sign-In)", purpose: "appleSignIn", data: "appleIdentity", region: "us", safeguard: "scc", when: "appleSignInChosen" } as Processor,
+        { name: "Apple (App Store)", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "iosAndSubscription" } as Processor,
+      ]
     : []),
   { name: "RevenueCat", purpose: "subscriptionState", data: "userAndPurchase", region: "us", safeguard: "scc", when: "premiumEnabled" },
   { name: "smtp", purpose: "transactionalMail", data: "email", region: "eu", safeguard: "euAdequacy" },

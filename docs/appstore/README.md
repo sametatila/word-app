@@ -34,7 +34,18 @@ Hukuki metinler iOS için **hazır yazıldı ama kapalı**: `src/lib/legal.ts` i
   reportaproblem.apple.com),
 - gizlilik politikasında platform sayımı ve alıcılar tablosuna **Apple (App Store)** satırı.
 
-Bayrağı açmadan önce `LEGAL_VERSION` artırılmalı ve `LEGAL_CHANGELOG`'a kayıt düşülmeli.
+Bayrağı açmadan önce `LEGAL_VERSION` artırılmalı ve `LEGAL_CHANGELOG`'a kayıt
+düşülmeli. **Kayıt hazır:** `legal.ts` içindeki `IOS_LAUNCH_ENTRY` sürüm 1.3'ün "ne
+değişti" metnini üç dilde tutuyor ve bayrak kapalıyken listeye hiç girmiyor. O gün
+yapılacak iş bu dosyada üç satır: bayrak `true`, `LEGAL_VERSION` `"1.3"`,
+`LEGAL_EFFECTIVE_DATE` yayın günü. Alıcılar tablosundaki **Apple (Sign-In)** ve
+**Apple (App Store)** satırları da aynı bayrağın arkasında hazır bekliyor.
+
+Bu dosyanın dışında kalan tek metin işi: şartların "üçüncü taraf hizmetleri" maddesi
+(`src/app/terms/page.tsx` ve `src/content/legal/terms-{en,de}.tsx`) giriş sağlayıcısı
+olarak yalnız Google'ı sayıyor. iOS'ta Apple ile Giriş de sunulduğu için oraya
+`hasIos()` koşullu bir "Apple ile Giriş" eklenmeli — 1.3 kaydı bunu anlattığı için
+bayrak açılmadan önce yapılmalı.
 
 ## Bayrak açılmadan bitmesi gereken iş
 
