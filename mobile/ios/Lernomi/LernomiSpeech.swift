@@ -14,7 +14,7 @@ import UIKit
  * ve NSMicrophoneUsage metinleri gerekir.
  */
 @objc(LernomiSpeech)
-class LernomiSpeech: RCTEventEmitter {
+class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
 
   private let audioEngine = AVAudioEngine()
   private var recognizer: SFSpeechRecognizer?
@@ -325,6 +325,309 @@ class LernomiSpeech: RCTEventEmitter {
     }.resume()
   }
 
+  // --- Ekran-kapalı TTS: /api/tts MP3'ünü indirip AVAudioPlayer ile çalar. WebView köprüsü
+  //     ekran kapanınca askıya alınıp sustuğu için arka planda çalışan tek yol bu; neural
+  //     ses (Katja/Emel) korunur. Android'de karşılığı MediaPlayer. ---
+  private var ttsPlayer: AVAudioPlayer?
+  private var ttsResolve: RCTPromiseResolveBlock?
+
+  @objc(playTtsUrl:resolver:rejecter:)
+  func playTtsUrl(_ url: String,
+                  resolver resolve: @escaping RCTPromiseResolveBlock,
+                  rejecter reject: @escaping RCTPromiseRejectBlock) {
+    guard let u = allowedUrl(url) else {
+      NSLog("LernomiWalk playTts: izin verilmeyen adres")
+      resolve(false)
+      return
+    }
+    var req = URLRequest(url: u)
+    req.setValue("audio/mpeg", forHTTPHeaderField: "accept")
+    http.dataTask(with: req) { [weak self] data, response, error in
+      let code = (response as? HTTPURLResponse)?.statusCode ?? 0
+      guard let self = self, code == 200, let data = data, !data.isEmpty else {
+        NSLog("%@", "LernomiWalk playTts HTTP \(code) \(error?.localizedDescription ?? "")")
+        resolve(false)
+        return
+      }
+      DispatchQueue.main.async { self.startTts(data, resolve) }
+    }.resume()
+  }
+
+  /// İndirilen MP3'ü çalmaya başlar (ana kuyruk). Söz bitişte `finishTts` ile kapanır.
+  private func startTts(_ mp3: Data, _ resolve: @escaping RCTPromiseResolveBlock) {
+    finishTts(false) // önceki oynatma varsa kapat; sözü askıda bırakma
+    do {
+      // Yürüyüş oturumu açıksa DOKUNMA: kategori .playAndRecord ve kayıt sürüyor olabilir.
+      // Değilse sessiz anahtarı yoksayan bir oynatma oturumu aç (.playback bunu yapar) —
+      // yoksa zil sessizdeyken TTS hiç duyulmaz.
+      if !walkSessionHeld {
+        let session = AVAudioSession.sharedInstance()
+        try session.setCategory(.playback, mode: .spokenAudio, options: [.duckOthers])
+        try session.setActive(true)
+      }
+      let player = try AVAudioPlayer(data: mp3, fileTypeHint: AVFileType.mp3.rawValue)
+      player.delegate = self
+      ttsPlayer = player
+      ttsResolve = resolve
+      player.prepareToPlay()
+      if !player.play() { finishTts(false) }
+    } catch {
+      NSLog("%@", "LernomiWalk playTts oynatma: \(error.localizedDescription)")
+      resolve(false)
+    }
+  }
+
+  /// Oynatmayı kapatır ve bekleyen sözü TEK KEZ karşılar. Android'de yeni bir TTS eskisini
+  /// release ediyor ve eski söz askıda kalıyor; burada false ile karşılanıyor.
+  private func finishTts(_ ok: Bool) {
+    ttsPlayer?.stop()
+    ttsPlayer = nil
+    let pending = ttsResolve
+    ttsResolve = nil
+    pending?(ok)
+  }
+
+  @objc(stopTts)
+  func stopTts() {
+    DispatchQueue.main.async { self.finishTts(false) }
+  }
+
+  func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    DispatchQueue.main.async {
+      guard player === self.ttsPlayer else { return } // SFX oynatıcılarının delegesi yok
+      self.finishTts(flag)
+    }
+  }
+
+  func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+    DispatchQueue.main.async {
+      guard player === self.ttsPlayer else { return }
+      self.finishTts(false)
+    }
+  }
+
+  // --- Ekran-kapalı SFX: TON SENTEZİ (ham PCM → WAV → AVAudioPlayer). Hazır mp3/
+  //     react-native-sound arka planda codec yüzünden çalmıyor; ham PCM codec istemez.
+  //     Android'de karşılığı AudioTrack + MODE_STREAM. Ses oturumuna DOKUNULMUYOR:
+  //     `sfx.ts:59` buraya yalnız ekran-kapalı modda düşüyor, orada yürüyüş oturumu
+  //     zaten açık. ---
+  private let sfxQueue = DispatchQueue(label: "app.lernomi.sfx")
+  private var sfxPlayers: [AVAudioPlayer] = [] // yalnız sfxQueue üzerinde okunur/yazılır
+
+  @objc(playSfx:)
+  func playSfx(_ kind: String) {
+    let notes = LernomiSpeech.sfxNotes(kind)
+    sfxQueue.async {
+      let wav = LernomiSpeech.renderWav(notes)
+      guard !wav.isEmpty else { return }
+      do {
+        let player = try AVAudioPlayer(data: wav, fileTypeHint: AVFileType.wav.rawValue)
+        // Biteni at, oynayanı TUT: serbest bırakılan AVAudioPlayer ortada susar.
+        self.sfxPlayers.removeAll { !$0.isPlaying }
+        self.sfxPlayers.append(player)
+        player.play()
+      } catch {
+        NSLog("%@", "LernomiWalk playSfx: \(error.localizedDescription)")
+      }
+    }
+  }
+
+  /**
+   * Nota tablosu `src/lib/sfxNotes.ts` ile BİREBİR (tek kaynak orası; Android tablosu
+   * `python3 scripts/render-sfx.py --kotlin` çıktısı, bu tablo aynı çıktının Swift'i).
+   * Nota: [freq, start, dur, peak, wave(0 sine,1 tri,2 square), glide(hedef Hz, 0 yok),
+   * lp(alçak geçiren Hz, 0 yok), attack(sn), hold(0 pluck / 1 tut), release(sn)].
+   */
+  private static func sfxNotes(_ kind: String) -> [[Double]] {
+    switch kind {
+    case "correct":
+      return [
+        [523.25, 0.0, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [523.25, 0.0, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [659.25, 0.08, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [659.25, 0.08, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [783.99, 0.16, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [783.99, 0.16, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [1046.5, 0.24, 0.204, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [1046.5, 0.24, 0.24, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+      ]
+    case "wrong":
+      return [
+        [392.0, 0.0, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [392.0, 0.0, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [311.13, 0.09, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [311.13, 0.09, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [261.63, 0.18, 0.26, 0.22, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [261.63, 0.18, 0.221, 0.12, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+      ]
+    case "micon":
+      return [
+        [523.25, 0.0, 0.17, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [523.25, 0.0, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [783.99, 0.06, 0.17, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [783.99, 0.06, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+      ]
+    case "micoff":
+      return [
+        [783.99, 0.0, 0.17, 0.05, 2.0, 0.0, 1800.0, 0.004, 0.0, 0.0],
+        [783.99, 0.0, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [523.25, 0.06, 0.17, 0.05, 2.0, 0.0, 1800.0, 0.004, 0.0, 0.0],
+        [523.25, 0.06, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+      ]
+    case "finish":
+      return [
+        [523.25, 0.0, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [523.25, 0.0, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [659.25, 0.075, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [659.25, 0.075, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [783.99, 0.15, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [783.99, 0.15, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [1046.5, 0.225, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [1046.5, 0.225, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [698.46, 0.42, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [698.46, 0.42, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [880.0, 0.495, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [880.0, 0.495, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [1046.5, 0.57, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [1046.5, 0.57, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [1396.91, 0.645, 0.187, 0.07, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [1396.91, 0.645, 0.22, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [1046.5, 0.92, 0.68, 0.05, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [1046.5, 0.92, 0.8, 0.2, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [1318.51, 0.92, 0.68, 0.03, 2.0, 0.0, 2400.0, 0.004, 0.0, 0.0],
+        [1318.51, 0.92, 0.8, 0.1, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0],
+        [261.63, 0.92, 0.8, 0.07, 1.0, 0.0, 1400.0, 0.03, 1.0, 0.4],
+        [392.0, 0.92, 0.8, 0.07, 1.0, 0.0, 1400.0, 0.03, 1.0, 0.4],
+      ]
+    case "tap":
+      return [
+        [1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0],
+      ]
+    default:
+      return [[1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0]]
+    }
+  }
+
+  /**
+   * Köprünün (sfxNotes.ts) sentezini birebir: üstel zarf (0.0001→peak @attack; pluck: dur
+   * sonunda 0.0001'e üstel iniş; hold: peak'te tut, son `release` saniyede in), sine/
+   * triangle/square, üstel glide, RBJ alçak geçiren (Q 0.707 ≈ WebAudio lowpass Q 0.7),
+   * 0.8 ana kazanç (SFX_MASTER). Çıkış: 44.1 kHz mono 16-bit WAV.
+   */
+  private static func renderWav(_ notes: [[Double]]) -> Data {
+    let rate = 44100.0
+    let master = 0.8
+    let floor = 0.0001
+    guard let last = notes.map({ $0[1] + $0[2] }).max() else { return Data() }
+    let total = last + 0.06
+    let n = max(Int(total * rate), 1)
+    var mix = [Double](repeating: 0, count: n)
+
+    for note in notes {
+      let freq = note[0], start = note[1], dur = note[2], peak = note[3]
+      let wave = Int(note[4]), glide = note[5], lp = note[6]
+      let attack = note[7] > 0 ? note[7] : 0.004
+      let hold = note[8] >= 0.5
+      let release = note[9]
+      let s0 = Int(start * rate)
+      let len = Int(dur * rate)
+      if len <= 0 { continue }
+
+      var raw = [Double](repeating: 0, count: len)
+      var phase = 0.0
+      for i in 0..<len {
+        let t = Double(i) / rate
+        let f = glide > 0 ? freq * pow(glide / freq, t / dur) : freq
+        phase += 2 * Double.pi * f / rate
+        switch wave {
+        case 1:
+          let p = (phase / (2 * Double.pi)).truncatingRemainder(dividingBy: 1.0)
+          raw[i] = 2 * abs(2 * p - 1) - 1
+        case 2:
+          raw[i] = sin(phase) >= 0 ? 1.0 : -1.0
+        default:
+          raw[i] = sin(phase)
+        }
+      }
+      if lp > 0 { lowpass(&raw, lp, rate) }
+
+      for i in 0..<len {
+        let t = Double(i) / rate
+        let env: Double
+        if t < attack {
+          env = floor * pow(peak / floor, t / attack)
+        } else if hold {
+          let sustain = dur - release
+          env = t < sustain ? peak : peak * pow(floor / peak, (t - sustain) / release)
+        } else {
+          env = peak * pow(floor / peak, (t - attack) / (dur - attack))
+        }
+        let idx = s0 + i
+        if idx >= 0 && idx < n { mix[idx] += raw[i] * env * master }
+      }
+    }
+
+    var pcm = Data(capacity: n * 2)
+    for value in mix {
+      let sample = Int16(clamping: Int(min(max(value, -1.0), 1.0) * 32767))
+      pcm.append(UInt8(truncatingIfNeeded: sample))
+      pcm.append(UInt8(truncatingIfNeeded: sample >> 8))
+    }
+    return wavContainer(pcm, rate: Int(rate))
+  }
+
+  /// 16-bit mono PCM'i WAV kabına koyar — AVAudioPlayer başlıksız ham PCM'i çalmaz.
+  private static func wavContainer(_ pcm: Data, rate: Int) -> Data {
+    let channels = 1, bits = 16
+    var out = Data()
+    func ascii(_ text: String) { out.append(contentsOf: Array(text.utf8)) }
+    func i32(_ v: Int) {
+      let u = UInt32(truncatingIfNeeded: v)
+      out.append(contentsOf: [UInt8(truncatingIfNeeded: u), UInt8(truncatingIfNeeded: u >> 8),
+                              UInt8(truncatingIfNeeded: u >> 16), UInt8(truncatingIfNeeded: u >> 24)])
+    }
+    func i16(_ v: Int) {
+      let u = UInt16(truncatingIfNeeded: v)
+      out.append(contentsOf: [UInt8(truncatingIfNeeded: u), UInt8(truncatingIfNeeded: u >> 8)])
+    }
+    ascii("RIFF"); i32(36 + pcm.count); ascii("WAVE")
+    ascii("fmt "); i32(16); i16(1); i16(channels); i32(rate)
+    i32(rate * channels * bits / 8); i16(channels * bits / 8); i16(bits)
+    ascii("data"); i32(pcm.count)
+    out.append(pcm)
+    return out
+  }
+
+  /// RBJ 2. derece alçak geçiren (yerinde), Q 0.707 — köprüdeki BiquadFilter lowpass'ın karşılığı.
+  private static func lowpass(_ x: inout [Double], _ fc: Double, _ rate: Double) {
+    let q = 0.7071
+    let w0 = 2 * Double.pi * fc / rate
+    let alpha = sin(w0) / (2 * q)
+    let cw = cos(w0)
+    let a0 = 1 + alpha
+    let b0 = (1 - cw) / 2 / a0, b1 = (1 - cw) / a0, b2 = (1 - cw) / 2 / a0
+    let a1 = -2 * cw / a0, a2 = (1 - alpha) / a0
+    var x1 = 0.0, x2 = 0.0, y1 = 0.0, y2 = 0.0
+    for i in x.indices {
+      let v = b0 * x[i] + b1 * x1 + b2 * x2 - a1 * y1 - a2 * y2
+      x2 = x1; x1 = x[i]
+      y2 = y1; y1 = v
+      x[i] = v
+    }
+  }
+
+  /** Arka planda da çalışan gecikme. Android'de native Handler; iOS'ta ana kuyruk
+   *  zamanlayıcısı — ses oturumu açıkken süreç canlı olduğundan işler. `stt.ts:162` RN'in
+   *  setTimeout'u arka planda durabildiği için bunu yeğliyor; iOS'ta setTimeout'un yetip
+   *  yetmediği CİHAZDA ölçülecek, parite için yine de eklendi. */
+  @objc(delay:resolver:rejecter:)
+  func delay(_ ms: Double,
+             resolver resolve: @escaping RCTPromiseResolveBlock,
+             rejecter reject: @escaping RCTPromiseRejectBlock) {
+    let seconds = max(0, ms) / 1000
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) { resolve(true) }
+  }
+
   @objc(start:resolver:rejecter:)
   func start(_ locale: String,
              resolver resolve: @escaping RCTPromiseResolveBlock,
@@ -429,6 +732,7 @@ class LernomiSpeech: RCTEventEmitter {
 
   override func invalidate() {
     stopScreenWatch()
+    stopTts()
     DispatchQueue.main.async { self.cleanup() }
     super.invalidate()
   }

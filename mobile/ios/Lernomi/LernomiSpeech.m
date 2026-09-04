@@ -32,6 +32,14 @@ RCT_EXTERN_METHOD(startWalkService)
 RCT_EXTERN_METHOD(stopWalkService)
 RCT_EXTERN_METHOD(startScreenWatch)
 RCT_EXTERN_METHOD(stopScreenWatch)
+RCT_EXTERN_METHOD(playTtsUrl:(NSString *)url
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(stopTts)
+RCT_EXTERN_METHOD(playSfx:(NSString *)kind)
+RCT_EXTERN_METHOD(delay:(double)ms
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(stop)
 RCT_EXTERN_METHOD(cancel)
 RCT_EXTERN_METHOD(destroy)
