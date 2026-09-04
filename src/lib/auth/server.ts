@@ -13,11 +13,31 @@ import { purgeUserData } from "@/lib/account/purge";
  * `get-session`, `sign-out`, `sign-in/social`, `request-password-reset`) →
  * web formları ve mobil uygulama değişmeden çalışır.
  *
- * Google sosyal giriş yalnız GOOGLE_CLIENT_ID/SECRET verilince açılır; yoksa
- * e-posta/parola tek başına çalışır. Parola sıfırlama e-postası şimdilik sunucu
- * log'una düşer (SMTP/Resend bağlanınca gerçek gönderim — bkz. sendResetPassword).
+ * Google sosyal giriş yalnız GOOGLE_CLIENT_ID/SECRET, Apple girişi yalnız
+ * APPLE_BUNDLE_ID verilince açılır; yoksa e-posta/parola tek başına çalışır.
+ * Parola sıfırlama e-postası şimdilik sunucu log'una düşer (SMTP/Resend
+ * bağlanınca gerçek gönderim — bkz. sendResetPassword).
  */
 export const googleConfigured = Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
+
+/**
+ * Apple ile Giriş. App Store Review Guidelines 4.8: üçüncü taraf girişi (bizde
+ * Google) sunan uygulama Apple ile Giriş'i de sunmak zorunda — yayın engeli.
+ * Yalnız iOS uygulamasında görünür; /api/config kapalı derse düğme hiç çizilmez,
+ * yani web ve Android'de HİÇBİR ŞEY değişmez.
+ *
+ * YALNIZ NATIVE idToken AKIŞI açık, web/OAuth yönlendirme akışı değil. Web akışı
+ * bir Services ID ve .p8 anahtarından üretilen bir client secret istiyor; o secret
+ * en çok 6 ay geçerli ve süresi dolduğunda giriş kimse fark etmeden kırılıyor.
+ * iOS uygulaması Apple'ın kendi ekranını açıp sunucuya doğrudan idToken
+ * gönderiyor ve bu yolda secret HİÇ okunmuyor: better-auth token'ı Apple'ın açık
+ * anahtarıyla (appleid.apple.com/auth/keys) doğruluyor. Google'ın native akışıyla
+ * aynı desen (bkz. signInGoogleNative).
+ *
+ * Native token'ın `aud`'u uygulamanın BUNDLE KİMLİĞİ olur (Services ID değil),
+ * doğrulama da ona bakar — bu yüzden sağlayıcıyı açan tek anahtar bundle kimliği.
+ */
+export const appleConfigured = Boolean(process.env.APPLE_BUNDLE_ID);
 
 export const authEnabled = Boolean(process.env.DATABASE_URL && process.env.BETTER_AUTH_SECRET);
 
@@ -59,9 +79,49 @@ export const auth = betterAuth({
       await sendEmail(u.email, subject, html, text);
     },
   },
-  socialProviders: googleConfigured
-    ? { google: { clientId: process.env.GOOGLE_CLIENT_ID!, clientSecret: process.env.GOOGLE_CLIENT_SECRET! } }
-    : {},
+  socialProviders: {
+    ...(googleConfigured
+      ? { google: { clientId: process.env.GOOGLE_CLIENT_ID!, clientSecret: process.env.GOOGLE_CLIENT_SECRET! } }
+      : {}),
+    ...(appleConfigured
+      ? {
+          apple: {
+            // `appBundleIdentifier` native token'ın beklenen `aud`'u. `clientId`
+            // yalnız web akışı açılırsa (Services ID) anlam kazanır; şimdilik
+            // aynı değer veriliyor çünkü boş bırakılırsa better-auth her açılışta
+            // "missing clientId" uyarısı basıyor. `clientSecret` bilerek boş:
+            // native yolda hiç okunmuyor, web akışı açılırsa buraya gerçek secret
+            // (ve kendi env anahtarı) gelir.
+            clientId: process.env.APPLE_BUNDLE_ID!,
+            clientSecret: "",
+            appBundleIdentifier: process.env.APPLE_BUNDLE_ID!,
+            /**
+             * better-auth'un apple sağlayıcısı kullanıcıyı HER ZAMAN
+             * `emailVerified: false` ile kuruyor (bkz. social-providers/index.mjs,
+             * apple.getUserInfo). İki somut sonucu var, ikisi de yanlış:
+             *
+             *   1. `emailVerification.sendOnSignUp` açık olduğu için ilk girişte
+             *      doğrulama e-postası gidiyor. Apple'ın gizli aktarma adresine
+             *      (@privaterelay.appleid.com) giden posta, gönderen alan adı
+             *      Apple'da kayıtlı değilse teslim EDİLMEZ — kullanıcı hiç
+             *      gelmeyecek bir e-postayı bekler.
+             *   2. Aynı e-postayla zaten hesabı olan kullanıcıda hesap
+             *      birleştirme "account not linked" ile reddediliyor; kişi kendi
+             *      hesabına Apple ile giremez.
+             *
+             * Apple `email_verified` iddiasını imzalı token'ın İÇİNDE gönderiyor,
+             * doğru olan onu okumak. Google sağlayıcısı da profildeki aynı alanı
+             * okuyor; böylece iki sosyal yol aynı davranıyor. Tip `true | "true"`
+             * diyor ama Apple (Work & School hesapları) `false` da gönderebiliyor,
+             * o yüzden karşılaştırma iki biçimi de sayıyor.
+             */
+            mapProfileToUser: (profile) => ({
+              emailVerified: profile.email_verified === true || String(profile.email_verified) === "true",
+            }),
+          },
+        }
+      : {}),
+  },
   session: {
     expiresIn: 60 * 60 * 24 * 30, // 30 gün
     updateAge: 60 * 60 * 24, // günde bir tazele

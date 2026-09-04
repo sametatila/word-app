@@ -103,6 +103,37 @@ export async function signInGoogleNative(idToken: string): Promise<AuthOutcome> 
 }
 
 /**
+ * NATIVE Apple girişi (idToken akışı) — Google'ın birebir eşi, tek fark sağlayıcı adı.
+ * Apple'ın kendi ekranı (ASAuthorizationController) idToken veriyor, better-auth
+ * onu Apple'ın açık anahtarıyla doğrulayıp oturumu açıyor; token'ın `aud`'u
+ * uygulamanın bundle kimliği = sunucudaki APPLE_BUNDLE_ID.
+ *
+ * `nonce` GÖNDERİLMİYOR ve bu bilinçli — nedeni lib/appleAuth.ts'te yazılı.
+ */
+export async function signInAppleNative(idToken: string): Promise<AuthOutcome> {
+  try {
+    return await parse(await post("sign-in/social", { provider: "apple", idToken: { token: idToken } }));
+  } catch {
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  }
+}
+
+/**
+ * Oturumdaki kullanıcının görünen adını değiştirir (Better Auth update-user).
+ * Tek çağıran Apple girişi: Apple adı YALNIZ ilk yetkilendirmede ve idToken'ın
+ * DIŞINDA veriyor, dolayısıyla sunucu onu token'dan okuyamıyor ve kullanıcı
+ * "xxx@privaterelay.appleid.com" adıyla kalıyordu. Sessiz: ad yazılamazsa giriş
+ * yine de geçerli.
+ */
+export async function updateUserName(name: string): Promise<boolean> {
+  try {
+    return (await post("update-user", { name })).ok;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Parola sıfırlama bağlantısı ister (web'le AYNI Better Auth ucu:
  * request-password-reset). Sıfırlamanın kendisi e-postadaki bağlantıyla
  * web'deki /reset-password sayfasında tamamlanır — mobil ayrı sayfa gerektirmez.

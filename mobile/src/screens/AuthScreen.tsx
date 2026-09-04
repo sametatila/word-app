@@ -7,12 +7,13 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, BoltIcon, GoogleIcon, MailIcon } from "../ui/icons";
+import { AppleIcon, ArrowBackIcon, BoltIcon, GoogleIcon, MailIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
 import { openLegal } from "../lib/legal";
 import { googleSignIn } from "../lib/googleAuth";
+import { appleSignIn, appleSupported } from "../lib/appleAuth";
 import { notifPrimeNeeded } from "../lib/notifications";
 import { translateAuthError } from "../lib/authErrors";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -21,15 +22,29 @@ type Mode = "signin" | "signup";
 type View2 = "options" | "email" | "forgot";
 
 /**
- * Giriş / kayıt. Önce sağlayıcı listesi (Google / E-posta); e-posta formu "E-posta ile
- * devam et"e basınca gelir. Google NATIVE akışta (cihaz hesap seçici → idToken → better-auth).
- * Apple/Facebook: sunucuda açılmadığı için listede YOK — çalışmayan "yakında" düğmesi
- * Play "bozuk işlevsellik" sayılır; sağlayıcı eklenince buraya geri gelir.
+ * Giriş / kayıt. Önce sağlayıcı listesi (Apple / Google / E-posta); e-posta formu
+ * "E-posta ile devam et"e basınca gelir. İkisi de NATIVE akışta (sistem ekranı →
+ * idToken → better-auth), WebView yok.
+ *
+ * Sağlayıcı listesi SUNUCUDAN kapılıyor (`/api/config`): kapalı bir sağlayıcının
+ * düğmesi hiç çizilmez, çünkü çalışmayan düğme her iki mağazada da "bozuk
+ * işlevsellik" sayılıyor. Apple ayrıca cihaz kapısından da geçiyor (iOS 13+);
+ * Android'de `appleSupported()` false döndüğü için liste bugünküyle aynı kalır.
+ * Facebook hâlâ yok — sağlayıcı eklenince buraya geri gelir.
+ *
+ * Sıra bilinçli: Apple'ın kendi yönergesi "Apple ile Giriş düğmesi öteki giriş
+ * düğmelerinin ÜSTÜNDE dursun" diyor.
  */
-const PROVIDERS = [{ id: "google", label: "Google" }] as const;
+const PROVIDERS = [
+  { id: "apple", label: "Apple" },
+  { id: "google", label: "Google" },
+] as const;
 
 function providerIcon(id: string, colors: Palette) {
   if (id === "google") return <GoogleIcon size={22} />;
+  // Apple logosu tek renk: koyu temada beyaz, açıkta siyah. Apple'ın izin verdiği
+  // "çerçeveli beyaz düğme" görünümü bu (renkli logo yasak).
+  if (id === "apple") return <AppleIcon color={colors.text} size={22} />;
   return <MailIcon color={colors.text} size={22} />;
 }
 
@@ -53,10 +68,18 @@ export function AuthScreen() {
   const [socialBusy, setSocialBusy] = useState<string | null>(null);
   const [resetSent, setResetSent] = useState(false);
   const [resetBusy, setResetBusy] = useState(false);
-  // Sunucuda Google OAuth kapalıysa düğme hiç çizilmez (çalışmayan düğme yok). Cevap
-  // gelene dek de çizilmez; yalnız e-posta görünür — ekran hiçbir an "bozuk" değildir.
-  const [googleOn, setGoogleOn] = useState(false);
-  useEffect(() => { let alive = true; void fetchServerConfig().then((c) => { if (alive) setGoogleOn(c.providers.google); }); return () => { alive = false; }; }, []);
+  // Sunucuda kapalı olan sağlayıcının düğmesi hiç çizilmez (çalışmayan düğme yok).
+  // Cevap gelene dek de çizilmez; yalnız e-posta görünür — ekran hiçbir an "bozuk"
+  // değildir. Apple ayrıca cihaz kapısından geçer: sunucu açık dese bile iOS 13
+  // altındaki bir cihazda ya da Android'de çizilmez.
+  const [providersOn, setProvidersOn] = useState({ google: false, apple: false });
+  useEffect(() => {
+    let alive = true;
+    void fetchServerConfig().then((c) => {
+      if (alive) setProvidersOn({ google: c.providers.google, apple: c.providers.apple && appleSupported() });
+    });
+    return () => { alive = false; };
+  }, []);
 
   async function submit() {
     if (busy) return;
@@ -78,12 +101,13 @@ export function AuthScreen() {
   }
 
   async function startSocial(provider: string) {
-    if (socialBusy || provider !== "google") return;
+    if (socialBusy || (provider !== "google" && provider !== "apple")) return;
     setSocialBusy(provider);
     setError(null);
-    // NATIVE Google: cihaz hesap seçici → idToken → better-auth. WebView yok
-    // (Google embedded WebView OAuth'u engelliyor + cihaz hesaplarını göstermiyordu).
-    const r = await googleSignIn();
+    // İkisi de NATIVE: sistem ekranı → idToken → better-auth. WebView yok (Google
+    // embedded WebView OAuth'u engelliyor + cihaz hesaplarını göstermiyordu; Apple
+    // tarafında da sistem ekranı zorunlu).
+    const r = provider === "apple" ? await appleSignIn() : await googleSignIn();
     if (r.ok) {
       const done = await socialComplete(); // oturumu tazele + onboarding prefs
       setSocialBusy(null);
@@ -127,7 +151,7 @@ export function AuthScreen() {
 
         {view === "options" ? (
           <View style={{ gap: spacing.md }}>
-            {PROVIDERS.filter((p) => p.id !== "google" || googleOn).map((p) => (
+            {PROVIDERS.filter((p) => providersOn[p.id]).map((p) => (
               <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={t("auth.saglayici_ile_devam_et", { saglayici: p.label })}
                 style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, paddingHorizontal: spacing.lg }}>
                 <View style={{ width: 24, alignItems: "center" }}>

@@ -46,6 +46,21 @@ jest.mock('@react-native-google-signin/google-signin', () => ({
   statusCodes: {SIGN_IN_CANCELLED: 'SIGN_IN_CANCELLED', IN_PROGRESS: 'IN_PROGRESS'},
 }));
 
+// Apple girişi: gerçek paket yerel modülü bulamayınca isSupported false döner,
+// yani testte de düğme çizilmez. Taklidi yine de duruyor çünkü paketin iOS
+// dosyası `prop-types` ve `requireNativeComponent` çekiyor — Jest'te ikisi de
+// gereksiz yük.
+jest.mock('@invertase/react-native-apple-authentication', () => ({
+  __esModule: true,
+  default: {
+    isSupported: false,
+    performRequest: jest.fn(async () => ({})),
+    Error: {UNKNOWN: '1000', CANCELED: '1001'},
+    Operation: {IMPLICIT: 0, LOGIN: 1, REFRESH: 2, LOGOUT: 3},
+    Scope: {EMAIL: 0, FULL_NAME: 1},
+  },
+}));
+
 jest.mock('react-native-tts', () => ({
   __esModule: true,
   default: {

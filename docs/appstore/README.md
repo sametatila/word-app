@@ -62,6 +62,66 @@ başlatır, kilit ekranında sürdüğü görünür, uygulama içinden durdurula
 en hızlı çözen yol.
 
 
+## Apple ile Giriş (Şerit A — 2026-09-04)
+
+**Yapıldı.** Kod yazıldı, DERLENMEDİ (bu makinede Xcode yok).
+
+Guidelines 4.8 üçüncü taraf girişi sunan uygulamadan Apple ile Giriş'i de istiyor;
+Google sunulduğu için bu bir yayın engeliydi. Kurulan yol Google'ınkinin birebir eşi:
+sistem ekranı → `identityToken` → better-auth `sign-in/social`. WebView yok.
+
+- Sunucu (`src/lib/auth/server.ts`): better-auth `apple` sağlayıcısı. **Yalnız native
+  idToken akışı** açıldı — web/OAuth yönlendirme akışı bir Services ID ve .p8'den
+  üretilen, **en çok 6 ay geçerli** bir client secret ister; süresi dolduğunda giriş
+  kimse fark etmeden kırılır. Native yolda secret hiç okunmuyor: token Apple'ın açık
+  anahtarıyla doğrulanıyor, beklenen `aud` = uygulamanın bundle kimliği.
+- Sağlayıcıyı açan tek env anahtarı **`APPLE_BUNDLE_ID`** (üç env dosyasına da aynı
+  yerde eklendi, üçünde de boş). Boşken sağlayıcı hiç kurulmuyor, `/api/config`
+  `apple: false` diyor ve düğme çizilmiyor — yani **Android'de ve web'de hiçbir şey
+  değişmedi.**
+- Mobil (`mobile/src/lib/appleAuth.ts`): düğme iki kapıdan geçiyor — sunucu açık
+  diyecek ve `appleAuth.isSupported` (iOS 13+) true olacak. Apple düğmesi listede
+  Google'ın **üstünde**; Apple'ın kendi yönergesi bunu istiyor.
+- **Ad tek seferlik:** Apple kişinin adını yalnız İLK yetkilendirmede ve id token'ın
+  DIŞINDA veriyor. Kaçırılırsa kullanıcı `xxxx@privaterelay.appleid.com` adıyla kalır
+  (ve o ad sıralamada başkalarına görünür). Bu yüzden giriş başarılı olur olmaz ad
+  `update-user` ucuna yazılıyor.
+- **`emailVerified` düzeltildi:** better-auth'un apple sağlayıcısı kullanıcıyı her
+  zaman `emailVerified: false` ile kuruyor. Bu hâliyle (1) ilk girişte Apple'ın gizli
+  aktarma adresine bir doğrulama e-postası gidiyor — gönderen alan adı Apple'da
+  kayıtlı değilse **teslim edilmez**, (2) aynı e-postayla hesabı olan kullanıcı
+  "account not linked" ile kendi hesabına giremiyor. Apple `email_verified` iddiasını
+  imzalı token'ın içinde gönderdiği için `mapProfileToUser` ile o okunuyor.
+
+**Nonce göndermiyoruz, bilerek.** Kütüphane isteğe koyduğu nonce'u SHA-256'layıp
+Apple'a özeti yolluyor, JS'e ham değeri döndürüyor; better-auth ise gönderdiğimiz
+dizgiyi token'daki iddiayla düz karşılaştırıyor. Tutması için sunucuya **özeti**
+yollamak gerekir, bu da RN tarafında yeni bir kripto bağımlılığı ya da elle yazılmış
+SHA-256 demek — yanlış hesaplanırsa giriş %100 kırılır ve burada denenemez. Token yine
+tam doğrulanıyor (Apple imzası, `iss`, `aud`, 1 saatlik yaş sınırı) ve bugünkü Google
+native akışında da nonce yok. Açılacaksa: ham nonce üret → `performRequest({ nonce })`
+→ sunucuya SHA-256'nın küçük harf hex'i. **Cihazda doğrulanmadan açılmamalı.**
+
+**Doğrulanmadı / bitmesi gerekenler:**
+
+1. Apple Developer hesabında **Sign in with Apple** yetkisi (capability) açılacak ve
+   `Lernomi.entitlements` derlemeye girecek — Şerit P'ye yazılı verildi
+   (`docs/plan/ios-parity-A-teslim.md`). Yetki olmadan istek `1000`/`1004` ile düşer.
+2. `APPLE_BUNDLE_ID` üç env dosyasında da **boş**. Gerçek bundle kimliği (P4) belli
+   olunca yerel ve sunucu `.env`'e yazılacak; `.env.example` placeholder kalır.
+3. Hata metinlerinin i18n anahtarları (`autherror.apple_failed`,
+   `autherror.no_apple_token`) Şerit T'ye verildi; sözlüğe girene kadar `t()` anahtarın
+   kendisini basar.
+4. **Gizli aktarma adresi (Private Email Relay):** SMTP gönderen alan adı Apple
+   Developer → Sign in with Apple → *Email Sources*'a kaydedilmezse
+   `@privaterelay.appleid.com` adreslerine giden hiçbir posta ulaşmaz (parola
+   sıfırlama dâhil). Hesap açıldığında ilk yapılacaklardan.
+
+**Cihazda sınanacak:** §5.11'e ek olarak — (a) ilk girişte ad doğru yazılıyor mu,
+(b) "E-postamı Gizle" seçilince oturum açılıyor mu, (c) aynı e-postayla zaten hesabı
+olan kullanıcıda hesap birleşiyor mu, (d) Ayarlar'dan Apple izni geri alınınca
+uygulama makul davranıyor mu.
+
 ## Gizlilik etiketleri (App Store Connect › App Privacy)
 
 Play'in Veri Güvenliği beyanıyla (`docs/play/data-safety.md`) aynı gerçeği anlatır,
