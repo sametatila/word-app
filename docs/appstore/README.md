@@ -33,7 +33,8 @@ Bayrağı açmadan önce `LEGAL_VERSION` artırılmalı ve `LEGAL_CHANGELOG`'a k
 | 5 | Gizlilik etiketleri | Aşağıdaki tablo App Store Connect'e girilir |
 | 6 | Yaş derecelendirmesi | Play'de 18+ seçildi; App Store derecelendirmesi ayrı doldurulur ve tutarlı olmalı |
 | 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi ve kod yazıldı, ama macOS/Xcode olmadan derlenip denenemedi (aşağıya bak) |
-| 8 | İzin metinlerinin Xcode projesine bağlanması | `tr/en/de.lproj/InfoPlist.strings` yazıldı; hedefe eklenip `CFBundleLocalizations` ayarlanmalı |
+| 8 | `.lproj` dosyalarının Xcode hedefine eklenmesi | `tr/en/de.lproj/InfoPlist.strings` yazıldı ama `project.pbxproj`'da kayıtlı DEĞİL, yani derlemeye girmiyor. Xcode'da dosyaları hedefe sürüklemek yeterli |
+| 9 | Uygulama ikonu | `Images.xcassets/AppIcon.appiconset` boş (0 png). İkonsuz yükleme reddedilir |
 
 ## Ekran kapalıyken yürüyüş modu (arka planda ses)
 
