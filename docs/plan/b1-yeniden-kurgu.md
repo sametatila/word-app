@@ -11,17 +11,25 @@ başkası (`docs/plan/a2-yeniden-kurgu.md`). **Aynı depoda paralel çalışacak
 | Ölçüt | Değer |
 |---|---|
 | B1 dersi | 100 (10 modül × 10) |
-| Havuzun B1 katmanı | 1797 madde · kart gerektiren **1796** |
+| Havuzun B1 katmanı | 1797 kayıt · normalize **1783** farklı başlık |
 | Derslerin öğrettiği | 500 madde (ders başına 5) |
 | Seviye **altı** (A1 33 + A2 86) | 119 — **%23,8** |
 | Seviye **üstü** (B2 99 + C1 15) + havuzda yok (116) | 230 — **%46,0** |
 | Gerçekten B1 olan | 151 — %30,2 |
-| **B1 katmanının kapsanması** | 153/1796 — **%8,5** |
+| **B1 katmanının kapsanması** | 150/1783 — **%8,4** |
 
-Karşılaştırma: A1 kapsama %35'ti (şimdi %75), A2 %8,1. **B1 en kötü durumda ve
-en büyük katman.** Ayrıca B1'in kendine özgü bir sorunu var: A1 dersleri
-seviyenin ÜSTÜNE taşıyordu; B1 dersleri hem üstüne (%23 B2/C1) hem ALTINA
-(%24 A1/A2) taşıyor. Yani ders ne öğrettiğini bilmiyor.
+Karşılaştırma: A1 kapsama %35'ti (şimdi %75,4), A2 %8,1'di (2026-09-04 akşamı
+%26,1 — paralel oturum sürüyor). **B1 en kötü durumda ve en büyük katman.**
+Ayrıca B1'in kendine özgü bir sorunu var: A1 dersleri seviyenin ÜSTÜNE
+taşıyordu; B1 dersleri hem üstüne (%23 B2/C1) hem ALTINA (%24 A1/A2) taşıyor.
+Yani ders ne öğrettiğini bilmiyor.
+
+**Payda düzeltmesi (2026-09-04, bağımsız ölçüm).** Bu tablonun ilk hâli
+"kart gerektiren 1796" diyordu; o sayı hiçbir yöntemle üretilemedi — 1797 kayıt,
+1791 farklı `de`, 1783 normalize anahtar, 1797 (`de`+artikel), 1797 (`de`+`tr`).
+Kodda kart filtresi de yok. A2 brief'inde aynı sorun var (1416 → "1412").
+Bundan sonra payda **1783** (küçült · parantez sil · baştaki artikeli at ·
+`/` ile BÖLME). Fark %0,1; hiçbir kararı değiştirmiyor.
 
 Havuzda hiç olmayan 116 madde ağırlıkla iş yeri jargonu: die Kernzeit, brutto,
 der Nachfolger, die Einarbeitung, sich weiterentwickeln. Bunların bir kısmı
@@ -31,13 +39,13 @@ gerçek B1 maddesi (havuza eklenmeli), bir kısmı B2'ye ait.
 
 ## 2. Hedef
 
-1. Derslerin öğrettiği her kelime havuzun **B1 katmanından** gelsin. Sınırlı
-   A2 tekrarı kabul (B1 öğrencisi A2'yi pekiştirir) ama %24 fazla; oranı
-   kullanıcıyla netleştir.
-2. B1 katmanının kapsanması yükselsin (§5 Adım 2 — kapasite kararı).
+1. Derslerin öğrettiği her kelime havuzun **B1 katmanından** gelsin.
+   Alt seviye tekrarı **~%10** (karar verildi, aşağıya bak) — ders başına
+   ~1 pekiştirme kelimesi. Bugünkü %23,8 fazla.
+2. B1 katmanının kapsanması **%8,4 → ~%73** (karar verildi, aşağıya bak).
 3. Ünite deseni dolsun: **4 konuşma dersi + 2 okuma + 2 dinleme + 2 yazma +
-   gramer + quiz + kontrol**. 100 ders ÷ 4 = **25 ünite** → her beceriden
-   **50 egzersiz**. Elde: 12 okuma · 12 dinleme · 8 yazma → **118 eksik**.
+   gramer + quiz + kontrol**. 180 ders ÷ 4 = **45 ünite** → her beceriden
+   **90 egzersiz**. Elde: 12 okuma · 12 dinleme · 8 yazma → **238 eksik**.
    quiz + kontrol ünite brief'inden otomatik türetiliyor, yazman gerekmiyor.
 4. Sınav (ExamPrep) beceri içeriğinden besleniyor; 3 dolunca o da dolar.
 
@@ -59,7 +67,14 @@ gerçek B1 maddesi (havuza eklenmeli), bir kısmı B2'ye ait.
 ## 4. İhlal edilemez kurallar
 
 1. **Ders id'leri SABİT.** `user_lessons` PK'si `(user_id, lesson_id)`; id
-   değişirse canlı ilerleme silinir. Ders sayısını da değiştirme (100).
+   değişirse canlı ilerleme silinir. Mevcut 100 dersin id'i de katalog sırası
+   da dokunulmaz.
+   **Ders SAYISI dondurulmuş değil (2026-09-04 kararı).** Bu maddenin ilk hâli
+   "ders sayısını da değiştirme (100)" diyordu ve §5 Adım 2'nin sunduğu
+   "ders ekleme" seçeneğiyle çelişiyordu. Çelişki şöyle çözüldü: id dondurması
+   yerinde, **sona ders eklemek serbest**. Yeni ders sayısı **20'nin katı
+   olmalı** — modül 10'arlı (`MODULE_SIZE`), ünite 4'erli (`UNIT_LESSONS`)
+   dilimliyor; 20'nin katı değilse son modül ya da son ünite eksik kalır.
 2. **Web canlı.** Ders kaynağı ortak; iyileştir, bozma, ayrı kopya çıkarma.
 3. **`de-b1.json` TEK SATIRDIR** (`JSON.stringify` ile üretiliyor). Elle
    `null, 1` yazarsan on binlerce satırlık sahte diff üretirsin.
@@ -83,13 +98,39 @@ küçült, baştaki artikeli at, parantezi sil. **Havuz başlıklarını `/` ile
 bölme** — `"die/das Glace/Glacé"` gibi satırlar `die`/`das`'ı sahte seviyeye
 bağlar. İşlev sözcüklerini ("ich", "und") "kapsanmamış" sayma.
 
-### Adım 2 — Kapasite kararını KULLANICIYA SOR
-A1'de aritmetik temizdi: 790 kelime, 100×8 = 800 slot. **B1'de imkânsız:
-1796 kelime, 800 slot.** Seçenekler: ders başına ~18 (gerçekçi değil) ·
-8 + sıklık önceliği (kapsama %45'te tavan) · ders ekleme (yalnız ekleme,
-id'ler sabit) · B1 katmanının bir kısmını B2'ye taşıma. **Sorulmadan
-ilerleme.** A1'de ders başına 8'e çıkarıldı ve %75 kapsamaya ulaşıldı;
-B1'de aynı sayı %45 tavan verir.
+### Adım 2 — Kapasite kararı — VERİLDİ (2026-09-04)
+
+A1'de aritmetik temizdi: 790 kelime, 100×8 = 800 slot. B1'de imkânsızdı:
+1783 kelime, 800 slot. Sorulan seçenekler ve verilen cevap:
+
+| Karar | Değer |
+|---|---|
+| Ders başına kelime | **8** (A1/A2 ile aynı biçim) |
+| Alt seviye (A1/A2) tekrarı | **~%10** → ders başına ~1, slotun %90'ı B1 |
+| Ders sayısı | **180** = 100 mevcut + 80 yeni |
+| Modül / ünite | **18 modül** (+8 yeni tema) · **45 ünite** |
+| B1 slotu | 180 × 8 × 0,9 = **1296** |
+| Hedef kapsama | 1296/1783 = **%72,7** |
+| Beceri egzersizi | 45 × 6 = **270** gerekir, 32 var → **238 eksik** |
+
+**Neden %73 ve neden 180:** A1 bugün %75,4 kapsamada. Her seviyenin ~%75'e
+oturması ürün içinde tutarlı bir vaat. Brief'in ilk hâlindeki "+60 ders = %70"
+tahmini %10 alt tekrarı hesaba katmıyordu; tekrarla +60 ders yalnızca %64,6
+veriyor, %70 için +80 gerekiyor.
+
+**Neden %100 değil:** kart/SRS motoru (`session.ts:279,520` · `daily.ts:98`)
+havuzu `niveau` bandıyla çekiyor, yani B1 katmanının TAMAMI zaten öğrenciye
+ulaşıyor. Dersin işi bağlamda öğretmek. %100 kapsama 260 ders (+160, içerik
+2,6 katı) ve 358 egzersiz borcu isterdi; son %20'nin marjinal değeri düşük.
+Derste geçmeyecek ~487 B1 kelimesi kartla gelir.
+
+**Yapısal engel yok (kontrol edildi):** `moduleCount = ceil(ders/10)`
+(`module-content.ts:204`), ünite sayısı `ceil(ders/4)`, `moduleTheme` taşan
+dilimde boş dönüp `${level} · Ünite N`'e düşüyor. Hiçbir yerde 100 sabiti yok.
+Sınav, boss, karakter, hub — hepsi türetilmiş. İki temas noktası var:
+`scripts/check-lessons.ts:59` (`vocabSize` seviye başına sabit kodlu — paralel
+A2 oturumuyla ORTAK dosya) ve `MODULE_THEMES.B1` (`modules.ts:44-55`, bugün
+tam 10 tema; 8 yeni tema gerekiyor).
 
 ### Adım 3 — Havuz boşluğunu vetle
 116 maddeyi sınıflandır: gerçek madde başı mı, türev mi, yoksa B2'ye mi ait.
