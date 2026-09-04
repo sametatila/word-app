@@ -48,7 +48,7 @@ export const deB1B13: Lesson[] = [
       { de: "das Billett", tr: "bilet" },
       { de: "die Eisenbahn", tr: "demiryolu" },
       { de: "die Rückfahrt", tr: "dönüş yolculuğu" },
-      { de: "der Aufenthalt", tr: "kalış, mola" },
+      { de: "der Aufenthalt", tr: "kalış / mola" },
       { de: "das Tram", tr: "tramvay" },
     ],
     patterns: [
@@ -64,7 +64,7 @@ export const deB1B13: Lesson[] = [
       word("Dördüncü", { de: "das Billett", tr: "bilet" }),
       word("Beşinci", { de: "die Eisenbahn", tr: "demiryolu" }),
       word("Altıncı", { de: "die Rückfahrt", tr: "dönüş yolculuğu" }),
-      word("Yedinci", { de: "der Aufenthalt", tr: "kalış, mola" }),
+      word("Yedinci", { de: "der Aufenthalt", tr: "kalış / mola" }),
       word("Son", { de: "das Tram", tr: "tramvay" }),
       { say: [tr("İlk kalıbımız peronu soruyor. Soru sözcüğü öbeği bağlaç oluyor ve fiil yan cümlenin sonuna geçiyor.")] },
       { say: [tr("Örnek:"), de("Wissen Sie, von welchem Perron der Zug abfährt?"), tr("Tekrar edin:"), de("Wissen Sie, von welchem Perron der Zug abfährt")], expect: repeat("Wissen Sie, von welchem Perron der Zug abfährt") },

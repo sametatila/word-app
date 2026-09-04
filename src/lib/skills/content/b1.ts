@@ -1,7 +1,16 @@
 import type { SkillExercise } from "../types";
+import { b1U01 } from "./b1-u01";
 
-/** B1 — okuma, dinleme ve yazma egzersizleri. */
+/**
+ * B1 — okuma, dinleme ve yazma egzersizleri.
+ *
+ * Ünite hizalı dosyalar (`b1-uNN.ts`) dizinin BAŞINDA spread edilir: immersion
+ * builder ünite slotlarını konuma göre dolduruyor, o yüzden ünite 1'in
+ * okuma/dinleme/yazma slotlarını b1U01 doldurur. Eski genel B1 egzersizleri
+ * arkada kalıp sonraki ünitelerin slotlarına akıyor.
+ */
 export const b1: SkillExercise[] = [
+  ...b1U01,
   // ── Okuma ──────────────────────────────────────────────────────────────
   {
     id: "b1-r1",

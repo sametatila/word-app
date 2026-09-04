@@ -102,7 +102,7 @@ export const deB1B08: Lesson[] = [
       { de: "verschreiben", tr: "reçete yazmak" },
       { de: "die Untersuchung", tr: "muayene" },
       { de: "die Klinik", tr: "klinik" },
-      { de: "die Vermittlung", tr: "aracılık, yönlendirme" },
+      { de: "die Vermittlung", tr: "aracılık / yönlendirme" },
     ],
     patterns: [
       { de: "Ich werde überwiesen.", tr: "sevk edilme: edilgen" },
@@ -118,7 +118,7 @@ export const deB1B08: Lesson[] = [
       word("Beşinci", { de: "verschreiben", tr: "reçete yazmak" }),
       word("Altıncı", { de: "die Untersuchung", tr: "muayene" }),
       word("Yedinci", { de: "die Klinik", tr: "klinik" }),
-      word("Son", { de: "die Vermittlung", tr: "aracılık, yönlendirme" }),
+      word("Son", { de: "die Vermittlung", tr: "aracılık / yönlendirme" }),
       { say: [tr("Kalıbımız:"), de("Ich werde überwiesen."), tr("Burada özne sensin ama işi yapan sen değilsin. Türkçede 'sevk ediliyorum' demek.")] },
       { say: [tr("Örnek:"), de("Ich werde zum Facharzt überwiesen."), tr("Tekrar edin:"), de("Ich werde zum Facharzt überwiesen")], expect: repeat("Ich werde zum Facharzt überwiesen") },
       { say: [tr("Sıra sende: 'Randevular yalnızca sabahları veriliyor.'")], expect: produce("Termine werden nur vormittags vergeben", [tr("Çoğul özne, çoğul yardımcı fiil, ortaç sonda:"), de("Termine werden nur vormittags vergeben."), tr("Tekrar dene.")]) },

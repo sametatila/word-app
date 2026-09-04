@@ -161,7 +161,7 @@ export const deB1B04: Lesson[] = [
     ],
     patterns: [
       { de: "…, dem ich …", tr: "eril ve nötrde yönelme zamiri dem" },
-      { de: "…, der ich … / …, denen ich …", tr: "dişilde der, çoğulda denen" },
+      { de: "…, der ich … / …, denen ich …", tr: "dişilde der / çoğulda denen" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün üçüncü hâl: yönelme. Bazı fiiller kendinden sonra yönelme ister — güvenmek, yardım etmek, kulak vermek. İlgi cümlesinde de aynısı olur. Hazır mısın?")], expect: { kind: "confirm" } },
@@ -204,8 +204,8 @@ export const deB1B04: Lesson[] = [
     minutes: 10,
     focusId: "Relativsatz-Präposition",
     vocab: [
-      { de: "die Gegend", tr: "bölge, civar" },
-      { de: "der Bezirk", tr: "semt, ilçe" },
+      { de: "die Gegend", tr: "bölge / civar" },
+      { de: "der Bezirk", tr: "semt / ilçe" },
       { de: "sich wohlfühlen", tr: "kendini iyi hissetmek" },
       { de: "die Umgebung", tr: "çevre" },
       { de: "die Lage", tr: "konum" },
@@ -215,13 +215,13 @@ export const deB1B04: Lesson[] = [
     ],
     patterns: [
       { de: "…, in der ich …", tr: "edat zamirin önüne geçer; hâli edat seçer" },
-      { de: "…, mit dem ich … / …, über das wir …", tr: "mit yönelme, über belirtme ister" },
+      { de: "…, mit dem ich … / …, über das wir …", tr: "mit yönelme / über belirtme ister" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün ilgi cümlesinin en işlek hâli: içinde bir edat olanı. 'İçinde yaşadığım şehir', 'birlikte çalıştığım meslektaş', 'hakkında konuştuğumuz konu'. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Kural şaşırtıcı derecede basit: edat en öne gider, zamir hemen arkasına, hâli de edat söyler. Yer bildiren bir edatta yönelme, hareket ya da konu bildirende belirtme. Önce kelimeler.")] },
-      word("İlk", { de: "die Gegend", tr: "bölge, civar" }),
-      word("İkinci", { de: "der Bezirk", tr: "semt, ilçe" }),
+      word("İlk", { de: "die Gegend", tr: "bölge / civar" }),
+      word("İkinci", { de: "der Bezirk", tr: "semt / ilçe" }),
       word("Üçüncü", { de: "sich wohlfühlen", tr: "kendini iyi hissetmek" }),
       word("Dördüncü", { de: "die Umgebung", tr: "çevre" }),
       word("Beşinci", { de: "die Lage", tr: "konum" }),
@@ -377,7 +377,7 @@ export const deB1B04: Lesson[] = [
     ],
     patterns: [
       { de: "ein Gerät, das …", tr: "nesneyi işleviyle tanımlar" },
-      { de: "alles, was … / etwas, was …", tr: "alles, etwas ve nichts sonrası was gelir" },
+      { de: "alles, was … / etwas, was …", tr: "alles / etwas ve nichts sonrası was gelir" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün çok işine yarayacak bir beceri: adını bilmediğin bir şeyi tarif etmek. 'Şu şey var ya, şununla açtığın…' Almancada bu bir ilgi cümlesidir. Hazır mısın?")], expect: { kind: "confirm" } },
@@ -423,10 +423,10 @@ export const deB1B04: Lesson[] = [
       { de: "das Ufer", tr: "kıyı" },
       { de: "genießen", tr: "tadını çıkarmak" },
       { de: "die Aussicht", tr: "manzara" },
-      { de: "die Umwelt", tr: "çevre, doğa" },
+      { de: "die Umwelt", tr: "çevre / doğa" },
       { de: "entlang", tr: "boyunca" },
       { de: "sich verlaufen", tr: "yolunu kaybetmek" },
-      { de: "die Ruhe", tr: "huzur, sessizlik" },
+      { de: "die Ruhe", tr: "huzur / sessizlik" },
       { de: "bewegen", tr: "hareket ettirmek" },
     ],
     patterns: [
@@ -439,10 +439,10 @@ export const deB1B04: Lesson[] = [
       word("İlk", { de: "das Ufer", tr: "kıyı" }),
       word("İkinci", { de: "genießen", tr: "tadını çıkarmak" }),
       word("Üçüncü", { de: "die Aussicht", tr: "manzara" }),
-      word("Dördüncü", { de: "die Umwelt", tr: "çevre, doğa" }),
+      word("Dördüncü", { de: "die Umwelt", tr: "çevre / doğa" }),
       word("Beşinci", { de: "entlang", tr: "boyunca" }),
       word("Altıncı", { de: "sich verlaufen", tr: "yolunu kaybetmek" }),
-      word("Yedinci", { de: "die Ruhe", tr: "huzur, sessizlik" }),
+      word("Yedinci", { de: "die Ruhe", tr: "huzur / sessizlik" }),
       word("Son", { de: "bewegen", tr: "hareket ettirmek" }),
       { say: [tr("Kalıbımız:"), de("der Ort, an dem ich auftanke"), tr("Yer bildiren edat yönelme ister; ort eril olduğu için dem.")] },
       { say: [tr("Örnek:"), de("Der Ort, an dem ich auftanke, ist das Ufer."), tr("Tekrar edin:"), de("Der Ort, an dem ich auftanke, ist das Ufer")], expect: repeat("Der Ort, an dem ich auftanke, ist das Ufer") },

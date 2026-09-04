@@ -14,7 +14,7 @@ import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 
 const require = createRequire(import.meta.url);
 const { olc, ozet, türkçeMi } = require("./lib/vocab-gate.cjs") as {
-  olc: (ham: string, unit: number, ek?: string[]) => { tok: string[]; disi: string[] };
+  olc: (ham: string, unit: number, ek?: string[], seviye?: string) => { tok: string[]; disi: string[] };
   ozet: (d: string[]) => string[];
   türkçeMi: (s: string) => boolean;
 };
@@ -42,15 +42,18 @@ function almanca(e: any): string {
   return out.join(" ");
 }
 
-const hedef = ex.filter((e) => /^a1-u\d+-/.test(e.id));
-console.log(`ünite hizalı egzersiz: ${hedef.length}`);
+// Seviye argümanla seçilir: `npm run check:unitvocab -- b1`. Varsayılan a1,
+// böylece mevcut çağrılar aynen çalışır.
+const seviye = (process.argv[2] || "a1").toLowerCase();
+const hedef = ex.filter((e) => new RegExp(`^${seviye}-u\\d+-`).test(e.id));
+console.log(`${seviye.toUpperCase()} · ünite hizalı egzersiz: ${hedef.length}`);
 const genelDisi = new Map();
 for (const e of hedef) {
   // egzersizin kendi sözlükçesi ve yazma görevlerinin kalıpları serbest
   const ek = [];
   for (const g of e.gloss || []) ek.push(g.de);
   for (const t of e.tasks || []) for (const g of t.phrases || t.words || []) ek.push(g.de);
-  const { tok, disi } = olc(almanca(e), e.unit, ek);
+  const { tok, disi } = olc(almanca(e), e.unit, ek, seviye);
   const oran = tok.length ? (disi.length / tok.length * 100).toFixed(1) : "0";
   if (disi.length) {
     console.log(`  ${e.id.padEnd(12)} %${oran.padStart(4)} dışı (${disi.length}/${tok.length}): ${ozet(disi).slice(0, 8).join(", ")}`);

@@ -413,7 +413,7 @@ export const deB1B16: Lesson[] = [
     minutes: 10,
     focusId: "Zweiteilige-Konnektoren",
     vocab: [
-      { de: "die Studie", tr: "çalışma, araştırma" },
+      { de: "die Studie", tr: "çalışma / araştırma" },
       { de: "analysieren", tr: "çözümlemek" },
       { de: "erstellen", tr: "hazırlamak" },
       { de: "enthalten", tr: "içermek" },
@@ -429,7 +429,7 @@ export const deB1B16: Lesson[] = [
     lecture: [
       { say: [tr("Merhaba! Bir proje sunacaksın. İyi sunum tek yanlı değildir: rakamın hem güçlü hem zayıf yanını söyler. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("İki bağlaç kullanacağız: biri iki yanı yan yana koyuyor, öteki önce kabul edip sonra çekince koyuyor. Önce kelimeler.")] },
-      word("İlk", { de: "die Studie", tr: "çalışma, araştırma" }),
+      word("İlk", { de: "die Studie", tr: "çalışma / araştırma" }),
       word("İkinci", { de: "analysieren", tr: "çözümlemek" }),
       word("Üçüncü", { de: "erstellen", tr: "hazırlamak" }),
       word("Dördüncü", { de: "enthalten", tr: "içermek" }),
