@@ -38,14 +38,45 @@ Yetki olmadan `ASAuthorizationController` isteği kullanıcıya hiç sorulmadan
 Apple Developer portalında da App ID için *Sign in with Apple* işaretlenmeli, yoksa
 profil bu yetkiyi taşımaz ve imzalama hata verir. Bu portal işi, kod işi değil.
 
-### 1.2 Bundle kimliği bağı
+### 1.2 Google için `CFBundleURLTypes` — ters client id
+
+`Info.plist`'e (ana `<dict>` içine, `CFBundleName`'den sonra):
+
+```xml
+	<!-- Google Sign-In geri dönüş şeması: iOS OAuth istemcisinin TERS client id'si.
+	     Sır değil (uygulama paketinde zaten gömülü). Web client id ile karıştırılmamalı:
+	     idToken'ın aud'u web client id olmaya devam eder — bkz. lib/googleAuth.ts. -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.YER-TUTUCU</string>
+			</array>
+		</dict>
+	</array>
+```
+
+`YER-TUTUCU`'nun gerçek değeri Google Cloud'da iOS OAuth istemcisi açılınca belli olur:
+istemci `<numara>-<harfler>.apps.googleusercontent.com` ise ters yazımı
+`com.googleusercontent.apps.<numara>-<harfler>`.
+
+**Bağlı iş:** `mobile/src/lib/googleAuth.ts` içindeki `IOS_CLIENT_ID` bugün BOŞ ve boşken
+`iosClientId` hiç gönderilmiyor, Google düğmesi de iOS'ta hiç çizilmiyor
+(`googleSupported()`). İkisi **aynı istemciden** doldurulmalı ve **birlikte** gitmeli:
+biri dolup öteki boş kalırsa giriş "invalid client" ile düşer ya da düğme çizilip
+çalışmaz.
+
+### 1.3 Bundle kimliği bağı
 
 `PRODUCT_BUNDLE_IDENTIFIER` (P4) ne seçilirse sunucudaki `APPLE_BUNDLE_ID` env
 değeri **birebir o** olacak: native id token'ın `aud`'u bundle kimliğidir ve sunucu
 doğrulamayı ona göre yapar. Bugünkü öneri `app.lernomi.ios`. P bunu değiştirirse
 bu belgeye ve `docs/appstore/README.md`'ye not düşülmeli — env değeri Şerit D'de.
 
-### 1.3 Pod
+### 1.4 Pod
 
 `@invertase/react-native-apple-authentication` otolinkleme ile geliyor, `Podfile`'a
 elle satır **gerekmiyor** (`use_native_modules!` yeterli). Mac'te `pod install`

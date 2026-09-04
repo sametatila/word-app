@@ -5,6 +5,10 @@ Güvenliği formu ile App Store Connect'in gizlilik etiketleri farklı sorular s
 farklı yerlerde yayımlanır. Birini doldurup öbürünü kopyalamak, iki mağazada çelişen
 beyan bırakır.
 
+Bu dosya durumu ve gizlilik beyanını tutar; inceleme hesabı, giriş sağlayıcılarının
+kurulumu ve yayın öncesi kontroller `connect.md`'de (`docs/play/console.md`'nin
+karşılığı).
+
 ## Durum (2026-09-04)
 
 iOS **yayında değil.** `mobile/ios/Lernomi.xcodeproj` var ama React Native şablonundan

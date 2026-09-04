@@ -12,7 +12,7 @@ import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
 import { openLegal } from "../lib/legal";
-import { googleSignIn } from "../lib/googleAuth";
+import { googleSignIn, googleSupported } from "../lib/googleAuth";
 import { appleSignIn, appleSupported } from "../lib/appleAuth";
 import { notifPrimeNeeded } from "../lib/notifications";
 import { translateAuthError } from "../lib/authErrors";
@@ -70,13 +70,17 @@ export function AuthScreen() {
   const [resetBusy, setResetBusy] = useState(false);
   // Sunucuda kapalı olan sağlayıcının düğmesi hiç çizilmez (çalışmayan düğme yok).
   // Cevap gelene dek de çizilmez; yalnız e-posta görünür — ekran hiçbir an "bozuk"
-  // değildir. Apple ayrıca cihaz kapısından geçer: sunucu açık dese bile iOS 13
-  // altındaki bir cihazda ya da Android'de çizilmez.
+  // değildir. İkisinin de ayrıca bir CİHAZ kapısı var: sunucu açık dese bile Apple
+  // iOS 13 altında/Android'de, Google da iOS istemcisi koda girmemişken çizilmez.
   const [providersOn, setProvidersOn] = useState({ google: false, apple: false });
   useEffect(() => {
     let alive = true;
     void fetchServerConfig().then((c) => {
-      if (alive) setProvidersOn({ google: c.providers.google, apple: c.providers.apple && appleSupported() });
+      if (!alive) return;
+      setProvidersOn({
+        google: c.providers.google && googleSupported(),
+        apple: c.providers.apple && appleSupported(),
+      });
     });
     return () => { alive = false; };
   }, []);
