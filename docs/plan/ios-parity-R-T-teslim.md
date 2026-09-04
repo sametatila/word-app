@@ -15,6 +15,9 @@ Bu şeritte üretilen hiçbir şey **derlenmedi**: makinede Xcode yok (§0).
 | `fad616b` | SFX yedek mp3'leri iOS paketine (R4) |
 | `106a95c` | mağaza metinleri ve platform davranışı (E1–E3) |
 | `cb9e3e6` | Apple giriş hata metinleri — **yanlış commit'e düştü**, aşağıda §4 |
+| `d5a8a98` | yürüyüş modu: kesilen dinleme düzeltmesi + iOS ekran eşlemesi kararı (§5) |
+| `f671869` | `sfx.ts` docblock'u iki paketi de anlatıyor |
+| `1248c95` | i18n tabanı 137 → 123 |
 
 ---
 
@@ -114,6 +117,16 @@ Planın §5'ine eklenecek maddeler:
 6. Köprü hazır değilken (uygulama daha yeni açıldı / çevrimdışı) altı ses de
    çalıyor mu, yoksa `sfx/` alt klasörü yüzünden hiç bulunamıyor mu (§1.2).
 
+**Yürüyüş modu — §5'in bağlı olduğu tek ölçüm**
+6a. **Uygulama arka plandayken (`UIBackgroundModes = audio`, ses oturumu açık)
+    `SFSpeechRecognizer` gerçekten çalışıyor mu?** Yürüyüş sırasında telefonu
+    kilitle, bir kelime bekle, cevabın tanınıp tanınmadığına bak. Bütün §5 dengesi
+    bu cevaba bağlı; ölçülene kadar bugünkü eşleme yerinde kalır.
+6b. Kısa kesinti (bildirime dokun, hemen dön) kelimeyi yakıyor mu — yoksa kelime
+    bir kez daha mı soruluyor (`d5a8a98`).
+6c. 6a "çalışıyor" çıkarsa: bir yürüyüş boyunca kaç Azure çağrısı gidiyor
+    (Azure portal, F0 5 saat/ay).
+
 **Mağaza metinleri**
 7. Hesap silme ekranındaki abonelik uyarısı Apple yolunu gösteriyor mu.
 8. Paywall'daki "Aboneliği yönet" App Store abonelik ekranını açıyor mu.
@@ -143,14 +156,14 @@ alfabetik yerine (`autherror` bloğunun başı) kondu, belge onu
 sıra; 823 anahtarda yalnız altı bilinçli istisna var (hepsi walk/learn konuşma
 metinleri) ve onlar bozulmadı.
 
-### 4.2 `npm run i18n:check` bugün hata veriyor — Şerit R/T yüzünden değil
+### 4.2 `npm run i18n:check` — ÇÖZÜLDÜ, taban da sıkılaştırıldı
 
-Tek suçlu `mobile/src/lib/numbers.ts` (`89a0c53` ile ağaca girdi): tarayıcı Almanca
-sayı sözcüklerindeki `ü/ö/ß`yi Türkçe metin sanıyor (`fünf`, `zwölf`, `dreißig`) ve
-o dosya için taban 0 → 10 çıkıyor. Dosya artık commit'li, yani **`--check` HEAD'de
-kırmızı**. Şerit T'nin dokunduğu beş dosyanın hiçbiri
-tabanın üstüne çıkmadı. Sahibi ya sözlüğü `t()` dışına taşıdığını gösterip
-`--baseline` çalıştırmalı ya da tarayıcıya bir istisna eklemeli.
+`numbers.ts`in Almanca sayı sözcükleri (`fünf`, `zwölf`, `dreißig`) tarayıcıya Türkçe
+metin gibi görünüyordu; `059679e` ile tabana alındı. Ardından taban `1248c95` ile
+137 → 123'e indirildi: aradaki 14 boşluğun tamamı çoktan çevrilmiş üç dosyadan
+(`WalkModeScreen.tsx` 11, `voiceMatch.ts` 2, `ExamPrepScreen.tsx` 1) kalmış eski
+girişlerdi. Üçü artık sıfırda, yani o dosyalara girecek tek bir ham Türkçe dizgi
+bile `--check`i kırıyor. `numbers.ts` 10'da duruyor.
 
 ### 4.3 Kapatılmayan bitişik kusur
 
@@ -170,3 +183,63 @@ Android dosyası uyarlanabilir-ikon katmanı olduğu için içindeki gerçek kar
 üç platformda tek kaynaktan geliyor. Android tarafına **dokunulmadı** (§2.3).
 
 Yeniden üretim: `cd mobile && python3 scripts/render-app-icon.py` (Pillow gerekir).
+
+---
+
+## 5 → Karar kaydı: iOS'ta "ekran kapalı" ne demek
+
+Ajan 1'in iOS ekran izlemesi indikten sonra iki platform **aynı olayı dinlemiyor**:
+
+| | Olay | Ne tetikler |
+|---|---|---|
+| Android | `ACTION_SCREEN_OFF` / `ON` (`LernomiSpeechModule.kt`) | yalnız güç tuşu |
+| iOS | `didEnterBackground` / `willEnterForeground` (`LernomiSpeech.swift`) | kilit **+** uygulama değiştirme, bildirime dokunma, gelen çağrı |
+
+Bayrağı `WalkModeScreen.tsx` iki yerde okuyor: kaynak seçimi (`useAzure`) ve
+dinlemenin kesilmesi. Yani iOS'ta bildirime dokunmak, Android'de olmayan bir
+maliyet ve bir kesinti üretiyor.
+
+### Karar: eşleme olduğu gibi kabul edildi
+
+Bayrağın sorduğu şey "ekran kapalı mı" değil, **"ücretsiz yol çalışıyor mu"**.
+iOS'ta uygulama arka plana düşer düşmez WebView köprüsü **kesin olarak** askıya
+alınıyor; native `SFSpeechRecognizer`ın arka planda çalıştığı ise **doğrulanmadı**
+(§3.6a). Bilinmez bu yönde dururken yanlış tarafa düşmenin bedeli simetrik değil:
+
+- fazladan bir Azure çağrısı → kuruş (F0: 5 saat/ay, çağrı başına 3 sn kayıt),
+- sessizce başarısız bir native tanıma → "duyamadım" → **üç turda yürüyüş biter.**
+
+### Elenen iki seçenek
+
+**Native tarafta ayrıştırma — YAPILAMIYOR.** Ajan 1'e devredilecek iş çıkmadı:
+iOS'ta güç tuşunu haber veren genel bir API yok; `protectedDataWillBecomeUnavailable`
+yalnız cihazda parola varsa ve gecikmeli düşüyor (parolasız cihazda hiç gelmiyor),
+dolayısıyla tek başına kilit sinyali olamıyor; SpringBoard'ın kilit bildirimi özel
+API, Guidelines 2.5.1 riski. Kayda geçsin diye: `willResignActive` bilerek
+kullanılmıyor — o bildirim şeridi ve Denetim Merkezi'nde de düşer, eşlemeyi daha da
+hassas yapardı.
+
+**Gecikme (debounce) — EKLENMEDİ.** Kısa kesintide bayrağı geciktirmek, o aralıkta
+sorulan kelimeyi arka planda ölü olabilecek tanıyıcıya yollar: parayı kurtarıp turu
+riske atar. Kısa kesintinin asıl zararı bunun yerine doğrudan kapatıldı.
+
+### Kapatılan kusur
+
+Kesinti native dinleme sırasında geldiğinde dinleme kesiliyor ve boş sonuç dönüyordu;
+tekrar sorma şartı ise `screenOffRef.current` idi. Kullanıcı kesme ile boş sonuç
+arasında ön plana döndüyse tekrar **hiç** olmuyor, boş sonuç "duyamadım" sayılıyordu
+— üç duyamadım turu bitirdiği için iki saniyelik bir bakış yürüyüşü sonlandırabilirdi.
+
+Artık dinlemeyi bizim kestiğimiz ayrıca izleniyor (`listenCut`) ve şart eskisinin
+**üstüne ekleniyor**: `listenCut || screenOff`. Hiçbir durumda eskisinden az tekrar
+olmuyor. Tekrarın kaynağı tekrar anında seçiliyor — hâlâ arka plandaysa Azure,
+kullanıcı döndüyse yine ücretsiz native. Yani düzeltme Azure harcamasını artırmıyor,
+azaltabiliyor.
+
+### Bu karar ne zaman gözden geçirilir
+
+§3.6a "arka planda çalışıyor" derse eşleme daraltılabilir ve iOS'ta Azure'a hiç
+düşülmeyebilir; o zaman `LernomiSpeech.swift`ten `didEnterBackground` çıkarılıp
+yalnız kilit sinyali (parola varsa `protectedDataWillBecomeUnavailable`, yoksa
+"hiç") bırakılması Ajan 1'in işi olur. "Çalışmıyor" derse bugünkü eşleme zaten
+doğrudur ve değişmez.
