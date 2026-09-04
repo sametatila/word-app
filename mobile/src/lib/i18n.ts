@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { I18nManager, NativeModules, Platform } from "react-native";
 import type { NativeLang } from "./courses";
-import { NATIVE_LANGS, DEFAULT_NATIVE, courseOrDefault, currentCourseId } from "./courses";
+import { NATIVE_LANGS, DEFAULT_NATIVE, DEVICE_FALLBACK_LANG, courseOrDefault, currentCourseId } from "./courses";
 import { tr } from "../i18n/tr";
 import { en } from "../i18n/en";
 import { de } from "../i18n/de";
@@ -49,7 +49,10 @@ function isNativeLang(v: string): v is NativeLang {
  * (Libraries/ReactNative/I18nManager.js), burada da öyle yapılıyor.
  *
  * Sıra: RN sabiti → Hermes Intl → (iOS) SettingsManager. Her biri ayrı korumalı;
- * biri patlarsa sonraki denenir, hiçbiri tutmazsa Türkçeye düşülür.
+ * biri patlarsa sonraki denenir.
+ *
+ * Hiçbiri desteklenen bir dil vermezse (Fransızca, İspanyolca, Rusça… cihaz)
+ * DEVICE_FALLBACK_LANG'e düşülür — sözlük yedeği DEFAULT_NATIVE'e değil.
  */
 export function deviceLang(): NativeLang {
   const candidates: (string | undefined)[] = [];
@@ -74,11 +77,21 @@ export function deviceLang(): NativeLang {
     } catch { /* yut */ }
   }
 
+  let detected = false;
   for (const raw of candidates) {
     const two = (raw ?? "").slice(0, 2).toLowerCase();
+    if (!two) continue;
+    detected = true;
     if (isNativeLang(two)) return two;
   }
-  return DEFAULT_NATIVE;
+  // İki farklı başarısızlık, iki farklı doğru cevap:
+  //  • cihazın dili okundu ama desteklemiyoruz (fr, es, ru…) → İngilizce,
+  //    çünkü o kullanıcının Türkçe anlama ihtimali düşük;
+  //  • hiçbir kaynaktan dil OKUNAMADI (algılama kırık) → DEFAULT_NATIVE.
+  //    Burada cihazın Türkçe olma ihtimali hâlâ en yüksek ve mevcut
+  //    kullanıcıları sırf algılama patladı diye İngilizceye taşımak yanlış
+  //    olur (bu yol bir kez gerçekten kırılmıştı, bkz. yukarıdaki not).
+  return detected ? DEVICE_FALLBACK_LANG : DEFAULT_NATIVE;
 }
 
 /**

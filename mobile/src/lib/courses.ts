@@ -31,7 +31,28 @@ export type CourseId = "de" | "gsw-zh" | "en";
 export type NativeLang = "tr" | "en" | "de";
 
 export const NATIVE_LANGS: NativeLang[] = ["tr", "en", "de"];
+/**
+ * Sözlük yedeği — bir anahtarın çevirisi eksikse hangi dilden okunacağı.
+ * Türkçe kalıyor: sözlükler Türkçeden türetiliyor, eksik anahtar en güvenilir
+ * karşılığını orada buluyor.
+ *
+ * DİKKAT: bu, cihaz dili yedeği DEĞİL. İkisi uzun süre tek sabitti; ayrıldılar
+ * çünkü anlamları farklı — bkz. DEVICE_FALLBACK_LANG.
+ */
 export const DEFAULT_NATIVE: NativeLang = "tr";
+
+/**
+ * Cihaz dili desteklenmiyorsa açılacak dil (Fransızca, İspanyolca, Rusça…).
+ *
+ * Türkçeydi: Türk-Alman paritesi tek başınayken makuldü ama Fransız bir
+ * kullanıcının uygulamayı Türkçe açması demekti. İngilizce, desteklenmeyen
+ * her dil için çok daha yüksek ihtimalle anlaşılan nötr seçenek.
+ *
+ * Sözlük yedeğinden (DEFAULT_NATIVE) ayrı tutuluyor: burayı İngilizce yapmak
+ * bir çeviri unutulduğunda Türk kullanıcıya Türkçe yerine İngilizce metin
+ * göstermeye başlamamalı.
+ */
+export const DEVICE_FALLBACK_LANG: NativeLang = "en";
 /** Kurs seçilmeden önceki varsayılan — onboarding ilk adımda henüz seçim yokken kullanır. */
 export const DEFAULT_COURSE_ID: CourseId = "de";
 
