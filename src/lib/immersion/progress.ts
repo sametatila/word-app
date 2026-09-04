@@ -18,10 +18,18 @@ const DONE_PCT = 70;
 export async function immersionCompletion(userId: string, course: string): Promise<Completion> {
   const doneLessons = new Set<string>();
   const doneSkills = new Set<string>();
+  // "Denendi" ayrı tutuluyor: patika kapısı bunu kullanıyor, ünite tamamlanması
+  // hâlâ "bitti"ye bakıyor. İkisini birleştirmek üniteleri hak edilmeden açardı.
+  const triedLessons = new Set<string>();
+  const triedSkills = new Set<string>();
 
   try {
     const cards = await lessonBoard(userId, course);
-    for (const c of cards) if (c.state?.roleplayDone) doneLessons.add(c.lesson.id);
+    for (const c of cards) {
+      if (c.state?.roleplayDone) doneLessons.add(c.lesson.id);
+      // Kayıt varsa ders en az bir kez açılıp cevaplanmıştır.
+      if (c.state) triedLessons.add(c.lesson.id);
+    }
   } catch (err) {
     console.error("[immersion] ders ilerlemesi okunamadı", err);
   }
@@ -31,7 +39,11 @@ export async function immersionCompletion(userId: string, course: string): Promi
       .select({ exerciseId: userSkills.exerciseId, lastScore: userSkills.lastScore })
       .from(userSkills)
       .where(eq(userSkills.userId, userId));
-    for (const r of rows) if ((r.lastScore ?? 0) >= DONE_PCT) doneSkills.add(r.exerciseId);
+    for (const r of rows) {
+      if ((r.lastScore ?? 0) >= DONE_PCT) doneSkills.add(r.exerciseId);
+      // Satırın kendisi denemenin kanıtı; puanı yetmemiş olabilir.
+      triedSkills.add(r.exerciseId);
+    }
   } catch (err) {
     console.error("[immersion] beceri ilerlemesi okunamadı", err);
   }
@@ -39,5 +51,7 @@ export async function immersionCompletion(userId: string, course: string): Promi
   return {
     lessonDone: (ref) => doneLessons.has(ref),
     skillDone: (ref) => doneSkills.has(ref),
+    lessonAttempted: (ref) => triedLessons.has(ref),
+    skillAttempted: (ref) => triedSkills.has(ref),
   };
 }

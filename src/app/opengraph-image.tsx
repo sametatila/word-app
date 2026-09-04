@@ -9,7 +9,7 @@ import { ImageResponse } from "next/og";
  * dosyasını elle güncel tutmak, sayılar değiştikçe unutulan bir iş olurdu.
  */
 
-export const alt = "Lernomi — Almanca kelimeleri oynayarak öğren";
+export const alt = "Lernomi — kelimeleri oynayarak öğren";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -68,7 +68,7 @@ export default function Image() {
             letterSpacing: -2,
           }}
         >
-          Almanca kelimeleri oynayarak öğren
+          Kelimeleri oynayarak öğren
         </div>
 
         <div style={{ display: "flex", fontSize: 34, color: "#a79684", marginTop: 30 }}>

@@ -3,10 +3,10 @@ import type { MetadataRoute } from "next";
 /** Ana ekrana eklendiğinde uygulama gibi açılması için PWA tanımı. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Lernomi — Almanca Kelime",
+    name: "Lernomi — Almanca ve İngilizce Kelime",
     short_name: "Lernomi",
     description:
-      "Goethe A1–C1 kelimeleriyle, tekrarı kendi planlayan oyunlaştırılmış Almanca kelime uygulaması.",
+      "A1–C1 kelimelerini on oyunla çalış; tekrarı uygulama planlar. Almanca (Hochdeutsch ve Zürih Almancası) ve İngilizce, Türkçe anlatımıyla.",
     start_url: "/learn",
     scope: "/",
     display: "standalone",

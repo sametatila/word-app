@@ -18,8 +18,23 @@ export type ItemState = {
   item: ImmersionItem;
   /** İçerik kurulu mu (ref var). Placeholder ise false — "yakında". */
   playable: boolean;
-  /** Tamamlandı mı — yalnız playable item için anlamlı. */
+  /** Tamamlandı mı (beceride skor ≥ eşik) — yalnız playable item için anlamlı. */
   done: boolean;
+  /** Bir kez oynandı mı — puanı yetmese bile. */
+  attempted: boolean;
+  /**
+   * Şu an açılabilir mi.
+   *
+   * Kapı USTALIĞA değil İLERLEMEYE bağlı: biten ve denenen her öğe açık, artı
+   * SIRADAKİ tek öğe. Daha sonrakiler kapalı — yani öğrenci ilerledikçe pencere
+   * kendiliğinden kayıyor.
+   *
+   * Önceden yalnız `done` (skor ≥ 70) sayılıyordu ve patikada tek bir "sıradaki"
+   * bağlantısı vardı: bir beceriden 70 alamayan öğrenci o beceride SONSUZA DEK
+   * takılıyordu, çünkü hiçbir şey onu "bitmiş" yapmıyordu. Bir egzersizi
+   * anlayıp geçememek, sıradakini hiç görememek anlamına gelmemeli.
+   */
+  open: boolean;
 };
 
 export type UnitState = {
@@ -50,6 +65,15 @@ export type TrackState = {
 export type Completion = {
   lessonDone: (ref: string) => boolean;
   skillDone: (ref: string) => boolean;
+  /**
+   * "Denendi" — kayıt var ama puan yetmemiş olabilir. Kapı bunu kullanıyor;
+   * `*Done` ise ünite tamamlanması ve gösterimde kalıyor.
+   *
+   * İsteğe bağlı: eski çağıranlar (testler, eski adaptör) vermezse davranış
+   * bitmiş-öğeye düşer, yani eski hâl.
+   */
+  lessonAttempted?: (ref: string) => boolean;
+  skillAttempted?: (ref: string) => boolean;
 };
 
 function itemDone(it: ImmersionItem, c: Completion): boolean {
@@ -59,17 +83,39 @@ function itemDone(it: ImmersionItem, c: Completion): boolean {
   return false; // grammar/quiz/checkpoint bugün ref taşımaz (placeholder)
 }
 
+function itemAttempted(it: ImmersionItem, c: Completion): boolean {
+  if (it.ref === null) return false;
+  if (it.kind === "lesson") return c.lessonAttempted?.(it.ref) ?? false;
+  if (it.kind === "read" || it.kind === "listen" || it.kind === "write") return c.skillAttempted?.(it.ref) ?? false;
+  return false;
+}
+
 export function buildTrackState(track: ImmersionTrack, c: Completion): TrackState {
   const units: UnitState[] = [];
   let prevComplete = true; // ilk ünite daima kilitsiz
   let currentIndex = -1;
 
   for (const unit of track.units) {
-    const items: ItemState[] = unit.items.map((item) => ({
-      item,
-      playable: item.ref !== null,
-      done: itemDone(item, c),
-    }));
+    const locked = !prevComplete;
+    const items: ItemState[] = unit.items.map((item) => {
+      const done = itemDone(item, c);
+      return {
+        item,
+        playable: item.ref !== null,
+        done,
+        attempted: done || itemAttempted(item, c),
+        open: false,
+      };
+    });
+    // Kayan pencere: biten/denenen her öğe açık, artı ilk denenmemiş olan.
+    // Yer tutucular (içeriği olmayan) ne açılır ne de sırayı harcar — yoksa
+    // henüz yazılmamış bir gramer adımı patikayı kapatırdı.
+    let siradakiVerildi = false;
+    for (const s of items) {
+      if (locked || !s.playable) continue;
+      if (s.attempted) { s.open = true; continue; }
+      if (!siradakiVerildi) { s.open = true; siradakiVerildi = true; }
+    }
     const playable = items.filter((i) => i.playable);
     // total/done = TAMAMLANABİLİR item'lar (ders + beceri). quiz/checkpoint
     // ünite brief'inden türetilen PRATİK: oynanabilir ama done-takibi yok (v1),
@@ -90,7 +136,6 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
     // "tüm item'lar" haline sıkılaştırılabilir. Dersi olmayan ünite (de'de
     // olmaz) tüm-oynanabilir ölçütüne düşer — boş ünite sonrasını kilitlemesin.
     const complete = lessonsTotal > 0 ? lessonsDone === lessonsTotal : total === 0 || done === total;
-    const locked = !prevComplete;
     units.push({ unit, locked, complete, done, total, lessonsDone, lessonsTotal, items });
     if (!locked && !complete && currentIndex < 0) currentIndex = unit.index;
     prevComplete = complete;

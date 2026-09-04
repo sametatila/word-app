@@ -106,37 +106,64 @@ function stopActiveChain() {
 }
 
 /**
- * İlk kullanıcı hareketinde ses öğesini serbest bırakır.
+ * Kullanıcı hareketinde ses öğelerini serbest bırakır.
  *
  * Sessiz ve çok kısa bir kayıt çalınıyor; amaç ses çıkarmak değil, tarayıcının
- * "bu öğeyi kullanıcı başlattı" saymasını sağlamak. Bir kez çalışıp dinleyiciyi
- * kaldırıyor.
+ * "bu öğeyi kullanıcı başlattı" saymasını sağlamak.
+ *
+ * iOS'ta iki incelik var ve ikisi de burada yanlıştı:
+ *
+ *   1. **Hangi olay sayılır.** WebKit medya oynatmayı `touchend`, `click` ve
+ *      `keydown` ile serbest bırakıyor; `pointerdown` (dokunuşun BAŞI) bunun
+ *      için yeterli bir kullanıcı etkinleşmesi değil. Yalnız `pointerdown`
+ *      dinlendiği için iOS'ta öğe hiçbir zaman açılmıyordu.
+ *   2. **Bir kez denemek yetmez.** Dinleyici `once` idi ve `play()` reddedilse
+ *      bile kaldırılıyordu; yani ilk deneme başarısız olduğunda öğe o oturum
+ *      boyunca kilitli kalıyordu.
+ *
+ * Sonuç şuydu: kendiliğinden okuyan yerler (Kulaktan Tanı turu) hiç
+ * konuşmuyordu; hoparlör düğmesi de kurtarmıyordu, çünkü asıl çalma `fetch`
+ * sonrasına — yani dokunuşun dışına — düşüyor ve orada açılmamış öğe yine
+ * engelleniyordu. Ardından tarayıcı sentezine düşülüyor, o da yüklü PWA'da
+ * güvenilir çalışmıyor: tam sessizlik.
+ *
+ * Artık BAŞARIYA kadar deneniyor ve `touchend`/`click` de dinleniyor.
  */
+const UNLOCK_EVENTS = ["touchend", "click", "keydown", "pointerup"] as const;
+let unlocked = false;
+
+/** Sessiz, çok kısa mp3 — tek amacı öğeyi kullanıcı hareketiyle çalıştırmak. */
+const SILENCE =
+  "data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4LjI5LjEwMAAAAAAAAAAAAAAA//tAwAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAACAAABIADAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD//////////////////////////////////////8AAAAATGF2YzU4LjU0AAAAAAAAAAAAAAAAJAAAAAAAAAAAASDs90hvAAAAAAAAAAAAAAAAAAAA";
+
 function primeOnFirstGesture() {
   if (typeof window === "undefined") return;
   const unlock = () => {
-    // Her iki öğe de serbest bırakılıyor: anlatım zinciri ikinciyi de kullanıyor
-    // ve iOS yalnızca kullanıcı hareketiyle çalmış öğeyi serbest sayıyor.
-    for (const el of [audioElement(), extraElement()]) {
-      if (!el) continue;
-      el.src =
-        "data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4LjI5LjEwMAAAAAAAAAAAAAAA//tAwAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAACAAABIADAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD//////////////////////////////////////8AAAAATGF2YzU4LjU0AAAAAAAAAAAAAAAAJAAAAAAAAAAAASDs90hvAAAAAAAAAAAAAAAAAAAA";
-      el.volume = 0;
+    if (unlocked) return detach();
+    // Askıya alınmış WebAudio bağlamı da bu hareketle uyanabilir; bağlam
+    // uygulama arka plana atılınca yeniden askıya alınıyor, o yüzden her
+    // harekette deneniyor.
+    sharedAudioContext();
+    const els = [audioElement(), extraElement()].filter(Boolean) as HTMLAudioElement[];
+    if (!els.length) return;
+    let kalan = els.length;
+    let hepsi = true;
+    for (const el of els) {
+      el.src = SILENCE;
+      // iOS'ta `volume` salt okunur; kayıt zaten sessiz olduğu için sorun yok.
       void el.play().then(
-        () => {
-          el.pause();
-          el.volume = 1;
-        },
-        () => {
-          el.volume = 1;
-        },
-      );
+        () => { el.pause(); },
+        () => { hepsi = false; },
+      ).finally(() => {
+        if (--kalan === 0 && hepsi) { unlocked = true; detach(); }
+      });
     }
-    window.removeEventListener("pointerdown", unlock);
-    window.removeEventListener("keydown", unlock);
   };
-  window.addEventListener("pointerdown", unlock, { once: true });
-  window.addEventListener("keydown", unlock, { once: true });
+  const detach = () => {
+    for (const ev of UNLOCK_EVENTS) window.removeEventListener(ev, unlock);
+  };
+  // `once` YOK: ilk deneme reddedilirse sonraki dokunuşta yeniden denenmeli.
+  for (const ev of UNLOCK_EVENTS) window.addEventListener(ev, unlock);
 }
 
 if (typeof window !== "undefined") primeOnFirstGesture();
@@ -824,11 +851,37 @@ function play(
     onDuration(Math.round((total - audio.currentTime) * 1000));
   };
   audio.src = ttsUrl(voice, clean, slow);
-  audio.currentTime = 0;
+  // `currentTime` ataması KORUNMALI: kaynak henüz yüklenmemişken (readyState
+  // HAVE_NOTHING) Safari bunu InvalidStateError ile reddedebiliyor ve fırlayan
+  // hata bir alt satırdaki play()'e hiç sıra gelmeden çağıran işleyiciyi
+  // kırıyordu — hoparlör düğmesi hiçbir şey yapmamış gibi görünüyordu.
+  // Yeni bir kaynak zaten baştan başlar; bu satır yalnız aynı kaynağı ikinci
+  // kez çalarken anlamlı.
+  try {
+    audio.currentTime = 0;
+  } catch {
+    /* kaynak henüz açılmadı; zaten baştan başlayacak */
+  }
   // play() reddedilirse (otomatik oynatma engeli, yüklenemeyen kaynak) de
   // aynı yedeğe düşülür.
   void audio.play().catch(fallback);
+  // Nöbetçi: play() sözü çözülse bile ses hiç BAŞLAMAYABİLİYOR (iOS'ta
+  // engellenen oynatma bazen ne reddediyor ne de `error` veriyor). Belirli bir
+  // süre içinde `playing` gelmezse yedeğe düşülüyor, yoksa tur sessiz kalırdı.
+  const bekci = setTimeout(() => {
+    if (done || token !== mine) return;
+    if (audio.paused || audio.currentTime === 0) fallback();
+  }, PLAY_WATCHDOG_MS);
+  const iptal = () => clearTimeout(bekci);
+  audio.addEventListener("playing", iptal, { once: true });
+  audio.addEventListener("error", iptal, { once: true });
 }
+
+/**
+ * Sesin başlaması için tanınan süre. Ağ + çözme payı bırakacak kadar uzun,
+ * kullanıcının "hiçbir şey olmadı" diyeceğinden kısa.
+ */
+const PLAY_WATCHDOG_MS = 2500;
 
 /**
  * Tarayıcının kendi sentezi — yedek yol.

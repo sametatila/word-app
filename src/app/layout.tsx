@@ -12,12 +12,14 @@ import "./globals.css";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.BETTER_AUTH_URL || "https://www.lernomi.app";
 
+// Tek dile kilitlenmeyen tanım: kurs listesi büyüdükçe (Almanca-İngilizce
+// paritesi) burayı yeniden yazmak gerekmesin.
 const description =
-  "A1'den C1'e 7.392 kelime, on oyun ve kendi kendini ayarlayan tekrar sistemiyle Almanca kelime uygulaması. Hochdeutsch ve Zürih Almancası, Türkçe anlatımıyla.";
+  "A1–C1 kelimelerini on oyunla çalış; tekrarı uygulama planlar. Almanca (Hochdeutsch ve Zürih Almancası) ve İngilizce, Türkçe anlatımıyla.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Lernomi — Almanca Kelime",
+  title: "Lernomi — Almanca ve İngilizce Kelime",
   description,
   applicationName: "Lernomi",
   manifest: "/manifest.webmanifest",
@@ -25,13 +27,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "tr_TR",
     siteName: "Lernomi",
-    title: "Lernomi — Almanca kelimeleri oynayarak öğren",
+    title: "Lernomi — kelimeleri oynayarak öğren",
     description,
     url: siteUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lernomi — Almanca kelimeleri oynayarak öğren",
+    title: "Lernomi — kelimeleri oynayarak öğren",
     description,
   },
   appleWebApp: { capable: true, title: "Lernomi", statusBarStyle: "black-translucent" },

@@ -22,7 +22,12 @@ export type HubItem = {
   title: string;
   titleTr?: string;
   playable: boolean;
+  /** Skor eşiğini geçti mi. */
   done: boolean;
+  /** Bir kez oynandı mı — puanı yetmese bile. */
+  attempted: boolean;
+  /** Açılabilir mi: biten + denenen + sıradaki tek öğe (bkz. lib/immersion/state). */
+  open: boolean;
 };
 
 export type HubUnit = {
@@ -93,8 +98,20 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
 }
 
 function Featured({ unit, isCurrent }: { unit: HubUnit; isCurrent: boolean }) {
-  const next = unit.items.find((i) => i.playable && !i.done && i.href) ?? null;
-  const nextHref = next?.href ?? unit.items.find((i) => i.href)?.href ?? null;
+  /*
+    "Sıradaki" DENENMEMİŞ ilk açık öğedir, BİTMEMİŞ ilk öğe değil.
+
+    Eskiden `!i.done` aranıyordu: bir beceriden 70 alamayan öğrenci o beceride
+    sonsuza dek takılıyordu, çünkü patikadaki tek bağlantı hep onu gösteriyordu
+    ve başka hiçbir öğeye gidilemiyordu. Artık deneme sırayı ilerletiyor;
+    denenmiş ama geçilmemiş öğe kapanmıyor, aşağıdaki şeritten tekrar açılıyor.
+
+    Hepsi denenmişse geri düşüş sırası: geçilmemiş ilk açık öğe (tekrar için),
+    yoksa ilk açık öğe.
+  */
+  const open = unit.items.filter((i) => i.open && i.href);
+  const next = open.find((i) => !i.attempted) ?? open.find((i) => !i.done) ?? open[0] ?? null;
+  const nextHref = next?.href ?? null;
 
   return (
     <section
@@ -118,8 +135,25 @@ function Featured({ unit, isCurrent }: { unit: HubUnit; isCurrent: boolean }) {
           sıradaki kehribar, gerisi boş. */}
       <div className="mt-3.5 flex gap-1">
         {unit.items.map((it) => {
-          const seg = it.done ? "var(--color-mint-500)" : it === next ? "var(--color-brand-600)" : "var(--surface-2)";
-          return <span key={it.id} className="h-2.5 flex-1 rounded-full" style={{ background: seg }} />;
+          // Dört durum: biten yosun, sıradaki kehribar, denenmiş-ama-geçilmemiş
+          // soluk kehribar (tekrar edilebilir), kapalı boş.
+          const seg = it.done
+            ? "var(--color-mint-500)"
+            : it === next
+              ? "var(--color-brand-600)"
+              : it.attempted
+                ? "var(--color-brand-300)"
+                : "var(--surface-2)";
+          const bar = <span className="block h-2.5 w-full rounded-full" style={{ background: seg }} />;
+          // Açık öğeler doğrudan tıklanabilir: takılınan bir beceriye geri
+          // dönmenin ya da sıradakine atlamanın yolu bu.
+          return it.open && it.href && !unit.locked ? (
+            <Link key={it.id} href={it.href} prefetch={false} className="flex-1" aria-label={it.title} title={it.title}>
+              {bar}
+            </Link>
+          ) : (
+            <span key={it.id} className="flex-1">{bar}</span>
+          );
         })}
       </div>
 

@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { dailyScores, profiles, words } from "@/lib/db/schema";
 import { firstExample } from "@/lib/example";
 import { pluralChoices } from "@/lib/german";
+import { optionLabel } from "@/lib/option-label";
 import type { GameId, Option, Round, RoundWord } from "@/lib/types";
 
 /**
@@ -222,10 +223,10 @@ function seededOptions(
   direction: "de-tr" | "tr-de",
   rand: () => number,
 ): Option[] {
-  // Anlam sorulan yönde şık iki dillidir; Almanca sorulan yönde ikinci satır
-  // yoktur — orada sorulan şey anlam değil, kelimenin kendisi.
-  const label = (p: { de: string; tr: string; en: string | null }): Option =>
-    direction === "de-tr" ? { text: p.tr, sub: p.en } : { text: p.de, sub: null };
+  // Etiket kuralı ortak kaynakta (lib/option-label.ts): artikel buradan
+  // düşmüştü ve tr→de yönünde doğru şık seçilemiyordu.
+  const label = (p: { de: string; tr: string; en: string | null; artikel: string | null }): Option =>
+    optionLabel(p, direction);
   const correct = label(word);
   const seen = new Set([correct.text]);
   const distractors: Option[] = [];

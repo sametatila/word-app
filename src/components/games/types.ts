@@ -28,10 +28,10 @@ export type GameProps<R extends Round = Round> = {
 
 export type { RoundWord };
 
-/** Almanca kelimeyi artikeliyle birlikte gösterir. */
-export function withArtikel(w: RoundWord): string {
-  return w.artikel ? `${w.artikel} ${w.de}` : w.de;
-}
+// Artikelli gösterim ortak kaynakta: şık üreticisi (lib/session, lib/daily) ile
+// oyun ekranının doğru cevabı kurma biçimi AYNI fonksiyondan gelmeli — ayrıldığı
+// anda doğru şık seçilemez hâle geliyor.
+export { withArtikel } from "@/lib/option-label";
 
 export function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];

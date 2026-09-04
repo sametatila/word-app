@@ -12,6 +12,7 @@ import { nextStreak, shiftDay } from "@/lib/award";
 import { onActivityAwarded } from "@/lib/social/hooks";
 import { xpForChallengeRecord, xpForWager } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
+import { optionLabel } from "@/lib/option-label";
 import { pluralChoices } from "@/lib/german";
 import type {
   Answer,
@@ -1471,12 +1472,9 @@ function optionsFor(
   pool: (typeof words.$inferSelect)[],
   direction: "de-tr" | "tr-de" = "de-tr",
 ): Option[] {
-  // Almanca şıklarda artikel de görünür: "die Apotheke" kelimenin bir parçasıdır.
-  // O yönde ikinci satır yok — orada sorulan şey anlam değil, kelimenin kendisi.
-  const label: Labeler = (p) =>
-    direction === "de-tr"
-      ? { text: p.tr, sub: p.en }
-      : { text: p.artikel ? `${p.artikel} ${p.de}` : p.de, sub: null };
+  // Etiket kuralı ortak kaynakta (lib/option-label.ts) — oyun ekranının doğru
+  // cevabı kurma biçimiyle aynı kalsın diye.
+  const label: Labeler = (p) => optionLabel(p, direction);
   return shuffle([label(word), ...pickDistractors(word, pool, 3, label)]);
 }
 

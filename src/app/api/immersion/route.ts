@@ -46,6 +46,10 @@ export async function GET() {
         titleTr: s.item.titleTr,
         playable: s.playable,
         done: s.done,
+        // Kapı artık ustalığa değil ilerlemeye bağlı: biten + denenen + sıradaki
+        // tek öğe açık. İstemci `open`a bakmalı, `done`a değil.
+        attempted: s.attempted,
+        open: s.open,
       })),
     }));
 

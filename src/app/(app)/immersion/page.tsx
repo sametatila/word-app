@@ -58,6 +58,8 @@ export default async function ImmersionPage() {
       titleTr: s.item.titleTr,
       playable: s.playable,
       done: s.done,
+      attempted: s.attempted,
+      open: s.open,
     })),
   }));
 

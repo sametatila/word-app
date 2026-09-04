@@ -25,7 +25,10 @@ function transport(): Transporter {
     cached = nodemailer.createTransport({
       host: HOST,
       port: PORT,
-      secure: PORT === 465, // 465 → örtük TLS; 587 → STARTTLS
+          // 465/2465 örtük TLS; 587/2587 STARTTLS. 2xxx portlari, saglayicilarin
+      // giden 25/465/587'yi kapattigi sunucular icin Resend'in alternatifi —
+      // Netcup tam olarak bunu yapiyor, o yuzden uretimde 2587 kullaniliyor.
+      secure: PORT === 465 || PORT === 2465,
       auth: { user: USER, pass: PASS },
     });
   }
