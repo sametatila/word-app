@@ -32,8 +32,34 @@ Bayrağı açmadan önce `LEGAL_VERSION` artırılmalı ve `LEGAL_CHANGELOG`'a k
 | 4 | Uygulama içi hesap silme | 5.1.1(v) zorunlu kılıyor — Android'de var, iOS'ta da aynı yere bağlanmalı |
 | 5 | Gizlilik etiketleri | Aşağıdaki tablo App Store Connect'e girilir |
 | 6 | Yaş derecelendirmesi | Play'de 18+ seçildi; App Store derecelendirmesi ayrı doldurulur ve tutarlı olmalı |
-| 7 | iOS'ta konuşma tanıma yolunun kesinleşmesi | Gizlilik politikası §4 cihaz içi tanıyıcıyı anlatıyor; iOS'ta hangi yolun kullanılacağı yazılmadan metin kesinleşmez |
-| 8 | `NSMicrophoneUsageDescription` ve `NSSpeechRecognitionUsageDescription` | İzin metinleri üç dilde; Android'deki belirgin açıklama ekranının iOS karşılığı |
+| 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi ve kod yazıldı, ama macOS/Xcode olmadan derlenip denenemedi (aşağıya bak) |
+| 8 | İzin metinlerinin Xcode projesine bağlanması | `tr/en/de.lproj/InfoPlist.strings` yazıldı; hedefe eklenip `CFBundleLocalizations` ayarlanmalı |
+
+## Ekran kapalıyken yürüyüş modu (arka planda ses)
+
+**Karar:** iOS'ta da ekran kapalıyken çalışacak. Android'de bunu mikrofon tipli ön plan
+servisi yapıyor; iOS'ta böyle bir şey yok — uygulamayı ekran kapalıyken ayakta tutan tek
+şey **etkin bir ses oturumu** ve `UIBackgroundModes = audio`.
+
+Yapılanlar:
+
+- `Info.plist` → `UIBackgroundModes: [audio]`.
+- `LernomiSpeech.swift` → `startWalkService` / `stopWalkService`. Metot adları Android'le
+  birebir aynı; JS (`lib/stt.ts`) bunları zaten çağırıyordu ve iOS'ta sessizce boşa
+  düşüyordu, **JS değişmedi**. Oturum tur boyunca açık tutuluyor.
+- Kelime başına yapılan temizlik artık tur oturumunu kapatmıyor; kapatsaydı ekran
+  kapalıyken bir sonraki kelimeye geçilemezdi.
+
+**Doğrulanmadı.** Bu makinede macOS ve Xcode yok; kod derlenmedi, cihazda denenmedi.
+Cihazda sınanacak dört şey: (1) ekran kilitlendikten sonra tur devam ediyor mu,
+(2) kelimeler arası boşlukta uygulama askıya alınıyor mu, (3) kilit ekranında mikrofon
+göstergesi görünüyor mu, (4) telefon çağrısı gelip bittiğinde oturum toparlanıyor mu.
+
+**İnceleme riski:** arka planda mikrofon isteyen bir uygulama App Review'da en çok
+sorgulanan şeydir. App Review Information alanına şu üçü açıkça yazılmalı: modu kullanıcı
+başlatır, kilit ekranında sürdüğü görünür, uygulama içinden durdurulabilir. Video eklemek
+en hızlı çözen yol.
+
 
 ## Gizlilik etiketleri (App Store Connect › App Privacy)
 
