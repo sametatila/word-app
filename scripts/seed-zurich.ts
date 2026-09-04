@@ -26,6 +26,8 @@ type SrcRow = {
   de: string;
   artikel: string;
   tr: string;
+  /** Almanca satırın İngilizce karşılığı — lehçede de aynı (bkz. aşağıdaki not). */
+  en?: string | null;
   typ: string;
   niveau: string;
   beispiel: string;
@@ -170,7 +172,11 @@ async function main() {
       de: cleanHeadword(g.gsw),
       artikel: g.artikel || null,
       tr: meaning?.tr ?? src.tr,
-      en: meaning?.en ?? null,
+      // Kaynaktan devralınıyor: `meaning?.en ?? null` yazılıydı ve bu, anlam
+      // çalışmasına girmemiş ~7900 maddenin İngilizce karşılığını seed her
+      // çalıştığında SİLİYORDU. Kelime düzeyindeki karşılıklar iki kursta aynı
+      // olduğu için doğru davranış Almanca satırdakini almak.
+      en: meaning?.en ?? src.en ?? null,
       formen: `HD: ${cleanHeadword(src.de)}`,
       typ: inferTyp(meaning ? { ...src, tr: meaning.tr } : src),
       niveau: src.niveau.startsWith("A1") ? "A1" : src.niveau,
