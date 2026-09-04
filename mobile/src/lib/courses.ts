@@ -80,6 +80,16 @@ export type Course = {
    * kursa girip kırık bir deneyim yaşamasındansa hiç görmemesi iyidir.
    */
   enabled: boolean;
+  /**
+   * İlk açılışta yeni kullanıcıya sunulur mu.
+   *
+   * `enabled`'dan ayrı: Züritüütsch bir lehçe kursu ve şu an duraklatılmış,
+   * "hangi dili öğrenmek istersin" sorusuna cevap olarak sunmak yanıltıcı.
+   * Ama `enabled`'ı kapatmak mevcut Zürih kullanıcılarını kurssuz bırakır ve
+   * sunucu onların profilini reddeder — o yüzden kurs açık kalıyor, yalnız
+   * onboarding listesinden düşüyor. Ayarlar'dan hâlâ seçilebilir.
+   */
+  offeredToNewUsers: boolean;
 };
 
 export const COURSES: Course[] = [
@@ -95,6 +105,7 @@ export const COURSES: Course[] = [
     },
     hasArticles: true,
     enabled: true,
+    offeredToNewUsers: true,
   },
   {
     id: "gsw-zh",
@@ -108,6 +119,8 @@ export const COURSES: Course[] = [
     },
     hasArticles: true,
     enabled: true,
+    // Duraklatılmış lehçe kursu — ilk açılışta sunulmuyor (bkz. offeredToNewUsers).
+    offeredToNewUsers: false,
   },
   {
     id: "en",
@@ -121,9 +134,9 @@ export const COURSES: Course[] = [
     },
     // İngilizcede isimlerin cinsiyeti yok; artikel/çoğul turları anlamsız.
     hasArticles: false,
-    // Kelime katmanı hazır (2049+ madde, 8 tur türü). Ders ve beceri içeriği
-    // henüz yok: Patika ve Beceriler ekranları bu kursta boş görünür.
+    // A1 ve A2 tam (100+100 ders, 12/12/8 beceri); B1–C1 sonraya bırakıldı.
     enabled: true,
+    offeredToNewUsers: true,
   },
 ];
 
@@ -166,6 +179,11 @@ export function enabledCourses(): Course[] {
  */
 export function coursesForNative(lang: NativeLang): Course[] {
   return enabledCourses().filter((c) => c.targetLang !== lang);
+}
+
+/** İlk açılışta sunulan kurslar — duraklatılmış/lehçe kursları elenir. */
+export function onboardingCoursesFor(lang: NativeLang): Course[] {
+  return coursesForNative(lang).filter((c) => c.offeredToNewUsers);
 }
 
 /** Kursun konuşma yerel kodu (TTS/STT). */

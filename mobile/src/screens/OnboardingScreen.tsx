@@ -10,7 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon, SpeakerIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
 import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
-import { coursesForNative, DEFAULT_COURSE_ID, NATIVE_LANGS, type NativeLang } from "../lib/courses";
+import { coursesForNative, onboardingCoursesFor, DEFAULT_COURSE_ID, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { hasDemoPlacement } from "../data/demoPlacement";
 import { hasFirstWords } from "../data/firstWords";
 import { t, currentLang, setLang } from "../lib/i18n";
@@ -52,32 +52,27 @@ function steps(course: string): Step[] {
   const canTest = hasDemoPlacement(lang, course);
   return [
     {
-      // ANADİL en başta: sonraki bütün adımların metni ve kurs listesi buna
-      // bağlı. Varsayılan cihaz dilinden geliyor (loadLang), bu adım onu
-      // görünür ve değiştirilebilir kılıyor — kullanıcı Ayarlar'ı bulmak
-      // zorunda kalmasın diye.
-      key: "lang", icon: SpeakerIcon,
-      title: t("onboarding.hangi_dilde_ogrenelim"),
-      subtitle: t("onboarding.anadilini_sec_ders_anlatimi_bu_dilde"),
-      options: NATIVE_LANGS.map((l) => ({ key: l, label: LANG_LABEL[l], sub: t("onboarding.lang_sub_" + l) })),
-    },
-    {
       key: "welcome", icon: BoltIcon,
       title: t("onboarding.nomi_ye_hos_geldin"),
       subtitle: t("onboarding.kisa_turlarla_oyun_gibi_ogren_birk"),
     },
     {
+      // ANADİL, kurstan ÖNCE: kurs listesi ve sonraki adımların metni buna
+      // bağlı. Karşılamadan sonra duruyor çünkü karşılama ekranında seçim yok,
+      // cihaz dilinde çizilmesi bir şeyi bozmuyor.
+      key: "lang", icon: SpeakerIcon,
+      title: t("onboarding.hangi_dilde_ogrenelim"),
+      subtitle: t("onboarding.anadilini_sec_ders_anlatimi_bu_dilde"),
+      options: NATIVE_LANGS.map((l) => ({ key: l, label: LANG_LABEL[l] })),
+    },
+    {
       key: "course", icon: SkillsIcon,
       title: t("onboarding.hangi_kursla_baslayalim"),
       subtitle: t("onboarding.kursunu_sec_sonradan_ayarlar_dan_d"),
-      // Kurs kayıt defterinden türüyor (lib/courses.ts): içeriği hazır olmayan
-      // kurs listede görünmez, yeni dil açıldığında burası kendiliğinden doğrular.
-      // Anadil elenir — kimse kendi dilini "öğrenilecek dil" olarak seçmemeli.
-      options: coursesForNative(lang).map((c) => ({
-        key: c.id,
-        label: c.label[lang],
-        sub: c.sub[lang],
-      })),
+      // Kurs kayıt defterinden türüyor (lib/courses.ts). Anadil elenir (kimse
+      // kendi dilini "öğrenilecek dil" olarak seçmez) ve duraklatılmış lehçe
+      // kursu ilk açılışta sunulmaz — Ayarlar'dan hâlâ seçilebilir.
+      options: onboardingCoursesFor(lang).map((c) => ({ key: c.id, label: c.label[lang] })),
     },
     {
       key: "level", icon: ExamIcon,
@@ -87,8 +82,8 @@ function steps(course: string): Step[] {
       // görünmez (seçilip boş bir teste düşmektense hiç sunulmamalı).
       options: [
         { key: "A1", label: t("onboarding.sifirdan"), sub: t("onboarding.yeni_basliyorum_ilk_kelimelerle_is") },
-        ...(canTest ? [{ key: "test", label: t("onboarding.testle_belirle"), sub: t("onboarding.kisa_yerlestirme_sinavi") }] : []),
         { key: "pick", label: t("onboarding.seviyeni_sec"), sub: t("onboarding.seviyeni_biliyorsan_dogrudan_sec") },
+        ...(canTest ? [{ key: "test", label: t("onboarding.testle_belirle"), sub: t("onboarding.kisa_yerlestirme_sinavi") }] : []),
       ],
     },
     {
@@ -226,11 +221,8 @@ export function OnboardingScreen() {
       </View>
 
       <PressableScale onPress={next} style={[{ borderRadius: radii.lg, backgroundColor: canNext ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, canNext ? softShadow(colors.primary, 10) : {}]}>
-        <Text variant="h3" color={canNext ? "#fff" : colors.textFaint}>{last && choices.level === "test" ? t("onboarding.teste_basla") : t("common.devam_et")}</Text>
+        <Text variant="h3" color={canNext ? "#fff" : colors.textFaint}>{t("common.devam_et")}</Text>
       </PressableScale>
-      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
-        {t("onboarding.birazdan_hesabini_acacaksin_serin")}
-      </Text>
     </View>
   );
 }
