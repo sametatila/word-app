@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, PLATFORM_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, PLATFORM_TEXT, PROCESSORS, hasIos, legalPath, processorRow } from "@/lib/legal";
 
 /**
  * Privacy policy — English. Informational translation; the Turkish text at
@@ -87,13 +87,13 @@ export function PrivacyEnBody() {
 
       <h2>4. Microphone and audio recordings</h2>
       <p>
-        In walk mode you hear a prompt in your own language and say the target-language word. While the screen is on, recognition happens on your device, using the device&apos;s own speech recognition service. While the screen is off or the phone is in your pocket, audio is sent to our
+        In walk mode you hear a prompt in your own language and say the target-language word. While the screen is on, recognition is performed by the device&apos;s own speech recognition service. Whether that service processes the audio on the device or sends it to the operating system provider&apos;s servers (Google or Apple) depends on the device, the language and the device settings, and is governed by that provider&apos;s own terms; this path does not go through our server. While the screen is off or the phone is in your pocket, audio is sent to our
         server as a 16 kHz mono recording and passed to one of the speech recognition providers listed below. The audio file is not stored
         on our server or at the provider; only the recognised text, the expected word and the clip length are written to the usage record.
       </p>
       <ul>
         <li>The microphone opens only when you start walk mode; a persistent notification is shown and you can stop it from the app.</li>
-        <li>While the screen is off, recording runs through the background mechanism the operating system provides for this (on Android, a microphone-type foreground service); the system microphone indicator stays on.</li>
+        <li>While the screen is off, recording runs through the background mechanism the operating system provides for this: a microphone-type foreground service on Android{hasIos() ? <>, a background audio session on iOS</> : null}. The system microphone indicator stays on.</li>
         <li>On first use a consent screen explains this processing; the mode does not start without your consent. If you decline, the microphone is never used and the rest of the app works.</li>
         <li>Profanity is masked in the recognition result.</li>
       </ul>

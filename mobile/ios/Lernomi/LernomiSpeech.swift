@@ -50,6 +50,40 @@ class LernomiSpeech: RCTEventEmitter {
     DispatchQueue.main.async { UIApplication.shared.isIdleTimerDisabled = on }
   }
 
+  // --- Yürüyüş modu arka plan oturumu ---
+  //
+  // Android'de bunun karşılığı mikrofon tipli ÖN PLAN SERVİSİ; iOS'ta böyle bir
+  // şey yok, uygulamayı ekran kapalıyken ayakta tutan tek şey ETKİN BİR SES
+  // OTURUMU (Info.plist'te UIBackgroundModes = audio ile birlikte). Bu yüzden
+  // oturum yürüyüş turu boyunca AÇIK TUTULUYOR: kelimeler arasında kapanırsa
+  // iOS uygulamayı askıya alır ve tur ekran kapanınca ölür.
+  //
+  // Metot adları Android'le birebir aynı; JS tarafı (lib/stt.ts) zaten bunları
+  // çağırıyor ve iOS'ta şimdiye kadar sessizce boşa düşüyordu — JS değişmedi.
+  private var walkSessionHeld = false
+
+  @objc(startWalkService)
+  func startWalkService() {
+    DispatchQueue.main.async {
+      do {
+        let session = AVAudioSession.sharedInstance()
+        try session.setCategory(.playAndRecord, mode: .measurement, options: [.duckOthers, .defaultToSpeaker])
+        try session.setActive(true)
+        self.walkSessionHeld = true
+      } catch {
+        self.send("LernomiSpeechError", ["code": "session"])
+      }
+    }
+  }
+
+  @objc(stopWalkService)
+  func stopWalkService() {
+    DispatchQueue.main.async {
+      self.walkSessionHeld = false
+      try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+    }
+  }
+
   // --- Ham ses kaydı (Azure/sunucu STT için): 16 kHz mono WAV. Ekran-kapalı/cepte yolu. ---
   private var audioRecorder: AVAudioRecorder?
   private var recordURL: URL?
@@ -189,7 +223,11 @@ class LernomiSpeech: RCTEventEmitter {
     task = nil
     request = nil
     recognizer = nil
-    try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+    // Yürüyüş turu oturumu tutuyorsa dokunma: kelime başına yapılan bu temizlik
+    // oturumu kapatsaydı, ekran kapalıyken tur bir sonraki kelimeye geçemezdi.
+    if !walkSessionHeld {
+      try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+    }
   }
 
   override func invalidate() {

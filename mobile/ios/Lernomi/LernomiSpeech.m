@@ -16,6 +16,8 @@ RCT_EXTERN_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(stopRecording:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(startWalkService)
+RCT_EXTERN_METHOD(stopWalkService)
 RCT_EXTERN_METHOD(stop)
 RCT_EXTERN_METHOD(cancel)
 RCT_EXTERN_METHOD(destroy)

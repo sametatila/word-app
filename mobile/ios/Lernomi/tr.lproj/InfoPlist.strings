@@ -1,0 +1,3 @@
+/* Sistem izin diyaloglarindaki metinler. Arayuz uc dilde; bu diyaloglar da oyle olmali. */
+"NSMicrophoneUsageDescription" = "Konuşarak cevap verebilmen için mikrofon erişimi gerekiyor.";
+"NSSpeechRecognitionUsageDescription" = "Söylediklerini metne çevirip cevabını değerlendirmek için konuşma tanıma kullanılıyor.";

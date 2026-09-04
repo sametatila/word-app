@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, PLATFORM_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, PLATFORM_TEXT, PROCESSORS, hasIos, legalPath, processorRow } from "@/lib/legal";
 
 /**
  * Datenschutzerklärung — Deutsch. Informative Übersetzung; verbindlich ist der
@@ -89,14 +89,14 @@ export function PrivacyDeBody() {
 
       <h2>4. Mikrofon und Audioaufnahmen</h2>
       <p>
-        Im Gehmodus hörst du eine Vorgabe in deiner Sprache und sprichst das Wort in der Zielsprache. Bei eingeschaltetem Bildschirm findet die Erkennung auf deinem Gerät statt, über den geräteeigenen Spracherkennungsdienst. Bei ausgeschaltetem Bildschirm oder wenn das Telefon in
+        Im Gehmodus hörst du eine Vorgabe in deiner Sprache und sprichst das Wort in der Zielsprache. Bei eingeschaltetem Bildschirm übernimmt die Erkennung der geräteeigene Spracherkennungsdienst. Ob dieser Dienst das Audio auf dem Gerät verarbeitet oder an die Server des Betriebssystemanbieters (Google oder Apple) sendet, hängt vom Gerät, von der Sprache und von den Geräteeinstellungen ab und richtet sich nach den Bedingungen dieses Anbieters; über unseren Server läuft dieser Weg nicht. Bei ausgeschaltetem Bildschirm oder wenn das Telefon in
         der Tasche steckt, wird das Audio als 16-kHz-Mono-Aufnahme an unseren Server gesendet und an einen der unten aufgeführten
         Spracherkennungsanbieter weitergegeben. Die Audiodatei wird weder auf dem Server noch beim Anbieter gespeichert; nur der erkannte
         Text, das erwartete Wort und die Cliplänge werden im Nutzungsdatensatz festgehalten.
       </p>
       <ul>
         <li>Das Mikrofon wird nur geöffnet, wenn du den Gehmodus startest; eine dauerhafte Benachrichtigung ist sichtbar, und du kannst ihn aus der App beenden.</li>
-        <li>Bei ausgeschaltetem Bildschirm läuft die Aufnahme über den Mechanismus, den das Betriebssystem dafür vorsieht (unter Android ein Vordergrunddienst vom Typ &quot;Mikrofon&quot;); die System-Mikrofonanzeige bleibt an.</li>
+        <li>Bei ausgeschaltetem Bildschirm läuft die Aufnahme über den Mechanismus, den das Betriebssystem dafür vorsieht: unter Android ein Vordergrunddienst vom Typ &quot;Mikrofon&quot;{hasIos() ? <>, unter iOS eine Hintergrund-Audiositzung</> : null}. Die System-Mikrofonanzeige bleibt an.</li>
         <li>Beim ersten Mal erklärt ein Einwilligungsbildschirm diese Verarbeitung; ohne Einwilligung startet der Modus nicht. Erteilst du sie nicht, wird das Mikrofon nie genutzt, und der Rest der App funktioniert.</li>
         <li>Im Erkennungsergebnis werden Schimpfwörter maskiert.</li>
       </ul>

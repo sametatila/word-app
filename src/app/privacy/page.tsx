@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, LegalShell, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PLATFORM_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PLATFORM_TEXT, PROCESSORS, hasIos, legalPath, processorRow } from "@/lib/legal";
 
 export const metadata = {
   title: "Gizlilik Politikası",
@@ -94,13 +94,13 @@ export default function PrivacyPage() {
 
       <h2>4. Mikrofon ve ses kayıtları</h2>
       <p>
-        Yürüyüş modunda Türkçe ipucunu duyar, Almancasını söylersin. Ekran açıkken tanıma cihazın kendi konuşma tanıma servisiyle, cihazda yapılır. Ekran kapalıyken ya da telefon cebindeyken ses, 16 kHz mono kayıt olarak sunucumuza gönderilir ve aşağıdaki konuşma
+        Yürüyüş modunda Türkçe ipucunu duyar, Almancasını söylersin. Ekran açıkken tanıma, cihazın kendi konuşma tanıma servisiyle yapılır. Bu servisin sesi cihazda mı işlediği yoksa işletim sistemi sağlayıcısının (Google ya da Apple) sunucularına mı gönderdiği cihaza, dile ve cihaz ayarlarına göre değişir ve o sağlayıcının kendi şartlarına tabidir; bu yol bizim sunucumuzdan geçmez. Ekran kapalıyken ya da telefon cebindeyken ses, 16 kHz mono kayıt olarak sunucumuza gönderilir ve aşağıdaki konuşma
         tanıma sağlayıcılarından birine iletilir. Ses dosyası sunucuda ya da sağlayıcıda saklanmaz; yalnız tanınan metin, beklenen kelime ve
         klip süresi kullanım kaydına yazılır.
       </p>
       <ul>
         <li>Mikrofon yalnız sen yürüyüş modunu başlatınca açılır; sürekli bir bildirim görünür ve uygulamadan durdurabilirsin.</li>
-        <li>Ekran kapalıyken kayıt, işletim sisteminin bu iş için öngördüğü arka plan yoluyla yapılır (Android&apos;de mikrofon tipli ön plan servisi); sistem mikrofon göstergesi açık kalır.</li>
+        <li>Ekran kapalıyken kayıt, işletim sisteminin bu iş için öngördüğü arka plan yoluyla yapılır: Android&apos;de mikrofon tipli ön plan servisi{hasIos() ? <>, iOS&apos;ta arka plan ses oturumu</> : null}. Sistemin mikrofon göstergesi açık kalır.</li>
         <li>İlk kullanımda bu işlemi anlatan bir onay ekranı gösterilir; onaylamadan mod başlamaz. Onayı vermezsen mikrofon hiç kullanılmaz, uygulamanın geri kalanı çalışır.</li>
         <li>Tanıma sonucunda küfür maskelenir.</li>
       </ul>

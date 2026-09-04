@@ -1,0 +1,3 @@
+/* System-Berechtigungsdialoge. Die Oberflaeche ist dreisprachig; diese Texte auch. */
+"NSMicrophoneUsageDescription" = "Mikrofonzugriff wird benötigt, damit du laut antworten kannst.";
+"NSSpeechRecognitionUsageDescription" = "Die Spracherkennung wandelt Gesprochenes in Text um, damit deine Antwort bewertet werden kann.";
