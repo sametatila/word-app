@@ -155,6 +155,10 @@ const cum = cumFor("a1");
  */
 function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   const izin = new Set([...(cumFor(seviye).get(unit) || [])]);
+  // Gün ve ay adları A1'de ÖĞRETİLMELİ (mevcut karar), ama üst seviyede
+  // öğrenci onları çoktan biliyor. Havuzda da yalnız "Mai" ile "Mittwoch"
+  // var; ötekiler eksik ve bu ayrı bir iş. Üst seviyede serbest bırakıyoruz.
+  if (String(seviye).toLowerCase() !== "a1") for (const t of TAKVIM) izin.add(t);
   for (const w of ekIzin) for (const x of parcala(w)) izin.add(x);
   // Türkçe harf taşıyan özel ad ("Yılmaz") Almanca sözcük regexinde parçalanıp
   // sahte gövde bırakıyor ("lmaz"); böyle belirteci bütünüyle atıyoruz.
@@ -166,7 +170,7 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   // İki büyük harfli sözcük yan yana ise ad-soyaddır ("Leyla Kaya", "Markus
   // Bauer") — cümle başında da olsa özel addır. Tek başına baştaki büyük harf
   // muaf tutulmuyor, çünkü her cümle büyük harfle başlar.
-  for (const m of ham.matchAll(/\b([A-ZÄÖÜ][a-zäöüß]{2,})\s+([A-ZÄÖÜ][a-zäöüß]{2,})\b/g)) {
+  for (const m of ham.matchAll(/\b([A-ZÄÖÜ][a-zäöüß]{1,})\s+([A-ZÄÖÜ][a-zäöüß]{1,})\b/g)) {
     if (!havuzKok.has(m[1].toLowerCase())) { ozelAd.add(m[1].toLowerCase()); ozelAd.add(m[2].toLowerCase()); }
   }
   for (const m of ham.matchAll(/\b(Dr|Prof|Frau|Herrn|Herr)\.?\s+(?:(?:Dr|Prof)\.?\s+)?([A-ZÄÖÜ][a-zäöüß]+)/g)) {
