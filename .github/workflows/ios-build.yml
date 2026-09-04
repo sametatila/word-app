@@ -56,18 +56,21 @@ jobs:
           key: pods-${{ runner.os }}-${{ hashFiles('mobile/ios/Podfile.lock', 'mobile/package-lock.json') }}
           restore-keys: pods-${{ runner.os }}-
 
-      # UI test hedefi projede yok; burada ekleniyor. Sebep: geliştirme makinesi
-      # Linux ve orada Ruby yok, yani xcodeproj gem'i yerelde koşturulamıyor.
-      # Elle pbxproj yazmak on nesne türü ve uydurma UUID demek olurdu. Betik
-      # fikirsiz: hedef zaten varsa dokunmuyor. pod install'dan ÖNCE, çünkü
-      # CocoaPods workspace'i ondan sonra üretiyor.
-      - name: UI test hedefi
-        working-directory: mobile
-        run: ruby scripts/ios-add-uitest-target.rb
-
       - name: pod install
         working-directory: mobile/ios
         run: pod install --repo-update
+
+      # UI test hedefi projede yok; burada ekleniyor. Sebep: geliştirme makinesi
+      # Linux ve orada Ruby yok, yani xcodeproj gem'i yerelde koşturulamıyor.
+      # Elle pbxproj yazmak on nesne türü ve uydurma UUID demek olurdu. Betik
+      # fikirsiz: hedef zaten varsa dokunmuyor.
+      #
+      # pod install'dan SONRA: önce denendi ve CocoaPods projeyi kendisi yeniden
+      # yazdığı için hedef bozuk çıktı. Workspace yalnız projeye başvuruyor,
+      # sonradan hedef eklemek onu bozmuyor.
+      - name: UI test hedefi
+        working-directory: mobile
+        run: ruby scripts/ios-add-uitest-target.rb
 
       # CODE_SIGNING_ALLOWED=NO: imza kimliği yok ve gerekmiyor.
       #

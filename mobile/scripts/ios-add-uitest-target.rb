@@ -49,6 +49,12 @@ target.add_dependency(app)
 
 target.build_configurations.each do |config|
   s = config.build_settings
+  # PRODUCT_NAME AÇIKÇA yazılıyor. Yazılmadığı ilk denemede boş kaldı ve
+  # xcodebuild "Multiple commands produce '.../-Runner.app/PlugIns/.xctest'"
+  # ile düştü: koşucu uygulamanın adı $(PRODUCT_NAME)-Runner.app, test paketininki
+  # $(PRODUCT_NAME).xctest — ad boşken ikisi de adsız yollara çakışıyor.
+  s['PRODUCT_NAME'] = TEST_TARGET
+  s['PRODUCT_MODULE_NAME'] = TEST_TARGET
   s['TEST_TARGET_NAME'] = APP_TARGET
   s['PRODUCT_BUNDLE_IDENTIFIER'] = 'app.lernomi.ios.uitests'
   s['SWIFT_VERSION'] = '5.0'
@@ -62,6 +68,15 @@ end
 
 project.save
 puts "#{TEST_TARGET} eklendi (dağıtım hedefi #{deployment})."
+
+# Teşhis: bir sonraki hata tahminle değil günlükle çözülsün.
+target.build_configurations.each do |config|
+  s = config.build_settings
+  puts "  [#{config.name}] PRODUCT_NAME=#{s['PRODUCT_NAME'].inspect} " \
+       "TEST_TARGET_NAME=#{s['TEST_TARGET_NAME'].inspect} " \
+       "bundle=#{s['PRODUCT_BUNDLE_IDENTIFIER'].inspect}"
+end
+puts "  proje hedefleri: #{project.targets.map(&:name).join(', ')}"
 
 # Şemaya TestAction: bu olmadan `xcodebuild test -scheme Lernomi` testi görmez.
 scheme_path = File.join(PROJECT_PATH, 'xcshareddata', 'xcschemes', "#{APP_TARGET}.xcscheme")
