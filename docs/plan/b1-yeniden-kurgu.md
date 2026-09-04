@@ -110,7 +110,7 @@ A1'de aritmetik temizdi: 790 kelime, 100×8 = 800 slot. B1'de imkânsızdı:
 | Ders sayısı | **180** = 100 mevcut + 80 yeni |
 | Modül / ünite | **18 modül** (+8 yeni tema) · **45 ünite** |
 | B1 slotu | 180 × 8 × 0,9 = **1296** |
-| Hedef kapsama | 1296/1783 = **%72,7** |
+| Hedef kapsama | 1296/1815 = **%71,4** |
 | Beceri egzersizi | 45 × 6 = **270** gerekir, 32 var → **238 eksik** |
 
 **Neden %73 ve neden 180:** A1 bugün %75,4 kapsamada. Her seviyenin ~%75'e
@@ -132,10 +132,15 @@ Sınav, boss, karakter, hub — hepsi türetilmiş. İki temas noktası var:
 A2 oturumuyla ORTAK dosya) ve `MODULE_THEMES.B1` (`modules.ts:44-55`, bugün
 tam 10 tema; 8 yeni tema gerekiyor).
 
-### Adım 3 — Havuz boşluğunu vetle
-116 maddeyi sınıflandır: gerçek madde başı mı, türev mi, yoksa B2'ye mi ait.
-İş yeri jargonunun bir kısmı (`die Kernzeit`, `brutto`) B1 için fazla
-olabilir — o zaman DERSTEN çıkarılır, havuza eklenmez.
+### Adım 3 — Havuz boşluğunu vetle — YAPILDI (2026-09-04)
+
+Sonuç ve 116 maddenin tek tek gerekçesi: **`docs/plan/b1-havuz-veto.md`**.
+Özet: 3 havuzda zaten vardı (ders varyant yazmış) · 3 türev · **32 gerçek B1
+maddesi havuza eklendi** (id 8450–8481) · 78 dersten çıkacak.
+
+Havuzun B1 katmanı 1797 → **1829** kayıt, normalize 1783 → **1815** başlık.
+Bu yüzden yukarıdaki hedef kapsama %72,7 değil **%71,4**; ders sayısı kararı
+(180) değişmedi.
 
 ### Adım 4 — Atamayı ELLE yap, modül modül
 **Mekanik dağıtım A1'de denendi ve reddedildi:** ders metninden anlam torbası
