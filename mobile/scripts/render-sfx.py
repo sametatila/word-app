@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-SFX yedek dosyalarını (android/app/src/main/res/raw/*.mp3) src/lib/sfxNotes.ts'teki
-nota tablosundan üretir. Tablo tek kaynaktır: WebView köprüsü (ttsBridge) ve ekran-kapalı
-native sentez (NomiSpeechModule.playSfx) aynı tabloyu aynı formatla çalar; bu betik de
-aynı zarf/filtre modelini numpy ile uygular ve react-native-sound yedeği için mp3 yazar.
+SFX yedek dosyalarını src/lib/sfxNotes.ts'teki nota tablosundan üretir ve İKİ pakete
+birden yazar: android/app/src/main/res/raw/*.mp3 ve ios/Lernomi/sfx/*.mp3. Tablo tek
+kaynaktır: WebView köprüsü (ttsBridge) ve ekran-kapalı native sentez
+(NomiSpeechModule.playSfx) aynı tabloyu aynı formatla çalar; bu betik de aynı zarf/filtre
+modelini numpy ile uygular ve react-native-sound yedeği için mp3 yazar.
 
   python3 scripts/render-sfx.py            # tüm sesler
   python3 scripts/render-sfx.py --kotlin   # Kotlin tablosunu stdout'a bas (NomiSpeechModule'e yapıştır)
@@ -17,6 +18,7 @@ Gerekli: numpy, lame.
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -27,6 +29,11 @@ import numpy as np
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TS = os.path.join(ROOT, "src", "lib", "sfxNotes.ts")
 RAW = os.path.join(ROOT, "android", "app", "src", "main", "res", "raw")
+# iOS paketi: react-native-sound Sound.MAIN_BUNDLE'ü paket KÖKÜ olarak veriyor
+# (RNSound.m constantsToExport → bundlePath) ve dosyayı "<paket>/correct.mp3" diye açıyor.
+# Bu yüzden mp3'ler Xcode hedefine TEK TEK dosya olarak eklenmeli; "folder reference"
+# (mavi klasör) eklenirse paket içinde sfx/ altında kalır ve sfx.ts hiçbirini bulamaz.
+IOS = os.path.join(ROOT, "ios", "Lernomi", "sfx")
 RATE = 44100
 MASTER = 0.8
 
@@ -105,6 +112,9 @@ def write_mp3(name, samples):
         dst = os.path.join(RAW, f"{name}.mp3")
         subprocess.run(["lame", "--quiet", "-m", "m", "-b", "96", tmp.name, dst], check=True)
     os.unlink(tmp.name)
+    # Aynı dosyayı iOS paketine kopyala: yeniden kodlanmıyor, iki pakette bit birebir aynı.
+    os.makedirs(IOS, exist_ok=True)
+    shutil.copyfile(dst, os.path.join(IOS, f"{name}.mp3"))
     return dst
 
 
@@ -128,3 +138,4 @@ if __name__ == "__main__":
     for kind, notes in table.items():
         path = write_mp3(kind, render(notes))
         print(f"{kind:8s} {max(n[1] + n[2] for n in notes):.2f}s  {os.path.getsize(path)} B  {os.path.relpath(path, ROOT)}")
+    print(f"\n{len(table)} ses x 2 paket: {os.path.relpath(RAW, ROOT)} + {os.path.relpath(IOS, ROOT)}")
