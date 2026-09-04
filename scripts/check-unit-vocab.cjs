@@ -44,15 +44,24 @@ for (let u = 1; u <= 25; u++) {
   cum.set(u, new Set(acc));
 }
 
+// Soru kökü ve rewrite kaynağı bazen Türkçe yazılıyor ("Neyiniz var?"); onları
+// Almanca sanıp ölçmek sahte kayma üretiyordu. ı/ş/ğ/İ Almancada HİÇ yok, geri
+// kalanı da Almancayla karışmayan Türkçe işlev sözcükleri.
+const TR_ISARET = /[ışğİıŞĞ]|\b(ne|nasıl|hangi|nedir|demek|sorusu|için|değil|yok|kaç|kim|nerede|var)\b/i;
+const türkçeMi = (s) => TR_ISARET.test(String(s || ""));
+
 function almanca(e) {
   const out = [];
   if (e.text) out.push(e.text);
   for (const s of e.segments || []) out.push(s.text);
   // Şıklar Türkçe olabiliyor ("samimi (du)"); Almanca ölçümüne sokmuyoruz.
-  for (const q of e.questions || []) { out.push(q.text); for (const a of q.accept || []) out.push(a); }
+  for (const q of e.questions || []) {
+    if (!türkçeMi(q.text)) out.push(q.text);
+    for (const a of q.accept || []) out.push(a);
+  }
   for (const t of e.tasks || []) {
     if (t.answer) out.push(t.answer);
-    if (t.source) out.push(t.source);
+    if (t.source && !türkçeMi(t.source)) out.push(t.source);
     if (t.sample) out.push(t.sample);
     if (t.stimulus) out.push(t.stimulus);
     for (const f of t.fields || []) out.push(f.answer);
@@ -68,7 +77,9 @@ for (const e of hedef) {
   const izin = new Set([...(cum.get(u) || [])]);
   for (const g of e.gloss || []) for (const w of norm(g.de).split(/\s+/)) izin.add(w);   // egzersizin kendi sözlükçesi
   for (const t of e.tasks || []) for (const g of t.phrases || t.words || []) for (const w of norm(g.de).split(/\s+/)) izin.add(w);
-  const ham = almanca(e);
+  // Türkçe harf taşıyan özel adlar ("Yılmaz") Almanca sözcük regexinde parçalanıp
+  // sahte gövde bırakıyordu ("lmaz"). Böyle bir belirteci bütünüyle atıyoruz.
+  const ham = almanca(e).split(/\s+/).filter((t) => !/[ışğİıŞĞçÇ]/.test(t)).join(" ");
   // metinde büyük harfle geçen ve havuzda hiç bulunmayan sözcükler = özel ad
   // Gün ve ay adları büyük harfle yazılır ve havuzda olmayabilir, ama ÖZEL AD
   // DEĞİL — öğretilmesi gerekir. A1 yalnız beş gün öğretiyor (Donnerstag ve
@@ -78,6 +89,12 @@ for (const e of hedef) {
     "juli", "august", "september", "oktober", "november", "dezember"]);
   const ozelAd = new Set((ham.match(/(?<![.!?]\s)(?<!^)\b[A-ZÄÖÜ][a-zäöüß]{2,}\b/g) || [])
     .map((w) => w.toLowerCase()).filter((w) => !havuzKok.has(w) && !TAKVIM.has(w)));
+  // Unvan kısaltmasından sonraki ad cümle başı sanılıp muafiyetin DIŞINDA
+  // kalıyordu ("Dr. Weber"). Unvanı ve ardındaki adı ayrıca özel ad say.
+  for (const m of ham.matchAll(/\b(Dr|Prof|Frau|Herr)\.?\s+([A-ZÄÖÜ][a-zäöüß]+)/g)) {
+    ozelAd.add(m[1].toLowerCase());
+    if (!havuzKok.has(m[2].toLowerCase())) ozelAd.add(m[2].toLowerCase());
+  }
   // Ayrılabilir fiilde çekim öneki AYIRIR: anrufen → "rufe … an", aufstehen →
   // "stehe … auf". Kök olarak mastarı almak yetmiyor; öneksiz gövdeyi de ekle.
   const AYRILABILIR = /^(an|auf|aus|ein|mit|nach|vor|zu|ab|bei|los|weg|zurück)/;
