@@ -10,11 +10,10 @@ import { de, tr, type Lesson } from "../types";
  * cinsine göre sonunun değişmesi, ki bu Türkçe konuşan için tamamen yeni:
  * Türkçede sıfat hiç değişmez.
  *
- * Sahneler bir hizmet zinciri gibi diziliyor: mağaza, kuaför, şikâyet
- * masası, telefon bayisi, banka, postane, bitpazarı. Önceki seviyelerin
- * kelimeleri (die Jacke, teuer, günstig, besser, der Vertrag, kaputt,
- * funktionieren) yeni diye öğretilmiyor, karşılaştırmaların içinde geri
- * geliyor.
+ * Sözlükçe havuzun A2 katmanından geliyor. 054 bilerek renk ve desen dersine
+ * çevrildi: sıfat çekimini sekiz kez tekrarlatmanın en doğal yolu sekiz renk
+ * ve desen sıfatı vermek. `als` da sözlükçeye alındı — karşılaştırmanın
+ * kendisini taşıyan kelime bu ve havuzda A2 madde başı olarak duruyor.
  */
 export const deA2B06: Lesson[] = [
   {
@@ -24,26 +23,28 @@ export const deA2B06: Lesson[] = [
     course: "de",
     title: "Größer, schneller, billiger",
     titleTr: "Karşılaştırma",
-    summary: "İki şeyi karşılaştırmayı ve farkı söylemeyi öğretir.",
-    minutes: 9,
+    summary: "İki şeyi karşılaştırmayı ve sıfatın sonundaki eki öğretir.",
+    minutes: 10,
     focusId: "Komparativ",
     vocab: [
-      { de: "billig", tr: "ucuz" },
-      { de: "lang", tr: "uzun" },
       { de: "der Unterschied", tr: "fark" },
       { de: "vergleichen", tr: "karşılaştırmak" },
-      { de: "genauso", tr: "tıpkı, aynı derecede" },
+      { de: "die Qualität", tr: "kalite" },
+      { de: "preiswert", tr: "uygun fiyatlı" },
+      { de: "stark", tr: "güçlü" },
+      { de: "schwach", tr: "zayıf" },
+      { de: "als", tr: "-den daha" },
+      { de: "gigantisch", tr: "devasa" },
     ],
     patterns: [
-      { de: "… ist billiger als …", tr: "iki şeyi karşılaştırırken kullanılır" },
-      { de: "genauso … wie …", tr: "ikisi eşitse kullanılır" },
-      { de: "Was ist der Unterschied?", tr: "farkı sorarken kullanılır" },
+      { de: "Das ist besser als das.", tr: "iki şeyi karşılaştırır" },
+      { de: "Was ist der Unterschied?", tr: "aradaki farkı sorar" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Merhaba! Bugün alışverişin kalbindeyiz: karşılaştırma. İki şeyden hangisinin daha ucuz, daha uzun, daha iyi olduğunu söylemeyi öğreneceğiz. Başlamaya hazır mısın?",
+            "Bugün iki şeyi karşılaştırmayı öğreniyoruz. Türkçede 'daha' kelimesini sıfatın önüne koyarız; Almancada sıfatın sonuna bir ek gelir. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -51,33 +52,13 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr(
-            "Türkçede karşılaştırma kolay: sıfatın önüne 'daha' koyarsın, sıfat hiç değişmez. Almancada tam tersi olur; ayrı bir kelime yok, sıfatın kendi sonu değişir. Önce kelimeleri öğrenelim.",
+            "İki adım var. Birincisi sıfatın sonuna gelen ek; kısa sıfatların çoğunda ortadaki sesli harf de değişir. İkincisi karşılaştırma kelimesi: Türkçedeki '-den' ekinin yerini tutar ve iki şeyin arasında durur. Bugün o kelimeyi de sözlükçeye alıyoruz. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("billig"),
-          tr("Türkçesi 'ucuz' demek. Lütfen"),
-          de("billig"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "billig" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("lang"),
-          tr("Türkçesi 'uzun' demek. Lütfen"),
-          de("lang"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "lang" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
           de("der Unterschied"),
           tr("Türkçesi 'fark' demek. Lütfen"),
           de("der Unterschied"),
@@ -87,7 +68,7 @@ export const deA2B06: Lesson[] = [
       },
       {
         say: [
-          tr("Dördüncü kelimemiz:"),
+          tr("İkinci kelimemiz:"),
           de("vergleichen"),
           tr("Türkçesi 'karşılaştırmak' demek. Lütfen"),
           de("vergleichen"),
@@ -97,121 +78,149 @@ export const deA2B06: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz:"),
-          de("genauso"),
-          tr("Türkçesi 'aynı derecede' demek. Lütfen"),
-          de("genauso"),
+          tr("Üçüncü kelimemiz:"),
+          de("die Qualität"),
+          tr("Türkçesi 'kalite' demek. Lütfen"),
+          de("die Qualität"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "genauso" },
+        expect: { kind: "repeat", target: "die Qualität" },
       },
       {
         say: [
-          tr("Kural iki parçalı. Birincisi: sıfatın sonuna küçük bir ek geliyor."),
-          de("billig"),
-          tr("kelimesi"),
-          de("billiger"),
-          tr("olur. İkincisi: karşılaştırdığın şeyin önüne bir bağlaç konur ve o bağlaç Türkçedeki '-dan' ekinin yerini tutar:"),
+          tr("Dördüncü kelimemiz:"),
+          de("preiswert"),
+          tr("Türkçesi 'uygun fiyatlı' demek; ucuz değil, fiyatına değer anlamında. Lütfen"),
+          de("preiswert"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "preiswert" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("stark"),
+          tr("Türkçesi 'güçlü' demek. Lütfen"),
+          de("stark"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "stark" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("schwach"),
+          tr("Türkçesi 'zayıf' demek. Lütfen"),
+          de("schwach"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "schwach" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
           de("als"),
+          tr("Karşılaştırmada Türkçesi '-den daha' demek; iki şeyin arasında durur. Lütfen"),
+          de("als"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "als" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("gigantisch"),
+          tr("Türkçesi 'devasa, kocaman' demek. Lütfen"),
+          de("gigantisch"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "gigantisch" },
+      },
+      {
+        say: [
+          tr("Şimdi eki duy. Sıfatın sonuna bir hece geliyor ve kısa sıfaklarda sesli harf değişiyor:"),
+          de("stark – stärker, schwach – schwächer, groß – größer, alt – älter"),
         ],
       },
       {
         say: [
-          tr("Örnek: 'Ceket gömlekten daha pahalı.' Almancası:"),
-          de("Die Jacke ist teurer als das Hemd."),
+          tr("İlk kalıbımız:"),
+          de("Das ist besser als das."),
+          tr(
+            "Karşılaştırma kelimesi iki şeyin arasında. Türkçede '-den' eki isme yapışır; Almancada ayrı bir kelimedir.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Bu ceket ötekinden daha uygun fiyatlı.' Almancası:"),
+          de("Diese Jacke ist preiswerter als die andere."),
           tr("Lütfen"),
-          de("Die Jacke ist teurer als das Hemd"),
+          de("Diese Jacke ist preiswerter als die andere"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Die Jacke ist teurer als das Hemd" },
+        expect: { kind: "repeat", target: "Diese Jacke ist preiswerter als die andere" },
       },
       {
-        say: [tr("Sıra sende: 'Gömlek ceketten daha ucuz.'")],
+        say: [tr("Sıra sende: 'Kardeşim benden daha güçlü.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Das Hemd ist billiger als die Jacke",
+          target: "Mein Bruder ist stärker als ich",
           hint: [
-            tr("Sıfatın sonuna ek gelir, karşılaştırılan şey de bağlacın arkasına:"),
-            de("Das Hemd ist billiger als die Jacke."),
+            tr("Sıfatın sesli harfi değişiyor ve karşılaştırılan kişi yalın hâlde kalıyor:"),
+            de("Mein Bruder ist stärker als ich."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("Bir de küçük bir sürpriz var: bazı kısa sıfatlarda sesli harf de değişir."),
-          de("lang"),
-          tr("kelimesi"),
-          de("länger"),
-          tr("olur; aynı şey"),
-          de("alt"),
-          tr("ve"),
-          de("groß"),
-          tr("için de geçerli."),
-        ],
-      },
-      {
-        say: [tr("Şimdi sen söyle: 'Pantolon ceketten daha uzun.'")],
-        expect: {
-          kind: "produce",
-          target: "Die Hose ist länger als die Jacke",
-          hint: [
-            tr("Bu sıfatta sesli harf de değişiyor:"),
-            de("Die Hose ist länger als die Jacke."),
-            tr("Tekrar dene."),
-          ],
-        },
-      },
-      {
-        say: [
-          tr("İkisi eşitse başka bir kalıp kullanılır:"),
-          de("Die Hose ist genauso teuer wie das Hemd."),
-          tr("Burada sıfat hiç değişmiyor, çünkü ortada fark yok. Lütfen"),
-          de("Die Hose ist genauso teuer wie das Hemd"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Die Hose ist genauso teuer wie das Hemd" },
-      },
-      {
-        say: [
-          tr("Farkı merak edersen tek soru yeter:"),
+          tr("İkinci kalıbımız:"),
           de("Was ist der Unterschied?"),
-          tr("İki ürünü karşılaştırmasını da isteyebilirsin:"),
-          de("Können Sie die zwei vergleichen?"),
+          tr("Aradaki farkı sorar; mağazada iki ürün arasında karar verirken en işe yarayan soru."),
         ],
+      },
+      {
+        say: [tr("Sıra sende: 'Lütfen iki teklifi karşılaştırın.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Vergleichen Sie bitte die beiden Angebote",
+          hint: [
+            tr("Kibar emirde fiil başa geçer ve hitap hemen arkasından gelir:"),
+            de("Vergleichen Sie bitte die beiden Angebote."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Die Jacke ist teuer als das Hemd."),
+          de("Mein Bruder ist größer als ich."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Die Jacke ist teuer als das Hemd.",
-          answer: false,
+          statement: "Mein Bruder ist größer als ich.",
+          answer: true,
           why: [
-            tr("Karşılaştırma yapılıyorsa sıfatın sonuna ek gelmeli. Doğrusu:"),
-            de("Die Jacke ist teurer als das Hemd."),
+            tr(
+              "Sıfat karşılaştırma ekini almış, sesli harfi değişmiş ve karşılaştırma kelimesi doğru yerde: cümle doğru.",
+            ),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık iki şeyi karşılaştırabiliyorsun. Şimdi bir mağazadasın: iki ürün arasında kalmışsın ve satış görevlisi yardıma geliyor.",
-          ),
-        ],
+        say: [tr("Şimdi mağazadasın ve iki ürünü karşılaştırıyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir mağazada iki ürün arasında kararsız kaldın. Aralarındaki farkı sor, fiyatlarını karşılaştır ve hangisini neden seçtiğini söyle.",
-      partner: "her iki ürünü de öven, satmayı bilen bir mağaza görevlisi",
-      opening: "Die beiden sind sehr ähnlich. Welche gefällt Ihnen besser?",
-      openingTr: "İkisi birbirine çok benziyor. Hangisini daha çok beğendiniz?",
-      goal: "İki ürünün farkı ve fiyatı karşılaştırılmış, hangisini neden aldığın söylenmiş olur.",
-      minTurns: 7,
+        "Bir elektronik mağazasındasın ve iki cihaz arasında karar veremiyorsun. Satış görevlisine farkı sor, fiyat ve kaliteyi karşılaştır ve bir karar ver.",
+      partner: "iki ürünü de iyi bilen bir satış görevlisi",
+      opening: "Kann ich Ihnen helfen? Suchen Sie etwas Bestimmtes?",
+      openingTr: "Yardımcı olabilir miyim? Belirli bir şey mi arıyorsunuz?",
+      goal: "İki ürün en az iki özellikte karşılaştırılmış ve sonunda biri seçilip sebebi söylenmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -221,26 +230,28 @@ export const deA2B06: Lesson[] = [
     course: "de",
     title: "Am besten!",
     titleTr: "En üstünlük",
-    summary: "Bir şeyin en üstün olduğunu söylemeyi öğretir.",
-    minutes: 9,
+    summary: "Hepsinin arasından en iyisini söylemeyi ve indirimleri konuşmayı öğretir.",
+    minutes: 10,
     focusId: "Superlativ",
     vocab: [
-      { de: "hoch", tr: "yüksek" },
-      { de: "niedrig", tr: "düşük" },
-      { de: "die Auswahl", tr: "seçenek çeşitliliği" },
-      { de: "beliebt", tr: "sevilen, popüler" },
-      { de: "am liebsten", tr: "en çok" },
+      { de: "beliebt", tr: "sevilen" },
+      { de: "das Einkaufszentrum", tr: "alışveriş merkezi" },
+      { de: "das Kaufhaus", tr: "büyük mağaza" },
+      { de: "der Schlussverkauf", tr: "sezon sonu indirimi" },
+      { de: "die Ermäßigung", tr: "indirim" },
+      { de: "der Sonderpreis", tr: "özel fiyat" },
+      { de: "der Stammkunde", tr: "sürekli müşteri" },
+      { de: "das Preisschild", tr: "fiyat etiketi" },
     ],
     patterns: [
-      { de: "… ist am billigsten", tr: "en üstünü söylerken kullanılır" },
-      { de: "Am liebsten …", tr: "en çok neyi sevdiğini söylerken kullanılır" },
-      { de: "die größte Auswahl", tr: "ismin önünde üstünlük söylerken kullanılır" },
+      { de: "Das ist am billigsten.", tr: "hepsinin arasından en ucuzu söyler" },
+      { de: "Gibt es eine Ermäßigung?", tr: "indirim olup olmadığını sorar" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Merhaba! Geçen ders ikisini karşılaştırdık. Bugün üçü, beşi, hepsi arasından en üstününü söylemeyi öğreneceğiz. Başlamaya hazır mısın?",
+            "Geçen ders ikiyi karşılaştırdık. Bugün hepsinin arasından birini seçiyoruz ve bunun kendine has bir biçimi var. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -248,45 +259,15 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr(
-            "Türkçede tek bir kelime her işi görüyor: 'en'. Almancada ise sıfatın sonu yine değişiyor ve önüne küçük bir kelime geliyor. Önce kelimeleri öğrenelim.",
+            "En üstünlük iki parçadan oluşuyor: sıfatın önünde kaynaşmış bir edat, sonunda ise bir hece. İkisi birlikte 'hepsinin en …' anlamını veriyor. Türkçede tek bir 'en' kelimesi yeter; Almanca bunu iki uçtan birden işaretler. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("hoch"),
-          tr("Türkçesi 'yüksek' demek. Lütfen"),
-          de("hoch"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "hoch" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("niedrig"),
-          tr("Türkçesi 'düşük' demek. Lütfen"),
-          de("niedrig"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "niedrig" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("die Auswahl"),
-          tr("Türkçesi 'seçenek çeşitliliği' demek. Lütfen"),
-          de("die Auswahl"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Auswahl" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
           de("beliebt"),
-          tr("Türkçesi 'sevilen, popüler' demek. Lütfen"),
+          tr("Türkçesi 'sevilen, rağbet gören' demek. Lütfen"),
           de("beliebt"),
           tr("deyin."),
         ],
@@ -294,114 +275,159 @@ export const deA2B06: Lesson[] = [
       },
       {
         say: [
+          tr("İkinci kelimemiz:"),
+          de("das Einkaufszentrum"),
+          tr("Türkçesi 'alışveriş merkezi' demek. Lütfen"),
+          de("das Einkaufszentrum"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Einkaufszentrum" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("das Kaufhaus"),
+          tr("Türkçesi 'büyük mağaza' demek. Lütfen"),
+          de("das Kaufhaus"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Kaufhaus" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("der Schlussverkauf"),
+          tr("Türkçesi 'sezon sonu indirimi' demek. Lütfen"),
+          de("der Schlussverkauf"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Schlussverkauf" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("die Ermäßigung"),
+          tr("Türkçesi 'indirim' demek; öğrenci ya da emekli indirimi gibi. Lütfen"),
+          de("die Ermäßigung"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Ermäßigung" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("der Sonderpreis"),
+          tr("Türkçesi 'özel fiyat' demek. Lütfen"),
+          de("der Sonderpreis"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Sonderpreis" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("der Stammkunde"),
+          tr("Türkçesi 'sürekli müşteri' demek. Lütfen"),
+          de("der Stammkunde"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Stammkunde" },
+      },
+      {
+        say: [
           tr("Son kelimemiz:"),
-          de("am liebsten"),
-          tr("Türkçesi 'en çok' demek. Lütfen"),
-          de("am liebsten"),
+          de("das Preisschild"),
+          tr("Türkçesi 'fiyat etiketi' demek. Lütfen"),
+          de("das Preisschild"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "am liebsten" },
+        expect: { kind: "repeat", target: "das Preisschild" },
       },
       {
         say: [
-          tr("Üstünlük kalıbı iki parçadan oluşuyor: önce küçük bir kelime, sonra sonu değişmiş sıfat."),
-          de("am billigsten"),
-          tr("Yani 'en ucuz'. Karşılaştırmadaki ek burada büyüyor."),
+          tr("Şimdi üç basamağı bir arada duy:"),
+          de("billig – billiger – am billigsten"),
+          tr("Sırasıyla: düz sıfat, karşılaştırma, en üstünlük."),
         ],
       },
       {
         say: [
-          tr("Örnek: 'Bu ceket en ucuz.' Almancası:"),
-          de("Diese Jacke ist am billigsten."),
+          tr("İlk kalıbımız:"),
+          de("Das ist am billigsten."),
+          tr("Kaynaşmış edat önde, hece sonda. İkisi birlikte 'hepsinin en ucuzu' demek."),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Bu mağazada en çok sevileni bu.' Almancası:"),
+          de("In diesem Kaufhaus ist das am beliebtesten."),
           tr("Lütfen"),
-          de("Diese Jacke ist am billigsten"),
+          de("In diesem Kaufhaus ist das am beliebtesten"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Diese Jacke ist am billigsten" },
+        expect: { kind: "repeat", target: "In diesem Kaufhaus ist das am beliebtesten" },
       },
       {
-        say: [tr("Sıra sende: 'Bu telefon en pahalı.'")],
+        say: [tr("Sıra sende: 'Sezon sonu indiriminde en uygun fiyatlı.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Dieses Handy ist am teuersten",
+          target: "Im Schlussverkauf ist es am preiswertesten",
           hint: [
-            tr("Önce küçük kelime, sonra sonu büyümüş sıfat:"),
-            de("Dieses Handy ist am teuersten."),
+            tr("Kaynaşmış edat önde, en üstünlük hecesi sonda:"),
+            de("Im Schlussverkauf ist es am preiswertesten."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("Fiyat konuşurken iki kelime hep beraber gezer:"),
-          de("Der Preis ist hier am niedrigsten."),
-          tr("Tersini de duyarsın:"),
-          de("Dort sind die Preise am höchsten."),
-          tr("Karşılaştırmasız hâliyle de sık duyulur:"),
-          de("Der Preis ist zu hoch."),
+          tr("İkinci kalıbımız:"),
+          de("Gibt es eine Ermäßigung?"),
+          tr("'Var mı' kalıbı ile sorulur ve ardından gelen isim belirtme hâline girer."),
         ],
       },
       {
-        say: [tr("Şimdi sen söyle: 'Seçenek burada en fazla.'")],
+        say: [tr("Sıra sende: 'Sürekli müşteri olarak indirim alıyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Die Auswahl ist hier am größten",
+          target: "Als Stammkunde bekomme ich eine Ermäßigung",
           hint: [
-            tr("Bu sıfatta sesli harf de değişiyor:"),
-            de("Die Auswahl ist hier am größten."),
+            tr("Sıfat gibi kullanılan edat başta olduğu için özne fiilin arkasına düşer:"),
+            de("Als Stammkunde bekomme ich eine Ermäßigung."),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Kendi tercihini söylerken de aynı kalıp işe yarıyor:"),
-          de("Am liebsten kaufe ich im Angebot."),
-          tr("Cümle bu kalıpla başlayınca fiil hemen ikinci sıraya geçiyor. Lütfen"),
-          de("Am liebsten kaufe ich im Angebot"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Am liebsten kaufe ich im Angebot" },
-      },
-      {
-        say: [
-          tr("İsmin önünde kullanmak istersen sıfat ismin önüne geçer:"),
-          de("Das ist die beliebteste Marke."),
-          tr("Buradaki biçim biraz daha uzun ama mantık aynı."),
-        ],
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Dieses Handy ist am teuer."),
+          de("Das ist der billigste als alle."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Dieses Handy ist am teuer.",
+          statement: "Das ist der billigste als alle.",
           answer: false,
           why: [
-            tr("Üstünlükte sıfatın sonu da değişmeli, yalnız küçük kelime yetmez. Doğrusu:"),
-            de("Dieses Handy ist am teuersten."),
+            tr(
+              "En üstünlükte karşılaştırma kelimesi kullanılmaz; o yalnız iki şey karşılaştırılırken gelir. Doğrusu:",
+            ),
+            de("Das ist am billigsten."),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık en iyisini, en ucuzunu, en sevdiğini söyleyebilirsin. Şimdi bir elektronik mağazasındasın: satıcı sana en çok satılanı gösteriyor.",
-          ),
-        ],
+        say: [tr("Şimdi alışveriş merkezindesin ve en iyisini arıyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir elektronik mağazasında telefon bakıyorsun. Hangisinin en ucuz, hangisinin en popüler olduğunu sor ve en çok neyi tercih ettiğini söyle.",
-      partner: "her ürünün rakamlarını ezbere bilen bir satış danışmanı",
-      opening: "Dieses Modell ist bei uns am beliebtesten. Suchen Sie etwas Bestimmtes?",
-      openingTr: "Bu model bizde en çok satan. Belirli bir şey mi arıyorsunuz?",
-      goal: "En ucuz ve en popüler seçenek öğrenilmiş, senin tercihin söylenmiş olur.",
-      minTurns: 7,
+        "Alışveriş merkezinde bir arkadaşınla dolaşıyorsunuz. Hangi mağazanın en ucuz, hangisinin en iyi olduğunu tartışın ve indirim olup olmadığını sorun.",
+      partner: "her mağazayı bilen ve fiyat karşılaştırmayı seven bir arkadaş",
+      opening: "Wo gehen wir zuerst hin? Wo ist es denn am günstigsten?",
+      openingTr: "Önce nereye gidelim? En uygun olan neresi?",
+      goal: "En az üç seçenek en üstünlük biçimiyle karşılaştırılmış ve nereye gidileceğine karar verilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -411,196 +437,28 @@ export const deA2B06: Lesson[] = [
     course: "de",
     title: "Welche Jacke ist besser?",
     titleTr: "İki ürün kıyası",
-    summary: "İki ürün arasında seçim yaparken kıyas yapmayı öğretir.",
-    minutes: 8,
+    summary: "Kıyafet denerken tercih bildirmeyi ve iki seçenek arasında karar vermeyi öğretir.",
+    minutes: 10,
     focusId: "Komparativ",
     vocab: [
-      { de: "der Mantel", tr: "palto" },
-      { de: "dünn", tr: "ince" },
-      { de: "dick", tr: "kalın" },
-      { de: "der Stoff", tr: "kumaş" },
-      { de: "bequem", tr: "rahat" },
-    ],
-    patterns: [
-      { de: "… ist wärmer als …", tr: "iki ürünü kıyaslarken kullanılır" },
-      { de: "Die passt besser", tr: "hangisinin daha iyi olduğunu söylerken kullanılır" },
-      { de: "Welcher … ist bequemer?", tr: "hangisinin daha rahat olduğunu sorarken kullanılır" },
-    ],
-    lecture: [
-      {
-        say: [
-          tr(
-            "Merhaba! Bugün kabin önündeyiz: iki parça var, biri seçilecek. Kıyas yapmayı ve kararını gerekçesiyle söylemeyi çalışacağız. Başlamaya hazır mısın?",
-          ),
-        ],
-        expect: { kind: "confirm" },
-      },
-      {
-        say: [
-          tr(
-            "Geçen iki derste kuralı öğrendin; bugün onu gerçek bir alışverişte kullanacaksın. Kelimeler de kumaşla ilgili. Önce kelimeleri öğrenelim.",
-          ),
-        ],
-      },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("der Mantel"),
-          tr("Türkçesi 'palto' demek. Lütfen"),
-          de("der Mantel"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Mantel" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("dünn"),
-          tr("Türkçesi 'ince' demek. Lütfen"),
-          de("dünn"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "dünn" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("dick"),
-          tr("Türkçesi 'kalın' demek. Lütfen"),
-          de("dick"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "dick" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("der Stoff"),
-          tr("Türkçesi 'kumaş' demek. Lütfen"),
-          de("der Stoff"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Stoff" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("bequem"),
-          tr("Türkçesi 'rahat' demek. Lütfen"),
-          de("bequem"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "bequem" },
-      },
-      {
-        say: [
-          tr("İki parçayı kıyaslarken en çok duyacağın cümle şu:"),
-          de("Der Mantel ist dicker als die Jacke."),
-          tr("Kalınsa daha sıcak tutar:"),
-          de("Der Mantel ist wärmer."),
-        ],
-      },
-      {
-        say: [tr("Lütfen"), de("Der Mantel ist dicker als die Jacke"), tr("deyin.")],
-        expect: { kind: "repeat", target: "Der Mantel ist dicker als die Jacke" },
-      },
-      {
-        say: [tr("Sıra sende: 'Bu kumaş daha ince.'")],
-        expect: {
-          kind: "produce",
-          target: "Der Stoff ist dünner",
-          hint: [
-            tr("Sıfatın sonuna ek gelir, karşılaştırılan şeyi söylemek zorunda değilsin:"),
-            de("Der Stoff ist dünner."),
-            tr("Tekrar dene."),
-          ],
-        },
-      },
-      {
-        say: [
-          tr("Kararını söylerken iki kısa cümle yeter:"),
-          de("Die passt besser."),
-          tr("ve"),
-          de("Die nehme ich."),
-          tr("Lütfen"),
-          de("Die passt besser"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Die passt besser" },
-      },
-      {
-        say: [tr("Şimdi sen sor: 'Hangi palto daha rahat?'")],
-        expect: {
-          kind: "produce",
-          target: "Welcher Mantel ist bequemer",
-          hint: [
-            tr("Soru kelimesi ismin cinsine uyar, sıfat da ek alır:"),
-            de("Welcher Mantel ist bequemer?"),
-            tr("Tekrar dene."),
-          ],
-        },
-      },
-      {
-        say: [
-          tr("Son bir doğru-yanlış alıştırması:"),
-          de("Die Jacke passt besser."),
-          tr("cümlesi doğru mu, yanlış mı?"),
-        ],
-        expect: {
-          kind: "truefalse",
-          statement: "Die Jacke passt besser.",
-          answer: true,
-          why: [
-            tr("Doğru. Bu sıfatın karşılaştırma biçimi düzensizdir ve sonuna ek almaz, kelimenin kendisi değişir:"),
-            de("gut, besser"),
-          ],
-        },
-      },
-      {
-        say: [
-          tr(
-            "Artık kararını gerekçesiyle söyleyebilirsin. Şimdi kabinin önündesin: elinde iki parça var ve görevli bekliyor.",
-          ),
-        ],
-      },
-    ],
-    roleplay: {
-      scene:
-        "Mağazada bir ceket ile bir palto arasında kaldın ve ikisini de denedin. Kumaşlarını kıyasla, hangisinin daha rahat olduğunu sor ve kararını gerekçesiyle söyle.",
-      partner: "acele ettirmeyen, dürüst tavsiye veren bir mağaza görevlisi",
-      opening: "Beide stehen Ihnen gut. Welche ist bequemer?",
-      openingTr: "İkisi de size yakıştı. Hangisi daha rahat?",
-      goal: "İki parça kumaşı ve rahatlığıyla kıyaslanmış ve karar gerekçesiyle verilmiş olur.",
-      minTurns: 7,
-    },
-  },
-  {
-    id: "de-a2-adjektiv-ein",
-    icon: "shopping",
-    level: "A2",
-    course: "de",
-    title: "Ein roter Mantel",
-    titleTr: "Sıfat çekimi",
-    summary: "Sıfatın ismin cinsine göre sonunun değiştiğini öğretir.",
-    minutes: 9,
-    focusId: "Adjektivdeklination-Einstieg",
-    vocab: [
-      { de: "das Kleid", tr: "elbise" },
       { de: "der Anzug", tr: "takım elbise" },
-      { de: "grün", tr: "yeşil" },
-      { de: "gelb", tr: "sarı" },
-      { de: "elegant", tr: "şık" },
+      { de: "die Hose", tr: "pantolon" },
+      { de: "das Hemd", tr: "gömlek" },
+      { de: "der Rock", tr: "etek" },
+      { de: "entweder", tr: "ya" },
+      { de: "dünn", tr: "ince" },
+      { de: "bequem", tr: "rahat" },
+      { de: "anprobieren", tr: "üstünde denemek" },
     ],
     patterns: [
-      { de: "ein roter Mantel", tr: "eril isimlerde sıfat çekimi" },
-      { de: "eine grüne Jacke", tr: "dişil isimlerde sıfat çekimi" },
-      { de: "ein gelbes Kleid", tr: "nötr isimlerde sıfat çekimi" },
+      { de: "Entweder das Hemd oder der Anzug.", tr: "iki seçeneği yan yana koyar" },
+      { de: "Kann ich das anprobieren?", tr: "denemek için izin ister" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Merhaba! Bugün Almancanın en çok korkulan konusuna ilk adımı atıyoruz, ama korkacak bir şey yok: sıfatın ismin önünde nasıl durduğunu öğreneceğiz. Başlamaya hazır mısın?",
+            "Bugün mağazada iki kıyafet arasında karar veriyoruz. İki seçeneği yan yana koyan bir bağlaç çifti öğreneceğiz. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -608,23 +466,13 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr(
-            "Türkçede sıfat hiç değişmez: yeşil elbise, yeşil ceket, yeşil pantolon. Almancada ise sıfat ismin cinsine bakar ve sonunu ona göre ayarlar. Bugün yalnızca tek bir durumu öğreneceğiz. Önce kelimeleri öğrenelim.",
+            "Bu bağlaç iki parçalıdır: birincisi ilk seçeneğin önünde, ikincisi ikinci seçeneğin önünde durur. Türkçedeki 'ya … ya da' ile birebir aynı işi görür. Bugün birincisini sözlükçeye alıyoruz. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("das Kleid"),
-          tr("Türkçesi 'elbise' demek. Lütfen"),
-          de("das Kleid"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "das Kleid" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
           de("der Anzug"),
           tr("Türkçesi 'takım elbise' demek. Lütfen"),
           de("der Anzug"),
@@ -634,7 +482,197 @@ export const deA2B06: Lesson[] = [
       },
       {
         say: [
+          tr("İkinci kelimemiz:"),
+          de("die Hose"),
+          tr("Türkçesi 'pantolon' demek. Lütfen"),
+          de("die Hose"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Hose" },
+      },
+      {
+        say: [
           tr("Üçüncü kelimemiz:"),
+          de("das Hemd"),
+          tr("Türkçesi 'gömlek' demek. Lütfen"),
+          de("das Hemd"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Hemd" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("der Rock"),
+          tr("Türkçesi 'etek' demek. Lütfen"),
+          de("der Rock"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Rock" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("entweder"),
+          tr("Türkçesi 'ya' demek; arkasından ikinci bir bağlaç gelir. Lütfen"),
+          de("entweder"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "entweder" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("dünn"),
+          tr("Türkçesi 'ince' demek. Lütfen"),
+          de("dünn"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "dünn" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("bequem"),
+          tr("Türkçesi 'rahat' demek. Lütfen"),
+          de("bequem"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "bequem" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("anprobieren"),
+          tr("Türkçesi 'üstünde denemek' demek. Lütfen"),
+          de("anprobieren"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "anprobieren" },
+      },
+      {
+        say: [
+          tr("İlk kalıbımız:"),
+          de("Entweder das Hemd oder der Anzug."),
+          tr("İki seçenek yan yana. Her iki isim de yalın hâlde duruyor, çünkü ikisi de özne."),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Bu pantolon ötekinden daha rahat.' Almancası:"),
+          de("Diese Hose ist bequemer als die andere."),
+          tr("Lütfen"),
+          de("Diese Hose ist bequemer als die andere"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Diese Hose ist bequemer als die andere" },
+      },
+      {
+        say: [tr("Sıra sende: 'Bu gömlek daha ince.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Dieses Hemd ist dünner",
+          hint: [
+            tr("Cinssiz isimde işaret sıfatı ek alır ve sıfata karşılaştırma eki gelir:"),
+            de("Dieses Hemd ist dünner."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("Kann ich das anprobieren?"),
+          tr("Kip fiili başta olduğu için soru; ayrılabilen fiil sonda ve bölünmemiş hâlde."),
+        ],
+      },
+      {
+        say: [tr("Sıra sende: 'Ya eteği ya da pantolonu alıyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich nehme entweder den Rock oder die Hose",
+          hint: [
+            tr("İki seçenek de nesne olduğu için ikisi de belirtme hâline girer:"),
+            de("Ich nehme entweder den Rock oder die Hose."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Son bir doğru-yanlış alıştırması:"),
+          de("Diese Hose ist bequemer wie die andere."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Diese Hose ist bequemer wie die andere.",
+          answer: false,
+          why: [
+            tr(
+              "Karşılaştırmada kullanılan kelime bu değil; buradaki kelime benzerlik bildirir. Doğrusu:",
+            ),
+            de("Diese Hose ist bequemer als die andere."),
+          ],
+        },
+      },
+      {
+        say: [tr("Şimdi mağazada iki kıyafet arasında karar veriyorsun.")],
+      },
+    ],
+    roleplay: {
+      scene:
+        "Bir mağazada iki kıyafet arasında kaldın ve satış görevlisinden yardım istiyorsun. Denemek için izin iste, ikisini karşılaştır ve bir karar ver.",
+      partner: "ikisini de öven ama sonunda dürüst olan bir satış görevlisi",
+      opening: "Die beiden stehen Ihnen gut. Welche gefällt Ihnen besser?",
+      openingTr: "İkisi de size yakışıyor. Hangisini daha çok beğendiniz?",
+      goal: "İkisi de denenmiş, en az iki özellikte karşılaştırılmış ve biri seçilip sebebi söylenmiş olur.",
+      minTurns: 8,
+    },
+  },
+  {
+    id: "de-a2-adjektiv-ein",
+    icon: "shopping",
+    level: "A2",
+    course: "de",
+    title: "Ein hellblaues Hemd",
+    titleTr: "Sıfat çekimi",
+    summary: "Renk ve desen sıfatlarıyla sıfat çekiminin ilk adımını öğretir.",
+    minutes: 10,
+    focusId: "Adjektivdeklination-Einstieg",
+    vocab: [
+      { de: "grün", tr: "yeşil" },
+      { de: "grau", tr: "gri" },
+      { de: "hellblau", tr: "açık mavi" },
+      { de: "dunkelblau", tr: "koyu mavi" },
+      { de: "bunt", tr: "rengârenk" },
+      { de: "gestreift", tr: "çizgili" },
+      { de: "kariert", tr: "kareli" },
+      { de: "einfarbig", tr: "tek renkli" },
+    ],
+    patterns: [
+      { de: "Ich suche ein hellblaues Hemd.", tr: "aradığın şeyi renkle tarif eder" },
+      { de: "Haben Sie das auch einfarbig?", tr: "başka bir deseni sorar" },
+    ],
+    lecture: [
+      {
+        say: [
+          tr(
+            "Bugün Türkçe konuşan için tamamen yeni bir şey öğreniyoruz: Almancada sıfat, bir ismin önünde durduğunda sonu değişir. Hazır mısın?",
+          ),
+        ],
+        expect: { kind: "confirm" },
+      },
+      {
+        say: [
+          tr(
+            "Türkçede sıfat hiç değişmez: yeşil ceket, yeşil gömlek, yeşil ayakkabı. Almancada ise sıfat ismin cinsine göre sonuna bir harf alır. Bugün en kolay hâlini çalışıyoruz: belirsiz artikelden sonra. Sekiz renk ve desen sıfatıyla aynı kuralı sekiz kez göreceksin. Önce kelimeler.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("İlk kelimemiz:"),
           de("grün"),
           tr("Türkçesi 'yeşil' demek. Lütfen"),
           de("grün"),
@@ -644,118 +682,159 @@ export const deA2B06: Lesson[] = [
       },
       {
         say: [
-          tr("Dördüncü kelimemiz:"),
-          de("gelb"),
-          tr("Türkçesi 'sarı' demek. Lütfen"),
-          de("gelb"),
+          tr("İkinci kelimemiz:"),
+          de("grau"),
+          tr("Türkçesi 'gri' demek. Lütfen"),
+          de("grau"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "gelb" },
+        expect: { kind: "repeat", target: "grau" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("hellblau"),
+          tr("Türkçesi 'açık mavi' demek. Lütfen"),
+          de("hellblau"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "hellblau" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("dunkelblau"),
+          tr("Türkçesi 'koyu mavi' demek. Lütfen"),
+          de("dunkelblau"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "dunkelblau" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("bunt"),
+          tr("Türkçesi 'rengârenk' demek. Lütfen"),
+          de("bunt"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "bunt" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("gestreift"),
+          tr("Türkçesi 'çizgili' demek. Lütfen"),
+          de("gestreift"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "gestreift" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("kariert"),
+          tr("Türkçesi 'kareli' demek. Lütfen"),
+          de("kariert"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "kariert" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("elegant"),
-          tr("Türkçesi 'şık' demek. Lütfen"),
-          de("elegant"),
+          de("einfarbig"),
+          tr("Türkçesi 'tek renkli, desensiz' demek. Lütfen"),
+          de("einfarbig"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "elegant" },
+        expect: { kind: "repeat", target: "einfarbig" },
       },
       {
         say: [
-          tr("Kural şu: belirsiz artikelden sonra gelen sıfat, ismin cinsine göre sonuna bir harf alıyor. Nötr isimlerde bu"),
-          de("ein gelbes Kleid"),
-          tr("biçiminde duyuluyor."),
+          tr("Şimdi kuralı üç cinste birden duy. Aynı sıfat, üç ayrı son:"),
+          de("ein grüner Rock, eine grüne Hose, ein grünes Hemd"),
         ],
       },
       {
         say: [
-          tr("Örnek: 'Bu yeşil bir elbise.' Almancası:"),
-          de("Das ist ein grünes Kleid."),
+          tr("İlk kalıbımız:"),
+          de("Ich suche ein hellblaues Hemd."),
+          tr(
+            "Cinssiz bir isim, o yüzden sıfat 'es' ile bitiyor. Artikel ismin cinsini göstermediği zaman o işi sıfat üstleniyor.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Yeşil bir etek arıyorum.' Almancası:"),
+          de("Ich suche einen grünen Rock."),
           tr("Lütfen"),
-          de("Das ist ein grünes Kleid"),
+          de("Ich suche einen grünen Rock"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Das ist ein grünes Kleid" },
+        expect: { kind: "repeat", target: "Ich suche einen grünen Rock" },
       },
       {
-        say: [tr("Sıra sende: 'Bu sarı bir elbise.'")],
+        say: [tr("Sıra sende: 'Gri bir pantolon arıyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Das ist ein gelbes Kleid",
+          target: "Ich suche eine graue Hose",
           hint: [
-            tr("Nötr isimlerde sıfat sonuna bir ek alır:"),
-            de("Das ist ein gelbes Kleid."),
+            tr("Dişil bir isim, o yüzden sıfat sonuna bir harf alır:"),
+            de("Ich suche eine graue Hose."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("Eril isimlerde son harf değişiyor:"),
-          de("ein roter Mantel"),
-          tr("Dişil isimlerde ise daha kısa kalıyor:"),
-          de("eine grüne Jacke"),
+          tr("İkinci kalıbımız:"),
+          de("Haben Sie das auch einfarbig?"),
+          tr("Sıfat burada bir ismin önünde değil, o yüzden hiç ek almıyor. Kural yalnız ismin önünde işler."),
         ],
       },
       {
-        say: [tr("Lütfen"), de("Das ist eine grüne Jacke"), tr("deyin.")],
-        expect: { kind: "repeat", target: "Das ist eine grüne Jacke" },
-      },
-      {
-        say: [tr("Şimdi sen söyle: 'Bu şık bir takım elbise.'")],
+        say: [tr("Sıra sende: 'Kareli bir gömlek istiyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Das ist ein eleganter Anzug",
+          target: "Ich möchte ein kariertes Hemd",
           hint: [
-            de("der Anzug"),
-            tr("eril, o yüzden sıfat eril ekini alır:"),
-            de("Das ist ein eleganter Anzug."),
+            tr("Cinssiz bir isimde sıfat iki harfle biter:"),
+            de("Ich möchte ein kariertes Hemd."),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Mağazada bunu en çok arama cümlesinde kullanırsın:"),
-          de("Ich suche einen roten Mantel."),
-          tr("Nesne olunca eril biçim biraz daha değişiyor, ama bugün aklında kalması gereken üçlü bu:"),
-          de("ein roter, eine grüne, ein gelbes"),
-        ],
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Das ist ein elegante Anzug."),
+          de("Ich suche ein hellblaues Hemd."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Das ist ein elegante Anzug.",
-          answer: false,
+          statement: "Ich suche ein hellblaues Hemd.",
+          answer: true,
           why: [
-            tr("Eril isimde sıfatın sonu farklı olmalı. Doğrusu:"),
-            de("Das ist ein eleganter Anzug."),
+            tr(
+              "İsim cinssiz ve belirsiz artikelden sonra geliyor; sıfat da o cinsi gösteren eki almış. Cümle doğru.",
+            ),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık rengi ismin önüne koyabilirsin. Şimdi mağazadasın ve aradığın şeyi rengiyle tarif edeceksin.",
-          ),
-        ],
+        say: [tr("Şimdi mağazada belirli bir renk ve desen arıyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir mağazada belirli bir şey arıyorsun ve rengini de söylemek istiyorsun. Ne aradığını rengiyle tarif et, gösterilenleri değerlendir ve beğendiğini söyle.",
-      partner: "raftaki her rengi bilen, yardımsever bir mağaza görevlisi",
-      opening: "Willkommen! Suchen Sie etwas für einen besonderen Anlass?",
-      openingTr: "Hoş geldiniz! Özel bir gün için mi bakıyorsunuz?",
-      goal: "Aradığın şey rengiyle tarif edilmiş ve gösterilenlerden biri beğenilmiş olur.",
-      minTurns: 7,
+        "Bir mağazada belirli bir renk ve desende kıyafet arıyorsun. Ne aradığını tarif et, gösterilenleri değerlendir ve başka bir renk ya da desen iste.",
+      partner: "raflardan farklı seçenekler getiren bir satış görevlisi",
+      opening: "Guten Tag! Suchen Sie etwas Bestimmtes?",
+      openingTr: "İyi günler! Belirli bir şey mi arıyorsunuz?",
+      goal: "Aranan renk ve desen tarif edilmiş, en az iki seçenek değerlendirilmiş ve biri seçilmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -765,26 +844,28 @@ export const deA2B06: Lesson[] = [
     course: "de",
     title: "Beim Friseur",
     titleTr: "Kuaförde",
-    summary: "Kuaförde ne istediğini ölçüsüyle anlatmayı öğretir.",
-    minutes: 8,
+    summary: "Kuaförde ne istediğini anlatmayı ve sonucu değerlendirmeyi öğretir.",
+    minutes: 10,
     focusId: "Komparativ",
     vocab: [
-      { de: "der Friseur", tr: "kuaför" },
-      { de: "waschen", tr: "yıkamak" },
-      { de: "färben", tr: "boyamak" },
-      { de: "trocknen", tr: "kurutmak" },
-      { de: "der Spiegel", tr: "ayna" },
+      { de: "der Friseursalon", tr: "kuaför salonu" },
+      { de: "die Schere", tr: "makas" },
+      { de: "föhnen", tr: "fön çekmek" },
+      { de: "bürsten", tr: "fırçalamak" },
+      { de: "sich kämmen", tr: "saçını taramak" },
+      { de: "glänzend", tr: "parlak" },
+      { de: "gepflegt", tr: "bakımlı" },
+      { de: "das Parfüm", tr: "parfüm" },
     ],
     patterns: [
-      { de: "Etwas kürzer, bitte", tr: "ne kadar kısaltılacağını söylerken kullanılır" },
-      { de: "Nicht zu kurz", tr: "sınır koyarken kullanılır" },
-      { de: "Waschen und schneiden, bitte", tr: "hangi işlemi istediğini söylerken kullanılır" },
+      { de: "Bitte etwas kürzer.", tr: "ne kadar kısaltılacağını söyler" },
+      { de: "Können Sie mir die Haare föhnen?", tr: "ek bir hizmet ister" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Merhaba! Bugün kuaför koltuğundayız. Ne kadar kısaltılacağını söylemeyi ve sınırını çizmeyi öğreneceğiz; bu konuşmayı yanlış yaparsan sonucu aynada görürsün. Başlamaya hazır mısın?",
+            "Bugün kuaförde ne istediğini anlatmayı öğreniyoruz. Burada karşılaştırma biçimi çok işine yarayacak: daha kısa, daha koyu, daha az. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -792,154 +873,171 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr(
-            "Burada karşılaştırma biçimi ölçü aleti gibi çalışıyor: daha kısa, daha uzun, çok kısa değil. Önce kelimeleri öğrenelim.",
+            "Kuaförde istekler hep karşılaştırma biçimiyle söylenir, çünkü bir ölçü değil bir yön belirtirsin: mevcut hâlinden daha kısa. Bir de kişiye yapılan bir işi anlatırken kişi yönelme hâline giriyor; bunu modül 3'te de görmüştün. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("der Friseur"),
-          tr("Türkçesi 'kuaför' demek. Lütfen"),
-          de("der Friseur"),
+          de("der Friseursalon"),
+          tr("Türkçesi 'kuaför salonu' demek. Lütfen"),
+          de("der Friseursalon"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Friseur" },
+        expect: { kind: "repeat", target: "der Friseursalon" },
       },
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("waschen"),
-          tr("Türkçesi 'yıkamak' demek. Lütfen"),
-          de("waschen"),
+          de("die Schere"),
+          tr("Türkçesi 'makas' demek. Lütfen"),
+          de("die Schere"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "waschen" },
+        expect: { kind: "repeat", target: "die Schere" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("färben"),
-          tr("Türkçesi 'boyamak' demek. Lütfen"),
-          de("färben"),
+          de("föhnen"),
+          tr("Türkçesi 'fön çekmek' demek. Lütfen"),
+          de("föhnen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "färben" },
+        expect: { kind: "repeat", target: "föhnen" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("trocknen"),
-          tr("Türkçesi 'kurutmak' demek. Lütfen"),
-          de("trocknen"),
+          de("bürsten"),
+          tr("Türkçesi 'fırçalamak' demek. Lütfen"),
+          de("bürsten"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "trocknen" },
+        expect: { kind: "repeat", target: "bürsten" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("sich kämmen"),
+          tr("Türkçesi 'saçını taramak' demek. Lütfen"),
+          de("sich kämmen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "sich kämmen" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("glänzend"),
+          tr("Türkçesi 'parlak' demek. Lütfen"),
+          de("glänzend"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "glänzend" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("gepflegt"),
+          tr("Türkçesi 'bakımlı' demek. Lütfen"),
+          de("gepflegt"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "gepflegt" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("der Spiegel"),
-          tr("Türkçesi 'ayna' demek. Lütfen"),
-          de("der Spiegel"),
+          de("das Parfüm"),
+          tr("Türkçesi 'parfüm' demek. Lütfen"),
+          de("das Parfüm"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Spiegel" },
+        expect: { kind: "repeat", target: "das Parfüm" },
       },
       {
         say: [
-          tr("Koltuğa oturunca ilk söyleyeceğin şey işlem:"),
-          de("Waschen und schneiden, bitte."),
-          tr("Kurutmayı da isteyebilirsin:"),
-          de("Waschen, schneiden und trocknen."),
-          tr("Randevu alırken de meslek adını kullanırsın:"),
-          de("Ich brauche einen Termin beim Friseur."),
+          tr("İlk kalıbımız:"),
+          de("Bitte etwas kürzer."),
+          tr(
+            "İki kelimelik bir istek. Karşılaştırma biçimi burada bir ölçü değil bir yön söylüyor: şimdikinden daha kısa.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Lütfen biraz daha kısa, ama çok kısa değil.' Almancası:"),
+          de("Bitte etwas kürzer, aber nicht zu kurz."),
           tr("Lütfen"),
-          de("Waschen und schneiden, bitte"),
+          de("Bitte etwas kürzer, aber nicht zu kurz"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Waschen und schneiden, bitte" },
+        expect: { kind: "repeat", target: "Bitte etwas kürzer, aber nicht zu kurz" },
       },
       {
-        say: [
-          tr("Sonra ölçü gelir ve burada karşılaştırma biçimi devreye girer:"),
-          de("Etwas kürzer, bitte."),
-          tr("Yani 'Biraz daha kısa.' Baştaki kelime 'biraz' demek ve ölçüyü yumuşatır."),
-        ],
-      },
-      {
-        say: [tr("Sıra sende: 'Biraz daha kısa, lütfen.'")],
+        say: [tr("Sıra sende: 'Saçlarım daha parlak olsun istiyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Etwas kürzer, bitte",
+          target: "Ich möchte glänzendere Haare",
           hint: [
-            tr("Sıfatın karşılaştırma biçimini kullan, sesli harf de değişiyor:"),
-            de("Etwas kürzer, bitte."),
+            tr("Sıfat hem karşılaştırma ekini hem de çoğul ismin önünde durduğu için son ekini alır:"),
+            de("Ich möchte glänzendere Haare."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("Sınırını da hemen çiz, yoksa iş işten geçer:"),
-          de("Nicht zu kurz, bitte."),
-          tr("Buradaki küçük kelime 'fazla' demek. Lütfen"),
-          de("Nicht zu kurz, bitte"),
-          tr("deyin."),
+          tr("İkinci kalıbımız:"),
+          de("Können Sie mir die Haare föhnen?"),
+          tr(
+            "Kişi yönelme hâlinde ve saç belirlilik takısıyla duruyor. Türkçedeki 'saçımı' derken kullandığımız iyelik ekinin karşılığı bu ikili.",
+          ),
         ],
-        expect: { kind: "repeat", target: "Nicht zu kurz, bitte" },
       },
       {
-        say: [tr("Şimdi sen söyle: 'Saçımı boyatmak istiyorum.'")],
+        say: [tr("Sıra sende: 'Bana fön çekebilir misiniz?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich möchte die Haare färben",
+          target: "Können Sie mir föhnen",
           hint: [
-            tr("İsteme fiili ikinci sırada, asıl fiil en sonda:"),
-            de("Ich möchte die Haare färben."),
+            tr("Hizmet verilen kişi yönelme hâlinde ve asıl fiil sonda:"),
+            de("Können Sie mir föhnen?"),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Sonunda kuaför aynayı uzatır ve sorar:"),
-          de("Gefällt es Ihnen?"),
-          tr("Sen de aynaya bakıp cevap verirsin:"),
-          de("Im Spiegel sieht es gut aus."),
-        ],
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Nicht zu lang, bitte."),
+          de("Können Sie mich die Haare föhnen?"),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Nicht zu lang, bitte.",
-          answer: true,
+          statement: "Können Sie mich die Haare föhnen?",
+          answer: false,
           why: [
-            tr("Doğru. Burada sıfatın kendisi kullanılıyor, çünkü karşılaştırma değil sınır koyma var:"),
-            de("nicht zu lang"),
+            tr(
+              "Kişiye bir şey yapıldığında kişi yönelme hâlinde durur, belirtme hâlinde değil. Doğrusu:",
+            ),
+            de("Können Sie mir die Haare föhnen?"),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık koltuğa güvenle oturabilirsin. Şimdi kuaför makası eline aldı ve ne istediğini soruyor.",
-          ),
-        ],
+        say: [tr("Şimdi kuafördesin ve ne istediğini anlatıyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "Kuaförde koltuğa oturdun ve saçını kestireceksin. Hangi işlemi istediğini söyle, ne kadar kısa olacağını ölçüsüyle anlat ve sınırını çiz.",
-      partner: "sohbeti seven ama makası hızlı olan bir kuaför",
-      opening: "Was darf es heute sein? Nur schneiden oder auch färben?",
-      openingTr: "Bugün ne yapalım? Sadece kesim mi, boya da var mı?",
-      goal: "İstenen işlem, uzunluk ölçüsü ve sınırın söylenmiş; kesim üzerinde anlaşılmış olur.",
+        "Kuaförde koltuğa oturdun. Ne istediğini karşılaştırma biçimiyle anlat, bir ek hizmet iste ve sonunda sonucu değerlendir.",
+      partner: "ne istediğini iyice anlamak isteyen bir kuaför",
+      opening: "So, was darf es heute sein? Nur schneiden?",
+      openingTr: "Evet, bugün ne yapalım? Sadece kesim mi?",
+      goal: "İstek net anlatılmış, bir ek hizmet konuşulmuş ve sonuç hakkında bir cümle söylenmiş olur.",
       minTurns: 8,
     },
   },
@@ -950,26 +1048,28 @@ export const deA2B06: Lesson[] = [
     course: "de",
     title: "Die Reklamation",
     titleTr: "Ürün şikâyeti",
-    summary: "Bozuk bir ürünü şikâyet etmeyi ve parayı geri istemeyi öğretir.",
-    minutes: 9,
+    summary: "Bozuk bir üründe şikâyeti anlatmayı ve iade istemeyi öğretir.",
+    minutes: 10,
     focusId: "Perfekt",
     vocab: [
-      { de: "die Reklamation", tr: "şikâyet" },
-      { de: "die Garantie", tr: "garanti" },
-      { de: "defekt", tr: "arızalı" },
-      { de: "der Beleg", tr: "fiş" },
-      { de: "sich beschweren", tr: "şikâyet etmek" },
+      { de: "fehlerhaft", tr: "hatalı" },
+      { de: "beschädigt", tr: "hasarlı" },
+      { de: "zerbrochen", tr: "kırık" },
+      { de: "abgenutzt", tr: "yıpranmış" },
+      { de: "die Rückgabe", tr: "iade" },
+      { de: "der Kassenzettel", tr: "kasa fişi" },
+      { de: "verärgert", tr: "kızgın" },
+      { de: "der Filialleiter", tr: "şube müdürü" },
     ],
     patterns: [
-      { de: "Ich habe … gekauft", tr: "ne zaman aldığını anlatırken kullanılır" },
-      { de: "Es funktioniert nicht", tr: "çalışmadığını söylerken kullanılır" },
-      { de: "Ich möchte mein Geld zurück", tr: "para iadesi isterken kullanılır" },
+      { de: "Das Paket ist beschädigt angekommen.", tr: "ürünün nasıl geldiğini anlatır" },
+      { de: "Ich möchte das zurückgeben.", tr: "iade isteğini bildirir" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Merhaba! Aldığın şey bozuk çıktı ve mağazaya geri götürüyorsun. Bugün şikâyetini sırayla anlatmayı öğreneceğiz. Başlamaya hazır mısın?",
+            "Bugün bozuk bir ürünü şikâyet ediyoruz. Almanya'da bu hakkın var ama doğru kelimeleri kullanmak süreci hızlandırır. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -977,155 +1077,170 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr(
-            "Bu konuşmanın sırası bellidir: önce ne zaman aldığını söylersin, sonra sorunu anlatırsın, en sonda ne istediğini. İlk adım geçmiş zaman, o yüzden bugün onu tazeliyoruz. Önce kelimeleri öğrenelim.",
+            "Bugünkü sıfatların dördü de ortaçtan gelmiş: bir fiilin ortacı zamanla sıfat olarak kullanılır hâle gelmiş. Bu yüzden hepsi aynı hecelerle bitiyor ve hepsi 'bir şey olmuş, sonucu bu' anlamını taşıyor. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("die Reklamation"),
-          tr("Türkçesi 'şikâyet' demek. Lütfen"),
-          de("die Reklamation"),
+          de("fehlerhaft"),
+          tr("Türkçesi 'hatalı' demek. Lütfen"),
+          de("fehlerhaft"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Reklamation" },
+        expect: { kind: "repeat", target: "fehlerhaft" },
       },
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("die Garantie"),
-          tr("Türkçesi 'garanti' demek. Lütfen"),
-          de("die Garantie"),
+          de("beschädigt"),
+          tr("Türkçesi 'hasarlı' demek. Lütfen"),
+          de("beschädigt"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Garantie" },
+        expect: { kind: "repeat", target: "beschädigt" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("defekt"),
-          tr("Türkçesi 'arızalı' demek. Lütfen"),
-          de("defekt"),
+          de("zerbrochen"),
+          tr("Türkçesi 'kırık' demek. Lütfen"),
+          de("zerbrochen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "defekt" },
+        expect: { kind: "repeat", target: "zerbrochen" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("der Beleg"),
-          tr("Türkçesi 'fiş' demek. Lütfen"),
-          de("der Beleg"),
+          de("abgenutzt"),
+          tr("Türkçesi 'yıpranmış, eskimiş' demek. Lütfen"),
+          de("abgenutzt"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Beleg" },
+        expect: { kind: "repeat", target: "abgenutzt" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("die Rückgabe"),
+          tr("Türkçesi 'iade' demek. Lütfen"),
+          de("die Rückgabe"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Rückgabe" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("der Kassenzettel"),
+          tr("Türkçesi 'kasa fişi' demek. Lütfen"),
+          de("der Kassenzettel"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Kassenzettel" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("verärgert"),
+          tr("Türkçesi 'kızgın, canı sıkılmış' demek. Lütfen"),
+          de("verärgert"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "verärgert" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("sich beschweren"),
-          tr("Türkçesi 'şikâyet etmek' demek. Lütfen"),
-          de("sich beschweren"),
+          de("der Filialleiter"),
+          tr("Türkçesi 'şube müdürü' demek. Lütfen"),
+          de("der Filialleiter"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "sich beschweren" },
+        expect: { kind: "repeat", target: "der Filialleiter" },
       },
       {
         say: [
-          tr("Masaya gelince önce konunun ne olduğunu söylersin:"),
-          de("Ich habe eine Reklamation."),
-          tr("Arkasından satın almayı anlatırsın ve bu cümle geçmiş zamandır:"),
-          de("Ich habe das Handy hier gekauft."),
-          tr("Yardımcı fiil ikinci sırada, geçmiş biçim en sonda; bu sıra artık sana tanıdık."),
+          tr("İlk kalıbımız:"),
+          de("Das Paket ist beschädigt angekommen."),
+          tr(
+            "İki ortaç bir arada: biri sıfat gibi kullanılıyor, öteki geçmiş zamanın kendisi. Fiil yer değiştirdiği için yardımcı fiil de ona göre.",
+          ),
         ],
       },
       {
-        say: [tr("Lütfen"), de("Ich habe das Handy hier gekauft"), tr("deyin.")],
-        expect: { kind: "repeat", target: "Ich habe das Handy hier gekauft" },
-      },
-      {
-        say: [tr("Sıra sende: 'Bunu geçen hafta aldım.'")],
-        expect: {
-          kind: "produce",
-          target: "Ich habe das letzte Woche gekauft",
-          hint: [
-            tr("Zaman ifadesi ortada durur, geçmiş biçim en sona gider:"),
-            de("Ich habe das letzte Woche gekauft."),
-            tr("Tekrar dene."),
-          ],
-        },
-      },
-      {
         say: [
-          tr("İkinci adım sorunu anlatmak. İki cümle yeter:"),
-          de("Es funktioniert nicht."),
-          tr("ve daha resmi olanı:"),
-          de("Das Gerät ist defekt."),
-        ],
-      },
-      {
-        say: [tr("Şimdi sen söyle: 'Telefon arızalı.'")],
-        expect: {
-          kind: "produce",
-          target: "Das Handy ist defekt",
-          hint: [
-            tr("Önce ne olduğunu söyle, sonra durumunu:"),
-            de("Das Handy ist defekt."),
-            tr("Tekrar dene."),
-          ],
-        },
-      },
-      {
-        say: [
-          tr("Üçüncü adım ne istediğin. Görevli önce belgeni sorar:"),
-          de("Haben Sie den Beleg?"),
-          tr("Garanti hâlâ geçerliyse işin kolay:"),
-          de("Die Garantie gilt zwei Jahre."),
+          tr("Örnek: 'Kutuda iki kırık tabak vardı.' Almancası:"),
+          de("Im Karton waren zwei zerbrochene Teller."),
           tr("Lütfen"),
-          de("Ich möchte mein Geld zurück"),
+          de("Im Karton waren zwei zerbrochene Teller"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Ich möchte mein Geld zurück" },
+        expect: { kind: "repeat", target: "Im Karton waren zwei zerbrochene Teller" },
+      },
+      {
+        say: [tr("Sıra sende: 'Halı çoktan yıpranmış.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Der Teppich ist schon abgenutzt",
+          hint: [
+            tr("Ortaçtan gelen sıfat yüklem olarak kullanıldığında hiç ek almaz:"),
+            de("Der Teppich ist schon abgenutzt."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
-          tr("Sonuç alamazsan bir üst adım var:"),
-          de("Ich möchte mich beschweren."),
-          tr("Bu cümle konuşmanın tonunu değiştirir, o yüzden en sona sakla."),
+          tr("İkinci kalıbımız iade isteğini bildirir:"),
+          de("Ich möchte das zurückgeben."),
+          tr(
+            "Almanya'da iade genelde fişe bağlıdır, o yüzden bu cümleden hemen sonra fiş sorulur.",
+          ),
         ],
+      },
+      {
+        say: [tr("Sıra sende: 'Fişsiz iade mümkün mü?' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ist die Rückgabe ohne Kassenzettel möglich",
+          hint: [
+            tr("Fiil başta olduğu için cümle soru olur ve edat belirtme hâlini getirir:"),
+            de("Ist die Rückgabe ohne Kassenzettel möglich?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich habe das Handy gekauft gestern."),
+          de("Das Paket ist beschädigt angekommen."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich habe das Handy gekauft gestern.",
-          answer: false,
+          statement: "Das Paket ist beschädigt angekommen.",
+          answer: true,
           why: [
-            tr("Geçmiş biçim cümlenin en sonunda durur, ondan sonra hiçbir şey gelmez. Doğrusu:"),
-            de("Ich habe das Handy gestern gekauft."),
+            tr(
+              "Varmak yer değiştiren bir fiil, o yüzden birinci yardımcı fiili almış; hasar bildiren sıfat ise ek almadan durmuş. Cümle doğru.",
+            ),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık hakkını arayabilirsin. Şimdi mağazanın şikâyet masasındasın: elinde bozuk telefon ve fiş var.",
-          ),
-        ],
+        say: [tr("Şimdi mağazada bozuk bir ürünü şikâyet ediyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "İki hafta önce aldığın telefon bozuldu ve mağazaya geri getirdin. Ne zaman aldığını söyle, sorunu anlat, fişini göster ve ne istediğini net biçimde belirt.",
-      partner: "kuralları savunan ama çözüm arayan bir müşteri hizmetleri görevlisi",
-      opening: "Guten Tag! Worum geht es bei Ihrer Reklamation?",
-      openingTr: "İyi günler! Şikâyetiniz ne hakkında?",
-      goal: "Alım tarihi, sorun ve fiş konuşulmuş; ne istediğin net biçimde söylenmiş olur.",
+        "Aldığın ürün hasarlı çıktı ve mağazaya geri getirdin. Sorunu anlat, ne istediğini söyle ve olmazsa müdürle konuşmak istediğini belirt.",
+      partner: "önce kuralları söyleyen ama sonra çözüm arayan bir kasiyer",
+      opening: "Guten Tag. Was kann ich für Sie tun?",
+      openingTr: "İyi günler. Size nasıl yardımcı olabilirim?",
+      goal: "Sorun anlatılmış, fiş konusu geçmiş ve iade ya da değişim konusunda bir sonuca varılmış olur.",
       minTurns: 8,
     },
   },
@@ -1136,26 +1251,28 @@ export const deA2B06: Lesson[] = [
     course: "de",
     title: "Der Handyvertrag",
     titleTr: "Telefon aboneliği",
-    summary: "İki tarifeyi karşılaştırmayı ve aboneliği iptal etmeyi öğretir.",
-    minutes: 9,
+    summary: "Tarifeleri karşılaştırmayı ve aboneliğin şartlarını sormayı öğretir.",
+    minutes: 10,
     focusId: "Komparativ",
     vocab: [
-      { de: "der Tarif", tr: "tarife" },
-      { de: "kündigen", tr: "iptal etmek" },
-      { de: "monatlich", tr: "aylık" },
-      { de: "unbegrenzt", tr: "sınırsız" },
-      { de: "das Internet", tr: "internet" },
+      { de: "wöchentlich", tr: "haftalık" },
+      { de: "das Smartphone", tr: "akıllı telefon" },
+      { de: "der Klingelton", tr: "zil sesi" },
+      { de: "das WLAN", tr: "kablosuz internet" },
+      { de: "der Router", tr: "modem" },
+      { de: "das Ladekabel", tr: "şarj kablosu" },
+      { de: "der Benutzername", tr: "kullanıcı adı" },
+      { de: "die Stromrechnung", tr: "elektrik faturası" },
     ],
     patterns: [
-      { de: "Welcher Tarif ist günstiger?", tr: "iki tarifeyi karşılaştırırken kullanılır" },
-      { de: "unbegrenztes Internet", tr: "paketin içeriğini söylerken kullanılır" },
-      { de: "Ich möchte den Vertrag kündigen", tr: "aboneliği bitirirken kullanılır" },
+      { de: "Dieser Tarif ist teurer als der andere.", tr: "iki tarifeyi karşılaştırır" },
+      { de: "Ist das WLAN kostenlos?", tr: "bir hizmetin ücretsiz olup olmadığını sorar" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Merhaba! Bugün telefon bayisindeyiz. İki tarifeyi karşılaştırmayı ve gerekirse aboneliği bitirmeyi öğreneceğiz. Başlamaya hazır mısın?",
+            "Bugün telefon ve internet aboneliğini konuşuyoruz. Karşılaştırma biçimi burada gerçek bir para kararına dönüşüyor. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1163,107 +1280,136 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr(
-            "Almanya'da abonelik sözleşmeyle olur ve sözleşmeyi bitirmek de ayrı bir cümle ister. İkisini de bugün öğreniyoruz. Önce kelimeleri öğrenelim.",
+            "Abonelik konuşmalarının üç sorusu var: ne kadar, ne kadar süreyle, neler dâhil. Karşılaştırma biçimi birincisinde, sıklık bildiren sıfatlar ikincisinde işine yarayacak. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("der Tarif"),
-          tr("Türkçesi 'tarife' demek. Lütfen"),
-          de("der Tarif"),
+          de("wöchentlich"),
+          tr("Türkçesi 'haftalık, her hafta' demek. Lütfen"),
+          de("wöchentlich"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Tarif" },
+        expect: { kind: "repeat", target: "wöchentlich" },
       },
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("kündigen"),
-          tr("Türkçesi 'iptal etmek' demek. Lütfen"),
-          de("kündigen"),
+          de("das Smartphone"),
+          tr("Türkçesi 'akıllı telefon' demek. Lütfen"),
+          de("das Smartphone"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "kündigen" },
+        expect: { kind: "repeat", target: "das Smartphone" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("monatlich"),
-          tr("Türkçesi 'aylık' demek. Lütfen"),
-          de("monatlich"),
+          de("der Klingelton"),
+          tr("Türkçesi 'zil sesi' demek. Lütfen"),
+          de("der Klingelton"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "monatlich" },
+        expect: { kind: "repeat", target: "der Klingelton" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("unbegrenzt"),
-          tr("Türkçesi 'sınırsız' demek. Lütfen"),
-          de("unbegrenzt"),
+          de("das WLAN"),
+          tr("Türkçesi 'kablosuz internet' demek. Lütfen"),
+          de("das WLAN"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "unbegrenzt" },
+        expect: { kind: "repeat", target: "das WLAN" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("der Router"),
+          tr("Türkçesi 'modem' demek. Lütfen"),
+          de("der Router"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Router" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("das Ladekabel"),
+          tr("Türkçesi 'şarj kablosu' demek. Lütfen"),
+          de("das Ladekabel"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Ladekabel" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("der Benutzername"),
+          tr("Türkçesi 'kullanıcı adı' demek. Lütfen"),
+          de("der Benutzername"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Benutzername" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("das Internet"),
-          tr("Türkçesi 'internet' demek. Lütfen"),
-          de("das Internet"),
+          de("die Stromrechnung"),
+          tr("Türkçesi 'elektrik faturası' demek. Lütfen"),
+          de("die Stromrechnung"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Internet" },
+        expect: { kind: "repeat", target: "die Stromrechnung" },
       },
       {
         say: [
-          tr("Bayide ilk soracağın şey karşılaştırma:"),
-          de("Welcher Tarif ist günstiger?"),
-          tr("Soru kelimesi ismin cinsine uyuyor, sıfat da karşılaştırma ekini alıyor."),
+          tr("İlk kalıbımız:"),
+          de("Dieser Tarif ist teurer als der andere."),
+          tr(
+            "Bu sıfatın karşılaştırma biçiminde ortadaki sesli harflerden biri düşüyor; kuralın kendisi aynı, yazımı biraz kısalıyor.",
+          ),
         ],
       },
       {
-        say: [tr("Lütfen"), de("Welcher Tarif ist günstiger"), tr("deyin.")],
-        expect: { kind: "repeat", target: "Welcher Tarif ist günstiger" },
+        say: [
+          tr("Örnek: 'Bu yıl elektrik faturası çok yüksek.' Almancası:"),
+          de("Die Stromrechnung ist dieses Jahr sehr hoch."),
+          tr("Lütfen"),
+          de("Die Stromrechnung ist dieses Jahr sehr hoch"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Die Stromrechnung ist dieses Jahr sehr hoch" },
       },
       {
-        say: [tr("Sıra sende: 'Bu tarife daha pahalı.'")],
+        say: [tr("Sıra sende: 'Kullanıcı adımı unuttum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Dieser Tarif ist teurer",
+          target: "Ich habe meinen Benutzernamen vergessen",
           hint: [
-            tr("Sıfatın sonuna karşılaştırma eki gelir:"),
-            de("Dieser Tarif ist teurer."),
+            tr("Bu eril isim belirtme hâlinde sonuna bir harf alır:"),
+            de("Ich habe meinen Benutzernamen vergessen."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("Paketin içinde ne olduğunu iki kelimeyle anlarsın:"),
-          de("unbegrenztes Internet"),
-          tr("Buradaki sıfat da geçen dersteki gibi ismin cinsine göre ek almış. Aylık ücret ise şöyle söylenir:"),
-          de("Der Tarif kostet monatlich zwanzig Euro."),
+          tr("İkinci kalıbımız:"),
+          de("Ist das WLAN kostenlos?"),
+          tr("Fiil başta olduğu için cümle soru; sıfat yüklem olduğu için ek almıyor."),
         ],
       },
       {
-        say: [
-          tr("Sözleşmeyi bitirmek istediğinde tek bir cümle yeter. Sözleşme kelimesini iş dersinden biliyorsun. Lütfen"),
-          de("Ich möchte den Vertrag kündigen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Ich möchte den Vertrag kündigen" },
-      },
-      {
-        say: [tr("Şimdi sen sor: 'Hangi tarife daha ucuz?'")],
+        say: [tr("Sıra sende: 'Modem dâhil mi?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Welcher Tarif ist billiger",
+          target: "Ist der Router dabei",
           hint: [
-            tr("Soru kelimesi eril biçimde kalır, sıfat ek alır:"),
-            de("Welcher Tarif ist billiger?"),
+            tr("Fiil başta, zarf sonda:"),
+            de("Ist der Router dabei?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1271,34 +1417,30 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Der Tarif kostet monatlich zwanzig Euro."),
+          de("Dieser Tarif ist teuerer als der andere."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Der Tarif kostet monatlich zwanzig Euro.",
-          answer: true,
+          statement: "Dieser Tarif ist teuerer als der andere.",
+          answer: false,
           why: [
-            tr("Doğru. Sıklık bildiren kelime fiilden sonra, fiyat ise en sonda duruyor:"),
-            de("kostet monatlich zwanzig Euro"),
+            tr("Bu sıfatın karşılaştırma biçiminde ortadaki sesli harf düşer. Doğrusu:"),
+            de("Dieser Tarif ist teurer als der andere."),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık tarifeyi de sözleşmeyi de idare edersin. Şimdi bayidesin: danışman iki tarifeyi önüne koydu.",
-          ),
-        ],
+        say: [tr("Şimdi mağazada iki tarifeyi karşılaştırıyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "Telefon bayisinde iki tarife arasında seçim yapıyorsun. Hangisinin daha ucuz olduğunu sor, içeriklerini karşılaştır ve eski sözleşmeni iptal etmek istediğini söyle.",
-      partner: "pahalı tarifeyi öneren, hızlı konuşan bir bayi danışmanı",
-      opening: "Wir haben zwei Tarife im Angebot. Wie viel telefonieren Sie im Monat?",
-      openingTr: "İki tarifemiz var. Ayda ne kadar konuşuyorsunuz?",
-      goal: "İki tarife karşılaştırılmış, biri seçilmiş ve eski sözleşmenin iptali konuşulmuş olur.",
+        "Bir telefon mağazasındasın ve iki tarife arasında karar veremiyorsun. Fiyatı, süreyi ve nelerin dâhil olduğunu sor, ikisini karşılaştır ve bir karar ver.",
+      partner: "iki tarifeyi de anlatan bir satış görevlisi",
+      opening: "Suchen Sie einen neuen Vertrag? Ich zeige Ihnen gern zwei Angebote.",
+      openingTr: "Yeni bir abonelik mi arıyorsunuz? Size iki teklif gösterebilirim.",
+      goal: "İki tarife fiyat ve içerik olarak karşılaştırılmış ve biri seçilip sebebi söylenmiş olur.",
       minTurns: 8,
     },
   },
@@ -1309,26 +1451,28 @@ export const deA2B06: Lesson[] = [
     course: "de",
     title: "Ein Konto eröffnen",
     titleTr: "Banka hesabı",
-    summary: "Bankada hesap açtırmayı ve gereken belgeleri sormayı öğretir.",
-    minutes: 9,
+    summary: "Bankada hesap açmayı ve para konularını konuşmayı öğretir.",
+    minutes: 10,
     focusId: "W-Fragen",
     vocab: [
-      { de: "das Konto", tr: "hesap" },
-      { de: "eröffnen", tr: "açtırmak" },
-      { de: "die Unterlagen", tr: "belgeler" },
-      { de: "überweisen", tr: "havale etmek" },
-      { de: "gebührenfrei", tr: "ücretsiz" },
+      { de: "die Sparkasse", tr: "tasarruf bankası" },
+      { de: "die Kontonummer", tr: "hesap numarası" },
+      { de: "der Kredit", tr: "kredi" },
+      { de: "sparen", tr: "biriktirmek" },
+      { de: "das Sparbuch", tr: "tasarruf cüzdanı" },
+      { de: "der Geldschein", tr: "banknot" },
+      { de: "das Kleingeld", tr: "bozuk para" },
+      { de: "ausgeben", tr: "harcamak" },
     ],
     patterns: [
-      { de: "Ich möchte ein Konto eröffnen", tr: "hesap açtırmak isterken kullanılır" },
-      { de: "Welche Unterlagen brauche ich?", tr: "gereken belgeleri sorarken kullanılır" },
-      { de: "Ist das gebührenfrei?", tr: "ücret olup olmadığını sorarken kullanılır" },
+      { de: "Ich möchte ein Konto eröffnen.", tr: "bankadaki isteğini bildirir" },
+      { de: "Wie hoch sind die Gebühren?", tr: "ücretleri sorar" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Merhaba! Bugün bankadayız. Hesap açtırmayı, hangi belgelerin gerektiğini sormayı ve para göndermeyi öğreneceğiz. Başlamaya hazır mısın?",
+            "Bugün bankadayız ve hesap açıyoruz. Almanya'da hayatın her adımı bir banka hesabına bağlı, bu yüzden bu ders çok işine yarayacak. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1336,149 +1480,168 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr(
-            "Almanya'da hesap olmadan ne kira ödenir ne maaş alınır, o yüzden bu konuşma erken karşına çıkar. Sorular hep aynı soru kelimeleriyle başlar. Önce kelimeleri öğrenelim.",
+            "Bankada sorular hep soru kelimesiyle başlar ve bir tanesi Türkçe konuşan için ilginçtir: 'ne kadar' sorusu tek bir kelimeyle değil, bir soru kelimesi ile bir sıfatın birleşmesiyle kurulur. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("das Konto"),
-          tr("Türkçesi 'hesap' demek. Lütfen"),
-          de("das Konto"),
+          de("die Sparkasse"),
+          tr("Türkçesi 'tasarruf bankası' demek; Almanya'da çok yaygın bir banka türü. Lütfen"),
+          de("die Sparkasse"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Konto" },
+        expect: { kind: "repeat", target: "die Sparkasse" },
       },
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("eröffnen"),
-          tr("Türkçesi 'açtırmak' demek. Lütfen"),
-          de("eröffnen"),
+          de("die Kontonummer"),
+          tr("Türkçesi 'hesap numarası' demek. Lütfen"),
+          de("die Kontonummer"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "eröffnen" },
+        expect: { kind: "repeat", target: "die Kontonummer" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("die Unterlagen"),
-          tr("Türkçesi 'belgeler' demek; bu kelime hep çoğuldur. Lütfen"),
-          de("die Unterlagen"),
+          de("der Kredit"),
+          tr("Türkçesi 'kredi' demek. Lütfen"),
+          de("der Kredit"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Unterlagen" },
+        expect: { kind: "repeat", target: "der Kredit" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("überweisen"),
-          tr("Türkçesi 'havale etmek' demek. Lütfen"),
-          de("überweisen"),
+          de("sparen"),
+          tr("Türkçesi 'biriktirmek, tasarruf etmek' demek. Lütfen"),
+          de("sparen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "überweisen" },
+        expect: { kind: "repeat", target: "sparen" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("das Sparbuch"),
+          tr("Türkçesi 'tasarruf cüzdanı' demek. Lütfen"),
+          de("das Sparbuch"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Sparbuch" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("der Geldschein"),
+          tr("Türkçesi 'banknot, kâğıt para' demek. Lütfen"),
+          de("der Geldschein"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Geldschein" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("das Kleingeld"),
+          tr("Türkçesi 'bozuk para' demek. Lütfen"),
+          de("das Kleingeld"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Kleingeld" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("gebührenfrei"),
-          tr("Türkçesi 'ücretsiz' demek. Lütfen"),
-          de("gebührenfrei"),
+          de("ausgeben"),
+          tr("Türkçesi 'para harcamak' demek. Lütfen"),
+          de("ausgeben"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "gebührenfrei" },
+        expect: { kind: "repeat", target: "ausgeben" },
       },
       {
         say: [
-          tr("Gişeye oturunca söyleyeceğin ilk cümle hazır:"),
+          tr("İlk kalıbımız:"),
           de("Ich möchte ein Konto eröffnen."),
-          tr("İsteme fiili ikinci sırada, asıl fiil en sonda. Lütfen"),
-          de("Ich möchte ein Konto eröffnen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Ich möchte ein Konto eröffnen" },
-      },
-      {
-        say: [
-          tr("Arkasından belgeleri sorarsın. Soru kelimesi başta, fiil hemen ikinci sırada:"),
-          de("Welche Unterlagen brauche ich?"),
+          tr("Kibar istek biçimi ikinci sırada, asıl fiil sonda. Bankada söylenecek ilk cümle bu."),
         ],
       },
       {
-        say: [tr("Sıra sende: 'Hangi belgelere ihtiyacım var?'")],
-        expect: {
-          kind: "produce",
-          target: "Welche Unterlagen brauche ich",
-          hint: [
-            tr("Soru kelimesi ve sorduğun şey başta, fiil ikinci sırada, özne en sonda:"),
-            de("Welche Unterlagen brauche ich?"),
-            tr("Tekrar dene."),
-          ],
-        },
-      },
-      {
         say: [
-          tr("Ücret konusu Almanya'da her zaman sorulur:"),
-          de("Ist das Konto gebührenfrei?"),
-          tr("Cevabı iyi olursa şunu duyarsın:"),
-          de("Das Konto ist kostenlos."),
-        ],
-      },
-      {
-        say: [tr("Şimdi sen söyle: 'Para göndermek istiyorum.'")],
-        expect: {
-          kind: "produce",
-          target: "Ich möchte Geld überweisen",
-          hint: [
-            tr("İsteme fiili ikinci sırada, asıl fiil en sonda:"),
-            de("Ich möchte Geld überweisen."),
-            tr("Tekrar dene."),
-          ],
-        },
-      },
-      {
-        say: [
-          tr("Kartın ne zaman geleceğini de sorabilirsin:"),
-          de("Wann bekomme ich die Karte?"),
+          tr("Örnek: 'Hesabım bu bankada.' Almancası:"),
+          de("Mein Konto ist bei der Sparkasse."),
           tr("Lütfen"),
-          de("Wann bekomme ich die Karte"),
+          de("Mein Konto ist bei der Sparkasse"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Wann bekomme ich die Karte" },
+        expect: { kind: "repeat", target: "Mein Konto ist bei der Sparkasse" },
+      },
+      {
+        say: [tr("Sıra sende: 'Yeni bir bisiklet için para biriktiriyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich spare für ein neues Fahrrad",
+          hint: [
+            tr("Amaç bildiren edat belirtme hâlini getirir ve sıfat da ona göre ek alır:"),
+            de("Ich spare für ein neues Fahrrad."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("Wie hoch sind die Gebühren?"),
+          tr(
+            "Türkçede 'ne kadar' deriz; Almancada soru kelimesinin yanına bir sıfat gelir ve bu ikisi birlikte miktar sorar.",
+          ),
+        ],
+      },
+      {
+        say: [tr("Sıra sende: 'Kitaplara çok para harcıyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich gebe viel Geld für Bücher aus",
+          hint: [
+            tr("Ayrılabilen fiilin ön eki cümlenin sonuna düşer:"),
+            de("Ich gebe viel Geld für Bücher aus."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Welche Unterlagen ich brauche?"),
+          de("Wie hoch sind die Gebühren?"),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Welche Unterlagen ich brauche?",
-          answer: false,
+          statement: "Wie hoch sind die Gebühren?",
+          answer: true,
           why: [
-            tr("Soru kelimesinden sonra fiil hemen ikinci sıraya gelir, özne arkasına düşer. Doğrusu:"),
-            de("Welche Unterlagen brauche ich?"),
+            tr(
+              "Miktar sorusu soru kelimesi ile bir sıfatın birleşmesiyle kurulur ve fiil çoğula uymuştur: cümle doğru.",
+            ),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık bankada işini kendin görürsün. Şimdi gişedesin: danışman önüne bir form koydu.",
-          ),
-        ],
+        say: [tr("Şimdi bankadasın ve hesap açtırıyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir bankada hesap açtırmak istiyorsun. Ne istediğini söyle, hangi belgelerin gerektiğini sor, ücret olup olmadığını öğren ve kartın ne zaman geleceğini sor.",
-      partner: "her adımı sırayla anlatan, resmi ama nazik bir banka danışmanı",
-      opening: "Guten Tag! Sind Sie schon Kundin bei uns?",
-      openingTr: "İyi günler! Bizde hesabınız var mıydı?",
-      goal: "Gereken belgeler, ücret ve kartın ne zaman geleceği öğrenilmiş olur.",
+        "Bankada hesap açtırmak istiyorsun. Ne istediğini söyle, ücretleri ve şartları sor, gereken belgeleri öğren.",
+      partner: "adım adım anlatan bir banka görevlisi",
+      opening: "Guten Tag! Sie möchten ein Konto eröffnen? Haben Sie Ihren Ausweis dabei?",
+      openingTr: "İyi günler! Hesap mı açtırmak istiyorsunuz? Kimliğiniz yanınızda mı?",
+      goal: "Hesap türü seçilmiş, ücretler sorulmuş ve gereken belgeler öğrenilmiş olur.",
       minTurns: 8,
     },
   },
@@ -1489,26 +1652,28 @@ export const deA2B06: Lesson[] = [
     course: "de",
     title: "Auf der Post",
     titleTr: "Postanede",
-    summary: "Postanede gönderi biçimini seçmeyi ve pul almayı öğretir.",
-    minutes: 8,
+    summary: "Postanede gönderi biçimini seçmeyi ve ağırlık konuşmayı öğretir.",
+    minutes: 10,
     focusId: "Superlativ",
     vocab: [
-      { de: "die Post", tr: "postane" },
-      { de: "die Briefmarke", tr: "pul" },
-      { de: "das Einschreiben", tr: "taahhütlü gönderi" },
       { de: "der Umschlag", tr: "zarf" },
-      { de: "wiegen", tr: "tartmak" },
+      { de: "das Postamt", tr: "postane" },
+      { de: "das Porto", tr: "posta ücreti" },
+      { de: "abschicken", tr: "yollamak" },
+      { de: "das Briefpapier", tr: "mektup kâğıdı" },
+      { de: "die Waage", tr: "terazi" },
+      { de: "das Kilo", tr: "kilo" },
+      { de: "das Gramm", tr: "gram" },
     ],
     patterns: [
-      { de: "Was ist am schnellsten?", tr: "en hızlı seçeneği sorarken kullanılır" },
-      { de: "per Einschreiben", tr: "gönderi biçimini söylerken kullanılır" },
-      { de: "Zwei Briefmarken, bitte", tr: "pul isterken kullanılır" },
+      { de: "Was ist am schnellsten?", tr: "en hızlı seçeneği sorar" },
+      { de: "Wie viel wiegt das Paket?", tr: "ağırlığı sorar" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Merhaba! Bugün postanedeyiz. En hızlı yolu sormayı, taahhütlü göndermeyi ve pul almayı öğreneceğiz. Başlamaya hazır mısın?",
+            "Bugün postanedeyiz. Gönderi biçimleri arasında seçim yaparken en üstünlük biçimi tam da işine yarayacak. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1516,43 +1681,13 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr(
-            "Almanya'da resmi belgeler çoğu zaman taahhütlü gönderilir, çünkü ulaştığının kaydı kalır. Bugünün üstünlük kalıbı da tam burada işine yarayacak. Önce kelimeleri öğrenelim.",
+            "Postanede üç şey konuşulur: ne kadar ağır, ne kadar ücret, ne kadar sürer. Üçüncüsünde en üstünlük biçimi kullanılır. Bir de ağırlık birimleri: Almancada bunlar sayıdan sonra hep tekil kalır ve bu Türkçe konuşan için tanıdık bir kural. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("die Post"),
-          tr("Türkçesi 'postane' demek. Lütfen"),
-          de("die Post"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Post" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("die Briefmarke"),
-          tr("Türkçesi 'pul' demek. Lütfen"),
-          de("die Briefmarke"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Briefmarke" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("das Einschreiben"),
-          tr("Türkçesi 'taahhütlü gönderi' demek. Lütfen"),
-          de("das Einschreiben"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "das Einschreiben" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
           de("der Umschlag"),
           tr("Türkçesi 'zarf' demek. Lütfen"),
           de("der Umschlag"),
@@ -1562,99 +1697,149 @@ export const deA2B06: Lesson[] = [
       },
       {
         say: [
+          tr("İkinci kelimemiz:"),
+          de("das Postamt"),
+          tr("Türkçesi 'postane' demek. Lütfen"),
+          de("das Postamt"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Postamt" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("das Porto"),
+          tr("Türkçesi 'posta ücreti' demek. Lütfen"),
+          de("das Porto"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Porto" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("abschicken"),
+          tr("Türkçesi 'yollamak, postaya vermek' demek. Lütfen"),
+          de("abschicken"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "abschicken" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("das Briefpapier"),
+          tr("Türkçesi 'mektup kâğıdı' demek. Lütfen"),
+          de("das Briefpapier"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Briefpapier" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("die Waage"),
+          tr("Türkçesi 'terazi, tartı' demek. Lütfen"),
+          de("die Waage"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Waage" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("das Kilo"),
+          tr("Türkçesi 'kilo' demek. Lütfen"),
+          de("das Kilo"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Kilo" },
+      },
+      {
+        say: [
           tr("Son kelimemiz:"),
-          de("wiegen"),
-          tr("Türkçesi 'tartmak' demek. Lütfen"),
-          de("wiegen"),
+          de("das Gramm"),
+          tr("Türkçesi 'gram' demek. Lütfen"),
+          de("das Gramm"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "wiegen" },
+        expect: { kind: "repeat", target: "das Gramm" },
       },
       {
         say: [
-          tr("Nereye gittiğini söylemek tek cümle:"),
-          de("Ich gehe schnell zur Post."),
-          tr("Gişede seçenekler sıralanır; sen üstünlük kalıbıyla sorarsın:"),
+          tr("İlk kalıbımız:"),
           de("Was ist am schnellsten?"),
-          tr("Lütfen"),
-          de("Was ist am schnellsten"),
-          tr("deyin."),
+          tr("En üstünlük biçimi: kaynaşmış edat önde, hece sonda. Seçenekler arasından en hızlıyı sorar."),
         ],
-        expect: { kind: "repeat", target: "Was ist am schnellsten" },
       },
       {
-        say: [tr("Sıra sende: 'En ucuzu hangisi?'")],
+        say: [
+          tr("Örnek: 'Bu mektubun ücreti bir avro.' Almancası:"),
+          de("Das Porto für den Brief kostet einen Euro."),
+          tr("Lütfen"),
+          de("Das Porto für den Brief kostet einen Euro"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Das Porto für den Brief kostet einen Euro" },
+      },
+      {
+        say: [tr("Sıra sende: 'İki yüz gram peynire ihtiyacım var.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Was ist am billigsten",
+          target: "Ich brauche zweihundert Gramm Käse",
           hint: [
-            tr("Üstünlük kalıbında önce küçük kelime, sonra sonu büyümüş sıfat gelir:"),
-            de("Was ist am billigsten?"),
+            tr("Ağırlık birimi sayıdan sonra tekil kalır ve ardından gelen isim artikelsiz durur:"),
+            de("Ich brauche zweihundert Gramm Käse."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("Gönderi biçimini söylerken hazır bir kalıp var:"),
-          de("per Einschreiben"),
-          tr("Yani 'taahhütlü olarak'. Görevli önce paketi tartar:"),
-          de("Wir wiegen das Paket zuerst."),
+          tr("İkinci kalıbımız:"),
+          de("Wie viel wiegt das Paket?"),
+          tr("Ağırlığı sorar; iki kelimelik bir soru kalıbı ve arkasından fiil geliyor."),
         ],
       },
       {
-        say: [tr("Şimdi sen iste: 'İki pul, lütfen.'")],
+        say: [tr("Sıra sende: 'Formu hemen gönderiyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Zwei Briefmarken, bitte",
+          target: "Ich schicke das Formular gleich ab",
           hint: [
-            tr("Sayı başta, kelimenin çoğulu ortada, kibarlık sonda:"),
-            de("Zwei Briefmarken, bitte."),
+            tr("Ayrılabilen fiilin ön eki cümlenin sonuna düşer:"),
+            de("Ich schicke das Formular gleich ab."),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Zarf da gerekiyorsa aynı kısalıkta istersin:"),
-          de("Einen Umschlag, bitte."),
-          tr("Lütfen"),
-          de("Einen Umschlag, bitte"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Einen Umschlag, bitte" },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Das Paket wiegt zwei Kilo."),
+          de("Ich brauche zweihundert Gramme Käse."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Das Paket wiegt zwei Kilo.",
-          answer: true,
+          statement: "Ich brauche zweihundert Gramme Käse.",
+          answer: false,
           why: [
-            tr("Doğru. Ağırlık söylenirken ölçü kelimesi çoğul olmaz, olduğu gibi kalır:"),
-            de("zwei Kilo"),
+            tr("Ağırlık birimleri sayıdan sonra çoğul yapılmaz, tekil kalır. Doğrusu:"),
+            de("Ich brauche zweihundert Gramm Käse."),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık postaneden elin boş dönmezsin. Şimdi sıradasın: görevli senin gönderini bekliyor.",
-          ),
-        ],
+        say: [tr("Şimdi postanedesin ve bir paket gönderiyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "Postanede resmi bir belge göndereceksin. En hızlı ve en ucuz seçeneği sor, taahhütlü göndermek istediğini söyle ve yanına pul ile zarf al.",
-      partner: "seçenekleri sırayla sayan, aceleci bir postane görevlisi",
-      opening: "Der Nächste, bitte! Was möchten Sie verschicken?",
-      openingTr: "Sıradaki, buyurun! Ne göndermek istiyorsunuz?",
-      goal: "En uygun gönderim biçimi seçilmiş, taahhüt konuşulmuş ve pul ile zarf alınmış olur.",
+        "Postanede bir paket göndermek istiyorsun. Ağırlığı tarttır, seçenekleri sor, en hızlısını ve en ucuzunu öğren ve birini seç.",
+      partner: "seçenekleri sıralayan bir postane görevlisi",
+      opening: "Guten Tag! Soll das Paket ins Inland oder ins Ausland?",
+      openingTr: "İyi günler! Paket yurt içine mi yoksa yurt dışına mı?",
+      goal: "Ağırlık ve ücret öğrenilmiş, en az iki gönderi biçimi karşılaştırılmış ve biri seçilmiş olur.",
       minTurns: 8,
     },
   },
@@ -1665,26 +1850,28 @@ export const deA2B06: Lesson[] = [
     course: "de",
     title: "Auf dem Flohmarkt",
     titleTr: "Bitpazarında pazarlık",
-    summary: "Pazarlık etmeyi ve ikinci el bir şeyi almayı öğretir.",
-    minutes: 8,
+    summary: "İkinci el eşya alırken pazarlık etmeyi ve durumunu sormayı öğretir.",
+    minutes: 10,
     focusId: "Komparativ",
     vocab: [
-      { de: "der Flohmarkt", tr: "bitpazarı" },
-      { de: "handeln", tr: "pazarlık etmek" },
+      { de: "der Flohmarkt", tr: "bit pazarı" },
       { de: "gebraucht", tr: "ikinci el" },
-      { de: "verkaufen", tr: "satmak" },
-      { de: "das Schnäppchen", tr: "kelepir" },
+      { de: "rostig", tr: "paslı" },
+      { de: "ausmisten", tr: "ayıklamak" },
+      { de: "die Menge", tr: "miktar" },
+      { de: "das Brettspiel", tr: "kutu oyunu" },
+      { de: "der Hocker", tr: "tabure" },
+      { de: "einzeln", tr: "tek tek" },
     ],
     patterns: [
-      { de: "Das ist mir zu teuer", tr: "fiyatı yüksek bulduğunu söylerken kullanılır" },
-      { de: "Geht es billiger?", tr: "pazarlık başlatırken kullanılır" },
-      { de: "Letzter Preis?", tr: "son fiyatı sorarken kullanılır" },
+      { de: "Geht es auch etwas billiger?", tr: "pazarlığı kibarca açar" },
+      { de: "Verkaufen Sie die auch einzeln?", tr: "tek tek satılıp satılmadığını sorar" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Merhaba! Bugün bitpazarındayız ve burada fiyatlar sabit değil. Pazarlık etmeyi öğreneceğiz; bu modülün bütün karşılaştırma kalıpları burada işine yarayacak. Başlamaya hazır mısın?",
+            "Modülün son dersinde bit pazarındayız. Almanya'da pazarlık her yerde yapılmaz ama burada yapılır ve bunun kendine has kibar bir dili vardır. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1692,7 +1879,7 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr(
-            "Almanya'da mağazada pazarlık edilmez ama bitpazarında beklenir. Üç kısa cümle bütün pazarlığı yürütür. Önce kelimeleri öğrenelim.",
+            "Pazarlığın kibar hâli bir soruyla açılır ve o soruda karşılaştırma biçimi kullanılır: 'biraz daha ucuz olur mu'. Doğrudan fiyat söylemek yerine yön göstermek, Almancada daha nazik durur. Önce sekiz kelime.",
           ),
         ],
       },
@@ -1700,7 +1887,7 @@ export const deA2B06: Lesson[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("der Flohmarkt"),
-          tr("Türkçesi 'bitpazarı' demek. Lütfen"),
+          tr("Türkçesi 'bit pazarı' demek. Lütfen"),
           de("der Flohmarkt"),
           tr("deyin."),
         ],
@@ -1709,18 +1896,8 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("handeln"),
-          tr("Türkçesi 'pazarlık etmek' demek. Lütfen"),
-          de("handeln"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "handeln" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
           de("gebraucht"),
-          tr("Türkçesi 'ikinci el' demek. Lütfen"),
+          tr("Türkçesi 'ikinci el, kullanılmış' demek. Lütfen"),
           de("gebraucht"),
           tr("deyin."),
         ],
@@ -1728,119 +1905,143 @@ export const deA2B06: Lesson[] = [
       },
       {
         say: [
-          tr("Dördüncü kelimemiz:"),
-          de("verkaufen"),
-          tr("Türkçesi 'satmak' demek. Lütfen"),
-          de("verkaufen"),
+          tr("Üçüncü kelimemiz:"),
+          de("rostig"),
+          tr("Türkçesi 'paslı' demek. Lütfen"),
+          de("rostig"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "verkaufen" },
+        expect: { kind: "repeat", target: "rostig" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("ausmisten"),
+          tr("Türkçesi 'ayıklamak, gereksizleri atmak' demek. Lütfen"),
+          de("ausmisten"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "ausmisten" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("die Menge"),
+          tr("Türkçesi 'miktar' demek. Lütfen"),
+          de("die Menge"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Menge" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("das Brettspiel"),
+          tr("Türkçesi 'kutu oyunu' demek. Lütfen"),
+          de("das Brettspiel"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Brettspiel" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("der Hocker"),
+          tr("Türkçesi 'tabure' demek. Lütfen"),
+          de("der Hocker"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Hocker" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("das Schnäppchen"),
-          tr("Türkçesi 'kelepir' demek. Lütfen"),
-          de("das Schnäppchen"),
+          de("einzeln"),
+          tr("Türkçesi 'tek tek, ayrı ayrı' demek. Lütfen"),
+          de("einzeln"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Schnäppchen" },
+        expect: { kind: "repeat", target: "einzeln" },
       },
       {
         say: [
-          tr("Pazarlığın ilk cümlesi fiyatı reddetmez, sadece yüksek bulur:"),
-          de("Das ist mir zu teuer."),
-          tr("Ortadaki küçük kelime 'bana göre' demek ve cümleyi kibarlaştırır. Lütfen"),
-          de("Das ist mir zu teuer"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Das ist mir zu teuer" },
-      },
-      {
-        say: [
-          tr("İkinci cümle kapıyı aralar ve karşılaştırma biçimini kullanır:"),
-          de("Geht es billiger?"),
-          tr("Yani 'Daha ucuza olur mu?'"),
+          tr("İlk kalıbımız:"),
+          de("Geht es auch etwas billiger?"),
+          tr(
+            "Pazarlığı kibarca açar. Fiil kişisiz bir özneyle kullanılıyor ve karşılaştırma biçimi bir yön gösteriyor.",
+          ),
         ],
       },
       {
-        say: [tr("Sıra sende: 'Daha ucuza olur mu?'")],
-        expect: {
-          kind: "produce",
-          target: "Geht es billiger",
-          hint: [
-            tr("Fiil başta, sıfat da karşılaştırma ekini alır:"),
-            de("Geht es billiger?"),
-            tr("Tekrar dene."),
-          ],
-        },
-      },
-      {
         say: [
-          tr("Buranın kuralı zaten bu:"),
-          de("Auf dem Flohmarkt kann man handeln."),
-          tr("Ürünün ikinci el olması da senin elini güçlendirir:"),
-          de("Das Fahrrad ist gebraucht."),
-          tr("Satıcıysan da tersini söylersin:"),
-          de("Ich verkaufe hier alte Bücher."),
-        ],
-      },
-      {
-        say: [tr("Şimdi sen söyle: 'Bisikleti satıyorum.'")],
-        expect: {
-          kind: "produce",
-          target: "Ich verkaufe das Fahrrad",
-          hint: [
-            tr("Fiil ikinci sırada, sattığın şey arkasında:"),
-            de("Ich verkaufe das Fahrrad."),
-            tr("Tekrar dene."),
-          ],
-        },
-      },
-      {
-        say: [
-          tr("Pazarlığı bitiren soru ise tek kelimeliktir:"),
-          de("Letzter Preis?"),
-          tr("Anlaştıysan da memnuniyetini söylersin:"),
-          de("Das war ein gutes Geschäft."),
+          tr("Örnek: 'Bu şapkayı bit pazarından aldım.' Almancası:"),
+          de("Diesen Hut habe ich auf dem Flohmarkt gekauft."),
           tr("Lütfen"),
-          de("Letzter Preis"),
+          de("Diesen Hut habe ich auf dem Flohmarkt gekauft"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Letzter Preis" },
+        expect: { kind: "repeat", target: "Diesen Hut habe ich auf dem Flohmarkt gekauft" },
+      },
+      {
+        say: [tr("Sıra sende: 'Biz ikinci el bir çamaşır makinesi aldık.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Wir haben eine gebrauchte Waschmaschine gekauft",
+          hint: [
+            tr("Dişil bir isimde belirsiz artikelden sonra sıfat sonuna bir harf alır:"),
+            de("Wir haben eine gebrauchte Waschmaschine gekauft."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("Verkaufen Sie die auch einzeln?"),
+          tr("Bir takımın tek tek satılıp satılmadığını sorar; pazarda çok işe yarayan bir soru."),
+        ],
+      },
+      {
+        say: [tr("Sıra sende: 'Yılda bir kez dolabı ayıklıyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Einmal im Jahr miste ich den Kleiderschrank aus",
+          hint: [
+            tr("Zaman ifadesi başta olunca özne fiilin arkasına düşer ve ayrılabilen ön ek sona gider:"),
+            de("Einmal im Jahr miste ich den Kleiderschrank aus."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Das ist ein echtes Schnäppchen."),
-          tr("cümlesi doğru mu, yanlış mı?"),
+          de("Geht es auch etwas billiger?"),
+          tr("cümlesi pazarlık için uygun mu?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Das ist ein echtes Schnäppchen.",
+          statement: "Geht es auch etwas billiger?",
           answer: true,
           why: [
-            tr("Doğru. Nötr isimden önce gelen sıfat, sıfat çekimi dersinde öğrendiğin eki almış:"),
-            de("ein echtes Schnäppchen"),
+            tr(
+              "Doğrudan fiyat söylemek yerine yön gösteren, kişisiz özneyle kurulmuş kibar bir pazarlık sorusu: bit pazarında tam da böyle söylenir.",
+            ),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık pazarlık masasından kalkmadan fiyatı düşürebilirsin. Şimdi tezgâhın önündesin: gözüne bir bisiklet kestirdin.",
-          ),
-        ],
+        say: [tr("Şimdi bit pazarındasın ve bir şey almak istiyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "Bitpazarında ikinci el bir bisiklet gördün ve almak istiyorsun. Fiyatı sor, yüksek bulduğunu kibarca söyle, pazarlık et ve son fiyatı öğren.",
-      partner: "fiyatını kolay düşürmeyen, esprili bir tezgâh sahibi",
-      opening: "Das Fahrrad ist ein Schnäppchen! Möchten Sie es ausprobieren?",
-      openingTr: "Bu bisiklet tam kelepir! Denemek ister misiniz?",
-      goal: "Fiyat sorulmuş, pazarlık edilmiş ve son fiyat üzerinde anlaşılmış olur.",
-      minTurns: 7,
+        "Bit pazarında bir tezgâhta ilgini çeken bir şey buldun. Durumunu sor, fiyatı öğren, kibarca pazarlık et ve bir sonuca var.",
+      partner: "eşyanın hikâyesini anlatmayı seven bir tezgâh sahibi",
+      opening: "Schauen Sie sich ruhig um! Gefällt Ihnen etwas?",
+      openingTr: "Rahatça bakın! Beğendiğiniz bir şey var mı?",
+      goal: "Eşyanın durumu ve fiyatı konuşulmuş, kibar bir pazarlık yapılmış ve alınıp alınmadığına karar verilmiş olur.",
+      minTurns: 8,
     },
   },
 ];
