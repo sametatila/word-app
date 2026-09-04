@@ -1,0 +1,169 @@
+# GÖREV — Almanca B1 patikasını kelime havuzuna göre yeniden kurgula
+
+A1 için yürüyen işin B1 karşılığı. A1'i başka bir oturum yapıyor, A2'yi bir
+başkası (`docs/plan/a2-yeniden-kurgu.md`). **Aynı depoda paralel çalışacaksın**,
+§4'teki çakışma kurallarına harfiyen uy.
+
+---
+
+## 1. Sorun — ölçüldü (2026-09-04)
+
+| Ölçüt | Değer |
+|---|---|
+| B1 dersi | 100 (10 modül × 10) |
+| Havuzun B1 katmanı | 1797 madde · kart gerektiren **1796** |
+| Derslerin öğrettiği | 500 madde (ders başına 5) |
+| Seviye **altı** (A1 33 + A2 86) | 119 — **%23,8** |
+| Seviye **üstü** (B2 99 + C1 15) + havuzda yok (116) | 230 — **%46,0** |
+| Gerçekten B1 olan | 151 — %30,2 |
+| **B1 katmanının kapsanması** | 153/1796 — **%8,5** |
+
+Karşılaştırma: A1 kapsama %35'ti (şimdi %75), A2 %8,1. **B1 en kötü durumda ve
+en büyük katman.** Ayrıca B1'in kendine özgü bir sorunu var: A1 dersleri
+seviyenin ÜSTÜNE taşıyordu; B1 dersleri hem üstüne (%23 B2/C1) hem ALTINA
+(%24 A1/A2) taşıyor. Yani ders ne öğrettiğini bilmiyor.
+
+Havuzda hiç olmayan 116 madde ağırlıkla iş yeri jargonu: die Kernzeit, brutto,
+der Nachfolger, die Einarbeitung, sich weiterentwickeln. Bunların bir kısmı
+gerçek B1 maddesi (havuza eklenmeli), bir kısmı B2'ye ait.
+
+---
+
+## 2. Hedef
+
+1. Derslerin öğrettiği her kelime havuzun **B1 katmanından** gelsin. Sınırlı
+   A2 tekrarı kabul (B1 öğrencisi A2'yi pekiştirir) ama %24 fazla; oranı
+   kullanıcıyla netleştir.
+2. B1 katmanının kapsanması yükselsin (§5 Adım 2 — kapasite kararı).
+3. Ünite deseni dolsun: **4 konuşma dersi + 2 okuma + 2 dinleme + 2 yazma +
+   gramer + quiz + kontrol**. 100 ders ÷ 4 = **25 ünite** → her beceriden
+   **50 egzersiz**. Elde: 12 okuma · 12 dinleme · 8 yazma → **118 eksik**.
+   quiz + kontrol ünite brief'inden otomatik türetiliyor, yazman gerekmiyor.
+4. Sınav (ExamPrep) beceri içeriğinden besleniyor; 3 dolunca o da dolar.
+
+---
+
+## 3. Dosya haritası
+
+| Ne | Nerede |
+|---|---|
+| Ders kaynağı | `src/lib/lessons/content/de-b1-b01.ts … b10.ts` — **web ve mobil paylaşır** |
+| Mobil ders paketi | `mobile/src/data/lessons/de-b1.json` — türev, `npx tsx scripts/dump-lessons-mobile.ts de` |
+| Kelime havuzu | `data/app/words.json` — `[` + satır başına bir kayıt + `]` |
+| Beceri kaynağı | `src/lib/skills/content/b1.ts` (+ ünite dosyaları, aşağıya bak) |
+| Mobil beceri paketi | `mobile/src/data/skills/exercises.json` — `npm run dump:skills` |
+| Ünite deseni | `src/lib/immersion/build.ts:26-41` (kaynak) + `mobile/src/game/immersionTrack.ts:23` (kopya) |
+
+---
+
+## 4. İhlal edilemez kurallar
+
+1. **Ders id'leri SABİT.** `user_lessons` PK'si `(user_id, lesson_id)`; id
+   değişirse canlı ilerleme silinir. Ders sayısını da değiştirme (100).
+2. **Web canlı.** Ders kaynağı ortak; iyileştir, bozma, ayrı kopya çıkarma.
+3. **`de-b1.json` TEK SATIRDIR** (`JSON.stringify` ile üretiliyor). Elle
+   `null, 1` yazarsan on binlerce satırlık sahte diff üretirsin.
+4. **Havuza türev ekleme.** Partizip II (`gemacht`), çoğul (`die Haare`),
+   derece (`weniger`) madde başı değildir — `formen` alanına aittir.
+   Yeni id'ler en büyük id'den devam etsin (gsw-zh 100000+, İngilizce 209001+
+   aralıklarına girme). `rank` uydurma, `data/a2-expansion/de_50k.txt`
+   sıklık listesinden oku (satır numarası = sıra).
+5. **Commit yerelde kalır**, push Samet'in işi.
+6. **Üretim DB'sine yazma yok** — seed öncesi sor.
+7. **Paralel oturum var**; yalnız kendi dosyalarını `git add <yol>` ile
+   commit'le, `git add -A` KULLANMA.
+
+---
+
+## 5. Yöntem
+
+### Adım 1 — Teşhis
+Seviye dağılımı, katman kapsanması, havuzda olmayan kelimeler. Normalizasyonda:
+küçült, baştaki artikeli at, parantezi sil. **Havuz başlıklarını `/` ile
+bölme** — `"die/das Glace/Glacé"` gibi satırlar `die`/`das`'ı sahte seviyeye
+bağlar. İşlev sözcüklerini ("ich", "und") "kapsanmamış" sayma.
+
+### Adım 2 — Kapasite kararını KULLANICIYA SOR
+A1'de aritmetik temizdi: 790 kelime, 100×8 = 800 slot. **B1'de imkânsız:
+1796 kelime, 800 slot.** Seçenekler: ders başına ~18 (gerçekçi değil) ·
+8 + sıklık önceliği (kapsama %45'te tavan) · ders ekleme (yalnız ekleme,
+id'ler sabit) · B1 katmanının bir kısmını B2'ye taşıma. **Sorulmadan
+ilerleme.** A1'de ders başına 8'e çıkarıldı ve %75 kapsamaya ulaşıldı;
+B1'de aynı sayı %45 tavan verir.
+
+### Adım 3 — Havuz boşluğunu vetle
+116 maddeyi sınıflandır: gerçek madde başı mı, türev mi, yoksa B2'ye mi ait.
+İş yeri jargonunun bir kısmı (`die Kernzeit`, `brutto`) B1 için fazla
+olabilir — o zaman DERSTEN çıkarılır, havuza eklenmez.
+
+### Adım 4 — Atamayı ELLE yap, modül modül
+**Mekanik dağıtım A1'de denendi ve reddedildi:** ders metninden anlam torbası
+kurup puanlayan betik aritmetik olarak hepsini yerleştirdi ama "Merhaba"
+dersine `der Empfänger`, "Nasılsın" dersine `das T-Shirt` düşürdü. Kelime
+örtüşmesi müfredat tasarımı için yeterli sinyal değil.
+
+Her modülde: mevcut B1 kelimelerini **çıpa** say → seviye dışını çıkar →
+boş slotları ANLAMINA BAKARAK doldur → betikle doğrula.
+
+**A1'de canımı yakan beş tuzak — hepsi gerçek hata üretti:**
+
+1. **Taşıyıcı kelimeyi çıkarma.** Bir kelime sözlükçede duruyor diye
+   çıkarılamaz; kalıpta, produce hedefinde, rol yapma açılışında ya da ders
+   başlığında yaşıyor olabilir. A1'de `umtauschen` 15, `der Kanal` 16 yerde
+   geçiyordu. Çıkarmadan önce dersin TÜM metninde ara.
+2. **Kök araması fiilde kör.** Kalıp `Ich schneide …` yazar, sen `schneiden`
+   ararsın, bulamazsın ve "serbest" sanırsın. Dönüşlülerde de aynı:
+   `sich verlaufen` için kök `sich` çıkar. Kökü mastardan değil, ilk 4-5
+   harften al ve dönüşlü öneki at.
+3. **Büyük harf isim/fiil ayırır.** `leben` (yaşamak) ile `Leben` (hayat)
+   AYRI kelimelerdir. Kelime haritanı küçük harfle anahtarlarsan biri
+   diğerini yutar — A1'de bir ders "hayat" yerine "yaşamak" öğretir hâle
+   geldi. Önce tam eşleşme, sonra küçük harf.
+4. **Aynı turda yineleme.** Ön denetimin yalnız ÖNCEKİ derslere bakarsa, o
+   çalıştırmada eklediğin iki kelime birbirini görmez.
+5. **Gloss'u oku.** `die Eins` havuzda "en yüksek not" (Alman okul notu)
+   demek, "bir" değil; sayı dersine koymak yanlıştı. Doğrulayıcı bunu
+   yakalayamaz — seviye ve boşluk denetiminden geçer. Her kelimenin Türkçe
+   karşılığını gözle.
+
+### Adım 5 — Ders içeriğini yaz
+Sözlükçe değişince `lecture` adımları da değişir. A1'de kullanılan yöntem:
+kelimeyi kaldırmak yerine **yerine koy** — adımların "İlk/İkinci/…"
+numaralandırması bozulmaz ve diff okunabilir kalır.
+
+### Adım 6 — Beceri içeriği: ünite hizalı yaz
+A1'de `src/lib/skills/content/a1-uNN.ts` deseni kuruldu: her ünite için 6
+egzersiz (2 okuma + 2 dinleme + 2 yazma), `unit: N` alanıyla, ve dizinin
+BAŞINDA spread edilir (`...a1U01, ...a1U02, …`) — immersion builder ünite
+slotlarını konuma göre dolduruyor.
+
+**Kural: egzersiz, o üniteye kadar öğretilen kelimelerin dışına çıkmaz.**
+`npm run check:unitvocab` bunu ölçüyor (`scripts/check-unit-vocab.cjs`).
+A1'de bu betik kendi yazdıklarımda gerçek kaymalar buldu: konum sözcükleri
+6 ünite erken, `die Hand` 5 ünite erken, ve en kötüsü **Perfekt 20 ünite
+erken** (`Was hast du gebracht?`). Hiçbirini elle fark etmek mümkün değildi —
+hepsi doğal Almanca ve seviyeye uygun duruyordu.
+
+B1'de aynı disiplin geçerli ama eşik farklı: B1 öğrencisi A1/A2'nin tamamını
+bilir, o yüzden "izin verilen küme" = A1 + A2 + o üniteye kadarki B1.
+
+Yazma görevi türleri sabittir (`src/lib/skills/types.ts`): `sentence` (AI
+rubriği, `answer` alanı YOK), `build` (tr + answer + hint), `rewrite`,
+`form`, `reply`, `summary`, `free`. `text` diye bir tür yok.
+
+### Adım 7 — Doğrula
+Hepsi sıfır olmalı: her `truefalse` adımının iddiası ekranda görünüyor ·
+sözlükçedeki her kelime `lecture` içinde repeat adımıyla öğretiliyor ·
+segment boşluk artığı yok · Türkçe segmentte gömülü Almanca yok · doğru cevap
+reddedilmiyor · ders başlığı ve rol yapma açılışı yinelenmiyor.
+
+Komutlar: `npx tsc --noEmit` (kök ve `mobile/`), `npm run check:lessons`,
+`npm run check:unitvocab`, `npm run test:track`, `npm run test:options`.
+
+---
+
+## 6. Teslim
+
+Her parça kendi commit'i; mesaj ne yapıldığını değil **neden** yapıldığını
+anlatsın. A1 tarafındaki commit'leri örnek al: `git log --grep="A1 Modül"`.
+Sonunda kullanıcıya: ne bitti, ne bilerek bırakıldı, hangi sayı nereden geldi.
