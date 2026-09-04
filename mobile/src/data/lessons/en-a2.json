@@ -25916,5 +25916,5262 @@
    "goal": "Öğrenci ilk günü hakkında nasıl hissettiğini, kimlerle tanıştığını, sana neyin gösterildiğini ve günün nasıl bittiğini geçmiş zamanla sırayla anlatmış olur.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-a2-returns",
+  "level": "A2",
+  "course": "en",
+  "icon": "shopping",
+  "title": "Returns and exchanges",
+  "titleTr": "İade ve değişim",
+  "summary": "Mağazada bir ürünü iade etmeyi ya da başka bedenle değiştirmeyi, sebebini söylemeyi ve fiş ile para iadesi konusunu konuşmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Requests",
+  "vocab": [
+   {
+    "de": "receipt",
+    "tr": "fiş, makbuz"
+   },
+   {
+    "de": "exchange",
+    "tr": "değiştirmek, değiş tokuş etmek"
+   },
+   {
+    "de": "refund",
+    "tr": "para iadesi"
+   },
+   {
+    "de": "size",
+    "tr": "beden, boyut"
+   },
+   {
+    "de": "wrong",
+    "tr": "yanlış"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I'd like to return this.",
+    "tr": "bir ürünü iade etmek istediğini kibarca söylerken kullanılır"
+   },
+   {
+    "de": "Can I exchange it for a bigger size?",
+    "tr": "ürünü başka bir bedenle değiştirmek isterken kullanılır"
+   },
+   {
+    "de": "Can I get a refund, please?",
+    "tr": "paranın geri verilmesini isterken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün mağazada bir ürünü iade etmeyi ve değiştirmeyi öğreniyoruz. Aldığın tişört olmadı, ayakkabı küçük geldi ya da fiş elinde değil; hepsini İngilizce nasıl söyleyeceğini adım adım göreceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlıyoruz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "return"
+     },
+     {
+      "lang": "tr",
+      "text": ". Türkçesi geri vermek, iade etmek demek. Mağazada bunu tek başına değil, kibar bir kalıbın içinde kullanırız."
+     },
+     {
+      "lang": "tr",
+      "text": "En doğal kalıp şu: "
+     },
+     {
+      "lang": "en",
+      "text": "I'd like to return this."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Bunu iade etmek istiyorum."
+     },
+     {
+      "lang": "tr",
+      "text": "Buradaki "
+     },
+     {
+      "lang": "en",
+      "text": "I'd like to"
+     },
+     {
+      "lang": "tr",
+      "text": ", "
+     },
+     {
+      "lang": "en",
+      "text": "I want to"
+     },
+     {
+      "lang": "tr",
+      "text": "'nun kibar hâli. Mağazada her zaman bunu kullan."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen söyle. Lütfen de: "
+     },
+     {
+      "lang": "en",
+      "text": "I'd like to return this."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'd like to return this."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Görevli sana ilk olarak neredeyse her zaman fişi sorar. Fiş demek: "
+     },
+     {
+      "lang": "en",
+      "text": "receipt"
+     },
+     {
+      "lang": "tr",
+      "text": ". Yazılışı zor ama okunuşu kısadır: risiit. Sondaki p sesi okunmaz."
+     },
+     {
+      "lang": "tr",
+      "text": "Görevlinin sorusu şudur: "
+     },
+     {
+      "lang": "en",
+      "text": "Do you have the receipt?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Fişiniz var mı?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu soruyu tanıman lazım, çünkü mağazada mutlaka duyacaksın. Lütfen sen de söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "Do you have the receipt?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Do you have the receipt?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevabın basit. Fiş elindeyse uzatırken şöyle dersin: "
+     },
+     {
+      "lang": "en",
+      "text": "Here is the receipt."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Buyurun, fiş."
+     },
+     {
+      "lang": "tr",
+      "text": "Elinde yoksa: "
+     },
+     {
+      "lang": "en",
+      "text": "Sorry, I don't have the receipt."
+     },
+     {
+      "lang": "tr",
+      "text": "Çoğu mağazada kartla ödediysen yine de yardımcı olurlar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bunu kendin kur. Fişin yok ve bunu söylemek istiyorsun. İngilizcesini sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I don't have the receipt.",
+     "accept": [
+      "Sorry, I don't have the receipt.",
+      "I don't have a receipt.",
+      "I haven't got the receipt."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Fişim yok."
+      },
+      {
+       "lang": "tr",
+       "text": "I don't have ... ile başla, sonuna fiş kelimesini koy."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Her zaman para geri istemezsin; bazen sadece değişim istersin. Değiştirmek demek: "
+     },
+     {
+      "lang": "en",
+      "text": "exchange"
+     },
+     {
+      "lang": "tr",
+      "text": ". Beden ya da boy demek: "
+     },
+     {
+      "lang": "en",
+      "text": "size"
+     },
+     {
+      "lang": "tr",
+      "text": "."
+     },
+     {
+      "lang": "tr",
+      "text": "Kalıbımız şu: "
+     },
+     {
+      "lang": "en",
+      "text": "Can I exchange it for a bigger size?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Bunu daha büyük bedenle değiştirebilir miyim?"
+     },
+     {
+      "lang": "tr",
+      "text": "Dikkat: değişim yapılan şeyin önüne "
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": " koyuyoruz. Türkçede -le, -la; İngilizcede "
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": "."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen benimle birlikte söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "Can I exchange it for a bigger size?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Can I exchange it for a bigger size?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Büyük "
+     },
+     {
+      "lang": "en",
+      "text": "bigger"
+     },
+     {
+      "lang": "tr",
+      "text": ", küçük ise "
+     },
+     {
+      "lang": "en",
+      "text": "smaller"
+     },
+     {
+      "lang": "tr",
+      "text": ". Renk değiştirmek istersen de aynı kalıp işini görür: "
+     },
+     {
+      "lang": "en",
+      "text": "Can I exchange it for a different colour?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Başka renkle değiştirebilir miyim?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Elindeki kazak sana büyük geldi, daha küçüğünü istiyorsun. Cümleyi sen kur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Can I exchange it for a smaller size?",
+     "accept": [
+      "Could I exchange it for a smaller size?",
+      "Can I exchange this for a smaller size?",
+      "Can I change it for a smaller size?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bunu daha küçük bedenle değiştirebilir miyim?"
+      },
+      {
+       "lang": "tr",
+       "text": "Can I exchange it for ... ile başla; küçük için smaller."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Peki para geri istiyorsan? Para iadesi demek: "
+     },
+     {
+      "lang": "en",
+      "text": "refund"
+     },
+     {
+      "lang": "tr",
+      "text": ". Vurgu baştadır: RII-fand."
+     },
+     {
+      "lang": "tr",
+      "text": "Kalıbımız: "
+     },
+     {
+      "lang": "en",
+      "text": "Can I get a refund, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Paramı geri alabilir miyim?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sonuna "
+     },
+     {
+      "lang": "en",
+      "text": "please"
+     },
+     {
+      "lang": "tr",
+      "text": " eklemek İngilizcede çok önemli; onsuz sert duyulur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen de: "
+     },
+     {
+      "lang": "en",
+      "text": "Can I get a refund, please?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Can I get a refund, please?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Görevli çoğu zaman sana seçenek sunar: "
+     },
+     {
+      "lang": "en",
+      "text": "Would you like a refund or an exchange?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Para iadesi mi istersiniz, değişim mi?"
+     },
+     {
+      "lang": "tr",
+      "text": "Cevabın tek kelimeyle bile olur: "
+     },
+     {
+      "lang": "en",
+      "text": "A refund, please."
+     },
+     {
+      "lang": "tr",
+      "text": " ya da "
+     },
+     {
+      "lang": "en",
+      "text": "An exchange, please."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sebebi söylemeyi öğrenelim; görevli mutlaka sorar. Yanlış demek: "
+     },
+     {
+      "lang": "en",
+      "text": "wrong"
+     },
+     {
+      "lang": "tr",
+      "text": "."
+     },
+     {
+      "lang": "tr",
+      "text": "En sık kullanılan sebep: "
+     },
+     {
+      "lang": "en",
+      "text": "It's the wrong size."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Bedeni yanlış."
+     },
+     {
+      "lang": "tr",
+      "text": "Dikkat: İngilizcede "
+     },
+     {
+      "lang": "en",
+      "text": "the wrong size"
+     },
+     {
+      "lang": "tr",
+      "text": " deriz, başına "
+     },
+     {
+      "lang": "en",
+      "text": "the"
+     },
+     {
+      "lang": "tr",
+      "text": " gelir; "
+     },
+     {
+      "lang": "en",
+      "text": "a wrong size"
+     },
+     {
+      "lang": "tr",
+      "text": " denmez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "It's the wrong size."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It's the wrong size."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Başka sebepler de var. Bir şey sana olmuyorsa, yani üstüne oturmuyorsa: "
+     },
+     {
+      "lang": "en",
+      "text": "It doesn't fit."
+     },
+     {
+      "lang": "tr",
+      "text": " Bozuksa: "
+     },
+     {
+      "lang": "en",
+      "text": "It's broken."
+     },
+     {
+      "lang": "tr",
+      "text": " Fikrini değiştirdiysen: "
+     },
+     {
+      "lang": "en",
+      "text": "I changed my mind."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bunu sen söyle. Ayakkabı ayağına olmadı; tek cümleyle anlat."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It doesn't fit.",
+     "accept": [
+      "It doesn't fit me.",
+      "They don't fit.",
+      "They don't fit me."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bana olmuyor, üstüme oturmuyor."
+      },
+      {
+       "lang": "tr",
+       "text": "fit fiilini olumsuz yap: It doesn't ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de çok işine yarayacak bir nokta var. İngilizler iade ederken ürünü kullanıp kullanmadığını söyler."
+     },
+     {
+      "lang": "en",
+      "text": "I haven't worn it yet."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Onu henüz giymedim."
+     },
+     {
+      "lang": "tr",
+      "text": "Buradaki "
+     },
+     {
+      "lang": "en",
+      "text": "yet"
+     },
+     {
+      "lang": "tr",
+      "text": ", henüz demek ve olumsuz cümlenin sonuna gelir. Bir de "
+     },
+     {
+      "lang": "en",
+      "text": "I've only worn it once."
+     },
+     {
+      "lang": "tr",
+      "text": " var: Sadece bir kez giydim."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen ilkini söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "I haven't worn it yet."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I haven't worn it yet."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol yapalım. Şu İngilizce cümle doğru mu, dinle ve karar ver."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "You say 'Can I get a refund?' when you want your money back.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. refund para iadesi demek; parayı geri isterken bu kalıbı kurarsın."
+      },
+      {
+       "lang": "tr",
+       "text": "Ürünü başka bedenle değiştirmek isteseydin refund değil exchange derdin."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım. İade için "
+     },
+     {
+      "lang": "en",
+      "text": "I'd like to return this."
+     },
+     {
+      "lang": "tr",
+      "text": " Değişim için "
+     },
+     {
+      "lang": "en",
+      "text": "Can I exchange it for a bigger size?"
+     },
+     {
+      "lang": "tr",
+      "text": " Para iadesi için "
+     },
+     {
+      "lang": "en",
+      "text": "Can I get a refund, please?"
+     },
+     {
+      "lang": "tr",
+      "text": " Sebep olarak "
+     },
+     {
+      "lang": "en",
+      "text": "It's the wrong size."
+     },
+     {
+      "lang": "tr",
+      "text": " ya da "
+     },
+     {
+      "lang": "en",
+      "text": "It doesn't fit."
+     },
+     {
+      "lang": "tr",
+      "text": " Fiş ise "
+     },
+     {
+      "lang": "en",
+      "text": "receipt"
+     },
+     {
+      "lang": "tr",
+      "text": "."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunları gerçek bir mağaza konuşmasında deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir mağazanın iade reyonundasın. Geçen hafta aldığın tişört yanlış beden ve henüz hiç giymedin. Fişin çantanda.",
+   "partner": "mağaza görevlisi",
+   "opening": "Hello! How can I help you today?",
+   "openingTr": "Merhaba! Bugün size nasıl yardımcı olabilirim?",
+   "goal": "İade ya da değişim istediğini söyleyip sebebini belirtirsen, fiş sorusunu yanıtlarsan ve para iadesi mi değişim mi istediğine karar verirsen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-shop-complaint",
+  "level": "A2",
+  "course": "en",
+  "icon": "shopping",
+  "title": "Complaining about a product",
+  "titleTr": "Ürün şikâyeti",
+  "summary": "Mağazada hasarlı ya da bozuk bir üründen kibarca şikâyet etmeyi, para iadesi veya değişim istemeyi ve gerekirse yöneticiyle konuşmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Complaints",
+  "vocab": [
+   {
+    "de": "damaged",
+    "tr": "hasarlı"
+   },
+   {
+    "de": "quality",
+    "tr": "kalite"
+   },
+   {
+    "de": "complain",
+    "tr": "şikâyet etmek"
+   },
+   {
+    "de": "manager",
+    "tr": "yönetici"
+   },
+   {
+    "de": "expect",
+    "tr": "ummak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "There's a problem with this ...",
+    "tr": "üründeki sorunu söylerken kullanılır"
+   },
+   {
+    "de": "I bought it two days ago.",
+    "tr": "ürünü ne zaman aldığını söylerken kullanılır"
+   },
+   {
+    "de": "I'd like a refund, please.",
+    "tr": "para iadesi isterken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir mağazada bozuk ya da hasarlı bir ürünü nasıl şikâyet edeceğini öğreneceğiz. Sorunu anlatmayı, para iadesi ya da değişim istemeyi ve gerekirse yöneticiyle konuşmayı çalışacağız. Hazırsan başlayalım."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şöyle düşün: dün bir mağazadan bir ceket aldın, eve gelince fermuarın kırık olduğunu gördün. Şimdi mağazaya geri dönüyorsun. İngilizcede bu konuşma çok kalıplıdır; birkaç cümleyi öğrenirsen her durumda işini görür."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "damaged"
+     },
+     {
+      "lang": "tr",
+      "text": "Hasarlı, zarar görmüş demek. Kutusu ezilmiş, ekranı çizilmiş bir ürün için bunu kullanırsın. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "damaged"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "damaged"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "quality"
+     },
+     {
+      "lang": "tr",
+      "text": "Kalite demek. Bir şeyin kalitesi iyi değilse şöyle dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "The quality isn't very good."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani kalite pek iyi değil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "complain"
+     },
+     {
+      "lang": "tr",
+      "text": "Şikâyet etmek demek. Neyi şikâyet ettiğini söylerken arkasına about gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "I want to complain about this jacket."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi sadece fiili tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "complain"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "complain"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şikâyetin en kolay başlangıcı şu kalıptır: There's a problem with, yani bunda bir sorun var. Sonuna ürünü koyuyorsun. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "There's a problem with this jacket."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "There's a problem with this jacket."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eğer ürün hiç çalışmıyorsa çok kısa bir cümle yeter. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "It doesn't work."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani çalışmıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It doesn't work."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Görevli sana mutlaka ne zaman aldığını soracak. Bitmiş, tarihi belli bir olay olduğu için geçmiş zaman kullanırsın. Buy fiilinin geçmişi bought'tur:"
+     },
+     {
+      "lang": "en",
+      "text": "I bought this jacket yesterday."
+     },
+     {
+      "lang": "tr",
+      "text": "İki gün önce demek istersen sona two days ago eklersin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu İngilizce söyle: Bunu iki gün önce aldım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I bought it two days ago.",
+     "accept": [
+      "I bought this two days ago.",
+      "I bought it 2 days ago.",
+      "I bought this jacket two days ago."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "buy fiilinin geçmişi bought; iki gün önce için two days ago"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ne istediğini söyleme zamanı. Paranı geri istiyorsan refund kelimesini kullanırsın. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I'd like a refund, please."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'd like a refund, please."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Para yerine ürünün yenisini istiyorsan exchange dersin, yani değiştirmek:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I exchange it?"
+     },
+     {
+      "lang": "tr",
+      "text": "Fişini isterlerse receipt derler:"
+     },
+     {
+      "lang": "en",
+      "text": "Do you have the receipt?"
+     },
+     {
+      "lang": "tr",
+      "text": "Cevabın hazır olsun: Yes, here it is."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kalıbı başka bir ürünle deneyelim. Şunu İngilizce söyle: Bu çantada bir sorun var."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "There's a problem with this bag.",
+     "accept": [
+      "There is a problem with this bag."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "There's a problem with ... kalıbı, çanta için bag"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelimemiz daha var:"
+     },
+     {
+      "lang": "en",
+      "text": "expect"
+     },
+     {
+      "lang": "tr",
+      "text": "Ummak, beklemek demek. Hayal kırıklığını kibarca anlatmanın en güzel yolu bu fiilin geçmiş hâlidir:"
+     },
+     {
+      "lang": "en",
+      "text": "I expected better quality."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani daha iyi bir kalite umuyordum."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen de söyle: Daha iyi bir kalite umuyordum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I expected better quality.",
+     "accept": [
+      "I expected a better quality.",
+      "I expected better quality from this shop."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "expect fiilinin geçmişi expected; daha iyi kalite için better quality"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Görevli sana yardımcı olamıyorsa yöneticiyi istersin. Yönetici İngilizcede manager. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I speak to the manager, please?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Can I speak to the manager, please?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kibarlık notu: cümleye Excuse me diye başla ve sonuna please ekle. İngilizler şikâyet ederken sesini yükseltmez, kelimeleri yumuşatır. Görevli üzüldüğünü belirtmek için sana şöyle diyebilir:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry about that."
+     },
+     {
+      "lang": "tr",
+      "text": "Ya da kötü haberi yumuşatmak için: I'm afraid we can't do that."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi küçük bir kontrol. Şu İngilizce cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I have bought this jacket yesterday."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I have bought this jacket yesterday.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Cümlede yesterday gibi bitmiş bir zaman varsa have bought değil, düz geçmiş zaman kullanılır. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "I bought this jacket yesterday."
+      },
+      {
+       "lang": "tr",
+       "text": "have bought'u zamanı söylemediğinde kullanırsın, örneğin: I've already bought a new one."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir toparlama. Şikâyetin sırası hep aynı: önce sorunu söyle, sonra ne zaman aldığını söyle, en sonunda ne istediğini söyle."
+     },
+     {
+      "lang": "en",
+      "text": "There's a problem with this jacket. I bought it two days ago. I'd like a refund, please."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bugün damaged, quality, complain, manager ve expect kelimelerini; There's a problem with, I bought it two days ago ve I'd like a refund kalıplarını öğrendin. Ayrıca yesterday gibi bir zaman söylerken düz geçmiş zaman kullandığını hatırla. Şimdi mağazada görevliyle konuşarak deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Dün aldığın ceketin fermuarı kırık çıktı. Fişinle birlikte mağazaya geri döndün ve iade istiyorsun.",
+   "partner": "mağaza görevlisi",
+   "opening": "Hello! How can I help you today?",
+   "openingTr": "Merhaba! Bugün size nasıl yardımcı olabilirim?",
+   "goal": "Sorunu anlatıp ürünü ne zaman aldığını söyledikten sonra para iadesi ya da değişim istediğinde konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-online-order",
+  "level": "A2",
+  "course": "en",
+  "icon": "mail",
+  "title": "Online orders",
+  "titleTr": "İnternetten sipariş",
+  "summary": "İnternetten sipariş verme ve kargo takibi: sipariş kelimeleri, \"yet / already / just\" ile present perfect ve teslimat gününü söyleme.",
+  "minutes": 9,
+  "focusId": "Tracking",
+  "vocab": [
+   {
+    "de": "order",
+    "tr": "sipariş"
+   },
+   {
+    "de": "delivery",
+    "tr": "teslimat"
+   },
+   {
+    "de": "arrive",
+    "tr": "varmak, ulaşmak"
+   },
+   {
+    "de": "track",
+    "tr": "takip etmek"
+   },
+   {
+    "de": "package",
+    "tr": "paket"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I ordered it two days ago.",
+    "tr": "siparişi ne zaman verdiğini söylerken kullanılır"
+   },
+   {
+    "de": "Has my package arrived yet?",
+    "tr": "paketin gelip gelmediğini sormak için kullanılır"
+   },
+   {
+    "de": "It will arrive on Friday.",
+    "tr": "teslimatın hangi gün olacağını söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün internetten sipariş vermeyi ve kargonu takip etmeyi çalışacağız."
+     },
+     {
+      "lang": "tr",
+      "text": "Ders sonunda paketinin gelip gelmediğini soracak, ne zaman geleceğini öğrenecek ve bir sorun olursa anlatabileceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: order. Hem \"sipariş\" demek, hem de \"sipariş vermek\" fiili."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "order"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "order"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi tam bir cümle kuralım. Geçmişte verdiğin bir sipariş için fiilin sonuna -ed gelir: order, ordered."
+     },
+     {
+      "lang": "en",
+      "text": "I ordered a new phone case."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani \"Yeni bir telefon kılıfı sipariş ettim.\" Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I ordered a new phone case."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelime: delivery — teslimat. Siteler çoğu zaman şunu yazar:"
+     },
+     {
+      "lang": "en",
+      "text": "free delivery"
+     },
+     {
+      "lang": "tr",
+      "text": "\"ücretsiz teslimat\" demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "delivery"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "delivery"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelime: package — paket. Kapına gelen kutunun adı bu."
+     },
+     {
+      "lang": "tr",
+      "text": "Söyle bakalım:"
+     },
+     {
+      "lang": "en",
+      "text": "package"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "package"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelime: arrive — varmak, ulaşmak. Paket sana ulaştığında bu fiili kullanırsın."
+     },
+     {
+      "lang": "en",
+      "text": "My package arrives on Friday."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Paketim cuma günü geliyor.\" Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My package arrives on Friday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşinci kelime: track — takip etmek. Kargonun şu an nerede olduğuna bakmak."
+     },
+     {
+      "lang": "en",
+      "text": "I want to track my order."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Siparişimi takip etmek istiyorum.\" Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I want to track my order."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Takip için sana bir numara verirler; adı tracking number, yani takip numarası."
+     },
+     {
+      "lang": "en",
+      "text": "Here is my tracking number."
+     },
+     {
+      "lang": "tr",
+      "text": "Bunu bir kenara yaz, birazdan konuşmada işine yarayacak."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi İngilizceye özgü bir noktaya geliyoruz. Türkçede kısacık \"geldi mi?\" dersin."
+     },
+     {
+      "lang": "tr",
+      "text": "İngilizcede paketin şu ana kadar gelip gelmediğini sorarken have ile kurulan bir yapı kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "Has my package arrived yet?"
+     },
+     {
+      "lang": "tr",
+      "text": "Buradaki yet, \"henüz, daha\" demek ve cümlenin en sonuna gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevabı olumsuzsa yine yet kullanırsın. Sıra sende: \"Daha gelmedi\" nasıl denir?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It hasn't arrived yet.",
+     "accept": [
+      "It has not arrived yet.",
+      "My package hasn't arrived yet.",
+      "The package hasn't arrived yet."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "it + hasn't + arrive fiilinin üçüncü hâli + yet"
+      },
+      {
+       "lang": "tr",
+       "text": "arrive fiilinin üçüncü hâli: arrived"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gelmişse iki güzel kelimen var. already, \"çoktan, bile\" demek ve have ile fiilin arasına girer:"
+     },
+     {
+      "lang": "en",
+      "text": "It has already arrived."
+     },
+     {
+      "lang": "tr",
+      "text": "just ise \"az önce, yeni\" demek:"
+     },
+     {
+      "lang": "en",
+      "text": "It has just arrived."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. \"Paketim az önce geldi\" cümlesini kur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My package has just arrived.",
+     "accept": [
+      "The package has just arrived.",
+      "My package just arrived.",
+      "It has just arrived."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "my package + has + just + arrived"
+      },
+      {
+       "lang": "tr",
+       "text": "just, has ile arrived arasında durur"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük ama önemli bir kural: yet yalnızca sorularda ve olumsuz cümlelerde kullanılır."
+     },
+     {
+      "lang": "tr",
+      "text": "Olumlu cümlede yet değil, already dersin. Şimdi bir cümle söylüyorum; doğru mu, karar ver."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The package has arrived yet.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Olumlu cümlede yet kullanılmaz."
+      },
+      {
+       "lang": "tr",
+       "text": "Doğrusu: The package has already arrived."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Teslimat gününü söylerken gelecek zaman kullanırsın. Site bir tarih veriyorsa will yeter:"
+     },
+     {
+      "lang": "en",
+      "text": "It will arrive on Friday."
+     },
+     {
+      "lang": "tr",
+      "text": "Planlanmış, belli bir teslimat için going to da çok doğal:"
+     },
+     {
+      "lang": "en",
+      "text": "The delivery is going to be late."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnternetten alışverişte en sık sorulan soruyu öğrenelim:"
+     },
+     {
+      "lang": "en",
+      "text": "When will it arrive?"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Ne zaman gelecek?\" Bir de kargonun nerede olduğunu sorabilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "Where is my package now?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir sorun çıkarsa şu cümleler seni kurtarır."
+     },
+     {
+      "lang": "en",
+      "text": "My order is late."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Siparişim gecikti.\""
+     },
+     {
+      "lang": "en",
+      "text": "You sent the wrong size."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Yanlış beden göndermişsiniz.\""
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Vazgeçtiysen ya da geri göndermek istiyorsan: cancel iptal etmek, return iade etmek, refund para iadesi."
+     },
+     {
+      "lang": "tr",
+      "text": "Sıra sende: \"Siparişimi iptal etmek istiyorum\" nasıl denir?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I want to cancel my order.",
+     "accept": [
+      "I'd like to cancel my order.",
+      "I would like to cancel my order."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "I want to + fiil + my order"
+      },
+      {
+       "lang": "tr",
+       "text": "iptal etmek: cancel"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısa bir konuşma dinle. Müşteri hizmetleri soruyor:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I have your order number?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sen cevaplıyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, of course. I ordered it last week, but it hasn't arrived yet."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım: order sipariş, delivery teslimat, package paket, arrive varmak, track takip etmek."
+     },
+     {
+      "lang": "tr",
+      "text": "Paketin gelip gelmediğini sormak için Has it arrived yet, geldiyse It has already arrived ya da It has just arrived, günü söylemek için It will arrive on Friday."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunları gerçek bir konuşmada deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İnternetten aldığın ayakkabı bir haftadır gelmedi. Mağazanın müşteri hizmetlerini arıyorsun ve siparişini takip ettirmek istiyorsun.",
+   "partner": "Mağazanın müşteri hizmetleri görevlisi",
+   "opening": "Good morning, this is Riverside Shoes. How can I help you?",
+   "openingTr": "Günaydın, Riverside Shoes'tan arıyorsunuz. Nasıl yardımcı olabilirim?",
+   "goal": "Siparişini ne zaman verdiğini söyleyip paketin hâlâ gelmediğini anlatman, takip numaranı vermen ve teslimatın hangi gün olacağını öğrenmen.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-bank",
+  "level": "A2",
+  "course": "en",
+  "icon": "money",
+  "title": "At the bank",
+  "titleTr": "Bankada",
+  "summary": "Bankada hesap açtırma, nakit çekme, havale ve hesap özeti gibi işleri \"I'd like to…\" ve \"Could you…?\" gibi kibar isteklerle anlatmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Formal requests",
+  "vocab": [
+   {
+    "de": "account",
+    "tr": "hesap"
+   },
+   {
+    "de": "transfer",
+    "tr": "havale etmek, para göndermek"
+   },
+   {
+    "de": "cash",
+    "tr": "nakit"
+   },
+   {
+    "de": "statement",
+    "tr": "hesap özeti"
+   },
+   {
+    "de": "card",
+    "tr": "kart"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I'd like to open an account.",
+    "tr": "bir işlemi kibarca istemek için kullanılır"
+   },
+   {
+    "de": "Could you transfer this money to my account, please?",
+    "tr": "karşındakinden nazikçe bir şey yapmasını isterken kullanılır"
+   },
+   {
+    "de": "Is there a charge for that?",
+    "tr": "bir işlemden ücret alınıp alınmadığını sormak için kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün seni bankaya götürüyorum. Hesap açtırmayı, nakit çekmeyi, para göndermeyi ve bütün bunları kibarca istemeyi öğreneceğiz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz çok işine yarayacak: hesap demek."
+     },
+     {
+      "lang": "en",
+      "text": "account"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle: account."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "account"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bankada söyleyeceğin ilk cümle. Türkçesi: Bir hesap açtırmak istiyorum."
+     },
+     {
+      "lang": "en",
+      "text": "I'd like to open an account."
+     },
+     {
+      "lang": "tr",
+      "text": "Benimle birlikte söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'd like to open an account."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Burada küçük ama değerli bir ayrıntı var. I want to open an account desen de anlaşılırsın, ama kulağa biraz sert gelir. I'd like to daha kibardır; bu, I would like to'nun kısaltılmışıdır. Ve dikkat: I'd like to'dan sonra fiil yalın hâlde gelir. Open. Send. Pay."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıradaki kelime: nakit."
+     },
+     {
+      "lang": "en",
+      "text": "cash"
+     },
+     {
+      "lang": "tr",
+      "text": "Kredi kartı değil, elindeki kâğıt para. Söyle bakalım: cash."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "cash"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Bankada nakit çekmek istiyorsun. Biraz nakit çekmek istiyorum, cümlesini İngilizce kur. Çekmek için withdraw fiilini kullan."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I'd like to withdraw some cash.",
+     "accept": [
+      "I would like to withdraw some cash.",
+      "I'd like to withdraw cash.",
+      "I'd like to take out some cash."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kibar isteğimizle başla:"
+      },
+      {
+       "lang": "en",
+       "text": "I'd like to"
+      },
+      {
+       "lang": "tr",
+       "text": "sonra withdraw, sonra some cash."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha: para göndermek, havale etmek."
+     },
+     {
+      "lang": "en",
+      "text": "transfer"
+     },
+     {
+      "lang": "tr",
+      "text": "Sen de söyle: transfer."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "transfer"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendin için isterken I'd like to diyoruz. Peki karşındakinden bir şey yapmasını isteyeceksin? O zaman Could you ile başlarsın ve sonuna please eklersin. Could you, kabaca yapabilir misiniz demek; can you'dan daha naziktir. Bankada, hastanede, resmî her yerde bu kalıbı kullan."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şu cümleyi dinle ve tekrar et. Türkçesi: Bu parayı hesabıma gönderebilir misiniz lütfen?"
+     },
+     {
+      "lang": "en",
+      "text": "Could you transfer this money to my account, please?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Could you transfer this money to my account, please?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Havale ederken akla ilk gelen soru: ücret var mı? Bunu şöyle sorarsın."
+     },
+     {
+      "lang": "en",
+      "text": "Is there a charge for that?"
+     },
+     {
+      "lang": "tr",
+      "text": "Buradaki charge, telefon şarjı değil; alınan ücret, masraf demek. Cevap olarak şunu duyabilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "No, it's free."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha: hesap özeti, yani hesabındaki hareketlerin dökümü."
+     },
+     {
+      "lang": "en",
+      "text": "statement"
+     },
+     {
+      "lang": "tr",
+      "text": "Söyle: statement."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "statement"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kibar istemenin üçüncü yolu: Could I have. Yani alabilir miyim. Bir şeyi sana vermelerini istediğinde bunu kullan."
+     },
+     {
+      "lang": "en",
+      "text": "Could I have a receipt, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Fiş alabilir miyim lütfen?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Hesap özetimi alabilir miyim lütfen, cümlesini İngilizce söyle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Could I have a statement, please?",
+     "accept": [
+      "Could I have my statement, please?",
+      "Can I have a statement, please?",
+      "Could I get a statement, please?",
+      "Could I have a statement?"
+     ],
+     "hint": [
+      {
+       "lang": "en",
+       "text": "Could I have"
+      },
+      {
+       "lang": "tr",
+       "text": "ile başla, sonra a statement, sonunda please."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bankaya bazen bir sorun için gidersin. Kart, İngilizcede card. Kartın çalışmıyorsa şöyle dersin."
+     },
+     {
+      "lang": "en",
+      "text": "My card doesn't work."
+     },
+     {
+      "lang": "tr",
+      "text": "Ya da makinede kaldıysa:"
+     },
+     {
+      "lang": "en",
+      "text": "The machine took my card."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. Sorunu anlatıyorsun: Kartım çalışmıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My card doesn't work.",
+     "accept": [
+      "My card does not work.",
+      "My card isn't working.",
+      "My card is not working."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kartım:"
+      },
+      {
+       "lang": "en",
+       "text": "my card"
+      },
+      {
+       "lang": "tr",
+       "text": "olumsuz için doesn't ve ardından yalın fiil work."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir doğru mu yanlış mı sorusu. Şu cümleyi dinle ve dilbilgisi olarak doğru mu söyle."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I'd like to opening an account.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. I'd like to kalıbından sonra fiil yalın gelir, ing takısı almaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "I'd like to open an account."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki cümle daha ekleyelim, işine yarar. Döviz bozdurmak istersen:"
+     },
+     {
+      "lang": "en",
+      "text": "Where can I change money?"
+     },
+     {
+      "lang": "tr",
+      "text": "Bakiyeni öğrenmek istersen:"
+     },
+     {
+      "lang": "en",
+      "text": "Could you check my balance, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "Balance, hesabındaki para yani bakiye demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım. Kendin için isterken I'd like to, karşındakinden isterken Could you ve bir şeyi almak isterken Could I have. Kelimeler: account hesap, cash nakit, transfer havale etmek, statement hesap özeti, card kart."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harikaydın. Şimdi seni bankonun karşısına oturtuyorum: karşında bir banka görevlisi var, öğrendiğin kibar kalıplarla derdini anlat. Kolay gelsin!"
+     },
+     {
+      "lang": "en",
+      "text": "Good luck!"
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir bankadasın. Hesap açtırmak, biraz nakit çekmek ve hesap özeti istemek için gişeye geldin.",
+   "partner": "banka görevlisi",
+   "opening": "Good morning. How can I help you today?",
+   "openingTr": "Günaydın. Bugün size nasıl yardımcı olabilirim?",
+   "goal": "Kibar kalıplarla hesap açtırmak istediğini söyleyip nakit çekme, havale ücreti ve hesap özeti konusunda en az bir istekte bulunduğunda konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-parcel",
+  "level": "A2",
+  "course": "en",
+  "icon": "mail",
+  "title": "Sending a parcel",
+  "titleTr": "Kargo göndermek",
+  "summary": "Postanede kargo seçeneklerini karşılaştırmayı, ücreti ve süreyi sormayı öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Options",
+  "vocab": [
+   {
+    "de": "weigh",
+    "tr": "tartmak"
+   },
+   {
+    "de": "abroad",
+    "tr": "yurt dışına, yurt dışında"
+   },
+   {
+    "de": "express",
+    "tr": "hızlı (gönderi)"
+   },
+   {
+    "de": "insure",
+    "tr": "sigortalamak"
+   },
+   {
+    "de": "form",
+    "tr": "form"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "How much does it cost to send this abroad?",
+    "tr": "yurt dışına gönderinin ücretini sorarken kullanılır"
+   },
+   {
+    "de": "How long does it take?",
+    "tr": "kargonun kaç günde gideceğini sorarken kullanılır"
+   },
+   {
+    "de": "Express is faster, but it's more expensive.",
+    "tr": "iki gönderi seçeneğini karşılaştırırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün postanedeyiz, elimizde bir kargo var. Paketi tarttırmayı, hızlı ve normal gönderiyi karşılaştırmayı, ücreti ve kaç gün sürdüğünü sormayı öğreneceğiz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "weigh"
+     },
+     {
+      "lang": "tr",
+      "text": "Tartmak demek. Yazılışı biraz yanıltıcı ama okunuşu kısa. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "weigh"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "weigh"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gönderdiğin şeye İngilizcede genelde"
+     },
+     {
+      "lang": "en",
+      "text": "parcel"
+     },
+     {
+      "lang": "tr",
+      "text": "denir; yani paket, kargo. Görevliye şöyle dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "Can you weigh this parcel, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Bu paketi tartabilir misiniz, lütfen?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıradaki kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "abroad"
+     },
+     {
+      "lang": "tr",
+      "text": "Yurt dışı, yurt dışına demek. Başına 'to' koymuyoruz, dikkat. Şimdi sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "abroad"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "abroad"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ücreti sormanın en doğal yolu şu kalıp:"
+     },
+     {
+      "lang": "en",
+      "text": "How much does it cost to send this abroad?"
+     },
+     {
+      "lang": "tr",
+      "text": "Bunu yurt dışına göndermek ne kadar tutar? Şimdi sen dene:"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "How much does it cost to send this abroad?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Görevli sana fiyatı söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "It costs fifteen euros."
+     },
+     {
+      "lang": "tr",
+      "text": "On beş euro. Fiyat söylerken 'it costs' demesi yeterli, 'it is' de duyabilirsin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi seçeneklere geliyoruz. Birincisi:"
+     },
+     {
+      "lang": "en",
+      "text": "express"
+     },
+     {
+      "lang": "tr",
+      "text": "Hızlı gönderi demek. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "express"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "express"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Diğer seçenek de"
+     },
+     {
+      "lang": "en",
+      "text": "standard"
+     },
+     {
+      "lang": "tr",
+      "text": "yani normal gönderi. İkisini karşılaştırırken sıfatların karşılaştırma biçimini kullanıyoruz: fast yani hızlı,"
+     },
+     {
+      "lang": "en",
+      "text": "faster"
+     },
+     {
+      "lang": "tr",
+      "text": "daha hızlı olur. Ama 'expensive' gibi uzun sıfatlarda sona ek gelmez, önüne 'more' koyarız:"
+     },
+     {
+      "lang": "en",
+      "text": "more expensive"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bu iki kelimeyi tek cümlede duyalım:"
+     },
+     {
+      "lang": "en",
+      "text": "Express is faster, but it's more expensive."
+     },
+     {
+      "lang": "tr",
+      "text": "Hızlı gönderi daha çabuk ama daha pahalı. Lütfen tekrar et:"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Express is faster, but it's more expensive."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi aynı cümlenin tersini sen kur. 'Standart daha ucuz ama daha yavaş.' Nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Standard is cheaper, but it's slower.",
+     "accept": [
+      "Standard is cheaper but slower.",
+      "Standard is cheaper, but it is slower.",
+      "The standard one is cheaper, but it's slower."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "cheap kısa bir sıfat, sonuna -er ekle: cheaper. Slow da öyle: slower."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Süreyi sormak için tek bir kalıp yetiyor:"
+     },
+     {
+      "lang": "en",
+      "text": "How long does it take?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ne kadar sürer? Sen de söyle:"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "How long does it take?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevap da aynı fiille gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "It takes three days."
+     },
+     {
+      "lang": "tr",
+      "text": "Üç gün sürer. Ya da:"
+     },
+     {
+      "lang": "en",
+      "text": "It takes about a week."
+     },
+     {
+      "lang": "tr",
+      "text": "Yaklaşık bir hafta. 'About' burada 'aşağı yukarı' demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İçinde değerli bir şey varsa sigorta sorarsın. Kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "insure"
+     },
+     {
+      "lang": "tr",
+      "text": "sigortalamak. Görevli de sana sorabilir:"
+     },
+     {
+      "lang": "en",
+      "text": "Do you want to insure it?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen iste. 'Bunu sigortalamak istiyorum.' Kibar biçimini kullan."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I'd like to insure it.",
+     "accept": [
+      "I would like to insure it.",
+      "I want to insure it.",
+      "I'd like to insure this parcel."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'I'd like to' ile başla, sonra fiili ekle."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yurt dışı gönderilerde bir de kâğıt işi var. Kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "form"
+     },
+     {
+      "lang": "tr",
+      "text": "Görevli sana der ki:"
+     },
+     {
+      "lang": "en",
+      "text": "Please fill in this form and sign here."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen bu formu doldurun ve burayı imzalayın. 'Fill in' doldurmak demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Formu daha önce doldurduysan bunu şöyle söylersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I've already filled in the form."
+     },
+     {
+      "lang": "tr",
+      "text": "Formu zaten doldurdum. Buradaki 'already', işin çoktan bitmiş olduğunu anlatır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "Express is cheaper than standard."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Express is cheaper than standard.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Hızlı gönderi daha pahalıdır: Express is more expensive than standard."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son olarak gişedeki ilk cümleni hatırlayalım. 'Bu paketi tartabilir misiniz?' Nasıl söylersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Can you weigh this parcel?",
+     "accept": [
+      "Can you weigh this parcel, please?",
+      "Could you weigh this parcel, please?",
+      "Could you weigh this parcel?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'Can you' ile başla, tartmak fiilini ekle, sonra 'this parcel'."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: paketi tarttırmak için 'Can you weigh this parcel?', ücret için 'How much does it cost to send this abroad?', süre için 'How long does it take?' diyorsun. Seçenekleri karşılaştırırken faster, slower, cheaper, more expensive işine yarıyor. Şimdi bunları gişede kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yurt dışına bir paket göndermek için postanedesin. Paketin tartılması, ücreti ve kaç gün süreceği seni ilgilendiriyor.",
+   "partner": "postane görevlisi",
+   "opening": "Good morning. How can I help you?",
+   "openingTr": "Günaydın. Nasıl yardımcı olabilirim?",
+   "goal": "Paketi tarttırıp yurt dışı ücretini ve süresini öğrendiysen, hızlı ile normal gönderi arasında seçim yapıp sigorta veya form konusunu hallettiysen konuşma başarılıdır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-phone-plan",
+  "level": "A2",
+  "course": "en",
+  "icon": "phone",
+  "title": "A phone contract",
+  "titleTr": "Telefon hattı",
+  "summary": "Telefon tarifelerini İngilizce karşılaştırmayı, aylık ücreti ve veri miktarını sormayı, sözleşmeyi iptal etmeyi öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Comparing offers",
+  "vocab": [
+   {
+    "de": "contract",
+    "tr": "sözleşme"
+   },
+   {
+    "de": "monthly",
+    "tr": "aylık"
+   },
+   {
+    "de": "data",
+    "tr": "veri"
+   },
+   {
+    "de": "offer",
+    "tr": "teklif"
+   },
+   {
+    "de": "cancel",
+    "tr": "iptal etmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "This offer is cheaper than that one.",
+    "tr": "iki teklifi karşılaştırırken kullanılır"
+   },
+   {
+    "de": "How much data do I get?",
+    "tr": "tarifedeki veri miktarını sorarken kullanılır"
+   },
+   {
+    "de": "I want to cancel my contract.",
+    "tr": "sözleşmeyi iptal etmek istediğini söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün telefon hattı alıyoruz. Bir mağazadasın, önünde iki üç tarife var ve hangisi daha uygun, karar vermen gerekiyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu derste tarifeleri karşılaştırmayı, aylık ücreti ve veriyi sormayı, gerekirse sözleşmeyi iptal etmeyi öğreneceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "contract"
+     },
+     {
+      "lang": "tr",
+      "text": ". Türkçesi sözleşme demek. Telefon hattı alırken imzaladığın şey. Lütfen söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "a contract"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a contract"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "monthly"
+     },
+     {
+      "lang": "tr",
+      "text": ". Aylık demek. Aylık ücret için "
+     },
+     {
+      "lang": "en",
+      "text": "the monthly price"
+     },
+     {
+      "lang": "tr",
+      "text": " dersin. Şimdi sen söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "the monthly price"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "the monthly price"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "data"
+     },
+     {
+      "lang": "tr",
+      "text": ". İnternet paketindeki veri. Mağazada en çok soracağın soru bu: "
+     },
+     {
+      "lang": "en",
+      "text": "How much data do I get?"
+     },
+     {
+      "lang": "tr",
+      "text": " Yani ne kadar veri alıyorum? Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "How much data do I get?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "offer"
+     },
+     {
+      "lang": "tr",
+      "text": ". Teklif, kampanya demek. Mağazada duyarsın: "
+     },
+     {
+      "lang": "en",
+      "text": "We have a special offer this month."
+     },
+     {
+      "lang": "tr",
+      "text": " Sen şunu tekrar et: "
+     },
+     {
+      "lang": "en",
+      "text": "a special offer"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a special offer"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşinci kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "cancel"
+     },
+     {
+      "lang": "tr",
+      "text": ". İptal etmek demek. Tam cümlesi şöyle: "
+     },
+     {
+      "lang": "en",
+      "text": "I want to cancel my contract."
+     },
+     {
+      "lang": "tr",
+      "text": " Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I want to cancel my contract."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi karşılaştırma. İngilizcede kısa sıfatların sonuna "
+     },
+     {
+      "lang": "en",
+      "text": "-er"
+     },
+     {
+      "lang": "tr",
+      "text": " eklersin: "
+     },
+     {
+      "lang": "en",
+      "text": "cheap"
+     },
+     {
+      "lang": "tr",
+      "text": " ucuz, "
+     },
+     {
+      "lang": "en",
+      "text": "cheaper"
+     },
+     {
+      "lang": "tr",
+      "text": " daha ucuz. "
+     },
+     {
+      "lang": "en",
+      "text": "fast"
+     },
+     {
+      "lang": "tr",
+      "text": " hızlı, "
+     },
+     {
+      "lang": "en",
+      "text": "faster"
+     },
+     {
+      "lang": "tr",
+      "text": " daha hızlı. Uzun sıfatlarda ise başına "
+     },
+     {
+      "lang": "en",
+      "text": "more"
+     },
+     {
+      "lang": "tr",
+      "text": " gelir: "
+     },
+     {
+      "lang": "en",
+      "text": "more expensive"
+     },
+     {
+      "lang": "tr",
+      "text": ", daha pahalı."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ve karşılaştırdığın şeyi "
+     },
+     {
+      "lang": "en",
+      "text": "than"
+     },
+     {
+      "lang": "tr",
+      "text": " ile bağlarsın: -den, -dan demek. Şunu söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "This offer is cheaper than that one."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This offer is cheaper than that one."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Satıcıya şunu söylemek istiyorsun: Bu tarife diğerinden daha pahalı. İngilizcesini sen kur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This plan is more expensive than the other one.",
+     "accept": [
+      "This plan is more expensive than the other plan.",
+      "This offer is more expensive than the other one.",
+      "This contract is more expensive than the other one."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "pahalı uzun bir sıfat, o yüzden "
+      },
+      {
+       "lang": "en",
+       "text": "more expensive"
+      },
+      {
+       "lang": "tr",
+       "text": " ve sonra "
+      },
+      {
+       "lang": "en",
+       "text": "than"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üç tarifeden en iyisini söylemek istersen üstünlük derecesi lazım. Başına "
+     },
+     {
+      "lang": "en",
+      "text": "the"
+     },
+     {
+      "lang": "tr",
+      "text": " gelir: "
+     },
+     {
+      "lang": "en",
+      "text": "the cheapest"
+     },
+     {
+      "lang": "tr",
+      "text": " en ucuz, "
+     },
+     {
+      "lang": "en",
+      "text": "the most expensive"
+     },
+     {
+      "lang": "tr",
+      "text": " en pahalı. Bir tanesi düzensiz: "
+     },
+     {
+      "lang": "en",
+      "text": "good, better, the best"
+     },
+     {
+      "lang": "tr",
+      "text": ". İyi, daha iyi, en iyi."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bu en iyi teklif."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This is the best offer.",
+     "accept": [
+      "This is the best offer for me.",
+      "It is the best offer.",
+      "It's the best offer."
+     ],
+     "hint": [
+      {
+       "lang": "en",
+       "text": "the best"
+      },
+      {
+       "lang": "tr",
+       "text": " ve sonra teklif kelimesi"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Veri miktarını da karşılaştırabilirsin. "
+     },
+     {
+      "lang": "en",
+      "text": "This plan gives me more data."
+     },
+     {
+      "lang": "tr",
+      "text": " Bu tarife bana daha çok veri veriyor. Tersi de var: "
+     },
+     {
+      "lang": "en",
+      "text": "less data"
+     },
+     {
+      "lang": "tr",
+      "text": ", daha az veri. Ve sınırsız paket için tek kelime yeter: "
+     },
+     {
+      "lang": "en",
+      "text": "unlimited"
+     },
+     {
+      "lang": "tr",
+      "text": "."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu İngilizce cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "The red plan is more cheap than the blue plan."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The red plan is more cheap than the blue plan.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. "
+      },
+      {
+       "lang": "en",
+       "text": "cheap"
+      },
+      {
+       "lang": "tr",
+       "text": " kısa bir sıfat, o yüzden "
+      },
+      {
+       "lang": "en",
+       "text": "more cheap"
+      },
+      {
+       "lang": "tr",
+       "text": " değil "
+      },
+      {
+       "lang": "en",
+       "text": "cheaper"
+      },
+      {
+       "lang": "tr",
+       "text": " denir: "
+      },
+      {
+       "lang": "en",
+       "text": "The red plan is cheaper than the blue plan."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Satıcı sana ne kadar zamandır bu operatörde olduğunu sorabilir. Cevapta present perfect kullanılır: "
+     },
+     {
+      "lang": "en",
+      "text": "I have had this number for two years."
+     },
+     {
+      "lang": "tr",
+      "text": " İki yıldır bu numaram var. Süre için "
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": ", başlangıç noktası için "
+     },
+     {
+      "lang": "en",
+      "text": "since"
+     },
+     {
+      "lang": "tr",
+      "text": " kullanırsın: "
+     },
+     {
+      "lang": "en",
+      "text": "since 2023"
+     },
+     {
+      "lang": "tr",
+      "text": "."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen söyle: İki yıldır bu sözleşmem var."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have had this contract for two years.",
+     "accept": [
+      "I've had this contract for two years.",
+      "I have had this contract for 2 years."
+     ],
+     "hint": [
+      {
+       "lang": "en",
+       "text": "I have had"
+      },
+      {
+       "lang": "tr",
+       "text": " ile başla, süre için "
+      },
+      {
+       "lang": "en",
+       "text": "for"
+      },
+      {
+       "lang": "tr",
+       "text": " kullan"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İmzalamadan önce sorman gereken iki şey var. Birincisi: "
+     },
+     {
+      "lang": "en",
+      "text": "Is there a cancellation fee?"
+     },
+     {
+      "lang": "tr",
+      "text": " İptal ücreti var mı? İkincisi: "
+     },
+     {
+      "lang": "en",
+      "text": "Can I keep my number?"
+     },
+     {
+      "lang": "tr",
+      "text": " Numaramı koruyabilir miyim?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sözleşmeyi bitirmek istersen genelde önceden haber vermen gerekir. Buna "
+     },
+     {
+      "lang": "en",
+      "text": "notice"
+     },
+     {
+      "lang": "tr",
+      "text": " denir. Satıcı şöyle der: "
+     },
+     {
+      "lang": "en",
+      "text": "You have to give one month's notice."
+     },
+     {
+      "lang": "tr",
+      "text": " Bir ay önceden haber vermelisin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi hepsini bir arada dinle. Satıcı: "
+     },
+     {
+      "lang": "en",
+      "text": "This offer is twenty dollars a month with ten gigabytes of data."
+     },
+     {
+      "lang": "tr",
+      "text": " Sen: "
+     },
+     {
+      "lang": "en",
+      "text": "That's more expensive than the other one. Which plan gives me the most data?"
+     },
+     {
+      "lang": "tr",
+      "text": " Satıcı: "
+     },
+     {
+      "lang": "en",
+      "text": "The big one, but it's the most expensive."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım. Beş kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "contract, monthly, data, offer, cancel"
+     },
+     {
+      "lang": "tr",
+      "text": ". Karşılaştırma için kısa sıfatta "
+     },
+     {
+      "lang": "en",
+      "text": "-er ... than"
+     },
+     {
+      "lang": "tr",
+      "text": ", uzun sıfatta "
+     },
+     {
+      "lang": "en",
+      "text": "more ... than"
+     },
+     {
+      "lang": "tr",
+      "text": ", en iyisi için "
+     },
+     {
+      "lang": "en",
+      "text": "the best"
+     },
+     {
+      "lang": "tr",
+      "text": ". Ve iki can simidi: "
+     },
+     {
+      "lang": "en",
+      "text": "How much data do I get?"
+     },
+     {
+      "lang": "tr",
+      "text": " ile "
+     },
+     {
+      "lang": "en",
+      "text": "I want to cancel my contract."
+     },
+     {
+      "lang": "tr",
+      "text": " Şimdi mağazada deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir telefon mağazasındasın. İki tarife arasında kararsızsın: biri ucuz ama az veri veriyor, diğeri pahalı ama sınırsız. Fiyatı, veriyi ve iptal koşullarını sorup karar vereceksin.",
+   "partner": "mağazadaki satış görevlisi",
+   "opening": "Hi! How can I help you today?",
+   "openingTr": "Merhaba! Bugün size nasıl yardımcı olabilirim?",
+   "goal": "Aylık ücreti ve veri miktarını sorup iki teklifi karşılaştırdıysan, iptal koşulunu öğrendiysen ve hangisini seçtiğini söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-haircut",
+  "level": "A2",
+  "course": "en",
+  "icon": "shopping",
+  "title": "At the hairdresser",
+  "titleTr": "Kuaförde",
+  "summary": "Kuaförde saçının nasıl kesileceğini İngilizce anlatmayı, kibarca istekte bulunmayı ve fiyat sorup bahşiş vermeyi öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Describing wants",
+  "vocab": [
+   {
+    "de": "cut",
+    "tr": "kesmek"
+   },
+   {
+    "de": "short",
+    "tr": "kısa"
+   },
+   {
+    "de": "wash",
+    "tr": "yıkamak"
+   },
+   {
+    "de": "style",
+    "tr": "tarz"
+   },
+   {
+    "de": "tip",
+    "tr": "bahşiş"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I'd like a haircut, please.",
+    "tr": "kuaförde ne istediğini kibarca söylerken kullanılır"
+   },
+   {
+    "de": "Not too short, please.",
+    "tr": "kesimin sınırını, ne kadar kısa olmasını istemediğini söylerken kullanılır"
+   },
+   {
+    "de": "Can you wash my hair first?",
+    "tr": "kuaförden bir şey rica ederken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün seninle kuaföre gidiyoruz. Dersin sonunda saçının nasıl kesileceğini İngilizce anlatabilecek, kibarca istekte bulunabilecek ve fiyatı sorup bahşiş verebileceksin."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlayalım."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "cut"
+     },
+     {
+      "lang": "tr",
+      "text": " — kesmek demek. Saç kesimi için de "
+     },
+     {
+      "lang": "en",
+      "text": "a haircut"
+     },
+     {
+      "lang": "tr",
+      "text": " deriz. Lütfen tekrar et."
+     },
+     {
+      "lang": "en",
+      "text": "a haircut"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a haircut"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kuaföre girdiğinde söyleyeceğin ilk cümle şu: "
+     },
+     {
+      "lang": "en",
+      "text": "I'd like a haircut, please."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani: Saç kesimi istiyorum, lütfen. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'd like a haircut, please."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir not: "
+     },
+     {
+      "lang": "en",
+      "text": "I'd like"
+     },
+     {
+      "lang": "tr",
+      "text": ", aslında "
+     },
+     {
+      "lang": "en",
+      "text": "I would like"
+     },
+     {
+      "lang": "tr",
+      "text": "'in kısası. "
+     },
+     {
+      "lang": "en",
+      "text": "I want"
+     },
+     {
+      "lang": "tr",
+      "text": " demek yanlış değil ama biraz sert duyulur. Kuaförde, kafede, dükkanda hep "
+     },
+     {
+      "lang": "en",
+      "text": "I'd like"
+     },
+     {
+      "lang": "tr",
+      "text": " kullan; çok daha kibar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıradaki kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "short"
+     },
+     {
+      "lang": "tr",
+      "text": " — kısa demek. Tekrar et lütfen."
+     },
+     {
+      "lang": "en",
+      "text": "short"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "short"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok kısa kesmesini istemiyorsan şunu söylersin: "
+     },
+     {
+      "lang": "en",
+      "text": "Not too short, please."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani: Çok kısa olmasın, lütfen. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Not too short, please."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İngilizcede kısa sıfatların sonuna "
+     },
+     {
+      "lang": "en",
+      "text": "-er"
+     },
+     {
+      "lang": "tr",
+      "text": " ekleyip karşılaştırma yaparız. "
+     },
+     {
+      "lang": "en",
+      "text": "short"
+     },
+     {
+      "lang": "tr",
+      "text": " kısa, "
+     },
+     {
+      "lang": "en",
+      "text": "shorter"
+     },
+     {
+      "lang": "tr",
+      "text": " daha kısa. Biraz demek için de başına "
+     },
+     {
+      "lang": "en",
+      "text": "a bit"
+     },
+     {
+      "lang": "tr",
+      "text": " koyarız: "
+     },
+     {
+      "lang": "en",
+      "text": "a bit shorter"
+     },
+     {
+      "lang": "tr",
+      "text": " — biraz daha kısa."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Kuaför sana aynada gösterdi, sen biraz daha kısa istiyorsun. Nasıl söylersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A bit shorter, please.",
+     "accept": [
+      "A little shorter, please.",
+      "A bit shorter please",
+      "Can you cut it a bit shorter, please?",
+      "A bit shorter, please"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "biraz daha kısa: "
+      },
+      {
+       "lang": "en",
+       "text": "a bit shorter"
+      },
+      {
+       "lang": "tr",
+       "text": " — sonuna lütfen ekle."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "wash"
+     },
+     {
+      "lang": "tr",
+      "text": " — yıkamak. Önce saçının yıkanmasını istiyorsan sorarsın: "
+     },
+     {
+      "lang": "en",
+      "text": "Can you wash my hair first?"
+     },
+     {
+      "lang": "tr",
+      "text": " Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Can you wash my hair first?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kesimin yerini tarif edelim. Yanlar "
+     },
+     {
+      "lang": "en",
+      "text": "the sides"
+     },
+     {
+      "lang": "tr",
+      "text": ", arka "
+     },
+     {
+      "lang": "en",
+      "text": "the back"
+     },
+     {
+      "lang": "tr",
+      "text": ", üst "
+     },
+     {
+      "lang": "en",
+      "text": "the top"
+     },
+     {
+      "lang": "tr",
+      "text": ". Kalıp basit: "
+     },
+     {
+      "lang": "en",
+      "text": "Short on the sides, please."
+     },
+     {
+      "lang": "tr",
+      "text": " — Yanlar kısa olsun, lütfen."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Deneyelim. Kuaföre yanları kısa istediğini söyle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Short on the sides, please.",
+     "accept": [
+      "Short on the sides please",
+      "Can you cut the sides short, please?",
+      "Shorter on the sides, please."
+     ],
+     "hint": [
+      {
+       "lang": "en",
+       "text": "short"
+      },
+      {
+       "lang": "tr",
+       "text": " + "
+      },
+      {
+       "lang": "en",
+       "text": "on the sides"
+      },
+      {
+       "lang": "tr",
+       "text": " + lütfen."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha: "
+     },
+     {
+      "lang": "en",
+      "text": "style"
+     },
+     {
+      "lang": "tr",
+      "text": " — tarz, model. Telefonundan bir fotoğraf gösterip şöyle diyebilirsin: "
+     },
+     {
+      "lang": "en",
+      "text": "I like this style."
+     },
+     {
+      "lang": "tr",
+      "text": " Ya da fikir soracaksan: "
+     },
+     {
+      "lang": "en",
+      "text": "What do you think?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu: "
+     },
+     {
+      "lang": "en",
+      "text": "'Not too short' means you want very short hair."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "'Not too short' means you want very short hair.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Hayır. "
+      },
+      {
+       "lang": "en",
+       "text": "Not too short"
+      },
+      {
+       "lang": "tr",
+       "text": " tam tersi: çok kısa olmasın demek. Sınır koyuyorsun."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "tip"
+     },
+     {
+      "lang": "tr",
+      "text": " — bahşiş. Parayı uzatırken şunu dersin: "
+     },
+     {
+      "lang": "en",
+      "text": "This is for you. Thank you!"
+     },
+     {
+      "lang": "tr",
+      "text": " Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This is for you. Thank you!"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Fiyatı sormak için: "
+     },
+     {
+      "lang": "en",
+      "text": "How much is it?"
+     },
+     {
+      "lang": "tr",
+      "text": " Kartla ödemek istersen: "
+     },
+     {
+      "lang": "en",
+      "text": "Can I pay by card?"
+     },
+     {
+      "lang": "tr",
+      "text": " İkisi de kısa ve her yerde işe yarar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin en önemli cümlesi. Kapıdan girdin, ne diyorsun?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I'd like a haircut, please.",
+     "accept": [
+      "I would like a haircut, please.",
+      "I'd like a haircut please",
+      "Hello, I'd like a haircut, please.",
+      "Can I have a haircut, please?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kibar istek: "
+      },
+      {
+       "lang": "en",
+       "text": "I'd like"
+      },
+      {
+       "lang": "tr",
+       "text": " + "
+      },
+      {
+       "lang": "en",
+       "text": "a haircut"
+      },
+      {
+       "lang": "tr",
+       "text": " + lütfen."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de tanıdık bir kuaförse, deneyimini anlatabilirsin: "
+     },
+     {
+      "lang": "en",
+      "text": "I've been here before."
+     },
+     {
+      "lang": "tr",
+      "text": " — Daha önce buraya geldim. Ya da: "
+     },
+     {
+      "lang": "en",
+      "text": "I haven't had a haircut for three months."
+     },
+     {
+      "lang": "tr",
+      "text": " — Üç aydır saçımı kestirmedim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: "
+     },
+     {
+      "lang": "en",
+      "text": "I'd like a haircut, please."
+     },
+     {
+      "lang": "tr",
+      "text": " ile başlıyorsun, "
+     },
+     {
+      "lang": "en",
+      "text": "Not too short, please."
+     },
+     {
+      "lang": "tr",
+      "text": " ile sınır koyuyorsun, "
+     },
+     {
+      "lang": "en",
+      "text": "Short on the sides, please."
+     },
+     {
+      "lang": "tr",
+      "text": " ile yeri tarif ediyorsun, sonunda "
+     },
+     {
+      "lang": "en",
+      "text": "How much is it?"
+     },
+     {
+      "lang": "tr",
+      "text": " diye sorup bahşişi veriyorsun. Şimdi bunu gerçek bir sahnede deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Londra'da bir kuaför salonundasın. İçeri giriyorsun, kuaför seni karşılıyor. Saçının nasıl kesilmesini istediğini anlat, sonra fiyatı sor.",
+   "partner": "seni karşılayan kuaför",
+   "opening": "Hi there! Take a seat. What would you like today?",
+   "openingTr": "Merhaba! Buyur otur. Bugün ne yaptırmak istersin?",
+   "goal": "Saç kesimi istediğini söyleyip ne kadar kısa olacağını tarif ettiysen ve fiyatı sorduysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-repair-service",
+  "level": "A2",
+  "course": "en",
+  "icon": "repair",
+  "title": "Repair service",
+  "titleTr": "Tamir servisi",
+  "summary": "Bozulan bir cihazı servise verirken arızayı anlatmayı, garanti ve yedek parça sormayı, işin ne kadar süreceğini ve ne zaman hazır olacağını öğrenmeyi öğretir.",
+  "minutes": 9,
+  "focusId": "Arranging",
+  "vocab": [
+   {
+    "de": "screen",
+    "tr": "ekran"
+   },
+   {
+    "de": "guarantee",
+    "tr": "garanti"
+   },
+   {
+    "de": "charge",
+    "tr": "şarj etmek"
+   },
+   {
+    "de": "ready",
+    "tr": "hazır"
+   },
+   {
+    "de": "spare part",
+    "tr": "yedek parça"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "My screen is broken.",
+    "tr": "cihazdaki arızayı anlatırken kullanılır"
+   },
+   {
+    "de": "How long will it take?",
+    "tr": "işin ne kadar süreceğini sorarken kullanılır"
+   },
+   {
+    "de": "It's still under guarantee.",
+    "tr": "cihazın garantisinin devam ettiğini söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün telefonunu ya da bilgisayarını tamire vermeyi öğreniyoruz. Arızayı nasıl anlatırsın, garantin var mı nasıl söylersin, işin ne kadar süreceğini nasıl sorarsın. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Önce arızayı anlatalım. İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "broken"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'bozuk, kırık' demek. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "broken"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "broken"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "screen"
+     },
+     {
+      "lang": "tr",
+      "text": "yani ekran. Şimdi ikisini birleştiriyoruz:"
+     },
+     {
+      "lang": "en",
+      "text": "My screen is broken."
+     },
+     {
+      "lang": "tr",
+      "text": "Ekranım kırık. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "My screen is broken."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My screen is broken."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Burada küçük bir ayrım var. Bir şey kırıldıysa"
+     },
+     {
+      "lang": "en",
+      "text": "It's broken."
+     },
+     {
+      "lang": "tr",
+      "text": "dersin. Ama kırık değil de sadece çalışmıyorsa"
+     },
+     {
+      "lang": "en",
+      "text": "It doesn't work."
+     },
+     {
+      "lang": "tr",
+      "text": "daha doğru. Hiç açılmıyorsa da"
+     },
+     {
+      "lang": "en",
+      "text": "It doesn't turn on."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıradaki kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "charge"
+     },
+     {
+      "lang": "tr",
+      "text": "şarj etmek demek. Telefon şarj olmuyorsa şöyle dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "It doesn't charge."
+     },
+     {
+      "lang": "tr",
+      "text": "Söyle bakalım:"
+     },
+     {
+      "lang": "en",
+      "text": "It doesn't charge."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It doesn't charge."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ne olduğunu anlatmak için geçmiş zaman işine yarar."
+     },
+     {
+      "lang": "en",
+      "text": "I dropped it yesterday."
+     },
+     {
+      "lang": "tr",
+      "text": "Dün düşürdüm."
+     },
+     {
+      "lang": "en",
+      "text": "The battery died last week."
+     },
+     {
+      "lang": "tr",
+      "text": "Pil geçen hafta bitti. Kısa cümleler yeter, teknisyen zaten bakacak."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Servise giriyorsun ve ekranın kırık. İngilizce nasıl söylersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My screen is broken.",
+     "accept": [
+      "The screen is broken.",
+      "My screen is broken",
+      "My phone screen is broken."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'Ekranım' için My screen, 'kırık' için is broken."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Şimdi para konusuna gelelim. Kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "guarantee"
+     },
+     {
+      "lang": "tr",
+      "text": "yani garanti. En çok kullanacağın kalıp şu:"
+     },
+     {
+      "lang": "en",
+      "text": "It's still under guarantee."
+     },
+     {
+      "lang": "tr",
+      "text": "Hâlâ garantisi var. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "It's still under guarantee."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It's still under guarantee."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir not: İngilizler çoğunlukla"
+     },
+     {
+      "lang": "en",
+      "text": "guarantee"
+     },
+     {
+      "lang": "tr",
+      "text": "der, Amerikalılar aynı şey için"
+     },
+     {
+      "lang": "en",
+      "text": "warranty"
+     },
+     {
+      "lang": "tr",
+      "text": "kelimesini kullanır. İkisini de duyarsan şaşırma. Garanti bittiyse:"
+     },
+     {
+      "lang": "en",
+      "text": "The guarantee has finished."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de tamirin en sık gecikme sebebi var:"
+     },
+     {
+      "lang": "en",
+      "text": "spare part"
+     },
+     {
+      "lang": "tr",
+      "text": "yani yedek parça. Sormak için:"
+     },
+     {
+      "lang": "en",
+      "text": "Do you have the spare part?"
+     },
+     {
+      "lang": "tr",
+      "text": "Söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Do you have the spare part?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Do you have the spare part?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin en önemli sorusu:"
+     },
+     {
+      "lang": "en",
+      "text": "How long will it take?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ne kadar sürer? Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "How long will it take?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "How long will it take?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat et: burada"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanıyoruz, çünkü tahmin ve söz veriyoruz. Planlanmış bir şey için"
+     },
+     {
+      "lang": "en",
+      "text": "going to"
+     },
+     {
+      "lang": "tr",
+      "text": "dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm going to bring my laptop tomorrow."
+     },
+     {
+      "lang": "tr",
+      "text": "Yarın dizüstümü getireceğim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevabı da anlaman lazım. Kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "ready"
+     },
+     {
+      "lang": "tr",
+      "text": "yani hazır. Şu cevapları duyabilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "It will be ready on Friday."
+     },
+     {
+      "lang": "tr",
+      "text": "Cuma günü hazır olur."
+     },
+     {
+      "lang": "en",
+      "text": "It'll take about three days."
+     },
+     {
+      "lang": "tr",
+      "text": "Yaklaşık üç gün sürer."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: teknisyene 'Ne kadar sürer?' diye sor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "How long will it take?",
+     "accept": [
+      "How long does it take?",
+      "How long will the repair take?",
+      "How long will it take"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'Ne kadar' için How long, sonra will it take."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bazen daha önce ne yaptığını anlatman gerekir. Bunun için present perfect çok işine yarar:"
+     },
+     {
+      "lang": "en",
+      "text": "I have already changed the battery."
+     },
+     {
+      "lang": "tr",
+      "text": "Pili zaten değiştirdim."
+     },
+     {
+      "lang": "en",
+      "text": "I haven't dropped it."
+     },
+     {
+      "lang": "tr",
+      "text": "Düşürmedim. Zamanı önemli değil, sonucu önemli."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu İngilizce cümle doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "A spare part is a new part that replaces a broken one.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Spare part, bozulan parçanın yerine takılan yedek parçadır."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Fiyatı sormayı da unutma:"
+     },
+     {
+      "lang": "en",
+      "text": "How much will it cost?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ne kadar tutar? Cevap garantiliyse şöyle gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "It's free. It's under guarantee."
+     },
+     {
+      "lang": "tr",
+      "text": "Ücretsiz, garanti kapsamında."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen söyle: cihazının hâlâ garantisi olduğunu anlat."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It's still under guarantee.",
+     "accept": [
+      "It is still under guarantee.",
+      "My phone is still under guarantee.",
+      "It's still under warranty."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'Hâlâ' için still, 'garanti kapsamında' için under guarantee."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son adım: cihazı almaya gittiğinde iki cümle yeter."
+     },
+     {
+      "lang": "en",
+      "text": "Is my phone ready?"
+     },
+     {
+      "lang": "tr",
+      "text": "Telefonum hazır mı? Ve teslim alırken:"
+     },
+     {
+      "lang": "en",
+      "text": "Thank you. Can I have the receipt, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "Fişi alabilir miyim?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: arızayı anlatmak için"
+     },
+     {
+      "lang": "en",
+      "text": "My screen is broken."
+     },
+     {
+      "lang": "tr",
+      "text": "veya"
+     },
+     {
+      "lang": "en",
+      "text": "It doesn't charge."
+     },
+     {
+      "lang": "tr",
+      "text": "Süre için"
+     },
+     {
+      "lang": "en",
+      "text": "How long will it take?"
+     },
+     {
+      "lang": "tr",
+      "text": "Para için"
+     },
+     {
+      "lang": "en",
+      "text": "It's still under guarantee."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu üç cümleyle her tamir servisinden çıkarsın. Şimdi rol yapalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Telefonunun ekranı kırıldı ve şarj da yavaş oluyor. Bir tamir servisine giriyorsun; cihazı bırakıp ne zaman hazır olacağını öğrenmen gerek.",
+   "partner": "tamir servisi görevlisi",
+   "opening": "Good morning! What's the problem with your phone?",
+   "openingTr": "Günaydın! Telefonunda ne sorun var?",
+   "goal": "Arızayı anlatıp garantin olduğunu söylersen, yedek parça olup olmadığını ve ne kadar süreceğini sorarsan ve cihazın ne zaman hazır olacağını öğrenirsen konuşma başarılıdır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-compare-prices",
+  "level": "A2",
+  "course": "en",
+  "icon": "shopping",
+  "title": "Comparing prices",
+  "titleTr": "Fiyat karşılaştırmak",
+  "summary": "Alışverişte iki şeyin fiyatını karşılaştırmayı ve daha ucuz, daha iyi olanı seçmeyi öğretir.",
+  "minutes": 9,
+  "focusId": "Comparatives",
+  "vocab": [
+   {
+    "de": "cheaper",
+    "tr": "daha ucuz"
+   },
+   {
+    "de": "expensive",
+    "tr": "pahalı"
+   },
+   {
+    "de": "value",
+    "tr": "değer"
+   },
+   {
+    "de": "discount",
+    "tr": "indirim"
+   },
+   {
+    "de": "choose",
+    "tr": "seçim yapmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "This one is cheaper than that one.",
+    "tr": "iki şeyin fiyatını karşılaştırırken kullanılır"
+   },
+   {
+    "de": "It is more expensive than …",
+    "tr": "uzun sıfatlarla karşılaştırma yaparken kullanılır"
+   },
+   {
+    "de": "Is there a discount?",
+    "tr": "mağazada indirim olup olmadığını sorarken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugünün konusu alışveriş: fiyat karşılaştırmak."
+     },
+     {
+      "lang": "tr",
+      "text": "Dersin sonunda iki şeyin fiyatını karşılaştırabilecek, hangisinin daha ucuz, hangisinin daha iyi olduğunu İngilizce söyleyebileceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz cheap. Ucuz demek. Ama biz bugün karşılaştırma yapacağız, yani daha ucuz."
+     },
+     {
+      "lang": "tr",
+      "text": "İngilizcede kısa sıfatların sonuna -er ekliyoruz. Cheap, daha ucuz olunca:"
+     },
+     {
+      "lang": "en",
+      "text": "cheaper"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle: cheaper."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "cheaper"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Türkçede -den, -dan diyoruz: bundan daha ucuz. İngilizcede bunun karşılığı than."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani şöyle bir cümle çıkıyor:"
+     },
+     {
+      "lang": "en",
+      "text": "This one is cheaper than that one."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu, şundan daha ucuz. Şimdi sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This one is cheaper than that one."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi tam tersi. Pahalı demek istiyorsan:"
+     },
+     {
+      "lang": "en",
+      "text": "expensive"
+     },
+     {
+      "lang": "tr",
+      "text": "Dikkat: bu kelime uzun. Uzun sıfatların sonuna -er eklemiyoruz. Expensiver diye bir kelime yok."
+     },
+     {
+      "lang": "tr",
+      "text": "Onun yerine kelimenin önüne more koyuyoruz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yani daha pahalı demek için:"
+     },
+     {
+      "lang": "en",
+      "text": "more expensive"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et: more expensive."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "more expensive"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kuralı bir cümlede görelim. Mağazadasın, iki ceket var:"
+     },
+     {
+      "lang": "en",
+      "text": "The blue jacket is more expensive than the black one."
+     },
+     {
+      "lang": "tr",
+      "text": "Mavi ceket, siyah olandan daha pahalı."
+     },
+     {
+      "lang": "tr",
+      "text": "Gördün mü: kısa sıfat cheaper, uzun sıfat more expensive. İkisinin arkasından da than geliyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Şu cümleyi İngilizce kur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This jacket is more expensive than that one.",
+     "accept": [
+      "This jacket is more expensive than that jacket.",
+      "This jacket is more expensive than that one",
+      "This jacket is more expensive."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu ceket, şundan daha pahalı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de kuralı bozan kelimeler var, onları ezberliyoruz."
+     },
+     {
+      "lang": "tr",
+      "text": "Good, yani iyi. Daha iyi demek için gooder demiyoruz:"
+     },
+     {
+      "lang": "en",
+      "text": "better"
+     },
+     {
+      "lang": "tr",
+      "text": "Bad, yani kötü. Daha kötü ise:"
+     },
+     {
+      "lang": "en",
+      "text": "worse"
+     },
+     {
+      "lang": "tr",
+      "text": "Fiyat konuşurken en çok better lazım olacak: daha ucuz olan çoğu zaman daha iyi bir seçim değildir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir alıştırma. İki kahve denedin, biri daha lezzetli. Şunu İngilizce söyle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This coffee is better.",
+     "accept": [
+      "This coffee is better than that one.",
+      "This coffee is better than that coffee.",
+      "This one is better."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu kahve daha iyi."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Alışverişin en sevilen kelimesi geliyor: indirim."
+     },
+     {
+      "lang": "en",
+      "text": "discount"
+     },
+     {
+      "lang": "tr",
+      "text": "Kasada ya da satıcıya sormak için tek bir kalıp yeter:"
+     },
+     {
+      "lang": "en",
+      "text": "Is there a discount?"
+     },
+     {
+      "lang": "tr",
+      "text": "İndirim var mı? Lütfen sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Is there a discount?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Mağazada şunları da duyacaksın:"
+     },
+     {
+      "lang": "en",
+      "text": "It's on sale."
+     },
+     {
+      "lang": "tr",
+      "text": "İndirimde demek."
+     },
+     {
+      "lang": "en",
+      "text": "Twenty percent off."
+     },
+     {
+      "lang": "tr",
+      "text": "Yüzde yirmi indirim. Off kelimesi burada fiyattan düşülen kısmı anlatıyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de İngilizlerin çok kullandığı bir söz var: value, yani değer."
+     },
+     {
+      "lang": "en",
+      "text": "It's good value."
+     },
+     {
+      "lang": "tr",
+      "text": "Fiyatına göre iyi, parasının hakkını veriyor demek. Ucuz olduğunu değil, ödediğine değdiğini söylüyorsun."
+     },
+     {
+      "lang": "en",
+      "text": "It's cheap, but it's not good value."
+     },
+     {
+      "lang": "tr",
+      "text": "Ucuz ama parasına değmez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bir soru kur. Satıcıya iki üründen hangisinin daha ucuz olduğunu soruyorsun."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Which one is cheaper?",
+     "accept": [
+      "Which is cheaper?",
+      "Which one is cheaper, this one or that one?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hangisi daha ucuz?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu İngilizce cümle doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Twenty euros is more expensive than fifty euros.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Yirmi euro elli eurodan ucuzdur. Doğrusu: Twenty euros is cheaper than fifty euros."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karşılaştırdın, artık seçme zamanı. Seçmek fiili:"
+     },
+     {
+      "lang": "en",
+      "text": "choose"
+     },
+     {
+      "lang": "tr",
+      "text": "Ama kasada en çok şu cümleyi söylersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I'll take the cheaper one."
+     },
+     {
+      "lang": "tr",
+      "text": "Daha ucuz olanı alıyorum. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'll take the cheaper one."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki şey değil de üç, beş şey varsa, en ucuz olanı demek istersin. O zaman the ile birlikte -est ekliyoruz:"
+     },
+     {
+      "lang": "en",
+      "text": "the cheapest"
+     },
+     {
+      "lang": "tr",
+      "text": "Uzun sıfatlarda yine more yerine most:"
+     },
+     {
+      "lang": "en",
+      "text": "the most expensive"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani en pahalı. Kısaca: iki şey varsa -er, hepsinin içinde birincisiyse the ile -est."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hepsini küçük bir mağaza konuşmasında dinleyelim."
+     },
+     {
+      "lang": "en",
+      "text": "How much is this bag?"
+     },
+     {
+      "lang": "en",
+      "text": "It's forty euros. The brown one is cheaper."
+     },
+     {
+      "lang": "en",
+      "text": "Is there a discount?"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, it's on sale. Ten percent off."
+     },
+     {
+      "lang": "en",
+      "text": "OK, I'll take the cheaper one."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aklında kalsın diye üç kalıbı bir daha söylüyorum."
+     },
+     {
+      "lang": "en",
+      "text": "This one is cheaper than that one."
+     },
+     {
+      "lang": "en",
+      "text": "It's more expensive than the black one."
+     },
+     {
+      "lang": "en",
+      "text": "Is there a discount?"
+     },
+     {
+      "lang": "tr",
+      "text": "Kısa sıfata -er, uzun sıfata more, arkasına than."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok iyi gidiyorsun. Bugün fiyat karşılaştırmayı öğrendin: cheaper, more expensive, better, discount ve value."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir mağazaya giriyoruz. Satıcıyla konuşacak, iki üründen birini seçeceksin. Hazırsan başlıyoruz."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir mağazadasın. İki çanta beğendin ama fiyatları farklı. Satıcıyla konuşup fiyatları karşılaştırıyor, indirim soruyor ve birini seçiyorsun.",
+   "partner": "mağazadaki satıcı",
+   "opening": "Hello! Can I help you?",
+   "openingTr": "Merhaba! Yardımcı olabilir miyim?",
+   "goal": "Öğrenci iki ürünün fiyatını karşılaştırmalı (cheaper ya da more expensive kullanarak), indirim olup olmadığını sormalı ve sonunda hangisini aldığını söylemeli.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-guarantee",
+  "level": "A2",
+  "course": "en",
+  "icon": "repair",
+  "title": "Warranty and receipts",
+  "titleTr": "Garanti ve fiş",
+  "summary": "Bozulan bir ürünü mağazaya götürüp fişini gösterek garanti hakkını kibarca kullanmayı öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Formal language",
+  "vocab": [
+   {
+    "de": "warranty",
+    "tr": "garanti"
+   },
+   {
+    "de": "valid",
+    "tr": "geçerli"
+   },
+   {
+    "de": "proof",
+    "tr": "kanıt"
+   },
+   {
+    "de": "replace",
+    "tr": "değiştirmek, yerine koymak"
+   },
+   {
+    "de": "free",
+    "tr": "ücretsiz"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I bought this here two weeks ago.",
+    "tr": "ürünü ne zaman aldığını söylerken kullanılır"
+   },
+   {
+    "de": "It's still under warranty.",
+    "tr": "garantinin hâlâ sürdüğünü belirtirken kullanılır"
+   },
+   {
+    "de": "Could you replace it, please?",
+    "tr": "kibarca değişim isterken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün garanti ve fiş konusunu çalışıyoruz. Aldığın bir ürün bozulduğunda mağazaya gidip derdini kibarca anlatmayı, fişini göstermeyi ve değişim ya da tamir istemeyi öğreneceksin."
+     },
+     {
+      "lang": "tr",
+      "text": "Başlayalım mı?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz garanti. İngilizcesi:"
+     },
+     {
+      "lang": "en",
+      "text": "warranty"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle: warranty."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "warranty"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir ürünün garantisi devam ediyorsa İngilizler şöyle der:"
+     },
+     {
+      "lang": "en",
+      "text": "It's still under warranty."
+     },
+     {
+      "lang": "tr",
+      "text": "Kelimesi kelimesine 'garantinin altında' demek. Bu kalıbı olduğu gibi ezberle. Tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It's still under warranty."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sorunu anlatalım. Bir şey bozulduysa ve etkisi hâlâ sürüyorsa present perfect kullanırız:"
+     },
+     {
+      "lang": "en",
+      "text": "It has stopped working."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'çalışmayı bıraktı, hâlâ çalışmıyor'. Söyle bakalım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It has stopped working."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ama satın alma anını söylerken belirli bir geçmiş zaman var, o yüzden past simple kullanırız. 'buy' fiilinin geçmiş hâli 'bought'."
+     },
+     {
+      "lang": "en",
+      "text": "I bought this here two weeks ago."
+     },
+     {
+      "lang": "tr",
+      "text": "Bunu iki hafta önce buradan aldım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Görevlideye 'Bunu iki hafta önce buradan aldım' de."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I bought this here two weeks ago.",
+     "accept": [
+      "I bought it here two weeks ago.",
+      "I bought this here two weeks ago",
+      "I bought this here 2 weeks ago."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'buy' fiilinin geçmişi 'bought'. Sonuna 'two weeks ago' ekle."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Mağazada ilk isteyecekleri şey fiştir. Fiş: receipt. Dikkat, 'p' harfi okunmaz: risiit."
+     },
+     {
+      "lang": "en",
+      "text": "Here is the receipt."
+     },
+     {
+      "lang": "tr",
+      "text": "Buyurun fiş. Tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Here is the receipt."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Fiş neden bu kadar önemli? Çünkü o bir kanıt. Kanıt kelimesi:"
+     },
+     {
+      "lang": "en",
+      "text": "proof"
+     },
+     {
+      "lang": "tr",
+      "text": "Resmî dilde şöyle duyarsın:"
+     },
+     {
+      "lang": "en",
+      "text": "The receipt is proof of purchase."
+     },
+     {
+      "lang": "tr",
+      "text": "Fiş, satın alma kanıtıdır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geçerli demek için 'valid' kelimesini kullanıyoruz. Garanti hâlâ geçerliyse:"
+     },
+     {
+      "lang": "en",
+      "text": "The warranty is still valid."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The warranty is still valid."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tersi de var. Garanti bittiyse:"
+     },
+     {
+      "lang": "en",
+      "text": "The warranty has expired."
+     },
+     {
+      "lang": "tr",
+      "text": "'expired' süresi dolmuş demek. Aynı kelimeyi biletlerde ve kartlarda da görürsün."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi resmî ve kibar dile geçelim. Mağazada 'Change it!' deme, çok sert olur. Bunun yerine 'Could you' ile başla."
+     },
+     {
+      "lang": "en",
+      "text": "Could you replace it, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "'replace' yerine yenisini koymak demek. Tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Could you replace it, please?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki isteği karıştırma. 'replace' yenisiyle değiştirmek, 'repair' ise tamir etmek. Bazen mağaza şöyle sorar:"
+     },
+     {
+      "lang": "en",
+      "text": "Would you like a repair or a replacement?"
+     },
+     {
+      "lang": "tr",
+      "text": "Tamir mi ister, değişim mi?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen tamir istiyorsun. 'Could you' ile kibarca sor: 'Onu tamir edebilir misiniz, lütfen?'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Could you repair it, please?",
+     "accept": [
+      "Can you repair it, please?",
+      "Could you fix it, please?",
+      "Could you repair it please?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'Could you' ile başla, sonuna 'please' ekle. Tamir etmek: repair."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Peki para ödeyecek misin? Ücretsiz kelimesi 'free'."
+     },
+     {
+      "lang": "en",
+      "text": "Is the repair free?"
+     },
+     {
+      "lang": "tr",
+      "text": "Tamir ücretsiz mi? Bir de şu var:"
+     },
+     {
+      "lang": "en",
+      "text": "You don't have to pay anything."
+     },
+     {
+      "lang": "tr",
+      "text": "Hiçbir şey ödemenize gerek yok."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin ne zaman biteceğini sorarken gelecek zaman kullan. Mağaza sana şöyle cevap verebilir:"
+     },
+     {
+      "lang": "en",
+      "text": "It will be ready on Friday."
+     },
+     {
+      "lang": "tr",
+      "text": "Cuma günü hazır olacak. Ya da kesinleşmiş bir plan varsa: We're going to send it to the service centre."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "\"The warranty has expired\" means the warranty is still valid.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. 'has expired' süresi dolmuş demek, yani garanti artık geçerli değil. Geçerli olsaydı 'is still valid' derdik."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kez daha en önemli cümleyi kuralım. Görevliye 'O hâlâ garanti kapsamında' de."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It's still under warranty.",
+     "accept": [
+      "It is still under warranty.",
+      "The product is still under warranty.",
+      "It's still under the warranty."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'still' hâlâ demek, kalıp 'under warranty' ile biter."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de sonuç almadığın durum için resmî bir cümle bırakayım:"
+     },
+     {
+      "lang": "en",
+      "text": "I'd like to speak to the manager, please."
+     },
+     {
+      "lang": "tr",
+      "text": "Müdürle görüşmek istiyorum. 'I'd like to' resmî ve kibar bir istektir; 'I want' demekten çok daha nazik."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Sorunu present perfect ile anlat: It has stopped working. Ne zaman aldığını past simple ile söyle: I bought this here two weeks ago. Fişini uzat: Here is the receipt. Hakkını hatırlat: It's still under warranty. Ve isteğini kibarca sun: Could you replace it, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "Harikaydın. Şimdi bunu bir sahnede deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir elektronik mağazasındasın. Üç hafta önce aldığın kablosuz kulaklığın sol tarafı sesi kesiyor. Fişin çantanda, kutusu da yanında.",
+   "partner": "mağazanın müşteri hizmetleri görevlisi",
+   "opening": "Good afternoon. How can I help you?",
+   "openingTr": "İyi günler. Size nasıl yardımcı olabilirim?",
+   "goal": "Sorunu anlat, ürünü ne zaman aldığını söyle, fişi göster, garantinin hâlâ geçerli olduğunu belirt ve kibarca değişim ya da tamir iste; işlemin ücretsiz olup olmadığını öğrendiğinde konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]

@@ -29,7 +29,7 @@ const BY_COURSE: Record<string, Record<string, string[]>> = {
     // A2 henüz yalnız ilk modül. Liste GERÇEK içerik kadar uzun tutuluyor:
     // olmayan modüle tema yazmak, dersler eklenirken sıranın kaymasıyla
     // başlığın içeriğinden ayrılmasına yol açar.
-    A2: ["Geçmişi anlatmak", "Benim hikâyem", "Sağlık", "Ev ve mahalle", "İş hayatı"],
+    A2: ["Geçmişi anlatmak", "Benim hikâyem", "Sağlık", "Ev ve mahalle", "İş hayatı", "Alışveriş ve hizmetler"],
   },
 };
 
