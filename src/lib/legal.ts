@@ -148,15 +148,23 @@ export const LEGAL_PATHS = {
  * LEGAL_VERSION artırılır ve sürüm geçmişine kayıt düşülür — metnin kalanı
  * kendiliğinden doğru hâle gelir.
  *
- * Bayrağın açılmasından ÖNCE bitmesi gereken iş (metin değil, ürün):
- *   - Apple Developer hesabı ve gerçek bundle kimliği (şu an RN şablonunun
- *     varsayılanı: org.reactjs.native.example.…).
+ * Bayrağın açılmasından ÖNCE bitmesi gereken iş (metin değil, ürün). Kod tarafı
+ * 2026-09-04'te büyük ölçüde yazıldı ama HİÇBİRİ DERLENMEDİ — geliştirme makinesi
+ * Linux. "Yazıldı" bu listede "bitti" saymaz; kapıların tamamı
+ * `docs/plan/ios-parity.md` §6'da:
+ *   - Apple Developer hesabı. Bundle kimliği `app.lernomi.ios` olarak yazıldı
+ *     (şablonun org.reactjs.native.example.… değeri gitti) ama hesap olmadan
+ *     imzalanamıyor, dolayısıyla hiçbir yere yüklenemiyor.
  *   - Apple ile Giriş: Google ile giriş sunulduğu için App Store Review
- *     Guidelines 4.8 bunu istiyor.
+ *     Guidelines 4.8 bunu istiyor. Sunucu sağlayıcısı ve iOS düğmesi yazıldı;
+ *     Sign in with Apple yetkisi (entitlements) ve APPLE_BUNDLE_ID env değeri
+ *     hesaba bağlı olduğu için akış bugün çalışmıyor.
  *   - App Store Connect gizlilik etiketleri (Play'in Veri Güvenliği formundan
- *     AYRI bir beyandır; bkz. docs/appstore/).
- *   - iOS'ta konuşma tanımanın hangi yolla yapıldığının kesinleşmesi —
- *     gizlilik politikası §4 cihaz içi tanıyıcıyı adıyla anlatıyor.
+ *     AYRI bir beyandır; bkz. docs/appstore/). Uygulama içindeki
+ *     PrivacyInfo.xcprivacy ile beyan tablosunun örtüştüğü doğrulandı, ama
+ *     Connect'e henüz hiçbir şey girilmedi.
+ *   - Cihazda doğrulama: arka planda ses, hesap silme akışı ve giriş yolları
+ *     gerçek bir iPhone'da koşulmadı.
  */
 export const LEGAL_PLATFORMS = { android: true, ios: false } as const;
 
