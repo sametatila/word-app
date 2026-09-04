@@ -19,6 +19,7 @@
  * Kullanım: npm run check:content
  */
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
+import { moduleExamPlan } from "../src/lib/lessons/module-exam";
 
 /** Şık listesi taşımayan soru türleri — eksik şık onlarda kusur değil. */
 const SIKSIZ = new Set(["gapfill", "short_answer", "dictation", "order"]);
@@ -93,4 +94,41 @@ if (yanli) {
   console.log("insanın doğal eğilimi; bundled.ts'teki withShuffledOptions bunu dağıtır.");
   console.log("Bu uyarı görünüyorsa ya karıştırma devre dışı ya da yeni tür içerik onu atlıyor.");
 }
-process.exitCode = hata.length ? 1 : 0;
+// ── modül sınavı kâğıtları ─────────────────────────────────────────────
+// Kâğıtların bütünlüğü ayrıca denetlenir; şık konumu yanlılığı ise burada
+// ZARARSIZ: exam.ts kâğıdı kurarken kullanıcı+hafta tohumuyla kendi
+// karıştırmasını yapıyor (shuffleQuestion). Yine de ölçülüp basılıyor, çünkü
+// bu planlar bir gün karıştırmasız bir yüzeyde kullanılırsa yanlılık ısırır.
+const kagitHata: string[] = [];
+const kagitDag: number[] = [];
+let kagitT = 0;
+for (const lv of ["A1", "A2", "B1", "B2", "C1"]) {
+  for (let m = 0; m < 10; m++) {
+    const p = moduleExamPlan(lv, m) as any;
+    if (!p) continue;
+    const sorular = [
+      ...(p.reading?.questions ?? []).map((q: any) => ["Lesen", q] as const),
+      ...(p.listening?.questions ?? []).map((q: any) => ["Hören", q] as const),
+    ];
+    for (const [bol, q] of sorular) {
+      const yer = `${lv}.${m + 1} ${bol}`;
+      if (!q.de || !q.tr) kagitHata.push(`${yer}: soru metni/çevirisi eksik`);
+      if (!q.options?.length) { kagitHata.push(`${yer}: şık yok`); continue; }
+      if (new Set(q.options).size !== q.options.length) kagitHata.push(`${yer}: AYNI ŞIK İKİ KEZ`);
+      if (typeof q.answer !== "number" || q.answer < 0 || q.answer >= q.options.length)
+        kagitHata.push(`${yer}: cevap indeksi geçersiz`);
+      else { kagitDag[q.answer] = (kagitDag[q.answer] ?? 0) + 1; kagitT++; }
+    }
+    if (!p.canDo?.length) kagitHata.push(`${lv}.${m + 1}: yapabilirlik listesi boş`);
+    if (!p.speaking?.length) kagitHata.push(`${lv}.${m + 1}: konuşma bölümü boş`);
+    if (!p.writing?.sample) kagitHata.push(`${lv}.${m + 1}: yazma örneği yok`);
+  }
+}
+console.log(`\nModül sınavı kâğıtları: ${kagitT} soru · bütünlük sorunu: ${kagitHata.length}`);
+for (const h of kagitHata.slice(0, 15)) console.log("   " + h);
+console.log(
+  "  şık konumu: " + kagitDag.map((n, i) => `idx${i} %${((n ?? 0) / kagitT * 100).toFixed(0)}`).join(" · ") +
+    "  (exam.ts kendi karıştırmasını yaptığı için zararsız)",
+);
+
+process.exitCode = hata.length + kagitHata.length ? 1 : 0;
