@@ -31,8 +31,8 @@ export const deA2B07: Lesson[] = [
       { de: "die Abreise", tr: "yola çıkış" },
       { de: "der Zwischenstopp", tr: "ara durak" },
       { de: "das Verkehrsmittel", tr: "ulaşım aracı" },
-      { de: "umsteigen", tr: "aktarma yapmak" },
-      { de: "der Weg", tr: "yol" },
+      { de: "der Hinweg", tr: "gidiş yolu" },
+      { de: "wegfahren", tr: "çekip gitmek" },
     ],
     patterns: [
       { de: "Wir fahren ans Meer.", tr: "denize gitmeyi anlatır" },
@@ -117,22 +117,22 @@ export const deA2B07: Lesson[] = [
       {
         say: [
           tr("Yedinci kelimemiz:"),
-          de("umsteigen"),
-          tr("Türkçesi 'aktarma yapmak' demek. Lütfen"),
-          de("umsteigen"),
+          de("der Hinweg"),
+          tr("Türkçesi 'gidiş yolu' demek. Lütfen"),
+          de("der Hinweg"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "umsteigen" },
+        expect: { kind: "repeat", target: "der Hinweg" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("der Weg"),
-          tr("Türkçesi 'yol' demek. Lütfen"),
-          de("der Weg"),
+          de("wegfahren"),
+          tr("Türkçesi 'çekip gitmek' demek. Lütfen"),
+          de("wegfahren"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Weg" },
+        expect: { kind: "repeat", target: "wegfahren" },
       },
       {
         say: [
@@ -179,13 +179,13 @@ export const deA2B07: Lesson[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Bana gara giden yolu gösterebilir misiniz?' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Yarın sabah erkenden yola çıkıyoruz.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Können Sie mir den Weg zum Bahnhof zeigen",
+          target: "Morgen früh fahren wir weg",
           hint: [
-            tr("Gösterilen kişi yönelme hâlinde, gösterilen şey belirtme hâlinde ve asıl fiil sonda:"),
-            de("Können Sie mir den Weg zum Bahnhof zeigen?"),
+            tr("Zaman ifadesi başta olduğu için özne fiilin arkasına düşer ve ayrılabilen ön ek sona gider:"),
+            de("Morgen früh fahren wir weg."),
             tr("Tekrar dene."),
           ],
         },
@@ -436,11 +436,11 @@ export const deA2B07: Lesson[] = [
     vocab: [
       { de: "die Reisetasche", tr: "seyahat çantası" },
       { de: "das Handgepäck", tr: "el bagajı" },
-      { de: "einpacken", tr: "bavula koymak" },
+      { de: "die Wäsche", tr: "çamaşır" },
       { de: "verstauen", tr: "yerleştirmek" },
       { de: "die Badehose", tr: "mayo" },
-      { de: "das Handtuch", tr: "havlu" },
-      { de: "die Seife", tr: "sabun" },
+      { de: "füllen", tr: "doldurmak" },
+      { de: "der Laptop", tr: "dizüstü bilgisayar" },
       { de: "aufbewahren", tr: "saklamak" },
     ],
     patterns: [
@@ -486,12 +486,12 @@ export const deA2B07: Lesson[] = [
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("einpacken"),
-          tr("Türkçesi 'bavula koymak, paketlemek' demek. Lütfen"),
-          de("einpacken"),
+          de("die Wäsche"),
+          tr("Türkçesi 'çamaşır' demek. Lütfen"),
+          de("die Wäsche"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "einpacken" },
+        expect: { kind: "repeat", target: "die Wäsche" },
       },
       {
         say: [
@@ -516,22 +516,22 @@ export const deA2B07: Lesson[] = [
       {
         say: [
           tr("Altıncı kelimemiz:"),
-          de("das Handtuch"),
-          tr("Türkçesi 'havlu' demek. Lütfen"),
-          de("das Handtuch"),
+          de("füllen"),
+          tr("Türkçesi 'doldurmak' demek. Lütfen"),
+          de("füllen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Handtuch" },
+        expect: { kind: "repeat", target: "füllen" },
       },
       {
         say: [
           tr("Yedinci kelimemiz:"),
-          de("die Seife"),
-          tr("Türkçesi 'sabun' demek. Lütfen"),
-          de("die Seife"),
+          de("der Laptop"),
+          tr("Türkçesi 'dizüstü bilgisayar' demek. Lütfen"),
+          de("der Laptop"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Seife" },
+        expect: { kind: "repeat", target: "der Laptop" },
       },
       {
         say: [
@@ -563,13 +563,13 @@ export const deA2B07: Lesson[] = [
         expect: { kind: "repeat", target: "Meine Reisetasche ist schon fast voll" },
       },
       {
-        say: [tr("Sıra sende: 'Havluyu bavula koydun mu?' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Çamaşırları bavula koydun mu?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Hast du das Handtuch eingepackt",
+          target: "Hast du die Wäsche eingepackt",
           hint: [
             tr("Yardımcı fiil başta, ortaç sonda ve hecesi ön ekle kökün arasında:"),
-            de("Hast du das Handtuch eingepackt?"),
+            de("Hast du die Wäsche eingepackt?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1436,17 +1436,17 @@ export const deA2B07: Lesson[] = [
     minutes: 10,
     focusId: "Präteritum-sein-haben",
     vocab: [
-      { de: "die Kirche", tr: "kilise" },
+      { de: "die Kunst", tr: "sanat" },
       { de: "das Schloss", tr: "şato" },
-      { de: "das Museum", tr: "müze" },
+      { de: "der Teich", tr: "gölet" },
       { de: "die Ausstellung", tr: "sergi" },
-      { de: "die Brücke", tr: "köprü" },
+      { de: "golden", tr: "altın" },
       { de: "der Brunnen", tr: "çeşme" },
-      { de: "der Stadtplan", tr: "şehir haritası" },
+      { de: "der Rückweg", tr: "dönüş yolu" },
       { de: "der Tourist", tr: "turist" },
     ],
     patterns: [
-      { de: "Diese Kirche ist fast 800 Jahre alt.", tr: "bir yapının yaşını söyler" },
+      { de: "Dieses Schloss ist fast 800 Jahre alt.", tr: "bir yapının yaşını söyler" },
       { de: "Früher war hier ein Markt.", tr: "burada eskiden ne olduğunu anlatır" },
     ],
     lecture: [
@@ -1468,12 +1468,12 @@ export const deA2B07: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("die Kirche"),
-          tr("Türkçesi 'kilise' demek. Lütfen"),
-          de("die Kirche"),
+          de("die Kunst"),
+          tr("Türkçesi 'sanat' demek. Lütfen"),
+          de("die Kunst"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Kirche" },
+        expect: { kind: "repeat", target: "die Kunst" },
       },
       {
         say: [
@@ -1488,12 +1488,12 @@ export const deA2B07: Lesson[] = [
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("das Museum"),
-          tr("Türkçesi 'müze' demek. Lütfen"),
-          de("das Museum"),
+          de("der Teich"),
+          tr("Türkçesi 'gölet' demek. Lütfen"),
+          de("der Teich"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Museum" },
+        expect: { kind: "repeat", target: "der Teich" },
       },
       {
         say: [
@@ -1508,12 +1508,12 @@ export const deA2B07: Lesson[] = [
       {
         say: [
           tr("Beşinci kelimemiz:"),
-          de("die Brücke"),
-          tr("Türkçesi 'köprü' demek. Lütfen"),
-          de("die Brücke"),
+          de("golden"),
+          tr("Türkçesi 'altın' demek. Lütfen"),
+          de("golden"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Brücke" },
+        expect: { kind: "repeat", target: "golden" },
       },
       {
         say: [
@@ -1528,12 +1528,12 @@ export const deA2B07: Lesson[] = [
       {
         say: [
           tr("Yedinci kelimemiz:"),
-          de("der Stadtplan"),
-          tr("Türkçesi 'şehir haritası' demek. Lütfen"),
-          de("der Stadtplan"),
+          de("der Rückweg"),
+          tr("Türkçesi 'dönüş yolu' demek. Lütfen"),
+          de("der Rückweg"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Stadtplan" },
+        expect: { kind: "repeat", target: "der Rückweg" },
       },
       {
         say: [
@@ -1548,7 +1548,7 @@ export const deA2B07: Lesson[] = [
       {
         say: [
           tr("İlk kalıbımız:"),
-          de("Diese Kirche ist fast 800 Jahre alt."),
+          de("Dieses Schloss ist fast 800 Jahre alt."),
           tr(
             "Yaş söylerken sayı, zaman birimi ve sıfat bu sırayla gelir. Zaman birimi çoğul olsa da bu kalıpta hep aynı biçimde kalır.",
           ),
@@ -1598,12 +1598,12 @@ export const deA2B07: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Diese Kirche ist fast 800 Jahre alt."),
+          de("Dieses Schloss ist fast 800 Jahre alt."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Diese Kirche ist fast 800 Jahre alt.",
+          statement: "Dieses Schloss ist fast 800 Jahre alt.",
           answer: true,
           why: [
             tr("Yaş kalıbında sayı, zaman birimi ve sıfat bu sırayla geliyor: cümle doğru."),
@@ -1833,7 +1833,7 @@ export const deA2B07: Lesson[] = [
     minutes: 10,
     focusId: "Perfekt-unregelmäßig",
     vocab: [
-      { de: "die Verspätung", tr: "gecikme" },
+      { de: "abreisen", tr: "yola çıkmak" },
       { de: "eintreffen", tr: "varmak" },
       { de: "umkehren", tr: "geri dönmek" },
       { de: "der Fahrschein", tr: "bilet" },
@@ -1865,12 +1865,12 @@ export const deA2B07: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("die Verspätung"),
-          tr("Türkçesi 'gecikme' demek. Lütfen"),
-          de("die Verspätung"),
+          de("abreisen"),
+          tr("Türkçesi 'yola çıkmak' demek. Lütfen"),
+          de("abreisen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Verspätung" },
+        expect: { kind: "repeat", target: "abreisen" },
       },
       {
         say: [

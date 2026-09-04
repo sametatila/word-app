@@ -31,7 +31,7 @@ export const deA2B09: Lesson[] = [
       { de: "wenn", tr: "eğer, -diğinde" },
       { de: "meistens", tr: "çoğunlukla" },
       { de: "sonst", tr: "yoksa" },
-      { de: "ein paar", tr: "birkaç" },
+      { de: "einige", tr: "birkaç" },
       { de: "gelegentlich", tr: "ara sıra" },
       { de: "irgendwie", tr: "bir şekilde" },
       { de: "tagsüber", tr: "gündüzleri" },
@@ -90,12 +90,12 @@ export const deA2B09: Lesson[] = [
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("ein paar"),
-          tr("Türkçesi 'birkaç' demek; iki kelimelik bir kalıp. Lütfen"),
-          de("ein paar"),
+          de("einige"),
+          tr("Türkçesi 'birkaç' demek. Lütfen"),
+          de("einige"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "ein paar" },
+        expect: { kind: "repeat", target: "einige" },
       },
       {
         say: [

@@ -442,16 +442,16 @@ export const deA2B06: Lesson[] = [
     focusId: "Komparativ",
     vocab: [
       { de: "der Anzug", tr: "takım elbise" },
-      { de: "die Hose", tr: "pantolon" },
-      { de: "das Hemd", tr: "gömlek" },
+      { de: "die Mode", tr: "moda" },
+      { de: "weich", tr: "yumuşak" },
       { de: "der Rock", tr: "etek" },
       { de: "entweder", tr: "ya" },
       { de: "dünn", tr: "ince" },
       { de: "bequem", tr: "rahat" },
-      { de: "anprobieren", tr: "üstünde denemek" },
+      { de: "hässlich", tr: "çirkin" },
     ],
     patterns: [
-      { de: "Entweder das Hemd oder der Anzug.", tr: "iki seçeneği yan yana koyar" },
+      { de: "Entweder der Rock oder der Anzug.", tr: "iki seçeneği yan yana koyar" },
       { de: "Kann ich das anprobieren?", tr: "denemek için izin ister" },
     ],
     lecture: [
@@ -483,22 +483,22 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("die Hose"),
-          tr("Türkçesi 'pantolon' demek. Lütfen"),
-          de("die Hose"),
+          de("die Mode"),
+          tr("Türkçesi 'moda' demek. Lütfen"),
+          de("die Mode"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Hose" },
+        expect: { kind: "repeat", target: "die Mode" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("das Hemd"),
-          tr("Türkçesi 'gömlek' demek. Lütfen"),
-          de("das Hemd"),
+          de("weich"),
+          tr("Türkçesi 'yumuşak' demek. Lütfen"),
+          de("weich"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Hemd" },
+        expect: { kind: "repeat", target: "weich" },
       },
       {
         say: [
@@ -543,38 +543,38 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr("Son kelimemiz:"),
-          de("anprobieren"),
-          tr("Türkçesi 'üstünde denemek' demek. Lütfen"),
-          de("anprobieren"),
+          de("hässlich"),
+          tr("Türkçesi 'çirkin' demek. Lütfen"),
+          de("hässlich"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "anprobieren" },
+        expect: { kind: "repeat", target: "hässlich" },
       },
       {
         say: [
           tr("İlk kalıbımız:"),
-          de("Entweder das Hemd oder der Anzug."),
+          de("Entweder der Rock oder der Anzug."),
           tr("İki seçenek yan yana. Her iki isim de yalın hâlde duruyor, çünkü ikisi de özne."),
         ],
       },
       {
         say: [
           tr("Örnek: 'Bu pantolon ötekinden daha rahat.' Almancası:"),
-          de("Diese Hose ist bequemer als die andere."),
+          de("Diese Jacke ist bequemer als die andere."),
           tr("Lütfen"),
-          de("Diese Hose ist bequemer als die andere"),
+          de("Diese Jacke ist bequemer als die andere"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Diese Hose ist bequemer als die andere" },
+        expect: { kind: "repeat", target: "Diese Jacke ist bequemer als die andere" },
       },
       {
-        say: [tr("Sıra sende: 'Bu gömlek daha ince.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu etek daha yumuşak.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Dieses Hemd ist dünner",
+          target: "Dieser Rock ist weicher",
           hint: [
-            tr("Cinssiz isimde işaret sıfatı ek alır ve sıfata karşılaştırma eki gelir:"),
-            de("Dieses Hemd ist dünner."),
+            tr("Eril isimde işaret sıfatı ek alır ve sıfata karşılaştırma eki gelir:"),
+            de("Dieser Rock ist weicher."),
             tr("Tekrar dene."),
           ],
         },
@@ -587,13 +587,13 @@ export const deA2B06: Lesson[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Ya eteği ya da pantolonu alıyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Ya eteği ya da takım elbiseyi alıyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich nehme entweder den Rock oder die Hose",
+          target: "Ich nehme entweder den Rock oder den Anzug",
           hint: [
             tr("İki seçenek de nesne olduğu için ikisi de belirtme hâline girer:"),
-            de("Ich nehme entweder den Rock oder die Hose."),
+            de("Ich nehme entweder den Rock oder den Anzug."),
             tr("Tekrar dene."),
           ],
         },
@@ -601,18 +601,18 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Diese Hose ist bequemer wie die andere."),
+          de("Diese Jacke ist bequemer wie die andere."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Diese Hose ist bequemer wie die andere.",
+          statement: "Diese Jacke ist bequemer wie die andere.",
           answer: false,
           why: [
             tr(
               "Karşılaştırmada kullanılan kelime bu değil; buradaki kelime benzerlik bildirir. Doğrusu:",
             ),
-            de("Diese Hose ist bequemer als die andere."),
+            de("Diese Jacke ist bequemer als die andere."),
           ],
         },
       },
@@ -855,7 +855,7 @@ export const deA2B06: Lesson[] = [
       { de: "sich kämmen", tr: "saçını taramak" },
       { de: "glänzend", tr: "parlak" },
       { de: "gepflegt", tr: "bakımlı" },
-      { de: "das Parfüm", tr: "parfüm" },
+      { de: "sanft", tr: "nazik" },
     ],
     patterns: [
       { de: "Bitte etwas kürzer.", tr: "ne kadar kısaltılacağını söyler" },
@@ -950,12 +950,12 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr("Son kelimemiz:"),
-          de("das Parfüm"),
-          tr("Türkçesi 'parfüm' demek. Lütfen"),
-          de("das Parfüm"),
+          de("sanft"),
+          tr("Türkçesi 'nazik' demek. Lütfen"),
+          de("sanft"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Parfüm" },
+        expect: { kind: "repeat", target: "sanft" },
       },
       {
         say: [
@@ -1662,7 +1662,7 @@ export const deA2B06: Lesson[] = [
       { de: "abschicken", tr: "yollamak" },
       { de: "das Briefpapier", tr: "mektup kâğıdı" },
       { de: "die Waage", tr: "terazi" },
-      { de: "das Kilo", tr: "kilo" },
+      { de: "das Blatt", tr: "yaprak, sayfa" },
       { de: "das Gramm", tr: "gram" },
     ],
     patterns: [
@@ -1748,12 +1748,12 @@ export const deA2B06: Lesson[] = [
       {
         say: [
           tr("Yedinci kelimemiz:"),
-          de("das Kilo"),
-          tr("Türkçesi 'kilo' demek. Lütfen"),
-          de("das Kilo"),
+          de("das Blatt"),
+          tr("Türkçesi 'yaprak, sayfa' demek. Lütfen"),
+          de("das Blatt"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Kilo" },
+        expect: { kind: "repeat", target: "das Blatt" },
       },
       {
         say: [

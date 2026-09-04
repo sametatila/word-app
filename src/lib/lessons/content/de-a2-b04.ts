@@ -34,8 +34,8 @@ export const deA2B04: Lesson[] = [
       { de: "die Pflanze", tr: "bitki" },
       { de: "der Schirm", tr: "şemsiye" },
       { de: "das Ding", tr: "şey" },
-      { de: "leihen", tr: "ödünç vermek" },
-      { de: "zurückgeben", tr: "geri vermek" },
+      { de: "liefern", tr: "teslim etmek" },
+      { de: "die Telefonnummer", tr: "telefon numarası" },
       { de: "die Person", tr: "kişi" },
       { de: "weitersagen", tr: "başkasına söylemek" },
     ],
@@ -102,22 +102,22 @@ export const deA2B04: Lesson[] = [
       {
         say: [
           tr("Beşinci kelimemiz:"),
-          de("leihen"),
-          tr("Türkçesi 'ödünç vermek' demek. Lütfen"),
-          de("leihen"),
+          de("liefern"),
+          tr("Türkçesi 'teslim etmek' demek. Lütfen"),
+          de("liefern"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "leihen" },
+        expect: { kind: "repeat", target: "liefern" },
       },
       {
         say: [
           tr("Altıncı kelimemiz:"),
-          de("zurückgeben"),
-          tr("Türkçesi 'geri vermek' demek. Lütfen"),
-          de("zurückgeben"),
+          de("die Telefonnummer"),
+          tr("Türkçesi 'telefon numarası' demek. Lütfen"),
+          de("die Telefonnummer"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "zurückgeben" },
+        expect: { kind: "repeat", target: "die Telefonnummer" },
       },
       {
         say: [
@@ -436,7 +436,7 @@ export const deA2B04: Lesson[] = [
       { de: "das Bücherregal", tr: "kitaplık" },
       { de: "hinter", tr: "arkasında" },
       { de: "neben", tr: "yanında" },
-      { de: "gegenüber", tr: "karşısında" },
+      { de: "irgendwo", tr: "bir yerde" },
       { de: "vorne", tr: "önde" },
       { de: "drinnen", tr: "içeride" },
     ],
@@ -513,12 +513,12 @@ export const deA2B04: Lesson[] = [
       {
         say: [
           tr("Altıncı kelimemiz:"),
-          de("gegenüber"),
-          tr("Türkçesi 'karşısında' demek. Lütfen"),
-          de("gegenüber"),
+          de("irgendwo"),
+          tr("Türkçesi 'bir yerde' demek. Lütfen"),
+          de("irgendwo"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "gegenüber" },
+        expect: { kind: "repeat", target: "irgendwo" },
       },
       {
         say: [
@@ -842,7 +842,7 @@ export const deA2B04: Lesson[] = [
       { de: "der Fußboden", tr: "zemin" },
       { de: "die Matratze", tr: "şilte" },
       { de: "der Schreibtisch", tr: "çalışma masası" },
-      { de: "eng", tr: "dar" },
+      { de: "dunkel", tr: "karanlık" },
       { de: "zwischen", tr: "arasında" },
     ],
     patterns: [
@@ -928,12 +928,12 @@ export const deA2B04: Lesson[] = [
       {
         say: [
           tr("Yedinci kelimemiz:"),
-          de("eng"),
-          tr("Türkçesi 'dar' demek. Lütfen"),
-          de("eng"),
+          de("dunkel"),
+          tr("Türkçesi 'karanlık' demek. Lütfen"),
+          de("dunkel"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "eng" },
+        expect: { kind: "repeat", target: "dunkel" },
       },
       {
         say: [
@@ -963,13 +963,13 @@ export const deA2B04: Lesson[] = [
         expect: { kind: "repeat", target: "Die Matratze liegt zwischen der Tür und dem Fenster" },
       },
       {
-        say: [tr("Sıra sende: 'Oda bana çok dar geliyor.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Oda bana çok karanlık geliyor.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Das Zimmer ist mir zu eng",
+          target: "Das Zimmer ist mir zu dunkel",
           hint: [
             tr("Kişiye göre bir değerlendirme yapılırken kişi yönelme hâlinde durur:"),
-            de("Das Zimmer ist mir zu eng."),
+            de("Das Zimmer ist mir zu dunkel."),
             tr("Tekrar dene."),
           ],
         },
@@ -1034,14 +1034,14 @@ export const deA2B04: Lesson[] = [
     minutes: 10,
     focusId: "Dativ-Präpositionen",
     vocab: [
-      { de: "der Nachbar", tr: "komşu" },
+      { de: "das Zentrum", tr: "merkez" },
       { de: "nebenan", tr: "yan tarafta" },
       { de: "der Bürgersteig", tr: "kaldırım" },
-      { de: "die Kreuzung", tr: "kavşak" },
-      { de: "die Ampel", tr: "trafik ışığı" },
+      { de: "die Abkürzung", tr: "kestirme yol" },
+      { de: "außerhalb", tr: "dışında" },
       { de: "die Bushaltestelle", tr: "otobüs durağı" },
       { de: "drüben", tr: "karşıda" },
-      { de: "die Nähe", tr: "yakınlık" },
+      { de: "parken", tr: "park etmek" },
     ],
     patterns: [
       { de: "Die Post ist in der Nähe vom Bahnhof.", tr: "bir yerin yakınını tarif eder" },
@@ -1066,12 +1066,12 @@ export const deA2B04: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("der Nachbar"),
-          tr("Türkçesi 'komşu' demek. Lütfen"),
-          de("der Nachbar"),
+          de("das Zentrum"),
+          tr("Türkçesi 'merkez' demek. Lütfen"),
+          de("das Zentrum"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Nachbar" },
+        expect: { kind: "repeat", target: "das Zentrum" },
       },
       {
         say: [
@@ -1096,22 +1096,22 @@ export const deA2B04: Lesson[] = [
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("die Kreuzung"),
-          tr("Türkçesi 'kavşak' demek. Lütfen"),
-          de("die Kreuzung"),
+          de("die Abkürzung"),
+          tr("Türkçesi 'kestirme yol' demek. Lütfen"),
+          de("die Abkürzung"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Kreuzung" },
+        expect: { kind: "repeat", target: "die Abkürzung" },
       },
       {
         say: [
           tr("Beşinci kelimemiz:"),
-          de("die Ampel"),
-          tr("Türkçesi 'trafik ışığı' demek. Lütfen"),
-          de("die Ampel"),
+          de("außerhalb"),
+          tr("Türkçesi 'dışında' demek. Lütfen"),
+          de("außerhalb"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Ampel" },
+        expect: { kind: "repeat", target: "außerhalb" },
       },
       {
         say: [
@@ -1136,12 +1136,12 @@ export const deA2B04: Lesson[] = [
       {
         say: [
           tr("Son kelimemiz:"),
-          de("die Nähe"),
-          tr("Türkçesi 'yakınlık, yakın' demek. Lütfen"),
-          de("die Nähe"),
+          de("parken"),
+          tr("Türkçesi 'park etmek' demek. Lütfen"),
+          de("parken"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Nähe" },
+        expect: { kind: "repeat", target: "parken" },
       },
       {
         say: [
@@ -1182,13 +1182,13 @@ export const deA2B04: Lesson[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Kavşakta bir trafik ışığı var.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Merkezin dışında rahat park edilir.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "An der Kreuzung gibt es eine Ampel",
+          target: "Außerhalb vom Zentrum kann man gut parken",
           hint: [
-            tr("'Var' kalıbından sonra isim belirtme hâline girer ve edat yönelme hâlini getirir:"),
-            de("An der Kreuzung gibt es eine Ampel."),
+            tr("Yer ifadesi başta olduğu için belirsiz özne fiilin arkasına düşer ve asıl fiil sonda kalır:"),
+            de("Außerhalb vom Zentrum kann man gut parken."),
             tr("Tekrar dene."),
           ],
         },

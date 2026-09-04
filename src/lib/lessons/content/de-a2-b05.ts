@@ -1035,7 +1035,7 @@ export const deA2B05: Lesson[] = [
     minutes: 10,
     focusId: "Nebensatz-dass",
     vocab: [
-      { de: "zurückrufen", tr: "geri aramak" },
+      { de: "kontaktieren", tr: "iletişime geçmek" },
       { de: "auflegen", tr: "telefonu kapatmak" },
       { de: "das Telefonat", tr: "telefon görüşmesi" },
       { de: "die Mailbox", tr: "telesekreter" },
@@ -1067,12 +1067,12 @@ export const deA2B05: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("zurückrufen"),
-          tr("Türkçesi 'geri aramak' demek. Lütfen"),
-          de("zurückrufen"),
+          de("kontaktieren"),
+          tr("Türkçesi 'iletişime geçmek' demek. Lütfen"),
+          de("kontaktieren"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "zurückrufen" },
+        expect: { kind: "repeat", target: "kontaktieren" },
       },
       {
         say: [
@@ -1436,7 +1436,7 @@ export const deA2B05: Lesson[] = [
     focusId: "Modalverb-wollen",
     vocab: [
       { de: "der Urlaubstag", tr: "izin günü" },
-      { de: "der Kalender", tr: "takvim" },
+      { de: "übermorgen", tr: "öbür gün" },
       { de: "vereinbaren", tr: "kararlaştırmak" },
       { de: "schriftlich", tr: "yazılı" },
       { de: "notfalls", tr: "gerekirse" },
@@ -1477,12 +1477,12 @@ export const deA2B05: Lesson[] = [
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("der Kalender"),
-          tr("Türkçesi 'takvim' demek. Lütfen"),
-          de("der Kalender"),
+          de("übermorgen"),
+          tr("Türkçesi 'öbür gün' demek. Lütfen"),
+          de("übermorgen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Kalender" },
+        expect: { kind: "repeat", target: "übermorgen" },
       },
       {
         say: [

@@ -1226,7 +1226,7 @@ export const deA2B08: Lesson[] = [
     minutes: 10,
     focusId: "Personalpronomen-Dativ",
     vocab: [
-      { de: "passen", tr: "uymak" },
+      { de: "edel", tr: "şık" },
       { de: "attraktiv", tr: "çekici" },
       { de: "modisch", tr: "modaya uygun" },
       { de: "lässig", tr: "havalı" },
@@ -1258,12 +1258,12 @@ export const deA2B08: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("passen"),
-          tr("Türkçesi 'uymak, olmak' demek; beden için kullanılır. Lütfen"),
-          de("passen"),
+          de("edel"),
+          tr("Türkçesi 'şık' demek. Lütfen"),
+          de("edel"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "passen" },
+        expect: { kind: "repeat", target: "edel" },
       },
       {
         say: [
@@ -1828,8 +1828,8 @@ export const deA2B08: Lesson[] = [
     minutes: 10,
     focusId: "Modalverb-wollen",
     vocab: [
-      { de: "joggen", tr: "koşu yapmak" },
-      { de: "das Fitnessstudio", tr: "fitness salonu" },
+      { de: "boxen", tr: "boks yapmak" },
+      { de: "das Tennis", tr: "tenis" },
       { de: "sportlich", tr: "sportif" },
       { de: "das Training", tr: "antrenman" },
       { de: "motiviert", tr: "motive" },
@@ -1860,22 +1860,22 @@ export const deA2B08: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("joggen"),
-          tr("Türkçesi 'koşu yapmak' demek. Lütfen"),
-          de("joggen"),
+          de("boxen"),
+          tr("Türkçesi 'boks yapmak' demek. Lütfen"),
+          de("boxen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "joggen" },
+        expect: { kind: "repeat", target: "boxen" },
       },
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("das Fitnessstudio"),
-          tr("Türkçesi 'fitness salonu' demek. Lütfen"),
-          de("das Fitnessstudio"),
+          de("das Tennis"),
+          tr("Türkçesi 'tenis' demek. Lütfen"),
+          de("das Tennis"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Fitnessstudio" },
+        expect: { kind: "repeat", target: "das Tennis" },
       },
       {
         say: [
@@ -1948,22 +1948,22 @@ export const deA2B08: Lesson[] = [
       },
       {
         say: [
-          tr("Örnek: 'Haftada üç kez fitness salonuna gidiyorum.' Almancası:"),
-          de("Ich gehe dreimal pro Woche ins Fitnessstudio."),
+          tr("Örnek: 'Haftada üç kez tenis oynuyorum.' Almancası:"),
+          de("Ich spiele dreimal pro Woche Tennis."),
           tr("Lütfen"),
-          de("Ich gehe dreimal pro Woche ins Fitnessstudio"),
+          de("Ich spiele dreimal pro Woche Tennis"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Ich gehe dreimal pro Woche ins Fitnessstudio" },
+        expect: { kind: "repeat", target: "Ich spiele dreimal pro Woche Tennis" },
       },
       {
-        say: [tr("Sıra sende: 'Bu yıl daha çok koşmak istiyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu yıl daha çok boks yapmak istiyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich will dieses Jahr mehr joggen",
+          target: "Ich will dieses Jahr mehr boxen",
           hint: [
             tr("Kararlı niyet bildiren kip fiili ikinci sırada, asıl fiil sonda:"),
-            de("Ich will dieses Jahr mehr joggen."),
+            de("Ich will dieses Jahr mehr boxen."),
             tr("Tekrar dene."),
           ],
         },

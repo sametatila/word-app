@@ -1430,14 +1430,14 @@ export const deA2B10: Lesson[] = [
     minutes: 10,
     focusId: "Komparativ",
     vocab: [
-      { de: "direkt", tr: "doğrudan" },
+      { de: "ungerecht", tr: "adaletsiz" },
       { de: "anständig", tr: "düzgün" },
       { de: "getrennt", tr: "ayrı" },
-      { de: "der Müll", tr: "çöp" },
+      { de: "zudem", tr: "üstelik" },
       { de: "der Mülleimer", tr: "çöp kovası" },
       { de: "sonntags", tr: "pazarları" },
       { de: "pro", tr: "başına" },
-      { de: "sauber", tr: "temiz" },
+      { de: "der Bäcker", tr: "fırıncı" },
     ],
     patterns: [
       { de: "Hier ist alles sauberer als bei uns.", tr: "iki ülkeyi karşılaştırır" },
@@ -1462,12 +1462,12 @@ export const deA2B10: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("direkt"),
-          tr("Türkçesi 'doğrudan, dolaysız' demek. Lütfen"),
-          de("direkt"),
+          de("ungerecht"),
+          tr("Türkçesi 'adaletsiz' demek. Lütfen"),
+          de("ungerecht"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "direkt" },
+        expect: { kind: "repeat", target: "ungerecht" },
       },
       {
         say: [
@@ -1492,12 +1492,12 @@ export const deA2B10: Lesson[] = [
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("der Müll"),
-          tr("Türkçesi 'çöp' demek. Lütfen"),
-          de("der Müll"),
+          de("zudem"),
+          tr("Türkçesi 'üstelik' demek. Lütfen"),
+          de("zudem"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Müll" },
+        expect: { kind: "repeat", target: "zudem" },
       },
       {
         say: [
@@ -1532,12 +1532,12 @@ export const deA2B10: Lesson[] = [
       {
         say: [
           tr("Son kelimemiz:"),
-          de("sauber"),
-          tr("Türkçesi 'temiz' demek. Lütfen"),
-          de("sauber"),
+          de("der Bäcker"),
+          tr("Türkçesi 'fırıncı' demek. Lütfen"),
+          de("der Bäcker"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "sauber" },
+        expect: { kind: "repeat", target: "der Bäcker" },
       },
       {
         say: [

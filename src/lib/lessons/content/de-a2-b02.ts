@@ -651,11 +651,11 @@ export const deA2B02: Lesson[] = [
     minutes: 10,
     focusId: "Perfekt",
     vocab: [
-      { de: "der Umzug", tr: "taşınma" },
+      { de: "die Garage", tr: "garaj" },
       { de: "einziehen", tr: "yeni eve taşınmak" },
       { de: "auspacken", tr: "paketten çıkarmak" },
-      { de: "der Karton", tr: "karton kutu" },
-      { de: "der Keller", tr: "bodrum" },
+      { de: "der Kofferraum", tr: "araba bagajı" },
+      { de: "leer", tr: "boş" },
       { de: "das Stockwerk", tr: "kat" },
       { de: "schleppen", tr: "sürükleyerek taşımak" },
       { de: "die Wohnungssuche", tr: "ev arayışı" },
@@ -683,12 +683,12 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("der Umzug"),
-          tr("Türkçesi 'taşınma' demek. Lütfen"),
-          de("der Umzug"),
+          de("die Garage"),
+          tr("Türkçesi 'garaj' demek. Lütfen"),
+          de("die Garage"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Umzug" },
+        expect: { kind: "repeat", target: "die Garage" },
       },
       {
         say: [
@@ -713,22 +713,22 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("der Karton"),
-          tr("Türkçesi 'karton kutu' demek. Lütfen"),
-          de("der Karton"),
+          de("der Kofferraum"),
+          tr("Türkçesi 'araba bagajı' demek. Lütfen"),
+          de("der Kofferraum"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Karton" },
+        expect: { kind: "repeat", target: "der Kofferraum" },
       },
       {
         say: [
           tr("Beşinci kelimemiz:"),
-          de("der Keller"),
-          tr("Türkçesi 'bodrum' demek. Lütfen"),
-          de("der Keller"),
+          de("leer"),
+          tr("Türkçesi 'boş' demek. Lütfen"),
+          de("leer"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Keller" },
+        expect: { kind: "repeat", target: "leer" },
       },
       {
         say: [
@@ -780,13 +780,13 @@ export const deA2B02: Lesson[] = [
         expect: { kind: "repeat", target: "Im Mai sind wir eingezogen" },
       },
       {
-        say: [tr("Sıra sende: 'Kutuları bodruma taşıdım.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Kutuları garaja taşıdım.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich habe die Kartons in den Keller geschleppt",
+          target: "Ich habe die Kisten in die Garage geschleppt",
           hint: [
             tr("Yön bildiren bir edat belirtme hâlini getirir ve ortaç sona gider:"),
-            de("Ich habe die Kartons in den Keller geschleppt."),
+            de("Ich habe die Kisten in die Garage geschleppt."),
             tr("Tekrar dene."),
           ],
         },

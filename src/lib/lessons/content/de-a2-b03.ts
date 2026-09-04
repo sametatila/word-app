@@ -28,13 +28,13 @@ export const deA2B03: Lesson[] = [
     minutes: 10,
     focusId: "Modalverb-sollen",
     vocab: [
-      { de: "die Tablette", tr: "hap" },
+      { de: "die Krankheit", tr: "hastalık" },
       { de: "das Medikament", tr: "ilaç" },
       { de: "husten", tr: "öksürmek" },
       { de: "die Behandlung", tr: "tedavi" },
       { de: "untersuchen", tr: "muayene etmek" },
       { de: "die Sprechstunde", tr: "muayene saati" },
-      { de: "der Rücken", tr: "sırt" },
+      { de: "der Magen", tr: "mide" },
       { de: "der Puls", tr: "nabız" },
     ],
     patterns: [
@@ -60,12 +60,12 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("die Tablette"),
-          tr("Türkçesi 'hap' demek. Lütfen"),
-          de("die Tablette"),
+          de("die Krankheit"),
+          tr("Türkçesi 'hastalık' demek. Lütfen"),
+          de("die Krankheit"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Tablette" },
+        expect: { kind: "repeat", target: "die Krankheit" },
       },
       {
         say: [
@@ -120,12 +120,12 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Yedinci kelimemiz:"),
-          de("der Rücken"),
-          tr("Türkçesi 'sırt' demek. Lütfen"),
-          de("der Rücken"),
+          de("der Magen"),
+          tr("Türkçesi 'mide' demek. Lütfen"),
+          de("der Magen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Rücken" },
+        expect: { kind: "repeat", target: "der Magen" },
       },
       {
         say: [
@@ -155,13 +155,13 @@ export const deA2B03: Lesson[] = [
         expect: { kind: "repeat", target: "Abends sollen Sie zwei Tabletten nehmen" },
       },
       {
-        say: [tr("Sıra sende: 'Sırtım ağrıyor.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Midem ağrıyor.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Mein Rücken tut weh",
+          target: "Mein Magen tut weh",
           hint: [
             tr("Ağrıyan yer öznedir ve fiil ayrılabilen bir fiildir:"),
-            de("Mein Rücken tut weh."),
+            de("Mein Magen tut weh."),
             tr("Tekrar dene."),
           ],
         },
@@ -635,8 +635,8 @@ export const deA2B03: Lesson[] = [
       { de: "das Mittel", tr: "çare" },
       { de: "die Zitrone", tr: "limon" },
       { de: "der Tipp", tr: "tavsiye" },
-      { de: "das Rezept", tr: "tarif" },
-      { de: "der Zucker", tr: "şeker" },
+      { de: "die Orange", tr: "portakal" },
+      { de: "der Löffel", tr: "kaşık" },
       { de: "rühren", tr: "karıştırmak" },
       { de: "heiß", tr: "sıcak" },
       { de: "lauwarm", tr: "ılık" },
@@ -694,22 +694,22 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("das Rezept"),
-          tr("Türkçesi 'tarif' demek; doktorun yazdığı reçete anlamına da gelir. Lütfen"),
-          de("das Rezept"),
+          de("die Orange"),
+          tr("Türkçesi 'portakal' demek. Lütfen"),
+          de("die Orange"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Rezept" },
+        expect: { kind: "repeat", target: "die Orange" },
       },
       {
         say: [
           tr("Beşinci kelimemiz:"),
-          de("der Zucker"),
-          tr("Türkçesi 'şeker' demek. Lütfen"),
-          de("der Zucker"),
+          de("der Löffel"),
+          tr("Türkçesi 'kaşık' demek. Lütfen"),
+          de("der Löffel"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Zucker" },
+        expect: { kind: "repeat", target: "der Löffel" },
       },
       {
         say: [
@@ -837,7 +837,7 @@ export const deA2B03: Lesson[] = [
       { de: "die Packung", tr: "paket" },
       { de: "der Hustensaft", tr: "öksürük şurubu" },
       { de: "die Augentropfen", tr: "göz damlası" },
-      { de: "die Creme", tr: "krem" },
+      { de: "die Kopfschmerzen", tr: "baş ağrısı" },
       { de: "die Schlaftablette", tr: "uyku hapı" },
       { de: "schlucken", tr: "yutmak" },
       { de: "die Tube", tr: "tüp" },
@@ -905,12 +905,12 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Beşinci kelimemiz:"),
-          de("die Creme"),
-          tr("Türkçesi 'krem' demek. Lütfen"),
-          de("die Creme"),
+          de("die Kopfschmerzen"),
+          tr("Türkçesi 'baş ağrısı' demek. Lütfen"),
+          de("die Kopfschmerzen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Creme" },
+        expect: { kind: "repeat", target: "die Kopfschmerzen" },
       },
       {
         say: [
@@ -960,13 +960,13 @@ export const deA2B03: Lesson[] = [
         expect: { kind: "repeat", target: "Bekomme ich die Augentropfen ohne Rezept" },
       },
       {
-        say: [tr("Sıra sende: 'Bir tüp krem istiyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bir paket hap istiyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich möchte eine Tube Creme",
+          target: "Ich möchte eine Packung Tabletten",
           hint: [
             tr("Ölçü bildiren isimden sonra ikinci isim artikelsiz durur:"),
-            de("Ich möchte eine Tube Creme."),
+            de("Ich möchte eine Packung Tabletten."),
             tr("Tekrar dene."),
           ],
         },
@@ -1036,7 +1036,7 @@ export const deA2B03: Lesson[] = [
       { de: "geschwollen", tr: "şişmiş" },
       { de: "wehtun", tr: "ağrımak" },
       { de: "der Gips", tr: "alçı" },
-      { de: "der Unfall", tr: "kaza" },
+      { de: "das Handgelenk", tr: "el bileği" },
       { de: "röntgen", tr: "röntgen çekmek" },
       { de: "die Erste Hilfe", tr: "ilk yardım" },
     ],
@@ -1113,12 +1113,12 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Altıncı kelimemiz:"),
-          de("der Unfall"),
-          tr("Türkçesi 'kaza' demek. Lütfen"),
-          de("der Unfall"),
+          de("das Handgelenk"),
+          tr("Türkçesi 'el bileği' demek. Lütfen"),
+          de("das Handgelenk"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Unfall" },
+        expect: { kind: "repeat", target: "das Handgelenk" },
       },
       {
         say: [
@@ -1235,7 +1235,7 @@ export const deA2B03: Lesson[] = [
     vocab: [
       { de: "die Krankenkasse", tr: "sağlık sigortası" },
       { de: "privat", tr: "özel" },
-      { de: "kostenlos", tr: "ücretsiz" },
+      { de: "notwendig", tr: "gerekli" },
       { de: "die Vereinbarung", tr: "anlaşma" },
       { de: "der Bescheid", tr: "haber, bildirim" },
       { de: "gültig sein", tr: "geçerli olmak" },
@@ -1285,12 +1285,12 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("kostenlos"),
-          tr("Türkçesi 'ücretsiz' demek. Lütfen"),
-          de("kostenlos"),
+          de("notwendig"),
+          tr("Türkçesi 'gerekli' demek. Lütfen"),
+          de("notwendig"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "kostenlos" },
+        expect: { kind: "repeat", target: "notwendig" },
       },
       {
         say: [
@@ -1434,12 +1434,12 @@ export const deA2B03: Lesson[] = [
     minutes: 10,
     focusId: "Modalverb-sollen",
     vocab: [
-      { de: "der Zahnarzt", tr: "diş hekimi" },
+      { de: "furchtbar", tr: "korkunç" },
       { de: "die Zahnschmerzen", tr: "diş ağrısı" },
       { de: "der Notarzt", tr: "acil doktoru" },
       { de: "schmerzhaft", tr: "acı verici" },
-      { de: "dringend", tr: "acil" },
-      { de: "verschieben", tr: "ertelemek" },
+      { de: "das Kinn", tr: "çene" },
+      { de: "ansonsten", tr: "aksi takdirde" },
       { de: "heftig", tr: "şiddetli" },
       { de: "zittern", tr: "titremek" },
     ],
@@ -1466,12 +1466,12 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("der Zahnarzt"),
-          tr("Türkçesi 'diş hekimi' demek. Lütfen"),
-          de("der Zahnarzt"),
+          de("furchtbar"),
+          tr("Türkçesi 'korkunç' demek. Lütfen"),
+          de("furchtbar"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Zahnarzt" },
+        expect: { kind: "repeat", target: "furchtbar" },
       },
       {
         say: [
@@ -1506,22 +1506,22 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Beşinci kelimemiz:"),
-          de("dringend"),
-          tr("Türkçesi 'acil' demek. Lütfen"),
-          de("dringend"),
+          de("das Kinn"),
+          tr("Türkçesi 'çene' demek. Lütfen"),
+          de("das Kinn"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "dringend" },
+        expect: { kind: "repeat", target: "das Kinn" },
       },
       {
         say: [
           tr("Altıncı kelimemiz:"),
-          de("verschieben"),
-          tr("Türkçesi 'ertelemek' demek. Lütfen"),
-          de("verschieben"),
+          de("ansonsten"),
+          tr("Türkçesi 'aksi takdirde' demek. Lütfen"),
+          de("ansonsten"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "verschieben" },
+        expect: { kind: "repeat", target: "ansonsten" },
       },
       {
         say: [
@@ -1563,13 +1563,13 @@ export const deA2B03: Lesson[] = [
         expect: { kind: "repeat", target: "Ich habe heftige Zahnschmerzen" },
       },
       {
-        say: [tr("Sıra sende: 'Randevuyu ertelemem gerekiyor.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Aksi takdirde beklemek zorundasınız.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich muss den Termin verschieben",
+          target: "Ansonsten müssen Sie warten",
           hint: [
-            tr("Zorunluluk fiili ikinci sırada, asıl fiil sonda ve nesne belirtme hâlinde:"),
-            de("Ich muss den Termin verschieben."),
+            tr("Bağlayıcı başta olduğu için özne fiilin arkasına düşer ve asıl fiil sonda kalır:"),
+            de("Ansonsten müssen Sie warten."),
             tr("Tekrar dene."),
           ],
         },
@@ -1836,9 +1836,9 @@ export const deA2B03: Lesson[] = [
     focusId: "Modalverb-sollen",
     vocab: [
       { de: "die Gesundheit", tr: "sağlık" },
-      { de: "gesund", tr: "sağlıklı" },
-      { de: "der Körper", tr: "vücut" },
-      { de: "täglich", tr: "günlük" },
+      { de: "fit sein", tr: "formda olmak" },
+      { de: "die Lunge", tr: "akciğer" },
+      { de: "kontrollieren", tr: "kontrol etmek" },
       { de: "jährlich", tr: "yıllık" },
       { de: "impfen", tr: "aşılamak" },
       { de: "die Blutprobe", tr: "kan örneği" },
@@ -1877,32 +1877,32 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("gesund"),
-          tr("Türkçesi 'sağlıklı' demek. Lütfen"),
-          de("gesund"),
+          de("fit sein"),
+          tr("Türkçesi 'formda olmak' demek. Lütfen"),
+          de("fit sein"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "gesund" },
+        expect: { kind: "repeat", target: "fit sein" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("der Körper"),
-          tr("Türkçesi 'vücut' demek. Lütfen"),
-          de("der Körper"),
+          de("die Lunge"),
+          tr("Türkçesi 'akciğer' demek. Lütfen"),
+          de("die Lunge"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Körper" },
+        expect: { kind: "repeat", target: "die Lunge" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("täglich"),
-          tr("Türkçesi 'günlük, her gün' demek. Lütfen"),
-          de("täglich"),
+          de("kontrollieren"),
+          tr("Türkçesi 'kontrol etmek' demek. Lütfen"),
+          de("kontrollieren"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "täglich" },
+        expect: { kind: "repeat", target: "kontrollieren" },
       },
       {
         say: [
@@ -1964,13 +1964,13 @@ export const deA2B03: Lesson[] = [
         expect: { kind: "repeat", target: "Man sollte einmal im Jahr eine Blutprobe machen" },
       },
       {
-        say: [tr("Sıra sende: 'Her gün spor yapmalı.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Kan şekerini kontrol etmeli.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Man sollte täglich Sport machen",
+          target: "Man sollte den Blutzucker kontrollieren",
           hint: [
             tr("Belirsiz özne tekil kalır ve kip fiilinin yumuşak biçimi kullanılır:"),
-            de("Man sollte täglich Sport machen."),
+            de("Man sollte den Blutzucker kontrollieren."),
             tr("Tekrar dene."),
           ],
         },
@@ -1997,16 +1997,16 @@ export const deA2B03: Lesson[] = [
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Man sollten täglich Sport machen."),
+          de("Man sollten jährlich zum Arzt gehen."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Man sollten täglich Sport machen.",
+          statement: "Man sollten jährlich zum Arzt gehen.",
           answer: false,
           why: [
             tr("Belirsiz özne hep tekildir, fiil de tekil çekimlenir. Doğrusu:"),
-            de("Man sollte täglich Sport machen."),
+            de("Man sollte jährlich zum Arzt gehen."),
           ],
         },
       },
