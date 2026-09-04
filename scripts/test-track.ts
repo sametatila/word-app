@@ -206,6 +206,25 @@ check("options benzersiz", quiz.every((q) => new Set(q.options).size === q.optio
 check("deterministik (aynı girdi → aynı quiz)", JSON.stringify(deriveQuiz(briefs[0], qpool, 6)) === JSON.stringify(quiz));
 check("checkpoint daha uzun (count=12 → 5 vocab + 2 kalıp = 7, brief küçük)", deriveQuiz(briefs[0], qpool, 12).length === Math.min(12, briefs[0].vocab.length + 2));
 
+// ---- birikimli tekrar (önceki ünitelerin kelimeleri quiz'e karışır) ----
+// Ünite 3 gibi davranan sahte bir brief: kendi kelimeleri x0..x5, geçmişi r0..r19.
+const laterBrief = { ...briefs[0], index: 3, vocab: Array.from({ length: 6 }, (_, k) => ({ de: `x${k}`, tr: `tx${k}` })) };
+const reviewPool = {
+  vocab: Array.from({ length: 20 }, (_, k) => ({ de: `r${k}`, tr: `tr${k}` })),
+  patterns: [] as { de: string; tr: string }[],
+};
+const cum = deriveQuiz(laterBrief, qpool, 12, reviewPool);
+const backQ = cum.filter((q) => q.explain?.includes("önceki ünitelerden tekrar"));
+check("tekrar havuzu verilince geçmişten soru gelir (12 → 4)", backQ.length === 4);
+check("tekrar soruları geçmiş kelimelerden (r ile başlar)", backQ.every((q) => /«r\d+»/.test(q.text)));
+check("tekrar soruları bu ünitenin kelimesi değil", backQ.every((q) => !/«x\d+»/.test(q.text)));
+check("tekrar soruları bloklanmıyor (araya giriyor)", cum.findIndex((q) => q.explain?.includes("tekrar")) < cum.length - backQ.length);
+check("tekrar seçimi geçmişe yayılıyor (hepsi aynı yerden değil)", new Set(backQ.map((q) => q.text)).size === backQ.length);
+check("birikimli quiz de deterministik", JSON.stringify(deriveQuiz(laterBrief, qpool, 12, reviewPool)) === JSON.stringify(cum));
+check("farklı ünite farklı tekrar seti", JSON.stringify(deriveQuiz({ ...laterBrief, index: 7 }, qpool, 12, reviewPool)) !== JSON.stringify(cum));
+check("ünite 1'de tekrar yok (geçmiş boş) → eski davranış", JSON.stringify(deriveQuiz(briefs[0], qpool, 6, { vocab: [], patterns: [] })) === JSON.stringify(quiz));
+check("soru metni tekrar olduğunu ele vermiyor", backQ.every((q) => q.text.startsWith("«") && q.text.endsWith("» ne demek?")));
+
 if (fail.length) {
   console.error(`\n${fail.length} TEST BAŞARISIZ:`);
   for (const f of fail) console.error("  ✗ " + f);

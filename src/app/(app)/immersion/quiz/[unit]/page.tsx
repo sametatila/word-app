@@ -51,7 +51,14 @@ export default async function ImmersionQuizPage({
       vocab: briefs.flatMap((b) => b.vocab),
       patterns: briefs.flatMap((b) => b.patterns),
     };
-    questions = deriveQuiz(brief, pool, checkpoint ? 12 : 8);
+    // Tekrar havuzu = BU üniteden ÖNCEKİ üniteler. Soruların üçte biri buradan
+    // gelir; ünite 1'de boştur ve deriveQuiz eski davranışına düşer.
+    const earlier = briefs.filter((b) => b.index < brief.index);
+    const review = {
+      vocab: earlier.flatMap((b) => b.vocab),
+      patterns: earlier.flatMap((b) => b.patterns),
+    };
+    questions = deriveQuiz(brief, pool, checkpoint ? 12 : 8, review);
   }
   if (!questions.length) notFound();
 
