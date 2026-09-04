@@ -195,7 +195,7 @@ export function PrivacyDeBody() {
         <li>Schadensersatz, wenn dir ein Schaden entstanden ist.</li>
       </ul>
       <p>
-        <strong>Antragstellung:</strong> Schreibe an <Ph k="privacyEmail" />; zur Identitätsprüfung genügt es, von der E-Mail-Adresse deines
+        <strong>Antragstellung:</strong> Schreibe für Anträge nach DSGVO oder UK GDPR an <Ph k="privacyEmailEu" /> und für Anträge nach türkischem Datenschutzrecht (KVKK) an <Ph k="privacyEmailTr" />; zur Identitätsprüfung genügt es, von der E-Mail-Adresse deines
         Kontos zu schreiben. In der Türkei kannst du nach der Mitteilung über das Verfahren für Anträge an den Verantwortlichen den
         Antrag auch schriftlich mit eigenhändiger Unterschrift, mit qualifizierter elektronischer Signatur oder von der in deinem Konto
         hinterlegten E-Mail-Adresse aus stellen{hasKep() ? <>; unsere registrierte E-Mail-Adresse (KEP) lautet <Ph k="kep" /></> : null}. Wir bearbeiten Anträge kostenlos
@@ -224,7 +224,7 @@ export function PrivacyDeBody() {
         beschränken die Kontoerstellung auf Personen ab 18 Jahren (siehe Nutzungsbedingungen, Ziffer 3). Die Inhalte richten sich an
         erwachsene Lernende und an die Prüfungsvorbereitung für Goethe/telc; da die App offene KI-Gespräche und Interaktion zwischen Nutzern
         enthält, ist sie für ein kindliches Publikum nicht geeignet. Erfahren wir, dass eine Person unter 18 Jahren ein Konto erstellt hat,
-        löschen wir Konto und Daten; Eltern können an <Ph k="privacyEmail" /> schreiben.
+        löschen wir Konto und Daten; Eltern können an <Ph k="privacyEmailEu" /> schreiben.
       </p>
 
       <h2>13. Sicherheit</h2>
@@ -240,7 +240,7 @@ export function PrivacyDeBody() {
       <p>
         Wenn wir diese Erklärung ändern, werden Gültigkeitsdatum und Version auf dieser Seite aktualisiert; bei einer Änderung, die die
         Verarbeitungszwecke erweitert, informieren wir in der App und holen erforderlichenfalls erneut eine Einwilligung ein. Fragen:{" "}
-        <Ph k="privacyEmail" />.
+        <Ph k="privacyEmailEu" />.
       </p>
     </>
   );

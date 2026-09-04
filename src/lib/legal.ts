@@ -47,10 +47,17 @@ export const LEGAL_ENTITY = {
    * şirketsiz gerçek kişinin ikisi de yok. TCKN/VKN BURAYA YAZILMAZ.
    */
   taxOffice: "[[VERGİ_DAİRESİ]]",
-  /** Gizlilik ve veri hakları talepleri için e-posta. */
-  privacyEmail: "[[GİZLİLİK_E_POSTASI]]",
+  /**
+   * Veri hakları başvuruları iki ayrı adrese gidiyor çünkü iki ayrı rejim ve iki
+   * ayrı süre var: KVKK m.13 otuz gün, GDPR m.12(3) bir ay + gerekirse iki ay
+   * uzatma. Ayrı kutu, hangi rejime göre işlem yapılacağını başvuru gelir gelmez
+   * belli ediyor. Türkçe metin KVKK adresini, İngilizce ve Almanca metinler GDPR
+   * adresini öne çıkarıyor; hakların anlatıldığı bölümde ikisi de yazılı.
+   */
+  privacyEmailTr: "kvkk@rumpuskit.com",
+  privacyEmailEu: "gdpr@rumpuskit.com",
   /** Genel destek e-postası. */
-  supportEmail: "[[DESTEK_E_POSTASI]]",
+  supportEmail: "support@rumpuskit.com",
   /**
    * Kayıtlı elektronik posta (KEP). Gerçek kişi için ZORUNLU DEĞİL.
    * Yoksa boş dize bırak — satır ve tebligat cümlesi kendiliğinden düşer.

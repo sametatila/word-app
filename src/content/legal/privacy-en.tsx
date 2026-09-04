@@ -188,7 +188,7 @@ export function PrivacyEnBody() {
         <li>claim compensation if you suffer damage.</li>
       </ul>
       <p>
-        <strong>Making a request:</strong> write to <Ph k="privacyEmail" />; writing from the e-mail address on your account is enough to
+        <strong>Making a request:</strong> write to <Ph k="privacyEmailEu" /> for requests under the GDPR or UK GDPR, or to <Ph k="privacyEmailTr" /> for requests under Turkish data protection law (KVKK); writing from the e-mail address on your account is enough to
         verify your identity. In Türkiye, under the Communiqué on the Procedures for Applications to the Data Controller, you may also
         apply in writing with a wet signature, with a qualified electronic signature, or from the e-mail address registered on your
         account{hasKep() ? <>; our registered e-mail (KEP) address is <Ph k="kep" /></> : null}. We resolve requests free of charge within 30 days at
@@ -215,7 +215,7 @@ export function PrivacyEnBody() {
         Nomi is not designed for people under 18 and does not knowingly collect data from them; the terms of use limit account creation to
         people aged 18 and over (see terms, clause 3). The content is aimed at adult learners and at Goethe/telc exam preparation; because
         the app contains open-ended AI conversation and user interaction, it is not suitable for a child audience. If we discover that
-        someone under 18 has created an account, we delete the account and the data; parents can write to <Ph k="privacyEmail" />.
+        someone under 18 has created an account, we delete the account and the data; parents can write to <Ph k="privacyEmailEu" />.
       </p>
 
       <h2>13. Security</h2>
@@ -229,7 +229,7 @@ export function PrivacyEnBody() {
       <h2>14. Changes</h2>
       <p>
         When we change this policy, the effective date and version on this page are updated; for a change that broadens the purposes of
-        processing we inform you in the app and, where necessary, ask for consent again. Questions: <Ph k="privacyEmail" />.
+        processing we inform you in the app and, where necessary, ask for consent again. Questions: <Ph k="privacyEmailEu" />.
       </p>
     </>
   );

@@ -109,20 +109,20 @@ export function Ph({ k }: { k: LegalField }) {
  * Alanlar ŞİRKETSİZ GERÇEK KİŞİ profiline göre: ticaret sicil/MERSİS yerine vergi
  * dairesi, ünvan yerine ad soyad (bkz. lib/legal.ts kimlik profili notu).
  */
-const ENTITY_LABELS: Record<LegalLocale, Record<"name" | "address" | "taxOffice" | "privacy" | "support" | "kep" | "eu" | "uk", string>> = {
+const ENTITY_LABELS: Record<LegalLocale, Record<"name" | "address" | "taxOffice" | "privacy" | "privacyEu" | "support" | "kep" | "eu" | "uk", string>> = {
   tr: {
     name: "Ad soyad", address: "Yazışma adresi", taxOffice: "Vergi dairesi",
-    privacy: "Gizlilik ve veri talepleri", support: "Destek", kep: "KEP",
+    privacy: "KVKK başvuruları", privacyEu: "GDPR başvuruları", support: "Destek", kep: "KEP",
     eu: "AB temsilcisi (GDPR m.27)", uk: "Birleşik Krallık temsilcisi (UK GDPR m.27)",
   },
   en: {
     name: "Name", address: "Postal address", taxOffice: "Tax office",
-    privacy: "Privacy and data requests", support: "Support", kep: "Registered e-mail (KEP)",
+    privacy: "KVKK requests (Türkiye)", privacyEu: "GDPR / UK GDPR requests", support: "Support", kep: "Registered e-mail (KEP)",
     eu: "EU representative (GDPR Art. 27)", uk: "UK representative (UK GDPR Art. 27)",
   },
   de: {
     name: "Name", address: "Postanschrift", taxOffice: "Finanzamt",
-    privacy: "Datenschutz- und Datenanfragen", support: "Support", kep: "Registrierte E-Mail (KEP)",
+    privacy: "KVKK-Anträge (Türkei)", privacyEu: "DSGVO- / UK-GDPR-Anträge", support: "Support", kep: "Registrierte E-Mail (KEP)",
     eu: "EU-Vertreter (Art. 27 DSGVO)", uk: "UK-Vertreter (Art. 27 UK GDPR)",
   },
 };
@@ -142,7 +142,8 @@ export function EntityBlock({ withRepresentatives = false, locale = "tr" }: { wi
       {row(l.name, "name")}
       {row(l.address, "address")}
       {row(l.taxOffice, "taxOffice")}
-      {row(l.privacy, "privacyEmail")}
+      {row(l.privacy, "privacyEmailTr")}
+      {row(l.privacyEu, "privacyEmailEu")}
       {row(l.support, "supportEmail")}
       {row(l.kep, "kep")}
       {withRepresentatives ? (

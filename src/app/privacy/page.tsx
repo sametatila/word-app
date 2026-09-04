@@ -187,7 +187,7 @@ export default function PrivacyPage() {
         <li>Zarara uğraman hâlinde tazminat talep etmek.</li>
       </ul>
       <p>
-        <strong>Başvuru:</strong> <Ph k="privacyEmail" /> adresine yaz; kimliğini doğrulamak için hesabındaki e-posta adresinden yazman
+        <strong>Başvuru:</strong> KVKK kapsamındaki talepler için <Ph k="privacyEmailTr" />, GDPR ve UK GDPR kapsamındaki talepler için <Ph k="privacyEmailEu" /> adresine yaz; kimliğini doğrulamak için hesabındaki e-posta adresinden yazman
         yeterlidir. Türkiye&apos;de KVKK Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca ıslak imzalı yazılı başvuru,
         güvenli elektronik imzalı başvuru ya da hesabında kayıtlı e-posta adresinden başvuru da yapılabilir{hasKep() ? <>; KEP adresimiz <Ph k="kep" /></> : null}. Talepleri en geç 30 gün içinde ücretsiz sonuçlandırırız; GDPR kapsamında bu süre gerekirse iki
         ay uzatılabilir ve sana bildirilir.
@@ -211,7 +211,7 @@ export default function PrivacyPage() {
         Nomi 18 yaşından küçükler için tasarlanmamıştır ve onlardan bilerek veri toplamaz; kullanım şartları hesap açmayı 18 yaş ve üzeriyle
         sınırlar (bkz. şartlar §3). İçerik yetişkin öğrencilere ve Goethe/telc sınav hazırlığına yöneliktir; uygulamada açık uçlu yapay zekâ
         konuşması ve kullanıcı etkileşimi bulunduğundan çocuk kitlesine uygun değildir. 18 yaşından küçük birinin hesap açtığını fark edersek
-        hesabı ve verileri sileriz; ebeveynler <Ph k="privacyEmail" /> adresine yazabilir.
+        hesabı ve verileri sileriz; ebeveynler <Ph k="privacyEmailTr" /> adresine yazabilir.
       </p>
 
       <h2>13. Güvenlik</h2>
@@ -224,7 +224,7 @@ export default function PrivacyPage() {
       <h2>14. Değişiklikler</h2>
       <p>
         Politikayı değiştirdiğimizde bu sayfadaki yürürlük tarihi ve sürüm güncellenir; işleme amaçlarını genişleten bir değişiklikte
-        uygulama içinde bilgilendirir ve gerekiyorsa yeniden onay isteriz. Sorular için: <Ph k="privacyEmail" />.
+        uygulama içinde bilgilendirir ve gerekiyorsa yeniden onay isteriz. Sorular için: <Ph k="privacyEmailTr" />.
       </p>
     </LegalShell>
   );
