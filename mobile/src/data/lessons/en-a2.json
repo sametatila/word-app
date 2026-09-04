@@ -3,7 +3,7 @@
   "id": "en-a2-irregulars",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "Irregular verbs",
   "titleTr": "Düzensiz fiiller",
   "summary": "Sık kullanılan düzensiz fiillerin geçmiş hâllerini ve soru ile olumsuz cümlede yalın hâle dönmelerini öğretir.",
@@ -582,7 +582,7 @@
   "id": "en-a2-past-cont",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "What were you doing?",
   "titleTr": "Ne yapıyordun?",
   "summary": "Geçmişte o sırada sürmekte olan işleri was/were + fiil-ing ile anlatmayı öğretir.",
@@ -1041,7 +1041,7 @@
   "id": "en-a2-when-while",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "When and while",
   "titleTr": "When ve while",
   "summary": "Geçmişte süren bir olayla araya giren kısa bir olayı when ve while ile birbirine bağlamayı öğretir.",
@@ -1492,7 +1492,7 @@
   "id": "en-a2-time-past",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "clock",
   "title": "A year ago, last week",
   "titleTr": "Bir yıl önce",
   "summary": "Geçmiş zaman ifadelerini öğretir: ago, last ve in ile bir olayın ne zaman olduğunu söylemek.",
@@ -2144,7 +2144,7 @@
   "id": "en-a2-story",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "Telling a story",
   "titleTr": "Olay anlatmak",
   "summary": "Başından geçen bir olayı sırayla anlatmayı öğreniyorsun: first, then, after that, finally ve sebep-sonuç için because, so.",
@@ -2604,7 +2604,7 @@
   "id": "en-a2-used-to",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "I used to...",
   "titleTr": "Eskiden...",
   "summary": "Eskiden düzenli yaptığın ama artık yapmadığın alışkanlıkları \"used to\" ile anlatmayı öğreniyorsun.",
@@ -3084,7 +3084,7 @@
   "id": "en-a2-childhood",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "My childhood",
   "titleTr": "Çocukluğum",
   "summary": "Çocukluğunu anlatmayı öğreniyorsun: nerede büyüdüğünü söylemek ve geçmişteki alışkanlıklarını \"used to\" ile anlatmak.",
@@ -3499,7 +3499,7 @@
   "id": "en-a2-past-holiday",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "A holiday I remember",
   "titleTr": "Unutmadığım tatil",
   "summary": "Geçmişte yaşadığın bir tatili past simple ile, gittiğin yeri, kaldığın oteli ve nasıl geçtiğini anlatarak İngilizce anlatmayı öğretir.",
@@ -3967,7 +3967,7 @@
   "id": "en-a2-what-happened",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "What happened?",
   "titleTr": "Ne oldu?",
   "summary": "Başına gelen küçük bir aksiliği İngilizcede geçmiş zamanla anlatmayı öğretir: ne oldu, nerede oldu, kim yardım etti ve sonu nasıl bitti.",
@@ -4416,7 +4416,7 @@
   "id": "en-a2-past-questions",
   "level": "A2",
   "course": "en",
-  "icon": "ask",
+  "icon": "book",
   "title": "Asking about the past",
   "titleTr": "Geçmişi sormak",
   "summary": "Geçmişle ilgili ayrıntılı soru sormayı öğretir: did'li sorular ile was/were'lü soruların farkını gösterir.",
@@ -5166,7 +5166,7 @@
   "id": "en-a2-ever",
   "level": "A2",
   "course": "en",
-  "icon": "ask",
+  "icon": "book",
   "title": "Have you ever...?",
   "titleTr": "Hiç ... yaptın mı?",
   "summary": "Hayat deneyimlerini \"Have you ever …?\" ile sormayı ve \"I have never …\" ile anlatmayı öğretir.",
@@ -5739,7 +5739,7 @@
   "id": "en-a2-been-gone",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "Been and gone",
   "titleTr": "Been ve gone",
   "summary": "Bir yere gidip dönmüş olmakla (been) hâlâ orada olmak (gone) arasındaki farkı anlatmayı öğretir.",
@@ -6173,7 +6173,7 @@
   "id": "en-a2-since-for",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "Since and for",
   "titleTr": "Since ve for",
   "summary": "Bir şeyi ne zamandan beri yaptığını \"since\" ile, ne kadar süredir yaptığını \"for\" ile anlatmayı öğreniyorsun.",
@@ -6693,7 +6693,7 @@
   "id": "en-a2-already-yet",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "Already, yet, just",
   "titleTr": "Already, yet, just",
   "summary": "Bir işin bitip bitmediğini already, yet ve just ile anlatmayı öğretir.",
@@ -7118,7 +7118,7 @@
   "id": "en-a2-life-story",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "My life story",
   "titleTr": "Hayat hikâyem",
   "summary": "Kendi hayat hikâyeni sırayla anlatmayı öğretir: nerede doğduğunu, nereye taşındığını, neye ne zaman başladığını ve o zamandan beri neyin değiştiğini söylemek.",
@@ -7603,7 +7603,7 @@
   "id": "en-a2-will-going",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "question",
   "title": "Will or going to?",
   "titleTr": "Will mi going to mu?",
   "summary": "Önceden planlanmış gelecek için \"going to\", o anda verilen karar, söz ve tahmin için \"will\" kullanmayı öğretir.",
@@ -8048,7 +8048,7 @@
   "id": "en-a2-hopes",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "question",
   "title": "Hopes and plans",
   "titleTr": "Umutlar ve planlar",
   "summary": "Gelecekle ilgili isteklerini ve umutlarını İngilizce anlatmayı öğreniyorsun: I hope to…, I'd like to…, My dream is to…",
@@ -8604,7 +8604,7 @@
   "id": "en-a2-comparatives",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "question",
   "title": "Better than before",
   "titleTr": "Eskisinden daha iyi",
   "summary": "Bu ders iki şeyi karşılaştırmayı öğretir: kısa sıfatlara -er eklemeyi, uzun sıfatların önüne more koymayı, good–better gibi düzensiz biçimleri ve than kullanımını.",
@@ -9121,7 +9121,7 @@
   "id": "en-a2-superlatives",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "question",
   "title": "The best day",
   "titleTr": "En güzel gün",
   "summary": "Üstünlük derecesini öğretir: kısa sıfatlarda the -est, uzun sıfatlarda the most, düzensiz the best ve the worst, ve ever ile \"şimdiye kadarki en ...\" kalıbı.",
@@ -9613,7 +9613,7 @@
   "id": "en-a2-me-now",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "book",
   "title": "Me, then and now",
   "titleTr": "Eskiden ve şimdi",
   "summary": "Eski hâlinle şimdiki hâlini karşılaştırmayı öğretir: used to, not … anymore ve still kalıpları.",
@@ -10165,7 +10165,7 @@
   "id": "en-a2-symptoms",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "doctor",
   "title": "Describing symptoms",
   "titleTr": "Şikâyetini anlatmak",
   "summary": "Hastalandığında şikâyetini İngilizce anlatmayı ve ne kadar zamandır sürdüğünü söylemeyi öğreniyorsun.",
@@ -10681,7 +10681,7 @@
   "id": "en-a2-appointment2",
   "level": "A2",
   "course": "en",
-  "icon": "ask",
+  "icon": "calendar",
   "title": "Changing an appointment",
   "titleTr": "Randevu değiştirmek",
   "summary": "Telefonda randevu alırken, saatini değiştirirken veya iptal ederken kullanılan kibar İngilizce kalıpları öğreniyorsun.",
@@ -11189,7 +11189,7 @@
   "id": "en-a2-health-advice",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "doctor",
   "title": "You should rest",
   "titleTr": "Dinlenmelisin",
   "summary": "Hasta birine should ve shouldn't ile sağlık öğüdü vermeyi, Should I …? ile öğüt istemeyi öğretir.",
@@ -11630,7 +11630,7 @@
   "id": "en-a2-how-long",
   "level": "A2",
   "course": "en",
-  "icon": "ask",
+  "icon": "doctor",
   "title": "How long have you...?",
   "titleTr": "Ne zamandır?",
   "summary": "Bir şikâyetin ne zamandır sürdüğünü sormayı ve süreyi for ile since ile anlatmayı öğretir.",
@@ -12170,7 +12170,7 @@
   "id": "en-a2-pharmacy3",
   "level": "A2",
   "course": "en",
-  "icon": "ask",
+  "icon": "pill",
   "title": "Reading the label",
   "titleTr": "Prospektüs okumak",
   "summary": "İlaç kutusundaki kullanım talimatını anlamayı ve dozu, sıklığı, yan etkileri İngilizce sormayı öğretir.",
@@ -12928,7 +12928,7 @@
   "id": "en-a2-hospital",
   "level": "A2",
   "course": "en",
-  "icon": "ask",
+  "icon": "doctor",
   "title": "At the hospital",
   "titleTr": "Hastanede",
   "summary": "Hastanede kibar kalıplarla yön sormayı, doktor istemeyi ve bekleme süresiyle sonuçları öğrenmeyi öğretir.",
@@ -13512,7 +13512,7 @@
   "id": "en-a2-healthy-habits",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "doctor",
   "title": "Healthy habits",
   "titleTr": "Sağlıklı alışkanlıklar",
   "summary": "Sağlıklı alışkanlıklarını sıklık zarfları ve \"twice a week\" gibi ifadelerle anlatmayı, \"How often...?\" ile sıklık sormayı öğretir.",
@@ -13929,7 +13929,7 @@
   "id": "en-a2-insurance",
   "level": "A2",
   "course": "en",
-  "icon": "form",
+  "icon": "doctor",
   "title": "Health insurance",
   "titleTr": "Sağlık sigortası",
   "summary": "Sigorta kartı, form doldurma ve ödeme konularını İngilizce konuşmayı öğretir.",
@@ -14511,7 +14511,7 @@
   "id": "en-a2-feelings",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "doctor",
   "title": "How are you feeling?",
   "titleTr": "Kendini nasıl hissediyorsun?",
   "summary": "Ruh hâlini anlatmayı öğretir: I feel + sıfat, endişeni ve korkunu söyleme kalıpları.",
@@ -15070,7 +15070,7 @@
   "id": "en-a2-recovery",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "doctor",
   "title": "Getting better",
   "titleTr": "İyileşmek",
   "summary": "Hastalandıktan sonra iyileşme sürecini geçmiş zaman ve present perfect ile anlatmayı öğretir.",
@@ -15634,7 +15634,7 @@
   "id": "en-a2-flat-hunting",
   "level": "A2",
   "course": "en",
-  "icon": "ask",
+  "icon": "home",
   "title": "Looking for a flat",
   "titleTr": "Ev ararken",
   "summary": "İlanda gördüğün bir daire için kira, depozito, mobilya, kat ve faturaları İngilizce sormayı öğretir.",
@@ -16228,7 +16228,7 @@
   "id": "en-a2-describe-home",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "home",
   "title": "My home",
   "titleTr": "Evim",
   "summary": "Evini ayrıntılı anlatmayı öğreniyorsun: aydınlık, sessiz, ferah gibi sıfatlarla odalarını betimlemek, balkonunu ve manzaranı anlatmak, iki odayı karşılaştırmak.",
@@ -16784,7 +16784,7 @@
   "id": "en-a2-furniture",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "home",
   "title": "Furniture and rooms",
   "titleTr": "Mobilya ve odalar",
   "summary": "Odalardaki eşyaları \"there is\" ve \"there are\" ile anlatmayı öğretir.",
@@ -17401,7 +17401,7 @@
   "id": "en-a2-home-problems",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "home",
   "title": "Reporting a problem",
   "titleTr": "Arıza bildirmek",
   "summary": "Evdeki bir arızayı ev sahibine İngilizce bildirmeyi, sorunun ne zamandır sürdüğünü anlatmayı ve kibarca tamir istemeyi öğretir.",
@@ -17883,7 +17883,7 @@
   "id": "en-a2-neighbours2",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "home",
   "title": "Noisy neighbours",
   "titleTr": "Gürültücü komşular",
   "summary": "Gürültücü komşuna kibarca şikâyet etmeyi, sesi kısmasını rica etmeyi ve rahatsızlığını nazikçe anlatmayı öğretir.",
@@ -18411,7 +18411,7 @@
   "id": "en-a2-moving-in",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "home",
   "title": "Moving in",
   "titleTr": "Taşınmak",
   "summary": "Taşınma adımlarını sırayla anlatmayı öğretir: first, then, after that, finally.",
@@ -18899,7 +18899,7 @@
   "id": "en-a2-repairs",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "home",
   "title": "Calling a repairman",
   "titleTr": "Tamirci çağırmak",
   "summary": "Bozulan bir eşyayı telefonda anlatmayı, tamirciyle gün ve saat sözleşmeyi ve ücreti sormayı öğretir.",
@@ -19421,7 +19421,7 @@
   "id": "en-a2-building-rules",
   "level": "A2",
   "course": "en",
-  "icon": "ask",
+  "icon": "home",
   "title": "Building rules",
   "titleTr": "Bina kuralları",
   "summary": "Bina kurallarını must ve have to ile anlatmayı, mustn't ile yasağı ve don't have to ile gereksizliği ayırmayı öğretir.",
@@ -19931,7 +19931,7 @@
   "id": "en-a2-neighbourhood",
   "level": "A2",
   "course": "en",
-  "icon": "talk",
+  "icon": "city",
   "title": "My neighbourhood",
   "titleTr": "Mahallem",
   "summary": "Mahalleni tanıtmayı öğretir: yakınında ne var, nerede, ne kadar uzakta, güvenli mi kalabalık mı ve ne zamandır orada oturuyorsun.",
@@ -20315,7 +20315,7 @@
   "id": "en-a2-local-shops",
   "level": "A2",
   "course": "en",
-  "icon": "ask",
+  "icon": "shopping",
   "title": "Local shops",
   "titleTr": "Mahalle esnafı",
   "summary": "Semtindeki dükkânların adlarını söylemeyi, açılış ve kapanış saatlerini sormayı ve bir işi hâlledip halletmediğini anlatmayı öğretir.",
@@ -20832,6 +20832,5088 @@
    "opening": "Good morning! What can I get you?",
    "openingTr": "Günaydın! Ne verebilirim?",
    "goal": "Ekmek istediğini söyleyip fiyatını sorman, fırının açılış veya kapanış saatini öğrenmen ve teşekkür ederek vedalaşman hâlinde konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-job-ad",
+  "level": "A2",
+  "course": "en",
+  "icon": "job",
+  "title": "Reading a job ad",
+  "titleTr": "İş ilanı okumak",
+  "summary": "İngilizce bir iş ilanındaki koşulları anlamayı ve deneyim, maaş, başvuru hakkında konuşmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Job vocabulary",
+  "vocab": [
+   {
+    "de": "experience",
+    "tr": "deneyim"
+   },
+   {
+    "de": "salary",
+    "tr": "maaş"
+   },
+   {
+    "de": "apply",
+    "tr": "başvurmak"
+   },
+   {
+    "de": "full-time",
+    "tr": "tam zamanlı"
+   },
+   {
+    "de": "required",
+    "tr": "zorunlu"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Experience is required.",
+    "tr": "ilanda bir şeyin zorunlu olduğunu söyler"
+   },
+   {
+    "de": "I have two years of experience.",
+    "tr": "kaç yıllık deneyimin olduğunu anlatırken kullanılır"
+   },
+   {
+    "de": "I want to apply for this job.",
+    "tr": "bir işe başvurmak istediğini söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugün İngilizce bir iş ilanını okuyacağız."
+     },
+     {
+      "lang": "tr",
+      "text": "İlanda en çok geçen beş kelimeyi öğreneceğiz: deneyim, maaş, başvurmak, tam zamanlı ve zorunlu. Sonunda ilanı verene telefon açacaksın. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Önce kısa bir ilan dinle. Her kelimeyi anlamana gerek yok, sadece havasını al."
+     },
+     {
+      "lang": "en",
+      "text": "Café assistant. Full-time. Experience is not required. Good salary. Apply now."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bu ilanı parça parça açalım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: full-time. Türkçesi tam zamanlı demek. Yani haftanın tüm çalışma günleri, genelde kırk saat civarı."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle: full-time."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "full-time"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bunun karşıtı part-time, yani yarı zamanlı. İlanlarda ikisi de çok geçer. Telefonda şunu sorabilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "Is this job full-time or part-time?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Bu iş tam zamanlı mı, yarı zamanlı mı?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz: experience. Türkçesi deneyim demek. İlanlarda en çok aranan şeydir."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle: experience."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "experience"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Deneyimini söylerken şu kalıbı kullanırsın: I have two years of experience. Yani iki yıllık deneyimim var."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle: I have two years of experience."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I have two years of experience."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz: required. Türkçesi zorunlu, gerekli demek."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle: required."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "required"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlanda çoğu zaman şöyle yazar: Experience is required. Yani deneyim zorunlu."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle: Experience is required."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Experience is required."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bazen de iyi haber vardır. Cümlenin içine not girer:"
+     },
+     {
+      "lang": "en",
+      "text": "Experience is not required."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu, deneyimin yoksa da başvurabilirsin demektir. Yeni başlayanlar için harika bir cümle."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. Deneyim zorunlu değil, İngilizce nasıl olur?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Experience is not required.",
+     "accept": [
+      "Experience isn't required.",
+      "Experience is not necessary."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "deneyim için"
+      },
+      {
+       "lang": "en",
+       "text": "experience"
+      },
+      {
+       "lang": "tr",
+       "text": "olumsuz için araya"
+      },
+      {
+       "lang": "en",
+       "text": "is not"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz: salary. Türkçesi maaş demek. Genelde aylık ya da yıllık kazancı anlatır."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle: salary."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "salary"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Maaş her ilanda yazmaz. O zaman sorman gerekir. Hadi sen sor: Maaş ne kadar?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What is the salary?",
+     "accept": [
+      "What's the salary?",
+      "How much is the salary?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "soruya şununla başla"
+      },
+      {
+       "lang": "en",
+       "text": "What is"
+      },
+      {
+       "lang": "tr",
+       "text": "sonra maaş"
+      },
+      {
+       "lang": "en",
+       "text": "the salary"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşinci kelimemiz: apply. Türkçesi başvurmak demek."
+     },
+     {
+      "lang": "tr",
+      "text": "Dikkat: İngilizcede işe başvururken arkasından for gelir. Apply for a job. Yani bir işe başvurmak."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen söyle. Bu işe başvurmak istiyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I want to apply for this job.",
+     "accept": [
+      "I want to apply for the job.",
+      "I would like to apply for this job.",
+      "I'd like to apply for this job."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "istiyorum için"
+      },
+      {
+       "lang": "en",
+       "text": "I want to"
+      },
+      {
+       "lang": "tr",
+       "text": "başvurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "apply for"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Deneyimini anlatırken şu cümle de çok işine yarar:"
+     },
+     {
+      "lang": "en",
+      "text": "I have worked in a café before."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani daha önce bir kafede çalıştım. Ne zaman olduğunu söylemiyorsun, sadece bu tecrübenin var olduğunu söylüyorsun."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "'Experience is not required' means you can apply without experience.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Not required, zorunlu değil demek. Yani deneyimin olmasa bile başvurabilirsin."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlanların sonunda genelde ne yapman gerektiği yazar. Şu iki cümleyi tanı:"
+     },
+     {
+      "lang": "en",
+      "text": "Send your CV."
+     },
+     {
+      "lang": "en",
+      "text": "Call us for more information."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani özgeçmişini gönder ve daha fazla bilgi için bizi ara."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilanı bir daha dinle. Bu sefer beş kelimeyi de yakalayacaksın."
+     },
+     {
+      "lang": "en",
+      "text": "Waiter needed. Full-time. Experience is required. Good salary. Apply this week."
+     },
+     {
+      "lang": "tr",
+      "text": "Duydun mu? Tam zamanlı, deneyim zorunlu, maaş iyi, bu hafta başvur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Beş kelime öğrendin: experience deneyim, salary maaş, apply başvurmak, full-time tam zamanlı, required zorunlu."
+     },
+     {
+      "lang": "tr",
+      "text": "Üç kalıbın var: Experience is required. I have two years of experience. I want to apply for this job."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra pratikte. Bir kafenin ilanını gördün ve telefonu açıyorsun. Öğrendiğin kelimeleri kullan, acele etme. Başlıyoruz."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir kafenin iş ilanını gördün ve bilgi almak için telefon ediyorsun.",
+   "partner": "kafe müdürü",
+   "opening": "Hello, Sunrise Café. How can I help you?",
+   "openingTr": "Merhaba, Sunrise Kafe. Size nasıl yardımcı olabilirim?",
+   "goal": "İşin tam zamanlı olup olmadığını, deneyimin zorunlu olup olmadığını ve maaşı öğrenip başvurmak istediğini söylediğinde konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-experience",
+  "level": "A2",
+  "course": "en",
+  "icon": "job",
+  "title": "My experience",
+  "titleTr": "Deneyimim",
+  "summary": "İş geçmişini İngilizce anlatmayı öğretir: hâlâ süren iş için present perfect, bitmiş iş için geçmiş zaman, süre için for ve since.",
+  "minutes": 9,
+  "focusId": "Present perfect + past",
+  "vocab": [
+   {
+    "de": "work",
+    "tr": "çalışmak, iş"
+   },
+   {
+    "de": "company",
+    "tr": "şirket"
+   },
+   {
+    "de": "year",
+    "tr": "yıl"
+   },
+   {
+    "de": "learn",
+    "tr": "öğrenmek"
+   },
+   {
+    "de": "skill",
+    "tr": "beceri"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I have worked at a big company.",
+    "tr": "hâlâ süren ya da hayatın boyunca biriken bir iş deneyimini anlatırken kullanılır"
+   },
+   {
+    "de": "I worked there for two years.",
+    "tr": "bitmiş, artık devam etmeyen bir işi anlatırken kullanılır"
+   },
+   {
+    "de": "How long have you worked here?",
+    "tr": "karşındakine ne kadar süredir orada çalıştığını sorarken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün iş deneyimini İngilizce anlatmayı öğreneceğiz. Nerede çalıştığını, kaç yıldır orada olduğunu ve orada neler öğrendiğini söyleyebileceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz work. Hem çalışmak hem de iş demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "work"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "work"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Peki nerede çalışıyorsun? Bir şirkette. Şirket, İngilizcede company. Küçük bir şirket:"
+     },
+     {
+      "lang": "en",
+      "text": "a small company"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a small company"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Süreyi genelde yıl ile anlatırız. Yıl, year. Birden fazlaysa years. Üç yıl:"
+     },
+     {
+      "lang": "en",
+      "text": "three years"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "three years"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir işte hep yeni bir şeyler öğrenirsin. Öğrenmek, learn. Beceri ise skill. Yeni beceriler:"
+     },
+     {
+      "lang": "en",
+      "text": "new skills"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "new skills"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kalbine geliyoruz. Bir işe geçmişte başladın ve hâlâ oradasın. Türkçede çalışıyorum dersin, ama İngilizce bunun için ayrı bir zaman kullanır: have ya da has, sonra fiilin üçüncü hâli. work fiilinin üçüncü hâli worked."
+     },
+     {
+      "lang": "en",
+      "text": "I have worked"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Büyük bir şirkette çalıştım ve hâlâ oradayım demek istiyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "I have worked at a big company."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I have worked at a big company."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Günlük konuşmada have kısalır: I've worked. He ve she ile have değil has kullanılır. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "She has worked here for a year."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani, bir yıldır burada çalışıyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Süreye çok dikkat et. Ne kadar sürdüğünü söylüyorsan for, ne zaman başladığını söylüyorsan since kullanırsın. İki yıl boyunca:"
+     },
+     {
+      "lang": "en",
+      "text": "for two years"
+     },
+     {
+      "lang": "tr",
+      "text": "2022'den beri:"
+     },
+     {
+      "lang": "en",
+      "text": "since 2022"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi cümleyi sen kur. İki yıldır burada çalışıyorum, yani hâlâ buradasın. Nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have worked here for two years.",
+     "accept": [
+      "I've worked here for two years.",
+      "I have worked here for 2 years.",
+      "I have worked here for two years"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hâlâ oradasın, o yüzden have worked. Süre için for."
+      },
+      {
+       "lang": "en",
+       "text": "I have worked here for ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Peki iş bittiyse? Artık orada değilsen düz geçmiş zaman kullanırsın: fiilin sonuna -ed gelir, worked. Orada iki yıl çalıştım, sonra ayrıldım:"
+     },
+     {
+      "lang": "en",
+      "text": "I worked there for two years."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I worked there for two years."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geçmiş zamanın işaret kelimeleri var: last year yani geçen yıl, in 2019 yani 2019'da, two years ago yani iki yıl önce. Cümlede bunlardan biri varsa have worked değil, düz worked kullanırsın."
+     },
+     {
+      "lang": "en",
+      "text": "I left that job in 2019."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Geçen yıl yeni beceriler öğrendim. Bu bitmiş bir şey, geçen yıl. Nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I learned new skills last year.",
+     "accept": [
+      "Last year I learned new skills.",
+      "I learnt new skills last year.",
+      "Last year I learnt new skills.",
+      "I learned new skills last year"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "learn fiilinin geçmişi learned. Sonuna last year ekle."
+      },
+      {
+       "lang": "en",
+       "text": "I learned ... last year."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi soru soralım. Soruda have başa geçer:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you worked in a shop?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani, bir dükkânda çalıştın mı? Süreyi sormak istersen başına How long koyarsın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hadi sen sor. Karşındakine, ne kadar süredir burada çalışıyorsun, diye sormak istiyorsun. Nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "How long have you worked here?",
+     "accept": [
+      "How long have you worked at this company?",
+      "How long have you worked in this company?",
+      "How long have you worked here"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "How long ile başla, sonra have you worked."
+      },
+      {
+       "lang": "en",
+       "text": "How long have you ... here?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hayatın boyunca hiç yaptın mı diye sorarken ever eklenir:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you ever worked abroad?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani, hiç yurt dışında çalıştın mı? Cevabın hayırsa:"
+     },
+     {
+      "lang": "en",
+      "text": "No, I have never worked abroad."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kulağını sınayalım. Bir cümle söyleyeceğim, doğru mu yanlış mı söyle."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I have worked here since three years.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Süre söylerken since değil for kullanılır. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "I have worked here for three years."
+      },
+      {
+       "lang": "tr",
+       "text": "since ancak bir başlangıç noktasıyla gelir: since 2022."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım. Hâlâ oradaysan:"
+     },
+     {
+      "lang": "en",
+      "text": "I have worked at this company for three years."
+     },
+     {
+      "lang": "tr",
+      "text": "Bittiyse:"
+     },
+     {
+      "lang": "en",
+      "text": "I worked there in 2019, and I learned a lot."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harikasın! Bugün iş deneyimini anlatmayı öğrendin: süren iş için have worked, bitmiş iş için worked, süre için for, başlangıç için since. Şimdi küçük bir iş görüşmesinde bunları kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Küçük bir kafede iş görüşmesindesin. Karşındaki kişi seni tanımak, nerede çalıştığını ve neler bildiğini öğrenmek istiyor.",
+   "partner": "kafe müdürü",
+   "opening": "So, tell me about your work experience.",
+   "openingTr": "Anlat bakalım, iş deneyimin nedir?",
+   "goal": "Nerede çalıştığını, ne kadar süredir ya da kaç yıl çalıştığını ve orada hangi becerileri öğrendiğini anlatman; bir de müdüre kaç yıldır orada olduğunu sorman.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-interview",
+  "level": "A2",
+  "course": "en",
+  "icon": "job",
+  "title": "At the interview",
+  "titleTr": "Mülakatta",
+  "summary": "Bir iş mülakatında deneyimini, güçlü yönünü, sebebini ve ne zaman başlayabileceğini İngilizce anlatmayı öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Formal answers",
+  "vocab": [
+   {
+    "de": "interview",
+    "tr": "mülakat, görüşme"
+   },
+   {
+    "de": "strength",
+    "tr": "güçlü yön"
+   },
+   {
+    "de": "team",
+    "tr": "takım"
+   },
+   {
+    "de": "reason",
+    "tr": "sebep"
+   },
+   {
+    "de": "start",
+    "tr": "başlamak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I have worked in a team for three years.",
+    "tr": "ne kadar süredir bir işi yaptığını anlatırken kullanılır"
+   },
+   {
+    "de": "My strength is working with people.",
+    "tr": "güçlü yönünü söylerken kullanılır"
+   },
+   {
+    "de": "I can start on Monday.",
+    "tr": "işe ne zaman başlayabileceğini söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün seni bir iş mülakatına hazırlıyoruz. Deneyimini, güçlü yönünü, neden o işi istediğini ve ne zaman başlayabileceğini İngilizce anlatacaksın."
+     },
+     {
+      "lang": "tr",
+      "text": "Kısa ve net cevaplar kuracağız. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "interview"
+     },
+     {
+      "lang": "tr",
+      "text": ". Türkçesi mülakat, iş görüşmesi demek. Lütfen söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "interview"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "interview"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir görüşmen olduğunu böyle söylersin: "
+     },
+     {
+      "lang": "en",
+      "text": "I have an interview on Monday."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani: Pazartesi bir mülakatım var."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "strength"
+     },
+     {
+      "lang": "tr",
+      "text": ". Güçlü yön demek. Söyle bakalım: "
+     },
+     {
+      "lang": "en",
+      "text": "strength"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "strength"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "team"
+     },
+     {
+      "lang": "tr",
+      "text": ". Takım demek. Lütfen de: "
+     },
+     {
+      "lang": "en",
+      "text": "team"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "team"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki kelime daha: "
+     },
+     {
+      "lang": "en",
+      "text": "reason"
+     },
+     {
+      "lang": "tr",
+      "text": " sebep demek, "
+     },
+     {
+      "lang": "en",
+      "text": "start"
+     },
+     {
+      "lang": "tr",
+      "text": " ise başlamak. Örnek: "
+     },
+     {
+      "lang": "en",
+      "text": "My reason is simple."
+     },
+     {
+      "lang": "tr",
+      "text": " Sebebim basit."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi mülakatın ilk büyük sorusu geliyor: "
+     },
+     {
+      "lang": "en",
+      "text": "Tell me about your experience."
+     },
+     {
+      "lang": "tr",
+      "text": " Yani deneyiminden bahset. Cevabı böyle kuruyoruz: "
+     },
+     {
+      "lang": "en",
+      "text": "I have worked in a team for three years."
+     },
+     {
+      "lang": "tr",
+      "text": " Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I have worked in a team for three years."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Buradaki "
+     },
+     {
+      "lang": "en",
+      "text": "have worked"
+     },
+     {
+      "lang": "tr",
+      "text": " kalıbı, geçmişte başlayıp bugün hâlâ süren işler için. Süre söylüyorsan "
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": " kullan: "
+     },
+     {
+      "lang": "en",
+      "text": "for three years"
+     },
+     {
+      "lang": "tr",
+      "text": ". Başlangıç noktası söylüyorsan "
+     },
+     {
+      "lang": "en",
+      "text": "since"
+     },
+     {
+      "lang": "tr",
+      "text": ": "
+     },
+     {
+      "lang": "en",
+      "text": "since 2023"
+     },
+     {
+      "lang": "tr",
+      "text": "."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen dene. Şunu İngilizce söyle: İki yıldır bir mağazada çalışıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have worked in a shop for two years.",
+     "accept": [
+      "I have worked in a store for two years.",
+      "I've worked in a shop for two years.",
+      "I have worked at a shop for two years."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "I have worked ile başla, sonra yeri söyle, en sonda "
+      },
+      {
+       "lang": "en",
+       "text": "for two years"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıradaki soru: "
+     },
+     {
+      "lang": "en",
+      "text": "What is your strength?"
+     },
+     {
+      "lang": "tr",
+      "text": " Güçlü yönün ne? Klasik ve doğal cevap: "
+     },
+     {
+      "lang": "en",
+      "text": "My strength is working with people."
+     },
+     {
+      "lang": "tr",
+      "text": " Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My strength is working with people."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı şeyi şöyle de söyleyebilirsin: "
+     },
+     {
+      "lang": "en",
+      "text": "I am good at listening."
+     },
+     {
+      "lang": "tr",
+      "text": " Dinlemekte iyiyim. Ya da: "
+     },
+     {
+      "lang": "en",
+      "text": "I am a fast learner."
+     },
+     {
+      "lang": "tr",
+      "text": " Çabuk öğrenirim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. Şunu İngilizce söyle: Güçlü yönüm bir takımda çalışmak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My strength is working in a team.",
+     "accept": [
+      "My strength is teamwork.",
+      "My strength is working with a team.",
+      "I am good at working in a team."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "My strength is ile başla, sonra fiili "
+      },
+      {
+       "lang": "en",
+       "text": "-ing"
+      },
+      {
+       "lang": "tr",
+       "text": " hâlinde söyle"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kalıba dikkat edelim. Şu cümleyi dinle ve doğru mu söyle."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I have worked here since three years.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Süre söylerken "
+      },
+      {
+       "lang": "en",
+       "text": "for"
+      },
+      {
+       "lang": "tr",
+       "text": " gerekir. Doğrusu: "
+      },
+      {
+       "lang": "en",
+       "text": "I have worked here for three years."
+      },
+      {
+       "lang": "tr",
+       "text": " "
+      },
+      {
+       "lang": "en",
+       "text": "since"
+      },
+      {
+       "lang": "tr",
+       "text": " ise başlangıç noktası içindir: "
+      },
+      {
+       "lang": "en",
+       "text": "since 2023"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü soru sebeple ilgili: "
+     },
+     {
+      "lang": "en",
+      "text": "Why do you want this job?"
+     },
+     {
+      "lang": "tr",
+      "text": " Cevabı "
+     },
+     {
+      "lang": "en",
+      "text": "Because"
+     },
+     {
+      "lang": "tr",
+      "text": " ile başlat: "
+     },
+     {
+      "lang": "en",
+      "text": "Because I want to learn new things."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen söyle: Çünkü yeni şeyler öğrenmek istiyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Because I want to learn new things.",
+     "accept": [
+      "I want to learn new things.",
+      "Because I would like to learn new things."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Because ile başla, sonra "
+      },
+      {
+       "lang": "en",
+       "text": "I want to"
+      },
+      {
+       "lang": "tr",
+       "text": " ve fiil"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son büyük soru: "
+     },
+     {
+      "lang": "en",
+      "text": "When can you start?"
+     },
+     {
+      "lang": "tr",
+      "text": " Ne zaman başlayabilirsin? Cevap: "
+     },
+     {
+      "lang": "en",
+      "text": "I can start on Monday."
+     },
+     {
+      "lang": "tr",
+      "text": " Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I can start on Monday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daha ileri bir tarih için: "
+     },
+     {
+      "lang": "en",
+      "text": "I can start next month."
+     },
+     {
+      "lang": "tr",
+      "text": " Gelecek ay başlayabilirim. Ya da kesin bir plan varsa: "
+     },
+     {
+      "lang": "en",
+      "text": "I am going to finish my course in June."
+     },
+     {
+      "lang": "tr",
+      "text": " Kursumu haziranda bitireceğim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Görüşmenin sonunda sana genelde şunu sorarlar: "
+     },
+     {
+      "lang": "en",
+      "text": "Do you have any questions?"
+     },
+     {
+      "lang": "tr",
+      "text": " Güzel bir cevap: "
+     },
+     {
+      "lang": "en",
+      "text": "Yes, when will you tell me the answer?"
+     },
+     {
+      "lang": "tr",
+      "text": " Ve mutlaka teşekkür et: "
+     },
+     {
+      "lang": "en",
+      "text": "Thank you for your time."
+     },
+     {
+      "lang": "tr",
+      "text": " Lütfen bunu tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Thank you for your time."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım: deneyim için "
+     },
+     {
+      "lang": "en",
+      "text": "I have worked ... for three years"
+     },
+     {
+      "lang": "tr",
+      "text": ", güçlü yön için "
+     },
+     {
+      "lang": "en",
+      "text": "My strength is ..."
+     },
+     {
+      "lang": "tr",
+      "text": ", sebep için "
+     },
+     {
+      "lang": "en",
+      "text": "Because I want to ..."
+     },
+     {
+      "lang": "tr",
+      "text": ", tarih için "
+     },
+     {
+      "lang": "en",
+      "text": "I can start on Monday"
+     },
+     {
+      "lang": "tr",
+      "text": ". Şimdi bunları gerçek bir görüşmede kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir kafede yarı zamanlı iş için mülakattasın. Karşındaki kişi sana deneyimini, güçlü yönünü ve ne zaman başlayabileceğini soruyor.",
+   "partner": "kafenin işe alım yapan müdürü",
+   "opening": "Hello, thank you for coming. Tell me about your experience.",
+   "openingTr": "Merhaba, geldiğin için teşekkürler. Bana deneyiminden bahset.",
+   "goal": "Deneyimini süreyle birlikte anlat, güçlü yönünü söyle, bu işi neden istediğini açıkla ve ne zaman başlayabileceğini belirt; sonunda teşekkür et.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-workplace",
+  "level": "A2",
+  "course": "en",
+  "icon": "job",
+  "title": "My workplace",
+  "titleTr": "İş yerim",
+  "summary": "İş yerini ve ekibini tanıtmayı öğretir: nerede ve kaçıncı katta çalıştığını, ofisin nasıl bir yer olduğunu ve meslektaşlarını anlatmak.",
+  "minutes": 9,
+  "focusId": "Descriptive",
+  "vocab": [
+   {
+    "de": "office",
+    "tr": "ofis"
+   },
+   {
+    "de": "colleague",
+    "tr": "meslektaş"
+   },
+   {
+    "de": "boss",
+    "tr": "patron"
+   },
+   {
+    "de": "desk",
+    "tr": "çalışma masası"
+   },
+   {
+    "de": "floor",
+    "tr": "kat"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I work in an office on the third floor.",
+    "tr": "nerede ve kaçıncı katta çalıştığını söylerken kullanılır"
+   },
+   {
+    "de": "There are ten people in my team.",
+    "tr": "ekibinin kaç kişi olduğunu söylerken kullanılır"
+   },
+   {
+    "de": "What's your office like?",
+    "tr": "birinin iş yerinin nasıl bir yer olduğunu sorarken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün iş yerini tanıtmayı öğreneceğiz: nerede çalıştığını, ofisinin kaçıncı katta olduğunu, nasıl bir yer olduğunu ve meslektaşlarını anlatmayı. Başlamaya hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Önce üç küçük kalıbı ayıralım, çünkü Türkçede hepsine 'çalışıyorum' diyoruz ama İngilizcede farklı edatlar var. Binayı ya da yeri söylüyorsan"
+     },
+     {
+      "lang": "en",
+      "text": "I work in an office."
+     },
+     {
+      "lang": "tr",
+      "text": "Şirketi söylüyorsan"
+     },
+     {
+      "lang": "en",
+      "text": "I work for a small company."
+     },
+     {
+      "lang": "tr",
+      "text": "Mesleğini söylüyorsan"
+     },
+     {
+      "lang": "en",
+      "text": "I work as a designer."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: yer için 'in', şirket için 'for', meslek için 'as'."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "office"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'ofis' demek. Lütfen tam cümleyle söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I work in an office."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I work in an office."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "colleague"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'meslektaş', yani seninle aynı yerde çalışan kişi. Yazılışı uzun ama okunuşu kısadır: 'ko-lig'. Ortadaki harfler yutulur. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "colleague"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "colleague"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "boss"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'patron', yani senin amirin. Lütfen şu cümleyi söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "My boss is very friendly."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My boss is very friendly."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "desk"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'çalışma masası'. Dikkat et: yemek masası 'table', çalışma masası 'desk'. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "My desk is next to the window."
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My desk is next to the window."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "floor"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu kelimenin iki anlamı var: hem 'kat' hem de 'yer, zemin'. Bugün 'kat' anlamını kullanacağız. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "on the third floor"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "on the third floor"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Buradaki küçük ama önemli nokta şu: binanın ya da odanın içi için 'in' deriz,"
+     },
+     {
+      "lang": "en",
+      "text": "in an office"
+     },
+     {
+      "lang": "tr",
+      "text": "ama kat söylerken 'on' deriz:"
+     },
+     {
+      "lang": "en",
+      "text": "on the second floor"
+     },
+     {
+      "lang": "tr",
+      "text": "Ve kat sayılarını sıra sayısıyla veririz: first, second, third, fourth. İkisini birleştirince şu güzel cümle çıkar:"
+     },
+     {
+      "lang": "en",
+      "text": "I work in an office on the third floor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ekibinin kaç kişi olduğunu söylerken 'there is' ve 'there are' kullanıyoruz. Tek kişi için"
+     },
+     {
+      "lang": "en",
+      "text": "There is one manager in my team."
+     },
+     {
+      "lang": "tr",
+      "text": "Birden fazla kişi için"
+     },
+     {
+      "lang": "en",
+      "text": "There are ten people in my team."
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçede 'ekibimde on kişi var' derken 'var' ne yapıyorsa, İngilizcede 'there are' onu yapıyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Ofisim dördüncü katta.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My office is on the fourth floor",
+     "accept": [
+      "My office is on the 4th floor",
+      "Our office is on the fourth floor",
+      "I work on the fourth floor"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kat söylerken 'on' kullanıyoruz:"
+      },
+      {
+       "lang": "en",
+       "text": "My office is on the fourth floor."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ofisini anlatalım. Sık kullanılan sıfatlar:"
+     },
+     {
+      "lang": "en",
+      "text": "big"
+     },
+     {
+      "lang": "en",
+      "text": "small"
+     },
+     {
+      "lang": "en",
+      "text": "modern"
+     },
+     {
+      "lang": "en",
+      "text": "bright"
+     },
+     {
+      "lang": "en",
+      "text": "noisy"
+     },
+     {
+      "lang": "en",
+      "text": "quiet"
+     },
+     {
+      "lang": "tr",
+      "text": "Sıfatlar isimden önce gelir ve çoğul olmaz:"
+     },
+     {
+      "lang": "en",
+      "text": "It's a big, bright office."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki yeri karşılaştırmak istersen karşılaştırma biçimini kullanabilirsin. Kısa sıfatlara -er eklenir, uzunların önüne 'more' gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "My new office is smaller than the old one."
+     },
+     {
+      "lang": "en",
+      "text": "But it's more modern."
+     },
+     {
+      "lang": "tr",
+      "text": "'than' burada 'göre, -den' demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Meslektaşlarım çok yardımsever.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My colleagues are very helpful",
+     "accept": [
+      "My colleagues are really helpful",
+      "My colleagues are very helpful people",
+      "My colleagues are very kind and helpful"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Çoğul özneyle 'are' kullanıyoruz:"
+      },
+      {
+       "lang": "en",
+       "text": "My colleagues are very helpful."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir doğru-yanlış alıştırması:"
+     },
+     {
+      "lang": "en",
+      "text": "I work on a big office."
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesi doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I work on a big office.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Ofisin içi için 'in' kullanılır; 'on' sadece kat söylerken gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "I work in a big office."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karşı taraf sana iş yerini sorarsa en sık şu soruyu duyarsın:"
+     },
+     {
+      "lang": "en",
+      "text": "What's your office like?"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu 'ofisin neyi seviyor' demek değil; 'ofisin nasıl bir yer' demek. Lütfen sen de sor:"
+     },
+     {
+      "lang": "en",
+      "text": "What's your office like?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What's your office like?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevap verirken bir olumlu bir de küçük olumsuz detay vermek çok doğal duyulur:"
+     },
+     {
+      "lang": "en",
+      "text": "It's quite small, but it's very quiet."
+     },
+     {
+      "lang": "en",
+      "text": "It's a bit noisy, but the people are great."
+     },
+     {
+      "lang": "tr",
+      "text": "'quite' biraz fazlası, 'a bit' azıcık anlamı katar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Ekibimde on kişi var.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "There are ten people in my team",
+     "accept": [
+      "There are ten people on my team",
+      "My team has ten people",
+      "There are ten of us in my team"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'var' için 'there are', çoğul olduğu için 'is' değil:"
+      },
+      {
+       "lang": "en",
+       "text": "There are ten people in my team."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi hepsini birleştirip küçük bir tanıtım dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "I work for a small company in the city centre."
+     },
+     {
+      "lang": "en",
+      "text": "Our office is on the third floor."
+     },
+     {
+      "lang": "en",
+      "text": "It's not very big, but it's bright and quiet."
+     },
+     {
+      "lang": "en",
+      "text": "My desk is next to the window."
+     },
+     {
+      "lang": "en",
+      "text": "There are ten people in my team, and my colleagues are very helpful."
+     },
+     {
+      "lang": "en",
+      "text": "My boss is friendly, so I like going to work."
+     },
+     {
+      "lang": "tr",
+      "text": "Gördüğün gibi beş kısa cümle bütün bir iş yerini anlatmaya yetiyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yer için 'in', şirket için 'for', meslek için 'as'; kat için 'on the third floor'; ne olduğunu anlatmak için 'It's a big, bright office'; ekip için 'There are ten people in my team'; sormak için 'What's your office like?'. Şimdi bunları gerçek bir konuşmada kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir dil kursunda tanıştığın kişi işini merak ediyor ve iş yerini soruyor. Nerede ve hangi katta çalıştığını, ofisin nasıl bir yer olduğunu, masanın nerede durduğunu ve ekibinle patronunu anlat.",
+   "partner": "meraklı, kısa sorular soran ve seni konuşturan yeni bir kurs arkadaşı",
+   "opening": "So, tell me about your work. Where do you work?",
+   "openingTr": "Peki, işinden bahsetsene. Nerede çalışıyorsun?",
+   "goal": "Öğrenci nerede çalıştığını, ofisinin kaçıncı katta ve nasıl bir yer olduğunu, ekibinin kaç kişi olduğunu ve meslektaşlarıyla patronunu doğru edatlarla anlatmış olur.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-work-tasks",
+  "level": "A2",
+  "course": "en",
+  "icon": "job",
+  "title": "What I do at work",
+  "titleTr": "İşte ne yaparım",
+  "summary": "İşte yaptığın günlük görevleri sıklık zarflarıyla (usually, always, never) ve \"How often…?\" sorusuyla anlatmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Routine + frequency",
+  "vocab": [
+   {
+    "de": "usually",
+    "tr": "genellikle"
+   },
+   {
+    "de": "customer",
+    "tr": "müşteri"
+   },
+   {
+    "de": "answer",
+    "tr": "cevaplamak, cevap"
+   },
+   {
+    "de": "check",
+    "tr": "kontrol etmek"
+   },
+   {
+    "de": "report",
+    "tr": "rapor, bildirmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I usually answer emails in the morning.",
+    "tr": "işte düzenli olarak yaptığın bir görevi anlatırken kullanılır"
+   },
+   {
+    "de": "How often do you …?",
+    "tr": "bir işi ne sıklıkla yaptığını sorarken kullanılır"
+   },
+   {
+    "de": "I write reports twice a week.",
+    "tr": "bir işi haftada/günde kaç kez yaptığını söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün işte ne yaptığını İngilizce anlatmayı öğreniyoruz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hangi görevi yapıyorsun, bunu ne sıklıkla yapıyorsun: her gün mi, haftada iki kez mi? Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: usually. Türkçesi 'genellikle' demek."
+     },
+     {
+      "lang": "en",
+      "text": "usually"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle: usually."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "usually"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelime: customer. 'Müşteri' demek. Çoğulu customers."
+     },
+     {
+      "lang": "en",
+      "text": "a customer"
+     },
+     {
+      "lang": "tr",
+      "text": "Sen söyle: a customer."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a customer"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelime: answer. 'Cevaplamak' demek. Telefonu ya da e-postaları cevaplarsın."
+     },
+     {
+      "lang": "en",
+      "text": "I answer emails."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi sadece fiili söyle: answer."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "answer"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelime: check. 'Kontrol etmek' demek."
+     },
+     {
+      "lang": "en",
+      "text": "I check the orders."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'siparişleri kontrol ederim'. Sen söyle: check."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "check"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşinci kelime: report. 'Rapor' demek. İngilizcede rapor için genelde write fiilini kullanırız."
+     },
+     {
+      "lang": "en",
+      "text": "write a report"
+     },
+     {
+      "lang": "tr",
+      "text": "Sen söyle: write a report."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "write a report"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıklık kelimeleri. Bunlar bir işi ne kadar sık yaptığını söyler."
+     },
+     {
+      "lang": "en",
+      "text": "always, usually, often, sometimes, never"
+     },
+     {
+      "lang": "tr",
+      "text": "Sırayla: her zaman, genellikle, sık sık, bazen ve asla."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok önemli bir kural: bu kelimeler İngilizcede fiilden ÖNCE gelir."
+     },
+     {
+      "lang": "en",
+      "text": "I always start at nine."
+     },
+     {
+      "lang": "tr",
+      "text": "Ama 'am, is, are' varsa ondan SONRA gelir."
+     },
+     {
+      "lang": "en",
+      "text": "I am always tired on Monday."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin ana kalıbı. Dikkatle dinle."
+     },
+     {
+      "lang": "en",
+      "text": "I usually answer emails in the morning."
+     },
+     {
+      "lang": "tr",
+      "text": "'Sabahları genellikle e-postaları cevaplarım.' Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I usually answer emails in the morning."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu İngilizce kur: 'Genellikle müşterilere yardım ederim.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I usually help customers.",
+     "accept": [
+      "I usually help the customers.",
+      "I usually help our customers."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'yardım etmek' = help. Unutma: usually fiilden önce gelir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Başkasından bahsederken, yani he veya she ile, fiilin sonuna -s ekleriz."
+     },
+     {
+      "lang": "en",
+      "text": "He checks the orders. She answers the phone."
+     },
+     {
+      "lang": "tr",
+      "text": "Duydun mu? checks, answers. Küçük bir -s, ama şart."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Deneyelim: 'O her zaman siparişleri kontrol eder.' Kadın bir iş arkadaşından bahsediyorsun."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "She always checks the orders.",
+     "accept": [
+      "She always checks orders.",
+      "He always checks the orders."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "she + always + fiil. Fiilin sonundaki -s'i unutma: checks."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kaç kez yaptığını söylemeyi öğrenelim."
+     },
+     {
+      "lang": "en",
+      "text": "once a week, twice a week, three times a day, every day"
+     },
+     {
+      "lang": "tr",
+      "text": "Haftada bir, haftada iki kez, günde üç kez ve her gün. Bunlar cümlenin sonuna gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "en",
+      "text": "I write reports twice a week. I check my email three times a day."
+     },
+     {
+      "lang": "tr",
+      "text": "'Haftada iki kez rapor yazarım. E-postama günde üç kez bakarım.' Görüyorsun: önce iş, sonra sıklık."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karşındakine de sorabilmelisin. Soru kalıbı şu: How often do you…?"
+     },
+     {
+      "lang": "en",
+      "text": "How often do you check your email?"
+     },
+     {
+      "lang": "tr",
+      "text": "'Ne sıklıkla e-postana bakarsın?' Şimdi sen sor: 'Ne sıklıkla telefonu cevaplarsın?'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "How often do you answer the phone?",
+     "accept": [
+      "How often do you answer the phone at work?",
+      "How often do you answer phones?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "How often do you + fiil. 'telefon' = the phone."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "I go usually to work at eight."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I go usually to work at eight.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Sıklık kelimesi fiilden önce gelir. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "I usually go to work at eight."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir ayrıntı: never zaten olumsuz demektir, yanına 'don't' koymayız."
+     },
+     {
+      "lang": "en",
+      "text": "I never work on Sundays."
+     },
+     {
+      "lang": "tr",
+      "text": "Ama 'genellikle' ile olumsuz kurarken şöyle deriz:"
+     },
+     {
+      "lang": "en",
+      "text": "I don't usually work late."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika iş çıkardın. Bugün beş kelime öğrendik: usually, customer, answer, check ve report."
+     },
+     {
+      "lang": "tr",
+      "text": "Ve üç şey yapabiliyorsun: görevini sıklık kelimesiyle anlatmak, 'twice a week' gibi sayı vermek, ve 'How often do you…?' diye sormak."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunu gerçek bir sohbette deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İşteki ilk günündesin, mola sırasında yeni iş arkadaşınla sohbet ediyorsun ve birbirinize günlük görevlerinizi anlatıyorsunuz.",
+   "partner": "yeni iş arkadaşın Emma",
+   "opening": "So, what do you usually do at work?",
+   "openingTr": "Peki, işte genellikle ne yaparsın?",
+   "goal": "En az iki görevini sıklık kelimesiyle anlatman ve karşındakine 'How often do you…?' ile bir soru sorman.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-meeting",
+  "level": "A2",
+  "course": "en",
+  "icon": "job",
+  "title": "A short meeting",
+  "titleTr": "Kısa toplantı",
+  "summary": "Kısa bir toplantıda söz almayı, bir fikre katılıp katılmadığını söylemeyi ve öneri sunmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Turn-taking",
+  "vocab": [
+   {
+    "de": "meeting",
+    "tr": "toplantı"
+   },
+   {
+    "de": "agree",
+    "tr": "hemfikir olmak"
+   },
+   {
+    "de": "suggest",
+    "tr": "önermek"
+   },
+   {
+    "de": "decide",
+    "tr": "karar vermek"
+   },
+   {
+    "de": "later",
+    "tr": "daha sonra"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Can I say something?",
+    "tr": "toplantıda söz isterken kullanılır"
+   },
+   {
+    "de": "I agree with you.",
+    "tr": "birinin fikrine katıldığını söylerken kullanılır"
+   },
+   {
+    "de": "I think we should …",
+    "tr": "bir öneri sunarken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün kısa bir toplantıdayız. Söz almayı, bir fikre katılıp katılmadığını söylemeyi ve öneri sunmayı öğreneceğiz. Başlamaya hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İngilizce bir toplantıda araya girmek kabalık değil; ama önce kısa bir cümleyle söz istersin. Sonra fikrini söylersin ve sözü karşındakine verirsin. Bugünün üç işi bu. Önce beş kelimeyi öğrenelim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "meeting"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'toplantı' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "meeting"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "meeting"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "agree"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'hemfikir olmak, katılmak' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "agree"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "agree"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "suggest"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'önermek' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "suggest"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "suggest"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "decide"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'karar vermek' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "decide"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "decide"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "later"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'daha sonra' demek. Toplantıda çok işine yarayacak. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "later"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "later"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız, yani söz alma cümlesi:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I say something?"
+     },
+     {
+      "lang": "tr",
+      "text": "Kelimesi kelimesine 'Bir şey söyleyebilir miyim?' demek. Başına"
+     },
+     {
+      "lang": "en",
+      "text": "Sorry"
+     },
+     {
+      "lang": "tr",
+      "text": "eklersen daha da kibar olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "Can I say something?"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Can I say something"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı işi gören iki kardeş cümle daha var:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I add something?"
+     },
+     {
+      "lang": "tr",
+      "text": "yani 'Bir şey ekleyebilir miyim?' ve"
+     },
+     {
+      "lang": "en",
+      "text": "Can I ask a question?"
+     },
+     {
+      "lang": "tr",
+      "text": "yani 'Bir soru sorabilir miyim?'. Toplantıda üçü de aynı kapıya çıkar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız fikir belirtmek için:"
+     },
+     {
+      "lang": "en",
+      "text": "I agree with you."
+     },
+     {
+      "lang": "tr",
+      "text": "'Sana katılıyorum' demek. Dikkat: İngilizcede"
+     },
+     {
+      "lang": "en",
+      "text": "agree"
+     },
+     {
+      "lang": "tr",
+      "text": "bir fiildir, sıfat değil. Yani 'I am agree' diye bir şey yok."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Sana katılıyorum.' nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I agree with you",
+     "accept": [
+      "I agree",
+      "I agree with you",
+      "Yes, I agree with you"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Fiil doğrudan geliyor, araya 'am' girmiyor:"
+      },
+      {
+       "lang": "en",
+       "text": "I agree with you."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Katılmıyorsan da söyleyebilmelisin. Olumsuzu:"
+     },
+     {
+      "lang": "en",
+      "text": "I don't agree."
+     },
+     {
+      "lang": "tr",
+      "text": "Biraz daha yumuşağı ise"
+     },
+     {
+      "lang": "en",
+      "text": "I'm not sure about that."
+     },
+     {
+      "lang": "tr",
+      "text": "yani 'Ondan pek emin değilim.'"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Deneyelim: 'Katılmıyorum.' nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I don't agree",
+     "accept": [
+      "I do not agree",
+      "I don't agree with you",
+      "I disagree",
+      "I'm not sure about that"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olumsuzda"
+      },
+      {
+       "lang": "en",
+       "text": "don't"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanıyoruz:"
+      },
+      {
+       "lang": "en",
+       "text": "I don't agree."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kalıbımız öneri sunmak için:"
+     },
+     {
+      "lang": "en",
+      "text": "I think we should …"
+     },
+     {
+      "lang": "tr",
+      "text": "'Bence … yapmalıyız' demek."
+     },
+     {
+      "lang": "en",
+      "text": "should"
+     },
+     {
+      "lang": "tr",
+      "text": "kelimesinden sonra fiil hep yalın hâlde kalır: 'to' yok, '-s' yok."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Örnek:"
+     },
+     {
+      "lang": "en",
+      "text": "I think we should ask Sarah."
+     },
+     {
+      "lang": "tr",
+      "text": "yani 'Bence Sarah'ya sormalıyız.' Duydun mu, 'ask' olduğu gibi duruyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: 'Bence daha sonra karar vermeliyiz.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I think we should decide later",
+     "accept": [
+      "We should decide later",
+      "I think we should decide it later",
+      "I think we should decide this later"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kalıp artı bugünün iki kelimesi:"
+      },
+      {
+       "lang": "en",
+       "text": "I think we should decide later."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de sözü karşındakine vermeyi öğrenelim; toplantının yarısı bu. Fikrini söyledikten sonra"
+     },
+     {
+      "lang": "en",
+      "text": "What do you think?"
+     },
+     {
+      "lang": "tr",
+      "text": "dersin. Biri söz isterse de"
+     },
+     {
+      "lang": "en",
+      "text": "Sure, go ahead."
+     },
+     {
+      "lang": "tr",
+      "text": "yani 'Tabii, buyur' dersin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir doğru-yanlış:"
+     },
+     {
+      "lang": "en",
+      "text": "I am agree with you."
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesi doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I am agree with you.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "en",
+       "text": "agree"
+      },
+      {
+       "lang": "tr",
+       "text": "bir fiil olduğu için yanına 'am' almaz. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "I agree with you."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika iş çıkardın. Özetleyelim: söz almak için"
+     },
+     {
+      "lang": "en",
+      "text": "Can I say something?"
+     },
+     {
+      "lang": "tr",
+      "text": "fikir belirtmek için"
+     },
+     {
+      "lang": "en",
+      "text": "I agree with you."
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "I don't agree."
+     },
+     {
+      "lang": "tr",
+      "text": "öneri sunmak için"
+     },
+     {
+      "lang": "en",
+      "text": "I think we should …"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi kısa bir toplantıdasın; hepsini kullan."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İş yerinde kısa bir toplantıdasın. Ekip, yeni projeye bu hafta mı yoksa gelecek hafta mı başlanacağını konuşuyor. Söz iste, fikrini söyle, bir öneri sun ve sonunda karar vermeyi daha sonraya bırakmayı teklif et.",
+   "partner": "toplantıyı yöneten ekip lideri",
+   "opening": "Okay, everyone. Should we start the new project this week?",
+   "openingTr": "Peki arkadaşlar. Yeni projeye bu hafta başlayalım mı?",
+   "goal": "Söz istemiş, bir fikre katıldığını ya da katılmadığını söylemiş ve 'I think we should …' ile en az bir öneri sunmuş olursan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-time-off",
+  "level": "A2",
+  "course": "en",
+  "icon": "job",
+  "title": "Asking for time off",
+  "titleTr": "İzin istemek",
+  "summary": "İşyerinde kibarca bir gün izin istemeyi, erken çıkmayı ve sebebini söylemeyi öğretir.",
+  "minutes": 9,
+  "focusId": "Polite requests",
+  "vocab": [
+   {
+    "de": "holiday",
+    "tr": "tatil"
+   },
+   {
+    "de": "permission",
+    "tr": "izin, müsaade"
+   },
+   {
+    "de": "leave",
+    "tr": "ayrılmak, çıkmak"
+   },
+   {
+    "de": "reason",
+    "tr": "sebep"
+   },
+   {
+    "de": "possible",
+    "tr": "mümkün"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Could I take a day off?",
+    "tr": "kibarca bir gün izin isterken kullanılır"
+   },
+   {
+    "de": "I need to leave early because …",
+    "tr": "erken çıkma sebebini söylerken kullanılır"
+   },
+   {
+    "de": "Would it be possible to …?",
+    "tr": "daha resmi, çekingen bir rica için kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün işte izin istemeyi öğreneceğiz: bir gün izin almak, erken çıkmak ve sebebini kibarca söylemek. Küçük adımlarla gideceğiz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "holiday"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi tatil demek. Uzun tatile İngilizler holiday der. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "holiday"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "holiday"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ama bir günlük izin için başka bir şey söylenir:"
+     },
+     {
+      "lang": "en",
+      "text": "a day off"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani bir gün izin. Off kelimesi burada işte değil, dışarıda anlamına geliyor. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "a day off"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a day off"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İzin almak derken take fiilini kullanıyoruz. Mesela:"
+     },
+     {
+      "lang": "en",
+      "text": "I want to take a day off."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir gün izin almak istiyorum. Ama patronuna böyle söylemek biraz sert kaçar. Şimdi kibar halini öğreneceğiz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kibar soru şöyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Could I take a day off?"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir gün izin alabilir miyim? Could, can'in kibar kardeşi. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Could I take a day off?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Could I take a day off?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu kalıbı ezberle: Could I, artı fiil. Başka örnekler:"
+     },
+     {
+      "lang": "en",
+      "text": "Could I leave at three?"
+     },
+     {
+      "lang": "tr",
+      "text": "Üçte çıkabilir miyim?"
+     },
+     {
+      "lang": "en",
+      "text": "Could I start later tomorrow?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yarın daha geç başlayabilir miyim?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Şunu İngilizce sor: Cuma günü bir gün izin alabilir miyim?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Could I take a day off on Friday?",
+     "accept": [
+      "Can I take a day off on Friday?",
+      "Could I take Friday off?",
+      "Could I take a day off this Friday?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Could I take, sonra a day off, en sonda gün:"
+      },
+      {
+       "lang": "en",
+       "text": "on Friday"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "permission"
+     },
+     {
+      "lang": "tr",
+      "text": "İzin, müsaade demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "permission"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "permission"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu kelime çoğunlukla ask for ile gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "I need to ask my manager for permission."
+     },
+     {
+      "lang": "tr",
+      "text": "Müdürümden izin istemem gerekiyor. Manager müdür demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bazen bütün gün değil, sadece erken çıkmak istersin. Fiilimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "leave"
+     },
+     {
+      "lang": "tr",
+      "text": "Ayrılmak, çıkmak demek. Erken çıkmak:"
+     },
+     {
+      "lang": "en",
+      "text": "leave early"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi tam cümleyi söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I need to leave early."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I need to leave early."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İzin isterken sebep söylemek çok önemli. Sebep kelimesi:"
+     },
+     {
+      "lang": "en",
+      "text": "reason"
+     },
+     {
+      "lang": "tr",
+      "text": "Müdürün sorabilir:"
+     },
+     {
+      "lang": "en",
+      "text": "What's the reason?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sebebi çünkü ile bağlarız:"
+     },
+     {
+      "lang": "en",
+      "text": "because"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu söyle: Erken çıkmam gerekiyor çünkü doktor randevum var."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I need to leave early because I have a doctor's appointment.",
+     "accept": [
+      "I have to leave early because I have a doctor's appointment.",
+      "I need to leave early because I have an appointment with the doctor.",
+      "I need to leave early because I've got a doctor's appointment."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Randevu:"
+      },
+      {
+       "lang": "en",
+       "text": "an appointment"
+      },
+      {
+       "lang": "tr",
+       "text": "Doktor randevusu:"
+      },
+      {
+       "lang": "en",
+       "text": "a doctor's appointment"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daha resmi, daha çekingen bir rica da var. Anahtar kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "possible"
+     },
+     {
+      "lang": "tr",
+      "text": "Mümkün demek. Kalıp şöyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Would it be possible to leave at four?"
+     },
+     {
+      "lang": "tr",
+      "text": "Dörtte çıkmam mümkün mü? Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Would it be possible to leave at four?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Would it be possible to leave at four?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat et: Would it be possible'dan sonra to gelir ve fiil yalın kalır. Mesela:"
+     },
+     {
+      "lang": "en",
+      "text": "Would it be possible to work from home on Monday?"
+     },
+     {
+      "lang": "tr",
+      "text": "Pazartesi evden çalışmam mümkün mü?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi küçük bir kontrol. Sana bir cümle söyleyeceğim, doğru mu yanlış mı karar ver."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "\"Can I take a day off?\" is more polite than \"Could I take a day off?\"",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Could daha kibardır. Can arkadaşlar arasında rahat, ama müdürünle konuşurken could veya would it be possible daha uygun."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ne kadar süre istediğini de söylemelisin. Kısa kalıplar:"
+     },
+     {
+      "lang": "en",
+      "text": "for two days"
+     },
+     {
+      "lang": "tr",
+      "text": "iki günlüğüne."
+     },
+     {
+      "lang": "en",
+      "text": "from Monday to Wednesday"
+     },
+     {
+      "lang": "tr",
+      "text": "pazartesiden çarşambaya."
+     },
+     {
+      "lang": "en",
+      "text": "next week"
+     },
+     {
+      "lang": "tr",
+      "text": "gelecek hafta."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son alıştırma. Şunu resmi bir şekilde sor: Gelecek hafta iki gün izin almam mümkün mü?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Would it be possible to take two days off next week?",
+     "accept": [
+      "Could I take two days off next week?",
+      "Is it possible to take two days off next week?",
+      "Would it be possible to take two days off next week, please?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Başlangıç:"
+      },
+      {
+       "lang": "en",
+       "text": "Would it be possible to take"
+      },
+      {
+       "lang": "tr",
+       "text": "sonra iki gün izin ve zaman."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevabı da anlaman lazım. Olumlu cevaplar:"
+     },
+     {
+      "lang": "en",
+      "text": "Sure, that's fine."
+     },
+     {
+      "lang": "en",
+      "text": "Of course, no problem."
+     },
+     {
+      "lang": "tr",
+      "text": "Olumsuz cevap genelde şöyle gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm afraid that's not possible this week."
+     },
+     {
+      "lang": "tr",
+      "text": "Korkarım bu hafta mümkün değil. I'm afraid burada korkmak değil, kötü haberi yumuşatmak için kullanılıyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ve sonunda teşekkür et, işini bitireceğini söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Thank you. I'll finish my work before I go."
+     },
+     {
+      "lang": "tr",
+      "text": "Teşekkürler, gitmeden önce işimi bitireceğim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Thank you. I'll finish my work before I go."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kibar izin için"
+     },
+     {
+      "lang": "en",
+      "text": "Could I take a day off?"
+     },
+     {
+      "lang": "tr",
+      "text": "erken çıkmak için"
+     },
+     {
+      "lang": "en",
+      "text": "I need to leave early because …"
+     },
+     {
+      "lang": "tr",
+      "text": "ve resmi rica için"
+     },
+     {
+      "lang": "en",
+      "text": "Would it be possible to …?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sebebi söylemeyi unutma. Şimdi bunu müdürünle konuşarak deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İşyerindesin. Cuma günü bir gün izin almak istiyorsun; sebebin kardeşinin düğünü. Müdürünün yanına gidip kibarca izin istiyorsun.",
+   "partner": "müdürün Sarah",
+   "opening": "Hi, come in. You wanted to talk to me?",
+   "openingTr": "Merhaba, gel içeri. Benimle konuşmak mı istemiştin?",
+   "goal": "Kibar bir kalıpla izin istemen, sebebini söylemen ve hangi gün olduğunu netleştirmen; müdür onay ya da red verdiğinde uygun şekilde karşılık vermen.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-work-problem",
+  "level": "A2",
+  "course": "en",
+  "icon": "job",
+  "title": "A problem at work",
+  "titleTr": "İşte bir sorun",
+  "summary": "İşteki bir aksaklığı İngilizce anlatmayı, özür dilemeyi ve bir çözüm önermeyi öğretir.",
+  "minutes": 9,
+  "focusId": "Explaining",
+  "vocab": [
+   {
+    "de": "mistake",
+    "tr": "hata"
+   },
+   {
+    "de": "late",
+    "tr": "geç"
+   },
+   {
+    "de": "deadline",
+    "tr": "son tarih"
+   },
+   {
+    "de": "solve",
+    "tr": "çözmek"
+   },
+   {
+    "de": "sorry",
+    "tr": "özür dilerim"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I'm sorry, I made a mistake.",
+    "tr": "bir hatayı kabul edip özür dilerken kullanılır"
+   },
+   {
+    "de": "I haven't finished it yet.",
+    "tr": "bir işi henüz bitirmediğini söylerken kullanılır"
+   },
+   {
+    "de": "I'll fix it today.",
+    "tr": "o anda çözüm sözü verirken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün işte bir şey ters gittiğinde ne diyeceğini öğreneceğiz: hatayı anlatmak, özür dilemek ve bir çözüm önermek. Hazırsan başlıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "mistake"
+     },
+     {
+      "lang": "tr",
+      "text": "— hata demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "mistake"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "mistake"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İngilizcede hata do ile değil, make fiiliyle yapılır. Geçmiş hali made. Yani:"
+     },
+     {
+      "lang": "en",
+      "text": "I made a mistake."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir hata yaptım. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I made a mistake."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi özür kısmı."
+     },
+     {
+      "lang": "en",
+      "text": "sorry"
+     },
+     {
+      "lang": "tr",
+      "text": "üzgünüm, özür dilerim demek. Genelde cümle içinde kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm really sorry."
+     },
+     {
+      "lang": "tr",
+      "text": "Gerçekten özür dilerim. Tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'm really sorry."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Neye üzüldüğünü eklemek istersen iki yol var. Arkasından isim geliyorsa about kullanırsın:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry about the delay."
+     },
+     {
+      "lang": "tr",
+      "text": "Gecikme için özür dilerim. Fiil geliyorsa for ve fiile -ing:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry for being late."
+     },
+     {
+      "lang": "tr",
+      "text": "Geç kaldığım için özür dilerim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıradaki kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "late"
+     },
+     {
+      "lang": "tr",
+      "text": "geç. Hem insan için hem iş için kullanılır."
+     },
+     {
+      "lang": "en",
+      "text": "The report is late."
+     },
+     {
+      "lang": "tr",
+      "text": "Rapor gecikti. Söyle bakalım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The report is late."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İş hayatının anahtar kelimesi:"
+     },
+     {
+      "lang": "en",
+      "text": "deadline"
+     },
+     {
+      "lang": "tr",
+      "text": "son tarih, teslim tarihi. Onu kaçırmak için miss fiilini kullanırız."
+     },
+     {
+      "lang": "en",
+      "text": "We're going to miss the deadline."
+     },
+     {
+      "lang": "tr",
+      "text": "Son tarihi kaçıracağız. Gidişat belli olduğu için going to dedik. Tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We're going to miss the deadline."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. Son tarihi kaçırdık, nasıl dersin? Olmuş bitmiş bir olay, geçmiş zaman."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We missed the deadline.",
+     "accept": [
+      "We have missed the deadline.",
+      "We've missed the deadline."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "miss fiilinin geçmişi missed; öznen we."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir aksaklığı yeni fark ettiğinde çoğu zaman şu yapıyı kullanırsın: have veya has, sonra fiilin üçüncü hali. Buna present perfect denir; olay geçmişte olmuştur ama sonucu şu anda önündedir."
+     },
+     {
+      "lang": "en",
+      "text": "I've found a problem."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir sorun buldum — ve sorun hâlâ orada duruyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daha yeni olduğunu vurgulamak için araya just koyarız:"
+     },
+     {
+      "lang": "en",
+      "text": "I've just found a problem."
+     },
+     {
+      "lang": "tr",
+      "text": "Az önce bir sorun buldum. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I've just found a problem."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir işi henüz yapmadıysan yet kullanırsın ve yet cümlenin en sonuna gider."
+     },
+     {
+      "lang": "en",
+      "text": "I haven't finished it yet."
+     },
+     {
+      "lang": "tr",
+      "text": "Onu henüz bitirmedim."
+     },
+     {
+      "lang": "en",
+      "text": "I haven't sent the email yet."
+     },
+     {
+      "lang": "tr",
+      "text": "E-postayı henüz göndermedim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kulağını sınayalım. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I haven't send the email yet."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I haven't send the email yet.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "haven't'tan sonra fiilin üçüncü hali gelir. Doğrusu: I haven't sent the email yet."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sorunu söyledin, peki çözüm? Anahtar kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "solve"
+     },
+     {
+      "lang": "tr",
+      "text": "çözmek. Günlük konuşmada aynı işi gören bir kelime daha var: fix, yani düzeltmek."
+     },
+     {
+      "lang": "en",
+      "text": "I can fix it."
+     },
+     {
+      "lang": "tr",
+      "text": "Ben bunu düzeltebilirim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Bunu bugün çözeceğim, nasıl dersin? Tam o anda verdiğin bir söz, o yüzden will kullan."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I'll solve it today.",
+     "accept": [
+      "I will solve it today.",
+      "I'll fix it today.",
+      "I will fix it today."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "will artı fiilin yalın hali; I will kısaltılınca I'll olur."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük ama önemli bir fark: konuşurken o anda karar veriyorsan will, önceden planladıysan going to."
+     },
+     {
+      "lang": "en",
+      "text": "Don't worry, I'll call the client."
+     },
+     {
+      "lang": "tr",
+      "text": "Merak etme, müşteriyi ararım — kararı şimdi verdin."
+     },
+     {
+      "lang": "en",
+      "text": "I'm going to call the client at three."
+     },
+     {
+      "lang": "tr",
+      "text": "Müşteriyi saat üçte arayacağım — bu zaten planındı."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yöneticine kötü haber verirken sıra şudur: önce özür, sonra sebep, sonra çözüm. Üçü bir arada şöyle duyulur:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm sorry. I made a mistake in the report. I'll fix it before five."
+     },
+     {
+      "lang": "tr",
+      "text": "Özür dilerim. Raporda bir hata yaptım. Saat beşten önce düzelteceğim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Özür dilerim, e-postayı henüz göndermedim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I'm sorry, I haven't sent the email yet.",
+     "accept": [
+      "I am sorry, I haven't sent the email yet.",
+      "Sorry, I haven't sent the email yet.",
+      "I'm sorry, I have not sent the email yet."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce I'm sorry, sonra haven't sent, en sonda yet."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tek başına çözemiyorsan yardım istemeyi de bil:"
+     },
+     {
+      "lang": "en",
+      "text": "Could you help me with this?"
+     },
+     {
+      "lang": "tr",
+      "text": "Bana bu konuda yardım eder misin? Daha fazla zamana ihtiyacın varsa:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I have one more day?"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir gün daha alabilir miyim?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısa özet: hata için I made a mistake, özür için I'm really sorry, gecikme için The report is late ve We're going to miss the deadline, henüz yapmadıkların için haven't ve sonda yet, çözüm için I'll fix it. Şimdi bunları yöneticinle konuşurken deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Ofistesin. Raporu bugün teslim etmen gerekiyordu ama içinde bir hata buldun ve dosyayı henüz göndermedin.",
+   "partner": "yöneticin Emma",
+   "opening": "Hi! Is the report ready? I need it before the meeting.",
+   "openingTr": "Merhaba! Rapor hazır mı? Toplantıdan önce lazım.",
+   "goal": "Sorunu anlat, özür dile ve işi ne zaman bitireceğini söyleyerek net bir çözüm öner.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-work-email",
+  "level": "A2",
+  "course": "en",
+  "icon": "mail",
+  "title": "A work email",
+  "titleTr": "İş e-postası",
+  "summary": "Kısa ve resmi bir iş e-postasını açmayı, dosya eklediğini söylemeyi, yanıt ve teyit istemeyi ve e-postayı düzgün kapatmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Written register",
+  "vocab": [
+   {
+    "de": "send",
+    "tr": "göndermek"
+   },
+   {
+    "de": "attach",
+    "tr": "eklemek (dosya)"
+   },
+   {
+    "de": "reply",
+    "tr": "yanıtlamak"
+   },
+   {
+    "de": "confirm",
+    "tr": "teyit etmek"
+   },
+   {
+    "de": "regards",
+    "tr": "saygılar"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I have attached the file.",
+    "tr": "e-postaya dosya eklediğini söylerken kullanılır"
+   },
+   {
+    "de": "Could you confirm the time?",
+    "tr": "bir bilgiyi kibarca teyit ederken kullanılır"
+   },
+   {
+    "de": "Best regards,",
+    "tr": "iş e-postasını kapatırken kullanılan resmi bitiş"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugün İngilizce kısa bir iş e-postası yazmayı çalışacağız: nasıl başlanır, dosya eklediğini nasıl söylersin, nasıl yanıt ve teyit istersin, nasıl kapatırsın."
+     },
+     {
+      "lang": "tr",
+      "text": "Kulağını da ağzını da kullanacağız. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Önce şunu bil: konuşurken kullandığın İngilizce ile iş e-postasında yazdığın İngilizce biraz farklıdır. E-postada cümleler daha kısa, daha düzenli ve daha kibardır."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir iş e-postasının üç parçası var: selamlama, mesaj ve kapanış. Şimdi sırayla gidelim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Resmi bir başlangıçla başlıyoruz. Kişinin soyadını biliyorsan:"
+     },
+     {
+      "lang": "en",
+      "text": "Dear Mr Brown,"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'Sayın Bay Brown'. Lütfen sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Dear Mr Brown,"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kadınsa"
+     },
+     {
+      "lang": "en",
+      "text": "Dear Ms Taylor,"
+     },
+     {
+      "lang": "tr",
+      "text": "dersin. Tanıdığın bir iş arkadaşına yazıyorsan daha rahat olabilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "Hi Anna,"
+     },
+     {
+      "lang": "tr",
+      "text": "Kural basit: müşteriye ve yeni kişilere 'Dear', tanıdık iş arkadaşına 'Hi'."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Selamlamadan sonra ilk cümle konuyu söyler. En kullanışlı kalıp bu:"
+     },
+     {
+      "lang": "en",
+      "text": "I am writing about the meeting."
+     },
+     {
+      "lang": "tr",
+      "text": "'Toplantı hakkında yazıyorum' demek. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I am writing about the meeting."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi günün kelimelerine geçelim. İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "send"
+     },
+     {
+      "lang": "tr",
+      "text": "'göndermek' demek. Geçmiş hâli düzensizdir:"
+     },
+     {
+      "lang": "en",
+      "text": "sent"
+     },
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "attach"
+     },
+     {
+      "lang": "tr",
+      "text": "e-postaya bir dosya 'eklemek' demek. Bu düzenli bir fiil:"
+     },
+     {
+      "lang": "en",
+      "text": "attached"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dosya eklediğini söylerken İngilizler present perfect kullanır, çünkü iş şimdi bitti ve sonucu e-postanın içinde duruyor:"
+     },
+     {
+      "lang": "en",
+      "text": "I have attached the file."
+     },
+     {
+      "lang": "tr",
+      "text": "'Dosyayı ekledim' demek. Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I have attached the file."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı yapıyı 'send' ile de kur. Sana Türkçesini söylüyorum, sen İngilizcesini kur."
+     },
+     {
+      "lang": "tr",
+      "text": "'E-postayı gönderdim.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have sent the email.",
+     "accept": [
+      "I've sent the email.",
+      "I have sent the e-mail.",
+      "I have already sent the email.",
+      "I've sent the e-mail."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "I have ile başla, sonra send fiilinin üçüncü hâli: sent."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Üçüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "reply"
+     },
+     {
+      "lang": "tr",
+      "text": "'yanıtlamak' demek. Hem fiil hem isim olarak kullanılır: 'a reply' bir yanıt demektir."
+     },
+     {
+      "lang": "tr",
+      "text": "İş e-postasında birinden yanıt isterken emir cümlesi kurmayız, soru sorarız. Çünkü soru daha kibardır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "En kibar isteme kalıbı 'Could you' ile başlar:"
+     },
+     {
+      "lang": "en",
+      "text": "Could you reply by Friday?"
+     },
+     {
+      "lang": "tr",
+      "text": "'Cuma'ya kadar yanıtlayabilir misiniz?' demek. Buradaki 'by' son tarihi gösterir. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Could you reply by Friday?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "confirm"
+     },
+     {
+      "lang": "tr",
+      "text": "'teyit etmek', yani 'doğrula, kesinleştir' demek. Toplantı saatini teyit ettirmek istiyorsun."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: 'Saati teyit edebilir misiniz?'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Could you confirm the time?",
+     "accept": [
+      "Can you confirm the time?",
+      "Could you please confirm the time?",
+      "Could you confirm the time, please?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Could you ile başla, sonra confirm, sonra the time."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi iki küçük kelimeye dikkat: 'already' ve 'yet'."
+     },
+     {
+      "lang": "en",
+      "text": "already"
+     },
+     {
+      "lang": "tr",
+      "text": "'çoktan, zaten' demek ve olumlu cümlede kullanılır."
+     },
+     {
+      "lang": "en",
+      "text": "yet"
+     },
+     {
+      "lang": "tr",
+      "text": "'henüz' demek ve soruda ya da olumsuzda, cümlenin sonunda durur:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you sent it yet?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şu cevabı çok kullanacaksın:"
+     },
+     {
+      "lang": "en",
+      "text": "I have already replied."
+     },
+     {
+      "lang": "tr",
+      "text": "'Zaten yanıtladım' demek. Dikkat et, 'already' have ile fiilin arasına giriyor. Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I have already replied."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim, doğru mu yanlış mı söyle."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I have attach the file.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. 'have' fiilinden sonra fiilin üçüncü hâli gelir. Doğrusu: I have attached the file."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynen öyle. Bazen dosya henüz hazır değildir; o zaman gelecekten söz edersin."
+     },
+     {
+      "lang": "tr",
+      "text": "Şunu kur: 'Dosyayı yarın göndereceğim.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I will send the file tomorrow.",
+     "accept": [
+      "I'll send the file tomorrow.",
+      "I am going to send the file tomorrow.",
+      "I'm going to send the file tomorrow."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "I will ile başla, sonra send the file, en sona tomorrow."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kapanış. İş e-postasında en güvenli bitiş budur:"
+     },
+     {
+      "lang": "en",
+      "text": "Best regards,"
+     },
+     {
+      "lang": "tr",
+      "text": "'Saygılarımla' demek. Altına da adını yazarsın. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Best regards,"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daha samimi bir iş arkadaşına yazarken şu da olur:"
+     },
+     {
+      "lang": "en",
+      "text": "Thanks,"
+     },
+     {
+      "lang": "tr",
+      "text": "Ama müşteriye, patrona, tanımadığın birine her zaman 'Best regards' yaz. Kimseyi rahatsız etmez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi hepsini birleştirip küçük bir e-posta dinle."
+     },
+     {
+      "lang": "en",
+      "text": "Dear Mr Brown, I am writing about the meeting on Monday. I have attached the file with the numbers. Could you confirm the time? Best regards, Ayse"
+     },
+     {
+      "lang": "tr",
+      "text": "Duydun mu, dört kısa cümle yetti. İyi bir iş e-postası uzun değil, net olandır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. 'Dear' ile açtın, 'I am writing about' ile konuyu söyledin, 'I have attached the file' ile dosyayı bildirdin, 'Could you confirm' ile kibarca teyit istedin, 'Best regards' ile kapattın."
+     },
+     {
+      "lang": "tr",
+      "text": "Kelimelerimiz: send, attach, reply, confirm, regards."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunları konuşarak deneyelim. İş arkadaşınla e-postanın durumunu konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Ofisteki masandasın. Bir müşteriye toplantı hakkında e-posta yazdın. İş arkadaşın yanına gelip e-postanın durumunu soruyor.",
+   "partner": "iş arkadaşın Daniel",
+   "opening": "Hi! Have you sent the email to the client yet?",
+   "openingTr": "Selam! Müşteriye e-postayı gönderdin mi?",
+   "goal": "E-postayı gönderip göndermediğini söyleyip, dosyayı eklediğini belirtirsen ve toplantı saatini teyit etmek için bir soru kurarsan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-first-day",
+  "level": "A2",
+  "course": "en",
+  "icon": "job",
+  "title": "My first day",
+  "titleTr": "İlk günüm",
+  "summary": "Yeni bir işteki ilk gününü İngilizce anlatmayı öğretir: nasıl hissettiğini, seni kimin kimlerle tanıştırdığını, sana neyin gösterildiğini ve günün nasıl bittiğini geçmiş zamanla sırayla söylemek.",
+  "minutes": 9,
+  "focusId": "Narrative",
+  "vocab": [
+   {
+    "de": "nervous",
+    "tr": "tedirgin"
+   },
+   {
+    "de": "introduce",
+    "tr": "tanıştırmak"
+   },
+   {
+    "de": "show",
+    "tr": "göstermek"
+   },
+   {
+    "de": "break",
+    "tr": "mola"
+   },
+   {
+    "de": "end",
+    "tr": "son"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I was very nervous on my first day.",
+    "tr": "ilk gününde nasıl hissettiğini anlatırken kullanılır"
+   },
+   {
+    "de": "My boss introduced me to the team.",
+    "tr": "birinin seni başkalarıyla tanıştırdığını anlatırken kullanılır"
+   },
+   {
+    "de": "At the end of the day I felt much better.",
+    "tr": "günün nasıl bittiğini anlatırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün yeni bir işteki ilk gününü İngilizce anlatmayı öğreneceğiz: nasıl hissettiğini, seni kimin kimlerle tanıştırdığını, sana neyi gösterdiklerini ve günün nasıl bittiğini. Başlamaya hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk gün hikâyesi hep aynı iskelet üzerinde ilerler: sabah nasıl hissettin, seni kim karşıladı, sana ne gösterildi, molada ne oldu, gün nasıl bitti. Bugün bu iskeleti kuran beş kelimeyi alacağız. Hepsini geçmiş zamanda kullanacağız, çünkü bitmiş bir günü anlatıyorsun."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "nervous"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'tedirgin, gergin' demek. Dikkat: 'sinirli' değil. Türkler bu kelimeyi çok karıştırır; 'nervous' kızgınlık değil, heyecanla karışık bir tedirginliktir. Bu bir sıfat, o yüzden yanına 'was' gelir. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "I was very nervous."
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I was very nervous."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "introduce"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'tanıştırmak' demek. Geçmiş hâli düzenli:"
+     },
+     {
+      "lang": "en",
+      "text": "introduced"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "My boss introduced me to the team."
+     },
+     {
+      "lang": "tr",
+      "text": "de. Yani 'Patronum beni ekibe tanıştırdı.'"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My boss introduced me to the team."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Burada küçük ama şart olan bir ayrıntı var: tanıştırdığın kişiden önce mutlaka"
+     },
+     {
+      "lang": "en",
+      "text": "to"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir. 'Introduced me the team' denmez;"
+     },
+     {
+      "lang": "en",
+      "text": "introduced me to the team"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. Kendini tanıttığında ise"
+     },
+     {
+      "lang": "en",
+      "text": "I introduced myself."
+     },
+     {
+      "lang": "tr",
+      "text": "dersin, yani 'Kendimi tanıttım.'"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "show"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'göstermek' demek. Geçmiş hâli"
+     },
+     {
+      "lang": "en",
+      "text": "showed"
+     },
+     {
+      "lang": "tr",
+      "text": "olur. Birine bir yeri baştan sona gezdirdiğinde araya 'around' koyarsın. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "She showed me around the office."
+     },
+     {
+      "lang": "tr",
+      "text": "de. Yani 'Bana ofisi gezdirdi.'"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She showed me around the office."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Patronum bana ofisi gösterdi.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My boss showed me the office",
+     "accept": [
+      "My boss showed me around the office",
+      "My manager showed me the office",
+      "He showed me the office",
+      "She showed me the office"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce kişi, sonra gösterilen şey gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "My boss showed me the office."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "break"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'mola' demek. İngilizcede mola 'yapılmaz', 'sahip olunur': fiil olarak"
+     },
+     {
+      "lang": "en",
+      "text": "have"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "We had a break at twelve."
+     },
+     {
+      "lang": "tr",
+      "text": "de. Yani 'Saat on ikide mola verdik.' Öğle molasına da"
+     },
+     {
+      "lang": "en",
+      "text": "lunch break"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We had a break at twelve."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bu parçaları sıraya dizelim. Anlatırken küçük bağlayıcılar kullan:"
+     },
+     {
+      "lang": "en",
+      "text": "first"
+     },
+     {
+      "lang": "tr",
+      "text": "'önce',"
+     },
+     {
+      "lang": "en",
+      "text": "then"
+     },
+     {
+      "lang": "tr",
+      "text": "'sonra',"
+     },
+     {
+      "lang": "en",
+      "text": "after that"
+     },
+     {
+      "lang": "tr",
+      "text": "'ondan sonra',"
+     },
+     {
+      "lang": "en",
+      "text": "finally"
+     },
+     {
+      "lang": "tr",
+      "text": "'en sonunda'. Küçük bir hikâye duyalım:"
+     },
+     {
+      "lang": "en",
+      "text": "First I met my boss. Then she showed me around the office. After that I met the team."
+     },
+     {
+      "lang": "tr",
+      "text": "Gördüğün gibi cümleler kısa; sırayı bağlayıcılar taşıyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "end"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'son' demek. Günün sonunu anlatırken kalıp şudur:"
+     },
+     {
+      "lang": "en",
+      "text": "at the end of the day"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "At the end of the day I felt much better."
+     },
+     {
+      "lang": "tr",
+      "text": "de. Yani 'Günün sonunda çok daha iyi hissediyordum.'"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "At the end of the day I felt much better."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki küçük not. Birincisi:"
+     },
+     {
+      "lang": "en",
+      "text": "feel"
+     },
+     {
+      "lang": "tr",
+      "text": "fiilinin geçmiş hâli düzensizdir,"
+     },
+     {
+      "lang": "en",
+      "text": "felt"
+     },
+     {
+      "lang": "tr",
+      "text": "olur. İkincisi: 'at the end of the day' zamanı gösterir, yani günün son saatleri. Bir de"
+     },
+     {
+      "lang": "en",
+      "text": "in the end"
+     },
+     {
+      "lang": "tr",
+      "text": "vardır ki o 'neticede, sonunda' demektir:"
+     },
+     {
+      "lang": "en",
+      "text": "In the end, it was a good day."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Günün sonunda yorgundum ama mutluydum.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "At the end of the day I was tired but happy",
+     "accept": [
+      "At the end of the day, I was tired but happy",
+      "At the end of the day I felt tired but happy",
+      "I was tired but happy at the end of the day"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki sıfatı 'but' ile bağla:"
+      },
+      {
+       "lang": "en",
+       "text": "At the end of the day I was tired but happy."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir doğru-yanlış alıştırması:"
+     },
+     {
+      "lang": "en",
+      "text": "My boss introduced me the team."
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesi doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "My boss introduced me the team.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Tanıştırılan kişilerden önce 'to' şart. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "My boss introduced me to the team."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk gün anlatımını renklendiren birkaç hazır cümle daha var. İnsanlar iyi davrandıysa:"
+     },
+     {
+      "lang": "en",
+      "text": "Everyone was very friendly."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'Herkes çok candandı.' Yeni şeyler öğrendiysen:"
+     },
+     {
+      "lang": "en",
+      "text": "I learned a lot."
+     },
+     {
+      "lang": "tr",
+      "text": "Biraz zorlandıysan:"
+     },
+     {
+      "lang": "en",
+      "text": "It was a bit difficult at first."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'Başta biraz zordu.'"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hikâyeni bitirirken çok işine yarayacak bir cümle var. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "It was a long day, but a good one."
+     },
+     {
+      "lang": "tr",
+      "text": "de. Yani 'Uzun bir gündü ama iyiydi.' Sondaki"
+     },
+     {
+      "lang": "en",
+      "text": "one"
+     },
+     {
+      "lang": "tr",
+      "text": "kelimeyi tekrar etmemek için kullanılır; 'a good day' demek yerine 'a good one' dersin."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It was a long day, but a good one."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'İlk günümde çok tedirgindim.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I was very nervous on my first day",
+     "accept": [
+      "I was very nervous on my first day at work",
+      "On my first day I was very nervous",
+      "I was really nervous on my first day",
+      "I was very nervous on the first day"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gün için 'on' kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I was very nervous on my first day."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beş kelimeyi bir arada duyalım:"
+     },
+     {
+      "lang": "en",
+      "text": "nervous"
+     },
+     {
+      "lang": "en",
+      "text": "introduce, introduced"
+     },
+     {
+      "lang": "en",
+      "text": "show, showed"
+     },
+     {
+      "lang": "en",
+      "text": "break"
+     },
+     {
+      "lang": "en",
+      "text": "end"
+     },
+     {
+      "lang": "tr",
+      "text": "Ve iskelet cümleler:"
+     },
+     {
+      "lang": "en",
+      "text": "I was nervous. My boss introduced me to the team. She showed me around. We had a break at twelve. At the end of the day I felt better."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: ilk gününü anlatırken önce hissini söyle, sonra seni kimin tanıştırdığını, sana neyin gösterildiğini, molayı ve günün sonunu sırayla anlat; bağlayıcı olarak first, then, after that ve at the end of the day yeter. Şimdi bunu gerçek bir sahnede kullanalım: akşam bir arkadaşın arıyor ve ilk gününü soruyor."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yeni işindeki ilk günün akşamı bir arkadaşın seni arıyor ve günün nasıl geçtiğini soruyor. Sabah nasıl hissettiğini, seni kimin ekiple tanıştırdığını, sana neyin gösterildiğini, molayı ve günün sonunu anlat.",
+   "partner": "meraklı, seni sorularla konuşturan yakın bir arkadaş",
+   "opening": "So, how was your first day?",
+   "openingTr": "Eee, ilk günün nasıl geçti?",
+   "goal": "Öğrenci ilk günü hakkında nasıl hissettiğini, kimlerle tanıştığını, sana neyin gösterildiğini ve günün nasıl bittiğini geçmiş zamanla sırayla anlatmış olur.",
    "minTurns": 7
   }
  }
