@@ -14058,7 +14058,7 @@
   ],
   "roleplay": {
    "scene": "Mahalledeki bir manavdasın. Tezgahta elma, domates ve patates var; akşam yemeği için alışveriş yapacaksın.",
-   "partner": "Manav (greengrocer)",
+   "partner": "manav tezgâhının arkasındaki satıcı",
    "opening": "Hello! Can I help you?",
    "openingTr": "Merhaba! Yardımcı olabilir miyim?",
    "goal": "Öğrenci en az iki ürünü çoğul biçimiyle ve kilo belirterek istediğinde, tazelik ya da fiyat sorusu sorup cevabı anladığında konuşma başarılı sayılır.",
@@ -14519,7 +14519,7 @@
   ],
   "roleplay": {
    "scene": "Bir kafede yemeğini bitirdin, arkadaşınla birliktesin ve hesabı isteyip kartla ödemek istiyorsun.",
-   "partner": "waiter",
+   "partner": "hesabı getiren güler yüzlü garson",
    "opening": "Hello! Did you enjoy your meal?",
    "openingTr": "Merhaba! Yemeğiniz güzel miydi?",
    "goal": "Öğrenci hesabı kibarca istedi, nakit mi kartla mı ödeyeceğini söyledi ve birlikte mi ayrı mı ödeneceğini belirtip teşekkür etti.",
@@ -26876,7 +26876,7 @@
   ],
   "roleplay": {
    "scene": "Havaalanına gitmek için bir taksiye biniyorsun. Şoför seni karşılıyor.",
-   "partner": "Taxi driver",
+   "partner": "yol tarifine alışkın bir taksi şoförü",
    "opening": "Hello! Where to?",
    "openingTr": "Merhaba! Nereye?",
    "goal": "Öğrenci nereye gitmek istediğini söyler, yolun uzak olup olmadığını ya da ne kadar süreceğini sorar, sonunda fiş ister ya da durmasını söyler.",
@@ -34153,7 +34153,7 @@
   ],
   "roleplay": {
    "scene": "Bir otelde kalıyorsun. Odandaki klima çalışmıyor ve resepsiyona iniyorsun.",
-   "partner": "hotel receptionist",
+   "partner": "otel resepsiyonisti",
    "opening": "Good evening. How can I help you?",
    "openingTr": "İyi akşamlar. Size nasıl yardımcı olabilirim?",
    "goal": "Öğrenci odasındaki sorunu bildirip (It's broken / It doesn't work) tamir ya da yardım istediğinde (Can you fix it? / Please call me.) konuşma başarılı sayılır.",
@@ -40530,7 +40530,7 @@
   ],
   "roleplay": {
    "scene": "Bir doktor muayenehanesini arıyorsun ve yarın için randevu almak istiyorsun.",
-   "partner": "Receptionist at a doctor's office",
+   "partner": "doktor muayenehanesinin sekreteri",
    "opening": "Good morning, doctor's office. How can I help you?",
    "openingTr": "Günaydın, doktor muayenehanesi. Size nasıl yardımcı olabilirim?",
    "goal": "Hasta olduğunu söyleyip randevu istedin ve yarın için bir saatte anlaştın.",
