@@ -61,23 +61,33 @@ jobs:
         run: pod install --repo-update
 
       # CODE_SIGNING_ALLOWED=NO: imza kimliği yok ve gerekmiyor.
-      - name: Simülatöre derle
+      #
+      # Release, Debug değil: Debug yapı Metro sunucusu bekler ve tek başına
+      # açılmaz, yani ekran görüntüsü alınamaz. Release JS paketini uygulamanın
+      # içine gömüyor. Derleme kapısı olarak da daha sıkı — Debug'ın yaptığı her
+      # şeyi yapıp üstüne paketlemeyi de yapıyor.
+      #
+      # -derivedDataPath: .app'in yeri tahmin edilebilir olsun, ekran görüntüsü
+      # adımı onu bulabilsin (mobile/.gitignore › build/).
+      - name: Simülatöre derle (Release)
         working-directory: mobile/ios
         run: |
           set -o pipefail
           xcodebuild build \
             -workspace Lernomi.xcworkspace \
             -scheme Lernomi \
-            -configuration Debug \
+            -configuration Release \
             -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
             | xcbeautify || xcodebuild build \
             -workspace Lernomi.xcworkspace \
             -scheme Lernomi \
-            -configuration Debug \
+            -configuration Release \
             -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO
 
       # Metinler koda gömülü olmadığı için ayrıca bakılıyor: izin metinleri ve
@@ -99,3 +109,21 @@ jobs:
               print("EKSIK:", ", ".join(eksik)); sys.exit(1)
           print("Info.plist ve PrivacyInfo tamam")
           PY
+
+      # Uygulamayı iPhone SE simülatöründe açıp kare alır. Linux'ta iOS Simulator
+      # yok (Android emülatörünün aksine macOS dışına çıkmıyor), bu runner tek
+      # "Mac"imiz — düzen, renk ve koyu tema burada bedavaya görülüyor.
+      # Mikrofon/arka plan sesi/kilit ekranı burada sınanamaz: gerçek cihaz ister.
+      - name: Ekran görüntüleri
+        working-directory: mobile
+        run: bash scripts/ios-screenshots.sh
+
+      # Derleme düşse bile o ana kadarki kareler ve simülatör günlüğü insin —
+      # boş bir kare, uygulamanın açılışta çöktüğünü söyleyen kanıttır.
+      - name: Kareleri yükle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ekran-goruntuleri
+          path: mobile/ios/build/screenshots
+          if-no-files-found: warn
