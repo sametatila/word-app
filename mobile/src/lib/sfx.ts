@@ -19,11 +19,13 @@ const SFX_DUR: Record<string, number> = Object.fromEntries(
 /**
  * Kısa ses efektleri (doğru/yanlış/dokunuş/mic aç-kapa/bitiş) — haptikle birlikte geri bildirim.
  * Üç çalma yolu da `sfxNotes.ts`'teki aynı nota tablosunu çalar (ekran-kapalı native sentez,
- * WebView köprüsü, res/raw mp3 yedeği) → her yerde aynı ses.
- * Yedek mp3'ler android/app/src/main/res/raw'da (`scripts/render-sfx.py` üretir). ÖNEMLİ: Android res/raw kaynağı UZANTISIZ
- * adla bulunur ("correct"); ".mp3" ile aranırsa bulunamaz ve hiç çalmaz. iOS'ta
- * bundle uzantılı ister. Ayrıca modül açılırken önden yüklenir ki ilk çağrıda hazır
- * olsun. Ses açılamazsa sessizce yutulur (haptik yine çalışır).
+ * WebView köprüsü, mp3 yedeği) → her yerde aynı ses.
+ * Yedek mp3'ler iki pakette de var; `scripts/render-sfx.py` ikisine birden yazıyor: Android
+ * `android/app/src/main/res/raw`, iOS `ios/Lernomi/sfx` (iOS'ta paket KÖKÜNE düz kopyalanır,
+ * alt klasöre değil — bkz. betiğin başı). ÖNEMLİ: Android res/raw kaynağı UZANTISIZ adla
+ * bulunur ("correct"); ".mp3" ile aranırsa bulunamaz ve hiç çalmaz. iOS'ta bundle uzantılı
+ * ister. Ayrıca modül açılırken önden yüklenir ki ilk çağrıda hazır olsun. Ses açılamazsa
+ * sessizce yutulur (haptik yine çalışır).
  */
 try { Sound.setCategory("Playback", false); } catch { /* yut */ }
 
