@@ -2,17 +2,27 @@
  * Ünite hizalı beceri egzersizleri, o üniteye kadar ÖĞRETİLEN kelimelerin
  * dışına çıkıyor mu? Çıkanları sıklığa göre listeler.
  *
+ * KAYNAKTAN okur, mobil dökümden değil. Döküm `speaking` becerisini bilerek
+ * dışarıda bırakıyor (mobilde konuşma dersin içinde), o yüzden döküm okunduğu
+ * sürece konuşma egzersizleri HİÇ denetlenmiyordu.
+ *
  * Ölçüm mantığı `lib/vocab-gate.cjs`'de — modül sınavı denetleyicisiyle
  * ORTAK. Buradaki iş yalnızca egzersizden ölçülecek Almancayı toplamak.
  */
-const fs = require("fs");
-const { olc, ozet, türkçeMi, parcala } = require("./lib/vocab-gate.cjs");
-const R = process.cwd();
-const ex = JSON.parse(fs.readFileSync(`${R}/mobile/src/data/skills/exercises.json`, "utf8"));
+import { createRequire } from "node:module";
+import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
+
+const require = createRequire(import.meta.url);
+const { olc, ozet, türkçeMi } = require("./lib/vocab-gate.cjs") as {
+  olc: (ham: string, unit: number, ek?: string[]) => { tok: string[]; disi: string[] };
+  ozet: (d: string[]) => string[];
+  türkçeMi: (s: string) => boolean;
+};
+const ex = BUNDLED_EXERCISES as any[];
 
 /** Egzersizin ölçülecek Almanca yüzeyi. Türkçe alanlar dışarıda. */
-function almanca(e) {
-  const out = [];
+function almanca(e: any): string {
+  const out: string[] = [];
   if (e.text) out.push(e.text);
   for (const s of e.segments || []) out.push(s.text);
   // Şıklar Türkçe olabiliyor ("samimi (du)"); Almanca ölçümüne sokmuyoruz.
@@ -21,6 +31,8 @@ function almanca(e) {
     for (const a of q.accept || []) out.push(a);
   }
   for (const t of e.tasks || []) {
+    // Konuşma görevinin söylenecek metni `de` alanında; ölçüm dışında kalıyordu.
+    if (e.skill === "speaking" && t.de) out.push(t.de);
     if (t.answer) out.push(t.answer);
     if (t.source && !türkçeMi(t.source)) out.push(t.source);
     if (t.sample) out.push(t.sample);
