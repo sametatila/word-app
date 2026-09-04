@@ -72,7 +72,15 @@ for (const e of hedef) {
   // metinde büyük harfle geçen ve havuzda hiç bulunmayan sözcükler = özel ad
   const ozelAd = new Set((ham.match(/(?<![.!?]\s)(?<!^)\b[A-ZÄÖÜ][a-zäöüß]{2,}\b/g) || [])
     .map((w) => w.toLowerCase()).filter((w) => !havuzKok.has(w)));
-  const izinKok = [...izin].filter((w) => w.length >= 4);
+  // Ayrılabilir fiilde çekim öneki AYIRIR: anrufen → "rufe … an", aufstehen →
+  // "stehe … auf". Kök olarak mastarı almak yetmiyor; öneksiz gövdeyi de ekle.
+  const AYRILABILIR = /^(an|auf|aus|ein|mit|nach|vor|zu|ab|bei|los|weg|zurück)/;
+  const izinKok = [];
+  for (const w of izin) {
+    if (w.length >= 4) izinKok.push(w);
+    const m = w.match(AYRILABILIR);
+    if (m && w.length - m[0].length >= 4) izinKok.push(w.slice(m[0].length));
+  }
   // çekim toleransı: öğretilen kelimenin kökünü taşıyorsa bilinir say
   const bilinir = (w) => izin.has(w) || ozelAd.has(w) ||
     izinKok.some((k) => w.startsWith(k.slice(0, Math.max(4, k.length - 2))));
