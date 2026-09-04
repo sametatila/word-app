@@ -471,8 +471,16 @@ egzersizleri `mobile/src/data/skills/exercises-en.json` dosyalarında.
 - **`en → de` paritesi** (anadili İngilizce olan kullanıcı için Almanca). Kelime verisi
   hazır — satırlar üç dilli olduğundan yeni kelime toplamak gerekmiyor; eksik olan, anlatım
   dili İngilizce olan ders metinleri.
-- **Kelime havuzu farkı.** İngilizce 6.975, Almanca 8.267 madde. Seyahat gibi bazı alanlarda
-  ders üretirken havuz dışı kelimeye başvurmak gerekti.
+- **Havuz Almanca listesinden türüyor.** İngilizce 6.975 madde, Almanca 8.267; aradaki 1.292'nin
+  hepsi **aynı İngilizce başlığa düşen** Almanca kelimeler (`an`/`bei`/`zu` → *at*), yani veri
+  eksik değil, tekilleştirilmiş. Asıl sınır şu: havuz Almanca A1–C1 listesinin İngilizce
+  karşılıklarından oluşuyor, bağımsız bir İngilizce CEFR listesi değil. Bu yüzden İngilizceye
+  özgü kelimeler (renkler, gün adları, *fitting room*) derslerde geçiyor ama havuzda karşılığı
+  yok. Derslerde geçen 651 kelimenin 89'u bu durumdaydı; 68'i havuza eklendi (id aralığı
+  209001+, `srcId` yok — Almanca bir satırdan türemiyorlar), 21'i eklenmedi çünkü havuzda
+  zaten karşılığı vardı: yazım/lehçe çiftleri (*colour*↔*color*, *neighbour*↔*neighbor*,
+  *rubbish*↔*trash*), çekimli biçimler (*played*, *watched*) ve öğretim çiftleri
+  (*go / went*). Kapsam artık %100.
 
 ### İçerik üretirken uyulan kurallar
 
