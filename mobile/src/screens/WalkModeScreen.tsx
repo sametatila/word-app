@@ -86,8 +86,9 @@ export function WalkModeScreen() {
   const [greeting, setGreeting] = useState(false); // Başla sonrası kısa TTS karşılama
   const pocketRef = useRef(false);
   const setPocketMode = (on: boolean) => { pocketRef.current = on; setPocket(on); };
-  const screenOffRef = useRef(false); // güç tuşuyla ekran kapalı → Azure kaynağı
-  const nativeListeningRef = useRef(false); // şu an native dinliyor mu (ekran kapanınca hızlı kesmek için)
+  const screenOffRef = useRef(false); // ücretsiz yol güvenilmez → Azure (adı Android'den; aşağıdaki nota bak)
+  const nativeListeningRef = useRef(false); // şu an native dinliyor mu (kesinti gelince hızlı kesmek için)
+  const listenCut = useRef(false); // dinlemeyi BİZ kestik mi — boş sonuç kullanıcının sessizliği sayılmasın
 
   const runToken = useRef(0);
   const mounted = useRef(true);
@@ -151,14 +152,40 @@ export function WalkModeScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Güç-tuşu ekran on/off izle: kapalı→Azure, açık→native (kelime sınırında geçer, kesmez).
-  // Ekran native dinleme SIRASINDA kapanırsa recognizer ölür → dinlemeyi hızlı kes ki
-  // kelime Azure ile tekrar sorulabilsin (bkz. judgeSpeak).
+  /**
+   * Ekran durumu → kaynak seçimi. İKİ PLATFORM AYNI OLAYI DİNLEMİYOR:
+   *
+   *   Android  ACTION_SCREEN_OFF / ACTION_SCREEN_ON (LernomiSpeechModule.kt) — YALNIZ güç
+   *            tuşu. Başka uygulamaya geçmek tetiklemez; mikrofon tipli ön plan servisi
+   *            sayesinde ücretsiz native tanıyıcı orada da çalışmayı sürdürür.
+   *   iOS      didEnterBackground / willEnterForeground (LernomiSpeech.swift) — kilit AMA
+   *            uygulama değiştirme, bildirime dokunma ve gelen çağrı da.
+   *
+   * Ayrıştırma iOS'ta native tarafta DA yapılamıyor: güç tuşunu haber veren genel bir API
+   * yok, protectedDataWillBecomeUnavailable yalnız parola varsa ve gecikmeli düşüyor,
+   * SpringBoard'ın kilit bildirimi ise özel API (Guidelines 2.5.1 riski). Yani "iOS'ta da
+   * yalnız kilidi dinleyelim" seçeneği yok.
+   *
+   * Eşleme bilerek kabul edildi. Bayrağın sorduğu şey "ekran kapalı mı" değil, "ÜCRETSİZ
+   * YOL çalışıyor mu": iOS'ta uygulama arka plana düşer düşmez WebView köprüsü KESİN olarak
+   * askıya alınıyor, native SFSpeechRecognizer'ın arka planda çalıştığı ise DOĞRULANMADI.
+   * Yanlış tarafa düşmenin bedeli simetrik değil — fazladan bir Azure çağrısı kuruş,
+   * sessizce başarısız bir tanıma "duyamadım" sayılıp üç turda yürüyüşü durduruyor.
+   *
+   * Gecikme (debounce) EKLENMEDİ: kısa kesintide bayrağı geciktirmek o aralıkta sorulan
+   * kelimeyi arka planda ölü olabilecek tanıyıcıya yollar, yani parayı kurtarıp turu riske
+   * atar. Kısa kesintinin asıl zararı bunun yerine aşağıda kapatıldı (listenCut).
+   *
+   * Bu bayrak TTS ve SFX için tek karar verici DEĞİL; ikisi de ayrıca bridgeReady() bakıyor,
+   * o yüzden köprü öldüğünde ses zaten native yola düşer.
+   */
   useEffect(() => {
     const unsub = onScreenState((off) => {
       screenOffRef.current = off;
-      setSfxScreenOff(off); // ekran kapalı → SFX native res/raw (köprü susar)
-      if (off && nativeListeningRef.current) { try { stopListening(); } catch { /* yut */ } }
+      setSfxScreenOff(off); // köprü susar → SFX native ton sentezi
+      // Kesinti native dinleme SIRASINDA geldiyse tanıyıcı ölür: 8 sn zaman aşımını bekleme,
+      // hemen kes ve kelimeyi bir kez daha sor (bkz. judgeSpeak).
+      if (off && nativeListeningRef.current) { listenCut.current = true; try { stopListening(); } catch { /* yut */ } }
     });
     return () => { unsub(); stopWalkService(); };
   }, []);
@@ -181,6 +208,28 @@ export function WalkModeScreen() {
   function resolveManual(v: boolean | "skip") {
     const r = manualResolve.current; manualResolve.current = null;
     if (r) r(v);
+  }
+
+  /**
+   * Ücretsiz native dinleme turu. TRICK: önce mic AÇILIR, ~180 ms SONRA "şimdi konuş" sesi
+   * çalar — kullanıcı sesi duyar duymaz başlasa bile mic zaten açıktır, kısa kelimenin ilk
+   * hecesi kaçmaz. `listenCut` her turda sıfırlanır: dönüşte true ise sonuç kullanıcının
+   * sessizliği değil, araya giren kesintidir.
+   */
+  async function listenNative(): Promise<{ k: "v"; heard: string[] } | { k: "m" }> {
+    listenCut.current = false;
+    nativeListeningRef.current = true;
+    const race = Promise.race([
+      listenOnce(currentTargetLocale(), 8000).then((h) => ({ k: "v" as const, heard: h ?? [] })),
+      waitManual().then(() => ({ k: "m" as const })),
+    ]);
+    const miconTimer = setTimeout(() => sfx("micon"), 180);
+    const r = await race;
+    clearTimeout(miconTimer);
+    nativeListeningRef.current = false;
+    stopListening();
+    sfx("micoff");
+    return r;
   }
 
   /** Yeni kelimeyi öğret (intro turu): anons + Almanca + Türkçe + Almanca. Soru YOK. */
@@ -206,11 +255,9 @@ export function WalkModeScreen() {
     await gap(150); // TTS kuyruğu kısaca otursun (mic kendi sesimizi kapmasın)
     if (!alive()) return "ok";
     setPhase("listening");
-    // TRICK: önce mic AÇILIR, ~180ms SONRA "şimdi konuş" sesi çalar. Böylece kullanıcı sesi
-    // duyar duymaz başlasa bile mic zaten açık → kısa kelimenin ilk hecesi kaçmaz (güvenli).
-    // Kaynak: cebe koy YA DA güç tuşuyla ekran kapalı → sunucu (Azure) STT (paralı). Ekran açık → ücretsiz native.
+    // Kaynak: cebe koy YA DA ücretsiz yol güvenilmez (Android: ekran kapalı · iOS: uygulama
+    // arka planda — yukarıdaki uzun nota bak) → sunucu (Azure) STT, paralı. Yoksa native.
     const useAzure = pocketRef.current || screenOffRef.current;
-    nativeListeningRef.current = !useAzure;
     let res: { k: "v"; heard: string[] } | { k: "m" };
     if (useAzure) {
       // Azure: micon HEMEN (setTimeout arka planda durur); micoff kayıt biter bitmez (upload'dan
@@ -221,24 +268,21 @@ export function WalkModeScreen() {
         waitManual().then(() => ({ k: "m" as const })),
       ]);
     } else {
-      // Native: mic-aç trick — mic açıldıktan ~180ms sonra micon (ilk hece kaçmasın).
-      const listenP = Promise.race([
-        listenOnce(currentTargetLocale(), 8000).then((h) => ({ k: "v" as const, heard: h ?? [] })),
-        waitManual().then(() => ({ k: "m" as const })),
-      ]);
-      const miconTimer = setTimeout(() => sfx("micon"), 180);
-      res = await listenP;
-      clearTimeout(miconTimer);
-      stopListening();
-      sfx("micoff");
-      // Native dinleme SIRASINDA ekran kapandıysa recognizer ölür → boşsa aynı kelimeyi Azure ile tekrar.
-      if (res.k === "v" && res.heard.length === 0 && screenOffRef.current && alive()) {
+      res = await listenNative();
+      // Boş sonuç iki ayrı şey olabilir: kullanıcı susmuştur, ya da dinlemeyi biz kesmişizdir
+      // (araya kesinti girdi, tanıyıcı öldü). İkincisini "duyamadım" saymak haksız — üç
+      // duyamadım turu bitiriyor. Kelimeyi bir kez daha sor: hâlâ arka plandaysak Azure ile,
+      // kullanıcı geri döndüyse yine ücretsiz native ile. iOS'ta buranın önemi büyük: orada
+      // bildirime dokunmak bile kesinti sayılıyor, yani bu dal Android'dekinden çok daha sık
+      // çalışıyor. `screenOffRef` şartı korunuyor — kesme bize ulaşmadan tanıyıcı kendi
+      // ölmüş olabilir; koşul eskisinin üstüne EKLENİYOR, hiçbir durumda daha az tekrar yok.
+      if (res.k === "v" && res.heard.length === 0 && (listenCut.current || screenOffRef.current) && alive()) {
         await sayNative(w.tr);
-        const h2 = await azureListenOnce(withArtikel(w), 3000, () => sfx("micoff"));
-        res = { k: "v" as const, heard: h2 ?? [] };
+        res = screenOffRef.current
+          ? { k: "v" as const, heard: (await azureListenOnce(withArtikel(w), 3000, () => sfx("micoff"))) ?? [] }
+          : await listenNative();
       }
     }
-    nativeListeningRef.current = false;
     manualResolve.current = null;
     if (!alive()) return "ok";
 
