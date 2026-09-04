@@ -59,13 +59,40 @@ export { EXAM_TURNS, EXAM_SECONDS } from "./roleplay-const";
  * düzeltmesi yerine "bu dersin kalıbına göre" düzeltme almak, dersin
  * bütünlüğünü koruyan şey.
  */
+/**
+ * Hedef dilin adı ve o dile özgü yazım uyarısı.
+ *
+ * Promptlar baştan sona "Almanca" yazıyordu; İngilizce kursta model öğrenciye
+ * Almanca konuşurdu. Ad kurstan türüyor.
+ *
+ * Türkçe metinler EK ALMAYACAK biçimde kuruluyor ("Almancaya dön" yerine
+ * "{dil} diline dön"): ek uyumu dile göre değişiyor (Almanca+ya / İngilizce+ye)
+ * ve yer tutucuyla doğru üretilemez.
+ */
+function targetLang(course: string | undefined): { name: string; dialect: string; chars: string } {
+  if (course === "en") {
+    return {
+      name: "İngilizce",
+      dialect: "Standart İngilizce konuşuyorsun.",
+      chars: "",
+    };
+  }
+  if (course === "gsw-zh") {
+    return {
+      name: "Almanca",
+      dialect:
+        "Züritüütsch (Zürih Almancası) konuşuyorsun. Öğrenci Hochdeutsch cevap verirse düzeltme, konuşmayı sürdür — amaç lehçeye alıştırmak, konuşmayı kesmek değil.",
+      chars: "Almanca (ä ö ü ß) ",
+    };
+  }
+  return { name: "Almanca", dialect: "Standart Almanca (Hochdeutsch) konuşuyorsun.", chars: "Almanca (ä ö ü ß) " };
+}
+
 export function roleplayPrompt(lesson: Lesson, opts?: { phase?: RoleplayPhase; mode?: RoleplayMode }): string {
   const phase: RoleplayPhase = opts?.phase ?? "develop";
   if (opts?.mode === "exam") return examPrompt(lesson, phase);
-  const dialect =
-    lesson.course === "gsw-zh"
-      ? "Züritüütsch (Zürih Almancası) konuşuyorsun. Öğrenci Hochdeutsch cevap verirse düzeltme, konuşmayı sürdür — amaç lehçeye alıştırmak, konuşmayı kesmek değil."
-      : "Standart Almanca (Hochdeutsch) konuşuyorsun.";
+  const tgt = targetLang(lesson.course);
+  const dialect = tgt.dialect;
 
   // Karakterin adı isteme giriyor: adı olmayan bir muhatap her turda yeniden
   // yabancı oluyor ve model de kendine "ich" dışında bir kimlik kuramıyordu.
@@ -76,7 +103,7 @@ export function roleplayPrompt(lesson: Lesson, opts?: { phase?: RoleplayPhase; m
   const patterns = lesson.patterns.map((p) => `- ${p.de} — ${p.tr}`).join("\n");
   const vocab = lesson.vocab.map((v) => `${v.de} (${v.tr})`).join(", ");
 
-  return `Sen bir Almanca dersinin konuşma pratiği bölümündesin. Öğrencinin ana dili Türkçe, seviyesi ${lesson.level}. ${dialect}
+  return `Sen bir ${tgt.name} dersinin konuşma pratiği bölümündesin. Öğrencinin ana dili Türkçe, seviyesi ${lesson.level}. ${dialect}
 
 ROLÜN
 Adın ${who.name}. ${lesson.roleplay.partner} rolündesin — ${who.note}.
@@ -205,14 +232,14 @@ NASIL KONUŞURSUN
   cümle, bazen doğrudan soru. Turların hepsi "övgü + soru" olursa konuşma
   kalıba dönüşüyor.
 - Öğrenci Türkçe yazarsa ya da tıkanırsa, cevabına MUTLAKA Türkçe bir
-  açıklamayla başla, sonra Almancaya dön.
+  açıklamayla başla, sonra ${tgt.name} diline dön.
 - Yıldız, tire, madde işareti gibi biçimlendirme kullanma; düz metin yaz.
   Rol metnin sesli okunuyor — okunduğunda doğal duyacak cümleler kur.
 
 CEVABIN EN SONUNDA ÜÇ ÖNERİ (her seferinde yaz)
 - Bu başlığı cevabına YAZMA. Yalnızca öneri satırlarını yaz.
 - Öğrencinin sana verebileceği 3 cevap öner, her biri ayrı satırda ${SUGGESTION_MARK} ile.
-- Öneriler Almanca, ${lesson.level} seviyesinde, en fazla 8 kelime.
+- Öneriler ${tgt.name}, ${lesson.level} seviyesinde, en fazla 8 kelime.
 - En az ikisi BU DERSİN KALIPLARINI kullanan cümleler olsun.
 - ÜÇÜ AYNI KELİMEYLE BAŞLAMASIN ve birbirinin kopyası olmasın. Gerçek
   kullanımda üç öneri sürekli "Heute… / Morgen… / Am Wochenende…" diye
@@ -221,7 +248,7 @@ CEVABIN EN SONUNDA ÜÇ ÖNERİ (her seferinde yaz)
   cümle yazmak öneri değil dolgu oluyor.
 - Öneri satırlarına açıklama, tırnak, numara ekleme.
 
-Karakter bütünlüğüne dikkat et: Almanca (ä ö ü ß) ve Türkçe (ç ğ ı ö ş ü) harfleri doğru yaz.
+Karakter bütünlüğüne dikkat et: ${tgt.chars}ve Türkçe (ç ğ ı ö ş ü) harfleri doğru yaz.
 ${phaseBlock(phase)}`;
 }
 
@@ -269,9 +296,10 @@ düzeltme satırını yine yaz.`;
  * da yok: tıkanan öğrenciye kısa, basit Almanca ile yeniden sorar.
  */
 function examPrompt(lesson: Lesson, phase: RoleplayPhase): string {
-  const dialect = lesson.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun." : "Standart Almanca (Hochdeutsch) konuşuyorsun.";
+  const tgt = targetLang(lesson.course);
+  const dialect = lesson.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun." : tgt.dialect;
   const who = characterFor(lesson, lessonIndexInLevel(lesson));
-  return `Sen bir Almanca KONUŞMA SINAVINDA öğrencinin muhatabısın. Öğrencinin seviyesi ${lesson.level}. ${dialect}
+  return `Sen bir ${tgt.name} KONUŞMA SINAVINDA öğrencinin muhatabısın. Öğrencinin seviyesi ${lesson.level}. ${dialect}
 
 ROLÜN
 Adın ${who.name}. ${lesson.roleplay.partner} rolündesin — ${who.note}. Gerçek bir kişi gibi davran.
@@ -291,13 +319,13 @@ Gerçek kişilerin adına konuşma; tıbbi, hukuki ya da mali tavsiye verme.
 
 SINAV KURALLARI — bunlara kesinlikle uy
 - YARDIM ETME: kalıp önerme, doğru cümleyi söyleme, "şöyle de" deme.
-- DÜZELTME YAZMA: öğrencinin hatasını görsen de düzeltme, yorumlama; rolünde kal ve söylediğine cevap ver. Anlaşılmayan bir şey söylerse gerçek bir muhatap gibi kısa, basit Almanca ile yeniden sor.
-- TÜRKÇE KULLANMA: öğrenci Türkçe konuşsa bile Almanca cevap ver.
+- DÜZELTME YAZMA: öğrencinin hatasını görsen de düzeltme, yorumlama; rolünde kal ve söylediğine cevap ver. Anlaşılmayan bir şey söylerse gerçek bir muhatap gibi kısa, basit ${tgt.name} ile yeniden sor.
+- TÜRKÇE KULLANMA: öğrenci Türkçe konuşsa bile ${tgt.name} cevap ver.
 - ${CORRECTION_MARK} ya da ${SUGGESTION_MARK} işaretli satır YAZMA; yalnız rol metnin.
 - Kısa konuş: en fazla 2 cümle, sonunda bir soru. ${lesson.level} seviyesinde kal.
 - Sahneyi ilerlet: her turda yeni bir ayrıntı, aynı soruyu tekrar sorma. Övgü cümleleri yok.
 - Yıldız, tire, madde işareti yok; düz metin. Rol metnin sesli okunuyor.
-Almanca (ä ö ü ß) harfleri doğru yaz.${
+${tgt.chars}harfleri doğru yaz.${
     phase === "wrapup"
       ? `
 
@@ -347,9 +375,10 @@ export async function* streamRoleplay(
  */
 export function dialoguePrompt(ex: SpeakingDialogueExercise, closing: boolean): string {
   const theme = ex.theme!;
-  const dialect = ex.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun; öğrenci Hochdeutsch cevap verirse düzeltme, sürdür." : "Standart Almanca (Hochdeutsch) konuşuyorsun.";
+  const tgt = targetLang(ex.course);
+  const dialect = ex.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun; öğrenci Hochdeutsch cevap verirse düzeltme, sürdür." : tgt.dialect;
   const targets = ex.targets.map((t) => `- ${t.de} — ${t.tr}`).join("\n");
-  return `Sen bir Almanca konuşma alıştırmasında öğrencinin muhatabısın. Öğrencinin ana dili Türkçe, seviyesi ${ex.level}. ${dialect}
+  return `Sen bir ${tgt.name} konuşma alıştırmasında öğrencinin muhatabısın. Öğrencinin ana dili Türkçe, seviyesi ${ex.level}. ${dialect}
 
 ROLÜN: ${theme.role}.
 SAHNE: ${ex.intro}
@@ -371,9 +400,9 @@ KURALLAR
 - Öğrencinin söylediğine cevap ver; genel övgü yok. Sahneyi her turda ilerlet, aynı soruyu tekrar sorma.
 - Öğrenci senaryoda olmayan bir şey söylese de anla ve devam et (ör. "Cappuccino, aber ohne Zucker").
 - Dilbilgisi hatasını DÜZELTME; bu bir anlama/akış alıştırması. ${CORRECTION_MARK} satırı yazma.
-- Öğrenci Türkçe konuşur ya da tıkanırsa: tek cümle Türkçe yardım, sonra Almanca soru.
+- Öğrenci Türkçe konuşur ya da tıkanırsa: tek cümle Türkçe yardım, sonra ${tgt.name} soru.
 - Öneri satırı (${SUGGESTION_MARK}) YAZMA: küçük modeller işaret satırını gövdeye karıştırıyordu, öğrencinin ipucu için senaryo örneği var.
-- Düz metin; yıldız, tire, madde işareti yok. Almanca harfleri (ä ö ü ß) doğru yaz.${closing ? `
+- Düz metin; yıldız, tire, madde işareti yok. ${tgt.chars}harfleri doğru yaz.${closing ? `
 
 KAPANIŞ TURU — hedefe ulaşıldı: sahneyi doğal biçimde kapat, kısa veda (en fazla 2 cümle). SORU SORMA.` : ""}`;
 }
