@@ -11,8 +11,14 @@ karşılığı).
 
 ## Durum (2026-09-04)
 
-iOS **yayında değil.** `mobile/ios/Lernomi.xcodeproj` var ama React Native şablonundan
-çıkmamış: `PRODUCT_BUNDLE_IDENTIFIER` hâlâ `org.reactjs.native.example.$(PRODUCT_NAME…)`.
+iOS **yayında değil** ve bir satır kodu bile **derlenmedi** — geliştirme makinesi Linux,
+macOS/Xcode yok. Bugün `docs/plan/ios-parity.md` şeritleri boyunca yazılanların hepsi
+"derlenmemiş kod" sayılır; hangi iddianın neye dayandığı her bölümün sonunda yazılı.
+
+Bugün kapanan boşluklar (hepsi DOĞRULANMADI): şablon bundle kimliği `app.lernomi.ios`
+oldu ve sürüm Android'le eşitlendi, `.lproj` dosyaları hedefe bağlandı, uygulama ikonu
+ve markalı açılış ekranı geldi, Apple ile Giriş kuruldu, Google girişi iOS'ta
+kurulabilir hâle getirildi. Açık kalanlar aşağıdaki tabloda.
 
 Hukuki metinler iOS için **hazır yazıldı ama kapalı**: `src/lib/legal.ts` içindeki
 `LEGAL_PLATFORMS.ios` `false`. Açıldığında şunlar kendiliğinden devreye giriyor:
@@ -31,14 +37,16 @@ Bayrağı açmadan önce `LEGAL_VERSION` artırılmalı ve `LEGAL_CHANGELOG`'a k
 | # | İş | Neden |
 |---|---|---|
 | 1 | Apple Developer Program hesabı | Bundle kimliği, sertifika, App Store Connect kaydı bunsuz yok |
-| 2 | Gerçek bundle kimliği (ör. `app.lernomi.ios`) | Şablon kimliğiyle yükleme kabul edilmez |
-| 3 | **Apple ile Giriş** | Google ile giriş sunulduğu için App Store Review Guidelines 4.8 istiyor. Metin işi değil, ürün işi |
+| 2 | ~~Gerçek bundle kimliği~~ → `app.lernomi.ios` **yazıldı** (derlenmedi) | Şablon kimliğiyle yükleme kabul edilmez |
+| 3 | ~~**Apple ile Giriş**~~ → **kod yazıldı**, hesap + entitlements bekliyor | Google ile giriş sunulduğu için App Store Review Guidelines 4.8 istiyor. Metin işi değil, ürün işi. Ayrıntı aşağıda |
 | 4 | Uygulama içi hesap silme | 5.1.1(v) zorunlu kılıyor — Android'de var, iOS'ta da aynı yere bağlanmalı |
 | 5 | Gizlilik etiketleri | Aşağıdaki tablo App Store Connect'e girilir |
 | 6 | Yaş derecelendirmesi | Play'de 18+ seçildi; App Store derecelendirmesi ayrı doldurulur ve tutarlı olmalı |
 | 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi ve kod yazıldı, ama macOS/Xcode olmadan derlenip denenemedi (aşağıya bak) |
-| 8 | `.lproj` dosyalarının Xcode hedefine eklenmesi | `tr/en/de.lproj/InfoPlist.strings` yazıldı ama `project.pbxproj`'da kayıtlı DEĞİL, yani derlemeye girmiyor. Xcode'da dosyaları hedefe sürüklemek yeterli |
-| 9 | Uygulama ikonu | `Images.xcassets/AppIcon.appiconset` boş (0 png). İkonsuz yükleme reddedilir |
+| 8 | ~~`.lproj` dosyalarının Xcode hedefine eklenmesi~~ → **bağlandı** (derlenmedi) | Dosyalar yazılmıştı ama `project.pbxproj`'da kayıtlı değildi, yani derlemeye girmiyordu |
+| 9 | ~~Uygulama ikonu~~ → **üretildi** (Xcode'da görülmedi) | İkonsuz yükleme reddedilir |
+| 10 | Sign in with Apple **yetkisi** (entitlements) + `APPLE_BUNDLE_ID` env değeri | Kod hazır ama yetki olmadan istek `1000`/`1004` ile düşer; env boşken sağlayıcı hiç kurulmaz. Bkz. `docs/plan/ios-parity-A-teslim.md` |
+| 11 | Google iOS OAuth istemcisi | `IOS_CLIENT_ID` + `CFBundleURLTypes` ikisi birden, aynı istemciden. Bugün ikisi de boş; boşken düğme iOS'ta çizilmiyor |
 
 ## Ekran kapalıyken yürüyüş modu (arka planda ses)
 
@@ -143,6 +151,19 @@ reklam kimliği toplanmıyor, üçüncü taraf reklam ya da analitik SDK'sı yok
 | Purchases › Purchase History | Evet | Evet | App Functionality |
 | Diagnostics | Hayır | — | — |
 | Location, Contacts, Health, Financial Info, Browsing History, Search History, Sensitive Info | Hayır | — | — |
+
+Bu tablo ile uygulama paketindeki `mobile/ios/Lernomi/PrivacyInfo.xcprivacy`
+**birebir aynı olmak zorunda** — ayrışırsa inceleme takılır. 2026-09-04'te makine
+tarafından karşılaştırıldı: altı türün her birinde tür adı, "kimliğe bağlı" bayrağı,
+amaç listesi ve `tracking=false` örtüşüyor; belgede "Hayır" yazan hiçbir tür
+manifestoda yok, manifestoda belgede olmayan tür yok, `NSPrivacyTracking` de false.
+Bu tabloya satır eklenirse manifesto da aynı commit'te değişmeli.
+
+Bugün eklenen Apple girişi paketi (`@invertase/react-native-apple-authentication`)
+`NSPrivacyAccessedAPITypes`'a bir şey eklemiyor: kendi gizlilik manifestosu yok ama
+"gerekçe isteyen" (required reason) API'lerin hiçbirini de kullanmıyor — kaynağında
+`UserDefaults`, dosya zaman damgası, sistem açılış zamanı ya da disk alanı çağrısı
+geçmiyor.
 
 Ses için dikkat: Apple "toplanıyor" derken **cihazdan ayrılıp saklanmayı** kastediyor.
 Ses sunucuya gidiyor ama tanıma biter bitmez siliniyor ve saklanmıyor; bu yüzden
