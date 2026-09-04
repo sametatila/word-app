@@ -1,4 +1,5 @@
 import "server-only";
+import { courseOrDefault } from "@/lib/courses";
 import { and, asc, desc, eq, gt, gte, inArray, isNotNull, lt, lte, notInArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats, events, profiles, reviews, sessionState, userWords, words } from "@/lib/db/schema";
@@ -1228,7 +1229,7 @@ export function makeRound(
       };
     }
     case "cloze": {
-      const cloze = buildCloze(word);
+      const cloze = buildCloze(word, pool);
       if (!cloze) return null;
       return {
         id: nextId(),
@@ -1294,7 +1295,34 @@ function buildOrder(
 }
 
 /** Örnek cümlede kelimeyi boşlukla değiştirir; uygun cümle yoksa null döner. */
-function buildCloze(word: RoundWord): { sentence: string; answer: string } | null {
+/**
+ * Hedef dilin İngilizce olduğu kurslarda çok kelimeli terimler cümlede
+ * ÇEKİMLENEREK geçiyor: "get on" → "getting on", "be closed" → "is closed",
+ * "do crafts" → "doing crafts". Birebir arama bunları bulamadığı için o
+ * kelimeler hiç boşluk doldurma turu üretmiyordu (Almancadaki ayrılabilir
+ * fiil sorununun İngilizce karşılığı).
+ *
+ * Yalnız BİTİŞİK geçişler kabul ediliyor. Araya nesne giren ayrık kullanımlar
+ * ("pick you up", "give Anna a sweater as a gift") bilerek dışarıda: onları
+ * boşluğa çevirmek cümleden nesneyi de silmek olurdu ve cevap
+ * öğrenilebilir bir kalıp olmaktan çıkardı.
+ */
+function phrasalRegex(stem: string): RegExp | null {
+  const parts = stem.split(/\s+/);
+  if (parts.length < 2) return null;
+  const [verb, ...rest] = parts;
+  // "be" düzensiz: çekimleri harf ekiyle türetilemez.
+  const head =
+    verb.toLowerCase() === "be"
+      ? "(?:is|are|was|were|am|been|being|be)"
+      : `${escapeRegExp(verb)}\\p{L}{0,4}`;
+  return new RegExp(
+    `(?<![\\p{L}\\p{N}])${head}\\s+${escapeRegExp(rest.join(" "))}(?![\\p{L}\\p{N}])`,
+    "iu",
+  );
+}
+
+function buildCloze(word: RoundWord, pool: (typeof words.$inferSelect)[]): { sentence: string; answer: string } | null {
   const raw = firstExample(word.beispiel);
   if (!raw || raw.length < 12 || raw.length > 110) return null;
   const stem = word.de.replace(/^sich\s+/, "");
@@ -1308,8 +1336,16 @@ function buildCloze(word: RoundWord): { sentence: string; answer: string } | nul
     "iu",
   );
   const match = raw.match(re);
-  if (!match) return null;
-  return { sentence: raw.replace(re, "_____"), answer: match[0] };
+  if (match) return { sentence: raw.replace(re, "_____"), answer: match[0] };
+
+  // Hedef dil havuzdan okunuyor (havuz aynı kursun kelimeleri). Almanca ve
+  // Zürih kurslarında bu noktadan sonrası hiç çalışmaz — davranış birebir aynı.
+  if (courseOrDefault(pool[0]?.course).targetLang !== "en") return null;
+  const phrasal = phrasalRegex(stem);
+  if (!phrasal) return null;
+  const pm = raw.match(phrasal);
+  if (!pm) return null;
+  return { sentence: raw.replace(phrasal, "_____"), answer: pm[0] };
 }
 
 /**
