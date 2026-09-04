@@ -15,8 +15,8 @@ import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } fro
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeReady } from "../lib/ttsBridge";
-import { TURKISH_VOICE } from "../lib/voices";
-import { nativeLangName, targetLangName } from "../lib/i18n";
+import { narrationVoice } from "../lib/voices";
+import { currentLang, nativeLangName, targetLangName } from "../lib/i18n";
 import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
@@ -106,8 +106,14 @@ export function WalkModeScreen() {
   // TTS: ekran kapalı YA DA köprü (WebView) hazır değilse (ekran yeni uyandı, bildirim vb.) NATIVE
   // /api/tts (neural, arka planda çalar) — cihaz-TTS'e (robotik) düşmeden, durmadan, sesi koruyarak.
   // Köprü hazırsa (normal ekran-açık) köprüyü kullan.
-  const sayTR = (t: string) => (screenOffRef.current || !bridgeReady() ? speakServerTts(TURKISH_VOICE, t) : speakAndWaitVoiced(t, TURKISH_VOICE));
-  const sayDE = (t: string) => (screenOffRef.current || !bridgeReady() ? speakServerTts(currentVoiceId(), t) : speakAndWaitVoiced(t, currentVoiceId()));
+  // sayNative: ÖĞRETMENİN sesi (kullanıcının anadili). Eskiden sayTR adıyla
+  // doğrudan TURKISH_VOICE kullanıyordu — anadili Türkçe olmayan kullanıcıya
+  // anlatım yine Türkçe okunurdu. sayTarget: öğrenilen dilin sesi (kurstan).
+  const sayNative = (txt: string) => {
+    const v = narrationVoice(currentLang());
+    return screenOffRef.current || !bridgeReady() ? speakServerTts(v, txt) : speakAndWaitVoiced(txt, v);
+  };
+  const sayTarget = (txt: string) => (screenOffRef.current || !bridgeReady() ? speakServerTts(currentVoiceId(), txt) : speakAndWaitVoiced(txt, currentVoiceId()));
 
   /** Biriken cevapları SRS'e yaz (progress YOK — walk stateless). Tur sonunda + çıkışta. */
   function flush(final = false) {
@@ -181,10 +187,10 @@ export function WalkModeScreen() {
   async function teachIntro(w: WalkWord, alive: () => boolean): Promise<boolean> {
     setPhase("teaching"); setVerdict(null); setHeard(""); wordStart.current = Date.now();
     const target = withArtikel(w);
-    await sayTR("Yeni kelime."); if (!alive()) return true;
-    await sayDE(target); if (!alive()) return true;
-    await sayTR(w.tr); if (!alive()) return true;
-    await sayDE(target); if (!alive()) return true;
+    await sayNative(tx("walk.new_word")); if (!alive()) return true;
+    await sayTarget(target); if (!alive()) return true;
+    await sayNative(w.tr); if (!alive()) return true;
+    await sayTarget(target); if (!alive()) return true;
     if (user && typeof w.id === "number") answers.current.push({ wordId: w.id, game: "intro", correct: true, latencyMs: 0 });
     return false;
   }
@@ -193,8 +199,8 @@ export function WalkModeScreen() {
       "stopped" = duyamadım penceresi turu durdurdu. */
   async function judgeSpeak(w: WalkWord, alive: () => boolean, justTaught: boolean): Promise<"ok" | "stopped"> {
     setPhase("speaking"); setVerdict(null); setHeard(""); wordStart.current = Date.now();
-    if (justTaught) { await sayTR("Şimdi sen söyle."); if (!alive()) return "ok"; } // yeni kelime → geçiş
-    await sayTR(w.tr); // Türkçe ipucu (Emel)
+    if (justTaught) { await sayNative(tx("walk.your_turn")); if (!alive()) return "ok"; } // yeni kelime → geçiş
+    await sayNative(w.tr); // Türkçe ipucu (Emel)
     if (!alive()) return "ok";
 
     await gap(150); // TTS kuyruğu kısaca otursun (mic kendi sesimizi kapmasın)
@@ -227,7 +233,7 @@ export function WalkModeScreen() {
       sfx("micoff");
       // Native dinleme SIRASINDA ekran kapandıysa recognizer ölür → boşsa aynı kelimeyi Azure ile tekrar.
       if (res.k === "v" && res.heard.length === 0 && screenOffRef.current && alive()) {
-        await sayTR(w.tr);
+        await sayNative(w.tr);
         const h2 = await azureListenOnce(withArtikel(w), 3000, () => sfx("micoff"));
         res = { k: "v" as const, heard: h2 ?? [] };
       }
@@ -265,7 +271,7 @@ export function WalkModeScreen() {
       if (unheardWin.current.length > UNHEARD_WINDOW) unheardWin.current.shift();
       if (unheardWin.current.filter(Boolean).length >= UNHEARD_LIMIT) {
         setVerdict("unheard"); setPhase("judging");
-        await sayTR("Sesini duyamıyorum. Turu durdurdum; mikrofonu kontrol edip hazır olunca devam et.");
+        await sayNative(tx("walk.mic_silent"));
         setKeepAwake(false); stopWalkService(); setPocketMode(false);
         if (alive()) setPhase("stopped");
         return "stopped";
@@ -281,19 +287,19 @@ export function WalkModeScreen() {
     setPhase("judging");
     if (result === "correct") {
       setVerdict("correct"); haptic("correct"); sfx("correct");
-      await sayDE(target);
+      await sayTarget(target);
       recordSpeak(w, true);
     } else if (result === "wrong") {
       setVerdict("wrong"); haptic("wrong"); sfx("wrong");
-      await sayTR("Doğrusu:"); await sayDE(target);
+      await sayNative(tx("walk.correct_is")); await sayTarget(target);
       recordSpeak(w, false);
     } else if (result === "skip") {
       setVerdict("skip");
-      await sayTR(encourage()); await sayDE(target);
+      await sayNative(encourage()); await sayTarget(target);
       bumpTally(false); // atla: SRS'e yazılmaz ama tur sayısına dahil (sayaç /toplam tutarlı)
     } else {
       setVerdict("unheard");
-      await sayTR("Duyamadım."); await sayDE(target);
+      await sayNative(tx("walk.not_heard")); await sayTarget(target);
       bumpTally(false); // duyulmadı: SRS'e yazılmaz (kelime due kalır) ama tur sayısına dahil
     }
     return "ok";
@@ -339,7 +345,7 @@ export function WalkModeScreen() {
     if (pocketRef.current || screenOffRef.current) { await askContinue(alive); return; }
     setKeepAwake(false); stopWalkService();
     setPhase("done");
-    void sayTR(`Tur bitti. ${tallyRef.current.total} sorudan ${tallyRef.current.correct} doğru.`);
+    void sayNative(tx("walk.tour_done", { toplam: tallyRef.current.total, dogru: tallyRef.current.correct }));
   }
 
   /** Başla: önce uygulama içi açıklama ve onay (bir kez), sonra sistem izni ve tur. */
@@ -364,7 +370,7 @@ export function WalkModeScreen() {
     if (greet) {
       // Kısa TTS karşılama — doğrudan ilk kelimeye dalmadan.
       setVerdict(null); setHeard(""); setGreeting(true); setPhase("speaking");
-      await sayTR("Hazırsan başlıyoruz. Türkçesini duy, Almancasını söyle.");
+      await sayNative(tx("walk.greeting", { lang: targetLangName() }));
       setGreeting(false);
       if (!mounted.current) return;
     }
@@ -378,7 +384,7 @@ export function WalkModeScreen() {
       const p = await fetchSession(day.current, { walk: true, skip: Array.from(askedIds.current) });
       const wr = mapRounds(p.rounds ?? []);
       if (wr.length) { setRounds(wr); setCurWord(wr[0].word); start(wr, false); return; }
-      setNoMore(true); setPhase("done"); void sayTR("Bugünlük tekrar kalmadı.");
+      setNoMore(true); setPhase("done"); void sayNative(tx("walk.no_more"));
     } catch { setPhase("done"); }
   }
 
@@ -423,7 +429,7 @@ export function WalkModeScreen() {
         void runLoop(wr, 0);
         return;
       }
-      await sayTR("Bugünlük tekrar kalmadı."); setNoMore(true); finishDone();
+      await sayNative(tx("walk.no_more")); setNoMore(true); finishDone();
     } catch { finishDone(); }
   }
 
@@ -431,16 +437,16 @@ export function WalkModeScreen() {
   async function askContinue(alive: () => boolean) {
     const c = tallyRef.current;
     setPhase("continue");
-    await sayTR(`Tur bitti. ${c.total} sorudan ${c.correct} doğru. Devam edelim mi?`);
+    await sayNative(tx("walk.tour_done_continue", { toplam: c.total, dogru: c.correct }));
     if (!alive()) return;
     let yes = await listenConfirm(alive);
     if (yes === null && alive()) {
-      await sayTR("Devam edelim mi? Evet ya da hayır de.");
+      await sayNative(tx("walk.continue_yes_no"));
       yes = await listenConfirm(alive);
     }
     if (!alive()) return;
-    if (yes === true) { await sayTR("Devam ediyoruz."); await continueTour(alive); }
-    else { if (yes === false) await sayTR("Tamam, iyi günler."); finishDone(); }
+    if (yes === true) { await sayNative(tx("walk.continuing")); await continueTour(alive); }
+    else { if (yes === false) await sayNative(tx("walk.goodbye")); finishDone(); }
   }
 
   function stopAndLeave() { runToken.current++; stopListening(); setKeepAwake(false); stopWalkService(); nav.goBack(); }

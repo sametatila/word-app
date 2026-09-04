@@ -3,6 +3,7 @@
  * voice-intent parseSkip/parseConfirm) portu. Yürüyüş modu STT hükmü bunu kullanır.
  */
 import { currentTargetLang } from "./courses";
+import { currentLang, t } from "./i18n";
 
 /**
  * Hedef dilin tanımlıkları — eşleştirmede atılır ki "die Katze" ile "Katze"
@@ -97,16 +98,43 @@ function foldTurkish(s: string): string {
 }
 
 /** Tur sonu "devam edelim mi?" — evet/true, hayır/false, belirsiz/null. Önce HAYIR. */
+/**
+ * "Devam edelim mi?" cevabı — ANLATIM dilinde verilir, hedef dilde değil.
+ *
+ * Yalnız Türkçe kalıplar yazılıydı; arayüz dili İngilizce olan kullanıcı "yes"
+ * dediğinde hiçbiri tutmuyor, soru ikinci kez sorulup tur sessizce bitiyordu.
+ */
+const CONFIRM: Record<string, { no: RegExp; yes: RegExp }> = {
+  tr: {
+    no: /\b(hayir|dur|yeter|iptal|bitir|kapat|yok)\b|istemiyor|etmeyelim|kalsin/,
+    yes: /\b(evet|devam|tamam|olur|hadi|elbette|tabii|peki)\b|devam edelim|devam et/,
+  },
+  en: {
+    no: /\b(no|nope|stop|quit|exit|enough|later|cancel)\b|not now|i ?'?a?m done/,
+    yes: /\b(yes|yeah|yep|yup|sure|ok|okay|continue|go|more|please)\b|let ?'?s (go|continue)|keep going/,
+  },
+  de: {
+    no: /\b(nein|ne|stopp|stop|schluss|genug|aufhoren|abbrechen|später)\b|nicht mehr/,
+    yes: /\b(ja|jawohl|klar|gerne|weiter|okay|ok|los|naturlich|bitte)\b|mach weiter|weiter machen/,
+  },
+};
+
 export function parseConfirm(said: string): boolean | null {
   const s = foldTurkish(said);
   if (!s) return null;
-  if (/\b(hayir|dur|yeter|iptal|bitir|kapat|yok)\b/.test(s) || /(istemiyor|etmeyelim|kalsin)/.test(s)) return false;
-  if (/\b(evet|devam|tamam|olur|hadi|elbette|tabii|peki)\b/.test(s) || /(devam edelim|devam et)/.test(s)) return true;
+  const r = CONFIRM[currentLang()] ?? CONFIRM.tr;
+  if (r.no.test(s)) return false;
+  if (r.yes.test(s)) return true;
   return null;
 }
 
-/** Yanlış/atlama sonrası kısa cesaret cümlesi (web ENCOURAGE). */
+/**
+ * Yanlış/atlama sonrası kısa cesaret cümlesi (web ENCOURAGE).
+ *
+ * Cümleler ANLATIM dilinde okunuyor, bu yüzden sözlükten geliyor: tek anahtar
+ * "|" ile ayrılmış birkaç alternatif taşır.
+ */
 export function encourage(): string {
-  const lines = ["Sorun değil.", "Olsun, devam.", "İyi gidiyorsun.", "Bir dahakine."];
-  return lines[Math.floor(Math.random() * lines.length)];
+  const lines = t("walk.encourage").split("|").filter(Boolean);
+  return lines[Math.floor(Math.random() * lines.length)] ?? "";
 }

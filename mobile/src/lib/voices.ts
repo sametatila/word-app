@@ -7,7 +7,7 @@
  * deviceVoiceFor); ama kullanıcıya gösterilen seçim ve saklanan tercih web ile
  * birebir aynı — kurs başına iki ses.
  */
-import { courseOrDefault, type CourseId } from "./courses";
+import { courseOrDefault, type CourseId, type NativeLang } from "./courses";
 
 export type VoiceId =
   | "de-DE-KatjaNeural"
@@ -20,6 +20,24 @@ export type VoiceId =
 
 /** Ders anlatım sesi (Türkçe) — kullanıcı seçmez, alternatifi yok. */
 export const TURKISH_VOICE: VoiceId = "tr-TR-EmelNeural";
+
+/**
+ * ANLATIM sesi — öğretmenin konuştuğu dil, yani kullanıcının ANADİLİ.
+ *
+ * Hedef dille karışmaz: anlatım dili tanım gereği hedef dilden farklıdır
+ * (Türk kullanıcı Almanca öğrenirken anlatım Türkçe; İngiliz kullanıcı Almanca
+ * öğrenirken anlatım İngilizce). Yürüyüş modu eskiden doğrudan TURKISH_VOICE
+ * kullanıyordu — anadili Türkçe olmayan kullanıcıya anlatım yine Türkçe
+ * okunurdu.
+ */
+const NARRATION: Record<NativeLang, VoiceId> = {
+  tr: "tr-TR-EmelNeural",
+  en: "en-US-JennyNeural",
+  de: "de-DE-KatjaNeural",
+};
+export function narrationVoice(lang: NativeLang): VoiceId {
+  return NARRATION[lang] ?? TURKISH_VOICE;
+}
 
 export type Voice = {
   id: VoiceId;
