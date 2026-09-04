@@ -23786,7 +23786,9 @@
      "accept": [
       "There's a problem with it.",
       "There is a problem.",
-      "There's a problem."
+      "There's a problem.",
+      "There is a problem with this.",
+      "There's a problem with this."
      ],
      "hint": [
       {
@@ -25586,11 +25588,11 @@
      },
      {
       "lang": "en",
-      "text": "My address is Bahar Street, number five."
+      "text": "My address is 5 Bahar Street."
      },
      {
       "lang": "tr",
-      "text": "Yani 'Adresim Bahar Sokak, numara beş.' İngilizcede önce sokak, sonra numara söylenir."
+      "text": "Yani 'Adresim Bahar Sokak numara beş.' Dikkat: İngilizcede önce numara, sonra sokak adı gelir — Türkçenin tersi."
      }
     ]
    },
@@ -25602,7 +25604,7 @@
      },
      {
       "lang": "en",
-      "text": "My address is Bahar Street number five"
+      "text": "My address is 5 Bahar Street."
      },
      {
       "lang": "tr",
@@ -25718,10 +25720,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "My address is Ada Street number three",
+     "target": "My address is 3 Ada Street.",
      "accept": [
-      "My address is Ada Street, number three",
-      "My address is Ada Street number 3"
+      "My address is 3 Ada Street",
+      "My address is number 3, Ada Street."
      ],
      "hint": [
       {
@@ -26796,12 +26798,15 @@
      },
      {
       "lang": "en",
-      "text": "I wait at the bus stop."
+      "text": "I'm waiting at the bus stop."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I wait at the bus stop."
+     "target": "I'm waiting at the bus stop.",
+     "accept": [
+      "I am waiting at the bus stop."
+     ]
     }
    },
    {
@@ -27097,7 +27102,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bunu bileti birleştirelim. Bir bilet istiyorum:"
+      "text": "Bunu biletle birleştirelim. Bir bilet istiyorum:"
      },
      {
       "lang": "en",
@@ -29007,7 +29012,7 @@
    },
    {
     "de": "Can I see the park?",
-    "tr": "bir şeyin mümkün olup olmadığını, izin isteyip istemediğini sorarken kullanılır"
+    "tr": "bir şeyin mümkün olup olmadığını sorarken ya da izin isterken kullanılır"
    },
    {
     "de": "The museum is open today.",
@@ -30084,8 +30089,7 @@
      "kind": "produce",
      "target": "I go to school by bus.",
      "accept": [
-      "I go to school by bus",
-      "I go to the school by bus."
+      "I go to school by bus"
      ],
      "hint": [
       {
@@ -30258,7 +30262,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yani \"işe nasıl gidiyorsun?\". Buradaki \"do\" soru kelimesidir, cümlenin başında durur ve çevrilmez. Lütfen tekrar et:"
+      "text": "Yani 'işe nasıl gidiyorsun?'. Buradaki do bir yardımcı fiildir, soru sözcüğü değil: anlamı yoktur, çevrilmez ve soru sözcüğünden hemen sonra gelir — How, do, you, sonra fiil. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -31583,7 +31587,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çok güzel. Şimdi tam bir cümle kuralım. Birine evini gezdirdiğini düşün ve mutfağı gösteriyorsun."
+      "text": "Çok güzel. Şimdi tam bir cümle kuralım. Bir ev ilanındaki fotoğrafı anlattığını düşün: odayı ilk kez tanıtıyorsun."
      },
      {
       "lang": "en",
@@ -31663,7 +31667,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende. Arkadaşına yatak odasını gösteriyorsun ve diyorsun ki: Bu bir yatak odası."
+      "text": "Şimdi sıra sende. Aynı ilandaki ikinci fotoğrafı anlatıyorsun: Bu bir yatak odası."
      },
      {
       "lang": "tr",
@@ -32241,7 +32245,7 @@
      },
      {
       "lang": "tr",
-      "text": "Sıralamayı duydun mu? Önce eşya, sonra is, sonra yer. Türkçenin tam tersi bir sıra: yer en sona gelir."
+      "text": "Sıralamayı duydun mu? Önce eşya, sonra is, sonra yer — Türkçedeki gibi. Asıl fark şu: Türkçede yer sözcüğü isimden sonra gelir (masanın üstünde), İngilizcede isimden önce (on the table)."
      }
     ]
    },
@@ -33536,7 +33540,7 @@
      },
      {
       "lang": "tr",
-      "text": "Gördün mü, Türkçedeki sıranın tersi: önce su, sonra fatura."
+      "text": "Sıra Türkçeyle aynı: önce su, sonra fatura. İngilizcede iki kelime yan yana durur, arada ek yoktur."
      }
     ]
    },
@@ -33670,8 +33674,7 @@
      "kind": "produce",
      "target": "I pay the water bill every month.",
      "accept": [
-      "I pay the water bill every month",
-      "I pay water bill every month."
+      "I pay the water bill every month"
      ],
      "hint": [
       {
