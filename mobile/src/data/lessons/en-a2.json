@@ -1,0 +1,5165 @@
+[
+ {
+  "id": "en-a2-irregulars",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "Irregular verbs",
+  "titleTr": "Düzensiz fiiller",
+  "summary": "Sık kullanılan düzensiz fiillerin geçmiş hâllerini ve soru ile olumsuz cümlede yalın hâle dönmelerini öğretir.",
+  "minutes": 9,
+  "focusId": "Past simple irregular",
+  "vocab": [
+   {
+    "de": "buy",
+    "tr": "satın almak"
+   },
+   {
+    "de": "bring",
+    "tr": "getirmek"
+   },
+   {
+    "de": "teach",
+    "tr": "öğretmek"
+   },
+   {
+    "de": "catch",
+    "tr": "yakalamak"
+   },
+   {
+    "de": "lose",
+    "tr": "kaybetmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I bought a new phone.",
+    "tr": "geçmişte bir şey satın aldığını söylerken kullanılır"
+   },
+   {
+    "de": "I lost my phone on the bus.",
+    "tr": "bir şeyi nerede kaybettiğini anlatırken kullanılır"
+   },
+   {
+    "de": "Did you bring the tickets?",
+    "tr": "birinin geçmişte bir şeyi getirip getirmediğini sorarken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün İngilizcede en çok kullanılan düzensiz fiillerin geçmiş hâlini öğreneceğiz: satın aldım, getirdim, kaybettim gibi. Başlamaya hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geçmiş zamanda çoğu fiil sonuna -ed alır: work, worked. Ama günlük hayatta en sık kullandığın fiiller bu kurala uymaz; kendi geçmiş biçimleri vardır ve bunlar tek tek öğrenilir. İyi haber şu: sayıları az ve hep aynı kelimelerdir. Bugün beş tanesini alacağız."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "buy"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'satın almak' demek. Geçmiş hâli ise"
+     },
+     {
+      "lang": "en",
+      "text": "bought"
+     },
+     {
+      "lang": "tr",
+      "text": "olur. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "bought"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "bought"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "bring"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'getirmek' demek. Geçmiş hâli"
+     },
+     {
+      "lang": "en",
+      "text": "brought"
+     },
+     {
+      "lang": "tr",
+      "text": "olur. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "brought"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "brought"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Fark ettin mi, ikisi birbirine benziyor:"
+     },
+     {
+      "lang": "en",
+      "text": "bought"
+     },
+     {
+      "lang": "en",
+      "text": "brought"
+     },
+     {
+      "lang": "tr",
+      "text": "Sondaki harfler okunmaz, sadece uzun bir 'oo' sesi duyulur. Şimdi öğreneceğimiz iki fiil de aynı sesle biter, yani beşte dördü aynı aileden."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "teach"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'öğretmek' demek. Geçmiş hâli"
+     },
+     {
+      "lang": "en",
+      "text": "taught"
+     },
+     {
+      "lang": "tr",
+      "text": "olur. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "taught"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "taught"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "catch"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'yakalamak' demek. Geçmiş hâli"
+     },
+     {
+      "lang": "en",
+      "text": "caught"
+     },
+     {
+      "lang": "tr",
+      "text": "olur. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "caught"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "caught"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "lose"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'kaybetmek' demek. Bu, aileye uymayan tek fiilimiz; geçmiş hâli kısacık:"
+     },
+     {
+      "lang": "en",
+      "text": "lost"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "lost"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "lost"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bunları cümlede kullanalım. İlk kalıbımız:"
+     },
+     {
+      "lang": "en",
+      "text": "I bought a new phone."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'Yeni bir telefon aldım.' Ne zaman olduğunu eklemek istersen zaman ifadesi genelde cümlenin sonuna gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "I bought a new phone last week."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'geçen hafta'. Aynı şekilde"
+     },
+     {
+      "lang": "en",
+      "text": "yesterday"
+     },
+     {
+      "lang": "tr",
+      "text": "'dün',"
+     },
+     {
+      "lang": "en",
+      "text": "two days ago"
+     },
+     {
+      "lang": "tr",
+      "text": "'iki gün önce' demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Dün bir bilet aldım.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I bought a ticket yesterday",
+     "accept": [
+      "Yesterday I bought a ticket",
+      "I bought a ticket"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Fiilin geçmiş hâli 'bought', zaman ifadesi de sona gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "I bought a ticket yesterday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Öğretmek fiiliyle de bir örnek görelim:"
+     },
+     {
+      "lang": "en",
+      "text": "She taught us English."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'Bize İngilizce öğretti.' Yakalamak fiilinin ise İngilizcede çok kullanılan ikinci bir anlamı var: otobüse, trene ya da uçağa yetişmek."
+     },
+     {
+      "lang": "en",
+      "text": "I caught the bus."
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesi 'Otobüse yetiştim' demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Otobüse yetiştim.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I caught the bus",
+     "accept": [
+      "I caught a bus",
+      "I caught the bus this morning",
+      "I caught the bus yesterday"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yetişmek için 'catch' fiilini kullanıyoruz, geçmiş hâli 'caught':"
+      },
+      {
+       "lang": "en",
+       "text": "I caught the bus."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kaybetmek fiili başımıza en çok gelen şeyi anlatır:"
+     },
+     {
+      "lang": "en",
+      "text": "I lost my phone on the bus."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'Telefonumu otobüste kaybettim.' Nerede olduğunu söylerken"
+     },
+     {
+      "lang": "en",
+      "text": "on the bus"
+     },
+     {
+      "lang": "tr",
+      "text": "'otobüste',"
+     },
+     {
+      "lang": "en",
+      "text": "at the station"
+     },
+     {
+      "lang": "tr",
+      "text": "'istasyonda' dersin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi çok önemli bir noktaya geliyoruz. Soru sorarken ve olumsuz cümle kurarken 'did' kelimesini kullanırız; o zaman geçmişi 'did' taşır ve fiil yalın hâline geri döner. Yani 'bought' değil tekrar 'buy' dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I didn't buy a ticket."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu, Türklerin en sık yaptığı hatadır; kulağını buna alıştıralım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Soruda da aynısı geçerli:"
+     },
+     {
+      "lang": "en",
+      "text": "Did you bring the tickets?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'Biletleri getirdin mi?' 'Brought' değil, 'bring'. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "Did you bring the tickets?"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Did you bring the tickets?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: 'Anahtarlarımı getirmedim.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I didn't bring my keys",
+     "accept": [
+      "I did not bring my keys",
+      "I didn't bring the keys",
+      "I didn't bring my keys with me"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olumsuzda geçmişi 'didn't' taşır, fiil yalın kalır:"
+      },
+      {
+       "lang": "en",
+       "text": "I didn't bring my keys."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir doğru-yanlış alıştırması:"
+     },
+     {
+      "lang": "en",
+      "text": "I didn't bought the ticket."
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesi doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I didn't bought the ticket.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Geçmişi zaten 'didn't' taşıyor, o yüzden fiil yalın hâlde kalır. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "I didn't buy the ticket."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşini bir arada duyalım:"
+     },
+     {
+      "lang": "en",
+      "text": "buy, bought"
+     },
+     {
+      "lang": "en",
+      "text": "bring, brought"
+     },
+     {
+      "lang": "en",
+      "text": "teach, taught"
+     },
+     {
+      "lang": "en",
+      "text": "catch, caught"
+     },
+     {
+      "lang": "en",
+      "text": "lose, lost"
+     },
+     {
+      "lang": "tr",
+      "text": "Bunlar ezberlenecek beş çift; gün içinde birer cümle kurarsan çok çabuk oturur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: sık kullanılan fiillerin geçmiş hâli -ed almaz, kendi biçimini alır; ama 'did' ve 'didn't' varken fiil yalın hâline döner. Şimdi bunu gerçek bir sahnede kullanalım: telefonunu otobüste kaybettin ve kayıp eşya bürosundasın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Telefonunu bu sabah otobüste kaybettin ve kayıp eşya bürosuna geldin. Ne kaybettiğini, hangi otobüse bindiğini ve telefonu ne zaman satın aldığını anlat.",
+   "partner": "sakin, sorularını sırayla soran bir kayıp eşya bürosu görevlisi",
+   "opening": "Good morning. What did you lose?",
+   "openingTr": "Günaydın. Ne kaybettiniz?",
+   "goal": "Öğrenci telefonunu kaybettiğini, hangi otobüse bindiğini ve telefonu ne zaman aldığını düzensiz fiillerin geçmiş hâliyle anlatmış olur.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-past-cont",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "What were you doing?",
+  "titleTr": "Ne yapıyordun?",
+  "summary": "Geçmişte o sırada sürmekte olan işleri was/were + fiil-ing ile anlatmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Past continuous",
+  "vocab": [
+   {
+    "de": "wait",
+    "tr": "beklemek"
+   },
+   {
+    "de": "rain",
+    "tr": "yağmur; yağmur yağmak"
+   },
+   {
+    "de": "cook",
+    "tr": "yemek pişirmek"
+   },
+   {
+    "de": "sleep",
+    "tr": "uyumak"
+   },
+   {
+    "de": "wear",
+    "tr": "giymek, üstünde olmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I was waiting for the bus.",
+    "tr": "geçmişte bir anda sürmekte olan işi anlatırken kullanılır"
+   },
+   {
+    "de": "What were you doing?",
+    "tr": "karşındakine o sırada ne yaptığını sorarken kullanılır"
+   },
+   {
+    "de": "I was cooking when you called.",
+    "tr": "bir iş sürerken araya başka bir olay girdiğini anlatırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugün çok işine yarayacak bir konu var: geçmişte o sırada sürmekte olan işleri anlatmak."
+     },
+     {
+      "lang": "tr",
+      "text": "Ders sonunda \"Otobüsü bekliyordum\", \"Yağmur yağıyordu\" gibi cümleleri rahatça kurabileceksin. Başlayalım mı?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdiye kadar geçmişi anlatırken tek bir bitmiş iş söylüyordun. Ama bazen olay bitmemiştir, o anda sürüyordur."
+     },
+     {
+      "lang": "tr",
+      "text": "Bunun için İngilizcede iki parça kullanıyoruz: önce was ya da were, sonra fiilin sonuna -ing."
+     },
+     {
+      "lang": "en",
+      "text": "was working"
+     },
+     {
+      "lang": "en",
+      "text": "were working"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: wait. Türkçesi beklemek demek. Lütfen benimle söyle."
+     },
+     {
+      "lang": "en",
+      "text": "wait"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "wait"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bunu sürmekte olan hale getirelim: wait, waiting olur. Ve ben için was kullanırız."
+     },
+     {
+      "lang": "en",
+      "text": "I was waiting for the bus."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Otobüsü bekliyordum. Dikkat et, beklemek için for kullanıyoruz: wait for. Şimdi sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I was waiting for the bus."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Was mı were mi? Çok basit: I, he, she, it ile was. You, we, they ile were."
+     },
+     {
+      "lang": "en",
+      "text": "I was, he was, she was"
+     },
+     {
+      "lang": "en",
+      "text": "you were, we were, they were"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu ikisini karıştırmamak dersin en önemli noktası."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz: rain. Yağmur demek, aynı zamanda yağmur yağmak fiili."
+     },
+     {
+      "lang": "tr",
+      "text": "Hava için it kullanırız, o yüzden was gelir."
+     },
+     {
+      "lang": "en",
+      "text": "It was raining."
+     },
+     {
+      "lang": "tr",
+      "text": "Yağmur yağıyordu. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It was raining."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ikisini birleştirelim. Şunu İngilizce söylemeni istiyorum: Yağmur yağıyordu ve ben otobüsü bekliyordum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It was raining and I was waiting for the bus.",
+     "accept": [
+      "It was raining and I was waiting for the bus",
+      "I was waiting for the bus and it was raining.",
+      "It was raining, and I was waiting for the bus."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yağmur için it was, kendin için I was."
+      },
+      {
+       "lang": "en",
+       "text": "It was raining and I was ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz: cook, yemek pişirmek. Sürmekte olan hali cooking."
+     },
+     {
+      "lang": "en",
+      "text": "She was cooking dinner."
+     },
+     {
+      "lang": "tr",
+      "text": "Akşam yemeğini pişiriyordu. Söyle bakalım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She was cooking dinner."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Olumsuz yapmak çok kolay: was ve were'ın arkasına not ekliyoruz. Konuşurken kısaltıyoruz."
+     },
+     {
+      "lang": "en",
+      "text": "was not, wasn't"
+     },
+     {
+      "lang": "en",
+      "text": "were not, weren't"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz: sleep, uyumak. Sürmekte olan hali sleeping."
+     },
+     {
+      "lang": "en",
+      "text": "The baby wasn't sleeping."
+     },
+     {
+      "lang": "tr",
+      "text": "Bebek uyumuyordu. Sen de dene."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The baby wasn't sleeping."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Şunu İngilizce söyle: Uyumuyordum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I wasn't sleeping.",
+     "accept": [
+      "I was not sleeping.",
+      "I wasn't sleeping",
+      "I was not sleeping"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ben için was, sonra not, sonra sleeping."
+      },
+      {
+       "lang": "en",
+       "text": "I wasn't ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Soru sormak için was ya da were'ı en başa alıyoruz. Yardımcı fiil olarak do ya da did kullanmıyoruz, dikkat."
+     },
+     {
+      "lang": "en",
+      "text": "Were you working?"
+     },
+     {
+      "lang": "en",
+      "text": "Was he sleeping?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ve dersimizin başlığı, günlük hayatta en çok duyacağın soru:"
+     },
+     {
+      "lang": "en",
+      "text": "What were you doing?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ne yapıyordun? Birini arayıp ulaşamadığında ya da bir olayı sorarken tam olarak bunu söylersin. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What were you doing?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok kullanışlı bir kalıp daha: bir iş sürerken araya başka bir olay girer. Süren iş -ing ile, araya giren kısa olay düz geçmiş zamanla söylenir."
+     },
+     {
+      "lang": "en",
+      "text": "I was cooking when you called."
+     },
+     {
+      "lang": "tr",
+      "text": "Sen aradığında ben yemek pişiriyordum. Uzun olan pişirmek, kısa olan telefon."
+     },
+     {
+      "lang": "en",
+      "text": "She was sleeping when I came home."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz: wear. Giymek, üstünde olmak demek. Sürmekte olan hali wearing."
+     },
+     {
+      "lang": "en",
+      "text": "He was wearing a black jacket."
+     },
+     {
+      "lang": "tr",
+      "text": "Siyah bir ceket giyiyordu. Birini tarif ederken çok işine yarar."
+     },
+     {
+      "lang": "en",
+      "text": "They were wearing school uniforms."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He was wearing a black jacket."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kulağını sınayalım. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "They was playing football."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "They was playing football.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. They ile was değil were kullanılır."
+      },
+      {
+       "lang": "en",
+       "text": "They were playing football."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir üretim daha. Bir arkadaşına dün akşamki partiyi soruyorsun. Şunu İngilizce sor: Ne giyiyordun?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What were you wearing?",
+     "accept": [
+      "What were you wearing",
+      "What was she wearing?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce what, sonra were you, sonra fiil -ing ile."
+      },
+      {
+       "lang": "en",
+       "text": "What were you ...?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir uyarı: bu yapıyı her geçmiş cümlede kullanma. Bitmiş, tek seferlik işler için düz geçmiş zaman yeter."
+     },
+     {
+      "lang": "en",
+      "text": "I cooked dinner yesterday."
+     },
+     {
+      "lang": "tr",
+      "text": "Ama o anda sürüyorsa, ya da araya bir olay giriyorsa, was ve were ile -ing kullanırsın."
+     },
+     {
+      "lang": "en",
+      "text": "I was cooking at seven."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Sürmekte olan geçmiş için: I, he, she, it ile was; you, we, they ile were; sonra fiil artı -ing."
+     },
+     {
+      "lang": "tr",
+      "text": "Olumsuzda wasn't ve weren't, soruda was ve were başa gelir. Araya giren olay düz geçmiş zamanla söylenir."
+     },
+     {
+      "lang": "en",
+      "text": "What were you doing? I was waiting for the bus."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harikasın. Şimdi bunu gerçek bir konuşmada deneyelim: arkadaşın dün gece seni aramış, sen açmamışsın. Sana ne yaptığını soracak. Hazırsan başlıyoruz."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Dün gece arkadaşın seni aradı ama telefonu açmadın. Bugün karşılaşıyorsunuz ve o sırada ne yaptığını soruyor.",
+   "partner": "Arkadaşın Mark",
+   "opening": "Hey! I called you last night, but you didn't answer. What were you doing?",
+   "openingTr": "Selam! Dün gece seni aradım ama açmadın. Ne yapıyordun?",
+   "goal": "Öğrenci was/were + fiil-ing ile en az iki cümle kurarsa (ne yaptığını ve neden duymadığını anlatırsa) ve karşısındakine \"What were you doing?\" benzeri bir soru sorarsa konuşma başarılıdır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-when-while",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "When and while",
+  "titleTr": "When ve while",
+  "summary": "Geçmişte süren bir olayla araya giren kısa bir olayı when ve while ile birbirine bağlamayı öğretir.",
+  "minutes": 9,
+  "focusId": "when / while",
+  "vocab": [
+   {
+    "de": "while",
+    "tr": "-ken; oysa"
+   },
+   {
+    "de": "suddenly",
+    "tr": "aniden"
+   },
+   {
+    "de": "happen",
+    "tr": "meydana gelmek, olmak"
+   },
+   {
+    "de": "meet",
+    "tr": "buluşmak, karşılaşmak"
+   },
+   {
+    "de": "leave",
+    "tr": "ayrılmak, bırakmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "While I was cooking, the phone rang.",
+    "tr": "uzun süren bir işin ortasına kısa bir olayın girdiğini anlatır"
+   },
+   {
+    "de": "When you called, I was sleeping.",
+    "tr": "kısa bir olay olduğu anda nelerin sürdüğünü anlatır"
+   },
+   {
+    "de": "What happened while you were waiting?",
+    "tr": "birinin beklerken başına ne geldiğini sormak için kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugün geçmişte olmuş iki olayı birbirine bağlamayı öğreneceğiz: bir şey sürerken araya başka bir şey giriyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Bunun için iki küçük kelime kullanacağız: when ve while. Hazırsan başlayalım."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Önce resmi görelim. Dün akşam yemek yapıyordun. Yemek yapmak uzun bir iş, bir süre devam ediyor. Tam o sırada telefon çaldı. Telefonun çalması ise kısa, bir anda oldu."
+     },
+     {
+      "lang": "tr",
+      "text": "İngilizcede uzun olanı was ile anlatırız, kısa olanı düz geçmiş zamanla. İkisini de birbirine when ya da while bağlar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "while"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi bizim -ken ekimiz. Yaparken, beklerken, yürürken. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "while"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "while"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "suddenly"
+     },
+     {
+      "lang": "tr",
+      "text": "Aniden demek. Beklenmedik bir şey olduğunda kullanırız. Hadi, sen de de:"
+     },
+     {
+      "lang": "en",
+      "text": "suddenly"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "suddenly"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi çok işine yarayacak bir fiil:"
+     },
+     {
+      "lang": "en",
+      "text": "happen"
+     },
+     {
+      "lang": "tr",
+      "text": "Olmak, meydana gelmek demek. Geçmiş hali happened. En sık duyacağın soru şudur:"
+     },
+     {
+      "lang": "en",
+      "text": "What happened?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani, ne oldu? Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "What happened?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What happened?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki fiilimiz daha var, ikisi de düzensiz. Birincisi:"
+     },
+     {
+      "lang": "en",
+      "text": "meet"
+     },
+     {
+      "lang": "tr",
+      "text": "buluşmak, karşılaşmak. Geçmişi met. İkincisi:"
+     },
+     {
+      "lang": "en",
+      "text": "leave"
+     },
+     {
+      "lang": "tr",
+      "text": "bir yerden ayrılmak. Geçmişi left. Bunları birazdan cümlede kullanacağız."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Uzun olan iş while ile başlıyor, kısa olan olay arkadan geliyor. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "While I was walking home, it started to rain."
+     },
+     {
+      "lang": "tr",
+      "text": "Eve yürürken yağmur başladı. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "While I was walking home, it started to rain."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "While I was walking home, it started to rain."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Buradaki kuralı aklında tut: while'dan sonra hep süren bir eylem gelir. Yani was ya da were, artı fiilin ing hali."
+     },
+     {
+      "lang": "tr",
+      "text": "I was walking, she was working, they were waiting. Uzun olan taraf while tarafıdır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi aynı olayı ters çevirelim. Bu sefer kısa olayla başlıyoruz ve when kullanıyoruz. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "When the phone rang, I was cooking."
+     },
+     {
+      "lang": "tr",
+      "text": "Telefon çaldığında ben yemek yapıyordum. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "When the phone rang, I was cooking."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "When the phone rang, I was cooking."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Fark ettin mi? When'den sonra kısa olay geldi: the phone rang. Süren iş ise arkaya geçti: I was cooking."
+     },
+     {
+      "lang": "tr",
+      "text": "Kolay bir hatırlatma: while uzun tarafa yapışır, when kısa tarafa. Anlam aynı kalır, sadece hangisiyle başladığın değişir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir yazım notu: cümleye while ya da when ile başlıyorsan, ortada virgül kullanırsın. While I was cooking, virgül, the phone rang."
+     },
+     {
+      "lang": "tr",
+      "text": "Ama önce ana cümleyi söylersen virgül gerekmez: The phone rang while I was cooking. İkisi de doğru."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu İngilizce kur: Ben yemek yaparken telefon çaldı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "While I was cooking, the phone rang.",
+     "accept": [
+      "The phone rang while I was cooking.",
+      "While I was cooking, my phone rang.",
+      "My phone rang while I was cooking.",
+      "When the phone rang, I was cooking."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "while ile başla, sonra was cooking"
+      },
+      {
+       "lang": "en",
+       "text": "While I was cooking, ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Şimdi bir tane daha, bu sefer when ile başla: Sen aradığında ben uyuyordum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "When you called, I was sleeping.",
+     "accept": [
+      "I was sleeping when you called.",
+      "When you called, I was sleeping.",
+      "I was sleeping when you phoned.",
+      "When you called me, I was sleeping."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "kısa olay önce: sen aradın, called"
+      },
+      {
+       "lang": "en",
+       "text": "When you called, I was ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi when'in ikinci işini görelim. İki olay da kısaysa, yani biri bitince öbürü olduysa, ikisinde de düz geçmiş zaman kullanırız ve arada when olur."
+     },
+     {
+      "lang": "en",
+      "text": "When I left the office, I met my old teacher."
+     },
+     {
+      "lang": "tr",
+      "text": "Ofisten çıktığımda eski öğretmenimle karşılaştım. Burada süren bir şey yok, iki kısa olay arka arkaya. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "When I left the office, I met my old teacher."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "When I left the office, I met my old teacher."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat: while burada kullanılmaz. While uzun eylem ister. I left kısa bir olay, o yüzden while I left demeyiz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kulağını sınayalım. Sana bir İngilizce cümle söyleyeceğim, doğru mu yanlış mı söyle."
+     },
+     {
+      "lang": "en",
+      "text": "While I left the office, the phone rang."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "While I left the office, the phone rang.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. While'dan sonra süren bir eylem gelmeli. I left kısa bir olay, o yüzden burada when kullanılır."
+      },
+      {
+       "lang": "en",
+       "text": "When I left the office, the phone rang."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir kurma. suddenly kelimesini de kullan: Otobüsü beklerken aniden yağmur başladı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "While I was waiting for the bus, it suddenly started to rain.",
+     "accept": [
+      "It suddenly started to rain while I was waiting for the bus.",
+      "While I was waiting for the bus, it suddenly started raining.",
+      "While I was waiting for the bus, it started to rain suddenly.",
+      "When I was waiting for the bus, it suddenly started to rain."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "beklemek uzun iş: was waiting for the bus"
+      },
+      {
+       "lang": "en",
+       "text": "While I was waiting for the bus, it suddenly ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de soru kalıbı ekleyelim, sohbette çok işine yarar:"
+     },
+     {
+      "lang": "en",
+      "text": "What happened while you were waiting?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sen beklerken ne oldu? Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "What happened while you were waiting?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What happened while you were waiting?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım. While uzun eylemin yanına gelir ve arkasından was ya da were, artı ing gelir. When kısa olayın yanına gelir; iki kısa olayı bağlarken de when kullanırız."
+     },
+     {
+      "lang": "tr",
+      "text": "Yeni kelimelerin: while, suddenly, happen, meet, leave. Şimdi bunları gerçek bir sohbette deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Sabah işe geldin, iş arkadaşın Emma seni yorgun görüyor. Dün akşam başından geçen küçük olayı ona anlatıyorsun.",
+   "partner": "İş arkadaşın Emma",
+   "opening": "You look tired this morning. What happened last night?",
+   "openingTr": "Bu sabah yorgun görünüyorsun. Dün gece ne oldu?",
+   "goal": "Dün akşam olan bir olayı, en az iki cümlede while ve when kullanarak anlatırsan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-time-past",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "A year ago, last week",
+  "titleTr": "Bir yıl önce",
+  "summary": "Geçmiş zaman ifadelerini öğretir: ago, last ve in ile bir olayın ne zaman olduğunu söylemek.",
+  "minutes": 9,
+  "focusId": "Past time expressions",
+  "vocab": [
+   {
+    "de": "ago",
+    "tr": "önce"
+   },
+   {
+    "de": "last week",
+    "tr": "geçen hafta"
+   },
+   {
+    "de": "month",
+    "tr": "ay"
+   },
+   {
+    "de": "year",
+    "tr": "yıl"
+   },
+   {
+    "de": "yesterday",
+    "tr": "dün"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "two days ago",
+    "tr": "bir olayın ne kadar zaman önce olduğunu söyler"
+   },
+   {
+    "de": "last week / last year",
+    "tr": "geçen hafta, geçen yıl gibi en yakın geçmiş dilimini gösterir"
+   },
+   {
+    "de": "When did you …?",
+    "tr": "bir şeyin ne zaman olduğunu sormak için kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugün geçmişte bir şeyin ne zaman olduğunu söylemeyi öğreneceğiz: ago, last ve in."
+     },
+     {
+      "lang": "tr",
+      "text": "Kısa cümleler kuracağız, sen de benimle birlikte söyleyeceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "ago"
+     },
+     {
+      "lang": "tr",
+      "text": ". Türkçesi \"önce\" demek. Ama dikkat: İngilizcede süreden SONRA gelir. Türkçede \"iki gün önce\" deriz, İngilizcede de sıra aynıdır: önce süre, sonra "
+     },
+     {
+      "lang": "en",
+      "text": "ago"
+     },
+     {
+      "lang": "tr",
+      "text": "."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi \"iki gün önce\" diyelim. Lütfen tekrar et: "
+     },
+     {
+      "lang": "en",
+      "text": "two days ago"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "two days ago"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Bunu bir cümleye koyalım. \"Onu iki gün önce gördüm.\" İngilizcesi: "
+     },
+     {
+      "lang": "en",
+      "text": "I saw him two days ago."
+     },
+     {
+      "lang": "tr",
+      "text": "Zaman ifadesi cümlenin sonuna geliyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi daha uzun bir süre. \"Bir yıl önce\". Lütfen söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "a year ago"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "a year ago"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı mantık her süre için çalışır: "
+     },
+     {
+      "lang": "en",
+      "text": "ten minutes ago"
+     },
+     {
+      "lang": "tr",
+      "text": ", "
+     },
+     {
+      "lang": "en",
+      "text": "three months ago"
+     },
+     {
+      "lang": "tr",
+      "text": ", "
+     },
+     {
+      "lang": "en",
+      "text": "five years ago"
+     },
+     {
+      "lang": "tr",
+      "text": ". Süre, sonra "
+     },
+     {
+      "lang": "en",
+      "text": "ago"
+     },
+     {
+      "lang": "tr",
+      "text": "."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "last"
+     },
+     {
+      "lang": "tr",
+      "text": ". Burada \"geçen\" demek. "
+     },
+     {
+      "lang": "en",
+      "text": "last week"
+     },
+     {
+      "lang": "tr",
+      "text": " geçen hafta, "
+     },
+     {
+      "lang": "en",
+      "text": "last year"
+     },
+     {
+      "lang": "tr",
+      "text": " geçen yıl. Lütfen tekrar et: "
+     },
+     {
+      "lang": "en",
+      "text": "last week"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "last week"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok önemli bir nokta: "
+     },
+     {
+      "lang": "en",
+      "text": "last"
+     },
+     {
+      "lang": "tr",
+      "text": " ile önüne edat koymayız. "
+     },
+     {
+      "lang": "en",
+      "text": "in last week"
+     },
+     {
+      "lang": "tr",
+      "text": " yanlıştır. Sadece "
+     },
+     {
+      "lang": "en",
+      "text": "last week"
+     },
+     {
+      "lang": "tr",
+      "text": " deriz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. \"Geçen yıl İzmir'e taşındık\" demeni istiyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We moved to Izmir last year.",
+     "accept": [
+      "We moved to Izmir last year",
+      "Last year we moved to Izmir.",
+      "We moved to İzmir last year."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Taşındık\" "
+      },
+      {
+       "lang": "en",
+       "text": "we moved"
+      },
+      {
+       "lang": "tr",
+       "text": ", sonra "
+      },
+      {
+       "lang": "en",
+       "text": "to Izmir"
+      },
+      {
+       "lang": "tr",
+       "text": ", en sonda zaman: "
+      },
+      {
+       "lang": "en",
+       "text": "last year"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "yesterday"
+     },
+     {
+      "lang": "tr",
+      "text": ", yani \"dün\". Bu da tek başına kullanılır, önüne bir şey koymayız."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Günün bir parçasını da ekleyebiliriz: dün sabah, dün akşam. Lütfen söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "yesterday morning"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "yesterday morning"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı şekilde "
+     },
+     {
+      "lang": "en",
+      "text": "yesterday evening"
+     },
+     {
+      "lang": "tr",
+      "text": " dün akşam, "
+     },
+     {
+      "lang": "en",
+      "text": "last night"
+     },
+     {
+      "lang": "tr",
+      "text": " ise dün gece. Dikkat: dün gece için "
+     },
+     {
+      "lang": "en",
+      "text": "yesterday night"
+     },
+     {
+      "lang": "tr",
+      "text": " demeyiz, "
+     },
+     {
+      "lang": "en",
+      "text": "last night"
+     },
+     {
+      "lang": "tr",
+      "text": " deriz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi üçüncü yapı: "
+     },
+     {
+      "lang": "en",
+      "text": "in"
+     },
+     {
+      "lang": "tr",
+      "text": ". Bir yılı ya da bir ayı söylerken "
+     },
+     {
+      "lang": "en",
+      "text": "in"
+     },
+     {
+      "lang": "tr",
+      "text": " kullanırız: "
+     },
+     {
+      "lang": "en",
+      "text": "in 2019"
+     },
+     {
+      "lang": "tr",
+      "text": ", "
+     },
+     {
+      "lang": "en",
+      "text": "in March"
+     },
+     {
+      "lang": "tr",
+      "text": "."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et: "
+     },
+     {
+      "lang": "en",
+      "text": "I started this job in March."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I started this job in March."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bir doğru-yanlış sorusu. Sana bir cümle söyleyeceğim, doğru mu yanlış mı söyle."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I visited my aunt in last summer.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. "
+      },
+      {
+       "lang": "en",
+       "text": "last"
+      },
+      {
+       "lang": "tr",
+       "text": " ile "
+      },
+      {
+       "lang": "en",
+       "text": "in"
+      },
+      {
+       "lang": "tr",
+       "text": " birlikte kullanılmaz. Doğrusu: "
+      },
+      {
+       "lang": "en",
+       "text": "I visited my aunt last summer."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi tekrar sen kur. \"İki ay önce yeni bir telefon aldım\" de."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I bought a new phone two months ago.",
+     "accept": [
+      "I bought a new phone two months ago",
+      "Two months ago I bought a new phone.",
+      "I bought a new phone 2 months ago."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Aldım\" "
+      },
+      {
+       "lang": "en",
+       "text": "I bought"
+      },
+      {
+       "lang": "tr",
+       "text": ", sonra "
+      },
+      {
+       "lang": "en",
+       "text": "a new phone"
+      },
+      {
+       "lang": "tr",
+       "text": ", en sonda "
+      },
+      {
+       "lang": "en",
+       "text": "two months ago"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de soru soralım. \"Ne zaman?\" diye sormak için "
+     },
+     {
+      "lang": "en",
+      "text": "When did you …?"
+     },
+     {
+      "lang": "tr",
+      "text": " kullanırız. Lütfen tekrar et: "
+     },
+     {
+      "lang": "en",
+      "text": "When did you arrive?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "When did you arrive?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevap da bugün öğrendiğimiz ifadelerle gelir: "
+     },
+     {
+      "lang": "en",
+      "text": "I arrived three days ago."
+     },
+     {
+      "lang": "tr",
+      "text": " ya da "
+     },
+     {
+      "lang": "en",
+      "text": "I arrived last Friday."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son alıştırma. Birine \"Dün seni aradım\" de."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I called you yesterday.",
+     "accept": [
+      "I called you yesterday",
+      "Yesterday I called you.",
+      "I phoned you yesterday."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Aradım\" "
+      },
+      {
+       "lang": "en",
+       "text": "I called"
+      },
+      {
+       "lang": "tr",
+       "text": ", sonra "
+      },
+      {
+       "lang": "en",
+       "text": "you"
+      },
+      {
+       "lang": "tr",
+       "text": ", en sonda "
+      },
+      {
+       "lang": "en",
+       "text": "yesterday"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika iş çıkardın. Özetleyelim: süreden sonra "
+     },
+     {
+      "lang": "en",
+      "text": "ago"
+     },
+     {
+      "lang": "tr",
+      "text": " — "
+     },
+     {
+      "lang": "en",
+      "text": "two days ago"
+     },
+     {
+      "lang": "tr",
+      "text": ". Yakın geçmiş için "
+     },
+     {
+      "lang": "en",
+      "text": "last"
+     },
+     {
+      "lang": "tr",
+      "text": " ve edat yok — "
+     },
+     {
+      "lang": "en",
+      "text": "last week"
+     },
+     {
+      "lang": "tr",
+      "text": ". Yıl ve ay için "
+     },
+     {
+      "lang": "en",
+      "text": "in"
+     },
+     {
+      "lang": "tr",
+      "text": " — "
+     },
+     {
+      "lang": "en",
+      "text": "in 2019"
+     },
+     {
+      "lang": "tr",
+      "text": ". Şimdi bunları küçük bir sohbette kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla kafede karşılaşıyorsun. O yakın zamanda şehre taşınmış ve tatilden dönmüş; birbirinize ne zaman ne yaptığınızı soruyorsunuz.",
+   "partner": "Daniel, eski bir iş arkadaşın",
+   "opening": "Hey! I haven't seen you for a long time. When did you move to this city?",
+   "openingTr": "Selam! Seni uzun zamandır görmüyorum. Bu şehre ne zaman taşındın?",
+   "goal": "Öğrenci ago, last ve in ile en az üç farklı zaman ifadesi kullanarak geçmişte ne zaman ne yaptığını anlatır ve karşısındakine \"When did you …?\" ile bir soru sorar.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-story",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "Telling a story",
+  "titleTr": "Olay anlatmak",
+  "summary": "Başından geçen bir olayı sırayla anlatmayı öğreniyorsun: first, then, after that, finally ve sebep-sonuç için because, so.",
+  "minutes": 9,
+  "focusId": "Sequencing",
+  "vocab": [
+   {
+    "de": "first",
+    "tr": "ilk; önce"
+   },
+   {
+    "de": "then",
+    "tr": "sonra; o zaman"
+   },
+   {
+    "de": "after that",
+    "tr": "ondan sonra"
+   },
+   {
+    "de": "finally",
+    "tr": "sonunda"
+   },
+   {
+    "de": "because",
+    "tr": "çünkü"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "First I …, then I …",
+    "tr": "iki olayı sırayla anlatırken kullanılır"
+   },
+   {
+    "de": "After that, …",
+    "tr": "bir sonraki olayı eklerken kullanılır"
+   },
+   {
+    "de": "I was tired, so I …",
+    "tr": "sebep–sonuç kurarken kullanılır: bu yüzden"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün başından geçen bir olayı İngilizce anlatmayı öğreneceğiz. Yani hikâyeyi sırayla dizeceğiz: önce şu oldu, sonra bu oldu, en sonunda da şu."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlıyorum. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir olayı anlatırken en çok işine yarayacak şey sıra kelimeleridir. Bunlar küçücük kelimeler ama cümlelerini bir ipe dizer, dinleyen seni takip eder."
+     },
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "first"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi: ilk, önce. Cümlenin en başına koyarsın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen benimle birlikte söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "first"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "first"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ikinci kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "then"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: sonra. Türkçede \"sonra\" cümlenin sonuna da gidebilir ama İngilizcede then genelde başta durur:"
+     },
+     {
+      "lang": "en",
+      "text": "Then I had breakfast."
+     },
+     {
+      "lang": "tr",
+      "text": "Sonra kahvaltı yaptım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "then"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "then"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu ikisi bir arada çok kullanılır. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "First I woke up. Then I had breakfast."
+     },
+     {
+      "lang": "tr",
+      "text": "Önce uyandım. Sonra kahvaltı yaptım. Dikkat et: uyandım demek için wake up değil, geçmiş hâli woke up diyoruz. Yaptım için de have değil had."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu İngilizce kur: Önce uyandım, sonra kahvaltı yaptım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "First I woke up. Then I had breakfast.",
+     "accept": [
+      "First, I woke up. Then, I had breakfast.",
+      "First I woke up, then I had breakfast.",
+      "First I got up. Then I had breakfast."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "first ile başla, ikinci cümleyi then ile aç"
+      },
+      {
+       "lang": "tr",
+       "text": "uyanmak: wake up → woke up · kahvaltı yapmak: have breakfast → had breakfast"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Hikâye iki cümleden uzunsa hep then demek sıkıcı olur. Araya şunu serpiştir:"
+     },
+     {
+      "lang": "en",
+      "text": "after that"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: ondan sonra. Örnek:"
+     },
+     {
+      "lang": "en",
+      "text": "After that, I went home."
+     },
+     {
+      "lang": "tr",
+      "text": "Ondan sonra eve gittim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "After that, I went home."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "After that, I went home."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi de bir tanesini kendin kur. Şunu söyle: Ondan sonra bir film izledik."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "After that, we watched a film.",
+     "accept": [
+      "After that we watched a film.",
+      "After that, we watched a movie.",
+      "After that we watched a movie."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "After that ile başla, sonra biz için we"
+      },
+      {
+       "lang": "tr",
+       "text": "izlemek: watch → watched · film: film ya da movie"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hikâyenin sonunu da işaretlemek gerek. Bunun kelimesi:"
+     },
+     {
+      "lang": "en",
+      "text": "finally"
+     },
+     {
+      "lang": "tr",
+      "text": "Sonunda, en sonunda. Örnek:"
+     },
+     {
+      "lang": "en",
+      "text": "Finally, I went to bed."
+     },
+     {
+      "lang": "tr",
+      "text": "En sonunda yattım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "finally"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "finally"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir hikâye sadece sıra değil, sebep de ister. Neden oldu? Bunun için:"
+     },
+     {
+      "lang": "en",
+      "text": "because"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: çünkü. Örnek:"
+     },
+     {
+      "lang": "en",
+      "text": "I was late because the bus didn't come."
+     },
+     {
+      "lang": "tr",
+      "text": "Geç kaldım çünkü otobüs gelmedi."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "because"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "because"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de sonucu söyleyen küçük bir kelime var:"
+     },
+     {
+      "lang": "en",
+      "text": "so"
+     },
+     {
+      "lang": "tr",
+      "text": "Burada anlamı: bu yüzden. because sebebi getirir, so sonucu getirir. Karşılaştır:"
+     },
+     {
+      "lang": "en",
+      "text": "I went to bed early because I was tired."
+     },
+     {
+      "lang": "en",
+      "text": "I was tired, so I went to bed early."
+     },
+     {
+      "lang": "tr",
+      "text": "İkisi de aynı olayı anlatıyor, sadece sıra değişiyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I was tired, so I went to bed early."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I was tired, so I went to bed early."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kendin kur. Şunu söyle: Aç değildim, bu yüzden bir şey yemedim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I wasn't hungry, so I didn't eat anything.",
+     "accept": [
+      "I was not hungry, so I didn't eat anything.",
+      "I wasn't hungry so I didn't eat anything.",
+      "I wasn't hungry, so I didn't eat."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "aç değildim: I wasn't hungry"
+      },
+      {
+       "lang": "tr",
+       "text": "sonucu so ile bağla · yemedim: I didn't eat"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de küçük bir tuzağa bakalım. Geçmişten bahsederken fiili geçmiş hâline çevirmeyi unutmak çok yaygın bir hata. Şimdi bir cümle söyleyeceğim, doğru mu yanlış mı söyle."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Yesterday I go to the cinema.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Yesterday dedin, yani geçmişten bahsediyorsun; o zaman go değil went olmalı."
+      },
+      {
+       "lang": "en",
+       "text": "Yesterday I went to the cinema."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi hepsini bir arada dinle. Kısa bir hikâye:"
+     },
+     {
+      "lang": "en",
+      "text": "Yesterday was a busy day. First I went to work. Then I met my sister for lunch. After that, we walked in the park because the weather was nice. I was tired, so I took the bus home. Finally, I watched a film and went to bed."
+     },
+     {
+      "lang": "tr",
+      "text": "Duydun mu? Beş cümle, hepsi bir ipe dizili: first, then, after that, because, so, finally."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Sırayı kurmak için: first, then, after that, finally. Sebebi vermek için because, sonucu vermek için so. Fiilleri geçmiş hâlde tut: went, had, met, watched."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi de kendi gününü anlat. Bir arkadaşın sana hafta sonunu soracak; öğrendiğin kelimelerle anlat."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Pazartesi sabahı ofis mutfağında bir iş arkadaşınla karşılaşıyorsun; hafta sonunu merak ediyor.",
+   "partner": "Daniel, iş arkadaşın",
+   "opening": "Hey! How was your weekend? Tell me what you did.",
+   "openingTr": "Selam! Hafta sonun nasıldı? Anlat bakalım ne yaptın.",
+   "goal": "Öğrenci hafta sonunu en az üç olayla sırayla anlatır (first / then / after that / finally kullanarak) ve en az bir kez because ya da so ile sebep veya sonuç ekler.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-used-to",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "I used to...",
+  "titleTr": "Eskiden...",
+  "summary": "Eskiden düzenli yaptığın ama artık yapmadığın alışkanlıkları \"used to\" ile anlatmayı öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "used to",
+  "vocab": [
+   {
+    "de": "use",
+    "tr": "kullanmak"
+   },
+   {
+    "de": "school",
+    "tr": "okul"
+   },
+   {
+    "de": "child",
+    "tr": "çocuk"
+   },
+   {
+    "de": "play",
+    "tr": "oynamak"
+   },
+   {
+    "de": "live",
+    "tr": "yaşamak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I used to play football.",
+    "tr": "eskiden düzenli yaptığın ama artık yapmadığın bir şeyi anlatırken kullanılır"
+   },
+   {
+    "de": "I didn't use to like coffee.",
+    "tr": "eskiden yapmadığın ya da sevmediğin bir şeyi anlatırken kullanılır; olumsuzda 'used' değil 'use' denir"
+   },
+   {
+    "de": "Did you use to play the guitar?",
+    "tr": "karşındakine eskiden bir şeyi yapıp yapmadığını sorarken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün İngilizcede çok işine yarayacak bir kalıp öğreneceğiz: eskiden yaptığın ama artık yapmadığın şeyleri anlatmak. Yani 'eskiden futbol oynardım', 'eskiden İzmir'de yaşardım' gibi cümleler."
+     },
+     {
+      "lang": "tr",
+      "text": "Kulaklığın hazırsa başlıyoruz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Türkçede bunu tek bir ekle yaparız: oynardım, giderdim, otururdum. İngilizcede ise iki kelime kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "used to"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu kalıp iki şeyi birden söyler: bu bir alışkanlıktı ve artık böyle değil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk cümlemiz geliyor. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "I used to play football."
+     },
+     {
+      "lang": "tr",
+      "text": "Eskiden futbol oynardım. Yani artık oynamıyorum. Lütfen sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I used to play football."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kalıbın yapısına dikkat et: önce özne, sonra"
+     },
+     {
+      "lang": "en",
+      "text": "used to"
+     },
+     {
+      "lang": "tr",
+      "text": "ve sonra fiilin en yalın hali. Yani"
+     },
+     {
+      "lang": "en",
+      "text": "play"
+     },
+     {
+      "lang": "tr",
+      "text": "kelimesine hiçbir ek gelmiyor. 'played' demiyoruz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu kalıp en çok çocukluktan bahsederken kullanılır. Çocuk kelimesi İngilizcede"
+     },
+     {
+      "lang": "en",
+      "text": "child"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi çok sık duyacağın bir zaman ifadesi söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "when I was a child"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "when I was a child"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkisini birleştirelim. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "When I was a child, I used to play in the garden."
+     },
+     {
+      "lang": "tr",
+      "text": "Çocukken bahçede oynardım. Duyduğun gibi zaman ifadesi başa da gelebilir, sona da."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni bir fiil: yaşamak,"
+     },
+     {
+      "lang": "en",
+      "text": "live"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi tam cümleyi tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I used to live in Izmir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I used to live in Izmir."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Okul kelimesini de alalım:"
+     },
+     {
+      "lang": "en",
+      "text": "school"
+     },
+     {
+      "lang": "tr",
+      "text": "Okula gitmek için"
+     },
+     {
+      "lang": "en",
+      "text": "go to school"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. Yürüyerek gitmek istersen tek kelime yeter:"
+     },
+     {
+      "lang": "en",
+      "text": "walk to school"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu İngilizce kur: Eskiden okula yürüyerek giderdim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I used to walk to school.",
+     "accept": [
+      "I used to walk to school",
+      "I used to go to school on foot",
+      "I used to go to school on foot."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce 'I used to', sonra yalın fiil."
+      },
+      {
+       "lang": "en",
+       "text": "I used to ... to school."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Şimdi olumsuz hali. Burada küçük ama önemli bir kural var: cümlede"
+     },
+     {
+      "lang": "en",
+      "text": "didn't"
+     },
+     {
+      "lang": "tr",
+      "text": "varsa, 'used' değil, sonundaki d düşer ve"
+     },
+     {
+      "lang": "en",
+      "text": "use"
+     },
+     {
+      "lang": "tr",
+      "text": "olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Örnek: Eskiden kahve sevmezdim. Dinle ve tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I didn't use to like coffee."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I didn't use to like coffee."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Eskiden sebze sevmezdim. Sebze,"
+     },
+     {
+      "lang": "en",
+      "text": "vegetables"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I didn't use to like vegetables.",
+     "accept": [
+      "I didn't use to like vegetables",
+      "I did not use to like vegetables",
+      "I did not use to like vegetables."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "didn't var, o yüzden 'used' değil."
+      },
+      {
+       "lang": "en",
+       "text": "I didn't use to ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Soru sorarken de aynı kural geçerli. Başa"
+     },
+     {
+      "lang": "en",
+      "text": "Did"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir ve yine 'use' deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Did you use to play the guitar?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Did you use to play the guitar?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısa cevaplar da hazır olsun:"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, I did."
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "No, I didn't."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen sor: Eskiden futbol oynar mıydın?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Did you use to play football?",
+     "accept": [
+      "Did you use to play football",
+      "Did you use to play soccer?",
+      "Did you use to play soccer"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Cümleyi 'Did you' ile başlat."
+      },
+      {
+       "lang": "en",
+       "text": "Did you use to ...?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de anlamı test edelim. Şu cümleyi dinle ve karar ver: doğru mu?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "\"I used to work in a bank\" means I work in a bank now.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. 'used to' tam tersini söyler: eskiden çalışıyordum ama artık çalışmıyorum."
+      },
+      {
+       "lang": "en",
+       "text": "I used to work in a bank, but I don't now."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir karışıklığa dikkat: aynı yazılan"
+     },
+     {
+      "lang": "en",
+      "text": "use"
+     },
+     {
+      "lang": "tr",
+      "text": "kelimesi tek başına 'kullanmak' demektir."
+     },
+     {
+      "lang": "en",
+      "text": "I use my phone every day."
+     },
+     {
+      "lang": "tr",
+      "text": "Ama 'used to' bir bütün olarak eski alışkanlığı anlatır. Karıştırma."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir cümle daha tekrar et; bunu sohbette çok kullanacaksın:"
+     },
+     {
+      "lang": "en",
+      "text": "I used to live in a small town, but now I live in Istanbul."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I used to live in a small town, but now I live in Istanbul."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım. Eski alışkanlık için"
+     },
+     {
+      "lang": "en",
+      "text": "I used to"
+     },
+     {
+      "lang": "tr",
+      "text": "artı yalın fiil. Olumsuzda ve soruda d düşer:"
+     },
+     {
+      "lang": "en",
+      "text": "I didn't use to ... / Did you use to ...?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ve bu kalıp her zaman şunu ima eder: artık öyle değil. Şimdi eski bir okul arkadaşınla konuşacaksın, çocukluğunu anlat."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir kafede eski okul arkadaşın Emma ile yıllar sonra karşılaştın. Çocukluğunuzu ve eskiden yaptığınız şeyleri konuşuyorsunuz.",
+   "partner": "Emma, eski okul arkadaşın",
+   "opening": "Hey! I can't believe it's you. Do you remember our school? I used to sit next to you in class!",
+   "openingTr": "Selam! Sen olduğuna inanamıyorum. Okulumuzu hatırlıyor musun? Eskiden sınıfta senin yanında otururdum!",
+   "goal": "Öğrenci en az iki kez 'used to' ile eski bir alışkanlığını anlatır ve Emma'ya 'Did you use to ...?' diye bir soru sorarsa konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-childhood",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "My childhood",
+  "titleTr": "Çocukluğum",
+  "summary": "Çocukluğunu anlatmayı öğreniyorsun: nerede büyüdüğünü söylemek ve geçmişteki alışkanlıklarını \"used to\" ile anlatmak.",
+  "minutes": 9,
+  "focusId": "Past habits",
+  "vocab": [
+   {
+    "de": "grow up",
+    "tr": "büyümek, bir yerde yetişmek"
+   },
+   {
+    "de": "village",
+    "tr": "köy"
+   },
+   {
+    "de": "neighbour",
+    "tr": "komşu"
+   },
+   {
+    "de": "toy",
+    "tr": "oyuncak"
+   },
+   {
+    "de": "remember",
+    "tr": "hatırlamak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I used to …",
+    "tr": "geçmişte düzenli yaptığın ama artık yapmadığın şeyleri anlatırken kullanılır"
+   },
+   {
+    "de": "When I was a child, …",
+    "tr": "çocukken olanları anlatmaya başlarken kullanılır"
+   },
+   {
+    "de": "I grew up in …",
+    "tr": "nerede büyüdüğünü söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün çocukluğunu anlatmayı öğreneceğiz: nerede büyüdüğünü ve küçükken neler yaptığını. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İngilizcede geçmişte düzenli yaptığın, ama artık yapmadığın şeyler için özel bir kalıp var:"
+     },
+     {
+      "lang": "en",
+      "text": "used to"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçedeki \"yapardım, giderdim, oynardım\" gibi. Okunuşu \"yuus tu\" — ortadaki d neredeyse kaybolur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen söyle."
+     },
+     {
+      "lang": "en",
+      "text": "used to"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "used to"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "grow up"
+     },
+     {
+      "lang": "tr",
+      "text": "Büyümek, bir yerde yetişmek demek. Geçmiş hali düzensiz:"
+     },
+     {
+      "lang": "en",
+      "text": "grew up"
+     },
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "village"
+     },
+     {
+      "lang": "tr",
+      "text": "Köy demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkisini birleştirelim. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I grew up in a village."
+     },
+     {
+      "lang": "tr",
+      "text": "Ben bir köyde büyüdüm."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I grew up in a village."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kendin kur. \"Ben İstanbul'da büyüdüm\" nasıl denir?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I grew up in Istanbul.",
+     "accept": [
+      "I grew up in İstanbul.",
+      "I grew up in Istanbul"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Büyümek grow up; geçmiş hali grew up. Şehir adının önüne in gelir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Şehir ve ülke için in kullanıyoruz:"
+     },
+     {
+      "lang": "en",
+      "text": "in Ankara, in Turkey, in a small village"
+     },
+     {
+      "lang": "tr",
+      "text": "Küçük bir köyde büyüdüysen a small village dersin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "toy"
+     },
+     {
+      "lang": "tr",
+      "text": "Oyuncak demek. Çoğulu toys. Şimdi used to kalıbını kullanalım. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I used to play with my old toys."
+     },
+     {
+      "lang": "tr",
+      "text": "Eski oyuncaklarımla oynardım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I used to play with my old toys."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat: used to'dan sonra fiil her zaman yalın haldedir. played değil, play. Çünkü geçmiş anlamını zaten used to veriyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "neighbour"
+     },
+     {
+      "lang": "tr",
+      "text": "Komşu demek. Çoğulu neighbours. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Our neighbours were very kind."
+     },
+     {
+      "lang": "tr",
+      "text": "Komşularımız çok iyiydi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Our neighbours were very kind."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir not: Amerikan İngilizcesinde bu kelime neighbor diye yazılır, u harfi yoktur. Söylenişi aynı, ikisi de doğru."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çocukluğunu anlatırken çok işine yarayacak bir başlangıç var:"
+     },
+     {
+      "lang": "en",
+      "text": "When I was a child, …"
+     },
+     {
+      "lang": "tr",
+      "text": "Ben çocukken… demek. Arkasından geçmiş zaman cümlesi gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: \"Küçükken her gün futbol oynardım.\""
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "When I was a child, I used to play football every day.",
+     "accept": [
+      "I used to play football every day.",
+      "When I was a child, I played football every day.",
+      "When I was a kid, I used to play football every day."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ben çocukken: When I was a child. Oynardım: I used to play. Her gün: every day."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de olumsuzu var. Olumsuzda used değil use olur, çünkü geçmiş zaman görevini didn't üstlenir. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I didn't use to like vegetables."
+     },
+     {
+      "lang": "tr",
+      "text": "Eskiden sebze sevmezdim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I didn't use to like vegetables."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bir kontrol. Şu cümle doğru mu?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "When I was a child, I use to live in a village.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Olumlu cümlede used to olmalı: When I was a child, I used to live in a village. use to sadece didn't ve did ile birlikte kullanılır."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "remember"
+     },
+     {
+      "lang": "tr",
+      "text": "Hatırlamak demek. Bunu şimdiki halde kullanırız, çünkü hatırlamayı şu anda yaparsın. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I remember my first bike."
+     },
+     {
+      "lang": "tr",
+      "text": "İlk bisikletimi hatırlıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I remember my first bike."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende: \"Komşularımızı hatırlıyorum.\""
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I remember our neighbours.",
+     "accept": [
+      "I remember our neighbors.",
+      "I remember our neighbours",
+      "I remember my neighbours."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hatırlamak remember, bizim our, komşular neighbours."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de gerçek bir cümle dinle, kendi çocukluğunu böyle anlatabilirsin:"
+     },
+     {
+      "lang": "en",
+      "text": "I grew up in a small village. We didn't have many toys, but we used to play outside all day. I still remember our neighbours."
+     },
+     {
+      "lang": "tr",
+      "text": "Küçük bir köyde büyüdüm. Çok oyuncağımız yoktu ama bütün gün dışarıda oynardık. Komşularımızı hâlâ hatırlıyorum."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: nerede büyüdüğünü I grew up in… ile söylüyorsun, geçmiş alışkanlıklarını I used to… ile anlatıyorsun, olumsuzu I didn't use to… oluyor. Kelimelerimiz: grow up, village, neighbour, toy, remember. Şimdi kısa bir sohbet yapalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir dil kursunda yeni tanıştığın Emma sana çocukluğunu soruyor.",
+   "partner": "Emma",
+   "opening": "So, where did you grow up?",
+   "openingTr": "Peki, nerede büyüdün?",
+   "goal": "Öğrenci nerede büyüdüğünü söyler, küçükken neler yaptığını used to ile anlatır ve bir hatırasını (oyuncak, komşu ya da arkadaş) paylaşırsa konuşma başarılıdır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-past-holiday",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "A holiday I remember",
+  "titleTr": "Unutmadığım tatil",
+  "summary": "Geçmişte yaşadığın bir tatili past simple ile, gittiğin yeri, kaldığın oteli ve nasıl geçtiğini anlatarak İngilizce anlatmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Past narrative",
+  "vocab": [
+   {
+    "de": "travel",
+    "tr": "seyahat etmek"
+   },
+   {
+    "de": "beach",
+    "tr": "plaj"
+   },
+   {
+    "de": "flight",
+    "tr": "uçuş"
+   },
+   {
+    "de": "hotel",
+    "tr": "otel"
+   },
+   {
+    "de": "enjoy",
+    "tr": "tadını çıkarmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I went to Antalya last summer.",
+    "tr": "geçmişte nereye gittiğini söylerken kullanılır"
+   },
+   {
+    "de": "We stayed at a hotel for five days.",
+    "tr": "nerede ve ne kadar kaldığını anlatırken kullanılır"
+   },
+   {
+    "de": "The weather was hot and the beach was beautiful.",
+    "tr": "geçmişte bir şeyin nasıl olduğunu anlatırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba, hoş geldin. Bugün unutmadığın bir tatili İngilizce anlatmayı öğreneceğiz: nereye gittin, nerede kaldın, nasıldı."
+     },
+     {
+      "lang": "tr",
+      "text": "Kısa cümlelerle ilerleyeceğiz. Hazırsan başlayalım."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tatil anlatırken her şey geçmişte olur. İngilizcede çoğu fiile sonuna -ed ekleriz: stay, yani kalmak, geçmişte"
+     },
+     {
+      "lang": "en",
+      "text": "stayed"
+     },
+     {
+      "lang": "tr",
+      "text": "olur. Ama bazı fiiller kuralsızdır. Go, yani gitmek, geçmişte"
+     },
+     {
+      "lang": "en",
+      "text": "went"
+     },
+     {
+      "lang": "tr",
+      "text": "olur. Ve olmak fiili: I was, we were."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: travel. Seyahat etmek demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "travel"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "travel"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Travel düzenli bir fiil, geçmişte"
+     },
+     {
+      "lang": "en",
+      "text": "traveled"
+     },
+     {
+      "lang": "tr",
+      "text": "olur. Mesela:"
+     },
+     {
+      "lang": "en",
+      "text": "We traveled by plane."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani uçakla seyahat ettik."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelime: beach. Plaj demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "beach"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "beach"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi: flight. Uçuş demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "flight"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "flight"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Uçuşun nasıl geçtiğini şöyle anlatırsın:"
+     },
+     {
+      "lang": "en",
+      "text": "The flight was long."
+     },
+     {
+      "lang": "tr",
+      "text": "Uçuş uzundu. Ya da"
+     },
+     {
+      "lang": "en",
+      "text": "The flight was short."
+     },
+     {
+      "lang": "tr",
+      "text": "Uçuş kısaydı."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelime: hotel. Otel demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "hotel"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "hotel"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz: enjoy. Tadını çıkarmak, keyif almak demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "enjoy"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "enjoy"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Enjoy da düzenli: geçmişte"
+     },
+     {
+      "lang": "en",
+      "text": "enjoyed"
+     },
+     {
+      "lang": "tr",
+      "text": "olur."
+     },
+     {
+      "lang": "en",
+      "text": "I enjoyed the holiday."
+     },
+     {
+      "lang": "tr",
+      "text": "Tatilin tadını çıkardım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk kalıbımız. Nereye gittiğini söylemek için:"
+     },
+     {
+      "lang": "en",
+      "text": "I went to Antalya last summer."
+     },
+     {
+      "lang": "tr",
+      "text": "Geçen yaz Antalya'ya gittim. Dikkat et: went, ve şehirden önce to."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu İngilizce söyle: Geçen yaz İzmir'e gittim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I went to Izmir last summer.",
+     "accept": [
+      "Last summer I went to Izmir.",
+      "I went to Izmir last summer",
+      "Last summer, I went to Izmir."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gitmek fiilinin geçmişi went."
+      },
+      {
+       "lang": "tr",
+       "text": "Geçen yaz: last summer. Cümlenin başında ya da sonunda olabilir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok iyi. İkinci kalıp: nerede ve ne kadar kaldığını anlatmak."
+     },
+     {
+      "lang": "en",
+      "text": "We stayed at a hotel for five days."
+     },
+     {
+      "lang": "tr",
+      "text": "Beş gün bir otelde kaldık. Otel için at, süre için for."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu cümleyi benimle birlikte söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We stayed at a hotel for five days."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We stayed at a hotel for five days."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. Şunu İngilizce söyle: Üç gün bir otelde kaldık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We stayed at a hotel for three days.",
+     "accept": [
+      "We stayed at a hotel for 3 days.",
+      "We stayed in a hotel for three days.",
+      "We stayed at the hotel for three days."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kalmak: stay, geçmişte stayed."
+      },
+      {
+       "lang": "tr",
+       "text": "Süre söylerken for kullan: for three days."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tatilin nasıl olduğunu anlatmak için was ve were kullanırız."
+     },
+     {
+      "lang": "en",
+      "text": "The weather was hot and the beach was beautiful."
+     },
+     {
+      "lang": "tr",
+      "text": "Hava sıcaktı ve plaj çok güzeldi. Tek şey için was, birden fazla şey için were:"
+     },
+     {
+      "lang": "en",
+      "text": "The people were friendly."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bir doğru-yanlış. Şu cümle doğru mu:"
+     },
+     {
+      "lang": "en",
+      "text": "Last year I go to the beach."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Last year I go to the beach.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Last year geçmiş, o yüzden fiil de geçmiş olmalı."
+      },
+      {
+       "lang": "tr",
+       "text": "Doğrusu: Last year I went to the beach."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de beğenmediğin şeyleri anlatalım. Geçmişte olumsuz için didn't kullanırız ve fiil yalın kalır:"
+     },
+     {
+      "lang": "en",
+      "text": "I didn't like the food."
+     },
+     {
+      "lang": "tr",
+      "text": "Yemeği beğenmedim. Dikkat: didn't liked değil, didn't like."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son alıştırma. Şunu İngilizce söyle: Uçuş uzundu ama tatilin tadını çıkardım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The flight was long, but I enjoyed the holiday.",
+     "accept": [
+      "The flight was long but I enjoyed the holiday.",
+      "The flight was long, but I enjoyed the vacation.",
+      "The flight was long, but I enjoyed my holiday."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Uçuş: the flight. Uzundu: was long."
+      },
+      {
+       "lang": "tr",
+       "text": "Ama: but. Tadını çıkardım: I enjoyed."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika iş çıkardın. Bugün öğrendiklerin: went ile nereye gittiğini,"
+     },
+     {
+      "lang": "en",
+      "text": "I went to Antalya last summer."
+     },
+     {
+      "lang": "tr",
+      "text": "stayed ile nerede kaldığını,"
+     },
+     {
+      "lang": "en",
+      "text": "We stayed at a hotel for five days."
+     },
+     {
+      "lang": "tr",
+      "text": "was ve were ile nasıl olduğunu anlatmayı."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir arkadaşın tatilini soracak. Ona kendi tatilini anlat."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İş yerinde kahve molası; arkadaşın tatilden döndüğünü öğrenmiş ve merak ediyor.",
+   "partner": "Emma, senin İngiliz iş arkadaşın",
+   "opening": "Hi! You look great. Where did you go on holiday?",
+   "openingTr": "Selam! Harika görünüyorsun. Tatilde nereye gittin?",
+   "goal": "Nereye gittiğini, nerede ve kaç gün kaldığını ve tatilin nasıl geçtiğini geçmiş zaman cümleleriyle anlatınca konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-what-happened",
+  "level": "A2",
+  "course": "en",
+  "icon": "talk",
+  "title": "What happened?",
+  "titleTr": "Ne oldu?",
+  "summary": "Başına gelen küçük bir aksiliği İngilizcede geçmiş zamanla anlatmayı öğretir: ne oldu, nerede oldu, kim yardım etti ve sonu nasıl bitti.",
+  "minutes": 9,
+  "focusId": "Past narrative",
+  "vocab": [
+   {
+    "de": "fall",
+    "tr": "düşmek"
+   },
+   {
+    "de": "break",
+    "tr": "mola"
+   },
+   {
+    "de": "hurt",
+    "tr": "ağrımak"
+   },
+   {
+    "de": "luckily",
+    "tr": "neyse ki"
+   },
+   {
+    "de": "help",
+    "tr": "yardım etmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What happened?",
+    "tr": "birinin başına ne geldiğini sormak için kullanılır"
+   },
+   {
+    "de": "I fell on the stairs and hurt my arm.",
+    "tr": "başına gelen aksiliği geçmiş zamanda anlatmak için kullanılır"
+   },
+   {
+    "de": "Luckily, it wasn't serious.",
+    "tr": "kötü biten bir olayın iyi tarafını söylemek için kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün başına gelen küçük bir aksiliği İngilizce anlatmayı öğreneceğiz: ne oldu, nerede oldu ve sonu nasıl bitti."
+     },
+     {
+      "lang": "tr",
+      "text": "Hepsi geçmiş zaman. Hazırsan başlıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İngilizcede geçmiş zamanın en kolay yolu fiilin sonuna -ed eklemek."
+     },
+     {
+      "lang": "tr",
+      "text": "happen, olmak demek. Geçmişi:"
+     },
+     {
+      "lang": "en",
+      "text": "happened"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani bir şey oldu."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birinin başına bir şey geldiğini görünce sorduğumuz cümle şu:"
+     },
+     {
+      "lang": "en",
+      "text": "What happened?"
+     },
+     {
+      "lang": "tr",
+      "text": "Ne oldu, demek. Lütfen sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What happened?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: fall. Türkçesi düşmek demek."
+     },
+     {
+      "lang": "tr",
+      "text": "Ama düzensiz bir fiil, sonuna -ed almaz. Geçmişi:"
+     },
+     {
+      "lang": "en",
+      "text": "fell"
+     },
+     {
+      "lang": "tr",
+      "text": "fall düşmek, fell düştü."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Nerede düştüğünü de söyleyelim. Merdiven, İngilizcede stairs."
+     },
+     {
+      "lang": "en",
+      "text": "I fell on the stairs."
+     },
+     {
+      "lang": "tr",
+      "text": "Merdivende düştüm. Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I fell on the stairs."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz: break. Türkçesi mola demek. İşte ya da okulda verdiğimiz kısa ara."
+     },
+     {
+      "lang": "en",
+      "text": "during the break"
+     },
+     {
+      "lang": "tr",
+      "text": "Mola sırasında. Lütfen sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "during the break"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ikisini birleştiriyoruz. Önce ne olduğunu, sonra ne zaman olduğunu söylüyoruz."
+     },
+     {
+      "lang": "en",
+      "text": "I fell during the break."
+     },
+     {
+      "lang": "tr",
+      "text": "Mola sırasında düştüm."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz: hurt. Ağrımak, canı yanmak demek."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu fiilin güzel bir tarafı var: geçmişi de aynı, yine hurt."
+     },
+     {
+      "lang": "en",
+      "text": "I hurt my arm."
+     },
+     {
+      "lang": "tr",
+      "text": "Kolum ağrıdı, kolumu incittim. Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I hurt my arm."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi olayı tek cümlede anlat. İki fiili and ile bağla."
+     },
+     {
+      "lang": "tr",
+      "text": "Merdivende düştüm ve kolumu incittim, nasıl denir?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I fell on the stairs and hurt my arm.",
+     "accept": [
+      "I fell on the stairs and I hurt my arm.",
+      "I fell on the stairs, and hurt my arm."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "düşmek fiilinin geçmişi fell, incitmek fiilinin geçmişi yine hurt."
+      },
+      {
+       "lang": "tr",
+       "text": "I fell ... and hurt my arm."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok iyi. Şimdi olumsuz cümle. Geçmişte olumsuz yaparken didn't kullanırız ve fiil yalın haline döner."
+     },
+     {
+      "lang": "en",
+      "text": "I didn't break my phone."
+     },
+     {
+      "lang": "tr",
+      "text": "Telefonumu kırmadım. Dikkat et: didn't varken broke değil, break diyoruz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "be fiilinin geçmişi ayrı: was ve were. Olumsuzu wasn't."
+     },
+     {
+      "lang": "en",
+      "text": "It wasn't serious."
+     },
+     {
+      "lang": "tr",
+      "text": "Ciddi değildi."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz: luckily. Neyse ki demek. Cümlenin başına koyarız."
+     },
+     {
+      "lang": "en",
+      "text": "Luckily, it wasn't serious."
+     },
+     {
+      "lang": "tr",
+      "text": "Neyse ki ciddi değildi. Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Luckily, it wasn't serious."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bir cümleye bakalım. Doğru mu söylenmiş, karar ver."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Yesterday I falled and hurt my arm.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "fall düzensiz bir fiil, sonuna -ed almaz."
+      },
+      {
+       "lang": "tr",
+       "text": "Doğrusu: Yesterday I fell and hurt my arm."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beşinci kelimemiz: help. Yardım etmek demek. Bu düzenli bir fiil, geçmişi helped."
+     },
+     {
+      "lang": "en",
+      "text": "A woman helped me."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir kadın bana yardım etti."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Bir kadın bana yardım etti, nasıl denir?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A woman helped me.",
+     "accept": [
+      "A woman helped me",
+      "A lady helped me."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "help fiili düzenli: sonuna -ed ekle."
+      },
+      {
+       "lang": "tr",
+       "text": "A woman ... me."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geçmiş zamanda soru sorarken de Did kullanırız ve fiil yalın kalır."
+     },
+     {
+      "lang": "en",
+      "text": "Did you call a doctor?"
+     },
+     {
+      "lang": "tr",
+      "text": "Doktor aradın mı? Lütfen sen de sor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Did you call a doctor?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Buna kısa cevap vermek çok kolay: No, I didn't. Ya da Yes, I did."
+     },
+     {
+      "lang": "en",
+      "text": "No, I didn't. I went home."
+     },
+     {
+      "lang": "tr",
+      "text": "Hayır, aramadım. Eve gittim. go fiilinin geçmişi went, onu da cebine koy."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir cümle daha kur. Neyse ki ciddi değildi, nasıl denir?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Luckily, it wasn't serious.",
+     "accept": [
+      "Luckily it wasn't serious.",
+      "Luckily, it was not serious."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Neyse ki: luckily. Değildi: wasn't."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi hikâyenin tamamını dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "I fell on the stairs during the break. I hurt my arm. A woman helped me. Luckily, it wasn't serious."
+     },
+     {
+      "lang": "tr",
+      "text": "Duydun mu, dört kısa cümle koca bir olayı anlatıyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: What happened ile ne olduğunu soruyoruz. Düzenli fiillere -ed ekliyoruz, help helped oluyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Düzensizleri ezberliyoruz: fall fell, go went, hurt yine hurt. Olumsuz ve soruda didn't ve Did var, fiil yalın kalıyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Ve sonunu luckily ile tatlıya bağlıyoruz. Şimdi bunu gerçek bir konuşmada dene."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İş yerinde molada merdivende düştün, kolun sarılı. Arkadaşın Emma seni görüyor ve ne olduğunu soruyor.",
+   "partner": "Emma, iş arkadaşın",
+   "opening": "Hey! What happened to your arm?",
+   "openingTr": "Hey! Koluna ne oldu?",
+   "goal": "Öğrenci olayı geçmiş zamanla anlatır: nerede ve ne zaman düştüğünü, nesinin acıdığını, kimin yardım ettiğini söyler ve luckily ile durumun ciddi olmadığını belirtir.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-past-questions",
+  "level": "A2",
+  "course": "en",
+  "icon": "ask",
+  "title": "Asking about the past",
+  "titleTr": "Geçmişi sormak",
+  "summary": "Geçmişle ilgili ayrıntılı soru sormayı öğretir: did'li sorular ile was/were'lü soruların farkını gösterir.",
+  "minutes": 9,
+  "focusId": "did / was questions",
+  "vocab": [
+   {
+    "de": "where",
+    "tr": "nerede, nereye"
+   },
+   {
+    "de": "who",
+    "tr": "kim"
+   },
+   {
+    "de": "how long",
+    "tr": "ne kadar süre"
+   },
+   {
+    "de": "why",
+    "tr": "niçin, neden"
+   },
+   {
+    "de": "alone",
+    "tr": "tek başına, yalnız"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Where did you go?",
+    "tr": "birinin geçmişte nereye gittiğini sorar"
+   },
+   {
+    "de": "How long did you stay?",
+    "tr": "bir şeyin ne kadar sürdüğünü sorar"
+   },
+   {
+    "de": "Why were you alone?",
+    "tr": "geçmişteki bir durumu 'was/were' ile sorar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bugün geçmişi soruyoruz. Birisi sana bir hikâye anlattığında sen de soru sormak istersin: nereye gittin, kiminleydin, ne kadar kaldın. İngilizcede bunun iki yolu var ve ikisini karıştırmamak çok önemli. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki soru ailesi var. Birincisi fiilli sorular:"
+     },
+     {
+      "lang": "en",
+      "text": "did"
+     },
+     {
+      "lang": "tr",
+      "text": "ile kurulur. İkincisi durum soruları:"
+     },
+     {
+      "lang": "en",
+      "text": "was"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "were"
+     },
+     {
+      "lang": "tr",
+      "text": "ile kurulur. Önce soru kelimelerini alalım."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "where"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'nerede' ya da 'nereye' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "where"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "where"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'kim' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "who"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz iki sözcük:"
+     },
+     {
+      "lang": "en",
+      "text": "how long"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'ne kadar süre' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "how long"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "how long"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "why"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'neden' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "why"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "why"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "alone"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'tek başına' demek. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "alone"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "alone"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız:"
+     },
+     {
+      "lang": "en",
+      "text": "Where did you go?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sıralama hep aynı: soru kelimesi, sonra"
+     },
+     {
+      "lang": "en",
+      "text": "did"
+     },
+     {
+      "lang": "tr",
+      "text": "sonra kişi, en sonda fiil. Lütfen"
+     },
+     {
+      "lang": "en",
+      "text": "Where did you go?"
+     },
+     {
+      "lang": "tr",
+      "text": "de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Where did you go?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin en önemli kuralı. Geçmişi taşıyan sözcük"
+     },
+     {
+      "lang": "en",
+      "text": "did"
+     },
+     {
+      "lang": "tr",
+      "text": "olduğu için fiil yalın kalır. 'Gitmek' fiilinin geçmişi"
+     },
+     {
+      "lang": "en",
+      "text": "went"
+     },
+     {
+      "lang": "tr",
+      "text": "ama soruda"
+     },
+     {
+      "lang": "en",
+      "text": "go"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Yani"
+     },
+     {
+      "lang": "en",
+      "text": "Where did you go?"
+     },
+     {
+      "lang": "tr",
+      "text": "doğru;"
+     },
+     {
+      "lang": "en",
+      "text": "Where did you went?"
+     },
+     {
+      "lang": "tr",
+      "text": "yanlış. Geçmiş bir kere söylenir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı kalıptan başka sorular:"
+     },
+     {
+      "lang": "en",
+      "text": "Who did you see?"
+     },
+     {
+      "lang": "tr",
+      "text": "'Kimi gördün?' demek. Ve"
+     },
+     {
+      "lang": "en",
+      "text": "What did you eat?"
+     },
+     {
+      "lang": "tr",
+      "text": "'Ne yedin?' demek. Fiillere dikkat et: hepsi yalın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Bir arkadaşına 'Ne kadar kaldın?' diye sor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "How long did you stay?",
+     "accept": [
+      "How long did you stay there?",
+      "How long did you stay?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce soru kelimesi"
+      },
+      {
+       "lang": "en",
+       "text": "how long"
+      },
+      {
+       "lang": "tr",
+       "text": "sonra"
+      },
+      {
+       "lang": "en",
+       "text": "did you"
+      },
+      {
+       "lang": "tr",
+       "text": "en sonda yalın fiil:"
+      },
+      {
+       "lang": "en",
+       "text": "How long did you stay?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ikinci aile. Fiil yoksa, yani 'idi', 'vardı', 'hastaydı' gibi bir durum soruyorsan"
+     },
+     {
+      "lang": "en",
+      "text": "did"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılmaz."
+     },
+     {
+      "lang": "en",
+      "text": "was"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "were"
+     },
+     {
+      "lang": "tr",
+      "text": "kendisi soru olur:"
+     },
+     {
+      "lang": "en",
+      "text": "Where were you?"
+     },
+     {
+      "lang": "tr",
+      "text": "yani 'Neredeydin?'"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kim hangisini alıyor?"
+     },
+     {
+      "lang": "en",
+      "text": "I"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "he, she, it"
+     },
+     {
+      "lang": "tr",
+      "text": "için"
+     },
+     {
+      "lang": "en",
+      "text": "was"
+     },
+     {
+      "lang": "tr",
+      "text": ";"
+     },
+     {
+      "lang": "en",
+      "text": "you, we, they"
+     },
+     {
+      "lang": "tr",
+      "text": "için"
+     },
+     {
+      "lang": "en",
+      "text": "were"
+     },
+     {
+      "lang": "tr",
+      "text": ". Örnek:"
+     },
+     {
+      "lang": "en",
+      "text": "Was the hotel good?"
+     },
+     {
+      "lang": "tr",
+      "text": "'Otel güzel miydi?' demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bunu sen kur: 'Neden yalnızdın?' Burada fiil yok, sadece bir durum var."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Why were you alone?",
+     "accept": [
+      "Why were you alone there?",
+      "Why were you alone?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Durum sorusu olduğu için"
+      },
+      {
+       "lang": "en",
+       "text": "did"
+      },
+      {
+       "lang": "tr",
+       "text": "yok."
+      },
+      {
+       "lang": "en",
+       "text": "you"
+      },
+      {
+       "lang": "tr",
+       "text": "her zaman"
+      },
+      {
+       "lang": "en",
+       "text": "were"
+      },
+      {
+       "lang": "tr",
+       "text": "alır:"
+      },
+      {
+       "lang": "en",
+       "text": "Why were you alone?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Soru kelimesi olmadan da sorabilirsin; o zaman cevap evet ya da hayırdır."
+     },
+     {
+      "lang": "en",
+      "text": "Did you like it?"
+     },
+     {
+      "lang": "tr",
+      "text": "'Beğendin mi?' demek."
+     },
+     {
+      "lang": "en",
+      "text": "Were you tired?"
+     },
+     {
+      "lang": "tr",
+      "text": "ise 'Yorgun muydun?' demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısa cevaplar da aynı sözcükle verilir. Soru"
+     },
+     {
+      "lang": "en",
+      "text": "did"
+     },
+     {
+      "lang": "tr",
+      "text": "ile geldiyse cevap"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, I did."
+     },
+     {
+      "lang": "tr",
+      "text": "veya"
+     },
+     {
+      "lang": "en",
+      "text": "No, I didn't."
+     },
+     {
+      "lang": "tr",
+      "text": "Soru"
+     },
+     {
+      "lang": "en",
+      "text": "were"
+     },
+     {
+      "lang": "tr",
+      "text": "ile geldiyse cevap"
+     },
+     {
+      "lang": "en",
+      "text": "Yes, I was."
+     },
+     {
+      "lang": "tr",
+      "text": "veya"
+     },
+     {
+      "lang": "en",
+      "text": "No, I wasn't."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir doğru-yanlış alıştırması:"
+     },
+     {
+      "lang": "en",
+      "text": "Where did you went last night?"
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesi doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Where did you went last night?",
+     "answer": false,
+     "why": [
+      {
+       "lang": "en",
+       "text": "did"
+      },
+      {
+       "lang": "tr",
+       "text": "zaten geçmişi taşıyor, fiil yalın kalmalı. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Where did you go last night?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir tane: 'Kiminle gittin?' nasıl sorulur? Bu bir fiil sorusu, yani"
+     },
+     {
+      "lang": "en",
+      "text": "did"
+     },
+     {
+      "lang": "tr",
+      "text": "ailesinden."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Who did you go with?",
+     "accept": [
+      "Who were you with?",
+      "Who did you go there with?",
+      "Who did you go with?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İngilizcede 'ile' anlamındaki"
+      },
+      {
+       "lang": "en",
+       "text": "with"
+      },
+      {
+       "lang": "tr",
+       "text": "cümlenin sonuna gider:"
+      },
+      {
+       "lang": "en",
+       "text": "Who did you go with?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Fiil soruyorsan"
+     },
+     {
+      "lang": "en",
+      "text": "did"
+     },
+     {
+      "lang": "tr",
+      "text": "kullan ve fiili yalın bırak. Durum soruyorsan"
+     },
+     {
+      "lang": "en",
+      "text": "was"
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "were"
+     },
+     {
+      "lang": "tr",
+      "text": "kullan ve"
+     },
+     {
+      "lang": "en",
+      "text": "did"
+     },
+     {
+      "lang": "tr",
+      "text": "ekleme. Soru kelimesi hep en başta durur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika! Şimdi bir arkadaşın hafta sonu gezisinden dönmüş. Ona en az beş soru sor: nereye gitti, kiminleydi, ne kadar kaldı, neden."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşın hafta sonu şehir dışına gitti ve yeni döndü. Merakını göster: nereye gittiğini, kiminle gittiğini, ne kadar kaldığını ve nasıl geçtiğini did ve was/were sorularıyla öğren.",
+   "partner": "gezisinden yeni dönmüş, anlatmaya istekli bir arkadaş",
+   "opening": "Guess what — I was in London last weekend!",
+   "openingTr": "Bil bakalım ne oldu — geçen hafta sonu Londra'daydım!",
+   "goal": "Öğrenci en az beş soru sormuş; hem did'li fiil sorusu hem was/were'lü durum sorusu kullanmış ve arkadaşın gezisi hakkında nereye, kiminle ve ne kadar bilgisini almış olur.",
+   "minTurns": 7
+  }
+ }
+]

@@ -26,6 +26,10 @@ const BY_COURSE: Record<string, Record<string, string[]>> = {
   // 10'luk sınırı korunmazsa ünite başlığı ile içeriği ayrışır.
   en: {
     A1: ["Tanışma ve ben", "Aile ve insanlar", "Yeme-içme", "Günlük düzen", "Alışveriş", "Şehirde", "Ev ve yaşam", "Boş zaman", "Sağlık ve vücut", "İletişim ve geçmişe ilk adım"],
+    // A2 henüz yalnız ilk modül. Liste GERÇEK içerik kadar uzun tutuluyor:
+    // olmayan modüle tema yazmak, dersler eklenirken sıranın kaymasıyla
+    // başlığın içeriğinden ayrılmasına yol açar.
+    A2: ["Geçmişi anlatmak"],
   },
 };
 
