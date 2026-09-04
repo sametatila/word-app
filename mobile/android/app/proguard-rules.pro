@@ -3,7 +3,7 @@
 # Buradakiler yamalanan eski modüller ve kendi native modülümüz için.
 
 # Kendi native modülümüz — JS'ten ada göre bulunur, üyeleri @ReactMethod ile çağrılır.
--keep class com.nomi.speech.** { *; }
+-keep class com.lernomi.speech.** { *; }
 
 # Yamalanan üçüncü parti modüller (patches/): consumer kuralı taşımıyorlar.
 -keep class com.zmxv.RNSound.** { *; }

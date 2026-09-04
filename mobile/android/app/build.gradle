@@ -88,11 +88,11 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.nomi"
+    namespace "com.lernomi"
     defaultConfig {
-        // Paket adı: "com.nomi" tek başına fazla genel (Play'de çakışma riski). Alan adına
+        // Paket adı: "com.lernomi" tek başına fazla genel (Play'de çakışma riski). Alan adına
         // bağlı DEĞİL — pazarlama alanı sonradan değişebilir; paket adı yayından sonra değişemez.
-        applicationId "com.nomi.learn"
+        applicationId "com.lernomi.learn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 13

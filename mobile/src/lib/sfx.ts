@@ -4,7 +4,7 @@ import { bridgeReady, bridgeSfx, type SfxKind } from "./ttsBridge";
 import { SFX_NOTES } from "./sfxNotes";
 
 /** Ekran-kapalı SFX için native ton sentezi + arka planda çalışan gecikme (Handler). */
-const NomiSfx = NativeModules.NomiSpeech as
+const LernomiSfx = NativeModules.LernomiSpeech as
   | { playSfx?: (kind: string) => void; delay?: (ms: number) => Promise<boolean> }
   | undefined;
 
@@ -49,14 +49,14 @@ export function setSfxScreenOff(v: boolean): void { screenOffMode = v; }
 
 /** Arka planda da çalışan gecikme (native Handler); RN setTimeout ekran-kapalı durur. */
 function waitMs(ms: number): Promise<void> {
-  try { if (NomiSfx?.delay) return NomiSfx.delay(ms).then(() => undefined).catch(() => undefined); } catch { /* yut */ }
+  try { if (LernomiSfx?.delay) return LernomiSfx.delay(ms).then(() => undefined).catch(() => undefined); } catch { /* yut */ }
   return new Promise((r) => setTimeout(r, ms));
 }
 
 function playNow(kind: SfxKind): void {
   try {
     // Ekran kapalı: WebView köprüsü de react-native-sound de arka planda çalmıyor → native ton sentezi.
-    if (screenOffMode) { NomiSfx?.playSfx?.(kind); return; }
+    if (screenOffMode) { LernomiSfx?.playSfx?.(kind); return; }
     // Öncelik: WebAudio köprüsü — web ile birebir sentez, çalıştığı KANITLI çıkış (TTS de buradan).
     if (bridgeReady()) { bridgeSfx(kind); return; }
     // Yedek: cihazda react-native-sound (her tür için kendi mp3'ü var).

@@ -60,7 +60,7 @@ export function bridgeRefresh(force = false): void {
 
 /**
  * Ses efektini WebView'de WebAudio ile SENTEZLER ve çalar. Nota tablosu ve sentez modeli
- * `sfxNotes.ts`'te (TEK KAYNAK); native ekran-kapalı yol (NomiSpeechModule.playSfx) ve
+ * `sfxNotes.ts`'te (TEK KAYNAK); native ekran-kapalı yol (LernomiSpeechModule.playSfx) ve
  * res/raw mp3 yedeği aynı tabloyu aynı zarf/filtre modeliyle üretir → üç yol birebir aynı ses.
  * Kademeli (combo) mantık YOK — correct/wrong SABİT. Marka sesleri ksilofon ailesi:
  *  - correct: Do–Mi–Sol–Do yükselen staccato · wrong: Sol–Mi♭–Do inen minör

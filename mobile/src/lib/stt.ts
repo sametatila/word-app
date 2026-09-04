@@ -1,5 +1,5 @@
 /**
- * Konuşma tanıma (STT) — kendi native modülümüz `NomiSpeech` (Android
+ * Konuşma tanıma (STT) — kendi native modülümüz `LernomiSpeech` (Android
  * SpeechRecognizer / iOS SFSpeechRecognizer). @react-native-voice (2022, bakımsız)
  * yerine geçer. Yürüyüş modunun aktif hatırlama döngüsü kullanır: kullanıcı cevabı
  * SÖYLER, metne çevrilir.
@@ -39,8 +39,8 @@ type SpeechNative = {
   setApiBase(base: string): void;
 };
 
-const Native = NativeModules.NomiSpeech as SpeechNative | undefined;
-const emitter = Native ? new NativeEventEmitter(NativeModules.NomiSpeech) : null;
+const Native = NativeModules.LernomiSpeech as SpeechNative | undefined;
+const emitter = Native ? new NativeEventEmitter(NativeModules.LernomiSpeech) : null;
 // Native HTTP allowlist: uploadStt/httpGet/playTtsUrl yalnız API sunucusuna (https) çıkar.
 try { Native?.setApiBase?.(API_BASE); } catch { /* yut */ }
 
@@ -105,10 +105,10 @@ export function listenOnce(locale = currentTargetLocale(), windowMs = 9000): Pro
     };
 
     const subs = [
-      emitter.addListener("NomiSpeechResults", (e: { value?: string[] }) =>
+      emitter.addListener("LernomiSpeechResults", (e: { value?: string[] }) =>
         finish((e?.value ?? []).map((s) => (s ?? "").trim()).filter(Boolean)),
       ),
-      emitter.addListener("NomiSpeechPartial", (e: { value?: string[] }) => {
+      emitter.addListener("LernomiSpeechPartial", (e: { value?: string[] }) => {
         const t = (e?.value?.[0] ?? "").trim();
         if (t) {
           best = t;
@@ -118,12 +118,12 @@ export function listenOnce(locale = currentTargetLocale(), windowMs = 9000): Pro
           quietTimer = setTimeout(() => finish([best]), 800);
         }
       }),
-      emitter.addListener("NomiSpeechEnd", () => {
+      emitter.addListener("LernomiSpeechEnd", () => {
         // Konuşma bitti; final birazdan gelmeli. Gelmezse kısa emniyetle partial'a düş.
         if (endTimer) clearTimeout(endTimer);
         endTimer = setTimeout(() => finish(null), 1500);
       }),
-      emitter.addListener("NomiSpeechError", () => finish(null)),
+      emitter.addListener("LernomiSpeechError", () => finish(null)),
     ];
 
     const timer = setTimeout(() => finish(null), windowMs); // güvenlik üst sınırı
@@ -171,7 +171,7 @@ export function stopWalkService(): void { try { Native?.stopWalkService(); } cat
 /** Bildirimdeki "Durdur" eylemi (foreground service) — JS oturumu kapatır. Aboneliği kapatan fonksiyon döner. */
 export function onWalkStop(cb: () => void): () => void {
   if (!emitter) return () => {};
-  const sub = emitter.addListener("NomiWalkStop", cb);
+  const sub = emitter.addListener("LernomiWalkStop", cb);
   return () => sub.remove();
 }
 
@@ -179,8 +179,8 @@ export function onWalkStop(cb: () => void): () => void {
 export function onScreenState(cb: (off: boolean) => void): () => void {
   try { Native?.startScreenWatch(); } catch { /* yut */ }
   if (!emitter) return () => { try { Native?.stopScreenWatch(); } catch { /* yut */ } };
-  const a = emitter.addListener("NomiScreenOff", () => cb(true));
-  const b = emitter.addListener("NomiScreenOn", () => cb(false));
+  const a = emitter.addListener("LernomiScreenOff", () => cb(true));
+  const b = emitter.addListener("LernomiScreenOn", () => cb(false));
   return () => { a.remove(); b.remove(); try { Native?.stopScreenWatch(); } catch { /* yut */ } };
 }
 

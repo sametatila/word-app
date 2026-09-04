@@ -1,4 +1,4 @@
-package com.nomi.speech
+package com.lernomi.speech
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -38,15 +38,15 @@ import com.facebook.react.modules.core.DeviceEventManagerModule
  *    çöküyordu; burada her yerde null korumalı.
  *  - Tüm recognizer çağrıları ANA THREAD'de (SpeechRecognizer bunu şart koşar).
  *
- * JS'e olaylarla konuşur (DeviceEventManagerModule): NomiSpeechReady/Begin/Partial/
+ * JS'e olaylarla konuşur (DeviceEventManagerModule): LernomiSpeechReady/Begin/Partial/
  * Results/End/Error. Sonuç dizileri { value: [...] } biçiminde.
  */
-class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
+class LernomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   ReactContextBaseJavaModule(reactCtx), RecognitionListener {
 
   private var recognizer: SpeechRecognizer? = null
 
-  override fun getName() = "NomiSpeech"
+  override fun getName() = "LernomiSpeech"
 
   private fun emit(event: String, params: WritableMap?) {
     try {
@@ -159,10 +159,10 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   fun uploadStt(url: String, wavPath: String, language: String, expected: String, promise: Promise) {
     Thread {
       try {
-        if (!allowedUrl(url)) { android.util.Log.e("NomiWalk", "uploadStt: izin verilmeyen adres"); promise.resolve(null); return@Thread }
+        if (!allowedUrl(url)) { android.util.Log.e("LernomiWalk", "uploadStt: izin verilmeyen adres"); promise.resolve(null); return@Thread }
         val file = java.io.File(wavPath)
         if (!file.exists() || file.length() == 0L) { promise.resolve(null); return@Thread }
-        val boundary = "----NomiBoundary${System.currentTimeMillis()}"
+        val boundary = "----LernomiBoundary${System.currentTimeMillis()}"
         val cookie = try { android.webkit.CookieManager.getInstance().getCookie(url) } catch (_: Exception) { null }
         val conn = java.net.URL(url).openConnection() as java.net.HttpURLConnection
         conn.requestMethod = "POST"
@@ -191,7 +191,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
         if (code != 200) { promise.resolve(null); return@Thread }
         val text = try { org.json.JSONObject(body).optString("text", "") } catch (_: Exception) { "" }
         promise.resolve(if (text.isNotEmpty()) text else null)
-      } catch (e: Exception) { android.util.Log.e("NomiWalk", "uploadStt ex ${e.message}"); promise.resolve(null) }
+      } catch (e: Exception) { android.util.Log.e("LernomiWalk", "uploadStt ex ${e.message}"); promise.resolve(null) }
     }.start()
   }
 
@@ -201,7 +201,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   fun httpGet(url: String, promise: Promise) {
     Thread {
       try {
-        if (!allowedUrl(url)) { android.util.Log.e("NomiWalk", "httpGet: izin verilmeyen adres"); promise.resolve(null); return@Thread }
+        if (!allowedUrl(url)) { android.util.Log.e("LernomiWalk", "httpGet: izin verilmeyen adres"); promise.resolve(null); return@Thread }
         val cookie = try { android.webkit.CookieManager.getInstance().getCookie(url) } catch (_: Exception) { null }
         val conn = java.net.URL(url).openConnection() as java.net.HttpURLConnection
         conn.connectTimeout = 15000; conn.readTimeout = 20000
@@ -257,7 +257,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
       var settled = false
       fun finishP(ok: Boolean) { synchronized(this) { if (!settled) { settled = true; promise.resolve(ok) } } }
       try {
-        if (!allowedUrl(url)) { android.util.Log.e("NomiWalk", "playTts: izin verilmeyen adres"); finishP(false); return@Thread }
+        if (!allowedUrl(url)) { android.util.Log.e("LernomiWalk", "playTts: izin verilmeyen adres"); finishP(false); return@Thread }
         // Çerezi CookieManager'dan al (WebView/RN paylaşımlı) → /api/tts kimlik doğrular.
         val cookie = try { android.webkit.CookieManager.getInstance().getCookie(url) } catch (_: Exception) { null }
         val conn = java.net.URL(url).openConnection() as java.net.HttpURLConnection
@@ -265,7 +265,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
         if (!cookie.isNullOrEmpty()) conn.setRequestProperty("Cookie", cookie)
         conn.setRequestProperty("accept", "audio/mpeg")
         val code = conn.responseCode
-        if (code != 200) { android.util.Log.e("NomiWalk", "playTts HTTP $code (cookie=${!cookie.isNullOrEmpty()})"); conn.disconnect(); finishP(false); return@Thread }
+        if (code != 200) { android.util.Log.e("LernomiWalk", "playTts HTTP $code (cookie=${!cookie.isNullOrEmpty()})"); conn.disconnect(); finishP(false); return@Thread }
         val file = java.io.File(reactCtx.cacheDir, "walk_tts.mp3")
         conn.inputStream.use { input -> file.outputStream().use { out -> input.copyTo(out) } }
         conn.disconnect()
@@ -278,12 +278,12 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
             mp.setAudioAttributes(AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build())
             mp.setDataSource(file.absolutePath)
             mp.setOnCompletionListener { try { it.release() } catch (_: Exception) {}; if (player === mp) player = null; finishP(true) }
-            mp.setOnErrorListener { _, w, e -> android.util.Log.e("NomiWalk", "playTts MP err $w/$e"); try { mp.release() } catch (_: Exception) {}; if (player === mp) player = null; finishP(false); true }
+            mp.setOnErrorListener { _, w, e -> android.util.Log.e("LernomiWalk", "playTts MP err $w/$e"); try { mp.release() } catch (_: Exception) {}; if (player === mp) player = null; finishP(false); true }
             mp.prepare()
             mp.start()
-          } catch (e: Exception) { android.util.Log.e("NomiWalk", "playTts MP ex ${e.message}"); finishP(false) }
+          } catch (e: Exception) { android.util.Log.e("LernomiWalk", "playTts MP ex ${e.message}"); finishP(false) }
         }
-      } catch (e: Exception) { android.util.Log.e("NomiWalk", "playTts ex ${e.message}"); finishP(false) }
+      } catch (e: Exception) { android.util.Log.e("LernomiWalk", "playTts ex ${e.message}"); finishP(false) }
     }.start()
   }
 
@@ -417,7 +417,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
         Thread.sleep((total * 1000).toLong() + 140)
         try { at.stop() } catch (_: Exception) {}
         at.release()
-      } catch (e: Exception) { android.util.Log.e("NomiWalk", "playNotes ex ${e.message}") }
+      } catch (e: Exception) { android.util.Log.e("LernomiWalk", "playNotes ex ${e.message}") }
     }.start()
   }
 
@@ -455,27 +455,27 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   @ReactMethod
   fun startWalkService() {
     try {
-      NomiWalkService.onStop = { emit("NomiWalkStop", null) }
-      val i = Intent(reactCtx, NomiWalkService::class.java)
+      LernomiWalkService.onStop = { emit("LernomiWalkStop", null) }
+      val i = Intent(reactCtx, LernomiWalkService::class.java)
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) reactCtx.startForegroundService(i) else reactCtx.startService(i)
-    } catch (e: Exception) { android.util.Log.e("NomiWalk", "startWalkService HATA: ${e.message}", e) }
+    } catch (e: Exception) { android.util.Log.e("LernomiWalk", "startWalkService HATA: ${e.message}", e) }
   }
 
   @ReactMethod
   fun stopWalkService() {
-    NomiWalkService.onStop = null
-    try { reactCtx.stopService(Intent(reactCtx, NomiWalkService::class.java)) } catch (_: Exception) { /* yut */ }
+    LernomiWalkService.onStop = null
+    try { reactCtx.stopService(Intent(reactCtx, LernomiWalkService::class.java)) } catch (_: Exception) { /* yut */ }
   }
 
-  /** Ekran güç tuşuyla kapandı/açıldı olaylarını JS'e yay (NomiScreenOff / NomiScreenOn). */
+  /** Ekran güç tuşuyla kapandı/açıldı olaylarını JS'e yay (LernomiScreenOff / LernomiScreenOn). */
   @ReactMethod
   fun startScreenWatch() {
     if (screenReceiver != null) return
     val r = object : BroadcastReceiver() {
       override fun onReceive(context: Context?, intent: Intent?) {
         when (intent?.action) {
-          Intent.ACTION_SCREEN_OFF -> emit("NomiScreenOff", null)
-          Intent.ACTION_SCREEN_ON -> emit("NomiScreenOn", null)
+          Intent.ACTION_SCREEN_OFF -> emit("LernomiScreenOff", null)
+          Intent.ACTION_SCREEN_ON -> emit("LernomiScreenOn", null)
         }
       }
     }
@@ -488,7 +488,7 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
     try {
       ContextCompat.registerReceiver(reactCtx, r, filter, ContextCompat.RECEIVER_NOT_EXPORTED)
       screenReceiver = r
-    } catch (e: Exception) { android.util.Log.e("NomiWalk", "screen receiver HATA: ${e.message}") }
+    } catch (e: Exception) { android.util.Log.e("LernomiWalk", "screen receiver HATA: ${e.message}") }
   }
 
   @ReactMethod
@@ -569,24 +569,24 @@ class NomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   @ReactMethod fun removeListeners(count: Int) {}
 
   // ---- RecognitionListener ----
-  override fun onReadyForSpeech(params: Bundle?) { emit("NomiSpeechReady", null) }
-  override fun onBeginningOfSpeech() { emit("NomiSpeechBegin", null) }
+  override fun onReadyForSpeech(params: Bundle?) { emit("LernomiSpeechReady", null) }
+  override fun onBeginningOfSpeech() { emit("LernomiSpeechBegin", null) }
   override fun onRmsChanged(rmsdB: Float) { /* gürültü akışı: köprü trafiği için yollanmıyor */ }
   override fun onBufferReceived(buffer: ByteArray?) {}
-  override fun onEndOfSpeech() { emit("NomiSpeechEnd", null) }
+  override fun onEndOfSpeech() { emit("LernomiSpeechEnd", null) }
 
   override fun onError(error: Int) {
     val m = Arguments.createMap()
     m.putString("code", errorCode(error))
-    emit("NomiSpeechError", m)
+    emit("LernomiSpeechError", m)
   }
 
   override fun onResults(results: Bundle?) {
-    emitValues("NomiSpeechResults", results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION))
+    emitValues("LernomiSpeechResults", results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION))
   }
 
   override fun onPartialResults(partialResults: Bundle?) {
-    emitValues("NomiSpeechPartial", partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION))
+    emitValues("LernomiSpeechPartial", partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION))
   }
 
   override fun onEvent(eventType: Int, params: Bundle?) {}

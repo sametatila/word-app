@@ -1,4 +1,4 @@
-package com.nomi
+package com.lernomi
 
 import android.app.Application
 import com.facebook.react.PackageList
@@ -15,7 +15,7 @@ class MainApplication : Application(), ReactApplication {
       packageList =
         PackageList(this).packages.apply {
           // Kendi native STT modülümüz (autolink değil, elle eklenir).
-          add(com.nomi.speech.NomiSpeechPackage())
+          add(com.lernomi.speech.LernomiSpeechPackage())
         },
     )
   }

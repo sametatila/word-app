@@ -1,4 +1,4 @@
-package com.nomi.speech
+package com.lernomi.speech
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -11,7 +11,7 @@ import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.nomi.R
+import com.lernomi.R
 
 /**
  * Yürüyüş "ekran kapalı" modu için MİKROFONLU foreground service.
@@ -20,10 +20,10 @@ import com.nomi.R
  * foreground service + mikrofon tipiyle açık tutar. Bu service çalışırken AudioRecord
  * arka planda da kayıt alabilir (Azure yolu). Kalıcı bildirim zorunlu.
  */
-class NomiWalkService : Service() {
+class LernomiWalkService : Service() {
   companion object {
-    const val ACTION_STOP = "com.nomi.walk.STOP"
-    /** Bildirimdeki "Durdur" → JS'e haber (NomiSpeechModule kurar). Servisin JS'e tek yolu. */
+    const val ACTION_STOP = "com.lernomi.walk.STOP"
+    /** Bildirimdeki "Durdur" → JS'e haber (LernomiSpeechModule kurar). Servisin JS'e tek yolu. */
     @Volatile var onStop: (() -> Unit)? = null
   }
 
@@ -56,7 +56,7 @@ class NomiWalkService : Service() {
       PendingIntent.getActivity(this, 0, it, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
     }
     val stop = PendingIntent.getService(
-      this, 1, Intent(this, NomiWalkService::class.java).setAction(ACTION_STOP),
+      this, 1, Intent(this, LernomiWalkService::class.java).setAction(ACTION_STOP),
       PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
     )
     val notif: Notification = NotificationCompat.Builder(this, chId)
@@ -75,7 +75,7 @@ class NomiWalkService : Service() {
       } else {
         startForeground(7, notif)
       }
-    } catch (e: Exception) { android.util.Log.e("NomiWalk", "startForeground HATA: ${e.message}", e) }
+    } catch (e: Exception) { android.util.Log.e("LernomiWalk", "startForeground HATA: ${e.message}", e) }
     // NOT_STICKY: süreç ölürse mikrofon servisi kullanıcı olmadan yeniden başlamaz (Play FGS
     // kuralı: kullanıcının başlattığı, fark edip durdurabildiği kayıt).
     return START_NOT_STICKY

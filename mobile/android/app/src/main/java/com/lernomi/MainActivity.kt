@@ -1,4 +1,4 @@
-package com.nomi
+package com.lernomi
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle

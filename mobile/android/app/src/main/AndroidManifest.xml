@@ -55,7 +55,7 @@
         </intent-filter>
       </activity>
       <service
-        android:name="com.nomi.speech.NomiWalkService"
+        android:name="com.lernomi.speech.LernomiWalkService"
         android:foregroundServiceType="microphone"
         android:exported="false" />
 

@@ -1,7 +1,7 @@
 /**
  * SFX nota tablosu — TEK KAYNAK. Üç çalma yolu da bu tabloyu aynı sentez modeliyle çalar:
  *  - ttsBridge.bridgeSfx: WebView WebAudio (ekran açık, köprü hazırken)
- *  - NomiSpeechModule.playSfx (Kotlin): ekran-kapalı yürüyüş, AudioTrack ham PCM — tablo orada
+ *  - LernomiSpeechModule.playSfx (Kotlin): ekran-kapalı yürüyüş, AudioTrack ham PCM — tablo orada
  *    BİREBİR kopyadır; değiştirince `python3 scripts/render-sfx.py --kotlin` çıktısını oraya yapıştır.
  *  - android res/raw mp3 (react-native-sound yedeği): `python3 scripts/render-sfx.py` ile üretilir.
  * Sesler: Duolingo tarzı ksilofon ailesi (artifact'ta seçilen D10 / Y10 / A2 / K2 / B11).
