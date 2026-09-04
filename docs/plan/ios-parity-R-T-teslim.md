@@ -70,6 +70,19 @@ Geçiş yine de istenirse storyboard silinir, `UILaunchScreen` içine
 `UIColorName = LaunchBackground` + `UIImageName = LaunchIcon` yazılır; katalog
 kaynakları hazır.
 
+**Karar (2026-09-04, Şerit P sordu, Samet verdi): geçilmeyecek, storyboard kalıyor.
+Şerit S'ten sonra tekrar bakılacak.**
+
+Gerekçe sıralamayla ilgili, zevkle değil. `UILaunchScreen`'in `UIImageName`'i boyut
+denetimi vermiyor; görüntüyü kendi kurallarıyla ortalayıp ölçekliyor. Storyboard'da
+ise Şerit R bilinçli olarak 160 pt'lik bir ikon yerleştirdi. Geçiş, görebildiğimiz
+bir şeyi göremediğimiz bir şeyle değiştirir. İlk başarılı derlemeden önce çalışan
+ama doğrulanmamış bir parçayı düzen uğruna oynatmak tek bilinmezi ikiye çıkarır.
+
+Ertelemenin bedeli düşük: Şerit S'in ilk cihaz ekran görüntüsünde açılış yanlış
+görünürse geçiş yine bir commit'lik iş — ama o zaman elde kanıt olur. §3'teki
+sunum maddeleri (3, 4, 5) zaten bu kanıtı üretiyor.
+
 ---
 
 ## 2 → Şerit N (`LernomiSpeech.swift` / `.m`) ve Şerit S
