@@ -3,6 +3,7 @@ import { a1U01 } from "./a1-u01";
 import { a1U02 } from "./a1-u02";
 import { a1U03 } from "./a1-u03";
 import { a1U04 } from "./a1-u04";
+import { a1U05 } from "./a1-u05";
 
 /** A1 — okuma, dinleme ve yazma egzersizleri. */
 export const a1: SkillExercise[] = [
@@ -13,6 +14,7 @@ export const a1: SkillExercise[] = [
   ...a1U02,
   ...a1U03,
   ...a1U04,
+  ...a1U05,
   // ─────────────────────────── OKUMA ───────────────────────────
   {
     id: "a1-r1",
