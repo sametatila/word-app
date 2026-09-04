@@ -50,7 +50,7 @@ export function suggestUsername(name: string | null | undefined, seed: string): 
   let h = 2166136261;
   for (const ch of seed) h = Math.imul(h ^ ch.charCodeAt(0), 16777619) >>> 0;
   const digits = String(h % 10000).padStart(4, "0");
-  const stem = base.length >= 3 ? base : `nomi${base}`;
+  const stem = base.length >= 3 ? base : `lernomi${base}`;
   return `${stem}${digits}`.slice(0, 20);
 }
 

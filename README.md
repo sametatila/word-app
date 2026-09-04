@@ -565,7 +565,7 @@ cevap ve bitmiş dersler duruyordu. Emek vardı, hatırası yoktu.
 3. **Hiçbiri satın alınamaz.** Uygulamada para yok ve olmayacak; rozetin değeri buradan geliyor.
 
 Kutlama tek bir yerde duruyor (`app-shell.tsx` → `AchievementUnlock`) ve tetikleyicisi zaten var
-olan `nomi:stats` olayı: XP değiştiğinde bir şey kazanılmış demektir. Rozetin kazanılabileceği
+olan `lernomi:stats` olayı: XP değiştiğinde bir şey kazanılmış demektir. Rozetin kazanılabileceği
 altı ayrı yere (kelime turu, ders, beceri, görev, günün turu, hayatta kalma) ayrı kutlama koymak,
 altı yerde unutulabilecek bir şey demekti.
 
