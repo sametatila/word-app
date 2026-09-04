@@ -1,4 +1,4 @@
-import { de, tr, type Lesson } from "../types";
+import { de, tr, type LectureStep, type Lesson } from "../types";
 
 /**
  * B1 · Modül 2 — Ev ve kira dünyası (011–020).
@@ -20,6 +20,24 @@ import { de, tr, type Lesson } from "../types";
  * rica), dolaylı soru (daire gezerken) ve `bevor/während` zaman bağlaçları
  * çalışıyor.
  */
+/**
+ * Standart kelime adımı — b03…b10 ile aynı desen, metni b01in eskisiyle birebir
+ * aynı. Sözlükçe 5ten 8e çıkarken aynı adımı on kez elle yazmak diffi
+ * okunamaz hâle getiriyordu.
+ */
+function word(n: string, w: { de: string; tr: string }, note?: string): LectureStep {
+  return {
+    say: [
+      tr(`${n} kelimemiz:`),
+      de(w.de),
+      tr(`Türkçesi '${w.tr}' demek${note ? ` — ${note}` : ""}. Lütfen`),
+      de(w.de),
+      tr("deyin."),
+    ],
+    expect: { kind: "repeat", target: w.de },
+  };
+}
+
 export const deB1B02: Lesson[] = [
   {
     id: "de-b1-wohnung",
@@ -32,11 +50,14 @@ export const deB1B02: Lesson[] = [
     minutes: 10,
     focusId: "Konjunktiv-II",
     vocab: [
-      { de: "die Wohnung", tr: "daire" },
-      { de: "die Miete", tr: "kira" },
-      { de: "die Besichtigung", tr: "daireyi gezme" },
-      { de: "hell", tr: "aydınlık" },
-      { de: "der Vermieter", tr: "ev sahibi" },
+      { de: "der Mieter", tr: "kiracı" },
+      { de: "die Etage", tr: "kat" },
+      { de: "das Gebäude", tr: "bina" },
+      { de: "die Fläche", tr: "alan, yüzölçümü" },
+      { de: "der Zustand", tr: "durum, hâl" },
+      { de: "überlegen", tr: "iyice düşünmek" },
+      { de: "nötig", tr: "gerekli" },
+      { de: "eventuell", tr: "belki, olası" },
     ],
     patterns: [
       { de: "Ich würde gern …", tr: "kibarca '… isterdim' derken kullanılır" },
@@ -58,56 +79,14 @@ export const deB1B02: Lesson[] = [
           ),
         ],
       },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("die Wohnung"),
-          tr("Türkçesi 'daire' demek. Lütfen"),
-          de("die Wohnung"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Wohnung" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("die Miete"),
-          tr("Türkçesi 'kira' demek. Lütfen"),
-          de("die Miete"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Miete" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("die Besichtigung"),
-          tr("Türkçesi 'daireyi gezme, görme randevusu' demek. Lütfen"),
-          de("die Besichtigung"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Besichtigung" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("hell"),
-          tr("Türkçesi 'aydınlık' demek. Lütfen"),
-          de("hell"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "hell" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("der Vermieter"),
-          tr("Türkçesi 'ev sahibi' demek. Lütfen"),
-          de("der Vermieter"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Vermieter" },
-      },
+      word("İlk", { de: "der Mieter", tr: "kiracı" }),
+      word("İkinci", { de: "die Etage", tr: "kat" }),
+      word("Üçüncü", { de: "das Gebäude", tr: "bina" }),
+      word("Dördüncü", { de: "die Fläche", tr: "alan, yüzölçümü" }),
+      word("Beşinci", { de: "der Zustand", tr: "durum, hâl" }),
+      word("Altıncı", { de: "überlegen", tr: "iyice düşünmek" }),
+      word("Yedinci", { de: "nötig", tr: "gerekli" }),
+      word("Son", { de: "eventuell", tr: "belki, olası" }),
       {
         say: [
           tr("İlk kalıbımız:"),
@@ -219,11 +198,14 @@ export const deB1B02: Lesson[] = [
     minutes: 10,
     focusId: "Indirekte-Frage",
     vocab: [
-      { de: "einziehen", tr: "taşınıp yerleşmek" },
-      { de: "die Kaution", tr: "depozito" },
-      { de: "der Grundriss", tr: "kat planı" },
-      { de: "renoviert", tr: "yenilenmiş" },
-      { de: "der Aufzug", tr: "asansör" },
+      { de: "einziehen", tr: "yeni eve taşınmak" },
+      { de: "ausziehen", tr: "evden çıkmak" },
+      { de: "der Flur", tr: "hol" },
+      { de: "das Dach", tr: "çatı" },
+      { de: "der Boden", tr: "zemin" },
+      { de: "heizen", tr: "ısıtmak" },
+      { de: "beachten", tr: "dikkate almak" },
+      { de: "zusätzlich", tr: "ek olarak" },
     ],
     patterns: [
       { de: "Ich wüsste gern, ob …", tr: "kibarca bilgi ister" },
@@ -246,56 +228,14 @@ export const deB1B02: Lesson[] = [
           ),
         ],
       },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("einziehen"),
-          tr("Türkçesi 'taşınıp yerleşmek' demek. Lütfen"),
-          de("einziehen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "einziehen" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("die Kaution"),
-          tr("Türkçesi 'depozito' demek — genellikle üç aylık kira. Lütfen"),
-          de("die Kaution"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Kaution" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("der Grundriss"),
-          tr("Türkçesi 'kat planı' demek. Lütfen"),
-          de("der Grundriss"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Grundriss" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("renoviert"),
-          tr("Türkçesi 'yenilenmiş' demek. Lütfen"),
-          de("renoviert"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "renoviert" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("der Aufzug"),
-          tr("Türkçesi 'asansör' demek. Lütfen"),
-          de("der Aufzug"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Aufzug" },
-      },
+      word("İlk", { de: "einziehen", tr: "yeni eve taşınmak" }),
+      word("İkinci", { de: "ausziehen", tr: "evden çıkmak" }),
+      word("Üçüncü", { de: "der Flur", tr: "hol" }),
+      word("Dördüncü", { de: "das Dach", tr: "çatı" }),
+      word("Beşinci", { de: "der Boden", tr: "zemin" }),
+      word("Altıncı", { de: "heizen", tr: "ısıtmak" }),
+      word("Yedinci", { de: "beachten", tr: "dikkate almak" }),
+      word("Son", { de: "zusätzlich", tr: "ek olarak" }),
       {
         say: [
           tr("İlk kalıbımız:"),
@@ -403,11 +343,14 @@ export const deB1B02: Lesson[] = [
     minutes: 10,
     focusId: "Passiv-Präsens",
     vocab: [
-      { de: "der Mietvertrag", tr: "kira sözleşmesi" },
-      { de: "vereinbaren", tr: "kararlaştırmak" },
-      { de: "die Klausel", tr: "madde, şart" },
-      { de: "gültig", tr: "geçerli" },
       { de: "verpflichtet", tr: "yükümlü" },
+      { de: "die Kündigung", tr: "fesih bildirimi, işten çıkarma" },
+      { de: "die Gebühr", tr: "ücret, harç" },
+      { de: "das Amt", tr: "resmî daire" },
+      { de: "der Anwalt", tr: "avukat" },
+      { de: "regeln", tr: "düzenlemek" },
+      { de: "falls", tr: "şayet, eğer" },
+      { de: "übernehmen", tr: "devralmak" },
     ],
     patterns: [
       { de: "Die Kaution wird … gezahlt.", tr: "edilgen bir işlemi anlatır" },
@@ -430,56 +373,14 @@ export const deB1B02: Lesson[] = [
           ),
         ],
       },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("der Mietvertrag"),
-          tr("Türkçesi 'kira sözleşmesi' demek. Lütfen"),
-          de("der Mietvertrag"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Mietvertrag" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("vereinbaren"),
-          tr("Türkçesi 'kararlaştırmak' demek. Lütfen"),
-          de("vereinbaren"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "vereinbaren" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("die Klausel"),
-          tr("Türkçesi 'madde, şart' demek. Lütfen"),
-          de("die Klausel"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Klausel" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("gültig"),
-          tr("Türkçesi 'geçerli' demek. Lütfen"),
-          de("gültig"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "gültig" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("verpflichtet"),
-          tr("Türkçesi 'yükümlü' demek. Lütfen"),
-          de("verpflichtet"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "verpflichtet" },
-      },
+      word("İlk", { de: "verpflichtet", tr: "yükümlü" }),
+      word("İkinci", { de: "die Kündigung", tr: "fesih bildirimi, işten çıkarma" }),
+      word("Üçüncü", { de: "die Gebühr", tr: "ücret, harç" }),
+      word("Dördüncü", { de: "das Amt", tr: "resmî daire" }),
+      word("Beşinci", { de: "der Anwalt", tr: "avukat" }),
+      word("Altıncı", { de: "regeln", tr: "düzenlemek" }),
+      word("Yedinci", { de: "falls", tr: "şayet, eğer" }),
+      word("Son", { de: "übernehmen", tr: "devralmak" }),
       {
         say: [
           tr(
@@ -589,11 +490,14 @@ export const deB1B02: Lesson[] = [
     minutes: 10,
     focusId: "Konjunktiv-II",
     vocab: [
-      { de: "die Lösung", tr: "çözüm" },
       { de: "der Lärm", tr: "gürültü" },
       { de: "sich beschweren", tr: "şikâyet etmek" },
-      { de: "rücksichtsvoll", tr: "düşünceli, saygılı" },
       { de: "der Streit", tr: "tartışma, kavga" },
+      { de: "die Nachbarin", tr: "kadın komşu" },
+      { de: "der Ärger", tr: "sıkıntı, dert" },
+      { de: "still", tr: "sessiz" },
+      { de: "klopfen", tr: "kapıyı çalmak" },
+      { de: "aufmerksam", tr: "dikkatli" },
     ],
     patterns: [
       { de: "Wären Sie so nett …?", tr: "çok kibar bir rica kurar" },
@@ -616,56 +520,14 @@ export const deB1B02: Lesson[] = [
           ),
         ],
       },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("die Lösung"),
-          tr("Türkçesi 'çözüm' demek. Lütfen"),
-          de("die Lösung"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Lösung" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("der Lärm"),
-          tr("Türkçesi 'gürültü' demek. Lütfen"),
-          de("der Lärm"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Lärm" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("sich beschweren"),
-          tr("Türkçesi 'şikâyet etmek' demek. Lütfen"),
-          de("sich beschweren"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "sich beschweren" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("rücksichtsvoll"),
-          tr("Türkçesi 'düşünceli, saygılı' demek. Lütfen"),
-          de("rücksichtsvoll"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "rücksichtsvoll" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("der Streit"),
-          tr("Türkçesi 'tartışma, kavga' demek. Lütfen"),
-          de("der Streit"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Streit" },
-      },
+      word("İlk", { de: "der Lärm", tr: "gürültü" }),
+      word("İkinci", { de: "sich beschweren", tr: "şikâyet etmek" }),
+      word("Üçüncü", { de: "der Streit", tr: "tartışma, kavga" }),
+      word("Dördüncü", { de: "die Nachbarin", tr: "kadın komşu" }),
+      word("Beşinci", { de: "der Ärger", tr: "sıkıntı, dert" }),
+      word("Altıncı", { de: "still", tr: "sessiz" }),
+      word("Yedinci", { de: "klopfen", tr: "kapıyı çalmak" }),
+      word("Son", { de: "aufmerksam", tr: "dikkatli" }),
       {
         say: [
           tr("İlk kalıbımız en kibar rica:"),
@@ -766,10 +628,13 @@ export const deB1B02: Lesson[] = [
     focusId: "Nebensatz-dass",
     vocab: [
       { de: "die WG", tr: "paylaşımlı ev" },
-      { de: "der Putzplan", tr: "temizlik çizelgesi" },
-      { de: "wichtig", tr: "önemli" },
       { de: "gemeinsam", tr: "ortak, birlikte" },
       { de: "sich einigen", tr: "anlaşmak, uzlaşmak" },
+      { de: "der Hausmeister", tr: "kapıcı" },
+      { de: "reinigen", tr: "temizlemek" },
+      { de: "ordnen", tr: "düzene sokmak" },
+      { de: "das Haustier", tr: "evcil hayvan" },
+      { de: "das Zeug", tr: "eşya" },
     ],
     patterns: [
       { de: "Uns ist wichtig, dass …", tr: "neyin önemli olduğunu söyler" },
@@ -792,56 +657,14 @@ export const deB1B02: Lesson[] = [
           ),
         ],
       },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("die WG"),
-          tr("Türkçesi 'paylaşımlı ev' demek. Lütfen"),
-          de("die WG"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die WG" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("der Putzplan"),
-          tr("Türkçesi 'temizlik çizelgesi' demek. Lütfen"),
-          de("der Putzplan"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Putzplan" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("wichtig"),
-          tr("Türkçesi 'önemli' demek. Lütfen"),
-          de("wichtig"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "wichtig" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("gemeinsam"),
-          tr("Türkçesi 'ortak, birlikte' demek. Lütfen"),
-          de("gemeinsam"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "gemeinsam" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("sich einigen"),
-          tr("Türkçesi 'anlaşmak, uzlaşmak' demek. Lütfen"),
-          de("sich einigen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "sich einigen" },
-      },
+      word("İlk", { de: "die WG", tr: "paylaşımlı ev" }),
+      word("İkinci", { de: "gemeinsam", tr: "ortak, birlikte" }),
+      word("Üçüncü", { de: "sich einigen", tr: "anlaşmak, uzlaşmak" }),
+      word("Dördüncü", { de: "der Hausmeister", tr: "kapıcı" }),
+      word("Beşinci", { de: "reinigen", tr: "temizlemek" }),
+      word("Altıncı", { de: "ordnen", tr: "düzene sokmak" }),
+      word("Yedinci", { de: "das Haustier", tr: "evcil hayvan" }),
+      word("Son", { de: "das Zeug", tr: "eşya" }),
       {
         say: [
           tr("İlk kalıbımız:"),
@@ -941,11 +764,14 @@ export const deB1B02: Lesson[] = [
     minutes: 10,
     focusId: "Passiv-Präsens",
     vocab: [
-      { de: "reparieren", tr: "onarmak" },
       { de: "der Schaden", tr: "hasar, arıza" },
       { de: "spätestens", tr: "en geç" },
-      { de: "die Heizung", tr: "kalorifer" },
       { de: "tropfen", tr: "damlamak" },
+      { de: "der Mechaniker", tr: "tamirci" },
+      { de: "die Panne", tr: "arıza" },
+      { de: "die Heizung", tr: "kalorifer" },
+      { de: "funktionieren", tr: "çalışmak, işlemek" },
+      { de: "sorgen", tr: "gereğini yapmak, sağlamak" },
     ],
     patterns: [
       { de: "… muss repariert werden.", tr: "bir şeyin onarılması gerektiğini söyler" },
@@ -968,56 +794,14 @@ export const deB1B02: Lesson[] = [
           ),
         ],
       },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("reparieren"),
-          tr("Türkçesi 'onarmak' demek. Lütfen"),
-          de("reparieren"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "reparieren" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("der Schaden"),
-          tr("Türkçesi 'hasar, arıza' demek. Lütfen"),
-          de("der Schaden"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Schaden" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("spätestens"),
-          tr("Türkçesi 'en geç' demek. Lütfen"),
-          de("spätestens"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "spätestens" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("die Heizung"),
-          tr("Türkçesi 'kalorifer' demek. Lütfen"),
-          de("die Heizung"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Heizung" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("tropfen"),
-          tr("Türkçesi 'damlamak' demek. Lütfen"),
-          de("tropfen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "tropfen" },
-      },
+      word("İlk", { de: "der Schaden", tr: "hasar, arıza" }),
+      word("İkinci", { de: "spätestens", tr: "en geç" }),
+      word("Üçüncü", { de: "tropfen", tr: "damlamak" }),
+      word("Dördüncü", { de: "der Mechaniker", tr: "tamirci" }),
+      word("Beşinci", { de: "die Panne", tr: "arıza" }),
+      word("Altıncı", { de: "die Heizung", tr: "kalorifer" }),
+      word("Yedinci", { de: "funktionieren", tr: "çalışmak, işlemek" }),
+      word("Son", { de: "sorgen", tr: "gereğini yapmak, sağlamak" }),
       {
         say: [
           tr(
@@ -1123,11 +907,14 @@ export const deB1B02: Lesson[] = [
     minutes: 10,
     focusId: "Passiv-Präteritum",
     vocab: [
-      { de: "die Abrechnung", tr: "hesap dökümü" },
       { de: "berechnen", tr: "hesaplamak" },
-      { de: "der Widerspruch", tr: "itiraz" },
-      { de: "die Nachzahlung", tr: "ek ödeme" },
       { de: "prüfen", tr: "denetlemek, kontrol etmek" },
+      { de: "die Zahlung", tr: "ödeme" },
+      { de: "der Betrag", tr: "tutar" },
+      { de: "die Summe", tr: "toplam" },
+      { de: "die Höhe", tr: "yükseklik; tutar" },
+      { de: "das Recht", tr: "hak" },
+      { de: "der Grund", tr: "sebep" },
     ],
     patterns: [
       { de: "Es wurde … berechnet.", tr: "geçmişte neyin hesaplandığını söyler" },
@@ -1150,56 +937,14 @@ export const deB1B02: Lesson[] = [
           ),
         ],
       },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("die Abrechnung"),
-          tr("Türkçesi 'hesap dökümü' demek. Lütfen"),
-          de("die Abrechnung"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Abrechnung" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("berechnen"),
-          tr("Türkçesi 'hesaplamak' demek. Lütfen"),
-          de("berechnen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "berechnen" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("der Widerspruch"),
-          tr("Türkçesi 'itiraz' demek. Lütfen"),
-          de("der Widerspruch"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Widerspruch" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("die Nachzahlung"),
-          tr("Türkçesi 'ek ödeme' demek — hesap yüksek çıkarsa istenen tutar. Lütfen"),
-          de("die Nachzahlung"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Nachzahlung" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("prüfen"),
-          tr("Türkçesi 'denetlemek, kontrol etmek' demek. Lütfen"),
-          de("prüfen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "prüfen" },
-      },
+      word("İlk", { de: "berechnen", tr: "hesaplamak" }),
+      word("İkinci", { de: "prüfen", tr: "denetlemek, kontrol etmek" }),
+      word("Üçüncü", { de: "die Zahlung", tr: "ödeme" }),
+      word("Dördüncü", { de: "der Betrag", tr: "tutar" }),
+      word("Beşinci", { de: "die Summe", tr: "toplam" }),
+      word("Altıncı", { de: "die Höhe", tr: "yükseklik; tutar" }),
+      word("Yedinci", { de: "das Recht", tr: "hak" }),
+      word("Son", { de: "der Grund", tr: "sebep" }),
       {
         say: [
           tr("İlk kalıbımız geçmişte yapılan bir işlemi anlatır:"),
@@ -1301,9 +1046,12 @@ export const deB1B02: Lesson[] = [
     vocab: [
       { de: "die Einrichtung", tr: "döşeme, dekorasyon" },
       { de: "der Stil", tr: "tarz" },
-      { de: "die Möbel", tr: "mobilya" },
-      { de: "schlicht", tr: "sade" },
       { de: "der Teppich", tr: "halı" },
+      { de: "das Regal", tr: "raf" },
+      { de: "die Wand", tr: "duvar" },
+      { de: "der Sessel", tr: "koltuk" },
+      { de: "der Spiegel", tr: "ayna" },
+      { de: "die Kerze", tr: "mum" },
     ],
     patterns: [
       { de: "der große helle Raum", tr: "sıfatı ismin önünde kullanır" },
@@ -1326,56 +1074,14 @@ export const deB1B02: Lesson[] = [
           ),
         ],
       },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("die Einrichtung"),
-          tr("Türkçesi 'döşeme, dekorasyon' demek. Lütfen"),
-          de("die Einrichtung"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Einrichtung" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("der Stil"),
-          tr("Türkçesi 'tarz' demek. Lütfen"),
-          de("der Stil"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Stil" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("die Möbel"),
-          tr("Türkçesi 'mobilya' demek — Almancada hep çoğul kullanılır. Lütfen"),
-          de("die Möbel"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Möbel" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("schlicht"),
-          tr("Türkçesi 'sade' demek. Lütfen"),
-          de("schlicht"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "schlicht" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("der Teppich"),
-          tr("Türkçesi 'halı' demek. Lütfen"),
-          de("der Teppich"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Teppich" },
-      },
+      word("İlk", { de: "die Einrichtung", tr: "döşeme, dekorasyon" }),
+      word("İkinci", { de: "der Stil", tr: "tarz" }),
+      word("Üçüncü", { de: "der Teppich", tr: "halı" }),
+      word("Dördüncü", { de: "das Regal", tr: "raf" }),
+      word("Beşinci", { de: "die Wand", tr: "duvar" }),
+      word("Altıncı", { de: "der Sessel", tr: "koltuk" }),
+      word("Yedinci", { de: "der Spiegel", tr: "ayna" }),
+      word("Son", { de: "die Kerze", tr: "mum" }),
       {
         say: [
           tr(
@@ -1483,9 +1189,12 @@ export const deB1B02: Lesson[] = [
     vocab: [
       { de: "bevor", tr: "-den önce" },
       { de: "während", tr: "-diği sırada" },
-      { de: "der Helfer", tr: "yardımcı" },
-      { de: "der Transporter", tr: "kamyonet" },
       { de: "erledigen", tr: "halletmek" },
+      { de: "sobald", tr: "-ir -mez" },
+      { de: "solange", tr: "-dığı sürece" },
+      { de: "die Kiste", tr: "sandık, koli" },
+      { de: "bereits", tr: "çoktan" },
+      { de: "schließlich", tr: "en sonunda" },
     ],
     patterns: [
       { de: "Bevor wir anfangen, …", tr: "bir işten öncesini anlatır" },
@@ -1508,56 +1217,14 @@ export const deB1B02: Lesson[] = [
           ),
         ],
       },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("bevor"),
-          tr("Türkçesi '-den önce' demek. Lütfen"),
-          de("bevor"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "bevor" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("während"),
-          tr("Türkçesi '-diği sırada' demek. Lütfen"),
-          de("während"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "während" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("der Helfer"),
-          tr("Türkçesi 'yardımcı' demek. Lütfen"),
-          de("der Helfer"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Helfer" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("der Transporter"),
-          tr("Türkçesi 'kamyonet' demek. Lütfen"),
-          de("der Transporter"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Transporter" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("erledigen"),
-          tr("Türkçesi 'halletmek' demek. Lütfen"),
-          de("erledigen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "erledigen" },
-      },
+      word("İlk", { de: "bevor", tr: "-den önce" }),
+      word("İkinci", { de: "während", tr: "-diği sırada" }),
+      word("Üçüncü", { de: "erledigen", tr: "halletmek" }),
+      word("Dördüncü", { de: "sobald", tr: "-ir -mez" }),
+      word("Beşinci", { de: "solange", tr: "-dığı sürece" }),
+      word("Altıncı", { de: "die Kiste", tr: "sandık, koli" }),
+      word("Yedinci", { de: "bereits", tr: "çoktan" }),
+      word("Son", { de: "schließlich", tr: "en sonunda" }),
       {
         say: [
           tr("İlk kalıbımız öncesini anlatır:"),
@@ -1660,11 +1327,14 @@ export const deB1B02: Lesson[] = [
     minutes: 10,
     focusId: "Nebensatz-obwohl",
     vocab: [
-      { de: "die Untermiete", tr: "kiracıdan kiralama" },
       { de: "möbliert", tr: "eşyalı" },
-      { de: "vermieten", tr: "kiraya vermek" },
-      { de: "befristet", tr: "süreli" },
-      { de: "der Zwischenmieter", tr: "geçici kiracı" },
+      { de: "trotzdem", tr: "yine de" },
+      { de: "zwar", tr: "gerçi" },
+      { de: "die Wahl", tr: "seçim" },
+      { de: "ziemlich", tr: "oldukça" },
+      { de: "bestimmt", tr: "kesinlikle" },
+      { de: "das Kissen", tr: "yastık" },
+      { de: "die Decke", tr: "battaniye; tavan" },
     ],
     patterns: [
       { de: "Obwohl es klein ist, …", tr: "çekince belirterek olumlu bir şey söyler" },
@@ -1687,56 +1357,14 @@ export const deB1B02: Lesson[] = [
           ),
         ],
       },
-      {
-        say: [
-          tr("İlk kelimemiz:"),
-          de("die Untermiete"),
-          tr("Türkçesi 'kiracıdan kiralama' demek. Lütfen"),
-          de("die Untermiete"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Untermiete" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("möbliert"),
-          tr("Türkçesi 'eşyalı' demek. Lütfen"),
-          de("möbliert"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "möbliert" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("vermieten"),
-          tr("Türkçesi 'kiraya vermek' demek. Lütfen"),
-          de("vermieten"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "vermieten" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("befristet"),
-          tr("Türkçesi 'süreli' demek — belli bir tarihte biten. Lütfen"),
-          de("befristet"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "befristet" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
-          de("der Zwischenmieter"),
-          tr("Türkçesi 'geçici kiracı' demek. Lütfen"),
-          de("der Zwischenmieter"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Zwischenmieter" },
-      },
+      word("İlk", { de: "möbliert", tr: "eşyalı" }),
+      word("İkinci", { de: "trotzdem", tr: "yine de" }),
+      word("Üçüncü", { de: "zwar", tr: "gerçi" }),
+      word("Dördüncü", { de: "die Wahl", tr: "seçim" }),
+      word("Beşinci", { de: "ziemlich", tr: "oldukça" }),
+      word("Altıncı", { de: "bestimmt", tr: "kesinlikle" }),
+      word("Yedinci", { de: "das Kissen", tr: "yastık" }),
+      word("Son", { de: "die Decke", tr: "battaniye; tavan" }),
       {
         say: [
           tr("İlk kalıbımız çekince belirtir:"),
