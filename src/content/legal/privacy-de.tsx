@@ -21,12 +21,21 @@ export function PrivacyDeBody() {
       <p>
         Verantwortlicher für die von dieser Erklärung erfassten personenbezogenen Daten im Sinne des türkischen Gesetzes Nr. 6698 zum
         Schutz personenbezogener Daten (KVKK) und der Datenschutz-Grundverordnung der Europäischen Union (DSGVO) ist die unten bezeichnete
-        Person. Die Erklärung gilt für die Nomi-Webanwendung (www.exfe.me) und die Android-App.
+        Person: Sie entscheidet, welche Daten zu welchem Zweck verarbeitet, wie lange sie gespeichert und an welche Anbieter sie übermittelt
+        werden. Die Erklärung gilt für die Nomi-Webanwendung (www.exfe.me) und die Android-App.
       </p>
-      <EntityBlock withRepresentatives locale="de" />
+      <EntityBlock party="controller" contact locale="de" />
       <p>
-        Unsere Server laufen bei {LEGAL_HOSTING_TEXT.de}; dort werden die Daten gespeichert. Türkisches Register der Verantwortlichen
-        (VERBİS): <Ph k="verbis" />.
+        Die App wird von einer anderen Person bei Google Play veröffentlicht, die auch die Abonnementeinnahmen vereinnahmt. Der Herausgeber
+        verarbeitet personenbezogene Daten ausschließlich auf Weisung des Verantwortlichen; für die über die Play Console zugänglichen
+        Bestell-, Abonnement- und Rezensionsdaten handelt er als <strong>Auftragsverarbeiter</strong>, und zwischen uns besteht dazu ein
+        Auftragsverarbeitungsvertrag (Art. 28 DSGVO, Art. 12 KVKK).
+      </p>
+      <EntityBlock party="publisher" locale="de" />
+      <p>
+        Unsere Server laufen bei {LEGAL_HOSTING_TEXT.de}; dort werden die Daten gespeichert. Da der Verantwortliche nicht in der Türkei
+        niedergelassen ist, ist er im türkischen Register der Verantwortlichen (VERBİS) eingetragen und hat einen Vertreter in der Türkei
+        benannt; die Angaben stehen oben. VERBİS-Registriernummer: <Ph k="verbis" />.
       </p>
       <p>
         <strong>Art der Erhebung und Rechtsgrundlage (Art. 10 KVKK):</strong> Die Daten werden elektronisch, automatisiert oder teilweise
@@ -37,7 +46,7 @@ export function PrivacyDeBody() {
       <h2>2. Wer welchem Recht unterliegt</h2>
       <ul>
         <li><strong>Nutzer in der Türkei:</strong> KVKK und seine Durchführungsvorschriften (Mitteilung zur Informationspflicht, Mitteilung zu Anträgen an den Verantwortlichen, Regeln zur Übermittlung ins Ausland).</li>
-        <li><strong>Nutzer in der EU/im EWR:</strong> die DSGVO nach Art. 3 Abs. 2 DSGVO; im Vereinigten Königreich die UK GDPR und der Data Protection Act 2018. Die Rechtsgrundlagen dieser Erklärung sind Art. 6 DSGVO zugeordnet; Angaben zum Vertreter stehen in Abschnitt 1.</li>
+        <li><strong>Nutzer in der EU/im EWR:</strong> Da der Verantwortliche in Deutschland niedergelassen ist, gilt die DSGVO nach Art. 3 Abs. 1 DSGVO zusammen mit dem BDSG; im Vereinigten Königreich gelten zusätzlich die UK GDPR und der Data Protection Act 2018. Die Rechtsgrundlagen dieser Erklärung sind Art. 6 DSGVO zugeordnet. Da der Verantwortliche in der Union niedergelassen ist, ist kein gesonderter EU-Vertreter nach Art. 27 DSGVO erforderlich.</li>
         <li><strong>Andere Länder:</strong> Rechte aus dem örtlichen Datenschutzrecht bleiben vorbehalten (Abschnitt 10). Wir verkaufen deine personenbezogenen Daten nicht und geben sie nicht für verhaltensbasierte Werbung weiter.</li>
       </ul>
 
@@ -203,8 +212,10 @@ export function PrivacyDeBody() {
         informieren.
       </p>
       <p>
-        <strong>Beschwerde:</strong> in der Türkei bei der Behörde zum Schutz personenbezogener Daten (kvkk.gov.tr); in der EU bei der
-        Datenschutzbehörde deines Landes, im Vereinigten Königreich beim ICO. Wir bitten dich, dich zuerst an uns zu wenden; die meisten
+        <strong>Beschwerde:</strong> in der Türkei bei der Behörde zum Schutz personenbezogener Daten (kvkk.gov.tr). In der EU ist die
+        zuständige Aufsichtsbehörde des Verantwortlichen nach dem Ort der Niederlassung die Landesbeauftragte für Datenschutz und
+        Informationsfreiheit Nordrhein-Westfalen (LDI NRW); daneben kannst du dich nach Art. 77 DSGVO an die Behörde in deinem eigenen
+        Land wenden. Im Vereinigten Königreich beim ICO. Wir bitten dich, dich zuerst an uns zu wenden; die meisten
         Anliegen können wir direkt lösen.
       </p>
 

@@ -27,11 +27,20 @@ export default function PrivacyPage() {
       <h2>1. Veri sorumlusu</h2>
       <p>
         Bu politika kapsamındaki kişisel verilerin sorumlusu, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel
-        Veri Koruma Tüzüğü (GDPR) anlamında aşağıdaki kişidir. Politika, Nomi web uygulamasını (www.exfe.me) ve Android uygulamasını kapsar.
+        Veri Koruma Tüzüğü (GDPR) anlamında aşağıdaki kişidir: hangi verinin hangi amaçla işleneceğine, ne kadar tutulacağına ve hangi
+        sağlayıcıya gideceğine o karar verir. Politika, Nomi web uygulamasını (www.exfe.me) ve Android uygulamasını kapsar.
       </p>
-      <EntityBlock withRepresentatives />
+      <EntityBlock party="controller" contact />
       <p>
-        Sunucularımız {LEGAL_HOSTING_TEXT.tr} üzerinde çalışır; veriler orada saklanır. Veri Sorumluları Sicili (VERBİS): <Ph k="verbis" />.
+        Uygulamayı Google Play&apos;de yayımlayan ve abonelik tahsilatını yürüten taraf ayrı bir kişidir. Yayıncı, veri sorumlusunun
+        talimatı dışında kişisel veri işlemez; Play Console üzerinden eriştiği sipariş, abonelik ve yorum verisi bakımından
+        <strong> veri işleyen</strong> sıfatını taşır ve aramızda bu kapsamda bir işleme sözleşmesi bulunur (GDPR m.28, KVKK m.12).
+      </p>
+      <EntityBlock party="publisher" />
+      <p>
+        Sunucularımız {LEGAL_HOSTING_TEXT.tr} üzerinde çalışır; veriler orada saklanır. Veri sorumlusu Türkiye&apos;de yerleşik olmadığından
+        Veri Sorumluları Sicili&apos;ne (VERBİS) kayıtlıdır ve Türkiye&apos;de bir veri sorumlusu temsilcisi atamıştır; temsilci bilgisi
+        yukarıdadır. VERBİS kayıt numarası: <Ph k="verbis" />.
       </p>
       <p>
         <strong>Toplama yöntemi ve hukuki sebep (KVKK m.10):</strong> Veriler, kayıt ve ayar formları, uygulama içi etkileşimler ve
@@ -42,7 +51,7 @@ export default function PrivacyPage() {
       <h2>2. Kimler için hangi hukuk</h2>
       <ul>
         <li><strong>Türkiye&apos;deki kullanıcılar:</strong> KVKK ve ikincil mevzuatı (Aydınlatma Yükümlülüğü Tebliği, Veri Sorumlusuna Başvuru Tebliği, yurt dışına aktarım usulleri).</li>
-        <li><strong>AB/AEA&apos;daki kullanıcılar:</strong> GDPR m.3(2) gereği GDPR; Birleşik Krallık&apos;ta UK GDPR ve Data Protection Act 2018. Bu politikadaki hukuki dayanaklar GDPR m.6 ile eşlenmiştir; temsilci bilgisi 1. bölümdedir.</li>
+        <li><strong>AB/AEA&apos;daki kullanıcılar:</strong> Veri sorumlusu Almanya&apos;da yerleşik olduğundan GDPR m.3(1) gereği GDPR ve Alman veri koruma mevzuatı (BDSG); Birleşik Krallık&apos;ta ayrıca UK GDPR ve Data Protection Act 2018. Bu politikadaki hukuki dayanaklar GDPR m.6 ile eşlenmiştir. Veri sorumlusu Birlik içinde yerleşik olduğu için GDPR m.27 kapsamında ayrıca bir AB temsilcisi atanması gerekmez.</li>
         <li><strong>Diğer ülkeler:</strong> Yerel veri koruma hukukundan doğan haklar saklıdır (10. bölüm). Kişisel verini satmayız ve davranışsal reklam için paylaşmayız.</li>
       </ul>
 
@@ -193,8 +202,9 @@ export default function PrivacyPage() {
         ay uzatılabilir ve sana bildirilir.
       </p>
       <p>
-        <strong>Şikâyet:</strong> Türkiye&apos;de Kişisel Verileri Koruma Kurulu&apos;na (kvkk.gov.tr); AB&apos;de bulunduğun ülkenin veri koruma
-        otoritesine, Birleşik Krallık&apos;ta ICO&apos;ya başvurabilirsin. Önce bize yazmanı rica ederiz; çoğu talebi doğrudan çözebiliriz.
+        <strong>Şikâyet:</strong> Türkiye&apos;de Kişisel Verileri Koruma Kurulu&apos;na (kvkk.gov.tr). AB&apos;de veri sorumlusunun yetkili
+        denetim otoritesi, yerleşim yerine göre Kuzey Ren-Vestfalya Eyalet Veri Koruma ve Bilgi Edinme Görevlisi&apos;dir (LDI NRW);
+        bunun yanında GDPR m.77 uyarınca kendi ülkendeki otoriteye de başvurabilirsin. Birleşik Krallık&apos;ta ICO. Önce bize yazmanı rica ederiz; çoğu talebi doğrudan çözebiliriz.
       </p>
 
       <h2>11. Hesabını ve verilerini silme</h2>

@@ -105,51 +105,68 @@ export function Ph({ k }: { k: LegalField }) {
 }
 
 /**
- * Kimlik bloğunun etiketleri — değerler dile bağlı değil, etiketler bağlı.
- * Alanlar ŞİRKETSİZ GERÇEK KİŞİ profiline göre: ticaret sicil/MERSİS yerine vergi
- * dairesi, ünvan yerine ad soyad (bkz. lib/legal.ts kimlik profili notu).
+ * Kimlik bloklarının etiketleri — değerler dile bağlı değil, etiketler bağlı.
+ * İki taraf var: veri sorumlusu (AB'de yerleşik gerçek kişi) ve yayıncı
+ * (Play hesabı, tahsilat ve veri işleyen; Türkiye'de yerleşik gerçek kişi).
+ * Bkz. lib/legal.ts kimlik notu.
  */
-const ENTITY_LABELS: Record<LegalLocale, Record<"name" | "address" | "taxOffice" | "privacy" | "privacyEu" | "support" | "kep" | "eu" | "uk", string>> = {
+type EntityLabelKey =
+  | "controller" | "publisher" | "name" | "address" | "taxOffice"
+  | "trRep" | "privacy" | "privacyEu" | "support" | "kep";
+
+const ENTITY_LABELS: Record<LegalLocale, Record<EntityLabelKey, string>> = {
   tr: {
+    controller: "Veri sorumlusu", publisher: "Yayıncı ve veri işleyen",
     name: "Ad soyad", address: "Yazışma adresi", taxOffice: "Vergi dairesi",
-    privacy: "KVKK başvuruları", privacyEu: "GDPR başvuruları", support: "Destek", kep: "KEP",
-    eu: "AB temsilcisi (GDPR m.27)", uk: "Birleşik Krallık temsilcisi (UK GDPR m.27)",
+    trRep: "Türkiye veri sorumlusu temsilcisi (KVKK)",
+    privacy: "KVKK başvuruları", privacyEu: "GDPR başvuruları",
+    support: "Destek", kep: "KEP",
   },
   en: {
+    controller: "Data controller", publisher: "Publisher and processor",
     name: "Name", address: "Postal address", taxOffice: "Tax office",
-    privacy: "KVKK requests (Türkiye)", privacyEu: "GDPR / UK GDPR requests", support: "Support", kep: "Registered e-mail (KEP)",
-    eu: "EU representative (GDPR Art. 27)", uk: "UK representative (UK GDPR Art. 27)",
+    trRep: "Representative in Türkiye (KVKK)",
+    privacy: "KVKK requests (Türkiye)", privacyEu: "GDPR / UK GDPR requests",
+    support: "Support", kep: "Registered e-mail (KEP)",
   },
   de: {
+    controller: "Verantwortlicher", publisher: "Herausgeber und Auftragsverarbeiter",
     name: "Name", address: "Postanschrift", taxOffice: "Finanzamt",
-    privacy: "KVKK-Anträge (Türkei)", privacyEu: "DSGVO- / UK-GDPR-Anträge", support: "Support", kep: "Registrierte E-Mail (KEP)",
-    eu: "EU-Vertreter (Art. 27 DSGVO)", uk: "UK-Vertreter (Art. 27 UK GDPR)",
+    trRep: "Vertreter in der Türkei (KVKK)",
+    privacy: "KVKK-Anträge (Türkei)", privacyEu: "DSGVO- / UK-GDPR-Anträge",
+    support: "Support", kep: "Registrierte E-Mail (KEP)",
   },
 };
 
 /**
- * Veri sorumlusu / hizmet sağlayıcı kimlik bloğu (KVKK aydınlatma zorunlu unsuru).
+ * Kimlik bloğu (KVKK aydınlatma ve 6563 tanıtıcı bilgi zorunlu unsuru).
  *
- * Uygulanmayan alan (boş dize, ör. KEP'i olmayan gerçek kişi) hiç basılmıyor:
- * boş bir "KEP" satırı, olmayan bir yükümlülüğü varmış gibi gösterir.
+ * `party` hangi tarafın basılacağını söyler; `contact` iletişim satırlarını da
+ * ekler (gizlilik politikasında veri sorumlusunun altında). Uygulanmayan alan
+ * (boş dize, ör. KEP'i olmayan gerçek kişi) hiç basılmıyor: boş bir satır
+ * olmayan bir yükümlülüğü varmış gibi gösterir.
  */
-export function EntityBlock({ withRepresentatives = false, locale = "tr" }: { withRepresentatives?: boolean; locale?: LegalLocale }) {
+export function EntityBlock({ party, contact = false, locale = "tr" }: {
+  party: "controller" | "publisher";
+  contact?: boolean;
+  locale?: LegalLocale;
+}) {
   const l = ENTITY_LABELS[locale];
   const row = (label: string, k: LegalField) =>
     isLegalOmitted(LEGAL_ENTITY[k]) ? null : <><dt>{label}</dt><dd><Ph k={k} /></dd></>;
   return (
     <dl className="entity">
-      {row(l.name, "name")}
-      {row(l.address, "address")}
-      {row(l.taxOffice, "taxOffice")}
-      {row(l.privacy, "privacyEmailTr")}
-      {row(l.privacyEu, "privacyEmailEu")}
-      {row(l.support, "supportEmail")}
-      {row(l.kep, "kep")}
-      {withRepresentatives ? (
+      <dt>{party === "controller" ? l.controller : l.publisher}</dt>
+      <dd><Ph k={party === "controller" ? "controllerName" : "publisherName"} /></dd>
+      {row(l.address, party === "controller" ? "controllerAddress" : "publisherAddress")}
+      {party === "publisher" ? row(l.taxOffice, "publisherTaxOffice") : null}
+      {party === "controller" ? row(l.trRep, "trRepresentative") : null}
+      {contact ? (
         <>
-          {row(l.eu, "euRepresentative")}
-          {row(l.uk, "ukRepresentative")}
+          {row(l.privacy, "privacyEmailTr")}
+          {row(l.privacyEu, "privacyEmailEu")}
+          {row(l.support, "supportEmail")}
+          {row(l.kep, "kep")}
         </>
       ) : null}
     </dl>

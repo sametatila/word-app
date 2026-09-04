@@ -18,12 +18,14 @@ export function TermsEnBody() {
     <>
       <h2>1. Parties and acceptance</h2>
       <p>
-        This agreement is between the service provider identified below (&quot;Nomi&quot;, &quot;we&quot;) and the person using the Nomi
-        web app (www.exfe.me) or Android app (&quot;you&quot;). By creating an account or using the app you accept these terms and the{" "}
+        This agreement is between the parties identified below (&quot;Nomi&quot;, &quot;we&quot;) and the person using the Nomi
+        web app (www.exfe.me) or Android app (&quot;you&quot;). There are two of us: the person who designs and operates the service and is
+        responsible for your data, and the person who publishes the app on Google Play and collects the subscription revenue. By creating an account or using the app you accept these terms and the{" "}
         <Link href={legalPath("privacy", "en")}>Privacy Policy</Link>. Under Turkish Law no. 6563 this text is accessible and can be stored
         before the contract is concluded. If you do not accept it, do not use the app.
       </p>
-      <EntityBlock locale="en" />
+      <EntityBlock party="controller" contact locale="en" />
+      <EntityBlock party="publisher" locale="en" />
 
       <h2>2. The service</h2>
       <p>
@@ -89,7 +91,7 @@ export function TermsEnBody() {
         <li><strong>Renewal and cancellation:</strong> Unless cancelled at least 24 hours before the end of the term, the subscription renews for the same period. Cancellation and management are in Play Store &rsaquo; Payments and subscriptions; deleting your account does not cancel the subscription. If you cancel before a free trial ends, you are not charged.</li>
         <li><strong>Right of withdrawal:</strong> Because performance of a digital content service begins at the moment of purchase, under Art. 15/1-ğ of the Distance Contracts Regulation and Art. 16(m) of the EU Consumer Rights Directive the right of withdrawal ends with your consent to performance beginning; that consent is requested on the purchase screen. Google Play&apos;s refund policy applies in addition, and we honour refunds Play grants.</li>
         <li><strong>Price changes:</strong> We notify price changes through Play before they take effect; if you do not accept one, you can cancel the subscription.</li>
-        <li><strong>Proof of purchase:</strong> You buy Premium through Google Play, and Google issues the receipt and sends it to the e-mail address on your Play account; you can request a copy through Google Play support. The provider of the service is not a company but a natural person, and because the earnings fall within the Turkish income tax exemption for mobile application development, no separate invoice is issued.</li>
+        <li><strong>Proof of purchase:</strong> You buy Premium through Google Play, and Google issues the receipt and sends it to the e-mail address on your Play account; you can request a copy through Google Play support. The publisher is not a company but a natural person, and because the earnings fall within the Turkish income tax exemption for mobile application development, no separate invoice is issued.</li>
       </ul>
 
       <h2>7a. Fair use</h2>

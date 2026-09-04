@@ -19,13 +19,21 @@ export function PrivacyEnBody() {
       <h2>1. Data controller</h2>
       <p>
         The controller of the personal data covered by this policy, within the meaning of Turkish Law no. 6698 on the Protection of Personal
-        Data (KVKK) and the European Union General Data Protection Regulation (GDPR), is the person identified below. The policy covers the
-        Nomi web app (www.exfe.me) and the Android app.
+        Data (KVKK) and the European Union General Data Protection Regulation (GDPR), is the person identified below: they decide what data
+        is processed for what purpose, how long it is kept and which providers it goes to. The policy covers the Nomi web app
+        (www.exfe.me) and the Android app.
       </p>
-      <EntityBlock withRepresentatives locale="en" />
+      <EntityBlock party="controller" contact locale="en" />
       <p>
-        Our servers run on {LEGAL_HOSTING_TEXT.en}; the data is stored there. Turkish register of data controllers (VERBİS):{" "}
-        <Ph k="verbis" />.
+        The app is published on Google Play and the subscription revenue is collected by a different person. The publisher processes no
+        personal data except on the controller&apos;s instructions; for the order, subscription and review data they access through the Play
+        Console they act as a <strong>processor</strong>, and a processing agreement between us covers this (Art. 28 GDPR, Art. 12 KVKK).
+      </p>
+      <EntityBlock party="publisher" locale="en" />
+      <p>
+        Our servers run on {LEGAL_HOSTING_TEXT.en}; the data is stored there. Because the controller is not established in Türkiye, they
+        are entered in the Turkish register of data controllers (VERBİS) and have appointed a representative in Türkiye, shown above.
+        VERBİS registration number: <Ph k="verbis" />.
       </p>
       <p>
         <strong>Collection method and legal ground (KVKK Art. 10):</strong> Data is collected electronically, by automated or partly
@@ -36,7 +44,7 @@ export function PrivacyEnBody() {
       <h2>2. Which law applies to whom</h2>
       <ul>
         <li><strong>Users in Türkiye:</strong> KVKK and its secondary legislation (Communiqué on the Obligation to Inform, Communiqué on Applications to the Data Controller, rules on transfers abroad).</li>
-        <li><strong>Users in the EU/EEA:</strong> the GDPR, by virtue of Art. 3(2) GDPR; in the United Kingdom, the UK GDPR and the Data Protection Act 2018. The legal grounds in this policy are mapped to Art. 6 GDPR; representative details are in section 1.</li>
+        <li><strong>Users in the EU/EEA:</strong> because the controller is established in Germany, the GDPR applies by virtue of Art. 3(1) GDPR, together with German data protection law (BDSG); in the United Kingdom, the UK GDPR and the Data Protection Act 2018 also apply. The legal grounds in this policy are mapped to Art. 6 GDPR. As the controller is established within the Union, no separate EU representative under Art. 27 GDPR is required.</li>
         <li><strong>Other countries:</strong> rights under local data protection law are reserved (section 10). We do not sell your personal data and do not share it for behavioural advertising.</li>
       </ul>
 
@@ -195,8 +203,10 @@ export function PrivacyEnBody() {
         the latest; under the GDPR this period may be extended by two months where necessary, and you will be told.
       </p>
       <p>
-        <strong>Complaints:</strong> in Türkiye to the Personal Data Protection Board (kvkk.gov.tr); in the EU to the data protection
-        authority of your country, in the United Kingdom to the ICO. We would ask you to write to us first; we can resolve most requests
+        <strong>Complaints:</strong> in Türkiye to the Personal Data Protection Board (kvkk.gov.tr). In the EU the controller&apos;s
+        competent supervisory authority is, by place of establishment, the State Commissioner for Data Protection and Freedom of
+        Information of North Rhine-Westphalia (LDI NRW); in addition, under Art. 77 GDPR you may complain to the authority in your own
+        country. In the United Kingdom, the ICO. We would ask you to write to us first; we can resolve most requests
         directly.
       </p>
 

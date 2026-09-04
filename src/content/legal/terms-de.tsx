@@ -19,13 +19,16 @@ export function TermsDeBody() {
     <>
       <h2>1. Parteien und Annahme</h2>
       <p>
-        Diese Vereinbarung besteht zwischen dem unten bezeichneten Diensteanbieter (&quot;Nomi&quot;, &quot;wir&quot;) und der Person, die
-        die Nomi-Webanwendung (www.exfe.me) oder die Android-App nutzt (&quot;du&quot;). Mit der Erstellung eines Kontos oder der Nutzung
+        Diese Vereinbarung besteht zwischen den unten bezeichneten Parteien (&quot;Nomi&quot;, &quot;wir&quot;) und der Person, die
+        die Nomi-Webanwendung (www.exfe.me) oder die Android-App nutzt (&quot;du&quot;). Wir sind zwei Personen: diejenige, die den Dienst
+        gestaltet, betreibt und für deine Daten verantwortlich ist, und diejenige, die die App bei Google Play veröffentlicht und die
+        Abonnementeinnahmen vereinnahmt. Mit der Erstellung eines Kontos oder der Nutzung
         der App nimmst du diese Bedingungen und die <Link href={legalPath("privacy", "de")}>Datenschutzerklärung</Link> an. Nach dem
         türkischen Gesetz Nr. 6563 ist dieser Text vor Vertragsschluss zugänglich und speicherbar. Wenn du ihn nicht annimmst, nutze die
         App nicht.
       </p>
-      <EntityBlock locale="de" />
+      <EntityBlock party="controller" contact locale="de" />
+      <EntityBlock party="publisher" locale="de" />
 
       <h2>2. Der Dienst</h2>
       <p>
@@ -94,7 +97,7 @@ export function TermsDeBody() {
         <li><strong>Verlängerung und Kündigung:</strong> Wird das Abonnement nicht mindestens 24 Stunden vor Ende der Laufzeit gekündigt, verlängert es sich um denselben Zeitraum. Kündigung und Verwaltung finden sich im Play Store &rsaquo; Zahlungen und Abos; das Löschen des Kontos kündigt das Abonnement nicht. Kündigst du vor Ende einer kostenlosen Testphase, fällt keine Gebühr an.</li>
         <li><strong>Widerrufsrecht:</strong> Da die Erbringung eines digitalen Inhaltsdienstes im Moment des Kaufs beginnt, endet das Widerrufsrecht nach Art. 15/1-ğ der türkischen Fernabsatzverordnung und Art. 16(m) der EU-Verbraucherrechterichtlinie mit deiner Zustimmung zum Beginn der Erbringung; diese Zustimmung wird auf dem Kaufbildschirm eingeholt. Die Rückerstattungsrichtlinie von Google Play gilt zusätzlich, und von Play gewährte Rückerstattungen erkennen wir an.</li>
         <li><strong>Preisänderung:</strong> Preisänderungen teilen wir vor ihrem Inkrafttreten über Play mit; nimmst du eine nicht an, kannst du das Abonnement kündigen.</li>
-        <li><strong>Kaufbeleg:</strong> Premium kaufst du über Google Play; den Beleg stellt Google aus und sendet ihn an die E-Mail-Adresse deines Play-Kontos. Eine Kopie kannst du über den Google-Play-Support anfordern. Anbieter des Dienstes ist keine Gesellschaft, sondern eine natürliche Person; da die Einkünfte unter die türkische Einkommensteuerbefreiung für die Entwicklung mobiler Anwendungen fallen, wird keine gesonderte Rechnung ausgestellt.</li>
+        <li><strong>Kaufbeleg:</strong> Premium kaufst du über Google Play; den Beleg stellt Google aus und sendet ihn an die E-Mail-Adresse deines Play-Kontos. Eine Kopie kannst du über den Google-Play-Support anfordern. Der Herausgeber ist keine Gesellschaft, sondern eine natürliche Person; da die Einkünfte unter die türkische Einkommensteuerbefreiung für die Entwicklung mobiler Anwendungen fallen, wird keine gesonderte Rechnung ausgestellt.</li>
       </ul>
 
       <h2>7a. Fair Use</h2>

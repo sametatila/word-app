@@ -129,13 +129,21 @@ varsa uygulamadaki özelliği anlatır, fiyat ya da vaat içermez.
 
 ## 5. Geliştirici hesabı — şirketsiz gerçek kişi
 
+**İki taraf var, karıştırmayın.** Play hesabı ve mağazada görünen yayıncı **Musa Atila**
+(Tufanbeyli, Adana); gizlilik politikasındaki **veri sorumlusu** ise **Samet Atila**
+(Dortmund, Almanya). Bu bilerek böyle: veri sorumlusu AB'de yerleşik olduğu için GDPR
+m.27 AB temsilcisi gerekmiyor. Mağaza sayfası ile politika farklı isim gösterdiğinde
+kullanıcı ve inceleyen kafa karıştırmasın diye ilişki hem şartlar §1'de hem gizlilik
+politikası §1'de açıkça anlatılıyor (yayıncı, veri sorumlusunun talimatıyla hareket
+eden veri işleyendir).
+
 Hesap **bireysel** (kişisel) geliştirici hesabı: ticaret siciline kayıtlı bir tüzel kişi yok,
 dolayısıyla "organization" hesabı ve onun istediği D-U-N-S numarası da yok. Bunun doğrudan
 sonuçları:
 
 | Konu | Sonuç |
 |---|---|
-| Kimlik doğrulama | Play, ad-soyad, adres, telefon ve e-postayı doğruluyor; `src/lib/legal.ts` içindeki değerlerle **aynı** olmalı, aksi hâlde mağaza sayfası ile gizlilik politikası çelişir |
+| Kimlik doğrulama | Play, ad-soyad, adres, telefon ve e-postayı doğruluyor; `src/lib/legal.ts` içindeki **yayıncı** (`publisher*`) değerleriyle aynı olmalı — veri sorumlusunun (`controller*`) bilgileriyle değil |
 | Adresin görünürlüğü | Bireysel hesapta doğrulanmış ad ve adres **mağaza sayfasında herkese görünür**. Ev adresi verilmek istenmiyorsa hesap açılırken bir yazışma adresi kullanılmalı — sonradan değiştirmek yeniden doğrulama demek |
 | Destek e-postası | Listelemede zorunlu ve herkese açık; `LEGAL_ENTITY.supportEmail` ile aynı olmalı |
 | Kapalı test kapısı | Kişisel hesaplar için Play, üretime geçmeden önce belirli sayıda test kullanıcısıyla kesintisiz kapalı test istiyor. **Sayı ve süre Google tarafından değiştiriliyor; Console'daki güncel değer esas alınmalı.** Bu, bireysel hesapların en sık gözden kaçırdığı kapı |

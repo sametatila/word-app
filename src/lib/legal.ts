@@ -1,57 +1,70 @@
 /**
- * Hukuki metinlerin tek kaynağı: kimlik yer tutucuları, yürürlük tarihi ve veri işleyen
+ * Hukuki metinlerin tek kaynağı: kimlik bilgileri, yürürlük tarihi ve veri işleyen
  * üçüncü taraflar. Gizlilik politikası (/privacy), kullanım şartları (/terms) ve Play
- * Veri Güvenliği beyanı (docs/play/data-safety.md) bu listeyle tutarlı olmalı — yeni
- * bir sağlayıcı eklenince önce burası güncellenir.
+ * Veri Güvenliği beyanı (docs/play/data-safety.md) bu listeyle tutarlı olmalı.
  *
- * KİMLİK PROFİLİ: ŞİRKETSİZ GERÇEK KİŞİ
+ * KİMLİK: İKİ TARAF, İKİ AYRI ROL
  *
- * Geliştirici Türkiye'de yerleşik bir gerçek kişi ve Gelir Vergisi Kanunu mükerrer
- * m.20/B'deki "mobil cihazlar için uygulama geliştiriciliği kazanç istisnası"
- * kapsamında çalışıyor. Bu, metinlerin şeklini değiştiriyor:
+ * Roller eskiden tek kişide toplanıyordu; artık ayrı:
  *
- *   - Ticaret siciline kayıtlı bir tacir YOK: ticaret sicil numarası ve MERSİS
- *     numarası da yok. Onların yerine bağlı olunan vergi dairesi yazılıyor.
- *   - TCKN/VKN buraya YAZILMAZ. Sayfalar herkese açık; kimlik numarasını yayımlamak
- *     kimlik hırsızlığına davetiye. KVKK aydınlatması ve 6563 tanıtıcı bilgi
- *     yükümlülüğü için ad-soyad, adres ve iletişim kanalı yeterli.
- *   - KEP zorunlu değil (TTK m.18/3 tacirler için). Yoksa bu alan BOŞ bırakılır;
- *     boş alan sayfalarda satırı ve tebligat cümlesini kendiliğinden düşürür.
- *   - İstisna kapsamındaki kazanç için belge düzenleme yükümlülüğü yok; satış
- *     belgesini Google Play düzenliyor (bkz. şartlar §7).
- *   - Adres, Play Console'da bireysel geliştirici hesabı için zaten doğrulanıyor ve
- *     mağaza sayfasında herkese görünüyor; burada gizlenebilecek bir şey değil.
- *     Ev adresi vermek istenmiyorsa kullanılacak şey bir yazışma adresidir.
+ *   - VERİ SORUMLUSU (controller*): amaç ve araçlara karar veren, Almanya'da
+ *     yerleşik gerçek kişi. Veri koruma yükümlülüğü onda.
+ *   - YAYINCI (publisher*): uygulamayı Google Play'de yayımlayan, Google'dan
+ *     ödeme alan ve Türkiye'de vergilenen gerçek kişi. Veri sorumlusunun
+ *     talimatıyla hareket eden VERİ İŞLEYEN sıfatını da taşıyor (Play Console
+ *     sipariş, abone ve yorum verisine erişim). Aralarında GDPR m.28 / KVKK m.12
+ *     işleme sözleşmesi gerekiyor.
  *
- * İstisnanın kendi koşulları (Türkiye'de banka hesabı, hasılatın yalnız o hesaptan
- * tahsili, vergi dairesinden istisna belgesi, GVK m.103 dördüncü dilim sınırı) bu
- * dosyanın konusu değil — mali müşavirle doğrulanır. Buradaki tek etkisi: metinler
- * şirket varsaymıyor. İstisna yalnız uygulama paylaşım platformlarından (Play,
- * App Store) elde edilen kazancı kapsıyor; web'den doğrudan tahsilat eklenirse o
- * gelir istisna dışında kalır ve bu metinlerin fatura maddesi yeniden yazılmalıdır.
+ * Bu ayrımın iki büyük sonucu var ve ikisi de birbirinin aynası:
  *
- * Kimlik alanları [[...]] biçiminde YER TUTUCU: kesinleşince yalnız bu nesne
- * doldurulur; sayfalar yer tutucuyu görünür bir etiketle basar ki yayından önce
- * gözden kaçmasın (bkz. legal-shell Ph).
+ *   1. Veri sorumlusu AB'de yerleşik olduğu için GDPR m.3(1) üzerinden
+ *      uygulanıyor, m.3(2) üzerinden değil. m.27 AB TEMSİLCİSİ YÜKÜMLÜLÜĞÜ YOK
+ *      (m.27 yalnız m.3(2) hâlinde işliyor). Denetim otoritesi, yerleşim yerine
+ *      göre Kuzey Ren-Vestfalya (LDI NRW).
+ *   2. Buna karşılık veri sorumlusu Türkiye'de YERLEŞİK DEĞİL. Veri Sorumluları
+ *      Sicili Hakkında Yönetmelik uyarınca Türkiye'de yerleşik olmayan veri
+ *      sorumlusu VERBİS'e kaydolmak ve TÜRKİYE'DE BİR VERİ SORUMLUSU TEMSİLCİSİ
+ *      atamak zorunda. Türkiye'de yerleşik olan yayıncı bu temsilci olabilir;
+ *      atama yazılı karar + ıslak imzalı formla Kuruma bildiriliyor.
+ *      Çalışan sayısı/mali bilanço istisnasının yurt dışında yerleşik veri
+ *      sorumlusuna uygulanıp uygulanmadığı tartışmalı — teyit edilmeli.
+ *
+ * Vergi tarafı yayıncıya ait: Gelir Vergisi Kanunu mükerrer m.20/B'deki mobil
+ * uygulama geliştiriciliği kazanç istisnası, platformdan kazancı elde eden kişiye
+ * uygulanır. İstisnanın koşulları (Türkiye'de banka hesabı, hasılatın yalnız o
+ * hesaptan tahsili, istisna belgesi, GVK m.103 dördüncü dilim sınırı) mali
+ * müşavirle doğrulanır; istisna yalnız Play/App Store kazancını kapsar.
+ *
+ * TCKN/VKN buraya YAZILMAZ: sayfalar herkese açık, kimlik numarası yayımlamak
+ * kimlik hırsızlığına davetiye. Tanıtıcı bilgi için ad, adres, vergi dairesi ve
+ * iletişim kanalı yeterli. Doldurulmamış alanlar [[...]] biçiminde kalır ve
+ * sayfalarda vurguyla basılır (bkz. legal-shell Ph).
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-03";
 export const LEGAL_VERSION = "1.1";
 
 export const LEGAL_ENTITY = {
-  /** Veri sorumlusu ve hizmet sağlayıcı: gerçek kişinin adı ve soyadı. */
-  name: "[[AD_SOYAD]]",
-  /** Yazışma adresi (tebligata elverişli). Ev adresi verilmek istenmiyorsa iş/yazışma adresi. */
-  address: "[[YAZIŞMA_ADRESİ]]",
+  /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
+  controllerName: "Samet Atila",
+  controllerAddress: "Emil-Figge-Str. 9, Zimmer 421, 44227 Dortmund, Almanya",
+
+  /** Yayıncı: Play hesabı sahibi, tahsilat tarafı ve veri işleyen (Türkiye'de yerleşik). */
+  publisherName: "Musa Atila",
+  publisherAddress: "Akpınar Mah. Akpınar Merkez Küme Evler No:6, Tufanbeyli, Adana, Türkiye",
+  /** Yayıncının bağlı olduğu vergi dairesi — ticaret sicil/MERSİS yok, tacir değil. */
+  publisherTaxOffice: "Tufanbeyli Vergi Dairesi",
+
   /**
-   * Bağlı olunan vergi dairesi. Ticaret sicil/MERSİS numarasının yerini alıyor:
-   * şirketsiz gerçek kişinin ikisi de yok. TCKN/VKN BURAYA YAZILMAZ.
+   * KVKK veri sorumlusu temsilcisi: Türkiye'de yerleşik olmayan veri sorumlusu
+   * için zorunlu. Türkiye'de yerleşik yayıncı bu görevi üstlenebilir; ad ve adres
+   * atama kararı imzalanınca yazılır.
    */
-  taxOffice: "[[VERGİ_DAİRESİ]]",
+  trRepresentative: "[[KVKK_TÜRKİYE_TEMSİLCİSİ_AD_VE_ADRES]]",
+
   /**
    * Veri hakları başvuruları iki ayrı adrese gidiyor çünkü iki ayrı rejim ve iki
    * ayrı süre var: KVKK m.13 otuz gün, GDPR m.12(3) bir ay + gerekirse iki ay
-   * uzatma. Ayrı kutu, hangi rejime göre işlem yapılacağını başvuru gelir gelmez
-   * belli ediyor. Türkçe metin KVKK adresini, İngilizce ve Almanca metinler GDPR
+   * uzatma. Türkçe metin KVKK adresini, İngilizce ve Almanca metinler GDPR
    * adresini öne çıkarıyor; hakların anlatıldığı bölümde ikisi de yazılı.
    */
   privacyEmailTr: "kvkk@rumpuskit.com",
@@ -59,28 +72,16 @@ export const LEGAL_ENTITY = {
   /** Genel destek e-postası. */
   supportEmail: "support@rumpuskit.com",
   /**
-   * Kayıtlı elektronik posta (KEP). Gerçek kişi için ZORUNLU DEĞİL.
-   * Yoksa boş dize bırak — satır ve tebligat cümlesi kendiliğinden düşer.
+   * Kayıtlı elektronik posta (KEP). Gerçek kişi için ZORUNLU DEĞİL — ama KVKK
+   * temsilci atama formu Kuruma posta ya da KEP ile gönderiliyor, o yüzden
+   * alınması işi kolaylaştırır. Yoksa boş dize bırak; satır ve ona atıf yapan
+   * cümleler kendiliğinden düşer.
    */
   kep: "[[KEP_ADRESİ_VARSA_YOKSA_BOŞ]]",
-  /**
-   * GDPR m.27 AB temsilcisi (ad ve adres). AB'deki kullanıcılara düzenli hizmet
-   * veren, AB'de yerleşik olmayan veri sorumlusu için kural olarak ZORUNLU;
-   * m.27(2)(a) istisnası ("arızi işleme") bir dil uygulamasına uymaz. Atanmadığı
-   * sürece burası yer tutucu kalır ve sayfa bunu vurguyla gösterir.
-   */
-  euRepresentative: "[[AB_TEMSİLCİSİ_AD_VE_ADRES]]",
-  /** UK GDPR m.27 Birleşik Krallık temsilcisi; aynı mantık. */
-  ukRepresentative: "[[BK_TEMSİLCİSİ_AD_VE_ADRES]]",
-  /** Yerleşim yerinin bulunduğu il — yetkili mahkeme ve icra daireleri buna göre. */
-  court: "[[YERLEŞİM_YERİ_İLİ]]",
-  /**
-   * VERBİS. Yıllık çalışan sayısı 50'den az ve yıllık mali bilanço toplamı 25 milyon
-   * TL'den az olan, ana faaliyeti özel nitelikli kişisel veri işleme olmayan veri
-   * sorumluları kayıt yükümlülüğünden istisna (Kurul kararları 2018/87, 2019/265).
-   * Tek kişilik bir geliştirici bu istisnaya girer; o hâlde "Kapsam dışı" yazılır.
-   */
-  verbis: "[[VERBİS_NO_VEYA_KAPSAM_DIŞI]]",
+  /** Türkiye'deki uyuşmazlıklarda yetkili mahkeme ve icra dairelerinin ili. */
+  court: "Adana",
+  /** VERBİS kayıt numarası — yurt dışında yerleşik veri sorumlusu için kayıt zorunlu. */
+  verbis: "[[VERBİS_KAYIT_NO]]",
   /** Sunucu yedeklerinin en uzun saklama süresi (gün) — silinen hesabın yedekten düşme süresi. */
   backupRetentionDays: "[[YEDEK_SAKLAMA_SÜRESİ_GÜN]]",
 } as const;

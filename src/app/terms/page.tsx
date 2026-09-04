@@ -27,12 +27,14 @@ export default function TermsPage() {
     >
       <h2>1. Taraflar ve kabul</h2>
       <p>
-        Bu sözleşme, aşağıda kimliği verilen hizmet sağlayıcı (&quot;Nomi&quot;, &quot;biz&quot;) ile Nomi web uygulamasını (www.exfe.me) ya da Android
-        uygulamasını kullanan kişi (&quot;sen&quot;) arasındadır. Hesap açarak ya da uygulamayı kullanarak bu şartları ve{" "}
+        Bu sözleşme, aşağıda kimliği verilen taraflar (&quot;Nomi&quot;, &quot;biz&quot;) ile Nomi web uygulamasını (www.exfe.me) ya da Android
+        uygulamasını kullanan kişi (&quot;sen&quot;) arasındadır. İki kişiyiz: hizmeti tasarlayan, işleten ve verinden sorumlu olan taraf ile
+        uygulamayı Google Play&apos;de yayımlayan ve abonelik tahsilatını yürüten taraf. Hesap açarak ya da uygulamayı kullanarak bu şartları ve{" "}
         <Link href={LEGAL_PATHS.privacy}>Gizlilik Politikası</Link>&apos;nı kabul etmiş olursun; 6563 sayılı Kanun uyarınca bu metin
         sözleşme kurulmadan önce erişilebilir durumdadır ve saklanabilir. Kabul etmiyorsan uygulamayı kullanma.
       </p>
-      <EntityBlock />
+      <EntityBlock party="controller" contact />
+      <EntityBlock party="publisher" />
 
       <h2>2. Hizmet</h2>
       <p>
@@ -97,7 +99,7 @@ export default function TermsPage() {
         <li><strong>Yenileme ve iptal:</strong> Abonelik, dönem sonundan en az 24 saat önce iptal edilmezse aynı süreyle yenilenir. İptal ve yönetim Play Store › Ödemeler ve abonelikler bölümündedir; hesap silmek aboneliği iptal etmez. Ücretsiz deneme bitmeden iptal edersen ücret alınmaz.</li>
         <li><strong>Cayma hakkı:</strong> Dijital içerik hizmeti satın alma anında ifa edilmeye başlandığından, Mesafeli Sözleşmeler Yönetmeliği m.15/1-ğ ve AB Tüketici Hakları Direktifi m.16(m) uyarınca cayma hakkı, ifaya başlanmasına verdiğin onayla sona erer; satın alma ekranında bu onay istenir. Google Play&apos;in iade politikası ayrıca uygulanır; Play&apos;in kabul ettiği iadeleri biz de tanırız.</li>
         <li><strong>Fiyat değişikliği:</strong> Fiyat değişikliğini yürürlükten önce Play üzerinden bildiririz; kabul etmezsen aboneliği iptal edebilirsin.</li>
-        <li><strong>Satış belgesi:</strong> Premium&apos;u Google Play üzerinden alırsın ve satış belgesini Google düzenleyip Play hesabındaki e-posta adresine gönderir; belge talebini Google Play desteğinden iletebilirsin. Hizmeti sunan taraf bir şirket değil, gerçek kişidir ve mobil uygulama geliştiriciliği kazanç istisnası kapsamında olduğundan ayrıca fatura düzenlemez.</li>
+        <li><strong>Satış belgesi:</strong> Premium&apos;u Google Play üzerinden alırsın ve satış belgesini Google düzenleyip Play hesabındaki e-posta adresine gönderir; belge talebini Google Play desteğinden iletebilirsin. Yayıncı bir şirket değil, gerçek kişidir ve mobil uygulama geliştiriciliği kazanç istisnası kapsamında olduğundan ayrıca fatura düzenlemez.</li>
       </ul>
 
       <h2>7a. Adil kullanım</h2>
