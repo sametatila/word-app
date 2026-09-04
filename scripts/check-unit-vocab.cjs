@@ -110,10 +110,21 @@ for (const e of hedef) {
       if (w.startsWith(on) && w.length > on.length + 2) izinKok.push(on);
     }
   }
+  // Beş harfli mastarda önek toleransı yetmiyor: "sagen" 4 harfe kırpılınca
+  // "sage" oluyor ve "sagt" tutmuyordu. Çözüm ÖNEKİ KISALTMAK DEĞİL — öyle
+  // yapılsa "geben"→"geb" öneki "gebracht"ı yutar ve tam yakalamam gereken
+  // Perfekt kaçardı. Onun yerine çekimli biçimleri TAM olarak üretiyoruz.
+  const izinCekim = new Set();
+  for (const w of izin) {
+    if (w.length >= 4 && w.endsWith("en")) {
+      const g = w.slice(0, -2);
+      for (const son of ["t", "st", "e", "en"]) izinCekim.add(g + son);
+    }
+  }
   // çekim toleransı: öğretilen kelimenin kökünü taşıyorsa bilinir say
   // Üç yön: token kökle başlıyor (kommen→kommt), token kelimenin ÖNEKİ
   // (üben→übe: çekim mastardan KISA), ya da tam eşleşme.
-  const bilinir = (w) => izin.has(w) || ozelAd.has(w) ||
+  const bilinir = (w) => izin.has(w) || ozelAd.has(w) || izinCekim.has(w) ||
     izinKok.some((k) => w.startsWith(k.slice(0, Math.max(4, k.length - 2)))) ||
     (w.length >= 3 && izinKok.some((k) => k.startsWith(w)));
   const tok = (ham.toLowerCase().match(/[a-zäöüß]{2,}/g) || []);
