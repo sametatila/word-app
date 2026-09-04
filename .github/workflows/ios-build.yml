@@ -56,6 +56,15 @@ jobs:
           key: pods-${{ runner.os }}-${{ hashFiles('mobile/ios/Podfile.lock', 'mobile/package-lock.json') }}
           restore-keys: pods-${{ runner.os }}-
 
+      # UI test hedefi projede yok; burada ekleniyor. Sebep: geliştirme makinesi
+      # Linux ve orada Ruby yok, yani xcodeproj gem'i yerelde koşturulamıyor.
+      # Elle pbxproj yazmak on nesne türü ve uydurma UUID demek olurdu. Betik
+      # fikirsiz: hedef zaten varsa dokunmuyor. pod install'dan ÖNCE, çünkü
+      # CocoaPods workspace'i ondan sonra üretiyor.
+      - name: UI test hedefi
+        working-directory: mobile
+        run: ruby scripts/ios-add-uitest-target.rb
+
       - name: pod install
         working-directory: mobile/ios
         run: pod install --repo-update
@@ -117,6 +126,16 @@ jobs:
       - name: Ekran görüntüleri
         working-directory: mobile
         run: bash scripts/ios-screenshots.sh
+
+      # Onboarding'i tıklayarak geçer ve akışın karelerini alır. İlk kez
+      # koşuyor ve birkaç parçası (Ruby ile hedef üretimi, TEST_RUNNER_ ortam
+      # aktarımı, arka plan kare döngüsü) bu makinede sınanamadı — bu yüzden
+      # ŞİMDİLİK işi düşürmüyor: matris kareleri her hâlükârda insin. Çalıştığı
+      # görülünce continue-on-error kalkacak.
+      - name: Akış kareleri (XCUITest)
+        continue-on-error: true
+        working-directory: mobile
+        run: bash scripts/ios-flow-screenshots.sh
 
       # Derleme düşse bile o ana kadarki kareler ve simülatör günlüğü insin —
       # boş bir kare, uygulamanın açılışta çöktüğünü söyleyen kanıttır.

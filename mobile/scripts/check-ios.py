@@ -440,9 +440,19 @@ def _kod(src, ic_ice):
 
 def check_sources():
     hatalar = []
-    dosyalar = sorted(a for a in os.listdir(APP) if a.endswith((".swift", ".m")))
-    for ad in dosyalar:
-        yol = os.path.join(APP, ad)
+    # Uygulama kaynakları + UI test kaynakları. Test hedefi pbxproj'a CI'da
+    # ekleniyor (bkz. ios-add-uitest-target.rb), yani dosyaları yukarıdaki
+    # pbxproj beklentisine GİRMİYOR — ama sözdizimi denetimi onlar için de
+    # geçerli: yorumun ortasında kapanan bir blok orada da derlemeyi kırar.
+    kaynaklar = []
+    for kok in (APP, os.path.join(IOS, "LernomiUITests")):
+        if not os.path.isdir(kok):
+            continue
+        for a in sorted(os.listdir(kok)):
+            if a.endswith((".swift", ".m")):
+                kaynaklar.append((a, os.path.join(kok, a)))
+    dosyalar = [a for a, _ in kaynaklar]
+    for ad, yol in kaynaklar:
         src = read(yol)
         ic_ice = ad.endswith(".swift")  # Swift'te blok yorumu iç içe geçer, ObjC'de geçmez
 
