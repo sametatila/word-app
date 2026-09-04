@@ -62,12 +62,12 @@ export function UserScreen() {
 
   const wrap = (child: React.ReactNode) => (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title={t("user.profil")} />
+      <ScreenHeader title={t("user.profile")} />
       <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, gap: spacing.md }}>{child}</View>
     </View>
   );
-  if (!user) return wrap(<EmptyCard icon={LockIcon} title={t("user.giris_gerekli")} text={t("user.profilleri_gormek_icin_giris_yap")} action={t("user.giris_yap")} onAction={() => nav.navigate("Auth")} />);
-  if (notFound) return wrap(<EmptyCard icon={XIcon} tint={colors.danger} title={t("user.kullanici_bulunamadi")} text={t("user.baglanti_eski_olabilir_ya_da_bu")} />);
+  if (!user) return wrap(<EmptyCard icon={LockIcon} title={t("user.sign_in_required")} text={t("user.sign_in_to_see_profiles")} action={t("user.sign_in")} onAction={() => nav.navigate("Auth")} />);
+  if (notFound) return wrap(<EmptyCard icon={XIcon} tint={colors.danger} title={t("user.user_not_found")} text={t("user.link_may_be_old_or_this_profile")} />);
   if (!data) return wrap(
     <>
       {/* Kimlik kartı + istatistik ızgarası: gerçek düzenin ölçüleriyle. */}
@@ -97,7 +97,7 @@ export function UserScreen() {
   const friends = rel === "friends";
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title={t("user.profil")} />
+      <ScreenHeader title={t("user.profile")} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
           <View style={softShadow(friends ? colors.success : colors.primary, 10)}><PersonAvatar userId={u.userId} name={u.name} size={76} ring={friends ? colors.success : null} /></View>
@@ -115,8 +115,8 @@ export function UserScreen() {
               <UserActionButton userId={u.userId} relation={rel} friendshipId={data.friendshipId} canRequest={data.canRequest} onChange={setRel} small={false} />
               {friends ? (
                 <>
-                  <Pill label={t("user.durt")} tone="ghost" icon={BellIcon} disabled={busy} onPress={() => void act(() => social.nudge(u.userId, "remind"), t("social.nudged_you"))} />
-                  <Pill label={t("user.gorev")} tone="ghost" icon={TargetIcon} disabled={busy} onPress={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))} />
+                  <Pill label={t("user.nudge")} tone="ghost" icon={BellIcon} disabled={busy} onPress={() => void act(() => social.nudge(u.userId, "remind"), t("social.nudged_you"))} />
+                  <Pill label={t("user.task")} tone="ghost" icon={TargetIcon} disabled={busy} onPress={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))} />
                 </>
               ) : null}
             </View>
@@ -126,10 +126,10 @@ export function UserScreen() {
 
         {data.stats ? (
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-            <StatTile value={String(data.stats.currentStreak)} label={t("user.gun_serisi")} color={colors.streak} colors={colors} />
-            <StatTile value={formatXp(data.stats.weeklyXp)} label={t("user.bu_hafta_xp")} color={colors.primary} colors={colors} />
-            <StatTile value={formatXp(data.stats.totalXp)} label={t("user.toplam_xp")} color={colors.success} colors={colors} />
-            <StatTile value={String(data.stats.achievements)} label={t("user.rozet")} color={colors.accent} colors={colors} />
+            <StatTile value={String(data.stats.currentStreak)} label={t("user.day_streak")} color={colors.streak} colors={colors} />
+            <StatTile value={formatXp(data.stats.weeklyXp)} label={t("user.xp_this_week")} color={colors.primary} colors={colors} />
+            <StatTile value={formatXp(data.stats.totalXp)} label={t("user.total_xp")} color={colors.success} colors={colors} />
+            <StatTile value={String(data.stats.achievements)} label={t("user.badge")} color={colors.accent} colors={colors} />
           </View>
         ) : (
           <View style={{ marginBottom: spacing.lg }}>
@@ -139,7 +139,7 @@ export function UserScreen() {
 
         {data.recent.length ? (
           <View>
-            <SectionTitle title={t("user.son_kilometre_taslari")} />
+            <SectionTitle title={t("user.recent_milestones")} />
             {data.recent.map((it) => <FeedCard key={it.id} item={friends || isSelf ? it : { ...it, isMine: true }} />)}
           </View>
         ) : null}
@@ -151,15 +151,15 @@ export function UserScreen() {
             </PressableScale>
             {more ? (
               <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
-                <Pill label={t("user.engelle")} tone="danger" disabled={busy} onPress={() => Alert.alert(t("user.block"), t("user.block_confirm", { ad: u.name ?? t("social.this_person") }), [
-                  { text: t("common.vazgec"), style: "cancel" },
+                <Pill label={t("user.block_2")} tone="danger" disabled={busy} onPress={() => Alert.alert(t("user.block"), t("user.block_confirm", { name: u.name ?? t("social.this_person") }), [
+                  { text: t("common.discard"), style: "cancel" },
                   { text: t("user.block"), style: "destructive", onPress: () => void act(async () => { await social.block(u.userId); nav.goBack(); }, t("user.blocked_done")) },
                 ])} />
-                <Pill label={t("user.sikayet_et")} tone="ghost" disabled={busy} onPress={() => Alert.alert(t("user.report_reason"), undefined, [
+                <Pill label={t("user.report")} tone="ghost" disabled={busy} onPress={() => Alert.alert(t("user.report_reason"), undefined, [
                   { text: t("user.report_spam"), onPress: () => void act(() => social.report(u.userId, "spam"), t("user.report_done")) },
                   { text: t("user.report_abuse"), onPress: () => void act(() => social.report(u.userId, "abuse"), t("user.report_done")) },
                   { text: t("user.report_fake"), onPress: () => void act(() => social.report(u.userId, "impersonation"), t("user.report_done")) },
-                  { text: t("common.vazgec"), style: "cancel" },
+                  { text: t("common.discard"), style: "cancel" },
                 ])} />
               </View>
             ) : null}

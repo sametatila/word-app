@@ -21,9 +21,9 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 
 type SkillKey = "reading" | "listening" | "writing";
 const SKILLS: { key: SkillKey; kind: "read" | "listen" | "write"; label: string; icon: (p: { color: string; size: number }) => React.ReactElement; tint: keyof Palette }[] = [
-  { key: "reading", kind: "read", label: "skills.okuma", icon: ReadIcon, tint: "info" },
-  { key: "listening", kind: "listen", label: "skills.dinleme", icon: ListenIcon, tint: "accent" },
-  { key: "writing", kind: "write", label: "skills.yazma", icon: WriteIcon, tint: "success" },
+  { key: "reading", kind: "read", label: "skills.reading", icon: ReadIcon, tint: "info" },
+  { key: "listening", kind: "listen", label: "skills.listening", icon: ListenIcon, tint: "accent" },
+  { key: "writing", kind: "write", label: "skills.writing", icon: WriteIcon, tint: "success" },
 ];
 
 function ExerciseRow({ ex, tint, done, onPress, colors, last }: { ex: SkillMeta; tint: string; done: boolean; onPress: () => void; colors: Palette; last: boolean }) {
@@ -87,14 +87,14 @@ export function SkillsScreen() {
 
   return (
     <Screen>
-      <AppHeader title={t("skills.beceriler")} subtitle={t("skills.aciklama")} />
+      <AppHeader title={t("skills.skills")} subtitle={t("skills.aciklama")} />
 
       {/* Konuşma bölümü mikrofonsuz cihazda hiç çizilmez: iki satır da mikrofon ister. */}
       {mic ? (
         <>
-          <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, letterSpacing: 0.5 }}>{t("skills.konusma").toUpperCase()}</Text>
-          <SpeakingRow title={t("skills.yuruyus_modu")} subtitle={t("skills.yuruyus_alt")} icon={WalkIcon} tint={colors.accent} onPress={() => nav.navigate("Walk")} colors={colors} />
-          <SpeakingRow title={t("skills.ders_konusmasi")} subtitle={t("skills.ders_konusmasi_alt")} icon={PathIcon} tint={colors.primary} onPress={() => nav.navigate("Tabs")} colors={colors} />
+          <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, letterSpacing: 0.5 }}>{t("skills.speaking").toUpperCase()}</Text>
+          <SpeakingRow title={t("skills.walk_mode")} subtitle={t("skills.yuruyus_alt")} icon={WalkIcon} tint={colors.accent} onPress={() => nav.navigate("Walk")} colors={colors} />
+          <SpeakingRow title={t("skills.lesson_dialogues")} subtitle={t("skills.ders_konusmasi_alt")} icon={PathIcon} tint={colors.primary} onPress={() => nav.navigate("Tabs")} colors={colors} />
         </>
       ) : null}
 
@@ -131,7 +131,7 @@ export function SkillsScreen() {
       ) : hasExercises ? (
         <>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.lg, marginBottom: spacing.sm, marginLeft: 4 }}>
-            <Text variant="caption" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{t("skills.seviye")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{t("skills.level")}</Text>
           </View>
           <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }} accessibilityRole="tablist">
             {LEVELS.map((l) => {
@@ -152,7 +152,7 @@ export function SkillsScreen() {
                 <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: 4 }}>
                   <s.icon color={tint} size={18} />
                   <Text variant="h3">{t(s.label)}</Text>
-                  <Text variant="caption" color={colors.textMuted}>{t("skills.alistirma", { n: s.items.length })}</Text>
+                  <Text variant="caption" color={colors.textMuted}>{t("skills.exercises", { n: s.items.length })}</Text>
                 </View>
                 <Card padded style={{ paddingVertical: 4 }}>
                   {s.items.map((ex, i) => (
@@ -165,7 +165,7 @@ export function SkillsScreen() {
         </>
       ) : (
         <Card padded style={{ marginTop: spacing.lg }}>
-          <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("skills.kurs_alistirma_yok")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("skills.this_course_has_no_reading")}</Text>
         </Card>
       )}
     </Screen>

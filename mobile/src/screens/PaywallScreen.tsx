@@ -32,7 +32,7 @@ const SUBSCRIPTIONS_URL = Platform.OS === "ios"
 /** Gerçekten premium'a bağlı özellikler — ExamPrep'teki kilitle birebir. */
 const COMPARE: { key: string; free: string; premium: string }[] = [
   { key: "paywall.schreiben_alistirmalari", free: "—", premium: "Var" },
-  { key: "paywall.kelime_turlari_dersler_yuruyus", free: "Var", premium: "Var" },
+  { key: "paywall.word_rounds_lessons_walk_mode", free: "Var", premium: "Var" },
 ];
 
 function CompareRow({ row, colors, last }: { row: (typeof COMPARE)[number]; colors: Palette; last: boolean }) {
@@ -46,8 +46,8 @@ function CompareRow({ row, colors, last }: { row: (typeof COMPARE)[number]; colo
 }
 
 function planLabel(pkg: PurchasesPackage): string {
-  if (pkg.packageType === "ANNUAL") return t("paywall.yillik");
-  if (pkg.packageType === "MONTHLY") return t("paywall.aylik");
+  if (pkg.packageType === "ANNUAL") return t("paywall.yearly");
+  if (pkg.packageType === "MONTHLY") return t("paywall.monthly");
   return pkg.product.title;
 }
 
@@ -55,7 +55,7 @@ function planLabel(pkg: PurchasesPackage): string {
 function freeTrialOf(pkg: PurchasesPackage | undefined): string | null {
   const intro = pkg?.product.introPrice;
   if (!intro || intro.price !== 0) return null;
-  return `${intro.periodNumberOfUnits} ${intro.periodUnit === "DAY" ? t("paywall.gun") : intro.periodUnit === "WEEK" ? t("paywall.hafta") : t("paywall.ay")}`;
+  return `${intro.periodNumberOfUnits} ${intro.periodUnit === "DAY" ? t("paywall.days") : intro.periodUnit === "WEEK" ? t("paywall.weeks") : t("paywall.ay")}`;
 }
 
 export function PaywallScreen() {
@@ -92,7 +92,7 @@ export function PaywallScreen() {
     const ok = await purchase(pkg);
     setBusy(false);
     if (ok) { haptic("correct"); track("purchase_done", 0, pkg.packageType); nav.goBack(); }
-    else setError(t("paywall.satin_alma_tamamlanmadi"));
+    else setError(t("paywall.purchase_wasn_t_completed"));
   }
 
   async function doRestore() {
@@ -102,12 +102,12 @@ export function PaywallScreen() {
     const ok = await restore();
     setBusy(false);
     if (ok) nav.goBack();
-    else setError(t("paywall.geri_yuklenecek_satin_alma_yok"));
+    else setError(t("paywall.no_purchase_to_restore_on_this"));
   }
 
   const close = (
     <View style={{ alignItems: "flex-end", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg }}>
-      <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel={t("common.kapat")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+      <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityRole="button" accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
         <XIcon color={colors.textMuted} size={22} />
       </PressableScale>
     </View>
@@ -122,8 +122,8 @@ export function PaywallScreen() {
           <View style={{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
             <CrownIcon color={colors.textFaint} size={36} />
           </View>
-          <Text variant="h2" style={{ textAlign: "center" }}>{t("paywall.premium_su_an_satista_degil")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>{t("paywall.tum_ucretsiz_ozellikler_acik")}</Text>
+          <Text variant="h2" style={{ textAlign: "center" }}>{t("paywall.premium_isn_t_on_sale_right_now")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>{t("paywall.all_features_are_free_to_use_for")}</Text>
         </View>
       </View>
     );
@@ -138,13 +138,13 @@ export function PaywallScreen() {
             <CrownIcon color="#fff" size={44} />
           </View>
           <Text variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("paywall.sinirsiz_ogren_sinavina_tam_hazirlan")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("paywall.unlimited_learning_full_exam")}</Text>
         </View>
 
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.lg, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.xl }}>
           <View style={{ flexDirection: "row", alignItems: "center", paddingBottom: spacing.sm, borderBottomWidth: 1.5, borderBottomColor: colors.border }}>
-            <Text variant="micro" color={colors.textMuted} style={{ flex: 1.5 }}>{t("paywall.ozellik")}</Text>
-            <Text variant="micro" color={colors.textFaint} style={{ flex: 1, textAlign: "center" }}>{t("paywall.ucretsiz")}</Text>
+            <Text variant="micro" color={colors.textMuted} style={{ flex: 1.5 }}>{t("paywall.feature")}</Text>
+            <Text variant="micro" color={colors.textFaint} style={{ flex: 1, textAlign: "center" }}>{t("paywall.free")}</Text>
             <Text variant="micro" color={colors.primary} style={{ flex: 1, textAlign: "center" }}>PREMIUM</Text>
           </View>
           {COMPARE.map((r, i) => <CompareRow key={r.key} row={r} colors={colors} last={i === COMPARE.length - 1} />)}
@@ -155,7 +155,7 @@ export function PaywallScreen() {
           {/* Sınav vaadi yalnız sınavı olan kursta: İngilizce kursunda Goethe/telc
               karşılığı yok, orada CEFR vaadi tek başına doğru olanı. */}
           <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>
-            {t(hasExams(currentCourseId()) ? "paywall.icerik_cefr_a1c1_ve_goethe_telc" : "paywall.icerik_cefr_a1c1")}
+            {t(hasExams(currentCourseId()) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
           </Text>
         </View>
 
@@ -186,7 +186,7 @@ export function PaywallScreen() {
                   </View>
                   <View style={{ flex: 1 }}>
                     <Text variant="h3">{planLabel(p)}</Text>
-                    <Text variant="caption" color={colors.textMuted}>{tr ? t("paywall.ilk_sure_ucretsiz", { sure: tr }) : t("paywall.istedigin_zaman_iptal")}</Text>
+                    <Text variant="caption" color={colors.textMuted}>{tr ? t("paywall.first_free", { duration: tr }) : t("paywall.cancel_anytime")}</Text>
                   </View>
                   <Text variant="h3" color={active ? colors.primary : colors.text}>{p.product.priceString}</Text>
                 </PressableScale>
@@ -198,24 +198,24 @@ export function PaywallScreen() {
 
       <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm }}>
         {error ? <Text variant="caption" color={colors.danger} style={{ textAlign: "center", marginBottom: spacing.sm }}>{error}</Text> : null}
-        <PressableScale onPress={start} disabled={busy || !pkg} accessibilityRole="button" accessibilityLabel={trial ? t("paywall.ucretsiz_denemeyi_baslat") : t("paywall.abone_ol")} style={[{ borderRadius: radii.lg, backgroundColor: pkg ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, pkg ? softShadow(colors.primary, 12) : {}]}>
-          {busy ? <ActivityIndicator color="#fff" /> : <Text variant="h3" color={pkg ? "#fff" : colors.textFaint}>{trial ? t("paywall.ucretsiz_denemeyi_baslat") : t("paywall.abone_ol")}</Text>}
+        <PressableScale onPress={start} disabled={busy || !pkg} accessibilityRole="button" accessibilityLabel={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} style={[{ borderRadius: radii.lg, backgroundColor: pkg ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, pkg ? softShadow(colors.primary, 12) : {}]}>
+          {busy ? <ActivityIndicator color="#fff" /> : <Text variant="h3" color={pkg ? "#fff" : colors.textFaint}>{trial ? t("paywall.start_free_trial") : t("paywall.subscribe")}</Text>}
         </PressableScale>
         {/* Abonelik politikası (Play ve App Store): süre, fiyat, yenileme ve iptal yolu
             satın almadan önce görünür. İptal yolu mağazaya göre ayrı metin. */}
         <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 16 }}>
-          {pkg ? (trial ? t("paywall.deneme_sonra_ucret", { sure: trial, fiyat: pkg.product.priceString }) : t("paywall.fiyat_donem", { fiyat: pkg.product.priceString })) : ""}
+          {pkg ? (trial ? t("paywall.free_then", { duration: trial, price: pkg.product.priceString }) : t("paywall.fiyat_donem", { price: pkg.product.priceString })) : ""}
           {" · "}{t(Platform.OS === "ios" ? "paywall.renew_cancel_appstore" : "paywall.renew_cancel_play")}
         </Text>
         <View style={{ flexDirection: "row", justifyContent: "center", gap: spacing.lg, marginTop: spacing.xs }}>
-          <PressableScale onPress={doRestore} hitSlop={6} accessibilityLabel={t("paywall.satin_almayi_geri_yukle")} style={{ paddingVertical: spacing.sm }}>
-            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.satin_almayi_geri_yukle")}</Text>
+          <PressableScale onPress={doRestore} hitSlop={6} accessibilityLabel={t("paywall.restore_purchase")} style={{ paddingVertical: spacing.sm }}>
+            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.restore_purchase")}</Text>
           </PressableScale>
           <PressableScale onPress={() => Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
-            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.aboneligi_yonet")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.manage_subscription")}</Text>
           </PressableScale>
           <PressableScale onPress={() => openLegal("terms")} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
-            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.kullanim_sartlari")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.terms_of_use")}</Text>
           </PressableScale>
         </View>
       </View>

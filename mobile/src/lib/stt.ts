@@ -48,10 +48,10 @@ export async function ensureMicPermission(): Promise<boolean> {
   if (Platform.OS !== "android") return true; // iOS izinleri native tarafta (SFSpeech) istenir
   try {
     const g = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO, {
-      title: t("micperm.mikrofon_izni"),
-      message: t("micperm.yuruyus_modunda_soyledigin_kelimey"),
-      buttonPositive: t("micperm.izin_ver"),
-      buttonNegative: t("common.vazgec"),
+      title: t("micperm.microphone_permission"),
+      message: t("micperm.walk_mode_needs_microphone_to"),
+      buttonPositive: t("micperm.allow"),
+      buttonNegative: t("common.discard"),
     });
     return g === PermissionsAndroid.RESULTS.GRANTED;
   } catch {

@@ -64,7 +64,7 @@ export function InboxScreen() {
   }
 
   const body = !user
-    ? <EmptyCard icon={LockIcon} title={t("inbox.giris_gerekli")} text={t("inbox.bildirimler_hesabina_bagli")} action={t("inbox.giris_yap")} onAction={() => nav.navigate("Auth")} />
+    ? <EmptyCard icon={LockIcon} title={t("inbox.sign_in_required")} text={t("inbox.notifications_are_tied_to_your")} action={t("inbox.sign_in")} onAction={() => nav.navigate("Auth")} />
     : items === null
       ? (
         // Gerçek listeyle aynı kap: tek kart, hairline satırlar (40'lık arma).
@@ -82,7 +82,7 @@ export function InboxScreen() {
         </Card>
       )
       : !items.length
-        ? <EmptyCard icon={InboxIcon} title={t("inbox.bildirim_yok")} text={t("inbox.arkadaslik_istekleri_tepkiler_durtmeler_ve_g")} />
+        ? <EmptyCard icon={InboxIcon} title={t("inbox.no_notifications")} text={t("inbox.friend_requests_reactions_nudges")} />
         : (
           <View>
             <Card padded style={{ paddingVertical: 0 }}>
@@ -114,7 +114,7 @@ export function InboxScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title={t("inbox.gelen_kutusu")} subtitle={t("inbox.istekler_tepkiler_durtmeler_gorevler")} />
+      <ScreenHeader title={t("inbox.inbox")} subtitle={t("inbox.requests_reactions_nudges_quests")} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {body}
         <ErrorText text={err} />

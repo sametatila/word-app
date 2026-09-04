@@ -66,7 +66,7 @@ export function LearnScreen() {
   const { user } = useAuth();
   const { me, loading: meLoading } = useMe();
   const update = useUpdate();   // iOS'ta hep null (APK şeridi yok, bkz. lib/useUpdate)
-  const greeting = user?.name ? t("learn.greeting_named", { ad: user.name.split(" ")[0] }) : t("learn.greeting");
+  const greeting = user?.name ? t("learn.greeting_named", { name: user.name.split(" ")[0] }) : t("learn.greeting");
   // Sınav hazırlık yalnız sınavı olan kursta. İngilizce kursunda katalog boş
   // (bkz. data/exams.ts) — kart açık kalsaydı kullanıcıyı boş bir ekrana
   // götürür ve "Goethe & telc" diye o kursta karşılığı olmayan bir vaat verirdi.
@@ -91,13 +91,13 @@ export function LearnScreen() {
             <BoltIcon color={colors.primary} size={20} />
             <View style={{ flex: 1 }}>
               <Text variant="bodyStrong" color={colors.primary}>Yeni sürüm hazır · v{update.version}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("learn.indirmek_icin_dokun")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("learn.tap_to_download")}</Text>
             </View>
             <ArrowRightIcon color={colors.primary} size={18} />
           </View>
         </PressableScale>
       )}
-      <AppHeader title={t("learn.hedef_dili_ogren", { lang: targetLangName() })} subtitle={greeting} />
+      <AppHeader title={t("learn.learn", { lang: targetLangName() })} subtitle={greeting} />
 
       {/* GÜNLÜK TUR — dil-içerik öncelikli kahraman (fitness halkası değil) */}
       <PressableScale onPress={() => nav.navigate("Game")}>
@@ -123,14 +123,14 @@ export function LearnScreen() {
               <View style={{ width: 44, height: 44, borderRadius: radii.md, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
                 <BoltIcon color="#fff" size={22} />
               </View>
-              <Text variant="micro" color="#ffffffcc" style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("learn.gunluk_tur")}</Text>
+              <Text variant="micro" color="#ffffffcc" style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("learn.daily_round")}</Text>
             </View>
-            <Text variant="h1" color="#fff">{t("learn.kelimelerini_calis")}</Text>
+            <Text variant="h1" color="#fff">{t("learn.practice_your_words")}</Text>
             <Text variant="body" color="#ffffffdd" style={{ marginTop: 4 }}>
               {t("learn.daily_pitch")}
             </Text>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginTop: spacing.lg, backgroundColor: "#ffffff", borderRadius: radii.pill, alignSelf: "flex-start", paddingHorizontal: 20, paddingVertical: 11 }}>
-              <Text variant="bodyStrong" color={colors.primary}>{t("common.basla")}</Text>
+              <Text variant="bodyStrong" color={colors.primary}>{t("common.start")}</Text>
               <ArrowRightIcon color={colors.primary} size={18} />
             </View>
             </View>
@@ -149,7 +149,7 @@ export function LearnScreen() {
           ) : hasToday && dailyGoal > 0 ? (
             <View style={{ paddingHorizontal: spacing.xl, paddingBottom: spacing.lg, marginTop: -spacing.sm }}>
               <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 6 }}>
-                <Text variant="micro" color="#ffffffdd">{t("learn.gunluk_hedef")}</Text>
+                <Text variant="micro" color="#ffffffdd">{t("learn.daily_goal")}</Text>
                 <Text variant="micro" color="#ffffffdd">{reviewsToday}/{dailyGoal}</Text>
               </View>
               <View style={{ height: 6, borderRadius: 3, backgroundColor: "#ffffff40", overflow: "hidden" }}>
@@ -199,19 +199,19 @@ export function LearnScreen() {
       {/* ÖNE ÇIKAN — kama (plan): yürüyüş modu (farklılaştırıcı) + sınav hazırlık (painkiller) */}
       {mic || exams ? (
         <>
-          <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.one_cikan")}</Text>
+          <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.featured")}</Text>
           <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
-            {mic ? <WedgeTile title={t("learn.yuruyus_modu")} pitch={t("learn.walk_pitch")} tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} /> : null}
-            {exams ? <WedgeTile title={t("learn.sinav_hazirlik")} pitch={t("learn.exam_pitch")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} /> : null}
+            {mic ? <WedgeTile title={t("learn.walk_mode")} pitch={t("learn.walk_pitch")} tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} /> : null}
+            {exams ? <WedgeTile title={t("learn.exam_prep")} pitch={t("learn.exam_pitch")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} /> : null}
           </View>
         </>
       ) : null}
 
       {/* diğer öğrenme yolları */}
-      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.daha_fazlasi")}</Text>
-      <ActionRow title={t("learn.pratik")} subtitle={t("learn.tek_bir_oyunu_kendi_kelimelerinle_calis")} tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
-      <ActionRow title={t("learn.gunun_turu")} subtitle={t("learn.herkesle_ayni_yarisma_siralamaya_gir")} tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
-      <ActionRow title={t("learn.haftalik_sinav")} subtitle={t("learn.ogrendiklerini_olc_haftada_bir")} tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
+      <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.more")}</Text>
+      <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
+      <ActionRow title={t("learn.daily_round_2")} subtitle={t("learn.same_challenge_for_everyone_get")} tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
+      <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
     </Screen>
   );
 }

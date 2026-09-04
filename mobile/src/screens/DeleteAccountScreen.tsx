@@ -20,10 +20,10 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 /** Silinecekler — t() çağrı anında okunsun diye fonksiyon (dil modül yüklenirken hazır değil). */
 function losses(): string[] {
   return [
-    tx("deleteaccount.kelime_ilerlemen_serilerin_xp_ve_b"),
-    tx("deleteaccount.yazilarin_konusma_kayitlarin_ve_de"),
-    tx("deleteaccount.arkadasliklarin_ve_gelen_kutun"),
-    tx("deleteaccount.hesabin_ve_e_posta_adresin"),
+    tx("deleteaccount.your_word_progress_streaks_xp"),
+    tx("deleteaccount.your_writing_speaking_records"),
+    tx("deleteaccount.your_friendships_and_your_inbox"),
+    tx("deleteaccount.your_account_and_your_email"),
   ];
 }
 
@@ -107,8 +107,8 @@ export function DeleteAccountScreen() {
         <View style={{ width: 72, height: 72, borderRadius: 36, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
           <CheckIcon color={colors.success} size={34} />
         </View>
-        <Text variant="h2" style={{ textAlign: "center" }}>{tx("deleteaccount.hesabin_silindi")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("deleteaccount.verilerin_kaldirildi_seni_tanimak_guzeldi")}</Text>
+        <Text variant="h2" style={{ textAlign: "center" }}>{tx("deleteaccount.your_account_is_deleted")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("deleteaccount.your_data_is_gone_it_was_good_to")}</Text>
       </View>
     );
   }
@@ -116,15 +116,15 @@ export function DeleteAccountScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingBottom: spacing.sm, ...pad }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{tx("deleteaccount.hesabi_sil")}</Text>
+        <Text variant="h2">{tx("deleteaccount.delete_account")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 22 }}>
-          {tx("deleteaccount.hesap_ve_ona_bagli_her_sey_kalici", { hesap: user?.email ? tx("deleteaccount.eposta_hesabi", { eposta: user.email }) : tx("deleteaccount.hesabin") })}
+          {tx("deleteaccount.and_everything_tied_to_it_will", { account: user?.email ? tx("deleteaccount.account", { email: user.email }) : tx("deleteaccount.your_account") })}
         </Text>
 
         <Card padded style={{ marginTop: spacing.lg, paddingVertical: spacing.sm }}>
@@ -142,10 +142,10 @@ export function DeleteAccountScreen() {
 
         {needsFresh ? (
           <Card padded style={{ marginTop: spacing.lg, gap: spacing.sm }}>
-            <Text variant="h3">{tx("deleteaccount.once_yeniden_giris_yap")}</Text>
-            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>{tx("deleteaccount.guvenlik_icin_hesap_silme_son_24")}</Text>
+            <Text variant="h3">{tx("deleteaccount.sign_in_again_first")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>{tx("deleteaccount.for_security_deleting_your")}</Text>
             <PressableScale onPress={reauthAndRetry} disabled={busy} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }, softShadow(colors.primary, 8)]}>
-              <Text variant="bodyStrong" color="#fff">{busy ? "..." : tx("deleteaccount.google_ile_yeniden_gir_ve_sil")}</Text>
+              <Text variant="bodyStrong" color="#fff">{busy ? "..." : tx("deleteaccount.sign_in_with_google_again_and")}</Text>
             </PressableScale>
           </Card>
         ) : (
@@ -154,17 +154,17 @@ export function DeleteAccountScreen() {
               <TextInput
                 value={password}
                 onChangeText={setPassword}
-                placeholder={tx("deleteaccount.parolan")}
+                placeholder={tx("deleteaccount.your_password")}
                 placeholderTextColor={colors.textFaint}
                 secureTextEntry
                 autoCapitalize="none"
                 autoCorrect={false}
                 textContentType="password"
-                accessibilityLabel={tx("deleteaccount.parola")}
+                accessibilityLabel={tx("deleteaccount.password")}
                 style={{ marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
               />
             ) : hasPassword === false ? (
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{tx("deleteaccount.google_ile_girdigin_icin_parola_gerekmiyor")}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg }}>{tx("deleteaccount.you_signed_in_with_google_so_no")}</Text>
             ) : (
               // Hesabın parolası var mı okunana dek alan yerini tutar: sonra
               // beliren kutu onay kutucuğunu ve sil düğmesini aşağı itmesin.
@@ -175,16 +175,16 @@ export function DeleteAccountScreen() {
               <View style={{ width: 26, height: 26, borderRadius: radii.sm, borderWidth: 2, borderColor: agree ? colors.danger : colors.border, backgroundColor: agree ? colors.danger : "transparent", alignItems: "center", justifyContent: "center" }}>
                 {agree ? <CheckIcon color="#fff" size={16} /> : null}
               </View>
-              <Text variant="body" style={{ flex: 1 }}>{tx("deleteaccount.verilerimin_kalici_olarak_silinecegini_anlad")}</Text>
+              <Text variant="body" style={{ flex: 1 }}>{tx("deleteaccount.i_understand_my_data_will_be")}</Text>
             </PressableScale>
 
             {error ? <Text variant="bodyStrong" color={colors.danger} style={{ marginTop: spacing.sm }}>{error}</Text> : null}
 
             <PressableScale onPress={() => setConfirm(true)} disabled={!ready} accessibilityState={{ disabled: !ready }} style={[{ borderRadius: radii.lg, backgroundColor: ready ? colors.danger : colors.surface2, paddingVertical: 16, alignItems: "center", marginTop: spacing.lg }, ready ? softShadow(colors.danger, 10) : {}]}>
-              <Text variant="h3" color={ready ? "#fff" : colors.textFaint}>{busy ? tx("deleteaccount.siliniyor") : tx("deleteaccount.hesabimi_kalici_olarak_sil")}</Text>
+              <Text variant="h3" color={ready ? "#fff" : colors.textFaint}>{busy ? tx("deleteaccount.deleting") : tx("deleteaccount.permanently_delete_my_account")}</Text>
             </PressableScale>
             <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, alignItems: "center" }}>
-              <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.vazgec")}</Text>
+              <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.discard")}</Text>
             </PressableScale>
           </>
         )}
@@ -192,10 +192,10 @@ export function DeleteAccountScreen() {
 
       <ConfirmDialog
         visible={confirm}
-        title={tx("deleteaccount.son_kez_soruyoruz")}
-        message={tx("deleteaccount.hesabin_ve_tum_verilerin_silinecek")}
-        confirmLabel={tx("deleteaccount.evet_sil")}
-        cancelLabel={tx("common.vazgec")}
+        title={tx("deleteaccount.we_re_asking_one_last_time")}
+        message={tx("deleteaccount.your_account_and_all_your_data")}
+        confirmLabel={tx("deleteaccount.yes_delete")}
+        cancelLabel={tx("common.discard")}
         destructive
         onConfirm={run}
         onCancel={() => setConfirm(false)}

@@ -82,21 +82,21 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
     <View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg }}>
         <SearchIcon color={colors.textMuted} size={20} />
-        <TextInput value={q} onChangeText={setQ} placeholder={t("find.kullanici_adi_ya_da_isim")} placeholderTextColor={colors.textFaint} autoCapitalize="none" autoCorrect={false} style={{ flex: 1, paddingVertical: 13, color: colors.text, fontSize: 16 }} accessibilityLabel={t("find.kullanici_ara")} />
-        {q ? <PressableScale onPress={() => setQ("")} accessibilityLabel={t("find.temizle")}><XIcon color={colors.textMuted} size={18} /></PressableScale> : null}
+        <TextInput value={q} onChangeText={setQ} placeholder={t("find.username_or_name")} placeholderTextColor={colors.textFaint} autoCapitalize="none" autoCorrect={false} style={{ flex: 1, paddingVertical: 13, color: colors.text, fontSize: 16 }} accessibilityLabel={t("find.search_users")} />
+        {q ? <PressableScale onPress={() => setQ("")} accessibilityLabel={t("find.clear")}><XIcon color={colors.textMuted} size={18} /></PressableScale> : null}
       </View>
       <ErrorText text={err} />
       {q.trim().length >= 2 ? (
         <View style={{ marginTop: spacing.lg }}>
           {hits === null ? <SearchResultSkeleton /> : hits.length ? hits.map((h) => card(h, null, h.currentStreak, <UserActionButton userId={h.userId} relation={h.relation} onChange={onChanged} />)) : (
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("find.sonuc_yok_gizli_profiller_yalniz_tam")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("find.no_results_private_profiles_only")}</Text>
           )}
         </View>
       ) : (
         <View>
-          <SectionTitle title={t("find.taniyor_olabilirsin")} />
-          {sugg === null ? <SearchResultSkeleton /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: t("social.mutual", { n: s.mutual }), tint: colors.success, icon: HandshakeIcon } : s.reason === "level" ? { label: t("find.same_level", { seviye: s.level }), tint: colors.info } : { label: t("find.active_week"), tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
-            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("find.simdilik_oneri_yok_kullanici_adiyla_ara")}</Text>
+          <SectionTitle title={t("find.you_may_know")} />
+          {sugg === null ? <SearchResultSkeleton /> : sugg.length ? sugg.map((s) => card(s, s.reason === "mutual" ? { label: t("social.mutual", { n: s.mutual }), tint: colors.success, icon: HandshakeIcon } : s.reason === "level" ? { label: t("find.same_level", { level: s.level }), tint: colors.info } : { label: t("find.active_week"), tint: colors.primary }, s.currentStreak, <UserActionButton userId={s.userId} relation="none" onChange={onChanged} />)) : (
+            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("find.no_suggestions_yet_search_by")}</Text>
           )}
         </View>
       )}

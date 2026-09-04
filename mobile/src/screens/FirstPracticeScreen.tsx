@@ -43,7 +43,7 @@ export function FirstPracticeScreen() {
   }, [empty, nav]);
   const w = words[idx];
   const last = idx + 1 >= words.length;
-  const kicker = level === "A1" ? t("firstpractice.first_words") : t("firstpractice.warmup", { seviye: level });
+  const kicker = level === "A1" ? t("firstpractice.first_words") : t("firstpractice.warmup", { level: level });
 
   // Kelime basina bir kez: level params'tan, w idx'ten turuyor; ikisini
   // bagimliliga eklemek ayni kelimeyi tekrar okutur.
@@ -70,8 +70,8 @@ export function FirstPracticeScreen() {
         <Text variant="caption" color={colors.primary} style={{ letterSpacing: 1, textTransform: "uppercase" }}>{kicker}</Text>
         <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(w)}</Text>
 
-        <PressableScale onPress={() => speakTarget(withArtikel(w))} accessibilityRole="button" accessibilityLabel={t("firstpractice.listen_word", { kelime: w.de })} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 16, paddingVertical: 9 }}>
-          <SpeakerIcon color={colors.primary} size={18} /><Text variant="bodyStrong" color={colors.primary}>{t("firstpractice.dinle")}</Text>
+        <PressableScale onPress={() => speakTarget(withArtikel(w))} accessibilityRole="button" accessibilityLabel={t("firstpractice.listen_word", { word: w.de })} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 16, paddingVertical: 9 }}>
+          <SpeakerIcon color={colors.primary} size={18} /><Text variant="bodyStrong" color={colors.primary}>{t("firstpractice.listen")}</Text>
         </PressableScale>
 
         {seen ? (

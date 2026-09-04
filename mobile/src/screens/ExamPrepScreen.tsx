@@ -73,10 +73,10 @@ export function ExamPrepScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{t("examprep.sinav_hazirlik")}</Text>
+        <Text variant="h2">{t("examprep.exam_prep")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
@@ -84,7 +84,7 @@ export function ExamPrepScreen() {
         <Card style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
             <View>
-              <Text variant="micro" color={colors.textMuted}>{t("examprep.seviye")}</Text>
+              <Text variant="micro" color={colors.textMuted}>{t("examprep.level")}</Text>
               <Text variant="h1" color={colors.primary}>{level}</Text>
             </View>
             {meLoading ? (
@@ -94,7 +94,7 @@ export function ExamPrepScreen() {
               </View>
             ) : overallPct !== null ? (
               <View style={{ alignItems: "flex-end" }}>
-                <Text variant="micro" color={colors.textMuted}>{t("examprep.kelime_kapsamasi")}</Text>
+                <Text variant="micro" color={colors.textMuted}>{t("examprep.word_coverage")}</Text>
                 <Text variant="h1">%{overallPct}</Text>
               </View>
             ) : null}
@@ -111,7 +111,7 @@ export function ExamPrepScreen() {
           </View>
         </Card>
 
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{t("examprep.moduller")}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{t("examprep.modules")}</Text>
         <View style={{ gap: spacing.md }}>
           {!levelReady ? [0, 1, 2].map((i) => (
             <SkeletonCard key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
@@ -127,7 +127,7 @@ export function ExamPrepScreen() {
             const tint = colors[m.tint as keyof Palette] as string;
             const n = countFor(m);
             const gated = m.premium && billingAvailable();
-            const sub = `${t(m.subKey)} · ${t("examprep.alistirma", { n })}${gated ? " · Premium" : ""}`;
+            const sub = `${t(m.subKey)} · ${t("examprep.exercises", { n })}${gated ? " · Premium" : ""}`;
             return (
               <PressableScale key={m.key} onPress={() => openModule(m)}>
                 <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
@@ -155,14 +155,14 @@ export function ExamPrepScreen() {
               zaten çizilmiyor (yukarıdaki countFor süzgeci). */}
           {levelReady && !catalog.modules.length ? (
             <Card padded>
-              <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("examprep.kurs_sinav_yok")}</Text>
+              <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("examprep.this_course_has_no_exam")}</Text>
             </Card>
           ) : null}
         </View>
 
         {billingAvailable() ? (
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg, textAlign: "center", lineHeight: 18 }}>
-            {t("examprep.ucretsiz_premium_notu")}
+            {t("examprep.lesen_and_horen_are_free")}
           </Text>
         ) : null}
       </ScrollView>

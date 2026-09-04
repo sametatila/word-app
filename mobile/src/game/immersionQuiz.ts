@@ -30,7 +30,7 @@ export function buildUnitBrief(level: string, unitIndex: number): UnitBrief {
   const lessons = lessonsForLevel(level);
   const u = unitIndex - 1;
   const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
-  const theme = moduleTheme(currentCourseId(), level, Math.floor((u * UNIT_LESSONS) / MODULE_SIZE)) || t("path.unit_fallback", { seviye: level, n: unitIndex });
+  const theme = moduleTheme(currentCourseId(), level, Math.floor((u * UNIT_LESSONS) / MODULE_SIZE)) || t("path.unit_fallback", { level: level, n: unitIndex });
   return {
     vocab: dedupeBy(unitLessons.flatMap((l) => l.vocab), (v) => v.de),
     patterns: dedupeBy(unitLessons.flatMap((l) => l.patterns), (p) => p.de),
@@ -77,12 +77,12 @@ export function deriveQuiz(brief: UnitBrief, pool: { vocab: VocabItem[]; pattern
   for (let i = 0; i < vocabTarget; i++) {
     const v = brief.vocab[i];
     const { options, answer } = placeAnswer(v.tr, pickDistractors(v.tr, trPool, i), i);
-    qs.push({ kind: "mcq", text: t("quiz.what_means", { kelime: v.de }), options, answer, explain: `${v.de} = ${v.tr}.` });
+    qs.push({ kind: "mcq", text: t("quiz.what_means", { word: v.de }), options, answer, explain: `${v.de} = ${v.tr}.` });
   }
   for (let j = 0; j < patTarget && qs.length < count; j++) {
     const p = brief.patterns[j];
     const { options, answer } = placeAnswer(p.de, pickDistractors(p.de, dePatternPool, j), j);
-    qs.push({ kind: "mcq", text: t("quiz.how_to_say", { kalip: p.tr, hedef: targetLangName() }), options, answer, explain: `${p.tr} → ${p.de}` });
+    qs.push({ kind: "mcq", text: t("quiz.how_to_say", { pattern: p.tr, target: targetLangName() }), options, answer, explain: `${p.tr} → ${p.de}` });
   }
   return qs.slice(0, count);
 }

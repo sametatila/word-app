@@ -17,18 +17,18 @@ export type Reason = { key: ReportReason; label: string; sub: string };
  */
 function aiReasons(): Reason[] {
   return [
-    { key: "inappropriate", label: t("report.uygunsuz_icerik"), sub: t("report.cinsel_siddet_iceren_ya_da_yasa_di") },
-    { key: "offensive", label: t("report.rahatsiz_edici"), sub: t("report.hakaret_asagilama_nefret_soylemi") },
-    { key: "wrong", label: t("report.yanlis_bilgi"), sub: t("report.dil_bilgisi_ya_da_icerik_olarak_ha") },
-    { key: "other", label: t("report.baska_bir_sey"), sub: t("report.yukaridakilere_uymuyor") },
+    { key: "inappropriate", label: t("report.inappropriate_content"), sub: t("report.sexual_violent_or_illegal") },
+    { key: "offensive", label: t("report.offensive"), sub: t("report.insults_degradation_hate_speech") },
+    { key: "wrong", label: t("report.incorrect_information"), sub: t("report.wrong_grammar_or_wrong_content") },
+    { key: "other", label: t("report.something_else"), sub: t("report.none_of_above_fits") },
   ];
 }
 function userReasons(): Reason[] {
   return [
-    { key: "inappropriate", label: t("report.uygunsuz_ad"), sub: t("report.cinsel_siddet_iceren_ya_da_yasa_di") },
-    { key: "offensive", label: t("report.hakaret_ya_da_nefret"), sub: t("report.asagilayici_ayrimci_ifade") },
-    { key: "impersonation", label: t("report.kimlige_burunme"), sub: t("report.baskasinin_ya_da_bir_markanin_adi") },
-    { key: "other", label: t("report.baska_bir_sey"), sub: t("report.yukaridakilere_uymuyor") },
+    { key: "inappropriate", label: t("report.inappropriate_name"), sub: t("report.sexual_violent_or_illegal") },
+    { key: "offensive", label: t("report.insult_or_hate"), sub: t("report.degrading_or_discriminatory") },
+    { key: "impersonation", label: t("report.impersonation"), sub: t("report.someone_else_s_name_or_brand") },
+    { key: "other", label: t("report.something_else"), sub: t("report.none_of_above_fits") },
   ];
 }
 export function reasonsFor(kind: ReportKind): Reason[] { return kind === "user" ? userReasons() : aiReasons(); }

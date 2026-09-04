@@ -30,7 +30,7 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{a.hint}</Text>
       {a.unlocked ? (
         <View style={{ flexDirection: "row", alignItems: "center", gap: 4, marginTop: spacing.sm }}>
-          <CheckIcon color={colors.success} size={14} /><Text variant="micro" color={colors.success}>{t("achievements.kazanildi")}</Text>
+          <CheckIcon color={colors.success} size={14} /><Text variant="micro" color={colors.success}>{t("achievements.earned")}</Text>
         </View>
       ) : (
         <View style={{ marginTop: spacing.sm }}>
@@ -75,12 +75,12 @@ export function AchievementsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h2">{t("achievements.basarimlar")}</Text>
-          {phase === "ready" ? <Text variant="caption" color={colors.textMuted}>{t("achievements.earned_count", { n: earned, toplam: list.length })}</Text> : null}
+          <Text variant="h2">{t("achievements.achievements")}</Text>
+          {phase === "ready" ? <Text variant="caption" color={colors.textMuted}>{t("achievements.earned_count", { n: earned, total: list.length })}</Text> : null}
         </View>
       </View>
 
@@ -99,9 +99,9 @@ export function AchievementsScreen() {
         </ScrollView>
       ) : phase !== "ready" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }}>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("achievements.yuklenemedi")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("achievements.couldn_t_load_achievements")}</Text>
           <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-            <Text variant="bodyStrong" color={colors.primary}>{t("common.tekrar_dene")}</Text>
+            <Text variant="bodyStrong" color={colors.primary}>{t("common.try_again")}</Text>
           </PressableScale>
         </View>
       ) : (

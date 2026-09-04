@@ -37,13 +37,13 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
               <View style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
                 <CheckIcon color={colors.success} size={28} />
               </View>
-              <Text variant="h3">{t("reportsheet.bildirildi")}</Text>
-              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("reportsheet.tesekkurler_inceleyecegiz")}</Text>
+              <Text variant="h3">{t("reportsheet.reported")}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("reportsheet.thanks_we_ll_look_into_it")}</Text>
             </View>
           ) : (
             <>
-              <Text variant="h2">{t("reportsheet.bu_icerigi_bildir")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("reportsheet.yapay_zeka_yaniti_sana_uygunsuz_ya")}</Text>
+              <Text variant="h2">{t("reportsheet.report_this_content")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("reportsheet.if_ai_reply_felt_inappropriate")}</Text>
               <View style={{ gap: spacing.xs, marginTop: spacing.sm }}>
                 {reasonsFor(kind).map((r) => {
                   const active = reason === r.key;
@@ -60,13 +60,13 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
                   );
                 })}
               </View>
-              {state === "error" ? <Text variant="caption" color={colors.danger}>{t("reportsheet.gonderilemedi_tekrar_dene")}</Text> : null}
+              {state === "error" ? <Text variant="caption" color={colors.danger}>{t("reportsheet.couldn_t_send_try_again")}</Text> : null}
               <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
                 <PressableScale onPress={onClose} style={{ flex: 1, borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 14, alignItems: "center" }}>
-                  <Text variant="bodyStrong" color={colors.text}>{t("common.vazgec")}</Text>
+                  <Text variant="bodyStrong" color={colors.text}>{t("common.discard")}</Text>
                 </PressableScale>
                 <PressableScale onPress={submit} disabled={!reason || state === "sending"} accessibilityState={{ disabled: !reason }} style={[{ flex: 1, borderRadius: radii.lg, backgroundColor: reason ? colors.primary : colors.surface2, paddingVertical: 14, alignItems: "center" }, reason ? softShadow(colors.primary, 8) : {}]}>
-                  <Text variant="bodyStrong" color={reason ? "#fff" : colors.textFaint}>{state === "sending" ? "..." : t("common.gonder")}</Text>
+                  <Text variant="bodyStrong" color={reason ? "#fff" : colors.textFaint}>{state === "sending" ? "..." : t("common.send")}</Text>
                 </PressableScale>
               </View>
             </>

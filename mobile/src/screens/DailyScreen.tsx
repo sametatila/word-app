@@ -25,7 +25,7 @@ function medalColor(rank: number, colors: Palette): string {
 }
 
 function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
-  if (!rows.length) return <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>{t("daily.bugun_ilk_oynayan_sen_ol")}</Text>;
+  if (!rows.length) return <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>{t("daily.be_first_to_play_today")}</Text>;
   return (
     <View style={{ gap: spacing.sm, marginTop: spacing.md }}>
       {rows.map((r) => {
@@ -39,7 +39,7 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
             </View>
             <View style={{ flex: 1 }}>
               <Text variant="bodyStrong" color={r.isMe ? colors.primary : colors.text}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
-              <Text variant="micro" color={colors.textMuted}>{t("common.n_correct", { dogru: r.correct, toplam: r.total })}</Text>
+              <Text variant="micro" color={colors.textMuted}>{t("common.n_correct", { correct: r.correct, total: r.total })}</Text>
             </View>
             <Text variant="h3" color={r.isMe ? colors.primary : colors.text}>{r.score.toLocaleString(dateLocale())}</Text>
           </View>
@@ -139,10 +139,10 @@ export function DailyScreen() {
   if (phase === "auth") {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="display" style={{ textAlign: "center" }}>{t("daily.gunun_turu_icin_giris_yap")}</Text>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("daily.herkesle_ayni_turu_oyna_gunluk_siralamada")}</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color="#fff">{t("daily.giris_yap_kayit_ol")}</Text></PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text></PressableScale>
+        <Text variant="display" style={{ textAlign: "center" }}>{t("daily.sign_in_for_daily_round")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("daily.play_same_round_as_everyone_and")}</Text>
+        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color="#fff">{t("daily.sign_in_sign_up")}</Text></PressableScale>
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
   }
@@ -150,9 +150,9 @@ export function DailyScreen() {
   if (phase === "error") {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
-        <Text variant="h2" style={{ textAlign: "center" }}>{t("daily.gunun_turu_yuklenemedi")}</Text>
-        <PressableScale onPress={load} style={[{ marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color="#fff">{t("daily.tekrar_dene")}</Text></PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text></PressableScale>
+        <Text variant="h2" style={{ textAlign: "center" }}>{t("daily.couldn_t_load_daily_round")}</Text>
+        <PressableScale onPress={load} style={[{ marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color="#fff">{t("daily.try_again")}</Text></PressableScale>
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
   }
@@ -163,22 +163,22 @@ export function DailyScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         <Celebrate show />
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-          <Text variant="h2">{t("daily.gunun_turu")}</Text>
-          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+          <Text variant="h2">{t("daily.daily_round")}</Text>
+          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         </View>
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           <View style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.xl, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 12)]}>
-            <Text variant="micro" color="#ffffffcc" style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("daily.puanin")}</Text>
+            <Text variant="micro" color="#ffffffcc" style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("daily.your_score")}</Text>
             <Text variant="display" color="#fff" style={{ fontSize: 52, marginTop: 4 }}>{scoreRef.current.toLocaleString("tr-TR")}</Text>
             <View style={{ flexDirection: "row", gap: spacing.xl, marginTop: spacing.md }}>
-              <View style={{ alignItems: "center" }}><Text variant="h3" color="#fff">{correctRef.current}/{total}</Text><Text variant="micro" color="#ffffffcc">{t("daily.dogru")}</Text></View>
-              <View style={{ alignItems: "center" }}><View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><FlameIcon color="#fff" size={18} /><Text variant="h3" color="#fff">{bestComboRef.current}</Text></View><Text variant="micro" color="#ffffffcc">{t("daily.en_iyi_seri")}</Text></View>
+              <View style={{ alignItems: "center" }}><Text variant="h3" color="#fff">{correctRef.current}/{total}</Text><Text variant="micro" color="#ffffffcc">{t("daily.correct")}</Text></View>
+              <View style={{ alignItems: "center" }}><View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><FlameIcon color="#fff" size={18} /><Text variant="h3" color="#fff">{bestComboRef.current}</Text></View><Text variant="micro" color="#ffffffcc">{t("daily.best_streak")}</Text></View>
             </View>
           </View>
-          <Text variant="h3" style={{ marginTop: spacing.xl, marginBottom: 2 }}>{t("daily.gunun_siralamasi")}</Text>
-          <Text variant="caption" color={colors.textMuted}>{t("daily.ayni_seviyede_oynayanlar")}</Text>
+          <Text variant="h3" style={{ marginTop: spacing.xl, marginBottom: 2 }}>{t("daily.today_s_ranking")}</Text>
+          <Text variant="caption" color={colors.textMuted}>{t("daily.players_at_your_level")}</Text>
           <Board rows={board} colors={colors} />
-          <PressableScale onPress={() => nav.goBack()} style={[{ marginTop: spacing.xxl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color="#fff">{t("common.bitir")}</Text></PressableScale>
+          <PressableScale onPress={() => nav.goBack()} style={[{ marginTop: spacing.xxl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color="#fff">{t("common.finish")}</Text></PressableScale>
         </ScrollView>
       </View>
     );
@@ -188,7 +188,7 @@ export function DailyScreen() {
   return (
     <View style={pad}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>

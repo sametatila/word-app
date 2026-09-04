@@ -32,14 +32,14 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
         {streak > 0 && (
-          <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.gelisim")} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 8 }}>
+          <PressableScale onPress={() => nav.navigate("Progress")} accessibilityLabel={t("appheader.progress")} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 8 }}>
             <FlameIcon color={colors.streak} size={16} />
             <Text variant="bodyStrong" color={colors.streak}>{streak}</Text>
           </PressableScale>
         )}
         {/* Sosyal gelen kutusu: istek, tepki, dürtme. Mobilde uzak push yok; rozet buradan. */}
         <InboxBell />
-        <PressableScale onPress={() => nav.navigate("Profile")} accessibilityLabel={t("appheader.profil")} style={softShadow(colors.primary, 6)}>
+        <PressableScale onPress={() => nav.navigate("Profile")} accessibilityLabel={t("appheader.profile")} style={softShadow(colors.primary, 6)}>
           <Avatar size={44} />
         </PressableScale>
       </View>

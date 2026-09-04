@@ -83,10 +83,10 @@ export function NotificationsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{tx("notifications.bildirimler")}</Text>
+        <Text variant="h2">{tx("notifications.notifications")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
@@ -94,11 +94,11 @@ export function NotificationsScreen() {
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.info }, softShadow(colors.info, 10)]}>
             <BellIcon color="#fff" size={36} />
           </View>
-          <Text variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.hatirlatmalar")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{tx("notifications.serini_korumak_icin_nazik_durtmeler_istedigi")}</Text>
+          <Text variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.reminders")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{tx("notifications.gentle_nudges_to_keep_your")}</Text>
         </View>
 
-        <ToggleRow title={tx("notifications.gunluk_hatirlatma")} subtitle={dailyOn ? tx("notifications.daily_on", { saat: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
+        <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
           {dailyOn && (
             <View style={{ marginTop: spacing.md }}>
               <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>SAAT</Text>
@@ -109,22 +109,22 @@ export function NotificationsScreen() {
           )}
         </ToggleRow>
 
-        <ToggleRow title={tx("notifications.seri_koruma")} subtitle={tx("notifications.her_aksam_20_30_gunu_kacirma")} value={streakOn} onValueChange={toggleStreak} colors={colors} />
+        <ToggleRow title={tx("notifications.streak_saver")} subtitle={tx("notifications.every_evening_at_8_30_pm_don_t")} value={streakOn} onValueChange={toggleStreak} colors={colors} />
 
-        <ToggleRow title={tx("notifications.haftalik_sinav")} subtitle={tx("notifications.her_pazar_ilerlemeni_olc")} value={weeklyOn} onValueChange={toggleWeekly} colors={colors} />
+        <ToggleRow title={tx("notifications.weekly_test")} subtitle={tx("notifications.every_sunday_measure_your")} value={weeklyOn} onValueChange={toggleWeekly} colors={colors} />
 
         {msg && <Text variant="bodyStrong" color={denied ? colors.danger : colors.primary} style={{ marginTop: spacing.sm }}>{msg}</Text>}
 
         {denied && (
           <PressableScale onPress={openNotificationSettings} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="bodyStrong" color="#fff">{tx("notifications.bildirim_ayarlarini_ac")}</Text>
+            <Text variant="bodyStrong" color="#fff">{tx("notifications.open_notification_settings")}</Text>
           </PressableScale>
         )}
 
         {/* Geliştirici aracı: üretim derlemesinde yok (Play "test" kalıntısı saymasın). */}
         {__DEV__ ? (
           <PressableScale onPress={async () => { const ok = await showTestNotification(); if (!ok) fail(); else setMsg(tx("notifications.test_sent")); }} style={{ marginTop: spacing.xl, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 14, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.text}>{tx("notifications.test_bildirimi_gonder")}</Text>
+            <Text variant="bodyStrong" color={colors.text}>{tx("notifications.send_test_notification")}</Text>
           </PressableScale>
         ) : null}
       </ScrollView>

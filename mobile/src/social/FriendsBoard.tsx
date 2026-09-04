@@ -34,13 +34,13 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
       </View>
     );
   }
-  if (board.rows.length < 2) return <EmptyCard icon={PodiumIcon} tint={colors.info} title={t("friendsboard.henuz_yarisacak_kimse_yok")} text={t("friendsboard.arkadas_ekleyince_bu_haftanin_xp_sinde")} />;
+  if (board.rows.length < 2) return <EmptyCard icon={PodiumIcon} tint={colors.info} title={t("friendsboard.no_one_to_compete_with_yet")} text={t("friendsboard.add_friends_to_see_each_other_in")} />;
   const me = board.rows.find((r) => r.isMe);
   const above = me && me.rank > 1 ? board.rows.find((r) => r.rank === me.rank - 1) : null;
   const gap = me && above ? Math.max(0, above.xp - me.xp) : 0;
   return (
     <View>
-      {!compact ? <SectionTitle title={t("friendsboard.arkadaslar_arasinda_bu_hafta")} right={board.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: board.daysLeft })} /> : null}
+      {!compact ? <SectionTitle title={t("friendsboard.among_friends_this_week")} right={board.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: board.daysLeft })} /> : null}
       <View style={{ gap: spacing.sm }}>
         {board.rows.map((r) => {
           const mc = medal(r.rank, colors);
@@ -62,7 +62,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
       </View>
       {me && gap > 0 ? (
         <Card padded style={{ marginTop: spacing.md, alignItems: "center", backgroundColor: colors.primarySoft, borderColor: colors.primary }}>
-          <Text variant="bodyStrong" color={colors.primary}>{t("friendsboard.gap", { ad: above?.name?.split(" ")[0] ?? t("friendsboard.the_one_above"), xp: formatXp(gap) })}</Text>
+          <Text variant="bodyStrong" color={colors.primary}>{t("friendsboard.gap", { name: above?.name?.split(" ")[0] ?? t("friendsboard.the_one_above"), xp: formatXp(gap) })}</Text>
         </Card>
       ) : null}
     </View>

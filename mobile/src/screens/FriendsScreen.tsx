@@ -69,15 +69,15 @@ export function FriendsScreen() {
   async function share() {
     if (!me) return;
     track("share", 0, "profile");
-    try { await Share.share({ message: tx("friends.share_text", { dil: courseOrDefault(currentCourseId()).label[currentLang()], link: `${API_BASE}/u/${me.username}` }) }); } catch { /* kapatıldı */ }
+    try { await Share.share({ message: tx("friends.share_text", { lang: courseOrDefault(currentCourseId()).label[currentLang()], link: `${API_BASE}/u/${me.username}` }) }); } catch { /* kapatıldı */ }
   }
 
   if (!user) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        <ScreenHeader title={tx("friends.arkadaslar")} />
+        <ScreenHeader title={tx("friends.friends")} />
         <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
-          <EmptyCard icon={HandshakeIcon} tint={colors.success} title={tx("friends.arkadaslar_icin_giris_yap")} text={tx("friends.arkadas_ekle_akista_tepki_ver_birlikte")} action={tx("friends.giris_yap")} onAction={() => nav.navigate("Auth")} />
+          <EmptyCard icon={HandshakeIcon} tint={colors.success} title={tx("friends.sign_in_for_friends")} text={tx("friends.add_friends_react_in_feed_hit")} action={tx("friends.sign_in")} onAction={() => nav.navigate("Auth")} />
         </View>
       </View>
     );
@@ -86,7 +86,7 @@ export function FriendsScreen() {
   const incoming = data?.incoming.length ?? me?.counts.incoming ?? 0;
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title={tx("friends.arkadaslar")} right={<HeaderButton icon={SettingsIcon} label={tx("friends.sosyal_ayarlar")} onPress={() => nav.navigate("SocialSettings")} />} />
+      <ScreenHeader title={tx("friends.friends")} right={<HeaderButton icon={SettingsIcon} label={tx("friends.social_settings")} onPress={() => nav.navigate("SocialSettings")} />} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         {me ? (
           <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
@@ -117,8 +117,8 @@ export function FriendsScreen() {
             <ShareIcon color="#fff" size={24} />
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="h3" color="#fff">{tx("friends.arkadasini_davet_et")}</Text>
-            <Text variant="caption" color="#ffffffcc">{tx("friends.profil_baglantini_gonder_ayni_hafta_birlikte")}</Text>
+            <Text variant="h3" color="#fff">{tx("friends.invite_friend")}</Text>
+            <Text variant="caption" color="#ffffffcc">{tx("friends.send_your_profile_link_and_study")}</Text>
           </View>
           <ChevronRightIcon color="#fff" size={22} />
         </PressableScale>
@@ -133,7 +133,7 @@ export function FriendsScreen() {
               {data.friends.length ? (
                 <FriendRows friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
               ) : (
-                <EmptyCard icon={UserPlusIcon} tint={colors.success} title={tx("friends.henuz_arkadasin_yok")} text={tx("friends.kullanici_adiyla_ara_ya_da_davet")} action={tx("friends.arkadas_bul")} onAction={() => setTab("find")} />
+                <EmptyCard icon={UserPlusIcon} tint={colors.success} title={tx("friends.no_friends_yet")} text={tx("friends.search_by_username_or_send_your")} action={tx("friends.find_friends")} onAction={() => setTab("find")} />
               )}
               <FriendsBoard />
             </View>
@@ -144,7 +144,7 @@ export function FriendsScreen() {
         {tab === "requests" ? (data === null ? <View>{[0, 1].map((i) => <RequestCardSkeleton key={i} />)}</View> : <Requests incoming={data.incoming} outgoing={data.outgoing} onChanged={() => void reload()} />) : null}
         {tab === "find" ? <Find onChanged={() => void reload()} /> : null}
         <ErrorText text={err} />
-        {err ? <View style={{ marginTop: spacing.md, alignItems: "center" }}><Pill label={tx("friends.tekrar_dene")} tone="ghost" onPress={() => void reload()} /></View> : null}
+        {err ? <View style={{ marginTop: spacing.md, alignItems: "center" }}><Pill label={tx("friends.try_again")} tone="ghost" onPress={() => void reload()} /></View> : null}
       </ScrollView>
     </View>
   );

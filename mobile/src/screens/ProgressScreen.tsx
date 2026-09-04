@@ -46,10 +46,10 @@ export function ProgressScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{t("progress.gelisim")}</Text>
+        <Text variant="h2">{t("progress.progress")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
@@ -60,7 +60,7 @@ export function ProgressScreen() {
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="display" color="#fff">{me?.streak ?? 0}</Text>
-            <Text variant="bodyStrong" color="#ffffffdd">{t("progress.gun_seri")}</Text>
+            <Text variant="bodyStrong" color="#ffffffdd">{t("progress.day_streak")}</Text>
           </View>
           <Mascot mood={(me?.streak ?? 0) > 0 ? "happy" : "idle"} size={58} />
         </View>
@@ -68,10 +68,10 @@ export function ProgressScreen() {
         {/* istatistik ızgarası */}
         {me ? (
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-            <Stat icon={LearnIcon} value={String(mastered)} label={t("progress.ogrenilen_kelime")} tint={colors.primary} colors={colors} />
-            <Stat icon={BoltIcon} value={formatXp(me.xp)} label={t("progress.toplam_xp")} tint={colors.success} colors={colors} />
-            <Stat icon={PodiumIcon} value={formatDuration(me.seconds)} label={t("progress.bu_hafta_sure")} tint={colors.info} colors={colors} />
-            <Stat icon={TrophyIcon} value={level} label={t("progress.seviye")} tint={colors.accent} colors={colors} />
+            <Stat icon={LearnIcon} value={String(mastered)} label={t("progress.words_learned")} tint={colors.primary} colors={colors} />
+            <Stat icon={BoltIcon} value={formatXp(me.xp)} label={t("progress.total_xp")} tint={colors.success} colors={colors} />
+            <Stat icon={PodiumIcon} value={formatDuration(me.seconds)} label={t("progress.time_this_week")} tint={colors.info} colors={colors} />
+            <Stat icon={TrophyIcon} value={level} label={t("progress.level")} tint={colors.accent} colors={colors} />
           </View>
         ) : (
           // Izgaranın kendi iskeleti (tek satırlık "yükleniyor" kartı yerine):
@@ -91,7 +91,7 @@ export function ProgressScreen() {
         {me ? (
           <Card style={{ marginBottom: spacing.lg }}>
             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
-              <Text variant="bodyStrong">{t("progress.kelime_ustaligi")}</Text>
+              <Text variant="bodyStrong">{t("progress.word_mastery")}</Text>
               <Text variant="caption" color={colors.textMuted}>{mastered}/{totalWords || "—"}</Text>
             </View>
             <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
@@ -114,7 +114,7 @@ export function ProgressScreen() {
             <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.streak + "22" }}>
               <TrophyIcon color={colors.streak} size={20} />
             </View>
-            <Text variant="bodyStrong" style={{ flex: 1 }}>{t("progress.basarimlar")}</Text>
+            <Text variant="bodyStrong" style={{ flex: 1 }}>{t("progress.achievements")}</Text>
             <ChevronRightIcon color={colors.textFaint} size={20} />
           </Card>
         </PressableScale>

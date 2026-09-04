@@ -41,7 +41,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
         <View style={{ flex: 1 }}>
           <Text variant="micro" color={colors.primary}>{t(isCurrent ? "path.now" : "common.unit")} · {t("common.unit")} {unit.index}</Text>
           <Text variant="h2">{unit.theme}</Text>
-          <Text variant="caption" color={colors.textMuted}>{unit.complete ? t("common.completed") : t("path.lessons_done", { n: unit.lessonsDone, toplam: unit.lessonsTotal })}</Text>
+          <Text variant="caption" color={colors.textMuted}>{unit.complete ? t("common.completed") : t("path.lessons_done", { n: unit.lessonsDone, total: unit.lessonsTotal })}</Text>
         </View>
       </View>
       {unit.items.length > 0 && (
@@ -57,7 +57,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
             {NextIcon({ color: "#fff", size: 20 })}
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="micro" color={colors.textMuted}>{t("path.next", { tur: t(KIND_KEY[next.kind as keyof typeof KIND_KEY] ?? "").toUpperCase() || next.kind.toUpperCase() })}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("path.next", { kind: t(KIND_KEY[next.kind as keyof typeof KIND_KEY] ?? "").toUpperCase() || next.kind.toUpperCase() })}</Text>
             <Text variant="bodyStrong" numberOfLines={1}>{next.title}</Text>
           </View>
         </View>
@@ -83,7 +83,7 @@ export function PathScreen() {
     // Düz spinner yerine patika şeklinde iskelet (algılanan hız).
     return (
       <Screen>
-        <AppHeader title={t("path.patika")} />
+        <AppHeader title={t("path.path")} />
         {/* Gerçek düzenin ölçüleriyle: üst çubuk, alt yazı, öne çıkan ünite
             kartı, ünite ızgarası. Veri gelince hiçbiri yerinden oynamıyor. */}
         <SkeletonBar height={10} style={{ marginBottom: 6 }} />
@@ -115,7 +115,7 @@ export function PathScreen() {
   if (!path.units.length) {
     return (
       <Screen>
-        <AppHeader title={t("path.patika")} />
+        <AppHeader title={t("path.path")} />
         <Card padded style={{ marginTop: spacing.lg }}>
           <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("path.no_units")}</Text>
         </Card>
@@ -133,12 +133,12 @@ export function PathScreen() {
 
   return (
     <Screen>
-      <AppHeader title={t("path.patika")} />
+      <AppHeader title={t("path.path")} />
       <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: 6 }}>
         <View style={{ height: "100%", width: `${Math.max(2, pctAll)}%`, borderRadius: 5, backgroundColor: colors.success }} />
       </View>
       <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>
-        {t("path.units_done", { seviye: path.level, n: path.doneUnits, toplam: path.totalUnits })}{source === "local" ? t("path.progress_local") : ""}
+        {t("path.units_done", { level: path.level, n: path.doneUnits, total: path.totalUnits })}{source === "local" ? t("path.progress_local") : ""}
       </Text>
 
       {featured && <Featured unit={featured} isCurrent={featured.index === path.currentIndex} colors={colors} onContinue={() => openUnit(featured)} />}
@@ -151,7 +151,7 @@ export function PathScreen() {
                 {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === path.currentIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
               </View>
               <Text variant="bodyStrong" style={{ marginTop: 8 }} numberOfLines={2}>{u.theme}</Text>
-              <Text variant="micro" color={u.complete ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.lessons_done", { n: u.lessonsDone, toplam: u.lessonsTotal })}</Text>
+              <Text variant="micro" color={u.complete ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.lessons_done", { n: u.lessonsDone, total: u.lessonsTotal })}</Text>
             </Card>
           </PressableScale>
         ))}

@@ -118,11 +118,11 @@ export function timeAgo(iso: string, now = Date.now()): string {
 function feedPhrase(type: string, p: Record<string, unknown>): string {
   switch (type) {
     case "streak_milestone": return t("social.feed_streak", { n: Number(p.days ?? 0) });
-    case "achievement": return t("social.feed_badge", { rozet: String(p.title ?? t("social.feed_a_badge")) });
-    case "friend_joined": return t("social.feed_friend", { ad: String(p.friendName ?? t("social.feed_someone")) });
-    case "quest_completed": return t("social.feed_quest", { ad: String(p.partnerName ?? t("social.feed_a_friend")), xp: formatXp(Number(p.targetXp ?? 0)) });
-    case "weekly_top": return t("social.feed_weekly", { sira: Number(p.rank ?? 0), xp: formatXp(Number(p.xp ?? 0)) });
-    case "friend_streak": return t("social.feed_costreak", { ad: String(p.friendName ?? t("social.feed_a_friend")), n: Number(p.days ?? 0) });
+    case "achievement": return t("social.feed_badge", { badge: String(p.title ?? t("social.feed_a_badge")) });
+    case "friend_joined": return t("social.feed_friend", { name: String(p.friendName ?? t("social.feed_someone")) });
+    case "quest_completed": return t("social.feed_quest", { name: String(p.partnerName ?? t("social.feed_a_friend")), xp: formatXp(Number(p.targetXp ?? 0)) });
+    case "weekly_top": return t("social.feed_weekly", { rank: Number(p.rank ?? 0), xp: formatXp(Number(p.xp ?? 0)) });
+    case "friend_streak": return t("social.feed_costreak", { name: String(p.friendName ?? t("social.feed_a_friend")), n: Number(p.days ?? 0) });
     default: return t("social.feed_default");
   }
 }
@@ -135,9 +135,9 @@ export function feedText(item: FeedItem): string {
 function reactionTarget(type: string, p: Record<string, unknown>): string {
   switch (type) {
     case "streak_milestone": return t("social.on_streak", { n: Number(p.days ?? 0) });
-    case "achievement": return t("social.on_badge", { rozet: String(p.title ?? t("social.feed_a_badge")) });
+    case "achievement": return t("social.on_badge", { badge: String(p.title ?? t("social.feed_a_badge")) });
     case "quest_completed": return t("social.on_quest");
-    case "weekly_top": return t("social.on_weekly", { sira: Number(p.rank ?? 0) });
+    case "weekly_top": return t("social.on_weekly", { rank: Number(p.rank ?? 0) });
     case "friend_joined": return t("social.on_friend");
     default: return t("social.on_default");
   }
@@ -150,12 +150,12 @@ export function notificationText(n: NotificationView): string {
   switch (n.type) {
     case "friend_request": return t("social.notif_friend_request", { who });
     case "friend_accepted": return t("social.notif_friend_accepted", { who });
-    case "reaction": return t("social.notif_reaction", { who, sey: reactionTarget(String(d.eventType ?? ""), payload) });
+    case "reaction": return t("social.notif_reaction", { who, item: reactionTarget(String(d.eventType ?? ""), payload) });
     case "nudge": return d.kind === "cheer" ? t("social.notif_cheer", { who }) : t("social.notif_nudge", { who });
     case "quest_invite": return t("social.notif_quest_invite", { who, xp: formatXp(Number(d.targetXp ?? 0)) });
     case "quest_accepted": return t("social.notif_quest_accepted", { who });
     case "quest_completed": return t("social.notif_quest_done", { who });
-    case "friend_milestone": return t("social.notif_milestone", { who, olay: feedPhrase(String(d.eventType ?? ""), payload) });
+    case "friend_milestone": return t("social.notif_milestone", { who, event: feedPhrase(String(d.eventType ?? ""), payload) });
     default: return t("social.notif_default");
   }
 }

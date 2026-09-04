@@ -34,10 +34,10 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
       {current.map((q) => <QuestCard key={q.id} q={q} me={me} busy={busy} onAct={act} />)}
       {!current.length ? (
         <View>
-          <EmptyCard icon={TargetIcon} title={t("quests.bu_hafta_ortak_gorev_yok")} text={t(friends.length ? "quests.empty_with_friends" : "quests.empty_no_friends")} action={friends.length ? t(pick ? "common.vazgec" : "quests.choose_friend") : undefined} onAction={friends.length ? () => setPick((p) => !p) : undefined} />
+          <EmptyCard icon={TargetIcon} title={t("quests.no_shared_quest_this_week")} text={t(friends.length ? "quests.empty_with_friends" : "quests.empty_no_friends")} action={friends.length ? t(pick ? "common.discard" : "quests.choose_friend") : undefined} onAction={friends.length ? () => setPick((p) => !p) : undefined} />
           {pick ? (
             <View style={{ marginTop: spacing.md }}>
-              <SectionTitle title={t("quests.kiminle")} />
+              <SectionTitle title={t("quests.with")} />
               {friends.map((f) => (
                 <Card key={f.userId} padded style={{ marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <PersonAvatar userId={f.userId} name={f.name} size={44} />
@@ -45,7 +45,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
                     <Text variant="h3" numberOfLines={1}>{f.name ?? t("social.unnamed")}</Text>
                     <Text variant="caption" color={colors.textMuted}>{t("social.xp_this_week", { xp: formatXp(f.weeklyXp) })}</Text>
                   </View>
-                  <Pill label={t("quests.davet_et")} small disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId))} />
+                  <Pill label={t("quests.invite")} small disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId))} />
                 </Card>
               ))}
             </View>
@@ -55,14 +55,14 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
       <ErrorText text={err} />
       {past.length ? (
         <View>
-          <SectionTitle title={t("quests.gecmis_haftalar")} />
+          <SectionTitle title={t("quests.past_weeks")} />
           {past.map((q) => {
             const done = q.status === "completed";
             return (
               <Card key={q.id} padded style={{ marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: done ? colors.success : colors.hairline }}>
                 <IconTile icon={done ? CheckIcon : TargetIcon} tint={done ? colors.success : colors.textMuted} solid={done} />
                 <View style={{ flex: 1 }}>
-                  <Text variant="bodyStrong" numberOfLines={1}>{t("quests.past_row", { ad: q.partner.name ?? t("social.unnamed_short"), xp: formatXp(q.targetXp) })}</Text>
+                  <Text variant="bodyStrong" numberOfLines={1}>{t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: formatXp(q.targetXp) })}</Text>
                   <Text variant="micro" color={colors.textMuted}>{done ? t("quests.completed") : `${q.pct}% · ${formatXp(q.totalXp)} XP`}</Text>
                 </View>
                 <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={32} />
@@ -121,24 +121,24 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
         </View>
         <View style={{ flex: 1 }}>
           <Text variant="h3">{t(invited ? "quests.invite_title" : "quests.week_title")}</Text>
-          <Text variant="caption" color={colors.textMuted}>{t("quests.with_partner", { ad: q.partner.name ?? t("social.your_friend"), kalan: q.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: q.daysLeft }) })}</Text>
+          <Text variant="caption" color={colors.textMuted}>{t("quests.with_partner", { name: q.partner.name ?? t("social.your_friend"), remaining: q.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: q.daysLeft }) })}</Text>
         </View>
         <View style={{ alignItems: "flex-end" }}>
           <Text variant="h2" color={colors.primary}>{formatXp(q.targetXp)}</Text>
-          <Text variant="micro" color={colors.textMuted}>{t("quests.hedef_xp")}</Text>
+          <Text variant="micro" color={colors.textMuted}>{t("quests.target_xp")}</Text>
         </View>
       </View>
       {invited ? (
         <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg, alignItems: "center" }}>
           {q.invitedByMe ? (
             <>
-              <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{t("quests.cevap_bekleniyor")}</Text>
-              <Pill label={t("common.iptal")} tone="ghost" small disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "cancel"))} />
+              <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{t("quests.awaiting_reply")}</Text>
+              <Pill label={t("common.cancel")} tone="ghost" small disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "cancel"))} />
             </>
           ) : (
             <>
-              <View style={{ flex: 1 }}><Pill label={t("quests.kabul_et")} block disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "accept"))} /></View>
-              <Pill label={t("quests.reddet")} tone="ghost" disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "decline"))} />
+              <View style={{ flex: 1 }}><Pill label={t("quests.accept")} block disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "accept"))} /></View>
+              <Pill label={t("quests.decline")} tone="ghost" disabled={busy} onPress={() => void onAct(() => social.questAction(q.id, "decline"))} />
             </>
           )}
         </View>
@@ -153,8 +153,8 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
             <Text variant="bodyStrong">{formatXp(q.totalXp)} / {formatXp(q.targetXp)}</Text>
             <Text variant="caption" color={colors.info}>{q.partner.name?.split(" ")[0] ?? t("quests.partner_short")} {formatXp(q.partnerXp)}</Text>
           </View>
-          <PressableScale onPress={() => Alert.alert(t("quests.leave_title"), t("quests.leave_text"), [{ text: t("common.vazgec"), style: "cancel" }, { text: t("quests.leave"), style: "destructive", onPress: () => void onAct(() => social.questAction(q.id, "cancel")) }])} style={{ alignSelf: "flex-end", marginTop: spacing.sm, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
-            <Text variant="micro" color={colors.textMuted}>{t("quests.gorevi_birak")}</Text>
+          <PressableScale onPress={() => Alert.alert(t("quests.leave_title"), t("quests.leave_text"), [{ text: t("common.discard"), style: "cancel" }, { text: t("quests.leave"), style: "destructive", onPress: () => void onAct(() => social.questAction(q.id, "cancel")) }])} style={{ alignSelf: "flex-end", marginTop: spacing.sm, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+            <Text variant="micro" color={colors.textMuted}>{t("quests.leave_quest")}</Text>
           </PressableScale>
         </View>
       )}

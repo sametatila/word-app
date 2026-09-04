@@ -32,7 +32,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
     }
   }
   const present = REACTION_KINDS.filter((k) => (s.counts[k] ?? 0) > 0);
-  const who = s.names.length ? `${s.names.join(", ")}${s.total > s.names.length ? t("social.ve_n_kisi", { n: s.total - s.names.length }) : ""}` : "";
+  const who = s.names.length ? `${s.names.join(", ")}${s.total > s.names.length ? t("social.and_others", { n: s.total - s.names.length }) : ""}` : "";
   return (
     <View style={{ marginTop: spacing.md }}>
       <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
@@ -47,7 +47,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
           );
         })}
         {!disabled ? (
-          <PressableScale onPress={() => setOpen((o) => !o)} disabled={busy} accessibilityLabel={t("reactionbar.tepki_ver")} style={{ paddingHorizontal: 12, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+          <PressableScale onPress={() => setOpen((o) => !o)} disabled={busy} accessibilityLabel={t("reactionbar.react")} style={{ paddingHorizontal: 12, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
             <Text variant="caption" color={colors.textMuted}>{s.mine ? t("social.reaction_change") : t("social.reaction_add")}</Text>
           </PressableScale>
         ) : null}

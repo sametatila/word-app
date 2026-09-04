@@ -89,7 +89,7 @@ export function FeedList({ onFindFriends }: { onFindFriends?: () => void }) {
   useEffect(() => { void load(null); }, [load]);
 
   if (items === null) return <View>{[0, 1, 2].map((i) => <FeedCardSkeleton key={i} />)}</View>;
-  if (!items.length) return <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.akis_henuz_bos")} text={t("feedlist.empty_text")} action={onFindFriends ? t("feedlist.find_friends") : undefined} onAction={onFindFriends} />;
+  if (!items.length) return <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.your_feed_is_still_empty")} text={t("feedlist.empty_text")} action={onFindFriends ? t("feedlist.find_friends") : undefined} onAction={onFindFriends} />;
   return (
     <View>
       {items.map((it) => <FeedCard key={it.id} item={it} />)}

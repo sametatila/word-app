@@ -28,7 +28,7 @@ export function SpeakButton({
   const color = tone ?? colors.primary;
   return (
     <PressableScale
-      accessibilityLabel={t("speakbutton.sesli_oku")}
+      accessibilityLabel={t("speakbutton.read_aloud")}
       hitSlop={8}
       onPress={() => speakTarget(text, { slow })}
       style={{

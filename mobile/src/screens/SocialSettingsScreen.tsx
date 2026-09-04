@@ -69,7 +69,7 @@ export function SocialSettingsScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title={tx("socialsettings.sosyal_ve_gizlilik")} />
+      <ScreenHeader title={tx("socialsettings.social_and_privacy")} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         {!me ? (
           // Bölüm bölüm iskelet: kart tek parça gelince ekran boyu zıplamasın.
@@ -86,24 +86,24 @@ export function SocialSettingsScreen() {
           </>
         ) : (
           <>
-            <Section title={tx("socialsettings.kullanici_adi")} colors={colors}>
+            <Section title={tx("socialsettings.username")} colors={colors}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-                <TextInput value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={20} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.kullaniciadi")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
-                <Pill label={tx("common.kaydet")} small disabled={busy || username.trim() === me.username || me.usernameChangeAvailableIn > 0} onPress={() => void save({ username: username.trim() }, tx("socialsettings.username_updated"))} />
+                <TextInput value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={20} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.username_2")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
+                <Pill label={tx("common.save")} small disabled={busy || username.trim() === me.username || me.usernameChangeAvailableIn > 0} onPress={() => void save({ username: username.trim() }, tx("socialsettings.username_updated"))} />
               </View>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("socialsettings.username_rule")} {me.usernameChangeAvailableIn > 0 ? tx("socialsettings.username_wait", { n: me.usernameChangeAvailableIn }) : tx("socialsettings.username_cooldown")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.profile_link", { yol: `/u/${me.username}` })}</Text>
+              <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.profile_link", { path: `/u/${me.username}` })}</Text>
             </Section>
 
-            <Section title={tx("socialsettings.kisa_tanitim")} colors={colors}>
-              <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, 140))} multiline placeholder={tx("socialsettings.neden_bu_dil", { lang: targetLangName() })} placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
+            <Section title={tx("socialsettings.short_bio")} colors={colors}>
+              <TextInput value={bio} onChangeText={(t) => setBio(t.slice(0, 140))} multiline placeholder={tx("socialsettings.why_one_sentence_is_enough", { lang: targetLangName() })} placeholderTextColor={colors.textFaint} style={[input, { minHeight: 72, textAlignVertical: "top" }]} />
               <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
                 <Text variant="caption" color={colors.textMuted}>{bio.length}/140</Text>
-                <Pill label={tx("common.kaydet")} small tone="soft" disabled={busy || (bio.trim() || "") === (me.bio ?? "")} onPress={() => void save({ bio: bio.trim() || null })} />
+                <Pill label={tx("common.save")} small tone="soft" disabled={busy || (bio.trim() || "") === (me.bio ?? "")} onPress={() => void save({ bio: bio.trim() || null })} />
               </View>
             </Section>
 
-            <Section title={tx("socialsettings.gorunurluk")} colors={colors}>
+            <Section title={tx("socialsettings.visibility")} colors={colors}>
               {VIS.map((v, i) => {
                 const active = me.visibility === v.key;
                 return (
@@ -120,7 +120,7 @@ export function SocialSettingsScreen() {
               })}
             </Section>
 
-            <Section title={tx("socialsettings.izinler")} colors={colors}>
+            <Section title={tx("socialsettings.permissions")} colors={colors}>
               {toggle(tx("socialsettings.perm_requests"), tx("socialsettings.perm_requests_sub"), me.allowRequests, (v) => void save({ allowRequests: v }), true)}
               {toggle(tx("socialsettings.perm_suggest"), tx("socialsettings.perm_suggest_sub"), me.showInSuggestions, (v) => void save({ showInSuggestions: v }))}
               {toggle(tx("socialsettings.perm_activity"), tx("socialsettings.perm_activity_sub"), me.showActivity, (v) => void save({ showActivity: v }))}
@@ -134,9 +134,9 @@ export function SocialSettingsScreen() {
                     <Text variant="bodyStrong" numberOfLines={1}>{b.name ?? tx("social.unnamed_short")}</Text>
                     {b.username ? <Text variant="caption" color={colors.textMuted}>@{b.username}</Text> : null}
                   </View>
-                  <Pill label={tx("socialsettings.kaldir")} small tone="ghost" disabled={busy} onPress={() => { setBusy(true); social.unblock(b.userId).then(() => setBlocked((p) => (p ?? []).filter((x) => x.userId !== b.userId))).catch((e) => setMsg(errorText(e))).finally(() => setBusy(false)); }} />
+                  <Pill label={tx("socialsettings.remove")} small tone="ghost" disabled={busy} onPress={() => { setBusy(true); social.unblock(b.userId).then(() => setBlocked((p) => (p ?? []).filter((x) => x.userId !== b.userId))).catch((e) => setMsg(errorText(e))).finally(() => setBusy(false)); }} />
                 </View>
-              )) : <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.kimseyi_engellemedin")}</Text>}
+              )) : <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.you_haven_t_blocked_anyone")}</Text>}
             </Section>
           </>
         )}

@@ -42,12 +42,12 @@ export function PracticeScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h2">{t("practice.pratik")}</Text>
-          <Text variant="caption" color={colors.textMuted}>{t("practice.tek_bir_oyunu_kendi_kelimelerinle_calis")}</Text>
+          <Text variant="h2">{t("practice.practice")}</Text>
+          <Text variant="caption" color={colors.textMuted}>{t("practice.practice_one_game_with_your_own")}</Text>
         </View>
       </View>
 
@@ -60,15 +60,15 @@ export function PracticeScreen() {
                 <BoltIcon color="#fff" size={24} />
               </View>
               <View style={{ flex: 1 }}>
-                <Text variant="h3" color="#fff">{t("practice.karisik_tur")}</Text>
-                <Text variant="caption" color="#ffffffdd">{t("practice.tum_oyun_turleri_bir_arada")}</Text>
+                <Text variant="h3" color="#fff">{t("practice.mixed_round")}</Text>
+                <Text variant="caption" color="#ffffffdd">{t("practice.all_game_types_in_one")}</Text>
               </View>
               <ArrowRightIcon color="#fff" size={20} />
             </View>
           </View>
         </PressableScale>
 
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, textTransform: "uppercase", letterSpacing: 1 }}>{t("practice.tek_oyun")}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, textTransform: "uppercase", letterSpacing: 1 }}>{t("practice.single_game")}</Text>
         {/* Oyun listesi kursa bağlı: kurs bilinmeden çizilirse karo sayısı
             sonradan değişip ızgara boyunu oynatıyor. Önce aynı boyda iskelet. */}
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>

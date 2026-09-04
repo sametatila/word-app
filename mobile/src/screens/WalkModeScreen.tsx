@@ -389,7 +389,7 @@ export function WalkModeScreen() {
     if (pocketRef.current || screenOffRef.current) { await askContinue(alive); return; }
     setKeepAwake(false); stopWalkService();
     setPhase("done");
-    void sayNative(tx("walk.tour_done", { toplam: tallyRef.current.total, dogru: tallyRef.current.correct }));
+    void sayNative(tx("walk.tour_done", { total: tallyRef.current.total, correct: tallyRef.current.correct }));
   }
 
   /** Başla: önce uygulama içi açıklama ve onay (bir kez), sonra sistem izni ve tur. */
@@ -481,7 +481,7 @@ export function WalkModeScreen() {
   async function askContinue(alive: () => boolean) {
     const c = tallyRef.current;
     setPhase("continue");
-    await sayNative(tx("walk.tour_done_continue", { toplam: c.total, dogru: c.correct }));
+    await sayNative(tx("walk.tour_done_continue", { total: c.total, correct: c.correct }));
     if (!alive()) return;
     let yes = await listenConfirm(alive);
     if (yes === null && alive()) {
@@ -511,7 +511,7 @@ export function WalkModeScreen() {
   const reveal = phase === "judging" || teaching; // Almanca göster: cevap açılınca veya öğretirken
   const listening = phase === "listening";
   const dotColor = verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primary : colors.surface2;
-  const stepLabel = teaching ? tx("walkmode.step_new_word") : phase === "speaking" ? tx("walkmode.step_hint") : phase === "listening" ? tx("walkmode.step_say_now", { hedef: targetLangName() }) : verdict === "unheard" ? tx("walkmode.step_unheard") : verdict === "skip" ? tx("walkmode.step_skipped") : verdict === "correct" ? tx("walkmode.step_correct") : verdict === "wrong" ? tx("walkmode.step_answer") : "";
+  const stepLabel = teaching ? tx("walkmode.step_new_word") : phase === "speaking" ? tx("walkmode.step_hint") : phase === "listening" ? tx("walkmode.step_say_now", { target: targetLangName() }) : verdict === "unheard" ? tx("walkmode.step_unheard") : verdict === "skip" ? tx("walkmode.step_skipped") : verdict === "correct" ? tx("walkmode.step_correct") : verdict === "wrong" ? tx("walkmode.step_answer") : "";
   // Sayaç SORU (speak) turlarını gösterir; intro (öğretme) turları soru değil — done (tally) ile tutarlı.
   const speakTotal = rounds.filter((r) => r.kind === "speak").length || rounds.length;
   const speakStep = Math.min(speakTotal, rounds.slice(0, idx).filter((r) => r.kind === "speak").length + (rounds[idx]?.kind === "speak" ? 1 : 0));
@@ -520,7 +520,7 @@ export function WalkModeScreen() {
 
   const topBar = (withProgress: boolean) => (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, marginBottom: spacing.xl }}>
-      <PressableScale hitSlop={4} onPress={onBackPress} accessibilityLabel={tx("walkmode.yuruyusten_cik")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+      <PressableScale hitSlop={4} onPress={onBackPress} accessibilityLabel={tx("walkmode.exit_walk_mode")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
         <XIcon color={colors.textMuted} size={22} />
       </PressableScale>
       {withProgress ? (
@@ -543,15 +543,15 @@ export function WalkModeScreen() {
           {topBar(false)}
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl, gap: spacing.lg }}>
             <Mascot mood="wave" size={120} />
-            <Text variant="display" style={{ textAlign: "center" }}>{tx("walkmode.dinle_ve_soyle")}</Text>
+            <Text variant="display" style={{ textAlign: "center" }}>{tx("walkmode.listen_and_say_it")}</Text>
             <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>
-              {tx("walkmode.intro_text", { anadil: nativeLangName(), hedef: targetLangName() })}
+              {tx("walkmode.intro_text", { nativeLang: nativeLangName(), target: targetLangName() })}
             </Text>
             <PressableScale onPress={() => { void beginWalk(); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color="#fff">{tx("common.basla")}</Text>
+              <Text variant="h3" color="#fff">{tx("common.start")}</Text>
             </PressableScale>
             <PressableScale onPress={() => setDisclosure(true)} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.xs }}>
-              <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{tx("walkmode.mikrofon_ve_ses_verisi_hakkinda")}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{tx("walkmode.about_microphone_and_voice_data")}</Text>
             </PressableScale>
           </View>
         </>
@@ -559,52 +559,52 @@ export function WalkModeScreen() {
         // Diğer oyunlarla (GameScreen) bütünlük: sağ üst X, ProgressRing, mascot, Tur bitti + Devam/Paylaş/Bitir.
         <View style={donePad}>
           <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-            <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+            <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
           </View>
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
             <Celebrate show={tally.total > 0 && donePct >= 60} />
             <Mascot mood={tally.total > 0 ? (donePct >= 60 ? "celebrate" : "happy") : "idle"} size={104} />
             <ProgressRing size={150} stroke={14} pct={donePct} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
               <Text variant="display" color={colors.primary}>{tally.correct}/{tally.total || 0}</Text>
-              <Text variant="micro" color={colors.textMuted}>{tx("walkmode.dogru")}</Text>
+              <Text variant="micro" color={colors.textMuted}>{tx("walkmode.correct")}</Text>
             </ProgressRing>
             <Text variant="h1" style={{ marginTop: spacing.xl }}>{tx(noMore ? "walkmode.done_no_more" : "walkmode.done_title")}</Text>
             <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
               {tx(noMore ? "walkmode.done_no_more_sub" : "walkmode.done_saved")}
             </Text>
             {!noMore && (
-              <PressableScale onPress={newTour} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">{tx("walkmode.devam_et")}</Text></PressableScale>
+              <PressableScale onPress={newTour} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">{tx("walkmode.continue")}</Text></PressableScale>
             )}
             {tally.total > 0 && (
               <PressableScale onPress={() => shareResult(tally.correct, tally.total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
-                <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{tx("common.paylas")}</Text>
+                <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{tx("common.share")}</Text>
               </PressableScale>
             )}
-            <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}><Text variant="bodyStrong" color={colors.textMuted}>{tx("common.bitir")}</Text></PressableScale>
+            <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}><Text variant="bodyStrong" color={colors.textMuted}>{tx("common.finish")}</Text></PressableScale>
           </View>
         </View>
       ) : phase === "stopped" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
           <Mascot mood="idle" size={100} />
-          <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.turu_duraklattim")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.sesini_bir_suredir_duyamadim_mikrofonu_kontr")}</Text>
+          <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.i_paused_round")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.i_haven_t_heard_you_for_while")}</Text>
           <PressableScale onPress={() => { unheardWin.current = []; void runLoop(rounds, idx); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color="#fff">{tx("walkmode.devam_et")}</Text>
+            <Text variant="h3" color="#fff">{tx("walkmode.continue")}</Text>
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.bitir")}</Text>
+            <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.finish")}</Text>
           </PressableScale>
         </View>
       ) : phase === "denied" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
           <MicIcon color={colors.textMuted} size={64} />
-          <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.mikrofon_gerekli")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.yuruyus_modu_sesli_calisir_devam_etmek")}</Text>
+          <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.microphone_needed")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.walk_mode_works_by_voice_allow")}</Text>
           <PressableScale onPress={() => start(rounds)} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color="#fff">{tx("walkmode.izin_ver_ve_basla")}</Text>
+            <Text variant="h3" color="#fff">{tx("walkmode.allow_and_start")}</Text>
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.vazgec")}</Text>
+            <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.discard")}</Text>
           </PressableScale>
         </View>
       ) : greeting ? (
@@ -612,8 +612,8 @@ export function WalkModeScreen() {
           {topBar(true)}
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl, gap: spacing.lg }}>
             <Mascot mood="wave" size={124} />
-            <Text variant="h1">{tx("walkmode.basliyoruz")}</Text>
-            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.dinle_birazdan_ilk_kelime")}</Text>
+            <Text variant="h1">{tx("walkmode.here_we_go")}</Text>
+            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.listen_first_word_coming_up")}</Text>
           </View>
         </>
       ) : (
@@ -648,7 +648,7 @@ export function WalkModeScreen() {
 
               <View style={{ alignItems: "center", gap: 4, minHeight: 46 }}>
                 <Text variant="bodyStrong" color={verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primary : colors.textMuted}>{stepLabel}</Text>
-                {heard ? <Text variant="caption" color={verdict === "correct" ? colors.success : colors.danger}>{tx("walkmode.heard", { metin: heard })}</Text> : null}
+                {heard ? <Text variant="caption" color={verdict === "correct" ? colors.success : colors.danger}>{tx("walkmode.heard", { text: heard })}</Text> : null}
               </View>
             </View>
 
@@ -656,14 +656,14 @@ export function WalkModeScreen() {
             <View style={{ alignItems: "center", gap: spacing.xs }}>
               {phase === "listening" ? (
                 <PressableScale onPress={skipNow} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, paddingVertical: spacing.sm }}>
-                  <Text variant="bodyStrong" color={colors.textMuted}>{tx("walkmode.atla")}</Text><ChevronRightIcon color={colors.textMuted} size={18} />
+                  <Text variant="bodyStrong" color={colors.textMuted}>{tx("walkmode.skip")}</Text><ChevronRightIcon color={colors.textMuted} size={18} />
                 </PressableScale>
               ) : (
                 <View style={{ height: 40 }} />
               )}
               {/* Cebe koy: ekran siyah ama AÇIK kalır (tanıyıcı çalışsın); eller serbest, tur sonunda sesli devam. */}
               <PressableScale onPress={() => setPocketMode(true)} style={{ paddingVertical: spacing.sm }}>
-                <Text variant="caption" color={colors.textMuted}>{tx("walkmode.cebe_koy_ekrani_karart")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{tx("walkmode.pocket_it_dim_screen")}</Text>
               </PressableScale>
             </View>
           </View>
@@ -675,15 +675,15 @@ export function WalkModeScreen() {
       {pocket ? (
         <Pressable onPress={() => setPocketMode(false)} style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: "#000", alignItems: "center", justifyContent: "center" }}>
           <MicIcon color="#1c1c1c" size={44} />
-          <Text variant="caption" color="#2a2a2a" style={{ marginTop: 14 }}>{tx("walkmode.dinliyorum_dokun_ve_uyandir")}</Text>
+          <Text variant="caption" color="#2a2a2a" style={{ marginTop: 14 }}>{tx("walkmode.listening_tap_to_wake")}</Text>
         </Pressable>
       ) : null}
       <ConfirmDialog
         visible={back.visible}
-        title={tx("walkmode.yuruyusu_bitir")}
+        title={tx("walkmode.end_walk")}
         message={tx("walkmode.back_message")}
-        confirmLabel={tx("common.bitir")}
-        cancelLabel={tx("common.devam_et")}
+        confirmLabel={tx("common.finish")}
+        cancelLabel={tx("common.continue_2")}
         destructive
         onConfirm={() => { back.cancel(); stopAndLeave(); }}
         onCancel={back.cancel}

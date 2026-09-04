@@ -33,7 +33,7 @@ type PQ = { round: ChoiceRound; level: PlacementAnswer["level"]; itemId: string 
 
 function realQuestions(items: PlacementVocab[]): PQ[] {
   return items.map((it, i) => ({
-    round: { wordId: i, question: withArtikel(it.artikel, it.de), answer: it.options[it.answer], options: it.options, prompt: t("rounds.ask_native", { anadil: nativeLangName() }) },
+    round: { wordId: i, question: withArtikel(it.artikel, it.de), answer: it.options[it.answer], options: it.options, prompt: t("rounds.ask_native", { nativeLang: nativeLangName() }) },
     level: it.level,
     itemId: it.id,
   }));
@@ -127,7 +127,7 @@ export function PlacementScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.no_demo")}</Text>
         <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
-          <Text variant="bodyStrong" color="#fff">{t("common.kapat")}</Text>
+          <Text variant="bodyStrong" color="#fff">{t("common.close")}</Text>
         </PressableScale>
       </View>
     );
@@ -136,11 +136,11 @@ export function PlacementScreen() {
   if (user && !loading && loadError) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.yuklenemedi")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.couldn_t_load_test")}</Text>
         <PressableScale onPress={() => setAttempt((n) => n + 1)} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
-          <Text variant="bodyStrong" color="#fff">{t("common.tekrar_dene")}</Text>
+          <Text variant="bodyStrong" color="#fff">{t("common.try_again")}</Text>
         </PressableScale>
-        <PressableScale onPress={leave} style={{ paddingVertical: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text></PressableScale>
+        <PressableScale onPress={leave} style={{ paddingVertical: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
   }
@@ -169,23 +169,23 @@ export function PlacementScreen() {
       ) : submitting ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <ActivityIndicator color={colors.primary} />
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("placement.seviyen_hesaplaniyor")}</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("placement.calculating_your_level")}</Text>
         </View>
       ) : (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <View style={[{ width: 110, height: 110, borderRadius: 55, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 14)]}>
             <Text variant="display" color="#fff" style={{ fontSize: 40 }}>{level}</Text>
           </View>
-          <Text variant="h1" style={{ marginTop: spacing.xl }}>{t("placement.your_level", { seviye: level })}</Text>
+          <Text variant="h1" style={{ marginTop: spacing.xl }}>{t("placement.your_level", { level: level })}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
-            {t("placement.result", { toplam: total, dogru: correct })}
+            {t("placement.result", { total: total, correct: correct })}
           </Text>
-          {saved && <Text variant="bodyStrong" color={colors.success} style={{ marginBottom: spacing.md }}>{t("placement.kaydedildi")}</Text>}
+          {saved && <Text variant="bodyStrong" color={colors.success} style={{ marginBottom: spacing.md }}>{t("placement.saved")}</Text>}
           <PressableScale onPress={applyLevel} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color="#fff">{t(user ? "placement.set_level" : "placement.understood")}</Text>
           </PressableScale>
           <PressableScale onPress={leave} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{t("common.kapat")}</Text>
+            <Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text>
           </PressableScale>
         </View>
       )}

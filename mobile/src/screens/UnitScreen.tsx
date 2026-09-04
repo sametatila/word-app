@@ -60,11 +60,11 @@ export function UnitScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="micro" color={colors.textMuted}>{t("unit.header", { seviye: params.level, birim: t("common.unit"), n: params.index })}</Text>
+          <Text variant="micro" color={colors.textMuted}>{t("unit.header", { level: params.level, unit: t("common.unit"), n: params.index })}</Text>
           <Text variant="h2">{params.theme}</Text>
         </View>
       </View>
@@ -73,7 +73,7 @@ export function UnitScreen() {
         <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginTop: spacing.sm, marginBottom: 6 }}>
           <View style={{ height: "100%", width: `${pct}%`, backgroundColor: colors.success, borderRadius: 5 }} />
         </View>
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>{t("unit.steps_done", { n: done, toplam: items.length })}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>{t("unit.steps_done", { n: done, total: items.length })}</Text>
 
         <View style={{ gap: spacing.md }}>
           {items.map((it) => {
@@ -95,7 +95,7 @@ export function UnitScreen() {
                     </View>
                   ) : it.current ? (
                     <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 4 }}>
-                      <Text variant="micro" color={colors.primary}>{t("unit.simdi")}</Text>
+                      <Text variant="micro" color={colors.primary}>{t("unit.now")}</Text>
                     </View>
                   ) : it.open && it.playable ? (
                     <ChevronRightIcon color={colors.textFaint} size={20} />

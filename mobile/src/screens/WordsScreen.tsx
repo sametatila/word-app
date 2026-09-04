@@ -55,17 +55,17 @@ export function WordsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{t("words.kelimelerim")}</Text>
+        <Text variant="h2">{t("words.my_words")}</Text>
       </View>
 
       <View style={{ paddingHorizontal: spacing.lg, gap: spacing.md, paddingBottom: spacing.md }}>
         <TextInput
           value={q}
           onChangeText={setQ}
-          placeholder={t("words.search", { hedef: targetLangName(), anadil: nativeLangName() })}
+          placeholder={t("words.search", { target: targetLangName(), nativeLang: nativeLangName() })}
           placeholderTextColor={colors.textFaint}
           autoCapitalize="none"
           style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 15 }}
@@ -107,13 +107,13 @@ export function WordsScreen() {
             </View>
           ) : phase === "error" ? (
             <View style={{ alignItems: "center", gap: spacing.md, marginTop: spacing.xxl }}>
-              <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("words.yuklenemedi")}</Text>
+              <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("words.couldn_t_load_your_words")}</Text>
               <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-                <Text variant="bodyStrong" color={colors.primary}>{t("common.tekrar_dene")}</Text>
+                <Text variant="bodyStrong" color={colors.primary}>{t("common.try_again")}</Text>
               </PressableScale>
             </View>
           ) : (
-            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.xxl }}>{t("words.kelime_bulunamadi")}</Text>
+            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.xxl }}>{t("words.no_words_found")}</Text>
           )
         }
         renderItem={({ item: w }) => {

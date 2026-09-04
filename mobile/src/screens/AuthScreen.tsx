@@ -116,7 +116,7 @@ export function AuthScreen() {
       const done = await socialComplete(); // oturumu tazele + onboarding prefs
       setSocialBusy(null);
       if (done) void toApp();
-      else setError(t("auth.giris_tamamlanamadi_tekrar_dener_m"));
+      else setError(t("auth.sign_in_could_not_be_completed"));
     } else {
       setSocialBusy(null);
       if (r.code !== "CANCELLED") setError(r.message);
@@ -146,22 +146,22 @@ export function AuthScreen() {
             <BoltIcon color="#fff" size={38} />
           </View>
           <Text variant="display" style={{ marginTop: spacing.md }}>
-            {view === "forgot" ? t("auth.parolani_mi_unuttun") : view === "options" ? t("auth.giris_yap") : mode === "signin" ? t("auth.tekrar_hos_geldin") : t("auth.hesap_olustur")}
+            {view === "forgot" ? t("auth.forgot_your_password") : view === "options" ? t("auth.sign_in") : mode === "signin" ? t("auth.welcome_back") : t("auth.create_account")}
           </Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>
-            {view === "forgot" ? t("auth.e_postani_gir_sifirlama_baglantisi") : view === "options" ? t("auth.ilerlemen_kaydolur_cihazlar_arasi") : mode === "signin" ? t("auth.serini_kaldigin_yerden_surdur") : t("auth.birkac_saniye_surer_ilerlemen_kayd")}
+            {view === "forgot" ? t("auth.enter_your_email_and_we_ll_send") : view === "options" ? t("auth.your_progress_is_saved_and") : mode === "signin" ? t("auth.pick_your_streak_up_where_you") : t("auth.it_takes_few_seconds_and_your")}
           </Text>
         </View>
 
         {view === "options" ? (
           <View style={{ gap: spacing.md }}>
             {PROVIDERS.filter((p) => providersOn[p.id]).map((p) => (
-              <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={t("auth.saglayici_ile_devam_et", { saglayici: p.label })}
+              <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={t("auth.continue_with", { provider: p.label })}
                 style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, paddingHorizontal: spacing.lg }}>
                 <View style={{ width: 24, alignItems: "center" }}>
                   {socialBusy === p.id ? <ActivityIndicator color={colors.textMuted} /> : providerIcon(p.id, colors)}
                 </View>
-                <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{t("auth.saglayici_ile_devam_et", { saglayici: p.label })}</Text>
+                <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{t("auth.continue_with", { provider: p.label })}</Text>
               </PressableScale>
             ))}
 
@@ -169,7 +169,7 @@ export function AuthScreen() {
             <PressableScale onPress={() => { setView("email"); setError(null); }}
               style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, paddingHorizontal: spacing.lg }}>
               <View style={{ width: 24, alignItems: "center" }}><MailIcon color={colors.text} size={22} /></View>
-              <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{t("auth.e_posta_ile_devam_et")}</Text>
+              <Text variant="h3" color={colors.text} style={{ flex: 1 }}>{t("auth.continue_with_email")}</Text>
             </PressableScale>
 
             {error && (
@@ -182,29 +182,29 @@ export function AuthScreen() {
           <View style={{ gap: spacing.md }}>
             {resetSent ? (
               <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.lg, padding: spacing.lg, gap: 6 }}>
-                <Text variant="bodyStrong" color={colors.success}>{t("auth.baglanti_gonderildi")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("auth.eposta_adresine_bir_sifirlama_bagl", { eposta: email.trim() || t("auth.e_postana") })}</Text>
+                <Text variant="bodyStrong" color={colors.success}>{t("auth.link_sent")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("auth.we_sent_reset_link_to_if_that", { email: email.trim() || t("auth.your_email_address") })}</Text>
               </View>
             ) : (
               <>
-                <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.e_posta")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
+                <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
                 {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.danger}>{error}</Text></View>)}
-                <PressableScale onPress={doReset} accessibilityLabel={t("auth.sifirlama_baglantisi_gonder")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
-                  <Text variant="h3" color="#fff">{resetBusy ? "..." : t("auth.sifirlama_baglantisi_gonder")}</Text>
+                <PressableScale onPress={doReset} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
+                  <Text variant="h3" color="#fff">{resetBusy ? "..." : t("auth.send_reset_link")}</Text>
                 </PressableScale>
               </>
             )}
             <PressableScale onPress={() => { setView("email"); setResetSent(false); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
-              <Text variant="bodyStrong" color={colors.primary}>{t("auth.girise_don")}</Text>
+              <Text variant="bodyStrong" color={colors.primary}>{t("auth.back_to_sign_in")}</Text>
             </PressableScale>
           </View>
         ) : (
           <View style={{ gap: spacing.md }}>
             {mode === "signup" && (
-              <TextInput value={name} onChangeText={setName} placeholder={t("auth.adin_istege_bagli")} placeholderTextColor={colors.textFaint} autoCapitalize="words" style={input} />
+              <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" style={input} />
             )}
-            <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.e_posta")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
-            <TextInput value={password} onChangeText={setPassword} placeholder={t("auth.parola_en_az_8_karakter")} placeholderTextColor={colors.textFaint} secureTextEntry style={input} />
+            <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
+            <TextInput value={password} onChangeText={setPassword} placeholder={t("auth.password_at_least_8_characters")} placeholderTextColor={colors.textFaint} secureTextEntry style={input} />
 
             {error && (
               <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
@@ -213,19 +213,19 @@ export function AuthScreen() {
             )}
 
             <PressableScale onPress={submit} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color="#fff">{busy ? "..." : mode === "signin" ? t("auth.giris_yap") : t("auth.hesap_olustur")}</Text>
+              <Text variant="h3" color="#fff">{busy ? "..." : mode === "signin" ? t("auth.sign_in") : t("auth.create_account")}</Text>
             </PressableScale>
 
             {mode === "signin" && (
               <PressableScale onPress={() => { setView("forgot"); setError(null); setResetSent(false); }} style={{ alignItems: "center", paddingVertical: spacing.xs }}>
-                <Text variant="caption" color={colors.textMuted}>{t("auth.parolani_mi_unuttun")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("auth.forgot_your_password")}</Text>
               </PressableScale>
             )}
 
             <PressableScale onPress={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
               <Text variant="body" color={colors.textMuted}>
-                {mode === "signin" ? t("auth.hesabin_yok_mu") : t("auth.zaten_hesabin_var_mi")}
-                <Text variant="bodyStrong" color={colors.primary}>{mode === "signin" ? t("auth.kayit_ol") : t("auth.giris_yap")}</Text>
+                {mode === "signin" ? t("auth.no_account_yet") : t("auth.already_have_account")}
+                <Text variant="bodyStrong" color={colors.primary}>{mode === "signin" ? t("auth.sign_up") : t("auth.sign_in")}</Text>
               </Text>
             </PressableScale>
           </View>
@@ -241,14 +241,14 @@ export function AuthScreen() {
           {t("auth.legal_notice")}
         </Text>
         <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
-          <PressableScale onPress={() => openLegal("terms")} accessibilityRole="link" accessibilityLabel={t("auth.kullanim_sartlari")}
+          <PressableScale onPress={() => openLegal("terms")} accessibilityRole="link" accessibilityLabel={t("auth.terms_of_use")}
             style={{ minHeight: 48, justifyContent: "center", paddingHorizontal: spacing.md }}>
-            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.kullanim_sartlari")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.terms_of_use")}</Text>
           </PressableScale>
           <Text variant="caption" color={colors.textFaint}>·</Text>
-          <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" accessibilityLabel={t("auth.gizlilik_politikasi")}
+          <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" accessibilityLabel={t("auth.privacy_policy")}
             style={{ minHeight: 48, justifyContent: "center", paddingHorizontal: spacing.md }}>
-            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.gizlilik_politikasi")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.privacy_policy")}</Text>
           </PressableScale>
         </View>
       </View>

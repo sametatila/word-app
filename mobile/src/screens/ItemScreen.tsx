@@ -31,10 +31,10 @@ function ReadingText({ text, colors }: { text: string; colors: Palette }) {
   return (
     <Card style={{ marginTop: spacing.md }}>
       <View style={{ flexDirection: "row", justifyContent: "flex-end", marginBottom: spacing.xs }}>
-        <PressableScale onPress={() => speakTarget(text)} hitSlop={8} accessibilityLabel={t("item.metni_sesli_oku")}
+        <PressableScale onPress={() => speakTarget(text)} hitSlop={8} accessibilityLabel={t("item.read_text_aloud")}
           style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
           <SpeakerIcon color={colors.primary} size={18} />
-          <Text variant="caption" color={colors.primary}>{t("item.sesli_oku")}</Text>
+          <Text variant="caption" color={colors.primary}>{t("item.read_aloud")}</Text>
         </PressableScale>
       </View>
       {text.split("\n\n").map((p, i) => (
@@ -54,7 +54,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
         <PressableScale onPress={() => speakTarget(full)} style={[{ width: 80, height: 80, borderRadius: 40, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
           <SpeakerIcon color="#fff" size={34} />
         </PressableScale>
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("item.dinle_ve_anla")}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("item.listen_and_understand")}</Text>
       </Card>
       <PressableScale onPress={() => setReveal((v) => !v)} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
         <Text variant="bodyStrong" color={colors.primary}>{t(reveal ? "item.hide_text" : "item.show_text")}</Text>
@@ -118,8 +118,8 @@ export function ItemScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={90} />
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("item.alistirma_acilamiyor")}</Text>
-        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primary}>{t("item.geri_don")}</Text></PressableScale>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("item.this_exercise_can_t_be_opened")}</Text>
+        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primary}>{t("item.go_back")}</Text></PressableScale>
       </View>
     );
   }
@@ -130,7 +130,7 @@ export function ItemScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <XIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
@@ -165,14 +165,14 @@ export function ItemScreen() {
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={pct >= 70} />
             <Mascot mood={pct >= 70 ? "celebrate" : pct >= 40 ? "happy" : "idle"} size={84} />
-            <Text variant="h2">{exercise.skill === "writing" ? t("item.tasks_done") : t("common.n_correct", { dogru: correct, toplam: total })}</Text>
+            <Text variant="h2">{exercise.skill === "writing" ? t("item.tasks_done") : t("common.n_correct", { correct: correct, total: total })}</Text>
             {exercise.skill !== "writing" ? <Text variant="caption" color={colors.textMuted}>{t("item.score_pct", { pct })}</Text> : null}
             <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
               <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-                <Text variant="bodyStrong" color={colors.text}>{t("item.tekrar_dene")}</Text>
+                <Text variant="bodyStrong" color={colors.text}>{t("item.try_again")}</Text>
               </PressableScale>
               <PressableScale onPress={() => nav.goBack()} style={[{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-                <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.patika_ya_don")}</Text>
+                <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.back_to_path")}</Text>
               </PressableScale>
             </View>
           </Card>

@@ -53,7 +53,7 @@ function steps(course: string): Step[] {
   return [
     {
       key: "welcome", icon: BoltIcon,
-      title: t("onboarding.nomi_ye_hos_geldin"),
+      title: t("onboarding.welcome_to_lernomi"),
       subtitle: t("onboarding.kisa_turlarla_oyun_gibi_ogren_birk"),
     },
     {
@@ -61,14 +61,14 @@ function steps(course: string): Step[] {
       // bağlı. Karşılamadan sonra duruyor çünkü karşılama ekranında seçim yok,
       // cihaz dilinde çizilmesi bir şeyi bozmuyor.
       key: "lang", icon: SpeakerIcon,
-      title: t("onboarding.hangi_dilde_ogrenelim"),
-      subtitle: t("onboarding.anadilini_sec_ders_anlatimi_bu_dilde"),
+      title: t("onboarding.which_language_should_we_teach"),
+      subtitle: t("onboarding.lessons_and_hints_will_be_in"),
       options: NATIVE_LANGS.map((l) => ({ key: l, label: LANG_LABEL[l] })),
     },
     {
       key: "course", icon: SkillsIcon,
-      title: t("onboarding.hangi_kursla_baslayalim"),
-      subtitle: t("onboarding.kursunu_sec_sonradan_ayarlar_dan_d"),
+      title: t("onboarding.which_course_shall_we_start_with"),
+      subtitle: t("onboarding.more_languages_are_coming_soon"),
       // Kurs kayıt defterinden türüyor (lib/courses.ts). Anadil elenir (kimse
       // kendi dilini "öğrenilecek dil" olarak seçmez) ve duraklatılmış lehçe
       // kursu ilk açılışta sunulmaz — Ayarlar'dan hâlâ seçilebilir.
@@ -76,24 +76,24 @@ function steps(course: string): Step[] {
     },
     {
       key: "level", icon: ExamIcon,
-      title: t("onboarding.nereden_baslayalim"),
-      subtitle: t("onboarding.sifirdan_basla_kisa_bir_testle_sev"),
+      title: t("onboarding.where_shall_we_start"),
+      subtitle: t("onboarding.you_can_start_at_level_that"),
       // "Testle belirle" yalnız o paritenin hazır seti varsa; yoksa seçenek hiç
       // görünmez (seçilip boş bir teste düşmektense hiç sunulmamalı).
       options: [
-        { key: "A1", label: t("onboarding.sifirdan"), sub: t("onboarding.yeni_basliyorum_ilk_kelimelerle_is") },
-        { key: "pick", label: t("onboarding.seviyeni_sec"), sub: t("onboarding.seviyeni_biliyorsan_dogrudan_sec") },
-        ...(canTest ? [{ key: "test", label: t("onboarding.testle_belirle"), sub: t("onboarding.kisa_yerlestirme_sinavi") }] : []),
+        { key: "A1", label: t("onboarding.from_scratch"), sub: t("onboarding.i_m_just_starting_out") },
+        { key: "pick", label: t("onboarding.pick_your_level"), sub: t("onboarding.pick_level_directly") },
+        ...(canTest ? [{ key: "test", label: t("onboarding.find_out_with_test"), sub: t("onboarding.kisa_yerlestirme_sinavi") }] : []),
       ],
     },
     {
       key: "goal", icon: CheckIcon,
-      title: t("onboarding.gunluk_hedefin_ne_olsun"),
+      title: t("onboarding.what_s_your_daily_goal"),
       subtitle: t("onboarding.istedigin_zaman_degistirebilirsin"),
       options: [
-        { key: "5", label: t("onboarding.rahat"), sub: t("onboarding.n_dk_gun", { n: 5 }) },
-        { key: "10", label: t("onboarding.kararli"), sub: t("onboarding.n_dk_gun", { n: 10 }) },
-        { key: "20", label: t("onboarding.ciddi"), sub: t("onboarding.n_dk_gun", { n: 20 }) },
+        { key: "5", label: t("onboarding.easy"), sub: t("onboarding.min_day", { n: 5 }) },
+        { key: "10", label: t("onboarding.steady"), sub: t("onboarding.min_day", { n: 10 }) },
+        { key: "20", label: t("onboarding.serious"), sub: t("onboarding.min_day", { n: 20 }) },
       ],
     },
   ];
@@ -221,7 +221,7 @@ export function OnboardingScreen() {
       </View>
 
       <PressableScale onPress={next} style={[{ borderRadius: radii.lg, backgroundColor: canNext ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, canNext ? softShadow(colors.primary, 10) : {}]}>
-        <Text variant="h3" color={canNext ? "#fff" : colors.textFaint}>{t("common.devam_et")}</Text>
+        <Text variant="h3" color={canNext ? "#fff" : colors.textFaint}>{t("common.continue_2")}</Text>
       </PressableScale>
     </View>
   );

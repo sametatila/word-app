@@ -16,7 +16,7 @@ export function ConfirmDialog({
   title,
   message,
   confirmLabel = t("common.confirm"),
-  cancelLabel = t("common.vazgec"),
+  cancelLabel = t("common.discard"),
   destructive,
   onConfirm,
   onCancel,

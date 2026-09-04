@@ -58,13 +58,13 @@ export function FriendPulse() {
       <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: invited ? colors.info : colors.primary, borderWidth: 1.5 }}>
         <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={44} ring={invited ? colors.info : colors.primary} />
         <View style={{ flex: 1 }}>
-          <Text variant="h3" numberOfLines={1}>{invited ? (q.invitedByMe ? t("friendpulse.waiting") : t("friendpulse.invited_you", { ad: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })) : t("friendpulse.shared", { ad: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })}</Text>
+          <Text variant="h3" numberOfLines={1}>{invited ? (q.invitedByMe ? t("friendpulse.waiting") : t("friendpulse.invited_you", { name: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })) : t("friendpulse.shared", { name: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })}</Text>
           {invited ? (
-            <Text variant="caption" color={colors.textMuted}>{t("friendpulse.target", { xp: formatXp(q.targetXp), durum: q.invitedByMe ? t("friendpulse.awaiting") : t("friendpulse.accept") })}</Text>
+            <Text variant="caption" color={colors.textMuted}>{t("friendpulse.target", { xp: formatXp(q.targetXp), status: q.invitedByMe ? t("friendpulse.awaiting") : t("friendpulse.accept") })}</Text>
           ) : (
             <View style={{ marginTop: 6 }}>
               <Bar pct={q.pct} tint={colors.primary} />
-              <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{t("friendpulse.progress", { simdi: formatXp(q.totalXp), hedef: formatXp(q.targetXp), n: q.daysLeft })}</Text>
+              <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{t("friendpulse.progress", { current: formatXp(q.totalXp), target: formatXp(q.targetXp), n: q.daysLeft })}</Text>
             </View>
           )}
         </View>

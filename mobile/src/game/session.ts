@@ -99,7 +99,7 @@ export async function fetchSession(day = todayStr(), opts?: { extra?: boolean; w
  */
 export const PRACTICE_GAMES: { game: string; label: string }[] = [
   { game: "choice", label: "games.choice" },
-  { game: "artikel", label: "games.artikel" },
+  { game: "artikel", label: "games.article_race" },
   { game: "cloze", label: "games.cloze" },
   { game: "typing", label: "games.typing" },
   { game: "listen", label: "games.listen" },

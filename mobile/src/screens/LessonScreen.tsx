@@ -207,7 +207,7 @@ export function LessonScreen() {
     void clearLessonResume(lesson.id);
     const opening = lesson.roleplay.opening;
     setFeed([]);
-    push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.scene", { sahne: lesson.roleplay.scene }) }] });
+    push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.scene", { scene: lesson.roleplay.scene }) }] });
     if (opening) {
       push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(lesson.roleplay.openingTr ? [{ lang: "tr" as const, text: lesson.roleplay.openingTr }] : [])] });
       setRoleMsgs([{ role: "assistant", content: opening }]);
@@ -278,8 +278,8 @@ export function LessonScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={90} />
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("lesson.bu_ders_bulunamadi")}</Text>
-        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primary}>{tx("lesson.geri_don")}</Text></PressableScale>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("lesson.this_lesson_wasn_t_found")}</Text>
+        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primary}>{tx("lesson.go_back")}</Text></PressableScale>
       </View>
     );
   }
@@ -288,7 +288,7 @@ export function LessonScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm }}>
       {/* Başlık + ilerleme */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={tx("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
@@ -333,13 +333,13 @@ export function LessonScreen() {
       ) : resumeOffer ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
           <Mascot mood="wave" size={90} />
-          <Text variant="h2" style={{ textAlign: "center" }}>{tx("lesson.kaldigin_yerden_devam")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("lesson.bu_derse_ara_vermistin_kaldigin_adimdan")}</Text>
+          <Text variant="h2" style={{ textAlign: "center" }}>{tx("lesson.pick_up_where_you_left_off")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("lesson.you_paused_this_lesson_pick_up")}</Text>
           <View style={{ alignSelf: "stretch", gap: spacing.sm }}>
-            <BigButton label={tx("lesson.kaldigin_yerden_devam_et")} onPress={() => { const r = resumeOffer; setResumeOffer(null); setCorrect(r.correct); presentFrom(r.cursor); }} colors={colors} />
+            <BigButton label={tx("lesson.continue_where_you_left_off")} onPress={() => { const r = resumeOffer; setResumeOffer(null); setCorrect(r.correct); presentFrom(r.cursor); }} colors={colors} />
             <PressableScale onPress={() => { setResumeOffer(null); void clearLessonResume(lesson.id); presentFrom(0); }}>
               <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, alignItems: "center" }}>
-                <Text variant="h3" color={colors.text}>{tx("lesson.bastan_basla")}</Text>
+                <Text variant="h3" color={colors.text}>{tx("lesson.start_over")}</Text>
               </View>
             </PressableScale>
           </View>
@@ -350,7 +350,7 @@ export function LessonScreen() {
             {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} onReport={setReport} />)}
             {busy && (
               <View style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: 8, marginTop: 4 }}>
-                <ActivityIndicator color={colors.primary} size="small" /><Text variant="caption" color={colors.textMuted}>{tx("lesson.yaziyor")}</Text>
+                <ActivityIndicator color={colors.primary} size="small" /><Text variant="caption" color={colors.textMuted}>{tx("lesson.typing")}</Text>
               </View>
             )}
           </ScrollView>
@@ -403,19 +403,19 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
         </Text>
         {b.fix?.length ? (
           <View style={{ marginTop: 8, gap: 2, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: 6 }}>
-            {b.fix.map((f, i) => <Text key={i} variant="micro" color={colors.textMuted}>{tx("lesson.fix", { metin: f })}</Text>)}
+            {b.fix.map((f, i) => <Text key={i} variant="micro" color={colors.textMuted}>{tx("lesson.fix", { text: f })}</Text>)}
           </View>
         ) : null}
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: 4, marginLeft: 4 }}>
         {targetText(b.segments) ? (
           <PressableScale onPress={() => speakTarget(targetText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
-            <SpeakerIcon color={colors.textMuted} size={15} /><Text variant="micro" color={colors.textMuted}>{tx("lesson.dinle")}</Text>
+            <SpeakerIcon color={colors.textMuted} size={15} /><Text variant="micro" color={colors.textMuted}>{tx("lesson.listen")}</Text>
           </PressableScale>
         ) : null}
         {b.report && onReport ? (
-          <PressableScale onPress={() => onReport(b.report!)} hitSlop={8} accessibilityLabel={tx("lesson.bu_yaniti_bildir")}>
-            <Text variant="micro" color={colors.textFaint}>{tx("lesson.bildir")}</Text>
+          <PressableScale onPress={() => onReport(b.report!)} hitSlop={8} accessibilityLabel={tx("lesson.report_this_answer")}>
+            <Text variant="micro" color={colors.textFaint}>{tx("lesson.report")}</Text>
           </PressableScale>
         ) : null}
       </View>
@@ -438,15 +438,15 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onRepeatDo
   expect: Expectation | undefined; tries: number; input: string; setInput: (s: string) => void;
   onConfirm: () => void; onRepeatDone: () => void; onProduce: () => void; onTrueFalse: (b: boolean) => void; colors: Palette;
 }) {
-  if (!expect) return <BigButton label={tx("lesson.devam")} onPress={onConfirm} colors={colors} />;
-  if (expect.kind === "confirm") return <BigButton label={tx("lesson.hazirim")} onPress={onConfirm} colors={colors} />;
+  if (!expect) return <BigButton label={tx("lesson.continue")} onPress={onConfirm} colors={colors} />;
+  if (expect.kind === "confirm") return <BigButton label={tx("lesson.i_m_ready")} onPress={onConfirm} colors={colors} />;
   if (expect.kind === "repeat") {
     return (
       <View style={{ gap: spacing.sm }}>
         <PressableScale onPress={() => speakTarget(expect.target)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, paddingVertical: 10, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
           <SpeakerIcon color={colors.primary} size={20} /><Text variant="bodyStrong" color={colors.primary}>{expect.target}</Text>
         </PressableScale>
-        <BigButton label={tx("lesson.soyledim")} onPress={onRepeatDone} tint={colors.info} colors={colors} />
+        <BigButton label={tx("lesson.i_said_it")} onPress={onRepeatDone} tint={colors.info} colors={colors} />
       </View>
     );
   }
@@ -456,14 +456,14 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onRepeatDo
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(true)}>
             <View style={[{ borderRadius: radii.lg, backgroundColor: colors.success, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.success, 8)]}>
-              <CheckIcon color="#fff" size={22} /><Text variant="h3" color="#fff">{tx("lesson.dogru")}</Text>
+              <CheckIcon color="#fff" size={22} /><Text variant="h3" color="#fff">{tx("lesson.correct")}</Text>
             </View>
           </PressableScale>
         </View>
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(false)}>
             <View style={[{ borderRadius: radii.lg, backgroundColor: colors.danger, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.danger, 8)]}>
-              <XIcon color="#fff" size={22} /><Text variant="h3" color="#fff">{tx("lesson.yanlis")}</Text>
+              <XIcon color="#fff" size={22} /><Text variant="h3" color="#fff">{tx("lesson.wrong")}</Text>
             </View>
           </PressableScale>
         </View>
@@ -475,7 +475,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onRepeatDo
     <View style={{ gap: spacing.sm }}>
       {tries > 0 && <Text variant="caption" color={colors.danger}>Tekrar dene ({tries}/3)</Text>}
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
-        <TextInput value={input} onChangeText={setInput} placeholder={tx("lesson.hedef_cevabini_yaz", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
+        <TextInput value={input} onChangeText={setInput} placeholder={tx("lesson.type_your_answer", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
           multiline autoCapitalize="sentences" onSubmitEditing={onProduce}
           style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16 }} />
         <PressableScale onPress={onProduce} disabled={!input.trim()} style={[{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: input.trim() ? colors.primary : colors.surface2 }, input.trim() ? softShadow(colors.primary, 8) : {}]}>
@@ -503,12 +503,12 @@ function RoleplayControls({ input, setInput, busy, onSend, suggestions, onSugges
         </View>
       )}
       {ready ? (
-        <BigButton label={tx("lesson.konusmayi_bitir_ozet")} onPress={onFinish} tint={colors.success} colors={colors} />
+        <BigButton label={tx("lesson.end_conversation_summary")} onPress={onFinish} tint={colors.success} colors={colors} />
       ) : (
-        <Text variant="caption" color={colors.textMuted}>{tx("lesson.keep_talking", { n: turns, hedef: minTurns })}</Text>
+        <Text variant="caption" color={colors.textMuted}>{tx("lesson.keep_talking", { n: turns, target: minTurns })}</Text>
       )}
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
-        <TextInput value={input} onChangeText={setInput} editable={!busy} placeholder={tx("lesson.hedef_dilde_yaz", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
+        <TextInput value={input} onChangeText={setInput} editable={!busy} placeholder={tx("lesson.type_in", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
           multiline autoCapitalize="sentences"
           style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16 }} />
         <PressableScale onPress={onSend} disabled={busy || !input.trim()} style={[{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: input.trim() && !busy ? colors.primary : colors.surface2 }, input.trim() && !busy ? softShadow(colors.primary, 8) : {}]}>
@@ -529,23 +529,23 @@ function Summary({ lesson, correct, total, next, colors, insets, onBack, onNext 
     <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl, alignItems: "center" }} showsVerticalScrollIndicator={false}>
       <Celebrate show={pct >= 80} />
       <View style={{ marginTop: spacing.lg }}><Mascot mood={mood as never} size={110} /></View>
-      <Text variant="display" style={{ marginTop: spacing.md }}>{tx("lesson.ders_bitti")}</Text>
+      <Text variant="display" style={{ marginTop: spacing.md }}>{tx("lesson.lesson_complete")}</Text>
       <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{lesson.title} · {lesson.titleTr}</Text>
 
       <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.xl, alignSelf: "stretch" }}>
         <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
           <Text variant="display" color={colors.primary}>{total ? `${correct}/${total}` : "—"}</Text>
-          <Text variant="caption" color={colors.textMuted}>{tx("lesson.dogru_uretim")}</Text>
+          <Text variant="caption" color={colors.textMuted}>{tx("lesson.correct_production")}</Text>
         </View>
         <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
           <Text variant="display" color={colors.success}>%{pct}</Text>
-          <Text variant="caption" color={colors.textMuted}>{tx("lesson.basari")}</Text>
+          <Text variant="caption" color={colors.textMuted}>{tx("lesson.accuracy")}</Text>
         </View>
       </View>
 
       {lesson.patterns?.length ? (
         <View style={{ alignSelf: "stretch", marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
-          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("lesson.ogrendigin_kaliplar")}</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("lesson.patterns_you_learned")}</Text>
           {lesson.patterns.map((p, i) => (
             <View key={i} style={{ flexDirection: "row", gap: spacing.sm, marginBottom: 6, alignItems: "flex-start" }}>
               <Text variant="bodyStrong" color={colors.text}>{p.de}</Text>
@@ -559,7 +559,7 @@ function Summary({ lesson, correct, total, next, colors, insets, onBack, onNext 
         {onNext && next ? <BigButton label={`Sonraki ders: ${next.title} →`} onPress={onNext} colors={colors} /> : null}
         <PressableScale onPress={onBack}>
           <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, alignItems: "center" }}>
-            <Text variant="h3" color={colors.text}>{tx("lesson.patika_ya_don")}</Text>
+            <Text variant="h3" color={colors.text}>{tx("lesson.back_to_path")}</Text>
           </View>
         </PressableScale>
       </View>

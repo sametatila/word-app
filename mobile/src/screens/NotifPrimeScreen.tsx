@@ -20,9 +20,9 @@ import { useTheme, spacing, radii, softShadow } from "../theme";
 /** Hatırlatma saatleri — etiket t() ile, çağrı anında (dil modül yüklenirken hazır değil). */
 function times(): { label: string; value: string }[] {
   return [
-    { label: tx("notifprime.sabah"), value: "09:00" },
-    { label: tx("notifprime.ogle"), value: "13:00" },
-    { label: tx("notifprime.aksam"), value: "20:00" },
+    { label: tx("notifprime.morning"), value: "09:00" },
+    { label: tx("notifprime.midday"), value: "13:00" },
+    { label: tx("notifprime.evening"), value: "20:00" },
   ];
 }
 
@@ -55,13 +55,13 @@ export function NotifPrimeScreen() {
         <View style={[{ width: 88, height: 88, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
           <BellIcon color="#fff" size={44} />
         </View>
-        <Text variant="display" style={{ textAlign: "center" }}>{tx("notifprime.serini_koru")}</Text>
+        <Text variant="display" style={{ textAlign: "center" }}>{tx("notifprime.keep_your_streak")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 23, paddingHorizontal: spacing.md }}>
-          {tx("notifprime.gunde_bir_nazik_hatirlatma_calisma")}
+          {tx("notifprime.one_gentle_reminder_day_is")}
         </Text>
 
         <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.streak + "1e", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
-          <FlameIcon color={colors.streak} size={16} /><Text variant="caption" color={colors.streak}>{tx("notifprime.hatirlatma_daha_uzun_seri")}</Text>
+          <FlameIcon color={colors.streak} size={16} /><Text variant="caption" color={colors.streak}>{tx("notifprime.reminder_longer_streak")}</Text>
         </View>
 
         <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.md }}>
@@ -77,11 +77,11 @@ export function NotifPrimeScreen() {
         </View>
       </View>
 
-      <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel={tx("notifprime.gunluk_hatirlatmayi_ac")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-        <Text variant="h3" color="#fff">{busy ? "..." : tx("notifprime.gunde_bir_hatirlat")}</Text>
+      <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel={tx("notifprime.turn_on_daily_reminder")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+        <Text variant="h3" color="#fff">{busy ? "..." : tx("notifprime.remind_me_once_day")}</Text>
       </PressableScale>
-      <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel={tx("notifprime.simdilik_gec")} style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: 4 }}>
-        <Text variant="bodyStrong" color={colors.textMuted}>{tx("notifprime.belki_sonra")}</Text>
+      <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel={tx("notifprime.not_now")} style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: 4 }}>
+        <Text variant="bodyStrong" color={colors.textMuted}>{tx("notifprime.maybe_later")}</Text>
       </PressableScale>
     </View>
   );

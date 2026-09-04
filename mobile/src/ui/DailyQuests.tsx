@@ -90,7 +90,7 @@ export function DailyQuests() {
   return (
     <View style={{ marginBottom: spacing.xl }}>
       <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", marginBottom: spacing.md }}>
-        <Text variant="h3" color={colors.textMuted}>{t("dailyquests.gunun_gorevleri")}</Text>
+        <Text variant="h3" color={colors.textMuted}>{t("dailyquests.daily_quests")}</Text>
         <Text variant="caption" color={colors.textMuted}>{doneCount}/{quests.length} tamam</Text>
       </View>
       {quests.map((q) => <QuestRow key={q.id} q={q} colors={colors} />)}

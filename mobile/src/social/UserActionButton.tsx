@@ -22,18 +22,18 @@ export function UserActionButton({ userId, relation, friendshipId, canRequest = 
     try { const next = await fn(); setState(next); onChange?.(next); } catch (e) { setErr(errorText(e)); } finally { setBusy(false); }
   }
   if (state === "self") return null;
-  if (state === "blocked") return <Text variant="caption" color={colors.textMuted}>{t("useractionbutton.engelli")}</Text>;
-  if (state === "declined") return <Text variant="caption" color={colors.textMuted}>{t("useractionbutton.bir_hafta_sonra")}</Text>;
+  if (state === "blocked") return <Text variant="caption" color={colors.textMuted}>{t("useractionbutton.blocked")}</Text>;
+  if (state === "declined") return <Text variant="caption" color={colors.textMuted}>{t("useractionbutton.in_week")}</Text>;
 
   let btn: React.ReactNode;
   if (state === "friends") {
-    btn = <Pill label={t("useractionbutton.arkadas")} tone="soft" icon={CheckIcon} small={small} disabled={busy} onPress={() => Alert.alert(t("social.unfriend"), t("useractionbutton.no_notice"), [{ text: t("common.vazgec"), style: "cancel" }, { text: t("social.remove"), style: "destructive", onPress: () => void run(async () => { await social.remove(userId); return "none"; }) }])} />;
+    btn = <Pill label={t("useractionbutton.friends")} tone="soft" icon={CheckIcon} small={small} disabled={busy} onPress={() => Alert.alert(t("social.unfriend"), t("useractionbutton.no_notice"), [{ text: t("common.discard"), style: "cancel" }, { text: t("social.remove"), style: "destructive", onPress: () => void run(async () => { await social.remove(userId); return "none"; }) }])} />;
   } else if (state === "outgoing") {
-    btn = <Pill label={t("useractionbutton.istek_gonderildi")} tone="ghost" small={small} disabled={busy} onPress={() => void run(async () => { await social.remove(userId); return "none"; })} />;
+    btn = <Pill label={t("useractionbutton.request_sent")} tone="ghost" small={small} disabled={busy} onPress={() => void run(async () => { await social.remove(userId); return "none"; })} />;
   } else if (state === "incoming") {
-    btn = <Pill label={t("useractionbutton.kabul_et")} small={small} disabled={busy} onPress={() => void run(async () => { if (fid) await social.respond(fid, "accept"); else await social.request(userId); return "friends"; })} />;
+    btn = <Pill label={t("useractionbutton.accept")} small={small} disabled={busy} onPress={() => void run(async () => { if (fid) await social.respond(fid, "accept"); else await social.request(userId); return "friends"; })} />;
   } else {
-    btn = <Pill label={t("useractionbutton.ekle")} icon={UserPlusIcon} small={small} disabled={busy || !canRequest} onPress={() => void run(async () => { const r = await social.request(userId); setFid(r.friendshipId); return r.state; })} />;
+    btn = <Pill label={t("useractionbutton.add")} icon={UserPlusIcon} small={small} disabled={busy || !canRequest} onPress={() => void run(async () => { const r = await social.request(userId); setFid(r.friendshipId); return r.state; })} />;
   }
   return <View style={{ alignItems: "flex-end" }}>{btn}<ErrorText text={err} /></View>;
 }

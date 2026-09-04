@@ -92,9 +92,9 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
       </View>
       <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
         <ActionTile icon={BellIcon} label={t(sent ? "friendrows.nudged" : "friendrows.nudge")} tint={colors.streak} disabled={busy || sent} onPress={() => void act(async () => { await social.nudge(f.userId, "remind"); setSent(true); }, t("social.nudged_you"))} />
-        <ActionTile icon={TargetIcon} label={t("friendrows.gorev")} tint={colors.primary} disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId), t("social.quest_sent"))} />
-        <ActionTile icon={XIcon} label={t("friendrows.cikar")} tint={colors.danger} disabled={busy} onPress={() => Alert.alert(t("social.unfriend"), t("friendrows.remove_confirm", { ad: f.name ?? t("social.this_person") }), [
-          { text: t("common.vazgec"), style: "cancel" },
+        <ActionTile icon={TargetIcon} label={t("friendrows.quest")} tint={colors.primary} disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId), t("social.quest_sent"))} />
+        <ActionTile icon={XIcon} label={t("friendrows.remove")} tint={colors.danger} disabled={busy} onPress={() => Alert.alert(t("social.unfriend"), t("friendrows.remove_confirm", { name: f.name ?? t("social.this_person") }), [
+          { text: t("common.discard"), style: "cancel" },
           { text: t("social.remove"), style: "destructive", onPress: () => void act(async () => { await social.remove(f.userId); onChanged(); }, t("social.removed")) },
         ])} />
       </View>

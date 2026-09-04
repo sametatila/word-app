@@ -14,10 +14,10 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
  */
 function points(): string[] {
   return [
-    t("micdisclosure.yuruyus_modunu_sen_baslatirsin_mik"),
-    t("micdisclosure.ekran_kapaliyken_ya_da_telefon_ceb"),
-    t("micdisclosure.ekran_kapaliyken_soylediklerin_yaz"),
-    t("micdisclosure.ses_kaydi_saklanmaz_yalniz_taninan"),
+    t("micdisclosure.you_start_walk_mode_yourself"),
+    t("micdisclosure.it_keeps_listening_while_screen"),
+    t("micdisclosure.while_screen_is_off_what_you_say"),
+    t("micdisclosure.audio_is_not_stored_only"),
   ];
 }
 
@@ -47,23 +47,23 @@ export function MicDisclosure({ visible, onAccept, onCancel }: { visible: boolea
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, alignSelf: "center" }, softShadow(colors.primary, 12)]}>
             <MicIcon color="#fff" size={36} />
           </View>
-          <Text variant="display" style={{ textAlign: "center" }}>{t("micdisclosure.mikrofon_ve_ses_verisi")}</Text>
+          <Text variant="display" style={{ textAlign: "center" }}>{t("micdisclosure.microphone_and_voice_data")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>
-            {t("micdisclosure.yuruyus_modu_sesle_calisir_baslama")}
+            {t("micdisclosure.walk_mode_works_with_your_voice")}
           </Text>
           <View style={{ gap: spacing.md, marginTop: spacing.sm }}>
             {points().map((p) => <Point key={p} text={p} colors={colors} />)}
           </View>
           <PressableScale onPress={() => openLegal("privacy")} hitSlop={6} accessibilityRole="link" style={{ alignSelf: "center", paddingVertical: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.primary}>{t("micdisclosure.gizlilik_politikasini_oku")}</Text>
+            <Text variant="bodyStrong" color={colors.primary}>{t("micdisclosure.read_privacy_policy")}</Text>
           </PressableScale>
         </ScrollView>
         <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.lg, gap: spacing.sm }}>
           <PressableScale onPress={onAccept} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color="#fff">{t("micdisclosure.kabul_ediyorum_basla")}</Text>
+            <Text variant="h3" color="#fff">{t("micdisclosure.i_agree_start")}</Text>
           </PressableScale>
           <PressableScale onPress={onCancel} style={{ paddingVertical: spacing.md, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.textMuted}>{t("common.vazgec")}</Text>
+            <Text variant="bodyStrong" color={colors.textMuted}>{t("common.discard")}</Text>
           </PressableScale>
         </View>
       </View>

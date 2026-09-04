@@ -44,11 +44,11 @@ export function LeaderboardScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h2">{t("leaderboard.siralama")}</Text>
+          <Text variant="h2">{t("leaderboard.leaderboard")}</Text>
           <Text variant="caption" color={colors.textMuted}>{week ? t("leaderboard.this_week_left", { n: week.daysLeft }) : t("leaderboard.this_week")}</Text>
         </View>
       </View>
@@ -64,16 +64,16 @@ export function LeaderboardScreen() {
 
       {mode === "friends" ? (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-          {user ? <FriendsBoard compact /> : <Text variant="body" color={colors.textMuted}>{t("leaderboard.arkadas_tablosu_icin_giris_yap")}</Text>}
+          {user ? <FriendsBoard compact /> : <Text variant="body" color={colors.textMuted}>{t("leaderboard.sign_in_for_friends_board")}</Text>}
         </ScrollView>
       ) : phase === "loading" ? (
         // Satır iskeleti gerçek satırla aynı yükseklikte (44 arma + 12+12 dolgu).
         <SkeletonRows count={9} height={68} style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md }} />
       ) : phase !== "ready" || !week ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }}>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("leaderboard.yuklenemedi")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("leaderboard.couldn_t_load_leaderboard")}</Text>
           <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-            <Text variant="bodyStrong" color={colors.primary}>{t("common.tekrar_dene")}</Text>
+            <Text variant="bodyStrong" color={colors.primary}>{t("common.try_again")}</Text>
           </PressableScale>
         </View>
       ) : (
@@ -86,7 +86,7 @@ export function LeaderboardScreen() {
           const mc = medalColor(r.rank, colors);
           const initial = ((r.name ?? "?").trim()[0] ?? "?").toUpperCase();
           return (
-            <Pressable onLongPress={r.isMe ? undefined : () => setReport(r)} delayLongPress={400} accessibilityLabel={r.isMe ? undefined : t("leaderboard.report_hint", { ad: r.name ?? t("social.student") })} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 12, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
+            <Pressable onLongPress={r.isMe ? undefined : () => setReport(r)} delayLongPress={400} accessibilityLabel={r.isMe ? undefined : t("leaderboard.report_hint", { name: r.name ?? t("social.student") })} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 12, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
               <View style={{ width: 30, alignItems: "center" }}>
                 <Text variant="h3" color={mc}>{r.rank}</Text>
               </View>

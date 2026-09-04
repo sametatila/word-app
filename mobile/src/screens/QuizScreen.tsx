@@ -54,7 +54,7 @@ export function QuizScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <XIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
@@ -62,7 +62,7 @@ export function QuizScreen() {
             {isCheckpoint ? <CheckIcon color="#fff" size={18} /> : <QuizIcon color="#fff" size={18} />}
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="micro" color={colors.textMuted}>{t("quiz.header", { tur: t(isCheckpoint ? "quiz.checkpoint" : "quiz.review"), birim: t("common.unit"), n: params.unitIndex })}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("quiz.header", { kind: t(isCheckpoint ? "quiz.checkpoint" : "quiz.review"), unit: t("common.unit"), n: params.unitIndex })}</Text>
             <Text variant="h3" numberOfLines={1}>{params.theme}</Text>
           </View>
         </View>
@@ -75,7 +75,7 @@ export function QuizScreen() {
 
         {total === 0 ? (
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center" }}>
-            <Text variant="body" color={colors.textMuted}>{t("quiz.henuz_soru_yok")}</Text>
+            <Text variant="body" color={colors.textMuted}>{t("quiz.this_unit_has_no_questions_yet")}</Text>
           </Card>
         ) : (
           <QuestionList key={round} questions={questions} onAllAnswered={recordAndFinish} colors={colors} />
@@ -85,14 +85,14 @@ export function QuizScreen() {
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={!!passed} />
             <Mascot mood={passed ? "celebrate" : "idle"} size={84} />
-            <Text variant="h2">{t("common.n_correct", { dogru: correct, toplam: total })}</Text>
+            <Text variant="h2">{t("common.n_correct", { correct: correct, total: total })}</Text>
             <Text variant="caption" color={passed ? colors.success : colors.textMuted}>{t(passed ? "quiz.passed" : "quiz.try_more", { pct })}</Text>
             <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
               <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-                <Text variant="bodyStrong" color={colors.text}>{t("quiz.tekrar_dene")}</Text>
+                <Text variant="bodyStrong" color={colors.text}>{t("quiz.try_again")}</Text>
               </PressableScale>
               <PressableScale onPress={() => nav.goBack()} style={[{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-                <Text variant="bodyStrong" color={colors.onPrimary}>{t("quiz.patika_ya_don")}</Text>
+                <Text variant="bodyStrong" color={colors.onPrimary}>{t("quiz.back_to_path")}</Text>
               </PressableScale>
             </View>
           </Card>

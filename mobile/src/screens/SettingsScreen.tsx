@@ -138,10 +138,10 @@ export function SettingsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{t("settings.ayarlar")}</Text>
+        <Text variant="h2">{t("settings.settings")}</Text>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
@@ -149,22 +149,22 @@ export function SettingsScreen() {
           <TextInput
             value={name}
             onChangeText={setName}
-            placeholder={t("settings.gorunen_ad")}
+            placeholder={t("settings.display_name")}
             placeholderTextColor={colors.textFaint}
             autoCapitalize="words"
             style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
           />
           {/* Hesap silme (Play zorunluluğu): ayrı ekran, iki adımlı onay. */}
-          <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("settings.hesabi_sil")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+          <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("settings.delete_account")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
             <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong" color={colors.danger}>{t("settings.hesabi_sil")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("settings.tum_verilerinle_birlikte_geri_alinamaz")}</Text>
+              <Text variant="bodyStrong" color={colors.danger}>{t("settings.delete_account")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("settings.with_all_your_data_can_t_be")}</Text>
             </View>
             <ChevronRightIcon color={colors.textFaint} size={20} />
           </PressableScale>
         </Section>
 
-        <Section title={t("settings.ogrenilecek_dil")} colors={colors}>
+        <Section title={t("settings.language_to_learn")} colors={colors}>
           {courseOptions(uiLang).map((c, i) => {
             const active = course === c.key;
             return (
@@ -181,26 +181,26 @@ export function SettingsScreen() {
           })}
         </Section>
 
-        <Section title={t("settings.seviye")} colors={colors}>
+        <Section title={t("settings.level")} colors={colors}>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
             {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => setLevel(l)} colors={colors} />)}
           </View>
           <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
-            <Text variant="bodyStrong" color={colors.primary}>{t("settings.emin_degil_misin_seviye_testini_coz")}</Text>
+            <Text variant="bodyStrong" color={colors.primary}>{t("settings.not_sure_take_placement_test")}</Text>
           </PressableScale>
         </Section>
 
-        <Section title={t("settings.gunluk_hedef_tekrar_gun")} colors={colors}>
+        <Section title={t("settings.daily_goal_reviews_day")} colors={colors}>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
             {Array.from(new Set([...GOALS, goal])).sort((a, b) => a - b).map((g) => <Chip key={g} label={String(g)} active={goal === g} onPress={() => setGoal(g)} colors={colors} />)}
           </View>
         </Section>
 
-        <Section title={t("settings.okuma_sesi")} colors={colors}>
+        <Section title={t("settings.reading_voice")} colors={colors}>
           <VoicePicker course={course} value={voice} onChange={pickVoice} />
         </Section>
 
-        <Section title={t("settings.uygulama_dili")} colors={colors}>
+        <Section title={t("settings.app_language")} colors={colors}>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
             {NATIVE_LANGS.map((l) => (
               <Chip
@@ -214,7 +214,7 @@ export function SettingsScreen() {
           </View>
         </Section>
 
-        <Section title={t("settings.gorunum")} colors={colors}>
+        <Section title={t("settings.appearance")} colors={colors}>
           <View style={{ flexDirection: "row", backgroundColor: colors.surface2, borderRadius: radii.md, padding: 4 }}>
             {THEME_OPTIONS.map((o) => {
               const active = mode === o.key;
@@ -227,13 +227,13 @@ export function SettingsScreen() {
           </View>
         </Section>
 
-        <Section title={t("settings.gizlilik")} colors={colors}>
+        <Section title={t("settings.privacy")} colors={colors}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}>
             <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong">{t("settings.kullanim_verisi_gonder")}</Text>
+              <Text variant="bodyStrong">{t("settings.send_usage_data")}</Text>
               <Text variant="caption" color={colors.textMuted}>{t("settings.analytics_sub")}</Text>
             </View>
-            <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("settings.kullanim_verisi_gonder")} />
+            <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("settings.send_usage_data")} />
           </View>
           {micConsent === null ? (
             // Onay durumu okunana dek satır yerini tutar: gelince Gizlilik
@@ -246,20 +246,20 @@ export function SettingsScreen() {
               <SkeletonLine variant="h3" width={20} />
             </View>
           ) : micConsent ? (
-            <PressableScale onPress={() => { void setMicConsent(false); setMicConsentState(false); }} accessibilityLabel={t("settings.mikrofon_onayini_geri_al")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+            <PressableScale onPress={() => { void setMicConsent(false); setMicConsentState(false); }} accessibilityLabel={t("settings.revoke_microphone_consent")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t("settings.mikrofon_onayini_geri_al")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("settings.yuruyus_modunda_ses_verisi_aciklamasi_yenide")}</Text>
+                <Text variant="bodyStrong">{t("settings.revoke_microphone_consent")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("settings.you_ll_be_asked_about_voice_data")}</Text>
               </View>
               <ChevronRightIcon color={colors.textFaint} size={20} />
             </PressableScale>
           ) : null}
           <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-            <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.gizlilik_politikasi")}</Text>
+            <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.privacy_policy")}</Text>
             <ChevronRightIcon color={colors.textFaint} size={20} />
           </PressableScale>
           <PressableScale onPress={() => openLegal("terms")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-            <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.kullanim_sartlari")}</Text>
+            <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.terms_of_use")}</Text>
             <ChevronRightIcon color={colors.textFaint} size={20} />
           </PressableScale>
           <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>Lernomi {APP_VERSION}</Text>
@@ -273,7 +273,7 @@ export function SettingsScreen() {
         {msg && <Text variant="bodyStrong" color={msg === "Kaydedildi" ? colors.success : colors.danger} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text>}
 
         <PressableScale onPress={save} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.xl }, softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color="#fff">{busy ? "..." : t(user ? "common.kaydet" : "settings.signin_and_save")}</Text>
+          <Text variant="h3" color="#fff">{busy ? "..." : t(user ? "common.save" : "settings.signin_and_save")}</Text>
         </PressableScale>
       </ScrollView>
     </View>

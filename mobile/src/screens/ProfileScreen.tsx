@@ -61,10 +61,10 @@ export function ProfileScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {/* başlık */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.geri")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2" style={{ flex: 1 }}>{t("profile.profil")}</Text>
+        <Text variant="h2" style={{ flex: 1 }}>{t("profile.profile")}</Text>
         <PressableScale hitSlop={4} onPress={() => nav.navigate("Settings")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <SettingsIcon color={colors.text} size={22} />
         </PressableScale>
@@ -73,7 +73,7 @@ export function ProfileScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {/* kimlik kartı */}
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
-          <PressableScale onPress={() => nav.navigate("Avatar")} accessibilityLabel={t("profile.avatarini_duzenle")} style={softShadow(colors.primary, 10)}>
+          <PressableScale onPress={() => nav.navigate("Avatar")} accessibilityLabel={t("profile.edit_your_avatar")} style={softShadow(colors.primary, 10)}>
             <Avatar size={76} />
           </PressableScale>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
@@ -100,10 +100,10 @@ export function ProfileScreen() {
         {/* istatistik ızgarası — yalnız gerçek veriyle; misafirde uydurma sayı yok */}
         {me ? (
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-            <StatTile value={String(me.mastered)} label={t("profile.ogrenilen_kelime")} color={colors.primary} colors={colors} />
-            <StatTile value={String(me.streak)} label={t("profile.gun_serisi")} color={colors.streak} colors={colors} />
-            <StatTile value={String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")} label={t("profile.toplam_xp")} color={colors.success} colors={colors} />
-            <StatTile value={formatDuration(me.seconds)} label={t("profile.bu_hafta_sure")} color={colors.info} colors={colors} />
+            <StatTile value={String(me.mastered)} label={t("profile.words_learned")} color={colors.primary} colors={colors} />
+            <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streak} colors={colors} />
+            <StatTile value={String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")} label={t("profile.total_xp")} color={colors.success} colors={colors} />
+            <StatTile value={formatDuration(me.seconds)} label={t("profile.time_this_week")} color={colors.info} colors={colors} />
           </View>
         ) : (
           // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: dört karo
@@ -125,8 +125,8 @@ export function ProfileScreen() {
               <CrownIcon color="#fff" size={26} />
             </View>
             <View style={{ flex: 1 }}>
-              <Text variant="h3" color={colors.success}>{t("profile.premium_uye")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("profile.tum_ozellikler_acik_tesekkurler")}</Text>
+              <Text variant="h3" color={colors.success}>{t("profile.premium_member")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("profile.all_features_unlocked_thank_you")}</Text>
             </View>
             <CheckIcon color={colors.success} size={22} />
           </View>
@@ -136,8 +136,8 @@ export function ProfileScreen() {
               <CrownIcon color="#fff" size={26} />
             </View>
             <View style={{ flex: 1 }}>
-              <Text variant="h3" color="#fff">{t("profile.premium_a_gec")}</Text>
-              <Text variant="caption" color="#ffffffcc">{t("profile.sinirsiz_konusma_tam_sinav_hazirligi")}</Text>
+              <Text variant="h3" color="#fff">{t("profile.go_premium")}</Text>
+              <Text variant="caption" color="#ffffffcc">{t("profile.unlimited_speaking_full_exam")}</Text>
             </View>
             <ChevronRightIcon color="#fff" size={22} />
           </PressableScale>
@@ -145,30 +145,30 @@ export function ProfileScreen() {
 
         {/* ayar satırları — görünüm / okuma sesi / dil artık Ayarlar'da */}
         <Card padded style={{ paddingVertical: 0 }}>
-          <Row icon={FaceIcon} label={t("profile.avatarini_duzenle")} tint={colors.primary} colors={colors} onPress={() => nav.navigate("Avatar")} />
-          <Row icon={LearnIcon} label={t("profile.kelimelerim")} tint={colors.primary} colors={colors} onPress={() => nav.navigate("Words")} />
-          <Row icon={TrophyIcon} label={t("profile.basarimlar")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Achievements")} />
-          <Row icon={CheckIcon} label={t("profile.neler_yapabilirim")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
-          <Row icon={WriteIcon} label={t("profile.yazilarim")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Writings")} />
-          <Row icon={PodiumIcon} label={t("profile.haftalik_siralama")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Leaderboard")} />
-          <Row icon={HandshakeIcon} label={t("profile.arkadaslar")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Friends", undefined)} />
-          <Row icon={InboxIcon} label={t("profile.gelen_kutusu")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Inbox")} />
-          <Row icon={ShareIcon} label={t("profile.arkadasini_davet_et")} tint={colors.success} colors={colors} onPress={() => shareInvite()} />
-          <Row icon={BellIcon} label={t("profile.bildirimler")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Notifications")} last />
+          <Row icon={FaceIcon} label={t("profile.edit_your_avatar")} tint={colors.primary} colors={colors} onPress={() => nav.navigate("Avatar")} />
+          <Row icon={LearnIcon} label={t("profile.my_words")} tint={colors.primary} colors={colors} onPress={() => nav.navigate("Words")} />
+          <Row icon={TrophyIcon} label={t("profile.achievements")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Achievements")} />
+          <Row icon={CheckIcon} label={t("profile.what_can_i_do")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
+          <Row icon={WriteIcon} label={t("profile.my_posts")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Writings")} />
+          <Row icon={PodiumIcon} label={t("profile.weekly_leaderboard")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Leaderboard")} />
+          <Row icon={HandshakeIcon} label={t("profile.friends")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Friends", undefined)} />
+          <Row icon={InboxIcon} label={t("profile.inbox")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Inbox")} />
+          <Row icon={ShareIcon} label={t("profile.invite_friend")} tint={colors.success} colors={colors} onPress={() => shareInvite()} />
+          <Row icon={BellIcon} label={t("profile.notifications")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Notifications")} last />
         </Card>
 
         <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
           <LogoutIcon color={colors.danger} size={20} />
-          <Text variant="bodyStrong" color={colors.danger}>{t("profile.cikis_yap")}</Text>
+          <Text variant="bodyStrong" color={colors.danger}>{t("profile.log_out")}</Text>
         </PressableScale>
       </ScrollView>
 
       <ConfirmDialog
         visible={confirmOut}
-        title={t("profile.cikis_yap")}
+        title={t("profile.log_out")}
         message={t("profile.signout_confirm")}
         confirmLabel={t("profile.signout")}
-        cancelLabel={t("common.vazgec")}
+        cancelLabel={t("common.discard")}
         destructive
         onConfirm={reallySignOut}
         onCancel={() => setConfirmOut(false)}

@@ -12,18 +12,18 @@ const withArt = (w: W) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 /** Anlam hatası: seçilen karşılık başka bir kelimenin; doğrusunu yan yana koy. */
 export function whyMeaning(word: W, picked: string | null): string {
   return picked
-    ? t("why.meaning_picked", { secilen: picked, kelime: withArt(word), anlam: word.tr })
+    ? t("why.meaning_picked", { selected: picked, word: withArt(word), meaning: word.tr })
     : `${withArt(word)} = ${word.tr}.`;
 }
 
 /** Artikel hatası — doğru artikeli kelimeyle birlikte hatırlat. */
 export function whyArticle(word: W): string {
   return word.artikel
-    ? t("why.article", { artikel: word.artikel, kelime: word.de })
+    ? t("why.article", { article: word.artikel, word: word.de })
     : t("why.article_plain");
 }
 
 /** Çoğul hatası — doğru çoğul biçim. */
 export function whyPlural(answer: string): string {
-  return t("why.plural", { cogul: answer });
+  return t("why.plural", { plural: answer });
 }

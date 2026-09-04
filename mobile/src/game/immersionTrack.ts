@@ -34,7 +34,7 @@ const SLOT_KEY: Record<string, { title: string; sub: string }> = {
 
 function unitTheme(level: string, firstLessonIndex: number, unitIndex: number): string {
   const theme = moduleTheme(currentCourseId(), level, Math.floor(firstLessonIndex / MODULE_SIZE));
-  return theme || t("path.unit_fallback", { seviye: level, n: unitIndex });
+  return theme || t("path.unit_fallback", { level: level, n: unitIndex });
 }
 
 /**
