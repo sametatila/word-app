@@ -766,7 +766,7 @@ export const deB1B02: Lesson[] = [
     vocab: [
       { de: "der Schaden", tr: "hasar, arıza" },
       { de: "spätestens", tr: "en geç" },
-      { de: "tropfen", tr: "damlamak" },
+      { de: "der Handwerker", tr: "usta, tamirci" },
       { de: "der Mechaniker", tr: "tamirci" },
       { de: "die Panne", tr: "arıza" },
       { de: "die Heizung", tr: "kalorifer" },
@@ -796,7 +796,7 @@ export const deB1B02: Lesson[] = [
       },
       word("İlk", { de: "der Schaden", tr: "hasar, arıza" }),
       word("İkinci", { de: "spätestens", tr: "en geç" }),
-      word("Üçüncü", { de: "tropfen", tr: "damlamak" }),
+      word("Üçüncü", { de: "der Handwerker", tr: "usta, tamirci" }),
       word("Dördüncü", { de: "der Mechaniker", tr: "tamirci" }),
       word("Beşinci", { de: "die Panne", tr: "arıza" }),
       word("Altıncı", { de: "die Heizung", tr: "kalorifer" }),
