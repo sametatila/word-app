@@ -41988,11 +41988,27 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Meet ilk tanışma içindir, o yüzden again ile birlikte kullanılmaz. Daha önce tanıştığın birini yeniden gördüğünde şöyle dersin:"
+       "text": "Yanlış."
+      },
+      {
+       "lang": "en",
+       "text": "Nice to meet you"
+      },
+      {
+       "lang": "tr",
+       "text": "kalıbı ilk tanışma içindir. Daha önce tanıştığın birini yeniden gördüğünde şöyle dersin:"
       },
       {
        "lang": "en",
        "text": "Nice to see you again."
+      },
+      {
+       "lang": "tr",
+       "text": "meet fiilinin kendisi buluşmak anlamında again ile kullanılabilir:"
+      },
+      {
+       "lang": "en",
+       "text": "Let's meet again next week."
       }
      ]
     }
@@ -42375,7 +42391,9 @@
      "accept": [
       "Thank you for helping me yesterday.",
       "Thanks for helping me yesterday",
-      "Thank you for your help yesterday."
+      "Thank you for your help yesterday.",
+      "Thanks for your help yesterday.",
+      "Thanks for your help yesterday"
      ],
      "hint": [
       {
@@ -43725,7 +43743,7 @@
      },
      {
       "lang": "tr",
-      "text": ", tavsiye etmek. Söylenişine dikkat: vurgu ikinci hecede, 'rikoMEND'. Lütfen 'recommend' de."
+      "text": ", tavsiye etmek. Söylenişine dikkat: vurgu son hecede, 'rekoMEND'. Lütfen 'recommend' de."
      }
     ],
     "expect": {
@@ -44352,7 +44370,6 @@
      "kind": "produce",
      "target": "It happened last night.",
      "accept": [
-      "It happened yesterday night.",
       "This happened last night."
      ],
      "hint": [
@@ -45716,7 +45733,7 @@
      },
      {
       "lang": "tr",
-      "text": "İngilizcede birine bir şey öner_mek için"
+      "text": "İngilizcede birine bir şey önermek için"
      },
      {
       "lang": "en",
@@ -46856,7 +46873,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Fikrini yumuşatmak istersen"
+      "text": "Fikrini güçlendirmek için very, yumuşatmak için not very"
      },
      {
       "lang": "en",
@@ -47819,7 +47836,7 @@
      },
      {
       "lang": "en",
-      "text": "at the end"
+      "text": "lastly"
      },
      {
       "lang": "tr",
@@ -49160,7 +49177,9 @@
      "accept": [
       "I have got my passport with me.",
       "I've got my passport with me.",
-      "I have my passport here."
+      "I have my passport here.",
+      "My passport is with me.",
+      "My passport is with me"
      ],
      "hint": [
       {
@@ -51333,7 +51352,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dikkat: gün adlarının önüne for koyuyoruz, on değil. For Monday, for Friday. Ama saat söylerken at kullanırız:"
+      "text": "Dikkat: randevunun hangi güne ayrıldığını söylerken for kullanılır — an appointment for Monday. Ama günün kendisini belirtirken on gelir: Could I come on Monday? Ama saat söylerken at kullanırız:"
      },
      {
       "lang": "en",
@@ -52869,7 +52888,7 @@
      },
      {
       "lang": "en",
-      "text": "I look forward to your answer."
+      "text": "I look forward to your reply."
      },
      {
       "lang": "tr",
@@ -52885,12 +52904,12 @@
      },
      {
       "lang": "en",
-      "text": "I look forward to your answer."
+      "text": "I look forward to your reply."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I look forward to your answer."
+     "target": "I look forward to your reply."
     }
    },
    {
@@ -53155,7 +53174,9 @@
      "target": "They collect the rubbish on Tuesdays.",
      "accept": [
       "They collect rubbish on Tuesdays.",
-      "They collect the rubbish on Tuesday."
+      "They collect the rubbish on Tuesday.",
+      "They collect the rubbish every Tuesday.",
+      "They collect rubbish every Tuesday."
      ],
      "hint": [
       {

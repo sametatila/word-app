@@ -32284,7 +32284,15 @@
      },
      {
       "lang": "tr",
-      "text": "Sıralamayı duydun mu? Önce eşya, sonra is, sonra yer — Türkçedeki gibi. Asıl fark şu: Türkçede yer sözcüğü isimden sonra gelir (masanın üstünde), İngilizcede isimden önce (on the table)."
+      "text": "Sıralamayı duydun mu? Önce eşya, sonra is, sonra yer — Türkçedeki gibi. Asıl fark şu: Türkçede yer sözcüğü isimden sonra gelir (masanın üstünde), İngilizcede isimden önce ("
+     },
+     {
+      "lang": "en",
+      "text": "on the table"
+     },
+     {
+      "lang": "tr",
+      "text": ")."
      }
     ]
    },
