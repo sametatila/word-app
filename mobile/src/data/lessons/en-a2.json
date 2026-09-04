@@ -1554,7 +1554,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -1562,7 +1562,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Türkçesi \"önce\" demek. Ama dikkat: İngilizcede süreden SONRA gelir. Türkçede \"iki gün önce\" deriz, İngilizcede de sıra aynıdır: önce süre, sonra "
+      "text": ". Türkçesi \"önce\" demek. Ama dikkat: İngilizcede süreden SONRA gelir. Türkçede \"iki gün önce\" deriz, İngilizcede de sıra aynıdır: önce süre, sonra"
      },
      {
       "lang": "en",
@@ -1578,7 +1578,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi \"iki gün önce\" diyelim. Lütfen tekrar et: "
+      "text": "Şimdi \"iki gün önce\" diyelim. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -1594,7 +1594,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Güzel. Bunu bir cümleye koyalım. \"Onu iki gün önce gördüm.\" İngilizcesi: "
+      "text": "Güzel. Bunu bir cümleye koyalım. \"Onu iki gün önce gördüm.\" İngilizcesi:"
      },
      {
       "lang": "en",
@@ -1610,7 +1610,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi daha uzun bir süre. \"Bir yıl önce\". Lütfen söyle: "
+      "text": "Şimdi daha uzun bir süre. \"Bir yıl önce\". Lütfen söyle:"
      },
      {
       "lang": "en",
@@ -1626,7 +1626,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Aynı mantık her süre için çalışır: "
+      "text": "Aynı mantık her süre için çalışır:"
      },
      {
       "lang": "en",
@@ -1634,7 +1634,7 @@
      },
      {
       "lang": "tr",
-      "text": ", "
+      "text": ","
      },
      {
       "lang": "en",
@@ -1642,7 +1642,7 @@
      },
      {
       "lang": "tr",
-      "text": ", "
+      "text": ","
      },
      {
       "lang": "en",
@@ -1650,7 +1650,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Süre, sonra "
+      "text": ". Süre, sonra"
      },
      {
       "lang": "en",
@@ -1666,7 +1666,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kelimemiz: "
+      "text": "İkinci kelimemiz:"
      },
      {
       "lang": "en",
@@ -1674,7 +1674,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Burada \"geçen\" demek. "
+      "text": ". Burada \"geçen\" demek."
      },
      {
       "lang": "en",
@@ -1682,7 +1682,7 @@
      },
      {
       "lang": "tr",
-      "text": " geçen hafta, "
+      "text": "geçen hafta,"
      },
      {
       "lang": "en",
@@ -1690,7 +1690,7 @@
      },
      {
       "lang": "tr",
-      "text": " geçen yıl. Lütfen tekrar et: "
+      "text": "geçen yıl. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -1706,7 +1706,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çok önemli bir nokta: "
+      "text": "Çok önemli bir nokta:"
      },
      {
       "lang": "en",
@@ -1714,7 +1714,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile önüne edat koymayız. "
+      "text": "ile önüne edat koymayız."
      },
      {
       "lang": "en",
@@ -1722,7 +1722,7 @@
      },
      {
       "lang": "tr",
-      "text": " yanlıştır. Sadece "
+      "text": "yanlıştır. Sadece"
      },
      {
       "lang": "en",
@@ -1730,7 +1730,7 @@
      },
      {
       "lang": "tr",
-      "text": " deriz."
+      "text": "deriz."
      }
     ]
    },
@@ -1752,7 +1752,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "\"Taşındık\" "
+       "text": "\"Taşındık\""
       },
       {
        "lang": "en",
@@ -1760,7 +1760,7 @@
       },
       {
        "lang": "tr",
-       "text": ", sonra "
+       "text": ", sonra"
       },
       {
        "lang": "en",
@@ -1768,7 +1768,7 @@
       },
       {
        "lang": "tr",
-       "text": ", en sonda zaman: "
+       "text": ", en sonda zaman:"
       },
       {
        "lang": "en",
@@ -1781,7 +1781,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üçüncü kelimemiz: "
+      "text": "Üçüncü kelimemiz:"
      },
      {
       "lang": "en",
@@ -1797,7 +1797,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Günün bir parçasını da ekleyebiliriz: dün sabah, dün akşam. Lütfen söyle: "
+      "text": "Günün bir parçasını da ekleyebiliriz: dün sabah, dün akşam. Lütfen söyle:"
      },
      {
       "lang": "en",
@@ -1813,7 +1813,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Aynı şekilde "
+      "text": "Aynı şekilde"
      },
      {
       "lang": "en",
@@ -1821,7 +1821,7 @@
      },
      {
       "lang": "tr",
-      "text": " dün akşam, "
+      "text": "dün akşam,"
      },
      {
       "lang": "en",
@@ -1829,7 +1829,7 @@
      },
      {
       "lang": "tr",
-      "text": " ise dün gece. Dikkat: dün gece için "
+      "text": "ise dün gece. Dikkat: dün gece için"
      },
      {
       "lang": "en",
@@ -1837,7 +1837,7 @@
      },
      {
       "lang": "tr",
-      "text": " demeyiz, "
+      "text": "demeyiz,"
      },
      {
       "lang": "en",
@@ -1845,7 +1845,7 @@
      },
      {
       "lang": "tr",
-      "text": " deriz."
+      "text": "deriz."
      }
     ]
    },
@@ -1853,7 +1853,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi üçüncü yapı: "
+      "text": "Şimdi üçüncü yapı:"
      },
      {
       "lang": "en",
@@ -1861,7 +1861,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Bir yılı ya da bir ayı söylerken "
+      "text": ". Bir yılı ya da bir ayı söylerken"
      },
      {
       "lang": "en",
@@ -1869,7 +1869,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullanırız: "
+      "text": "kullanırız:"
      },
      {
       "lang": "en",
@@ -1877,7 +1877,7 @@
      },
      {
       "lang": "tr",
-      "text": ", "
+      "text": ","
      },
      {
       "lang": "en",
@@ -1893,7 +1893,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Lütfen tekrar et: "
+      "text": "Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -1923,7 +1923,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. "
+       "text": "Yanlış."
       },
       {
        "lang": "en",
@@ -1931,7 +1931,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile "
+       "text": "ile"
       },
       {
        "lang": "en",
@@ -1939,7 +1939,7 @@
       },
       {
        "lang": "tr",
-       "text": " birlikte kullanılmaz. Doğrusu: "
+       "text": "birlikte kullanılmaz. Doğrusu:"
       },
       {
        "lang": "en",
@@ -1966,7 +1966,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "\"Aldım\" "
+       "text": "\"Aldım\""
       },
       {
        "lang": "en",
@@ -1974,7 +1974,7 @@
       },
       {
        "lang": "tr",
-       "text": ", sonra "
+       "text": ", sonra"
       },
       {
        "lang": "en",
@@ -1982,7 +1982,7 @@
       },
       {
        "lang": "tr",
-       "text": ", en sonda "
+       "text": ", en sonda"
       },
       {
        "lang": "en",
@@ -1995,7 +1995,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de soru soralım. \"Ne zaman?\" diye sormak için "
+      "text": "Bir de soru soralım. \"Ne zaman?\" diye sormak için"
      },
      {
       "lang": "en",
@@ -2003,7 +2003,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullanırız. Lütfen tekrar et: "
+      "text": "kullanırız. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -2019,7 +2019,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Cevap da bugün öğrendiğimiz ifadelerle gelir: "
+      "text": "Cevap da bugün öğrendiğimiz ifadelerle gelir:"
      },
      {
       "lang": "en",
@@ -2027,7 +2027,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da "
+      "text": "ya da"
      },
      {
       "lang": "en",
@@ -2053,7 +2053,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "\"Aradım\" "
+       "text": "\"Aradım\""
       },
       {
        "lang": "en",
@@ -2061,7 +2061,7 @@
       },
       {
        "lang": "tr",
-       "text": ", sonra "
+       "text": ", sonra"
       },
       {
        "lang": "en",
@@ -2069,7 +2069,7 @@
       },
       {
        "lang": "tr",
-       "text": ", en sonda "
+       "text": ", en sonda"
       },
       {
        "lang": "en",
@@ -2082,7 +2082,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Özetleyelim: süreden sonra "
+      "text": "Harika iş çıkardın. Özetleyelim: süreden sonra"
      },
      {
       "lang": "en",
@@ -2090,7 +2090,7 @@
      },
      {
       "lang": "tr",
-      "text": " — "
+      "text": "—"
      },
      {
       "lang": "en",
@@ -2098,7 +2098,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Yakın geçmiş için "
+      "text": ". Yakın geçmiş için"
      },
      {
       "lang": "en",
@@ -2106,7 +2106,7 @@
      },
      {
       "lang": "tr",
-      "text": " ve edat yok — "
+      "text": "ve edat yok —"
      },
      {
       "lang": "en",
@@ -2114,7 +2114,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Yıl ve ay için "
+      "text": ". Yıl ve ay için"
      },
      {
       "lang": "en",
@@ -2122,7 +2122,7 @@
      },
      {
       "lang": "tr",
-      "text": " — "
+      "text": "—"
      },
      {
       "lang": "en",
@@ -9390,8 +9390,12 @@
       "text": "the most beautiful city"
      },
      {
+      "lang": "en",
+      "text": "Most beautiful city"
+     },
+     {
       "lang": "tr",
-      "text": "\"Most beautiful city\" değil. The'sız olmuyor."
+      "text": "değil. The'sız olmuyor."
      }
     ]
    },
@@ -12280,7 +12284,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz kolay: "
+      "text": "İlk kelimemiz kolay:"
      },
      {
       "lang": "en",
@@ -12304,7 +12308,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıklık. Kutuda çok sık gördüğün kelime: "
+      "text": "Şimdi sıklık. Kutuda çok sık gördüğün kelime:"
      },
      {
       "lang": "en",
@@ -12312,7 +12316,7 @@
      },
      {
       "lang": "tr",
-      "text": ". İki kez demek. Günde iki kez dersen: "
+      "text": ". İki kez demek. Günde iki kez dersen:"
      },
      {
       "lang": "en",
@@ -12336,7 +12340,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Diğer sıklıkları da not et. Günde bir kez: "
+      "text": "Diğer sıklıkları da not et. Günde bir kez:"
      },
      {
       "lang": "en",
@@ -12344,7 +12348,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Günde üç kez: "
+      "text": ". Günde üç kez:"
      },
      {
       "lang": "en",
@@ -12352,7 +12356,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Dikkat: bir ve iki için ayrı kelimeler var, "
+      "text": ". Dikkat: bir ve iki için ayrı kelimeler var,"
      },
      {
       "lang": "en",
@@ -12360,7 +12364,7 @@
      },
      {
       "lang": "tr",
-      "text": "; üçten sonra ise sayı artı "
+      "text": "; üçten sonra ise sayı artı"
      },
      {
       "lang": "en",
@@ -12368,7 +12372,7 @@
      },
      {
       "lang": "tr",
-      "text": " diyoruz. Yani üç kez için "
+      "text": "diyoruz. Yani üç kez için"
      },
      {
       "lang": "en",
@@ -12376,7 +12380,7 @@
      },
      {
       "lang": "tr",
-      "text": ", altı saatte bir için "
+      "text": ", altı saatte bir için"
      },
      {
       "lang": "en",
@@ -12392,7 +12396,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlacın ne kadarını alacağına doz diyoruz. İngilizcesi "
+      "text": "İlacın ne kadarını alacağına doz diyoruz. İngilizcesi"
      },
      {
       "lang": "en",
@@ -12400,7 +12404,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Kutuda şöyle geçer: "
+      "text": ". Kutuda şöyle geçer:"
      },
      {
       "lang": "en",
@@ -12408,7 +12412,7 @@
      },
      {
       "lang": "tr",
-      "text": " Normal doz bir tablettir. Lütfen kelimeyi söyle."
+      "text": "Normal doz bir tablettir. Lütfen kelimeyi söyle."
      },
      {
       "lang": "en",
@@ -12424,7 +12428,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Öğün kelimesi de lazım: "
+      "text": "Öğün kelimesi de lazım:"
      },
      {
       "lang": "en",
@@ -12432,7 +12436,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Yemeklerden sonra: "
+      "text": ". Yemeklerden sonra:"
      },
      {
       "lang": "en",
@@ -12440,7 +12444,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Yemeklerden önce: "
+      "text": ". Yemeklerden önce:"
      },
      {
       "lang": "en",
@@ -12448,7 +12452,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Aç karnına ise "
+      "text": ". Aç karnına ise"
      },
      {
       "lang": "en",
@@ -12464,7 +12468,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi prospektüsün en önemli cümlesi. Şunu dikkatle dinle: "
+      "text": "Şimdi prospektüsün en önemli cümlesi. Şunu dikkatle dinle:"
      },
      {
       "lang": "en",
@@ -12472,7 +12476,7 @@
      },
      {
       "lang": "tr",
-      "text": " Günde iki kez bir tablet al. Cümle emir kipiyle başlıyor, yani "
+      "text": "Günde iki kez bir tablet al. Cümle emir kipiyle başlıyor, yani"
      },
      {
       "lang": "en",
@@ -12480,7 +12484,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile; talimatlarda özne yazılmaz. Lütfen tekrar et."
+      "text": "ile; talimatlarda özne yazılmaz. Lütfen tekrar et."
      },
      {
       "lang": "en",
@@ -12496,7 +12500,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kutu bazen emir vermez, tavsiye eder. O zaman "
+      "text": "Kutu bazen emir vermez, tavsiye eder. O zaman"
      },
      {
       "lang": "en",
@@ -12504,7 +12508,7 @@
      },
      {
       "lang": "tr",
-      "text": " görürsün. "
+      "text": "görürsün."
      },
      {
       "lang": "en",
@@ -12512,7 +12516,7 @@
      },
      {
       "lang": "tr",
-      "text": " Onu yemeklerden sonra almalısın. "
+      "text": "Onu yemeklerden sonra almalısın."
      },
      {
       "lang": "en",
@@ -12520,7 +12524,7 @@
      },
      {
       "lang": "tr",
-      "text": " kelimesinden sonra fiil yalın kalır: "
+      "text": "kelimesinden sonra fiil yalın kalır:"
      },
      {
       "lang": "en",
@@ -12528,7 +12532,7 @@
      },
      {
       "lang": "tr",
-      "text": ", "
+      "text": ","
      },
      {
       "lang": "en",
@@ -12536,7 +12540,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Araya "
+      "text": ". Araya"
      },
      {
       "lang": "en",
@@ -12544,7 +12548,7 @@
      },
      {
       "lang": "tr",
-      "text": " koymuyoruz."
+      "text": "koymuyoruz."
      }
     ]
    },
@@ -12567,7 +12571,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Şöyle başla: "
+       "text": "Şöyle başla:"
       },
       {
        "lang": "en",
@@ -12575,7 +12579,7 @@
       },
       {
        "lang": "tr",
-       "text": " ... sonuna yemeklerden sonra ekle."
+       "text": "... sonuna yemeklerden sonra ekle."
       }
      ]
     }
@@ -12584,7 +12588,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de soru sormayı öğrenelim. Sayılabilen şeylerin adedini sorarken "
+      "text": "Bir de soru sormayı öğrenelim. Sayılabilen şeylerin adedini sorarken"
      },
      {
       "lang": "en",
@@ -12592,7 +12596,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullanıyoruz. Yani: "
+      "text": "kullanıyoruz. Yani:"
      },
      {
       "lang": "en",
@@ -12600,7 +12604,7 @@
      },
      {
       "lang": "tr",
-      "text": " ... Kaç tablet. Bunun arkasına "
+      "text": "... Kaç tablet. Bunun arkasına"
      },
      {
       "lang": "en",
@@ -12608,7 +12612,7 @@
      },
      {
       "lang": "tr",
-      "text": " gelirse tam soru olur. Dikkat et, soruda "
+      "text": "gelirse tam soru olur. Dikkat et, soruda"
      },
      {
       "lang": "en",
@@ -12616,7 +12620,7 @@
      },
      {
       "lang": "tr",
-      "text": " özneden önce gelir."
+      "text": "özneden önce gelir."
      }
     ]
    },
@@ -12638,7 +12642,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Kaç tablet için "
+       "text": "Kaç tablet için"
       },
       {
        "lang": "en",
@@ -12646,7 +12650,7 @@
       },
       {
        "lang": "tr",
-       "text": ", sonra "
+       "text": ", sonra"
       },
       {
        "lang": "en",
@@ -12654,7 +12658,7 @@
       },
       {
        "lang": "tr",
-       "text": " ve fiil."
+       "text": "ve fiil."
       }
      ]
     }
@@ -12677,7 +12681,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. "
+       "text": "Yanlış."
       },
       {
        "lang": "en",
@@ -12685,7 +12689,7 @@
       },
       {
        "lang": "tr",
-       "text": " aç karnına demek, yani yemekten önce. Büyük bir yemekten sonra almak "
+       "text": "aç karnına demek, yani yemekten önce. Büyük bir yemekten sonra almak"
       },
       {
        "lang": "en",
@@ -12693,7 +12697,7 @@
       },
       {
        "lang": "tr",
-       "text": " olurdu."
+       "text": "olurdu."
       }
      ]
     }
@@ -12702,7 +12706,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi ilacı alıp almadığını söylemeyi öğrenelim. Bunun için "
+      "text": "Şimdi ilacı alıp almadığını söylemeyi öğrenelim. Bunun için"
      },
      {
       "lang": "en",
@@ -12710,7 +12714,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile kurulan bir yapı kullanıyoruz. Bak: "
+      "text": "ile kurulan bir yapı kullanıyoruz. Bak:"
      },
      {
       "lang": "en",
@@ -12718,7 +12722,7 @@
      },
      {
       "lang": "tr",
-      "text": " Tabletimi çoktan aldım. "
+      "text": "Tabletimi çoktan aldım."
      },
      {
       "lang": "en",
@@ -12726,7 +12730,7 @@
      },
      {
       "lang": "tr",
-      "text": " çoktan, zaten demek ve olumlu cümlede ortada durur."
+      "text": "çoktan, zaten demek ve olumlu cümlede ortada durur."
      }
     ]
    },
@@ -12734,7 +12738,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Almadıysan da "
+      "text": "Almadıysan da"
      },
      {
       "lang": "en",
@@ -12742,7 +12746,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullanıyorsun ve o cümlenin sonuna gider: "
+      "text": "kullanıyorsun ve o cümlenin sonuna gider:"
      },
      {
       "lang": "en",
@@ -12750,7 +12754,7 @@
      },
      {
       "lang": "tr",
-      "text": " İlacımı henüz almadım. Sen de kur."
+      "text": "İlacımı henüz almadım. Sen de kur."
      }
     ],
     "expect": {
@@ -12765,7 +12769,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Başlangıç "
+       "text": "Başlangıç"
       },
       {
        "lang": "en",
@@ -12773,7 +12777,7 @@
       },
       {
        "lang": "tr",
-       "text": ", sonuna da "
+       "text": ", sonuna da"
       },
       {
        "lang": "en",
@@ -12781,7 +12785,7 @@
       },
       {
        "lang": "tr",
-       "text": " koymayı unutma."
+       "text": "koymayı unutma."
       }
      ]
     }
@@ -12790,7 +12794,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kutunun alt kısmında bir bölüm daha var: yan etkiler. İngilizcesi "
+      "text": "Kutunun alt kısmında bir bölüm daha var: yan etkiler. İngilizcesi"
      },
      {
       "lang": "en",
@@ -12798,7 +12802,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Birden fazlaysa sonuna s gelir: "
+      "text": ". Birden fazlaysa sonuna s gelir:"
      },
      {
       "lang": "en",
@@ -12822,7 +12826,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Eczacıya sormak istersen tek cümle yeter: "
+      "text": "Eczacıya sormak istersen tek cümle yeter:"
      },
      {
       "lang": "en",
@@ -12830,7 +12834,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yan etkisi var mı? Lütfen tekrar et."
+      "text": "Yan etkisi var mı? Lütfen tekrar et."
      },
      {
       "lang": "en",
@@ -12846,7 +12850,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Cevap genelde şöyle gelir: "
+      "text": "Cevap genelde şöyle gelir:"
      },
      {
       "lang": "en",
@@ -12854,7 +12858,7 @@
      },
      {
       "lang": "tr",
-      "text": " Seni uykulu yapabilir. Ya da "
+      "text": "Seni uykulu yapabilir. Ya da"
      },
      {
       "lang": "en",
@@ -12862,7 +12866,7 @@
      },
      {
       "lang": "tr",
-      "text": " Aldıktan sonra araba kullanma. Bir de sık duyacağın uyarı: "
+      "text": "Aldıktan sonra araba kullanma. Bir de sık duyacağın uyarı:"
      },
      {
       "lang": "en",
@@ -12870,7 +12874,7 @@
      },
      {
       "lang": "tr",
-      "text": " Çocuklardan uzak tut."
+      "text": "Çocuklardan uzak tut."
      }
     ]
    },
@@ -12878,7 +12882,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Hepsini bir araya koyalım, eczanedeki konuşma böyle gider. Eczacı: "
+      "text": "Hepsini bir araya koyalım, eczanedeki konuşma böyle gider. Eczacı:"
      },
      {
       "lang": "en",
@@ -12886,7 +12890,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sen: "
+      "text": "Sen:"
      },
      {
       "lang": "en",
@@ -12894,7 +12898,7 @@
      },
      {
       "lang": "tr",
-      "text": " Eczacı: "
+      "text": "Eczacı:"
      },
      {
       "lang": "en",
@@ -12902,7 +12906,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sen: "
+      "text": "Sen:"
      },
      {
       "lang": "en",
@@ -12914,7 +12918,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çok iyi gitti. Bugün prospektüsü okudun: "
+      "text": "Çok iyi gitti. Bugün prospektüsü okudun:"
      },
      {
       "lang": "en",
@@ -12922,7 +12926,7 @@
      },
      {
       "lang": "tr",
-      "text": " kelimelerini, sıklık için "
+      "text": "kelimelerini, sıklık için"
      },
      {
       "lang": "en",
@@ -12930,7 +12934,7 @@
      },
      {
       "lang": "tr",
-      "text": " kalıplarını, talimat için "
+      "text": "kalıplarını, talimat için"
      },
      {
       "lang": "en",
@@ -12938,7 +12942,7 @@
      },
      {
       "lang": "tr",
-      "text": " ve tavsiye için "
+      "text": "ve tavsiye için"
      },
      {
       "lang": "en",
@@ -12946,7 +12950,7 @@
      },
      {
       "lang": "tr",
-      "text": " cümlelerini öğrendin. Bir de "
+      "text": "cümlelerini öğrendin. Bir de"
      },
      {
       "lang": "en",
@@ -12954,7 +12958,7 @@
      },
      {
       "lang": "tr",
-      "text": " ve "
+      "text": "ve"
      },
      {
       "lang": "en",
@@ -12962,7 +12966,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile ilacı alıp almadığını söylemeyi. Şimdi eczaneye girip pratik yapalım."
+      "text": "ile ilacı alıp almadığını söylemeyi. Şimdi eczaneye girip pratik yapalım."
      }
     ]
    }
@@ -13042,7 +13046,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -13050,7 +13054,7 @@
      },
      {
       "lang": "tr",
-      "text": " — hastane demek. Lütfen sen de söyle: "
+      "text": "— hastane demek. Lütfen sen de söyle:"
      },
      {
       "lang": "en",
@@ -13066,7 +13070,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Hastanede sana ilk yardım eden kişi genelde hemşiredir. İngilizcesi: "
+      "text": "Hastanede sana ilk yardım eden kişi genelde hemşiredir. İngilizcesi:"
      },
      {
       "lang": "en",
@@ -13074,7 +13078,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Sen de de: "
+      "text": ". Sen de de:"
      },
      {
       "lang": "en",
@@ -13090,7 +13094,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Hastanedeki bölümlere, yani servise "
+      "text": "Hastanedeki bölümlere, yani servise"
      },
      {
       "lang": "en",
@@ -13098,7 +13102,7 @@
      },
      {
       "lang": "tr",
-      "text": " denir. Mesela çocuk servisi: "
+      "text": "denir. Mesela çocuk servisi:"
      },
      {
       "lang": "en",
@@ -13106,7 +13110,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Şimdi sen söyle: "
+      "text": ". Şimdi sen söyle:"
      },
      {
       "lang": "en",
@@ -13122,7 +13126,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Hastanede en çok yaptığın şey ne? Beklemek. İngilizcesi "
+      "text": "Hastanede en çok yaptığın şey ne? Beklemek. İngilizcesi"
      },
      {
       "lang": "en",
@@ -13130,7 +13134,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Mesela: "
+      "text": ". Mesela:"
      },
      {
       "lang": "en",
@@ -13138,7 +13142,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani beklemek zorundayım."
+      "text": "Yani beklemek zorundayım."
      }
     ]
    },
@@ -13146,7 +13150,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Tahlil verdiysen sonucunu beklersin. Sonuç: "
+      "text": "Tahlil verdiysen sonucunu beklersin. Sonuç:"
      },
      {
       "lang": "en",
@@ -13154,7 +13158,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Genelde çoğul söylenir: "
+      "text": ". Genelde çoğul söylenir:"
      },
      {
       "lang": "en",
@@ -13162,7 +13166,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Sen de de: "
+      "text": ". Sen de de:"
      },
      {
       "lang": "en",
@@ -13178,7 +13182,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin asıl konusuna geçelim: kibar sorular. İngilizcede birine bir şey sormadan önce "
+      "text": "Şimdi dersin asıl konusuna geçelim: kibar sorular. İngilizcede birine bir şey sormadan önce"
      },
      {
       "lang": "en",
@@ -13186,7 +13190,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin. Bu, 'affedersiniz' demek. Hastanede bunu çok kullanacaksın."
+      "text": "dersin. Bu, 'affedersiniz' demek. Hastanede bunu çok kullanacaksın."
      }
     ]
    },
@@ -13194,7 +13198,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yardım istemenin en kibar yolu: "
+      "text": "Yardım istemenin en kibar yolu:"
      },
      {
       "lang": "en",
@@ -13202,7 +13206,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen tekrar et."
+      "text": "Lütfen tekrar et."
      }
     ],
     "expect": {
@@ -13214,7 +13218,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dikkat: "
+      "text": "Dikkat:"
      },
      {
       "lang": "en",
@@ -13222,7 +13226,7 @@
      },
      {
       "lang": "tr",
-      "text": " de doğrudur ama "
+      "text": "de doğrudur ama"
      },
      {
       "lang": "en",
@@ -13230,7 +13234,7 @@
      },
      {
       "lang": "tr",
-      "text": " daha kibardır. Hastanede, resmî yerlerde, tanımadığın insanlarla hep "
+      "text": "daha kibardır. Hastanede, resmî yerlerde, tanımadığın insanlarla hep"
      },
      {
       "lang": "en",
@@ -13238,7 +13242,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullan."
+      "text": "kullan."
      }
     ]
    },
@@ -13246,7 +13250,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi yer soralım. Kaba hâli: "
+      "text": "Şimdi yer soralım. Kaba hâli:"
      },
      {
       "lang": "en",
@@ -13254,7 +13258,7 @@
      },
      {
       "lang": "tr",
-      "text": " Kibar hâli: "
+      "text": "Kibar hâli:"
      },
      {
       "lang": "en",
@@ -13262,7 +13266,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani 'servisin nerede olduğunu söyleyebilir misiniz?'"
+      "text": "Yani 'servisin nerede olduğunu söyleyebilir misiniz?'"
      }
     ]
    },
@@ -13270,7 +13274,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Burada önemli bir nokta var: "
+      "text": "Burada önemli bir nokta var:"
      },
      {
       "lang": "en",
@@ -13278,7 +13282,7 @@
      },
      {
       "lang": "tr",
-      "text": " dedikten sonra cümle düz devam eder. "
+      "text": "dedikten sonra cümle düz devam eder."
      },
      {
       "lang": "en",
@@ -13286,7 +13290,7 @@
      },
      {
       "lang": "tr",
-      "text": " — önce yer, sonra 'is'. Şimdi tekrar et: "
+      "text": "— önce yer, sonra 'is'. Şimdi tekrar et:"
      },
      {
       "lang": "en",
@@ -13316,7 +13320,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Şöyle başla: "
+       "text": "Şöyle başla:"
       },
       {
        "lang": "en",
@@ -13324,7 +13328,7 @@
       },
       {
        "lang": "tr",
-       "text": " … sonra 'the nurse' ve 'is'."
+       "text": "… sonra 'the nurse' ve 'is'."
       }
      ]
     }
@@ -13333,7 +13337,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi ne istediğini söyleyelim. "
+      "text": "Şimdi ne istediğini söyleyelim."
      },
      {
       "lang": "en",
@@ -13341,7 +13345,7 @@
      },
      {
       "lang": "tr",
-      "text": " deme, sert durur. Bunun yerine "
+      "text": "deme, sert durur. Bunun yerine"
      },
      {
       "lang": "en",
@@ -13349,7 +13353,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullan. Bu, "
+      "text": "kullan. Bu,"
      },
      {
       "lang": "en",
@@ -13357,7 +13361,7 @@
      },
      {
       "lang": "tr",
-      "text": " ifadesinin kısası ve 'istiyorum'un kibar hâlidir."
+      "text": "ifadesinin kısası ve 'istiyorum'un kibar hâlidir."
      }
     ]
    },
@@ -13365,7 +13369,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Doktor görmek istediğini şöyle söylersin: "
+      "text": "Doktor görmek istediğini şöyle söylersin:"
      },
      {
       "lang": "en",
@@ -13373,7 +13377,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen tekrar et."
+      "text": "Lütfen tekrar et."
      }
     ],
     "expect": {
@@ -13403,7 +13407,7 @@
       },
       {
        "lang": "tr",
-       "text": " … sonra 'a doctor' ve 'please'."
+       "text": "… sonra 'a doctor' ve 'please'."
       }
      ]
     }
@@ -13412,7 +13416,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Hemşire sana beklemeni söyleyebilir: "
+      "text": "Hemşire sana beklemeni söyleyebilir:"
      },
      {
       "lang": "en",
@@ -13420,7 +13424,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani 'oturun ve bekleyin'. O zaman sen ne kadar süre olduğunu sorarsın: "
+      "text": "Yani 'oturun ve bekleyin'. O zaman sen ne kadar süre olduğunu sorarsın:"
      },
      {
       "lang": "en",
@@ -13450,7 +13454,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile başla, sonra 'do I have to' ve 'beklemek' fiili."
+       "text": "ile başla, sonra 'do I have to' ve 'beklemek' fiili."
       }
      ]
     }
@@ -13473,7 +13477,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. "
+       "text": "Yanlış."
       },
       {
        "lang": "en",
@@ -13481,7 +13485,7 @@
       },
       {
        "lang": "tr",
-       "text": " dedikten sonra soru sırası bozulmaz, düz devam eder. Doğrusu: "
+       "text": "dedikten sonra soru sırası bozulmaz, düz devam eder. Doğrusu:"
       },
       {
        "lang": "en",
@@ -13494,7 +13498,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir cümle: tahlil sonucunu sormak istersen "
+      "text": "Son bir cümle: tahlil sonucunu sormak istersen"
      },
      {
       "lang": "en",
@@ -13502,7 +13506,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin. Daha kibarı: "
+      "text": "dersin. Daha kibarı:"
      },
      {
       "lang": "en",
@@ -13514,7 +13518,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün hastanede kibarca konuşmayı öğrendin: "
+      "text": "Bugün hastanede kibarca konuşmayı öğrendin:"
      },
      {
       "lang": "en",
@@ -13522,7 +13526,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile başlıyorsun, "
+      "text": "ile başlıyorsun,"
      },
      {
       "lang": "en",
@@ -13530,7 +13534,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile yer soruyorsun, "
+      "text": "ile yer soruyorsun,"
      },
      {
       "lang": "en",
@@ -13538,7 +13542,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile ne istediğini söylüyorsun ve "
+      "text": "ile ne istediğini söylüyorsun ve"
      },
      {
       "lang": "en",
@@ -13546,7 +13550,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile süreyi öğreniyorsun. Şimdi bunu bir hemşireyle deneyelim."
+      "text": "ile süreyi öğreniyorsun. Şimdi bunu bir hemşireyle deneyelim."
      }
     ]
    }
@@ -13702,7 +13706,15 @@
      },
      {
       "lang": "tr",
-      "text": "Bu kelime hem fiil hem isim olarak çalışır. \"I exercise\" spor yaparım demek; \"exercise is good for you\" ise egzersiz sana iyi gelir."
+      "text": "Bu kelime hem fiil hem isim olarak çalışır."
+     },
+     {
+      "lang": "en",
+      "text": "I exercise"
+     },
+     {
+      "lang": "tr",
+      "text": "spor yaparım demek; \"exercise is good for you\" ise egzersiz sana iyi gelir."
      }
     ]
    },
@@ -13730,7 +13742,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şu \"three times a week\" kısmı çok işine yarayacak. Sayıyla sıklık söylerken kalıp şu:"
+      "text": "Şu"
+     },
+     {
+      "lang": "en",
+      "text": "three times a week"
+     },
+     {
+      "lang": "tr",
+      "text": "kısmı çok işine yarayacak. Sayıyla sıklık söylerken kalıp şu:"
      },
      {
       "lang": "en",
@@ -13738,7 +13758,15 @@
      },
      {
       "lang": "tr",
-      "text": "Dikkat: bir kez için \"one time\" demiyoruz, once diyoruz. İki kez için de \"two times\" yerine twice daha doğal. Üçten sonra ise three times, four times diye devam eder."
+      "text": "Dikkat: bir kez için \"one time\" demiyoruz, once diyoruz. İki kez için de"
+     },
+     {
+      "lang": "en",
+      "text": "two times"
+     },
+     {
+      "lang": "tr",
+      "text": "yerine twice daha doğal. Üçten sonra ise three times, four times diye devam eder."
      }
     ]
    },
@@ -13759,7 +13787,15 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce \"I swim\", sonra sıklık: twice a week."
+       "text": "Önce"
+      },
+      {
+       "lang": "en",
+       "text": "I swim"
+      },
+      {
+       "lang": "tr",
+       "text": ", sonra sıklık: twice a week."
       }
      ]
     }
@@ -13904,7 +13940,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Cevap verirken de bugün öğrendiklerini kullanırsın: \"Twice a week.\" ya da \"I usually go to the gym after work.\""
+      "text": "Cevap verirken de bugün öğrendiklerini kullanırsın:"
+     },
+     {
+      "lang": "en",
+      "text": "Twice a week."
+     },
+     {
+      "lang": "tr",
+      "text": "ya da \"I usually go to the gym after work.\""
      },
      {
       "lang": "tr",
@@ -13922,7 +13966,15 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. \"Hardly ever\" neredeyse hiç demek, yani çok az. Sık sık demek isteseydik \"I often eat sugar\" derdik."
+       "text": "Yanlış."
+      },
+      {
+       "lang": "en",
+       "text": "Hardly ever"
+      },
+      {
+       "lang": "tr",
+       "text": "neredeyse hiç demek, yani çok az. Sık sık demek isteseydik \"I often eat sugar\" derdik."
       }
      ]
     }
@@ -13931,7 +13983,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir ekleme. Hayatın boyunca hiç yapmadığın bir şeyi anlatmak istersen \"never\" ile birlikte have kullanırız:"
+      "text": "Son bir ekleme. Hayatın boyunca hiç yapmadığın bir şeyi anlatmak istersen"
+     },
+     {
+      "lang": "en",
+      "text": "never"
+     },
+     {
+      "lang": "tr",
+      "text": "ile birlikte have kullanırız:"
      },
      {
       "lang": "en",
@@ -15192,7 +15252,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -15200,7 +15260,7 @@
      },
      {
       "lang": "tr",
-      "text": " — toparlanmak, iyileşmek demek. Lütfen söyle: "
+      "text": "— toparlanmak, iyileşmek demek. Lütfen söyle:"
      },
      {
       "lang": "en",
@@ -15216,7 +15276,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İki hâli var. Hâlâ iyileşiyorsan "
+      "text": "İki hâli var. Hâlâ iyileşiyorsan"
      },
      {
       "lang": "en",
@@ -15224,7 +15284,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin — süreç devam ediyor. Ama iş bittiyse, artık iyisen "
+      "text": "dersin — süreç devam ediyor. Ama iş bittiyse, artık iyisen"
      },
      {
       "lang": "en",
@@ -15232,7 +15292,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin. Yani: toparlandım, şu an iyiyim."
+      "text": "dersin. Yani: toparlandım, şu an iyiyim."
      }
     ]
    },
@@ -15240,7 +15300,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi farkı netleştirelim. Bitmiş, tarihi belli bir olay için geçmiş zaman: "
+      "text": "Şimdi farkı netleştirelim. Bitmiş, tarihi belli bir olay için geçmiş zaman:"
      },
      {
       "lang": "en",
@@ -15248,7 +15308,7 @@
      },
      {
       "lang": "tr",
-      "text": " Geçen hafta hastaydım. Ama bugüne uzanan bir sonuç varsa present perfect: "
+      "text": "Geçen hafta hastaydım. Ama bugüne uzanan bir sonuç varsa present perfect:"
      },
      {
       "lang": "en",
@@ -15256,7 +15316,7 @@
      },
      {
       "lang": "tr",
-      "text": " Pazartesiden beri hastayım — yani hâlâ devam ediyor."
+      "text": "Pazartesiden beri hastayım — yani hâlâ devam ediyor."
      }
     ]
    },
@@ -15279,7 +15339,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "kalmak "
+       "text": "kalmak"
       },
       {
        "lang": "en",
@@ -15287,7 +15347,7 @@
       },
       {
        "lang": "tr",
-       "text": ", geçmişi "
+       "text": ", geçmişi"
       },
       {
        "lang": "en",
@@ -15295,7 +15355,7 @@
       },
       {
        "lang": "tr",
-       "text": ", yatakta "
+       "text": ", yatakta"
       },
       {
        "lang": "en",
@@ -15308,7 +15368,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Güzel. Şimdi çok işine yarayacak bir kelime: "
+      "text": "Güzel. Şimdi çok işine yarayacak bir kelime:"
      },
      {
       "lang": "en",
@@ -15316,7 +15376,7 @@
      },
      {
       "lang": "tr",
-      "text": " — hâlâ demek. Bir şey hâlâ sürüyorsa bunu kullanırsın ve genelde özneden hemen sonra gelir."
+      "text": "— hâlâ demek. Bir şey hâlâ sürüyorsa bunu kullanırsın ve genelde özneden hemen sonra gelir."
      }
     ]
    },
@@ -15324,7 +15384,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Mesela iyileşiyorsun ama enerjin yok. Lütfen de: "
+      "text": "Mesela iyileşiyorsun ama enerjin yok. Lütfen de:"
      },
      {
       "lang": "en",
@@ -15340,7 +15400,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi tam tersi bir kelime: "
+      "text": "Şimdi tam tersi bir kelime:"
      },
      {
       "lang": "en",
@@ -15348,7 +15408,7 @@
      },
      {
       "lang": "tr",
-      "text": " — çoktan demek. Bir işi beklenenden önce bitirdiysen kullanırsın. Present perfect ile birlikte gelir ve "
+      "text": "— çoktan demek. Bir işi beklenenden önce bitirdiysen kullanırsın. Present perfect ile birlikte gelir ve"
      },
      {
       "lang": "en",
@@ -15356,7 +15416,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile fiilin arasına girer."
+      "text": "ile fiilin arasına girer."
      }
     ]
    },
@@ -15364,7 +15424,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlacını içtin bile. Lütfen de: "
+      "text": "İlacını içtin bile. Lütfen de:"
      },
      {
       "lang": "en",
@@ -15394,7 +15454,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Mantıksız, çünkü "
+       "text": "Mantıksız, çünkü"
       },
       {
        "lang": "en",
@@ -15402,7 +15462,7 @@
       },
       {
        "lang": "tr",
-       "text": " işin çoktan bittiğini söyler. İlacı zaten içtiysen şimdi tekrar içmen gerekmez."
+       "text": "işin çoktan bittiğini söyler. İlacı zaten içtiysen şimdi tekrar içmen gerekmez."
       }
      ]
     }
@@ -15411,7 +15471,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur. \"Doktoru çoktan gördüm\" — yani doktora gittin bile. "
+      "text": "Şimdi sen kur. \"Doktoru çoktan gördüm\" — yani doktora gittin bile."
      },
      {
       "lang": "en",
@@ -15419,7 +15479,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullan."
+      "text": "kullan."
      }
     ],
     "expect": {
@@ -15434,7 +15494,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "görmek "
+       "text": "görmek"
       },
       {
        "lang": "en",
@@ -15442,7 +15502,7 @@
       },
       {
        "lang": "tr",
-       "text": ", üçüncü hâli "
+       "text": ", üçüncü hâli"
       },
       {
        "lang": "en",
@@ -15450,7 +15510,7 @@
       },
       {
        "lang": "tr",
-       "text": "; kalıp "
+       "text": "; kalıp"
       },
       {
        "lang": "en",
@@ -15463,7 +15523,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir kelime daha: "
+      "text": "Bir kelime daha:"
      },
      {
       "lang": "en",
@@ -15471,7 +15531,7 @@
      },
      {
       "lang": "tr",
-      "text": " — neredeyse. Tam değil ama çok yakın. Ve "
+      "text": "— neredeyse. Tam değil ama çok yakın. Ve"
      },
      {
       "lang": "en",
@@ -15479,7 +15539,7 @@
      },
      {
       "lang": "tr",
-      "text": " kelimesi Türkçedeki gibi: normal, her zamanki gibi."
+      "text": "kelimesi Türkçedeki gibi: normal, her zamanki gibi."
      }
     ]
    },
@@ -15487,7 +15547,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkisini birleştirelim. Neredeyse eski hâlindesin. De ki: "
+      "text": "İkisini birleştirelim. Neredeyse eski hâlindesin. De ki:"
      },
      {
       "lang": "en",
@@ -15503,7 +15563,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi süre. İngilizcede iki küçük kelime var: "
+      "text": "Şimdi süre. İngilizcede iki küçük kelime var:"
      },
      {
       "lang": "en",
@@ -15511,7 +15571,7 @@
      },
      {
       "lang": "tr",
-      "text": " süre uzunluğu için — "
+      "text": "süre uzunluğu için —"
      },
      {
       "lang": "en",
@@ -15519,7 +15579,7 @@
      },
      {
       "lang": "tr",
-      "text": ", üç gündür. "
+      "text": ", üç gündür."
      },
      {
       "lang": "en",
@@ -15527,7 +15587,7 @@
      },
      {
       "lang": "tr",
-      "text": " ise başlangıç noktası için — "
+      "text": "ise başlangıç noktası için —"
      },
      {
       "lang": "en",
@@ -15543,7 +15603,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üç gündür nezlesin. Lütfen de: "
+      "text": "Üç gündür nezlesin. Lütfen de:"
      },
      {
       "lang": "en",
@@ -15575,7 +15635,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "kalıp "
+       "text": "kalıp"
       },
       {
        "lang": "en",
@@ -15583,7 +15643,7 @@
       },
       {
        "lang": "tr",
-       "text": " artı "
+       "text": "artı"
       },
       {
        "lang": "en",
@@ -15596,7 +15656,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de karşı taraf için iki nazik cümle. Biri hastaysa "
+      "text": "Bir de karşı taraf için iki nazik cümle. Biri hastaysa"
      },
      {
       "lang": "en",
@@ -15604,7 +15664,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin — geçmiş olsun, çabuk iyileş. Bir de "
+      "text": "dersin — geçmiş olsun, çabuk iyileş. Bir de"
      },
      {
       "lang": "en",
@@ -15612,7 +15672,7 @@
      },
      {
       "lang": "tr",
-      "text": " — kendine iyi bak."
+      "text": "— kendine iyi bak."
      }
     ]
    },
@@ -15620,7 +15680,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "En çok kullanacağın olanı söyleyelim: "
+      "text": "En çok kullanacağın olanı söyleyelim:"
      },
      {
       "lang": "en",
@@ -15636,7 +15696,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Özetleyelim: bitmiş günler için geçmiş zaman — "
+      "text": "Harika iş çıkardın. Özetleyelim: bitmiş günler için geçmiş zaman —"
      },
      {
       "lang": "en",
@@ -15644,7 +15704,7 @@
      },
      {
       "lang": "tr",
-      "text": " Bugüne uzanan durumlar için present perfect — "
+      "text": "Bugüne uzanan durumlar için present perfect —"
      },
      {
       "lang": "en",
@@ -15652,7 +15712,7 @@
      },
      {
       "lang": "tr",
-      "text": " Süren şey için "
+      "text": "Süren şey için"
      },
      {
       "lang": "en",
@@ -15660,7 +15720,7 @@
      },
      {
       "lang": "tr",
-      "text": ", biten iş için "
+      "text": ", biten iş için"
      },
      {
       "lang": "en",
@@ -15668,7 +15728,7 @@
      },
      {
       "lang": "tr",
-      "text": ", neredeyse için "
+      "text": ", neredeyse için"
      },
      {
       "lang": "en",
@@ -15756,7 +15816,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -15764,7 +15824,7 @@
      },
      {
       "lang": "tr",
-      "text": " — Türkçesi daire demek. Apartman dairesi. Lütfen sen de söyle: "
+      "text": "— Türkçesi daire demek. Apartman dairesi. Lütfen sen de söyle:"
      },
      {
       "lang": "en",
@@ -15780,7 +15840,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Güzel. İngilizler daireye "
+      "text": "Güzel. İngilizler daireye"
      },
      {
       "lang": "en",
@@ -15788,7 +15848,7 @@
      },
      {
       "lang": "tr",
-      "text": " der, Amerikalılar "
+      "text": "der, Amerikalılar"
      },
      {
       "lang": "en",
@@ -15796,7 +15856,7 @@
      },
      {
       "lang": "tr",
-      "text": " der. İkisi de doğru. Bir tane derken önüne bir küçük kelime koyuyoruz: "
+      "text": "der. İkisi de doğru. Bir tane derken önüne bir küçük kelime koyuyoruz:"
      },
      {
       "lang": "en",
@@ -15804,7 +15864,7 @@
      },
      {
       "lang": "tr",
-      "text": " — bir daire."
+      "text": "— bir daire."
      }
     ]
    },
@@ -15812,7 +15872,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi en önemli kelime: "
+      "text": "Şimdi en önemli kelime:"
      },
      {
       "lang": "en",
@@ -15820,7 +15880,7 @@
      },
      {
       "lang": "tr",
-      "text": " — kira. Söyle bakalım: "
+      "text": "— kira. Söyle bakalım:"
      },
      {
       "lang": "en",
@@ -15836,7 +15896,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kirayı sormak için tek bir kalıp yeter: "
+      "text": "Kirayı sormak için tek bir kalıp yeter:"
      },
      {
       "lang": "en",
@@ -15844,7 +15904,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani kira ne kadar. Benimle birlikte: "
+      "text": "Yani kira ne kadar. Benimle birlikte:"
      },
      {
       "lang": "en",
@@ -15860,7 +15920,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Karşı taraf muhtemelen şöyle cevap verir: "
+      "text": "Karşı taraf muhtemelen şöyle cevap verir:"
      },
      {
       "lang": "en",
@@ -15868,7 +15928,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sondaki "
+      "text": "Sondaki"
      },
      {
       "lang": "en",
@@ -15876,7 +15936,7 @@
      },
      {
       "lang": "tr",
-      "text": " ayda demek. Fiyat duyduğunda paniğe kapılma, sadece rakamı yakala."
+      "text": "ayda demek. Fiyat duyduğunda paniğe kapılma, sadece rakamı yakala."
      }
     ]
    },
@@ -15884,7 +15944,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sırada depozito var: "
+      "text": "Sırada depozito var:"
      },
      {
       "lang": "en",
@@ -15892,7 +15952,7 @@
      },
      {
       "lang": "tr",
-      "text": " — taşınmadan önce yatırdığın, çıkarken geri aldığın para. Söyle: "
+      "text": "— taşınmadan önce yatırdığın, çıkarken geri aldığın para. Söyle:"
      },
      {
       "lang": "en",
@@ -15922,7 +15982,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "\"How much is the …?\" ile başla, sonuna "
+       "text": "\"How much is the …?\" ile başla, sonuna"
       },
       {
        "lang": "en",
@@ -15930,7 +15990,7 @@
       },
       {
        "lang": "tr",
-       "text": " koy."
+       "text": "koy."
       }
      ]
     }
@@ -15939,7 +15999,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ev eşyalı mı, boş mu? Bunun kelimesi: "
+      "text": "Ev eşyalı mı, boş mu? Bunun kelimesi:"
      },
      {
       "lang": "en",
@@ -15947,7 +16007,7 @@
      },
      {
       "lang": "tr",
-      "text": " — mobilyalı. Söyle: "
+      "text": "— mobilyalı. Söyle:"
      },
      {
       "lang": "en",
@@ -15963,7 +16023,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sorusu çok kolay, sadece kelimeleri yer değiştiriyoruz: "
+      "text": "Sorusu çok kolay, sadece kelimeleri yer değiştiriyoruz:"
      },
      {
       "lang": "en",
@@ -15971,7 +16031,7 @@
      },
      {
       "lang": "tr",
-      "text": " Birlikte: "
+      "text": "Birlikte:"
      },
      {
       "lang": "en",
@@ -15987,7 +16047,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Cevap iki türlü gelir: "
+      "text": "Cevap iki türlü gelir:"
      },
      {
       "lang": "en",
@@ -15995,7 +16055,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da "
+      "text": "ya da"
      },
      {
       "lang": "en",
@@ -16003,7 +16063,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani boş. Bir de yarı yarıya olanı var: "
+      "text": "Yani boş. Bir de yarı yarıya olanı var:"
      },
      {
       "lang": "en",
@@ -16015,7 +16075,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kat kelimesi: "
+      "text": "Kat kelimesi:"
      },
      {
       "lang": "en",
@@ -16023,7 +16083,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Mesela "
+      "text": ". Mesela"
      },
      {
       "lang": "en",
@@ -16031,7 +16091,7 @@
      },
      {
       "lang": "tr",
-      "text": " — üçüncü katta. Dikkat: İngiltere'de "
+      "text": "— üçüncü katta. Dikkat: İngiltere'de"
      },
      {
       "lang": "en",
@@ -16039,7 +16099,7 @@
      },
      {
       "lang": "tr",
-      "text": " zemin kattır, "
+      "text": "zemin kattır,"
      },
      {
       "lang": "en",
@@ -16047,7 +16107,7 @@
      },
      {
       "lang": "tr",
-      "text": " ise bizim birinci katımız."
+      "text": "ise bizim birinci katımız."
      }
     ]
    },
@@ -16070,7 +16130,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "\"Which floor …\" diye başla, "
+       "text": "\"Which floor …\" diye başla,"
       },
       {
        "lang": "en",
@@ -16078,7 +16138,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile bitir."
+       "text": "ile bitir."
       }
      ]
     }
@@ -16087,7 +16147,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir soru daha çok işine yarar: faturalar kiraya dahil mi? "
+      "text": "Bir soru daha çok işine yarar: faturalar kiraya dahil mi?"
      },
      {
       "lang": "en",
@@ -16095,7 +16155,7 @@
      },
      {
       "lang": "tr",
-      "text": " Burada "
+      "text": "Burada"
      },
      {
       "lang": "en",
@@ -16103,7 +16163,7 @@
      },
      {
       "lang": "tr",
-      "text": " faturalar, "
+      "text": "faturalar,"
      },
      {
       "lang": "en",
@@ -16111,7 +16171,7 @@
      },
      {
       "lang": "tr",
-      "text": " dahil demek."
+      "text": "dahil demek."
      }
     ]
    },
@@ -16133,7 +16193,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Tam tersi. "
+       "text": "Tam tersi."
       },
       {
        "lang": "en",
@@ -16141,7 +16201,7 @@
       },
       {
        "lang": "tr",
-       "text": " mobilyalı demek; içinde yatak, masa, dolap vardır. Mobilyasız olana "
+       "text": "mobilyalı demek; içinde yatak, masa, dolap vardır. Mobilyasız olana"
       },
       {
        "lang": "en",
@@ -16149,7 +16209,7 @@
       },
       {
        "lang": "tr",
-       "text": " denir."
+       "text": "denir."
       }
      ]
     }
@@ -16158,7 +16218,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Daire hâlâ boşta mı, onu da sormalısın: "
+      "text": "Daire hâlâ boşta mı, onu da sormalısın:"
      },
      {
       "lang": "en",
@@ -16166,7 +16226,7 @@
      },
      {
       "lang": "tr",
-      "text": " İlan eskiyse bu soru sana zaman kazandırır. Ve şunu ekleyebilirsin: "
+      "text": "İlan eskiyse bu soru sana zaman kazandırır. Ve şunu ekleyebilirsin:"
      },
      {
       "lang": "en",
@@ -16174,7 +16234,7 @@
      },
      {
       "lang": "tr",
-      "text": " — bu hafta çoktan iki daire gördüm."
+      "text": "— bu hafta çoktan iki daire gördüm."
      }
     ]
    },
@@ -16197,7 +16257,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "\"Can I see …\" ile başla, günü "
+       "text": "\"Can I see …\" ile başla, günü"
       },
       {
        "lang": "en",
@@ -16205,7 +16265,7 @@
       },
       {
        "lang": "tr",
-       "text": " diye söyle."
+       "text": "diye söyle."
       }
      ]
     }
@@ -16214,7 +16274,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Telefonu kapatırken nazik ol: "
+      "text": "Telefonu kapatırken nazik ol:"
      },
      {
       "lang": "en",
@@ -16222,7 +16282,7 @@
      },
      {
       "lang": "tr",
-      "text": " Emin değilsen: "
+      "text": "Emin değilsen:"
      },
      {
       "lang": "en",
@@ -16234,7 +16294,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim: kira için "
+      "text": "Özetleyelim: kira için"
      },
      {
       "lang": "en",
@@ -16242,7 +16302,7 @@
      },
      {
       "lang": "tr",
-      "text": ", depozito için "
+      "text": ", depozito için"
      },
      {
       "lang": "en",
@@ -16250,7 +16310,7 @@
      },
      {
       "lang": "tr",
-      "text": ", mobilya için "
+      "text": ", mobilya için"
      },
      {
       "lang": "en",
@@ -16258,7 +16318,7 @@
      },
      {
       "lang": "tr",
-      "text": ", kat için "
+      "text": ", kat için"
      },
      {
       "lang": "en",
@@ -16266,7 +16326,7 @@
      },
      {
       "lang": "tr",
-      "text": " ve randevu için "
+      "text": "ve randevu için"
      },
      {
       "lang": "en",
@@ -16274,7 +16334,7 @@
      },
      {
       "lang": "tr",
-      "text": " Beş soru, bir daire. Şimdi telefonu açalım."
+      "text": "Beş soru, bir daire. Şimdi telefonu açalım."
      }
     ]
    }
@@ -16530,11 +16590,27 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dikkat ettin mi: sıfat ismin ÖNÜNE geliyor. Türkçedeki gibi. \"a bright flat\", \"a quiet street\", \"a spacious kitchen\"."
+      "text": "Dikkat ettin mi: sıfat ismin ÖNÜNE geliyor. Türkçedeki gibi."
+     },
+     {
+      "lang": "en",
+      "text": "a bright flat"
      },
      {
       "lang": "tr",
-      "text": "Ama sıfatı cümlenin sonunda da kullanabilirsin, o zaman araya \"is\" girer:"
+      "text": ", \"a quiet street\", \"a spacious kitchen\"."
+     },
+     {
+      "lang": "tr",
+      "text": "Ama sıfatı cümlenin sonunda da kullanabilirsin, o zaman araya"
+     },
+     {
+      "lang": "en",
+      "text": "is"
+     },
+     {
+      "lang": "tr",
+      "text": "girer:"
      },
      {
       "lang": "en",
@@ -16649,7 +16725,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi manzarayı ekleyelim. Manzaradan bahsederken \"with\" çok işe yarar:"
+      "text": "Şimdi manzarayı ekleyelim. Manzaradan bahsederken"
+     },
+     {
+      "lang": "en",
+      "text": "with"
+     },
+     {
+      "lang": "tr",
+      "text": "çok işe yarar:"
      },
      {
       "lang": "en",
@@ -16693,7 +16777,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de karşılaştırma yapalım. Evindeki iki odayı kıyaslarken sıfatın sonuna -er, arkasına da \"than\" gelir:"
+      "text": "Bir de karşılaştırma yapalım. Evindeki iki odayı kıyaslarken sıfatın sonuna -er, arkasına da"
+     },
+     {
+      "lang": "en",
+      "text": "than"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir:"
      },
      {
       "lang": "en",
@@ -16705,7 +16797,15 @@
      },
      {
       "lang": "tr",
-      "text": "Ama uzun sıfatlarda -er kullanılmaz, önüne \"more\" gelir:"
+      "text": "Ama uzun sıfatlarda -er kullanılmaz, önüne"
+     },
+     {
+      "lang": "en",
+      "text": "more"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir:"
      },
      {
       "lang": "en",
@@ -16737,8 +16837,12 @@
      ],
      "hint": [
       {
+       "lang": "en",
+       "text": "quiet"
+      },
+      {
        "lang": "tr",
-       "text": "\"quiet\" kısa bir sıfat, sonuna -er ekle:"
+       "text": "kısa bir sıfat, sonuna -er ekle:"
       },
       {
        "lang": "en",
@@ -16772,16 +16876,40 @@
      "answer": false,
      "why": [
       {
+       "lang": "en",
+       "text": "bright"
+      },
+      {
        "lang": "tr",
-       "text": "\"bright\" kısa bir sıfat, önüne \"more\" almaz. Doğrusu:"
+       "text": "kısa bir sıfat, önüne"
+      },
+      {
+       "lang": "en",
+       "text": "more"
+      },
+      {
+       "lang": "tr",
+       "text": "almaz. Doğrusu:"
       },
       {
        "lang": "en",
        "text": "My bedroom is brighter than the kitchen."
       },
       {
+       "lang": "en",
+       "text": "more"
+      },
+      {
        "lang": "tr",
-       "text": "\"more\" sadece uzun sıfatlarda, mesela \"more spacious\"."
+       "text": "sadece uzun sıfatlarda, mesela"
+      },
+      {
+       "lang": "en",
+       "text": "more spacious"
+      },
+      {
+       "lang": "tr",
+       "text": "."
       }
      ]
     }
@@ -16822,7 +16950,15 @@
      },
      {
       "lang": "tr",
-      "text": "\"Güzel bir daire, ama biraz küçük.\" Bu \"but\" cümlesi anlattığını gerçek gösterir."
+      "text": "\"Güzel bir daire, ama biraz küçük.\" Bu"
+     },
+     {
+      "lang": "en",
+      "text": "but"
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesi anlattığını gerçek gösterir."
      }
     ]
    },
@@ -16830,7 +16966,31 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim: beş kelime aldın — bright, quiet, spacious, balcony, view. Üç kalıp öğrendin: nerede oturduğunu söylemek için \"I live in a bright flat\", özellik eklemek için \"It has a balcony with a great view\", karşılaştırmak için \"brighter than\"."
+      "text": "Özetleyelim: beş kelime aldın — bright, quiet, spacious, balcony, view. Üç kalıp öğrendin: nerede oturduğunu söylemek için"
+     },
+     {
+      "lang": "en",
+      "text": "I live in a bright flat"
+     },
+     {
+      "lang": "tr",
+      "text": ", özellik eklemek için"
+     },
+     {
+      "lang": "en",
+      "text": "It has a balcony with a great view"
+     },
+     {
+      "lang": "tr",
+      "text": ", karşılaştırmak için"
+     },
+     {
+      "lang": "en",
+      "text": "brighter than"
+     },
+     {
+      "lang": "tr",
+      "text": "."
      },
      {
       "lang": "tr",
@@ -17118,7 +17278,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika. Şimdi çoğul hâli. İki raf varsa \"is\" değil \"are\" kullanırız:"
+      "text": "Harika. Şimdi çoğul hâli. İki raf varsa \"is\" değil"
+     },
+     {
+      "lang": "en",
+      "text": "are"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanırız:"
      },
      {
       "lang": "en",
@@ -17262,7 +17430,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi olumsuz hâli. Bir şey yoksa \"is\" ve \"are\" yanına \"not\" ekleriz:"
+      "text": "Şimdi olumsuz hâli. Bir şey yoksa \"is\" ve"
+     },
+     {
+      "lang": "en",
+      "text": "are"
+     },
+     {
+      "lang": "tr",
+      "text": "yanına \"not\" ekleriz:"
      },
      {
       "lang": "en",
@@ -17302,7 +17478,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Soru sormak için ise \"there\" ile \"is\" yer değiştirir:"
+      "text": "Soru sormak için ise"
+     },
+     {
+      "lang": "en",
+      "text": "there"
+     },
+     {
+      "lang": "tr",
+      "text": "ile \"is\" yer değiştirir:"
      },
      {
       "lang": "en",
@@ -17422,7 +17606,15 @@
       },
       {
        "lang": "tr",
-       "text": "denmeliydi. Sayı birden fazlaysa her zaman \"there are\" kullanırsın."
+       "text": "denmeliydi. Sayı birden fazlaysa her zaman"
+      },
+      {
+       "lang": "en",
+       "text": "there are"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanırsın."
       }
      ]
     }
@@ -17455,7 +17647,15 @@
      },
      {
       "lang": "tr",
-      "text": "Ayrıca \"furniture\" kelimesinin çoğul olmadığını da öğrendin. Şimdi bunu bir konuşmada deneyelim."
+      "text": "Ayrıca"
+     },
+     {
+      "lang": "en",
+      "text": "furniture"
+     },
+     {
+      "lang": "tr",
+      "text": "kelimesinin çoğul olmadığını da öğrendin. Şimdi bunu bir konuşmada deneyelim."
      }
     ]
    }
@@ -21832,7 +22032,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -21840,7 +22040,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Türkçesi mülakat, iş görüşmesi demek. Lütfen söyle: "
+      "text": ". Türkçesi mülakat, iş görüşmesi demek. Lütfen söyle:"
      },
      {
       "lang": "en",
@@ -21856,7 +22056,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir görüşmen olduğunu böyle söylersin: "
+      "text": "Bir görüşmen olduğunu böyle söylersin:"
      },
      {
       "lang": "en",
@@ -21864,7 +22064,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani: Pazartesi bir mülakatım var."
+      "text": "Yani: Pazartesi bir mülakatım var."
      }
     ]
    },
@@ -21872,7 +22072,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kelime: "
+      "text": "İkinci kelime:"
      },
      {
       "lang": "en",
@@ -21880,7 +22080,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Güçlü yön demek. Söyle bakalım: "
+      "text": ". Güçlü yön demek. Söyle bakalım:"
      },
      {
       "lang": "en",
@@ -21896,7 +22096,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üçüncü kelime: "
+      "text": "Üçüncü kelime:"
      },
      {
       "lang": "en",
@@ -21904,7 +22104,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Takım demek. Lütfen de: "
+      "text": ". Takım demek. Lütfen de:"
      },
      {
       "lang": "en",
@@ -21920,7 +22120,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İki kelime daha: "
+      "text": "İki kelime daha:"
      },
      {
       "lang": "en",
@@ -21928,7 +22128,7 @@
      },
      {
       "lang": "tr",
-      "text": " sebep demek, "
+      "text": "sebep demek,"
      },
      {
       "lang": "en",
@@ -21936,7 +22136,7 @@
      },
      {
       "lang": "tr",
-      "text": " ise başlamak. Örnek: "
+      "text": "ise başlamak. Örnek:"
      },
      {
       "lang": "en",
@@ -21944,7 +22144,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sebebim basit."
+      "text": "Sebebim basit."
      }
     ]
    },
@@ -21952,7 +22152,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi mülakatın ilk büyük sorusu geliyor: "
+      "text": "Şimdi mülakatın ilk büyük sorusu geliyor:"
      },
      {
       "lang": "en",
@@ -21960,7 +22160,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani deneyiminden bahset. Cevabı böyle kuruyoruz: "
+      "text": "Yani deneyiminden bahset. Cevabı böyle kuruyoruz:"
      },
      {
       "lang": "en",
@@ -21968,7 +22168,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen tekrar et."
+      "text": "Lütfen tekrar et."
      }
     ],
     "expect": {
@@ -21980,7 +22180,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Buradaki "
+      "text": "Buradaki"
      },
      {
       "lang": "en",
@@ -21988,7 +22188,7 @@
      },
      {
       "lang": "tr",
-      "text": " kalıbı, geçmişte başlayıp bugün hâlâ süren işler için. Süre söylüyorsan "
+      "text": "kalıbı, geçmişte başlayıp bugün hâlâ süren işler için. Süre söylüyorsan"
      },
      {
       "lang": "en",
@@ -21996,7 +22196,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullan: "
+      "text": "kullan:"
      },
      {
       "lang": "en",
@@ -22004,7 +22204,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Başlangıç noktası söylüyorsan "
+      "text": ". Başlangıç noktası söylüyorsan"
      },
      {
       "lang": "en",
@@ -22012,7 +22212,7 @@
      },
      {
       "lang": "tr",
-      "text": ": "
+      "text": ":"
      },
      {
       "lang": "en",
@@ -22042,7 +22242,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "I have worked ile başla, sonra yeri söyle, en sonda "
+       "text": "I have worked ile başla, sonra yeri söyle, en sonda"
       },
       {
        "lang": "en",
@@ -22055,7 +22255,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıradaki soru: "
+      "text": "Sıradaki soru:"
      },
      {
       "lang": "en",
@@ -22063,7 +22263,7 @@
      },
      {
       "lang": "tr",
-      "text": " Güçlü yönün ne? Klasik ve doğal cevap: "
+      "text": "Güçlü yönün ne? Klasik ve doğal cevap:"
      },
      {
       "lang": "en",
@@ -22071,7 +22271,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen tekrar et."
+      "text": "Lütfen tekrar et."
      }
     ],
     "expect": {
@@ -22083,7 +22283,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Aynı şeyi şöyle de söyleyebilirsin: "
+      "text": "Aynı şeyi şöyle de söyleyebilirsin:"
      },
      {
       "lang": "en",
@@ -22091,7 +22291,7 @@
      },
      {
       "lang": "tr",
-      "text": " Dinlemekte iyiyim. Ya da: "
+      "text": "Dinlemekte iyiyim. Ya da:"
      },
      {
       "lang": "en",
@@ -22099,7 +22299,7 @@
      },
      {
       "lang": "tr",
-      "text": " Çabuk öğrenirim."
+      "text": "Çabuk öğrenirim."
      }
     ]
    },
@@ -22121,7 +22321,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "My strength is ile başla, sonra fiili "
+       "text": "My strength is ile başla, sonra fiili"
       },
       {
        "lang": "en",
@@ -22129,7 +22329,7 @@
       },
       {
        "lang": "tr",
-       "text": " hâlinde söyle"
+       "text": "hâlinde söyle"
       }
      ]
     }
@@ -22152,7 +22352,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Süre söylerken "
+       "text": "Süre söylerken"
       },
       {
        "lang": "en",
@@ -22160,7 +22360,7 @@
       },
       {
        "lang": "tr",
-       "text": " gerekir. Doğrusu: "
+       "text": "gerekir. Doğrusu:"
       },
       {
        "lang": "en",
@@ -22168,7 +22368,7 @@
       },
       {
        "lang": "tr",
-       "text": " "
+       "text": ""
       },
       {
        "lang": "en",
@@ -22176,7 +22376,7 @@
       },
       {
        "lang": "tr",
-       "text": " ise başlangıç noktası içindir: "
+       "text": "ise başlangıç noktası içindir:"
       },
       {
        "lang": "en",
@@ -22189,7 +22389,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üçüncü soru sebeple ilgili: "
+      "text": "Üçüncü soru sebeple ilgili:"
      },
      {
       "lang": "en",
@@ -22197,7 +22397,7 @@
      },
      {
       "lang": "tr",
-      "text": " Cevabı "
+      "text": "Cevabı"
      },
      {
       "lang": "en",
@@ -22205,7 +22405,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile başlat: "
+      "text": "ile başlat:"
      },
      {
       "lang": "en",
@@ -22230,7 +22430,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Because ile başla, sonra "
+       "text": "Because ile başla, sonra"
       },
       {
        "lang": "en",
@@ -22238,7 +22438,7 @@
       },
       {
        "lang": "tr",
-       "text": " ve fiil"
+       "text": "ve fiil"
       }
      ]
     }
@@ -22247,7 +22447,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son büyük soru: "
+      "text": "Son büyük soru:"
      },
      {
       "lang": "en",
@@ -22255,7 +22455,7 @@
      },
      {
       "lang": "tr",
-      "text": " Ne zaman başlayabilirsin? Cevap: "
+      "text": "Ne zaman başlayabilirsin? Cevap:"
      },
      {
       "lang": "en",
@@ -22263,7 +22463,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen tekrar et."
+      "text": "Lütfen tekrar et."
      }
     ],
     "expect": {
@@ -22275,7 +22475,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Daha ileri bir tarih için: "
+      "text": "Daha ileri bir tarih için:"
      },
      {
       "lang": "en",
@@ -22283,7 +22483,7 @@
      },
      {
       "lang": "tr",
-      "text": " Gelecek ay başlayabilirim. Ya da kesin bir plan varsa: "
+      "text": "Gelecek ay başlayabilirim. Ya da kesin bir plan varsa:"
      },
      {
       "lang": "en",
@@ -22291,7 +22491,7 @@
      },
      {
       "lang": "tr",
-      "text": " Kursumu haziranda bitireceğim."
+      "text": "Kursumu haziranda bitireceğim."
      }
     ]
    },
@@ -22299,7 +22499,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Görüşmenin sonunda sana genelde şunu sorarlar: "
+      "text": "Görüşmenin sonunda sana genelde şunu sorarlar:"
      },
      {
       "lang": "en",
@@ -22307,7 +22507,7 @@
      },
      {
       "lang": "tr",
-      "text": " Güzel bir cevap: "
+      "text": "Güzel bir cevap:"
      },
      {
       "lang": "en",
@@ -22315,7 +22515,7 @@
      },
      {
       "lang": "tr",
-      "text": " Ve mutlaka teşekkür et: "
+      "text": "Ve mutlaka teşekkür et:"
      },
      {
       "lang": "en",
@@ -22323,7 +22523,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen bunu tekrar et."
+      "text": "Lütfen bunu tekrar et."
      }
     ],
     "expect": {
@@ -22335,7 +22535,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım: deneyim için "
+      "text": "Toparlayalım: deneyim için"
      },
      {
       "lang": "en",
@@ -22343,7 +22543,7 @@
      },
      {
       "lang": "tr",
-      "text": ", güçlü yön için "
+      "text": ", güçlü yön için"
      },
      {
       "lang": "en",
@@ -22351,7 +22551,7 @@
      },
      {
       "lang": "tr",
-      "text": ", sebep için "
+      "text": ", sebep için"
      },
      {
       "lang": "en",
@@ -22359,7 +22559,7 @@
      },
      {
       "lang": "tr",
-      "text": ", tarih için "
+      "text": ", tarih için"
      },
      {
       "lang": "en",
@@ -26083,7 +26283,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -26095,7 +26295,7 @@
      },
      {
       "lang": "tr",
-      "text": "En doğal kalıp şu: "
+      "text": "En doğal kalıp şu:"
      },
      {
       "lang": "en",
@@ -26107,7 +26307,7 @@
      },
      {
       "lang": "tr",
-      "text": "Buradaki "
+      "text": "Buradaki"
      },
      {
       "lang": "en",
@@ -26115,7 +26315,7 @@
      },
      {
       "lang": "tr",
-      "text": ", "
+      "text": ","
      },
      {
       "lang": "en",
@@ -26131,7 +26331,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen söyle. Lütfen de: "
+      "text": "Şimdi sen söyle. Lütfen de:"
      },
      {
       "lang": "en",
@@ -26147,7 +26347,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Görevli sana ilk olarak neredeyse her zaman fişi sorar. Fiş demek: "
+      "text": "Görevli sana ilk olarak neredeyse her zaman fişi sorar. Fiş demek:"
      },
      {
       "lang": "en",
@@ -26159,7 +26359,7 @@
      },
      {
       "lang": "tr",
-      "text": "Görevlinin sorusu şudur: "
+      "text": "Görevlinin sorusu şudur:"
      },
      {
       "lang": "en",
@@ -26175,7 +26375,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu soruyu tanıman lazım, çünkü mağazada mutlaka duyacaksın. Lütfen sen de söyle: "
+      "text": "Bu soruyu tanıman lazım, çünkü mağazada mutlaka duyacaksın. Lütfen sen de söyle:"
      },
      {
       "lang": "en",
@@ -26191,7 +26391,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Cevabın basit. Fiş elindeyse uzatırken şöyle dersin: "
+      "text": "Cevabın basit. Fiş elindeyse uzatırken şöyle dersin:"
      },
      {
       "lang": "en",
@@ -26203,7 +26403,7 @@
      },
      {
       "lang": "tr",
-      "text": "Elinde yoksa: "
+      "text": "Elinde yoksa:"
      },
      {
       "lang": "en",
@@ -26246,7 +26446,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Her zaman para geri istemezsin; bazen sadece değişim istersin. Değiştirmek demek: "
+      "text": "Her zaman para geri istemezsin; bazen sadece değişim istersin. Değiştirmek demek:"
      },
      {
       "lang": "en",
@@ -26254,7 +26454,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Beden ya da boy demek: "
+      "text": ". Beden ya da boy demek:"
      },
      {
       "lang": "en",
@@ -26266,7 +26466,7 @@
      },
      {
       "lang": "tr",
-      "text": "Kalıbımız şu: "
+      "text": "Kalıbımız şu:"
      },
      {
       "lang": "en",
@@ -26278,7 +26478,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dikkat: değişim yapılan şeyin önüne "
+      "text": "Dikkat: değişim yapılan şeyin önüne"
      },
      {
       "lang": "en",
@@ -26286,7 +26486,7 @@
      },
      {
       "lang": "tr",
-      "text": " koyuyoruz. Türkçede -le, -la; İngilizcede "
+      "text": "koyuyoruz. Türkçede -le, -la; İngilizcede"
      },
      {
       "lang": "en",
@@ -26302,7 +26502,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Lütfen benimle birlikte söyle: "
+      "text": "Lütfen benimle birlikte söyle:"
      },
      {
       "lang": "en",
@@ -26318,7 +26518,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Büyük "
+      "text": "Büyük"
      },
      {
       "lang": "en",
@@ -26326,7 +26526,7 @@
      },
      {
       "lang": "tr",
-      "text": ", küçük ise "
+      "text": ", küçük ise"
      },
      {
       "lang": "en",
@@ -26334,7 +26534,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Renk değiştirmek istersen de aynı kalıp işini görür: "
+      "text": ". Renk değiştirmek istersen de aynı kalıp işini görür:"
      },
      {
       "lang": "en",
@@ -26377,7 +26577,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Peki para geri istiyorsan? Para iadesi demek: "
+      "text": "Peki para geri istiyorsan? Para iadesi demek:"
      },
      {
       "lang": "en",
@@ -26389,7 +26589,7 @@
      },
      {
       "lang": "tr",
-      "text": "Kalıbımız: "
+      "text": "Kalıbımız:"
      },
      {
       "lang": "en",
@@ -26401,7 +26601,7 @@
      },
      {
       "lang": "tr",
-      "text": "Sonuna "
+      "text": "Sonuna"
      },
      {
       "lang": "en",
@@ -26409,7 +26609,7 @@
      },
      {
       "lang": "tr",
-      "text": " eklemek İngilizcede çok önemli; onsuz sert duyulur."
+      "text": "eklemek İngilizcede çok önemli; onsuz sert duyulur."
      }
     ]
    },
@@ -26417,7 +26617,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Lütfen de: "
+      "text": "Lütfen de:"
      },
      {
       "lang": "en",
@@ -26433,7 +26633,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Görevli çoğu zaman sana seçenek sunar: "
+      "text": "Görevli çoğu zaman sana seçenek sunar:"
      },
      {
       "lang": "en",
@@ -26445,7 +26645,7 @@
      },
      {
       "lang": "tr",
-      "text": "Cevabın tek kelimeyle bile olur: "
+      "text": "Cevabın tek kelimeyle bile olur:"
      },
      {
       "lang": "en",
@@ -26453,7 +26653,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da "
+      "text": "ya da"
      },
      {
       "lang": "en",
@@ -26465,7 +26665,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sebebi söylemeyi öğrenelim; görevli mutlaka sorar. Yanlış demek: "
+      "text": "Şimdi sebebi söylemeyi öğrenelim; görevli mutlaka sorar. Yanlış demek:"
      },
      {
       "lang": "en",
@@ -26477,7 +26677,7 @@
      },
      {
       "lang": "tr",
-      "text": "En sık kullanılan sebep: "
+      "text": "En sık kullanılan sebep:"
      },
      {
       "lang": "en",
@@ -26489,7 +26689,7 @@
      },
      {
       "lang": "tr",
-      "text": "Dikkat: İngilizcede "
+      "text": "Dikkat: İngilizcede"
      },
      {
       "lang": "en",
@@ -26497,7 +26697,7 @@
      },
      {
       "lang": "tr",
-      "text": " deriz, başına "
+      "text": "deriz, başına"
      },
      {
       "lang": "en",
@@ -26505,7 +26705,7 @@
      },
      {
       "lang": "tr",
-      "text": " gelir; "
+      "text": "gelir;"
      },
      {
       "lang": "en",
@@ -26513,7 +26713,7 @@
      },
      {
       "lang": "tr",
-      "text": " denmez."
+      "text": "denmez."
      }
     ]
    },
@@ -26521,7 +26721,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Lütfen sen de söyle: "
+      "text": "Lütfen sen de söyle:"
      },
      {
       "lang": "en",
@@ -26537,7 +26737,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Başka sebepler de var. Bir şey sana olmuyorsa, yani üstüne oturmuyorsa: "
+      "text": "Başka sebepler de var. Bir şey sana olmuyorsa, yani üstüne oturmuyorsa:"
      },
      {
       "lang": "en",
@@ -26545,7 +26745,7 @@
      },
      {
       "lang": "tr",
-      "text": " Bozuksa: "
+      "text": "Bozuksa:"
      },
      {
       "lang": "en",
@@ -26553,7 +26753,7 @@
      },
      {
       "lang": "tr",
-      "text": " Fikrini değiştirdiysen: "
+      "text": "Fikrini değiştirdiysen:"
      },
      {
       "lang": "en",
@@ -26604,7 +26804,7 @@
      },
      {
       "lang": "tr",
-      "text": "Buradaki "
+      "text": "Buradaki"
      },
      {
       "lang": "en",
@@ -26612,7 +26812,7 @@
      },
      {
       "lang": "tr",
-      "text": ", henüz demek ve olumsuz cümlenin sonuna gelir. Bir de "
+      "text": ", henüz demek ve olumsuz cümlenin sonuna gelir. Bir de"
      },
      {
       "lang": "en",
@@ -26620,11 +26820,11 @@
      },
      {
       "lang": "tr",
-      "text": " var: Sadece bir kez giydim."
+      "text": "var: Sadece bir kez giydim."
      },
      {
       "lang": "tr",
-      "text": "Lütfen ilkini söyle: "
+      "text": "Lütfen ilkini söyle:"
      },
      {
       "lang": "en",
@@ -26667,7 +26867,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. İade için "
+      "text": "Toparlayalım. İade için"
      },
      {
       "lang": "en",
@@ -26675,7 +26875,7 @@
      },
      {
       "lang": "tr",
-      "text": " Değişim için "
+      "text": "Değişim için"
      },
      {
       "lang": "en",
@@ -26683,7 +26883,7 @@
      },
      {
       "lang": "tr",
-      "text": " Para iadesi için "
+      "text": "Para iadesi için"
      },
      {
       "lang": "en",
@@ -26691,7 +26891,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sebep olarak "
+      "text": "Sebep olarak"
      },
      {
       "lang": "en",
@@ -26699,7 +26899,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da "
+      "text": "ya da"
      },
      {
       "lang": "en",
@@ -26707,7 +26907,7 @@
      },
      {
       "lang": "tr",
-      "text": " Fiş ise "
+      "text": "Fiş ise"
      },
      {
       "lang": "en",
@@ -28556,7 +28756,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -28564,7 +28764,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Türkçesi sözleşme demek. Telefon hattı alırken imzaladığın şey. Lütfen söyle: "
+      "text": ". Türkçesi sözleşme demek. Telefon hattı alırken imzaladığın şey. Lütfen söyle:"
      },
      {
       "lang": "en",
@@ -28580,7 +28780,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kelime: "
+      "text": "İkinci kelime:"
      },
      {
       "lang": "en",
@@ -28588,7 +28788,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Aylık demek. Aylık ücret için "
+      "text": ". Aylık demek. Aylık ücret için"
      },
      {
       "lang": "en",
@@ -28596,7 +28796,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin. Şimdi sen söyle: "
+      "text": "dersin. Şimdi sen söyle:"
      },
      {
       "lang": "en",
@@ -28612,7 +28812,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üçüncü kelime: "
+      "text": "Üçüncü kelime:"
      },
      {
       "lang": "en",
@@ -28620,7 +28820,7 @@
      },
      {
       "lang": "tr",
-      "text": ". İnternet paketindeki veri. Mağazada en çok soracağın soru bu: "
+      "text": ". İnternet paketindeki veri. Mağazada en çok soracağın soru bu:"
      },
      {
       "lang": "en",
@@ -28628,7 +28828,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani ne kadar veri alıyorum? Sen de söyle."
+      "text": "Yani ne kadar veri alıyorum? Sen de söyle."
      }
     ],
     "expect": {
@@ -28640,7 +28840,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dördüncü kelime: "
+      "text": "Dördüncü kelime:"
      },
      {
       "lang": "en",
@@ -28648,7 +28848,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Teklif, kampanya demek. Mağazada duyarsın: "
+      "text": ". Teklif, kampanya demek. Mağazada duyarsın:"
      },
      {
       "lang": "en",
@@ -28656,7 +28856,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sen şunu tekrar et: "
+      "text": "Sen şunu tekrar et:"
      },
      {
       "lang": "en",
@@ -28672,7 +28872,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Beşinci kelime: "
+      "text": "Beşinci kelime:"
      },
      {
       "lang": "en",
@@ -28680,7 +28880,7 @@
      },
      {
       "lang": "tr",
-      "text": ". İptal etmek demek. Tam cümlesi şöyle: "
+      "text": ". İptal etmek demek. Tam cümlesi şöyle:"
      },
      {
       "lang": "en",
@@ -28688,7 +28888,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen tekrar et."
+      "text": "Lütfen tekrar et."
      }
     ],
     "expect": {
@@ -28700,7 +28900,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi karşılaştırma. İngilizcede kısa sıfatların sonuna "
+      "text": "Şimdi karşılaştırma. İngilizcede kısa sıfatların sonuna"
      },
      {
       "lang": "en",
@@ -28708,7 +28908,7 @@
      },
      {
       "lang": "tr",
-      "text": " eklersin: "
+      "text": "eklersin:"
      },
      {
       "lang": "en",
@@ -28716,7 +28916,7 @@
      },
      {
       "lang": "tr",
-      "text": " ucuz, "
+      "text": "ucuz,"
      },
      {
       "lang": "en",
@@ -28724,7 +28924,7 @@
      },
      {
       "lang": "tr",
-      "text": " daha ucuz. "
+      "text": "daha ucuz."
      },
      {
       "lang": "en",
@@ -28732,7 +28932,7 @@
      },
      {
       "lang": "tr",
-      "text": " hızlı, "
+      "text": "hızlı,"
      },
      {
       "lang": "en",
@@ -28740,7 +28940,7 @@
      },
      {
       "lang": "tr",
-      "text": " daha hızlı. Uzun sıfatlarda ise başına "
+      "text": "daha hızlı. Uzun sıfatlarda ise başına"
      },
      {
       "lang": "en",
@@ -28748,7 +28948,7 @@
      },
      {
       "lang": "tr",
-      "text": " gelir: "
+      "text": "gelir:"
      },
      {
       "lang": "en",
@@ -28764,7 +28964,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ve karşılaştırdığın şeyi "
+      "text": "Ve karşılaştırdığın şeyi"
      },
      {
       "lang": "en",
@@ -28772,7 +28972,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile bağlarsın: -den, -dan demek. Şunu söyle: "
+      "text": "ile bağlarsın: -den, -dan demek. Şunu söyle:"
      },
      {
       "lang": "en",
@@ -28802,7 +29002,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "pahalı uzun bir sıfat, o yüzden "
+       "text": "pahalı uzun bir sıfat, o yüzden"
       },
       {
        "lang": "en",
@@ -28810,7 +29010,7 @@
       },
       {
        "lang": "tr",
-       "text": " ve sonra "
+       "text": "ve sonra"
       },
       {
        "lang": "en",
@@ -28823,7 +29023,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üç tarifeden en iyisini söylemek istersen üstünlük derecesi lazım. Başına "
+      "text": "Üç tarifeden en iyisini söylemek istersen üstünlük derecesi lazım. Başına"
      },
      {
       "lang": "en",
@@ -28831,7 +29031,7 @@
      },
      {
       "lang": "tr",
-      "text": " gelir: "
+      "text": "gelir:"
      },
      {
       "lang": "en",
@@ -28839,7 +29039,7 @@
      },
      {
       "lang": "tr",
-      "text": " en ucuz, "
+      "text": "en ucuz,"
      },
      {
       "lang": "en",
@@ -28847,7 +29047,7 @@
      },
      {
       "lang": "tr",
-      "text": " en pahalı. Bir tanesi düzensiz: "
+      "text": "en pahalı. Bir tanesi düzensiz:"
      },
      {
       "lang": "en",
@@ -28881,7 +29081,7 @@
       },
       {
        "lang": "tr",
-       "text": " ve sonra teklif kelimesi"
+       "text": "ve sonra teklif kelimesi"
       }
      ]
     }
@@ -28890,7 +29090,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Veri miktarını da karşılaştırabilirsin. "
+      "text": "Veri miktarını da karşılaştırabilirsin."
      },
      {
       "lang": "en",
@@ -28898,7 +29098,7 @@
      },
      {
       "lang": "tr",
-      "text": " Bu tarife bana daha çok veri veriyor. Tersi de var: "
+      "text": "Bu tarife bana daha çok veri veriyor. Tersi de var:"
      },
      {
       "lang": "en",
@@ -28906,7 +29106,7 @@
      },
      {
       "lang": "tr",
-      "text": ", daha az veri. Ve sınırsız paket için tek kelime yeter: "
+      "text": ", daha az veri. Ve sınırsız paket için tek kelime yeter:"
      },
      {
       "lang": "en",
@@ -28936,7 +29136,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. "
+       "text": "Yanlış."
       },
       {
        "lang": "en",
@@ -28944,7 +29144,7 @@
       },
       {
        "lang": "tr",
-       "text": " kısa bir sıfat, o yüzden "
+       "text": "kısa bir sıfat, o yüzden"
       },
       {
        "lang": "en",
@@ -28952,7 +29152,7 @@
       },
       {
        "lang": "tr",
-       "text": " değil "
+       "text": "değil"
       },
       {
        "lang": "en",
@@ -28960,7 +29160,7 @@
       },
       {
        "lang": "tr",
-       "text": " denir: "
+       "text": "denir:"
       },
       {
        "lang": "en",
@@ -28973,7 +29173,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Satıcı sana ne kadar zamandır bu operatörde olduğunu sorabilir. Cevapta present perfect kullanılır: "
+      "text": "Satıcı sana ne kadar zamandır bu operatörde olduğunu sorabilir. Cevapta present perfect kullanılır:"
      },
      {
       "lang": "en",
@@ -28981,7 +29181,7 @@
      },
      {
       "lang": "tr",
-      "text": " İki yıldır bu numaram var. Süre için "
+      "text": "İki yıldır bu numaram var. Süre için"
      },
      {
       "lang": "en",
@@ -28989,7 +29189,7 @@
      },
      {
       "lang": "tr",
-      "text": ", başlangıç noktası için "
+      "text": ", başlangıç noktası için"
      },
      {
       "lang": "en",
@@ -28997,7 +29197,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullanırsın: "
+      "text": "kullanırsın:"
      },
      {
       "lang": "en",
@@ -29030,7 +29230,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile başla, süre için "
+       "text": "ile başla, süre için"
       },
       {
        "lang": "en",
@@ -29038,7 +29238,7 @@
       },
       {
        "lang": "tr",
-       "text": " kullan"
+       "text": "kullan"
       }
      ]
     }
@@ -29047,7 +29247,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İmzalamadan önce sorman gereken iki şey var. Birincisi: "
+      "text": "İmzalamadan önce sorman gereken iki şey var. Birincisi:"
      },
      {
       "lang": "en",
@@ -29055,7 +29255,7 @@
      },
      {
       "lang": "tr",
-      "text": " İptal ücreti var mı? İkincisi: "
+      "text": "İptal ücreti var mı? İkincisi:"
      },
      {
       "lang": "en",
@@ -29063,7 +29263,7 @@
      },
      {
       "lang": "tr",
-      "text": " Numaramı koruyabilir miyim?"
+      "text": "Numaramı koruyabilir miyim?"
      }
     ]
    },
@@ -29071,7 +29271,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sözleşmeyi bitirmek istersen genelde önceden haber vermen gerekir. Buna "
+      "text": "Sözleşmeyi bitirmek istersen genelde önceden haber vermen gerekir. Buna"
      },
      {
       "lang": "en",
@@ -29079,7 +29279,7 @@
      },
      {
       "lang": "tr",
-      "text": " denir. Satıcı şöyle der: "
+      "text": "denir. Satıcı şöyle der:"
      },
      {
       "lang": "en",
@@ -29087,7 +29287,7 @@
      },
      {
       "lang": "tr",
-      "text": " Bir ay önceden haber vermelisin."
+      "text": "Bir ay önceden haber vermelisin."
      }
     ]
    },
@@ -29095,7 +29295,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi hepsini bir arada dinle. Satıcı: "
+      "text": "Şimdi hepsini bir arada dinle. Satıcı:"
      },
      {
       "lang": "en",
@@ -29103,7 +29303,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sen: "
+      "text": "Sen:"
      },
      {
       "lang": "en",
@@ -29111,7 +29311,7 @@
      },
      {
       "lang": "tr",
-      "text": " Satıcı: "
+      "text": "Satıcı:"
      },
      {
       "lang": "en",
@@ -29123,7 +29323,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. Beş kelime: "
+      "text": "Toparlayalım. Beş kelime:"
      },
      {
       "lang": "en",
@@ -29131,7 +29331,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Karşılaştırma için kısa sıfatta "
+      "text": ". Karşılaştırma için kısa sıfatta"
      },
      {
       "lang": "en",
@@ -29139,7 +29339,7 @@
      },
      {
       "lang": "tr",
-      "text": ", uzun sıfatta "
+      "text": ", uzun sıfatta"
      },
      {
       "lang": "en",
@@ -29147,7 +29347,7 @@
      },
      {
       "lang": "tr",
-      "text": ", en iyisi için "
+      "text": ", en iyisi için"
      },
      {
       "lang": "en",
@@ -29155,7 +29355,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Ve iki can simidi: "
+      "text": ". Ve iki can simidi:"
      },
      {
       "lang": "en",
@@ -29163,7 +29363,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile "
+      "text": "ile"
      },
      {
       "lang": "en",
@@ -29171,7 +29371,7 @@
      },
      {
       "lang": "tr",
-      "text": " Şimdi mağazada deneyelim."
+      "text": "Şimdi mağazada deneyelim."
      }
     ]
    }
@@ -29251,7 +29451,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -29259,7 +29459,7 @@
      },
      {
       "lang": "tr",
-      "text": " — kesmek demek. Saç kesimi için de "
+      "text": "— kesmek demek. Saç kesimi için de"
      },
      {
       "lang": "en",
@@ -29267,7 +29467,7 @@
      },
      {
       "lang": "tr",
-      "text": " deriz. Lütfen tekrar et."
+      "text": "deriz. Lütfen tekrar et."
      },
      {
       "lang": "en",
@@ -29283,7 +29483,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kuaföre girdiğinde söyleyeceğin ilk cümle şu: "
+      "text": "Kuaföre girdiğinde söyleyeceğin ilk cümle şu:"
      },
      {
       "lang": "en",
@@ -29291,7 +29491,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani: Saç kesimi istiyorum, lütfen. Sen de söyle."
+      "text": "Yani: Saç kesimi istiyorum, lütfen. Sen de söyle."
      }
     ],
     "expect": {
@@ -29303,7 +29503,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir not: "
+      "text": "Küçük bir not:"
      },
      {
       "lang": "en",
@@ -29311,7 +29511,7 @@
      },
      {
       "lang": "tr",
-      "text": ", aslında "
+      "text": ", aslında"
      },
      {
       "lang": "en",
@@ -29319,7 +29519,7 @@
      },
      {
       "lang": "tr",
-      "text": "'in kısası. "
+      "text": "'in kısası."
      },
      {
       "lang": "en",
@@ -29327,7 +29527,7 @@
      },
      {
       "lang": "tr",
-      "text": " demek yanlış değil ama biraz sert duyulur. Kuaförde, kafede, dükkanda hep "
+      "text": "demek yanlış değil ama biraz sert duyulur. Kuaförde, kafede, dükkanda hep"
      },
      {
       "lang": "en",
@@ -29335,7 +29535,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullan; çok daha kibar."
+      "text": "kullan; çok daha kibar."
      }
     ]
    },
@@ -29343,7 +29543,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıradaki kelime: "
+      "text": "Sıradaki kelime:"
      },
      {
       "lang": "en",
@@ -29351,7 +29551,7 @@
      },
      {
       "lang": "tr",
-      "text": " — kısa demek. Tekrar et lütfen."
+      "text": "— kısa demek. Tekrar et lütfen."
      },
      {
       "lang": "en",
@@ -29367,7 +29567,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çok kısa kesmesini istemiyorsan şunu söylersin: "
+      "text": "Çok kısa kesmesini istemiyorsan şunu söylersin:"
      },
      {
       "lang": "en",
@@ -29375,7 +29575,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani: Çok kısa olmasın, lütfen. Sen de söyle."
+      "text": "Yani: Çok kısa olmasın, lütfen. Sen de söyle."
      }
     ],
     "expect": {
@@ -29387,7 +29587,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İngilizcede kısa sıfatların sonuna "
+      "text": "İngilizcede kısa sıfatların sonuna"
      },
      {
       "lang": "en",
@@ -29395,7 +29595,7 @@
      },
      {
       "lang": "tr",
-      "text": " ekleyip karşılaştırma yaparız. "
+      "text": "ekleyip karşılaştırma yaparız."
      },
      {
       "lang": "en",
@@ -29403,7 +29603,7 @@
      },
      {
       "lang": "tr",
-      "text": " kısa, "
+      "text": "kısa,"
      },
      {
       "lang": "en",
@@ -29411,7 +29611,7 @@
      },
      {
       "lang": "tr",
-      "text": " daha kısa. Biraz demek için de başına "
+      "text": "daha kısa. Biraz demek için de başına"
      },
      {
       "lang": "en",
@@ -29419,7 +29619,7 @@
      },
      {
       "lang": "tr",
-      "text": " koyarız: "
+      "text": "koyarız:"
      },
      {
       "lang": "en",
@@ -29427,7 +29627,7 @@
      },
      {
       "lang": "tr",
-      "text": " — biraz daha kısa."
+      "text": "— biraz daha kısa."
      }
     ]
    },
@@ -29450,7 +29650,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "biraz daha kısa: "
+       "text": "biraz daha kısa:"
       },
       {
        "lang": "en",
@@ -29458,7 +29658,7 @@
       },
       {
        "lang": "tr",
-       "text": " — sonuna lütfen ekle."
+       "text": "— sonuna lütfen ekle."
       }
      ]
     }
@@ -29467,7 +29667,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yeni kelime: "
+      "text": "Yeni kelime:"
      },
      {
       "lang": "en",
@@ -29475,7 +29675,7 @@
      },
      {
       "lang": "tr",
-      "text": " — yıkamak. Önce saçının yıkanmasını istiyorsan sorarsın: "
+      "text": "— yıkamak. Önce saçının yıkanmasını istiyorsan sorarsın:"
      },
      {
       "lang": "en",
@@ -29483,7 +29683,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sen de söyle."
+      "text": "Sen de söyle."
      }
     ],
     "expect": {
@@ -29495,7 +29695,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi kesimin yerini tarif edelim. Yanlar "
+      "text": "Şimdi kesimin yerini tarif edelim. Yanlar"
      },
      {
       "lang": "en",
@@ -29503,7 +29703,7 @@
      },
      {
       "lang": "tr",
-      "text": ", arka "
+      "text": ", arka"
      },
      {
       "lang": "en",
@@ -29511,7 +29711,7 @@
      },
      {
       "lang": "tr",
-      "text": ", üst "
+      "text": ", üst"
      },
      {
       "lang": "en",
@@ -29519,7 +29719,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Kalıp basit: "
+      "text": ". Kalıp basit:"
      },
      {
       "lang": "en",
@@ -29527,7 +29727,7 @@
      },
      {
       "lang": "tr",
-      "text": " — Yanlar kısa olsun, lütfen."
+      "text": "— Yanlar kısa olsun, lütfen."
      }
     ]
    },
@@ -29553,7 +29753,7 @@
       },
       {
        "lang": "tr",
-       "text": " + "
+       "text": "+"
       },
       {
        "lang": "en",
@@ -29561,7 +29761,7 @@
       },
       {
        "lang": "tr",
-       "text": " + lütfen."
+       "text": "+ lütfen."
       }
      ]
     }
@@ -29570,7 +29770,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir kelime daha: "
+      "text": "Bir kelime daha:"
      },
      {
       "lang": "en",
@@ -29578,7 +29778,7 @@
      },
      {
       "lang": "tr",
-      "text": " — tarz, model. Telefonundan bir fotoğraf gösterip şöyle diyebilirsin: "
+      "text": "— tarz, model. Telefonundan bir fotoğraf gösterip şöyle diyebilirsin:"
      },
      {
       "lang": "en",
@@ -29586,7 +29786,7 @@
      },
      {
       "lang": "tr",
-      "text": " Ya da fikir soracaksan: "
+      "text": "Ya da fikir soracaksan:"
      },
      {
       "lang": "en",
@@ -29598,7 +29798,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir kontrol. Şu cümle doğru mu: "
+      "text": "Küçük bir kontrol. Şu cümle doğru mu:"
      },
      {
       "lang": "en",
@@ -29612,7 +29812,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Hayır. "
+       "text": "Hayır."
       },
       {
        "lang": "en",
@@ -29620,7 +29820,7 @@
       },
       {
        "lang": "tr",
-       "text": " tam tersi: çok kısa olmasın demek. Sınır koyuyorsun."
+       "text": "tam tersi: çok kısa olmasın demek. Sınır koyuyorsun."
       }
      ]
     }
@@ -29629,7 +29829,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son kelimemiz: "
+      "text": "Son kelimemiz:"
      },
      {
       "lang": "en",
@@ -29637,7 +29837,7 @@
      },
      {
       "lang": "tr",
-      "text": " — bahşiş. Parayı uzatırken şunu dersin: "
+      "text": "— bahşiş. Parayı uzatırken şunu dersin:"
      },
      {
       "lang": "en",
@@ -29645,7 +29845,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sen de söyle."
+      "text": "Sen de söyle."
      }
     ],
     "expect": {
@@ -29657,7 +29857,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Fiyatı sormak için: "
+      "text": "Fiyatı sormak için:"
      },
      {
       "lang": "en",
@@ -29665,7 +29865,7 @@
      },
      {
       "lang": "tr",
-      "text": " Kartla ödemek istersen: "
+      "text": "Kartla ödemek istersen:"
      },
      {
       "lang": "en",
@@ -29673,7 +29873,7 @@
      },
      {
       "lang": "tr",
-      "text": " İkisi de kısa ve her yerde işe yarar."
+      "text": "İkisi de kısa ve her yerde işe yarar."
      }
     ]
    },
@@ -29696,7 +29896,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Kibar istek: "
+       "text": "Kibar istek:"
       },
       {
        "lang": "en",
@@ -29704,7 +29904,7 @@
       },
       {
        "lang": "tr",
-       "text": " + "
+       "text": "+"
       },
       {
        "lang": "en",
@@ -29712,7 +29912,7 @@
       },
       {
        "lang": "tr",
-       "text": " + lütfen."
+       "text": "+ lütfen."
       }
      ]
     }
@@ -29721,7 +29921,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de tanıdık bir kuaförse, deneyimini anlatabilirsin: "
+      "text": "Bir de tanıdık bir kuaförse, deneyimini anlatabilirsin:"
      },
      {
       "lang": "en",
@@ -29729,7 +29929,7 @@
      },
      {
       "lang": "tr",
-      "text": " — Daha önce buraya geldim. Ya da: "
+      "text": "— Daha önce buraya geldim. Ya da:"
      },
      {
       "lang": "en",
@@ -29737,7 +29937,7 @@
      },
      {
       "lang": "tr",
-      "text": " — Üç aydır saçımı kestirmedim."
+      "text": "— Üç aydır saçımı kestirmedim."
      }
     ]
    },
@@ -29745,7 +29945,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim: "
+      "text": "Özetleyelim:"
      },
      {
       "lang": "en",
@@ -29753,7 +29953,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile başlıyorsun, "
+      "text": "ile başlıyorsun,"
      },
      {
       "lang": "en",
@@ -29761,7 +29961,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile sınır koyuyorsun, "
+      "text": "ile sınır koyuyorsun,"
      },
      {
       "lang": "en",
@@ -29769,7 +29969,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile yeri tarif ediyorsun, sonunda "
+      "text": "ile yeri tarif ediyorsun, sonunda"
      },
      {
       "lang": "en",
@@ -29777,7 +29977,7 @@
      },
      {
       "lang": "tr",
-      "text": " diye sorup bahşişi veriyorsun. Şimdi bunu gerçek bir sahnede deneyelim."
+      "text": "diye sorup bahşişi veriyorsun. Şimdi bunu gerçek bir sahnede deneyelim."
      }
     ]
    }
@@ -31432,7 +31632,15 @@
      },
      {
       "lang": "tr",
-      "text": "İngilizcede \"double\" kelimesi \"iki kat, çift\" anlamı taşır."
+      "text": "İngilizcede"
+     },
+     {
+      "lang": "en",
+      "text": "double"
+     },
+     {
+      "lang": "tr",
+      "text": "kelimesi \"iki kat, çift\" anlamı taşır."
      }
     ]
    },
@@ -31522,7 +31730,15 @@
       },
       {
        "lang": "tr",
-       "text": "Sonra oda tipi, en sonda \"for two nights\"."
+       "text": "Sonra oda tipi, en sonda"
+      },
+      {
+       "lang": "en",
+       "text": "for two nights"
+      },
+      {
+       "lang": "tr",
+       "text": "."
       }
      ]
     }
@@ -31543,7 +31759,15 @@
      },
      {
       "lang": "tr",
-      "text": "Sonuna \"please\" eklemeyi unutma; İngilizcede bu neredeyse zorunludur."
+      "text": "Sonuna"
+     },
+     {
+      "lang": "en",
+      "text": "please"
+     },
+     {
+      "lang": "tr",
+      "text": "eklemeyi unutma; İngilizcede bu neredeyse zorunludur."
      }
     ]
    },
@@ -31587,7 +31811,15 @@
      },
      {
       "lang": "tr",
-      "text": "Soru \"Does\" ile başladığı için fiil yalın kalır: include, includes değil."
+      "text": "Soru"
+     },
+     {
+      "lang": "en",
+      "text": "Does"
+     },
+     {
+      "lang": "tr",
+      "text": "ile başladığı için fiil yalın kalır: include, includes değil."
      }
     ]
    },
@@ -31625,7 +31857,15 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. \"A double room\" iki kişiliktir."
+       "text": "Yanlış."
+      },
+      {
+       "lang": "en",
+       "text": "A double room"
+      },
+      {
+       "lang": "tr",
+       "text": "iki kişiliktir."
       },
       {
        "lang": "tr",
@@ -31642,7 +31882,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Fiyatı da sormalısın. Gecelik fiyat için \"per night\" deriz:"
+      "text": "Fiyatı da sormalısın. Gecelik fiyat için"
+     },
+     {
+      "lang": "en",
+      "text": "per night"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz:"
      },
      {
       "lang": "en",
@@ -31675,7 +31923,15 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Soruyu \"Does\" ile başlat, sonra"
+       "text": "Soruyu"
+      },
+      {
+       "lang": "en",
+       "text": "Does"
+      },
+      {
+       "lang": "tr",
+       "text": "ile başlat, sonra"
       },
       {
        "lang": "en",
@@ -31704,7 +31960,15 @@
      },
      {
       "lang": "tr",
-      "text": "Dikkat: \"booking\" burada rezervasyon demek."
+      "text": "Dikkat:"
+     },
+     {
+      "lang": "en",
+      "text": "booking"
+     },
+     {
+      "lang": "tr",
+      "text": "burada rezervasyon demek."
      }
     ]
    },
@@ -31734,7 +31998,23 @@
       },
       {
        "lang": "tr",
-       "text": "Sonra \"confirm\" ve \"my booking\"."
+       "text": "Sonra"
+      },
+      {
+       "lang": "en",
+       "text": "confirm"
+      },
+      {
+       "lang": "tr",
+       "text": "ve"
+      },
+      {
+       "lang": "en",
+       "text": "my booking"
+      },
+      {
+       "lang": "tr",
+       "text": "."
       }
      ]
     }
@@ -35299,7 +35579,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -35307,7 +35587,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Türkçesi hediyelik eşya demek. Vurgu sonda: su-ve-NİR. Lütfen sen de söyle: "
+      "text": ". Türkçesi hediyelik eşya demek. Vurgu sonda: su-ve-NİR. Lütfen sen de söyle:"
      },
      {
       "lang": "en",
@@ -35323,7 +35603,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de "
+      "text": "Bir de"
      },
      {
       "lang": "en",
@@ -35331,7 +35611,7 @@
      },
      {
       "lang": "tr",
-      "text": " var: hediye. Aradaki fark şu: "
+      "text": "var: hediye. Aradaki fark şu:"
      },
      {
       "lang": "en",
@@ -35339,7 +35619,7 @@
      },
      {
       "lang": "tr",
-      "text": " gittiğin yerden aldığın hatıradır, "
+      "text": "gittiğin yerden aldığın hatıradır,"
      },
      {
       "lang": "en",
@@ -35347,7 +35627,7 @@
      },
      {
       "lang": "tr",
-      "text": " ise birine vereceğin hediyedir. Şimdi söyle: "
+      "text": "ise birine vereceğin hediyedir. Şimdi söyle:"
      },
      {
       "lang": "en",
@@ -35363,7 +35643,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Seçmek fiili "
+      "text": "Seçmek fiili"
      },
      {
       "lang": "en",
@@ -35371,7 +35651,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Raflara bakarken şunu duyabilirsin: "
+      "text": ". Raflara bakarken şunu duyabilirsin:"
      },
      {
       "lang": "en",
@@ -35379,7 +35659,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani acele etme, seç. Karar veremiyorsan da şunu diyebilirsin: "
+      "text": "Yani acele etme, seç. Karar veremiyorsan da şunu diyebilirsin:"
      },
      {
       "lang": "en",
@@ -35391,7 +35671,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dükkâna girdiğinde satıcı genelde şunu sorar: "
+      "text": "Dükkâna girdiğinde satıcı genelde şunu sorar:"
      },
      {
       "lang": "en",
@@ -35399,7 +35679,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sadece bakıyorsan cevabın hazır olsun: "
+      "text": "Sadece bakıyorsan cevabın hazır olsun:"
      },
      {
       "lang": "en",
@@ -35407,7 +35687,7 @@
      },
      {
       "lang": "tr",
-      "text": " Ama bir şey arıyorsan "
+      "text": "Ama bir şey arıyorsan"
      },
      {
       "lang": "en",
@@ -35415,7 +35695,7 @@
      },
      {
       "lang": "tr",
-      "text": " kalıbını kullan."
+      "text": "kalıbını kullan."
      }
     ]
    },
@@ -35437,7 +35717,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "'…arıyorum' için "
+       "text": "'…arıyorum' için"
       },
       {
        "lang": "en",
@@ -35445,7 +35725,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile başla, sonra "
+       "text": "ile başla, sonra"
       },
       {
        "lang": "en",
@@ -35453,7 +35733,7 @@
       },
       {
        "lang": "tr",
-       "text": " ekle."
+       "text": "ekle."
       }
      ]
     }
@@ -35462,7 +35742,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir şeyi beğendin, sıra fiyatta. Tek bir şey için: "
+      "text": "Bir şeyi beğendin, sıra fiyatta. Tek bir şey için:"
      },
      {
       "lang": "en",
@@ -35470,7 +35750,7 @@
      },
      {
       "lang": "tr",
-      "text": " Birden fazla şey için: "
+      "text": "Birden fazla şey için:"
      },
      {
       "lang": "en",
@@ -35478,7 +35758,7 @@
      },
      {
       "lang": "tr",
-      "text": " Tek şeyde "
+      "text": "Tek şeyde"
      },
      {
       "lang": "en",
@@ -35486,7 +35766,7 @@
      },
      {
       "lang": "tr",
-      "text": ", çoğulda "
+      "text": ", çoğulda"
      },
      {
       "lang": "en",
@@ -35494,7 +35774,7 @@
      },
      {
       "lang": "tr",
-      "text": " — küçük ama önemli fark."
+      "text": "— küçük ama önemli fark."
      }
     ]
    },
@@ -35520,7 +35800,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile başla, tek bir şey olduğu için "
+       "text": "ile başla, tek bir şey olduğu için"
       },
       {
        "lang": "en",
@@ -35528,7 +35808,7 @@
       },
       {
        "lang": "tr",
-       "text": " kullan."
+       "text": "kullan."
       }
      ]
     }
@@ -35537,7 +35817,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Fiyat yüksek geldi. Karşılaştırma zamanı. "
+      "text": "Fiyat yüksek geldi. Karşılaştırma zamanı."
      },
      {
       "lang": "en",
@@ -35545,7 +35825,7 @@
      },
      {
       "lang": "tr",
-      "text": " ucuz demek; sonuna -er ekleyince "
+      "text": "ucuz demek; sonuna -er ekleyince"
      },
      {
       "lang": "en",
@@ -35553,7 +35833,7 @@
      },
      {
       "lang": "tr",
-      "text": " olur, yani daha ucuz. Aynı mantık: "
+      "text": "olur, yani daha ucuz. Aynı mantık:"
      },
      {
       "lang": "en",
@@ -35561,7 +35841,7 @@
      },
      {
       "lang": "tr",
-      "text": " ve "
+      "text": "ve"
      },
      {
       "lang": "en",
@@ -35577,7 +35857,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "En işine yarayacak soru bu. Söyle bakalım: "
+      "text": "En işine yarayacak soru bu. Söyle bakalım:"
      },
      {
       "lang": "en",
@@ -35593,7 +35873,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir kültür notu: İngilizce konuşulan yerlerde sert pazarlık pek yapılmaz, özellikle mağazalarda fiyatlar sabittir. Ama turistik pazarlarda kibarca denemek normaldir. Yumuşak giriş şu: "
+      "text": "Küçük bir kültür notu: İngilizce konuşulan yerlerde sert pazarlık pek yapılmaz, özellikle mağazalarda fiyatlar sabittir. Ama turistik pazarlarda kibarca denemek normaldir. Yumuşak giriş şu:"
      },
      {
       "lang": "en",
@@ -35601,7 +35881,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani benim için biraz pahalı."
+      "text": "Yani benim için biraz pahalı."
      }
     ]
    },
@@ -35609,7 +35889,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi indirim isteyelim. İndirim kelimesi "
+      "text": "Şimdi indirim isteyelim. İndirim kelimesi"
      },
      {
       "lang": "en",
@@ -35617,7 +35897,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Tekrar et: "
+      "text": ". Tekrar et:"
      },
      {
       "lang": "en",
@@ -35633,7 +35913,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Satıcının iki tür cevabı olur. Olumlu: "
+      "text": "Satıcının iki tür cevabı olur. Olumlu:"
      },
      {
       "lang": "en",
@@ -35641,7 +35921,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani yüzde on indirim yapabilirim. Olumsuz: "
+      "text": "Yani yüzde on indirim yapabilirim. Olumsuz:"
      },
      {
       "lang": "en",
@@ -35649,7 +35929,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani fiyatlar sabit. O zaman "
+      "text": "Yani fiyatlar sabit. O zaman"
      },
      {
       "lang": "en",
@@ -35657,7 +35937,7 @@
      },
      {
       "lang": "tr",
-      "text": " der, geçersin."
+      "text": "der, geçersin."
      }
     ]
    },
@@ -35679,7 +35959,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. "
+       "text": "Yanlış."
       },
       {
        "lang": "en",
@@ -35687,7 +35967,7 @@
       },
       {
        "lang": "tr",
-       "text": " paketleme ile ilgilidir, fiyatla değil. Fiyat sorusu "
+       "text": "paketleme ile ilgilidir, fiyatla değil. Fiyat sorusu"
       },
       {
        "lang": "en",
@@ -35695,7 +35975,7 @@
       },
       {
        "lang": "tr",
-       "text": " olurdu."
+       "text": "olurdu."
       }
      ]
     }
@@ -35704,7 +35984,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Demek ki "
+      "text": "Demek ki"
      },
      {
       "lang": "en",
@@ -35712,7 +35992,7 @@
      },
      {
       "lang": "tr",
-      "text": " paketlemek demek. Kâğıda sarmak, hediye paketi yapmak. Satıcı sorabilir: "
+      "text": "paketlemek demek. Kâğıda sarmak, hediye paketi yapmak. Satıcı sorabilir:"
      },
      {
       "lang": "en",
@@ -35720,7 +36000,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sen de "
+      "text": "Sen de"
      },
      {
       "lang": "en",
@@ -35728,7 +36008,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin."
+      "text": "dersin."
      }
     ]
    },
@@ -35736,7 +36016,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kibar rica için "
+      "text": "Kibar rica için"
      },
      {
       "lang": "en",
@@ -35744,7 +36024,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullanıyoruz. Söyle: "
+      "text": "kullanıyoruz. Söyle:"
      },
      {
       "lang": "en",
@@ -35760,7 +36040,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Karar verdin, alıyorsun. Bunu İngilizcede genelde "
+      "text": "Karar verdin, alıyorsun. Bunu İngilizcede genelde"
      },
      {
       "lang": "en",
@@ -35768,7 +36048,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile, kısaltarak söyleriz. Şimdi sen söyle: 'Bunu alacağım.'"
+      "text": "ile, kısaltarak söyleriz. Şimdi sen söyle: 'Bunu alacağım.'"
      }
     ],
     "expect": {
@@ -35782,7 +36062,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Dükkânda 'alacağım' için "
+       "text": "Dükkânda 'alacağım' için"
       },
       {
        "lang": "en",
@@ -35790,7 +36070,7 @@
       },
       {
        "lang": "tr",
-       "text": " yerine "
+       "text": "yerine"
       },
       {
        "lang": "en",
@@ -35798,7 +36078,7 @@
       },
       {
        "lang": "tr",
-       "text": " daha doğal: "
+       "text": "daha doğal:"
       },
       {
        "lang": "en",
@@ -35811,7 +36091,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir cümle. Bugüne kadar aldıklarından bahsetmek istersen: "
+      "text": "Son bir cümle. Bugüne kadar aldıklarından bahsetmek istersen:"
      },
      {
       "lang": "en",
@@ -35819,7 +36099,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani üç hediyelik aldım bile. "
+      "text": "Yani üç hediyelik aldım bile."
      },
      {
       "lang": "en",
@@ -35827,7 +36107,7 @@
      },
      {
       "lang": "tr",
-      "text": " burada 'bile, çoktan' anlamı katıyor."
+      "text": "burada 'bile, çoktan' anlamı katıyor."
      }
     ]
    },
@@ -35835,7 +36115,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım: bir şey seçtin, "
+      "text": "Toparlayalım: bir şey seçtin,"
      },
      {
       "lang": "en",
@@ -35843,7 +36123,7 @@
      },
      {
       "lang": "tr",
-      "text": " diye fiyatı sordun, "
+      "text": "diye fiyatı sordun,"
      },
      {
       "lang": "en",
@@ -35851,7 +36131,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile daha ucuzunu istedin, "
+      "text": "ile daha ucuzunu istedin,"
      },
      {
       "lang": "en",
@@ -35859,7 +36139,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile kibarca pazarlık ettin, sonra "
+      "text": "ile kibarca pazarlık ettin, sonra"
      },
      {
       "lang": "en",
@@ -35867,7 +36147,7 @@
      },
      {
       "lang": "tr",
-      "text": " dedin ve "
+      "text": "dedin ve"
      },
      {
       "lang": "en",
@@ -35875,7 +36155,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile bitirdin. Şimdi bunları gerçek bir dükkânda deneyelim."
+      "text": "ile bitirdin. Şimdi bunları gerçek bir dükkânda deneyelim."
      }
     ]
    }
@@ -36468,8 +36748,12 @@
       "text": "free"
      },
      {
+      "lang": "en",
+      "text": "Free"
+     },
+     {
       "lang": "tr",
-      "text": "\"Free\" sadece \"özgür\" demek değil; insanlar için kullanınca \"boş, müsait\" anlamına gelir. \"Yarın müsait misin?\" demek için:"
+      "text": "sadece \"özgür\" demek değil; insanlar için kullanınca \"boş, müsait\" anlamına gelir. \"Yarın müsait misin?\" demek için:"
      },
      {
       "lang": "en",
@@ -36506,8 +36790,12 @@
      ],
      "hint": [
       {
+       "lang": "en",
+       "text": "Are you free"
+      },
+      {
        "lang": "tr",
-       "text": "\"Are you free\" ile başla, sonra günü ekle. Günden önce \"on\" olduğunu unutma."
+       "text": "ile başla, sonra günü ekle. Günden önce \"on\" olduğunu unutma."
       }
      ]
     }
@@ -36532,7 +36820,15 @@
      },
      {
       "lang": "tr",
-      "text": "\"Gelmek ister misin?\" demek. \"Would you like\" kalıbı nazik bir tekliftir; yeni tanıştığın biriyle ya da bir iş arkadaşınla rahatça kullanırsın. Lütfen söyle:"
+      "text": "\"Gelmek ister misin?\" demek."
+     },
+     {
+      "lang": "en",
+      "text": "Would you like"
+     },
+     {
+      "lang": "tr",
+      "text": "kalıbı nazik bir tekliftir; yeni tanıştığın biriyle ya da bir iş arkadaşınla rahatça kullanırsın. Lütfen söyle:"
      },
      {
       "lang": "en",
@@ -36592,7 +36888,15 @@
      },
      {
       "lang": "tr",
-      "text": "\"Tabii, çok isterim\" demek. Buradaki \"I'd\", \"I would\" kısaltmasıdır ve İngilizler bunu neredeyse her zaman kısaltarak söyler."
+      "text": "\"Tabii, çok isterim\" demek. Buradaki \"I'd\","
+     },
+     {
+      "lang": "en",
+      "text": "I would"
+     },
+     {
+      "lang": "tr",
+      "text": "kısaltmasıdır ve İngilizler bunu neredeyse her zaman kısaltarak söyler."
      }
     ]
    },
@@ -36697,8 +37001,28 @@
      ],
      "hint": [
       {
+       "lang": "en",
+       "text": "I'd love to"
+      },
+      {
        "lang": "tr",
-       "text": "\"I'd love to\" ile başla, sonra \"but\" ve \"I can't\" ekle."
+       "text": "ile başla, sonra"
+      },
+      {
+       "lang": "en",
+       "text": "but"
+      },
+      {
+       "lang": "tr",
+       "text": "ve"
+      },
+      {
+       "lang": "en",
+       "text": "I can't"
+      },
+      {
+       "lang": "tr",
+       "text": "ekle."
       }
      ]
     }
@@ -36738,7 +37062,15 @@
      },
      {
       "lang": "tr",
-      "text": "\"Yedide buluşalım\" demek. Saatlerden önce \"at\", yerlerden önce genelde \"in front of\" ya da \"at\" kullanılır:"
+      "text": "\"Yedide buluşalım\" demek. Saatlerden önce \"at\", yerlerden önce genelde"
+     },
+     {
+      "lang": "en",
+      "text": "in front of"
+     },
+     {
+      "lang": "tr",
+      "text": "ya da \"at\" kullanılır:"
      },
      {
       "lang": "en",
@@ -36763,7 +37095,15 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Kibar kalıp \"Would you like to…\" ile başlar; sonra \"join\" ve \"us\" gelir."
+       "text": "Kibar kalıp \"Would you like to…\" ile başlar; sonra"
+      },
+      {
+       "lang": "en",
+       "text": "join"
+      },
+      {
+       "lang": "tr",
+       "text": "ve \"us\" gelir."
       }
      ]
     }
@@ -38409,7 +38749,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -38433,7 +38773,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Neyi tebrik ettiğini de ekleyebilirsin. Bunun için "
+      "text": "Neyi tebrik ettiğini de ekleyebilirsin. Bunun için"
      },
      {
       "lang": "en",
@@ -38441,7 +38781,7 @@
      },
      {
       "lang": "tr",
-      "text": " edatını kullanırız. Yeni iş için tebrik edelim. Şunu de:"
+      "text": "edatını kullanırız. Yeni iş için tebrik edelim. Şunu de:"
      },
      {
       "lang": "en",
@@ -38457,7 +38797,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dikkat: "
+      "text": "Dikkat:"
      },
      {
       "lang": "en",
@@ -38465,7 +38805,7 @@
      },
      {
       "lang": "tr",
-      "text": " edatından sonra bir isim gelir. "
+      "text": "edatından sonra bir isim gelir."
      },
      {
       "lang": "en",
@@ -38473,7 +38813,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani düğünün için tebrikler. Bir fiil kullanmak istersen fiile -ing takarsın: "
+      "text": "Yani düğünün için tebrikler. Bir fiil kullanmak istersen fiile -ing takarsın:"
      },
      {
       "lang": "en",
@@ -38481,7 +38821,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sınavı geçtiğin için tebrikler."
+      "text": "Sınavı geçtiğin için tebrikler."
      }
     ]
    },
@@ -38489,7 +38829,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kelimemiz: "
+      "text": "İkinci kelimemiz:"
      },
      {
       "lang": "en",
@@ -38497,7 +38837,7 @@
      },
      {
       "lang": "tr",
-      "text": ", yani haber. Sonunda s var ama tekil sayılır; "
+      "text": ", yani haber. Sonunda s var ama tekil sayılır;"
      },
      {
       "lang": "en",
@@ -38505,7 +38845,7 @@
      },
      {
       "lang": "tr",
-      "text": " denmez. Bir arkadaşın güzel bir şey anlattığında şöyle dersin:"
+      "text": "denmez. Bir arkadaşın güzel bir şey anlattığında şöyle dersin:"
      },
      {
       "lang": "en",
@@ -38544,7 +38884,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi iyi dileklere geçiyoruz. Üçüncü kelimemiz: "
+      "text": "Şimdi iyi dileklere geçiyoruz. Üçüncü kelimemiz:"
      },
      {
       "lang": "en",
@@ -38552,7 +38892,7 @@
      },
      {
       "lang": "tr",
-      "text": ", yani şans. En sık duyacağın kalıp: "
+      "text": ", yani şans. En sık duyacağın kalıp:"
      },
      {
       "lang": "en",
@@ -38560,7 +38900,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani iyi şanslar."
+      "text": "Yani iyi şanslar."
      }
     ]
    },
@@ -38568,7 +38908,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Neyle ilgili şans dilediğini söylemek istersen "
+      "text": "Neyle ilgili şans dilediğini söylemek istersen"
      },
      {
       "lang": "en",
@@ -38576,7 +38916,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullanırsın. Arkadaşının yarın sınavı var. Şunu de:"
+      "text": "kullanırsın. Arkadaşının yarın sınavı var. Şunu de:"
      },
      {
       "lang": "en",
@@ -38592,7 +38932,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Tebrikte "
+      "text": "Tebrikte"
      },
      {
       "lang": "en",
@@ -38600,7 +38940,7 @@
      },
      {
       "lang": "tr",
-      "text": ", şans dilemede "
+      "text": ", şans dilemede"
      },
      {
       "lang": "en",
@@ -38608,7 +38948,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Bunu aklında tut, çok karıştırılır. "
+      "text": ". Bunu aklında tut, çok karıştırılır."
      },
      {
       "lang": "en",
@@ -38616,7 +38956,7 @@
      },
      {
       "lang": "tr",
-      "text": " ama "
+      "text": "ama"
      },
      {
       "lang": "en",
@@ -38628,7 +38968,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dördüncü kelimemiz: "
+      "text": "Dördüncü kelimemiz:"
      },
      {
       "lang": "en",
@@ -38636,7 +38976,7 @@
      },
      {
       "lang": "tr",
-      "text": ", yani dilemek. Çok kibar bir kalıp: "
+      "text": ", yani dilemek. Çok kibar bir kalıp:"
      },
      {
       "lang": "en",
@@ -38644,7 +38984,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sana en iyisini diliyorum demek. Lütfen tekrar et:"
+      "text": "Sana en iyisini diliyorum demek. Lütfen tekrar et:"
      }
     ],
     "expect": {
@@ -38679,7 +39019,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Beşinci kelimemiz: "
+      "text": "Beşinci kelimemiz:"
      },
      {
       "lang": "en",
@@ -38703,7 +39043,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Burada edat "
+      "text": "Burada edat"
      },
      {
       "lang": "en",
@@ -38711,7 +39051,7 @@
      },
      {
       "lang": "tr",
-      "text": ". "
+      "text": "."
      },
      {
       "lang": "en",
@@ -38719,7 +39059,7 @@
      },
      {
       "lang": "tr",
-      "text": " Kız kardeşimle gurur duyuyorum. Bir eylemden söz edeceksen yine -ing: "
+      "text": "Kız kardeşimle gurur duyuyorum. Bir eylemden söz edeceksen yine -ing:"
      },
      {
       "lang": "en",
@@ -38745,7 +39085,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. "
+       "text": "Yanlış."
       },
       {
        "lang": "en",
@@ -38753,7 +39093,7 @@
       },
       {
        "lang": "tr",
-       "text": " kelimesi "
+       "text": "kelimesi"
       },
       {
        "lang": "en",
@@ -38761,7 +39101,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile gelir. Doğrusu: "
+       "text": "ile gelir. Doğrusu:"
       },
       {
        "lang": "en",
@@ -38774,7 +39114,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Birkaç kısa tebrik daha var. "
+      "text": "Birkaç kısa tebrik daha var."
      },
      {
       "lang": "en",
@@ -38782,7 +39122,7 @@
      },
      {
       "lang": "tr",
-      "text": " aferin, iyi iş demek. "
+      "text": "aferin, iyi iş demek."
      },
      {
       "lang": "en",
@@ -38790,7 +39130,7 @@
      },
      {
       "lang": "tr",
-      "text": " da aynı anlamda. Arkadaşlar arasında "
+      "text": "da aynı anlamda. Arkadaşlar arasında"
      },
      {
       "lang": "en",
@@ -38798,7 +39138,7 @@
      },
      {
       "lang": "tr",
-      "text": " diye kısaltılır ama resmi bir ortamda tam söyle."
+      "text": "diye kısaltılır ama resmi bir ortamda tam söyle."
      }
     ]
    },
@@ -38806,7 +39146,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özel günlerde ise "
+      "text": "Özel günlerde ise"
      },
      {
       "lang": "en",
@@ -38814,7 +39154,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile başlarsın: "
+      "text": "ile başlarsın:"
      },
      {
       "lang": "en",
@@ -38822,7 +39162,7 @@
      },
      {
       "lang": "tr",
-      "text": " "
+      "text": ""
      },
      {
       "lang": "en",
@@ -38830,7 +39170,7 @@
      },
      {
       "lang": "tr",
-      "text": " "
+      "text": ""
      },
      {
       "lang": "en",
@@ -38838,7 +39178,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yalnız Noel'de kalıp farklıdır: "
+      "text": "Yalnız Noel'de kalıp farklıdır:"
      },
      {
       "lang": "en",
@@ -38864,7 +39204,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Tebrikte "
+       "text": "Tebrikte"
       },
       {
        "lang": "en",
@@ -38872,7 +39212,7 @@
       },
       {
        "lang": "tr",
-       "text": ", gururda "
+       "text": ", gururda"
       },
       {
        "lang": "en",
@@ -38880,7 +39220,7 @@
       },
       {
        "lang": "tr",
-       "text": " edatını kullan."
+       "text": "edatını kullan."
       }
      ]
     }
@@ -38889,7 +39229,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de sana tebrik gelirse ne diyeceğini bil. "
+      "text": "Bir de sana tebrik gelirse ne diyeceğini bil."
      },
      {
       "lang": "en",
@@ -38897,7 +39237,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da daha sıcak biçimde "
+      "text": "ya da daha sıcak biçimde"
      },
      {
       "lang": "en",
@@ -38905,7 +39245,7 @@
      },
      {
       "lang": "tr",
-      "text": " Haber kötüyse tebrik değil şu kullanılır: "
+      "text": "Haber kötüyse tebrik değil şu kullanılır:"
      },
      {
       "lang": "en",
@@ -38917,7 +39257,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim. Tebrik: "
+      "text": "Özetleyelim. Tebrik:"
      },
      {
       "lang": "en",
@@ -38925,7 +39265,7 @@
      },
      {
       "lang": "tr",
-      "text": " Şans dileme: "
+      "text": "Şans dileme:"
      },
      {
       "lang": "en",
@@ -38933,7 +39273,7 @@
      },
      {
       "lang": "tr",
-      "text": " İyi dilek: "
+      "text": "İyi dilek:"
      },
      {
       "lang": "en",
@@ -38941,7 +39281,7 @@
      },
      {
       "lang": "tr",
-      "text": " Gurur: "
+      "text": "Gurur:"
      },
      {
       "lang": "en",
@@ -38949,7 +39289,7 @@
      },
      {
       "lang": "tr",
-      "text": " Edatları unutma: on, with, of. Şimdi bunları küçük bir konuşmada kullanalım."
+      "text": "Edatları unutma: on, with, of. Şimdi bunları küçük bir konuşmada kullanalım."
      }
     ]
    }
@@ -39029,7 +39369,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "En temel özür: "
+      "text": "En temel özür:"
      },
      {
       "lang": "en",
@@ -39037,7 +39377,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani \"özür dilerim\". Tek başına "
+      "text": "Yani \"özür dilerim\". Tek başına"
      },
      {
       "lang": "en",
@@ -39045,7 +39385,7 @@
      },
      {
       "lang": "tr",
-      "text": " da denir ama tam cümlesi daha kibardır. Lütfen tekrar et: "
+      "text": "da denir ama tam cümlesi daha kibardır. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -39061,7 +39401,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özrü güçlendirmek için araya bir kelime koyarız: "
+      "text": "Özrü güçlendirmek için araya bir kelime koyarız:"
      },
      {
       "lang": "en",
@@ -39069,7 +39409,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da "
+      "text": "ya da"
      },
      {
       "lang": "en",
@@ -39077,7 +39417,7 @@
      },
      {
       "lang": "tr",
-      "text": " İkisi de \"çok özür dilerim\" demektir."
+      "text": "İkisi de \"çok özür dilerim\" demektir."
      }
     ]
    },
@@ -39085,7 +39425,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Peki ne için özür diliyoruz? Bunu söylemek için "
+      "text": "Peki ne için özür diliyoruz? Bunu söylemek için"
      },
      {
       "lang": "en",
@@ -39093,7 +39433,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullanırız: "
+      "text": "kullanırız:"
      },
      {
       "lang": "en",
@@ -39101,7 +39441,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani \"gürültü için özür dilerim\". Lütfen söyle: "
+      "text": "Yani \"gürültü için özür dilerim\". Lütfen söyle:"
      },
      {
       "lang": "en",
@@ -39117,7 +39457,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de "
+      "text": "Bir de"
      },
      {
       "lang": "en",
@@ -39125,7 +39465,7 @@
      },
      {
       "lang": "tr",
-      "text": " vardır. "
+      "text": "vardır."
      },
      {
       "lang": "en",
@@ -39133,7 +39473,7 @@
      },
      {
       "lang": "tr",
-      "text": " bir şey hakkında der; "
+      "text": "bir şey hakkında der;"
      },
      {
       "lang": "en",
@@ -39141,7 +39481,7 @@
      },
      {
       "lang": "tr",
-      "text": " ise senin yaptığın işi anlatır ve arkasına fiilin -ing hâli gelir: "
+      "text": "ise senin yaptığın işi anlatır ve arkasına fiilin -ing hâli gelir:"
      },
      {
       "lang": "en",
@@ -39149,7 +39489,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani \"bağırdığım için özür dilerim\"."
+      "text": "Yani \"bağırdığım için özür dilerim\"."
      }
     ]
    },
@@ -39157,7 +39497,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bugünün kelimesi: "
+      "text": "Şimdi bugünün kelimesi:"
      },
      {
       "lang": "en",
@@ -39165,7 +39505,7 @@
      },
      {
       "lang": "tr",
-      "text": ", yani \"geç\". Geç kaldığında en çok duyacağın cümle: "
+      "text": ", yani \"geç\". Geç kaldığında en çok duyacağın cümle:"
      },
      {
       "lang": "en",
@@ -39173,7 +39513,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen tekrar et: "
+      "text": "Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -39189,7 +39529,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sebebini de ekleyebilirsin: "
+      "text": "Sebebini de ekleyebilirsin:"
      },
      {
       "lang": "en",
@@ -39197,7 +39537,7 @@
      },
      {
       "lang": "tr",
-      "text": " Kısa bir sebep her zaman iyi karşılanır."
+      "text": "Kısa bir sebep her zaman iyi karşılanır."
      }
     ]
    },
@@ -39221,7 +39561,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce özür: "
+       "text": "Önce özür:"
       },
       {
        "lang": "en",
@@ -39229,7 +39569,7 @@
       },
       {
        "lang": "tr",
-       "text": ", sonra sebebi aynı cümlenin içinde: "
+       "text": ", sonra sebebi aynı cümlenin içinde:"
       },
       {
        "lang": "en",
@@ -39242,7 +39582,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kelimemiz: "
+      "text": "İkinci kelimemiz:"
      },
      {
       "lang": "en",
@@ -39250,7 +39590,7 @@
      },
      {
       "lang": "tr",
-      "text": ", yani \"hata\". Hatayı üstlenmek için iki kısa cümle vardır: "
+      "text": ", yani \"hata\". Hatayı üstlenmek için iki kısa cümle vardır:"
      },
      {
       "lang": "en",
@@ -39258,7 +39598,7 @@
      },
      {
       "lang": "tr",
-      "text": " ve "
+      "text": "ve"
      },
      {
       "lang": "en",
@@ -39266,7 +39606,7 @@
      },
      {
       "lang": "tr",
-      "text": " İkincisi \"benim suçumdu\" demek ve İngilizcede çok doğaldır."
+      "text": "İkincisi \"benim suçumdu\" demek ve İngilizcede çok doğaldır."
      }
     ]
    },
@@ -39274,7 +39614,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üçüncü kelimemiz: "
+      "text": "Üçüncü kelimemiz:"
      },
      {
       "lang": "en",
@@ -39282,7 +39622,7 @@
      },
      {
       "lang": "tr",
-      "text": ", yani \"unutmak\". Geçmiş hâli düzensizdir: "
+      "text": ", yani \"unutmak\". Geçmiş hâli düzensizdir:"
      },
      {
       "lang": "en",
@@ -39290,7 +39630,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Örnek: "
+      "text": ". Örnek:"
      },
      {
       "lang": "en",
@@ -39298,7 +39638,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani \"özür dilerim, doğum gününü unuttum\"."
+      "text": "Yani \"özür dilerim, doğum gününü unuttum\"."
      }
     ]
    },
@@ -39306,7 +39646,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de kasten yapmadığını söylemek istersin. Bunun kalıbı: "
+      "text": "Bir de kasten yapmadığını söylemek istersin. Bunun kalıbı:"
      },
      {
       "lang": "en",
@@ -39314,7 +39654,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani \"…mek istememiştim, kasten yapmadım\". Lütfen söyle: "
+      "text": "Yani \"…mek istememiştim, kasten yapmadım\". Lütfen söyle:"
      },
      {
       "lang": "en",
@@ -39344,7 +39684,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. İngilizcede "
+       "text": "Yanlış. İngilizcede"
       },
       {
        "lang": "en",
@@ -39352,7 +39692,7 @@
       },
       {
        "lang": "tr",
-       "text": " bir sıfattır, yanına mutlaka "
+       "text": "bir sıfattır, yanına mutlaka"
       },
       {
        "lang": "en",
@@ -39360,7 +39700,7 @@
       },
       {
        "lang": "tr",
-       "text": " gerekir. Doğrusu: "
+       "text": "gerekir. Doğrusu:"
       },
       {
        "lang": "en",
@@ -39373,7 +39713,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi daha resmî bir kelime: "
+      "text": "Şimdi daha resmî bir kelime:"
      },
      {
       "lang": "en",
@@ -39381,7 +39721,7 @@
      },
      {
       "lang": "tr",
-      "text": ", yani \"özür dilemek\". İş yerinde, e-postada, bir müşteriye karşı kullanılır. Lütfen tekrar et: "
+      "text": ", yani \"özür dilemek\". İş yerinde, e-postada, bir müşteriye karşı kullanılır. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -39397,7 +39737,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir yazım notu: İngiltere'de "
+      "text": "Küçük bir yazım notu: İngiltere'de"
      },
      {
       "lang": "en",
@@ -39405,7 +39745,7 @@
      },
      {
       "lang": "tr",
-      "text": ", Amerika'da "
+      "text": ", Amerika'da"
      },
      {
       "lang": "en",
@@ -39413,7 +39753,7 @@
      },
      {
       "lang": "tr",
-      "text": " yazılır. Söylenişi aynıdır, ikisi de doğrudur."
+      "text": "yazılır. Söylenişi aynıdır, ikisi de doğrudur."
      }
     ]
    },
@@ -39437,7 +39777,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Resmî fiil "
+       "text": "Resmî fiil"
       },
       {
        "lang": "en",
@@ -39445,7 +39785,7 @@
       },
       {
        "lang": "tr",
-       "text": ", sonra "
+       "text": ", sonra"
       },
       {
        "lang": "en",
@@ -39453,7 +39793,7 @@
       },
       {
        "lang": "tr",
-       "text": " ve gecikme: "
+       "text": "ve gecikme:"
       },
       {
        "lang": "en",
@@ -39466,7 +39806,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İyi bir özür genelde bir sözle biter. Bugünün son kelimesi: "
+      "text": "İyi bir özür genelde bir sözle biter. Bugünün son kelimesi:"
      },
      {
       "lang": "en",
@@ -39474,7 +39814,7 @@
      },
      {
       "lang": "tr",
-      "text": ", yani \"söz vermek\". Kalıp şudur: "
+      "text": ", yani \"söz vermek\". Kalıp şudur:"
      },
      {
       "lang": "en",
@@ -39482,7 +39822,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen tekrar et."
+      "text": "Lütfen tekrar et."
      }
     ],
     "expect": {
@@ -39494,7 +39834,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi madalyonun diğer yüzü: biri senden özür dilerse ne dersin? En yaygınları: "
+      "text": "Şimdi madalyonun diğer yüzü: biri senden özür dilerse ne dersin? En yaygınları:"
      },
      {
       "lang": "en",
@@ -39502,7 +39842,7 @@
      },
      {
       "lang": "tr",
-      "text": ", "
+      "text": ","
      },
      {
       "lang": "en",
@@ -39510,7 +39850,7 @@
      },
      {
       "lang": "tr",
-      "text": ", "
+      "text": ","
      },
      {
       "lang": "en",
@@ -39518,7 +39858,7 @@
      },
      {
       "lang": "tr",
-      "text": " ve "
+      "text": "ve"
      },
      {
       "lang": "en",
@@ -39530,7 +39870,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "En sıcak olanı ise şudur: "
+      "text": "En sıcak olanı ise şudur:"
      },
      {
       "lang": "en",
@@ -39538,7 +39878,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani \"boş ver, dert etme\". Lütfen söyle: "
+      "text": "Yani \"boş ver, dert etme\". Lütfen söyle:"
      },
      {
       "lang": "en",
@@ -39570,7 +39910,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce kabul: "
+       "text": "Önce kabul:"
       },
       {
        "lang": "en",
@@ -39578,7 +39918,7 @@
       },
       {
        "lang": "tr",
-       "text": ", sonra rahatlatma: "
+       "text": ", sonra rahatlatma:"
       },
       {
        "lang": "en",
@@ -39591,7 +39931,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Özetleyelim: özür "
+      "text": "Harika iş çıkardın. Özetleyelim: özür"
      },
      {
       "lang": "en",
@@ -39599,7 +39939,7 @@
      },
      {
       "lang": "tr",
-      "text": ", sebebi "
+      "text": ", sebebi"
      },
      {
       "lang": "en",
@@ -39607,7 +39947,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da "
+      "text": "ya da"
      },
      {
       "lang": "en",
@@ -39615,7 +39955,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile. Hatayı üstlen: "
+      "text": "ile. Hatayı üstlen:"
      },
      {
       "lang": "en",
@@ -39623,7 +39963,7 @@
      },
      {
       "lang": "tr",
-      "text": " Resmîsi "
+      "text": "Resmîsi"
      },
      {
       "lang": "en",
@@ -39631,7 +39971,7 @@
      },
      {
       "lang": "tr",
-      "text": ", sözü "
+      "text": ", sözü"
      },
      {
       "lang": "en",
@@ -39639,7 +39979,7 @@
      },
      {
       "lang": "tr",
-      "text": " Kabul ederken "
+      "text": "Kabul ederken"
      },
      {
       "lang": "en",
@@ -39647,7 +39987,7 @@
      },
      {
       "lang": "tr",
-      "text": " Şimdi bunları küçük bir sohbette kullanalım."
+      "text": "Şimdi bunları küçük bir sohbette kullanalım."
      }
     ]
    }
@@ -39735,7 +40075,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -39743,7 +40083,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Burada \"yakın\" demek. Bir arkadaşın için kullanınca \"yakın arkadaş\" olur. Lütfen tekrar et: "
+      "text": ". Burada \"yakın\" demek. Bir arkadaşın için kullanınca \"yakın arkadaş\" olur. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -39759,7 +40099,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çok iyi. En yakın arkadaşın için ise "
+      "text": "Çok iyi. En yakın arkadaşın için ise"
      },
      {
       "lang": "en",
@@ -39767,7 +40107,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin. Yani: "
+      "text": "dersin. Yani:"
      },
      {
       "lang": "en",
@@ -39775,7 +40115,7 @@
      },
      {
       "lang": "tr",
-      "text": " Türkçesi: Ayşe benim en yakın arkadaşım."
+      "text": "Türkçesi: Ayşe benim en yakın arkadaşım."
      }
     ]
    },
@@ -39783,7 +40123,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kelimemiz: "
+      "text": "İkinci kelimemiz:"
      },
      {
       "lang": "en",
@@ -39791,7 +40131,7 @@
      },
      {
       "lang": "tr",
-      "text": ". \"Birlikte\" demek. Şimdi tam bir cümle söyleyelim: "
+      "text": ". \"Birlikte\" demek. Şimdi tam bir cümle söyleyelim:"
      },
      {
       "lang": "en",
@@ -39799,7 +40139,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani: Birlikte çok vakit geçiriyoruz. Sen söyle."
+      "text": "Yani: Birlikte çok vakit geçiriyoruz. Sen söyle."
      }
     ],
     "expect": {
@@ -39811,7 +40151,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üçüncü kelimemiz: "
+      "text": "Üçüncü kelimemiz:"
      },
      {
       "lang": "en",
@@ -39819,7 +40159,7 @@
      },
      {
       "lang": "tr",
-      "text": ". \"Güvenmek\" demek. Dikkat et: Türkçede \"ona güveniyorum\" derken \"-e\" eki var ama İngilizcede araya hiçbir şey koymuyorsun. Sadece "
+      "text": ". \"Güvenmek\" demek. Dikkat et: Türkçede \"ona güveniyorum\" derken \"-e\" eki var ama İngilizcede araya hiçbir şey koymuyorsun. Sadece"
      },
      {
       "lang": "en",
@@ -39827,7 +40167,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen tekrar et."
+      "text": "Lütfen tekrar et."
      }
     ],
     "expect": {
@@ -39839,7 +40179,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bunu biraz daha güçlü söylemek istersen: "
+      "text": "Bunu biraz daha güçlü söylemek istersen:"
      },
      {
       "lang": "en",
@@ -39847,7 +40187,7 @@
      },
      {
       "lang": "tr",
-      "text": " Ona her şeyi anlatabilirim. Arkadaşlıktan bahsederken çok kullanılan bir cümle."
+      "text": "Ona her şeyi anlatabilirim. Arkadaşlıktan bahsederken çok kullanılan bir cümle."
      }
     ]
    },
@@ -39855,7 +40195,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dördüncü kelimemiz: "
+      "text": "Dördüncü kelimemiz:"
      },
      {
       "lang": "en",
@@ -39863,7 +40203,7 @@
      },
      {
       "lang": "tr",
-      "text": ". \"Paylaşmak\" demek. Söyleyelim: "
+      "text": ". \"Paylaşmak\" demek. Söyleyelim:"
      },
      {
       "lang": "en",
@@ -39879,7 +40219,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Beşinci kelimemiz: "
+      "text": "Beşinci kelimemiz:"
      },
      {
       "lang": "en",
@@ -39887,7 +40227,7 @@
      },
      {
       "lang": "tr",
-      "text": ". \"Gülmek\" demek. Sondaki g-h harfleri okunmuyor, kelime \"laf\" gibi çıkıyor. Şimdi: "
+      "text": ". \"Gülmek\" demek. Sondaki g-h harfleri okunmuyor, kelime \"laf\" gibi çıkıyor. Şimdi:"
      },
      {
       "lang": "en",
@@ -39895,7 +40235,7 @@
      },
      {
       "lang": "tr",
-      "text": " Çok gülüyoruz."
+      "text": "Çok gülüyoruz."
      }
     ],
     "expect": {
@@ -39915,7 +40255,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İngilizcede bunun için "
+      "text": "İngilizcede bunun için"
      },
      {
       "lang": "en",
@@ -39923,7 +40263,7 @@
      },
      {
       "lang": "tr",
-      "text": " kalıbını kullanırız. Sonuna iki şeyden biri gelir: "
+      "text": "kalıbını kullanırız. Sonuna iki şeyden biri gelir:"
      },
      {
       "lang": "en",
@@ -39931,7 +40271,7 @@
      },
      {
       "lang": "tr",
-      "text": " süre uzunluğu için — "
+      "text": "süre uzunluğu için —"
      },
      {
       "lang": "en",
@@ -39939,7 +40279,7 @@
      },
      {
       "lang": "tr",
-      "text": ", on yıldır. "
+      "text": ", on yıldır."
      },
      {
       "lang": "en",
@@ -39947,7 +40287,7 @@
      },
      {
       "lang": "tr",
-      "text": " ise başlangıç noktası için — "
+      "text": "ise başlangıç noktası için —"
      },
      {
       "lang": "en",
@@ -39963,7 +40303,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen söyle: "
+      "text": "Şimdi sen söyle:"
      },
      {
       "lang": "en",
@@ -39993,7 +40333,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "\"Tanımak\" fiili "
+       "text": "\"Tanımak\" fiili"
       },
       {
        "lang": "en",
@@ -40001,7 +40341,7 @@
       },
       {
        "lang": "tr",
-       "text": ", bu kalıpta "
+       "text": ", bu kalıpta"
       },
       {
        "lang": "en",
@@ -40009,7 +40349,7 @@
       },
       {
        "lang": "tr",
-       "text": " olur. Süre uzunluğu için "
+       "text": "olur. Süre uzunluğu için"
       },
       {
        "lang": "en",
@@ -40017,7 +40357,7 @@
       },
       {
        "lang": "tr",
-       "text": " kullan."
+       "text": "kullan."
       }
      ]
     }
@@ -40026,7 +40366,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi arkadaşının nasıl biri olduğunu anlatalım. Dört sıfat veriyorum: "
+      "text": "Şimdi arkadaşının nasıl biri olduğunu anlatalım. Dört sıfat veriyorum:"
      },
      {
       "lang": "en",
@@ -40034,7 +40374,7 @@
      },
      {
       "lang": "tr",
-      "text": " kibar, "
+      "text": "kibar,"
      },
      {
       "lang": "en",
@@ -40042,7 +40382,7 @@
      },
      {
       "lang": "tr",
-      "text": " komik, "
+      "text": "komik,"
      },
      {
       "lang": "en",
@@ -40050,7 +40390,7 @@
      },
      {
       "lang": "tr",
-      "text": " dürüst, "
+      "text": "dürüst,"
      },
      {
       "lang": "en",
@@ -40058,7 +40398,7 @@
      },
      {
       "lang": "tr",
-      "text": " sabırlı."
+      "text": "sabırlı."
      }
     ]
    },
@@ -40080,7 +40420,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "\"O\" erkek için "
+       "text": "\"O\" erkek için"
       },
       {
        "lang": "en",
@@ -40088,7 +40428,7 @@
       },
       {
        "lang": "tr",
-       "text": ", \"çok\" için "
+       "text": ", \"çok\" için"
       },
       {
        "lang": "en",
@@ -40096,7 +40436,7 @@
       },
       {
        "lang": "tr",
-       "text": ", \"ve\" için "
+       "text": ", \"ve\" için"
       },
       {
        "lang": "en",
@@ -40127,7 +40467,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. 2015 bir başlangıç noktası, süre uzunluğu değil. Doğrusu "
+       "text": "Yanlış. 2015 bir başlangıç noktası, süre uzunluğu değil. Doğrusu"
       },
       {
        "lang": "en",
@@ -40135,7 +40475,7 @@
       },
       {
        "lang": "tr",
-       "text": " Süre söyleyecek olsaydın "
+       "text": "Süre söyleyecek olsaydın"
       },
       {
        "lang": "en",
@@ -40143,7 +40483,7 @@
       },
       {
        "lang": "tr",
-       "text": " derdin."
+       "text": "derdin."
       }
      ]
     }
@@ -40152,7 +40492,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de nerede tanıştığınızı anlatmak var. Bu geçmişte olup bitti, o yüzden geçmiş zaman kullanıyoruz: "
+      "text": "Bir de nerede tanıştığınızı anlatmak var. Bu geçmişte olup bitti, o yüzden geçmiş zaman kullanıyoruz:"
      },
      {
       "lang": "en",
@@ -40160,7 +40500,7 @@
      },
      {
       "lang": "tr",
-      "text": " Okulda tanıştık. Ya da "
+      "text": "Okulda tanıştık. Ya da"
      },
      {
       "lang": "en",
@@ -40168,7 +40508,7 @@
      },
      {
       "lang": "tr",
-      "text": " İşte tanıştık."
+      "text": "İşte tanıştık."
      }
     ]
    },
@@ -40190,7 +40530,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "\"Tanışmak\" fiilinin geçmiş hâli "
+       "text": "\"Tanışmak\" fiilinin geçmiş hâli"
       },
       {
        "lang": "en",
@@ -40198,7 +40538,7 @@
       },
       {
        "lang": "tr",
-       "text": ", üniversite "
+       "text": ", üniversite"
       },
       {
        "lang": "en",
@@ -40215,7 +40555,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çok güzel iş çıkardın. Kısaca toparlayalım: yakın arkadaşını tanıtmak için "
+      "text": "Çok güzel iş çıkardın. Kısaca toparlayalım: yakın arkadaşını tanıtmak için"
      },
      {
       "lang": "en",
@@ -40223,7 +40563,7 @@
      },
      {
       "lang": "tr",
-      "text": " Süre için "
+      "text": "Süre için"
      },
      {
       "lang": "en",
@@ -40231,7 +40571,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da "
+      "text": "ya da"
      },
      {
       "lang": "en",
@@ -40239,7 +40579,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Tanışma yeri için "
+      "text": ". Tanışma yeri için"
      },
      {
       "lang": "en",
@@ -40247,7 +40587,7 @@
      },
      {
       "lang": "tr",
-      "text": " Ve beş kelimemiz: close, together, trust, share, laugh."
+      "text": "Ve beş kelimemiz: close, together, trust, share, laugh."
      }
     ]
    },
@@ -42700,7 +43040,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -42708,7 +43048,7 @@
      },
      {
       "lang": "tr",
-      "text": ". 'Dizi' demek. Küçük bir tuzağı var: tekili de çoğulu da aynı yazılır. "
+      "text": ". 'Dizi' demek. Küçük bir tuzağı var: tekili de çoğulu da aynı yazılır."
      },
      {
       "lang": "en",
@@ -42728,7 +43068,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dizinin her parçasına 'bölüm' diyoruz; İngilizcesi "
+      "text": "Dizinin her parçasına 'bölüm' diyoruz; İngilizcesi"
      },
      {
       "lang": "en",
@@ -42748,7 +43088,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İzlemek fiili "
+      "text": "İzlemek fiili"
      },
      {
       "lang": "en",
@@ -42756,7 +43096,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Geçmiş hâli çok kolay, sonuna -ed geliyor: "
+      "text": ". Geçmiş hâli çok kolay, sonuna -ed geliyor:"
      },
      {
       "lang": "en",
@@ -42764,7 +43104,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Dinle: "
+      "text": ". Dinle:"
      },
      {
       "lang": "en",
@@ -42792,7 +43132,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir dizi hakkında ne düşündüğünü söylemek için iki kelime yeter. "
+      "text": "Bir dizi hakkında ne düşündüğünü söylemek için iki kelime yeter."
      },
      {
       "lang": "en",
@@ -42800,7 +43140,7 @@
      },
      {
       "lang": "tr",
-      "text": " sıkıcı, "
+      "text": "sıkıcı,"
      },
      {
       "lang": "en",
@@ -42808,7 +43148,7 @@
      },
      {
       "lang": "tr",
-      "text": " heyecan verici. Örnek: "
+      "text": "heyecan verici. Örnek:"
      },
      {
       "lang": "en",
@@ -42837,7 +43177,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "'bu dizi' için "
+       "text": "'bu dizi' için"
       },
       {
        "lang": "en",
@@ -42854,7 +43194,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dersin anahtar kelimesi: "
+      "text": "Dersin anahtar kelimesi:"
      },
      {
       "lang": "en",
@@ -42874,7 +43214,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "En kısa kullanımı: "
+      "text": "En kısa kullanımı:"
      },
      {
       "lang": "en",
@@ -42882,7 +43222,7 @@
      },
      {
       "lang": "tr",
-      "text": "'Tavsiye ederim' demek. Burada önemli bir kural var: İngilizcede 'I recommend' deyip cümleyi bırakamazsın, mutlaka bir nesne gelir. "
+      "text": "'Tavsiye ederim' demek. Burada önemli bir kural var: İngilizcede 'I recommend' deyip cümleyi bırakamazsın, mutlaka bir nesne gelir."
      },
      {
       "lang": "en",
@@ -42894,7 +43234,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi çok işine yarayacak bir soru kalıbı: "
+      "text": "Şimdi çok işine yarayacak bir soru kalıbı:"
      },
      {
       "lang": "en",
@@ -42902,7 +43242,7 @@
      },
      {
       "lang": "tr",
-      "text": "'İzledin mi?' demek. Dikkat et, burada düz geçmiş zaman yok; 'have' artı 'seen' var. Çünkü sorduğun şey ne zaman izlediği değil, hayatında izleyip izlemediği. Dinle: "
+      "text": "'İzledin mi?' demek. Dikkat et, burada düz geçmiş zaman yok; 'have' artı 'seen' var. Çünkü sorduğun şey ne zaman izlediği değil, hayatında izleyip izlemediği. Dinle:"
      },
      {
       "lang": "en",
@@ -42943,7 +43283,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile başla, sonuna 'this film' ekle."
+       "text": "ile başla, sonuna 'this film' ekle."
       }
      ]
     }
@@ -42952,7 +43292,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Cevabı da hazır olsun. Evet ise: "
+      "text": "Cevabı da hazır olsun. Evet ise:"
      },
      {
       "lang": "en",
@@ -42960,7 +43300,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hayır ise: "
+      "text": "Hayır ise:"
      },
      {
       "lang": "en",
@@ -42976,7 +43316,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üç küçük kelime bu kalıbı çok konuşkan yapar. "
+      "text": "Üç küçük kelime bu kalıbı çok konuşkan yapar."
      },
      {
       "lang": "en",
@@ -42984,7 +43324,7 @@
      },
      {
       "lang": "tr",
-      "text": " çoktan, "
+      "text": "çoktan,"
      },
      {
       "lang": "en",
@@ -42992,7 +43332,7 @@
      },
      {
       "lang": "tr",
-      "text": " henüz, "
+      "text": "henüz,"
      },
      {
       "lang": "en",
@@ -43000,7 +43340,7 @@
      },
      {
       "lang": "tr",
-      "text": " az önce. Dinle: "
+      "text": "az önce. Dinle:"
      },
      {
       "lang": "en",
@@ -43026,7 +43366,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Belli bir zaman söylüyorsan — yesterday, last night, in 2020 — 'have watched' kullanılmaz. Doğrusu: "
+       "text": "Belli bir zaman söylüyorsan — yesterday, last night, in 2020 — 'have watched' kullanılmaz. Doğrusu:"
       },
       {
        "lang": "en",
@@ -43039,7 +43379,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Konuyu anlatmak için tek kalıp yeter: "
+      "text": "Konuyu anlatmak için tek kalıp yeter:"
      },
      {
       "lang": "en",
@@ -43047,7 +43387,7 @@
      },
      {
       "lang": "tr",
-      "text": "Örneğin: 'İtalya'da bir aileyi anlatıyor.' Söyle: "
+      "text": "Örneğin: 'İtalya'da bir aileyi anlatıyor.' Söyle:"
      },
      {
       "lang": "en",
@@ -43063,7 +43403,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Tavsiye ederken karşılaştırma da yaparsın. 'daha iyi' "
+      "text": "Tavsiye ederken karşılaştırma da yaparsın. 'daha iyi'"
      },
      {
       "lang": "en",
@@ -43071,7 +43411,7 @@
      },
      {
       "lang": "tr",
-      "text": ", 'daha ilginç' "
+      "text": ", 'daha ilginç'"
      },
      {
       "lang": "en",
@@ -43079,7 +43419,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Dinle: "
+      "text": ". Dinle:"
      },
      {
       "lang": "en",
@@ -43104,7 +43444,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "'daha iyi' için 'good' değil "
+       "text": "'daha iyi' için 'good' değil"
       },
       {
        "lang": "en",
@@ -43112,7 +43452,7 @@
       },
       {
        "lang": "tr",
-       "text": " kullanılır, arkasından 'than' gelir."
+       "text": "kullanılır, arkasından 'than' gelir."
       }
      ]
     }
@@ -43121,7 +43461,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de karşı taraftan tavsiye isteyelim. En doğal iki soru: "
+      "text": "Bir de karşı taraftan tavsiye isteyelim. En doğal iki soru:"
      },
      {
       "lang": "en",
@@ -44626,7 +44966,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İyi bir parola için İngilizcede genelde \"strong\" denir, yani güçlü."
+      "text": "İyi bir parola için İngilizcede genelde"
+     },
+     {
+      "lang": "en",
+      "text": "strong"
+     },
+     {
+      "lang": "tr",
+      "text": "denir, yani güçlü."
      },
      {
       "lang": "en",
@@ -44722,7 +45070,23 @@
      },
      {
       "lang": "tr",
-      "text": "Sır demek. \"Private\" sana ait olan bilgidir; \"secret\" ise kimsenin bilmemesi gereken bilgidir."
+      "text": "Sır demek."
+     },
+     {
+      "lang": "en",
+      "text": "Private"
+     },
+     {
+      "lang": "tr",
+      "text": "sana ait olan bilgidir;"
+     },
+     {
+      "lang": "en",
+      "text": "secret"
+     },
+     {
+      "lang": "tr",
+      "text": "ise kimsenin bilmemesi gereken bilgidir."
      },
      {
       "lang": "en",
@@ -44762,7 +45126,15 @@
      },
      {
       "lang": "tr",
-      "text": "İngilizcede birine bir şey öner_mek için \"should\" kullanılır. Türkçedeki -meli, -malı gibi."
+      "text": "İngilizcede birine bir şey öner_mek için"
+     },
+     {
+      "lang": "en",
+      "text": "should"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır. Türkçedeki -meli, -malı gibi."
      },
      {
       "lang": "en",
@@ -44770,7 +45142,15 @@
      },
      {
       "lang": "tr",
-      "text": "Parolanı değiştirmelisin. Dikkat: \"should\" tan sonra fiil yalın haldedir, \"to\" yok."
+      "text": "Parolanı değiştirmelisin. Dikkat:"
+     },
+     {
+      "lang": "en",
+      "text": "should"
+     },
+     {
+      "lang": "tr",
+      "text": "tan sonra fiil yalın haldedir, \"to\" yok."
      }
     ]
    },
@@ -44806,8 +45186,12 @@
      ],
      "hint": [
       {
+       "lang": "en",
+       "text": "You should"
+      },
+      {
        "lang": "tr",
-       "text": "\"You should\" ile başla, sonra kullanmak fiili:"
+       "text": "ile başla, sonra kullanmak fiili:"
       },
       {
        "lang": "en",
@@ -44828,7 +45212,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Peki bir şeyi yapmamasını önereceksen? O zaman \"shouldn't\" dersin."
+      "text": "Peki bir şeyi yapmamasını önereceksen? O zaman"
+     },
+     {
+      "lang": "en",
+      "text": "shouldn't"
+     },
+     {
+      "lang": "tr",
+      "text": "dersin."
      },
      {
       "lang": "en",
@@ -44836,7 +45228,23 @@
      },
      {
       "lang": "tr",
-      "text": "Parolanı kimseyle paylaşmamalısın. \"Share\" paylaşmak, \"anyone\" ise burada \"hiç kimse\" anlamına gelir."
+      "text": "Parolanı kimseyle paylaşmamalısın."
+     },
+     {
+      "lang": "en",
+      "text": "Share"
+     },
+     {
+      "lang": "tr",
+      "text": "paylaşmak,"
+     },
+     {
+      "lang": "en",
+      "text": "anyone"
+     },
+     {
+      "lang": "tr",
+      "text": "ise burada \"hiç kimse\" anlamına gelir."
      }
     ]
    },
@@ -44938,7 +45346,15 @@
      },
      {
       "lang": "tr",
-      "text": "Tanımadığın kişilerden gelen linklere tıklama. \"Click on\" tıklamak demek."
+      "text": "Tanımadığın kişilerden gelen linklere tıklama."
+     },
+     {
+      "lang": "en",
+      "text": "Click on"
+     },
+     {
+      "lang": "tr",
+      "text": "tıklamak demek."
      }
     ]
    },
@@ -45008,7 +45424,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir şey: bir kural kesinse \"must\" ve \"mustn't\" da duyarsın."
+      "text": "Son bir şey: bir kural kesinse"
+     },
+     {
+      "lang": "en",
+      "text": "must"
+     },
+     {
+      "lang": "tr",
+      "text": "ve \"mustn't\" da duyarsın."
      },
      {
       "lang": "en",
@@ -45016,7 +45440,23 @@
      },
      {
       "lang": "tr",
-      "text": "Bu daha sert bir zorunluluktur. \"Should\" ise dostça bir tavsiyedir; günlük konuşmada çoğunlukla \"should\" kullanırsın."
+      "text": "Bu daha sert bir zorunluluktur."
+     },
+     {
+      "lang": "en",
+      "text": "Should"
+     },
+     {
+      "lang": "tr",
+      "text": "ise dostça bir tavsiyedir; günlük konuşmada çoğunlukla"
+     },
+     {
+      "lang": "en",
+      "text": "should"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanırsın."
      }
     ]
    },
@@ -45284,7 +45724,15 @@
      },
      {
       "lang": "tr",
-      "text": "Kapatmak için \"turn on\" yerine \"turn off\" dersin."
+      "text": "Kapatmak için"
+     },
+     {
+      "lang": "en",
+      "text": "turn on"
+     },
+     {
+      "lang": "tr",
+      "text": "yerine \"turn off\" dersin."
      }
     ]
    },
@@ -45321,8 +45769,12 @@
      ],
      "hint": [
       {
+       "lang": "en",
+       "text": "Can"
+      },
+      {
        "lang": "tr",
-       "text": "\"Can\" ile başla, sonra"
+       "text": "ile başla, sonra"
       },
       {
        "lang": "en",
@@ -45415,7 +45867,15 @@
      },
      {
       "lang": "tr",
-      "text": ". Önemli bir nokta: İngilizcede \"again\" cümlenin sonuna gider."
+      "text": ". Önemli bir nokta: İngilizcede"
+     },
+     {
+      "lang": "en",
+      "text": "again"
+     },
+     {
+      "lang": "tr",
+      "text": "cümlenin sonuna gider."
      },
      {
       "lang": "tr",
@@ -45470,8 +45930,12 @@
      ],
      "hint": [
       {
+       "lang": "en",
+       "text": "Could you"
+      },
+      {
        "lang": "tr",
-       "text": "\"Could you\" ile başla,"
+       "text": "ile başla,"
       },
       {
        "lang": "en",
@@ -45543,7 +46007,15 @@
      },
      {
       "lang": "tr",
-      "text": ". Gelecek için \"will\" kullanıyoruz:"
+      "text": ". Gelecek için"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanıyoruz:"
      },
      {
       "lang": "en",
@@ -45574,8 +46046,12 @@
      ],
      "hint": [
       {
+       "lang": "en",
+       "text": "I'll"
+      },
+      {
        "lang": "tr",
-       "text": "\"I'll\" ile başla, sonra"
+       "text": "ile başla, sonra"
       },
       {
        "lang": "en",
@@ -46314,7 +46790,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -46322,7 +46798,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Türkçesi 'basmak' demek. Bir düğmeye, bir tuşa basmak. Lütfen "
+      "text": ". Türkçesi 'basmak' demek. Bir düğmeye, bir tuşa basmak. Lütfen"
      },
      {
       "lang": "en",
@@ -46330,7 +46806,7 @@
      },
      {
       "lang": "tr",
-      "text": " de."
+      "text": "de."
      }
     ],
     "expect": {
@@ -46362,7 +46838,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kelimemiz: "
+      "text": "İkinci kelimemiz:"
      },
      {
       "lang": "en",
@@ -46370,7 +46846,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Yani 'seçmek'. Bir ekranda dili seçtiriyorsun mesela: "
+      "text": ". Yani 'seçmek'. Bir ekranda dili seçtiriyorsun mesela:"
      },
      {
       "lang": "en",
@@ -46390,7 +46866,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üçüncü kelime: "
+      "text": "Üçüncü kelime:"
      },
      {
       "lang": "en",
@@ -46398,7 +46874,7 @@
      },
      {
       "lang": "tr",
-      "text": ". 'Beklemek' demek. Yükleniyorsa şöyle dersin: "
+      "text": ". 'Beklemek' demek. Yükleniyorsa şöyle dersin:"
      },
      {
       "lang": "en",
@@ -46418,7 +46894,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ve işin bittiğini söylemek için: "
+      "text": "Ve işin bittiğini söylemek için:"
      },
      {
       "lang": "en",
@@ -46426,7 +46902,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Türkçede 'tamam, bitti' gibi. Tek başına da kullanılır: "
+      "text": ". Türkçede 'tamam, bitti' gibi. Tek başına da kullanılır:"
      },
      {
       "lang": "en",
@@ -46434,7 +46910,7 @@
      },
      {
       "lang": "tr",
-      "text": " Ya da cümle içinde: "
+      "text": "Ya da cümle içinde:"
      },
      {
       "lang": "en",
@@ -46442,7 +46918,7 @@
      },
      {
       "lang": "tr",
-      "text": " 'Oldu, bitti.'"
+      "text": "'Oldu, bitti.'"
      }
     ]
    },
@@ -46450,7 +46926,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi adımları sıraya dizen kelimeler. İlk adım için "
+      "text": "Şimdi adımları sıraya dizen kelimeler. İlk adım için"
      },
      {
       "lang": "en",
@@ -46458,7 +46934,7 @@
      },
      {
       "lang": "tr",
-      "text": ", ondan sonrası için "
+      "text": ", ondan sonrası için"
      },
      {
       "lang": "en",
@@ -46466,7 +46942,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da "
+      "text": "ya da"
      },
      {
       "lang": "en",
@@ -46474,7 +46950,7 @@
      },
      {
       "lang": "tr",
-      "text": ", ve son adım için "
+      "text": ", ve son adım için"
      },
      {
       "lang": "en",
@@ -46490,7 +46966,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Birlikte deneyelim. 'Önce kırmızı düğmeye bas' demek için: "
+      "text": "Birlikte deneyelim. 'Önce kırmızı düğmeye bas' demek için:"
      },
      {
       "lang": "en",
@@ -46498,7 +46974,7 @@
      },
      {
       "lang": "tr",
-      "text": " Lütfen tekrar et."
+      "text": "Lütfen tekrar et."
      }
     ],
     "expect": {
@@ -46525,7 +47001,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "'sonra' için "
+       "text": "'sonra' için"
       },
       {
        "lang": "en",
@@ -46533,7 +47009,7 @@
       },
       {
        "lang": "tr",
-       "text": ", 'seç' için "
+       "text": ", 'seç' için"
       },
       {
        "lang": "en",
@@ -46541,7 +47017,7 @@
       },
       {
        "lang": "tr",
-       "text": ", 'şifren' için "
+       "text": ", 'şifren' için"
       },
       {
        "lang": "en",
@@ -46558,7 +47034,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Güzel. Peki bir şeyi yapmamasını söylemek istersen? Cümlenin başına "
+      "text": "Güzel. Peki bir şeyi yapmamasını söylemek istersen? Cümlenin başına"
      },
      {
       "lang": "en",
@@ -46566,7 +47042,7 @@
      },
      {
       "lang": "tr",
-      "text": " koyarsın, gerisi aynı kalır. Mesela: "
+      "text": "koyarsın, gerisi aynı kalır. Mesela:"
      },
      {
       "lang": "en",
@@ -46574,7 +47050,7 @@
      },
      {
       "lang": "tr",
-      "text": " 'İki kere basma.'"
+      "text": "'İki kere basma.'"
      }
     ]
    },
@@ -46596,7 +47072,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Başa "
+       "text": "Başa"
       },
       {
        "lang": "en",
@@ -46604,7 +47080,7 @@
       },
       {
        "lang": "tr",
-       "text": " gelecek, sonra fiil yalın hâlde."
+       "text": "gelecek, sonra fiil yalın hâlde."
       }
      ]
     }
@@ -46613,7 +47089,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu cümleler kısa olduğu için bazen sert duyulabilir. Yumuşatmak çok kolay: başına ya da sonuna "
+      "text": "Bu cümleler kısa olduğu için bazen sert duyulabilir. Yumuşatmak çok kolay: başına ya da sonuna"
      },
      {
       "lang": "en",
@@ -46621,7 +47097,7 @@
      },
      {
       "lang": "tr",
-      "text": " eklersin. "
+      "text": "eklersin."
      },
      {
       "lang": "en",
@@ -46629,7 +47105,7 @@
      },
      {
       "lang": "tr",
-      "text": " Ya da soru gibi sorarsın: "
+      "text": "Ya da soru gibi sorarsın:"
      },
      {
       "lang": "en",
@@ -46656,7 +47132,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "'bekle' "
+       "text": "'bekle'"
       },
       {
        "lang": "en",
@@ -46664,7 +47140,7 @@
       },
       {
        "lang": "tr",
-       "text": ", 'bir dakika' "
+       "text": ", 'bir dakika'"
       },
       {
        "lang": "en",
@@ -46672,7 +47148,7 @@
       },
       {
        "lang": "tr",
-       "text": ", kibarlık için "
+       "text": ", kibarlık için"
       },
       {
        "lang": "en",
@@ -46703,7 +47179,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Olumsuz yönergede "
+       "text": "Yanlış. Olumsuz yönergede"
       },
       {
        "lang": "en",
@@ -46711,7 +47187,7 @@
       },
       {
        "lang": "tr",
-       "text": " kullanılmaz. Doğrusu: "
+       "text": "kullanılmaz. Doğrusu:"
       },
       {
        "lang": "en",
@@ -46724,7 +47200,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son adımı söylerken "
+      "text": "Son adımı söylerken"
      },
      {
       "lang": "en",
@@ -46732,7 +47208,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da "
+      "text": "ya da"
      },
      {
       "lang": "en",
@@ -46740,7 +47216,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin. Ve iş bitince: "
+      "text": "dersin. Ve iş bitince:"
      },
      {
       "lang": "en",
@@ -46748,7 +47224,7 @@
      },
      {
       "lang": "tr",
-      "text": " 'Bu kadar. Tamamdır.'"
+      "text": "'Bu kadar. Tamamdır.'"
      }
     ]
    },
@@ -46772,7 +47248,7 @@
      },
      {
       "lang": "tr",
-      "text": "Bir de şu soruyu bekle, çünkü sana sık sorulacak: "
+      "text": "Bir de şu soruyu bekle, çünkü sana sık sorulacak:"
      },
      {
       "lang": "en",
@@ -46780,7 +47256,7 @@
      },
      {
       "lang": "tr",
-      "text": " 'Bunu nasıl yapacağım?'"
+      "text": "'Bunu nasıl yapacağım?'"
      }
     ]
    },
@@ -46788,7 +47264,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ve karşındaki takip edemezse şunu söyler: "
+      "text": "Ve karşındaki takip edemezse şunu söyler:"
      },
      {
       "lang": "en",
@@ -46796,7 +47272,7 @@
      },
      {
       "lang": "tr",
-      "text": " O zaman panik yok, aynı adımı yavaşça tekrar edersin. Sen de yardım isterken şunu kullanabilirsin: "
+      "text": "O zaman panik yok, aynı adımı yavaşça tekrar edersin. Sen de yardım isterken şunu kullanabilirsin:"
      },
      {
       "lang": "en",
@@ -46804,7 +47280,7 @@
      },
      {
       "lang": "tr",
-      "text": " Söyle bakalım."
+      "text": "Söyle bakalım."
      }
     ],
     "expect": {
@@ -46816,7 +47292,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim. Yönerge verirken özne yok, fiil yalın: "
+      "text": "Özetleyelim. Yönerge verirken özne yok, fiil yalın:"
      },
      {
       "lang": "en",
@@ -46824,7 +47300,7 @@
      },
      {
       "lang": "tr",
-      "text": " Olumsuzu "
+      "text": "Olumsuzu"
      },
      {
       "lang": "en",
@@ -46832,7 +47308,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile: "
+      "text": "ile:"
      },
      {
       "lang": "en",
@@ -46840,7 +47316,7 @@
      },
      {
       "lang": "tr",
-      "text": " Adımları "
+      "text": "Adımları"
      },
      {
       "lang": "en",
@@ -46848,7 +47324,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile sıralarsın, sonunda "
+      "text": "ile sıralarsın, sonunda"
      },
      {
       "lang": "en",
@@ -46856,7 +47332,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin."
+      "text": "dersin."
      }
     ]
    },
@@ -48910,7 +49386,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz: "
+      "text": "İlk kelimemiz:"
      },
      {
       "lang": "en",
@@ -48918,7 +49394,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Türkçesi \"ödünç almak\" demek. Bir şeyi alıp sonra geri veriyorsan, onu "
+      "text": ". Türkçesi \"ödünç almak\" demek. Bir şeyi alıp sonra geri veriyorsan, onu"
      },
      {
       "lang": "en",
@@ -48926,7 +49402,7 @@
      },
      {
       "lang": "tr",
-      "text": " ediyorsun. Lütfen sen de söyle: "
+      "text": "ediyorsun. Lütfen sen de söyle:"
      },
      {
       "lang": "en",
@@ -48942,7 +49418,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bunu bir cümlede kullanalım. Görevliye kibarca şöyle dersin: "
+      "text": "Şimdi bunu bir cümlede kullanalım. Görevliye kibarca şöyle dersin:"
      },
      {
       "lang": "en",
@@ -48950,7 +49426,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani \"Bu kitabı ödünç almak istiyorum.\" Buradaki "
+      "text": "Yani \"Bu kitabı ödünç almak istiyorum.\" Buradaki"
      },
      {
       "lang": "en",
@@ -48958,7 +49434,7 @@
      },
      {
       "lang": "tr",
-      "text": ", \"I want to\"nun kibar hâlidir. Lütfen tekrar et: "
+      "text": ", \"I want to\"nun kibar hâlidir. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -48974,7 +49450,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ama kitap almadan önce genelde üye olman gerekir. Üye demek "
+      "text": "Ama kitap almadan önce genelde üye olman gerekir. Üye demek"
      },
      {
       "lang": "en",
@@ -48982,7 +49458,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Görevli sana sorabilir: "
+      "text": ". Görevli sana sorabilir:"
      },
      {
       "lang": "en",
@@ -48990,7 +49466,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani \"Üye misiniz?\""
+      "text": "Yani \"Üye misiniz?\""
      }
     ]
    },
@@ -48998,7 +49474,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Cevabın hayırsa şunu dersin: "
+      "text": "Cevabın hayırsa şunu dersin:"
      },
      {
       "lang": "en",
@@ -49006,7 +49482,7 @@
      },
      {
       "lang": "tr",
-      "text": " \"Henüz üye değilim.\" Sondaki "
+      "text": "\"Henüz üye değilim.\" Sondaki"
      },
      {
       "lang": "en",
@@ -49014,7 +49490,7 @@
      },
      {
       "lang": "tr",
-      "text": " kelimesi \"henüz\" demek ve cümlenin sonuna gelir. Söyle bakalım: "
+      "text": "kelimesi \"henüz\" demek ve cümlenin sonuna gelir. Söyle bakalım:"
      },
      {
       "lang": "en",
@@ -49030,7 +49506,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende. \"Üye olmak istiyorum\" cümlesini İngilizce kur. Kibar kalıbı kullan ve \"become\" fiilini ekle."
+      "text": "Şimdi sıra sende. \"Üye olmak istiyorum\" cümlesini İngilizce kur. Kibar kalıbı kullan ve"
+     },
+     {
+      "lang": "en",
+      "text": "become"
+     },
+     {
+      "lang": "tr",
+      "text": "fiilini ekle."
      }
     ],
     "expect": {
@@ -49044,7 +49528,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "\"…istiyorum\" için "
+       "text": "\"…istiyorum\" için"
       },
       {
        "lang": "en",
@@ -49052,7 +49536,7 @@
       },
       {
        "lang": "tr",
-       "text": ", \"üye olmak\" için "
+       "text": ", \"üye olmak\" için"
       },
       {
        "lang": "en",
@@ -49069,7 +49553,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Üye oldun, kitabı aldın. Peki geri vermek? Onun kelimesi "
+      "text": "Üye oldun, kitabı aldın. Peki geri vermek? Onun kelimesi"
      },
      {
       "lang": "en",
@@ -49077,7 +49561,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Hem fiil olarak \"iade etmek\", hem isim olarak \"iade\" anlamına gelir. Kitabı geri getirdiğinde: "
+      "text": ". Hem fiil olarak \"iade etmek\", hem isim olarak \"iade\" anlamına gelir. Kitabı geri getirdiğinde:"
      },
      {
       "lang": "en",
@@ -49089,7 +49573,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son tarihi öğrenmek için de şunu sorarsın: "
+      "text": "Son tarihi öğrenmek için de şunu sorarsın:"
      },
      {
       "lang": "en",
@@ -49097,7 +49581,7 @@
      },
      {
       "lang": "tr",
-      "text": " \"Ne zaman iade etmem gerekiyor?\" Buradaki "
+      "text": "\"Ne zaman iade etmem gerekiyor?\" Buradaki"
      },
      {
       "lang": "en",
@@ -49105,7 +49589,7 @@
      },
      {
       "lang": "tr",
-      "text": " \"gerekmek, zorunda olmak\" demek. Lütfen tekrar et: "
+      "text": "\"gerekmek, zorunda olmak\" demek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -49121,7 +49605,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Görevlinin cevabı çoğu zaman şudur: "
+      "text": "Görevlinin cevabı çoğu zaman şudur:"
      },
      {
       "lang": "en",
@@ -49129,7 +49613,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani \"Üç hafta tutabilirsiniz.\" "
+      "text": "Yani \"Üç hafta tutabilirsiniz.\""
      },
      {
       "lang": "en",
@@ -49137,7 +49621,7 @@
      },
      {
       "lang": "tr",
-      "text": " burada \"yanında tutmak\" demek."
+      "text": "burada \"yanında tutmak\" demek."
      }
     ]
    },
@@ -49145,7 +49629,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Geç kalırsan bir bedeli var: "
+      "text": "Geç kalırsan bir bedeli var:"
      },
      {
       "lang": "en",
@@ -49153,7 +49637,7 @@
      },
      {
       "lang": "tr",
-      "text": ", yani \"para cezası\". Dikkat: aynı kelime \"iyi\" anlamına da gelir, ama burada cezadan söz ediyoruz. Görevli şöyle uyarır: "
+      "text": ", yani \"para cezası\". Dikkat: aynı kelime \"iyi\" anlamına da gelir, ama burada cezadan söz ediyoruz. Görevli şöyle uyarır:"
      },
      {
       "lang": "en",
@@ -49161,7 +49645,7 @@
      },
      {
       "lang": "tr",
-      "text": " \"Geç getirilen kitaplar için küçük bir ceza var.\""
+      "text": "\"Geç getirilen kitaplar için küçük bir ceza var.\""
      }
     ]
    },
@@ -49169,7 +49653,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi kurallar. İngilizcede kuralları iki basit yolla anlatırız. Zorunluluk için "
+      "text": "Şimdi kurallar. İngilizcede kuralları iki basit yolla anlatırız. Zorunluluk için"
      },
      {
       "lang": "en",
@@ -49177,15 +49661,27 @@
      },
      {
       "lang": "tr",
-      "text": " Yasak için "
+      "text": "Yasak için"
      },
      {
       "lang": "en",
       "text": "You can't eat here."
      },
      {
+      "lang": "en",
+      "text": "have to"
+     },
+     {
       "lang": "tr",
-      "text": " \"have to\" gerekir, \"can't\" olmaz demek."
+      "text": "gerekir,"
+     },
+     {
+      "lang": "en",
+      "text": "can't"
+     },
+     {
+      "lang": "tr",
+      "text": "olmaz demek."
      }
     ]
    },
@@ -49193,7 +49689,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kütüphanenin en büyük kuralı ise sessizlik. Sessiz demek "
+      "text": "Kütüphanenin en büyük kuralı ise sessizlik. Sessiz demek"
      },
      {
       "lang": "en",
@@ -49201,7 +49697,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Duvarda şu yazar: "
+      "text": ". Duvarda şu yazar:"
      },
      {
       "lang": "en",
@@ -49209,7 +49705,7 @@
      },
      {
       "lang": "tr",
-      "text": " Söyle: "
+      "text": "Söyle:"
      },
      {
       "lang": "en",
@@ -49239,7 +49735,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Yasak için "
+       "text": "Yasak için"
       },
       {
        "lang": "en",
@@ -49247,7 +49743,7 @@
       },
       {
        "lang": "tr",
-       "text": ", sonra "
+       "text": ", sonra"
       },
       {
        "lang": "en",
@@ -49278,7 +49774,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Kütüphanede yiyip içemezsin. Doğrusu: "
+       "text": "Yanlış. Kütüphanede yiyip içemezsin. Doğrusu:"
       },
       {
        "lang": "en",
@@ -49291,7 +49787,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi çok işine yarayacak bir yapı: "
+      "text": "Şimdi çok işine yarayacak bir yapı:"
      },
      {
       "lang": "en",
@@ -49299,7 +49795,7 @@
      },
      {
       "lang": "tr",
-      "text": " ile kurulan present perfect. Bir işi bitirdiysen: "
+      "text": "ile kurulan present perfect. Bir işi bitirdiysen:"
      },
      {
       "lang": "en",
@@ -49307,7 +49803,7 @@
      },
      {
       "lang": "tr",
-      "text": " \"Diğer kitabı çoktan iade ettim.\" Henüz bitmediyse: "
+      "text": "\"Diğer kitabı çoktan iade ettim.\" Henüz bitmediyse:"
      },
      {
       "lang": "en",
@@ -49337,7 +49833,7 @@
       },
       {
        "lang": "tr",
-       "text": " + "
+       "text": "+"
       },
       {
        "lang": "en",
@@ -49345,7 +49841,7 @@
       },
       {
        "lang": "tr",
-       "text": " + "
+       "text": "+"
       },
       {
        "lang": "en",
@@ -49362,7 +49858,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Süreyi uzatmak istersen kibar bir ricada bulunursun: "
+      "text": "Süreyi uzatmak istersen kibar bir ricada bulunursun:"
      },
      {
       "lang": "en",
@@ -49370,7 +49866,7 @@
      },
      {
       "lang": "tr",
-      "text": " \"Süresini uzatabilir miyim, lütfen?\" "
+      "text": "\"Süresini uzatabilir miyim, lütfen?\""
      },
      {
       "lang": "en",
@@ -49378,7 +49874,7 @@
      },
      {
       "lang": "tr",
-      "text": " \"yenilemek, uzatmak\" demek. Tekrar et: "
+      "text": "\"yenilemek, uzatmak\" demek. Tekrar et:"
      },
      {
       "lang": "en",
@@ -49426,7 +49922,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Harika iş çıkardın. Bugün beş kelime öğrendin: "
+      "text": "Harika iş çıkardın. Bugün beş kelime öğrendin:"
      },
      {
       "lang": "en",
@@ -49434,7 +49930,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Üç kalıbı da cebine koydun: kibar istek için "
+      "text": ". Üç kalıbı da cebine koydun: kibar istek için"
      },
      {
       "lang": "en",
@@ -49442,7 +49938,7 @@
      },
      {
       "lang": "tr",
-      "text": ", kurallar için "
+      "text": ", kurallar için"
      },
      {
       "lang": "en",
@@ -49450,7 +49946,7 @@
      },
      {
       "lang": "tr",
-      "text": ", ve henüz yapılmamış işler için "
+      "text": ", ve henüz yapılmamış işler için"
      },
      {
       "lang": "en",
@@ -49458,7 +49954,7 @@
      },
      {
       "lang": "tr",
-      "text": " Şimdi kütüphane görevlisiyle konuşma sırası sende."
+      "text": "Şimdi kütüphane görevlisiyle konuşma sırası sende."
      }
     ]
    }
@@ -50568,7 +51064,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İlk kelimemiz çok işine yarayacak: "
+      "text": "İlk kelimemiz çok işine yarayacak:"
      },
      {
       "lang": "en",
@@ -50576,7 +51072,7 @@
      },
      {
       "lang": "tr",
-      "text": " — yani bir kopya, fotokopi. Lütfen sen de söyle: "
+      "text": "— yani bir kopya, fotokopi. Lütfen sen de söyle:"
      },
      {
       "lang": "en",
@@ -50592,7 +51088,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kopyanın karşısındaki kelime de "
+      "text": "Kopyanın karşısındaki kelime de"
      },
      {
       "lang": "en",
@@ -50600,7 +51096,7 @@
      },
      {
       "lang": "tr",
-      "text": " — özgün belge, aslı. Memur sana çoğu zaman ikisini birden sorar. Şimdi sen söyle: "
+      "text": "— özgün belge, aslı. Memur sana çoğu zaman ikisini birden sorar. Şimdi sen söyle:"
      },
      {
       "lang": "en",
@@ -50616,7 +51112,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de "
+      "text": "Bir de"
      },
      {
       "lang": "en",
@@ -50624,7 +51120,7 @@
      },
      {
       "lang": "tr",
-      "text": " var: resmi demek. Sıradan bir fotokopi değil, kurumun onayladığı bir kopya istiyorsan "
+      "text": "var: resmi demek. Sıradan bir fotokopi değil, kurumun onayladığı bir kopya istiyorsan"
      },
      {
       "lang": "en",
@@ -50632,7 +51128,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin. Söyle bakalım: "
+      "text": "dersin. Söyle bakalım:"
      },
      {
       "lang": "en",
@@ -50648,7 +51144,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İhtiyacını söylemek için "
+      "text": "İhtiyacını söylemek için"
      },
      {
       "lang": "en",
@@ -50656,7 +51152,7 @@
      },
      {
       "lang": "tr",
-      "text": " fiilini kullanıyoruz: ihtiyaç duymak. En sade hâli: "
+      "text": "fiilini kullanıyoruz: ihtiyaç duymak. En sade hâli:"
      },
      {
       "lang": "en",
@@ -50664,7 +51160,7 @@
      },
      {
       "lang": "tr",
-      "text": " Yani bir kopyaya ihtiyacım var."
+      "text": "Yani bir kopyaya ihtiyacım var."
      }
     ]
    },
@@ -50672,7 +51168,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Türkçede olduğu gibi burada da nazik olmak iyi karşılanır. Bir şey rica ederken "
+      "text": "Türkçede olduğu gibi burada da nazik olmak iyi karşılanır. Bir şey rica ederken"
      },
      {
       "lang": "en",
@@ -50680,7 +51176,7 @@
      },
      {
       "lang": "tr",
-      "text": " kalıbını kullan. Kelimesi kelimesine 'yapabilir misiniz' demek ama günlük dilde 'lütfen şunu yapar mısınız' gibi duyulur."
+      "text": "kalıbını kullan. Kelimesi kelimesine 'yapabilir misiniz' demek ama günlük dilde 'lütfen şunu yapar mısınız' gibi duyulur."
      }
     ]
    },
@@ -50688,7 +51184,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kalıbın tamamı şöyle: "
+      "text": "Kalıbın tamamı şöyle:"
      },
      {
       "lang": "en",
@@ -50696,7 +51192,7 @@
      },
      {
       "lang": "tr",
-      "text": " Bir kopya çıkarır mısınız lütfen. Şimdi sen söyle: "
+      "text": "Bir kopya çıkarır mısınız lütfen. Şimdi sen söyle:"
      },
      {
       "lang": "en",
@@ -50725,7 +51221,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "İhtiyaç duymak "
+       "text": "İhtiyaç duymak"
       },
       {
        "lang": "en",
@@ -50733,7 +51229,7 @@
       },
       {
        "lang": "tr",
-       "text": ", kopya da "
+       "text": ", kopya da"
       },
       {
        "lang": "en",
@@ -50741,7 +51237,7 @@
       },
       {
        "lang": "tr",
-       "text": ". Cümleye "
+       "text": ". Cümleye"
       },
       {
        "lang": "en",
@@ -50749,7 +51245,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile başla."
+       "text": "ile başla."
       }
      ]
     }
@@ -50758,7 +51254,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Resmi belgelerde bir de damga vardır. İngilizcesi "
+      "text": "Resmi belgelerde bir de damga vardır. İngilizcesi"
      },
      {
       "lang": "en",
@@ -50766,7 +51262,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Belgeye damga gerekiyor mu diye sormak için: "
+      "text": ". Belgeye damga gerekiyor mu diye sormak için:"
      },
      {
       "lang": "en",
@@ -50774,7 +51270,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sen de söyle: "
+      "text": "Sen de söyle:"
      },
      {
       "lang": "en",
@@ -50790,7 +51286,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir şeyi yapmak zorunda mıyım diye sorarken "
+      "text": "Bir şeyi yapmak zorunda mıyım diye sorarken"
      },
      {
       "lang": "en",
@@ -50798,7 +51294,7 @@
      },
      {
       "lang": "tr",
-      "text": " kullanıyoruz. Örneğin "
+      "text": "kullanıyoruz. Örneğin"
      },
      {
       "lang": "en",
@@ -50806,7 +51302,7 @@
      },
      {
       "lang": "tr",
-      "text": " — bunu imzalamak zorunda mıyım. "
+      "text": "— bunu imzalamak zorunda mıyım."
      },
      {
       "lang": "en",
@@ -50814,7 +51310,7 @@
      },
      {
       "lang": "tr",
-      "text": " imzalamak demek."
+      "text": "imzalamak demek."
      }
     ]
    },
@@ -50836,7 +51332,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Soruya "
+       "text": "Soruya"
       },
       {
        "lang": "en",
@@ -50844,7 +51340,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile başla, sonuna imzalamak "
+       "text": "ile başla, sonuna imzalamak"
       },
       {
        "lang": "en",
@@ -50852,7 +51348,7 @@
       },
       {
        "lang": "tr",
-       "text": " ekle."
+       "text": "ekle."
       }
      ]
     }
@@ -50861,7 +51357,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de şu ince nokta var: bir işi yapıp yapmadığını sorarken İngilizce sık sık "
+      "text": "Bir de şu ince nokta var: bir işi yapıp yapmadığını sorarken İngilizce sık sık"
      },
      {
       "lang": "en",
@@ -50869,7 +51365,7 @@
      },
      {
       "lang": "tr",
-      "text": " der. 'Henüz yaptın mı, yaptın mı artık' gibi. Cevabı da "
+      "text": "der. 'Henüz yaptın mı, yaptın mı artık' gibi. Cevabı da"
      },
      {
       "lang": "en",
@@ -50877,7 +51373,7 @@
      },
      {
       "lang": "tr",
-      "text": " olur — evet, imzaladım bile."
+      "text": "olur — evet, imzaladım bile."
      }
     ]
    },
@@ -50885,7 +51381,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bu soruyu birlikte söyleyelim: "
+      "text": "Bu soruyu birlikte söyleyelim:"
      },
      {
       "lang": "en",
@@ -50893,7 +51389,7 @@
      },
      {
       "lang": "tr",
-      "text": " Şimdi sen: "
+      "text": "Şimdi sen:"
      },
      {
       "lang": "en",
@@ -50923,7 +51419,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. "
+       "text": "Yanlış."
       },
       {
        "lang": "en",
@@ -50931,7 +51427,7 @@
       },
       {
        "lang": "tr",
-       "text": " kopyadır, "
+       "text": "kopyadır,"
       },
       {
        "lang": "en",
@@ -50939,7 +51435,7 @@
       },
       {
        "lang": "tr",
-       "text": " ise belgenin aslıdır. Memur çoğu zaman ikisini birden ister."
+       "text": "ise belgenin aslıdır. Memur çoğu zaman ikisini birden ister."
       }
      ]
     }
@@ -50948,7 +51444,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Belge hemen hazır olmayabilir. O zaman şunu duyarsın: "
+      "text": "Belge hemen hazır olmayabilir. O zaman şunu duyarsın:"
      },
      {
       "lang": "en",
@@ -50956,7 +51452,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sen de "
+      "text": "Sen de"
      },
      {
       "lang": "en",
@@ -50964,7 +51460,7 @@
      },
      {
       "lang": "tr",
-      "text": " dersin: yarın alırım."
+      "text": "dersin: yarın alırım."
      }
     ]
    },
@@ -50985,7 +51481,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Resmi kelimesi "
+       "text": "Resmi kelimesi"
       },
       {
        "lang": "en",
@@ -50993,7 +51489,7 @@
       },
       {
        "lang": "tr",
-       "text": " ve kopyadan önce gelir: "
+       "text": "ve kopyadan önce gelir:"
       },
       {
        "lang": "en",
@@ -51010,7 +51506,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de sana sorulanı anlaman lazım. Memur şunu sorabilir: "
+      "text": "Bir de sana sorulanı anlaman lazım. Memur şunu sorabilir:"
      },
      {
       "lang": "en",
@@ -51018,7 +51514,7 @@
      },
      {
       "lang": "tr",
-      "text": " — aslı yanında mı. Cevabın "
+      "text": "— aslı yanında mı. Cevabın"
      },
      {
       "lang": "en",
@@ -51026,7 +51522,7 @@
      },
      {
       "lang": "tr",
-      "text": " ya da "
+      "text": "ya da"
      },
      {
       "lang": "en",
@@ -51034,7 +51530,7 @@
      },
      {
       "lang": "tr",
-      "text": " olabilir."
+      "text": "olabilir."
      }
     ]
    },
@@ -51042,7 +51538,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir sahne dinle: "
+      "text": "Küçük bir sahne dinle:"
      },
      {
       "lang": "en",
@@ -51050,7 +51546,7 @@
      },
      {
       "lang": "tr",
-      "text": " Memur cevap veriyor: "
+      "text": "Memur cevap veriyor:"
      },
      {
       "lang": "en",
@@ -51058,7 +51554,7 @@
      },
      {
       "lang": "tr",
-      "text": " Sen de "
+      "text": "Sen de"
      },
      {
       "lang": "en",
@@ -51066,7 +51562,7 @@
      },
      {
       "lang": "tr",
-      "text": " diye soruyorsun."
+      "text": "diye soruyorsun."
      }
     ]
    },
@@ -51087,7 +51583,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Kibar rica "
+       "text": "Kibar rica"
       },
       {
        "lang": "en",
@@ -51095,7 +51591,7 @@
       },
       {
        "lang": "tr",
-       "text": " ile başlar, sonuna da "
+       "text": "ile başlar, sonuna da"
       },
       {
        "lang": "en",
@@ -51103,7 +51599,7 @@
       },
       {
        "lang": "tr",
-       "text": " eklersin."
+       "text": "eklersin."
       }
      ]
     }
@@ -51112,7 +51608,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Çok iyiydin. Bugün kopya ve asıl belgeyi ayırdık: "
+      "text": "Çok iyiydin. Bugün kopya ve asıl belgeyi ayırdık:"
      },
      {
       "lang": "en",
@@ -51120,7 +51616,7 @@
      },
      {
       "lang": "tr",
-      "text": " ve "
+      "text": "ve"
      },
      {
       "lang": "en",
@@ -51128,7 +51624,7 @@
      },
      {
       "lang": "tr",
-      "text": ". Kibar rica için "
+      "text": ". Kibar rica için"
      },
      {
       "lang": "en",
@@ -51136,7 +51632,7 @@
      },
      {
       "lang": "tr",
-      "text": ", ihtiyaç için "
+      "text": ", ihtiyaç için"
      },
      {
       "lang": "en",
@@ -51144,7 +51640,7 @@
      },
      {
       "lang": "tr",
-      "text": ", zorunluluk sorusu için "
+      "text": ", zorunluluk sorusu için"
      },
      {
       "lang": "en",
@@ -51152,7 +51648,7 @@
      },
      {
       "lang": "tr",
-      "text": " öğrendin. Şimdi bunları gerçek bir sahnede kullanalım."
+      "text": "öğrendin. Şimdi bunları gerçek bir sahnede kullanalım."
      }
     ]
    }
