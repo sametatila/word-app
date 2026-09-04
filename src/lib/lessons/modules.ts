@@ -49,6 +49,18 @@ export const MODULE_THEMES: Record<string, string[]> = {
     "Sağlık sistemi",
     "Çevre ve şehir yaşamı",
     "Duygular ve hayaller",
+    // 11-18: B1 katmanının kalan yarısını kapsayan genişleme (2026-09-05).
+    // Temalar uydurulmadı — modül 1-10 bittikten sonra havuzda KAPSANMAYAN
+    // 1059 B1 maddesi kümelendi ve her tema en az 80 madde bulduğu yerde
+    // açıldı. Bkz. docs/plan/b1-yeniden-kurgu.md §5 Adım 2.
+    "Mutfak ve sofra",
+    "Alışveriş, para ve banka",
+    "Yolculuk ve ulaşım",
+    "Beden, bakım ve yaşlanma",
+    "Evde teknik ve onarım",
+    "Meslekler ve iş yaşamı",
+    "Toplum, hukuk ve göç",
+    "Kültür, spor ve doğa",
   ],
   B2: [
     "Profesyonel iletişim",

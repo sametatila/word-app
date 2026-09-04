@@ -142,6 +142,50 @@ Havuzun B1 katmanı 1797 → **1829** kayıt, normalize 1783 → **1815** başl�
 Bu yüzden yukarıdaki hedef kapsama %72,7 değil **%71,4**; ders sayısı kararı
 (180) değişmedi.
 
+### Adım 3.5 — Mevcut 100 ders BİTTİ (2026-09-05)
+
+On modülün onu da havuzun B1 katmanına oturdu. Ölçüm:
+
+| Ölçüt | Önce | Sonra |
+|---|---|---|
+| Seviye üstü (B2+C1) | 230 | **0** |
+| Havuzda olmayan | 116 | **0** |
+| Seviye altı (A1+A2) | 119 (%23,8) | **46 (%5,8)** |
+| Gerçekten B1 | 151 (%30,2) | **754 (%94,3)** |
+| Katman kapsaması | 150/1783 (%8,4) | **761/1815 (%41,9)** |
+| `check:lessons` B1 | 100 hata | **0** |
+
+Kalan 7 uyarı bu işten önce de vardı ve sözlükçeyle ilgisi yok: bağlaç
+derslerinin kalıp açıklamaları Türkçe segmentin içinde Almanca örnek cümle
+taşıyor. Ayrı bir iş.
+
+### Adım 3.6 — Genişleme iskeleti: modül 11–18 (2026-09-05)
+
+Hedef %71,4'e 100 derslik iskelet yetmiyor (%41,9 veriyor); kalan 80 ders
+kararın ikinci yarısı. Sekiz yeni modül teması **uydurulmadı**: modül 1–10
+bittikten sonra havuzda kapsanmayan **1059** B1 maddesi kümelendi ve her tema
+en az 80 madde bulduğu yerde açıldı.
+
+| Modül | Tema | Kaynak küme |
+|---|---|---|
+| 11 | Mutfak ve sofra | yiyecek, pişirme, lokanta (die Zutaten, der Kellner, das Gebäck) |
+| 12 | Alışveriş, para ve banka | der Rabatt, das Bargeld, die Einzahlung, die Garantie |
+| 13 | Yolculuk ve ulaşım | die Fähre, der Hafen, die Übernachtung, die Umleitung |
+| 14 | Beden, bakım ve yaşlanma | der Muskel, das Knie, die Spritze, die Betreuung |
+| 15 | Evde teknik ve onarım | die Steckdose, die Batterie, die Tastatur, das Werkzeug |
+| 16 | Meslekler ve iş yaşamı | die Lehrstelle, der Ingenieur, die Gewerkschaft |
+| 17 | Toplum, hukuk ve göç | die Migration, das Urteil, die Minderheit, das Asyl |
+| 18 | Kültür, spor ve doğa | die Oper, das Stadion, das Gebirge, der Sturm |
+
+Dilbilgisi odağı YENİ değil: modül 1–10 B1'in yapı envanterini zaten kuruyor.
+Genişleme modülleri aynı odakları yeni alanlarda tekrar çalıştırıyor (sarmal).
+
+**Yapısal düzeltme:** modül 10'un son dersi (`de-b1-rueckblick`) metninde
+"B1'in son dersindeyiz" diyordu; 80 ders eklenince yolun ortasında kalıyor.
+Başlığı zaten «Die Zwischenbilanz» (ara değerlendirme) olduğu için iki cümle
+"ilk bölümün sonu" diye düzeltildi, ders yerinde kaldı — id ve katalog sırası
+dokunulmaz.
+
 ### Adım 4 — Atamayı ELLE yap, modül modül
 **Mekanik dağıtım A1'de denendi ve reddedildi:** ders metninden anlam torbası
 kurup puanlayan betik aritmetik olarak hepsini yerleştirdi ama "Merhaba"
