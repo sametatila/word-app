@@ -26,7 +26,10 @@ export const deA1B01: Lesson[] = [
       { de: "kommen", tr: "gelmek" },
       { de: "wohnen", tr: "oturmak" },
       { de: "der Name", tr: "isim" },
-    ],
+          { de: "tschüss!", tr: "hoşça kal" },
+      { de: "das Wiedersehen", tr: "tekrar görüşme" },
+      { de: "bitte", tr: "lütfen" },
+],
     patterns: [
       { de: "Ich heiße …", tr: "adını söylerken kullanılır" },
       { de: "Ich komme aus …", tr: "nereli olduğunu söylerken kullanılır" },
@@ -90,13 +93,43 @@ export const deA1B01: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz:"),
+          tr("Beşinci kelimemiz:"),
           de("der Name"),
           tr("Türkçesi 'isim' demek. Lütfen"),
           de("der Name"),
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "der Name" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("tschüss!"),
+          tr("Türkçesi 'hoşça kal' demek. Lütfen"),
+          de("tschüss!"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "tschüss!" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("das Wiedersehen"),
+          tr("Türkçesi 'tekrar görüşme' demek. Lütfen"),
+          de("das Wiedersehen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Wiedersehen" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("bitte"),
+          tr("Türkçesi 'lütfen' demek. Lütfen"),
+          de("bitte"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "bitte" },
       },
       {
         say: [
@@ -236,7 +269,10 @@ export const deA1B01: Lesson[] = [
       { de: "schlecht", tr: "kötü" },
       { de: "müde", tr: "yorgun" },
       { de: "danke", tr: "teşekkürler" },
-    ],
+          { de: "froh", tr: "sevinçli" },
+      { de: "traurig", tr: "üzgün" },
+      { de: "glücklich", tr: "mutlu" },
+],
     patterns: [
       { de: "Wie geht es dir?", tr: "bir arkadaşına nasıl olduğunu sorar" },
       { de: "Mir geht es gut.", tr: "kendi hâlini söylerken kullanılır" },
@@ -300,13 +336,43 @@ export const deA1B01: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz:"),
+          tr("Beşinci kelimemiz:"),
           de("danke"),
           tr("Türkçesi 'teşekkürler' demek. Lütfen"),
           de("danke"),
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "danke" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("froh"),
+          tr("Türkçesi 'sevinçli' demek. Lütfen"),
+          de("froh"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "froh" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("traurig"),
+          tr("Türkçesi 'üzgün' demek. Lütfen"),
+          de("traurig"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "traurig" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("glücklich"),
+          tr("Türkçesi 'mutlu' demek. Lütfen"),
+          de("glücklich"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "glücklich" },
       },
       {
         say: [
@@ -441,9 +507,12 @@ export const deA1B01: Lesson[] = [
       { de: "du", tr: "sen" },
       { de: "Sie", tr: "siz" },
       { de: "der Chef", tr: "patron" },
-      { de: "die Kollegin", tr: "iş arkadaşı" },
-      { de: "höflich", tr: "kibar" },
-    ],
+      { de: "der Herr", tr: "bay" },
+      { de: "die Dame", tr: "hanım" },
+          { de: "freundlich", tr: "güler yüzlü" },
+      { de: "nett", tr: "cana yakın" },
+      { de: "entschuldigen", tr: "mazur görmek" },
+],
     patterns: [
       { de: "Wie heißt du?", tr: "arkadaşına adını sorar" },
       { de: "Wie heißen Sie?", tr: "tanımadığın birine kibarca adını sorar" },
@@ -498,22 +567,52 @@ export const deA1B01: Lesson[] = [
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("die Kollegin"),
-          tr("Türkçesi 'iş arkadaşı' demek; bu biçim kadın iş arkadaşı için kullanılır. Lütfen"),
-          de("die Kollegin"),
+          de("der Herr"),
+          tr("Türkçesi 'bay' demek. Lütfen"),
+          de("der Herr"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Kollegin" },
+        expect: { kind: "repeat", target: "der Herr" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("die Dame"),
+          tr("Türkçesi 'hanım' demek. Lütfen"),
+          de("die Dame"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Dame" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("freundlich"),
+          tr("Türkçesi 'güler yüzlü' demek. Lütfen"),
+          de("freundlich"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "freundlich" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("nett"),
+          tr("Türkçesi 'cana yakın' demek. Lütfen"),
+          de("nett"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "nett" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("höflich"),
-          tr("Türkçesi 'kibar' demek. Lütfen"),
-          de("höflich"),
+          de("entschuldigen"),
+          tr("Türkçesi 'mazur görmek' demek. Lütfen"),
+          de("entschuldigen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "höflich" },
+        expect: { kind: "repeat", target: "entschuldigen" },
       },
       {
         say: [
@@ -650,7 +749,10 @@ export const deA1B01: Lesson[] = [
       { de: "was", tr: "ne" },
       { de: "das Land", tr: "ülke" },
       { de: "die Stadt", tr: "şehir" },
-    ],
+          { de: "das Ausland", tr: "yurt dışı" },
+      { de: "die Heimat", tr: "memleket" },
+      { de: "der Ort", tr: "yer" },
+],
     patterns: [
       { de: "Woher kommst du?", tr: "birinin nereli olduğunu sorar" },
       { de: "Wo wohnst du?", tr: "birinin nerede oturduğunu sorar" },
@@ -714,13 +816,43 @@ export const deA1B01: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz:"),
+          tr("Beşinci kelimemiz:"),
           de("die Stadt"),
           tr("Türkçesi 'şehir' demek. Lütfen"),
           de("die Stadt"),
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "die Stadt" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("das Ausland"),
+          tr("Türkçesi 'yurt dışı' demek. Lütfen"),
+          de("das Ausland"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Ausland" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("die Heimat"),
+          tr("Türkçesi 'memleket' demek. Lütfen"),
+          de("die Heimat"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Heimat" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("der Ort"),
+          tr("Türkçesi 'yer' demek. Lütfen"),
+          de("der Ort"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Ort" },
       },
       {
         say: [
@@ -853,7 +985,10 @@ export const deA1B01: Lesson[] = [
       { de: "Englisch", tr: "İngilizce" },
       { de: "Türkisch", tr: "Türkçe" },
       { de: "ein bisschen", tr: "biraz" },
-    ],
+          { de: "die Sprache", tr: "dil" },
+      { de: "der Kurs", tr: "kurs" },
+      { de: "wiederholen", tr: "tekrarlamak" },
+],
     patterns: [
       { de: "Sprichst du Deutsch?", tr: "birinin bir dili bilip bilmediğini sorar" },
       { de: "Ja, ich spreche …", tr: "hangi dilleri konuştuğunu söyler" },
@@ -920,13 +1055,43 @@ export const deA1B01: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz iki kelimeden oluşuyor:"),
+          tr("Beşinci kelimemiz iki kelimeden oluşuyor:"),
           de("ein bisschen"),
           tr("Türkçesi 'biraz' demek. Lütfen"),
           de("ein bisschen"),
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "ein bisschen" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("die Sprache"),
+          tr("Türkçesi 'dil' demek. Lütfen"),
+          de("die Sprache"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Sprache" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("der Kurs"),
+          tr("Türkçesi 'kurs' demek. Lütfen"),
+          de("der Kurs"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Kurs" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("wiederholen"),
+          tr("Türkçesi 'tekrarlamak' demek. Lütfen"),
+          de("wiederholen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "wiederholen" },
       },
       {
         say: [
@@ -1049,12 +1214,15 @@ export const deA1B01: Lesson[] = [
     minutes: 9,
     focusId: "Zahlen-Preise",
     vocab: [
-      { de: "die Zahl", tr: "sayı" },
+      { de: "zahlen", tr: "ödemek" },
       { de: "zehn", tr: "on" },
       { de: "zwanzig", tr: "yirmi" },
       { de: "hundert", tr: "yüz" },
       { de: "die Nummer", tr: "numara" },
-    ],
+          { de: "wie viel", tr: "ne kadar" },
+      { de: "einmal", tr: "bir kere" },
+      { de: "mindestens", tr: "en az" },
+],
     patterns: [
       { de: "Meine Nummer ist …", tr: "telefon numaranı söylerken kullanılır" },
       { de: "Wie viel kostet das?", tr: "bir şeyin fiyatını sorar" },
@@ -1078,12 +1246,12 @@ export const deA1B01: Lesson[] = [
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("die Zahl"),
-          tr("Türkçesi 'sayı' demek. Lütfen"),
-          de("die Zahl"),
+          de("zahlen"),
+          tr("Türkçesi 'ödemek' demek. Lütfen"),
+          de("zahlen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Zahl" },
+        expect: { kind: "repeat", target: "zahlen" },
       },
       {
         say: [
@@ -1117,13 +1285,43 @@ export const deA1B01: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz:"),
+          tr("Beşinci kelimemiz:"),
           de("die Nummer"),
           tr("Türkçesi 'numara' demek. Lütfen"),
           de("die Nummer"),
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "die Nummer" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("wie viel"),
+          tr("Türkçesi 'ne kadar' demek. Lütfen"),
+          de("wie viel"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "wie viel" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("einmal"),
+          tr("Türkçesi 'bir kere' demek. Lütfen"),
+          de("einmal"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "einmal" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("mindestens"),
+          tr("Türkçesi 'en az' demek. Lütfen"),
+          de("mindestens"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "mindestens" },
       },
       {
         say: [
@@ -1261,7 +1459,10 @@ export const deA1B01: Lesson[] = [
       { de: "schreiben", tr: "yazmak" },
       { de: "der Vorname", tr: "ad" },
       { de: "der Nachname", tr: "soyad" },
-    ],
+          { de: "das Wort", tr: "kelime" },
+      { de: "der Fehler", tr: "hata" },
+      { de: "die Seite", tr: "sayfa" },
+],
     patterns: [
       { de: "Wie schreibt man das?", tr: "bir kelimenin nasıl yazıldığını sorar" },
       { de: "Mein Nachname ist …", tr: "soyadını söylerken kullanılır" },
@@ -1325,13 +1526,43 @@ export const deA1B01: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz:"),
+          tr("Beşinci kelimemiz:"),
           de("der Nachname"),
           tr("Türkçesi 'soyad' demek. Lütfen"),
           de("der Nachname"),
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "der Nachname" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("das Wort"),
+          tr("Türkçesi 'kelime' demek. Lütfen"),
+          de("das Wort"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Wort" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("der Fehler"),
+          tr("Türkçesi 'hata' demek. Lütfen"),
+          de("der Fehler"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Fehler" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("die Seite"),
+          tr("Türkçesi 'sayfa' demek. Lütfen"),
+          de("die Seite"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Seite" },
       },
       {
         say: [
@@ -1460,7 +1691,10 @@ export const deA1B01: Lesson[] = [
       { de: "der Lehrer", tr: "öğretmen" },
       { de: "die Ärztin", tr: "doktor" },
       { de: "die Firma", tr: "şirket" },
-    ],
+          { de: "die Arbeit", tr: "iş" },
+      { de: "der Verkäufer", tr: "satıcı" },
+      { de: "arbeitslos", tr: "işsiz" },
+],
     patterns: [
       { de: "Ich bin … von Beruf.", tr: "mesleğini söylerken kullanılır" },
       { de: "Ich arbeite als …", tr: "hangi işi yaptığını söyler" },
@@ -1524,13 +1758,43 @@ export const deA1B01: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz:"),
+          tr("Beşinci kelimemiz:"),
           de("die Firma"),
           tr("Türkçesi 'şirket' demek. Lütfen"),
           de("die Firma"),
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "die Firma" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("die Arbeit"),
+          tr("Türkçesi 'iş' demek. Lütfen"),
+          de("die Arbeit"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Arbeit" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("der Verkäufer"),
+          tr("Türkçesi 'satıcı' demek. Lütfen"),
+          de("der Verkäufer"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Verkäufer" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("arbeitslos"),
+          tr("Türkçesi 'işsiz' demek. Lütfen"),
+          de("arbeitslos"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "arbeitslos" },
       },
       {
         say: [
@@ -1657,7 +1921,10 @@ export const deA1B01: Lesson[] = [
       { de: "das Jahr", tr: "yıl" },
       { de: "geboren", tr: "doğmuş" },
       { de: "der Geburtstag", tr: "doğum günü" },
-    ],
+          { de: "das Alter", tr: "yaş" },
+      { de: "der Erwachsene", tr: "yetişkin" },
+      { de: "das Baby", tr: "bebek" },
+],
     patterns: [
       { de: "Ich bin … Jahre alt.", tr: "yaşını söylerken kullanılır" },
       { de: "Wie alt bist du?", tr: "birinin yaşını sorar" },
@@ -1721,13 +1988,43 @@ export const deA1B01: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz:"),
+          tr("Beşinci kelimemiz:"),
           de("der Geburtstag"),
           tr("Türkçesi 'doğum günü' demek. Lütfen"),
           de("der Geburtstag"),
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "der Geburtstag" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("das Alter"),
+          tr("Türkçesi 'yaş' demek. Lütfen"),
+          de("das Alter"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Alter" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("der Erwachsene"),
+          tr("Türkçesi 'yetişkin' demek. Lütfen"),
+          de("der Erwachsene"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Erwachsene" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("das Baby"),
+          tr("Türkçesi 'bebek' demek. Lütfen"),
+          de("das Baby"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Baby" },
       },
       {
         say: [
@@ -1852,9 +2149,12 @@ export const deA1B01: Lesson[] = [
       { de: "das Formular", tr: "form" },
       { de: "die Adresse", tr: "adres" },
       { de: "die Postleitzahl", tr: "posta kodu" },
-      { de: "der Wohnort", tr: "ikamet yeri" },
+      { de: "die Anmeldung", tr: "kayıt" },
       { de: "unterschreiben", tr: "imzalamak" },
-    ],
+          { de: "ausfüllen", tr: "doldurmak" },
+      { de: "ankreuzen", tr: "işaretlemek" },
+      { de: "der Familienstand", tr: "medeni hâl" },
+],
     patterns: [
       { de: "Wie ist Ihr Name?", tr: "resmî bir yerde adı sorar" },
       { de: "Meine Adresse ist …", tr: "adresini söylerken kullanılır" },
@@ -1909,22 +2209,52 @@ export const deA1B01: Lesson[] = [
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("der Wohnort"),
-          tr("Türkçesi 'ikamet yeri' demek, yani oturduğun şehir. Lütfen"),
-          de("der Wohnort"),
+          de("die Anmeldung"),
+          tr("Türkçesi 'kayıt' demek. Lütfen"),
+          de("die Anmeldung"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Wohnort" },
+        expect: { kind: "repeat", target: "die Anmeldung" },
       },
       {
         say: [
-          tr("Son kelimemiz:"),
+          tr("Beşinci kelimemiz:"),
           de("unterschreiben"),
           tr("Türkçesi 'imzalamak' demek. Lütfen"),
           de("unterschreiben"),
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "unterschreiben" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("ausfüllen"),
+          tr("Türkçesi 'doldurmak' demek. Lütfen"),
+          de("ausfüllen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "ausfüllen" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("ankreuzen"),
+          tr("Türkçesi 'işaretlemek' demek. Lütfen"),
+          de("ankreuzen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "ankreuzen" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("der Familienstand"),
+          tr("Türkçesi 'medeni hâl' demek. Lütfen"),
+          de("der Familienstand"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Familienstand" },
       },
       {
         say: [
