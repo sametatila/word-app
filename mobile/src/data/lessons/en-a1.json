@@ -495,7 +495,9 @@
       "Hi, my name is Deniz. I'm from Turkey.",
       "Hello, my name is Deniz. I am from Turkey.",
       "Hi, I'm Deniz. I'm from Turkey.",
-      "Hi, I am Deniz. I am from Turkey."
+      "Hi, I am Deniz. I am from Turkey.",
+      "Hello, I am Deniz. I am from Turkey.",
+      "Hi, my name is Deniz. I am from Turkey."
      ],
      "hint": [
       {
@@ -4860,7 +4862,8 @@
      "accept": [
       "My birthday's in March.",
       "It's in March.",
-      "In March."
+      "In March.",
+      "it is in March."
      ],
      "hint": [
       {
@@ -6926,7 +6929,8 @@
      "accept": [
       "Don't forget your keys.",
       "Do not forget your key.",
-      "Don't forget your key"
+      "Don't forget your key",
+      "do not forget your keys."
      ],
      "hint": [
       {
@@ -8837,7 +8841,8 @@
      "accept": [
       "He's got blue eyes.",
       "He has blue eyes.",
-      "He has got blue eyes"
+      "He has got blue eyes",
+      "he is got blue eyes."
      ],
      "hint": [
       {
@@ -9726,7 +9731,8 @@
      "target": "This is my uncle.",
      "accept": [
       "He is my uncle.",
-      "This is my uncle"
+      "This is my uncle",
+      "he's my uncle."
      ],
      "hint": [
       {
@@ -10610,7 +10616,8 @@
      "accept": [
       "I'd like a tea please",
       "I would like a tea, please.",
-      "I'd like tea, please."
+      "I'd like tea, please.",
+      "I would like tea, please."
      ],
      "hint": [
       {
@@ -10681,7 +10688,9 @@
      "accept": [
       "I'll have water, please.",
       "I will have a water, please.",
-      "I'd like a water, please."
+      "I'd like a water, please.",
+      "I will have water, please.",
+      "I would like a water, please."
      ],
      "hint": [
       {
@@ -10779,7 +10788,8 @@
      "accept": [
       "I will have a coffee, please.",
       "I'd like a coffee, please.",
-      "I'll have a coffee please"
+      "I'll have a coffee please",
+      "I would like a coffee, please."
      ],
      "hint": [
       {
@@ -11642,7 +11652,8 @@
       "How much is that?",
       "What's the price?",
       "How much does it cost?",
-      "How much does this cost?"
+      "How much does this cost?",
+      "what is the price?"
      ],
      "hint": [
       {
@@ -12091,7 +12102,9 @@
      "accept": [
       "I would like a tea, please.",
       "I'd like a tea",
-      "I'd like some tea, please."
+      "I'd like some tea, please.",
+      "I would like a tea",
+      "I would like some tea, please."
      ],
      "hint": [
       {
@@ -12194,7 +12207,8 @@
      "accept": [
       "Excuse me, can I have the menu, please?",
       "Could I have the menu, please?",
-      "I'd like the menu, please."
+      "I'd like the menu, please.",
+      "I would like the menu, please."
      ],
      "hint": [
       {
@@ -12576,7 +12590,8 @@
      "accept": [
       "I hate eating fish",
       "I hate to eat fish.",
-      "I don't like eating fish."
+      "I don't like eating fish.",
+      "I do not like eating fish."
      ],
      "hint": [
       {
@@ -13132,7 +13147,8 @@
      "accept": [
       "I want two kilos of apples.",
       "I'd like two kilos of apples.",
-      "Two kilos of apples please"
+      "Two kilos of apples please",
+      "I would like two kilos of apples."
      ],
      "hint": [
       {
@@ -14123,7 +14139,9 @@
      "accept": [
       "I would like a tea, please.",
       "I'd like a tea.",
-      "I'd like some tea, please."
+      "I'd like some tea, please.",
+      "I would like a tea.",
+      "I would like some tea, please."
      ],
      "hint": [
       {
@@ -14174,7 +14192,9 @@
      "accept": [
       "I'd like a glass of water, please.",
       "I would like some water, please.",
-      "I'd like water, please."
+      "I'd like water, please.",
+      "I would like a glass of water, please.",
+      "I would like water, please."
      ],
      "hint": [
       {
@@ -14699,7 +14719,9 @@
       "I would like two kilos of tomatoes.",
       "Two kilos of tomatoes, please.",
       "I'd like two kilos of tomatoes, please.",
-      "I'd like 2 kilos of tomatoes."
+      "I'd like 2 kilos of tomatoes.",
+      "I would like two kilos of tomatoes, please.",
+      "I would like 2 kilos of tomatoes."
      ],
      "hint": [
       {
@@ -16180,7 +16202,8 @@
      "target": "It's half past nine.",
      "accept": [
       "It is half past nine.",
-      "It's nine thirty."
+      "It's nine thirty.",
+      "it is nine thirty."
      ],
      "hint": [
       {
@@ -16357,7 +16380,8 @@
      "target": "It's ten to eight.",
      "accept": [
       "It is ten to eight.",
-      "It's seven fifty."
+      "It's seven fifty.",
+      "it is seven fifty."
      ],
      "hint": [
       {
@@ -17484,7 +17508,8 @@
       "I put my jacket on.",
       "I'm putting on my jacket.",
       "I am putting on my jacket.",
-      "I'm putting my jacket on."
+      "I'm putting my jacket on.",
+      "I am putting my jacket on."
      ],
      "hint": [
       {
@@ -17948,7 +17973,9 @@
       "He is never late.",
       "She is never late",
       "He is never late",
-      "she's never late."
+      "she's never late.",
+      "he's never late.",
+      "he's never late"
      ],
      "hint": [
       {
@@ -19478,7 +19505,8 @@
      "target": "I don't like listening to music.",
      "accept": [
       "I do not like listening to music.",
-      "I don't like music."
+      "I don't like music.",
+      "I do not like music."
      ],
      "hint": [
       {
@@ -20737,7 +20765,8 @@
       "I am looking for a shirt.",
       "I'm looking for a shirt",
       "I am looking for a shirt",
-      "I'm looking for a shirt, please."
+      "I'm looking for a shirt, please.",
+      "I am looking for a shirt, please."
      ],
      "hint": [
       {
@@ -22564,7 +22593,8 @@
      "accept": [
       "That's too expensive.",
       "It is too expensive.",
-      "This is too expensive."
+      "This is too expensive.",
+      "that is too expensive."
      ],
      "hint": [
       {
@@ -24770,7 +24800,8 @@
      "target": "I have a little water.",
      "accept": [
       "I have some water.",
-      "I've got a little water."
+      "I've got a little water.",
+      "I have got a little water."
      ],
      "hint": [
       {
@@ -24860,7 +24891,8 @@
      "target": "I don't have enough time.",
      "accept": [
       "I do not have enough time.",
-      "I haven't got enough time."
+      "I haven't got enough time.",
+      "I have not got enough time."
      ],
      "hint": [
       {
@@ -26920,7 +26952,8 @@
      "accept": [
       "I get off at the next stop",
       "I'm getting off at the next stop.",
-      "I get off at the next bus stop."
+      "I get off at the next bus stop.",
+      "I am getting off at the next stop."
      ],
      "hint": [
       {
@@ -27196,7 +27229,8 @@
       "I'd like a return ticket",
       "I would like a return ticket, please.",
       "I would like a return ticket",
-      "I'd like a return, please."
+      "I'd like a return, please.",
+      "I would like a return, please."
      ],
      "hint": [
       {
@@ -29291,7 +29325,9 @@
      "accept": [
       "I cannot visit the park today.",
       "I can't visit the park.",
-      "I can't see the park today."
+      "I can't see the park today.",
+      "I cannot visit the park.",
+      "I cannot see the park today."
      ],
      "hint": [
       {
@@ -29773,7 +29809,9 @@
       "I can't find my hotel",
       "I cannot find my hotel",
       "I can't find the hotel.",
-      "I can't find the hotel"
+      "I can't find the hotel",
+      "I cannot find the hotel.",
+      "I cannot find the hotel"
      ],
      "hint": [
       {
@@ -29896,7 +29934,8 @@
       "Excuse me I'm lost",
       "Excuse me, I am lost.",
       "Excuse me, I am lost",
-      "Excuse me, I'm lost. Could you help me?"
+      "Excuse me, I'm lost. Could you help me?",
+      "Excuse me, I am lost. Could you help me?"
      ],
      "hint": [
       {
@@ -37931,7 +37970,13 @@
       "Sorry, I can't tonight",
       "I'm sorry, I can't tonight.",
       "Sorry, I cannot tonight.",
-      "Sorry, I can't tonight. I'm busy."
+      "Sorry, I can't tonight. I'm busy.",
+      "I am sorry, I can't tonight.",
+      "I'm sorry, I cannot tonight.",
+      "I am sorry, I cannot tonight.",
+      "Sorry, I can't tonight. I am busy.",
+      "Sorry, I cannot tonight. I'm busy.",
+      "Sorry, I cannot tonight. I am busy."
      ],
      "hint": [
       {
@@ -38332,7 +38377,9 @@
      "accept": [
       "It is cold today.",
       "Today it's cold.",
-      "It's cold."
+      "It's cold.",
+      "Today it is cold.",
+      "it is cold."
      ],
      "hint": [
       {
@@ -38483,7 +38530,9 @@
      "accept": [
       "It is raining and it is cold.",
       "It's raining and cold.",
-      "It's cold and it's raining."
+      "It's cold and it's raining.",
+      "it is raining and cold.",
+      "it is cold and it is raining."
      ],
      "hint": [
       {
@@ -40167,7 +40216,8 @@
      "accept": [
       "This series is boring",
       "The series is boring.",
-      "It's boring."
+      "It's boring.",
+      "it is boring."
      ],
      "hint": [
       {
@@ -40431,7 +40481,10 @@
       "I am afraid I can't.",
       "I'm afraid I cannot.",
       "I'm afraid I can't come.",
-      "I am afraid I cannot."
+      "I am afraid I cannot.",
+      "I am afraid I can't come.",
+      "I'm afraid I cannot come.",
+      "I am afraid I cannot come."
      ],
      "hint": [
       {
@@ -40534,7 +40587,8 @@
      "accept": [
       "I'm sorry, I'm busy today.",
       "Sorry, I am busy today.",
-      "I'm sorry, I am busy today."
+      "I'm sorry, I am busy today.",
+      "I am sorry, I am busy today."
      ],
      "hint": [
       {
@@ -40598,7 +40652,10 @@
       "Sorry, I'm afraid I can't. Maybe next time.",
       "I am afraid I can't. Maybe next time.",
       "I'm afraid I cannot. Maybe next time.",
-      "I am afraid I cannot. Maybe next time."
+      "I am afraid I cannot. Maybe next time.",
+      "Sorry, I am afraid I can't. Maybe next time.",
+      "Sorry, I'm afraid I cannot. Maybe next time.",
+      "Sorry, I am afraid I cannot. Maybe next time."
      ],
      "hint": [
       {
@@ -40910,7 +40967,8 @@
       "I am going to meet Ali tomorrow.",
       "Tomorrow I'm going to meet Ali.",
       "I'm going to meet Ali tomorrow",
-      "I am going to meet Ali tomorrow"
+      "I am going to meet Ali tomorrow",
+      "Tomorrow I am going to meet Ali."
      ],
      "hint": [
       {
@@ -41875,7 +41933,8 @@
      "target": "I have a toothache.",
      "accept": [
       "I've got a toothache.",
-      "My tooth hurts."
+      "My tooth hurts.",
+      "I have got a toothache."
      ],
      "hint": [
       {
@@ -42035,7 +42094,8 @@
      "accept": [
       "I do not feel well.",
       "I don't feel good.",
-      "I feel bad."
+      "I feel bad.",
+      "I do not feel good."
      ],
      "hint": [
       {
@@ -42667,7 +42727,8 @@
      "target": "I'm sick. Can you help me?",
      "accept": [
       "I am sick. Can you help me?",
-      "I'm sick. Can you help me please?"
+      "I'm sick. Can you help me please?",
+      "I am sick. Can you help me please?"
      ],
      "hint": [
       {
@@ -43944,7 +44005,8 @@
      "accept": [
       "I cannot come to work today.",
       "I can't come to work today",
-      "I can't go to work today."
+      "I can't go to work today.",
+      "I cannot go to work today."
      ],
      "hint": [
       {
@@ -44111,7 +44173,8 @@
      "accept": [
       "I will be better tomorrow.",
       "I'll be better tomorrow",
-      "I'll be back tomorrow."
+      "I'll be back tomorrow.",
+      "I will be back tomorrow."
      ],
      "hint": [
       {
@@ -44177,7 +44240,8 @@
      "accept": [
       "I am staying home today.",
       "I'm staying at home today.",
-      "I'm staying home today"
+      "I'm staying home today",
+      "I am staying at home today."
      ],
      "hint": [
       {
@@ -46159,7 +46223,8 @@
       "I have a toothache",
       "I have toothache.",
       "I have a tooth ache.",
-      "I've got a toothache."
+      "I've got a toothache.",
+      "I have got a toothache."
      ],
      "hint": [
       {
@@ -47111,7 +47176,8 @@
      "accept": [
       "I will send you a message.",
       "I'll send a message to you.",
-      "I'll send you a message"
+      "I'll send you a message",
+      "I will send a message to you."
      ],
      "hint": [
       {
@@ -47306,7 +47372,8 @@
      "accept": [
       "Sorry, I'm busy.",
       "I am sorry, I am busy.",
-      "I'm sorry, I am busy."
+      "I'm sorry, I am busy.",
+      "Sorry, I am busy."
      ],
      "hint": [
       {
@@ -47347,7 +47414,10 @@
       "I can't talk now, I'll reply later.",
       "Sorry, I can't talk now. I'll reply later.",
       "I cannot talk now. I'll reply later.",
-      "I can't talk now. I will reply later."
+      "I can't talk now. I will reply later.",
+      "Sorry, I cannot talk now. I'll reply later.",
+      "Sorry, I can't talk now. I will reply later.",
+      "Sorry, I cannot talk now. I will reply later."
      ],
      "hint": [
       {
@@ -48852,7 +48922,8 @@
      "accept": [
       "Can I have three stamps please?",
       "Could I have three stamps, please?",
-      "I'd like three stamps, please."
+      "I'd like three stamps, please.",
+      "I would like three stamps, please."
      ],
      "hint": [
       {
@@ -49691,7 +49762,10 @@
       "I did not watch TV yesterday.",
       "I didn't watch TV.",
       "Yesterday I didn't watch TV.",
-      "I didn't watch television yesterday."
+      "I didn't watch television yesterday.",
+      "I did not watch TV.",
+      "Yesterday I did not watch TV.",
+      "I did not watch television yesterday."
      ],
      "hint": [
       {
@@ -50183,7 +50257,8 @@
      "accept": [
       "I did not study English yesterday.",
       "I didn't study English yesterday",
-      "I didn't study English."
+      "I didn't study English.",
+      "I did not study English."
      ],
      "hint": [
       {
@@ -51098,7 +51173,8 @@
       "Lets meet again.",
       "Let us meet again.",
       "Let's meet again soon.",
-      "Let's meet again"
+      "Let's meet again",
+      "Let us meet again soon."
      ],
      "hint": [
       {

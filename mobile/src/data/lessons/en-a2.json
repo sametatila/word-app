@@ -479,7 +479,9 @@
      "accept": [
       "I did not bring my keys",
       "I didn't bring the keys",
-      "I didn't bring my keys with me"
+      "I didn't bring my keys with me",
+      "I did not bring the keys",
+      "I did not bring my keys with me"
      ],
      "hint": [
       {
@@ -2537,7 +2539,9 @@
       "I was not hungry, so I didn't eat anything.",
       "I wasn't hungry so I didn't eat anything.",
       "I wasn't hungry, so I didn't eat.",
-      "I wasn't hungry, so I did not eat anything."
+      "I wasn't hungry, so I did not eat anything.",
+      "I was not hungry, so I did not eat anything.",
+      "I wasn't hungry, so I did not eat."
      ],
      "hint": [
       {
@@ -5818,7 +5822,7 @@
      },
      {
       "lang": "tr",
-      "text": "İkisi de go fiilinden geliyor ama anlamları bambaşka. Ders bitince birinin gidip döndüğünü mü, yoksa hâlâ orada olduğunu mu söylediğini rahatça anlatabileceksin. Hazır mısın?"
+      "text": "gone, go fiilinin üçüncü hâli; been ise aslında be fiilinin üçüncü hâli ama 'have been to' kalıbında gidip dönmüş olmak anlamı taşır ama anlamları bambaşka. Ders bitince birinin gidip döndüğünü mü, yoksa hâlâ orada olduğunu mu söylediğini rahatça anlatabileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -7122,7 +7126,8 @@
       "I've just arrived.",
       "I have just arrived",
       "I've just arrived",
-      "I've just got here."
+      "I've just got here.",
+      "I have just got here."
      ],
      "hint": [
       {
@@ -7866,7 +7871,9 @@
      "accept": [
       "I will open the door.",
       "I'll get the door.",
-      "I'll get it."
+      "I'll get it.",
+      "I will get the door.",
+      "I will get it."
      ],
      "hint": [
       {
@@ -7965,7 +7972,8 @@
      "accept": [
       "It'll probably rain tomorrow.",
       "It's probably going to rain tomorrow.",
-      "I think it will rain tomorrow."
+      "I think it will rain tomorrow.",
+      "it is probably going to rain tomorrow."
      ],
      "hint": [
       {
@@ -8060,7 +8068,10 @@
       "I'm going to Spain in the summer.",
       "I am going to go to Spain in the summer.",
       "I'm going to visit Spain in the summer.",
-      "I'm going to travel to Spain in the summer."
+      "I'm going to travel to Spain in the summer.",
+      "I am going to Spain in the summer.",
+      "I am going to visit Spain in the summer.",
+      "I am going to travel to Spain in the summer."
      ],
      "hint": [
       {
@@ -9596,7 +9607,11 @@
       "It's the worst film I've ever seen.",
       "It is the worst film I have ever seen.",
       "This is the worst movie I've ever seen.",
-      "This is the worst film I have ever seen."
+      "This is the worst film I have ever seen.",
+      "it is the worst film I've ever seen.",
+      "It's the worst film I have ever seen.",
+      "it's the worst film I have ever seen.",
+      "This is the worst movie I have ever seen."
      ],
      "hint": [
       {
@@ -9927,7 +9942,7 @@
      },
      {
       "lang": "tr",
-      "text": "'Eskiden … yapardım' demek. Dikkat et: arkasından fiilin en yalın hâli gelir, geçmiş zaman eki almaz. Söylenişi de 'yuzd tu' gibidir, 'yuzd' diye sert bir s ile."
+      "text": "'Eskiden … yapardım' demek. Dikkat et: arkasından fiilin en yalın hâli gelir, geçmiş zaman eki almaz. Söylenişi 'yuust tu' gibidir: buradaki used, use fiilindeki gibi z ile değil, sert s ile okunur."
      }
     ]
    },
@@ -10039,7 +10054,7 @@
      "accept": [
       "I do not work here anymore",
       "I don't work here any more",
-      "I don't work here anymore now"
+      "I do not work here any more"
      ],
      "hint": [
       {
@@ -10717,7 +10732,8 @@
      "accept": [
       "I'm feeling better today.",
       "I feel better.",
-      "Today I feel better."
+      "Today I feel better.",
+      "I am feeling better today."
      ],
      "hint": [
       {
@@ -10943,7 +10959,7 @@
      },
      {
       "lang": "tr",
-      "text": "de. Bu, istiyorum'un kibar biçimidir ve arkasından her zaman to gelir."
+      "text": "de. Bu, istiyorum'un kibar biçimidir. Bir eylem söyleyeceksen arkasından to ve fiil gelir; doğrudan bir şey isteyeceksen isim gelir: I'd like an appointment."
      }
     ]
    },
@@ -10964,7 +10980,9 @@
      "accept": [
       "I would like to cancel my appointment.",
       "I'd like to cancel my appointment please.",
-      "I'd like to cancel the appointment."
+      "I'd like to cancel the appointment.",
+      "I would like to cancel my appointment please.",
+      "I would like to cancel the appointment."
      ],
      "hint": [
       {
@@ -12848,7 +12866,9 @@
       "I haven't taken my medicine yet",
       "I have not taken my medicine yet.",
       "I haven't taken my tablet yet.",
-      "I haven't taken it yet."
+      "I haven't taken it yet.",
+      "I have not taken my tablet yet.",
+      "I have not taken it yet."
      ],
      "hint": [
       {
@@ -13482,7 +13502,8 @@
      "accept": [
       "I would like to see a doctor, please.",
       "I'd like to see a doctor please.",
-      "Hello, I'd like to see a doctor, please."
+      "Hello, I'd like to see a doctor, please.",
+      "Hello, I would like to see a doctor, please."
      ],
      "hint": [
       {
@@ -14533,7 +14554,8 @@
      "target": "I haven't filled in the form yet.",
      "accept": [
       "I have not filled in the form yet.",
-      "I haven't filled the form in yet."
+      "I haven't filled the form in yet.",
+      "I have not filled the form in yet."
      ],
      "hint": [
       {
@@ -14623,7 +14645,8 @@
      "accept": [
       "I'll bring my card tomorrow.",
       "I'm going to bring my card tomorrow.",
-      "I will bring my insurance card tomorrow."
+      "I will bring my insurance card tomorrow.",
+      "I am going to bring my card tomorrow."
      ],
      "hint": [
       {
@@ -14957,7 +14980,7 @@
      },
      {
       "lang": "tr",
-      "text": "Kendini nasıl hissettiğini söylerken kullanılır. Fiilin hemen arkasından sıfat gelir; araya hiçbir şey girmez."
+      "text": "Kendini nasıl hissettiğini söylerken kullanılır. Fiilin arkasından sıfat gelir; araya myself gibi bir nesne girmez. Ama very, really gibi zarflar girebilir: I feel very stressed."
      }
     ]
    },
@@ -15118,7 +15141,8 @@
       "I am worried about the exam",
       "I'm worried about my exam",
       "I am worried about my exam",
-      "I'm worried about the test"
+      "I'm worried about the test",
+      "I am worried about the test"
      ],
      "hint": [
       {
@@ -15589,7 +15613,8 @@
       "I have already seen the doctor.",
       "I've already seen the doctor",
       "I have already seen the doctor",
-      "I've already seen a doctor."
+      "I've already seen a doctor.",
+      "I have already seen a doctor."
      ],
      "hint": [
       {
@@ -15730,7 +15755,8 @@
       "I've recovered",
       "I have recovered",
       "I've fully recovered.",
-      "I have already recovered."
+      "I have already recovered.",
+      "I have fully recovered."
      ],
      "hint": [
       {
@@ -17649,7 +17675,6 @@
      "kind": "produce",
      "target": "Is there a carpet in the living room?",
      "accept": [
-      "Is there a carpet in the livingroom?",
       "Is there a carpet in the living room"
      ],
      "hint": [
@@ -18081,7 +18106,8 @@
      "target": "The heating hasn't worked for three days.",
      "accept": [
       "The heating has not worked for three days.",
-      "The heating hasn't worked for 3 days."
+      "The heating hasn't worked for 3 days.",
+      "The heating has not worked for 3 days."
      ],
      "hint": [
       {
@@ -18739,7 +18765,11 @@
      "accept": [
       "Sorry to bother you, but it is very late.",
       "I'm sorry to bother you, but it's very late.",
-      "Sorry to bother you, but it's really late."
+      "Sorry to bother you, but it's really late.",
+      "I am sorry to bother you, but it's very late.",
+      "I'm sorry to bother you, but it is very late.",
+      "I am sorry to bother you, but it is very late.",
+      "Sorry to bother you, but it is really late."
      ],
      "hint": [
       {
@@ -20166,7 +20196,8 @@
      "target": "You don't have to pay for the water",
      "accept": [
       "You do not have to pay for the water",
-      "We don't have to pay for the water"
+      "We don't have to pay for the water",
+      "We do not have to pay for the water"
      ],
      "hint": [
       {
@@ -21029,7 +21060,8 @@
      "accept": [
       "I have not been to the laundry yet.",
       "I haven't been to the laundry yet",
-      "I haven't gone to the laundry yet."
+      "I haven't gone to the laundry yet.",
+      "I have not gone to the laundry yet."
      ],
      "hint": [
       {
@@ -22483,7 +22515,8 @@
      "accept": [
       "My strength is teamwork.",
       "My strength is working with a team.",
-      "I am good at working in a team."
+      "I am good at working in a team.",
+      "I'm good at working in a team."
      ],
      "hint": [
       {
@@ -24112,7 +24145,9 @@
       "I do not agree",
       "I don't agree with you",
       "I disagree",
-      "I'm not sure about that"
+      "I'm not sure about that",
+      "I do not agree with you",
+      "I am not sure about that"
      ],
      "hint": [
       {
@@ -24628,7 +24663,8 @@
      "accept": [
       "I have to leave early because I have a doctor's appointment.",
       "I need to leave early because I have an appointment with the doctor.",
-      "I need to leave early because I've got a doctor's appointment."
+      "I need to leave early because I've got a doctor's appointment.",
+      "I need to leave early because I have got a doctor's appointment."
      ],
      "hint": [
       {
@@ -25290,7 +25326,8 @@
       "I am sorry, I haven't sent the email yet.",
       "Sorry, I haven't sent the email yet.",
       "I'm sorry, I have not sent the email yet.",
-      "I am sorry, I have not sent the email yet."
+      "I am sorry, I have not sent the email yet.",
+      "Sorry, I have not sent the email yet."
      ],
      "hint": [
       {
@@ -26645,7 +26682,10 @@
       "Sorry, I don't have the receipt.",
       "I don't have a receipt.",
       "I haven't got the receipt.",
-      "I do not have the receipt."
+      "I do not have the receipt.",
+      "Sorry, I do not have the receipt.",
+      "I do not have a receipt.",
+      "I have not got the receipt."
      ],
      "hint": [
       {
@@ -26992,7 +27032,10 @@
       "It doesn't fit me.",
       "They don't fit.",
       "They don't fit me.",
-      "It does not fit."
+      "It does not fit.",
+      "It does not fit me.",
+      "They do not fit.",
+      "They do not fit me."
      ],
      "hint": [
       {
@@ -27807,7 +27850,9 @@
      "accept": [
       "It has not arrived yet.",
       "My package hasn't arrived yet.",
-      "The package hasn't arrived yet."
+      "The package hasn't arrived yet.",
+      "My package has not arrived yet.",
+      "The package has not arrived yet."
      ],
      "hint": [
       {
@@ -28182,7 +28227,9 @@
      "accept": [
       "I would like to withdraw some cash.",
       "I'd like to withdraw cash.",
-      "I'd like to take out some cash."
+      "I'd like to take out some cash.",
+      "I would like to withdraw cash.",
+      "I would like to take out some cash."
      ],
      "hint": [
       {
@@ -28711,7 +28758,8 @@
      "accept": [
       "Standard is cheaper but slower.",
       "Standard is cheaper, but it is slower.",
-      "The standard one is cheaper, but it's slower."
+      "The standard one is cheaper, but it's slower.",
+      "The standard one is cheaper, but it is slower."
      ],
      "hint": [
       {
@@ -28798,7 +28846,8 @@
      "accept": [
       "I would like to insure it.",
       "I want to insure it.",
-      "I'd like to insure this parcel."
+      "I'd like to insure this parcel.",
+      "I would like to insure this parcel."
      ],
      "hint": [
       {
@@ -30139,7 +30188,8 @@
       "I would like a haircut, please.",
       "I'd like a haircut please",
       "Hello, I'd like a haircut, please.",
-      "Can I have a haircut, please?"
+      "Can I have a haircut, please?",
+      "Hello, I would like a haircut, please."
      ],
      "hint": [
       {
@@ -30747,7 +30797,8 @@
      "accept": [
       "It is still under guarantee.",
       "My phone is still under guarantee.",
-      "It's still under warranty."
+      "It's still under warranty.",
+      "it is still under warranty."
      ],
      "hint": [
       {
@@ -31698,7 +31749,8 @@
      "accept": [
       "It is still under warranty.",
       "The product is still under warranty.",
-      "It's still under the warranty."
+      "It's still under the warranty.",
+      "it is still under the warranty."
      ],
      "hint": [
       {
@@ -32001,7 +32053,8 @@
      "accept": [
       "I would like to book a double room for two nights.",
       "I'd like a double room for two nights.",
-      "I want to book a double room for two nights."
+      "I want to book a double room for two nights.",
+      "I would like a double room for two nights."
      ],
      "hint": [
       {
@@ -34024,7 +34077,8 @@
       "Let's visit the museum.",
       "Let's go to the museum",
       "Lets go to the museum.",
-      "Let us go to the museum."
+      "Let us go to the museum.",
+      "Let us visit the museum."
      ],
      "hint": [
       {
@@ -34468,7 +34522,8 @@
      "accept": [
       "I have missed my flight.",
       "I missed my flight.",
-      "I've missed my plane."
+      "I've missed my plane.",
+      "I have missed my plane."
      ],
      "hint": [
       {
@@ -34977,7 +35032,8 @@
      "accept": [
       "I would like to rent a car for three days.",
       "I'd like to rent a car for 3 days.",
-      "I want to rent a car for three days."
+      "I want to rent a car for three days.",
+      "I would like to rent a car for 3 days."
      ],
      "hint": [
       {
@@ -36065,7 +36121,8 @@
      "accept": [
       "I am looking for a gift for my sister.",
       "I'm looking for a gift for my sister",
-      "I'm looking for a present for my sister."
+      "I'm looking for a present for my sister.",
+      "I am looking for a present for my sister."
      ],
      "hint": [
       {
@@ -36410,7 +36467,9 @@
      "accept": [
       "I will take it.",
       "I'll take this.",
-      "I'll buy it."
+      "I'll buy it.",
+      "I will take this.",
+      "I will buy it."
      ],
      "hint": [
       {
@@ -36904,7 +36963,8 @@
      "accept": [
       "I'd like to go there again.",
       "I want to go back there again.",
-      "I want to go there again"
+      "I want to go there again",
+      "I would like to go there again."
      ],
      "hint": [
       {
@@ -37352,7 +37412,10 @@
       "I'd love to but I can't",
       "I'd love to, but I can't come.",
       "I'd love to, but I cannot.",
-      "I would love to, but I cannot."
+      "I would love to, but I cannot.",
+      "I'd love to, but I cannot come.",
+      "I would love to, but I can't come.",
+      "I would love to, but I cannot come."
      ],
      "hint": [
       {
@@ -37980,7 +38043,9 @@
       "I have not bought a present yet.",
       "I haven't bought a present yet",
       "I haven't bought a gift yet.",
-      "I haven't got a present yet."
+      "I haven't got a present yet.",
+      "I have not bought a gift yet.",
+      "I have not got a present yet."
      ],
      "hint": [
       {
@@ -38756,7 +38821,8 @@
      "target": "It's a tradition to visit the family.",
      "accept": [
       "It is a tradition to visit the family.",
-      "It's a tradition to visit family."
+      "It's a tradition to visit family.",
+      "it is a tradition to visit family."
      ],
      "hint": [
       {
@@ -39238,7 +39304,8 @@
      "accept": [
       "Congratulations! That is great news.",
       "Congratulations! That's wonderful news.",
-      "Congratulations! Great news."
+      "Congratulations! Great news.",
+      "Congratulations! that is wonderful news."
      ],
      "hint": [
       {
@@ -39567,7 +39634,9 @@
      "accept": [
       "Congratulations on your new job! I am so proud of you.",
       "Congratulations on the new job! I'm so proud of you.",
-      "Congratulations on your new job! I'm really proud of you."
+      "Congratulations on your new job! I'm really proud of you.",
+      "Congratulations on the new job! I am so proud of you.",
+      "Congratulations on your new job! I am really proud of you."
      ],
      "hint": [
       {
@@ -39924,7 +39993,9 @@
       "Sorry I'm late.",
       "I'm sorry that I'm late.",
       "I'm sorry I am late.",
-      "I am sorry I'm late."
+      "I am sorry I'm late.",
+      "Sorry I am late.",
+      "I am sorry that I am late."
      ],
      "hint": [
       {
@@ -40276,7 +40347,14 @@
       "That's OK don't worry about it",
       "That's OK, do not worry about it.",
       "that is OK, don't worry about it.",
-      "that is OK, do not worry about it."
+      "that is OK, do not worry about it.",
+      "That's okay, do not worry about it.",
+      "that is okay, don't worry about it.",
+      "that is okay, do not worry about it.",
+      "it is OK, don't worry about it.",
+      "It's OK, do not worry about it.",
+      "it is OK, do not worry about it.",
+      "No problem, do not worry about it."
      ],
      "hint": [
       {
@@ -41712,7 +41790,8 @@
      "accept": [
       "Nice to meet you, too.",
       "Nice to meet you too",
-      "It's nice to meet you too."
+      "It's nice to meet you too.",
+      "it is nice to meet you too."
      ],
      "hint": [
       {
@@ -41959,7 +42038,9 @@
      "accept": [
       "I am enjoying the party.",
       "Yes, I'm enjoying the party.",
-      "I'm enjoying the party a lot."
+      "I'm enjoying the party a lot.",
+      "Yes, I am enjoying the party.",
+      "I am enjoying the party a lot."
      ],
      "hint": [
       {
@@ -42393,7 +42474,8 @@
      "accept": [
       "You are welcome. No problem.",
       "You're welcome, no problem.",
-      "No problem. You're welcome."
+      "No problem. You're welcome.",
+      "No problem. you are welcome."
      ],
      "hint": [
       {
@@ -43245,7 +43327,8 @@
       "I don't think that social media is good.",
       "I don't think social media is good",
       "In my opinion, social media is not good.",
-      "I do not think social media is good."
+      "I do not think social media is good.",
+      "I do not think that social media is good."
      ],
      "hint": [
       {
@@ -44282,7 +44365,10 @@
       "I don't believe it is true.",
       "I don't think it's true.",
       "I do not believe it's true.",
-      "I do not believe it is true."
+      "I do not believe it is true.",
+      "I don't think it is true.",
+      "I do not think it's true.",
+      "I do not think it is true."
      ],
      "hint": [
       {
@@ -44742,7 +44828,13 @@
       "I've already restarted my computer, but it's still slow.",
       "I restarted my computer, but it's still very slow.",
       "I've restarted my computer, but it's still slow.",
-      "I have restarted my computer, but it's still slow."
+      "I have restarted my computer, but it's still slow.",
+      "I've already restarted my computer, but it is still slow.",
+      "I have already restarted my computer, but it's still slow.",
+      "I have already restarted my computer, but it is still slow.",
+      "I restarted my computer, but it is still very slow.",
+      "I've restarted my computer, but it is still slow.",
+      "I have restarted my computer, but it is still slow."
      ],
      "hint": [
       {
@@ -44789,7 +44881,9 @@
       "Can you help me? My computer does not work.",
       "Could you help me? My computer isn't working.",
       "Could you help me? My computer is not working.",
-      "Can you help me? My computer is not working."
+      "Can you help me? My computer is not working.",
+      "Could you help me? My computer does not work.",
+      "Can you help me please? My computer does not work."
      ],
      "hint": [
       {
@@ -46510,7 +46604,9 @@
       "I will call you back in five minutes.",
       "I will call you back in five minutes",
       "I'll call you back in 5 minutes.",
-      "I'll call back in five minutes."
+      "I'll call back in five minutes.",
+      "I will call you back in 5 minutes.",
+      "I will call back in five minutes."
      ],
      "hint": [
       {
@@ -46937,7 +47033,11 @@
       "I don't agree with you. I think it's a waste of time.",
       "I disagree. I think it's a waste of time.",
       "I do not agree. I think it's a waste of time.",
-      "I do not agree. I think it is a waste of time."
+      "I do not agree. I think it is a waste of time.",
+      "I don't agree with you. I think it is a waste of time.",
+      "I do not agree with you. I think it's a waste of time.",
+      "I do not agree with you. I think it is a waste of time.",
+      "I disagree. I think it is a waste of time."
      ],
      "hint": [
       {
@@ -47537,7 +47637,8 @@
      "accept": [
       "Do not press the red button.",
       "Don't press the red button",
-      "Please don't press the red button."
+      "Please don't press the red button.",
+      "Please do not press the red button."
      ],
      "hint": [
       {
@@ -49297,7 +49398,9 @@
      "accept": [
       "I have not got an appointment yet.",
       "I haven't made an appointment yet.",
-      "I don't have an appointment yet."
+      "I don't have an appointment yet.",
+      "I have not made an appointment yet.",
+      "I do not have an appointment yet."
      ],
      "hint": [
       {
@@ -50037,7 +50140,8 @@
      "accept": [
       "I would like to become a member.",
       "I'd like to be a member.",
-      "I want to become a member."
+      "I want to become a member.",
+      "I would like to be a member."
      ],
      "hint": [
       {
@@ -50244,7 +50348,8 @@
      "accept": [
       "You cannot eat here.",
       "You can't eat in here.",
-      "You mustn't eat here."
+      "You mustn't eat here.",
+      "You cannot eat in here."
      ],
      "hint": [
       {
@@ -50338,7 +50443,9 @@
      "accept": [
       "I have not returned the book yet.",
       "I haven't returned it yet.",
-      "I haven't returned the book yet, sorry."
+      "I haven't returned the book yet, sorry.",
+      "I have not returned it yet.",
+      "I have not returned the book yet, sorry."
      ],
      "hint": [
       {
