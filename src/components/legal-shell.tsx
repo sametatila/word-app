@@ -1,30 +1,34 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LogoMark } from "@/components/icons";
-import { LEGAL_EFFECTIVE_DATE, LEGAL_ENTITY, LEGAL_LOCALES, LEGAL_VERSION, isLegalOmitted, isLegalPlaceholder, legalPath, type LegalField, type LegalLocale } from "@/lib/legal";
+import { LEGAL_CHANGELOG, LEGAL_EFFECTIVE_DATE, LEGAL_ENTITY, LEGAL_LOCALES, LEGAL_VERSION, isLegalOmitted, isLegalPlaceholder, legalPath, type LegalField, type LegalLocale } from "@/lib/legal";
 
 /** Çerçevenin kendi metinleri — belge gövdesi değil, kabuk (gezinme, etiketler). */
 const CHROME: Record<LegalLocale, {
   privacy: string; terms: string; deleteAccount: string;
   effective: string; version: string; inBrief: string;
   languageLabel: string; names: Record<LegalLocale, string>;
+  changelog: string; changelogNote: string;
   binding: string;
 }> = {
   tr: {
     privacy: "Gizlilik politikası", terms: "Kullanım şartları", deleteAccount: "Hesabını sil",
     effective: "Yürürlük", version: "Sürüm", inBrief: "Kısaca",
+    changelog: "Sürüm geçmişi", changelogNote: "En son iki sürüm. Bağlayıcı olan metnin kendisidir; bu liste yalnız neyin değiştiğini gösterir.",
     languageLabel: "Dil", names: { tr: "Türkçe", en: "English", de: "Deutsch" },
     binding: "",
   },
   en: {
     privacy: "Privacy policy", terms: "Terms of use", deleteAccount: "Delete your account",
     effective: "Effective", version: "Version", inBrief: "In brief",
+    changelog: "Version history", changelogNote: "The last two versions. What binds is the text itself; this list only shows what changed.",
     languageLabel: "Language", names: { tr: "Türkçe", en: "English", de: "Deutsch" },
     binding: "This is an informational translation. The binding text is the Turkish version.",
   },
   de: {
     privacy: "Datenschutzerklärung", terms: "Nutzungsbedingungen", deleteAccount: "Konto löschen",
     effective: "Gültig ab", version: "Version", inBrief: "Kurz gefasst",
+    changelog: "Versionsverlauf", changelogNote: "Die letzten zwei Fassungen. Verbindlich ist der Text selbst; diese Liste zeigt nur, was sich geändert hat.",
     languageLabel: "Sprache", names: { tr: "Türkçe", en: "English", de: "Deutsch" },
     binding: "Dies ist eine informative Übersetzung. Verbindlich ist die türkische Fassung.",
   },
@@ -40,7 +44,14 @@ const CHROME: Record<LegalLocale, {
  * şartlardan Türkçe gizlilik politikasına düşülüyordu.
  */
 export function LegalShell({ title, summary, children, doc, locale = "tr" }: {
-  title: string; summary: string; children: ReactNode;
+  title: string;
+  /**
+   * "Kısaca" kutusu MADDE MADDE. Eskiden altı cümlelik tek bloktu; katmanlı
+   * bildirimin amacı hızlı okunmaktı ve blok bunu vermiyordu. Her madde tek bir
+   * şey söyler ve tek satıra sığacak kadar kısadır.
+   */
+  summary: readonly string[];
+  children: ReactNode;
   doc: "privacy" | "terms"; locale?: LegalLocale;
 }) {
   const c = CHROME[locale];
@@ -70,9 +81,21 @@ export function LegalShell({ title, summary, children, doc, locale = "tr" }: {
       {c.binding ? <p className="muted mt-2 text-xs">{c.binding}</p> : null}
       <div className="card mt-6 p-5">
         <p className="text-sm font-semibold">{c.inBrief}</p>
-        <p className="muted mt-1 text-sm leading-relaxed">{summary}</p>
+        <ul className="muted mt-2 flex flex-col gap-1.5 text-sm leading-relaxed">
+          {summary.map((point) => <li key={point} className="flex gap-2"><span aria-hidden="true">·</span><span>{point}</span></li>)}
+        </ul>
       </div>
-      <article className="legal mt-8">{children}</article>
+      <article className="legal mt-8">
+        {children}
+        <h2>{c.changelog}</h2>
+        <p className="muted" style={{ fontSize: "0.85rem" }}>{c.changelogNote}</p>
+        {LEGAL_CHANGELOG.slice(0, 2).map((entry) => (
+          <div key={entry.version}>
+            <h3>{c.version} {entry.version} · {entry.date}</h3>
+            <ul>{entry.changes[locale].map((x) => <li key={x}>{x}</li>)}</ul>
+          </div>
+        ))}
+      </article>
       <style>{`
         .legal h2 { font-size: 1.125rem; font-weight: 800; margin: 2rem 0 0.5rem; letter-spacing: -0.01em; }
         .legal h3 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 0.35rem; }

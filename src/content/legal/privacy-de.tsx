@@ -11,8 +11,14 @@ import { LEGAL_HOSTING_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/l
 export const PRIVACY_DE_TITLE = "Datenschutzerklärung";
 export const PRIVACY_DE_DESCRIPTION =
   "Welche Daten Nomi verarbeitet, warum und wie lange; deine Rechte nach DSGVO und türkischem Datenschutzrecht; Konto löschen.";
-export const PRIVACY_DE_SUMMARY =
-  "Nomi ist eine Sprachlern-App (Deutsch, Zürichdeutsch und Englisch) eines in der Türkei ansässigen Entwicklers. Wir verarbeiten deine E-Mail-Adresse und deinen Namen, um dein Konto zu führen, und deine Fortschrittsdaten, um dein Lernen nachzuhalten. Im Gehmodus wird Mikrofon-Audio mit deiner ausdrücklichen Einwilligung an unseren Server und an Spracherkennungsanbieter gesendet, um Gesprochenes zu verschriftlichen; die Audioaufnahme wird nicht gespeichert. Es gibt keine Werbung, keine Werbe-ID und kein Tracking durch Dritte. Du kannst dein Konto jederzeit in der App oder im Web löschen. Für Nutzer in Europa gilt die DSGVO, für Nutzer in der Türkei das Gesetz Nr. 6698 (KVKK).";
+export const PRIVACY_DE_SUMMARY = [
+  "Nomi ist eine Sprachlern-App: Deutsch, Zürichdeutsch und Englisch.",
+  "Wir verarbeiten deine E-Mail-Adresse und deinen Namen für dein Konto und deine Fortschrittsdaten für dein Lernen.",
+  "Im Gehmodus wird Mikrofon-Audio mit deiner ausdrücklichen Einwilligung zur Verschriftlichung gesendet. Die Aufnahme wird nicht gespeichert.",
+  "Keine Werbung, keine Werbe-ID, kein Tracking durch Dritte.",
+  "Du kannst dein Konto jederzeit löschen, in der App oder im Web.",
+  "In Europa gelten die DSGVO-Rechte, in der Türkei die KVKK-Rechte.",
+] as const;
 
 export function PrivacyDeBody() {
   return (
@@ -164,13 +170,17 @@ export function PrivacyDeBody() {
       <h2>8. Produktanalyse und Abschalten</h2>
       <p>
         Um zu verstehen, welche Funktionen genutzt werden, schreibt Nomi kurze Nutzungsereignisse auf den eigenen Server (z. B. &quot;Runde
-        abgeschlossen&quot;). Die Ereignisnamen stammen aus einer geschlossenen Liste. Jedes
-        Ereignis kann eine technische Kennzeichnung von höchstens 32 Zeichen tragen (z. B. &quot;single:artikel&quot;,
-        &quot;level:B1&quot;); die Kennzeichnung lässt nur Buchstaben, Ziffern, Unterstrich, Doppelpunkt und Bindestrich zu und darf
-        nicht ausschließlich aus Ziffern bestehen, kann also weder eine E-Mail-Adresse noch einen Link oder eine Telefonnummer
-        enthalten. Darüber hinaus wird kein Freitext gesendet, und die Ereignisse gehen an keinen Dritten.
-        Über den Schalter &quot;Nutzungsdaten senden&quot; unter Einstellungen &rsaquo; Datenschutz kannst du das abschalten
-        (Widerspruchsrecht nach KVKK und Art. 21 DSGVO); danach werden nur die für den Dienst zwingend erforderlichen Datensätze geführt.
+        abgeschlossen&quot;). Was ein solches Ereignis enthalten darf, ist eng begrenzt:
+      </p>
+      <ul>
+        <li>Die Ereignisnamen stammen aus einer geschlossenen, vorab festgelegten Liste.</li>
+        <li>Jedes Ereignis kann eine technische Kennzeichnung von höchstens 32 Zeichen tragen (etwa &quot;single:artikel&quot; oder &quot;level:B1&quot;).</li>
+        <li>Die Kennzeichnung lässt nur Buchstaben, Ziffern, Unterstrich, Doppelpunkt und Bindestrich zu und darf nicht ausschließlich aus Ziffern bestehen. Sie kann daher weder eine E-Mail-Adresse noch einen Link oder eine Telefonnummer enthalten.</li>
+        <li>Darüber hinaus wird kein Freitext gesendet, und die Ereignisse gehen an keinen Dritten.</li>
+      </ul>
+      <p>
+        Über den Schalter &quot;Nutzungsdaten senden&quot; unter Einstellungen &rsaquo; Datenschutz kannst du das abschalten. Das ist das
+        Widerspruchsrecht nach KVKK und Art. 21 DSGVO. Danach werden nur die für den Dienst zwingend erforderlichen Datensätze geführt.
       </p>
 
       <h2>8a. Kommerzielle elektronische Nachrichten</h2>
@@ -214,7 +224,7 @@ export function PrivacyDeBody() {
       <p>
         <strong>Beschwerde:</strong> in der Türkei bei der Behörde zum Schutz personenbezogener Daten (kvkk.gov.tr). In der EU ist die
         zuständige Aufsichtsbehörde des Verantwortlichen nach dem Ort der Niederlassung die Landesbeauftragte für Datenschutz und
-        Informationsfreiheit Nordrhein-Westfalen (LDI NRW); daneben kannst du dich nach Art. 77 DSGVO an die Behörde in deinem eigenen
+        Informationsfreiheit Nordrhein-Westfalen (LDI NRW). Nach Art. 77 DSGVO kannst du dich auch an die Behörde in deinem eigenen
         Land wenden. Im Vereinigten Königreich beim ICO. Wir bitten dich, dich zuerst an uns zu wenden; die meisten
         Anliegen können wir direkt lösen.
       </p>
@@ -231,7 +241,7 @@ export function PrivacyDeBody() {
 
       <h2>12. Kinder</h2>
       <p>
-        Nomi ist nicht für Personen unter 18 Jahren gestaltet und erhebt von ihnen wissentlich keine Daten; die Nutzungsbedingungen
+        Nomi ist nicht für Personen unter 18 Jahren gestaltet und erhebt von ihnen wissentlich keine Daten. Die Nutzungsbedingungen
         beschränken die Kontoerstellung auf Personen ab 18 Jahren (siehe Nutzungsbedingungen, Ziffer 3). Die Inhalte richten sich an
         erwachsene Lernende und an die Prüfungsvorbereitung für Goethe/telc; da die App offene KI-Gespräche und Interaktion zwischen Nutzern
         enthält, ist sie für ein kindliches Publikum nicht geeignet. Erfahren wir, dass eine Person unter 18 Jahren ein Konto erstellt hat,

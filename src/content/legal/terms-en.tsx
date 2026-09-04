@@ -10,8 +10,13 @@ import { FAIR_USE, legalPath } from "@/lib/legal";
 export const TERMS_EN_TITLE = "Terms of Use";
 export const TERMS_EN_DESCRIPTION =
   "The rules for using Nomi: account, acceptable use, user content, AI, subscription, consumer rights.";
-export const TERMS_EN_SUMMARY =
-  "By using Nomi you accept this agreement. The service is provided by a developer established in Türkiye and is governed by Turkish law; the mandatory consumer rights of your country of residence are unaffected. Your account is yours and is used with respect for others; what you write stays yours. AI answers can be wrong. The Premium subscription is bought through Google Play and cancelled there.";
+export const TERMS_EN_SUMMARY = [
+  "By using Nomi you accept this agreement.",
+  "The service is provided from Türkiye and governed by Turkish law. The mandatory consumer rights of your own country are unaffected.",
+  "Your account is yours, and is used with respect for others. What you write stays yours.",
+  "AI answers can be wrong.",
+  "Premium is bought through Google Play and cancelled there.",
+] as const;
 
 export function TermsEnBody() {
   return (

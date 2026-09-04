@@ -10,8 +10,14 @@ import { LEGAL_HOSTING_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/l
 export const PRIVACY_EN_TITLE = "Privacy Policy";
 export const PRIVACY_EN_DESCRIPTION =
   "What data Nomi processes, why and for how long; your rights under GDPR and Turkish data protection law; deleting your account.";
-export const PRIVACY_EN_SUMMARY =
-  "Nomi is a language learning app (German, Zurich German and English) provided by a developer established in Türkiye. We process your e-mail and name to run your account, and your progress data to track your learning. In walk mode, with your explicit consent, microphone audio is sent to our server and to speech recognition providers to transcribe what you say; the audio recording is not kept. There are no ads, no advertising identifier and no third-party tracking. You can delete your account at any time from the app or the web. Users in Europe have GDPR rights; users in Türkiye have rights under Turkish law no. 6698 (KVKK).";
+export const PRIVACY_EN_SUMMARY = [
+  "Nomi is a language learning app: German, Zurich German and English.",
+  "We process your e-mail and name to run your account, and your progress data to track your learning.",
+  "In walk mode, with your explicit consent, microphone audio is sent to be transcribed. The recording is not kept.",
+  "No ads, no advertising identifier, no third-party tracking.",
+  "You can delete your account at any time, from the app or the web.",
+  "GDPR rights in Europe, KVKK rights in Türkiye.",
+] as const;
 
 export function PrivacyEnBody() {
   return (
@@ -156,13 +162,18 @@ export function PrivacyEnBody() {
 
       <h2>8. Product analytics and switching them off</h2>
       <p>
-        To understand which features are used, Nomi writes short usage events to its own server (e.g. &quot;round completed&quot;). The event
-        names come from a closed list. Each event may carry a technical label of at most 32 characters (e.g.
-        &quot;single:artikel&quot;, &quot;level:B1&quot;); the label accepts only letters, digits, underscore, colon and hyphen and
-        cannot consist of digits alone, so it can hold no e-mail address, link or phone number. Nothing else is sent as free
-        text, and the events go to no third party. You can switch this off with the &quot;Send usage
-        data&quot; toggle under Settings &rsaquo; Privacy (right to object, KVKK and Art. 21 GDPR); once off, only the records strictly
-        necessary for the service are kept.
+        To understand which features are used, Nomi writes short usage events to its own server (e.g. &quot;round completed&quot;).
+        What such an event may contain is tightly bounded:
+      </p>
+      <ul>
+        <li>Event names come from a closed, predefined list.</li>
+        <li>Each event may carry a technical label of at most 32 characters (such as &quot;single:artikel&quot; or &quot;level:B1&quot;).</li>
+        <li>The label accepts only letters, digits, underscore, colon and hyphen, and cannot consist of digits alone. It therefore cannot hold an e-mail address, a link or a phone number.</li>
+        <li>Nothing else is sent as free text, and the events go to no third party.</li>
+      </ul>
+      <p>
+        You can switch this off with the &quot;Send usage data&quot; toggle under Settings &rsaquo; Privacy. This is the right to object
+        under KVKK and Art. 21 GDPR. Once it is off, only the records strictly necessary for the service are kept.
       </p>
 
       <h2>8a. Commercial electronic messages</h2>
@@ -205,7 +216,7 @@ export function PrivacyEnBody() {
       <p>
         <strong>Complaints:</strong> in Türkiye to the Personal Data Protection Board (kvkk.gov.tr). In the EU the controller&apos;s
         competent supervisory authority is, by place of establishment, the State Commissioner for Data Protection and Freedom of
-        Information of North Rhine-Westphalia (LDI NRW); in addition, under Art. 77 GDPR you may complain to the authority in your own
+        Information of North Rhine-Westphalia (LDI NRW). Under Art. 77 GDPR you may also complain to the authority in your own
         country. In the United Kingdom, the ICO. We would ask you to write to us first; we can resolve most requests
         directly.
       </p>

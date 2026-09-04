@@ -23,7 +23,13 @@ export default function TermsPage() {
     <LegalShell
       doc="terms"
       title="Kullanım Şartları"
-      summary="Nomi'yi kullanarak bu sözleşmeyi kabul edersin. Hizmet Türkiye'de yerleşik bir geliştirici tarafından sunulur ve Türk hukukuna tabidir; bulunduğun ülkenin zorunlu tüketici hakları saklıdır. Hesabın sana aittir ve başkalarına saygılı kullanılır; yazdıkların senin kalır. Yapay zekâ yanıtları hata yapabilir. Premium abonelik Google Play üzerinden alınır ve oradan iptal edilir."
+      summary={[
+        "Nomi'yi kullanarak bu sözleşmeyi kabul edersin.",
+        "Hizmet Türkiye'den sunulur ve Türk hukukuna tabidir. Bulunduğun ülkenin zorunlu tüketici hakları saklıdır.",
+        "Hesabın sana aittir ve başkalarına saygılı kullanılır. Yazdıkların senin kalır.",
+        "Yapay zekâ yanıtları hata yapabilir.",
+        "Premium abonelik Google Play üzerinden alınır ve oradan iptal edilir.",
+      ]}
     >
       <h2>1. Taraflar ve kabul</h2>
       <p>

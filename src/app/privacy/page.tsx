@@ -22,7 +22,14 @@ export default function PrivacyPage() {
     <LegalShell
       doc="privacy"
       title="Gizlilik Politikası ve Aydınlatma Metni"
-      summary="Nomi bir dil öğrenme uygulamasıdır (Almanca, Zürih Almancası ve İngilizce) ve Türkiye'de yerleşik bir geliştirici tarafından sunulur. Hesabını yürütmek için e-posta ve adını, öğrenmeni takip etmek için ilerleme verini işleriz. Yürüyüş modunda mikrofon sesin, açık rızanla, konuşmanı yazıya çevirmek için sunucumuza ve konuşma tanıma sağlayıcılarına gönderilir; ses kaydı saklanmaz. Reklam, reklam kimliği ve üçüncü taraf takip yoktur. Hesabını dilediğin an uygulamadan ya da web'den silebilirsin. Avrupa'daki kullanıcılar için GDPR, Türkiye'dekiler için KVKK hakları geçerlidir."
+      summary={[
+        "Nomi bir dil öğrenme uygulaması: Almanca, Zürih Almancası ve İngilizce.",
+        "Hesabını yürütmek için e-posta ve adını, öğrenmeni izlemek için ilerleme verini işleriz.",
+        "Yürüyüş modunda mikrofon sesin, açık rızanla, konuşmanı yazıya çevirmek için gönderilir. Ses kaydı saklanmaz.",
+        "Reklam, reklam kimliği ve üçüncü taraf takip yok.",
+        "Hesabını dilediğin an uygulamadan ya da web'den silebilirsin.",
+        "Avrupa'da GDPR, Türkiye'de KVKK hakların geçerli.",
+      ]}
     >
       <h2>1. Veri sorumlusu</h2>
       <p>
@@ -162,8 +169,17 @@ export default function PrivacyPage() {
       <h2>8. Ürün analitiği ve kapatma</h2>
       <p>
         Nomi, hangi özelliklerin kullanıldığını anlamak için kendi sunucusuna kısa kullanım olayları yazar (ör. &quot;tur tamamlandı&quot;).
-        Olay adları kapalı bir listeden gelir. Her olay yanında en çok 32 karakterlik teknik bir etiket taşıyabilir (ör. &quot;single:artikel&quot;, &quot;level:B1&quot;); etiket yalnız harf, rakam, alt çizgi, iki nokta ve tire kabul eder ve salt rakamdan oluşamaz, dolayısıyla e-posta, bağlantı ya da telefon numarası taşıyamaz. Bunun dışında serbest metin gönderilmez ve olaylar üçüncü tarafa gitmez. Ayarlar › Gizlilik bölümünden &quot;Kullanım verisi
-        gönder&quot; anahtarıyla bunu kapatabilirsin (KVKK ve GDPR m.21 itiraz hakkı); kapatınca yalnız hizmet için zorunlu kayıtlar tutulur.
+        Bu olayda ne bulunabileceği dar bir çerçeveyle sınırlı:
+      </p>
+      <ul>
+        <li>Olay adları önceden belirlenmiş kapalı bir listeden gelir.</li>
+        <li>Her olay en çok 32 karakterlik teknik bir etiket taşıyabilir (&quot;single:artikel&quot;, &quot;level:B1&quot; gibi).</li>
+        <li>Etiket yalnız harf, rakam, alt çizgi, iki nokta ve tire kabul eder. Salt rakamdan da oluşamaz. Bu yüzden bir e-posta adresi, bağlantı ya da telefon numarası taşıması mümkün değildir.</li>
+        <li>Bunun dışında serbest metin gönderilmez ve olaylar üçüncü tarafa gitmez.</li>
+      </ul>
+      <p>
+        Ayarlar › Gizlilik bölümündeki &quot;Kullanım verisi gönder&quot; anahtarıyla bunu kapatabilirsin. Bu, KVKK ve GDPR m.21&apos;deki
+        itiraz hakkının karşılığıdır. Kapattığında yalnız hizmet için zorunlu kayıtlar tutulur.
       </p>
 
       <h2>8a. Ticari elektronik ileti</h2>
@@ -203,8 +219,8 @@ export default function PrivacyPage() {
       </p>
       <p>
         <strong>Şikâyet:</strong> Türkiye&apos;de Kişisel Verileri Koruma Kurulu&apos;na (kvkk.gov.tr). AB&apos;de veri sorumlusunun yetkili
-        denetim otoritesi, yerleşim yerine göre Kuzey Ren-Vestfalya Eyalet Veri Koruma ve Bilgi Edinme Görevlisi&apos;dir (LDI NRW);
-        bunun yanında GDPR m.77 uyarınca kendi ülkendeki otoriteye de başvurabilirsin. Birleşik Krallık&apos;ta ICO. Önce bize yazmanı rica ederiz; çoğu talebi doğrudan çözebiliriz.
+        denetim otoritesi, yerleşim yerine göre Kuzey Ren-Vestfalya Eyalet Veri Koruma ve Bilgi Edinme Görevlisi&apos;dir (LDI NRW).
+        GDPR m.77 uyarınca kendi ülkendeki otoriteye de başvurabilirsin. Birleşik Krallık&apos;ta ICO. Önce bize yazmanı rica ederiz, çoğu talebi doğrudan çözebiliriz.
       </p>
 
       <h2>11. Hesabını ve verilerini silme</h2>

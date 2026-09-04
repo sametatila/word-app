@@ -132,6 +132,62 @@ export const LEGAL_PATHS = {
   deleteAccount: "/account/delete",
 } as const;
 
+/**
+ * Sürüm geçmişi — iki belge de aynı LEGAL_VERSION'ı taşıdığı için tek liste.
+ *
+ * Sürüm numarası değişip "ne değişti" yazılmazsa, okuyucunun kabul ettiği metnin
+ * neresinin oynadığını anlamasının yolu yok. Yeni sürümde buraya bir kayıt
+ * eklenmeden LEGAL_VERSION artırılmamalı. En yeni kayıt başa yazılır.
+ */
+export const LEGAL_CHANGELOG: readonly {
+  version: string;
+  date: string;
+  changes: Record<LegalLocale, readonly string[]>;
+}[] = [
+  {
+    version: "1.2",
+    date: "2026-09-04",
+    changes: {
+      tr: [
+        "Hesap açma yaşı 16'dan 18'e çıkarıldı; içerik yetişkin öğrenciye yönelik.",
+        "Kurslar doğru sayıldı: Almanca, Zürih Almancası ve İngilizce (metin yalnız Almanca diyordu).",
+        "Veri sorumlusu ile uygulamayı Play'de yayımlayan taraf ayrı ayrı tanıtıldı.",
+        "Veri hakları başvuruları için KVKK ve GDPR'a ayrı adresler açıldı.",
+        "Ürün analitiğinde bir olayın yanında taşınabilecek etiketin sınırları yazıldı.",
+        "Sunucu yedeklerinin saklama süresi 30 gün olarak belirtildi.",
+        "Metinler İngilizce ve Almanca olarak da yayımlandı; bağlayıcı metin Türkçe.",
+      ],
+      en: [
+        "The minimum age for an account was raised from 16 to 18; the content is aimed at adult learners.",
+        "The courses are now stated correctly: German, Zurich German and English (the text said German only).",
+        "The data controller and the person who publishes the app on Play are now identified separately.",
+        "Separate addresses were opened for data rights requests under KVKK and under the GDPR.",
+        "The limits of the technical label an analytics event may carry are now written down.",
+        "The retention period for server backups is stated as 30 days.",
+        "The texts are also published in English and German; the binding text is Turkish.",
+      ],
+      de: [
+        "Das Mindestalter für ein Konto wurde von 16 auf 18 angehoben; die Inhalte richten sich an erwachsene Lernende.",
+        "Die Kurse werden jetzt richtig genannt: Deutsch, Zürichdeutsch und Englisch (der Text nannte nur Deutsch).",
+        "Der Verantwortliche und die Person, die die App bei Play veröffentlicht, werden getrennt ausgewiesen.",
+        "Für Anträge nach KVKK und nach DSGVO wurden getrennte Adressen eingerichtet.",
+        "Die Grenzen der technischen Kennzeichnung, die ein Analyse-Ereignis tragen darf, sind jetzt festgehalten.",
+        "Die Aufbewahrungsfrist für Server-Backups ist mit 30 Tagen angegeben.",
+        "Die Texte erscheinen auch auf Englisch und Deutsch; verbindlich ist die türkische Fassung.",
+      ],
+    },
+  },
+  {
+    version: "1.1",
+    date: "2026-09-03",
+    changes: {
+      tr: ["İlk yayımlanan sürüm."],
+      en: ["First published version."],
+      de: ["Erste veröffentlichte Fassung."],
+    },
+  },
+];
+
 export type LegalDoc = keyof typeof LEGAL_PATHS;
 
 /**
