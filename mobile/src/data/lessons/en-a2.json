@@ -41532,5 +41532,5126 @@
    "goal": "Yardımı için teşekkür etmen, sebebini for ile söylemen ve komşunun teşekkürüne de karşılık vermen yeterli.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-a2-smartphone",
+  "level": "A2",
+  "course": "en",
+  "icon": "phone",
+  "title": "Using a smartphone",
+  "titleTr": "Telefonu kullanmak",
+  "summary": "Telefonla ilgili temel kelimeleri öğrenip birine adım adım yönerge vermeyi ve bir işin yapılıp yapılmadığını sormayı çalışıyorsun.",
+  "minutes": 9,
+  "focusId": "Instructions",
+  "vocab": [
+   {
+    "de": "screen",
+    "tr": "ekran"
+   },
+   {
+    "de": "battery",
+    "tr": "pil"
+   },
+   {
+    "de": "charge",
+    "tr": "şarj etmek"
+   },
+   {
+    "de": "settings",
+    "tr": "ayarlar"
+   },
+   {
+    "de": "update",
+    "tr": "güncelleme"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "First open Settings, then tap Update.",
+    "tr": "bir işi adım adım anlatırken kullanılır"
+   },
+   {
+    "de": "Turn it off and turn it on again.",
+    "tr": "telefonu kapatıp açmayı söylerken kullanılır"
+   },
+   {
+    "de": "Have you updated your phone yet?",
+    "tr": "bir işin yapılıp yapılmadığını sormak için kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün telefonla ilgili İngilizce konuşacağız. Ekran, pil, ayarlar, güncelleme; bir de birine adım adım nasıl yönerge verilir, onu öğreneceksin."
+     },
+     {
+      "lang": "tr",
+      "text": "Kısa cümlelerle gideceğiz, ben söyleyeceğim sen tekrar edeceksin. Hazırsan başlayalım."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: screen. Türkçesi ekran demek."
+     },
+     {
+      "lang": "en",
+      "text": "the screen"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle: the screen."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "the screen"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi pil: battery."
+     },
+     {
+      "lang": "en",
+      "text": "the battery"
+     },
+     {
+      "lang": "tr",
+      "text": "Kendi pilinden bahsederken my battery dersin. Şimdi tekrar et: the battery."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "the battery"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şarj etmek fiili: charge."
+     },
+     {
+      "lang": "en",
+      "text": "Charge the battery."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani pili şarj et. Sen de söyle: Charge the battery."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Charge the battery."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Telefonun ayarları: settings. Dikkat, İngilizcede bu kelime hep çoğuldur; menü adı olarak da büyük harfle yazılır."
+     },
+     {
+      "lang": "en",
+      "text": "Go to Settings."
+     },
+     {
+      "lang": "tr",
+      "text": "Ayarlara git demek. Söyle bakalım: Go to Settings."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Go to Settings."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güncelleme: update. Hem isim hem fiil olarak kullanılır."
+     },
+     {
+      "lang": "en",
+      "text": "There's a new update."
+     },
+     {
+      "lang": "tr",
+      "text": "Yeni bir güncelleme var demek. Tekrar et: There's a new update."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "There's a new update."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yönerge verirken fiili yalın hâliyle söylersin, özne koymazsın. Telefonda en çok kullanılan fiiller şunlar:"
+     },
+     {
+      "lang": "en",
+      "text": "Open the app. Tap the screen. Press the button."
+     },
+     {
+      "lang": "tr",
+      "text": "Open aç, tap ekrana hafifçe dokun, press ise bir tuşa bas demek. Telefonda parmakla dokunmaya İngilizler tap der, click demezler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Adımları sıralamak için first, then ve after that kullanırız. Şu cümleyi birlikte kuralım:"
+     },
+     {
+      "lang": "en",
+      "text": "First open Settings, then tap Update."
+     },
+     {
+      "lang": "tr",
+      "text": "Önce Ayarlar'ı aç, sonra Güncelle'ye dokun. Şimdi sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "First open Settings, then tap Update."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Ekranın kırıldı. Bunu İngilizce nasıl söylersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My screen is broken.",
+     "accept": [
+      "The screen is broken.",
+      "My screen is cracked."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ekran: screen. Kırık: broken."
+      },
+      {
+       "lang": "en",
+       "text": "My screen ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Açıp kapatmak için turn on ve turn off deriz."
+     },
+     {
+      "lang": "en",
+      "text": "Turn off your phone. Turn it off and turn it on again."
+     },
+     {
+      "lang": "tr",
+      "text": "Küçük ama önemli bir kural: it, them gibi kısa kelimeler araya girer. Turn it off doğru, turn off it yanlış."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir cümle daha kur. Pilin çok azaldı ve bunu söylemek istiyorsun."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My battery is low.",
+     "accept": [
+      "The battery is low.",
+      "My battery is very low.",
+      "My phone battery is low."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Pil: battery. Az kaldı için low kelimesini kullan."
+      },
+      {
+       "lang": "en",
+       "text": "My battery ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi çok işine yarayacak bir yapı: yaptığın işi sonucuyla anlatmak. have veya has, sonra fiilin üçüncü hâli."
+     },
+     {
+      "lang": "en",
+      "text": "I have already updated my phone. I haven't charged it yet."
+     },
+     {
+      "lang": "tr",
+      "text": "Birincisi telefonumu çoktan güncelledim, ikincisi henüz şarj etmedim demek. Already olumlu cümlede, yet ise olumsuz ve soru cümlesinin sonunda durur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı yapıyla soru sormak da çok kolay. Have ile başlarsın:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you charged your phone yet? Have you tried the new update?"
+     },
+     {
+      "lang": "tr",
+      "text": "Şarj ettin mi, yeni güncellemeyi denedin mi. Konuşurken çok sık duyacaksın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen de sor: Telefonunu güncelledin mi? Henüz sözcüğünü de kullan."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Have you updated your phone yet?",
+     "accept": [
+      "Have you updated the phone yet?",
+      "Have you already updated your phone?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Have ile başla, sonra you, sonra updated. Yet cümlenin sonunda."
+      },
+      {
+       "lang": "en",
+       "text": "Have you ... yet?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bir doğru yanlış sorusu. Şu cümle İngilizcede doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Yesterday I have charged my phone."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Yesterday I have charged my phone.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Yesterday gibi bitmiş bir zaman söylediğinde have kullanılmaz, doğrudan geçmiş zaman gelir."
+      },
+      {
+       "lang": "en",
+       "text": "Yesterday I charged my phone."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Telefonun bozulduğunda ya da yardım istediğinde işine yarayacak cümleler:"
+     },
+     {
+      "lang": "en",
+      "text": "My phone isn't working. Can you show me how to do it?"
+     },
+     {
+      "lang": "tr",
+      "text": "Telefonum çalışmıyor ve bunu nasıl yapacağımı gösterebilir misin demek. Dükkânda ya da bir arkadaşının yanında ikisi de çok işine yarar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hepsini küçük bir konuşmada birleştirelim. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "My battery is very low. Have you charged it today? No, not yet. Turn it off and charge it for an hour."
+     },
+     {
+      "lang": "tr",
+      "text": "Pilim çok az. Bugün şarj ettin mi? Hayır, henüz değil. Kapat ve bir saat şarj et."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısaca toparlayalım. Kelimelerin: screen, battery, charge, settings, update."
+     },
+     {
+      "lang": "tr",
+      "text": "Yönerge verirken fiili yalın söylüyorsun: open, tap, press, turn it off. Sırayı first ve then ile kuruyorsun. Bir işin yapılıp yapılmadığını Have you ... yet? diye soruyorsun."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunları bir telefon dükkânında kullanacaksın. Kolay gelsin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir telefon dükkânındasın. Telefonunun şarjı çok çabuk bitiyor ve ekranında bir sorun var; çalışana derdini anlatıp ne yapman gerektiğini öğreniyorsun.",
+   "partner": "dükkândaki telefon satıcısı",
+   "opening": "Hi! What's the problem with your phone?",
+   "openingTr": "Merhaba! Telefonunuzda ne sorun var?",
+   "goal": "Sorunu anlatıp (pil çabuk bitiyor, ekran iyi çalışmıyor), güncelleyip güncellemediğin sorulduğunda cevap verip, satıcının verdiği adım adım yönergeyi anladığını göstermen yeterli.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-social-media",
+  "level": "A2",
+  "course": "en",
+  "icon": "media",
+  "title": "Social media",
+  "titleTr": "Sosyal medya",
+  "summary": "Sosyal medya alışkanlıklarını sıklık zarflarıyla anlatmayı ve bu konuda fikrini söylemeyi öğretir.",
+  "minutes": 9,
+  "focusId": "Habits + opinions",
+  "vocab": [
+   {
+    "de": "post",
+    "tr": "paylaşım yapmak"
+   },
+   {
+    "de": "follow",
+    "tr": "takip etmek"
+   },
+   {
+    "de": "comment",
+    "tr": "yorum"
+   },
+   {
+    "de": "share",
+    "tr": "paylaşmak"
+   },
+   {
+    "de": "account",
+    "tr": "hesap"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I usually post photos at the weekend.",
+    "tr": "bir alışkanlığını ne sıklıkta yaptığını söylerken kullanılır"
+   },
+   {
+    "de": "I don't think social media is good.",
+    "tr": "olumsuz bir fikir belirtirken kullanılır; İngilizcede olumsuzluk 'think' fiiline gelir"
+   },
+   {
+    "de": "I have had this account for two years.",
+    "tr": "bir şeyin ne zamandır sende olduğunu söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün sosyal medyayı İngilizce konuşacağız. Ne sıklıkta paylaşım yaptığını anlatmayı ve sosyal medya hakkında ne düşündüğünü söylemeyi öğreneceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "post"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu hem paylaşım yapmak demek, hem de paylaşımın kendisi. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "post"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "post"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Takip etmek için"
+     },
+     {
+      "lang": "en",
+      "text": "follow"
+     },
+     {
+      "lang": "tr",
+      "text": "diyoruz. Birini takip ediyorsan onu 'follow' edersin. Sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "follow"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "follow"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yorum ise"
+     },
+     {
+      "lang": "en",
+      "text": "comment"
+     },
+     {
+      "lang": "tr",
+      "text": "Hem yorum demek, hem yorum yapmak. Söyle bakalım:"
+     },
+     {
+      "lang": "en",
+      "text": "comment"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "comment"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Paylaşmak için"
+     },
+     {
+      "lang": "en",
+      "text": "share"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir fotoğrafı, bir videoyu paylaşırsın. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "share"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "share"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz hesap:"
+     },
+     {
+      "lang": "en",
+      "text": "account"
+     },
+     {
+      "lang": "tr",
+      "text": "Instagram hesabın, banka hesabın — hepsi 'account'. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "account"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "account"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıklık zarfları. Bunlar İngilizcede fiilden hemen ÖNCE gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "always, usually, often, sometimes, never"
+     },
+     {
+      "lang": "tr",
+      "text": "yani her zaman, genelde, sık sık, bazen, hiç."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bak nasıl kuruluyor:"
+     },
+     {
+      "lang": "en",
+      "text": "I usually post photos at the weekend."
+     },
+     {
+      "lang": "tr",
+      "text": "Genelde hafta sonu fotoğraf paylaşırım. Şimdi sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I usually post photos at the weekend."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I usually post photos at the weekend."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. 'Bazen fotoğraf paylaşırım' cümlesini İngilizce kur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I sometimes share photos.",
+     "accept": [
+      "Sometimes I share photos.",
+      "I sometimes share pictures.",
+      "I sometimes post photos."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "bazen ="
+      },
+      {
+       "lang": "en",
+       "text": "sometimes"
+      },
+      {
+       "lang": "tr",
+       "text": "paylaşmak ="
+      },
+      {
+       "lang": "en",
+       "text": "share"
+      },
+      {
+       "lang": "tr",
+       "text": "Zarf fiilden önce gelir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük ama önemli bir nokta: İngilizcede sosyal medyada bir şey yapmak için 'on' kullanılır."
+     },
+     {
+      "lang": "en",
+      "text": "on Instagram, on YouTube"
+     },
+     {
+      "lang": "tr",
+      "text": "Ve bir fotoğrafa yorum yaparsan:"
+     },
+     {
+      "lang": "en",
+      "text": "I comment on her photos."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi fikir söylemeye geçelim. En çok kullanılan iki kalıp:"
+     },
+     {
+      "lang": "en",
+      "text": "I think ..."
+     },
+     {
+      "lang": "tr",
+      "text": "yani bence, ve"
+     },
+     {
+      "lang": "en",
+      "text": "In my opinion, ..."
+     },
+     {
+      "lang": "tr",
+      "text": "yani bana göre."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyleyelim:"
+     },
+     {
+      "lang": "en",
+      "text": "I think social media is useful."
+     },
+     {
+      "lang": "tr",
+      "text": "Bence sosyal medya faydalı. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I think social media is useful."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I think social media is useful."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat: Türkçede 'bence iyi değil' deriz, olumsuzluk sonda. İngilizcede ise olumsuzluk 'think' fiiline gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "I don't think it's good."
+     },
+     {
+      "lang": "tr",
+      "text": "'I think it's not good' de anlaşılır ama doğal olan birincisidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen kur: 'Bence sosyal medya iyi değil.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I don't think social media is good.",
+     "accept": [
+      "I don't think that social media is good.",
+      "I don't think social media is good",
+      "In my opinion, social media is not good."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olumsuzluğu 'think' fiiline koy:"
+      },
+      {
+       "lang": "en",
+       "text": "I don't think ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeye fazla vakit ayırdığını söylemek için:"
+     },
+     {
+      "lang": "en",
+      "text": "I spend too much time on my phone."
+     },
+     {
+      "lang": "tr",
+      "text": "Telefonda çok fazla vakit geçiriyorum. Burada 'time' sayılamaz bir kelime olduğu için 'too much' kullanıyoruz; sayılabilenlerde ise 'too many' deriz:"
+     },
+     {
+      "lang": "en",
+      "text": "too many photos"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "I spend too many time on my phone."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I spend too many time on my phone.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. 'time' sayılamaz, bu yüzden"
+      },
+      {
+       "lang": "en",
+       "text": "too much time"
+      },
+      {
+       "lang": "tr",
+       "text": "olmalı. 'too many' sadece sayılabilen çoğullarla kullanılır."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyin ne zamandır sende olduğunu söylerken present perfect kullanırız:"
+     },
+     {
+      "lang": "en",
+      "text": "I have had this account for three years."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu hesabım üç yıldır var. Belli bir tarih verirsen 'since' dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I have had this account since 2020."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen dene: 'Bu hesabım iki yıldır var.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have had this account for two years.",
+     "accept": [
+      "I've had this account for two years.",
+      "I have had this account for 2 years."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "have + had, ve süre için"
+      },
+      {
+       "lang": "en",
+       "text": "for"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika iş çıkardın. Bugün beş kelime öğrendik:"
+     },
+     {
+      "lang": "en",
+      "text": "post, follow, comment, share, account"
+     },
+     {
+      "lang": "tr",
+      "text": "Alışkanlıkları sıklık zarflarıyla anlattık, fikrimizi 'I think' ve 'I don't think' ile söyledik, 'too much time' dedik ve 'for / since' ile hesabımızın ne zamandır olduğunu anlattık. Şimdi bunu gerçek bir sohbette kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla kahve içerken sosyal medya alışkanlıklarınızdan konuşuyorsunuz.",
+   "partner": "sosyal medyayı merak eden bir arkadaş",
+   "opening": "Hey, do you use social media a lot?",
+   "openingTr": "Selam, sosyal medyayı çok kullanıyor musun?",
+   "goal": "Ne sıklıkta paylaşım yaptığını söyleyip sosyal medya hakkındaki fikrini belirtirsen ve hesabının ne zamandır olduğunu anlatırsan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-streaming",
+  "level": "A2",
+  "course": "en",
+  "icon": "film",
+  "title": "Series and films",
+  "titleTr": "Dizi ve film",
+  "summary": "Bir diziyi anlatmayı, beğenip beğenmediğini söylemeyi ve \"Have you seen …?\" ile tavsiye alıp vermeyi öğretir.",
+  "minutes": 9,
+  "focusId": "Recommending",
+  "vocab": [
+   {
+    "de": "series",
+    "tr": "dizi"
+   },
+   {
+    "de": "episode",
+    "tr": "bölüm"
+   },
+   {
+    "de": "watch",
+    "tr": "izlemek"
+   },
+   {
+    "de": "boring",
+    "tr": "sıkıcı"
+   },
+   {
+    "de": "recommend",
+    "tr": "tavsiye etmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Have you seen …?",
+    "tr": "birinin bir diziyi ya da filmi izleyip izlemediğini sormak için kullanılır"
+   },
+   {
+    "de": "I recommend it.",
+    "tr": "bir şeyi tavsiye ederken kullanılır"
+   },
+   {
+    "de": "It's about …",
+    "tr": "bir dizinin ya da filmin konusunu anlatırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün dizilerden ve filmlerden konuşacağız. Bir diziyi anlatmayı, beğenip beğenmediğini söylemeyi, birine tavsiye etmeyi ve 'izledin mi?' diye sormayı öğreneceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "series"
+     },
+     {
+      "lang": "tr",
+      "text": ". 'Dizi' demek. Küçük bir tuzağı var: tekili de çoğulu da aynı yazılır. "
+     },
+     {
+      "lang": "en",
+      "text": "one series, two series"
+     },
+     {
+      "lang": "tr",
+      "text": ". Lütfen 'series' de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "series"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dizinin her parçasına 'bölüm' diyoruz; İngilizcesi "
+     },
+     {
+      "lang": "en",
+      "text": "episode"
+     },
+     {
+      "lang": "tr",
+      "text": ". Şimdi sen söyle: 'episode'."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "episode"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İzlemek fiili "
+     },
+     {
+      "lang": "en",
+      "text": "watch"
+     },
+     {
+      "lang": "tr",
+      "text": ". Geçmiş hâli çok kolay, sonuna -ed geliyor: "
+     },
+     {
+      "lang": "en",
+      "text": "watched"
+     },
+     {
+      "lang": "tr",
+      "text": ". Dinle: "
+     },
+     {
+      "lang": "en",
+      "text": "I watch a series every night. I watched two episodes yesterday."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Her gece dizi izlerim. Dün iki bölüm izledim."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dünkü cümleyi sen söyle: 'Dün iki bölüm izledim.'"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I watched two episodes yesterday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir dizi hakkında ne düşündüğünü söylemek için iki kelime yeter. "
+     },
+     {
+      "lang": "en",
+      "text": "boring"
+     },
+     {
+      "lang": "tr",
+      "text": " sıkıcı, "
+     },
+     {
+      "lang": "en",
+      "text": "exciting"
+     },
+     {
+      "lang": "tr",
+      "text": " heyecan verici. Örnek: "
+     },
+     {
+      "lang": "en",
+      "text": "The first episode was boring, but the second one was exciting."
+     },
+     {
+      "lang": "tr",
+      "text": "İlk bölüm sıkıcıydı ama ikincisi heyecan vericiydi."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. 'Bu dizi sıkıcı.' cümlesini İngilizce kur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This series is boring.",
+     "accept": [
+      "The series is boring.",
+      "This series is really boring."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'bu dizi' için "
+      },
+      {
+       "lang": "en",
+       "text": "this series"
+      },
+      {
+       "lang": "tr",
+       "text": ", sonra 'is', sonra 'boring'."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dersin anahtar kelimesi: "
+     },
+     {
+      "lang": "en",
+      "text": "recommend"
+     },
+     {
+      "lang": "tr",
+      "text": ", tavsiye etmek. Söylenişine dikkat: vurgu ikinci hecede, 'rikoMEND'. Lütfen 'recommend' de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "recommend"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "En kısa kullanımı: "
+     },
+     {
+      "lang": "en",
+      "text": "I recommend it."
+     },
+     {
+      "lang": "tr",
+      "text": "'Tavsiye ederim' demek. Burada önemli bir kural var: İngilizcede 'I recommend' deyip cümleyi bırakamazsın, mutlaka bir nesne gelir. "
+     },
+     {
+      "lang": "en",
+      "text": "I recommend it. I recommend this series."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi çok işine yarayacak bir soru kalıbı: "
+     },
+     {
+      "lang": "en",
+      "text": "Have you seen …?"
+     },
+     {
+      "lang": "tr",
+      "text": "'İzledin mi?' demek. Dikkat et, burada düz geçmiş zaman yok; 'have' artı 'seen' var. Çünkü sorduğun şey ne zaman izlediği değil, hayatında izleyip izlemediği. Dinle: "
+     },
+     {
+      "lang": "en",
+      "text": "Have you seen this series?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısa hâlini tekrar edelim. 'Onu izledin mi?' Söyle: 'Have you seen it?'"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Have you seen it?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: 'Bu filmi izledin mi?'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Have you seen this film?",
+     "accept": [
+      "Have you seen this movie?",
+      "Have you seen the film?"
+     ],
+     "hint": [
+      {
+       "lang": "en",
+       "text": "Have you seen"
+      },
+      {
+       "lang": "tr",
+       "text": " ile başla, sonuna 'this film' ekle."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Cevabı da hazır olsun. Evet ise: "
+     },
+     {
+      "lang": "en",
+      "text": "Yes, I have. I've seen it twice."
+     },
+     {
+      "lang": "tr",
+      "text": "Hayır ise: "
+     },
+     {
+      "lang": "en",
+      "text": "No, I haven't, but I want to."
+     },
+     {
+      "lang": "tr",
+      "text": "Gördün mü, cevapta soruyu tekrarlamıyorsun, sadece 'have' ya da 'haven't' diyorsun."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üç küçük kelime bu kalıbı çok konuşkan yapar. "
+     },
+     {
+      "lang": "en",
+      "text": "already"
+     },
+     {
+      "lang": "tr",
+      "text": " çoktan, "
+     },
+     {
+      "lang": "en",
+      "text": "yet"
+     },
+     {
+      "lang": "tr",
+      "text": " henüz, "
+     },
+     {
+      "lang": "en",
+      "text": "just"
+     },
+     {
+      "lang": "tr",
+      "text": " az önce. Dinle: "
+     },
+     {
+      "lang": "en",
+      "text": "I've already watched three episodes. I haven't finished it yet. I've just started season two."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "I have watched this series yesterday."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I have watched this series yesterday.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Belli bir zaman söylüyorsan — yesterday, last night, in 2020 — 'have watched' kullanılmaz. Doğrusu: "
+      },
+      {
+       "lang": "en",
+       "text": "I watched this series yesterday."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Konuyu anlatmak için tek kalıp yeter: "
+     },
+     {
+      "lang": "en",
+      "text": "It's about …"
+     },
+     {
+      "lang": "tr",
+      "text": "Örneğin: 'İtalya'da bir aileyi anlatıyor.' Söyle: "
+     },
+     {
+      "lang": "en",
+      "text": "It's about a family in Italy."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It's about a family in Italy."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tavsiye ederken karşılaştırma da yaparsın. 'daha iyi' "
+     },
+     {
+      "lang": "en",
+      "text": "better than"
+     },
+     {
+      "lang": "tr",
+      "text": ", 'daha ilginç' "
+     },
+     {
+      "lang": "en",
+      "text": "more interesting than"
+     },
+     {
+      "lang": "tr",
+      "text": ". Dinle: "
+     },
+     {
+      "lang": "en",
+      "text": "The second season is better than the first one. This series is more interesting than the film."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen kur: 'Bu dizi filmden daha iyi.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This series is better than the film.",
+     "accept": [
+      "The series is better than the film.",
+      "This series is better than the movie."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'daha iyi' için 'good' değil "
+      },
+      {
+       "lang": "en",
+       "text": "better"
+      },
+      {
+       "lang": "tr",
+       "text": " kullanılır, arkasından 'than' gelir."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de karşı taraftan tavsiye isteyelim. En doğal iki soru: "
+     },
+     {
+      "lang": "en",
+      "text": "What do you recommend? Can you recommend a good series?"
+     },
+     {
+      "lang": "tr",
+      "text": "İkincisi daha kibar ve daha sık kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Dizi 'series', bölüm 'episode', izlemek 'watch'. Beğenmediysen 'boring', beğendiysen 'exciting'. Tavsiye ederken 'I recommend it', konuyu anlatırken 'It's about …'. Sorarken 'Have you seen …?', cevap verirken 'Yes, I have' ya da 'No, I haven't'. Ama belli bir günü söylüyorsan sade geçmiş zaman: 'I watched it last night.' Şimdi bir arkadaşına dizi önerme sırası sende!"
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Öğle arasında iş arkadaşınla dizi sohbeti ediyorsunuz. O son izlediği diziyi anlatıyor, senden de bir öneri bekliyor.",
+   "partner": "dizi izlemeyi seven bir iş arkadaşın",
+   "opening": "I finished a new series last night. Have you seen anything good recently?",
+   "openingTr": "Dün gece yeni bir diziyi bitirdim. Sen son zamanlarda güzel bir şey izledin mi?",
+   "goal": "Bir dizi ya da film önerip konusunu bir cümleyle anlatabildiğinde, beğenip beğenmediğini söylediğinde ve arkadaşının 'Have you seen …?' sorusuna doğru cevap verdiğinde başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-news",
+  "level": "A2",
+  "course": "en",
+  "icon": "media",
+  "title": "Following the news",
+  "titleTr": "Haber takip etmek",
+  "summary": "Duyduğun bir haberi aktarmayı, ne olduğunu sormayı ve habere inanıp inanmadığını İngilizce söylemeyi öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Reporting",
+  "vocab": [
+   {
+    "de": "news",
+    "tr": "haber"
+   },
+   {
+    "de": "happen",
+    "tr": "meydana gelmek"
+   },
+   {
+    "de": "report",
+    "tr": "bildirmek"
+   },
+   {
+    "de": "true",
+    "tr": "doğru"
+   },
+   {
+    "de": "believe",
+    "tr": "inanmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Have you heard the news?",
+    "tr": "birine yeni bir haberi duyup duymadığını sormak için kullanılır"
+   },
+   {
+    "de": "It happened yesterday.",
+    "tr": "olayın ne zaman olduğunu söylerken kullanılır"
+   },
+   {
+    "de": "I don't believe it's true.",
+    "tr": "bir habere inanmadığını söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün haberlerden konuşmayı öğreniyoruz: duyduğun bir haberi aktarmak, ne olduğunu sormak ve o habere inanıp inanmadığını söylemek."
+     },
+     {
+      "lang": "tr",
+      "text": "Kulaklığın hazırsa başlıyoruz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz haber demek:"
+     },
+     {
+      "lang": "en",
+      "text": "news"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle: news."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "news"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük ama önemli bir nokta. News kelimesinin sonunda s var ama İngilizcede tekil sayılır. Yani şöyle deriz:"
+     },
+     {
+      "lang": "en",
+      "text": "The news is good."
+     },
+     {
+      "lang": "tr",
+      "text": "The news are demiyoruz. Ayrıca a news de yok; tek bir habere story dersin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz: happen. Meydana gelmek, olmak demek. Geçmiş hâli happened."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu dün oldu demek için:"
+     },
+     {
+      "lang": "en",
+      "text": "It happened yesterday."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It happened yesterday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı kelimeyle bir de soru var, çok işine yarayacak:"
+     },
+     {
+      "lang": "en",
+      "text": "What happened?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani ne oldu. Birinin telaşlı geldiğini gördüğünde tek başına bunu sorman yeter."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kalbi. Birine haberi duyup duymadığını sormak için:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you heard the news?"
+     },
+     {
+      "lang": "tr",
+      "text": "Söyleyelim: Have you heard the news?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Have you heard the news?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Burada have plus heard var. Bunu zaman söylemeden, sadece duydun mu diye sormak için kullanırız."
+     },
+     {
+      "lang": "tr",
+      "text": "Zamanı söyleyeceksen düz geçmiş zamana geçersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I heard it this morning."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani bu sabah duydum."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Arkadaşına haberleri duydun mu diye sor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Have you heard the news?",
+     "accept": [
+      "Did you hear the news?",
+      "Have you heard the news"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Have ile başla, sonra you, sonra heard."
+      },
+      {
+       "lang": "en",
+       "text": "Have you ... the news?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni kelime: report. Bildirmek, haber vermek demek. Televizyonda söylediler demek için:"
+     },
+     {
+      "lang": "en",
+      "text": "They reported it on TV."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They reported it on TV."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir haberi duyunca ilk sorduğumuz şey genelde şu: doğru mu? Doğru kelimesi true."
+     },
+     {
+      "lang": "en",
+      "text": "Is it true?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sen de sor: Is it true?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Is it true?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kelimemiz: believe, yani inanmak. İnanmadığını söylemek için:"
+     },
+     {
+      "lang": "en",
+      "text": "I don't believe it."
+     },
+     {
+      "lang": "tr",
+      "text": "Söyle bakalım: I don't believe it."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I don't believe it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki benzer cümleyi karıştırma. I don't believe it, o habere inanmıyorum demek."
+     },
+     {
+      "lang": "en",
+      "text": "I can't believe it!"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu ise inanamıyorum, yani şaşırdım demek. Sevindiğinde de kullanırsın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu söylenmiş, karar ver."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The news are very interesting today.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "News tekil kullanılır, bu yüzden are değil is gelir."
+      },
+      {
+       "lang": "en",
+       "text": "The news is very interesting today."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. Bu dün gece oldu, nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It happened last night.",
+     "accept": [
+      "It happened yesterday night.",
+      "This happened last night."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Happen kelimesinin geçmiş hâlini kullan."
+      },
+      {
+       "lang": "en",
+       "text": "It ... last night."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Haberi kimden duyduğunu bilmiyorsan, insanlar öyle diyor demek için:"
+     },
+     {
+      "lang": "en",
+      "text": "They say the weather will be terrible."
+     },
+     {
+      "lang": "tr",
+      "text": "Ya da kaynağını söylersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I read it in the newspaper."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha kur. Bunun doğru olduğuna inanmıyorum, nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I don't believe it's true.",
+     "accept": [
+      "I don't believe it is true.",
+      "I don't think it's true."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "I don't believe ile başla, sonra it's true ekle."
+      },
+      {
+       "lang": "en",
+       "text": "I don't believe ..."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hepsini birleştirelim, kısa bir sohbet dinle."
+     },
+     {
+      "lang": "en",
+      "text": "Have you heard the news? There was a big fire in the city."
+     },
+     {
+      "lang": "en",
+      "text": "Really? When did it happen?"
+     },
+     {
+      "lang": "en",
+      "text": "Last night. They reported it on TV."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şaşırdığını göstermek istersen araya şunları at:"
+     },
+     {
+      "lang": "en",
+      "text": "Really?"
+     },
+     {
+      "lang": "en",
+      "text": "That's terrible."
+     },
+     {
+      "lang": "en",
+      "text": "That's great news!"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu kısa tepkiler konuşmayı çok doğal yapar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Haberi sormak için Have you heard the news, ne olduğunu sormak için What happened, zamanı söylemek için It happened last night."
+     },
+     {
+      "lang": "tr",
+      "text": "Doğruluğunu sormak için Is it true, inanmadığını söylemek için I don't believe it."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir arkadaşınla bu haberi konuşacaksın. Kolay gelsin!"
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Sabah işe gelirken bir arkadaşınla karşılaşıyorsun. Dün gece şehirde büyük bir olay olmuş; sen haberi henüz tam bilmiyorsun, arkadaşın anlatıyor.",
+   "partner": "haberi televizyonda izlemiş iş arkadaşın",
+   "opening": "Good morning! Have you heard the news?",
+   "openingTr": "Günaydın! Haberleri duydun mu?",
+   "goal": "Haberi duyup duymadığını söyleyip ne olduğunu sorman, olayın ne zaman olduğunu öğrenmen ve haberin doğru olup olmadığı hakkında ne düşündüğünü söylemen yeterli.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-computer-problem",
+  "level": "A2",
+  "course": "en",
+  "icon": "tech",
+  "title": "A computer problem",
+  "titleTr": "Bilgisayar sorunu",
+  "summary": "Bilgisayarındaki teknik bir sorunu İngilizce anlatmayı, ne denediğini söylemeyi ve yardım istemeyi öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Describing problems",
+  "vocab": [
+   {
+    "de": "work",
+    "tr": "çalışmak (alet için)"
+   },
+   {
+    "de": "slow",
+    "tr": "yavaş"
+   },
+   {
+    "de": "restart",
+    "tr": "yeniden başlatmak"
+   },
+   {
+    "de": "file",
+    "tr": "dosya"
+   },
+   {
+    "de": "save",
+    "tr": "kaydetmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "It doesn't work.",
+    "tr": "bir aletin çalışmadığını söylerken kullanılır"
+   },
+   {
+    "de": "My computer is very slow.",
+    "tr": "sorunun ne olduğunu anlatırken kullanılır"
+   },
+   {
+    "de": "I've already restarted it.",
+    "tr": "neyi denediğini söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün çok işine yarayacak bir konu var: bilgisayar sorunu anlatmak."
+     },
+     {
+      "lang": "tr",
+      "text": "Ders bitince bilgisayarının çalışmadığını, yavaş olduğunu söyleyebilecek, ne denediğini anlatıp yardım isteyebileceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz çok basit ama çok güçlü."
+     },
+     {
+      "lang": "en",
+      "text": "work"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi çalışmak demek. Ama dikkat: burada insanın işe gitmesi değil, bir aletin çalışması anlamında. Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "work"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şey bozulduğunda İngilizler neredeyse hep şunu der:"
+     },
+     {
+      "lang": "en",
+      "text": "It doesn't work."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani çalışmıyor. Telefon için de, ışık için de, bilgisayar için de aynı cümle. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It doesn't work."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Neyin çalışmadığını söylemek istersen, o şeyi başa koyarsın."
+     },
+     {
+      "lang": "en",
+      "text": "My computer doesn't work."
+     },
+     {
+      "lang": "tr",
+      "text": "Bilgisayarım çalışmıyor."
+     },
+     {
+      "lang": "en",
+      "text": "The printer doesn't work."
+     },
+     {
+      "lang": "tr",
+      "text": "Yazıcı çalışmıyor. Kalıp hep aynı, sadece baştaki kelime değişiyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ama her sorun tam bozulma değil, değil mi? Bazen sadece çok yavaştır. İkinci kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "slow"
+     },
+     {
+      "lang": "tr",
+      "text": "Yavaş demek. Söyle bakalım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "slow"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Şunu İngilizce kur: Bilgisayarım çok yavaş."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My computer is very slow.",
+     "accept": [
+      "My computer is really slow.",
+      "My computer's very slow.",
+      "My computer is very slow",
+      "My laptop is very slow."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sahiplik ile başla: My computer. Sonra is. Sonra çok anlamında very. En sona yavaş."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karşındaki kişi genelde sorar: ne zaman başladı? Bunu geçmiş zamanla anlatırsın."
+     },
+     {
+      "lang": "en",
+      "text": "It started yesterday."
+     },
+     {
+      "lang": "tr",
+      "text": "Dün başladı."
+     },
+     {
+      "lang": "en",
+      "text": "It was fine last week."
+     },
+     {
+      "lang": "tr",
+      "text": "Geçen hafta iyiydi. Kısacık cümleler, ama tam olması gereken bilgi."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelimemiz, herkesin ilk verdiği tavsiye:"
+     },
+     {
+      "lang": "en",
+      "text": "restart"
+     },
+     {
+      "lang": "tr",
+      "text": "Yeniden başlatmak demek. Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "restart"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "en",
+      "text": "Did you restart it?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yeniden başlattın mı? Cevabın hazır olsun."
+     },
+     {
+      "lang": "en",
+      "text": "Yes, I restarted it twice."
+     },
+     {
+      "lang": "tr",
+      "text": "Evet, iki kere yeniden başlattım. Burada restarted, geçmiş zaman hali."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de şu çok kullanışlı: Zaten denedim demek istersen, İngilizce şöyle der:"
+     },
+     {
+      "lang": "en",
+      "text": "I've already restarted it."
+     },
+     {
+      "lang": "tr",
+      "text": "Zaten yeniden başlattım. Buradaki already, işi çoktan yaptığını gösterir. Bunu birazdan tekrar duyacaksın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dördüncü kelimemiz, bilgisayarda en çok konuştuğumuz şey:"
+     },
+     {
+      "lang": "en",
+      "text": "file"
+     },
+     {
+      "lang": "tr",
+      "text": "Dosya demek. Söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "file"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ve beşinci kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "save"
+     },
+     {
+      "lang": "tr",
+      "text": "Kaydetmek demek. Şimdi en korktuğumuz cümleyi söyleyelim:"
+     },
+     {
+      "lang": "en",
+      "text": "I didn't save the file."
+     },
+     {
+      "lang": "tr",
+      "text": "Dosyayı kaydetmedim. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I didn't save the file."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sonuç hâlâ ortadaysa, yani sorun şu an devam ediyorsa, İngilizce şu biçimi sever:"
+     },
+     {
+      "lang": "en",
+      "text": "The screen has frozen."
+     },
+     {
+      "lang": "tr",
+      "text": "Ekran dondu, hâlâ donuk."
+     },
+     {
+      "lang": "en",
+      "text": "I've lost my file."
+     },
+     {
+      "lang": "tr",
+      "text": "Dosyamı kaybettim, yani şu an elimde yok."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümleyi dinle ve karar ver: doğru mu?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "\"I've lost my file\" means I can't find my file now.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. I've lost my file, dosyayı kaybettim ve şu an bulamıyorum demek. Sonucu bugüne taşır."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi iki bilgiyi birleştirelim. Şunu kur: Bilgisayarımı yeniden başlattım ama hâlâ yavaş."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I restarted my computer, but it's still slow.",
+     "accept": [
+      "I restarted my computer but it is still slow.",
+      "I've already restarted my computer, but it's still slow.",
+      "I restarted my computer, but it's still very slow."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geçmiş zamanla başla: I restarted my computer. Sonra but. Hâlâ için still, en sona slow."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sorunu anlattın, şimdi yardım isteyeceksin. En kibar ve en kolay yol:"
+     },
+     {
+      "lang": "en",
+      "text": "Can you help me?"
+     },
+     {
+      "lang": "en",
+      "text": "Can you have a look at it?"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir bakabilir misin? İkisi de gayet doğal, iş yerinde de rahatça kullanırsın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. İki cümleyi arka arkaya söyle: Bana yardım edebilir misin? Bilgisayarım çalışmıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Can you help me? My computer doesn't work.",
+     "accept": [
+      "Can you help me? My computer isn't working.",
+      "Could you help me? My computer doesn't work.",
+      "Can you help me please? My computer doesn't work."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Rica için Can you help me? Sonra sorunu söyle: My computer, doesn't, work."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir şey: karşındaki genelde ne yapacağını söyler."
+     },
+     {
+      "lang": "en",
+      "text": "I'll look at it after lunch."
+     },
+     {
+      "lang": "tr",
+      "text": "Öğle yemeğinden sonra bakacağım."
+     },
+     {
+      "lang": "en",
+      "text": "I'm going to call the IT office."
+     },
+     {
+      "lang": "tr",
+      "text": "Bilgi işlemi arayacağım. Bu iki gelecek biçimini zaten biliyorsun, burada da aynı şekilde çalışıyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toparlayalım. Beş kelime aldın: work, slow, restart, file, save."
+     },
+     {
+      "lang": "tr",
+      "text": "Üç kalıp cebinde: It doesn't work. My computer is very slow. I've already restarted it."
+     },
+     {
+      "lang": "tr",
+      "text": "Sorunu söyle, ne denediğini anlat, sonra yardım iste. Şimdi bunu gerçek bir konuşmada deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İş yerindesin ve bilgisayarın sabahtan beri çok yavaş. Bilgi işlemden bir görevli masana geliyor.",
+   "partner": "bilgi işlem görevlisi",
+   "opening": "Hi! You called about your computer. What's the problem?",
+   "openingTr": "Merhaba! Bilgisayarın için aramıştın. Sorun ne?",
+   "goal": "Sorunun ne olduğunu anlat, ne zaman başladığını söyle, yeniden başlattığını belirt ve kaydedilmemiş dosyan için yardım iste.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-apps",
+  "level": "A2",
+  "course": "en",
+  "icon": "tech",
+  "title": "Useful apps",
+  "titleTr": "İşe yarar uygulamalar",
+  "summary": "Bir uygulamanın ne işe yaradığını \"to\" ve \"for\" ile amaç belirterek anlatmayı öğretir.",
+  "minutes": 9,
+  "focusId": "Purpose clauses",
+  "vocab": [
+   {
+    "de": "app",
+    "tr": "uygulama"
+   },
+   {
+    "de": "download",
+    "tr": "indirmek"
+   },
+   {
+    "de": "install",
+    "tr": "kurmak"
+   },
+   {
+    "de": "useful",
+    "tr": "faydalı"
+   },
+   {
+    "de": "free",
+    "tr": "ücretsiz"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I use this app to …",
+    "tr": "bir uygulamayı ne amaçla kullandığını söylerken kullanılır"
+   },
+   {
+    "de": "It's for …-ing",
+    "tr": "bir şeyin ne işe yaradığını tek cümlede anlatır"
+   },
+   {
+    "de": "I downloaded it to …",
+    "tr": "bir uygulamayı neden indirdiğini açıklar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün telefonundaki uygulamalardan konuşacağız."
+     },
+     {
+      "lang": "tr",
+      "text": "Dersin sonunda bir uygulamanın ne işe yaradığını İngilizce olarak rahatça anlatabileceksin."
+     },
+     {
+      "lang": "tr",
+      "text": "Hazırsan başlıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İngilizcede bir şeyin amacını söylemek çok kolay. Fiilin önüne küçücük bir kelime koyuyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "to"
+     },
+     {
+      "lang": "tr",
+      "text": "Buradaki 'to' bizim 'için' dediğimiz şey. 'to learn' yani 'öğrenmek için'."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "app"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi 'uygulama' demek. Telefonda kullandığımız uygulamalar. Lütfen tek bir uygulamadan bahsedelim:"
+     },
+     {
+      "lang": "en",
+      "text": "an app"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "an app"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de bu kelime lazım:"
+     },
+     {
+      "lang": "en",
+      "text": "useful"
+     },
+     {
+      "lang": "tr",
+      "text": "'Faydalı, işe yarar' demek. Şimdi tam bir cümle söyleyelim:"
+     },
+     {
+      "lang": "en",
+      "text": "This app is very useful."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Bu uygulama çok faydalı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This app is very useful."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kalbine geldik. Bir uygulamayı neden kullandığını söylemek için şu kalıbı kuruyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "I use this app to …"
+     },
+     {
+      "lang": "tr",
+      "text": "'to' dedikten sonra fiilin en yalın hâli gelir. Çekim yok, ek yok. Sadece 'to' ve fiil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Örneğimiz şu:"
+     },
+     {
+      "lang": "en",
+      "text": "I use this app to learn English."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Bu uygulamayı İngilizce öğrenmek için kullanıyorum. Lütfen sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I use this app to learn English."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı kalıpla istediğin kadar cümle kurabilirsin. Dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "I use this app to find cheap tickets."
+     },
+     {
+      "lang": "en",
+      "text": "I use this app to talk to my family."
+     },
+     {
+      "lang": "tr",
+      "text": "Gördüğün gibi değişen tek şey 'to'dan sonraki fiil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Şunu İngilizce söyle: Bu uygulamayı otobüs saatlerini kontrol etmek için kullanıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I use this app to check the bus times.",
+     "accept": [
+      "I use this app to check bus times.",
+      "I use this app to check the bus schedule."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kalıp: I use this app to …"
+      },
+      {
+       "lang": "en",
+       "text": "check the bus times"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi iki kelime daha. Bir uygulamayı önce internetten alırsın:"
+     },
+     {
+      "lang": "en",
+      "text": "download"
+     },
+     {
+      "lang": "tr",
+      "text": "'indirmek' demek. Sonra telefonuna kurarsın:"
+     },
+     {
+      "lang": "en",
+      "text": "install"
+     },
+     {
+      "lang": "tr",
+      "text": "'kurmak' demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bunları geçmiş zamanda da kullanacaksın. Dinle ve tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I downloaded it last week."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Onu geçen hafta indirdim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I downloaded it last week."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Amaç kalıbını geçmiş zamanla birleştirmek çok doğal. Bak:"
+     },
+     {
+      "lang": "en",
+      "text": "I downloaded it to learn new words."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Onu yeni kelimeler öğrenmek için indirdim. Cümlenin başı geçmişte, ama 'to'dan sonrası yine yalın fiil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir uygulamanın en güzel tarafı da bu kelimeyle anlatılır:"
+     },
+     {
+      "lang": "en",
+      "text": "free"
+     },
+     {
+      "lang": "tr",
+      "text": "'ücretsiz, bedava' demek. Lütfen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The app is free."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The app is free."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Amacı anlatmanın ikinci bir yolu daha var:"
+     },
+     {
+      "lang": "en",
+      "text": "for"
+     },
+     {
+      "lang": "tr",
+      "text": "Ama dikkat! 'for'dan sonra fiil yalın gelmez, sonuna -ing eklenir. 'for learning', 'for taking'."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu kalıp uygulamayı tanıtmak için harika:"
+     },
+     {
+      "lang": "en",
+      "text": "It's for taking notes."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani: Not almak için. Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It's for taking notes."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Farkı kafana kazıyalım: 'to' derken fiili yalın bırakırsın, 'for' derken -ing eklersin."
+     },
+     {
+      "lang": "en",
+      "text": "I use it to take notes."
+     },
+     {
+      "lang": "en",
+      "text": "It's for taking notes."
+     },
+     {
+      "lang": "tr",
+      "text": "İkisi de doğru, ikisi de aynı anlama geliyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Deneyelim. 'for' kalıbıyla şunu söyle: Bu uygulama fotoğraf düzenlemek için."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It's for editing photos.",
+     "accept": [
+      "This app is for editing photos.",
+      "It is for editing photos.",
+      "This app is for editing pictures."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'for'dan sonra fiile -ing ekle"
+      },
+      {
+       "lang": "en",
+       "text": "editing photos"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kısa bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "I use this app for book flights."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I use this app for book flights.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. 'for'dan sonra fiil -ing almalı."
+      },
+      {
+       "lang": "en",
+       "text": "I use this app for booking flights."
+      },
+      {
+       "lang": "tr",
+       "text": "Ya da 'to' ile: I use this app to book flights."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir tane. Şunu söyle: Onu İngilizce pratik yapmak için indirdim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I downloaded it to practise English.",
+     "accept": [
+      "I downloaded it to practice English.",
+      "I downloaded the app to practise English.",
+      "I downloaded it for practising English."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geçmiş zaman: I downloaded it …"
+      },
+      {
+       "lang": "en",
+       "text": "to practise English"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harikasın. Bugün bir uygulamanın ne işe yaradığını iki yolla anlatmayı öğrendik:"
+     },
+     {
+      "lang": "en",
+      "text": "I use this app to learn English."
+     },
+     {
+      "lang": "en",
+      "text": "It's for taking notes."
+     },
+     {
+      "lang": "tr",
+      "text": "Kelimelerimiz: app, download, install, useful, free."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunu gerçek bir konuşmada kullanalım."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşın telefonuna yeni bir uygulama arıyor ve senin önerini istiyor. Ona hangi uygulamayı kullandığını, ne işe yaradığını ve ücretsiz olup olmadığını anlatıyorsun.",
+   "partner": "uygulama önerisi isteyen arkadaşın",
+   "opening": "Hey, my phone is so empty. Do you know any good apps?",
+   "openingTr": "Selam, telefonum bomboş. İyi uygulama biliyor musun?",
+   "goal": "Bir uygulamayı önerip ne için kullandığını 'to' veya 'for' ile en az iki kez anlatırsan ve ücretsiz olup olmadığını söylersen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-online-safety",
+  "level": "A2",
+  "course": "en",
+  "icon": "key",
+  "title": "Passwords and safety",
+  "titleTr": "Şifre ve güvenlik",
+  "summary": "İnternette güvenlik konusunda \"should / shouldn't\" ve \"Be careful with…\" ile öneri vermeyi öğretir.",
+  "minutes": 9,
+  "focusId": "Advice",
+  "vocab": [
+   {
+    "de": "password",
+    "tr": "parola"
+   },
+   {
+    "de": "safe",
+    "tr": "güvenli"
+   },
+   {
+    "de": "private",
+    "tr": "şahsi"
+   },
+   {
+    "de": "secret",
+    "tr": "sır"
+   },
+   {
+    "de": "careful",
+    "tr": "dikkatli"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "You should change your password.",
+    "tr": "birine bir şey yapmasını önerirken kullanılır"
+   },
+   {
+    "de": "You shouldn't share your password.",
+    "tr": "birine bir şeyi yapmamasını önerirken kullanılır"
+   },
+   {
+    "de": "Be careful with public wifi.",
+    "tr": "neye dikkat etmesi gerektiğini söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba. Bugün internette güvenlik hakkında konuşacağız: parolalar, şahsi bilgiler ve birine tavsiye verme."
+     },
+     {
+      "lang": "tr",
+      "text": "Ders sonunda \"Parolanı değiştirmelisin\" ya da \"Bunu kimseyle paylaşma\" diyebileceksin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz konunun kalbi."
+     },
+     {
+      "lang": "en",
+      "text": "password"
+     },
+     {
+      "lang": "tr",
+      "text": "Parola demek. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "password"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "password"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İyi bir parola için İngilizcede genelde \"strong\" denir, yani güçlü."
+     },
+     {
+      "lang": "en",
+      "text": "a strong password"
+     },
+     {
+      "lang": "tr",
+      "text": "Zayıf parola ise \"a weak password\". Mesela:"
+     },
+     {
+      "lang": "en",
+      "text": "My password is very weak."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelime:"
+     },
+     {
+      "lang": "en",
+      "text": "safe"
+     },
+     {
+      "lang": "tr",
+      "text": "Güvenli demek. Sen söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "safe"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "safe"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bunu bir şeyin güvenli olup olmadığını söylerken kullanırsın."
+     },
+     {
+      "lang": "en",
+      "text": "This website is not safe."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu site güvenli değil. Ya da tam tersi:"
+     },
+     {
+      "lang": "en",
+      "text": "Your money is safe here."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi iki yakın kelime. Birincisi:"
+     },
+     {
+      "lang": "en",
+      "text": "private"
+     },
+     {
+      "lang": "tr",
+      "text": "Şahsi, özel demek. Söyle bakalım:"
+     },
+     {
+      "lang": "en",
+      "text": "private"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "private"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkincisi:"
+     },
+     {
+      "lang": "en",
+      "text": "secret"
+     },
+     {
+      "lang": "tr",
+      "text": "Sır demek. \"Private\" sana ait olan bilgidir; \"secret\" ise kimsenin bilmemesi gereken bilgidir."
+     },
+     {
+      "lang": "en",
+      "text": "Your address is private. Your password is secret."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "careful"
+     },
+     {
+      "lang": "tr",
+      "text": "Dikkatli demek. Sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "careful"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "careful"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi bugünün asıl işine geçiyoruz: tavsiye vermek."
+     },
+     {
+      "lang": "tr",
+      "text": "İngilizcede birine bir şey öner_mek için \"should\" kullanılır. Türkçedeki -meli, -malı gibi."
+     },
+     {
+      "lang": "en",
+      "text": "You should change your password."
+     },
+     {
+      "lang": "tr",
+      "text": "Parolanı değiştirmelisin. Dikkat: \"should\" tan sonra fiil yalın haldedir, \"to\" yok."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "You should change your password."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You should change your password."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Arkadaşına şunu söyle: \"Güçlü bir parola kullanmalısın.\""
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "You should use a strong password.",
+     "accept": [
+      "You should use a strong password",
+      "You should use strong passwords."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"You should\" ile başla, sonra kullanmak fiili:"
+      },
+      {
+       "lang": "en",
+       "text": "use"
+      },
+      {
+       "lang": "tr",
+       "text": "ve güçlü bir parola:"
+      },
+      {
+       "lang": "en",
+       "text": "a strong password"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Peki bir şeyi yapmamasını önereceksen? O zaman \"shouldn't\" dersin."
+     },
+     {
+      "lang": "en",
+      "text": "You shouldn't share your password with anyone."
+     },
+     {
+      "lang": "tr",
+      "text": "Parolanı kimseyle paylaşmamalısın. \"Share\" paylaşmak, \"anyone\" ise burada \"hiç kimse\" anlamına gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tekrar et lütfen:"
+     },
+     {
+      "lang": "en",
+      "text": "You shouldn't share your password with anyone."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You shouldn't share your password with anyone."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: \"Aynı parolayı her yerde kullanmamalısın.\" Yani her hesap için aynısını değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "You shouldn't use the same password everywhere.",
+     "accept": [
+      "You shouldn't use the same password for everything.",
+      "You should not use the same password everywhere."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olumsuz öneri:"
+      },
+      {
+       "lang": "en",
+       "text": "You shouldn't"
+      },
+      {
+       "lang": "tr",
+       "text": "aynı parola:"
+      },
+      {
+       "lang": "en",
+       "text": "the same password"
+      },
+      {
+       "lang": "tr",
+       "text": "her yerde:"
+      },
+      {
+       "lang": "en",
+       "text": "everywhere"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tavsiye kalıbı daha, çok kullanışlı:"
+     },
+     {
+      "lang": "en",
+      "text": "Be careful with"
+     },
+     {
+      "lang": "tr",
+      "text": "Neye dikkat etmesi gerektiğini söylerken kullanırsın. Örnek:"
+     },
+     {
+      "lang": "en",
+      "text": "Be careful with strange emails."
+     },
+     {
+      "lang": "tr",
+      "text": "Tuhaf e-postalara dikkat et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Be careful with strange emails."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de linkler için sık duyacağın bir cümle:"
+     },
+     {
+      "lang": "en",
+      "text": "Don't click on links from people you don't know."
+     },
+     {
+      "lang": "tr",
+      "text": "Tanımadığın kişilerden gelen linklere tıklama. \"Click on\" tıklamak demek."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sen söyle: \"Halka açık wifi konusunda dikkatli ol.\""
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Be careful with public wifi.",
+     "accept": [
+      "Be careful with public wifi",
+      "You should be careful with public wifi.",
+      "Be careful with the public wifi."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Dikkatli ol:"
+      },
+      {
+       "lang": "en",
+       "text": "Be careful with"
+      },
+      {
+       "lang": "tr",
+       "text": "halka açık wifi:"
+      },
+      {
+       "lang": "en",
+       "text": "public wifi"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi küçük bir kontrol. Şu cümle iyi bir tavsiye mi? Doğru mu, yanlış mı?"
+     },
+     {
+      "lang": "en",
+      "text": "You should write your password on your phone."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "You should write your password on your phone.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Parola sır olarak kalmalı, telefona yazılmamalı. Doğrusu şöyle olurdu:"
+      },
+      {
+       "lang": "en",
+       "text": "You shouldn't write your password on your phone. Keep it secret."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son bir şey: bir kural kesinse \"must\" ve \"mustn't\" da duyarsın."
+     },
+     {
+      "lang": "en",
+      "text": "You must change this password today."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu daha sert bir zorunluluktur. \"Should\" ise dostça bir tavsiyedir; günlük konuşmada çoğunlukla \"should\" kullanırsın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kelimeler password, safe, private, secret ve careful."
+     },
+     {
+      "lang": "tr",
+      "text": "Tavsiye için \"You should…\", olumsuz tavsiye için \"You shouldn't…\", uyarı için \"Be careful with…\"."
+     },
+     {
+      "lang": "en",
+      "text": "You should use a strong password, and you shouldn't share it with anyone."
+     },
+     {
+      "lang": "tr",
+      "text": "Güzel iş çıkardın. Şimdi bunu bir konuşmada deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Arkadaşının sosyal medya hesabı çalınmış. Panik halinde sana yazıyor ve ne yapması gerektiğini soruyor. Ona güvenlik önerileri veriyorsun.",
+   "partner": "hesabı çalınmış arkadaşın Chris",
+   "opening": "Someone got into my account! What should I do?",
+   "openingTr": "Birisi hesabıma girdi! Ne yapmalıyım?",
+   "goal": "Arkadaşına en az üç öneri vermen yeterli: should, shouldn't ve 'be careful with' kalıplarını kullanarak parolasını değiştirmesini, kimseyle paylaşmamasını ve nelere dikkat etmesi gerektiğini söylemelisin.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-video-call",
+  "level": "A2",
+  "course": "en",
+  "icon": "phone",
+  "title": "A video call",
+  "titleTr": "Görüntülü görüşme",
+  "summary": "Görüntülü aramada ses, bağlantı ve kamera sorunlarını İngilizce anlatmayı ve söz sırasını nazikçe devretmeyi öğretir.",
+  "minutes": 9,
+  "focusId": "Turn-taking",
+  "vocab": [
+   {
+    "de": "call",
+    "tr": "telefon etmek, arama"
+   },
+   {
+    "de": "connection",
+    "tr": "bağlantı"
+   },
+   {
+    "de": "hear",
+    "tr": "duymak"
+   },
+   {
+    "de": "camera",
+    "tr": "kamera"
+   },
+   {
+    "de": "again",
+    "tr": "yine, tekrar"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Can you hear me?",
+    "tr": "karşındakinin seni duyup duymadığını sorarken kullanılır"
+   },
+   {
+    "de": "Sorry, could you say that again?",
+    "tr": "anlamadığında bir şeyin tekrar edilmesini isterken kullanılır"
+   },
+   {
+    "de": "Sorry, go ahead.",
+    "tr": "aynı anda konuşmaya başladığınızda sözü karşına bırakırken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün görüntülü görüşme dersindeyiz. Ses gitmediğinde, görüntü donduğunda ya da aynı anda konuşmaya başladığınızda ne diyeceğini öğreneceksin."
+     },
+     {
+      "lang": "tr",
+      "text": "Kulaklığını tak, hazırsan başlayalım. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Önce görüşmenin kendisine bir isim verelim. İngilizcede görüntülü görüşmeye"
+     },
+     {
+      "lang": "en",
+      "text": "a video call"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. Yani \"görüntülü arama\"."
+     },
+     {
+      "lang": "tr",
+      "text": "Görüşme sırasında olduğunu anlatmak için de şunu dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm on a video call."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani \"görüntülü bir görüşmedeyim\". Dikkat et, burada"
+     },
+     {
+      "lang": "en",
+      "text": "on"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılıyor, \"in\" değil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Lütfen şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm on a video call."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I'm on a video call."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Görüşme başladı ama ses gelmiyor. En çok işine yarayacak cümle bu:"
+     },
+     {
+      "lang": "en",
+      "text": "Can you hear me?"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Beni duyabiliyor musun?\" demek."
+     },
+     {
+      "lang": "tr",
+      "text": "Duymak fiili"
+     },
+     {
+      "lang": "en",
+      "text": "hear"
+     },
+     {
+      "lang": "tr",
+      "text": ". Lütfen tüm soruyu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Can you hear me?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Can you hear me?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karşı taraf duymuyorsa cevap da hazır olsun:"
+     },
+     {
+      "lang": "en",
+      "text": "No, I can't hear you."
+     },
+     {
+      "lang": "tr",
+      "text": "\"Hayır, seni duyamıyorum.\""
+     },
+     {
+      "lang": "tr",
+      "text": "Ses kesik kesik geliyorsa şunu dersin:"
+     },
+     {
+      "lang": "en",
+      "text": "Your voice is breaking up."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani \"sesin kesiliyor\"."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sorunun sebebi genelde bağlantıdır. Bağlantı"
+     },
+     {
+      "lang": "en",
+      "text": "connection"
+     },
+     {
+      "lang": "tr",
+      "text": "demek. Kötü bağlantıyı anlatmak için lütfen şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The connection is bad."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The connection is bad."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de görüntü tarafı var. Kamera İngilizcede"
+     },
+     {
+      "lang": "en",
+      "text": "camera"
+     },
+     {
+      "lang": "tr",
+      "text": ", neredeyse aynı."
+     },
+     {
+      "lang": "tr",
+      "text": "Kameran çalışmıyorsa bunu söylersin:"
+     },
+     {
+      "lang": "en",
+      "text": "My camera isn't working."
+     },
+     {
+      "lang": "tr",
+      "text": "Açmak istersen de:"
+     },
+     {
+      "lang": "en",
+      "text": "Let me turn on my camera."
+     },
+     {
+      "lang": "tr",
+      "text": "Kapatmak için \"turn on\" yerine \"turn off\" dersin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "My camera isn't working."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My camera isn't working."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi cümleyi kendin kur. Karşındakine \"Beni duyabiliyor musun?\" diye sormak istiyorsun. Nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Can you hear me?",
+     "accept": [
+      "Can you hear me",
+      "Can you hear me now?",
+      "Can you hear me now"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Can\" ile başla, sonra"
+      },
+      {
+       "lang": "en",
+       "text": "you hear me"
+      },
+      {
+       "lang": "tr",
+       "text": "gelsin."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin asıl konusuna geliyoruz: söz sırası."
+     },
+     {
+      "lang": "tr",
+      "text": "Görüntülü görüşmede ses gecikir ve ikiniz aynı anda konuşmaya başlarsınız. İngilizcede bu durumun hazır bir çözümü var."
+     },
+     {
+      "lang": "tr",
+      "text": "Sözü karşına bırakmak için:"
+     },
+     {
+      "lang": "en",
+      "text": "Sorry, go ahead."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani \"pardon, sen devam et\". Çok kibar ve çok yaygındır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Sorry, go ahead."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Sorry, go ahead."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıranın sende kalmasını istiyorsan da nazik bir kalıp var:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I finish, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Bitirebilir miyim?\" demek."
+     },
+     {
+      "lang": "tr",
+      "text": "Söze girmek içinse:"
+     },
+     {
+      "lang": "en",
+      "text": "Can I say something?"
+     },
+     {
+      "lang": "tr",
+      "text": "Yani \"bir şey söyleyebilir miyim?\""
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Anlamadığın bir yer olduğunda tekrar istemen gerekir. \"Tekrar\" kelimesi"
+     },
+     {
+      "lang": "en",
+      "text": "again"
+     },
+     {
+      "lang": "tr",
+      "text": ". Önemli bir nokta: İngilizcede \"again\" cümlenin sonuna gider."
+     },
+     {
+      "lang": "tr",
+      "text": "Doğrusu şudur:"
+     },
+     {
+      "lang": "en",
+      "text": "Sorry, could you say that again?"
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Sorry, could you say that again?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de yavaşlatmak istersen:"
+     },
+     {
+      "lang": "en",
+      "text": "Could you speak more slowly, please?"
+     },
+     {
+      "lang": "tr",
+      "text": "\"Biraz daha yavaş konuşabilir misin?\" demek. Görüntülü görüşmelerde bu cümle hayat kurtarır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. Karşındakinin son cümlesini anlamadın ve tekrar etmesini istiyorsun. Nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Could you say that again?",
+     "accept": [
+      "Could you say that again",
+      "Can you say that again?",
+      "Can you say that again",
+      "Sorry, could you say that again?",
+      "Sorry, can you say that again?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"Could you\" ile başla,"
+      },
+      {
+       "lang": "en",
+       "text": "again"
+      },
+      {
+       "lang": "tr",
+       "text": "kelimesini en sona koy."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Sana bir İngilizce cümle söyleyeceğim, doğru mu söyle."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Sorry, say again that, please.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Kelime sırası bozuk."
+      },
+      {
+       "lang": "en",
+       "text": "again"
+      },
+      {
+       "lang": "tr",
+       "text": "her zaman sona gider. Doğrusu:"
+      },
+      {
+       "lang": "en",
+       "text": "Sorry, could you say that again?"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bağlantı hiç düzelmiyorsa görüşmeyi bitirip sonra tekrar aramak gerekir."
+     },
+     {
+      "lang": "tr",
+      "text": "Aramak fiili"
+     },
+     {
+      "lang": "en",
+      "text": "call"
+     },
+     {
+      "lang": "tr",
+      "text": ". Geri aramak ise"
+     },
+     {
+      "lang": "en",
+      "text": "call back"
+     },
+     {
+      "lang": "tr",
+      "text": ". Gelecek için \"will\" kullanıyoruz:"
+     },
+     {
+      "lang": "en",
+      "text": "I'll call you back in five minutes."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani \"seni beş dakika sonra tekrar arayacağım\". Buradaki \"in\", \"…sonra\" anlamındadır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son cümleyi sen kur. Bağlantı çok kötü ve beş dakika sonra tekrar arayacağını söylemek istiyorsun."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I'll call you back in five minutes.",
+     "accept": [
+      "I'll call you back in five minutes",
+      "I will call you back in five minutes.",
+      "I will call you back in five minutes",
+      "I'll call you back in 5 minutes.",
+      "I'll call back in five minutes."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "\"I'll\" ile başla, sonra"
+      },
+      {
+       "lang": "en",
+       "text": "call you back"
+      },
+      {
+       "lang": "tr",
+       "text": ", en sonda süre:"
+      },
+      {
+       "lang": "en",
+       "text": "in five minutes"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harika iş çıkardın. Kısaca toparlayalım: ses için"
+     },
+     {
+      "lang": "en",
+      "text": "Can you hear me?"
+     },
+     {
+      "lang": "tr",
+      "text": ", bağlantı için"
+     },
+     {
+      "lang": "en",
+      "text": "The connection is bad."
+     },
+     {
+      "lang": "tr",
+      "text": ", görüntü için"
+     },
+     {
+      "lang": "en",
+      "text": "My camera isn't working."
+     },
+     {
+      "lang": "tr",
+      "text": "Söz sırası karıştığında"
+     },
+     {
+      "lang": "en",
+      "text": "Sorry, go ahead."
+     },
+     {
+      "lang": "tr",
+      "text": ", anlamadığında"
+     },
+     {
+      "lang": "en",
+      "text": "Could you say that again?"
+     },
+     {
+      "lang": "tr",
+      "text": "ve kapatırken"
+     },
+     {
+      "lang": "en",
+      "text": "I'll call you back."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bunları gerçek bir görüşmede deneyelim."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yurt dışındaki bir iş arkadaşınla görüntülü görüşmedesin, ama bağlantı kötü: ses kesiliyor ve kameran açılmıyor. Sorunları anlat, anlamadığın yerleri tekrar ettir ve gerekirse sonra tekrar aramayı öner.",
+   "partner": "görüşmeyi yapan iş arkadaşın Emma",
+   "opening": "Hi! Can you hear me? I think your voice is breaking up.",
+   "openingTr": "Merhaba! Beni duyabiliyor musun? Sanırım sesin kesiliyor.",
+   "goal": "Ses ve kamera sorununu anlattıysan, en az bir kez tekrar istediysen veya sözü nazikçe devrettiysen ve görüşmeyi bir plan söyleyerek kapattıysan başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-tech-opinions",
+  "level": "A2",
+  "course": "en",
+  "icon": "tech",
+  "title": "What I think about technology",
+  "titleTr": "Teknoloji hakkında",
+  "summary": "Teknoloji üzerine fikrini söylemeyi, karşındakine katılmayı ya da katılmamayı ve \"duruma bağlı\" demeyi öğreniyorsun.",
+  "minutes": 9,
+  "focusId": "Opinions",
+  "vocab": [
+   {
+    "de": "think",
+    "tr": "düşünmek"
+   },
+   {
+    "de": "agree",
+    "tr": "hemfikir olmak"
+   },
+   {
+    "de": "useful",
+    "tr": "faydalı"
+   },
+   {
+    "de": "waste",
+    "tr": "atık, kayıp"
+   },
+   {
+    "de": "depend",
+    "tr": "bağlı olmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I think phones are useful.",
+    "tr": "kendi fikrini söylerken kullanılır"
+   },
+   {
+    "de": "I agree with you.",
+    "tr": "karşındakine katıldığını söylerken kullanılır"
+   },
+   {
+    "de": "It depends on the app.",
+    "tr": "tek bir cevap yok, duruma bağlı demek için kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün teknoloji hakkında fikrini İngilizce söylemeyi öğreneceğiz: bir şeyi faydalı mı buluyorsun, zaman kaybı mı, ve karşındakine katılıyor musun katılmıyor musun. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz"
+     },
+     {
+      "lang": "en",
+      "text": "useful"
+     },
+     {
+      "lang": "tr",
+      "text": "— faydalı, işe yarar demek. Lütfen sen de söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "useful"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "useful"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi fikir söylemenin en kolay yolu:"
+     },
+     {
+      "lang": "en",
+      "text": "I think"
+     },
+     {
+      "lang": "tr",
+      "text": "— bence, ben şöyle düşünüyorum. Arkasına düz bir cümle koyarsın, o kadar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Mesela telefonlar hakkında fikrin şu olsun:"
+     },
+     {
+      "lang": "en",
+      "text": "I think phones are useful."
+     },
+     {
+      "lang": "tr",
+      "text": "Bence telefonlar faydalı. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I think phones are useful."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Fikrini yumuşatmak istersen"
+     },
+     {
+      "lang": "en",
+      "text": "very"
+     },
+     {
+      "lang": "tr",
+      "text": "veya"
+     },
+     {
+      "lang": "en",
+      "text": "not very"
+     },
+     {
+      "lang": "tr",
+      "text": "eklersin:"
+     },
+     {
+      "lang": "en",
+      "text": "I think this app is very useful."
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "I think this app is not very useful."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi ilk cümleni kendin kur. Bence sosyal medya faydalı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I think social media is useful.",
+     "accept": [
+      "I think that social media is useful.",
+      "I think social media is very useful."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bence ile başla:"
+      },
+      {
+       "lang": "en",
+       "text": "I think"
+      },
+      {
+       "lang": "tr",
+       "text": "sonra sosyal medya:"
+      },
+      {
+       "lang": "en",
+       "text": "social media is useful"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Şimdi karşındaki insan konuşuyor ve sen ona katılıyorsun. Bunun kelimesi"
+     },
+     {
+      "lang": "en",
+      "text": "agree"
+     },
+     {
+      "lang": "tr",
+      "text": "— hemfikir olmak."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "En sık kullanılan hâli şu:"
+     },
+     {
+      "lang": "en",
+      "text": "I agree with you."
+     },
+     {
+      "lang": "tr",
+      "text": "Sana katılıyorum. Dikkat et, İngilizcede"
+     },
+     {
+      "lang": "en",
+      "text": "with"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır. Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I agree with you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Katılmıyorsan başına sadece"
+     },
+     {
+      "lang": "en",
+      "text": "don't"
+     },
+     {
+      "lang": "tr",
+      "text": "koy:"
+     },
+     {
+      "lang": "en",
+      "text": "I don't agree with you."
+     },
+     {
+      "lang": "tr",
+      "text": "Daha kibar bir seçenek de var:"
+     },
+     {
+      "lang": "en",
+      "text": "I'm not sure about that."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyi boşuna, gereksiz buluyorsan İngilizler şu kalıbı sever:"
+     },
+     {
+      "lang": "en",
+      "text": "a waste of time"
+     },
+     {
+      "lang": "tr",
+      "text": "— zaman kaybı. Kelimenin kendisi"
+     },
+     {
+      "lang": "en",
+      "text": "waste"
+     },
+     {
+      "lang": "tr",
+      "text": "— israf, kayıp."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tam cümlesi şöyle:"
+     },
+     {
+      "lang": "en",
+      "text": "It's a waste of time."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu zaman kaybı. Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It's a waste of time."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Örnek:"
+     },
+     {
+      "lang": "en",
+      "text": "I played that game for two hours yesterday. It was a waste of time."
+     },
+     {
+      "lang": "tr",
+      "text": "Dün o oyunu iki saat oynadım. Zaman kaybıydı."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. Katılmadığını söyle ve sebebini ekle: Katılmıyorum. Bence zaman kaybı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I don't agree. I think it's a waste of time.",
+     "accept": [
+      "I don't agree. I think it is a waste of time.",
+      "I don't agree with you. I think it's a waste of time.",
+      "I disagree. I think it's a waste of time."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce katılmadığını söyle:"
+      },
+      {
+       "lang": "en",
+       "text": "I don't agree."
+      },
+      {
+       "lang": "tr",
+       "text": "sonra sebebi:"
+      },
+      {
+       "lang": "en",
+       "text": "I think it's a waste of time."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bazen cevap net değildir: duruma bağlıdır. Bunun için"
+     },
+     {
+      "lang": "en",
+      "text": "depend"
+     },
+     {
+      "lang": "tr",
+      "text": "fiilini kullanırız. Tek başına cümlesi çok kısa:"
+     },
+     {
+      "lang": "en",
+      "text": "It depends."
+     },
+     {
+      "lang": "tr",
+      "text": "Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It depends."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Neye bağlı olduğunu eklemek istersen"
+     },
+     {
+      "lang": "en",
+      "text": "on"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "It depends on the app."
+     },
+     {
+      "lang": "tr",
+      "text": "Uygulamaya bağlı. Ya da"
+     },
+     {
+      "lang": "en",
+      "text": "It depends on the person."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük bir kontrol. Şu cümle doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "\"It depends.\" means \"I am sure.\"",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış."
+      },
+      {
+       "lang": "en",
+       "text": "It depends."
+      },
+      {
+       "lang": "tr",
+       "text": "emin olduğunu değil, cevabın duruma göre değiştiğini söyler. Emin olduğunda"
+      },
+      {
+       "lang": "en",
+       "text": "I'm sure."
+      },
+      {
+       "lang": "tr",
+       "text": "dersin."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir de karşındakinin fikrini sormalısın. Soru kalıbı şu:"
+     },
+     {
+      "lang": "en",
+      "text": "What do you think?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sen ne düşünüyorsun? Lütfen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What do you think?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Konuyu da eklemek istersen"
+     },
+     {
+      "lang": "en",
+      "text": "about"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanırsın. Şimdi sen sor: Bilgisayar oyunları hakkında ne düşünüyorsun?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What do you think about computer games?",
+     "accept": [
+      "What do you think of computer games?",
+      "What do you think about video games?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Soru şöyle başlar:"
+      },
+      {
+       "lang": "en",
+       "text": "What do you think about"
+      },
+      {
+       "lang": "tr",
+       "text": "sonra konu:"
+      },
+      {
+       "lang": "en",
+       "text": "computer games"
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hepsini birleştiren küçük bir konuşma dinle:"
+     },
+     {
+      "lang": "en",
+      "text": "What do you think about social media? — I think it's a waste of time. — I don't agree. I think it's useful for work. — Yes, it depends on the app."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özet: fikrini"
+     },
+     {
+      "lang": "en",
+      "text": "I think"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylersin, katılırsan"
+     },
+     {
+      "lang": "en",
+      "text": "I agree with you"
+     },
+     {
+      "lang": "tr",
+      "text": "katılmazsan"
+     },
+     {
+      "lang": "en",
+      "text": "I don't agree"
+     },
+     {
+      "lang": "tr",
+      "text": "dersin. Bir şey faydalıysa"
+     },
+     {
+      "lang": "en",
+      "text": "useful"
+     },
+     {
+      "lang": "tr",
+      "text": "boşunaysa"
+     },
+     {
+      "lang": "en",
+      "text": "a waste of time"
+     },
+     {
+      "lang": "tr",
+      "text": "ve emin değilsen"
+     },
+     {
+      "lang": "en",
+      "text": "It depends."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi sohbette bunları kullan."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir kafede arkadaşınla telefonlar ve sosyal medya hakkında sohbet ediyorsun. O sosyal medyanın zaman kaybı olduğunu düşünüyor, sen fikrini söyleyip katılıyor ya da katılmıyorsun.",
+   "partner": "fikirlerini açıkça söyleyen bir arkadaş",
+   "opening": "I think social media is a waste of time. What do you think?",
+   "openingTr": "Bence sosyal medya zaman kaybı. Sen ne düşünüyorsun?",
+   "goal": "En az bir kez kendi fikrini I think ile söylediysen, bir kez katıldığını ya da katılmadığını belirttiysen ve bir kez de It depends ya da bir soruyla karşındakinin fikrini aldıysan konuşma başarılıdır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-a2-tech-help",
+  "level": "A2",
+  "course": "en",
+  "icon": "tech",
+  "title": "Explaining how to do it",
+  "titleTr": "Nasıl yapıldığını anlatmak",
+  "summary": "Birine bir şeyin nasıl yapıldığını adım adım anlatmayı, emir cümleleri ve sıra sözcükleriyle yönerge vermeyi öğreniyorsun.",
+  "minutes": 8,
+  "focusId": "Imperatives + sequence",
+  "vocab": [
+   {
+    "de": "first",
+    "tr": "ilk; önce"
+   },
+   {
+    "de": "press",
+    "tr": "basmak"
+   },
+   {
+    "de": "choose",
+    "tr": "seçim yapmak"
+   },
+   {
+    "de": "wait",
+    "tr": "beklemek"
+   },
+   {
+    "de": "done",
+    "tr": "tamam"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "First, press the button.",
+    "tr": "ilk adımı söylerken kullanılır"
+   },
+   {
+    "de": "Then choose your language.",
+    "tr": "sonraki adımı sıraya koyarken kullanılır"
+   },
+   {
+    "de": "Don't press it twice.",
+    "tr": "bir şeyi yapmamasını söylerken kullanılır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir şeyin nasıl yapıldığını adım adım anlatmayı öğreneceğiz. Yani: önce şuna bas, sonra şunu seç, sonra biraz bekle, tamam."
+     },
+     {
+      "lang": "tr",
+      "text": "Telefon, uygulama, kahve makinesi... birine yardım ederken sürekli lazım olacak. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "press"
+     },
+     {
+      "lang": "tr",
+      "text": ". Türkçesi 'basmak' demek. Bir düğmeye, bir tuşa basmak. Lütfen "
+     },
+     {
+      "lang": "en",
+      "text": "press"
+     },
+     {
+      "lang": "tr",
+      "text": " de."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "press"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi çok önemli bir nokta. İngilizcede birine yönerge verirken cümle kısacıktır: özne yoktur. 'Sen basıyorsun' demezsin, doğrudan fiilin yalın hâlini söylersin."
+     },
+     {
+      "lang": "en",
+      "text": "Press the button."
+     },
+     {
+      "lang": "tr",
+      "text": "Yani 'Düğmeye bas.' Sen de söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Press the button."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kelimemiz: "
+     },
+     {
+      "lang": "en",
+      "text": "choose"
+     },
+     {
+      "lang": "tr",
+      "text": ". Yani 'seçmek'. Bir ekranda dili seçtiriyorsun mesela: "
+     },
+     {
+      "lang": "en",
+      "text": "Choose your language."
+     },
+     {
+      "lang": "tr",
+      "text": "'Dilini seç.' Hadi söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Choose your language."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kelime: "
+     },
+     {
+      "lang": "en",
+      "text": "wait"
+     },
+     {
+      "lang": "tr",
+      "text": ". 'Beklemek' demek. Yükleniyorsa şöyle dersin: "
+     },
+     {
+      "lang": "en",
+      "text": "Wait a moment."
+     },
+     {
+      "lang": "tr",
+      "text": "'Bir saniye bekle.' Sen söyle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Wait a moment."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ve işin bittiğini söylemek için: "
+     },
+     {
+      "lang": "en",
+      "text": "done"
+     },
+     {
+      "lang": "tr",
+      "text": ". Türkçede 'tamam, bitti' gibi. Tek başına da kullanılır: "
+     },
+     {
+      "lang": "en",
+      "text": "Done!"
+     },
+     {
+      "lang": "tr",
+      "text": " Ya da cümle içinde: "
+     },
+     {
+      "lang": "en",
+      "text": "It's done."
+     },
+     {
+      "lang": "tr",
+      "text": " 'Oldu, bitti.'"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi adımları sıraya dizen kelimeler. İlk adım için "
+     },
+     {
+      "lang": "en",
+      "text": "first"
+     },
+     {
+      "lang": "tr",
+      "text": ", ondan sonrası için "
+     },
+     {
+      "lang": "en",
+      "text": "then"
+     },
+     {
+      "lang": "tr",
+      "text": " ya da "
+     },
+     {
+      "lang": "en",
+      "text": "next"
+     },
+     {
+      "lang": "tr",
+      "text": ", ve son adım için "
+     },
+     {
+      "lang": "en",
+      "text": "finally"
+     },
+     {
+      "lang": "tr",
+      "text": ". Bunlar genelde cümlenin başına gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birlikte deneyelim. 'Önce kırmızı düğmeye bas' demek için: "
+     },
+     {
+      "lang": "en",
+      "text": "First, press the red button."
+     },
+     {
+      "lang": "tr",
+      "text": " Lütfen tekrar et."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "First, press the red button."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıra sende. 'Sonra şifreni seç' demek istiyorsun. Nasıl dersin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Then choose your password.",
+     "accept": [
+      "Then, choose your password.",
+      "Next choose your password.",
+      "Next, choose your password.",
+      "Then choose your password"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'sonra' için "
+      },
+      {
+       "lang": "en",
+       "text": "then"
+      },
+      {
+       "lang": "tr",
+       "text": ", 'seç' için "
+      },
+      {
+       "lang": "en",
+       "text": "choose"
+      },
+      {
+       "lang": "tr",
+       "text": ", 'şifren' için "
+      },
+      {
+       "lang": "en",
+       "text": "your password"
+      },
+      {
+       "lang": "tr",
+       "text": "."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güzel. Peki bir şeyi yapmamasını söylemek istersen? Cümlenin başına "
+     },
+     {
+      "lang": "en",
+      "text": "don't"
+     },
+     {
+      "lang": "tr",
+      "text": " koyarsın, gerisi aynı kalır. Mesela: "
+     },
+     {
+      "lang": "en",
+      "text": "Don't press it twice."
+     },
+     {
+      "lang": "tr",
+      "text": " 'İki kere basma.'"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hadi sen kur: 'Kırmızı düğmeye basma.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Don't press the red button.",
+     "accept": [
+      "Do not press the red button.",
+      "Don't press the red button",
+      "Please don't press the red button."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Başa "
+      },
+      {
+       "lang": "en",
+       "text": "don't"
+      },
+      {
+       "lang": "tr",
+       "text": " gelecek, sonra fiil yalın hâlde."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu cümleler kısa olduğu için bazen sert duyulabilir. Yumuşatmak çok kolay: başına ya da sonuna "
+     },
+     {
+      "lang": "en",
+      "text": "please"
+     },
+     {
+      "lang": "tr",
+      "text": " eklersin. "
+     },
+     {
+      "lang": "en",
+      "text": "Please press the green button."
+     },
+     {
+      "lang": "tr",
+      "text": " Ya da soru gibi sorarsın: "
+     },
+     {
+      "lang": "en",
+      "text": "Can you press the green button?"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha kur. Kibar ol: 'Lütfen bir dakika bekle.'"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Please wait a minute.",
+     "accept": [
+      "Wait a minute, please.",
+      "Please wait a moment.",
+      "Wait a moment, please.",
+      "Please wait a minute"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "'bekle' "
+      },
+      {
+       "lang": "en",
+       "text": "wait"
+      },
+      {
+       "lang": "tr",
+       "text": ", 'bir dakika' "
+      },
+      {
+       "lang": "en",
+       "text": "a minute"
+      },
+      {
+       "lang": "tr",
+       "text": ", kibarlık için "
+      },
+      {
+       "lang": "en",
+       "text": "please"
+      },
+      {
+       "lang": "tr",
+       "text": "."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi kulağını sınayalım. Şu cümle doğru mu, yanlış mı?"
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "No press the red button.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Olumsuz yönergede "
+      },
+      {
+       "lang": "en",
+       "text": "no"
+      },
+      {
+       "lang": "tr",
+       "text": " kullanılmaz. Doğrusu: "
+      },
+      {
+       "lang": "en",
+       "text": "Don't press the red button."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son adımı söylerken "
+     },
+     {
+      "lang": "en",
+      "text": "finally"
+     },
+     {
+      "lang": "tr",
+      "text": " ya da "
+     },
+     {
+      "lang": "en",
+      "text": "at the end"
+     },
+     {
+      "lang": "tr",
+      "text": " dersin. Ve iş bitince: "
+     },
+     {
+      "lang": "en",
+      "text": "That's it. It's done."
+     },
+     {
+      "lang": "tr",
+      "text": " 'Bu kadar. Tamamdır.'"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi hepsini bir arada dinle. Birine telefonda dil ayarını anlatıyorsun:"
+     },
+     {
+      "lang": "en",
+      "text": "First, open Settings. Then choose your language. Wait ten seconds. Finally, press OK. That's it, it's done."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Duydun mu? Her cümle kısa, her cümlenin başında bir sıra kelimesi var. Karşındaki kişi böyle çok rahat takip eder."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir de şu soruyu bekle, çünkü sana sık sorulacak: "
+     },
+     {
+      "lang": "en",
+      "text": "How do I do that?"
+     },
+     {
+      "lang": "tr",
+      "text": " 'Bunu nasıl yapacağım?'"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ve karşındaki takip edemezse şunu söyler: "
+     },
+     {
+      "lang": "en",
+      "text": "Sorry, can you say that again?"
+     },
+     {
+      "lang": "tr",
+      "text": " O zaman panik yok, aynı adımı yavaşça tekrar edersin. Sen de yardım isterken şunu kullanabilirsin: "
+     },
+     {
+      "lang": "en",
+      "text": "Can you help me with my phone?"
+     },
+     {
+      "lang": "tr",
+      "text": " Söyle bakalım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Can you help me with my phone?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim. Yönerge verirken özne yok, fiil yalın: "
+     },
+     {
+      "lang": "en",
+      "text": "Press the button."
+     },
+     {
+      "lang": "tr",
+      "text": " Olumsuzu "
+     },
+     {
+      "lang": "en",
+      "text": "don't"
+     },
+     {
+      "lang": "tr",
+      "text": " ile: "
+     },
+     {
+      "lang": "en",
+      "text": "Don't press it twice."
+     },
+     {
+      "lang": "tr",
+      "text": " Adımları "
+     },
+     {
+      "lang": "en",
+      "text": "first, then, finally"
+     },
+     {
+      "lang": "tr",
+      "text": " ile sıralarsın, sonunda "
+     },
+     {
+      "lang": "en",
+      "text": "It's done."
+     },
+     {
+      "lang": "tr",
+      "text": " dersin."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harikasın. Şimdi bunu gerçek bir konuşmada deneyelim: bir arkadaşın yeni telefonuyla boğuşuyor ve senden yardım istiyor. Adım adım anlat."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Arkadaşın yeni bir telefon aldı ve fotoğraf gönderemiyor. Senden yardım istiyor; sen ona adım adım ne yapması gerektiğini anlatıyorsun.",
+   "partner": "yeni telefonuyla uğraşan arkadaşın",
+   "opening": "I can't send a photo with this new phone. Can you help me?",
+   "openingTr": "Bu yeni telefonla fotoğraf gönderemiyorum. Bana yardım eder misin?",
+   "goal": "Arkadaşına en az üç adımı sırayla anlatabildiysen ve sonunda işin bittiğini söyleyebildiysen konuşma başarılıdır.",
+   "minTurns": 7
+  }
  }
 ]
