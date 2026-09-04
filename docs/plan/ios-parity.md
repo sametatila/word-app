@@ -322,5 +322,30 @@ Açık ürün kararları:
   karşılığı ya kilit ekranı Now Playing denetimi ya da "yok" kararı. Arka planda mikrofon
   isteyen bir uygulamada inceleyenin ilk soracağı şey "kullanıcı bunu nasıl durduruyor"
   olacağı için karar kayda geçmeli.
-- **Ekran-kapalı modun maliyeti.** Azure STT paralı yol; iOS'ta arka plan tanıma
-  Android'den daha sık bu yola düşerse `docs/plan/stt-capacity.md` varsayımları değişir.
+- **Ekran-kapalı modun maliyeti — sebebi artık somut.** İki platform farklı olayı
+  ölçüyor: Android `ACTION_SCREEN_OFF` (yalnız güç tuşu), iOS
+  `didEnterBackgroundNotification` (uygulama değiştirme, gelen çağrı ve kilit).
+  Yani iOS'ta bildirime dokunmak `WalkModeScreen.tsx:212`'deki `useAzure`'u açıyor
+  (ücretli yol) ve `:158-163` çalışan tanımayı kesiyor. Ön plana dönünce geri
+  geliyor, dolayısıyla maliyet kesinti başına — oturum boyu değil. Karar ve varsa
+  düzeltme Şerit T'de.
+
+- **Apple ile Giriş'te nonce yok — ölçüldü, engel değil.** `appleAuth.ts` nonce
+  göndermiyor: kütüphane ham nonce'u SHA-256'layıp Apple'a özeti yolluyor ama JS'e
+  ham değeri döndürüyor, better-auth ise düz karşılaştırıyor; tutması için Mac'te
+  denenmesi gereken bir kripto adımı gerekiyor.
+
+  Kalan risk ölçüldü, kabul edilebilir bulundu. Zincir:
+  `src/lib/auth/server.ts:41` sağlayıcıyı yalnız `APPLE_BUNDLE_ID` doluyken
+  kaydediyor, dolayısıyla `appBundleIdentifier` boş kalamıyor;
+  `better-auth/dist/social-providers/index.mjs:60-75` token'ı Apple JWKS imzası,
+  `iss` ve `aud = appBundleIdentifier` ile doğruluyor. Nonce'un kapattığı asıl
+  saldırı — başka bir uygulama için üretilmiş token'ı buraya oynatmak — `aud`
+  ile zaten kapalı. `jose` ayrıca `exp`'i doğruluyor; Apple'ın id token'ı ~10
+  dakika yaşadığı için gerçek oynatma penceresini `maxTokenAge: "1h"` değil `exp`
+  belirliyor, yani sıkılaştırılacak bir ayar yok.
+
+  Geriye kalan: Lernomi için üretilmiş TAZE bir token'ı o pencerede ele geçirmiş
+  birinin oynatması — cihaz/uygulama ele geçirilmesi ya da TLS kırılması gerekir
+  (`NSAllowsArbitraryLoads=false`). Nonce Şerit S'de, cihazda denenerek açılır;
+  tarif `mobile/src/lib/appleAuth.ts` docblock'unda yazılı.
