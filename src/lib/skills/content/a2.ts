@@ -1,7 +1,16 @@
 import type { SkillExercise } from "../types";
+import { a2U01 } from "./a2-u01";
 
-/** A2 — okuma, dinleme ve yazma egzersizleri. */
+/**
+ * A2 — okuma, dinleme ve yazma egzersizleri.
+ *
+ * Ünite hizalı içerik EN BAŞTA durur: immersion yerleşimi `unit` etiketine
+ * değil LİSTE SIRASINA bakıyor (buildTrack havuzları imleçle tüketir), o yüzden
+ * ünite 1'in okuma/dinleme/yazma slotlarını a2U01 doldurur. Eski genel A2
+ * içeriği sonraki ünitelere kayar ve köprü olur — A1 tarafındaki düzenin aynısı.
+ */
 export const a2: SkillExercise[] = [
+  ...a2U01,
   // ---------------------------------------------------------------- OKUMA
   {
     id: "a2-r1",

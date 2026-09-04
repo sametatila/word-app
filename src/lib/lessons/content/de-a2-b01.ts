@@ -251,7 +251,7 @@ export const deA2B01: Lesson[] = [
     icon: "food",
     level: "A2",
     course: "de",
-    title: "Gesungen, gerufen, verloren",
+    title: "Genannt, verloren, gefallen",
     titleTr: "Kural dışı ortaçlar",
     summary:
       "Sık kullanılan fiillerin kuralsız ortaçlarını ve neden ezberlenmeleri gerektiğini öğretir.",
