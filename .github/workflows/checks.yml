@@ -50,6 +50,13 @@ jobs:
       - name: i18n kapısı
         working-directory: mobile
         run: node scripts/i18n-scan.js --check
+      # iOS paketinin elle tutulan yerleri: sürüm üçlüsü, ikon ölçüleri, .strings,
+      # dil beyanı, pbxproj bütünlüğü. Hiçbiri macOS istemiyor ve hiçbirini
+      # ios-build.yml yakalamıyor — o simülatöre imzasız derliyor, bu sınıf ancak
+      # App Store'a yüklerken patlıyor. Saniyeler sürüyor, pahalı işten önce düşsün.
+      - name: iOS paket denetimi
+        working-directory: mobile
+        run: npm run ios:check
       - name: Jest
         working-directory: mobile
         run: npx jest --silent

@@ -10,7 +10,8 @@
     "test": "jest",
     "postinstall": "patch-package",
     "i18n:scan": "node scripts/i18n-scan.js",
-    "i18n:check": "node scripts/i18n-scan.js --check"
+    "i18n:check": "node scripts/i18n-scan.js --check",
+    "ios:check": "python3 scripts/check-ios.py"
   },
   "dependencies": {
     "@invertase/react-native-apple-authentication": "^2.5.1",
