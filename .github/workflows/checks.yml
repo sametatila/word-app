@@ -1,0 +1,55 @@
+# Ucuz kontroller — Linux. Public depoda standart runner'lar ücretsiz, ama iş
+# yine de doğru makineye konuyor: bunların hiçbiri macOS istemiyor.
+name: Kontroller
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm }
+      - run: npm ci
+      - name: TypeScript
+        run: npx tsc --noEmit
+      - name: next build
+        run: npx next build
+        env:
+          # Derleme sırasında veritabanına gidilmiyor; sırlar gerekmez.
+          NEXT_TELEMETRY_DISABLED: "1"
+
+  mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: mobile/package.json
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+      - working-directory: mobile
+        run: npm ci
+      - name: TypeScript
+        working-directory: mobile
+        run: npx tsc --noEmit
+      - name: ESLint
+        working-directory: mobile
+        run: npx eslint src App.tsx --max-warnings 9999
+      # Çeviri katmanını atlayan yeni Türkçe dizgi girmesin (cırcırlı taban).
+      - name: i18n kapısı
+        working-directory: mobile
+        run: node scripts/i18n-scan.js --check
+      - name: Jest
+        working-directory: mobile
+        run: npx jest --silent

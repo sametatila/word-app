@@ -1,0 +1,101 @@
+# iOS derleme doğrulaması — Apple Developer hesabı GEREKMEZ.
+#
+# Ayrım şu: derleme ile imzalama ayrı şeyler. Simülatör hedefine derlemek imza
+# istemez, dolayısıyla hesap açılmadan da Swift'in derlendiği, köprünün doğru
+# kurulduğu ve Pod'ların çözüldüğü bugün doğrulanabiliyor. Cihaz imzası, .ipa ve
+# TestFlight ücretli hesap ister; onlar bu iş akışında yok.
+#
+# Depo public olduğu için standart runner'lar (macOS dâhil) ücretsiz ve
+# dakika sınırı yok.
+#
+# NE DOĞRULAR: derleniyor mu.
+# NE DOĞRULAMAZ: çalışıyor mu. Ekran kapalıyken yürüyüş modunun ses oturumu
+# gerçek cihaz ister — kilit ekranı davranışı simülatörde anlamlı sınanamaz
+# (bkz. docs/appstore/README.md).
+
+name: iOS derleme
+
+on:
+  push:
+    paths: ["mobile/ios/**", "mobile/src/**", "mobile/package.json", "mobile/package-lock.json", ".github/workflows/ios-build.yml"]
+  pull_request:
+    paths: ["mobile/ios/**", "mobile/src/**", "mobile/package.json", "mobile/package-lock.json"]
+  workflow_dispatch:
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: mobile/package.json
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+
+      - name: Bağımlılıklar
+        working-directory: mobile
+        run: npm ci
+
+      # patch-package yamaları postinstall'da uygulanıyor; Pod'lar yamalı
+      # kaynağı görmeli, o yüzden pod install'dan ÖNCE.
+      - name: TypeScript
+        working-directory: mobile
+        run: npx tsc --noEmit
+
+      - name: Pods önbelleği
+        uses: actions/cache@v4
+        with:
+          path: mobile/ios/Pods
+          key: pods-${{ runner.os }}-${{ hashFiles('mobile/ios/Podfile.lock', 'mobile/package-lock.json') }}
+          restore-keys: pods-${{ runner.os }}-
+
+      - name: pod install
+        working-directory: mobile/ios
+        run: pod install --repo-update
+
+      # CODE_SIGNING_ALLOWED=NO: imza kimliği yok ve gerekmiyor.
+      - name: Simülatöre derle
+        working-directory: mobile/ios
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -workspace Lernomi.xcworkspace \
+            -scheme Lernomi \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO \
+            | xcbeautify || xcodebuild build \
+            -workspace Lernomi.xcworkspace \
+            -scheme Lernomi \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO
+
+      # Metinler koda gömülü olmadığı için ayrıca bakılıyor: izin metinleri ve
+      # arka plan modu, App Store incelemesinde ilk sorulan iki şey.
+      - name: Info.plist beyanları
+        working-directory: mobile/ios/Lernomi
+        run: |
+          python3 - <<'PY'
+          import plistlib, sys
+          d = plistlib.load(open("Info.plist", "rb"))
+          eksik = []
+          if "audio" not in (d.get("UIBackgroundModes") or []): eksik.append("UIBackgroundModes=audio")
+          for k in ("NSMicrophoneUsageDescription", "NSSpeechRecognitionUsageDescription"):
+              if not d.get(k): eksik.append(k)
+          if d.get("ITSAppUsesNonExemptEncryption") is None: eksik.append("ITSAppUsesNonExemptEncryption")
+          p = plistlib.load(open("PrivacyInfo.xcprivacy", "rb"))
+          if not p.get("NSPrivacyCollectedDataTypes"): eksik.append("NSPrivacyCollectedDataTypes bos")
+          if eksik:
+              print("EKSIK:", ", ".join(eksik)); sys.exit(1)
+          print("Info.plist ve PrivacyInfo tamam")
+          PY
