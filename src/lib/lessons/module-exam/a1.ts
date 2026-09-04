@@ -332,23 +332,23 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Kunde", de: "Ja, ich suche eine Jacke in Blau.", tr: "Evet, mavi bir ceket arıyorum." },
         { speaker: "Verkäuferin", de: "Welche Größe haben Sie?", tr: "Bedeniniz kaç?" },
         { speaker: "Kunde", de: "Größe achtunddreißig. Kann ich sie anprobieren?", tr: "Otuz sekiz beden. Deneyebilir miyim?" },
-        { speaker: "Verkäuferin", de: "Natürlich, die Umkleide ist dort rechts.", tr: "Tabii, kabin şurada sağda." },
+        { speaker: "Verkäuferin", de: "Ja, gern. Die Umkleide ist da rechts.", tr: "Tabii. Kabin şurada sağda." },
         { speaker: "Kunde", de: "Die Jacke gefällt mir, aber sie ist zu eng. Haben Sie auch Größe vierzig?", tr: "Ceket hoşuma gitti ama dar geldi. Kırk beden de var mı?" },
       ],
       questions: [
         { de: "Was sucht der Kunde?", tr: "Müşteri ne arıyor?", options: ["Eine Hose", "Eine Jacke", "Ein Hemd", "Einen Pullover"], answer: 1 },
-        { de: "Welche Farbe möchte der Kunde?", tr: "Müşteri hangi rengi istiyor?", options: ["Rot", "Schwarz", "Blau", "Grün"], answer: 2 },
-        { de: "Warum nimmt der Kunde die Jacke nicht?", tr: "Müşteri ceketi neden almıyor?", options: ["Sie ist zu teuer", "Sie ist zu eng", "Sie gefällt ihm nicht", "Die Farbe ist falsch"], answer: 1 },
+        { de: "Welche Farbe möchte der Kunde?", tr: "Müşteri hangi rengi istiyor?", options: ["Rot", "Schwarz", "Blau", "Weiß"], answer: 2 },
+        { de: "Warum kauft der Kunde die Jacke nicht?", tr: "Müşteri ceketi neden almıyor?", options: ["Sie ist zu teuer", "Sie ist zu eng", "Sie gefällt ihm nicht", "Die Farbe ist falsch"], answer: 1 },
       ],
     },
     reading: {
-      title: "Sommer-Angebot",
+      title: "Angebot bei Klein",
       titleTr: "İndirim ilanı",
       genre: "İlan",
-      text: "SOMMER-ANGEBOT bei Mode Klein!\n\nAlle Jacken: 30 % günstiger.\nT-Shirts ab 9,90 €.\nSchuhe: zwei Paar kaufen, ein Paar bezahlen.\n\nDas Angebot gilt von Montag bis Samstag.\nUmtausch nur mit Kassenbon.",
+      text: "Angebot bei Klein!\n\nAlle Jacken: 30 % günstiger.\nT-Shirts ab 9,90 €.\nSchuhe: zwei Paar kaufen, ein Paar bezahlen.\n\nDas Angebot ist von Montag bis Samstag.\nUmtausch nur mit Kassenbon.",
       questions: [
-        { de: "Wie lange gilt das Angebot?", tr: "Kampanya ne kadar sürüyor?", options: ["Nur am Montag", "Von Montag bis Samstag", "Den ganzen Sommer", "Nur am Samstag"], answer: 1 },
-        { de: "Was braucht man für einen Umtausch?", tr: "Değişim için ne gerekiyor?", options: ["Eine Karte", "Den Kassenbon", "Einen Ausweis", "Nichts"], answer: 1 },
+        { de: "Wie lange ist das Angebot?", tr: "Kampanya ne kadar sürüyor?", options: ["Nur am Montag", "Von Montag bis Samstag", "Immer", "Nur am Samstag"], answer: 1 },
+        { de: "Was braucht man für einen Umtausch?", tr: "Değişim için ne gerekiyor?", options: ["Eine Karte", "Den Kassenbon", "Geld", "Nichts"], answer: 1 },
       ],
     },
     speaking: [
@@ -400,7 +400,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Danışma gişesinde",
       situation: "Bir yolcu tren bilgisi soruyor.",
       turns: [
-        { speaker: "Reisender", de: "Entschuldigung, wann fährt der nächste Zug nach Hamburg?", tr: "Affedersiniz, Hamburg'a bir sonraki tren ne zaman kalkıyor?" },
+        { speaker: "Reisender", de: "Entschuldigung, wann fährt der Zug nach Hamburg?", tr: "Affedersiniz, Hamburg treni ne zaman kalkıyor?" },
         { speaker: "Mitarbeiter", de: "Um zehn Uhr zwanzig, von Gleis drei.", tr: "Onu yirmi geçe, üç numaralı perondan." },
         { speaker: "Reisender", de: "Muss ich umsteigen?", tr: "Aktarma yapmam gerekiyor mu?" },
         { speaker: "Mitarbeiter", de: "Nein, der Zug fährt direkt.", tr: "Hayır, tren direkt gidiyor." },
@@ -409,7 +409,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Von welchem Gleis fährt der Zug?", tr: "Tren hangi perondan kalkıyor?", options: ["Von Gleis eins", "Von Gleis zwei", "Von Gleis drei", "Von Gleis zehn"], answer: 2 },
-        { de: "Muss der Reisende umsteigen?", tr: "Yolcunun aktarma yapması gerekiyor mu?", options: ["Ja, einmal", "Ja, zweimal", "Nein, der Zug fährt direkt", "Das weiß der Mitarbeiter nicht"], answer: 2 },
+        { de: "Muss der Reisende umsteigen?", tr: "Yolcunun aktarma yapması gerekiyor mu?", options: ["Ja, einmal", "Ja, zweimal", "Nein, der Zug fährt direkt", "Das sagt er nicht"], answer: 2 },
         { de: "Was kostet die Fahrkarte hin und zurück?", tr: "Gidiş dönüş bilet kaç para?", options: ["48 Euro", "90 Euro", "20 Euro", "10 Euro"], answer: 1 },
       ],
     },
@@ -417,10 +417,10 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       title: "Der Weg zu mir",
       titleTr: "Yol tarifi mesajı",
       genre: "Mesaj",
-      text: "Hallo Deniz,\n\nhier ist der Weg zu meiner Wohnung: Du nimmst die U-Bahn, Linie 4, bis zur Haltestelle Marktplatz. Dann gehst du geradeaus bis zur Ampel. An der Ampel gehst du links. Mein Haus ist gegenüber von der Bäckerei — nur fünf Minuten zu Fuß.\n\nBis später!\nJan",
+      text: "Hallo Deniz,\n\nhier ist der Weg zu meiner Wohnung: Du fährst mit der U-Bahn, Linie 4, bis zur Haltestelle Marktplatz. Dann gehst du geradeaus bis zur Ampel. An der Ampel gehst du links. Mein Haus ist gegenüber von der Bäckerei — nur fünf Minuten zu Fuß.\n\nBis später!\nJan",
       questions: [
         { de: "Wie fährt Deniz zu Jan?", tr: "Deniz, Jan'a nasıl gidiyor?", options: ["Mit dem Bus", "Mit der U-Bahn", "Mit dem Taxi", "Mit dem Fahrrad"], answer: 1 },
-        { de: "Wo ist Jans Haus?", tr: "Jan'ın evi nerede?", options: ["Neben dem Bahnhof", "Gegenüber von der Bäckerei", "An der Haltestelle", "Hinter der Ampel"], answer: 1 },
+        { de: "Wo ist Jans Haus?", tr: "Jan'ın evi nerede?", options: ["Am Bahnhof", "Gegenüber von der Bäckerei", "An der Haltestelle", "Hinter der Ampel"], answer: 1 },
       ],
     },
     speaking: [
@@ -444,7 +444,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { de: "Es sind … Minuten zu Fuß.", tr: "Yürüyerek … dakika.", en: "It is … minutes on foot." },
       ],
       sample:
-        "Hallo Mert, du kommst am Samstag, super! Du fährst mit der U-Bahn, Linie 2, bis zur Haltestelle Stadtpark. Dann gehst du geradeaus bis zur Ampel. An der Ampel gehst du rechts. Mein Haus ist gegenüber von der Apotheke, Nummer 15. Vom Bahnhof sind es ungefähr zwanzig Minuten. Ruf mich an!",
+        "Hallo Mert, du kommst am Samstag, super! Du fährst mit der U-Bahn, Linie 2, bis zur Haltestelle Stadtpark. Dann gehst du geradeaus bis zur Ampel. An der Ampel gehst du rechts. Mein Haus ist gegenüber von der Bäckerei, Nummer 15. Vom Bahnhof sind es zwanzig Minuten. Ruf mich an!",
     },
   },
 
@@ -476,7 +476,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Hausmeister", de: "Guten Tag, was kann ich für Sie tun?", tr: "İyi günler, nasıl yardımcı olabilirim?" },
         { speaker: "Mieterin", de: "Die Lampe im Flur ist kaputt. Sie funktioniert nicht mehr.", tr: "Koridordaki lamba bozuldu. Artık çalışmıyor." },
         { speaker: "Hausmeister", de: "Seit wann denn?", tr: "Ne zamandan beri?" },
-        { speaker: "Mieterin", de: "Seit gestern. Können Sie heute kommen?", tr: "Dünden beri. Bugün gelebilir misiniz?" },
+        { speaker: "Mieterin", de: "Seit zwei Tagen. Können Sie heute kommen?", tr: "İki gündür. Bugün gelebilir misiniz?" },
         { speaker: "Hausmeister", de: "Heute leider nicht. Aber morgen um zehn Uhr bin ich da.", tr: "Bugün maalesef olmaz. Ama yarın saat onda oradayım." },
       ],
       questions: [
@@ -489,10 +489,10 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       title: "Wohnung zu vermieten",
       titleTr: "Kiralık daire ilanı",
       genre: "İlan",
-      text: "Wohnung zu vermieten\n\n2 Zimmer, Küche, Bad — 58 m²\n3. Stock, mit Balkon, sehr hell und ruhig\nMiete: 620 Euro kalt + 140 Euro Nebenkosten\nFrei ab 1. Juni\n\nHaustiere sind leider nicht erlaubt.\nTelefon: 0176 22 33 44",
+      text: "Wohnung zu vermieten\n\n2 Zimmer, Küche, Bad — 58 m²\n3. Stock, mit Balkon, sehr hell und ruhig\nMiete: 620 Euro kalt + 140 Euro Nebenkosten\nFrei ab 1.5.\n\nHaustiere sind leider nicht erlaubt.\nTelefon: 0176 22 33 44",
       questions: [
         { de: "Wie viele Zimmer hat die Wohnung?", tr: "Daire kaç odalı?", options: ["Ein Zimmer", "Zwei Zimmer", "Drei Zimmer", "Vier Zimmer"], answer: 1 },
-        { de: "Was ist in der Wohnung nicht erlaubt?", tr: "Dairede neye izin yok?", options: ["Musik", "Haustiere", "Kinder", "Besuch"], answer: 1 },
+        { de: "Was ist in der Wohnung nicht erlaubt?", tr: "Dairede neye izin yok?", options: ["Tiere", "Haustiere", "Kinder", "Freunde"], answer: 1 },
       ],
     },
     speaking: [
@@ -561,10 +561,10 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       title: "Stadtpark-Fest",
       titleTr: "Park şenliği programı",
       genre: "Duyuru",
-      text: "Stadtpark-Fest am Sonntag\n\n11 Uhr: Musik und Konzert auf der Wiese\n13 Uhr: Picknick — bringen Sie bitte Essen mit\n15 Uhr: Sport für Kinder\n17 Uhr: Film im Park\n\nDer Eintritt ist frei. Bei Regen fällt das Fest aus.",
+      text: "Stadtpark-Fest am Sonntag\n\n11 Uhr: Musik und Konzert auf der Wiese\n13 Uhr: Picknick — bringen Sie bitte Essen mit\n15 Uhr: Sport für Kinder\n17 Uhr: Film im Park\n\nDer Eintritt ist frei. Bei Regen gibt es kein Fest.",
       questions: [
         { de: "Was kostet der Eintritt?", tr: "Giriş kaç para?", options: ["Fünf Euro", "Zehn Euro", "Nichts", "Nur Kinder zahlen"], answer: 2 },
-        { de: "Was passiert bei Regen?", tr: "Yağmur yağarsa ne oluyor?", options: ["Das Fest beginnt später", "Das Fest fällt aus", "Das Fest ist im Kino", "Das Fest dauert länger"], answer: 1 },
+        { de: "Was passiert bei Regen?", tr: "Yağmur yağarsa ne oluyor?", options: ["Das Fest beginnt später", "Es gibt kein Fest", "Das Fest ist im Kino", "Das Fest ist am Montag"], answer: 1 },
       ],
     },
     speaking: [
@@ -621,27 +621,27 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Praxis", de: "Das tut mir leid. Geht es am Mittwoch um zehn Uhr?", tr: "Geçmiş olsun. Çarşamba saat on uygun mu?" },
         { speaker: "Patient", de: "Am Mittwoch muss ich arbeiten. Geht es auch am Nachmittag?", tr: "Çarşamba çalışmam gerekiyor. Öğleden sonra olur mu?" },
         { speaker: "Praxis", de: "Ja, um sechzehn Uhr ist noch frei.", tr: "Evet, saat on altı boş." },
-        { speaker: "Patient", de: "Sehr gut. Muss ich die Versichertenkarte mitbringen?", tr: "Çok iyi. Sigorta kartımı getirmem gerekiyor mu?" },
+        { speaker: "Patient", de: "Sehr gut. Brauche ich die Versichertenkarte?", tr: "Çok iyi. Sigorta kartıma ihtiyacım var mı?" },
         { speaker: "Praxis", de: "Ja, bitte bringen Sie die Karte mit.", tr: "Evet, lütfen kartı getirin." },
       ],
       questions: [
-        { de: "Was hat der Patient?", tr: "Hastanın şikâyeti ne?", options: ["Kopfschmerzen", "Halsschmerzen und Fieber", "Bauchschmerzen", "Nur Husten"], answer: 1 },
-        { de: "Wann kommt der Patient?", tr: "Hasta ne zaman gelecek?", options: ["Am Mittwoch um zehn", "Am Mittwoch um sechzehn Uhr", "Am Donnerstag", "Am Freitag um zehn"], answer: 1 },
-        { de: "Was muss der Patient mitbringen?", tr: "Hasta ne getirmeli?", options: ["Ein Rezept", "Die Versichertenkarte", "Tabletten", "Nichts"], answer: 1 },
+        { de: "Was hat die Person?", tr: "Kişinin şikâyeti ne?", options: ["Kopfschmerzen", "Halsschmerzen und Fieber", "Bauchschmerzen", "Nur Husten"], answer: 1 },
+        { de: "Wann kommt die Person?", tr: "Kişi ne zaman gelecek?", options: ["Am Mittwoch um zehn", "Am Mittwoch um sechzehn Uhr", "Am Montag", "Am Freitag um zehn"], answer: 1 },
+        { de: "Was braucht die Person?", tr: "Kişinin neye ihtiyacı var?", options: ["Ein Rezept", "Die Versichertenkarte", "Tabletten", "Nichts"], answer: 1 },
       ],
     },
     reading: {
       title: "Halstabletten HALSFREI",
       titleTr: "İlaç kullanma bilgisi",
       genre: "Bilgi metni",
-      text: "Halstabletten HALSFREI\n\nErwachsene: dreimal täglich eine Tablette, nach dem Essen.\nKinder unter zwölf Jahren: nicht geben.\nNicht länger als fünf Tage nehmen.\nBei Fieber über 39 Grad: zum Arzt gehen.\n\nRezeptfrei in Ihrer Apotheke.",
+      text: "Halstabletten HALSFREI\n\nErwachsene: dreimal täglich eine Tablette, nach dem Essen.\nKinder unter zwölf Jahren: nicht geben.\nNicht mehr als fünf Tage nehmen.\nBei Fieber über 39 Grad: zum Arzt gehen.\n\nRezeptfrei in Ihrer Apotheke.",
       questions: [
         { de: "Wie oft nimmt ein Erwachsener eine Tablette?", tr: "Bir yetişkin günde kaç kez alıyor?", options: ["Einmal am Tag", "Zweimal am Tag", "Dreimal am Tag", "Jede Stunde"], answer: 2 },
-        { de: "Was muss man bei hohem Fieber machen?", tr: "Ateş yüksekse ne yapmalı?", options: ["Mehr Tabletten nehmen", "Zum Arzt gehen", "Nur Wasser trinken", "Nichts machen"], answer: 1 },
+        { de: "Was muss man bei Fieber über 39 machen?", tr: "Ateş 39'un üstündeyse ne yapmalı?", options: ["Mehr Tabletten nehmen", "Zum Arzt gehen", "Nur Wasser trinken", "Nichts machen"], answer: 1 },
       ],
     },
     speaking: [
-      { situation: "Doktora şikâyetini anlatıyorsun.", de: "Mein Kopf tut weh und ich habe seit gestern Fieber.", tr: "Başım ağrıyor ve dünden beri ateşim var." },
+      { situation: "Doktora şikâyetini anlatıyorsun.", de: "Mein Kopf tut weh und ich habe seit zwei Tagen Fieber.", tr: "Başım ağrıyor ve iki gündür ateşim var." },
       { situation: "Hasta arkadaşına öğüt veriyorsun.", de: "Trink viel Wasser und bleib heute im Bett!", tr: "Bol su iç ve bugün yatakta kal!" },
     ],
     writing: {
@@ -691,13 +691,13 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Frau Aydin", de: "Guten Tag, hier ist Nuray Aydin. Kann ich mit Herrn Berg sprechen?", tr: "İyi günler, ben Nuray Aydın. Bay Berg ile görüşebilir miyim?" },
         { speaker: "Kollege", de: "Herr Berg ist gerade nicht da. Er kommt um zwei Uhr zurück.", tr: "Bay Berg şu an yok. Saat ikide dönüyor." },
-        { speaker: "Frau Aydin", de: "Können Sie ihm etwas ausrichten? Ich habe die Einladung geschickt.", tr: "Ona bir şey iletebilir misiniz? Daveti gönderdim." },
-        { speaker: "Kollege", de: "Natürlich. Wie ist Ihre Nummer?", tr: "Tabii. Numaranız nedir?" },
+        { speaker: "Frau Aydin", de: "Können Sie ihm etwas ausrichten? Es geht um die Einladung.", tr: "Ona bir şey iletebilir misiniz? Davet hakkında." },
+        { speaker: "Kollege", de: "Ja, gern. Wie ist Ihre Nummer?", tr: "Tabii. Numaranız nedir?" },
         { speaker: "Frau Aydin", de: "0157 88 44 21. Er kann mich bis sechs Uhr anrufen.", tr: "0157 88 44 21. Beni altıya kadar arayabilir." },
-        { speaker: "Kollege", de: "Alles klar, ich sage ihm Bescheid.", tr: "Anlaşıldı, ona haber veririm." },
+        { speaker: "Kollege", de: "Gut, ich sage es ihm.", tr: "Tamam, ona söylerim." },
       ],
       questions: [
-        { de: "Warum ruft Frau Aydin an?", tr: "Bayan Aydın neden arıyor?", options: ["Sie sucht eine Wohnung", "Sie hat die Einladung geschickt", "Sie ist krank", "Sie möchte einen Termin absagen"], answer: 1 },
+        { de: "Warum ruft Frau Aydin an?", tr: "Bayan Aydın neden arıyor?", options: ["Sie sucht eine Wohnung", "Es geht um die Einladung", "Sie ist krank", "Sie möchte einen Termin absagen"], answer: 1 },
         { de: "Wann kommt Herr Berg zurück?", tr: "Bay Berg ne zaman dönüyor?", options: ["Um eins", "Um zwei", "Um sechs", "Morgen"], answer: 1 },
         { de: "Bis wann kann Herr Berg anrufen?", tr: "Bay Berg ne zamana kadar arayabilir?", options: ["Bis zwei Uhr", "Bis vier Uhr", "Bis sechs Uhr", "Bis acht Uhr"], answer: 2 },
       ],
@@ -706,9 +706,9 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       title: "Grüße aus Berlin",
       titleTr: "Kartpostal",
       genre: "Kartpostal",
-      text: "Liebe Oma,\n\nviele Grüße aus Berlin! Wir sind am Freitag angekommen. Am Samstag haben wir das Museum besucht und am Abend sind wir in ein Restaurant gegangen. Gestern hat es leider geregnet, aber wir sind trotzdem spazieren gegangen. Am ersten Mai fahren wir zurück.\n\nBis bald!\nDein Emre",
+      text: "Liebe Oma,\n\nviele Grüße aus Berlin! Wir sind am Freitag gekommen. Am Samstag haben wir das Museum besucht und am Abend sind wir in ein Restaurant gegangen. Gestern war das Wetter leider nicht gut, aber wir sind trotzdem in den Park gegangen. Am ersten Mai fahren wir zurück.\n\nBis bald!\nDein Emre",
       questions: [
-        { de: "Was hat Emre am Samstag gemacht?", tr: "Emre cumartesi ne yaptı?", options: ["Er ist angekommen", "Er hat das Museum besucht", "Er ist zurückgefahren", "Er ist zu Hause geblieben"], answer: 1 },
+        { de: "Was hat Emre am Samstag gemacht?", tr: "Emre cumartesi ne yaptı?", options: ["Er ist gekommen", "Er hat das Museum besucht", "Er ist zurückgefahren", "Er ist zu Hause geblieben"], answer: 1 },
         { de: "Wann fährt Emre zurück?", tr: "Emre ne zaman dönüyor?", options: ["Am Freitag", "Am Samstag", "Am ersten Mai", "Gestern"], answer: 2 },
       ],
     },
@@ -733,7 +733,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { de: "Es war schön.", tr: "Güzeldi.", en: "It was nice." },
       ],
       sample:
-        "Hallo Jana, mein Wochenende war toll! Am Samstag bin ich früh aufgestanden und ich bin mit dem Zug nach Hamburg gefahren. Zuerst habe ich einen Freund getroffen. Dann haben wir Fisch gegessen. Am Abend sind wir ins Konzert gegangen. Am Sonntag habe ich lange geschlafen und meine Mutter angerufen. Und was hast du gemacht?",
+        "Hallo Jana, mein Wochenende war toll! Am Samstag bin ich früh aufgestanden und ich bin mit dem Zug nach Hamburg gefahren. Zuerst habe ich einen Freund getroffen. Dann haben wir Fisch gegessen. Am Abend sind wir ins Konzert gegangen. Am Sonntag habe ich lange geschlafen und meine Mutter besucht. Und was hast du gemacht?",
     },
   },
 ];

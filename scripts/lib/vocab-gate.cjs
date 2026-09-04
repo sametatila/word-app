@@ -19,7 +19,7 @@ const R = process.cwd();
 const SERBEST = new Set(`der die das den dem des ein eine einen einem einer eines kein keine keinen
 ich du er sie es wir ihr mich dich sich uns euch mir dir ihm ihn ihnen mein meine meinen meinem meiner
 dein deine deinen deinem deiner sein seine seinen seinem ihre ihren ihrem unser unsere euer eure und oder aber denn dass weil wenn als ob wie wo woher wohin
-zu in an auf aus bei mit nach von vor über unter für um durch gegen ohne seit bis nicht ja nein doch man
+zu in an auf aus bei mit nach von vor über unter für um durch gegen ohne seit bis ab nicht ja nein doch man
 ist sind bin bist war waren hat habe haben hast wird werden kann können muss müssen will
 auch noch nur schon sehr hier da dann jetzt heute sehr viel mehr alle etwas nichts
 guten tag morgen abend hallo bitte danke herr frau sie ihnen ihr
@@ -93,9 +93,11 @@ function olc(ham0, unit, ekIzin = []) {
     .map((w) => w.toLowerCase()).filter((w) => !havuzKok.has(w) && !TAKVIM.has(w)));
   // Unvan ZİNCİRLENEBİLİR ("Frau Dr. Weber"); tek unvanlı desen ilk eşleşmede
   // lastIndex'i ilerletip asıl adı yutuyordu.
-  for (const m of ham.matchAll(/\b(Dr|Prof|Frau|Herr)\.?\s+(?:(?:Dr|Prof)\.?\s+)?([A-ZÄÖÜ][a-zäöüß]+)/g)) {
+  for (const m of ham.matchAll(/\b(Dr|Prof|Frau|Herrn|Herr)\.?\s+(?:(?:Dr|Prof)\.?\s+)?([A-ZÄÖÜ][a-zäöüß]+)/g)) {
+    // Unvandan SONRA gelen sözcük soyadıdır — havuzda ortak isim olarak da
+    // bulunması ("Berg" = dağ) bunu değiştirmez, o yüzden koşulsuz muaf.
     ozelAd.add(m[1].toLowerCase()); ozelAd.add("dr"); ozelAd.add("prof");
-    if (!havuzKok.has(m[2].toLowerCase())) ozelAd.add(m[2].toLowerCase());
+    ozelAd.add(m[2].toLowerCase());
   }
   // Ayrılabilen fiilde çekim öneki AYIRIR (anrufen → "rufe … an"); öneksiz
   // gövde de bilinir sayılmalı. Ayrılan önek metinde tek başına da geçer.
