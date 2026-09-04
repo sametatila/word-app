@@ -243,7 +243,8 @@ export type LessonIcon = (typeof LESSON_ICONS)[number];
 export type Lesson = {
   id: string;
   level: CefrLevel;
-  course: "de" | "gsw-zh";
+  /** Hedef dil/lehçe. Kapalı union'du; İngilizce ders temsil edilemiyordu. */
+  course: "de" | "gsw-zh" | "en";
   /** Yol haritasında düğümün simgesi. */
   icon: LessonIcon;
   /** Dersin konusu, Almanca — senaryonun adı: "Beim Arzt", "Im Café". */

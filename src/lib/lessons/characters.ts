@@ -85,6 +85,41 @@ const ZH_CAST: Cast[] = [
   { name: "Christoph", note: "resmî konuşur", gender: "m" },
 ];
 
+/**
+ * İngilizce kursunun kadrosu.
+ *
+ * Almanca kadroya düşülüyordu ve öğrenci İngilizce konuşurken karşısında
+ * "Frau Berger", "Herr Kaufmann" buluyordu. Adlar İngilizce konuşulan
+ * ülkelerde gerçekten duyulan, gündelik adlar; resmî hitap Almancadaki
+ * Frau/Herr yerine Ms./Mr. ile kuruluyor.
+ */
+const EN_CAST: Cast[] = [
+  { name: "Ms. Bennett", note: "sıcak ama konuyu dağıtmaz", gender: "f" },
+  { name: "Mr. Harris", note: "resmî konuşur, açık soru sorar", gender: "m" },
+  { name: "Emma", note: "hızlı konuşur, esprilidir", gender: "f" },
+  { name: "Tom", note: "sakin, ayrıntı sever", gender: "m" },
+  { name: "Ms. Clarke", note: "meraklı, hemen soru sorar", gender: "f" },
+  { name: "Mr. Walker", note: "kısa cümlelerle konuşur", gender: "m" },
+  { name: "Sophie", note: "cesaretlendirir, sabırlıdır", gender: "f" },
+  { name: "Jack", note: "senli benli, samimi", gender: "m" },
+  { name: "Ms. Turner", note: "düzenli, işini bilir", gender: "f" },
+  { name: "Mr. Fletcher", note: "biraz alaycı ama iyi niyetli", gender: "m" },
+  { name: "Chloe", note: "enerjik, konuşmayı sürükler", gender: "f" },
+  { name: "Deniz", note: "Londra'da büyümüş, iki dilli", gender: "m" },
+  { name: "Ms. Hughes", note: "anlayışlı, tekrar etmekten çekinmez", gender: "f" },
+  { name: "Mr. Doyle", note: "ölçüp biçer, sonra karar verir", gender: "m" },
+  { name: "Zeynep", note: "doğrudan konuşur, net", gender: "f" },
+  { name: "Ryan", note: "yardımsever ama acelecidir", gender: "m" },
+  { name: "Ms. Patel", note: "deneyimli, sakin", gender: "f" },
+  { name: "Mr. O'Brien", note: "kurallara düşkün", gender: "m" },
+  { name: "Lily", note: "genç, hevesli", gender: "f" },
+  { name: "Sam", note: "espriyi sever, rahat", gender: "m" },
+  { name: "Ms. Reed", note: "kibar ama mesafeli", gender: "f" },
+  { name: "Mr. Coleman", note: "sıcakkanlı, anlatmayı sever", gender: "m" },
+  { name: "Grace", note: "pratik çözüm bulur", gender: "f" },
+  { name: "Oliver", note: "dinlemeyi bilir", gender: "m" },
+];
+
 /** Bir modülde kaç kişi dönüyor. Üç: tanımaya yeter, ezberlemeye değil. */
 const CAST_PER_MODULE = 3;
 
@@ -107,7 +142,7 @@ function genderHint(partner: string): "f" | "m" | null {
  *                      modül ve kadro buradan çıkıyor
  */
 export function characterFor(lesson: Lesson, indexInLevel: number): Character {
-  const pool = lesson.course === "gsw-zh" ? ZH_CAST : DE_CAST;
+  const pool = lesson.course === "gsw-zh" ? ZH_CAST : lesson.course === "en" ? EN_CAST : DE_CAST;
   const moduleIndex = Math.floor(Math.max(0, indexInLevel) / MODULE_SIZE);
   const inModule = Math.max(0, indexInLevel) % MODULE_SIZE;
 

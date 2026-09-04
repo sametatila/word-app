@@ -75,7 +75,8 @@ type ExerciseBase = {
    */
   cando?: string[];
   /** Hangi kursa ait: "de" (varsayılan) ya da "gsw-zh" (Zürih Almancası). */
-  course?: "de" | "gsw-zh";
+  /** Hedef dil/lehçe. Kapalı union'du; İngilizce içerik temsil edilemiyordu. */
+  course?: "de" | "gsw-zh" | "en";
   /**
    * Immersion ünite numarası (1-tabanlı) — hangi tematik üniteye ait olduğunu
    * belgeler (ör. A1 Ünite 1 "Tanışma"). Bugün yerleşim yine liste sırasına göre
