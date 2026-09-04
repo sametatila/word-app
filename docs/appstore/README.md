@@ -110,7 +110,7 @@ Apple'a özeti yolluyor, JS'e ham değeri döndürüyor; better-auth ise gönder
 dizgiyi token'daki iddiayla düz karşılaştırıyor. Tutması için sunucuya **özeti**
 yollamak gerekir, bu da RN tarafında yeni bir kripto bağımlılığı ya da elle yazılmış
 SHA-256 demek — yanlış hesaplanırsa giriş %100 kırılır ve burada denenemez. Token yine
-tam doğrulanıyor (Apple imzası, `iss`, `aud`, 1 saatlik yaş sınırı) ve bugünkü Google
+tam doğrulanıyor (Apple imzası, `iss`, `aud`) ve bugünkü Google
 native akışında da nonce yok. Açılacaksa: ham nonce üret → `performRequest({ nonce })`
 → sunucuya SHA-256'nın küçük harf hex'i. **Cihazda doğrulanmadan açılmamalı.**
 

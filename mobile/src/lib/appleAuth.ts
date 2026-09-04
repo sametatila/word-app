@@ -27,8 +27,16 @@ import type { AuthOutcome } from "./auth";
  *
  * Bu yüzden `nonceEnabled: false` (kütüphanenin "nonce desteklemeyen sağlayıcılar"
  * için koyduğu seçenek) ve sunucuya nonce gitmiyor. Token yine tam doğrulanıyor:
- * Apple imzası, `iss`, `aud` = bundle kimliği ve 1 saatlik yaş sınırı. Bugünkü
- * Google native akışında da nonce yok, iki yol aynı duruşta.
+ * Apple imzası, `iss` ve `aud` = bundle kimliği. Sunucu ayrıca bir yaş sınırı
+ * ("1h") veriyor ama pencereyi belirleyen o değil: jose token'ın kendi `exp`'ini
+ * de doğruluyor ve Apple'ın id token'ı ~10 dakika yaşıyor, yani asıl sınır zaten
+ * daha dar ve sıkılaştırılacak bir ayar yok. Bugünkü Google native akışında da
+ * nonce yok, iki yol aynı duruşta.
+ *
+ * Nonce'un kapattığı asıl saldırı — başka bir uygulamaya verilmiş token'ı buraya
+ * oynatmak — `aud` kontrolüyle zaten kapalı; sunucu sağlayıcıyı yalnız
+ * APPLE_BUNDLE_ID doluyken kaydettiği için o kontrol atlanamıyor. Ölçüm
+ * docs/plan/ios-parity.md §6'da.
  *
  * Açmak istenirse: JS'te ham nonce üret → `performRequest({ nonce: raw })` → sunucuya
  * `idToken.nonce` olarak SHA-256'nın KÜÇÜK HARF HEX'ini yolla. Cihazda doğrulanmadan
