@@ -82,11 +82,18 @@ eski AGP kurulumuyla çalışan Android derlemesini bozabilirdi.
 ## Betikler
 
 ```sh
-npm run lint         # eslint (@react-native yapılandırması)
+npm run lint         # eslint (@react-native yapılandırması, ESLint 8 + .eslintrc.js)
 npm test             # jest — App'i uçtan uca render eden duman testi
 npm run i18n:check   # çeviri katmanını ATLAYAN ham Türkçe metin taraması (CI kapısı)
 npm run i18n:scan    # aynı tarama, dosya dosya döküm
+npm run ios:check    # iOS paketinin elle tutulan yerleri (sürüm üçlüsü, ikon, .strings)
 ```
+
+Lint betiği `ESLINT_USE_FLAT_CONFIG=false` ile başlıyor ve bu **zorunlu**: mobil
+ESLint 8 + `.eslintrc.js` kullanıyor, ama ESLint 8.57 düz (flat) yapılandırmayı üst
+dizinlerde de arayıp depo kökündeki `eslint.config.mjs`'i buluyor ve kipi
+değiştiriyor — o dosya `mobile/**`'ı yoksaydığı için lint hiçbir dosya bulamıyordu.
+Mobil ESLint 9'a geçtiğinde bayrak kalkar, yerine `mobile/eslint.config.mjs` gerekir.
 
 `npm test` bütün ekranları yükler, dolayısıyla **her native paketin bir taklidi
 `jest.setup.js`'te olmak zorunda**; yeni paket eklerken taklidi de eklenmeli, yoksa

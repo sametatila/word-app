@@ -22,6 +22,11 @@ jobs:
       - run: npm ci
       - name: TypeScript
         run: npx tsc --noEmit
+      # Cırcırlı taban: eşik package.json'daki `lint` betiğinde (--max-warnings),
+      # gerekçesi ve kural kural sayılar eslint.config.mjs'te. Yeni ihlal eşiği
+      # aşar ve burası kırılır; listede olmayan her kural zaten hata.
+      - name: ESLint
+        run: npm run lint
       - name: next build
         run: npx next build
         env:
@@ -43,9 +48,17 @@ jobs:
       - name: TypeScript
         working-directory: mobile
         run: npx tsc --noEmit
+      # ESLINT_USE_FLAT_CONFIG=false ZORUNLU: mobil hâlâ ESLint 8 + .eslintrc.js
+      # kullanıyor, ama ESLint 8.57 düz (flat) yapılandırmayı ÜST DİZİNLERDE de
+      # arıyor ve depo kökündeki eslint.config.mjs'i bulup kipi değiştiriyor —
+      # o dosyanın "mobile/**" yoksayması yüzünden "all of the files matching
+      # the glob pattern 'src' are ignored" ile düşüyordu. Mobil ESLint 9'a
+      # geçince bu bayrak kalkar ve mobile/eslint.config.mjs gerekir.
       - name: ESLint
         working-directory: mobile
         run: npx eslint src App.tsx --max-warnings 9999
+        env:
+          ESLINT_USE_FLAT_CONFIG: "false"
       # Çeviri katmanını atlayan yeni Türkçe dizgi girmesin (cırcırlı taban).
       - name: i18n kapısı
         working-directory: mobile
