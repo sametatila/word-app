@@ -53,10 +53,10 @@ for (const l of LESSONS) {
   ok(l.summary.trim().length > 15, "özet bir cümle");
   ok(l.focusId.trim().length > 0, "odak kimliği var");
   ok(l.minutes >= 6 && l.minutes <= 15, "süre 6-15 dk", `(${l.minutes})`);
-  // Sözlükçe boyu seviyeye bağlı: A1 ve A2 patikaları havuzun kendi katmanını
-  // kapsayacak kadar kelime taşımak zorunda (100 ders × 8), B1 üstü hâlâ 5.
-  // Sabit 5 yazılıydı ve A1 sekize çıkınca doğrulama kırmızıya döndü.
-  const vocabSize = l.level === "A1" || l.level === "A2" ? 8 : 5;
+  // Sözlükçe boyu seviyeye bağlı: A1, A2 ve B1 patikaları havuzun kendi
+  // katmanını kapsayacak kadar kelime taşımak zorunda (ders × 8), B2 ve C1
+  // hâlâ 5. Sabit 5 yazılıydı ve A1 sekize çıkınca doğrulama kırmızıya döndü.
+  const vocabSize = l.level === "B2" || l.level === "C1" ? 5 : 8;
   ok(l.vocab.length === vocabSize, `tam ${vocabSize} kelime`, `(${l.vocab.length})`);
   ok(l.patterns.length >= 2 && l.patterns.length <= 3, "2-3 kalıp", `(${l.patterns.length})`);
   ok(
