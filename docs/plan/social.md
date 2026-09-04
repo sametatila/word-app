@@ -80,7 +80,7 @@ uygulama adımından sonra buradaki maddeler tek tek yeniden denetlenir.
 - `WeeklyScreen`/haftalık sınav skoru sosyal katmana bağlı değil.
 
 ## Yayına alma sırası (ZORUNLU)
-1. Sunucuda migration: `ssh nomi 'cd /opt/nomi/$(cat /opt/nomi/active) && npx tsx scripts/apply-migration.ts drizzle/0036_social.sql'` — kod deploy'undan ÖNCE (yeni kod `profiles`ten yeni sütunları okur; sütun yoksa öğrenme yolları da 500 verir). Migration eski kod için zararsız (yalnız ekleme).
+1. Sunucuda migration: `ssh lernomi 'cd /opt/lernomi/$(cat /opt/lernomi/active) && npx tsx scripts/apply-migration.ts drizzle/0036_social.sql'` — kod deploy'undan ÖNCE (yeni kod `profiles`ten yeni sütunları okur; sütun yoksa öğrenme yolları da 500 verir). Migration eski kod için zararsız (yalnız ekleme).
 2. `git push origin main` → webhook → deploy.
 3. Doğrulama: `/friends` açılır, kullanıcı adı otomatik gelir; iki hesapla istek/kabul/tepki/dürtme/görev.
 
