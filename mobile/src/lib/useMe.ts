@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { setCurrentCourse } from "./courses";
+import { adoptServerLang } from "./i18n";
+import { loadOnboardingPrefs } from "./onboardingPrefs";
 import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
 import { todayStr } from "../game/session";
@@ -9,6 +11,8 @@ export type Me = {
   name: string | null;
   level: string;
   course: string;
+  /** Sunucuda saklı anadil; null = hiç seçilmemiş eski hesap. */
+  nativeLang?: string | null;
   streak: number;
   longestStreak: number;
   xp: number;
@@ -21,6 +25,22 @@ export type Me = {
   newToday?: number;
   dueCount?: number;
 };
+
+/**
+ * Hesaptaki anadil tercihini uygular — cihaz değiştiren kullanıcı seçimini
+ * kaybetmesin diye.
+ *
+ * Devredilmeyi bekleyen bir onboarding seçimi varsa dokunulmuyor: giriş anında
+ * `signIn` önce kullanıcıyı kuruyor (bu çağrı tetikleniyor) sonra applyPrefs'i
+ * bekliyor, yani ikisi yarışıyor. Bekleyen seçim varken sunucuyu uygulamak,
+ * kullanıcının az önce seçtiği dili bir anlığına eski değere döndürürdü.
+ * Devir bittiğinde prefs temizleniyor ve sonraki her /api/me'de sunucu yetkili.
+ */
+async function syncNativeLang(server: string | null | undefined): Promise<void> {
+  const pending = await loadOnboardingPrefs();
+  if (pending.nativeLang) return;
+  await adoptServerLang(server);
+}
 
 /** /api/session meta'sının okuduğumuz alt kümesi (özet ucu deploy değilse kaynak). */
 type SessionMetaLite = {
@@ -62,6 +82,7 @@ export function useMe(): { me: Me | null; loading: boolean } {
         // Ayarlar ekranı açılınca kuruluyordu, yani uygulama açılışında kurs
         // bilinmiyor ve her şey Almanca varsayılanına düşüyordu.
         setCurrentCourse(d.course);
+        void syncNativeLang(d.nativeLang);
         setMe(d);
       })
       .catch(async () => {

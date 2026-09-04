@@ -1,0 +1,1 @@
+ALTER TABLE "profiles" ADD COLUMN "native_lang" text;

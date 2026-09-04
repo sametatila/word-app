@@ -11,6 +11,8 @@ export type ProfilePatch = {
   newPerDay?: number;
   level?: string;
   course?: string;
+  /** Anadil (arayüz/anlatım dili) — kurstan ayrı eksen. */
+  nativeLang?: string;
   goal?: string;
   voice?: string;
 };

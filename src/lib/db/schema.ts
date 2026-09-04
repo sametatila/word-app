@@ -76,7 +76,18 @@ export const profiles = pgTable("profiles", {
   // Kullanıcının seçtiği CEFR seviyesi. Yalnızca kullanıcı değiştirir; sistem
   // performansa bakarak terfi/düşüş yapmaz (bkz. lib/session.ts, Strength).
   level: text("level").notNull().default("A1"),
-  course: text("course").notNull().default("de"), // de | gsw-zh — çalışılan kurs
+  course: text("course").notNull().default("de"), // de | gsw-zh | en — çalışılan HEDEF dil
+  /**
+   * Kullanıcının ANADİLİ — arayüz ve anlatım dili (tr | en | de).
+   *
+   * `course` hedef dili tutuyor; parite ikisinin bileşimi (tr→de, tr→en,
+   * en→de…). Null = hiç seçilmemiş: eski hesapların hepsi böyle ve Türkçe
+   * sayılıyorlar, bu yüzden göç gerekmiyor.
+   *
+   * Tercih mobilde cihazda da tutuluyor (AsyncStorage); burada durmasının
+   * sebebi cihaz değiştiren kullanıcının seçimini kaybetmemesi.
+   */
+  nativeLang: text("native_lang"),
   // Seslendirme sesi. Null ise kursun varsayılanı kullanılır — mevcut
   // hesaplar için göç gerekmemesinin ve kurs değişince sesin kendiliğinden
   // doğru olana dönmesinin sebebi bu (bkz. lib/tts/voices.ts, resolveVoice).

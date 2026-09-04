@@ -131,6 +131,9 @@ export function OnboardingScreen() {
       const next = { ...c, [key]: value };
       if (key === "lang") {
         void setLang(value as NativeLang);
+        // Hesaba devredilmeyi beklesin (kurs/seviye ile aynı yol): kullanıcı
+        // henüz giriş yapmadı, seçim ancak girişte profile yazılabiliyor.
+        void saveOnboardingPrefs({ nativeLang: value });
         const ok = coursesForNative(value as NativeLang).some((x) => x.id === next.course);
         if (!ok) delete next.course;
       }

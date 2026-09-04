@@ -208,7 +208,7 @@ export function SettingsScreen() {
                 label={LANG_LABEL[l]}
                 active={uiLang === l}
                 colors={colors}
-                onPress={() => { setUiLang(l); void setLang(l); void keepCourseValid(l); }}
+                onPress={() => { setUiLang(l); void setLang(l); void updateProfile({ nativeLang: l }); void keepCourseValid(l); }}
               />
             ))}
           </View>

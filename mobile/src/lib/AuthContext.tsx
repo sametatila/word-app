@@ -33,7 +33,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const refresh = useCallback(async () => { setUser(await getSession()); }, []);
 
-  /** Misafirken seçilen kurs/hedef/seviye — giriş yapınca profile taşınır. */
+  /** Misafirken seçilen anadil/kurs/hedef/seviye — giriş yapınca profile taşınır. */
   const applyPrefs = useCallback(async () => {
     const prefs = await loadOnboardingPrefs();
     if (!hasPrefs(prefs)) return;
@@ -41,6 +41,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       ...(prefs.course ? { course: prefs.course } : {}),
       ...(prefs.goal ? { dailyGoal: prefs.goal } : {}),
       ...(prefs.level ? { level: prefs.level } : {}),
+      ...(prefs.nativeLang ? { nativeLang: prefs.nativeLang } : {}),
     });
     if (ok) await clearOnboardingPrefs();
   }, []);

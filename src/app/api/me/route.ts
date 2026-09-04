@@ -32,6 +32,10 @@ export async function GET() {
         name: profile.displayName,
         level: profile.level,
         course: profile.course,
+        // Null = anadili hiç seçilmemiş eski hesap; istemci kendi
+        // varsayılanını (cihaz dili) korusun diye null olarak gidiyor,
+        // sunucuda "tr" diye uydurulmuyor.
+        nativeLang: profile.nativeLang,
         streak: profile.currentStreak,
         longestStreak: profile.longestStreak,
         xp: profile.totalXp,

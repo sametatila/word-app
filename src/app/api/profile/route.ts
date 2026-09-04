@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { displayNameAllowed } from "@/lib/moderation";
-import { acceptsCourse } from "@/lib/courses";
+import { acceptsCourse, acceptsNativeLang } from "@/lib/courses";
 import { resolveVoice } from "@/lib/tts/voices";
 import { eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
@@ -67,6 +67,11 @@ export async function POST(req: Request) {
   // sessizce reddediyordu. `enabled` bayrağı ikisini birlikte açar.
   if (typeof body.course === "string" && acceptsCourse(body.course))
     patch.course = body.course;
+  // Anadil (arayüz/anlatım dili) — kurstan ayrı eksen. Cihazda da tutuluyor;
+  // burada durmasının sebebi cihaz değiştiren kullanıcının seçimini
+  // kaybetmemesi. Serbest metin kabul edilmiyor.
+  if (typeof body.nativeLang === "string" && acceptsNativeLang(body.nativeLang))
+    patch.nativeLang = body.nativeLang;
   // Ses, gideceği kursa göre doğrulanıyor: kurs ve ses aynı istekte
   // geliyorsa yeni kurs, gelmiyorsa kayıtlı kurs ölçü alınıyor. Aksi hâlde
   // Zürih'e geçen biri Almanca sesle kalabilirdi.

@@ -131,6 +131,38 @@ export async function setLang(next: NativeLang): Promise<void> {
   }
 }
 
+/**
+ * Cihazda AÇIK bir dil tercihi var mı.
+ *
+ * `currentLang()` her zaman bir değer döner ama bu, kullanıcının seçtiği mi
+ * yoksa cihaz dilinden türetilmiş mi olduğunu söylemez. Sunucuyla eşitlerken
+ * fark önemli: türetilmiş bir değeri sunucuya "kullanıcının kararı" diye
+ * yazmak, başka cihazdaki gerçek seçimi ezerdi.
+ */
+export async function savedLang(): Promise<NativeLang | null> {
+  try {
+    const v = await AsyncStorage.getItem(KEY);
+    return v && isNativeLang(v) ? v : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Sunucudaki anadil tercihini yerelde uygular. Sunucuya geri YAZMAZ.
+ *
+ * Sunucu kazanır: cihaz değiştiren kullanıcı seçimini kaybetmesin. Değer yoksa
+ * (hiç seçmemiş eski hesap) hiçbir şey yapılmaz — cihazın kendi tercihi kalır.
+ * Uygulandıysa true döner; çağıran bu bilgiyle ters yönü (yereli sunucuya
+ * taşımayı) tetikler.
+ */
+export async function adoptServerLang(value: string | null | undefined): Promise<boolean> {
+  if (!value || !isNativeLang(value)) return false;
+  if (value === lang) return true;
+  await setLang(value);
+  return true;
+}
+
 export function onLangChange(fn: () => void): () => void {
   listeners.add(fn);
   return () => {

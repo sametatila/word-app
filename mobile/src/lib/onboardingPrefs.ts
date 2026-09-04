@@ -6,7 +6,14 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const KEY = "nomi:onboarding-prefs";
-export type OnboardingPrefs = { course?: string; goal?: number; level?: string };
+/**
+ * `nativeLang` burada, canlı arayüz dilinin (i18n'in `nomi-lang` anahtarı)
+ * KOPYASI değil: anlamı "bu seçim henüz hesaba devredilmedi". Devredilince
+ * prefs temizleniyor ve sunucu yetkili hâle geliyor — kurs/seviye ile aynı
+ * kural. İki anahtar farklı soruları yanıtlıyor: biri "arayüz şu an hangi
+ * dilde", öteki "hesaba yazılmayı bekleyen bir seçim var mı".
+ */
+export type OnboardingPrefs = { course?: string; goal?: number; level?: string; nativeLang?: string };
 
 export async function loadOnboardingPrefs(): Promise<OnboardingPrefs> {
   try {
@@ -30,5 +37,5 @@ export async function clearOnboardingPrefs(): Promise<void> {
 
 /** Profile taşınacak alanlar var mı (boş nesne değilse). */
 export function hasPrefs(p: OnboardingPrefs): boolean {
-  return p.course != null || p.goal != null || p.level != null;
+  return p.course != null || p.goal != null || p.level != null || p.nativeLang != null;
 }

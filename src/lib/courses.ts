@@ -14,6 +14,15 @@
 
 export type CourseId = "de" | "gsw-zh" | "en";
 
+/**
+ * Kullanıcının anadili — arayüz ve anlatım dili. Kurs (hedef dil) ile birlikte
+ * pariteyi kurar. Mobildeki NativeLang ile aynı küme.
+ */
+export type NativeLang = "tr" | "en" | "de";
+export const NATIVE_LANGS: NativeLang[] = ["tr", "en", "de"];
+/** Anadil yazılmamış eski hesaplar Türkçe sayılır (göç gerekmesin diye). */
+export const DEFAULT_NATIVE: NativeLang = "tr";
+
 export type Course = {
   id: CourseId;
   /** Konuşma/tanıma için temel dil kodu — aynı dilin lehçeleri bunu paylaşır. */
@@ -60,4 +69,14 @@ export function courseOrDefault(id: string | null | undefined): Course {
  */
 export function acceptsCourse(value: string): boolean {
   return COURSES.some((c) => c.id === value && c.enabled);
+}
+
+/**
+ * Profilde saklanmasına izin verilen anadiller.
+ *
+ * Kurs doğrulamasının eşi: arayüz dili de sunucuya yazılıyor (cihaz değişince
+ * tercih kaybolmasın diye) ve serbest metin kabul edilmemeli.
+ */
+export function acceptsNativeLang(value: string): boolean {
+  return (NATIVE_LANGS as readonly string[]).includes(value);
 }
