@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, LegalShell, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, LEGAL_PATHS, PROCESSORS, hasKep, legalPath, processorRow } from "@/lib/legal";
 
 export const metadata = {
   title: "Gizlilik Politikası",
@@ -188,8 +188,8 @@ export default function PrivacyPage() {
       </ul>
       <p>
         <strong>Başvuru:</strong> <Ph k="privacyEmail" /> adresine yaz; kimliğini doğrulamak için hesabındaki e-posta adresinden yazman
-        yeterlidir. Türkiye&apos;de KVKK Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca yazılı başvuru ya da KEP
-        (<Ph k="kep" />) da kullanılabilir. Talepleri en geç 30 gün içinde ücretsiz sonuçlandırırız; GDPR kapsamında bu süre gerekirse iki
+        yeterlidir. Türkiye&apos;de KVKK Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca ıslak imzalı yazılı başvuru,
+        güvenli elektronik imzalı başvuru ya da hesabında kayıtlı e-posta adresinden başvuru da yapılabilir{hasKep() ? <>; KEP adresimiz <Ph k="kep" /></> : null}. Talepleri en geç 30 gün içinde ücretsiz sonuçlandırırız; GDPR kapsamında bu süre gerekirse iki
         ay uzatılabilir ve sana bildirilir.
       </p>
       <p>

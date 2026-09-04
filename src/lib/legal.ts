@@ -4,34 +4,76 @@
  * Veri Güvenliği beyanı (docs/play/data-safety.md) bu listeyle tutarlı olmalı — yeni
  * bir sağlayıcı eklenince önce burası güncellenir.
  *
- * Kimlik alanları [[...]] biçiminde YER TUTUCU: geliştirici/yayıncı Türkiye'de yerleşik,
- * ünvan-adres-e-posta kesinleşince yalnız bu nesne doldurulur; sayfalar yer tutucuyu
- * görünür bir etiketle basar ki yayından önce gözden kaçmasın (bkz. legal-shell Ph).
+ * KİMLİK PROFİLİ: ŞİRKETSİZ GERÇEK KİŞİ
+ *
+ * Geliştirici Türkiye'de yerleşik bir gerçek kişi ve Gelir Vergisi Kanunu mükerrer
+ * m.20/B'deki "mobil cihazlar için uygulama geliştiriciliği kazanç istisnası"
+ * kapsamında çalışıyor. Bu, metinlerin şeklini değiştiriyor:
+ *
+ *   - Ticaret siciline kayıtlı bir tacir YOK: ticaret sicil numarası ve MERSİS
+ *     numarası da yok. Onların yerine bağlı olunan vergi dairesi yazılıyor.
+ *   - TCKN/VKN buraya YAZILMAZ. Sayfalar herkese açık; kimlik numarasını yayımlamak
+ *     kimlik hırsızlığına davetiye. KVKK aydınlatması ve 6563 tanıtıcı bilgi
+ *     yükümlülüğü için ad-soyad, adres ve iletişim kanalı yeterli.
+ *   - KEP zorunlu değil (TTK m.18/3 tacirler için). Yoksa bu alan BOŞ bırakılır;
+ *     boş alan sayfalarda satırı ve tebligat cümlesini kendiliğinden düşürür.
+ *   - İstisna kapsamındaki kazanç için belge düzenleme yükümlülüğü yok; satış
+ *     belgesini Google Play düzenliyor (bkz. şartlar §7).
+ *   - Adres, Play Console'da bireysel geliştirici hesabı için zaten doğrulanıyor ve
+ *     mağaza sayfasında herkese görünüyor; burada gizlenebilecek bir şey değil.
+ *     Ev adresi vermek istenmiyorsa kullanılacak şey bir yazışma adresidir.
+ *
+ * İstisnanın kendi koşulları (Türkiye'de banka hesabı, hasılatın yalnız o hesaptan
+ * tahsili, vergi dairesinden istisna belgesi, GVK m.103 dördüncü dilim sınırı) bu
+ * dosyanın konusu değil — mali müşavirle doğrulanır. Buradaki tek etkisi: metinler
+ * şirket varsaymıyor. İstisna yalnız uygulama paylaşım platformlarından (Play,
+ * App Store) elde edilen kazancı kapsıyor; web'den doğrudan tahsilat eklenirse o
+ * gelir istisna dışında kalır ve bu metinlerin fatura maddesi yeniden yazılmalıdır.
+ *
+ * Kimlik alanları [[...]] biçiminde YER TUTUCU: kesinleşince yalnız bu nesne
+ * doldurulur; sayfalar yer tutucuyu görünür bir etiketle basar ki yayından önce
+ * gözden kaçmasın (bkz. legal-shell Ph).
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-03";
 export const LEGAL_VERSION = "1.1";
 
 export const LEGAL_ENTITY = {
-  /** Veri sorumlusu ve hizmet sağlayıcı ünvanı (şirket ünvanı ya da ad soyad). */
-  name: "[[GELİŞTİRİCİ_ÜNVANI]]",
-  /** Tam posta adresi. */
-  address: "[[ADRES]]",
-  /** Ticaret sicil / MERSİS numarası (şahıs işletmesiyse vergi dairesi ve numarası). */
-  registry: "[[TİCARET_SİCİL_VEYA_MERSİS_NO]]",
+  /** Veri sorumlusu ve hizmet sağlayıcı: gerçek kişinin adı ve soyadı. */
+  name: "[[AD_SOYAD]]",
+  /** Yazışma adresi (tebligata elverişli). Ev adresi verilmek istenmiyorsa iş/yazışma adresi. */
+  address: "[[YAZIŞMA_ADRESİ]]",
+  /**
+   * Bağlı olunan vergi dairesi. Ticaret sicil/MERSİS numarasının yerini alıyor:
+   * şirketsiz gerçek kişinin ikisi de yok. TCKN/VKN BURAYA YAZILMAZ.
+   */
+  taxOffice: "[[VERGİ_DAİRESİ]]",
   /** Gizlilik ve veri hakları talepleri için e-posta. */
   privacyEmail: "[[GİZLİLİK_E_POSTASI]]",
   /** Genel destek e-postası. */
   supportEmail: "[[DESTEK_E_POSTASI]]",
-  /** Kayıtlı elektronik posta (KEP) adresi — Türkiye'de resmi tebligat. */
-  kep: "[[KEP_ADRESİ]]",
-  /** GDPR m.27 AB temsilcisi (ad ve adres); atanmadıysa metin bunu söyler. */
+  /**
+   * Kayıtlı elektronik posta (KEP). Gerçek kişi için ZORUNLU DEĞİL.
+   * Yoksa boş dize bırak — satır ve tebligat cümlesi kendiliğinden düşer.
+   */
+  kep: "[[KEP_ADRESİ_VARSA_YOKSA_BOŞ]]",
+  /**
+   * GDPR m.27 AB temsilcisi (ad ve adres). AB'deki kullanıcılara düzenli hizmet
+   * veren, AB'de yerleşik olmayan veri sorumlusu için kural olarak ZORUNLU;
+   * m.27(2)(a) istisnası ("arızi işleme") bir dil uygulamasına uymaz. Atanmadığı
+   * sürece burası yer tutucu kalır ve sayfa bunu vurguyla gösterir.
+   */
   euRepresentative: "[[AB_TEMSİLCİSİ_AD_VE_ADRES]]",
-  /** UK GDPR m.27 Birleşik Krallık temsilcisi; atanmadıysa metin bunu söyler. */
+  /** UK GDPR m.27 Birleşik Krallık temsilcisi; aynı mantık. */
   ukRepresentative: "[[BK_TEMSİLCİSİ_AD_VE_ADRES]]",
-  /** Uyuşmazlıklarda yetkili mahkeme ve icra dairelerinin bulunduğu şehir. */
-  court: "[[YETKİLİ_MAHKEME_ŞEHRİ]]",
-  /** VERBİS kayıt numarası (yükümlülük kapsamındaysa; değilse "kapsam dışı" yazılır). */
-  verbis: "[[VERBİS_KAYIT_NO_VEYA_KAPSAM_DIŞI]]",
+  /** Yerleşim yerinin bulunduğu il — yetkili mahkeme ve icra daireleri buna göre. */
+  court: "[[YERLEŞİM_YERİ_İLİ]]",
+  /**
+   * VERBİS. Yıllık çalışan sayısı 50'den az ve yıllık mali bilanço toplamı 25 milyon
+   * TL'den az olan, ana faaliyeti özel nitelikli kişisel veri işleme olmayan veri
+   * sorumluları kayıt yükümlülüğünden istisna (Kurul kararları 2018/87, 2019/265).
+   * Tek kişilik bir geliştirici bu istisnaya girer; o hâlde "Kapsam dışı" yazılır.
+   */
+  verbis: "[[VERBİS_NO_VEYA_KAPSAM_DIŞI]]",
   /** Sunucu yedeklerinin en uzun saklama süresi (gün) — silinen hesabın yedekten düşme süresi. */
   backupRetentionDays: "[[YEDEK_SAKLAMA_SÜRESİ_GÜN]]",
 } as const;
@@ -49,6 +91,20 @@ export type LegalField = keyof typeof LEGAL_ENTITY;
 /** Yer tutucu mu (henüz doldurulmamış)? */
 export function isLegalPlaceholder(value: string): boolean {
   return /^\[\[.+\]\]$/.test(value.trim());
+}
+
+/**
+ * Alan bu kimlik için uygulanmıyor mu? Boş dize "bu profilde yok" demek (ör. KEP);
+ * satırı ve ona atıf yapan cümleyi tamamen düşürmek için kullanılıyor. Yer tutucu
+ * boş sayılmaz — o "henüz doldurulmadı" demek ve vurguyla görünmeye devam eder.
+ */
+export function isLegalOmitted(value: string): boolean {
+  return value.trim() === "";
+}
+
+/** KEP adresi var mı — yoksa ona atıf yapan cümleler hiç yazılmıyor. */
+export function hasKep(): boolean {
+  return !isLegalOmitted(LEGAL_ENTITY.kep);
 }
 
 export const LEGAL_PATHS = {

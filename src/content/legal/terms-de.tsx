@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { FAIR_USE, legalPath } from "@/lib/legal";
+import { FAIR_USE, hasKep, legalPath } from "@/lib/legal";
 
 /**
  * Nutzungsbedingungen — Deutsch. Informative Übersetzung; verbindlich ist der
@@ -94,7 +94,7 @@ export function TermsDeBody() {
         <li><strong>Verlängerung und Kündigung:</strong> Wird das Abonnement nicht mindestens 24 Stunden vor Ende der Laufzeit gekündigt, verlängert es sich um denselben Zeitraum. Kündigung und Verwaltung finden sich im Play Store &rsaquo; Zahlungen und Abos; das Löschen des Kontos kündigt das Abonnement nicht. Kündigst du vor Ende einer kostenlosen Testphase, fällt keine Gebühr an.</li>
         <li><strong>Widerrufsrecht:</strong> Da die Erbringung eines digitalen Inhaltsdienstes im Moment des Kaufs beginnt, endet das Widerrufsrecht nach Art. 15/1-ğ der türkischen Fernabsatzverordnung und Art. 16(m) der EU-Verbraucherrechterichtlinie mit deiner Zustimmung zum Beginn der Erbringung; diese Zustimmung wird auf dem Kaufbildschirm eingeholt. Die Rückerstattungsrichtlinie von Google Play gilt zusätzlich, und von Play gewährte Rückerstattungen erkennen wir an.</li>
         <li><strong>Preisänderung:</strong> Preisänderungen teilen wir vor ihrem Inkrafttreten über Play mit; nimmst du eine nicht an, kannst du das Abonnement kündigen.</li>
-        <li><strong>Rechnung:</strong> Für Nutzer in der Türkei wird die E-Rechnung bzw. E-Archiv-Rechnung mit den von Google Play übermittelten Angaben ausgestellt.</li>
+        <li><strong>Kaufbeleg:</strong> Premium kaufst du über Google Play; den Beleg stellt Google aus und sendet ihn an die E-Mail-Adresse deines Play-Kontos. Eine Kopie kannst du über den Google-Play-Support anfordern. Anbieter des Dienstes ist keine Gesellschaft, sondern eine natürliche Person; da die Einkünfte unter die türkische Einkommensteuerbefreiung für die Entwicklung mobiler Anwendungen fallen, wird keine gesonderte Rechnung ausgestellt.</li>
       </ul>
 
       <h2>7a. Fair Use</h2>
@@ -175,10 +175,10 @@ export function TermsDeBody() {
       <ul>
         <li><strong>Vollständigkeit:</strong> Diese Bedingungen, die Datenschutzerklärung und die vorvertragliche Information auf dem Kaufbildschirm bilden die gesamte Vereinbarung zwischen den Parteien.</li>
         <li><strong>Salvatorische Klausel:</strong> Ist eine Bestimmung unwirksam, bleiben die übrigen unberührt; die unwirksame Bestimmung gilt als durch die wirksame Bestimmung ersetzt, die ihrem Zweck am nächsten kommt.</li>
-        <li><strong>Übertragung:</strong> Du darfst dein Konto und deine Rechte aus dieser Vereinbarung nicht übertragen. Wir dürfen die Vereinbarung bei einer Übertragung des Dienstes oder einer Änderung der Unternehmensstruktur übertragen, wobei deine Rechte gewahrt bleiben und wir dich informieren.</li>
+        <li><strong>Übertragung:</strong> Du darfst dein Konto und deine Rechte aus dieser Vereinbarung nicht übertragen. Wir dürfen die Vereinbarung bei einer Übertragung des Dienstes oder bei Überführung der Tätigkeit in eine Gesellschaftsform übertragen, wobei deine Rechte gewahrt bleiben und wir dich informieren.</li>
         <li><strong>Verzicht:</strong> Die Nichtausübung eines Rechts bedeutet keinen Verzicht darauf.</li>
         <li><strong>Sprache:</strong> Verbindliche Sprache der Vereinbarung ist Türkisch; Übersetzungen dienen der Information. Bei Auslegungsunterschieden ist der türkische Text maßgebend.</li>
-        <li><strong>Zustellung:</strong> Mitteilungen an uns gehen an <Ph k="supportEmail" /> oder an die registrierte E-Mail-Adresse (KEP); Mitteilungen an dich gehen an die E-Mail-Adresse deines Kontos oder erfolgen als Nachricht in der App und gelten mit Zugang als zugestellt.</li>
+        <li><strong>Zustellung:</strong> Mitteilungen an uns gehen an <Ph k="supportEmail" />{hasKep() ? <> oder an die registrierte E-Mail-Adresse (KEP, <Ph k="kep" />)</> : null}; Mitteilungen an dich gehen an die E-Mail-Adresse deines Kontos oder erfolgen als Nachricht in der App und gelten mit Zugang als zugestellt.</li>
         <li><strong>Aufbewahrung:</strong> Diese Vereinbarung wird elektronisch aufbewahrt; du kannst die von dir angenommene Fassung und ihr Datum anfordern.</li>
       </ul>
 
@@ -186,7 +186,8 @@ export function TermsDeBody() {
       <p>
         Wenn wir diese Bedingungen aktualisieren, ändern sich Gültigkeitsdatum und Version; wesentliche Änderungen zu deinem Nachteil
         kündigen wir mindestens 30 Tage vorher in der App und per E-Mail an, und du kannst dein Konto schließen, wenn du sie nicht
-        annimmst. Fragen: <Ph k="supportEmail" />; für die förmliche Zustellung KEP: <Ph k="kep" />.
+        annimmst. Fragen: <Ph k="supportEmail" />.
+        {hasKep() ? <> Für die förmliche Zustellung KEP: <Ph k="kep" />.</> : null}
       </p>
     </>
   );

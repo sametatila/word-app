@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, PROCESSORS, hasKep, legalPath, processorRow } from "@/lib/legal";
 
 /**
  * Privacy policy — English. Informational translation; the Turkish text at
@@ -189,8 +189,9 @@ export function PrivacyEnBody() {
       </ul>
       <p>
         <strong>Making a request:</strong> write to <Ph k="privacyEmail" />; writing from the e-mail address on your account is enough to
-        verify your identity. In Türkiye a written application or the registered e-mail address (KEP, <Ph k="kep" />) may also be used
-        under the Communiqué on the Procedures for Applications to the Data Controller. We resolve requests free of charge within 30 days at
+        verify your identity. In Türkiye, under the Communiqué on the Procedures for Applications to the Data Controller, you may also
+        apply in writing with a wet signature, with a qualified electronic signature, or from the e-mail address registered on your
+        account{hasKep() ? <>; our registered e-mail (KEP) address is <Ph k="kep" /></> : null}. We resolve requests free of charge within 30 days at
         the latest; under the GDPR this period may be extended by two months where necessary, and you will be told.
       </p>
       <p>

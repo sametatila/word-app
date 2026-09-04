@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { LEGAL_HOSTING_TEXT, PROCESSORS, legalPath, processorRow } from "@/lib/legal";
+import { LEGAL_HOSTING_TEXT, PROCESSORS, hasKep, legalPath, processorRow } from "@/lib/legal";
 
 /**
  * Datenschutzerklärung — Deutsch. Informative Übersetzung; verbindlich ist der
@@ -196,8 +196,9 @@ export function PrivacyDeBody() {
       </ul>
       <p>
         <strong>Antragstellung:</strong> Schreibe an <Ph k="privacyEmail" />; zur Identitätsprüfung genügt es, von der E-Mail-Adresse deines
-        Kontos zu schreiben. In der Türkei können nach der Mitteilung über das Verfahren für Anträge an den Verantwortlichen auch ein
-        schriftlicher Antrag oder die registrierte E-Mail-Adresse (KEP, <Ph k="kep" />) genutzt werden. Wir bearbeiten Anträge kostenlos
+        Kontos zu schreiben. In der Türkei kannst du nach der Mitteilung über das Verfahren für Anträge an den Verantwortlichen den
+        Antrag auch schriftlich mit eigenhändiger Unterschrift, mit qualifizierter elektronischer Signatur oder von der in deinem Konto
+        hinterlegten E-Mail-Adresse aus stellen{hasKep() ? <>; unsere registrierte E-Mail-Adresse (KEP) lautet <Ph k="kep" /></> : null}. Wir bearbeiten Anträge kostenlos
         innerhalb von höchstens 30 Tagen; nach der DSGVO kann diese Frist bei Bedarf um zwei Monate verlängert werden, worüber wir dich
         informieren.
       </p>

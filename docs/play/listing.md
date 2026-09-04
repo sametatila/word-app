@@ -126,3 +126,24 @@ varsa uygulamadaki özelliği anlatır, fiyat ya da vaat içermez.
 - Maskot (mirket) özgün; başka bir dil uygulamasının maskotuna benzemiyor.
 - Goethe-Institut ve telc tescilli markalar: listelemede yalnız tanımlayıcı kullanım,
   logo yok; Kullanım Şartları §8 bağlantısızlığı belirtiyor.
+
+## 5. Geliştirici hesabı — şirketsiz gerçek kişi
+
+Hesap **bireysel** (kişisel) geliştirici hesabı: ticaret siciline kayıtlı bir tüzel kişi yok,
+dolayısıyla "organization" hesabı ve onun istediği D-U-N-S numarası da yok. Bunun doğrudan
+sonuçları:
+
+| Konu | Sonuç |
+|---|---|
+| Kimlik doğrulama | Play, ad-soyad, adres, telefon ve e-postayı doğruluyor; `src/lib/legal.ts` içindeki değerlerle **aynı** olmalı, aksi hâlde mağaza sayfası ile gizlilik politikası çelişir |
+| Adresin görünürlüğü | Bireysel hesapta doğrulanmış ad ve adres **mağaza sayfasında herkese görünür**. Ev adresi verilmek istenmiyorsa hesap açılırken bir yazışma adresi kullanılmalı — sonradan değiştirmek yeniden doğrulama demek |
+| Destek e-postası | Listelemede zorunlu ve herkese açık; `LEGAL_ENTITY.supportEmail` ile aynı olmalı |
+| Kapalı test kapısı | Kişisel hesaplar için Play, üretime geçmeden önce belirli sayıda test kullanıcısıyla kesintisiz kapalı test istiyor. **Sayı ve süre Google tarafından değiştiriliyor; Console'daki güncel değer esas alınmalı.** Bu, bireysel hesapların en sık gözden kaçırdığı kapı |
+
+Metin tarafındaki karşılığı `src/lib/legal.ts`'teki kimlik profili notunda: ticaret sicil/MERSİS
+alanı yok, yerine vergi dairesi var; KEP zorunlu değil ve boş bırakılırsa hukuki metinlerden
+kendiliğinden düşüyor; satış belgesini Google düzenlediği ve kazanç istisnası kapsamında
+belge düzenleme yükümlülüğü olmadığı için şartlar fatura vaat etmiyor.
+
+> Vergi tarafı (istisnanın koşulları, banka hesabı, istisna belgesi, hasılat sınırı) bu deponun
+> konusu değil ve mali müşavirle doğrulanmalı. Buradaki tek etkisi metinlerin şirket varsaymaması.

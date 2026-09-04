@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, Ph } from "@/components/legal-shell";
-import { FAIR_USE, legalPath } from "@/lib/legal";
+import { FAIR_USE, hasKep, legalPath } from "@/lib/legal";
 
 /**
  * Terms of use — English. Informational translation; the Turkish text at
@@ -89,7 +89,7 @@ export function TermsEnBody() {
         <li><strong>Renewal and cancellation:</strong> Unless cancelled at least 24 hours before the end of the term, the subscription renews for the same period. Cancellation and management are in Play Store &rsaquo; Payments and subscriptions; deleting your account does not cancel the subscription. If you cancel before a free trial ends, you are not charged.</li>
         <li><strong>Right of withdrawal:</strong> Because performance of a digital content service begins at the moment of purchase, under Art. 15/1-ğ of the Distance Contracts Regulation and Art. 16(m) of the EU Consumer Rights Directive the right of withdrawal ends with your consent to performance beginning; that consent is requested on the purchase screen. Google Play&apos;s refund policy applies in addition, and we honour refunds Play grants.</li>
         <li><strong>Price changes:</strong> We notify price changes through Play before they take effect; if you do not accept one, you can cancel the subscription.</li>
-        <li><strong>Invoice:</strong> For users in Türkiye, the e-invoice or e-archive invoice is issued using the information Google Play passes to us.</li>
+        <li><strong>Proof of purchase:</strong> You buy Premium through Google Play, and Google issues the receipt and sends it to the e-mail address on your Play account; you can request a copy through Google Play support. The provider of the service is not a company but a natural person, and because the earnings fall within the Turkish income tax exemption for mobile application development, no separate invoice is issued.</li>
       </ul>
 
       <h2>7a. Fair use</h2>
@@ -165,18 +165,18 @@ export function TermsEnBody() {
       <ul>
         <li><strong>Entire agreement:</strong> These terms, the Privacy Policy and the pre-contractual information on the purchase screen form the whole of the agreement between the parties.</li>
         <li><strong>Severability:</strong> If a provision is held invalid, the others are unaffected; the invalid provision is deemed replaced by the valid provision closest to its purpose.</li>
-        <li><strong>Assignment:</strong> You may not assign your account or your rights under this agreement. We may assign the agreement in the event of a transfer of the service or a change in company structure, preserving your rights and notifying you.</li>
+        <li><strong>Assignment:</strong> You may not assign your account or your rights under this agreement. We may assign the agreement in the event of a transfer of the service or if the activity is moved into a company structure, preserving your rights and notifying you.</li>
         <li><strong>Waiver:</strong> Not exercising a right does not mean waiving it.</li>
         <li><strong>Language:</strong> The binding language of the agreement is Turkish; translations are for information. In case of a difference in interpretation, the Turkish text prevails.</li>
-        <li><strong>Notices:</strong> Notices to us go to <Ph k="supportEmail" /> or to the registered e-mail (KEP) address; notices to you go to the e-mail address on your account or as an in-app message, and are deemed served upon arrival.</li>
+        <li><strong>Notices:</strong> Notices to us go to <Ph k="supportEmail" />{hasKep() ? <> or to the registered e-mail (KEP) address (<Ph k="kep" />)</> : null}; notices to you go to the e-mail address on your account or as an in-app message, and are deemed served upon arrival.</li>
         <li><strong>Retention:</strong> This agreement is stored electronically; you may request the version you accepted and its date.</li>
       </ul>
 
       <h2>13. Changes and contact</h2>
       <p>
         When we update these terms, the effective date and version change; we announce material changes to your detriment at least 30 days
-        in advance in the app and by e-mail, and you may close your account if you do not accept them. Questions: <Ph k="supportEmail" />;
-        for formal service of notice, KEP: <Ph k="kep" />.
+        in advance in the app and by e-mail, and you may close your account if you do not accept them. Questions: <Ph k="supportEmail" />.
+        {hasKep() ? <> For formal service of notice, KEP: <Ph k="kep" />.</> : null}
       </p>
     </>
   );

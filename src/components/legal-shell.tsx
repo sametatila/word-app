@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LogoMark } from "@/components/icons";
-import { LEGAL_EFFECTIVE_DATE, LEGAL_ENTITY, LEGAL_LOCALES, LEGAL_VERSION, isLegalPlaceholder, legalPath, type LegalField, type LegalLocale } from "@/lib/legal";
+import { LEGAL_EFFECTIVE_DATE, LEGAL_ENTITY, LEGAL_LOCALES, LEGAL_VERSION, isLegalOmitted, isLegalPlaceholder, legalPath, type LegalField, type LegalLocale } from "@/lib/legal";
 
 /** Çerçevenin kendi metinleri — belge gövdesi değil, kabuk (gezinme, etiketler). */
 const CHROME: Record<LegalLocale, {
@@ -104,40 +104,51 @@ export function Ph({ k }: { k: LegalField }) {
   return isLegalPlaceholder(v) ? <span className="ph">{v}</span> : <>{v}</>;
 }
 
-/** Kimlik bloğunun etiketleri — değerler dile bağlı değil, etiketler bağlı. */
-const ENTITY_LABELS: Record<LegalLocale, Record<"name" | "address" | "registry" | "privacy" | "support" | "kep" | "eu" | "uk", string>> = {
+/**
+ * Kimlik bloğunun etiketleri — değerler dile bağlı değil, etiketler bağlı.
+ * Alanlar ŞİRKETSİZ GERÇEK KİŞİ profiline göre: ticaret sicil/MERSİS yerine vergi
+ * dairesi, ünvan yerine ad soyad (bkz. lib/legal.ts kimlik profili notu).
+ */
+const ENTITY_LABELS: Record<LegalLocale, Record<"name" | "address" | "taxOffice" | "privacy" | "support" | "kep" | "eu" | "uk", string>> = {
   tr: {
-    name: "Ünvan", address: "Adres", registry: "Sicil / MERSİS",
+    name: "Ad soyad", address: "Yazışma adresi", taxOffice: "Vergi dairesi",
     privacy: "Gizlilik ve veri talepleri", support: "Destek", kep: "KEP",
     eu: "AB temsilcisi (GDPR m.27)", uk: "Birleşik Krallık temsilcisi (UK GDPR m.27)",
   },
   en: {
-    name: "Legal name", address: "Address", registry: "Registry / MERSIS no",
+    name: "Name", address: "Postal address", taxOffice: "Tax office",
     privacy: "Privacy and data requests", support: "Support", kep: "Registered e-mail (KEP)",
     eu: "EU representative (GDPR Art. 27)", uk: "UK representative (UK GDPR Art. 27)",
   },
   de: {
-    name: "Firmenname", address: "Adresse", registry: "Register / MERSIS-Nr.",
+    name: "Name", address: "Postanschrift", taxOffice: "Finanzamt",
     privacy: "Datenschutz- und Datenanfragen", support: "Support", kep: "Registrierte E-Mail (KEP)",
     eu: "EU-Vertreter (Art. 27 DSGVO)", uk: "UK-Vertreter (Art. 27 UK GDPR)",
   },
 };
 
-/** Veri sorumlusu / hizmet sağlayıcı kimlik bloğu (KVKK aydınlatma zorunlu unsuru). */
+/**
+ * Veri sorumlusu / hizmet sağlayıcı kimlik bloğu (KVKK aydınlatma zorunlu unsuru).
+ *
+ * Uygulanmayan alan (boş dize, ör. KEP'i olmayan gerçek kişi) hiç basılmıyor:
+ * boş bir "KEP" satırı, olmayan bir yükümlülüğü varmış gibi gösterir.
+ */
 export function EntityBlock({ withRepresentatives = false, locale = "tr" }: { withRepresentatives?: boolean; locale?: LegalLocale }) {
   const l = ENTITY_LABELS[locale];
+  const row = (label: string, k: LegalField) =>
+    isLegalOmitted(LEGAL_ENTITY[k]) ? null : <><dt>{label}</dt><dd><Ph k={k} /></dd></>;
   return (
     <dl className="entity">
-      <dt>{l.name}</dt><dd><Ph k="name" /></dd>
-      <dt>{l.address}</dt><dd><Ph k="address" /></dd>
-      <dt>{l.registry}</dt><dd><Ph k="registry" /></dd>
-      <dt>{l.privacy}</dt><dd><Ph k="privacyEmail" /></dd>
-      <dt>{l.support}</dt><dd><Ph k="supportEmail" /></dd>
-      <dt>{l.kep}</dt><dd><Ph k="kep" /></dd>
+      {row(l.name, "name")}
+      {row(l.address, "address")}
+      {row(l.taxOffice, "taxOffice")}
+      {row(l.privacy, "privacyEmail")}
+      {row(l.support, "supportEmail")}
+      {row(l.kep, "kep")}
       {withRepresentatives ? (
         <>
-          <dt>{l.eu}</dt><dd><Ph k="euRepresentative" /></dd>
-          <dt>{l.uk}</dt><dd><Ph k="ukRepresentative" /></dd>
+          {row(l.eu, "euRepresentative")}
+          {row(l.uk, "ukRepresentative")}
         </>
       ) : null}
     </dl>

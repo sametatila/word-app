@@ -5,7 +5,7 @@ politikası `/privacy`. Yeni bir sağlayıcı ya da veri türü eklenince önce 
 sonra Console'daki form. "Paylaşım" Play tanımıyla: verinin üçüncü tarafa aktarılması —
 sunucumuz üzerinden konuşma tanıma ve dil modeli sağlayıcılarına giden veri de paylaşımdır.
 
-Son güncelleme: 2026-09-03. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'teki yer tutucular doldurulunca kesinleşir; Console'a girilecek e-posta da o dosyadaki gizlilik adresidir.
+Son güncelleme: 2026-09-04. Kimlik ve iletişim bilgileri `src/lib/legal.ts`'teki yer tutucular doldurulunca kesinleşir; Console'a girilecek e-posta da o dosyadaki gizlilik adresidir. Veri sorumlusu şirketsiz bir gerçek kişi (bkz. `docs/play/listing.md` §5); VERBİS kaydı Kurul'un çalışan sayısı ve mali bilanço eşikleri nedeniyle büyük olasılıkla kapsam dışı, alan buna göre doldurulur.
 
 ## Genel sorular
 

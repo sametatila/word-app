@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, LegalShell, Ph } from "@/components/legal-shell";
-import { FAIR_USE, LEGAL_PATHS, legalPath } from "@/lib/legal";
+import { FAIR_USE, LEGAL_PATHS, hasKep, legalPath } from "@/lib/legal";
 
 export const metadata = {
   title: "Kullanım Şartları",
@@ -97,7 +97,7 @@ export default function TermsPage() {
         <li><strong>Yenileme ve iptal:</strong> Abonelik, dönem sonundan en az 24 saat önce iptal edilmezse aynı süreyle yenilenir. İptal ve yönetim Play Store › Ödemeler ve abonelikler bölümündedir; hesap silmek aboneliği iptal etmez. Ücretsiz deneme bitmeden iptal edersen ücret alınmaz.</li>
         <li><strong>Cayma hakkı:</strong> Dijital içerik hizmeti satın alma anında ifa edilmeye başlandığından, Mesafeli Sözleşmeler Yönetmeliği m.15/1-ğ ve AB Tüketici Hakları Direktifi m.16(m) uyarınca cayma hakkı, ifaya başlanmasına verdiğin onayla sona erer; satın alma ekranında bu onay istenir. Google Play&apos;in iade politikası ayrıca uygulanır; Play&apos;in kabul ettiği iadeleri biz de tanırız.</li>
         <li><strong>Fiyat değişikliği:</strong> Fiyat değişikliğini yürürlükten önce Play üzerinden bildiririz; kabul etmezsen aboneliği iptal edebilirsin.</li>
-        <li><strong>Fatura:</strong> Türkiye&apos;deki kullanıcılar için e-fatura/e-arşiv fatura Google Play&apos;in bize ilettiği bilgilerle düzenlenir.</li>
+        <li><strong>Satış belgesi:</strong> Premium&apos;u Google Play üzerinden alırsın ve satış belgesini Google düzenleyip Play hesabındaki e-posta adresine gönderir; belge talebini Google Play desteğinden iletebilirsin. Hizmeti sunan taraf bir şirket değil, gerçek kişidir ve mobil uygulama geliştiriciliği kazanç istisnası kapsamında olduğundan ayrıca fatura düzenlemez.</li>
       </ul>
 
       <h2>7a. Adil kullanım</h2>
@@ -173,18 +173,18 @@ export default function TermsPage() {
       <ul>
         <li><strong>Bütünlük:</strong> Bu şartlar, Gizlilik Politikası ve satın alma ekranındaki ön bilgilendirme taraflar arasındaki sözleşmenin tamamıdır.</li>
         <li><strong>Bölünebilirlik:</strong> Bir hükmün geçersiz sayılması diğerlerini etkilemez; geçersiz hüküm amacına en yakın geçerli hükümle değiştirilmiş sayılır.</li>
-        <li><strong>Devir:</strong> Hesabını ve bu sözleşmeden doğan haklarını başkasına devredemezsin. Biz, hizmetin devri ya da şirket yapısındaki değişiklik hâlinde sözleşmeyi, haklarını koruyarak ve sana bildirerek devredebiliriz.</li>
+        <li><strong>Devir:</strong> Hesabını ve bu sözleşmeden doğan haklarını başkasına devredemezsin. Biz, hizmetin devri ya da faaliyetin bir şirket yapısına taşınması hâlinde sözleşmeyi, haklarını koruyarak ve sana bildirerek devredebiliriz.</li>
         <li><strong>Feragat:</strong> Bir hakkın kullanılmaması ondan vazgeçildiği anlamına gelmez.</li>
         <li><strong>Dil:</strong> Sözleşmenin bağlayıcı dili Türkçedir; çeviriler bilgi içindir. Yorum farkında Türkçe metin esas alınır.</li>
-        <li><strong>Tebligat:</strong> Bize yapılacak bildirimler <Ph k="supportEmail" /> ya da KEP adresine; sana yapılacak bildirimler hesabındaki e-posta adresine ya da uygulama içi mesajla yapılır ve ulaştığı anda tebliğ edilmiş sayılır.</li>
+        <li><strong>Tebligat:</strong> Bize yapılacak bildirimler <Ph k="supportEmail" /> adresine{hasKep() ? <> ya da KEP adresine (<Ph k="kep" />)</> : null}; sana yapılacak bildirimler hesabındaki e-posta adresine ya da uygulama içi mesajla yapılır ve ulaştığı anda tebliğ edilmiş sayılır.</li>
         <li><strong>Saklama:</strong> Bu sözleşme elektronik ortamda saklanır; kabul ettiğin sürümü ve tarihini isteyebilirsin.</li>
       </ul>
 
       <h2>13. Değişiklikler ve iletişim</h2>
       <p>
         Şartları güncellediğimizde yürürlük tarihi ve sürüm değişir; senin aleyhine olan önemli değişiklikleri en az 30 gün önce uygulama
-        içinde ve e-postayla duyururuz, kabul etmezsen hesabını kapatabilirsin. Sorular için: <Ph k="supportEmail" />; resmi tebligat için
-        KEP: <Ph k="kep" />.
+        içinde ve e-postayla duyururuz, kabul etmezsen hesabını kapatabilirsin. Sorular için: <Ph k="supportEmail" />.
+        {hasKep() ? <> Resmi tebligat için KEP: <Ph k="kep" />.</> : null}
       </p>
     </LegalShell>
   );
