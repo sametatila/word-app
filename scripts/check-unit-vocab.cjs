@@ -47,7 +47,8 @@ for (let u = 1; u <= 25; u++) {
 // Soru kökü ve rewrite kaynağı bazen Türkçe yazılıyor ("Neyiniz var?"); onları
 // Almanca sanıp ölçmek sahte kayma üretiyordu. ı/ş/ğ/İ Almancada HİÇ yok, geri
 // kalanı da Almancayla karışmayan Türkçe işlev sözcükleri.
-const TR_ISARET = /[ışğİıŞĞ]|\b(ne|nasıl|hangi|nedir|demek|sorusu|için|değil|yok|kaç|kim|nerede|var)\b/i;
+// "-yor" eki tek başına kesin işaret: Almancada -yor ile biten sözcük YOK.
+const TR_ISARET = /[ışğİıŞĞ]|\w+yor\b|\b(ne|neden|neye|neyi|neyden|nasıl|hangi|nedir|demek|sorusu|için|değil|yok|kaç|kim|kime|nerede|var|hasta|kişi)\b/i;
 const türkçeMi = (s) => TR_ISARET.test(String(s || ""));
 
 function almanca(e) {
@@ -91,8 +92,10 @@ for (const e of hedef) {
     .map((w) => w.toLowerCase()).filter((w) => !havuzKok.has(w) && !TAKVIM.has(w)));
   // Unvan kısaltmasından sonraki ad cümle başı sanılıp muafiyetin DIŞINDA
   // kalıyordu ("Dr. Weber"). Unvanı ve ardındaki adı ayrıca özel ad say.
-  for (const m of ham.matchAll(/\b(Dr|Prof|Frau|Herr)\.?\s+([A-ZÄÖÜ][a-zäöüß]+)/g)) {
-    ozelAd.add(m[1].toLowerCase());
+  // Unvan ZİNCİRLENEBİLİR ("Frau Dr. Weber"); tek unvanlı desen ilk eşleşmede
+  // lastIndex'i ilerletip asıl adı yutuyordu.
+  for (const m of ham.matchAll(/\b(Dr|Prof|Frau|Herr)\.?\s+(?:(?:Dr|Prof)\.?\s+)?([A-ZÄÖÜ][a-zäöüß]+)/g)) {
+    ozelAd.add(m[1].toLowerCase()); ozelAd.add("dr"); ozelAd.add("prof");
     if (!havuzKok.has(m[2].toLowerCase())) ozelAd.add(m[2].toLowerCase());
   }
   // Ayrılabilir fiilde çekim öneki AYIRIR: anrufen → "rufe … an", aufstehen →
