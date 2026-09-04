@@ -2529,7 +2529,8 @@
      "accept": [
       "I was not hungry, so I didn't eat anything.",
       "I wasn't hungry so I didn't eat anything.",
-      "I wasn't hungry, so I didn't eat."
+      "I wasn't hungry, so I didn't eat.",
+      "I wasn't hungry, so I did not eat anything."
      ],
      "hint": [
       {
@@ -25090,7 +25091,8 @@
      "accept": [
       "I am sorry, I haven't sent the email yet.",
       "Sorry, I haven't sent the email yet.",
-      "I'm sorry, I have not sent the email yet."
+      "I'm sorry, I have not sent the email yet.",
+      "I am sorry, I have not sent the email yet."
      ],
      "hint": [
       {
@@ -26428,7 +26430,8 @@
      "accept": [
       "Sorry, I don't have the receipt.",
       "I don't have a receipt.",
-      "I haven't got the receipt."
+      "I haven't got the receipt.",
+      "I do not have the receipt."
      ],
      "hint": [
       {
@@ -26774,7 +26777,8 @@
      "accept": [
       "It doesn't fit me.",
       "They don't fit.",
-      "They don't fit me."
+      "They don't fit me.",
+      "It does not fit."
      ],
      "hint": [
       {
@@ -33707,7 +33711,8 @@
      "accept": [
       "Let's visit the museum.",
       "Let's go to the museum",
-      "Lets go to the museum."
+      "Lets go to the museum.",
+      "Let us go to the museum."
      ],
      "hint": [
       {
@@ -36997,7 +37002,9 @@
      "accept": [
       "I would love to, but I can't.",
       "I'd love to but I can't",
-      "I'd love to, but I can't come."
+      "I'd love to, but I can't come.",
+      "I'd love to, but I cannot.",
+      "I would love to, but I cannot."
      ],
      "hint": [
       {
@@ -38559,7 +38566,8 @@
      "accept": [
       "I'm going to visit my family tomorrow.",
       "I am going to visit my family tomorrow.",
-      "Tomorrow I will visit my family."
+      "Tomorrow I will visit my family.",
+      "Tomorrow I am going to visit my family."
      ],
      "hint": [
       {
@@ -39905,7 +39913,10 @@
       "That's okay, don't worry about it.",
       "It's OK, don't worry about it.",
       "No problem, don't worry about it.",
-      "That's OK don't worry about it"
+      "That's OK don't worry about it",
+      "That's OK, do not worry about it.",
+      "that is OK, don't worry about it.",
+      "that is OK, do not worry about it."
      ],
      "hint": [
       {
@@ -42841,7 +42852,8 @@
      "accept": [
       "I don't think that social media is good.",
       "I don't think social media is good",
-      "In my opinion, social media is not good."
+      "In my opinion, social media is not good.",
+      "I do not think social media is good."
      ],
      "hint": [
       {
@@ -43856,7 +43868,9 @@
      "target": "I don't believe it's true.",
      "accept": [
       "I don't believe it is true.",
-      "I don't think it's true."
+      "I don't think it's true.",
+      "I do not believe it's true.",
+      "I do not believe it is true."
      ],
      "hint": [
       {
@@ -44341,7 +44355,8 @@
      "accept": [
       "Can you help me? My computer isn't working.",
       "Could you help me? My computer doesn't work.",
-      "Can you help me please? My computer doesn't work."
+      "Can you help me please? My computer doesn't work.",
+      "Can you help me? My computer does not work."
      ],
      "hint": [
       {
@@ -46467,7 +46482,9 @@
      "accept": [
       "I don't agree. I think it is a waste of time.",
       "I don't agree with you. I think it's a waste of time.",
-      "I disagree. I think it's a waste of time."
+      "I disagree. I think it's a waste of time.",
+      "I do not agree. I think it's a waste of time.",
+      "I do not agree. I think it is a waste of time."
      ],
      "hint": [
       {

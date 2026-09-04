@@ -17661,7 +17661,8 @@
      "accept": [
       "He is never late.",
       "She is never late",
-      "He is never late"
+      "He is never late",
+      "she's never late."
      ],
      "hint": [
       {
@@ -39954,7 +39955,8 @@
      "accept": [
       "I am afraid I can't.",
       "I'm afraid I cannot.",
-      "I'm afraid I can't come."
+      "I'm afraid I can't come.",
+      "I am afraid I cannot."
      ],
      "hint": [
       {
@@ -40107,7 +40109,9 @@
      "accept": [
       "I'm afraid I can't, maybe next time.",
       "Sorry, I'm afraid I can't. Maybe next time.",
-      "I am afraid I can't. Maybe next time."
+      "I am afraid I can't. Maybe next time.",
+      "I'm afraid I cannot. Maybe next time.",
+      "I am afraid I cannot. Maybe next time."
      ],
      "hint": [
       {
@@ -46791,7 +46795,9 @@
      "accept": [
       "I cannot talk now. I will reply later.",
       "I can't talk now, I'll reply later.",
-      "Sorry, I can't talk now. I'll reply later."
+      "Sorry, I can't talk now. I'll reply later.",
+      "I cannot talk now. I'll reply later.",
+      "I can't talk now. I will reply later."
      ],
      "hint": [
       {
