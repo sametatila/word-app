@@ -30,6 +30,8 @@ RCT_EXTERN_METHOD(httpGet:(NSString *)url
                   rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(startWalkService)
 RCT_EXTERN_METHOD(stopWalkService)
+RCT_EXTERN_METHOD(startScreenWatch)
+RCT_EXTERN_METHOD(stopScreenWatch)
 RCT_EXTERN_METHOD(stop)
 RCT_EXTERN_METHOD(cancel)
 RCT_EXTERN_METHOD(destroy)

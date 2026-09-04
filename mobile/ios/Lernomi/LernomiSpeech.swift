@@ -31,7 +31,7 @@ class LernomiSpeech: RCTEventEmitter {
   override func supportedEvents() -> [String]! {
     return ["LernomiSpeechReady", "LernomiSpeechBegin", "LernomiSpeechPartial",
             "LernomiSpeechResults", "LernomiSpeechEnd", "LernomiSpeechError",
-            "LernomiWalkStop"]
+            "LernomiScreenOff", "LernomiScreenOn", "LernomiWalkStop"]
   }
   override func startObserving() { hasListeners = true }
   override func stopObserving() { hasListeners = false }
@@ -140,6 +140,63 @@ class LernomiSpeech: RCTEventEmitter {
     DispatchQueue.main.async {
       self.walkSessionHeld = false
       try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+    }
+  }
+
+  // --- Ekran on/off — EŞDEĞER, BİREBİR DEĞİL ---
+  //
+  // Android'de bunu ACTION_SCREEN_OFF / ACTION_SCREEN_ON yayınları veriyor. iOS'ta güç
+  // tuşuna basıldığını haber veren genel bir API YOK; en yakın karşılık uygulamanın arka
+  // plana geçmesi: didEnterBackground → ScreenOff, willEnterForeground → ScreenOn.
+  // Parolalı kilitte protectedDataWillBecomeUnavailable da düşüyor; ikisi peş peşe
+  // gelebildiği için `screenOff` bayrağı tekrarı bastırıyor (Android geçiş başına bir kez
+  // yayıyor, sözleşme o).
+  //
+  // İki fark bilerek kabul edildi:
+  //  - Ekran açıkken başka uygulamaya geçmek de ScreenOff sayılıyor. Doğrusu da bu:
+  //    `WalkModeScreen.tsx:212` bu bayrakla Azure yoluna geçiyor ve uygulama arka
+  //    plandayken native SFSpeechRecognizer zaten güvenilmez.
+  //  - Kullanıcı telefonu açıp BAŞKA bir uygulamada kalırsa Android ScreenOn derdi,
+  //    burada demiyor. Yine doğrusu bu: uygulama hâlâ arka planda, native tanıma hâlâ
+  //    güvenilmez. Ekran durumu değil, KAYNAK SEÇİMİ sorusu soruluyor.
+  private var screenObservers: [NSObjectProtocol] = []
+  private var screenOff = false
+
+  @objc(startScreenWatch)
+  func startScreenWatch() {
+    DispatchQueue.main.async {
+      guard self.screenObservers.isEmpty else { return } // iki kez kaydolma
+      let center = NotificationCenter.default
+      let offNames: [Notification.Name] = [
+        UIApplication.didEnterBackgroundNotification,
+        UIApplication.protectedDataWillBecomeUnavailableNotification,
+      ]
+      let onNames: [Notification.Name] = [UIApplication.willEnterForegroundNotification]
+
+      self.screenObservers =
+        offNames.map { name in
+          center.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
+            guard let self = self, !self.screenOff else { return }
+            self.screenOff = true
+            self.send("LernomiScreenOff", nil)
+          }
+        }
+        + onNames.map { name in
+          center.addObserver(forName: name, object: nil, queue: .main) { [weak self] _ in
+            guard let self = self, self.screenOff else { return }
+            self.screenOff = false
+            self.send("LernomiScreenOn", nil)
+          }
+        }
+    }
+  }
+
+  @objc(stopScreenWatch)
+  func stopScreenWatch() {
+    DispatchQueue.main.async {
+      self.screenObservers.forEach { NotificationCenter.default.removeObserver($0) }
+      self.screenObservers = []
+      self.screenOff = false
     }
   }
 
@@ -371,6 +428,7 @@ class LernomiSpeech: RCTEventEmitter {
   }
 
   override func invalidate() {
+    stopScreenWatch()
     DispatchQueue.main.async { self.cleanup() }
     super.invalidate()
   }
