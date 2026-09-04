@@ -1,6 +1,6 @@
 # A2 kelime üretimi — şartname
 
-Bu havuzun A2 katmanını genişletiyoruz. Resmî Goethe A2 listesi tükendi, bu
+Bu havuzun A2 katmanını genişletiyoruz. Eski A2 kaynağı tükendi, bu
 yüzden yeni maddeler **A2 seviyesine uygun günlük kelimelerden** kurulacak.
 
 ## Sana verilen
@@ -49,7 +49,7 @@ umziehen, kündigen, reservieren, pünktlich, günstig, ledig
 **Uygun DEĞİL:**
 - Soyut/akademik (B2–C1): Nachhaltigkeit, Wahrnehmung, Ambivalenz, erörtern
 - Çok nadir ya da uzmanlık: Zylinderkopfdichtung, Grundbuchamt
-- Özel adlar: Berlin, Goethe, Facebook
+- Özel adlar: Berlin, Hamburg, Facebook
 - Çekimli biçimler: gegangen, arbeitest, größer — yalnız sözlük biçimi
 
 Emin değilsen `de_50k.txt`'e bak: kelime listede ne kadar yukarıdaysa o kadar

@@ -47,7 +47,7 @@ async function main() {
   /**
    * Yenilenen anlamlar ve örnek cümleler (data/meanings/out/*.json).
    *
-   * Tarihçe: kaynak Goethe listesi bir kelimeye üç dört anlam veriyordu, örnek
+   * Tarihçe: havuzun ilk hâli bir kelimeye üç dört anlam veriyordu, örnek
    * cümlelerin bir kısmı kelimeyi içermiyor ve İngilizce hiç yoktu; bu düzeltme
    * dosyaları ham kaynağın üzerine biniyordu. Artık **words.json canlı Netcup
    * DB'sinin tam anlık görüntüsü** (tr/en/beispiel/beispielTr/beispielEn dahil),

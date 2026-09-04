@@ -8,7 +8,7 @@
  * başımıza geldi (bkz. src/lib/headword.ts).
  *
  * Buradaki gevşeklik bilinçli: amaç iyi işi reddetmek değil, kelimenin hiç
- * geçmediği durumları yakalamak. Kaynak Goethe verisindeki 8264 cümlede
+ * geçmediği durumları yakalamak. Havuzdaki 8264 cümlede
  * yanlış ret oranı %0.5 ve kalanı ağırlıkla gerçek kusur.
  */
 

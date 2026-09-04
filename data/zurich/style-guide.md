@@ -1,6 +1,6 @@
 # Züritüütsch Dönüşüm Stil Rehberi
 
-Bu rehber, Goethe kelime listesindeki Standart Almanca (Hochdeutsch) maddelerin
+Bu rehber, havuzdaki Standart Almanca (Hochdeutsch) maddelerin
 Zürih Almancasına (Züritüütsch) çevrilmesinde **bağlayıcıdır**. Amaç: tutarlı,
 doğal, Zürih şehrinde konuşulan güncel dil. Yazım: **Dieth-Schreibung'a dayalı,
 sadeleştirilmiş** (aşağıdaki kurallar neyse o; başka kaynakla çelişirse bu rehber kazanır).

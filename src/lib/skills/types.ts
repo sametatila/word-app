@@ -5,7 +5,7 @@ import type { DialogueTurn } from "@/lib/dialogue";
  *
  * İçerik statiktir ve derlemeye gömülür: veritabanı gerektirmez, PWA'da
  * çevrimdışı çalışır. Metinler Almanca, yönergeler ve açıklamalar Türkçe;
- * sorular Goethe sınav geleneğine uygun olarak Almanca sorulur.
+ * sorular sınav geleneğine uygun olarak Almanca sorulur.
  */
 
 export type SkillId = "reading" | "listening" | "writing" | "speaking";
@@ -47,7 +47,7 @@ export type SkillQuestion = {
    * yazılı üretim soruları için ayrılmış. Verilmezse `mcq`.
    */
   kind?: "mcq" | "truefalse" | "gapfill" | "produce" | "short_answer" | "order" | "dictation";
-  /** Soru — Almanca (Goethe tarzı). Seviyeye uygun sadelikte yazılır. */
+  /** Soru — Almanca (sınav tarzı). Seviyeye uygun sadelikte yazılır. */
   text: string;
   /** Şıklar. Doğru/yanlış soruları için ["Richtig", "Falsch"]; yazılı türlerde boş. */
   options: string[];

@@ -7,9 +7,9 @@ Almanca havuz yeniden genişletilecekse aynı adımlar tekrar işler.
 
 Önce iki ucuz yol denendi, ikisi de elendi:
 
-- **Resmî Goethe A2 listesi tükenmiş.** `data/goethe_a2.csv` 1.159 satır ama
-  bunların çoğu A1 kelimelerinin tekrarı; havuzda hiç bulunmayan yalnızca 9
-  madde çıktı, onlar da başlık temizliğinde yeniden adlandırılmış olanlardı.
+- **Eski A2 kaynağı tükenmiş.** Elde 1.159 satır vardı ama çoğu A1 kelimelerinin
+  tekrarıydı; havuzda hiç bulunmayan yalnızca 9 madde çıktı, onlar da başlık
+  temizliğinde yeniden adlandırılmış olanlardı.
 - **Ham sıklık listesi tek başına yetmiyor.** Havuzda olmayan 42.499 aday var
   ama başı `mir`, `den`, `sind` gibi çekimli biçimler, devamı `hollywood`,
   `mommy` gibi altyazı gürültüsü. Sözlük biçimini çekimden ayırmak dilbilgisi

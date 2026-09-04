@@ -416,11 +416,10 @@ parola API anahtarı). Böylece hem alırsın hem aynı adresten cevap verirsin.
 
 ## 8. Kelime verisi
 
-A1–B1 kelimeleri Goethe-Institut'un resmî Wortliste PDF'lerinden çıkarılmış, Türkçe karşılıkları
-eklenmiş ve doğrulanmıştır (ayrıntı: `data/README.md`).
+Havuzun tamamı CEFR seviyelerine göre kendi hazırladığımız settir; her madde tek tek
+gözden geçirilmiş, Türkçe ve İngilizce karşılıkları doğrulanmıştır (ayrıntı: `data/README.md`).
 
-**B2 ve C1** için Goethe resmî bir liste yayınlamadığından bu seviyeler konu bazlı olarak
-üretilmiştir (iş, toplum, akademik dil, hukuk, kültür, ileri fiil/sıfat…); her madde artikel,
+**B2 ve C1** konu bazlı olarak üretilmiştir (iş, toplum, akademik dil, hukuk, kültür, ileri fiil/sıfat…); her madde artikel,
 çoğul/çekim, Türkçe karşılık ve örnek cümle içerir, A1–B1 ile çakışanlar ayıklanmıştır.
 
 **Örnek cümle çevirileri** `data/app/beispiel-tr.json` dosyasındadır (4.043 cümle). Kaynak

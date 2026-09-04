@@ -13,7 +13,7 @@ import { readZurichSentences } from "./apply-zurich-beispiel";
 /**
  * Züritüütsch kelime havuzunu Neon'a yükler.
  *
- * Kaynak: data/app/words.json (Goethe listesi — tr/typ/niveau/rank buradan) +
+ * Kaynak: data/app/words.json (Almanca havuz — tr/typ/niveau/rank buradan) +
  * data/zurich/chunk-*.json (gsw biçim, artikel, Zürihce örnek cümle).
  * gsw kelimeleri 100000+kaynak_id kimliğiyle, course='gsw-zh' olarak yaşar;
  * Hochdeutsch köprüsü formen alanına "HD: …" olarak yazılır.

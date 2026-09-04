@@ -1,40 +1,37 @@
-# Goethe Kelime Verisi
+# Kelime Verisi
 
-Kaynak: Goethe-Institut resmî Wortliste PDF'leri (`pdf/`). Goethe yalnızca B1'e kadar
-resmî kelime listesi yayınlıyor; B2/C1 için liste yok.
+Havuzun tek kaynağı `app/words.json`. Dosya artık ham bir dışa aktarım değil,
+**canlı veritabanının tam görüntüsü**: `scripts/seed.ts` bu dosyadan çalıştığında
+üretimde sıfır fark üretir. Seviye (`niveau`), Türkçe karşılık, tip ve örnek
+cümleler tek tek gözden geçirilip düzeltilmiş durumda; kelime havuzu üzerinde
+çalışırken bu dosya esas alınır.
 
 ## Dosyalar
 
-| Dosya | Satır | Açıklama |
-|---|---|---|
-| `goethe_wortschatz.csv` | 5.318 | Tüm seviyeler, UTF-8 (BOM'suz), virgül ayraçlı |
-| `goethe_wortschatz_excel.csv` | 5.318 | UTF-8 BOM + noktalı virgül — Excel'de umlaut/Türkçe karakter bozulmaz |
-| `goethe_a1_fit_in_deutsch_1.csv` | 532 | A1 (gençler) |
-| `goethe_a1_start_deutsch_1.csv` | 689 | A1 (yetişkinler) |
-| `goethe_a2.csv` | 1.159 | A2 |
-| `goethe_b1.csv` | 2.938 | B1 |
-| `app/words.json` | 3.192 | Seviyeler arası tekilleştirilmiş, uygulamaya hazır |
-| `app/words.csv` | 3.192 | Aynı verinin CSV hâli |
+| Dosya | Açıklama |
+|---|---|
+| `app/words.json` | Almanca havuz — canlı DB'nin görüntüsü, satır başına bir JSON nesnesi |
+| `app/words-en.json` | İngilizce havuz (tr → en kursu) |
+| `app/beispiel-tr.json` | Örnek cümlelerin Türkçe çevirileri, kelime id'sine bağlı |
 
-## Sütunlar
+## Alanlar
 
-`niveau, wort, artikel, turkce, formen, typ, beispiele, eintrag, quelle`
+`id, de, artikel, tr, en, formen, typ, niveau, rank, beispiel, beispielTr, beispielEn`
 
-- `wort` — Almanca madde başı (artikelsiz), `artikel` — der/die/das
-- `turkce` — doğal Türkçe karşılık (en yaygın 1-3 anlam, virgülle)
-- `formen` — çoğul eki (isim) veya çekim formları (fiil)
-- `typ` — Nomen / Verb / Sonstiges (sezgisel)
-- `beispiele` — PDF'teki örnek cümleler
-- `eintrag` — PDF'teki ham madde metni, `quelle` — kaynak PDF
-
-`app/words.json` alanları: `id, de, artikel, tr, formen, typ, niveau, beispiel`
+- `de` — madde başı (artikelsiz), `artikel` — der/die/das (isim değilse boş)
+- `tr` / `en` — tek doğal karşılık; ikisi birlikte Türkçede çöken ayrımları ayırır
+  (er/sie/es üçü de "o", ama he/she/it)
+- `formen` — çoğul eki (isim) ya da çekim formları (fiil)
+- `typ` — Nomen / Verb / Adjektiv / Sonstiges
+- `niveau` — CEFR seviyesi A1–C1; patika ve oyun zorluğu bunu kullanır
+- `rank` — sıklık sırası; düşük sayı daha sık
 
 ## Üretim
 
-1. `parse_goethe.py pdf <çıktı_dizini>` — PDF'lerden koordinat tabanlı ayrıştırma
-   (iki sütunlu sayfa düzeni, satır kaydırmaları, satır sonu tirelemesi çözülür).
-2. Çeviri: 27 paket hâlinde paralel çeviri, ardından 16 paketlik bağımsız doğrulama turu.
-3. `merge_tr.py` — çevirileri ve düzeltmeleri birleştirip bu dosyaları üretir.
+Havuz artık toplu bir dönüştürme adımıyla üretilmiyor. Değişiklikler doğrudan
+`app/words.json` üzerinde yapılır ve `npm run seed` ile veritabanına uygulanır;
+doğrulama betikleri (`data/meanings/check.mjs`, `npm run test:seed`) fark bırakıp
+bırakmadığını denetler.
 
 ## Doğrulama durumu
 

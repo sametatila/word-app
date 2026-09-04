@@ -68,8 +68,9 @@ Puanlanan adımlar: en az 2 `produce` + 1 `truefalse` (toplam ≥ 3).
   (asla "Ben bir kahveyi istemekteyim" gibi).
 
 **Almanca (hedefler):**
-- Kusursuz ve seviyeye uygun. Kelimeler Goethe-Zertifikat kelime listeleri
-  hizasında; seviyenin üstünde yapı ve kelime kullanma.
+- Kusursuz ve seviyeye uygun. Kelimeler havuzun o seviyedeki katmanıyla
+  hizasında (`data/app/words.json`, `niveau`); seviyenin üstünde yapı ve
+  kelime kullanma.
 - Adlar HEP artikelli öğretilir: `das Fieber`. Fiiller mastar hâlinde;
   dönüşlüler `sich` ile.
 - Hedef cümleler KONUŞULABİLİR olmalı: tanıyıcı dostu, 3–9 kelime; özel ad
