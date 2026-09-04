@@ -6,7 +6,30 @@ import { buildLocalLearningPath, refIndex } from "../game/immersionTrack";
 import { getDoneItems } from "../game/lessonProgress";
 
 /** Patika (immersion) hub'ı — gerçek track, kullanıcının ilerlemesiyle. */
-export type LearningPathItem = { id: string; kind: string; title: string; titleTr: string | null; playable: boolean; done: boolean; ref?: string | null };
+export type LearningPathItem = {
+  id: string;
+  kind: string;
+  title: string;
+  titleTr: string | null;
+  playable: boolean;
+  /** Skor eşiğini geçti mi. */
+  done: boolean;
+  /** Bir kez oynandı mı — puanı yetmese bile (sunucu yolu). */
+  attempted?: boolean;
+  /**
+   * Açılabilir mi: biten + denenen + SIRADAKİ tek öğe.
+   *
+   * Kapı ustalığa değil ilerlemeye bağlı — bir beceriden geçer not alamayan
+   * öğrenci orada sonsuza dek takılmamalı. Sunucu hesaplar; yerel patikada
+   * ilerleme bilgisi olmadığı için hepsi açık (bkz. buildLocalLearningPath).
+   * Alan yoksa (eski sunucu) açık sayılır — kilitli göstermek daha kötü.
+   */
+  open?: boolean;
+  ref?: string | null;
+};
+
+/** Öğe şu an açılabilir mi — alan yoksa açık sayılır. */
+export const itemOpen = (i: LearningPathItem): boolean => i.open !== false;
 export type LearningPathUnit = {
   id: string;
   index: number;

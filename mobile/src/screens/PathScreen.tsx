@@ -10,7 +10,7 @@ import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
-import { useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
+import { itemOpen, useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
 import { useLayout } from "../lib/useLayout";
 import { KIND_KEY } from "../data/unit";
 import { AppHeader } from "../ui/AppHeader";
@@ -22,7 +22,15 @@ const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.Re
 };
 
 function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathUnit; isCurrent: boolean; colors: Palette; onContinue: () => void }) {
-  const next = unit.items.find((i) => i.kind === "lesson" && i.playable && !i.done) ?? unit.items.find((i) => i.playable && !i.done) ?? null;
+  // "Sıradaki" DENENMEMİŞ ilk açık adım. Bitmemişe bakmak, geçer not
+  // alamadığı bir beceride öğrenciyi sonsuza dek aynı adımda tutuyordu.
+  const acik = unit.items.filter((i) => i.playable && itemOpen(i));
+  const denenmedi = (i: (typeof acik)[number]) => !(i.attempted ?? i.done);
+  const next =
+    acik.find((i) => i.kind === "lesson" && denenmedi(i)) ??
+    acik.find(denenmedi) ??
+    acik.find((i) => !i.done) ??
+    null;
   const NextIcon = next ? KIND_ICON[next.kind] : null;
   return (
     <Card style={{ marginBottom: spacing.lg, borderColor: colors.primary, borderWidth: 2 }}>

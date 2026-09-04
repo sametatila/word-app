@@ -71,7 +71,7 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
       if (kind === "lesson") {
         const lesson = unitLessons[lessonCursor++];
         if (!lesson) continue; // kısmi son ünitede boş ders slotu üretilmez
-        items.push({ id, kind, title: lesson.title, titleTr: lesson.titleTr, playable: true, done: done.has(lesson.id), ref: lesson.id });
+        items.push({ id, kind, title: lesson.title, titleTr: lesson.titleTr, playable: true, done: done.has(lesson.id), open: true, ref: lesson.id });
       } else if (kind === "read" || kind === "listen" || kind === "write") {
         const meta = pools[kind][cursors[kind]++];
         items.push({
@@ -80,6 +80,7 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
           titleTr: meta?.genre ?? t(SKILL_KEY[kind]),
           playable: !!meta,
           done: meta ? done.has(meta.id) : false,
+          open: true,
           ref: meta?.id ?? null,
         });
       } else if (kind === "quiz" || kind === "checkpoint") {
@@ -89,11 +90,11 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
         // ders içeriği yazılmadı) tüm ünite bu durumda.
         const slot = SLOT_KEY[kind];
         const derivable = unitLessons.length > 0;
-        items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: derivable, done: derivable && done.has(id), ref: derivable ? unitId : null });
+        items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: derivable, done: derivable && done.has(id), open: true, ref: derivable ? unitId : null });
       } else {
         // grammar — elle yazılmış içerik gerekir, henüz yok → "Yakında".
         const slot = SLOT_KEY[kind];
-        items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: false, done: false, ref: null });
+        items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: false, done: false, open: true, ref: null });
       }
     }
 

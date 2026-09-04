@@ -129,6 +129,46 @@ check("grup 0 tamamlanmış (groupComplete)", groupComplete(sAll, 0) && !groupCo
 check("her şey bitince currentIndex son ünite", sAll.currentIndex === (t.units.at(-1)?.index ?? -1));
 
 
+// ---- kayan pencere: kapı USTALIĞA değil İLERLEMEYE bağlı ----
+// Bir beceriden geçer not alamayan öğrenci orada takılmamalı; sıradakine
+// geçebilmeli ama daha sonrakine geçememeli.
+const u1Playable = s0.units[0].items.filter((i) => i.playable);
+check("boşken yalnız İLK oynanabilir adım açık", u1Playable.filter((i) => i.open).length === 1 && u1Playable.find((i) => i.open) === u1Playable[0]);
+check("boşken 2. adım kapalı", u1Playable[1].open === false);
+check("kilitli ünitenin hiçbir adımı açık değil", s0.units[1].items.every((i) => !i.open));
+
+// İlk adım DENENDİ ama geçilemedi (done değil, attempted)
+const ilkRef = u1Playable[0].item.ref as string;
+const sTried = buildTrackState(t, {
+  lessonDone: () => false,
+  skillDone: () => false,
+  lessonAttempted: (r) => r === ilkRef,
+  skillAttempted: (r) => r === ilkRef,
+});
+const p1 = sTried.units[0].items.filter((i) => i.playable);
+check("denenen adım açık kalır (tekrar edilebilir)", p1[0].open && p1[0].attempted && !p1[0].done);
+check("deneme SIRADAKİNİ açar", p1[1].open === true);
+check("bir sonraki hâlâ kapalı", p1[2].open === false);
+check("deneme üniteyi TAMAMLAMAZ", !sTried.units[0].complete && sTried.units[1].locked);
+
+// İkincisi de denenince pencere bir adım daha kayar
+const ikiRef = new Set([ilkRef, p1[1].item.ref as string]);
+const sTried2 = buildTrackState(t, {
+  lessonDone: () => false,
+  skillDone: () => false,
+  lessonAttempted: (r) => ikiRef.has(r),
+  skillAttempted: (r) => ikiRef.has(r),
+});
+const p2 = sTried2.units[0].items.filter((i) => i.playable);
+check("pencere ilerledikçe kayar", p2[0].open && p2[1].open && p2[2].open && p2[3].open === false);
+
+// Biten adım kendiliğinden denenmiş sayılır (eski çağıranlar bozulmasın)
+// quiz/checkpoint bugün done takibi taşımıyor; ölçüt ders + beceri.
+const izlenen = (k: string) => k === "lesson" || k === "read" || k === "listen" || k === "write";
+check("bitmiş adım attempted sayılır", s1.units[0].items.filter((i) => i.playable && izlenen(i.item.kind)).every((i) => i.attempted));
+check("attempted yüklemi verilmezse eski davranış (yalnız bitenler + sıradaki)",
+  s2.units[0].items.filter((i) => i.playable && !i.done).filter((i) => i.open).length === 1);
+
 // ---- content brief (lesson'a göre türetme) ----
 const bl = (i: number, vocab: [string, string][], patterns: [string, string][], cando: string[]) => ({
   ...mkLesson(i, "A1"),

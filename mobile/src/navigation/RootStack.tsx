@@ -45,7 +45,7 @@ export type RootStackParams = {
   ExamPrep: undefined;
   Walk: undefined;
   Paywall: undefined;
-  Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; ref?: string | null }[] };
+  Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; attempted?: boolean; open?: boolean; ref?: string | null }[] };
   Lesson: { id: string };
   Quiz: { itemId: string; level: string; unitIndex: number; kind: string; theme: string };
   Auth: undefined;

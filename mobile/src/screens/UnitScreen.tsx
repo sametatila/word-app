@@ -30,14 +30,24 @@ export function UnitScreen() {
   // ünite yalnız gerçekten yapılabilecek adımları gösterir; ilerleme yüzdesi de onlara göre.
   const raw = (params.items ?? [])
     .filter((i) => i.playable || i.kind === "lesson")
-    .map((i) => ({ id: i.id, kind: i.kind as ItemKind, title: i.title, done: i.done, playable: i.playable, ref: i.ref ?? null }));
-  // "Şimdi" = ilk oynanabilir + bitmemiş adım (dersler her zaman oynanabilir).
-  const currentId = raw.find((i) => i.playable && !i.done)?.id;
+    .map((i) => ({ id: i.id, kind: i.kind as ItemKind, title: i.title, done: i.done, playable: i.playable, open: i.open !== false, attempted: i.attempted ?? i.done, ref: i.ref ?? null }));
+  /*
+    "Şimdi" = ilk açık ve HENÜZ DENENMEMİŞ adım — bitmemiş ilk adım değil.
+
+    Eskisi `!i.done` idi: bir beceriden geçer not alamayan öğrencide "şimdi"
+    hep aynı adımı gösteriyordu. Artık deneme sırayı ilerletiyor; geçilmemiş
+    adım listede açık kalıyor, istenirse tekrar edilebiliyor.
+  */
+  const acik = raw.filter((i) => i.open);
+  const currentId = (acik.find((i) => !i.attempted) ?? acik.find((i) => !i.done))?.id;
   const items = raw.map((i) => ({ ...i, current: i.id === currentId }));
   const done = items.filter((i) => i.done).length;
   const pct = items.length ? Math.round((done / items.length) * 100) : 0;
 
   function openItem(it: (typeof items)[number]) {
+    // Kapalı adım açılmaz: kullanıcı sıradakine geçebilir ama daha sonrakine
+    // geçemez — pencere ilerledikçe kendiliğinden kayar.
+    if (!it.open) return;
     if (it.kind === "lesson") { if (it.ref) nav.navigate("Lesson", { id: it.ref }); return; }
     if (!it.playable) return;
     if (it.kind === "quiz" || it.kind === "checkpoint") {
@@ -71,7 +81,7 @@ export function UnitScreen() {
             const Icon = KIND_ICON[it.kind] ?? KIND_ICON.lesson;
             return (
               <PressableScale key={it.id} onPress={() => openItem(it)}>
-                <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: it.current ? 2 : 1, borderColor: it.current ? colors.primary : colors.hairline }}>
+                <Card padded style={{ opacity: it.open ? 1 : 0.55, flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: it.current ? 2 : 1, borderColor: it.current ? colors.primary : colors.hairline }}>
                   <View style={[{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
                     <Icon color="#fff" size={22} />
                   </View>
@@ -87,7 +97,7 @@ export function UnitScreen() {
                     <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 4 }}>
                       <Text variant="micro" color={colors.primary}>{t("unit.simdi")}</Text>
                     </View>
-                  ) : it.playable ? (
+                  ) : it.open && it.playable ? (
                     <ChevronRightIcon color={colors.textFaint} size={20} />
                   ) : (
                     <LockIcon color={colors.textFaint} size={18} />
