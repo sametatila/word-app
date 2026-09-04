@@ -28,7 +28,7 @@ export const deA2B09: Lesson[] = [
     minutes: 10,
     focusId: "Nebensatz-wenn",
     vocab: [
-      { de: "wenn", tr: "eğer, -diğinde" },
+      { de: "wenn", tr: "eğer" },
       { de: "meistens", tr: "çoğunlukla" },
       { de: "sonst", tr: "yoksa" },
       { de: "einige", tr: "birkaç" },

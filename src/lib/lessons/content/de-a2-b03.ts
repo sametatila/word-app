@@ -1237,10 +1237,10 @@ export const deA2B03: Lesson[] = [
       { de: "privat", tr: "özel" },
       { de: "notwendig", tr: "gerekli" },
       { de: "die Vereinbarung", tr: "anlaşma" },
-      { de: "der Bescheid", tr: "haber, bildirim" },
+      { de: "der Bescheid", tr: "resmî bildirim" },
       { de: "gültig sein", tr: "geçerli olmak" },
       { de: "bestätigen", tr: "onaylamak" },
-      { de: "berechtigt", tr: "yetkili, hakkı olan" },
+      { de: "berechtigt", tr: "yetkili" },
     ],
     patterns: [
       { de: "Bei welcher Krankenkasse sind Sie?", tr: "resepsiyonun ilk sorusudur" },

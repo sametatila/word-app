@@ -238,7 +238,7 @@ export const deA2B02: Lesson[] = [
     minutes: 10,
     focusId: "Präteritum-Modal",
     vocab: [
-      { de: "der Traum", tr: "rüya, hayal" },
+      { de: "der Traum", tr: "hayal" },
       { de: "träumen", tr: "rüya görmek" },
       { de: "der Pilot", tr: "pilot" },
       { de: "der Tierarzt", tr: "veteriner" },
@@ -1862,7 +1862,7 @@ export const deA2B02: Lesson[] = [
     minutes: 10,
     focusId: "Perfekt",
     vocab: [
-      { de: "hart", tr: "sert, zorlu" },
+      { de: "hart", tr: "zorlu" },
       { de: "weitermachen", tr: "devam etmek" },
       { de: "trainieren", tr: "antrenman yapmak" },
       { de: "der Wettbewerb", tr: "yarışma" },

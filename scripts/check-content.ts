@@ -277,7 +277,11 @@ function checkLessons(list: Lesson[]) {
     const r = l.roleplay;
     need(`${w} roleplay`, r as unknown as Record<string, unknown>, ["scene", "partner", "opening", "openingTr", "minTurns"]);
     if (trLetters(r.opening)) E(w, "roleplay.opening içinde Türkçe harf");
-    if (r.minTurns < 2 || r.minTurns > 6) W(w, `minTurns ${r.minTurns} (2–6)`);
+    // Aralık check-lessons.ts ile AYNI olmalı: orada 6-9 zorunlu (HATA), burada
+    // 2-6 uyarılıyordu. Rol yapma 6-9 tura çıkınca (894ddb0) bu eşik güncellenmedi
+    // ve kataloğun 426 dersi, öteki doğrulayıcının dayattığı değer yüzünden burada
+    // uyarı üretir oldu. İki doğrulayıcı aynı alan için farklı şey söyleyemez.
+    if (r.minTurns < 6 || r.minTurns > 9) W(w, `minTurns ${r.minTurns} (6–9)`);
     if (r.script?.length) checkTurns(`${w} senaryo`, r.script, { minTurns: r.minTurns, opening: r.opening });
   }
 }

@@ -1662,7 +1662,7 @@ export const deA2B06: Lesson[] = [
       { de: "abschicken", tr: "yollamak" },
       { de: "das Briefpapier", tr: "mektup kâğıdı" },
       { de: "die Waage", tr: "terazi" },
-      { de: "das Blatt", tr: "yaprak, sayfa" },
+      { de: "das Blatt", tr: "sayfa" },
       { de: "das Gramm", tr: "gram" },
     ],
     patterns: [
