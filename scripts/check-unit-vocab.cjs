@@ -70,8 +70,14 @@ for (const e of hedef) {
   for (const t of e.tasks || []) for (const g of t.phrases || t.words || []) for (const w of norm(g.de).split(/\s+/)) izin.add(w);
   const ham = almanca(e);
   // metinde büyük harfle geçen ve havuzda hiç bulunmayan sözcükler = özel ad
+  // Gün ve ay adları büyük harfle yazılır ve havuzda olmayabilir, ama ÖZEL AD
+  // DEĞİL — öğretilmesi gerekir. A1 yalnız beş gün öğretiyor (Donnerstag ve
+  // Freitag hiç geçmiyor); muafiyet onları da geçiriyordu.
+  const TAKVIM = new Set(["montag", "dienstag", "mittwoch", "donnerstag", "freitag",
+    "samstag", "sonntag", "januar", "februar", "märz", "april", "mai", "juni",
+    "juli", "august", "september", "oktober", "november", "dezember"]);
   const ozelAd = new Set((ham.match(/(?<![.!?]\s)(?<!^)\b[A-ZÄÖÜ][a-zäöüß]{2,}\b/g) || [])
-    .map((w) => w.toLowerCase()).filter((w) => !havuzKok.has(w)));
+    .map((w) => w.toLowerCase()).filter((w) => !havuzKok.has(w) && !TAKVIM.has(w)));
   // Ayrılabilir fiilde çekim öneki AYIRIR: anrufen → "rufe … an", aufstehen →
   // "stehe … auf". Kök olarak mastarı almak yetmiyor; öneksiz gövdeyi de ekle.
   const AYRILABILIR = /^(an|auf|aus|ein|mit|nach|vor|zu|ab|bei|los|weg|zurück)/;
@@ -88,8 +94,11 @@ for (const e of hedef) {
     }
   }
   // çekim toleransı: öğretilen kelimenin kökünü taşıyorsa bilinir say
+  // Üç yön: token kökle başlıyor (kommen→kommt), token kelimenin ÖNEKİ
+  // (üben→übe: çekim mastardan KISA), ya da tam eşleşme.
   const bilinir = (w) => izin.has(w) || ozelAd.has(w) ||
-    izinKok.some((k) => w.startsWith(k.slice(0, Math.max(4, k.length - 2))));
+    izinKok.some((k) => w.startsWith(k.slice(0, Math.max(4, k.length - 2)))) ||
+    (w.length >= 3 && izinKok.some((k) => k.startsWith(w)));
   const tok = (ham.toLowerCase().match(/[a-zäöüß]{2,}/g) || []);
   const disi = tok.filter((w) => !SERBEST.has(w) && !bilinir(w));
   const oran = tok.length ? (disi.length / tok.length * 100).toFixed(1) : "0";

@@ -86,7 +86,7 @@ export const a1U05: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Liebe Familie, liebe Freunde,\n\nwir feiern unsere Hochzeit! Mia und Tom.\n\nWann? Am Samstag. Wo? Bei den Großeltern in Bremen.\n\nBitte bringt keine großen Geschenke. Wir haben schon viel. Aber Kuchen und Süßigkeiten sind immer gut!\n\nMeine Oma bringt einen Kuchen. Mein Bruder bringt Musik.\n\nWir freuen uns sehr. Bis Samstag!\nMia und Tom",
+      "Liebe Familie, liebe Freunde,\n\nwir feiern unsere Hochzeit! Mia und Tom.\n\nWo? Bei den Großeltern in Bremen.\n\nBitte bringt keine großen Geschenke. Wir haben schon viel. Aber Kuchen und Süßigkeiten sind immer gut!\n\nMeine Oma bringt einen Kuchen. Mein Bruder bringt Musik.\n\nWir freuen uns sehr. Tschüss!\nMia und Tom",
     questions: [
       {
         text: "Was feiern Mia und Tom?",
@@ -278,7 +278,7 @@ export const a1U05: SkillExercise[] = [
         prompt:
           "Evlenen bir arkadaşına kısa bir tebrik mesajı yaz (4-5 cümle). Tebrik et, ne getireceğini söyle ve birlikte kutlamak istediğini yaz.",
         stimulus:
-          "Hallo! Wir feiern am Samstag unsere Hochzeit bei den Großeltern. Kommst du auch? Bitte keine großen Geschenke — aber Kuchen ist immer gut! Mia und Tom",
+          "Hallo! Wir feiern unsere Hochzeit bei den Großeltern. Kommst du auch? Bitte keine großen Geschenke — aber Kuchen ist immer gut! Mia und Tom",
         minWords: 30,
         checklist: [
           "Tebrik ettin mi? (Herzlichen Glückwunsch! / Ich gratuliere euch.)",
@@ -292,7 +292,7 @@ export const a1U05: SkillExercise[] = [
           { de: "Ich komme gern.", tr: "Memnuniyetle gelirim.", en: "I'll gladly come." },
         ],
         sample:
-          "Liebe Mia, lieber Tom,\n\nherzlichen Glückwunsch! Ich gratuliere euch sehr.\n\nJa, ich komme gern am Samstag. Ich bringe einen Kuchen und Süßigkeiten für die Kinder.\n\nWir feiern zusammen — das wird schön!\n\nBis Samstag!\nElif",
+          "Liebe Mia, lieber Tom,\n\nherzlichen Glückwunsch! Ich gratuliere euch sehr.\n\nJa, ich komme gern. Ich bringe einen Kuchen und Süßigkeiten für die Kinder.\n\nWir feiern zusammen — das wird schön!\n\nTschüss!\nElif",
       },
     ],
   },
