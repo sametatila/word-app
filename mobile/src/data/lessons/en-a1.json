@@ -35898,7 +35898,7 @@
    "scene": "Bir otelde kalıyorsun. Odandaki klima çalışmıyor ve resepsiyona iniyorsun.",
    "partner": "otel resepsiyonisti",
    "opening": "Good evening. Is everything all right with your room?",
-   "openingTr": "İyi akşamlar. Odanızla ilgili bir sorun mu var?",
+   "openingTr": "İyi akşamlar. Odanızla ilgili her şey yolunda mı?",
    "goal": "Öğrenci odasındaki sorunu bildirip (It's broken / It doesn't work) tamir ya da yardım istediğinde (Can you fix it? / Please call me.) konuşma başarılı sayılır.",
    "minTurns": 6
   }
@@ -35945,7 +35945,7 @@
     "tr": "keyif aldığın hobiyi anlatırken kullanılır"
    },
    {
-    "de": "Do you like collecting?",
+    "de": "Do you like collecting things?",
     "tr": "karşındakine sevip sevmediğini sorarken kullanılır"
    }
   ],
@@ -36293,11 +36293,12 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Do you like collecting",
+     "target": "Do you like collecting things",
      "accept": [
+      "Do you like collecting things?",
+      "Do you like collecting",
       "Do you like collecting?",
-      "Do you enjoy collecting",
-      "Do you like collecting things"
+      "Do you enjoy collecting things"
      ],
      "hint": [
       {
@@ -36339,7 +36340,7 @@
      },
      {
       "lang": "en",
-      "text": "I don't like collecting."
+      "text": "I don't like collecting things."
      },
      {
       "lang": "tr",
@@ -36439,16 +36440,24 @@
      "answer": false,
      "why": [
       {
-       "lang": "en",
-       "text": "like"
-      },
-      {
        "lang": "tr",
-       "text": "kelimesinden sonra fiil -ing alır. Doğrusu:"
+       "text": "Yanlış. like'dan sonra fiil ya -ing alır ya da to ile gelir:"
       },
       {
        "lang": "en",
        "text": "I like painting."
+      },
+      {
+       "lang": "tr",
+       "text": "ya da"
+      },
+      {
+       "lang": "en",
+       "text": "I like to paint."
+      },
+      {
+       "lang": "tr",
+       "text": "Yalın fiil bu anlamda kullanılmaz."
       }
      ]
     }
@@ -40404,7 +40413,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kelime kelime bakalım. Afraid aslında korkmuş demek, ama bu kalıpta korkarım ki anlamında, cümleyi yumuşatmak için var. Can't ise cannot'ın kısası, yapamam demek. Telaffuzda can't kısa ve serttir; sonundaki t'yi yut ma. I'm afraid olmadan tek başına I can't demek biraz kaba durur."
+      "text": "Kelime kelime bakalım. Afraid aslında korkmuş demek, ama bu kalıpta korkarım ki anlamında, cümleyi yumuşatmak için var. Can't ise cannot'ın kısası, yapamam demek. Telaffuzda can't kısa ve serttir; sonundaki t'yi yutma. I'm afraid olmadan tek başına I can't demek biraz kaba durur."
      }
     ]
    },
@@ -41083,7 +41092,7 @@
      },
      {
       "lang": "tr",
-      "text": "dedik. Tek bir şeyden bahsederken önüne \"a\" koyarız. Sesli harfle başlıyorsa \"an\" olur: an apple, an hour."
+      "text": "dedik. Tek bir şeyden bahsederken önüne a koyarız. Kelimenin OKUNUŞU sesli harfle başlıyorsa an olur: an apple, an arm. Yazılışa değil sese bakılır — hour'da baştaki h okunmadığı için an hour denir."
      },
      {
       "lang": "tr",
@@ -41967,8 +41976,7 @@
      "kind": "produce",
      "target": "My legs hurt.",
      "accept": [
-      "My legs hurt a lot.",
-      "My leg hurts."
+      "My legs hurt a lot."
      ],
      "hint": [
       {
@@ -44139,15 +44147,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış."
-      },
-      {
-       "lang": "en",
-       "text": "I'm"
-      },
-      {
-       "lang": "tr",
-       "text": "ile fiil yan yana gelmez. Ya"
+       "text": "Yanlış. I'm'den sonra fiilin YALIN hâli gelmez. Ya"
       },
       {
        "lang": "en",
@@ -44155,15 +44155,11 @@
       },
       {
        "lang": "tr",
-       "text": "dersin ya da"
+       "text": "dersin, ya da fiile -ing eklersin:"
       },
       {
        "lang": "en",
        "text": "I'm feeling sick."
-      },
-      {
-       "lang": "tr",
-       "text": "— ikisi de doğru."
       }
      ]
     }
@@ -44971,20 +44967,28 @@
      },
      {
       "lang": "tr",
-      "text": "hızlı, çabuk demek. Acil durumda çok işine yarar:"
+      "text": "hızlı demek:"
      },
      {
       "lang": "en",
-      "text": "Come fast!"
+      "text": "The ambulance is fast."
      },
      {
       "lang": "tr",
-      "text": "Yani, çabuk gel. Söyle bakalım."
+      "text": "Ama acil durumda çabuk gel demek için doğal kalıp şudur:"
+     },
+     {
+      "lang": "en",
+      "text": "Come quickly!"
+     },
+     {
+      "lang": "tr",
+      "text": "Söyle bakalım."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Come fast!"
+     "target": "Come quickly!"
     }
    },
    {
@@ -45170,17 +45174,17 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Come fast!",
+     "target": "Come quickly!",
      "accept": [
-      "Come quickly!",
-      "Please come fast!",
-      "Come fast",
-      "Come fast please!"
+      "Come quickly",
+      "Please come quickly!",
+      "Please hurry!",
+      "Come fast!"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Fiil önce: come. Sonra fast."
+       "text": "Fiil önce: come. Sonra quickly."
       }
      ]
     }
@@ -45229,7 +45233,7 @@
      },
      {
       "lang": "tr",
-      "text": "Come fast! Don't move! Bunlar kısa ama güçlü cümleler. Şimdi telefon sahnesinde deneyelim."
+      "text": "Come quickly! Don't move! Bunlar kısa ama güçlü cümleler. Şimdi telefon sahnesinde deneyelim."
      }
     ]
    }
