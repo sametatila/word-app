@@ -114,6 +114,14 @@ tam doğrulanıyor (Apple imzası, `iss`, `aud`, 1 saatlik yaş sınırı) ve bu
 native akışında da nonce yok. Açılacaksa: ham nonce üret → `performRequest({ nonce })`
 → sunucuya SHA-256'nın küçük harf hex'i. **Cihazda doğrulanmadan açılmamalı.**
 
+**Sunucu tarafı canlı sınandı** (yerel `next dev` + curl; cihaz değil):
+`/api/config` `APPLE_BUNDLE_ID` doluyken `apple:true`, boşken `apple:false` dönüyor —
+kapı çalışıyor, Android ve web etkilenmiyor. Bozuk bir idToken 401 `INVALID_TOKEN` ile
+reddediliyor; biçimi doğru ama imzasız bir token'da istek gerçekten Apple'ın JWKS ucuna
+çıkıp bilinmeyen anahtarı reddediyor, yani doğrulama yolu uçtan uca bağlı. (İlk ölçümde
+bozuk token 500 veriyordu — better-auth'un apple doğrulaması fırlatıyor, `false`
+dönmüyor; yutuldu.) Gerçek bir Apple token'ı ile giriş **denenmedi**.
+
 **Doğrulanmadı / bitmesi gerekenler:**
 
 1. Apple Developer hesabında **Sign in with Apple** yetkisi (capability) açılacak ve
