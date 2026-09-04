@@ -38,7 +38,7 @@ export const a1U02: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Sprachschule Mitte — Deutschkurs A1\n\nDer Kurs beginnt am 10. September. Wir lernen Deutsch von A1 bis B1.\n\nDer Kurs kostet hundert Euro. Sie zahlen einmal, nicht jeden Monat.\n\nEine Gruppe hat mindestens zehn Personen und maximal zwanzig Personen.\n\nSie sprechen kein Deutsch? Kein Problem! Der A1-Kurs ist für Anfänger.\n\nFragen? Rufen Sie uns an: Nummer 030 22 44 88. Oder schreiben Sie an info@sprachschule-mitte.de. Mehr Information finden Sie auf Seite 2.",
+      "Sprachschule Mitte — Deutschkurs A1\n\nDer Kurs ist neu. Wir lernen zusammen Deutsch. Wir lernen Deutsch von A1 bis B1.\n\nDer Kurs kostet hundert Euro. Sie zahlen einmal, nicht jeden Monat.\n\nEine Gruppe hat mindestens zehn Personen. Mehr als zwanzig Personen sind zu viel.\n\nSie sprechen kein Deutsch? Kein Problem! Der A1-Kurs ist für Anfänger.\n\nFragen? Rufen Sie uns an: Nummer 030 22 44 88. Oder schreiben Sie an info@sprachschule-mitte.de. Mehr Information finden Sie auf Seite 2.",
     questions: [
       {
         text: "Wie viel kostet der Kurs?",
@@ -180,17 +180,17 @@ export const a1U02: SkillExercise[] = [
     ],
     minutes: 2,
     segments: [
-      { text: "Guten Morgen! Der Deutschkurs A1 beginnt jetzt." },
+      { text: "Guten Morgen! Hier ist der Deutschkurs A1." },
       { text: "Die Kursnummer ist hundert zehn." },
       { text: "Der Kurs kostet zwanzig Euro." },
       { text: "Bitte wiederholen Sie die Wörter. Ein Fehler ist kein Problem!" },
     ],
     questions: [
       {
-        text: "Welcher Kurs beginnt?",
+        text: "Welcher Kurs ist das?",
         options: ["Deutschkurs A1", "Englischkurs A1", "Deutschkurs B1"],
         answer: 0,
-        explain: "„Der Deutschkurs A1 beginnt jetzt.“",
+        explain: "„Hier ist der Deutschkurs A1.“",
       },
       {
         kind: "gapfill",

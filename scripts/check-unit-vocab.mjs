@@ -1,0 +1,91 @@
+/**
+ * Ünite hizalı beceri egzersizleri, o üniteye kadar ÖĞRETİLEN kelimelerin
+ * dışına çıkıyor mu? Çıkanları sıklığa göre listeler.
+ *
+ * Kesin bir kapı değil: çekimli biçimler ve özel adlar yanlış alarm üretir.
+ * Amaç oranı görmek ve gözden kaçan ağır kelimeyi yakalamak.
+ */
+const fs = require("fs");
+const R = process.cwd();
+const L = JSON.parse(fs.readFileSync(`${R}/mobile/src/data/lessons/de-a1.json`, "utf8"));
+const ex = JSON.parse(fs.readFileSync(`${R}/mobile/src/data/skills/exercises.json`, "utf8"));
+
+// çok sık işlev sözcükleri + sayı + selam: her ünitede serbest
+const SERBEST = new Set(`der die das den dem des ein eine einen einem einer eines kein keine keinen
+ich du er sie es wir ihr mich dich sich uns euch mir dir ihm ihn ihnen mein meine meinen meinem meiner
+dein deine sein seine ihre ihren unser euer und oder aber denn dass weil wenn als ob wie wo woher wohin
+zu in an auf aus bei mit nach von vor über unter für um durch gegen ohne seit bis nicht ja nein doch man
+ist sind bin bist war waren hat habe haben hast wird werden kann können muss müssen will
+auch noch nur schon sehr hier da dann jetzt heute sehr viel mehr alle etwas nichts
+guten tag morgen abend hallo bitte danke herr frau sie ihnen ihr
+null eins zwei drei vier fünf sechs sieben acht neun zehn elf zwölf zwanzig dreißig hundert tausend
+euro uhr jahre jahr person personen gruppe kurs a1 a2 b1
+oh ok ach na so
+richtig falsch wer welche welcher welches warum wann
+problem moment zusammen jeden monat
+im am zum zur beim vom ins aufs
+machen macht soll sollen heißt bin`.split(/\s+/).filter(Boolean));
+
+// Havuzun TAMAMI (her seviye): özel ad ayıklaması için — bir sözcük havuzda
+// hiç yoksa ve metinde büyük harfle geçiyorsa büyük olasılıkla bir isim
+// (Emma, Bremen, Türkei). Bunları "seviye dışı kelime" saymak yanıltıcı.
+const pool = require(`${R}/data/app/words.json`);
+const havuzKok = new Set();
+for (const r of pool) for (const w of String(r.de).toLowerCase().match(/[a-zäöüß]{3,}/g) || []) havuzKok.add(w);
+
+const norm = (s) => String(s || "").toLowerCase().replace(/^(der|die|das)\s+/, "").trim();
+const cum = new Map();                       // ünite -> kümülatif kelime kümesi
+let acc = new Set();
+for (let u = 1; u <= 25; u++) {
+  for (const l of L.slice((u - 1) * 4, u * 4)) {
+    for (const v of l.vocab || []) for (const w of norm(v.de).split(/\s+/)) acc.add(w);
+    for (const p of l.patterns || []) for (const w of String(p.de).toLowerCase().match(/[a-zäöüß]+/g) || []) acc.add(w);
+  }
+  cum.set(u, new Set(acc));
+}
+
+function almanca(e) {
+  const out = [];
+  if (e.text) out.push(e.text);
+  for (const s of e.segments || []) out.push(s.text);
+  // Şıklar Türkçe olabiliyor ("samimi (du)"); Almanca ölçümüne sokmuyoruz.
+  for (const q of e.questions || []) { out.push(q.text); for (const a of q.accept || []) out.push(a); }
+  for (const t of e.tasks || []) {
+    if (t.answer) out.push(t.answer);
+    if (t.source) out.push(t.source);
+    if (t.sample) out.push(t.sample);
+    if (t.stimulus) out.push(t.stimulus);
+    for (const f of t.fields || []) out.push(f.answer);
+  }
+  return out.join(" ");
+}
+
+const hedef = ex.filter((e) => /^a1-u\d+-/.test(e.id));
+console.log(`ünite hizalı egzersiz: ${hedef.length}`);
+const genelDisi = new Map();
+for (const e of hedef) {
+  const u = e.unit;
+  const izin = new Set([...(cum.get(u) || [])]);
+  for (const g of e.gloss || []) for (const w of norm(g.de).split(/\s+/)) izin.add(w);   // egzersizin kendi sözlükçesi
+  for (const t of e.tasks || []) for (const g of t.phrases || t.words || []) for (const w of norm(g.de).split(/\s+/)) izin.add(w);
+  const ham = almanca(e);
+  // metinde büyük harfle geçen ve havuzda hiç bulunmayan sözcükler = özel ad
+  const ozelAd = new Set((ham.match(/(?<![.!?]\s)(?<!^)\b[A-ZÄÖÜ][a-zäöüß]{2,}\b/g) || [])
+    .map((w) => w.toLowerCase()).filter((w) => !havuzKok.has(w)));
+  const izinKok = [...izin].filter((w) => w.length >= 4);
+  // çekim toleransı: öğretilen kelimenin kökünü taşıyorsa bilinir say
+  const bilinir = (w) => izin.has(w) || ozelAd.has(w) ||
+    izinKok.some((k) => w.startsWith(k.slice(0, Math.max(4, k.length - 2))));
+  const tok = (ham.toLowerCase().match(/[a-zäöüß]{2,}/g) || []);
+  const disi = tok.filter((w) => !SERBEST.has(w) && !bilinir(w));
+  const oran = tok.length ? (disi.length / tok.length * 100).toFixed(1) : "0";
+  if (disi.length) {
+    const say = {}; for (const w of disi) say[w] = (say[w] || 0) + 1;
+    const ilk = Object.entries(say).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([w, n]) => `${w}×${n}`);
+    console.log(`  ${e.id.padEnd(12)} %${oran.padStart(4)} dışı (${disi.length}/${tok.length}): ${ilk.join(", ")}`);
+    for (const w of disi) genelDisi.set(w, (genelDisi.get(w) || 0) + 1);
+  } else {
+    console.log(`  ${e.id.padEnd(12)} temiz`);
+  }
+}
+console.log("\nen sık dışarıda kalanlar:", [...genelDisi].sort((a, b) => b[1] - a[1]).slice(0, 20).map(([w, n]) => `${w}×${n}`).join(" · "));
