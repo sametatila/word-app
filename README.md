@@ -363,20 +363,48 @@ Kayıt sonrası oturum açılmadıysa (SMTP bağlıyken `requireEmailVerificatio
 kullanıcı otomatik olarak `/eposta-dogrula` ekranına yönlenir.
 
 **Gönderen adresi ve SMTP:** Gönderimi biz yaparız, dış bir kimlik servisi değil.
-`.env`'deki beş anahtar doldurulur:
+Sağlayıcı **Resend**, SMTP üzerinden — böylece kod değişmez, `lib/email.ts` nodemailer
+ile çalışmaya devam eder ve sağlayıcı ileride değiştirilebilir.
 
 ```bash
-SMTP_HOST="smtp.<saglayici>.com"
-SMTP_PORT="587"        # 587 STARTTLS, 465 örtük TLS
-SMTP_USER="..."
-SMTP_PASS="..."
+SMTP_HOST="smtp.resend.com"
+SMTP_PORT="587"
+SMTP_USER="resend"                          # sabit; Resend'de kullanıcı adı budur
+SMTP_PASS="<Resend API anahtarı>"
 SMTP_FROM="Lernomi <noreply@lernomi.app>"
 ```
 
-Üçü (`HOST`, `USER`, `PASS`) dolu değilse `emailConfigured` false olur: e-posta
-gönderilmez, log'a "SMTP tanımsız" düşer ve doğrulama zorunlu tutulmaz. Sağlayıcı
-serbest (Resend, Postmark, Brevo, SES…); kendi alan adından göndermek için o
-sağlayıcıda SPF ve DKIM kayıtlarını doğrulaman gerekir.
+`HOST`, `USER`, `PASS` üçü dolu değilse `emailConfigured` false olur: e-posta
+gönderilmez, log'a "SMTP tanımsız" düşer ve doğrulama zorunlu tutulmaz.
+
+### Gönderme: Resend'de alan adını doğrula
+
+1. Resend → **Domains** → `lernomi.app` ekle.
+2. Resend'in verdiği **DKIM** ve **SPF** kayıtlarını DNS'e gir.
+3. **DMARC** ekle, gevşek başla: `_dmarc` TXT → `v=DMARC1; p=none; rua=mailto:postmaster@lernomi.app`.
+   Raporlar temizlenince `p=quarantine`, sonra `p=reject`.
+4. API anahtarı üret → `SMTP_PASS`. Anahtar **yalnızca gönderme** yetkisi taşısın.
+
+> **Tuzak — SPF tek kayıttır.** Bir alan adında yalnız **bir** SPF TXT kaydı olabilir.
+> Aşağıdaki yönlendirme servisi de kendi `include`'unu istiyor; ikisini ayrı kayıt
+> olarak eklersen SPF kırılır ve postalar spam'e düşer. İkisini **aynı** TXT kaydında
+> birleştir: `v=spf1 include:<yonlendirme> include:<resend> ~all`.
+
+### Alma: adresleri kişisel Gmail'e yönlendir
+
+Resend **yalnızca gönderir**; `kvkk@`, `gdpr@` ve `support@lernomi.app` adreslerine
+gelen postayı almak ayrı bir iş. En pratiği **Cloudflare Email Routing** (ücretsiz):
+
+1. `lernomi.app`'i Cloudflare'de DNS olarak barındır.
+2. **Email → Email Routing** → etkinleştir; Cloudflare gerekli **MX** ve SPF kaydını kurar.
+3. Üç adresi tek tek kişisel Gmail adresine yönlendir. Gmail hedef adresi bir kez
+   doğrulaman için bir onay postası yollar.
+4. SPF'i yukarıdaki tuzağa göre birleştir.
+
+**Gmail'den o adreslerle cevap vermek** istersen (kullanıcıya `support@lernomi.app`
+görünsün diye): Gmail → Ayarlar → Hesaplar → **"Şu adresle e-posta gönder"** → adresi
+ekle → SMTP olarak yine Resend'i ver (`smtp.resend.com`, 587, kullanıcı `resend`,
+parola API anahtarı). Böylece hem alırsın hem aynı adresten cevap verirsin.
 
 > **Not:** Bu bölüm eskiden "e-postaları Neon Auth sunucusu gönderir" diyordu. Proje
 > Neon + Vercel'den Netcup'a taşınırken kimlik doğrulama better-auth'a geçti ve

@@ -78,10 +78,10 @@ export const LEGAL_ENTITY = {
    * uzatma. Türkçe metin KVKK adresini, İngilizce ve Almanca metinler GDPR
    * adresini öne çıkarıyor; hakların anlatıldığı bölümde ikisi de yazılı.
    */
-  privacyEmailTr: "kvkk@rumpuskit.com",
-  privacyEmailEu: "gdpr@rumpuskit.com",
+  privacyEmailTr: "kvkk@lernomi.app",
+  privacyEmailEu: "gdpr@lernomi.app",
   /** Genel destek e-postası. */
-  supportEmail: "support@rumpuskit.com",
+  supportEmail: "support@lernomi.app",
   /** Türkiye'deki uyuşmazlıklarda yetkili mahkeme ve icra dairelerinin ili. */
   court: "Adana",
   /**
