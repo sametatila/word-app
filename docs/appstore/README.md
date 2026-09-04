@@ -5,9 +5,13 @@ Güvenliği formu ile App Store Connect'in gizlilik etiketleri farklı sorular s
 farklı yerlerde yayımlanır. Birini doldurup öbürünü kopyalamak, iki mağazada çelişen
 beyan bırakır.
 
-Bu dosya durumu ve gizlilik beyanını tutar; inceleme hesabı, giriş sağlayıcılarının
-kurulumu ve yayın öncesi kontroller `connect.md`'de (`docs/play/console.md`'nin
-karşılığı).
+Klasörde üç belge var, `docs/play/`in üçüne karşılık geliyor:
+
+| Burada | Play karşılığı | Ne tutuyor |
+|---|---|---|
+| `README.md` (bu dosya) | `data-safety.md` | Durum, yayın kapıları, gizlilik beyanı |
+| `connect.md` | `console.md` | İnceleme hesabı, giriş sağlayıcılarının kurulumu, yayın öncesi kontrol |
+| `listing.md` | `listing.md` | Yaş derecelendirmesi ve mağaza vitrini (üç dilde metinler, görseller) |
 
 ## Durum (2026-09-04)
 
@@ -38,15 +42,16 @@ Bayrağı açmadan önce `LEGAL_VERSION` artırılmalı ve `LEGAL_CHANGELOG`'a k
 |---|---|---|
 | 1 | Apple Developer Program hesabı | Bundle kimliği, sertifika, App Store Connect kaydı bunsuz yok |
 | 2 | ~~Gerçek bundle kimliği~~ → `app.lernomi.ios` **yazıldı** (derlenmedi) | Şablon kimliğiyle yükleme kabul edilmez |
-| 3 | ~~**Apple ile Giriş**~~ → **kod yazıldı**, hesap + entitlements bekliyor | Google ile giriş sunulduğu için App Store Review Guidelines 4.8 istiyor. Metin işi değil, ürün işi. Ayrıntı aşağıda |
+| 3 | ~~**Apple ile Giriş**~~ → **kod ve yetki yazıldı**, Apple Developer hesabı bekliyor | Google ile giriş sunulduğu için App Store Review Guidelines 4.8 istiyor. Metin işi değil, ürün işi. Ayrıntı aşağıda; kalan iki değer madde 10-11'de |
 | 4 | Uygulama içi hesap silme | 5.1.1(v) zorunlu kılıyor — Android'de var, iOS'ta da aynı yere bağlanmalı |
 | 5 | Gizlilik etiketleri | Aşağıdaki tablo App Store Connect'e girilir |
-| 6 | Yaş derecelendirmesi | Play'de 18+ seçildi; App Store derecelendirmesi ayrı doldurulur ve tutarlı olmalı |
+| 6 | Yaş derecelendirmesi | Anket cevapları ve iki mağazanın neden farklı çıkacağı **yazıldı** (`listing.md` §2); Connect'te form doldurulup hesaplanan derece geri yazılacak |
 | 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi ve kod yazıldı, ama macOS/Xcode olmadan derlenip denenemedi (aşağıya bak) |
 | 8 | ~~`.lproj` dosyalarının Xcode hedefine eklenmesi~~ → **bağlandı** (derlenmedi) | Dosyalar yazılmıştı ama `project.pbxproj`'da kayıtlı değildi, yani derlemeye girmiyordu |
 | 9 | ~~Uygulama ikonu~~ → **üretildi** (Xcode'da görülmedi) | İkonsuz yükleme reddedilir |
-| 10 | Sign in with Apple **yetkisi** (entitlements) + `APPLE_BUNDLE_ID` env değeri | Kod hazır ama yetki olmadan istek `1000`/`1004` ile düşer; env boşken sağlayıcı hiç kurulmaz. Bkz. `docs/plan/ios-parity-A-teslim.md` |
-| 11 | Google iOS OAuth istemcisi | `IOS_CLIENT_ID` + `CFBundleURLTypes` ikisi birden, aynı istemciden. Bugün ikisi de boş; boşken düğme iOS'ta çizilmiyor |
+| 10 | ~~Sign in with Apple yetkisi (entitlements)~~ → **eklendi** (`d72da43`, imzalanmadı) · açık kalan: **`APPLE_BUNDLE_ID` değeri** | Yetki dosyası ve `CODE_SIGN_ENTITLEMENTS` yerinde; App ID'de "Sign in with Apple" işaretlenmesi portal işi. Env boşken sağlayıcı hiç kurulmaz, yani akış bugün kapalı |
+| 11 | ~~`CFBundleURLTypes`~~ → **eklendi** (`d72da43`, yer tutucu değerle) · açık kalan: **`IOS_CLIENT_ID` değeri** | Şema Info.plist'te duruyor ama değeri yer tutucu. `googleAuth.ts`'teki `IOS_CLIENT_ID` ile birlikte, aynı istemciden doldurulmalı; ikisi de boşken düğme iOS'ta çizilmiyor |
+| 12 | Mağaza vitrini (ad, altyazı, anahtar kelime, açıklama, görseller) | Üç dilde metinler **yazıldı** (`listing.md` §3); görseller cihazdan çekilecek, 6.9" iPhone ve 13" iPad zorunlu |
 
 ## Ekran kapalıyken yürüyüş modu (arka planda ses)
 
