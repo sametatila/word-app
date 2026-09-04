@@ -275,38 +275,22 @@ Kritik iki kural:
 
 ## 5. Cihazda sınanacaklar (Mac gerektirir)
 
-`docs/appstore/README.md`'deki dört maddeyi kapsar ve genişletir.
+Bu bölüm **`docs/plan/ios-device-runbook.md`'ye taşındı.**
 
-**Yürüyüş modu / arka plan**
-1. Ekran kilitlendikten sonra tur devam ediyor mu.
-2. Kelimeler arası boşlukta uygulama askıya alınıyor mu (`delay` native mi gerekiyor, `setTimeout` yetiyor mu).
-3. Kilit ekranında mikrofon göstergesi görünüyor mu.
-4. Telefon çağrısı gelip bittiğinde ses oturumu toparlanıyor mu.
-5. `LernomiScreenOff` eşdeğeri (arka plana geçiş) gerçekten Azure yoluna geçiriyor mu.
-6. `uploadStt` arka planda tamamlanıyor mu (iOS arka plan görev süresi sınırı).
+Burada 17 madde vardı ama sırasız: üç şerit üç ayrı zamanda ekledi ve maddeler
+birbirine bağlı — uygulama açılmadan yürüyüş modu denenemez, entitlements gerçek bir
+hesaba bağlanmadan Apple girişi denenemez, kilit ekranına bakmak için önce turun
+başlaması gerekir. Runbook aynı maddeleri on faza dizip her birine "önce / yap / geçti /
+geçmezse" alanları veriyor; sonundaki eşleme tablosu buradaki 17 maddenin hepsini
+karşılığıyla gösteriyor.
 
-**Ses ve efekt**
-7. Köprü hazır değilken mp3 yedeği çalıyor mu (R4).
-8. Ekran kapalıyken `playSfx` duyuluyor mu ve web/Android ile aynı mı.
-9. Sessiz anahtar açıkken TTS duyuluyor mu (`setIgnoreSilentSwitch`).
+Ayrım da orada korunuyor: bir adım geçmezse ona bağlı olanlar **"ölçülemedi"** yazılır,
+"başarısız" değil. İkisi karışırsa var olmayan bir kusur kovalanır.
 
-**Kimlik ve mağaza**
-10. Google girişi cihaz hesap seçicisini açıyor mu (C4).
-11. Apple ile Giriş oturum açıyor ve better-auth kullanıcısına bağlanıyor mu (C3).
-12. Hesap silme akışı sonuna kadar gidiyor mu (5.1.1(v)).
-
-**Sunum**
-13. Açılış ekranı Android'le aynı mı; koyu temada beyaz flaş var mı (R2, R3).
-14. İzin diyalogları cihaz diline göre üç dilde çıkıyor mu (P3).
-15. iPad'de yatay düzen bozulmuyor mu (`TARGETED_DEVICE_FAMILY = 1,2`, `M/src/lib/useLayout.ts`).
-
-**Kilit ekranı denetimi (Now Playing)** — §6'daki karardan; numaralar bozulmasın diye sona eklendi.
-16. Now Playing kaydı ses oturumu kategorisi değişirken titremeden duruyor mu: kayıt
-    `.playAndRecord`/`.measurement`, TTS `.playback`/`.spokenAudio` — tur boyunca ikisi
-    arasında gidip geliniyor.
-17. Kilit ekranında mikrofon göstergesi ile Now Playing kaydı **birlikte** görünüyor mu.
-    App Review Information'a yazılacak cümle tam olarak bu: kullanıcı arka planda
-    mikrofonun açık olduğunu görüyor ve turu oradan durdurabiliyor.
+Statik tarafta karşılığı `mobile/scripts/check-ios.py` (`npm run ios:check`, CI'da
+`checks.yml`): pbxproj bütünlüğü, sürüm üçlüsü, ikon ölçüleri, `.strings` sözlükleri,
+dil beyanı ve Swift/ObjC sözdizimi. Cihaz gerektirmeyen her şey oraya ait — runbook
+yalnız cihazda öğrenilebilecekleri taşır.
 
 ---
 
