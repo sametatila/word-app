@@ -26,6 +26,17 @@ INTERVAL=${INTERVAL:-2}
 # durum, karelerin neden öyle göründüğünü açıklamayan bir kayıt üretir.
 FLOW_APPEARANCE=${FLOW_APPEARANCE:-light}
 
+# Geri dönülemez eylemlerin metinleri. ELLE YAZILMIYOR: tek kaynak
+# src/i18n/<dil>.ts, buradan okunup teste geçiriliyor — çeviri değişirse liste
+# kendiliğinden güncel kalır. Test bu metinleri taşıyan düğmelere hiç dokunmuyor.
+# Satın alma listede yok çünkü zaten atıl (RevenueCat anahtarı boş, paywall
+# "satışta değil" diyor); listeye yalnız geri alınamayanlar giriyor.
+BLOCK_KEYS=${BLOCK_KEYS:-deleteaccount.yes_delete deleteaccount.permanently_delete_my_account profile.log_out profile.signout}
+
+block_list() {
+  python3 scripts/i18n-values.py "src/i18n/$1.ts" $BLOCK_KEYS
+}
+
 [ "$(uname -s)" = "Darwin" ] || { echo "Bu betik yalnız macOS'ta çalışır."; exit 1; }
 mkdir -p "$OUT"
 
@@ -74,9 +85,17 @@ for LANG_CODE in $FLOW_LANGS; do
     done ) &
   LOOP_PID=$!
 
+  BLOCK=$(block_list "$LANG_CODE")
+  echo "Dokunulmayacaklar: ${BLOCK:-(yok)}"
+  if [ -n "${UI_TEST_EMAIL:-}" ]; then
+    echo "Giris: test hesabiyla (parola gunluge basilmiyor)"
+  else
+    echo "Giris: kimlik bilgisi yok — tur giris duvarinda duracak"
+  fi
+
   set +e
   # TEST_RUNNER_ önekli değişkenler test koşucusunun ortamına geçiyor —
-  # LernomiUITests.swift UI_TEST_LANG'i oradan okuyup uygulamayı o dille açıyor.
+  # LernomiUITests.swift bunları oradan okuyor.
   xcodebuild test \
     -workspace ios/Lernomi.xcworkspace \
     -scheme Lernomi \
@@ -86,7 +105,10 @@ for LANG_CODE in $FLOW_LANGS; do
     -derivedDataPath "$DERIVED" \
     -only-testing:LernomiUITests \
     CODE_SIGNING_ALLOWED=NO \
-    TEST_RUNNER_UI_TEST_LANG="$LANG_CODE" 2>&1 | tail -40
+    TEST_RUNNER_UI_TEST_LANG="$LANG_CODE" \
+    TEST_RUNNER_UI_TEST_BLOCK="$BLOCK" \
+    TEST_RUNNER_UI_TEST_EMAIL="${UI_TEST_EMAIL:-}" \
+    TEST_RUNNER_UI_TEST_PASSWORD="${UI_TEST_PASSWORD:-}" 2>&1 | tail -40
   TEST_RC=${PIPESTATUS[0]}
   set -e
 

@@ -29,7 +29,7 @@ concurrency:
 jobs:
   build:
     runs-on: macos-15
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -137,6 +137,17 @@ jobs:
       - name: Akış kareleri (XCUITest)
         working-directory: mobile
         run: bash scripts/ios-flow-screenshots.sh
+        env:
+          # Test hesabı. Secret tanımlı DEĞİLSE değişkenler boş gelir ve tur giriş
+          # duvarında durur — hata değil, o da bir ekran. Tanımlıysa tur giriş
+          # yapıp sekmelerin altındaki ekranları da geziyor.
+          #
+          # Bu hesap ÜRETİM sunucusunda ve tur onun verisine dokunuyor (ilerleme,
+          # tercihler). Gerçek bir kullanıcı hesabı verilmemeli; atılabilir bir
+          # test hesabı olmalı. Geri dönülemez eylemler ayrıca metinle eleniyor
+          # (bkz. scripts/ios-flow-screenshots.sh, BLOCK_KEYS).
+          UI_TEST_EMAIL: ${{ secrets.UI_TEST_EMAIL }}
+          UI_TEST_PASSWORD: ${{ secrets.UI_TEST_PASSWORD }}
 
       # Derleme düşse bile o ana kadarki kareler ve simülatör günlüğü insin —
       # boş bir kare, uygulamanın açılışta çöktüğünü söyleyen kanıttır.
