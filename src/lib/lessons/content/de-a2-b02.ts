@@ -8,19 +8,14 @@ import { de, tr, type Lesson } from "../types";
  * arasında istekler, zorunluluklar ve yasaklar var.
  *
  * Üç yeni şey öğretiliyor ve üçü de Türkçe konuşan için ayrı bir zorluk:
+ * kip fiillerinin kısa geçmişi, dönüşlü fiiller ve süre ile zaman noktasının
+ * ayrımı.
  *
- *   1. **Präteritum modalleri.** Almancada „istiyordum, yapamadım, zorundaydım“
- *      için konuşma dilinde Perfekt kullanılmaz; modal fiillerin kendi geçmiş
- *      biçimi vardır ve bunlar tek kelimedir. Öğrenci Perfekt kurmaya kalkıp
- *      „Ich habe gewollt“ diyor.
- *   2. **Dönüşlü fiiller.** Türkçede „tanıştık, alıştım“ tek kelimede biter;
- *      Almancada ayrı bir zamir gerekiyor ve o zamir cümlede kendi yerini alıyor.
- *   3. **`seit` ve `vor`.** İkisi de Türkçede „önce“ ve „beri“ ile karşılanıyor
- *      ama biri hâlâ süren bir şeyi, diğeri bitmiş bir noktayı anlatıyor —
- *      karıştırıldığında cümlenin anlamı değişiyor.
- *
- * Sıra hikâye anlatmanın sırası: önce hayat çizgisi ve modallerin geçmişi,
- * sonra dönüşlülerle ilişkiler ve değişim, sonda utanç ve gurur anıları.
+ * Sözlükçe havuzun A2 katmanından geliyor ve dilbilgisini TAŞIMIYOR — burada
+ * dilbilgisi kalıplarda duruyor. 012 ve 013'ün öğrettiği kip geçmişleri
+ * (wollte, konnte, musste, durfte) madde başı değil, fiilin çekimidir; havuza
+ * girmezler ve sözlükçeye de girmezler. Ders onları kalıp olarak öğretiyor,
+ * sözlükçe ise o kalıbın içinin doldurulacağı kelimeleri veriyor.
  */
 export const deA2B02: Lesson[] = [
   {
@@ -31,25 +26,28 @@ export const deA2B02: Lesson[] = [
     title: "Mein Weg nach Deutschland",
     titleTr: "Göç hikâyesi",
     summary: "Bir hayat hikâyesini sırayla anlatmayı öğretir: kaç yaşındaydın, sonra ne oldu.",
-    minutes: 9,
+    minutes: 10,
     focusId: "Präteritum-sein-haben",
     vocab: [
-      { de: "die Heimat", tr: "memleket" },
-      { de: "auswandern", tr: "başka ülkeye göç etmek" },
-      { de: "die Grenze", tr: "sınır" },
-      { de: "der Koffer", tr: "bavul" },
-      { de: "aufregend", tr: "heyecan verici" },
+      { de: "die Hauptstadt", tr: "başkent" },
+      { de: "die Kultur", tr: "kültür" },
+      { de: "die Landschaft", tr: "manzara" },
+      { de: "vertraut", tr: "tanıdık" },
+      { de: "auskommen", tr: "geçinmek" },
+      { de: "sich ausdrücken", tr: "kendini ifade etmek" },
+      { de: "die Kenntnisse", tr: "bilgi birikimi" },
+      { de: "die Übersetzung", tr: "çeviri" },
     ],
     patterns: [
-      { de: "Ich war … Jahre alt.", tr: "o sırada kaç yaşında olduğunu söyler" },
-      { de: "Zuerst hatten wir …", tr: "başlangıçta neyin olduğunu söyler" },
-      { de: "Dann sind wir …", tr: "sonra ne olduğunu anlatır" },
+      { de: "Am Anfang war alles fremd.", tr: "gelişin ilk günlerini anlatır" },
+      { de: "Ich hatte keine …", tr: "başlangıçta neyin eksik olduğunu söyler" },
+      { de: "Heute komme ich gut aus.", tr: "bugünkü durumu özetler" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Merhaba! Bugün bir hayat hikâyesini anlatmayı öğreneceğiz. Geçmiş zamanı biliyorsun; bugün ona iki kısa biçim ekleyeceğiz ve hikâyen akmaya başlayacak. Hazır mısın?",
+            "Bugün kendi hikâyeni anlatıyorsun: nereden geldin, başta nasıldı, şimdi nasıl. Bu hikâye Almanya'da sana çok kez sorulacak. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -57,154 +55,176 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "Küçük bir kolaylık var: 'olmak' ve 'sahip olmak' fiillerinin geçmişi konuşma dilinde iki parçaya bölünmez, tek kelimeyle söylenir. Hikâye anlatırken en çok bu ikisini kullanacaksın. Önce kelimeleri öğrenelim.",
+            "Bir hayat hikâyesinde iki zaman iç içe geçer: geçmişte nasıl olduğu ve bugün nasıl olduğu. Geçmiş için olmak ve sahip olmak fiillerinin kısa biçimlerini kullanacağız; bugün için ise düz şimdiki zamanı. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("die Heimat"),
-          tr("Türkçesi 'memleket' demek. Lütfen"),
-          de("die Heimat"),
+          de("die Hauptstadt"),
+          tr("Türkçesi 'başkent' demek. Lütfen"),
+          de("die Hauptstadt"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Heimat" },
+        expect: { kind: "repeat", target: "die Hauptstadt" },
       },
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("auswandern"),
-          tr("Türkçesi 'başka bir ülkeye göç etmek' demek. Lütfen"),
-          de("auswandern"),
+          de("die Kultur"),
+          tr("Türkçesi 'kültür' demek. Lütfen"),
+          de("die Kultur"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "auswandern" },
+        expect: { kind: "repeat", target: "die Kultur" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("die Grenze"),
-          tr("Türkçesi 'sınır' demek. Lütfen"),
-          de("die Grenze"),
+          de("die Landschaft"),
+          tr("Türkçesi 'manzara, doğal çevre' demek. Lütfen"),
+          de("die Landschaft"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Grenze" },
+        expect: { kind: "repeat", target: "die Landschaft" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("der Koffer"),
-          tr("Türkçesi 'bavul' demek. Lütfen"),
-          de("der Koffer"),
+          de("vertraut"),
+          tr("Türkçesi 'tanıdık, alışılmış' demek. Lütfen"),
+          de("vertraut"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Koffer" },
+        expect: { kind: "repeat", target: "vertraut" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("auskommen"),
+          tr("Türkçesi 'geçinmek, iyi anlaşmak' demek. Lütfen"),
+          de("auskommen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "auskommen" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("sich ausdrücken"),
+          tr("Türkçesi 'kendini ifade etmek' demek. Lütfen"),
+          de("sich ausdrücken"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "sich ausdrücken" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("die Kenntnisse"),
+          tr("Türkçesi 'bilgi birikimi' demek; hep çoğul kullanılır. Lütfen"),
+          de("die Kenntnisse"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "die Kenntnisse" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("aufregend"),
-          tr("Türkçesi 'heyecan verici' demek. Lütfen"),
-          de("aufregend"),
+          de("die Übersetzung"),
+          tr("Türkçesi 'çeviri' demek. Lütfen"),
+          de("die Übersetzung"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "aufregend" },
+        expect: { kind: "repeat", target: "die Übersetzung" },
       },
       {
         say: [
-          tr("İki yeni kelime hikâyenin girişinde hemen iş görür:"),
-          de("Wir sind vor zehn Jahren ausgewandert."),
-          tr("ve o günleri anlatırken:"),
-          de("Die erste Zeit war aufregend."),
+          tr("İlk kalıbımız:"),
+          de("Am Anfang war alles fremd."),
+          tr("Gelişin ilk günlerini tek cümlede anlatır. Olmak fiilinin kısa geçmişi."),
         ],
       },
       {
         say: [
-          tr("İlk kalıbımız yaşını söyler:"),
-          de("Ich war zwanzig Jahre alt."),
-          tr("'Yirmi yaşındaydım' demek. Lütfen"),
-          de("Ich war zwanzig Jahre alt"),
+          tr("Örnek: 'Başta manzara bile bana yabancıydı.' Almancası:"),
+          de("Am Anfang war sogar die Landschaft fremd."),
+          tr("Lütfen"),
+          de("Am Anfang war sogar die Landschaft fremd"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Ich war zwanzig Jahre alt" },
+        expect: { kind: "repeat", target: "Am Anfang war sogar die Landschaft fremd" },
       },
       {
-        say: [tr("Sıra sende: 'On sekiz yaşındaydım.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Bugün her şey tanıdık.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich war achtzehn Jahre alt",
+          target: "Heute ist alles vertraut",
           hint: [
-            tr("Geçmiş tek kelimeyle söyleniyor, cümle ikiye bölünmüyor:"),
-            de("Ich war achtzehn Jahre alt."),
+            tr("Bugün için olmak fiilinin şimdiki biçimi kullanılır:"),
+            de("Heute ist alles vertraut."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("İkinci kalıbımız 'sahip olmak' fiilinin geçmişini kullanır:"),
-          de("Zuerst hatten wir nichts."),
-          tr("'Başta hiçbir şeyimiz yoktu' demek. Lütfen"),
-          de("Zuerst hatten wir nichts"),
-          tr("deyin."),
+          tr("İkinci kalıbımız:"),
+          de("Ich hatte keine …"),
+          tr(
+            "Başlangıçta neyin eksik olduğunu söyler. Sahip olmak fiilinin kısa geçmişi artı olumsuzluk.",
+          ),
         ],
-        expect: { kind: "repeat", target: "Zuerst hatten wir nichts" },
       },
       {
-        say: [tr("Şimdi sen: 'Başta sadece bir bavulumuz vardı.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Hiç dil bilgim yoktu.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Zuerst hatten wir nur einen Koffer",
+          target: "Ich hatte keine Deutschkenntnisse",
           hint: [
-            tr("Bavul burada nesne olduğu için artikeli değişir:"),
-            de("Zuerst hatten wir nur einen Koffer."),
+            tr("Çoğul bir isim olduğu için olumsuzluk kelimesi çoğul biçimini alır:"),
+            de("Ich hatte keine Deutschkenntnisse."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("Son kalıbımız hikâyeyi ilerletir:"),
-          de("Dann sind wir nach Deutschland gekommen."),
-          tr("'Sonra Almanya'ya geldik' demek. Lütfen"),
-          de("Dann sind wir nach Deutschland gekommen"),
-          tr("deyin."),
+          tr("Üçüncü kalıbımız bugünü özetliyor:"),
+          de("Heute komme ich gut aus."),
+          tr("Ayrılabilen bir fiil; şimdiki zamanda ön ek cümlenin sonuna düşüyor."),
         ],
-        expect: { kind: "repeat", target: "Dann sind wir nach Deutschland gekommen" },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Zuerst wir hatten nichts."),
-          tr("cümlesi doğru mu, yanlış mı? Lütfen 'doğru' ya da 'yanlış' olarak cevapla."),
+          de("Am Anfang hatte ich keine Kenntnisse."),
+          tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Zuerst wir hatten nichts.",
-          answer: false,
+          statement: "Am Anfang hatte ich keine Kenntnisse.",
+          answer: true,
           why: [
-            tr("Sıralama kelimesi başta olduğu için fiil ikinci sıraya, özne de arkasına geçmeli. Doğrusu"),
-            de("Zuerst hatten wir nichts."),
+            tr(
+              "Zaman ifadesi başta, fiil ikinci sırada, özne arkada; çoğul isimde olumsuzluk kelimesi de çoğul biçiminde. Cümle doğru.",
+            ),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık hikâyeni sırayla anlatabilirsin. Şimdi biri sana buraya nasıl geldiğini soracak.",
-          ),
-        ],
+        say: [tr("Şimdi biri sana buraya nasıl geldiğini soruyor. Hikâyeni anlat.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir dil kursunda tanıştığın biri sana Almanya'ya nasıl geldiğini soruyor. Hikâyeni sırayla anlat: kaç yaşındaydın, başta neyin vardı, sonra ne oldu.",
-      partner: "kendi hikâyesini de anlatmak isteyen bir kursiyer",
-      opening: "Sag mal, wie bist du eigentlich nach Deutschland gekommen?",
-      openingTr: "Söylesene, Almanya'ya aslında nasıl geldin?",
-      goal: "Buraya geliş hikâyen sırayla anlatılmış ve karşındaki en zor kısmın ne olduğunu öğrenmiş olur.",
-      minTurns: 7,
+        "Dil kursunda yeni tanıştığın biri sana buraya nasıl geldiğini soruyor. Nereden geldiğini, başta neyin zor olduğunu ve bugün nasıl olduğunu anlat.",
+      partner: "kursta yeni tanıştığın, kendisi de yeni gelmiş biri",
+      opening: "Und du? Wie lange bist du schon hier?",
+      openingTr: "Ya sen? Ne zamandır buradasın?",
+      goal: "Geliş, başlangıçtaki zorluk ve bugünkü durum sırayla anlatılmış ve karşındaki de kendi hikâyesinden söz etmiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -215,25 +235,28 @@ export const deA2B02: Lesson[] = [
     title: "Ich wollte Pilot werden",
     titleTr: "Çocukluk hayalleri",
     summary: "Geçmişteki isteği, yapamamayı ve zorunluluğu anlatmayı öğretir.",
-    minutes: 9,
+    minutes: 10,
     focusId: "Präteritum-Modal",
     vocab: [
-      { de: "wollte", tr: "istiyordum" },
-      { de: "konnte", tr: "yapabiliyordum" },
-      { de: "musste", tr: "zorundaydım" },
-      { de: "der Traum", tr: "hayal, rüya" },
+      { de: "der Traum", tr: "rüya, hayal" },
+      { de: "träumen", tr: "rüya görmek" },
       { de: "der Pilot", tr: "pilot" },
+      { de: "der Tierarzt", tr: "veteriner" },
+      { de: "der Feuerwehrmann", tr: "itfaiyeci" },
+      { de: "berühmt", tr: "ünlü" },
+      { de: "begabt", tr: "kabiliyetli" },
+      { de: "der Wunsch", tr: "dilek" },
     ],
     patterns: [
-      { de: "Ich wollte …", tr: "geçmişte ne istediğini söyler" },
-      { de: "Ich konnte nicht …", tr: "geçmişte neyi yapamadığını söyler" },
-      { de: "Ich musste …", tr: "geçmişte neye mecbur olduğunu söyler" },
+      { de: "Ich wollte … werden.", tr: "çocukken ne olmak istediğini anlatır" },
+      { de: "Ich konnte nicht …", tr: "geçmişte yapamadığın şeyi anlatır" },
+      { de: "Ich musste …", tr: "geçmişteki zorunluluğu anlatır" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Bugün çok işine yarayacak bir şey öğreneceğiz: geçmişte ne istediğini, neyi yapamadığını ve neye mecbur olduğunu anlatmak. Hazır mısın?",
+            "Bugün çocukken ne olmak istediğini anlatıyoruz. Bunun için kip fiillerinin geçmiş biçimini öğreneceğiz. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -241,45 +264,17 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "Burada dikkat: bu üç fiilin geçmişi iki parçaya bölünmez. Konuşurken Almanlar hep tek kelimelik biçimi kullanır. Yani kural değil, tam tersine bir kolaylık. Önce kelimeleri öğrenelim.",
+            "Kip fiilleri geçmişte Perfekt'e girmez; olmak ve sahip olmak gibi kendi kısa biçimlerini kullanır. İstemek, yapabilmek ve zorunda olmak fiillerinin geçmişleri şöyle:",
           ),
+          de("wollte, konnte, musste"),
+          tr("Bunlar madde başı değil, fiillerin çekimidir; ezberlenir. Önce sekiz kelime."),
         ],
       },
       {
         say: [
-          tr("İlk kelimemiz 'istemek' fiilinin geçmiş biçimi:"),
-          de("wollte"),
-          tr("'İstiyordum' demek. Lütfen"),
-          de("wollte"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "wollte" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz 'yapabilmek' fiilinin geçmiş biçimi:"),
-          de("konnte"),
-          tr("'Yapabiliyordum' demek. Lütfen"),
-          de("konnte"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "konnte" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz 'zorunda olmak' fiilinin geçmiş biçimi:"),
-          de("musste"),
-          tr("'Zorundaydım' demek. Lütfen"),
-          de("musste"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "musste" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
+          tr("İlk kelimemiz:"),
           de("der Traum"),
-          tr("Türkçesi 'hayal, rüya' demek. Lütfen"),
+          tr("Türkçesi 'rüya' demek, ama 'hayal' anlamında da kullanılır. Lütfen"),
           de("der Traum"),
           tr("deyin."),
         ],
@@ -287,7 +282,17 @@ export const deA2B02: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz:"),
+          tr("İkinci kelimemiz:"),
+          de("träumen"),
+          tr("Türkçesi 'rüya görmek, hayal kurmak' demek. Lütfen"),
+          de("träumen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "träumen" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
           de("der Pilot"),
           tr("Türkçesi 'pilot' demek. Lütfen"),
           de("der Pilot"),
@@ -297,8 +302,60 @@ export const deA2B02: Lesson[] = [
       },
       {
         say: [
+          tr("Dördüncü kelimemiz:"),
+          de("der Tierarzt"),
+          tr("Türkçesi 'veteriner' demek. Lütfen"),
+          de("der Tierarzt"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Tierarzt" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("der Feuerwehrmann"),
+          tr("Türkçesi 'itfaiyeci' demek. Lütfen"),
+          de("der Feuerwehrmann"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Feuerwehrmann" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("berühmt"),
+          tr("Türkçesi 'ünlü' demek. Lütfen"),
+          de("berühmt"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "berühmt" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("begabt"),
+          tr("Türkçesi 'kabiliyetli, yetenekli' demek. Lütfen"),
+          de("begabt"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "begabt" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("der Wunsch"),
+          tr("Türkçesi 'dilek, istek' demek. Lütfen"),
+          de("der Wunsch"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Wunsch" },
+      },
+      {
+        say: [
+          tr("İlk kalıbımız:"),
+          de("Ich wollte … werden."),
           tr(
-            "Bu üç kelimeyle bir cümle kurarken asıl fiil çekilmeden cümlenin sonunda kalır — bugünkü kullanımdaki gibi, sadece baştaki kelime geçmiş biçimine giriyor.",
+            "Bir meslek söylenirken artikel kullanılmaz. Türkçedeki 'pilot olmak istiyordum' ile aynı: 'bir pilot' demeyiz.",
           ),
         ],
       },
@@ -313,49 +370,42 @@ export const deA2B02: Lesson[] = [
         expect: { kind: "repeat", target: "Ich wollte Pilot werden" },
       },
       {
-        say: [tr("Sıra sende: 'Doktor olmak istiyordum.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Veteriner olmak istiyordum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich wollte Arzt werden",
-          accept: ["Ich wollte Ärztin werden"],
+          target: "Ich wollte Tierarzt werden",
           hint: [
-            tr("Asıl fiil çekilmeden cümlenin sonunda kalır:"),
-            de("Ich wollte Arzt werden."),
+            tr("Meslek adının önüne artikel gelmez ve asıl fiil sona gider:"),
+            de("Ich wollte Tierarzt werden."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("İkinci kalıbımız yapamamayı anlatır:"),
-          de("Ich konnte nicht studieren."),
-          tr("'Üniversiteye gidemedim' demek. Lütfen"),
-          de("Ich konnte nicht studieren"),
-          tr("deyin."),
+          tr("İkinci kalıbımız:"),
+          de("Ich konnte nicht …"),
+          tr("Geçmişte yapamadığın şeyi anlatır. Olumsuzluk kelimesi asıl fiilin hemen önünde."),
         ],
-        expect: { kind: "repeat", target: "Ich konnte nicht studieren" },
       },
       {
-        say: [tr("Şimdi sen: 'Çalışmak zorundaydım.' demek için ne dersin?")],
+        say: [
+          tr("Üçüncü kalıbımız:"),
+          de("Ich musste …"),
+          tr("Geçmişteki zorunluluğu anlatır; hayalin neden gerçekleşmediğini söylemenin yolu."),
+        ],
+      },
+      {
+        say: [tr("Sıra sende: 'Çalışmak zorundaydım.' nasıl dersin?")],
         expect: {
           kind: "produce",
           target: "Ich musste arbeiten",
           hint: [
-            tr("Zorunluluğun geçmiş biçimi ikinci sırada, asıl fiil sonda:"),
+            tr("Zorunluluk fiilinin kısa geçmişi ikinci sırada, asıl fiil sonda:"),
             de("Ich musste arbeiten."),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Bir cümle daha duyalım:"),
-          de("Mein Traum war ein anderer."),
-          tr("'Hayalim başkaydı' demek. Lütfen"),
-          de("Mein Traum war ein anderer"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Mein Traum war ein anderer" },
       },
       {
         say: [
@@ -368,26 +418,22 @@ export const deA2B02: Lesson[] = [
           statement: "Ich habe Pilot werden gewollt.",
           answer: false,
           why: [
-            tr("Bu fiillerin geçmişi konuşma dilinde iki parçaya bölünmez, tek kelimeyle söylenir. Doğrusu"),
+            tr("Kip fiilleri geçmişte Perfekt kurmaz, kısa biçimlerini kullanır. Doğrusu:"),
             de("Ich wollte Pilot werden."),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık geçmişteki hayallerini anlatabilirsin. Şimdi biri sana çocukken ne olmak istediğini soracak.",
-          ),
-        ],
+        say: [tr("Şimdi biri sana çocukken ne olmak istediğini soruyor. Anlat.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir arkadaşınla çocukluk hayallerinizi konuşuyorsunuz. Ne olmak istediğini, neyi yapamadığını ve bunun yerine ne yapmak zorunda kaldığını anlat.",
-      partner: "kendi çocukluk hayalini de anlatan bir arkadaş",
-      opening: "Was wolltest du eigentlich werden, als du klein warst?",
-      openingTr: "Küçükken aslında ne olmak istiyordun?",
-      goal: "Çocukluk hayalin, yapamadığın şey ve onun yerine yapmak zorunda kaldığın anlatılmış olur.",
+        "Bir arkadaşınla çocukluk hayallerinizi konuşuyorsunuz. Ne olmak istediğini, neden olamadığını ve bunun yerine ne yapmak zorunda kaldığını anlat.",
+      partner: "kendi çocukluk hayalini de anlatmak isteyen bir arkadaş",
+      opening: "Sag mal, was wolltest du als Kind werden?",
+      openingTr: "Söylesene, çocukken ne olmak istiyordun?",
+      goal: "Çocukluk hayali, gerçekleşmeme sebebi ve bugünkü durum anlatılmış; arkadaşın da kendi hayalini söylemiş olur.",
       minTurns: 8,
     },
   },
@@ -399,81 +445,95 @@ export const deA2B02: Lesson[] = [
     title: "Meine Schulzeit",
     titleTr: "Okul yılları",
     summary: "Okulda nelerin zorunlu, nelerin yasak olduğunu geçmiş zamanla anlatmayı öğretir.",
-    minutes: 9,
+    minutes: 10,
     focusId: "Präteritum-Modal",
     vocab: [
-      { de: "durfte", tr: "iznim vardı" },
-      { de: "das Fach", tr: "ders, branş" },
-      { de: "der Unterricht", tr: "ders saati, öğretim" },
-      { de: "die Note", tr: "not" },
-      { de: "streng", tr: "sert, katı" },
+      { de: "das Zeugnis", tr: "karne" },
+      { de: "das Gymnasium", tr: "lise" },
+      { de: "der Mitschüler", tr: "sınıf arkadaşı" },
+      { de: "der Klassenlehrer", tr: "sınıf öğretmeni" },
+      { de: "das Schulfach", tr: "okul dersi" },
+      { de: "streng", tr: "katı" },
+      { de: "fleißig", tr: "çalışkan" },
+      { de: "auswendig", tr: "ezbere" },
     ],
     patterns: [
-      { de: "Wir mussten …", tr: "neyin zorunlu olduğunu söyler" },
-      { de: "Wir durften nicht …", tr: "neyin yasak olduğunu söyler" },
-      { de: "Mein Lieblingsfach war …", tr: "en sevdiği dersi söyler" },
+      { de: "Wir durften nicht …", tr: "okulda neyin yasak olduğunu anlatır" },
+      { de: "Wir mussten … lernen.", tr: "okulda neyin zorunlu olduğunu anlatır" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Bugün okul yıllarını anlatmayı öğreneceğiz. Geçen dersten üç biçimi biliyorsun; bugün dördüncüsünü ekleyeceğiz: izin. Hazır mısın?",
+            "Bugün okul yıllarını anlatıyoruz: neye izin vardı, ne yasaktı, ne zorunluydu. Kip fiillerinin geçmişini bir kez daha, ama bu kez izin ve yasakla çalışacağız. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
       },
       {
         say: [
+          tr("Geçen ders üç kip geçmişi gördün. Bugün dördüncüsü geliyor: izin fiilinin geçmişi."),
+          de("durfte"),
           tr(
-            "Okul anıları neredeyse her sohbette çıkıyor ve hepsi aynı iki şeyin etrafında dönüyor: neyi yapmak zorundaydın, neye izin yoktu. Önce kelimeleri öğrenelim.",
+            "Olumsuzla birlikte kullanıldığında 'yasaktı' anlamına gelir; bu, okul anlatırken en çok gereken kalıp. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
-          tr("İlk kelimemiz 'izinli olmak' fiilinin geçmiş biçimi:"),
-          de("durfte"),
-          tr("'İznim vardı' demek. Lütfen"),
-          de("durfte"),
+          tr("İlk kelimemiz:"),
+          de("das Zeugnis"),
+          tr("Türkçesi 'karne' demek. Lütfen"),
+          de("das Zeugnis"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "durfte" },
+        expect: { kind: "repeat", target: "das Zeugnis" },
       },
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("das Fach"),
-          tr("Türkçesi 'ders, branş' demek — matematik, tarih gibi. Lütfen"),
-          de("das Fach"),
+          de("das Gymnasium"),
+          tr("Türkçesi 'lise' demek; üniversiteye hazırlayan okul türü. Lütfen"),
+          de("das Gymnasium"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "das Fach" },
+        expect: { kind: "repeat", target: "das Gymnasium" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("der Unterricht"),
-          tr("Türkçesi 'ders saati, öğretim' demek. Lütfen"),
-          de("der Unterricht"),
+          de("der Mitschüler"),
+          tr("Türkçesi 'sınıf arkadaşı' demek. Lütfen"),
+          de("der Mitschüler"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Unterricht" },
+        expect: { kind: "repeat", target: "der Mitschüler" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("die Note"),
-          tr("Türkçesi 'not' demek — karnedeki not. Lütfen"),
-          de("die Note"),
+          de("der Klassenlehrer"),
+          tr("Türkçesi 'sınıf öğretmeni' demek. Lütfen"),
+          de("der Klassenlehrer"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Note" },
+        expect: { kind: "repeat", target: "der Klassenlehrer" },
       },
       {
         say: [
-          tr("Son kelimemiz:"),
+          tr("Beşinci kelimemiz:"),
+          de("das Schulfach"),
+          tr("Türkçesi 'okul dersi' demek; matematik, müzik gibi. Lütfen"),
+          de("das Schulfach"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Schulfach" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
           de("streng"),
-          tr("Türkçesi 'sert, katı' demek. Lütfen"),
+          tr("Türkçesi 'katı, sıkı' demek. Lütfen"),
           de("streng"),
           tr("deyin."),
         ],
@@ -481,88 +541,102 @@ export const deA2B02: Lesson[] = [
       },
       {
         say: [
-          tr("İlk kalıbımız zorunluluk anlatır:"),
-          de("Wir mussten Uniform tragen."),
-          tr("'Üniforma giymek zorundaydık' demek. Lütfen"),
-          de("Wir mussten Uniform tragen"),
+          tr("Yedinci kelimemiz:"),
+          de("fleißig"),
+          tr("Türkçesi 'çalışkan' demek. Lütfen"),
+          de("fleißig"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Wir mussten Uniform tragen" },
-      },
-      {
-        say: [tr("Sıra sende: 'Çok öğrenmek zorundaydık.' demek için ne dersin?")],
-        expect: {
-          kind: "produce",
-          target: "Wir mussten viel lernen",
-          hint: [
-            tr("Zorunluluğun geçmiş biçimi ikinci sırada, asıl fiil en sonda:"),
-            de("Wir mussten viel lernen."),
-            tr("Tekrar dene."),
-          ],
-        },
+        expect: { kind: "repeat", target: "fleißig" },
       },
       {
         say: [
-          tr("İkinci kalıbımız yasağı anlatır:"),
-          de("Wir durften nicht sprechen."),
-          tr("'Konuşmamıza izin yoktu' demek. Lütfen"),
-          de("Wir durften nicht sprechen"),
+          tr("Son kelimemiz:"),
+          de("auswendig"),
+          tr("Türkçesi 'ezbere' demek. Lütfen"),
+          de("auswendig"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Wir durften nicht sprechen" },
-      },
-      {
-        say: [tr("Şimdi sen: 'Cep telefonu kullanmamıza izin yoktu.' demek için ne dersin?")],
-        expect: {
-          kind: "produce",
-          target: "Wir durften kein Handy benutzen",
-          hint: [
-            tr("Olumsuzluk nesnenin önüne geçer, asıl fiil yine sonda:"),
-            de("Wir durften kein Handy benutzen."),
-            tr("Tekrar dene."),
-          ],
-        },
+        expect: { kind: "repeat", target: "auswendig" },
       },
       {
         say: [
-          tr("Son kalıbımız en sevdiğin dersi söyler:"),
-          de("Mein Lieblingsfach war Mathe."),
+          tr("İlk kalıbımız:"),
+          de("Wir durften nicht …"),
+          tr(
+            "Yasağı anlatır. Dikkat: izin fiilinin olumsuzu 'gerek yoktu' değil, 'yasaktı' demektir. Zorunluluk fiilinin olumsuzuyla karıştırılmamalı.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Derste konuşmamız yasaktı.' Almancası:"),
+          de("Im Unterricht durften wir nicht sprechen."),
           tr("Lütfen"),
-          de("Mein Lieblingsfach war Mathe"),
+          de("Im Unterricht durften wir nicht sprechen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Mein Lieblingsfach war Mathe" },
+        expect: { kind: "repeat", target: "Im Unterricht durften wir nicht sprechen" },
+      },
+      {
+        say: [tr("Sıra sende: 'Sınıf öğretmenimiz çok katıydı.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Unser Klassenlehrer war sehr streng",
+          hint: [
+            tr("Olmak fiilinin kısa geçmişi ikinci sırada:"),
+            de("Unser Klassenlehrer war sehr streng."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("Wir mussten … lernen."),
+          tr("Zorunluluğu anlatır. Asıl fiil yine cümlenin sonunda."),
+        ],
+      },
+      {
+        say: [tr("Sıra sende: 'Her şeyi ezbere öğrenmek zorundaydık.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Wir mussten alles auswendig lernen",
+          hint: [
+            tr("Zorunluluk fiilinin kısa geçmişi ikinci sırada, asıl fiil sonda:"),
+            de("Wir mussten alles auswendig lernen."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Unser Lehrer war sehr streng."),
-          tr("cümlesi doğru mu, yanlış mı?"),
+          de("Wir durften nicht rauchen, aber wir mussten rauchen."),
+          tr("cümlesi anlamlı mı, anlamsız mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Unser Lehrer war sehr streng.",
-          answer: true,
+          statement: "Wir durften nicht rauchen, aber wir mussten rauchen.",
+          answer: false,
           why: [
-            tr("Doğru. Geçmişte bir şeyin nasıl olduğu tek kelimeyle söylenir ve cümle ikiye bölünmez."),
+            tr(
+              "Dilbilgisi doğru ama anlam kendi kendisiyle çelişiyor: birinci yarı yasak, ikinci yarı zorunluluk söylüyor. İzin fiilinin olumsuzu 'yasaktı' demektir.",
+            ),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık okul yıllarını anlatabilirsin. Şimdi bir arkadaşınla okul anılarınızı karşılaştıracaksınız.",
-          ),
-        ],
+        say: [tr("Şimdi biri sana okul yıllarını soruyor. Neyin yasak, neyin zorunlu olduğunu anlat.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir arkadaşınla okul yıllarınızı konuşuyorsunuz. Neyin zorunlu, neyin yasak olduğunu anlat ve en sevdiğin dersi söyle.",
-      partner: "okulu hiç sevmemiş, esprili bir arkadaş",
-      opening: "Wie war deine Schulzeit? Wart ihr streng erzogen?",
-      openingTr: "Okul yılların nasıldı? Size sıkı mı davranıldı?",
-      goal: "Okulda neyin zorunlu, neyin yasak olduğu ve en sevdiğin ders anlatılmış olur.",
+        "Bir arkadaşınla okul yıllarınızı karşılaştırıyorsunuz. Okulunda neyin yasak, neyin zorunlu olduğunu ve öğretmenlerinin nasıl olduğunu anlat.",
+      partner: "kendi okulunu çok farklı hatırlayan bir arkadaş",
+      opening: "War deine Schule eigentlich streng?",
+      openingTr: "Senin okulun katı mıydı?",
+      goal: "En az bir yasak ve bir zorunluluk anlatılmış, iki okul karşılaştırılmış ve hangisinin daha katı olduğuna karar verilmiş olur.",
       minTurns: 8,
     },
   },
@@ -574,25 +648,27 @@ export const deA2B02: Lesson[] = [
     title: "Der große Umzug",
     titleTr: "Taşınma hikâyesi",
     summary: "Bir taşınmayı baştan sona anlatmayı ve başlangıçtaki zorluğu söylemeyi öğretir.",
-    minutes: 9,
+    minutes: 10,
     focusId: "Perfekt",
     vocab: [
-      { de: "umgezogen", tr: "taşınmak fiilinin geçmiş biçimi" },
-      { de: "gepackt", tr: "paketlemek fiilinin geçmiş biçimi" },
-      { de: "der Abschied", tr: "veda" },
-      { de: "fremd", tr: "yabancı" },
-      { de: "schwierig", tr: "zor" },
+      { de: "der Umzug", tr: "taşınma" },
+      { de: "einziehen", tr: "yeni eve taşınmak" },
+      { de: "auspacken", tr: "paketten çıkarmak" },
+      { de: "der Karton", tr: "karton kutu" },
+      { de: "der Keller", tr: "bodrum" },
+      { de: "das Stockwerk", tr: "kat" },
+      { de: "schleppen", tr: "sürükleyerek taşımak" },
+      { de: "die Wohnungssuche", tr: "ev arayışı" },
     ],
     patterns: [
-      { de: "Wir sind umgezogen.", tr: "taşındığınızı söyler" },
-      { de: "Ich habe … gepackt.", tr: "neyi paketlediğini söyler" },
-      { de: "Am Anfang war es schwer.", tr: "başlangıcın nasıl geçtiğini söyler" },
+      { de: "Wir sind … eingezogen.", tr: "yeni eve ne zaman taşındığını anlatır" },
+      { de: "Ich habe … ausgepackt.", tr: "taşınmadan sonra ne yaptığını anlatır" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Bugün bir taşınmayı anlatmayı öğreneceğiz. Burada güzel bir ayrıntı var: taşınmak fiili yer değiştirme bildirdiği için diğer yardımcı fiili alıyor. Hazır mısın?",
+            "Bugün bir taşınmayı anlatıyoruz. Almanya'da çok sık taşınılır ve bu hikâye her sohbette işe yarar. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -600,147 +676,170 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "Aynı hikâyede iki yardımcı fiili birden kullanacaksın: taşınmak için biri, paketlemek için diğeri. Karar her seferinde fiile göre veriliyor. Önce kelimeleri öğrenelim.",
+            "Taşınma hikâyesinde iki tür fiil bir arada durur: yer değiştirenler birinci yardımcı fiili, geri kalanlar ikinciyi alır. Bugünkü iki ayrılabilen fiil tam da bu ayrımı gösteriyor. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
-          tr("İlk kelimemiz 'taşınmak' fiilinin geçmiş biçimi:"),
-          de("umgezogen"),
-          tr("Lütfen"),
-          de("umgezogen"),
+          tr("İlk kelimemiz:"),
+          de("der Umzug"),
+          tr("Türkçesi 'taşınma' demek. Lütfen"),
+          de("der Umzug"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "umgezogen" },
+        expect: { kind: "repeat", target: "der Umzug" },
       },
       {
         say: [
-          tr("İkinci kelimemiz 'paketlemek' fiilinin geçmiş biçimi:"),
-          de("gepackt"),
-          tr("Lütfen"),
-          de("gepackt"),
+          tr("İkinci kelimemiz:"),
+          de("einziehen"),
+          tr("Türkçesi 'yeni eve taşınmak, girmek' demek. Lütfen"),
+          de("einziehen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "gepackt" },
+        expect: { kind: "repeat", target: "einziehen" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("der Abschied"),
-          tr("Türkçesi 'veda' demek. Lütfen"),
-          de("der Abschied"),
+          de("auspacken"),
+          tr("Türkçesi 'paketten çıkarmak' demek. Lütfen"),
+          de("auspacken"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Abschied" },
+        expect: { kind: "repeat", target: "auspacken" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("fremd"),
-          tr("Türkçesi 'yabancı' demek — tanıdık olmayan. Lütfen"),
-          de("fremd"),
+          de("der Karton"),
+          tr("Türkçesi 'karton kutu' demek. Lütfen"),
+          de("der Karton"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "fremd" },
+        expect: { kind: "repeat", target: "der Karton" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("der Keller"),
+          tr("Türkçesi 'bodrum' demek. Lütfen"),
+          de("der Keller"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Keller" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("das Stockwerk"),
+          tr("Türkçesi 'kat' demek; binadaki kat. Lütfen"),
+          de("das Stockwerk"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "das Stockwerk" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("schleppen"),
+          tr("Türkçesi 'sürükleyerek taşımak' demek; ağır bir şeyi zorla taşımak. Lütfen"),
+          de("schleppen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "schleppen" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("schwierig"),
-          tr("Türkçesi 'zor' demek. Lütfen"),
-          de("schwierig"),
+          de("die Wohnungssuche"),
+          tr("Türkçesi 'ev arayışı' demek. Lütfen"),
+          de("die Wohnungssuche"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "schwierig" },
+        expect: { kind: "repeat", target: "die Wohnungssuche" },
       },
       {
         say: [
           tr("İlk kalıbımız:"),
-          de("Wir sind letztes Jahr umgezogen."),
-          tr("'Geçen yıl taşındık' demek. Lütfen"),
-          de("Wir sind letztes Jahr umgezogen"),
-          tr("deyin."),
+          de("Wir sind … eingezogen."),
+          tr(
+            "Bu fiil bir yerden bir yere geçmeyi anlatıyor, o yüzden birinci yardımcı fiili alıyor. Ayrılabilen bir fiil, ortacı ortadan açılıyor.",
+          ),
         ],
-        expect: { kind: "repeat", target: "Wir sind letztes Jahr umgezogen" },
       },
       {
-        say: [tr("Sıra sende: 'Berlin'e taşındık.' demek için ne dersin?")],
+        say: [
+          tr("Örnek: 'Mayısta yeni eve taşındık.' Almancası:"),
+          de("Im Mai sind wir eingezogen."),
+          tr("Lütfen"),
+          de("Im Mai sind wir eingezogen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Im Mai sind wir eingezogen" },
+      },
+      {
+        say: [tr("Sıra sende: 'Kutuları bodruma taşıdım.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Wir sind nach Berlin umgezogen",
+          target: "Ich habe die Kartons in den Keller geschleppt",
           hint: [
-            tr("Taşınmak yer değiştirme bildirir, o yüzden bu yardımcı fiili alır:"),
-            de("Wir sind nach Berlin umgezogen."),
+            tr("Yön bildiren bir edat belirtme hâlini getirir ve ortaç sona gider:"),
+            de("Ich habe die Kartons in den Keller geschleppt."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("İkinci kalıbımız başka bir yardımcı fiil alır:"),
-          de("Ich habe alles gepackt."),
-          tr("'Her şeyi topladım' demek. Lütfen"),
-          de("Ich habe alles gepackt"),
-          tr("deyin."),
+          tr("İkinci kalıbımız:"),
+          de("Ich habe … ausgepackt."),
+          tr(
+            "Bu fiil yer değiştirmiyor, o yüzden ikinci yardımcı fiili alıyor. Ön ek aynı, yardımcı fiil farklı.",
+          ),
         ],
-        expect: { kind: "repeat", target: "Ich habe alles gepackt" },
       },
       {
-        say: [tr("Şimdi sen: 'Yirmi koli paketledim.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Bütün kutuları açtım.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich habe zwanzig Kisten gepackt",
+          target: "Ich habe alle Kartons ausgepackt",
           hint: [
-            tr("Paketlemek yer değiştirme bildirmez, diğer yardımcı fiili alır:"),
-            de("Ich habe zwanzig Kisten gepackt."),
+            de("auspacken"),
+            tr("yer değiştirmeyen bir fiil, ikinci yardımcı fiili alır:"),
+            de("Ich habe alle Kartons ausgepackt."),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Son kalıbımız başlangıcı değerlendirir. Ondan önce vedayı da anabilirsin:"),
-          de("Der Abschied war schwierig."),
-          tr("Sonra başlangıç geliyor:"),
-          de("Am Anfang war alles fremd."),
-          tr("'Başta her şey yabancıydı' demek. Lütfen"),
-          de("Am Anfang war alles fremd"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Am Anfang war alles fremd" },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Wir haben nach Berlin umgezogen."),
+          de("Wir sind im Mai in die neue Wohnung eingezogen."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Wir haben nach Berlin umgezogen.",
-          answer: false,
+          statement: "Wir sind im Mai in die neue Wohnung eingezogen.",
+          answer: true,
           why: [
-            tr("Taşınmak bir yerden bir yere gitmeyi anlatır, o yüzden diğer yardımcı fiili alır. Doğrusu"),
-            de("Wir sind nach Berlin umgezogen."),
+            de("einziehen"),
+            tr("yer değiştiren bir fiil: yardımcı fiil doğru ve ortaç ortadan açılmış."),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık taşınma hikâyeni anlatabilirsin. Şimdi bir komşun sana nereden geldiğini soracak.",
-          ),
-        ],
+        say: [tr("Şimdi bir arkadaşın taşınmanı soruyor. Baştan sona anlat.")],
       },
     ],
     roleplay: {
       scene:
-        "Yeni komşun taşınma hikâyeni soruyor. Ne zaman ve nereye taşındığınızı, neleri paketlediğini ve başlangıcın nasıl geçtiğini anlat.",
-      partner: "kendisi de yakın zamanda taşınmış bir komşu",
-      opening: "Ihr seid neu hier, oder? Wann seid ihr umgezogen?",
-      openingTr: "Siz yenisiniz, değil mi? Ne zaman taşındınız?",
-      goal: "Taşınmanın zamanı, hazırlığı ve başlangıcın nasıl geçtiği anlatılmış olur.",
+        "Yeni evine taşındın ve bir arkadaşın seni arıyor. Ev arayışını, taşınma gününü ve yeni evi anlat.",
+      partner: "yeni evini merak eden bir arkadaş",
+      opening: "Und? Wie war der Umzug?",
+      openingTr: "Ee? Taşınma nasıl geçti?",
+      goal: "Ev arayışı, taşınma günü ve yeni evin durumu anlatılmış ve arkadaşın gelip görmeye davet edilmiş olur.",
       minTurns: 8,
     },
   },
@@ -752,25 +851,27 @@ export const deA2B02: Lesson[] = [
     title: "Wie habt ihr euch kennengelernt?",
     titleTr: "Tanışma hikâyesi",
     summary: "Dönüşlü fiillerle tanışma ve ilişki hikâyesi anlatmayı öğretir.",
-    minutes: 9,
+    minutes: 10,
     focusId: "Reflexivverben",
     vocab: [
-      { de: "sich kennenlernen", tr: "tanışmak" },
-      { de: "sich verlieben", tr: "âşık olmak" },
-      { de: "sich treffen", tr: "buluşmak" },
-      { de: "die Beziehung", tr: "ilişki" },
-      { de: "zufällig", tr: "tesadüfen" },
+      { de: "sich vertragen", tr: "iyi geçinmek" },
+      { de: "sich anfreunden", tr: "arkadaş olmak" },
+      { de: "befreundet", tr: "arkadaş" },
+      { de: "romantisch", tr: "romantik" },
+      { de: "charmant", tr: "sevimli" },
+      { de: "flirten", tr: "flört etmek" },
+      { de: "verabredet sein", tr: "sözleşmiş olmak" },
+      { de: "zusammenleben", tr: "birlikte yaşamak" },
     ],
     patterns: [
-      { de: "Wir haben uns kennengelernt.", tr: "nasıl tanıştığınızı anlatır" },
-      { de: "Wir haben uns verliebt.", tr: "âşık olduğunuzu söyler" },
-      { de: "Wir treffen uns …", tr: "ne sıklıkla buluştuğunuzu söyler" },
+      { de: "Wir haben uns … kennengelernt.", tr: "nerede tanıştığınızı anlatır" },
+      { de: "Wir verstehen uns gut.", tr: "bugünkü ilişkiyi özetler" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Bugün dönüşlü fiilleri öğreneceğiz. Türkçede 'tanıştık' tek kelimede biter; Almancada ise cümleye küçük bir zamir eklemen gerekir ve o zamir atlanırsa cümle yarım kalır. Hazır mısın?",
+            "Bugün dönüşlü fiilleri öğreniyoruz ve bunu bir tanışma hikâyesiyle yapıyoruz. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -778,153 +879,167 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "Bu zamir 'birbirimizi' ya da 'kendimi' anlamını taşıyor. Türkçe konuşanın en sık unuttuğu şeylerden biri, çünkü Türkçede karşılığı ekin içinde saklı. Önce kelimeleri öğrenelim.",
+            "Almancada bazı fiiller yanlarında küçük bir zamir taşır. Türkçede bunun karşılığı çoğu zaman yoktur: 'tanıştık' deriz, arada bir kelime olmaz. Almancada o kelime olmadan cümle kurulamaz ve kişiye göre değişir. İki kişi söz konusuysa aynı zamir 'birbirimizle' anlamına gelir. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("sich kennenlernen"),
-          tr("Türkçesi 'tanışmak' demek. Lütfen"),
-          de("sich kennenlernen"),
+          de("sich vertragen"),
+          tr("Türkçesi 'iyi geçinmek' demek. Lütfen"),
+          de("sich vertragen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "sich kennenlernen" },
+        expect: { kind: "repeat", target: "sich vertragen" },
       },
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("sich verlieben"),
-          tr("Türkçesi 'âşık olmak' demek. Lütfen"),
-          de("sich verlieben"),
+          de("sich anfreunden"),
+          tr("Türkçesi 'arkadaş olmak' demek. Lütfen"),
+          de("sich anfreunden"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "sich verlieben" },
+        expect: { kind: "repeat", target: "sich anfreunden" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("sich treffen"),
-          tr("Türkçesi 'buluşmak' demek. Lütfen"),
-          de("sich treffen"),
+          de("befreundet"),
+          tr("Türkçesi 'arkadaş, dost' demek; bir sıfat olarak kullanılır. Lütfen"),
+          de("befreundet"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "sich treffen" },
+        expect: { kind: "repeat", target: "befreundet" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("die Beziehung"),
-          tr("Türkçesi 'ilişki' demek. Lütfen"),
-          de("die Beziehung"),
+          de("romantisch"),
+          tr("Türkçesi 'romantik' demek. Lütfen"),
+          de("romantisch"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Beziehung" },
+        expect: { kind: "repeat", target: "romantisch" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("charmant"),
+          tr("Türkçesi 'sevimli, cana yakın' demek. Lütfen"),
+          de("charmant"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "charmant" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("flirten"),
+          tr("Türkçesi 'flört etmek' demek. Lütfen"),
+          de("flirten"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "flirten" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("verabredet sein"),
+          tr("Türkçesi 'buluşmak için sözleşmiş olmak' demek. Lütfen"),
+          de("verabredet sein"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "verabredet sein" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("zufällig"),
-          tr("Türkçesi 'tesadüfen' demek. Lütfen"),
-          de("zufällig"),
+          de("zusammenleben"),
+          tr("Türkçesi 'birlikte yaşamak' demek. Lütfen"),
+          de("zusammenleben"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "zufällig" },
+        expect: { kind: "repeat", target: "zusammenleben" },
       },
       {
         say: [
+          tr("İlk kalıbımız:"),
+          de("Wir haben uns … kennengelernt."),
           tr(
-            "Şimdi kural. Bu fiillerle cümle kurarken zamir fiilin hemen arkasına gelir. Geçmiş zamanda da aynı yerde durur; geçmiş biçim yine cümlenin sonundadır. Tesadüfse şöyle söylenir:",
+            "Zamir burada 'birbirimizi' demek. Türkçede 'tanıştık' derken böyle bir kelime yok; Almancada olmazsa cümle eksik kalır.",
           ),
-          de("Wir haben uns zufällig getroffen."),
         ],
       },
       {
         say: [
-          tr("Örnek: 'Berlin'de tanıştık.' Almancası:"),
-          de("Wir haben uns in Berlin kennengelernt."),
+          tr("Örnek: 'Bir kursta tanıştık.' Almancası:"),
+          de("Wir haben uns in einem Kurs kennengelernt."),
           tr("Lütfen"),
-          de("Wir haben uns in Berlin kennengelernt"),
+          de("Wir haben uns in einem Kurs kennengelernt"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Wir haben uns in Berlin kennengelernt" },
+        expect: { kind: "repeat", target: "Wir haben uns in einem Kurs kennengelernt" },
       },
       {
-        say: [tr("Sıra sende: 'Bir kursta tanıştık.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Çabucak arkadaş olduk.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Wir haben uns in einem Kurs kennengelernt",
+          target: "Wir haben uns schnell angefreundet",
           hint: [
-            tr("Zamir yardımcı fiilin hemen arkasında, geçmiş biçim en sonda:"),
-            de("Wir haben uns in einem Kurs kennengelernt."),
+            tr("Dönüşlü zamir fiilden hemen sonra durur ve ortaç sona gider:"),
+            de("Wir haben uns schnell angefreundet."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("İkinci kalıbımız:"),
-          de("Wir haben uns sofort verliebt."),
-          tr("'Hemen âşık olduk' demek. Lütfen"),
-          de("Wir haben uns sofort verliebt"),
-          tr("deyin."),
+          tr("İkinci kalıbımız bugünü anlatıyor:"),
+          de("Wir verstehen uns gut."),
+          tr("Aynı zamir, bu kez şimdiki zamanda ve yine 'birbirimizi' anlamında."),
         ],
-        expect: { kind: "repeat", target: "Wir haben uns sofort verliebt" },
       },
       {
-        say: [tr("Şimdi sen: 'Her hafta buluşuyoruz.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Beş yıldır arkadaşız.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Wir treffen uns jede Woche",
+          target: "Wir sind seit fünf Jahren befreundet",
           hint: [
-            tr("Şimdiki zamanda zamir fiilin hemen arkasına gelir:"),
-            de("Wir treffen uns jede Woche."),
+            tr("Süre bildiren edat kendinden sonraki ismi yönelme hâline sokar:"),
+            de("Wir sind seit fünf Jahren befreundet."),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Bir cümle daha:"),
-          de("Unsere Beziehung war von Anfang an gut."),
-          tr("'İlişkimiz baştan beri iyiydi' demek. Lütfen"),
-          de("Unsere Beziehung war von Anfang an gut"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Unsere Beziehung war von Anfang an gut" },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Wir haben in Berlin kennengelernt."),
+          de("Wir haben in einem Kurs kennengelernt."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Wir haben in Berlin kennengelernt.",
+          statement: "Wir haben in einem Kurs kennengelernt.",
           answer: false,
           why: [
-            tr("Dönüşlü zamir eksik; bu fiil onsuz kullanılmaz. Doğrusu"),
-            de("Wir haben uns in Berlin kennengelernt."),
+            tr("Dönüşlü zamir eksik; o olmadan fiil kimi tanıdığını söylemiyor. Doğrusu:"),
+            de("Wir haben uns in einem Kurs kennengelernt."),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık tanışma hikâyeni anlatabilirsin. Şimdi biri sana eşinle ya da en yakın arkadaşınla nasıl tanıştığını soracak.",
-          ),
-        ],
+        say: [tr("Şimdi biri sana yakın bir arkadaşınla nasıl tanıştığınızı soruyor. Anlat.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir yemekte tanıştığın biri sana en yakın arkadaşınla nasıl tanıştığını soruyor. Nerede tanıştığınızı, ne olduğunu ve şimdi ne sıklıkla buluştuğunuzu anlat.",
-      partner: "hikâye dinlemeyi seven, meraklı bir masa arkadaşı",
+        "Bir akşam yemeğinde biri sana en yakın arkadaşınla nasıl tanıştığınızı soruyor. Nerede tanıştığınızı, ilk izlenimini ve bugün nasıl olduğunuzu anlat.",
+      partner: "yeni tanıştığın, meraklı bir sofra arkadaşı",
       opening: "Ihr kennt euch schon lange, oder? Wie habt ihr euch kennengelernt?",
-      openingTr: "Uzun zamandır tanışıyorsunuz, değil mi? Nasıl tanıştınız?",
-      goal: "Nerede ve nasıl tanıştığınız ile bugün ne sıklıkta görüştüğünüz anlatılmış olur.",
+      openingTr: "Siz uzun zamandır tanışıyorsunuz, değil mi? Nasıl tanıştınız?",
+      goal: "Tanışma yeri, ilk izlenim ve bugünkü ilişki anlatılmış ve karşındaki de kendi tanışma hikâyesini söylemiş olur.",
       minTurns: 8,
     },
   },
@@ -936,25 +1051,27 @@ export const deA2B02: Lesson[] = [
     title: "Seit drei Jahren",
     titleTr: "Süre ve zaman noktası",
     summary: "Hâlâ süren bir zamanı ve geçmişte kalmış bir noktayı ayırmayı öğretir.",
-    minutes: 9,
+    minutes: 10,
     focusId: "Dativ-Präpositionen",
     vocab: [
-      { de: "seit", tr: "…-den beri" },
-      { de: "vor", tr: "…önce" },
-      { de: "inzwischen", tr: "bu arada, artık" },
-      { de: "ungefähr", tr: "yaklaşık" },
-      { de: "der Moment", tr: "an" },
+      { de: "seit", tr: "-den beri" },
+      { de: "vor", tr: "önce" },
+      { de: "seither", tr: "o zamandan beri" },
+      { de: "zuvor", tr: "daha önce" },
+      { de: "momentan", tr: "şu anda" },
+      { de: "demnächst", tr: "yakında" },
+      { de: "bislang", tr: "şimdiye kadar" },
+      { de: "erst", tr: "ancak" },
     ],
     patterns: [
-      { de: "seit einem Jahr", tr: "hâlâ süren bir zamanı anlatır" },
-      { de: "vor zwei Monaten", tr: "geçmişte kalmış bir noktayı anlatır" },
-      { de: "nach der Arbeit", tr: "bir şeyden sonrasını anlatır" },
+      { de: "Ich wohne seit … hier.", tr: "hâlâ süren bir zamanı anlatır" },
+      { de: "Vor … bin ich gekommen.", tr: "geçmişte kalmış bir noktayı anlatır" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Bugün iki küçük kelimeyi ayırt etmeyi öğreneceğiz. İkisi de Türkçede 'önce' ve 'beri' ile karşılanıyor ama anlamları farklı; karıştırırsan cümlenin anlamı tersine dönüyor. Hazır mısın?",
+            "Bugün iki küçük kelimeyi ayırt etmeyi öğreniyoruz. İkisi de zaman söyler ama biri hâlâ süren bir şeyi, öteki bitmiş bir noktayı anlatır. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -962,7 +1079,7 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "Ayrım şu: biri hâlâ süren bir şeyi anlatır, diğeri bitmiş bir noktayı. 'Üç yıldır buradayım' ile 'üç yıl önce geldim' aynı şey değil. Önce kelimeleri öğrenelim.",
+            "Türkçede 'üç yıldır buradayım' ve 'üç yıl önce geldim' cümlelerinde iki ayrı ek kullanırız. Almancada iki ayrı edat vardır ve ikisi de kendinden sonraki ismi yönelme hâline sokar. Süre bildireni şimdiki zamanla, nokta bildireni geçmişle çalışır. Önce sekiz kelime.",
           ),
         ],
       },
@@ -970,7 +1087,7 @@ export const deA2B02: Lesson[] = [
         say: [
           tr("İlk kelimemiz:"),
           de("seit"),
-          tr("Türkçesi '…-den beri' demek — hâlâ sürüyor. Lütfen"),
+          tr("Türkçesi 'bir zamandan beri' demek; hâlâ süren bir şeyi anlatır. Lütfen"),
           de("seit"),
           tr("deyin."),
         ],
@@ -980,7 +1097,9 @@ export const deA2B02: Lesson[] = [
         say: [
           tr("İkinci kelimemiz:"),
           de("vor"),
-          tr("Türkçesi '…önce' demek — bitmiş bir nokta. Lütfen"),
+          tr(
+            "Zaman anlatırken Türkçesi 'önce' demek; yer anlatırken 'önünde' anlamına da gelir. Lütfen",
+          ),
           de("vor"),
           tr("deyin."),
         ],
@@ -989,129 +1108,142 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("inzwischen"),
-          tr("Türkçesi 'bu arada, artık' demek. Lütfen"),
-          de("inzwischen"),
+          de("seither"),
+          tr("Türkçesi 'o zamandan beri' demek. Lütfen"),
+          de("seither"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "inzwischen" },
+        expect: { kind: "repeat", target: "seither" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("ungefähr"),
-          tr("Türkçesi 'yaklaşık' demek. Lütfen"),
-          de("ungefähr"),
+          de("zuvor"),
+          tr("Türkçesi 'daha önce, ondan önce' demek. Lütfen"),
+          de("zuvor"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "ungefähr" },
+        expect: { kind: "repeat", target: "zuvor" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("momentan"),
+          tr("Türkçesi 'şu anda, şu sıralar' demek. Lütfen"),
+          de("momentan"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "momentan" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("demnächst"),
+          tr("Türkçesi 'yakında' demek. Lütfen"),
+          de("demnächst"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "demnächst" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("bislang"),
+          tr("Türkçesi 'şimdiye kadar' demek. Lütfen"),
+          de("bislang"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "bislang" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("der Moment"),
-          tr("Türkçesi 'an' demek. Lütfen"),
-          de("der Moment"),
+          de("erst"),
+          tr("Türkçesi 'ancak, daha' demek; beklenenden geç ya da az olduğunu söyler. Lütfen"),
+          de("erst"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "der Moment" },
+        expect: { kind: "repeat", target: "erst" },
       },
       {
         say: [
+          tr("İlk kalıbımız süreyi anlatıyor:"),
+          de("Ich wohne seit … hier."),
           tr(
-            "İkisinin ortak bir yanı var: arkalarından gelen kelime hâl değiştirir. Bir yıl derken 'bir' kelimesi biçim değiştiriyor, iki ay derken 'ay' kelimesi çoğulda ek alıyor. Diğer iki kelime ise cümleye olduğu gibi girer:",
+            "Fiil şimdiki zamanda kalıyor, çünkü durum hâlâ sürüyor. Türkçede 'oturuyorum' deriz, aynı mantık.",
           ),
-          de("Inzwischen spreche ich besser Deutsch."),
-          tr("ve"),
-          de("Das war vor ungefähr zwei Jahren."),
         ],
       },
       {
         say: [
-          tr("İlk örnek. 'Bir yıldır burada oturuyorum.' Almancası:"),
-          de("Ich wohne seit einem Jahr hier."),
+          tr("Örnek: 'Üç yıldır burada oturuyorum.' Almancası:"),
+          de("Ich wohne seit drei Jahren hier."),
           tr("Lütfen"),
-          de("Ich wohne seit einem Jahr hier"),
+          de("Ich wohne seit drei Jahren hier"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Ich wohne seit einem Jahr hier" },
+        expect: { kind: "repeat", target: "Ich wohne seit drei Jahren hier" },
       },
       {
-        say: [tr("Sıra sende: 'İki yıldır Almanca öğreniyorum.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'İki aydır burada çalışıyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich lerne seit zwei Jahren Deutsch",
+          target: "Ich arbeite seit zwei Monaten hier",
           hint: [
-            tr("Çoğulda kelimenin sonuna bir ek daha geliyor:"),
-            de("Ich lerne seit zwei Jahren Deutsch."),
+            tr("Süre bildiren edat ismi yönelme hâline sokar ve fiil şimdiki zamanda kalır:"),
+            de("Ich arbeite seit zwei Monaten hier."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("İkinci örnek bitmiş bir noktayı anlatır:"),
-          de("Vor zwei Monaten war ich in Istanbul."),
-          tr("'İki ay önce İstanbul'daydım' demek. Lütfen"),
-          de("Vor zwei Monaten war ich in Istanbul"),
-          tr("deyin."),
+          tr("İkinci kalıbımız zaman noktasını anlatıyor:"),
+          de("Vor … bin ich gekommen."),
+          tr("Bu kez olay bitmiş, o yüzden fiil geçmişe geçiyor."),
         ],
-        expect: { kind: "repeat", target: "Vor zwei Monaten war ich in Istanbul" },
       },
       {
-        say: [tr("Şimdi sen: 'Üç ay önce taşındım.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Üç yıl önce geldim.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Vor drei Monaten bin ich umgezogen",
+          target: "Vor drei Jahren bin ich gekommen",
           hint: [
-            tr("Zaman başta olduğu için yardımcı fiil ikinci sıraya geçer:"),
-            de("Vor drei Monaten bin ich umgezogen."),
+            tr("Nokta bildiren edat geçmişle çalışır ve zaman ifadesi başta olunca özne arkaya düşer:"),
+            de("Vor drei Jahren bin ich gekommen."),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Üçüncü kalıbımız da aynı aileden:"),
-          de("Nach der Arbeit gehe ich einkaufen."),
-          tr("'İşten sonra alışverişe giderim' demek. Lütfen"),
-          de("Nach der Arbeit gehe ich einkaufen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Nach der Arbeit gehe ich einkaufen" },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich wohne seit ein Jahr hier."),
+          de("Seit drei Jahren wohne ich in Berlin."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich wohne seit ein Jahr hier.",
-          answer: false,
+          statement: "Seit drei Jahren wohne ich in Berlin.",
+          answer: true,
           why: [
-            tr("Bu kelimeden sonra gelen sözcük hâl değiştirmeli. Doğrusu"),
-            de("Ich wohne seit einem Jahr hier."),
+            tr(
+              "Süre bildiren edat, yönelme hâlinde bir zaman ifadesi ve şimdiki zamanda bir fiil: üçü de doğru, çünkü oturma hâlâ sürüyor.",
+            ),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık ne kadar süredir bir şey yaptığını doğru söyleyebilirsin. Şimdi biri sana ne zamandır Almanya'da olduğunu soracak.",
-          ),
-        ],
+        say: [tr("Şimdi biri sana ne zamandır burada olduğunu soruyor. İki kelimeyi de kullan.")],
       },
     ],
     roleplay: {
       scene:
-        "Yeni tanıştığın biri ne zamandır Almanya'da olduğunu soruyor. Ne kadar süredir burada olduğunu ve hangi olayın ne zaman olduğunu anlat; süre ile zaman noktasını karıştırma.",
-      partner: "sorularını üst üste soran, sıcak bir tanıdık",
-      opening: "Wie lange bist du schon in Deutschland?",
-      openingTr: "Ne zamandır Almanya'dasın?",
-      goal: "Ne zamandır burada olduğun ve hangi olayın ne zaman olduğu karışmadan anlatılmış olur.",
-      minTurns: 7,
+        "Bir komşun sana ne zamandır bu şehirde olduğunu soruyor. Ne zaman geldiğini ve ne zamandır burada yaşadığını ayrı ayrı söyle, sonra ne zamandır çalıştığını da anlat.",
+      partner: "yeni taşınmış, senin de ne zamandır burada olduğunu merak eden bir komşu",
+      opening: "Wohnen Sie schon lange hier?",
+      openingTr: "Uzun zamandır burada mı oturuyorsunuz?",
+      goal: "Hem geliş noktası hem de süren durum ayrı cümlelerle söylenmiş ve komşuya da aynı soru sorulmuş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1122,25 +1254,27 @@ export const deA2B02: Lesson[] = [
     title: "Was hat sich verändert?",
     titleTr: "Değişimler",
     summary: "Nelerin değiştiğini ve neye alıştığını anlatmayı öğretir.",
-    minutes: 9,
+    minutes: 10,
     focusId: "Reflexivverben",
     vocab: [
-      { de: "sich verändern", tr: "değişmek" },
-      { de: "sich gewöhnen", tr: "alışmak" },
-      { de: "die Veränderung", tr: "değişim" },
-      { de: "selbstständig", tr: "bağımsız, kendi başına" },
-      { de: "langsam", tr: "yavaş yavaş" },
+      { de: "sich erinnern", tr: "hatırlamak" },
+      { de: "merken", tr: "aklında tutmak" },
+      { de: "ändern", tr: "değiştirmek" },
+      { de: "verbessern", tr: "iyileştirmek" },
+      { de: "wechseln", tr: "değiştirmek (yenisiyle)" },
+      { de: "entspannt", tr: "rahatlamış" },
+      { de: "unzufrieden", tr: "memnuniyetsiz" },
+      { de: "weiterkommen", tr: "ilerlemek" },
     ],
     patterns: [
-      { de: "Es hat sich verändert.", tr: "bir şeyin değiştiğini söyler" },
-      { de: "Ich habe mich daran gewöhnt.", tr: "bir şeye alıştığını söyler" },
-      { de: "Am Anfang … jetzt …", tr: "başlangıç ile bugünü karşılaştırır" },
+      { de: "Vieles hat sich verändert.", tr: "genel bir değişimi bildirir" },
+      { de: "Ich erinnere mich an …", tr: "neyi hatırladığını söyler" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Bugün değişimi anlatmayı öğreneceğiz. Yine dönüşlü fiiller var ama bu sefer zamir 'kendimi' anlamında; iki fiili birlikte görünce fark oturacak. Hazır mısın?",
+            "Bugün nelerin değiştiğini anlatıyoruz. Almancada 'değiştirmek' için iki ayrı fiil var ve ikisi aynı şey değil. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1148,154 +1282,170 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "Bir yere yerleşmiş herkesin anlattığı iki şey var: neyin değiştiği ve neye alıştığı. İkisinin de hazır kalıbı var. Önce kelimeleri öğrenelim.",
+            "Aradaki fark şu: bir şeyi başka bir hâle getirmek ile bir şeyi bırakıp yenisini almak. Randevunun saatini kaydırırsan birincisi, doktoru bırakıp başkasına gidersen ikincisi. Türkçede ikisine de 'değiştirmek' deriz, bu yüzden karıştırmak kolay. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("sich verändern"),
-          tr("Türkçesi 'değişmek' demek. Lütfen"),
-          de("sich verändern"),
+          de("sich erinnern"),
+          tr("Türkçesi 'hatırlamak' demek; dönüşlü bir fiil. Lütfen"),
+          de("sich erinnern"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "sich verändern" },
+        expect: { kind: "repeat", target: "sich erinnern" },
       },
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("sich gewöhnen"),
-          tr("Türkçesi 'alışmak' demek. Lütfen"),
-          de("sich gewöhnen"),
+          de("merken"),
+          tr("Türkçesi 'aklında tutmak, fark etmek' demek. Lütfen"),
+          de("merken"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "sich gewöhnen" },
+        expect: { kind: "repeat", target: "merken" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("die Veränderung"),
-          tr("Türkçesi 'değişim' demek. Lütfen"),
-          de("die Veränderung"),
+          de("ändern"),
+          tr("Türkçesi 'bir şeyi başka bir hâle getirmek' demek. Lütfen"),
+          de("ändern"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "die Veränderung" },
+        expect: { kind: "repeat", target: "ändern" },
       },
       {
         say: [
           tr("Dördüncü kelimemiz:"),
-          de("selbstständig"),
-          tr("Türkçesi 'kendi başına, bağımsız' demek. Lütfen"),
-          de("selbstständig"),
+          de("verbessern"),
+          tr("Türkçesi 'iyileştirmek, geliştirmek' demek. Lütfen"),
+          de("verbessern"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "selbstständig" },
+        expect: { kind: "repeat", target: "verbessern" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("wechseln"),
+          tr("Türkçesi 'bırakıp yenisini almak' demek; iş, doktor, yer değiştirmek. Lütfen"),
+          de("wechseln"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "wechseln" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("entspannt"),
+          tr("Türkçesi 'rahatlamış, gevşemiş' demek. Lütfen"),
+          de("entspannt"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "entspannt" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("unzufrieden"),
+          tr("Türkçesi 'memnun olmayan' demek. Lütfen"),
+          de("unzufrieden"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "unzufrieden" },
       },
       {
         say: [
           tr("Son kelimemiz:"),
-          de("langsam"),
-          tr("Türkçesi 'yavaş yavaş' demek. Lütfen"),
-          de("langsam"),
+          de("weiterkommen"),
+          tr("Türkçesi 'ilerlemek, yol almak' demek. Lütfen"),
+          de("weiterkommen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "langsam" },
-      },
-      {
-        say: [
-          tr("Değişim bazen ağırdan gelir; o zaman şöyle dersin:"),
-          de("Es geht langsam, aber es geht."),
-        ],
+        expect: { kind: "repeat", target: "weiterkommen" },
       },
       {
         say: [
           tr("İlk kalıbımız:"),
           de("Vieles hat sich verändert."),
-          tr("'Çok şey değişti' demek. Zamir yardımcı fiilin hemen arkasında. Lütfen"),
-          de("Vieles hat sich verändert"),
-          tr("deyin."),
+          tr(
+            "Dönüşlü zamir burada 'kendiliğinden' anlamı katıyor: bir şeyi kimse değiştirmedi, kendi değişti.",
+          ),
         ],
-        expect: { kind: "repeat", target: "Vieles hat sich verändert" },
-      },
-      {
-        say: [tr("Sıra sende: 'Her şey değişti.' demek için ne dersin?")],
-        expect: {
-          kind: "produce",
-          target: "Alles hat sich verändert",
-          hint: [
-            tr("Zamiri unutma, bu fiil onsuz kullanılmaz:"),
-            de("Alles hat sich verändert."),
-            tr("Tekrar dene."),
-          ],
-        },
       },
       {
         say: [
-          tr("İkinci kalıbımız alışmayı anlatır:"),
-          de("Ich habe mich daran gewöhnt."),
-          tr("'Ona alıştım' demek. Bu sefer zamir 'kendimi' anlamında. Lütfen"),
-          de("Ich habe mich daran gewöhnt"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Ich habe mich daran gewöhnt" },
-      },
-      {
-        say: [tr("Şimdi sen: 'Yeni işime alıştım.' demek için ne dersin?")],
-        expect: {
-          kind: "produce",
-          target: "Ich habe mich an die neue Arbeit gewöhnt",
-          hint: [
-            tr("Neye alıştığını da söylemen gerekiyor; bu fiil tek başına yarım kalır:"),
-            de("Ich habe mich an die neue Arbeit gewöhnt."),
-            tr("Tekrar dene."),
-          ],
-        },
-      },
-      {
-        say: [
-          tr("Son kalıbımız iki zamanı karşılaştırır:"),
-          de("Am Anfang war es schwierig, jetzt bin ich selbstständig."),
+          tr("Örnek: 'O zamandan beri çok şey değişti.' Almancası:"),
+          de("Seither hat sich vieles verändert."),
           tr("Lütfen"),
-          de("Am Anfang war es schwierig, jetzt bin ich selbstständig"),
+          de("Seither hat sich vieles verändert"),
           tr("deyin."),
         ],
+        expect: { kind: "repeat", target: "Seither hat sich vieles verändert" },
+      },
+      {
+        say: [tr("Sıra sende: 'Randevumu değiştirmek istiyorum.' nasıl dersin?")],
         expect: {
-          kind: "repeat",
-          target: "Am Anfang war es schwierig, jetzt bin ich selbstständig",
+          kind: "produce",
+          target: "Ich möchte meinen Termin ändern",
+          hint: [
+            tr("Aynı şeyin başka bir hâle gelmesi söz konusu, o yüzden birinci fiil kullanılır:"),
+            de("Ich möchte meinen Termin ändern."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("İkinci kalıbımız:"),
+          de("Ich erinnere mich an …"),
+          tr(
+            "Bu fiil hem dönüşlü zamir hem de bir edat istiyor ve o edat kendinden sonrakini belirtme hâline sokuyor.",
+          ),
+        ],
+      },
+      {
+        say: [tr("Sıra sende: 'İş değiştirmek istiyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich möchte die Stelle wechseln",
+          hint: [
+            tr("Eskisini bırakıp yenisini almak söz konusu, o yüzden ikinci fiil kullanılır:"),
+            de("Ich möchte die Stelle wechseln."),
+            tr("Tekrar dene."),
+          ],
         },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich habe mich an das Wetter gewöhnt."),
+          de("Ich erinnere an meine Kindheit."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich habe mich an das Wetter gewöhnt.",
-          answer: true,
+          statement: "Ich erinnere an meine Kindheit.",
+          answer: false,
           why: [
-            tr("Doğru. Dönüşlü zamir yardımcı fiilin hemen arkasında ve geçmiş biçim cümlenin sonunda duruyor."),
+            tr("Dönüşlü zamir eksik; bu fiil onsuz kullanılmaz. Doğrusu:"),
+            de("Ich erinnere mich an meine Kindheit."),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık değişimi anlatabilirsin. Şimdi biri sana buraya geldiğinden beri nelerin değiştiğini soracak.",
-          ),
-        ],
+        say: [tr("Şimdi son yıllarda hayatında nelerin değiştiğini anlatıyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir tanıdığın Almanya'ya geldiğinden beri nelerin değiştiğini soruyor. Neyin değiştiğini, neye alıştığını ve başlangıç ile bugünü karşılaştırarak anlat.",
-      partner: "kendi değişimini de anlatan, anlayışlı bir tanıdık",
-      opening: "Und, was hat sich für dich am meisten verändert?",
-      openingTr: "Peki senin için en çok ne değişti?",
-      goal: "Neyin değiştiği ve neye alıştığın, başlangıçla bugün karşılaştırılarak anlatılmış olur.",
-      minTurns: 7,
+        "Uzun zamandır görmediğin bir arkadaşınla buluştun. Son yıllarda hayatında nelerin değiştiğini, neyi bilerek değiştirdiğini ve nelerin kendiliğinden değiştiğini anlat.",
+      partner: "seni yıllar sonra gören eski bir arkadaş",
+      opening: "Mensch, so lange nicht gesehen! Was hat sich bei dir verändert?",
+      openingTr: "Vay, ne zamandır görüşmüyoruz! Sende neler değişti?",
+      goal: "En az iki değişim anlatılmış, biri bilerek yapılmış biri kendiliğinden olmuş olarak ayrılmış ve arkadaşın da kendi değişimini söylemiş olur.",
+      minTurns: 8,
     },
   },
   {
@@ -1306,25 +1456,27 @@ export const deA2B02: Lesson[] = [
     title: "Bei meinen Großeltern",
     titleTr: "Dede-nine anıları",
     summary: "Çocukluk anılarını anlatmayı öğretir: orası nasıldı, ne vardı, neye izin vardı.",
-    minutes: 9,
+    minutes: 10,
     focusId: "Präteritum-sein-haben",
     vocab: [
-      { de: "die Großeltern", tr: "büyükanne ve büyükbaba" },
-      { de: "die Erinnerung", tr: "anı" },
-      { de: "backen", tr: "fırında pişirmek" },
       { de: "das Enkelkind", tr: "torun" },
-      { de: "riechen", tr: "kokmak" },
+      { de: "der Topf", tr: "tencere" },
+      { de: "der Kamin", tr: "şömine" },
+      { de: "der Teig", tr: "hamur" },
+      { de: "reich", tr: "zengin" },
+      { de: "großziehen", tr: "büyütmek" },
+      { de: "liebevoll", tr: "sevgi dolu" },
+      { de: "erben", tr: "miras almak" },
     ],
     patterns: [
-      { de: "Bei meinen Großeltern war es …", tr: "orasının nasıl olduğunu söyler" },
-      { de: "Es gab immer …", tr: "orada her zaman ne olduğunu söyler" },
-      { de: "Ich durfte …", tr: "neye izin verildiğini söyler" },
+      { de: "Bei meinen Großeltern gab es …", tr: "orada neyin olduğunu anlatır" },
+      { de: "Meine Großmutter war sehr …", tr: "bir kişiyi geçmiş zamanla tarif eder" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Bugün çocukluk anılarını anlatmayı öğreneceğiz. Geçmişi tek kelimeyle söyleyen biçimleri biliyorsun; bugün onlara bir tane daha eklenecek ve anlatım tamamlanacak. Hazır mısın?",
+            "Bugün dede ve ninenin evini anlatıyoruz: orada ne vardı, kokusu neydi, nasıl insanlardı. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1332,43 +1484,13 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "Anı anlatırken hep aynı üç şey söyleniyor: orası nasıldı, orada ne vardı, neye izin vardı. Üçünün de hazır kalıbı var. Önce kelimeleri öğrenelim.",
+            "Bir yeri geçmişte anlatırken en çok kullanılan kalıp 'vardı' demektir. Almancada bunun kendine has bir biçimi var ve ardından gelen isim belirtme hâline girer. Bugün onu ve olmak fiilinin kısa geçmişini bir arada çalışacağız. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("die Großeltern"),
-          tr("Türkçesi 'büyükanne ve büyükbaba' demek; tek kelime, hep çoğul. Lütfen"),
-          de("die Großeltern"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Großeltern" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
-          de("die Erinnerung"),
-          tr("Türkçesi 'anı' demek. Lütfen"),
-          de("die Erinnerung"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Erinnerung" },
-      },
-      {
-        say: [
-          tr("Üçüncü kelimemiz:"),
-          de("backen"),
-          tr("Türkçesi 'fırında pişirmek' demek — kek, ekmek. Lütfen"),
-          de("backen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "backen" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
           de("das Enkelkind"),
           tr("Türkçesi 'torun' demek. Lütfen"),
           de("das Enkelkind"),
@@ -1378,105 +1500,151 @@ export const deA2B02: Lesson[] = [
       },
       {
         say: [
+          tr("İkinci kelimemiz:"),
+          de("der Topf"),
+          tr("Türkçesi 'tencere' demek. Lütfen"),
+          de("der Topf"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Topf" },
+      },
+      {
+        say: [
+          tr("Üçüncü kelimemiz:"),
+          de("der Kamin"),
+          tr("Türkçesi 'şömine' demek. Lütfen"),
+          de("der Kamin"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Kamin" },
+      },
+      {
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("der Teig"),
+          tr("Türkçesi 'hamur' demek. Lütfen"),
+          de("der Teig"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Teig" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("reich"),
+          tr("Türkçesi 'zengin' demek. Lütfen"),
+          de("reich"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "reich" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("großziehen"),
+          tr("Türkçesi 'büyütmek, yetiştirmek' demek; çocuk için kullanılır. Lütfen"),
+          de("großziehen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "großziehen" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("liebevoll"),
+          tr("Türkçesi 'sevgi dolu' demek. Lütfen"),
+          de("liebevoll"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "liebevoll" },
+      },
+      {
+        say: [
           tr("Son kelimemiz:"),
-          de("riechen"),
-          tr("Türkçesi 'kokmak' demek. Lütfen"),
-          de("riechen"),
+          de("erben"),
+          tr("Türkçesi 'miras almak' demek. Lütfen"),
+          de("erben"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "riechen" },
+        expect: { kind: "repeat", target: "erben" },
       },
       {
         say: [
-          tr("Kokuyla fırın hep yan yana anılır:"),
-          de("Meine Oma hat jeden Sonntag Kuchen gebacken."),
+          tr("İlk kalıbımız:"),
+          de("Bei meinen Großeltern gab es …"),
+          tr(
+            "'Vardı' demenin yolu. Ardından gelen isim belirtme hâline girer; öznesi hep aynı kalır, kişiye göre değişmez.",
+          ),
         ],
       },
       {
         say: [
-          tr("İlk kalıbımız orayı anlatır:"),
-          de("Bei meinen Großeltern war es immer warm."),
+          tr("Örnek: 'Onlarda bir şömine vardı.' Almancası:"),
+          de("Bei ihnen gab es einen Kamin."),
           tr("Lütfen"),
-          de("Bei meinen Großeltern war es immer warm"),
+          de("Bei ihnen gab es einen Kamin"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Bei meinen Großeltern war es immer warm" },
+        expect: { kind: "repeat", target: "Bei ihnen gab es einen Kamin" },
       },
       {
-        say: [tr("Sıra sende: 'Büyükannemlerde her zaman sakindi.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Mutfakta büyük bir tencere vardı.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Bei meinen Großeltern war es immer ruhig",
+          target: "In der Küche gab es einen großen Topf",
           hint: [
-            tr("Başta yer bildiren bir öbek var, o yüzden fiil hemen arkasından gelir:"),
-            de("Bei meinen Großeltern war es immer ruhig."),
+            de("der Topf"),
+            tr("eril ve nesne olduğu için artikel ile sıfat birlikte belirtme hâline girer:"),
+            de("In der Küche gab es einen großen Topf."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("İkinci kalıbımız orada ne olduğunu söyler:"),
-          de("Es gab immer Kuchen."),
-          tr("'Her zaman kek olurdu' demek. Lütfen"),
-          de("Es gab immer Kuchen"),
-          tr("deyin."),
+          tr("İkinci kalıbımız bir kişiyi tarif ediyor:"),
+          de("Meine Großmutter war sehr …"),
+          tr("Olmak fiilinin kısa geçmişi; sıfat fiilden sonra ve değişmeden durur."),
         ],
-        expect: { kind: "repeat", target: "Es gab immer Kuchen" },
       },
       {
-        say: [tr("Şimdi sen: 'Ev her zaman ekmek kokardı.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Ninem çok sevgi doluydu.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Das Haus hat immer nach Brot gerochen",
+          target: "Meine Großmutter war sehr liebevoll",
           hint: [
-            tr("Kokmak fiilinin geçmiş biçimi cümlenin sonuna gider:"),
-            de("Das Haus hat immer nach Brot gerochen."),
+            tr("Yüklem olarak kullanılan sıfat hiç ek almaz:"),
+            de("Meine Großmutter war sehr liebevoll."),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Son kalıbımız izni anlatır:"),
-          de("Ich durfte lange draußen bleiben."),
-          tr("'Dışarıda uzun kalmama izin vardı' demek. Lütfen"),
-          de("Ich durfte lange draußen bleiben"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Ich durfte lange draußen bleiben" },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Bei meinen Großeltern es war immer warm."),
+          de("Bei meinen Großeltern gab es einen Kamin."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Bei meinen Großeltern es war immer warm.",
-          answer: false,
+          statement: "Bei meinen Großeltern gab es einen Kamin.",
+          answer: true,
           why: [
-            tr("Başta yer bildiren bir öbek varken fiil ikinci sıraya geçmeli. Doğrusu"),
-            de("Bei meinen Großeltern war es immer warm."),
+            tr("'Vardı' kalıbı ardından gelen eril ismi belirtme hâline sokuyor; cümle doğru."),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık çocukluk anılarını anlatabilirsin. Şimdi biri sana çocukken tatilleri nerede geçirdiğini soracak.",
-          ),
-        ],
+        say: [tr("Şimdi çocukken gittiğin bir evi anlatıyorsun: ne vardı, kim nasıldı.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir arkadaşınla çocukluk anılarınızı paylaşıyorsunuz. Büyüklerinin yanının nasıl olduğunu, orada ne olduğunu ve neye izin verildiğini anlat.",
-      partner: "kendi çocukluğunu özleyen, duygulu bir arkadaş",
-      opening: "Wo warst du als Kind am liebsten?",
-      openingTr: "Çocukken en çok nerede olmayı severdin?",
-      goal: "Büyüklerinin yanının nasıl olduğu, orada ne yapıldığı ve neye izin verildiği anlatılmış olur.",
+        "Bir arkadaşınla çocukluk anılarını konuşuyorsunuz. Dede ve ninenin evini anlat: orada ne vardı, onlar nasıl insanlardı ve orada ne yapmayı severdin.",
+      partner: "kendi büyükanne evini de anlatan bir arkadaş",
+      opening: "Warst du als Kind oft bei deinen Großeltern?",
+      openingTr: "Çocukken dedenlerde çok kalır mıydın?",
+      goal: "Evin içinde ne olduğu, kişilerin nasıl olduğu ve orada yapılan bir şey anlatılmış; arkadaşın da kendi anısını söylemiş olur.",
       minTurns: 8,
     },
   },
@@ -1488,25 +1656,27 @@ export const deA2B02: Lesson[] = [
     title: "Das war mir so peinlich!",
     titleTr: "Utanç anısı",
     summary: "Başına gelen utanç verici bir olayı anlatmayı öğretir.",
-    minutes: 9,
+    minutes: 10,
     focusId: "Perfekt-unregelmäßig",
     vocab: [
-      { de: "peinlich", tr: "utanç verici" },
-      { de: "lachen", tr: "gülmek" },
-      { de: "verwechseln", tr: "karıştırmak" },
+      { de: "unangenehm", tr: "rahatsız edici" },
+      { de: "ungeschickt", tr: "sakar" },
+      { de: "verwirrt", tr: "kafası karışmış" },
       { de: "die Situation", tr: "durum" },
-      { de: "sich schämen", tr: "utanmak" },
+      { de: "gestehen", tr: "itiraf etmek" },
+      { de: "sich verwählen", tr: "yanlış numara çevirmek" },
+      { de: "auslachen", tr: "alay etmek" },
+      { de: "komisch", tr: "tuhaf" },
     ],
     patterns: [
-      { de: "Mir ist … passiert.", tr: "başına bir şey geldiğini söyler" },
-      { de: "Alle haben gelacht.", tr: "herkesin güldüğünü söyler" },
-      { de: "Zum Glück …", tr: "işin iyi tarafını söyler" },
+      { de: "Das war mir so peinlich!", tr: "utanç duygusunu doğrudan söyler" },
+      { de: "Ich habe mich verwählt.", tr: "yaptığın yanlışı itiraf eder" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Bugün başına gelen utanç verici bir olayı anlatmayı öğreneceğiz. Bu tür hikâyeler her sohbette çıkar ve anlatması da dinlemesi de keyiflidir. Hazır mısın?",
+            "Bugün başına gelen utanç verici bir olayı anlatıyoruz. Bu hikâyeler sohbeti açan hikâyelerdir. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1514,39 +1684,39 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "İlk kalıpta küçük bir fark var: olay senin başına geliyor, yani sen özne değilsin. Almancada bu durumda cümle 'bana oldu' diye kurulur. Önce kelimeleri öğrenelim.",
+            "Duyguyu söylerken Almancada ilginç bir şey oluyor: utanan kişi öznenin değil, yönelme hâlinin içinde duruyor. Türkçedeki 'bana çok utanç verdi' ile aynı mantık. Bugün onu bir kuralsız fiille ve bir dönüşlü fiille birlikte çalışacağız. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("peinlich"),
-          tr("Türkçesi 'utanç verici' demek. Lütfen"),
-          de("peinlich"),
+          de("unangenehm"),
+          tr("Türkçesi 'rahatsız edici, tatsız' demek. Lütfen"),
+          de("unangenehm"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "peinlich" },
+        expect: { kind: "repeat", target: "unangenehm" },
       },
       {
         say: [
           tr("İkinci kelimemiz:"),
-          de("lachen"),
-          tr("Türkçesi 'gülmek' demek. Lütfen"),
-          de("lachen"),
+          de("ungeschickt"),
+          tr("Türkçesi 'sakar, beceriksiz' demek. Lütfen"),
+          de("ungeschickt"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "lachen" },
+        expect: { kind: "repeat", target: "ungeschickt" },
       },
       {
         say: [
           tr("Üçüncü kelimemiz:"),
-          de("verwechseln"),
-          tr("Türkçesi 'karıştırmak' demek — birini başkası sanmak gibi. Lütfen"),
-          de("verwechseln"),
+          de("verwirrt"),
+          tr("Türkçesi 'kafası karışmış' demek. Lütfen"),
+          de("verwirrt"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "verwechseln" },
+        expect: { kind: "repeat", target: "verwirrt" },
       },
       {
         say: [
@@ -1560,102 +1730,124 @@ export const deA2B02: Lesson[] = [
       },
       {
         say: [
-          tr("Son kelimemiz:"),
-          de("sich schämen"),
-          tr("Türkçesi 'utanmak' demek. Lütfen"),
-          de("sich schämen"),
+          tr("Beşinci kelimemiz:"),
+          de("gestehen"),
+          tr("Türkçesi 'itiraf etmek' demek. Lütfen"),
+          de("gestehen"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "sich schämen" },
+        expect: { kind: "repeat", target: "gestehen" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("sich verwählen"),
+          tr("Türkçesi 'yanlış numara çevirmek' demek. Lütfen"),
+          de("sich verwählen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "sich verwählen" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("auslachen"),
+          tr("Türkçesi 'birine gülmek, alay etmek' demek. Lütfen"),
+          de("auslachen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "auslachen" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("komisch"),
+          tr("Türkçesi 'tuhaf, garip' demek. Lütfen"),
+          de("komisch"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "komisch" },
       },
       {
         say: [
           tr("İlk kalıbımız:"),
-          de("Mir ist etwas Peinliches passiert."),
-          tr("'Başıma utanç verici bir şey geldi' demek. Lütfen"),
-          de("Mir ist etwas Peinliches passiert"),
-          tr("deyin."),
+          de("Das war mir so peinlich!"),
+          tr(
+            "Utanan kişi burada özne değil; cümlenin öznesi olayın kendisi. Kişi yönelme hâlinde duruyor.",
+          ),
         ],
-        expect: { kind: "repeat", target: "Mir ist etwas Peinliches passiert" },
       },
       {
-        say: [tr("Sıra sende: 'Otobüste düştüm.' demek için ne dersin?")],
+        say: [
+          tr("Örnek: 'Bu durum bana çok tatsız geldi.' Almancası:"),
+          de("Die Situation war mir sehr unangenehm."),
+          tr("Lütfen"),
+          de("Die Situation war mir sehr unangenehm"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Die Situation war mir sehr unangenehm" },
+      },
+      {
+        say: [tr("Sıra sende: 'Bu bana çok tuhaf geldi.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich bin im Bus hingefallen",
+          target: "Das war mir sehr komisch",
           hint: [
-            tr("Düşmek yer değiştirme bildirir, o yüzden bu yardımcı fiili alır:"),
-            de("Ich bin im Bus hingefallen."),
+            tr("Duyguyu yaşayan kişi yönelme hâlinde durur:"),
+            de("Das war mir sehr komisch."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("İkinci kalıbımız çevrenin tepkisini anlatır. Önce durumu duyalım:"),
-          de("Die Situation war furchtbar."),
-          tr("En sık yaşanan aksiliklerden biri de budur:"),
-          de("Ich habe die Namen verwechselt."),
-          tr("Sonra tepki:"),
-          de("Alle haben gelacht."),
-          tr("'Herkes güldü' demek. Lütfen"),
-          de("Alle haben gelacht"),
-          tr("deyin."),
+          tr("İkinci kalıbımız yanlışı itiraf ediyor:"),
+          de("Ich habe mich verwählt."),
+          tr("Dönüşlü bir fiil; zamir olmadan cümle kurulamaz."),
         ],
-        expect: { kind: "repeat", target: "Alle haben gelacht" },
       },
       {
-        say: [tr("Şimdi sen: 'Çok utandım.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Sonunda itiraf ettim.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich habe mich sehr geschämt",
+          target: "Am Ende habe ich alles gestanden",
           hint: [
-            tr("Dönüşlü zamir yardımcı fiilin arkasında, geçmiş biçim sonda:"),
-            de("Ich habe mich sehr geschämt."),
+            de("gestehen"),
+            tr("kuralsız bir fiil ve zaman ifadesi başta olunca özne fiilin arkasına düşer:"),
+            de("Am Ende habe ich alles gestanden."),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Son kalıbımız hikâyeyi yumuşatır:"),
-          de("Zum Glück hat es niemand gesehen."),
-          tr("'İyi ki kimse görmedi' demek. Lütfen"),
-          de("Zum Glück hat es niemand gesehen"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Zum Glück hat es niemand gesehen" },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Mir ist ein Fehler passiert."),
+          de("Ich war das sehr peinlich."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Mir ist ein Fehler passiert.",
-          answer: true,
+          statement: "Ich war das sehr peinlich.",
+          answer: false,
           why: [
-            tr("Doğru. Olay senin başına geldiği için cümle 'bana' ile başlar ve fiil yer değiştirme bildirdiği için bu yardımcı fiili alır."),
+            tr(
+              "Özne olayın kendisi olmalı, kişi ise yönelme hâlinde durmalı. İkisi yer değiştirmiş. Doğrusu:",
+            ),
+            de("Das war mir sehr peinlich."),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Artık böyle bir anıyı anlatabilirsin. Şimdi bir arkadaşın seni güldürecek bir hikâye isteyecek.",
-          ),
-        ],
+        say: [tr("Şimdi bir arkadaşına başından geçen utanç verici bir olayı anlatıyorsun.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir arkadaşınla utanç verici anılarınızı paylaşıyorsunuz. Başına ne geldiğini, çevrenin nasıl tepki verdiğini ve işin iyi tarafını anlat.",
-      partner: "kendi hikâyesini de anlatmaya hazır, şakacı bir arkadaş",
-      opening: "Erzähl mal, was war dir mal richtig peinlich?",
-      openingTr: "Anlatsana, en çok neye utandın?",
-      goal: "Başına gelen anlatılmış, çevrenin tepkisi söylenmiş ve işin iyi tarafı bulunmuş olur.",
+        "Bir arkadaşınla oturmuş gülüyorsunuz ve o sana başından geçen en utanç verici olayı soruyor. Ne olduğunu sırayla anlat ve o an ne hissettiğini söyle.",
+      partner: "kendi utanç anısını da anlatmaya hazır bir arkadaş",
+      opening: "Erzähl mal, was war dir richtig peinlich?",
+      openingTr: "Anlatsana, sana gerçekten ne utanç verdi?",
+      goal: "Olay sırayla anlatılmış, o anki duygu söylenmiş ve arkadaşın da kendi anısını paylaşmış olur.",
       minTurns: 8,
     },
   },
@@ -1667,25 +1859,27 @@ export const deA2B02: Lesson[] = [
     title: "Darauf bin ich stolz",
     titleTr: "Gurur anısı",
     summary: "Başardığın bir şeyi ve arkasındaki emeği anlatmayı öğretir.",
-    minutes: 9,
+    minutes: 10,
     focusId: "Perfekt",
     vocab: [
-      { de: "der Erfolg", tr: "başarı" },
-      { de: "hart", tr: "sıkı, ağır" },
-      { de: "die Mühe", tr: "emek, çaba" },
-      { de: "aufgeben", tr: "pes etmek" },
+      { de: "hart", tr: "sert, zorlu" },
       { de: "weitermachen", tr: "devam etmek" },
+      { de: "trainieren", tr: "antrenman yapmak" },
+      { de: "der Wettbewerb", tr: "yarışma" },
+      { de: "versuchen", tr: "denemek" },
+      { de: "bewundern", tr: "hayran olmak" },
+      { de: "aktiv", tr: "aktif" },
+      { de: "geschickt", tr: "becerikli" },
     ],
     patterns: [
-      { de: "Ich habe es geschafft.", tr: "bir şeyi başardığını söyler" },
-      { de: "Ich habe hart gearbeitet.", tr: "arkasındaki emeği söyler" },
-      { de: "Darauf bin ich stolz.", tr: "gurur duyduğunu söyler" },
+      { de: "Ich habe lange … trainiert.", tr: "başarının arkasındaki emeği anlatır" },
+      { de: "Am Ende habe ich es geschafft.", tr: "sonucu söyler" },
     ],
     lecture: [
       {
         say: [
           tr(
-            "Bu modülün son dersi. Bugün başardığın bir şeyi anlatmayı öğreneceğiz — hikâyenin en güzel kısmı burası. Hazır mısın?",
+            "Modülün son dersinde başardığın bir şeyi anlatıyoruz. Bir başarı hikâyesi üç parçadan oluşur: emek, zorluk ve sonuç. Hazır mısın?",
           ),
         ],
         expect: { kind: "confirm" },
@@ -1693,25 +1887,15 @@ export const deA2B02: Lesson[] = [
       {
         say: [
           tr(
-            "Bir başarıyı anlatmak üç parçadan oluşuyor: ne yaptın, ne kadar emek verdin, şimdi ne hissediyorsun. Önce kelimeleri öğrenelim.",
+            "Bu modülde geçmişi anlatmanın bütün araçlarını topladın: Perfekt, kip fiillerinin kısa geçmişi ve dönüşlü fiiller. Bugün üçünü bir hikâyede bir arada kullanacağız. Önce sekiz kelime.",
           ),
         ],
       },
       {
         say: [
           tr("İlk kelimemiz:"),
-          de("der Erfolg"),
-          tr("Türkçesi 'başarı' demek. Lütfen"),
-          de("der Erfolg"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "der Erfolg" },
-      },
-      {
-        say: [
-          tr("İkinci kelimemiz:"),
           de("hart"),
-          tr("Türkçesi 'sıkı, ağır' demek — sıkı çalışmak derkenki gibi. Lütfen"),
+          tr("Türkçesi 'sert' demek; zorlu bir iş için de kullanılır. Lütfen"),
           de("hart"),
           tr("deyin."),
         ],
@@ -1719,27 +1903,7 @@ export const deA2B02: Lesson[] = [
       },
       {
         say: [
-          tr("Üçüncü kelimemiz:"),
-          de("die Mühe"),
-          tr("Türkçesi 'emek, çaba' demek. Lütfen"),
-          de("die Mühe"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "die Mühe" },
-      },
-      {
-        say: [
-          tr("Dördüncü kelimemiz:"),
-          de("aufgeben"),
-          tr("Türkçesi 'pes etmek' demek. Lütfen"),
-          de("aufgeben"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "aufgeben" },
-      },
-      {
-        say: [
-          tr("Son kelimemiz:"),
+          tr("İkinci kelimemiz:"),
           de("weitermachen"),
           tr("Türkçesi 'devam etmek' demek. Lütfen"),
           de("weitermachen"),
@@ -1749,88 +1913,144 @@ export const deA2B02: Lesson[] = [
       },
       {
         say: [
-          tr("İlk kalıbımız:"),
-          de("Ich habe es geschafft."),
-          tr("'Başardım' demek ve tek başına bir cümle olarak kullanılır. Lütfen"),
-          de("Ich habe es geschafft"),
+          tr("Üçüncü kelimemiz:"),
+          de("trainieren"),
+          tr("Türkçesi 'antrenman yapmak, çalışmak' demek. Lütfen"),
+          de("trainieren"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Ich habe es geschafft" },
+        expect: { kind: "repeat", target: "trainieren" },
       },
       {
-        say: [tr("Sıra sende: 'Çok sıkı çalıştım.' demek için ne dersin?")],
+        say: [
+          tr("Dördüncü kelimemiz:"),
+          de("der Wettbewerb"),
+          tr("Türkçesi 'yarışma' demek. Lütfen"),
+          de("der Wettbewerb"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "der Wettbewerb" },
+      },
+      {
+        say: [
+          tr("Beşinci kelimemiz:"),
+          de("versuchen"),
+          tr("Türkçesi 'denemek' demek. Lütfen"),
+          de("versuchen"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "versuchen" },
+      },
+      {
+        say: [
+          tr("Altıncı kelimemiz:"),
+          de("bewundern"),
+          tr("Türkçesi 'hayran olmak' demek. Lütfen"),
+          de("bewundern"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "bewundern" },
+      },
+      {
+        say: [
+          tr("Yedinci kelimemiz:"),
+          de("aktiv"),
+          tr("Türkçesi 'aktif, hareketli' demek. Lütfen"),
+          de("aktiv"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "aktiv" },
+      },
+      {
+        say: [
+          tr("Son kelimemiz:"),
+          de("geschickt"),
+          tr("Türkçesi 'becerikli, eli yatkın' demek. Lütfen"),
+          de("geschickt"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "geschickt" },
+      },
+      {
+        say: [
+          tr("İlk kalıbımız emeği anlatıyor:"),
+          de("Ich habe lange … trainiert."),
+          tr(
+            "Yabancı kökenli ve sonu belirli bir heceyle biten fiiller ortacın hecesini almaz; sonu değişmeden kalır.",
+          ),
+        ],
+      },
+      {
+        say: [
+          tr("Örnek: 'Yarışma için uzun süre çalıştım.' Almancası:"),
+          de("Für den Wettbewerb habe ich lange trainiert."),
+          tr("Lütfen"),
+          de("Für den Wettbewerb habe ich lange trainiert"),
+          tr("deyin."),
+        ],
+        expect: { kind: "repeat", target: "Für den Wettbewerb habe ich lange trainiert" },
+      },
+      {
+        say: [tr("Sıra sende: 'Birçok kez denedim.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich habe sehr hart gearbeitet",
+          target: "Ich habe es oft versucht",
           hint: [
-            tr("Geçmiş biçim cümlenin en sonuna gider:"),
-            de("Ich habe sehr hart gearbeitet."),
+            de("versuchen"),
+            tr("vurgusuz bir ön ekle başlıyor, o yüzden ortacın hecesini almıyor:"),
+            de("Ich habe es oft versucht."),
             tr("Tekrar dene."),
           ],
         },
       },
       {
         say: [
-          tr("İkinci kalıbımız gururu anlatır:"),
-          de("Darauf bin ich stolz."),
-          tr("'Bununla gurur duyuyorum' demek. Lütfen"),
-          de("Darauf bin ich stolz"),
-          tr("deyin."),
+          tr("İkinci kalıbımız sonucu söylüyor:"),
+          de("Am Ende habe ich es geschafft."),
+          tr("Zaman ifadesi başta olduğu için özne fiilin arkasına düşüyor."),
         ],
-        expect: { kind: "repeat", target: "Darauf bin ich stolz" },
       },
       {
-        say: [tr("Şimdi sen: 'Pes etmedim.' demek için ne dersin?")],
+        say: [tr("Sıra sende: 'Buna rağmen devam ettim.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich habe nicht aufgegeben",
+          target: "Trotzdem habe ich weitergemacht",
           hint: [
-            tr("Olumsuzluk geçmiş biçimin önüne gelir:"),
-            de("Ich habe nicht aufgegeben."),
+            tr("Bağlayıcı başta olduğu için özne fiilin arkasına düşer ve ortaç sona gider:"),
+            de("Trotzdem habe ich weitergemacht."),
             tr("Tekrar dene."),
           ],
         },
-      },
-      {
-        say: [
-          tr("Bir cümle daha:"),
-          de("Die Mühe hat sich gelohnt."),
-          tr("'Emek boşa gitmedi' demek. Lütfen"),
-          de("Die Mühe hat sich gelohnt"),
-          tr("deyin."),
-        ],
-        expect: { kind: "repeat", target: "Die Mühe hat sich gelohnt" },
       },
       {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
-          de("Ich habe weitergemacht und es geschafft."),
+          de("Ich habe lange getrainiert."),
           tr("cümlesi doğru mu, yanlış mı?"),
         ],
         expect: {
           kind: "truefalse",
-          statement: "Ich habe weitergemacht und es geschafft.",
-          answer: true,
+          statement: "Ich habe lange getrainiert.",
+          answer: false,
           why: [
-            tr("Doğru. İki geçmiş biçim de kendi bölümünün sonunda duruyor ve yardımcı fiil bir kez söyleniyor."),
+            tr(
+              "Sonu belirli bir heceyle biten yabancı kökenli fiiller ortacın hecesini almaz. Doğrusu:",
+            ),
+            de("Ich habe lange trainiert."),
           ],
         },
       },
       {
-        say: [
-          tr(
-            "Modülü bitirdin. Şimdi biri sana neyle gurur duyduğunu soracak ve ona kendi hikâyeni anlatacaksın.",
-          ),
-        ],
+        say: [tr("Şimdi biri sana neyle gurur duyduğunu soruyor. Emeği ve sonucu birlikte anlat.")],
       },
     ],
     roleplay: {
       scene:
-        "Bir iş görüşmesinden önce tanıştığın biri neyle gurur duyduğunu soruyor. Neyi başardığını, ne kadar emek verdiğini ve pes etmediğini anlat.",
-      partner: "seni dinleyen, teşvik eden bir tanıdık",
-      opening: "Worauf bist du in deinem Leben besonders stolz?",
-      openingTr: "Hayatında en çok neyle gurur duyuyorsun?",
-      goal: "Neyi başardığın, ne kadar emek verdiğin ve pes etmediğin anlatılmış olur.",
+        "Bir iş görüşmesine hazırlanıyorsun ve bir arkadaşın seninle prova yapıyor. Sana neyle gurur duyduğunu soruyor; başardığın bir şeyi, arkasındaki emeği ve zorluğu anlat.",
+      partner: "seninle görüşme provası yapan bir arkadaş",
+      opening: "Also, erste Frage: Worauf bist du in deinem Leben stolz?",
+      openingTr: "Peki, ilk soru: Hayatında neyle gurur duyuyorsun?",
+      goal: "Bir başarı, arkasındaki emek ve karşılaşılan zorluk anlatılmış ve arkadaşın cevabı değerlendirip bir öneri vermiş olur.",
       minTurns: 8,
     },
   },
