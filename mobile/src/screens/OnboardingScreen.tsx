@@ -7,18 +7,18 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { track } from "../lib/track";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon } from "../ui/icons";
+import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon, SpeakerIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
 import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
-import { enabledCourses, DEFAULT_COURSE_ID } from "../lib/courses";
+import { coursesForNative, DEFAULT_COURSE_ID, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { hasDemoPlacement } from "../data/demoPlacement";
 import { hasFirstWords } from "../data/firstWords";
-import { t, currentLang } from "../lib/i18n";
+import { t, currentLang, setLang } from "../lib/i18n";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 /**
- * İlk açılış akışı (§4). Sıra: karşılama → kurs → seviye → hedef. Seçimler
+ * İlk açılış akışı (§4). Sıra: anadil → karşılama → kurs → seviye → hedef. Seçimler
  * yerelde tutulur (onboardingPrefs) ve hesap açınca profile taşınır.
  *
  * Misafir modu YOK: akış sonunda hesap açmak/giriş yapmak ZORUNLU (bkz.
@@ -38,6 +38,9 @@ type Step = {
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 
+/** Dil adları kendi dillerinde yazılır — arayüz hangi dilde olursa olsun okunur. */
+const LANG_LABEL: Record<NativeLang, string> = { tr: "Türkçe", en: "English", de: "Deutsch" };
+
 /**
  * Adımlar — sabit dizi DEĞİL fonksiyon. İki sebep: t() modül yüklenirken çağrılsaydı
  * dil tercihi (loadLang) henüz okunmamış olurdu; ve kurs adları arayüz diline bağlı,
@@ -49,6 +52,16 @@ function steps(course: string): Step[] {
   const canTest = hasDemoPlacement(lang, course);
   return [
     {
+      // ANADİL en başta: sonraki bütün adımların metni ve kurs listesi buna
+      // bağlı. Varsayılan cihaz dilinden geliyor (loadLang), bu adım onu
+      // görünür ve değiştirilebilir kılıyor — kullanıcı Ayarlar'ı bulmak
+      // zorunda kalmasın diye.
+      key: "lang", icon: SpeakerIcon,
+      title: t("onboarding.hangi_dilde_ogrenelim"),
+      subtitle: t("onboarding.anadilini_sec_ders_anlatimi_bu_dilde"),
+      options: NATIVE_LANGS.map((l) => ({ key: l, label: LANG_LABEL[l], sub: t("onboarding.lang_sub_" + l) })),
+    },
+    {
       key: "welcome", icon: BoltIcon,
       title: t("onboarding.nomi_ye_hos_geldin"),
       subtitle: t("onboarding.kisa_turlarla_oyun_gibi_ogren_birk"),
@@ -59,7 +72,8 @@ function steps(course: string): Step[] {
       subtitle: t("onboarding.kursunu_sec_sonradan_ayarlar_dan_d"),
       // Kurs kayıt defterinden türüyor (lib/courses.ts): içeriği hazır olmayan
       // kurs listede görünmez, yeni dil açıldığında burası kendiliğinden doğrular.
-      options: enabledCourses().map((c) => ({
+      // Anadil elenir — kimse kendi dilini "öğrenilecek dil" olarak seçmemeli.
+      options: coursesForNative(lang).map((c) => ({
         key: c.id,
         label: c.label[lang],
         sub: c.sub[lang],
@@ -104,12 +118,34 @@ export function OnboardingScreen() {
   const last = i === allSteps.length - 1;
   const needsChoice = !!step.options;
   const chosen = choices[step.key];
+
+  /**
+   * Seçim yaz. Anadil seçimi hemen uygulanır: sonraki adımların metni ve kurs
+   * listesi ona bağlı, sona bırakılsaydı kullanıcı akışın geri kalanını eski
+   * dilde görürdü. Dil değişince seçili kurs geçersiz kalabilir (anadili
+   * Almanca seçen kullanıcıda Almanca kurs listeden düşer) — o seçim silinir,
+   * yoksa görünmeyen bir kursla devam edilirdi.
+   */
+  function pick(key: string, value: string) {
+    setChoices((c) => {
+      const next = { ...c, [key]: value };
+      if (key === "lang") {
+        void setLang(value as NativeLang);
+        const ok = coursesForNative(value as NativeLang).some((x) => x.id === next.course);
+        if (!ok) delete next.course;
+      }
+      return next;
+    });
+  }
   // Seviye adımında "Seviyeni seç" işaretliyse ayrıca bir seviye seçilmeli.
   const levelPickPending = step.key === "level" && chosen === "pick" && !pickedLevel;
   const canNext = (!needsChoice || !!chosen) && !levelPickPending;
 
   async function finish() {
-    const course = choices.course ?? "de";
+    // Yedek artık sabit "de" değil: anadili Almanca olan kullanıcıda o kurs
+    // hiç listelenmiyor, sabit yedek onu görünmeyen bir kursa düşürürdü.
+    const available = coursesForNative(currentLang());
+    const course = choices.course ?? available[0]?.id ?? DEFAULT_COURSE_ID;
     const goal = choices.goal ? parseInt(choices.goal, 10) : undefined;
     const levelChoice = choices.level;
     try { await AsyncStorage.setItem(ONBOARDED_KEY, "1"); } catch { /* geç */ }
@@ -158,7 +194,7 @@ export function OnboardingScreen() {
             {step.options.map((o) => {
               const active = chosen === o.key;
               return (
-                <PressableScale key={o.key} onPress={() => setChoices((c) => ({ ...c, [step.key]: o.key }))} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: spacing.lg }}>
+                <PressableScale key={o.key} onPress={() => pick(step.key, o.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: spacing.lg }}>
                   <View style={{ width: 24, height: 24, borderRadius: 12, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                     {active && <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: colors.primary }} />}
                   </View>

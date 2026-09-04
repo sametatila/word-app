@@ -133,6 +133,20 @@ export function enabledCourses(): Course[] {
   return COURSES.filter((c) => c.enabled);
 }
 
+/**
+ * Kullanıcının ANADİLİNE göre seçilebilecek kurslar.
+ *
+ * Kendi anadilini "öğrenilecek dil" olarak sunmak anlamsız: arayüz dili
+ * İngilizce olan kullanıcıya "English · A1–C1" öneriliyordu. Eleme hedef dile
+ * göre, kurs id'sine göre değil — böylece anadili Almanca olan kullanıcıdan
+ * hem Hochdeutsch hem Züritüütsch birlikte düşer (ikisinin de hedefi Almanca).
+ *
+ * Türkçe için sonuç değişmiyor: hiçbir kursun hedefi Türkçe değil.
+ */
+export function coursesForNative(lang: NativeLang): Course[] {
+  return enabledCourses().filter((c) => c.targetLang !== lang);
+}
+
 /** Kursun konuşma yerel kodu (TTS/STT). */
 export function speechLocaleOf(id: string | null | undefined): string {
   return courseOrDefault(id).speechLocale;

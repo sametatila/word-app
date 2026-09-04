@@ -16,7 +16,7 @@ import { VoicePicker } from "../ui/VoicePicker";
 import { SkeletonLine } from "../ui/Skeleton";
 import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, type VoiceId } from "../lib/voices";
-import { enabledCourses, DEFAULT_NATIVE, NATIVE_LANGS, type NativeLang } from "../lib/courses";
+import { coursesForNative, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { currentLang, setLang } from "../lib/i18n";
 import { useTheme, spacing, radii, softShadow, type Palette, type ThemeMode } from "../theme";
 import { analyticsEnabled, setAnalyticsEnabled } from "../lib/track";
@@ -35,14 +35,16 @@ const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
   { key: "light", label: "settings.theme_light" },
   { key: "dark", label: "settings.theme_dark" },
 ];
-// Liste kurs kayıt defterinden türüyor: yeni bir dil açıldığında burayı da
-// düzenlemek gerekmesin diye. Etiket şimdilik Türkçe; i18n gelince kullanıcının
-// anadili seçilecek (bkz. lib/courses.ts, NativeLang).
-const COURSE_OPTIONS: { key: string; label: string; sub: string }[] = enabledCourses().map((c) => ({
-  key: c.id,
-  label: c.label[DEFAULT_NATIVE],
-  sub: c.sub[DEFAULT_NATIVE],
-}));
+/**
+ * Liste kurs kayıt defterinden türüyor. Sabit dizi DEĞİL fonksiyon: etiketler
+ * kullanıcının anadiline bağlı ve dil çalışma sırasında değişebiliyor — modül
+ * yüklenirken hesaplansaydı arayüz İngilizceye alındıktan sonra bile kurs
+ * adları Türkçe kalırdı. Anadil ayrıca listeden elenir (kimse kendi dilini
+ * öğrenmez).
+ */
+function courseOptions(lang: NativeLang): { key: string; label: string; sub: string }[] {
+  return coursesForNative(lang).map((c) => ({ key: c.id, label: c.label[lang], sub: c.sub[lang] }));
+}
 
 function Chip({ label, active, onPress, colors }: { label: string; active: boolean; onPress: () => void; colors: Palette }) {
   return (
@@ -99,6 +101,19 @@ export function SettingsScreen() {
 
   // Görünüm / ses / dil ANINDA uygulanır (kaydet butonu ad/hedef/seviye için).
   function pickVoice(v: VoiceId) { setVoice(v); void setVoicePref(course, v); void updateProfile({ voice: v }); }
+  /**
+   * Arayüz dili değişince seçili kurs geçersiz kalabilir: İngilizce kursundaki
+   * kullanıcı arayüzü İngilizceye alırsa o kurs listeden düşer. Sessizce
+   * bırakılsaydı hiçbir seçenek işaretli görünmez ve kullanıcı kendi dilini
+   * öğrenmeye devam ederdi — o yüzden ilk geçerli kursa taşınıyor.
+   */
+  async function keepCourseValid(lang: NativeLang) {
+    const list = coursesForNative(lang);
+    if (list.some((c) => c.id === course)) return;
+    const next = list[0]?.id;
+    if (next) await pickCourse(next);
+  }
+
   async function pickCourse(c: string) {
     if (c === course) return;
     setCourse(c);
@@ -150,7 +165,7 @@ export function SettingsScreen() {
         </Section>
 
         <Section title={t("settings.ogrenilecek_dil")} colors={colors}>
-          {COURSE_OPTIONS.map((c, i) => {
+          {courseOptions(uiLang).map((c, i) => {
             const active = course === c.key;
             return (
               <PressableScale key={c.key} onPress={() => pickCourse(c.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
@@ -193,7 +208,7 @@ export function SettingsScreen() {
                 label={LANG_LABEL[l]}
                 active={uiLang === l}
                 colors={colors}
-                onPress={() => { setUiLang(l); void setLang(l); }}
+                onPress={() => { setUiLang(l); void setLang(l); void keepCourseValid(l); }}
               />
             ))}
           </View>
