@@ -1238,8 +1238,8 @@ export const deA2B06: Lesson[] = [
       scene:
         "Aldığın ürün hasarlı çıktı ve mağazaya geri getirdin. Sorunu anlat, ne istediğini söyle ve olmazsa müdürle konuşmak istediğini belirt.",
       partner: "önce kuralları söyleyen ama sonra çözüm arayan bir kasiyer",
-      opening: "Guten Tag. Was kann ich für Sie tun?",
-      openingTr: "İyi günler. Size nasıl yardımcı olabilirim?",
+      opening: "Guten Tag. Sie möchten etwas zurückgeben?",
+      openingTr: "İyi günler. Bir şeyi iade mi etmek istiyorsunuz?",
       goal: "Sorun anlatılmış, fiş konusu geçmiş ve iade ya da değişim konusunda bir sonuca varılmış olur.",
       minTurns: 8,
     },
