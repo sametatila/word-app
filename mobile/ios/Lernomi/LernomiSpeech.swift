@@ -1,4 +1,5 @@
 import Foundation
+import React
 import Speech
 import AVFoundation
 import UIKit
@@ -23,9 +24,14 @@ class LernomiSpeech: RCTEventEmitter {
 
   override static func requiresMainQueueSetup() -> Bool { return false }
 
+  /// JS'in abone olabildiği TÜM olay adları. `LernomiWalkStop` iOS'ta hiç YAYILMIYOR —
+  /// Android'de kalıcı bildirimdeki "Durdur" eylemi yayıyor, iOS'ta karşılığı yok (ürün
+  /// kararı, docs/plan/ios-parity.md §6). Yine de listede: `stt.ts:174` bu olaya koşulsuz
+  /// abone oluyor ve RCTEventEmitter listede olmayan bir ada abone olununca RCTLogError basıyor.
   override func supportedEvents() -> [String]! {
     return ["LernomiSpeechReady", "LernomiSpeechBegin", "LernomiSpeechPartial",
-            "LernomiSpeechResults", "LernomiSpeechEnd", "LernomiSpeechError"]
+            "LernomiSpeechResults", "LernomiSpeechEnd", "LernomiSpeechError",
+            "LernomiWalkStop"]
   }
   override func startObserving() { hasListeners = true }
   override func stopObserving() { hasListeners = false }
@@ -42,6 +48,25 @@ class LernomiSpeech: RCTEventEmitter {
                    rejecter reject: @escaping RCTPromiseRejectBlock) {
     let r = SFSpeechRecognizer(locale: Locale(identifier: locale))
     resolve(r?.isAvailable ?? false)
+  }
+
+  /**
+   * Cihazda mikrofon DONANIMI var mı (izin değil) — Android'deki
+   * `PackageManager.FEATURE_MICROPHONE` sorgusunun karşılığı.
+   *
+   * `availableInputs` oturum kategorisi girişi desteklemiyorken (varsayılan
+   * .soloAmbient) nil döner; bu "mikrofon yok" değil "sorulamadı" demektir →
+   * VAR sayılır. `stt.ts:71` sonucu önbellekliyor ve yanlışlıkla özellik
+   * gizlemektense göstermeyi yeğliyor.
+   */
+  @objc(hasMicrophone:rejecter:)
+  func hasMicrophone(_ resolve: @escaping RCTPromiseResolveBlock,
+                     rejecter reject: @escaping RCTPromiseRejectBlock) {
+    guard let inputs = AVAudioSession.sharedInstance().availableInputs else {
+      resolve(true)
+      return
+    }
+    resolve(!inputs.isEmpty)
   }
 
   /** Ekran uykusunu engelle/bırak (Wake Lock karşılığı) — yürüyüş turu boyunca ekran sönmesin. */

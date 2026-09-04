@@ -11,6 +11,8 @@ RCT_EXTERN_METHOD(start:(NSString *)locale
 RCT_EXTERN_METHOD(isAvailable:(NSString *)locale
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(hasMicrophone:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(setKeepAwake:(BOOL)on)
 RCT_EXTERN_METHOD(startRecording:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
