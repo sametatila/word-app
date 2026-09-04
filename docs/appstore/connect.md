@@ -50,9 +50,11 @@ Google sunulduğu için zorunlu. Kurulum:
 3. Sunucuda **`APPLE_BUNDLE_ID`** env değeri uygulamanın bundle kimliğiyle **birebir**
    aynı olur: native id token'ın `aud`'u bundle kimliğidir. Boşken sağlayıcı kurulmaz,
    `/api/config` `apple:false` der, düğme çizilmez.
-4. **Private Email Relay:** SMTP gönderen alan adı Developer portalında
-   *Sign in with Apple › Email Sources*'a kaydedilmezse `@privaterelay.appleid.com`
-   adreslerine giden hiçbir posta ulaşmaz (parola sıfırlama dâhil).
+4. **Private Email Relay:** giden posta Resend üzerinden `noreply@lernomi.app`
+   adresinden çıkıyor. Bu alan adı Developer portalında *Sign in with Apple ›
+   Email Sources*'a kaydedilmezse (Apple ayrıca SPF ister)
+   `@privaterelay.appleid.com` adreslerine giden hiçbir posta ulaşmaz — parola
+   sıfırlama dâhil.
 
 Web akışı (Services ID + .p8 client secret) **kurulmadı**; uygulama yalnız native yolu
 kullanıyor ve o yolda secret gerekmiyor. Web'de Apple ile Giriş sunulmuyor — 4.8 App

@@ -132,10 +132,13 @@ dönmüyor; yutuldu.) Gerçek bir Apple token'ı ile giriş **denenmedi**.
 3. Hata metinlerinin i18n anahtarları (`autherror.apple_failed`,
    `autherror.no_apple_token`) Şerit T'ye verildi; sözlüğe girene kadar `t()` anahtarın
    kendisini basar.
-4. **Gizli aktarma adresi (Private Email Relay):** SMTP gönderen alan adı Apple
-   Developer → Sign in with Apple → *Email Sources*'a kaydedilmezse
-   `@privaterelay.appleid.com` adreslerine giden hiçbir posta ulaşmaz (parola
-   sıfırlama dâhil). Hesap açıldığında ilk yapılacaklardan.
+4. **Gizli aktarma adresi (Private Email Relay):** giden posta artık Resend
+   üzerinden `noreply@lernomi.app` adresinden çıkıyor. Bu alan adı Apple Developer
+   → Sign in with Apple → *Email Sources*'a kaydedilmezse (alan adı + tekil
+   gönderen adres, Apple ayrıca SPF ister) `@privaterelay.appleid.com`
+   adreslerine giden hiçbir posta ulaşmaz — parola sıfırlama dâhil. "E-postamı
+   Gizle" seçen kullanıcı için tek iletişim kanalı orası olduğundan, hesap
+   açıldığında ilk yapılacaklardan.
 
 **Cihazda sınanacak:** §5.11'e ek olarak — (a) ilk girişte ad doğru yazılıyor mu,
 (b) "E-postamı Gizle" seçilince oturum açılıyor mu, (c) aynı e-postayla zaten hesabı
