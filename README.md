@@ -381,8 +381,12 @@ gönderilmez, log'a "SMTP tanımsız" düşer ve doğrulama zorunlu tutulmaz.
 
 1. Resend → **Domains** → `lernomi.app` ekle.
 2. Resend'in verdiği **DKIM** ve **SPF** kayıtlarını DNS'e gir.
-3. **DMARC** ekle, gevşek başla: `_dmarc` TXT → `v=DMARC1; p=none; rua=mailto:postmaster@lernomi.app`.
-   Raporlar temizlenince `p=quarantine`, sonra `p=reject`.
+3. **DMARC**: `_dmarc` TXT → `v=DMARC1; p=none;` (kurulu). Rapor adresi (`rua=`) bilerek
+   yok — rapor istenmiyor. Bunun bedeli şu: `p=none` yalnız izleme demektir ve izleme de
+   kapalı olduğu için alan adı pratikte sahteciliğe açık kalır. Sıkılaştırmak istenirse
+   rapora gerek yok, hizalama tek bir postadan doğrulanabilir: Gmail'de gelen postayı aç →
+   üç nokta → **Orijinali göster** → `DKIM: PASS`, `SPF: PASS`, `DMARC: PASS` satırlarına bak.
+   Üçü de geçiyorsa `p=quarantine`, bir süre sonra `p=reject` yapılabilir.
 4. API anahtarı üret → `SMTP_PASS`. Anahtar **yalnızca gönderme** yetkisi taşısın.
 
 > **Tuzak — SPF tek kayıttır.** Bir alan adında yalnız **bir** SPF TXT kaydı olabilir.
