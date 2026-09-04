@@ -7,6 +7,7 @@
  */
 import { courseOrDefault, currentCourseId } from "../../lib/courses";
 import all from "./exercises.json";
+import allEn from "./exercises-en.json";
 
 export type Gloss = { de: string; tr: string; en?: string; hd?: string; note?: string };
 export type SkillQuestion = {
@@ -21,17 +22,18 @@ export type SkillExercise = {
 };
 
 const ALL = all as SkillExercise[];
+const ALL_EN = allEn as SkillExercise[];
 
 /**
- * Havuzlar kursa göre. Bugün yalnız Almanca paketi var (üretici `course`
- * alanını düşürüyor ve id'ler kurs öneksiz: "a1-r1").
+ * Havuzlar kursa göre. Almanca paketin id'leri kurs öneksiz ("a1-r1", üretici
+ * `course` alanını düşürüyor); İngilizce paket bu yüzden kurs önekli
+ * ("en-a1-r1") — aynı id iki kursta birden var olsaydı tek bir dizin ikisini
+ * birbirine karıştırırdı. Dersler zaten kurs önekli, beceriler de öyle kalmalı.
  *
- * DİKKAT: yeni bir dilin egzersizleri eklenirken id'ler kurs önekli üretilmeli
- * (örn. "en-a1-r1"). Aksi hâlde "a1-r1" iki kursta birden var olur ve tek bir
- * dizin ikisini birbirine karıştırır — dersler zaten kurs önekli ("de-a1-…"),
- * beceriler bu yüzden ayrık kalmalı.
+ * İngilizce bugün yalnız A1 okuma; dinleme ve yazma slotları havuz boş olduğu
+ * için "Yakında" gösterir (Almancada da geç ünitelerde öyle).
  */
-const BY_COURSE: Record<string, SkillExercise[]> = { de: ALL };
+const BY_COURSE: Record<string, SkillExercise[]> = { de: ALL, en: ALL_EN };
 
 /**
  * Kursun egzersiz havuzu. Ders yükleyicisiyle aynı kural: aynı hedef dili
