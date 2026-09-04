@@ -43,7 +43,14 @@ class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
   /// React Native kök görünümü zeminini kendi `systemBackgroundColor`'una ayarlıyor
   /// (RCTRootViewFactory.mm). Pencereyi boyamak tek başına yetmiyor: kök görünüm onu
   /// örtüyor. RN'in bunun için ayırdığı geçersiz kılma noktası burası.
-  override func customizeRootView(_ rootView: RCTRootView) {
+  ///
+  /// `override` DEĞİL, `@objc`: RCTDefaultReactNativeFactoryDelegate.h hiçbir yöntem
+  /// beyan etmiyor (sınıf yalnız <RCTReactNativeFactoryDelegate> protokolüne uyuyor,
+  /// varsayılanlar .mm içinde). `customizeRootView:` de RCTUIConfiguratorProtocol'den
+  /// geliyor, yani Swift için kalıtılan bir yöntem değil protokol gereği — `override`
+  /// "method does not override any method from its superclass" ile düşüyordu.
+  /// Çağrı ObjC tarafından seçiciyle yapılıyor (RCTReactNativeFactory.mm:241).
+  @objc func customizeRootView(_ rootView: RCTRootView) {
     rootView.backgroundColor = UIColor(named: "WindowBackground") ?? rootView.backgroundColor
   }
 

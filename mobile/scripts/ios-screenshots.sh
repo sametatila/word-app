@@ -47,14 +47,14 @@ echo "Kullanılabilir cihazlar:"
 xcrun simctl list devices available | sed -n '1,80p'
 
 UDID=$(xcrun simctl list devices available -j | python3 -c '
-import json, sys, os
-want = os.environ["DEVICE_NAME"]
+import json, sys
+want = sys.argv[1]
 d = json.load(sys.stdin)["devices"]
 for runtime, devs in sorted(d.items(), reverse=True):
     for dev in devs:
         if dev.get("name") == want and dev.get("isAvailable"):
             print(dev["udid"]); sys.exit(0)
-' DEVICE_NAME="$DEVICE_NAME" 2>/dev/null || true)
+' "$DEVICE_NAME" || true)
 
 if [ -z "${UDID:-}" ]; then
   echo "\"$DEVICE_NAME\" hazır gelmemiş — en yeni iOS çalışma zamanıyla yaratılıyor."
