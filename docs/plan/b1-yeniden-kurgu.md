@@ -47,6 +47,7 @@ gerçek B1 maddesi (havuza eklenmeli), bir kısmı B2'ye ait.
    gramer + quiz + kontrol**. 180 ders ÷ 4 = **45 ünite** → her beceriden
    **90 egzersiz**. Elde: 12 okuma · 12 dinleme · 8 yazma → **238 eksik**.
    quiz + kontrol ünite brief'inden otomatik türetiliyor, yazman gerekmiyor.
+   **Hedef 1 ve 2 bitti (Adım 3.7); kalan tek iş bu.**
 4. Sınav (ExamPrep) beceri içeriğinden besleniyor; 3 dolunca o da dolar.
 
 ---
@@ -185,6 +186,34 @@ Genişleme modülleri aynı odakları yeni alanlarda tekrar çalıştırıyor (s
 Başlığı zaten «Die Zwischenbilanz» (ara değerlendirme) olduğu için iki cümle
 "ilk bölümün sonu" diye düzeltildi, ders yerinde kaldı — id ve katalog sırası
 dokunulmaz.
+
+### Adım 3.7 — 180 ders BİTTİ (2026-09-05)
+
+Genişleme tamam: 18 modül, 180 ders, 45 ünite. **Hedef aşıldı.**
+
+| Ölçüt | Başlangıç | Sonuç | Karar |
+|---|---|---|---|
+| Katman kapsaması | 150/1783 (%8,4) | **1401/1815 (%77,2)** | %71,4 |
+| Gerçekten B1 | 151 (%30,2) | **1386 (%96,3)** | — |
+| Seviye üstü (B2+C1) | 230 | **0** | 0 |
+| Havuzda olmayan | 116 | **0** | 0 |
+| Seviye altı (A1+A2) | 119 (%23,8) | **54 (%3,8)** | ≤%10 |
+| `check:lessons` | 100 B1 hatası | **0** | 0 |
+
+Hedefin aşılma sebebi ölçülebilir: alt seviye payı %10 varsayılmıştı, modül
+12–18'de hiç alt seviyeye inmek gerekmedi ve gerçekleşen %3,8 oldu. Yani
+1440 slotun 1386'sı B1'e gitti, öngörülen 1296 değil.
+
+**Doğrulayıcı işe yaradı ve büyüdü.** `scratchpad/dogrula.ts` üç denetimi
+iş sırasında kazandı, üçü de sessiz hata bulduğu için:
+
+1. *Artikel seviye ayırır* — `der Bekannte` [A1] ≠ `die Bekannte` [B1].
+2. *İsim/fiil eşleşmesi* — `der Nutzen` havuzda yok, küçük harfli `nutzen`
+   (fiil) ile eşleşiyordu; `das Vorhaben`, `tropfen`, `die Speise` aynı sınıf.
+3. *Ön kontrol kipi* (`--yeni`) — ders yazılmadan sözlükçeyi denetler.
+   Modül 16'da `der/die Angestellte` çakışmasını on ders YAZILMADAN önce
+   yakaladı; modül 14'te aynı sınıf hatayı ancak içerik yazıldıktan sonra
+   görmüştüm.
 
 ### Adım 4 — Atamayı ELLE yap, modül modül
 **Mekanik dağıtım A1'de denendi ve reddedildi:** ders metninden anlam torbası
