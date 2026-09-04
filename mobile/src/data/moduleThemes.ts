@@ -9,8 +9,9 @@ import { courseOrDefault } from "../lib/courses";
  * ünite başlığı ile o ünitenin quiz'i aynı listeden gelmek zorunda, kopya ikisinin
  * sessizce ayrışmasına açık kapı bırakıyordu. Tek kaynak burası.
  *
- * Kursa göre anahtarlı; bugün yalnız Almanca dolu. Aynı hedef dili paylaşan kursa
- * düşülür (gsw-zh → de), başka dile asla — ders yükleyicisiyle aynı kural.
+ * Kursa göre anahtarlı. Aynı hedef dili paylaşan kursa düşülür (gsw-zh → de),
+ * başka dile asla — ders yükleyicisiyle aynı kural. Bir kursun listesi yoksa
+ * Patika ünitelere "A1 Ünite 3" gibi jenerik ad verir (bkz. immersionTrack).
  */
 const BY_COURSE: Record<string, Record<string, string[]>> = {
   de: {
@@ -19,6 +20,12 @@ const BY_COURSE: Record<string, Record<string, string[]>> = {
     B1: ["İş dünyası", "Ev ve kira dünyası", "Bağlaç ustalığı", "İlgi cümleleri", "Bürokrasi", "Eğitim ve gelişim", "Fikir ve tartışma", "Sağlık sistemi", "Çevre ve şehir yaşamı", "Duygular ve hayaller"],
     B2: ["Profesyonel iletişim", "Müzakere ve şikâyet", "Edilgenin bütün hâlleri", "Medya ve aktarılan söz", "Bilim ve teknoloji", "Toplum ve ekonomi", "Kültür ve sanat", "Para ve kariyer stratejisi", "İnsan ilişkileri ve psikoloji", "Resmî yazışma ve kapanış"],
     C1: ["Zarif iş iletişimi", "Kip parçacıkları", "Retorik ve sunum sanatı", "Deyimler ve mecazlar", "Basın ve akademik aktarım", "Hukuk ve sözleşme dili", "Karmaşık yapılar", "Toplumsal tartışma", "Mizah, ironi ve incelik", "Ustalık sahneleri"],
+  },
+  // İngilizce kursu A1'de 100 ders = 10 tam modül. Sıra derslerin dizi sırasıyla
+  // birebir aynı (mobile/src/data/lessons/en-a1.json); ders eklerken modülün
+  // 10'luk sınırı korunmazsa ünite başlığı ile içeriği ayrışır.
+  en: {
+    A1: ["Tanışma ve ben", "Aile ve insanlar", "Yeme-içme", "Günlük düzen", "Alışveriş", "Şehirde", "Ev ve yaşam", "Boş zaman", "Sağlık ve vücut", "İletişim ve geçmişe ilk adım"],
   },
 };
 
