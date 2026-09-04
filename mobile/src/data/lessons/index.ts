@@ -5,6 +5,7 @@
  */
 import { courseOrDefault, currentCourseId } from "../../lib/courses";
 import a1 from "./de-a1.json";
+import enA1 from "./en-a1.json";
 import a2 from "./de-a2.json";
 import b1 from "./de-b1.json";
 import b2 from "./de-b2.json";
@@ -42,6 +43,10 @@ export type Lesson = {
  */
 const BY_COURSE: Record<string, Record<string, Lesson[]>> = {
   de: { A1: a1 as Lesson[], A2: a2 as Lesson[], B1: b1 as Lesson[], B2: b2 as Lesson[], C1: c1 as Lesson[] },
+  // İngilizce şimdilik yalnız A1 modül 1 (10 ders). Seviye anahtarı olmayan
+  // seviyeler boş döner — Patika o ünitelerde "Yakında" gösterir, Almanca
+  // derslere DÜŞMEZ (bkz. bundleFor: yalnız aynı hedef dile düşülür).
+  en: { A1: enA1 as Lesson[] },
 };
 
 /**
