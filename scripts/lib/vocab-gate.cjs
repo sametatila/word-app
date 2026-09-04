@@ -22,6 +22,7 @@ dein deine deinen deinem deiner sein seine seinen seinem ihre ihren ihrem unser 
 zu in an auf aus bei mit nach von vor über unter für um durch gegen ohne seit bis ab nicht ja nein doch man
 ist sind bin bist war waren hat habe haben hast wird werden kann können muss müssen will
 wurde wurden würde würden hatte hatten musste mussten konnte konnten wollte wollten sollte sollten durfte durften
+gewesen geworden musst kannst willst sollst darfst magst möchte möchten wisst weiß weißt wusste wussten
 auch noch nur schon sehr hier da dann jetzt heute sehr viel mehr alle etwas nichts
 guten tag morgen abend hallo bitte danke herr frau sie ihnen ihr
 null eins zwei drei vier fünf sechs sieben acht neun zehn elf zwölf zwanzig dreißig hundert tausend
@@ -52,6 +53,31 @@ const TAKVIM = new Set(["montag", "dienstag", "mittwoch", "donnerstag", "freitag
 
 const AYRILABILIR = /^(an|auf|aus|ein|mit|nach|vor|zu|ab|bei|los|weg|zurück)/;
 
+/**
+ * Düzensiz ortaç ve geçmiş — kural üretemediklerimiz.
+ *
+ * Ünlü değişimi kuralı güçlü fiillerin çoğunu yakalıyor ama en sık kullanılan
+ * yirmi kadarı kuralsız (nehmen→genommen, gehen→gegangen). Bunlar her B1
+ * metninde geçiyor ve her seferinde ÖĞRETİLEN fiil kayma sayılıyordu.
+ * Liste bilerek kısa: yalnız kuralın üretemediği, çok sık biçimler.
+ */
+const DUZENSIZ = {
+  nehmen: ["nimmt", "nahm", "genommen"], gehen: ["geht", "ging", "gegangen"],
+  kommen: ["kommt", "kam", "gekommen"], sein: ["war", "waren", "gewesen"],
+  werden: ["wird", "wurde", "geworden"], haben: ["hat", "hatte", "gehabt"],
+  finden: ["findet", "fand", "gefunden"], geben: ["gibt", "gab", "gegeben"],
+  sprechen: ["spricht", "sprach", "gesprochen"], schreiben: ["schreibt", "schrieb", "geschrieben"],
+  lesen: ["liest", "las", "gelesen"], sehen: ["sieht", "sah", "gesehen"],
+  stehen: ["steht", "stand", "gestanden"], verstehen: ["versteht", "verstand", "verstanden"],
+  bringen: ["bringt", "brachte", "gebracht"], denken: ["denkt", "dachte", "gedacht"],
+  wissen: ["weiß", "wusste", "gewusst"], bleiben: ["bleibt", "blieb", "geblieben"],
+  helfen: ["hilft", "half", "geholfen"], essen: ["isst", "aß", "gegessen"],
+  fahren: ["fährt", "fuhr", "gefahren"], laufen: ["läuft", "lief", "gelaufen"],
+  tun: ["tut", "tat", "getan"], halten: ["hält", "hielt", "gehalten"],
+  ziehen: ["zieht", "zog", "gezogen"], schließen: ["schließt", "schloss", "geschlossen"],
+  entscheiden: ["entscheidet", "entschied", "entschieden"], bekommen: ["bekommt", "bekam", "bekommen"],
+};
+
 // Almanca sayı BİLEŞİKTİR: "achtunddreißig" = acht+und+dreißig. Parçaları
 // öğretiliyor ama bileşiğin kendisi hiçbir ders listesinde yok, o yüzden
 // kayma sanılıyordu. Yalnız sayı morfemlerinden kurulmuş bir sözcük sayıdır.
@@ -60,6 +86,10 @@ const SAYI_RE = new RegExp(`^(?:${SAYI_MORFEM})+$`, "i");
 // Sıra sayısı: "am dritten Mai", "die erste Stelle".
 const SIRA_RE = new RegExp(`^(?:erst|zweit|dritt|viert|fünft|sechst|siebt|acht|neunt|zehnt|elft|zwölft|(?:${SAYI_MORFEM})+t)(?:e|en|es|er|em)$`, "i");
 const sayiMi = (w) => SAYI_RE.test(w) || SIRA_RE.test(w);
+
+// da-bileşikleri ÜRETKEN: dazu, dafür, damit, daran, darüber … Edatların
+// hepsi zaten serbest; bileşiği tek tek listelemek listeyi şişiriyordu.
+const DA_RE = /^(?:da|dar|wo|wor)(?:zu|für|mit|von|bei|an|auf|in|über|unter|nach|gegen|durch|um|aus|hin|her)$/i;
 
 // Türkçe yazılmış soru kökü / kaynak cümle Almanca sanılıp ölçülmemeli.
 // "-yor" eki tek başına kesin işaret: Almancada -yor ile biten sözcük YOK.
@@ -181,24 +211,50 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
       // ÖĞRETİLEN fiilin kendisi kayma sayılıyordu.
       // Değişen ünlü gövdenin SON ünlüsüdür, ilki değil: bewerb → bewirb
       // (biwerb değil). İlk ünlüyü değiştiren kural önekli fiilleri bozuyordu.
-      for (const [a, b2] of [["e", "i"], ["e", "ie"], ["a", "ä"], ["e", "o"], ["e", "a"], ["i", "a"], ["o", "a"]]) {
+      for (const [a, b2] of [["e", "i"], ["e", "ie"], ["a", "ä"], ["e", "o"], ["e", "a"], ["i", "a"], ["o", "a"], ["i", "u"], ["ie", "o"]]) {
         const i = g.lastIndexOf(a);
         if (i < 0) continue;
         const v = g.slice(0, i) + b2 + g.slice(i + 1);
         for (const son of ["", "t", "st", "en", "e"]) izinCekim.add(v + son);
         izinCekim.add("ge" + v + "en");
+        // Güçlü fiilin geçmişinde çift ünsüz sadeleşir: bekomm → bekam.
+        const tek = v.replace(/([bcdfgklmnprstz])\1$/, "$1");
+        if (tek !== v) for (const son of ["", "t", "en", "st"]) izinCekim.add(tek + son);
       }
       izinCekim.add(g + "t");   // ayrılabilen/ayrılmayan ortaç: bewerben → beworben yakalanmaz ama besucht yakalanır
     }
+    // Düzensiz biçimler: gövde tablodaysa onun biçimleri de bilinir.
+    for (const [mastar, bicimler] of Object.entries(DUZENSIZ)) {
+      if (w === mastar || (w.length > mastar.length && w.endsWith(mastar))) {
+        const on = w.slice(0, w.length - mastar.length);
+        for (const b of bicimler) {
+          izinCekim.add(on + b);
+          // Ayrılabilen önekte "ge" öneke ile gövde arasına girer: angerufen.
+          if (on && b.startsWith("ge")) izinCekim.add(on + b);
+          if (on) izinCekim.add(b.replace(/^ge/, on + "ge"));
+        }
+      }
+    }
     // Sıfat çekimi: kısa sıfat da izinKok'a giremiyordu (w.length >= 4 süzgeci),
     // o yüzden "neu" öğretilmişken "neue" kayma sayılıyordu.
-    if (w.length >= 3) for (const son of ["e", "en", "es", "er", "em"]) izinCekim.add(w + son);
+    if (w.length >= 3) {
+      for (const son of ["e", "en", "es", "er", "em", "ere", "eren", "sten", "ste"]) izinCekim.add(w + son);
+      // Karşılaştırmada gövde ünlüsü umlaut alır: lang → länger, alt → älter.
+      for (const [a, b2] of [["a", "ä"], ["o", "ö"], ["u", "ü"]]) {
+        const i = w.lastIndexOf(a);
+        if (i < 0) continue;
+        const v = w.slice(0, i) + b2 + w.slice(i + 1);
+        for (const son of ["", "er", "ere", "eren", "sten", "ste"]) izinCekim.add(v + son);
+      }
+    }
   }
+  const soyPrefix = (w) => { const m = w.match(AYRILABILIR); return m && w.length - m[0].length >= 4 ? w.slice(m[0].length) : null; };
   const bilinir = (w) => izin.has(w) || ozelAd.has(w) || izinCekim.has(w) ||
+    (soyPrefix(w) && (izin.has(soyPrefix(w)) || izinCekim.has(soyPrefix(w)))) ||
     izinKok.some((k) => w.startsWith(k.slice(0, Math.max(4, k.length - 2)))) ||
     (w.length >= 3 && izinKok.some((k) => k.startsWith(w)));
   const tok = (ham.toLowerCase().match(/[a-zäöüß]{2,}/g) || []);
-  const disi = tok.filter((w) => !SERBEST.has(w) && !sayiMi(w) && !bilinir(w));
+  const disi = tok.filter((w) => !SERBEST.has(w) && !sayiMi(w) && !DA_RE.test(w) && !bilinir(w));
   return { tok, disi };
 }
 
