@@ -11596,7 +11596,11 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "How much is it?"
+     "target": "How much is it?",
+     "accept": [
+      "How much does it cost?",
+      "How much does this cost?"
+     ]
     }
    },
    {
@@ -11636,7 +11640,9 @@
      "accept": [
       "How much is this?",
       "How much is that?",
-      "What's the price?"
+      "What's the price?",
+      "How much does it cost?",
+      "How much does this cost?"
      ],
      "hint": [
       {
@@ -13300,7 +13306,7 @@
       "text": "How many apples do you want?"
      },
      {
-      "lang": "tr",
+      "lang": "en",
       "text": "Two kilos, please."
      },
      {
@@ -15127,11 +15133,11 @@
      },
      {
       "lang": "en",
-      "text": "I pay by card."
+      "text": "I'll pay by card."
      },
      {
       "lang": "en",
-      "text": "I pay in cash."
+      "text": "I'll pay in cash."
      },
      {
       "lang": "tr",
@@ -15724,11 +15730,11 @@
      },
      {
       "lang": "en",
-      "text": "I sleep at eleven."
+      "text": "I go to bed at eleven."
      },
      {
       "lang": "tr",
-      "text": "Saat on birde uyurum."
+      "text": "Saat on birde yatarım."
      }
     ]
    },
@@ -17544,7 +17550,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. İki kelimeli dört fiil öğrendin:"
+      "text": "Toparlayalım. İki kelimeli beş fiil öğrendin:"
      },
      {
       "lang": "en",
@@ -18590,7 +18596,7 @@
   "roleplay": {
    "scene": "Kahve molasında bir iş arkadaşınla sohbet ediyorsun; sabahları ne yaptığınızı anlatıyorsunuz.",
    "partner": "Emma, güler yüzlü bir iş arkadaşı",
-   "opening": "Good morning! You look awake. What do you do in the morning?",
+   "opening": "Good morning! You look wide awake. What do you do in the morning?",
    "openingTr": "Günaydın! Dinç görünüyorsun. Sabahları ne yaparsın?",
    "goal": "Öğrenci sabah rutininden en az üç işi sırayla anlatırsa ve first, then / after that, finally kalıplarından en az üçünü kullanırsa başarılı sayılır.",
    "minTurns": 6
@@ -19200,7 +19206,7 @@
      },
      {
       "lang": "tr",
-      "text": "yürümek demek. Dikkat: ortadaki l harfi söylenmez, wook gibi duyulur. Lütfen sen de söyle:"
+      "text": "yürümek demek. Dikkat: ortadaki l harfi söylenmez, uzun bir o sesiyle 'wok' gibi duyulur. Lütfen sen de söyle:"
      },
      {
       "lang": "en",
@@ -20781,7 +20787,7 @@
      },
      {
       "lang": "en",
-      "text": "Medium, please."
+      "text": "I'm a medium."
      }
     ]
    },
@@ -23302,7 +23308,23 @@
      },
      {
       "lang": "tr",
-      "text": "girer. Türkçede karşılığı yoktur ama İngilizcede olmazsa cümle soru olmaz."
+      "text": "girer. Ama bu yalnız normal fiiller için: be fiiliyle ve can gibi kiplerle do kullanılmaz —"
+     },
+     {
+      "lang": "en",
+      "text": "What size are you?"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "Can I try it on?"
+     },
+     {
+      "lang": "tr",
+      "text": "böyle sorulur."
      }
     ]
    },
