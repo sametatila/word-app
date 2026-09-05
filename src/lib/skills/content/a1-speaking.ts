@@ -49,7 +49,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Ich bin zwanzig Jahre alt.",
         tr: "Yirmi yaşındayım.",
         hint: "„zwanzig“ = TSVAN-tsiç. Baştaki z „ts“, sondaki -ig „iç“.",
-        confusions: [{ heard: ["swanzig", "zwanzig wie z"], fix: "z'yi Türkçe z gibi değil, „ts“ diye söyle.", expected: "zwanzig" }],
+        confusions: [{ heard: ["swanzig", "sanzig", "wanzig"], fix: "z'yi Türkçe z gibi değil, „ts“ diye söyle.", expected: "zwanzig" }],
       },
       {
         de: "Wir gehen zusammen.",
@@ -71,7 +71,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Wie viel Uhr ist es?",
         tr: "Saat kaç?",
         hint: "„viel“ = FİİL. v Almancada [f] okunur.",
-        confusions: [{ heard: ["wie viel wie v", "wiel"], fix: "v harfini „f“ gibi söyle: fiel.", expected: "viel" }],
+        confusions: [{ heard: ["wie wiel", "wi wil"], fix: "v harfini „f“ gibi söyle: fiel.", expected: "viel" }],
       },
       {
         de: "Wir sind zu Hause.",
@@ -100,7 +100,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Wir sind sieben Personen.",
         tr: "Yedi kişiyiz.",
         hint: "„sieben“ = Zİİ-ben. ie = uzun İ, s = z.",
-        confusions: [{ heard: ["sieben mit s", "siben"], fix: "Baştaki s'yi „z“ diye söyle; ie'yi uzat.", expected: "sieben" }],
+        confusions: [{ heard: ["siben", "siepen", "sie ben"], fix: "Baştaki s'yi „z“ diye söyle; ie'yi uzat.", expected: "sieben" }],
       },
       {
         de: "Die Suppe ist sehr gut.",
@@ -116,7 +116,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Ich sehe die Suppe.",
         tr: "Çorbayı görüyorum.",
         hint: "„sehe“ = ZE-e. Ama „das“ gibi sözcüklerin sonundaki s [s] kalır — kural yalnız BAŞTA.",
-        confusions: [{ heard: ["ich zehe", "sehe mit s"], fix: "Baştaki s [z]; ama sözcük SONUNDAKİ s [z] olmaz.", expected: "sehe" }],
+        confusions: [{ heard: ["ich zehe", "ich zee"], fix: "Baştaki s [z]; ama sözcük SONUNDAKİ s [z] olmaz.", expected: "sehe" }],
       },
       {
         de: "Am Sonntag habe ich Zeit.",
@@ -150,13 +150,13 @@ export const a1Speaking: SkillExercise[] = [
         de: "Ich stehe um sieben auf.",
         tr: "Yedide kalkıyorum.",
         hint: "„stehe“ = ŞTE-e. Söz BAŞINDA st → şt.",
-        confusions: [{ heard: ["ich stehe mit s", "istehe"], fix: "st'yi „şt“ diye söyle: ŞTE-e.", expected: "stehe" }],
+        confusions: [{ heard: ["istehe", "ist ehe", "es tee"], fix: "st'yi „şt“ diye söyle: ŞTE-e.", expected: "stehe" }],
       },
       {
         de: "Es ist schon spät.",
         tr: "Vakit geç oldu.",
         hint: "„spät“ = ŞPEET. sp → şp; ä uzun ve açık e.",
-        confusions: [{ heard: ["spät mit s", "spet"], fix: "sp'yi „şp“ diye söyle ve ä'yı uzat.", expected: "spät" }],
+        confusions: [{ heard: ["spet", "es pät", "sbät"], fix: "sp'yi „şp“ diye söyle ve ä'yı uzat.", expected: "spät" }],
       },
       {
         de: "Die Stunde beginnt jetzt.",
@@ -200,13 +200,13 @@ export const a1Speaking: SkillExercise[] = [
         de: "Wie viel kostet das?",
         tr: "Bu ne kadar?",
         hint: "„Wie“ = Vİİ (w = v), „viel“ = FİİL (v = f). Aynı cümlede iki ters kural.",
-        confusions: [{ heard: ["wie fiel", "vie viel"], fix: "w'yi „v“, v'yi „f“ oku — Türkçedekinin tersi.", expected: "Wie viel" }],
+        confusions: [{ heard: ["wie wiel", "wi wil"], fix: "w'yi „v“, v'yi „f“ oku — Türkçedekinin tersi.", expected: "Wie viel" }],
       },
       {
         de: "Der Verkäufer ist sehr nett.",
         tr: "Satıcı çok kibar.",
         hint: "„Verkäufer“ = fer-KOY-fa. v = f, äu = oy, sondaki -er ≈ „a“.",
-        confusions: [{ heard: ["verkäufer mit v", "werkäufer"], fix: "Baştaki v'yi „f“ diye söyle.", expected: "Verkäufer" }],
+        confusions: [{ heard: ["werkäufer", "wer koifer"], fix: "Baştaki v'yi „f“ diye söyle.", expected: "Verkäufer" }],
       },
       {
         de: "Wo wohnen Sie?",
@@ -222,13 +222,13 @@ export const a1Speaking: SkillExercise[] = [
         de: "Das ist zu teuer.",
         tr: "Bu çok pahalı.",
         hint: "„teuer“ = TOY-a. eu = oy.",
-        confusions: [{ heard: ["teuer wie eu", "teyer"], fix: "eu her zaman „oy“ okunur.", expected: "teuer" }],
+        confusions: [{ heard: ["teyer", "te uer"], fix: "eu her zaman „oy“ okunur.", expected: "teuer" }],
       },
       {
         de: "Ich brauche eine Jacke.",
         tr: "Bir cekete ihtiyacım var.",
         hint: "„Jacke“ = YA-ke. Almancada j = Türkçe y.",
-        confusions: [{ heard: ["jacke wie j"], fix: "j'yi Türkçe „j“ değil, „y“ diye söyle.", expected: "Jacke" }],
+        confusions: [{ heard: ["schacke", "dschacke"], fix: "j'yi Türkçe „j“ değil, „y“ diye söyle.", expected: "Jacke" }],
       },
     ],
   },
@@ -252,7 +252,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Ich spreche nicht viel.",
         tr: "Çok konuşmuyorum.",
         hint: "„ich“ ve „nicht“: İNCE ch. Dilin ortası damağa yaklaşır — „iş“ değil.",
-        confusions: [{ heard: ["isch spreche nischt", "ik"], fix: "ch'yi „ş“ ya da „k“ ile değiştirme; i'den sonra ince ch gelir.", expected: "ich nicht" }],
+        confusions: [{ heard: ["isch spreche nischt", "ik spreche nikt"], fix: "ch'yi „ş“ ya da „k“ ile değiştirme; i'den sonra ince ch gelir.", expected: "ich nicht" }],
       },
       {
         de: "Die Küche ist klein.",
@@ -263,7 +263,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Ich suche eine Wohnung.",
         tr: "Bir daire arıyorum.",
         hint: "DİKKAT: „suche“ içinde u'dan sonra KALIN ch — boğazdan. Aynı cümlede „ich“ ince.",
-        confusions: [{ heard: ["ich suche wie ich"], fix: "u'dan sonraki ch boğazdan gelir, i'den sonraki damaktan.", expected: "suche" }],
+        confusions: [{ heard: ["ich siche", "ich süche"], fix: "u'dan sonraki ch boğazdan gelir, i'den sonraki damaktan.", expected: "suche" }],
       },
       {
         de: "Ich mache das noch.",
@@ -274,7 +274,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Das Buch ist auf dem Tisch.",
         tr: "Kitap masanın üstünde.",
         hint: "„Buch“ kalın ch; „Tisch“ ise sch = Türkçe ş. İkisi farklı ses.",
-        confusions: [{ heard: ["buch wie tisch", "busch"], fix: "„ch“ ile „sch“ karışmasın: Buch boğazdan, Tisch „ş“.", expected: "Buch Tisch" }],
+        confusions: [{ heard: ["busch", "buschisch"], fix: "„ch“ ile „sch“ karışmasın: Buch boğazdan, Tisch „ş“.", expected: "Buch Tisch" }],
       },
       {
         de: "Wir möchten einen Tisch.",
@@ -303,7 +303,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Das Wetter ist heute schön.",
         tr: "Hava bugün güzel.",
         hint: "„Wetter“ = VE-ta. Sondaki r'yi YUVARLAMA, „a“ya bırak.",
-        confusions: [{ heard: ["wetterr", "wetter mit r"], fix: "Sondaki -er zayıf „a“dır; r'yi tam söyleme.", expected: "Wetter" }],
+        confusions: [{ heard: ["wetterr", "wetter r"], fix: "Sondaki -er zayıf „a“dır; r'yi tam söyleme.", expected: "Wetter" }],
       },
       {
         de: "Ich höre lieber Musik.",
@@ -363,7 +363,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Ich trinke ein Bier.",
         tr: "Bir bira içiyorum.",
         hint: "„Bier“ = BİİA (uzun i), „ein“ = AYN. Aynı cümlede ikisi de var.",
-        confusions: [{ heard: ["bayer", "bier wie ei"], fix: "ie uzun „ii“; ei ise „ay“. İkinci harf okunur.", expected: "Bier" }],
+        confusions: [{ heard: ["bayer", "beier"], fix: "ie uzun „ii“; ei ise „ay“. İkinci harf okunur.", expected: "Bier" }],
       },
       {
         de: "Wie heißen Sie?",
@@ -413,7 +413,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Ich bin wirklich stolz.",
         tr: "Gerçekten gururluyum.",
         hint: "„stolz“ = ŞTOLTS. st → şt, z → ts. İki kural bir sözcükte.",
-        confusions: [{ heard: ["stolz mit s", "stols"], fix: "Başta „şt“, sonda „ts“.", expected: "stolz" }],
+        confusions: [{ heard: ["stols", "s tolz"], fix: "Başta „şt“, sonda „ts“.", expected: "stolz" }],
       },
       {
         de: "Gestern war ein guter Tag.",
@@ -429,7 +429,7 @@ export const a1Speaking: SkillExercise[] = [
         de: "Nächsten Monat mache ich den Test.",
         tr: "Gelecek ay sınava gireceğim.",
         hint: "„Nächsten“ = NEEKS-ten; ä uzun açık e, chs = „ks“ okunur.",
-        confusions: [{ heard: ["nächsten mit ch", "nechten"], fix: "„chs“ bitişikken „ks“ olur — ch sesi kaybolur.", expected: "nächsten" }],
+        confusions: [{ heard: ["nechten", "nächten"], fix: "„chs“ bitişikken „ks“ olur — ch sesi kaybolur.", expected: "nächsten" }],
       },
     ],
   },
