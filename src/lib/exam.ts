@@ -33,7 +33,7 @@ import {
   type TextItem,
   type WritingItem,
 } from "@/lib/exam-types";
-import type { CefrLevel, WritingTask, SpeechConfusion } from "@/lib/skills/types";
+import type { CefrLevel, WritingTask, SpeechConfusion, SkillExercise } from "@/lib/skills/types";
 import type { Round } from "@/lib/types";
 
 /**
@@ -179,6 +179,23 @@ function planListening(plan: ModuleExamPlan, count: number, seed: string): TextI
   ];
 }
 
+/**
+ * Bir beceri egzersizinin SINAVDA kullanılabilir soruları.
+ *
+ * Sınav kâğıdı soruyu yalnız şıklara basarak çiziyor (`exam-player.tsx`,
+ * `options(q.options, …)`). Beceri bölümünde ise boşluk doldurma, kısa cevap ve
+ * dikte soruları var ve bunların `options` alanı BOŞ — beceri oynatıcısı onları
+ * yazarak cevaplatıyor. Bu sorular süzülmeden sınava girerse ekranda hiç düğme
+ * çizilmez ve seviye sınavı o soruda kilitlenir: ilerlemenin başka yolu yok.
+ *
+ * Modül sınavı kendi planını kullandığı için etkilenmiyordu; açık yalnız
+ * seviye sınavındaydı (`module === null`), yani bankadan çekildiği yerde.
+ */
+function examQuestions(ex: SkillExercise) {
+  const qs = "questions" in ex ? ex.questions : [];
+  return qs.filter((q) => Array.isArray(q.options) && q.options.length >= 2);
+}
+
 function planReading(plan: ModuleExamPlan, count: number, seed: string): TextItem[] {
   return [
     {
@@ -239,7 +256,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   const done = new Set((await db.select({ id: userSkills.exerciseId }).from(userSkills).where(eq(userSkills.userId, userId))).map((r) => r.id));
   const bank = BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === (course === "gsw-zh" ? "gsw-zh" : "de") && e.level === level);
   const pickTexts = (skill: "reading" | "listening"): TextItem[] => {
-    const list = bank.filter((e) => e.skill === skill);
+    const list = bank.filter((e) => e.skill === skill && examQuestions(e).length > 0);
     const ordered = [...seededShuffle(list.filter((e) => !done.has(e.id)), `${seed}|${skill}`), ...seededShuffle(list.filter((e) => done.has(e.id)), `${seed}|${skill}|used`)];
     return ordered.slice(0, c.text).map((ex) => ({
       id: `${skill[0]}:${ex.id}`,
@@ -247,7 +264,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
       genre: ex.genre,
       text: ex.skill === "reading" ? ex.text : undefined,
       segments: ex.skill === "listening" ? ex.segments.slice(0, 3).map((s) => ({ speaker: s.speaker, text: s.text })) : undefined,
-      questions: ("questions" in ex ? ex.questions : []).slice(0, 3).map((q, i) => shuffleQuestion({ text: q.text, options: q.options, answer: q.answer }, `${seed}|${skill}|${ex.id}|${i}`)),
+      questions: examQuestions(ex).slice(0, 3).map((q, i) => shuffleQuestion({ text: q.text, options: q.options, answer: q.answer }, `${seed}|${skill}|${ex.id}|${i}`)),
     }));
   };
   const reading = plan ? planReading(plan, 2, seed) : pickTexts("reading");

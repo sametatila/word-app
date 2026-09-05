@@ -14,6 +14,7 @@ import { levelIndex } from "../src/lib/lessons";
 import { allModules, moduleContent, selfAnswering } from "../src/lib/lessons/module-content";
 import { MODULE_EXAMS, moduleExamPlan, type ExamQuestion, type ModuleExamPlan } from "../src/lib/lessons/module-exam";
 import { foldSentence } from "../src/lib/sentence-match";
+import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 
 const COURSE = "de";
 /** Kâğıdın istediği en az madde sayısı (bkz. COUNTS, lib/exam.ts). */
@@ -113,6 +114,30 @@ for (const m of modules) {
   console.log(
     `${where.padEnd(6)} ${plan.code.padEnd(6)} ${plan.titleDe.padEnd(32)} üretim ${String(produce.length).padStart(2)} · hüküm ${String(content.judge.length).padStart(2)} · kelime ${content.words.length}`,
   );
+}
+
+// Seviye sınavı beceri bankasından soru çeker (exam.ts, pickTexts). Sınav kâğıdı
+// soruyu YALNIZ şıklara basarak çiziyor; boşluk doldurma / kısa cevap / dikte
+// soruları beceri bölümünde `options: []` taşır ve süzülmezse ekranda hiç düğme
+// çizilmez — seviye sınavı o soruda kilitlenir. exam.ts artık süzüyor; burada
+// süzgeçten sonra HER seviyede yeterli malzeme kaldığını doğruluyoruz, yoksa
+// düzeltme sessizce boş bir sınav bölümü üretir.
+const EXAM_MIN_TEXTS = 2;
+for (const level of ["A1", "A2", "B1", "B2", "C1"] as const) {
+  for (const skill of ["reading", "listening"] as const) {
+    const list = BUNDLED_EXERCISES.filter(
+      (e) => (e.course ?? "de") === "de" && e.level === level && e.skill === skill,
+    );
+    const usable = list.filter(
+      (e) => ("questions" in e ? e.questions : []).filter((q) => Array.isArray(q.options) && q.options.length >= 2).length > 0,
+    );
+    const where = `${level}/${skill}`;
+    if (usable.length < EXAM_MIN_TEXTS) {
+      fail(where, `sınavda kullanılabilir metin ${usable.length} (en az ${EXAM_MIN_TEXTS}) — şıklı sorusu olan egzersiz yok`);
+    }
+    const empty = list.length - usable.length;
+    console.log(`${where.padEnd(14)} sınav havuzu ${String(usable.length).padStart(3)}/${String(list.length).padStart(3)} metin${empty ? ` · ${empty} egzersizin şıklı sorusu yok` : ""}`);
+  }
 }
 
 // Fazladan plan (modülü olmayan) da bir tutarsızlık.
