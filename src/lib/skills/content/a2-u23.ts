@@ -65,11 +65,11 @@ export const a2U23: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ Sie das Formular vollständig aus.",
+        text: "___ Sie besonders auf Straße und Hausnummer.",
         options: [],
         answer: 0,
-        accept: ["Füllen"],
-        explain: "Resmî emirde fiil başta durur ve Sie hemen arkasından gelir.",
+        accept: ["Achten"],
+        explain: "Resmî emirde fiil başta durur ve Sie hemen arkasından gelir — metindeki uyarı cümlesi.",
       },
       {
         text: "Welches Amt ist zuständig?",
