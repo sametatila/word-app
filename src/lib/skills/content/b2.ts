@@ -1,6 +1,7 @@
 import type { SkillExercise } from "../types";
 import { b2U01 } from "./b2-u01";
 import { b2U02 } from "./b2-u02";
+import { b2U03 } from "./b2-u03";
 
 /**
  * B2 — okuma, dinleme ve yazma egzersizleri.
@@ -14,6 +15,7 @@ import { b2U02 } from "./b2-u02";
 export const b2: SkillExercise[] = [
   ...b2U01,
   ...b2U02,
+  ...b2U03,
   // ---------------------------------------------------------------- OKUMA
   {
     id: "b2-r1",
