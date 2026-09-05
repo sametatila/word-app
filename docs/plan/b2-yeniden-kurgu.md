@@ -166,3 +166,85 @@ Konu başına ayrı commit, Türkçe mesaj, **ne yapıldığını değil NEDEN y
 anlatsın. Emoji kullanma. Sonunda: neyin bittiği, neyin bilerek bırakıldığı,
 hangi sayının nereden geldiği. Sonuç ölçümünü bu dosyanın sonuna yaz — bir
 sonraki oturum başlangıç ölçümünü buradan okuyacak.
+
+---
+
+## 10. Ara sonuç — sözlükçe katmanı bitti (2026-09-05)
+
+100 dersin sekizi de yeniden yazıldı. Aşağıdaki her sayı `scripts/check-lessons.ts`
+ve kaynaktan okuyan bir doğrulayıcıyla ölçüldü.
+
+### Hedef 1 — dersler havuzun B2 katmanından öğretsin
+
+Sözlükçe boyu **5'ten 8'e** çıkarıldı (kullanıcı kararı, §4). 100 × 8 = **800 yuva**.
+
+| Ölçüt | Başlangıç (5 kelime, 500 yuva) | Şimdi (8 kelime, 800 yuva) |
+|---|---|---|
+| B2 katmanından | 129 (%25,8) | **800 (%100)** |
+| B1 katmanından | 108 (%21,6) | **0** |
+| A2 / A1 | 33 / 8 | **0 / 0** |
+| C1 (seviye üstü) | 56 (%11,2) | **0** |
+| Havuzda hiç yok | 166 (%33,2) | **0** |
+| Seviye içi tekrar | 0 | **0** |
+| Seviyeler arası tekrar | — | **0** |
+
+Brief'in başlangıç tablosu 160 diyordu; sıkı ölçüm **166** verdi. Fark dönüşlü
+ve edatlı biçimlerde (`sich melden`, `sich vernetzen`, `bestehen auf`): havuzda
+dönüşlüsüz kayıt var ama "aynı madde mi" bir karardır, otomatik eşleşme değil.
+Altısı da vetoda tek tek karara bağlandı (`docs/plan/b2-havuz-veto.md`).
+
+### Asıl gerekçe: erişilemez yuva 207'den 0'a indi
+
+`session.ts:268-280` — bant `[alt, seviye, üst]`, yani B2 için **[B1, B2, C1]**.
+Başlangıçta 500 yuvanın **207'si (%41,4)** bu bandın dışındaydı: havuzda
+olmayan 166 + A2 33 + A1 8. Brief bunu 160 diye sayıyor ve C1'in 56 yuvasını
+sorun işaretliyordu; oysa C1 bantta, A1/A2 değil. Şimdi 800 yuvanın tamamı
+bandın içinde ve %100'ü tam seviyede.
+
+### Hedef 2 — B2 katmanının kapsanması
+
+| Ölçüt | Başlangıç | Şimdi |
+|---|---|---|
+| B2 dersleriyle kapsanan | 129/2041 (%6,3) | **800/2061 (%38,8)** |
+
+Katman 2041'den 2061'e çıktı: vetodan sonra 20 gerçek madde başı eklendi
+(id 8535-8554). %38,8 matematiksel tavan — 800 yuva ÷ 2061 madde.
+
+### Havuzun taşımadığı beş ders konusu
+
+Beş derste konu havuzda hiç karşılık bulmuyordu; o dersleri olduğu yerde
+tutmak, sekiz yuvanın sekizini de tekrar motorunun göremeyeceği kelimeyle
+doldurmak demekti. Beşinde de **dilbilgisi konusu korunarak** çerçeve havuzun
+taşıdığı alana çevrildi:
+
+| Ders | Eski çerçeve | Neden taşındı | Yeni çerçeve |
+|---|---|---|---|
+| `de-b2-nachbarschaftsstreit` | çit anlaşmazlığı | `der Zaun`, `die Grundstücksgrenze`, `das Einvernehmen` havuz dışı | gürültü / huzur bozma |
+| `de-b2-weltraum` | uzay | `Weltraum`, `Rakete`, `Satellit`, `Astronaut`, `Umlaufbahn` — hiçbiri havuzda yok | iklim ve doğa |
+| `de-b2-rezept-profi` | mutfak tekniği | `garen`, `abschmecken`, `köcheln`, `die Konsistenz` havuz dışı | servis ve menü dili |
+| `de-b2-fotografie` | fotoğraf sanatı | `der Bildausschnitt`, `gestellt`, `einfangen`, `authentisch` havuz dışı; havuzda estetik sözcüğü yok | spor (kullanılmayan 4872-4910 öbeği) |
+| `de-b2-kabarett` | hiciv | `die Ironie`, `die Anspielung`, `die Satire` C1; `der Seitenhieb`, `beißend` havuzda yok | duyulan gezi tavsiyesi |
+
+Ders kimlikleri değişmedi; değişen ders adı, özeti, kalıpları ve rol yapma
+sahnesi. Hiciv dersinin amacı (söylenen ile gerçeğin farkını öznel kip
+fiiliyle işaretlemek) korundu — `sollen`in asıl işi zaten duyulanı aktarmak.
+
+### Doğrulama
+
+`npm run check:lessons` → **hata yok**, 7 uyarı (hepsi B1, paralel oturuma ait).
+`npx tsc --noEmit` kökte ve `mobile/` içinde temiz. `test:track` 64 kontrol,
+`test:options` 8416 kelime 0 hata. Mobil paket her modülden sonra yenilendi;
+fark yalnız `de-b2.json`'da.
+
+`npm run test:exams` 8 hata veriyor: sekizi de B1.11-B1.18 modüllerinin sınav
+planının olmaması. B1 180 derse çıkarıldı ama `module-exam` planları 10 modülde
+kaldı. **Bu paralel oturuma ait, buradan dokunulmadı.**
+
+### Sırada ne var
+
+Beceri katmanı hâlâ 12 okuma / 12 dinleme / 8 yazma ve **25 ünitenin 19'unda
+tek bir beceri egzersizi yok** (`buildTrack` çıktısı). Ders sözlükçesindeki
+800 kelimenin **658'i** hiçbir beceri metninde geçmiyor — sözlükçe tümüyle
+yenilendiği için bu sayı işin başındakinden yüksek ve beklenen. 25 ünite × 6 =
+**150 hizalı egzersiz** gerekiyor; brief'in "118" sayısı yalnız 50/50/50
+toplamına götürür, 25/25 hizaya değil (A2'de bu iki geçişte öğrenilmişti).
