@@ -51,13 +51,15 @@ export default async function SkillsPage({
     console.error("[skills] profil okunamadı", err);
   }
 
-  const istenen = (await searchParams)?.level;
-  const level = LEVELS.includes(istenen as CefrLevel) ? (istenen as CefrLevel) : profileLevel;
+  const wanted = (await searchParams)?.level;
+  const level = LEVELS.includes(wanted as CefrLevel) ? (wanted as CefrLevel) : profileLevel;
 
   const metas = await listExerciseMeta(course);
-  const seviyede = metas.filter((m) => m.level === level);
+  const atLevel = metas.filter((m) => m.level === level);
 
-  let done = (_: string) => false;
+  // İlerleme okunamazsa liste yine çizilir, yalnız hiçbir şey "bitti"
+  // görünmez — boş ekran vermekten iyi.
+  let done: (id: string) => boolean = () => false;
   try {
     const completion = await immersionCompletion(user.id, course);
     done = completion.skillDone;
@@ -65,8 +67,8 @@ export default async function SkillsPage({
     console.error("[skills] ilerleme okunamadı", err);
   }
 
-  const varOlan = LEVELS.filter((lv) => metas.some((m) => m.level === lv));
-  const bitenSayisi = seviyede.filter((m) => done(m.id)).length;
+  const withContent = LEVELS.filter((lv) => metas.some((m) => m.level === lv));
+  const doneCount = atLevel.filter((m) => done(m.id)).length;
 
   return (
     <div className="mx-auto w-full max-w-2xl">
@@ -78,20 +80,20 @@ export default async function SkillsPage({
         </p>
       </header>
 
-      {varOlan.length > 1 ? (
+      {withContent.length > 1 ? (
         <nav className="mb-4 flex flex-wrap gap-2" aria-label="Seviye">
-          {varOlan.map((lv) => {
-            const aktif = lv === level;
+          {withContent.map((lv) => {
+            const active = lv === level;
             return (
               <Link
                 key={lv}
                 href={`/skills?level=${lv}`}
-                aria-current={aktif ? "page" : undefined}
+                aria-current={active ? "page" : undefined}
                 className="rounded-lg border px-3 py-1.5 text-sm font-bold"
                 style={{
-                  borderColor: aktif ? "transparent" : "var(--border)",
-                  background: aktif ? (LEVEL_TONE[lv] ?? "var(--color-brand)") : "transparent",
-                  color: aktif ? "#fff" : "var(--text-muted)",
+                  borderColor: active ? "transparent" : "var(--border)",
+                  background: active ? (LEVEL_TONE[lv] ?? "var(--color-brand)") : "transparent",
+                  color: active ? "#fff" : "var(--text-muted)",
                 }}
               >
                 {lv}
@@ -101,25 +103,25 @@ export default async function SkillsPage({
         </nav>
       ) : null}
 
-      {seviyede.length ? (
+      {atLevel.length ? (
         <p className="muted mb-3 text-xs font-semibold">
-          {level} · {bitenSayisi}/{seviyede.length} tamamlandı
+          {level} · {doneCount}/{atLevel.length} tamamlandı
         </p>
       ) : null}
 
       {SKILL_ORDER.map((skill) => {
-        const liste = seviyede.filter((m) => m.skill === skill);
-        if (!liste.length) return null;
+        const list = atLevel.filter((m) => m.skill === skill);
+        if (!list.length) return null;
         const Icon = SKILL_ICON[skill];
         return (
           <section key={skill} className="mb-5">
             <h2 className="mb-2 flex items-center gap-2 px-1 text-sm font-bold">
               <Icon size={16} />
               {SKILL_LABELS[skill]}
-              <span className="muted font-semibold">({liste.length})</span>
+              <span className="muted font-semibold">({list.length})</span>
             </h2>
             <ul className="card divide-y" style={{ borderColor: "var(--border)" }}>
-              {liste.map((m) => (
+              {list.map((m) => (
                 <li key={m.id}>
                   <Row meta={m} done={done(m.id)} />
                 </li>
@@ -129,9 +131,9 @@ export default async function SkillsPage({
         );
       })}
 
-      {!seviyede.length ? (
+      {!atLevel.length ? (
         <p className="card p-5 text-sm" style={{ color: "var(--text-muted)" }}>
-          Bu seviyede henüz beceri çalışması yok.
+          Bu atLevel henüz beceri çalışması yok.
         </p>
       ) : null}
 
@@ -184,10 +186,10 @@ function Row({ meta, done }: { meta: SkillMeta; done: boolean }) {
  * bilgisiz bırakırdı; motor zaten dürüst davranıyor.
  */
 function ExamSection({ level }: { level: CefrLevel }) {
-  const moduller = [...Array(21).keys()]
+  const modules = [...Array(21).keys()]
     .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
     .filter((m): m is { index: number; plan: NonNullable<ReturnType<typeof moduleExamPlan>> } => Boolean(m.plan));
-  if (!moduller.length) return null;
+  if (!modules.length) return null;
 
   return (
     <section className="mb-5">
@@ -202,7 +204,7 @@ function ExamSection({ level }: { level: CefrLevel }) {
             <ChevronRightIcon size={18} className="shrink-0" style={{ color: "var(--text-faint)" }} />
           </Link>
         </li>
-        {moduller.map(({ index, plan }) => (
+        {modules.map(({ index, plan }) => (
           <li key={plan.code}>
             <Link href={`/exam/${level}/${index}`} className="flex items-center gap-3 px-4 py-3">
               <span className="min-w-0 flex-1">

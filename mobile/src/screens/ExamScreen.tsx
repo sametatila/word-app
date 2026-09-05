@@ -88,11 +88,11 @@ export function ExamScreen() {
   const moduleIx = route.params?.module ?? null;
 
   const [paper, setPaper] = useState<Paper | null>(null);
-  const [err, setHata] = useState<string | null>(null);
-  const [phase, setFaz] = useState<"yukleniyor" | "kapak" | "bolum" | "sonuc">("yukleniyor");
+  const [err, setErr] = useState<string | null>(null);
+  const [phase, setPhase] = useState<"yukleniyor" | "kapak" | "bolum" | "sonuc">("yukleniyor");
   const [secIdx, setSecIdx] = useState(0);
-  const [left, setKalan] = useState(0);
-  const [result, setSonuc] = useState<Result | null>(null);
+  const [left, setLeft] = useState(0);
+  const [result, setResult] = useState<Result | null>(null);
   const score = useRef<Record<SectionId, { correct: number; total: number }>>({
     vocab: { correct: 0, total: 0 }, grammar: { correct: 0, total: 0 }, produce: { correct: 0, total: 0 },
     reading: { correct: 0, total: 0 }, listening: { correct: 0, total: 0 }, speaking: { correct: 0, total: 0 }, writing: { correct: 0, total: 0 },
@@ -110,32 +110,39 @@ export function ExamScreen() {
     })
       .then((d) => {
         if (cancelled) return;
+        // Bölüm TOPLAMLARI kâğıt gelince yazılır, bölüm bitince değil. Yoksa
+        // süre dolduğunda ulaşılmamış bölüm total=0 gider, sunucu onu atlar ve
+        // ağırlığını kalanlara dağıtır — yani sınavı yarıda bırakmak puanı
+        // YÜKSELTİRDİ. Web de kâğıt gelince dolduruyor (exam-player).
+        for (const id of SECTION_ORDER) score.current[id] = { correct: 0, total: d.paper.sections[id]?.length ?? 0 };
+        score.current.reading.total = d.paper.sections.reading.reduce((a, x) => a + x.questions.length, 0);
+        score.current.listening.total = d.paper.sections.listening.reduce((a, x) => a + x.questions.length, 0);
         setPaper(d.paper);
-        setKalan(d.paper.seconds);
-        setFaz("kapak");
+        setLeft(d.paper.seconds);
+        setPhase("kapak");
       })
-      .catch((e: Error) => !cancelled && setHata(e.message || t("exam.could_not_load")));
+      .catch((e: Error) => !cancelled && setErr(e.message || t("exam.could_not_load")));
     return () => { cancelled = true; };
   }, [level, moduleIx]);
 
   // Süre yalnız sınav sürerken işler; kapakta ve sonuçta durur.
   useEffect(() => {
     if (phase !== "bolum") return;
-    const id = setInterval(() => setKalan((n) => Math.max(0, n - 1)), 1000);
+    const id = setInterval(() => setLeft((n) => Math.max(0, n - 1)), 1000);
     return () => clearInterval(id);
   }, [phase]);
 
   useEffect(() => {
-    if (phase === "bolum" && left === 0) void stopRec();
+    if (phase === "bolum" && left === 0) void finishExam();
   }, [left, phase]);
 
   const filledSections = (): SectionId[] =>
     paper ? SECTION_ORDER.filter((s) => (paper.sections[s]?.length ?? 0) > 0) : [];
 
-  async function stopRec() {
+  async function finishExam() {
     if (sent.current || !paper) return;
     sent.current = true;
-    const sections = filledSections().map((id) => ({ id, correct: score.current[id].correct, total: score.current[id].total }));
+    const sections = SECTION_ORDER.map((id) => ({ id, ...score.current[id] })).filter((x) => x.total > 0);
     const sp = speakScores.current.length
       ? Math.round(speakScores.current.reduce((a, b) => a + b, 0) / speakScores.current.length)
       : null;
@@ -148,19 +155,19 @@ export function ExamScreen() {
           seconds: Math.round((Date.now() - startedAt.current) / 1000),
         }),
       });
-      setSonuc(d.result);
+      setResult(d.result);
     } catch {
-      setSonuc(null);
+      setResult(null);
     }
-    setFaz("sonuc");
+    setPhase("sonuc");
   }
 
-  function sectionDone(id: SectionId, correct: number, total: number) {
-    score.current[id] = { correct, total };
+  function sectionDone(id: SectionId, correct: number) {
+    score.current[id].correct = correct;
     const list = filledSections();
     const i = list.indexOf(id);
     if (i + 1 < list.length) setSecIdx(i + 1);
-    else void stopRec();
+    else void finishExam();
   }
 
   const mm = Math.floor(left / 60);
@@ -226,7 +233,7 @@ export function ExamScreen() {
           {paper.trial ? (
             <Card padded><Text variant="caption" color={colors.textMuted}>{t("exam.trial_notice")}</Text></Card>
           ) : null}
-          <PressableScale onPress={() => { startedAt.current = Date.now(); setFaz("bolum"); }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={() => { startedAt.current = Date.now(); setPhase("bolum"); }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("exam.start")}</Text>
           </PressableScale>
         </ScrollView>
@@ -281,7 +288,8 @@ export function ExamScreen() {
         insets={insets}
         onSpeakScore={(p) => speakScores.current.push(p)}
         onWriteScore={(p) => { writeScore.current = p; }}
-        onDone={(c, tot) => sectionDone(active, c, tot)}
+        onTick={(c) => { score.current[active].correct = c; }}
+        onDone={(c) => sectionDone(active, c)}
       />
     </View>
   );
@@ -290,10 +298,12 @@ export function ExamScreen() {
 /* ─────────────────────────── bölümler ─────────────────────────── */
 
 function SectionBody({
-  id, paper, colors, insets, onDone, onSpeakScore, onWriteScore,
+  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore,
 }: {
   id: SectionId; paper: Paper; colors: Palette; insets: { bottom: number };
-  onDone: (correct: number, total: number) => void;
+  onDone: (correct: number) => void;
+  /** Her maddeden sonra: süre dolarsa yarım bölümün doğruları da sayılsın. */
+  onTick: (correct: number) => void;
   onSpeakScore: (p: number) => void;
   onWriteScore: (p: number) => void;
 }) {
@@ -301,10 +311,11 @@ function SectionBody({
   const correctRef = useRef(0);
   const pad = { paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md };
 
-  function advance(ok: boolean, toplam: number) {
+  function advance(ok: boolean, count: number) {
     if (ok) correctRef.current += 1;
-    if (idx + 1 < toplam) setIdx(idx + 1);
-    else onDone(correctRef.current, toplam);
+    onTick(correctRef.current);
+    if (idx + 1 < count) setIdx(idx + 1);
+    else onDone(correctRef.current);
   }
 
   if (id === "vocab") {
@@ -351,7 +362,7 @@ function SectionBody({
   if (id === "reading" || id === "listening") {
     const items = paper.sections[id];
     return <TextSection key={items[idx].id} it={items[idx]} spoken={id === "listening"} colors={colors} pad={pad}
-      onDone={(c, tot) => { correctRef.current += c; if (idx + 1 < items.length) setIdx(idx + 1); else onDone(correctRef.current, items.reduce((a, x) => a + x.questions.length, 0)); }} />;
+      onDone={(c) => { correctRef.current += c; onTick(correctRef.current); if (idx + 1 < items.length) setIdx(idx + 1); else onDone(correctRef.current); }} />;
   }
 
   if (id === "speaking") {
@@ -362,7 +373,7 @@ function SectionBody({
 
   const w = paper.sections.writing[0];
   return <Write w={w} level={paper.level} colors={colors} pad={pad}
-    onDone={(ok, score) => { onWriteScore(score); onDone(ok ? 1 : 0, 1); }} />;
+    onDone={(ok, sc) => { onWriteScore(sc); onTick(ok ? 1 : 0); onDone(ok ? 1 : 0); }} />;
 }
 
 function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string; options: string[]; answerIdx: number; colors: Palette; onPick: (ok: boolean) => void }) {
@@ -388,7 +399,6 @@ function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette
   const [typed, setTyped] = useState("");
   const [parts, setParts] = useState<string[]>([]);
   const [done, setDone] = useState(false);
-  const leftChunks = (it.chunks ?? []).filter((c, i) => !parts.includes(`${i}:${c}`));
   const answer = it.mode === "order" ? parts.map((p) => p.split(":").slice(1).join(":")).join(" ") : typed;
   const ok = written(answer, [it.de, ...it.accept]);
 
@@ -436,7 +446,6 @@ function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette
           </Text>
         </PressableScale>
       </Card>
-      {leftChunks.length === 0 && it.mode === "order" ? null : null}
     </ScrollView>
   );
 }
@@ -483,25 +492,25 @@ function TextSection({ it, spoken, colors, pad, onDone }: { it: TextItem; spoken
 }
 
 function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette; pad: object; onDone: (ok: boolean, score: number) => void }) {
-  const [phase, setDurum] = useState<"idle" | "rec" | "done" | "err">("idle");
-  const [heard, setDuyulan] = useState("");
-  const [tip, setIpucu] = useState<string | null>(null);
+  const [phase, setPhase] = useState<"idle" | "rec" | "done" | "err">("idle");
+  const [heard, setHeard] = useState("");
+  const [tip, setTip] = useState<string | null>(null);
   const [ok, setOk] = useState(false);
 
   async function listen() {
     if (phase === "rec") return;
-    if (!(await ensureMicPermission())) { setIpucu(t("speak.mic_needed")); setDurum("err"); return; }
-    setDurum("rec"); setIpucu(null);
+    if (!(await ensureMicPermission())) { setTip(t("speak.mic_needed")); setPhase("err"); return; }
+    setPhase("rec"); setTip(null);
     const heard = await listenOnce(currentTargetLocale(), 8000);
-    if (!heard?.length) { setIpucu(t("speak.not_heard")); setDurum("err"); return; }
-    setDuyulan(heard[0]);
+    if (!heard?.length) { setTip(t("speak.not_heard")); setPhase("err"); return; }
+    setHeard(heard[0]);
     const ok = spokenMatches(heard, [it.de]);
     setOk(ok);
     if (!ok) {
       const lowered = heard.map((h) => h.toLowerCase());
-      setIpucu((it.confusions ?? []).find((c) => c.heard.some((x) => lowered.some((h) => h.includes(x.toLowerCase()))))?.fix ?? it.hint ?? null);
+      setTip((it.confusions ?? []).find((c) => c.heard.some((x) => lowered.some((h) => h.includes(x.toLowerCase()))))?.fix ?? it.hint ?? null);
     }
-    setDurum("done");
+    setPhase("done");
   }
 
   return (
@@ -521,7 +530,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
         {phase === "rec" ? (
           <Text variant="bodyStrong" color={colors.primary} style={{ textAlign: "center", paddingVertical: 14 }}>{t("speak.listening")}</Text>
         ) : phase === "done" ? (
-          <PressableScale onPress={() => onDone(ok, ok ? 100 : 40)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+          <PressableScale onPress={() => onDone(ok, ok ? 100 : 0)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
           </PressableScale>
         ) : (
@@ -537,7 +546,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
 function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: string; colors: Palette; pad: object; onDone: (ok: boolean, score: number) => void }) {
   const [typed, setTyped] = useState("");
   const [busy, setBusy] = useState(false);
-  const [score, setPuan] = useState<number | null>(null);
+  const [score, setScore] = useState<number | null>(null);
   const wordCount = typed.trim() ? typed.trim().split(/\s+/).length : 0;
 
   async function evaluate() {
@@ -552,11 +561,11 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
           answer: { text: typed.trim() }, locale: "tr",
         }),
       });
-      setPuan(d.result?.score?.overall ?? null);
+      setScore(d.result?.score?.overall ?? null);
     } catch {
       // Sağlayıcı yoksa ya da ağ yoksa sınav durmaz: kelime sayısı ölçütüyle
       // geçici puan verilir, sunucu yine kendi sınırlarını uygular.
-      setPuan(wordCount >= w.task.minWords ? 70 : 40);
+      setScore(wordCount >= w.task.minWords ? 70 : 40);
     }
     setBusy(false);
   }

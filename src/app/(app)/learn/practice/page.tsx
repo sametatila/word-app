@@ -46,14 +46,14 @@ export default async function PracticePage() {
     console.error("[practice] profil okunamadı", err);
   }
   // Artikel ve çoğul dile bağlı: hedef dil Almanca değilse o oyunlar listelenmez.
-  const almanca = courseOrDefault(course).targetLang === "de";
-  const liste = GAMES.filter((g) => almanca || (g.game !== "artikel" && g.game !== "plural"));
+  const german = courseOrDefault(course).targetLang === "de";
+  const list = GAMES.filter((g) => german || (g.game !== "artikel" && g.game !== "plural"));
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-5">
       <PageBack fallback="/learn" title="Pratik" subtitle="Kendi kelimelerinle tek oyun" />
       <ul className="card divide-y overflow-hidden" style={{ borderColor: "var(--border)" }}>
-        {liste.map(({ game, hint }) => (
+        {list.map(({ game, hint }) => (
           <li key={game}>
             <Link href={`/learn?game=${game}`} className="flex items-center gap-3 px-4 py-3.5">
               <span className="min-w-0 flex-1">

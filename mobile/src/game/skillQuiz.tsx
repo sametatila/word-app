@@ -351,10 +351,10 @@ export function SpeakingList({
   colors: Palette;
 }) {
   const [idx, setIdx] = useState(0);
-  const [phase, setDurum] = useState<"idle" | "rec" | "ok" | "no" | "err">("idle");
-  const [heard, setDuyulan] = useState<string>("");
-  const [tip, setIpucu] = useState<string | null>(null);
-  const [passedCount, setGecen] = useState(0);
+  const [phase, setPhase] = useState<"idle" | "rec" | "ok" | "no" | "err">("idle");
+  const [heard, setHeard] = useState<string>("");
+  const [tip, setTip] = useState<string | null>(null);
+  const [passedCount, setPassedCount] = useState(0);
   const task = tasks[idx];
   const isLast = idx + 1 >= tasks.length;
 
@@ -362,23 +362,23 @@ export function SpeakingList({
     if (phase === "rec") return;
     const izin = await ensureMicPermission();
     if (!izin) {
-      setIpucu(t("speak.mic_needed"));
-      setDurum("err");
+      setTip(t("speak.mic_needed"));
+      setPhase("err");
       return;
     }
-    setDurum("rec");
-    setIpucu(null);
-    setDuyulan("");
+    setPhase("rec");
+    setTip(null);
+    setHeard("");
     const heard = await listenOnce(currentTargetLocale(), 8000);
     if (!heard || !heard.length) {
-      setDurum("err");
-      setIpucu(t("speak.not_heard"));
+      setPhase("err");
+      setTip(t("speak.not_heard"));
       return;
     }
-    setDuyulan(heard[0]);
+    setHeard(heard[0]);
     if (spokenMatches(heard, [task.de])) {
-      setGecen((n) => n + 1);
-      setDurum("ok");
+      setPassedCount((n) => n + 1);
+      setPhase("ok");
       return;
     }
     // Hangi bilinen sapmaya düştüğünü bul: genel "yanlış" yerine adını söyle.
@@ -386,14 +386,14 @@ export function SpeakingList({
     const matched = (task.confusions ?? []).find((c) =>
       c.heard.some((x) => lowered.some((h) => h.includes(x.toLowerCase()))),
     );
-    setIpucu(matched?.fix ?? task.hint ?? null);
-    setDurum("no");
+    setTip(matched?.fix ?? task.hint ?? null);
+    setPhase("no");
   }
 
   function advance() {
-    setDurum("idle");
-    setIpucu(null);
-    setDuyulan("");
+    setPhase("idle");
+    setTip(null);
+    setHeard("");
     if (!isLast) setIdx(idx + 1);
     else onAllDone(passedCount);
   }

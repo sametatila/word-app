@@ -37,68 +37,67 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
   const tasks: SpeakingTask[] = "tasks" in exercise ? (exercise.tasks as SpeakingTask[]) : [];
   const { finish, state, reset } = useSkillFinish(exercise, tasks.length);
   const [idx, setIdx] = useState(0);
-  const [durum, setDurum] = useState<Durum>("idle");
-  const [puan, setPuan] = useState<PronounceScore | null>(null);
-  const [neden, setNeden] = useState<string | null>(null);
-  const [gecen, setGecen] = useState(0);
-  const [tur, setTur] = useState(0);
+  const [phase, setPhase] = useState<Durum>("idle");
+  const [score, setScore] = useState<PronounceScore | null>(null);
+  const [reason, setReason] = useState<string | null>(null);
+  const [passedCount, setPassedCount] = useState(0);
   const capture = useRef<Capture | null>(null);
-  const puanlar = useRef<number[]>([]);
+  const scores = useRef<number[]>([]);
 
   const task = tasks[idx];
-  const son = idx + 1 >= tasks.length;
+  const isLast = idx + 1 >= tasks.length;
 
-  async function basla() {
-    if (durum !== "idle" && durum !== "failed" && durum !== "done") return;
-    setPuan(null);
-    setNeden(null);
+  async function startRec() {
+    if (phase !== "idle" && phase !== "failed" && phase !== "done") return;
+    setScore(null);
+    setReason(null);
     const cap = await captureClip(MAX_MS);
     if (!cap) {
-      setNeden("Mikrofona ulaşılamadı. Tarayıcı izni kapalı olabilir.");
-      return setDurum("failed");
+      setReason("Mikrofona ulaşılamadı. Tarayıcı izni kapalı olabilir.");
+      return setPhase("failed");
     }
     capture.current = cap;
-    setDurum("rec");
-    setTimeout(() => void bitir(), MAX_MS + 50);
+    setPhase("rec");
+    setTimeout(() => void stopRec(), MAX_MS + 50);
   }
 
-  async function bitir() {
+  async function stopRec() {
     const cap = capture.current;
     if (!cap) return;
     capture.current = null;
-    setDurum("scoring");
+    setPhase("scoring");
     const blob = await cap.stop();
     const res = blob
       ? await askPronounce(blob, task.de, { exerciseId: exercise.id, confusions: task.confusions, language: "de" })
       : ({ ok: false, reason: "failed" } as const);
     if (res.ok) {
-      setPuan(res.score);
-      puanlar.current[idx] = res.score.overall;
-      setDurum("done");
+      setScore(res.score);
+      scores.current[idx] = res.score.overall;
+      setPhase("done");
     } else {
-      setNeden(
+      setReason(
         res.reason === "not_configured"
           ? "Telaffuz puanlaması bu kurulumda kapalı."
           : res.reason === "rate_limited" || res.reason === "quota"
             ? "Şimdilik sınıra ulaşıldı, biraz sonra dene."
             : "Kayıt gönderilemedi. Tekrar dener misin?",
       );
-      setDurum("failed");
+      setPhase("failed");
     }
   }
 
-  function ilerle() {
-    const p = puanlar.current[idx] ?? 0;
-    if (p >= PASS) setGecen((n) => n + 1);
-    setPuan(null);
-    setNeden(null);
-    setDurum("idle");
-    if (!son) setIdx(idx + 1);
-    else void finish(gecen + (p >= PASS ? 1 : 0), Math.round(ortalama()));
+  function advance() {
+    const p = scores.current[idx] ?? 0;
+    if (p >= PASS) setPassedCount((n) => n + 1);
+    setScore(null);
+    setReason(null);
+    setPhase("idle");
+    if (!isLast) setIdx(idx + 1);
+    else void finish(passedCount + (p >= PASS ? 1 : 0), Math.round(average()));
   }
 
-  const ortalama = () => {
-    const v = puanlar.current.filter((n) => typeof n === "number");
+  const average = () => {
+    const v = scores.current.filter((n) => typeof n === "number");
     return v.length ? v.reduce((a, b) => a + b, 0) / v.length : 0;
   };
 
@@ -135,33 +134,33 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
           </p>
         ) : null}
 
-        {durum === "idle" || durum === "failed" ? (
-          <button type="button" className="btn btn-primary mt-4 w-full" onClick={() => void basla()}>
-            {durum === "failed" ? "Tekrar dene" : "Kaydet ve oku"}
+        {phase === "idle" || phase === "failed" ? (
+          <button type="button" className="btn btn-primary mt-4 w-full" onClick={() => void startRec()}>
+            {phase === "failed" ? "Tekrar dene" : "Kaydet ve oku"}
           </button>
         ) : null}
-        {durum === "rec" ? (
-          <button type="button" className="btn btn-primary mt-4 w-full" onClick={() => void bitir()}>
+        {phase === "rec" ? (
+          <button type="button" className="btn btn-primary mt-4 w-full" onClick={() => void stopRec()}>
             Bitir
           </button>
         ) : null}
-        {durum === "scoring" ? <p className="muted mt-4 text-sm">Değerlendiriliyor…</p> : null}
-        {neden ? <p className="mt-3 text-sm" style={{ color: "var(--color-rose)" }}>{neden}</p> : null}
+        {phase === "scoring" ? <p className="muted mt-4 text-sm">Değerlendiriliyor…</p> : null}
+        {reason ? <p className="mt-3 text-sm" style={{ color: "var(--color-rose)" }}>{reason}</p> : null}
 
-        {durum === "done" && puan ? (
+        {phase === "done" && score ? (
           <div className="mt-4">
             <div className="flex items-center gap-2">
-              {puan.overall >= PASS ? (
+              {score.overall >= PASS ? (
                 <CheckIcon size={18} className="text-[color:var(--color-mint)]" />
               ) : (
                 <XIcon size={18} className="text-[color:var(--color-rose)]" />
               )}
-              <span className="font-bold">%{puan.overall}</span>
-              <span className="muted text-xs">duyulan: {puan.transcript || "—"}</span>
+              <span className="font-bold">%{score.overall}</span>
+              <span className="muted text-xs">duyulan: {score.transcript || "—"}</span>
             </div>
 
             {/* Puan düşükse önce KARIŞMA uyarısı: sayı değil, düzeltme öğretir. */}
-            {puan.overall < PASS && task.confusions?.length ? (
+            {score.overall < PASS && task.confusions?.length ? (
               <ul className="mt-3 space-y-1.5">
                 {task.confusions.map((c, i) => (
                   <li key={i} className="rounded-lg px-3 py-2 text-[13px] leading-relaxed" style={{ background: "var(--surface-2)" }}>
@@ -173,10 +172,10 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
 
             {/* Kelime kelime ısı: hangi sözcüğün tökezlediğini göstermek,
                 toplam puandan daha çok işe yarıyor. */}
-            {puan.words?.length ? (
+            {score.words?.length ? (
               <>
                 <p className="mt-3 flex flex-wrap gap-1.5">
-                  {puan.words.map((w, i) => (
+                  {score.words.map((w, i) => (
                     <span
                       key={i}
                       lang="de"
@@ -195,9 +194,9 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
                     </span>
                   ))}
                 </p>
-                {puan.words.filter((w) => w.hint).length ? (
+                {score.words.filter((w) => w.hint).length ? (
                   <ul className="mt-2 space-y-1.5">
-                    {puan.words
+                    {score.words
                       .filter((w) => w.hint)
                       .map((w, i) => (
                         <li key={i} className="rounded-lg px-3 py-2 text-[13px] leading-relaxed" style={{ background: "var(--surface-2)" }}>
@@ -210,11 +209,11 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
             ) : null}
 
             <div className="mt-4 flex gap-2">
-              <button type="button" className="btn btn-ghost flex-1" onClick={() => void basla()}>
+              <button type="button" className="btn btn-ghost flex-1" onClick={() => void startRec()}>
                 Tekrar oku
               </button>
-              <button type="button" className="btn btn-primary flex-1" onClick={ilerle}>
-                {son ? "Bitir" : "Sonraki"}
+              <button type="button" className="btn btn-primary flex-1" onClick={advance}>
+                {isLast ? "Bitir" : "Sonraki"}
               </button>
             </div>
           </div>
@@ -222,20 +221,18 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
       </section>
 
       <ResultCard
-        correct={gecen}
+        correct={passedCount}
         total={tasks.length}
         state={state}
         onRetry={() => {
           reset();
-          puanlar.current = [];
-          setGecen(0);
+          scores.current = [];
+          setPassedCount(0);
           setIdx(0);
-          setDurum("idle");
-          setPuan(null);
-          setTur((r) => r + 1);
+          setPhase("idle");
+          setScore(null);
         }}
       />
-      <span hidden>{tur}</span>
     </PlayerShell>
   );
 }
