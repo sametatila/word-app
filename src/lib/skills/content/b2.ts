@@ -1,7 +1,17 @@
 import type { SkillExercise } from "../types";
+import { b2U01 } from "./b2-u01";
 
-/** B2 — okuma, dinleme ve yazma egzersizleri. */
+/**
+ * B2 — okuma, dinleme ve yazma egzersizleri.
+ *
+ * Ünite dosyaları listenin BAŞINDA durur. buildTrack havuzları liste sırasıyla
+ * imleçle tüketiyor (unit etiketine bakmıyor), yani ilk 50 yuvayı ünite hizalı
+ * içerik kapar; aşağıdaki eski 32 egzersiz 50. yuvanın ötesine düşer. Silinmez
+ * ve kimlikleri değişmez — user_skills birincil anahtarı (user_id, exercise_id)
+ * ve canlı ilerleme onlara bağlı.
+ */
 export const b2: SkillExercise[] = [
+  ...b2U01,
   // ---------------------------------------------------------------- OKUMA
   {
     id: "b2-r1",
