@@ -87,6 +87,9 @@ npm test             # jest — App'i uçtan uca render eden duman testi
 npm run i18n:check   # çeviri katmanını ATLAYAN ham Türkçe metin taraması (CI kapısı)
 npm run i18n:scan    # aynı tarama, dosya dosya döküm
 npm run ios:check    # iOS paketinin elle tutulan yerleri (sürüm üçlüsü, ikon, .strings)
+npm run release:check # yayın öncesi denetim: sürüm üçlüsü + yayın anahtarı (yapı üretmez)
+npm run release:android # Play için AAB + yan dağıtım APK'sı, üretilen doğrulanır
+npm run check:16kb   # bir .aab/.apk içindeki 64-bit .so'ların 16 KB hizası
 ```
 
 Lint betiği `ESLINT_USE_FLAT_CONFIG=false` ile başlıyor ve bu **zorunlu**: mobil
@@ -108,12 +111,33 @@ Sırların hiçbiri repoda değil.
 
 ```sh
 bash scripts/gen-release-keystore.sh   # Android release anahtarı (bir kez, YEDEKLE)
+npm run release:android                # AAB + APK üretir ve ürettiğini doğrular
 bash scripts/ios-archive.sh            # iOS arşiv + App Store yüklemesi (yalnız macOS)
 ```
 
 Android anahtarı kaybolursa Play'de uygulama **güncellenemez**. iOS tarafında imza
 kimliği ve takım kimliği Xcode/Keychain'den gelir, `project.pbxproj`'da yalnız yer
 tutucu var.
+
+### Neden `./gradlew bundleRelease` tek başına yetmiyor
+
+`app/build.gradle` release'i, `keystore.properties` yoksa **debug anahtarıyla**
+imzalıyor — geliştirme ve CI derlemesi kırılmasın diye bilerek böyle. Ama o dosya
+mağazaya gidemez ve yanlışlıkla GitHub sürümüne çıkarsa yan dağıtımın anahtarı
+kalıcı olarak yanlış anahtar olur. `release:android` bu yüzden anahtar yoksa
+**derlemeyi hiç başlatmıyor**, sonrasında da ürettiğini denetliyor:
+
+| Adım | Ne bakıyor |
+|---|---|
+| Sürüm tutarlılığı | `version.ts`, `build.gradle` ve `project.pbxproj` aynı sürümü söylüyor mu |
+| Yayın anahtarı | `keystore.properties` var mı |
+| İmza | `apksigner` ile doğrulama; imzalayan "Android Debug" ise durur |
+| 16 KB sayfa boyutu | AAB ve APK içindeki her 64-bit `.so`nun LOAD hizası ≥ 16384, APK'da ayrıca `zipalign -P 16` |
+| Yüklenecekler | AAB, ProGuard eşlemi, native semboller, yan dağıtım APK'sı |
+
+16 KB denetimi tek başına da koşar (`npm run check:16kb <dosya>`) ve yapılandırmaya
+değil **üretilen dosyaya** bakar: `useLegacyPackaging = false` yalnız arşiv içi
+hizalamayı verir, kitaplığın kendi LOAD hizası ondan ayrı bir şeydir.
 
 ## Yerleşim
 
