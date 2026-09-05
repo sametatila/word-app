@@ -178,7 +178,7 @@ export const b1U45: SkillExercise[] = [
     gloss: [
       { de: "die Schlange", tr: "yılan", en: "snake" },
       { de: "giftig", tr: "zehirli", en: "poisonous" },
-      { de: "fressen", tr: "(hayvan) yemek", en: "to eat" },
+      { de: "fressen", tr: "yemek", en: "to eat", note: "hayvanlar için" },
       { de: "entdecken", tr: "keşfetmek", en: "to discover" },
     ],
     segments: [
@@ -310,7 +310,7 @@ export const b1U45: SkillExercise[] = [
       {
         kind: "build",
         tr: "Üşürseniz ıslak şeyleri çıkarın.",
-        answer: "Wenn Ihnen kalt wird, ziehen Sie nasse Sachen aus.",
+        answer: "Wenn Ihnen kalt wird, ziehen Sie nasse Sachen aus; künstliche Kleidung trocknet schneller.",
         hint: "„kalt werden“ kişiyi Dativ'e koyar.",
       },
       {
@@ -322,7 +322,7 @@ export const b1U45: SkillExercise[] = [
       {
         kind: "build",
         tr: "Yolu en çok iki kişi çapraz geçsin.",
-        answer: "Maximal zwei Personen sollen den Weg quer überqueren.",
+        answer: "Maximal zwei Personen sollen den Weg quer überqueren, und Beeren mit Gift lassen Sie stehen.",
         hint: "Sayı zarfı öne alınınca fiil ikinci sırada.",
       },
       {
@@ -370,7 +370,7 @@ export const b1U45: SkillExercise[] = [
       {
         kind: "build",
         tr: "Şimdi gündelik hayatta başa çıkabildiğimi biliyorum.",
-        answer: "Ich weiß jetzt, dass ich im Alltag zurechtkomme.",
+        answer: "Ich weiß jetzt endgültig, dass ich im Alltag zurechtkomme und mein Ziel erfüllen kann.",
         hint: "dass yan cümlesinde fiil sonda; ayrılabilen fiil bütün kalır.",
       },
       {

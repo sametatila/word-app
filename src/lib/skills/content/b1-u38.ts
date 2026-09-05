@@ -39,7 +39,7 @@ export const b1U38: SkillExercise[] = [
     minutes: 5,
     gloss: [
       { de: "der Ingenieur", tr: "mühendis", en: "engineer" },
-      { de: "die Architektin", tr: "mimar (kadın)", en: "architect" },
+      { de: "die Architektin", tr: "mimar", en: "architect", note: "kadın biçimi" },
       { de: "der Übersetzer", tr: "çevirmen", en: "translator" },
       { de: "der Sozialarbeiter", tr: "sosyal hizmet uzmanı", en: "social worker" },
       { de: "der Metzger", tr: "kasap", en: "butcher" },
@@ -307,8 +307,8 @@ export const b1U38: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Kız kardeşim mimar ve altı yıl okudu.",
-        answer: "Meine Schwester ist Architektin und hat sechs Jahre studiert.",
+        tr: "Kız kardeşim mimar ve altı yıl okudu; kocası ressam ve müzisyen.",
+        answer: "Meine Schwester ist Architektin und hat sechs Jahre studiert; ihr Mann ist Maler und Musiker.",
         hint: "Dişil biçim -in alır.",
       },
       {
@@ -394,7 +394,7 @@ export const b1U38: SkillExercise[] = [
           "ist es schwerer. Ein Zertifikat aus einer Fortbildung kann " +
           "dabei helfen.\n\n" +
           "Im März rede ich mit meiner Lehrerin. Sie kennt die Betriebe " +
-          "hier und hilft mir vorbereiten, wenn ich sie darum bitte.",
+          "hier und hilft mir vorbereiten, wenn ich sie darum bitte. Nach der Matura bekomme ich kein Diplom, sondern ein Zeugnis.",
         phrases: [
           { de: "Ich möchte früh arbeiten gehen.", tr: "Erken çalışmaya başlamak istiyorum.", en: "I want to start working early." },
           { de: "Sie hilft mir vorbereiten.", tr: "Hazırlanmama yardım ediyor.", en: "She helps me prepare." },

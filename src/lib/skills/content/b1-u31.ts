@@ -183,7 +183,7 @@ export const b1U31: SkillExercise[] = [
       { text: "Ich habe einen Anschluss. Fahre ich besser mit dem Zug weiter?" },
       { text: "Mit dem Zug sind Sie in einer Stunde in der Stadt." },
       { text: "Und mit dem Bus?" },
-      { text: "Länger, aber billiger. Der Steward am Notausgang kennt die Zeiten." },
+      { text: "Länger, aber billiger. Der Steward am Notausgang kennt die Zeiten. Er hilft jedem Passagier gern." },
       { text: "Danke. Dann frage ich ihn, sobald die Kabine offen ist." },
     ],
     questions: [
@@ -310,14 +310,14 @@ export const b1U31: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Oradan trenle devam ediyorum.",
-        answer: "Von dort fahre ich mit dem Zug weiter.",
+        tr: "Oradan trenle devam ediyorum, demiryolunun doğrudan bir hattı var.",
+        answer: "Von dort fahre ich mit dem Zug weiter, die Eisenbahn hat eine direkte Linie.",
         hint: "Yine mit + dem.",
       },
       {
         kind: "build",
-        tr: "Son bölümü yürüyerek gidiyorum.",
-        answer: "Das letzte Stück gehe ich zu Fuß.",
+        tr: "Kısa bir moladan sonra son bölümü yürüyerek gidiyorum.",
+        answer: "Nach einem kurzen Aufenthalt gehe ich das letzte Stück zu Fuß.",
         hint: "Tek istisna: zu Fuß, artikelsiz.",
       },
       {
@@ -391,7 +391,7 @@ export const b1U31: SkillExercise[] = [
           "ärgerlich, aber die Eisenbahn hat später einen Teil " +
           "zurückgezahlt — schriftlich, mit dem Beleg.\n\n" +
           "Die Rückfahrt lief besser. Ich bin am Abend losgefahren und " +
-          "morgens angekommen, ausgeruht und ohne Umsteigen.",
+          "morgens angekommen, ausgeruht und ohne Umsteigen. Das Flugzeug wäre schneller gelandet, aber der Zug war ruhiger.",
         phrases: [
           { de: "Ich bin nach … gefahren.", tr: "… şehrine gittim.", en: "I travelled to …" },
           { de: "… in die Schweiz / in die Türkei", tr: "… İsviçre'ye / Türkiye'ye", en: "… to Switzerland / to Turkey" },

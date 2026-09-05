@@ -300,8 +300,8 @@ export const b1U08: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Ya bugün karar veririz ya da hiç.",
-        answer: "Entweder entscheiden wir heute oder gar nicht.",
+        tr: "Ya bugün seçeriz ya da hiç.",
+        answer: "Entweder wählen wir heute aus oder gar nicht.",
         hint: "„entweder“ birinci öğe ise fiil hemen arkasından gelir.",
       },
       {

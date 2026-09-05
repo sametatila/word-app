@@ -35,7 +35,7 @@ export const b1U19: SkillExercise[] = [
     intro: "Bir ilacın kullanım bilgisi. Ne kadar, ne zaman, neye dikkat?",
     minutes: 5,
     gloss: [
-      { de: "einnehmen", tr: "(ilaç) almak", en: "to take" },
+      { de: "einnehmen", tr: "almak", en: "to take", note: "ilaç için" },
       { de: "die Dosis", tr: "doz", en: "dose" },
       { de: "die Salbe", tr: "merhem", en: "ointment" },
       { de: "warnen", tr: "uyarmak", en: "to warn" },
@@ -177,7 +177,7 @@ export const b1U19: SkillExercise[] = [
       { text: "Seit zwei Wochen tut mir der Rücken weh, vor allem morgens." },
       { text: "Sitzen Sie viel? Wie ist Ihre Haltung am Rechner?" },
       { text: "Vermutlich schlecht. Ich merke es erst, wenn es weh tut." },
-      { text: "Stellen Sie den Bildschirm höher. Das ist der erste Schritt." },
+      { text: "Stellen Sie den Bildschirm höher. Das ist der erste Schritt. Dazu eine kurze Übung am Morgen." },
       { text: "Soll ich mich mehr ausruhen oder mich mehr bewegen?" },
       { text: "Bewegen. Liegen hilft nur am Anfang, danach macht es alles schlechter." },
       { text: "Rennen mag ich nicht besonders." },
@@ -293,7 +293,7 @@ export const b1U19: SkillExercise[] = [
     intro: "Bir ilacın nasıl kullanılacağını yaz. Resmî emirde zamiri unutma.",
     minutes: 8,
     gloss: [
-      { de: "einnehmen", tr: "(ilaç) almak", en: "to take" },
+      { de: "einnehmen", tr: "almak", en: "to take", note: "ilaç için" },
       { de: "die Dosis", tr: "doz", en: "dose" },
       { de: "die Gefahr", tr: "tehlike", en: "danger" },
       { de: "warnen", tr: "uyarmak", en: "to warn" },
@@ -313,8 +313,8 @@ export const b1U19: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Üç gün sonra etki görmezseniz tekrar gelin.",
-        answer: "Wenn Sie nach drei Tagen keine Wirkung merken, kommen Sie wieder.",
+        tr: "Üç gün sonra etki görmezseniz tekrar gelin, yoksa tehlike büyür.",
+        answer: "Wenn Sie nach drei Tagen keine Wirkung merken, kommen Sie wieder, sonst wächst die Gefahr.",
         hint: "Yan cümle önde → ana cümle fiille başlar, zamir arkasında.",
       },
       {
@@ -378,7 +378,7 @@ export const b1U19: SkillExercise[] = [
         minWords: 70,
         sample:
           "Früher habe ich jeden Mittag in der Kantine gegessen, ohne " +
-          "nachzudenken. Nachmittags war ich dann immer müde.\n\n" +
+          "nachzudenken. Nachmittags war ich dann immer müde. Bewegung hatte ich fast keine.\n\n" +
           "Ich habe zwei Dinge geändert. Ich nehme eine kleinere Portion, " +
           "und ich esse abends früher, weil ich sonst schlecht einschlafen " +
           "kann. Auf Brot habe ich nicht verzichtet — das wäre mir zu " +

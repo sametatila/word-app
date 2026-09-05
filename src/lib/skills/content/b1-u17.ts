@@ -36,6 +36,7 @@ export const b1U17: SkillExercise[] = [
     intro: "Bir haberin güvenilir olup olmadığı nasıl anlaşılır? Üç ölçüt.",
     minutes: 5,
     gloss: [
+      { de: "der Ton", tr: "üslup", en: "tone" },
       { de: "stammen", tr: "gelmek / kaynaklanmak", en: "to originate" },
       { de: "die Presse", tr: "basın", en: "the press" },
       { de: "verdächtig", tr: "şüpheli", en: "suspicious" },
@@ -106,7 +107,7 @@ export const b1U17: SkillExercise[] = [
     gloss: [
       { de: "das Kapitel", tr: "bölüm", en: "chapter" },
       { de: "die Figur", tr: "karakter", en: "character" },
-      { de: "die Autorin", tr: "yazar (kadın)", en: "author" },
+      { de: "die Autorin", tr: "yazar", en: "author", note: "kadın biçimi" },
       { de: "der Leser", tr: "okur", en: "reader" },
       { de: "die Buchhandlung", tr: "kitapçı", en: "bookshop" },
     ],
@@ -305,9 +306,9 @@ export const b1U17: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Diziyi çok beğendim.",
-        answer: "Mir hat die Serie sehr gut gefallen.",
-        alternatives: ["Die Serie hat mir sehr gut gefallen."],
+        tr: "Diziyi, özellikle de kadın kahramanı çok beğendim.",
+        answer: "Mir hat die Serie sehr gut gefallen, vor allem die Heldin.",
+        alternatives: ["Die Serie hat mir sehr gut gefallen, vor allem die Heldin."],
         hint: "Beğenilen şey ÖZNE, kişi Dativ.",
       },
       {
@@ -318,8 +319,8 @@ export const b1U17: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bana bir şey eksik geldi.",
-        answer: "Mir hat etwas gefehlt.",
+        tr: "Bana bir şey eksik geldi, bu yüzden eleştirim kısa.",
+        answer: "Mir hat etwas gefehlt, meine Kritik ist deshalb kurz.",
         hint: "„fehlen“ de aynı kalıpta.",
       },
       {

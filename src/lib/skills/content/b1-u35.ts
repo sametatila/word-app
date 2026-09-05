@@ -180,7 +180,7 @@ export const b1U35: SkillExercise[] = [
       { text: "Ein Finger reicht. Die Frisur soll gleich bleiben." },
       { text: "Verstanden. Und der Bart?" },
       { text: "Den mache ich selber, danke." },
-      { text: "Gut. Waschen ist im Preis, das dauert fünf Minuten." },
+      { text: "Gut. Waschen ist im Preis, das dauert fünf Minuten. Der Friseur nebenan nimmt dafür mehr, bei uns im Salon nicht." },
       { text: "Gern. Ich habe sowieso Zeit, ich bin seit Mai Pensionist." },
     ],
     questions: [
@@ -241,7 +241,7 @@ export const b1U35: SkillExercise[] = [
       { text: "Er kommt oft betrunken nach Hause, dreimal die Woche." },
       { text: "Hast du mit ihm geredet?" },
       { text: "Ich habe es versucht. Er sagt, er kann jederzeit aufhören." },
-      { text: "Das sagen fast alle. Aufhalten kannst du ihn nicht." },
+      { text: "Das sagen fast alle. Aufhalten kannst du ihn nicht. Achtung, das gilt auch für jede andere Droge." },
       { text: "Was mache ich dann?" },
       { text: "Sag einmal ruhig, was du siehst. Und dann bleib da." },
     ],
@@ -314,8 +314,8 @@ export const b1U35: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bugün sigara içmiyorum ve kimseye anlatmıyorum.",
-        answer: "Heute bin ich Nichtraucher und erzähle niemandem davon.",
+        tr: "Bugün sigara içmiyorum ve kozmetik markette artık bağımlılık maddesi almıyorum.",
+        answer: "Heute bin ich Nichtraucher und kaufe kein Suchtmittel mehr in der Drogerie.",
         hint: "„als/Nichtraucher“ artikelsiz meslek/rol.",
       },
       {
@@ -363,8 +363,8 @@ export const b1U35: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bakıcı yıkanmada yardım ediyor.",
-        answer: "Der Betreuer hilft beim Waschen.",
+        tr: "Bakıcı yıkanmada yardım ediyor, hasta bakıcı yalnız hafta sonu geliyor.",
+        answer: "Der Betreuer hilft beim Waschen, ein Krankenpfleger kommt nur am Wochenende.",
         hint: "„bei dem Waschen“ → beim Waschen.",
       },
       {
@@ -390,7 +390,7 @@ export const b1U35: SkillExercise[] = [
           "Zwei kleine Änderungen brauchen wir noch: einen Halt an der " +
           "Badewanne und ein Licht im Flur, das nachts angeht.\n\n" +
           "Mit meinem Bruder müssen wir noch reden. Er wohnt weit weg und " +
-          "sagt bisher nichts — aber schweigen ist auch eine Antwort.",
+          "sagt bisher nichts — aber schweigen ist auch eine Antwort. Für Senioren in Pension ist der Morgen am schwersten.",
         phrases: [
           { de: "Schwierig sind das Aufstehen und das Waschen.", tr: "Zor olan kalkmak ve yıkanmak.", en: "Getting up and washing are difficult." },
           { de: "Er hilft beim Anziehen.", tr: "Giyinmede yardım ediyor.", en: "He helps with getting dressed." },

@@ -240,7 +240,7 @@ export const b1U14: SkillExercise[] = [
       { text: "Guten Tag, ich möchte mich über das Studium erkundigen." },
       { text: "Gern. Welcher Bereich interessiert Sie?" },
       { text: "Wissenschaft, aber ich weiß noch nicht, ob ich das schaffe." },
-      { text: "Das erste Semester ist für alle schwer. Danach wird es besser." },
+      { text: "Das erste Semester ist für alle schwer. Danach wird es besser. Das ist an jeder Hochschule so." },
       { text: "Wie viele Prüfungen gibt es pro Semester?" },
       { text: "Meistens drei, dazu ein Referat. Der Professor sagt es am Anfang." },
       { text: "Und wenn ich arbeite? Geht das nebenher?" },
@@ -308,8 +308,8 @@ export const b1U14: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Akşam kursu yoğun kurs kadar pahalı değil.",
-        answer: "Der Abendkurs ist nicht so teuer wie der Intensivkurs.",
+        tr: "Akşam kursundaki seçenek yoğun kurstaki kadar fazla değil, ama her şey anlaşılır.",
+        answer: "Die Auswahl im Abendkurs ist nicht so groß wie im Intensivkurs, aber alles ist verständlich.",
         hint: "Eşitlik kalıbı → so … wie.",
       },
       {

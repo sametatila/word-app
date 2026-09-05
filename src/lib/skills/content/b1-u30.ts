@@ -312,14 +312,14 @@ export const b1U30: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "İhracat yüzde altmışa çıktı.",
-        answer: "Der Export ist auf sechzig Prozent gestiegen.",
+        tr: "İstatistiğe göre ihracat yüzde altmışa çıktı.",
+        answer: "Der Export ist laut Statistik auf sechzig Prozent gestiegen.",
         hint: "Varılan nokta → auf.",
       },
       {
         kind: "build",
-        tr: "Üreticinin kârı geçen yıl düştü.",
-        answer: "Der Gewinn des Herstellers ist im letzten Jahr gefallen.",
+        tr: "Üreticinin kârı ithalat yüzünden geçen yıl düştü.",
+        answer: "Der Gewinn des Herstellers ist wegen des Imports im letzten Jahr gefallen.",
         hint: "Eril Genitiv: des Herstellers.",
       },
       {
@@ -361,7 +361,7 @@ export const b1U30: SkillExercise[] = [
       {
         kind: "build",
         tr: "Üreticinin adresini aldım.",
-        answer: "Ich habe die Adresse des Herstellers erhalten.",
+        answer: "Ich habe die Adresse des Herstellers erhalten und die Unterlagen selbst besorgt.",
         hint: "Eril Genitiv: des Herstellers.",
       },
       {

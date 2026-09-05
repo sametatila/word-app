@@ -315,8 +315,8 @@ export const b1U22: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bu tür haftalar artıyor.",
-        answer: "Diese Wochen nehmen zu.",
+        tr: "Bu tür haftalar artıyor, iklim için açık bir işaret.",
+        answer: "Diese Wochen nehmen zu, ein deutliches Zeichen für das Klima.",
         hint: "Ayrılabilen fiil: önek sonda.",
       },
       {

@@ -176,7 +176,7 @@ export const b1U20: SkillExercise[] = [
     segments: [
       { text: "Sie bekommen heute die Impfung. Haben Sie noch Fragen?" },
       { text: "Wie lange schützt sie denn?" },
-      { text: "Etwa fünf Jahre. Danach kommen Sie zur Kontrolle." },
+      { text: "Etwa fünf Jahre. Danach kommen Sie zur Kontrolle. Der Virus bleibt nur kurze Zeit gefährlich." },
       { text: "Und was kann danach auftreten?" },
       { text: "Die Haut wird an der Stelle rot, manchmal für zwei Tage." },
       { text: "Ist das gefährlich?" },
@@ -239,7 +239,7 @@ export const b1U20: SkillExercise[] = [
       { text: "Gute Besserung! Wir haben dir etwas zu lesen mitgebracht." },
       { text: "Danke, das ist lieb. Setzt euch." },
       { text: "Wie war die Nacht?" },
-      { text: "Kurz. Um sechs wurde schon Blut abgenommen." },
+      { text: "Kurz. Um sechs wurde schon Blut abgenommen. Auf der Station wird man früh geweckt." },
       { text: "Und heute? Musstest du wieder zur Untersuchung?" },
       { text: "Ja, um zehn. Danach hatte ich keine Kraft mehr." },
       { text: "Dann bleiben wir nicht lang. Wir wollten dich nur aufmuntern." },
@@ -307,14 +307,14 @@ export const b1U20: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Merhemi iki hafta boyunca sürmem gerekiyor.",
-        answer: "Ich muss die Salbe für zwei Wochen benutzen.",
+        tr: "Merhemi iki hafta boyunca sürüp sonra kontrole gelmem gerekiyor.",
+        answer: "Ich muss die Salbe für zwei Wochen benutzen und danach zur Kontrolle kommen.",
         hint: "Planlanan süre → für + Akkusativ.",
       },
       {
         kind: "build",
-        tr: "Dün acile gidemedim.",
-        answer: "Gestern konnte ich nicht in die Notaufnahme gehen.",
+        tr: "Dün acile gidemedim, acil çağrı hattı meşguldü.",
+        answer: "Gestern konnte ich nicht in die Notaufnahme gehen, der Notruf war besetzt.",
         hint: "Kipli fiil geçmişte Präteritum.",
       },
       {
@@ -384,7 +384,7 @@ export const b1U20: SkillExercise[] = [
           "bis acht arbeiten, und am Donnerstag durfte ich das Auto nicht " +
           "nehmen. Es tut mir leid, dass es so lange gedauert hat.\n\n" +
           "Am Samstag habe ich Zeit. Ich bringe dir etwas zu lesen mit und " +
-          "zumindest einen richtigen Kaffee. Sag Bescheid, wenn du lieber " +
+          "zumindest einen richtigen Kaffee. Vielleicht kann ich dich damit ein bisschen aufmuntern. Sag Bescheid, wenn du lieber " +
           "Ruhe haben möchtest — dann komme ich nur kurz.\n\n" +
           "Ich denke oft an dich. Die Kraft kommt zurück, auch wenn es gerade " +
           "langsam geht. Bis Samstag!\n\n" +

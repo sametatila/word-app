@@ -186,7 +186,7 @@ export const b1U01: SkillExercise[] = [
       { text: "Guten Tag, Frau Demir. Sie haben sich bei uns beworben. Haben Sie kurz Zeit?" },
       { text: "Ja, natürlich. Ich freue mich, dass Sie anrufen." },
       { text: "Sie arbeiten seit drei Jahren im Verkauf. Warum wollen Sie wechseln?" },
-      { text: "Ich möchte mich beruflich entwickeln. Bei Ihnen sehe ich eine gute Gelegenheit." },
+      { text: "Ich möchte mich beruflich entwickeln. Bei Ihnen sehe ich eine gute Gelegenheit. Meine Erfahrung im Verkauf hilft mir dabei, und die Motivation ist da." },
       { text: "Was ist Ihre größte Stärke?" },
       { text: "Ich habe viel Geduld mit Kunden, auch wenn es schwierig wird." },
       { text: "Und wann könnten Sie anfangen?" },
@@ -311,8 +311,8 @@ export const b1U01: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "En güçlü yönüm sabırlı olmam.",
-        answer: "Meine größte Stärke ist meine Geduld.",
+        tr: "En güçlü yönüm sabırlı olmam, çünkü müşterilerimizden ben sorumluyum.",
+        answer: "Meine größte Stärke ist meine Geduld, denn ich bin für unsere Kunden verantwortlich.",
         hint: "En üstün derece belirli artikelle değil, sıfat çekimiyle: „meine größte Stärke“.",
       },
       {
@@ -400,7 +400,7 @@ export const b1U01: SkillExercise[] = [
           "Meine größte Stärke ist meine Geduld: auch wenn ein Kunde laut wird, bleibe ich " +
           "ruhig und suche eine Lösung. Obwohl ich mit dem Computer noch nicht schnell bin, " +
           "lerne ich gerade und will mich verbessern.\n\n" +
-          "Ich bewerbe mich bei Ihnen, um mich beruflich zu entwickeln. Die Zusammenarbeit in " +
+          "Ich bewerbe mich bei Ihnen, um mich beruflich zu entwickeln. Meine Motivation ist deshalb sehr groß. Die Zusammenarbeit in " +
           "einem kleinen Team ist für mich eine schöne Herausforderung.\n\n" +
           "Über ein Gespräch würde ich mich sehr freuen.\n\n" +
           "Mit freundlichen Grüßen\nLeyla Kaya",

@@ -1761,12 +1761,12 @@ export const b1: SkillExercise[] = [
       { speaker: "Tarek", text: "Was muss ich sonst noch tun?" },
       {
         speaker: "Frau Petrova",
-        text: "Alle Belege aufbewahren — zehn Jahre. Fotografieren reicht, wenn Sie sie geordnet ablegen. Und legen Sie jeden Monat 25 Prozent vom Gewinn zurück, nicht vom Umsatz.",
+        text: "Alle Belege aufbewahren — zehn Jahre. Fotografieren reicht, wenn Sie sie geordnet ablegen. Und legen Sie jeden Monat 25 Prozent vom Gewinn zurück, nicht vom Umsatz. Diese Rücklage ist Ihre Sicherheit.",
       },
       { speaker: "Tarek", text: "Und wenn ich einen Fehler mache?" },
       {
         speaker: "Frau Petrova",
-        text: "Dann korrigieren wir ihn. Das Finanzamt ist nicht Ihr Feind — es wird nur ungemütlich, wenn man sich nicht meldet.",
+        text: "Dann korrigieren wir ihn. Das Finanzamt ist nicht Ihr Feind — es wird nur ungemütlich, wenn man sich nicht meldet. Ein Steuerberater prüft das monatlich mit Ihnen.",
       },
     ],
     questions: [
@@ -1861,17 +1861,17 @@ export const b1: SkillExercise[] = [
       },
       {
         speaker: "Weber",
-        text: "September … Da muss ich Sie enttäuschen. Wir sind bis Mitte Oktober ausgebucht.",
+        text: "September … Da muss ich Sie enttäuschen. Wir sind bis Mitte Oktober ausgebucht. Jeder Handwerker in der Stadt hat gerade zu viel.",
       },
       { speaker: "Tarek", text: "Das ist zu spät. Gibt es gar keine Möglichkeit?" },
       {
         speaker: "Weber",
-        text: "Moment. Wie groß ist der Auftrag? Wenn es zwei Tage sind, kann ich vielleicht etwas schieben. Bei einer Woche nicht.",
+        text: "Moment. Wie groß ist der Auftrag? Wenn es zwei Tage sind, kann ich vielleicht etwas schieben. Bei einer Woche nicht. Für einen Notfall halte ich immer einen Tag frei.",
       },
       { speaker: "Tarek", text: "Ich schätze zwei bis drei Tage. Küche und ein neuer Sicherungskasten." },
       {
         speaker: "Weber",
-        text: "Dann komme ich nächste Woche vorbei und schaue es mir an. Das kostet nichts. Danach bekommen Sie einen schriftlichen Kostenvoranschlag.",
+        text: "Dann komme ich nächste Woche vorbei und schaue es mir an. Das kostet nichts. Danach bekommen Sie einen schriftlichen Kostenvoranschlag. Die Anfahrt berechne ich Ihnen nicht.",
       },
       { speaker: "Tarek", text: "Und ist der Preis dann fest?" },
       {
@@ -1967,7 +1967,7 @@ export const b1: SkillExercise[] = [
     segments: [
       {
         speaker: "Moderator",
-        text: "Seit drei Monaten ist die Königstraße für Autos gesperrt — als Versuch. Nächste Woche entscheidet der Stadtrat, ob es dabei bleibt. Nina Färber hat sich umgehört.",
+        text: "Seit drei Monaten ist die Königstraße für Autos gesperrt — als Versuch. Nächste Woche entscheidet der Stadtrat, ob es dabei bleibt. Nina Färber hat sich umgehört. Hier ist ihr Beitrag.",
       },
       {
         speaker: "Reporterin",
@@ -2093,22 +2093,22 @@ export const b1: SkillExercise[] = [
       },
       {
         speaker: "Sander",
-        text: "Teils. Im Beruf und bei Terminen mit Institutionen: ja, sehr. Im Privaten ist es viel lockerer, als das Klischee sagt.",
+        text: "Teils. Im Beruf und bei Terminen mit Institutionen: ja, sehr. Im Privaten ist es viel lockerer, als das Klischee sagt. Die Pünktlichkeit hat also zwei Gesichter.",
       },
       { speaker: "Host", text: "Also darf ich zu spät zur Party kommen?" },
       {
         speaker: "Sander",
         text: "Zu einer Party sogar sehr gern — kommen Sie nicht als Erster, das gilt fast als unangenehm. Aber zum Abendessen bei jemandem zu Hause: pünktlich. Da steht das Essen auf dem Tisch.",
       },
-      { speaker: "Host", text: "Wo ist die Grenze?" },
+      { speaker: "Host", text: "Wo ist die Grenze? Gibt es einen Unterschied zwischen Beruf und Freundschaft?" },
       {
         speaker: "Sander",
-        text: "Die Faustregel ist: Wenn jemand etwas für Sie vorbereitet hat, kommen Sie pünktlich. Wenn nicht, sind fünfzehn Minuten kein Problem.",
+        text: "Die Faustregel ist: Wenn jemand etwas für Sie vorbereitet hat, kommen Sie pünktlich. Wenn nicht, sind fünfzehn Minuten kein Problem. Bei einer privaten Verabredung ist niemand unhöflich, wenn er kurz später kommt.",
       },
-      { speaker: "Host", text: "Und wenn ich mich verspäte?" },
+      { speaker: "Host", text: "Und wenn ich mich verspäte? Muss ich mich entschuldigen?" },
       {
         speaker: "Sander",
-        text: "Dann ist eine kurze Nachricht wichtiger als die Verspätung selbst. Das ist der eigentliche Punkt: Nicht die Zeit ist heilig, sondern die Information. Wer sich meldet, verletzt keine Regel.",
+        text: "Dann ist eine kurze Nachricht wichtiger als die Verspätung selbst. Das ist der eigentliche Punkt: Nicht die Zeit ist heilig, sondern die Information. Wer sich meldet, verletzt keine Regel. Eine Ausrede braucht dann niemand.",
       },
       {
         speaker: "Sander",
@@ -2210,10 +2210,10 @@ export const b1: SkillExercise[] = [
         speaker: "Lea",
         text: "Gestern in der Besprechung hast du gesagt, der Bericht sei „irgendwie unvollständig“. Ich habe drei Tage daran gearbeitet.",
       },
-      { speaker: "Jonas", text: "Oh. Ich wollte dich nicht kritisieren." },
+      { speaker: "Jonas", text: "Oh. Ich wollte dich nicht kritisieren. Das war keine Absicht und auch kein Vorwurf." },
       {
         speaker: "Lea",
-        text: "Das glaube ich dir. Aber vor sieben Leuten wirkt so ein Satz anders als unter uns.",
+        text: "Das glaube ich dir. Aber vor sieben Leuten wirkt so ein Satz anders als unter uns. Man kann sich angegriffen fühlen, auch wenn niemand das will.",
       },
       {
         speaker: "Jonas",
@@ -2222,9 +2222,9 @@ export const b1: SkillExercise[] = [
       { speaker: "Lea", text: "Genau. Ich habe zweimal gefragt und keine Antwort bekommen." },
       {
         speaker: "Jonas",
-        text: "Dann war mein Satz einfach falsch. Ich sage das morgen in der Runde — kurz, ohne Drama, aber ich sage es.",
+        text: "Dann war mein Satz einfach falsch. Ich sage das morgen in der Runde — kurz, ohne Drama, aber ich sage es. Es war ein Missverständnis, und das will ich zugeben.",
       },
-      { speaker: "Lea", text: "Danke. Und wenn dir etwas auffällt, sag es mir gern vorher." },
+      { speaker: "Lea", text: "Danke. Und wenn dir etwas auffällt, sag es mir gern vorher. Können wir das so abmachen?" },
       { speaker: "Jonas", text: "Machen wir so. Ich schreibe dir dann einfach direkt." },
     ],
     questions: [
@@ -2318,7 +2318,7 @@ export const b1: SkillExercise[] = [
     segments: [
       {
         speaker: "Reporterin",
-        text: "Herr Haddad, seit heute Morgen um sieben steht hier eine Schlange. Haben Sie damit gerechnet?",
+        text: "Herr Haddad, seit heute Morgen um sieben steht hier eine Schlange. Haben Sie damit gerechnet? So ein Andrang bei einer Eröffnung ist selten.",
       },
       {
         speaker: "Tarek",
@@ -2327,12 +2327,12 @@ export const b1: SkillExercise[] = [
       { speaker: "Reporterin", text: "Wie lange hat der Weg bis hierher gedauert?" },
       {
         speaker: "Tarek",
-        text: "Vierzehn Monate. Neun davon nur Papier: Gewerbe, Erlaubnis, Bank, Gesundheitsamt. Gekocht habe ich in dieser Zeit fast nie.",
+        text: "Vierzehn Monate. Neun davon nur Papier: Gewerbe, Erlaubnis, Bank, Gesundheitsamt. Gekocht habe ich in dieser Zeit fast nie. Die Vorbereitung war härter als die Arbeit selbst.",
       },
       { speaker: "Reporterin", text: "Gab es einen Moment, in dem Sie aufgeben wollten?" },
       {
         speaker: "Tarek",
-        text: "Ja, im Februar. Die Bank hat mir weniger gegeben, als ich wollte, und der Elektriker hatte keine Zeit. Ich habe drei Tage nicht geschlafen und gedacht: Das war's.",
+        text: "Ja, im Februar. Die Bank hat mir weniger gegeben, als ich wollte, und der Elektriker hatte keine Zeit. Ich habe drei Tage nicht geschlafen und gedacht: Das war's. Die Zweifel waren groß.",
       },
       { speaker: "Reporterin", text: "Was hat geholfen?" },
       {
@@ -2342,7 +2342,7 @@ export const b1: SkillExercise[] = [
       { speaker: "Reporterin", text: "Und was wünschen Sie sich für das erste Jahr?" },
       {
         speaker: "Tarek",
-        text: "Dass ich in einem Jahr noch hier stehe. Und ehrlich gesagt: einen freien Sonntag.",
+        text: "Dass ich in einem Jahr noch hier stehe. Und ehrlich gesagt: einen freien Sonntag. Ich bin dankbar; so etwas kann sich lohnen.",
       },
     ],
     questions: [
@@ -2463,7 +2463,7 @@ export const b1: SkillExercise[] = [
           { de: "Wir würden natürlich alles wieder aufräumen.", tr: "Elbette her şeyi yeniden toplarız.", en: "We would of course tidy everything up again." },
           { de: "Über eine kurze Antwort würde ich mich freuen.", tr: "Kısa bir yanıt alırsam sevinirim.", en: "I would be glad to receive a short reply." },
         ],
-        sample: "Sehr geehrte Frau Winter,\n\nich wohne seit drei Jahren in der Gartenstraße 5 und schreibe Ihnen im Namen mehrerer Nachbarn. Wir möchten am Samstag, dem 14. Juni, ein kleines Nachbarschaftsfest organisieren, damit sich die Bewohner besser kennenlernen. Deshalb möchte ich Sie fragen, ob wir dafür den Innenhof benutzen dürfen.\n\nWir würden Tische und Bänke selbst aufbauen und den Hof am Abend natürlich wieder aufräumen. Es wäre schön, wenn Sie uns außerdem sagen könnten, ob es Regeln zur Lautstärke gibt.\n\nÜber eine kurze Antwort bis Ende Mai würde ich mich sehr freuen.\n\nMit freundlichen Grüßen\nDeniz Aksoy",
+        sample: "Sehr geehrte Frau Winter,\n\nich wohne seit drei Jahren in der Gartenstraße 5 und schreibe Ihnen im Namen mehrerer Nachbarn. Wir möchten am Samstag, dem 14. Juni, ein kleines Nachbarschaftsfest organisieren, damit sich die Bewohner besser kennenlernen. Deshalb möchte ich Sie fragen, ob wir dafür den Innenhof benutzen dürfen.\n\nWir würden Tische und Bänke selbst aufbauen und den Hof am Abend natürlich wieder aufräumen. Es wäre schön, wenn Sie uns außerdem sagen könnten, ob es Regeln zur Lautstärke gibt.\n\nDie Hausverwaltung bitte ich um eine kurze Bestätigung. Über eine Antwort bis Ende Mai würde ich mich sehr freuen.\n\nMit freundlichen Grüßen\nDeniz Aksoy",
       },
       {
         kind: "rewrite",
@@ -2558,8 +2558,8 @@ export const b1: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Kurs, tatil nedeniyle bir hafta ertelendi.",
-        answer: "Der Kurs wurde wegen der Ferien um eine Woche verschoben.",
+        tr: "Kurs, tatil nedeniyle iptal edilmedi, bir hafta ertelendi.",
+        answer: "Der Kurs wurde wegen der Ferien nicht abgesagt, sondern um eine Woche verschoben.",
         alternatives: ["Wegen der Ferien wurde der Kurs um eine Woche verschoben."],
         hint: "Passiv Präteritum: „wurde … verschoben“. „wegen“ edatı Genitiv ister (wegen der Ferien).",
       },
@@ -2629,7 +2629,7 @@ export const b1: SkillExercise[] = [
       {
         kind: "build",
         tr: "Otobüsler daha ucuz olsaydı, daha çok insan onları kullanırdı.",
-        answer: "Wenn die Busse billiger wären, würden mehr Menschen sie benutzen.",
+        answer: "Wenn öffentliche Verkehrsmittel billiger wären, würden mehr Menschen sie benutzen.",
         alternatives: ["Mehr Menschen würden die Busse benutzen, wenn sie billiger wären."],
         hint: "Gerçek dışı koşul: iki tarafta da Konjunktiv II (wären / würden … benutzen).",
       },
@@ -2690,14 +2690,14 @@ export const b1: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Size bunu iki kez telefonla bildirdim.",
-        answer: "Ich habe Ihnen das zweimal telefonisch mitgeteilt.",
+        tr: "Size bunu birden çok kez telefonla bildirdim; kanıtı ekliyorum.",
+        answer: "Ich habe Ihnen das mehrfach telefonisch mitgeteilt; einen Nachweis lege ich bei.",
         hint: "mitteilen Dativ ister: Ihnen. Perfekt: habe … mitgeteilt.",
       },
       {
         kind: "build",
-        tr: "Size 15 Ocak'a kadar süre veriyorum.",
-        answer: "Ich setze Ihnen eine Frist bis zum 15. Januar.",
+        tr: "Size 15 Ocak'a kadar süre veriyorum ve kira indirimi hakkımı saklı tutuyorum.",
+        answer: "Ich setze Ihnen eine Frist bis zum 15. Januar und behalte mir eine Mietminderung vor.",
         hint: "„eine Frist setzen“ kalıp; bis zum + tarih.",
       },
       {
@@ -2759,8 +2759,8 @@ export const b1: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bir yandan bu dikkat dağıtıyor, öte yandan öğrenmeye de yardım ediyor.",
-        answer: "Einerseits lenkt das ab, andererseits hilft es auch beim Lernen.",
+        tr: "Bir yandan dezavantajı dikkat dağıtması, öte yandan öğrenmeye de yardım ediyor.",
+        answer: "Einerseits ist der Nachteil die Ablenkung, andererseits hilft es auch beim Lernen.",
         hint: "İki bölümün de fiili ikinci sırada olmalı.",
       },
       {
@@ -2828,8 +2828,8 @@ export const b1: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Kimse bir şey söylemedi ama bir şeyi fark ettim.",
-        answer: "Niemand hat etwas gesagt, aber mir ist etwas aufgefallen.",
+        tr: "Kimse bir şey söylemedi ama bu deneyimi fark ettim.",
+        answer: "Niemand hat etwas gesagt, aber diese Erfahrung ist mir aufgefallen.",
         hint: "„auffallen“ Dativ ile: mir ist … aufgefallen.",
       },
       {
@@ -2897,14 +2897,14 @@ export const b1: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bütün gün ücretsiz çay ve tatlı ikram edilecek.",
-        answer: "Den ganzen Tag gibt es kostenlos Tee und Süßigkeiten.",
+        tr: "Bu vesileyle bütün gün ücretsiz çay ve tatlı ikram edilecek.",
+        answer: "Aus diesem Anlass gibt es den ganzen Tag kostenlos Tee und Süßigkeiten.",
         hint: "„es gibt“ + Akkusativ; zaman ifadesi başa alınabilir.",
       },
       {
         kind: "build",
-        tr: "Gelemezseniz de bir başka gün uğrayın.",
-        answer: "Wenn Sie nicht kommen können, kommen Sie gern an einem anderen Tag vorbei.",
+        tr: "Gelemezseniz de bir başka gün uğrayın; bütün mahalle davetli.",
+        answer: "Wenn Sie nicht kommen können, kommen Sie gern an einem anderen Tag vorbei; die ganze Nachbarschaft ist eingeladen.",
         hint: "Yan cümleyle başlayınca ana cümle fiille başlar.",
       },
       {

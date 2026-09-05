@@ -104,7 +104,7 @@ export const b1U37: SkillExercise[] = [
     intro: "Eve hırsız girmiş. İlk saatlerde ne yapılır?",
     minutes: 5,
     gloss: [
-      { de: "der Einbruch", tr: "hırsızlık (eve girme)", en: "burglary" },
+      { de: "der Einbruch", tr: "hırsızlık", en: "burglary", note: "eve zorla girerek" },
       { de: "einbrechen", tr: "eve girmek", en: "to break in" },
       { de: "stehlen", tr: "çalmak", en: "to steal" },
       { de: "der Täter", tr: "fail", en: "perpetrator" },
@@ -316,8 +316,8 @@ export const b1U37: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Şimdilik hiçbir şeye dokunmadım.",
-        answer: "Vorläufig habe ich nichts angefasst.",
+        tr: "Şimdilik hiçbir şeye dokunmadım, hırsız şiddet kullanmamış.",
+        answer: "Vorläufig habe ich nichts angefasst, der Dieb hat keine Gewalt gebraucht.",
         hint: "Zaman zarfı öne alınınca fiil ikinci sırada.",
       },
       {
@@ -390,7 +390,7 @@ export const b1U37: SkillExercise[] = [
           "früher gemacht, das gebe ich zu.\n\n" +
           "Mittlerweile gilt eine einfache Regel: Wer dort isst, räumt " +
           "sofort auf. Nicht am Abend, sofort. Seitdem gibt es fast keinen " +
-          "Streit mehr — und wir putzen alle nur halb so oft wie vorher.",
+          "Streit mehr — und wir putzen alle nur halb so oft wie vorher. Der Boden im Flur ist oft glatt, deshalb wischen wir dort zuletzt.",
         phrases: [
           { de: "und zwar gründlich", tr: "hem de iyice", en: "and thoroughly at that" },
           { de: "Auch ich habe das gemacht.", tr: "Ben de yapmıştım.", en: "I did that too." },

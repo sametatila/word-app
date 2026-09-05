@@ -390,7 +390,7 @@ export const b1U32: SkillExercise[] = [
           "wollten wir bleiben.\n\n" +
           "Was fehlen wird, ist die Auswahl am Abend. Hier schließt der " +
           "letzte Laden um acht. Wir haben aber gemerkt: nach zwei Wochen " +
-          "in der Region ist das ganz normal.\n\n" +
+          "in der Region ist das ganz normal. Das Quartier ist ruhig und die ganze Zone gehört zur Region.\n\n" +
           "Der neue Wohnsitz steht unten. Kommt uns besuchen, am besten " +
           "im Sommer, wenn man auf dem Hügel sitzen kann.",
         phrases: [

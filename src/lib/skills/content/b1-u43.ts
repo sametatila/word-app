@@ -240,14 +240,14 @@ export const b1U43: SkillExercise[] = [
       { de: "traditionell", tr: "geleneksel", en: "traditional" },
     ],
     segments: [
-      { text: "Die Bilder von der Katastrophe sind schwer zu sehen." },
+      { text: "Die Bilder von der Katastrophe sind schwer zu sehen. So ein Unglück trifft immer die Ärmsten." },
       { text: "Ja. Wir sammeln ab morgen im Gemeindehaus." },
       { text: "Was wird gebraucht? Kleidung?" },
       { text: "Nein, vor allem Geld. Kleidung liegt schon in den Hallen." },
       { text: "Verstehe. Dann sage ich es den Nachbarn weiter." },
       { text: "Sehr gut. Und sag dazu, wofür genau das Geld ist." },
       { text: "Mache ich. Sonst geben die Leute nichts, ohne zu fragen." },
-      { text: "Genau. Traditionell hilft hier jeder — aber jeder will wissen, wem." },
+      { text: "Genau. Traditionell hilft hier jeder — aber jeder will wissen, wem. Erst danach kommt der Friede zurück." },
     ],
     questions: [
       {
@@ -317,8 +317,8 @@ export const b1U43: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Balkondan bütün orkestra görünüyor.",
-        answer: "Von der Galerie sieht man das ganze Orchester.",
+        tr: "Balkondan bütün orkestra ve bale görünüyor.",
+        answer: "Von der Galerie sieht man das ganze Orchester und das Ballett.",
         hint: "Yer öne alınınca fiil ikinci sırada.",
       },
       {
@@ -388,7 +388,7 @@ export const b1U43: SkillExercise[] = [
           "organisieren — sonst wäre es zu viel für uns.\n\n" +
           "Nicht alles hat geklappt. Zwei Jahre lang haben wir vergeblich " +
           "um einen Raum bei der Stadt gefragt. Irgendwann haben wir " +
-          "aufgehört, ohne böse zu werden, und mieten jetzt privat.\n\n" +
+          "aufgehört, ohne böse zu werden, und mieten jetzt privat. Voriges Jahr wollten einige streiken; wir mussten die Meinungen unterscheiden.\n\n" +
           "Wer mitmachen will, soll einfach einmal kommen. Man muss nichts " +
           "können und nichts versprechen. Zwei Stunden im Monat sind mehr " +
           "wert als ein großer Plan, den am Ende niemand macht.",

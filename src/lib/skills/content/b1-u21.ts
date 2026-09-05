@@ -390,7 +390,7 @@ export const b1U21: SkillExercise[] = [
           "war die Kälte am Anfang schwer, das gebe ich zu. Nach zwei Wochen " +
           "ging es.\n\n" +
           "Beim Einkaufen achte ich jetzt auf die Herkunft. Statt lange " +
-          "Strecken zu bezahlen, nehme ich regionale Ware vom Markt. " +
+          "Strecken zu bezahlen, nehme ich regionale Ware vom Markt. So kann ich lange Wege vermeiden. " +
           "Der Bauernhof ist dreißig Kilometer weg, das reicht mir.\n\n" +
           "Ich empfehle, mit einer Sache anzufangen. Wer alles " +
           "gleichzeitig ändern will, hört nach einem Monat wieder auf. " +

@@ -172,14 +172,14 @@ export const b1U34: SkillExercise[] = [
     gloss: [
       { de: "die Schwangerschaft", tr: "gebelik", en: "pregnancy" },
       { de: "die Geburt", tr: "doğum", en: "birth" },
-      { de: "der Nachwuchs", tr: "yeni gelen (bebek)", en: "offspring" },
+      { de: "der Nachwuchs", tr: "yeni gelen", en: "offspring", note: "aileye katılan bebek" },
       { de: "die Erziehung", tr: "çocuk yetiştirme", en: "upbringing" },
     ],
     segments: [
       { text: "Wie geht es dir in der Schwangerschaft?" },
       { text: "Besser als im dritten Monat. Ich schlafe wieder." },
       { text: "Und wann ist die Geburt?" },
-      { text: "Mitten im März. Wir sind fast fertig mit dem Zimmer." },
+      { text: "Mitten im März. Wir sind fast fertig mit dem Zimmer. Der Nachwuchs bekommt das kleine Zimmer." },
       { text: "Arbeitet ihr beide weiter?" },
       { text: "Halb. Ich bleibe ein Jahr, mein Mann sechs Monate." },
       { text: "Das ist gut. Erziehung ist nicht die Arbeit von einer Person." },
@@ -232,10 +232,10 @@ export const b1U34: SkillExercise[] = [
     intro: "Bir aile buluşması planlanıyor. Kim geliyor?",
     minutes: 4,
     gloss: [
-      { de: "der Neffe", tr: "yeğen (erkek)", en: "nephew" },
-      { de: "die Nichte", tr: "yeğen (kız)", en: "niece" },
+      { de: "der Neffe", tr: "yeğen", en: "nephew", note: "erkek biçimi" },
+      { de: "die Nichte", tr: "yeğen", en: "niece", note: "kız biçimi" },
       { de: "der Enkel", tr: "torun", en: "grandson" },
-      { de: "die Cousine", tr: "kuzen (kız)", en: "cousin" },
+      { de: "die Cousine", tr: "kuzen", en: "cousin", note: "kız biçimi" },
     ],
     segments: [
       { text: "Wer kommt am Sonntag alles?" },
@@ -315,8 +315,8 @@ export const b1U34: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Kışın nezle zaten normal.",
-        answer: "Im Winter ist ein Schnupfen sowieso normal.",
+        tr: "Kışın nezle zaten normal, kesin kurallar ve vitaminler pek işe yaramıyor.",
+        answer: "Im Winter ist ein Schnupfen sowieso normal, feste Regeln und Vitamine helfen wenig.",
         hint: "Zaman öne alınınca fiil ikinci sırada.",
       },
       {
@@ -349,10 +349,10 @@ export const b1U34: SkillExercise[] = [
     intro: "Aileni anlat. Bazı eril isimler yalın hâl dışında ek alır.",
     minutes: 12,
     gloss: [
-      { de: "die Verwandte", tr: "akraba (kadın)", en: "relative" },
+      { de: "die Verwandte", tr: "akraba", en: "relative", note: "kadın biçimi" },
       { de: "das Ehepaar", tr: "evli çift", en: "married couple" },
       { de: "die Scheidung", tr: "boşanma", en: "divorce" },
-      { de: "die Enkelin", tr: "torun (kız)", en: "granddaughter" },
+      { de: "die Enkelin", tr: "torun", en: "granddaughter", note: "kız biçimi" },
     ],
     tasks: [
       {
@@ -383,7 +383,7 @@ export const b1U34: SkillExercise[] = [
           "inzwischen sechs Kinder. Die meisten wohnen in der gleichen Region, " +
           "nur meine Cousine ist weiter weg.\n\n" +
           "Am nächsten Sonntag sehen wir uns alle. Meinen Neffen bringe ich " +
-          "mit, meine Nichte ist leider krank. Meinen Onkel habe ich auch " +
+          "mit, meine Nichte ist leider krank. Das Ehepaar aus dem Nachbarhaus kommt mit der Enkelin, und eine Verwandte aus Berlin auch. Meinen Onkel habe ich auch " +
           "eingeladen, obwohl er seit der Scheidung fast nie kommt.\n\n" +
           "Zwischen den Generationen gibt es einen deutlichen Unterschied. " +
           "Meine Großmutter hat über schwere Dinge nie geredet. Wir fragen " +

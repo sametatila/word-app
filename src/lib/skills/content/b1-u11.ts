@@ -178,7 +178,7 @@ export const b1U11: SkillExercise[] = [
       { text: "Den Ausweis, den Vertrag und die letzten drei Abrechnungen." },
       { text: "Gut. Ein Dokument wird noch benötigt: die Anmeldung der Wohnung." },
       { text: "Die habe ich zu Hause. Kann ich sie später schicken?" },
-      { text: "Ja, per Post oder online. Erst danach wird der Antrag geprüft." },
+      { text: "Ja, per Post oder online. Erst danach wird der Antrag geprüft. Die Behörde meldet sich dann bei Ihnen." },
       { text: "Und wie lang ist die Dauer etwa?" },
       { text: "Etwa acht Wochen. Der Bescheid wird Ihnen dann zugeschickt." },
     ],
@@ -300,9 +300,9 @@ export const b1U11: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Evrak mart ayında kontrol edildi.",
-        answer: "Die Unterlagen wurden im März geprüft.",
-        hint: "Geçmişte olay: wurden + Partizip II.",
+        tr: "Vize mart ayında bütün evrakla talep edildi.",
+        answer: "Das Visum wurde im März mit allen Unterlagen beantragt.",
+        hint: "Geçmişte olay: wurde + Partizip II.",
       },
       {
         kind: "build",
@@ -312,8 +312,8 @@ export const b1U11: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Mektubu açtığımda her şey çoktan onaylanmıştı.",
-        answer: "Als ich den Brief öffnete, war schon alles genehmigt.",
+        tr: "Mektubu açtığımda onay çoktan imzalanmıştı.",
+        answer: "Als ich den Brief öffnete, war die Zustimmung schon unterschrieben.",
         hint: "Burada DURUM anlatılıyor, olay değil: war + Partizip II.",
       },
       {

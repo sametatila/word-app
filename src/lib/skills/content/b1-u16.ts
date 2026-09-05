@@ -106,6 +106,7 @@ export const b1U16: SkillExercise[] = [
       { de: "zustimmen", tr: "katılmak", en: "to agree" },
       { de: "widersprechen", tr: "karşı çıkmak", en: "to contradict" },
       { de: "behaupten", tr: "iddia etmek", en: "to claim" },
+      { de: "der Ton", tr: "üslup", en: "tone" },
       { de: "offensichtlich", tr: "besbelli", en: "obviously" },
     ],
     text:
@@ -388,7 +389,7 @@ export const b1U16: SkillExercise[] = [
           "Meiner Ansicht nach hängt alles davon ab, worum es geht. Zwei Stunden " +
           "Arbeit sind etwas anderes als zwei Stunden Werbung. Bewusst zu " +
           "entscheiden bringt daher mehr als eine feste Zahl.\n\n" +
-          "Wer sagt, das sei zu einfach, hat teilweise recht. Ich möchte dem " +
+          "Wer meine Ansicht kritisiert und sagt, das sei zu einfach, hat teilweise recht. Ich möchte dem " +
           "auch nicht widersprechen. Aber eine Regel, an die sich niemand hält, " +
           "hilft am Ende niemandem.\n\n" +
           "Das ist meine Überzeugung, und ich bin gespannt auf andere Ansichten.",

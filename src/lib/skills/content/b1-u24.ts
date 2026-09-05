@@ -104,7 +104,7 @@ export const b1U24: SkillExercise[] = [
       { de: "die Distanz", tr: "mesafe", en: "distance" },
       { de: "vertraut", tr: "içten / tanıdık", en: "familiar" },
       { de: "schätzen", tr: "değer vermek", en: "to appreciate" },
-      { de: "verbringen", tr: "(zaman) geçirmek", en: "to spend" },
+      { de: "verbringen", tr: "geçirmek", en: "to spend", note: "zaman için" },
     ],
     text:
       "Ich kenne meine beste Freundin seit zwanzig Jahren. Seit sechs davon " +
@@ -302,8 +302,8 @@ export const b1U24: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Bunu uzun süre düşünmedim.",
-        answer: "Ich habe mir das lange nicht überlegt.",
+        tr: "Bunu uzun süre kafamda tartmadım, başlangıçta üzerine düşünmek istemedim.",
+        answer: "Ich habe mir das lange nicht überlegt, anfangs wollte ich nicht darüber nachdenken.",
         hint: "Nesne var (das) → mir.",
       },
       {
@@ -314,8 +314,8 @@ export const b1U24: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Orada kimseyi tanımıyordum.",
-        answer: "Ich kannte dort niemanden.",
+        tr: "Orada kimseyi tanımıyordum ve fırsatı kaçırdım, bugün hâlâ kızgınım.",
+        answer: "Ich kannte dort niemanden und habe die Chance versäumt, was bis heute ärgerlich ist.",
         hint: "Kişi → kennen.",
       },
       {
@@ -387,7 +387,7 @@ export const b1U24: SkillExercise[] = [
           "Zweimal haben wir eine lange Reise versprochen und beide Male " +
           "versäumt. Zwei Tage, die wir wirklich zusammen verbringen, sind " +
           "besser als zwei Wochen, die nie stattfinden.\n\n" +
-          "Ich schätze diese Freundschaft sehr. Sie kennt mich besser als " +
+          "Ich schätze diese Freundschaft sehr. Man muss sie pflegen wie eine Ehe. Sie kennt mich besser als " +
           "manche, die zwei Straßen weiter wohnen, und das ist kein Zufall.",
         phrases: [
           { de: "Ich kenne … seit …", tr: "… -den beri tanıyorum.", en: "I have known … for …" },

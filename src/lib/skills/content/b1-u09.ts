@@ -306,14 +306,14 @@ export const b1U09: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Altında oturduğumuz ağaç çok gölge veriyor.",
-        answer: "Der Baum, unter dem wir sitzen, gibt viel Schatten.",
-        hint: "„unter“ + Dativ, zamirin önünde.",
+        tr: "Masanın yapıldığı malzeme uzun dayanıyor.",
+        answer: "Das Material, aus dem der Tisch gemacht ist, hält lange.",
+        hint: "„aus“ + Dativ, zamirin önünde.",
       },
       {
         kind: "build",
-        tr: "Kendimi iyi hissettiğim bir semt arıyorum.",
-        answer: "Ich suche eine Gegend, in der ich mich wohlfühle.",
+        tr: "Bol gölgesi olan, kendimi iyi hissettiğim bir çevre arıyorum.",
+        answer: "Ich suche eine Umgebung, in der es viel Schatten gibt und ich mich wohlfühle.",
         hint: "Dişil tekil Dativ: in der.",
       },
       {
@@ -382,7 +382,7 @@ export const b1U09: SkillExercise[] = [
           "Einmal hatte ich Schulden, über die ich mit niemandem reden wollte. " +
           "Sie hat mich nicht beleidigt und nicht gefragt, wer die Schuld hat. " +
           "Sie hat mich beruhigt und mir einen Rat gegeben, den ich bis heute nicht vergessen habe.\n\n" +
-          "Natürlich hat sie mich auch schon enttäuscht. Das ist menschlich. " +
+          "Natürlich hat sie mich auch schon enttäuscht. Das ist menschlich. Sie hat sich damals falsch verhalten und es später zugegeben. " +
           "Aber sie hat es gesagt, und danach konnte ich ihr leicht verzeihen.\n\n" +
           "Menschen, denen man alles sagen kann, gibt es nicht viele. Ich akzeptiere, dass " +
           "sie anders ist als ich, und genau deshalb funktioniert es.",

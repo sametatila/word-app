@@ -307,21 +307,21 @@ export const b1U02: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Daha esnek çalışabilir miyim diye soruyorum.",
-        answer: "Ich frage, ob ich flexibler arbeiten kann.",
+        tr: "Dilekçemde daha esnek çalışabilir miyim diye soruyorum.",
+        answer: "Ich frage in meinem Antrag, ob ich flexibler arbeiten kann.",
         hint: "Dolaylı soru: bağlaçtan sonra çekimli fiil sona gider.",
       },
       {
         kind: "build",
-        tr: "Erken başlarsam akşam çocuğumu alabilirim.",
-        answer: "Wenn ich früh anfange, kann ich mein Kind am Abend abholen.",
-        alternatives: ["Ich kann mein Kind am Abend abholen, wenn ich früh anfange."],
+        tr: "Yeni kural geçerli olursa akşam çocuğumu alabilirim.",
+        answer: "Wenn die neue Regel gilt, kann ich mein Kind am Abend abholen.",
+        alternatives: ["Ich kann mein Kind am Abend abholen, wenn die neue Regel gilt."],
         hint: "Koşul yan cümlesi başta; ana cümle fiille başlar.",
       },
       {
         kind: "build",
-        tr: "Fazla mesaiyi yazıp sonra izin almak isterdim.",
-        answer: "Ich würde die Überstunden aufschreiben und später frei nehmen.",
+        tr: "Fazla mesaiyi yazıp sonra dinlenmek için izin almak isterdim.",
+        answer: "Ich würde die Überstunden aufschreiben und später zur Erholung frei nehmen.",
         hint: "Kibar istek için Konjunktiv II; iki mastar bağlaçla birleşiyor.",
       },
       {

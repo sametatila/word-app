@@ -225,7 +225,7 @@ export const b1U07: SkillExercise[] = [
     gloss: [
       { de: "flüssig", tr: "akıcı", en: "fluent" },
       { de: "völlig", tr: "tamamen", en: "completely" },
-      { de: "jemals", tr: "hiç (bir zaman)", en: "ever" },
+      { de: "jemals", tr: "hiçbir zaman", en: "ever", note: "olumsuz ve soru cümlelerinde" },
       { de: "interessiert", tr: "ilgili", en: "interested" },
     ],
     segments: [
@@ -307,8 +307,8 @@ export const b1U07: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Sebebi bilmiyordum, yine de özür diledim.",
-        answer: "Ich kannte die Ursache nicht, trotzdem entschuldigte ich mich.",
+        tr: "Sebebi bilmiyordum, yine de ondan sonra özür diledim.",
+        answer: "Ich kannte die Ursache nicht, trotzdem entschuldigte ich mich danach.",
         hint: "„trotzdem“ de zarftır: fiil hemen arkasından.",
       },
       {

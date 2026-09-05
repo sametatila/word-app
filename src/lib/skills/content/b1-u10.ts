@@ -304,14 +304,14 @@ export const b1U10: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "İçinde kimliğim ve küçük bir fotoğraf var.",
-        answer: "Darin sind mein Ausweis und ein kleines Foto.",
+        tr: "İçeriği kimliğim ve küçük bir fotoğraf.",
+        answer: "Der Inhalt ist mein Ausweis und ein kleines Foto.",
         hint: "Nötr isim, belirsiz artikel: ein kleinES Foto.",
       },
       {
         kind: "build",
-        tr: "Cüzdan eski ve pek dikkat çekici değil.",
-        answer: "Die Brieftasche ist alt und nicht besonders auffällig.",
+        tr: "Cüzdan eski, markası üzerinde yazmıyor.",
+        answer: "Die Brieftasche ist alt, die Marke steht nicht darauf.",
         hint: "Yüklemdeki sıfat ÇEKİLMEZ: ist alt, nicht „ist alte“.",
       },
       {

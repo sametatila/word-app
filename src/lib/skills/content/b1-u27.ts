@@ -176,7 +176,7 @@ export const b1U27: SkillExercise[] = [
       { de: "roh", tr: "çiğ", en: "raw" },
     ],
     segments: [
-      { text: "Wir haben viel zu viel gekocht. Was machen wir mit dem Rest?" },
+      { text: "Wir haben viel zu viel gekocht. Was machen wir mit dem Rest? So viel bleibt übrig." },
       { text: "Das Gemüse kommt in eine Büchse, das hält vier Tage." },
       { text: "Und das Fleisch? Das ist noch fast roh in der Mitte." },
       { text: "Dann brate es kurz fertig, sonst wird es nichts." },
@@ -303,20 +303,20 @@ export const b1U27: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Eti en iyi ince dilimler hâlinde kesersin.",
-        answer: "Am besten schneidest du das Fleisch in dünne Scheiben.",
+        tr: "Şnitzel için eti en iyi ince dilimler hâlinde kesersin.",
+        answer: "Am besten schneidest du das Fleisch für das Schnitzel in dünne Scheiben.",
         hint: "Fiili niteliyor → am besten.",
       },
       {
         kind: "build",
-        tr: "Bu çocukluğumun en iyi pazar günüydü.",
-        answer: "Das war der beste Sonntag meiner Kindheit.",
+        tr: "Bu çocukluğumun en iyi pazar günüydü, aşçı babamdı.",
+        answer: "Das war der beste Sonntag meiner Kindheit, der Koch war mein Vater.",
         hint: "İsimden önce → der beste.",
       },
       {
         kind: "build",
-        tr: "Et çok yağsız olmamalı.",
-        answer: "Das Fleisch soll nicht zu mager sein.",
+        tr: "Izgaradaki et çok yağsız olmamalı.",
+        answer: "Das Fleisch vom Grill soll nicht zu mager sein.",
         hint: "Yüklemdeki sıfat çekilmez.",
       },
       {
@@ -328,6 +328,7 @@ export const b1U27: SkillExercise[] = [
           { label: "Wie", answer: "im Ofen", accept: ["Ofen", "im Ofen, 3 Stunden"] },
           { label: "Ruhezeit", answer: "20 Minuten", accept: ["zwanzig Minuten"] },
           { label: "Dazu", answer: "Brot und Gemüse", accept: ["Brot", "Brot und eingelegtes Gemüse"] },
+          { label: "Anzahl", answer: "4", accept: ["vier", "vier Personen"] },
         ],
       },
       {
@@ -349,7 +350,7 @@ export const b1U27: SkillExercise[] = [
     intro: "Lokantadaki bir sorunu yaz. 'bir şey' + sıfat Almancada isimleşir.",
     minutes: 12,
     gloss: [
-      { de: "die Wirtin", tr: "işletmeci (kadın)", en: "landlady" },
+      { de: "die Wirtin", tr: "işletmeci", en: "landlady", note: "kadın biçimi" },
       { de: "der Fleck", tr: "leke", en: "stain" },
       { de: "salzig", tr: "tuzlu", en: "salty" },
       { de: "die Ausgabe", tr: "harcama", en: "expense" },
@@ -382,7 +383,7 @@ export const b1U27: SkillExercise[] = [
           "Sehr geehrte Damen und Herren,\n\n" +
           "am Samstagabend war ich mit zwei Freunden in Ihrer Gaststätte, " +
           "Tisch neun.\n\n" +
-          "Ich hatte etwas Warmes bestellt, aber die Suppe kam kalt. " +
+          "Ich hatte etwas Warmes bestellt, aber die Suppe kam kalt und war zu salzig. " +
           "Ich habe das sofort gesagt, nicht erst beim Zahlen. Der Kellner " +
           "hat sie mitgenommen, und danach ist zwanzig Minuten nichts " +
           "passiert. Am Ende habe ich nichts Neues bekommen, nur eine " +

@@ -317,8 +317,8 @@ export const b1U13: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Vekâletin ne için geçerli olduğunu belirlemek önemli.",
-        answer: "Es ist wichtig festzulegen, wofür die Vollmacht gilt.",
+        tr: "Belgenin ne için geçerli olduğunu ve niyetimin ne olduğunu belirlemek önemli.",
+        answer: "Es ist wichtig festzulegen, wofür die Urkunde gilt und was meine Absicht ist.",
         hint: "„es ist wichtig“ sonrası zu'lu mastar.",
       },
       {

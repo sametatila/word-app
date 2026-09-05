@@ -41,7 +41,7 @@ export const b1U42: SkillExercise[] = [
     gloss: [
       { de: "der Richter", tr: "hâkim", en: "judge" },
       { de: "das Urteil", tr: "karar", en: "verdict" },
-      { de: "die Zeugin", tr: "tanık (kadın)", en: "witness" },
+      { de: "die Zeugin", tr: "tanık", en: "witness", note: "kadın biçimi" },
       { de: "verurteilen", tr: "mahkûm etmek", en: "to convict" },
       { de: "die Begründung", tr: "gerekçe", en: "reasoning" },
     ],
@@ -173,7 +173,7 @@ export const b1U42: SkillExercise[] = [
     intro: "Bir olay bildiriliyor. Hangi bilgi isteniyor?",
     minutes: 4,
     gloss: [
-      { de: "die Polizistin", tr: "polis (kadın)", en: "police officer" },
+      { de: "die Polizistin", tr: "polis", en: "police officer", note: "kadın biçimi" },
       { de: "das Ereignis", tr: "olay", en: "incident" },
       { de: "der Verbrecher", tr: "suçlu", en: "criminal" },
       { de: "die Kriminalpolizei", tr: "asayiş şubesi", en: "criminal police" },
@@ -186,7 +186,7 @@ export const b1U42: SkillExercise[] = [
       { text: "Zwei Personen, aber nur von hinten. Ich kann nichts Genaues sagen." },
       { text: "Das ist in Ordnung. Erfundene Angaben helfen niemandem." },
       { text: "Was passiert jetzt?" },
-      { text: "Ich nehme das auf, dann geht es an die Kriminalpolizei." },
+      { text: "Ich nehme das auf, dann geht es an die Kriminalpolizei. Eine Polizistin meldet sich bei Ihnen, wenn wir den Verbrecher finden." },
     ],
     questions: [
       {
@@ -300,14 +300,14 @@ export const b1U42: SkillExercise[] = [
     gloss: [
       { de: "verhaften", tr: "tutuklamak", en: "to arrest" },
       { de: "das Gefängnis", tr: "cezaevi", en: "prison" },
-      { de: "die Anwältin", tr: "avukat (kadın)", en: "lawyer" },
+      { de: "die Anwältin", tr: "avukat", en: "lawyer", note: "kadın biçimi" },
       { de: "die Ausnahme", tr: "istisna", en: "exception" },
     ],
     tasks: [
       {
         kind: "build",
-        tr: "Tutuklanan bir insan henüz mahkûm edilmiş bir insan değildir.",
-        answer: "Ein verhafteter Mensch ist noch kein verurteilter Mensch.",
+        tr: "Tutuklanan bir insan hemen cezaevine girmez.",
+        answer: "Ein verhafteter Mensch kommt nicht sofort ins Gefängnis.",
         hint: "İki ortaç da sıfat gibi çekilir.",
       },
       {
@@ -318,8 +318,8 @@ export const b1U42: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Duruşma herkese açıktır.",
-        answer: "Der Prozess ist für alle zugänglich.",
+        tr: "Duruşma herkese açıktır, istisnayı avukatın gerekçelendirmesi gerekir.",
+        answer: "Der Prozess ist für alle zugänglich, eine Ausnahme muss die Anwältin begründen.",
         hint: "Yüklemdeki sıfat çekilmez.",
       },
       {

@@ -173,7 +173,7 @@ export const b1U12: SkillExercise[] = [
       { de: "der Feiertag", tr: "resmî tatil", en: "public holiday" },
     ],
     segments: [
-      { text: "Guten Tag, hier Praxis Berger. Ihr Termin morgen fällt leider aus." },
+      { text: "Guten Tag, hier Praxis Berger. Ihr Termin morgen fällt leider aus. Wir müssen ihn absagen." },
       { text: "Oh. Ist etwas passiert?" },
       { text: "Die Kollegin ist krank geworden. Es tut uns leid." },
       { text: "Kein Problem. Wann geht es denn sonst?" },

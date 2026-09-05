@@ -326,12 +326,13 @@ export const b1U05: SkillExercise[] = [
       {
         kind: "form",
         prompt: "İtiraz yazısının künyesini doldur.",
-        facts: "Kiracı: Ayla Yıldız, 2. kat; hesap yılı geçen yıl; itiraz edilen kalem su; tutar 180 avro; istenen: yeni hesap.",
+        facts: "Kiracı: Ayla Yıldız, 2. kat; hesap yılı geçen yıl; itiraz edilen kalem su; tutar 180 avro; istenen: yeni hesap; kapanış formülü.",
         fields: [
           { label: "Mieterin", answer: "Ayla Yıldız", accept: ["Ayla", "Yıldız"] },
           { label: "Position", answer: "Wasser", accept: ["das Wasser", "Kosten für Wasser"] },
           { label: "Betrag", answer: "180 Euro", accept: ["hundertachtzig Euro", "180"] },
           { label: "Wunsch", answer: "neue Abrechnung", accept: ["eine neue Abrechnung", "Prüfung"] },
+          { label: "Grußformel", answer: "Mit freundlichen Grüßen", accept: ["Mit freundlichen Grüßen", "Freundliche Grüße"] },
         ],
       },
       {

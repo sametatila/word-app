@@ -309,14 +309,14 @@ export const b1U15: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "İlk iki gün sadece izledim.",
-        answer: "Die ersten zwei Tage habe ich nur zugesehen.",
+        tr: "İlk iki gün sadece izledim ve her şeyi dikkatle gözlemledim.",
+        answer: "Die ersten zwei Tage habe ich nur zugesehen und alles genau beobachtet.",
         hint: "Ayrılabilen fiil: ortaç ge-'yi öneke alır (zugesehen).",
       },
       {
         kind: "build",
-        tr: "Henüz hiç deneyimim yoktu.",
-        answer: "Ich hatte noch keine Erfahrung.",
+        tr: "Henüz hiç deneyimim yoktu ve destek olmadan işimi iyi anlatamıyordum.",
+        answer: "Ich hatte noch keine Erfahrung und ohne Unterstützung konnte ich meine Arbeit nicht gut darstellen.",
         hint: "Belirsiz isim → kein.",
       },
       {
@@ -384,7 +384,7 @@ export const b1U15: SkillExercise[] = [
           "und Nummer neun. Ich weise dich darauf hin, damit du es korrigieren " +
           "kannst, bevor sie weitergeht.\n\n" +
           "Das ist kein großes Problem und mir ist es auch schon passiert. " +
-          "Es muss dir also nicht peinlich sein.\n\n" +
+          "Es muss dir also nicht peinlich sein. Ich schreibe dir mit Rücksicht und ein bisschen Humor, nicht böse.\n\n" +
           "Ein Ratschlag, der mir sehr geholfen hat: nimm dir zehn Minuten Abstand, " +
           "bevor du so etwas schickst. Man sieht mit etwas Abstand mehr als " +
           "direkt danach. Das erleichtert die Sache wirklich.\n\n" +

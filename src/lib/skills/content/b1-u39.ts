@@ -107,7 +107,7 @@ export const b1U39: SkillExercise[] = [
     minutes: 5,
     gloss: [
       { de: "der Experte", tr: "uzman", en: "expert" },
-      { de: "die Fachfrau", tr: "uzman (kadın)", en: "specialist" },
+      { de: "die Fachfrau", tr: "uzman", en: "specialist", note: "kadın biçimi" },
       { de: "das Institut", tr: "enstitü", en: "institute" },
       { de: "die Forschung", tr: "araştırma", en: "research" },
       { de: "die Fachleute", tr: "uzmanlar", en: "specialists" },
@@ -175,7 +175,7 @@ export const b1U39: SkillExercise[] = [
     gloss: [
       { de: "die Konferenz", tr: "konferans", en: "conference" },
       { de: "die Präsentation", tr: "sunum", en: "presentation" },
-      { de: "die Praktikantin", tr: "stajyer (kadın)", en: "intern" },
+      { de: "die Praktikantin", tr: "stajyer", en: "intern", note: "kadın biçimi" },
       { de: "ausrichten", tr: "iletmek", en: "to pass on" },
     ],
     segments: [
@@ -235,7 +235,7 @@ export const b1U39: SkillExercise[] = [
     intro: "Bir öneri sunuluyor. Nasıl karşılanıyor?",
     minutes: 4,
     gloss: [
-      { de: "die Chefin", tr: "yönetici (kadın)", en: "boss" },
+      { de: "die Chefin", tr: "yönetici", en: "boss", note: "kadın biçimi" },
       { de: "vorschlagen", tr: "önermek", en: "to suggest" },
       { de: "leiten", tr: "yönetmek", en: "to lead" },
       { de: "anstellen", tr: "işe almak", en: "to employ" },
@@ -244,7 +244,7 @@ export const b1U39: SkillExercise[] = [
       { text: "Sie wollten mir etwas vorschlagen?" },
       { text: "Ja. Ich möchte das kleine Projekt im Herbst selbst leiten." },
       { text: "Interessant. Warum Sie?" },
-      { text: "Ich kenne die Kunden, und die Mitarbeiterin dort arbeitet gern mit mir." },
+      { text: "Ich kenne die Kunden, und die Mitarbeiterin dort arbeitet gern mit mir. Die Chefin dort kennt mich auch." },
       { text: "Das stimmt, das habe ich auch gehört." },
       { text: "Wenn es gut läuft, könnten wir danach jemanden anstellen." },
       { text: "Langsam. Erst das Projekt, dann die Leitung, dann neue Leute." },
@@ -319,8 +319,8 @@ export const b1U39: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Çalışma iznim mayısta doluyor.",
-        answer: "Meine Arbeitserlaubnis läuft im Mai ab.",
+        tr: "Çalışma iznim mayısta doluyor, sonrasında yeni bir istihdam olmazsa işsizlik var.",
+        answer: "Meine Arbeitserlaubnis läuft im Mai ab, danach droht Arbeitslosigkeit ohne neue Beschäftigung.",
         hint: "Ayrılabilen fiil: önek sonda.",
       },
       {
@@ -394,7 +394,7 @@ export const b1U39: SkillExercise[] = [
           "im Monat, die ich aus der jetzigen Tätigkeit nehmen kann.\n\n" +
           "Ein Risiko will ich nicht verschweigen: wenn im Herbst mehrere " +
           "Aufträge gleichzeitig kommen, wird es eng. Deshalb teile ich " +
-          "Ihnen bis Freitag einen Plan mit, der genau diesen Fall regelt.\n\n" +
+          "Ihnen bis Freitag einen Plan mit, der genau diesen Fall regelt. Die Leitung kann mich dafür einsetzen.\n\n" +
           "Mit freundlichen Grüßen\nNuri Öz",
         phrases: [
           { de: "Ich schlage vor, dass …", tr: "… önerisinde bulunuyorum.", en: "I suggest that …" },

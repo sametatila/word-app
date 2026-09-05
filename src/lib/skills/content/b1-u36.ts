@@ -315,8 +315,8 @@ export const b1U36: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Klimayı hiç kullanmadım.",
-        answer: "Die Klimaanlage habe ich nie gebraucht.",
+        tr: "Klimayı hiç kullanmadım, teknik el kitabı zahmete değmedi.",
+        answer: "Die Klimaanlage habe ich nie gebraucht, das technische Handbuch war die Mühe nicht wert.",
         hint: "„gebrauchen“ ayrılmaz ama ge- ile başlar — kök öyle.",
       },
       {
@@ -389,7 +389,7 @@ export const b1U36: SkillExercise[] = [
           "Die Daten sind für ein laufendes Projekt nötig, und die Kosten " +
           "einer Wiederherstellung sind kleiner als der Verlust. " +
           "Ich bitte Sie deshalb, das Gerät bis Freitag anzusehen.\n\n" +
-          "Für einen Rückruf am Vormittag wäre ich dankbar.\n\n" +
+          "Ich sichere die Daten seitdem jede Woche. Für einen Rückruf am Vormittag wäre ich dankbar.\n\n" +
           "Mit freundlichen Grüßen\nNuri Öz",
         phrases: [
           { de: "Seit gestern sind die Daten weg.", tr: "Dünden beri veriler kayıp.", en: "The data has been gone since yesterday." },

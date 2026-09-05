@@ -313,8 +313,8 @@ export const b1U28: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Pahalı bir alet otomatik olarak değerli değildir.",
-        answer: "Ein teures Gerät ist nicht automatisch wertvoll.",
+        tr: "Satıcıdan alınan pahalı bir alet otomatik olarak değerli değildir.",
+        answer: "Ein teures Gerät vom Händler ist nicht automatisch wertvoll.",
         hint: "Yüklemdeki sıfat çekilmez.",
       },
       {
@@ -350,13 +350,13 @@ export const b1U28: SkillExercise[] = [
       { de: "der Umtausch", tr: "değişim", en: "exchange" },
       { de: "der Beleg", tr: "fiş", en: "receipt" },
       { de: "der Käufer", tr: "alıcı", en: "buyer" },
-      { de: "die Verkäuferin", tr: "satıcı (kadın)", en: "sales assistant" },
+      { de: "die Verkäuferin", tr: "satıcı", en: "sales assistant", note: "kadın biçimi" },
     ],
     tasks: [
       {
         kind: "build",
         tr: "Yedek olarak yeni bir alet rica ediyorum.",
-        answer: "Ich bitte als Ersatz um ein neues Gerät.",
+        answer: "Ich bitte als Ersatz um ein neues Gerät oder um einen Umtausch.",
         hint: "„als Ersatz“ — artikel yok.",
       },
       {

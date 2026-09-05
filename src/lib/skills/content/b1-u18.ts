@@ -180,7 +180,7 @@ export const b1U18: SkillExercise[] = [
       { text: "Zweitens ist der Weg zu weit für viele ältere Leute." },
       { text: "Dem möchte ich widersprechen. Es gibt zwei neue Buslinien." },
       { text: "Wegen der neuen Linien ist das Problem also kleiner geworden." },
-      { text: "Aber nicht weg. Wir können nur feststellen, dass es besser ist." },
+      { text: "Aber nicht weg. Wir können nur feststellen, dass es besser ist. Ihr Argument gilt also nur zum Teil." },
       { text: "Darf ich kurz zusammenfassen? Beide Seiten sehen einen Fortschritt." },
       { text: "Einverstanden. Damit schließen wir diesen Punkt." },
     ],
@@ -302,21 +302,21 @@ export const b1U18: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Üç haftadır öksürüyorum.",
-        answer: "Ich habe seit drei Wochen Husten.",
+        tr: "Üç haftadır öksürüyorum ve bir muayene rica ediyorum.",
+        answer: "Ich habe seit drei Wochen Husten und bitte um eine Untersuchung.",
         hint: "„seit“ + Dativ, şimdiki zamanla.",
       },
       {
         kind: "build",
-        tr: "Kendimi muayene ettirmek istiyorum.",
-        answer: "Ich möchte mich untersuchen lassen.",
+        tr: "Kendimi muayene ettirmek istiyorum, çünkü haftalardır acı çekiyorum.",
+        answer: "Ich möchte mich untersuchen lassen, denn ich leide seit Wochen.",
         hint: "Muayeneyi doktor yapar → lassen.",
       },
       {
         kind: "build",
-        tr: "Merdivende nefesim daralıyor.",
-        answer: "Auf der Treppe bekomme ich schlecht Luft.",
-        alternatives: ["Auf der Treppe kann ich schlecht atmen."],
+        tr: "Merdivende nefesim daralıyor, nefesim kısalıyor.",
+        answer: "Auf der Treppe bekomme ich schlecht Luft, mein Atem wird zu kurz.",
+        alternatives: ["Auf der Treppe kann ich schlecht atmen, mein Atem wird zu kurz."],
         hint: "Yer öne alınınca fiil ikinci sırada.",
       },
       {

@@ -318,19 +318,20 @@ export const b1U03: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "İş birliği için teşekkür ederim.",
-        answer: "Ich danke Ihnen für die Zusammenarbeit.",
+        tr: "Ekipteki iyi ilişki için teşekkür ederim.",
+        answer: "Ich danke Ihnen für das gute Verhältnis im Team.",
         hint: "Teşekkür yönelme hâli, sebep edatı belirtme hâli ister.",
       },
       {
         kind: "form",
         prompt: "İstifa mektubunun künyesini doldur.",
-        facts: "Çalışan: Nuri Öz; son gün 31 Ağustos; ihbar süresi dört hafta; ek istek: çalışma belgesi.",
+        facts: "Çalışan: Nuri Öz; son gün 31 Ağustos; ihbar süresi dört hafta; ek istek: çalışma belgesi; kapanış formülü.",
         fields: [
           { label: "Absender", answer: "Nuri Öz", accept: ["Nuri", "Öz"] },
           { label: "Letzter Tag", answer: "31. August", accept: ["31.08.", "einunddreißigster August", "31 August"] },
           { label: "Frist", answer: "vier Wochen", accept: ["4 Wochen", "vier Wochen zum Monatsende"] },
           { label: "Zusätzlich", answer: "Zeugnis", accept: ["ein Zeugnis", "Arbeitszeugnis"] },
+          { label: "Grußformel", answer: "Mit freundlichen Grüßen", accept: ["Mit freundlichen Grüßen", "Freundliche Grüße"] },
         ],
       },
       {
@@ -386,9 +387,9 @@ export const b1U03: SkillExercise[] = [
           "ich habe Ihre Anzeige gelesen und interessiere mich sehr für die Wohnung. " +
           "Ich heiße Nuri Öz, bin dreißig Jahre alt und arbeite seit sechs Jahren " +
           "in einer Firma hier in der Stadt.\n\n" +
-          "Ich hätte drei Fragen. Können Sie mir sagen, in welcher Etage die Wohnung " +
+          "Ich hätte vier Fragen. Können Sie mir sagen, in welcher Etage die Wohnung " +
           "liegt? Darf ich fragen, wie hoch die Kosten für das Heizen sind? " +
-          "Und ich würde gern wissen, ab wann ich einziehen kann.\n\n" +
+          "Und ich würde gern wissen, ab wann ich einziehen kann. Außerdem interessiert mich der Zustand der Küche: Ist dort eine Reparatur nötig?\n\n" +
           "Wäre eine Besichtigung am Samstag möglich? Ich bin den ganzen Tag frei " +
           "und komme gern zu Ihnen.\n\n" +
           "Mit freundlichen Grüßen\nNuri Öz",

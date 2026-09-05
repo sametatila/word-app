@@ -178,7 +178,7 @@ export const b1U41: SkillExercise[] = [
       { de: "anerkennen", tr: "tanımak", en: "to recognise" },
     ],
     segments: [
-      { text: "Guten Tag. Ich brauche eine Bestätigung für die Botschaft." },
+      { text: "Guten Tag. Ich brauche eine Bestätigung für die Botschaft. Das Konsulat verlangt sie." },
       { text: "Gern. Bitte zuerst die Personalien und den Zivilstand." },
       { text: "Hier ist mein Ausweis. Ledig, seit letztem Jahr geschieden." },
       { text: "Danke. Wird Ihr Abschluss hier schon anerkannt?" },
@@ -241,7 +241,7 @@ export const b1U41: SkillExercise[] = [
     ],
     segments: [
       { text: "Im Kurs duzen sich alle. Im Betrieb nicht. Warum eigentlich?" },
-      { text: "Es hängt von der Gruppe ab, nicht vom Alter." },
+      { text: "Es hängt von der Gruppe ab, nicht vom Alter. Nur wer verwandt ist, duzt sich immer." },
       { text: "Bei uns duzt der Chef alle, aber niemand duzt ihn zurück." },
       { text: "Das ist seltsam. Dann lieber niemanden duzen." },
       { text: "Sehe ich auch so. Am liebsten fragt man einfach." },
@@ -317,8 +317,8 @@ export const b1U41: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "En çok öğrendiğim şey sabırdı.",
-        answer: "Am meisten habe ich Geduld gelernt.",
+        tr: "En çok sabrı öğrendim, ayrıca telaffuzu ve bir lehçeyi.",
+        answer: "Am meisten habe ich Geduld gelernt, dazu die Aussprache und einen Dialekt.",
         hint: "viel → mehr → am meisten.",
       },
       {
@@ -352,7 +352,7 @@ export const b1U41: SkillExercise[] = [
     minutes: 12,
     gloss: [
       { de: "die Integration", tr: "uyum", en: "integration" },
-      { de: "die Bürgerin", tr: "yurttaş (kadın)", en: "citizen" },
+      { de: "die Bürgerin", tr: "yurttaş", en: "citizen", note: "kadın biçimi" },
       { de: "politisch", tr: "siyasal", en: "political" },
       { de: "national", tr: "ulusal", en: "national" },
     ],
@@ -393,7 +393,7 @@ export const b1U41: SkillExercise[] = [
           "draußen.\n\n" +
           "Nächstes Jahr wird meine Schwester Bürgerin. Sie freut sich " +
           "darauf, endlich mit abzustimmen. Für sie ist das kein politisches " +
-          "Zeichen, sondern einfach der letzte Schritt eines langen Wegs.",
+          "Zeichen, sondern einfach der letzte Schritt eines langen Wegs. Eine nationale Prüfung gibt es dafür nicht.",
         phrases: [
           { de: "Für mich ist Integration …", tr: "Bana göre uyum …", en: "For me integration is …" },
           { de: "Dem möchte ich widersprechen.", tr: "Buna karşı çıkmak isterim.", en: "I would like to contradict that." },

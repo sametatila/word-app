@@ -319,8 +319,8 @@ export const b1U04: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Birlikte bir çözümde uzlaşabiliriz.",
-        answer: "Wir könnten uns gemeinsam auf eine Lösung einigen.",
+        tr: "Komşumla birlikte bir çözümde uzlaşabiliriz.",
+        answer: "Die Nachbarin und ich könnten uns gemeinsam auf eine Lösung einigen.",
         hint: "Kibar öneri için Konjunktiv II; dönüşlü zamir fiilden hemen sonra.",
       },
       {
@@ -377,7 +377,7 @@ export const b1U04: SkillExercise[] = [
           "Sehr geehrter Herr Berger,\n\n" +
           "ich melde Ihnen einen Schaden in meiner Wohnung in der zweiten Etage. " +
           "Die Heizung funktioniert seit dem dritten März nicht mehr. " +
-          "Ich habe selbst geprüft, ob genug Wasser in der Heizung ist; daran liegt es nicht.\n\n" +
+          "Ich habe selbst geprüft, ob genug Wasser in der Heizung ist; daran liegt es nicht. Ein Mechaniker hat die Anlage im Winter schon einmal repariert; seitdem gab es keine Panne.\n\n" +
           "Im Moment wird es in den Zimmern sehr kalt. Ich bitte darum, dass ein " +
           "Handwerker spätestens am Freitag kommt. Am Vormittag bin ich zu Hause.\n\n" +
           "Bitte sorgen Sie dafür, dass der Schaden schnell repariert wird. " +

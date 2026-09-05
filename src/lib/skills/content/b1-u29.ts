@@ -172,7 +172,7 @@ export const b1U29: SkillExercise[] = [
     intro: "Bir kıyafet aranıyor. Beden, renk, malzeme?",
     minutes: 4,
     gloss: [
-      { de: "das Kostüm", tr: "takım (kadın)", en: "suit" },
+      { de: "das Kostüm", tr: "takım elbise", en: "suit", note: "kadın giyimi" },
       { de: "elegant", tr: "şık", en: "elegant" },
       { de: "die Wolle", tr: "yün", en: "wool" },
       { de: "der Stoff", tr: "kumaş", en: "fabric" },
@@ -318,8 +318,8 @@ export const b1U29: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bu takı metalden mi ahşaptan mı?",
-        answer: "Ist dieser Schmuck aus Metall oder aus Holz?",
+        tr: "Bu takı metalden mi ahşaptan mı, küçük parça da öyle mi?",
+        answer: "Ist dieser Schmuck aus Metall oder aus Holz, und das kleine Teil auch?",
         hint: "Her malzeme kendi „aus“unu alır.",
       },
       {

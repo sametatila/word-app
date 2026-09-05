@@ -309,14 +309,14 @@ export const b1U25: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bunu ona yüzüne söyledim.",
-        answer: "Ich habe es ihm ins Gesicht gesagt.",
+        tr: "Bunu ona, suçlu ilan etmeden yüzüne söyledim.",
+        answer: "Ich habe es ihm ins Gesicht gesagt, ohne ihn schuldig zu nennen.",
         hint: "İki zamir → Akkusativ önce: es ihm.",
       },
       {
         kind: "build",
-        tr: "Bir suçlamayla başlamak istemiyorum.",
-        answer: "Ich möchte nicht mit einem Vorwurf beginnen.",
+        tr: "Bir suçlamayla başlamak değil, meseleyi adil biçimde açıklığa kavuşturmak istiyorum.",
+        answer: "Ich möchte nicht mit einem Vorwurf beginnen, sondern die Sache fair klären.",
         hint: "Kipli fiilden sonra çıplak mastar.",
       },
       {
@@ -350,7 +350,7 @@ export const b1U25: SkillExercise[] = [
     minutes: 12,
     gloss: [
       { de: "vermissen", tr: "özlemek", en: "to miss" },
-      { de: "der Angehörige", tr: "yakın (akraba)", en: "relative" },
+      { de: "der Angehörige", tr: "yakın", en: "relative", note: "akraba anlamında" },
       { de: "die Trennung", tr: "ayrılık", en: "separation" },
       { de: "erinnern", tr: "hatırlamak", en: "to remember" },
     ],

@@ -304,7 +304,7 @@ export const b1U44: SkillExercise[] = [
       {
         kind: "build",
         tr: "Takımımız bir saat boyunca çok iyi oynadı.",
-        answer: "Unsere Mannschaft spielte eine Stunde lang sehr gut.",
+        answer: "Unsere Mannschaft spielte im Stadion eine Stunde lang sehr gut.",
         hint: "Süre edatsız Akkusativ: eine Stunde lang.",
       },
       {
@@ -381,7 +381,7 @@ export const b1U44: SkillExercise[] = [
         sample:
           "Wir feiern am Samstag im Hof hinter dem Haus. Es geht um vier " +
           "los und dauert wahrscheinlich den ganzen Abend.\n\n" +
-          "Jeder bringt etwas mit: Aylin den Salat, ich das Brot, Nuri die " +
+          "Nach dem Fasching wollen sich alle wieder vergnügen und gehen vergnügt nach Hause. Jeder bringt etwas mit: Aylin den Salat, ich das Brot, Nuri die " +
           "Getränke. Musik machen wir selbst, zwei Stunden lang, dann " +
           "reicht es auch den Nachbarn.\n\n" +
           "Ein Risiko gibt es: das Wetter. Wenn es regnet, gehen wir nach " +
