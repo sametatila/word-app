@@ -91,7 +91,7 @@ export const c1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "wer dreihundert Vorschläge am Tag bestätigt, entscheidet nicht, er unterschreibt",
+          "er unterschreibt nur", "wer dreihundert Vorschläge am Tag bestätigt, entscheidet nicht, er unterschreibt",
           "er unterschreibt nur, er entscheidet nicht",
           "bei dreihundert Bestätigungen täglich entscheidet niemand wirklich",
         ],
@@ -103,8 +103,8 @@ export const c1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "man muss jemanden ansprechen, verklagen und zur Änderung zwingen können",
           "damit man jemanden verklagen kann",
+          "man muss jemanden ansprechen, verklagen und zur Änderung zwingen können",
           "um jemanden zur Änderung zwingen zu können",
         ],
         explain: "Sorumluluk muhatap alınabilirlik demek.",
@@ -171,7 +171,7 @@ export const c1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "wo nicht mehr eine Sache angegriffen, sondern die Person als Person entwertet wird",
+          "wenn die Person entwertet wird", "wo nicht mehr eine Sache angegriffen, sondern die Person als Person entwertet wird",
           "wenn die Person statt der Sache angegriffen wird",
           "wenn die Person als Person entwertet wird",
         ],
@@ -183,7 +183,7 @@ export const c1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "dass die Beteiligten über dieselbe Sache streiten",
+          "Streit über dieselbe Sache", "dass die Beteiligten über dieselbe Sache streiten",
           "sie sorgen dafür, dass man über dieselbe Sache streitet",
           "die Debatte wird nicht milder, nur genauer",
         ],
@@ -338,8 +338,8 @@ export const c1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "ihn nach seinem eigenen Bild von 2050 fragen",
           "nach seinem eigenen Bild fragen",
+          "ihn nach seinem eigenen Bild von 2050 fragen",
           "fragen, wie er sich 2050 vorstellt",
         ],
         explain: "Herkesin bir tasavvuru var, çoğu yazılmamış.",

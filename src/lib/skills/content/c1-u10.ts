@@ -88,8 +88,8 @@ export const c1U10: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "es ist eine Frage nach Zuständigkeit, aber so höflich, dass niemand sie abwehren kann",
           "höfliche Frage nach Zuständigkeit",
+          "es ist eine Frage nach Zuständigkeit, aber so höflich, dass niemand sie abwehren kann",
           "sie fragt nach Zuständigkeit ohne anzugreifen",
         ],
         explain: "Dört kelimede yetki sorusu — ve reddedilemeyecek kadar kibar.",
@@ -160,9 +160,9 @@ export const c1U10: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "gerade leicht übersetzbare Bilder prüfen",
           "nicht das Unbekannte fürchten, sondern das Vertraute",
           "das Vertraute prüfen",
-          "gerade leicht übersetzbare Bilder prüfen",
         ],
         explain: "„genau weil es keinen Widerstand leistet“ — direnç göstermeyen çeviri sınanmalı.",
       },
@@ -172,8 +172,8 @@ export const c1U10: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "man sagt es einfach, ohne Bild",
           "sinngemäß formulieren",
+          "man sagt es einfach, ohne Bild",
           "einen klaren Satz ohne Bild schreiben",
         ],
         explain: "Üçüncü durum rahatsız ama zararsız: hemen fark ediliyor.",
@@ -323,9 +323,9 @@ export const c1U10: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "einen tragenden Satz davor",
           "einen Satz davor, der sie trägt",
           "den richtigen Zusammenhang",
-          "einen tragenden Satz davor",
         ],
         explain: "„sonst wirkt sie eingestreut, und man sieht das Einstreuen“.",
       },

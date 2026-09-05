@@ -90,7 +90,7 @@ export const c1U24: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "sobald es auffällt, verliert er das Vertrauen beider Seiten",
+          "er verliert beiderseits das Vertrauen", "sobald es auffällt, verliert er das Vertrauen beider Seiten",
           "man verliert das Vertrauen beider Seiten",
           "die Person, der man helfen wollte, steht dann ohne Vermittler da",
         ],
@@ -173,8 +173,8 @@ export const c1U24: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "kein neues Argument und keinen Dank an die Technik",
           "kein neues Argument",
+          "kein neues Argument und keinen Dank an die Technik",
           "nichts Neues, keinen Dank an die Technik",
         ],
         explain: "Kısa olacak ve yankılanacak.",
@@ -262,7 +262,7 @@ export const c1U24: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Darunter habe ich kein Mandat.",
+          "Das ist endgültig — darunter habe ich kein Mandat.",
           "Darunter habe ich kein Mandat",
         ],
         explain: "Yetki sınırını söylemek son sözü inandırıcı kılıyor.",

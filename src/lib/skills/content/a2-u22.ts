@@ -84,9 +84,9 @@ export const a2U22: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "dass man sich später meldet",
           "Habe ich gesehen, melde mich Donnerstag.",
           "eine Zeile",
-          "dass man sich später meldet",
         ],
         explain: "Tek satırlık ara cevap: „Habe ich gesehen, melde mich Donnerstag.“",
       },
@@ -299,9 +299,9 @@ export const a2U22: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "das mit dem Markt",
           "das mit dem Markt, weil es am lebendigsten ist",
           "das Marktfoto",
-          "das mit dem Markt",
         ],
         explain: "„Das mit dem Markt. Nicht das schönste, aber am lebendigsten.“",
       },

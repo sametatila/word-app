@@ -84,7 +84,7 @@ export const c1U07: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Improvisation als höchste Stufe der Vorbereitung",
+          "höchste Stufe der Vorbereitung", "Improvisation als höchste Stufe der Vorbereitung",
           "nicht als Gegenteil, sondern als höchste Stufe",
           "man bereitet die Fähigkeit vor, nicht die Rede",
         ],

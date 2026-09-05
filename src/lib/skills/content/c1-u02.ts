@@ -99,9 +99,9 @@ export const c1U02: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "derzeitigem Kenntnisstand, heutiger Sicht",
           "nach derzeitigem Kenntnisstand und aus heutiger Sicht",
           "nach derzeitigem Kenntnisstand / aus heutiger Sicht",
-          "derzeitigem Kenntnisstand, heutiger Sicht",
         ],
         explain: "İkisi de ifadeyi bugüne hapsediyor; yarın başka çıkarsa açıklama yanlış olmuş sayılmaz.",
       },

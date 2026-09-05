@@ -88,8 +88,8 @@ export const c1U09: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "es gehört in keines der beiden Felder, es geht um Mut",
           "weil es um Mut geht",
+          "es gehört in keines der beiden Felder, es geht um Mut",
           "es passt in keine der zwei Gruppen",
         ],
         explain: "Aile mantığı dışına çıktığı için ayrıca akılda kalıyor.",
@@ -182,9 +182,9 @@ export const c1U09: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "Lagen frei, Menschen genau",
           "Wetter beschreibt Lagen, Farben beschreiben oft Menschen",
           "über Lagen frei, über Menschen genauer",
-          "Lagen frei, Menschen genau",
         ],
         explain: "İki aileyi ayıran ölçüt: neyi tarif ettiği.",
       },
@@ -336,8 +336,8 @@ export const c1U09: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "die Frage ist nicht, was sie heißen, sondern über wen sie gesagt werden",
           "über wen ich sie sage",
+          "die Frage ist nicht, was sie heißen, sondern über wen sie gesagt werden",
           "nicht die Bedeutung, sondern das Ziel entscheidet",
         ],
         explain: "Ve Bernd ekliyor: „Ein schlecht gesetztes Bild wirkt länger nach als ein fehlendes.“",

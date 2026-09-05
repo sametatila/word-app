@@ -86,9 +86,9 @@ export const c1U03: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "es blieb nichts hängen",
           "in der Nachbesprechung erinnerte sich niemand an eine Zahl",
           "niemand erinnerte sich an eine einzige Zahl",
-          "es blieb nichts hängen",
         ],
         explain: "Son cümle övgüyü geri alıyor: anlık etki ile kalıcı etki ayrı şeyler.",
       },
@@ -326,9 +326,9 @@ export const c1U03: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "damit sie selbst darauf kommt",
           "er hoffte, sie kommt selbst darauf",
           "weil das mehr bewirkt",
-          "damit sie selbst darauf kommt",
         ],
         explain: "„Weil ich gehofft hatte, Sie kommen selbst darauf. Das bewirkt mehr.“",
       },

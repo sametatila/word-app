@@ -87,9 +87,9 @@ export const c1U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "drei Tage nach dem Bescheiddatum",
           "mit der Bekanntgabe, meist drei Tage nach dem Datum auf dem Bescheid",
           "mit der Bekanntgabe",
-          "drei Tage nach dem Bescheiddatum",
         ],
         explain: "Mektup tarihinden saymak üç gün kaybettiriyor, açtığı günden saymak her şeyi.",
       },
@@ -99,9 +99,9 @@ export const c1U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "ein rechtzeitiger Satz",
           "sie beginnt mit einem rechtzeitigen Satz",
           "nicht mit einem starken Argument, sondern rechtzeitig",
-          "ein rechtzeitiger Satz",
         ],
         explain: "Güçlü savın önünde zamanında yazılmış tek cümle var.",
       },
@@ -168,7 +168,7 @@ export const c1U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Könnte ich diese Summe zahlen, wenn sie es nicht kann?",
+          "könnte ich die Summe zahlen", "Könnte ich diese Summe zahlen, wenn sie es nicht kann?",
           "ob man die Summe selbst zahlen könnte",
           "nicht ob ich vertraue, sondern ob ich zahlen könnte",
         ],
@@ -327,8 +327,8 @@ export const c1U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "weil bei der Vernehmung danach gefragt wurde",
           "die Frage enthielt das Wort",
+          "weil bei der Vernehmung danach gefragt wurde",
           "er hat zugestimmt, ohne nachzudenken",
         ],
         explain: "Sorunun içindeki sözcük cevaba geçiyor — ifade almanın bilinen tuzağı.",

@@ -83,8 +83,8 @@ export const a2U25: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "er verdient weniger und schläft besser",
           "weniger Geld, besserer Schlaf",
+          "er verdient weniger und schläft besser",
           "er schläft besser",
         ],
         explain: "„Jetzt verdiene ich weniger und schlafe besser.“",
@@ -150,8 +150,8 @@ export const a2U25: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "dass die Miete so gestiegen ist",
           "die Miete",
+          "dass die Miete so gestiegen ist",
           "die gestiegene Miete für Leute mit kleinem Gehalt",
         ],
         explain: "Kira metrekare başına iki yılda beşte bir artmış: „Für Leute mit kleinem Gehalt ist das ungerecht.“",

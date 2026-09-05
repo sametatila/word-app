@@ -87,8 +87,8 @@ export const c1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "es darf nur genau ein Bezug möglich sein",
           "der Bezug muss eindeutig sein",
+          "es darf nur genau ein Bezug möglich sein",
           "nur wenn genau ein Bezug möglich ist",
         ],
         explain: "„Er sprach mit dem Kollegen über seinen Antrag“ — kimin başvurusu?",
@@ -99,9 +99,9 @@ export const c1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "nicht falsch, aber schwerfällig",
           "er wird schwerfällig, jeder Satz scheint von vorn zu beginnen",
           "er wird schwerfällig",
-          "nicht falsch, aber schwerfällig",
         ],
         explain: "Yanlış olmuyor — ağırlaşıyor.",
       },
@@ -168,7 +168,7 @@ export const c1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "weglassen darf man, was der Empfänger ohne Nachdenken ergänzt",
+          "was der Empfänger sofort ergänzt", "weglassen darf man, was der Empfänger ohne Nachdenken ergänzt",
           "was der Empfänger ohne Nachdenken ergänzt",
           "wenn er raten muss, ist es eine Lücke",
         ],
@@ -332,9 +332,9 @@ export const c1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "die Wertung wird nie behauptet",
           "die Wertung steckt im Einschub und wird nie behauptet",
           "die Bewertung wird nicht behauptet, nur eingeschoben",
-          "die Wertung wird nie behauptet",
         ],
         explain: "İddia edilmeyen değerlendirme tartışılamıyor da.",
       },

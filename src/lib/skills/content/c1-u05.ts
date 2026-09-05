@@ -97,9 +97,9 @@ export const c1U05: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "untertreiben, aber aufrichtig",
           "weniger sagen, als man meint, aber es auch meinen",
           "Sagen Sie weniger, als Sie meinen — aber meinen Sie es.",
-          "untertreiben, aber aufrichtig",
         ],
         explain: "Eksiltmenin koşulu içtenlik; taklit edilirse kayıtsızlığa dönüyor.",
       },
@@ -322,8 +322,8 @@ export const c1U05: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "wenn man die Stimme dazu hat",
           "wenn die Betonung mitgeliefert wird",
+          "wenn man die Stimme dazu hat",
           "nur mündlich",
         ],
         explain: "„Partikel setzt man ein, wenn man die Stimme dazu hat.“",

@@ -83,8 +83,8 @@ export const a2U24: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "wer an der Universität oder der Fachhochschule studiert",
           "Studenten",
+          "wer an der Universität oder der Fachhochschule studiert",
           "Studierende",
         ],
         explain: "„Wer an der Universität oder der Fachhochschule studiert, zahlt … die Hälfte.“",
@@ -230,7 +230,7 @@ export const a2U24: SkillExercise[] = [
         text: "Herr Gül'ün kitabı ne kadar tutabileceğini sorduğu cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["Wie lange darf ich ein Buch behalten?", "Und wie lange darf ich ein Buch behalten?"],
+        accept: ["Und wie lange darf ich ein Buch behalten?", "Wie lange darf ich ein Buch behalten?"],
         explain: "Süre sorusu + dürfen: kütüphanede en çok sorulan cümle.",
       },
     ],
@@ -302,7 +302,7 @@ export const a2U24: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "dass Yusuf in die Werkstatt kommt",
+          "Yusuf kommt in die Werkstatt", "dass Yusuf in die Werkstatt kommt",
           "dass er zu ihm in die Werkstatt kommt",
           "dass er in der Werkstatt arbeitet",
         ],

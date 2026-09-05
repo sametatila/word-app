@@ -100,9 +100,9 @@ export const c1U25: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "ein Text kann schlecht sein",
           "ein einzelner Text kann schlecht sein; das ist ein Urteil über den Text, nicht über die Epoche",
           "es gibt Unterschiede in Klarheit und Angemessenheit",
-          "ein Text kann schlecht sein",
         ],
         explain: "Değişimi savunmak her metni savunmak değil.",
       },
@@ -169,9 +169,9 @@ export const c1U25: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "lesen, schreiben, sich korrigieren lassen",
           "lesen, was einen interessiert; schreiben, was ohnehin nötig ist; korrigiert werden",
           "weniger anstrengend und weniger sichtbar weitermachen",
-          "lesen, schreiben, sich korrigieren lassen",
         ],
         explain: "Program değil, süreklilik.",
       },
@@ -181,8 +181,8 @@ export const c1U25: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "weil man darin gestritten, gearbeitet, sich entschuldigt und jemanden getröstet hat",
           "sie ist ein Ort geworden",
+          "weil man darin gestritten, gearbeitet, sich entschuldigt und jemanden getröstet hat",
           "weil man darin gelebt hat",
         ],
         explain: "Araç değil, durulan bir yer.",
@@ -338,7 +338,7 @@ export const c1U25: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "die zweite Sprache nimmt die erste nicht weg, sie stellt sich daneben",
+          "sie stellt sich daneben", "die zweite Sprache nimmt die erste nicht weg, sie stellt sich daneben",
           "sie stellt sich daneben; es wird enger und dann weiter",
           "die zweite nimmt die erste nicht weg",
         ],

@@ -84,8 +84,8 @@ export const c1U13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "er übernimmt fremde Fehler und macht sie zu eigenen",
           "fremde Fehler werden zu eigenen",
+          "er übernimmt fremde Fehler und macht sie zu eigenen",
           "man übernimmt Fehler anderer",
         ],
         explain: "İkinci elden atıf, hatayı da devralıyor.",
@@ -96,8 +96,8 @@ export const c1U13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "daran, ob man sie überprüfen kann",
           "an der Überprüfbarkeit",
+          "daran, ob man sie überprüfen kann",
           "nicht daran, ob er recht hat, sondern ob man es prüfen kann",
         ],
         explain: "Doğruluk değil denetlenebilirlik ölçüt.",
@@ -167,9 +167,9 @@ export const c1U13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "vor Vertragsschluss einbezogen",
           "wenn sie vor Vertragsschluss einbezogen wurden",
           "sie müssen vorher zur Kenntnis genommen werden können",
-          "vor Vertragsschluss einbezogen",
         ],
         explain: "„Ein Link in der Fußzeile einer Rechnung … genügt nicht.“",
       },
@@ -327,9 +327,9 @@ export const c1U13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "wissen, welche nicht harmlos sind",
           "die meisten Klauseln sind harmlos, man muss wissen, welche nicht",
           "man muss wissen, welche Klausel nicht harmlos ist",
-          "wissen, welche nicht harmlos sind",
         ],
         explain: "Sözleşme okumak her satırı tartmak değil, tartılacak satırı bulmak.",
       },

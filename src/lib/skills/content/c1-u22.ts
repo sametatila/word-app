@@ -106,9 +106,9 @@ export const c1U22: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "Entschuldigung, das ist mir rausgerutscht",
           "klein: Entschuldigung, das ist mir rausgerutscht",
           "mit einer kurzen Entschuldigung",
-          "Entschuldigung, das ist mir rausgerutscht",
         ],
         explain: "Küçük tutmak doğru ölçek — büyütmek asıl utandıran.",
       },

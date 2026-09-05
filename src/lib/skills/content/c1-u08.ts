@@ -97,9 +97,9 @@ export const c1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "dass nichts Eigenes da ist",
           "dass der Redner nichts Eigenes hat",
           "Ich habe nichts Eigenes für diesen Anlass",
-          "dass nichts Eigenes da ist",
         ],
         explain: "„auch wenn sie es nicht benennen könnten“ — etki bilinçsiz ama gerçek.",
       },
@@ -167,8 +167,8 @@ export const c1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "die Prüfung wird dorthin verlagert, wo sie niemand vornimmt",
           "niemand kann es prüfen",
+          "die Prüfung wird dorthin verlagert, wo sie niemand vornimmt",
           "die Prüfbarkeit geht verloren",
         ],
         explain: "Sağlam sav, karşı tarafın sınayabileceği bir şeye dayanır.",
@@ -179,8 +179,8 @@ export const c1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "im Streit will man recht behalten, in der Debatte wissen, wer recht hat",
           "recht behalten gegenüber wissen wollen",
+          "im Streit will man recht behalten, in der Debatte wissen, wer recht hat",
           "Streit: recht behalten; Debatte: herausfinden",
         ],
         explain: "„Der erste Satz verrät meist, welches von beidem läuft.“",
@@ -253,8 +253,8 @@ export const c1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "er verdreht die Redewendung und sagt, abends kommen sie ihm abhanden",
           "er sagt sie falsch herum",
+          "er verdreht die Redewendung und sagt, abends kommen sie ihm abhanden",
           "die Redewendungen kommen ihm abends abhanden",
         ],
         explain: "Deyim en çok yorulunca bozuluyor — anadili konuşanda da böyle.",

@@ -87,8 +87,8 @@ export const c1U16: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "sie lösen sie beim Lesen auf, bauen sie aber beim Schreiben nicht",
           "verstehen ja, verwenden nein",
+          "sie lösen sie beim Lesen auf, bauen sie aber beim Schreiben nicht",
           "sie verwenden sie beim Schreiben nicht",
         ],
         explain: "„Man wählt den Weg, den man sicher beherrscht.“",
@@ -99,8 +99,8 @@ export const c1U16: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "der Leser weiß bis zum Schluss nicht, wovon die Rede ist",
           "es ist unlesbar",
+          "der Leser weiß bis zum Schluss nicht, wovon die Rede ist",
           "zwischen Artikel und Nomen liegen vierzehn Wörter",
         ],
         explain: "Dilbilgisi doğruluğu okunabilirliği garanti etmiyor.",
@@ -169,9 +169,9 @@ export const c1U16: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "Substantiv, Verb, Handelnder",
           "Substantiv finden, Verb daraus machen, fragen wer es tut",
           "Handlungssubstantiv suchen, zum Verb machen, Handelnden als Subjekt",
-          "Substantiv, Verb, Handelnder",
         ],
         explain: "„Die Antwort wird zum Subjekt.“",
       },

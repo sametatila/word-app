@@ -81,9 +81,9 @@ export const c1U11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "bei Widerspruch und bei Vorwürfen",
           "wenn Aussagen nicht übereinstimmen und wenn ein Vorwurf im Raum steht",
           "widersprüchliche Aussagen und Vorwürfe",
-          "bei Widerspruch und bei Vorwürfen",
         ],
         explain: "İkisinde de bildirme kipi tarafsızlığı bozuyor.",
       },
@@ -93,7 +93,7 @@ export const c1U11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "wer ihn weglässt, tut so, als kenne er die Wahrheit",
+          "er würde die Wahrheit kennen", "wer ihn weglässt, tut so, als kenne er die Wahrheit",
           "es behauptet Wissen über die Wahrheit",
           "man tut so, als wüsste man es",
         ],
@@ -325,8 +325,8 @@ export const c1U11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "wenn man weiß, worauf sie antwortet",
           "wenn die Frage bekannt ist",
+          "wenn man weiß, worauf sie antwortet",
           "erst wenn man die Frage kennt",
         ],
         explain: "Rakamın anlamı sorusunda saklı.",

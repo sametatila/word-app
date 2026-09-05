@@ -87,9 +87,9 @@ export const c1U04: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "Nachgeben trotz Spielraum",
           "man gibt auch dort nach, wo Spielraum bestanden hätte",
           "man gibt nach, wo es Spielraum gab",
-          "Nachgeben trotz Spielraum",
         ],
         explain: "„weil er auch dort nachgibt, wo Spielraum bestanden hätte“.",
       },
@@ -255,8 +255,8 @@ export const c1U04: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Das andere war nur nett gemeint.",
-          "Siehst du, das tröstet. Das andere war nur nett gemeint.",
+          "Das andere war wohlwollend, aber nur nett gemeint.",
+          "Siehst du, das tröstet. Das andere war wohlwollend, aber nur nett gemeint.",
         ],
         explain: "„nett gemeint“ Almancada çoğu zaman gizli bir eleştiridir: niyet iyi, etki değil.",
       },
@@ -330,9 +330,9 @@ export const c1U04: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "nur nicht ohne den Grund",
           "nicht nötig, nur nicht ohne den Grund dahinter",
           "es sei nicht nötig, aber mit Grund",
-          "nur nicht ohne den Grund",
         ],
         explain: "Sorun parçacığın kendisi değil, gerekçesiz kullanılması.",
       },

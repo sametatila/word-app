@@ -90,9 +90,9 @@ export const c1U21: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "Lage, Partikeln, Übertreibung",
           "Widerspruch zur Lage, Partikeln, übertriebene Wortwahl",
           "der Widerspruch zur Situation, die Partikeln und die Übertreibung",
-          "Lage, Partikeln, Übertreibung",
         ],
         explain: "Üçü de metinde duruyor, seste değil.",
       },
@@ -171,8 +171,8 @@ export const c1U21: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "es beschreibt die Absicht und ändert nichts an der Wirkung",
           "Absicht ändert die Wirkung nicht",
+          "es beschreibt die Absicht und ändert nichts an der Wirkung",
           "beides kann gleichzeitig wahr sein",
         ],
         explain: "Niyet ile etki birbirini iptal etmiyor.",
@@ -332,9 +332,9 @@ export const c1U21: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "die Norddeutschen machen sie selbst",
           "dass sie immer sie selbst machen",
           "sie machen sie über sich selbst",
-          "die Norddeutschen machen sie selbst",
         ],
         explain: "Kendi yöresi hakkında herkes her şeyi söyleyebiliyor.",
       },

@@ -86,7 +86,7 @@ export const c1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "die ersten drei Wörter jedes Satzes untereinander schreiben",
+          "die ersten drei Wörter aufschreiben", "die ersten drei Wörter jedes Satzes untereinander schreiben",
           "die ersten drei Wörter untereinander schreiben",
           "prüfen, ob dort dreimal Wir steht",
         ],
@@ -98,7 +98,7 @@ export const c1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "weil sie über die Grammatik läuft",
+          "über die Grammatik", "weil sie über die Grammatik läuft",
           "es ist Grammatik im Dienst der Betonung",
           "die Wortstellung entscheidet, nicht die Stimme",
         ],
@@ -168,8 +168,8 @@ export const c1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "sie benennt Gegner und schließt Verhandlung aus",
           "Gegner und keine Verhandlung",
+          "sie benennt Gegner und schließt Verhandlung aus",
           "das Bild denkt weiter",
         ],
         explain: "„Das Bild denkt weiter, wenn der Redner längst aufgehört hat.“",
@@ -180,9 +180,9 @@ export const c1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "Aussage ohne Bild prüfen",
           "lässt sich die Aussage ohne das Bild noch verteidigen",
           "ob die Aussage ohne Bild hält",
-          "Aussage ohne Bild prüfen",
         ],
         explain: "Tutmuyorsa imge değil, argüman yerine geçmiş demektir.",
       },
@@ -335,9 +335,9 @@ export const c1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "schöne Folie, falscher Vortrag",
           "sie schwebt über allem und gehört nirgends dazu",
           "sie passt nicht in den roten Faden",
-          "schöne Folie, falscher Vortrag",
         ],
         explain: "„Schöne Folie, falscher Vortrag“ — tek başına iyi olması yeterli değil.",
       },

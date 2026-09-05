@@ -174,8 +174,8 @@ export const c1U12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "das Publikum glaubt am Ende nichts mehr",
           "alles erscheint ungewiss",
+          "das Publikum glaubt am Ende nichts mehr",
           "man differenziert in die andere Richtung: alles sei ungewiss",
         ],
         explain: "Aşırı güvenden aşırı kuşkuya geçiş — ikisi de aynı kaynaktan.",

@@ -98,7 +98,7 @@ export const c1U01: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "dass für sie ein Umzug nicht in Frage kommt",
+          "Umzug kommt nicht in Frage", "dass für sie ein Umzug nicht in Frage kommt",
           "sie sehen einen Umzug nicht als Option",
           "für sie kommt ein Umzug nicht in Frage",
         ],
@@ -170,8 +170,8 @@ export const c1U01: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "den Antrag im Herbst unverändert erneut einzureichen",
           "im Herbst erneut einreichen",
+          "den Antrag im Herbst unverändert erneut einzureichen",
           "den Antrag im Herbst noch einmal einreichen",
         ],
         explain: "„raten daher, den Antrag im Herbst unverändert erneut einzureichen“ — hem ret hem yol gösterme.",

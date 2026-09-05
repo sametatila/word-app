@@ -90,8 +90,8 @@ export const c1U18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "er entscheidet, ob der Satz eine Vermutung oder einen Vorwurf enthält",
           "Vermutung oder Vorwurf",
+          "er entscheidet, ob der Satz eine Vermutung oder einen Vorwurf enthält",
           "es ist ein juristisch relevanter Unterschied",
         ],
         explain: "Aynı cümle ya tahmin ya isnat oluyor.",
@@ -167,7 +167,7 @@ export const c1U18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "ich habe nicht daran gedacht, wer das liest",
+          "man hat den Leser vergessen", "ich habe nicht daran gedacht, wer das liest",
           "dass man den Adressaten nicht bedacht hat",
           "man hat nicht an den Leser gedacht",
         ],
@@ -179,8 +179,8 @@ export const c1U18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "der Adressat kennt das System und braucht Daten",
           "die Leser kennen das System",
+          "der Adressat kennt das System und braucht Daten",
           "es werden nur Daten gebraucht",
         ],
         explain: "Orada tam cümle kurmak zaman kaybı, nezaket değil.",
@@ -331,9 +331,9 @@ export const c1U18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "über das Verfahren",
           "über das Verfahren, nicht in der Sache",
           "keine Übereinkunft in der Sache, aber über das Verfahren",
-          "über das Verfahren",
         ],
         explain: "Usulde mutabakat, esasta değil — ve bugünlük yetiyor.",
       },

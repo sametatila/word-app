@@ -80,8 +80,8 @@ export const a2U18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "die Händler haben oft kein Wechselgeld",
           "sie haben kein Wechselgeld",
+          "die Händler haben oft kein Wechselgeld",
           "kein Wechselgeld",
         ],
         explain: "„Die Händler haben oft kein Wechselgeld, und ein großer Geldschein macht schnell schlechte Laune.“",
@@ -147,7 +147,7 @@ export const a2U18: SkillExercise[] = [
         text: "Was wünschen sich die Eltern statt Süßigkeiten?",
         options: [],
         answer: 0,
-        accept: ["ein Buch oder etwas für draußen", "ein Buch", "etwas für draußen"],
+        accept: ["etwas für draußen", "ein Buch oder etwas für draußen", "ein Buch"],
         explain: "„Statt Süßigkeiten freuen wir uns über ein Buch oder etwas für draußen.“",
       },
       {

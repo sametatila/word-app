@@ -296,9 +296,9 @@ export const a2U23: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "alles noch einmal lesen",
           "das Formular noch einmal ganz durchlesen",
           "es durchlesen",
-          "alles noch einmal lesen",
         ],
         explain: "„Lesen Sie es aber bitte noch einmal ganz durch, bevor Sie unterschreiben.“",
       },

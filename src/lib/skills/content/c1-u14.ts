@@ -87,9 +87,9 @@ export const c1U14: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "keine Entschädigung für Ärger",
           "keine Wiedergutmachung für Ärger und kein Druckmittel",
           "kein Druckmittel",
-          "keine Entschädigung für Ärger",
         ],
         explain: "„eine Anpassung des Preises an die tatsächliche Nutzbarkeit“.",
       },

@@ -91,8 +91,8 @@ export const c1U23: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "das schweigende Zuspätkommen, der fehlende Satz dazu",
           "wenn man nichts sagt",
+          "das schweigende Zuspätkommen, der fehlende Satz dazu",
           "nicht die Verspätung, sondern die fehlende Nachricht",
         ],
         explain: "Gecikme değil, haber vermemek.",
@@ -172,9 +172,9 @@ export const c1U23: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "zwanzig Wendungen reichen aus",
           "der kreative Teil der Sprache fällt weg; zwanzig Wendungen genügen",
           "man muss nichts erfinden, nur die Wendungen kennen",
-          "zwanzig Wendungen reichen aus",
         ],
         explain: "Aksanla ve basit cümle yapısıyla da yerinde konuşulabiliyor.",
       },
@@ -184,9 +184,9 @@ export const c1U23: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "er verliert die nächste Sitzung",
           "er gewinnt eine Sitzung und verliert die nächste",
           "die nächste Sitzung",
-          "er verliert die nächste Sitzung",
         ],
         explain: "Ara çözümün dürüst adı ara çözüm.",
       },

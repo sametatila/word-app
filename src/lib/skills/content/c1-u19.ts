@@ -91,8 +91,8 @@ export const c1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "es zeigt, an welcher Stelle die Position bricht",
           "man kann die Bruchstelle benennen",
+          "es zeigt, an welcher Stelle die Position bricht",
           "weil man die Stelle benennen kann, an der sie bricht",
         ],
         explain: "Kırılma noktasını adlandırmak reddetmekten güçlü bir sav.",
@@ -103,9 +103,9 @@ export const c1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "es ruft ein Bild auf",
           "es ruft ein Bild auf und wirkt rhetorisch",
           "es ist rhetorischer",
-          "es ruft ein Bild auf",
         ],
         explain: "Aynı işlev, farklı ağırlık.",
       },
@@ -173,9 +173,9 @@ export const c1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
+          "beides gilt zugleich",
           "individuelles Handeln reicht nicht aus und ist trotzdem nicht wirkungslos",
           "es reicht nicht aus und ist nicht wirkungslos",
-          "beides gilt zugleich",
         ],
         explain: "Yalnız ilk yarı kendini aklıyor, yalnız ikinci yarı siyaseti.",
       },
@@ -257,8 +257,8 @@ export const c1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "Wir sind uns nicht einig geworden. Wir haben nur die Frage ausgetauscht.",
-          "wir haben nur die Frage ausgetauscht",
+          "Wir haben nur die Frage ausgetauscht.",
+          "wir sind uns nicht einig geworden",
         ],
         explain: "Anlaşma değil, sorunun değişmesi — ve bu da bir sonuç.",
       },
