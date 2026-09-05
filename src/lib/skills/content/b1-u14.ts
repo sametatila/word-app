@@ -153,7 +153,7 @@ export const b1U14: SkillExercise[] = [
         text: "Warum hat sie langsamer geschrieben?",
         options: [],
         answer: 0,
-        accept: ["damit man die Schrift gut lesen kann", "für die Schrift", "damit man es lesen kann"],
+        accept: ["wegen der Schrift", "für die Schrift", "damit man es lesen kann"],
         explain: "„… habe ich langsamer geschrieben als sonst, damit man die Schrift gut lesen kann.“",
       },
     ],

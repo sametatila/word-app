@@ -157,7 +157,7 @@ export const b1U39: SkillExercise[] = [
         text: "Was hält gute Forschung aus?",
         options: [],
         answer: 0,
-        accept: ["die Frage, woher die Zahl kommt", "die Frage", "woher die Zahl kommt"],
+        accept: ["die Frage", "woher die Zahl kommt", "diese Frage"],
         explain: "„Gute Forschung hält diese Frage aus; schlechte nicht.“",
       },
     ],

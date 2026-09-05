@@ -279,7 +279,7 @@ export const b1U25: SkillExercise[] = [
         text: "Woran erinnert sie sich?",
         options: [],
         answer: 0,
-        accept: ["an sechs schlimme Wochen und einen guten Herbst", "sechs schlimme Wochen", "einen guten Herbst"],
+        accept: ["an sechs schlimme Wochen", "an einen guten Herbst", "sechs schlimme Wochen"],
         explain: "„Ich erinnere mich an sechs schlimme Wochen und an einen guten Herbst.“",
       },
     ],

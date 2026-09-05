@@ -89,7 +89,7 @@ export const b1U37: SkillExercise[] = [
         text: "Welche Regel gilt für die Couch?",
         options: [],
         answer: 0,
-        accept: ["wer dort isst, räumt sofort auf", "sofort aufräumen", "sofort"],
+        accept: ["sofort aufräumen", "sofort", "wer isst, räumt auf"],
         explain: "„Wer dort isst, räumt sofort auf. Nicht am Abend, sofort.“",
       },
     ],

@@ -88,7 +88,7 @@ export const b1U43: SkillExercise[] = [
         text: "Was machen Erwachsene laut Text?",
         options: [],
         answer: 0,
-        accept: ["sie sagen zu und kommen dann nicht", "sie sagen zu und kommen doch nicht", "zusagen und nicht kommen"],
+        accept: ["sie kommen dann nicht", "zusagen und nicht kommen", "nicht kommen"],
         explain: "„Erwachsene sagen zu und kommen dann doch nicht.“",
       },
     ],

@@ -219,7 +219,7 @@ export const b1U32: SkillExercise[] = [
         text: "Wo liegt die Burg?",
         options: [],
         answer: 0,
-        accept: ["auf dem Hügel", "auf dem Hügel über der Stadt", "auf einem Hügel"],
+        accept: ["auf dem Hügel", "auf einem Hügel", "über der Stadt"],
         explain: "„Die liegt auf dem Hügel über der Stadt.“",
       },
     ],

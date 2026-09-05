@@ -154,7 +154,7 @@ export const b1U34: SkillExercise[] = [
         text: "Was hat der Onkel nach dem Video gemacht?",
         options: [],
         answer: 0,
-        accept: ["eine Woche nicht angerufen", "nicht angerufen", "er hat eine Woche nicht angerufen"],
+        accept: ["eine Woche nicht angerufen", "nicht angerufen", "eine Woche nichts"],
         explain: "„Der Onkel hat mitgemacht — und danach eine Woche nicht angerufen.“",
       },
     ],

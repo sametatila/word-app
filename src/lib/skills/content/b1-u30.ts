@@ -220,7 +220,7 @@ export const b1U30: SkillExercise[] = [
         text: "Was soll die erste Person tun?",
         options: [],
         answer: 0,
-        accept: ["anrufen und nach den Details fragen", "anrufen", "nach den Details fragen"],
+        accept: ["nach den Details fragen", "anrufen", "anrufen und fragen"],
         explain: "„Ruf einfach an und frag nach den Details.“",
       },
     ],
