@@ -91,7 +91,7 @@ export const a1U06: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Mia: Ich esse zum Frühstück ein Brötchen mit Butter und Marmelade. Ich trinke eine Tasse Kaffee. Ohne Kaffee bin ich müde!\n\nTom: Ich habe morgens keinen Hunger. Ich trinke nur ein Glas Wasser. Am Mittag habe ich dann viel Hunger und esse eine Pizza.\n\nElif: Bei uns gibt es Brot mit Käse und Tee. Meine Kinder trinken Kakao. Kaffee trinke ich nicht gern — ich trinke lieber Tee.",
+      "Mia: Ich esse zum Frühstück ein Brötchen mit Butter und Marmelade. Ich trinke eine Tasse Kaffee. Ohne Kaffee bin ich müde!\n\nTom: Ich habe morgens keinen Hunger, aber immer Durst. Ich trinke nur ein Glas Wasser. Am Mittag habe ich dann viel Hunger und esse eine Pizza.\n\nElif: Bei uns gibt es Brot mit Käse und Tee. Meine Kinder trinken Kakao. Kaffee trinke ich nicht gern — ich trinke lieber Tee.",
     questions: [
       {
         text: "Was trinkt Mia zum Frühstück?",

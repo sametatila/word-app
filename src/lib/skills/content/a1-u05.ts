@@ -146,7 +146,7 @@ export const a1U05: SkillExercise[] = [
     segments: [
       { text: "Kennst du Max? Wie sieht er aus?" },
       { text: "Max ist klein und hat kurze Haare." },
-      { text: "Nein, das stimmt nicht! Max ist groß." },
+      { text: "Quatsch! Das stimmt nicht — Max ist groß." },
       { text: "Ach ja, richtig. Er ist groß und trägt eine Brille." },
     ],
     questions: [
