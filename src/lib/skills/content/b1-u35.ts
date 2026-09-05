@@ -165,7 +165,7 @@ export const b1U35: SkillExercise[] = [
     unit: 35,
     title: "Beim Friseur",
     genre: "Kuaförde",
-    intro: "Bir saç kesimi. Ne isteniyor, ne öneriliyor?",
+    intro: "Bir saç kesimi. Müşteri ne istiyor, kuaför ne öneriyor?",
     minutes: 4,
     gloss: [
       { de: "der Friseur", tr: "kuaför", en: "hairdresser" },

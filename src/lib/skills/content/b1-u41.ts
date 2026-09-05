@@ -294,7 +294,7 @@ export const b1U41: SkillExercise[] = [
     unit: 41,
     title: "Meine Sprachen",
     genre: "Dil özgeçmişi",
-    intro: "Dillerini anlat. 'daha çok' Almancada düzensiz bir sözcüktür.",
+    intro: "Dillerini anlat. 'daha çok' Almancada düzensizdir, kalıpla üretilmez.",
     minutes: 8,
     gloss: [
       { de: "die Muttersprache", tr: "ana dil", en: "mother tongue" },

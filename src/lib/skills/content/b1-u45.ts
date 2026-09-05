@@ -352,7 +352,7 @@ export const b1U45: SkillExercise[] = [
     unit: 45,
     title: "Mein B1-Rückblick",
     genre: "Kapanış yazısı",
-    intro: "B1'i kapat. Yan cümlelerde fiilin yerini son kez topla.",
+    intro: "B1'i kapat. Yan cümlelerde fiilin yerini son kez sınayalım.",
     minutes: 12,
     gloss: [
       { de: "zurechtkommen", tr: "başa çıkmak", en: "to cope" },

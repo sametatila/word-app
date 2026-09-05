@@ -104,7 +104,7 @@ export const b1U33: SkillExercise[] = [
     unit: 33,
     title: "Eine kleine Verletzung",
     genre: "Sağlık rehberi",
-    intro: "Küçük bir yara. Ne zaman kendin, ne zaman doktora?",
+    intro: "Küçük bir yara. Ne zaman kendin bakarsın, ne zaman doktora gidersin?",
     minutes: 5,
     gloss: [
       { de: "die Wunde", tr: "yara", en: "wound" },

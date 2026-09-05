@@ -344,7 +344,7 @@ export const b1U23: SkillExercise[] = [
     unit: 23,
     title: "Wenn ich könnte",
     genre: "Dilek metni",
-    intro: "Dileklerini yaz. sein, haben ve kipli fiiller 'würde' almaz.",
+    intro: "Dileklerini yaz. sein, haben ve kipli fiiller 'würde' almaz — kendi kalıpları var.",
     minutes: 12,
     gloss: [
       { de: "sich wünschen", tr: "dilemek", en: "to wish" },

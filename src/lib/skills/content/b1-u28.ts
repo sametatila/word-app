@@ -227,7 +227,7 @@ export const b1U28: SkillExercise[] = [
     unit: 28,
     title: "Ich möchte das umtauschen",
     genre: "Mağazada değişim",
-    intro: "Bir ürün iade ediliyor. Ne gerekiyor, ne oluyor?",
+    intro: "Bir ürün iade ediliyor. Ne gerekiyor, sonuç ne çıkıyor?",
     minutes: 4,
     gloss: [
       { de: "umtauschen", tr: "değiştirmek", en: "to exchange" },
@@ -344,7 +344,7 @@ export const b1U28: SkillExercise[] = [
     unit: 28,
     title: "Umtausch beantragen",
     genre: "İade yazısı",
-    intro: "Bir ürünü iade et. Rol bildiren 'als' artikel almaz.",
+    intro: "Bir ürünü iade et. Rol bildiren 'als' artikel almaz — bu kısa kuralı unutma.",
     minutes: 12,
     gloss: [
       { de: "der Umtausch", tr: "değişim", en: "exchange" },

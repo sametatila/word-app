@@ -98,7 +98,7 @@ export const b1U20: SkillExercise[] = [
     unit: 20,
     title: "In der Notaufnahme",
     genre: "Deneyim yazısı",
-    intro: "Bir acil servis gecesi. Ne oldu, ne kadar sürdü?",
+    intro: "Acil serviste bir gece. Ne oldu, ne kadar sürdü — sırayla takip et.",
     minutes: 5,
     gloss: [
       { de: "die Notaufnahme", tr: "acil servis", en: "emergency room" },
