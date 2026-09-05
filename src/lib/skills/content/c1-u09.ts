@@ -290,6 +290,8 @@ export const c1U09: SkillExercise[] = [
       { speaker: "Bernd", text: "Das ist der Punkt. Bilder decken sich fast nie ganz. Manche gar nicht." },
       { speaker: "Meral", text: "Zum Beispiel?" },
       { speaker: "Bernd", text: "„Blauäugig“. Klingt harmlos, heißt aber naiv bis fahrlässig. Wenn du das über einen Kollegen sagst, ist das kein Kompliment." },
+      { speaker: "Meral", text: "Farben sind also gefährlich." },
+      { speaker: "Bernd", text: "Nicht alle. „Rotsehen“ beschreibt einen Zustand, keine Eigenschaft — das kannst du auch über dich selbst sagen." },
       { speaker: "Meral", text: "Und „im Trüben fischen“?" },
       { speaker: "Bernd", text: "Zweideutig. Es kann heißen: ohne Daten arbeiten. Es kann aber auch heißen: absichtlich in einer unklaren Lage Vorteile suchen." },
       { speaker: "Meral", text: "Jemand hat mir gesagt, „einen Bären aufbinden“ heiße jemanden loben. Stimmt das?" },

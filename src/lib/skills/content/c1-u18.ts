@@ -287,6 +287,8 @@ export const c1U18: SkillExercise[] = [
       { speaker: "Frau Arslan", text: "Ich habe sie gehört und für berechtigt gehalten. Das ist der Unterschied zwischen „ungeachtet“ und „trotz Ihrer falschen Bedenken“." },
       { speaker: "Herr Weiß", text: "Das ist ein feiner Unterschied." },
       { speaker: "Frau Arslan", text: "Es ist der ganze Unterschied. Ich schwäche Ihre Position nicht ab, ich stelle sie nur hinter eine andere." },
+      { speaker: "Herr Weiß", text: "Obgleich Sie damit das Risiko übernehmen." },
+      { speaker: "Frau Arslan", text: "Genau deshalb steht mein Name unter der Entscheidung und nicht Ihrer." },
       { speaker: "Herr Weiß", text: "Sie beanspruchen also, meine Gegenposition zu kennen und trotzdem anders zu entscheiden." },
       { speaker: "Frau Arslan", text: "Ja. Genau das ist meine Aufgabe." },
       { speaker: "Herr Weiß", text: "Und welche Position steht dahinter?" },

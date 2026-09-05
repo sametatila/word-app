@@ -216,7 +216,8 @@ export const c1U15: SkillExercise[] = [
       { speaker: "Herr Pohl", text: "Und wenn Sie gleichwohl ablehnen?" },
       { speaker: "Sachbearbeiterin", text: "Dann können Sie die Aufhebung unseres Bescheids verlangen — schriftlich und mit Begründung." },
       { speaker: "Sachbearbeiterin", text: "Dann steht Ihnen der Weg zum Ombudsmann offen — kostenlos, und die Frist läuft ab unserem endgültigen Bescheid." },
-      { speaker: "Herr Pohl", text: "Das wusste ich nicht." },
+      { speaker: "Herr Pohl", text: "Das wusste ich nicht. Wie kann ich mich revanchieren?" },
+      { speaker: "Sachbearbeiterin", text: "Gar nicht — das gehört zu meiner Arbeit." },
       { speaker: "Sachbearbeiterin", text: "Ich behalte mir die Prüfung des Deckungsumfangs vor, aber ich sage Ihnen offen: Mit dem Nachweis des Klempners stehen Ihre Chancen gut." },
     ],
     questions: [

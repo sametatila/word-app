@@ -288,7 +288,7 @@ export const c1U21: SkillExercise[] = [
       { speaker: "Halil", text: "Und wir gelten dafür als zugeknöpft. Pauschal, versteht sich — für einen ganzen Landstrich." },
       { speaker: "Mareike", text: "Genau wie meine Sitten hier angeblich alle mit Bier anfangen." },
       { speaker: "Halil", text: "Ich hätte gesagt: Weißwurst." },
-      { speaker: "Mareike", text: "Vor zwölf Uhr, sonst ist es ein Verbrechen. Das ist übrigens kein Klischee, das ist ein Kult." },
+      { speaker: "Mareike", text: "Vor zwölf Uhr, sonst ist es ein Verbrechen. Das ist übrigens kein Klischee, das ist ein Ritual — und ein Ritual verteidigt man nicht, man vollzieht es." },
       { speaker: "Halil", text: "Bei uns im Norden gibt es das auch. Nur ohne Kult, mit Fischbrötchen und ohne Erklärung." },
       { speaker: "Mareike", text: "Das ist der eigentliche Unterschied. Nicht was ihr esst, sondern dass ihr nichts dazu sagt." },
       { speaker: "Halil", text: "Wobei — bei den Sprüchen über Norddeutsche fällt mir auf, dass sie immer wir selbst machen." },

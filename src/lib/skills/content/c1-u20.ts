@@ -54,6 +54,7 @@ export const c1U20: SkillExercise[] = [
       "Die brauchbare Frage lautet anders: Wem wird die Verantwortung zugerechnet? Zurechnung ist keine Entdeckung, sondern eine Entscheidung. Eine Rechtsordnung braucht eine Instanz, die man ansprechen, verklagen, zur Änderung zwingen kann. Bei einem fehlerhaften Bremssystem fragt niemand, ob das Steuergerät Schuld empfindet.\n\n" +
       "Dass ein System Verstehen simuliert, ändert daran nichts. Die Simulation ist gut genug, um Menschen zu täuschen, und genau deshalb ist die Frage nach der Zurechnung dringender geworden, nicht schwieriger.\n\n" +
       "Damit verschiebt sich die Debatte von der Maschine zu den Menschen um sie herum. Wer hat das System eingesetzt, für welchen Zweck, mit welchen Daten, und wer hätte die Intervention auslösen können, als es schiefging?\n\n" +
+      "Auch das Gegenteil führt in die Irre: Ein System ist nicht skrupellos, weil es ohne Skrupel rechnet. Skrupel hat, wer sie haben könnte.\n\n" +
       "Zwei Ausweichbewegungen kehren regelmäßig wieder. Die erste: „Das war der Algorithmus.“ Sie macht ein Werkzeug zum Täter und den Betreiber zum Zuschauer. Die zweite ist umgekehrt und ebenso bequem: „Am Ende entscheidet immer ein Mensch.“ Das stimmt formal und beschreibt selten die Praxis — wer dreihundert Vorschläge am Tag bestätigt, entscheidet nicht, er unterschreibt.\n\n" +
       "Wer haftbar ist, lässt sich regeln. Ob eine Maschine etwas empfindet, lässt sich nicht klären — und muss es für diese Frage auch nicht.",
     questions: [
@@ -135,6 +136,7 @@ export const c1U20: SkillExercise[] = [
       "Erstens: Meinung und Tatsachenbehauptung. Eine Meinung ist eine Bewertung und kann nicht wahr oder falsch sein. Eine Tatsachenbehauptung kann es. „Dieses Restaurant ist schlecht“ ist geschützt; „In dieser Küche wurden Ratten gefunden“ ist es nur, wenn es stimmt. Davon zu unterscheiden ist die bewusste Falschbehauptung über eine Person — die Verleumdung —, die kein Meinungsäußerungsproblem ist, sondern eine Straftat.\n\n" +
       "Zweitens: Kritik und Herabwürdigung. Scharfe Kritik an Handlungen ist weit geschützt, auch polemische. Die Grenze verläuft dort, wo nicht mehr eine Sache angegriffen wird, sondern die Person als Person entwertet wird. Insofern ist die viel zitierte Formel „Man wird ja wohl noch sagen dürfen“ meist richtig — nur betrifft sie einen anderen Fall als den, in dem sie vorgebracht wird.\n\n" +
       "Drittens, und am häufigsten verwechselt: Staat und Plattform. Grundrechte binden zuerst den Staat. Wenn ein privates Netzwerk einen Beitrag löscht, ist das rechtlich keine Zensur im Sinne des Artikels 5 — Zensur meint dort staatliche Vorabkontrolle. Man kann die Löschpraxis privater Anbieter für falsch halten und darüber streiten; nur ist es ein Streit über Marktmacht und Hausrecht, nicht über Unterdrückung durch den Staat.\n\n" +
+      "Eine vierte Grenze verläuft dort, wo aus Meinung Propaganda wird — also dort, wo nicht mehr für eine Auffassung geworben, sondern planmäßig getäuscht wird. Der Übergang ist fließend und deshalb der schwierigste der vier.\n\n" +
       "Die drei Unterscheidungen ändern nichts an der Schärfe der Debatte. Sie sorgen nur dafür, dass die Beteiligten über dieselbe Sache streiten.",
     questions: [
       {
@@ -300,6 +302,8 @@ export const c1U20: SkillExercise[] = [
       { speaker: "Leiterin", text: "Nein, es ist präzisiert. Wir wissen jetzt, welche Entscheidung wann fallen müsste. Ein Szenario, das an einer Jahreszahl scheitert, hat seine Arbeit getan." },
       { speaker: "Teilnehmer", text: "In manchen Szenarien verschmelzen ja zwei Städte zu einer Region, oder man belebt eine alte Bahnstrecke wieder." },
       { speaker: "Leiterin", text: "Beides ist denkbar, und beides prüfen wir genauso: Welche Entscheidung müsste wann fallen?" },
+      { speaker: "Teilnehmerin", text: "Manche Szenarien enden ja auch in einer Diktatur. Schreiben wir die auch auf?" },
+      { speaker: "Leiterin", text: "Gerade die. Ein Szenario, das nur gute Ausgänge kennt, prüft nichts." },
       { speaker: "Teilnehmerin", text: "Und wenn jemand sagt, das sei alles Fantasie?" },
       { speaker: "Leiterin", text: "Dann fragen Sie ihn nach seinem eigenen Bild von 2050. Er hat eines — er hat es nur nie aufgeschrieben." },
     ],

@@ -216,6 +216,8 @@ export const c1U25: SkillExercise[] = [
       { speaker: "Selin", text: "Etwas Unspektakuläres, und es braucht Geduld — der Satz, den ich damals selbst gehasst habe. Ich habe aufgehört, jedes unbekannte Wort nachzuschlagen, und angefangen, eine Serie zweimal zu sehen — einmal mit Untertiteln, einmal ohne." },
       { speaker: "Milad", text: "Das ist alles?" },
       { speaker: "Selin", text: "Und ich habe angefangen zu telefonieren. An deiner Stelle würde ich genau damit anfangen — Telefon ist unangenehm, deshalb bringt es am meisten." },
+      { speaker: "Milad", text: "In meiner Branche rekrutieren sie fast nur über Telefonate." },
+      { speaker: "Selin", text: "Dann ist es keine Übung, sondern die Prüfung selbst — umso mehr Grund, früh anzufangen." },
       { speaker: "Milad", text: "Ich habe Angst, dass die Leute genervt sind." },
       { speaker: "Selin", text: "Manche sind es. Die meisten nicht. Und die Genervten wären es auch bei einem Muttersprachler." },
       { speaker: "Milad", text: "Manchmal denke ich, ich habe einfach keine Gabe für Sprachen." },

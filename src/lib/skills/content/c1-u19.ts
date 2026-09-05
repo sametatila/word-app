@@ -292,6 +292,7 @@ export const c1U19: SkillExercise[] = [
       { speaker: "Frau Ceylan", text: "Dass die Entscheidung mit zehn zu früh kommt. Nur nicht darin, was daraus folgt." },
       { speaker: "Herr Brandt", text: "Es wäre an der Zeit gewesen, das vor der letzten Reform zu klären. Man hat es versäumt, und jetzt reden wir wieder über Strukturen statt über Unterricht." },
       { speaker: "Frau Ceylan", text: "Das unterschreibe ich. Die Chancengleichheit entscheidet sich im Klassenzimmer, nicht im Schulgesetz." },
+      { speaker: "Herr Brandt", text: "Und solange sie sich dort nicht entscheidet, bleibt der Aufstieg eine Sache der Elite, die ihn ohnehin schafft." },
       { speaker: "Herr Brandt", text: "Wenn wir das ernst meinten, müssten wir die Fachgebiete öffnen. Wer Mathematik unterrichtet, sollte auch lesen lehren dürfen." },
       { speaker: "Frau Ceylan", text: "Das ist überfällig, ja. Aber es setzt voraus, dass wir Lehrkräfte anders ausbilden — und darüber redet niemand gern, weil es zehn Jahre dauert." },
       { speaker: "Moderatorin", text: "Also Umdenken statt Umbau?" },
