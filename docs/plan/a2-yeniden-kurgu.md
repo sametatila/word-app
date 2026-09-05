@@ -385,3 +385,42 @@ edilmemişti. Metinler o yönde genişletildi.
 `npm run check:lessons` → **hata yok**, 7 uyarı (hepsi B1). Kök ve `mobile/`
 içinde `tsc` temiz. `test:track` 64 kontrol, `test:options` temiz. Yeni ünite
 dosyalarının hiçbiri `test:content` uyarısı üretmiyor. Mobil paket yenilendi.
+
+---
+
+## 10. Hedef 4 gerçekte nasıl çalışıyor — ve orada bulunan hata
+
+Brief'in 4. hedefi "ExamPrep beceri içeriğinden besleniyor, hedef 3 dolunca o
+da dolar" diyordu. Doğrulandı, ama kısmen: **iki ayrı sınav var ve yalnız biri
+beceri bankasından besleniyor.**
+
+- **Modül sınavı** (`kind === "module"`): okuma/dinleme/yazma kendi elle
+  yazılmış planından gelir (`moduleExamPlan`). Beceri içeriğine hiç bakmaz.
+- **Seviye sınavı** (`module === null`): okuma ve dinleme metinlerini
+  `BUNDLED_EXERCISES`ten çeker (`exam.ts`, `pickTexts`). Yazma bölümü ise
+  yalnız `kind: "free"` görevleri alır.
+
+Yani hedef 3'ün doldurduğu yer seviye sınavının okuma ve dinlemesidir. A2'de
+sınav havuzu artık 62 okuma + 62 dinleme metni.
+
+Yazma tarafında A2'de dokuz `free` görev var (A1'de 32). Seviye sınavı bir
+tane seçtiği için bu darlık değil, yalnız daha az çeşit — `build`, `rewrite` ve
+`reply` görevleri beceri bölümü için doğru biçimler ama sınava girmiyorlar.
+
+### Bulunan hata: seviye sınavı seçeneksiz soruda kilitleniyordu (93c5db8)
+
+Sınav kâğıdı soruyu **yalnız şıklara basarak** çiziyor ve o ekranda atlama
+düğmesi yok. Beceri bölümündeki boşluk doldurma, kısa cevap ve dikte
+sorularının `options` alanı ise boş — beceri oynatıcısı onları yazdırarak
+cevaplatıyor. `pickTexts` soruları süzmeden ilk üçü alıyordu, yani böyle bir
+soru kâğıda düşünce hiçbir düğme çizilmiyor ve sınav orada kilitleniyordu.
+
+Ölçüm: sınava giden ilk-üç sorulardan seçeneği boş olanlar **A2'de 100, A1'de
+73**. B1/B2/C1 etkilenmiyordu, çünkü onların beceri içeriği tümüyle çoktan
+seçmeli. Modül sınavı da etkilenmiyordu.
+
+Bu açık, beceri içeriğine bilerek yazılı soru koymanın yan etkisiydi —
+`check-content.ts` her okuma/dinleme egzersizinde en az iki çoktan seçmeli
+olmayan soru istiyor, ve o kural doğru. Hata kuralda değil, sınavın süzgeçsiz
+okumasındaydı. `exam.ts` artık süzüyor; `check-exams.ts` de süzgeçten sonra her
+seviyede en az iki kullanılabilir metin kaldığını doğruluyor.
