@@ -126,24 +126,56 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   // Metot adları Android'le birebir aynı; JS tarafı (lib/stt.ts) zaten bunları
   // çağırıyor ve iOS'ta şimdiye kadar sessizce boşa düşüyordu — JS değişmedi.
   private var walkSessionHeld = false
+  private var audioObservers: [NSObjectProtocol] = []
+
+  /**
+   * Yürüyüş turunun ses oturumu.
+   *
+   * Kategori seçenekleri:
+   *  - `.duckOthers` — çalan müzik kısılır, susmaz. Yürürken müzik dinleyen kullanıcı
+   *    turu bitirince kaldığı yerden devam eder.
+   *  - `.defaultToSpeaker` — kulaklık yoksa ses hoparlörden çıkar; playAndRecord'un
+   *    varsayılanı kulaklık deliğidir ve telefon cepteyken duyulmaz.
+   *  - `.allowBluetooth` (HFP) — kulaklığın MİKROFONU kullanılabilsin diye. Bu olmadan
+   *    AirPods takılıyken bile giriş dahili mikrofonda kalıyor, yani cepteki telefonun
+   *    mikrofonunda; yürüyüş modunun en yaygın kullanımı tam olarak bu.
+   *  - `.allowBluetoothA2DP` — çıkış tarafı: TTS ve efektler kulaklıktan gelsin.
+   */
+  private static let walkOptions: AVAudioSession.CategoryOptions =
+    [.duckOthers, .defaultToSpeaker, .allowBluetooth, .allowBluetoothA2DP]
 
   @objc(startWalkService)
   func startWalkService() {
     DispatchQueue.main.async {
-      do {
-        let session = AVAudioSession.sharedInstance()
-        try session.setCategory(.playAndRecord, mode: .measurement, options: [.duckOthers, .defaultToSpeaker])
-        try session.setActive(true)
-        self.walkSessionHeld = true
-        // Oturum etkin OLDUKTAN sonra: kayıt olmadan kilit ekranı denetimi çizilmez.
+      // Yeniden çağrılırsa oturumu bir daha kurmuyoruz: JS tur başında bir kez
+      // çağırıyor ama kesinti sonrası toparlanma da buraya düşebiliyor.
+      if self.walkSessionHeld {
         self.showNowPlaying()
-        self.enableWalkRemoteCommands()
-      } catch {
-        // Eskiden LernomiSpeechError yayılıyordu; onu `stt.ts` "bu kelimeyi
-        // duyamadım" sayıyor ve kullanıcı arka plan yolunun hiç kurulmadığını
-        // öğrenemiyordu. Android'in ön plan servisi hatasıyla aynı olay.
-        self.send("LernomiWalkServiceFailed", ["reason": "session"])
+        return
       }
+      guard self.activateWalkSession() else { return }
+      self.walkSessionHeld = true
+      // Oturum etkin OLDUKTAN sonra: kayıt olmadan kilit ekranı denetimi çizilmez.
+      self.showNowPlaying()
+      self.enableWalkRemoteCommands()
+      self.startAudioObservers()
+    }
+  }
+
+  /// Oturumu kurar ve etkinleştirir. Başarısızsa JS'e haber verip false döner.
+  @discardableResult
+  private func activateWalkSession() -> Bool {
+    do {
+      let session = AVAudioSession.sharedInstance()
+      try session.setCategory(.playAndRecord, mode: .measurement, options: Self.walkOptions)
+      try session.setActive(true)
+      return true
+    } catch {
+      // Eskiden LernomiSpeechError yayılıyordu; onu `stt.ts` "bu kelimeyi
+      // duyamadım" sayıyor ve kullanıcı arka plan yolunun hiç kurulmadığını
+      // öğrenemiyordu. Android'in ön plan servisi hatasıyla aynı olay.
+      send("LernomiWalkServiceFailed", ["reason": "session"])
+      return false
     }
   }
 
@@ -151,9 +183,79 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   func stopWalkService() {
     DispatchQueue.main.async {
       self.walkSessionHeld = false
+      self.stopAudioObservers()
       self.hideNowPlaying()
       try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }
+  }
+
+  // --- Kesinti ve toparlanma -----------------------------------------------------
+  //
+  // Ekran kapalıyken turu ayakta tutan tek şey ETKİN ses oturumu. Gelen bir telefon
+  // çağrısı, bir alarm ya da Siri o oturumu iOS'a devrediyor; kesinti bittiğinde
+  // sistem oturumu KENDİLİĞİNDEN geri vermiyor, uygulamanın yeniden etkinleştirmesi
+  // gerekiyor. Bu yapılmazsa çağrı bittikten sonra tur sessizce ölüyor ve kullanıcı
+  // bunu ancak telefonu cebinden çıkarınca görüyor — App Review'ın arka plan sesi
+  // için sorduğu "kullanıcı ne olduğunu anlıyor mu" sorusunun tam ortası.
+  //
+  // İki olay dinleniyor:
+  //   interruption      .began → oturum bizden alındı; .ended + .shouldResume → geri al.
+  //   mediaServicesWereReset  ses yığını çöktü; her şey yeniden kurulmalı.
+  private func startAudioObservers() {
+    guard audioObservers.isEmpty else { return }
+    let center = NotificationCenter.default
+    let session = AVAudioSession.sharedInstance()
+
+    audioObservers.append(center.addObserver(
+      forName: AVAudioSession.interruptionNotification, object: session, queue: .main
+    ) { [weak self] note in
+      guard let self = self, self.walkSessionHeld else { return }
+      guard let raw = note.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt,
+            let type = AVAudioSession.InterruptionType(rawValue: raw) else { return }
+      switch type {
+      case .began:
+        // Kilit ekranı kaydı burada kaldırılmıyor: kesinti kısa (çağrı, alarm) ve
+        // bittiğinde tur sürüyor. Kaldırmak kullanıcıya turun bittiğini söylerdi.
+        break
+      case .ended:
+        let rawOpts = note.userInfo?[AVAudioSessionInterruptionOptionKey] as? UInt ?? 0
+        let opts = AVAudioSession.InterruptionOptions(rawValue: rawOpts)
+        if opts.contains(.shouldResume) {
+          if self.activateWalkSession() {
+            self.showNowPlaying()
+          } else {
+            self.walkSessionHeld = false
+          }
+        } else {
+          // Sistem devam etmememizi söylüyor (ör. başka uygulama sesi tuttu).
+          // Turu kesmiyoruz ama arka plan yolu artık yok; kullanıcı bilsin.
+          self.walkSessionHeld = false
+          self.send("LernomiWalkServiceFailed", ["reason": "interrupted"])
+        }
+      @unknown default:
+        break
+      }
+    })
+
+    audioObservers.append(center.addObserver(
+      forName: AVAudioSession.mediaServicesWereResetNotification, object: session, queue: .main
+    ) { [weak self] _ in
+      guard let self = self, self.walkSessionHeld else { return }
+      // Sistem ses sunucusu yeniden başladı: oturum, Now Playing ve uzaktan
+      // komutlar dahil her şey sıfırlandı. Hepsini yeniden kuruyoruz.
+      self.hideNowPlaying()
+      if self.activateWalkSession() {
+        self.showNowPlaying()
+        self.enableWalkRemoteCommands()
+      } else {
+        self.walkSessionHeld = false
+      }
+    })
+  }
+
+  private func stopAudioObservers() {
+    audioObservers.forEach { NotificationCenter.default.removeObserver($0) }
+    audioObservers = []
   }
 
   // --- Kilit ekranı denetimi (Now Playing) — Android'deki "Durdur" düğmesinin karşılığı ---
@@ -188,6 +290,11 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
       // 1.0 = "çalıyor". 0.0 yazılsaydı kilit ekranı turu duraklamış gösterirdi.
       MPNowPlayingInfoPropertyPlaybackRate: 1.0,
     ]
+    // iOS 13+: kilit ekranı denetimleri, uygulama gerçek bir oynatıcı olmadığında
+    // yalnız playbackState açıkça "playing" olduğunda güvenilir biçimde çiziliyor.
+    // Yazılmazsa denetim bazı cihazlarda hiç görünmüyor ve "her an durdurulabilir"
+    // iddiası inceleyicide karşılıksız kalıyor.
+    MPNowPlayingInfoCenter.default().playbackState = .playing
   }
 
   private func enableWalkRemoteCommands() {
@@ -216,6 +323,7 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   }
 
   private func hideNowPlaying() {
+    MPNowPlayingInfoCenter.default().playbackState = .stopped
     MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
     for (command, target) in walkRemoteTargets {
       command.removeTarget(target)
@@ -291,7 +399,7 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
     DispatchQueue.main.async {
       do {
         let session = AVAudioSession.sharedInstance()
-        try session.setCategory(.playAndRecord, mode: .measurement, options: [.duckOthers, .defaultToSpeaker])
+        try session.setCategory(.playAndRecord, mode: .measurement, options: Self.walkOptions)
         try session.setActive(true)
         let url = FileManager.default.temporaryDirectory.appendingPathComponent("walk_clip.wav")
         let settings: [String: Any] = [

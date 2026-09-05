@@ -78,11 +78,28 @@ Yapılanlar:
   düşüyordu, **JS değişmedi**. Oturum tur boyunca açık tutuluyor.
 - Kelime başına yapılan temizlik artık tur oturumunu kapatmıyor; kapatsaydı ekran
   kapalıyken bir sonraki kelimeye geçilemezdi.
+- **Kesinti toparlanması (2026-09-05).** Gelen çağrı, alarm ya da Siri oturumu iOS'a
+  devrediyor ve sistem onu kendiliğinden geri vermiyor; `interruptionNotification`
+  dinleniyor, `.ended` + `.shouldResume` gelince oturum yeniden etkinleştirilip Now
+  Playing kaydı yeniden yazılıyor. `.shouldResume` yoksa tur kesilmiyor ama arka plan
+  yolunun kalmadığı JS'e bildiriliyor (`LernomiWalkServiceFailed`) ve ekranda uyarı
+  çiziliyor. `mediaServicesWereReset` de dinleniyor: ses yığını çökerse oturum, kayıt
+  ve uzaktan komutlar birlikte yeniden kuruluyor.
+- **Kulaklık (2026-09-05).** Kategori seçeneklerine `.allowBluetooth` ve
+  `.allowBluetoothA2DP` eklendi. Bunlar olmadan AirPods takılıyken bile GİRİŞ dahili
+  mikrofonda kalıyordu — yani cepteki telefonun mikrofonunda, ki yürüyüş modunun en
+  yaygın kullanımı tam olarak bu.
+- **Kilit ekranı denetimi (2026-09-05).** `MPNowPlayingInfoCenter.playbackState`
+  açıkça `.playing` yazılıyor. Uygulama gerçek bir oynatıcı olmadığı için bu
+  yazılmadan denetim bazı cihazlarda hiç çizilmiyor ve "her an durdurulabilir"
+  iddiası incelemede karşılıksız kalıyordu.
+- `startWalkService` yeniden çağrılmaya dayanıklı (kesinti sonrası aynı yola düşüyor).
 
 **Doğrulanmadı.** Bu makinede macOS ve Xcode yok; kod derlenmedi, cihazda denenmedi.
-Cihazda sınanacak dört şey: (1) ekran kilitlendikten sonra tur devam ediyor mu,
+Cihazda sınanacak beş şey: (1) ekran kilitlendikten sonra tur devam ediyor mu,
 (2) kelimeler arası boşlukta uygulama askıya alınıyor mu, (3) kilit ekranında mikrofon
-göstergesi görünüyor mu, (4) telefon çağrısı gelip bittiğinde oturum toparlanıyor mu.
+göstergesi ve Now Playing denetimi görünüyor mu, (4) telefon çağrısı gelip bittiğinde
+oturum toparlanıyor mu, (5) AirPods takılıyken giriş kulaklık mikrofonuna geçiyor mu.
 
 **İnceleme riski:** arka planda mikrofon isteyen bir uygulama App Review'da en çok
 sorgulanan şeydir ve inceleyenin ilk sorusu "kullanıcı bunu nasıl durduruyor" olur. Üç
