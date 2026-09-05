@@ -106,7 +106,7 @@ export const b1U01: SkillExercise[] = [
     intro: "İki kısa özgeçmiş. Yazı dilinin geçmiş zamanına dikkat et: arbeitete, wechselte, machte.",
     minutes: 5,
     gloss: [
-      { de: "der Lebenslauf", tr: "özgeçmiş", en: "CV" },
+      { de: "die Leistung", tr: "performans", en: "performance" },
       { de: "der Abschluss", tr: "diploma / mezuniyet", en: "degree" },
       { de: "die Karriere", tr: "kariyer", en: "career" },
       { de: "die Leistung", tr: "performans", en: "performance" },

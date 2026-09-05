@@ -32,7 +32,7 @@ export const b1U05: SkillExercise[] = [
       { de: "berechnen", tr: "hesaplamak", en: "to calculate" },
       { de: "der Betrag", tr: "tutar", en: "amount" },
       { de: "die Höhe", tr: "yükseklik / tutar", en: "level" },
-      { de: "die Zahlung", tr: "ödeme", en: "payment" },
+      { de: "die Summe", tr: "toplam", en: "total" },
       { de: "das Recht", tr: "hak", en: "right" },
     ],
     text:
