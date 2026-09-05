@@ -140,3 +140,131 @@ biçimi gösteriyor.
 Not: bu sekiz hata daha önce görünmüyordu, çünkü `exam-dryrun.ts` kaldırılmış
 dilbilgisi bölümünü zorunlu tutuyor ve katalog genelinde 190 hata üretiyordu;
 doğrulayıcı hizalanınca (0 ya da 6) gerçek hata ortaya çıktı.
+
+---
+
+## 8. Sonuç — 2026-09-05
+
+İş bitti. Aşağıdaki her sayı §6'daki doğrulayıcılarla ölçüldü; komutlar
+parantez içinde.
+
+### Hedef — 45 ünitenin 45'i kendi derslerinden beslensin
+
+| Ölçüt | Başlangıç | Şimdi |
+|---|---|---|
+| Okuma egzersizi | 20 | **102** (hedef 90) |
+| Dinleme egzersizi | 20 | **102** (hedef 90) |
+| Yazma egzersizi | 16 | **98** (hedef 90) |
+| Ünite hizalı ünite | 4/45 | **45/45** |
+| Patikada boş beceri yuvası | 214 | **0** |
+
+`buildTrack` ölçümü: **270 yuva · dolu 270 · ünite hizalı 270 · eski genel 0
+· boş 0.** Eski 32 genel egzersiz patikadan tamamen düştü — kimlikleri
+duruyor, `user_skills` kayıtları çözülmeye devam ediyor, yalnız
+zamanlanmıyorlar. Silme değil, sıra değişikliği (§2b).
+
+### Adım 1 tanısının cevabı — B1 derslerinin havuz uyumu
+
+1440 sözlükçe yuvası ölçüldü:
+
+| Ölçüt | Değer |
+|---|---|
+| Havuzun B1 katmanında | 1394 (%96,8) |
+| Alt seviye tekrarı (A1 6 · A2 40) | 46 (%3,2) |
+| Üst seviye (B2/C1) | **0** |
+| Havuzda hiç yok | **0** |
+| **SRS'in erişemeyeceği yuva** | **0 (%0,0)** |
+
+A2'de asıl kazancın geldiği yer buydu (%21,4 erişilemez). **B1'de o boşluk
+zaten yoktu** — ders kurgusunda (`f33a2e7`) kapanmıştı. Kalan 46 alt seviye
+maddesi bilinçli: hepsi dersin kendi konusu. B1 katmanı kapsama: 1394/1815
+farklı başlık (%76,8).
+
+### Beceri metinlerinde hiç geçmeyen ders kelimesi
+
+| Ölçüm | Başlangıç | Şimdi |
+|---|---|---|
+| B1 egzersizleri, jeton eşleşmesi | 990/1440 (%68,8) | **90/1440 (%6,3)** |
+
+Brief'teki 386 sayısı **yeniden üretilemedi**: o değere ancak TÜM
+seviyelerin metinlerinde gevşek altdizi aranırsa yaklaşılıyor (352), yani
+bir B1 kelimesi A1 metninde geçtiği için "kapsandı" sayılıyor. Yukarıdaki
+satır B1 metinlerini B1 kelimeleriyle ölçüyor.
+
+### İçerik kalitesi (§4)
+
+Ünite dosyalarında dört ölçütün dördü de **0**:
+
+| Ölçüt | 270 ünite egzersizinde |
+|---|---|
+| Okuma/dinlemede yazılı soru < 2 | 0 |
+| Yazma setinde `rewrite` yok | 0 |
+| Sözlükçe kelimesi metinde yok | 0 |
+| Çok anlamlı `tr` (virgüllü) | 0 |
+
+**Not — brief'teki bir doğrulama yanlıştı.** §4'ün atıf yaptığı
+`skills: çoktan seçmeli olmayan soru < 2` kuralı `check-content.ts`'te
+VARDI ve `33e8985`'te silinmişti. Yani "`test:content | grep b1-uNN` sıfır
+uyarı" doğrulaması bu kural için anlamsızdı: çalıştırınca sıfır görülüyor
+ve uyulduğu sanılıyordu. Kural oturum boyunca elle sayıldı (kullanıcı
+kararı). Bir paralel oturum kuralı sonradan geri koydu.
+
+45 `rewrite` görevinin her biri **ayrı** bir Türkçe aktarım hatasını
+hedefliyor; hiçbiri tekrar etmiyor. Aralarında en pahalı sınıf, cümleyi
+dilbilgisel olarak DOĞRU bırakıp anlamı bozanlar: `lassen` düşünce
+"kendimi muayene edeceğim" (18), `wenn ich Zeit gehabt habe` gerçek koşula
+döner (23), `ich bin langweilig` = "ben sıkıcıyım" (40). Hiçbir
+doğrulayıcı bunları göremez.
+
+### Kapı (`scripts/lib/vocab-gate.cjs`) — 20 kural, hepsi ölçümden
+
+Kapı bu oturumda 20 kez düzeltildi; her biri bir ünitenin ölçümünden çıktı
+ve hepsi ekleme (A1 davranışı korunarak). Üçü **hata**, gerisi boşluktu:
+
+- **Ünlü değişimi kuralı çok harfli ünlüyü tek harf sanıyordu** — kesme
+  uzunluğu sabit 1'di. Listede duran `["ie","o"]` çifti bu yüzden BAŞTAN
+  BERİ hiç çalışmamış: `verlieren→verlor`, `fliegen→flog` üretilmiyordu.
+- **-ern/-eln fiilleri kapının tamamen dışındaydı** — üreteç yalnız "en"
+  ile bitene bakıyordu; `ändern, wechseln, sich erinnern, verbessern`
+  hepsi kayma sayılıyordu.
+- **Ad-soyad taraması ikinci belirteci yutuyordu** — her mektup
+  "Mit freundlichen Grüßen / Nuri Öz" ile bittiği için HER imzadaki soyad
+  kayma sayılıyordu.
+
+Kalan 17: Präteritum kişi ekleri · 8 düzensiz fiil (fallen, fangen, tragen,
+rufen, kennen, sitzen, schreien, schneiden) · 2. tekil ve emir · d/t
+bağlantı ünlüsü · güçlü fiil I. sınıfı (ei→ie) · Türkçe özel ad
+çevrimyazımı · isim umlaut çoğulu · `hoch → hohe` · kerecik sayıları
+(dreimal) · `wovor`/`davor` · mektup kalıpları · kipli fiil ortaçları.
+
+Etkisi ölçüldü, **hiçbir seviyede gerileme yok**:
+A1 temiz egzersiz **107 → 113** · B1 **32 → 270**.
+
+### Doğrulama (kapanışta)
+
+`npx tsc --noEmit` kökte ve `mobile/` içinde **temiz** ·
+`npm run check:lessons` **hata yok**, 7 uyarı (hepsi B1 bağlaç derslerinin
+Türkçe açıklamalarında Almanca örnek geçmesi — bağlaç öğretirken
+kaçınılmaz) · `npm run test:track` **64 kontrol geçti** ·
+`npm run test:options` **temiz** · `npm run check:unitvocab -- b1`
+**270/270 temiz** · `npm run dump:skills` yenilendi, **farkı yalnız B1'de**
+(198 yeni, değişen 0, silinen 0).
+
+`npm run test:content` bütçesinde **bu oturumun payı üç kalemde de 0**
+(intro, çok anlamlı tr, sözlükçe metinde yok). Kalan uyarılar A1/A2/ZH/
+B2/C1 ve eski B1 içeriğine ait.
+
+### Bilerek bırakılanlar
+
+- **Eski 32 genel B1 egzersizi düzeltilmedi.** Onlarda 24 "yazılı soru < 2",
+  8 "rewrite yok" ve 11 "sözlükçe metinde yok" duruyor. Patikadan düştükleri
+  için öğrenciye gösterilmiyorlar; kimlikleri canlı ilerleme taşıdığı için
+  silinmediler.
+- **`speaking` egzersizi yazılmadı.** `BASE_PATTERN` içinde konuşma yuvası
+  yok (`build.ts:30`), yani yazılsa da yerleştirilmezdi. A2 raporu bunu
+  zaten sahibin kararına bırakmıştı.
+- **Ay ve gün adlarının havuz boşluğu.** 12 ayın yalnız `Mai`'si, günlerin
+  yalnız `Mittwoch`'u havuzda. A1 katmanının işi, buradan dokunulmadı.
+- **check-content.ts'e dokunulmadı.** Silinmiş kuralı geri koymak
+  kullanıcıya soruldu ve "elle takip et" denildi; kural oturum boyunca ayrı
+  bir betikle sayıldı.
