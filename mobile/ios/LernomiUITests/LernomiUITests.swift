@@ -271,6 +271,15 @@ final class LernomiUITests: XCTestCase {
       tabs[i].tap()
       sleep(dwell)
 
+      // Önce sekmenin İÇERİĞİNİ baştan sona kaydır. Dokunmadan, yalnız
+      // görüntülemek için: ekranların çoğu katlanmanın altında ve XCUITest
+      // görünmeyeni `isHittable` saymıyor, yani hem kare çıkmıyor hem de
+      // tarama onları giriş olarak hiç görmüyordu. Ölçüldü: kaydırma yokken
+      // tarama üç sekmede toplam 6 ekran açabildi.
+      scrollThrough(app, steps: 4)
+      tabs[i].tap() // başa dön (sekmeye yeniden dokunmak listeyi yukarı alıyor)
+      sleep(dwell)
+
       let count = entries(app).count
       for j in 0..<min(count, 12) {
         if outOfTime { print("UITEST: butce doldu, tarama kesildi"); return }
@@ -278,6 +287,7 @@ final class LernomiUITests: XCTestCase {
         guard j < fresh.count, fresh[j].isHittable else { continue }
         fresh[j].tap(); acilan += 1
         sleep(dwell)
+        scrollThrough(app, steps: 2) // açılan ekranın altı da görülsün
 
         // İkinci seviye: açılan ekranın kendi girişleri.
         let subCount = entries(app).count
@@ -294,6 +304,17 @@ final class LernomiUITests: XCTestCase {
         goHome(app)
         sleep(1)
       }
+    }
+  }
+
+  /// Ekranı aşağı kaydırarak tamamını gösterir. Dokunma yok — amaç yalnız
+  /// katlanmanın altındaki içeriğin kareye girmesi. Her adımda bekleniyor ki
+  /// dış döngü (2 sn) yakalayabilsin.
+  private func scrollThrough(_ app: XCUIApplication, steps: Int) {
+    for _ in 0..<steps {
+      if outOfTime { return }
+      app.swipeUp()
+      sleep(dwell)
     }
   }
 
