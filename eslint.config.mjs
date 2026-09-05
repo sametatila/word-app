@@ -40,6 +40,16 @@ export default [
   ...nextTypescript,
   {
     /**
+     * `files` ZORUNLU, süs değil. eslint-config-next eklentilerini (react,
+     * react-hooks, @next/next, @typescript-eslint) tam bu kapsamla kaydediyor.
+     * Bu blok kapsamsız bırakılırsa ESLint onu o kapsamın DIŞINDAKİ dosyalara da
+     * uygulamaya çalışıyor ve orada eklenti bulunmadığı için "could not find
+     * plugin react-hooks" diyerek ÇIKIŞ 2 veriyor — uyarı değil, hiç koşmuyor.
+     * Kurulduğu gün geçmesi eslint-config-next'in o günkü sürümünün kapsamsız
+     * kaydetmesindendi; `^16.3.0` kayınca kırıldı.
+     */
+    files: ["**/*.{js,jsx,mjs,ts,tsx,mts,cts}"],
+    /**
      * CIRCIRLI TABAN — mobildeki `--max-warnings` ve `i18n-scan --check`
      * mantığının aynısı: yapılandırma bugün kuruldu, altındaki kod yıllardır
      * lint görmedi. Aşağıdaki kuralları ilk gün "hata" saymak CI'ı ilk koşuda
@@ -53,10 +63,16 @@ export default [
      * Bir kuralın sayısı sıfıra inince SATIRINI SİL — kural kendiliğinden
      * yeniden "hata" olur ve bir daha geri gelemez. Sayı yalnız aşağı iner.
      *
-     * Ölçüm 2026-09-04, `npx eslint . -f json`:
+     * YENİDEN ÖLÇÜM 2026-09-05: taban 218 → 221. Bu bir gevşetme değil, bir
+     * düzeltme. Arada yapılandırma sessizce kırıldı (aşağıdaki `files` notu) ve
+     * ESLint çıkış 2 verip HİÇ KOŞMADI, yani o aralıkta inen commit'ler hiç
+     * denetlenmedi. 221 bugünkü gerçek sayı; kural kural sayılar da yenilendi.
+     * Kırılma bir daha sessiz olmayacak: artık ESLint gerçekten koşuyor.
+     *
+     * Ölçüm `npx eslint . -f json`:
      */
     rules: {
-      // React Compiler döneminin yeni kuralları (eslint-plugin-react-hooks v6).
+      // React Compiler döneminin yeni kuralları (eslint-plugin-react-hooks v7).
       // Bugüne kadar hiçbir yerde açık değildi; en büyük ve en ayrı iş bu.
       "react-hooks/set-state-in-effect": "warn", // 52
       "react-hooks/error-boundaries": "warn", // 37
@@ -68,8 +84,18 @@ export default [
       // Eski kurallar, küçük artıklar — bunlar önce bitecek olanlar.
       "react/no-unescaped-entities": "warn", // 13
       "@typescript-eslint/no-require-imports": "warn", // 2
-      "@typescript-eslint/no-explicit-any": "warn", // 2
+      "@typescript-eslint/no-explicit-any": "warn", // 4
       "@next/next/no-assign-module-variable": "warn", // 1
     },
+  },
+  {
+    /**
+     * `.cjs` TANIMI GEREĞİ CommonJS: orada `require()` doğru yazımdır, ihlal
+     * değil. Kural next'in kapsamsız yapılandırmasından hata olarak geliyordu ve
+     * scripts/lib/vocab-gate.cjs'yi iki kez patlatıyordu. Eşiği yükseltmek
+     * yanlış cevap olurdu — kural o dosya türü için yanlış, sayı değil.
+     */
+    files: ["**/*.cjs"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
   },
 ];

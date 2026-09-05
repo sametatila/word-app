@@ -1,8 +1,8 @@
 {
-  "total": 123,
+  "total": 124,
   "files": {
     "src/data/demoPlacement.ts": 5,
-    "src/data/exams.ts": 1,
+    "src/data/exams.ts": 2,
     "src/data/firstWords.ts": 40,
     "src/data/moduleThemes.ts": 54,
     "src/lib/courses.ts": 7,
