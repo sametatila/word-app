@@ -171,8 +171,8 @@ final class LernomiUITests: XCTestCase {
       print("UITEST: alanlar bulunamadi")
       return
     }
-    mail.tap(); mail.typeText(email)
-    pass.tap(); pass.typeText(password)
+    typeInto(mail, email, verify: true)
+    typeInto(pass, password, verify: false) // gizli alan değeri nokta döner, okunamaz
     // Klavye KAPATILIYOR. Açık kaldığında "Giriş yap" düğmesi ağaçta görünüyor
     // ama isHittable false oluyor (klavye örtüyor) — bir koşuda tam olarak bu
     // oldu ve giriş sessizce olmadı. Satır sonu tek satırlık alanda
@@ -193,6 +193,28 @@ final class LernomiUITests: XCTestCase {
     dump(app, "giris sonrasi", email: email, passwordLength: password.count)
   }
 
+  /// Alana yazar ve YAZILANI DOĞRULAR. `tap()`'ten hemen sonra yazmak ilk
+  /// karakterleri düşürüyor (klavye/odak henüz yerleşmemiş oluyor): bir koşuda
+  /// "sametatila+uitest@..." alana "stila+uitest@..." olarak düştü ve giriş
+  /// sessizce yanlış adresle denendi. Kare olmasa fark edilmezdi.
+  ///
+  /// Gizli alan doğrulanamıyor (değer nokta döner), ama oradaki hata da
+  /// görülmüştü: nokta sayısı parola uzunluğuyla tutuyordu.
+  private func typeInto(_ field: XCUIElement, _ text: String, verify: Bool) {
+    for attempt in 1...3 {
+      field.tap()
+      sleep(1) // odak ve klavye yerleşsin — asıl düzeltme bu
+      field.typeText(text)
+      guard verify else { return }
+      if (field.value as? String) == text { return }
+      print("UITEST: alan yanlis yazildi (deneme \(attempt)), temizlenip yeniden")
+      field.tap()
+      let silinecek = ((field.value as? String) ?? "").count + 5
+      field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: silinecek))
+    }
+    print("UITEST: alan uc denemede de dogru yazilamadi")
+  }
+
   /// Ekranın o anki hâlini günlüğe yazar. Kareler "ne göründüğünü" söylüyor,
   /// bu "testin ne gördüğünü" söylüyor — ikisi ayrıştığında sebep buradan çıkar.
   private func dump(_ app: XCUIApplication, _ nerede: String, email: String, passwordLength: Int) {
@@ -209,6 +231,13 @@ final class LernomiUITests: XCTestCase {
   private func dismissInterstitials(_ app: XCUIApplication, times: Int) {
     for _ in 0..<times {
       if !tabButtons(app).isEmpty { return } // sekmelere vardık
+      // Hâlâ giriş ekranındaysak giriş TUTMAMIŞ demektir; buradaki en alttaki
+      // düğme "Hesabın yok mu? Kayıt ol" ve basmak formu kayda çevirir. Bir
+      // koşuda tam olarak bu oldu ve son kare kayıt formunu gösterdi.
+      if button(app, labeled: label("SIGNIN")) != nil || button(app, labeled: label("SIGNUP")) != nil {
+        print("UITEST: hala giris ekranindayiz, ara ekran kapatma atlandi")
+        return
+      }
       guard let last = buttons(app).last, last.isHittable else { return }
       last.tap()
       sleep(dwell)
