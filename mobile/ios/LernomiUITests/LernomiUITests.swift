@@ -31,6 +31,18 @@ final class LernomiUITests: XCTestCase {
 
   override func setUpWithError() throws {
     continueAfterFailure = true // bir adım tutmasa da kalan ekranlar görülsün
+    // Sistem diyaloğu (bildirim izni, mikrofon) turu bloklayabilir: uygulamanın
+    // üstünde durur ve altındaki hiçbir düğme dokunulabilir olmaz. Çıkarsa
+    // reddediliyor — izin vermek turun işi değil ve verilen izin sonraki
+    // koşularda farklı bir başlangıç durumu bırakırdı.
+    addUIInterruptionMonitor(withDescription: "sistem diyalogu") { alert in
+      for label in ["Don't Allow", "İzin Verme", "Nicht erlauben", "Cancel", "İptal", "Abbrechen"] {
+        let b = alert.buttons[label]
+        if b.exists { b.tap(); return true }
+      }
+      if alert.buttons.count > 0 { alert.buttons.element(boundBy: 0).tap(); return true }
+      return false
+    }
     blocked = (env["UI_TEST_BLOCK"] ?? "")
       .split(separator: "|")
       .map { $0.trimmingCharacters(in: .whitespaces).lowercased() }
@@ -50,7 +62,12 @@ final class LernomiUITests: XCTestCase {
     // 2) Giriş duvarı. Kimlik bilgisi yoksa burada duruluyor — ki bu da bir ekran.
     signIn(app)
 
-    // 3) Sekmelerin altındaki ekranlar.
+    // 3) Giriş sonrası ara ekranlar (bildirim izni istemi gibi) kapatılıyor.
+    //    Bunlar tur boyunca değil bir kez çıkıyor ama sekme çubuğunu örtüyor,
+    //    yani kapatılmazsa tarama sekmeleri hiç bulamıyor.
+    dismissInterstitials(app, times: 3)
+
+    // 4) Sekmelerin altındaki ekranlar.
     crawlTabs(app)
   }
 
@@ -175,6 +192,19 @@ final class LernomiUITests: XCTestCase {
     print("UITEST: \(nerede) | eposta=\(email.isEmpty ? "YOK" : "var") parola=\(passwordLength) hane " +
           "| metinAlani=\(app.textFields.count) gizliAlan=\(app.secureTextFields.count) " +
           "| dugmeler=\(labels)")
+  }
+
+  /// Ara ekranları kapatır: YALNIZ en alttaki düğmeye basar, seçenek seçmez.
+  /// advance() burada kullanılamaz çünkü o birden fazla düğme görünce ilkini de
+  /// seçiyor; bildirim isteminde ilk düğme "Günlük hatırlatmayı aç" ve sistem
+  /// izin diyaloğunu açar. İstenen "Şimdilik geç", yani en alttaki.
+  private func dismissInterstitials(_ app: XCUIApplication, times: Int) {
+    for _ in 0..<times {
+      if !tabButtons(app).isEmpty { return } // sekmelere vardık
+      guard let last = buttons(app).last, last.isHittable else { return }
+      last.tap()
+      sleep(dwell)
+    }
   }
 
   // MARK: - gezinme
