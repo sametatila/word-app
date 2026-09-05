@@ -241,3 +241,15 @@ egzersiz sayıları değişmedi (62/62/58), yalnız içerikleri zenginleşti.
 | Yetim ders kelimesi | **0/800** |
 | A1 havuz katmanı | 897 (17 eklendi) |
 | test:content A1 payı | **0** (kalan borç A2/B1/B2/C1/zh) |
+
+## Açık kalan: içerik doğrulayıcısında A1 payı (2026-09-05 ölçümü)
+
+Yukarıdaki tabloda `test:content` A1 payı sıfır yazıyor; C1 oturumunun
+ölçümünde iki kategoride A1 uyarısı çıktı:
+
+- `lessons: lecture N adım (8–20)`: **25 ders, hepsi A1** (21–24 adım).
+- `lessons: tekrar adımı payı %N`: 44 uyarının **26'sı A1**.
+
+Doğrulayıcı yeniden kullanılabilir olsun diye ikisi de baseline'a yazıldı;
+kapatılması A1 hattının işi. Kapatılınca tavanı da düşürmek gerekiyor,
+yoksa yeni borç görünmez kalır.

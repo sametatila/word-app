@@ -1,12 +1,14 @@
 {
-  "lessons: havuz dışı kelime N/N": 31,
-  "lessons: lecture N adım (N–N)": 2,
-  "lessons: çok anlamlı vocab tr": 57,
+  "lessons: havuz dışı kelime N/N": 4,
+  "lessons: lecture N adım (N–N)": 25,
+  "lessons: tekrar adımı payı %N (> N)": 44,
+  "lessons: çok anlamlı vocab tr": 81,
   "skills: dinleme bölümü N kelime (> N)": 75,
-  "skills: en yok": 1372,
+  "skills: en yok": 1209,
   "skills: intro Türkçe olmalı; Almanca harf var": 2,
-  "skills: parantezli tr": 160,
-  "skills: sözlükçe kelimesi metinde yok": 485,
-  "skills: çok anlamlı tr": 167,
-  "skills: çoktan seçmeli olmayan soru N (< N)": 50
+  "skills: parantezli tr": 148,
+  "skills: short_answer": 108,
+  "skills: sözlükçe kelimesi metinde yok": 459,
+  "skills: çok anlamlı tr": 278,
+  "skills: çoktan seçmeli olmayan soru N (< N)": 42
 }

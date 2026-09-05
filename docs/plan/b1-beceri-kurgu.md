@@ -344,3 +344,13 @@ hatanın hepsi B2, paralel oturumun sürmekte olan işi) · `test:content`
 bütçesini aşan kategorilerde **B1 payı sıfır** (kalanlar A2/ZH ve dersler) ·
 `dump:skills` yenilendi, **farkı yalnız B1'de** (9 yeni, 112 değişen, 0
 silinen).
+
+## Açık kalan: içerik doğrulayıcısında B1 payı (2026-09-05 ölçümü)
+
+Yukarıda B1 payı sıfır yazıyor; C1 oturumunun ölçümünde bir kategoride
+B1 uyarısı çıktı:
+
+- `lessons: tekrar adımı payı %N`: 44 uyarının **18'i B1**.
+
+Doğrulayıcı yeniden kullanılabilir olsun diye baseline'a yazıldı;
+kapatılması B1 hattının işi ve kapatılınca tavan da düşürülmeli.

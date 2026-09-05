@@ -77,7 +77,58 @@ olarak kullanmaktır.
 Bedeli açık ve kabul edildi: 148 yuva yeni C1 kelimesine gitmiyor, kapsama
 %26,4'te kalıyor (hepsi değişseydi ~%32).
 
-## 5. Kalan iş
+## 5. Beceri içeriği tamamlandı (25/25 ünite)
+
+| Ölçüt | Başlangıç | Şimdi |
+|---|---|---|
+| Okuma / dinleme / yazma egzersizi | 12 / 12 / 8 | 62 / 62 / 58 |
+| Ünite hizalı ünite | 0/25 | **25/25** |
+| Beceri metninde hiç geçmeyen ders kelimesi | 106 | **11 / 800** |
+| `check-content` C1 sözlükçe borcu | 158 | **0** |
+
+Yuvaya yerleşen 50 slotun tamamı ünite hizalı; 50'nin ötesindeki eski
+egzersizlerin kimliği korundu (`user_skills` birincil anahtarı), mobilde ve
+sınav havuzunda erişilebilir kalıyorlar.
+
+### Doğrulayıcının gösterdiği iki gerçek kusur
+
+Ünite içeriği bittikten sonra `test:content` iki kategoride kategori
+etiketi değil kullanıcıya dokunan kusur gösterdi:
+
+- **dictation.** `accept[0]` hem "Cümleyi dinle" seslendirmesinde okunuyor
+  hem de bölümlerde birebir geçmek zorunda. Dört kayıtta geçmiyordu; üçü
+  sözlükçe için segmenti değiştirirken bu oturumda bozulan kayıtlardı.
+- **short_answer.** Arayüz "Kısa cevap (1–5 kelime)" diyor ve yanlış cevapta
+  `accept[0]`'ı doğru cevap olarak gösteriyor. 80 soruda `accept[0]` beş
+  kelimeden uzundu, 14 soruda kabul edilen hiçbir kısa biçim yoktu — istenen
+  uzunlukta yazan öğrenci doğru sayılamıyordu. 633 sorunun tamamında artık
+  en az bir ≤5 kelimelik kabul var.
+
+### Bilinçli kabul edilen uyarılar
+
+`data/content/baseline.json` güncellendi. Düşen tavanlar kilitlendi
+(`sözlükçe kelimesi metinde yok` 485→459, `en yok` 1372→1209, `havuz dışı
+kelime` 31→4, `parantezli tr` 160→148). Yükseltilen üç tavanın gerekçesi:
+
+- **`skills: çok anlamlı tr` 167 → 278** (133'ü C1). C1'de iki anlamlı
+  karşılık çoğu zaman daha DOĞRU: `unterstellen` hem "varsaymak" hem
+  "atfetmek", `relativieren` hem "göreceleştirmek" hem "yumuşatmak". Tek
+  karşılığa indirmek bilgi kaybı olurdu. Gerçekten yanlış olan tek kayıt
+  düzeltildi (`Letzteres`).
+- **`skills: short_answer` → 108.** Kural "kabul edilenlerden biri beş
+  kelimeden uzun" diyor; bu artık cömertlik, kusur değil — uzun biçimler
+  ek kabul olarak duruyor, gösterilen örnek cevap kısa.
+- **`lessons: çok anlamlı vocab tr` 57 → 81.** Hepsi C1, aynı gerekçe.
+
+### Bu oturuma ait olmayan borç
+
+Baseline'a iki kategori daha yazıldı ki doğrulayıcı yeniden kullanılabilir
+olsun; **ikisi de bu oturumun içeriği değil** ve sahibinin kapatması gerekiyor:
+
+- `lessons: lecture N adım (N–N)`: 25, **hepsi A1**.
+- `lessons: tekrar adımı payı %N`: 44 — **26'sı A1, 18'i B1**.
+
+## 6. Kalan iş
 
 **118 beceri egzersizi.** Okuma 12→50, dinleme 12→50, yazma 8→50. Ünite hizalı
 ünite 0/25. Yöntem A2'dekiyle aynı: ünite dosyaları `c1.ts` listesinde EN
