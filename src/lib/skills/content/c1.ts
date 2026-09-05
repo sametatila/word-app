@@ -13,6 +13,7 @@ import { c1U11 } from "./c1-u11";
 import { c1U12 } from "./c1-u12";
 import { c1U13 } from "./c1-u13";
 import { c1U14 } from "./c1-u14";
+import { c1U15 } from "./c1-u15";
 
 /**
  * C1 — okuma, dinleme ve yazma egzersizleri.
@@ -38,6 +39,7 @@ export const c1: SkillExercise[] = [
   ...c1U12,
   ...c1U13,
   ...c1U14,
+  ...c1U15,
   // ---------------------------------------------------------------- OKUMA
   {
     id: "c1-r1",
