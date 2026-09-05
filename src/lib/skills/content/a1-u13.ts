@@ -76,7 +76,15 @@ export const a1U13: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Die U-Bahn fährt dort nicht. Nur Bus und Straßenbahn.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Der Weg ist lang — geh weiter ___.",
+        options: [],
+        answer: 0,
+        accept: ["geradeaus"],
+        explain: "„Der Weg ist lang — geh weiter geradeaus.“",
+      },
+],
   },
   {
     id: "a1-u13-r2",
@@ -90,7 +98,6 @@ export const a1U13: SkillExercise[] = [
       { de: "die Lieferung", tr: "teslimat", en: "delivery" },
       { de: "kostenlos", tr: "ücretsiz", en: "free" },
       { de: "das Paket", tr: "kargo paketi", en: "parcel" },
-      { de: "dauern", tr: "sürmek", en: "to take (time)" },
     ],
     minutes: 3,
     text:
@@ -122,7 +129,15 @@ export const a1U13: SkillExercise[] = [
         answer: 0,
         explain: "„2× Zahnpasta“.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Die ___ ist kostenlos.",
+        options: [],
+        answer: 0,
+        accept: ["Lieferung"],
+        explain: "„Die Lieferung ist kostenlos.“",
+      },
+],
   },
   {
     id: "a1-u13-l1",
@@ -133,7 +148,6 @@ export const a1U13: SkillExercise[] = [
     genre: "Diyalog",
     intro: "Sokakta yol soruluyor. Yönleri takip et.",
     gloss: [
-      { de: "der Weg", tr: "yol", en: "way" },
       { de: "links", tr: "sol", en: "left" },
       { de: "rechts", tr: "sağ", en: "right" },
     ],
@@ -177,7 +191,15 @@ export const a1U13: SkillExercise[] = [
         answer: 0,
         explain: "„Oder Sie fahren mit dem Bus, Linie 3.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Die Post ist ___, zwischen der Bäckerei und dem Kiosk.",
+        options: [],
+        answer: 0,
+        accept: ["links"],
+        explain: "„Die Post ist links, zwischen der Bäckerei und dem Kiosk.“",
+      },
+],
   },
   {
     id: "a1-u13-l2",
@@ -189,7 +211,6 @@ export const a1U13: SkillExercise[] = [
     intro: "Drogeride bir müşteri bir şey arıyor.",
     gloss: [
       { de: "die Seife", tr: "sabun", en: "soap" },
-      { de: "benutzen", tr: "kullanmak", en: "to use" },
       { de: "das Taschentuch", tr: "kâğıt mendil", en: "tissue" },
     ],
     minutes: 2,
@@ -228,7 +249,15 @@ export const a1U13: SkillExercise[] = [
         answer: 0,
         explain: "Doğru: „Zahnpasta und Seife sind da rechts.“ — ikisi de sağda.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Zahnpasta und ___ sind da rechts.",
+        options: [],
+        answer: 0,
+        accept: ["Seife"],
+        explain: "„Zahnpasta und Seife sind da rechts.“",
+      },
+],
   },
   {
     id: "a1-u13-w1",

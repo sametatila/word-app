@@ -66,7 +66,15 @@ export const a1U02: SkillExercise[] = [
         accept: ["88", "achtundachtzig"],
         explain: "İlanda „Nummer 030 22 44 88“ yazıyor. Rakamla da yazıyla da kabul edilir.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Der ___ ist neu.",
+        options: [],
+        answer: 0,
+        accept: ["Kurs"],
+        explain: "„Der Kurs ist neu.“",
+      },
+],
   },
   {
     id: "a1-u2-r2",
@@ -77,7 +85,6 @@ export const a1U02: SkillExercise[] = [
     genre: "Profil",
     intro: "Üç kişi kendini tanıtıyor: mesleği ne, hangi dilleri konuşuyor?",
     gloss: [
-      { de: "der Beruf", tr: "meslek", en: "profession" },
       { de: "die Ärztin", tr: "kadın doktor", en: "doctor (f.)" },
       { de: "der Verkäufer", tr: "satıcı", en: "salesperson" },
       { de: "arbeitslos", tr: "işsiz", en: "unemployed" },
@@ -112,7 +119,23 @@ export const a1U02: SkillExercise[] = [
         answer: 0,
         explain: "Nadia „ein bisschen Deutsch“ diyor. Tom ve Elif Almanca konuştuklarını sınırlama koymadan söylüyor.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Ich arbeite als ___ in einer Firma in Köln.",
+        options: [],
+        answer: 0,
+        accept: ["Verkäufer"],
+        explain: "„Ich arbeite als Verkäufer in einer Firma in Köln.“",
+      },
+      {
+        kind: "gapfill",
+        text: "Im Moment bin ich ___, aber ich lerne viel und schreibe jeden Tag Bewerbungen.",
+        options: [],
+        answer: 0,
+        accept: ["arbeitslos"],
+        explain: "„Im Moment bin ich arbeitslos, aber ich lerne viel und schreibe jeden Tag Bewerbungen.“",
+      },
+],
   },
   {
     id: "a1-u2-l1",
@@ -176,7 +199,6 @@ export const a1U02: SkillExercise[] = [
     gloss: [
       { de: "wiederholen", tr: "tekrarlamak", en: "to repeat" },
       { de: "der Fehler", tr: "hata", en: "mistake" },
-      { de: "wie viel", tr: "ne kadar", en: "how much" },
     ],
     minutes: 2,
     segments: [
@@ -212,7 +234,15 @@ export const a1U02: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Ein Fehler ist kein Problem!“ — hata sorun değil.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Bitte ___ Sie die Wörter.",
+        options: [],
+        answer: 0,
+        accept: ["wiederholen"],
+        explain: "„Bitte wiederholen Sie die Wörter.“",
+      },
+],
   },
   {
     id: "a1-u2-w1",

@@ -31,9 +31,7 @@ export const a1U06: SkillExercise[] = [
     intro: "Bir kafenin menüsünü okuyacaksın. Ne var, ne kadar?",
     gloss: [
       { de: "die Speisekarte", tr: "yemek listesi", en: "menu" },
-      { de: "kosten", tr: "fiyatı olmak", en: "to cost" },
       { de: "das Getränk", tr: "içecek", en: "drink" },
-      { de: "die Rechnung", tr: "hesap", en: "bill" },
     ],
     minutes: 3,
     text:
@@ -69,7 +67,15 @@ export const a1U06: SkillExercise[] = [
         accept: ["4,50", "4.50"],
         explain: "„Suppe (Vorspeise) — 4,50 Euro“.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "CAFÉ SONNE — ___",
+        options: [],
+        answer: 0,
+        accept: ["Speisekarte"],
+        explain: "„CAFÉ SONNE — Speisekarte“",
+      },
+],
   },
   {
     id: "a1-u6-r2",
@@ -82,7 +88,6 @@ export const a1U06: SkillExercise[] = [
     gloss: [
       { de: "das Frühstück", tr: "kahvaltı", en: "breakfast" },
       { de: "der Hunger", tr: "açlık", en: "hunger" },
-      { de: "der Durst", tr: "susuzluk", en: "thirst" },
     ],
     minutes: 3,
     text:
@@ -114,7 +119,15 @@ export const a1U06: SkillExercise[] = [
         accept: ["Tee"],
         explain: "„Kaffee trinke ich nicht gern — ich trinke lieber Tee.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Mia: Ich esse zum ___ ein Brötchen mit Butter und Marmelade.",
+        options: [],
+        answer: 0,
+        accept: ["Frühstück"],
+        explain: "„Mia: Ich esse zum Frühstück ein Brötchen mit Butter und Marmelade.“",
+      },
+],
   },
   {
     id: "a1-u6-l1",
@@ -127,7 +140,6 @@ export const a1U06: SkillExercise[] = [
     gloss: [
       { de: "bestellen", tr: "sipariş etmek", en: "to order" },
       { de: "die Rechnung", tr: "hesap", en: "bill" },
-      { de: "bezahlen", tr: "ödemek", en: "to pay" },
     ],
     minutes: 2,
     segments: [
@@ -164,7 +176,15 @@ export const a1U06: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Ja, bitte.“ diyor — tereyağı ve reçel istiyor.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Was möchten Sie ___?",
+        options: [],
+        answer: 0,
+        accept: ["bestellen"],
+        explain: "„Was möchten Sie bestellen?“",
+      },
+],
   },
   {
     id: "a1-u6-l2",
@@ -175,7 +195,6 @@ export const a1U06: SkillExercise[] = [
     genre: "Diyalog",
     intro: "Büfede sipariş. Kaç tane, ne kadar, burada mı paket mi?",
     gloss: [
-      { de: "der Imbiss", tr: "büfe", en: "snack bar" },
       { de: "die Pommes", tr: "patates kızartması", en: "fries" },
       { de: "die Wurst", tr: "sosis", en: "sausage" },
     ],
@@ -214,7 +233,15 @@ export const a1U06: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Ja, ein Wasser bitte.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Einmal Wurst mit ___, bitte.",
+        options: [],
+        answer: 0,
+        accept: ["Pommes"],
+        explain: "„Einmal Wurst mit Pommes, bitte.“",
+      },
+],
   },
   {
     id: "a1-u6-w1",

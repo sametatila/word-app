@@ -29,7 +29,6 @@ export const a1U05: SkillExercise[] = [
     gloss: [
       { de: "aussehen", tr: "görünmek", en: "to look" },
       { de: "sympathisch", tr: "sempatik", en: "likeable" },
-      { de: "kennenlernen", tr: "tanışmak", en: "to get to know" },
       { de: "oft", tr: "sık sık", en: "often" },
     ],
     minutes: 3,
@@ -68,7 +67,15 @@ export const a1U05: SkillExercise[] = [
         accept: ["zehn", "10"],
         explain: "„Wir kennen uns seit zehn Jahren.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Ich finde sie sehr hübsch und sehr ___.",
+        options: [],
+        answer: 0,
+        accept: ["sympathisch"],
+        explain: "„Ich finde sie sehr hübsch und sehr sympathisch.“",
+      },
+],
   },
   {
     id: "a1-u5-r2",
@@ -81,7 +88,6 @@ export const a1U05: SkillExercise[] = [
     gloss: [
       { de: "die Hochzeit", tr: "düğün", en: "wedding" },
       { de: "feiern", tr: "kutlamak", en: "to celebrate" },
-      { de: "der Glückwunsch", tr: "tebrik", en: "congratulation" },
       { de: "schenken", tr: "hediye etmek", en: "to give a gift" },
     ],
     minutes: 3,
@@ -114,7 +120,15 @@ export const a1U05: SkillExercise[] = [
         accept: ["Kuchen"],
         explain: "„Meine Oma bringt einen Kuchen.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "wir feiern unsere ___!",
+        options: [],
+        answer: 0,
+        accept: ["Hochzeit"],
+        explain: "„wir feiern unsere Hochzeit!“",
+      },
+],
   },
   {
     id: "a1-u5-l1",
@@ -127,7 +141,6 @@ export const a1U05: SkillExercise[] = [
     gloss: [
       { de: "tragen", tr: "giymek", en: "to wear" },
       { de: "das Haar", tr: "saç", en: "hair" },
-      { de: "der Quatsch", tr: "saçmalık", en: "nonsense" },
     ],
     minutes: 2,
     segments: [
@@ -163,7 +176,15 @@ export const a1U05: SkillExercise[] = [
         accept: ["nicht"],
         explain: "Düzeltme kalıbı: „Das stimmt nicht!“ — Bu doğru değil.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Max ist klein und hat kurze ___.",
+        options: [],
+        answer: 0,
+        accept: ["Haare"],
+        explain: "„Max ist klein und hat kurze Haare.“",
+      },
+],
   },
   {
     id: "a1-u5-l2",
@@ -213,7 +234,15 @@ export const a1U05: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „für die Kinder“ — çocuklar için.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Und meine Schwester bringt ___ für die Kinder.",
+        options: [],
+        answer: 0,
+        accept: ["Süßigkeiten"],
+        explain: "„Und meine Schwester bringt Süßigkeiten für die Kinder.“",
+      },
+],
   },
   {
     id: "a1-u5-w1",

@@ -40,6 +40,8 @@ const writeBaseline = args.includes("--baseline");
 
 const LEVELS = new Set(["A1", "A2", "B1", "B2", "C1"]);
 const TR_LETTER = /[ıİğĞşŞ]/;
+/** Türkçe olduğunun ikinci işareti — Almancada karşılığı olmayan sözcük ve ekler. */
+const TR_HINT = /[ıİğĞşŞçÇ]|\b(ve|bir|bu|şu|için|ile|ne|nasıl|hangi|yaz|anlat|kur|seç)\b|\w+(yor|mek|mak|leri|ları)\b/i;
 /**
  * Almanca metinde Türkçe harf var mı — ÖZEL ADLAR HARİÇ. Metinlerde Türk
  * karakterler var ("Frau Yıldız", "Herr Aydın") ve bu bilinçli: öğrenci
@@ -106,7 +108,11 @@ function checkSkills(list: SkillExercise[]) {
     if (e.minutes < 1 || e.minutes > 20) W(w, `minutes ${e.minutes} aralık dışı (1–20)`);
     for (const id of e.cando ?? []) if (!isCandoId(id)) E(w, `bilinmeyen can-do kimliği ${id}`);
     if (!candoForExercise(e).length) E(w, "can-do etiketi üretilemedi");
-    if (TR_LETTER.test(e.intro) === false && /[ßÄÖÜäöü]/.test(e.intro) && !/„|"/.test(e.intro)) W(w, "intro Türkçe olmalı; Almanca harf var");
+    // ö ve ü Türkçede de var: "söylemeyi", "sürüyor". Yalnız ı/ğ/ş aramak,
+    // bu harfleri taşımayan tamamen Türkçe cümleleri Almanca sanıyordu.
+    // İkinci bir işaret gerekiyor: Türkçe işlev sözcüğü ya da -yor/-mek eki
+    // (hiçbiri Almancada geçmez).
+    if (!TR_HINT.test(e.intro) && /[ßÄÖÜäöü]/.test(e.intro) && !/„|"/.test(e.intro)) W(w, "intro Türkçe olmalı; Almanca harf var");
 
     const text =
       e.skill === "reading" ? e.text : e.skill === "listening" ? e.segments.map((s) => s.text).join(" ") : "";

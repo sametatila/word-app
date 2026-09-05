@@ -41,7 +41,6 @@ export const a1U22: SkillExercise[] = [
       { de: "die Apotheke", tr: "eczane", en: "pharmacy" },
       { de: "das Rezept", tr: "reçete", en: "prescription" },
       { de: "die Tablette", tr: "hap", en: "tablet" },
-      { de: "täglich", tr: "günlük, her gün", en: "daily" },
       { de: "die Drogerie", tr: "kozmetik marketi (ilaç satmaz)", en: "drugstore" },
     ],
     minutes: 3,
@@ -82,7 +81,15 @@ export const a1U22: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Sonntag: zu“.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Sie brauchen nachts oder am Sonntag etwas aus der ___?",
+        options: [],
+        answer: 0,
+        accept: ["Apotheke"],
+        explain: "„Sie brauchen nachts oder am Sonntag etwas aus der Apotheke?“",
+      },
+],
   },
   {
     id: "a1-u22-r2",
@@ -133,7 +140,15 @@ export const a1U22: SkillExercise[] = [
         explain:
           "„Aber wenn du Fieber über 39 hast oder es nach einer Woche nicht besser ist, dann geh bitte zum Arzt.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Frage von Ali: Ich habe eine ___ und Husten.",
+        options: [],
+        answer: 0,
+        accept: ["Erkältung"],
+        explain: "„Frage von Ali: Ich habe eine Erkältung und Husten.“",
+      },
+],
   },
   {
     id: "a1-u22-l1",
@@ -144,9 +159,7 @@ export const a1U22: SkillExercise[] = [
     genre: "Eczane",
     intro: "Eczanede bir müşteri. Ne alıyor, nasıl kullanacak?",
     gloss: [
-      { de: "die Tablette", tr: "hap", en: "tablet" },
-      { de: "täglich", tr: "günde, her gün", en: "daily" },
-      { de: "wenig", tr: "az", en: "little" },
+      { de: "täglich", tr: "her gün", en: "daily" },
     ],
     minutes: 2,
     segments: [
@@ -186,7 +199,15 @@ export const a1U22: SkillExercise[] = [
         answer: 0,
         explain: "Eczanede standart kapanış — hastaya bunu söylemek beklenir.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Dreimal ___, immer nach dem Essen.",
+        options: [],
+        answer: 0,
+        accept: ["täglich"],
+        explain: "„Dreimal täglich, immer nach dem Essen.“",
+      },
+],
   },
   {
     id: "a1-u22-l2",
@@ -200,7 +221,6 @@ export const a1U22: SkillExercise[] = [
     gloss: [
       { de: "der Unfall", tr: "kaza", en: "accident" },
       { de: "die Hilfe", tr: "yardım", en: "help" },
-      { de: "das Krankenhaus", tr: "hastane", en: "hospital" },
     ],
     minutes: 2,
     segments: [
@@ -245,7 +265,15 @@ export const a1U22: SkillExercise[] = [
         explain:
           "„Bitte bleiben Sie am Telefon.“ En çok atlanan adım budur: merkez soru sormayı bitirene kadar telefonu KAPATMA.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Hier ist ein ___!",
+        options: [],
+        answer: 0,
+        accept: ["Unfall"],
+        explain: "„Hier ist ein Unfall!“",
+      },
+],
   },
   {
     id: "a1-u22-w1",
@@ -296,7 +324,7 @@ export const a1U22: SkillExercise[] = [
     gloss: [
       { de: "die Hilfe", tr: "yardım", en: "help" },
       { de: "die Sorge", tr: "endişe", en: "worry" },
-      { de: "wieder", tr: "yine, tekrar", en: "again" },
+      { de: "wieder", tr: "tekrar", en: "again" },
     ],
     minutes: 7,
     tasks: [

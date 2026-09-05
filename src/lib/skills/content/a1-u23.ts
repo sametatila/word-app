@@ -137,7 +137,15 @@ export const a1U23: SkillExercise[] = [
         accept: ["Freitag"],
         explain: "„Ist ein Termin am Freitag möglich?“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Schick mir eine ___ oder ruf mich an.",
+        options: [],
+        answer: 0,
+        accept: ["Nachricht"],
+        explain: "„Schick mir eine Nachricht oder ruf mich an.“",
+      },
+],
   },
   {
     id: "a1-u23-l1",
@@ -151,7 +159,6 @@ export const a1U23: SkillExercise[] = [
     gloss: [
       { de: "zurückrufen", tr: "geri aramak", en: "to call back" },
       { de: "später", tr: "sonra", en: "later" },
-      { de: "falsch", tr: "yanlış", en: "wrong" },
     ],
     minutes: 2,
     segments: [
@@ -195,7 +202,15 @@ export const a1U23: SkillExercise[] = [
         explain:
           "hören = duymak, sehen = görmek. Telefonda karşındakini görmezsin, o yüzden „Wiedersehen“ mantıksız kaçar.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Sie ruft Sie ___ zurück.",
+        options: [],
+        answer: 0,
+        accept: ["später"],
+        explain: "„Sie ruft Sie später zurück.“",
+      },
+],
   },
   {
     id: "a1-u23-l2",
@@ -246,7 +261,15 @@ export const a1U23: SkillExercise[] = [
         accept: ["zweimal"],
         explain: "„Putzen Sie die Zähne zweimal täglich!“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Ein ___ tut sehr weh.",
+        options: [],
+        answer: 0,
+        accept: ["Zahn"],
+        explain: "„Ein Zahn tut sehr weh.“",
+      },
+],
   },
   {
     id: "a1-u23-w1",

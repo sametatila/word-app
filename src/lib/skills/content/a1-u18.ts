@@ -72,7 +72,15 @@ export const a1U18: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Tanzen kann ich gut, aber ich übe nicht viel.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Mia: In meiner ___ male ich.",
+        options: [],
+        answer: 0,
+        accept: ["Freizeit"],
+        explain: "„Mia: In meiner Freizeit male ich.“",
+      },
+],
   },
   {
     id: "a1-u18-r2",
@@ -85,7 +93,6 @@ export const a1U18: SkillExercise[] = [
     gloss: [
       { de: "kaputt", tr: "bozuk", en: "broken" },
       { de: "funktionieren", tr: "çalışmak", en: "to work" },
-      { de: "der Hausmeister", tr: "apartman görevlisi", en: "caretaker" },
       { de: "die Reparatur", tr: "tamir", en: "repair" },
     ],
     minutes: 3,
@@ -118,7 +125,15 @@ export const a1U18: SkillExercise[] = [
         answer: 0,
         explain: "„Ich bin am Dienstag und am Mittwoch zu Hause.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "die Lampe im Flur ist ___.",
+        options: [],
+        answer: 0,
+        accept: ["kaputt"],
+        explain: "„die Lampe im Flur ist kaputt.“",
+      },
+],
   },
   {
     id: "a1-u18-l1",
@@ -130,7 +145,6 @@ export const a1U18: SkillExercise[] = [
     intro: "Apartman görevlisiyle telefon konuşması.",
     gloss: [
       { de: "reparieren", tr: "tamir etmek", en: "to repair" },
-      { de: "das Licht", tr: "ışık", en: "light" },
       { de: "die Reparatur", tr: "tamir", en: "repair" },
     ],
     minutes: 2,
@@ -169,7 +183,15 @@ export const a1U18: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Ja, das passt.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Was kostet die ___?",
+        options: [],
+        answer: 0,
+        accept: ["Reparatur"],
+        explain: "„Was kostet die Reparatur?“",
+      },
+],
   },
   {
     id: "a1-u18-l2",
@@ -182,7 +204,6 @@ export const a1U18: SkillExercise[] = [
     gloss: [
       { de: "gießen", tr: "sulamak", en: "to water" },
       { de: "die Blume", tr: "çiçek", en: "flower" },
-      { de: "scheinen", tr: "parlamak", en: "to shine" },
     ],
     minutes: 2,
     segments: [
@@ -219,7 +240,15 @@ export const a1U18: SkillExercise[] = [
         answer: 0,
         explain: "„Hier ist viel Wind.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "___ hier auf dem Balkon!",
+        options: [],
+        answer: 0,
+        accept: ["Schön"],
+        explain: "„Schön hier auf dem Balkon!“",
+      },
+],
   },
   {
     id: "a1-u18-w1",

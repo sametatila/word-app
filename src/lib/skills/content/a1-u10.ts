@@ -73,7 +73,15 @@ export const a1U10: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „am Samstag habe ich frei.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Um halb eins mache ich eine ___ und esse mit meinen Kollegen zusammen.",
+        options: [],
+        answer: 0,
+        accept: ["Pause"],
+        explain: "„Um halb eins mache ich eine Pause und esse mit meinen Kollegen zusammen.“",
+      },
+],
   },
   {
     id: "a1-u10-r2",
@@ -119,7 +127,15 @@ export const a1U10: SkillExercise[] = [
         accept: ["aus"],
         explain: "Ayrılabilir fiil: ausschlafen → „schlafe ich aus“.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Tom: Am Samstag mache ich einen ___.",
+        options: [],
+        answer: 0,
+        accept: ["Ausflug"],
+        explain: "„Tom: Am Samstag mache ich einen Ausflug.“",
+      },
+],
   },
   {
     id: "a1-u10-l1",
@@ -169,7 +185,15 @@ export const a1U10: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Am Vormittag arbeite ich. Leider kann ich nicht.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Am ___ arbeite ich.",
+        options: [],
+        answer: 0,
+        accept: ["Vormittag"],
+        explain: "„Am Vormittag arbeite ich.“",
+      },
+],
   },
   {
     id: "a1-u10-l2",
@@ -219,7 +243,15 @@ export const a1U10: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Heute nicht.“ — belki yarın.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Ich sitze zu ___ und sehe fern.",
+        options: [],
+        answer: 0,
+        accept: ["Hause"],
+        explain: "„Ich sitze zu Hause und sehe fern.“",
+      },
+],
   },
   {
     id: "a1-u10-w1",
@@ -269,7 +301,7 @@ export const a1U10: SkillExercise[] = [
     gloss: [
       { de: "der Plan", tr: "plan", en: "plan" },
       { de: "vielleicht", tr: "belki", en: "maybe" },
-      { de: "frei", tr: "izinli, boş", en: "free" },
+      { de: "frei", tr: "boş", en: "free" },
     ],
     minutes: 7,
     tasks: [

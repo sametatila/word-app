@@ -1387,7 +1387,7 @@ export const deA1B04: Lesson[] = [
     focusId: "Trennbare-Verben",
     vocab: [
       { de: "anfangen", tr: "başlamak" },
-      { de: "aufhören", tr: "bırakmak, son vermek" },
+      { de: "aufhören", tr: "bırakmak" },
       { de: "die Pause", tr: "mola" },
       { de: "der Kollege", tr: "iş arkadaşı" },
       { de: "der Arbeitsplatz", tr: "iş yeri" },
@@ -1829,7 +1829,7 @@ export const deA1B04: Lesson[] = [
     vocab: [
       { de: "der Plan", tr: "plan" },
       { de: "vielleicht", tr: "belki" },
-      { de: "frei", tr: "izinli, boş" },
+      { de: "frei", tr: "boş" },
       { de: "ausschlafen", tr: "geç uyanmak" },
       { de: "der Ausflug", tr: "gezi" },
       { de: "der Urlaub", tr: "tatil" },

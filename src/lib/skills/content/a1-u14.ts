@@ -71,7 +71,15 @@ export const a1U14: SkillExercise[] = [
         answer: 0,
         explain: "„Eine Frage? Fragen Sie gegenüber.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Ihre ___ ist einen Tag gültig.",
+        options: [],
+        answer: 0,
+        accept: ["Fahrkarte"],
+        explain: "„Ihre Fahrkarte ist einen Tag gültig.“",
+      },
+],
   },
   {
     id: "a1-u14-r2",
@@ -117,7 +125,15 @@ export const a1U14: SkillExercise[] = [
         answer: 0,
         explain: "„Die S-Bahn fährt alle 10 Minuten von Gleis 1.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Der Zug nach Hamburg, Abfahrt 14:20, hat 20 Minuten ___.",
+        options: [],
+        answer: 0,
+        accept: ["Verspätung"],
+        explain: "„Der Zug nach Hamburg, Abfahrt 14:20, hat 20 Minuten Verspätung.“",
+      },
+],
   },
   {
     id: "a1-u14-l1",
@@ -130,7 +146,6 @@ export const a1U14: SkillExercise[] = [
     gloss: [
       { de: "hin und zurück", tr: "gidiş dönüş", en: "return" },
       { de: "das Gleis", tr: "peron", en: "platform" },
-      { de: "die Abfahrt", tr: "kalkış", en: "departure" },
     ],
     minutes: 2,
     segments: [
@@ -168,7 +183,15 @@ export const a1U14: SkillExercise[] = [
         answer: 0,
         explain: "„20 Euro.“ 14:20 ise kalkış saati.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Einfach oder ___?",
+        options: [],
+        answer: 0,
+        accept: ["hin und zurück"],
+        explain: "„Einfach oder hin und zurück?“",
+      },
+],
   },
   {
     id: "a1-u14-l2",
@@ -179,8 +202,6 @@ export const a1U14: SkillExercise[] = [
     genre: "Diyalog",
     intro: "Takside bir yolculuk. Ne kadar sürüyor, ne kadar tutuyor?",
     gloss: [
-      { de: "der Fahrer", tr: "şoför", en: "driver" },
-      { de: "das Trinkgeld", tr: "bahşiş", en: "tip" },
       { de: "die Autobahn", tr: "otoyol", en: "motorway" },
     ],
     minutes: 2,
@@ -223,7 +244,15 @@ export const a1U14: SkillExercise[] = [
         answer: 0,
         explain: "„Stimmt so“ = üstü kalsın. 38 Euro'luk yolculuğa 40 Euro veriliyor.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Über die ___ 25 Minuten.",
+        options: [],
+        answer: 0,
+        accept: ["Autobahn"],
+        explain: "„Über die Autobahn 25 Minuten.“",
+      },
+],
   },
   {
     id: "a1-u14-w1",

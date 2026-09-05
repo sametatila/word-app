@@ -47,11 +47,11 @@ export const a1U24: SkillExercise[] = [
       { de: "die Einladung", tr: "davet(iye)", en: "invitation" },
       { de: "mitbringen", tr: "yanında getirmek", en: "to bring along" },
       { de: "der Gast", tr: "misafir", en: "guest" },
-      { de: "die Partnerin", tr: "(kadın) eş, partner", en: "partner" },
+      { de: "die Partnerin", tr: "kadın partner", en: "partner" },
     ],
     minutes: 3,
     text:
-      "Liebe Freunde,\n\nam Samstag habe ich Geburtstag! Das möchte ich mit euch feiern.\n\nWann: am Samstag um 19 Uhr\nWo: bei mir zu Hause, Bahnhofstraße 12\n\nBitte kommt pünktlich um 19 Uhr — dann essen wir zusammen. Ich koche für alle Gäste.\n\nWas sollt ihr mitbringen? Nichts Großes! Vielleicht einen Saft oder etwas Süßes. Dein Partner oder deine Partnerin kann auch kommen.\n\nSchreibt mir bitte bis Mittwoch. Ich möchte wissen, wie viele Gäste kommen.\n\nLiebe Grüße\nMia",
+      "Liebe Freunde,\n\nhier ist meine Einladung: am Samstag habe ich Geburtstag! Das möchte ich mit euch feiern.\n\nWann: am Samstag um 19 Uhr\nWo: bei mir zu Hause, Bahnhofstraße 12\n\nBitte kommt pünktlich um 19 Uhr — dann essen wir zusammen. Ich koche für alle Gäste.\n\nWas sollt ihr mitbringen? Nichts Großes! Vielleicht einen Saft oder etwas Süßes. Dein Partner oder deine Partnerin kann auch kommen.\n\nSchreibt mir bitte bis Mittwoch. Ich möchte wissen, wie viele Gäste kommen.\n\nLiebe Grüße\nMia",
     questions: [
       {
         text: "Womit beginnt die Einladung?",
@@ -93,7 +93,15 @@ export const a1U24: SkillExercise[] = [
         answer: 0,
         explain: "„Schreibt mir bitte bis Mittwoch.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Was sollt ihr ___?",
+        options: [],
+        answer: 0,
+        accept: ["mitbringen"],
+        explain: "„Was sollt ihr mitbringen?“",
+      },
+],
   },
   {
     id: "a1-u24-r2",
@@ -106,7 +114,6 @@ export const a1U24: SkillExercise[] = [
       "Üç kişi dünü anlatıyor. Yardımcı fiillere dikkat: bazıları haben, bazıları sein.",
     gloss: [
       { de: "gestern", tr: "dün", en: "yesterday" },
-      { de: "erzählen", tr: "anlatmak", en: "to tell" },
       { de: "geblieben", tr: "kalmış (bleiben)", en: "stayed" },
       { de: "gefahren", tr: "gitmiş (araçla)", en: "went (by vehicle)" },
     ],
@@ -145,7 +152,15 @@ export const a1U24: SkillExercise[] = [
         accept: ["gefahren"],
         explain: "„Ich bin mit dem Zug nach Berlin gefahren.“ — araçla gitmek: fahren + sein.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Elif: Ich bin ___ zu Hause geblieben.",
+        options: [],
+        answer: 0,
+        accept: ["gestern"],
+        explain: "„Elif: Ich bin gestern zu Hause geblieben.“",
+      },
+],
   },
   {
     id: "a1-u24-l1",
@@ -158,7 +173,6 @@ export const a1U24: SkillExercise[] = [
     gloss: [
       { de: "verschieben", tr: "ertelemek", en: "to postpone" },
       { de: "das Datum", tr: "tarih", en: "date" },
-      { de: "die Uhrzeit", tr: "saat (kaç)", en: "time of day" },
     ],
     minutes: 2,
     segments: [
@@ -197,7 +211,15 @@ export const a1U24: SkillExercise[] = [
         answer: 0,
         explain: "„Ich schreibe es in den Kalender.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Ich möchte meinen Termin ___.",
+        options: [],
+        answer: 0,
+        accept: ["verschieben"],
+        explain: "„Ich möchte meinen Termin verschieben.“",
+      },
+],
   },
   {
     id: "a1-u24-l2",
@@ -254,7 +276,15 @@ export const a1U24: SkillExercise[] = [
         explain:
           "„sehen“ yer değiştirme değil, o yüzden „haben“. „gehen“ ve „fahren“ hareket bildirir, „sein“ alır.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Wohin bist du am Wochenende ___?",
+        options: [],
+        answer: 0,
+        accept: ["gegangen"],
+        explain: "„Wohin bist du am Wochenende gegangen?“",
+      },
+],
   },
   {
     id: "a1-u24-w1",
@@ -304,7 +334,7 @@ export const a1U24: SkillExercise[] = [
     gloss: [
       { de: "erzählen", tr: "anlatmak", en: "to tell" },
       { de: "gemacht", tr: "yapmış", en: "did" },
-      { de: "gehört", tr: "dinlemiş, duymuş", en: "heard" },
+      { de: "gehört", tr: "dinlemiş", en: "heard" },
     ],
     minutes: 8,
     tasks: [

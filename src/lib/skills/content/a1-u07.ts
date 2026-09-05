@@ -70,7 +70,15 @@ export const a1U07: SkillExercise[] = [
         answer: 0,
         explain: "„drei Zwiebeln“ — sayıdan sonra ad çoğul: die Zwiebel → Zwiebeln.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Obst ___ wir nicht, wir haben noch Äpfel, Birnen und Bananen.",
+        options: [],
+        answer: 0,
+        accept: ["brauchen"],
+        explain: "„Obst brauchen wir nicht, wir haben noch Äpfel, Birnen und Bananen.“",
+      },
+],
   },
   {
     id: "a1-u7-r2",
@@ -115,7 +123,15 @@ export const a1U07: SkillExercise[] = [
         accept: ["Salz"],
         explain: "„Salat mit Öl und Salz“.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Meine Kinder ___ keinen Salat — sie essen lieber Kartoffeln.",
+        options: [],
+        answer: 0,
+        accept: ["mögen"],
+        explain: "„Meine Kinder mögen keinen Salat — sie essen lieber Kartoffeln.“",
+      },
+],
   },
   {
     id: "a1-u7-l1",
@@ -127,8 +143,6 @@ export const a1U07: SkillExercise[] = [
     intro: "Markette bir müşteri soru soruyor.",
     gloss: [
       { de: "finden", tr: "bulmak", en: "to find" },
-      { de: "der Kunde", tr: "müşteri", en: "customer" },
-      { de: "das Geschäft", tr: "mağaza", en: "shop" },
     ],
     minutes: 2,
     segments: [
@@ -165,7 +179,15 @@ export const a1U07: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Ja, eine Flasche kostet 0,80 Euro.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "___, wo finde ich die Milch?",
+        options: [],
+        answer: 0,
+        accept: ["Entschuldigung"],
+        explain: "„Entschuldigung, wo finde ich die Milch?“",
+      },
+],
   },
   {
     id: "a1-u7-l2",
@@ -215,7 +237,15 @@ export const a1U07: SkillExercise[] = [
         answer: 0,
         explain: "„Das Öl ist schon auf dem Herd.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Das Öl ist schon auf dem ___.",
+        options: [],
+        answer: 0,
+        accept: ["Herd"],
+        explain: "„Das Öl ist schon auf dem Herd.“",
+      },
+],
   },
   {
     id: "a1-u7-w1",

@@ -145,7 +145,15 @@ export const a1U01: SkillExercise[] = [
         items: ["Ben fragt: Wie heißt du?", "Sara sagt ihren Namen.", "Sara fragt: Woher kommst du?", "Ben fragt: Wie geht es dir?"],
         explain: "Önce ad sorulur, ad söylenir, memleket sorulur, en sonda „nasılsın“ gelir.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Ben: Ich komme aus der ___.",
+        options: [],
+        answer: 0,
+        accept: ["Schweiz"],
+        explain: "„Ben: Ich komme aus der Schweiz.“",
+      },
+],
   },
 
   // ─────────────────────────── DİNLEME ───────────────────────────
@@ -273,7 +281,15 @@ export const a1U01: SkillExercise[] = [
         items: ["Herr Koch fragt: Sind Sie Frau Yılmaz?", "Sie sagt ihren Namen.", "Herr Koch fragt: Woher kommen Sie?", "Sie sagt: aus der Türkei."],
         explain: "Önce „siz misiniz“, sonra ad, sonra „nerelisiniz“, sonra cevap.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Und wo wohnen Sie ___?",
+        options: [],
+        answer: 0,
+        accept: ["jetzt"],
+        explain: "„Und wo wohnen Sie jetzt?“",
+      },
+],
   },
 
   // ─────────────────────────── YAZMA ───────────────────────────

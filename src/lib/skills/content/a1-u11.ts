@@ -31,8 +31,6 @@ export const a1U11: SkillExercise[] = [
     intro: "Bir mağazanın indirim ilanını okuyacaksın. Ne kaça?",
     gloss: [
       { de: "das Angebot", tr: "indirim", en: "special offer" },
-      { de: "günstig", tr: "uygun fiyatlı", en: "cheap" },
-      { de: "teuer", tr: "pahalı", en: "expensive" },
       { de: "die Größe", tr: "beden", en: "size" },
     ],
     minutes: 3,
@@ -71,7 +69,15 @@ export const a1U11: SkillExercise[] = [
         answer: 0,
         explain: "„Die Kasse ist bei der Tür.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Mäntel und Kleider sind diese Woche NICHT im ___.",
+        options: [],
+        answer: 0,
+        accept: ["Angebot"],
+        explain: "„Mäntel und Kleider sind diese Woche NICHT im Angebot.“",
+      },
+],
   },
   {
     id: "a1-u11-r2",
@@ -84,7 +90,6 @@ export const a1U11: SkillExercise[] = [
     gloss: [
       { de: "die Kleidung", tr: "kıyafet", en: "clothes" },
       { de: "billig", tr: "ucuz", en: "cheap" },
-      { de: "kurz", tr: "kısa", en: "short" },
     ],
     minutes: 3,
     text:
@@ -116,7 +121,15 @@ export const a1U11: SkillExercise[] = [
         accept: ["billig"],
         explain: "„Ein Hemd für 9 Euro ist billig und gut!“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Tom: Meine ___ ist immer schwarz!",
+        options: [],
+        answer: 0,
+        accept: ["Kleidung"],
+        explain: "„Tom: Meine Kleidung ist immer schwarz!“",
+      },
+],
   },
   {
     id: "a1-u11-l1",
@@ -167,7 +180,15 @@ export const a1U11: SkillExercise[] = [
         answer: 0,
         explain: "„19 Euro — er ist im Angebot.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Möchten Sie ihn ___?",
+        options: [],
+        answer: 0,
+        accept: ["anprobieren"],
+        explain: "„Möchten Sie ihn anprobieren?“",
+      },
+],
   },
   {
     id: "a1-u11-l2",
@@ -217,7 +238,15 @@ export const a1U11: SkillExercise[] = [
         answer: 0,
         explain: "„Ich bezahle bar.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Oh, das ist zu ___ für mich.",
+        options: [],
+        answer: 0,
+        accept: ["teuer"],
+        explain: "„Oh, das ist zu teuer für mich.“",
+      },
+],
   },
   {
     id: "a1-u11-w1",

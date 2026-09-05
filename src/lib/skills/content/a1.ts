@@ -767,7 +767,15 @@ export const a1: SkillExercise[] = [
         items: ["Lena sucht Äpfel.", "Der Verkäufer sagt den Preis.", "Lena fragt nach Brot.", "Lena zahlt 5 Euro."],
         explain: "Önce elma aranır, fiyat söylenir, ekmek sorulur (yok), sonra yalnız elmalar ödenir.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Ein ___ kostet 2 Euro 50.",
+        options: [],
+        answer: 0,
+        accept: ["Kilo"],
+        explain: "„Ein Kilo kostet 2 Euro 50.“",
+      },
+],
   },
   {
     id: "a1-l2",
@@ -813,7 +821,15 @@ export const a1: SkillExercise[] = [
         explain:
           "„Dann rufen Sie bitte am Vormittag an“ — randevu için öğleden önce aranmalı. 112 sadece acil durumlar için.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Hier ist die ___ von Doktor Meyer.",
+        options: [],
+        answer: 0,
+        accept: ["Praxis"],
+        explain: "„Hier ist die Praxis von Doktor Meyer.“",
+      },
+],
   },
   {
     id: "a1-l3",
@@ -864,7 +880,15 @@ export const a1: SkillExercise[] = [
         explain:
           "„Bitte gehen Sie erst um 14:15 Uhr zum Gate“ — yolculardan kapıya 14:15'te gitmeleri isteniyor.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Achtung, eine wichtige ___ für alle Passagiere nach Istanbul.",
+        options: [],
+        answer: 0,
+        accept: ["Durchsage"],
+        explain: "„Achtung, eine wichtige Durchsage für alle Passagiere nach Istanbul.“",
+      },
+],
   },
   {
     id: "a1-l4",
@@ -981,7 +1005,15 @@ export const a1: SkillExercise[] = [
         explain:
           "„Es kostet 4 Euro“ cümlesi havuzun ücretini söylüyor. 11 buluşma saati, 12 ise hava sıcaklığı.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Aber das ___ wird leider schlecht.",
+        options: [],
+        answer: 0,
+        accept: ["Wetter"],
+        explain: "„Aber das Wetter wird leider schlecht.“",
+      },
+],
   },
   {
     id: "a1-l6",
@@ -1037,7 +1069,15 @@ export const a1: SkillExercise[] = [
         explain:
           "„Die Kasse 5 ist geschlossen“ — müşteriler 1'den 4'e kadar olan kasalara yönlendiriliyor.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "___ aus Frankreich: 100 Gramm für 1 Euro 29.",
+        options: [],
+        answer: 0,
+        accept: ["Käse"],
+        explain: "„Käse aus Frankreich: 100 Gramm für 1 Euro 29.“",
+      },
+],
   },
 
   {

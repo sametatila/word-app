@@ -70,7 +70,15 @@ export const a1U04: SkillExercise[] = [
         answer: 0,
         explain: "„Ich habe keine Zeit und kein Geld.“ Hayvan sevmemekle ilgisi yok — Luna'yı seviyor.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Elif: Ich habe leider kein ___.",
+        options: [],
+        answer: 0,
+        accept: ["Tier"],
+        explain: "„Elif: Ich habe leider kein Tier.“",
+      },
+],
   },
   {
     id: "a1-u4-r2",
@@ -116,7 +124,15 @@ export const a1U04: SkillExercise[] = [
         accept: ["Polen"],
         explain: "„ein paar Verwandte aus Polen“.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Auf dem ___ sind viele Leute: meine Familie.",
+        options: [],
+        answer: 0,
+        accept: ["Bild"],
+        explain: "„Auf dem Bild sind viele Leute: meine Familie.“",
+      },
+],
   },
   {
     id: "a1-u4-l1",
@@ -129,7 +145,6 @@ export const a1U04: SkillExercise[] = [
     gloss: [
       { de: "die Zeit", tr: "zaman", en: "time" },
       { de: "leider", tr: "maalesef", en: "unfortunately" },
-      { de: "die Entschuldigung", tr: "özür", en: "apology" },
     ],
     minutes: 2,
     segments: [
@@ -166,7 +181,15 @@ export const a1U04: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Kein Problem!“ diyor — sorun değil.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Hast du heute ___?",
+        options: [],
+        answer: 0,
+        accept: ["Zeit"],
+        explain: "„Hast du heute Zeit?“",
+      },
+],
   },
   {
     id: "a1-u4-l2",
@@ -178,7 +201,6 @@ export const a1U04: SkillExercise[] = [
     intro: "Bir çocuk köpeğini anlatıyor. Adı, yaşı ve neyi sevdiği ne?",
     gloss: [
       { de: "der Ball", tr: "top", en: "ball" },
-      { de: "süß", tr: "sevimli", en: "cute" },
       { de: "das Auge", tr: "göz", en: "eye" },
     ],
     minutes: 2,
@@ -216,7 +238,15 @@ export const a1U04: SkillExercise[] = [
         answer: 1,
         explain: "Yanlış: „Eine Katze haben wir nicht.“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Bruno liebt den ___.",
+        options: [],
+        answer: 0,
+        accept: ["Ball"],
+        explain: "„Bruno liebt den Ball.“",
+      },
+],
   },
   {
     id: "a1-u4-w1",

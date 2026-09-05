@@ -244,7 +244,7 @@ export const a1Speaking: SkillExercise[] = [
     gloss: [
       { de: "die Küche", tr: "mutfak", en: "kitchen" },
       { de: "suchen", tr: "aramak", en: "to look for" },
-      { de: "noch", tr: "hâlâ, daha", en: "still" },
+      { de: "noch", tr: "hâlâ", en: "still" },
     ],
     minutes: 5,
     tasks: [

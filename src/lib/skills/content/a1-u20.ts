@@ -76,7 +76,15 @@ export const a1U20: SkillExercise[] = [
         answer: 0,
         explain: "„Bitte nehmen Sie Ihren Müll wieder mit!“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Die große ___: Hier dürfen Sie Fußball spielen und ein Picknick machen.",
+        options: [],
+        answer: 0,
+        accept: ["Wiese"],
+        explain: "„Die große Wiese: Hier dürfen Sie Fußball spielen und ein Picknick machen.“",
+      },
+],
   },
   {
     id: "a1-u20-r2",
@@ -122,7 +130,15 @@ export const a1U20: SkillExercise[] = [
         answer: 0,
         explain: "Doğru: Film, Serie ve çocuk programı — üçü de 20:15. Almanya'da 20:15 klasik akşam saatidir.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "20:15 Eine ___ für Kinder",
+        options: [],
+        answer: 0,
+        accept: ["Sendung"],
+        explain: "„20:15 Eine Sendung für Kinder“",
+      },
+],
   },
   {
     id: "a1-u20-l1",
@@ -173,7 +189,15 @@ export const a1U20: SkillExercise[] = [
         answer: 0,
         explain: "„Und bitte nicht im tiefen Wasser tauchen!“",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Was kostet der ___?",
+        options: [],
+        answer: 0,
+        accept: ["Eintritt"],
+        explain: "„Was kostet der Eintritt?“",
+      },
+],
   },
   {
     id: "a1-u20-l2",
@@ -186,8 +210,7 @@ export const a1U20: SkillExercise[] = [
       "Bir davet reddediliyor. Almanca'da hayır demek üç parçalıdır: net hayır + gerekçe + SOMUT alternatif.",
     gloss: [
       { de: "schade", tr: "yazık", en: "what a pity" },
-      { de: "klappen", tr: "olmak, denk gelmek", en: "to work out" },
-      { de: "einverstanden", tr: "anlaştık, tamam", en: "agreed" },
+      { de: "klappen", tr: "denk gelmek", en: "to work out" },
     ],
     minutes: 2,
     segments: [
@@ -226,7 +249,15 @@ export const a1U20: SkillExercise[] = [
         answer: 0,
         explain: "„Einverstanden!“ — anlaşma kapanış sözcüğü.",
       },
-    ],
+          {
+        kind: "gapfill",
+        text: "Wir machen am ___ ein Picknick im Park.",
+        options: [],
+        answer: 0,
+        accept: ["Samstag"],
+        explain: "„Wir machen am Samstag ein Picknick im Park.“",
+      },
+],
   },
   {
     id: "a1-u20-w1",
@@ -238,7 +269,7 @@ export const a1U20: SkillExercise[] = [
     intro: "Reddetmenin üç parçasını tek tek kur.",
     gloss: [
       { de: "leider", tr: "maalesef", en: "unfortunately" },
-      { de: "klappen", tr: "olmak, denk gelmek", en: "to work out" },
+      { de: "klappen", tr: "denk gelmek", en: "to work out" },
       { de: "schade", tr: "yazık", en: "what a pity" },
     ],
     minutes: 6,
