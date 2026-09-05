@@ -27,6 +27,7 @@ import { b1U25 } from "./b1-u25";
 import { b1U26 } from "./b1-u26";
 import { b1U27 } from "./b1-u27";
 import { b1U28 } from "./b1-u28";
+import { b1U29 } from "./b1-u29";
 
 /**
  * B1 — okuma, dinleme ve yazma egzersizleri.
@@ -65,6 +66,7 @@ export const b1: SkillExercise[] = [
   ...b1U26,
   ...b1U27,
   ...b1U28,
+  ...b1U29,
   // ── Okuma ──────────────────────────────────────────────────────────────
   {
     id: "b1-r1",
