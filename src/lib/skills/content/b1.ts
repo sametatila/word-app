@@ -44,14 +44,19 @@ import { b1U42 } from "./b1-u42";
 import { b1U43 } from "./b1-u43";
 import { b1U44 } from "./b1-u44";
 import { b1U45 } from "./b1-u45";
+import { b1Speaking } from "./b1-speaking";
 
 /**
- * B1 — okuma, dinleme ve yazma egzersizleri.
+ * B1 — okuma, dinleme, yazma ve konuşma egzersizleri.
  *
  * Ünite hizalı dosyalar (`b1-uNN.ts`) dizinin BAŞINDA spread edilir: immersion
  * builder ünite slotlarını konuma göre dolduruyor, o yüzden ünite 1'in
  * okuma/dinleme/yazma slotlarını b1U01 doldurur. Eski genel B1 egzersizleri
  * arkada kalıp sonraki ünitelerin slotlarına akıyor.
+ *
+ * `b1Speaking` sıralamayı etkilemiyor: `BASE_PATTERN`'de konuşma slotu yok,
+ * havuzu builder hiç tüketmiyor. O egzersizlere /skills sayfasından ve seviye
+ * sınavının Sprechen bölümünden ulaşılıyor.
  */
 export const b1: SkillExercise[] = [
   ...b1U01,
@@ -99,6 +104,7 @@ export const b1: SkillExercise[] = [
   ...b1U43,
   ...b1U44,
   ...b1U45,
+  ...b1Speaking,
   // ── Okuma ──────────────────────────────────────────────────────────────
   {
     id: "b1-r1",
