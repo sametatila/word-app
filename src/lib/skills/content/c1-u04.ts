@@ -50,6 +50,7 @@ export const c1U04: SkillExercise[] = [
       "Die Sprache unterscheidet die beiden kaum. Beide sagen „eben“, beide klingen ruhig. Der Unterschied liegt darin, was vorher passiert ist.\n\n" +
       "Der Psychologe Frank Retzlaff nennt das erste „begründetes Hinnehmen“ und das zweite „vorzeitiges Sichfügen“. Wer sich vorzeitig fügt, spart sich die Anstrengung des Prüfens — und zahlt später dafür, weil er auch dort nachgibt, wo Spielraum bestanden hätte.\n\n" +
       "Freilich ist das leichter beschrieben als erkannt. Von außen sieht ein resignierter Mensch oft gelassen aus. Ein Anhaltspunkt: Wer aus Einsicht hinnimmt, kann meist genau sagen, WAS unabänderlich ist. Wer aufgegeben hat, sagt „alles“.\n\n" +
+      "Sich abfinden ist deshalb kein einheitlicher Vorgang. Wer sich mit einer geprüften Lage abfindet, hat entschieden; wer sich mit einer ungeprüften abfindet, hat nur aufgehört zu fragen.\n\n" +
       "Die Gegebenheiten ändern sich damit nicht. Aber die Frage, ob man sie geprüft hat, ändert alles daran, wie man mit ihnen lebt.",
     questions: [
       {
@@ -214,7 +215,10 @@ export const c1U04: SkillExercise[] = [
       { speaker: "Timo", text: "Das verstehe ich. Und du kannst nichts tun außer warten." },
       { speaker: "Selin", text: "Genau das." },
       { speaker: "Timo", text: "Dann sage ich es jetzt anders: Ich glaube, es wird gut ausgehen. Und wenn nicht, gehen wir das durch." },
-      { speaker: "Selin", text: "Siehst du, das tröstet. Das andere war nur nett gemeint." },
+      { speaker: "Selin", text: "Siehst du, das tröstet. Das andere war wohlwollend, aber nur nett gemeint." },
+      { speaker: "Timo", text: "Der Unterschied ist mir vorher nie aufgefallen." },
+      { speaker: "Selin", text: "Zuversicht kann man teilen. Gelassenheit muss jeder selbst finden — und wer sie mir verordnet, verlangt sie, statt sie anzubieten." },
+      { speaker: "Timo", text: "Dann bitte ich um Nachsicht für die ersten drei Sätze." },
     ],
     questions: [
       {
@@ -283,7 +287,8 @@ export const c1U04: SkillExercise[] = [
       { speaker: "Herr Voss", text: "Darf ich kurz etwas sagen? Das war eben eine Zurechtweisung, keine Nachfrage." },
       { speaker: "Frau Adler", text: "Ich bin angespannt. Der Ausschuss tagt um vier." },
       { speaker: "Herr Voss", text: "Das wusste ich nicht. Sie haben mich gedrängt, ohne den Termin zu nennen." },
-      { speaker: "Frau Adler", text: "Stimmt. Das war voreilig von mir." },
+      { speaker: "Frau Adler", text: "Stimmt. Das war voreilig von mir — meine Ungeduld gehört nicht auf Ihren Schreibtisch." },
+      { speaker: "Herr Voss", text: "Ich frage deshalb beharrlich nach, auch wenn es lästig wirkt." },
       { speaker: "Herr Voss", text: "Wenn Sie mir den Termin sagen, kann ich priorisieren. Wenn Sie „endlich“ sagen, kann ich nur schneller tippen." },
       { speaker: "Frau Adler", text: "Verstanden. Also: Ich brauche bis halb vier die zwei Kernzahlen, den Rest danach." },
       { speaker: "Herr Voss", text: "Das ist machbar." },

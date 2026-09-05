@@ -47,7 +47,7 @@ export const c1U03: SkillExercise[] = [
       "ZWEI PITCHES, EIN PRODUKT\n\n" +
       "Team A begann so: „Stellen Sie sich vor, jede Werkstatt in Europa wüsste heute Abend, welches Ersatzteil sie morgen braucht.“ Danach kamen drei Zahlen: 900 Werkstätten im Test, 22 Prozent weniger Lagerkosten, Rückgang der Wartezeit von neun auf zwei Tage. Der Clou daran ist, dass die Vorhersage aus Daten stammt, die die Werkstätten ohnehin erzeugen.\n\n" +
       "Team B begann so: „Wir sind ein hochmotiviertes Team mit langjähriger Branchenerfahrung und einer disruptiven Vision.“ Es folgten vier Folien über die Marktgröße und eine über das Produkt.\n\n" +
-      "Beide Teams beanspruchen dasselbe Alleinstellungsmerkmal. Nur eines belegt es.\n\n" +
+      "Beide Teams beanspruchen dasselbe Alleinstellungsmerkmal. Nur eines belegt es. Team A spricht vom Bedarf der Werkstätten und zeigt ihn an Zahlen; Team B spricht vom Markt und meint dasselbe, ohne es messbar zu machen.\n\n" +
       "Bemerkenswert ist, was Team A NICHT getan hat. Es hat nicht behauptet, das Produkt skaliere mühelos. Auf die Frage nach dem Wachstum kam: „Ab etwa 3.000 Werkstätten brauchen wir eine zweite Datenquelle. Das ist gelöst, aber nicht billig.“\n\n" +
       "Diese Antwort hat mehr Überzeugungskraft entfaltet als jede Wachstumskurve. Wer eine Schwäche selbst benennt, wird bei den übrigen Aussagen geglaubt.\n\n" +
       "Der Pitch von Team B zündete im Raum durchaus. In der Nachbesprechung erinnerte sich niemand an eine einzige Zahl.",
@@ -131,6 +131,7 @@ export const c1U03: SkillExercise[] = [
       "Die Abteilungsleitung erklärt, die Umverteilung sei in der Teamsitzung am 4. Mai erörtert worden. Herr Müller habe an dieser Sitzung nicht teilgenommen; eine gesonderte Information sei versäumt worden.\n\n" +
       "Die Standpunkte liegen in einem Punkt näher beieinander, als beide annehmen: Keine Seite bestreitet, dass die Information Herrn Müller nicht erreicht hat. Strittig ist ausschließlich, wer sie hätte weitergeben müssen.\n\n" +
       "Ein Versuch, das Gespräch mit einer allgemeinen Formel zu beschwichtigen, wäre hier verfehlt. Das Verfahren hat sich nicht an der Sache festgefahren, sondern an der Frage der Zuständigkeit.\n\n" +
+      "Wer in einer solchen Lage schlichten will, sollte deshalb nicht bei der Schuldfrage ansetzen. Beide Seiten erwarten, dass die Gegenseite zuerst nachgibt, und beide haben in ihrem Teil der Darstellung recht.\n\n" +
       "Empfehlung: eine gemeinsame Sitzung, in der ausschließlich die Weitergabe von Sitzungsergebnissen geregelt wird. Eine Annäherung in der Schichtfrage ist danach wahrscheinlich.",
     questions: [
       {
@@ -210,6 +211,7 @@ export const c1U03: SkillExercise[] = [
       { speaker: "Ipek", text: "Dann ist es Widerspruch, kein freundliches Angebot. Der Ton entscheidet, nicht das Wort." },
       { speaker: "Lars", text: "Wobei ich das Wort keineswegs weglassen würde." },
       { speaker: "Ipek", text: "Auf keinen Fall. Ohne Partikel klingt Deutsch ausdrücklich — und ausdrücklich heißt oft unfreundlich." },
+      { speaker: "Ipek", text: "Und mit „ja“ bekräftigst du etwas, das beide schon wissen." },
       { speaker: "Lars", text: "Dennoch: In einer Mail an eine Behörde lasse ich es weg." },
       { speaker: "Ipek", text: "Da hast du recht. Schriftlich und amtlich, da will man keine Ermunterung, da will man eine Aussage." },
     ],
@@ -283,6 +285,8 @@ export const c1U03: SkillExercise[] = [
       { speaker: "Chef", text: "Ich habe nichts gesagt." },
       { speaker: "Nadja", text: "Sie haben zweimal „ja“ gesagt und einmal „hm“. Bei Ihnen ist das ein Gutachten." },
       { speaker: "Chef", text: "Gut. Dann mit Nachdruck: zwei Tage Test haben sich bei uns noch nie als ausreichend erwiesen." },
+      { speaker: "Nadja", text: "Ehrlich gesagt bin ich erstaunt. Ich hatte Ihr „interessant“ locker als Lob gelesen." },
+      { speaker: "Chef", text: "Das war keine Überraschung für mich — genau so war es gemeint und genau so nicht." },
       { speaker: "Nadja", text: "Warum sagen Sie das nicht gleich so?" },
       { speaker: "Chef", text: "Weil ich gehofft hatte, Sie kommen selbst darauf. Das bewirkt mehr." },
       { speaker: "Nadja", text: "Gewissermaßen ist das ja auch passiert." },

@@ -130,6 +130,7 @@ export const c1U05: SkillExercise[] = [
       "Der häufigste Fehler ist die geschlossene Frage. „Waren Sie schon mal in Hamburg?“ führt in eine Sackgasse: Ja oder nein, und dann Stille. „Was hat Sie nach Hamburg gebracht?“ hingegen öffnet, weil die Antwort eine Geschichte verlangt.\n\n" +
       "Der zweite Fehler ist das Thema, das nicht unverfänglich ist. Gehalt, Gesundheit, Familienstand — in vielen Ländern normale Fragen, hier Grenzverletzungen. Wetter dagegen gilt als Floskel, funktioniert aber genau deshalb: Niemand muss sich dabei zeigen.\n\n" +
       "Am wirksamsten ist das Anknüpfen. Wer im Gespräch etwas aufgreift, das der andere beiläufig gesagt hat — „Sie haben vorhin die Werkstatt erwähnt“ —, signalisiert Zuhören, und Zuhören lockert mehr auf als jede vorbereitete Anekdote.\n\n" +
+      "Damit ist auch gesagt, was diese Plauderei nicht ist: ein Vorgespräch, das man überstehen muss. Sie ist der Teil, in dem entschieden wird, wie das eigentliche Gespräch verläuft.\n\n" +
       "Eine letzte Regel: Wer Small Talk beendet, sollte es sichtbar tun. „Ich lasse Sie mal weiterziehen“ ist freundlicher als ein Blick über die Schulter — und erspart beiden das Rätselraten.",
     questions: [
       {
@@ -204,7 +205,9 @@ export const c1U05: SkillExercise[] = [
       { speaker: "Frau Reimer", text: "Sie stören nicht. Was kann ich für Sie tun?" },
       { speaker: "Herr Demir", text: "Ich hatte Herrn Hoffmann eine Frage geschickt und noch keine Antwort. Wären Sie so freundlich, mich durchzustellen?" },
       { speaker: "Frau Reimer", text: "Herr Hoffmann ist bis Donnerstag außer Haus. Ich kann Ihnen aber gern einen Rückruf notieren." },
-      { speaker: "Herr Demir", text: "Das wäre nett. Es geht um die Frist am Freitag — die ist der eigentliche Grund für den Anruf." },
+      { speaker: "Herr Demir", text: "Das wäre nett. Soll ich Ihnen dazu eine Nachricht hinterlassen?" },
+      { speaker: "Frau Reimer", text: "Ein Stichwort genügt, damit ich es richtig einordne." },
+      { speaker: "Herr Demir", text: "Es geht um die Frist am Freitag — die ist der eigentliche Grund für den Anruf." },
       { speaker: "Frau Reimer", text: "Das ändert die Lage. Fristsachen halte ich nicht bis Donnerstag zurück." },
       { speaker: "Herr Demir", text: "Ich wollte Ihnen die Dringlichkeit nicht vorenthalten, aber auch keinen Druck machen." },
       { speaker: "Frau Reimer", text: "Sagen Sie es beim nächsten Mal ruhig gleich. Ich hole heute Nachmittag eine Auskunft ein und melde mich umgehend." },
@@ -279,6 +282,8 @@ export const c1U05: SkillExercise[] = [
       { speaker: "Frau Weiß", text: "„Ja“ allein wäre Erstaunen gewesen. „Ja wohl“ ist mitnichten Erstaunen — das ist Empörung." },
       { speaker: "Tuna", text: "Und wie hätte ich es sagen sollen?" },
       { speaker: "Frau Weiß", text: "„Das war jetzt hoffentlich nicht ernst gemeint?“ Da hören Sie den Zweifel, nicht den Angriff." },
+      { speaker: "Tuna", text: "Also hat sie den Satz gar nicht falsch gedeutet." },
+      { speaker: "Frau Weiß", text: "Sie hat ihn genau so gedeutet, wie er dasteht. Das ist der unangenehme Teil." },
       { speaker: "Tuna", text: "Die Nuance ist wirklich fein." },
       { speaker: "Frau Weiß", text: "Sie ist fein, aber nicht zufällig. Schriftlich fehlt die Betonung, deshalb wirkt jede Kombination stärker als gemeint." },
       { speaker: "Tuna", text: "Mündlich hätte ich es also retten können?" },

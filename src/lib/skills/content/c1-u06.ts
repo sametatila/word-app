@@ -49,6 +49,7 @@ export const c1U06: SkillExercise[] = [
       "Der Grund liegt in der ersten Position. Das deutsche Hauptsatzverb steht auf Platz zwei; alles, was davor steht, ist damit hervorgehoben. Wer „selten“ nach vorn zieht, zwingt den Zuhörer, mit der Seltenheit zu beginnen. Der Rest des Satzes lehnt sich daran an.\n\n" +
       "Das ist keine Stilfrage, sondern Grammatik im Dienst der Betonung. Sprachen mit freierer Wortstellung verteilen diese Aufgabe auf die Stimme; das Deutsche verlangt eine Entscheidung, bevor der Satz beginnt.\n\n" +
       "Zwei Beobachtungen dazu. Erstens: Die Hervorhebung nutzt sich ab. Wer jeden zweiten Satz invertiert, erzeugt keine Verstärkung mehr, sondern Manier. Zweitens: Die stärkste erste Position ist selten das Subjekt. „Erst dann verstand ich, worum es ging“ wirkt, weil der Zeitpunkt vorn steht und der Erkennende hinten.\n\n" +
+      "Wirkungsvoll ist die Umstellung also nur, solange sie selten bleibt und die vordere Stelle etwas trägt, das der Zuhörer noch nicht hat.\n\n" +
       "Wer eine Rede schreibt, kann das verdeutlichen, indem er die ersten drei Wörter jedes Satzes untereinander schreibt. Steht dort dreimal „Wir“, ist die Rede noch nicht fertig.",
     questions: [
       {
@@ -216,6 +217,11 @@ export const c1U06: SkillExercise[] = [
       { speaker: "Zwischenruf", text: "Das Zweite." },
       { speaker: "Rednerin", text: "Gut, dann reden wir über den Zinssatz und nicht über die Amortisation. Das ist die kürzere Diskussion." },
       { speaker: "Moderator", text: "Wir nehmen das nachher auf, ja? Sonst verlieren wir die Zeit." },
+      { speaker: "Rednerin", text: "Einen Satz noch: Der Einwand ist damit nicht entkräftet, nur eingegrenzt." },
+      { speaker: "Moderator", text: "Sie bleiben bemerkenswert souverän." },
+      { speaker: "Rednerin", text: "Ein Zwischenruf ist kein Angriff. Wer starr am Manuskript hängt, wirkt getroffen; wer aufgreift, hat den Raum." },
+      { speaker: "Moderator", text: "Und wenn jemand nur provozieren will?" },
+      { speaker: "Rednerin", text: "Dann merkt es der Saal vor mir. Ich muss es nicht sagen." },
       { speaker: "Rednerin", text: "Einverstanden. Herr Kollege, ich komme nach dem Vortrag auf Sie zu." },
     ],
     questions: [

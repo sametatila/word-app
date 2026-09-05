@@ -129,6 +129,7 @@ export const c1U07: SkillExercise[] = [
       "Die Wendung ist der Satz, ab dem etwas anders läuft als erwartet. Sie darf nicht angekündigt werden. „Und dann kam etwas Überraschendes“ nimmt der Überraschung genau das, was sie ausmacht.\n\n" +
       "Die Folge beantwortet die stumme Frage des Zuhörers: Warum erzählst du mir das? Wer sie ausspart, hinterlässt Ratlosigkeit, auch wenn die Geschichte gut war.\n\n" +
       "Ein häufiger Fehler ist das Schildern. Ein lebendiges Detail — die kalte Kaffeetasse, das leere Büro — ergreift mehr als fünf. Wer alles beschreibt, beschreibt nichts.\n\n" +
+      "Der Spannungsbogen entsteht dabei nicht durch Dramatik, sondern durch eine offene Frage, die der Zuhörer im Kopf behält, bis sie beantwortet wird.\n\n" +
       "Und die Pointe? Sie steht am Ende, nicht in der Mitte, und der Erzähler lacht nicht vorher. Das ist der Unterschied zwischen einer Komödie und einer Tragödie im Vortragssaal: nicht das Thema, sondern das Timing.",
     questions: [
       {
@@ -202,6 +203,10 @@ export const c1U07: SkillExercise[] = [
       { speaker: "Moderatorin", text: "Was dann passiert ist, erzählt Ihnen Frau Bergmann gleich besser als ich — es ist nämlich genau ihr Thema." },
       { speaker: "Technik", text: "Läuft wieder." },
       { speaker: "Moderatorin", text: "Perfekt. Frau Bergmann, Sie haben das Wort — und die Überleitung habe ich Ihnen schon gebaut." },
+      { speaker: "Frau Bergmann", text: "Haben Sie das eben improvisiert?" },
+      { speaker: "Moderatorin", text: "Halb. Die Geschichte liegt bereit, den Anlass finde ich unterwegs. Angekündigt habe ich sie nicht — sonst hätte jeder gewusst, dass ich Zeit fülle." },
+      { speaker: "Frau Bergmann", text: "Und wenn Ihnen nichts einfällt?" },
+      { speaker: "Moderatorin", text: "Dann eine Denkpause. Ein flüchtiger Blick in die Unterlagen wirkt souveräner als drei Sätze über den Laptop." },
       { speaker: "Frau Bergmann", text: "Die nehme ich gern. Und die Lagerhalle war übrigens meine Idee." },
       { speaker: "Moderatorin", text: "Sehen Sie, das nenne ich einen Auftakt." },
     ],
@@ -272,7 +277,10 @@ export const c1U07: SkillExercise[] = [
       { speaker: "Frau Alp", text: "Sie haben es angedeutet. Ich leugne nicht, dass es damals zu viele waren." },
       { speaker: "Kollege", text: "Hm. Trotzdem: vierzig Minuten für ein Quartalsergebnis?" },
       { speaker: "Frau Alp", text: "Dreißig. Die letzten zehn sind für Ihre Fragen — die kommen ja erfahrungsgemäß." },
-      { speaker: "Kollege", text: "Touché." },
+      { speaker: "Kollege", text: "Touché. Ihre Schlagfertigkeit ist gefürchtet." },
+      { speaker: "Frau Alp", text: "Ich kontere selten. Ich nehme die Spitze auf und gebe ihr eine Richtung — das ist etwas anderes." },
+      { speaker: "Kollege", text: "Und wenn jemand nachlegt?" },
+      { speaker: "Frau Alp", text: "Dann pariere ich einmal, gelassen, und lasse es dabei. Wer zweimal zurückschlägt, verliert den Raum an sich selbst." },
       { speaker: "Frau Alp", text: "Das sehe ich sportlich. Wenn Sie mir vorher sagen, was Sie interessiert, spare ich uns beiden zehn Minuten." },
       { speaker: "Kollege", text: "Die Margen im Süden." },
       { speaker: "Frau Alp", text: "Dann fange ich damit an. Sehen Sie, das war jetzt produktiv." },
