@@ -41,8 +41,20 @@ export function UnitScreen() {
   const acik = raw.filter((i) => i.open);
   const currentId = (acik.find((i) => !i.attempted) ?? acik.find((i) => !i.done))?.id;
   const items = raw.map((i) => ({ ...i, current: i.id === currentId }));
-  const done = items.filter((i) => i.done).length;
-  const pct = items.length ? Math.round((done / items.length) * 100) : 0;
+  /*
+    İLERLEME YALNIZ KAYIT TUTAN ADIMLARA GÖRE — web ile aynı ölçüt.
+
+    Quiz ve kontrol noktası ünite brief'inden türetilen pratik: oynanabilir
+    ama madde başına "bitti" kaydı tutmuyorlar (v1). Paydaya katılınca ünite
+    hiçbir zaman %100 görünmüyordu — mobilde tavan 10/12 idi, webde aynı
+    ünite 10/10 diyordu. Sunucu da (immersion/state) sayıma yalnız ders ve
+    beceriyi alıyor; mobil ölçütü ona hizalandı.
+  */
+  const counted = items.filter(
+    (i) => i.kind === "lesson" || i.kind === "read" || i.kind === "listen" || i.kind === "write",
+  );
+  const done = counted.filter((i) => i.done).length;
+  const pct = counted.length ? Math.round((done / counted.length) * 100) : 0;
 
   function openItem(it: (typeof items)[number]) {
     // Kapalı adım açılmaz: kullanıcı sıradakine geçebilir ama daha sonrakine
@@ -73,7 +85,7 @@ export function UnitScreen() {
         <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginTop: spacing.sm, marginBottom: 6 }}>
           <View style={{ height: "100%", width: `${pct}%`, backgroundColor: colors.success, borderRadius: 5 }} />
         </View>
-        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>{t("unit.steps_done", { n: done, total: items.length })}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>{t("unit.steps_done", { n: done, total: counted.length })}</Text>
 
         <View style={{ gap: spacing.md }}>
           {items.map((it) => {

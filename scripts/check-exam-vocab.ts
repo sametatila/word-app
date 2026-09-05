@@ -18,19 +18,28 @@ import { moduleExamPlan } from "../src/lib/lessons/module-exam";
 
 const require = createRequire(import.meta.url);
 const { olc, ozet, türkçeMi } = require("./lib/vocab-gate.cjs") as {
-  olc: (ham: string, unit: number, ek?: string[]) => { tok: string[]; disi: string[] };
+  olc: (ham: string, unit: number, ek?: string[], seviye?: string) => { tok: string[]; disi: string[] };
   ozet: (d: string[]) => string[];
   türkçeMi: (s: string) => boolean;
 };
 
 const sinirUnite = (m: number) => Math.ceil(((m + 1) * 10) / 4);
 
+// Seviye argümanla seçilir: `npm run check:examvocab -- b1`. Argümansız HEPSİ
+// ölçülür — kâğıtlar beş seviyede de elle yazılıyor ve hepsi aynı riski taşıyor
+// (ders katmanı yenilenince kâğıdın elle yazılan yarısı geride kalabiliyor).
+const SEVIYELER = ["A1", "A2", "B1", "B2", "C1"];
+const istenen = (process.argv[2] || "").toUpperCase();
+const hedefSeviyeler = SEVIYELER.includes(istenen) ? [istenen] : SEVIYELER;
+
 let toplamDisi = 0, toplamTok = 0;
 const genel = new Map<string, number>();
 
-for (let m = 0; m < 10; m++) {
-  const p = moduleExamPlan("A1", m);
-  if (!p) { console.log(`modül ${m}: PLAN YOK`); continue; }
+for (const seviye of hedefSeviyeler) {
+ const modulSayisi = seviye === "B1" ? 18 : 10;
+ for (let m = 0; m < modulSayisi; m++) {
+  const p = moduleExamPlan(seviye, m);
+  if (!p) { console.log(`${seviye} modül ${m + 1}: PLAN YOK`); continue; }
   const u = sinirUnite(m);
 
   // Yazma görevinin kalıpları öğrenciye VERİLİYOR; ölçüme değil izne girer.
@@ -46,13 +55,14 @@ for (let m = 0; m < 10; m++) {
 
   const satir: string[] = [];
   for (const [ad, ham] of Object.entries(bolum)) {
-    const { tok, disi } = olc(ham, u, ek);
+    const { tok, disi } = olc(ham, u, ek, seviye.toLowerCase());
     if (ad !== "Kann-Liste") { toplamTok += tok.length; toplamDisi += disi.length; }
     for (const w of disi) genel.set(w, (genel.get(w) || 0) + 1);
     satir.push(disi.length ? `${ad} ${disi.length}/${tok.length}: ${ozet(disi).slice(0, 6).join(", ")}` : `${ad} temiz`);
   }
-  console.log(`\nmodül ${m} · ${p.code} · ${p.titleDe} (ünite 1-${u}'e kadar)`);
+  console.log(`\n${p.code} · ${p.titleDe} (ünite 1-${u}'e kadar)`);
   for (const s of satir) console.log("   " + s);
+ }
 }
 
 console.log(`\nTOPLAM (Kann-Liste hariç): ${toplamDisi}/${toplamTok} = %${(toplamDisi / toplamTok * 100).toFixed(1)} dışı`);
