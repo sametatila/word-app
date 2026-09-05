@@ -56,15 +56,23 @@ async function main() {
     const lessons = moduleContent(COURSE, m.level, m.index).lessons.map((l) => l.id);
 
     if (s.vocab.length !== 6) fail(where, `kelime ${s.vocab.length} (6 olmalı)`);
-    if (s.grammar.length !== 6) fail(where, `dilbilgisi ${s.grammar.length} (6 olmalı)`);
+    // Dilbilgisi bölümü 2026-08'de BİLEREK kaldırıldı (`exam.ts`: "cheatsheet
+    // gitti, immersion'da yeniden") ve `buildPaper` artık hiç madde üretmiyor.
+    // Bu doğrulayıcı hâlâ altı madde istiyordu, yani katalogdaki her modül için
+    // üç hata veriyordu: beş seviyede 190 hata, tasarım gereği kırmızı. Kırmızı
+    // duran bir doğrulayıcı gerçek hatayı örtüyor — bölüm boşken kontroller
+    // atlanır, geri geldiği gün eski kurallar aynen işler.
+    if (s.grammar.length !== 0 && s.grammar.length !== 6) fail(where, `dilbilgisi ${s.grammar.length} (0 ya da 6 olmalı)`);
     if (s.produce.length !== 5) fail(where, `cümle kurma ${s.produce.length} (5 olmalı)`);
     if (s.reading.length !== 1 || s.reading[0].questions.length !== 2) fail(where, "okuma bölümü eksik");
     if (s.listening.length !== 1 || s.listening[0].questions.length !== 3) fail(where, "dinleme bölümü eksik");
     if (!paper.cover || paper.cover.code !== where) fail(where, `kapak yok ya da yanlış: ${paper.cover?.code}`);
     if (paper.seconds !== 1500) fail(where, `süre ${paper.seconds}`);
 
-    if (!s.grammar.some((g) => g.kind === "judge")) fail(where, "dilbilgisinde ders hükmü yok");
-    if (!s.grammar.some((g) => g.kind === "cell")) fail(where, "dilbilgisinde tablo hücresi yok");
+    if (s.grammar.length) {
+      if (!s.grammar.some((g) => g.kind === "judge")) fail(where, "dilbilgisinde ders hükmü yok");
+      if (!s.grammar.some((g) => g.kind === "cell")) fail(where, "dilbilgisinde tablo hücresi yok");
+    }
     for (const g of s.grammar) {
       if (g.kind !== "cell") continue;
       if (g.answer < 0 || g.answer >= g.options.length) fail(where, `hücre maddesinde dizin bozuk: ${g.id}`);
