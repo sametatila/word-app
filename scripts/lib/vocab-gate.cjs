@@ -93,7 +93,11 @@ const DUZENSIZ = {
 // öğretiliyor ama bileşiğin kendisi hiçbir ders listesinde yok, o yüzden
 // kayma sanılıyordu. Yalnız sayı morfemlerinden kurulmuş bir sözcük sayıdır.
 const SAYI_MORFEM = "null|eins|ein|eine|zwei|drei|vier|fünf|sechs|sech|sieben|sieb|acht|neun|zehn|elf|zwölf|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|hundert|tausend|und";
-const SAYI_RE = new RegExp(`^(?:${SAYI_MORFEM})+$`, "i");
+// Kerecik sayısı da sayıdır: einmal, zweimal, dreimal, zehnmal. "mal"
+// öğretilen bir sözcük ama bileşiği hiçbir listede yok; bazıları başka
+// kurallara takılıp geçiyor, bazıları geçmiyordu (zweimal geçiyor,
+// dreimal geçmiyordu) — yani davranış tutarsızdı.
+const SAYI_RE = new RegExp(`^(?:${SAYI_MORFEM})+(?:mal)?$`, "i");
 // Sıra sayısı: "am dritten Mai", "die erste Stelle".
 const SIRA_RE = new RegExp(`^(?:erst|zweit|dritt|viert|fünft|sechst|siebt|acht|neunt|zehnt|elft|zwölft|(?:${SAYI_MORFEM})+t)(?:e|en|es|er|em)$`, "i");
 const sayiMi = (w) => SAYI_RE.test(w) || SIRA_RE.test(w);
