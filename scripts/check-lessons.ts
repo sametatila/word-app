@@ -57,8 +57,13 @@ for (const l of LESSONS) {
   // kapsayacak kadar kelime taşımak zorunda (ders × 8). B2 de sekize çıktı:
   // 100 × 5 = 500 yuva ile B2 katmanının (2061 madde) ancak dörtte biri
   // öğretilebiliyordu. C1 hâlâ 5 — sırası gelmedi.
-  const vocabSize = l.level === "C1" ? 5 : 8;
-  ok(l.vocab.length === vocabSize, `tam ${vocabSize} kelime`, `(${l.vocab.length})`);
+  // C1 sözlükçesi 5'ten 8'e taşınıyor (karar 2026-09-05: katman 2441, beşle
+  // kapsama tavanı %23). Dönüşüm 100 dersi kapsıyor ve gün alıyor; geçiş
+  // boyunca ikisi de kabul ediliyor, yoksa doğrulayıcı iş bitene kadar kırmızı
+  // kalır ve o sürede hiçbir şeyi korumaz. Dönüşüm bitince buradaki 5 silinecek
+  // ve C1 de öteki seviyeler gibi tam sekiz isteyecek.
+  const sizes = l.level === "C1" ? [5, 8] : [8];
+  ok(sizes.includes(l.vocab.length), `tam ${sizes.join(" ya da ")} kelime`, `(${l.vocab.length})`);
   ok(l.patterns.length >= 2 && l.patterns.length <= 3, "2-3 kalıp", `(${l.patterns.length})`);
   ok(
     l.vocab.every((v) => v.de.trim() && v.tr.trim()),
