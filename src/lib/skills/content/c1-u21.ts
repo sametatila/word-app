@@ -338,7 +338,7 @@ export const c1U21: SkillExercise[] = [
     unit: 21,
     title: "İroninin ve şakanın dili",
     genre: "Dil bilgisi",
-    intro: "ankommen, zurücknehmen, mit einem Augenzwinkern.",
+    intro: "Şakanın varışı, geri alma ve göz kırpma kalıbı.",
     gloss: [
       { de: "ankommen", tr: "karşı tarafa varmak", en: "to land" },
       { de: "zurücknehmen", tr: "geri almak", en: "to retract" },

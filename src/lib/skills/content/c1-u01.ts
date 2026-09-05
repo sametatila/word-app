@@ -47,6 +47,9 @@ export const c1U01: SkillExercise[] = [
       "Die Tragweite der Entscheidung ist erheblich. Betroffen sind 84 Beschäftigte, von denen nach derzeitigem Stand 31 einen Umzug nicht in Frage kommen sehen. Für diese Gruppe stehen ab Januar Beratungsgespräche zur Verfügung.\n\n" +
       "Der Vorstand fasst folgenden Beschluss: Variante 2 (Teilverlagerung) wird umgesetzt. Die entsprechenden Bestimmungen treten zum 1. April in Kraft, vorbehaltlich der Zustimmung des Aufsichtsrats in seiner Sitzung am 12. Februar.\n\n" +
       "Die Geschäftsführung wird veranlasst, bis Ende Januar einen Sozialplan vorzulegen. Von einer Ankündigung gegenüber der Presse ist bis zur Sitzung des Aufsichtsrats Abstand zu nehmen.\n\n" +
+      "Zur Begründung: Variante 1 hätte eine Einsparung von jährlich rund 1,2 Millionen Euro erbracht, wäre jedoch mit dem vollständigen Verlust der regionalen Zulieferbeziehungen verbunden gewesen. Variante 3 ist wirtschaftlich nicht darstellbar, da die Bestimmungen des bestehenden Mietvertrags eine Reduzierung der Fläche vor 2029 nicht zulassen.\n\n" +
+      "Die Teilverlagerung sieht vor, dass Entwicklung und Vertrieb am Standort Nord verbleiben, während Produktion und Lager an den Standort Süd wechseln. Die Tragweite ist für die Bereiche sehr unterschiedlich; eine nach Abteilungen aufgeschlüsselte Darstellung findet sich in Anlage 3.\n\n" +
+      "Der Vorstand weist darauf hin, dass über den Zeitpunkt der Umsetzung noch nicht entschieden ist. In Betracht gezogen wird, die Verlagerung über zwei Jahre zu strecken, um betriebsbedingte Kündigungen zu vermeiden. Eine Kalkulation hierzu liegt bislang nicht vor und wird bis zur Sitzung des Aufsichtsrats veranlasst.\n\n" +
       "Anmerkung des Betriebsrats: Der Betriebsrat trägt den Beschluss mit, bringt jedoch zum Ausdruck, dass die Frist für den Sozialplan sehr knapp bemessen ist.",
     questions: [
       {
@@ -127,6 +130,9 @@ export const c1U01: SkillExercise[] = [
       "Ihr Vorhaben hat in der Vorprüfung durchweg positive Rückmeldungen erhalten. Die Gutachter heben insbesondere die methodische Sorgfalt hervor. Gleichwohl können wir Ihnen zum jetzigen Zeitpunkt keine verbindliche Bewilligung in Aussicht stellen.\n\n" +
       "Der Grund liegt nicht in der Qualität des Antrags. Die für diese Förderlinie zur Verfügung stehenden Mittel sind für das laufende Jahr bereits vollständig gebunden. Eine Entscheidung über die Mittel des Folgejahres wird der Vergabeausschuss im Oktober treffen.\n\n" +
       "Wir möchten Ihre Zeit nicht unnötig in Anspruch nehmen und raten daher, den Antrag im Herbst unverändert erneut einzureichen. Eine erneute Vorprüfung wird dann nicht erforderlich sein.\n\n" +
+      "Wir möchten die positive Vorprüfung an dieser Stelle ausdrücklich relativieren: Sie ist eine fachliche Einschätzung, keine Zusage. Der Vergabeausschuss ist an die dann verfügbaren Mittel gebunden, und wir können Ihnen zum jetzigen Zeitpunkt weder eine Rangfolge noch eine Wahrscheinlichkeit nennen.\n\n" +
+      "Zu Ihrer Anfrage vom 18. März, ob eine Zwischenfinanzierung möglich sei: Eine solche ist in dieser Förderlinie nicht vorgesehen. Sofern Ihre Einrichtung eigene Mittel vorstreckt, können diese nachträglich nicht angerechnet werden.\n\n" +
+      "Wir nehmen Rücksicht darauf, dass Ihre Planung an das Semester gebunden ist, und teilen Ihnen das Ergebnis der Oktobersitzung noch in derselben Woche mit, statt den regulären Bescheid abzuwarten.\n\n" +
       "Sollten Sie sich vertreten lassen wollen, reichen Sie bitte eine Vollmacht nach.\n\n" +
       "Mit freundlichen Grüßen\nDr. H. Bergmann, Vergabestelle",
     questions: [

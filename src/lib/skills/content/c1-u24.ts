@@ -349,7 +349,7 @@ export const c1U24: SkillExercise[] = [
     unit: 24,
     title: "Aracılık ve müzakere kalıpları",
     genre: "Dil bilgisi",
-    intro: "Gemeint ist Folgendes, Kämen Sie …, sofern, unser letztes Wort wäre.",
+    intro: "Aracılık cümlesi, koşullu diplomasi ve son teklif kalıbı.",
     gloss: [
       { de: "vermitteln", tr: "aracılık etmek", en: "to mediate" },
       { de: "sofern", tr: "-diği takdirde", en: "provided that" },

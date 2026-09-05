@@ -340,7 +340,7 @@ export const c1U18: SkillExercise[] = [
     unit: 18,
     title: "Doğru sözcük, doğru iddia",
     genre: "Dil bilgisi",
-    intro: "scheinbar/anscheinend, ungeachtet + Genitiv, als wäre.",
+    intro: "Görünüş bildiren iki zarf, imtiyaz edatı ve gerçek dışı kıyas.",
     gloss: [
       { de: "anscheinend", tr: "görünüşe göre", en: "apparently" },
       { de: "scheinbar", tr: "sözde", en: "seemingly (but not)" },

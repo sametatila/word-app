@@ -344,7 +344,7 @@ export const c1U19: SkillExercise[] = [
     unit: 19,
     title: "Varsayım ve irreal koşul",
     genre: "Dil bilgisi",
-    intro: "Angenommen, gesetzt den Fall, hätte … stünden, so sehr … so oft.",
+    intro: "Varsayım kalıpları, bağlaçsız gerçek dışı koşul ve ikili kabul yapısı.",
     gloss: [
       { de: "angenommen", tr: "diyelim ki", en: "assuming" },
       { de: "hypothetisch", tr: "varsayımsal", en: "hypothetical" },

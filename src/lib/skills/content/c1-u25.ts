@@ -347,7 +347,7 @@ export const c1U25: SkillExercise[] = [
     unit: 25,
     title: "Öğüt vermenin dili",
     genre: "Dil bilgisi",
-    intro: "An deiner Stelle …, Was mir geholfen hat …, Es ist, als hätte ich …",
+    intro: "Öğüt verme kalıpları ve gerçek dışı kıyas.",
     gloss: [
       { de: "weitergeben", tr: "aktarmak", en: "to pass on" },
       { de: "ermutigen", tr: "cesaretlendirmek", en: "to encourage" },
