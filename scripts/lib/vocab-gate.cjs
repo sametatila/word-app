@@ -77,6 +77,10 @@ const DUZENSIZ = {
   tun: ["tut", "tat", "getan"], halten: ["hält", "hielt", "gehalten"],
   ziehen: ["zieht", "zog", "gezogen"], schließen: ["schließt", "schloss", "geschlossen"],
   entscheiden: ["entscheidet", "entschied", "entschieden"], bekommen: ["bekommt", "bekam", "bekommen"],
+  // Anlatı üniteleri (als/wenn) bu dördünü sürekli Präteritum'da kullanıyor ve
+  // ünlü değişimleri kural tablosunda yok: a→ie, a→i, a→u, u→ie.
+  fallen: ["fällt", "fiel", "gefallen"], fangen: ["fängt", "fing", "gefangen"],
+  tragen: ["trägt", "trug", "getragen"], rufen: ["ruft", "rief", "gerufen"],
 };
 
 // Almanca sayı BİLEŞİKTİR: "achtunddreißig" = acht+und+dreißig. Parçaları
@@ -164,17 +168,24 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   // Türkçe harf taşıyan özel ad ("Yılmaz") Almanca sözcük regexinde parçalanıp
   // sahte gövde bırakıyor ("lmaz"); böyle belirteci bütünüyle atıyoruz.
   const ham = String(ham0 || "").split(/\s+/).filter((t) => !/[ışğİıŞĞçÇ]/.test(t)).join(" ");
-  const ozelAd = new Set((ham.match(/(?<![.!?]\s)(?<!^)\b[A-ZÄÖÜ][a-zäöüß]{2,}\b/g) || [])
+  // Türkçe harfli belirteci atmak gövde uydurmasını önlüyor ama ad-soyad
+  // KANITINI da siliyor: "Emre Şahin" → "Emre" tek başına kalıyor ve cümle
+  // başındaki büyük harf muafiyetsiz olduğu için özel ad sayılmıyordu.
+  // Ad taramasını harfleri ASCII'ye çevrilmiş AYRI bir metinde yap; sözcük
+  // denetimi (aşağıda `ham`) değişmeden kalsın, yoksa sahte Almanca gövde üretir.
+  const TR_ASCII = { ı: "i", İ: "I", ş: "s", Ş: "S", ğ: "g", Ğ: "G", ç: "c", Ç: "C" };
+  const adMetni = String(ham0 || "").replace(/[ıİşŞğĞçÇ]/g, (c) => TR_ASCII[c]);
+  const ozelAd = new Set((adMetni.match(/(?<![.!?]\s)(?<!^)\b[A-ZÄÖÜ][a-zäöüß]{2,}\b/g) || [])
     .map((w) => w.toLowerCase()).filter((w) => !havuzKok.has(w) && !TAKVIM.has(w)));
   // Unvan ZİNCİRLENEBİLİR ("Frau Dr. Weber"); tek unvanlı desen ilk eşleşmede
   // lastIndex'i ilerletip asıl adı yutuyordu.
   // İki büyük harfli sözcük yan yana ise ad-soyaddır ("Leyla Kaya", "Markus
   // Bauer") — cümle başında da olsa özel addır. Tek başına baştaki büyük harf
   // muaf tutulmuyor, çünkü her cümle büyük harfle başlar.
-  for (const m of ham.matchAll(/\b([A-ZÄÖÜ][a-zäöüß]{1,})\s+([A-ZÄÖÜ][a-zäöüß]{1,})\b/g)) {
+  for (const m of adMetni.matchAll(/\b([A-ZÄÖÜ][a-zäöüß]{1,})\s+([A-ZÄÖÜ][a-zäöüß]{1,})\b/g)) {
     if (!havuzKok.has(m[1].toLowerCase())) { ozelAd.add(m[1].toLowerCase()); ozelAd.add(m[2].toLowerCase()); }
   }
-  for (const m of ham.matchAll(/\b(Dr|Prof|Frau|Herrn|Herr)\.?\s+(?:(?:Dr|Prof)\.?\s+)?([A-ZÄÖÜ][a-zäöüß]+)/g)) {
+  for (const m of adMetni.matchAll(/\b(Dr|Prof|Frau|Herrn|Herr)\.?\s+(?:(?:Dr|Prof)\.?\s+)?([A-ZÄÖÜ][a-zäöüß]+)/g)) {
     // Unvandan SONRA gelen sözcük soyadıdır — havuzda ortak isim olarak da
     // bulunması ("Berg" = dağ) bunu değiştirmez, o yüzden koşulsuz muaf.
     ozelAd.add(m[1].toLowerCase()); ozelAd.add("dr"); ozelAd.add("prof");
@@ -234,6 +245,12 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
         const on = w.slice(0, w.length - mastar.length);
         for (const b of bicimler) {
           izinCekim.add(on + b);
+          // Tablo Präteritum'un yalnız 3. tekilini tutuyor ("ging"), ama anlatı
+          // metni çoğulu da kullanıyor ("gingen", "fuhren", "bliebst"). Kişi
+          // eklerini üret: güçlü gövdeye -en/-st/-t, zayıf -te gövdesine -n/-st/-t.
+          if (b === bicimler[1]) {
+            for (const son of ["en", "st", "t", "n"]) izinCekim.add(on + b + son);
+          }
           // Ayrılabilen önekte "ge" öneke ile gövde arasına girer: angerufen.
           if (on && b.startsWith("ge")) izinCekim.add(on + b);
           if (on) izinCekim.add(b.replace(/^ge/, on + "ge"));
