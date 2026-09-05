@@ -102,8 +102,19 @@ for LANG_CODE in $FLOW_LANGS; do
   fi
 
   set +e
-  # TEST_RUNNER_ önekli değişkenler test koşucusunun ortamına geçiyor —
-  # LernomiUITests.swift bunları oradan okuyor.
+  # TEST_RUNNER_ önekli değişkenler test koşucusunun ortamına geçiyor (önek
+  # soyularak): xcodebuild bunu ORTAM DEĞİŞKENİ olarak bekliyor. Önceki koşuda
+  # aynı adlar komut sonunda DERLEME AYARI olarak veriliyordu ve teste hiç
+  # ulaşmamış olabilir — giriş adımı ekranı doğru bulduğu hâlde alanları boş
+  # bıraktı. İkisi birden veriliyor; hangisinin taşıdığını UITEST: satırları
+  # söyleyecek.
+  export TEST_RUNNER_UI_TEST_LANG="$LANG_CODE"
+  export TEST_RUNNER_UI_TEST_BLOCK="$BLOCK"
+  export TEST_RUNNER_UI_TEST_L_EMAIL_CTA="$(i18n_value "$LANG_CODE" auth.continue_with_email)"
+  export TEST_RUNNER_UI_TEST_L_SIGNIN="$(i18n_value "$LANG_CODE" auth.sign_in)"
+  export TEST_RUNNER_UI_TEST_L_SIGNUP="$(i18n_value "$LANG_CODE" auth.create_account)"
+  export TEST_RUNNER_UI_TEST_EMAIL="${UI_TEST_EMAIL:-}"
+  export TEST_RUNNER_UI_TEST_PASSWORD="${UI_TEST_PASSWORD:-}"
   xcodebuild test \
     -workspace ios/Lernomi.xcworkspace \
     -scheme Lernomi \
@@ -119,7 +130,8 @@ for LANG_CODE in $FLOW_LANGS; do
     TEST_RUNNER_UI_TEST_L_SIGNIN="$(i18n_value "$LANG_CODE" auth.sign_in)" \
     TEST_RUNNER_UI_TEST_L_SIGNUP="$(i18n_value "$LANG_CODE" auth.create_account)" \
     TEST_RUNNER_UI_TEST_EMAIL="${UI_TEST_EMAIL:-}" \
-    TEST_RUNNER_UI_TEST_PASSWORD="${UI_TEST_PASSWORD:-}" 2>&1 | tail -40
+    TEST_RUNNER_UI_TEST_PASSWORD="${UI_TEST_PASSWORD:-}" 2>&1 \
+    | grep -E "UITEST:|TEST SUCCEEDED|TEST FAILED|error:|Testing failed" 
   TEST_RC=${PIPESTATUS[0]}
   set -e
 

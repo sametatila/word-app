@@ -129,29 +129,52 @@ final class LernomiUITests: XCTestCase {
       cta.tap()
       sleep(dwell)
     }
-    guard let email = env["UI_TEST_EMAIL"], let password = env["UI_TEST_PASSWORD"],
-          !email.isEmpty, !password.isEmpty else { return }
+    let email = env["UI_TEST_EMAIL"] ?? ""
+    let password = env["UI_TEST_PASSWORD"] ?? ""
+    // Teşhis: bir önceki koşuda form doğru ekranda ve doğru modda açıldı ama
+    // alanlar boş kaldı, sebebi karelerden anlaşılmadı. Parola BASILMIYOR,
+    // yalnız uzunluğu — "secret geldi mi" ile "alan bulundu mu" ayrılabilsin.
+    dump(app, "giris oncesi", email: email, passwordLength: password.count)
+    guard !email.isEmpty, !password.isEmpty else { return }
 
-    // Kayıt modundaysak giriş moduna çevir: en alttaki düğme mod değiştiricisi.
-    if button(app, labeled: label("SIGNUP")) != nil {
+    // Mod, alan SAYISINDAN değil düğmenin varlığından anlaşılıyor: sayım
+    // kırılgandı ve bir kere sessizce erken döndü. Giriş düğmesi varsa
+    // giriş modundayız, kayıt düğmesi varsa moda çevirmek gerekiyor.
+    if button(app, labeled: label("SIGNIN")) == nil, button(app, labeled: label("SIGNUP")) != nil {
       if let toggle = buttons(app).last, toggle.isHittable {
         toggle.tap()
         sleep(2)
+        dump(app, "mod cevrildi", email: email, passwordLength: password.count)
       }
     }
 
-    let fields = app.textFields.allElementsBoundByIndex.filter { $0.exists && $0.isHittable }
-    let secure = app.secureTextFields.allElementsBoundByIndex.filter { $0.exists && $0.isHittable }
-    // Giriş modunda tek metin alanı var (e-posta). Birden fazlaysa hâlâ kayıt
-    // formundayız demektir; yanlış alana yazmaktansa hiç yazma.
-    guard fields.count == 1, let mail = fields.first, let pass = secure.first else { return }
-
+    let mail = app.textFields.element(boundBy: 0)
+    let pass = app.secureTextFields.element(boundBy: 0)
+    guard mail.waitForExistence(timeout: 10), pass.waitForExistence(timeout: 10) else {
+      print("UITEST: alanlar bulunamadi")
+      return
+    }
     mail.tap(); mail.typeText(email)
     pass.tap(); pass.typeText(password)
+    dump(app, "alanlar dolduruldu", email: email, passwordLength: password.count)
+
     if let submit = button(app, labeled: label("SIGNIN")), submit.isHittable {
       submit.tap()
+    } else if let last = buttons(app).last, last.isHittable {
+      // Klavye açıkken düğme kaymış ya da etiketi değişmiş olabilir.
+      last.tap()
     }
-    sleep(dwell * 2) // oturum + ilk veri çekimi
+    sleep(dwell * 3) // oturum + ilk veri çekimi
+    dump(app, "giris sonrasi", email: email, passwordLength: password.count)
+  }
+
+  /// Ekranın o anki hâlini günlüğe yazar. Kareler "ne göründüğünü" söylüyor,
+  /// bu "testin ne gördüğünü" söylüyor — ikisi ayrıştığında sebep buradan çıkar.
+  private func dump(_ app: XCUIApplication, _ nerede: String, email: String, passwordLength: Int) {
+    let labels = buttons(app).map { $0.label.isEmpty ? "(etiketsiz)" : $0.label }
+    print("UITEST: \(nerede) | eposta=\(email.isEmpty ? "YOK" : "var") parola=\(passwordLength) hane " +
+          "| metinAlani=\(app.textFields.count) gizliAlan=\(app.secureTextFields.count) " +
+          "| dugmeler=\(labels)")
   }
 
   // MARK: - gezinme
