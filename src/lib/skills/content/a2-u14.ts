@@ -39,12 +39,16 @@ export const a2U14: SkillExercise[] = [
       { de: "bunt", tr: "rengârenk", en: "colourful" },
       { de: "der Anzug", tr: "takım elbise", en: "suit" },
       { de: "die Mode", tr: "moda", en: "fashion" },
+      { de: "dünn", tr: "ince", en: "thin" },
+      { de: "bequem", tr: "rahat", en: "comfortable" },
+      { de: "hässlich", tr: "çirkin", en: "ugly" },
     ],
     minutes: 4,
     text:
       "Viele Leute fragen mich: Was ziehe ich zu einem Bewerbungsgespräch an?\n\n" +
       "Meine Antwort ist immer gleich: einfach. Ein dunkelblauer Anzug oder ein einfarbiger Rock funktioniert fast überall. Dazu ein hellblaues Hemd — das wirkt freundlich, aber nicht zu bunt.\n\n" +
       "Ein kariertes Hemd ist nicht falsch, aber es zieht die Blicke auf sich. Ein gestreifter Pullover ebenso. Wenn Sie unsicher sind, nehmen Sie lieber etwas Einfarbiges.\n\n" +
+      "Noch ein Wort zum Stoff: Nehmen Sie nichts zu Dünnes. Ein dünnes Hemd sieht nach zwei Stunden müde aus, und im Sommer sieht man alles darunter. Wichtiger ist aber, dass die Sachen bequem sind — wer die ganze Zeit an seiner Hose zieht, wirkt unsicher. Und ein Kleidungsstück, das Sie selbst hässlich finden, ziehen Sie an diesem Tag bitte nicht an.\n\n" +
       "Und die Mode? Die ändert sich jedes Jahr, aber ein grauer Anzug sieht auch in zehn Jahren noch gut aus. Grün und Rot sind schön — nur nicht am ersten Tag.",
     questions: [
       {

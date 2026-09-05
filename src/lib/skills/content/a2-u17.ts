@@ -165,6 +165,7 @@ export const a2U17: SkillExercise[] = [
       { de: "bummeln", tr: "gezinmek", en: "to stroll" },
       { de: "der Spaziergang", tr: "yürüyüş", en: "walk" },
       { de: "der Zoo", tr: "hayvanat bahçesi", en: "zoo" },
+      { de: "die Raststätte", tr: "dinlenme tesisi", en: "motorway services" },
     ],
     minutes: 3,
     segments: [
@@ -177,6 +178,7 @@ export const a2U17: SkillExercise[] = [
       { speaker: "Ayla", text: "Zwölf Euro, für Studenten acht. Du hast doch noch deinen Ausweis?" },
       { speaker: "Mert", text: "Ja, der gilt noch bis Dezember. Und danach?" },
       { speaker: "Ayla", text: "Danach bummeln wir durch die Altstadt und trinken irgendwo einen Kaffee." },
+      { speaker: "Mert", text: "Und auf dem Rückweg halten wir kurz an der Raststätte, ja? Ich habe dann immer Hunger." },
       { speaker: "Mert", text: "Abgemacht. Ich hole dich um zehn ab." },
     ],
     questions: [
@@ -229,6 +231,7 @@ export const a2U17: SkillExercise[] = [
       { de: "das Lagerfeuer", tr: "kamp ateşi", en: "campfire" },
       { de: "der Bach", tr: "dere", en: "stream" },
       { de: "angeln", tr: "balık tutmak", en: "to fish" },
+      { de: "braten", tr: "kızartmak", en: "to fry, grill" },
     ],
     minutes: 3,
     segments: [
@@ -240,7 +243,9 @@ export const a2U17: SkillExercise[] = [
       { speaker: "Platzwart", text: "Nur an der festen Feuerstelle beim Bach, nicht am Zelt. Und nur bis 22 Uhr." },
       { speaker: "Herr Ott", text: "Es gibt einen Bach hier?" },
       { speaker: "Platzwart", text: "Ja, hinter dem Platz. Angeln dürfen Sie dort aber nicht, das ist verboten." },
-      { speaker: "Herr Ott", text: "Schade. Was kostet die Nacht?" },
+      { speaker: "Herr Ott", text: "Schade. Dann braten wir eben Würstchen über dem Feuer." },
+      { speaker: "Platzwart", text: "Das machen hier alle. Der Laden vorne hat welche." },
+      { speaker: "Herr Ott", text: "Gut. Was kostet die Nacht?" },
       { speaker: "Platzwart", text: "Neun Euro pro Person, Kinder unter zehn die Hälfte." },
     ],
     questions: [
