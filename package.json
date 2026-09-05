@@ -66,8 +66,7 @@
     "test:options": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-options.ts",
     "dump:skills": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-skills-mobile.ts",
     "check:unitvocab": "tsx scripts/check-unit-vocab.ts",
-    "check:examvocab": "tsx scripts/check-exam-vocab.ts",
-    "check:content": "tsx scripts/check-content.ts"
+    "check:examvocab": "tsx scripts/check-exam-vocab.ts"
   },
   "dependencies": {
     "better-auth": "^1.2.8",
