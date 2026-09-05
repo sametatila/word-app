@@ -22,6 +22,7 @@ import { c1U20 } from "./c1-u20";
 import { c1U21 } from "./c1-u21";
 import { c1U22 } from "./c1-u22";
 import { c1U23 } from "./c1-u23";
+import { c1U24 } from "./c1-u24";
 
 /**
  * C1 — okuma, dinleme ve yazma egzersizleri.
@@ -56,6 +57,7 @@ export const c1: SkillExercise[] = [
   ...c1U21,
   ...c1U22,
   ...c1U23,
+  ...c1U24,
   // ---------------------------------------------------------------- OKUMA
   {
     id: "c1-r1",
