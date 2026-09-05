@@ -261,6 +261,8 @@ final class LernomiUITests: XCTestCase {
       print("UITEST: sekme yok, tarama atlandi (giris tutmamis olabilir)")
       return
     }
+    var acilan = 0
+    defer { print("UITEST: tarama bitti, acilan ekran=\(acilan)") }
     let tabCount = tabButtons(app).count
     for i in 0..<tabCount {
       if outOfTime { print("UITEST: butce doldu, tarama kesildi"); return }
@@ -274,7 +276,7 @@ final class LernomiUITests: XCTestCase {
         if outOfTime { print("UITEST: butce doldu, tarama kesildi"); return }
         let fresh = entries(app)
         guard j < fresh.count, fresh[j].isHittable else { continue }
-        fresh[j].tap()
+        fresh[j].tap(); acilan += 1
         sleep(dwell)
 
         // İkinci seviye: açılan ekranın kendi girişleri.
@@ -283,7 +285,7 @@ final class LernomiUITests: XCTestCase {
           if outOfTime { break }
           let subs = entries(app)
           guard k < subs.count, subs[k].isHittable else { continue }
-          subs[k].tap()
+          subs[k].tap(); acilan += 1
           sleep(dwell)
           goBackOnce(app)
           sleep(1)
@@ -295,9 +297,21 @@ final class LernomiUITests: XCTestCase {
     }
   }
 
-  /// Sekme çubuğunun ÜSTÜNDEKİ düğmeler — yani ekranın kendi girişleri.
+  /// Ekranın kendi girişleri: sekme çubuğunun ÜSTÜNDE ve sol üstteki GERİ OKU
+  /// DEĞİL.
+  ///
+  /// Geri oku dışlanmazsa alt seviyede ilk giriş o oluyor: dokununca bir üste
+  /// çıkılıyor, hemen ardından goBackOnce bir daha çıkarıyor ve tur aynı
+  /// ekranları dolaşıp duruyor. Bir koşuda tam olarak bu oldu — tarama 8 dakika
+  /// sürdü (öncekilerin iki katı) ve tek yeni kare çıkmadı.
+  ///
+  /// Sekme ekranlarında sol üstte zaten düğme yok (selamlama metni var, kutu ve
+  /// avatar sağ üstte), yani bu eleme orada bir şey kaybettirmiyor.
   private func entries(_ app: XCUIApplication) -> [XCUIElement] {
-    buttons(app).filter { $0.frame.minY < app.frame.height * 0.86 }
+    let h = app.frame.height, w = app.frame.width
+    return buttons(app).filter {
+      $0.frame.minY < h * 0.86 && !($0.frame.minY < h * 0.15 && $0.frame.minX < w * 0.25)
+    }
   }
 
   /// Bir seviye geri: kenardan kaydırma, tutmazsa sol üstteki ok. Sekmelere
