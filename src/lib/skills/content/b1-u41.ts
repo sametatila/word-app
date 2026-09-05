@@ -241,7 +241,7 @@ export const b1U41: SkillExercise[] = [
     ],
     segments: [
       { text: "Im Kurs duzen sich alle. Im Betrieb nicht. Warum eigentlich?" },
-      { text: "Es hängt von der Gruppe ab, nicht vom Alter. Nur wer verwandt ist, duzt sich immer." },
+      { text: "Es hängt von der Gruppe ab, nicht vom Alter. Nur Verwandte duzen sich immer." },
       { text: "Bei uns duzt der Chef alle, aber niemand duzt ihn zurück." },
       { text: "Das ist seltsam. Dann lieber niemanden duzen." },
       { text: "Sehe ich auch so. Am liebsten fragt man einfach." },

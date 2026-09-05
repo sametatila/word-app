@@ -384,7 +384,7 @@ export const b1U15: SkillExercise[] = [
           "und Nummer neun. Ich weise dich darauf hin, damit du es korrigieren " +
           "kannst, bevor sie weitergeht.\n\n" +
           "Das ist kein großes Problem und mir ist es auch schon passiert. " +
-          "Es muss dir also nicht peinlich sein. Ich schreibe dir mit Rücksicht und ein bisschen Humor, nicht böse.\n\n" +
+          "Es muss dir also nicht peinlich sein. Ich schreibe dir mit Rücksicht und ein bisschen Humor.\n\n" +
           "Ein Ratschlag, der mir sehr geholfen hat: nimm dir zehn Minuten Abstand, " +
           "bevor du so etwas schickst. Man sieht mit etwas Abstand mehr als " +
           "direkt danach. Das erleichtert die Sache wirklich.\n\n" +

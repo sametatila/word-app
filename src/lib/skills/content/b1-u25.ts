@@ -309,8 +309,8 @@ export const b1U25: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bunu ona, suçlu ilan etmeden yüzüne söyledim.",
-        answer: "Ich habe es ihm ins Gesicht gesagt, ohne ihn schuldig zu nennen.",
+        tr: "Bunu ona yüzüne söyledim; yine de suçlu değil.",
+        answer: "Ich habe es ihm ins Gesicht gesagt; schuldig ist er trotzdem nicht.",
         hint: "İki zamir → Akkusativ önce: es ihm.",
       },
       {

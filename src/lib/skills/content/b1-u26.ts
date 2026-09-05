@@ -244,7 +244,7 @@ export const b1U26: SkillExercise[] = [
       { text: "Erst eine Suppe, dann Gemüse mit Reis." },
       { text: "Und zur Nachspeise?" },
       { text: "Etwas Süßes mit Sahne und Honig. Die Kanne mit Tee steht schon da." },
-      { text: "Perfekt. Dann setzen wir uns. Eine Mahlzeit mit Freunden ist die beste." },
+      { text: "Perfekt. Dann setzen wir uns. Eine Mahlzeit mit Freunden schmeckt am besten." },
     ],
     questions: [
       {

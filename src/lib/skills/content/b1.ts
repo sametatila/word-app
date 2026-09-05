@@ -507,11 +507,11 @@ export const b1: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was befürchten einige Geschäftsleute?",
+        text: "Warum können die Kinder nicht draußen spielen?",
         options: [],
         answer: 0,
-        accept: ["dass weniger Kunden kommen", "weniger Kunden", "dass die Kunden ausbleiben"],
-        explain: "„Sie befürchten, dass weniger Kunden kommen …“",
+        accept: ["wegen der Autos", "weil Autos vorbeifahren", "wegen des Verkehrs"],
+        explain: "„… weil ständig Autos vorbeifahren.“",
       },
     ],
   },
@@ -857,11 +857,11 @@ export const b1: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Nach der alten Regel bietet die ___ Person das „du“ an.",
+        text: "Wer zu früh duzt, wirkt schnell zu ___.",
         options: [],
         answer: 0,
-        accept: ["ältere"],
-        explain: "„Das „du“ bietet die ältere Person an …“",
+        accept: ["vertraulich"],
+        explain: "„Wer zu früh duzt, wirkt schnell zu vertraulich.“",
       },
       {
         kind: "short_answer",
@@ -2103,7 +2103,7 @@ export const b1: SkillExercise[] = [
       { speaker: "Host", text: "Wo ist die Grenze? Gibt es einen Unterschied zwischen Beruf und Freundschaft?" },
       {
         speaker: "Sander",
-        text: "Die Faustregel ist: Wenn jemand etwas für Sie vorbereitet hat, kommen Sie pünktlich. Wenn nicht, sind fünfzehn Minuten kein Problem. Bei einer privaten Verabredung ist niemand unhöflich, wenn er kurz später kommt.",
+        text: "Die Faustregel ist: Wenn jemand etwas für Sie vorbereitet hat, kommen Sie pünktlich. Wenn nicht, sind fünfzehn Minuten kein Problem. Bei einer privaten Verabredung ist niemand unhöflich, wenn er etwas später kommt.",
       },
       { speaker: "Host", text: "Und wenn ich mich verspäte? Muss ich mich entschuldigen?" },
       {
@@ -2176,11 +2176,11 @@ export const b1: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was ist bei einer Verspätung am wichtigsten?",
+        text: "Wie heißt die Viertelstunde an der Universität?",
         options: [],
         answer: 0,
-        accept: ["eine kurze Nachricht", "kurze Nachricht", "Bescheid sagen"],
-        explain: "„Dann ist eine kurze Nachricht wichtiger als die Verspätung selbst.“",
+        accept: ["akademisches Viertel", "das akademische Viertel"],
+        explain: "„Das nennt sich akademisches Viertel …“",
       },
     ],
   },
@@ -2402,10 +2402,10 @@ export const b1: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wie lange hat der ganze Weg gedauert?",
+        text: "Wie viele Monate davon waren nur Papier?",
         options: [],
         answer: 0,
-        accept: ["vierzehn Monate", "14 Monate"],
+        accept: ["neun", "neun Monate", "9 Monate"],
         explain: "„Vierzehn Monate. Neun davon nur Papier …“",
       },
     ],
@@ -2628,9 +2628,9 @@ export const b1: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Otobüsler daha ucuz olsaydı, daha çok insan onları kullanırdı.",
+        tr: "Toplu taşıma daha ucuz olsaydı, daha çok insan onu kullanırdı.",
         answer: "Wenn öffentliche Verkehrsmittel billiger wären, würden mehr Menschen sie benutzen.",
-        alternatives: ["Mehr Menschen würden die Busse benutzen, wenn sie billiger wären."],
+        alternatives: ["Mehr Menschen würden öffentliche Verkehrsmittel benutzen, wenn sie billiger wären."],
         hint: "Gerçek dışı koşul: iki tarafta da Konjunktiv II (wären / würden … benutzen).",
       },
       {
@@ -2828,8 +2828,8 @@ export const b1: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Kimse bir şey söylemedi ama bu deneyimi fark ettim.",
-        answer: "Niemand hat etwas gesagt, aber diese Erfahrung ist mir aufgefallen.",
+        tr: "Kimse bir şey söylemedi ama bir şeyi fark ettim — önemli bir deneyim.",
+        answer: "Niemand hat etwas gesagt, aber mir ist etwas aufgefallen — eine wichtige Erfahrung.",
         hint: "„auffallen“ Dativ ile: mir ist … aufgefallen.",
       },
       {

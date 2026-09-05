@@ -314,8 +314,8 @@ export const b1U35: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bugün sigara içmiyorum ve kozmetik markette artık bağımlılık maddesi almıyorum.",
-        answer: "Heute bin ich Nichtraucher und kaufe kein Suchtmittel mehr in der Drogerie.",
+        tr: "Bugün sigara içmiyorum; kozmetik marketten yalnız diş macunu alıyorum, bağımlılık maddesi değil.",
+        answer: "Heute bin ich Nichtraucher und kaufe in der Drogerie nur Zahnpasta, kein Suchtmittel.",
         hint: "„als/Nichtraucher“ artikelsiz meslek/rol.",
       },
       {

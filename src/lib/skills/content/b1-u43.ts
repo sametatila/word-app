@@ -388,7 +388,7 @@ export const b1U43: SkillExercise[] = [
           "organisieren — sonst wäre es zu viel für uns.\n\n" +
           "Nicht alles hat geklappt. Zwei Jahre lang haben wir vergeblich " +
           "um einen Raum bei der Stadt gefragt. Irgendwann haben wir " +
-          "aufgehört, ohne böse zu werden, und mieten jetzt privat. Voriges Jahr wollten einige streiken; wir mussten die Meinungen unterscheiden.\n\n" +
+          "aufgehört, ohne böse zu werden, und mieten jetzt privat. Voriges Jahr wollten einige streiken; wir mussten zwischen den Meinungen unterscheiden.\n\n" +
           "Wer mitmachen will, soll einfach einmal kommen. Man muss nichts " +
           "können und nichts versprechen. Zwei Stunden im Monat sind mehr " +
           "wert als ein großer Plan, den am Ende niemand macht.",

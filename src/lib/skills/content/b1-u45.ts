@@ -370,7 +370,7 @@ export const b1U45: SkillExercise[] = [
       {
         kind: "build",
         tr: "Şimdi gündelik hayatta başa çıkabildiğimi biliyorum.",
-        answer: "Ich weiß jetzt endgültig, dass ich im Alltag zurechtkomme und mein Ziel erfüllen kann.",
+        answer: "Ich weiß jetzt endgültig, dass ich im Alltag zurechtkomme und meine Aufgaben erfüllen kann.",
         hint: "dass yan cümlesinde fiil sonda; ayrılabilen fiil bütün kalır.",
       },
       {

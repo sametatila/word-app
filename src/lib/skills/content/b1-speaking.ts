@@ -97,7 +97,7 @@ export const b1Speaking: SkillExercise[] = [
       {
         de: "Das alte Auto ist kaputt.",
         tr: "Eski araba bozuk.",
-        hint: "„das | alte | Auto“. Üst üste üç ünlü başlangıcı; hepsini ayrı ayrı bas.",
+        hint: "Ünlüyle başlayan üç kelime peş peşe: „alte | Auto | ist“. Hepsini ayrı ayrı bas.",
         confusions: [
           { heard: ["dasalte auto", "das alteauto"], fix: "Kelimeler birbirine aktı; her ünlüden önce gırtlağı kapat.", expected: "das alte Auto" },
         ],
@@ -110,7 +110,7 @@ export const b1Speaking: SkillExercise[] = [
       {
         de: "Wir essen heute um acht.",
         tr: "Bugün sekizde yiyoruz.",
-        hint: "„um | acht“: m'den sonra durakla, „umacht“ başka bir şey olur.",
+        hint: "„um | acht“: m'den sonra durakla, yoksa tek kelime gibi duyulur.",
         confusions: [
           { heard: ["umacht", "um acht zusammen"], fix: "„um acht“ iki kelime; birleştirince „umacht“ diye duyuluyor.", expected: "um acht" },
         ],
