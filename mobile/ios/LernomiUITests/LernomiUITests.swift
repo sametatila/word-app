@@ -173,13 +173,21 @@ final class LernomiUITests: XCTestCase {
     }
     mail.tap(); mail.typeText(email)
     pass.tap(); pass.typeText(password)
+    // Klavye KAPATILIYOR. Açık kaldığında "Giriş yap" düğmesi ağaçta görünüyor
+    // ama isHittable false oluyor (klavye örtüyor) — bir koşuda tam olarak bu
+    // oldu ve giriş sessizce olmadı. Satır sonu tek satırlık alanda
+    // onSubmitEditing tetikleyip klavyeyi kapatıyor.
+    pass.typeText("\n")
+    sleep(2)
     dump(app, "alanlar dolduruldu", email: email, passwordLength: password.count)
 
     if let submit = button(app, labeled: label("SIGNIN")), submit.isHittable {
       submit.tap()
-    } else if let last = buttons(app).last, last.isHittable {
-      // Klavye açıkken düğme kaymış ya da etiketi değişmiş olabilir.
-      last.tap()
+    } else {
+      // Yedek dal BİLEREK basmıyor. Eskiden en alttaki düğmeye basıyordu ve
+      // klavye açıkken o düğme klavyenin bir TUŞU oluyordu — yanlış yere
+      // basmaktansa hiç basmamak yeğ, çünkü satır sonu zaten göndermiş olabilir.
+      print("UITEST: giris dugmesi dokunulabilir degil, satir sonuna guveniliyor")
     }
     sleep(dwell * 3) // oturum + ilk veri çekimi
     dump(app, "giris sonrasi", email: email, passwordLength: password.count)
