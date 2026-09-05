@@ -36,7 +36,7 @@ export const a1U07: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hallo Elif,\n\nich koche heute für uns. Kannst du bitte in den Supermarkt gehen?\n\nWir brauchen:\n— ein Kilo Tomaten\n— zwei Kilo Kartoffeln\n— drei Zwiebeln\n— eine Flasche Öl\n— zwei Flaschen Mineralwasser\n— ein Stück Käse\n— Salz\n\nObst brauchen wir nicht, wir haben noch Äpfel und Bananen.\n\nFleisch bitte auch nicht — ich koche heute mit Gemüse und Reis.\n\nDanke! Tschüss,\nTom",
+      "Hallo Elif,\n\nich koche heute für uns. Kannst du bitte in den Supermarkt gehen?\n\nWir brauchen:\n— ein Kilo Tomaten\n— zwei Kilo Kartoffeln\n— drei Zwiebeln\n— eine Flasche Öl\n— zwei Flaschen Mineralwasser\n— ein Stück Käse\n— Salz\n\nObst brauchen wir nicht, wir haben noch Äpfel, Birnen und Bananen.\n\nFleisch bitte auch nicht — ich koche heute mit Gemüse und Reis.\n\nDanke! Tschüss,\nTom",
     questions: [
       {
         text: "Wie viele Kilo Kartoffeln braucht Tom?",

@@ -104,7 +104,7 @@ export const a1U23: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "A — an eine Freundin\n\nHallo Mia,\n\nwie geht es dir? Ich möchte dich bald wieder sehen. Hast du am Samstag Zeit? Schick mir eine Nachricht oder ruf mich an.\n\nLiebe Grüße\nElif\n\n\nB — an die Praxis\n\nSehr geehrte Frau Dr. Weber,\n\nich möchte meinen Termin am Mittwoch um 10 Uhr ändern. Ist ein Termin am Freitag möglich? Meine Nummer ist 0231 / 55 44 33.\n\nMit freundlichen Grüßen\nElif Yılmaz",
+      "A — an eine Freundin\n\nHallo Mia,\n\nwie geht es dir? Ich möchte dich bald wieder sehen. Hast du am Samstag Zeit? Schick mir eine Nachricht oder ruf mich an. Einen Brief schreibe ich nicht — für eine Briefmarke muss ich zur Post.\n\nLiebe Grüße\nElif\n\n\nB — an die Praxis\n\nSehr geehrte Frau Dr. Weber,\n\nich möchte meinen Termin am Mittwoch um 10 Uhr ändern. Ist ein Termin am Freitag möglich? Meine Nummer ist 0231 / 55 44 33.\n\nMit freundlichen Grüßen\nElif Yılmaz",
     questions: [
       {
         text: "Wie endet die Nachricht an die Freundin?",

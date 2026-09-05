@@ -37,7 +37,7 @@ export const a1U11: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "KLEIDUNG SCHMIDT — Angebote diese Woche\n\nT-Shirts (weiß, schwarz, blau) — 9,00 Euro\nJeans (Größe 38 bis 46) — 29,00 Euro\nPullover in Rot oder Schwarz — 19,00 Euro\nSchuhe — 45,00 Euro\n\nMäntel und Kleider sind diese Woche NICHT im Angebot.\n\nSie können bar oder mit Kreditkarte bezahlen. Die Kasse ist bei der Tür.\n\nSie möchten etwas anprobieren? Die Umkleide ist immer frei!",
+      "KLEIDUNG SCHMIDT — Angebote diese Woche\n\nT-Shirts (weiß, schwarz, blau) — 9,00 Euro\nJeans (Größe 38 bis 46) — 29,00 Euro\nPullover in Rot oder Schwarz — 19,00 Euro\nBlusen (Größe 36 bis 44) — 15,00 Euro\nSchuhe — 45,00 Euro\n\nMäntel und Kleider sind diese Woche NICHT im Angebot.\n\nSie können bar, mit Kreditkarte oder vom Konto bezahlen. Die Kasse ist bei der Tür.\n\nSie möchten etwas anprobieren? Die Umkleide ist immer frei!",
     questions: [
       {
         text: "Was kostet ein T-Shirt?",
@@ -239,6 +239,12 @@ export const a1U11: SkillExercise[] = [
         tr: "Bir ceket arıyorum.",
         answer: "Ich suche eine Jacke",
         hint: "„suchen“ Akkusativ ister: die Jacke → eine Jacke; der Pullover → einen Pullover.",
+      },
+      {
+        kind: "build",
+        tr: "Kazağı alıyorum. → Onu alıyorum.",
+        answer: "Ich nehme ihn",
+        hint: "Nesneyi ikinci kez adlandırmazsın, ZAMİRLE gösterirsin — ve zamir nesnenin artikeline uyar: der Pullover → ihn, die Jacke → sie, das Hemd → es. A1 boyunca „mir/dir“ öğrenildi; bu üçüncü kişi biçimi.",
       },
       {
         kind: "build",

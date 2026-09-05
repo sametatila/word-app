@@ -44,7 +44,7 @@ export const a1U21: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Praxis Dr. Weber\n\nMontag bis Freitag: 8 bis 12 Uhr\nMontag und Mittwoch auch: 15 bis 18 Uhr\nAm Wochenende ist die Praxis zu.\n\nBitte immer mit Termin kommen! Ohne Termin ist ein Besuch nur bei dringenden Sachen möglich — dann warten Sie bitte im Wartezimmer.\n\nTermine: Telefon 0231 / 44 55 66, oder direkt hier an der Anmeldung.\n\nBitte die Karte von der Krankenkasse mitnehmen.\n\nSind Sie krank und können nicht kommen? Rufen Sie uns bitte an. Ein Termin ohne Anruf kostet 20 Euro.",
+      "Praxis Dr. Weber\n\nMontag bis Freitag: 8 bis 12 Uhr\nMontag und Mittwoch auch: 15 bis 18 Uhr\nAm Wochenende ist die Praxis zu.\n\nBitte immer mit Termin kommen! Ohne Termin ist ein Besuch nur bei dringenden Sachen möglich — dann warten Sie bitte im Wartezimmer.\n\nTermine: Telefon 0231 / 44 55 66, oder direkt hier an der Anmeldung.\n\nBitte die Karte von der Krankenkasse mitnehmen. Der Arzt fragt auch nach Ihrem Gewicht.\n\nSind Sie krank und können nicht kommen? Rufen Sie uns bitte an. Ein Termin ohne Anruf kostet 20 Euro.",
     questions: [
       {
         text: "Wann ist die Praxis am Mittwochnachmittag auf?",
@@ -97,7 +97,7 @@ export const a1U21: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hallo Max,\n\nheute kann ich leider nicht zum Sport kommen. Ich bin krank. Mein Kopf tut weh und der Hals auch. Ich habe Fieber und liege im Bett.\n\nMeine Schwester kümmert sich um mich. Sie kocht und kauft Tee. Sehr nett!\n\nMorgen habe ich einen Termin beim Arzt — um 9 Uhr. Hoffentlich ist es nichts Schlimmes.\n\nDiesmal klappt es leider nicht. Aber am Mittwoch bin ich sicher wieder da.\n\nAli",
+      "Hallo Max,\n\nheute kann ich leider nicht zum Sport kommen. Ich bin krank. Mein Kopf tut weh und der Hals auch — heute tut mir der Körper weh. Ich habe Fieber und liege im Bett.\n\nMeine Schwester kümmert sich um mich. Sie kocht und kauft Tee. Sehr nett!\n\nMorgen habe ich einen Termin beim Arzt — um 9 Uhr. Hoffentlich ist es nichts Schlimmes.\n\nDiesmal klappt es leider nicht. Aber am Mittwoch bin ich sicher wieder da.\n\nAli",
     questions: [
       {
         text: "Was tut Ali weh?",

@@ -94,7 +94,7 @@ export const a1U20: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "HEUTE ABEND IM FERNSEHEN\n\nKanal 1\n19:00 Die Nachrichten\n19:30 Wetter für morgen\n20:15 Film: Eine Insel im Meer\n\nKanal 2\n19:15 Sport: Fußball\n20:15 Serie: Familie Berger\n21:00 Musik aus Berlin — ein Konzert\n\nKanal 3\n20:15 Eine Sendung für Kinder\n21:00 Die Nachrichten\n\nSie haben keinen Fernseher? Alle Sendungen laufen auch im Radio oder im Internet.",
+      "HEUTE ABEND IM FERNSEHEN\n\nKanal 1\n19:00 Die Nachrichten\n19:30 Wetter für morgen\n20:15 Film: Eine Insel im Meer\n\nKanal 2\n19:15 Sport: Fußball\n20:15 Serie: Familie Berger\n21:00 Musik aus Berlin — ein Konzert\n\nKanal 3\n19:30 Ein Comic für Kinder\n20:15 Eine Sendung für Kinder\n21:00 Die Nachrichten\n\nSie haben keinen Fernseher? Alle Sendungen laufen auch im Radio oder im Internet.",
     questions: [
       {
         text: "Wann kommen die Nachrichten auf Kanal 1?",
@@ -196,7 +196,7 @@ export const a1U20: SkillExercise[] = [
       { text: "Schade!" },
       { text: "Ja, diesmal klappt es nicht. Aber geht es am Sonntag?" },
       { text: "Am Sonntag? Ja, gern!" },
-      { text: "Super, dann komme ich unbedingt. Einverstanden!" },
+      { text: "Super, dann komme ich unbedingt. Vergiss es nicht: Sonntag um zwölf!" },
     ],
     questions: [
       {

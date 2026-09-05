@@ -51,8 +51,14 @@ export const a1U24: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Liebe Freunde,\n\nam Samstag habe ich Geburtstag! Das möchte ich mit euch feiern.\n\nWann: am Samstag um 19 Uhr\nWo: bei mir zu Hause, Bahnhofstraße 12\n\nBitte kommt pünktlich um 19 Uhr — dann essen wir zusammen. Ich koche für alle Gäste.\n\nWas sollt ihr mitbringen? Nichts Großes! Vielleicht einen Saft oder etwas Süßes. Dein Partner oder deine Partnerin kann auch kommen.\n\nSchreibt mir bitte bis Mittwoch. Dann weiß ich, wie viele Gäste kommen.\n\nLiebe Grüße\nMia",
+      "Liebe Freunde,\n\nam Samstag habe ich Geburtstag! Das möchte ich mit euch feiern.\n\nWann: am Samstag um 19 Uhr\nWo: bei mir zu Hause, Bahnhofstraße 12\n\nBitte kommt pünktlich um 19 Uhr — dann essen wir zusammen. Ich koche für alle Gäste.\n\nWas sollt ihr mitbringen? Nichts Großes! Vielleicht einen Saft oder etwas Süßes. Dein Partner oder deine Partnerin kann auch kommen.\n\nSchreibt mir bitte bis Mittwoch. Ich möchte wissen, wie viele Gäste kommen.\n\nLiebe Grüße\nMia",
     questions: [
+      {
+        text: "Womit beginnt die Einladung?",
+        options: ["mit einer Anrede: „Liebe Freunde“", "mit dem Datum", "mit der Adresse"],
+        answer: 0,
+        explain: "Almanca mektup ve davet her zaman ANREDE ile başlar: samimi „Liebe Freunde“, resmî „Sehr geehrte Frau …“. Anredesiz başlamak kaba durur.",
+      },
       {
         text: "Warum feiert Mia?",
         options: ["Sie hat Geburtstag.", "Sie hat eine Wohnung gekauft.", "Sie hat eine Stelle bekommen."],
@@ -106,7 +112,7 @@ export const a1U24: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Tom: Gestern habe ich viel gemacht. Am Morgen bin ich in die Stadt gefahren und habe einen Pullover gekauft. Am Abend habe ich einen Film gesehen.\n\nElif: Ich bin gestern zu Hause geblieben. Ich war krank. Ich habe nur Musik gehört. Kein schöner Tag!\n\nAli: Ich bin mit dem Zug nach Berlin gefahren. In Berlin habe ich meine Schwester gesehen. Am Abend sind wir zusammen ins Kino gegangen. Berlin ist wirklich schön!",
+      "Tom: Gestern habe ich viel gemacht. Am Morgen bin ich in die Stadt gefahren und habe einen Pullover gekauft. Am Abend habe ich einen Film gesehen. Meine Schwester ist auch gekommen.\n\nElif: Ich bin gestern zu Hause geblieben. Ich war krank. Ich habe nur Musik gehört. Kein schöner Tag!\n\nAli: Ich bin mit dem Zug nach Berlin gefahren. In Berlin habe ich meine Schwester gesehen. Am Abend sind wir zusammen ins Kino gegangen. Berlin ist wirklich schön — die Welt kommt nach Berlin! Ich denke oft an die Stadt.",
     questions: [
       {
         text: "Was hat Tom gekauft?",
@@ -213,7 +219,7 @@ export const a1U24: SkillExercise[] = [
       { text: "Ich bin mit Tom ins Kino gegangen. Wir haben einen Film gesehen." },
       { text: "Und am Sonntag?" },
       { text: "Am Sonntag bin ich zu Hause geblieben. Ich habe Musik gehört." },
-      { text: "Ich bin nach Hamburg gefahren. Mit dem Zug, nicht mit dem Flugzeug." },
+      { text: "Ich bin nach Hamburg gefahren. Mit dem Zug — ich fliege nicht gern." },
       { text: "Schön! Erzähl mir mehr." },
     ],
     questions: [

@@ -706,8 +706,6 @@ export const deA1B02: Lesson[] = [
       { de: "Ich habe einen …", tr: "hangi hayvanın olduğunu söyler" },
       { de: "Er heißt …", tr: "hayvanın adını söyler" },
       { de: "Sie ist … Jahre alt.", tr: "kaç yaşında olduğunu söyler" },
-      { de: "Ich liebe ihn.", tr: "der olan bir varlığa 'onu' der (der Hund → ihn)" },
-      { de: "Ich liebe sie.", tr: "die olan bir varlığa 'onu' der (die Katze → sie)" },
     ],
     lecture: [
       {

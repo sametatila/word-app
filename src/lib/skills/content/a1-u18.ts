@@ -38,7 +38,7 @@ export const a1U18: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Mia: In meiner Freizeit male ich. Mein Hobby ist Malen und Basteln. Ich kann nicht so gut singen — das ist kein Talent von mir!\n\nTom: Ich schwimme. Zweimal in der Woche gehe ich ins Schwimmbad und übe. Im Verein spielen wir auch zusammen. Wer will, kann mitmachen.\n\nElif: Ich tanze gern. Tanzen kann ich gut, aber ich übe nicht viel. Meine Kinder spielen lieber — sie mögen Spiele mit dem Ball.",
+      "Mia: In meiner Freizeit male ich. Mein Hobby ist Malen und Basteln. Ich kann nicht so gut singen — das ist kein Talent von mir!\n\nTom: Ich schwimme. Zweimal in der Woche gehe ich ins Schwimmbad und übe. Im Verein spielen wir auch zusammen — manchmal gewinnen wir. Wer will, kann mitmachen.\n\nElif: Ich tanze gern. Tanzen kann ich gut, aber ich übe nicht viel. Meine Kinder spielen lieber — sie mögen Spiele mit dem Ball.",
     questions: [
       {
         text: "Was ist Mias Hobby?",
@@ -90,7 +90,7 @@ export const a1U18: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Lieber Herr Berger,\n\ndie Lampe im Flur ist kaputt. Sie funktioniert seit Montag nicht. Am Abend sieht man die Treppe nicht gut.\n\nAuch das Licht auf dem Balkon funktioniert nicht.\n\nKönnen Sie kommen und das reparieren? Ich bin am Dienstag und am Mittwoch zu Hause.\n\nWas kostet die Reparatur? Bitte schreiben Sie mir.\n\nViele Grüße\nFrau Kaya (Wohnung 5)",
+      "Lieber Herr Berger,\n\ndie Lampe im Flur ist kaputt. Sie funktioniert seit Montag nicht. Am Abend sieht man die Treppe nicht gut.\n\nAuch das Licht auf dem Balkon funktioniert nicht. Ich mache da kein Feuer, aber ohne Licht sehe ich nichts.\n\nKönnen Sie kommen und das reparieren? Ich bin am Dienstag und am Mittwoch zu Hause.\n\nWas kostet die Reparatur? Bitte schreiben Sie mir.\n\nViele Grüße\nFrau Kaya (Wohnung 5)",
     questions: [
       {
         text: "Was ist kaputt?",

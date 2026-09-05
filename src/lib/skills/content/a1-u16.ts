@@ -37,7 +37,7 @@ export const a1U16: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "WOHNUNG IN BREMEN\n\n3 Zimmer, Küche, Bad — im 3. Stock.\n\nDie Wohnung ist hell und ruhig. Es gibt große Fenster im Wohnzimmer und im Schlafzimmer.\n\nDie Küche ist neu. Im Bad gibt es eine Dusche.\n\nEs gibt keinen Aufzug — Sie gehen die Treppe. Der Eingang ist ruhig, die Nachbarn sind nett.\n\nMöbel gibt es nicht. Tisch, Sofa und Schrank bringen Sie.\n\nPreis: 650 Euro. Frei ab Samstag.",
+      "WOHNUNG IN BREMEN\n\n3 Zimmer, Küche, Bad — im 3. Stock.\n\nDie Wohnung ist hell und ruhig. Es gibt große Fenster im Wohnzimmer und im Schlafzimmer.\n\nDie Küche ist neu. Im Bad gibt es eine Dusche.\n\nEs gibt keinen Aufzug — Sie gehen die Treppe. Der Eingang ist ruhig, die Nachbarn sind nett.\n\nMöbel gibt es nicht. Tisch, Sofa und Schrank bringen Sie.\n\nEin kleines Apartment mit einem Zimmer haben wir auch frei.\n\nPreis: 650 Euro. Frei ab Samstag.",
     questions: [
       {
         text: "Wie viele Zimmer hat die Wohnung?",

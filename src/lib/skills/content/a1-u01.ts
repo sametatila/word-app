@@ -102,7 +102,8 @@ export const a1U01: SkillExercise[] = [
       "Ben: Ich heiße Ben. Woher kommst du, Sara?\n" +
       "Sara: Ich komme aus Italien. Ich wohne in München. Und du?\n" +
       "Ben: Ich komme aus der Schweiz. Wie geht es dir?\n" +
-      "Sara: Mir geht es gut, danke!",
+      "Sara: Mir geht es gut, danke! Ich bin froh. Und dir?\n" +
+      "Ben: Nicht so gut. Ich bin heute traurig.",
     questions: [
       {
         text: "Wie heißt der Mann?",
@@ -121,6 +122,12 @@ export const a1U01: SkillExercise[] = [
         options: ["Es geht ihr gut.", "Sie ist müde.", "Es geht ihr schlecht."],
         answer: 0,
         explain: "„Mir geht es gut, danke!“ — Sara iyi.",
+      },
+      {
+        text: "Wie ist Ben heute?",
+        options: ["traurig", "froh", "müde"],
+        answer: 0,
+        explain: "„Ich bin heute traurig.“ Sara ise „Ich bin froh“ diyor — iki karşıt duygu yan yana.",
       },
       {
         kind: "gapfill",
@@ -221,6 +228,9 @@ export const a1U01: SkillExercise[] = [
       { speaker: "Frau Yılmaz", text: "Ich komme aus der Türkei, aus Izmir." },
       { speaker: "Herr Koch", text: "Und wo wohnen Sie jetzt?" },
       { speaker: "Frau Yılmaz", text: "Jetzt wohne ich in Frankfurt." },
+      { speaker: "Herr Koch", text: "Gut. Ich bin hier der Chef." },
+      { speaker: "Frau Yılmaz", text: "Und wer ist die Dame?" },
+      { speaker: "Herr Koch", text: "Die Dame heißt Frau Berger." },
     ],
     questions: [
       {
@@ -234,6 +244,12 @@ export const a1U01: SkillExercise[] = [
         options: ["aus der Türkei", "aus Deutschland", "aus Frankreich"],
         answer: 0,
         explain: "„Ich komme aus der Türkei, aus Izmir.“",
+      },
+      {
+        text: "Wer ist Herr Koch?",
+        options: ["der Chef", "ein Kollege", "der Lehrer"],
+        answer: 0,
+        explain: "„Ich bin hier der Chef.“",
       },
       {
         text: "Sagt Herr Koch „du“ oder „Sie“?",
@@ -293,6 +309,12 @@ export const a1U01: SkillExercise[] = [
         tr: "Berlin'de oturuyorum.",
         answer: "Ich wohne in Berlin.",
         hint: "„Ich wohne in …“ + şehir.",
+      },
+      {
+        kind: "build",
+        tr: "Memleketim Türkiye.",
+        answer: "Meine Heimat ist die Türkei.",
+        hint: "„die Heimat“ = memleket. DİKKAT: bazı ülkeler artikel taşır — „die Türkei“, „die Schweiz“ — çoğu taşımaz (Deutschland, Italien).",
       },
       {
         kind: "form",

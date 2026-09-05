@@ -37,7 +37,7 @@ export const a1U12: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Tom: Hallo! Ich suche ein Geschenk für Mia. Was kaufe ich?\n\nElif: Vielleicht ein Parfüm? Oder eine Tasche?\n\nTom: Ein Parfüm ist ein Problem — ich weiß nicht, was ihr gefällt. Eine Tasche finde ich praktisch.\n\nElif: Mir gefällt die schwarze Tasche im Laden am Marktplatz besser als die rote. Sie kostet 35 Euro.\n\nTom: Gut, die kaufe ich. Können sie das im Laden einpacken?\n\nElif: Ja, immer. Und wenn sie Mia gar nicht gefällt, kann sie die Tasche umtauschen — mit dem Kassenbon.",
+      "Tom: Hallo! Ich suche ein Geschenk für Mia. Was kaufe ich?\n\nElif: Vielleicht ein Parfüm? Oder eine Tasche? Oder Ohrringe?\n\nTom: Ein Parfüm ist ein Problem — ich weiß nicht, was ihr gefällt. Eine Tasche finde ich praktisch.\n\nElif: Mir gefällt die schwarze Tasche im Laden am Marktplatz besser als die rote. Sie kostet 35 Euro.\n\nTom: Gut, die kaufe ich. Können sie das im Laden einpacken?\n\nElif: Ja, immer. Und wenn sie Mia gar nicht gefällt, kann sie die Tasche umtauschen — mit dem Kassenbon.",
     questions: [
       {
         text: "Was kauft Tom am Ende?",
@@ -89,7 +89,7 @@ export const a1U12: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Jeden Samstag gehe ich auf den Markt am Marktplatz. Das Obst und Gemüse ist dort sehr frisch und oft günstiger als im Supermarkt.\n\nHeute kaufe ich ein Pfund Tomaten und zwei Pfund Kartoffeln. Dann kommt die Frage: „Ein bisschen mehr?“ Ich möchte weniger — ein Pfund ist gut.\n\nDanach gehe ich in die Bäckerei und kaufe Brot und Brötchen.\n\nAm Kiosk kaufe ich noch eine Zeitung. Das macht zusammen 14 Euro.\n\nDer Markt gefällt mir besser als der Supermarkt — im Supermarkt ist alles so groß.",
+      "Jeden Samstag gehe ich auf den Markt am Marktplatz. Das Obst und Gemüse ist dort sehr frisch und oft günstiger als im Supermarkt.\n\nHeute kaufe ich ein Pfund Tomaten und zwei Pfund Kartoffeln. Dann kommt die Frage: „Ein bisschen mehr?“ Ich möchte weniger — ein Pfund ist gut.\n\nDanach gehe ich in die Bäckerei und kaufe Brot und Brötchen.\n\nIch brauche Geld — die Bank ist auch am Marktplatz. Am Kiosk kaufe ich noch eine Zeitung. Das macht zusammen 14 Euro.\n\nDer Markt gefällt mir besser als der Supermarkt — im Supermarkt ist alles so groß.",
     questions: [
       {
         text: "Wann geht die Person auf den Markt?",
@@ -244,6 +244,12 @@ export const a1U12: SkillExercise[] = [
         tr: "Ceket hoşuma gidiyor.",
         answer: "Die Jacke gefällt mir",
         hint: "DİKKAT: Türkçedeki „beğenmek“ ile özne TERS. Beğenen kişi Dativ'de (mir), beğenilen şey ÖZNE: „Die Jacke gefällt mir“ — „Ich gefalle die Jacke“ DEĞİL.",
+      },
+      {
+        kind: "build",
+        tr: "Bu ona (bir kadına) hoşuna gidiyor.",
+        answer: "Das gefällt ihr",
+        hint: "„gefallen“ Dativ ister ve üçüncü kişide biçim değişir: er → ihm, sie → ihr, sie (çoğul) → ihnen. „Das gefällt sie“ YANLIŞTIR.",
       },
       {
         kind: "build",

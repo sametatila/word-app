@@ -89,7 +89,7 @@ export const a1U14: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "BAHNHOF BREMEN\n\nDer Zug nach Hamburg, Abfahrt 14:20, hat 20 Minuten Verspätung. Abfahrt jetzt: 14:40, Gleis 7.\n\nDer Zug nach Berlin, Abfahrt 15:00, ist pünktlich. Gleis 4.\n\nIhr Anschluss in Hamburg: Sie warten dort 10 Minuten. Der Anschluss ist sicher.\n\nSie fahren zum Flughafen? Die S-Bahn fährt alle 10 Minuten von Gleis 1.\n\nEin Taxi finden Sie gegenüber vom Bahnhof.",
+      "BAHNHOF BREMEN\n\nDer Zug nach Hamburg, Abfahrt 14:20, hat 20 Minuten Verspätung. Abfahrt jetzt: 14:40, Gleis 7.\n\nDer Zug nach Berlin, Abfahrt 15:00, ist pünktlich. Gleis 4.\n\nIhr Anschluss in Hamburg: Sie warten dort 10 Minuten. Der Anschluss ist sicher.\n\nSie fahren zum Flughafen? Die S-Bahn fährt alle 10 Minuten von Gleis 1.\n\nEin Taxi finden Sie gegenüber vom Bahnhof. Zu Fuß gehen Sie über die Brücke.",
     questions: [
       {
         text: "Wie viel Verspätung hat der Zug nach Hamburg?",

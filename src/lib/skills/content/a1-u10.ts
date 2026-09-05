@@ -91,7 +91,7 @@ export const a1U10: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Tom: Am Samstag mache ich einen Ausflug. Vielleicht wandern wir. Am Sonntag schlafe ich aus — bis elf!\n\nMia: Ich habe am Wochenende keine Pläne. Ich habe keine Lust auf einen Ausflug. Ich sitze zu Hause und sehe fern.\n\nElif: Meine Kinder haben Ferien. Wir machen keinen Urlaub, aber wir machen jeden Tag etwas: Am Samstag gehen wir spazieren, am Sonntag kommen meine Eltern.",
+      "Tom: Am Samstag mache ich einen Ausflug. Vielleicht wandern wir — das macht Spaß. Am Sonntag schlafe ich aus — bis elf!\n\nMia: Ich habe am Wochenende keine Pläne. Ich habe keine Lust auf einen Ausflug. Ich sitze zu Hause und sehe fern.\n\nElif: Meine Kinder haben Ferien. Wir machen keinen Urlaub, aber wir machen jeden Tag etwas: Am Samstag gehen wir spazieren, am Sonntag kommen meine Eltern.",
     questions: [
       {
         text: "Was macht Tom am Samstag?",

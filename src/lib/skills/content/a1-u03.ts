@@ -37,7 +37,7 @@ export const a1U03: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hallo! Ich heiße Lena und ich bin zwanzig Jahre alt. Ich wohne in Bremen.\n\nDas ist meine Familie. Meine Mutter heißt Petra und mein Vater heißt Jonas. Beide arbeiten: meine Mutter ist Ärztin und mein Vater ist Lehrer.\n\nIch habe zwei Geschwister. Mein Bruder heißt Max. Er ist zehn Jahre alt. Meine Schwester heißt Nora und sie ist ein Baby.\n\nMeine Großeltern wohnen nicht in Bremen. Sie kommen aus Polen und sprechen ein bisschen Deutsch.",
+      "Hallo! Ich heiße Lena und ich bin zwanzig Jahre alt. Ich wohne in Bremen.\n\nDas ist meine Familie. Meine Mutter heißt Petra, die Ehefrau von Jonas. Beide arbeiten: meine Mutter ist Ärztin und mein Vater ist Lehrer.\n\nIch habe zwei Geschwister. Mein Bruder heißt Max. Er ist zehn Jahre alt — noch ein Junge. Meine Schwester heißt Nora und sie ist ein Baby.\n\nMeine Großeltern wohnen nicht in Bremen. Sie kommen aus Polen und sprechen ein bisschen Deutsch. Sie sind nicht mehr jung.",
     questions: [
       {
         text: "Wie alt ist Lena?",

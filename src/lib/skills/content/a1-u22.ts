@@ -46,7 +46,7 @@ export const a1U22: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Apotheke am Markt\n\nMontag bis Freitag: 8 bis 18:30 Uhr\nSamstag: 9 bis 13 Uhr\nSonntag: zu\n\nSie brauchen nachts oder am Sonntag etwas aus der Apotheke? Dann hilft die Not-Apotheke. Welche Apotheke gerade auf ist, steht hier an der Tür und im Internet.\n\nTabletten mit Rezept bekommen Sie nur in der Apotheke, nicht in der Drogerie. Auch Tabletten gegen Schmerzen gibt es hier.\n\nWir geben Ihnen gern eine Antwort auf Ihre Fragen. Fragen Sie einfach!\n\nGute Besserung!",
+      "Apotheke am Markt\n\nAn der Tür steht: DRÜCKEN.\n\nMontag bis Freitag: 8 bis 18:30 Uhr\nSamstag: 9 bis 13 Uhr\nSonntag: zu\n\nSie brauchen nachts oder am Sonntag etwas aus der Apotheke? Dann hilft die Not-Apotheke. Welche Apotheke gerade auf ist, steht hier an der Tür und im Internet.\n\nTabletten mit Rezept bekommen Sie nur in der Apotheke, nicht in der Drogerie. Auch Tabletten gegen Schmerzen gibt es hier.\n\nWir geben Ihnen gern eine Antwort auf Ihre Fragen. Fragen Sie einfach!\n\nGute Besserung!",
     questions: [
       {
         text: "Wann ist die Apotheke am Samstag auf?",

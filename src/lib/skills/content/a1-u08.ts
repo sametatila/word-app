@@ -36,7 +36,7 @@ export const a1U08: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Liebe Mia,\n\nvielen Dank! Ich freue mich sehr.\n\nIch bin allergisch gegen Nüsse. Ich esse auch kein Ei — Eier vertrage ich nicht.\n\nGibt es vielleicht etwas ohne Nüsse? Hähnchen und Reis esse ich sehr gern. Schinken esse ich nicht, aber ich bin nicht allergisch.\n\nEis mag ich auch — aber bitte ohne Nüsse!\n\nDanke!\nTarek",
+      "Liebe Mia,\n\nvielen Dank! Ich freue mich sehr.\n\nIch bin allergisch gegen Nüsse. Ich esse auch kein Ei — Eier vertrage ich nicht.\n\nGibt es vielleicht etwas ohne Nüsse? Hähnchen und Reis esse ich sehr gern — das ist lecker. Schinken esse ich nicht, aber ich bin nicht allergisch.\n\nEis mag ich auch — aber bitte ohne Nüsse!\n\nDanke!\nTarek",
     questions: [
       {
         text: "Wogegen ist Tarek allergisch?",
