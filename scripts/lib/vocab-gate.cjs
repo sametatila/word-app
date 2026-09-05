@@ -26,6 +26,7 @@ gewesen geworden musst kannst willst sollst darfst magst möchte möchten wisst 
 wäre wären hätte hätten könnte könnten müsste müssten sollte wollte dürfte ginge käme gäbe
 auch noch nur schon sehr hier da dann jetzt heute sehr viel mehr alle etwas nichts
 guten tag morgen abend hallo bitte danke herr frau sie ihnen ihr
+grüßen grüße geehrte geehrter damen herren freundlichen
 null eins zwei drei vier fünf sechs sieben acht neun zehn elf zwölf zwanzig dreißig hundert tausend
 euro uhr jahre jahr person personen gruppe kurs a1 a2 b1
 oh ok ach na so
