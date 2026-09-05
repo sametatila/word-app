@@ -331,3 +331,57 @@ sadece patikada zamanlanmazlar. Silme değil, sıra değişikliği.
   (`a1-uNN-s1`), `BASE_PATTERN` içinde konuşma yuvası yok
   (`build.ts:30`), yani `buildTrack` onları hiç yerleştirmiyor. A2'de hiç yok.
   Yeni içerik yazmadan önce bu deseni sahibi karara bağlamalı.
+
+---
+
+## 9. §8'deki boşluk kapatıldı — 2026-09-05
+
+§8 "kalan iş: 32 ünite hizalı egzersiz" diyordu. Yazıldı.
+
+| Ölçüt | §8'de | Şimdi |
+|---|---|---|
+| Ünite hizalı ünite | 19/25 | **25/25** |
+| Egzersiz (okuma/dinleme/yazma) | 50/50/50 | **62/62/58** |
+| 50 yuvanın hepsi hizalı mı | hayır | **evet** |
+| Beceri metninde hiç geçmeyen ders kelimesi | 57/800 | **7/800** |
+
+Yazılanlar: ünite 20 ve 21'e okuma+dinleme (yazmaları zaten vardı),
+ünite 22-25'e tam takım. Ölçtükleri dilbilgisi noktaları sırasıyla —
+yönelme hâli kişi zamiri ve dass (20), wenn ve yan cümle başta olunca ters
+dönme (21), edatlı fiiller (22), Sie emri ile du emri farkı (23), gelecek
+zamanın iki yüzü (24), gerekçe-koşul-karşılaştırmanın birlikte kullanımı (25).
+
+Ünite 25 bilerek birikimli kuruldu: bir seviyenin son egzersizi tek kural
+çalıştırmamalı, gerçek cümle üçünü birden taşır. Kapanış yazması da kural
+sorusu değil serbest metin.
+
+### Eski egzersizlerin durumu — kural uygulandı
+
+§8'deki uyarıya uyuldu: **eski 32 egzersizin hiçbiri silinmedi, hiçbirinin
+kimliği değişmedi.** Yeni ünite dosyaları `a2.ts` listesinde onların önüne
+eklendi; ölçüm doğruladı:
+
+- her beceride ilk 50 egzersiz ünite sırasına birebir oturuyor,
+- eski 32 kimlik (`a2-r1` … `a2-w8`) listede duruyor ve 50. yuvanın ötesine
+  düşüyor: patikada zamanlanmıyorlar, ama `user_skills` kayıtları çözülmeye
+  devam ediyor.
+
+Sayılar böylece A1 ile aynı şekle geldi (62/62/58).
+
+### Kalan 7 yetim — bilerek bırakıldı
+
+`der Club`, `romantisch`, `der Puls`, `der Notarzt`, `meckern`, `sanft`,
+`die Zugfahrt`. Bunlar bulundukları ünitelerin metinlerine doğal girmiyor;
+zorla yerleştirmek metni bozar. Hepsi havuzda A2 bandında olduğu için tekrar
+motoru zaten gösteriyor (bkz. §8, SRS kuyruğu).
+
+Ünite 14 ve 17'de ise dört kelime gerçek bir eksikti — giyim ünitesinde kumaş
+ve rahatlıktan (`dünn`, `bequem`, `hässlich`), kamp ve gezi diyaloglarında
+ateşte pişirmekten ve dinlenme tesisinden (`braten`, `die Raststätte`) hiç söz
+edilmemişti. Metinler o yönde genişletildi.
+
+### Doğrulama
+
+`npm run check:lessons` → **hata yok**, 7 uyarı (hepsi B1). Kök ve `mobile/`
+içinde `tsc` temiz. `test:track` 64 kontrol, `test:options` temiz. Yeni ünite
+dosyalarının hiçbiri `test:content` uyarısı üretmiyor. Mobil paket yenilendi.
