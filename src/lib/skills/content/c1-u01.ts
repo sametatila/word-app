@@ -198,20 +198,20 @@ export const c1U01: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Frau Kern", text: "Ich fasse zusammen: Wir starten im Mai mit dem neuen Verfahren. Gibt es Einwände?" },
-      { speaker: "Herr Yıldız", text: "Ich hätte da einen Einwand. Nicht gegen das Verfahren als solches — gegen den Zeitpunkt." },
+      { speaker: "Herr Yilmaz", text: "Ich hätte da einen Einwand. Nicht gegen das Verfahren als solches — gegen den Zeitpunkt." },
       { speaker: "Frau Kern", text: "Bitte." },
-      { speaker: "Herr Yıldız", text: "Im Mai läuft die Zertifizierung. Zwei große Umstellungen gleichzeitig halte ich für nicht umsichtig." },
+      { speaker: "Herr Yilmaz", text: "Im Mai läuft die Zertifizierung. Zwei große Umstellungen gleichzeitig halte ich für nicht umsichtig." },
       { speaker: "Frau Bauer", text: "Bei allem Respekt: Wir verschieben das jetzt zum dritten Mal. Irgendwann ist Zurückhaltung auch keine Tugend mehr." },
-      { speaker: "Herr Yıldız", text: "Das nehme ich auf. Ich sage nicht nein, ich sage September." },
-      { speaker: "Frau Kern", text: "Herr Aydın, Sie waren bisher sehr still." },
-      { speaker: "Herr Aydın", text: "Ich würde die Zahlen gern noch einmal in Ruhe ansehen, bevor ich mich festlege." },
+      { speaker: "Herr Yilmaz", text: "Das nehme ich auf. Ich sage nicht nein, ich sage September." },
+      { speaker: "Frau Kern", text: "Herr Aydin, Sie waren bisher sehr still." },
+      { speaker: "Herr Aydin", text: "Ich würde die Zahlen gern noch einmal in Ruhe ansehen, bevor ich mich festlege." },
       { speaker: "Frau Bauer", text: "Das heißt, Sie sind dagegen." },
-      { speaker: "Herr Aydın", text: "Das heißt, ich möchte es besonnen entscheiden und nicht in dieser Sitzung." },
+      { speaker: "Herr Aydin", text: "Das heißt, ich möchte es besonnen entscheiden und nicht in dieser Sitzung." },
       { speaker: "Frau Kern", text: "Gut. Dann vertagen wir mit dem Vorbehalt, dass bis Freitag die Zahlen vorliegen." },
     ],
     questions: [
       {
-        text: "Wogegen richtet sich Herrn Yıldız' Einwand?",
+        text: "Wogegen richtet sich Herrn Yilmaz' Einwand?",
         options: ["Gegen das Verfahren selbst", "Gegen den Zeitpunkt", "Gegen die Zertifizierung"],
         answer: 1,
         explain: "„Nicht gegen das Verfahren als solches — gegen den Zeitpunkt.“ C1'de itirazın KAPSAMI ayrıca belirtilir.",
@@ -225,7 +225,7 @@ export const c1U01: SkillExercise[] = [
         explain: "Dilek kipi itirazı yumuşatıyor: „Ich habe einen Einwand“ karşı çıkma, „Ich hätte“ ise kapı aralama.",
       },
       {
-        text: "Was macht Herr Aydın wirklich?",
+        text: "Was macht Herr Aydin wirklich?",
         options: [
           "Er lehnt den Vorschlag ab.",
           "Er stimmt zu.",
