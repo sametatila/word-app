@@ -4,16 +4,17 @@ import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { listExerciseMeta, type SkillMeta } from "@/lib/skills";
 import { immersionCompletion } from "@/lib/immersion/progress";
-import { SKILL_LABELS } from "@/lib/skills/meta";
+import { SKILL_LABELS, SKILL_ORDER } from "@/lib/skills/meta";
 import { LEVEL_TONE, SKILL_ICON } from "@/components/skills/theme";
 import { CheckIcon, ChevronRightIcon } from "@/components/icons";
-import type { CefrLevel, SkillId } from "@/lib/skills/types";
+import { moduleExamPlan } from "@/lib/lessons/module-exam";
+import type { CefrLevel } from "@/lib/skills/types";
 
 export const metadata: Metadata = { title: "Beceriler" };
 export const dynamic = "force-dynamic";
 
 const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
-const SKILLS: SkillId[] = ["reading", "listening", "writing", "speaking"];
+
 
 /**
  * Beceriler — Patika'nın YANINDAKİ serbest çalışma yüzeyi.
@@ -106,7 +107,7 @@ export default async function SkillsPage({
         </p>
       ) : null}
 
-      {SKILLS.map((skill) => {
+      {SKILL_ORDER.map((skill) => {
         const liste = seviyede.filter((m) => m.skill === skill);
         if (!liste.length) return null;
         const Icon = SKILL_ICON[skill];
@@ -133,6 +134,8 @@ export default async function SkillsPage({
           Bu seviyede henüz beceri çalışması yok.
         </p>
       ) : null}
+
+      <ExamSection level={level} />
     </div>
   );
 }
@@ -160,5 +163,61 @@ function Row({ meta, done }: { meta: SkillMeta; done: boolean }) {
         <ChevronRightIcon size={18} className="shrink-0" style={{ color: "var(--text-faint)" }} />
       )}
     </Link>
+  );
+}
+
+/**
+ * Sınavlar — web'de HİÇBİR YERDEN açılamıyordu.
+ *
+ * `/exam/[level]` ve `/exam/[level]/[module]` rotaları aylardır duruyor ve
+ * çalışıyor, ama onlara giden tek bir bağlantı yoktu: modül kâğıtları ve
+ * seviye sınavı yazılmış, denetlenmiş, ama tıklanamıyordu. Mobilde ExamPrep
+ * ekranı var, web'de karşılığı yoktu.
+ *
+ * Buraya konuldu çünkü Beceriler zaten "patikanın dışındaki çalışma yüzeyi":
+ * sıradaki adımı Patika seçer, burada öğrenci ne çalışacağını kendi seçer —
+ * sınav da öyle bir şey.
+ *
+ * Ön koşul burada KONTROL EDİLMİYOR: sınav motoru modül derslerinin %80'i
+ * geçilmediyse kâğıdı "deneme" olarak veriyor (sayılmaz, sertifika yok).
+ * Kapıyı burada da kapatmak, hazır olup olmadığını merak eden öğrenciyi
+ * bilgisiz bırakırdı; motor zaten dürüst davranıyor.
+ */
+function ExamSection({ level }: { level: CefrLevel }) {
+  const moduller = [...Array(21).keys()]
+    .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
+    .filter((m): m is { index: number; plan: NonNullable<ReturnType<typeof moduleExamPlan>> } => Boolean(m.plan));
+  if (!moduller.length) return null;
+
+  return (
+    <section className="mb-5">
+      <h2 className="mb-2 px-1 text-sm font-bold">Sınavlar</h2>
+      <ul className="card divide-y" style={{ borderColor: "var(--border)" }}>
+        <li>
+          <Link href={`/exam/${level}`} className="flex items-center gap-3 px-4 py-3">
+            <span className="min-w-0 flex-1">
+              <span className="block truncate font-semibold">{level} seviye sınavı</span>
+              <span className="muted block text-xs">45 dk · beş bölüm</span>
+            </span>
+            <ChevronRightIcon size={18} className="shrink-0" style={{ color: "var(--text-faint)" }} />
+          </Link>
+        </li>
+        {moduller.map(({ index, plan }) => (
+          <li key={plan.code}>
+            <Link href={`/exam/${level}/${index}`} className="flex items-center gap-3 px-4 py-3">
+              <span className="min-w-0 flex-1">
+                <span className="block truncate font-semibold">
+                  {plan.code} · {plan.titleTr}
+                </span>
+                <span className="muted block truncate text-xs" lang="de">
+                  {plan.titleDe} · 20 dk
+                </span>
+              </span>
+              <ChevronRightIcon size={18} className="shrink-0" style={{ color: "var(--text-faint)" }} />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

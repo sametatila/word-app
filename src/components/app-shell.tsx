@@ -18,16 +18,17 @@ import { NotificationBell } from "@/components/social/notification-bell";
 /**
  * Alt gezinme: ÜÇ sekme.
  *
- * İki olgun öğrenme modu + yapım aşamasında bir üçüncü:
+ * Üç öğrenme yüzeyi:
  *   - Öğren — kelime turu (SRS/oyun çekirdeği).
  *   - Patika (immersion) — ders iskeleti + okuma/dinleme/yazma harmanı (üretim).
- *   - Beceriler — YENİ, farklı bir kurgu; şimdilik yapım aşamasında bir yer
- *     tutucu (bkz. /skills). Menüde görünür ama içeriği henüz yok.
+ *   - Beceriler — patikanın DIŞINDAKİ serbest çalışma yüzeyi: seviyedeki tüm
+ *     okuma/dinleme/yazma/ses çalışmaları ve sınavlar (bkz. /skills).
  *
  * Eskiden üç sekmeydi (Öğren / Dersler / Beceriler); "Dersler" ve "Beceriler"
  * aynı yolun iki parçasıydı ve Immersion ikisini tek moda (Patika) birleştirdi
- * (bkz. docs/plan/immersion.md). Yeni "Beceriler" o eskiyle aynı DEĞİL — ayrı
- * bir düşünce; kurgu netleşene dek yapım aşamasında duruyor.
+ * (bkz. docs/plan/immersion.md). Yeni "Beceriler" o eskiyle aynı DEĞİL: Patika
+ * sıradaki adımı seçer, burası kütüphane — patikanın yuvalarına sığmayan
+ * içerik ve sınavlar buradan açılır.
  *
  * Kelimeler ve Profil alt gezinmede değil: Kelimeler bir hedef değil sonuç
  * (tura girip zorlanılan kelimeye bakılır), Profil günde bir bile açılmaz —

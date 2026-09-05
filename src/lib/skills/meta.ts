@@ -14,10 +14,12 @@ export const SKILL_LABELS: Record<SkillId, string> = {
   speaking: "Konuşma",
 };
 
-// Konuşma (speaking) becerisi kaldırıldı (2026-08): hiç kullanılmıyordu ve
-// LLM koçu hiç çağrılmamıştı. SkillId tipi paylaşımlı olduğu için (roleplay/
-// sınav de-facto kullanıyor) korunuyor, ama artık kullanıcıya gösterilmiyor.
-export const SKILL_ORDER: SkillId[] = ["reading", "listening", "writing"];
+// Konuşma 2026-08'de içeriği olmadığı için listeden çıkarılmıştı; 2026-09'da
+// A1 için 8 ses çalışması yazılınca geri geldi ve web'de oynatıcısı var
+// (components/skills/speaking-player.tsx). Mobil paket onu hâlâ dışlıyor,
+// çünkü React Native tarafında kayıt hattı yok — orada liste kendi
+// filtresini uyguluyor.
+export const SKILL_ORDER: SkillId[] = ["reading", "listening", "writing", "speaking"];
 export const LEVEL_ORDER: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 
 /** Puanlanabilir madde sayısı: soru ya da yazma görevi. */
