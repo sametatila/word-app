@@ -108,8 +108,8 @@ export const a2U23: SkillExercise[] = [
       { de: "nachdenklich", tr: "düşünceli", en: "thoughtful" },
       { de: "spazieren", tr: "yürüyüş yapmak", en: "to stroll" },
       { de: "das Tablet", tr: "tablet", en: "tablet" },
-      { de: "aufbleiben", tr: "geç saate kadar oturmak", en: "to stay up" },
       { de: "wach", tr: "uyanık", en: "awake" },
+      { de: "aufbleiben", tr: "geç saate kadar oturmak", en: "to stay up" },
     ],
     minutes: 4,
     text:
@@ -180,7 +180,6 @@ export const a2U23: SkillExercise[] = [
       { de: "sich abmelden", tr: "çıkış yapmak", en: "to log out" },
       { de: "unverständlich", tr: "anlaşılmaz", en: "unintelligible" },
       { de: "mitschreiben", tr: "not almak", en: "to take notes" },
-      { de: "gegenseitig", tr: "karşılıklı", en: "mutually" },
     ],
     minutes: 3,
     segments: [
@@ -251,7 +250,6 @@ export const a2U23: SkillExercise[] = [
       { de: "der Stift", tr: "kalem", en: "pen" },
       { de: "zuordnen", tr: "eşleştirmek", en: "to assign" },
       { de: "beschriften", tr: "üstüne yazmak", en: "to label" },
-      { de: "der Notizblock", tr: "not defteri", en: "notepad" },
     ],
     minutes: 3,
     segments: [

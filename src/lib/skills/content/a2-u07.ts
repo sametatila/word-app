@@ -95,7 +95,6 @@ export const a2U07: SkillExercise[] = [
     genre: "Resmî yazı",
     intro: "Sigortadan gelen bir mektup. Ne isteniyor, ne zamana kadar?",
     gloss: [
-      { de: "die Krankenkasse", tr: "sağlık sigortası", en: "health insurance" },
       { de: "der Bescheid", tr: "resmî bildirim", en: "official notice" },
       { de: "bestätigen", tr: "onaylamak", en: "to confirm" },
       { de: "gültig sein", tr: "geçerli olmak", en: "to be valid" },
@@ -103,6 +102,7 @@ export const a2U07: SkillExercise[] = [
       { de: "berechtigt", tr: "yetkili", en: "entitled" },
       { de: "privat", tr: "özel", en: "private" },
       { de: "die Vereinbarung", tr: "anlaşma", en: "agreement" },
+      { de: "die Krankenkasse", tr: "sağlık sigortası", en: "health insurance" },
     ],
     minutes: 4,
     text:
@@ -161,7 +161,6 @@ export const a2U07: SkillExercise[] = [
       { de: "verletzt", tr: "yaralı", en: "injured" },
       { de: "der Knöchel", tr: "ayak bileği", en: "ankle" },
       { de: "geschwollen", tr: "şişmiş", en: "swollen" },
-      { de: "wehtun", tr: "ağrımak", en: "to hurt" },
       { de: "röntgen", tr: "röntgen çekmek", en: "to X-ray" },
       { de: "der Gips", tr: "alçı", en: "plaster cast" },
       { de: "die Erste Hilfe", tr: "ilk yardım", en: "first aid" },

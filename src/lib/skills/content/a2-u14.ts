@@ -161,7 +161,6 @@ export const a2U14: SkillExercise[] = [
       { de: "der Friseursalon", tr: "kuaför salonu", en: "hair salon" },
       { de: "die Schere", tr: "makas", en: "scissors" },
       { de: "föhnen", tr: "fön çekmek", en: "to blow-dry" },
-      { de: "bürsten", tr: "fırçalamak", en: "to brush" },
       { de: "sich kämmen", tr: "saçını taramak", en: "to comb one's hair" },
       { de: "glänzend", tr: "parlak", en: "shiny" },
       { de: "gepflegt", tr: "bakımlı", en: "well-groomed" },
@@ -218,13 +217,13 @@ export const a2U14: SkillExercise[] = [
     genre: "Diyalog",
     intro: "Mağazada şikâyet. Sorun ne, çözüm ne oluyor?",
     gloss: [
-      { de: "beschädigt", tr: "hasarlı", en: "damaged" },
       { de: "der Kassenzettel", tr: "kasa fişi", en: "receipt" },
       { de: "die Rückgabe", tr: "iade", en: "return" },
       { de: "fehlerhaft", tr: "hatalı", en: "faulty" },
       { de: "verärgert", tr: "kızgın", en: "annoyed" },
       { de: "der Filialleiter", tr: "şube müdürü", en: "branch manager" },
       { de: "anprobieren", tr: "üstünde denemek", en: "to try on" },
+      { de: "beschädigt", tr: "hasarlı", en: "damaged" },
     ],
     minutes: 3,
     segments: [

@@ -164,14 +164,13 @@ export const a2U20: SkillExercise[] = [
     genre: "Diyalog",
     intro: "Tartışmadan sonra barışma. Kim ne yaptı, nasıl çözülüyor?",
     gloss: [
-      { de: "streiten", tr: "tartışmak", en: "to argue" },
       { de: "sich zanken", tr: "atışmak", en: "to squabble" },
       { de: "anschreien", tr: "bağırmak", en: "to shout at" },
       { de: "beleidigt", tr: "gücenmiş", en: "offended" },
-      { de: "vorwerfen", tr: "suçlamak, başa kakmak", en: "to reproach" },
       { de: "absichtlich", tr: "bilerek", en: "on purpose" },
       { de: "vergeben", tr: "affetmek", en: "to forgive" },
       { de: "gemein", tr: "kırıcı", en: "mean" },
+      { de: "vorwerfen", tr: "suçlamak, başa kakmak", en: "to reproach" },
     ],
     minutes: 3,
     segments: [
@@ -236,7 +235,6 @@ export const a2U20: SkillExercise[] = [
       { de: "boxen", tr: "boks yapmak", en: "to box" },
       { de: "das Tennis", tr: "tenis", en: "tennis" },
       { de: "sportlich", tr: "sportif", en: "sporty" },
-      { de: "das Training", tr: "antrenman", en: "training" },
       { de: "motiviert", tr: "istekli", en: "motivated" },
       { de: "freiwillig", tr: "gönüllü olarak", en: "voluntarily" },
       { de: "verringern", tr: "azaltmak", en: "to reduce" },

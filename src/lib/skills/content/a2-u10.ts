@@ -38,7 +38,6 @@ export const a2U10: SkillExercise[] = [
       { de: "ausleihen", tr: "ödünç almak", en: "to borrow" },
       { de: "der Staubsauger", tr: "elektrikli süpürge", en: "vacuum cleaner" },
       { de: "der Schraubenzieher", tr: "tornavida", en: "screwdriver" },
-      { de: "hilfsbereit", tr: "yardımsever", en: "helpful" },
       { de: "aushelfen", tr: "yardıma gitmek", en: "to help out" },
       { de: "die Türklingel", tr: "kapı zili", en: "doorbell" },
       { de: "die Werkstatt", tr: "tamirhane", en: "workshop" },
@@ -167,9 +166,7 @@ export const a2U10: SkillExercise[] = [
       { de: "stören", tr: "rahatsız etmek", en: "to disturb" },
       { de: "die Ruhe", tr: "sessizlik", en: "quiet" },
       { de: "nachts", tr: "geceleri", en: "at night" },
-      { de: "nervig", tr: "sinir bozucu", en: "annoying" },
       { de: "sich beklagen", tr: "şikâyet etmek", en: "to complain" },
-      { de: "rücksichtslos", tr: "düşüncesiz", en: "inconsiderate" },
     ],
     minutes: 3,
     segments: [
@@ -228,7 +225,6 @@ export const a2U10: SkillExercise[] = [
       { de: "der Klempner", tr: "tesisatçı", en: "plumber" },
       { de: "der Elektriker", tr: "elektrikçi", en: "electrician" },
       { de: "die Glühbirne", tr: "ampul", en: "light bulb" },
-      { de: "lüften", tr: "havalandırmak", en: "to air out" },
     ],
     minutes: 3,
     segments: [

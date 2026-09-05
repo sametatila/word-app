@@ -171,8 +171,9 @@ export const a2U18: SkillExercise[] = [
       { de: "der Fahrschein", tr: "bilet", en: "ticket" },
       { de: "das Abteil", tr: "kompartıman", en: "compartment" },
       { de: "die Endstation", tr: "son durak", en: "final stop" },
+      { de: "die Verspätung", tr: "gecikme", en: "delay" },
       { de: "eintreffen", tr: "varmak", en: "to arrive" },
-      { de: "umkehren", tr: "geri dönmek", en: "to turn back" },
+      { de: "aufheben", tr: "saklamak", en: "to keep" },
     ],
     minutes: 3,
     segments: [
@@ -231,13 +232,13 @@ export const a2U18: SkillExercise[] = [
     genre: "Diyalog",
     intro: "İki ev arkadaşı parti hazırlığı yapıyor. Kim neyi üstleniyor?",
     gloss: [
-      { de: "planen", tr: "planlamak", en: "to plan" },
       { de: "aufstellen", tr: "kurmak, dizmek", en: "to set up" },
       { de: "decken", tr: "(masa) kurmak", en: "to set (the table)" },
       { de: "die Serviette", tr: "peçete", en: "napkin" },
       { de: "der Teller", tr: "tabak", en: "plate" },
       { de: "der Besuch", tr: "misafir, ziyaret", en: "visitors" },
       { de: "organisieren", tr: "organize etmek", en: "to organise" },
+      { de: "planen", tr: "planlamak", en: "to plan" },
     ],
     minutes: 3,
     segments: [

@@ -221,9 +221,7 @@ export const a2U09: SkillExercise[] = [
       { de: "die Abkürzung", tr: "kestirme yol", en: "shortcut" },
       { de: "der Bürgersteig", tr: "kaldırım", en: "pavement" },
       { de: "drüben", tr: "karşıda", en: "over there" },
-      { de: "das Zentrum", tr: "merkez", en: "town centre" },
       { de: "parken", tr: "park etmek", en: "to park" },
-      { de: "nebenan", tr: "yan tarafta", en: "next door" },
     ],
     minutes: 3,
     segments: [

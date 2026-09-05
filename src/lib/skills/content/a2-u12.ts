@@ -169,7 +169,6 @@ export const a2U12: SkillExercise[] = [
       { de: "zurückrufen", tr: "geri aramak", en: "to call back" },
       { de: "notieren", tr: "not almak", en: "to note down" },
       { de: "die Handynummer", tr: "cep telefonu numarası", en: "mobile number" },
-      { de: "das Telefonat", tr: "telefon görüşmesi", en: "phone call" },
     ],
     minutes: 3,
     segments: [

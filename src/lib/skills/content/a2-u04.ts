@@ -156,13 +156,13 @@ export const a2U04: SkillExercise[] = [
     genre: "Diyalog",
     intro: "Taşınma günü. Kim ne taşıdı, ne kaldı?",
     gloss: [
-      { de: "einziehen", tr: "yeni eve taşınmak", en: "to move in" },
       { de: "der Kofferraum", tr: "araba bagajı", en: "car boot" },
       { de: "schleppen", tr: "sürükleyerek taşımak", en: "to lug" },
       { de: "das Stockwerk", tr: "kat", en: "floor" },
       { de: "auspacken", tr: "paketten çıkarmak", en: "to unpack" },
       { de: "die Garage", tr: "garaj", en: "garage" },
       { de: "leer", tr: "boş", en: "empty" },
+      { de: "einziehen", tr: "yeni eve taşınmak", en: "to move in" },
     ],
     minutes: 3,
     segments: [

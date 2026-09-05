@@ -219,8 +219,6 @@ export const a2U08: SkillExercise[] = [
       { de: "der Handschuh", tr: "eldiven", en: "glove" },
       { de: "die Mütze", tr: "bere", en: "hat" },
       { de: "der Kopfhörer", tr: "kulaklık", en: "headphones" },
-      { de: "die Brille", tr: "gözlük", en: "glasses" },
-      { de: "jemand", tr: "biri", en: "someone" },
     ],
     minutes: 3,
     segments: [

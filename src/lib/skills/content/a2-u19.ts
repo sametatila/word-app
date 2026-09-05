@@ -230,7 +230,6 @@ export const a2U19: SkillExercise[] = [
     gloss: [
       { de: "die Absage", tr: "iptal", en: "cancellation" },
       { de: "bedauern", tr: "üzülmek", en: "to regret" },
-      { de: "ausnahmsweise", tr: "istisna olarak", en: "as an exception" },
       { de: "stattdessen", tr: "onun yerine", en: "instead" },
       { de: "enttäuscht", tr: "hayal kırıklığına uğramış", en: "disappointed" },
       { de: "zusammenkommen", tr: "bir araya gelmek", en: "to get together" },

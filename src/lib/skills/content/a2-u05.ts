@@ -158,7 +158,6 @@ export const a2U05: SkillExercise[] = [
       { de: "die Situation", tr: "durum", en: "situation" },
       { de: "gestehen", tr: "itiraf etmek", en: "to confess" },
       { de: "auslachen", tr: "alay etmek", en: "to laugh at" },
-      { de: "komisch", tr: "tuhaf", en: "odd" },
     ],
     minutes: 3,
     segments: [

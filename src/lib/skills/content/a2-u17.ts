@@ -160,10 +160,8 @@ export const a2U17: SkillExercise[] = [
     intro: "İki arkadaş pazar gününü planlıyor. Hava nasıl olursa ne yapacaklar?",
     gloss: [
       { de: "die Bootsfahrt", tr: "tekne turu", en: "boat trip" },
-      { de: "der Freizeitpark", tr: "lunapark", en: "amusement park" },
       { de: "die Eintrittskarte", tr: "giriş bileti", en: "entrance ticket" },
       { de: "bummeln", tr: "gezinmek", en: "to stroll" },
-      { de: "der Spaziergang", tr: "yürüyüş", en: "walk" },
       { de: "der Zoo", tr: "hayvanat bahçesi", en: "zoo" },
       { de: "die Raststätte", tr: "dinlenme tesisi", en: "motorway services" },
     ],
@@ -225,13 +223,13 @@ export const a2U17: SkillExercise[] = [
     genre: "Diyalog",
     intro: "Kamp alanına varış. Neresi boş, orada ne var, ne yasak?",
     gloss: [
-      { de: "der Campingplatz", tr: "kamp alanı", en: "campsite" },
       { de: "das Zelt", tr: "çadır", en: "tent" },
       { de: "das Wohnmobil", tr: "karavan", en: "camper van" },
       { de: "das Lagerfeuer", tr: "kamp ateşi", en: "campfire" },
       { de: "der Bach", tr: "dere", en: "stream" },
       { de: "angeln", tr: "balık tutmak", en: "to fish" },
       { de: "braten", tr: "kızartmak", en: "to fry, grill" },
+      { de: "der Campingplatz", tr: "kamp alanı", en: "campsite" },
     ],
     minutes: 3,
     segments: [

@@ -37,10 +37,7 @@ export const a2U15: SkillExercise[] = [
       { de: "der Tarif", tr: "tarife", en: "tariff" },
       { de: "das WLAN", tr: "kablosuz internet", en: "wifi" },
       { de: "der Router", tr: "modem", en: "router" },
-      { de: "wöchentlich", tr: "haftalık", en: "weekly" },
-      { de: "die Gebühr", tr: "ücret", en: "fee" },
       { de: "das Ladekabel", tr: "şarj kablosu", en: "charging cable" },
-      { de: "die Stromrechnung", tr: "elektrik faturası", en: "electricity bill" },
     ],
     minutes: 4,
     text:
@@ -162,8 +159,6 @@ export const a2U15: SkillExercise[] = [
       { de: "die Gebühr", tr: "ücret", en: "fee" },
       { de: "sparen", tr: "biriktirmek", en: "to save" },
       { de: "das Sparbuch", tr: "tasarruf hesabı cüzdanı", en: "savings book" },
-      { de: "der Kredit", tr: "kredi", en: "loan" },
-      { de: "ausgeben", tr: "harcamak", en: "to spend" },
     ],
     minutes: 3,
     segments: [
@@ -218,7 +213,6 @@ export const a2U15: SkillExercise[] = [
     genre: "Diyalog",
     intro: "Postanede bir paket. Kaç gram, hangi yol en hızlı?",
     gloss: [
-      { de: "das Postamt", tr: "postane", en: "post office" },
       { de: "das Porto", tr: "posta ücreti", en: "postage" },
       { de: "der Umschlag", tr: "zarf", en: "envelope" },
       { de: "die Waage", tr: "terazi", en: "scales" },

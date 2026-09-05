@@ -104,7 +104,6 @@ export const a2U16: SkillExercise[] = [
       { de: "der Zimmerschlüssel", tr: "oda anahtarı", en: "room key" },
       { de: "aufbewahren", tr: "saklamak", en: "to keep, store" },
       { de: "die Wäsche", tr: "çamaşır", en: "laundry" },
-      { de: "das Handgepäck", tr: "el bagajı", en: "hand luggage" },
       { de: "reservieren", tr: "yer ayırtmak", en: "to reserve" },
     ],
     minutes: 4,
@@ -166,7 +165,6 @@ export const a2U16: SkillExercise[] = [
     intro: "Otel resepsiyonu. Rezervasyon var mı, oda hangi katta?",
     gloss: [
       { de: "reservieren", tr: "yer ayırtmak", en: "to reserve" },
-      { de: "das Hotelzimmer", tr: "otel odası", en: "hotel room" },
       { de: "der Zimmerschlüssel", tr: "oda anahtarı", en: "room key" },
       { de: "einchecken", tr: "giriş yapmak", en: "to check in" },
       { de: "das Doppelbett", tr: "çift kişilik yatak", en: "double bed" },

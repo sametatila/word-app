@@ -36,7 +36,6 @@ export const a2U24: SkillExercise[] = [
     genre: "Program broşürü",
     intro: "Halk eğitim programı. Hangi kurs ne zaman, kim katılabilir?",
     gloss: [
-      { de: "teilnehmen", tr: "katılmak", en: "to take part" },
       { de: "der Stundenplan", tr: "ders programı", en: "timetable" },
       { de: "der Workshop", tr: "atölye", en: "workshop" },
       { de: "beibringen", tr: "öğretmek", en: "to teach" },
@@ -181,7 +180,6 @@ export const a2U24: SkillExercise[] = [
       { de: "das E-Book", tr: "e-kitap", en: "e-book" },
       { de: "das Kochbuch", tr: "yemek kitabı", en: "cookbook" },
       { de: "das Schulbuch", tr: "ders kitabı", en: "schoolbook" },
-      { de: "aufschlagen", tr: "açmak (kitabı)", en: "to open (a book)" },
       { de: "sortieren", tr: "sıralamak", en: "to sort" },
       { de: "nachlesen", tr: "bakıp okumak", en: "to look up" },
       { de: "das Pfand", tr: "depozito", en: "deposit" },
@@ -252,7 +250,6 @@ export const a2U24: SkillExercise[] = [
       { de: "anstatt", tr: "yerine", en: "instead of" },
       { de: "jedenfalls", tr: "her hâlükârda", en: "in any case" },
       { de: "vorwärts", tr: "ileri", en: "forward" },
-      { de: "bauen", tr: "inşa etmek", en: "to build" },
       { de: "das Ferienhaus", tr: "yazlık", en: "holiday home" },
     ],
     minutes: 3,
