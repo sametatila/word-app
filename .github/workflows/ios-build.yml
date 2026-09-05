@@ -15,11 +15,20 @@
 
 name: iOS derleme
 
+# GEÇİCİ OLARAK KAPALI (2026-09-05, Samet'in isteği).
+#
+# Otomatik tetikleyiciler kaldırıldı: iş yalnız ELLE çalışıyor. Sebep, iOS'a
+# ara verilmesi — her push'ta ~45 dakikalık bir macOS işi koşturmanın anlamı yok.
+#
+# Elle koşturmak:  gh workflow run "iOS derleme" --ref main
+# Geri açmak:      aşağıdaki `push:` ve `pull_request:` bloklarının yorumunu kaldır.
+#
+# on:
+#   push:
+#     paths: ["mobile/ios/**", "mobile/src/**", "mobile/package.json", "mobile/package-lock.json", ".github/workflows/ios-build.yml"]
+#   pull_request:
+#     paths: ["mobile/ios/**", "mobile/src/**", "mobile/package.json", "mobile/package-lock.json"]
 on:
-  push:
-    paths: ["mobile/ios/**", "mobile/src/**", "mobile/package.json", "mobile/package-lock.json", ".github/workflows/ios-build.yml"]
-  pull_request:
-    paths: ["mobile/ios/**", "mobile/src/**", "mobile/package.json", "mobile/package-lock.json"]
   workflow_dispatch:
 
 concurrency:
