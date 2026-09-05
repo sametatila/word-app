@@ -6,8 +6,10 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { speakTarget } from "../lib/tts";
-import { currentTargetLang } from "../lib/courses";
+import { currentTargetLang, currentTargetLocale } from "../lib/courses";
 import { foldCompare } from "../lib/textFold";
+import { ensureMicPermission, listenOnce } from "../lib/stt";
+import { spokenMatches } from "../lib/voiceMatch";
 import { haptic } from "../lib/haptics";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
@@ -307,6 +309,143 @@ function FreeCard({ t, n, done, onSettle, colors }: { t: FreeTask; n: number; do
         <View style={{ marginTop: spacing.md, backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("skillquiz.sample_answer")}</Text>
           <Text variant="body" color={colors.text} style={{ lineHeight: 22 }}>{t.sample}</Text>
+        </View>
+      ) : null}
+    </Card>
+  );
+}
+
+/* ─────────────────────────── KONUŞMA ─────────────────────────── */
+
+export type SpeakingTask = {
+  de: string;
+  tr: string;
+  hint?: string;
+  confusions?: { heard: string[]; fix: string; expected?: string }[];
+};
+
+/**
+ * Ses çalışması listesi — mobil.
+ *
+ * NEDEN NATIVE STT, SUNUCU PUANLAMASI DEĞİL: cihazda zaten çalışan, ücretsiz
+ * ve ekran açıkken kusursuz bir tanıyıcı var (yürüyüş modu onu kullanıyor).
+ * Sunucu telaffuz puanlaması paralı ve ağ gerektiriyor; alıştırma yüzeyinde
+ * bunu her cümle için ödemek doğru değil. Karar `spokenMatches` ile veriliyor —
+ * kelime turlarında ve yürüyüş modunda kullanılan, iki yönde de ölçülmüş
+ * eşleştirme (bkz. lib/voiceMatch.ts).
+ *
+ * `confusions.heard` alanı burada TAM olarak tasarlandığı işi yapıyor:
+ * "öğrenci bu hatayı yaparsa tanıyıcı şunu yazar". Tanıyıcının çıktısı o
+ * listeyle eşleşirse öğrenciye genel bir "yanlış" değil, hatasının ADI
+ * söyleniyor — "z'yi ts diye söyle" gibi.
+ */
+const t = tx;
+
+export function SpeakingList({
+  tasks,
+  onAllDone,
+  colors,
+}: {
+  tasks: SpeakingTask[];
+  onAllDone: (correct: number) => void;
+  colors: Palette;
+}) {
+  const [idx, setIdx] = useState(0);
+  const [durum, setDurum] = useState<"idle" | "rec" | "ok" | "no" | "err">("idle");
+  const [duyulan, setDuyulan] = useState<string>("");
+  const [ipucu, setIpucu] = useState<string | null>(null);
+  const [gecen, setGecen] = useState(0);
+  const task = tasks[idx];
+  const son = idx + 1 >= tasks.length;
+
+  async function dinle() {
+    if (durum === "rec") return;
+    const izin = await ensureMicPermission();
+    if (!izin) {
+      setIpucu(t("speak.mic_needed"));
+      setDurum("err");
+      return;
+    }
+    setDurum("rec");
+    setIpucu(null);
+    setDuyulan("");
+    const heard = await listenOnce(currentTargetLocale(), 8000);
+    if (!heard || !heard.length) {
+      setDurum("err");
+      setIpucu(t("speak.not_heard"));
+      return;
+    }
+    setDuyulan(heard[0]);
+    if (spokenMatches(heard, [task.de])) {
+      setGecen((n) => n + 1);
+      setDurum("ok");
+      return;
+    }
+    // Hangi bilinen sapmaya düştüğünü bul: genel "yanlış" yerine adını söyle.
+    const düz = heard.map((h) => h.toLowerCase());
+    const eşleşen = (task.confusions ?? []).find((c) =>
+      c.heard.some((x) => düz.some((h) => h.includes(x.toLowerCase()))),
+    );
+    setIpucu(eşleşen?.fix ?? task.hint ?? null);
+    setDurum("no");
+  }
+
+  function ilerle() {
+    setDurum("idle");
+    setIpucu(null);
+    setDuyulan("");
+    if (!son) setIdx(idx + 1);
+    else onAllDone(gecen);
+  }
+
+  if (!task) return null;
+
+  return (
+    <Card padded style={{ marginTop: spacing.md, gap: spacing.sm }}>
+      <Text variant="micro" color={colors.textMuted}>
+        {idx + 1}/{tasks.length}
+      </Text>
+
+      <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
+        <Text variant="h3" style={{ flex: 1 }}>{task.de}</Text>
+        <PressableScale onPress={() => void speakTarget(task.de)} accessibilityLabel={t("item.listen")} hitSlop={6}>
+          <SpeakerIcon color={colors.textMuted} size={20} />
+        </PressableScale>
+      </View>
+      <Text variant="body" color={colors.textMuted}>{task.tr}</Text>
+
+      {task.hint && durum === "idle" ? (
+        <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>{task.hint}</Text>
+      ) : null}
+
+      {durum === "idle" || durum === "err" ? (
+        <PressableScale onPress={() => void dinle()} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }}>
+          <Text variant="bodyStrong" color={colors.onPrimary}>{t("speak.record")}</Text>
+        </PressableScale>
+      ) : null}
+      {durum === "rec" ? (
+        <Text variant="bodyStrong" color={colors.primary} style={{ textAlign: "center", paddingVertical: 14 }}>{t("speak.listening")}</Text>
+      ) : null}
+
+      {duyulan ? (
+        <Text variant="caption" color={colors.textMuted}>{t("speak.heard")}: {duyulan}</Text>
+      ) : null}
+
+      {durum === "ok" ? <Text variant="bodyStrong" color={colors.success}>{t("speak.correct")}</Text> : null}
+      {(durum === "no" || durum === "err") && ipucu ? (
+        <Text variant="body" color={colors.text} style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>
+          {ipucu}
+        </Text>
+      ) : null}
+
+      {durum === "ok" || durum === "no" ? (
+        <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.xs }}>
+          <PressableScale onPress={() => void dinle()} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 12, alignItems: "center" }}>
+            <Text variant="bodyStrong" color={colors.text}>{t("speak.again")}</Text>
+          </PressableScale>
+          <PressableScale onPress={ilerle} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 12, alignItems: "center" }}>
+            <Text variant="bodyStrong" color={colors.onPrimary}>{son ? t("item.finish") : t("common.next")}</Text>
+          </PressableScale>
         </View>
       ) : null}
     </Card>

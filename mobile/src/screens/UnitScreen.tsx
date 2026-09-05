@@ -8,17 +8,17 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, CheckIcon, LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, LockIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon, CheckIcon, LearnIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, QuizIcon, LockIcon } from "../ui/icons";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const KIND_ICON: Record<ItemKind, (p: { color: string; size: number }) => React.ReactElement> = {
   lesson: (p) => <LearnIcon {...p} />, read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />,
-  write: (p) => <WriteIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />, quiz: (p) => <QuizIcon {...p} />,
+  write: (p) => <WriteIcon {...p} />, speak: (p) => <MicIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />, quiz: (p) => <QuizIcon {...p} />,
   checkpoint: (p) => <CheckIcon {...p} />,
 };
 const KIND_TINT: Record<ItemKind, keyof Palette> = {
-  lesson: "primary", read: "info", listen: "accent", write: "success", grammar: "streak", quiz: "primary", checkpoint: "danger",
+  lesson: "primary", read: "info", listen: "accent", write: "success", speak: "primary", grammar: "streak", quiz: "primary", checkpoint: "danger",
 };
 
 export function UnitScreen() {

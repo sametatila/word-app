@@ -16,7 +16,7 @@ export type SkillQuestion = {
 };
 export type ListeningSegment = { speaker?: string; text: string; audio?: string };
 export type SkillExercise = {
-  id: string; level: string; skill: "reading" | "listening" | "writing";
+  id: string; level: string; skill: "reading" | "listening" | "writing" | "speaking";
   title: string; genre: string; intro: string; gloss: Gloss[]; minutes: number; unit?: number;
   text?: string; segments?: ListeningSegment[]; questions?: SkillQuestion[]; tasks?: unknown[];
 };
@@ -56,7 +56,7 @@ export function getExercise(id: string, course: string = currentCourseId()): Ski
 export type SkillMeta = { id: string; level: string; skill: string; title: string; genre: string; minutes: number };
 export function listSkillMeta(
   level: string,
-  skill: "reading" | "listening" | "writing",
+  skill: "reading" | "listening" | "writing" | "speaking",
   course: string = currentCourseId(),
 ): SkillMeta[] {
   return poolFor(course).filter((e) => e.level === level && e.skill === skill)

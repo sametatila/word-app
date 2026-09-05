@@ -15,7 +15,10 @@ import { join } from "node:path";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 
 const course = (process.argv[2] ?? "de").toLowerCase();
-const SKILLS = ["reading", "listening", "writing"];
+// Konuşma 2026-09'da eklendi: A1 için 8 ses çalışması var ve mobilde artık
+// oynatıcısı da var (ItemScreen konuşma dalı, native STT ile). Daha önce
+// dışlanıyordu çünkü mobilde çalacak yer yoktu.
+const SKILLS = ["reading", "listening", "writing", "speaking"];
 const keep = BUNDLED_EXERCISES.filter(
   (e) => ((e as { course?: string }).course ?? "de") === course && SKILLS.includes(e.skill),
 );

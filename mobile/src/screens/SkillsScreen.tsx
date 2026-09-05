@@ -10,7 +10,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { AppHeader } from "../ui/AppHeader";
 import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
-import { ReadIcon, ListenIcon, WriteIcon, WalkIcon, ChevronRightIcon, CheckIcon, PathIcon } from "../ui/icons";
+import { ReadIcon, ListenIcon, WriteIcon, MicIcon, WalkIcon, ChevronRightIcon, CheckIcon, PathIcon } from "../ui/icons";
 import { useMe } from "../lib/useMe";
 import { useMicrophone } from "../lib/useMicrophone";
 import { listSkillMeta, type SkillMeta } from "../data/skills";
@@ -19,11 +19,15 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 
-type SkillKey = "reading" | "listening" | "writing";
-const SKILLS: { key: SkillKey; kind: "read" | "listen" | "write"; label: string; icon: (p: { color: string; size: number }) => React.ReactElement; tint: keyof Palette }[] = [
+type SkillKey = "reading" | "listening" | "writing" | "speaking";
+// Konuşma 2026-09'da listeye girdi: A1 için 8 ses çalışması var ve mobilde
+// oynatıcısı ItemScreen'de (cihazdaki tanıyıcıyla, sunucuya ses gitmeden).
+// Daha önce hem paket hem bu liste onu dışlıyordu.
+const SKILLS: { key: SkillKey; kind: "read" | "listen" | "write" | "speak"; label: string; icon: (p: { color: string; size: number }) => React.ReactElement; tint: keyof Palette }[] = [
   { key: "reading", kind: "read", label: "skills.reading", icon: ReadIcon, tint: "info" },
   { key: "listening", kind: "listen", label: "skills.listening", icon: ListenIcon, tint: "accent" },
   { key: "writing", kind: "write", label: "skills.writing", icon: WriteIcon, tint: "success" },
+  { key: "speaking", kind: "speak", label: "unitkind.speaking", icon: MicIcon, tint: "primary" },
 ];
 
 function ExerciseRow({ ex, tint, done, onPress, colors, last }: { ex: SkillMeta; tint: string; done: boolean; onPress: () => void; colors: Palette; last: boolean }) {

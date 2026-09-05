@@ -8,10 +8,10 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
-import { XIcon, ReadIcon, ListenIcon, WriteIcon, SpeakerIcon } from "../ui/icons";
+import { XIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, SpeakerIcon } from "../ui/icons";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
-import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
+import { QuestionList, GlossPanel, WritingList, SpeakingList, type WritingTask, type SpeakingTask } from "../game/skillQuiz";
 import { markItemDone } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { API_BASE } from "../api/client";
@@ -23,8 +23,9 @@ import { sfx } from "../lib/sfx";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
   read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />, write: (p) => <WriteIcon {...p} />,
+  speak: (p) => <MicIcon {...p} />,
 };
-const KIND_TINT: Record<string, keyof Palette> = { read: "info", listen: "accent", write: "success" };
+const KIND_TINT: Record<string, keyof Palette> = { read: "info", listen: "accent", write: "success", speak: "primary" };
 
 /** Okuma metni — paragraflar \n\n ile ayrılır (web reading-player gibi). */
 function ReadingText({ text, colors }: { text: string; colors: Palette }) {
@@ -124,7 +125,10 @@ export function ItemScreen() {
     );
   }
 
-  const total = exercise.skill === "writing" ? (exercise.tasks?.length ?? 0) : (exercise.questions?.length ?? 0);
+  const total =
+    exercise.skill === "writing" || exercise.skill === "speaking"
+      ? (exercise.tasks?.length ?? 0)
+      : (exercise.questions?.length ?? 0);
   const pct = total ? Math.round((correct / total) * 100) : 100;
 
   return (
@@ -150,7 +154,11 @@ export function ItemScreen() {
 
         <GlossPanel gloss={exercise.gloss} colors={colors} />
 
-        {exercise.skill === "writing" ? (
+        {exercise.skill === "speaking" ? (
+          // Konuşma CİHAZDA değerlendiriliyor (native tanıyıcı + spokenMatches);
+          // sunucuya ses gitmiyor, o yüzden AiNotice de yok.
+          <SpeakingList key={round} tasks={(exercise.tasks ?? []) as SpeakingTask[]} onAllDone={recordAndFinish} colors={colors} />
+        ) : exercise.skill === "writing" ? (
           // Yazma görevleri sunucuda dil modeliyle puanlanıyor; kimin
           // değerlendirdiği yazmaya başlamadan önce söyleniyor.
           <>

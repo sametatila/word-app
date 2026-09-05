@@ -61,13 +61,16 @@ export function ExamPrepScreen() {
 
   function openModule(m: ExamModule) {
     if (m.premium && !premium) { nav.navigate("Paywall"); return; }
-    const ex = listSkillMeta(level, m.skill as "reading" | "listening" | "writing")[0];
+    const ex = listSkillMeta(level, m.skill)[0];
     if (ex) nav.navigate("Item", { id: ex.id, kind: m.kind, title: ex.title ?? m.label });
   }
 
+  // Konuşma eskiden koşulsuz 0 dönüyordu: içerik yoktu, satır çizilse
+  // tıklanınca hiçbir şey açılmayacaktı. 2026-09'da ses çalışmaları geldi ve
+  // ItemScreen onları oynatıyor, o yüzden artık gerçek sayı dönüyor. Mikrofon
+  // yoksa satır yine gizleniyor (aşağıdaki `mic` koşulu).
   function countFor(m: ExamModule): number {
-    if (m.skill === "speaking") return 0;
-    return listSkillMeta(level, m.skill as "reading" | "listening" | "writing").length;
+    return listSkillMeta(level, m.skill).length;
   }
 
   return (
