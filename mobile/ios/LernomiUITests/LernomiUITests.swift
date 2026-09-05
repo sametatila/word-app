@@ -25,7 +25,15 @@ import XCTest
 final class LernomiUITests: XCTestCase {
 
   /// Her ekranda bu kadar duruluyor ki dış döngü kareyi yakalayabilsin.
-  private let dwell: UInt32 = 4
+  /// Dış döngü 2 saniyede bir çekiyor, 3 saniye onu güvenle geçiyor.
+  private let dwell: UInt32 = 3
+
+  /// Turun duracağı an. İş zaman aşımı 60 dakika ve önünde derleme + matris
+  /// var; tarama derinleştikçe süre kolayca kaçıyor. Bütçe dolduğunda tur
+  /// KENDİ İSTEĞİYLE duruyor — zaman aşımıyla düşen bir iş hiçbir kare
+  /// yüklemez, erken duran tur o ana kadarki karelerin hepsini verir.
+  private lazy var deadline = Date().addingTimeInterval(16 * 60)
+  private var outOfTime: Bool { Date() >= deadline }
   private var blocked: [String] = []
   private let env = ProcessInfo.processInfo.environment
 
@@ -246,39 +254,74 @@ final class LernomiUITests: XCTestCase {
 
   // MARK: - gezinme
 
-  /// Her sekmeyi açar, o sekmedeki girişleri tek tek açıp geri döner.
+  /// Her sekmeyi açar, girişleri açar, açılan ekranın İÇİNDEKİ girişleri de
+  /// açar (iki seviye). Sekme çubuğunun üstündeki her düğme bir giriş sayılıyor.
   private func crawlTabs(_ app: XCUIApplication) {
-    let tabs = tabButtons(app)
-    guard !tabs.isEmpty else { return } // giriş yapılmadıysa sekme yok
-
-    for i in 0..<tabs.count {
-      // Her turda yeniden bul: eleman referansları ekran değişince eskiyor.
-      let current = tabButtons(app)
-      guard i < current.count else { break }
-      current[i].tap()
+    guard !tabButtons(app).isEmpty else {
+      print("UITEST: sekme yok, tarama atlandi (giris tutmamis olabilir)")
+      return
+    }
+    let tabCount = tabButtons(app).count
+    for i in 0..<tabCount {
+      if outOfTime { print("UITEST: butce doldu, tarama kesildi"); return }
+      let tabs = tabButtons(app)
+      guard i < tabs.count, tabs[i].isHittable else { continue }
+      tabs[i].tap()
       sleep(dwell)
 
-      let entries = buttons(app).filter { $0.frame.minY < app.frame.height * 0.86 }
-      // Üst sınır: bir sekmenin altında onlarca giriş olabilir; tur uzamasın.
-      for j in 0..<min(entries.count, 8) {
-        let fresh = buttons(app).filter { $0.frame.minY < app.frame.height * 0.86 }
+      let count = entries(app).count
+      for j in 0..<min(count, 12) {
+        if outOfTime { print("UITEST: butce doldu, tarama kesildi"); return }
+        let fresh = entries(app)
         guard j < fresh.count, fresh[j].isHittable else { continue }
         fresh[j].tap()
         sleep(dwell)
-        goBack(app)
-        sleep(2)
+
+        // İkinci seviye: açılan ekranın kendi girişleri.
+        let subCount = entries(app).count
+        for k in 0..<min(subCount, 4) {
+          if outOfTime { break }
+          let subs = entries(app)
+          guard k < subs.count, subs[k].isHittable else { continue }
+          subs[k].tap()
+          sleep(dwell)
+          goBackOnce(app)
+          sleep(1)
+        }
+
+        goHome(app)
+        sleep(1)
       }
     }
   }
 
-  /// Geri dön. Önce kenardan kaydırma (native-stack varsayılanı), tutmazsa
-  /// sol üstteki düğme, o da tutmazsa uygulamayı yeniden başlat.
+  /// Sekme çubuğunun ÜSTÜNDEKİ düğmeler — yani ekranın kendi girişleri.
+  private func entries(_ app: XCUIApplication) -> [XCUIElement] {
+    buttons(app).filter { $0.frame.minY < app.frame.height * 0.86 }
+  }
+
+  /// Bir seviye geri: kenardan kaydırma, tutmazsa sol üstteki ok. Sekmelere
+  /// kadar inmiyor — ikinci seviyeden çıkarken üstteki ekranda kalmak gerekiyor.
+  private func goBackOnce(_ app: XCUIApplication) {
+    let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.01, dy: 0.5))
+    let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.9, dy: 0.5))
+    start.press(forDuration: 0.05, thenDragTo: end)
+    sleep(1)
+    if let back = buttons(app).first, back.frame.minY < app.frame.height * 0.2,
+       back.frame.minX < app.frame.width * 0.3, back.isHittable {
+      back.tap()
+      sleep(1)
+    }
+  }
+
+  /// Sekmelere kadar geri dön. Önce kenardan kaydırma (native-stack
+  /// varsayılanı), tutmazsa sol üstteki düğme, o da tutmazsa yeniden başlat.
   ///
   /// Yeniden başlatma bilerek var: alttan açılan bir ekran (modal) kaydırmayla
   /// kapanmayabiliyor ve kapanmazsa sonraki dokunuşlar yanlış ekranda olur —
   /// tur oradan sonra anlamsız kareler üretir. Onboarding ve oturum kalıcı
   /// olduğu için yeniden başlatma bizi sekmelere geri getiriyor.
-  private func goBack(_ app: XCUIApplication) {
+  private func goHome(_ app: XCUIApplication) {
     if !tabButtons(app).isEmpty { return } // zaten sekmedeyiz
 
     let start = app.coordinate(withNormalizedOffset: CGVector(dx: 0.01, dy: 0.5))
