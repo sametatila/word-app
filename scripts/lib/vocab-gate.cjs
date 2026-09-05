@@ -87,6 +87,8 @@ const DUZENSIZ = {
   // kuralı ne zayıf kural tek başına üretebiliyor. denken/bringen zaten yukarıda.
   kennen: ["kennt", "kannte", "gekannt"], sitzen: ["sitzt", "saß", "gesessen"],
   schreien: ["schreit", "schrie", "geschrien"],
+  // schneiden → geschnitten: ünlü kısalır ve ünsüz ikizleşir, kural üretemez.
+  schneiden: ["schneidet", "schnitt", "geschnitten"],
 };
 
 // "hoch" çekilirken ch → h olur (hohe, hohen, hoher) ve bu tek başına bir
