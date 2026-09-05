@@ -118,3 +118,25 @@ gelir; grep ile sayarsan "sıfır hata" sanırsın. Doğrusu `npm run check:less
 Konu başına ayrı commit, Türkçe mesaj, **ne yapıldığını değil neden yapıldığını**
 anlatsın. Sonunda: neyin bittiği, neyin bilerek bırakıldığı, hangi sayının
 nereden geldiği. Sonuç ölçümünü bu dosyanın sonuna yaz.
+
+---
+
+## Ek bulgu — 2026-09-05: modül 11-18'in sınav planı yok
+
+B1'e 80 ders eklendi ama o modüllerin sınav planları yazılmadı. Sonuç:
+
+- `npm run test:exams` → 8 hata: `B1.11 … B1.18: modülün sınav planı yok
+  (src/lib/lessons/module-exam)`
+- `npm run test:exam-build` → 16 hata: aynı sekiz modülde okuma bölümü ve kapak
+  üretilemiyor.
+
+Bu, o modüllerin **modül sınavının çalışmadığı** anlamına geliyor: plan
+olmadan `moduleExamPlan` boş dönüyor ve kâğıt eksik kuruluyor.
+
+A1, A2, B2 ve C1'de bu hata yok — dolayısıyla iş B1'e ait. Modül başına bir
+plan (`src/lib/lessons/module-exam`) yazılmalı; mevcut B1.1-B1.10 planları
+biçimi gösteriyor.
+
+Not: bu sekiz hata daha önce görünmüyordu, çünkü `exam-dryrun.ts` kaldırılmış
+dilbilgisi bölümünü zorunlu tutuyor ve katalog genelinde 190 hata üretiyordu;
+doğrulayıcı hizalanınca (0 ya da 6) gerçek hata ortaya çıktı.
