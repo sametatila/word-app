@@ -368,7 +368,7 @@ export const deB2B09: Lesson[] = [
     minutes: 12,
     focusId: "Konjunktiv-II",
     vocab: [
-      { de: "das Mitgefühl", tr: "şefkat, empati" },
+      { de: "das Mitgefühl", tr: "empati" },
       { de: "die Empathie", tr: "empati" },
       { de: "mitfühlen", tr: "empati kurmak" },
       { de: "das Mitleid", tr: "acıma" },
@@ -384,7 +384,7 @@ export const deB2B09: Lesson[] = [
     lecture: [
       { say: [tr("Merhaba! Bugün empatiyi kuracağız ve dilbilgisi tam da buna uygun: kendini başkasının yerine koymak, gerçek olmayan bir durumu kurmaktır — yani dilek kipi. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Geçmişe dönük dilek kipinde bir tuzak var: yardımcı fiilden sonra mastar değil ortaç gelir. Sonda sınayacağız. Önce kelimeler.")] },
-      word("İlk", { de: "das Mitgefühl", tr: "şefkat, empati" }),
+      word("İlk", { de: "das Mitgefühl", tr: "empati" }),
       word("İkinci", { de: "die Empathie", tr: "empati" }),
       word("Üçüncü", { de: "mitfühlen", tr: "empati kurmak" }),
       word("Dördüncü", { de: "das Mitleid", tr: "acıma" }, "Empatiden farkı: yukarıdan bakar."),
@@ -530,7 +530,7 @@ export const deB2B09: Lesson[] = [
     minutes: 12,
     focusId: "Nebensatz-sofern",
     vocab: [
-      { de: "das Wachstum", tr: "büyüme, gelişim" },
+      { de: "das Wachstum", tr: "büyüme" },
       { de: "die Geborgenheit", tr: "güven duygusu" },
       { de: "die Selbstverwirklichung", tr: "kendini gerçekleştirme" },
       { de: "der Wendepunkt", tr: "dönüm noktası" },
@@ -546,7 +546,7 @@ export const deB2B09: Lesson[] = [
     lecture: [
       { say: [tr("Merhaba! Modülün son dersi ve konusu değişim. Değişim hakkında konuşurken hiçbir söz kesin verilmez, hep bir koşula bağlanır. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bir de emir kipi var: 'ilk adımı at'. Emirde nesnenin hâline dikkat etmen gerekiyor. Sonda sınayacağız. Önce kelimeler.")] },
-      word("İlk", { de: "das Wachstum", tr: "büyüme, gelişim" }),
+      word("İlk", { de: "das Wachstum", tr: "büyüme" }),
       word("İkinci", { de: "die Geborgenheit", tr: "güven duygusu" }, "Rahat alanın Almanca adı: korunmuş, emin hissetme."),
       word("Üçüncü", { de: "die Selbstverwirklichung", tr: "kendini gerçekleştirme" }),
       word("Dördüncü", { de: "der Wendepunkt", tr: "dönüm noktası" }),

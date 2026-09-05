@@ -48,7 +48,7 @@ export const deB2B08: Lesson[] = [
       { de: "der Tarifvertrag", tr: "toplu iş sözleşmesi" },
       { de: "die Festanstellung", tr: "kadrolu iş" },
       { de: "die Aufstiegschance", tr: "yükselme fırsatı" },
-      { de: "angemessen", tr: "makul, uygun" },
+      { de: "angemessen", tr: "makul" },
     ],
     patterns: [
       { de: "Ich hätte mir … vorgestellt.", tr: "talebi teklife çevirir" },
@@ -64,7 +64,7 @@ export const deB2B08: Lesson[] = [
       word("Beşinci", { de: "der Tarifvertrag", tr: "toplu iş sözleşmesi" }),
       word("Altıncı", { de: "die Festanstellung", tr: "kadrolu iş" }),
       word("Yedinci", { de: "die Aufstiegschance", tr: "yükselme fırsatı" }),
-      word("Son", { de: "angemessen", tr: "makul, uygun" }),
+      word("Son", { de: "angemessen", tr: "makul" }),
       { say: [tr("Kalıbımız:"), de("Ich hätte mir … vorgestellt."), tr("Kelimesi kelimesine 'şöyle hayal etmiştim'; müzakerede 'benim beklentim şu' demektir.")] },
       { say: [tr("Örnek:"), de("Ich hätte mir eine Gehaltserhöhung um fünf Prozent vorgestellt."), tr("Tekrar edin:"), de("Ich hätte mir eine Gehaltserhöhung um fünf Prozent vorgestellt")], expect: repeat("Ich hätte mir eine Gehaltserhöhung um fünf Prozent vorgestellt") },
       { say: [tr("Sıra sende: 'Performansıma göre bu makul olurdu.'")], expect: produce("Gemessen an meiner Leistung wäre das angemessen", [tr("Bu edat yönelme hâli ister; dilek kipi ikinci sırada:"), de("Gemessen an meiner Leistung wäre das angemessen."), tr("Tekrar dene.")]) },
@@ -257,7 +257,7 @@ export const deB2B08: Lesson[] = [
     minutes: 12,
     focusId: "Um-zu",
     vocab: [
-      { de: "der Ausgleich", tr: "denge, telafi" },
+      { de: "der Ausgleich", tr: "denge" },
       { de: "die Belastung", tr: "yük" },
       { de: "die Arbeitszeit", tr: "çalışma süresi" },
       { de: "die Schichtarbeit", tr: "vardiyalı çalışma" },
@@ -273,7 +273,7 @@ export const deB2B08: Lesson[] = [
     lecture: [
       { say: [tr("Merhaba! Bugün sınır çizeceğiz. Sınır çizmek Almancada bir amaç cümlesiyle kurulur: 'kafamı dinlemek için telefonu kapatıyorum'. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bu yapıyı B1'de öğrenmiştin; burada zorluk kelime değil, cümlenin işlevi: kendini savunurken suçlayıcı olmamak. Önce kelimeler.")] },
-      word("İlk", { de: "der Ausgleich", tr: "denge, telafi" }),
+      word("İlk", { de: "der Ausgleich", tr: "denge" }),
       word("İkinci", { de: "die Belastung", tr: "yük" }),
       word("Üçüncü", { de: "die Arbeitszeit", tr: "çalışma süresi" }),
       word("Dördüncü", { de: "die Schichtarbeit", tr: "vardiyalı çalışma" }),
@@ -365,7 +365,7 @@ export const deB2B08: Lesson[] = [
     minutes: 12,
     focusId: "Nebensatz-obwohl",
     vocab: [
-      { de: "der Wechsel", tr: "geçiş, değişim" },
+      { de: "der Wechsel", tr: "geçiş" },
       { de: "bereuen", tr: "pişman olmak" },
       { de: "die Stellenanzeige", tr: "iş ilanı" },
       { de: "das Anforderungsprofil", tr: "aranan nitelikler" },
@@ -381,7 +381,7 @@ export const deB2B08: Lesson[] = [
     lecture: [
       { say: [tr("Merhaba! Bugün riskli bir kararı anlatacağız ve böyle anlatımların iskeleti zıtlıktır: güvenli olmasına RAĞMEN bıraktım. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bu bağlaç yan cümle kurar, yani fiil sona gider. Cümlenin gücü de tam oradan gelir: gerekçe ile karar yan yana durur. Önce kelimeler.")] },
-      word("İlk", { de: "der Wechsel", tr: "geçiş, değişim" }),
+      word("İlk", { de: "der Wechsel", tr: "geçiş" }),
       word("İkinci", { de: "bereuen", tr: "pişman olmak" }),
       word("Üçüncü", { de: "die Stellenanzeige", tr: "iş ilanı" }),
       word("Dördüncü", { de: "das Anforderungsprofil", tr: "aranan nitelikler" }, "İlanın 'sizden beklediklerimiz' bölümü."),
@@ -425,7 +425,7 @@ export const deB2B08: Lesson[] = [
       { de: "der Ruhestand", tr: "emeklilik" },
       { de: "die Berufsunfähigkeit", tr: "iş göremezlik" },
       { de: "der Zuschuss", tr: "sübvansiyon" },
-      { de: "die Lücke", tr: "açık, boşluk" },
+      { de: "die Lücke", tr: "boşluk" },
       { de: "vorzeitig", tr: "vaktinden önce" },
     ],
     patterns: [
@@ -441,7 +441,7 @@ export const deB2B08: Lesson[] = [
       word("Dördüncü", { de: "der Ruhestand", tr: "emeklilik" }),
       word("Beşinci", { de: "die Berufsunfähigkeit", tr: "iş göremezlik" }),
       word("Altıncı", { de: "der Zuschuss", tr: "sübvansiyon" }),
-      word("Yedinci", { de: "die Lücke", tr: "açık, boşluk" }),
+      word("Yedinci", { de: "die Lücke", tr: "boşluk" }),
       word("Son", { de: "vorzeitig", tr: "vaktinden önce" }),
       { say: [tr("Kalıbımız:"), de("Die Rente dürfte …"), tr("Tahmin; kesin konuşmadan uyarı yapar.")] },
       { say: [tr("Örnek:"), de("Die Rente dürfte für viele knapp werden."), tr("Tekrar edin:"), de("Die Rente dürfte für viele knapp werden")], expect: repeat("Die Rente dürfte für viele knapp werden") },

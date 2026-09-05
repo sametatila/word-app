@@ -150,7 +150,7 @@ export const deB2B03: Lesson[] = [
     minutes: 12,
     focusId: "Zustandspassiv",
     vocab: [
-      { de: "der Vorgang", tr: "süreç, işlem" },
+      { de: "der Vorgang", tr: "işlem" },
       { de: "betriebsbereit", tr: "çalışmaya hazır" },
       { de: "bezugsfertig", tr: "oturmaya hazır" },
       { de: "einwandfrei", tr: "kusursuz" },
@@ -166,7 +166,7 @@ export const deB2B03: Lesson[] = [
     lecture: [
       { say: [tr("Merhaba! Bugünkü ders küçük bir kelimeye bakıyor ama anlamı tamamen değiştiriyor. Türkçede 'kapı açılıyor' ve 'kapı açık' apayrı şeyler; Almanca bunu iki ayrı edilgenle ayırır. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Kural: werden ile kurulan edilgen SÜREÇTİR — bir şey oluyor. sein ile kurulan edilgen DURUMDUR — bir şey olmuş ve öyle duruyor. Önce kelimeler.")] },
-      word("İlk", { de: "der Vorgang", tr: "süreç, işlem" }),
+      word("İlk", { de: "der Vorgang", tr: "işlem" }),
       word("İkinci", { de: "betriebsbereit", tr: "çalışmaya hazır" }, "Bir durum bildirir, süreç değil."),
       word("Üçüncü", { de: "bezugsfertig", tr: "oturmaya hazır" }),
       word("Dördüncü", { de: "einwandfrei", tr: "kusursuz" }),
@@ -312,7 +312,7 @@ export const deB2B03: Lesson[] = [
     minutes: 12,
     focusId: "Passiv-Perfekt",
     vocab: [
-      { de: "sanieren", tr: "yenilemek, restore etmek" },
+      { de: "sanieren", tr: "restore etmek" },
       { de: "die Fassade", tr: "cephe" },
       { de: "die Renovierung", tr: "tadilat" },
       { de: "modernisieren", tr: "modernleştirmek" },
@@ -328,7 +328,7 @@ export const deB2B03: Lesson[] = [
     lecture: [
       { say: [tr("Merhaba! Bugün eski bir şehir merkezindeyiz. Bu konunun dili tamamen edilgen geçmiş: kimin onardığı değil, neyin onarılmış olduğu konuşulur. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bir de ince bir ayrım var: zaman belirtilmişse süreç anlatılıyordur ve kısalmış biçim gerekir. Bunu dersin sonunda sınayacağız. Önce kelimeler.")] },
-      word("İlk", { de: "sanieren", tr: "yenilemek, restore etmek" }),
+      word("İlk", { de: "sanieren", tr: "restore etmek" }),
       word("İkinci", { de: "die Fassade", tr: "cephe" }),
       word("Üçüncü", { de: "die Renovierung", tr: "tadilat" }),
       word("Dördüncü", { de: "modernisieren", tr: "modernleştirmek" }),

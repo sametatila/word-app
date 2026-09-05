@@ -97,7 +97,7 @@ export const deB2B05: Lesson[] = [
     minutes: 12,
     focusId: "Partizipialattribute",
     vocab: [
-      { de: "das Verfahren", tr: "yöntem, süreç" },
+      { de: "das Verfahren", tr: "yöntem" },
       { de: "der Testlauf", tr: "deneme çalışması" },
       { de: "die Handhabung", tr: "kullanım" },
       { de: "aktualisieren", tr: "güncellemek" },
@@ -113,7 +113,7 @@ export const deB2B05: Lesson[] = [
     lecture: [
       { say: [tr("Merhaba! Dün 'yapmakta olan' sıfatını kurduk. Bugün ikizi: 'yapılmış olan'. İkisi zıt yönlere bakıyor ve karıştırmak anlamı tersine çeviriyor. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Bu kez ortaç geçmiş biçimden geliyor. 'Geliştiren yöntem' başka, 'geliştirilen yöntem' başka; Almancada bu fark tek bir ortaçla söyleniyor. Önce kelimeler.")] },
-      word("İlk", { de: "das Verfahren", tr: "yöntem, süreç" }),
+      word("İlk", { de: "das Verfahren", tr: "yöntem" }),
       word("İkinci", { de: "der Testlauf", tr: "deneme çalışması" }),
       word("Üçüncü", { de: "die Handhabung", tr: "kullanım" }),
       word("Dördüncü", { de: "aktualisieren", tr: "güncellemek" }),
