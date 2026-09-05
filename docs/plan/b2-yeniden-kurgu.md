@@ -248,3 +248,80 @@ tek bir beceri egzersizi yok** (`buildTrack` çıktısı). Ders sözlükçesinde
 yenilendiği için bu sayı işin başındakinden yüksek ve beklenen. 25 ünite × 6 =
 **150 hizalı egzersiz** gerekiyor; brief'in "118" sayısı yalnız 50/50/50
 toplamına götürür, 25/25 hizaya değil (A2'de bu iki geçişte öğrenilmişti).
+
+## 11. Sonuç — beceri katmanı da bitti (2026-09-05)
+
+25 ünitenin tamamı hizalandı. Aşağıdaki sayılar kaynaktan okuyan bir
+doğrulayıcıyla ölçüldü, `npm run dump:skills` çıktısıyla karşılaştırıldı.
+
+### Hedef 3 — beceri egzersizleri üniteyle hizalansın
+
+`buildTrack` (`src/lib/immersion/build.ts`) havuzları **liste sırasıyla imleçle**
+tüketiyor, `unit` etiketine bakmıyor. `BASE_PATTERN` ünite başına 2 okuma,
+2 dinleme ve 2 yazma istiyor; 25 ünite için **50/50/50 yuva**.
+
+| Ölçüt | Başlangıç | Şimdi |
+|---|---|---|
+| Toplam B2 egzersizi | 32 | **182** |
+| okuma / dinleme / yazma | 12 / 12 / 8 | **62 / 62 / 58** |
+| Ünite hizalı (ilk 50 yuva) | 0 | **50 / 50 / 50** |
+| Hizalı ünite sayısı | 0 / 25 | **25 / 25** |
+| Silinen ya da yeniden adlandırılan eski egzersiz | — | **0** |
+
+Yeni 150 egzersiz `b2-u01.ts` … `b2-u25.ts` dosyalarında ve `b2.ts` listesinin
+**başında** duruyor. Eski 32 egzersiz aynı kimliklerle listenin sonunda kaldı;
+imleç 50. yuvada bittiği için patikaya girmiyorlar ama `user_skills` birincil
+anahtarı (`user_id`, `exercise_id`) ve canlı ilerleme bozulmadı — kural 2.
+
+### Her ünite kendi ders dörtlüsünün dilbilgisini ölçüyor
+
+Ünite dosyalarının başındaki doküman yorumu o ünitenin dört dersini, 32
+kelimesini ve kalıplarını sayıyor; egzersizler o kalıpları çalıştırıyor.
+Sözlükçe maddelerinin tamamı ünitenin kendi ders kelimeleri.
+
+Yazma egzersizlerinin ikincisi her ünitede farklı bir metin türü: haftalık
+rapor, süreç anlatımı, toplantı notu, okur mektubu, düzeltme metni, deneme
+raporu, yöntem açıklaması, iki kayıtlı duyuru, tartışma katkısı, konuşma
+metni, eleştiri, deneyim yazısı, resmî e-posta, proje tanımı, karar notu,
+anlatı, kişisel mesaj, resmî mektup, kapanış metni, referans mektubu.
+
+### Doğrulama (kapanış)
+
+| Komut | Sonuç |
+|---|---|
+| `npm run check:lessons` | **hata yok**, 7 uyarı (hepsi B1, paralel oturum) |
+| `npx tsc --noEmit` (kök) | temiz |
+| `npx tsc --noEmit` (`mobile/`) | temiz |
+| `npm run test:track` | 64 kontrol geçti |
+| `npm run test:options` | 4813 isim, 0 eksik artikel |
+| `npm run test:content` | B2'de 0 uyarı |
+| `npm run test:exams` | 8 hata — sekizi de B1.11-B1.18 sınav planı; **paralel oturuma ait** |
+
+`test:content` yazarken 17 kusur yakaladı ve hepsi düzeltildi: 15'i metinde
+geçmeyen sözlükçe maddesi, biri beş kelimeyi aşan `short_answer` kabulü, biri
+parantezli Türkçe gloss. Doğrulayıcı her ünite yazıldıktan sonra tek tek
+çalıştırıldı, toplu değil — kusur bir sonraki üniteye taşınmadı.
+
+### Havuzun son hâli
+
+| Katman | Madde |
+|---|---|
+| A1 | 897 |
+| A2 | 1452 |
+| B1 | 1829 |
+| B2 | **2061** |
+| C1 | 2468 |
+| **Toplam** | **8707** |
+
+Havuza yalnız 20 gerçek madde başı eklendi (id 8535-8554); türev eklenmedi,
+rank uydurulmadı — hepsi `data/a2-expansion/de_50k.txt` satır numarası.
+Üretim veritabanına yazılmadı.
+
+### Kalan iş
+
+- B2'nin dilbilgisi katmanı (`grammar/`) bu oturumda ele alınmadı; ders ve
+  beceri katmanları birbirine göre tutarlı, dilbilgisi sayfaları ayrı bir iş.
+- `test:exams`in 8 hatası B1'e ait ve orada duruyor.
+- Kapsama %38,8'de: 800 yuva ÷ 2061 madde matematiksel tavan. Kapsamayı
+  artırmanın tek yolu ders sayısını ya da sözlükçe boyunu büyütmek; ikisi de
+  ders kimliklerini ve sözleşmeyi ilgilendirdiği için ayrı bir karar.
