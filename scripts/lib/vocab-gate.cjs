@@ -83,7 +83,7 @@ const DUZENSIZ = {
   tragen: ["trägt", "trug", "getragen"], rufen: ["ruft", "rief", "gerufen"],
   // Karma fiil: ünlü DEĞİŞİR ama ek ZAYIF kalır (kennen → kannte). Ne ünlü
   // kuralı ne zayıf kural tek başına üretebiliyor. denken/bringen zaten yukarıda.
-  kennen: ["kennt", "kannte", "gekannt"],
+  kennen: ["kennt", "kannte", "gekannt"], sitzen: ["sitzt", "saß", "gesessen"],
 };
 
 // Almanca sayı BİLEŞİKTİR: "achtunddreißig" = acht+und+dreißig. Parçaları
@@ -234,10 +234,13 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
       // ÖĞRETİLEN fiilin kendisi kayma sayılıyordu.
       // Değişen ünlü gövdenin SON ünlüsüdür, ilki değil: bewerb → bewirb
       // (biwerb değil). İlk ünlüyü değiştiren kural önekli fiilleri bozuyordu.
-      for (const [a, b2] of [["e", "i"], ["e", "ie"], ["a", "ä"], ["e", "o"], ["e", "a"], ["i", "a"], ["o", "a"], ["i", "u"], ["ie", "o"]]) {
+      for (const [a, b2] of [["ei", "ie"], ["e", "i"], ["e", "ie"], ["a", "ä"], ["e", "o"], ["e", "a"], ["i", "a"], ["o", "a"], ["i", "u"], ["ie", "o"]]) {
         const i = g.lastIndexOf(a);
         if (i < 0) continue;
-        const v = g.slice(0, i) + b2 + g.slice(i + 1);
+        // a TEK harf olmayabilir ("ei", "ie"): kesme uzunluğu a kadar olmalı.
+        // i+1 sabiti çok harfli ünlüde artığı bırakıyordu (steig → "stieig"),
+        // yani ["ie","o"] kuralı da baştan beri hiç çalışmamıştı.
+        const v = g.slice(0, i) + b2 + g.slice(i + a.length);
         for (const son of ["", "t", "st", "en", "e"]) izinCekim.add(v + son);
         izinCekim.add("ge" + v + "en");
         // Güçlü fiilin geçmişinde çift ünsüz sadeleşir: bekomm → bekam.
@@ -257,6 +260,9 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
           // eklerini üret: güçlü gövdeye -en/-st/-t, zayıf -te gövdesine -n/-st/-t.
           if (b === bicimler[1]) {
             for (const son of ["en", "st", "t", "n"]) izinCekim.add(on + b + son);
+            // d/t ile biten gövde bağlantı ünlüsü alır: fand → fandest,
+            // fandet (fandst değil) — ortaçtaki gearbeitet ile aynı sebep.
+            if (/[td]$/.test(b)) for (const son of ["est", "et"]) izinCekim.add(on + b + son);
           }
           // Aynı eksiklik ŞİMDİKİ zamanda da var: tablo 3. tekili tutuyor
           // ("nimmt", "wird") ama diyalog 2. tekili ve emri kullanıyor
