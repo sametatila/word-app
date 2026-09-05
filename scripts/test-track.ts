@@ -225,6 +225,45 @@ check("farklı ünite farklı tekrar seti", JSON.stringify(deriveQuiz({ ...later
 check("ünite 1'de tekrar yok (geçmiş boş) → eski davranış", JSON.stringify(deriveQuiz(briefs[0], qpool, 6, { vocab: [], patterns: [] })) === JSON.stringify(quiz));
 check("soru metni tekrar olduğunu ele vermiyor", backQ.every((q) => q.text.startsWith("«") && q.text.endsWith("» ne demek?")));
 
+/*
+  PRATİK ÖĞELER PENCEREYİ TIKAMAZ (regresyon).
+
+  Gramer/quiz/kontrol noktası ilerleme kaydı tutmuyor: itemAttempted onlara
+  daima false döner. Pencerenin "sıradaki" yuvasını almalarına izin verilince
+  pencere orada park ediyordu ve ünitenin KAPANIŞ adımı (kontrol noktası)
+  hiçbir ünitede açılamıyordu. Testler bunu görmüyordu — 64 kontrol yeşilken
+  kusur canlıydı.
+*/
+const tumRef = new Set(
+  t.units[0].items
+    .filter((i) => ["lesson", "read", "listen", "write"].includes(i.kind) && i.ref)
+    .map((i) => i.ref as string),
+);
+const sTam = buildTrackState(t, {
+  lessonDone: (r) => tumRef.has(r),
+  skillDone: (r) => tumRef.has(r),
+  lessonAttempted: (r) => tumRef.has(r),
+  skillAttempted: (r) => tumRef.has(r),
+});
+const tamItems = sTam.units[0].items;
+const kontrol = tamItems.find((i) => i.item.kind === "checkpoint");
+const quizItem = tamItems.find((i) => i.item.kind === "quiz");
+check("ünite bitince KONTROL NOKTASI açılır", kontrol?.open === true);
+check("ünite bitince quiz açılır", quizItem?.open === true);
+check("pratik öğeler pencereyi harcamaz (ikisi birden açık)", Boolean(kontrol?.open && quizItem?.open));
+
+// Ünite yarımken pratik öğeleri kapalı kalmalı: sıra hâlâ korunuyor.
+const eksikRef = new Set([...tumRef].slice(0, 2));
+const sYarim = buildTrackState(t, {
+  lessonDone: (r) => eksikRef.has(r),
+  skillDone: (r) => eksikRef.has(r),
+  lessonAttempted: (r) => eksikRef.has(r),
+  skillAttempted: (r) => eksikRef.has(r),
+});
+const yarimItems = sYarim.units[0].items;
+check("ünite yarımken kontrol noktası KAPALI", yarimItems.find((i) => i.item.kind === "checkpoint")?.open === false);
+check("ünite yarımken quiz KAPALI", yarimItems.find((i) => i.item.kind === "quiz")?.open === false);
+
 if (fail.length) {
   console.error(`\n${fail.length} TEST BAŞARISIZ:`);
   for (const f of fail) console.error("  ✗ " + f);

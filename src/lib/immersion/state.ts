@@ -113,6 +113,25 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
     let siradakiVerildi = false;
     for (const s of items) {
       if (locked || !s.playable) continue;
+      /*
+        PRATİK ÖĞELER SIRAYI HARCAMAZ — yer tutucularla aynı gerekçe.
+
+        Gramer/quiz/kontrol noktası ilerleme kaydı TUTMUYOR (itemDone ve
+        itemAttempted onlara daima false döndürür; bkz. yukarısı). Pencerenin
+        "sıradaki" yuvasını almalarına izin verilince pencere orada park
+        ediyordu: quiz açılıyor, arkasındaki kontrol noktası sonsuza kadar
+        kapalı kalıyordu — çünkü quiz'in denenmiş sayılmasının bir yolu yok.
+        Ölçüldü: ünitenin tüm dersi ve becerisi bitmiş kullanıcıda bile
+        kontrol noktası HİÇBİR ünitede açılmıyordu (gramer yazılmış ünitede
+        quiz de açılmıyordu).
+
+        Doğrusu: bunlar kapı değil pratik. Ünitedeki bütün kayıt tutan adımlar
+        denendiyse (yani pencere hâlâ kimseye verilmediyse) açılırlar; bir
+        adım eksikse kapalı kalırlar. Sırayı ise hiç harcamazlar.
+      */
+      const kayitTutar =
+        s.item.kind === "lesson" || s.item.kind === "read" || s.item.kind === "listen" || s.item.kind === "write";
+      if (!kayitTutar) { s.open = !siradakiVerildi; continue; }
       if (s.attempted) { s.open = true; continue; }
       if (!siradakiVerildi) { s.open = true; siradakiVerildi = true; }
     }
