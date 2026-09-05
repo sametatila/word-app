@@ -85,67 +85,67 @@ export function ExamScreen() {
   const nav = useNavigation<any>();
   const route = useRoute<RouteProp<RootStackParams, "Exam">>();
   const level = route.params?.level ?? "A1";
-  const modul = route.params?.module ?? null;
+  const moduleIx = route.params?.module ?? null;
 
   const [paper, setPaper] = useState<Paper | null>(null);
-  const [hata, setHata] = useState<string | null>(null);
-  const [faz, setFaz] = useState<"yukleniyor" | "kapak" | "bolum" | "sonuc">("yukleniyor");
+  const [err, setHata] = useState<string | null>(null);
+  const [phase, setFaz] = useState<"yukleniyor" | "kapak" | "bolum" | "sonuc">("yukleniyor");
   const [secIdx, setSecIdx] = useState(0);
-  const [kalan, setKalan] = useState(0);
-  const [sonuc, setSonuc] = useState<Result | null>(null);
-  const skor = useRef<Record<SectionId, { correct: number; total: number }>>({
+  const [left, setKalan] = useState(0);
+  const [result, setSonuc] = useState<Result | null>(null);
+  const score = useRef<Record<SectionId, { correct: number; total: number }>>({
     vocab: { correct: 0, total: 0 }, grammar: { correct: 0, total: 0 }, produce: { correct: 0, total: 0 },
     reading: { correct: 0, total: 0 }, listening: { correct: 0, total: 0 }, speaking: { correct: 0, total: 0 }, writing: { correct: 0, total: 0 },
   });
-  const konusmaPuan = useRef<number[]>([]);
-  const yazmaPuan = useRef<number | null>(null);
-  const basladi = useRef(Date.now());
-  const gonderildi = useRef(false);
+  const speakScores = useRef<number[]>([]);
+  const writeScore = useRef<number | null>(null);
+  const startedAt = useRef(Date.now());
+  const sent = useRef(false);
 
   useEffect(() => {
-    let iptal = false;
+    let cancelled = false;
     api<{ paper: Paper }>("/api/exam", {
       method: "POST",
-      body: JSON.stringify({ action: "start", level, module: modul, day: todayStr() }),
+      body: JSON.stringify({ action: "start", level, module: moduleIx, day: todayStr() }),
     })
       .then((d) => {
-        if (iptal) return;
+        if (cancelled) return;
         setPaper(d.paper);
         setKalan(d.paper.seconds);
         setFaz("kapak");
       })
-      .catch((e: Error) => !iptal && setHata(e.message || t("exam.could_not_load")));
-    return () => { iptal = true; };
-  }, [level, modul]);
+      .catch((e: Error) => !cancelled && setHata(e.message || t("exam.could_not_load")));
+    return () => { cancelled = true; };
+  }, [level, moduleIx]);
 
   // Süre yalnız sınav sürerken işler; kapakta ve sonuçta durur.
   useEffect(() => {
-    if (faz !== "bolum") return;
+    if (phase !== "bolum") return;
     const id = setInterval(() => setKalan((n) => Math.max(0, n - 1)), 1000);
     return () => clearInterval(id);
-  }, [faz]);
+  }, [phase]);
 
   useEffect(() => {
-    if (faz === "bolum" && kalan === 0) void bitir();
-  }, [kalan, faz]);
+    if (phase === "bolum" && left === 0) void stopRec();
+  }, [left, phase]);
 
-  const dolu = (): SectionId[] =>
+  const filledSections = (): SectionId[] =>
     paper ? SECTION_ORDER.filter((s) => (paper.sections[s]?.length ?? 0) > 0) : [];
 
-  async function bitir() {
-    if (gonderildi.current || !paper) return;
-    gonderildi.current = true;
-    const sections = dolu().map((id) => ({ id, correct: skor.current[id].correct, total: skor.current[id].total }));
-    const sp = konusmaPuan.current.length
-      ? Math.round(konusmaPuan.current.reduce((a, b) => a + b, 0) / konusmaPuan.current.length)
+  async function stopRec() {
+    if (sent.current || !paper) return;
+    sent.current = true;
+    const sections = filledSections().map((id) => ({ id, correct: score.current[id].correct, total: score.current[id].total }));
+    const sp = speakScores.current.length
+      ? Math.round(speakScores.current.reduce((a, b) => a + b, 0) / speakScores.current.length)
       : null;
     try {
       const d = await api<{ result: Result }>("/api/exam", {
         method: "POST",
         body: JSON.stringify({
-          action: "finish", level, module: modul, day: todayStr(),
-          sections, speakingScore: sp, writingScore: yazmaPuan.current,
-          seconds: Math.round((Date.now() - basladi.current) / 1000),
+          action: "finish", level, module: moduleIx, day: todayStr(),
+          sections, speakingScore: sp, writingScore: writeScore.current,
+          seconds: Math.round((Date.now() - startedAt.current) / 1000),
         }),
       });
       setSonuc(d.result);
@@ -155,18 +155,18 @@ export function ExamScreen() {
     setFaz("sonuc");
   }
 
-  function bolumBitti(id: SectionId, correct: number, total: number) {
-    skor.current[id] = { correct, total };
-    const list = dolu();
+  function sectionDone(id: SectionId, correct: number, total: number) {
+    score.current[id] = { correct, total };
+    const list = filledSections();
     const i = list.indexOf(id);
     if (i + 1 < list.length) setSecIdx(i + 1);
-    else void bitir();
+    else void stopRec();
   }
 
-  const dk = Math.floor(kalan / 60);
-  const sn = String(kalan % 60).padStart(2, "0");
+  const mm = Math.floor(left / 60);
+  const ss = String(left % 60).padStart(2, "0");
 
-  const baslik = (
+  const header = (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
       <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
         <XIcon color={colors.textMuted} size={22} />
@@ -175,22 +175,22 @@ export function ExamScreen() {
         <Text variant="micro" color={colors.textMuted}>
           {paper?.cover ? `${paper.cover.code} · ${paper.cover.titleTr}` : t("exam.level_exam", { level })}
         </Text>
-        <Text variant="h3">{faz === "bolum" ? `${dk}:${sn}` : t("examprep.exam_prep")}</Text>
+        <Text variant="h3">{phase === "bolum" ? `${mm}:${ss}` : t("examprep.exam_prep")}</Text>
       </View>
     </View>
   );
 
-  if (hata) {
+  if (err) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={90} />
-        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{hata}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{err}</Text>
         <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primary}>{t("item.go_back")}</Text></PressableScale>
       </View>
     );
   }
 
-  if (faz === "yukleniyor" || !paper) {
+  if (phase === "yukleniyor" || !paper) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center" }}>
         <ActivityIndicator color={colors.primary} />
@@ -198,10 +198,10 @@ export function ExamScreen() {
     );
   }
 
-  if (faz === "kapak") {
+  if (phase === "kapak") {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        {baslik}
+        {header}
         <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
           {paper.cover ? (
             <Card padded style={{ gap: spacing.sm }}>
@@ -214,7 +214,7 @@ export function ExamScreen() {
           ) : null}
           <Card padded style={{ gap: spacing.xs }}>
             <Text variant="bodyStrong">{t("exam.sections")}</Text>
-            {dolu().map((s) => (
+            {filledSections().map((s) => (
               <Text key={s} variant="caption" color={colors.textMuted}>
                 {SECTION_DE[s]} · {t(SECTION_KEY[s])} ({paper.sections[s].length})
               </Text>
@@ -226,7 +226,7 @@ export function ExamScreen() {
           {paper.trial ? (
             <Card padded><Text variant="caption" color={colors.textMuted}>{t("exam.trial_notice")}</Text></Card>
           ) : null}
-          <PressableScale onPress={() => { basladi.current = Date.now(); setFaz("bolum"); }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={() => { startedAt.current = Date.now(); setFaz("bolum"); }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("exam.start")}</Text>
           </PressableScale>
         </ScrollView>
@@ -234,22 +234,22 @@ export function ExamScreen() {
     );
   }
 
-  if (faz === "sonuc") {
-    const pct = sonuc?.total ?? 0;
+  if (phase === "sonuc") {
+    const pct = result?.total ?? 0;
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        {baslik}
+        {header}
         <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
           <Card padded style={{ alignItems: "center", gap: spacing.sm }}>
-            <Celebrate show={!!sonuc?.passed} />
-            <Mascot mood={sonuc?.passed ? "celebrate" : "idle"} size={90} />
+            <Celebrate show={!!result?.passed} />
+            <Mascot mood={result?.passed ? "celebrate" : "idle"} size={90} />
             <Text variant="h1">%{pct}</Text>
-            <Text variant="bodyStrong" color={sonuc?.passed ? colors.success : colors.textMuted}>
-              {sonuc ? (sonuc.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}
+            <Text variant="bodyStrong" color={result?.passed ? colors.success : colors.textMuted}>
+              {result ? (result.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}
             </Text>
-            {sonuc?.trial ? <Text variant="caption" color={colors.textMuted}>{t("exam.trial_notice")}</Text> : null}
+            {result?.trial ? <Text variant="caption" color={colors.textMuted}>{t("exam.trial_notice")}</Text> : null}
           </Card>
-          {sonuc?.sections.map((s) => (
+          {result?.sections.map((s) => (
             <Card key={s.id} padded style={{ flexDirection: "row", justifyContent: "space-between" }}>
               <Text variant="body">{SECTION_DE[s.id]} · {t(SECTION_KEY[s.id])}</Text>
               <Text variant="bodyStrong" color={s.pct >= 50 ? colors.success : colors.danger}>%{s.pct}</Text>
@@ -263,25 +263,25 @@ export function ExamScreen() {
     );
   }
 
-  const list = dolu();
-  const aktif = list[secIdx];
+  const list = filledSections();
+  const active = list[secIdx];
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      {baslik}
+      {header}
       <View style={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
         <Text variant="micro" color={colors.textMuted}>
-          {secIdx + 1}/{list.length} · {SECTION_DE[aktif]} · {t(SECTION_KEY[aktif])}
+          {secIdx + 1}/{list.length} · {SECTION_DE[active]} · {t(SECTION_KEY[active])}
         </Text>
       </View>
       <SectionBody
-        key={aktif}
-        id={aktif}
+        key={active}
+        id={active}
         paper={paper}
         colors={colors}
         insets={insets}
-        onSpeakScore={(p) => konusmaPuan.current.push(p)}
-        onWriteScore={(p) => { yazmaPuan.current = p; }}
-        onDone={(c, tot) => bolumBitti(aktif, c, tot)}
+        onSpeakScore={(p) => speakScores.current.push(p)}
+        onWriteScore={(p) => { writeScore.current = p; }}
+        onDone={(c, tot) => sectionDone(active, c, tot)}
       />
     </View>
   );
@@ -298,20 +298,20 @@ function SectionBody({
   onWriteScore: (p: number) => void;
 }) {
   const [idx, setIdx] = useState(0);
-  const dogru = useRef(0);
+  const correctRef = useRef(0);
   const pad = { paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md };
 
-  function ilerle(ok: boolean, toplam: number) {
-    if (ok) dogru.current += 1;
+  function advance(ok: boolean, toplam: number) {
+    if (ok) correctRef.current += 1;
     if (idx + 1 < toplam) setIdx(idx + 1);
-    else onDone(dogru.current, toplam);
+    else onDone(correctRef.current, toplam);
   }
 
   if (id === "vocab") {
     const r = paper.sections.vocab[idx];
     return (
       <View style={{ flex: 1 }}>
-        <RoundView key={r.id} round={r} onDone={(ok) => ilerle(ok, paper.sections.vocab.length)} />
+        <RoundView key={r.id} round={r} onDone={(ok) => advance(ok, paper.sections.vocab.length)} />
       </View>
     );
   }
@@ -323,20 +323,20 @@ function SectionBody({
         {it.kind === "cell" ? (
           <Choice
             key={it.id}
-            soru={`${it.sheet} · ${it.label}`}
-            secenekler={it.options}
-            dogruIdx={it.answer}
+            prompt={`${it.sheet} · ${it.label}`}
+            options={it.options}
+            answerIdx={it.answer}
             colors={colors}
-            onPick={(ok) => ilerle(ok, paper.sections.grammar.length)}
+            onPick={(ok) => advance(ok, paper.sections.grammar.length)}
           />
         ) : (
           <Choice
             key={it.id}
-            soru={it.statement}
-            secenekler={[t("common.true"), t("common.false")]}
-            dogruIdx={it.answer ? 0 : 1}
+            prompt={it.statement}
+            options={[t("common.true"), t("common.false")]}
+            answerIdx={it.answer ? 0 : 1}
             colors={colors}
-            onPick={(ok) => ilerle(ok, paper.sections.grammar.length)}
+            onPick={(ok) => advance(ok, paper.sections.grammar.length)}
           />
         )}
       </ScrollView>
@@ -345,38 +345,38 @@ function SectionBody({
 
   if (id === "produce") {
     const it = paper.sections.produce[idx];
-    return <Produce key={it.id} it={it} colors={colors} pad={pad} onDone={(ok) => ilerle(ok, paper.sections.produce.length)} />;
+    return <Produce key={it.id} it={it} colors={colors} pad={pad} onDone={(ok) => advance(ok, paper.sections.produce.length)} />;
   }
 
   if (id === "reading" || id === "listening") {
     const items = paper.sections[id];
     return <TextSection key={items[idx].id} it={items[idx]} spoken={id === "listening"} colors={colors} pad={pad}
-      onDone={(c, tot) => { dogru.current += c; if (idx + 1 < items.length) setIdx(idx + 1); else onDone(dogru.current, items.reduce((a, x) => a + x.questions.length, 0)); }} />;
+      onDone={(c, tot) => { correctRef.current += c; if (idx + 1 < items.length) setIdx(idx + 1); else onDone(correctRef.current, items.reduce((a, x) => a + x.questions.length, 0)); }} />;
   }
 
   if (id === "speaking") {
     const it = paper.sections.speaking[idx];
     return <Speak key={it.id} it={it} colors={colors} pad={pad}
-      onDone={(ok, puan) => { onSpeakScore(puan); ilerle(ok, paper.sections.speaking.length); }} />;
+      onDone={(ok, score) => { onSpeakScore(score); advance(ok, paper.sections.speaking.length); }} />;
   }
 
   const w = paper.sections.writing[0];
   return <Write w={w} level={paper.level} colors={colors} pad={pad}
-    onDone={(ok, puan) => { onWriteScore(puan); onDone(ok ? 1 : 0, 1); }} />;
+    onDone={(ok, score) => { onWriteScore(score); onDone(ok ? 1 : 0, 1); }} />;
 }
 
-function Choice({ soru, secenekler, dogruIdx, colors, onPick }: { soru: string; secenekler: string[]; dogruIdx: number; colors: Palette; onPick: (ok: boolean) => void }) {
+function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string; options: string[]; answerIdx: number; colors: Palette; onPick: (ok: boolean) => void }) {
   const [pick, setPick] = useState<number | null>(null);
   return (
     <Card padded style={{ gap: spacing.sm }}>
-      <Text variant="bodyStrong" style={{ lineHeight: 24 }}>{soru}</Text>
-      {secenekler.map((o, i) => {
-        const secildi = pick !== null;
-        const renk = !secildi ? colors.surface : i === dogruIdx ? colors.success : pick === i ? colors.danger : colors.surface;
+      <Text variant="bodyStrong" style={{ lineHeight: 24 }}>{prompt}</Text>
+      {options.map((o, i) => {
+        const picked = pick !== null;
+        const bg = !picked ? colors.surface : i === answerIdx ? colors.success : pick === i ? colors.danger : colors.surface;
         return (
-          <PressableScale key={i} disabled={secildi} onPress={() => { setPick(i); setTimeout(() => onPick(i === dogruIdx), 550); }}
-            style={{ backgroundColor: renk, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 13, paddingHorizontal: spacing.md }}>
-            <Text variant="body" color={secildi && (i === dogruIdx || pick === i) ? "#fff" : colors.text}>{o}</Text>
+          <PressableScale key={i} disabled={picked} onPress={() => { setPick(i); setTimeout(() => onPick(i === answerIdx), 550); }}
+            style={{ backgroundColor: bg, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 13, paddingHorizontal: spacing.md }}>
+            <Text variant="body" color={picked && (i === answerIdx || pick === i) ? "#fff" : colors.text}>{o}</Text>
           </PressableScale>
         );
       })}
@@ -388,9 +388,9 @@ function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette
   const [typed, setTyped] = useState("");
   const [parts, setParts] = useState<string[]>([]);
   const [done, setDone] = useState(false);
-  const kalanParca = (it.chunks ?? []).filter((c, i) => !parts.includes(`${i}:${c}`));
-  const cevap = it.mode === "order" ? parts.map((p) => p.split(":").slice(1).join(":")).join(" ") : typed;
-  const ok = written(cevap, [it.de, ...it.accept]);
+  const leftChunks = (it.chunks ?? []).filter((c, i) => !parts.includes(`${i}:${c}`));
+  const answer = it.mode === "order" ? parts.map((p) => p.split(":").slice(1).join(":")).join(" ") : typed;
+  const ok = written(answer, [it.de, ...it.accept]);
 
   return (
     <ScrollView contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
@@ -408,10 +408,10 @@ function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette
             </View>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs }}>
               {(it.chunks ?? []).map((c, i) => {
-                const anahtar = `${i}:${c}`;
-                if (parts.includes(anahtar)) return null;
+                const key = `${i}:${c}`;
+                if (parts.includes(key)) return null;
                 return (
-                  <PressableScale key={anahtar} disabled={done} onPress={() => setParts([...parts, anahtar])}
+                  <PressableScale key={key} disabled={done} onPress={() => setParts([...parts, key])}
                     style={{ backgroundColor: colors.surface2, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 8 }}>
                     <Text variant="body">{c}</Text>
                   </PressableScale>
@@ -428,23 +428,23 @@ function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette
           <Text variant="caption" color={colors.textMuted}>{t("common.answer_is")} <Text variant="caption" style={{ fontWeight: "700" }}>{it.de}</Text></Text>
         ) : null}
         <PressableScale
-          disabled={!cevap.trim() && !done}
+          disabled={!answer.trim() && !done}
           onPress={() => (done ? onDone(ok) : setDone(true))}
-          style={{ backgroundColor: cevap.trim() || done ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-          <Text variant="bodyStrong" color={cevap.trim() || done ? colors.onPrimary : colors.textFaint}>
+          style={{ backgroundColor: answer.trim() || done ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+          <Text variant="bodyStrong" color={answer.trim() || done ? colors.onPrimary : colors.textFaint}>
             {done ? t("common.next") : t("skillquiz.check")}
           </Text>
         </PressableScale>
       </Card>
-      {kalanParca.length === 0 && it.mode === "order" ? null : null}
+      {leftChunks.length === 0 && it.mode === "order" ? null : null}
     </ScrollView>
   );
 }
 
 function TextSection({ it, spoken, colors, pad, onDone }: { it: TextItem; spoken: boolean; colors: Palette; pad: object; onDone: (correct: number, total: number) => void }) {
   const [answers, setAnswers] = useState<(number | null)[]>(() => it.questions.map(() => null));
-  const bitti = answers.every((a) => a !== null);
-  const dogru = answers.filter((a, i) => a === it.questions[i].answer).length;
+  const allAnswered = answers.every((a) => a !== null);
+  const correctRef = answers.filter((a, i) => a === it.questions[i].answer).length;
   return (
     <ScrollView contentContainerStyle={pad}>
       <Card padded style={{ gap: spacing.xs }}>
@@ -462,19 +462,19 @@ function TextSection({ it, spoken, colors, pad, onDone }: { it: TextItem; spoken
         <Card key={qi} padded style={{ gap: spacing.sm }}>
           <Text variant="bodyStrong" style={{ lineHeight: 23 }}>{q.textTr ?? q.text}</Text>
           {q.options.map((o, oi) => {
-            const secildi = answers[qi] !== null;
-            const renk = !secildi ? colors.surface : oi === q.answer ? colors.success : answers[qi] === oi ? colors.danger : colors.surface;
+            const picked = answers[qi] !== null;
+            const bg = !picked ? colors.surface : oi === q.answer ? colors.success : answers[qi] === oi ? colors.danger : colors.surface;
             return (
-              <PressableScale key={oi} disabled={secildi} onPress={() => setAnswers(answers.map((a, i) => (i === qi ? oi : a)))}
-                style={{ backgroundColor: renk, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 12, paddingHorizontal: spacing.md }}>
-                <Text variant="body" color={secildi && (oi === q.answer || answers[qi] === oi) ? "#fff" : colors.text}>{o}</Text>
+              <PressableScale key={oi} disabled={picked} onPress={() => setAnswers(answers.map((a, i) => (i === qi ? oi : a)))}
+                style={{ backgroundColor: bg, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 12, paddingHorizontal: spacing.md }}>
+                <Text variant="body" color={picked && (oi === q.answer || answers[qi] === oi) ? "#fff" : colors.text}>{o}</Text>
               </PressableScale>
             );
           })}
         </Card>
       ))}
-      {bitti ? (
-        <PressableScale onPress={() => onDone(dogru, it.questions.length)} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+      {allAnswered ? (
+        <PressableScale onPress={() => onDone(correctRef, it.questions.length)} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
           <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
         </PressableScale>
       ) : null}
@@ -482,24 +482,24 @@ function TextSection({ it, spoken, colors, pad, onDone }: { it: TextItem; spoken
   );
 }
 
-function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette; pad: object; onDone: (ok: boolean, puan: number) => void }) {
-  const [durum, setDurum] = useState<"idle" | "rec" | "done" | "err">("idle");
-  const [duyulan, setDuyulan] = useState("");
-  const [ipucu, setIpucu] = useState<string | null>(null);
+function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette; pad: object; onDone: (ok: boolean, score: number) => void }) {
+  const [phase, setDurum] = useState<"idle" | "rec" | "done" | "err">("idle");
+  const [heard, setDuyulan] = useState("");
+  const [tip, setIpucu] = useState<string | null>(null);
   const [ok, setOk] = useState(false);
 
-  async function dinle() {
-    if (durum === "rec") return;
+  async function listen() {
+    if (phase === "rec") return;
     if (!(await ensureMicPermission())) { setIpucu(t("speak.mic_needed")); setDurum("err"); return; }
     setDurum("rec"); setIpucu(null);
     const heard = await listenOnce(currentTargetLocale(), 8000);
     if (!heard?.length) { setIpucu(t("speak.not_heard")); setDurum("err"); return; }
     setDuyulan(heard[0]);
-    const gecti = spokenMatches(heard, [it.de]);
-    setOk(gecti);
-    if (!gecti) {
-      const düz = heard.map((h) => h.toLowerCase());
-      setIpucu((it.confusions ?? []).find((c) => c.heard.some((x) => düz.some((h) => h.includes(x.toLowerCase()))))?.fix ?? it.hint ?? null);
+    const ok = spokenMatches(heard, [it.de]);
+    setOk(ok);
+    if (!ok) {
+      const lowered = heard.map((h) => h.toLowerCase());
+      setIpucu((it.confusions ?? []).find((c) => c.heard.some((x) => lowered.some((h) => h.includes(x.toLowerCase()))))?.fix ?? it.hint ?? null);
     }
     setDurum("done");
   }
@@ -513,19 +513,19 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
           <PressableScale onPress={() => void speakTarget(it.de)} hitSlop={6}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
         </View>
         <Text variant="body" color={colors.textMuted}>{it.tr}</Text>
-        {duyulan ? <Text variant="caption" color={colors.textMuted}>{t("speak.heard")}: {duyulan}</Text> : null}
-        {durum === "done" ? (
+        {heard ? <Text variant="caption" color={colors.textMuted}>{t("speak.heard")}: {heard}</Text> : null}
+        {phase === "done" ? (
           <Text variant="bodyStrong" color={ok ? colors.success : colors.danger}>{ok ? t("speak.correct") : t("exam.speak_missed")}</Text>
         ) : null}
-        {ipucu ? <Text variant="body" style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>{ipucu}</Text> : null}
-        {durum === "rec" ? (
+        {tip ? <Text variant="body" style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>{tip}</Text> : null}
+        {phase === "rec" ? (
           <Text variant="bodyStrong" color={colors.primary} style={{ textAlign: "center", paddingVertical: 14 }}>{t("speak.listening")}</Text>
-        ) : durum === "done" ? (
+        ) : phase === "done" ? (
           <PressableScale onPress={() => onDone(ok, ok ? 100 : 40)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
           </PressableScale>
         ) : (
-          <PressableScale onPress={() => void dinle()} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+          <PressableScale onPress={() => void listen()} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("speak.record")}</Text>
           </PressableScale>
         )}
@@ -534,21 +534,21 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
   );
 }
 
-function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: string; colors: Palette; pad: object; onDone: (ok: boolean, puan: number) => void }) {
+function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: string; colors: Palette; pad: object; onDone: (ok: boolean, score: number) => void }) {
   const [typed, setTyped] = useState("");
   const [busy, setBusy] = useState(false);
-  const [puan, setPuan] = useState<number | null>(null);
-  const kelime = typed.trim() ? typed.trim().split(/\s+/).length : 0;
+  const [score, setPuan] = useState<number | null>(null);
+  const wordCount = typed.trim() ? typed.trim().split(/\s+/).length : 0;
 
-  async function degerlendir() {
-    if (busy || kelime < 5) return;
+  async function evaluate() {
+    if (busy || wordCount < 5) return;
     setBusy(true);
     try {
       const d = await api<{ result: { score?: { overall?: number } } }>("/api/assess", {
         method: "POST",
         body: JSON.stringify({
           kind: "writing", level,
-          task: { prompt: w.task.prompt, constraints: [...w.task.checklist, `en az ${w.task.minWords} kelime`] },
+          task: { prompt: w.task.prompt, constraints: [...w.task.checklist, `en az ${w.task.minWords} wordCount`] },
           answer: { text: typed.trim() }, locale: "tr",
         }),
       });
@@ -556,7 +556,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
     } catch {
       // Sağlayıcı yoksa ya da ağ yoksa sınav durmaz: kelime sayısı ölçütüyle
       // geçici puan verilir, sunucu yine kendi sınırlarını uygular.
-      setPuan(kelime >= w.task.minWords ? 70 : 40);
+      setPuan(wordCount >= w.task.minWords ? 70 : 40);
     }
     setBusy(false);
   }
@@ -568,21 +568,21 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         {w.task.checklist.map((c, i) => (
           <Text key={i} variant="caption" color={colors.textMuted}>· {c}</Text>
         ))}
-        <TextInput value={typed} onChangeText={setTyped} editable={puan === null} multiline autoCapitalize="sentences"
+        <TextInput value={typed} onChangeText={setTyped} editable={score === null} multiline autoCapitalize="sentences"
           placeholder={t("exam.write_text")} placeholderTextColor={colors.textFaint}
           style={{ minHeight: 140, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
-        <Text variant="caption" color={colors.textMuted}>{kelime} / {w.task.minWords}</Text>
-        {puan !== null ? (
+        <Text variant="caption" color={colors.textMuted}>{wordCount} / {w.task.minWords}</Text>
+        {score !== null ? (
           <>
-            <Text variant="bodyStrong" color={puan >= 60 ? colors.success : colors.danger}>%{puan}</Text>
-            <PressableScale onPress={() => onDone(puan >= 60, puan)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+            <Text variant="bodyStrong" color={score >= 60 ? colors.success : colors.danger}>%{score}</Text>
+            <PressableScale onPress={() => onDone(score >= 60, score)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.finish")}</Text>
             </PressableScale>
           </>
         ) : (
-          <PressableScale disabled={busy || kelime < 5} onPress={() => void degerlendir()}
-            style={{ backgroundColor: kelime >= 5 && !busy ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={kelime >= 5 && !busy ? colors.onPrimary : colors.textFaint}>
+          <PressableScale disabled={busy || wordCount < 5} onPress={() => void evaluate()}
+            style={{ backgroundColor: wordCount >= 5 && !busy ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+            <Text variant="bodyStrong" color={wordCount >= 5 && !busy ? colors.onPrimary : colors.textFaint}>
               {busy ? t("exam.evaluating") : t("skillquiz.check")}
             </Text>
           </PressableScale>

@@ -297,7 +297,7 @@ function FreeCard({ t, n, done, onSettle, colors }: { t: FreeTask; n: number; do
         placeholder={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
         style={{ marginTop: spacing.md, minHeight: 100, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm }}>
-        <Text variant="micro" color={enough ? colors.success : colors.textMuted}>{words}/{t.minWords} kelime</Text>
+        <Text variant="micro" color={enough ? colors.success : colors.textMuted}>{words}/{t.minWords} wordCount</Text>
         {!done ? (
           <PressableScale onPress={() => { if (enough) { setReveal(true); onSettle(true); } }} disabled={!enough}
             style={{ backgroundColor: enough ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 10 }}>
@@ -351,15 +351,15 @@ export function SpeakingList({
   colors: Palette;
 }) {
   const [idx, setIdx] = useState(0);
-  const [durum, setDurum] = useState<"idle" | "rec" | "ok" | "no" | "err">("idle");
-  const [duyulan, setDuyulan] = useState<string>("");
-  const [ipucu, setIpucu] = useState<string | null>(null);
-  const [gecen, setGecen] = useState(0);
+  const [phase, setDurum] = useState<"idle" | "rec" | "ok" | "no" | "err">("idle");
+  const [heard, setDuyulan] = useState<string>("");
+  const [tip, setIpucu] = useState<string | null>(null);
+  const [passedCount, setGecen] = useState(0);
   const task = tasks[idx];
-  const son = idx + 1 >= tasks.length;
+  const isLast = idx + 1 >= tasks.length;
 
-  async function dinle() {
-    if (durum === "rec") return;
+  async function listen() {
+    if (phase === "rec") return;
     const izin = await ensureMicPermission();
     if (!izin) {
       setIpucu(t("speak.mic_needed"));
@@ -382,20 +382,20 @@ export function SpeakingList({
       return;
     }
     // Hangi bilinen sapmaya düştüğünü bul: genel "yanlış" yerine adını söyle.
-    const düz = heard.map((h) => h.toLowerCase());
-    const eşleşen = (task.confusions ?? []).find((c) =>
-      c.heard.some((x) => düz.some((h) => h.includes(x.toLowerCase()))),
+    const lowered = heard.map((h) => h.toLowerCase());
+    const matched = (task.confusions ?? []).find((c) =>
+      c.heard.some((x) => lowered.some((h) => h.includes(x.toLowerCase()))),
     );
-    setIpucu(eşleşen?.fix ?? task.hint ?? null);
+    setIpucu(matched?.fix ?? task.hint ?? null);
     setDurum("no");
   }
 
-  function ilerle() {
+  function advance() {
     setDurum("idle");
     setIpucu(null);
     setDuyulan("");
-    if (!son) setIdx(idx + 1);
-    else onAllDone(gecen);
+    if (!isLast) setIdx(idx + 1);
+    else onAllDone(passedCount);
   }
 
   if (!task) return null;
@@ -414,37 +414,37 @@ export function SpeakingList({
       </View>
       <Text variant="body" color={colors.textMuted}>{task.tr}</Text>
 
-      {task.hint && durum === "idle" ? (
+      {task.hint && phase === "idle" ? (
         <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>{task.hint}</Text>
       ) : null}
 
-      {durum === "idle" || durum === "err" ? (
-        <PressableScale onPress={() => void dinle()} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }}>
+      {phase === "idle" || phase === "err" ? (
+        <PressableScale onPress={() => void listen()} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }}>
           <Text variant="bodyStrong" color={colors.onPrimary}>{t("speak.record")}</Text>
         </PressableScale>
       ) : null}
-      {durum === "rec" ? (
+      {phase === "rec" ? (
         <Text variant="bodyStrong" color={colors.primary} style={{ textAlign: "center", paddingVertical: 14 }}>{t("speak.listening")}</Text>
       ) : null}
 
-      {duyulan ? (
-        <Text variant="caption" color={colors.textMuted}>{t("speak.heard")}: {duyulan}</Text>
+      {heard ? (
+        <Text variant="caption" color={colors.textMuted}>{t("speak.heard")}: {heard}</Text>
       ) : null}
 
-      {durum === "ok" ? <Text variant="bodyStrong" color={colors.success}>{t("speak.correct")}</Text> : null}
-      {(durum === "no" || durum === "err") && ipucu ? (
+      {phase === "ok" ? <Text variant="bodyStrong" color={colors.success}>{t("speak.correct")}</Text> : null}
+      {(phase === "no" || phase === "err") && tip ? (
         <Text variant="body" color={colors.text} style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>
-          {ipucu}
+          {tip}
         </Text>
       ) : null}
 
-      {durum === "ok" || durum === "no" ? (
+      {phase === "ok" || phase === "no" ? (
         <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.xs }}>
-          <PressableScale onPress={() => void dinle()} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 12, alignItems: "center" }}>
+          <PressableScale onPress={() => void listen()} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 12, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.text}>{t("speak.again")}</Text>
           </PressableScale>
-          <PressableScale onPress={ilerle} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 12, alignItems: "center" }}>
-            <Text variant="bodyStrong" color={colors.onPrimary}>{son ? t("item.finish") : t("common.next")}</Text>
+          <PressableScale onPress={advance} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 12, alignItems: "center" }}>
+            <Text variant="bodyStrong" color={colors.onPrimary}>{isLast ? t("item.finish") : t("common.next")}</Text>
           </PressableScale>
         </View>
       ) : null}
