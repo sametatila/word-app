@@ -86,6 +86,7 @@ const DUZENSIZ = {
   // Karma fiil: ünlü DEĞİŞİR ama ek ZAYIF kalır (kennen → kannte). Ne ünlü
   // kuralı ne zayıf kural tek başına üretebiliyor. denken/bringen zaten yukarıda.
   kennen: ["kennt", "kannte", "gekannt"], sitzen: ["sitzt", "saß", "gesessen"],
+  schreien: ["schreit", "schrie", "geschrien"],
 };
 
 // Almanca sayı BİLEŞİKTİR: "achtunddreißig" = acht+und+dreißig. Parçaları
@@ -99,7 +100,9 @@ const sayiMi = (w) => SAYI_RE.test(w) || SIRA_RE.test(w);
 
 // da-bileşikleri ÜRETKEN: dazu, dafür, damit, daran, darüber … Edatların
 // hepsi zaten serbest; bileşiği tek tek listelemek listeyi şişiriyordu.
-const DA_RE = /^(?:da|dar|wo|wor)(?:zu|für|mit|von|bei|an|auf|in|über|unter|nach|gegen|durch|um|aus|hin|her)$/i;
+// "vor" edatı listede yoktu: davor ve wovor bu yüzden kayma sayılıyordu,
+// oysa kalıp aynı ve edatın kendisi zaten serbest.
+const DA_RE = /^(?:da|dar|wo|wor)(?:zu|für|mit|von|bei|an|auf|in|über|unter|nach|gegen|durch|um|aus|hin|her|vor)$/i;
 
 // Türkçe yazılmış soru kökü / kaynak cümle Almanca sanılıp ölçülmemeli.
 // "-yor" eki tek başına kesin işaret: Almancada -yor ile biten sözcük YOK.
