@@ -19,28 +19,68 @@ const norm = (s: string) =>
   s.toLowerCase().replace(/[.,!?;:„“"'()–—-]/g, " ").replace(/\s+/g, " ").trim();
 
 /** Egzersizin tüm Almanca metni — sözlükçe ve cevap denetimi buna bakar. */
+/**
+ * Egzersizin ALMANCA gövdesi — sözlükçe buna karşı aranır.
+ *
+ * İki boşluk kapatıldı, ikisi de sahte bulgu üretiyordu:
+ * - Konuşma egzersizi hiç gövde vermiyordu, yani ses çalışmalarının bütün
+ *   sözlükçesi "metinde geçmiyor" sayılıyordu. Konuşmanın metni söylenecek
+ *   cümlelerdir.
+ * - Yazma egzersizinde yalnız cevaplar ve örnek taranıyordu; oysa öğrenci
+ *   verilen KALIPLARI ve uyaranı da okuyor. Orada geçen bir sözlükçe maddesi
+ *   öğrenciyle buluşuyor demektir.
+ */
 function bodyOf(ex: SkillExercise): string {
   if (ex.skill === "reading") return ex.text;
   if (ex.skill === "listening") return ex.segments.map((s) => s.text).join(" ");
   if (ex.skill === "writing")
     return ex.tasks
-      .map((t) =>
-        t.kind === "build" || t.kind === "rewrite"
-          ? `${t.answer} ${(t.alternatives ?? []).join(" ")}`
-          : t.kind === "form"
-            ? t.fields.map((f) => f.answer).join(" ")
-            : (t.sample ?? ""),
-      )
+      .map((t) => {
+        const verilen = [
+          ...("phrases" in t && Array.isArray(t.phrases) ? t.phrases.map((p: { de: string }) => p.de) : []),
+          ..."stimulus" in t && typeof t.stimulus === "string" ? [t.stimulus] : [],
+        ].join(" ");
+        const cekirdek =
+          t.kind === "build" || t.kind === "rewrite"
+            ? `${t.answer} ${(t.alternatives ?? []).join(" ")}`
+            : t.kind === "form"
+              ? t.fields.map((f) => f.answer).join(" ")
+              : (t.sample ?? "");
+        return `${cekirdek} ${verilen}`;
+      })
       .join(" ");
+  if (ex.skill === "speaking")
+    return "tasks" in ex && Array.isArray(ex.tasks)
+      ? (ex.tasks as { de?: string }[]).map((t) => t.de ?? "").join(" ")
+      : "";
   return "";
 }
+
+/**
+ * Şık listesi TAŞIMAYAN soru türleri.
+ *
+ * WP-31/WP-72 ile yazılı türler geldi (boşluk doldurma, kısa cevap, dikte,
+ * sıralama) ve bunlar tanım gereği şıksız: cevap yazılıyor ya da diziliyor.
+ * Bu denetim onları bilmediği için hepsini "şık sayısı yetersiz" sayıyordu —
+ * rapordaki 2336 bulgunun 1667'si bu yanlış pozitifti ve 25 gerçek bulgu
+ * altında kayboluyordu. Bir rapor okunmuyorsa kusur bulmuyor demektir.
+ */
+const SIKSIZ_TUR = new Set(["gapfill", "short_answer", "dictation", "order"]);
 
 function checkQuestions(id: string, qs: SkillQuestion[]) {
   if (!qs?.length) return add(id, "soru yok", "egzersizde hiç soru yok");
   qs.forEach((q, i) => {
     const tag = `soru ${i + 1}`;
+    const kind = q.kind ?? "mcq";
     if (!q.text?.trim()) add(id, "soru metni boş", tag);
-    if (!Array.isArray(q.options) || q.options.length < 2)
+    if (SIKSIZ_TUR.has(kind)) {
+      // Yazılı türde beklenen şey şık değil kabul edilen cevap (ya da sıra).
+      if (kind === "order") {
+        if (!q.items?.length) add(id, "sıralama maddesi yok", tag);
+      } else if (!q.accept?.length) {
+        add(id, "kabul edilen cevap yok", `${tag} (${kind})`);
+      }
+    } else if (!Array.isArray(q.options) || q.options.length < 2)
       add(id, "şık sayısı yetersiz", `${tag}: ${q.options?.length ?? 0} şık`);
     else {
       if (q.answer < 0 || q.answer >= q.options.length)
