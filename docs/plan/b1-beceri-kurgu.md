@@ -254,17 +254,93 @@ kaçınılmaz) · `npm run test:track` **64 kontrol geçti** ·
 (intro, çok anlamlı tr, sözlükçe metinde yok). Kalan uyarılar A1/A2/ZH/
 B2/C1 ve eski B1 içeriğine ait.
 
-### Bilerek bırakılanlar
+### Kapanış eki — "bilerek bırakma" listesi kapatıldı
 
-- **Eski 32 genel B1 egzersizi düzeltilmedi.** Onlarda 24 "yazılı soru < 2",
-  8 "rewrite yok" ve 11 "sözlükçe metinde yok" duruyor. Patikadan düştükleri
-  için öğrenciye gösterilmiyorlar; kimlikleri canlı ilerleme taşıdığı için
-  silinmediler.
-- **`speaking` egzersizi yazılmadı.** `BASE_PATTERN` içinde konuşma yuvası
-  yok (`build.ts:30`), yani yazılsa da yerleştirilmezdi. A2 raporu bunu
-  zaten sahibin kararına bırakmıştı.
-- **Ay ve gün adlarının havuz boşluğu.** 12 ayın yalnız `Mai`'si, günlerin
-  yalnız `Mittwoch`'u havuzda. A1 katmanının işi, buradan dokunulmadı.
-- **check-content.ts'e dokunulmadı.** Silinmiş kuralı geri koymak
-  kullanıcıya soruldu ve "elle takip et" denildi; kural oturum boyunca ayrı
-  bir betikle sayıldı.
+Yukarıdaki doğrulama tablosu yazıldığında dört madde bilerek dışarıda
+bırakılmıştı. Sahip bunu kabul etmedi ("bilerek bırakmamalısın"); dördü de
+ölçüldü ve üçü yapıldı.
+
+**1. Eski 32 genel B1 egzersizi (commit `0998e23`).** "Patikadan düştüler,
+öğrenciye gösterilmiyorlar" gerekçesi YANLIŞTI: `/skills` sayfası
+(`src/app/(app)/skills/page.tsx`) seviyedeki bütün egzersizleri listeliyor,
+patikaya hiç bakmadan. Öğrenci onlara ulaşıyor. Eklenen: 24 okuma/dinlemeye
+48 yazılı soru, 8 yazma setine 8 rewrite (hepsi ünitelerdekilerden farklı
+bir aktarım hatasını hedefliyor), 11 sözlükçe düzeltmesi. Ayrıca 16
+short_answer'ın kabul listesi beş kelimeyi aşıyordu; uzun kabul cevabı tek
+doğru dizilişi zorunlu kılıp doğru bilen öğrenciyi yanlışa düşürüyor,
+kısaltıldı.
+
+**2. Konuşma egzersizleri (commit `3eae6d9`).** "BASE_PATTERN'de yuva yok,
+yazılsa da yerleştirilmezdi" gerekçesi eksikti: patika tek yol değil.
+`exam.ts` seviye sınavının Sprechen bölümünü beceri bankasından kuruyor ve
+oraya yalnız `genre: "Ses çalışması"` etiketli konuşma drill'lerini alıyor.
+B1'de hiç yoktu, yani kâğıt üç cümle isterken banka sıfır veriyordu ve
+bölüm hiç basılmıyordu. Yazılan dokuz egzersiz (ünite 5, 10, … 45) A1'i
+tekrarlamıyor: A1 tek tek sesleri kuruyor, B1 sesin cümle içindeki
+davranışını çalıştırıyor — Knacklaut, sönük heceler, r'nin iki yüzü, ünsüz
+yığınları, pf/qu, bileşik vurgusu, ön ek vurgusu, cümle vurgusu, tonlama.
+54 cümlenin tamamı ünite kelime disiplininden temiz geçiyor.
+
+**3. Ay ve gün adlarının havuz boşluğu.** Ölçüldü: A1 oturumu kapatmış
+(`0cef0f8`, "A1 havuzu: 11 ay, 2 gün ve 4 renk eklendi"). 12 ayın ve 7
+günün hepsi havuzda. Yapacak iş kalmamış.
+
+**4. check-content.ts.** Bu, sahibin kendi kararıydı ("Hayır, elle takip
+et"), o yüzden geri alınmadı. Not: silindiği sanılan `çoktan seçmeli
+olmayan soru < 2` kuralı bugün dosyada duruyor (satır 165) ve çalışıyor;
+elle takip ettiğim sayı ile aynı sonucu veriyor.
+
+### Kendi ölçümümün hatası ve düzeltmesi (commit `016e356`)
+
+Yukarıda "sözlükçe metinde yok: bu oturumun payı 0" yazıyor. **Bu ölçüm
+yanlıştı.** Sayaç kontrolü `e.text` alanına bağlamıştı; o alan yalnız okuma
+egzersizlerinde var. Dinleme, yazma ve konuşma hiç ölçülmemişti. Dördü
+birden ölçülünce B1'de 177 madde çıktı: 51 dinleme, 126 yazma, 0 konuşma.
+
+Dinleme öğrenciye görünür: `GlossPanel` dinleme oynatıcısında basılıyor,
+yani kaydın hiç söylemediği kelimelerin sözlüğü açılıyordu. Ayrıca
+`derive-questions.ts` boşluk sorularını sözlükçe kelimesinin metinde
+geçtiği cümleden üretiyor; geçmeyen kelime sessizce soru üretmiyordu.
+Yazma oynatıcısı `exercise.gloss`'u hiç göstermiyor — orada öğrenci
+yanıltılmıyordu — ama ünitenin kelimesini sözlükçeye yazıp örnek cevapta
+hiç kullanmamak o kelimeyi o egzersizde çalıştırmamak demek.
+
+Yöntem: değiştirmek değil EKLEMEK. İlk denemede ünite 9 ve 11'de cümleyi
+baştan yazınca başka bir sözlükçe kelimesi öksüz kaldı; kural ondan sonra
+"var olan cümleye ekle" oldu. Almanca değişen her yerde Türkçe uyaran,
+alternatifler ve dilbilgisi ipucu da güncellendi.
+
+Sonuç: **B1'de dört becerinin hepsinde 177 → 0.** (Aynı ölçüm diğer
+seviyelerde A1 73, A2 100, B2 52, C1 89 gösteriyor — onlar bu oturumun işi
+değil.)
+
+Aynı çalışmadan çıkan iki yan bulgu:
+- `b1-u16-r2` ve `b1-u17-r1` metinlerindeki **"Ton" havuzda hiç yok** ve B1
+  derslerinde öğretilmiyor. Sözlükçeye alındı; kapı zaten oradan açık
+  (gate egzersizin kendi sözlükçesini serbest sayıyor).
+- **25 sözlükçe karşılığı bilgiyi parantezde taşıyordu** ("mimar (kadın)",
+  "(ilaç) almak"). `Gloss` tipinin bunun için ayrılmış `note` alanı var ve
+  arayüz onu ayrı satırda basıyor — parantez tam olarak bu yüzden
+  kaldırılmıştı. Taşındı; `skills: parantezli tr` 166'dan 141'e indi ve
+  bütçenin altına geri döndü.
+
+### Kapanış ölçümü (2026-09-05, son hâl)
+
+| Ölçüt | Değer |
+|---|---|
+| B1 egzersiz | 311 (okuma 102 · dinleme 102 · yazma 98 · konuşma 9) |
+| Ünite hizalı | 45/45 |
+| buildTrack yuvası | 270/270 dolu, hepsi ünite hizalı |
+| Ünite kelime disiplini | 279 ünite egzersizinin tamamı temiz |
+| Yazılı soru < 2 | 0 |
+| rewrite'ı olmayan yazma seti | 0 |
+| Sözlükçe metinde yok | 0 (dört beceride) |
+| Çok anlamlı / parantezli tr | 0 / 0 |
+| Seviye sınavı Sprechen | dolu (9 drill, 54 uygun cümle) |
+
+`npx tsc --noEmit` kökte ve `mobile/` içinde temiz · `test:track` 64 kontrol
+geçti · `test:options` temiz · `check:lessons` B1'de sıfır hata (kalan 50
+hatanın hepsi B2, paralel oturumun sürmekte olan işi) · `test:content`
+bütçesini aşan kategorilerde **B1 payı sıfır** (kalanlar A2/ZH ve dersler) ·
+`dump:skills` yenilendi, **farkı yalnız B1'de** (9 yeni, 112 değişen, 0
+silinen).
