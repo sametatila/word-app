@@ -15,6 +15,7 @@ import { usePremium } from "../lib/usePremium";
 import { billingAvailable } from "../lib/billing";
 import { useMicrophone } from "../lib/useMicrophone";
 import { listSkillMeta } from "../data/skills";
+import { lessonsForLevel } from "../data/lessons";
 import { currentCourseId } from "../lib/courses";
 import { examCatalogFor, type ExamModule } from "../data/exams";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
@@ -69,6 +70,9 @@ export function ExamPrepScreen() {
   // tıklanınca hiçbir şey açılmayacaktı. 2026-09'da ses çalışmaları geldi ve
   // ItemScreen onları oynatıyor, o yüzden artık gerçek sayı dönüyor. Mikrofon
   // yoksa satır yine gizleniyor (aşağıdaki `mic` koşulu).
+  // Modül = 10 ders (sunucudaki MODULE_SIZE ile aynı); kâğıt sayısı buradan.
+  const moduleCount = Math.min(10, Math.ceil(lessonsForLevel(level).length / 10));
+
   function countFor(m: ExamModule): number {
     return listSkillMeta(level, m.skill).length;
   }
@@ -162,6 +166,35 @@ export function ExamPrepScreen() {
             </Card>
           ) : null}
         </View>
+
+        {/* GERÇEK SINAVLAR — bu ekran adı "sınav hazırlık" olduğu hâlde sınavın
+            kendisine giden yol yoktu; yalnız beceri egzersizi açıyordu. Kâğıt
+            ve puanlama sunucuda hazır (/api/exam), eksik olan kapıydı. */}
+        {moduleCount > 0 ? (
+          <View style={{ marginTop: spacing.xl }}>
+            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{t("examprep.exams")}</Text>
+            <PressableScale onPress={() => nav.navigate("Exam", { level, module: null })} style={{ marginBottom: spacing.sm }}>
+              <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+                <View style={{ flex: 1 }}>
+                  <Text variant="bodyStrong">{t("exam.level_exam", { level })}</Text>
+                  <Text variant="caption" color={colors.textMuted}>{t("exam.minutes", { n: 45 })}</Text>
+                </View>
+                <ChevronRightIcon color={colors.textFaint} size={20} />
+              </Card>
+            </PressableScale>
+            {Array.from({ length: moduleCount }).map((_, i) => (
+              <PressableScale key={i} onPress={() => nav.navigate("Exam", { level, module: i })} style={{ marginBottom: spacing.sm }}>
+                <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+                  <View style={{ flex: 1 }}>
+                    <Text variant="bodyStrong">{`${level}.${i + 1}`}</Text>
+                    <Text variant="caption" color={colors.textMuted}>{t("exam.minutes", { n: 25 })}</Text>
+                  </View>
+                  <ChevronRightIcon color={colors.textFaint} size={20} />
+                </Card>
+              </PressableScale>
+            ))}
+          </View>
+        ) : null}
 
         {billingAvailable() ? (
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.lg, textAlign: "center", lineHeight: 18 }}>

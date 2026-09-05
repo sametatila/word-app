@@ -5,6 +5,7 @@ import { GameScreen } from "../screens/GameScreen";
 import { ProfileScreen } from "../screens/ProfileScreen";
 import { AvatarScreen } from "../screens/AvatarScreen";
 import { ExamPrepScreen } from "../screens/ExamPrepScreen";
+import { ExamScreen } from "../screens/ExamScreen";
 import { WalkModeScreen } from "../screens/WalkModeScreen";
 import { PaywallScreen } from "../screens/PaywallScreen";
 import { OnboardingScreen } from "../screens/OnboardingScreen";
@@ -43,6 +44,8 @@ export type RootStackParams = {
   Profile: undefined;
   Avatar: undefined;
   ExamPrep: undefined;
+  /** Sınav: modül (module = 0..) ya da seviye sınavı (module = null). */
+  Exam: { level: string; module: number | null };
   Walk: undefined;
   Paywall: undefined;
   Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; attempted?: boolean; open?: boolean; ref?: string | null }[] };
@@ -84,6 +87,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Avatar" component={AvatarScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="ExamPrep" component={ExamPrepScreen} />
+      <Stack.Screen name="Exam" component={ExamScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Walk" component={WalkModeScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Unit" component={UnitScreen} />
