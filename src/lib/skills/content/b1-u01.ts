@@ -86,6 +86,14 @@ export const b1U01: SkillExercise[] = [
         accept: ["weil"],
         explain: "Gerekçe bağlacı: „weil“. Yan cümlede fiil sona gider.",
       },
+      {
+        kind: "short_answer",
+        text: "Wie viele Tage Urlaub bietet die Firma?",
+        options: [],
+        answer: 0,
+        accept: ["dreißig Tage", "dreißig", "30 Tage", "30"],
+        explain: "„… eine feste Stelle, dreißig Tage Urlaub …“",
+      },
     ],
   },
   {
@@ -110,8 +118,8 @@ export const b1U01: SkillExercise[] = [
       "und war dort für den Einkauf zuständig. Seine Leistung war gut, aber er suchte eine neue " +
       "Herausforderung. Deshalb bewarb er sich 2024 bei einer größeren Firma. Heute arbeitet er mit " +
       "vier Personen zusammen und ist stolz auf seine Karriere.\n\n" +
-      "Leyla Kaya kam 2016 nach Deutschland. Ihren Abschluss machte sie in Izmir, aber sie musste ihn " +
-      "war lang. Das dauerte fast zwei Jahre und brauchte viel Geduld. Danach arbeitete " +
+      "Leyla Kaya kam 2016 nach Deutschland. Ihren Abschluss machte sie in Izmir, aber der Weg " +
+      "zur ersten Stelle war lang. Das dauerte fast zwei Jahre und brauchte viel Geduld. Danach arbeitete " +
       "sie zuerst in einem Laden, obwohl das nicht ihr Beruf war. Seit 2021 ist sie in einer Abteilung " +
       "für Kunden und entwickelt dort neue Ideen. Ihre Kollegen sagen, sie sei kreativ und ordentlich. " +
       "Sie will sich beruflich weiter verbessern und lernt abends noch Englisch.",
@@ -147,6 +155,14 @@ export const b1U01: SkillExercise[] = [
         answer: 0,
         accept: ["obwohl"],
         explain: "Çekince bağlacı: „obwohl“. Beklentiye aykırı durumu bildirir.",
+      },
+      {
+        kind: "short_answer",
+        text: "In welcher Stadt wurde Markus geboren?",
+        options: [],
+        answer: 0,
+        accept: ["in Kassel", "Kassel"],
+        explain: "„Markus Bauer wurde 1990 in Kassel geboren.“",
       },
     ],
   },
@@ -265,6 +281,14 @@ export const b1U01: SkillExercise[] = [
         accept: ["Wochen"],
         explain: "„In zwei Wochen weiß ich, ob es ein Erfolg war.“",
       },
+      {
+        kind: "short_answer",
+        text: "Wann weiß er, ob es ein Erfolg war?",
+        options: [],
+        answer: 0,
+        accept: ["in zwei Wochen", "zwei Wochen"],
+        explain: "„In zwei Wochen weiß ich, ob es ein Erfolg war.“",
+      },
     ],
   },
   // ─────────────────────────── YAZMA ───────────────────────────
@@ -293,7 +317,7 @@ export const b1U01: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yavaş olsam da çok ordentlich çalışıyorum.",
+        tr: "Yavaş olsam da çok düzenli çalışıyorum.",
         answer: "Obwohl ich langsam bin, arbeite ich sehr ordentlich.",
         alternatives: ["Ich arbeite sehr ordentlich, obwohl ich langsam bin."],
         hint: "Çekince bağlacı sona atar; yan cümle başta olursa ana cümle fiille başlar.",
@@ -315,6 +339,13 @@ export const b1U01: SkillExercise[] = [
           { label: "Schwäche", answer: "Computer", accept: ["der Computer", "Computerkenntnisse"] },
           { label: "Plan", answer: "ein Kurs am Abend", accept: ["Kurs", "ein Kurs", "Abendkurs"] },
         ],
+      },
+      {
+        kind: "rewrite",
+        prompt: "Cümleyi doğru sırayla yeniden yaz.",
+        source: "Obwohl ich bin manchmal langsam, ich arbeite sehr ordentlich.",
+        answer: "Obwohl ich manchmal langsam bin, arbeite ich sehr ordentlich.",
+        why: "Türkçede '-e rağmen' fiilin yerini değiştirmez. Almancada obwohl yan cümle kurar: çekimli fiil (bin) sona gider. Yan cümle önde olduğu için ana cümle de fiille başlar (arbeite ich).",
       },
     ],
   },
@@ -379,6 +410,13 @@ export const b1U01: SkillExercise[] = [
           { de: "Ich bin begeistert von …", tr: "… beni heyecanlandırıyor", en: "I am enthusiastic about …" },
           { de: "Über ein Gespräch würde ich mich sehr freuen.", tr: "Bir görüşmeye çok sevinirim.", en: "I would be delighted about an interview." },
         ],
+      },
+      {
+        kind: "rewrite",
+        prompt: "Fiilin edatını düzelt.",
+        source: "Ich bewerbe mich für die Stelle in Ihrer Abteilung.",
+        answer: "Ich bewerbe mich um die Stelle in Ihrer Abteilung.",
+        why: "Türkçedeki 'için' doğrudan 'für' olmuyor: sich bewerben fiili 'um' edatını ister (bir firmaya başvururken 'bei').",
       },
     ],
   },

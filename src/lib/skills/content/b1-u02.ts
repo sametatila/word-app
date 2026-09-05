@@ -38,7 +38,7 @@ export const b1U02: SkillExercise[] = [
       "Ich wusste nicht, wo die Küche ist, und ich wusste auch nicht, wann die erste Besprechung beginnt. " +
       "Zum Glück war eine Kollegin da. Sie zeigte mir alles und sagte: Wenn du etwas nicht weißt, " +
       "dann frag einfach. Das half mir sehr.\n\n" +
-      "Am Vormittag lernte ich das ganze Personal kennen. Ein Praktikant erklärte mir, die " +
+      "Am Vormittag lernte ich das ganze Personal kennen. Ein Praktikant erklärte mir die " +
       "Organisation im Haus und sagte, an wen ich mich bei Problemen wenden kann. " +
       "Die Kommunikation ist hier freundlich, aber schnell.\n\n" +
       "Um zwölf hatte ich schon fast alles vergessen, also schrieb ich alles auf. " +
@@ -77,6 +77,14 @@ export const b1U02: SkillExercise[] = [
         answer: 0,
         accept: ["Feierabend"],
         explain: "„Um sechs war Feierabend.“",
+      },
+      {
+        kind: "short_answer",
+        text: "Wer zeigte dem neuen Kollegen alles?",
+        options: [],
+        answer: 0,
+        accept: ["eine Kollegin", "die Kollegin", "Kollegin"],
+        explain: "„Zum Glück war eine Kollegin da. Sie zeigte mir alles …“",
       },
     ],
   },
@@ -144,6 +152,14 @@ export const b1U02: SkillExercise[] = [
         accept: ["Nachdem"],
         explain: "Önce olan olayı geriye alan bağlaç: „nachdem“ + Plusquamperfekt.",
       },
+      {
+        kind: "short_answer",
+        text: "An welchem Tag soll Frau Aydin kommen?",
+        options: [],
+        answer: 0,
+        accept: ["am Mittwoch", "Mittwoch"],
+        explain: "„Hätten Sie am Mittwoch um zehn Uhr Zeit?“",
+      },
     ],
   },
   // ─────────────────────────── DİNLEME ───────────────────────────
@@ -199,6 +215,14 @@ export const b1U02: SkillExercise[] = [
         accept: ["gilt"],
         explain: "„Aber wenn die neue Regel gilt, versuche ich es.“",
       },
+      {
+        kind: "short_answer",
+        text: "Um wie viel Uhr geht die erste Person nach Hause?",
+        options: [],
+        answer: 0,
+        accept: ["um vier", "vier"],
+        explain: "„… ich komme um sieben und gehe um vier.“",
+      },
     ],
   },
   {
@@ -253,6 +277,14 @@ export const b1U02: SkillExercise[] = [
         accept: ["Steuern"],
         explain: "„… vor Steuern.“ — vergiler kesilmeden önce.",
       },
+      {
+        kind: "short_answer",
+        text: "Wie viel bietet die Firma am Anfang?",
+        options: [],
+        answer: 0,
+        accept: ["dreitausendzweihundert", "3200"],
+        explain: "„Wir könnten mit dreitausendzweihundert anfangen.“",
+      },
     ],
   },
   // ─────────────────────────── YAZMA ───────────────────────────
@@ -302,6 +334,13 @@ export const b1U02: SkillExercise[] = [
           { label: "Grund", answer: "das Kind", accept: ["Kind", "mein Kind", "Familie"] },
           { label: "Überstunden", answer: "später frei nehmen", accept: ["frei nehmen", "Freizeit"] },
         ],
+      },
+      {
+        kind: "rewrite",
+        prompt: "Ricayı resmî bir dilekçeye uygun biçimde yeniden yaz.",
+        source: "Ich will ab nächstem Monat flexibel arbeiten.",
+        answer: "Ich würde ab nächstem Monat gern flexibel arbeiten.",
+        why: "Türkçe 'çalışmak istiyorum' nötr durur, Almanca 'ich will' resmî dilekçede sert. Konjunktiv II (würde … gern) ricayı kibarlaştırır.",
       },
     ],
   },
@@ -361,6 +400,13 @@ export const b1U02: SkillExercise[] = [
           { de: "Falls Sie später …", tr: "İleride … olursa", en: "If you later …" },
           { de: "Ich melde mich noch einmal.", tr: "Tekrar haber veririm.", en: "I will get in touch again." },
         ],
+      },
+      {
+        kind: "rewrite",
+        prompt: "Zaman basamağını düzelt.",
+        source: "Nachdem ich die Absage gelesen habe, war ich enttäuscht.",
+        answer: "Nachdem ich die Absage gelesen hatte, war ich enttäuscht.",
+        why: "Türkçe '-dikten sonra' zaman basamağı göstermez. nachdem yan cümlesi ana cümleden bir adım geride olmalı: hatte/war + Partizip.",
       },
     ],
   },
