@@ -186,7 +186,11 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   // İki büyük harfli sözcük yan yana ise ad-soyaddır ("Leyla Kaya", "Markus
   // Bauer") — cümle başında da olsa özel addır. Tek başına baştaki büyük harf
   // muaf tutulmuyor, çünkü her cümle büyük harfle başlar.
-  for (const m of adMetni.matchAll(/\b([A-ZÄÖÜ][a-zäöüß]{1,})\s+([A-ZÄÖÜ][a-zäöüß]{1,})\b/g)) {
+  // İkinci belirteci LOOKAHEAD ile al: desen onu yutarsa üçlü dizide ortadaki
+  // çift hiç denenmiyordu. Her mektup "Grüßen Nuri Öz" ile bitiyor ve
+  // (Grüßen, Nuri) çifti havuz sözcüğü olduğu için elenince (Nuri, Öz) hiç
+  // sınanmıyor, yani her imzadaki soyad kayma sayılıyordu.
+  for (const m of adMetni.matchAll(/\b([A-ZÄÖÜ][a-zäöüß]{1,})(?=\s+([A-ZÄÖÜ][a-zäöüß]{1,})\b)/g)) {
     if (!havuzKok.has(m[1].toLowerCase())) { ozelAd.add(m[1].toLowerCase()); ozelAd.add(m[2].toLowerCase()); }
   }
   for (const m of adMetni.matchAll(/\b(Dr|Prof|Frau|Herrn|Herr)\.?\s+(?:(?:Dr|Prof)\.?\s+)?([A-ZÄÖÜ][a-zäöüß]+)/g)) {
