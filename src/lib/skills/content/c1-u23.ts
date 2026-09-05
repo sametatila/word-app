@@ -51,9 +51,10 @@ export const c1U23: SkillExercise[] = [
       "ZWEI REGELN, DIE ZUSAMMEN WIRKEN\n\n" +
       "Über deutsche Direktheit ist alles gesagt worden, und meistens einzeln. Interessant wird es erst, wenn man zwei Beobachtungen nebeneinanderlegt: Kritik ist direkt, und Lob ist sparsam.\n\n" +
       "Einzeln ist keine der beiden dramatisch. Zusammen erzeugen sie für Neue eine schiefe Bilanz. Wer in den ersten Monaten fünf konkrete Korrekturen und ein knappes „passt“ hört, schließt daraus, dass er schlecht arbeitet. Dabei hört die deutsche Kollegin am Nebentisch dasselbe Verhältnis — sie deutet es nur nicht als Urteil über ihre Person.\n\n" +
+      "Befremdlich wirkt das nur am Anfang, und gewöhnungsbedürftig bleibt es unterschiedlich lange. Wer Kritik als Konfrontation gelernt hat, braucht länger als jemand, der sie als Arbeitsschritt kennt.\n\n" +
       "Der Unterschied liegt nicht in der Menge der Kritik, sondern in ihrer Adresse. „Der Absatz ist unverständlich“ ist ein Satz über den Absatz. In vielen Sprachen wird derselbe Inhalt eingepackt — „vielleicht könnte man überlegen, ob …“ —, und das Auspacken ist Teil der Verständigung. Wer aus einer solchen Sprache kommt, hört im deutschen Satz eine Schärfe, die nicht drin ist. Umgekehrt hört der deutsche Zuhörer im eingepackten Satz eine Unentschiedenheit, die auch nicht drin ist.\n\n" +
       "Es gibt einen einfachen Prüfstein. Wenn Kritik direkt und trotzdem freundlich gemeint ist, folgt fast immer ein Vorschlag. „Der Absatz ist unverständlich — nimm den zweiten Satz nach vorn.“ Fehlt der Vorschlag über längere Zeit, ist es tatsächlich Unzufriedenheit; dann ist Nachfragen angebracht.\n\n" +
-      "Und die Pünktlichkeit? Sie ist real, aber weniger streng als ihr Ruf. Fünf Minuten sind pünktlich, zehn Minuten kosten eine kurze Nachricht, und niemand erwartet Entschuldigungen für den Verkehr. Was übel genommen wird, ist das schweigende Zuspätkommen — nicht die Verspätung selbst, sondern der fehlende Satz dazu.\n\n" +
+      "Und die Pünktlichkeit? Sie ist real, aber der Spielraum ist größer als ihr Ruf. Fünf Minuten sind pünktlich, zehn Minuten kosten eine kurze Nachricht, und niemand erwartet Entschuldigungen für den Verkehr. Was übel genommen wird, ist das schweigende Zuspätkommen — nicht die Verspätung selbst, sondern der fehlende Satz dazu.\n\n" +
       "Anders, nicht falsch: Das ist die brauchbarste Zusammenfassung, solange man sie in beide Richtungen liest.",
     questions: [
       {
@@ -133,7 +134,8 @@ export const c1U23: SkillExercise[] = [
       "In einer Krisensitzung sagt niemand „Wir sollten vielleicht etwas unternehmen“. Es heißt: „Wir müssen umgehend Maßnahmen ergreifen.“\n\n" +
       "Das klingt schwerfällig und ist es auch. Aber diese Wendungen — Maßnahmen ergreifen, in Kraft setzen, zur Anwendung bringen, Ruhe bewahren — sind Fertigteile. Sie werden nicht gebaut, sondern eingesetzt. Genau deshalb funktionieren sie unter Druck: Niemand muss unter Stress eine Formulierung erfinden, und alle im Raum wissen sofort, welche Stufe gemeint ist.\n\n" +
       "Für Nichtmuttersprachler ist das eine gute Nachricht, auch wenn es zunächst nach mehr Vokabeln aussieht. Der kreative Teil der Sprache fällt hier weg. Wer zwanzig Wendungen kennt, spricht in einer Krisensitzung angemessen — auch mit Akzent, auch mit einfacher Satzstruktur.\n\n" +
-      "Wichtig ist die Abstufung, denn die Wendungen tragen Ränge. „Ich schlage vor“ ist ein Vorschlag. „Ich ordne an“ ist eine Anweisung und setzt Befugnis voraus. „Ich setze den Notfallplan in Kraft“ bedeutet, dass ab jetzt ein festgelegtes Verfahren läuft und andere Zuständigkeiten greifen. Wer diese Sätze verwechselt, klingt nicht entschlossen, sondern übergriffig.\n\n" +
+      "Dieselben Fertigteile benennen auch die Lage: Wer von Schadensbegrenzung spricht, hat das eigentliche Ziel bereits aufgegeben, und wer eine Eskalationsstufe nennt, sagt damit, welche Regeln ab jetzt gelten.\n\n" +
+      "Wichtig ist die Abstufung, denn die Wendungen tragen Ränge. „Ich schlage vor“ ist ein Vorschlag. „Ich ordne an“ ist eine Anweisung und setzt Befugnis voraus. „Ich setze den Notfallplan in Kraft“ bedeutet, dass ab jetzt ein festgelegtes Verfahren läuft und andere Zuständigkeiten greifen. Wer diese Sätze verwechselt, klingt nicht entschlossen, sondern übergriffig — angeordnet wird nur, was man auch vollziehen lassen darf.\n\n" +
       "Und der Rest? „Wir behelfen uns kurzfristig mit einer Zwischenlösung“ ist der ehrlichste Satz jeder Krise. Er sagt: Das hier ist nicht die Lösung, es trägt bis Freitag. Wer eine Zwischenlösung als Lösung verkauft, gewinnt eine Sitzung und verliert die nächste.",
     questions: [
       {
@@ -213,6 +215,8 @@ export const c1U23: SkillExercise[] = [
       { speaker: "Nadja", text: "Das hören wir oft. Meistens von Leuten, die ihn nicht erkannt haben." },
       { speaker: "Pedro", text: "Und wie erkennt man ihn?" },
       { speaker: "Nadja", text: "Er ist trocken. Kein Aufbau, keine Ankündigung, kein Lachen des Erzählers. Der Satz kommt und geht weiter." },
+      { speaker: "Pedro", text: "Also nichts, was jemand inszeniert." },
+      { speaker: "Nadja", text: "Genau. Auf der Bühne ist es anders — da spielt ein Ensemble und baut auf. Im Alltag praktiziert man das Gegenteil davon." },
       { speaker: "Pedro", text: "Gib mir ein Beispiel." },
       { speaker: "Nadja", text: "Mein Chef letzte Woche, nach vier Stunden Sitzung: „Das war ein sehr effizienter Vormittag.“ Nichts weiter. Alle haben es gehört." },
       { speaker: "Pedro", text: "Das hätte ich für ernst gehalten." },

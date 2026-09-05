@@ -49,7 +49,8 @@ export const c1U25: SkillExercise[] = [
       "SEIT ZWEIHUNDERT JAHREN GEHT ES BERGAB\n\n" +
       "Das ist keine Übertreibung, sondern ein Befund: Seit mindestens zwei Jahrhunderten schreibt jede Generation, die Sprache verfalle. Die Klagen sind erhalten, und sie lesen sich alle gleich. Nur die beklagten Wörter wechseln.\n\n" +
       "Im 19. Jahrhundert war es das Französische — „Trottoir“, „Bureau“, „Chaussee“ galten als Zeichen des Niedergangs. Heute stört sich niemand mehr an ihnen; einige sind verschwunden, andere sind so deutsch geworden, dass ihre Herkunft nicht mehr auffällt. Dieselbe Bewegung läuft gerade mit Anglizismen, und sie wird ähnlich ausgehen: Ein Teil bleibt, ein Teil verschwindet, und was bleibt, wird angepasst — man sagt „gedownloadet“ und beugt es, als hätte es das Wort immer gegeben.\n\n" +
-      "Sprachhistoriker beschreiben das ohne Dramatik. Die Norm folgt dem Gebrauch, nicht umgekehrt. Was heute korrekt ist, war einmal ein Fehler: „wegen“ mit Dativ galt lange als grober Verstoß und steht inzwischen in jedem Wörterbuch als umgangssprachlich zulässig.\n\n" +
+      "Sprachhistoriker beschreiben den Sprachwandel ohne Dramatik. Die Norm folgt dem Gebrauch, nicht umgekehrt. Was heute korrekt ist, war einmal ein Fehler: „wegen“ mit Dativ galt lange als grober Verstoß und steht inzwischen in jedem Wörterbuch als umgangssprachlich zulässig.\n\n" +
+      "Der Vergleich mit der Evolution trägt dabei nur ein Stück weit. Sprachen werden nicht besser, sie passen sich an — was gebraucht wird, bleibt, was niemand mehr benutzt, verschwindet. Ein Fortschritt ist damit nicht behauptet.\n\n" +
       "Das heißt nicht, dass alles gleich gut ist. Innerhalb eines Sprachstands gibt es sehr wohl Unterschiede in Klarheit und Angemessenheit, und ein Text kann schlecht sein. Nur ist das ein Urteil über den Text, nicht über die Epoche.\n\n" +
       "Für Lernende hat dieser Befund einen praktischen Wert, der selten ausgesprochen wird. Man muss kein Museumsdeutsch sprechen. Wer die Formen der Gegenwart verwendet — auch die, über die sich jemand ärgert —, spricht nicht schlechter, sondern in seiner Zeit. Und wer die Jugendsprache seiner Kinder nicht mehr versteht, erlebt keinen Verfall, sondern das Normalste, was einer Sprache passieren kann.",
     questions: [
@@ -130,8 +131,9 @@ export const c1U25: SkillExercise[] = [
       "Es gibt keinen Tag, an dem man eine Sprache kann. Es gibt einen Tag, an dem man merkt, dass sie nicht mehr das Thema ist.\n\n" +
       "Das ist das brauchbarste Zeichen für C1. Nicht Fehlerfreiheit — die kommt nie ganz, auch bei Muttersprachlern nicht. Sondern: Man führt ein Gespräch über eine Vertragsklausel, und hinterher erinnert man sich an die Klausel, nicht an die Sprache.\n\n" +
       "Was auf diesem Niveau tatsächlich noch fehlt, ist gut zu benennen. Wortspiele kommen zuletzt. Ironie erkennt man meist, aber nicht immer. Bei Müdigkeit oder Stress fällt man auf einfachere Strukturen zurück — das ist normal und passiert Muttersprachlern in ihrer zweiten Sprache genauso. Und es gibt Bereiche, in denen man weiterhin nichts versteht: ein Handwerkerdialekt, ein Fachgespräch unter Ärzten, drei Jugendliche in der U-Bahn. Das ist kein Rückschritt, sondern eine zutreffende Beschreibung jeder Sprachkenntnis, auch der eigenen ersten.\n\n" +
-      "Der Gipfel ist erreicht, aber der Weg geht weiter — und das ist keine Floskel, sondern eine Beschreibung des Aufwands. Was jetzt kommt, ist weniger anstrengend und weniger sichtbar: lesen, was einen interessiert; schreiben, was ohnehin geschrieben werden muss; korrigiert werden, ohne es als Urteil zu nehmen. Langfristig hält das mehr als jedes Programm.\n\n" +
-      "Bleibt das, was sich schwer messen lässt. Eine Sprache, in der man gestritten, gearbeitet, sich entschuldigt und jemanden getröstet hat, ist kein Werkzeug mehr. Sie ist ein Ort, an dem man auch dann noch steht, wenn niemand nach dem Zertifikat fragt. Und die Mühe, die dorthin geführt hat, gehört einem — daran ändert kein Prüfungsergebnis etwas.",
+      "Wer bis hierher gekommen ist, ist angekommen — nur nicht am Ende. Der Gipfel ist erreicht, aber der Weg geht weiter, und das ist keine Floskel, sondern eine Beschreibung des Aufwands. Was jetzt hilft, ist weniger Ehrgeiz als Vernunft: lesen, was einen interessiert; schreiben, was ohnehin geschrieben werden muss; korrigiert werden, ohne es als Urteil zu nehmen. Langfristig hält das mehr als jedes Programm.\n\n" +
+      "Bleibt das, was sich schwer messen lässt. Eine Sprache, in der man gestritten, gearbeitet, sich entschuldigt und jemanden getröstet hat, ist kein Werkzeug mehr. Sie ist ein Zuhause — ein Ort, an dem man auch dann noch steht, wenn niemand nach dem Zertifikat fragt.\n\n" +
+      "Und eines bleibt unantastbar, gleich wie eine Prüfung ausgeht: Die Mühe, die dorthin geführt hat, gehört einem.",
     questions: [
       {
         text: "Was ist laut Text das brauchbarste Zeichen für C1?",
@@ -208,18 +210,20 @@ export const c1U25: SkillExercise[] = [
     segments: [
       { speaker: "Milad", text: "Ich bin seit acht Monaten hier und komme nicht weiter. Bei dir hat es doch auch geklappt." },
       { speaker: "Selin", text: "Nach vier Jahren. Und die ersten zwei waren die schlechtesten." },
-      { speaker: "Milad", text: "Das hilft mir gerade wenig." },
+      { speaker: "Milad", text: "Das hilft mir gerade wenig. Alle ermutigen mich, und es ändert nichts." },
       { speaker: "Selin", text: "Doch, ein bisschen. Du vergleichst dich mit meinem heutigen Stand, nicht mit meinem damaligen." },
-      { speaker: "Milad", text: "Was hat dir am meisten geholfen?" },
-      { speaker: "Selin", text: "Etwas Unspektakuläres. Ich habe aufgehört, jedes unbekannte Wort nachzuschlagen, und angefangen, eine Serie zweimal zu sehen — einmal mit Untertiteln, einmal ohne." },
+      { speaker: "Milad", text: "Was hat dir am meisten geholfen? Gib mir einen Rat, keinen Trost." },
+      { speaker: "Selin", text: "Etwas Unspektakuläres, und es braucht Geduld — der Satz, den ich damals selbst gehasst habe. Ich habe aufgehört, jedes unbekannte Wort nachzuschlagen, und angefangen, eine Serie zweimal zu sehen — einmal mit Untertiteln, einmal ohne." },
       { speaker: "Milad", text: "Das ist alles?" },
       { speaker: "Selin", text: "Und ich habe angefangen zu telefonieren. An deiner Stelle würde ich genau damit anfangen — Telefon ist unangenehm, deshalb bringt es am meisten." },
       { speaker: "Milad", text: "Ich habe Angst, dass die Leute genervt sind." },
       { speaker: "Selin", text: "Manche sind es. Die meisten nicht. Und die Genervten wären es auch bei einem Muttersprachler." },
-      { speaker: "Milad", text: "Manchmal denke ich, ich habe einfach keine Begabung dafür." },
+      { speaker: "Milad", text: "Manchmal denke ich, ich habe einfach keine Gabe für Sprachen." },
       { speaker: "Selin", text: "Das habe ich auch gedacht. Was mir geholfen hat, war ein Satz von meiner Chefin: „Sie sprechen jeden Tag besser Deutsch als ich Türkisch.“ Sie hatte recht, und ich hatte es nie so gerechnet." },
-      { speaker: "Milad", text: "Und wenn ich wieder zurückfalle?" },
-      { speaker: "Selin", text: "Dann fällst du zurück. Rückschläge gehören dazu und sagen nichts über das Ende. Meld dich, wenn es so weit ist — ich habe dieselben Wochen gehabt." },
+      { speaker: "Milad", text: "Und wenn ich einen Rückschlag habe?" },
+      { speaker: "Selin", text: "Dann fällst du zurück. Es gibt keinen stetigen Aufstieg, es geht in Sprüngen und mit Pausen dazwischen." },
+      { speaker: "Milad", text: "Warum erzählst du mir das alles?" },
+      { speaker: "Selin", text: "Weil es mir jemand erzählt hat und ich es weitergebe. Meld dich, wenn es so weit ist — ich habe dieselben Wochen gehabt." },
     ],
     questions: [
       {
@@ -282,7 +286,7 @@ export const c1U25: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Moderatorin", text: "Frau Aydin, Sie schreiben, Sie hätten zwei Stimmen." },
+      { speaker: "Moderatorin", text: "Frau Aydin, Sie sind zweisprachig aufgewachsen und schreiben, Sie hätten zwei Stimmen." },
       { speaker: "Frau Aydin", text: "Es ist, als hätte ich zwei Stimmen. Auf Türkisch bin ich wärmer und ungenauer, auf Deutsch genauer und kälter." },
       { speaker: "Moderatorin", text: "Klingt nach einem Verlust." },
       { speaker: "Frau Aydin", text: "Manchmal ist es einer. Ich kann meiner Mutter auf Deutsch nichts erklären und meiner Steuerberaterin auf Türkisch nichts." },
@@ -291,7 +295,9 @@ export const c1U25: SkillExercise[] = [
       { speaker: "Moderatorin", text: "Wann fehlt etwas?" },
       { speaker: "Frau Aydin", text: "Bei Trauer. Da will man die erste Sprache, und wenn niemand da ist, der sie spricht, hilft die zweite nicht." },
       { speaker: "Moderatorin", text: "Und im Alltag?" },
-      { speaker: "Frau Aydin", text: "Im Alltag überwiegt der Gewinn deutlich. Ich sehe an jedem deutschen Satz, dass er auch anders sein könnte. Einsprachige halten ihre Sprache für die Welt; ich kann das nicht mehr." },
+      { speaker: "Frau Aydin", text: "Im Alltag überwiegt der Gewinn deutlich. Es bleibt ein Bewusstsein dafür, dass jeder deutsche Satz auch anders sein könnte. Einsprachige halten ihre Sprache für die Welt; ich kann das nicht mehr." },
+      { speaker: "Moderatorin", text: "Wird von Ihnen erwartet, dass Sie Ihre Identität erklären?" },
+      { speaker: "Frau Aydin", text: "Ständig, und immer als Frage nach einer Entscheidung. Dabei erklärt niemand sonst seine, er hat sie einfach." },
       { speaker: "Moderatorin", text: "Fühlen Sie sich manchmal zur Loyalität gezwungen?" },
       { speaker: "Frau Aydin", text: "Von beiden Seiten, ja. Aber das ist deren Frage, nicht meine. Ich beantworte sie seit ein paar Jahren nicht mehr." },
       { speaker: "Moderatorin", text: "Was sagen Sie jemandem, der gerade anfängt?" },

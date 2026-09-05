@@ -52,8 +52,10 @@ export const c1U22: SkillExercise[] = [
     text:
       "EINE ENTSCHEIDUNG, DIE MAN NICHT ZURÜCKNIMMT\n\n" +
       "Wer aus einer Sprache kommt, die ebenfalls zwischen zwei Anredeformen unterscheidet, hält das deutsche Du für vertrautes Gelände. Die Kategorien stimmen auch. Die Regeln für den Wechsel nicht.\n\n" +
+      "Heikel ist die Sache, weil sie den Umgangston auf Jahre festlegt und weil ein falscher Schritt beide Seiten verlegen macht.\n\n" +
       "Erstens: Wer bietet an? Im Beruf geht das Angebot von der ranghöheren oder deutlich älteren Person aus, nicht von der jüngeren. Wer als Neuer im Team die Chefin duzt, weil sie freundlich war, hat keine Nähe hergestellt, sondern eine Stufe übersprungen.\n\n" +
       "Zweitens: Man darf ablehnen. „Ich bleibe lieber beim Sie, wenn es Ihnen recht ist“ ist ein vollständiger, höflicher Satz. Er wirkt kühl, ist aber vorgesehen — und in manchen Berufen (Justiz, Medizin, Verwaltung) die Regel.\n\n" +
+      "Dabei geht es nicht um Demut. Das Sie ist keine Unterwerfung, sondern eine Grenze, und das Du ist nicht automatisch vertraulich — in vielen Betrieben duzen sich Menschen, die einander nichts erzählen.\n\n" +
       "Drittens, und das ist der eigentliche Unterschied: Der Weg führt nur in eine Richtung. Ein Du lässt sich nicht sauber zurücknehmen. Wer nach einem Streit wieder zum Sie übergeht, sagt damit etwas Deutliches, und alle im Raum hören es.\n\n" +
       "Viertens: Die Gepflogenheiten haben sich verschoben und sind nicht einheitlich. In Start-ups duzen sich alle ab dem ersten Tag, in Handwerksbetrieben oft auch. In Behörden, Banken und Kanzleien gilt weiter das Sie. Es hilft wenig, die eigene Regel mitzubringen; es hilft, zwei Tage zuzuhören.\n\n" +
       "Bleibt der Zwischenfall, den fast jeder einmal erlebt: Man hat versehentlich geduzt. Die richtige Reaktion ist klein. „Entschuldigung, das ist mir rausgerutscht“ genügt, und in neun von zehn Fällen kommt zurück: „Kein Problem — wollen wir ohnehin?“",
@@ -135,6 +137,7 @@ export const c1U22: SkillExercise[] = [
       "Zwei Wörter, kein Ausrufezeichen nötig, und es ist hohes Lob. Wer aus einer Kultur kommt, in der man wärmer und häufiger lobt, unterschätzt diesen Satz und überschätzt seinen eigenen.\n\n" +
       "Deutsches Lob ist im Regelfall leiser und spezifischer. „Gut gemacht“ ist freundlich. „Das war ein starker Vortrag, besonders der Teil zur Finanzierung“ ist deutlich mehr, weil es zeigt, dass jemand zugehört hat. Die Spezifik trägt das Gewicht, nicht die Lautstärke.\n\n" +
       "Umgekehrt hat sehr warmes Lob eine unangenehme Wirkung, die selten beabsichtigt ist. „Du bist unglaublich, ich habe noch nie jemanden wie dich gesehen“ klingt für viele nicht herzlich, sondern aufdringlich — oder es weckt den Verdacht, gleich komme eine Bitte. Der Empfänger wird verlegen und weiß nicht, was er zurückgeben soll.\n\n" +
+      "Dahinter steht keine Kälte, sondern eine Annahme über Aufrichtigkeit: Wer selten lobt, dessen Lob zählt. Übertriebenes Lob entwertet sich selbst, und im schlechtesten Fall klingt es nach Hochmut — als verteile jemand Noten.\n\n" +
       "Ebenso wichtig ist die Antwort auf ein Kompliment. Der Reflex „Ach, das war nichts“ ist verbreitet, gilt aber zunehmend als unnötig klein. Ein knappes „Danke, das freut mich“ ist angemessen und wirkt weder eitel noch demonstrativ bescheiden.\n\n" +
       "Ein letzter Punkt, der Lernenden oft entgeht: Anerkennung wird häufig nicht als Kompliment ausgesprochen, sondern als Handlung. Wer gefragt wird, ob er den nächsten Punkt übernimmt, ist gelobt worden. Wer nach seiner Einschätzung gefragt wird, ebenfalls. Wer darauf wartet, dass jemand es ausdrücklich sagt, hält sich für übersehen — und ist es nicht.",
     questions: [
@@ -217,6 +220,8 @@ export const c1U22: SkillExercise[] = [
       { speaker: "Kollege", text: "Nein. Das Ziel ist verstehen, nicht sprechen. Wer als Zugezogener Dialekt spricht, klingt fast immer wie eine Imitation." },
       { speaker: "Ayşe", text: "Das beruhigt mich." },
       { speaker: "Kollege", text: "Und es reichen erstaunlich wenige Wörter. Zwanzig Ausdrücke decken das meiste ab, dazu ein paar Lautverschiebungen." },
+      { speaker: "Ayşe", text: "Und wenn ich mich gar nicht verständigen kann?" },
+      { speaker: "Kollege", text: "Passiert selten. Die meisten schalten um, sobald sie merken, dass du nicht von hier bist — die regionale Dichte nimmt ab, je mehr Leute im Raum sind." },
       { speaker: "Ayşe", text: "Zum Beispiel?" },
       { speaker: "Kollege", text: "„Servus“ im Süden, „Moin“ im Norden — und „Moin“ geht den ganzen Tag, nicht nur morgens." },
       { speaker: "Ayşe", text: "Das habe ich falsch gemacht, monatelang." },
@@ -286,7 +291,7 @@ export const c1U22: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Katrin", text: "Ich habe Frau Roth gefragt, wann das Baby kommt. Sie ist nicht schwanger." },
-      { speaker: "Sven", text: "Oh." },
+      { speaker: "Sven", text: "Oh. Da bist du ins Fettnäpfchen getreten." },
       { speaker: "Katrin", text: "Ich stand da und habe angefangen zu erklären, warum ich das dachte." },
       { speaker: "Sven", text: "Das war der zweite Fehler, und der war größer als der erste." },
       { speaker: "Katrin", text: "Was hätte ich tun sollen?" },

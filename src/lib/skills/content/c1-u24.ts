@@ -49,6 +49,7 @@ export const c1U24: SkillExercise[] = [
       "WAS EIN SATZ TUT\n\n" +
       "Viele, die zweisprachig aufgewachsen sind, haben mit zehn Jahren am Behördenschalter gedolmetscht. Kaum jemand hat es je Arbeit genannt, und fast niemand hat gelernt, wie es geht.\n\n" +
       "Der häufigste Irrtum ist, dass Übersetzen ein Wörterproblem sei. Ist es selten. Es scheitert daran, dass ein Satz nicht nur etwas bedeutet, sondern etwas tut.\n\n" +
+      "Ein zweiter Irrtum liegt daneben: dass zwei Wörter, die im Wörterbuch gleichbedeutend aussehen, denselben Kontext hätten. Sie haben ihn selten. Manche sind emotional aufgeladen, andere neutral, und die wörtliche Wahl klingt dann holprig, obwohl sie richtig ist.\n\n" +
       "Ein Beispiel aus dem Alltag. Auf die Frage, ob ein Termin früher möglich sei, antwortet die Sachbearbeiterin: „Da müsste ich schauen.“ Wörtlich übersetzt klingt das nach einem freundlichen Vielleicht. Tatsächlich ist es meist ein höfliches Nein mit offener Tür. Wer nur die Wörter überträgt, übermittelt Hoffnung, wo Zurückhaltung stand.\n\n" +
       "Umgekehrt genauso. Eine ausführliche, mehrfach abgesicherte Bitte — mit Entschuldigungen, mit Rückversicherungen — ist in vielen Sprachen normale Höflichkeit. Wörtlich ins Deutsche gebracht, klingt sie unsicher, manchmal sogar unaufrichtig. Die Zurückhaltung des Sprechers wird zur Schwäche des Anliegens.\n\n" +
       "Deshalb gehört zum Vermitteln ein Satz, den man laut sagen darf: „Das lässt sich nicht wörtlich übersetzen. Gemeint ist Folgendes: …“ Damit macht man die eigene Arbeit sichtbar, statt sie zu verstecken.\n\n" +
@@ -133,6 +134,8 @@ export const c1U24: SkillExercise[] = [
       "Eine gute Rede spannt einen Bogen: Sie beginnt bei etwas Konkretem, führt zu einem Gedanken und kommt am Ende dorthin zurück, wo sie angefangen hat. Der Zuhörer merkt den Bogen nicht, er spürt nur, dass die Rede zu Ende ist, bevor der Redner es sagt.\n\n" +
       "Der Anfang entscheidet über die ersten dreißig Sekunden. „Ich freue mich, heute hier zu sein“ ist kein Anfang, sondern eine Räusperung. Eine Szene, eine Zahl oder eine Frage packt zu; die Begrüßung kann danach kommen.\n\n" +
       "In der Mitte gilt die Regel der Konkretheit. Ein Beispiel trägt weiter als drei Behauptungen, und ein einziger Name — eine Kollegin, ein Kunde, ein Abend im November — bleibt hängen, wo Zahlen abfließen.\n\n" +
+      "Der Höhepunkt gehört nicht ans Ende, sondern kurz davor. Er ist die Stelle, an der ein Gedanke durchdringt und der Raum still wird; danach braucht es nur noch wenige Sätze.\n\n" +
+      "Kürze ist dabei die unterschätzte Tugend. Eine kurze Rede stiftet mehr Aufmerksamkeit als eine vollständige, und niemand hat je eine Rede kritisiert, weil sie zu früh vorbei war.\n\n" +
       "Der Schluss ist die schwierigste Stelle, und die meisten Reden sterben dort. Sie enden nicht, sie hören auf: „Ja, das war's dann von mir.“ Der letzte Satz sollte nachhallen — kurz, ohne neues Argument, ohne Dank an die Technik. Wer ihn vorher aufschreibt und auswendig kann, gewinnt mehr als durch jede andere Vorbereitung.\n\n" +
       "Und die Sprache? Kürzere Sätze als im Text, mehr Verben, weniger Substantive. Geschriebenes Deutsch verträgt Schachtelsätze, gesprochenes nicht — und ein Publikum kann nicht zurückblättern.",
     questions: [
@@ -219,7 +222,7 @@ export const c1U24: SkillExercise[] = [
       { speaker: "Herr Vogt", text: "Mit Frist. Sechs Monate Kündigungsfrist — Sie haben Planungssicherheit für zwei Jahre, ich habe eine Tür." },
       { speaker: "Frau Kral", text: "Das ist ein Vorschlag, mit dem ich in die Geschäftsführung gehen kann." },
       { speaker: "Herr Vogt", text: "Und der Preis?" },
-      { speaker: "Frau Kral", text: "Unser letztes Wort wäre 10 Prozent, drei Jahre, Ausstieg nach achtzehn Monaten mit sechs Monaten Frist. Darunter habe ich kein Mandat." },
+      { speaker: "Frau Kral", text: "Unser letztes Wort wäre 10 Prozent, drei Jahre, Ausstieg nach achtzehn Monaten mit sechs Monaten Frist. Das ist endgültig — darunter habe ich kein Mandat." },
       { speaker: "Herr Vogt", text: "Dann machen wir es so. Schicken Sie es unterschriftsreif bis Donnerstag." },
       { speaker: "Frau Kral", text: "Donnerstag früh. Und Herr Vogt — nachbessern wir das dann nicht mehr." },
       { speaker: "Herr Vogt", text: "Einverstanden. Handschlag gilt." },
@@ -288,6 +291,8 @@ export const c1U24: SkillExercise[] = [
       { speaker: "Prüferin", text: "Vom Prüfling werden vier Teilleistungen verlangt: Lesen, Hören, Schreiben, Sprechen." },
       { speaker: "Teilnehmer", text: "Muss man in jedem Teil bestehen?" },
       { speaker: "Prüferin", text: "Zum Bestehen sind insgesamt sechzig Prozent nötig. Ein schwacher Teil lässt sich ausgleichen — aber nicht beliebig." },
+      { speaker: "Teilnehmer", text: "Und wie ist die Verteilung auf die vier Teile?" },
+      { speaker: "Prüferin", text: "Gleichmäßig. Die Anforderungen und die Bewertung sind für alle vier dokumentiert; lesen Sie das einmal in Ruhe, es steht öffentlich im Netz." },
       { speaker: "Teilnehmerin", text: "Worauf achten Sie beim Schreiben am meisten?" },
       { speaker: "Prüferin", text: "Auf drei Dinge: ob die Aufgabe vollständig bearbeitet ist, ob der Text gegliedert ist, und ob das Register zur Textsorte passt. Fehlerfreiheit kommt danach." },
       { speaker: "Teilnehmer", text: "Das überrascht mich." },

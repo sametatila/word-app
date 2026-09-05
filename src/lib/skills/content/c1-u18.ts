@@ -53,6 +53,7 @@ export const c1U18: SkillExercise[] = [
       "Der Unterschied ist keine Feinheit. Er entscheidet, ob ein Satz eine Vermutung oder einen Vorwurf enthält. In einer Personalakte ist das ein juristisch relevanter Unterschied.\n\n" +
       "Bemerkenswert ist, dass viele Muttersprachler die beiden ebenfalls vermischen — „scheinbar“ wird umgangssprachlich oft für „anscheinend“ verwendet. In geschriebener Sprache und in Prüfungen gilt die Unterscheidung gleichwohl.\n\n" +
       "Ein ähnliches Paar: effektiv und effizient. Effektiv ist, was das Ziel erreicht. Effizient ist, was es mit geringem Aufwand erreicht. Eine Maßnahme kann effektiv und zugleich völlig ineffizient sein — sie wirkt, kostet aber das Zehnfache. Wer beides gleichsetzt, verliert genau die Aussage, auf die es in einem Bericht ankommt.\n\n" +
+      "Der Unterschied ist auch keine Frage der Interpretation. Er steht im Wörterbuch, und er steht in jedem Kommentar zum Arbeitsrecht.\n\n" +
       "Genauigkeit auf dieser Ebene wirkt kleinlich, solange nichts davon abhängt. Sie fällt erst auf, wenn ein Satz anders ausgelegt wird, als er gemeint war — und dann fällt sie zurück auf den, der ihn geschrieben hat.",
     questions: [
       {
@@ -127,6 +128,7 @@ export const c1U18: SkillExercise[] = [
       "Die interne Meldung: „Ausfall Node 3, 09:12–13:04, Ursache Speicherleck im Cache-Dienst. Fix eingespielt, Monitoring angepasst.“ Kein vollständiger Satz, keine Entschuldigung. Der Adressat kennt das System und braucht Daten.\n\n" +
       "Die Kundenmitteilung: „Am Dienstagvormittag war unser Dienst rund vier Stunden nicht erreichbar. Die Ursache lag bei uns; wir haben sie behoben und die Überwachung erweitert, damit sie sich nicht wiederholt. Für die Unterbrechung entschuldigen wir uns.“ Ganze Sätze, Verantwortung benannt, keine technischen Details.\n\n" +
       "Die Pressemeldung: „Nach einer technischen Störung am Dienstag ist der Dienst seit Dienstagnachmittag wieder uneingeschränkt verfügbar.“ Kürzer als beide, und auffällig: Der Ausfall steht im Nebensatz, die Wiederherstellung im Hauptsatz.\n\n" +
+      "Wer denselben Vorgang für eine andere Textsorte umschreibt, ändert also nicht den Stil, sondern die Auswahl.\n\n" +
       "Der Inhalt ist derselbe. Was sich ändert, ist der Adressat — und mit ihm, welche Information tragend ist.\n\n" +
       "Zwei Fehler sind typisch. Der erste: die interne Tonlage nach außen tragen. Ein Kunde, der „Speicherleck im Cache-Dienst“ liest, fühlt sich nicht informiert, sondern abgefertigt. Der zweite ist subtiler: die Kundensprache nach innen tragen. Wer im Team schreibt „Wir bedauern die entstandenen Unannehmlichkeiten“, klingt nicht höflich, sondern überheblich — als spräche er nicht mit Kollegen, sondern über sie.\n\n" +
       "Register ist deshalb keine Frage der Höflichkeit, sondern der Adressierung. Zu hoch gegriffen wirkt herablassend, zu tief gegriffen respektlos. Beides sagt dasselbe: Ich habe nicht daran gedacht, wer das liest.",
@@ -208,12 +210,14 @@ export const c1U18: SkillExercise[] = [
       { speaker: "Miriam", text: "Nach der Sitzung letzte Woche?" },
       { speaker: "Deniz", text: "Ja. Er hat mich vor allen unterbrochen, dreimal. Und heute: „Morgen, alles gut?“" },
       { speaker: "Miriam", text: "Vielleicht hat er es verdrängt. Manche merken es wirklich nicht." },
-      { speaker: "Deniz", text: "Das macht es nicht besser." },
+      { speaker: "Deniz", text: "Das macht es nicht besser. Und es hält die Illusion aufrecht, dass nichts passiert ist." },
       { speaker: "Miriam", text: "Nein. Aber es ändert, was du tun kannst. Wenn er es nicht gemerkt hat, hilft ein Gespräch. Wenn er so tut, als ob, hilft es nicht." },
       { speaker: "Deniz", text: "Wie unterscheide ich das?" },
       { speaker: "Miriam", text: "An der Reaktion. Sag ihm sachlich, was passiert ist. Wer es verdrängt hat, erschrickt. Wer die Normalität bewusst aufrechterhält, weicht aus." },
       { speaker: "Deniz", text: "Und wenn er ausweicht?" },
       { speaker: "Miriam", text: "Dann weißt du, woran du bist, und das ist mehr wert als eine Entschuldigung, die keine ist." },
+      { speaker: "Deniz", text: "Ich will keinen Bruch. Ich will nur, dass es benannt wird." },
+      { speaker: "Miriam", text: "Dann sag genau das. Ohne Emotion in der Stimme, mit dem Satz, den du dir vorher zurechtgelegt hast." },
       { speaker: "Deniz", text: "Ich hasse diese Unsicherheit." },
       { speaker: "Miriam", text: "Die verschwindet erst, wenn du fragst. Solange du es dir selbst erklärst, erklärst du es dir immer schlechter." },
     ],
@@ -283,7 +287,9 @@ export const c1U18: SkillExercise[] = [
       { speaker: "Frau Arslan", text: "Ich habe sie gehört und für berechtigt gehalten. Das ist der Unterschied zwischen „ungeachtet“ und „trotz Ihrer falschen Bedenken“." },
       { speaker: "Herr Weiß", text: "Das ist ein feiner Unterschied." },
       { speaker: "Frau Arslan", text: "Es ist der ganze Unterschied. Ich schwäche Ihre Position nicht ab, ich stelle sie nur hinter eine andere." },
-      { speaker: "Herr Weiß", text: "Und welche?" },
+      { speaker: "Herr Weiß", text: "Sie beanspruchen also, meine Gegenposition zu kennen und trotzdem anders zu entscheiden." },
+      { speaker: "Frau Arslan", text: "Ja. Genau das ist meine Aufgabe." },
+      { speaker: "Herr Weiß", text: "Und welche Position steht dahinter?" },
       { speaker: "Frau Arslan", text: "Die Vertragsstrafe. Wir verschieben um drei Wochen und zahlen vierzigtausend. Nichtsdestotrotz nehme ich Ihre Bedenken ins Protokoll auf." },
       { speaker: "Herr Weiß", text: "Was bringt mir das Protokoll?" },
       { speaker: "Frau Arslan", text: "Wenn es schiefgeht, war es meine Entscheidung, nicht Ihr Versäumnis. Das ist keine Höflichkeit, das ist die Verteilung der Verantwortung." },

@@ -48,10 +48,12 @@ export const c1U21: SkillExercise[] = [
       "WENN DER TON FEHLT\n\n" +
       "„Na, das lief ja super.“ Im Gespräch verrät der Tonfall alles. In einer Nachricht steht dasselbe da wie ein Lob.\n\n" +
       "Deutsche Ironie ist oft unmarkiert. Es fehlt das Lachen, die Übertreibung bleibt klein, das Gesicht bleibt ernst. Wer aus einer Sprache kommt, in der Ironie deutlicher angezeigt wird, hört jahrelang das Gegenteil dessen, was gemeint ist — und merkt es meist erst, wenn jemand nachfragt.\n\n" +
+      "Der Unterton, der im Gespräch alles verrät, fehlt hier ersatzlos. Ob ein Satz freundlich oder sarkastisch gemeint war, muss der Leser aus etwas anderem erschließen.\n\n" +
       "Es gibt dennoch Anhaltspunkte, und sie stehen im Text, nicht in der Stimme.\n\n" +
       "Erstens der Widerspruch zur Lage. Nach einem gescheiterten Projekt ist „das lief ja super“ nicht mehrdeutig, sondern eindeutig ironisch. Wer die Fakten kennt, kennt die Bedeutung.\n\n" +
       "Zweitens die Partikeln. „ja“, „aber“, „wohl“ und „vielleicht“ tragen in solchen Sätzen mehr als ihr Wörterbucheintrag: „Du bist mir aber einer“ ist kein Kompliment. „Das war ja klar“ enthält Vorwurf, nicht Feststellung.\n\n" +
       "Drittens die übertriebene Wortwahl. Wer statt „gut“ plötzlich „großartig“, „phänomenal“ oder „ein Traum“ schreibt, obwohl es um einen verspäteten Bus geht, meint das Gegenteil.\n\n" +
+      "Über die Grenze zwischen beidem ist man sich übrigens auch unter Muttersprachlern nicht einig: In Kommentarspalten sind die Leser regelmäßig gespalten, ob ein Satz noch Ironie war oder schon Spott.\n\n" +
       "Zwei Fehler liegen nahe. Der erste ist, alles wörtlich zu nehmen. Der zweite kommt später und ist unangenehmer: alles für Ironie zu halten. Wer echte Kritik als Scherz behandelt, entlarvt sich schneller als jemand, der nachfragt. Und Nachfragen ist erlaubt — „War das ironisch gemeint?“ ist eine normale Frage, keine Kapitulation.",
     questions: [
       {
@@ -131,6 +133,7 @@ export const c1U21: SkillExercise[] = [
       "Der deutsche Satz für einen misslungenen Scherz sagt schon alles. Subjekt ist der Witz, das Verb beschreibt eine Ankunft, und der Ort der Entscheidung ist der Empfänger. Nicht: „Ich habe es falsch gesagt.“ Sondern: Es ist dort nicht angekommen.\n\n" +
       "Das ist unbequem, weil es die übliche Verteidigung entwertet. „So war das nicht gemeint“ beschreibt die Absicht und ändert nichts an der Wirkung. Beides kann gleichzeitig wahr sein: Der Sprecher wollte niemanden verletzen, und der Scherz war verletzend.\n\n" +
       "Ein brauchbarer Maßstab ist die Zielscheibe. Wen trifft der Witz — und kann diese Person zurückschießen? Ein Scherz über den Chef, gemacht von einem Praktikanten, ist Mut. Derselbe Scherz über den Praktikanten, gemacht vom Chef, ist etwas anderes, auch wenn der Wortlaut identisch bleibt. Humor bewegt sich nach oben leicht und nach unten nie.\n\n" +
+      "Damit hängt zusammen, ob jemand bloßgestellt wird. Eine Provokation unter Gleichrangigen ist ein Angebot, das man annehmen oder ausschlagen kann; dieselbe Provokation von oben nach unten lässt keine Wahl.\n\n" +
       "Der zweite Maßstab ist die Wiederholung. Eine einmalige Spitze ist eine Spitze. Dieselbe Spitze über Monate hinweg, immer gegen dieselbe Person, ist keine Reihe von Scherzen mehr.\n\n" +
       "Bleibt die Frage, was man tut, wenn es schiefgegangen ist. Die schwächste Reaktion ist „Man wird ja wohl noch Spaß verstehen dürfen“ — sie verlangt vom Getroffenen, auch noch die Verantwortung zu tragen. Die stärkste ist kurz: „Das war unpassend, ich nehme es zurück.“ Ohne Erklärung, warum es eigentlich lustig war. Diese Erklärung interessiert an dieser Stelle niemanden, und sie macht es regelmäßig schlimmer.",
     questions: [
@@ -207,6 +210,10 @@ export const c1U21: SkillExercise[] = [
       { speaker: "Tobias", text: "Für einen kleinen. Das war ein Kalauer, kein guter Witz. Bei einem Kalauer stöhnt man mehr, als man lacht." },
       { speaker: "Ela", text: "Warum macht ihr sie dann?" },
       { speaker: "Tobias", text: "Weil das Stöhnen dazugehört. Es ist ein Signal: Wir sind entspannt genug für schlechte Witze." },
+      { speaker: "Ela", text: "Muss man den dann interpretieren?" },
+      { speaker: "Tobias", text: "Nein, gerade nicht. Wer einen Witz erklärt bekommt, versteht ihn und lacht trotzdem nicht. Bei einem Reim geht es ähnlich — man hört ihn oder man hört ihn nicht." },
+      { speaker: "Ela", text: "Und gibt es Themen, über die man nicht scherzt?" },
+      { speaker: "Tobias", text: "Einige. Manches ist Tabu, und die Grenze verschiebt sich je nachdem, wer im Raum sitzt." },
       { speaker: "Ela", text: "Ich merke, dass ich Wortspiele nie mitbekomme." },
       { speaker: "Tobias", text: "Die kommen zuletzt. Erst versteht man die Wörter, dann die Sätze, dann den Ton — und ganz am Ende den doppelten Boden." },
       { speaker: "Ela", text: "Das klingt tröstlich und trotzdem ärgerlich." },
@@ -278,6 +285,8 @@ export const c1U21: SkillExercise[] = [
       { speaker: "Mareike", text: "Du bist aus Hamburg? Dann sagst du also drei Sätze am Tag." },
       { speaker: "Halil", text: "Zwei. Der dritte war der hier." },
       { speaker: "Mareike", text: "Sehr gut. Ich bin aus Bayern, ich rede also ununterbrochen und trinke Bier zum Frühstück." },
+      { speaker: "Halil", text: "Und wir gelten dafür als zugeknöpft. Pauschal, versteht sich — für einen ganzen Landstrich." },
+      { speaker: "Mareike", text: "Genau wie meine Sitten hier angeblich alle mit Bier anfangen." },
       { speaker: "Halil", text: "Ich hätte gesagt: Weißwurst." },
       { speaker: "Mareike", text: "Vor zwölf Uhr, sonst ist es ein Verbrechen. Das ist übrigens kein Klischee, das ist ein Kult." },
       { speaker: "Halil", text: "Bei uns im Norden gibt es das auch. Nur ohne Kult, mit Fischbrötchen und ohne Erklärung." },

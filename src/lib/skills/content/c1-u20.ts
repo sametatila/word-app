@@ -52,6 +52,7 @@ export const c1U20: SkillExercise[] = [
       "„Kann eine Maschine Schuld haben?“ ist die Frage, die am häufigsten gestellt wird, und die am wenigsten weiterführt.\n\n" +
       "Schuld setzt Vorsatz voraus — jemanden, der anders hätte handeln können und es nicht wollte. Ein System, das Muster fortschreibt, hat keinen Vorsatz. Es wirkt, als ob Maschinen entschieden, und in gewissem Sinn tun sie es auch; aber sie wollen nichts.\n\n" +
       "Die brauchbare Frage lautet anders: Wem wird die Verantwortung zugerechnet? Zurechnung ist keine Entdeckung, sondern eine Entscheidung. Eine Rechtsordnung braucht eine Instanz, die man ansprechen, verklagen, zur Änderung zwingen kann. Bei einem fehlerhaften Bremssystem fragt niemand, ob das Steuergerät Schuld empfindet.\n\n" +
+      "Dass ein System Verstehen simuliert, ändert daran nichts. Die Simulation ist gut genug, um Menschen zu täuschen, und genau deshalb ist die Frage nach der Zurechnung dringender geworden, nicht schwieriger.\n\n" +
       "Damit verschiebt sich die Debatte von der Maschine zu den Menschen um sie herum. Wer hat das System eingesetzt, für welchen Zweck, mit welchen Daten, und wer hätte die Intervention auslösen können, als es schiefging?\n\n" +
       "Zwei Ausweichbewegungen kehren regelmäßig wieder. Die erste: „Das war der Algorithmus.“ Sie macht ein Werkzeug zum Täter und den Betreiber zum Zuschauer. Die zweite ist umgekehrt und ebenso bequem: „Am Ende entscheidet immer ein Mensch.“ Das stimmt formal und beschreibt selten die Praxis — wer dreihundert Vorschläge am Tag bestätigt, entscheidet nicht, er unterschreibt.\n\n" +
       "Wer haftbar ist, lässt sich regeln. Ob eine Maschine etwas empfindet, lässt sich nicht klären — und muss es für diese Frage auch nicht.",
@@ -210,7 +211,7 @@ export const c1U20: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Jan", text: "Ich zahle jeden Monat in eine Rente ein, die es geben wird, wenn ich alt bin — vielleicht." },
-      { speaker: "Vater", text: "Genau das habe ich mit dreißig auch gesagt." },
+      { speaker: "Vater", text: "Genau das habe ich mit dreißig auch gesagt. Der Generationenvertrag stand damals schon in der Zeitung, angeblich kurz vor dem Ende." },
       { speaker: "Jan", text: "Bei dir waren es drei Beitragszahler pro Rentner. Bei mir werden es unter zwei sein. Das ist kein Gefühl, das ist Arithmetik." },
       { speaker: "Vater", text: "Nichtsdestotrotz funktioniert das System seit siebzig Jahren. Es wurde mehrfach umgebaut und hat jedes Mal gehalten." },
       { speaker: "Jan", text: "Umgebaut heißt: zulasten der Jüngeren. Höhere Beiträge, späterer Renteneintritt." },
@@ -219,6 +220,8 @@ export const c1U20: SkillExercise[] = [
       { speaker: "Vater", text: "Es steht in jedem Rentenbericht. Nur liest es keiner, weil beide Seiten lieber sagen, die andere sei egoistisch." },
       { speaker: "Jan", text: "Was wäre denn ehrlich?" },
       { speaker: "Vater", text: "Dass eine Umverteilung ansteht und jemand sie tragen muss. Solidarisch heißt nicht, dass es niemanden trifft — es heißt, dass wir entscheiden, wen und wie viel." },
+      { speaker: "Jan", text: "Kollektiv entscheiden heißt am Ende: jemand zahlt und jemand nicht." },
+      { speaker: "Vater", text: "So ist es. Nur steht dann wenigstens fest, wer." },
       { speaker: "Jan", text: "Und wer entscheidet das?" },
       { speaker: "Vater", text: "Ihr. Ihr seid mehr Wähler als wir es in zwanzig Jahren sein werden. Das ist der Teil, den meine Generation ungern ausspricht." },
     ],
@@ -286,6 +289,8 @@ export const c1U20: SkillExercise[] = [
       { speaker: "Leiterin", text: "Wir schreiben heute keine Prognose. Wir entwerfen ein Szenario und schauen rückblickend darauf." },
       { speaker: "Teilnehmer", text: "Wo ist der Unterschied?" },
       { speaker: "Leiterin", text: "Eine Prognose behauptet etwas über die Zukunft. Ein Szenario fragt: Stellte man sich vor, es gäbe im Jahr 2050 keine privaten Autos in Städten — welche Schritte lägen dann dazwischen?" },
+      { speaker: "Teilnehmerin", text: "Und der Entwurf soll dann was zeigen?" },
+      { speaker: "Leiterin", text: "Wo er scheitert. Alles andere ist Werbung." },
       { speaker: "Teilnehmerin", text: "Das klingt utopisch." },
       { speaker: "Leiterin", text: "Utopisch ist kein Einwand, solange die Zwischenschritte denkbar bleiben. Genau darauf prüfen wir es." },
       { speaker: "Teilnehmer", text: "Dann fange ich rückwärts an. 2049 wäre der letzte Parkplatz umgewidmet worden." },
@@ -293,6 +298,8 @@ export const c1U20: SkillExercise[] = [
       { speaker: "Leiterin", text: "Sehen Sie? Der Bruch liegt nicht in 2050, er liegt in 2040. Genau dafür machen wir das." },
       { speaker: "Teilnehmer", text: "Also ist das Szenario widerlegt." },
       { speaker: "Leiterin", text: "Nein, es ist präzisiert. Wir wissen jetzt, welche Entscheidung wann fallen müsste. Ein Szenario, das an einer Jahreszahl scheitert, hat seine Arbeit getan." },
+      { speaker: "Teilnehmer", text: "In manchen Szenarien verschmelzen ja zwei Städte zu einer Region, oder man belebt eine alte Bahnstrecke wieder." },
+      { speaker: "Leiterin", text: "Beides ist denkbar, und beides prüfen wir genauso: Welche Entscheidung müsste wann fallen?" },
       { speaker: "Teilnehmerin", text: "Und wenn jemand sagt, das sei alles Fantasie?" },
       { speaker: "Leiterin", text: "Dann fragen Sie ihn nach seinem eigenen Bild von 2050. Er hat eines — er hat es nur nie aufgeschrieben." },
     ],

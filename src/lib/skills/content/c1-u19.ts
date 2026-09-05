@@ -53,6 +53,7 @@ export const c1U19: SkillExercise[] = [
       "Dieser Satz gibt nichts zu und nimmt nichts zurück. Er stellt eine Behauptung für die Dauer eines Gedankengangs auf und schaut, wohin sie führt.\n\n" +
       "In deutschen Diskussionen ist das ein anerkanntes Verfahren, kein rhetorischer Trick. Wer „angenommen“ sagt, signalisiert: Ich prüfe Ihre Position von innen, nicht von außen. Und wer daraufhin sagt „Sie geben mir also recht“, hat die Konstruktion nicht verstanden — was sich beim Gegenüber schnell herumspricht.\n\n" +
       "Die Formen unterscheiden sich im Gewicht. „Angenommen, …“ ist alltäglich und leicht. „Gesetzt den Fall, …“ ist formeller und klingt nach Prüfung. „Man stelle sich vor, …“ ruft ein Bild auf und wirkt rhetorisch. „Wenn man einmal unterstellt, dass …“ ist am vorsichtigsten und markiert am deutlichsten, dass hier nichts behauptet wird.\n\n" +
+      "Wichtig ist dabei, dass die Annahme nicht zutreffen muss. Sie muss nur klar genug sein, damit man sieht, was aus ihr folgt.\n\n" +
       "Der eigentliche Nutzen zeigt sich, wenn man voreingenommen ist. Man kann eine Position, die man ablehnt, entweder bekämpfen oder durchrechnen. Bekämpfen ist schneller; durchrechnen bringt oft zutage, dass sie an einer bestimmten Stelle bricht — und diese Stelle zu benennen ist ein stärkeres Argument als jede Ablehnung.\n\n" +
       "Es hat auch eine unangenehme Kehrseite. Wer hypothetisch redet, kann sich hinter der Konstruktion verstecken: alles gesagt, nichts vertreten. Deshalb gehört zur Maxime, dass man am Ende die eigene Position benennt — angenommen, man hat eine.",
     questions: [
@@ -133,6 +134,7 @@ export const c1U19: SkillExercise[] = [
       "Der Begriff „persönlicher CO2-Fußabdruck“ wurde in den 2000er Jahren durch eine groß angelegte Kampagne eines Ölkonzerns bekannt gemacht. Das ist keine Verschwörungserzählung, sondern belegte Werbegeschichte — und es sagt wenig darüber aus, ob der Begriff nützlich ist.\n\n" +
       "Nützlich ist er, weil er sichtbar macht, was ohne ihn unsichtbar bleibt. Wer einmal ausgerechnet hat, was ein Flug nach Bangkok bedeutet, weiß etwas, das er vorher nicht wusste.\n\n" +
       "Problematisch wird er durch die Verlagerung. Wenn die Verantwortung des Einzelnen zum Hauptthema wird, verschwindet die Frage nach den Rahmenbedingungen aus dem Blick. Ob jemand ohne Auto zur Arbeit kommt, hängt weniger von seiner Einstellung ab als davon, ob dort ein Bus fährt. Zwei Drittel der Emissionen entstehen in Bereichen, in denen Einzelne gar nicht entscheiden.\n\n" +
+      "Hinzu kommt, dass Verursachen und Verhindern selten in derselben Hand liegen. Wer die Emissionen verursacht, kann sie oft nicht allein unterbinden, und wer sie unterbinden könnte, verursacht sie nicht.\n\n" +
       "Der Gegenschluss ist ebenso falsch. „Es ist ohnehin systemisch, also ist mein Verhalten egal“ ist bequem, und es stimmt nur, solange alle es sagen. Verhalten verändert Märkte, wenn es viele tun — langsam, aber messbar.\n\n" +
       "Der ehrlichste Satz zu diesem Thema ist deshalb ein Zielkonflikt: Individuelles Handeln reicht nicht aus und ist trotzdem nicht wirkungslos. Beides gilt zugleich. Wer nur die erste Hälfte sagt, entlastet sich; wer nur die zweite sagt, überfordert den Einzelnen und entlastet die Politik.\n\n" +
       "Was zunehmend fehlt, ist nicht Wissen, sondern die Bereitschaft, beide Hälften in einem Satz stehen zu lassen.",
@@ -208,6 +210,7 @@ export const c1U19: SkillExercise[] = [
       { speaker: "Frau Öztürk", text: "Ich merke, dass die Frage immer mir gestellt wird und nie meinem Kollegen." },
       { speaker: "Moderator", text: "Das ist ein fairer Einwand." },
       { speaker: "Frau Öztürk", text: "Die Antwort ist trotzdem einfach: hier. Und in Izmir auch. Beides ist zugleich möglich — nur wird es selten so gefragt." },
+      { speaker: "Frau Öztürk", text: "Ich bin hier beheimatet, ohne dort aufgehört zu haben." },
       { speaker: "Moderator", text: "Manche sagen, das gehe nicht. Man müsse sich entscheiden." },
       { speaker: "Frau Öztürk", text: "So sehr ich diese Erwartung verstehe, so oft geht sie an der Wirklichkeit vorbei. Zugehörigkeit ist keine Prüfung mit einer richtigen Antwort." },
       { speaker: "Herr Lang", text: "Ich sehe schon eine Grenze. Irgendwann muss man sagen können, wohin man gehört." },

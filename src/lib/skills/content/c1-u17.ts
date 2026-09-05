@@ -51,7 +51,7 @@ export const c1U17: SkillExercise[] = [
       "Der Unterschied ist nicht Stil, sondern Ökonomie. Deutsche Sachtexte gehen davon aus, dass der Leser sich das Vorherige merkt. Wer denselben Ausdruck wiederholt, signalisiert Misstrauen gegenüber dem Leser — oder Unsicherheit im eigenen Text.\n\n" +
       "Das Werkzeugkasten ist überschaubar. „Letzteres“ und „Ersteres“ greifen zwei zuvor genannte Dinge auf. „Diesbezüglich“ ersetzt eine ganze Nominalphrase („in Bezug auf diese Frage“). Die Verbindungen aus „da(r)-“ plus Präposition — darauf, damit, dafür, davon — nehmen einen ganzen Sachverhalt auf: „Darauf komme ich später zurück.“\n\n" +
       "Aufschlussreich ist, was passiert, wenn man sie weglässt. Der Text wird nicht falsch, er wird schwerfällig, und der Leser bekommt den Eindruck, jeder Satz beginne von vorn.\n\n" +
-      "Eine Warnung gehört dazu. Verweise brauchen einen eindeutigen Bezug. „Er sprach mit dem Kollegen über seinen Antrag“ — wessen Antrag? Wer vorschnell verweist, spart Wörter und kostet Klarheit. Folglich gilt: verweisen, ja — aber nur, wenn genau ein Bezug möglich ist.",
+      "Eine Warnung gehört dazu. Verweise brauchen einen eindeutigen Bezug — der Leser muss ohne Nachdenken wissen, worauf sie sich beziehen. „Er sprach mit dem Kollegen über seinen Antrag“ — wessen Antrag? Wer vorschnell verweist, spart Wörter und kostet Klarheit. Folglich gilt: verweisen, ja — aber nur, wenn genau ein Bezug möglich ist.",
     questions: [
       {
         text: "Warum wirkt der Beispielsatz mit „das zweite Angebot“ wie eine Übersetzung?",
@@ -129,6 +129,7 @@ export const c1U17: SkillExercise[] = [
       "„WIE BESPROCHEN.“\n\n" +
       "Zwei Wörter, kein Verb, ein vollständiger Beitrag. Die Ellipse lässt weg, was der Leser aus dem Zusammenhang ergänzen kann — und funktioniert genau so weit, wie dieser Zusammenhang trägt.\n\n" +
       "In der internen Kommunikation ist sie überall. „Anbei die Zahlen.“ „Wenn nötig, sofort.“ „Erledigt.“ Wer hier ganze Sätze baut, wirkt umständlich, nicht höflich.\n\n" +
+      "Ein kurzer Einschub schließt die Lücke oft schon. „Wie besprochen — Punkt 3 von Montag“ ist drei Wörter länger und für jeden verständlich, auch für den, der die Mail weitergeleitet bekommt.\n\n" +
       "Die Grenze verläuft nicht bei der Kürze, sondern bei der gemeinsamen Grundlage. Zwischen zwei Kollegen, die dasselbe Projekt bearbeiten, ist „Wie besprochen“ präzise. In einer Mail an eine Behörde, die dreihundert Vorgänge führt, ist es unbrauchbar: Was wurde besprochen, mit wem, wann?\n\n" +
       "Hinzu kommt die Wirkung auf den Ton. Der Telegrammstil klingt effizient, wenn beide Seiten unter Druck stehen, und schroff, wenn nur eine Seite es tut. Eine Absage in vier Wörtern spart dem Absender Zeit und teilt dem Empfänger mit, wie viel Zeit er wert war. Das ist selten beabsichtigt und meist kurzsichtig.\n\n" +
       "Eine praktische Faustregel: Weglassen darf man, was der Empfänger ohne Nachdenken ergänzt. Muss er raten, war es keine Ellipse, sondern eine Lücke. Und in heiklen Nachrichten — Absagen, Kritik, Geldfragen — wird der eingesparte Satz fast immer teurer als er war.",
@@ -204,6 +205,8 @@ export const c1U17: SkillExercise[] = [
       { speaker: "Jonas", text: "Kommt darauf an, wie er es gesagt hat." },
       { speaker: "Nesrin", text: "Warum sagt er dann nicht einfach, was er meint?" },
       { speaker: "Jonas", text: "Weil er sich nicht festlegen will. „Bemerkenswert“ lässt sich in beide Richtungen auslegen — er kann später sagen, er habe es positiv gemeint." },
+      { speaker: "Nesrin", text: "Also verschleiert er einfach seine Meinung." },
+      { speaker: "Jonas", text: "Manchmal. Manchmal lässt er sie bewusst offen, weil er sie selbst noch prüft." },
       { speaker: "Nesrin", text: "Also Feigheit." },
       { speaker: "Jonas", text: "Manchmal. Manchmal Rücksicht. Wenn zwanzig Leute im Raum sitzen, ist offene Kritik etwas anderes als unter vier Augen." },
       { speaker: "Nesrin", text: "Und wie soll ich damit umgehen?" },
@@ -212,6 +215,8 @@ export const c1U17: SkillExercise[] = [
       { speaker: "Jonas", text: "Dann war es beabsichtigt, und du hast deine Antwort." },
       { speaker: "Nesrin", text: "Ich hätte gedacht, so etwas gibt es nur bei uns zu Hause." },
       { speaker: "Jonas", text: "Es gibt es überall. Nur die Mittel sind andere. Hier läuft vieles über Untertreibung — je harmloser das Wort, desto schärfer manchmal die Anspielung." },
+      { speaker: "Nesrin", text: "Und woran merke ich, ob es subtil gemeint war oder ich zu viel hineinlese?" },
+      { speaker: "Jonas", text: "Nie ganz sicher. Deshalb fragt man." },
       { speaker: "Nesrin", text: "Das ist anstrengend." },
       { speaker: "Jonas", text: "Ist es. Aber es ist keine Geheimsprache. Wer nachfragt, kommt fast immer durch." },
     ],
@@ -283,6 +288,8 @@ export const c1U17: SkillExercise[] = [
       { speaker: "Dozentin", text: "Dann ist es keine Apposition. Der Test ist genau das: Streichen Sie ihn. Steht der Satz noch, war es einer." },
       { speaker: "Teilnehmer", text: "Die Kommas machen mir Probleme. Ich setze eins und vergesse das zweite." },
       { speaker: "Dozentin", text: "Das ist der häufigste Fehler überhaupt. Der Einschub steht zwischen zwei Kommas — nie zwischen einem." },
+      { speaker: "Teilnehmerin", text: "Kann man damit auch eine Sichtweise einbringen?" },
+      { speaker: "Dozentin", text: "Sehr gut möglich. Der Einschub verschiebt den Blickwinkel, ohne dass jemand widersprechen kann — dazu kommen wir gleich." },
       { speaker: "Teilnehmerin", text: "Gibt es einen Unterschied zum Relativsatz?" },
       { speaker: "Dozentin", text: "Im Ergebnis oft nicht, im Gewicht schon. „Berlin, das die Hauptstadt ist“ klingt schwerfällig. Die Apposition ist leichter und wirkt wie beiläufig erwähnt." },
       { speaker: "Teilnehmer", text: "Beiläufig — kann man das ausnutzen?" },
