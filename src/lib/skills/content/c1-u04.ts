@@ -50,6 +50,7 @@ export const c1U04: SkillExercise[] = [
       "Die Sprache unterscheidet die beiden kaum. Beide sagen „eben“, beide klingen ruhig. Der Unterschied liegt darin, was vorher passiert ist.\n\n" +
       "Der Psychologe Frank Retzlaff nennt das erste „begründetes Hinnehmen“ und das zweite „vorzeitiges Sichfügen“. Wer sich vorzeitig fügt, spart sich die Anstrengung des Prüfens — und zahlt später dafür, weil er auch dort nachgibt, wo Spielraum bestanden hätte.\n\n" +
       "Freilich ist das leichter beschrieben als erkannt. Von außen sieht ein resignierter Mensch oft gelassen aus. Ein Anhaltspunkt: Wer aus Einsicht hinnimmt, kann meist genau sagen, WAS unabänderlich ist. Wer aufgegeben hat, sagt „alles“.\n\n" +
+      "Die Sprache trennt beides schärfer, als es das Gefühl tut. „Ich habe mich damit abgefunden“ setzt einen Abschluss und klingt ruhig; „ich kann nichts machen“ setzt keinen und klingt es auch nicht. Wer den zweiten Satz häufig sagt, hat meist nicht geprüft, sondern aufgehört — und hört es sich selbst nicht an.\n\n" +
       "Sich abfinden ist deshalb kein einheitlicher Vorgang. Wer sich mit einer geprüften Lage abfindet, hat entschieden; wer sich mit einer ungeprüften abfindet, hat nur aufgehört zu fragen.\n\n" +
       "Die Gegebenheiten ändern sich damit nicht. Aber die Frage, ob man sie geprüft hat, ändert alles daran, wie man mit ihnen lebt.",
     questions: [
@@ -134,6 +135,8 @@ export const c1U04: SkillExercise[] = [
       "„Er ist vermeintlich weg“ heißt etwas ganz anderes: jemand behauptet es, und der Sprecher glaubt es nicht. Wer die beiden verwechselt, äußert Skepsis, wo er Zustimmung meinte — ein Fehler, der in Protokollen teuer wird.\n\n" +
       "Am oberen Ende steht „zweifellos“. Es duldet keinen Widerspruch und wird deshalb selten geglaubt: Wer sicher ist, sagt es meist ohne dieses Wort.\n\n" +
       "Am unteren Ende steht „kaum“. „Er ist kaum schon weg“ ist keine schwache Vermutung, sondern eine begründete Verneinung.\n\n" +
+      "Zwischen den Stufen liegt außerdem eine Unterscheidung, die im Türkischen anders verläuft: Ob eine Vermutung auf eigener Beobachtung beruht oder auf Hörensagen, wird im Deutschen nicht am Verb sichtbar, sondern muss gesagt werden. „Er soll weg sein“ übernimmt fremde Rede und markiert dabei Distanz; „er ist offenbar weg“ stützt sich auf etwas, das der Sprecher selbst gesehen hat.\n\n" +
+      "Praktisch heißt das: In einer Mail, die weitergeleitet werden könnte, gehört die Quelle in den Satz. „Nach Auskunft der Werkstatt ist das Teil nicht lieferbar“ hält, was „das Teil ist wohl nicht lieferbar“ nicht hält — und der Unterschied fällt erst auf, wenn jemand nachfragt, woher die Information stammt.\n\n" +
       "Man kann also annehmen, ohne sich festzulegen — aber nur, wenn man die Stufe kennt, auf der man steht.",
     questions: [
       {

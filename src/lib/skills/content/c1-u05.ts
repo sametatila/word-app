@@ -49,6 +49,8 @@ export const c1U05: SkillExercise[] = [
       "Der Grund ist keine Abneigung gegen Lob, sondern eine andere Skala. Wo in einem Kontext „großartig“ die Mitte markiert, markiert im deutschen Berufsleben „nicht schlecht“ die Mitte. „Sehr ordentlich“ liegt darüber. „Da ist noch Luft nach oben“ ist keine Kritik am Charakter, sondern eine Aussage über Prozentpunkte.\n\n" +
       "Für Zugereiste ist das doppelt heikel. Sie hören ein zurückhaltendes Lob als Kritik — und formulieren selbst so, wie sie es gewohnt sind. Ein begeistertes „Das ist fantastisch!“ wirkt dann nicht warm, sondern unpräzise. Wer übertreibt, verliert die Möglichkeit zu steigern: Wenn alles fantastisch ist, wie klingt das wirklich Gute?\n\n" +
       "Unbestreitbar hat die Sache eine Kehrseite. Untertreibung kann schroff wirken, und wer sie nur imitiert, ohne den anerkennenden Kern zu treffen, klingt gleichgültig statt genau.\n\n" +
+      "Praktisch wirkt sich die Skala vor allem dort aus, wo sie unsichtbar bleibt: in Zeugnissen und Beurteilungen. „Zu unserer vollen Zufriedenheit“ ist dort keine Bestnote, sondern die dritte Stufe; die Bestnote lautet „stets zu unserer vollsten Zufriedenheit“. Wer die Formel nicht kennt, liest ein gutes Zeugnis und hält es für ein sehr gutes.\n\n" +
+      "Dieselbe Verschiebung gilt in die andere Richtung. Ein deutscher Vorgesetzter, der „das war in Ordnung“ sagt, hat in vielen Fällen zugestimmt und nicht abgewertet. Wer darauf mit einer Rechtfertigung antwortet, macht aus einer abgeschlossenen Sache eine offene.\n\n" +
       "Die Regel ist am Ende einfach: Sagen Sie weniger, als Sie meinen — aber meinen Sie es.",
     questions: [
       {
@@ -131,6 +133,8 @@ export const c1U05: SkillExercise[] = [
       "Der zweite Fehler ist das Thema, das nicht unverfänglich ist. Gehalt, Gesundheit, Familienstand — in vielen Ländern normale Fragen, hier Grenzverletzungen. Wetter dagegen gilt als Floskel, funktioniert aber genau deshalb: Niemand muss sich dabei zeigen.\n\n" +
       "Am wirksamsten ist das Anknüpfen. Wer im Gespräch etwas aufgreift, das der andere beiläufig gesagt hat — „Sie haben vorhin die Werkstatt erwähnt“ —, signalisiert Zuhören, und Zuhören lockert mehr auf als jede vorbereitete Anekdote.\n\n" +
       "Damit ist auch gesagt, was diese Plauderei nicht ist: ein Vorgespräch, das man überstehen muss. Sie ist der Teil, in dem entschieden wird, wie das eigentliche Gespräch verläuft.\n\n" +
+      "Eine Frage taucht bei Zugereisten regelmäßig auf: Wie lange muss das dauern? Die ehrliche Antwort lautet zwei bis vier Minuten, und sie ist kürzer, als die meisten befürchten. Länger wird es nur, wenn beide es wollen — dann ist es aber kein Small Talk mehr, sondern ein Gespräch.\n\n" +
+      "Wer diese Minuten überspringt und sofort zur Sache kommt, wirkt nicht effizient, sondern angespannt. Umgekehrt gilt dasselbe: Wer nach zehn Minuten immer noch über die Anfahrt spricht, hält den anderen auf und merkt es nicht.\n\n" +
       "Eine letzte Regel: Wer Small Talk beendet, sollte es sichtbar tun. „Ich lasse Sie mal weiterziehen“ ist freundlicher als ein Blick über die Schulter — und erspart beiden das Rätselraten.",
     questions: [
       {

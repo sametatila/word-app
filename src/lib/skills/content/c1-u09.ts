@@ -52,6 +52,7 @@ export const c1U09: SkillExercise[] = [
       "Die Herkunft ist meist bäuerlich. „Schwein gehabt“ geht auf mittelalterliche Wettkämpfe zurück, bei denen der Letzte ein Ferkel als Trostpreis bekam — ein Verlierer, der trotzdem etwas mitnahm. „Die Katze im Sack kaufen“ stammt aus Zeiten, in denen im Sack ein Ferkel sein sollte und manchmal eine Katze war.\n\n" +
       "Nützlicher als die Herkunft ist die Ordnung. Fast alle Tierbilder lassen sich zwei Feldern zuweisen: Glück und Täuschung. „Schwein gehabt“, „mit ihm kann man Pferde stehlen“ — Glück und Verlässlichkeit. „Einen Bären aufbinden“, „die Katze im Sack“ — Täuschung und Risiko.\n\n" +
       "Wer das Feld erkennt, versteht auch unbekannte Wendungen. „Den Stier bei den Hörnern packen“ gehört in keines der beiden: Es geht um Mut, und genau darum fällt es auf.\n\n" +
+      "Nützlich ist außerdem, auf den Zeitpunkt zu achten. Viele Wendungen sind an eine Phase gebunden: „ins kalte Wasser springen“ passt zum Anfang, „am Ball bleiben“ zur Mitte, „unter Dach und Fach“ ans Ende. Wer sie vertauscht, bleibt verständlich, klingt aber, als hätte er den Stand der Dinge nicht verfolgt.\n\n" +
       "Ein Wort zur Vorsicht. Manche Bilder existieren in beiden Sprachen und bedeuten dasselbe; andere klingen ähnlich und meinen anderes. Wer „auf den Hund kommen“ wörtlich überträgt, redet in den Wind: Im Deutschen bedeutet es wirtschaftlichen Verfall, nicht Tierliebe.",
     questions: [
       {
@@ -134,6 +135,8 @@ export const c1U09: SkillExercise[] = [
       "Diese Bilder sind gefahrlos. Sie beschreiben Zustände, nicht Personen — und deshalb hält sie jede Sitzung aus.\n\n" +
       "Bei den Farben liegt es anders. „Grünes Licht geben“ ist neutral und in jedem Protokoll zulässig. „Nicht das Gelbe vom Ei“ ist eine milde Kritik an einer Sache. Doch zwei Wendungen aus derselben Familie bezeichnen Rechtsverstöße: „blaumachen“ heißt unentschuldigt fehlen, „schwarzfahren“ ohne Fahrschein fahren.\n\n" +
       "Wer sie scherzhaft über Kollegen verwendet, sollte wissen, was er sagt. „Der hat wohl blaugemacht“ klingt beiläufig und behauptet einen Vertragsbruch. Auch „keine weiße Weste haben“ ist keine Neckerei, sondern der Vorwurf einer Verfehlung.\n\n" +
+      "Eine dritte Gruppe liegt dazwischen und wird deshalb am häufigsten falsch eingesetzt: Bilder aus dem Sport. „Am Ball bleiben“ und „ins Rennen gehen“ beschreiben Handlungen und sind harmlos. „Aus dem Rennen sein“ dagegen beschreibt einen Zustand, der jemandem zugeschrieben wird — über einen Kollegen gesagt, nimmt es ihm die Aussicht, bevor die Entscheidung gefallen ist.\n\n" +
+      "Bemerkenswert ist, wie ungleich die Herkunft dieser Bilder verteilt ist. Die Wetterbilder stammen aus einer Zeit, in der Wetter über Ernten entschied, die Farbbilder überwiegend aus dem Handwerk und dem Zunftrecht. Wer die Herkunft kennt, versteht auch die Schärfe: „keine weiße Weste“ meint ursprünglich eine Berufsehre, kein Kleidungsstück.\n\n" +
       "Die Regel ist einfach: Wetter beschreibt Lagen, Farben beschreiben oft Menschen. Über Lagen redet man frei, über Menschen genauer.",
     questions: [
       {

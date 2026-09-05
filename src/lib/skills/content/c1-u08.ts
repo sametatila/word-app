@@ -131,6 +131,7 @@ export const c1U08: SkillExercise[] = [
       "Wichtiger noch: Er verändert, worüber gestritten wird. Solange beide Seiten dieselbe Tatsache bestreiten, gibt es keine Streitfrage, sondern zwei Behauptungen. Erst wenn die Tatsache steht, wird sichtbar, was wirklich strittig ist — meist die Deutung, nicht die Zahl.\n\n" +
       "Ein Argument ist stichhaltig, wenn es sich auf etwas stützt, das der andere prüfen kann. Wer sich stattdessen auf eine Autorität beruft — „Alle Fachleute sagen …“ —, verlagert die Prüfung dorthin, wo sie niemand vornimmt.\n\n" +
       "Unterm Strich unterscheidet sich eine Debatte von einem Streit an einer Stelle: Im Streit will man recht behalten, in der Debatte will man wissen, wer recht hat. Der erste Satz verrät meist, welches von beidem läuft.\n\n" +
+      "Praktisch gibt es dafür eine Probe, die im Gespräch selbst funktioniert: Man fasst die Gegenposition zusammen, bis das Gegenüber zustimmt, dass sie richtig wiedergegeben ist. Erst danach widerspricht man. Der Umweg kostet zwei Sätze und nimmt der Debatte den größten Teil ihrer Hitze.\n\n" +
       "Man rechtfertigt eine Position nicht dadurch, dass man die Gegenposition schwach darstellt. Man rechtfertigt sie dadurch, dass man sie in ihrer stärksten Form widerlegt.",
     questions: [
       {

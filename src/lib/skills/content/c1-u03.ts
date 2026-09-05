@@ -50,6 +50,8 @@ export const c1U03: SkillExercise[] = [
       "Beide Teams beanspruchen dasselbe Alleinstellungsmerkmal. Nur eines belegt es. Team A spricht vom Bedarf der Werkstätten und zeigt ihn an Zahlen; Team B spricht vom Markt und meint dasselbe, ohne es messbar zu machen.\n\n" +
       "Bemerkenswert ist, was Team A NICHT getan hat. Es hat nicht behauptet, das Produkt skaliere mühelos. Auf die Frage nach dem Wachstum kam: „Ab etwa 3.000 Werkstätten brauchen wir eine zweite Datenquelle. Das ist gelöst, aber nicht billig.“\n\n" +
       "Diese Antwort hat mehr Überzeugungskraft entfaltet als jede Wachstumskurve. Wer eine Schwäche selbst benennt, wird bei den übrigen Aussagen geglaubt.\n\n" +
+      "Ein dritter Unterschied betrifft die Reihenfolge. Team A nannte das Problem, bevor es die Lösung nannte — vierzig Sekunden lang war unklar, ob überhaupt ein Produkt kommt. Team B begann mit sich selbst und kam auf Folie sechs zum Problem, das es lösen will.\n\n" +
+      "Diese Reihenfolge entscheidet, wem der Zuhörer zuhört. Wer mit dem Problem beginnt, verkauft eine Notwendigkeit; wer mit sich beginnt, verkauft Vertrauen — und Vertrauen bringt man in einen Pitch nicht mit, man verlässt ihn damit.\n\n" +
       "Der Pitch von Team B zündete im Raum durchaus. In der Nachbesprechung erinnerte sich niemand an eine einzige Zahl.",
     questions: [
       {
@@ -132,6 +134,7 @@ export const c1U03: SkillExercise[] = [
       "Die Standpunkte liegen in einem Punkt näher beieinander, als beide annehmen: Keine Seite bestreitet, dass die Information Herrn Müller nicht erreicht hat. Strittig ist ausschließlich, wer sie hätte weitergeben müssen.\n\n" +
       "Ein Versuch, das Gespräch mit einer allgemeinen Formel zu beschwichtigen, wäre hier verfehlt. Das Verfahren hat sich nicht an der Sache festgefahren, sondern an der Frage der Zuständigkeit.\n\n" +
       "Wer in einer solchen Lage schlichten will, sollte deshalb nicht bei der Schuldfrage ansetzen. Beide Seiten erwarten, dass die Gegenseite zuerst nachgibt, und beide haben in ihrem Teil der Darstellung recht.\n\n" +
+      "Hinzu kommt ein Umstand, den beide Seiten in der getrennten Anhörung von sich aus erwähnt haben: Die Teamsitzungen finden seit Januar unregelmäßig statt, und ein schriftliches Ergebnisprotokoll wird nicht geführt. Damit ist der strittige Vorgang kein Einzelfall, sondern der erste, der aufgefallen ist.\n\n" +
       "Empfehlung: eine gemeinsame Sitzung, in der ausschließlich die Weitergabe von Sitzungsergebnissen geregelt wird. Eine Annäherung in der Schichtfrage ist danach wahrscheinlich.",
     questions: [
       {

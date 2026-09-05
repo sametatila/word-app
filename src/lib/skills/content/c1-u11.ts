@@ -126,6 +126,9 @@ export const c1U11: SkillExercise[] = [
       "Der Eigentümer der Halle dementierte am Freitag Berichte, wonach die Brandschutzanlage seit Monaten außer Betrieb gewesen sei. Er habe die Anlage im Mai warten lassen; entsprechende Belege lägen vor.\n\n" +
       "Nachweislich hat die Stadt die Halle zuletzt im Jahr 2019 geprüft. Ein Protokoll aus dem Archiv weist zwei Mängel aus, die als behoben vermerkt sind.\n\n" +
       "Die Staatsanwaltschaft teilte mit, es werde in alle Richtungen ermittelt. Zur Frage einer möglichen Fälschung der Wartungsbelege äußerte sie sich nicht.\n\n" +
+      "Auffällig ist auch, was in den Mitteilungen fehlt. Weder die Feuerwehr noch die Staatsanwaltschaft nennt einen Sachschaden; die in mehreren Berichten kursierende Zahl von 1,4 Millionen Euro stammt aus einer Pressemitteilung des Eigentümers und ist bislang von niemandem bestätigt worden.\n\n" +
+      "Zwei Angaben stehen bislang unverbunden nebeneinander. Ein Mitarbeiter, der namentlich nicht genannt werden möchte, gibt an, die Anlage habe im Sommer wiederholt Fehlalarme ausgelöst und sei daraufhin stummgeschaltet worden. Der Eigentümer erklärt, davon sei ihm nichts bekannt; eine Stummschaltung sei technisch nur mit Passwort möglich.\n\n" +
+      "Ob beide Aussagen zutreffen können, ist offen. Der Hersteller der Anlage teilte auf Anfrage mit, das Passwort werde bei Wartungen regelmäßig an das Personal weitergegeben — eine Auskunft, die keine der beiden Darstellungen widerlegt.\n\n" +
       "Die Quellenlage bleibt vorerst dünn: Außer der Mitteilung der Feuerwehr und dem Protokoll von 2019 liegt bislang kein Dokument vor, das den Sachverhalt unabhängig einordnen könnte.",
     questions: [
       {
