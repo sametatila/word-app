@@ -325,7 +325,7 @@ export const WRITING_EXTRA: Record<string, WritingTask[]> = {
         { de: "Als Anlage finden Sie …", tr: "Ekte … bulacaksınız." },
         { de: "Ich bitte um erneute Prüfung.", tr: "Yeniden değerlendirme rica ediyorum." },
       ],
-      sample: "Sehr geehrte Damen und Herren, hiermit lege ich Widerspruch gegen Ihren Bescheid vom 20. Mai ein. Zur Begründung führe ich an, dass ich die Einkommensnachweise für April bereits am 3. Mai eingereicht habe; die Gehaltsabrechnung für März lag meinem Antrag ebenfalls bei. Sollte ein Dokument fehlen, bitte ich um einen konkreten Hinweis. Als Anlage finden Sie erneut alle Nachweise der letzten drei Monate. Ich bitte um erneute Prüfung meines Antrags. Mit freundlichen Grüßen, Elif Demir",
+      sample: "Sehr geehrte Damen und Herren, hiermit lege ich Widerspruch gegen Ihren Bescheid vom 20. Mai ein. Zur Begründung führe ich an, dass ich die Einkommensnachweise für April bereits am 3. Mai eingereicht habe; die Gehaltsabrechnung für März lag meinem Antrag ebenfalls bei. Sollte ein Dokument fehlen, bitte ich um einen konkreten Hinweis. Als Anlage finden Sie erneut alle Nachweise der letzten drei Monate. Ich bitte um erneute Prüfung meines Antrags und um eine schriftliche Mitteilung des Ergebnisses. Für Rückfragen erreichen Sie mich werktags zwischen 9 und 16 Uhr unter der oben genannten Nummer. Mit freundlichen Grüßen, Elif Demir",
     },
   ],
   "b2-w6": [
@@ -408,7 +408,7 @@ export const WRITING_EXTRA: Record<string, WritingTask[]> = {
         { de: "Die Lieferung erfolgt innerhalb von …", tr: "Teslimat … içinde yapılır." },
         { de: "Gern erläutern wir Ihnen die Details in einem persönlichen Gespräch.", tr: "Ayrıntıları memnuniyetle yüz yüze anlatırız." },
       ],
-      sample: "Sehr geehrte Frau Hartmann, Bezug nehmend auf Ihre Anfrage vom 12. September unterbreiten wir Ihnen gern das beigefügte Angebot über 20 höhenverstellbare Schreibtische einschließlich Lieferung und Montage. Unser Angebot ist bis zum 15. Oktober gültig. Die Lieferung erfolgt innerhalb von vier Wochen nach Auftragseingang, sodass der Termin Ende Oktober eingehalten werden kann. Die Zahlung ist innerhalb von 30 Tagen nach Rechnungsstellung ohne Abzug fällig; bei Vorkasse gewähren wir zwei Prozent Skonto. Gern erläutern wir Ihnen die Details in einem persönlichen Gespräch und freuen uns auf Ihre Rückmeldung. Mit freundlichen Grüßen, Deniz Yılmaz, Vertrieb, Büro & Raum GmbH",
+      sample: "Sehr geehrte Frau Hartmann, Bezug nehmend auf Ihre Anfrage vom 12. September unterbreiten wir Ihnen gern das beigefügte Angebot über 20 höhenverstellbare Schreibtische einschließlich Lieferung und Montage. Unser Angebot ist bis zum 15. Oktober gültig. Die Lieferung erfolgt innerhalb von vier Wochen nach Auftragseingang, sodass der Termin Ende Oktober eingehalten werden kann. Die Zahlung ist innerhalb von 30 Tagen nach Rechnungsstellung ohne Abzug fällig; bei Vorkasse gewähren wir zwei Prozent Skonto. Die Montage übernimmt unser eigenes Team; ein Termin lässt sich nach Auftragseingang kurzfristig abstimmen. Gern erläutern wir Ihnen die Details in einem persönlichen Gespräch — für kommende Woche könnten wir Ihnen Dienstag- oder Donnerstagvormittag anbieten. Über eine Rückmeldung bis zum 15. Oktober würden wir uns freuen. Mit freundlichen Grüßen, Deniz Yilmaz, Vertrieb, Büro & Raum GmbH",
     },
   ],
   "c1-w6": [
