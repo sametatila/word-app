@@ -86,3 +86,68 @@ export function deriveQuiz(brief: UnitBrief, pool: { vocab: VocabItem[]; pattern
   }
   return qs.slice(0, count);
 }
+
+/* ─────────────────────────── GRAMER ─────────────────────────── */
+
+/** Tohumlu karıştırma — web'deki seededShuffle ile aynı amaç: sıra sabit kalsın. */
+function seededOrder<T>(arr: T[], seed: string): T[] {
+  let h = 2166136261;
+  for (let i = 0; i < seed.length; i++) { h ^= seed.charCodeAt(i); h = Math.imul(h, 16777619); }
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    h ^= h << 13; h ^= h >>> 17; h ^= h << 5;
+    const j = Math.abs(h) % (i + 1);
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/**
+ * Ünitenin gramer adımı — ünitenin KENDİ derslerinden türetilir.
+ *
+ * Web'deki `lib/immersion/grammar.ts` ile aynı kural, aynı iki kaynak:
+ * dersin hüküm adımları (gerekçesiyle birlikte) ve üretim hedefleri (dizme
+ * sorusu olarak). Mobilde ayrı bir uygulama olmasının sebebi quiz ile aynı:
+ * cihaz kendi patikasını kurabiliyor ve ağ beklemiyor.
+ *
+ * İki uygulama ayrışırsa aynı ünite iki platformda başka soru verir; o yüzden
+ * kural burada da BİREBİR aynı tutuluyor — dört hüküm, dört dizme, 4-8 sözcük
+ * sınırı, tohumlu sıra.
+ */
+export function deriveGrammar(level: string, unitIndex: number, count = 8): SkillQuestion[] {
+  const lessons = lessonsForLevel(level).slice((unitIndex - 1) * 4, (unitIndex - 1) * 4 + 4);
+  const unitId = `de-${String(level).toLowerCase()}-u${String(unitIndex).padStart(2, "0")}`;
+  const judges: SkillQuestion[] = [];
+  const orders: SkillQuestion[] = [];
+
+  for (const lesson of lessons as { title: string; lecture?: { expect?: Record<string, unknown> }[] }[]) {
+    for (const step of lesson.lecture ?? []) {
+      const e = step.expect as { kind?: string; statement?: string; answer?: boolean; why?: { text: string }[]; target?: string } | undefined;
+      if (e?.kind === "truefalse" && e.statement) {
+        judges.push({
+          kind: "truefalse",
+          text: e.statement,
+          options: ["Richtig", "Falsch"],
+          answer: e.answer ? 0 : 1,
+          explain: (e.why ?? []).map((w) => w.text).join(" ").replace(/\s+([.,!?;:])/g, "$1").trim(),
+        });
+      } else if (e?.kind === "produce" && e.target) {
+        const parts = e.target.trim().replace(/\s+/g, " ").split(" ");
+        if (parts.length < 4 || parts.length > 8) continue;
+        orders.push({
+          kind: "order",
+          text: e.target.endsWith("?") ? t("quiz.order_question") : t("quiz.order_sentence"),
+          options: [],
+          answer: 0,
+          items: parts,
+          explain: `„${e.target}“ — ${lesson.title}`,
+        });
+      }
+    }
+  }
+
+  const half = Math.ceil(count / 2);
+  const picked = seededOrder(judges, `${unitId}|judge`).slice(0, Math.min(judges.length, half));
+  const rest = seededOrder(orders, `${unitId}|order`).slice(0, Math.max(0, count - picked.length));
+  return [...picked, ...rest];
+}

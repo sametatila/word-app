@@ -9,7 +9,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
-import { buildUnitBrief, levelPool, deriveQuiz } from "../game/immersionQuiz";
+import { buildUnitBrief, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
 import { QuestionList } from "../game/skillQuiz";
 import { markItemDone } from "../game/lessonProgress";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -32,8 +32,11 @@ export function QuizScreen() {
   const [finished, setFinished] = useState(false);
   const [round, setRound] = useState(0);
 
+  const isGrammar = params.kind === "grammar";
   const questions = useMemo(
-    () => deriveQuiz(buildUnitBrief(params.level, params.unitIndex), levelPool(params.level), isCheckpoint ? 12 : 8),
+    () => (isGrammar
+      ? deriveGrammar(params.level, params.unitIndex)
+      : deriveQuiz(buildUnitBrief(params.level, params.unitIndex), levelPool(params.level), isCheckpoint ? 12 : 8)),
     [params.level, params.unitIndex, isCheckpoint],
   );
 
@@ -62,7 +65,7 @@ export function QuizScreen() {
             {isCheckpoint ? <CheckIcon color="#fff" size={18} /> : <QuizIcon color="#fff" size={18} />}
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="micro" color={colors.textMuted}>{t("quiz.header", { kind: t(isCheckpoint ? "quiz.checkpoint" : "quiz.review"), unit: t("common.unit"), n: params.unitIndex })}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("quiz.header", { kind: t(isGrammar ? "quiz.grammar" : isCheckpoint ? "quiz.checkpoint" : "quiz.review"), unit: t("common.unit"), n: params.unitIndex })}</Text>
             <Text variant="h3" numberOfLines={1}>{params.theme}</Text>
           </View>
         </View>

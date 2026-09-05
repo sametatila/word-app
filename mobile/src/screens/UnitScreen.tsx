@@ -62,7 +62,10 @@ export function UnitScreen() {
     if (!it.open) return;
     if (it.kind === "lesson") { if (it.ref) nav.navigate("Lesson", { id: it.ref }); return; }
     if (!it.playable) return;
-    if (it.kind === "quiz" || it.kind === "checkpoint") {
+    // Gramer de ünite kimliğinden TÜRETİLİYOR (immersionQuiz.deriveGrammar),
+    // yani egzersiz havuzunda karşılığı yok. Item ekranına gönderilirse
+    // "açılamıyor" der; quiz oynatıcısı ise türetilmiş soruyu zaten çiziyor.
+    if (it.kind === "quiz" || it.kind === "checkpoint" || it.kind === "grammar") {
       nav.navigate("Quiz", { itemId: it.id, level: params.level, unitIndex: params.index, kind: it.kind, theme: params.theme });
       return;
     }
