@@ -50,6 +50,7 @@ export const c1U14: SkillExercise[] = [
       "SCHRITT ZWEI: die Frist. Mit der Anzeige wird eine angemessene Frist zur Beseitigung gesetzt. Erst wenn sie verstreicht, gerät der Vermieter in Verzug. Vorher besteht kein Anspruch, den man geltend machen könnte.\n\n" +
       "SCHRITT DREI: die Minderung selbst. Sie tritt kraft Gesetzes ein, muss also nicht beantragt werden. Wer dennoch die volle Miete unter Vorbehalt zahlt, verliert nichts und behält seine Position — ein Rat, den viele Beratungsstellen geben, weil eine falsch berechnete Minderung selbst zum Kündigungsgrund werden kann.\n\n" +
       "Zwei Irrtümer halten sich hartnäckig. Erstens: Die Minderung ist keine Wiedergutmachung für Ärger, sondern eine Anpassung des Preises an die tatsächliche Nutzbarkeit. Zweitens: Sie ist kein Druckmittel. Wer sie so einsetzt, produziert einen Rechtsstreit, den er auch bei berechtigtem Mangel verlieren kann.\n\n" +
+      "Wer Anspruch auf Minderung erheben will, sollte ihn deshalb beziffern und begründen, statt ihn anzudeuten. Ein unbezifferter Anspruch ist für die Gegenseite kein Anspruch, sondern eine Beschwerde.\n\n" +
       "Der Weg ist also unspektakulär: melden, Frist setzen, rechnen — und alles schriftlich.",
     questions: [
       {
@@ -288,6 +289,8 @@ export const c1U14: SkillExercise[] = [
       { speaker: "Beamtin", text: "Im Gegenteil. Eine benannte Erinnerungslücke ist verwertbar. Eine vorgetäuschte Sicherheit ist es nicht." },
       { speaker: "Frau Renner", text: "Und wenn ich mich beim Zeitpunkt irre?" },
       { speaker: "Beamtin", text: "Dann sagen Sie „gegen halb acht“, nicht „um 19:32“. Sie müssen wahrheitsgemäß aussagen, nicht präzise." },
+      { speaker: "Frau Renner", text: "Ich hatte Sorge, dass meine Zeugenaussage dadurch wertlos wird." },
+      { speaker: "Beamtin", text: "Sie wird dadurch erst brauchbar. Über Ihr Urteilsvermögen entscheidet nicht, wie sicher Sie klingen, sondern ob Sie Sicheres von Unsicherem trennen." },
       { speaker: "Frau Renner", text: "Das beruhigt mich." },
       { speaker: "Beamtin", text: "Ich gebe zu Protokoll: Die Zeugin erklärt, sie habe eine Person mit heller Jacke gesehen; hinsichtlich der zweiten Person bestehe eine Erinnerungslücke, da ein Lichtbild in sozialen Medien wahrgenommen wurde." },
     ],

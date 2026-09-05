@@ -52,6 +52,7 @@ export const c1U08: SkillExercise[] = [
       "Der Preis ist hoch. Wer mit fremden Worten beginnt, sagt im ersten Satz: Ich habe nichts Eigenes für diesen Anlass. Die Anwesenden hören das, auch wenn sie es nicht benennen könnten.\n\n" +
       "Was stattdessen trägt, ist überraschend klein. Ein Detail, das nur der Redner kennt: die kalte Kanne im Vorzimmer, der Zettel an der Tür, der Satz, den die Verabschiedete in jeder zweiten Sitzung gesagt hat. Wer solche Dinge nennt, würdigt, ohne zu loben.\n\n" +
       "Und das Vermächtnis? Man soll es nicht ausrufen. „Ihr Vermächtnis wird bleiben“ ist eine Behauptung. „Der Ordner, den sie angelegt hat, wird uns noch zehn Jahre begleiten“ ist ein Beweis — und er ist bewegend, weil er wahr ist.\n\n" +
+      "Wer über einen langen Abschnitt gemeinsamer Arbeit spricht, sollte ihn benennen statt zu verallgemeinern: die vier Jahre im selben Büro, das eine Projekt, das beide fast zerrieben hat. Ein Weggefährte ist man in einem Zeitraum, nicht im Allgemeinen.\n\n" +
       "Ein Zitat darf durchaus vorkommen. Aber am Ende, nicht am Anfang: als Schlussstein auf etwas Eigenes, nicht als Ersatz dafür.",
     questions: [
       {
@@ -287,6 +288,10 @@ export const c1U08: SkillExercise[] = [
       { speaker: "Kerem", text: "Dann sag das. Oder: „Da bin ich leidenschaftslos.“ Klingt gleich, wirkt anders." },
       { speaker: "Hanna", text: "Und wenn ich sage, wir müssen in den sauren Apfel beißen?" },
       { speaker: "Kerem", text: "Das geht. Die Redewendung beschreibt eine Entscheidung, keine Haltung. Deshalb hält sie den Raum aus." },
+      { speaker: "Hanna", text: "Und wenn ich sage, jemand will eine Extrawurst?" },
+      { speaker: "Kerem", text: "Das ist bereits ein Urteil. Genauso „das Haar in der Suppe suchen“ — beides sagt etwas über die Person, nicht über die Sache." },
+      { speaker: "Hanna", text: "Und „die Hände in den Schoß legen“?" },
+      { speaker: "Kerem", text: "Noch schärfer. Das wirft Untätigkeit vor und wird selten verziehen." },
       { speaker: "Hanna", text: "Und „Tomaten auf den Augen“?" },
       { speaker: "Kerem", text: "Nur, wenn du über dich selbst sprichst. Über andere ist es eine Beleidigung mit Zwinkern — und das Zwinkern kommt schriftlich nie an." },
       { speaker: "Hanna", text: "Also: Entscheidungen ja, Menschen nein." },

@@ -51,6 +51,7 @@ export const c1U10: SkillExercise[] = [
       "Wer „den Ton angibt“, bestimmt nicht, was gespielt wird, sondern in welcher Höhe alle einsetzen. Das Bild sagt also: Diese Person legt nicht den Inhalt fest, sondern den Rahmen. Wer dagegen „nach jemandes Pfeife tanzt“, hat weder das eine noch das andere.\n\n" +
       "„Die erste Geige spielen“ liegt dazwischen. Die erste Geige führt, aber sie dirigiert nicht — sie ist die sichtbarste Stimme, nicht die entscheidende. Wer den Unterschied kennt, kann in einem Satz sagen, wie eine Abteilung wirklich funktioniert.\n\n" +
       "Bei den Geldbildern zeigt sich eine andere Feinheit: Sie bewerten. „Das Geld auf den Kopf hauen“ ist nie neutral; „jeden Cent umdrehen“ auch nicht, aber in die andere Richtung. Wer sachlich bleiben will, sagt „die Kosten im Griff haben“ — das einzige Bild dieser Familie, das ohne Urteil auskommt.\n\n" +
+      "Die Musikfamilie kann noch mehr. „Das ist Musik in meinen Ohren“ nimmt eine Nachricht an, ohne sie zu bewerten, und „den richtigen Ton treffen“ lobt eine Form, ohne den Inhalt zu berühren — beides Sätze, die man auch einem Vorgesetzten sagen kann.\n\n" +
       "Deshalb sind Geldbilder in Protokollen heikel und Musikbilder erstaunlich brauchbar. „Wer gibt hier eigentlich den Ton an?“ ist eine Frage nach Zuständigkeit, gestellt in vier Wörtern — und dabei so höflich, dass niemand sie abwehren kann.",
     questions: [
       {
@@ -126,6 +127,7 @@ export const c1U10: SkillExercise[] = [
       "ZWEITER FALL: Das Bild existiert in beiden Sprachen und meint etwas anderes. Das ist der falsche Freund unter den Redewendungen, und er ist gefährlicher als ein unbekanntes Wort — weil man nicht merkt, dass man etwas nicht weiß. Wer glaubt, verstanden zu haben, fragt nicht nach.\n\n" +
       "DRITTER FALL: Das Bild existiert nur in einer Sprache. Das ist unangenehm, aber harmlos: Man merkt sofort, dass es nicht funktioniert, und weicht auf eine sinngemäße Formulierung aus.\n\n" +
       "Die praktische Konsequenz ist unerwartet. Man sollte nicht das Unbekannte fürchten, sondern das Vertraute. Ein Bild, das sich mühelos übersetzen lässt, verdient eine kurze Prüfung — genau weil es keinen Widerstand leistet.\n\n" +
+      "Wer zwei ähnliche Bilder verwechselt, merkt es meist nicht selbst — der Satz bleibt grammatisch heil und sagt etwas anderes, als gemeint war.\n\n" +
       "Und wenn keine Entsprechung existiert? Dann sagt man es einfach. Ein klarer Satz ohne Bild ist nie falsch; eine missverständliche Redewendung schon.",
     questions: [
       {
@@ -279,6 +281,8 @@ export const c1U10: SkillExercise[] = [
       { speaker: "Herr Vogt", text: "„Der Termin ist ins Wasser gefallen“ — die sitzt, weil sie einen Sachverhalt abkürzt. Und „auf Anhieb“, weil sie unauffällig ist." },
       { speaker: "Leyla", text: "Und die anderen sechs?" },
       { speaker: "Herr Vogt", text: "Die stehen im falschen Zusammenhang. Eine Redewendung braucht einen Satz davor, der sie trägt — sonst wirkt sie eingestreut, und man sieht das Einstreuen." },
+      { speaker: "Leyla", text: "Und wenn ich sie dosiert einsetze?" },
+      { speaker: "Herr Vogt", text: "Dann arbeiten sie für Sie. Dosiert heißt hier: eine pro Seite, an der Stelle, an der ein Argument sitzt." },
       { speaker: "Leyla", text: "Im Gegenzug wird der Text dann trockener." },
       { speaker: "Herr Vogt", text: "Nein, genauer. Trocken wird er, wenn Sie stattdessen nichts setzen. Streichen Sie sechs Bilder und schreiben Sie an zwei Stellen einen konkreten Satz." },
       { speaker: "Leyla", text: "Also nicht weniger Farbe, sondern andere." },

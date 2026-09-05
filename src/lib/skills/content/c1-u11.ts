@@ -209,6 +209,8 @@ export const c1U11: SkillExercise[] = [
       { speaker: "Frau Ott", text: "Weil ich es nicht gesehen habe. Ich schreibe, was Sie sagen — nicht, was war." },
       { speaker: "Frau Kirsch", text: "Das klingt, als würden Sie uns beiden misstrauen." },
       { speaker: "Frau Ott", text: "Es klingt nur so. Die Form schreibt die Aussage Ihnen zu, sie hinterfragt sie nicht. Wenn ich Partei ergreife, ist das Protokoll später wertlos." },
+      { speaker: "Frau Kirsch", text: "Sie distanzieren sich also von beiden Darstellungen." },
+      { speaker: "Frau Ott", text: "Ich distanziere mich von keiner. Der Konjunktiv gibt den Wortlaut wieder und sagt dazu, wessen Wortlaut es ist." },
       { speaker: "Herr Baumann", text: "Und wie klären wir, was stimmt?" },
       { speaker: "Frau Ott", text: "Gar nicht hier. Die IT kann den Versand prüfen. Bis dahin stehen zwei Aussagen nebeneinander, die nicht übereinstimmen — genau das ist der Sachverhalt." },
       { speaker: "Frau Kirsch", text: "Einverstanden." },

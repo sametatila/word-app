@@ -130,6 +130,7 @@ export const c1U13: SkillExercise[] = [
       "AUSGESCHLOSSEN. Es kappt Ansprüche. „Die Haftung für mittelbare Schäden ist ausgeschlossen“ heißt: Der Folgeschaden Ihres Produktionsausfalls ist nicht ersetzbar, auch wenn der Fehler unstrittig ist. Diese Klausel ist in Deutschland nicht unbegrenzt zulässig, aber sie wirkt, bis jemand sie angreift.\n\n" +
       "ZUMUTBAR. Es öffnet einen Ermessensspielraum. „Der Anbieter kann die Leistung anpassen, soweit dies für den Kunden zumutbar ist“ verlagert die Entscheidung in die Zukunft und zum Anbieter. Was zumutbar ist, entscheidet im Streitfall ein Gericht — und bis dahin der, der die Klausel geschrieben hat.\n\n" +
       "Ein vierter Punkt betrifft die Einbeziehung. AGB gelten nicht automatisch. Sie müssen vor Vertragsschluss so einbezogen werden, dass der andere sie zur Kenntnis nehmen kann. Ein Link in der Fußzeile einer Rechnung, die nach dem Kauf kommt, genügt nicht.\n\n" +
+      "Ein fünfter Punkt ist der Verzug. Er tritt nicht dadurch ein, dass jemand unzufrieden ist, sondern durch Fälligkeit und Mahnung — und erst ab diesem Zeitpunkt entstehen Verzugszinsen und Kostenersatz.\n\n" +
       "Die Laufzeit schließlich steht meist harmlos am Ende. Sie sagt, wie lange all das gilt.",
     questions: [
       {
@@ -206,6 +207,9 @@ export const c1U13: SkillExercise[] = [
       { speaker: "Moderatorin", text: "Frau Sadik, Ihre Redezeit läuft." },
       { speaker: "Frau Sadik", text: "Ich möchte an einem Punkt einhaken, den Herr Ulrich selbst gemacht hat: Er sagt, die Zahlen zeigten keinen Zusammenhang. Sie zeigen aber auch keinen gegenteiligen." },
       { speaker: "Dr. Ulrich", text: "Das räume ich ein. Fehlender Nachweis ist kein Gegenbeweis." },
+      { speaker: "Moderatorin", text: "Ich greife hier einmal ein, weil wir uns im Kreis drehen." },
+      { speaker: "Dr. Ulrich", text: "Bitte." },
+      { speaker: "Moderatorin", text: "Auf diesem Podium sitzen drei Fachleute, und zwei streiten über eine Zahl, die keiner erhoben hat." },
       { speaker: "Moderatorin", text: "Herr Baum, Sie haben sich bisher wenig eingebracht." },
       { speaker: "Herr Baum", text: "Weil ich abwägend bleiben wollte. Beide Seiten bevorzugen die Daten, die sie kennen." },
       { speaker: "Moderatorin", text: "Das ist eine Feststellung, keine Position." },

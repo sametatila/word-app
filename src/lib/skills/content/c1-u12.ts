@@ -48,6 +48,7 @@ export const c1U12: SkillExercise[] = [
       "„Die Ergebnisse legen nahe, dass …“ ist die vorsichtigste Stufe: Es gibt einen Zusammenhang, aber die Arbeit erklärt ihn nicht. „Die Ergebnisse deuten darauf hin“ liegt gleichauf. „Die Untersuchung zeigt auf, dass …“ geht weiter — hier wird ein Befund beansprucht. „Die Daten belegen“ steht am oberen Ende und verlangt, dass jemand die Daten prüfen kann.\n\n" +
       "Wer die Stufen verwechselt, wird im Kolloquium zuverlässig gefragt: Ist das gezeigt oder vermutet?\n\n" +
       "Ein zweiter Punkt betrifft die Vorgehensweise. Sie gehört ins Abstract, aber in einem Satz. „Die Arbeit stützt sich auf 34 leitfadengestützte Interviews“ genügt; wer die Methode ausführt, nimmt den Platz, den die Fragestellung braucht.\n\n" +
+      "Ebenso wichtig ist, was ein Abstract nicht leisten kann: Es untermauert nichts. Belege stehen im Text, nicht in der Zusammenfassung — wer dort Zahlen häuft, verliert die Aussage, die sie tragen sollen.\n\n" +
       "Und der häufigste Fehler? Das Abstract nennt, was untersucht wurde, aber nicht, was herauskam. Ein Abstract ohne Ergebnis ist eine Ankündigung, kein Abstract — und der Leser erwägt in diesem Moment, ob er weiterliest.",
     questions: [
       {
@@ -280,6 +281,8 @@ export const c1U12: SkillExercise[] = [
       { speaker: "Dr. Sander", text: "Sagen Sie: Von hundert Behandelten erkranken statt vier nur zwei. Das ist anschaulich und stimmt." },
       { speaker: "Journalist", text: "Das klingt viel weniger spektakulär." },
       { speaker: "Dr. Sander", text: "Es ist auch weniger spektakulär. Genau deshalb steht es so in der Studie." },
+      { speaker: "Journalist", text: "Unsere Leser wollen es aber zugänglich." },
+      { speaker: "Dr. Sander", text: "Zugänglich heißt nicht ungenau. Der Satz „von zwei auf drei von tausend“ ist beides." },
       { speaker: "Journalist", text: "Gibt es eine Faustregel?" },
       { speaker: "Dr. Sander", text: "Ja. Nennen Sie immer beide Zahlen — vorher und nachher. Prozentangaben ohne Ausgangswert sind der häufigste Fehler in Gesundheitsmeldungen." },
       { speaker: "Journalist", text: "Und wenn der Platz nicht reicht?" },

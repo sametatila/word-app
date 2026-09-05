@@ -131,6 +131,7 @@ export const c1U16: SkillExercise[] = [
       "Der Nominalstil entsteht, wenn das Verb in ein Substantiv wandert und ein blasses Hilfsverb seinen Platz einnimmt — erfolgen, vornehmen, durchführen, zur Anwendung kommen. Übrig bleibt ein Satz ohne Handlung.\n\n" +
       "Er hat gute Gründe. Er ist unpersönlich, und manchmal soll er das sein: In einer Verfahrensbeschreibung ist gleichgültig, wer prüft. Er ist auch kompakt, wenn man mehrere Vorgänge aufzählt.\n\n" +
       "Schwerfällig wird er dort, wo eine Handlung wirklich stattfindet und jemand sie ausführt. „Nach erfolgter Prüfung der eingereichten Unterlagen durch die zuständige Stelle ergeht ein Bescheid“ enthält drei Substantive für einen Vorgang und keinen einzigen Handelnden im Nominativ.\n\n" +
+      "Der Kern eines solchen Satzes ist immer eine Handlung; sie steckt nur im falschen Wortart-Gewand.\n\n" +
       "Die Umwandlung ist mechanisch. Man sucht das Substantiv, das eine Handlung enthält (Prüfung), macht daraus ein Verb (prüfen), und fragt: Wer tut das? Die Antwort wird zum Subjekt. Aus vier Zeilen werden zwei: „Wir prüfen Ihre Unterlagen und schicken Ihnen danach einen Bescheid.“\n\n" +
       "Wer so umformuliert, verliert manchmal etwas — die Distanz. Deshalb lautet die Regel nicht „Nominalstil vermeiden“, sondern: Er ist ein Werkzeug für Verfahren und ein Fehler für Mitteilungen. Wenn er die Lesbarkeit beeinträchtigt, ohne Distanz zu gewinnen, ist er nur noch sperrig.",
     questions: [
@@ -205,6 +206,8 @@ export const c1U16: SkillExercise[] = [
     segments: [
       { speaker: "Alina", text: "Ich lese diesen Satz zum vierten Mal und verstehe ihn nicht." },
       { speaker: "Herr Renz", text: "Lesen Sie ihn nicht noch einmal. Zerlegen Sie ihn." },
+      { speaker: "Alina", text: "Ich versuche seit zehn Minuten, diesen Schachtelsatz zu entziffern." },
+      { speaker: "Herr Renz", text: "Und je länger Sie ihn ergründen wollen, desto sicherer verlieren Sie den Anfang." },
       { speaker: "Alina", text: "Wie meinen Sie das?" },
       { speaker: "Herr Renz", text: "Suchen Sie zuerst das finite Verb im Hauptsatz. Nur das. Alles andere ignorieren Sie." },
       { speaker: "Alina", text: "„… ist zu entrichten.“ Das steht ganz am Ende." },
@@ -286,6 +289,8 @@ export const c1U16: SkillExercise[] = [
       { speaker: "Frau Lenz", text: "Es wäre kürzer und schwächer. „Wir müssen“ lädt zur Diskussion ein, wer müssen sagt. „Das zu lösende Problem“ macht es zu einer Eigenschaft der Sache." },
       { speaker: "Herr Duman", text: "Das ist ein rhetorischer Trick." },
       { speaker: "Frau Lenz", text: "Es ist ein Werkzeug. Bei einer Prognose würde ich es nicht verwenden — da wäre es unehrlich." },
+      { speaker: "Herr Duman", text: "Uns steht ohnehin die Zertifizierung bevor." },
+      { speaker: "Frau Lenz", text: "Was uns im vierten Quartal bevorsteht, ist die Zertifizierung — und genau deshalb muss die Umstellung im dritten fertig sein." },
       { speaker: "Herr Duman", text: "Und der Aufwand?" },
       { speaker: "Frau Lenz", text: "Eine nicht zu unterschätzende Rolle spielt die Migration der Altdaten. Das sind sechs Wochen, keine sechs Tage." },
       { speaker: "Herr Duman", text: "Dann steht uns ein unangenehmer Herbst bevor." },
