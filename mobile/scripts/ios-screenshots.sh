@@ -27,12 +27,22 @@ BUNDLE_ID=app.lernomi.ios
 OUT=${OUT_DIR:-ios/build/screenshots}
 
 # ad|cihaz tipi — ad runner'ın Xcode'unda hazır gelmiyorsa tiple yaratılıyor.
-# Telefon tarafında satılan EN DAR iPhone seçildi (375pt): düzen orada kırılır.
-# Tablet, TARGETED_DEVICE_FAMILY = "1,2" beyanının karşılığı; lib/useLayout.ts
-# geniş ekranda içeriği ortalı bir sütuna sığdırıyor, görülmesi gereken o.
+#
+# Üç cihaz, üç ayrı iş için:
+#  - iPhone SE: satılan EN DAR iPhone (375pt). Düzen orada kırılır; mağaza için
+#    değil, hata bulmak için.
+#  - iPhone 6.9": App Store'un ZORUNLU tuttuğu telefon ekran görüntüsü boyutu.
+#  - iPad 13": TARGETED_DEVICE_FAMILY = "1,2" beyanının karşılığı. iPad
+#    desteklendiği sürece 13" ekran görüntüsü de zorunlu — beyanı bırakıp
+#    görüntüyü vermemek yükleme sırasında takılıyor. Ayrıca lib/useLayout.ts'in
+#    geniş ekranda içeriği ortalı sütuna sığdırdığı görülmesi gereken yer burası.
+#
+# 10.9" iPad listeden çıkarıldı: mağaza onu istemiyor ve 13" zaten aynı düzeni
+# daha geniş ekranda gösteriyor.
 DEVICES=(
   "iPhone SE (3rd generation)|com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation"
-  "iPad (10th generation)|com.apple.CoreSimulator.SimDeviceType.iPad-10th-generation"
+  "iPhone 16 Pro Max|com.apple.CoreSimulator.SimDeviceType.iPhone-16-Pro-Max"
+  "iPad Pro 13-inch (M4)|com.apple.CoreSimulator.SimDeviceType.iPad-Pro-13-inch-M4-8GB"
 )
 
 # Arayüz dili. Uygulamaya değil SİSTEME veriliyor (AppleLanguages/AppleLocale
@@ -81,7 +91,12 @@ rs.sort(key=lambda r: [int(x) for x in r["version"].split(".")])
 print(rs[-1]["identifier"] if rs else "")
 ')
     [ -n "$runtime" ] || { echo "iOS çalışma zamanı bulunamadı." >&2; return 1; }
-    udid=$(xcrun simctl create "$name" "$type" "$runtime")
+    # Cihaz tipi runner'ın Xcode'unda yoksa create düşer. Bütün işi düşürmüyoruz:
+    # kalan cihazların kareleri yine alınsın, eksik olan günlükte görünsün.
+    udid=$(xcrun simctl create "$name" "$type" "$runtime" 2>/dev/null) || {
+      echo "UYARI cihaz yaratılamadı, atlanıyor: $name ($type)" >&2
+      return 1
+    }
   fi
   echo "$udid"
 }

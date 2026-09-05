@@ -62,7 +62,8 @@ bayrak açılmadan önce yapılmalı.
 | 9 | ~~Uygulama ikonu~~ → **üretildi** (Xcode'da görülmedi) | İkonsuz yükleme reddedilir |
 | 10 | ~~Sign in with Apple yetkisi (entitlements)~~ → **eklendi** (`d72da43`, imzalanmadı) · açık kalan: **`APPLE_BUNDLE_ID` değeri** | Yetki dosyası ve `CODE_SIGN_ENTITLEMENTS` yerinde; App ID'de "Sign in with Apple" işaretlenmesi portal işi. Env boşken sağlayıcı hiç kurulmaz, yani akış bugün kapalı |
 | 11 | ~~`CFBundleURLTypes`~~ → **eklendi** (`d72da43`, yer tutucu değerle) · açık kalan: **`IOS_CLIENT_ID` değeri** | Şema Info.plist'te duruyor ama değeri yer tutucu. `googleAuth.ts`'teki `IOS_CLIENT_ID` ile birlikte, aynı istemciden doldurulmalı; ikisi de boşken düğme iOS'ta çizilmiyor |
-| 12 | Mağaza vitrini (ad, altyazı, anahtar kelime, açıklama, görseller) | Üç dilde metinler **yazıldı** (`listing.md` §3); görseller cihazdan çekilecek, 6.9" iPhone ve 13" iPad zorunlu |
+| 12 | Mağaza vitrini (ad, altyazı, anahtar kelime, açıklama, görseller) | Üç dilde metinler **yazıldı** (`listing.md` §3); görseller cihazdan çekilecek, 6.9" iPhone ve 13" iPad zorunlu — kare betiği ikisini de üretiyor (aşağıda "Cihaz ailesi") |
+| 13 | ~~Cihaz ailesi kararı~~ → **iPhone + iPad, beyan sabitlendi** (2026-09-05) | Aşağıda |
 
 ## Ekran kapalıyken yürüyüş modu (arka planda ses)
 
@@ -188,6 +189,34 @@ dönmüyor; yutuldu.) Gerçek bir Apple token'ı ile giriş **denenmedi**.
 (b) "E-postamı Gizle" seçilince oturum açılıyor mu, (c) aynı e-postayla zaten hesabı
 olan kullanıcıda hesap birleşiyor mu, (d) Ayarlar'dan Apple izni geri alınınca
 uygulama makul davranıyor mu.
+
+## Cihaz ailesi: iPhone + iPad — 2026-09-05
+
+Karar: uygulama **iki cihaz ailesinde de** satılıyor
+(`TARGETED_DEVICE_FAMILY = "1,2"`, Info.plist'te iPad yönelimleri açık,
+`UIRequiresFullScreen` yok, yani Split View çalışıyor).
+
+Bu beyanın bedeli var ve bedeli ödenmeden bırakılırsa reddin bilinen yolu oluyor:
+13" iPad ekran görüntüsü **zorunlu** hâle geliyor ve inceleyici uygulamayı iPad'de
+açıp döndürüyor. Üç şey birbirine bağlandı:
+
+- **Kare betiği** (`mobile/scripts/ios-screenshots.sh`) artık üç cihaz koşuyor:
+  iPhone SE (en dar telefon — düzen orada kırılır), **iPhone 6.9"** ve **iPad 13"**;
+  sonuncu ikisi mağazanın zorunlu tuttukları. 10.9" iPad listeden çıktı (mağaza
+  istemiyor, 13" aynı düzeni daha geniş gösteriyor). Cihaz tipi runner'ın
+  Xcode'unda yoksa iş düşmüyor, o cihaz atlanıyor ve günlükte görünüyor.
+- **Beyan denetimi** (`npm run ios:check` › "cihaz ailesi") aileyi, iPad
+  yönelimlerini, `UIRequiresFullScreen`in kapalı olduğunu ve kare betiğinde iki
+  zorunlu cihazın bulunduğunu birlikte tutuyor — biri sessizce düşemiyor.
+- **Düzen testi** (`mobile/__tests__/layout.test.ts`) içerik sütununun kırılımlarını
+  gerçek genişliklerle sabitliyor: iPhone SE 375, 6.9" 440, iPad mini 744, iPad 820,
+  iPad Pro 13" dikey 1024 ve yatay 1366, ayrıca Slide Over 320 ve Split View 678.
+  Sütun hiçbir ekranda 720pt'yi aşmıyor (satır ölçüsü) ve ekran büyürken küçülmüyor.
+  iPad'i bu makinede açmanın başka yolu yok; eşiklerin kaymadığını söyleyen tek şey bu.
+
+**Doğrulanmadı:** düzenin iPad'de gerçekten iyi göründüğü. Test eşikleri sabitliyor,
+kareler ise ancak Mac'te üretilebiliyor. Cihazda/simülatörde bakılacaklar: yatay
+Beceriler ekranı, klavye açıkken yazma görevi, Split View'da alt sekmeler.
 
 ## Hesap silme (5.1.1(v)) — 2026-09-05
 

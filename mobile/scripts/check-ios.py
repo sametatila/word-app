@@ -41,6 +41,7 @@ PBXPROJ = os.path.join(IOS, "Lernomi.xcodeproj", "project.pbxproj")
 INFO_PLIST = os.path.join(APP, "Info.plist")
 APPICON = os.path.join(APP, "Images.xcassets", "AppIcon.appiconset")
 GRADLE = os.path.join(ROOT, "android", "app", "build.gradle")
+SHOTS = os.path.join(ROOT, "scripts", "ios-screenshots.sh")
 VERSION_TS = os.path.join(ROOT, "src", "version.ts")
 
 DILLER = ("tr", "en", "de")
@@ -478,6 +479,46 @@ def check_sources():
 
 # --- koşum --------------------------------------------------------------------
 
+
+# --- 7. Cihaz ailesi (iPhone + iPad) -----------------------------------------
+
+def check_device_family():
+    """iPad desteği bir BEYAN ve beraberinde yükümlülük getiriyor.
+
+    TARGETED_DEVICE_FAMILY = "1,2" demek uygulamanın iPad'de de satılması demek;
+    o zaman 13" iPad ekran görüntüsü ZORUNLU oluyor ve inceleyici uygulamayı
+    iPad'de açıp döndürüyor. Beyanı bırakıp gereğini yapmamak (görüntü vermemek,
+    yatayda kırılmak) 2.1/4.0 reddinin bilinen yolu. Burada beyan ile onu takip
+    eden üç şey birlikte tutuluyor ki biri sessizce düşmesin.
+    """
+    hatalar = []
+    pbx = read(PBXPROJ)
+    aileler = set(re.findall(r"TARGETED_DEVICE_FAMILY = \"?([0-9,]+)\"?;", pbx))
+    if not aileler:
+        hatalar.append("pbxproj: TARGETED_DEVICE_FAMILY bulunamadı")
+    elif aileler != {"1,2"}:
+        hatalar.append(f'pbxproj: TARGETED_DEVICE_FAMILY "1,2" olmalı (iPhone+iPad), bulunan: {sorted(aileler)}')
+
+    with open(INFO_PLIST, "rb") as f:
+        info = plistlib.load(f)
+
+    if "UISupportedInterfaceOrientations~ipad" not in info:
+        hatalar.append("Info.plist: iPad yönelimleri (UISupportedInterfaceOrientations~ipad) yok")
+    if info.get("UIRequiresFullScreen"):
+        # Çoklu görev kapatılırsa uygulama Split View'da açılmıyor; iPad'de
+        # beklenen davranış bu değil ve incelemede sorulan bir şey.
+        hatalar.append("Info.plist: UIRequiresFullScreen açık — iPad çoklu görevi kapatıyor")
+
+    # Mağaza görüntüleri: 6.9" telefon ve 13" iPad ikisi de zorunlu.
+    shots = read(SHOTS)
+    if "iPad Pro 13-inch" not in shots:
+        hatalar.append("ios-screenshots.sh: 13\" iPad cihazı yok (iPad desteklendiği için zorunlu)")
+    if "Pro Max" not in shots:
+        hatalar.append("ios-screenshots.sh: 6.9\" iPhone cihazı yok (App Store zorunlu tutuyor)")
+
+    return hatalar, f"aile {sorted(aileler)[0] if aileler else '?'} — iPhone + iPad, 6.9\" ve 13\" kareleri"
+
+
 DENETIMLER = [
     ("pbxproj bütünlüğü", check_pbxproj),
     ("sürüm üçlüsü", check_versions),
@@ -485,6 +526,7 @@ DENETIMLER = [
     (".strings sözlükleri", check_strings),
     ("dil beyanı ↔ .lproj", check_localizations),
     ("Swift/ObjC sözdizimi", check_sources),
+    ("cihaz ailesi", check_device_family),
 ]
 
 
