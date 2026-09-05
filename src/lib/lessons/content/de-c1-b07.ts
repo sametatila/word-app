@@ -312,7 +312,7 @@ export const deC1B07: Lesson[] = [
     vocab: [
       { de: "der Verweis", tr: "gönderme" },
       { de: "diesbezüglich", tr: "bu konuda" },
-      { de: "Letzteres", tr: "ikincisi, sonuncusu" },
+      { de: "Letzteres", tr: "ikincisi (iki şeyden)" },
       { de: "sich beziehen auf", tr: "…-e ilişkin olmak" },
       { de: "hinweisen auf", tr: "…-e işaret etmek" },
       { de: "folglich", tr: "dolayısıyla" },
@@ -328,7 +328,7 @@ export const deC1B07: Lesson[] = [
       { say: [tr("İki tür var: edatla kaynaşanlar (darauf, dabei, dadurch) ve sıralamaya gönderenler (Ersteres, Letzteres). İkincisi C1'de çok işine yarayacak. Önce kelimeler.")] },
       word("İlk", { de: "der Verweis", tr: "gönderme" }),
       word("İkinci", { de: "diesbezüglich", tr: "bu konuda" }),
-      word("Üçüncü", { de: "Letzteres", tr: "ikincisi, sonuncusu" }),
+      word("Üçüncü", { de: "Letzteres", tr: "ikincisi (iki şeyden)" }),
       word("Dördüncü", { de: "sich beziehen auf", tr: "…-e ilişkin olmak" }),
       word("Beşinci", { de: "hinweisen auf", tr: "…-e işaret etmek" }),
       word("Altıncı", { de: "folglich", tr: "dolayısıyla" }),
