@@ -341,7 +341,6 @@ export const a2U18: SkillExercise[] = [
     intro: "Davete cevap yaz: geliyor musun, ne getiriyorsun, ne soruyorsun?",
     gloss: [
       { de: "die Feier", tr: "kutlama", en: "celebration" },
-      { de: "zusagen", tr: "kabul etmek", en: "to accept (an invitation)" },
       { de: "die Torte", tr: "yaş pasta", en: "cake" },
       { de: "der Zwilling", tr: "ikiz", en: "twin" },
     ],

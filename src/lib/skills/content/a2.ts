@@ -1864,8 +1864,6 @@ export const a2: SkillExercise[] = [
       "A2 yazma görevinin tam formatı: bir davete cevap ver, üç noktaya değin — teşekkür, kabul/ret ve bir öneri veya soru.",
     gloss: [
       { de: "die Einladung", tr: "davet", en: "invitation" },
-      { de: "absagen", tr: "reddetmek", en: "to decline" },
-      { de: "zusagen", tr: "olumlu yanıt vermek", en: "to accept" },
       { de: "leider", tr: "maalesef", en: "unfortunately" },
       { de: "mitbringen", tr: "getirmek", en: "to bring along" },
       { de: "der Vorschlag", tr: "öneri", en: "suggestion" },
