@@ -83,12 +83,29 @@ Bedeli açık ve kabul edildi: 148 yuva yeni C1 kelimesine gitmiyor, kapsama
 |---|---|---|
 | Okuma / dinleme / yazma egzersizi | 12 / 12 / 8 | 62 / 62 / 58 |
 | Ünite hizalı ünite | 0/25 | **25/25** |
-| Beceri metninde hiç geçmeyen ders kelimesi | 106 | **11 / 800** |
+| Beceri metninde hiç geçmeyen ders kelimesi | 106 | **0 / 800** |
 | `check-content` C1 sözlükçe borcu | 158 | **0** |
 
 Yuvaya yerleşen 50 slotun tamamı ünite hizalı; 50'nin ötesindeki eski
 egzersizlerin kimliği korundu (`user_skills` birincil anahtarı), mobilde ve
 sınav havuzunda erişilebilir kalıyorlar.
+
+### Kapanış doğrulaması (2026-09-05)
+
+`npx tsc --noEmit` temiz · `check:lessons` C1'de sıfır hata (kalan 7 uyarının
+hepsi B1) · `test:track` 64 kontrol geçti · `test:options` temiz ·
+`test:content` **geçti** · `test:exams` ve `test:exam-build` hatalarının
+hepsi B1 modül 11–18'in eksik sınav planı (modül başına 2 hata), C1'in on
+modülü sorunsuz kuruluyor.
+
+`dump:skills` yenilendi. Paket ile önceki sürüm arasındaki fark bu oturumun
+işiyle birebir örtüşüyor: 72 eklenen (hepsi C1), 56 değişen (46 C1, 10 A2
+kısa cevap/dikte onarımı), **0 silinen** — hiçbir egzersiz kimliği
+kaybolmadı (`user_skills` birincil anahtarı). iOS ve Android aynı
+`mobile/src/data`'yı okuyor, ayrıca bir işlem gerekmiyor.
+
+Seviye durumu: A1 25/25 · A2 25/25 · B1 45/45 · B2 25/25 · C1 25/25 ünite
+hizalı.
 
 ### Doğrulayıcının gösterdiği iki gerçek kusur
 
