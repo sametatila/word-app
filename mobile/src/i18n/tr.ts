@@ -806,6 +806,7 @@ export const tr: Record<string, string> = {
   "walk.continuing": "Devam ediyoruz.",
   "walk.goodbye": "Tamam, iyi günler.",
   "walk.encourage": "Sorun değil.|Olsun, devam.|İyi gidiyorsun.|Bir dahakine.",
+  "walkmode.background_unavailable": "Ekran kapalıyken dinleme sürmeyebilir; turu ekran açıkken tamamla.",
   "walkmode.skip": "Atla",
   "walkmode.back_message": "Bu tur yarım kalır; öğrendiklerin kaydedilir.",
   "walkmode.badge_teaching": "Yeni kelime öğreniyoruz",

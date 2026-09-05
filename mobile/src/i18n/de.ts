@@ -765,6 +765,7 @@ export const de: Record<string, string> = {
   "walk.continuing": "Wir machen weiter.",
   "walk.goodbye": "Alles klar, schönen Tag noch.",
   "walk.encourage": "Kein Problem.|Passt schon, weiter.|Du machst das gut.|Nächstes Mal.",
+  "walkmode.background_unavailable": "Bei ausgeschaltetem Bildschirm hört das Mikrofon eventuell nicht weiter zu; beende die Runde mit eingeschaltetem Bildschirm.",
   "walkmode.skip": "Überspringen",
   "walkmode.back_message": "Diese Runde bleibt unvollendet; das Gelernte wird gespeichert.",
   "walkmode.badge_teaching": "Wir lernen ein neues Wort",

@@ -1,6 +1,7 @@
 <resources>
     <!-- Yürüyüş modu ön plan servisi (LernomiWalkService). app_name çevrilmez: marka adı. -->
     <string name="walk_channel_name">Gehmodus</string>
+    <string name="walk_channel_description">Zeigt an, dass das Mikrofon im Gehmodus zuhört, und enthält die Schaltfläche zum Beenden der Runde.</string>
     <string name="walk_notification_title">Gehmodus ist an</string>
     <string name="walk_notification_text">Das Mikrofon hört zu; das Gesprochene wird zur Verschriftlichung an unseren Server gesendet.</string>
     <string name="walk_stop">Stopp</string>

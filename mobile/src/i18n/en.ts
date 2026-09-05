@@ -801,6 +801,7 @@ export const en: Record<string, string> = {
   "walk.continuing": "Let's keep going.",
   "walk.goodbye": "All right, have a good day.",
   "walk.encourage": "No problem.|That's fine, keep going.|You're doing well.|Next time.",
+  "walkmode.background_unavailable": "Listening may not continue while the screen is off; finish the round with the screen on.",
   "walkmode.skip": "Skip",
   "walkmode.back_message": "This round is left unfinished; what you learned is saved.",
   "walkmode.badge_teaching": "Learning a new word",

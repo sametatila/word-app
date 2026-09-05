@@ -30,10 +30,14 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
   /// bir ada abone olununca RCTLogError basıyor.
   /// `LernomiWalkStop` iOS'ta kilit ekranı denetiminden geliyor — Android'de kalıcı
   /// bildirimdeki "Durdur"un karşılığı; bkz. showNowPlaying / enableWalkRemoteCommands.
+  /// `LernomiWalkServiceFailed` arka plan yolunun kurulamadığını söylüyor: iOS'ta ses
+  /// oturumu etkinleşemedi, Android'de ön plan servisi kalkamadı. Aynı olay, aynı
+  /// gövde ({ reason }) — JS iki platformda tek yerde karşılıyor.
   override func supportedEvents() -> [String]! {
     return ["LernomiSpeechReady", "LernomiSpeechBegin", "LernomiSpeechPartial",
             "LernomiSpeechResults", "LernomiSpeechEnd", "LernomiSpeechError",
-            "LernomiScreenOff", "LernomiScreenOn", "LernomiWalkStop"]
+            "LernomiScreenOff", "LernomiScreenOn", "LernomiWalkStop",
+            "LernomiWalkServiceFailed"]
   }
   override func startObserving() { hasListeners = true }
   override func stopObserving() { hasListeners = false }
@@ -135,7 +139,10 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
         self.showNowPlaying()
         self.enableWalkRemoteCommands()
       } catch {
-        self.send("LernomiSpeechError", ["code": "session"])
+        // Eskiden LernomiSpeechError yayılıyordu; onu `stt.ts` "bu kelimeyi
+        // duyamadım" sayıyor ve kullanıcı arka plan yolunun hiç kurulmadığını
+        // öğrenemiyordu. Android'in ön plan servisi hatasıyla aynı olay.
+        self.send("LernomiWalkServiceFailed", ["reason": "session"])
       }
     }
   }

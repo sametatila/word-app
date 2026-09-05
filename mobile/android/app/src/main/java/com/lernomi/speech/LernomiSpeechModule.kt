@@ -454,16 +454,34 @@ class LernomiSpeechModule(private val reactCtx: ReactApplicationContext) :
   /** Mikrofonlu foreground service'i başlat — güç tuşuyla ekran kapansa da mic açık kalsın. */
   @ReactMethod
   fun startWalkService() {
+    LernomiWalkService.onStop = { emit("LernomiWalkStop", null) }
+    LernomiWalkService.onStartFailed = { reason -> emitWalkFailed(reason) }
     try {
-      LernomiWalkService.onStop = { emit("LernomiWalkStop", null) }
       val i = Intent(reactCtx, LernomiWalkService::class.java)
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) reactCtx.startForegroundService(i) else reactCtx.startService(i)
-    } catch (e: Exception) { android.util.Log.e("LernomiWalk", "startWalkService HATA: ${e.message}", e) }
+    } catch (e: Exception) {
+      // Android 12+: uygulama arka plandayken startForegroundService de fırlatıyor.
+      // Servisin kendi içindeki hata yolundan ayrı: oraya hiç varılmadı.
+      android.util.Log.e("LernomiWalk", "startWalkService HATA: ${e.message}", e)
+      emitWalkFailed(if (e.javaClass.simpleName.contains("ForegroundServiceStartNotAllowed")) "background" else "unknown")
+    }
+  }
+
+  /**
+   * Ön plan servisi kalkamadı. JS bunu duyunca kullanıcıya "ekran kapalıyken
+   * çalışmayabilir" diyor; tur ekran açıkken çalışmayı sürdürüyor.
+   * iOS'ta aynı olayı ses oturumu etkinleşemediğinde LernomiSpeech.swift yayıyor.
+   */
+  private fun emitWalkFailed(reason: String) {
+    val m = Arguments.createMap()
+    m.putString("reason", reason)
+    emit("LernomiWalkServiceFailed", m)
   }
 
   @ReactMethod
   fun stopWalkService() {
     LernomiWalkService.onStop = null
+    LernomiWalkService.onStartFailed = null
     try { reactCtx.stopService(Intent(reactCtx, LernomiWalkService::class.java)) } catch (_: Exception) { /* yut */ }
   }
 

@@ -17,7 +17,7 @@ import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeReady } from "../lib/ttsBridge";
 import { narrationVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName } from "../lib/i18n";
-import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
+import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
 import { spokenMatches, parseSkip, encourage, parseConfirm } from "../lib/voiceMatch";
@@ -82,6 +82,7 @@ export function WalkModeScreen() {
   const [heard, setHeard] = useState("");
   const [tally, setTally] = useState({ correct: 0, total: 0 });
   const [noMore, setNoMore] = useState(false);
+  const [bgUnavailable, setBgUnavailable] = useState(false);
   const [pocket, setPocket] = useState(false); // "cebe koy": ekran siyah ama AÇIK (tanıyıcı çalışsın)
   const [greeting, setGreeting] = useState(false); // Başla sonrası kısa TTS karşılama
   const pocketRef = useRef(false);
@@ -498,6 +499,14 @@ export function WalkModeScreen() {
   const stopFromNotification = useRef<() => void>(() => {});
   stopFromNotification.current = () => { runToken.current++; stopListening(); flush(true); finishDone(); };
   useEffect(() => onWalkStop(() => stopFromNotification.current()), []);
+
+  /**
+   * Arka plan yolu kurulamadıysa (ön plan servisi / ses oturumu) kullanıcıya söyle.
+   * Tur durmuyor: ekran açıkken her şey çalışıyor, kaybolan yalnız ekran kapalıyken
+   * dinlemeye devam etmek. Sessiz kalmak, kullanıcının telefonu cebine koyup turun
+   * neden bittiğini anlamaması demekti.
+   */
+  useEffect(() => onWalkServiceFailed(() => setBgUnavailable(true)), []);
   // Tur sürerken çıkış onaylı (donanım geri + X): mikrofon açık ve tur yarım.
   const inSession = phase === "teaching" || phase === "speaking" || phase === "listening" || phase === "judging" || phase === "continue" || phase === "stopped";
   const back = useBackConfirm(inSession);
@@ -517,6 +526,17 @@ export function WalkModeScreen() {
   const speakStep = Math.min(speakTotal, rounds.slice(0, idx).filter((r) => r.kind === "speak").length + (rounds[idx]?.kind === "speak" ? 1 : 0));
   const donePct = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
   const donePad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
+
+  /**
+   * Arka plan yolu kurulamadıysa tek satırlık uyarı. Turu durdurmuyor; söylediği
+   * tek şey ekran kapatılırsa dinlemenin süremeyeceği. Yalnız native tarafın
+   * bildirdiği gerçek bir hatada çiziliyor (LernomiWalkServiceFailed).
+   */
+  const bgWarning = () => (bgUnavailable ? (
+    <View style={{ marginHorizontal: spacing.lg, marginTop: -spacing.md, marginBottom: spacing.lg, paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.md, backgroundColor: colors.surface2 }}>
+      <Text variant="caption" color={colors.textMuted}>{tx("walkmode.background_unavailable")}</Text>
+    </View>
+  ) : null);
 
   const topBar = (withProgress: boolean) => (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, marginBottom: spacing.xl }}>
@@ -610,6 +630,7 @@ export function WalkModeScreen() {
       ) : greeting ? (
         <>
           {topBar(true)}
+          {bgWarning()}
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl, gap: spacing.lg }}>
             <Mascot mood="wave" size={124} />
             <Text variant="h1">{tx("walkmode.here_we_go")}</Text>
@@ -619,6 +640,7 @@ export function WalkModeScreen() {
       ) : (
         <>
           {topBar(true)}
+          {bgWarning()}
           <View style={{ flex: 1, paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.md }}>
             {/* durum rozeti */}
             <View style={{ alignItems: "center" }}>

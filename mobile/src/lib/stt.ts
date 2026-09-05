@@ -168,6 +168,20 @@ export function nativeDelay(ms: number): Promise<void> {
 export function startWalkService(): void { try { Native?.startWalkService(); } catch { /* yut */ } }
 export function stopWalkService(): void { try { Native?.stopWalkService(); } catch { /* yut */ } }
 
+/**
+ * Arka plan yolu kurulamadı — Android'de mikrofonlu ön plan servisi kalkmadı,
+ * iOS'ta ses oturumu etkinleşmedi. `reason`: permission | background | session | unknown.
+ *
+ * Eskiden iki platformda da sessizdi: servis ölüyor, tur devam ediyor, kullanıcı
+ * ekranı kapatınca mikrofon sebepsizce kesiliyordu. Tur ekran açıkken çalışmayı
+ * sürdürdüğü için bu bir durdurma sebebi değil, bir uyarı sebebi.
+ */
+export function onWalkServiceFailed(cb: (reason: string) => void): () => void {
+  if (!emitter) return () => {};
+  const sub = emitter.addListener("LernomiWalkServiceFailed", (e?: { reason?: string }) => cb(e?.reason ?? "unknown"));
+  return () => sub.remove();
+}
+
 /** Bildirimdeki "Durdur" eylemi (foreground service) — JS oturumu kapatır. Aboneliği kapatan fonksiyon döner. */
 export function onWalkStop(cb: () => void): () => void {
   if (!emitter) return () => {};
