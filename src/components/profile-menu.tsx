@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BellIcon, ChevronRightIcon, HandshakeIcon, PenIcon, WrenchIcon } from "@/components/icons";
+import { BellIcon, CheckIcon, ChevronRightIcon, HandshakeIcon, PenIcon, WrenchIcon } from "@/components/icons";
 
 /**
  * Profilin sonundaki iki satır.
@@ -43,6 +43,13 @@ const ITEMS = [
     detail: "Değerlendirilmiş serbest yazıların",
     Icon: PenIcon,
     tone: "var(--color-sky)",
+  },
+  {
+    href: "/profile/cando",
+    label: "Yapabildiklerim",
+    detail: "Kanıtladığın beceriler, seviye seviye",
+    Icon: CheckIcon,
+    tone: "var(--color-mint)",
   },
 ];
 

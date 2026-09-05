@@ -39,11 +39,12 @@ import { DailyPlayer } from "@/components/daily-player";
 import { DailyCard } from "@/components/daily-card";
 import { ChallengeCard } from "@/components/challenge-card";
 import { WalkCard } from "@/components/walk-card";
+import { ModeTile } from "@/components/mode-tile";
 import { WalkPlayer } from "@/components/walk-player";
 import { QuestCard } from "@/components/quest-card";
 import { PlanCard } from "@/components/plan-card";
 import { CoachBubble } from "@/components/coach-bubble";
-import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon, TargetIcon } from "@/components/icons";
 import { readCache, writeCache } from "@/lib/use-cached";
 
 type Status =
@@ -1109,6 +1110,16 @@ function StartCard({
           <DailyCard onPlay={onDaily} tile />
           <ChallengeCard best={meta.challengeBest} onPlay={onChallenge} tile />
           <WalkCard onPlay={onWalk} tile />
+          {/* Dördüncü yuva boştu; tek oyunlu pratiğin web'de seçicisi yoktu
+              (yetenek vardı, ?game= ile, ama oraya yalnız hata analizi ve
+              günlük plan bağlanıyordu). Mobilde bu ekran baştan beri var. */}
+          <ModeTile
+            icon={<TargetIcon size={18} />}
+            tone="var(--color-violet)"
+            title="Pratik"
+            status="Tek oyun seç"
+            href="/learn/practice"
+          />
         </div>
       </section>
 
