@@ -100,9 +100,11 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
           titleTr: meta?.genre ?? SKILL_TITLE[kind],
         });
       } else if (kind === "grammar") {
-        // Gramer türetilemez; yalnız elle yazılmış üniteler için oynanabilir,
-        // yoksa "yakında" (ref=null).
-        const gRef = hasAuthoredGrammar(unitId) ? unitId : null;
+        // Gramer artık TÜRETİLEBİLİYOR (lib/immersion/grammar.ts): elle
+        // yazılmış içerik öncelikli, yoksa ünitenin kendi hüküm ve üretim
+        // adımlarından kuruluyor. Ders taşıyan her ünitede oynanabilir; dersi
+        // olmayan (eksik son ünite) yer tutucu kalır.
+        const gRef = hasAuthoredGrammar(unitId) || unitLessons.length ? unitId : null;
         items.push({ id, kind, ref: gRef, title: "Dil bilgisi", titleTr: "Odak alıştırması" });
       } else if (kind === "quiz") {
         // quiz/checkpoint ünitenin brief'inden TÜRETİLİR (deriveQuiz) → oynanabilir.

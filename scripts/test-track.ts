@@ -7,6 +7,8 @@ import type { ImmersionTrack } from "../src/lib/immersion/types";
 import { buildTrackState, groupComplete } from "../src/lib/immersion/state";
 import { buildUnitBriefs } from "../src/lib/immersion/brief";
 import { deriveQuiz } from "../src/lib/immersion/quiz";
+import { deriveGrammar } from "../src/lib/immersion/grammar";
+import { LESSONS } from "../src/lib/lessons";
 
 let pass = 0;
 const fail: string[] = [];
@@ -263,6 +265,28 @@ const sYarim = buildTrackState(t, {
 const yarimItems = sYarim.units[0].items;
 check("ünite yarımken kontrol noktası KAPALI", yarimItems.find((i) => i.item.kind === "checkpoint")?.open === false);
 check("ünite yarımken quiz KAPALI", yarimItems.find((i) => i.item.kind === "quiz")?.open === false);
+
+/*
+  GRAMER ARTIK HER ÜNİTEDE OYNANABİLİR (regresyon).
+
+  Desende her ünitede gramer adımı var ama elle yazılmış içerik yalnız birinde
+  vardı; kalan 144 ünitede adım "yakında" olarak duruyordu. Artık ünitenin
+  kendi hüküm ve üretim adımlarından türetiliyor (lib/immersion/grammar.ts).
+*/
+const gramerItem = t.units[1].items.find((i) => i.kind === "grammar");
+check("gramer adımı ref taşıyor (oynanabilir)", gramerItem?.ref === t.units[1].id);
+// Türetme GERÇEK derslere karşı sınanır: sentetik fixture'da hüküm adımı yok
+// ve olması da gerekmiyor — türetmenin değeri dersin kendi malzemesinde.
+const gercekA1 = LESSONS.filter((l) => l.course === "de" && l.level === "A1");
+let gramerBos = 0;
+for (let u = 0; u < Math.ceil(gercekA1.length / 4); u++) {
+  const q = deriveGrammar(`de-a1-u${String(u + 1).padStart(2, "0")}`, gercekA1.slice(u * 4, u * 4 + 4));
+  if (!q.length) gramerBos++;
+}
+check("A1'in HER ünitesinde gramer türüyor", gramerBos === 0);
+const örnek = deriveGrammar("de-a1-u02", gercekA1.slice(4, 8));
+check("gramer türetmesi hüküm İÇERİR", örnek.some((q) => q.kind === "truefalse"));
+check("gramer sorularının şıkkı ya da maddesi var", örnek.every((q) => q.options.length > 0 || (q.items?.length ?? 0) > 0));
 
 if (fail.length) {
   console.error(`\n${fail.length} TEST BAŞARISIZ:`);
