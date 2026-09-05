@@ -53,6 +53,7 @@ export const c1U09: SkillExercise[] = [
       "Nützlicher als die Herkunft ist die Ordnung. Fast alle Tierbilder lassen sich zwei Feldern zuweisen: Glück und Täuschung. „Schwein gehabt“, „mit ihm kann man Pferde stehlen“ — Glück und Verlässlichkeit. „Einen Bären aufbinden“, „die Katze im Sack“ — Täuschung und Risiko.\n\n" +
       "Wer das Feld erkennt, versteht auch unbekannte Wendungen. „Den Stier bei den Hörnern packen“ gehört in keines der beiden: Es geht um Mut, und genau darum fällt es auf.\n\n" +
       "Nützlich ist außerdem, auf den Zeitpunkt zu achten. Viele Wendungen sind an eine Phase gebunden: „ins kalte Wasser springen“ passt zum Anfang, „am Ball bleiben“ zur Mitte, „unter Dach und Fach“ ans Ende. Wer sie vertauscht, bleibt verständlich, klingt aber, als hätte er den Stand der Dinge nicht verfolgt.\n\n" +
+      "Wer unsicher ist, prüft am schnellsten, ob eine Wendung über eine Lage oder über einen Menschen spricht.\n\n" +
       "Ein Wort zur Vorsicht. Manche Bilder existieren in beiden Sprachen und bedeuten dasselbe; andere klingen ähnlich und meinen anderes. Wer „auf den Hund kommen“ wörtlich überträgt, redet in den Wind: Im Deutschen bedeutet es wirtschaftlichen Verfall, nicht Tierliebe.",
     questions: [
       {

@@ -48,6 +48,7 @@ export const c1U13: SkillExercise[] = [
       "Der Mechanismus ist einfach. Fast jede wissenschaftliche Aussage steht unter Bedingungen: „Unter den hier untersuchten Bedingungen erhöht sich das Risiko deutlich.“ Wer den ersten Halbsatz streicht, hat kein Wort geändert und trotzdem eine allgemeine Behauptung erzeugt, die der Autor nie aufgestellt hat.\n\n" +
       "Ähnlich wirkt das Auslassungszeichen. Drei Punkte sind erlaubt, wenn sie Redundanz entfernen. Sie sind unzulässig, wenn zwischen ihnen eine Einschränkung verschwindet — und genau das lässt sich von außen nicht prüfen, weshalb die Verantwortung beim Zitierenden bleibt.\n\n" +
       "Ein dritter Fall betrifft die Urheberschaft. „Wie X treffend bemerkte, sei die Regel überholt“ suggeriert, X habe die Regel für überholt gehalten. Vielleicht hat X aber nur referiert, was andere behaupten. Wer eine Fußnote setzt, ohne die Passage im Original gelesen zu haben, übernimmt fremde Fehler und macht sie zu eigenen.\n\n" +
+      "Die zweite Regel betrifft die Auslassung. Drei Punkte in eckigen Klammern zeigen an, dass etwas fehlt; sie dürfen kürzen, aber nicht wenden. Wer mit ihnen eine Einschränkung entfernt, hat kein Zitat mehr, sondern eine eigene Aussage in fremden Anführungszeichen.\n\n" +
       "Die Regel der Zunft ist deshalb streng und einfach: Man zitiert nur, was man selbst gelesen hat, und man verweist auf die Seite, nicht auf das Werk. Wer beides einhält, kann falsch liegen — aber nicht unredlich sein. Und die Integrität eines Textes bemisst sich nicht daran, ob er recht hat, sondern daran, ob man sie überprüfen kann.",
     questions: [
       {
@@ -131,6 +132,7 @@ export const c1U13: SkillExercise[] = [
       "ZUMUTBAR. Es öffnet einen Ermessensspielraum. „Der Anbieter kann die Leistung anpassen, soweit dies für den Kunden zumutbar ist“ verlagert die Entscheidung in die Zukunft und zum Anbieter. Was zumutbar ist, entscheidet im Streitfall ein Gericht — und bis dahin der, der die Klausel geschrieben hat.\n\n" +
       "Ein vierter Punkt betrifft die Einbeziehung. AGB gelten nicht automatisch. Sie müssen vor Vertragsschluss so einbezogen werden, dass der andere sie zur Kenntnis nehmen kann. Ein Link in der Fußzeile einer Rechnung, die nach dem Kauf kommt, genügt nicht.\n\n" +
       "Ein fünfter Punkt ist der Verzug. Er tritt nicht dadurch ein, dass jemand unzufrieden ist, sondern durch Fälligkeit und Mahnung — und erst ab diesem Zeitpunkt entstehen Verzugszinsen und Kostenersatz.\n\n" +
+      "Ein sechster Punkt wird fast immer übersehen: die Schriftformklausel. Steht sie im Vertrag, gelten mündliche Zusagen nicht — auch die nicht, die jemand am Telefon ausdrücklich gemacht hat.\n\n" +
       "Die Laufzeit schließlich steht meist harmlos am Ende. Sie sagt, wie lange all das gilt.",
     questions: [
       {

@@ -134,6 +134,7 @@ export const c1U01: SkillExercise[] = [
       "Zu Ihrer Anfrage vom 18. März, ob eine Zwischenfinanzierung möglich sei: Eine solche ist in dieser Förderlinie nicht vorgesehen. Sofern Ihre Einrichtung eigene Mittel vorstreckt, können diese nachträglich nicht angerechnet werden.\n\n" +
       "Wir nehmen Rücksicht darauf, dass Ihre Planung an das Semester gebunden ist, und teilen Ihnen das Ergebnis der Oktobersitzung noch in derselben Woche mit, statt den regulären Bescheid abzuwarten.\n\n" +
       "Sollten Sie sich vertreten lassen wollen, reichen Sie bitte eine Vollmacht nach.\n\n" +
+      "Für Rückfragen zum Verfahren steht Ihnen die Geschäftsstelle zur Verfügung; zur inhaltlichen Bewertung können wir vor der Ausschusssitzung keine Auskunft erteilen.\n\n" +
       "Mit freundlichen Grüßen\nDr. H. Bergmann, Vergabestelle",
     questions: [
       {

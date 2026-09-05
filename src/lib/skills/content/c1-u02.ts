@@ -51,6 +51,8 @@ export const c1U02: SkillExercise[] = [
       "Betroffene Kundinnen und Kunden werden ab dem 20. März schriftlich benachrichtigt. Eine gesonderte Sperrung von Konten ist nach derzeitigem Kenntnisstand nicht erforderlich; wir empfehlen dennoch, Zugangsdaten zu ändern, sofern sie auch bei anderen Diensten verwendet werden.\n\n" +
       "Zum Ablauf: Der unberechtigte Zugriff erfolgte über ein Dienstkonto eines externen Dienstleisters. Ob die Zugangsdaten dort abgeflossen sind oder bei uns, ist Gegenstand der laufenden Prüfung. Wir bitten um Verständnis, dass wir vor deren Abschluss keine Zwischenstände nennen.\n\n" +
       "Die Zusammenarbeit mit dem betreffenden Dienstleister ruht bis auf Weiteres. Sämtliche Dienstkonten externer Partner wurden überprüft und auf ein neues Verfahren umgestellt.\n\n" +
+      "Für Rückfragen haben wir eine gesonderte Leitung eingerichtet. Wir bitten um Verständnis, dass wir zu einzelnen Konten erst nach Abschluss der Prüfung Auskunft geben können.\n\n" +
+      "Die Meldung an die Aufsichtsbehörde ist inzwischen vollständig erfolgt.\n\n" +
       "Eine Eskalation der Lage ist aus heutiger Sicht nicht zu erwarten.",
     questions: [
       {
@@ -136,6 +138,7 @@ export const c1U02: SkillExercise[] = [
       "Zum Verfahren: In Runde 2 war vereinbart worden, die Anlagen 4 und 5 auf Arbeitsebene auszuhandeln und erst das Ergebnis in die Hauptrunde zu geben. Die Gegenseite hat diese Anlagen gleichwohl erneut aufgerufen. Wir haben auf die Vereinbarung verwiesen und die Erörterung zurückgestellt.\n\n" +
       "Personelles: Die Gegenseite war erstmals ohne ihre Justiziarin vertreten. Ob dies mit dem Verschieben des Termins zusammenhängt, ist offen; für Runde 4 wurde ihre Teilnahme zugesagt.\n\n" +
       "Zeitliche Lage: Der bestehende Vertrag läuft am 31. Mai aus. Ab Mitte April verschiebt sich der Druck auf unsere Seite, weil eine Anschlusslösung dann kurzfristig beschafft werden müsste. Dieser Umstand ist der Gegenseite bekannt.\n\n" +
+      "Offen bleibt außerdem, ob die Gegenseite parallel mit einem anderen Anbieter spricht. Ein Hinweis darauf fiel beiläufig — „wir prüfen ohnehin mehrere Wege“ —, wurde auf Nachfrage aber nicht wiederholt.\n\n" +
       "Empfehlung: vor Runde 4 intern abstimmen, welche Punkte tatsächlich verhandelbar sind.",
     questions: [
       {

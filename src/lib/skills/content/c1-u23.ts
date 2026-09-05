@@ -136,6 +136,7 @@ export const c1U23: SkillExercise[] = [
       "Für Nichtmuttersprachler ist das eine gute Nachricht, auch wenn es zunächst nach mehr Vokabeln aussieht. Der kreative Teil der Sprache fällt hier weg. Wer zwanzig Wendungen kennt, spricht in einer Krisensitzung angemessen — auch mit Akzent, auch mit einfacher Satzstruktur.\n\n" +
       "Dieselben Fertigteile benennen auch die Lage: Wer von Schadensbegrenzung spricht, hat das eigentliche Ziel bereits aufgegeben, und wer eine Eskalationsstufe nennt, sagt damit, welche Regeln ab jetzt gelten.\n\n" +
       "Wichtig ist die Abstufung, denn die Wendungen tragen Ränge. „Ich schlage vor“ ist ein Vorschlag. „Ich ordne an“ ist eine Anweisung und setzt Befugnis voraus. „Ich setze den Notfallplan in Kraft“ bedeutet, dass ab jetzt ein festgelegtes Verfahren läuft und andere Zuständigkeiten greifen. Wer diese Sätze verwechselt, klingt nicht entschlossen, sondern übergriffig — angeordnet wird nur, was man auch vollziehen lassen darf.\n\n" +
+      "Zur Abstufung gehört auch, wer spricht. In einer Krisensitzung sagt man den eigenen Namen und die eigene Rolle, bevor man eine Zahl nennt — nicht aus Förmlichkeit, sondern damit im Protokoll steht, wer wofür einstand.\n\n" +
       "Und der Rest? „Wir behelfen uns kurzfristig mit einer Zwischenlösung“ ist der ehrlichste Satz jeder Krise. Er sagt: Das hier ist nicht die Lösung, es trägt bis Freitag. Wer eine Zwischenlösung als Lösung verkauft, gewinnt eine Sitzung und verliert die nächste.",
     questions: [
       {

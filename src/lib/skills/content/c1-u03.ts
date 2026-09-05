@@ -135,6 +135,8 @@ export const c1U03: SkillExercise[] = [
       "Ein Versuch, das Gespräch mit einer allgemeinen Formel zu beschwichtigen, wäre hier verfehlt. Das Verfahren hat sich nicht an der Sache festgefahren, sondern an der Frage der Zuständigkeit.\n\n" +
       "Wer in einer solchen Lage schlichten will, sollte deshalb nicht bei der Schuldfrage ansetzen. Beide Seiten erwarten, dass die Gegenseite zuerst nachgibt, und beide haben in ihrem Teil der Darstellung recht.\n\n" +
       "Hinzu kommt ein Umstand, den beide Seiten in der getrennten Anhörung von sich aus erwähnt haben: Die Teamsitzungen finden seit Januar unregelmäßig statt, und ein schriftliches Ergebnisprotokoll wird nicht geführt. Damit ist der strittige Vorgang kein Einzelfall, sondern der erste, der aufgefallen ist.\n\n" +
+      "Beide Seiten haben zugesagt, an einem gemeinsamen Termin teilzunehmen.\n\n" +
+      "Eine Moderation durch eine dritte, unbeteiligte Person hat sich in vergleichbaren Fällen bewährt.\n\n" +
       "Empfehlung: eine gemeinsame Sitzung, in der ausschließlich die Weitergabe von Sitzungsergebnissen geregelt wird. Eine Annäherung in der Schichtfrage ist danach wahrscheinlich.",
     questions: [
       {

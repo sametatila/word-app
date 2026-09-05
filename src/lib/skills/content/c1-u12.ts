@@ -49,6 +49,8 @@ export const c1U12: SkillExercise[] = [
       "Wer die Stufen verwechselt, wird im Kolloquium zuverlässig gefragt: Ist das gezeigt oder vermutet?\n\n" +
       "Ein zweiter Punkt betrifft die Vorgehensweise. Sie gehört ins Abstract, aber in einem Satz. „Die Arbeit stützt sich auf 34 leitfadengestützte Interviews“ genügt; wer die Methode ausführt, nimmt den Platz, den die Fragestellung braucht.\n\n" +
       "Ebenso wichtig ist, was ein Abstract nicht leisten kann: Es untermauert nichts. Belege stehen im Text, nicht in der Zusammenfassung — wer dort Zahlen häuft, verliert die Aussage, die sie tragen sollen.\n\n" +
+      "Auch die Länge ist geregelt und wird trotzdem regelmäßig überschritten: 150 bis 250 Wörter sind üblich, und wer darüber liegt, wird meist nicht ausführlicher, sondern unentschlossener.\n\n" +
+      "Wer sein Abstract prüfen will, streicht probeweise alles bis auf zwei Sätze und sieht nach, welche übrig bleiben.\n\n" +
       "Und der häufigste Fehler? Das Abstract nennt, was untersucht wurde, aber nicht, was herauskam. Ein Abstract ohne Ergebnis ist eine Ankündigung, kein Abstract — und der Leser erwägt in diesem Moment, ob er weiterliest.",
     questions: [
       {
@@ -126,6 +128,8 @@ export const c1U12: SkillExercise[] = [
       "Nützlich ist deshalb eine Faustregel: Ein Bild darf vereinfachen, aber es darf nicht in die falsche Richtung führen. Verkürzung ist erlaubt, Fehlrichtung nicht.\n\n" +
       "Wissenschaftsjournalisten haben dafür eine Formel, die man ruhig laut sagen kann: „Der Vergleich hinkt, aber …“. Sie kostet vier Wörter und macht den Text zugänglich, ohne ihn falsch zu machen. Sie signalisiert dem Fachpublikum, dass der Autor die Grenze kennt, und dem Laienpublikum, dass es sich auf ein Bild einlässt, nicht auf eine Tatsache.\n\n" +
       "Was dagegen nicht funktioniert, ist die Vereinfachung ohne Kennzeichnung. Sie erzeugt beim Publikum ein Gefühl von Verständnis, das die nächste Nachricht sofort zerstört. Wer dreimal so erklärt wurde, glaubt beim vierten Mal nichts mehr — und differenziert dann in die andere Richtung: Alles sei ohnehin ungewiss.\n\n" +
+      "Eine Grenze verläuft dort, wo die Vereinfachung eine Einschränkung tilgt. „In einer Studie an 300 Männern zwischen 50 und 60“ darf zu „in einer Studie“ werden; zu „bei Menschen“ nicht mehr.\n\n" +
+      "Diese Grenze zu halten kostet oft nur vier oder fünf Wörter mehr.\n\n" +
       "Anschaulich zu sein ist keine Herablassung. Es unsauber zu tun schon.",
     questions: [
       {

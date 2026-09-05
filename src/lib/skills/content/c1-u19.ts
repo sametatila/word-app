@@ -55,6 +55,7 @@ export const c1U19: SkillExercise[] = [
       "Die Formen unterscheiden sich im Gewicht. „Angenommen, …“ ist alltäglich und leicht. „Gesetzt den Fall, …“ ist formeller und klingt nach Prüfung. „Man stelle sich vor, …“ ruft ein Bild auf und wirkt rhetorisch. „Wenn man einmal unterstellt, dass …“ ist am vorsichtigsten und markiert am deutlichsten, dass hier nichts behauptet wird.\n\n" +
       "Wichtig ist dabei, dass die Annahme nicht zutreffen muss. Sie muss nur klar genug sein, damit man sieht, was aus ihr folgt.\n\n" +
       "Der eigentliche Nutzen zeigt sich, wenn man voreingenommen ist. Man kann eine Position, die man ablehnt, entweder bekämpfen oder durchrechnen. Bekämpfen ist schneller; durchrechnen bringt oft zutage, dass sie an einer bestimmten Stelle bricht — und diese Stelle zu benennen ist ein stärkeres Argument als jede Ablehnung.\n\n" +
+      "Eine kleine Warnung zur Form: „Angenommen“ verlangt danach einen normalen Hauptsatz, kein „dass“. „Angenommen, dass Sie recht haben“ ist verbreitet und gilt trotzdem als ungelenk.\n\n" +
       "Es hat auch eine unangenehme Kehrseite. Wer hypothetisch redet, kann sich hinter der Konstruktion verstecken: alles gesagt, nichts vertreten. Deshalb gehört zur Maxime, dass man am Ende die eigene Position benennt — angenommen, man hat eine.",
     questions: [
       {

@@ -51,6 +51,7 @@ export const c1U06: SkillExercise[] = [
       "Zwei Beobachtungen dazu. Erstens: Die Hervorhebung nutzt sich ab. Wer jeden zweiten Satz invertiert, erzeugt keine Verstärkung mehr, sondern Manier. Zweitens: Die stärkste erste Position ist selten das Subjekt. „Erst dann verstand ich, worum es ging“ wirkt, weil der Zeitpunkt vorn steht und der Erkennende hinten.\n\n" +
       "Wirkungsvoll ist die Umstellung also nur, solange sie selten bleibt und die vordere Stelle etwas trägt, das der Zuhörer noch nicht hat.\n\n" +
       "Für Türkisch sprechende Lernende liegt hier eine besondere Schwierigkeit. Das Türkische ordnet die Betonung über die Stellung vor dem Verb und kann sie im Satz frei verschieben; das Deutsche hat dafür nur die erste Position und den Satzakzent. Was in der einen Sprache eine Feinabstimmung ist, wird in der anderen zu einer Entscheidung, die vor dem ersten Wort fällt.\n\n" +
+      "Dieselbe Probe funktioniert übrigens auch bei fremden Texten und erklärt schnell, warum manche Absätze schleppen.\n\n" +
       "Wer eine Rede schreibt, kann das verdeutlichen, indem er die ersten drei Wörter jedes Satzes untereinander schreibt. Steht dort dreimal „Wir“, ist die Rede noch nicht fertig.",
     questions: [
       {
@@ -134,6 +135,7 @@ export const c1U06: SkillExercise[] = [
       "Ähnlich die Metapher. Sie veranschaulicht, indem sie zwei Bereiche auf einen Nenner bringt. „Wir haben den roten Faden verloren“ erklärt in vier Wörtern, wozu ein Absatz nötig wäre.\n\n" +
       "Doch jede Metapher bringt ihr eigenes Gepäck mit. Wer im Betrieb vom „Kampf um Marktanteile“ spricht, hat Gegner benannt und Verhandlung ausgeschlossen — meist ohne es zu wollen. Das Bild denkt weiter, wenn der Redner längst aufgehört hat.\n\n" +
       "Besonders zäh sind Metaphern, die niemand mehr als solche hört. „Wachstum“ kommt aus der Biologie und legt nahe, dass mehr immer natürlich sei; „Schulden abbauen“ kommt aus dem Bergbau und macht aus einer Zahl einen Berg. Beide Bilder tragen eine Wertung, die nie ausgesprochen und deshalb auch nie bestritten wird.\n\n" +
+      "Wer Metaphern prüfen will, ersetzt sie testweise durch das nüchternste Wort, das passt, und liest den Satz noch einmal.\n\n" +
       "Die Prüfung ist einfach: Lässt sich die Aussage ohne das Bild noch verteidigen? Wenn nicht, war es kein Bild, sondern ein Argumentersatz.",
     questions: [
       {

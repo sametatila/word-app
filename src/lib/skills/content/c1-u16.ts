@@ -51,6 +51,8 @@ export const c1U16: SkillExercise[] = [
       "Genau darin liegt Nutzen und Gefahr. Der Nutzen: Der Satz verdichtet, ohne Information zu verlieren, und die Hauptaussage rückt näher zusammen. In Fachtexten spart das über eine Seite hinweg erhebliche Länge.\n\n" +
       "Die Gefahr beginnt bei der Länge des Attributs. „Die vor Jahren nach umfangreichen und teilweise kontrovers geführten Beratungen unter Beteiligung aller Fachabteilungen getroffene Entscheidung“ ist grammatisch einwandfrei und praktisch unlesbar: Zwischen Artikel und Nomen liegen vierzehn Wörter, und der Leser weiß bis zum Schluss nicht, wovon die Rede ist.\n\n" +
       "Eine brauchbare Grenze liegt bei etwa vier Wörtern. Darüber hinaus sollte man auflösen — in einen Relativsatz, oder besser in zwei Sätze.\n\n" +
+      "Hinzu kommt eine Schwierigkeit beim Lesen: Das Partizip steht am Ende der Konstruktion, das Bezugswort dahinter. Wer von links nach rechts liest, sammelt also Angaben, ohne zu wissen, wozu sie gehören — und muss den Satz innerlich zurückspulen.\n\n" +
+      "Geübte Leser lesen solche Sätze deshalb rückwärts: erst das Nomen, dann die Angaben davor.\n\n" +
       "Bemerkenswert ist, was Lernende tun. Sie lösen im Lesen mühelos auf, bauen die Konstruktion beim Schreiben aber nie selbst. Der Grund ist selten Unkenntnis: Man wählt den Weg, den man sicher beherrscht. Wer die Konstruktion einmal bewusst einsetzt und die Länge eingrenzt, gewinnt an Lesbarkeit — und klingt zugleich weniger nach Übersetzung.",
     questions: [
       {
@@ -133,6 +135,8 @@ export const c1U16: SkillExercise[] = [
       "Schwerfällig wird er dort, wo eine Handlung wirklich stattfindet und jemand sie ausführt. „Nach erfolgter Prüfung der eingereichten Unterlagen durch die zuständige Stelle ergeht ein Bescheid“ enthält drei Substantive für einen Vorgang und keinen einzigen Handelnden im Nominativ.\n\n" +
       "Der Kern eines solchen Satzes ist immer eine Handlung; sie steckt nur im falschen Wortart-Gewand.\n\n" +
       "Die Umwandlung ist mechanisch. Man sucht das Substantiv, das eine Handlung enthält (Prüfung), macht daraus ein Verb (prüfen), und fragt: Wer tut das? Die Antwort wird zum Subjekt. Aus vier Zeilen werden zwei: „Wir prüfen Ihre Unterlagen und schicken Ihnen danach einen Bescheid.“\n\n" +
+      "Ein Zwischenweg wird selten genutzt und trägt weit: das Passiv mit genanntem Urheber. „Ihre Unterlagen werden von uns geprüft“ behält die sachliche Färbung und bringt die Handlung zurück.\n\n" +
+      "Diese Form steht in guten Bescheiden häufiger, als der Ruf des Amtsdeutschen vermuten lässt.\n\n" +
       "Wer so umformuliert, verliert manchmal etwas — die Distanz. Deshalb lautet die Regel nicht „Nominalstil vermeiden“, sondern: Er ist ein Werkzeug für Verfahren und ein Fehler für Mitteilungen. Wenn er die Lesbarkeit beeinträchtigt, ohne Distanz zu gewinnen, ist er nur noch sperrig.",
     questions: [
       {

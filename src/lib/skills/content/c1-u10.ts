@@ -129,6 +129,8 @@ export const c1U10: SkillExercise[] = [
       "DRITTER FALL: Das Bild existiert nur in einer Sprache. Das ist unangenehm, aber harmlos: Man merkt sofort, dass es nicht funktioniert, und weicht auf eine sinngemäße Formulierung aus.\n\n" +
       "Die praktische Konsequenz ist unerwartet. Man sollte nicht das Unbekannte fürchten, sondern das Vertraute. Ein Bild, das sich mühelos übersetzen lässt, verdient eine kurze Prüfung — genau weil es keinen Widerstand leistet.\n\n" +
       "Wer zwei ähnliche Bilder verwechselt, merkt es meist nicht selbst — der Satz bleibt grammatisch heil und sagt etwas anderes, als gemeint war.\n\n" +
+      "Am schwierigsten sind Bilder, die in beiden Sprachen existieren, aber unterschiedlich stark sind. Was im Türkischen eine alltägliche Zuspitzung ist, kann im Deutschen als Vorwurf ankommen — die Wörter decken sich, die Lautstärke nicht.\n\n" +
+      "Hilfreich ist dabei, das Bild einmal wörtlich zu übersetzen und zu prüfen, ob das Ergebnis komisch klingt; klingt es komisch, trägt es meist nicht.\n\n" +
       "Und wenn keine Entsprechung existiert? Dann sagt man es einfach. Ein klarer Satz ohne Bild ist nie falsch; eine missverständliche Redewendung schon.",
     questions: [
       {

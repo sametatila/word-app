@@ -139,6 +139,7 @@ export const c1U22: SkillExercise[] = [
       "Umgekehrt hat sehr warmes Lob eine unangenehme Wirkung, die selten beabsichtigt ist. „Du bist unglaublich, ich habe noch nie jemanden wie dich gesehen“ klingt für viele nicht herzlich, sondern aufdringlich — oder es weckt den Verdacht, gleich komme eine Bitte. Der Empfänger wird verlegen und weiß nicht, was er zurückgeben soll.\n\n" +
       "Dahinter steht keine Kälte, sondern eine Annahme über Aufrichtigkeit: Wer selten lobt, dessen Lob zählt. Übertriebenes Lob entwertet sich selbst, und im schlechtesten Fall klingt es nach Hochmut — als verteile jemand Noten.\n\n" +
       "Ebenso wichtig ist die Antwort auf ein Kompliment. Der Reflex „Ach, das war nichts“ ist verbreitet, gilt aber zunehmend als unnötig klein. Ein knappes „Danke, das freut mich“ ist angemessen und wirkt weder eitel noch demonstrativ bescheiden.\n\n" +
+      "Zwischen Kolleginnen gilt außerdem eine Richtung: Lob nach oben ist heikel. Wer die eigene Chefin für ihre Präsentation lobt, kann das tun, sollte es aber begründen — sonst klingt Anerkennung wie eine Bewertung, und Bewertungen laufen in diesem Haus in die andere Richtung.\n\n" +
       "Ein letzter Punkt, der Lernenden oft entgeht: Anerkennung wird häufig nicht als Kompliment ausgesprochen, sondern als Handlung. Wer gefragt wird, ob er den nächsten Punkt übernimmt, ist gelobt worden. Wer nach seiner Einschätzung gefragt wird, ebenfalls. Wer darauf wartet, dass jemand es ausdrücklich sagt, hält sich für übersehen — und ist es nicht.",
     questions: [
       {

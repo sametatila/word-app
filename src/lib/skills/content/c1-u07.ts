@@ -49,6 +49,8 @@ export const c1U07: SkillExercise[] = [
       "Der zweite Trick ist die Denkpause. Anfänger füllen sie mit „ähm“, weil Stille ihnen länger vorkommt, als sie ist. Zwei Sekunden Schweigen wirken auf den Sprecher wie zehn und auf das Publikum wie nichts. Routinierte Sprecher nutzen die Pause sogar: Sie markiert, dass jetzt etwas Überlegtes kommt.\n\n" +
       "Ein Manuskript hilft übrigens weniger, als man denkt. Wer abliest, verliert den Blickkontakt genau dann, wenn er ihn braucht — bei der Pointe.\n\n" +
       "Was tatsächlich hilft, sind drei bis fünf Stichworte auf einer Karte, die niemand außer dem Redner lesen kann. Sie halten die Reihenfolge fest und lassen die Formulierung offen — genau umgekehrt zum Manuskript, das die Formulierung festhält und die Reihenfolge unantastbar macht.\n\n" +
+      "Wer die Karte einmal geschrieben hat, braucht sie in der Regel nicht mehr anzusehen.\n\n" +
+      "Genau deshalb wirkt eine gut vorbereitete Rede oft unvorbereitet — und eine schlecht vorbereitete hört man sofort.\n\n" +
       "Die alte Rhetorik kannte das längst. Sie hat Improvisation nie als Gegenteil von Vorbereitung verstanden, sondern als deren höchste Stufe: Man bereitet keine Rede vor, sondern die Fähigkeit, jede Rede zu halten.",
     questions: [
       {
@@ -132,6 +134,8 @@ export const c1U07: SkillExercise[] = [
       "Ein häufiger Fehler ist das Schildern. Ein lebendiges Detail — die kalte Kaffeetasse, das leere Büro — ergreift mehr als fünf. Wer alles beschreibt, beschreibt nichts.\n\n" +
       "Der Spannungsbogen entsteht dabei nicht durch Dramatik, sondern durch eine offene Frage, die der Zuhörer im Kopf behält, bis sie beantwortet wird.\n\n" +
       "Zur Länge: Eine Anekdote im Vortrag verträgt selten mehr als neunzig Sekunden. Danach erwartet der Zuhörer, dass sie etwas beweist, und tut sie es nicht, hat sie die Zeit zweier Argumente gekostet.\n\n" +
+      "Wer merkt, dass eine Anekdote nicht trägt, kürzt sie im Sprechen und kommt zum nächsten Punkt; das fällt weniger auf als jedes Ausweichmanöver.\n\n" +
+      "Auch hier gilt: Eine Geschichte, die im Kopf gut klingt, sollte man einmal laut sagen, bevor sie in den Vortrag kommt.\n\n" +
       "Und die Pointe? Sie steht am Ende, nicht in der Mitte, und der Erzähler lacht nicht vorher. Das ist der Unterschied zwischen einer Komödie und einer Tragödie im Vortragssaal: nicht das Thema, sondern das Timing.",
     questions: [
       {

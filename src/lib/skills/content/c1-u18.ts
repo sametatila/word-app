@@ -54,6 +54,7 @@ export const c1U18: SkillExercise[] = [
       "Bemerkenswert ist, dass viele Muttersprachler die beiden ebenfalls vermischen — „scheinbar“ wird umgangssprachlich oft für „anscheinend“ verwendet. In geschriebener Sprache und in Prüfungen gilt die Unterscheidung gleichwohl.\n\n" +
       "Ein ähnliches Paar: effektiv und effizient. Effektiv ist, was das Ziel erreicht. Effizient ist, was es mit geringem Aufwand erreicht. Eine Maßnahme kann effektiv und zugleich völlig ineffizient sein — sie wirkt, kostet aber das Zehnfache. Wer beides gleichsetzt, verliert genau die Aussage, auf die es in einem Bericht ankommt.\n\n" +
       "Der Unterschied ist auch keine Frage der Interpretation. Er steht im Wörterbuch, und er steht in jedem Kommentar zum Arbeitsrecht.\n\n" +
+      "Ein drittes Paar gehört dazu, weil es dieselbe Falle stellt: „sensibel“ und „sensitiv“. Das erste beschreibt einen Menschen, das zweite ein Messgerät oder Daten. „Sensitive Kollegen“ steht in mehr Berichten, als man denkt.\n\n" +
       "Genauigkeit auf dieser Ebene wirkt kleinlich, solange nichts davon abhängt. Sie fällt erst auf, wenn ein Satz anders ausgelegt wird, als er gemeint war — und dann fällt sie zurück auf den, der ihn geschrieben hat.",
     questions: [
       {
@@ -131,6 +132,7 @@ export const c1U18: SkillExercise[] = [
       "Wer denselben Vorgang für eine andere Textsorte umschreibt, ändert also nicht den Stil, sondern die Auswahl.\n\n" +
       "Der Inhalt ist derselbe. Was sich ändert, ist der Adressat — und mit ihm, welche Information tragend ist.\n\n" +
       "Zwei Fehler sind typisch. Der erste: die interne Tonlage nach außen tragen. Ein Kunde, der „Speicherleck im Cache-Dienst“ liest, fühlt sich nicht informiert, sondern abgefertigt. Der zweite ist subtiler: die Kundensprache nach innen tragen. Wer im Team schreibt „Wir bedauern die entstandenen Unannehmlichkeiten“, klingt nicht höflich, sondern überheblich — als spräche er nicht mit Kollegen, sondern über sie.\n\n" +
+      "Am schnellsten prüft man das, indem man sich den Leser vorstellt und fragt, was er nach dem ersten Satz wissen will.\n\n" +
       "Register ist deshalb keine Frage der Höflichkeit, sondern der Adressierung. Zu hoch gegriffen wirkt herablassend, zu tief gegriffen respektlos. Beides sagt dasselbe: Ich habe nicht daran gedacht, wer das liest.",
     questions: [
       {

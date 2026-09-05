@@ -49,6 +49,8 @@ export const c1U11: SkillExercise[] = [
       "Im zweiten Satz ist die Wiedergabe markiert. Der Konjunktiv I schreibt die Aussage ihrem Urheber zu und lässt den Berichtenden daneben stehen. Er distanziert sich, ohne zu widersprechen — und das ist der entscheidende Punkt: Distanz ist kein Zweifel.\n\n" +
       "Viele Lernende meiden die Form, weil sie unhöflich wirkt. Das Gegenteil ist der Fall. Wer den Konjunktiv weglässt, tut so, als kenne er die Wahrheit; wer ihn setzt, gibt zu, dass er nur den Wortlaut kennt.\n\n" +
       "Zwei Fälle verlangen ihn zwingend. Erstens, wenn die Aussagen zweier Seiten nicht übereinstimmen — dann darf der Bericht keine Partei ergreifen. Zweitens, wenn ein Vorwurf im Raum steht: Wer schreibt „Die Firma hat die Zahlen vertuscht“, statt „habe vertuscht“, erhebt den Vorwurf selbst.\n\n" +
+      "Umgekehrt fällt auf, wenn die Zuschreibung fehlt. Ein Bericht, der ohne jede Quelle auskommt, wirkt entweder sehr sicher oder sehr nachlässig, und der Leser kann die beiden nicht unterscheiden — das ist der eigentliche Preis des weggelassenen Konjunktivs.\n\n" +
+      "In Nachrichtenagenturen gehört die Zuschreibung deshalb zu den wenigen Regeln, die auch unter Zeitdruck nicht fallen.\n\n" +
       "Der Leser entnimmt das nicht bewusst. Er merkt nur, ob ein Text vorsichtig ist oder nicht.",
     questions: [
       {

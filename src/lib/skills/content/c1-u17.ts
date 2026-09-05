@@ -51,6 +51,8 @@ export const c1U17: SkillExercise[] = [
       "Der Unterschied ist nicht Stil, sondern Ökonomie. Deutsche Sachtexte gehen davon aus, dass der Leser sich das Vorherige merkt. Wer denselben Ausdruck wiederholt, signalisiert Misstrauen gegenüber dem Leser — oder Unsicherheit im eigenen Text.\n\n" +
       "Das Werkzeugkasten ist überschaubar. „Letzteres“ und „Ersteres“ greifen zwei zuvor genannte Dinge auf. „Diesbezüglich“ ersetzt eine ganze Nominalphrase („in Bezug auf diese Frage“). Die Verbindungen aus „da(r)-“ plus Präposition — darauf, damit, dafür, davon — nehmen einen ganzen Sachverhalt auf: „Darauf komme ich später zurück.“\n\n" +
       "Aufschlussreich ist, was passiert, wenn man sie weglässt. Der Text wird nicht falsch, er wird schwerfällig, und der Leser bekommt den Eindruck, jeder Satz beginne von vorn.\n\n" +
+      "Schriftlich kommt eine zweite Schwierigkeit dazu: Zwischen dem Verweis und seinem Bezug darf nicht zu viel liegen. Über einen Absatz hinweg trägt „Letzteres“ nicht mehr, und der Leser blättert zurück — was er im Zweifel nicht tut.\n\n" +
+      "In langen Texten hilft eine einfache Gewohnheit: Nach jedem Verweis einmal prüfen, ob genau ein Bezug in Frage kommt.\n\n" +
       "Eine Warnung gehört dazu. Verweise brauchen einen eindeutigen Bezug — der Leser muss ohne Nachdenken wissen, worauf sie sich beziehen. „Er sprach mit dem Kollegen über seinen Antrag“ — wessen Antrag? Wer vorschnell verweist, spart Wörter und kostet Klarheit. Folglich gilt: verweisen, ja — aber nur, wenn genau ein Bezug möglich ist.",
     questions: [
       {
@@ -130,6 +132,8 @@ export const c1U17: SkillExercise[] = [
       "Zwei Wörter, kein Verb, ein vollständiger Beitrag. Die Ellipse lässt weg, was der Leser aus dem Zusammenhang ergänzen kann — und funktioniert genau so weit, wie dieser Zusammenhang trägt.\n\n" +
       "In der internen Kommunikation ist sie überall. „Anbei die Zahlen.“ „Wenn nötig, sofort.“ „Erledigt.“ Wer hier ganze Sätze baut, wirkt umständlich, nicht höflich.\n\n" +
       "Ein kurzer Einschub schließt die Lücke oft schon. „Wie besprochen — Punkt 3 von Montag“ ist drei Wörter länger und für jeden verständlich, auch für den, der die Mail weitergeleitet bekommt.\n\n" +
+      "Wer unsicher ist, liest die eigene Nachricht so, als hätte er den Vorgang seit drei Wochen nicht angefasst.\n\n" +
+      "Zwei zusätzliche Wörter kosten nichts und ersparen dem Empfänger regelmäßig eine Rückfrage.\n\n" +
       "Die Grenze verläuft nicht bei der Kürze, sondern bei der gemeinsamen Grundlage. Zwischen zwei Kollegen, die dasselbe Projekt bearbeiten, ist „Wie besprochen“ präzise. In einer Mail an eine Behörde, die dreihundert Vorgänge führt, ist es unbrauchbar: Was wurde besprochen, mit wem, wann?\n\n" +
       "Hinzu kommt die Wirkung auf den Ton. Der Telegrammstil klingt effizient, wenn beide Seiten unter Druck stehen, und schroff, wenn nur eine Seite es tut. Eine Absage in vier Wörtern spart dem Absender Zeit und teilt dem Empfänger mit, wie viel Zeit er wert war. Das ist selten beabsichtigt und meist kurzsichtig.\n\n" +
       "Eine praktische Faustregel: Weglassen darf man, was der Empfänger ohne Nachdenken ergänzt. Muss er raten, war es keine Ellipse, sondern eine Lücke. Und in heiklen Nachrichten — Absagen, Kritik, Geldfragen — wird der eingesparte Satz fast immer teurer als er war.",

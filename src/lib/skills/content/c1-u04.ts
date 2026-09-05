@@ -51,6 +51,7 @@ export const c1U04: SkillExercise[] = [
       "Der Psychologe Frank Retzlaff nennt das erste „begründetes Hinnehmen“ und das zweite „vorzeitiges Sichfügen“. Wer sich vorzeitig fügt, spart sich die Anstrengung des Prüfens — und zahlt später dafür, weil er auch dort nachgibt, wo Spielraum bestanden hätte.\n\n" +
       "Freilich ist das leichter beschrieben als erkannt. Von außen sieht ein resignierter Mensch oft gelassen aus. Ein Anhaltspunkt: Wer aus Einsicht hinnimmt, kann meist genau sagen, WAS unabänderlich ist. Wer aufgegeben hat, sagt „alles“.\n\n" +
       "Die Sprache trennt beides schärfer, als es das Gefühl tut. „Ich habe mich damit abgefunden“ setzt einen Abschluss und klingt ruhig; „ich kann nichts machen“ setzt keinen und klingt es auch nicht. Wer den zweiten Satz häufig sagt, hat meist nicht geprüft, sondern aufgehört — und hört es sich selbst nicht an.\n\n" +
+      "Auffällig ist, wie unterschiedlich die beiden Zustände sich anfühlen und wie ähnlich sie klingen.\n\n" +
       "Sich abfinden ist deshalb kein einheitlicher Vorgang. Wer sich mit einer geprüften Lage abfindet, hat entschieden; wer sich mit einer ungeprüften abfindet, hat nur aufgehört zu fragen.\n\n" +
       "Die Gegebenheiten ändern sich damit nicht. Aber die Frage, ob man sie geprüft hat, ändert alles daran, wie man mit ihnen lebt.",
     questions: [

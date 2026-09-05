@@ -53,6 +53,8 @@ export const c1U08: SkillExercise[] = [
       "Was stattdessen trägt, ist überraschend klein. Ein Detail, das nur der Redner kennt: die kalte Kanne im Vorzimmer, der Zettel an der Tür, der Satz, den die Verabschiedete in jeder zweiten Sitzung gesagt hat. Wer solche Dinge nennt, würdigt, ohne zu loben.\n\n" +
       "Und das Vermächtnis? Man soll es nicht ausrufen. „Ihr Vermächtnis wird bleiben“ ist eine Behauptung. „Der Ordner, den sie angelegt hat, wird uns noch zehn Jahre begleiten“ ist ein Beweis — und er ist bewegend, weil er wahr ist.\n\n" +
       "Wer über einen langen Abschnitt gemeinsamer Arbeit spricht, sollte ihn benennen statt zu verallgemeinern: die vier Jahre im selben Büro, das eine Projekt, das beide fast zerrieben hat. Ein Weggefährte ist man in einem Zeitraum, nicht im Allgemeinen.\n\n" +
+      "Auch die Länge ist ein Zeichen von Respekt: Vier Minuten sind fast immer genug, und niemand hat je eine Rede zu kurz gefunden.\n\n" +
+      "Wer im Zweifel ist, welchen Ton er treffen soll, orientiert sich an dem, was der Verabschiedete selbst über sich gesagt hätte.\n\n" +
       "Ein Zitat darf durchaus vorkommen. Aber am Ende, nicht am Anfang: als Schlussstein auf etwas Eigenes, nicht als Ersatz dafür.",
     questions: [
       {
@@ -132,6 +134,7 @@ export const c1U08: SkillExercise[] = [
       "Ein Argument ist stichhaltig, wenn es sich auf etwas stützt, das der andere prüfen kann. Wer sich stattdessen auf eine Autorität beruft — „Alle Fachleute sagen …“ —, verlagert die Prüfung dorthin, wo sie niemand vornimmt.\n\n" +
       "Unterm Strich unterscheidet sich eine Debatte von einem Streit an einer Stelle: Im Streit will man recht behalten, in der Debatte will man wissen, wer recht hat. Der erste Satz verrät meist, welches von beidem läuft.\n\n" +
       "Praktisch gibt es dafür eine Probe, die im Gespräch selbst funktioniert: Man fasst die Gegenposition zusammen, bis das Gegenüber zustimmt, dass sie richtig wiedergegeben ist. Erst danach widerspricht man. Der Umweg kostet zwei Sätze und nimmt der Debatte den größten Teil ihrer Hitze.\n\n" +
+      "Der Unterschied wird an einer Kleinigkeit sichtbar: daran, ob jemand die eigene Position im Lauf des Gesprächs verändern kann, ohne das Gesicht zu verlieren.\n\n" +
       "Man rechtfertigt eine Position nicht dadurch, dass man die Gegenposition schwach darstellt. Man rechtfertigt sie dadurch, dass man sie in ihrer stärksten Form widerlegt.",
     questions: [
       {

@@ -51,6 +51,7 @@ export const c1U14: SkillExercise[] = [
       "SCHRITT DREI: die Minderung selbst. Sie tritt kraft Gesetzes ein, muss also nicht beantragt werden. Wer dennoch die volle Miete unter Vorbehalt zahlt, verliert nichts und behält seine Position — ein Rat, den viele Beratungsstellen geben, weil eine falsch berechnete Minderung selbst zum Kündigungsgrund werden kann.\n\n" +
       "Zwei Irrtümer halten sich hartnäckig. Erstens: Die Minderung ist keine Wiedergutmachung für Ärger, sondern eine Anpassung des Preises an die tatsächliche Nutzbarkeit. Zweitens: Sie ist kein Druckmittel. Wer sie so einsetzt, produziert einen Rechtsstreit, den er auch bei berechtigtem Mangel verlieren kann.\n\n" +
       "Wer Anspruch auf Minderung erheben will, sollte ihn deshalb beziffern und begründen, statt ihn anzudeuten. Ein unbezifferter Anspruch ist für die Gegenseite kein Anspruch, sondern eine Beschwerde.\n\n" +
+      "Zur Höhe: Die Minderung bemisst sich an der Bruttomiete, nicht an der Nettokaltmiete, und sie gilt für die Tage, an denen der Mangel bestand — nicht für den ganzen Monat, in dem er auftrat.\n\n" +
       "Der Weg ist also unspektakulär: melden, Frist setzen, rechnen — und alles schriftlich.",
     questions: [
       {
@@ -133,6 +134,8 @@ export const c1U14: SkillExercise[] = [
       "INFORMIERT. Der Betroffene muss wissen, wer verarbeitet, was verarbeitet wird und ob eine Weitergabe stattfindet. Eine Datenschutzerklärung, die man erst nach dem Absenden erreicht, erfüllt das nicht.\n\n" +
       "WIDERRUFLICH. Die Einwilligung ist jederzeit widerruflich, und der Widerruf muss so einfach sein wie die Erteilung. Ein Häkchen zum Setzen und ein Brief zum Widerrufen ist unzulässig.\n\n" +
       "Der Widerruf wirkt allerdings nur nach vorn: Was bis dahin rechtmäßig verarbeitet wurde, bleibt rechtmäßig. Wer auch das beseitigt haben will, muss die Löschung gesondert verlangen — ein Recht, das unabhängig von der Einwilligung besteht.\n\n" +
+      "Praktisch folgt daraus eine unangenehme Konsequenz: Wer eine Auskunft braucht, muss zuerst herausfinden, wer sie geben darf. Die falsche Stelle antwortet oft trotzdem, und ihre Antwort bindet niemanden.\n\n" +
+      "Wer den Weg abkürzen will, fragt am besten direkt nach der zuständigen Stelle, statt nach der Sache zu fragen.\n\n" +
       "Das alles besagt nichts über die Qualität eines Dienstes. Es besagt nur, wer worüber entscheidet.",
     questions: [
       {

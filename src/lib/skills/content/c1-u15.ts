@@ -51,6 +51,7 @@ export const c1U15: SkillExercise[] = [
       "Die Begründung kann man nachreichen. Das ist kein Trick, sondern ausdrücklich vorgesehen — die Behörde weiß, dass Unterlagen Zeit brauchen. Wer schreibt „Die Begründung reiche ich bis zum 15. nach“, hat beides: die Frist gewahrt und Zeit gewonnen.\n\n" +
       "Wenngleich das einfach klingt, scheitern viele Verfahren genau hier. Die Rechtsprechung ist bei Fristen streng, und zwar unabhängig davon, wie berechtigt der Einwand in der Sache ist. Ein verspäteter Einspruch mit hervorragender Begründung wird nicht geprüft; ein rechtzeitiger mit schwacher Begründung wird geprüft.\n\n" +
       "Zwei praktische Punkte. Erstens zählt der Eingang bei der Behörde, nicht der Poststempel — bei knappen Fristen also nicht auf die Post verlassen. Zweitens beginnt die Frist mit der Bekanntgabe, meist drei Tage nach dem Datum auf dem Bescheid; wer sie ab dem Briefdatum rechnet, verschenkt drei Tage, wer ab dem Öffnen rechnet, verliert womöglich alles.\n\n" +
+      "Ein letzter Hinweis für den Fall, dass die Frist doch verstrichen ist: Die Wiedereinsetzung in den vorigen Stand gibt es, aber nur bei unverschuldeter Verhinderung und mit eigener Frist von zwei Wochen. Urlaub zählt nicht dazu, ein Krankenhausaufenthalt schon.\n\n" +
       "Die Aufhebung eines Bescheids beginnt fast nie mit einem starken Argument. Sie beginnt mit einem rechtzeitigen Satz.",
     questions: [
       {
@@ -132,6 +133,7 @@ export const c1U15: SkillExercise[] = [
       "Entscheidend ist die Art. Bei der Ausfallbürgschaft muss der Gläubiger zuerst erfolglos beim Hauptschuldner vollstrecken. Bei der selbstschuldnerischen Bürgschaft entfällt diese Stufe: Der Bürge kann sofort in Anspruch genommen werden, auch wenn beim Schuldner noch etwas zu holen wäre. In Verträgen mit Banken ist fast immer die zweite Form vorgesehen — sie steht in einem Halbsatz und ändert alles.\n\n" +
       "Wenngleich die Summe begrenzt scheint, ist sie es oft nicht. Eine Bürgschaft über 20.000 Euro deckt in der Regel auch Zinsen und Kosten. Und sie endet nicht mit der Freundschaft: Wer heute für die Wohnung eines Bekannten bürgt, haftet auch in fünf Jahren, wenn man sich nicht mehr sieht.\n\n" +
       "Gleichwohl ist die Bürgschaft kein Fehler an sich. Sie ist eine Absicherung, die jemandem den Zugang zu einer Wohnung oder einem Kredit überhaupt erst eröffnet. Nur sollte sie so behandelt werden wie das, was sie ist: die Übernahme eines fremden Ausfallrisikos, in voller Höhe, für die volle Laufzeit.\n\n" +
+      "Vor der Unterschrift lohnt sich außerdem ein Blick auf die Kündigungsmöglichkeit: Manche Bürgschaften laufen auf unbestimmte Zeit und lassen sich nur mit Zustimmung des Gläubigers beenden.\n\n" +
       "Die nüchterne Frage lautet deshalb nicht „Vertraue ich dieser Person?“, sondern „Könnte ich diese Summe zahlen, wenn sie es nicht kann?“",
     questions: [
       {
