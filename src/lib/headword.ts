@@ -35,6 +35,25 @@ const SEPARABLE =
  * Bu kontrol iki ayrı denetleyicide iki kez yanlış yazıldı ve her seferinde
  * doğru maddeleri eledi — bu yüzden tek yerde duruyor.
  */
+/**
+ * BİLİNEN SINIR (2026-09-05, ölçüldü): kök ünlüsü değişen biçimleri kaçırır.
+ * Eşleştirme kökün ilk dört harfine bakıyor, o yüzden şunlar "yok" görünür:
+ *
+ *   nehmen → genommen · ziehen → gezogen · treffen → getroffen
+ *   werfen → geworfen · bleiben → geblieben · gelten → gilt
+ *   bewerben → bewirb · absagen → abgesagt (ge- ön ekle kök arasına giriyor)
+ *   zuhören → "hör mir kurz zu" (ön ek birkaç kelime uzakta)
+ *
+ * Düzenli ortaç ve ayrılabilen fiilin bitişik biçimi bulunur
+ * (gefahren, angerufen, "stehe … auf"). Bu işlev YALNIZ denetim betiklerinde
+ * kullanılıyor (audit-skills, audit-quality), cevap değerlendirmesinde değil —
+ * yani kaçırdığı yerde doğru cevap reddedilmez, denetim yanlış alarm verir.
+ * Sözlükçe ya da örnek cümle denetlerken bu listeye takılanları ELLE doğrula:
+ * bu oturumda 11 madde bu yüzden yanlışlıkla "metinde yok" sayıldı.
+ *
+ * Gevşetmek (dört harf yerine üç) ters yönde yanlış üretiyor, o yüzden
+ * bilerek dokunulmadı; düzeltmesi çekim tablosu ister.
+ */
 export function sentenceContainsWord(word: string, sentence: string): boolean {
   // Yalnızca kapsama tespitinde umlaut düz sesliye indirilir: Almanca çekim
   // gövde ünlüsünü değiştirir (fahren → fährt, Arzt → Ärztin) ve düz arama
