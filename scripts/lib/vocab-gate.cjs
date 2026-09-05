@@ -23,6 +23,7 @@ zu in an auf aus bei mit nach von vor über unter für um durch gegen ohne seit 
 ist sind bin bist war waren hat habe haben hast wird werden kann können muss müssen will
 wurde wurden würde würden hatte hatten musste mussten konnte konnten wollte wollten sollte sollten durfte durften
 gewesen geworden musst kannst willst sollst darfst magst möchte möchten wisst weiß weißt wusste wussten
+gekonnt gemusst gedurft gewollt gesollt
 wäre wären hätte hätten könnte könnten müsste müssten sollte wollte dürfte ginge käme gäbe
 auch noch nur schon sehr hier da dann jetzt heute sehr viel mehr alle etwas nichts
 guten tag morgen abend hallo bitte danke herr frau sie ihnen ihr
