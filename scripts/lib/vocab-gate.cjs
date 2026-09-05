@@ -262,6 +262,19 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
       }
       izinCekim.add(g + "t");   // ayrılabilen/ayrılmayan ortaç: bewerben → beworben yakalanmaz ama besucht yakalanır
     }
+    // İSİM ÇOĞULU umlaut alabilir ve biçim tahmin edilemez: Frucht → Früchte,
+    // Buch → Bücher, Stadt → Städte, Tochter → Töchter. Öğretilen ismin
+    // kendisi biliniyorsa çoğulu da bilinmiş sayılmalı; kapı yalnız umlautsuz
+    // çoğulu üretiyordu ve öğretilen kelimenin çoğulu kayma sayılıyordu.
+    if (w.length >= 4 && !w.endsWith("en")) {
+      for (const [a, b2] of [["au", "äu"], ["a", "ä"], ["o", "ö"], ["u", "ü"]]) {
+        const i = w.lastIndexOf(a);
+        if (i < 0) continue;
+        const v = w.slice(0, i) + b2 + w.slice(i + a.length);
+        for (const son of ["", "e", "er", "en", "n"]) izinCekim.add(v + son);
+        break;
+      }
+    }
     // Düzensiz biçimler: gövde tablodaysa onun biçimleri de bilinir.
     for (const [mastar, bicimler] of Object.entries(DUZENSIZ)) {
       if (w === mastar || (w.length > mastar.length && w.endsWith(mastar))) {
