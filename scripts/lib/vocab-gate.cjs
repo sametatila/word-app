@@ -81,6 +81,9 @@ const DUZENSIZ = {
   // ünlü değişimleri kural tablosunda yok: a→ie, a→i, a→u, u→ie.
   fallen: ["fällt", "fiel", "gefallen"], fangen: ["fängt", "fing", "gefangen"],
   tragen: ["trägt", "trug", "getragen"], rufen: ["ruft", "rief", "gerufen"],
+  // Karma fiil: ünlü DEĞİŞİR ama ek ZAYIF kalır (kennen → kannte). Ne ünlü
+  // kuralı ne zayıf kural tek başına üretebiliyor. denken/bringen zaten yukarıda.
+  kennen: ["kennt", "kannte", "gekannt"],
 };
 
 // Almanca sayı BİLEŞİKTİR: "achtunddreißig" = acht+und+dreißig. Parçaları
@@ -210,8 +213,12 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   // yüzden metindeki "hört … auf" kayma sayılıyordu. Soyulmuş gövdeler de dahil.
   const izinCekim = new Set();
   for (const w of [...izin, ...izinKok]) {
-    if (w.length >= 4 && w.endsWith("en")) {
-      const g = w.slice(0, -2);
+    if (w.length >= 4 && (w.endsWith("en") || /[eo]rn$|eln$/.test(w))) {
+      // -ern/-eln fiillerinde gövde SON n atılarak bulunur: ändern → änder,
+      // sammeln → sammel. "en" atmak "änd" verirdi ve geändert/änderte/ändert
+      // hiç üretilmezdi — bu sınıf (ändern, wechseln, sich erinnern, sammeln,
+      // verbessern) baştan beri tamamen kapının dışındaydı.
+      const g = /[eo]rn$|eln$/.test(w) ? w.slice(0, -1) : w.slice(0, -2);
       for (const son of ["t", "st", "e", "en"]) izinCekim.add(g + son);
       // B1 yazı dilinin geçmişini (Präteritum) ve Perfekt ortacını AÇIKÇA
       // öğretiyor; bu biçimler üretilmezse öğretilen fiilin kendisi kayma
@@ -250,6 +257,15 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
           // eklerini üret: güçlü gövdeye -en/-st/-t, zayıf -te gövdesine -n/-st/-t.
           if (b === bicimler[1]) {
             for (const son of ["en", "st", "t", "n"]) izinCekim.add(on + b + son);
+          }
+          // Aynı eksiklik ŞİMDİKİ zamanda da var: tablo 3. tekili tutuyor
+          // ("nimmt", "wird") ama diyalog 2. tekili ve emri kullanıyor
+          // ("nimmst", "wirst", "Nimm bitte …"). Güçlü fiilin emri gövdenin
+          // kendisidir: 3. tekilden sondaki t düşer.
+          if (b === bicimler[0] && /[td]$/.test(b)) {
+            const govde = b.slice(0, -1);
+            izinCekim.add(on + govde);
+            izinCekim.add(on + govde + "st");
           }
           // Ayrılabilen önekte "ge" öneke ile gövde arasına girer: angerufen.
           if (on && b.startsWith("ge")) izinCekim.add(on + b);
