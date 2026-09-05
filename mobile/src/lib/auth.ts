@@ -134,6 +134,27 @@ export async function updateUserName(name: string): Promise<boolean> {
 }
 
 /**
+ * Apple girişinin authorization code'unu sunucuya bırakır (yalnız iOS).
+ *
+ * Hesap silinirken Apple tarafındaki izni iptal etmek App Store 5.1.1(v)'nin açık
+ * koşulu; iptal edilebilen tek şey bu koddan üretilen refresh token — id token
+ * iptal edilemiyor. Kod tek kullanımlık ve kısa ömürlü, o yüzden giriş biter
+ * bitmez gönderiliyor. Sessiz: gitmezse giriş yine geçerli.
+ */
+export async function sendAppleAuthorizationCode(code: string): Promise<boolean> {
+  try {
+    const res = await fetch(`${API_BASE}/api/account/apple-code`, {
+      method: "POST",
+      headers: { "content-type": "application/json", accept: "application/json" },
+      body: JSON.stringify({ code }),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Parola sıfırlama bağlantısı ister (web'le AYNI Better Auth ucu:
  * request-password-reset). Sıfırlamanın kendisi e-postadaki bağlantıyla
  * web'deki /reset-password sayfasında tamamlanır — mobil ayrı sayfa gerektirmez.

@@ -99,6 +99,7 @@ export const de: Record<string, string> = {
   "deleteaccount.account": "Das Konto {email}",
   "deleteaccount.yes_delete": "Ja, löschen",
   "deleteaccount.you_signed_in_with_google_so_no": "Da du dich mit Google angemeldet hast, ist kein Passwort nötig.",
+  "deleteaccount.sign_in_with_apple_again_and": "Erneut mit Apple anmelden und löschen",
   "deleteaccount.sign_in_with_google_again_and": "Erneut mit Google anmelden und löschen",
   "deleteaccount.for_security_deleting_your": "Aus Sicherheitsgründen ist zum Löschen eine Anmeldung aus den letzten 24 Stunden nötig.",
   "deleteaccount.delete_account": "Konto löschen",

@@ -14,6 +14,7 @@ import { ArrowBackIcon, CheckIcon, XIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { listAccounts, deleteAccount } from "../lib/auth";
 import { googleSignIn } from "../lib/googleAuth";
+import { appleSignIn, appleSupported } from "../lib/appleAuth";
 import { Skeleton } from "../ui/Skeleton";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -51,6 +52,8 @@ export function DeleteAccountScreen() {
   const { user, signOut } = useAuth();
 
   const [hasPassword, setHasPassword] = useState<boolean | null>(null);
+  /** Bağlı sağlayıcılar — taze giriş hangi düğmeyle yapılacak, onu belirliyor. */
+  const [providers, setProviders] = useState<string[]>([]);
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(false);
   const [confirm, setConfirm] = useState(false);
@@ -61,7 +64,11 @@ export function DeleteAccountScreen() {
 
   useEffect(() => {
     let alive = true;
-    listAccounts().then((accs) => { if (alive) setHasPassword(accs.some((a) => a.providerId === "credential")); });
+    listAccounts().then((accs) => {
+      if (!alive) return;
+      setHasPassword(accs.some((a) => a.providerId === "credential"));
+      setProviders(accs.map((a) => a.providerId));
+    });
     return () => { alive = false; };
   }, []);
 
@@ -87,12 +94,24 @@ export function DeleteAccountScreen() {
     setError(r.message);
   }
 
-  /** Google hesabı, oturum eski: yeniden giriş yap ve silmeyi tekrar dene. */
+  /**
+   * Sosyal hesap, oturum eski: yeniden giriş yap ve silmeyi tekrar dene.
+   *
+   * Sağlayıcı hesaptan okunuyor. Sabit Google idi: Apple ile giren kullanıcı
+   * (iOS'ta 4.8 gereği sunulan tek diğer yol) oturumu 24 saatten eskiyse hesabını
+   * SİLEMİYORDU — kendi hesabında olmayan bir Google girişine yollanıyordu.
+   * Silmenin tıkanması App Store 5.1.1(v)'nin doğrudan ihlali.
+   */
+  const freshProvider = providers.includes("apple") && appleSupported() ? "apple"
+    : providers.includes("google") ? "google"
+    : null;
+
   async function reauthAndRetry() {
+    if (!freshProvider) { setError(tx("autherror.fresh_login")); return; }
     setBusy(true);
     setError(null);
-    const g = await googleSignIn();
-    if (!g.ok) { setBusy(false); if (g.code !== "CANCELLED") setError(g.message); return; }
+    const s = freshProvider === "apple" ? await appleSignIn() : await googleSignIn();
+    if (!s.ok) { setBusy(false); if (s.code !== "CANCELLED") setError(s.message); return; }
     const r = await deleteAccount();
     setBusy(false);
     if (r.ok) { await finishDeleted(); return; }
@@ -145,7 +164,7 @@ export function DeleteAccountScreen() {
             <Text variant="h3">{tx("deleteaccount.sign_in_again_first")}</Text>
             <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>{tx("deleteaccount.for_security_deleting_your")}</Text>
             <PressableScale onPress={reauthAndRetry} disabled={busy} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }, softShadow(colors.primary, 8)]}>
-              <Text variant="bodyStrong" color="#fff">{busy ? "..." : tx("deleteaccount.sign_in_with_google_again_and")}</Text>
+              <Text variant="bodyStrong" color="#fff">{busy ? "..." : tx(freshProvider === "apple" ? "deleteaccount.sign_in_with_apple_again_and" : "deleteaccount.sign_in_with_google_again_and")}</Text>
             </PressableScale>
           </Card>
         ) : (

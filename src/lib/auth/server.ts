@@ -7,6 +7,7 @@ import { db } from "@/lib/db";
 import { user, session, account, verification } from "@/lib/db/auth-schema";
 import { emailConfigured, sendEmail, verificationEmail, resetEmail } from "@/lib/email";
 import { purgeUserData } from "@/lib/account/purge";
+import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
 
 /**
  * Self-hosted Better Auth (Neon Auth yerine). Oturumlar/kullanıcılar KENDİ
@@ -158,15 +159,23 @@ export const auth = betterAuth({
     freshAge: 60 * 60 * 24,
   },
   /**
-   * Hesap silme (Play "hesap silme" zorunluluğu). Uç: POST /api/auth/delete-user
-   * — parola hesabında `password` ister, sosyal hesapta taze oturum yeter.
-   * Better Auth user/session/account satırlarını siler; uygulama verisi
-   * `beforeDelete`te tek transaction'da temizlenir (bkz. lib/account/purge.ts).
+   * Hesap silme (Play "hesap silme" zorunluluğu, App Store 5.1.1(v)). Uç:
+   * POST /api/auth/delete-user — parola hesabında `password` ister, sosyal
+   * hesapta taze oturum yeter. Better Auth user/session/account satırlarını
+   * siler; uygulama verisi `beforeDelete`te tek transaction'da temizlenir
+   * (bkz. lib/account/purge.ts).
+   *
+   * Apple ile giren kullanıcıda ayrıca Apple TARAFINDAKİ izin iptal ediliyor:
+   * 5.1.1(v) bunu açıkça istiyor ve `account` satırı silinmeden okunması
+   * gerektiği için sıra önemli — önce iptal, sonra temizlik.
    */
   user: {
     deleteUser: {
       enabled: true,
-      beforeDelete: async (u) => { await purgeUserData(u.id); },
+      beforeDelete: async (u) => {
+        await revokeAppleSignIn(u.id);
+        await purgeUserData(u.id);
+      },
     },
   },
   /**

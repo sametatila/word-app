@@ -1,6 +1,6 @@
 import { Platform } from "react-native";
 import appleAuth from "@invertase/react-native-apple-authentication";
-import { signInAppleNative, updateUserName } from "./auth";
+import { signInAppleNative, updateUserName, sendAppleAuthorizationCode } from "./auth";
 import { t } from "./i18n";
 import type { AuthOutcome } from "./auth";
 
@@ -80,6 +80,12 @@ export async function appleSignIn(): Promise<AuthOutcome> {
     // olursa giriş yine geçerli, kullanıcı adını Ayarlar'dan düzeltebilir.
     const name = fullNameOf(res);
     if (name) await updateUserName(name);
+
+    // Hesap silmede Apple tarafındaki izni iptal edebilmek için (5.1.1(v)).
+    // Kod tek kullanımlık ve ~5 dakika yaşıyor; sunucu yapılandırılmamışsa
+    // 204 dönüp yok sayıyor. Girişin başarısı buna bağlı değil.
+    if (res.authorizationCode) await sendAppleAuthorizationCode(res.authorizationCode);
+
     return outcome;
   } catch (e) {
     // 1001 = kullanıcı iptali (appleAuth.Error.CANCELED). Sessiz geçilir.

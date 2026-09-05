@@ -54,7 +54,7 @@ bayrak açılmadan önce yapılmalı.
 | 1 | Apple Developer Program hesabı | Bundle kimliği, sertifika, App Store Connect kaydı bunsuz yok |
 | 2 | ~~Gerçek bundle kimliği~~ → `app.lernomi.ios` **yazıldı** (derlenmedi) | Şablon kimliğiyle yükleme kabul edilmez |
 | 3 | ~~**Apple ile Giriş**~~ → **kod ve yetki yazıldı**, Apple Developer hesabı bekliyor | Google ile giriş sunulduğu için App Store Review Guidelines 4.8 istiyor. Metin işi değil, ürün işi. Ayrıntı aşağıda; kalan iki değer madde 10-11'de |
-| 4 | Uygulama içi hesap silme | 5.1.1(v) zorunlu kılıyor — Android'de var, iOS'ta da aynı yere bağlanmalı |
+| 4 | ~~Uygulama içi hesap silme~~ → **iki eksik kapandı** (2026-09-05, derlenmedi) · açık kalan: **cihazda doğrulama** | 5.1.1(v). Ekran zaten vardı ama iki yerde iOS'ta tıkanıyordu; ayrıntı aşağıda "Hesap silme" başlığında |
 | 5 | Gizlilik etiketleri | Aşağıdaki tablo App Store Connect'e girilir |
 | 6 | Yaş derecelendirmesi | Anket cevapları ve iki mağazanın neden farklı çıkacağı **yazıldı** (`listing.md` §2); Connect'te form doldurulup hesaplanan derece geri yazılacak |
 | 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi ve kod yazıldı, ama macOS/Xcode olmadan derlenip denenemedi (aşağıya bak) |
@@ -188,6 +188,51 @@ dönmüyor; yutuldu.) Gerçek bir Apple token'ı ile giriş **denenmedi**.
 (b) "E-postamı Gizle" seçilince oturum açılıyor mu, (c) aynı e-postayla zaten hesabı
 olan kullanıcıda hesap birleşiyor mu, (d) Ayarlar'dan Apple izni geri alınınca
 uygulama makul davranıyor mu.
+
+## Hesap silme (5.1.1(v)) — 2026-09-05
+
+Ekran ve uç Android'den beri duruyordu (`DeleteAccountScreen`, Better Auth
+`delete-user`), ama iOS'a özgü iki yerde tıkanıyordu. İkisi de kapatıldı, ikisi de
+**derlenmedi**.
+
+**1. Apple ile giren kullanıcı hesabını silemiyordu.** Oturum 24 saatten eskiyse
+Better Auth "taze giriş" istiyor; ekrandaki yeniden giriş düğmesi sabit **Google**
+idi. Apple ile giren kullanıcının Google hesabı yok, dolayısıyla o düğme hiçbir
+zaman geçmiyordu — yani iOS'ta sunulan iki giriş yolundan birinde silme tümüyle
+kapalıydı. Artık sağlayıcı `list-accounts`tan okunuyor ve düğme Apple ya da Google
+oluyor; hiçbiri yoksa (parola hesabı) zaten parola soruluyor.
+
+**2. Apple tarafındaki izin iptal edilmiyordu.** 5.1.1(v) yalnız hesabın silinmesini
+değil, Apple ile Giriş sunan uygulamalardan **Sign in with Apple REST API ile
+token'ın iptal edilmesini** de istiyor. Edilmezse hesap bizde silinse bile Ayarlar ›
+Apple Hesabı › Oturum Açma ve Güvenlik listesinde uygulama duruyor.
+
+Native akış id token ile çalışıyor ve id token iptal EDİLEMİYOR; iptal edilebilen tek
+şey authorization code'dan üretilen refresh token. Kurulan yol:
+
+- Giriş biter bitmez `authorizationCode` `/api/account/apple-code`e gidiyor
+  (`mobile/src/lib/appleAuth.ts`). Kod tek kullanımlık ve ~5 dakika yaşıyor.
+- Sunucu onu refresh token'a çevirip `account.refreshToken`e yazıyor
+  (`src/lib/account/apple-revoke.ts`).
+- Silme anında `beforeDelete` önce iptali çağırıyor, sonra veriyi temizliyor — sıra
+  önemli, `account` satırı silinince token okunamaz.
+- İptalin başarısızlığı silmeyi **durdurmuyor**: Apple'ın ucu erişilemez diye hesap
+  silinemez kalırsa 5.1.1(v) baştan ihlal edilir. Hata günlüğe düşüyor.
+
+Client secret için `jose` eklenmedi; tek bir ES256 JWT'yi Node'un kendi crypto'su
+imzalıyor. İncelik imza biçiminde: Node DER üretir, JWS ham `r||s` ister. Yanlışı
+Apple'da yalnız "invalid_client" olarak görünür ve sebebi hiçbir yerde yazmaz — bu
+yüzden `npm run test:apple` JWT'yi baştan sona doğruluyor (15 denetim, ağ ve
+veritabanı gerektirmiyor, kendi anahtarını üretiyor). **Geçti.**
+
+Yapılandırma dört env değerine bağlı (`APPLE_BUNDLE_ID`, `APPLE_TEAM_ID`,
+`APPLE_KEY_ID`, `APPLE_PRIVATE_KEY`); üç env dosyasına da aynı yerde, boş olarak
+eklendi. Boşken iptal adımı atlanıyor ve silme aynen tamamlanıyor — yani Android ve
+web'de hiçbir şey değişmedi.
+
+**Cihazda sınanacak:** (a) Apple ile giren kullanıcı eski oturumla silmeyi
+tamamlayabiliyor mu, (b) silmeden sonra Apple'ın Ayarlar listesinden uygulama
+düşüyor mu, (c) aynı Apple hesabıyla yeniden giriş temiz bir hesap açıyor mu.
 
 ## Gizlilik etiketleri (App Store Connect › App Privacy)
 

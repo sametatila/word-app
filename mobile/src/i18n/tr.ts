@@ -104,6 +104,7 @@ export const tr: Record<string, string> = {
   "deleteaccount.account": "{email} hesabı",
   "deleteaccount.yes_delete": "Evet, sil",
   "deleteaccount.you_signed_in_with_google_so_no": "Google ile girdiğin için parola gerekmiyor.",
+  "deleteaccount.sign_in_with_apple_again_and": "Apple ile yeniden giriş yap ve sil",
   "deleteaccount.sign_in_with_google_again_and": "Google ile yeniden gir ve sil",
   "deleteaccount.for_security_deleting_your": "Güvenlik için hesap silme, son 24 saat içinde açılmış bir oturum ister.",
   "deleteaccount.delete_account": "Hesabı sil",
