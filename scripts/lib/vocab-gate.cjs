@@ -89,6 +89,11 @@ const DUZENSIZ = {
   schreien: ["schreit", "schrie", "geschrien"],
 };
 
+// "hoch" çekilirken ch → h olur (hohe, hohen, hoher) ve bu tek başına bir
+// istisnadır: ne sıfat çekimi ne ünlü kuralı üretebiliyor. Havuzda A-katmanı
+// sözcüğü olmasına rağmen çekimli hâlleri kayma sayılıyordu.
+const DUZENSIZ_SIFAT = { hoch: ["hoh", "hohe", "hohen", "hoher", "hohes", "hohem", "höher", "höhere", "höheren"] };
+
 // Almanca sayı BİLEŞİKTİR: "achtunddreißig" = acht+und+dreißig. Parçaları
 // öğretiliyor ama bileşiğin kendisi hiçbir ders listesinde yok, o yüzden
 // kayma sanılıyordu. Yalnız sayı morfemlerinden kurulmuş bir sözcük sayıdır.
@@ -274,6 +279,10 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
         for (const son of ["", "e", "er", "en", "n"]) izinCekim.add(v + son);
         break;
       }
+    }
+    // Düzensiz sıfat: hoch → hohe.
+    for (const [kok, bicimler] of Object.entries(DUZENSIZ_SIFAT)) {
+      if (w === kok) for (const b of bicimler) izinCekim.add(b);
     }
     // Düzensiz biçimler: gövde tablodaysa onun biçimleri de bilinir.
     for (const [mastar, bicimler] of Object.entries(DUZENSIZ)) {
