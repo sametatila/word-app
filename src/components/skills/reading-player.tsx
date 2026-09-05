@@ -6,13 +6,13 @@ import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { GlossPanel, QuestionList } from "./quiz";
 
 /** Okuma egzersizi: metin + sözlükçe + anlama soruları. */
-export function ReadingPlayer({ exercise }: { exercise: ReadingExercise }) {
+export function ReadingPlayer({ exercise, backHref }: { exercise: ReadingExercise; backHref?: string }) {
   const { finish, state, reset } = useSkillFinish(exercise, exercise.questions.length);
   const [correct, setCorrect] = useState(0);
   const [round, setRound] = useState(0);
 
   return (
-    <PlayerShell exercise={exercise}>
+    <PlayerShell exercise={exercise} backHref={backHref}>
       <p className="muted px-1 text-sm">{exercise.intro}</p>
 
       {/* select-text: öğrenci kelime kopyalayıp sözlüğe bakabilsin. */}

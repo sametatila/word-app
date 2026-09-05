@@ -3,6 +3,7 @@ import { getExercise } from "@/lib/skills";
 import { ReadingPlayer } from "@/components/skills/reading-player";
 import { ListeningPlayer } from "@/components/skills/listening-player";
 import { WritingPlayer } from "@/components/skills/writing-player";
+import { SpeakingPlayer } from "@/components/skills/speaking-player";
 
 export const dynamic = "force-dynamic";
 
@@ -15,21 +16,30 @@ export const dynamic = "force-dynamic";
  */
 export default async function ImmersionSkillPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { id } = await params;
   const exercise = await getExercise(id);
   if (!exercise) notFound();
+  // Aynı oynatıcıya iki yerden giriliyor; "geri" nereden gelindiyse oraya
+  // dönmeli, yoksa Beceriler'den giren kullanıcı Patika'ya düşüyor.
+  const from = (await searchParams)?.from;
+  const backHref = from === "skills" ? "/skills" : "/immersion";
 
   switch (exercise.skill) {
     case "reading":
-      return <ReadingPlayer exercise={exercise} />;
+      return <ReadingPlayer exercise={exercise} backHref={backHref} />;
     case "listening":
-      return <ListeningPlayer exercise={exercise} />;
+      return <ListeningPlayer exercise={exercise} backHref={backHref} />;
     case "writing":
-      return <WritingPlayer exercise={exercise} />;
-    // Konuşma becerisi kaldırıldı (2026-08): içerik yok, bu dala düşmez.
+      return <WritingPlayer exercise={exercise} backHref={backHref} />;
+    // Konuşma 2026-09'da geri geldi: A1 için 8 ses çalışması yazıldı ve
+    // oynatıcısı olmadığı için yalnız sınavdan görülebiliyorlardı.
+    case "speaking":
+      return <SpeakingPlayer exercise={exercise} backHref={backHref} />;
     default:
       notFound();
   }

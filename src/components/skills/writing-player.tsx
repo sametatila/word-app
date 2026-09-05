@@ -49,7 +49,7 @@ type SentenceTaskData = Extract<WritingTask, { kind: "sentence" }>;
  * Yazma egzersizi: önce karışık parçalardan cümle kurma (otomatik kontrol),
  * sonra kontrol listesiyle serbest yazma. Görevler sırayla açılır.
  */
-export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
+export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercise; backHref?: string }) {
   const total = exercise.tasks.length;
   const { finish, state, reset } = useSkillFinish(exercise, total);
   const [step, setStep] = useState(0);
@@ -72,7 +72,7 @@ export function WritingPlayer({ exercise }: { exercise: WritingExercise }) {
   }
 
   return (
-    <PlayerShell exercise={exercise}>
+    <PlayerShell exercise={exercise} backHref={backHref}>
       <p className="muted px-1 text-sm">{exercise.intro}</p>
 
       <div className="mt-3 px-1">

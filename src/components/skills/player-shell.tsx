@@ -97,15 +97,18 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
 export function PlayerShell({
   exercise,
   children,
+  backHref = "/immersion",
 }: {
   exercise: SkillExercise;
   children: ReactNode;
+  /** Nereye dönülecek. Patika varsayılan; Beceriler hub'ından gelince /skills. */
+  backHref?: string;
 }) {
   return (
     <div className="mx-auto w-full max-w-2xl">
       <MascotFx />
       <div className="mb-5 flex items-center gap-3">
-        <Link href="/immersion" aria-label="Patika'ya dön" className="btn btn-ghost h-9 w-9 shrink-0">
+        <Link href={backHref} aria-label="Geri dön" className="btn btn-ghost h-9 w-9 shrink-0">
           <ArrowLeftIcon size={18} />
         </Link>
         <div className="min-w-0">

@@ -25,7 +25,7 @@ const PITCHES = [1, 1.16, 0.88, 1.3];
  * çevrimdışı da çalışır, ek ses dosyası gerekmez. Konuşmacılar farklı perdeyle
  * ayrışır; istenirse yavaş mod ve (önce dinlemeyi teşvik eden) metin açma vardır.
  */
-export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
+export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExercise; backHref?: string }) {
   const { finish, state, reset } = useSkillFinish(exercise, exercise.questions.length);
   const [correct, setCorrect] = useState(0);
   const [round, setRound] = useState(0);
@@ -188,7 +188,7 @@ export function ListeningPlayer({ exercise }: { exercise: ListeningExercise }) {
   }
 
   return (
-    <PlayerShell exercise={exercise}>
+    <PlayerShell exercise={exercise} backHref={backHref}>
       <p className="muted px-1 text-sm">{exercise.intro}</p>
 
       <section className="card mt-3 p-5">
