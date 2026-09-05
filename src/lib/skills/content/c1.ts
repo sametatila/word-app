@@ -1,7 +1,17 @@
 import type { SkillExercise } from "../types";
+import { c1U01 } from "./c1-u01";
 
-/** C1 — okuma, dinleme ve yazma egzersizleri. */
+/**
+ * C1 — okuma, dinleme ve yazma egzersizleri.
+ *
+ * Ünite hizalı içerik EN BAŞTA durur: immersion yerleşimi `unit` etiketine
+ * değil LİSTE SIRASINA bakıyor (buildTrack havuzları imleçle tüketir). Eski
+ * genel C1 içeriği sonraki ünitelere kayar ve köprü olur — A1 ve A2 tarafındaki
+ * düzenin aynısı. Eski kimlikler silinmez: user_skills birincil anahtarı
+ * (user_id, exercise_id) ve silinen kimlik canlı ilerlemeyi götürür.
+ */
 export const c1: SkillExercise[] = [
+  ...c1U01,
   // ---------------------------------------------------------------- OKUMA
   {
     id: "c1-r1",
