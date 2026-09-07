@@ -19,6 +19,31 @@
 set -euo pipefail
 cd "$(dirname "$0")/../android/app"
 
+# keytool JDK'nın parçası ve bu makinede PATH'te olmayabiliyor: Android derlemesi
+# Gradle'ın kendi indirdiği JDK ile koşuyor (~/.gradle/jdks). Sırayla bakılıyor —
+# ayrı bir JDK kurmak gerekmesin.
+find_keytool() {
+  if [ -n "${JAVA_HOME:-}" ] && [ -x "$JAVA_HOME/bin/keytool" ]; then
+    echo "$JAVA_HOME/bin/keytool"; return 0
+  fi
+  if command -v keytool >/dev/null 2>&1; then command -v keytool; return 0; fi
+  local c
+  for c in "$HOME"/.gradle/jdks/*/bin/keytool \
+           /usr/lib/jvm/*/bin/keytool \
+           "$HOME"/android-studio/jbr/bin/keytool \
+           /opt/android-studio/jbr/bin/keytool; do
+    [ -x "$c" ] && { echo "$c"; return 0; }
+  done
+  return 1
+}
+
+KEYTOOL=$(find_keytool) || {
+  echo "HATA: keytool bulunamadı (JDK yok)." >&2
+  echo "JAVA_HOME verin ya da bir JDK 17 kurun; Android derlemesi zaten JDK istiyor." >&2
+  exit 2
+}
+echo "keytool: $KEYTOOL"
+
 OUT=release.keystore
 PROPS=../keystore.properties
 ALIAS=lernomi
@@ -50,7 +75,7 @@ fi
 
 # 10000 gün ≈ 27 yıl: Play, anahtarın 2033'ten sonrasına kadar geçerli olmasını
 # istiyor ve süresi dolan bir anahtarla yeni sürüm yüklenemiyor.
-keytool -genkeypair -v -keystore "$OUT" -alias "$ALIAS" \
+"$KEYTOOL" -genkeypair -v -keystore "$OUT" -alias "$ALIAS" \
   -keyalg RSA -keysize 4096 -validity 10000 \
   -storepass "$STOREPW" -keypass "$STOREPW" \
   -dname "CN=Lernomi, O=Lernomi, C=DE"
@@ -73,7 +98,7 @@ echo
 # anahtarını taşır; onun SHA-1'i Console › Setup › App signing'den alınır ve
 # AYRI bir istemci olarak kaydedilir — bkz. docs/play/console.md §2.)
 echo "== Parmak izleri (Google Cloud › OAuth istemcisi için) =="
-keytool -list -v -keystore "$OUT" -alias "$ALIAS" -storepass "$STOREPW" \
+"$KEYTOOL" -list -v -keystore "$OUT" -alias "$ALIAS" -storepass "$STOREPW" \
   | grep -E "SHA1:|SHA256:" || true
 
 cat <<'SON'

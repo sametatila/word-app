@@ -95,6 +95,21 @@ fi
 # --- 3. Yapı -------------------------------------------------------------------
 # AAB Play'e gider; APK yan dağıtıma (GitHub sürümü) ve cihazda duman testine.
 step "Gradle"
+# Gradle bir JDK istiyor ve bu makinede java PATH'te olmayabiliyor; Gradle'ın kendi
+# indirdiği JDK (~/.gradle/jdks) zaten burada duruyor, onu kullanıyoruz.
+if [ -z "${JAVA_HOME:-}" ] && ! command -v java >/dev/null 2>&1; then
+  for c in "$HOME"/.gradle/jdks/*/bin/java \
+           /usr/lib/jvm/*/bin/java \
+           "$HOME"/android-studio/jbr/bin/java \
+           /opt/android-studio/jbr/bin/java; do
+    if [ -x "$c" ]; then JAVA_HOME=$(dirname "$(dirname "$c")"); export JAVA_HOME; break; fi
+  done
+fi
+if [ -z "${JAVA_HOME:-}" ] && ! command -v java >/dev/null 2>&1; then
+  echo "HATA: JDK bulunamadı. JAVA_HOME verin ya da JDK 17 kurun." >&2
+  exit 2
+fi
+[ -n "${JAVA_HOME:-}" ] && echo "  JAVA_HOME: $JAVA_HOME"
 ( cd android && ./gradlew --no-daemon clean bundleRelease assembleRelease )
 
 for f in "$OUT_AAB" "$OUT_APK"; do

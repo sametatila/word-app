@@ -130,6 +130,10 @@ sonucu vardı: Play böyle bir yüklemeyi reddediyor, ama asıl tehlike yan dağ
 o APK GitHub sürümüne çıkarsa imza anahtarı bir daha **değiştirilemez**, yani yanlış
 anahtarla çıkan bir sürüm o kullanıcıların bir daha güncelleme alamaması demek.
 
+Kapı `--dry-run` ile sınandı: anahtarsız `:app:assembleRelease` mesajla düşüyor,
+`-PallowDebugSigning` ile geçiyor (uyarı basarak), `:app:assembleDebug` ve
+`:app:tasks` etkilenmiyor.
+
 Deneme amaçlı bir release paketi gerekiyorsa kapı elle açılıyor:
 
 ```sh
@@ -139,6 +143,13 @@ Deneme amaçlı bir release paketi gerekiyorsa kapı elle açılıyor:
 Çıkan yapı debug anahtarıyla imzalanıyor **ve** `-devkey` sürüm ekiyle işaretleniyor
 (`1.0.11-devkey`), yani elde kaldığında ne olduğunu kendisi söylüyor. O dosya ne
 mağazaya ne GitHub sürümüne gidebilir.
+
+### JDK nereden geliyor
+
+Bu makinede `java` PATH'te değil ama bir JDK 17 zaten var: Gradle kendisi indirmiş
+(`~/.gradle/jdks/`). Hem anahtar üreticisi hem `release:android` onu kendiliğinden
+buluyor (sıra: `JAVA_HOME` → PATH → Gradle'ın indirdiği → Android Studio'nun JBR'si),
+yani ayrı bir JDK kurmak gerekmiyor.
 
 Anahtar üretimi `scripts/gen-release-keystore.sh`: parolayı iki kez sorar (yanlış
 yazılan parola anahtarı kurtarılamaz yapar ve hata aylar sonra, yeni sürüm
