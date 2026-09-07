@@ -23,7 +23,9 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
     // Çubuk artık ekran kadar geniş bir alanın içinde duruyor (sütun kökten
     // kaldırıldı, bkz. ui/ContentColumn). Yüzen hap serbest bırakılsaydı yatay
     // tablette 1300dp'ye yayılır, üç sekme birbirinden avuç içi kadar uzağa
-    // düşerdi. İçerik sütunuyla AYNI genişlikte sınırlanıp ortalanıyor.
+    // düşerdi. DAR sütuna göre sınırlanıp ortalanıyor — geniş kaba göre değil:
+    // sekmelerden yalnız Patika geniş kapta, çubuk ona uysaydı sekme
+    // değiştikçe genişleyip daralırdı.
     // Telefonda ölçü birebir eskisi: sütun bağlamıyor, yatay dolgu eski
     // left/right kenar boşluğunun yerini alıyor.
     <View style={{ position: "absolute", left: 0, right: 0, bottom: insets.bottom + spacing.sm, alignItems: "center" }}>

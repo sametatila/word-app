@@ -1,4 +1,4 @@
-import { contentWidthFor, PHONE_MAX_WIDTH } from "../src/lib/useLayout";
+import { contentWidthFor, gridColumnsFor, gridItemWidthFor, PHONE_MAX_WIDTH, wideContentWidthFor } from "../src/lib/useLayout";
 
 /**
  * İçerik sütunu kırılımları — gerçek cihaz genişlikleriyle.
@@ -81,6 +81,74 @@ describe("yatay tablette içerik sütunu", () => {
     ];
     for (const [dikey, yatay] of cihazlar) {
       expect(contentWidthFor(yatay)).toBeGreaterThanOrEqual(contentWidthFor(dikey));
+    }
+  });
+});
+
+/**
+ * Izgara kabı — yatay tablette dar sütundan çıkıyor.
+ *
+ * İki kademenin sebebi: metnin satır ölçüsü var, kartın yok. Aynı 1280dp'lik
+ * ekranda paragrafı 720'de tutmak DOĞRU, kart ızgarasını 720'de tutmak ekranın
+ * yarısını zemine bırakmak demek.
+ */
+describe("ızgara kabı (wideContentWidthFor)", () => {
+  const olc = (w: number, h: number) => wideContentWidthFor(w, h);
+
+  it("telefonda dar sütunla aynı", () => {
+    expect(olc(390, 844)).toBe(contentWidthFor(390));
+    expect(olc(440, 956)).toBe(contentWidthFor(440));
+  });
+
+  it("DİKEY tablette dar sütunla aynı — fazlalık genişlik zaten yok", () => {
+    expect(olc(744, 1133)).toBe(contentWidthFor(744));
+    expect(olc(820, 1180)).toBe(contentWidthFor(820));
+    expect(olc(1024, 1366)).toBe(contentWidthFor(1024));
+  });
+
+  it("YATAY tablette genişliyor", () => {
+    expect(olc(1133, 744)).toBeGreaterThan(contentWidthFor(1133));
+    expect(olc(1280, 800)).toBeGreaterThan(contentWidthFor(1280));
+    expect(olc(1366, 1024)).toBeGreaterThan(contentWidthFor(1366));
+  });
+
+  it("üst sınırı aşmıyor: çok geniş ekranda da 1100'de duruyor", () => {
+    for (const w of [1280, 1366, 1600, 2048, 3840]) expect(olc(w, 800)).toBeLessThanOrEqual(1100);
+  });
+
+  it("hiçbir ölçüde dar sütundan küçük değil", () => {
+    for (let w = 320; w <= 2048; w += 17) {
+      for (const h of [740, 900, 1200]) {
+        expect(olc(w, h)).toBeGreaterThanOrEqual(contentWidthFor(w));
+      }
+    }
+  });
+
+  it("yatay telefon genişlemiyor — sınıflandırma genişliğe bakıyor, 600dp altı telefon", () => {
+    expect(olc(844, 390)).toBeGreaterThan(contentWidthFor(844)); // tablet sayılır
+    expect(olc(560, 320)).toBe(contentWidthFor(560)); // dar: telefon
+  });
+});
+
+describe("ızgara sütun sayısı", () => {
+  it.each([
+    [PHONE_MAX_WIDTH, 2],
+    [599, 2],
+    [600, 3],
+    [640, 3],
+    [720, 3],
+    [899, 3],
+    [900, 4],
+    [1100, 4],
+  ])("kap %i dp → %i sütun", (kap, beklenen) => {
+    expect(gridColumnsFor(kap)).toBe(beklenen);
+  });
+
+  it("kart genişlikleri sütunla birlikte küçülüyor ve %100'ü aşmıyor", () => {
+    for (const n of [2, 3, 4] as const) {
+      const yuzde = Number(gridItemWidthFor(n).replace("%", ""));
+      expect(yuzde * n).toBeLessThan(100);
+      expect(yuzde * n).toBeGreaterThan(90); // boşluk payı makul kalsın
     }
   });
 });

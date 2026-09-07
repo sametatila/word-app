@@ -17,6 +17,42 @@ const LARGE_TABLET_COLUMN = 720;
 
 /** Izgaraların iki yerine üç sütuna geçtiği içerik genişliği. */
 const THREE_COLUMN_MIN = 600;
+/** Dört sütuna geçtiği genişlik — pratikte yalnız yatay tablette görülüyor. */
+const FOUR_COLUMN_MIN = 900;
+
+/**
+ * Izgara/kart ağırlıklı ekranların kabı — metin sütunundan AYRI.
+ *
+ * `contentWidthFor` satır ölçüsünü koruyor ve 720'de duruyor; doğrusu da bu,
+ * paragraf 720'nin ötesinde okunmaz oluyor. Ama yatay tablette (1280–1366dp)
+ * bir KART IZGARASINI da 720'de tutmak ekranın yarısını zemine bırakıyor —
+ * kartların satır ölçüsü yok, genişlikten yalnızca kazanıyorlar.
+ *
+ * Bu yüzden iki kademe var: metin ekranları dar sütunda kalıyor, ızgara
+ * ekranları yatayda genişliyor (bkz. ui/ContentColumn, `wideColumnLayout` ve
+ * onu kullanan altı ekran). Dikeyde ikisi aynı: dikey tablette zaten fazlalık
+ * genişlik yok.
+ */
+const LANDSCAPE_MAX_WIDTH = 1100;
+
+export function wideContentWidthFor(windowWidth: number, windowHeight: number): number {
+  const dar = contentWidthFor(windowWidth);
+  const yatay = windowWidth > windowHeight;
+  if (!yatay || windowWidth < 600) return dar;
+  return Math.max(dar, Math.min(windowWidth, LANDSCAPE_MAX_WIDTH));
+}
+
+/** Kabın genişliğine göre ızgara sütunu sayısı. */
+export function gridColumnsFor(containerWidth: number): 2 | 3 | 4 {
+  if (containerWidth >= FOUR_COLUMN_MIN) return 4;
+  if (containerWidth >= THREE_COLUMN_MIN) return 3;
+  return 2;
+}
+
+/** Sütun sayısına düşen kart genişliği — aradaki boşluk düşülmüş. */
+export function gridItemWidthFor(columns: 2 | 3 | 4): string {
+  return columns === 4 ? "23.5%" : columns === 3 ? "31.7%" : "47.5%";
+}
 
 export function contentWidthFor(windowWidth: number): number {
   if (windowWidth < 600) return PHONE_MAX_WIDTH;
@@ -25,24 +61,31 @@ export function contentWidthFor(windowWidth: number): number {
 }
 
 export type Layout = {
-  /** İçerik sütununun üst sınırı (px değil dp). */
+  /** Metin ağırlıklı içeriğin sütunu (px değil dp) — satır ölçüsü için sınırlı. */
   contentWidth: number;
+  /** Izgara ağırlıklı içeriğin kabı: yatay tablette genişler, başka yerde eşittir. */
+  wideContentWidth: number;
   /** Geniş ekran mı (sw >= 600dp): tablet ya da açık katlanabilir. */
   wide: boolean;
-  /** Kart ızgarasının sütun sayısı. */
-  gridColumns: 2 | 3;
+  /** Ekran yatay mı — tablette serbest, telefonda dikeye kilitli (bkz. manifest). */
+  landscape: boolean;
+  /** Kart ızgarasının sütun sayısı — GENİŞ kaba göre, ızgaralar orada duruyor. */
+  gridColumns: 2 | 3 | 4;
   /** Izgarada bir kartın yüzde genişliği — aradaki boşluk düşülmüş. */
   gridItemWidth: string;
 };
 
 export function useLayout(): Layout {
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
   const contentWidth = contentWidthFor(width);
-  const gridColumns: 2 | 3 = contentWidth >= THREE_COLUMN_MIN ? 3 : 2;
+  const wideContentWidth = wideContentWidthFor(width, height);
+  const gridColumns = gridColumnsFor(wideContentWidth);
   return {
     contentWidth,
+    wideContentWidth,
     wide: width >= 600,
+    landscape: width > height,
     gridColumns,
-    gridItemWidth: gridColumns === 3 ? "31.7%" : "47.5%",
+    gridItemWidth: gridItemWidthFor(gridColumns),
   };
 }
