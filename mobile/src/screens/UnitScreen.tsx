@@ -21,14 +21,28 @@ const KIND_TINT: Record<ItemKind, keyof Palette> = {
   lesson: "primary", read: "info", listen: "accent", write: "success", speak: "primary", grammar: "streak", quiz: "primary", checkpoint: "danger",
 };
 
-export function UnitScreen() {
+/**
+ * Ünite gövdesi — hem kendi ekranı hem de Patika'nın yatay tablette açtığı
+ * SAĞ PANEL olarak çiziliyor.
+ *
+ * Ayrılmasının sebebi: yatay tablette ünite listesi 1100dp'lik kabın yarısını
+ * kullanıyor, öteki yarısı boştu ve seçilen üniteyi görmek için ayrı bir ekrana
+ * gidip geri gelmek gerekiyordu. Aynı gövde iki yerde çiziliyor, davranış
+ * ayrışmasın diye kopyalanmadı.
+ *
+ * `embedded` yalnız KABUĞU değiştiriyor: panelde geri düğmesi yok (geri
+ * gidilecek yer yok) ve üst güvenli alan payı yok (onu Patika zaten vermiş).
+ * Adımların açılması, ilerleme ölçütü ve yönlendirme iki yerde de aynı.
+ */
+export type UnitPaneProps = RootStackParams["Unit"] & { embedded?: boolean };
+
+export function UnitPane({ index, level, theme, items: gelenItems, embedded = false }: UnitPaneProps) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const { params } = useRoute<RouteProp<RootStackParams, "Unit">>();
   // İçeriği olmayan (oynanamaz) slotlar listede hiç görünmez: "Yakında" rozeti yerine
   // ünite yalnız gerçekten yapılabilecek adımları gösterir; ilerleme yüzdesi de onlara göre.
-  const raw = (params.items ?? [])
+  const raw = (gelenItems ?? [])
     .filter((i) => i.playable || i.kind === "lesson")
     .map((i) => ({ id: i.id, kind: i.kind as ItemKind, title: i.title, done: i.done, playable: i.playable, open: i.open !== false, attempted: i.attempted ?? i.done, ref: i.ref ?? null }));
   /*
@@ -66,25 +80,29 @@ export function UnitScreen() {
     // yani egzersiz havuzunda karşılığı yok. Item ekranına gönderilirse
     // "açılamıyor" der; quiz oynatıcısı ise türetilmiş soruyu zaten çiziyor.
     if (it.kind === "quiz" || it.kind === "checkpoint" || it.kind === "grammar") {
-      nav.navigate("Quiz", { itemId: it.id, level: params.level, unitIndex: params.index, kind: it.kind, theme: params.theme });
+      nav.navigate("Quiz", { itemId: it.id, level, unitIndex: index, kind: it.kind, theme });
       return;
     }
     nav.navigate("Item", { id: it.ref ?? it.id, kind: it.kind, title: it.title });
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-          <ArrowBackIcon color={colors.text} size={24} />
-        </PressableScale>
+    // Gömülüyken zemin BOYANMIYOR: panelin kendi yüzeyi görünsün, üstüne ekran
+    // zemini basılıp kap görünmez hâle gelmesin.
+    <View style={{ flex: 1, backgroundColor: embedded ? "transparent" : colors.bg }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: (embedded ? 0 : insets.top) + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+        {!embedded && (
+          <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+            <ArrowBackIcon color={colors.text} size={24} />
+          </PressableScale>
+        )}
         <View style={{ flex: 1 }}>
-          <Text variant="micro" color={colors.textMuted}>{t("unit.header", { level: params.level, unit: t("common.unit"), n: params.index })}</Text>
-          <Text variant="h2">{params.theme}</Text>
+          <Text variant="micro" color={colors.textMuted}>{t("unit.header", { level, unit: t("common.unit"), n: index })}</Text>
+          <Text variant="h2">{theme}</Text>
         </View>
       </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: (embedded ? 0 : insets.bottom) + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginTop: spacing.sm, marginBottom: 6 }}>
           <View style={{ height: "100%", width: `${pct}%`, backgroundColor: colors.success, borderRadius: 5 }} />
         </View>
@@ -126,4 +144,10 @@ export function UnitScreen() {
       </ScrollView>
     </View>
   );
+}
+
+/** Kendi ekranı — route parametrelerini gövdeye devrediyor (telefon ve dikey yol). */
+export function UnitScreen() {
+  const { params } = useRoute<RouteProp<RootStackParams, "Unit">>();
+  return <UnitPane {...params} />;
 }

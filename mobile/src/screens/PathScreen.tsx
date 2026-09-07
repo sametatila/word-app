@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { t } from "../lib/i18n";
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -11,7 +11,8 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { itemOpen, useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
-import { useLayout } from "../lib/useLayout";
+import { useLayout, gridColumnsFor, gridItemWidthFor } from "../lib/useLayout";
+import { UnitPane } from "./UnitScreen";
 import { KIND_KEY } from "../data/unit";
 import { AppHeader } from "../ui/AppHeader";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -75,9 +76,22 @@ export function PathScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { data: path, source } = useLearningPath();
-  // Tablette sütun genişleyince ünite kartları 2 yerine 3'e sığıyor; sabit
-  // %47.5 kalsaydı geniş ekranda yalnız iki şişkin kart olurdu.
-  const { gridItemWidth } = useLayout();
+  /*
+    YATAY TABLETTE İKİ PANEL: solda ünite ızgarası, sağda seçilen ünite.
+
+    Tek panelde yatay tablet, ünite listesini görüp bir üniteye girmek için ayrı
+    bir ekrana gidip geri gelmeyi gerektiriyordu; oysa aynı ekranda ikisi birden
+    duruyor. Telefonda ve DİKEY tablette hiçbir şey değişmiyor — orada yan yana
+    iki panele yer yok, akış eskisi gibi yönlendirmeyle.
+
+    Izgara sütunu, kabın tamamına değil SOL PANELİN genişliğine göre sayılıyor:
+    1100'lük kaba dört kart sığıyor ama onun %45'ine iki kart sığıyor.
+  */
+  const { wideContentWidth, wide, landscape } = useLayout();
+  const ikiPanel = wide && landscape;
+  const solGenislik = ikiPanel ? Math.round(wideContentWidth * 0.45) : wideContentWidth;
+  const gridItemWidth = gridItemWidthFor(gridColumnsFor(solGenislik));
+  const [seciliIndex, setSeciliIndex] = useState<number | null>(null);
 
   if (!path) {
     // Düz spinner yerine patika şeklinde iskelet (algılanan hız).
@@ -128,12 +142,25 @@ export function PathScreen() {
 
   function openUnit(u: LearningPathUnit) {
     if (u.locked) return;
+    // İki panelde ünite YERİNDE açılıyor; tek panelde eskisi gibi yönlendirme.
+    if (ikiPanel) { setSeciliIndex(u.index); return; }
     nav.navigate("Unit", { index: u.index, level: path!.level, theme: u.theme, items: u.items });
   }
 
-  return (
-    <Screen>
-      <AppHeader title={t("path.path")} />
+  // Sağ panelde gösterilecek ünite: kullanıcı seçtiyse o, yoksa kaldığı ünite.
+  const secili = ikiPanel
+    ? (path.units.find((u) => u.index === seciliIndex && !u.locked) ?? (featured && !featured.locked ? featured : null))
+    : null;
+
+  /*
+    Vurgulanan kart: tek panelde "kaldığın ünite", iki panelde SAĞDA AÇIK OLAN.
+    İkisi de currentIndex olsaydı kullanıcı sağdaki panelin hangi karta ait
+    olduğunu göremezdi — ana-ayrıntı düzeninde seçimin görünmesi şart.
+  */
+  const vurguluIndex = ikiPanel ? (secili?.index ?? -1) : path.currentIndex;
+
+  const govde = (
+    <>
       <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: 6 }}>
         <View style={{ height: "100%", width: `${Math.max(2, pctAll)}%`, borderRadius: 5, backgroundColor: colors.success }} />
       </View>
@@ -146,15 +173,51 @@ export function PathScreen() {
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
         {path.units.map((u) => (
           <PressableScale key={u.id} style={{ width: gridItemWidth }} onPress={() => openUnit(u)}>
-            <Card padded style={{ minHeight: 116, opacity: u.locked ? 0.6 : 1, borderColor: u.index === path.currentIndex ? colors.primary : colors.border, borderWidth: u.index === path.currentIndex ? 2 : 1 }}>
+            <Card padded style={{ minHeight: 116, opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: u.index === vurguluIndex ? 2 : 1 }}>
               <View style={{ width: 44, height: 44, borderRadius: 20, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === path.currentIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
+                {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
               </View>
               <Text variant="bodyStrong" style={{ marginTop: 8 }} numberOfLines={2}>{u.theme}</Text>
               <Text variant="micro" color={u.complete ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.lessons_done", { n: u.lessonsDone, total: u.lessonsTotal })}</Text>
             </Card>
           </PressableScale>
         ))}
+      </View>
+    </>
+  );
+
+  if (!ikiPanel) {
+    return (
+      <Screen>
+        <AppHeader title={t("path.path")} />
+        {govde}
+      </Screen>
+    );
+  }
+
+  return (
+    <Screen scroll={false}>
+      <AppHeader title={t("path.path")} />
+      <View style={{ flex: 1, flexDirection: "row", gap: spacing.lg }}>
+        {/* Sol: ünite ızgarası. Kendi içinde kayıyor — sağ panelin uzunluğu
+            listeyi de aşağı itmesin. */}
+        <ScrollView style={{ flex: 45 }} showsVerticalScrollIndicator={false}>
+          {govde}
+        </ScrollView>
+        {/* Sağ: seçilen ünitenin adımları. Ünite ekranının GÖVDESİ birebir aynı
+            (UnitPane), kabuğu farklı: geri düğmesi yok. */}
+        <View style={{ flex: 55, borderRadius: radii.lg, overflow: "hidden", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border }}>
+          {secili ? (
+            <UnitPane
+              key={secili.index}
+              index={secili.index}
+              level={path.level}
+              theme={secili.theme}
+              items={secili.items}
+              embedded
+            />
+          ) : null}
+        </View>
       </View>
     </Screen>
   );
