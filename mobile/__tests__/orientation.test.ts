@@ -10,38 +10,31 @@ import path from "node:path";
  * "portrait" yazılırsa) tablet dikeye kilitlenir ve bunu ancak bir tablette
  * açınca fark ederiz — bu makinede öyle bir cihaz yok.
  *
- * Android'de değer kaynaktan geliyor çünkü `screenOrientation` cihaz sınıfına
- * göre değişemiyordu: niteliğin derlenmiş biçimi tamsayı olduğu için
- * `@integer/...` verilebiliyor ve `values-sw600dp` tabletde başka bir değer
- * döndürüyor. Sayılar ActivityInfo sabitleri.
+ * Android'de karar MANİFESTTE DEĞİL, çalışma zamanında. Manifest yolu iki türlü
+ * de çıkmaz: düz "portrait" tableti de kilitler; `@integer/...` ile cihaza göre
+ * değiştirmeye çalışmak ise HİÇ uygulanmaz — manifest kaynakları yapılandırmaya
+ * göre değişemiyor. Bu ikincisi denendi ve lint ölümcül saydı (ManifestResource,
+ * "This value will not be used"), release yapısı durdu. Doğrusu MainActivity'de
+ * `smallestScreenWidthDp` ile karar verip `requestedOrientation` atamak.
  */
 const KOK = path.join(__dirname, "..");
 const oku = (p: string) => readFileSync(path.join(KOK, p), "utf8");
 
-/** ActivityInfo.SCREEN_ORIENTATION_PORTRAIT */
-const PORTRAIT = 1;
-/** ActivityInfo.SCREEN_ORIENTATION_FULL_USER — dört yön, otomatik döndürme ayarına saygılı. */
-const FULL_USER = 13;
-
-const integerDegeri = (xml: string, ad: string): number | null => {
-  const m = xml.match(new RegExp(`<integer name="${ad}">\\s*(-?\\d+)\\s*</integer>`));
-  return m ? Number(m[1]) : null;
-};
-
 describe("ekran yönü politikası", () => {
-  it("Android telefon: yalnız dikey", () => {
-    expect(integerDegeri(oku("android/app/src/main/res/values/integers.xml"), "screen_orientation")).toBe(PORTRAIT);
+  it("Android: yön ÇALIŞMA ZAMANINDA ayarlanıyor, telefon dikey / tablet dört yön", () => {
+    const activity = oku("android/app/src/main/java/com/lernomi/MainActivity.kt");
+    // Cihaz sınıfı Android'in kendi tablet eşiğiyle: en küçük genişlik >= 600dp.
+    expect(activity).toContain("smallestScreenWidthDp >= 600");
+    expect(activity).toContain("SCREEN_ORIENTATION_FULL_USER");
+    expect(activity).toContain("SCREEN_ORIENTATION_PORTRAIT");
   });
 
-  it("Android tablet (sw600dp): dört yön serbest", () => {
-    expect(integerDegeri(oku("android/app/src/main/res/values-sw600dp/integers.xml"), "screen_orientation")).toBe(FULL_USER);
-  });
-
-  it("Android manifest yönü KAYNAKTAN alıyor (düz değer yazılmamış)", () => {
-    const manifest = oku("android/app/src/main/AndroidManifest.xml");
-    expect(manifest).toContain('android:screenOrientation="@integer/screen_orientation"');
-    // Düz bir değer yazılmış olsaydı tablet de kilitlenirdi.
-    expect(manifest).not.toMatch(/android:screenOrientation="(portrait|landscape|sensor|user)"/);
+  it("Android manifest yönü BELİRTMİYOR", () => {
+    // Manifest'e yazmak iki türlü de yanlış: düz değer tableti de kilitler,
+    // `@integer/...` ise HİÇ uygulanmaz — manifest kaynakları yapılandırmaya
+    // göre değişemiyor ve lint bunu ManifestResource ile ölümcül sayıyor
+    // (release yapısı durur). Karar çalışma zamanında, MainActivity'de.
+    expect(oku("android/app/src/main/AndroidManifest.xml")).not.toContain("android:screenOrientation");
   });
 
   it("iOS iPhone: yalnız dikey, iPad: dört yön", () => {
