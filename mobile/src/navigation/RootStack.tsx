@@ -1,5 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { contentColumnLayout } from "../ui/ContentColumn";
 import { RootTabs } from "./RootTabs";
 import { GameScreen } from "../screens/GameScreen";
 import { ProfileScreen } from "../screens/ProfileScreen";
@@ -79,10 +80,14 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParams }) {
   return (
     <Stack.Navigator initialRouteName={initialRoute} screenOptions={{ headerShown: false }}>
+      {/* Sekmeler DIŞARIDA: kendi ekranlarını kendi içinde sütuna alıyor
+          (RootTabs). Burada sarmalansaydı sekme çubuğu da sütuna girer ve geniş
+          ekranda ortada asılı kalırdı. */}
+      <Stack.Screen name="Tabs" component={RootTabs} />
+      <Stack.Group screenLayout={contentColumnLayout}>
       <Stack.Screen name="Onboarding" component={OnboardingScreen} />
       <Stack.Screen name="FirstPractice" component={FirstPracticeScreen} />
       <Stack.Screen name="NotifPrime" component={NotifPrimeScreen} />
-      <Stack.Screen name="Tabs" component={RootTabs} />
       <Stack.Screen name="Game" component={GameScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Avatar" component={AvatarScreen} options={{ animation: "slide_from_bottom" }} />
@@ -112,6 +117,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="User" component={UserScreen} />
       <Stack.Screen name="Inbox" component={InboxScreen} />
       <Stack.Screen name="SocialSettings" component={SocialSettingsScreen} />
+      </Stack.Group>
     </Stack.Navigator>
   );
 }

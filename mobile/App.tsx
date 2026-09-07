@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StatusBar, View, Dimensions, useWindowDimensions, Platform } from "react-native";
+import { StatusBar, View, Dimensions, Platform } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -13,7 +13,6 @@ import { loadVoicePref } from "./src/lib/tts";
 import { TtsBridge } from "./src/lib/ttsBridge";
 import { track, loadAnalyticsPref } from "./src/lib/track";
 import { loadLang, useLang } from "./src/lib/i18n";
-import { contentWidthFor } from "./src/lib/useLayout";
 
 function Nav() {
   const { colors, isDark } = useTheme();
@@ -47,8 +46,6 @@ function Nav() {
   const base = isDark ? DarkTheme : DefaultTheme;
   const navTheme = { ...base, colors: { ...base.colors, background: colors.bg, card: colors.surface, text: colors.text, primary: colors.primary, border: colors.border } };
 
-  const contentWidth = contentWidthFor(useWindowDimensions().width);
-
   // Bayrak + oturum okunana dek düz zemin — tema rengiyle, zıplama olmasın.
   if (onboarded === null || loading) return <View style={{ flex: 1, backgroundColor: colors.bg }} />;
 
@@ -63,15 +60,13 @@ function Nav() {
     <NavigationContainer theme={navTheme}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
       <TtsBridge />
-      {/* Telefon-öncelikli düzen: geniş ekranda (tablet) içerik ortalı bir
-          sütuna sığdırılır — yoksa kartlar/metin tüm genişliğe yayılıp gerilir.
-          Telefonda maxWidth kısıtlamaz (ekran zaten daha dar). Sütun sabit 520
-          idi; 1280dp tablette ekranın %41'i kalıyordu. Artık ekranla büyüyor
-          (bkz. lib/useLayout). */}
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center" }}>
-        <View style={{ flex: 1, width: "100%", maxWidth: contentWidth }}>
-          <RootStack initialRoute={initialRoute} />
-        </View>
+      {/* Zemin TAM GENİŞLİK; okunabilir sütun ekran başına uygulanıyor
+          (ui/ContentColumn, gezginlerin `screenLayout`'u). Sütun eskiden burada,
+          gezginin tamamının çevresindeydi ve sekme çubuğunu da içine alıyordu:
+          yatay tablette uygulama, iki yanı boş bir telefon şeridi gibi
+          duruyordu. */}
+      <View style={{ flex: 1, backgroundColor: colors.bg }}>
+        <RootStack initialRoute={initialRoute} />
       </View>
     </NavigationContainer>
   );

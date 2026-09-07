@@ -53,3 +53,34 @@ describe("içerik sütunu genişliği", () => {
     expect(contentWidthFor(840)).toBe(720);
   });
 });
+
+/**
+ * Yatay tablet — döndürme sütunu bozmamalı.
+ *
+ * Telefon dikeye kilitli (aşağıdaki yönlendirme testi), tablet dört yöne
+ * serbest. Yani sütunun yatayda da doğru davranması GEREKİYOR: ekran uzuyor
+ * diye satır ölçüsü uzamamalı, ama dikeydeki daralmayı da taşımamalı.
+ */
+const YATAY: { ad: string; genislik: number; beklenen: number }[] = [
+  { ad: "iPad mini yatay", genislik: 1133, beklenen: 720 },
+  { ad: "Android tablet yatay (1280x800)", genislik: 1280, beklenen: 720 },
+  { ad: "iPad Pro 13\" yatay", genislik: 1366, beklenen: 720 },
+];
+
+describe("yatay tablette içerik sütunu", () => {
+  it.each(YATAY)("$ad ($genislik dp) → $beklenen", ({ genislik, beklenen }) => {
+    expect(contentWidthFor(genislik)).toBe(beklenen);
+  });
+
+  it("döndürünce sütun daralmıyor", () => {
+    // Aynı cihazın dikey ve yatay genişlikleri: yatay her zaman >= dikey olmalı.
+    const cihazlar: [number, number][] = [
+      [744, 1133], // iPad mini
+      [800, 1280], // Android tablet
+      [1024, 1366], // iPad Pro 13"
+    ];
+    for (const [dikey, yatay] of cihazlar) {
+      expect(contentWidthFor(yatay)).toBeGreaterThanOrEqual(contentWidthFor(dikey));
+    }
+  });
+});
