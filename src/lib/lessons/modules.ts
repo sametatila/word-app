@@ -89,6 +89,16 @@ export const MODULE_THEMES: Record<string, string[]> = {
 };
 
 /** Modül teması — bilinmeyen seviye ya da taşan dilim için boş döner. */
+/**
+ * Seviyedeki modül sayısı — tema listesinin uzunluğu tek doğru kaynak.
+ *
+ * B1 on değil ON SEKİZ modül taşıyor; bu sayı çağrı yerlerine elle yazıldığında
+ * (`level === "B1" ? 18 : 10`) her yeni seviyede yeniden unutuluyor.
+ */
+export function moduleCount(level: string): number {
+  return MODULE_THEMES[level]?.length ?? 0;
+}
+
 export function moduleTheme(level: string, moduleIdx: number): string {
   return MODULE_THEMES[level]?.[moduleIdx] ?? "";
 }

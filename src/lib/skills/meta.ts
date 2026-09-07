@@ -14,12 +14,13 @@ export const SKILL_LABELS: Record<SkillId, string> = {
   speaking: "Konuşma",
 };
 
-// Konuşma 2026-08'de içeriği olmadığı için listeden çıkarılmıştı; 2026-09'da
-// A1 için 8 ses çalışması yazılınca geri geldi ve web'de oynatıcısı var
-// (components/skills/speaking-player.tsx). Mobil paket onu hâlâ dışlıyor,
-// çünkü React Native tarafında kayıt hattı yok — orada liste kendi
-// filtresini uyguluyor.
-export const SKILL_ORDER: SkillId[] = ["reading", "listening", "writing", "speaking"];
+// Konuşma bu listede YOK ve bilerek yok: patikada konuşma için ayrı bir düğüm
+// açılmadı, dördüncü beceri dersin kendisinde yaşıyor (ders adımlarının yarıdan
+// fazlası "söyle" adımı, üstüne karşılıklı konuşma fazı). Ayrı bir "Ses
+// çalışması" havuzu bir süre denendi ama yalnız A1 ve B1'de içeriği vardı ve
+// beceri listesinde dersle yarışıyordu. `SkillId` birleşiminde duruyor çünkü
+// sınav kâğıdının Sprechen bölümü hâlâ o adı kullanıyor.
+export const SKILL_ORDER: SkillId[] = ["reading", "listening", "writing"];
 export const LEVEL_ORDER: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 
 /** Puanlanabilir madde sayısı: soru ya da yazma görevi. */

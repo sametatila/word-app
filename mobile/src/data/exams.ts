@@ -46,7 +46,6 @@ const GERMAN: ExamCatalog = {
     { key: "lesen", label: "Lesen", subKey: "unitkind.read", skill: "reading", kind: "read", tint: "info", premium: false },
     { key: "hoeren", label: "Hören", subKey: "unitkind.listen", skill: "listening", kind: "listen", tint: "accent", premium: false },
     { key: "schreiben", label: "Schreiben", subKey: "unitkind.write", skill: "writing", kind: "write", tint: "success", premium: true },
-    { key: "sprechen", label: "Sprechen", subKey: "unitkind.speaking", skill: "speaking", kind: "speak", tint: "primary", premium: true },
   ],
 };
 

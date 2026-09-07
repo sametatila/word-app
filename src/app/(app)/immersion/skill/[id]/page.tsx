@@ -3,7 +3,6 @@ import { getExercise } from "@/lib/skills";
 import { ReadingPlayer } from "@/components/skills/reading-player";
 import { ListeningPlayer } from "@/components/skills/listening-player";
 import { WritingPlayer } from "@/components/skills/writing-player";
-import { SpeakingPlayer } from "@/components/skills/speaking-player";
 
 export const dynamic = "force-dynamic";
 
@@ -36,10 +35,8 @@ export default async function ImmersionSkillPage({
       return <ListeningPlayer exercise={exercise} backHref={backHref} />;
     case "writing":
       return <WritingPlayer exercise={exercise} backHref={backHref} />;
-    // Konuşma 2026-09'da geri geldi: A1 için 8 ses çalışması yazıldı ve
-    // oynatıcısı olmadığı için yalnız sınavdan görülebiliyorlardı.
-    case "speaking":
-      return <SpeakingPlayer exercise={exercise} backHref={backHref} />;
+    // Konuşma burada YOK: ayrı bir konuşma egzersizi havuzu kalmadı, dördüncü
+    // beceri dersin kendisinde (bkz. skills/meta.ts SKILL_ORDER).
     default:
       notFound();
   }

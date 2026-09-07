@@ -11,7 +11,7 @@ import { Celebrate } from "../ui/Celebrate";
 import { XIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, SpeakerIcon } from "../ui/icons";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
-import { QuestionList, GlossPanel, WritingList, SpeakingList, type WritingTask, type SpeakingTask } from "../game/skillQuiz";
+import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { markItemDone } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { API_BASE } from "../api/client";
@@ -126,7 +126,7 @@ export function ItemScreen() {
   }
 
   const total =
-    exercise.skill === "writing" || exercise.skill === "speaking"
+    exercise.skill === "writing"
       ? (exercise.tasks?.length ?? 0)
       : (exercise.questions?.length ?? 0);
   const pct = total ? Math.round((correct / total) * 100) : 100;
@@ -154,11 +154,7 @@ export function ItemScreen() {
 
         <GlossPanel gloss={exercise.gloss} colors={colors} />
 
-        {exercise.skill === "speaking" ? (
-          // Konuşma CİHAZDA değerlendiriliyor (native tanıyıcı + spokenMatches);
-          // sunucuya ses gitmiyor, o yüzden AiNotice de yok.
-          <SpeakingList key={round} tasks={(exercise.tasks ?? []) as SpeakingTask[]} onAllDone={recordAndFinish} colors={colors} />
-        ) : exercise.skill === "writing" ? (
+        {exercise.skill === "writing" ? (
           // Yazma görevleri sunucuda dil modeliyle puanlanıyor; kimin
           // değerlendirdiği yazmaya başlamadan önce söyleniyor.
           <>

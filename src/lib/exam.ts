@@ -4,8 +4,8 @@ import { db } from "@/lib/db";
 import { exams, userLessons, userSkills, words } from "@/lib/db/schema";
 import { chatConfigured, sttProviders } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
-import { LESSONS, levelIndex } from "@/lib/lessons";
-import { MODULE_SIZE } from "@/lib/lessons/modules";
+import { LESSONS } from "@/lib/lessons";
+import { MODULE_SIZE, moduleCount } from "@/lib/lessons/modules";
 import {
   moduleContent,
   moduleSheets,
@@ -33,7 +33,7 @@ import {
   type TextItem,
   type WritingItem,
 } from "@/lib/exam-types";
-import type { CefrLevel, WritingTask, SpeechConfusion, SkillExercise } from "@/lib/skills/types";
+import type { CefrLevel, WritingTask, SkillExercise } from "@/lib/skills/types";
 import type { Round } from "@/lib/types";
 
 /**
@@ -291,12 +291,17 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
     if (plan) {
       speaking.push(...plan.speaking.slice(0, c.speaking).map((s, i) => ({ id: `s:${plan.code}:${i}`, de: s.de, tr: s.tr, situation: s.situation })));
     } else {
-      const drills = bank.filter((e) => e.skill === "speaking" && "tasks" in e && e.genre === "Ses çalışması");
-      for (const ex of seededShuffle(drills, `${seed}|speaking`)) {
+      // Seviye sınavı: o seviyenin MODÜL kâğıtlarındaki konuşma cümleleri
+      // havuzlanır. Eskiden ayrı "Ses çalışması" beceri egzersizlerinden
+      // besleniyordu; o katman kaldırıldı (konuşma artık dersin kendisi, ayrı
+      // beceri düğümü yok) ve zaten yalnız A1 ile B1'de vardı — A2/B2/C1
+      // seviye sınavları sessizce konuşmasız kalıyordu. Modül kâğıtları elle
+      // yazılmış ve her seviyede fazlasıyla madde taşıyor.
+      const havuz = Array.from({ length: moduleCount(level) }, (_, i) => moduleExamPlan(level, i + 1))
+        .flatMap((p) => (p ? p.speaking.map((sp, i) => ({ ...sp, code: p.code, i })) : []));
+      for (const sp of seededShuffle(havuz, `${seed}|speaking`)) {
         if (speaking.length >= c.speaking) break;
-        const tasks = (ex as { tasks: { de: string; tr: string; hint?: string; confusions?: SpeechConfusion[] }[] }).tasks.filter((t) => t.de && t.de.split(/\s+/).length >= 3);
-        const t = seededShuffle(tasks, `${seed}|${ex.id}`)[0];
-        if (t) speaking.push({ id: `s:${ex.id}`, de: t.de, tr: t.tr, hint: t.hint, confusions: t.confusions?.slice(0, 4) });
+        speaking.push({ id: `s:${sp.code}:${sp.i}`, de: sp.de, tr: sp.tr, situation: sp.situation });
       }
     }
   }
