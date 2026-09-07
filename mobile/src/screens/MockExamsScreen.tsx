@@ -8,29 +8,31 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
 import { SkeletonLine } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { currentCourseId } from "../lib/courses";
-import { examCatalogFor } from "../data/exams";
+import { mockPapersFor, partPoints, type MockPaper } from "../data/exams";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii } from "../theme";
-import { CardGrid } from "../ui/CardGrid";
 
 /**
  * Deneme sınavları.
  *
  * Ekran eskiden "Sınav hazırlık"tı ve başka yerlerin içeriğini tekrar
  * ediyordu: Lesen/Hören/Schreiben modülleri Beceriler sekmesindeki
- * egzersizlerdi (burada yalnız her becerinin İLK'i açılıyordu, yani eksik bir
- * kopya), seviye ve modül kâğıtları ise `lib/exam.ts`in ders içeriğinden
- * ürettiği, Patika türevi sınavlardı. İkisi de kaldırıldı.
+ * egzersizlerdi, seviye ve modül kâğıtları ise Patika türevi sınavlardı.
+ * İkisi de kaldırıldı.
  *
  * Burası artık yalnız DENEME SINAVI listeliyor: elle yazılmış, kendi başına
- * duran kâğıtlar (`data/exams.ts`). Öğren sekmesindeki kapı, liste boş olsa
- * bile açık: kursun sınav kataloğu varsa kutucuk çiziliyor. Liste boşken bu
- * ekran uydurma bir satır ya da "yakında" göstermiyor, olduğu gibi söylüyor —
- * o seviyede henüz sınav yok.
+ * duran kâğıtlar. Liste seviyeye göre süzülüyor; kâğıt BÖLÜM BÖLÜM açılıyor,
+ * çünkü bir kâğıt 80 ile 205 dakika arasında sürüyor ve tek oturumda
+ * çözülecek bir şey değil. Gerçek sınavlar da modüler: bölümler ayrı ayrı
+ * alınabiliyor.
+ *
+ * Öğren sekmesindeki kapı, liste boş olsa bile açık: kursun sınav kataloğu
+ * varsa kutucuk çiziliyor. Liste boşken bu ekran uydurma bir satır ya da
+ * "yakında" göstermiyor, olduğu gibi söylüyor — o seviyede henüz sınav yok.
  */
 export function MockExamsScreen() {
   const { colors } = useTheme();
@@ -50,7 +52,7 @@ export function MockExamsScreen() {
   const levelReady = !meLoading && (!!me || prefsRead);
   const overallPct = me && me.totalWords ? Math.min(100, Math.round((me.mastered / me.totalWords) * 100)) : null;
 
-  const mocks = examCatalogFor(currentCourseId()).mocks.filter((m) => m.level === level);
+  const papers = mockPapersFor(currentCourseId(), level);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -87,19 +89,15 @@ export function MockExamsScreen() {
             <SkeletonLine variant="h3" width={140} />
             <SkeletonLine variant="caption" width="70%" />
           </Card>
-        ) : mocks.length ? (
-          // Satırlar bilerek TIKLANMIYOR: kâğıdı oynatacak bir ekran henüz yok.
-          // Eski oynatıcı (ExamScreen) ders içeriğinden üretilen kâğıtlara göre
-          // yazılmıştı; elle yazılan deneme sınavının biçimi belli olunca
-          // buraya bağlanacak. Sahte bir kapı bırakmaktansa satır sessiz duruyor.
-          <CardGrid minItemWidth={360}>
-            {mocks.map((m) => (
-              <Card key={m.id} padded>
-                <Text variant="bodyStrong">{m.label}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("mockexams.minutes", { n: m.minutes })}</Text>
-              </Card>
+        ) : papers.length ? (
+          <>
+            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.md, lineHeight: 20 }}>
+              {t("mockexams.intro")}
+            </Text>
+            {papers.map((p) => (
+              <PaperCard key={p.id} paper={p} onOpen={(skill) => nav.navigate("MockExam", { paperId: p.id, skill })} />
             ))}
-          </CardGrid>
+          </>
         ) : (
           <Card padded>
             <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("mockexams.none_for_level", { level })}</Text>
@@ -107,5 +105,47 @@ export function MockExamsScreen() {
         )}
       </ScrollView>
     </View>
+  );
+}
+
+function PaperCard({ paper, onOpen }: { paper: MockPaper; onOpen: (skill: MockPaper["parts"][number]["skill"]) => void }) {
+  const { colors } = useTheme();
+  return (
+    <Card padded style={{ marginBottom: spacing.md }}>
+      <Text variant="micro" color={colors.textMuted}>{t("mockexams.paper", { n: paper.no })}</Text>
+      <Text variant="bodyStrong" style={{ marginTop: 2 }}>{paper.theme}</Text>
+      <Text variant="caption" color={colors.textMuted}>{paper.themeTr}</Text>
+      <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexams.minutes", { n: paper.minutes })}</Text>
+
+      <View style={{ marginTop: spacing.sm }}>
+        {paper.parts.map((part) => {
+          const pts = partPoints(part);
+          return (
+            <PressableScale
+              key={part.skill}
+              onPress={() => onOpen(part.skill)}
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                paddingVertical: spacing.sm,
+                paddingHorizontal: spacing.md,
+                borderRadius: radii.md,
+                backgroundColor: colors.surface2,
+                marginTop: spacing.xs,
+              }}
+            >
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong">{t(`mockexam.skill_${part.skill}`)}</Text>
+                <Text variant="micro" color={colors.textMuted}>
+                  {pts ? t("mockexams.part_summary", { minutes: part.minutes, n: pts }) : t("mockexams.part_open", { minutes: part.minutes })}
+                </Text>
+              </View>
+              <ChevronRightIcon color={colors.textMuted} size={20} />
+            </PressableScale>
+          );
+        })}
+      </View>
+    </Card>
   );
 }

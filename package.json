@@ -66,6 +66,7 @@
     "audit:skills": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/audit-skills.ts",
     "test:options": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-options.ts",
     "dump:skills": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-skills-mobile.ts",
+    "dump:mock-exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-mock-exams-mobile.ts",
     "check:unitvocab": "tsx scripts/check-unit-vocab.ts",
     "check:examvocab": "tsx scripts/check-exam-vocab.ts"
   },
