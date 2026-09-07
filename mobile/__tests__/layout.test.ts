@@ -116,6 +116,13 @@ describe("ızgara kabı (wideContentWidthFor)", () => {
     for (const w of [1280, 1366, 1600, 2048, 3840]) expect(olc(w, 800)).toBeLessThanOrEqual(1100);
   });
 
+  it("kap kenara yapışmıyor: iki yanda pay kalıyor", () => {
+    // Dar sütunun bağladığı ölçüler hariç (orada pay zaten fazlasıyla var).
+    for (const [w, h] of [[1133, 744], [1280, 800], [1366, 1024], [1600, 900]] as const) {
+      expect(w - olc(w, h)).toBeGreaterThanOrEqual(96);
+    }
+  });
+
   it("hiçbir ölçüde dar sütundan küçük değil", () => {
     for (let w = 320; w <= 2048; w += 17) {
       for (const h of [740, 900, 1200]) {

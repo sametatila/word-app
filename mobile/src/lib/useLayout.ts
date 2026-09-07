@@ -34,12 +34,21 @@ const FOUR_COLUMN_MIN = 900;
  * genişlik yok.
  */
 const LANDSCAPE_MAX_WIDTH = 1100;
+/**
+ * Kabın iki yanında bırakılan en az boşluk (dp, tek taraf).
+ *
+ * Üst sınır tek başına yetmiyor: 1133dp'lik bir ekranda 1100'lük kap kenara
+ * 16dp kalıyor ve içerik ekrandan taşıyormuş gibi duruyor. Bu pay, kabın hiçbir
+ * cihazda kenara yapışmamasını garanti ediyor.
+ */
+const LANDSCAPE_SIDE_GUTTER = 48;
 
 export function wideContentWidthFor(windowWidth: number, windowHeight: number): number {
   const dar = contentWidthFor(windowWidth);
   const yatay = windowWidth > windowHeight;
   if (!yatay || windowWidth < 600) return dar;
-  return Math.max(dar, Math.min(windowWidth, LANDSCAPE_MAX_WIDTH));
+  const kullanilabilir = Math.min(windowWidth - 2 * LANDSCAPE_SIDE_GUTTER, LANDSCAPE_MAX_WIDTH);
+  return Math.max(dar, kullanilabilir);
 }
 
 /** Kabın genişliğine göre ızgara sütunu sayısı. */
