@@ -110,6 +110,7 @@ export const EVENT_NAMES = [
   "onboarding_existing_account", // akıştan "zaten hesabım var" ile çıkıldı (kind = çıkılan adım, value = adım sırası)
   "coach_show", // koç balonu gösterildi (kind = an)
   "tts_play", // sesli okuma çalındı (kind = ekran anahtarı; ekran açılışı başına bir kez)
+  "tts_fallback", // nöral ses çalınamadı, alt basamağa düşüldü (kind = basamak: element | browser; ekran açılışı başına bir kez)
   "search", // arama yapıldı (kind = words|cheatsheet, value = sorgu uzunluğu; ekran açılışı başına ilk)
   "setting_change", // ayar değişti (kind = alan: name|daily_goal|new_per_day|level|course|voice|theme, value = sayısal ayarlarda yeni değer)
   "push_optin", // bildirim izni (value = 1 verildi / 0 reddedildi / 2 sonra dedi)

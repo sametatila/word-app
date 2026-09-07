@@ -195,9 +195,38 @@ export function speakGerman(text: string, onEnd?: () => void, slow = false) {
   // Hangi ekranda ses dinleniyor — ekran açılışı başına bir kez (WP-80).
   if (typeof window !== "undefined") trackOnce("tts_play", 0, screenKey(window.location.pathname));
 
-  // Önce boşluksuz yol: tek dosyada da kazanç aynı — baştaki/sondaki gömülü
-  // sessizlik atılıyor, cümle aralarındaki bir saniyelik duraklamalar
-  // sıkışıyor. Konuşma pratiğinin cevapları da böylece bekletmeden akıyor.
+  speakChain(clean, voice, course, onEnd, slow);
+}
+
+/**
+ * Tek bir metnin çalınma ZİNCİRİ — üç basamak, sırası önemli:
+ *
+ *   1. WebAudio (`playGapless`): bağlam uyanıksa en güvenilir yol. Sesi
+ *      `fetch` ile alıp çözüyor ve planlıyor; paylaşılan `<audio>` öğesinin
+ *      otomatik oynatma kilidine ve tek-nesne çekişmesine takılmıyor. Ayrıca
+ *      boşluksuz: baştaki/sondaki gömülü sessizlik atılıyor, cümle
+ *      aralarındaki duraklamalar sıkışıyor.
+ *   2. `<audio>` öğesi: bağlam askıdaysa ya da çözme başarısızsa.
+ *   3. Tarayıcı sentezi: ancak ikisi de olmazsa (bkz. play → fallback).
+ *
+ * NEDEN ORTAK: bu zincir uzun süre yalnız `speakGerman`'daydı; `speakThen`
+ * (yani `speakAndExit` üzerinden sekiz oyunun tur kapanışı) doğrudan `play()`
+ * çağırıyordu. İkinci basamakta takılan her okuma üçüncüye, yani CİHAZIN KENDİ
+ * SESİNE düşüyordu — kullanıcı Katja/Conrad seçmiş olsa bile. Aynı oyunda
+ * hoparlör düğmesi (speakGerman) doğru sesle, tur kapanışı (speakThen) sistem
+ * sesiyle konuşuyordu; sistemde Almanca ses yoksa hiç konuşmuyordu.
+ *
+ * Döndürdüğü iptal işlevi WebAudio zincirini durdurur; `<audio>` yolunda
+ * durdurulacak planlanmış ses olmadığı için null döner.
+ */
+function speakChain(
+  clean: string,
+  voice: VoiceId,
+  course: string,
+  onEnd?: () => void,
+  slow = false,
+  onDuration?: (ms: number) => void,
+): (() => void) | null {
   const mine = ++token;
   stopActiveChain();
   element?.pause();
@@ -205,10 +234,20 @@ export function speakGerman(text: string, onEnd?: () => void, slow = false) {
   const cancel = playGapless([ttsUrl(voice, clean, slow)], {
     mine,
     onEnd,
-    onFail: () => play(clean, voice, course, onEnd, slow),
+    onDuration,
+    onFail: () => {
+      // Ölçüm: nöral ses WebAudio ile çalınamadı. Sık görünüyorsa sorun ağ ya
+      // da çözme tarafında; bu iki basamak da hâlâ DOĞRU sesi çalıyor.
+      if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "element");
+      play(clean, voice, course, onEnd, slow, onDuration);
+    },
   });
-  if (cancel) activeChainStop = cancel;
-  else play(clean, voice, course, onEnd, slow);
+  if (cancel) {
+    activeChainStop = cancel;
+    return cancel;
+  }
+  play(clean, voice, course, onEnd, slow, onDuration);
+  return null;
 }
 
 /**
@@ -219,7 +258,9 @@ export function speakGerman(text: string, onEnd?: () => void, slow = false) {
  */
 export function speakWithVoice(text: string, voice: VoiceId) {
   const clean = cleanForSpeech(text);
-  if (clean) play(clean, voice, voice.startsWith("de-CH") ? "gsw-zh" : "de");
+  // Zincirin tamamı: önizleme cihazın kendi sesine düşerse ekran tam da
+  // seçilmekte olan sesi YANLIŞ duyurur — burada yedeğe düşmek en zararlı yer.
+  if (clean) speakChain(clean, voice, voice.startsWith("de-CH") ? "gsw-zh" : "de");
 }
 
 /**
@@ -415,11 +456,20 @@ function playGapless(
      * indirme/çözme gecikmesi kullanıcıya hiç görünmüyor.
      */
     onStart?: () => void;
+    /**
+     * Planlama bitince kalan çalma süresi (ms).
+     *
+     * `play()` bunu `onplaying` olayından veriyor; burada olay yok, süre
+     * planlanan son sesin bitiş anından hesaplanıyor. Oyunların geçiş çizgisi
+     * ve maskot animasyonu buna bağlı — bu yol süre bildirmeseydi WebAudio ile
+     * çalan turlarda animasyon hiç başlamazdı.
+     */
+    onDuration?: (ms: number) => void;
   },
 ): (() => void) | null {
   const ctx = sharedAudioContext();
   if (!ctx || ctx.state !== "running") return null;
-  const { mine, onEnd, onFail, onStart } = opts;
+  const { mine, onEnd, onFail, onStart, onDuration } = opts;
 
   const sources: AudioBufferSourceNode[] = [];
   let cancelled = false;
@@ -478,6 +528,7 @@ function playGapless(
       finish();
       return;
     }
+    onDuration?.(Math.max(0, tail - ctx.currentTime) * 1000);
     lastSource.onended = finish;
     // Emniyet: `onended` gelmezse (sekme arka plana düştü, tarayıcı atladı)
     // bitiş planlanan sürenin az sonrasında yine bildirilsin.
@@ -814,6 +865,11 @@ function play(
     if (done || token !== mine) return;
     done = true;
     // Uç düşmüş, ağ yok ya da tarayıcı mp3'ü çalamıyor: eski davranışa dön.
+    //
+    // Ölçüm: kullanıcının DUYDUĞU ses burada değişiyor — seçtiği Katja/Conrad
+    // yerine cihazın kendi sesi geliyor, cihazda Almanca ses yoksa hiç ses
+    // gelmiyor. Şikâyetin kaynağı bu basamak, o yüzden ayrıca işaretleniyor.
+    if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "browser");
     speakWithBrowser(clean, voice, course, onEnd, slow);
   };
 
@@ -1016,9 +1072,15 @@ export function speakThen(
   }
   const course = readLocal(COURSE_KEY) ?? "de";
   const voice = resolveVoice(course, readLocal(VOICE_KEY));
-  play(clean, voice, course, finish, false, onDuration);
+  // speakGerman ile AYNI zincir. Eskiden burası doğrudan play() çağırıyordu ve
+  // ikinci basamakta takılan okuma sessizce tarayıcı sentezine düşüyordu.
+  const cancelChain = speakChain(clean, voice, course, finish, false, onDuration);
   return () => {
     finished = true;
     clearTimeout(guard);
+    // Planlanmış WebAudio sesleri de sustur: useRoundExit sökülürken bekleyen
+    // her şeyi iptal ediyor, ses de buna dahil — yoksa tur kapandıktan sonra
+    // konuşmaya devam ederdi.
+    cancelChain?.();
   };
 }
