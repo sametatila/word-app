@@ -8,6 +8,7 @@ import { SkeletonBar, SkeletonLine, SkeletonTile } from "./Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { fetchQuests, type Quest } from "../game/quests";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { CardGrid } from "./CardGrid";
 
 function QuestRow({ q, colors }: { q: Quest; colors: Palette }) {
   const pct = q.target ? Math.min(100, Math.round((q.done / q.target) * 100)) : 0;
@@ -81,7 +82,7 @@ export function DailyQuests() {
           <SkeletonLine variant="h3" width={140} />
           <SkeletonLine variant="caption" width={58} />
         </View>
-        {[0, 1, 2].map((i) => <QuestRowSkeleton key={i} colors={colors} />)}
+        <CardGrid minItemWidth={380}>{[0, 1, 2].map((i) => <QuestRowSkeleton key={i} colors={colors} />)}</CardGrid>
       </View>
     );
   }
@@ -93,7 +94,7 @@ export function DailyQuests() {
         <Text variant="h3" color={colors.textMuted}>{t("dailyquests.daily_quests")}</Text>
         <Text variant="caption" color={colors.textMuted}>{doneCount}/{quests.length} tamam</Text>
       </View>
-      {quests.map((q) => <QuestRow key={q.id} q={q} colors={colors} />)}
+      <CardGrid minItemWidth={380}>{quests.map((q) => <QuestRow key={q.id} q={q} colors={colors} />)}</CardGrid>
     </View>
   );
 }

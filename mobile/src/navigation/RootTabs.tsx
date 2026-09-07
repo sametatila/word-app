@@ -13,7 +13,7 @@ export function RootTabs() {
     // `screenLayout` yalnız EKRAN içeriğini sarmalıyor; `tabBar` dışarıda kaldığı
     // için sekme çubuğu geniş ekranda tam genişlikte duruyor.
     <Tab.Navigator tabBar={(p) => <TabBar {...p} />} screenOptions={{ headerShown: false }} screenLayout={contentColumnLayout}>
-      <Tab.Screen name="Learn" component={LearnScreen} options={{ title: t("nav.learn") }} />
+      <Tab.Screen name="Learn" component={LearnScreen} options={{ title: t("nav.learn") }} layout={wideColumnLayout} />
       <Tab.Screen name="Path" component={PathScreen} options={{ title: t("nav.path") }} layout={wideColumnLayout} />
       <Tab.Screen name="Skills" component={SkillsScreen} options={{ title: t("nav.skills") }} layout={wideColumnLayout} />
     </Tab.Navigator>

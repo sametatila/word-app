@@ -21,6 +21,7 @@ import { AppHeader } from "../ui/AppHeader";
 import { DailyQuests } from "../ui/DailyQuests";
 import { FriendPulse } from "../social/FriendPulse";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { CardGrid } from "../ui/CardGrid";
 
 /** Alt aksiyon satırı — dil odaklı, sade. */
 function ActionRow({ title, subtitle, tint, icon: Icon, onPress }: { title: string; subtitle: string; tint: string; icon: (p: { color: string; size: number }) => React.ReactElement; onPress?: () => void }) {
@@ -210,9 +211,11 @@ export function LearnScreen() {
 
       {/* diğer öğrenme yolları */}
       <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md }}>{t("learn.more")}</Text>
-      <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
-      <ActionRow title={t("learn.daily_round_2")} subtitle={t("learn.same_challenge_for_everyone_get")} tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
-      <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
+      <CardGrid minItemWidth={380}>
+        <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
+        <ActionRow title={t("learn.daily_round_2")} subtitle={t("learn.same_challenge_for_everyone_get")} tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
+        <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
+      </CardGrid>
     </Screen>
   );
 }

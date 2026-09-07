@@ -89,6 +89,7 @@ export function SkillsScreen() {
           <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
             {LEVELS.map((l) => <Skeleton key={l} height={20 + textHeight("bodyStrong")} radius={radii.md} style={{ flex: 1 }} />)}
           </View>
+          <CardGrid minItemWidth={440}>
           {SKILLS.map((s) => (
             <View key={s.key} style={{ marginBottom: spacing.xl }}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: 4 }}>
@@ -110,6 +111,7 @@ export function SkillsScreen() {
               </SkeletonCard>
             </View>
           ))}
+          </CardGrid>
         </>
       ) : hasExercises ? (
         <>

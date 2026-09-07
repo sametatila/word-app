@@ -18,18 +18,19 @@ const ICONS: Record<string, (p: { color: string; size: number }) => React.ReactE
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const { contentWidth } = useLayout();
+  const { wideContentWidth } = useLayout();
   return (
     // Çubuk artık ekran kadar geniş bir alanın içinde duruyor (sütun kökten
     // kaldırıldı, bkz. ui/ContentColumn). Yüzen hap serbest bırakılsaydı yatay
     // tablette 1300dp'ye yayılır, üç sekme birbirinden avuç içi kadar uzağa
-    // düşerdi. DAR sütuna göre sınırlanıp ortalanıyor — geniş kaba göre değil:
-    // sekmelerden yalnız Patika geniş kapta, çubuk ona uysaydı sekme
-    // değiştikçe genişleyip daralırdı.
+    // düşerdi. GENİŞ kaba göre ölçülüyor: üç sekmenin üçü de (Öğren, Patika,
+    // Beceriler) geniş kapta, yani sekme değiştikçe sıçrama olmuyor. Dar kaba
+    // göre ölçüldüğünde tablette çubuk içeriğin çok altında kalıp öksüz
+    // duruyordu — içerik ekranın %90'ı, çubuk %54'ü.
     // Telefonda ölçü birebir eskisi: sütun bağlamıyor, yatay dolgu eski
     // left/right kenar boşluğunun yerini alıyor.
     <View style={{ position: "absolute", left: 0, right: 0, bottom: insets.bottom + spacing.sm, alignItems: "center" }}>
-      <View style={{ width: "100%", maxWidth: contentWidth, paddingHorizontal: spacing.lg }}>
+      <View style={{ width: "100%", maxWidth: wideContentWidth, paddingHorizontal: spacing.lg }}>
       <View style={[{ flexDirection: "row", backgroundColor: colors.surface, borderRadius: radii.xxl, padding: 7, borderWidth: 1, borderColor: colors.hairline }, softShadow("#5a3418", 16)]}>
         {state.routes.map((route, i) => {
           const focused = state.index === i;
