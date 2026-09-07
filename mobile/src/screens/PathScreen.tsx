@@ -72,6 +72,9 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
   );
 }
 
+/** İki panelin açıldığı en küçük kap genişliği (dp). */
+const IKI_PANEL_MIN = 900;
+
 export function PathScreen() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
@@ -87,8 +90,15 @@ export function PathScreen() {
     Izgara sütunu, kabın tamamına değil SOL PANELİN genişliğine göre sayılıyor:
     1100'lük kaba dört kart sığıyor ama onun %45'ine iki kart sığıyor.
   */
-  const { wideContentWidth, wide, landscape } = useLayout();
-  const ikiPanel = wide && landscape;
+  const { wideContentWidth, landscape } = useLayout();
+  /*
+    Kapı yalnız "yatay + geniş" DEĞİL, kabın gerçekten iki panel taşıyacak
+    kadar geniş olması. Çoklu pencerede (iPad Split View, Android serbest
+    pencere) yatay ama 700dp'lik bir pencere de "geniş ekran" sayılıyor; orada
+    iki panel açmak iki tarafı da kullanılmaz ederdi. Eşik ızgaranın dörde
+    çıktığı genişlikle aynı: o noktada sol panele iki kart rahat sığıyor.
+  */
+  const ikiPanel = landscape && wideContentWidth >= IKI_PANEL_MIN;
   const solGenislik = ikiPanel ? Math.round(wideContentWidth * 0.45) : wideContentWidth;
   const gridItemWidth = gridItemWidthFor(gridColumnsFor(solGenislik));
   const [seciliIndex, setSeciliIndex] = useState<number | null>(null);
