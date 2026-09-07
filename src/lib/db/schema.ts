@@ -812,6 +812,56 @@ export const exams = pgTable(
   ],
 );
 
+/**
+ * Deneme sınavı denemeleri.
+ *
+ * `exams` tablosu bu iş için kullanılamıyor: orada (user, kind, week) benzersiz,
+ * yani haftada tek kayıt. Deneme sınavı bunun tersi — aynı kâğıdın aynı bölümü
+ * istendiği kadar çözülebilir.
+ *
+ * Satır sınav BAŞLARKEN açılıyor ve her cevapta güncelleniyor. Böylece uygulama
+ * kapansa da kaldığı yerden devam edilir; `state` yarım kalanı ('running')
+ * puanlanmış olandan ('done') ayırıyor.
+ */
+export const mockExamAttempts = pgTable(
+  "mock_exam_attempts",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** "de-b1-01" */
+    paperId: text("paper_id").notNull(),
+    /** reading | listening | writing | speaking */
+    skill: text("skill").notNull(),
+    level: text("level").notNull(),
+    /** running | done */
+    state: text("state").notNull().default("running"),
+    /** Madde kimliği → cevap. */
+    answers: jsonb("answers").notNull().default({}),
+    /** Açık görev kimliği → yazılan metin ya da konuşmanın dökümü. */
+    open: jsonb("open").notNull().default({}),
+    /** Açık görevlerin AI değerlendirmesi: görev kimliği → puan + geri bildirim. */
+    openScores: jsonb("open_scores").notNull().default({}),
+    /** Kaçıncı görevde kalındı — yeniden girişte oradan devam. */
+    taskIx: integer("task_ix").notNull().default(0),
+    /** O görevde kalan saniye. */
+    secondsLeft: integer("seconds_left").notNull().default(0),
+    correct: integer("correct").notNull().default(0),
+    total: integer("total").notNull().default(0),
+    /** 0–100. */
+    score: integer("score").notNull().default(0),
+    passed: boolean("passed").notNull().default(false),
+    /** AI geri bildirimi ve yapılacaklar listesi. */
+    ai: jsonb("ai"),
+    startedAt: timestamp("started_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+    finishedAt: timestamp("finished_at", { withTimezone: true }),
+  },
+  (t) => [
+    index("mock_attempts_user_part_idx").on(t.userId, t.paperId, t.skill, t.startedAt),
+    index("mock_attempts_done_idx").on(t.userId, t.finishedAt),
+  ],
+);
+
 /*
  * ───────────────────────────── Sosyal katman ─────────────────────────────
  * Arkadaşlık, tepki, dürtme, ortak görev, bildirim, engel (docs/plan/social.md).

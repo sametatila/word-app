@@ -79,6 +79,8 @@ export const EVENT_NAMES = [
   "production_attempt", // üretim görevi puanlandı (kind = translate|transform|free_sentence|writing_free|speaking_drill|roleplay, value = 0–100)
   "exam_start", // sınava girildi (kind = sınav türü:seviye, örn. "level:B1")
   "exam_finish", // sınav bitti (kind = sınav türü:seviye, value = puan 0–100)
+  "mock_exam_start", // deneme sınavı bölümü açıldı (kind = "B1:reading")
+  "mock_exam_finish", // deneme sınavı bölümü bitti (kind = "B1:reading", value = puan 0–100)
   "placement_finish", // yerleştirme testi bitti (kind = bulunan seviye, value = puan 0–100)
   "error_recorded", // yanlış cevabın hata tipi (kind = ErrorType, bkz. lib/errors.ts)
   "feedback_why_opened", // "neden?" açıklaması açıldı (kind = ErrorType)
