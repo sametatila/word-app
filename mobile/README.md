@@ -119,13 +119,38 @@ Android anahtarı kaybolursa Play'de uygulama **güncellenemez**. iOS tarafında
 kimliği ve takım kimliği Xcode/Keychain'den gelir, `project.pbxproj`'da yalnız yer
 tutucu var.
 
-### Neden `./gradlew bundleRelease` tek başına yetmiyor
+### Yayın imzası: anahtarsız release yapısı üretilmiyor
 
-`app/build.gradle` release'i, `keystore.properties` yoksa **debug anahtarıyla**
-imzalıyor — geliştirme ve CI derlemesi kırılmasın diye bilerek böyle. Ama o dosya
-mağazaya gidemez ve yanlışlıkla GitHub sürümüne çıkarsa yan dağıtımın anahtarı
-kalıcı olarak yanlış anahtar olur. `release:android` bu yüzden anahtar yoksa
-**derlemeyi hiç başlatmıyor**, sonrasında da ürettiğini denetliyor:
+`keystore.properties` (gitignore'da) yoksa **release görevleri düşüyor** — kapı
+`app/build.gradle`'da, görev grafiği hazır olunca bakılıyor; `./gradlew tasks`,
+IDE eşitlemesi ve debug yapıları etkilenmiyor.
+
+Eskiden anahtar yokken release sessizce **debug anahtarıyla** imzalanıyordu. İki
+sonucu vardı: Play böyle bir yüklemeyi reddediyor, ama asıl tehlike yan dağıtımdı —
+o APK GitHub sürümüne çıkarsa imza anahtarı bir daha **değiştirilemez**, yani yanlış
+anahtarla çıkan bir sürüm o kullanıcıların bir daha güncelleme alamaması demek.
+
+Deneme amaçlı bir release paketi gerekiyorsa kapı elle açılıyor:
+
+```sh
+./gradlew assembleRelease -PallowDebugSigning   # ya da LERNOMI_ALLOW_DEBUG_SIGNING=1
+```
+
+Çıkan yapı debug anahtarıyla imzalanıyor **ve** `-devkey` sürüm ekiyle işaretleniyor
+(`1.0.11-devkey`), yani elde kaldığında ne olduğunu kendisi söylüyor. O dosya ne
+mağazaya ne GitHub sürümüne gidebilir.
+
+Anahtar üretimi `scripts/gen-release-keystore.sh`: parolayı iki kez sorar (yanlış
+yazılan parola anahtarı kurtarılamaz yapar ve hata aylar sonra, yeni sürüm
+imzalanırken ortaya çıkar), var olan dosyaların üzerine yazmaz, `keystore.properties`i
+0600 bırakır ve sonunda **SHA-1/SHA-256 parmak izlerini basar** — Google ile Giriş'in
+Android OAuth istemcisi paket adı + SHA-1 eşleşmesiyle çalışıyor.
+
+Play tarafında bu bir **yükleme anahtarı**: Play App Signing devrede olduğu için kaybı
+Google'dan sıfırlatılabilir. Yan dağıtımda öyle değil — asıl yedekleme sebebi o.
+
+`release:android` aynı kapıyı gradle'ı hiç başlatmadan, okunur bir mesajla söylüyor;
+sonrasında da ürettiğini denetliyor:
 
 | Adım | Ne bakıyor |
 |---|---|

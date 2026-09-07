@@ -2,15 +2,15 @@
 # Lernomi — Android yayın yapısı (Play için AAB + yan dağıtım için APK).
 #
 # NEDEN VAR: `./gradlew bundleRelease` tek başına mağazaya gidecek bir yapı üretmez.
-# İki sessiz tuzak var ve ikisi de ancak yükleme anında ya da hiç fark edilmiyor:
 #
-#   1) keystore.properties yoksa app/build.gradle release'i DEBUG anahtarıyla imzalıyor
-#      (geliştirme/CI derlemesi kırılmasın diye). Play böyle bir yüklemeyi reddeder;
-#      daha kötüsü aynı dosya GitHub sürümüne çıkarsa o anahtar bir daha değişemez.
+#   1) Yayın anahtarı. Kapının kendisi app/build.gradle'da: keystore.properties yoksa
+#      release görevleri düşüyor, `-PallowDebugSigning` ile açılan deneme yapısı da
+#      `-devkey` sürüm ekiyle işaretleniyor. Buradaki denetim onun erken ve okunur
+#      hâli — gradle'ı hiç başlatmadan aynı şeyi söylüyor.
 #   2) Sürüm numarası üç ayrı dosyada elle tutuluyor (bkz. mobile/README.md). Biri
 #      geride kalırsa uygulama kendini yanlış sürüm sanar ve güncelleme denetimi bozulur.
 #
-# Bu betik ikisini de yapıdan ÖNCE kapatıyor, sonra üretiyor, sonra ürettiğini
+# Betik ikisini de yapıdan ÖNCE kapatıyor, sonra üretiyor, sonra ürettiğini
 # doğruluyor: imzanın debug olmadığı ve 16 KB sayfa boyutu.
 #
 # NE DOĞRULAR: imza, sürüm tutarlılığı, 16 KB hizalama, dosyaların varlığı.
@@ -67,12 +67,14 @@ if [ ! -f android/keystore.properties ]; then
   cat >&2 <<'EOF'
 HATA: android/keystore.properties yok.
 
-Bu dosya olmadan release DEBUG anahtarıyla imzalanır ve mağazaya gidemez.
+Bu dosya olmadan release yapısı üretilmiyor (kapı app/build.gradle'da).
 Anahtar üretimi:  bash mobile/scripts/gen-release-keystore.sh
 Örnek dosya:      android/keystore.properties.example
+Yalnız deneme:    ./gradlew assembleRelease -PallowDebugSigning (mağazaya gidemez)
 
-Anahtar ve parolası YEDEKLENMEDEN ilk yükleme yapılmamalı: Play App Signing'e
-yüklenen imza anahtarı bir daha değiştirilemez.
+Anahtar ve parolası YEDEKLENMEDEN ilk yükleme yapılmamalı. Play tarafında bu bir
+YÜKLEME anahtarı (kaybı Google'dan sıfırlatılabilir), ama GitHub'dan inen APK'yı
+imzalayan da o: orada anahtar değişirse kullanıcılar bir daha güncelleme alamaz.
 EOF
   [ "$CHECK_ONLY" = "1" ] || exit 2
   fail=1

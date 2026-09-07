@@ -2,15 +2,56 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
-// Release imzası: keystore.properties'ten (repoda DEĞİL — gitignore). Dosya
-// yoksa release yine debug anahtarıyla imzalanır ki geliştirme/CI build'i
-// kırılmasın; gerçek yayın için keystore.properties doldurulur (bkz.
-// android/keystore.properties.example ve scripts/gen-release-keystore.sh).
+// Release imzası: keystore.properties'ten (repoda DEĞİL — gitignore).
+//
+// Anahtar yoksa release yapısı ÜRETİLMEZ. Eskiden sessizce debug anahtarına
+// düşüyordu ve iki şey aynı anda oluyordu: Play böyle bir yüklemeyi reddediyor,
+// ama daha kötüsü aynı dosya fark edilmeden GitHub sürümüne çıkabiliyordu — yan
+// dağıtımda imza anahtarı DEĞİŞTİRİLEMEZ, yani yanlış anahtarla çıkan bir sürüm
+// o kullanıcıların bir daha güncelleme alamaması demek.
+//
+// Geliştirme için kapı elle açılabiliyor (aşağıdaki allowDebugSigning); o zaman
+// da yapı `-devkey` sürüm ekiyle işaretleniyor ki elde kalan dosya ne olduğunu
+// kendisi söylesin. Anahtar üretimi: scripts/gen-release-keystore.sh.
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 def hasReleaseKeystore = keystorePropertiesFile.exists()
+def allowDebugSigning = (project.hasProperty("allowDebugSigning")
+    || System.getenv("LERNOMI_ALLOW_DEBUG_SIGNING") == "1")
 def keystoreProperties = new Properties()
 if (hasReleaseKeystore) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+/**
+ * Yayın imzası kapısı.
+ *
+ * Yapılandırma anında değil GÖREV GRAFİĞİ hazır olunca bakıyoruz: yalnız gerçekten
+ * bir release paketi üretilecekse düşsün, `./gradlew tasks`, IDE eşitlemesi ve
+ * debug yapıları etkilenmesin.
+ */
+if (!hasReleaseKeystore && !allowDebugSigning) {
+    gradle.taskGraph.whenReady { graph ->
+        def offending = graph.allTasks.find { t ->
+            t.path.startsWith(":app:") && t.name ==~ /(?i)(assemble|bundle|package).*Release.*/
+        }
+        if (offending != null) {
+            throw new GradleException("""
+Yayın anahtarı yok: android/keystore.properties bulunamadı (${offending.path}).
+
+Release yapısı debug anahtarıyla imzalanmasın diye derleme burada durduruldu.
+Play böyle bir yüklemeyi reddeder; yan dağıtımda ise imza anahtarı bir daha
+DEĞİŞTİRİLEMEZ.
+
+  Yayın için:      bash mobile/scripts/gen-release-keystore.sh
+                   sonra: npm run release:android
+  Yalnız deneme:   ./gradlew assembleRelease -PallowDebugSigning
+                   (çıkan yapı `-devkey` sürüm ekiyle işaretlenir, mağazaya gidemez)
+""")
+        }
+    }
+}
+if (!hasReleaseKeystore && allowDebugSigning) {
+    logger.warn("UYARI: release DEBUG anahtarıyla imzalanacak (-PallowDebugSigning). Sürüm eki: -devkey. Bu yapı mağazaya da yan dağıtıma da gidemez.")
 }
 
 /**
@@ -119,9 +160,12 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
-            // keystore.properties varsa gerçek yayın anahtarıyla, yoksa (yalnız
-            // geliştirme/CI) debug anahtarıyla imzalanır — mağazaya çıkacak
-            // yapı için keystore.properties ZORUNLU.
+            // Buraya anahtarsız gelmenin tek yolu -PallowDebugSigning; kapı
+            // yukarıda. Sürüm eki o yapıyı elde kaldığında tanınır kılıyor:
+            // "1.0.11-devkey" mağazaya da yan dağıtıma da gidemez.
+            if (!hasReleaseKeystore) {
+                versionNameSuffix "-devkey"
+            }
             signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             shrinkResources enableProguardInReleaseBuilds
