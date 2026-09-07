@@ -12,7 +12,7 @@ import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
 import { billingAvailable, getPackages, purchase, restore } from "../lib/billing";
 import { openLegal } from "../lib/legal";
-import { hasExams } from "../data/exams";
+import { hasMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
@@ -29,7 +29,16 @@ const SUBSCRIPTIONS_URL = Platform.OS === "ios"
   ? "https://apps.apple.com/account/subscriptions"
   : "https://play.google.com/store/account/subscriptions";
 
-/** Gerçekten premium'a bağlı özellikler — ExamPrep'teki kilitle birebir. */
+/**
+ * Premium'a bağlı özellikler.
+ *
+ * DİKKAT: Schreiben kilidi kalktı. Kilit tek yerdeydi — sınav hazırlık
+ * ekranındaki modül listesi — ve o ekran Deneme Sınavları'na dönüşürken
+ * modüller kaldırıldı (yazma alıştırmaları Beceriler sekmesinde zaten
+ * ücretsiz açılıyor). Yani bugün premium hiçbir şeyi açmıyor. Satın alma
+ * canlıya alınmadan önce bu liste yeniden kurulmalı; olmayan bir kilidi
+ * vaat etmek Play ve App Store için "yanıltıcı beyan".
+ */
 const COMPARE: { key: string; free: string; premium: string }[] = [
   { key: "paywall.schreiben_alistirmalari", free: "—", premium: "Var" },
   { key: "paywall.word_rounds_lessons_walk_mode", free: "Var", premium: "Var" },
@@ -152,10 +161,11 @@ export function PaywallScreen() {
 
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl, paddingHorizontal: 4 }}>
           <ExamIcon color={colors.accent} size={22} />
-          {/* Sınav vaadi yalnız sınavı olan kursta: İngilizce kursunda sınav
-              karşılığı yok, orada CEFR vaadi tek başına doğru olanı. */}
+          {/* Sınav vaadi yalnız gerçekten deneme sınavı OLAN kursta. Katalog
+              boşken (bugünkü durum) CEFR vaadi tek başına doğru olanı;
+              olmayan bir sınavın sözü verilmiyor. */}
           <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>
-            {t(hasExams(currentCourseId()) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
+            {t(hasMockExams(currentCourseId()) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
           </Text>
         </View>
 

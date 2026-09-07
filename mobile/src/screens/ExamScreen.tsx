@@ -64,10 +64,15 @@ type Result = { total: number; passed: boolean; trial: boolean; sections: { id: 
 /**
  * Sınav ekranı — modül ve seviye sınavı.
  *
- * NEDEN VAR: bu ekran mobilde HİÇ yoktu. Sunucu tarafı (kâğıt üretimi,
- * puanlama, geçme eşiği) aylardır çalışıyor ve web'den girilebiliyordu;
- * mobilde `ExamPrepScreen` yalnız beceri egzersizi açıyordu, adı "sınav
- * hazırlık" olduğu hâlde sınavın kendisine giden yol yoktu.
+ * ŞU AN MOBİLDE ULAŞILAMIYOR (2026-09-07). Tek kapısı Deneme Sınavları'na
+ * dönüşen sınav hazırlık ekranıydı; oradaki seviye ve modül kâğıtları
+ * kaldırıldı, çünkü ikisi de `lib/exam.ts`in ders içeriğinden ürettiği,
+ * yani Patika türevi sınavlardı. Ekran ve sunucu tarafı duruyor: elle
+ * yazılan deneme sınavının biçimi belli olunca ya buraya bağlanacak ya da
+ * Patika'nın kendi içine bir kapı açılacak — karar verilmedi.
+ *
+ * Sunucu tarafı (kâğıt üretimi, puanlama, geçme eşiği) aylardır çalışıyor ve
+ * web'den girilebiliyor.
  *
  * Kâğıt sunucudan geliyor (`POST /api/exam {action:"start"}`), bölümler
  * sunucudaki SECTION_ORDER ile aynı sırada yürüyor, sonuç yine sunucuda
@@ -189,7 +194,7 @@ export function ExamScreen() {
         <Text variant="micro" color={colors.textMuted}>
           {paper?.cover ? `${paper.cover.code} · ${paper.cover.titleTr}` : t("exam.level_exam", { level })}
         </Text>
-        <Text variant="h3">{phase === "bolum" ? `${mm}:${ss}` : t("examprep.exam_prep")}</Text>
+        <Text variant="h3">{phase === "bolum" ? `${mm}:${ss}` : t("exam.title")}</Text>
       </View>
     </View>
   );

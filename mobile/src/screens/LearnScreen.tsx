@@ -14,7 +14,7 @@ import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
 import { useUpdate } from "../lib/useUpdate";
 import { useMicrophone } from "../lib/useMicrophone";
-import { hasExams } from "../data/exams";
+import { hasMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
 import { Mascot } from "../ui/Mascot";
 import { AppHeader } from "../ui/AppHeader";
@@ -70,7 +70,7 @@ export function LearnScreen() {
   // Sınav hazırlık yalnız sınavı olan kursta. İngilizce kursunda katalog boş
   // (bkz. data/exams.ts) — kart açık kalsaydı kullanıcıyı boş bir ekrana
   // götürür ve sınav vaadi diye o kursta karşılığı olmayan bir vaat verirdi.
-  const exams = hasExams(currentCourseId());
+  const exams = hasMockExams(currentCourseId());
   const level = me?.level ?? "A1";
   const mastered = me?.mastered ?? 0;
   const totalWords = me?.totalWords ?? 0;
@@ -202,7 +202,7 @@ export function LearnScreen() {
           <Text variant="h3" color={colors.textMuted} style={{ marginBottom: spacing.md, marginTop: spacing.sm }}>{t("learn.featured")}</Text>
           <View style={{ flexDirection: "row", gap: spacing.md, marginBottom: spacing.xl }}>
             {mic ? <WedgeTile title={t("learn.walk_mode")} pitch={t("learn.walk_pitch")} tint={colors.accent} icon={WalkIcon} onPress={() => nav.navigate("Walk")} /> : null}
-            {exams ? <WedgeTile title={t("learn.exam_prep")} pitch={t("learn.exam_pitch")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("ExamPrep")} /> : null}
+            {exams ? <WedgeTile title={t("learn.mock_exams")} pitch={t("learn.mock_exams_pitch")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("MockExams")} /> : null}
           </View>
         </>
       ) : null}
