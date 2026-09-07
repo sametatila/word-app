@@ -1909,7 +1909,7 @@ async function main() {
 
   console.log("\n35) Yazma değerlendirme kuyruğu ve arşiv (WP-30)");
   await db.delete(assessments).where(eq(assessments.userId, USER));
-  const qReq = { kind: "writing" as const, level: "A2" as const, task: { prompt: "mesaj yaz" }, answer: { text: "Hallo Anna, wollen wir uns morgen treffen?" }, exerciseId: "a2-w1" };
+  const qReq = { kind: "writing" as const, level: "A2" as const, task: { prompt: "mesaj yaz" }, answer: { text: "Hallo Anna, wollen wir uns morgen treffen?" }, exerciseId: "a2-u01-w1" };
   const q1 = await queueAssessment(USER, qReq, monday);
   const q2 = await queueAssessment(USER, qReq, monday);
   check("kuyruğa alındı, aynı metin ikinci kez alınmadı", q1.queued && !q2.queued && q1.id === q2.id);
