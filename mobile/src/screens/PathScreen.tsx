@@ -99,7 +99,9 @@ export function PathScreen() {
     çıktığı genişlikle aynı: o noktada sol panele iki kart rahat sığıyor.
   */
   const ikiPanel = landscape && wideContentWidth >= IKI_PANEL_MIN;
-  const solGenislik = ikiPanel ? Math.round(wideContentWidth * 0.45) : wideContentWidth;
+  const solPanel = Math.round((wideContentWidth - spacing.lg) * 0.45);
+  const sagPanel = wideContentWidth - spacing.lg - solPanel;
+  const solGenislik = ikiPanel ? solPanel : wideContentWidth;
   const gridItemWidth = gridItemWidthFor(gridColumnsFor(solGenislik));
   const [seciliIndex, setSeciliIndex] = useState<number | null>(null);
 
@@ -210,13 +212,19 @@ export function PathScreen() {
       <AppHeader title={t("path.path")} />
       <View style={{ flex: 1, flexDirection: "row", gap: spacing.lg }}>
         {/* Sol: ünite ızgarası. Kendi içinde kayıyor — sağ panelin uzunluğu
-            listeyi de aşağı itmesin. */}
-        <ScrollView style={{ flex: 45 }} showsVerticalScrollIndicator={false}>
+            listeyi de aşağı itmesin.
+
+            GENİŞLİKLER KESİN ÖLÇÜ, `flex` DEĞİL. flex:45/flex:55 denendi ve sol
+            panel ~30px'e ezildi: sağdaki ünite satırlarının doğal genişliği
+            paylaşımı kendine çekiyor, çünkü esneme payı içeriğin en küçük
+            genişliğinin altına inemiyor. Kap zaten biliniyor, bölüşüm de
+            hesaplanabiliyor. */}
+        <ScrollView style={{ width: solPanel }} showsVerticalScrollIndicator={false}>
           {govde}
         </ScrollView>
         {/* Sağ: seçilen ünitenin adımları. Ünite ekranının GÖVDESİ birebir aynı
             (UnitPane), kabuğu farklı: geri düğmesi yok. */}
-        <View style={{ flex: 55, borderRadius: radii.lg, overflow: "hidden", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border }}>
+        <View style={{ width: sagPanel, borderRadius: radii.lg, overflow: "hidden", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border }}>
           {secili ? (
             <UnitPane
               key={secili.index}
