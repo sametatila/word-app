@@ -150,10 +150,10 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "drill1000", title: "Çekim ustası", hint: "1.000 dilbilgisi maddesini pekiştir", icon: "MountainIcon", tier: "gold", group: "grammar", metric: "drillMastered", target: 1000 },
 
   // ——— Ders ——————————————————————————————————————————————————————
-  { id: "lesson1", title: "İlk ders", hint: "Bir dersi rol yapmayla birlikte bitir", icon: "ChatIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 1 },
-  { id: "lesson10", title: "Bir modül", hint: "10 dersi tamamla", icon: "SchoolIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 10 },
-  { id: "lesson50", title: "Yarı yol", hint: "50 dersi tamamla", icon: "SchoolIcon", tier: "gold", group: "lessons", metric: "lessons", target: 50 },
-  { id: "lesson100", title: "Bir seviye", hint: "100 dersi tamamla", icon: "MountainIcon", tier: "legend", group: "lessons", metric: "lessons", target: 100 },
+  { id: "lesson1", title: "İlk konuşma", hint: "Bir konuşmayı rol yapmayla birlikte bitir", icon: "ChatIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 1 },
+  { id: "lesson10", title: "Bir modül", hint: "10 konuşma tamamla", icon: "SchoolIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 10 },
+  { id: "lesson50", title: "Yarı yol", hint: "50 konuşma tamamla", icon: "SchoolIcon", tier: "gold", group: "lessons", metric: "lessons", target: 50 },
+  { id: "lesson100", title: "Bir seviye", hint: "100 konuşma tamamla", icon: "MountainIcon", tier: "legend", group: "lessons", metric: "lessons", target: 100 },
   { id: "boss1", title: "Modül fatihi", hint: "Bir modül sınavını süre bitmeden geç", icon: "FlagIcon", tier: "silver", group: "lessons", metric: "bossClears", target: 1 },
   { id: "boss10", title: "Sınav ustası", hint: "10 modül sınavını geç", icon: "FlagIcon", tier: "gold", group: "lessons", metric: "bossClears", target: 10 },
 

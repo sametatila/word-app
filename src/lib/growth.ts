@@ -145,7 +145,7 @@ export async function growthReport(userId: string, course: string, level: CefrLe
     .limit(1);
   if (firstGoodWriting) milestones.push({ at: firstGoodWriting.at.toISOString().slice(0, 10), text: "İlk 70+ puanlı yazı" });
   const [firstLesson] = await db.select({ at: userLessons.lastAt }).from(userLessons).where(and(eq(userLessons.userId, userId), eq(userLessons.roleplayDone, true))).orderBy(asc(userLessons.lastAt)).limit(1);
-  if (firstLesson) milestones.push({ at: firstLesson.at.toISOString().slice(0, 10), text: "İlk ders konuşmasıyla tamamlandı" });
+  if (firstLesson) milestones.push({ at: firstLesson.at.toISOString().slice(0, 10), text: "İlk konuşma rol yapmayla tamamlandı" });
   const [firstPlacement] = await db.select({ day: events.day, kind: events.kind }).from(events).where(and(eq(events.userId, userId), eq(events.name, "placement_finish"))).orderBy(asc(events.createdAt)).limit(1);
   if (firstPlacement) milestones.push({ at: String(firstPlacement.day), text: `Seviye testi: ${firstPlacement.kind ?? "?"} önerildi` });
   milestones.sort((a, b) => a.at.localeCompare(b.at));
@@ -189,7 +189,7 @@ export async function weeklySummary(userId: string, today: string, series?: Grow
   const parts: string[] = [];
   if (answers) parts.push(`${answers} cevap`);
   if (exercises) parts.push(`${exercises} egzersiz`);
-  if (lessonsPassed) parts.push(`${lessonsPassed} ders`);
+  if (lessonsPassed) parts.push(`${lessonsPassed} konuşma`);
   if (writing.to !== null) parts.push(writing.from !== null ? `yazma ${writing.from}→${writing.to}` : `yazma ${writing.to}`);
   if (usage !== null) parts.push(`kullanım ${usage}`);
   if (topError) parts.push(`en çok hata: ${topError.label}`);

@@ -54,7 +54,7 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
         </div>
       )}
       <p className="muted text-xs">
-        Bir ifade, ona bağlı en az iki ders ya da egzersizi tamamlayınca kanıtlı sayılır.
+        Bir ifade, ona bağlı en az iki konuşma ya da egzersizi tamamlayınca kanıtlı sayılır.
         {bare ? ` ${provenTotal} kanıtlı.` : ""}
       </p>
       {/* Beş seviye çipi telefonda kartın genişliğini aşıyor ve sonuncusu

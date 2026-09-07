@@ -250,7 +250,7 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
                 <div>
                   <p className="font-bold">Bugünkü planın hazır, {cleanName}.</p>
                   <p className="muted mt-1 text-sm leading-relaxed">
-                    {course === "gsw-zh" ? "Zürih Almancası" : "Almanca"} · {LEVELS.find((l) => l.id === level)?.id} · hedef: {GOALS.find((g) => g.id === goal)?.title ?? "—"}. Öğren ekranında seni kısa bir kelime turu, sıradaki ders ve bir beceri egzersizi bekliyor.
+                    {course === "gsw-zh" ? "Zürih Almancası" : "Almanca"} · {LEVELS.find((l) => l.id === level)?.id} · hedef: {GOALS.find((g) => g.id === goal)?.title ?? "—"}. Öğren ekranında seni kısa bir kelime turu, sıradaki konuşma ve bir beceri egzersizi bekliyor.
                   </p>
                 </div>
               </div>

@@ -1016,7 +1016,7 @@ export function LessonPlayer({
           <span className="flex-1" style={{ color: "var(--color-brand)" }}>
             {phase === "roleplay"
               ? "Konuşmaya kaldığın yerden devam ediyorsun."
-              : "Derse kaldığın yerden devam ediyorsun."}
+              : "Konuşmaya kaldığın yerden devam ediyorsun."}
           </span>
           <button
             type="button"
@@ -1284,7 +1284,7 @@ export function LessonPlayer({
                     background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
                     color: "var(--color-flame)",
                   }}
-                  title="Sohbet servisi şu an kapalı; konuşma önceden yazılmış bir senaryoyla sürüyor. Ders yine sayılır."
+                  title="Sohbet servisi şu an kapalı; konuşma önceden yazılmış bir senaryoyla sürüyor. Konuşma yine sayılır."
                 >
                   <AlertIcon size={12} />
                   {lesson.roleplay.script?.length
@@ -1442,7 +1442,7 @@ export function LessonPlayer({
                 onClick={() => void finish()}
                 className="btn btn-ghost w-full py-2.5 text-sm"
               >
-                {roleplayDone ? "Dersi bitir" : "Şimdilik bırak"}
+                {roleplayDone ? "Konuşmayı bitir" : "Şimdilik bırak"}
               </button>
             </div>
           </motion.section>
@@ -1467,7 +1467,7 @@ export function LessonPlayer({
               <Mascot mood={saved?.passed ? "cheer" : "think"} size={54} className="-my-2 shrink-0" />
               <div>
                 <h2 className="text-base font-bold">
-                  {saved?.passed ? "Ders tamam" : "Ders yarım kaldı"}
+                  {saved?.passed ? "Konuşma tamam" : "Konuşma yarım kaldı"}
                 </h2>
                 <p className="muted text-xs">
                   {lesson.title} · {lesson.titleTr}
@@ -1487,7 +1487,7 @@ export function LessonPlayer({
             {/* Öğrenilen kelimeler özette bir kez daha: dersin dili kapanışta
                 toplu görünmeli — Learna bunu yapmıyor, biz yapıyoruz. */}
             <div className="mt-4">
-              <p className="muted text-xs font-semibold">Bu dersin kelimeleri</p>
+              <p className="muted text-xs font-semibold">Bu konuşmanın kelimeleri</p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 {lesson.vocab.map((v) => (
                   <span key={v.de} className="chip px-2 py-1 text-xs">
@@ -1546,12 +1546,12 @@ export function LessonPlayer({
 
             {!roleplayDone ? (
               <p className="muted mt-4 text-xs leading-relaxed">
-                Dersin sayılması için konuşmada en az {lesson.roleplay.minTurns} kez söz alman
+                Konuşmanın sayılması için sohbette en az {lesson.roleplay.minTurns} kez söz alman
                 gerekiyor — kalıplar ancak kullanılınca oturuyor.
               </p>
             ) : saved ? (
               <p className="muted mt-4 text-xs leading-relaxed">
-                Bu ders {saved.nextDays} gün sonra tekrar karşına çıkacak.
+                Bu konuşma {saved.nextDays} gün sonra tekrar karşına çıkacak.
               </p>
             ) : null}
 
@@ -1582,7 +1582,7 @@ export function LessonPlayer({
                   className="btn btn-primary flex-1 py-3 text-sm"
                   title={`${extras.next.title} · ${extras.next.titleTr}`}
                 >
-                  Sıradaki ders: {extras.next.title}
+                  Sıradaki konuşma: {extras.next.title}
                 </button>
               ) : null}
               <button
@@ -1590,7 +1590,7 @@ export function LessonPlayer({
                 onClick={() => router.push("/lessons")}
                 className={`btn flex-1 py-3 text-sm ${roleplayDone && !extras.next ? "btn-primary" : "btn-ghost"}`}
               >
-                Derslere dön
+                Konuşmalara dön
               </button>
             </div>
           </motion.section>

@@ -238,7 +238,7 @@ export function BossPlayer({
       <Frame>
         <h2 className="text-lg font-bold">Bu modülün sınavı henüz kurulamıyor</h2>
         <p className="muted mt-2 text-sm">
-          Sınav modülün derslerindeki kelimelerden kuruluyor ve bu modülde yeterli kelime
+          Sınav modülün konuşmalarındaki kelimelerden kuruluyor ve bu modülde yeterli kelime
           eşleşmedi.
         </p>
         <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">Geri dön</button>
@@ -271,7 +271,7 @@ export function BossPlayer({
               color: "var(--color-flame)",
             }}
           >
-            Bu modülün {data.meta.lessonsDone}/{data.meta.lessonsTotal} dersini bitirdin. Sınav
+            Bu modülün {data.meta.lessonsDone}/{data.meta.lessonsTotal} konuşmasını bitirdin. Sınav
             yine de açık — ama kelimeleri görmeden girmek zor.
           </p>
         ) : null}

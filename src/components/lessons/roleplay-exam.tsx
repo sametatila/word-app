@@ -218,7 +218,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
       <section className="card mx-auto w-full max-w-md p-5">
         <p className="text-sm">Konuşma servisi şu an ulaşılamıyor; sınav senaryolu konuşmayla yapılamaz (ölçüm sayılmaz).</p>
         <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-3 px-4 py-2 text-sm">
-          Derse dön
+          Konuşmaya dön
         </Link>
       </section>
     );
@@ -277,7 +277,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             Tekrar
           </button>
           <Link href={`/lessons/${lesson.id}`} className="btn btn-primary flex-1 py-3 text-center text-sm">
-            Derse dön
+            Konuşmaya dön
           </Link>
         </div>
       </section>

@@ -305,7 +305,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       <section className="card mx-auto w-full max-w-md p-5">
         <p className="text-sm">Sınav şu an yüklenemedi ya da kaydedilemedi.</p>
         <Link href="/lessons" className="btn btn-ghost mt-3 px-4 py-2 text-sm">
-          Derslere dön
+          Konuşmalara dön
         </Link>
       </section>
     );
@@ -868,7 +868,7 @@ function Result({
       <h1 className="text-xl font-bold">{result.passed ? "Bestanden — geçtin!" : "Nicht bestanden — bu sefer olmadı"}</h1>
       <p className="muted mt-1 text-sm">
         Toplam <strong>%{result.total}</strong>
-        {result.trial ? " · deneme (modül dersleri bitmeden sayılmaz)" : ""}
+        {result.trial ? " · deneme (modül konuşmaları bitmeden sayılmaz)" : ""}
       </p>
 
       <ul className="mt-3 space-y-1.5">
@@ -970,7 +970,7 @@ function Result({
         <p className="muted mt-3 text-xs">Zayıf bölüm için profilde &quot;Zayıf noktaların&quot; ve &quot;Sıradaki en iyi adım&quot; var.</p>
       )}
       <Link href="/lessons" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
-        Derslere dön
+        Konuşmalara dön
       </Link>
       {/*
         Hız turunun tek girişi burası. Eskiden yol haritasında, modül

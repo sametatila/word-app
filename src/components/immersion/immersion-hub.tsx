@@ -53,7 +53,7 @@ export type ImmersionHubProps = {
 };
 
 const KIND_LABEL: Record<ImmersionItemKind, string> = {
-  lesson: "Ders",
+  lesson: "Konuşma",
   read: "Okuma",
   listen: "Dinleme",
   write: "Yazma",

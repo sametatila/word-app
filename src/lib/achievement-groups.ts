@@ -48,7 +48,7 @@ export const GROUP_LABELS: Record<Group, string> = {
   vocab: "Kelime",
   games: "Oyunlar",
   grammar: "Dilbilgisi",
-  lessons: "Dersler",
+  lessons: "Konuşmalar",
   exams: "Sınavlar",
   skills: "Beceriler",
   rounds: "Turlar",

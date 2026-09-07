@@ -82,7 +82,7 @@ export function PlanCard({ onStartSession, name }: { onStartSession: () => void;
         <span className="min-w-0 flex-1 truncate text-sm font-semibold">
           {plan.complete
             ? "Bugünün planı tamam"
-            : (next?.title ?? "").replace(/^(Ders tekrarı|Ders|Zayıf nokta): /, "")}
+            : (next?.title ?? "").replace(/^(Konuşma tekrarı|Konuşma|Zayıf nokta): /, "")}
         </span>
         <span className="muted shrink-0 text-xs font-semibold tabular-nums">
           {plan.complete ? `${plan.items.length}/${plan.items.length}` : `${doneCount}/${plan.items.length} · ~${plan.minutes} dk`}

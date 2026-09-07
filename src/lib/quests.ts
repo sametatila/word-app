@@ -59,7 +59,7 @@ const QUESTS: QuestDef[] = [
   { id: "listen5", label: "5 kelimeyi duyarak bul", href: "/learn", target: 5, xp: 150 },
   { id: "daily", label: "Günün turunu oyna", href: "/learn", target: 1, xp: 200, discovery: true },
   { id: "skill1", label: "Bir beceri alıştırması bitir", href: "/immersion", target: 1, xp: 200, discovery: true },
-  { id: "lesson1", label: "Bir ders tamamla", href: "/lessons", target: 1, xp: 200, discovery: true },
+  { id: "lesson1", label: "Bir konuşma tamamla", href: "/lessons", target: 1, xp: 200, discovery: true },
 ];
 
 /** Üçünü birden bitirmenin ödülü — ayrı bir "görev" gibi talep edilir. */

@@ -248,7 +248,7 @@ export async function nextStep(userId: string, course: string, level: CefrLevel,
     if (open) return { skill, label: PROFICIENCY_LABELS[skill], reason, href: `/immersion/skill/${open.id}`, title: open.title, minutes: open.minutes };
   }
   const lesson = await nextLesson(userId, course, level);
-  if (lesson) return { skill: "speaking", label: "Ders", reason: "sıradaki ders", href: `/lessons/${lesson.lesson.id}`, title: lesson.lesson.title, minutes: lesson.lesson.minutes };
+  if (lesson) return { skill: "speaking", label: "Konuşma", reason: "sıradaki konuşma", href: `/lessons/${lesson.lesson.id}`, title: lesson.lesson.title, minutes: lesson.lesson.minutes };
   return null;
 }
 

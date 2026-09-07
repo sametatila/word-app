@@ -95,7 +95,7 @@ export async function buildPlan(
       const doneT = row ? row.lastAt.toISOString().slice(0, 10) >= today : false;
       items.push({
         id: "lesson",
-        title: next.due ? `Ders tekrarı: ${next.lesson.title}` : `Ders: ${next.lesson.title}`,
+        title: next.due ? `Konuşma tekrarı: ${next.lesson.title}` : `Konuşma: ${next.lesson.title}`,
         detail: next.lesson.titleTr,
         minutes: next.lesson.minutes,
         done: doneT,

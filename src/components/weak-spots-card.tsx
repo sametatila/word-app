@@ -97,7 +97,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
               <li key={r} className="flex items-center justify-between text-sm">
                 <span>{r}</span>
                 <Link href="/lessons" className="btn btn-ghost px-3 py-1 text-xs">
-                  Derse git
+                  Konuşmaya git
                 </Link>
               </li>
             ))}

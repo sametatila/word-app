@@ -302,7 +302,7 @@ export function LessonHub({
         <div>
           <div className="mb-1.5 flex items-center justify-between text-xs font-semibold">
             <span className="muted tabular-nums">
-              {doneCount} / {total} ders tamamlandı
+              {doneCount} / {total} konuşma tamamlandı
             </span>
           </div>
           <div className="h-2 w-full overflow-hidden rounded-full surface-2">
@@ -330,7 +330,7 @@ export function LessonHub({
 
       {!cards.length ? (
         <p className="muted rounded-2xl px-4 py-4 text-sm" style={{ background: "var(--surface-2)" }}>
-          Bu kurs için dersler hazırlanıyor.
+          Bu kurs için konuşmalar hazırlanıyor.
         </p>
       ) : null}
 
@@ -461,7 +461,7 @@ function ModuleExit({
               ? `Geçildi · %${score}`
               : ready
                 ? "Yedi bölüm, 25 dk — konuşma ve yazma dahil"
-                : `Önce dersler: ${done}/${size}`}
+                : `Önce konuşmalar: ${done}/${size}`}
           </span>
         </span>
         <span className="shrink-0 text-xs font-bold" style={{ color: tone }}>

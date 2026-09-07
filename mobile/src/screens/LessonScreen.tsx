@@ -720,7 +720,7 @@ function Summary({ lesson, correct, total, next, colors, insets, onBack, onNext 
       ) : null}
 
       <View style={{ alignSelf: "stretch", marginTop: spacing.xl, gap: spacing.sm }}>
-        {onNext && next ? <BigButton label={`Sonraki ders: ${next.title} →`} onPress={onNext} colors={colors} /> : null}
+        {onNext && next ? <BigButton label={tx("lesson.next_speaking", { title: next.title })} onPress={onNext} colors={colors} /> : null}
         <PressableScale onPress={onBack}>
           <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, alignItems: "center" }}>
             <Text variant="h3" color={colors.text}>{tx("lesson.back_to_path")}</Text>

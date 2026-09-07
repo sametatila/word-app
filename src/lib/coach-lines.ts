@@ -56,7 +56,7 @@ export const COACH_LINES: Record<CoachMoment, readonly string[]> = {
     "Geçtin! %{pct} ile {level} artık kâğıt üstünde de senin.",
     "İşte bu! %{pct}. Zor bölümler bile eşiğin üstünde kaldı.",
     "Tebrikler, {name}! Sınavdan %{pct} çıktı, hak edilmiş.",
-    "Geçtin — %{pct}. Şimdi sıradaki seviyenin dersleri seni bekliyor.",
+    "Geçtin — %{pct}. Şimdi sıradaki seviyenin konuşmaları seni bekliyor.",
   ],
   exam_fail: [
     "%{pct} — bu sefer olmadı, ama hangi bölümün eksik olduğunu artık biliyorsun.",
