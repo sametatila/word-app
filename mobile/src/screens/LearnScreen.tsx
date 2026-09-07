@@ -14,7 +14,7 @@ import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
 import { useUpdate } from "../lib/useUpdate";
 import { useMicrophone } from "../lib/useMicrophone";
-import { hasMockExams } from "../data/exams";
+import { supportsMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
 import { Mascot } from "../ui/Mascot";
 import { AppHeader } from "../ui/AppHeader";
@@ -67,10 +67,11 @@ export function LearnScreen() {
   const { me, loading: meLoading } = useMe();
   const update = useUpdate();   // iOS'ta hep null (APK şeridi yok, bkz. lib/useUpdate)
   const greeting = user?.name ? t("learn.greeting_named", { name: user.name.split(" ")[0] }) : t("learn.greeting");
-  // Sınav hazırlık yalnız sınavı olan kursta. İngilizce kursunda katalog boş
-  // (bkz. data/exams.ts) — kart açık kalsaydı kullanıcıyı boş bir ekrana
-  // götürür ve sınav vaadi diye o kursta karşılığı olmayan bir vaat verirdi.
-  const exams = hasMockExams(currentCourseId());
+  // Deneme Sınavları yalnız sınav kataloğu OLAN kursta. İngilizce kursunun
+  // karşılığı yok (bkz. data/exams.ts); orada kart açık kalsaydı o kursta hiç
+  // olmayan bir şeyin kapısı olurdu. Katalog var ama liste henüz boşsa kart
+  // yine çiziliyor: ekran o zaman "bu seviyede sınav yok" diyor.
+  const exams = supportsMockExams(currentCourseId());
   const level = me?.level ?? "A1";
   const mastered = me?.mastered ?? 0;
   const totalWords = me?.totalWords ?? 0;

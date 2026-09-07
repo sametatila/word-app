@@ -26,9 +26,10 @@ import { useTheme, spacing, radii } from "../theme";
  * ürettiği, Patika türevi sınavlardı. İkisi de kaldırıldı.
  *
  * Burası artık yalnız DENEME SINAVI listeliyor: elle yazılmış, kendi başına
- * duran kâğıtlar (`data/exams.ts`). Katalog boşken Öğren sekmesindeki kutucuk
- * hiç çizilmiyor, dolayısıyla bu ekrana boş hâliyle gelinmiyor; buradaki boş
- * durum yalnız "kurs için sınav var ama BU SEVİYEDE yok" hâline düşüyor.
+ * duran kâğıtlar (`data/exams.ts`). Öğren sekmesindeki kapı, liste boş olsa
+ * bile açık: kursun sınav kataloğu varsa kutucuk çiziliyor. Liste boşken bu
+ * ekran uydurma bir satır ya da "yakında" göstermiyor, olduğu gibi söylüyor —
+ * o seviyede henüz sınav yok.
  */
 export function MockExamsScreen() {
   const { colors } = useTheme();
