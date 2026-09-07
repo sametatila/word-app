@@ -1,0 +1,362 @@
+/**
+ * Deneme sınavı doğrulayıcısı — `npm run test:mock-exams`.
+ *
+ * Bir deneme sınavı kâğıdının bozulma biçimlerinin çoğu tip hatası vermez ve
+ * öğrenci sınava girene kadar görünmez: doğru şıkkın dizini kayar, eşleştirme
+ * bankasında iki madde aynı şıkkı ister, boşluklu metinde işaret kalır ama
+ * maddesi silinmiştir, bir bölümün madde sayısı öteki kâğıttan farklıdır ve
+ * iki deneme artık kıyaslanamaz.
+ *
+ * Ölçülen şey üç başlık altında toplanıyor:
+ *
+ *   BÜTÜNLÜK   kimlikler tekil mi, referanslar çözülüyor mu, madde numaraları
+ *              bölüm boyunca 1..N kesintisiz mi, süreler toplamı tutuyor mu.
+ *   KIYASLANABİLİRLİK  her seviyenin kâğıt PLANI sabit (bölüm, görev, madde
+ *              sayısı). İki A1 denemesi aynı yapıda değilse puanları aynı şeyi
+ *              söylemez; plan bu yüzden kod içinde ve ihlali hata.
+ *   MADDE KALİTESİ  şıklar tekrar ediyor mu, cevap anahtarı tek harfe yığılmış
+ *              mı, doğru/yanlış maddeleri dengeli mi, doğru şık sistematik
+ *              olarak en uzunu mu (klasik ipucu), açıklama yazılmış mı.
+ *
+ * Ayrıca MARKA TARAMASI: kâğıtlar gerçek sınavların yapısına bakılarak
+ * yazıldı, hiçbiri bir kurumun sınavı değil. Hiçbir alanda kurum ya da sınav
+ * markası geçmemeli; geçerse bu bir hata.
+ */
+import { MOCK_PAPERS } from "../src/lib/mock-exams";
+import {
+  MOCK_SKILL_ORDER,
+  partPoints,
+  type MockItem,
+  type MockLevel,
+  type MockPaper,
+  type MockPart,
+  type MockSkill,
+  type MockTask,
+} from "../src/lib/mock-exams/types";
+
+let errors = 0;
+let warnings = 0;
+const fail = (where: string, msg: string) => { errors++; console.error(`✗ ${where}: ${msg}`); };
+const warn = (where: string, msg: string) => { warnings++; console.warn(`! ${where}: ${msg}`); };
+
+/* ── seviye planı ──────────────────────────────────────────────────────────
+ * Aynı seviyedeki her kâğıt bu yapıda olmalı. Sayılar gerçek sınavların
+ * bölüm/görev dağılımına bakılarak belirlendi; değiştirilirse o seviyedeki
+ * TÜM kâğıtlar birlikte değişir, yoksa denemeler kıyaslanamaz hale gelir.
+ */
+type PartPlan = { skill: MockSkill; minutes: number; tasks: number[] };
+const PLAN: Record<MockLevel, PartPlan[]> = {
+  A1: [
+    { skill: "reading", minutes: 25, tasks: [5, 5, 5] },
+    { skill: "listening", minutes: 20, tasks: [6, 4, 5] },
+    { skill: "writing", minutes: 20, tasks: [5, 0] },
+    { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
+  ],
+  A2: [
+    { skill: "reading", minutes: 30, tasks: [5, 5, 5, 5] },
+    { skill: "listening", minutes: 30, tasks: [5, 5, 5, 5] },
+    { skill: "writing", minutes: 30, tasks: [0, 0] },
+    { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
+  ],
+  B1: [
+    { skill: "reading", minutes: 65, tasks: [6, 6, 7, 7, 4] },
+    { skill: "listening", minutes: 40, tasks: [10, 5, 7, 8] },
+    { skill: "writing", minutes: 60, tasks: [0, 0, 0] },
+    { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
+  ],
+  B2: [
+    { skill: "reading", minutes: 65, tasks: [9, 6, 6, 6, 3] },
+    { skill: "listening", minutes: 40, tasks: [10, 6, 6, 8] },
+    { skill: "writing", minutes: 75, tasks: [0, 0] },
+    { skill: "speaking", minutes: 15, tasks: [0, 0] },
+  ],
+  C1: [
+    { skill: "reading", minutes: 70, tasks: [10, 10, 5] },
+    { skill: "listening", minutes: 40, tasks: [10, 15] },
+    { skill: "writing", minutes: 80, tasks: [0, 10] },
+    { skill: "speaking", minutes: 15, tasks: [0, 0] },
+  ],
+};
+
+/** Seviyeye göre en uzun cümlenin kelime sınırı — aşarsa uyarı. */
+const MAX_SENTENCE: Record<MockLevel, number> = { A1: 16, A2: 22, B1: 30, B2: 42, C1: 58 };
+
+/**
+ * Seviyenin üstünde kalan yapı işaretleri. Tam bir dilbilgisi denetimi değil;
+ * kâğıda yanlışlıkla sızan üst seviye kalıbı yakalayan ucuz bir elek.
+ */
+const OVER_LEVEL: Partial<Record<MockLevel, RegExp>> = {
+  A1: /\b(würde[nst]?|wäre[nst]?|hätte[nst]?|obwohl|trotzdem|jedoch|dessen|deren|worden|sofern|geworden wäre)\b/i,
+  A2: /\b(dessen|deren|worden|sofern|insofern|nichtsdestotrotz|hätte[nst]? gehabt)\b/i,
+};
+
+/** Kâğıtlarda geçmemesi gereken kurum ve sınav adları. */
+const BRANDS = [
+  "goethe", "telc", "ösd", "oesd", "testdaf", "test daf", "dsh", "dtz", "öif", "oeif",
+  "start deutsch", "fit in deutsch", "modellsatz", "übungssatz", "uebungssatz",
+  "kandidatenblätter", "prüferblätter", "zertifikat b1", "zertifikat b2", "zertifikat a2",
+  "deutsch-test für zuwanderer", "g.a.s.t", "zfa", "onset",
+];
+const BRAND_RE = new RegExp(`(^|[^\\p{L}])(${BRANDS.map((b) => b.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})($|[^\\p{L}])`, "iu");
+
+/** Nesnedeki tüm dizeleri yolu ile birlikte dolaşır. */
+function* strings(node: unknown, path: string): Generator<[string, string]> {
+  if (typeof node === "string") { yield [path, node]; return; }
+  if (Array.isArray(node)) { for (const [i, v] of node.entries()) yield* strings(v, `${path}[${i}]`); return; }
+  if (node && typeof node === "object") {
+    for (const [k, v] of Object.entries(node as Record<string, unknown>)) yield* strings(v, path ? `${path}.${k}` : k);
+  }
+}
+
+function sentences(text: string): string[] {
+  return text.split(/(?<=[.!?])\s+|\n+/).map((s) => s.trim()).filter(Boolean);
+}
+
+function words(text: string): number {
+  return text.trim().split(/\s+/).filter(Boolean).length;
+}
+
+/* ── madde denetimi ─────────────────────────────────────────────────────── */
+
+function checkItem(where: string, item: MockItem, task: MockTask) {
+  if (!item.id.trim()) fail(where, "madde kimliği boş");
+  if (!item.explain || item.explain.trim().length < 20) fail(where, "açıklama yok ya da çok kısa (en az 20 karakter)");
+  if (item.kind !== "gap" && !item.text.trim()) fail(where, "soru kökü boş");
+  if (item.ref) {
+    const ids = (task.texts ?? []).map((t) => t.id);
+    if (!ids.includes(item.ref)) fail(where, `ref "${item.ref}" görevin metinlerinde yok (${ids.join(", ") || "hiç metin yok"})`);
+  }
+  if (item.kind === "mcq") {
+    if (item.options.length < 2) fail(where, `şık sayısı ${item.options.length} (en az 2)`);
+    if (item.answer < 0 || item.answer >= item.options.length) fail(where, `doğru şık dizini ${item.answer} sınır dışı`);
+    if (item.options.some((o) => !o.trim())) fail(where, "boş şık var");
+    const norm = item.options.map((o) => o.trim().toLowerCase().replace(/\s+/g, " "));
+    if (new Set(norm).size !== norm.length) fail(where, "şıklar tekrar ediyor");
+  }
+  if (item.kind === "match") {
+    const keys = (task.options ?? []).map((o) => o.key);
+    if (!keys.includes(item.answer)) fail(where, `cevap "${item.answer}" şık bankasında yok`);
+  }
+  if (item.kind === "gap") {
+    if (!item.accept.length) fail(where, "kabul edilen cevap listesi boş");
+    if (item.accept.some((a) => !a.trim())) fail(where, "kabul listesinde boş giriş var");
+    const norm = item.accept.map((a) => a.trim().toLowerCase());
+    if (new Set(norm).size !== norm.length) fail(where, "kabul listesinde tekrar var");
+  }
+}
+
+/* ── görev denetimi ─────────────────────────────────────────────────────── */
+
+function checkTask(where: string, task: MockTask, level: MockLevel) {
+  if (!task.prompt.trim() || !task.promptTr.trim()) fail(where, "görev yönergesi eksik (prompt / promptTr)");
+
+  const textIds = (task.texts ?? []).map((t) => t.id);
+  if (new Set(textIds).size !== textIds.length) fail(where, "metin kimlikleri tekrar ediyor");
+
+  // Kullanılmayan metin: kâğıtta duruyor ama hiçbir madde ona bakmıyor.
+  // Hiçbir maddede `ref` yoksa görev metinlerin TAMAMINA birden soruyor —
+  // "bunu hangi kişi söylüyor" biçimi böyledir ve orada bağlama beklenmez.
+  if ((task.texts?.length ?? 0) > 1) {
+    const used = new Set(task.items.map((i) => i.ref).filter(Boolean));
+    if (used.size) {
+      for (const t of task.texts ?? []) {
+        // Boşluk işareti taşıyan metin bir KAYNAK değil, cevap kâğıdıdır
+        // (C1'in not alma görevindeki not sayfası gibi): maddeler kaydı
+        // gösterir, bu sayfayı değil.
+        const sheet = t.kind === "text" && /\{\{\d+\}\}/.test(t.body);
+        if (!sheet && !used.has(t.id)) fail(where, `"${t.id}" metnine bağlı madde yok`);
+      }
+    }
+  }
+
+  if (task.format === "match") {
+    const opts = task.options ?? [];
+    if (!opts.length) fail(where, "eşleştirme görevinde şık bankası yok");
+    if (opts.length < task.items.length + 1) {
+      fail(where, `şık bankası ${opts.length}, madde ${task.items.length} — en az bir çeldirici şık olmalı`);
+    }
+    const keys = opts.map((o) => o.key);
+    if (new Set(keys).size !== keys.length) fail(where, "şık bankasında aynı harf iki kez var");
+    const answers = task.items.filter((i) => i.kind === "match").map((i) => i.answer as string);
+    if (new Set(answers).size !== answers.length) fail(where, "iki madde aynı şıkkı istiyor (her şık en fazla bir kez)");
+  } else if (task.options?.length) {
+    fail(where, "şık bankası yalnız eşleştirme görevinde olur");
+  }
+
+  // Boşluklu metin: işaretler ile maddeler birebir örtüşmeli. Biçimden
+  // bağımsız çalışıyor, çünkü B2'nin cümle yerleştirme görevi de boşluklu bir
+  // metin ama eşleştirme biçiminde.
+  {
+    const marks = new Set<number>();
+    for (const t of task.texts ?? []) {
+      if (t.kind !== "text") continue;
+      for (const m of t.body.matchAll(/\{\{(\d+)\}\}/g)) marks.add(Number(m[1]));
+    }
+    if (marks.size) {
+      const nos = new Set(task.items.map((i) => i.no));
+      for (const m of marks) if (!nos.has(m)) fail(where, `metinde {{${m}}} işareti var ama maddesi yok`);
+      for (const n of nos) if (!marks.has(n)) fail(where, `${n}. maddenin metinde {{${n}}} işareti yok`);
+    }
+  }
+
+  if (task.format === "writing" || task.format === "speaking") {
+    const r = task.rubric;
+    if (!r) { fail(where, "yazma/konuşma görevinde ölçüt (rubric) yok"); return; }
+    if (r.points.length < 2) fail(where, `içerik noktası ${r.points.length} (en az 2)`);
+    for (const p of r.points) if (!p.de.trim() || !p.tr.trim()) fail(where, "içerik noktasında eksik dil");
+    if (r.criteria.length < 3) fail(where, `değerlendirme ölçütü ${r.criteria.length} (en az 3)`);
+    if (!r.sample.trim()) fail(where, "örnek cevap yok");
+    if (r.minWords && words(r.sample) < r.minWords) {
+      fail(where, `örnek cevap ${words(r.sample)} kelime, istenen en az ${r.minWords}`);
+    }
+    if (task.items.length) fail(where, "yazma/konuşma görevinde nesnel madde olmaz");
+    return;
+  }
+  if (task.rubric) fail(where, "ölçüt yalnız yazma/konuşma görevinde olur");
+
+  if (!task.items.length) { fail(where, "görevde madde yok"); return; }
+
+  // Cevap anahtarı dağılımı — tek harfe yığılma ve arka arkaya tekrar.
+  const mcq = task.items.filter((i) => i.kind === "mcq");
+  if (mcq.length >= 4) {
+    const counts = new Map<number, number>();
+    for (const i of mcq) counts.set(i.answer, (counts.get(i.answer) ?? 0) + 1);
+    const worst = Math.max(...counts.values());
+    if (worst / mcq.length > 0.6) {
+      warn(where, `doğru şıkların %${Math.round((100 * worst) / mcq.length)}'i aynı konumda (${mcq.length} madde)`);
+    }
+    // Doğru şık sistematik olarak en uzunuysa öğrenci metni okumadan bulur.
+    const longest = mcq.filter((i) => {
+      const lens = i.options.map((o) => o.length);
+      return lens[i.answer] === Math.max(...lens) && new Set(lens).size > 1;
+    }).length;
+    if (longest / mcq.length > 0.7) warn(where, `maddelerin %${Math.round((100 * longest) / mcq.length)}'inde doğru şık en uzun şık — ipucu veriyor`);
+  }
+
+  const bools = task.items.filter((i) => i.kind === "bool");
+  if (bools.length >= 4) {
+    const yes = bools.filter((i) => i.answer).length;
+    if (yes === 0 || yes === bools.length) fail(where, "doğru/yanlış maddelerinin hepsi aynı cevaba sahip");
+    if (Math.abs(yes / bools.length - 0.5) > 0.3) {
+      warn(where, `doğru/yanlış dengesi ${yes}/${bools.length - yes} — 50/50'ye yakın olmalı`);
+    }
+  }
+
+  // Aynı cevap arka arkaya dörtten fazla gelmesin. Yazılı boşluklarda "aynı
+  // cevap" diye bir şey yok (her boşluğun kendi kabul listesi var), bu yüzden
+  // yalnız şıklı ve doğru/yanlış maddeleri sayılıyor.
+  const keyed = task.items.filter((i) => i.kind === "mcq" || i.kind === "bool" || i.kind === "match");
+  let run = 1;
+  for (let i = 1; i < keyed.length; i++) {
+    const a = keyed[i], b = keyed[i - 1];
+    const same = a.kind === b.kind && JSON.stringify((a as { answer: unknown }).answer) === JSON.stringify((b as { answer: unknown }).answer);
+    run = same ? run + 1 : 1;
+    if (run > 3) { warn(where, `${a.no}. maddede aynı cevap arka arkaya ${run} kez`); break; }
+  }
+
+  for (const item of task.items) checkItem(`${where} · madde ${item.no}`, item, task);
+
+  // Metin uzunluğu ve seviye elemesi.
+  for (const t of task.texts ?? []) {
+    const body = t.kind === "text" ? t.body : t.segments.map((s) => s.text).join(" ");
+    const long = sentences(body).find((s) => words(s) > MAX_SENTENCE[level]);
+    if (long) warn(`${where} · ${t.id}`, `cümle ${words(long)} kelime (${level} sınırı ${MAX_SENTENCE[level]}): "${long.slice(0, 70)}…"`);
+    const over = OVER_LEVEL[level]?.exec(body);
+    if (over) warn(`${where} · ${t.id}`, `${level} üstü yapı: "${over[0]}"`);
+    for (const g of t.gloss ?? []) if (!g.de.trim() || !g.tr.trim()) fail(`${where} · ${t.id}`, "sözlükçe maddesinde eksik dil");
+  }
+}
+
+/* ── bölüm ve kâğıt ─────────────────────────────────────────────────────── */
+
+function checkPart(where: string, part: MockPart, level: MockLevel, plan: PartPlan) {
+  if (part.minutes !== plan.minutes) fail(where, `süre ${part.minutes} dk, plan ${plan.minutes} dk`);
+  if (!part.instruction.trim() || !part.instructionTr.trim()) fail(where, "bölüm yönergesi eksik");
+  if (part.tasks.length !== plan.tasks.length) {
+    fail(where, `görev sayısı ${part.tasks.length}, plan ${plan.tasks.length}`);
+  }
+  part.tasks.forEach((task, ix) => {
+    const need = plan.tasks[ix];
+    if (need !== undefined && task.items.length !== need) {
+      fail(`${where} · Teil ${task.no}`, `madde sayısı ${task.items.length}, plan ${need}`);
+    }
+    if (task.no !== ix + 1) fail(`${where} · Teil ${task.no}`, `görev numarası ${task.no}, sırası ${ix + 1}`);
+    checkTask(`${where} · Teil ${task.no}`, task, level);
+  });
+
+  // Madde numaraları bölüm boyunca 1..N kesintisiz.
+  const nos = part.tasks.flatMap((t) => t.items.map((i) => i.no));
+  const expect = Array.from({ length: nos.length }, (_, i) => i + 1);
+  if (JSON.stringify(nos) !== JSON.stringify(expect)) {
+    fail(where, `madde numaraları 1..${nos.length} kesintisiz değil: ${nos.join(",")}`);
+  }
+}
+
+function checkPaper(paper: MockPaper) {
+  const w = paper.id;
+  if (!/^de-[a-c][12]-\d{2}$/.test(paper.id)) fail(w, "kimlik biçimi \"de-a1-01\" olmalı");
+  if (!paper.id.startsWith(`${paper.course}-${paper.level.toLowerCase()}-`)) fail(w, "kimlik seviye/kurs ile uyuşmuyor");
+  if (!paper.theme.trim() || !paper.themeTr.trim()) fail(w, "kâğıdın teması eksik");
+
+  const plan = PLAN[paper.level];
+  if (paper.parts.length !== plan.length) fail(w, `bölüm sayısı ${paper.parts.length}, plan ${plan.length}`);
+  const order = paper.parts.map((p) => p.skill);
+  if (JSON.stringify(order) !== JSON.stringify(MOCK_SKILL_ORDER)) fail(w, `bölüm sırası ${order.join(",")} (Lesen, Hören, Schreiben, Sprechen olmalı)`);
+
+  const total = paper.parts.reduce((a, p) => a + p.minutes, 0);
+  if (paper.minutes !== total) fail(w, `toplam süre ${paper.minutes} dk, bölümlerin toplamı ${total} dk`);
+
+  paper.parts.forEach((part, ix) => {
+    const pp = plan.find((p) => p.skill === part.skill) ?? plan[ix];
+    checkPart(`${w} · ${part.skill}`, part, paper.level, pp);
+  });
+
+  // Marka taraması — kâğıdın her dizesi.
+  for (const [path, s] of strings(paper, "")) {
+    const hit = BRAND_RE.exec(s);
+    if (hit) fail(`${w} · ${path}`, `marka/kurum adı geçiyor: "${hit[2]}"`);
+  }
+}
+
+/* ── çalıştır ───────────────────────────────────────────────────────────── */
+
+const ids = new Set<string>();
+const itemIds = new Set<string>();
+const bodies = new Map<string, string>();
+
+for (const paper of MOCK_PAPERS) {
+  if (ids.has(paper.id)) fail(paper.id, "kâğıt kimliği tekrar ediyor");
+  ids.add(paper.id);
+  checkPaper(paper);
+  for (const part of paper.parts) {
+    for (const task of part.tasks) {
+      for (const item of task.items) {
+        if (itemIds.has(item.id)) fail(paper.id, `madde kimliği tekrar ediyor: ${item.id}`);
+        itemIds.add(item.id);
+      }
+      for (const t of task.texts ?? []) {
+        const body = (t.kind === "text" ? t.body : t.segments.map((s) => s.text).join(" ")).trim();
+        const seen = bodies.get(body);
+        if (seen) warn(paper.id, `metin başka kâğıtta aynen var (${seen})`);
+        else bodies.set(body, `${paper.id}/${task.id}/${t.id}`);
+      }
+    }
+  }
+}
+
+// Seviye başına kâğıt sayısı ve numaraların tekilliği.
+for (const level of ["A1", "A2", "B1", "B2", "C1"] as MockLevel[]) {
+  const ps = MOCK_PAPERS.filter((p) => p.level === level);
+  const nos = ps.map((p) => p.no).sort((a, b) => a - b);
+  if (new Set(nos).size !== nos.length) fail(level, `deneme numarası tekrar ediyor: ${nos.join(",")}`);
+  if (nos.length && nos[0] !== 1) warn(level, `numaralar 1'den başlamıyor: ${nos.join(",")}`);
+}
+
+const rows = MOCK_PAPERS.map((p) => {
+  const pts = p.parts.map((x) => `${x.skill[0].toUpperCase()}${partPoints(x)}`).join(" ");
+  return `  ${p.id}  ${p.level.padEnd(3)} ${String(p.minutes).padStart(3)} dk  ${pts}  ${p.theme}`;
+});
+console.log(`Deneme sınavı: ${MOCK_PAPERS.length} kâğıt, ${itemIds.size} nesnel madde`);
+console.log(rows.join("\n"));
+console.log(errors ? `\n${errors} hata, ${warnings} uyarı` : `\n0 hata, ${warnings} uyarı`);
+process.exit(errors ? 1 : 0);
