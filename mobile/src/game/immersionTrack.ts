@@ -12,7 +12,7 @@ import { lessonsForLevel } from "../data/lessons";
 import { moduleTheme } from "../data/moduleThemes";
 import { t } from "../lib/i18n";
 import { currentCourseId } from "../lib/courses";
-import { listSkillMeta, type SkillMeta } from "../data/skills";
+import { listPathSkillMeta, type SkillMeta } from "../data/skills";
 import type { LearningPath, LearningPathItem, LearningPathUnit } from "../lib/useLearningPath";
 
 const UNIT_LESSONS = 4;
@@ -47,9 +47,9 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
   // Beceri havuzları — web builder gibi sırayla tüketilir (2/ünite/tür);
   // biterse slot boş (ref=null → "Yakında"). Erken üniteler dolu.
   const pools: Record<string, SkillMeta[]> = {
-    read: listSkillMeta(level, "reading"),
-    listen: listSkillMeta(level, "listening"),
-    write: listSkillMeta(level, "writing"),
+    read: listPathSkillMeta(level, "reading"),
+    listen: listPathSkillMeta(level, "listening"),
+    write: listPathSkillMeta(level, "writing"),
   };
   const cursors: Record<string, number> = { read: 0, listen: 0, write: 0 };
   const unitCount = Math.ceil(lessons.length / UNIT_LESSONS) || 1;

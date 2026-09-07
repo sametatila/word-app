@@ -10,12 +10,11 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { AppHeader } from "../ui/AppHeader";
 import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
-import { ReadIcon, ListenIcon, WriteIcon, MicIcon, WalkIcon, ChevronRightIcon, CheckIcon, PathIcon } from "../ui/icons";
+import { ReadIcon, ListenIcon, WriteIcon, MicIcon, ChevronRightIcon, CheckIcon } from "../ui/icons";
 import { useMe } from "../lib/useMe";
-import { useMicrophone } from "../lib/useMicrophone";
-import { listSkillMeta, type SkillMeta } from "../data/skills";
+import { listOwnSkillMeta, type SkillMeta } from "../data/skills";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, type Palette } from "../theme";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 
@@ -43,22 +42,6 @@ function ExerciseRow({ ex, tint, done, onPress, colors, last }: { ex: SkillMeta;
   );
 }
 
-function SpeakingRow({ title, subtitle, icon: Icon, tint, onPress, colors }: { title: string; subtitle: string; icon: (p: { color: string; size: number }) => React.ReactElement; tint: string; onPress: () => void; colors: Palette }) {
-  return (
-    <PressableScale onPress={onPress} style={{ marginBottom: spacing.md }}>
-      <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-        <View style={[{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
-          <Icon color="#fff" size={24} />
-        </View>
-        <View style={{ flex: 1 }}>
-          <Text variant="h3">{title}</Text>
-          <Text variant="caption" color={colors.textMuted}>{subtitle}</Text>
-        </View>
-        <ChevronRightIcon color={colors.textFaint} size={20} />
-      </Card>
-    </PressableScale>
-  );
-}
 
 /**
  * Beceriler sekmesi: dört becerinin merkezi. Okuma, dinleme ve yazma için seviyeye
@@ -67,7 +50,6 @@ function SpeakingRow({ title, subtitle, icon: Icon, tint, onPress, colors }: { t
  * yer tutucu, "yakında" ya da uydurma sayaç yok.
  */
 export function SkillsScreen() {
-  const mic = useMicrophone();
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { me, loading: meLoading } = useMe();
@@ -84,7 +66,7 @@ export function SkillsScreen() {
   const levelReady = !!level || (!meLoading && (!!me || prefsRead));
 
   const lists = useMemo(
-    () => SKILLS.map((s) => ({ ...s, items: listSkillMeta(activeLevel, s.key) })),
+    () => SKILLS.map((s) => ({ ...s, items: listOwnSkillMeta(activeLevel, s.key) })),
     [activeLevel],
   );
   const hasExercises = lists.some((l) => l.items.length > 0);
@@ -93,14 +75,10 @@ export function SkillsScreen() {
     <Screen>
       <AppHeader title={t("skills.skills")} subtitle={t("skills.aciklama")} />
 
-      {/* Konuşma bölümü mikrofonsuz cihazda hiç çizilmez: iki satır da mikrofon ister. */}
-      {mic ? (
-        <>
-          <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, letterSpacing: 0.5 }}>{t("skills.speaking").toUpperCase()}</Text>
-          <SpeakingRow title={t("skills.walk_mode")} subtitle={t("skills.yuruyus_alt")} icon={WalkIcon} tint={colors.accent} onPress={() => nav.navigate("Walk")} colors={colors} />
-          <SpeakingRow title={t("skills.lesson_dialogues")} subtitle={t("skills.ders_konusmasi_alt")} icon={PathIcon} tint={colors.primary} onPress={() => nav.navigate("Tabs")} colors={colors} />
-        </>
-      ) : null}
+      {/* KONUŞMA BÖLÜMÜ KALDIRILDI (2026-09-07). İki satır da başka bir yerin
+          kısayoluydu: yürüyüş modu Öğren sekmesinde zaten var, "ders
+          konuşmaları" ise doğrudan Patika'ya götürüyordu. Sekme artık yalnız
+          kendi egzersizlerini gösteriyor. */}
 
       {!levelReady ? (
         <>

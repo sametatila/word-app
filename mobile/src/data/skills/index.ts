@@ -54,11 +54,48 @@ export function getExercise(id: string, course: string = currentCourseId()): Ski
 }
 
 export type SkillMeta = { id: string; level: string; skill: string; title: string; genre: string; minutes: number };
-export function listSkillMeta(
+
+/**
+ * Havuz İKİYE AYRILDI ve iki taraf birbirinin egzersizini görmüyor.
+ *
+ * Ayrımı veri zaten taşıyordu: `unit` alanı dolu olan egzersiz bir Patika
+ * ünitesine aittir (Almanca havuzda 870 tane), boş olan yalnız Beceriler
+ * sekmesinindir (160 tane: 60 okuma, 60 dinleme, 40 yazma). Bu alan bugüne
+ * kadar mobilde hiç okunmuyordu: Beceriler havuzun TAMAMINI listeliyordu, yani
+ * Patika'daki her egzersiz orada bir kez daha görünüyordu.
+ *
+ * Patika tarafı sırayla tüketiyor (ünite başına 2). Bugün fark yaratmıyor —
+ * havuz zaten ünite sırasına dizili ve bağsızlar sonda — ama süzgeç yine de
+ * konuldu: bir seviyede ünite sayısı bağlı egzersizden fazla olursa üretici
+ * Beceriler'in içeriğine taşardı ve ayrım sessizce bozulurdu.
+ */
+function metaOf(e: SkillExercise): SkillMeta {
+  return { id: e.id, level: e.level, skill: e.skill, title: e.title, genre: e.genre, minutes: e.minutes };
+}
+
+function listMeta(
+  level: string,
+  skill: "reading" | "listening" | "writing" | "speaking",
+  course: string,
+  keep: (e: SkillExercise) => boolean,
+): SkillMeta[] {
+  return poolFor(course).filter((e) => e.level === level && e.skill === skill && keep(e)).map(metaOf);
+}
+
+/** Patika üretici havuzu — yalnız bir üniteye bağlı egzersizler. */
+export function listPathSkillMeta(
   level: string,
   skill: "reading" | "listening" | "writing" | "speaking",
   course: string = currentCourseId(),
 ): SkillMeta[] {
-  return poolFor(course).filter((e) => e.level === level && e.skill === skill)
-    .map((e) => ({ id: e.id, level: e.level, skill: e.skill, title: e.title, genre: e.genre, minutes: e.minutes }));
+  return listMeta(level, skill, course, (e) => e.unit != null);
+}
+
+/** Beceriler sekmesi — yalnız Patika'da yeri olmayan, sekmenin kendi egzersizleri. */
+export function listOwnSkillMeta(
+  level: string,
+  skill: "reading" | "listening" | "writing" | "speaking",
+  course: string = currentCourseId(),
+): SkillMeta[] {
+  return listMeta(level, skill, course, (e) => e.unit == null);
 }
