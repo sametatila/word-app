@@ -26,6 +26,7 @@ import { MOCK_PAPERS } from "../src/lib/mock-exams";
 import {
   MOCK_SKILL_ORDER,
   partPoints,
+  taskSeconds,
   type MockItem,
   type MockLevel,
   type MockPaper,
@@ -210,9 +211,44 @@ function checkTask(where: string, task: MockTask, level: MockLevel) {
       fail(where, `örnek cevap ${words(r.sample)} kelime, istenen en az ${r.minWords}`);
     }
     if (task.items.length) fail(where, "yazma/konuşma görevinde nesnel madde olmaz");
+
+    // Dijital oturumun konuşma fazları: önce hazırlık, sonra konuşma.
+    if (task.format === "speaking") {
+      if (!task.prepSeconds) fail(where, "konuşma görevinde hazırlık süresi (prepSeconds) yok");
+      const solo = task.goal === "production";
+      if (solo && !task.speakSeconds) fail(where, "tek kişilik konuşma görevinde konuşma süresi (speakSeconds) yok");
+      if (!solo && !task.exchange?.length) {
+        fail(where, "karşılıklı konuşma görevinde adım dizisi (exchange) yok");
+      }
+      for (const [ix, turn] of (task.exchange ?? []).entries()) {
+        const w = `${where} · adım ${ix + 1}`;
+        if (turn.who === "partner") {
+          if (!turn.de.trim() || !turn.tr.trim()) fail(w, "karşı tarafın repliğinde eksik dil");
+        } else {
+          if (!turn.hint.trim()) fail(w, "konuşma adımında yönlendirme (hint) yok");
+          if (!turn.expect.trim()) fail(w, "konuşma adımında beklenen işlev (expect) yok");
+          // 15 saniyenin altı cümle kurmaya yetmez, 120'nin üstü tek adım
+          // olmaktan çıkar — ikisi de görevin biçimini bozar.
+          if (turn.seconds < 15 || turn.seconds > 120) fail(w, `konuşma süresi ${turn.seconds} sn (15–120 arası olmalı)`);
+        }
+      }
+      const mine = (task.exchange ?? []).filter((x) => x.who === "you").length;
+      if (task.exchange?.length && mine < 2) fail(where, `karşılıklı görevde kendi adımın ${mine} (en az 2)`);
+      // Karşılıklı görev karşı tarafın repliğiyle başlamalı: konuşmayı açan
+      // sınavda hep sınav görevlisidir.
+      if (task.exchange?.length && task.exchange[0].who !== "partner") {
+        fail(where, "karşılıklı görev karşı tarafın repliğiyle başlamalı");
+      }
+    }
+    if (task.format === "writing" && (task.prepSeconds || task.speakSeconds || task.exchange)) {
+      fail(where, "hazırlık/konuşma alanları yalnız konuşma görevinde olur");
+    }
     return;
   }
   if (task.rubric) fail(where, "ölçüt yalnız yazma/konuşma görevinde olur");
+  if (task.prepSeconds || task.speakSeconds || task.exchange) {
+    fail(where, "hazırlık/konuşma alanları yalnız konuşma görevinde olur");
+  }
 
   if (!task.items.length) { fail(where, "görevde madde yok"); return; }
 
@@ -271,6 +307,14 @@ function checkTask(where: string, task: MockTask, level: MockLevel) {
 
 function checkPart(where: string, part: MockPart, level: MockLevel, plan: PartPlan) {
   if (part.minutes !== plan.minutes) fail(where, `süre ${part.minutes} dk, plan ${plan.minutes} dk`);
+
+  // Görev süreleri bölümün süresini tam doldurmalı: dijital oturumda saat
+  // görev başına işliyor ve toplam kâğıtta yazan süreyle çelişemez.
+  const secs = taskSeconds(part);
+  if (secs.length !== part.tasks.length) fail(where, "görev süresi dizisi görev sayısıyla uyuşmuyor");
+  const sum = secs.reduce((a, x) => a + x, 0);
+  if (sum !== part.minutes * 60) fail(where, `görev sürelerinin toplamı ${sum} sn, bölüm ${part.minutes * 60} sn`);
+  if (secs.some((x) => x < 60)) fail(where, "bir görevin süresi bir dakikadan az");
   if (!part.instruction.trim() || !part.instructionTr.trim()) fail(where, "bölüm yönergesi eksik");
   if (part.tasks.length !== plan.tasks.length) {
     fail(where, `görev sayısı ${part.tasks.length}, plan ${plan.tasks.length}`);

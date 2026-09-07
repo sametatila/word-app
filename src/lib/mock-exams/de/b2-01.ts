@@ -1398,6 +1398,8 @@ Deniz Aktas`,
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Wie informieren wir uns in zehn Jahren?\". Gliedern Sie ihn: Einleitung — heutige Lage — zwei mögliche Entwicklungen — Bewertung — Schluss. Beantworten Sie anschließend zwei Nachfragen.",
           promptTr:
             "\"On yıl sonra nasıl haber alacağız?\" konusunda yaklaşık dört dakikalık bir sunum yap. Şöyle böl: giriş — bugünkü durum — iki olası gelişme — değerlendirme — sonuç. Ardından iki soruyu cevapla.",
+          prepSeconds: 180,
+          speakSeconds: 240,
           items: [],
           rubric: {
             minutes: 6,
@@ -1428,6 +1430,17 @@ Deniz Aktas`,
             "Diskutieren Sie: \"Sollen Plattformen verpflichtet werden, die Herkunft von Bildern und Videos zu kennzeichnen?\" Vertreten Sie eine Position, gehen Sie auf Ihr Gegenüber ein und suchen Sie am Ende einen gemeinsamen Nenner.",
           promptTr:
             "Tartış: \"Platformlar görüntü ve videoların kaynağını işaretlemekle yükümlü kılınmalı mı?\" Bir tutum al, karşındakine karşılık ver ve sonunda ortak bir zemin ara.",
+          prepSeconds: 90,
+          exchange: [
+            { who: "partner", de: "Unsere Frage lautet: Sollen Plattformen verpflichtet werden, die Herkunft von Bildern und Videos zu kennzeichnen? Ich beginne: Ich halte eine solche Pflicht für überfällig. Wie sehen Sie das?", tr: "Sorumuz şu: Platformlar görüntü ve videoların kaynağını işaretlemekle yükümlü kılınmalı mı? Ben başlıyorum: Bence böyle bir yükümlülük çoktan gerekliydi. Sen ne düşünüyorsun?" },
+            { who: "you", hint: "Tutumunu açıkça belirt ve bir savla gerekçelendir.", expect: "bir tutum almak ve onu bir savla gerekçelendirmek", seconds: 50 },
+            { who: "partner", de: "Ihr Argument leuchtet mir ein, allerdings sehe ich ein praktisches Problem: Wenn wir auf technisch perfekte Lösungen warten, kommt die Regel nie zustande.", tr: "Savın bana mantıklı geldi, ama pratik bir sorun görüyorum: Teknik olarak kusursuz çözümleri beklersek kural hiç çıkmaz." },
+            { who: "you", hint: "Bu itirazı ele al — geçiştirme, karşılık ver.", expect: "karşı savı gerçekten ele almak ve kendi konumunu düzeltmek ya da savunmak", seconds: 50 },
+            { who: "partner", de: "Das ist ein fairer Punkt. Trotzdem bleibt die Frage der Verteilung: Große Anbieter können so etwas umsetzen, ein kleines Forum nicht.", tr: "Bu adil bir nokta. Yine de dağılım sorusu duruyor: Büyük sağlayıcılar bunu uygulayabilir, küçük bir forum uygulayamaz." },
+            { who: "you", hint: "Bir uzlaşma öner.", expect: "koşullu bir uzlaşma önermek (eşik, istisna, aşamalı geçiş)", seconds: 50 },
+            { who: "partner", de: "Damit könnte ich leben. Fassen wir zusammen, worauf wir uns einigen?", tr: "Buna razı olabilirim. Neyde anlaştığımızı özetleyelim mi?" },
+            { who: "you", hint: "Ortak zemini özetle.", expect: "varılan ortak sonucu açıkça özetlemek", seconds: 40 },
+          ],
           items: [],
           rubric: {
             minutes: 5,

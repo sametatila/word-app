@@ -1147,6 +1147,8 @@ Dr. Elena Sturm, Vorstand`,
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Was geht verloren, wenn eine Sprache verschwindet?\". Behandeln Sie fünf Inhaltspunkte: Einstieg — Beschreibung des Phänomens — Ursachen — Folgen auf verschiedenen Ebenen — eigene Bewertung mit Ausblick.",
           promptTr:
             "\"Bir dil yok olunca ne yiter?\" konusunda yaklaşık dört dakikalık bir sunum yap. Beş içerik noktasını işle: giriş — olgunun betimlenmesi — nedenler — farklı düzeylerdeki sonuçlar — kendi değerlendirmen ve öngörün.",
+          prepSeconds: 240,
+          speakSeconds: 240,
           items: [],
           rubric: {
             minutes: 6,
@@ -1177,6 +1179,17 @@ Dr. Elena Sturm, Vorstand`,
             "Eine Schule erhält Mittel für ein Sprachprojekt. Zur Wahl stehen: (a) Herkunftssprachenunterricht für die drei größten Sprachgruppen, (b) eine Fortbildung für alle Lehrkräfte zum Umgang mit Mehrsprachigkeit, (c) eine mehrsprachige Schulbibliothek. Diskutieren Sie Vor- und Nachteile und einigen Sie sich.",
           promptTr:
             "Bir okula dil projesi için bütçe veriliyor. Seçenekler: (a) en büyük üç dil grubu için köken dili dersi, (b) tüm öğretmenlere çok dillilikle çalışma eğitimi, (c) çok dilli bir okul kütüphanesi. Artı ve eksileri tartışın ve anlaşın.",
+          prepSeconds: 120,
+          exchange: [
+            { who: "partner", de: "Eine Schule erhält Mittel für genau ein Sprachprojekt. Zur Wahl stehen Herkunftssprachenunterricht für die drei größten Sprachgruppen, eine Fortbildung für alle Lehrkräfte und eine mehrsprachige Schulbibliothek. Wofür plädieren Sie?", tr: "Bir okula tam bir dil projesi için bütçe veriliyor. Seçenekler: en büyük üç dil grubu için köken dili dersi, tüm öğretmenlere eğitim ve çok dilli bir okul kütüphanesi. Sen hangisini savunursun?" },
+            { who: "you", hint: "Bir seçeneği seç ve ölçütünü adlandırarak gerekçelendir.", expect: "üç seçenekten birini seçmek ve gerekçeyi açık bir ölçüte bağlamak", seconds: 60 },
+            { who: "partner", de: "Das kann ich nachvollziehen. Mit Fortbildungen habe ich allerdings schlechte Erfahrungen gemacht: Nach zwei Wochen ist der Alltag zurück, und geblieben ist nichts.", tr: "Bunu anlıyorum. Ama eğitimlerle kötü deneyimlerim oldu: İki hafta sonra rutin geri geliyor ve geriye bir şey kalmıyor." },
+            { who: "you", hint: "İtirazı ele al; gerekirse konumunu düzelt.", expect: "bir itirazı ciddiye alıp karşılamak, gerekirse kendi konumunu düzeltmek", seconds: 60 },
+            { who: "partner", de: "Der Unterricht hinterlässt immerhin etwas Sichtbares. Nur erreicht er drei Sprachen — die übrigen Familien fragen zu Recht, warum sie leer ausgehen.", tr: "Ders en azından görünür bir şey bırakıyor. Ama üç dile ulaşıyor; geri kalan aileler haklı olarak neden dışarıda kaldıklarını soruyor." },
+            { who: "you", hint: "Kapsayıcılık ile kalıcılık arasındaki gerilimi ele al ve bir çözüm öner.", expect: "iki ölçüt arasındaki gerilimi adlandırmak ve bir çözüm önermek", seconds: 60 },
+            { who: "partner", de: "Das wäre ein gangbarer Weg. Formulieren wir das gemeinsame Ergebnis, samt einer Bedingung?", tr: "Bu yürüyebilir bir yol. Ortak sonucu bir koşulla birlikte formüle edelim mi?" },
+            { who: "you", hint: "Ortak kararı somut biçimde formüle et.", expect: "ortak kararı somut biçimde (oran, koşul, gözden geçirme) formüle etmek", seconds: 50 },
+          ],
           items: [],
           rubric: {
             minutes: 6,

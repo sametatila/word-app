@@ -191,6 +191,37 @@ export type MockRubric = {
   criteria: string[];
 };
 
+/**
+ * Karşılıklı konuşmanın tek adımı.
+ *
+ * Dijital sınav oturumlarında konuşma bölümü fazlara ayrılır ve fazlar
+ * kendiliğinden ilerler. Buradaki dizi aynı işi yapıyor: `partner` replikleri
+ * sesle okunur (TTS), `you` adımlarında mikrofon açılır ve söylenen cihazın
+ * tanıyıcısıyla yazıya çevrilir (STT). Yazıya çevrilen metin değerlendirmeye
+ * gider; SES SUNUCUYA GİTMEZ.
+ */
+export type MockTurn =
+  | {
+      who: "partner";
+      /** Karşı tarafın söylediği — Almanca, TTS bunu okur. */
+      de: string;
+      /** Türkçesi — ekranda altında durur, ses bittikten sonra okunabilir. */
+      tr: string;
+    }
+  | {
+      who: "you";
+      /** Ne yapman isteniyor — Türkçe yönlendirme, konuşmadan önce görünür. */
+      hint: string;
+      /**
+       * Beklenen İŞLEV — değerlendirmeye görev tanımı olarak gider
+       * ("bir öneri sun ve gerekçelendir"). Beklenen CÜMLE değildir:
+       * konuşmada tek doğru cümle yoktur.
+       */
+      expect: string;
+      /** Konuşma için verilen süre (saniye). */
+      seconds: number;
+    };
+
 export type MockTask = {
   /** Kalıcı kimlik: "de-a1-1-l1" gibi. */
   id: string;
@@ -198,6 +229,19 @@ export type MockTask = {
   no: number;
   format: MockFormat;
   goal: MockGoal;
+  /**
+   * Görevin kendi süresi (dakika). Dijital sınav oturumlarında süre bölüm
+   * değil GÖREV başına verilir ve süre dolunca bir sonraki göreve otomatik
+   * geçilir. Verilmezse bölümün süresi iş yüküne göre bölünür — bkz.
+   * `taskSeconds`.
+   */
+  minutes?: number;
+  /** Konuşma görevinde hazırlık süresi (saniye) — düşünme fazı. */
+  prepSeconds?: number;
+  /** Konuşma görevinde konuşma süresi (saniye) — tek kişilik görevlerde. */
+  speakSeconds?: number;
+  /** Karşılıklı konuşma adımları; yalnız `speaking` görevlerinde. */
+  exchange?: MockTurn[];
   /** Görev yönergesi — Almanca, kâğıdın kendi dili. */
   prompt: string;
   /** Yönergenin Türkçesi. */
@@ -260,4 +304,50 @@ export function taskPoints(task: MockTask): number {
 /** Bölümün toplam nesnel puanı. */
 export function partPoints(part: MockPart): number {
   return part.tasks.reduce((a, t) => a + taskPoints(t), 0);
+}
+
+const wordCount = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
+
+/**
+ * Bir görevin kabaca kaç dakikalık iş olduğu — süre dağıtımının ağırlığı.
+ *
+ * Üç kalemden toplanıyor: metni okumak (dakikada ~120 kelime, ikinci dilde
+ * gerçekçi bir hız), kaydı dinlemek (dakikada ~140 kelime, tekrar sayısıyla
+ * çarpılı) ve maddeleri cevaplamak (madde başına yarım dakika). Yazma
+ * görevinde beklenen kelime sayısı, konuşmada rubrikteki süre esas alınıyor.
+ *
+ * Kesin bir ölçüm değil, ORANTI kurmak için. Bölümün toplam süresi zaten
+ * kâğıtta yazılı; buradaki iş onu görevler arasında adilce bölmek.
+ */
+function workload(task: MockTask): number {
+  let w = 0;
+  for (const s of task.texts ?? []) {
+    if (s.kind === "text") w += wordCount(s.body) / 120;
+    else w += (s.segments.reduce((a, x) => a + wordCount(x.text), 0) / 140) * s.plays + 0.25;
+  }
+  for (const o of task.options ?? []) w += wordCount(`${o.label} ${o.body ?? ""}`) / 120;
+  w += task.items.length * 0.5;
+  if (task.format === "writing") w += (task.rubric?.minWords ?? 40) / 8;
+  if (task.format === "speaking") w += task.rubric?.minutes ?? 3;
+  return Math.max(w, 0.5);
+}
+
+/**
+ * Bölümün görevlerine düşen süre (saniye), sırasıyla.
+ *
+ * Kâğıtta açık `minutes` varsa o kullanılır. Yoksa bölümün süresi iş yüküne
+ * göre bölünür ve yuvarlama farkı son göreve yazılır — toplam her zaman
+ * bölümün süresine eşit çıkar, yoksa oynatıcının saati kâğıtla çelişirdi.
+ */
+export function taskSeconds(part: MockPart): number[] {
+  const total = part.minutes * 60;
+  const explicit = part.tasks.map((t) => (t.minutes ? t.minutes * 60 : null));
+  if (explicit.every((x) => x !== null)) return explicit as number[];
+
+  const weights = part.tasks.map(workload);
+  const sum = weights.reduce((a, x) => a + x, 0) || 1;
+  const out = weights.map((w) => Math.max(60, Math.round((total * w) / sum)));
+  const drift = total - out.reduce((a, x) => a + x, 0);
+  out[out.length - 1] += drift;
+  return out;
 }

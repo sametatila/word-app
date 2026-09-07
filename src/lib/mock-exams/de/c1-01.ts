@@ -1155,6 +1155,8 @@ Halim Yücel`,
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Verfügbarkeit als neue Währung\". Behandeln Sie fünf Inhaltspunkte: Einstieg — Beschreibung der heutigen Lage — Ursachen — Folgen für verschiedene Gruppen — eigene Bewertung mit Ausblick.",
           promptTr:
             "\"Yeni bir para birimi olarak erişilebilirlik\" konusunda yaklaşık dört dakikalık bir sunum yap. Beş içerik noktasını işle: giriş — bugünkü durumun betimlenmesi — nedenler — farklı gruplar için sonuçlar — kendi değerlendirmen ve öngörün.",
+          prepSeconds: 240,
+          speakSeconds: 240,
           items: [],
           rubric: {
             minutes: 6,
@@ -1185,6 +1187,17 @@ Halim Yücel`,
             "Ihre Abteilung erhält Mittel für eine Maßnahme. Zur Wahl stehen: (a) Dienstpläne drei Wochen im Voraus, (b) ein Budget für Weiterbildung, (c) zwei zusätzliche freie Tage im Jahr. Diskutieren Sie Vor- und Nachteile und einigen Sie sich auf eine Lösung.",
           promptTr:
             "Bölümünüze bir uygulama için bütçe ayrıldı. Seçenekler: (a) üç hafta önceden hazırlanan vardiya planları, (b) eğitim bütçesi, (c) yılda iki ek izin günü. Artı ve eksileri tartışın ve bir çözümde anlaşın.",
+          prepSeconds: 120,
+          exchange: [
+            { who: "partner", de: "Unsere Abteilung erhält Mittel für genau eine Maßnahme. Zur Wahl stehen Dienstpläne drei Wochen im Voraus, ein Weiterbildungsbudget und zwei zusätzliche freie Tage. Wofür würden Sie plädieren?", tr: "Bölümümüze tam bir uygulama için bütçe ayrıldı. Seçenekler: üç hafta önceden vardiya planı, eğitim bütçesi ve yılda iki ek izin günü. Sen hangisini savunursun?" },
+            { who: "you", hint: "Bir seçeneği seç ve ölçütünü adlandırarak gerekçelendir.", expect: "üç seçenekten birini seçmek ve gerekçeyi açık bir ölçüte bağlamak (kapsayıcılık, dayanıklılık, maliyet)", seconds: 60 },
+            { who: "partner", de: "Das leuchtet mir ein, allerdings sehe ich einen Haken: Feste Pläne binden uns bei Auftragsspitzen, und die haben wir dreimal im Jahr verlässlich.", tr: "Bu bana mantıklı geldi, ama bir pürüz görüyorum: Sabit planlar sipariş yoğunluğunda elimizi bağlıyor, o da yılda üç kez düzenli oluyor." },
+            { who: "you", hint: "İtirazı ele al; gerekirse konumunu düzelt.", expect: "bir itirazı ciddiye alıp karşılamak, gerekirse kendi konumunu düzeltmek", seconds: 60 },
+            { who: "partner", de: "Möglich, nur fürchte ich, dass aus der Ausnahme schnell die Regel wird. Die freien Tage hätten diesen Nachteil nicht — dafür lösen sie das eigentliche Problem nicht.", tr: "Olabilir, ama istisnanın çabucak kurala dönüşmesinden korkuyorum. İzin günlerinin bu sakıncası olmaz, ama asıl sorunu da çözmez." },
+            { who: "you", hint: "İki seçeneği karşılaştır ve bir orta yol öner.", expect: "iki seçeneği ölçütler üzerinden karşılaştırmak ve koşullu bir orta yol önermek", seconds: 60 },
+            { who: "partner", de: "Damit kann ich mitgehen, unter einer Bedingung. Formulieren wir das gemeinsame Ergebnis?", tr: "Buna varım, tek bir koşulla. Ortak sonucu formüle edelim mi?" },
+            { who: "you", hint: "Ortak kararı somut biçimde formüle et.", expect: "ortak kararı somut biçimde (süre, sayı, gözden geçirme tarihi) formüle etmek", seconds: 50 },
+          ],
           items: [],
           rubric: {
             minutes: 6,

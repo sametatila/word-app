@@ -1298,6 +1298,17 @@ Tarik Öz`,
             "Planen Sie gemeinsam. Ihre Abteilung verabschiedet eine Kollegin, die in Rente geht. Sprechen Sie über: Wo feiern? — Wann? — Was schenken? — Wer spricht?",
           promptTr:
             "Birlikte plan yapın. Bölümünüz emekli olan bir çalışanı uğurluyor. Şunları konuşun: Nerede kutlanacak? — Ne zaman? — Ne hediye edilecek? — Kim konuşacak?",
+          prepSeconds: 60,
+          exchange: [
+            { who: "partner", de: "Unsere Abteilung verabschiedet eine Kollegin, die in Rente geht. Wir sollen die Feier zusammen planen. Wo würden Sie feiern?", tr: "Bölümümüz emekli olan bir çalışanı uğurluyor. Kutlamayı birlikte planlayacağız. Sence nerede yapalım?" },
+            { who: "you", hint: "Bir yer öner ve gerekçelendir.", expect: "bir öneri sunmak ve gerekçelendirmek", seconds: 40 },
+            { who: "partner", de: "Im Innenhof ist es Ende Oktober vielleicht zu kalt. Wie wäre die Kantine nach Feierabend? Und an welchem Tag?", tr: "Avlu ekim sonunda belki fazla soğuk olur. Mesai sonrası kantin nasıl olur? Peki hangi gün?" },
+            { who: "you", hint: "Karşı öneriye karşılık ver ve bir gün belirle.", expect: "bir karşı öneriyi kabul ya da reddetmek ve gün önermek", seconds: 40 },
+            { who: "partner", de: "Gut, dann Donnerstag. Beim Geschenk bin ich unsicher: Sammeln wir Geld oder schenkt jeder etwas Kleines?", tr: "Peki, perşembe olsun. Hediyede kararsızım: Para mı toplayalım, herkes küçük bir şey mi alsın?" },
+            { who: "you", hint: "İki seçenekten birini seç ve nedenini söyle.", expect: "iki seçenek arasında gerekçeli seçim yapmak", seconds: 40 },
+            { who: "partner", de: "Einverstanden. Bleibt die Rede: Wer soll sprechen, und wie lange?", tr: "Anlaştık. Konuşma kaldı: Kim konuşsun ve ne kadar sürsün?" },
+            { who: "you", hint: "Kimin konuşacağını öner ve kararı özetle.", expect: "görev dağıtmak ve ortak kararı özetlemek", seconds: 40 },
+          ],
           items: [],
           rubric: {
             minutes: 4,
@@ -1326,6 +1337,8 @@ Tarik Öz`,
             "Halten Sie eine kurze Präsentation zum Thema \"Weiterbildung neben dem Beruf\". Sprechen Sie zu diesen fünf Punkten: Einstieg ins Thema — die Lage in Ihrem Heimatland — die Lage in Deutschland — Vor- und Nachteile — Ihre eigene Meinung.",
           promptTr:
             "\"Çalışırken eğitim\" konusunda kısa bir sunum yap. Şu beş noktaya değin: konuya giriş — kendi ülkendeki durum — Almanya'daki durum — artı ve eksiler — kendi görüşün.",
+          prepSeconds: 90,
+          speakSeconds: 180,
           items: [],
           rubric: {
             minutes: 5,
@@ -1356,6 +1369,15 @@ Tarik Öz`,
             "Reagieren Sie auf die Präsentation Ihres Partners: Geben Sie eine kurze Rückmeldung und stellen Sie eine Frage zum Inhalt. Antworten Sie danach auf die Frage Ihres Partners.",
           promptTr:
             "Karşındakinin sunumuna karşılık ver: kısa bir geri bildirim yap ve içerikle ilgili bir soru sor. Ardından sana sorulan soruyu cevapla.",
+          prepSeconds: 45,
+          exchange: [
+            { who: "partner", de: "Danke für Ihre Präsentation. Ich habe zuerst eine Rückmeldung für Sie und danach eine Frage. Mir hat der Vergleich zwischen den beiden Ländern gut gefallen. Was war für Sie am schwierigsten?", tr: "Sunumun için teşekkürler. Önce bir geri bildirimim, sonra bir sorum var. İki ülke arasındaki karşılaştırma hoşuma gitti. Sence en zor kısmı neydi?" },
+            { who: "you", hint: "Soruyu cevapla.", expect: "kendi sunumu üzerine düşünüp somut bir güçlüğü adlandırmak", seconds: 40 },
+            { who: "partner", de: "Das kann ich gut verstehen. Jetzt sind Sie dran: Geben Sie mir bitte eine Rückmeldung zu meiner Präsentation und stellen Sie mir eine Frage dazu.", tr: "Bunu çok iyi anlıyorum. Şimdi sıra sende: Benim sunumuma bir geri bildirim ver ve içerikle ilgili bir soru sor." },
+            { who: "you", hint: "Somut bir geri bildirim ver ve içerikle ilgili bir soru sor.", expect: "somut bir geri bildirim vermek ve içeriğe ilişkin bir soru sormak", seconds: 50 },
+            { who: "partner", de: "Danke, das ist ein guter Punkt. In meinem Heimatland zahlen die Betriebe die Kurse nur selten; die meisten machen das am Wochenende auf eigene Kosten.", tr: "Teşekkürler, yerinde bir nokta. Benim ülkemde kursları işyeri nadiren karşılıyor; çoğu kişi hafta sonu kendi cebinden yapıyor." },
+            { who: "you", hint: "Cevaba kısaca karşılık ver ve konuşmayı kapat.", expect: "bir cevabı alımlamak ve konuşmayı doğal biçimde kapatmak", seconds: 35 },
+          ],
           items: [],
           rubric: {
             minutes: 3,

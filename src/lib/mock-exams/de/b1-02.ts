@@ -1321,6 +1321,17 @@ Elena Vogt`,
             "Planen Sie gemeinsam. In Ihrem Haus soll ein Hoffest stattfinden. Sprechen Sie über: Wann? — Wer wird eingeladen? — Was gibt es zu essen? — Wer kümmert sich worum?",
           promptTr:
             "Birlikte plan yapın. Binanızda bir avlu şenliği düzenlenecek. Şunları konuşun: Ne zaman? — Kimler davet edilecek? — Ne yenecek? — Kim neyle ilgilenecek?",
+          prepSeconds: 60,
+          exchange: [
+            { who: "partner", de: "In unserem Haus soll ein Hoffest stattfinden und wir planen es zusammen. Wann wäre Ihrer Meinung nach ein guter Termin?", tr: "Binamızda bir avlu şenliği yapılacak, birlikte planlayacağız. Sence uygun bir tarih ne olur?" },
+            { who: "you", hint: "Bir tarih öner ve gerekçelendir.", expect: "bir tarih önermek ve gerekçelendirmek", seconds: 40 },
+            { who: "partner", de: "Samstag ist gut, aber nicht der erste im Monat, da ist Markt. Nehmen wir den zweiten? Und wen laden wir ein?", tr: "Cumartesi iyi ama ayın ilki olmasın, o gün pazar var. İkincisini alalım mı? Peki kimleri davet edelim?" },
+            { who: "you", hint: "Karşı öneriye karşılık ver ve kimlerin çağrılacağını söyle.", expect: "bir düzeltmeyi kabul etmek ve davet listesini önermek", seconds: 40 },
+            { who: "partner", de: "Gute Idee. Beim Essen frage ich mich, ob wir gemeinsam einkaufen oder ob jeder etwas mitbringt.", tr: "İyi fikir. Yemekte kararsızım: Birlikte mi alışveriş yapalım, yoksa herkes bir şey mi getirsin?" },
+            { who: "you", hint: "İki seçenekten birini seç ve nedenini söyle.", expect: "iki seçenek arasında gerekçeli seçim yapmak", seconds: 40 },
+            { who: "partner", de: "Damit bin ich einverstanden. Wer kümmert sich um die Tische und wer spricht mit der Verwaltung?", tr: "Buna varım. Masalarla kim ilgilenecek, yönetimle kim konuşacak?" },
+            { who: "you", hint: "İş bölümünü yap ve kararı özetle.", expect: "görev dağıtmak ve ortak kararı özetlemek", seconds: 40 },
+          ],
           items: [],
           rubric: {
             minutes: 4,
@@ -1348,6 +1359,8 @@ Elena Vogt`,
             "Halten Sie eine kurze Präsentation zum Thema \"Müll trennen im Alltag\". Sprechen Sie zu diesen fünf Punkten: Einstieg ins Thema — die Lage in Ihrem Heimatland — die Lage in Deutschland — Vor- und Nachteile — Ihre eigene Meinung.",
           promptTr:
             "\"Günlük hayatta çöp ayrıştırma\" konusunda kısa bir sunum yap. Şu beş noktaya değin: konuya giriş — kendi ülkendeki durum — Almanya'daki durum — artı ve eksiler — kendi görüşün.",
+          prepSeconds: 90,
+          speakSeconds: 180,
           items: [],
           rubric: {
             minutes: 5,
@@ -1377,6 +1390,15 @@ Elena Vogt`,
             "Reagieren Sie auf die Präsentation Ihres Partners: Geben Sie eine kurze Rückmeldung und stellen Sie eine Frage zum Inhalt. Antworten Sie danach auf die Frage Ihres Partners.",
           promptTr:
             "Karşındakinin sunumuna karşılık ver: kısa bir geri bildirim yap ve içerikle ilgili bir soru sor. Ardından sana sorulan soruyu cevapla.",
+          prepSeconds: 45,
+          exchange: [
+            { who: "partner", de: "Danke für Ihre Präsentation. Besonders gut fand ich Ihr eigenes Beispiel. Eine Frage habe ich: Hat sich Ihre Meinung zum Thema mit der Zeit verändert?", tr: "Sunumun için teşekkürler. Özellikle kendi örneğin çok iyiydi. Bir sorum var: Bu konudaki görüşün zamanla değişti mi?" },
+            { who: "you", hint: "Soruyu cevapla.", expect: "kendi görüşündeki bir değişimi anlatmak ve gerekçelendirmek", seconds: 40 },
+            { who: "partner", de: "Interessant. Jetzt sind Sie dran: Geben Sie mir bitte eine Rückmeldung zu meiner Präsentation und stellen Sie eine Frage zum Inhalt.", tr: "İlginç. Şimdi sıra sende: Benim sunumuma geri bildirim ver ve içerikle ilgili bir soru sor." },
+            { who: "you", hint: "Somut bir geri bildirim ver ve içerikle ilgili bir soru sor.", expect: "somut bir geri bildirim vermek ve içeriğe ilişkin bir soru sormak", seconds: 50 },
+            { who: "partner", de: "Danke für die Frage. Bei uns wird der Müll zwar getrennt, aber die Behälter stehen so weit weg, dass viele es doch nicht machen.", tr: "Soru için teşekkürler. Bizde çöp ayrıştırılıyor ama konteynerler o kadar uzakta ki çoğu kişi yine de yapmıyor." },
+            { who: "you", hint: "Cevaba kısaca karşılık ver ve konuşmayı kapat.", expect: "bir cevabı alımlamak ve konuşmayı doğal biçimde kapatmak", seconds: 35 },
+          ],
           items: [],
           rubric: {
             minutes: 3,

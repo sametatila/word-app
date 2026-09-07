@@ -1385,6 +1385,8 @@ Lea Brunner`,
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Wem glauben wir bei Gesundheitsfragen?\". Gliedern Sie ihn: Einleitung — Lage heute — zwei Ursachen — Bewertung — Schluss. Beantworten Sie anschließend zwei Nachfragen.",
           promptTr:
             "\"Sağlık konularında kime inanıyoruz?\" başlığında yaklaşık dört dakikalık bir sunum yap. Şöyle böl: giriş — bugünkü durum — iki neden — değerlendirme — sonuç. Ardından iki soruyu cevapla.",
+          prepSeconds: 180,
+          speakSeconds: 240,
           items: [],
           rubric: {
             minutes: 6,
@@ -1415,6 +1417,17 @@ Lea Brunner`,
             "Diskutieren Sie: \"Sollen Krankenkassen Fitnessdaten belohnen?\" Vertreten Sie eine Position, gehen Sie auf Ihr Gegenüber ein und suchen Sie am Ende einen gemeinsamen Nenner.",
           promptTr:
             "Tartış: \"Sağlık sigortaları hareket verilerini ödüllendirmeli mi?\" Bir tutum al, karşındakine karşılık ver ve sonunda ortak bir zemin ara.",
+          prepSeconds: 90,
+          exchange: [
+            { who: "partner", de: "Unsere Frage lautet: Sollen Krankenkassen Fitnessdaten belohnen? Ich fange an: Ich bin dafür, weil ein kleiner Anreiz gerade die Menschen erreicht, die von allein nicht anfangen. Wie sehen Sie das?", tr: "Sorumuz şu: Sağlık sigortaları hareket verilerini ödüllendirmeli mi? Ben başlıyorum: Yanayım, çünkü küçük bir teşvik tam da kendiliğinden başlamayanlara ulaşıyor. Sen ne düşünüyorsun?" },
+            { who: "you", hint: "Tutumunu açıkça belirt ve bir savla gerekçelendir.", expect: "bir tutum almak ve onu bir savla gerekçelendirmek", seconds: 50 },
+            { who: "partner", de: "Den Einwand nehme ich ernst. Aber sehen Sie nicht die Gefahr, dass am Ende belohnt wird, wer ohnehin Zeit und Gesundheit hat?", tr: "İtirazını ciddiye alıyorum. Ama sonunda zaten vakti ve sağlığı olanın ödüllendirilmesi tehlikesini görmüyor musun?" },
+            { who: "you", hint: "İtirazı ele al ve konumunu netleştir.", expect: "karşı savı ele almak ve kendi konumunu ayrıntılandırmak", seconds: 50 },
+            { who: "partner", de: "Verstanden. Wie ließe sich das Ihrer Meinung nach entschärfen, ohne den Anreiz ganz aufzugeben?", tr: "Anlaşıldı. Sence teşviki tümüyle bırakmadan bu nasıl yumuşatılabilir?" },
+            { who: "you", hint: "Somut bir çözüm öner.", expect: "somut ve uygulanabilir bir çözüm önermek", seconds: 50 },
+            { who: "partner", de: "Das klingt tragfähig. Halten wir am Ende fest, worauf wir uns geeinigt haben?", tr: "Bu sağlam görünüyor. Sonunda neyde anlaştığımızı belirleyelim mi?" },
+            { who: "you", hint: "Ortak zemini özetle.", expect: "varılan ortak sonucu açıkça özetlemek", seconds: 40 },
+          ],
           items: [],
           rubric: {
             minutes: 5,
