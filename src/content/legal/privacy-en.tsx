@@ -63,7 +63,7 @@ export function PrivacyEnBody() {
           <tbody>
             <tr><td>E-mail address, name, password hash</td><td>Registration form or your Google account</td><td>Account creation, sign-in, password reset, verification e-mail</td><td>Conclusion and performance of a contract (Art. 5/2-c / Art. 6(1)(b))</td><td>For the life of the account</td></tr>
             <tr><td>Display name, avatar choice, level, course, daily goal, voice preference</td><td>You</td><td>Personalisation; the display name is visible to other users on the weekly leaderboard</td><td>Performance of a contract</td><td>For the life of the account</td></tr>
-            <tr><td>Learning data: word state, review results, streak, XP, achievements, lesson and exam results</td><td>While you use the app</td><td>Spaced repetition schedule, progress, leaderboard</td><td>Performance of a contract</td><td>For the life of the account</td></tr>
+            <tr><td>Learning data: word state, review results, streak, XP, achievements, speaking practice and exam results</td><td>While you use the app</td><td>Spaced repetition schedule, progress, leaderboard</td><td>Performance of a contract</td><td>For the life of the account</td></tr>
             <tr><td>Texts you write and say (writing tasks, speaking practice, exam answers)</td><td>You</td><td>AI assessment and feedback</td><td>Performance of a contract</td><td>Assessments for the life of the account; speaking practice logs for 30 days</td></tr>
             <tr><td>Microphone audio</td><td>The microphone in walk mode</td><td>Transcribing the word you said</td><td>Explicit consent (Art. 5/1 / Art. 6(1)(a)); in-app consent screen, revocable</td><td>Not kept; deleted as soon as recognition finishes, only the recognised text is retained</td></tr>
             <tr><td>Usage events: which screen opened, round started/finished, screen width and platform</td><td>The app</td><td>Improving the product (first-party analytics)</td><td>Legitimate interest (Art. 5/2-f / Art. 6(1)(f)); can be switched off in settings</td><td>For the life of the account</td></tr>
@@ -125,7 +125,7 @@ export function PrivacyEnBody() {
       <h2>5. Texts processed by AI</h2>
       <p>
         Your speaking practice (roleplay), writing tasks and exam answers are sent to language model providers in order to generate
-        feedback. What is sent is only the text you wrote or said and the scenario of the lesson; your name and e-mail are not sent. The
+        feedback. What is sent is only the text you wrote or said and the scenario of the speaking practice; your name and e-mail are not sent. The
         providers operate under API terms and data processing agreements in which they undertake not to use the data for model training. The
         app states clearly that AI characters are not real people (transparency under Art. 50 of the EU AI Act). Answers can contain
         mistakes; you can send them to us with the &quot;Report&quot; button under each answer, and reports are reviewed by a human. Lernomi
@@ -156,7 +156,7 @@ export function PrivacyEnBody() {
       <p>
         On the web only the strictly necessary session cookie is used (to remember that you are signed in, for 30 days); for that reason
         there is no cookie consent banner. We use no marketing or tracking cookies. Browser and app local storage holds things like theme,
-        sound and notification preferences, avatar choice and an unfinished lesson; these never leave your device.
+        sound and notification preferences, avatar choice and an unfinished speaking practice; these never leave your device.
       </p>
 
       <h2>8. Product analytics and switching them off</h2>

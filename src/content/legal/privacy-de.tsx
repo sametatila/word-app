@@ -65,7 +65,7 @@ export function PrivacyDeBody() {
           <tbody>
             <tr><td>E-Mail-Adresse, Name, Passwort-Hash</td><td>Registrierungsformular oder dein Google-Konto</td><td>Kontoerstellung, Anmeldung, Passwort-Reset, Bestätigungs-E-Mail</td><td>Abschluss und Erfüllung eines Vertrags (Art. 5/2-c / Art. 6 Abs. 1 lit. b)</td><td>Für die Dauer des Kontos</td></tr>
             <tr><td>Anzeigename, Avatar-Auswahl, Niveau, Kurs, Tagesziel, Stimmpräferenz</td><td>Du</td><td>Personalisierung; der Anzeigename ist für andere Nutzer in der Wochen-Rangliste sichtbar</td><td>Erfüllung eines Vertrags</td><td>Für die Dauer des Kontos</td></tr>
-            <tr><td>Lerndaten: Wortstatus, Wiederholungsergebnisse, Serie, XP, Erfolge, Lektions- und Prüfungsergebnisse</td><td>Während der Nutzung der App</td><td>Wiederholungsplan, Fortschritt, Rangliste</td><td>Erfüllung eines Vertrags</td><td>Für die Dauer des Kontos</td></tr>
+            <tr><td>Lerndaten: Wortstatus, Wiederholungsergebnisse, Serie, XP, Erfolge, Ergebnisse von Sprechübungen und Prüfungen</td><td>Während der Nutzung der App</td><td>Wiederholungsplan, Fortschritt, Rangliste</td><td>Erfüllung eines Vertrags</td><td>Für die Dauer des Kontos</td></tr>
             <tr><td>Texte, die du schreibst und sprichst (Schreibaufgaben, Sprechpraxis, Prüfungsantworten)</td><td>Du</td><td>Bewertung und Rückmeldung durch KI</td><td>Erfüllung eines Vertrags</td><td>Bewertungen für die Dauer des Kontos; Protokolle der Sprechpraxis 30 Tage</td></tr>
             <tr><td>Mikrofon-Audio</td><td>Mikrofon im Gehmodus</td><td>Verschriftlichung des gesprochenen Wortes</td><td>Ausdrückliche Einwilligung (Art. 5/1 / Art. 6 Abs. 1 lit. a); Einwilligungsbildschirm in der App, widerruflich</td><td>Wird nicht gespeichert; nach Abschluss der Erkennung gelöscht, nur der erkannte Text bleibt</td></tr>
             <tr><td>Nutzungsereignisse: welcher Bildschirm geöffnet wurde, Runde begonnen/beendet, Bildschirmbreite und Plattform</td><td>Die App</td><td>Verbesserung des Produkts (eigene Analyse, keine Dritten)</td><td>Berechtigtes Interesse (Art. 5/2-f / Art. 6 Abs. 1 lit. f); in den Einstellungen abschaltbar</td><td>Für die Dauer des Kontos</td></tr>
@@ -129,7 +129,7 @@ export function PrivacyDeBody() {
       <h2>5. Von KI verarbeitete Texte</h2>
       <p>
         Deine Sprechpraxis (Rollenspiel), Schreibaufgaben und Prüfungsantworten werden zur Erzeugung von Rückmeldungen an Anbieter von
-        Sprachmodellen gesendet. Gesendet wird nur der von dir geschriebene oder gesprochene Text und das Szenario der Lektion; Name und
+        Sprachmodellen gesendet. Gesendet wird nur der von dir geschriebene oder gesprochene Text und das Szenario der Sprechübung; Name und
         E-Mail-Adresse werden nicht gesendet. Die Anbieter arbeiten unter API-Bedingungen und Auftragsverarbeitungsverträgen, in denen sie
         zusagen, die Daten nicht für Modelltraining zu verwenden. Die App weist deutlich darauf hin, dass KI-Figuren keine echten Personen
         sind (Transparenz nach Art. 50 der KI-Verordnung der EU). Antworten können Fehler enthalten; du kannst sie uns über die
@@ -162,7 +162,7 @@ export function PrivacyDeBody() {
       <p>
         Im Web wird nur das unbedingt erforderliche Sitzungs-Cookie verwendet (um zu merken, dass du angemeldet bist, 30 Tage); deshalb
         gibt es kein Cookie-Banner. Marketing- oder Tracking-Cookies setzen wir nicht ein. In der lokalen Speicherung von Browser und App
-        liegen Angaben wie Design-, Ton- und Benachrichtigungseinstellungen, Avatar-Auswahl und eine unterbrochene Lektion; diese verlassen
+        liegen Angaben wie Design-, Ton- und Benachrichtigungseinstellungen, Avatar-Auswahl und eine unterbrochene Sprechübung; diese verlassen
         dein Gerät nicht.
       </p>
 

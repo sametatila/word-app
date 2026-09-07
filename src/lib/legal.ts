@@ -47,9 +47,14 @@
  *
  * iOS yayın gününde ikisi de değişecek (→ "1.3" ve o günün tarihi); ne yazılacağı
  * ve kaydın metni IOS_LAUNCH_ENTRY'de hazır bekliyor.
+ *
+ * 1.2.1 yama numarası aldı, 1.3 DEĞİL: "1.3" iOS yayınına ayrılmış ve o günün
+ * üç adımlı yordamı aşağıda yazılı. Yama basamağı, hak/yükümlülük/veri işleme
+ * değiştirmeyen bir adlandırma düzeltmesini anlatıyor — okuyucu sürüm listesinde
+ * esaslı değişiklikle terim değişikliğini ayırt edebilsin diye.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-04";
-export const LEGAL_VERSION = "1.2";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-07";
+export const LEGAL_VERSION = "1.2.1";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
@@ -203,7 +208,7 @@ export type LegalChangelogEntry = {
  * kuralına aykırı.
  *
  * `date` sabit yazılmadı, `LEGAL_EFFECTIVE_DATE`'e bağlandı: en yeni kayıt her
- * zaman o sürümün yürürlük tarihini taşır (1.2 için ikisi de 2026-09-04). Böylece
+ * zaman o sürümün yürürlük tarihini taşır (1.2.1 için ikisi de 2026-09-07). Böylece
  * unutulup eski bir tarih basılamıyor.
  *
  * O GÜN YAPILACAKLAR — üçü de bu dosyada, hepsi tek satır:
@@ -250,6 +255,24 @@ const IOS_LAUNCH_ENTRY: LegalChangelogEntry = {
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
   // Bayrak kapalıyken bu kayıt listede YOK; açıldığı gün kendiliğinden başa gelir.
   ...(LEGAL_PLATFORMS.ios ? [IOS_LAUNCH_ENTRY] : []),
+  {
+    version: "1.2.1",
+    date: "2026-09-07",
+    changes: {
+      tr: [
+        "Uygulamada \"ders\" denen bölümün adı \"Konuşma\" oldu; bu metinler de artık o adı kullanıyor. Hak, yükümlülük ya da veri işleme uygulamalarında hiçbir değişiklik yok.",
+        "Fikri mülkiyet maddesinde \"ders içerikleri\" yerine \"öğretim içerikleri\" yazıldı: yeni adla yazılsaydı madde yalnız konuşma bölümünü kapsar, okuma, dinleme ve yazma alıştırmaları dışarıda kalırdı.",
+      ],
+      en: [
+        "The part of the app previously called a \"lesson\" is now called \"Speaking\", and these texts use that name. No rights, obligations or data practices changed.",
+        "In the intellectual property clause \"the lesson content\" became \"the learning content\": with the new name the clause would have covered only the speaking part, leaving the reading, listening and writing exercises out.",
+      ],
+      de: [
+        "Der in der App bisher \"Lektion\" genannte Teil heißt jetzt \"Sprechen\"; diese Texte verwenden denselben Namen. An Rechten, Pflichten oder der Datenverarbeitung ändert sich nichts.",
+        "In der Klausel zum geistigen Eigentum wurde aus \"die Lektionsinhalte\" \"die Lerninhalte\": mit dem neuen Namen hätte die Klausel nur den Sprechteil erfasst und Lese-, Hör- und Schreibübungen ausgelassen.",
+      ],
+    },
+  },
   {
     version: "1.2",
     date: "2026-09-04",

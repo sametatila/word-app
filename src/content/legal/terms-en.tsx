@@ -34,8 +34,8 @@ export function TermsEnBody() {
 
       <h2>2. The service</h2>
       <p>
-        Lernomi is a language learning app offering vocabulary, listening, speaking and writing practice: spaced repetition rounds, lessons,
-        speaking practice with AI, walk mode, writing assessment, exam preparation, a weekly leaderboard and friend features. The courses
+        Lernomi is a language learning app offering vocabulary, listening, speaking and writing practice: spaced repetition rounds, speaking practices (explanation and
+        a conversation with AI), walk mode, writing assessment, exam preparation, a weekly leaderboard and friend features. The courses
         are German (Hochdeutsch), Zurich German and English; the course list may change over time and not every feature is ready in every
         course at the same time. Features may be added, changed or removed; we announce changes affecting paid features in advance.
       </p>
@@ -115,7 +115,7 @@ export function TermsEnBody() {
 
       <h2>8. Intellectual property</h2>
       <p>
-        The app, its design, the mascot, the sound effects and the lesson content belong to Lernomi and are protected by Turkish Law no. 5846
+        The app, its design, the mascot, the sound effects and the learning content belong to Lernomi and are protected by Turkish Law no. 5846
         on Intellectual and Artistic Works and by international conventions. The word lists were compiled by Lernomi. Any exam
         names mentioned in the app are trademarks of their respective owners and Lernomi is not affiliated with them.
         Copying, distributing or making derivative works is not permitted beyond personal learning use.

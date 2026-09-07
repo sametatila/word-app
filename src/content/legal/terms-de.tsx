@@ -38,7 +38,7 @@ export function TermsDeBody() {
       <h2>2. Der Dienst</h2>
       <p>
         Lernomi ist eine Sprachlern-App mit Übungen zu Wortschatz, Hören, Sprechen und Schreiben: Wiederholungsrunden nach dem
-        Spaced-Repetition-Prinzip, Lektionen, Sprechpraxis mit KI, Gehmodus, Schreibbewertung, Prüfungsvorbereitung, eine
+        Spaced-Repetition-Prinzip, Sprechübungen (Erklärung und Dialog mit KI), Gehmodus, Schreibbewertung, Prüfungsvorbereitung, eine
         Wochen-Rangliste und Freundesfunktionen. Die Kurse sind Deutsch (Hochdeutsch), Zürichdeutsch und Englisch; die Kursliste kann sich
         im Laufe der Zeit ändern, und nicht jede Funktion ist in jedem Kurs gleichzeitig verfügbar. Funktionen können hinzugefügt, geändert
         oder entfernt werden; Änderungen, die bezahlte Funktionen betreffen, kündigen wir vorher an.
@@ -122,7 +122,7 @@ export function TermsDeBody() {
 
       <h2>8. Geistiges Eigentum</h2>
       <p>
-        Die App, das Design, das Maskottchen, die Soundeffekte und die Lektionsinhalte gehören Lernomi und sind durch das türkische Gesetz
+        Die App, das Design, das Maskottchen, die Soundeffekte und die Lerninhalte gehören Lernomi und sind durch das türkische Gesetz
         Nr. 5846 über geistige und künstlerische Werke sowie durch internationale Abkommen geschützt. Die Wortlisten wurden von Lernomi
         erstellt. Die in der App genannten Prüfungsnamen sind Marken ihrer jeweiligen Inhaber, und Lernomi ist
         nicht mit ihnen verbunden. Über den persönlichen Lerngebrauch hinaus ist Kopieren, Verbreiten oder das Erstellen abgeleiteter Werke

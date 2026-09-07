@@ -71,7 +71,7 @@ export default function PrivacyPage() {
           <tbody>
             <tr><td>E-posta adresi, ad, parola özeti</td><td>Kayıt formu ya da Google hesabın</td><td>Hesap açma, giriş, parola sıfırlama, doğrulama e-postası</td><td>Sözleşmenin kurulması ve ifası (m.5/2-c / m.6(1)(b))</td><td>Hesap süresince</td></tr>
             <tr><td>Görünen ad, avatar seçimi, seviye, kurs, günlük hedef, ses tercihi</td><td>Sen</td><td>Kişiselleştirme; görünen ad haftalık sıralamada diğer kullanıcılara görünür</td><td>Sözleşmenin ifası</td><td>Hesap süresince</td></tr>
-            <tr><td>Öğrenme verisi: kelime durumu, tekrar sonuçları, seri, XP, başarımlar, ders ve sınav sonuçları</td><td>Uygulamayı kullanırken</td><td>Aralıklı tekrar planı, ilerleme, sıralama</td><td>Sözleşmenin ifası</td><td>Hesap süresince</td></tr>
+            <tr><td>Öğrenme verisi: kelime durumu, tekrar sonuçları, seri, XP, başarımlar, konuşma ve sınav sonuçları</td><td>Uygulamayı kullanırken</td><td>Aralıklı tekrar planı, ilerleme, sıralama</td><td>Sözleşmenin ifası</td><td>Hesap süresince</td></tr>
             <tr><td>Yazdığın ve söylediğin metinler (yazma görevleri, konuşma pratiği, sınav cevapları)</td><td>Sen</td><td>Yapay zekâ ile değerlendirme ve geri bildirim</td><td>Sözleşmenin ifası</td><td>Değerlendirmeler hesap süresince; konuşma pratiği kayıtları 30 gün</td></tr>
             <tr><td>Mikrofon ses kaydı</td><td>Yürüyüş modunda mikrofon</td><td>Söylediğin kelimeyi yazıya çevirmek</td><td>Açık rıza (m.5/1 / m.6(1)(a)); uygulama içi onay ekranı, geri alınabilir</td><td>Saklanmaz; tanıma biter bitmez silinir, yalnız tanınan metin tutulur</td></tr>
             <tr><td>Kullanım olayları: hangi ekran açıldı, tur başladı/bitti, ekran genişliği ve platform</td><td>Uygulama</td><td>Ürünü iyileştirme (birinci taraf analitik)</td><td>Meşru menfaat (m.5/2-f / m.6(1)(f)); ayarlardan kapatılabilir</td><td>Hesap süresince</td></tr>
@@ -131,7 +131,7 @@ export default function PrivacyPage() {
       <h2>5. Yapay zekâ ile işlenen metinler</h2>
       <p>
         Konuşma pratiği (rol yapma), yazma görevleri ve sınav cevapların, geri bildirim üretmek için dil modeli sağlayıcılarına gönderilir.
-        Gönderilen şey yalnız senin yazdığın/söylediğin metin ve dersin senaryosudur; ad ya da e-posta gönderilmez. Sağlayıcılar, verileri
+        Gönderilen şey yalnız senin yazdığın/söylediğin metin ve konuşmanın senaryosudur; ad ya da e-posta gönderilmez. Sağlayıcılar, verileri
         model eğitiminde kullanmamayı taahhüt eden API şartlarıyla ve veri işleme sözleşmeleriyle çalışır. Yapay zekâ karakterlerinin gerçek
         kişi olmadığı uygulamada açıkça belirtilir (AB Yapay Zekâ Tüzüğü m.50 şeffaflık). Yanıtlar hata içerebilir; her yanıtın altındaki
         &quot;Bildir&quot; ile bize iletebilirsin, bildirimler insan tarafından incelenir. Lernomi hakkında yalnız otomatik işlemeye dayanan, hukuki
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
       <p>
         Web&apos;de yalnız zorunlu oturum çerezi kullanılır (giriş yaptığını hatırlamak için, 30 gün); bu nedenle çerez onay bandı yoktur.
         Pazarlama ya da takip çerezi kullanmayız. Tarayıcı ve uygulama yerel depolamasında tema, ses ve bildirim tercihleri, avatar seçimi ve
-        yarım kalan ders gibi bilgiler tutulur; bunlar cihazından çıkmaz.
+        yarım kalan konuşma gibi bilgiler tutulur; bunlar cihazından çıkmaz.
       </p>
 
       <h2>8. Ürün analitiği ve kapatma</h2>

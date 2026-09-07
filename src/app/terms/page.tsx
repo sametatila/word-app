@@ -44,8 +44,8 @@ export default function TermsPage() {
 
       <h2>2. Hizmet</h2>
       <p>
-        Lernomi, kelime, dinleme, konuşma ve yazma pratiği sunan bir dil öğrenme uygulamasıdır: aralıklı tekrar turları, dersler, yapay zekâ ile
-        konuşma pratiği, yürüyüş modu, yazma değerlendirmesi, sınav hazırlığı, haftalık sıralama ve arkadaşlık özellikleri. Kurslar Almanca
+        Lernomi, kelime, dinleme, konuşma ve yazma pratiği sunan bir dil öğrenme uygulamasıdır: aralıklı tekrar turları, konuşmalar (anlatım ve yapay zekâ ile
+        karşılıklı konuşma), yürüyüş modu, yazma değerlendirmesi, sınav hazırlığı, haftalık sıralama ve arkadaşlık özellikleri. Kurslar Almanca
         (Hochdeutsch), Zürih Almancası ve İngilizcedir; kurs listesi zamanla değişebilir ve her kursta her özellik aynı anda hazır olmayabilir.
         Özellikler zamanla eklenebilir, değişebilir ya da kaldırılabilir; ücretli özellikleri etkileyen değişiklikleri önceden duyururuz.
       </p>
@@ -127,7 +127,7 @@ export default function TermsPage() {
 
       <h2>8. Fikri mülkiyet</h2>
       <p>
-        Uygulama, tasarım, maskot, ses efektleri ve ders içerikleri Lernomi&apos;ye aittir ve 5846 sayılı Fikir ve Sanat Eserleri Kanunu ile
+        Uygulama, tasarım, maskot, ses efektleri ve öğretim içerikleri Lernomi&apos;ye aittir ve 5846 sayılı Fikir ve Sanat Eserleri Kanunu ile
         uluslararası sözleşmelerle korunur. Kelime listeleri Lernomi tarafından hazırlanmıştır. Uygulamada anılan sınav adları kendi
         sahiplerinin markalarıdır ve Lernomi onlarla bağlı değildir. Kişisel öğrenme amacı dışında kopyalama, dağıtma ya da türev
         ürün yapma izni yoktur.
