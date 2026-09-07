@@ -37,7 +37,7 @@ export function QuizScreen() {
     () => (isGrammar
       ? deriveGrammar(params.level, params.unitIndex)
       : deriveQuiz(buildUnitBrief(params.level, params.unitIndex), levelPool(params.level), isCheckpoint ? 12 : 8)),
-    [params.level, params.unitIndex, isCheckpoint],
+    [params.level, params.unitIndex, isCheckpoint, isGrammar],
   );
 
   function recordAndFinish(c: number) {

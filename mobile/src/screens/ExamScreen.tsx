@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { View, ScrollView, TextInput, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -125,21 +125,13 @@ export function ExamScreen() {
     return () => { cancelled = true; };
   }, [level, moduleIx]);
 
-  // Süre yalnız sınav sürerken işler; kapakta ve sonuçta durur.
-  useEffect(() => {
-    if (phase !== "bolum") return;
-    const id = setInterval(() => setLeft((n) => Math.max(0, n - 1)), 1000);
-    return () => clearInterval(id);
-  }, [phase]);
-
-  useEffect(() => {
-    if (phase === "bolum" && left === 0) void finishExam();
-  }, [left, phase]);
-
-  const filledSections = (): SectionId[] =>
-    paper ? SECTION_ORDER.filter((s) => (paper.sections[s]?.length ?? 0) > 0) : [];
-
-  async function finishExam() {
+  /**
+   * Sınavı kapatır. `sent` koruması yüzünden birden çok kez çağrılması
+   * zararsız — süre biterken tetiklenen etki ile "Bitir" düğmesi aynı anda
+   * gelebiliyor. useCallback: süre etkisi buna bağımlı, her render'da yeni bir
+   * gönderi işlevi üretilseydi etki boşuna yeniden kurulurdu.
+   */
+  const finishExam = useCallback(async () => {
     if (sent.current || !paper) return;
     sent.current = true;
     const sections = SECTION_ORDER.map((id) => ({ id, ...score.current[id] })).filter((x) => x.total > 0);
@@ -160,7 +152,22 @@ export function ExamScreen() {
       setResult(null);
     }
     setPhase("sonuc");
-  }
+  }, [paper, level, moduleIx]);
+
+  // Süre yalnız sınav sürerken işler; kapakta ve sonuçta durur.
+  useEffect(() => {
+    if (phase !== "bolum") return;
+    const id = setInterval(() => setLeft((n) => Math.max(0, n - 1)), 1000);
+    return () => clearInterval(id);
+  }, [phase]);
+
+  useEffect(() => {
+    if (phase === "bolum" && left === 0) void finishExam();
+  }, [left, phase, finishExam]);
+
+  const filledSections = (): SectionId[] =>
+    paper ? SECTION_ORDER.filter((s) => (paper.sections[s]?.length ?? 0) > 0) : [];
+
 
   function sectionDone(id: SectionId, correct: number) {
     score.current[id].correct = correct;
