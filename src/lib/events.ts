@@ -107,6 +107,7 @@ export const EVENT_NAMES = [
   "lesson_finish", // ders bitti (kind = ders kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_lessons'ta)
   "speak_self", // söyleyiş görevinde karar (kind = asr tanıyıcı | self öz-değerlendirme, value = 1 doğru / 0 zorlandı)
   "onboarding_step", // onboarding adımı görüldü (kind = welcome|goal|level|ready, value = adım sırası)
+  "onboarding_existing_account", // akıştan "zaten hesabım var" ile çıkıldı (kind = çıkılan adım, value = adım sırası)
   "coach_show", // koç balonu gösterildi (kind = an)
   "tts_play", // sesli okuma çalındı (kind = ekran anahtarı; ekran açılışı başına bir kez)
   "search", // arama yapıldı (kind = words|cheatsheet, value = sorgu uzunluğu; ekran açılışı başına ilk)

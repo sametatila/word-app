@@ -5,6 +5,8 @@ import { updateProfile } from "./updateProfile";
 import { configureBilling } from "./billing";
 import { googleSignOut } from "./googleAuth";
 import { bridgeRefresh } from "./ttsBridge";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { ONBOARDED_KEY } from "./onboarding";
 
 type Ctx = {
   user: AuthUser | null;
@@ -27,22 +29,76 @@ const AuthContext = createContext<Ctx>({
   socialComplete: async () => false,
 });
 
+/**
+ * Hesap az önce mi açıldı? E-posta yolunda soru kesin yanıtlanıyor (kayıt mı
+ * giriş mi); sosyal girişte tek düğme ikisini birden yaptığı için geriye
+ * hesabın yaşı kalıyor. Okunamazsa ESKİ hesap sayılır: belirsizlikte koruma
+ * yönüne düşmek gerekiyor, çünkü yanlış korumanın bedeli kullanıcının kursunu
+ * ayarlardan bir kez seçmesi, yanlış ezmenin bedeli hesabındaki gerçek
+ * seviyenin kaybı.
+ */
+const YENI_HESAP_PENCERESI_MS = 5 * 60_000;
+function yeniHesapMi(u: AuthUser | null): boolean {
+  const acilis = u?.createdAt ? Date.parse(u.createdAt) : NaN;
+  return Number.isFinite(acilis) && Date.now() - acilis < YENI_HESAP_PENCERESI_MS;
+}
+
+/**
+ * Profile yazılabilir GERÇEK ad — yoksa boş döner. `name` alanı isim yokken
+ * e-postaya düşüyor (bkz. auth.userFrom) ve o değer görünen ada yazılamaz:
+ * görünen ad sıralamada ve arkadaş listesinde başkalarına görünüyor, yani
+ * kullanıcının e-posta adresini yayınlardı.
+ */
+function gercekAd(u: AuthUser | null): string {
+  const ad = (u?.name ?? "").trim();
+  // İki harften kısası sunucuda zaten reddediliyor (api/profile name_required):
+  // göndermek isteğin tamamını düşürür, burada eleniyor.
+  return ad.length >= 2 && ad !== (u?.email ?? "").trim() ? ad : "";
+}
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [loading, setLoading] = useState(true);
 
   const refresh = useCallback(async () => { setUser(await getSession()); }, []);
 
-  /** Misafirken seçilen anadil/kurs/hedef/seviye — giriş yapınca profile taşınır. */
-  const applyPrefs = useCallback(async () => {
+  /**
+   * Girişten sonra cihazı hesaba bağlar ve misafirken seçilen anadil/kurs/hedef/
+   * seviyeyi devreder.
+   *
+   * Seçimler YALNIZCA yeni hesaba yazılır. Zaten kayıtlı biri ilk açılış akışını
+   * yürüyüp giriş yaptığında (yeni telefon, silip yeniden kurma) kendi ayarları
+   * eziliyordu: "Sıfırdan"a basan bir B1 kullanıcısı A1'e düşüyor, günlük hedefi
+   * ve kursu akışta seçilenle değişiyordu — hissiyat değil, veri kaybı. Eski
+   * hesapta sunucu yetkili: bekleyen seçimler yazılmadan atılıyor, temizlenince
+   * anadili de sunucudan uygulanıyor (bkz. useMe.syncNativeLang).
+   */
+  const adoptAccount = useCallback(async (u: AuthUser | null, yeniHesap: boolean) => {
+    // İlk açılış akışını cihazda geride bırak. Akışı hiç görmemiş olabilir
+    // (çıkışla atladı, ya da yeni cihazda doğrudan giriş yaptı); hesabı olan
+    // birine o akış bir daha sorulmamalı.
+    try { await AsyncStorage.setItem(ONBOARDED_KEY, "1"); } catch { /* depolama kapalıysa geç */ }
+
     const prefs = await loadOnboardingPrefs();
     if (!hasPrefs(prefs)) return;
-    const ok = await updateProfile({
+    if (!yeniHesap) { await clearOnboardingPrefs(); return; }
+
+    const patch = {
       ...(prefs.course ? { course: prefs.course } : {}),
       ...(prefs.goal ? { dailyGoal: prefs.goal } : {}),
       ...(prefs.level ? { level: prefs.level } : {}),
       ...(prefs.nativeLang ? { nativeLang: prefs.nativeLang } : {}),
-    });
+    };
+    // Ad aynı istekte gidiyor: sunucu "onboarding bitti" damgasını
+    // (profiles.courseChosenAt) ancak kurs ve ad BİRLİKTE geldiğinde atıyor
+    // (api/profile). Mobil profile hiç ad yazmadığı için mobilden açılan
+    // hesaplar damgasız kalıyordu ve aynı kullanıcı web'e girince orada
+    // yeniden onboarding'e düşüyordu — aynı kusurun web'deki yüzü.
+    const ad = gercekAd(u);
+    // Ad moderasyondan dönerse uç 400 veriyor ve istek TÜMDEN reddediliyor;
+    // o hâlde kurs/seviye de yazılmamış olur, bu yüzden adsız bir kez daha denenir.
+    const ok = (await updateProfile(ad ? { ...patch, displayName: ad } : patch))
+      || (!!ad && (await updateProfile(patch)));
     if (ok) await clearOnboardingPrefs();
   }, []);
 
@@ -68,15 +124,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signIn = useCallback(async (email: string, password: string) => {
     const r = await apiSignIn(email, password);
-    if (r.ok) { setUser(r.user ?? (await getSession())); await applyPrefs(); }
+    // Giriş = hesap zaten vardı: akışta seçilenler değil, hesabın kendi ayarları geçerli.
+    if (r.ok) { const u = r.user ?? (await getSession()); setUser(u); await adoptAccount(u, false); }
     return r;
-  }, [applyPrefs]);
+  }, [adoptAccount]);
 
   const signUp = useCallback(async (name: string, email: string, password: string) => {
     const r = await apiSignUp(name, email, password);
-    if (r.ok) { setUser(r.user ?? (await getSession())); await applyPrefs(); }
+    if (r.ok) { const u = r.user ?? (await getSession()); setUser(u); await adoptAccount(u, true); }
     return r;
-  }, [applyPrefs]);
+  }, [adoptAccount]);
 
   const signOut = useCallback(async () => {
     await apiSignOut();
@@ -89,9 +146,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const socialComplete = useCallback(async () => {
     const u = await getSession();
     setUser(u);
-    if (u) await applyPrefs();
+    // Sosyal düğme hem kayıt hem giriş: hesabın yaşı ayırıyor (bkz. yeniHesapMi).
+    if (u) await adoptAccount(u, yeniHesapMi(u));
     return !!u;
-  }, [applyPrefs]);
+  }, [adoptAccount]);
 
   return (
     <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh, socialComplete }}>

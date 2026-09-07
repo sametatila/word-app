@@ -52,9 +52,12 @@ function Nav() {
   // Bayrak + oturum okunana dek düz zemin — tema rengiyle, zıplama olmasın.
   if (onboarded === null || loading) return <View style={{ flex: 1, backgroundColor: colors.bg }} />;
 
-  // Misafir modu YOK: onboarding bitince hesap zorunlu. Onboarding görülmemişse
-  // ilk akış; görülmüş ama oturum yoksa giriş duvarı; oturum varsa uygulama.
-  const initialRoute = !onboarded ? "Onboarding" : !user ? "Auth" : "Tabs";
+  // Misafir modu YOK: onboarding bitince hesap zorunlu. Oturum ÖNCE bakılıyor —
+  // açık oturum "bu kullanıcı yeni değil" demek, cihaz bayrağı ne derse desin.
+  // Sıra tersken bayrağı silinmiş (depolama temizliği, geri yükleme) ama oturumu
+  // duran kullanıcı ilk açılış akışına düşüyor, kendi ayarı olmayan sorulara
+  // yanıt veriyordu. Oturum yoksa: akış görülmemişse ilk akış, görülmüşse giriş.
+  const initialRoute = user ? "Tabs" : !onboarded ? "Onboarding" : "Auth";
 
   return (
     <NavigationContainer theme={navTheme}>

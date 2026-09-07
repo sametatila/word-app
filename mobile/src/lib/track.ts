@@ -17,6 +17,7 @@ export type EventName =
   | "walk_start"
   | "share"
   | "onboarding_step"
+  | "onboarding_existing_account"
   | "first_practice"
   | "notif_prime"
   | "nav"

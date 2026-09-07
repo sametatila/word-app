@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon, SpeakerIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
-import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
+import { saveOnboardingPrefs, clearOnboardingPrefs } from "../lib/onboardingPrefs";
 import { coursesForNative, onboardingCoursesFor, DEFAULT_COURSE_ID, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { hasDemoPlacement } from "../data/demoPlacement";
 import { hasFirstWords } from "../data/firstWords";
@@ -161,6 +161,27 @@ export function OnboardingScreen() {
       nav.reset({ index: 0, routes: [next === "FirstPractice" ? { name: next, params: { level: lvl } } : { name: "Auth" }] });
     }
   }
+  /**
+   * "Zaten hesabım var" — akış boyunca görünen çıkış.
+   *
+   * Bu ekran yalnızca yeni kullanıcıya soru soruyor: kurs, seviye, günlük hedef,
+   * hatta yerleştirme sınavı. Kayıtlı biri (yeni telefon, silip yeniden kurma)
+   * bunların hiçbirini yanıtlamak zorunda değil — ayarları hesabında zaten var.
+   * Çıkış olmadığı için ya rastgele yanıtlıyor ya da kendi ayarı olmayan
+   * seçeneklerle başlıyordu.
+   *
+   * Yürünen adımlarda seçilmiş olabilecekler siliniyor: hesabı olan birinin
+   * buradaki yanıtları profile TAŞINMAMALI (bkz. AuthContext.adoptAccount).
+   * ONBOARDED_KEY burada YAZILMIYOR — yanlışlıkla basan yeni kullanıcı
+   * uygulamayı kapatıp açtığında akışa dönebilsin diye; bayrağı giriş başarınca
+   * AuthContext atıyor.
+   */
+  async function zatenHesabimVar() {
+    track("onboarding_existing_account", i, step?.key);
+    await clearOnboardingPrefs();
+    nav.reset({ index: 0, routes: [{ name: "Auth" }] });
+  }
+
   function next() { if (last) void finish(); else if (canNext) setI((n) => n + 1); }
   // Android geri tuşu: adım geri (ilk adımda sistem davranışı — uygulamadan çıkar).
   useFocusEffect(
@@ -222,6 +243,15 @@ export function OnboardingScreen() {
 
       <PressableScale onPress={next} style={[{ borderRadius: radii.lg, backgroundColor: canNext ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, canNext ? softShadow(colors.primary, 10) : {}]}>
         <Text variant="h3" color={canNext ? "#fff" : colors.textFaint}>{t("common.continue_2")}</Text>
+      </PressableScale>
+
+      {/* Kayıtlı kullanıcının çıkışı — her adımda duruyor: soruların hangisinde
+          "bu bana sorulmamalı" dediği baştan belli değil. */}
+      <PressableScale onPress={() => void zatenHesabimVar()} style={{ alignItems: "center", paddingTop: spacing.lg, paddingBottom: spacing.xs }}>
+        <Text variant="body" color={colors.textMuted}>
+          {t("auth.already_have_account")}
+          <Text variant="bodyStrong" color={colors.primary}>{t("auth.sign_in")}</Text>
+        </Text>
       </PressableScale>
     </View>
   );

@@ -7,7 +7,17 @@ import { t } from "./i18n";
  * sign-out. Oturum çerezi RN'in yerel jar'ında saklanır; burada elle çerez
  * yönetimi yok. Başarıda kullanıcı döner, hata net kod/mesajla döner.
  */
-export type AuthUser = { id: string; name: string | null; email: string | null };
+export type AuthUser = {
+  id: string;
+  name: string | null;
+  email: string | null;
+  /**
+   * Hesabın açılış anı (better-auth oturumu, ISO). Sosyal girişte tek düğme hem
+   * kayıt hem giriş yapıyor; "bu hesap az önce mi açıldı" sorusunu yalnız bu
+   * yanıtlıyor — onboarding seçimlerinin devri buna bakıyor (bkz. AuthContext).
+   */
+  createdAt: string | null;
+};
 export type AuthOutcome = { ok: true; user: AuthUser | null } | { ok: false; code: string; message: string };
 
 async function post(path: string, body: Record<string, unknown>): Promise<Response> {
@@ -19,9 +29,9 @@ async function post(path: string, body: Record<string, unknown>): Promise<Respon
 }
 
 function userFrom(obj: unknown): AuthUser | null {
-  const u = (obj as { user?: { id?: string; name?: string; email?: string } })?.user;
+  const u = (obj as { user?: { id?: string; name?: string; email?: string; createdAt?: string } })?.user;
   if (!u?.id) return null;
-  return { id: u.id, name: u.name ?? u.email ?? null, email: u.email ?? null };
+  return { id: u.id, name: u.name ?? u.email ?? null, email: u.email ?? null, createdAt: u.createdAt ?? null };
 }
 
 async function parse(res: Response): Promise<AuthOutcome> {

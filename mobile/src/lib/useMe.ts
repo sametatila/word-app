@@ -31,10 +31,12 @@ export type Me = {
  * kaybetmesin diye.
  *
  * Devredilmeyi bekleyen bir onboarding seçimi varsa dokunulmuyor: giriş anında
- * `signIn` önce kullanıcıyı kuruyor (bu çağrı tetikleniyor) sonra applyPrefs'i
- * bekliyor, yani ikisi yarışıyor. Bekleyen seçim varken sunucuyu uygulamak,
- * kullanıcının az önce seçtiği dili bir anlığına eski değere döndürürdü.
- * Devir bittiğinde prefs temizleniyor ve sonraki her /api/me'de sunucu yetkili.
+ * `signIn` önce kullanıcıyı kuruyor (bu çağrı tetikleniyor) sonra
+ * `adoptAccount`ı bekliyor, yani ikisi yarışıyor. Bekleyen seçim varken sunucuyu
+ * uygulamak, kullanıcının az önce seçtiği dili bir anlığına eski değere
+ * döndürürdü. Devir bitince prefs temizleniyor ve sonraki her /api/me'de sunucu
+ * yetkili — kayıtlı hesapta seçimler zaten YAZILMADAN atılıyor, oradaki dil de
+ * hesabın kendi dili oluyor.
  */
 async function syncNativeLang(server: string | null | undefined): Promise<void> {
   const pending = await loadOnboardingPrefs();
