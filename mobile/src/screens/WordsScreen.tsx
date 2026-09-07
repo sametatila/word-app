@@ -7,6 +7,7 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon } from "../ui/icons";
 import { SpeakButton } from "../ui/SpeakButton";
+import { useLayout } from "../lib/useLayout";
 import { Skeleton, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
@@ -26,6 +27,9 @@ function statusColor(s: WordStatus, colors: Palette): string {
 }
 
 export function WordsScreen() {
+  // Tablette satır listesi iki sütuna bölünüyor: görünen kelime sayısı ikiye
+  // katlanıyor, satırın kendi genişliği okunur kalıyor (bkz. useLayout).
+  const { listColumns } = useLayout();
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
@@ -85,6 +89,11 @@ export function WordsScreen() {
       <FlatList
         data={list}
         keyExtractor={(w) => String(w.id)}
+        // `key` sütun sayısıyla değişmeli: FlatList numColumns'un çalışırken
+        // değişmesine izin vermiyor, döndürmede hata fırlatırdı.
+        key={listColumns}
+        numColumns={listColumns}
+        columnWrapperStyle={listColumns > 1 ? { gap: spacing.sm } : undefined}
         contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.sm }}
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
@@ -119,7 +128,9 @@ export function WordsScreen() {
         renderItem={({ item: w }) => {
           const sc = statusColor(w.status, colors);
           return (
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: 12 }}>
+            // Çok sütunda satır paydan payını alsın; tek sütunda `flex` VERİLMEZ,
+            // FlatList'in dikey kabında yüksekliği doldurmaya çalışırdı.
+            <View style={{ flex: listColumns > 1 ? 1 : undefined, flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: 12 }}>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{w.artikel ? `${w.artikel} ${w.de}` : w.de}</Text>
                 <Text variant="caption" color={colors.textMuted}>{w.tr}</Text>

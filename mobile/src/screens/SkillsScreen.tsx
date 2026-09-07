@@ -7,6 +7,7 @@ import { t } from "../lib/i18n";
 import { Screen } from "../ui/Screen";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
+import { CardGrid } from "../ui/CardGrid";
 import { PressableScale } from "../ui/PressableScale";
 import { AppHeader } from "../ui/AppHeader";
 import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
@@ -126,6 +127,10 @@ export function SkillsScreen() {
             })}
           </View>
 
+          {/* Geniş ekranda beceri bölümleri yan yana: tek sütunda okuma bitmeden
+              dinlemeyi görmek için kaydırmak gerekiyordu. Telefonda ve dar
+              kapta CardGrid hiç sarmalamıyor, düzen birebir eskisi. */}
+          <CardGrid minItemWidth={440}>
           {lists.map((s) => {
             if (!s.items.length) return null;
             const tint = colors[s.tint] as string;
@@ -144,6 +149,7 @@ export function SkillsScreen() {
               </View>
             );
           })}
+          </CardGrid>
         </>
       ) : (
         <Card padded style={{ marginTop: spacing.lg }}>

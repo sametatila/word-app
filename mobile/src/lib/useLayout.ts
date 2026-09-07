@@ -17,8 +17,9 @@ const LARGE_TABLET_COLUMN = 720;
 
 /** Izgaraların iki yerine üç sütuna geçtiği içerik genişliği. */
 const THREE_COLUMN_MIN = 600;
-/** Dört sütuna geçtiği genişlik — pratikte yalnız yatay tablette görülüyor. */
+/** Dört ve beş sütuna geçilen genişlikler. */
 const FOUR_COLUMN_MIN = 900;
+const FIVE_COLUMN_MIN = 1200;
 
 /**
  * Izgara/kart ağırlıklı ekranların kabı — metin sütunundan AYRI.
@@ -33,34 +34,39 @@ const FOUR_COLUMN_MIN = 900;
  * onu kullanan altı ekran). Dikeyde ikisi aynı: dikey tablette zaten fazlalık
  * genişlik yok.
  */
-const LANDSCAPE_MAX_WIDTH = 1100;
 /**
- * Kabın iki yanında bırakılan en az boşluk (dp, tek taraf).
- *
- * Üst sınır tek başına yetmiyor: 1133dp'lik bir ekranda 1100'lük kap kenara
- * 16dp kalıyor ve içerik ekrandan taşıyormuş gibi duruyor. Bu pay, kabın hiçbir
- * cihazda kenara yapışmamasını garanti ediyor.
+ * Kabın iki yanında bırakılan boşluk (dp, tek taraf) — kap kenara yapışmasın.
  */
-const LANDSCAPE_SIDE_GUTTER = 48;
+const SIDE_GUTTER = 48;
 
-export function wideContentWidthFor(windowWidth: number, windowHeight: number): number {
+/**
+ * Izgara/kart ağırlıklı ekranların kabı — metin sütunundan AYRI ve ekranı
+ * gerçekten kullanıyor.
+ *
+ * İlk sürüm yalnız YATAYDA genişliyordu ve 1100dp'de duruyordu; ikisi de
+ * yanlıştı. Dikey tablet de dar kalıyordu (iPad Pro 13" dikeyde 1024dp ekranda
+ * 720dp içerik, yani ekranın üçte biri zemin) ve 1100 uydurma bir tavandı —
+ * kartın satır ölçüsü yok, genişlikten yalnız kazanıyor.
+ *
+ * Şimdi kural tek: tablette kap = ekran eksi kenar payı. Telefon değişmiyor.
+ */
+export function wideContentWidthFor(windowWidth: number): number {
   const dar = contentWidthFor(windowWidth);
-  const yatay = windowWidth > windowHeight;
-  if (!yatay || windowWidth < 600) return dar;
-  const kullanilabilir = Math.min(windowWidth - 2 * LANDSCAPE_SIDE_GUTTER, LANDSCAPE_MAX_WIDTH);
-  return Math.max(dar, kullanilabilir);
+  if (windowWidth < 600) return dar;
+  return Math.max(dar, windowWidth - 2 * SIDE_GUTTER);
 }
 
 /** Kabın genişliğine göre ızgara sütunu sayısı. */
-export function gridColumnsFor(containerWidth: number): 2 | 3 | 4 {
+export function gridColumnsFor(containerWidth: number): 2 | 3 | 4 | 5 {
+  if (containerWidth >= FIVE_COLUMN_MIN) return 5;
   if (containerWidth >= FOUR_COLUMN_MIN) return 4;
   if (containerWidth >= THREE_COLUMN_MIN) return 3;
   return 2;
 }
 
 /** Sütun sayısına düşen kart genişliği — aradaki boşluk düşülmüş. */
-export function gridItemWidthFor(columns: 2 | 3 | 4): string {
-  return columns === 4 ? "23.5%" : columns === 3 ? "31.7%" : "47.5%";
+export function gridItemWidthFor(columns: 2 | 3 | 4 | 5): string {
+  return columns === 5 ? "18.6%" : columns === 4 ? "23.5%" : columns === 3 ? "31.7%" : "47.5%";
 }
 
 export function contentWidthFor(windowWidth: number): number {
@@ -79,7 +85,15 @@ export type Layout = {
   /** Ekran yatay mı — tablette serbest, telefonda dikeye kilitli (bkz. manifest). */
   landscape: boolean;
   /** Kart ızgarasının sütun sayısı — GENİŞ kaba göre, ızgaralar orada duruyor. */
-  gridColumns: 2 | 3 | 4;
+  gridColumns: 2 | 3 | 4 | 5;
+  /**
+   * SATIR listelerinin (FlatList) sütun sayısı — en çok iki.
+   *
+   * Karolardan ayrı: satırda yan yana iki dil ve bir rozet var, üçe bölününce
+   * metin kırpılıyor. İkiye bölmek tablette görünen madde sayısını ikiye
+   * katlıyor ve satırın kendi genişliği okunur kalıyor.
+   */
+  listColumns: 1 | 2;
   /** Izgarada bir kartın yüzde genişliği — aradaki boşluk düşülmüş. */
   gridItemWidth: string;
 };
@@ -87,7 +101,7 @@ export type Layout = {
 export function useLayout(): Layout {
   const { width, height } = useWindowDimensions();
   const contentWidth = contentWidthFor(width);
-  const wideContentWidth = wideContentWidthFor(width, height);
+  const wideContentWidth = wideContentWidthFor(width);
   const gridColumns = gridColumnsFor(wideContentWidth);
   return {
     contentWidth,
@@ -95,6 +109,7 @@ export function useLayout(): Layout {
     wide: width >= 600,
     landscape: width > height,
     gridColumns,
+    listColumns: wideContentWidth >= FOUR_COLUMN_MIN ? 2 : 1,
     gridItemWidth: gridItemWidthFor(gridColumns),
   };
 }

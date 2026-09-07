@@ -93,17 +93,19 @@ describe("yatay tablette içerik sütunu", () => {
  * yarısını zemine bırakmak demek.
  */
 describe("ızgara kabı (wideContentWidthFor)", () => {
-  const olc = (w: number, h: number) => wideContentWidthFor(w, h);
+  const olc = (w: number, _h: number) => wideContentWidthFor(w);
 
   it("telefonda dar sütunla aynı", () => {
     expect(olc(390, 844)).toBe(contentWidthFor(390));
     expect(olc(440, 956)).toBe(contentWidthFor(440));
   });
 
-  it("DİKEY tablette dar sütunla aynı — fazlalık genişlik zaten yok", () => {
-    expect(olc(744, 1133)).toBe(contentWidthFor(744));
-    expect(olc(820, 1180)).toBe(contentWidthFor(820));
-    expect(olc(1024, 1366)).toBe(contentWidthFor(1024));
+  it("DİKEY tablette de genişliyor — ekranın üçte biri zemin kalmasın", () => {
+    // iPad Pro 13" dikeyde 1024dp ekran vardı ve içerik 720'de duruyordu.
+    expect(olc(1024, 1366)).toBeGreaterThan(contentWidthFor(1024));
+    expect(olc(820, 1180)).toBeGreaterThan(contentWidthFor(820));
+    // iPad mini dikeyde dar sütun zaten ekrana yakın: gerileme olmamalı.
+    expect(olc(744, 1133)).toBeGreaterThanOrEqual(contentWidthFor(744));
   });
 
   it("YATAY tablette genişliyor", () => {
@@ -112,8 +114,8 @@ describe("ızgara kabı (wideContentWidthFor)", () => {
     expect(olc(1366, 1024)).toBeGreaterThan(contentWidthFor(1366));
   });
 
-  it("üst sınırı aşmıyor: çok geniş ekranda da 1100'de duruyor", () => {
-    for (const w of [1280, 1366, 1600, 2048, 3840]) expect(olc(w, 800)).toBeLessThanOrEqual(1100);
+  it("ekranı aşmıyor", () => {
+    for (const w of [1280, 1366, 1600, 2048, 3840]) expect(olc(w, 800)).toBeLessThan(w);
   });
 
   it("kap kenara yapışmıyor: iki yanda pay kalıyor", () => {
@@ -131,9 +133,9 @@ describe("ızgara kabı (wideContentWidthFor)", () => {
     }
   });
 
-  it("yatay telefon genişlemiyor — sınıflandırma genişliğe bakıyor, 600dp altı telefon", () => {
-    expect(olc(844, 390)).toBeGreaterThan(contentWidthFor(844)); // tablet sayılır
-    expect(olc(560, 320)).toBe(contentWidthFor(560)); // dar: telefon
+  it("600dp altı telefon sayılıyor ve genişlemiyor", () => {
+    expect(olc(560, 320)).toBe(contentWidthFor(560));
+    expect(olc(402, 874)).toBe(contentWidthFor(402));
   });
 });
 
@@ -147,12 +149,14 @@ describe("ızgara sütun sayısı", () => {
     [899, 3],
     [900, 4],
     [1100, 4],
+    [1200, 5],
+    [1270, 5],
   ])("kap %i dp → %i sütun", (kap, beklenen) => {
     expect(gridColumnsFor(kap)).toBe(beklenen);
   });
 
   it("kart genişlikleri sütunla birlikte küçülüyor ve %100'ü aşmıyor", () => {
-    for (const n of [2, 3, 4] as const) {
+    for (const n of [2, 3, 4, 5] as const) {
       const yuzde = Number(gridItemWidthFor(n).replace("%", ""));
       expect(yuzde * n).toBeLessThan(100);
       expect(yuzde * n).toBeGreaterThan(90); // boşluk payı makul kalsın

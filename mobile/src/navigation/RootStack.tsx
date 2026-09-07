@@ -101,7 +101,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Lesson" component={LessonScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Quiz" component={QuizScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Auth" component={AuthScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="Words" component={WordsScreen} />
+      <Stack.Screen name="Words" component={WordsScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Achievements" component={AchievementsScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Progress" component={ProgressScreen} options={{ animation: "slide_from_bottom" }} layout={wideColumnLayout} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
