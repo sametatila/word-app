@@ -10,15 +10,17 @@ import { ReportSheet } from "../ui/ReportSheet";
 import { AiNotice } from "../ui/AiNotice";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon } from "../ui/icons";
+import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
-import { currentTargetLang } from "../lib/courses";
 import { foldCompare, foldTight } from "../lib/textFold";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
+import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
+import { spokenMatches } from "../lib/voiceMatch";
+import { currentTargetLang, currentTargetLocale } from "../lib/courses";
 import { haptic } from "../lib/haptics";
 import { API_BASE } from "../api/client";
 import { todayStr } from "../game/session";
@@ -26,9 +28,16 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 
 /**
- * Ders oynatıcısı — anlatım → konuşma → özet. Web'in lesson-player'ının mobil
- * karşılığı. Web öğrenciyi KONUŞTURUYOR (STT); mobilde güvenilir yol YAZMAK
- * (cihaz STT'si ekran kapanınca susuyor), Almanca telaffuz TTS ile duyuluyor.
+ * Konuşma oynatıcısı — anlatım → karşılıklı konuşma → özet. Web'in
+ * lesson-player'ının mobil karşılığı ve artık onunla aynı yolu yürüyor:
+ * öğrenci KONUŞUYOR (native STT), yazmak yalnızca yedek.
+ *
+ * Eskiden mobilde tek yol yazmaktı; gerekçe olarak "cihaz STT'si ekran kapanınca
+ * susuyor" yazılıydı ama o kısıt yürüyüş moduna ait — burada ekran zaten açık ve
+ * aynı tanıyıcı ekran açıkken üç ayrı yüzeyde (beceri, sınav, kelime turu)
+ * sorunsuz çalışıyor. Sonuç şuydu: patikanın konuşma yüzeyi mobilde hiç
+ * konuşturmuyor, "söyledim" düğmesi öğrencinin beyanına güveniyordu.
+ *
  * İçerik pakette (findLesson); sonuç /api/lesson'a kaydediliyor.
  */
 
@@ -100,10 +109,26 @@ export function LessonScreen() {
   // da ilk baloncuklar geliyor, ikisi de boş kabuğun yerine geçip ekranı zıplatır.
   const [resumeChecked, setResumeChecked] = useState(false);
   const [report, setReport] = useState<ReportRef | null>(null); // "Bildir" açık olan yapay zekâ yanıtı
+  // Konuşma tanıma durumu. `sttOk === false` tek yer: mikrofon yok ya da izin
+  // verilmedi — o zaman yazma alanı açılır, yoksa ders tamamlanamaz hâle gelir.
+  const [sttOk, setSttOk] = useState<boolean | null>(null);
+  const [listening, setListening] = useState(false);
+  // "Yazarak cevapla" seçildi mi. Adım başına SIFIRLANMIYOR: bir kez yazmaya
+  // geçen öğrenci her adımda o düğmeyi yeniden aramasın.
+  const [typing, setTyping] = useState(false);
 
   const scoreTotal = lesson ? scoredSteps(lesson) : 0;
   const scrollDown = () => setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 60);
   const push = (b: BubbleData) => setFeed((f) => [...f, { ...b, id: bubbleId.current++ }]);
+
+  // Tanıyıcı bu cihazda/dilde var mı — bir kez sorulur, cevabı ekran boyunca geçerli.
+  // Ekrandan çıkarken mikrofon bırakılır: açık kalan oturum sonraki ekranda
+  // "mikrofon meşgul" hatası veriyor.
+  useEffect(() => {
+    let alive = true;
+    sttAvailable().then((v) => { if (alive) setSttOk(v); }).catch(() => { if (alive) setSttOk(false); });
+    return () => { alive = false; stopListening(); };
+  }, []);
 
   // Anlatımı başlat: yarım kalan kayıt varsa devam teklif et, yoksa baştan.
   useEffect(() => {
@@ -151,18 +176,96 @@ export function LessonScreen() {
 
   function onConfirm() { advance(); }
 
-  function onRepeatDone() {
-    if (expect?.kind === "repeat") speakTarget(expect.target);
-    advance();
+  /**
+   * Mikrofonu bir kez açar. İzin yoksa `sttOk` düşer ve ekran kalıcı olarak
+   * yazma yoluna geçer — reddedilen izin her adımda yeniden sorulmaz.
+   */
+  async function dinle(): Promise<string[] | null> {
+    if (listening) return null;
+    const izin = await ensureMicPermission();
+    if (!izin) { setSttOk(false); return null; }
+    setListening(true);
+    try {
+      return await listenOnce(currentTargetLocale(), 8000);
+    } finally {
+      setListening(false);
+    }
+  }
+
+  /** Duyulmadı balonu — sessiz kalan mikrofon öğrenciyi karanlıkta bırakmasın. */
+  function duyulmadi() {
+    push({ role: "teacher", segments: [{ lang: "tr", text: tx("speak.not_heard") }], tone: "hint" });
+    scrollDown();
+  }
+
+  /**
+   * Tekrar adımının sonucu. PUANLANMIYOR (bkz. scoredSteps): tekrar bir ölçme
+   * değil, kelimeyi ağza alma denemesi. Üçüncü denemeden sonra doğrusu
+   * duyurulup geçiliyor ki ders takılmasın.
+   */
+  function gradeRepeat(shown: string, ok: boolean) {
+    if (expect?.kind !== "repeat") return;
+    push({ role: "student", text: shown, ok });
+    haptic(ok ? "correct" : "wrong");
+    if (ok) {
+      speakTarget(expect.target);
+      setTimeout(advance, 500);
+      scrollDown();
+      return;
+    }
+    const t = tries + 1;
+    setTries(t);
+    if (t >= 3) {
+      push({ role: "teacher", segments: [{ lang: "tr", text: tx("common.answer_is") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }], tone: "hint" });
+      speakTarget(expect.target);
+      setTimeout(advance, 900);
+    }
+    scrollDown();
+  }
+
+  async function speakRepeat() {
+    if (expect?.kind !== "repeat") return;
+    const duyulan = await dinle();
+    if (!duyulan?.length) { if (sttOk !== false) duyulmadi(); return; }
+    gradeRepeat(duyulan[0], spokenMatches(duyulan, [expect.target]));
+  }
+
+  /** Mikrofonsuz yedek: tekrar adımı yazarak da geçilebilir. */
+  function submitRepeatTyped() {
+    if (expect?.kind !== "repeat") return;
+    const text = input.trim();
+    if (!text) return;
+    setInput("");
+    gradeRepeat(text, matches(text, expect.target));
+  }
+
+  async function speakProduce() {
+    if (expect?.kind !== "produce") return;
+    const duyulan = await dinle();
+    if (!duyulan?.length) { if (sttOk !== false) duyulmadi(); return; }
+    // Söylenen cevap tanıyıcı çıktısıyla karşılaştırılıyor (sayı/noktalama
+    // katlaması dahil); yazılan cevap düz karşılaştırmadan geçiyor.
+    gradeProduce(duyulan[0], spokenMatches(duyulan, [expect.target, ...(expect.accept ?? [])]));
   }
 
   function submitProduce() {
     if (expect?.kind !== "produce") return;
     const text = input.trim();
     if (!text) return;
-    const ok = matches(text, expect.target, expect.accept);
-    push({ role: "student", text, ok });
     setInput("");
+    gradeProduce(text, matches(text, expect.target, expect.accept));
+  }
+
+  /** Konuşma fazında mikrofon — duyulan replik doğrudan gönderilir. */
+  async function speakRole() {
+    const duyulan = await dinle();
+    if (!duyulan?.length) { if (sttOk !== false) duyulmadi(); return; }
+    void sendRole(duyulan[0]);
+  }
+
+  function gradeProduce(text: string, ok: boolean) {
+    if (expect?.kind !== "produce") return;
+    push({ role: "student", text, ok });
     if (ok) {
       haptic("correct");
       setCorrect((c) => c + 1);
@@ -359,12 +462,16 @@ export function LessonScreen() {
           <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline, backgroundColor: colors.bg }}>
             {phase === "lecture" ? (
               <LectureControls expect={expect} tries={tries} input={input} setInput={setInput}
-                onConfirm={onConfirm} onRepeatDone={onRepeatDone} onProduce={submitProduce} onTrueFalse={answerTrueFalse}
+                onConfirm={onConfirm} onSpeakRepeat={() => void speakRepeat()} onTypedRepeat={submitRepeatTyped}
+                onSpeakProduce={() => void speakProduce()} onProduce={submitProduce} onTrueFalse={answerTrueFalse}
+                sttOk={sttOk} listening={listening} typing={typing} setTyping={setTyping}
                 colors={colors} />
             ) : (
               <RoleplayControls input={input} setInput={setInput} busy={busy} onSend={() => sendRole()}
+                onSpeak={() => void speakRole()}
                 suggestions={suggestions} onSuggest={(s) => sendRole(s)}
-                ready={roleplayReady} turns={roleTurns} minTurns={minTurns} onFinish={() => finish(true)} colors={colors} />
+                ready={roleplayReady} turns={roleTurns} minTurns={minTurns} onFinish={() => finish(true)}
+                sttOk={sttOk} listening={listening} typing={typing} setTyping={setTyping} colors={colors} />
             )}
           </View>
         </>
@@ -434,19 +541,74 @@ function BigButton({ label, onPress, tint, colors, disabled }: { label: string; 
   );
 }
 
-function LectureControls({ expect, tries, input, setInput, onConfirm, onRepeatDone, onProduce, onTrueFalse, colors }: {
-  expect: Expectation | undefined; tries: number; input: string; setInput: (s: string) => void;
-  onConfirm: () => void; onRepeatDone: () => void; onProduce: () => void; onTrueFalse: (b: boolean) => void; colors: Palette;
+/**
+ * Mikrofon düğmesi — konuşma yolunun tek girişi. Dinlerken kendini kilitler ki
+ * ikinci dokunuş açık oturumu bölmesin.
+ */
+function MicButton({ listening, onPress, label, colors }: { listening: boolean; onPress: () => void; label: string; colors: Palette }) {
+  return (
+    <PressableScale onPress={listening ? () => {} : onPress}>
+      <View style={[{ borderRadius: radii.lg, backgroundColor: listening ? colors.surface2 : colors.primary, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, listening ? {} : softShadow(colors.primary, 10)]}>
+        <MicIcon color={listening ? colors.primary : colors.onPrimary} size={22} />
+        <Text variant="h3" color={listening ? colors.primary : colors.onPrimary}>
+          {listening ? tx("speak.listening") : label}
+        </Text>
+      </View>
+    </PressableScale>
+  );
+}
+
+/** Yazma satırı — mikrofonun yedeği; üç yerde aynı biçim. */
+function TypedRow({ value, onChange, onSubmit, placeholder, colors, disabled }: {
+  value: string; onChange: (s: string) => void; onSubmit: () => void; placeholder: string; colors: Palette; disabled?: boolean;
 }) {
+  const dolu = !!value.trim() && !disabled;
+  return (
+    <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
+      <TextInput value={value} onChangeText={onChange} placeholder={placeholder} placeholderTextColor={colors.textFaint}
+        editable={!disabled} multiline autoCapitalize="sentences" onSubmitEditing={onSubmit}
+        style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16 }} />
+      <PressableScale onPress={onSubmit} disabled={!dolu} style={[{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: dolu ? colors.primary : colors.surface2 }, dolu ? softShadow(colors.primary, 8) : {}]}>
+        <ArrowRightIcon color={dolu ? "#fff" : colors.textFaint} size={22} />
+      </PressableScale>
+    </View>
+  );
+}
+
+/** "Yazarak cevapla" — mikrofon çalışıyorken bile açık kalan kaçış yolu. */
+function TypeToggle({ onPress, colors }: { onPress: () => void; colors: Palette }) {
+  return (
+    <PressableScale onPress={onPress} style={{ alignItems: "center", paddingVertical: spacing.xs }}>
+      <Text variant="caption" color={colors.textMuted}>{tx("lesson.answer_by_typing")}</Text>
+    </PressableScale>
+  );
+}
+
+function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRepeat, onTypedRepeat, onSpeakProduce, onProduce, onTrueFalse, sttOk, listening, typing, setTyping, colors }: {
+  expect: Expectation | undefined; tries: number; input: string; setInput: (s: string) => void;
+  onConfirm: () => void; onSpeakRepeat: () => void; onTypedRepeat: () => void; onSpeakProduce: () => void;
+  onProduce: () => void; onTrueFalse: (b: boolean) => void;
+  sttOk: boolean | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void; colors: Palette;
+}) {
+  // Mikrofon yoksa/izin verilmediyse yazma tek yol — ders tamamlanabilir kalmalı.
+  const yaziYolu = sttOk === false || typing;
   if (!expect) return <BigButton label={tx("lesson.continue")} onPress={onConfirm} colors={colors} />;
   if (expect.kind === "confirm") return <BigButton label={tx("lesson.i_m_ready")} onPress={onConfirm} colors={colors} />;
   if (expect.kind === "repeat") {
     return (
       <View style={{ gap: spacing.sm }}>
+        {tries > 0 && <Text variant="caption" color={colors.danger}>{tx("lesson.try_again", { n: tries })}</Text>}
         <PressableScale onPress={() => speakTarget(expect.target)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, paddingVertical: 10, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
           <SpeakerIcon color={colors.primary} size={20} /><Text variant="bodyStrong" color={colors.primary}>{expect.target}</Text>
         </PressableScale>
-        <BigButton label={tx("lesson.i_said_it")} onPress={onRepeatDone} tint={colors.info} colors={colors} />
+        {yaziYolu ? (
+          <TypedRow value={input} onChange={setInput} onSubmit={onTypedRepeat} placeholder={tx("lesson.type_in", { lang: targetLangName() })} colors={colors} />
+        ) : (
+          <>
+            <MicButton listening={listening} onPress={onSpeakRepeat} label={tx("lesson.mic_repeat")} colors={colors} />
+            <TypeToggle onPress={() => setTyping(true)} colors={colors} />
+          </>
+        )}
       </View>
     );
   }
@@ -470,27 +632,29 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onRepeatDo
       </View>
     );
   }
-  // produce
+  // produce — cümleyi kurup SÖYLEMESİ bekleniyor; yazmak yedek yol.
   return (
     <View style={{ gap: spacing.sm }}>
-      {tries > 0 && <Text variant="caption" color={colors.danger}>Tekrar dene ({tries}/3)</Text>}
-      <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
-        <TextInput value={input} onChangeText={setInput} placeholder={tx("lesson.type_your_answer", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
-          multiline autoCapitalize="sentences" onSubmitEditing={onProduce}
-          style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16 }} />
-        <PressableScale onPress={onProduce} disabled={!input.trim()} style={[{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: input.trim() ? colors.primary : colors.surface2 }, input.trim() ? softShadow(colors.primary, 8) : {}]}>
-          <ArrowRightIcon color={input.trim() ? "#fff" : colors.textFaint} size={22} />
-        </PressableScale>
-      </View>
+      {tries > 0 && <Text variant="caption" color={colors.danger}>{tx("lesson.try_again", { n: tries })}</Text>}
+      {yaziYolu ? (
+        <TypedRow value={input} onChange={setInput} onSubmit={onProduce} placeholder={tx("lesson.type_your_answer", { lang: targetLangName() })} colors={colors} />
+      ) : (
+        <>
+          <MicButton listening={listening} onPress={onSpeakProduce} label={tx("lesson.mic_produce")} colors={colors} />
+          <TypeToggle onPress={() => setTyping(true)} colors={colors} />
+        </>
+      )}
     </View>
   );
 }
 
-function RoleplayControls({ input, setInput, busy, onSend, suggestions, onSuggest, ready, turns, minTurns, onFinish, colors }: {
-  input: string; setInput: (s: string) => void; busy: boolean; onSend: () => void;
+function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, sttOk, listening, typing, setTyping, colors }: {
+  input: string; setInput: (s: string) => void; busy: boolean; onSend: () => void; onSpeak: () => void;
   suggestions: string[]; onSuggest: (s: string) => void;
-  ready: boolean; turns: number; minTurns: number; onFinish: () => void; colors: Palette;
+  ready: boolean; turns: number; minTurns: number; onFinish: () => void;
+  sttOk: boolean | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void; colors: Palette;
 }) {
+  const yaziYolu = sttOk === false || typing;
   return (
     <View style={{ gap: spacing.sm }}>
       {!busy && suggestions.length > 0 && (
@@ -507,14 +671,14 @@ function RoleplayControls({ input, setInput, busy, onSend, suggestions, onSugges
       ) : (
         <Text variant="caption" color={colors.textMuted}>{tx("lesson.keep_talking", { n: turns, target: minTurns })}</Text>
       )}
-      <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
-        <TextInput value={input} onChangeText={setInput} editable={!busy} placeholder={tx("lesson.type_in", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
-          multiline autoCapitalize="sentences"
-          style={{ flex: 1, maxHeight: 120, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 16 }} />
-        <PressableScale onPress={onSend} disabled={busy || !input.trim()} style={[{ width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: input.trim() && !busy ? colors.primary : colors.surface2 }, input.trim() && !busy ? softShadow(colors.primary, 8) : {}]}>
-          <ArrowRightIcon color={input.trim() && !busy ? "#fff" : colors.textFaint} size={22} />
-        </PressableScale>
-      </View>
+      {yaziYolu ? (
+        <TypedRow value={input} onChange={setInput} onSubmit={onSend} placeholder={tx("lesson.type_in", { lang: targetLangName() })} colors={colors} disabled={busy} />
+      ) : (
+        <>
+          <MicButton listening={listening} onPress={busy ? () => {} : onSpeak} label={tx("lesson.mic_talk")} colors={colors} />
+          <TypeToggle onPress={() => setTyping(true)} colors={colors} />
+        </>
+      )}
     </View>
   );
 }
