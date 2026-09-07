@@ -11,6 +11,7 @@ import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Ske
 import { useAuth } from "../lib/AuthContext";
 import { fetchCando, type CandoData, type CandoItem } from "../game/cando";
 import { useTheme, spacing, radii, type Palette } from "../theme";
+import { CardGrid } from "../ui/CardGrid";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 /** Beceri -> sözlük anahtarı (Patika tür adlarıyla ortak). */
@@ -112,6 +113,7 @@ export function CandoScreen() {
               );
             })}
           </Card>
+          <CardGrid minItemWidth={440}>
           {LEVELS.filter((lv) => byLevel[lv]?.length).map((lv) => (
             <View key={lv} style={{ marginBottom: spacing.lg }}>
               <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.xs, marginLeft: 4 }}>{lv}</Text>
@@ -125,6 +127,7 @@ export function CandoScreen() {
               </Card>
             </View>
           ))}
+          </CardGrid>
         </ScrollView>
       )}
     </View>

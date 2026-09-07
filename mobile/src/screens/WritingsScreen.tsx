@@ -13,6 +13,7 @@ import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { fetchWritings, type Writing } from "../game/writings";
 import { useTheme, spacing, radii, type Palette } from "../theme";
+import { CardGrid } from "../ui/CardGrid";
 
 /** Tür -> sözlük anahtarı. */
 const KIND_KEY: Record<string, string> = { writing: "unitkind.write", speaking: "unitkind.speaking" };
@@ -98,7 +99,9 @@ export function WritingsScreen() {
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
-          {(items ?? []).map((w) => <WritingCard key={w.id} w={w} colors={colors} onReport={setReport} />)}
+          <CardGrid minItemWidth={420}>
+            {(items ?? []).map((w) => <WritingCard key={w.id} w={w} colors={colors} onReport={setReport} />)}
+          </CardGrid>
         </ScrollView>
       )}
       <ReportSheet visible={!!report} kind="assessment" refId={report ? String(report.id) : ""} content={report ? JSON.stringify(report.result ?? {}) : ""} onClose={() => setReport(null)} />

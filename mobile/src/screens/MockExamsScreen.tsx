@@ -15,6 +15,7 @@ import { currentCourseId } from "../lib/courses";
 import { examCatalogFor } from "../data/exams";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii } from "../theme";
+import { CardGrid } from "../ui/CardGrid";
 
 /**
  * Deneme sınavları.
@@ -91,14 +92,14 @@ export function MockExamsScreen() {
           // Eski oynatıcı (ExamScreen) ders içeriğinden üretilen kâğıtlara göre
           // yazılmıştı; elle yazılan deneme sınavının biçimi belli olunca
           // buraya bağlanacak. Sahte bir kapı bırakmaktansa satır sessiz duruyor.
-          <View style={{ gap: spacing.md }}>
+          <CardGrid minItemWidth={360}>
             {mocks.map((m) => (
               <Card key={m.id} padded>
                 <Text variant="bodyStrong">{m.label}</Text>
                 <Text variant="caption" color={colors.textMuted}>{t("mockexams.minutes", { n: m.minutes })}</Text>
               </Card>
             ))}
-          </View>
+          </CardGrid>
         ) : (
           <Card padded>
             <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("mockexams.none_for_level", { level })}</Text>

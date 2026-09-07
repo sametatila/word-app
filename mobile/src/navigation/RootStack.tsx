@@ -93,7 +93,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Game" component={GameScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Profile" component={ProfileScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Avatar" component={AvatarScreen} options={{ animation: "slide_from_bottom" }} />
-      <Stack.Screen name="MockExams" component={MockExamsScreen} />
+      <Stack.Screen name="MockExams" component={MockExamsScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Exam" component={ExamScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Walk" component={WalkModeScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />
@@ -113,8 +113,8 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Daily" component={DailyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} layout={wideColumnLayout} />
-      <Stack.Screen name="Cando" component={CandoScreen} />
-      <Stack.Screen name="Writings" component={WritingsScreen} />
+      <Stack.Screen name="Cando" component={CandoScreen} layout={wideColumnLayout} />
+      <Stack.Screen name="Writings" component={WritingsScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Friends" component={FriendsScreen} />
       <Stack.Screen name="User" component={UserScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Inbox" component={InboxScreen} />
