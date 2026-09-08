@@ -56,6 +56,10 @@ Untersucht wird das Phänomen vor allem an Menschen, die im Erwachsenenalter aus
 
 Als entscheidender Faktor gilt weniger die verstrichene Zeit als die Unterdrückung. Wer täglich zwischen zwei Sprachen wechselt, muss die jeweils nicht benötigte fortlaufend hemmen, und diese Hemmung hinterlässt Spuren. In Versuchen fällt es Zweisprachigen messbar schwerer, auf ein Wort ihrer Erstsprache zuzugreifen, unmittelbar nachdem sie längere Zeit in der Zweitsprache gesprochen haben.
 
+Uneinheitlich ist die Forschung bei der Frage, wie früh der Abbau einsetzt. Ältere Arbeiten nannten fünf Jahre ohne Gebrauch als Schwelle; neuere Erhebungen finden messbare Verzögerungen beim Abruf schon nach achtzehn Monaten, allerdings ausschließlich unter Zeitdruck. Ohne Zeitdruck bleibt die Leistung über Jahre hinweg stabil. Das erklärt einen Widerspruch, der Betroffene häufig irritiert: Im ruhigen Gespräch fällt nichts auf, in einer schnellen Diskussion dagegen sofort.
+
+Weitgehend unstrittig ist dagegen die Rolle des Alters beim Erwerb. Wer eine Sprache vor der Pubertät erworben hat, verliert sie messbar langsamer als jemand, der sie erst als Erwachsener gelernt hat, und zwar unabhängig davon, wie gut er sie zuletzt beherrschte. Die Erklärung dafür ist umstritten; die Beobachtung selbst wird in nahezu allen Untersuchungen bestätigt.
+
 Vollständig verschwindet eine früh erworbene Sprache gleichwohl fast nie. Eine viel zitierte Untersuchung mit Erwachsenen, die als Kleinkinder adoptiert wurden und die Sprache ihrer ersten Jahre nicht mehr beherrschen, ergab dennoch einen messbaren Vorsprung: Beim Wiedererlernen feiner Lautunterscheidungen waren sie deutlich schneller als eine Vergleichsgruppe ohne diese Vorgeschichte. Das Wissen war demnach nicht gelöscht, sondern lediglich unzugänglich geworden.
 
 Die praktischen Folgerungen sind unspektakulär, aber belastbar. Wer eine Sprache erhalten will, benötigt keine tägliche Übung, wohl aber regelmäßige Anlässe, bei denen sie tatsächlich verwendet wird; bloßes Lesen genügt nicht, weil dabei der aktive Abruf entfällt. Und wer eine verlorene Sprache zurückholen möchte, sollte sich nicht am Nullpunkt wähnen: Der Wiedereinstieg verläuft in aller Regel erheblich rascher als der erste Erwerb.`,
@@ -89,7 +93,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-1",
               no: 1,
               text: "Lücke 1",
-              accept: ["Nachlässigkeit", "Versagen", "Faulheit", "Schwäche", "Nachlaessigkeit"],
+              accept: ["Nachlässigkeit", "Versagen", "Faulheit", "Schwäche", "Bequemlichkeit", "Nachlassen"],
               explain:
                 "\"wird dagegen häufig als Zeichen von Nachlässigkeit gedeutet\" — özet aynı karşıtlığı (gündelik yorum ↔ araştırma) koruduğu için buraya olumsuz değerlendirme gelir.",
             },
@@ -98,7 +102,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-2",
               no: 2,
               text: "Lücke 2",
-              accept: ["Abrufen", "Abruf", "Erinnern", "Finden"],
+              accept: ["Abrufen", "Abruf", "Erinnern", "Finden", "Aufrufen", "Wiederfinden"],
               explain:
                 "Kaynakta \"Aussetzer beim Abrufen einzelner Wörter\" geçiyor. `beim` bir adlaştırma istediği için mastarın adlaşmış biçimi kullanılır.",
             },
@@ -107,7 +111,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-3",
               no: 3,
               text: "Lücke 3",
-              accept: ["Satzbau", "Syntax", "den Satzbau"],
+              accept: ["Satzbau", "Syntax", "den Satzbau", "Wortstellung", "Grammatik"],
               explain:
                 "\"später greifen Satzbau und Betonung der neuen Sprache auf die alte über\" — özette `und Betonung` durduğu için eksik olan ilk öge.",
             },
@@ -125,7 +129,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-5",
               no: 5,
               text: "Lücke 5",
-              accept: ["Unterdrückung", "Hemmung", "Verdrängung"],
+              accept: ["Unterdrückung", "Hemmung", "Verdrängung", "Blockierung", "Unterdrücken"],
               explain:
                 "\"Als entscheidender Faktor gilt weniger die verstrichene Zeit als die Unterdrückung\" — dişil bir ad, `die … der Sprache` yapısına oturur.",
             },
@@ -134,7 +138,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-6",
               no: 6,
               text: "Lücke 6",
-              accept: ["Zugriff", "Zugang"],
+              accept: ["Zugriff", "Zugang", "Abruf", "Rückgriff"],
               explain:
                 "Kaynakta fiil kullanılıyor: \"auf ein Wort ihrer Erstsprache zuzugreifen\". Özet bunu adlaştırıyor: `der Zugriff auf …`.",
             },
@@ -152,7 +156,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-8",
               no: 8,
               text: "Lücke 8",
-              accept: ["schneller", "rascher", "erfolgreicher", "besser"],
+              accept: ["schneller", "rascher", "erfolgreicher", "besser", "zügiger", "im Vorteil"],
               explain:
                 "\"waren sie deutlich schneller als eine Vergleichsgruppe\" — `als` ile devam ettiği için karşılaştırma biçimi zorunlu.",
             },
@@ -161,7 +165,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-9",
               no: 9,
               text: "Lücke 9",
-              accept: ["unzugänglich", "blockiert", "verdeckt", "unerreichbar"],
+              accept: ["unzugänglich", "blockiert", "verdeckt", "unerreichbar", "nicht abrufbar", "verschüttet"],
               explain:
                 "Metnin kilit ayrımı: \"nicht gelöscht, sondern lediglich unzugänglich geworden\" — bilgi duruyor, ona ulaşılamıyor.",
             },
@@ -170,7 +174,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-10",
               no: 10,
               text: "Lücke 10",
-              accept: ["Lesen", "das Lesen", "Mitlesen"],
+              accept: ["Lesen", "das Lesen", "Mitlesen", "Zuhören", "Verstehen"],
               explain:
                 "\"bloßes Lesen genügt nicht, weil dabei der aktive Abruf entfällt\" — okuma tanımaya dayanır, üretime değil.",
             },
@@ -196,7 +200,9 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
 
 Die Datenlage ist übrigens uneindeutiger, als beide Seiten behaupten. Es gibt Untersuchungen mit deutlichen Effekten und solche ohne jeden Effekt; entscheidend ist offenbar die Qualität des Unterrichts, nicht seine bloße Existenz. Wer aus einer schlecht ausgestatteten Maßnahme keinen Nutzen zieht, widerlegt damit nicht das Prinzip.
 
-Mir liegt allerdings an einer Klarstellung. Ein Recht auf die eigene Sprache lässt sich nicht davon abhängig machen, ob es der Zweitsprache dient. Wir verlangen von keinem Musikunterricht, dass er die Mathematiknoten hebt.`,
+Mir liegt allerdings an einer Klarstellung. Ein Recht auf die eigene Sprache lässt sich nicht davon abhängig machen, ob es der Zweitsprache dient. Wir verlangen von keinem Musikunterricht, dass er die Mathematiknoten hebt.
+
+Eines noch zur Begrifflichkeit, weil sie mehr anrichtet, als man gemeinhin annimmt. Wir sprechen von Herkunftssprache, als wäre sie hinter dem Kind zurückgeblieben. Für die meisten dieser Kinder ist sie jedoch keine Herkunft, sondern Gegenwart: die Sprache des Abendessens, des Telefonats am Sonntag, der Nachbarschaft. Ein Wort, das etwas in die Vergangenheit rückt, macht es leichter, es dort auch zu belassen.`,
               gloss: [
                 { de: "unterstellen", tr: "örtük olarak varsaymak", en: "to presuppose, to impute" },
                 { de: "widerlegen", tr: "çürütmek", en: "to refute" },
@@ -212,7 +218,9 @@ Mir liegt allerdings an einer Klarstellung. Ein Recht auf die eigene Sprache lä
 
 Als wir es versucht haben, konnten wir drei Sprachen abdecken. Das Ergebnis war nicht Zufriedenheit, sondern ein Konflikt: Die übrigen Familien fragten zu Recht, warum ihre Kinder leer ausgingen. Eine Maßnahme, die nur einen Teil erreicht, erzeugt am Ende mehr Unfrieden als gar keine.
 
-Missverstehen Sie mich nicht. Ich bin nicht gegen den Unterricht, ich bin gegen die Illusion, er sei eine Frage des guten Willens einzelner Schulen. Solange die Ausbildung der Lehrkräfte nicht überregional organisiert wird, verwalten wir nur den Mangel.`,
+Missverstehen Sie mich nicht. Ich bin nicht gegen den Unterricht, ich bin gegen die Illusion, er sei eine Frage des guten Willens einzelner Schulen. Solange die Ausbildung der Lehrkräfte nicht überregional organisiert wird, verwalten wir nur den Mangel.
+
+Und noch etwas, das mir wichtig ist: Man verlangt von uns eine Entscheidung, die keine Schule allein treffen kann. Wenn ich drei Sprachen anbiete, habe ich damit auch gesagt, welche vierzehn ich nicht anbiete. Diese Auswahl ist unvermeidlich, aber sie gehört nicht in ein Lehrerzimmer. Sie gehört in eine Regelung, die für alle Schulen einer Region gilt und die jemand verantwortet.`,
               gloss: [
                 { de: "abdecken", tr: "kapsamak, karşılamak", en: "to cover" },
                 { de: "leer ausgehen", tr: "eli boş kalmak", en: "to come away empty-handed" },
@@ -228,6 +236,8 @@ Missverstehen Sie mich nicht. Ich bin nicht gegen den Unterricht, ich bin gegen 
               body: `Unsere Tochter besucht seit zwei Jahren einen Kurs, der am Samstagvormittag in einem Vereinsraum stattfindet. Die Lehrerin ist hervorragend, die Bedingungen sind es nicht: kein Material, keine Zeugnisse, keine Verbindung zum Unterricht in der Woche.
 
 Was mich daran am meisten stört, ist die Botschaft. Alles, was am Samstag in einem geliehenen Raum stattfindet, gilt als Privatsache. Damit lernen die Kinder nebenbei, welche ihrer Sprachen als richtige Schulsprache zählt.
+
+Man hört oft, die Familien könnten das doch selbst leisten. Bei uns zu Hause funktioniert das auch, solange es ums Sprechen geht. Beim Schreiben endet es: Ich kann meiner Tochter die Sprache beibringen, aber keine Rechtschreibung, die ich selbst nie systematisch gelernt habe. Genau an dieser Stelle beginnt Unterricht, und genau dort wird er nicht angeboten.
 
 Ich höre oft, das Ganze sei doch eine Frage des Geldes. Das stimmt zum Teil, aber es erklärt nicht, warum es keine Noten gibt. Eine Note kostet nichts, sie bedeutet nur, dass etwas ernst genommen wird.`,
               gloss: [
@@ -358,6 +368,8 @@ Ich höre oft, das Ganze sei doch eine Frage des Geldes. Das stimmt zum Teil, ab
 Der Grund dafür ist weniger geheimnisvoll, als es scheint. Ein Name ist, {{22}} fast allen anderen Informationen über eine Person, willkürlich. Aus "Bäcker" folgt nichts über den Beruf, aus "Klein" nichts über die Größe. Es fehlt jede Brücke, an der sich das Wort festhalten könnte.
 
 {{23}} kommt ein Reihenfolgeeffekt. Namen werden in Gesprächen fast immer zuerst genannt, also zu einem Zeitpunkt, an dem die Aufmerksamkeit noch bei der Situation liegt und nicht bei der Person.
+
+Hinzu kommt ein Effekt, den man an sich selbst beobachten kann. Wer sich beim Vorstellen darauf konzentriert, gleich selbst etwas zu sagen, hört den Namen des anderen im Wortsinn nicht: Die Aufmerksamkeit liegt bereits beim eigenen Satz. Das ist keine Unhöflichkeit, sondern eine Frage der Kapazität — und genau deshalb hilft das laute Wiederholen.
 
 Wer sich Namen besser merken will, sollte deshalb nicht mehr Mühe aufwenden, {{24}} eine andere. Wiederholen Sie den Namen einmal laut, verknüpfen Sie ihn mit einer beliebigen, ruhig unsinnigen Vorstellung, und fragen Sie im Zweifel noch einmal nach.
 
@@ -522,7 +534,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               no: 2,
               ref: "a1",
               text: "Notiz 2",
-              accept: ["Nachhilfe", "eine Nachhilfe", "Nachhilfeunterricht"],
+              accept: ["Nachhilfe", "eine Nachhilfe", "Nachhilfeunterricht", "Nachhilfestunden"],
               explain:
                 "Konuşmacı en başta ayrımı koyuyor: \"Das ist keine Nachhilfe.\" Sınav çalışması yapılmıyor; konuşuluyor, okunuyor, oynanıyor.",
             },
@@ -580,7 +592,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               no: 7,
               ref: "a1",
               text: "Notiz 7",
-              accept: ["Stadtteilbibliothek", "die Stadtteilbibliothek", "Bibliothek"],
+              accept: ["Stadtteilbibliothek", "die Stadtteilbibliothek", "Bibliothek", "Bücherei", "in der Bibliothek"],
               explain:
                 "Buluşmalar okulda ya da mahalle kütüphanesinde; ev açıkça dışlanıyor ve bu bir koşul olarak anılıyor.",
             },
@@ -615,7 +627,8 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
                 "öffentlichen Nahverkehr",
                 "Nahverkehr",
                 "Bus und Bahn",
-                "oeffentlichen Nahverkehr",
+                "öffentliche Verkehrsmittel",
+                "ÖPNV",
               ],
               explain:
                 "Ulaşım masrafı yalnız belge karşılığı ve yalnız toplu taşıma için; arabayla gelene ödeme yok.",
@@ -1081,7 +1094,7 @@ Dr. Elena Sturm, Vorstand`,
               id: "de-c1-02-s2-6",
               no: 6,
               text: "Lücke 6 (Ergänzung: außerdem)",
-              accept: ["Ergänzend", "Darüber hinaus", "Zudem", "Ferner", "Außerdem"],
+              accept: ["Ergänzend", "Darüber hinaus", "Zudem", "Ferner", "Außerdem", "Des Weiteren", "Überdies"],
               explain:
                 "Ek bilgi getiren resmî bağlayıcı: `Ergänzend weisen wir darauf hin …` / `Darüber hinaus …`.",
             },
@@ -1113,7 +1126,7 @@ Dr. Elena Sturm, Vorstand`,
               id: "de-c1-02-s2-9",
               no: 9,
               text: "Lücke 9 (Dank)",
-              accept: ["Wir danken Ihnen", "Vielen Dank", "Herzlichen Dank", "Wir bedanken uns"],
+              accept: ["Wir danken Ihnen", "Vielen Dank", "Herzlichen Dank", "Wir bedanken uns", "Besten Dank", "Wir danken"],
               explain:
                 "Teşekkür ayrı bir satır olarak durur: `Wir danken Ihnen für Ihre Mühe.` Resmî yazıda `Danke!` tek başına yetersiz kalır.",
             },

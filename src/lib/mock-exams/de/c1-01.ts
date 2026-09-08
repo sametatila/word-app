@@ -70,6 +70,8 @@ Historisch ist der Begriff jünger, als seine heutige Selbstverständlichkeit ve
 
 Kritiker halten dem entgegen, der Begriff verlagere ein strukturelles Problem in die Biografie des Einzelnen. Wer über seine Zeit verfüge, so das Argument, verfüge in aller Regel auch über ein höheres Einkommen; Zeitwohlstand sei mithin nur ein anderer Name für eine längst bekannte Ungleichheit. Der Einwand ist ernst zu nehmen, trifft aber nicht vollständig: Untersuchungen aus dem Pflegebereich zeigen, dass Beschäftigte mit vergleichbarem Verdienst sehr unterschiedlich über ihre Zeit verfügen, je nachdem, wie ihre Einrichtung plant.
 
+Messbar ist Zeitwohlstand bislang allerdings nur behelfsweise. Die gängigen Erhebungen fragen nach der Zahl der Stunden und nach der Zufriedenheit, selten jedoch nach der Verfügung: Wer legt den Beginn fest, wie kurzfristig ändert sich der Plan, wie oft wird außerhalb der vereinbarten Zeit gefragt? Dort, wo diese Fragen gestellt wurden — etwa in einer skandinavischen Erhebung mit rund elftausend Beschäftigten — fielen die Unterschiede zwischen den Branchen größer aus als die Unterschiede zwischen den Ländern. Das spricht gegen die verbreitete Annahme, es handle sich in erster Linie um eine Frage der nationalen Arbeitskultur.
+
 Für die betriebliche Praxis folgt daraus eine unbequeme Konsequenz. Maßnahmen, die den Zeitwohlstand erhöhen, kosten selten Geld, wohl aber Kontrolle. Ein Dienstplan, der drei Wochen im Voraus feststeht, bindet die Leitung stärker als einer, der wöchentlich angepasst wird. Genau hier, und nicht am Budget, scheitern die meisten Versuche.`,
               gloss: [
                 { de: "die Spitzfindigkeit", tr: "kılı kırk yaran ayrım", en: "hairsplitting" },
@@ -99,7 +101,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-1",
               no: 1,
               text: "Lücke 1",
-              accept: ["Verfügung", "Kontrolle", "Selbstbestimmung", "Herrschaft"],
+              accept: ["Verfügung", "Kontrolle", "Selbstbestimmung", "Herrschaft", "Verfügungsgewalt", "Bestimmung"],
               explain:
                 "Metin karşıtlığı kuruyor: \"nicht die bloße Menge freier Stunden, sondern die Verfügung über die eigene Zeit\". Boşluk `die … über` yapısında bir ad istiyor.",
             },
@@ -108,7 +110,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-2",
               no: 2,
               text: "Lücke 2",
-              accept: ["Vorhersehbarkeit", "Planbarkeit", "Berechenbarkeit", "Vorhersagbarkeit"],
+              accept: ["Vorhersehbarkeit", "Planbarkeit", "Berechenbarkeit", "Vorhersagbarkeit", "Verlässlichkeit"],
               explain:
                 "\"Ausschlaggebend ist offenbar weniger der Umfang als die Vorhersehbarkeit.\" Özet aynı karşıtlığı kurduğu için ikinci öğe gerekiyor.",
             },
@@ -117,7 +119,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-3",
               no: 3,
               text: "Lücke 3",
-              accept: ["belastet", "gestresst", "unter Druck", "beansprucht"],
+              accept: ["belastet", "gestresst", "unter Druck", "beansprucht", "überlastet", "unter Zeitdruck"],
               explain:
                 "Kaynak metin \"als deutlich weniger belastend\" diyor; özette özne kişi olduğu için ortaç `belastet` biçimine geçiyor.",
             },
@@ -135,7 +137,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-5",
               no: 5,
               text: "Lücke 5",
-              accept: ["Verkürzung", "Kürzung", "Reduzierung", "Verringerung"],
+              accept: ["Verkürzung", "Kürzung", "Reduzierung", "Verringerung", "Begrenzung", "Senkung"],
               explain:
                 "İşçi hareketi \"um die Verkürzung des Arbeitstages\" mücadele etmiş; boşluk `eine … des Arbeitstages` kalıbında dişil bir ad istiyor.",
             },
@@ -144,7 +146,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-6",
               no: 6,
               text: "Lücke 6",
-              accept: ["zerstreut", "verteilt", "zersplittert", "unregelmäßig"],
+              accept: ["zerstreut", "verteilt", "zersplittert", "unregelmäßig", "verstreut", "bruchstückhaft"],
               explain:
                 "\"wenn sie zerstreut anfallen\" — kazanılan saatler dağınık geldiğinde değerini yitiriyor. Boşluk `anfallende Stunden` ad öbeğinde bir niteleyici bekliyor.",
             },
@@ -153,7 +155,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-7",
               no: 7,
               text: "Lücke 7",
-              accept: ["individuelle", "persönliche", "biografische", "private"],
+              accept: ["individuelle", "persönliche", "biografische", "private", "biographische", "eigene"],
               explain:
                 "Eleştiri, sorunun \"in die Biografie des Einzelnen\" kaydırıldığını söylüyor. `eine … Frage` yapısı için dişil, -e ekli bir sıfat gerekiyor.",
             },
@@ -162,7 +164,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-8",
               no: 8,
               text: "Lücke 8",
-              accept: ["Einkommen", "Gehalt", "Verdienst", "Lohn"],
+              accept: ["Einkommen", "Gehalt", "Verdienst", "Lohn", "Entgelt"],
               explain:
                 "\"verfüge in aller Regel auch über ein höheres Einkommen\" — `mit einem höheren …` yapısı yalın bir yansız ad istiyor.",
             },
@@ -171,7 +173,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-9",
               no: 9,
               text: "Lücke 9",
-              accept: ["Geld", "Budget"],
+              accept: ["Geld", "Budget", "Mittel", "Kosten"],
               explain:
                 "Son paragrafın karşıtlığı: \"kosten selten Geld, wohl aber Kontrolle\". Boşluk bu çiftin ilk ögesi.",
             },
@@ -180,7 +182,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               id: "de-c1-01-l1-10",
               no: 10,
               text: "Lücke 10",
-              accept: ["Kontrolle", "Steuerung", "Macht", "Entscheidungsmacht"],
+              accept: ["Kontrolle", "Steuerung", "Macht", "Entscheidungsmacht", "Kontrollverzicht", "Verfügungsmacht"],
               explain:
                 "Aynı karşıtlığın ikinci ögesi. Metin bunu somutlaştırıyor: üç hafta önceden sabitlenen bir plan yönetimi daha çok bağlar.",
             },
@@ -206,7 +208,9 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
 
 Ich halte die verbreitete Forderung nach weniger Regulierung deshalb für kurzsichtig. Wer Höchstarbeitszeiten aufweicht, erhöht die Freiheit derjenigen, die ohnehin verhandeln können, und verringert sie für alle übrigen. Ein Recht, das nur ausgeübt werden kann, wenn man ersetzbar ist, ist kein Recht.
 
-Was mich an der Diskussion darüber hinaus stört, ist ihre Fixierung auf Bildschirmberufe. Über zwei Drittel der Beschäftigten arbeiten an Orten, an denen sich die Frage nach dem Homeoffice überhaupt nicht stellt. Für sie entscheidet nicht die Technik, sondern der Dienstplan.`,
+Was mich an der Diskussion darüber hinaus stört, ist ihre Fixierung auf Bildschirmberufe. Über zwei Drittel der Beschäftigten arbeiten an Orten, an denen sich die Frage nach dem Homeoffice überhaupt nicht stellt. Für sie entscheidet nicht die Technik, sondern der Dienstplan.
+
+Hinzu kommt eine Gruppe, die praktisch nie vorkommt: Teilzeitbeschäftigte. Für sie bedeutet Flexibilität regelmäßig, dass die vereinbarten Stunden über die ganze Woche verstreut liegen. Rechtlich ist das zulässig, praktisch verhindert es jede zweite Tätigkeit — eine Weiterbildung, eine Pflegeaufgabe, einen zweiten Vertrag. Wer den Umfang reduziert, verliert Einkommen; wer die Lage nicht bestimmen kann, verliert den Rest des Tages dazu.`,
               gloss: [
                 { de: "kranken an", tr: "bir kusurdan mustarip olmak", en: "to suffer from" },
                 { de: "aufweichen", tr: "gevşetmek", en: "to soften, to dilute" },
@@ -223,7 +227,9 @@ Was mich an der Diskussion darüber hinaus stört, ist ihre Fixierung auf Bildsc
 
 Was funktioniert hat: Die Zahl der Konflikte um einzelne Stunden ist praktisch verschwunden. Was nicht funktioniert hat: Die durchschnittliche Wochenarbeitszeit ist gestiegen, und zwar am stärksten bei denen, die vorher schon am längsten geblieben sind. Ohne Erfassung sieht das niemand, auch die Betroffenen nicht.
 
-Wir haben deshalb nachgesteuert und die Erfassung wieder eingeführt, allerdings ohne Kontrollfunktion: Die Zahlen gehen an die Beschäftigten, nicht an die Leitung. Das klingt nach einem Kompromiss und ist auch einer. Er hat den Vorteil, dass er beide Seiten unzufrieden zurücklässt und trotzdem hält.`,
+Wir haben deshalb nachgesteuert und die Erfassung wieder eingeführt, allerdings ohne Kontrollfunktion: Die Zahlen gehen an die Beschäftigten, nicht an die Leitung. Das klingt nach einem Kompromiss und ist auch einer. Er hat den Vorteil, dass er beide Seiten unzufrieden zurücklässt und trotzdem hält.
+
+Was ich heute anders machen würde: Wir haben die Regelung eingeführt, ohne vorher festzulegen, woran wir ihren Erfolg messen wollen. Vier Jahre später streiten wir über Eindrücke. Ein einziger Satz in der Vereinbarung — welche Zahl nach zwölf Monaten geprüft wird und wer sie vorlegt — hätte uns diese Debatte erspart. Das gilt für fast jede Betriebsvereinbarung, die ich kenne.`,
               gloss: [
                 { de: "die Vertrauensarbeitszeit", tr: "güvene dayalı çalışma süresi (saat kaydı olmadan)", en: "trust-based working time" },
                 { de: "nachsteuern", tr: "sonradan düzeltmek", en: "to readjust" },
@@ -238,6 +244,8 @@ Wir haben deshalb nachgesteuert und die Erfassung wieder eingeführt, allerdings
               body: `Ich führe einen Betrieb mit neunzig Beschäftigten und höre seit Jahren, Flexibilität sei ein Geschenk an die Arbeitgeber. Meine Erfahrung ist eine andere: Sie ist zunächst einmal Arbeit, und zwar für die Leitung.
 
 Als wir die Schichtplanung drei Wochen im Voraus festgelegt haben, war der Aufwand erheblich, und wir konnten auf Auftragsspitzen schlechter reagieren. Der Nutzen zeigte sich später: Die Fluktuation ist um etwa ein Drittel gesunken. Gerechnet auf die Kosten einer Neubesetzung war das die bessere Rechnung.
+
+Noch ein Wort zu den Zahlen, weil sie in solchen Diskussionen gern fehlen. Eine Neubesetzung kostet uns im Schnitt gut neuntausend Euro, gerechnet mit Ausschreibung, Einarbeitung und der Zeit, die erfahrene Kolleginnen dafür abgeben. Bei neunzig Beschäftigten und einer Fluktuation von fünfzehn Prozent ergibt das eine sechsstellige Summe im Jahr. Vor diesem Hintergrund ist verlässliche Planung keine Wohltat, sondern schlicht billiger.
 
 Was ich allerdings zurückweise, ist die Vorstellung, das lasse sich verordnen. Ein Gesetz, das für einen Betrieb mit neunzig Leuten dasselbe vorschreibt wie für einen mit neun, erzeugt nur Ausnahmen und Papier. Ich bin für Transparenzpflichten, nicht für Vorgaben.`,
               gloss: [
@@ -369,6 +377,8 @@ Was ich allerdings zurückweise, ist die Vorstellung, das lasse sich verordnen. 
 Die Begründungen ähneln sich auffällig. Fast immer ist von Zusammenarbeit die Rede, von Einarbeitung und vom sogenannten Zufall des Flurgesprächs. Belege dafür sind {{22}} dünn; die wenigen vorliegenden Untersuchungen kommen zu widersprüchlichen Ergebnissen.
 
 Aufschlussreicher als die offiziellen Gründe ist ein Blick auf die Struktur der Entscheidungen. Sie werden fast durchweg dort getroffen, wo Anwesenheit ohnehin selbstverständlich ist. Wer selbst täglich im Haus arbeitet, {{23}} die Kosten des Weges systematisch.
+
+Beobachten lässt sich zudem eine Verschiebung im Ton. Wo vor drei Jahren von Vertrauen die Rede war, steht heute die Formulierung von einer gemeinsamen Kultur, die sich nur vor Ort herstellen lasse. Das klingt versöhnlicher und meint dasselbe. Bemerkenswert ist dabei weniger die Wortwahl als der Umstand, dass die Begründung gewechselt hat, während die Maßnahme dieselbe geblieben ist.
 
 Damit soll die Gegenbewegung nicht als bloße Laune abgetan werden. Für Berufsanfängerinnen ist die Anwesenheit anderer tatsächlich schwer zu ersetzen. {{24}} wäre daraus zu folgern, dass dieselbe Regel für alle sinnvoll ist.
 
@@ -535,7 +545,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               no: 2,
               ref: "a1",
               text: "Notiz 2",
-              accept: ["Sabbatical", "ein Sabbatical", "Reisen", "Sabbatical zum Reisen"],
+              accept: ["Sabbatical", "ein Sabbatical", "Reisen", "Sabbatical zum Reisen", "Sabbatjahr", "Auszeit zum Reisen"],
               explain:
                 "Dört amaç sayıldıktan sonra açıkça dışlanan tek şey: \"Ein Sabbatical zum Reisen ist ausdrücklich nicht vorgesehen\".",
             },
@@ -564,7 +574,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               no: 5,
               ref: "a1",
               text: "Notiz 5",
-              accept: ["Auszubildende", "Azubis", "die Auszubildenden"],
+              accept: ["Auszubildende", "Azubis", "die Auszubildenden", "Lehrlinge"],
               explain:
                 "\"Auszubildende können nicht teilnehmen\" — süreli sözleşmelilerle karıştırılmaması gereken ayrı bir grup.",
             },
@@ -602,7 +612,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               no: 9,
               ref: "a1",
               text: "Notiz 9",
-              accept: ["einem externen Treuhänder", "externem Treuhänder", "einem Treuhänder", "Treuhänder"],
+              accept: ["einem externen Treuhänder", "externem Treuhänder", "einem Treuhänder", "Treuhänder", "externer Treuhänder", "einer Treuhandstelle"],
               explain:
                 "Para şirkette değil, dışarıdaki bir yediemin kuruluşta; konuşmacı bunun yasal zorunluluk olduğunu vurguluyor.",
             },
@@ -1055,7 +1065,7 @@ Halim Yücel`,
               id: "de-c1-01-s2-3",
               no: 3,
               text: "Lücke 3 (vollständig, ohne Ausnahme)",
-              accept: ["vollständig", "sämtlich", "in vollem Umfang", "ausnahmslos", "durchweg"],
+              accept: ["vollständig", "sämtlich", "in vollem Umfang", "ausnahmslos", "durchweg", "gänzlich", "restlos"],
               explain:
                 "Koşulların tamamının karşılandığını bildiren ölçülü bir belirteç gerekiyor: `vollständig` / `in vollem Umfang`. \"komplett\" günlük dildir.",
             },
@@ -1064,7 +1074,7 @@ Halim Yücel`,
               id: "de-c1-01-s2-4",
               no: 4,
               text: "Lücke 4 (einschränkender Übergang)",
-              accept: ["Allerdings", "Gleichwohl", "Dennoch", "Indes", "Jedoch"],
+              accept: ["Allerdings", "Gleichwohl", "Dennoch", "Indes", "Jedoch", "Freilich", "Nichtsdestotrotz"],
               explain:
                 "Olumlu tespitin ardından bir sınırlama geliyor. `Allerdings` ya da `Gleichwohl` bu geçişi kurar; \"aber\" cümle başında bu üslupta zayıf kalır.",
             },
@@ -1121,7 +1131,7 @@ Halim Yücel`,
               id: "de-c1-01-s2-9",
               no: 9,
               text: "Lücke 9 (Hinweis auf Anlagen)",
-              accept: ["Als Anlage", "Anbei", "Beigefügt", "In der Anlage"],
+              accept: ["Als Anlage", "Anbei", "Beigefügt", "In der Anlage", "Beiliegend", "Als Anlagen"],
               explain:
                 "Ek belgeler `Als Anlage füge ich … bei` ya da `Anbei …` ile duyurulur; \"hier sind\" yazışma diline ait değildir.",
             },
