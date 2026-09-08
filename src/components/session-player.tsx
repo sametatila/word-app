@@ -21,7 +21,6 @@ import { GameSwitch } from "@/components/game-switch";
 import { EASE_AFTER_MISSES, easeRound, isProductionGame } from "@/lib/ladder";
 import { LevelBadge } from "@/components/level-badge";
 import { prefetchGerman } from "@/components/speak-button";
-import { ChallengePlayer } from "@/components/challenge-player";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { fx } from "@/lib/fx";
@@ -30,35 +29,24 @@ import { FitBox } from "@/components/fit-box";
 import { AnswerPulse } from "@/components/answer-pulse";
 import { PushOptIn } from "@/components/push-optin";
 import { ShareResult } from "@/components/share-result";
-import { GamePicker } from "@/components/game-picker";
 import { Mascot } from "@/components/mascot";
 import { MascotPop } from "@/components/mascot-pop";
 import { MascotFx } from "@/components/mascot-fx";
 import { Stagger } from "@/components/reveal";
-import { DailyPlayer } from "@/components/daily-player";
-import { DailyCard } from "@/components/daily-card";
-import { ChallengeCard } from "@/components/challenge-card";
-import { WalkCard } from "@/components/walk-card";
-import { ModeTile } from "@/components/mode-tile";
-import { WalkPlayer } from "@/components/walk-player";
-import { QuestCard } from "@/components/quest-card";
-import { PlanCard } from "@/components/plan-card";
 import { CoachBubble } from "@/components/coach-bubble";
 import { LearnHeader } from "@/components/app-header";
-import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon, TargetIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon } from "@/components/icons";
 import { readCache, writeCache } from "@/lib/use-cached";
 
-type Status =
-  | "loading"
-  | "ready"
-  | "playing"
-  | "stage"
-  | "done"
-  | "empty"
-  | "error"
-  | "challenge"
-  | "daily"
-  | "walk";
+/**
+ * Turun durumları.
+ *
+ * `challenge`/`daily`/`walk` BURADAN KALKTI: üçü de oturum oynatıcısının bir
+ * durumuydu ve aynı adreste başka bir mod başlatıyordu — paylaşılamayan,
+ * yer imine alınamayan, tarayıcı geri düğmesiyle çıkılamayan modlar. Artık
+ * kendi adreslerindeler (`/learn/daily`, `/learn/walk`, `/learn/challenge`).
+ */
+type Status = "loading" | "ready" | "playing" | "stage" | "done" | "empty" | "error";
 
 /**
  * Bir etaptaki tur sayısı.
@@ -136,7 +124,13 @@ function localDay(): string {
   ).padStart(2, "0")}`;
 }
 
-export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
+/**
+ * Kelime turu. Başlangıç kartı YOK — açılır açılmaz oynanıyor.
+ *
+ * `leaderboard` propu kalktı: sıralama oyunun başlangıç kartında duruyordu,
+ * artık Öğren merkezinde (`components/learn/learn-hub`).
+ */
+export function SessionPlayer() {
   const router = useRouter();
   const [status, setStatus] = useState<Status>("loading");
   const [session, setSession] = useState<SessionPayload | null>(null);
@@ -226,9 +220,9 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
    * bayrağı görünce kuyruğu tutuyor ve etap/özet ekranında salıyor.
    */
   useEffect(() => {
-    const playing =
-      status === "playing" || status === "challenge" || status === "daily" || status === "walk";
-    window.dispatchEvent(new CustomEvent("lernomi:busy", { detail: { busy: playing } }));
+    // Yan modlar (günün turu, yürüyüş, hayatta kalma) artık ayrı adreslerde ve
+    // aynı sinyali kendileri atıyor (bkz. components/learn/mode-screen).
+    window.dispatchEvent(new CustomEvent("lernomi:busy", { detail: { busy: status === "playing" } }));
   }, [status]);
 
   const load = useCallback(
@@ -344,6 +338,29 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     inflight.current = load({ game, quiet: Boolean(cached?.rounds?.length) });
     void inflight.current;
   }, [load]);
+
+  /**
+   * TUR KENDİLİĞİNDEN BAŞLIYOR.
+   *
+   * Başlangıç kartı kalktığı için "ready" bir ekran değil, kuyruk hazır
+   * demenin adı. Yarım kalan tur varsa kaldığı yerden, yoksa baştan —
+   * kullanıcıya sistemin kendi muhasebesi ("kaldığın yerden mi, yeni tur mu")
+   * sorulmuyor. Mobilde de karar `GameScreen` içinde sessizce veriliyor.
+   *
+   * `ref` ile bir kez: `startFresh` beklerken durum "loading"e düşüp geri
+   * "ready"ye gelirse (önbellekli açılışın taze cevabı) etki yeniden koşar ve
+   * tur iki kez başlardı.
+   */
+  const autoStarted = useRef(false);
+  useEffect(() => {
+    if (status !== "ready" || autoStarted.current) return;
+    autoStarted.current = true;
+    if (resumable) resume();
+    else void startFresh();
+    // `resume`/`startFresh` her render'da yeniden kuruluyor; bağımlılığa
+    // alınmaları etkiyi her render'da tetiklerdi. Kapı zaten `autoStarted`.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, resumable]);
 
   /** Kaldığı yerden devam: sunucudaki ilerlemeyi yerine koyar. */
   function resume() {
@@ -639,67 +656,25 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     return () => window.removeEventListener("pagehide", onHide);
   }, []);
 
-  if (status === "daily")
-    return (
-      <Screen fills>
-        <DailyPlayer
-          onExit={() => {
-            router.refresh();
-            void load();
-          }}
-        />
-      </Screen>
-    );
-  if (status === "walk")
-    return (
-      <Screen fills>
-        <WalkPlayer
-          onExit={() => {
-            router.refresh();
-            void load();
-          }}
-        />
-      </Screen>
-    );
-  if (status === "challenge")
-    return (
-      <Screen fills>
-        <ChallengePlayer
-          onExit={() => {
-            router.refresh();
-            void load();
-          }}
-        />
-      </Screen>
-    );
   if (status === "loading")
     return (
       <Screen fills header>
         <LoadingCard />
       </Screen>
     );
-  if (status === "ready" && session)
+  /*
+    "ready" artık GEÇİŞ durumu, bir ekran değil.
+
+    Başlangıç kartı buradaydı ve sekmenin ana ekranı gibi davranıyordu; o iş
+    artık `/learn` merkezinde (bkz. components/learn/learn-hub). Tur açılır
+    açılmaz başlıyor — yarım kalan varsa kaldığı yerden, yoksa taze. Mobilde
+    de öyle: `GameScreen` bir başlangıç kartı göstermiyor, `p.resume`u sessizce
+    yerine koyup oynatıyor.
+  */
+  if (status === "ready")
     return (
-      <Screen header>
-        <StartCard
-          meta={session.meta}
-          rounds={session.rounds}
-          resumable={resumable}
-          onlyGame={onlyGame}
-          onStart={() => void startFresh()}
-          onResume={resume}
-          onPickGame={(game) => void load({ game, fresh: true })}
-          onDaily={() => {
-            track("daily_play");
-            setStatus("daily");
-          }}
-          onChallenge={() => {
-            track("challenge_play");
-            setStatus("challenge");
-          }}
-          onWalk={() => setStatus("walk")}
-          leaderboard={leaderboard}
-        />
+      <Screen fills>
+        <LoadingCard />
       </Screen>
     );
   if (status === "error")
@@ -761,7 +736,7 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
           }}
           onChallenge={() => {
             track("challenge_play");
-            setStatus("challenge");
+            router.push("/learn/challenge");
           }}
         />
       </Screen>
@@ -904,249 +879,6 @@ function Screen({ fills, header, children }: { fills?: boolean; header?: boolean
       {header ? <LearnHeader /> : null}
       {children}
     </div>
-  );
-}
-
-function StartCard({
-  meta,
-  rounds,
-  resumable,
-  onlyGame,
-  onStart,
-  onResume,
-  onPickGame,
-  onDaily,
-  onChallenge,
-  onWalk,
-  leaderboard,
-}: {
-  meta: SessionPayload["meta"];
-  rounds: Round[];
-  /** Sunucudaki yarım kalan tur — varsa "kaldığın yerden devam" gösterilir. */
-  resumable: SessionProgress | null;
-  /** Tek oyunlu tur seçiliyse o oyun; karışık turda null. */
-  onlyGame: PlayableGame | null;
-  onStart: () => void;
-  onResume: () => void;
-  onPickGame: (game: PlayableGame | null) => void;
-  onDaily: () => void;
-  onChallenge: () => void;
-  onWalk: () => void;
-  /** Sunucuda hazırlanan sıralama tablosu — yalnızca bu kartta görünür. */
-  leaderboard?: ReactNode;
-}) {
-  const words = rounds.flatMap((r) => (r.game === "match" ? r.words : [r.word]));
-  const newCount = new Set(words.filter((w) => w.isNew).map((w) => w.id)).size;
-  const reviewCount = new Set(words.filter((w) => !w.isNew).map((w) => w.id)).size;
-  const goalPct = Math.min(100, Math.round((meta.reviewsToday / Math.max(1, meta.dailyGoal)) * 100));
-  const name = meta.displayName?.split(" ")[0];
-
-  // Kaç kişi bu kartı görüp hiç başlamadan çıkıyor — beşerli etaplar tam da
-  // bu ölçüm yüzünden eklenmişti ama ölçüm elle yapılmıştı. Artık akıyor.
-  useEffect(() => {
-    track("start_card", rounds.length);
-  }, [rounds.length]);
-
-  return (
-    /*
-      Başlangıç ekranının bölümleri TEK zincirle açılıyor.
-
-      Önce her kart kendi giriş animasyonunu yapıyordu: altı bölüm aynı anda
-      ama farklı mesafelerle (kimi 8, kimi 14 piksel) beliriyordu — hepsi
-      birden oynayan ama aynı ritmi tutmayan bir hareket. Şimdi sıra okunma
-      sırasıyla aynı: karşılama, başka türlü oyna, görevler, oyun seçici,
-      sıralama.
-    */
-    <Stagger className="mx-auto w-full max-w-md">
-      {/*
-        BUGÜN — tek karar, tek kart.
-
-        Burada beş ayrı blok vardı: karşılama, iki sayaç, tempo şeridi, başlat
-        düğmesi ve kapsam satırı. Beşi de AYNI kararın parçalarıydı ("bugün
-        çalışayım mı, neyi") ama ayrı kutulara bölününce sayfadaki diğer
-        kartlarla aynı ağırlığı taşıyorlardı ve birincil eylem kalabalıkta
-        kayboluyordu.
-
-        Şimdi tek kart, dört katman: kim olduğun ve hedefin (renkli bant),
-        bugün ne var (sayaçlar + tempo), sıra kimde (plan satırı), ve eylem.
-        Sıra da bu — yukarıdan aşağı okununca bir cümle kuruyor.
-      */}
-      <div className="card overflow-hidden">
-        <div className="brand-gradient-deep px-5 py-4 text-white">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
-              <p className="text-sm opacity-90">
-                {meta.currentStreak > 0
-                  ? `${meta.currentStreak} günlük seridesin`
-                  : "Bugün serini başlat"}
-              </p>
-              <div className="mt-0.5 flex items-center gap-2">
-                <h1 className="truncate text-xl font-bold">
-                  {name ? `Hoş geldin, ${name}` : "Hoş geldin"}
-                </h1>
-                <span className="shrink-0 rounded-lg bg-white/25 px-2 py-0.5 text-sm font-black">
-                  {meta.level}
-                </span>
-              </div>
-            </div>
-            {/*
-              Erdi karşılamayı üstleniyor ve üç hâli var.
-
-              Seri duruyorsa keyfi yerinde. Seri KIRILMIŞSA uyuyor: "Bugün
-              serini başlat" cümlesinin resmi bu — buralar sessizdi. Uyku
-              klibi bilerek seçildi, çünkü bir tur oynayıp neşeli
-              boşta-bekleme rotasyonuna geçmeyen iki klipten biri (mascot
-              STICKY): bu bir tepki değil, düzelene kadar süren bir DURUM.
-
-              Ama hiç oynamamış kullanıcıya uyuyan bir maskotla açmak yanlış
-              olurdu — orada kırılmış bir şey yok, henüz başlamamış bir şey
-              var. Ayrım birikimde: puanı olup serisi kopmuş kişi dönen
-              kullanıcıdır.
-            */}
-            <Mascot
-              mood={meta.currentStreak > 0 ? "happy" : meta.totalXp > 0 ? "sleep" : "idle"}
-              size={54}
-              className="-my-1 shrink-0"
-            />
-          </div>
-          <div className="mt-2.5">
-            <div className="mb-1 flex justify-between text-xs font-semibold opacity-90">
-              <span>Günlük hedef</span>
-              <span className="tabular-nums">
-                {meta.reviewsToday} / {meta.dailyGoal}
-              </span>
-            </div>
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/25">
-              <motion.div
-                className="h-full rounded-full bg-white"
-                initial={{ width: 0 }}
-                animate={{ width: `${goalPct}%` }}
-                transition={{ type: "spring", stiffness: 150, damping: 24 }}
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-3 px-4 py-4">
-          {/*
-            İki sayaç artık iki satırlık bölünmüş bir ızgara değil, tek satırda
-            iki çip. Aynı bilgi, üçte bir yer — ve sayı ile etiket yan yana
-            olduğu için okuması da daha kısa.
-          */}
-          <div className="flex items-center gap-2 text-sm">
-            <span
-              className="flex items-center gap-1.5 rounded-full px-2.5 py-1 font-bold"
-              style={{
-                background: "color-mix(in srgb, var(--color-flame) 14%, transparent)",
-                color: "var(--color-flame)",
-              }}
-            >
-              <span className="tabular-nums">{reviewCount}</span>
-              <span className="text-xs font-semibold">tekrar</span>
-            </span>
-            <span
-              className="flex items-center gap-1.5 rounded-full px-2.5 py-1 font-bold"
-              style={{
-                background: "color-mix(in srgb, var(--color-brand) 14%, transparent)",
-                color: "var(--color-brand)",
-              }}
-            >
-              <span className="tabular-nums">{newCount}</span>
-              <span className="text-xs font-semibold">yeni</span>
-            </span>
-            {meta.coverage.total > 0 ? (
-              <span className="muted ml-auto truncate text-xs font-semibold tabular-nums">
-                {meta.coverage.mastered.toLocaleString("tr-TR")} / {meta.coverage.total.toLocaleString("tr-TR")} pekişti
-              </span>
-            ) : null}
-          </div>
-
-          {/* Tempo bilgisi — bir başarı notu değil, bugün ne kadar yük alındığı. */}
-          {meta.pacing !== "normal" ? (
-            <p className="rounded-xl px-3 py-2 text-xs surface-2">
-              <strong style={{ color: "var(--color-flame)" }}>
-                {meta.pacing === "review" ? "Bugün tekrar günü" : "Bugün tempo düşük"}
-              </strong>
-              {" — "}
-              {meta.pacing === "review"
-                ? `${meta.dueCount} tekrar birikmiş, bugün onları kapatıyoruz.`
-                : `${meta.leeches} kelimede takılıyorsun, yeni kelime yarıya indi.`}
-            </p>
-          ) : null}
-
-          {/* Plan: kapalıyken tek satır, dokununca liste (bkz. components/plan-card). */}
-          <PlanCard onStartSession={onStart} name={name} />
-
-          {resumable ? (
-            <div className="space-y-2">
-              <button onClick={onResume} className="btn btn-primary w-full px-5 py-3.5">
-                Kaldığın yerden devam et ({resumable.index + 1}. tur)
-              </button>
-              <button onClick={onStart} className="btn btn-ghost w-full px-5 py-2.5 text-sm">
-                Yeni tura başla
-              </button>
-            </div>
-          ) : (
-            <button onClick={onStart} className="btn btn-primary w-full px-5 py-3.5 text-base">
-              {onlyGame
-                ? `${GAME_LABELS[onlyGame]} · ${rounds.length} tur`
-                : `${rounds.length} turluk tura başla`}
-            </button>
-          )}
-
-          {/*
-            Oyun seçici artık burada, başlat düğmesinin hemen altında.
-
-            On oyunluk ızgara olarak sayfanın DİBİNDE duruyordu ve orada bir
-            seçenek gibi görünüyordu. Oysa günlük bir karar değil bir TERCİH:
-            karışık tur varsayılan, tek oyuna kilitlemek ara sıra yapılan bir
-            şey. Turun ayarı, turun düğmesinin yanına ait. Kendi açılır
-            başlığı zaten var; kapalıyken tek satır.
-          */}
-          <GamePicker active={onlyGame} onPick={onPickGame} bare />
-        </div>
-      </div>
-
-      {/*
-        BAŞKA TÜRLÜ OYNA — dört mod, iki satır.
-
-        Dördü alt alta dört satırdı ve dokunulabilir olan tek şey sağdaki küçük
-        düğmeydi. Döşemede döşemenin tamamı dokunulabilir ve dört mod ekranın
-        üçte biri yerine altıda birini tutuyor (bkz. components/mode-tile).
-      */}
-      <section className="mt-5">
-        <h2 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">
-          Farklı bir şey dene
-        </h2>
-        <div className="grid grid-cols-2 gap-2">
-          <DailyCard onPlay={onDaily} tile />
-          <ChallengeCard best={meta.challengeBest} onPlay={onChallenge} tile />
-          <WalkCard onPlay={onWalk} tile />
-          {/* Dördüncü yuva boştu; tek oyunlu pratiğin web'de seçicisi yoktu
-              (yetenek vardı, ?game= ile, ama oraya yalnız hata analizi ve
-              günlük plan bağlanıyordu). Mobilde bu ekran baştan beri var. */}
-          <ModeTile
-            icon={<TargetIcon size={18} />}
-            tone="var(--color-violet)"
-            title="Pratik"
-            status="Tek oyun seç"
-            href="/learn/practice"
-          />
-        </div>
-      </section>
-
-      {/*
-        GÖREVLER VE SIRALAMA tek kartta.
-
-        İkisi de aynı duyguyu satıyor — biriktirmek ve karşılaştırmak — ama iki
-        ayrı blok tüketiyorlardı. Sıralama görevlerin altında: önce kendi
-        hedefin, sonra başkalarına göre yerin.
-      */}
-      <div className="mt-4 space-y-3">
-        <QuestCard />
-        {leaderboard}
-      </div>
-    </Stagger>
   );
 }
 

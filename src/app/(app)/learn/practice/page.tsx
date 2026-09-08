@@ -55,7 +55,7 @@ export default async function PracticePage() {
       <ul className="card divide-y overflow-hidden" style={{ borderColor: "var(--border)" }}>
         {list.map(({ game, hint }) => (
           <li key={game}>
-            <Link href={`/learn?game=${game}`} className="flex items-center gap-3 px-4 py-3.5">
+            <Link href={`/learn/game?game=${game}`} className="flex items-center gap-3 px-4 py-3.5">
               <span className="min-w-0 flex-1">
                 <span className="block font-semibold">{GAME_LABELS[game]}</span>
                 <span className="muted block text-xs">{hint}</span>

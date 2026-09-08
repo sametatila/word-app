@@ -31,7 +31,21 @@ function localDay(): string {
  * Durumu kendisi çekiyor (`/api/plan`). Sunucuya ulaşılamazsa hiç görünmüyor:
  * planın yokluğu turu engellemez.
  */
-export function PlanCard({ onStartSession, name }: { onStartSession: () => void; name?: string }) {
+export function PlanCard({
+  onStartSession,
+  name,
+}: {
+  /**
+   * Turu başlatan davranış. VERİLMEZSE `/learn/game`e gidilir.
+   *
+   * Eskiden zorunluydu çünkü tek çağıran oyunun başlangıç kartıydı ve tur
+   * o kartın kendi durumunda başlıyordu. Tur kendi adresine taşınınca
+   * (bkz. components/learn/learn-hub) çağıranın elinde bir "başlat"
+   * fonksiyonu kalmadı — plan da bir bağlantı gibi davranabiliyor.
+   */
+  onStartSession?: () => void;
+  name?: string;
+}) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
 
@@ -53,7 +67,10 @@ export function PlanCard({ onStartSession, name }: { onStartSession: () => void;
 
   function go(item: PlanItem, index: number) {
     track("plan_start", index, item.id);
-    if (item.action === "session") onStartSession();
+    if (item.action === "session") {
+      if (onStartSession) onStartSession();
+      else router.push("/learn/game");
+    }
     else if (item.href) router.push(item.href);
   }
 

@@ -66,7 +66,7 @@ export async function errorReport(userId: string, course: string, days = 30): Pr
         label: ERROR_LABELS[r.type],
         n: r.n,
         pct: totalWrong ? Math.round((100 * r.n) / totalWrong) : 0,
-        href: game ? `/learn?game=${game}` : null,
+        href: game ? `/learn/game?game=${game}` : null,
         gameLabel: game ? GAME_LABELS[game as GameId] : null,
       };
     });

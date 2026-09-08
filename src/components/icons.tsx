@@ -90,6 +90,49 @@ export const MoonIcon = (p: IconProps) => (
 );
 
 /*
+ * ── MOBİLDEN GELEN İKONLAR ────────────────────────────────────────────────
+ *
+ * Öğren merkezinin kahramanı ve kartları mobildekiyle aynı simgeleri
+ * kullanıyor (`M/src/ui/icons.tsx`); yollar birebir. Çizgi kalınlığı 2 —
+ * mobilin `stroke()` yardımcısının değeri.
+ */
+/** Enerji / günlük tur — şimşek */
+export const BoltIcon = (p: IconProps) => (
+  <Svg strokeWidth={2} {...p}>
+    <path d="M13 2 5 13h5l-1 9 8-11h-5z" />
+  </Svg>
+);
+
+/** İleri — sağ ok */
+export const ArrowRightIcon = (p: IconProps) => (
+  <Svg strokeWidth={2} {...p}>
+    <path d="M5 12h14M13 6l6 6-6 6" />
+  </Svg>
+);
+
+/** Yürüyüş modu — yürüyen figür */
+export const WalkIcon = (p: IconProps) => (
+  <Svg strokeWidth={2} {...p}>
+    <circle cx="13" cy="4" r="2" fill="currentColor" />
+    <path d="M13 8l-2 4 3 2 1 6M11 12l-3 2-2 3M14 14l3 1" />
+  </Svg>
+);
+
+/** Sınav — mezuniyet kepi */
+export const ExamIcon = (p: IconProps) => (
+  <Svg strokeWidth={2} {...p}>
+    <path d="M3 8l9-4 9 4-9 4-9-4zM7 10v5c0 1.5 2.2 3 5 3s5-1.5 5-3v-5M21 8v5" />
+  </Svg>
+);
+
+/** Sıralama — kürsü */
+export const PodiumIcon = (p: IconProps) => (
+  <Svg strokeWidth={2} {...p}>
+    <path d="M9 20V9h6v11M15 20V4h5v16M9 20V13H4v7M2 20h20" />
+  </Svg>
+);
+
+/*
  * ── ALT GEZİNMENİN ÜÇ İKONU ───────────────────────────────────────────────
  *
  * Şekiller mobil `M/src/ui/icons.tsx`ten BİREBİR: aynı 24×24 ızgara, aynı

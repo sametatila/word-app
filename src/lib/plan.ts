@@ -154,7 +154,7 @@ export async function buildPlan(
         detail: `son 14 günde ${top.n} hata · ${target.label} turu`,
         minutes: 4,
         done: (todayRows?.n ?? 0) >= 5,
-        href: `/learn?game=${target.game}`,
+        href: `/learn/game?game=${target.game}`,
       });
     }
   } catch (err) {
