@@ -284,7 +284,7 @@ Was ich allerdings zurückweise, ist die Vorstellung, das lasse sich verordnen. 
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 2,
               explain:
-                "C: üç hafta önceden planlama başta yüklü bir işti, ama devir hızındaki düşüş hesabı tersine çevirdi.",
+                "C: «war der Aufwand erheblich» ama sonra «Die Fluktuation ist um etwa ein Drittel gesunken. Gerechnet auf die Kosten einer Neubesetzung war das die bessere Rechnung».",
             },
             {
               kind: "mcq",
@@ -294,7 +294,7 @@ Was ich allerdings zurückweise, ist die Vorstellung, das lasse sich verordnen. 
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 3,
               explain:
-                "Hiçbir metin kuşaklar arasında böyle bir ayrım yapmıyor. B'de yaş değil, önceden de uzun kalanlar üzerinden bir ayrım var — bu başka bir şey.",
+                "Hiçbir metin kuşaklar arasında böyle bir ayrım yapmıyor. B'de «am stärksten bei denen, die vorher schon am längsten geblieben sind» deniyor — bu yaş değil, alışkanlık ayrımı.",
             },
             {
               kind: "mcq",
@@ -334,7 +334,7 @@ Was ich allerdings zurückweise, ist die Vorstellung, das lasse sich verordnen. 
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 0,
               explain:
-                "A: azami çalışma sürelerinin gevşetilmesi pazarlık gücü olanların özgürlüğünü artırır, ötekilerinkini azaltır.",
+                "A: «Wer Höchstarbeitszeiten aufweicht, erhöht die Freiheit derjenigen, die ohnehin verhandeln können, und verringert sie für alle übrigen.»",
             },
             {
               kind: "mcq",
@@ -344,7 +344,7 @@ Was ich allerdings zurückweise, ist die Vorstellung, das lasse sich verordnen. 
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 3,
               explain:
-                "Hiçbir metin verimlilik üzerine bir bulgu ileri sürmüyor. A ev ofisi yalnız tartışmanın dar kapsamını göstermek için anıyor.",
+                "Hiçbir metin verimlilik üzerine bir bulgu ileri sürmüyor. A ev ofisini yalnız tartışmanın dar kapsamını göstermek için anıyor: «ihre Fixierung auf Bildschirmberufe».",
             },
             {
               kind: "mcq",
@@ -566,7 +566,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               text: "Notiz 4",
               accept: ["18 Monaten", "achtzehn Monaten", "18 Monate", "achtzehn Monate"],
               explain:
-                "Süreli sözleşmeler dışlanmıyor, ama süre en az on sekiz ay olmalı. Sayıyı ve koşulu birlikte tutmak gerekiyor.",
+                "«Befristete Verträge sind nicht ausgeschlossen, allerdings muss die Laufzeit mindestens achtzehn Monate betragen» — sayıyı ve koşulu birlikte tutmak gerekiyor.",
             },
             {
               kind: "gap",
@@ -614,7 +614,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               text: "Notiz 9",
               accept: ["einem externen Treuhänder", "externem Treuhänder", "einem Treuhänder", "Treuhänder", "externer Treuhänder", "einer Treuhandstelle"],
               explain:
-                "Para şirkette değil, dışarıdaki bir yediemin kuruluşta; konuşmacı bunun yasal zorunluluk olduğunu vurguluyor.",
+                "«Das Geld liegt nicht bei uns im Haus, sondern bei einem externen Treuhänder»; konuşmacı bunun yasal zorunluluk olduğunu ayrıca vurguluyor.",
             },
             {
               kind: "gap",
@@ -624,7 +624,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               text: "Notiz 10",
               accept: ["Auszahlung", "die Auszahlung", "Auszahlen"],
               explain:
-                "Üç seçenekten en kötüsü nakit ödeme, çünkü tutarın tamamı tek yılda vergilendiriliyor.",
+                "«Die Auszahlung ist die ungünstigste Variante, weil der gesamte Betrag in einem Jahr versteuert wird.»",
             },
           ],
         },
@@ -883,7 +883,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               ref: "d1",
               text: "Was ergänzt Herr Falkenberg dazu?",
               options: [
-                "Eine Zusage darüber, was mit den Zahlen nicht geschehen darf.",
+                "Eine verbindliche Festlegung dessen, was mit den Daten unterbleiben muss.",
                 "Eine gesetzliche Obergrenze für Überstunden.",
                 "Eine jährliche Befragung der Beschäftigten.",
               ],
@@ -904,7 +904,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               ],
               answer: 1,
               explain:
-                "Yıllardır her şey görünür; değişim ancak sayılar toplu sözleşme masasına konduğunda gelmiş.",
+                "Frau Odonkor: «Bei uns ist seit Jahren alles sichtbar. Verändert hat sich erst etwas, als die Zahlen in einer Tarifverhandlung auf dem Tisch lagen.»",
             },
             {
               kind: "mcq",
@@ -914,10 +914,10 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               text: "Was nennt Frau Odonkor als erste notwendige Änderung?",
               options: [
                 "Eine höhere Vergütung der Überstunden.",
-                "Eine bessere Personalbemessung.",
                 "Eine verbindliche Dienstplanfrist.",
+                "Eine bessere Personalbemessung.",
               ],
-              answer: 1,
+              answer: 2,
               explain:
                 "\"Die Personalbemessung. Alles andere ist Verwaltung des Mangels.\" Ücret ve plan bunun ardından gelir.",
             },
@@ -934,7 +934,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               ],
               answer: 0,
               explain:
-                "Tek cümlelik son turda istediği şey bir yasak kuralı: verilere hiçbir koşulda kimin bakamayacağı.",
+                "«Eine verbindliche Regel, wer die Daten unter keinen Umständen sehen darf» — tek cümlelik son turda istediği şey bir yasak kuralı.",
             },
             {
               kind: "mcq",
@@ -945,11 +945,11 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               options: [
                 "Mit der Forderung nach mehr Untersuchungen.",
                 "Mit einer Kritik an der Gesetzgebung.",
-                "Mit der Forderung, bei Flexibilität immer zu sagen, für wen sie gilt.",
+                "Mit der Forderung, den Geltungsbereich von Flexibilität stets zu benennen.",
               ],
               answer: 2,
               explain:
-                "Kapanış cümlesi tartışmanın kendi kör noktasına dönüyor: kimin için geçerli olduğu söylenmeden esneklikten söz edilmemeli.",
+                "«Dass wir aufhören, über Flexibilität zu sprechen, ohne zu sagen, für wen sie gilt» — kapanış cümlesi tartışmanın kendi kör noktasına dönüyor.",
             },
           ],
         },

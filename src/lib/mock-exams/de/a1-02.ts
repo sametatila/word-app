@@ -709,7 +709,7 @@ funktionieren hier nicht.`,
               options: ["Am Donnerstag.", "Am Freitag.", "Am Samstag."],
               answer: 0,
               explain:
-                "Cuma teklif ediliyor ama doktor randevusu var; perşembe uygun ve öyle karar veriliyor.",
+                "«Freitag habe ich einen Arzttermin. Aber Donnerstag geht» — cuma teklif ediliyor, doktor randevusu yüzünden reddediliyor, perşembede anlaşılıyor.",
             },
             {
               kind: "mcq",

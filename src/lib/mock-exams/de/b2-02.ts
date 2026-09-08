@@ -127,7 +127,7 @@ Was ich nicht mehr mache, ist gegen Überzeugungen anzureden. Ich lege die Zahle
               options: ["Mira", "Robert", "Sandra", "Tomas"],
               answer: 0,
               explain:
-                "Mira tek tek çalışmaları izlemeyi bırakıp derleme çalışmalarını bekliyor; bunun uzun sürdüğünü de kabul ediyor.",
+                "Mira: «Ich warte auf Übersichtsarbeiten, in denen jemand die vorhandenen Untersuchungen zusammenrechnet» — tek tek çalışmaları izlemeyi bırakmış.",
             },
             {
               kind: "mcq",
@@ -157,7 +157,7 @@ Was ich nicht mehr mache, ist gegen Überzeugungen anzureden. Ich lege die Zahle
               options: ["Mira", "Robert", "Sandra", "Tomas"],
               answer: 0,
               explain:
-                "Mira yıllarca önerdiği bir şeyi bırakmak zorunda kaldığını ve bunu artık açıkça söylediğini yazıyor.",
+                "Mira: «Unangenehmer finde ich, dass ich manchmal etwas absetzen muss, das ich jahrelang selbst empfohlen habe. Ich sage das inzwischen offen.»",
             },
             {
               kind: "mcq",
@@ -281,7 +281,7 @@ Was also tun? Fachleute empfehlen drei Fragen, die sich ohne Vorkenntnisse stell
               text: "Lücke 13",
               answer: "c",
               explain:
-                "Denekler öğrenciler ya da sağlıklı gönüllüler; (c) bunun sınırını çiziyor: yetmiş yaşında ve üç hastalığı olan biri için geçerli mi, bilinmiyor.",
+                "Boşluktan önce denekler «Studierenden oder an ausgewählten, besonders gesunden Freiwilligen» diye tanımlanıyor; (c) bunun sınırını çiziyor.",
             },
             {
               kind: "match",
@@ -290,7 +290,7 @@ Was also tun? Fachleute empfehlen drei Fragen, die sich ohne Vorkenntnisse stell
               text: "Lücke 14",
               answer: "b",
               explain:
-                "Her istasyonda bir yan cümlenin kaybolduğu söyleniyor; (b) bu zincirin sonunu anlatıyor: kayıtsız, kimsenin yazmadığı bir cümle.",
+                "Boşluktan önce «an jeder verschwindet ein Nebensatz» deniyor; (b) zincirin sonunu anlatıyor: kayıtsız, kimsenin yazmadığı bir cümle.",
             },
             {
               kind: "match",
@@ -299,7 +299,7 @@ Was also tun? Fachleute empfehlen drei Fragen, die sich ohne Vorkenntnisse stell
               text: "Lücke 15",
               answer: "a",
               explain:
-                "Üç soru verildikten sonra (a) onların gücünü ölçüyor: her şeyi çözmüyor ama işe yaramayanı eliyor. (g) ve (h) konuyla ilgili ama önlerindeki cümleye bağlanmıyor.",
+                "Üç soru verildikten sonra (a) onların gücünü ölçüyor: «Sie beantworten längst nicht alles, sortieren aber den größten Teil dessen aus». (g) ve (h) konuyla ilgili ama önlerindeki cümleye bağlanmıyor.",
             },
           ],
         },
@@ -360,7 +360,7 @@ Bleibt ein Einwand, den ich ernst nehme: Ohne konkrete Zahl erreicht man womögl
               text: "Worin sieht er die eigentliche Stärke solcher Zahlen?",
               options: [
                 "In ihrer wissenschaftlichen Genauigkeit.",
-                "In ihrer Verbreitung durch Hersteller.",
+                "In ihrer Verbreitung durch die Hersteller der Geräte.",
                 "Darin, dass man sie abhaken kann.",
               ],
               answer: 2,
@@ -395,7 +395,7 @@ Bleibt ein Einwand, den ich ernst nehme: Ohne konkrete Zahl erreicht man womögl
               ],
               answer: 1,
               explain:
-                "Ulaşılamayan sayı bir karneye dönüşüyor ve insanlar hareket işe yaramadığı için değil, hedefi tutturamadıkları için bırakıyor.",
+                "«Eine Zahl, die man verfehlt, wirkt wie ein Zeugnis» — insanlar hareket işe yaramadığı için değil, hedefi tutturamadıkları için bırakıyor.",
             },
             {
               kind: "mcq",
@@ -599,7 +599,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ref: "b1",
               text: "Wer ist von der Teilnahme ausgeschlossen?",
               options: [
-                "Wer in den letzten sechs Monaten Schichtarbeit geleistet hat.",
+                "Wer im letzten halben Jahr im Schichtdienst gearbeitet hat.",
                 "Wer gelegentlich nachts arbeitet.",
                 "Wer bereits an einer anderen Studie teilgenommen hat.",
               ],
@@ -616,11 +616,11 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               options: [
                 "Eine ärztliche Beurteilung ihrer eigenen Messwerte.",
                 "Eine Kopie aller erhobenen Rohdaten.",
-                "Eine verständliche Zusammenfassung der Ergebnisse.",
+                "Einen für Laien geschriebenen Überblick über die Befunde.",
               ],
               answer: 2,
               explain:
-                "Talep hâlinde genel bir özet veriliyor; bireysel tıbbi değerlendirme açıkça kapsam dışında bırakılıyor.",
+                "«Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche Zusammenfassung der Ergebnisse»; hemen ardından «Eine individuelle medizinische Auswertung Ihrer Messwerte ist nicht Teil der Studie».",
             },
           ],
         },
@@ -762,7 +762,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
                 "Die Packung zunächst nur einmal zu kaufen.",
               ],
               answer: 1,
-              explain: "Aile hekiminde kan tahlili öneriyor ve bunun üç kutudan ucuz olduğunu ekliyor.",
+              explain: "«Mit einer Blutuntersuchung beim Hausarzt. Das kostet Sie weniger als drei Packungen davon.»",
             },
             {
               kind: "bool",
@@ -922,7 +922,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ],
               answer: 0,
               explain:
-                "İlk hafta yalnız telafi; ölçüt ikinci haftada oturan süre. Ortalamayla karşılaştırma açıkça yetersiz sayılıyor.",
+                "«An zwei Wochen Urlaub ohne Wecker. Was sich in der zweiten Woche einpendelt, ist Ihr Bedarf» — ilk hafta yalnız telafi; ortalamayla karşılaştırma yetersiz sayılıyor.",
             },
             {
               kind: "mcq",
@@ -952,7 +952,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ],
               answer: 1,
               explain:
-                "İyi uyuyan insanlar bir sayı yüzünden kötü değerlendirilmiş hissediyor — ölçmenin kendisi bir sorun üretiyor.",
+                "«Wir sehen Leute, die gut schlafen, sich aber schlecht bewertet fühlen, weil eine Zahl das sagt» — ölçmenin kendisi bir sorun üretiyor.",
             },
             {
               kind: "mcq",
@@ -1048,7 +1048,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               text: "Ohne klare Definition ist der Fragebogen beliebig.",
               options: ["Frau Ahrend.", "Herr Nowak.", "Frau Ceylan."],
               answer: 0,
-              explain: "Frau Ahrend toplantıyı bu itirazla açıyor: ölçülecek şey tanımlanmadan anket keyfî.",
+              explain: "«Ohne die ist jeder Fragebogen beliebig» — Frau Ahrend toplantıyı bu itirazla açıyor.",
             },
             {
               kind: "mcq",
@@ -1069,7 +1069,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               options: ["Frau Ahrend.", "Herr Nowak.", "Frau Ceylan."],
               answer: 2,
               explain:
-                "Frau Ceylan iki tarafı birleştiriyor: kısaltma ancak neyin çıkarılabileceği bilindiğinde mümkün.",
+                "Frau Ceylan: «Beides hängt zusammen. Der Rücklauf war niedrig, weil der Bogen dreißig Minuten gedauert hat» — kısaltma ancak neyin çıkarılabileceği bilindiğinde mümkün.",
             },
             {
               kind: "mcq",
@@ -1091,7 +1091,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               options: ["Frau Ahrend.", "Herr Nowak.", "Frau Ceylan."],
               answer: 1,
               explain:
-                "Herr Nowak uzlaşmaya bu koşulu ekliyor ve geçen sefer en çok işe yarayan şeyin bu olduğunu söylüyor.",
+                "Herr Nowak: «wenn wir zusätzlich eine Erinnerung nach zehn Tagen verschicken. Das hat beim letzten Mal mehr gebracht als alles andere.»",
             },
             {
               kind: "mcq",
@@ -1102,7 +1102,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               options: ["Frau Ahrend.", "Herr Nowak.", "Frau Ceylan."],
               answer: 0,
               explain:
-                "Frau Ahrend'in kapanış maddesi: beş kişilik ön test, meslektaşlarla değil, hedef gruptan kişilerle.",
+                "Frau Ahrend: «wir testen den Bogen vorher an fünf Personen aus der Zielgruppe, nicht an Kolleginnen» — toplantının kapanış maddesi.",
             },
           ],
         },
@@ -1170,7 +1170,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ],
               answer: 0,
               explain:
-                "İki anlatının da yanlış olduğunu söyleyip konuyu ikisinin arasına yerleştiriyor.",
+                "«Über den Placeboeffekt kursieren zwei Erzählungen, und beide sind falsch» — konuyu bu ikisinin arasına yerleştiriyor.",
             },
             {
               kind: "mcq",
@@ -1185,7 +1185,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ],
               answer: 2,
               explain:
-                "Kontrol grubundaki iyileşmenin önemli bölümü kendiliğinden geçiş; bu ayrılmazsa etki abartılıyor.",
+                "«Ein erheblicher Teil davon ist überhaupt kein Placeboeffekt, sondern schlicht der natürliche Verlauf» — bu ayrılmazsa etki abartılıyor.",
             },
             {
               kind: "mcq",
@@ -1200,7 +1200,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ],
               answer: 1,
               explain:
-                "Ağrı, bulantı, yorgunluk — sonucun kendisi bir deneyim olduğu yerlerde. Kırık kemikte beklenti iyileştirmiyor.",
+                "«Am besten belegt ist er dort, wo das Erleben selbst das Ergebnis ist: bei Schmerz, bei Übelkeit, bei Erschöpfung»; kırık kemikte beklenti iyileştirmiyor.",
             },
             {
               kind: "mcq",
@@ -1215,7 +1215,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ],
               answer: 0,
               explain:
-                "Katılımcılar sahte ilaç aldıklarını biliyordu ve etki yine ölçülebildi: aldatma şart değil.",
+                "«wussten die Teilnehmenden, dass sie ein Scheinmedikament erhielten — es stand auf der Packung. Der Effekt war trotzdem messbar» — aldatma şart değil.",
             },
             {
               kind: "mcq",
@@ -1230,7 +1230,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ],
               answer: 2,
               explain:
-                "Belirli vücut maddeleri bloke edildiğinde etkinin bir bölümü kayboluyor — bu, ölçülebilir bir mekanizmaya işaret ediyor.",
+                "«Blockiert man bestimmte körpereigene Stoffe, verschwindet ein Teil der Wirkung» — ölçülebilir bir mekanizmaya işaret ediyor.",
             },
             {
               kind: "mcq",
@@ -1245,7 +1245,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ],
               answer: 0,
               explain:
-                "Kontrol grubunda yalnız şeker alanların yan etki nedeniyle çalışmayı bıraktığı düzenli olarak görülüyor.",
+                "«In der Kontrollgruppe brechen regelmäßig Menschen die Teilnahme wegen Nebenwirkungen ab, obwohl sie nur Zucker eingenommen haben.»",
             },
             {
               kind: "mcq",
@@ -1260,7 +1260,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ],
               answer: 1,
               explain:
-                "Aldatmayı açıkça reddediyor; sonuç, tedaviden nasıl söz edildiğinin tedavinin parçası olduğu.",
+                "«Sicher nicht, dass man Patientinnen täuschen soll. Sondern dass die Art, wie über eine Behandlung gesprochen wird, Teil der Behandlung ist.»",
             },
             {
               kind: "mcq",
@@ -1275,7 +1275,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               ],
               answer: 2,
               explain:
-                "Karşılaştırma grubu daha iyi sonuç verdiği için gerçek etkili maddeler daha sık eleniyor — maddeler kötüleştiği için değil.",
+                "«fallen echte Wirkstoffe häufiger durch. Nicht, weil sie schlechter geworden wären, sondern weil die Vergleichsgruppe besser abschneidet.»",
             },
           ],
         },

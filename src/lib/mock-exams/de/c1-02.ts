@@ -122,7 +122,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               text: "Lücke 4",
               accept: ["selten", "kaum", "wenig"],
               explain:
-                "Sıra şaşırtıcı olduğu için metin özellikle vurguluyor: en son öğrenilen değil, en az kullanılan gidiyor.",
+                "«Zuerst verloren geht, was selten gebraucht wird, und nicht etwa das zuletzt Gelernte» — sıra şaşırtıcı olduğu için metin özellikle vurguluyor.",
             },
             {
               kind: "gap",
@@ -255,7 +255,7 @@ Ich höre oft, das Ganze sei doch eine Frage des Geldes. Das stimmt zum Teil, ab
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 1,
               explain:
-                "B: üç dil karşılanabilmiş ve sonuç memnuniyet değil, dışarıda kalan ailelerin haklı sorusu olmuş.",
+                "B: «Das Ergebnis war nicht Zufriedenheit, sondern ein Konflikt: Die übrigen Familien fragten zu Recht, warum ihre Kinder leer ausgingen.»",
             },
             {
               kind: "mcq",
@@ -285,7 +285,7 @@ Ich höre oft, das Ganze sei doch eine Frage des Geldes. Das stimmt zum Teil, ab
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 3,
               explain:
-                "Hiçbir metin bir okul kademesi önermiyor. C ilkokul çağından söz ediyor ama bir sınır çizmiyor.",
+                "Hiçbir metin bir okul kademesi önermiyor. C ilkokul çağından söz ediyor («Unsere Tochter besucht seit zwei Jahren einen Kurs») ama bir sınır çizmiyor.",
             },
             {
               kind: "mcq",
@@ -315,7 +315,7 @@ Ich höre oft, das Ganze sei doch eine Frage des Geldes. Das stimmt zum Teil, ab
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 0,
               explain:
-                "A'nın kapanışındaki benzetme: müzik dersinden matematik notunu yükseltmesi istenmiyor.",
+                "A'nın kapanışı: «Wir verlangen von keinem Musikunterricht, dass er die Mathematiknoten hebt.»",
             },
             {
               kind: "mcq",
@@ -325,7 +325,7 @@ Ich höre oft, das Ganze sei doch eine Frage des Geldes. Das stimmt zum Teil, ab
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 3,
               explain:
-                "Yaygın bir inanış, ama üç metnin hiçbirinde geçmiyor. Metinde bulunmayan bir bilgiyi metne yüklememek bu görevin asıl ölçtüğü şey.",
+                "Üç metnin konusu dersin kendisi: A veri durumunu («Die Datenlage ist übrigens uneindeutiger»), B okulun kapasitesini, C dersin koşullarını tartışıyor. Konuşmaya başlama yaşı hiçbirinde geçmiyor; metinde olmayanı metne yüklememek bu görevin asıl ölçtüğü şey.",
             },
             {
               kind: "mcq",
@@ -545,7 +545,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               ref: "a1",
               text: "Notiz 3",
               accept: ["B2", "B zwei", "Niveau B2", "auf B2"],
-              explain: "\"ein sicheres Deutsch, mindestens auf dem Niveau B zwei\".",
+              explain: "\"Vorausgesetzt wird Volljährigkeit und ein sicheres Deutsch, mindestens auf dem Niveau B zwei\" — iki koşul birlikte anılıyor; not istenen düzey.",
             },
             {
               kind: "gap",
@@ -569,7 +569,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               ref: "a1",
               text: "Notiz 5",
               accept: ["12", "zwölf", "zwoelf"],
-              explain: "İki cumartesi, toplam on iki saat. Sayı gün sayısıyla değil, toplam saatle isteniyor.",
+              explain: "«eine Schulung an zwei Samstagen, insgesamt zwölf Stunden» — sayı gün sayısıyla değil, toplam saatle isteniyor.",
             },
             {
               kind: "gap",
@@ -584,7 +584,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
                 "erweitertes Fuehrungszeugnis",
               ],
               explain:
-                "İkinci koşul belediyeden alınan genişletilmiş adli sicil belgesi; harcını kurum karşılıyor.",
+                "«ein erweitertes Führungszeugnis, das Sie beim Bürgeramt beantragen; die Gebühr übernehmen wir» — kayıttan önceki ikinci koşul.",
             },
             {
               kind: "gap",
@@ -594,7 +594,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               text: "Notiz 7",
               accept: ["Stadtteilbibliothek", "die Stadtteilbibliothek", "Bibliothek", "Bücherei", "in der Bibliothek"],
               explain:
-                "Buluşmalar okulda ya da mahalle kütüphanesinde; ev açıkça dışlanıyor ve bu bir koşul olarak anılıyor.",
+                "«Die Treffen finden nicht bei Ihnen zu Hause statt, sondern in der Schule oder in der Stadtteilbibliothek»; bu bir formalite değil, koşul olarak anılıyor.",
             },
             {
               kind: "gap",
@@ -614,7 +614,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               text: "Notiz 9",
               accept: ["sechs Wochen", "6 Wochen"],
               explain:
-                "Grup akşamı altı haftada bir. Aynı sayı konuşmada bir de olumsuz örnekte geçiyor (altı hafta sonra bırakan kişi) — ikisini karıştırmamak gerekiyor.",
+                "«Es gibt alle sechs Wochen einen Gruppenabend». Aynı sayı olumsuz bir örnekte de geçiyor («Wer nach sechs Wochen aufhört») — ikisini karıştırmamak gerekiyor.",
             },
             {
               kind: "gap",
@@ -631,7 +631,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
                 "ÖPNV",
               ],
               explain:
-                "Ulaşım masrafı yalnız belge karşılığı ve yalnız toplu taşıma için; arabayla gelene ödeme yok.",
+                "«Diese werden erstattet, allerdings nur gegen Beleg und nur für den öffentlichen Nahverkehr» — arabayla gelene ödeme yok.",
             },
           ],
         },
@@ -782,7 +782,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               ],
               answer: 0,
               explain:
-                "İki dakika süren ve eğitim gerektirmeyen küçük bir uygulama: önce ana dilde açıklat, sonra çevirt.",
+                "«Wenn ich ein Kind bitte, ein Wort erst in seiner Erstsprache zu erklären und dann zu übersetzen» — iki dakika süren ve eğitim gerektirmeyen bir uygulama.",
             },
             {
               kind: "mcq",
@@ -842,7 +842,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               ],
               answer: 0,
               explain:
-                "Telaffuz için geçerli; söz varlığı ve dilbilgisinde ilk yıl büyükler daha hızlı. Etkisi süreyi uzatmasından geliyor.",
+                "«Für die Aussprache trifft das zu. Für Wortschatz und Grammatik dagegen sind ältere Lernende im ersten Jahr sogar schneller.»",
             },
             {
               kind: "mcq",
@@ -872,7 +872,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               ],
               answer: 2,
               explain:
-                "Beşinci sınıftan sonra desteği kesilen çocukları örnek veriyor: dört yılda kurulan iki yılda yok olmuş.",
+                "Frau Nasri: «die in der Grundschule zweisprachig gefördert wurden und ab der fünften Klasse nichts mehr bekamen. Was in vier Jahren aufgebaut wurde, ist in zwei verschwunden.»",
             },
             {
               kind: "mcq",
@@ -947,7 +947,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               ],
               answer: 0,
               explain:
-                "Üç talep de aynı yöne bakıyor: ders programında süreklilik, öğretmende kalıcı beceri, kademeler arası devamlılık. Üçü de tek seferlik önlemin yetmediğini söylüyor.",
+                "Üç talep de aynı yöne bakıyor: «Zeit im Stundenplan», «mit Sprachen zu arbeiten, die sie nicht sprechen» ve «Durchgängigkeit». Üçü de tek seferlik önlemin yetmediğini söylüyor.",
             },
           ],
         },

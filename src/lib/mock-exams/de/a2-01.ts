@@ -86,10 +86,10 @@ Im Juni haben wir unser erstes Konzert. Ruth sitzt dann im Publikum: Sie hat sic
               id: "de-a2-01-l1-1",
               no: 1,
               text: "Wie ist die Autorin zum Chor gekommen?",
-              options: ["Sie hat eine Anzeige gelesen.", "Ihre Nachbarin hat sie mitgenommen.", "Ihr Arzt hat es empfohlen."],
+              options: ["Der Chorleiter hat sie eingeladen.", "Ihre Nachbarin hat sie mitgenommen.", "Ihr Arzt hat es empfohlen."],
               answer: 1,
               explain:
-                "Komşusu Ruth ziyarete geliyor ve \"Komm doch einfach mit\" diyor. İlan da doktor da metinde geçmiyor; hastalık yalnız o akşamın nedeni.",
+                "Komşusu Ruth ziyarete geliyor ve \"Komm doch einfach mit\" diyor. Koro şefi metinde var ama onu ancak İLK provadan sonra tekrar çağırıyor; başlangıçtaki davet komşudan geliyor.",
             },
             {
               kind: "mcq",
@@ -265,10 +265,10 @@ Katja`,
               id: "de-a2-01-l3-11",
               no: 11,
               text: "Was ist an der neuen Wohnung besser?",
-              options: ["Sie ist größer.", "Sie hat einen Balkon.", "Sie ist billiger."],
+              options: ["Sie ist größer als die alte Wohnung.", "Zur Wohnung gehört ein Balkon.", "Sie ist billiger."],
               answer: 1,
               explain:
-                "\"kleiner als die alte, aber sie hat einen Balkon\" — `aber` olumlu tarafı işaret ediyor. Kira metinde hiç geçmiyor.",
+                "\"Die neue Wohnung ist kleiner als die alte, aber sie hat einen Balkon\" — `aber` olumlu tarafı işaret ediyor. Daire küçülmüş, yani (a) metnin tersi; kira hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -518,7 +518,7 @@ Katja`,
               options: ["Das Studio ist geschlossen.", "Der Kunde hat nicht bezahlt.", "Der Termin wird verschoben."],
               answer: 2,
               explain:
-                "Deneme antrenmanı erteleniyor ve yeni bir gün öneriliyor. Antrenörün hasta olması ertelemenin NEDENİ, aranmanın konusu değil.",
+                "«Ihr Probetraining am Montag müssen wir leider verschieben» — aramanın konusu erteleme. Antrenörün hasta olması bunun NEDENİ, konusu değil.",
             },
             {
               kind: "mcq",
@@ -614,7 +614,7 @@ Katja`,
               text: "Bekir",
               answer: "f",
               explain:
-                "İçecek işi ona teklif ediliyor ama reddediyor: onu GEÇEN yıl yapmış. Bu yıl çocuk oyunlarını üstleniyor.",
+                "«Die Getränke habe ich letztes Jahr gemacht. Diesmal möchte ich lieber die Spiele für die Kinder leiten» — içecek işi teklif ediliyor ama reddediliyor.",
             },
             {
               kind: "match",
@@ -736,7 +736,7 @@ Katja`,
               options: ["Ein Mittel gegen Fieber.", "Eine Salbe.", "Lutschtabletten."],
               answer: 2,
               explain:
-                "Ateşi yok, bu yüzden ateş düşürücü verilmiyor: pastil alıyor. Ateş çıkarsa tekrar gelmesi isteniyor — bu bir koşul, verilen ilaç değil.",
+                "«Haben Sie auch Fieber?» sorusuna «Nein» deniyor, bunun üzerine «Dann nehmen Sie diese Lutschtabletten». Ateş çıkarsa tekrar gelmek bir koşul, verilen ilaç değil.",
             },
             {
               kind: "mcq",

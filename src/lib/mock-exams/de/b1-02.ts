@@ -198,7 +198,7 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
               ref: "t2",
               text: "Wie hat sich das Verhalten der Besucher verändert?",
               options: [
-                "Sie kommen eher, um Zeit zu verbringen, als um einzukaufen.",
+                "Der Aufenthalt ist wichtiger geworden als der Einkauf.",
                 "Sie kommen häufiger, aber bleiben kürzer.",
                 "Sie kommen nur noch am Wochenende in die Stadt.",
               ],
@@ -219,7 +219,7 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
               ],
               answer: 1,
               explain:
-                "On iki mekândan dokuzu hâlâ dolu, yedisi kira ödüyor. Çoğunluk ayakta; model kaldırılmamış.",
+                "«Von zwölf Räumen sind neun bis heute belegt, sieben davon zahlen inzwischen Miete» — çoğunluk ayakta ve model kaldırılmamış.",
             },
             {
               kind: "mcq",
@@ -508,7 +508,7 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:
-                "İlk tepkisi ret; sonra hesap yapıp fikrini değiştiriyor. Yılda dört yolculuk için kimsenin yerini almak istemiyor — sonuç destek.",
+                "«Meine erste Reaktion war Ablehnung» diye başlıyor, sonra hesap yapıyor: «Für diese vier Fahrten will ich niemandem den Platz vor der Haustür wegnehmen». Sonuç destek.",
             },
           ],
         },
@@ -589,13 +589,13 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               ref: "o1",
               text: "Wo darf ein Kinderwagen abgestellt werden?",
               options: [
-                "Im Raum neben der Waschküche.",
+                "In dem Nebenraum der Waschküche.",
                 "Im Treppenhaus, wenn er nicht im Weg steht.",
                 "In der Waschküche selbst, außerhalb der Waschzeiten.",
               ],
               answer: 0,
               explain:
-                "Merdivende bırakmak itfaiye şartı nedeniyle yasak; yönetmelik bebek arabası için çamaşırlığın yanındaki odayı gösteriyor.",
+                "«Für Kinderwagen steht der Raum neben der Waschküche zur Verfügung». Merdivende bırakmak itfaiye şartı («eine Auflage der Feuerwehr») nedeniyle yasak.",
             },
             {
               kind: "mcq",
@@ -610,7 +610,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               ],
               answer: 1,
               explain:
-                "Masrafı üstlenen, kaybı BİLDİRMEYEN kişi. Bildirim derhal isteniyor, bir hafta beklemek değil.",
+                "«Die Kosten für eine neue Schließanlage trägt, wer den Verlust nicht meldet» — masrafı üstlenen bildirmeyen kişi. Bildirim «umgehend» isteniyor.",
             },
           ],
         },
@@ -706,10 +706,10 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               id: "de-b1-02-h1-1",
               no: 1,
               ref: "h1",
-              text: "Am Dienstag ist im ganzen Stadtgebiet kein Wasser verfügbar.",
-              answer: false,
+              text: "Die Abstellung betrifft nur einen Teil der Stadt.",
+              answer: true,
               explain:
-                "Kesinti yalnız \"die Straßen rund um den Marktplatz\" için geçerli, tüm şehir için değil.",
+                "\"Betroffen sind die Straßen rund um den Marktplatz\" — kesinti şehrin tamamını değil, meydan çevresindeki sokakları kapsıyor.",
             },
             {
               kind: "mcq",
@@ -740,7 +740,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               options: [
                 "Sie wird an der Kasse teilweise erstattet.",
                 "Sie gilt nur für die Dauerausstellung weiter.",
-                "Sie kann an einem anderen Tag noch einmal benutzt werden.",
+                "Man darf mit ihr ein zweites Mal kommen.",
               ],
               answer: 2,
               explain: "\"Ihre Eintrittskarte gilt an einem anderen Tag noch einmal\" — para iadesi değil, ikinci bir giriş hakkı.",
@@ -769,10 +769,10 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               id: "de-b1-02-h1-7",
               no: 7,
               ref: "h4",
-              text: "Die Balkone dürfen während der Arbeiten nicht betreten werden.",
-              answer: false,
+              text: "Die Balkone bleiben während der Arbeiten nutzbar.",
+              answer: true,
               explain:
-                "\"können Sie die Balkone weiter nutzen\" — kullanım serbest, yalnız çamaşır asılmaması isteniyor. Kapatılan yer iç avlu.",
+                "\"In dieser Zeit können Sie die Balkone weiter nutzen\" — kullanım serbest, yalnız çamaşır asılmaması isteniyor. Kapatılan yer iç avlu.",
             },
             {
               kind: "mcq",
@@ -986,7 +986,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               ref: "g1",
               text: "Alle Bäume im Hof bleiben stehen.",
               answer: false,
-              explain: "İki ağaç kesilecek; yalnız yaşlı kestane kalıyor ve bu belediyenin koşulu.",
+              explain: "«Zwei müssen weg, die alte Kastanie bleibt» — iki ağaç kesiliyor; kalan yalnız yaşlı kestane ve bu belediyenin koşulu.",
             },
             {
               kind: "bool",
@@ -996,7 +996,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               text: "Der Baubeginn ist noch nicht sicher.",
               answer: true,
               explain:
-                "İlanda nisan yazıyor, yönetimle konuşmada haziran deniyor ve bir izin eksik. İki tarih arasında karar yok.",
+                "«Im Aushang steht April. Im Gespräch mit der Verwaltung war aber von Juni die Rede, weil eine Genehmigung fehlt» — iki tarih arasında karar yok.",
             },
             {
               kind: "bool",
@@ -1128,7 +1128,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
               text: "Seit der Verlegung der Haltestelle kommen weniger ältere Kunden.",
               options: ["Der Moderator.", "Frau Kessler.", "Herr Brunner."],
               answer: 2,
-              explain: "Kendi dükkânından somut bir oran veriyor: altmış yaş üstü müşterilerde yüzde kırk düşüş.",
+              explain: "«Seit die Bushaltestelle verlegt wurde, kommen bei mir vierzig Prozent weniger Leute über sechzig in den Laden» — kendi dükkânından somut bir oran.",
             },
             {
               kind: "mcq",

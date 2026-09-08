@@ -133,7 +133,7 @@ Am meisten ärgert mich etwas anderes: Über meinen Beruf wird viel geschrieben,
               options: ["Erik", "Katharina", "Franzi", "Nils"],
               answer: 0,
               explain:
-                "Erik uygulamaları silip haftalık bir gazeteye geçiyor ve haberi haftada bir, iki saatte topluca okuyor. Nils de kendi ritmini anlatıyor ama bu bir yavaşlatma kararı değil, vardiya zorunluluğu.",
+                "Erik: «habe ich sämtliche Nachrichten-Apps von meinem Telefon gelöscht» ve haberi haftada bir, iki saatte topluca okuyor. Nils de kendi ritmini anlatıyor ama bu bir yavaşlatma kararı değil, vardiya zorunluluğu.",
             },
             {
               kind: "mcq",
@@ -183,7 +183,7 @@ Am meisten ärgert mich etwas anderes: Über meinen Beruf wird viel geschrieben,
               options: ["Erik", "Katharina", "Franzi", "Nils"],
               answer: 2,
               explain:
-                "Franzi algoritmanın seçimini bir sorun olarak kabul edip buna karşı bir alışkanlık kuruyor: haftada bir kez, kendi seçmeyeceği bir şeyi izlemek.",
+                "Franzi: «Ich sehe mir deshalb einmal in der Woche bewusst etwas an, das ich mir nie selbst ausgesucht hätte» — algoritmanın seçimine karşı kurulmuş bir alışkanlık.",
             },
             {
               kind: "mcq",
@@ -315,7 +315,7 @@ Ganz auflösen lässt sich das Problem damit allerdings nicht. Wer die erste Fas
               text: "Lücke 15",
               answer: "f",
               explain:
-                "Sorunun tümüyle çözülemeyeceği söyleniyor; (f) bundan çıkan ölçülü sonucu kuruyor: silmek değil, zayıflatmak. (d) ve (h) konuyla ilgili ama hiçbir boşluğun önündeki cümleye bağlanmıyor.",
+                "Boşluktan önce «Ganz auflösen lässt sich das Problem damit allerdings nicht» deniyor; (f) bundan çıkan ölçülü sonucu kuruyor: silmek değil, zayıflatmak. (d) ve (h) konuyla ilgili ama hiçbir boşluğun önündeki cümleye bağlanmıyor.",
             },
           ],
         },
@@ -618,7 +618,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               ],
               answer: 2,
               explain:
-                "İki koşul birlikte aranıyor: somut suç şüphesi ve işçi temsilciliğinin onayı. Yönetimin talebi tek başına yetmiyor.",
+                "«Bei einem konkreten Verdacht auf eine Straftat kann die Geschäftsführung eine Auswertung beantragen; sie bedarf der Zustimmung des Betriebsrats» — iki koşul birlikte aranıyor.",
             },
             {
               kind: "mcq",
@@ -627,7 +627,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               ref: "b1",
               text: "Was gilt für Nachrichten außerhalb der Arbeitszeit?",
               options: [
-                "Es besteht keine Pflicht zu antworten, außer im Bereitschaftsdienst.",
+                "Antworten muss nur, wer Bereitschaftsdienst hat.",
                 "Die Beschäftigten müssen einmal täglich in ihr Postfach sehen.",
                 "Vorgesetzte dürfen eine Antwort innerhalb von 24 Stunden verlangen.",
               ],
@@ -777,7 +777,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               ],
               answer: 2,
               explain:
-                "İyi bir makalenin dipnotlarından geriye doğru ilerlemek; bir saat sürüp üç gün kazandırdığını söylüyor.",
+                "«Nehmen Sie einen guten Artikel, gehen Sie in seine Fußnoten und arbeiten Sie sich rückwärts» — bir saat sürüp üç gün kazandırdığını da ekliyor.",
             },
             {
               kind: "bool",
@@ -811,7 +811,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               ref: "g4",
               text: "Die Kundin kann wie gewünscht zum Monatsende kündigen.",
               answer: false,
-              explain: "Süre iki gün önce dolmuş; mümkün olan en yakın fesih çeyrek sonu.",
+              explain: "«Zum Monatsende geht leider nicht mehr, die Frist war vorgestern» — süre iki gün önce dolmuş; mümkün olan en yakın fesih çeyrek sonu.",
             },
             {
               kind: "mcq",
@@ -1274,7 +1274,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               ],
               answer: 1,
               explain:
-                "Üç öneriden biri tam bu: her bölümden sonra kendine bir cümleyle ne okuduğunu söylemek. Kâğıda dönüşü açıkça reddediyor.",
+                "«sich nach jedem Abschnitt in einem Satz selbst sagen, was dort stand» — üç öneriden biri tam bu. Kâğıda dönüşü («Sicher nicht die Rückkehr zum Papier») açıkça reddediyor.",
             },
             {
               kind: "mcq",
@@ -1289,7 +1289,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               ],
               answer: 2,
               explain:
-                "Kapanış cümlesi: bulgu dijital eğitime karşı bir sav değil, ekranda okumanın ÖĞRETİLMESİ gerektiğinin savı.",
+                "«Er ist ein Argument dafür, das Lesen am Bildschirm zu unterrichten, statt vorauszusetzen, dass es sich von selbst versteht» — bulgu dijital eğitime karşı değil.",
             },
           ],
         },
