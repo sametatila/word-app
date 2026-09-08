@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
 import { ArrowLeftIcon } from "@/components/icons";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Yığın ekranlarının başlık çubuğu — mobil karşılığı her ekranın kendi
@@ -16,8 +17,9 @@ import { ArrowLeftIcon } from "@/components/icons";
  */
 
 /** Kare geri düğmesi — kendi başlığını çizen ekranlar için tek başına. */
-export function BackButton({ fallback, label = "Geri dön" }: { fallback: string; label?: string }) {
+export function BackButton({ fallback, label }: { fallback: string; label?: string }) {
   const router = useRouter();
+  const t = useT();
   return (
     <button
       type="button"
@@ -25,7 +27,7 @@ export function BackButton({ fallback, label = "Geri dön" }: { fallback: string
         if (typeof window !== "undefined" && window.history.length > 1) router.back();
         else router.push(fallback);
       }}
-      aria-label={label}
+      aria-label={label ?? t("common.back")}
       className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
       style={{ background: "var(--surface-2)", color: "var(--text)" }}
     >
@@ -51,7 +53,7 @@ export function PageBack({
   fallback,
   title,
   subtitle,
-  label = "Geri dön",
+  label,
   children,
 }: {
   /** Geçmiş boşsa gidilecek yer. */

@@ -15,4 +15,7 @@ export const enWeb: Record<string, string> = {
   /* Web'e özel mod. */
   "learn.survival": "Survival",
   "learn.survival_pitch": "40 s · until time runs out",
+  /* Süre birimi — bkz. tr.ts notu. */
+  "common.hours_minutes": "{h} h {m} min",
+  "common.hours": "{h} h",
 };

@@ -7,6 +7,7 @@ import { MyAvatar } from "@/components/my-avatar";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { BackButton } from "@/components/page-back";
 import { authApi } from "@/lib/auth/api";
+import { useT } from "@/lib/i18n/client";
 import {
   BellIcon,
   CheckIcon,
@@ -56,17 +57,27 @@ export type ProfileStats = {
 
 const nf = new Intl.NumberFormat("tr-TR");
 
-/** "1 sa 20 dk" / "45 dk" — mobil `formatDuration` ile aynı biçim. */
-function formatDuration(seconds: number): string {
+/**
+ * "1 sa 20 dk" / "45 dk" — mobil `formatDuration` ile aynı biçim ama ÇEVRİLİ.
+ *
+ * Mobildeki karşılığı birimi sabit yazıyor ("3s 20dk"), yani orada süre
+ * İngilizce ve Almanca arayüzde de Türkçe kalıyor. Burada anahtara bağlandı;
+ * aynı düzeltme mobil tarafta da yapılmalı.
+ */
+function formatDuration(
+  seconds: number,
+  t: (key: string, vars?: Record<string, string | number>) => string,
+): string {
   const m = Math.round(seconds / 60);
-  if (m < 60) return `${m} dk`;
+  if (m < 60) return t("skills.dk", { n: m });
   const h = Math.floor(m / 60);
   const rest = m % 60;
-  return rest ? `${h} sa ${rest} dk` : `${h} sa`;
+  return rest ? t("common.hours_minutes", { h, m: rest }) : t("common.hours", { h });
 }
 
 export function ProfileView({ stats }: { stats: ProfileStats }) {
   const router = useRouter();
+  const t = useT();
   const [confirmOut, setConfirmOut] = useState(false);
 
   async function signOut() {
@@ -84,7 +95,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
     <div className="mx-auto w-full max-w-2xl">
       <div className="mb-4 flex items-center gap-3">
         <BackButton fallback="/learn" />
-        <h1 className="flex-1 text-h2">Profil</h1>
+        <h1 className="flex-1 text-h2">{t("profile.profile")}</h1>
         {/*
           Ayarlar dişlisi geri düğmesiyle AYNI ölçüde ve simetri kasıtlı:
           başlığı iki uçtaki eşit düğme ortalıyor. Mobilde de böyle.
@@ -94,7 +105,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         <Link
           href="/profile/settings"
           prefetch={false}
-          aria-label="Ayarlar"
+          aria-label={t("settings.settings")}
           className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
           style={{ background: "var(--surface-2)", color: "var(--text)" }}
         >
@@ -104,7 +115,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
 
       {/* kimlik kartı */}
       <div className="card mb-4 flex flex-col items-center p-5">
-        <Link href="/profile/avatar" prefetch={false} aria-label="Avatarını düzenle" className="pressable rounded-full shadow-soft">
+        <Link href="/profile/avatar" prefetch={false} aria-label={t("profile.edit_your_avatar")} className="pressable rounded-full shadow-soft">
           <MyAvatar size={76} />
         </Link>
         <p className="mt-3 text-h2">{stats.name}</p>
@@ -117,7 +128,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
               color: "var(--color-flame)",
             }}
           >
-            <FlameIcon size={16} /> {stats.streak} gün
+            <FlameIcon size={16} /> {t("profile.days", { n: stats.streak })}
           </span>
           <span
             className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-strong"
@@ -133,10 +144,10 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
 
       {/* dört karo — mobildeki 2×2 ızgara */}
       <div className="mb-4 grid grid-cols-2 gap-3">
-        <Stat value={nf.format(stats.mastered)} label="Öğrenilen kelime" tone="var(--color-brand)" />
-        <Stat value={String(stats.streak)} label="Gün serisi" tone="var(--color-flame)" />
-        <Stat value={nf.format(stats.xp)} label="Toplam XP" tone="var(--color-mint)" />
-        <Stat value={formatDuration(stats.seconds)} label="Bu hafta süre" tone="var(--color-sky)" />
+        <Stat value={nf.format(stats.mastered)} label={t("profile.words_learned")} tone="var(--color-brand)" />
+        <Stat value={String(stats.streak)} label={t("profile.day_streak")} tone="var(--color-flame)" />
+        <Stat value={nf.format(stats.xp)} label={t("profile.total_xp")} tone="var(--color-mint)" />
+        <Stat value={formatDuration(stats.seconds, t)} label={t("profile.time_this_week")} tone="var(--color-sky)" />
       </div>
 
       {/* premium bandı */}
@@ -153,9 +164,9 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
           </span>
           <span className="min-w-0 flex-1">
             <span className="block text-h3" style={{ color: "var(--color-mint)" }}>
-              Premium üye
+              {t("profile.premium_member")}
             </span>
-            <span className="muted block text-caption">Tüm özellikler açık, teşekkürler</span>
+            <span className="muted block text-caption">{t("profile.all_features_unlocked_thank_you")}</span>
           </span>
           <CheckIcon size={22} style={{ color: "var(--color-mint)" }} />
         </div>
@@ -170,8 +181,8 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
             <CrownIcon size={26} />
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block text-h3">Premium&apos;a geç</span>
-            <span className="block text-caption text-white/85">Sınırsız konuşma + tam sınav hazırlığı</span>
+            <span className="block text-h3">{t("profile.go_premium")}</span>
+            <span className="block text-caption text-white/85">{t("profile.unlimited_speaking_full_exam")}</span>
           </span>
           <ChevronRightIcon size={22} />
         </Link>
@@ -179,16 +190,16 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
 
       {/* menü — mobildeki satırların karşılığı */}
       <nav className="card px-4" aria-label="Profil">
-        <Row href="/profile/avatar" icon={<UserIcon size={20} />} tone="var(--color-brand-500)" label="Avatarını düzenle" />
-        <Row href="/words" icon={<LearnIcon size={20} />} tone="var(--color-brand-500)" label="Kelimelerim" />
-        <Row href="/profile/achievements" icon={<TrophyIcon size={20} />} tone="var(--color-flame-500)" label="Başarımlar" />
-        <Row href="/profile/cando" icon={<CheckIcon size={20} />} tone="var(--color-mint-500)" label="Yapabildiklerim" />
-        <Row href="/profile/progress" icon={<PodiumIcon size={20} />} tone="var(--color-sky-500)" label="İlerlemem" />
-        <Row href="/profile/writings" icon={<PenIcon size={20} />} tone="var(--color-sky-500)" label="Yazılarım" />
-        <Row href="/leaderboard" icon={<PodiumIcon size={20} />} tone="var(--color-violet-500)" label="Haftalık sıralama" />
-        <Row href="/friends" icon={<HandshakeIcon size={20} />} tone="var(--color-mint-500)" label="Arkadaşlar" />
-        <Row href="/inbox" icon={<MailIcon size={20} />} tone="var(--color-flame-500)" label="Gelen kutusu" />
-        <Row href="/notifications" icon={<BellIcon size={20} />} tone="var(--color-sky-500)" label="Bildirimler" last />
+        <Row href="/profile/avatar" icon={<UserIcon size={20} />} tone="var(--color-brand-500)" label={t("profile.edit_your_avatar")} />
+        <Row href="/words" icon={<LearnIcon size={20} />} tone="var(--color-brand-500)" label={t("profile.my_words")} />
+        <Row href="/profile/achievements" icon={<TrophyIcon size={20} />} tone="var(--color-flame-500)" label={t("profile.achievements")} />
+        <Row href="/profile/cando" icon={<CheckIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.what_can_i_do")} />
+        <Row href="/profile/progress" icon={<PodiumIcon size={20} />} tone="var(--color-sky-500)" label={t("appheader.progress")} />
+        <Row href="/profile/writings" icon={<PenIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.my_posts")} />
+        <Row href="/leaderboard" icon={<PodiumIcon size={20} />} tone="var(--color-violet-500)" label={t("profile.weekly_leaderboard")} />
+        <Row href="/friends" icon={<HandshakeIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.friends")} />
+        <Row href="/inbox" icon={<MailIcon size={20} />} tone="var(--color-flame-500)" label={t("profile.inbox")} />
+        <Row href="/notifications" icon={<BellIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.notifications")} last />
       </nav>
 
       <button
@@ -197,14 +208,14 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         className="pressable mt-4 w-full py-3 text-center text-strong"
         style={{ color: "var(--color-rose)" }}
       >
-        Çıkış yap
+        {t("profile.log_out")}
       </button>
 
       <ConfirmDialog
         open={confirmOut}
-        title="Çıkış yap"
-        message="Oturumun kapanacak. İlerlemen kayıtlı kalır, tekrar giriş yapabilirsin."
-        confirmLabel="Çıkış yap"
+        title={t("profile.log_out")}
+        message={t("profile.signout_confirm")}
+        confirmLabel={t("profile.signout")}
         destructive
         onConfirm={() => void signOut()}
         onCancel={() => setConfirmOut(false)}

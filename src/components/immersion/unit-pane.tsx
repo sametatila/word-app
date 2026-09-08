@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import type { HubItem, HubUnit } from "@/components/immersion/immersion-hub";
 import {
@@ -12,6 +14,7 @@ import {
   PuzzleIcon,
   TargetIcon,
 } from "@/components/icons";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Ünitenin GÖVDESİ — adımların tam listesi.
@@ -31,15 +34,16 @@ import {
  * ölçütü iki yerde de aynı.
  */
 
-const KIND_LABEL: Record<string, string> = {
-  lesson: "Konuşma",
-  read: "Okuma",
-  listen: "Dinleme",
-  write: "Yazma",
-  speak: "Konuşma",
-  grammar: "Dil bilgisi",
-  quiz: "Tekrar",
-  checkpoint: "Kontrol",
+/** Tür → sözlük anahtarı; etiket kullanım anında çözülüyor (mobil `KIND_KEY`). */
+const KIND_KEY: Record<string, string> = {
+  lesson: "unitkind.lesson",
+  read: "unitkind.read",
+  listen: "unitkind.listen",
+  write: "unitkind.write",
+  speak: "unitkind.speaking",
+  grammar: "unitkind.grammar",
+  quiz: "unitkind.quiz",
+  checkpoint: "unitkind.checkpoint",
 };
 
 /** Tür → renk. Mobil `KIND_TINT` ile birebir. */
@@ -101,6 +105,7 @@ export function UnitPane({
 }) {
   // İçeriği olmayan (oynanamaz) slotlar listede hiç görünmez: "Yakında" rozeti
   // yerine ünite yalnız gerçekten yapılabilecek adımları gösteriyor.
+  const t = useT();
   const items = unit.items.filter((i) => i.playable || i.kind === "lesson");
 
   /*
@@ -133,7 +138,7 @@ export function UnitPane({
         />
       </div>
       <p className="muted mb-4 mt-1.5 text-caption">
-        {doneCount}/{list.length} adım tamam
+        {t("unit.steps_done", { n: doneCount, total: list.length })}
       </p>
 
       <div className="space-y-3">
@@ -150,7 +155,7 @@ export function UnitPane({
                 <KindIconFor kind={it.kind} />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="muted block text-micro">{KIND_LABEL[it.kind] ?? it.kind}</span>
+                <span className="muted block text-micro">{t(KIND_KEY[it.kind] ?? "") || it.kind}</span>
                 <span className="block truncate text-strong">{it.title}</span>
               </span>
               {it.done ? (
@@ -171,7 +176,7 @@ export function UnitPane({
                     color: "var(--color-brand)",
                   }}
                 >
-                  Şimdi
+                  {t("unit.now")}
                 </span>
               ) : openable ? (
                 <ChevronRightIcon size={20} className="muted shrink-0" />

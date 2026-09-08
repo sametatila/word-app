@@ -69,14 +69,15 @@ export type ImmersionHubProps = {
   totalUnits: number;
 };
 
-const KIND_LABEL: Record<ImmersionItemKind, string> = {
-  lesson: "Konuşma",
-  read: "Okuma",
-  listen: "Dinleme",
-  write: "Yazma",
-  grammar: "Dil bilgisi",
-  quiz: "Tekrar",
-  checkpoint: "Kontrol",
+/** Tür → sözlük anahtarı; etiket kullanım anında çözülüyor (mobil `KIND_KEY`). */
+const KIND_KEY: Record<ImmersionItemKind, string> = {
+  lesson: "unitkind.lesson",
+  read: "unitkind.read",
+  listen: "unitkind.listen",
+  write: "unitkind.write",
+  grammar: "unitkind.grammar",
+  quiz: "unitkind.quiz",
+  checkpoint: "unitkind.checkpoint",
 };
 
 /**
@@ -191,10 +192,11 @@ function Featured({
     gösteriyordu. Artık deneme sırayı ilerletiyor; denenmiş ama geçilmemiş öğe
     kapanmıyor, adım şeridinden ve ünite sayfasından tekrar açılıyor.
   */
+  const t = useT();
   const open = unit.items.filter((i) => i.open && i.href);
   const next = open.find((i) => !i.attempted) ?? open.find((i) => !i.done) ?? open[0] ?? null;
   const href = `/immersion/unit/${unit.index}`;
-  const label = unit.complete ? "Tekrar et →" : "Devam et →";
+  const label = t(unit.complete ? "path.repeat" : "path.continue");
 
   return (
     <section className="card p-4" style={{ borderWidth: 2, borderColor: "var(--color-brand-500)" }}>
@@ -207,11 +209,13 @@ function Featured({
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-micro uppercase tracking-wider" style={{ color: "var(--color-brand)" }}>
-            {isCurrent ? "ŞU AN" : "ÜNİTE"} · ÜNİTE {unit.index}
+            {t(isCurrent ? "path.now" : "common.unit")} · {t("common.unit")} {unit.index}
           </p>
           <p className="truncate text-h2">{unit.theme}</p>
           <p className="muted text-caption">
-            {unit.complete ? "Tamamlandı" : `${unit.lessonsDone}/${unit.lessonsTotal} konuşma`}
+            {unit.complete
+              ? t("common.completed")
+              : t("path.lessons_done", { n: unit.lessonsDone, total: unit.lessonsTotal })}
           </p>
         </div>
       </div>
@@ -253,7 +257,7 @@ function Featured({
           </span>
           <div className="min-w-0">
             <p className="muted text-micro uppercase tracking-wider">
-              SIRADAKİ · {(KIND_LABEL[next.kind] ?? next.kind).toUpperCase()}
+              {t("path.next", { kind: (t(KIND_KEY[next.kind] ?? "") || next.kind).toUpperCase() })}
             </p>
             <p className="truncate text-strong">{next.title}</p>
           </div>
@@ -265,7 +269,7 @@ function Featured({
           className="mt-3 rounded-panel py-3.5 text-center text-h3"
           style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}
         >
-          Önce önceki üniteyi bitir
+          {t("path.finish_previous")}
         </p>
       ) : onOpen ? (
         <button type="button" onClick={onOpen} className="btn btn-primary mt-3 w-full py-3.5">
@@ -292,6 +296,7 @@ function Tile({
   isCurrent: boolean;
   onSelect?: () => void;
 }) {
+  const t = useT();
   const ringColor = unit.complete
     ? "var(--color-mint-500)"
     : isCurrent
@@ -320,10 +325,10 @@ function Tile({
         style={{ color: unit.complete ? "var(--color-mint)" : "var(--text-muted)" }}
       >
         {unit.complete
-          ? "Tamamlandı"
+          ? t("common.completed")
           : unit.locked
-            ? "Kilitli"
-            : `${unit.lessonsDone}/${unit.lessonsTotal} konuşma`}
+            ? t("common.locked")
+            : t("path.lessons_done", { n: unit.lessonsDone, total: unit.lessonsTotal })}
       </span>
     </>
   );

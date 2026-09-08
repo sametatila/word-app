@@ -19,4 +19,12 @@ export const trWeb: Record<string, string> = {
   /* Hayatta kalma modu web'e özel: mobilde böyle bir mod yok. */
   "learn.survival": "Hayatta kalma",
   "learn.survival_pitch": "40 sn · süre bitene kadar",
+  /*
+   * Süre birimi. Dakika için paylaşılan `skills.dk` var; saatli biçimin
+   * anahtarı yoktu — mobilde `formatDuration` "3s 20dk" diye SABİT yazıyor,
+   * yani orada da çevrilmiyor. Web bunu anahtara bağladı; mobil tarafın da
+   * kapatması gereken bir eksik.
+   */
+  "common.hours_minutes": "{h} sa {m} dk",
+  "common.hours": "{h} sa",
 };

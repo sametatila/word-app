@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Onay diyaloğu — tarayıcının `confirm()`ü yerine uygulamanın kendi kartı.
@@ -19,8 +20,8 @@ export function ConfirmDialog({
   open,
   title,
   message,
-  confirmLabel = "Onayla",
-  cancelLabel = "Vazgeç",
+  confirmLabel,
+  cancelLabel,
   destructive,
   onConfirm,
   onCancel,
@@ -35,6 +36,7 @@ export function ConfirmDialog({
   onCancel: () => void;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
+  const t = useT();
 
   useEffect(() => {
     const el = ref.current;
@@ -64,7 +66,7 @@ export function ConfirmDialog({
       {message ? <p className="muted mt-1 text-body">{message}</p> : null}
       <div className="mt-4 flex gap-3">
         <button type="button" onClick={onCancel} className="btn flex-1 py-3.5" style={{ background: "var(--surface-2)", color: "var(--text)" }}>
-          {cancelLabel}
+          {cancelLabel ?? t("common.discard")}
         </button>
         <button
           type="button"
@@ -75,7 +77,7 @@ export function ConfirmDialog({
             boxShadow: "var(--shadow-soft-sm)",
           }}
         >
-          {confirmLabel}
+          {confirmLabel ?? t("common.confirm")}
         </button>
       </div>
     </dialog>
