@@ -80,3 +80,16 @@ export function acceptsCourse(value: string): boolean {
 export function acceptsNativeLang(value: string): boolean {
   return (NATIVE_LANGS as readonly string[]).includes(value);
 }
+
+/**
+ * Kursun deneme sınavı dili.
+ *
+ * Kâğıtlar kurs kimliğine değil HEDEF dile bağlı: Züritüütsch kursunun hedefi
+ * de Almanca olduğu için aynı Almanca kâğıtları çözer, ayrı bir katalog
+ * gerekmez. Bilinmeyen kurs Almancaya düşüyor çünkü çağıran yerde (liste
+ * sayfası) boş katalog ile Almanca katalog arasındaki fark kullanıcı için
+ * "sınav yok" demek; varsayılan kursun kâğıtlarını göstermek daha az kırık.
+ */
+export function mockCourseOf(id: string | null | undefined): "de" | "en" {
+  return courseOrDefault(id).targetLang;
+}

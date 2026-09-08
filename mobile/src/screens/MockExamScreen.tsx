@@ -14,9 +14,12 @@ import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "..
 import { currentCourseId, currentTargetLocale } from "../lib/courses";
 import {
   isOpenTask,
+  mockBoolLabels,
   mockPaperById,
+  mockSkillLabel,
   MOCK_PASS_PCT,
   taskSeconds,
+  type MockCourse,
   type MockItem,
   type MockPart,
   type MockStimulus,
@@ -82,9 +85,12 @@ function withBlanks(body: string): string {
   return body.replace(/\{\{(\d+)\}\}/g, (_m, n) => ` (${n}) ______ `);
 }
 
-function boolLabelsFor(task: MockTask): [string, string] {
-  return task.format === "yesno" ? [t("mockexam.ja"), t("mockexam.nein")] : [t("mockexam.richtig"), t("mockexam.falsch")];
-}
+/*
+  Doğru/yanlış düğmelerinin etiketi ARAYÜZ SÖZLÜĞÜNDEN gelmiyor, kâğıttan
+  geliyor. Sözlükteki `mockexam.richtig` anahtarı üç dilde de Almanca
+  sabitlenmişti: İngilizce kâğıt "Richtig / Falsch" düğmeleriyle açılırdı.
+  Bunlar arayüz metni değil sınav metni ve sınavın dilinde yazılmalı.
+*/
 
 function mmss(sec: number): string {
   const s = Math.max(0, sec);
@@ -293,7 +299,7 @@ export function MockExamScreen() {
           <Text variant="micro" color={colors.textMuted}>
             {paper.level} · {t("mockexams.paper", { n: paper.no })}
           </Text>
-          <Text variant="h3">{t(`mockexam.skill_${part.skill}`)}</Text>
+          <Text variant="h3">{mockSkillLabel(paper.course, part.skill)}</Text>
         </View>
         {phase === "gorev" ? (
           <View style={{ alignItems: "flex-end" }}>
@@ -334,6 +340,7 @@ export function MockExamScreen() {
             ) : null}
             <TaskView
               key={task.id}
+              course={paper.course}
               task={task}
               index={ix}
               total={part.tasks.length}
@@ -358,6 +365,7 @@ export function MockExamScreen() {
           </View>
         ) : (
           <ResultView
+            course={paper.course}
             part={part}
             answers={answers}
             open={open}
@@ -481,9 +489,10 @@ function Cover({
 /* ── görev ────────────────────────────────────────────────────────────────── */
 
 function TaskView({
-  task, index, total, answers, open, openScores, plays, speaking, attemptId, colors,
+  course, task, index, total, answers, open, openScores, plays, speaking, attemptId, colors,
   onAnnounce, onAnswer, onOpen, onOpenScore, onPlay,
 }: {
+  course: MockCourse;
   task: MockTask;
   index: number;
   total: number;
@@ -501,7 +510,7 @@ function TaskView({
   onPlay: (st: Extract<MockStimulus, { kind: "audio" }>) => void;
 }) {
   useEffect(() => { onAnnounce(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
-  const bools = boolLabelsFor(task);
+  const bools = mockBoolLabels(course, task.format);
   const grouped = (task.texts ?? []).length > 1 && task.items.some((i) => i.ref);
   const itemsOf = (ref?: string) => (grouped ? task.items.filter((i) => i.ref === ref) : task.items);
 
@@ -623,9 +632,16 @@ function ItemView({
     </PressableScale>
   );
 
+  // React Native `Text` satır sonunu zaten koruyor; dönüştürme maddesinin
+  // kaynak ve hedef cümlesi bu yüzden ayrı satırlarda çiziliyor. Anahtar
+  // sözcük vurgulu ayrı bir satırda: değiştirilmeden kullanılması gerektiği
+  // için gövdeye karışmamalı.
   return (
     <Card padded style={{ marginBottom: spacing.sm }}>
       <Text variant="bodyStrong" style={{ lineHeight: 22 }}>{item.no}. {item.text}</Text>
+      {item.kind === "gap" && item.cue ? (
+        <Text variant="bodyStrong" color={colors.primary} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{item.cue}</Text>
+      ) : null}
       <View style={{ marginTop: spacing.sm }}>
         {item.kind === "mcq"
           ? item.options.map((o, ix) => chip(`${"abcd"[ix] ?? ix + 1}) ${o}`, value === String(ix), () => onAnswer(item.id, String(ix)), String(ix)))
@@ -646,7 +662,7 @@ function ItemView({
                 <TextInput
                   value={value ?? ""}
                   onChangeText={(v) => onAnswer(item.id, v)}
-                  placeholder={t("mockexam.write_here")}
+                  placeholder={task.format === "transform" ? t("mockexam.write_transform") : t("mockexam.write_here")}
                   placeholderTextColor={colors.textFaint}
                   autoCapitalize="none"
                   autoCorrect={false}
@@ -919,8 +935,9 @@ function SpeakingTask({
 /* ── sonuç ────────────────────────────────────────────────────────────────── */
 
 function ResultView({
-  part, answers, open, openScores, score, ai, offline, reveal, colors, onReveal,
+  course, part, answers, open, openScores, score, ai, offline, reveal, colors, onReveal,
 }: {
+  course: MockCourse;
   part: MockPart;
   answers: Answers;
   open: Record<string, string>;
@@ -1040,7 +1057,7 @@ function ResultView({
             task.items.map((it) => {
               const ok = isItemCorrect(it, answers[it.id]);
               const scored = score.items.find((s) => s.id === it.id);
-              const bools = boolLabelsFor(task);
+              const bools = mockBoolLabels(course, task.format);
               const given = answers[it.id];
               const givenLabel = !given
                 ? t("mockexam.blank")

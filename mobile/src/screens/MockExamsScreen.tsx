@@ -12,7 +12,7 @@ import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
 import { SkeletonLine } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { currentCourseId } from "../lib/courses";
-import { mockPapersFor, partPoints, type MockLevel, type MockPaper, type MockSkill } from "../data/exams";
+import { mockPapersFor, mockSkillLabel, partPoints, type MockLevel, type MockPaper, type MockSkill } from "../data/exams";
 import { localPartStates, type PartState } from "../game/mockExamLocal";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii } from "../theme";
@@ -200,7 +200,7 @@ function PaperCard({ paper, states, onOpen }: { paper: MockPaper; states: Record
               }}
             >
               <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t(`mockexam.skill_${part.skill}`)}</Text>
+                <Text variant="bodyStrong">{mockSkillLabel(paper.course, part.skill)}</Text>
                 <Text variant="micro" color={colors.textMuted}>
                   {pts ? t("mockexams.part_summary", { minutes: part.minutes, n: pts }) : t("mockexams.part_open", { minutes: part.minutes })}
                 </Text>

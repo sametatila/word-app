@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { speakGerman, speakSegments, stopSpeaking } from "@/components/speak-button";
+import { speakSegments, stopSpeaking } from "@/components/speak-button";
 import { SpeakerIcon, MicIcon, CheckIcon } from "@/components/icons";
 import { captureClip } from "@/lib/pronounce-client";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
-import { MOCK_PASS_PCT } from "@/lib/mock-exams/types";
+import { MOCK_PASS_PCT, mockBoolLabels, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
 import { foldAnswer, isOpenTask } from "@/lib/mock-exams/scoring";
 
 /**
@@ -50,8 +50,16 @@ const mmss = (s: number) => `${String(Math.floor(Math.max(0, s) / 60)).padStart(
 const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 const withBlanks = (b: string) => b.replace(/\{\{(\d+)\}\}/g, (_m, n) => ` (${n}) ______ `);
 
-function boolLabels(task: MockTask): [string, string] {
-  return task.format === "yesno" ? ["Ja", "Nein"] : ["Richtig", "Falsch"];
+/**
+ * Kâğıdın dilinde tek bir replik okur.
+ *
+ * Eskiden `speakGerman` çağrılıyordu ve o, sesi KULLANICININ seçtiği kursa
+ * göre seçiyor. Kâğıt ile profil ayrıldığı anda (Almanca kursundaki biri
+ * İngilizce kâğıt açtığında) yönerge yanlış dilde okunurdu. Ses artık kâğıda
+ * bağlı: sınavda ne yazıyorsa o okunuyor.
+ */
+function sayIn(course: MockCourse, text: string, onEnd?: () => void): void {
+  speakSegments([{ lang: course, text }], onEnd);
 }
 
 function isCorrect(item: MockItem, ans: string | undefined): boolean {
@@ -140,8 +148,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   const announce = useCallback((key: string, text: string) => {
     if (announced.current.has(key)) return;
     announced.current.add(key);
-    speakGerman(text);
-  }, []);
+    sayIn(paper.course, text);
+  }, [paper.course]);
 
   useEffect(() => {
     if (phase !== "run") return;
@@ -235,13 +243,13 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     return (
       <section className="card mx-auto w-full max-w-2xl p-5">
         <p className="muted text-xs font-bold tracking-wide">{paper.level} · Deneme {paper.no}</p>
-        <h1 className="mt-1 text-2xl font-bold" lang="de">{SKILL_DE[part.skill]}</h1>
+        <h1 className="mt-1 text-2xl font-bold" lang={paper.course}>{mockSkillLabel(paper.course, part.skill)}</h1>
         <p className="muted mt-1 text-sm">{paper.theme} — {paper.themeTr}</p>
 
         <div className="mt-4 flex items-start gap-2">
           <SpeakerIcon className="mt-1 size-4 shrink-0" />
           <div>
-            <p className="text-sm leading-relaxed" lang="de">{part.instruction}</p>
+            <p className="text-sm leading-relaxed" lang={paper.course}>{part.instruction}</p>
             <p className="muted mt-2 text-sm leading-relaxed">{part.instructionTr}</p>
           </div>
         </div>
@@ -280,7 +288,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     <section className="mx-auto w-full max-w-2xl">
       <header className="card flex items-center justify-between gap-3 p-4">
         <div>
-          <p className="muted text-xs font-bold tracking-wide">{paper.level} · {SKILL_DE[part.skill]}</p>
+          <p className="muted text-xs font-bold tracking-wide">{paper.level} · {mockSkillLabel(paper.course, part.skill)}</p>
           <p className="text-sm font-semibold">Görev {ix + 1}/{part.tasks.length}</p>
         </div>
         <p className="text-lg font-bold tabular-nums" style={{ color: left < 30 ? "var(--color-danger)" : undefined }}>{mmss(left)}</p>
@@ -297,6 +305,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
 
       <TaskView
         key={task.id}
+        course={paper.course}
         task={task}
         answers={answers}
         open={open}
@@ -311,7 +320,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           const used = plays[st.id] ?? 0;
           if (used >= st.plays) return;
           setPlays((p) => ({ ...p, [st.id]: used + 1 }));
-          speakSegments(st.segments.map((s) => ({ lang: "de" as const, text: s.text })));
+          speakSegments(st.segments.map((s) => ({ lang: paper.course, text: s.text })));
         }}
       />
 
@@ -324,8 +333,6 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     </section>
   );
 }
-
-const SKILL_DE: Record<string, string> = { reading: "Lesen", listening: "Hören", writing: "Schreiben", speaking: "Sprechen" };
 
 function localScore(part: MockPart, answers: Answers): Score {
   const items: ScoredItem[] = [];
@@ -360,8 +367,9 @@ function expected(item: MockItem, task: MockTask): string {
 /* ── görev ────────────────────────────────────────────────────────────────── */
 
 function TaskView({
-  task, answers, open, openScores, plays, attemptId, onAnnounce, onAnswer, onOpen, onOpenScore, onPlay,
+  course, task, answers, open, openScores, plays, attemptId, onAnnounce, onAnswer, onOpen, onOpenScore, onPlay,
 }: {
+  course: MockCourse;
   task: MockTask;
   answers: Answers;
   open: Record<string, string>;
@@ -381,7 +389,7 @@ function TaskView({
   return (
     <div className="mt-3 space-y-3">
       <div className="card p-4">
-        <p className="text-sm leading-relaxed" lang="de">{task.prompt}</p>
+        <p className="text-sm leading-relaxed" lang={course}>{task.prompt}</p>
         <p className="muted mt-2 text-sm leading-relaxed">{task.promptTr}</p>
       </div>
 
@@ -389,8 +397,8 @@ function TaskView({
         <div className="card p-4">
           {task.options.map((o) => (
             <div key={o.key} className="mt-2 first:mt-0">
-              <p className="text-sm font-semibold" lang="de">{o.key}) {o.label}</p>
-              {o.body ? <p className="muted text-sm leading-relaxed" lang="de">{o.body}</p> : null}
+              <p className="text-sm font-semibold" lang={course}>{o.key}) {o.label}</p>
+              {o.body ? <p className="muted text-sm leading-relaxed" lang={course}>{o.body}</p> : null}
             </div>
           ))}
         </div>
@@ -398,29 +406,29 @@ function TaskView({
 
       {(task.texts ?? []).map((st) => (
         <div key={st.id} className="space-y-3">
-          <Stimulus st={st} plays={plays} onPlay={onPlay} />
-          {grouped ? itemsOf(st.id).map((it) => <Item key={it.id} item={it} task={task} value={answers[it.id]} onAnswer={onAnswer} />) : null}
+          <Stimulus course={course} st={st} plays={plays} onPlay={onPlay} />
+          {grouped ? itemsOf(st.id).map((it) => <Item key={it.id} course={course} item={it} task={task} value={answers[it.id]} onAnswer={onAnswer} />) : null}
         </div>
       ))}
 
-      {!grouped ? task.items.map((it) => <Item key={it.id} item={it} task={task} value={answers[it.id]} onAnswer={onAnswer} />) : null}
+      {!grouped ? task.items.map((it) => <Item key={it.id} course={course} item={it} task={task} value={answers[it.id]} onAnswer={onAnswer} />) : null}
 
       {task.format === "writing" ? (
-        <OpenTask task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} onOpen={onOpen} onOpenScore={onOpenScore} />
+        <OpenTask course={course} task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} onOpen={onOpen} onOpenScore={onOpenScore} />
       ) : task.format === "speaking" ? (
-        <SpeakingTask task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} onOpen={onOpen} onOpenScore={onOpenScore} />
+        <SpeakingTask course={course} task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} onOpen={onOpen} onOpenScore={onOpenScore} />
       ) : null}
     </div>
   );
 }
 
-function Stimulus({ st, plays, onPlay }: { st: MockStimulus; plays: Record<string, number>; onPlay: (st: Extract<MockStimulus, { kind: "audio" }>) => void }) {
+function Stimulus({ course, st, plays, onPlay }: { course: MockCourse; st: MockStimulus; plays: Record<string, number>; onPlay: (st: Extract<MockStimulus, { kind: "audio" }>) => void }) {
   if (st.kind === "text") {
     return (
       <div className="card p-4">
         <p className="muted text-xs font-bold tracking-wide">{st.genre} · {st.genreTr}</p>
-        {st.title ? <p className="mt-1 text-sm font-semibold" lang="de">{st.title}</p> : null}
-        <p className="mt-2 whitespace-pre-line text-sm leading-relaxed" lang="de">{withBlanks(st.body)}</p>
+        {st.title ? <p className="mt-1 text-sm font-semibold" lang={course}>{st.title}</p> : null}
+        <p className="mt-2 whitespace-pre-line text-sm leading-relaxed" lang={course}>{withBlanks(st.body)}</p>
       </div>
     );
   }
@@ -428,7 +436,7 @@ function Stimulus({ st, plays, onPlay }: { st: MockStimulus; plays: Record<strin
   return (
     <div className="card p-4">
       <p className="muted text-xs font-bold tracking-wide">{st.genre} · {st.genreTr}</p>
-      {st.title ? <p className="mt-1 text-sm font-semibold" lang="de">{st.title}</p> : null}
+      {st.title ? <p className="mt-1 text-sm font-semibold" lang={course}>{st.title}</p> : null}
       <p className="muted mt-1 text-sm leading-relaxed">{st.situation}</p>
       <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" disabled={rest <= 0} onClick={() => onPlay(st)}>
         <SpeakerIcon className="size-4" /> {rest <= 0 ? "Dinleme hakkın bitti" : rest === st.plays ? "Dinle" : "Tekrar dinle"}
@@ -438,8 +446,8 @@ function Stimulus({ st, plays, onPlay }: { st: MockStimulus; plays: Record<strin
   );
 }
 
-function Item({ item, task, value, onAnswer }: { item: MockItem; task: MockTask; value?: string; onAnswer: (id: string, v: string) => void }) {
-  const [yes, no] = boolLabels(task);
+function Item({ course, item, task, value, onAnswer }: { course: MockCourse; item: MockItem; task: MockTask; value?: string; onAnswer: (id: string, v: string) => void }) {
+  const [yes, no] = mockBoolLabels(course, task.format);
   const chip = (label: string, active: boolean, onClick: () => void, key: string) => (
     <button
       key={key}
@@ -451,9 +459,15 @@ function Item({ item, task, value, onAnswer }: { item: MockItem; task: MockTask;
       {label}
     </button>
   );
+  // Satır sonu korunuyor: dönüştürme maddesinde kaynak cümle ile hedef cümle
+  // ayrı satırlarda durmalı, tek paragrafa akarsa hangi cümlenin doldurulacağı
+  // okunmuyor. Öteki biçimlerde metin tek satır olduğu için etkisi yok.
   return (
     <div className="card p-4">
-      <p className="text-sm font-semibold leading-relaxed" lang="de">{item.no}. {item.text}</p>
+      <p className="whitespace-pre-line text-sm font-semibold leading-relaxed" lang={course}>{item.no}. {item.text}</p>
+      {item.kind === "gap" && item.cue ? (
+        <p className="mt-2 text-sm font-bold tracking-wide" lang={course} style={{ color: "var(--color-brand)" }}>{item.cue}</p>
+      ) : null}
       <div className="mt-2 flex flex-col gap-2">
         {item.kind === "mcq"
           ? item.options.map((o, i) => chip(`${"abcd"[i] ?? i + 1}) ${o}`, value === String(i), () => onAnswer(item.id, String(i)), String(i)))
@@ -466,8 +480,8 @@ function Item({ item, task, value, onAnswer }: { item: MockItem; task: MockTask;
                   value={value ?? ""}
                   onChange={(e) => onAnswer(item.id, e.target.value)}
                   className="input w-full"
-                  placeholder="Buraya yaz"
-                  lang="de"
+                  placeholder={task.format === "transform" ? "2–5 kelime yaz" : "Buraya yaz"}
+                  lang={course}
                   autoComplete="off"
                 />
               )}
@@ -478,8 +492,9 @@ function Item({ item, task, value, onAnswer }: { item: MockItem; task: MockTask;
 
 /** Yazma görevi: içerik noktaları, canlı kelime sayacı, rubrik değerlendirmesi. */
 function OpenTask({
-  task, value, score, attemptId, onOpen, onOpenScore,
+  course, task, value, score, attemptId, onOpen, onOpenScore,
 }: {
+  course: MockCourse;
   task: MockTask;
   value: string;
   score?: OpenScore;
@@ -508,7 +523,7 @@ function OpenTask({
       <p className="muted text-xs font-bold tracking-wide">İÇERİK NOKTALARI</p>
       {(task.rubric?.points ?? []).map((p, i) => (
         <div key={i} className="mt-2">
-          <p className="text-sm" lang="de">• {p.de}</p>
+          <p className="text-sm" lang={course}>• {p.de}</p>
           <p className="muted text-sm">{p.tr}</p>
         </div>
       ))}
@@ -519,7 +534,7 @@ function OpenTask({
         rows={8}
         className="input mt-4 w-full"
         placeholder="Buraya yaz"
-        lang="de"
+        lang={course}
       />
       <p className="muted mt-1 text-xs">{need ? `${n} / ${need} kelime` : `${n} kelime`}</p>
 
@@ -549,8 +564,9 @@ function OpenTask({
  * çalışmazsa aynı alana doğrudan yazılabiliyor. Ses hiçbir yerde saklanmıyor.
  */
 function SpeakingTask({
-  task, value, score, attemptId, onOpen, onOpenScore,
+  course, task, value, score, attemptId, onOpen, onOpenScore,
 }: {
+  course: MockCourse;
   task: MockTask;
   value: string;
   score?: OpenScore;
@@ -583,7 +599,7 @@ function SpeakingTask({
       const finish = () => { if (!done) { done = true; resolve(); } };
       // Ses hiç çalmazsa görev asılı kalmasın: üst sınır konuşma uzunluğuna göre.
       const guard = setTimeout(finish, Math.min(30_000, 2500 + text.length * 90));
-      speakGerman(text, () => { clearTimeout(guard); finish(); });
+      sayIn(course, text, () => { clearTimeout(guard); finish(); });
     });
 
   /** Bir turluk kayıt → `/api/stt` → düz metin. */
@@ -597,7 +613,7 @@ function SpeakingTask({
     const form = new FormData();
     const ext = blob.type.includes("wav") ? "wav" : blob.type.includes("mp4") ? "mp4" : blob.type.includes("ogg") ? "ogg" : "webm";
     form.append("audio", blob, `clip.${ext}`);
-    form.append("language", "de");
+    form.append("language", course);
     try {
       const res = await fetch("/api/stt", { method: "POST", body: form });
       if (!res.ok) return "";
@@ -660,7 +676,7 @@ function SpeakingTask({
       <p className="muted text-xs font-bold tracking-wide">İÇERİK NOKTALARI</p>
       {(task.rubric?.points ?? []).map((p, i) => (
         <div key={i} className="mt-2">
-          <p className="text-sm" lang="de">• {p.de}</p>
+          <p className="text-sm" lang={course}>• {p.de}</p>
           <p className="muted text-sm">{p.tr}</p>
         </div>
       ))}
@@ -690,7 +706,7 @@ function SpeakingTask({
           {current?.who === "partner" ? (
             <>
               <p className="muted text-xs font-bold tracking-wide">KARŞI TARAF</p>
-              <p className="mt-1 text-sm leading-relaxed" lang="de">{current.de}</p>
+              <p className="mt-1 text-sm leading-relaxed" lang={course}>{current.de}</p>
               <p className="muted mt-1 text-sm">{current.tr}</p>
             </>
           ) : (
@@ -710,7 +726,7 @@ function SpeakingTask({
             rows={8}
             className="input mt-1 w-full"
             placeholder="Söylediklerin buraya gelir; mikrofon çalışmadıysa doğrudan yazabilirsin."
-            lang="de"
+            lang={course}
           />
           <p className="muted mt-1 text-xs leading-relaxed">
             {micErr
@@ -835,7 +851,7 @@ function Result({
               {(open[task.id] ?? "").trim() ? (
                 <>
                   <p className="muted text-xs font-bold tracking-wide">SENİN CEVABIN</p>
-                  <p className="mt-1 whitespace-pre-line text-sm leading-relaxed" lang="de">{open[task.id]}</p>
+                  <p className="mt-1 whitespace-pre-line text-sm leading-relaxed" lang={paper.course}>{open[task.id]}</p>
                 </>
               ) : null}
               {openScores[task.id] ? <OpenResult score={openScores[task.id]} /> : null}
@@ -844,7 +860,7 @@ function Result({
               {reveal[task.id] ? (
                 <>
                   <p className="muted mt-3 text-xs font-bold tracking-wide">ÖRNEK CEVAP</p>
-                  <p className="mt-1 whitespace-pre-line text-sm leading-relaxed" lang="de">{task.rubric.sample}</p>
+                  <p className="mt-1 whitespace-pre-line text-sm leading-relaxed" lang={paper.course}>{task.rubric.sample}</p>
                 </>
               ) : (
                 <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" onClick={() => onReveal(task.id)}>Örnek cevabı göster</button>
@@ -863,7 +879,7 @@ function Result({
                     {ok ? <CheckIcon className="size-3.5" /> : "×"}
                   </span>
                   <div className="min-w-0">
-                    <p className="text-sm font-semibold leading-relaxed" lang="de">{it.no}. {it.text}</p>
+                    <p className="whitespace-pre-line text-sm font-semibold leading-relaxed" lang={paper.course}>{it.no}. {it.text}</p>
                     {!ok ? <p className="muted mt-1 text-sm">Senin cevabın: {s?.given || "boş"}</p> : null}
                     <p className="mt-1 text-sm" style={{ color: ok ? "var(--color-success)" : undefined }}>Doğru cevap: {s?.expected ?? expected(it, task)}</p>
                     <p className="muted mt-1 text-sm leading-relaxed">{it.explain}</p>
@@ -878,7 +894,7 @@ function Result({
               <div key={st.id} className="card p-4">
                 <p className="muted text-xs font-bold tracking-wide">KAYDIN METNİ · {st.genreTr}</p>
                 {st.segments.map((sg, i) => (
-                  <p key={i} className="mt-1 text-sm leading-relaxed" lang="de">{sg.speaker ? `${sg.speaker}: ` : ""}{sg.text}</p>
+                  <p key={i} className="mt-1 text-sm leading-relaxed" lang={paper.course}>{sg.speaker ? `${sg.speaker}: ` : ""}{sg.text}</p>
                 ))}
               </div>
             ) : null,

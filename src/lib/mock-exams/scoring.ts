@@ -1,6 +1,6 @@
 import { mockPaperById } from "./index";
-import type { MockItem, MockPaper, MockPart, MockSkill, MockTask } from "./types";
-import { MOCK_PASS_PCT } from "./types";
+import type { MockCourse, MockItem, MockPaper, MockPart, MockSkill, MockTask } from "./types";
+import { MOCK_PASS_PCT, mockBoolLabels } from "./types";
 
 /**
  * Deneme sınavının puanlanması — SAF, sunucuya bağlı değil.
@@ -24,6 +24,12 @@ import { MOCK_PASS_PCT } from "./types";
  *
  * Umlaut açılıyor çünkü telefonda `ä` yazmak zahmetli ve boşluk doldurma
  * maddelerinde ölçülen şey imla değil, doğru sözcüğü bulmak.
+ *
+ * KESME İŞARETİ SİLİNİYOR, boşluğa çevrilmiyor. Önceki kural bütün noktalama
+ * ile birlikte onu da boşluk yapıyordu: "don't" → "don t", "dont" → "dont" ve
+ * ikisi eşleşmiyordu. Almancada kesme işareti neredeyse hiç geçmediği için
+ * görünmeyen bir kusurdu; İngilizce açık boşluk ve dönüştürme maddelerinde
+ * kısaltma her cümlede var ve doğru yazılmış cevabı yanlış sayıyordu.
  */
 export function foldAnswer(s: string): string {
   return s
@@ -32,7 +38,8 @@ export function foldAnswer(s: string): string {
     .replace(/ä/g, "ae")
     .replace(/ö/g, "oe")
     .replace(/ü/g, "ue")
-    .replace(/[.,!?;:"'’„“”()[\]{}\-–—/]/g, " ")
+    .replace(/['’‘`´]/g, "")
+    .replace(/[.,!?;:"„“”()[\]{}\-–—/]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -78,9 +85,14 @@ export type MockScore = {
   items: ScoredItem[];
 };
 
-function expectedLabel(item: MockItem, task: MockTask): string {
+function expectedLabel(item: MockItem, task: MockTask, course: MockCourse): string {
   if (item.kind === "mcq") return item.options[item.answer] ?? "";
-  if (item.kind === "bool") return item.answer ? "richtig" : "falsch";
+  // Doğru cevabın okunur hâli kâğıdın dilinde yazılıyor: İngilizce bir kâğıdın
+  // dökümünde "richtig" görmek öğrenciye sınavda görmediği bir sözcük gösterir.
+  if (item.kind === "bool") {
+    const [yes, no] = mockBoolLabels(course, task.format);
+    return item.answer ? yes : no;
+  }
   if (item.kind === "match") {
     const o = task.options?.find((x) => x.key === item.answer);
     return o ? `${o.key}) ${o.label}` : item.answer;
@@ -125,7 +137,7 @@ export function scorePart(paperId: string, skill: MockSkill, answers: Record<str
         goal: task.goal,
         correct: ok,
         given: answers[it.id] ?? "",
-        expected: expectedLabel(it, task),
+        expected: expectedLabel(it, task, paper.course),
       });
     }
     byTask.push({ taskId: task.id, taskNo: task.no, format: task.format, goal: task.goal, correct: c, total: task.items.length });

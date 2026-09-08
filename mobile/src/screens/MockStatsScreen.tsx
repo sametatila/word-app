@@ -11,7 +11,8 @@ import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
 import { fetchMockStats, failReason, type MockStats } from "../game/mockExam";
 import { loadLocalResults } from "../game/mockExamLocal";
-import { mockPaperById, type MockSkill } from "../data/exams";
+import { mockCourseOf, mockPaperById, mockSkillLabel, type MockSkill } from "../data/exams";
+import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii } from "../theme";
 
 /**
@@ -60,6 +61,14 @@ export function MockStatsScreen() {
     const p = mockPaperById(paperId);
     return p ? `${p.level} · ${t("mockexams.paper", { n: p.no })}` : paperId;
   };
+  /*
+    Bölüm adı sınavın dilinde yazılır ("Lesen" / "Reading"), arayüz dilinde
+    değil. Tek satırlık bir denemede dil kâğıttan çözülüyor; toplam kırılımda
+    kâğıt yok, orada kullanıcının kendi kursu esas alınıyor.
+  */
+  const mine = mockCourseOf(currentCourseId());
+  const skillOf = (skill: string, paperId?: string) =>
+    mockSkillLabel(paperId ? mockPaperById(paperId)?.course ?? mine : mine, skill as MockSkill);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -79,7 +88,7 @@ export function MockStatsScreen() {
           <View style={{ paddingTop: spacing.xxl, alignItems: "center" }}><ActivityIndicator color={colors.primary} /></View>
         ) : !data || data.attempts === 0 ? (
           <>
-            {data?.running?.length ? <Running data={data} colors={colors} nav={nav} label={label} /> : null}
+            {data?.running?.length ? <Running data={data} colors={colors} nav={nav} label={label} skillOf={skillOf} /> : null}
             <Card padded><Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("mockstats.empty")}</Text></Card>
           </>
         ) : (
@@ -92,14 +101,14 @@ export function MockStatsScreen() {
                 <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 18 }}>{t("mockstats.local_note")}</Text>
               </Card>
             ) : null}
-            {data.running.length ? <Running data={data} colors={colors} nav={nav} label={label} /> : null}
+            {data.running.length ? <Running data={data} colors={colors} nav={nav} label={label} skillOf={skillOf} /> : null}
 
             <Card padded style={{ marginBottom: spacing.md }}>
               <Text variant="micro" color={colors.textMuted}>{t("mockstats.by_skill")}</Text>
               {data.bySkill.map((s) => (
                 <View key={s.skill} style={{ marginTop: spacing.sm }}>
                   <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
-                    <Text variant="body">{t(`mockexam.skill_${s.skill}`)}</Text>
+                    <Text variant="body">{skillOf(s.skill)}</Text>
                     <Text variant="bodyStrong" color={s.pct >= 60 ? colors.success : colors.danger}>%{s.pct}</Text>
                   </View>
                   <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: 4 }}>
@@ -127,7 +136,7 @@ export function MockStatsScreen() {
               {data.recent.map((r) => (
                 <View key={r.id} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
                   <View style={{ flex: 1 }}>
-                    <Text variant="body">{label(r.paperId)} · {t(`mockexam.skill_${r.skill}`)}</Text>
+                    <Text variant="body">{label(r.paperId)} · {skillOf(r.skill, r.paperId)}</Text>
                     <Text variant="micro" color={colors.textMuted}>{t("mockexam.score", { correct: r.correct, total: r.total })}</Text>
                   </View>
                   <Text variant="bodyStrong" color={r.passed ? colors.success : colors.danger}>%{r.score}</Text>
@@ -142,12 +151,13 @@ export function MockStatsScreen() {
 }
 
 function Running({
-  data, colors, nav, label,
+  data, colors, nav, label, skillOf,
 }: {
   data: MockStats;
   colors: ReturnType<typeof useTheme>["colors"];
   nav: NativeStackNavigationProp<RootStackParams>;
   label: (id: string) => string;
+  skillOf: (skill: string, paperId?: string) => string;
 }) {
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
@@ -159,7 +169,7 @@ function Running({
           style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm, paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.md, backgroundColor: colors.surface2 }}
         >
           <View style={{ flex: 1 }}>
-            <Text variant="bodyStrong">{label(r.paperId)} · {t(`mockexam.skill_${r.skill}`)}</Text>
+            <Text variant="bodyStrong">{label(r.paperId)} · {skillOf(r.skill, r.paperId)}</Text>
             <Text variant="micro" color={colors.textMuted}>{t("mockstats.at_task", { n: r.taskIx + 1 })}</Text>
           </View>
           <ChevronRightIcon color={colors.textMuted} size={20} />

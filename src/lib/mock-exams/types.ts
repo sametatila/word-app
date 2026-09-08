@@ -71,12 +71,33 @@ export type MockFormat =
   | "truefalse"
   /** Ja / Nein — görüş metinlerinde "bu görüş metinde var mı" sorusu. */
   | "yesno"
-  /** Ortak şık bankasından eşleştirme; her şık en fazla bir kez kullanılır. */
+  /**
+   * Ortak şık bankasından eşleştirme. Varsayılan olarak her şık en fazla bir
+   * kez kullanılır; `reuseOptions` açıksa aynı şık birden çok maddenin cevabı
+   * olabilir (İngilizce sınavların çoklu eşleştirme görevlerinde soru sayısı
+   * metin sayısını aşar).
+   */
   | "match"
-  /** Metindeki boşluğa yazarak doldurma. */
+  /**
+   * Metindeki boşluğa yazarak doldurma. İki ayrı görev tipi bu biçimi
+   * paylaşıyor: boşluk başına tek sözcük yazılan `open cloze` (maddenin
+   * `text`i boş) ve boşluğun yanında büyük harfli kök verilen kelime türetme
+   * (kök `text`e yazılır). İkisi de aynı ekranı istiyor, ayrı bir biçim
+   * eklemek karşılığı olmayan bir dallanma olurdu.
+   */
   | "gap"
   /** Metindeki boşluğu şıklardan seçerek doldurma. */
   | "gapMcq"
+  /**
+   * Anahtar sözcükle cümle dönüştürme: verilen cümle, DEĞİŞTİRİLMEDEN
+   * kullanılması gereken bir anahtar sözcük ve boşluklu ikinci bir cümle.
+   *
+   * Ayrı bir biçim çünkü ekranı `gap`ten farklı: maddenin metni yok, üç
+   * parçası var (kaynak cümle, anahtar sözcük, hedef cümle) ve anahtar
+   * sözcük vurgulu durmalı. Doğrulayıcı da bu biçimde fazladan bir şey
+   * ölçüyor — anahtar sözcük her kabul edilen cevapta aynen geçmeli.
+   */
+  | "transform"
   /** Dinlerken not alma — kısa yazılı cevap. */
   | "notes"
   /**
@@ -171,8 +192,19 @@ export type MockItem =
     })
   | (ItemBase & {
       kind: "gap";
-      /** Boşluğun başlığı ya da soru kökü; boşluklu metinde boş kalabilir. */
+      /**
+       * Boşluğun başlığı ya da soru kökü; boşluklu metinde boş kalabilir.
+       * Kelime türetmede boşluğun kökü buraya büyük harfle yazılır ("ATTRACT").
+       * `transform` biçiminde kaynak cümle ile hedef cümlenin ikisi birden
+       * burada durur, aralarında satır sonu ile — oynatıcılar satır sonunu
+       * koruyarak çiziyor.
+       */
       text: string;
+      /**
+       * `transform` biçiminde: cevapta DEĞİŞTİRİLMEDEN geçmesi gereken
+       * anahtar sözcük. Doğrulayıcı her kabul edilen cevapta arıyor.
+       */
+      cue?: string;
       /** Kabul edilen yazımlar; ilki kanonik cevap. */
       accept: string[];
     });
@@ -242,7 +274,7 @@ export type MockTask = {
   speakSeconds?: number;
   /** Karşılıklı konuşma adımları; yalnız `speaking` görevlerinde. */
   exchange?: MockTurn[];
-  /** Görev yönergesi — Almanca, kâğıdın kendi dili. */
+  /** Görev yönergesi — kâğıdın kendi dilinde (hedef dil). */
   prompt: string;
   /** Yönergenin Türkçesi. */
   promptTr: string;
@@ -250,6 +282,17 @@ export type MockTask = {
   texts?: MockStimulus[];
   /** `match` biçiminde ortak şık bankası. */
   options?: MockOption[];
+  /**
+   * Eşleştirmede aynı şık birden çok maddenin cevabı olabilir mi.
+   *
+   * Almanca sınavların eşleştirme görevlerinde her ilan/kişi en fazla bir kez
+   * kullanılır ve şık sayısı madde sayısını aşar; kapalı olması bu yüzden
+   * doğru varsayılan. İngilizce sınavların çoklu eşleştirmesi tersini yapıyor:
+   * dört metne on soru sorulur ve her metin birkaç kez cevap olur. Bayrak
+   * açıkken doğrulayıcı "her şık en fazla bir kez" ve "en az bir çeldirici"
+   * kurallarını bırakır, yerine ölü şık ve tek şıkka yığılma arar.
+   */
+  reuseOptions?: boolean;
   items: MockItem[];
   rubric?: MockRubric;
 };
@@ -258,20 +301,29 @@ export type MockPart = {
   skill: MockSkill;
   /** Bölümün süresi (dakika). */
   minutes: number;
-  /** Bölüm yönergesi — Almanca. */
+  /** Bölüm yönergesi — kâğıdın kendi dilinde. */
   instruction: string;
   instructionTr: string;
   tasks: MockTask[];
 };
 
+/**
+ * Kâğıdın kursu = HEDEF dil.
+ *
+ * `CourseId`den bilerek dar: Züritüütsch kursunun hedefi de Almanca ve aynı
+ * Almanca kâğıtlara hazırlanır, dolayısıyla kendi kâğıdı yoktur. Kurs kimliği
+ * yerine hedef dili tutmak, "gsw-zh kâğıdı nerede" sorusunu baştan siliyor.
+ */
+export type MockCourse = "de" | "en";
+
 export type MockPaper = {
-  /** "de-a1-1" — kurs, seviye, kaçıncı deneme. */
+  /** "de-a1-01" — kurs, seviye, kaçıncı deneme. */
   id: string;
-  course: "de";
+  course: MockCourse;
   level: MockLevel;
   /** Kaçıncı deneme. Ekrandaki ad çeviriden gelir, kâğıtta metin tutulmaz. */
   no: number;
-  /** Kâğıdın teması — Almanca tek sözcük öbeği, listede alt satır. */
+  /** Kâğıdın teması — hedef dilde tek sözcük öbeği, listede alt satır. */
   theme: string;
   themeTr: string;
   /** Toplam süre (dakika) = bölümlerin toplamı. Doğrulayıcı denetler. */
@@ -285,13 +337,37 @@ export const MOCK_PASS_PCT = 60;
 /** Bölümlerin kâğıttaki sırası. */
 export const MOCK_SKILL_ORDER: MockSkill[] = ["reading", "listening", "writing", "speaking"];
 
-/** Bölüm adı, Almanca — kâğıdın dili. */
-export const MOCK_SKILL_DE: Record<MockSkill, string> = {
-  reading: "Lesen",
-  listening: "Hören",
-  writing: "Schreiben",
-  speaking: "Sprechen",
+/**
+ * Kâğıdın KENDİ dilindeki etiketler — bölüm adı ve doğru/yanlış düğmeleri.
+ *
+ * Arayüz sözlüğünden (i18n) gelmiyorlar, kâğıttan geliyorlar. Sebep: bunlar
+ * arayüz metni değil SINAV metni. Almanca kâğıtta düğme "Richtig", İngilizce
+ * kâğıtta "True" yazmalı; öğrencinin arayüz dili Türkçe de olsa İngilizce de
+ * olsa bu değişmez. i18n'e konulduğunda üç sözlükte de Almanca sabitlenmişti
+ * ve İngilizce kâğıt "Lesen / Richtig" diye açılırdı.
+ */
+export const MOCK_LABELS: Record<MockCourse, { skill: Record<MockSkill, string>; bool: [string, string]; yesno: [string, string] }> = {
+  de: {
+    skill: { reading: "Lesen", listening: "Hören", writing: "Schreiben", speaking: "Sprechen" },
+    bool: ["Richtig", "Falsch"],
+    yesno: ["Ja", "Nein"],
+  },
+  en: {
+    skill: { reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking" },
+    bool: ["True", "False"],
+    yesno: ["Yes", "No"],
+  },
 };
+
+/** Kâğıdın diline göre bölüm adı; bilinmeyen kurs Almancaya düşmez, açıkça seçilir. */
+export function mockSkillLabel(course: MockCourse, skill: MockSkill): string {
+  return MOCK_LABELS[course].skill[skill];
+}
+
+/** Görevin doğru/yanlış düğme etiketleri — biçime ve kâğıdın diline göre. */
+export function mockBoolLabels(course: MockCourse, format: MockFormat): [string, string] {
+  return format === "yesno" ? MOCK_LABELS[course].yesno : MOCK_LABELS[course].bool;
+}
 
 /** Nesnel puanlanan (makinece ölçülen) bölümler. */
 export const MOCK_SCORED: MockSkill[] = ["reading", "listening"];
@@ -318,9 +394,17 @@ const wordCount = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
  *
  * Kesin bir ölçüm değil, ORANTI kurmak için. Bölümün toplam süresi zaten
  * kâğıtta yazılı; buradaki iş onu görevler arasında adilce bölmek.
+ *
+ * DÖNÜŞTÜRME GÖREVİ AYRI SAYILIYOR. `transform` maddesinin okuyacak metni yok:
+ * üç kalemin ikisi sıfır çıkıyor ve dört dönüşüm yetmiş dakikalık bir bölümde
+ * üç buçuk dakika alıyordu. Oysa yapılan iş bir şık işaretlemek değil, cümleyi
+ * baştan kurmak — gerçek sınavlar da bu göreve madde başına bir buçuk dakika
+ * ayırıyor. Ek ağırlık yalnız bu biçime veriliyor; Almanca kâğıtlarda
+ * `transform` görevi olmadığı için oradaki süre dağılımı değişmiyor.
  */
 function workload(task: MockTask): number {
   let w = 0;
+  if (task.format === "transform") w += task.items.length;
   for (const s of task.texts ?? []) {
     if (s.kind === "text") w += wordCount(s.body) / 120;
     else w += (s.segments.reduce((a, x) => a + wordCount(x.text), 0) / 140) * s.plays + 0.25;

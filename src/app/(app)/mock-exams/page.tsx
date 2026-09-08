@@ -6,14 +6,14 @@ import { db } from "@/lib/db";
 import { mockExamAttempts } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
-import { mockPapersFor, partPoints, type MockLevel } from "@/lib/mock-exams";
+import { mockPapersFor, mockSkillLabel, partPoints, type MockLevel, type MockSkill } from "@/lib/mock-exams";
+import { mockCourseOf } from "@/lib/courses";
 import { ChevronRightIcon } from "@/components/icons";
 
 export const metadata: Metadata = { title: "Deneme Sınavları" };
 export const dynamic = "force-dynamic";
 
 const LEVELS: MockLevel[] = ["A1", "A2", "B1", "B2", "C1"];
-const SKILL_DE: Record<string, string> = { reading: "Lesen", listening: "Hören", writing: "Schreiben", speaking: "Sprechen" };
 
 /**
  * Deneme sınavları — web.
@@ -28,6 +28,12 @@ const SKILL_DE: Record<string, string> = { reading: "Lesen", listening: "Hören"
  * Üstteki iki blok veritabanından geliyor: yarım kalan denemeler ve bölüm
  * bazında ortalama. Aynı sayılar mobilin istatistik ekranında da var; kaynak
  * tek, `mock_exam_attempts`.
+ *
+ * KURS SÜZGECİ. Katalog kullanıcının HEDEF diline göre süzülüyor; Almanca
+ * çalışan biri İngilizce kâğıt görmüyor. Aynı süzgeç veritabanı bloklarına da
+ * uygulanıyor — `mock_exam_attempts` satırında kurs kolonu yok ama `paperId`
+ * öneki kursu zaten taşıyor ("en-b1-01"). İki kursun denemeleri tek ortalamada
+ * toplanırsa o ortalama hiçbir dilin becerisini söylemez.
  */
 export default async function MockExamsPage({ searchParams }: { searchParams: Promise<{ level?: string }> }) {
   const userId = await getUserId();
@@ -36,7 +42,8 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
   const { level: q } = await searchParams;
   const level = (LEVELS.includes(q as MockLevel) ? q : LEVELS.includes(profile.level as MockLevel) ? profile.level : "A1") as MockLevel;
 
-  const papers = mockPapersFor(level);
+  const course = mockCourseOf(profile.course);
+  const papers = mockPapersFor(level, course);
   const [running, done] = await Promise.all([
     db
       .select({ id: mockExamAttempts.id, paperId: mockExamAttempts.paperId, skill: mockExamAttempts.skill, taskIx: mockExamAttempts.taskIx })
@@ -52,8 +59,9 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
       .limit(100),
   ]);
 
+  const mine = (paperId: string) => paperId.startsWith(`${course}-`);
   const bySkill = new Map<string, { n: number; sum: number; best: number }>();
-  for (const r of done) {
+  for (const r of done.filter((x) => mine(x.paperId))) {
     const s = bySkill.get(r.skill) ?? { n: 0, sum: 0, best: 0 };
     s.n++;
     s.sum += r.score;
@@ -87,13 +95,13 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
         ))}
       </nav>
 
-      {running.length ? (
+      {running.filter((r) => mine(r.paperId)).length ? (
         <section className="card p-4">
           <p className="muted text-xs font-bold tracking-wide">YARIM KALAN</p>
-          {running.map((r) => (
+          {running.filter((r) => mine(r.paperId)).map((r) => (
             <Link key={r.id} href={`/mock-exams/${r.paperId}/${r.skill}`} className="mt-2 flex items-center justify-between rounded-xl p-3" style={{ background: "var(--surface-2)" }}>
               <span className="text-sm font-semibold">
-                {r.paperId.toUpperCase().replace("DE-", "")} · {SKILL_DE[r.skill] ?? r.skill}
+                {r.paperId.toUpperCase().replace(/^(DE|EN)-/, "")} · {mockSkillLabel(course, r.skill as MockSkill)}
                 <span className="muted ml-2 font-normal">{r.taskIx + 1}. görevde kaldın</span>
               </span>
               <ChevronRightIcon className="size-4" />
@@ -110,7 +118,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
             return (
               <div key={skill} className="mt-3">
                 <div className="flex justify-between text-sm">
-                  <span lang="de">{SKILL_DE[skill] ?? skill}</span>
+                  <span lang={course}>{mockSkillLabel(course, skill as MockSkill)}</span>
                   <span className="font-semibold" style={{ color: avg >= 60 ? "var(--color-success)" : "var(--color-danger)" }}>%{avg}</span>
                 </div>
                 <div className="mt-1 h-1 rounded-full" style={{ background: "var(--surface-2)" }}>
@@ -127,7 +135,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
         papers.map((p) => (
           <section key={p.id} className="card p-4">
             <p className="muted text-xs font-bold tracking-wide">DENEME {p.no}</p>
-            <h2 className="mt-0.5 text-lg font-bold" lang="de">{p.theme}</h2>
+            <h2 className="mt-0.5 text-lg font-bold" lang={course}>{p.theme}</h2>
             <p className="muted text-sm">{p.themeTr} · toplam {p.minutes} dakika</p>
             <div className="mt-3 space-y-2">
               {p.parts.map((part) => {
@@ -140,7 +148,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                     style={{ background: "var(--surface-2)" }}
                   >
                     <span className="text-sm">
-                      <span className="font-semibold" lang="de">{SKILL_DE[part.skill]}</span>
+                      <span className="font-semibold" lang={course}>{mockSkillLabel(course, part.skill)}</span>
                       <span className="muted ml-2">{part.minutes} dk · {pts ? `${pts} madde` : "puanlanmaz"}</span>
                     </span>
                     <ChevronRightIcon className="size-4" />

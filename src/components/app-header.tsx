@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Avatar } from "@/components/avatar";
+import { MyAvatar } from "@/components/my-avatar";
 import { FlameIcon } from "@/components/icons";
 import { NotificationBell } from "@/components/social/notification-bell";
 import { useShell } from "@/components/app-shell";
@@ -52,7 +52,7 @@ export function LearnHeader() {
 }
 
 export function AppHeader({ title, subtitle }: { title: string; subtitle?: string }) {
-  const { streak, userId, name } = useShell();
+  const { streak } = useShell();
   return (
     <header className="mb-4 flex items-center justify-between gap-3">
       <div className="min-w-0 flex-1">
@@ -90,7 +90,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
           className="pressable shrink-0 rounded-full"
           style={{ boxShadow: "var(--shadow-soft-sm)" }}
         >
-          <Avatar userId={userId} name={name} size={44} />
+          <MyAvatar size={44} />
         </Link>
       </div>
     </header>

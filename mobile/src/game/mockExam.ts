@@ -15,6 +15,10 @@ import { isOpenTask, type MockItem, type MockPart, type MockSkill, type MockTask
  * Cevap karşılaştırma katlaması — `src/lib/mock-exams/scoring.ts` içindeki
  * `foldAnswer` ile AYNI kural. İkisi birlikte değişir; ayrılırlarsa öğrenci
  * ekranda doğru görünen bir cevabın sunucuda yanlış sayıldığını görür.
+ *
+ * Kesme işareti siliniyor, boşluğa çevrilmiyor: "don't" ile "dont" aynı cevap
+ * sayılmalı. Almancada görünmeyen bir kusurdu, İngilizce boşluk doldurma ve
+ * dönüştürme maddelerinde doğru cevabı yanlış sayıyordu.
  */
 export function foldAnswer(s: string): string {
   return s
@@ -23,7 +27,8 @@ export function foldAnswer(s: string): string {
     .replace(/ä/g, "ae")
     .replace(/ö/g, "oe")
     .replace(/ü/g, "ue")
-    .replace(/[.,!?;:"'’„“”()[\]{}\-–—/]/g, " ")
+    .replace(/['’‘`´]/g, "")
+    .replace(/[.,!?;:"„“”()[\]{}\-–—/]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }

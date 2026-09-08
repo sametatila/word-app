@@ -1,4 +1,5 @@
 import PAPERS from "./papers.json";
+import PAPERS_EN from "./papers-en.json";
 import { courseOrDefault, type CourseId } from "../../lib/courses";
 
 /**
@@ -13,7 +14,10 @@ import { courseOrDefault, type CourseId } from "../../lib/courses";
  * mobil onun türevi.
  *
  * Hedef dile bağlanması bilinçli: Zürih Almancası kursunun hedefi de Almanca,
- * dolayısıyla aynı sınava hazırlanır. İngilizce kursunun karşılığı yok.
+ * dolayısıyla aynı sınava hazırlanır. İngilizcenin kendi kâğıtları var
+ * (`papers-en.json`) ve yapıları Almancadan farklı: A2'den itibaren dil
+ * sistemi görevleri, B2'den itibaren kelime türetme ve anahtar sözcükle
+ * dönüştürme okuma bölümünün içinde duruyor.
  *
  * İKİ AYRI SORU, İKİ AYRI FONKSİYON — karıştırılırsa ya kapı kapanır ya da
  * olmayan bir şeyin sözü verilir:
@@ -58,7 +62,7 @@ export type MockItem =
   | (ItemBase & { kind: "mcq"; text: string; options: string[]; answer: number })
   | (ItemBase & { kind: "bool"; text: string; answer: boolean })
   | (ItemBase & { kind: "match"; text: string; answer: string })
-  | (ItemBase & { kind: "gap"; text: string; accept: string[] });
+  | (ItemBase & { kind: "gap"; text: string; cue?: string; accept: string[] });
 
 export type MockRubric = {
   minWords?: number;
@@ -69,7 +73,9 @@ export type MockRubric = {
 };
 
 export type MockFormat =
-  | "mcq" | "truefalse" | "yesno" | "match" | "gap" | "gapMcq" | "notes" | "mixed" | "writing" | "speaking";
+  | "mcq" | "truefalse" | "yesno" | "match" | "gap" | "gapMcq" | "notes" | "mixed" | "writing" | "speaking"
+  /** Anahtar sözcükle cümle dönüştürme — maddenin metni iki satır, `cue` anahtar sözcük. */
+  | "transform";
 
 /**
  * Karşılıklı konuşmanın tek adımı: `partner` replikleri sesle okunur (TTS),
@@ -97,6 +103,8 @@ export type MockTask = {
   promptTr: string;
   texts?: MockStimulus[];
   options?: MockOption[];
+  /** Eşleştirmede aynı şık birden çok maddenin cevabı olabilir mi (çoklu eşleştirme). */
+  reuseOptions?: boolean;
   items: MockItem[];
   rubric?: MockRubric;
 };
@@ -109,9 +117,12 @@ export type MockPart = {
   tasks: MockTask[];
 };
 
+/** Kâğıdın kursu = hedef dil. Züritüütsch kendi kâğıdını taşımaz, Almancayı çözer. */
+export type MockCourse = "de" | "en";
+
 export type MockPaper = {
   id: string;
-  course: "de";
+  course: MockCourse;
   level: MockLevel;
   no: number;
   theme: string;
@@ -121,6 +132,7 @@ export type MockPaper = {
 };
 
 const ALL = PAPERS as unknown as MockPaper[];
+const ALL_EN = PAPERS_EN as unknown as MockPaper[];
 
 /** Geçme eşiği (yüzde) — bölüm başına. `src/lib/mock-exams/types.ts` ile aynı. */
 export const MOCK_PASS_PCT = 60;
@@ -167,8 +179,11 @@ export function taskSeconds(part: MockPart): number[] {
 /** Yazma/konuşma görevi mi — nesnel puanı olmayan görevler. */
 export const isOpenTask = (t: MockTask) => t.format === "writing" || t.format === "speaking";
 
-/** Hedef dili Almanca olan kurslar bu kataloğu görür. */
-const BY_TARGET: Record<string, MockPaper[]> = { de: ALL };
+/**
+ * Hedef dile göre katalog. Kurs kimliğine göre DEĞİL: Züritüütsch'ün hedefi de
+ * Almanca ve aynı kâğıtları çözüyor, ayrı bir katalog gerekmiyor.
+ */
+const BY_TARGET: Record<string, MockPaper[]> = { de: ALL, en: ALL_EN };
 
 export function mockPapersFor(course: CourseId, level?: string): MockPaper[] {
   const list = BY_TARGET[courseOrDefault(course).targetLang] ?? [];
@@ -176,7 +191,7 @@ export function mockPapersFor(course: CourseId, level?: string): MockPaper[] {
 }
 
 export function mockPaperById(id: string): MockPaper | null {
-  return ALL.find((p) => p.id === id) ?? null;
+  return [...ALL, ...ALL_EN].find((p) => p.id === id) ?? null;
 }
 
 /** Kursun deneme sınavı KATALOĞU var mı — Öğren sekmesindeki kutucuğun koşulu. */
@@ -187,4 +202,39 @@ export function supportsMockExams(course: CourseId): boolean {
 /** Kursta gerçekten deneme sınavı VAR mı — vaat içeren metinlerin koşulu. */
 export function hasMockExams(course: CourseId): boolean {
   return mockPapersFor(course).length > 0;
+}
+
+/**
+ * Kâğıdın KENDİ dilindeki etiketler — `src/lib/mock-exams/types.ts` içindeki
+ * `MOCK_LABELS` ile aynı tablo.
+ *
+ * Arayüz sözlüğünde (i18n) DURMUYOR ve durmamalı: bunlar arayüz metni değil
+ * sınav metni. `mockexam.richtig` anahtarı üç sözlükte de Almanca sabitlenmişti
+ * ve İngilizce kâğıt "Richtig / Falsch" düğmeleriyle açılırdı — kullanıcının
+ * arayüz dili ne olursa olsun. Etiket kâğıttan gelir.
+ */
+export const MOCK_LABELS: Record<MockCourse, { skill: Record<MockSkill, string>; bool: [string, string]; yesno: [string, string] }> = {
+  de: {
+    skill: { reading: "Lesen", listening: "Hören", writing: "Schreiben", speaking: "Sprechen" },
+    bool: ["Richtig", "Falsch"],
+    yesno: ["Ja", "Nein"],
+  },
+  en: {
+    skill: { reading: "Reading", listening: "Listening", writing: "Writing", speaking: "Speaking" },
+    bool: ["True", "False"],
+    yesno: ["Yes", "No"],
+  },
+};
+
+/** Kursun sınav dili — Züritüütsch Almanca kâğıtları çözdüğü için hedef dile bakılıyor. */
+export function mockCourseOf(course: CourseId | string | null | undefined): MockCourse {
+  return courseOrDefault(course).targetLang;
+}
+
+export function mockSkillLabel(course: MockCourse, skill: MockSkill): string {
+  return MOCK_LABELS[course].skill[skill];
+}
+
+export function mockBoolLabels(course: MockCourse, format: MockFormat): [string, string] {
+  return format === "yesno" ? MOCK_LABELS[course].yesno : MOCK_LABELS[course].bool;
 }
