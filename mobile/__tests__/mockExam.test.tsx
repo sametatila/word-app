@@ -41,10 +41,17 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 const COURSE = "de";
 
 describe("deneme sınavı paketi", () => {
-  it("her seviyede iki kâğıt var", () => {
+  it("her seviyede eşit sayıda kâğıt var ve numaralar boşluksuz", () => {
+    const counts = new Set<number>();
     for (const level of LEVELS) {
-      expect(mockPapersFor(COURSE, level).map((p) => p.no)).toEqual([1, 2]);
+      const nos = mockPapersFor(COURSE, level).map((p) => p.no);
+      expect(nos.length).toBeGreaterThanOrEqual(2);
+      expect(nos).toEqual(nos.map((_, i) => i + 1));
+      counts.add(nos.length);
     }
+    // Seviyelerden biri geride kalırsa o seviyedeki öğrenci daha az deneme
+    // görür ve ilerlemesi ötekilerle kıyaslanamaz.
+    expect(counts.size).toBe(1);
   });
 
   it("kâğıtlar dört bölümlü ve süre toplamı tutuyor", () => {
@@ -56,12 +63,14 @@ describe("deneme sınavı paketi", () => {
     }
   });
 
-  it("aynı seviyedeki iki kâğıt aynı planda — yoksa puanlar kıyaslanamaz", () => {
+  it("aynı seviyedeki kâğıtlar aynı planda — yoksa puanlar kıyaslanamaz", () => {
     for (const level of LEVELS) {
-      const [a, b] = mockPapersFor(COURSE, level);
-      expect(a.parts.map(partPoints)).toEqual(b.parts.map(partPoints));
-      expect(a.parts.map((x) => x.minutes)).toEqual(b.parts.map((x) => x.minutes));
-      expect(a.parts.map((x) => x.tasks.length)).toEqual(b.parts.map((x) => x.tasks.length));
+      const [first, ...rest] = mockPapersFor(COURSE, level);
+      for (const other of rest) {
+        expect(other.parts.map(partPoints)).toEqual(first.parts.map(partPoints));
+        expect(other.parts.map((x) => x.minutes)).toEqual(first.parts.map((x) => x.minutes));
+        expect(other.parts.map((x) => x.tasks.length)).toEqual(first.parts.map((x) => x.tasks.length));
+      }
     }
   });
 
