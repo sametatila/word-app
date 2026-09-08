@@ -1,6 +1,7 @@
 import "server-only";
 import { and, eq, gte, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import {
   dailyScores,
   dailyStats,
@@ -36,7 +37,16 @@ export type QuestId =
 
 type QuestDef = {
   id: QuestId;
-  label: string;
+  /**
+   * Etiketin SÖZLÜK ANAHTARI, metnin kendisi değil.
+   *
+   * Metin burada Türkçe sabit yazılıydı ve API'den öyle gidiyordu — yani mobil
+   * uygulama, arayüzü İngilizce ya da Almanca olsa bile görevleri Türkçe
+   * gösteriyordu. Çeviri sunucuda, kullanıcının `native_lang`ine göre yapılıyor:
+   * tek değişiklik iki platformu birden düzeltiyor ve mobilin YAYINLANMIŞ
+   * sürümleri için bile geçerli, çünkü sözleşme (`label`) değişmiyor.
+   */
+  labelKey: string;
   /** Nereye götürdüğü — kart dokununca oraya gider. */
   href: string;
   target: number;
@@ -52,14 +62,14 @@ type QuestDef = {
 };
 
 const QUESTS: QuestDef[] = [
-  { id: "reviews10", label: "10 kelime tekrar et", href: "/learn", target: 10, xp: 120 },
-  { id: "reviews25", label: "25 kelime tekrar et", href: "/learn", target: 25, xp: 200 },
-  { id: "newWords3", label: "3 yeni kelime öğren", href: "/learn", target: 3, xp: 120 },
-  { id: "artikel5", label: "5 artikel doğru bil", href: "/learn", target: 5, xp: 150 },
-  { id: "listen5", label: "5 kelimeyi duyarak bul", href: "/learn", target: 5, xp: 150 },
-  { id: "daily", label: "Günün turunu oyna", href: "/learn", target: 1, xp: 200, discovery: true },
-  { id: "skill1", label: "Bir beceri alıştırması bitir", href: "/immersion", target: 1, xp: 200, discovery: true },
-  { id: "lesson1", label: "Bir konuşma tamamla", href: "/lessons", target: 1, xp: 200, discovery: true },
+  { id: "reviews10", labelKey: "quest.reviews10", href: "/learn", target: 10, xp: 120 },
+  { id: "reviews25", labelKey: "quest.reviews25", href: "/learn", target: 25, xp: 200 },
+  { id: "newWords3", labelKey: "quest.newWords3", href: "/learn", target: 3, xp: 120 },
+  { id: "artikel5", labelKey: "quest.artikel5", href: "/learn", target: 5, xp: 150 },
+  { id: "listen5", labelKey: "quest.listen5", href: "/learn", target: 5, xp: 150 },
+  { id: "daily", labelKey: "quest.daily", href: "/learn", target: 1, xp: 200, discovery: true },
+  { id: "skill1", labelKey: "quest.skill1", href: "/immersion", target: 1, xp: 200, discovery: true },
+  { id: "lesson1", labelKey: "quest.lesson1", href: "/lessons", target: 1, xp: 200, discovery: true },
 ];
 
 /** Üçünü birden bitirmenin ödülü — ayrı bir "görev" gibi talep edilir. */
@@ -131,6 +141,8 @@ export type QuestProgress = {
 export async function questBoard(
   userId: string,
   day: string,
+  /** Etiketlerin çevrileceği arayüz dili — çağıranın profilinden gelir. */
+  lang: NativeLang = DEFAULT_NATIVE,
 ): Promise<{ quests: QuestProgress[]; allDone: boolean; allClaimed: boolean }> {
   const chosen = questsFor(day, userId);
   const ids = chosen.map((q) => q.id);
@@ -215,7 +227,7 @@ export async function questBoard(
 
   const quests: QuestProgress[] = chosen.map((q) => ({
     id: q.id,
-    label: q.label,
+    label: translate(lang, q.labelKey),
     href: q.href,
     target: q.target,
     done: Math.min(q.target, counts.get(q.id) ?? 0),

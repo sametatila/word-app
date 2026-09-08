@@ -3,6 +3,8 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { awardActivity } from "@/lib/award";
 import { claimQuest, questBoard } from "@/lib/quests";
+import { ensureProfile } from "@/lib/session";
+import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";
 
@@ -13,7 +15,15 @@ export async function GET(req: Request) {
 
   const day = normalizeDay(new URL(req.url).searchParams.get("day"));
   try {
-    return NextResponse.json(await questBoard(userId, day));
+    /*
+      Etiketler SUNUCUDA çevriliyor ve dil PROFİLDEN okunuyor — çerezden değil.
+      Sebep çağıran: bu ucu mobil uygulama da kullanıyor ve orada bizim dil
+      çerezimiz yok. Profil iki istemcinin de paylaştığı tek kaynak, yani
+      mobilin yayınlanmış sürümleri bile bu düzeltmeden yararlanıyor.
+    */
+    const profile = await ensureProfile(userId).catch(() => null);
+    const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
+    return NextResponse.json(await questBoard(userId, day, lang));
   } catch (err) {
     console.error("[quests]", err);
     return NextResponse.json({ error: "database" }, { status: 500 });
@@ -51,7 +61,11 @@ export async function POST(req: Request) {
     // tek yerden işleniyor (bkz. lib/award.ts). Süre eklenmiyor — görevin
     // kendisi zaten yapılan işin süresini saymıştı.
     const award = xp > 0 ? await awardActivity(userId, day, xp, 0) : null;
-    const board = await questBoard(userId, day);
+    // Ödül sonrası dönen tahtanın etiketleri de kullanıcının dilinde olmalı;
+    // aksi hâlde bir görevi tamamlamak listeyi Türkçeye çeviriyordu.
+    const profile = await ensureProfile(userId).catch(() => null);
+    const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
+    const board = await questBoard(userId, day, lang);
     return NextResponse.json({
       xp,
       totalXp: award?.totalXp ?? null,

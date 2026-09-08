@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { CheckIcon, GiftIcon, TargetIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { play } from "@/lib/sfx";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Günün görevleri kartı.
@@ -38,6 +39,7 @@ function localDay(): string {
 }
 
 export function QuestCard() {
+  const t = useT();
   const [busy, setBusy] = useState<string | null>(null);
   const [flash, setFlash] = useState(0);
 
@@ -100,7 +102,7 @@ export function QuestCard() {
     }
   }
 
-  if (board === undefined) return <CardSkeleton height={150} label="Görevler yükleniyor" />;
+  if (board === undefined) return <CardSkeleton height={150} label={t("dailyquests.daily_quests")} />;
   if (!board) return null;
 
   const claimable = board.quests.filter((q) => q.done >= q.target && !q.claimed).length;
@@ -119,7 +121,7 @@ export function QuestCard() {
         style={{ borderColor: "var(--border)" }}
       >
         <h2 className="flex items-center gap-2 font-bold">
-          <TargetIcon size={17} /> Bugünün görevleri
+          <TargetIcon size={17} /> {t("dailyquests.daily_quests")}
         </h2>
         {claimable > 0 ? (
           <span
@@ -132,7 +134,7 @@ export function QuestCard() {
             {claimable} ödül hazır
           </span>
         ) : (
-          <span className="muted text-xs">gece yarısı yenilenir</span>
+          <span className="muted text-xs">{t("quests.resets_midnight")}</span>
         )}
       </div>
 
@@ -205,7 +207,7 @@ export function QuestCard() {
         >
           <GiftIcon size={20} />
           <p className="min-w-0 flex-1 text-sm font-semibold">
-            {board.allClaimed ? "Günün üçü de tamam" : "Üçünü birden bitirdin"}
+            {board.allClaimed ? t("quests.all_three_done") : t("quests.all_three_done_sub")}
           </p>
           {board.allClaimed ? (
             <span className="muted shrink-0 text-[11px] font-semibold">+300 XP</span>

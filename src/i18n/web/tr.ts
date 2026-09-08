@@ -27,4 +27,22 @@ export const trWeb: Record<string, string> = {
    */
   "common.hours_minutes": "{h} sa {m} dk",
   "common.hours": "{h} sa",
+  /*
+   * Günün görevleri. Etiketler SUNUCUDA Türkçe sabit yazılıydı ve API'den öyle
+   * geliyordu — yani mobil uygulama da, arayüzü İngilizce ya da Almanca olsa
+   * bile, görevleri Türkçe gösteriyordu. Anahtar sunucuda çözülüyor (bkz.
+   * lib/quests.ts): tek değişiklik iki platformu birden düzeltiyor, mobilin
+   * yayınlanmış sürümleri dâhil.
+   */
+  "quest.reviews10": "10 kelime tekrar et",
+  "quest.reviews25": "25 kelime tekrar et",
+  "quest.newWords3": "3 yeni kelime öğren",
+  "quest.artikel5": "5 artikel doğru bil",
+  "quest.listen5": "5 kelimeyi duyarak bul",
+  "quest.daily": "Günün turunu oyna",
+  "quest.skill1": "Bir beceri alıştırması bitir",
+  "quest.lesson1": "Bir konuşma tamamla",
+  "quests.resets_midnight": "gece yarısı yenilenir",
+  "quests.all_three_done": "Günün üçü de tamam",
+  "quests.all_three_done_sub": "Üçünü birden bitirdin",
 };

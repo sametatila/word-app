@@ -18,4 +18,16 @@ export const enWeb: Record<string, string> = {
   /* Süre birimi — bkz. tr.ts notu. */
   "common.hours_minutes": "{h} h {m} min",
   "common.hours": "{h} h",
+  /* Günün görevleri — sunucuda çözülüyor, bkz. tr.ts notu. */
+  "quest.reviews10": "Review 10 words",
+  "quest.reviews25": "Review 25 words",
+  "quest.newWords3": "Learn 3 new words",
+  "quest.artikel5": "Get 5 articles right",
+  "quest.listen5": "Identify 5 words by ear",
+  "quest.daily": "Play today's round",
+  "quest.skill1": "Finish one skill exercise",
+  "quest.lesson1": "Complete one conversation",
+  "quests.resets_midnight": "resets at midnight",
+  "quests.all_three_done": "All three done today",
+  "quests.all_three_done_sub": "You finished all three",
 };
