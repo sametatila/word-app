@@ -108,7 +108,13 @@ export const EVENT_NAMES = [
   "lesson_step", // ders adımı sonuçlandı (kind = adım:yol → repeat|produce|truefalse : mic|typed|skip, value = 2 ilk denemede / 1 sonraki denemede / 0 geçilemedi ya da atlandı)
   "lesson_finish", // ders bitti (kind = ders kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_lessons'ta)
   "speak_self", // söyleyiş görevinde karar (kind = asr tanıyıcı | self öz-değerlendirme, value = 1 doğru / 0 zorlandı)
-  "onboarding_step", // onboarding adımı görüldü (kind = welcome|goal|level|ready, value = adım sırası)
+  "onboarding_step", // onboarding adımı görüldü (kind = welcome|goal|level|pace|ready, value = adım sırası)
+  // Giriş ÖNCESİ ısınma: hesap açmadan önce oynatılan beş kelime. Huni burada
+  // kritik — kaç ziyaretçi ısınmayı görüyor, kaçı sonuna kadar gidiyor, kaçı
+  // hesap açıyor. `first_practice` kelime başına (value = sıra),
+  // `first_practice_done` bir kez (value = kelime sayısı).
+  "first_practice",
+  "first_practice_done",
   "onboarding_existing_account", // akıştan "zaten hesabım var" ile çıkıldı (kind = çıkılan adım, value = adım sırası)
   "coach_show", // koç balonu gösterildi (kind = an)
   "tts_play", // sesli okuma çalındı (kind = ekran anahtarı; ekran açılışı başına bir kez)

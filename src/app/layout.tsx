@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { getLang } from "@/lib/i18n/server";
+import { LangProvider } from "@/lib/i18n/client";
 
 /**
  * Paylaşılan bağlantının nasıl göründüğü.
@@ -102,9 +104,18 @@ try {
 } catch (e) {}
 `;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  /*
+    `<html lang>` ARTIK SABİT DEĞİL.
+
+    "tr" yazılıydı ve bu yalnız bir etiket değil: ekran okuyucular telaffuzu,
+    tarayıcılar yazım denetimini ve satır kesmeyi ondan seçiyor. Arayüz
+    İngilizce çizilirken belgenin Türkçe olduğunu söylemek, o üç işi de yanlış
+    yaptırıyordu.
+  */
+  const lang = await getLang();
   return (
-    <html lang="tr" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <head>
         {/*
           iOS'un ESKİ adı — Next yalnızca standart `mobile-web-app-capable`
@@ -125,7 +136,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-dvh antialiased">{children}</body>
+      <body className="min-h-dvh antialiased">
+        <LangProvider lang={lang}>{children}</LangProvider>
+      </body>
     </html>
   );
 }

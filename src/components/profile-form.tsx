@@ -16,6 +16,7 @@ import { PageBack } from "@/components/page-back";
 import { Disclosure } from "@/components/disclosure";
 import { SettingRow } from "@/components/setting-row";
 import { ThemeSetting } from "@/components/theme-toggle";
+import { LangSetting } from "@/components/lang-setting";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 import { track } from "@/lib/track";
 
@@ -317,6 +318,10 @@ export function ProfileForm({
           yer kaplıyor ve avatarla birlikte dar telefonlarda taşıyordu.
           Ayarın evi ayarlar.
         */}
+        {/* Dil, görünümün hemen üstünde: mobilde de "uygulama dili" ile
+            "görünüm" ardışık ve ikisi de uygulamanın kendisiyle ilgili
+            (öğrenilen dil değil, arayüz). */}
+        <LangSetting />
         <ThemeSetting />
         <SoundSettings bare />
         <PushSettings bare />
