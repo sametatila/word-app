@@ -237,6 +237,7 @@ Ihr Bürgeramt Nord`,
 Ohne Nummer werden Sie nicht aufgerufen.
 
 Handys bitte leise stellen.`,
+              gloss: [{ de: "leise stellen", tr: "sessize almak", en: "to set to silent" }],
             },
             {
               kind: "text",

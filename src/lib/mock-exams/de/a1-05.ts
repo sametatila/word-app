@@ -243,6 +243,10 @@ zur Post.`,
 Bitte den Wagen festhalten.
 
 Ein Rollstuhl hat immer Vorrang.`,
+              gloss: [
+                { de: "der Vorrang", tr: "öncelik", en: "priority" },
+                { de: "der Rollstuhl", tr: "tekerlekli sandalye", en: "wheelchair" },
+              ],
             },
             {
               kind: "text",

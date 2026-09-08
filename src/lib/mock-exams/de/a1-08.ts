@@ -249,6 +249,7 @@ Bitte vor dem Baden duschen.`,
 Hunde bitte draußen lassen.
 
 Licht bis 22 Uhr. Danach bitte leise sein.`,
+              gloss: [{ de: "gesperrt", tr: "kapalı, girilmez", en: "closed off" }],
             },
           ],
           items: [
