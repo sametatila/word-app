@@ -29,6 +29,7 @@
     "test:content": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-content.ts",
     "test:exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-exams.ts",
     "test:mock-exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-mock-exams.ts",
+    "audit:mock-exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/audit-mock-exams.ts",
     "test:exam-build": "tsx --tsconfig scripts/tsconfig.dry.json scripts/exam-dryrun.ts",
     "db:seed": "tsx scripts/seed.ts",
     "db:seed:skills": "tsx scripts/seed-skills.ts",
