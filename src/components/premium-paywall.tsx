@@ -199,8 +199,12 @@ function PromoBox({ prefill }: { prefill: string }) {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ code }),
       });
-      const data = (await res.json()) as { ok?: boolean; days?: number; error?: string };
-      if (data.ok) {
+      const data = (await res.json()) as { ok?: boolean; kind?: string; days?: number; error?: string };
+      if (data.ok && data.kind === "referral") {
+        // Davet kodu premium AÇMIYOR, yalnız bağ kuruyor — mesaj bunu söylemeli,
+        // yoksa kullanıcı premium beklerken hiçbir şey açılmadığını görür.
+        setMsg({ ok: true, text: t("promo.referral_linked") });
+      } else if (data.ok) {
         setMsg({ ok: true, text: t("promo.success", { days: data.days ?? 0 }) });
         // Yetki değişti: sayfayı tazele ki durum ve kilitler güncellensin.
         setTimeout(() => window.location.reload(), 1200);

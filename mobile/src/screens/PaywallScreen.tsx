@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, ScrollView, ActivityIndicator, Linking, Platform } from "react-native";
+import { View, ScrollView, ActivityIndicator, Linking, Platform, TextInput } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { PurchasesPackage } from "react-native-purchases";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, CheckIcon, CrownIcon, ExamIcon } from "../ui/icons";
+import { XIcon, CheckIcon, CrownIcon, ExamIcon, ShareIcon } from "../ui/icons";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
 import { billingAvailable, getPackages, purchase, restore } from "../lib/billing";
+import { usePremiumStatus, refreshPremium } from "../lib/premium";
+import { shareInvite } from "../lib/share";
+import { api } from "../api/client";
 import { openLegal } from "../lib/legal";
 import { hasMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
@@ -28,31 +31,6 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 const SUBSCRIPTIONS_URL = Platform.OS === "ios"
   ? "https://apps.apple.com/account/subscriptions"
   : "https://play.google.com/store/account/subscriptions";
-
-/**
- * Premium'a bağlı özellikler.
- *
- * DİKKAT: Schreiben kilidi kalktı. Kilit tek yerdeydi — sınav hazırlık
- * ekranındaki modül listesi — ve o ekran Deneme Sınavları'na dönüşürken
- * modüller kaldırıldı (yazma alıştırmaları Beceriler sekmesinde zaten
- * ücretsiz açılıyor). Yani bugün premium hiçbir şeyi açmıyor. Satın alma
- * canlıya alınmadan önce bu liste yeniden kurulmalı; olmayan bir kilidi
- * vaat etmek Play ve App Store için "yanıltıcı beyan".
- */
-const COMPARE: { key: string; free: string; premium: string }[] = [
-  { key: "paywall.schreiben_alistirmalari", free: "—", premium: "Var" },
-  { key: "paywall.word_rounds_lessons_walk_mode", free: "Var", premium: "Var" },
-];
-
-function CompareRow({ row, colors, last }: { row: (typeof COMPARE)[number]; colors: Palette; last: boolean }) {
-  return (
-    <View style={{ flexDirection: "row", alignItems: "center", paddingVertical: 11, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
-      <Text variant="caption" style={{ flex: 1.5 }}>{t(row.key)}</Text>
-      <View style={{ flex: 1, alignItems: "center" }}>{row.free === "Var" ? <CheckIcon color={colors.textMuted} size={17} /> : <Text variant="caption" color={colors.textFaint}>—</Text>}</View>
-      <View style={{ flex: 1, alignItems: "center" }}><CheckIcon color={colors.success} size={17} /></View>
-    </View>
-  );
-}
 
 function planLabel(pkg: PurchasesPackage): string {
   if (pkg.packageType === "ANNUAL") return t("paywall.yearly");
@@ -72,6 +50,9 @@ export function PaywallScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const live = billingAvailable();
+  // Durum SUNUCUDAN: kapsam metinleri, sınırlar, davet kodu ve "zaten premium
+  // miyim" sorusunun cevabı. Mağaza SDK'sı yalnız fiyat ve satın alma için.
+  const { status, refresh } = usePremiumStatus();
   const [pkgs, setPkgs] = useState<PurchasesPackage[] | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -122,6 +103,63 @@ export function PaywallScreen() {
     </View>
   );
 
+  /**
+   * Zaten premium: plan listesi gösterilmiyor.
+   *
+   * Ödemiş bir kullanıcıya satın alma ekranı çizmek hem anlamsız hem riskli —
+   * ikinci bir abonelik başlatabilir. Bunun yerine durumu, bitiş tarihini ve
+   * bekleyen hediye süresini gösteriyoruz. Durum SUNUCUDAN geldiği için promo
+   * kodu ya da davet ödülüyle premium olan kullanıcı da burada doğru görünüyor;
+   * mağazaya sorulsaydı "abonelik yok" derdi.
+   */
+  if (status?.premium) {
+    const until = status.until ? new Date(status.until).toLocaleDateString() : "";
+    const line =
+      status.source === "bonus"
+        ? t("premiumstate.bonus_until", { date: until })
+        : status.store?.state === "trial"
+          ? t("premiumstate.trial_until", { date: until })
+          : status.store?.canceled
+            ? t("premiumstate.canceled_until", { date: until })
+            : status.store?.state === "grace"
+              ? t("premiumstate.grace")
+              : t("premiumstate.active_until", { date: until });
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg }}>
+        {close}
+        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl }}>
+          <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
+            <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
+              <CrownIcon color="#fff" size={44} />
+            </View>
+            <Text variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
+            <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{line}</Text>
+            {status.bonusDaysPending > 0 ? (
+              <Text variant="caption" color={colors.success} style={{ marginTop: 4, textAlign: "center" }}>
+                {t("premiumstate.bonus_pending", { n: status.bonusDaysPending })}
+              </Text>
+            ) : null}
+          </View>
+
+          <Section title={t("paywall.what_you_get")} colors={colors}>
+            {(status.copy.premium ?? []).map((l) => (
+              <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
+            ))}
+          </Section>
+
+          <PromoBox colors={colors} onRedeemed={refresh} />
+          {status.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
+
+          <PressableScale onPress={() => Linking.openURL(SUBSCRIPTIONS_URL).catch(() => {})} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.md, alignItems: "center" }}>
+            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>
+              {t(Platform.OS === "ios" ? "premiumstate.manage_ios" : "premiumstate.manage_android")}
+            </Text>
+          </PressableScale>
+        </ScrollView>
+      </View>
+    );
+  }
+
   // Mağaza bağlı değil ya da paket gelmedi: satın alma vaadi yok, dürüst durum.
   if (!live || (pkgs && pkgs.length === 0)) {
     return (
@@ -150,14 +188,34 @@ export function PaywallScreen() {
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("paywall.unlimited_learning_full_exam")}</Text>
         </View>
 
-        <View style={{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.lg, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.xl }}>
-          <View style={{ flexDirection: "row", alignItems: "center", paddingBottom: spacing.sm, borderBottomWidth: 1.5, borderBottomColor: colors.border }}>
-            <Text variant="micro" color={colors.textMuted} style={{ flex: 1.5 }}>{t("paywall.feature")}</Text>
-            <Text variant="micro" color={colors.textFaint} style={{ flex: 1, textAlign: "center" }}>{t("paywall.free")}</Text>
-            <Text variant="micro" color={colors.primary} style={{ flex: 1, textAlign: "center" }}>PREMIUM</Text>
+        {/* KAPSAM SUNUCUDAN. Eskiden burada elle yazılmış bir karşılaştırma
+            tablosu vardı ve gerçeği anlatmıyordu: tek satırı "Schreiben
+            alıştırmaları" idi ve o ekran aylar önce kaldırılmıştı, yani paywall
+            olmayan bir şeyi vaat ediyordu. Artık satırlar yapılandırmadan
+            üretiliyor (`describeLimits`) ve çeviri anahtarı olarak geliyor —
+            panelden bir sınır değişince buradaki metin de değişiyor, beyan
+            gerçekle ayrışamıyor. */}
+        <Section title={t("paywall.what_you_get")} colors={colors}>
+          {(status?.copy.premium ?? []).map((l) => (
+            <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
+          ))}
+        </Section>
+
+        <Section title={t("paywall.whats_free")} colors={colors}>
+          {(status?.copy.free ?? []).map((l) => (
+            <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="free" />
+          ))}
+        </Section>
+
+        {/* Adil kullanım AÇIKÇA yazılıyor: tavanı olan bir şeyi "sınırsız" diye
+            sunmak App Store 3.1.2 ve Play'in abonelik beyanı kurallarına aykırı. */}
+        {status?.limits ? (
+          <View style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, marginBottom: spacing.xl }}>
+            <Text variant="micro" color={colors.textMuted}>
+              {t("paywall.fair_use_title")}: {t("plan.pro_walk_cap", { n: status.limits.fairUse.pocketWalksPerDay })} · {t("plan.pro_ai", { n: status.limits.fairUse.aiPracticePerDay })}
+            </Text>
           </View>
-          {COMPARE.map((r, i) => <CompareRow key={r.key} row={r} colors={colors} last={i === COMPARE.length - 1} />)}
-        </View>
+        ) : null}
 
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl, paddingHorizontal: 4 }}>
           <ExamIcon color={colors.accent} size={22} />
@@ -204,6 +262,9 @@ export function PaywallScreen() {
             })}
           </View>
         )}
+
+        <PromoBox colors={colors} onRedeemed={refresh} />
+        {status?.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
       </ScrollView>
 
       <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm }}>
@@ -230,5 +291,128 @@ export function PaywallScreen() {
         </View>
       </View>
     </View>
+  );
+}
+
+/* ─────────────────────────── paywall parçaları ─────────────────────────── */
+
+function Section({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
+  return (
+    <View style={{ marginBottom: spacing.lg }}>
+      <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{title.toUpperCase()}</Text>
+      <View style={{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md, borderWidth: 1, borderColor: colors.hairline }}>
+        {children}
+      </View>
+    </View>
+  );
+}
+
+function Bullet({ text, colors, tone }: { text: string; colors: Palette; tone: "premium" | "free" }) {
+  const tint = tone === "premium" ? colors.primary : colors.success;
+  return (
+    <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingVertical: 5 }}>
+      <View style={{ width: 22, height: 22, borderRadius: 11, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2, marginTop: 1 }}>
+        <CheckIcon color={tint} size={14} />
+      </View>
+      <Text variant="caption" style={{ flex: 1, lineHeight: 19 }}>{text}</Text>
+    </View>
+  );
+}
+
+/**
+ * Promo kodu. Panelden üretilen kodların bozdurulduğu yer — mağazadan
+ * BAĞIMSIZ, yani satın alma yolu kapalıyken de çalışıyor.
+ *
+ * Hata sebepleri ayrı ayrı gösteriliyor ("kod yok" / "zaten kullandın" /
+ * "tükendi"): üçünde de kullanıcının yapacağı şey farklı ve tek bir "geçersiz
+ * kod" mesajı doğrudan destek çağrısı üretir.
+ */
+function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => void }) {
+  const [code, setCode] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
+
+  async function apply() {
+    if (!code.trim() || busy) return;
+    setBusy(true);
+    setMsg(null);
+    try {
+      const r = await api<{ ok?: boolean; kind?: string; days?: number; error?: string }>("/api/premium/redeem", {
+        method: "POST",
+        body: JSON.stringify({ code }),
+      });
+      if (r.ok && r.kind === "referral") {
+        // Davet kodu premium AÇMIYOR, yalnız bağ kuruyor.
+        setMsg({ ok: true, text: t("promo.referral_linked") });
+        setCode("");
+      } else if (r.ok) {
+        setMsg({ ok: true, text: t("promo.success", { days: r.days ?? 0 }) });
+        setCode("");
+        void refreshPremium().then(onRedeemed);
+      } else {
+        setMsg({ ok: false, text: t(promoErrorKey(r.error)) });
+      }
+    } catch (e) {
+      // `api` HTTP hatasında fırlatıyor; sebep gövdede olabilir.
+      const reason = (e as { body?: { error?: string } })?.body?.error;
+      setMsg({ ok: false, text: t(promoErrorKey(reason)) });
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <Section title={t("promo.title")} colors={colors}>
+      <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "center" }}>
+        <TextInput
+          value={code}
+          onChangeText={(v) => setCode(v.toUpperCase())}
+          placeholder={t("promo.placeholder")}
+          placeholderTextColor={colors.textFaint}
+          autoCapitalize="characters"
+          autoCorrect={false}
+          style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, letterSpacing: 2 }}
+        />
+        <PressableScale onPress={apply} disabled={busy || !code.trim()} accessibilityRole="button" accessibilityLabel={t("promo.apply")} style={{ borderRadius: radii.md, backgroundColor: code.trim() ? colors.primary : colors.surface2, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
+          {busy ? <ActivityIndicator color="#fff" /> : <Text variant="bodyStrong" color={code.trim() ? "#fff" : colors.textFaint}>{t("promo.apply")}</Text>}
+        </PressableScale>
+      </View>
+      {msg ? <Text variant="caption" color={msg.ok ? colors.success : colors.danger} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
+    </Section>
+  );
+}
+
+/** Sunucunun sebebi doğrudan anahtar adı; tanımadığımız sebep genel mesaja düşer. */
+const PROMO_ERRORS = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited"];
+function promoErrorKey(reason: string | undefined): string {
+  return PROMO_ERRORS.includes(reason ?? "") ? `promo.${reason}` : "promo.failed";
+}
+
+/**
+ * Davet. Kod ömür boyu sabit; bağlantı web'in promo açılışıyla aynı biçimde
+ * (`/premium?code=…`), yani tek bağlantı hem kodu tanıtıyor hem paywall'ı açıyor.
+ */
+function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: string; invited: number; rewarded: number; earnedDays: number } }) {
+  return (
+    <Section title={t("referral.title")} colors={colors}>
+      <Text variant="caption" style={{ lineHeight: 19 }}>{t("referral.explain", { days: 7 })}</Text>
+      <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 16 }}>{t("referral.reward_note")}</Text>
+
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
+        <View style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingVertical: 11, alignItems: "center" }}>
+          <Text variant="h3" style={{ letterSpacing: 4 }}>{referral.code}</Text>
+        </View>
+        <PressableScale onPress={() => void shareInvite(referral.code)} accessibilityRole="button" accessibilityLabel={t("referral.copy_link")} style={{ borderRadius: radii.md, backgroundColor: colors.primary, paddingHorizontal: spacing.lg, paddingVertical: 11, flexDirection: "row", alignItems: "center", gap: 6 }}>
+          <ShareIcon color="#fff" size={16} />
+          <Text variant="bodyStrong" color="#fff">{t("common.share")}</Text>
+        </PressableScale>
+      </View>
+
+      <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
+        {referral.invited === 0
+          ? t("referral.none_yet")
+          : `${t("referral.invited", { n: referral.invited })} · ${t("referral.rewarded", { n: referral.rewarded })}${referral.earnedDays > 0 ? ` · ${t("referral.earned", { n: referral.earnedDays })}` : ""}`}
+      </Text>
+    </Section>
   );
 }

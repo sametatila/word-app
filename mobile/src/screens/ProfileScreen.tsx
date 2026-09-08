@@ -14,7 +14,7 @@ import { SkeletonCard, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skel
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatDuration, formatXp } from "../lib/useMe";
-import { usePremium } from "../lib/usePremium";
+import { usePremiumStatus } from "../lib/premium";
 import { billingAvailable } from "../lib/billing";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
@@ -49,7 +49,9 @@ export function ProfileScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user, signOut } = useAuth();
   const { me, loading: meLoading } = useMe();
-  const premium = usePremium();
+  // Tam durum: davet kodu da buradan geliyor (paylaşım bağlantısı onu taşıyor).
+  const { status: premiumStatus } = usePremiumStatus();
+  const premium = !!premiumStatus?.premium;
   // Misafir modu yok: kullanıcı her zaman var. Adı yoksa e-posta adından türet.
   const displayName = user?.name?.trim() || user?.email?.split("@")[0] || t("profile.student");
   const [confirmOut, setConfirmOut] = useState(false);
@@ -153,7 +155,7 @@ export function ProfileScreen() {
           <Row icon={PodiumIcon} label={t("profile.weekly_leaderboard")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Leaderboard")} />
           <Row icon={HandshakeIcon} label={t("profile.friends")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Friends", undefined)} />
           <Row icon={InboxIcon} label={t("profile.inbox")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Inbox")} />
-          <Row icon={ShareIcon} label={t("profile.invite_friend")} tint={colors.success} colors={colors} onPress={() => shareInvite()} />
+          <Row icon={ShareIcon} label={t("profile.invite_friend")} tint={colors.success} colors={colors} onPress={() => shareInvite(premiumStatus?.referral?.code)} />
           <Row icon={BellIcon} label={t("profile.notifications")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Notifications")} last />
         </Card>
 

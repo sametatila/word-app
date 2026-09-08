@@ -274,6 +274,7 @@ export const trBase: Record<string, string> = {
   "promo.used_up": "Bu kodun kullanım hakkı dolmuş.",
   "promo.expired": "Bu kodun süresi dolmuş.",
   "promo.disabled": "Bu kod artık geçerli değil.",
+  "promo.referral_linked": "Davet bağlantısı tanındı. Premium'a abone olduğunda seni davet eden kişi de 1 hafta kazanacak.",
   "promo.rate_limited": "Çok fazla deneme yapıldı. Biraz sonra tekrar dene.",
   "promo.failed": "Kod uygulanamadı. Daha sonra tekrar dene.",
   "referral.title": "Arkadaşını davet et",

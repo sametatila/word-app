@@ -272,6 +272,7 @@ export const en: Record<string, string> = {
   "promo.used_up": "This code has been fully redeemed.",
   "promo.expired": "This code has expired.",
   "promo.disabled": "This code is no longer valid.",
+  "promo.referral_linked": "Invite link recognised. When you subscribe to Premium, whoever invited you also earns a week.",
   "promo.rate_limited": "Too many attempts. Try again in a little while.",
   "promo.failed": "The code could not be applied. Try again later.",
   "referral.title": "Invite a friend",

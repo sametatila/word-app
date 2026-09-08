@@ -3,18 +3,27 @@ import { track } from "./track";
 import { t, targetLangName } from "./i18n";
 
 /**
- * Paylaşım / davet (§4 — referral & paylaşım). RN'in yerleşik Share API'siyle
- * (native dep yok) OS paylaşım sayfasını açar. Davet bağlantısı web'in
- * `invite_open` hunisiyle uyumlu (?ref=...); sonuç paylaşımı seriyi/başarıyı
- * yayar. Şimdilik ref kodu yerel/anonim — auth gelince kullanıcıya bağlanır.
+ * Paylaşım / davet. RN'in yerleşik Share API'siyle (native dep yok) OS paylaşım
+ * sayfasını açar.
+ *
+ * DAVET KODU ARTIK GERÇEK. Bağlantı eskiden sabit `?ref=davet` taşıyordu, yani
+ * kimin davet ettiği hiçbir yerde yazmıyordu ve ödül verilemezdi — dosyanın
+ * kendi notu "auth gelince kullanıcıya bağlanır" diyordu. Kod çağıranın
+ * verdiği: `usePremiumStatus().referral.code` ya da `/api/premium/referral`.
+ * Kod yoksa bağlantı yine paylaşılıyor ama ödül üretmiyor; paylaşımı büsbütün
+ * engellemek daha kötü olurdu.
+ *
+ * `?code=` biçimi web'deki promo/davet açılış sayfasıyla aynı
+ * (`/premium?code=…`): tek bağlantı hem kodu tanıtıyor hem paywall'ı açıyor.
  */
 const APP_URL = "https://www.lernomi.app";
 
-export async function shareInvite(): Promise<void> {
+export async function shareInvite(referralCode?: string | null): Promise<void> {
   try {
     track("share", 0, "invite");
+    const link = referralCode ? `${APP_URL}/premium?code=${referralCode}` : APP_URL;
     await Share.share({
-      message: t("share.invite", { lang: targetLangName(), link: `${APP_URL}?ref=davet` }),
+      message: t("share.invite", { lang: targetLangName(), link }),
     });
   } catch { /* kullanıcı vazgeçti / paylaşım kapalı */ }
 }

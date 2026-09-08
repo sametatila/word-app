@@ -2,7 +2,7 @@ import "server-only";
 import { randomInt } from "node:crypto";
 import { and, desc, eq, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { profiles, referrals } from "@/lib/db/schema";
+import { entitlements, profiles, referrals } from "@/lib/db/schema";
 import { grantBonus, daysToMinutes } from "./entitlement";
 import { premiumConfig } from "./config";
 
@@ -71,6 +71,21 @@ export async function attachReferral(inviteeUserId: string, code: string): Promi
   const inviter = await userIdByReferralCode(code);
   if (!inviter) return "unknown_code";
   if (inviter === inviteeUserId) return "self";
+
+  /**
+   * Zaten ödeme yapmış bir hesap "davet edilmiş" sayılmaz.
+   *
+   * Bağ kurulması ödülü tek başına vermiyor (ödül ilk ÖDEMEDE düşüyor), ama bu
+   * koruma olmasa uzun süredir abone olan iki kişi birbirinin kodunu girip bir
+   * sonraki yenilemede ödül üretebilirdi. Davet, YENİ müşteri getirmenin
+   * karşılığı; mevcut müşteriyi yeniden etiketlemenin değil.
+   */
+  const [ent] = await db
+    .select({ paidAt: entitlements.storePaidAt })
+    .from(entitlements)
+    .where(eq(entitlements.userId, inviteeUserId))
+    .limit(1);
+  if (ent?.paidAt) return "already";
 
   try {
     await db.insert(referrals).values({

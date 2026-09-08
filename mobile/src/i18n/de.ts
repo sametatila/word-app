@@ -272,6 +272,7 @@ export const de: Record<string, string> = {
   "promo.used_up": "Dieser Code ist bereits vollständig eingelöst.",
   "promo.expired": "Dieser Code ist abgelaufen.",
   "promo.disabled": "Dieser Code ist nicht mehr gültig.",
+  "promo.referral_linked": "Einladungslink erkannt. Wenn du Premium abonnierst, bekommt auch die einladende Person eine Woche.",
   "promo.rate_limited": "Zu viele Versuche. Probiere es später noch einmal.",
   "promo.failed": "Der Code konnte nicht eingelöst werden. Versuche es später.",
   "referral.title": "Freunde einladen",
