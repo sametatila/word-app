@@ -1,6 +1,7 @@
 import "server-only";
 import { and, count, desc, eq, gt, gte, inArray, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { PLAYABLE_GAMES } from "@/lib/types";
 import { GROUP_LABELS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
 import { onAchievementsUnlocked } from "@/lib/social/hooks";
@@ -89,9 +90,17 @@ export type Metric =
 
 export type AchievementDef = {
   id: string;
-  title: string;
-  /** Nasıl açılır — kilitliyken görünen tek metin. */
-  hint: string;
+  /**
+   * Adın ve ipucunun SÖZLÜK ANAHTARLARI, metnin kendisi değil.
+   *
+   * Metin burada Türkçe sabit yazılıydı ve `/api/achievements` öyle
+   * dönüyordu — yani mobil uygulama, arayüzü İngilizce ya da Almanca olsa
+   * bile elli dört rozeti Türkçe gösteriyordu. Görev etiketleriyle aynı
+   * desen: çeviri sunucuda, kullanıcının `native_lang`ine göre.
+   */
+  titleKey: string;
+  /** Nasıl açılır — kilitliyken görünen tek metin (anahtar). */
+  hintKey: string;
   /** components/icons.tsx içindeki bileşen adı. */
   icon: string;
   tier: Tier;
@@ -109,66 +118,66 @@ export type AchievementDef = {
  */
 export const ACHIEVEMENTS: AchievementDef[] = [
   // ——— Seri ———————————————————————————————————————————————————————
-  { id: "streak3", title: "İlk kıvılcım", hint: "3 gün üst üste çalış", icon: "FlameIcon", tier: "bronze", group: "streak", metric: "longestStreak", target: 3 },
-  { id: "streak7", title: "Bir hafta", hint: "7 gün üst üste çalış", icon: "FlameIcon", tier: "bronze", group: "streak", metric: "longestStreak", target: 7 },
-  { id: "streak30", title: "Alışkanlık", hint: "30 gün üst üste çalış", icon: "FlameIcon", tier: "silver", group: "streak", metric: "longestStreak", target: 30 },
-  { id: "streak100", title: "Yüz gün", hint: "100 gün üst üste çalış", icon: "FlameIcon", tier: "gold", group: "streak", metric: "longestStreak", target: 100 },
-  { id: "streak365", title: "Bir yıl", hint: "365 gün üst üste çalış", icon: "FlameIcon", tier: "legend", group: "streak", metric: "longestStreak", target: 365 },
+  { id: "streak3", titleKey: "ach.streak3.title", hintKey: "ach.streak3.hint", icon: "FlameIcon", tier: "bronze", group: "streak", metric: "longestStreak", target: 3 },
+  { id: "streak7", titleKey: "ach.streak7.title", hintKey: "ach.streak7.hint", icon: "FlameIcon", tier: "bronze", group: "streak", metric: "longestStreak", target: 7 },
+  { id: "streak30", titleKey: "ach.streak30.title", hintKey: "ach.streak30.hint", icon: "FlameIcon", tier: "silver", group: "streak", metric: "longestStreak", target: 30 },
+  { id: "streak100", titleKey: "ach.streak100.title", hintKey: "ach.streak100.hint", icon: "FlameIcon", tier: "gold", group: "streak", metric: "longestStreak", target: 100 },
+  { id: "streak365", titleKey: "ach.streak365.title", hintKey: "ach.streak365.hint", icon: "FlameIcon", tier: "legend", group: "streak", metric: "longestStreak", target: 365 },
 
   // ——— Kelime ————————————————————————————————————————————————————
-  { id: "words50", title: "Elli kelime", hint: "50 kelimeyi pekiştir", icon: "BookIcon", tier: "bronze", group: "vocab", metric: "mastered", target: 50 },
-  { id: "words250", title: "Küçük sözlük", hint: "250 kelimeyi pekiştir", icon: "BookIcon", tier: "silver", group: "vocab", metric: "mastered", target: 250 },
-  { id: "words1000", title: "Bin kelime", hint: "1.000 kelimeyi pekiştir", icon: "BookOpenIcon", tier: "gold", group: "vocab", metric: "mastered", target: 1000 },
-  { id: "words3000", title: "Kelime hazinesi", hint: "3.000 kelimeyi pekiştir", icon: "BookOpenIcon", tier: "legend", group: "vocab", metric: "mastered", target: 3000 },
+  { id: "words50", titleKey: "ach.words50.title", hintKey: "ach.words50.hint", icon: "BookIcon", tier: "bronze", group: "vocab", metric: "mastered", target: 50 },
+  { id: "words250", titleKey: "ach.words250.title", hintKey: "ach.words250.hint", icon: "BookIcon", tier: "silver", group: "vocab", metric: "mastered", target: 250 },
+  { id: "words1000", titleKey: "ach.words1000.title", hintKey: "ach.words1000.hint", icon: "BookOpenIcon", tier: "gold", group: "vocab", metric: "mastered", target: 1000 },
+  { id: "words3000", titleKey: "ach.words3000.title", hintKey: "ach.words3000.hint", icon: "BookOpenIcon", tier: "legend", group: "vocab", metric: "mastered", target: 3000 },
 
   // ——— Oyun ustalıkları ——————————————————————————————————————————
-  { id: "answers500", title: "Beş yüz cevap", hint: "500 soruyu doğru bil", icon: "CheckIcon", tier: "bronze", group: "games", metric: "correctAnswers", target: 500 },
-  { id: "answers2500", title: "İki bin beş yüz", hint: "2.500 soruyu doğru bil", icon: "CheckIcon", tier: "silver", group: "games", metric: "correctAnswers", target: 2500 },
-  { id: "answers10000", title: "On bin cevap", hint: "10.000 soruyu doğru bil", icon: "CheckIcon", tier: "gold", group: "games", metric: "correctAnswers", target: 10000 },
-  { id: "artikel300", title: "Artikel avcısı", hint: "300 artikeli doğru bil", icon: "TagIcon", tier: "silver", group: "games", metric: "gameArtikel", target: 300 },
-  { id: "listen200", title: "Kulak dolgunluğu", hint: "200 kelimeyi duyarak bul", icon: "HeadphonesIcon", tier: "silver", group: "games", metric: "gameListen", target: 200 },
-  { id: "typing200", title: "Parmak hafızası", hint: "200 kelimeyi sıfırdan yaz", icon: "KeyboardIcon", tier: "silver", group: "games", metric: "gameTyping", target: 200 },
-  { id: "order150", title: "Cümle mimarı", hint: "150 cümleyi doğru diz", icon: "ListIcon", tier: "silver", group: "games", metric: "gameOrder", target: 150 },
-  { id: "plural150", title: "Çoğul ustası", hint: "150 çoğul biçimi doğru bil", icon: "PuzzleIcon", tier: "silver", group: "games", metric: "gamePlural", target: 150 },
-  { id: "speak100", title: "Ekransız", hint: "Yürürken modunda 100 kelimeyi sesli söyle", icon: "HeadphonesIcon", tier: "silver", group: "games", metric: "gameSpeak", target: 100 },
-  { id: "speak500", title: "Ağızdan çıkan", hint: "Yürürken modunda 500 kelimeyi sesli söyle", icon: "HeadphonesIcon", tier: "gold", group: "games", metric: "gameSpeak", target: 500 },
+  { id: "answers500", titleKey: "ach.answers500.title", hintKey: "ach.answers500.hint", icon: "CheckIcon", tier: "bronze", group: "games", metric: "correctAnswers", target: 500 },
+  { id: "answers2500", titleKey: "ach.answers2500.title", hintKey: "ach.answers2500.hint", icon: "CheckIcon", tier: "silver", group: "games", metric: "correctAnswers", target: 2500 },
+  { id: "answers10000", titleKey: "ach.answers10000.title", hintKey: "ach.answers10000.hint", icon: "CheckIcon", tier: "gold", group: "games", metric: "correctAnswers", target: 10000 },
+  { id: "artikel300", titleKey: "ach.artikel300.title", hintKey: "ach.artikel300.hint", icon: "TagIcon", tier: "silver", group: "games", metric: "gameArtikel", target: 300 },
+  { id: "listen200", titleKey: "ach.listen200.title", hintKey: "ach.listen200.hint", icon: "HeadphonesIcon", tier: "silver", group: "games", metric: "gameListen", target: 200 },
+  { id: "typing200", titleKey: "ach.typing200.title", hintKey: "ach.typing200.hint", icon: "KeyboardIcon", tier: "silver", group: "games", metric: "gameTyping", target: 200 },
+  { id: "order150", titleKey: "ach.order150.title", hintKey: "ach.order150.hint", icon: "ListIcon", tier: "silver", group: "games", metric: "gameOrder", target: 150 },
+  { id: "plural150", titleKey: "ach.plural150.title", hintKey: "ach.plural150.hint", icon: "PuzzleIcon", tier: "silver", group: "games", metric: "gamePlural", target: 150 },
+  { id: "speak100", titleKey: "ach.speak100.title", hintKey: "ach.speak100.hint", icon: "HeadphonesIcon", tier: "silver", group: "games", metric: "gameSpeak", target: 100 },
+  { id: "speak500", titleKey: "ach.speak500.title", hintKey: "ach.speak500.hint", icon: "HeadphonesIcon", tier: "gold", group: "games", metric: "gameSpeak", target: 500 },
 
-  { id: "translate200", title: "Çevirmen", hint: "200 cümleyi doğru çevir", icon: "PenIcon", tier: "silver", group: "games", metric: "gameTranslate", target: 200 },
+  { id: "translate200", titleKey: "ach.translate200.title", hintKey: "ach.translate200.hint", icon: "PenIcon", tier: "silver", group: "games", metric: "gameTranslate", target: 200 },
   /*
     Keşif rozeti: sayı değil ÇEŞİT. On bir oyunun bazıları yalnızca karışık
     turda ve seyrek çıkıyor; kullanıcıların çoğu "Çoğul Bilmece"nin ya da
     "Doğru mu Yanlış mı"nın varlığını bilmiyor. Hepsini bir kez oynatmak,
     listeyi göstermekten daha iyi bir tanıtım.
   */
-  { id: "allGames", title: "Hepsini denedin", hint: "On bir oyunun hepsinde en az bir doğru yap", icon: "PuzzleIcon", tier: "silver", group: "games", metric: "gamesPlayed", target: PLAYABLE_GAMES.length },
+  { id: "allGames", titleKey: "ach.allGames.title", hintKey: "ach.allGames.hint", icon: "PuzzleIcon", tier: "silver", group: "games", metric: "gamesPlayed", target: PLAYABLE_GAMES.length },
 
   // ——— Dilbilgisi ————————————————————————————————————————————————
   // Dilbilgisi çalışması uygulamanın en yeni bölümü ve hiç rozeti yoktu.
   // Ölçü kelimedekiyle aynı tanım: 21 günü geçen aralık = pekişmiş.
-  { id: "drill50", title: "Biçim bilgisi", hint: "50 dilbilgisi maddesini pekiştir", icon: "TagIcon", tier: "bronze", group: "grammar", metric: "drillMastered", target: 50 },
-  { id: "drill250", title: "Tablolar ezberde", hint: "250 dilbilgisi maddesini pekiştir", icon: "ListIcon", tier: "silver", group: "grammar", metric: "drillMastered", target: 250 },
-  { id: "drill1000", title: "Çekim ustası", hint: "1.000 dilbilgisi maddesini pekiştir", icon: "MountainIcon", tier: "gold", group: "grammar", metric: "drillMastered", target: 1000 },
+  { id: "drill50", titleKey: "ach.drill50.title", hintKey: "ach.drill50.hint", icon: "TagIcon", tier: "bronze", group: "grammar", metric: "drillMastered", target: 50 },
+  { id: "drill250", titleKey: "ach.drill250.title", hintKey: "ach.drill250.hint", icon: "ListIcon", tier: "silver", group: "grammar", metric: "drillMastered", target: 250 },
+  { id: "drill1000", titleKey: "ach.drill1000.title", hintKey: "ach.drill1000.hint", icon: "MountainIcon", tier: "gold", group: "grammar", metric: "drillMastered", target: 1000 },
 
   // ——— Ders ——————————————————————————————————————————————————————
-  { id: "lesson1", title: "İlk konuşma", hint: "Bir konuşmayı rol yapmayla birlikte bitir", icon: "ChatIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 1 },
-  { id: "lesson10", title: "Bir modül", hint: "10 konuşma tamamla", icon: "SchoolIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 10 },
-  { id: "lesson50", title: "Yarı yol", hint: "50 konuşma tamamla", icon: "SchoolIcon", tier: "gold", group: "lessons", metric: "lessons", target: 50 },
-  { id: "lesson100", title: "Bir seviye", hint: "100 konuşma tamamla", icon: "MountainIcon", tier: "legend", group: "lessons", metric: "lessons", target: 100 },
-  { id: "boss1", title: "Modül fatihi", hint: "Bir modül sınavını süre bitmeden geç", icon: "FlagIcon", tier: "silver", group: "lessons", metric: "bossClears", target: 1 },
-  { id: "boss10", title: "Sınav ustası", hint: "10 modül sınavını geç", icon: "FlagIcon", tier: "gold", group: "lessons", metric: "bossClears", target: 10 },
+  { id: "lesson1", titleKey: "ach.lesson1.title", hintKey: "ach.lesson1.hint", icon: "ChatIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 1 },
+  { id: "lesson10", titleKey: "ach.lesson10.title", hintKey: "ach.lesson10.hint", icon: "SchoolIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 10 },
+  { id: "lesson50", titleKey: "ach.lesson50.title", hintKey: "ach.lesson50.hint", icon: "SchoolIcon", tier: "gold", group: "lessons", metric: "lessons", target: 50 },
+  { id: "lesson100", titleKey: "ach.lesson100.title", hintKey: "ach.lesson100.hint", icon: "MountainIcon", tier: "legend", group: "lessons", metric: "lessons", target: 100 },
+  { id: "boss1", titleKey: "ach.boss1.title", hintKey: "ach.boss1.hint", icon: "FlagIcon", tier: "silver", group: "lessons", metric: "bossClears", target: 1 },
+  { id: "boss10", titleKey: "ach.boss10.title", hintKey: "ach.boss10.hint", icon: "FlagIcon", tier: "gold", group: "lessons", metric: "bossClears", target: 10 },
 
   // ——— Sınav ——————————————————————————————————————————————————————
   // Sınavlar (haftanın kısa sınavı ve seviye sınavları) ölçümün en ağır
   // kanıtı ama hiç rozeti yoktu. Puan rozeti sayıdan ayrı: on sınava girmek
   // alışkanlık, bir sınavdan 90 almak başarı.
-  { id: "exam1", title: "İlk sınav", hint: "Bir sınavı tamamla", icon: "FlagIcon", tier: "bronze", group: "exams", metric: "exams", target: 1 },
-  { id: "exam10", title: "Sınav rutini", hint: "10 sınav tamamla", icon: "CalendarIcon", tier: "silver", group: "exams", metric: "exams", target: 10 },
-  { id: "exam90", title: "Neredeyse kusursuz", hint: "Bir sınavdan 90 puan al", icon: "StarIcon", tier: "gold", group: "exams", metric: "bestExam", target: 90 },
+  { id: "exam1", titleKey: "ach.exam1.title", hintKey: "ach.exam1.hint", icon: "FlagIcon", tier: "bronze", group: "exams", metric: "exams", target: 1 },
+  { id: "exam10", titleKey: "ach.exam10.title", hintKey: "ach.exam10.hint", icon: "CalendarIcon", tier: "silver", group: "exams", metric: "exams", target: 10 },
+  { id: "exam90", titleKey: "ach.exam90.title", hintKey: "ach.exam90.hint", icon: "StarIcon", tier: "gold", group: "exams", metric: "bestExam", target: 90 },
 
   // ——— Beceri ————————————————————————————————————————————————————
-  { id: "skill1", title: "Dört beceri", hint: "Bir beceri alıştırmasını bitir", icon: "CompassIcon", tier: "bronze", group: "skills", metric: "skills", target: 1 },
-  { id: "skill10", title: "Okur yazar", hint: "10 beceri alıştırmasını bitir", icon: "CompassIcon", tier: "silver", group: "skills", metric: "skills", target: 10 },
-  { id: "skill40", title: "Dört koldan", hint: "40 beceri alıştırmasını bitir", icon: "GlobeIcon", tier: "gold", group: "skills", metric: "skills", target: 40 },
+  { id: "skill1", titleKey: "ach.skill1.title", hintKey: "ach.skill1.hint", icon: "CompassIcon", tier: "bronze", group: "skills", metric: "skills", target: 1 },
+  { id: "skill10", titleKey: "ach.skill10.title", hintKey: "ach.skill10.hint", icon: "CompassIcon", tier: "silver", group: "skills", metric: "skills", target: 10 },
+  { id: "skill40", titleKey: "ach.skill40.title", hintKey: "ach.skill40.hint", icon: "GlobeIcon", tier: "gold", group: "skills", metric: "skills", target: 40 },
 
   /*
     Yazma ve konuşma buradaydı ama rozetsizdi.
@@ -177,34 +186,34 @@ export const ACHIEVEMENTS: AchievementDef[] = [
     şeyin oraya çağırmamasıydı. Üç rozet o ekrana bir yön veriyor: ilkini
     yaz, alışkanlık kur, bir kez de gerçekten iyi yaz.
   */
-  { id: "writing1", title: "İlk yazın", hint: "Bir yazını değerlendirt", icon: "PenIcon", tier: "bronze", group: "skills", metric: "writings", target: 1 },
-  { id: "writing15", title: "Kalem alışkanlığı", hint: "15 yazı değerlendirt", icon: "PenIcon", tier: "silver", group: "skills", metric: "writings", target: 15 },
-  { id: "writing85", title: "Temiz kalem", hint: "Bir yazından 85 puan al", icon: "StarIcon", tier: "gold", group: "skills", metric: "bestWriting", target: 85 },
-  { id: "speaking25", title: "Sesli düşünen", hint: "25 konuşma ya da rol yapma değerlendirt", icon: "MicIcon", tier: "silver", group: "skills", metric: "speakings", target: 25 },
+  { id: "writing1", titleKey: "ach.writing1.title", hintKey: "ach.writing1.hint", icon: "PenIcon", tier: "bronze", group: "skills", metric: "writings", target: 1 },
+  { id: "writing15", titleKey: "ach.writing15.title", hintKey: "ach.writing15.hint", icon: "PenIcon", tier: "silver", group: "skills", metric: "writings", target: 15 },
+  { id: "writing85", titleKey: "ach.writing85.title", hintKey: "ach.writing85.hint", icon: "StarIcon", tier: "gold", group: "skills", metric: "bestWriting", target: 85 },
+  { id: "speaking25", titleKey: "ach.speaking25.title", hintKey: "ach.speaking25.hint", icon: "MicIcon", tier: "silver", group: "skills", metric: "speakings", target: 25 },
 
   // ——— Günün turu & hayatta kalma ————————————————————————————————
-  { id: "daily1", title: "Günün turu", hint: "Günün turunu bir kez oyna", icon: "TrophyIcon", tier: "bronze", group: "rounds", metric: "dailyRounds", target: 1 },
-  { id: "daily10", title: "Her gün aynı saat", hint: "Günün turunu 10 kez oyna", icon: "TrophyIcon", tier: "silver", group: "rounds", metric: "dailyRounds", target: 10 },
-  { id: "daily50", title: "Turun müdavimi", hint: "Günün turunu 50 kez oyna", icon: "TrophyIcon", tier: "gold", group: "rounds", metric: "dailyRounds", target: 50 },
-  { id: "dailyPerfect", title: "Günü kusursuz", hint: "Günün turunu hatasız bitir", icon: "StarIcon", tier: "gold", group: "rounds", metric: "perfectDaily", target: 1 },
-  { id: "challenge500", title: "Hayatta kaldın", hint: "Hayatta kalma turunda 500 puan", icon: "SparkIcon", tier: "bronze", group: "rounds", metric: "challengeBest", target: 500 },
-  { id: "challenge1500", title: "Soğukkanlı", hint: "Hayatta kalma turunda 1.500 puan", icon: "SparkIcon", tier: "silver", group: "rounds", metric: "challengeBest", target: 1500 },
-  { id: "challenge3000", title: "Zamana karşı", hint: "Hayatta kalma turunda 3.000 puan", icon: "SparkIcon", tier: "gold", group: "rounds", metric: "challengeBest", target: 3000 },
+  { id: "daily1", titleKey: "ach.daily1.title", hintKey: "ach.daily1.hint", icon: "TrophyIcon", tier: "bronze", group: "rounds", metric: "dailyRounds", target: 1 },
+  { id: "daily10", titleKey: "ach.daily10.title", hintKey: "ach.daily10.hint", icon: "TrophyIcon", tier: "silver", group: "rounds", metric: "dailyRounds", target: 10 },
+  { id: "daily50", titleKey: "ach.daily50.title", hintKey: "ach.daily50.hint", icon: "TrophyIcon", tier: "gold", group: "rounds", metric: "dailyRounds", target: 50 },
+  { id: "dailyPerfect", titleKey: "ach.dailyPerfect.title", hintKey: "ach.dailyPerfect.hint", icon: "StarIcon", tier: "gold", group: "rounds", metric: "perfectDaily", target: 1 },
+  { id: "challenge500", titleKey: "ach.challenge500.title", hintKey: "ach.challenge500.hint", icon: "SparkIcon", tier: "bronze", group: "rounds", metric: "challengeBest", target: 500 },
+  { id: "challenge1500", titleKey: "ach.challenge1500.title", hintKey: "ach.challenge1500.hint", icon: "SparkIcon", tier: "silver", group: "rounds", metric: "challengeBest", target: 1500 },
+  { id: "challenge3000", titleKey: "ach.challenge3000.title", hintKey: "ach.challenge3000.hint", icon: "SparkIcon", tier: "gold", group: "rounds", metric: "challengeBest", target: 3000 },
 
   // ——— Keşif ——————————————————————————————————————————————————————
-  { id: "night50", title: "Gece kuşu", hint: "Gece yarısıyla 05:00 arası 50 soru cevapla", icon: "MoonIcon", tier: "silver", group: "discovery", metric: "nightAnswers", target: 50 },
-  { id: "early50", title: "Erken kalkan", hint: "05:00 ile 08:00 arası 50 soru cevapla", icon: "SunIcon", tier: "silver", group: "discovery", metric: "earlyAnswers", target: 50 },
-  { id: "marathon150", title: "Maraton", hint: "Tek günde 150 tekrar yap", icon: "RunIcon", tier: "gold", group: "discovery", metric: "bestDayReviews", target: 150 },
-  { id: "days30", title: "Sadık", hint: "30 farklı gün çalış", icon: "CalendarIcon", tier: "silver", group: "discovery", metric: "activeDays", target: 30 },
-  { id: "days100", title: "Demirbaş", hint: "100 farklı gün çalış", icon: "CalendarIcon", tier: "gold", group: "discovery", metric: "activeDays", target: 100 },
-  { id: "bilingual", title: "İki kurs", hint: "Hem Almanca hem Zürihçe kursunda çalış", icon: "MapIcon", tier: "gold", group: "discovery", metric: "courses", target: 2 },
+  { id: "night50", titleKey: "ach.night50.title", hintKey: "ach.night50.hint", icon: "MoonIcon", tier: "silver", group: "discovery", metric: "nightAnswers", target: 50 },
+  { id: "early50", titleKey: "ach.early50.title", hintKey: "ach.early50.hint", icon: "SunIcon", tier: "silver", group: "discovery", metric: "earlyAnswers", target: 50 },
+  { id: "marathon150", titleKey: "ach.marathon150.title", hintKey: "ach.marathon150.hint", icon: "RunIcon", tier: "gold", group: "discovery", metric: "bestDayReviews", target: 150 },
+  { id: "days30", titleKey: "ach.days30.title", hintKey: "ach.days30.hint", icon: "CalendarIcon", tier: "silver", group: "discovery", metric: "activeDays", target: 30 },
+  { id: "days100", titleKey: "ach.days100.title", hintKey: "ach.days100.hint", icon: "CalendarIcon", tier: "gold", group: "discovery", metric: "activeDays", target: 100 },
+  { id: "bilingual", titleKey: "ach.bilingual.title", hintKey: "ach.bilingual.hint", icon: "MapIcon", tier: "gold", group: "discovery", metric: "courses", target: 2 },
   /*
     Görevler her gün üç tane ve gece yarısı yenileniyor. Rozet TOPLAM ödül
     sayısını değil, üçünün de bitirildiği GÜN sayısını sayıyor: yirmi gün tek
     görev almak ile yirmi günü tam kapatmak aynı şey değil ve ikincisi
     görevlerin var oluş sebebi.
   */
-  { id: "quests20", title: "Günü kapatan", hint: "20 gün, günün üç görevini de bitir", icon: "TargetIcon", tier: "gold", group: "discovery", metric: "fullQuestDays", target: 20 },
+  { id: "quests20", titleKey: "ach.quests20.title", hintKey: "ach.quests20.hint", icon: "TargetIcon", tier: "gold", group: "discovery", metric: "fullQuestDays", target: 20 },
 ];
 
 const BY_ID = new Map(ACHIEVEMENTS.map((a) => [a.id, a]));
@@ -380,7 +389,16 @@ async function collectMetrics(userId: string): Promise<Metrics> {
   };
 }
 
-export type AchievementRow = AchievementDef & {
+/**
+ * Arayüze giden satır: tanım + ilerleme, ama metinler ÇÖZÜLMÜŞ halde.
+ *
+ * `titleKey`/`hintKey` istemciye gitmiyor, `title`/`hint` gidiyor — yani API
+ * sözleşmesi DEĞİŞMİYOR ve mobilin yayınlanmış sürümleri aynı alanları
+ * okumaya devam ediyor, yalnız artık kendi dillerinde.
+ */
+export type AchievementRow = Omit<AchievementDef, "titleKey" | "hintKey"> & {
+  title: string;
+  hint: string;
   done: number;
   unlocked: boolean;
   unlockedAt: string | null;
@@ -402,7 +420,11 @@ export type AchievementBoard = {
  * çakışmaya dayanıklı (birincil anahtar), yani aynı anda gelen iki istek
  * aynı rozeti iki kez veremez.
  */
-export async function achievementBoard(userId: string): Promise<AchievementBoard> {
+export async function achievementBoard(
+  userId: string,
+  /** Rozet adlarının çevrileceği dil — çağıranın profilinden gelir. */
+  lang: NativeLang = DEFAULT_NATIVE,
+): Promise<AchievementBoard> {
   const [metrics, owned] = await Promise.all([
     collectMetrics(userId),
     db
@@ -423,6 +445,8 @@ export async function achievementBoard(userId: string): Promise<AchievementBoard
     const rec = ownedMap.get(def.id);
     return {
       ...def,
+      title: translate(lang, def.titleKey),
+      hint: translate(lang, def.hintKey),
       done,
       unlocked: earned || Boolean(rec),
       unlockedAt: rec ? new Date(rec.at).toISOString() : null,
