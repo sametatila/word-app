@@ -5,7 +5,8 @@ import { buildTrackState } from "@/lib/immersion/state";
 import { immersionCompletion } from "@/lib/immersion/progress";
 import type { ImmersionItem } from "@/lib/immersion/types";
 import type { CefrLevel } from "@/lib/skills/types";
-import { ImmersionHub, type HubUnit } from "@/components/immersion/immersion-hub";
+import { ImmersionHub } from "@/components/immersion/immersion-hub";
+import { buildHubUnits } from "@/lib/immersion/hub";
 
 export const dynamic = "force-dynamic";
 
@@ -39,29 +40,7 @@ export default async function ImmersionPage() {
   const completion = await immersionCompletion(user.id, course);
   const state = buildTrackState(track, completion);
 
-  const units: HubUnit[] = state.units.map((u) => ({
-    id: u.unit.id,
-    index: u.unit.index,
-    group: u.unit.group,
-    theme: u.unit.theme,
-    locked: u.locked,
-    complete: u.complete,
-    done: u.done,
-    total: u.total,
-    lessonsDone: u.lessonsDone,
-    lessonsTotal: u.lessonsTotal,
-    items: u.items.map((s) => ({
-      id: s.item.id,
-      kind: s.item.kind,
-      href: hrefFor(s.item),
-      title: s.item.title,
-      titleTr: s.item.titleTr,
-      playable: s.playable,
-      done: s.done,
-      attempted: s.attempted,
-      open: s.open,
-    })),
-  }));
+  const units = buildHubUnits(state);
 
   const doneUnits = state.units.filter((u) => u.complete).length;
   return (
@@ -73,15 +52,4 @@ export default async function ImmersionPage() {
       totalUnits={state.units.length}
     />
   );
-}
-
-/** Item → oynatıcı rotası. Yer tutucular (ref=null) ve içeriği-olmayan türler null. */
-function hrefFor(item: ImmersionItem): string | null {
-  if (item.ref === null) return null;
-  if (item.kind === "lesson") return `/lessons/${item.ref}`;
-  if (item.kind === "read" || item.kind === "listen" || item.kind === "write") return `/immersion/skill/${item.ref}`;
-  if (item.kind === "quiz") return `/immersion/quiz/${item.ref}`;
-  if (item.kind === "checkpoint") return `/immersion/quiz/${item.ref}?mode=checkpoint`;
-  if (item.kind === "grammar") return `/immersion/grammar/${item.ref}`;
-  return null;
 }

@@ -1,19 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AppHeader } from "@/components/app-header";
+import { UnitPane, KindIconFor } from "@/components/immersion/unit-pane";
+import { CheckIcon, LockIcon } from "@/components/icons";
 import type { CefrLevel } from "@/lib/skills/types";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
 
 /**
- * Patika ana ekranı (immersion, 2. mod) — BENTO IZGARA (sahibin seçimi).
+ * Patika — ders iskeleti + okuma/dinleme/yazma harmanı.
  *
- * Üstte AKTİF ünite tam-genişlik "öne çıkan kart" (item hap-simgeleri + Devam et),
- * altında diğer üniteler 2'li ızgara fayanslar (ilerleme halkası + durum). Bir
- * fayansa dokununca o ünite öne çıkar (istemci durumu) — CEFR seçimi yok, ünite
- * içi gezinme var. Renkler projenin paletinden; dolu zeminlerde tema-bağımsız
- * sabit -600 tonları (globals.css palet notu). Tema-duyarlı (açık/koyu).
+ * Yerleşim mobil `M/src/screens/PathScreen.tsx` ile birebir: ilerleme şeridi,
+ * ÖNE ÇIKAN ünite kartı (numara/onay dairesi, adım şeridi, sıradaki adım
+ * satırı, tam genişlik devam düğmesi), altında ünite ızgarası.
+ *
+ * ÜÇ ŞEY DEĞİŞTİ:
+ *
+ * 1. Emoji kalktı. Ünite dairesinde "✓" ve "🔒" karakter olarak yazılıyordu;
+ *    yazı tipine göre boyu ve hizası değişiyor, koyu temada emoji kendi
+ *    rengini dayatıyordu. Artık setin kendi ikonları.
+ *
+ * 2. "Devam et" ÜNİTEYİ açıyor, adımı değil. Model mobildekiyle aynı oldu:
+ *    Patika → Ünite → adım. Doğrudan adıma atlamak bir tık kazandırıyordu ama
+ *    ünitenin kendisini görünmez bırakıyordu — hangi adımlar var, hangisi
+ *    bitti, nereye dönebilirim soruları web'de hiçbir yerde cevaplanmıyordu.
+ *
+ * 3. Geniş ekranda İKİ PANEL: solda ızgara, sağda seçilen ünitenin adımları.
+ *    Mobilde yatay tablette aynısı var. Dar ekranda hiçbir şey değişmiyor —
+ *    orada fayans bir bağlantı ve ünite kendi sayfasında açılıyor.
  */
 
 export type HubItem = {
@@ -63,263 +78,278 @@ const KIND_LABEL: Record<ImmersionItemKind, string> = {
   checkpoint: "Kontrol",
 };
 
+/**
+ * İki panelin açıldığı en küçük EKRAN genişliği.
+ *
+ * Mobilde ölçüt kabın 900dp'yi geçmesi. Web'de kabuk `max-w-6xl` ve masaüstü
+ * kenar çubuğu 240px alıyor; 1280px'lik bir ekranda içeriğe ~910px kalıyor,
+ * yani eşik oraya denk düşüyor. Daha dar bir yerde iki panel açmak ikisini de
+ * kullanılmaz ederdi.
+ */
+const TWO_PANE_MIN = 1280;
+
+/** Ekran iki paneli taşıyacak kadar geniş mi — SSR'da her zaman `false`. */
+function useTwoPane(): boolean {
+  const [wide, setWide] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia(`(min-width: ${TWO_PANE_MIN}px)`);
+    const apply = () => setWide(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+  return wide;
+}
+
 export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits }: ImmersionHubProps) {
-  const initial = Math.max(0, units.findIndex((u) => u.index === currentIndex));
-  const [featIdx, setFeatIdx] = useState(initial);
-  const feat = units[featIdx] ?? units[0];
+  const twoPane = useTwoPane();
+  const [selected, setSelected] = useState<number | null>(null);
   const pctAll = totalUnits ? Math.round((doneUnits / totalUnits) * 100) : 0;
+  const featured = units.find((u) => u.index === currentIndex) ?? units[0];
 
-  return (
-    <div className="mx-auto w-full max-w-md">
-      {/*
-        Başlık artık sekmelerin ortak başlığı (`AppHeader`) — mobildeki gibi
-        32 puntoda ve sağında seri + gelen kutusu + profil. Buradaki eski
-        `h1` 24 puntoydu ve kabuktaki uygulama çubuğunun altında İKİNCİ bir
-        başlık satırı olarak duruyordu.
+  /*
+    Sağ panelde gösterilen ünite: kullanıcı seçtiyse o, yoksa kaldığı ünite.
+    Vurgulanan fayans da odur — ana-ayrıntı düzeninde seçimin görünmesi şart,
+    yoksa sağdaki panelin hangi karta ait olduğu anlaşılmıyor.
+  */
+  const shown = twoPane
+    ? units.find((u) => u.index === selected && !u.locked) ?? (featured && !featured.locked ? featured : null)
+    : null;
+  const highlight = twoPane ? shown?.index ?? -1 : currentIndex;
 
-        Seviye rozeti ile ilerleme çubuğu başlığın altına, kendi satırına
-        indi: ikisi de "Patika"nın süsü değil, patikanın DURUMU.
-      */}
-      <AppHeader title="Patika" />
-      <div className="mb-4">
-        <div className="h-2.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
-          <div className="h-full rounded-full transition-[width] duration-500" style={{ width: `${pctAll}%`, background: "var(--color-mint-500)" }} />
-        </div>
-        <p className="mt-1.5 text-caption" style={{ color: "var(--text-muted)" }}>
-          {level} · {doneUnits}/{totalUnits} ünite tamam
-        </p>
+  const body = (
+    <>
+      <div className="h-2.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+        <div
+          className="h-full rounded-full transition-[width] duration-500"
+          style={{ width: `${Math.max(2, pctAll)}%`, background: "var(--color-mint-500)" }}
+        />
       </div>
+      <p className="muted mb-4 mt-1.5 text-caption">
+        {level} · {doneUnits}/{totalUnits} ünite tamam
+      </p>
 
-      {feat && <Featured unit={feat} isCurrent={feat.index === currentIndex} />}
+      {featured ? (
+        <Featured
+          unit={featured}
+          isCurrent={featured.index === currentIndex}
+          onOpen={twoPane ? () => setSelected(featured.index) : undefined}
+        />
+      ) : null}
 
-      <div className="mt-3 grid grid-cols-2 gap-3">
-        {units.map((u, i) => (
-          <Tile key={u.id} unit={u} active={i === featIdx} onSelect={() => !u.locked && setFeatIdx(i)} />
+      <div className="mt-4 grid grid-cols-2 gap-3">
+        {units.map((u) => (
+          <Tile
+            key={u.id}
+            unit={u}
+            highlighted={u.index === highlight}
+            isCurrent={u.index === currentIndex}
+            onSelect={twoPane && !u.locked ? () => setSelected(u.index) : undefined}
+          />
         ))}
       </div>
+    </>
+  );
+
+  return (
+    <div className="mx-auto w-full max-w-3xl xl:max-w-none">
+      <AppHeader title="Patika" />
+      {twoPane ? (
+        <div className="grid grid-cols-[45fr_55fr] items-start gap-4">
+          <div>{body}</div>
+          {/* Sağ panel kendi yüzeyini taşıyor: sol taraf kartlardan oluşuyor,
+              ayrım olmasa iki sütun tek bir liste gibi okunurdu. */}
+          <div className="card p-4">
+            {shown ? <UnitPane key={shown.index} unit={shown} level={level} embedded /> : null}
+          </div>
+        </div>
+      ) : (
+        body
+      )}
     </div>
   );
 }
 
-function Featured({ unit, isCurrent }: { unit: HubUnit; isCurrent: boolean }) {
+/** Öne çıkan ünite — kaldığın yer. */
+function Featured({
+  unit,
+  isCurrent,
+  onOpen,
+}: {
+  unit: HubUnit;
+  isCurrent: boolean;
+  /** İki panelde ünite YERİNDE açılıyor; dar ekranda bağlantıyla. */
+  onOpen?: () => void;
+}) {
   /*
     "Sıradaki" DENENMEMİŞ ilk açık öğedir, BİTMEMİŞ ilk öğe değil.
 
-    Eskiden `!i.done` aranıyordu: bir beceriden 70 alamayan öğrenci o beceride
-    sonsuza dek takılıyordu, çünkü patikadaki tek bağlantı hep onu gösteriyordu
-    ve başka hiçbir öğeye gidilemiyordu. Artık deneme sırayı ilerletiyor;
-    denenmiş ama geçilmemiş öğe kapanmıyor, aşağıdaki şeritten tekrar açılıyor.
-
-    Hepsi denenmişse geri düşüş sırası: geçilmemiş ilk açık öğe (tekrar için),
-    yoksa ilk açık öğe.
+    Eskiden bitmemiş aranıyordu: bir beceriden geçer not alamayan öğrenci o
+    beceride sonsuza dek takılıyordu, çünkü patikadaki tek bağlantı hep onu
+    gösteriyordu. Artık deneme sırayı ilerletiyor; denenmiş ama geçilmemiş öğe
+    kapanmıyor, adım şeridinden ve ünite sayfasından tekrar açılıyor.
   */
   const open = unit.items.filter((i) => i.open && i.href);
   const next = open.find((i) => !i.attempted) ?? open.find((i) => !i.done) ?? open[0] ?? null;
-  const nextHref = next?.href ?? null;
+  const href = `/immersion/unit/${unit.index}`;
+  const label = unit.complete ? "Tekrar et →" : "Devam et →";
 
   return (
-    <section
-      className="rounded-3xl p-4"
-      style={{ background: "var(--surface)", border: "2px solid var(--color-brand-600)", boxShadow: "0 16px 30px -16px rgba(120,60,10,0.35)" }}
-    >
-      <div className="flex items-start gap-3">
-        <UnitBadge unit={unit} big />
+    <section className="card p-4" style={{ borderWidth: 2, borderColor: "var(--color-brand-500)" }}>
+      <div className="flex items-center gap-3">
+        <span
+          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-tile text-white shadow-soft-sm"
+          style={{ background: unit.complete ? "var(--color-mint-500)" : "var(--color-brand-500)" }}
+        >
+          {unit.complete ? <CheckIcon size={26} /> : <span className="text-h1">{unit.index}</span>}
+        </span>
         <div className="min-w-0 flex-1">
-          <p className="text-[10.5px] font-extrabold uppercase tracking-wider" style={{ color: "var(--color-brand-600)" }}>
-            {isCurrent ? "Şu an" : "Ünite"} · Ünite {unit.index}
+          <p className="text-micro uppercase tracking-wider" style={{ color: "var(--color-brand)" }}>
+            {isCurrent ? "ŞU AN" : "ÜNİTE"} · ÜNİTE {unit.index}
           </p>
-          <p className="truncate text-lg font-bold leading-tight">{unit.theme}</p>
-          <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-            {unit.complete ? "Tamamlandı" : `${unit.done}/${unit.total} adım`}
+          <p className="truncate text-h2">{unit.theme}</p>
+          <p className="muted text-caption">
+            {unit.complete ? "Tamamlandı" : `${unit.lessonsDone}/${unit.lessonsTotal} konuşma`}
           </p>
         </div>
       </div>
 
-      {/* segment çubuğu — ünitenin bölümleri (ikon kalabalığı yok): biten yosun,
-          sıradaki kehribar, gerisi boş. */}
-      <div className="mt-3.5 flex gap-1">
-        {unit.items.map((it) => {
-          // Dört durum: biten yosun, sıradaki kehribar, denenmiş-ama-geçilmemiş
-          // soluk kehribar (tekrar edilebilir), kapalı boş.
-          const seg = it.done
-            ? "var(--color-mint-500)"
-            : it === next
-              ? "var(--color-brand-600)"
-              : it.attempted
-                ? "var(--color-brand-300)"
-                : "var(--surface-2)";
-          const bar = <span className="block h-2.5 w-full rounded-full" style={{ background: seg }} />;
-          // Açık öğeler doğrudan tıklanabilir: takılınan bir beceriye geri
-          // dönmenin ya da sıradakine atlamanın yolu bu.
-          return it.open && it.href && !unit.locked ? (
-            <Link key={it.id} href={it.href} prefetch={false} className="flex-1" aria-label={it.title} title={it.title}>
-              {bar}
-            </Link>
-          ) : (
-            <span key={it.id} className="flex-1">{bar}</span>
-          );
-        })}
-      </div>
+      {/* Adım şeridi — biten yosun, sıradaki turuncu, denenmiş soluk turuncu,
+          kapalı boş. Açık olanlar doğrudan tıklanabiliyor: takılınan bir
+          beceriye dönmenin ya da sıradakine atlamanın kısa yolu. */}
+      {unit.items.length > 0 ? (
+        <div className="mt-3 flex gap-1">
+          {unit.items.map((it) => {
+            const seg = it.done
+              ? "var(--color-mint-500)"
+              : it === next
+                ? "var(--color-brand-500)"
+                : it.attempted
+                  ? "var(--color-brand-300)"
+                  : "var(--surface-2)";
+            const bar = <span className="block h-2.5 w-full rounded-full" style={{ background: seg }} />;
+            return it.open && it.href && !unit.locked ? (
+              <Link key={it.id} href={it.href} prefetch={false} className="flex-1" aria-label={it.title} title={it.title}>
+                {bar}
+              </Link>
+            ) : (
+              <span key={it.id} className="flex-1">
+                {bar}
+              </span>
+            );
+          })}
+        </div>
+      ) : null}
 
-      {/* sıradaki adım — tek biçim çizgi-ikon + item adı */}
-      {next && !unit.locked && (
-        <div className="mt-3.5 flex items-center gap-3 rounded-2xl p-3" style={{ background: "var(--surface-2)" }}>
+      {next && !unit.locked ? (
+        <div className="mt-3 flex items-center gap-3 rounded-panel p-3" style={{ background: "var(--surface-2)" }}>
           <span
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white"
-            style={{ background: "linear-gradient(180deg,var(--color-brand-500),var(--color-brand-600))" }}
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tile text-white"
+            style={{ background: "var(--color-brand-500)" }}
           >
-            <KindIcon kind={next.kind} />
+            <KindIconFor kind={next.kind} size={20} />
           </span>
           <div className="min-w-0">
-            <p className="text-[11px] font-bold uppercase tracking-wide" style={{ color: "var(--text-muted)" }}>
-              Sıradaki · {KIND_LABEL[next.kind]}
+            <p className="muted text-micro uppercase tracking-wider">
+              SIRADAKİ · {(KIND_LABEL[next.kind] ?? next.kind).toUpperCase()}
             </p>
-            <p className="truncate text-sm font-bold">{next.title}</p>
+            <p className="truncate text-strong">{next.title}</p>
           </div>
         </div>
-      )}
+      ) : null}
 
-      {nextHref && !unit.locked ? (
-        <Link
-          href={nextHref}
-          prefetch={false}
-          className="mt-3.5 block rounded-2xl py-3.5 text-center text-base font-extrabold text-white"
-          style={{ background: "linear-gradient(180deg,var(--color-brand-500),var(--color-brand-600))", boxShadow: "0 4px 0 var(--color-brand-700)" }}
+      {unit.locked ? (
+        <p
+          className="mt-3 rounded-panel py-3.5 text-center text-h3"
+          style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}
         >
-          {unit.complete ? "Tekrar et →" : "Devam et →"}
-        </Link>
+          Önce önceki üniteyi bitir
+        </p>
+      ) : onOpen ? (
+        <button type="button" onClick={onOpen} className="btn btn-primary mt-3 w-full py-3.5">
+          {label}
+        </button>
       ) : (
-        <div className="mt-3.5 rounded-2xl py-3.5 text-center text-sm font-bold" style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}>
-          🔒 Önceki üniteyi bitir
-        </div>
+        <Link href={href} prefetch={false} className="btn btn-primary mt-3 w-full py-3.5">
+          {label}
+        </Link>
       )}
     </section>
   );
 }
 
-/** Tek biçim çizgi-ikon (karışık emoji yerine) — "sıradaki" satırında kullanılır. */
-function KindIcon({ kind }: { kind: ImmersionItemKind }) {
-  const c = { width: 20, height: 20, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
-  switch (kind) {
-    case "read":
-      return (
-        <svg {...c}>
-          <path d="M12 6C9 4 5 4 3 5v13c2-1 6-1 9 1 3-2 7-2 9-1V5c-2-1-6-1-9 1z" />
-          <path d="M12 7v12" />
-        </svg>
-      );
-    case "listen":
-      return (
-        <svg {...c}>
-          <path d="M5 13a7 7 0 0114 0" />
-          <rect x="3.5" y="13" width="4" height="7" rx="1.5" />
-          <rect x="16.5" y="13" width="4" height="7" rx="1.5" />
-        </svg>
-      );
-    case "write":
-      return (
-        <svg {...c}>
-          <path d="M4 20l1-4L16 5l3 3L8 19z" />
-          <path d="M14 7l3 3" />
-        </svg>
-      );
-    case "grammar":
-      return (
-        <svg {...c}>
-          <path d="M4 18L9 6l5 12" />
-          <path d="M5.5 14h7" />
-          <path d="M17 10v8" />
-          <path d="M17 11a3 3 0 100 6" />
-        </svg>
-      );
-    case "quiz":
-      return (
-        <svg {...c}>
-          <circle cx="12" cy="12" r="9" />
-          <path d="M9 9a3 3 0 114 2.8c-1 .4-1 1-1 2.2" />
-          <path d="M12 17.5v.5" />
-        </svg>
-      );
-    case "checkpoint":
-      return (
-        <svg {...c}>
-          <path d="M6 4v16" />
-          <path d="M6 5h11l-2 3 2 3H6" />
-        </svg>
-      );
-    default: // lesson
-      return (
-        <svg {...c}>
-          <path d="M4 5h16v11H8l-4 3z" />
-        </svg>
-      );
-  }
-}
+/** Izgara fayansı — mobil `PathScreen` ünite kartıyla aynı ölçüler. */
+function Tile({
+  unit,
+  highlighted,
+  isCurrent,
+  onSelect,
+}: {
+  unit: HubUnit;
+  highlighted: boolean;
+  isCurrent: boolean;
+  onSelect?: () => void;
+}) {
+  const ringColor = unit.complete
+    ? "var(--color-mint-500)"
+    : isCurrent
+      ? "var(--color-brand-500)"
+      : "var(--border)";
 
-function Tile({ unit, active, onSelect }: { unit: HubUnit; active: boolean; onSelect: () => void }) {
-  const pct = unit.total ? Math.round((unit.done / unit.total) * 100) : 0;
-  const clickable = !unit.locked;
-  const body = (
+  const inner = (
     <>
-      <div className="flex w-full items-center justify-between">
-        <Ring pct={unit.complete ? 100 : pct} unit={unit} />
-        <span className="text-[11px] font-bold" style={{ color: "var(--text-muted)" }}>
-          Ünite {unit.index}
-        </span>
-      </div>
-      <p className="mt-2 line-clamp-2 text-sm font-bold leading-tight">{unit.theme}</p>
-      <p className="mt-auto pt-1 text-[11px] font-semibold" style={{ color: unit.complete ? "var(--color-mint-600)" : "var(--text-muted)" }}>
-        {unit.complete ? "Tamamlandı" : unit.locked ? "Kilitli" : `${unit.done}/${unit.total}`}
-      </p>
+      <span
+        className="flex h-11 w-11 items-center justify-center rounded-full"
+        style={{ border: `3px solid ${ringColor}` }}
+      >
+        {unit.complete ? (
+          <CheckIcon size={18} style={{ color: "var(--color-mint)" }} />
+        ) : unit.locked ? (
+          <LockIcon size={18} className="muted" />
+        ) : (
+          <span className="text-strong" style={{ color: highlighted ? "var(--color-brand)" : "var(--text-muted)" }}>
+            {unit.index}
+          </span>
+        )}
+      </span>
+      <span className="mt-2 line-clamp-2 text-strong">{unit.theme}</span>
+      <span
+        className="mt-0.5 block text-micro"
+        style={{ color: unit.complete ? "var(--color-mint)" : "var(--text-muted)" }}
+      >
+        {unit.complete
+          ? "Tamamlandı"
+          : unit.locked
+            ? "Kilitli"
+            : `${unit.lessonsDone}/${unit.lessonsTotal} konuşma`}
+      </span>
     </>
   );
+
+  const cls = "card flex min-h-[7.25rem] flex-col items-start p-4 text-left";
   const style = {
-    background: "var(--surface)",
-    border: active ? "2px solid var(--color-brand-600)" : "1px solid var(--border)",
-    opacity: unit.locked ? 0.62 : 1,
-    minHeight: 118,
+    opacity: unit.locked ? 0.6 : 1,
+    borderWidth: highlighted ? 2 : 1,
+    borderColor: highlighted ? "var(--color-brand-500)" : "var(--border)",
   };
-  const cls = "flex flex-col items-start rounded-2xl p-3.5 text-left transition-transform active:scale-[0.98]";
-  if (clickable) {
+
+  if (unit.locked) {
     return (
-      <button type="button" onClick={onSelect} className={cls} style={style}>
-        {body}
+      <div className={cls} style={style} aria-disabled>
+        {inner}
+      </div>
+    );
+  }
+  if (onSelect) {
+    return (
+      <button type="button" onClick={onSelect} className={`pressable ${cls}`} style={style}>
+        {inner}
       </button>
     );
   }
   return (
-    <div className={cls} style={style}>
-      {body}
-    </div>
-  );
-}
-
-/** Küçük ünite rozeti — ilerleme halkası + içinde durum. */
-function Ring({ pct, unit }: { pct: number; unit: HubUnit }) {
-  const glyph = unit.complete ? "✓" : unit.locked ? "🔒" : String(unit.index);
-  const col = unit.complete ? "var(--color-mint-500)" : unit.locked ? "var(--border)" : "var(--color-brand-500)";
-  return (
-    <span
-      className="grid h-11 w-11 place-items-center rounded-full"
-      style={{ background: `conic-gradient(${col} ${pct * 3.6}deg, var(--surface-2) 0)` }}
-    >
-      <span className="grid h-8 w-8 place-items-center rounded-full text-xs font-extrabold" style={{ background: "var(--surface)", color: col }}>
-        {glyph}
-      </span>
-    </span>
-  );
-}
-
-/** Öne çıkan karttaki büyük ünite rozeti. */
-function UnitBadge({ unit, big }: { unit: HubUnit; big?: boolean }) {
-  const size = big ? "h-14 w-14 text-xl" : "h-11 w-11 text-base";
-  const glyph = unit.complete ? "✓" : unit.locked ? "🔒" : String(unit.index);
-  return (
-    <span
-      className={`grid ${size} shrink-0 place-items-center rounded-2xl font-extrabold text-white`}
-      style={{ background: "linear-gradient(180deg,var(--color-brand-500),var(--color-brand-600))", boxShadow: "0 3px 0 var(--color-brand-700)" }}
-    >
-      {glyph}
-    </span>
+    <Link href={`/immersion/unit/${unit.index}`} prefetch={false} className={`pressable ${cls}`} style={style}>
+      {inner}
+    </Link>
   );
 }
