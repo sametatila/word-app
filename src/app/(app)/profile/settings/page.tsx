@@ -3,6 +3,7 @@ import { ensureProfile } from "@/lib/session";
 import { ProfileForm } from "@/components/profile-form";
 import { SocialSettings } from "@/components/social/social-settings";
 import { LinkedAccounts } from "@/components/account/linked-accounts";
+import { APP_VERSION } from "@/lib/version";
 import { socialMe } from "@/lib/social/profile";
 
 export const dynamic = "force-dynamic";
@@ -75,6 +76,11 @@ export default async function SettingsPage() {
           <SocialSettings initial={me} />
         </div>
       ) : null}
+      {/* Sürüm en altta — mobilde de ayarların dibinde. Destek isteyen
+          kullanıcının söyleyebileceği tek şey bu, aramak zorunda kalmasın. */}
+      <p className="muted mx-auto w-full max-w-3xl pb-2 pt-1 text-center text-caption">
+        Lernomi {APP_VERSION}
+      </p>
     </>
   );
 }

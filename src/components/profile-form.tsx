@@ -135,11 +135,33 @@ export function ProfileForm({
         (cihazda nasıl çalışacağı). Aradaki fark kullanıcının aradığı şeyin
         farkı: biri "günde kaç kelime", diğeri "sesi kapat".
       */}
-      <section className="card space-y-5 p-5">
-        <h2 className="font-bold">Öğrenme</h2>
+      {/*
+        AYARLAR BÖLÜM BÖLÜM — mobil `SettingsScreen` ritmi.
 
+        Önce iki büyük kart vardı: ÖĞRENME (turun nasıl kurulacağı) ve
+        UYGULAMA (cihazda nasıl çalışacağı). Ayrım doğruydu ama kart fazla
+        büyüktü: kurs, ses, ad, seviye ve iki kaydırıcı aynı beyaz kutunun
+        içinde alt alta duruyor ve aralarındaki tek sınır bir boşluktu.
+        Aranan ayarı bulmak için kutunun tamamını okumak gerekiyordu.
+
+        Mobilde her kavramın kendi bölümü var: üstte küçük harfli bir
+        etiket, altında yalnız o kavramın kartı. Etiket zaten ne olduğunu
+        söylediği için kartın içindeki tekrar eden başlıklar da kalktı.
+      */}
+      <Section title="HESAP">
+        <label className="block">
+          <input
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
+            maxLength={60}
+            placeholder="Adın"
+            className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
+          />
+        </label>
+      </Section>
+
+      <Section title="ÖĞRENİLECEK DİL">
         <div>
-          <span className="muted mb-1.5 block text-sm font-semibold">Kursun</span>
           {/* İki kurs telefonda da yan yana. `sm:grid-cols-2` dar ekranda tek
               sütuna düşüyordu ve iki kısa etiket için iki tam satır harcıyordu. */}
           <div className="grid grid-cols-2 gap-2">
@@ -171,30 +193,10 @@ export function ProfileForm({
             </p>
           ) : null}
         </div>
+      </Section>
 
+      <Section title="SEVİYE">
         <div>
-          <span className="muted mb-1.5 block text-sm font-semibold">Seslendirme</span>
-          <VoicePicker
-            course={course}
-            value={voice}
-            onChange={(v: VoiceId) => setVoice(v)}
-            compact
-          />
-        </div>
-
-        <label className="block">
-          <span className="muted mb-1.5 block text-sm font-semibold">Görünen ad</span>
-          <input
-            value={displayName}
-            onChange={(e) => setDisplayName(e.target.value)}
-            maxLength={60}
-            placeholder="Adın"
-            className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
-          />
-        </label>
-
-        <div>
-          <span className="muted mb-1.5 block text-sm font-semibold">Seviyen</span>
           {/* Beş seviye tek satırda. `sm:grid-cols-5` telefonda tek sütuna
               düşüyor ve "A1".."C1" gibi iki karakterlik etiketler için beş tam
               satır, yaklaşık 230 piksel harcıyordu — ayarların tek en uzun
@@ -222,7 +224,20 @@ export function ProfileForm({
             değiştirirsin.
           </p>
         </div>
+      </Section>
 
+      <Section title="OKUMA SESİ">
+        <div>
+          <VoicePicker
+            course={course}
+            value={voice}
+            onChange={(v: VoiceId) => setVoice(v)}
+            compact
+          />
+        </div>
+      </Section>
+
+      <Section title="GÜNLÜK HEDEF">
         <Slider
           label="Günlük tekrar hedefi"
           value={dailyGoal}
@@ -249,7 +264,9 @@ export function ProfileForm({
         <p className="muted -mt-1 text-xs">
           Tekrar zamanları cevabının hızına ve doğruluğuna göre kendiliğinden hesaplanır.
         </p>
+      </Section>
 
+      <div className="mx-auto w-full max-w-3xl">
         <div className="flex items-center gap-3">
           <button
             onClick={() => void save()}
@@ -279,18 +296,17 @@ export function ProfileForm({
             <AlertIcon size={16} /> {saveError}
           </p>
         ) : null}
-      </section>
+      </div>
 
       {/* Uygulama ayarları tek kartta, ayırıcı çizgilerle. Sıra bir kuralı
           izliyor: iPhone'da bildirim ancak uygulama ana ekrana eklenmişken
           çalışıyor, o yüzden kurulum bildirimden önce geliyor. */}
-      <section className="card divide-y divide-[color:var(--border)] overflow-hidden">
+      <Section title="UYGULAMA" bare>
         {/* Kurulum rehberi açılır kutuda. Üç numaralı adım, cihaz seçici ve
             açıklama metni 330 piksel tutuyordu ve bu, hayatta BİR KEZ yapılan
             bir işin yönergesi — zaten kurmuş olan kullanıcı her ayar açılışında
             onu geçmek zorunda kalıyordu. */}
         <div className="p-5">
-          <h2 className="mb-2 font-bold">Uygulama</h2>
           <Disclosure title="Ana ekrana ekle" hint="tam ekran, çevrimdışı">
             <InstallGuide tone="plain" />
           </Disclosure>
@@ -304,16 +320,16 @@ export function ProfileForm({
         <ThemeSetting />
         <SoundSettings bare />
         <PushSettings bare />
-      </section>
+      </Section>
 
       {/* Gizlilik: analitik anahtarı ve hukuki metinler (Play: politika uygulama içinden erişilebilir olmalı). */}
-      <section className="card">
+      <Section title="GİZLİLİK" bare>
         <AnalyticsSettings bare />
         <SettingRow title="Gizlilik ve şartlar" sub="Hangi veriyi neden işlediğimiz, hakların">
           <Link href="/privacy" prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">Gizlilik</Link>
           <Link href="/terms" prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">Şartlar</Link>
         </SettingRow>
-      </section>
+      </Section>
 
       {/* Davet kendi kartında kalıyor: bir ayar değil, bir çağrı. */}
       <InviteCard />
@@ -321,7 +337,7 @@ export function ProfileForm({
       {/* Hesap da satır. "Giriş yaptın, ilerlemen senkron" cümlesi kalıyor
           çünkü çıkış yapmadan önce bilinmesi gereken tek şey o; ama iki satır
           metin ve tam genişlikte bir düğme için 172 piksel gerekmiyordu. */}
-      <section className="card">
+      <Section title="OTURUM" bare>
         {authEnabled ? (
           <SettingRow
             title="Hesap"
@@ -357,8 +373,36 @@ export function ProfileForm({
             </Link>
           </SettingRow>
         ) : null}
-      </section>
+      </Section>
+
     </div>
+  );
+}
+
+/**
+ * Ayar bölümü — üstte küçük etiket, altında kart. Mobil `SettingsScreen`in
+ * `Section`u ile aynı: etiket kartın İÇİNDE bir başlık değil, kartın DIŞINDA
+ * bir ad. Fark küçük görünüyor ama bölümler arasındaki sınırı görünür kılan
+ * şey bu — kart içi başlık, kartı bir öncekinin devamı gibi gösteriyordu.
+ *
+ * `bare`: kartın kendi dolgusu yok (satırlar kendi dolgusunu taşıyor).
+ */
+function Section({
+  title,
+  bare,
+  children,
+}: {
+  title: string;
+  bare?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="mx-auto w-full max-w-3xl">
+      <p className="muted mb-2 ml-1 text-caption tracking-wide">{title}</p>
+      <div className={bare ? "card divide-y divide-[color:var(--hairline)] overflow-hidden" : "card space-y-4 p-5"}>
+        {children}
+      </div>
+    </section>
   );
 }
 
