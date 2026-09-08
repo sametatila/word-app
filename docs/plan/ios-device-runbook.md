@@ -63,7 +63,7 @@ Bunlar cihaz işi değil; eksikse ilgili adım "ölçülemedi" kalır.
 | 0.5 | Sunucu `.env`'de `AZURE_SPEECH_KEY` + `AZURE_SPEECH_REGION` dolu | Samet | 7, 8.6, 8.7 |
 | 0.6 | RevenueCat iOS anahtarı (`billingConfig.ts` `iosKey`) | Samet | 9.5 (paywall ekranı anahtar boşken hiçbir yerden AÇILMIYOR) |
 | 0.7 | Parolası olan bir iPhone (kilit ekranı ve data protection testleri için) | — | 7, 8 |
-| 0.8 | İkinci bir telefon (arama testi) ve bir kablosuz kulaklık | — | 8.9, 8.5 |
+| 0.8 | İkinci bir telefon (arama testi) ve bir kablosuz kulaklık | — | 8.9, 8.5, 8.5a |
 | 0.9 | Bir iPad (8'de değil, 3.5'te) | — | 3.5 |
 
 **Test hesabı:** silme akışı (5.4) hesabı gerçekten yok ediyor. Ya sona bırakılır ya da
@@ -438,6 +438,21 @@ ana kadarki cevaplar kaydedilmiş (seri/XP artmış).
 **Geçmezse:** `LernomiSpeech.swift` `enableWalkRemoteCommands` → `LernomiWalkStop`,
 `mobile/src/lib/stt.ts:172` `onWalkStop`, `WalkModeScreen.tsx` durdurma yolu.
 
+### 8.5a · Kablosuz kulaklığın MİKROFONU kullanılıyor mu
+**Önce:** 8.1, 0.8 · **Kaynak:** `75f1ba9` kulaklık girişi
+**Yap:** Kulaklığı bağla, telefonu **cebe koy**, turu başlat ve normal ses tonuyla
+cevapla. Birkaç kelime sonra kulaklığı çıkarıp cebe konuşmayı dene.
+**Geçti:** kulaklıkla cevaplar tanınıyor; ses de kulaklıktan geliyor. Kulaklık çıkınca
+telefonun mikrofonuna dönüyor.
+**Neden ölçülüyor:** giriş yönlendirmesi kategori seçeneklerinden geliyor
+(`.allowBluetooth` HFP giriş, `.allowBluetoothA2DP` çıkış) ve kategori **kelime başına**
+yeniden kuruluyor. Seçenek listesi bir yerde eksik kalırsa yürüyüş oturumunun kurduğu
+yönlendirme ilk kelimede geri alınır: ses kulaklıktan gelmeye devam eder ama mikrofon
+cepteki telefona düşer — yani kusur "hiç çalışmıyor" değil, "yarım çalışıyor" diye
+görünür. `LernomiSpeech.swift`'te kategoriyi kuran ÜÇ yer de `Self.walkOptions`
+kullanmalı: `activateWalkSession`, `startRecording`, `beginSession`.
+**Geçmezse:** o üç çağrıdan biri elle yazılmış bir seçenek listesine dönmüştür.
+
 ### 8.6 · `uploadStt` arka planda tamamlanıyor mu
 **Önce:** 8.1, 0.5 · **Kaynak:** §5.6
 **Yap:** 8.1 sürerken cevap ver ve kararın gelmesini bekle (kilit ekranındaki sesten
@@ -595,7 +610,7 @@ Eski numaralar kaybolmasın diye. §5 artık buraya işaret eden tek satıra ine
 §5'te olmayıp buraya eklenenler: 1.2 (`Podfile.lock`), 3.1 (ikon), 3.4 (arayüz dili),
 4.1-4.2 (modül ayakta mı), 5.1 (e-posta girişi), 5.5 + 9.5 (mağaza metinleri), 6.5
 (analitik), 6.1a (mikrofon reddedilirse), **7.1 (belirleyici ölçüm)**, 8.5 (kilit
-ekranından durdurma), 8.8 (kısa kesinti), 8.11 (Azure
+ekranından durdurma), 8.5a (kulaklık mikrofonu), 8.8 (kısa kesinti), 8.11 (Azure
 harcaması), 9.x (yükleme), 10.x (kapanış).
 
 ---

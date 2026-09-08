@@ -917,8 +917,13 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
     }
     recognizer = rec
 
+    // `walkOptions` — elle yazılmış bir kopya DEĞİL. Kulaklık seçenekleri
+    // (.allowBluetooth / .allowBluetoothA2DP) buraya da girmeli: bu kategori KELİME
+    // BAŞINA yeniden kuruluyor, yani eksik bir liste yürüyüş oturumunun kurduğu
+    // yönlendirmeyi ilk kelimede geri alır ve AirPods takılıyken giriş cepteki
+    // telefonun dahili mikrofonuna düşerdi.
     let session = AVAudioSession.sharedInstance()
-    try session.setCategory(.playAndRecord, mode: .measurement, options: [.duckOthers, .defaultToSpeaker])
+    try session.setCategory(.playAndRecord, mode: .measurement, options: Self.walkOptions)
     try session.setActive(true, options: .notifyOthersOnDeactivation)
 
     let req = SFSpeechAudioBufferRecognitionRequest()
