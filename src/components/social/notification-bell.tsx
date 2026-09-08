@@ -8,6 +8,10 @@ import { BellIcon } from "@/components/icons";
  * Başlıktaki zil: okunmamış sayısı. Dakikada bir ve sekme görünür olunca
  * tazelenir; gelen kutusu açılınca `lernomi:inbox-read` ile sıfırlanır. Sayı 9'u
  * geçince "9+" — rozet genişleyip başlığı itmesin.
+ *
+ * Hedefi `/inbox`: rozet gelen kutusunun sayacı ve artık gelen kutusunun kendi
+ * adresi var. Önce `/notifications`e gidiyordu — orası bildirim AYARLARI değil
+ * ama aynı listeyi ikinci kez çiziyordu; mobilde zil `InboxScreen`e götürüyor.
  */
 export function NotificationBell({ className = "" }: { className?: string }) {
   const [unread, setUnread] = useState(0);
@@ -39,7 +43,7 @@ export function NotificationBell({ className = "" }: { className?: string }) {
     };
   }, []);
   return (
-    <Link href="/notifications" prefetch={false} aria-label={unread ? `Bildirimler, ${unread} okunmamış` : "Bildirimler"} className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${className}`}>
+    <Link href="/inbox" prefetch={false} aria-label={unread ? `Bildirimler, ${unread} okunmamış` : "Bildirimler"} className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${className}`}>
       <BellIcon size={20} />
       {unread > 0 ? (
         <span

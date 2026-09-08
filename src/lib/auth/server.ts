@@ -236,7 +236,14 @@ export const auth = betterAuth({
   },
 });
 
-export type SessionUser = { id: string; name: string | null };
+/**
+ * Oturumdaki kullanıcı.
+ *
+ * `email` profil ekranında kimlik kartının alt satırı — mobilde de öyle. Ayrı
+ * bir `getUserEmail()` zaten vardı ama o oturumu İKİNCİ kez okuyor; aynı
+ * çağrıda gelen bir alanı ikinci bir istekle almak gereksiz.
+ */
+export type SessionUser = { id: string; name: string | null; email: string | null };
 export type SessionRead = { user: SessionUser | null; failed: boolean };
 
 async function readSession(): Promise<SessionRead> {
@@ -245,7 +252,7 @@ async function readSession(): Promise<SessionRead> {
     const data = await auth.api.getSession({ headers: await headers() });
     const u = data?.user;
     if (!u) return { user: null, failed: false };
-    return { user: { id: u.id, name: u.name ?? u.email ?? null }, failed: false };
+    return { user: { id: u.id, name: u.name ?? u.email ?? null, email: u.email ?? null }, failed: false };
   } catch (err) {
     console.error("[auth] oturum okunamadı", err);
     return { user: null, failed: true };

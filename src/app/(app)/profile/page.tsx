@@ -1,48 +1,18 @@
-import Link from "next/link";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { isPremium } from "@/lib/premium";
-import { CrownIcon } from "@/components/icons";
-import { Avatar } from "@/components/avatar";
-import { ProfileMenu } from "@/components/profile-menu";
-import { ActivityProgress } from "@/components/progress-view";
-import { ProgressPanel } from "@/components/progress-panel";
-import { AchievementWall } from "@/components/achievement-wall";
-import { LevelBadge } from "@/components/level-badge";
-import { BackButton } from "@/components/page-back";
+import { ProfileView } from "@/components/profile/profile-view";
 
 export const dynamic = "force-dynamic";
 
-const COURSE_LABEL: Record<string, string> = {
-  de: "Almanca",
-  "gsw-zh": "Zürih Almancası",
-};
-
 /**
- * Profil — "ben" ekranı.
+ * Profil — "ben" ekranının kapısı.
  *
- * İki uçtan da geçti: on üç bölümlük bir panoydu, sonra beş satırlık bir
- * menüye indi. İkincisi de yanlıştı, çünkü rozetler ve ilerleme GİDİLECEK
- * yerler değil GÖSTERİLECEK şeyler — kapının arkasına saklanınca profil
- * kendisi hakkında hiçbir şey söylemeyen bir kapı listesine dönüşüyordu.
- *
- * Kompozisyon bir cümle kuruyor, yukarıdan aşağı:
- *
- *   kim         — arma, ad, seviye, kurs
- *   ne koydum   — seri, en uzun seri, süre, pekişen kelime
- *   ne zaman    — son iki haftanın ritmi
- *   ne kadar iyi— altı becerinin puanı, değişimi, sıradaki adım
- *   ne kazandım — rozetler
- *   ne değiştirebilirim — ayarlar, yazılar
- *
- * Kelimeye ait ölçüler burada yok, Kelimeler ekranında (bkz. progress-view
- * bölünmesi): kapsam ve tekrar kuyruğu kelime dağarcığı hakkında, seri ve
- * süre kişi hakkında. "Pekişen kelime" kartı ikisi arasındaki köprü —
- * dokununca Kelimeler'e gidiyor.
- *
- * "Yetkinlik ve gelişim" satırı kalktı: zaten bir sekme olan Becerileri
- * açıyordu ve bir sekmeyi menüden ikinci kez sunmak iki ayrı yer varmış gibi
- * hissettiriyor.
+ * Eskiden burası bir panoydu: kimlik, seviye, iki haftalık ritim, yetkinlik
+ * paneli, rozet duvarı ve beş satırlık menü tek sayfada üst üsteydi. Bloklar
+ * artık kendi adreslerinde (`/profile/progress`, `/profile/achievements`) ve
+ * bu sayfa yalnız kim olduğunu, ne biriktirdiğini ve nereye gidebileceğini
+ * söylüyor — mobil `ProfileScreen` ile aynı kurgu.
  */
 export default async function ProfilePage() {
   const user = await getUserInfo();
@@ -50,107 +20,33 @@ export default async function ProfilePage() {
 
   try {
     const profile = await ensureProfile(user.id, user.name);
-    const name = profile.displayName || user.name || "Öğrenci";
     const today = new Date().toISOString().slice(0, 10);
-
-    // İstatistikler okunamazsa sayfa yine açılıyor: kimlik ve ayarlar
-    // ilerlemeye bağlı değil.
+    // İstatistikler okunamazsa sayfa yine açılıyor: kimlik ve bağlantılar
+    // ilerlemeye bağlı değil, yalnız sayılar sıfır görünür.
     const data = await getProgress(user.id, today).catch((err) => {
       console.error("[profile] ilerleme okunamadı", err);
       return null;
     });
-    const mastered = data ? data.levels.reduce((s, l) => s + l.mastered, 0) : 0;
-    const total = data ? data.levels.reduce((s, l) => s + l.total, 0) : 0;
-    const atLevel = data?.levels.find((l) => l.niveau === profile.level);
-    const premium = await isPremium(user.id);
 
     return (
-      <div className="mx-auto w-full max-w-3xl space-y-4">
-        {/*
-          Kimlik şeridi. Geri düğmesi burada çünkü profil alt sekmelerden çıktı
-          ve başlıktaki avatardan açılıyor; geri GELİNEN yere döner, sabit bir
-          adrese değil (bkz. components/page-back).
-        */}
-        <div className="flex items-center gap-3">
-          <BackButton fallback="/learn" label="Geri dön" />
-          {/* Arma sıralamadakiyle AYNI: kullanıcı kendini tabloda tanıyabilmeli. */}
-          <Avatar userId={user.id} name={name} size={52} />
-          <div className="min-w-0 flex-1">
-            <h1 className="truncate text-xl font-bold">{name}</h1>
-            <p className="muted truncate text-sm">
-              {COURSE_LABEL[profile.course] ?? profile.course} ·{" "}
-              {profile.totalXp.toLocaleString("tr-TR")} XP
-            </p>
-          </div>
-        </div>
-
-        {/* Seviye ve o seviyedeki pekişme — kimliğin bir parçası, ayrı kart değil. */}
-        <div className="card px-5 py-4">
-          <LevelBadge
-            level={profile.level}
-            mastered={atLevel?.mastered ?? 0}
-            total={atLevel?.total ?? 0}
-          />
-        </div>
-
-        {/* Premium yükseltme bandı (§4) — mobil app'teki bantla aynı; yalnızca
-            premium olmayan kullanıcıya. */}
-        {!premium ? (
-          <Link
-            href="/premium?from=profile"
-            prefetch={false}
-            className="brand-gradient flex items-center gap-3 rounded-2xl px-5 py-4 text-white"
-          >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: "rgba(255,255,255,0.18)" }}>
-              <CrownIcon size={24} />
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="block font-bold">Premium'a geç</span>
-              <span className="block text-sm text-white/85">Sınırsız konuşma + tam sınav hazırlığı</span>
-            </span>
-            <span aria-hidden className="text-xl">›</span>
-          </Link>
-        ) : null}
-
-        {data ? (
-          <ActivityProgress
-            days={data.days.map((d) => ({
-              day: String(d.day),
-              reviews: d.reviews,
-              correct: d.correct,
-              xp: d.xp,
-            }))}
-            streak={profile.currentStreak}
-            longest={profile.longestStreak}
-            seconds={data.seconds}
-            mastered={mastered}
-            today={today}
-          />
-        ) : null}
-
-        {/* Ölçüm bloğu: yetkinlik, dört haftalık değişim ve önerilen adım.
-            Becerilerden buraya taşındı — orası "ne yapayım" ekranı, burası
-            "neredeyim". */}
-        <ProgressPanel />
-
-        <AchievementWall />
-
-        <ProfileMenu />
-
-        {total > 0 ? (
-          <p className="muted px-1 pb-2 text-center text-xs">
-            Toplam {total.toLocaleString("tr-TR")} kelimelik havuzda{" "}
-            {mastered.toLocaleString("tr-TR")} kelime pekişti.
-          </p>
-        ) : null}
-      </div>
+      <ProfileView
+        stats={{
+          name: profile.displayName || user.name || "Öğrenci",
+          email: user.email ?? null,
+          streak: profile.currentStreak,
+          xp: profile.totalXp,
+          mastered: data ? data.levels.reduce((s, l) => s + l.mastered, 0) : 0,
+          seconds: data?.seconds ?? 0,
+          premium: await isPremium(user.id),
+        }}
+      />
     );
   } catch (err) {
     console.error("[profile page]", err);
     return (
       <div className="card mx-auto w-full max-w-md p-6 text-center">
-        <h2 className="text-lg font-bold">Profil yüklenemedi</h2>
-        <p className="muted mt-2 text-sm">
+        <h2 className="text-h3">Profil yüklenemedi</h2>
+        <p className="muted mt-2 text-body">
           Veritabanı bağlantısını kontrol et: <code>npm run db:push</code>.
         </p>
       </div>
