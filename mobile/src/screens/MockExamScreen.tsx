@@ -25,6 +25,7 @@ import {
 import {
   assessOpen,
   blankCount,
+  failReason,
   finishAttempt,
   isItemCorrect,
   offlineScore,
@@ -32,9 +33,11 @@ import {
   startAttempt,
   type Attempt,
   type MockFeedback,
+  type FailReason,
   type MockScore,
   type OpenScore,
 } from "../game/mockExam";
+import { clearLocalRun, loadLocalRun, pushLocalResult, saveLocalRun } from "../game/mockExamLocal";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
@@ -107,7 +110,9 @@ export function MockExamScreen() {
   const [attempt, setAttempt] = useState<Attempt | null>(null);
   const [resumed, setResumed] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [result, setResult] = useState<{ score: MockScore; ai: MockFeedback | null; offline: boolean } | null>(null);
+  const [result, setResult] = useState<{ score: MockScore; ai: MockFeedback | null; offline: FailReason | null } | null>(null);
+  // Sunucuya neden ulaşılamadığı: sınav başlarken öğreniliyor, sonuçta gösteriliyor.
+  const [fail, setFail] = useState<FailReason | null>(null);
   const [reveal, setReveal] = useState<Record<string, boolean>>({});
   const [quit, setQuit] = useState(false);
   const [autoNext, setAutoNext] = useState(false);
@@ -116,16 +121,21 @@ export function MockExamScreen() {
   useEffect(() => () => { alive.current = false; stopListening(); }, []);
 
   /* ── sesli yönerge ──────────────────────────────────────────────────────
-   * Bölüm ve görev yönergeleri Almanca okunuyor. `announced` aynı yönergenin
-   * iki kez okunmasını engelliyor: görev değişmeden tekrar tetiklenmesin.
+   * YALNIZ dinleme ve konuşmada. Gerçek sınavda okuma ve yazma yönergesi
+   * kâğıdın üstünde yazılıdır ve kimse onu yüksek sesle okumaz; dinleme
+   * yönergesi ise kayıttan gelir, konuşmada da sınav görevlisi söyler.
+   * Okurken sesli yönerge zaman kaybettiriyor ve okumayı bölüyordu.
+   *
+   * `announced` aynı yönergenin iki kez okunmasını engelliyor.
    */
+  const voiced = part?.skill === "listening" || part?.skill === "speaking";
   const announced = useRef<Set<string>>(new Set());
   const announce = useCallback(async (key: string, text: string) => {
-    if (announced.current.has(key)) return;
+    if (!voiced || announced.current.has(key)) return;
     announced.current.add(key);
     const v = voicesFor(currentCourseId())[0];
     try { await speakAndWaitVoiced(text, v.id); } catch { /* ses yoksa sınav durmaz */ }
-  }, []);
+  }, [voiced]);
 
   /* ── saat: görev başına ─────────────────────────────────────────────── */
   useEffect(() => {
@@ -142,8 +152,9 @@ export function MockExamScreen() {
     setIx(next);
     setLeft(budgets[next] ?? 60);
     scroller.current?.scrollTo({ y: 0, animated: false });
+    void saveLocalRun(paper!.id, part.skill, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 });
     if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 });
-  }, [ix, part, budgets, attempt, answers, open]);
+  }, [ix, part, paper, budgets, attempt, answers, open]);
 
   useEffect(() => {
     if (phase === "gorev" && left === 0) advance(true);
@@ -155,8 +166,12 @@ export function MockExamScreen() {
    * basışta istek atmak gereksiz, hiç atmamak ise sınavı kaybettirir.
    */
   useEffect(() => {
-    if (!attempt || phase !== "gorev") return;
-    const id = setTimeout(() => { void saveAttempt(attempt.id, { answers, open, taskIx: ix, secondsLeft: left }); }, 2000);
+    if (phase !== "gorev" || !part) return;
+    const id = setTimeout(() => {
+      // Önce cihaz, sonra sunucu. Sunucu yoksa sınav yine kaybolmuyor.
+      void saveLocalRun(paper!.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left });
+      if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: ix, secondsLeft: left });
+    }, 2000);
     return () => clearTimeout(id);
   }, [answers, open, attempt, phase, ix]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -174,11 +189,24 @@ export function MockExamScreen() {
       const startIx = Math.min(d.attempt.taskIx ?? 0, part.tasks.length - 1);
       setIx(startIx);
       setLeft(d.resumed && d.attempt.secondsLeft > 0 ? d.attempt.secondsLeft : budgets[startIx] ?? 60);
-    } catch {
-      // Oturum ya da ağ yoksa sınav yine çalışır; sonuç kaydedilmez.
+    } catch (err) {
+      // Sunucuya ulaşılamadı. Sınav durmuyor ve YARIM KALAN cihazdaki kayıttan
+      // sürüyor: bir sunucu koşulu yüzünden kırk beş dakika kaybedilmemeli.
       setAttempt(null);
-      setIx(0);
-      setLeft(budgets[0] ?? 60);
+      setFail(failReason(err));
+      const local = await loadLocalRun(paper.id, part.skill);
+      if (local) {
+        setResumed(true);
+        setAnswers(local.answers ?? {});
+        setOpen(local.open ?? {});
+        const startIx = Math.min(local.taskIx ?? 0, part.tasks.length - 1);
+        setIx(startIx);
+        setLeft(local.secondsLeft > 0 ? local.secondsLeft : budgets[startIx] ?? 60);
+      } else {
+        setResumed(false);
+        setIx(0);
+        setLeft(budgets[0] ?? 60);
+      }
     }
     setBusy(false);
     setPhase("gorev");
@@ -186,24 +214,34 @@ export function MockExamScreen() {
 
   /* ── bitir ──────────────────────────────────────────────────────────── */
   useEffect(() => {
-    if (phase !== "sonuc" || result || !part) return;
+    if (phase !== "sonuc" || result || !part || !paper) return;
     let cancelled = false;
     void (async () => {
       setBusy(true);
+      let final: { score: MockScore; ai: MockFeedback | null; offline: FailReason | null };
       if (attempt) {
         try {
           const d = await finishAttempt(attempt.id, answers);
-          if (!cancelled) setResult({ score: d.score, ai: d.ai ?? null, offline: false });
-        } catch {
-          if (!cancelled) setResult({ score: offlineScore(part, answers), ai: null, offline: true });
+          final = { score: d.score, ai: d.ai ?? null, offline: null };
+        } catch (err) {
+          final = { score: offlineScore(part, answers), ai: null, offline: failReason(err) };
         }
       } else {
-        setResult({ score: offlineScore(part, answers), ai: null, offline: true });
+        final = { score: offlineScore(part, answers), ai: null, offline: fail ?? "unreachable" };
       }
-      if (!cancelled) setBusy(false);
+      // Sonuç her durumda cihaza yazılıyor ve yarım kalan kayıt siliniyor:
+      // liste ekranı "bu bölümü çözdüm mü" sorusunu sunucu olmadan da
+      // yanıtlayabilsin.
+      await pushLocalResult({
+        paperId: paper.id, skill: part.skill, level: paper.level,
+        correct: final.score.correct, total: final.score.total, pct: final.score.pct,
+        passed: final.score.passed, synced: final.offline == null,
+      });
+      await clearLocalRun(paper.id, part.skill);
+      if (!cancelled) { setResult(final); setBusy(false); }
     })();
     return () => { cancelled = true; };
-  }, [phase, result, part, attempt, answers]);
+  }, [phase, result, part, paper, attempt, answers, fail]);
 
   /* ── dinleme ────────────────────────────────────────────────────────── */
   const play = useCallback(
@@ -276,7 +314,7 @@ export function MockExamScreen() {
             part={part}
             colors={colors}
             busy={busy}
-            onAnnounce={() => void announce(`part:${part.skill}`, part.instruction)}
+            onAnnounce={() => { if (voiced) void announce(`part:${part.skill}`, part.instruction); }}
             onStart={() => void begin()}
           />
         ) : phase === "gorev" ? (
@@ -303,7 +341,7 @@ export function MockExamScreen() {
               speaking={speaking}
               attemptId={attempt?.id ?? null}
               colors={colors}
-              onAnnounce={() => void announce(`task:${task.id}`, task.prompt)}
+              onAnnounce={() => { if (voiced) void announce(`task:${task.id}`, task.prompt); }}
               onAnswer={(id, v) => setAnswers((a) => ({ ...a, [id]: v }))}
               onOpen={(id, v) => setOpen((e) => ({ ...e, [id]: v }))}
               onOpenScore={(id, v) => setOpenScores((s) => ({ ...s, [id]: v }))}
@@ -354,6 +392,7 @@ export function MockExamScreen() {
         destructive
         onConfirm={() => {
           setQuit(false);
+          void saveLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left });
           if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: ix, secondsLeft: left });
           nav.goBack();
         }}
@@ -677,7 +716,7 @@ function WritingTask({
           <Text variant="bodyStrong" color={colors.primary}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
         </PressableScale>
       )}
-      {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_session")}</Text> : null}
+      {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_server")}</Text> : null}
     </Card>
   );
 }
@@ -867,7 +906,7 @@ function SpeakingTask({
               <Text variant="bodyStrong" color={colors.primary}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
             </PressableScale>
           )}
-          {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_session")}</Text> : null}
+          {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_server")}</Text> : null}
         </>
       )}
     </Card>
@@ -885,7 +924,7 @@ function ResultView({
   openScores: Record<string, OpenScore>;
   score: MockScore;
   ai: MockFeedback | null;
-  offline: boolean;
+  offline: FailReason | null;
   reveal: Record<string, boolean>;
   colors: Palette;
   onReveal: (id: string) => void;
@@ -894,7 +933,8 @@ function ResultView({
     <View>
       {offline ? (
         <Card padded style={{ marginBottom: spacing.md, backgroundColor: colors.dangerSoft }}>
-          <Text variant="caption" color={colors.danger} style={{ lineHeight: 20 }}>{t("mockexam.offline")}</Text>
+          <Text variant="caption" color={colors.danger} style={{ lineHeight: 20 }}>{t(`mockexam.fail_${offline}`)}</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 18 }}>{t("mockexam.saved_locally")}</Text>
         </Card>
       ) : null}
 

@@ -9,8 +9,9 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
-import { fetchMockStats, type MockStats } from "../game/mockExam";
-import { mockPaperById } from "../data/exams";
+import { fetchMockStats, failReason, type MockStats } from "../game/mockExam";
+import { loadLocalResults } from "../game/mockExamLocal";
+import { mockPaperById, type MockSkill } from "../data/exams";
 import { useTheme, spacing, radii } from "../theme";
 
 /**
@@ -30,16 +31,26 @@ export function MockStatsScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [data, setData] = useState<MockStats | null>(null);
-  const [err, setErr] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+  /** Sayılar cihazdan mı geliyor — sunucu ulaşılamadığındaki yedek. */
+  const [local, setLocal] = useState(false);
   const [busy, setBusy] = useState(true);
 
   const load = useCallback(async () => {
     setBusy(true);
     try {
       setData(await fetchMockStats());
-      setErr(false);
-    } catch {
-      setErr(true);
+      setLocal(false);
+      setErr(null);
+    } catch (e) {
+      /*
+        Sunucuya ulaşılamıyorsa ekran boş kalmıyor: cihazdaki sonuçlardan aynı
+        kırılımlar kuruluyor. Bu sayılar sunucu istatistiği DEĞİL ve ekran bunu
+        söylüyor — ama "hiçbir şey göremiyorsun" demekten iyisi.
+      */
+      setErr(failReason(e));
+      setData(await localStats());
+      setLocal(true);
     }
     setBusy(false);
   }, []);
@@ -66,8 +77,6 @@ export function MockStatsScreen() {
       >
         {busy && !data ? (
           <View style={{ paddingTop: spacing.xxl, alignItems: "center" }}><ActivityIndicator color={colors.primary} /></View>
-        ) : err ? (
-          <Card padded><Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("mockstats.needs_session")}</Text></Card>
         ) : !data || data.attempts === 0 ? (
           <>
             {data?.running?.length ? <Running data={data} colors={colors} nav={nav} label={label} /> : null}
@@ -75,6 +84,14 @@ export function MockStatsScreen() {
           </>
         ) : (
           <>
+            {local ? (
+              <Card padded style={{ marginBottom: spacing.md }}>
+                <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>
+                  {t(`mockexam.fail_${err ?? "unreachable"}`)}
+                </Text>
+                <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 18 }}>{t("mockstats.local_note")}</Text>
+              </Card>
+            ) : null}
             {data.running.length ? <Running data={data} colors={colors} nav={nav} label={label} /> : null}
 
             <Card padded style={{ marginBottom: spacing.md }}>
@@ -150,4 +167,54 @@ function Running({
       ))}
     </Card>
   );
+}
+
+/**
+ * Cihazdaki sonuçlardan istatistik — sunucu ulaşılamadığında.
+ *
+ * Sunucununkiyle aynı biçimde dönüyor ki ekran iki kaynağı ayrı ayrı çizmek
+ * zorunda kalmasın; farkı `local` bayrağı ve üstteki not söylüyor. Yarım kalan
+ * denemeler burada listelenmiyor: onların kaydı kâğıt başına tutuluyor ve
+ * liste ekranında rozet olarak zaten görünüyor.
+ */
+async function localStats(): Promise<MockStats> {
+  const rows = await loadLocalResults();
+  const bySkill = new Map<string, { attempts: number; correct: number; total: number; best: number }>();
+  const byLevel = new Map<string, { attempts: number; passed: number }>();
+  for (const r of rows) {
+    if (r.total > 0) {
+      const v = bySkill.get(r.skill) ?? { attempts: 0, correct: 0, total: 0, best: 0 };
+      v.attempts++;
+      v.correct += r.correct;
+      v.total += r.total;
+      v.best = Math.max(v.best, r.pct);
+      bySkill.set(r.skill, v);
+    }
+    const l = byLevel.get(r.level) ?? { attempts: 0, passed: 0 };
+    l.attempts++;
+    if (r.passed) l.passed++;
+    byLevel.set(r.level, l);
+  }
+  return {
+    attempts: rows.length,
+    bySkill: [...bySkill.entries()].map(([skill, v]) => ({
+      skill: skill as MockSkill,
+      attempts: v.attempts,
+      pct: v.total ? Math.round((100 * v.correct) / v.total) : 0,
+      best: v.best,
+    })),
+    byLevel: [...byLevel.entries()].map(([level, v]) => ({ level, ...v })),
+    recent: rows.slice(0, 20).map((r, i) => ({
+      id: -(i + 1),
+      paperId: r.paperId,
+      skill: r.skill,
+      level: r.level,
+      score: r.pct,
+      correct: r.correct,
+      total: r.total,
+      passed: r.passed,
+      finishedAt: r.at,
+    })),
+    running: [],
+  };
 }

@@ -1,4 +1,4 @@
-import { api } from "../api/client";
+import { api, ApiError } from "../api/client";
 import { todayStr } from "./session";
 import { isOpenTask, type MockItem, type MockPart, type MockSkill, type MockTask } from "../data/exams";
 
@@ -110,6 +110,24 @@ export type MockScore = {
   byTask: { taskId: string; taskNo: number; format: string; goal: string; correct: number; total: number }[];
   items: ScoredItem[];
 };
+
+/**
+ * Sunucuya neden ulaşılamadı.
+ *
+ * Üçü üç ayrı şey ve öğrenciye üçü ayrı söylenmeli: 404 "uygulama sunucudan
+ * yeni, uç henüz yayında değil" demek — kullanıcının yapabileceği bir şey yok;
+ * 401 "oturum düşmüş" demek — tekrar giriş yeter; geri kalanı gerçekten
+ * ulaşamamak. Hepsine "bağlantı yok" demek yanlış teşhis koyuyordu.
+ */
+export type FailReason = "not_deployed" | "unauthorized" | "unreachable";
+
+export function failReason(err: unknown): FailReason {
+  if (err instanceof ApiError) {
+    if (err.status === 404 || err.status === 501) return "not_deployed";
+    if (err.status === 401 || err.status === 403) return "unauthorized";
+  }
+  return "unreachable";
+}
 
 export function startAttempt(paperId: string, skill: MockSkill): Promise<{ attempt: Attempt; resumed: boolean }> {
   return api("/api/mock-exam", {

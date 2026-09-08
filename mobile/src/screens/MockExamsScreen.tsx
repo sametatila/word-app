@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
@@ -12,7 +12,8 @@ import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
 import { SkeletonLine } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { currentCourseId } from "../lib/courses";
-import { mockPapersFor, partPoints, type MockLevel, type MockPaper } from "../data/exams";
+import { mockPapersFor, partPoints, type MockLevel, type MockPaper, type MockSkill } from "../data/exams";
+import { localPartStates, type PartState } from "../game/mockExamLocal";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii } from "../theme";
 
@@ -60,6 +61,31 @@ export function MockExamsScreen() {
   const overallPct = me && me.totalWords ? Math.min(100, Math.round((me.mastered / me.totalWords) * 100)) : null;
 
   const papers = mockPapersFor(currentCourseId(), level);
+
+  /*
+    Bölümlerin durumu: bitti mi, kaç aldın, yarım mı kaldı.
+
+    Kaynak CİHAZ, sunucu değil. Sebep: sunucuya ulaşılamadığında da bu sorunun
+    bir cevabı olmalı — kullanıcı bir bölümü çözdüğünü listede görebilmeli.
+    Sunucuda puanlanmış sonuçlar ayrıca `synced` işaretini taşıyor ve rozet
+    bunu ayırt ediyor; istatistik ekranı yine sunucunun sayılarını gösteriyor.
+
+    Odaklanınca yeniden okunuyor: sınavdan dönüldüğünde liste güncel olsun.
+  */
+  const [states, setStates] = useState<Record<string, Record<string, PartState>>>({});
+  const readStates = useCallback(() => {
+    let dead = false;
+    void (async () => {
+      const out: Record<string, Record<string, PartState>> = {};
+      for (const p of papers) {
+        out[p.id] = await localPartStates(p.id, p.parts.map((x) => x.skill) as MockSkill[]);
+      }
+      if (!dead) setStates(out);
+    })();
+    return () => { dead = true; };
+    // `papers` seviyeye bağlı ve her çizimde yeni dizi; kimliği seviyeden alıyoruz.
+  }, [level]); // eslint-disable-line react-hooks/exhaustive-deps
+  useFocusEffect(readStates);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -133,7 +159,7 @@ export function MockExamsScreen() {
               {t("mockexams.intro")}
             </Text>
             {papers.map((p) => (
-              <PaperCard key={p.id} paper={p} onOpen={(skill) => nav.navigate("MockExam", { paperId: p.id, skill })} />
+              <PaperCard key={p.id} paper={p} states={states[p.id] ?? {}} onOpen={(skill) => nav.navigate("MockExam", { paperId: p.id, skill })} />
             ))}
           </>
         ) : (
@@ -146,7 +172,7 @@ export function MockExamsScreen() {
   );
 }
 
-function PaperCard({ paper, onOpen }: { paper: MockPaper; onOpen: (skill: MockPaper["parts"][number]["skill"]) => void }) {
+function PaperCard({ paper, states, onOpen }: { paper: MockPaper; states: Record<string, PartState>; onOpen: (skill: MockPaper["parts"][number]["skill"]) => void }) {
   const { colors } = useTheme();
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
@@ -179,11 +205,28 @@ function PaperCard({ paper, onOpen }: { paper: MockPaper; onOpen: (skill: MockPa
                   {pts ? t("mockexams.part_summary", { minutes: part.minutes, n: pts }) : t("mockexams.part_open", { minutes: part.minutes })}
                 </Text>
               </View>
+              <PartBadge state={states[part.skill] ?? null} />
               <ChevronRightIcon color={colors.textMuted} size={20} />
             </PressableScale>
           );
         })}
       </View>
     </Card>
+  );
+}
+
+/** Bölüm rozeti: yarım kaldı · puan · yalnız cihazda hesaplanmış puan. */
+function PartBadge({ state }: { state: PartState }) {
+  const { colors } = useTheme();
+  if (!state) return null;
+  const running = state === "running";
+  const tone = running ? colors.streak : state.passed ? colors.success : colors.danger;
+  const label = running
+    ? t("mockexams.state_running")
+    : t(state.synced ? "mockexams.state_done" : "mockexams.state_local", { pct: state.pct });
+  return (
+    <View style={{ paddingVertical: 2, paddingHorizontal: spacing.sm, borderRadius: radii.pill, backgroundColor: colors.surface, marginRight: spacing.xs }}>
+      <Text variant="micro" color={tone}>{label}</Text>
+    </View>
   );
 }
