@@ -61,7 +61,7 @@ bayrak açılmadan önce yapılmalı.
 | 8 | ~~`.lproj` dosyalarının Xcode hedefine eklenmesi~~ → **bağlandı** (derlenmedi) | Dosyalar yazılmıştı ama `project.pbxproj`'da kayıtlı değildi, yani derlemeye girmiyordu |
 | 9 | ~~Uygulama ikonu~~ → **üretildi** (Xcode'da görülmedi) | İkonsuz yükleme reddedilir |
 | 10 | ~~Sign in with Apple yetkisi (entitlements)~~ → **eklendi** (`d72da43`, imzalanmadı) · açık kalan: **`APPLE_BUNDLE_ID` değeri** | Yetki dosyası ve `CODE_SIGN_ENTITLEMENTS` yerinde; App ID'de "Sign in with Apple" işaretlenmesi portal işi. Env boşken sağlayıcı hiç kurulmaz, yani akış bugün kapalı |
-| 11 | ~~`CFBundleURLTypes`~~ → **eklendi** (`d72da43`, yer tutucu değerle) · açık kalan: **`IOS_CLIENT_ID` değeri** | Şema Info.plist'te duruyor ama değeri yer tutucu. `googleAuth.ts`'teki `IOS_CLIENT_ID` ile birlikte, aynı istemciden doldurulmalı; ikisi de boşken düğme iOS'ta çizilmiyor |
+| 11 | ~~`CFBundleURLTypes`~~ → **eklendi** (`d72da43`, yer tutucu değerle) · açık kalan: **Google Console'da iOS istemcisi açmak** | Kodda yapılacak iş kalmadı: iki yazım (`googleAuth.ts` › `IOS_CLIENT_ID` ve Info.plist'teki tersi) tek komutla yazılıyor — `npm run google:ios -- <kimlik>`; yarım kurulum, yanlış biçim ve yanlış proje reddediliyor, kapı CI'da. Console adımları `docs/appstore/connect.md` §2.2. İkisi boşken düğme iOS'ta çizilmiyor |
 | 12 | Mağaza vitrini (ad, altyazı, anahtar kelime, açıklama, görseller) | Üç dilde metinler **yazıldı** (`listing.md` §3); görseller cihazdan çekilecek, 6.9" iPhone ve 13" iPad zorunlu — kare betiği ikisini de üretiyor (aşağıda "Cihaz ailesi") |
 | 13 | ~~Cihaz ailesi kararı~~ → **iPhone + iPad, beyan sabitlendi** (2026-09-05) | Aşağıda |
 

@@ -47,6 +47,12 @@ YER_TUTUCU = "com.googleusercontent.apps.YER-TUTUCU"
 # olmadan sabit literal tip sayılıyor ve kimlik dolduğu an `!== ""` TS2367 veriyor.
 # Desen ikisini de kabul ediyor ki oradaki açıklama bir gün değişse betik susmasın.
 IOS_CLIENT_SATIRI = re.compile(r'^(const IOS_CLIENT_ID(?::\s*string)?\s*=\s*)"(.*)";$', re.M)
+WEB_CLIENT_SATIRI = re.compile(r'^const WEB_CLIENT_ID(?::\s*string)?\s*=\s*"(.*)";$', re.M)
+
+
+def proje_no(client_id: str) -> str:
+    """İstemci kimliğinin başındaki proje numarası (`<numara>-<karma>...`)."""
+    return client_id.split("-", 1)[0]
 
 
 def ters(client_id: str) -> str:
@@ -112,6 +118,24 @@ def main() -> int:
                 "Google Cloud › Kimlik Bilgileri › OAuth 2.0 İstemci Kimlikleri › (iOS satırı)\n"
                 "TERS yazımı (com.googleusercontent.apps.…) DEĞİL, düz yazımı verin;\n"
                 "tersini bu betik kendisi üretir.",
+                file=sys.stderr,
+            )
+            return 2
+        # Aynı Cloud PROJESİ olmak zorunda. Kütüphane web istemcisini
+        # `serverClientID` olarak veriyor ve Google ID token'ın `aud`'unu ondan
+        # üretiyor; bunu ancak iki istemci aynı projedeyse yapıyor. Ayrı projede
+        # açılan iOS istemcisi Console'da doğru görünür, kod doğru görünür, giriş
+        # yine olmaz — teşhisi zor, önlemesi tek satır.
+        web = WEB_CLIENT_SATIRI.search(open(GOOGLE_TS, encoding="utf-8").read())
+        if web and proje_no(client_id) != proje_no(web.group(1)):
+            print(
+                "HATA: iOS istemcisi BAŞKA bir Google Cloud projesinde açılmış.\n"
+                f"  iOS istemcisi : {client_id}  (proje {proje_no(client_id)})\n"
+                f"  web istemcisi : {web.group(1)}  (proje {proje_no(web.group(1))})\n\n"
+                "İkisi AYNI projede olmalı: kütüphane web istemcisini serverClientID olarak\n"
+                "veriyor ve Google ID token'ın audience'ını ondan üretiyor. Ayrı projelerde\n"
+                "bu olmaz; giriş sunucuda doğrulanamaz. Console'da doğru projeyi seçip iOS\n"
+                "istemcisini orada açın (proje numarası kimliğin başındaki sayıdır).",
                 file=sys.stderr,
             )
             return 2

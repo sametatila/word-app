@@ -568,6 +568,15 @@ def check_google_ios():
 
     if not GOOGLE_ID.match(client_id):
         hatalar.append(f"IOS_CLIENT_ID biçimi beklenen gibi değil: {client_id}")
+    # Aynı Cloud projesi: kütüphane web istemcisini `serverClientID` olarak veriyor ve
+    # Google ID token'ın `aud`'unu ondan üretiyor — bunu ancak iki istemci aynı projedeyse
+    # yapıyor. Proje numarası kimliğin başındaki sayı.
+    web = re.search(r'^const WEB_CLIENT_ID(?::\s*string)?\s*=\s*"(.*)";$', read(GOOGLE_TS), re.M)
+    if web and client_id.split("-", 1)[0] != web.group(1).split("-", 1)[0]:
+        hatalar.append(
+            f"iOS istemcisi web istemcisinden BAŞKA projede: "
+            f"{client_id.split('-', 1)[0]} ≠ {web.group(1).split('-', 1)[0]} — idToken'ın aud'u üretilmez"
+        )
     beklenen = "com.googleusercontent.apps." + client_id[: -len(".apps.googleusercontent.com")]
     if sema != beklenen:
         hatalar.append(f"şema kimliğin tersi değil:\n         Info.plist: {sema}\n         beklenen  : {beklenen}")

@@ -66,19 +66,67 @@ Store uygulaması için işliyor.
 ### 2.2 Google ile Giriş — iOS istemcisi
 
 Android'de Google eşlemeyi paket adı + SHA-1 ile yapıyor ve istemci koda girmiyor;
-**iOS'ta girmek zorunda**. İki yerde birden, aynı istemciden:
+**iOS'ta girmek zorunda**: Google uygulamayı bu kimlikle tanıyor.
+
+Bu, `docs/play/console.md`'nin Google tarafındaki karşılığı. **Kodda yapılacak iş tek
+komut**; asıl iş Console'da.
+
+#### Console adımları
+
+Önce **doğru proje**: Lernomi'nin Web ve Android istemcilerinin bulunduğu projeyle
+AYNI olmalı. Doğrulaması kolay — proje numarası istemci kimliğinin başındaki sayı,
+yani Web istemcisininkiyle (`658160017552-…`) başlamalı. Ayrı projede açılan istemci
+Console'da doğru görünür, kod doğru görünür, giriş yine olmaz; sebebi §2.2'nin sonunda.
+
+1. `console.cloud.google.com` › üst çubuktan **projeyi seç**.
+2. **API'ler ve Hizmetler › Kimlik Bilgileri** (yeni arayüzde: *Google Auth Platform ›
+   İstemciler*).
+3. **+ Kimlik bilgisi oluştur › OAuth istemci kimliği**.
+4. **Uygulama türü: iOS**.
+5. **Ad:** serbest, ör. `Lernomi iOS`.
+6. **Paket kimliği:** `app.lernomi.ios` — pbxproj'daki `PRODUCT_BUNDLE_IDENTIFIER` ile
+   **birebir**. Ayrışırsa giriş "invalid client" ile düşer ve bunu koddan göremeyiz.
+7. **App Store Kimliği** ve **Takım Kimliği:** isteğe bağlı, **boş bırakılabilir**.
+   App Store kimliği uygulama yayımlanmadan zaten yok.
+8. **Oluştur.** Çıkan `<numara>-<harfler>.apps.googleusercontent.com` değerini kopyala.
+   **iOS istemcisinin client secret'ı YOKTUR** — böyle bir alan görmemek normal.
+
+İzin ekranına (OAuth consent) dokunmak **gerekmiyor**: kapsamlar değişmiyor
+(`openid`, `email`, `profile`) ve ekran Android/web için zaten yapılandırılmış.
+Yeni istemci eklemek yeniden doğrulama gerektirmiyor.
+
+#### Kodda karşılığı — tek komut
+
+```bash
+cd mobile
+npm run google:ios -- <kopyaladığın-kimlik>     # kapatmak için: -- --clear
+```
+
+Kimlik iki yerde, iki ayrı YAZIMDA duruyor ve elle yazılırsa ayrışıyor:
 
 | Nerede | Ne |
 |---|---|
 | `mobile/src/lib/googleAuth.ts` › `IOS_CLIENT_ID` | `<numara>-<harfler>.apps.googleusercontent.com` |
-| `Info.plist` › `CFBundleURLTypes` | ters yazımı: `com.googleusercontent.apps.<numara>-<harfler>` |
+| `Info.plist` › `CFBundleURLTypes` | TERS yazımı: `com.googleusercontent.apps.<numara>-<harfler>` |
 
-İkisi ayrışırsa giriş "invalid client" ile düşer. Bugün ikisi de **boş**; boşken
-`iosClientId` gönderilmiyor ve Google düğmesi iOS'ta hiç çizilmiyor.
+Betik ikisini tek değerden yazıyor, tersini kendisi üretiyor ve üç şeyi reddediyor:
+biçim (ters yazımı düz sanıp vermek), başka proje, yarım kalmış kurulum. Sonunda
+`check-ios.py`yi koşuyor. Aynı kapı CI'da da var (`npm run ios:check` ›
+*Google iOS istemcisi*), yani yarım bir kurulum push edilemiyor.
 
-Sunucu tarafı Play ile ORTAK: `GOOGLE_CLIENT_ID` (Web istemci) ve `GOOGLE_CLIENT_SECRET`.
-idToken'ın `aud`'u iki platformda da Web istemci kimliği olmaya devam ediyor — iOS
-istemcisi yalnız uygulamayı tanıtıyor.
+Kimlik **sır değil** — uygulama paketinde zaten gömülü, depoya girmesi normal.
+Gizli olan `GOOGLE_CLIENT_SECRET` ve o yalnız sunucuda.
+
+#### Sunucuda yapılacak bir şey YOK
+
+`GOOGLE_CLIENT_ID` (Web istemci) ve `GOOGLE_CLIENT_SECRET` Play ile ORTAK ve
+değişmiyor. Sebebi: kütüphane `webClientId`'yi `GIDConfiguration`a **`serverClientID`**
+olarak veriyor (`RNGoogleSignin.mm` › `configure:`) ve Google, ID token'ın `aud`'unu
+o değerden üretiyor. Yani idToken'ın `aud`'u iOS'ta da **Web** istemci kimliği ve
+better-auth onu bugünkü ayarla doğruluyor. iOS istemcisi yalnız uygulamayı tanıtıyor.
+
+Aynı mekanizma "neden aynı proje" sorusunun da cevabı: Google, audience'ı ancak iki
+istemci aynı projedeyse üretiyor.
 
 ## 3. App Privacy
 
