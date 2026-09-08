@@ -274,6 +274,20 @@
       "when": 1788368882105,
       "tag": "0038_native_lang",
       "breakpoints": true
+    },
+    {
+      "idx": 39,
+      "version": "7",
+      "when": 1788368883105,
+      "tag": "0039_mock_exams",
+      "breakpoints": true
+    },
+    {
+      "idx": 40,
+      "version": "7",
+      "when": 1788368884105,
+      "tag": "0040_auth_tables",
+      "breakpoints": true
     }
   ]
 }
