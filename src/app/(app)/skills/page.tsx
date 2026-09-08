@@ -80,6 +80,22 @@ export default async function SkillsPage({
         </p>
       </header>
 
+      {/*
+        Deneme sınavlarının web kapısı burası. Alt gezinme bilerek üç sekmede
+        tutuluyor (bkz. app-shell), ve bu sayfa zaten "patikanın yuvalarına
+        sığmayan içerik ve sınavlar" için: elle yazılmış deneme kâğıtları da
+        oraya ait.
+      */}
+      <Link href="/mock-exams" className="card mb-4 flex items-center justify-between gap-3 p-4">
+        <span>
+          <span className="block text-sm font-bold">Deneme Sınavları</span>
+          <span className="muted block text-sm">
+            A1–C1 için kendi başına duran sınav kâğıtları. Her bölüm ayrı çözülür, süre görev başına işler.
+          </span>
+        </span>
+        <ChevronRightIcon className="size-4 shrink-0" />
+      </Link>
+
       {withContent.length > 1 ? (
         <nav className="mb-4 flex flex-wrap gap-2" aria-label="Seviye">
           {withContent.map((lv) => {
