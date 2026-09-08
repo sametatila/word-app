@@ -12,7 +12,7 @@ import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
 import { SkeletonLine } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { currentCourseId } from "../lib/courses";
-import { mockPapersFor, partPoints, type MockPaper } from "../data/exams";
+import { mockPapersFor, partPoints, type MockLevel, type MockPaper } from "../data/exams";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii } from "../theme";
 
@@ -34,6 +34,8 @@ import { useTheme, spacing, radii } from "../theme";
  * varsa kutucuk çiziliyor. Liste boşken bu ekran uydurma bir satır ya da
  * "yakında" göstermiyor, olduğu gibi söylüyor — o seviyede henüz sınav yok.
  */
+const LEVELS: MockLevel[] = ["A1", "A2", "B1", "B2", "C1"];
+
 export function MockExamsScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -46,7 +48,12 @@ export function MockExamsScreen() {
     if (meLoading || me) return;
     void loadOnboardingPrefs().then((p) => { setGuestLevel(p.level ?? null); setPrefsRead(true); });
   }, [me, meLoading]);
-  const level = me?.level ?? guestLevel ?? "A1";
+  // Kendi seviyen liste açılınca seçili gelir, ama başka bir seviyeye
+  // bakmak serbest: bir üst seviyeyi görmek hedefi somutlaştırıyor, bir alt
+  // seviyeyi çözmek de sınav biçimini öğrenmenin en ucuz yolu. Web'deki
+  // liste sayfası da aynı şekilde seviye değiştirtiyor.
+  const [picked, setPicked] = useState<MockLevel | null>(null);
+  const level = picked ?? me?.level ?? guestLevel ?? "A1";
   // Liste seviyeye bağlı: seviye kesinleşmeden çizilirse sonradan uzayıp
   // kısalıyor. Kesinleşene dek aynı boyda iskelet durur.
   const levelReady = !meLoading && (!!me || prefsRead);
@@ -90,6 +97,30 @@ export function MockExamsScreen() {
             ) : null}
           </View>
         </Card>
+
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, marginBottom: spacing.md }}>
+          {LEVELS.map((lv) => {
+            const on = lv === level;
+            return (
+              <PressableScale
+                key={lv}
+                onPress={() => setPicked(lv)}
+                accessibilityLabel={lv}
+                accessibilityState={{ selected: on }}
+                style={{
+                  paddingVertical: spacing.xs,
+                  paddingHorizontal: spacing.md,
+                  borderRadius: radii.pill,
+                  backgroundColor: on ? colors.primarySoft : colors.surface2,
+                  borderWidth: 1,
+                  borderColor: on ? colors.primary : "transparent",
+                }}
+              >
+                <Text variant="bodyStrong" color={on ? colors.primary : colors.textMuted}>{lv}</Text>
+              </PressableScale>
+            );
+          })}
+        </View>
 
         {!levelReady ? (
           <Card padded>
