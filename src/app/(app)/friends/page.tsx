@@ -17,9 +17,9 @@ export default async function FriendsPage({ searchParams }: { searchParams: Prom
     const me = await socialMe(userId);
     return (
       <div className="mx-auto w-full max-w-md">
-        <div className="mb-3 flex items-center gap-2">
+        <div className="mb-4 flex items-center gap-3">
           <BackButton fallback="/profile" />
-          <h1 className="text-lg font-bold">Arkadaşlar</h1>
+          <h1 className="text-h2">Arkadaşlar</h1>
         </div>
         <FriendsHub me={me} initialTab={initialTab} />
       </div>

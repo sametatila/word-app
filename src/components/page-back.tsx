@@ -1,9 +1,21 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import type { ReactNode } from "react";
 import { ArrowLeftIcon } from "@/components/icons";
 
-/** Yalnız düğme — kendi başlığını çizen ekranlar için. */
+/**
+ * Yığın ekranlarının başlık çubuğu — mobil karşılığı her ekranın kendi
+ * başındaki satır (`M/src/screens/ProfileScreen.tsx`, `SettingsScreen.tsx`,
+ * `WordsScreen.tsx`… hepsi aynı üç parçadan kurulu).
+ *
+ * Ölçüler oradan: 44×44 kare düğme, `radius tile` (14), `surface-2` zemin ve
+ * `h2` başlık. Önceki hali 40×40 çip ve `text-xl` başlıktı; fark küçük
+ * görünüyor ama iki uygulamayı yan yana koyunca başlık satırının yüksekliği
+ * ve düğmenin ağırlığı tutmuyordu. 44 ayrıca dokunma hedefi alt sınırı.
+ */
+
+/** Kare geri düğmesi — kendi başlığını çizen ekranlar için tek başına. */
 export function BackButton({ fallback, label = "Geri dön" }: { fallback: string; label?: string }) {
   const router = useRouter();
   return (
@@ -14,9 +26,10 @@ export function BackButton({ fallback, label = "Geri dön" }: { fallback: string
         else router.push(fallback);
       }}
       aria-label={label}
-      className="chip flex h-10 w-10 shrink-0 items-center justify-center"
+      className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
+      style={{ background: "var(--surface-2)", color: "var(--text)" }}
     >
-      <ArrowLeftIcon size={18} />
+      <ArrowLeftIcon size={24} />
     </button>
   );
 }
@@ -46,29 +59,39 @@ export function PageBack({
   title: string;
   subtitle?: string;
   label?: string;
-  /** Başlığın sağına giren denetim — arama, eylem. */
-  children?: React.ReactNode;
+  /** Başlığın sağına giren denetim — arama, eylem, ayar düğmesi. */
+  children?: ReactNode;
 }) {
-  const router = useRouter();
-
   return (
-    <div className="flex items-center gap-3">
-      <button
-        type="button"
-        onClick={() => {
-          if (typeof window !== "undefined" && window.history.length > 1) router.back();
-          else router.push(fallback);
-        }}
-        aria-label={label}
-        className="chip flex h-10 w-10 shrink-0 items-center justify-center"
-      >
-        <ArrowLeftIcon size={18} />
-      </button>
+    <div className="mb-4 flex items-center gap-3">
+      <BackButton fallback={fallback} label={label} />
       <div className="min-w-0 flex-1">
-        <h1 className="truncate text-xl font-bold">{title}</h1>
-        {subtitle ? <p className="muted truncate text-xs font-semibold">{subtitle}</p> : null}
+        <h1 className="truncate text-h2">{title}</h1>
+        {subtitle ? <p className="muted truncate text-caption">{subtitle}</p> : null}
       </div>
       {children}
     </div>
+  );
+}
+
+/**
+ * Başlığın sağındaki kare eylem — geri düğmesiyle aynı ölçüde.
+ *
+ * Mobilde Profil'in sağ üstünde Ayarlar dişlisi bu ölçüde duruyor; simetri
+ * kasıtlı, iki uçtaki düğme başlığı ortalar.
+ */
+export function HeaderAction({
+  children,
+  ...rest
+}: React.ComponentPropsWithoutRef<"button"> & { children: ReactNode }) {
+  return (
+    <button
+      type="button"
+      className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
+      style={{ background: "var(--surface-2)", color: "var(--text)" }}
+      {...rest}
+    >
+      {children}
+    </button>
   );
 }
