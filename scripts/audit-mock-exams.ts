@@ -48,7 +48,41 @@ const warn = (w: string, m: string) => { soft++; console.warn(`! ${w}: ${m}`); }
 const norm = (s: string) =>
   s.toLocaleLowerCase("de-DE").replace(/[^\p{L}\p{N}\s]/gu, " ").replace(/\s+/g, " ").trim();
 const wordsOf = (s: string) => norm(s).split(" ").filter(Boolean);
-const content = (ws: string[]) => ws.filter((w) => w.length > 3 && !SERBEST.has(w));
+
+/**
+ * İngilizce işlev sözcükleri — `SERBEST`in İngilizce karşılığı.
+ *
+ * Neden gerekli: "içerik sözcüğü" tanımı hem birebir alıntı ölçütünde hem
+ * çeldirici demirlemesinde kullanılıyor ve "dörtten uzun ve işlev sözcüğü
+ * değil" diye kuruluyor. Almanca liste İngilizce metne uygulandığında
+ * `that`, `with`, `have`, `been`, `they`, `which`, `there` içerik sözcüğü
+ * sayılıyor; bir şık metinle yalnız `which` paylaşsa bile "demirlenmiş"
+ * görünüyor ve ölçüt sessizce kör kalıyordu.
+ */
+const SERBEST_EN = new Set(`a an the this that these those there here
+i you he she it we they me him her us them my your his its our their mine yours
+and or but so because if when while although though unless until since as than
+of in on at to for with from by about into over under after before during between
+is are was were be been being am do does did done doing have has had having
+will would shall should can could may might must going used
+not no nor only just also very too much many more most some any all both each every
+what which who whom whose where why how whether
+one two three four five six seven eight nine ten
+percent euro pound dollar hour hours day days week weeks month months year years
+mr mrs ms dear sincerely regards hello thanks thank please
+yes true false right wrong
+own same other another such then now still even ever never always often
+get got gets make makes made take takes took give gives gave
+say says said tell tells told go goes went come comes came
+know knows knew think thinks thought want wants wanted need needs needed
+like likes liked look looks looked find finds found`.split(/\s+/).filter(Boolean));
+
+/** Kâğıdın diline göre işlev sözcüğü kümesi. */
+const freeWords = (course: string) => (course === "en" ? SERBEST_EN : SERBEST);
+const content = (ws: string[], course: string) => {
+  const free = freeWords(course);
+  return ws.filter((w) => w.length > 3 && !free.has(w));
+};
 
 /** İki sözcük dizisinin paylaştığı en uzun ardışık parça (kelime sayısı). */
 function longestShared(a: string[], b: string[]): number {
@@ -80,7 +114,7 @@ function sourceFor(task: MockTask, item: MockItem): string {
 
 /* ── 1 + 2: alıntı ve çeldirici demirlemesi ───────────────────────────────── */
 
-function checkItemCraft(where: string, task: MockTask, item: MockItem, visible: boolean) {
+function checkItemCraft(where: string, task: MockTask, item: MockItem, visible: boolean, course: string) {
   if (item.kind !== "mcq") return;
   // Şıklı boşluk doldurmada şıklar bağlaç ya da işlev sözcüğü; ne birebir
   // alıntı ne de demirleme ölçütü bu biçimde bir şey söyler.
@@ -150,7 +184,7 @@ function checkItemCraft(where: string, task: MockTask, item: MockItem, visible: 
     sözlüğü değil.
   */
   const anchored = item.options.map((o) => {
-    const co = content(wordsOf(o));
+    const co = content(wordsOf(o), course);
     return co.length ? co.some((w) => sw.includes(w)) : true;
   });
   const distractorsAnchored = anchored.filter((_, i) => i !== item.answer).some(Boolean);
@@ -161,28 +195,87 @@ function checkItemCraft(where: string, task: MockTask, item: MockItem, visible: 
 
 /* ── 3: anahtar yığılması (bölüm düzeyinde) ───────────────────────────────── */
 
+/**
+ * Şık sayısı başına AYRI torba.
+ *
+ * Üç ve dört şıklı maddeler aynı torbada sayılamaz: üç şıklıda beklenen pay
+ * %33, dört şıklıda %25 ve karıştırıldıklarında ikisi de bulanıklaşır.
+ * Önceden yalnız üç şıklılar sayılıyordu, dört şıklılar HİÇ denetlenmiyordu —
+ * İngilizce kâğıtların şıklı boşluk ve uzun metin görevleri dört şıklı olduğu
+ * için orada denetim baştan kör kalırdı. Almanca C1'in şıklı boşluk görevi de
+ * aynı boşluğa düşüyordu.
+ */
 function checkKeySpread(where: string, part: MockPart) {
-  const counts = new Map<number, number>();
-  let n = 0;
-  for (const task of part.tasks) {
-    for (const it of task.items) {
-      if (it.kind !== "mcq") continue;
-      // Üç ve dört şıklı maddeler aynı torbada sayılmaz; yalnız üç şıklılar.
-      if (it.options.length !== 3) continue;
-      counts.set(it.answer, (counts.get(it.answer) ?? 0) + 1);
-      n++;
+  for (const size of [3, 4]) {
+    const counts = new Map<number, number>();
+    let n = 0;
+    for (const task of part.tasks) {
+      for (const it of task.items) {
+        if (it.kind !== "mcq" || it.options.length !== size) continue;
+        counts.set(it.answer, (counts.get(it.answer) ?? 0) + 1);
+        n++;
+      }
     }
+    if (n < 10) continue;
+    /*
+      Eşik iki torbada da %45. Dört şıklıda beklenen pay %25 olduğu için daha
+      sıkı bir sayı (ör. %35) savunulabilir görünüyor ama gerçek kâğıtlarda
+      madde sayısı küçük: on beş maddede altı kez "a" çıkması hem doğal
+      dalgalanma hem de %40 demek. Sıkı eşik, kâğıdı bozmayan dağılımları
+      işaretleyip uyarıyı gürültüye çevirirdi.
+    */
+    const limit = 45;
+    for (const [pos, c] of counts) {
+      const pct = Math.round((100 * c) / n);
+      if (pct > limit) warn(where, `${size} şıklı maddelerin %${pct}'inde doğru cevap ${"abcd"[pos]} (${n} madde) — tek harf işaretleyen fazla puan alır`);
+    }
+    // Hiç kullanılmayan konum: öğrenci farkında olmadan o şıkkı elemeyi öğrenir.
+    for (let p = 0; p < size; p++) if (!counts.get(p)) warn(where, `${size} şıklı maddelerin hiçbirinde doğru cevap ${"abcd"[p]} değil`);
   }
-  if (n < 10) return;
-  for (const [pos, c] of counts) {
-    const pct = Math.round((100 * c) / n);
-    if (pct > 45) warn(where, `üç şıklı maddelerin %${pct}'inde doğru cevap ${"abc"[pos]} (${n} madde) — tek harf işaretleyen fazla puan alır`);
-  }
-  // Hiç kullanılmayan konum: öğrenci farkında olmadan o şıkkı elemeyi öğrenir.
-  for (let p = 0; p < 3; p++) if (!counts.get(p)) warn(where, `üç şıklı maddelerin hiçbirinde doğru cevap ${"abc"[p]} değil`);
 }
 
 /* ── 4: seviye imzaları ───────────────────────────────────────────────────── */
+
+type Signature = { re: RegExp; ad: string };
+
+/**
+ * İngilizce seviye imzaları.
+ *
+ * Almanca imzalar biçimbilime dayanıyor (ge-…-t, Konjunktiv II ekleri);
+ * İngilizcede çekim zayıf olduğu için imzalar SÖZDİZİMİNE dayanmak zorunda:
+ * yardımcı fiil + ortaç dizilimi, bağlaç seçimi, devrik yapı. Bu yüzden
+ * kalıplar daha uzun ve daha bağlam duyarlı — kısa bir ek aramak İngilizcede
+ * her metinde tutar ve hiçbir şey ölçmez.
+ *
+ * A1'in imzası yok, Almancada da yok: A1 metni "hangi yapıyı içeriyor" diye
+ * değil "hangi yapıyı İÇERMİYOR" diye ölçülür ve onu `OVER_LEVEL` yapıyor.
+ */
+const SIGNATURE_EN: Record<string, Signature[]> = {
+  A2: [
+    { re: /\b(was|were|went|had|did|saw|took|came|made|got|bought|found)\b/i, ad: "past simple" },
+    { re: /\b(going to|will)\s+\w+/i, ad: "gelecek (going to / will)" },
+    { re: /\b(\w+er than|more \w+ than|the \w+est|the most \w+)\b/i, ad: "karşılaştırma" },
+    { re: /\b(because|when|if|but|so)\b/i, ad: "yan cümle bağlacı" },
+  ],
+  B1: [
+    { re: /\b(have|has|haven't|hasn't)\s+(?:\w+\s+){0,2}(been|\w+ed|done|gone|seen|made|taken|found|written|given)\b/i, ad: "present perfect" },
+    { re: /,\s*(who|which|where|whose)\s/i, ad: "ilgi cümlesi" },
+    { re: /\bif\b[^.!?]{0,60}\b(will|would|could)\b/i, ad: "koşul cümlesi" },
+    { re: /\b(used to|although|however|instead of|as soon as)\b/i, ad: "ileri bağlaç / alışkanlık geçmişi" },
+  ],
+  B2: [
+    { re: /\b(is|are|was|were|been|being|be)\s+(?:\w+\s+){0,2}(\w+ed|made|taken|given|held|known|shown|built|sold|written)\b\s+(?:by|in|on|at|to|for|with|from|as|and|,|\.)/i, ad: "edilgen" },
+    { re: /\b(whereas|nonetheless|nevertheless|albeit|moreover|furthermore|despite|in contrast)\b/i, ad: "ileri bağlayıcı" },
+    { re: /\bif\b[^.!?]{0,60}\bhad\b[^.!?]{0,40}\bwould have\b|\bwould have\b[^.!?]{0,60}\bif\b[^.!?]{0,40}\bhad\b/i, ad: "üçüncü tip koşul" },
+    { re: /(^|[.!?]\s|,\s)(?:Having|Given|Faced|Asked|Based|Followed|Seen|Left|Driven|Compared|Encouraged)\s+\w+/, ad: "ortaç öbeği" },
+  ],
+  C1: [
+    { re: /\b(rarely|seldom|hardly|scarcely|no sooner|not only|little did|only then|only when|at no point)\b\s+(?:had|has|have|did|do|does|is|are|was|were|can|could|will|would)\b/i, ad: "devrik yapı" },
+    { re: /\b(it (?:is|was|has been) (?:precisely |exactly |largely |partly )?\w[\w\s]{0,30} that\b|what \w[\w\s]{0,30} (?:is|was|does|did) \w)/i, ad: "yarma cümle" },
+    { re: /\b(arguably|ostensibly|by no means|to some extent|on balance|in principle|for the most part|not least)\b/i, ad: "çekimserlik belirteci" },
+    { re: /\b(the (?:emergence|assumption|implication|distinction|expectation|reluctance|tendency|prevalence|allocation|erosion) of|its (?:emergence|prevalence|distribution))\b/i, ad: "adlaştırma" },
+  ],
+};
 
 const SIGNATURE: Record<string, { re: RegExp; ad: string }[]> = {
   A2: [
@@ -207,13 +300,18 @@ const SIGNATURE: Record<string, { re: RegExp; ad: string }[]> = {
   ],
 };
 
-function checkSignature(paper: MockPaper) {
-  const sig = SIGNATURE[paper.level];
-  if (!sig) return;
-  const all = paper.parts
+/** Kâğıdın okuma ve dinleme metinlerinin tamamı — imza ve kelime ölçümleri buna bakıyor. */
+function corpusOf(paper: MockPaper): string {
+  return paper.parts
     .filter((p) => p.skill === "reading" || p.skill === "listening")
     .flatMap((p) => p.tasks.flatMap((t) => (t.texts ?? []).map(bodyOf)))
     .join("\n");
+}
+
+function checkSignature(paper: MockPaper) {
+  const sig = (paper.course === "en" ? SIGNATURE_EN : SIGNATURE)[paper.level];
+  if (!sig) return;
+  const all = corpusOf(paper);
   for (const s of sig) {
     if (!s.re.test(all)) bad(paper.id, `${paper.level} imzası hiç geçmiyor: ${s.ad} — metinler seviyeyi temsil etmiyor`);
   }
@@ -226,11 +324,49 @@ const LAST_UNIT: Record<string, number> = { A1: 25, A2: 25, B1: 45, B2: 25, C1: 
 /** Havuz dışı kelime oranı için üst sınır. B2/C1 ölçülür ama kapı yok. */
 const OUT_LIMIT: Record<string, number | null> = { A1: 18, A2: 26, B1: 38, B2: null, C1: null };
 
+/**
+ * İngilizce metinlerin YEDEK ölçütü — kelime kapısının yerine geçen şey.
+ *
+ * `scripts/lib/vocab-gate.cjs` İngilizceyi DESTEKLEMİYOR ve zorlanamaz:
+ * havuzu `data/app/words.json` (Almanca), sözcük regexleri `[a-zäöüß]`,
+ * biçimbilimi Almanca (ayrılabilen önek, ge-…-t ortacı, da-bileşiği) ve
+ * kümülatif küme `mobile/src/data/lessons/de-*.json` ders dosyalarından
+ * kuruluyor — İngilizce ders dosyası yalnız A1 ve A2 için var.
+ *
+ * Sessizce geçmek yerine ölçülebilir bir vekil kullanılıyor: ortalama sözcük
+ * uzunluğu ve uzun sözcük oranı. İkisi de sözlük zorluğuyla birlikte artar
+ * (Latince kökenli soyut sözcükler İngilizcede belirgin biçimde uzundur) ve
+ * seviyeden seviyeye tutarlı bir eşik verir. Kesin bir kapı değil; amacı bir
+ * A2 kâğıdına sızmış C1 sözlüğünü yakalamak.
+ */
+const EN_LEN_LIMIT: Record<string, { avg: number; longPct: number }> = {
+  A1: { avg: 4.5, longPct: 8 },
+  A2: { avg: 4.8, longPct: 12 },
+  B1: { avg: 5.2, longPct: 18 },
+  B2: { avg: 5.6, longPct: 26 },
+  C1: { avg: 6.1, longPct: 34 },
+};
+
+function checkVocabEn(paper: MockPaper): { pct: number; top: string[] } {
+  const ws = wordsOf(corpusOf(paper)).filter((w) => !/^\d+$/.test(w));
+  if (!ws.length) return { pct: 0, top: [] };
+  const avg = ws.reduce((a, w) => a + w.length, 0) / ws.length;
+  const long = ws.filter((w) => w.length >= 9);
+  const longPct = Math.round((100 * long.length) / ws.length);
+  const lim = EN_LEN_LIMIT[paper.level];
+  if (lim) {
+    if (avg > lim.avg) warn(paper.id, `ortalama sözcük uzunluğu ${avg.toFixed(2)} harf (${paper.level} sınırı ${lim.avg}) — sözlük seviyenin üstünde olabilir`);
+    if (longPct > lim.longPct) warn(paper.id, `9+ harfli sözcük oranı %${longPct} (${paper.level} sınırı %${lim.longPct}) — sözlük seviyenin üstünde olabilir`);
+  }
+  const freq = new Map<string, number>();
+  for (const w of long) freq.set(w, (freq.get(w) ?? 0) + 1);
+  const top = [...freq.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([w, n]) => `${w}×${n}`);
+  return { pct: longPct, top };
+}
+
 function checkVocab(paper: MockPaper): { pct: number; top: string[] } {
-  const texts = paper.parts
-    .filter((p) => p.skill === "reading" || p.skill === "listening")
-    .flatMap((p) => p.tasks.flatMap((t) => (t.texts ?? []).map(bodyOf)))
-    .join("\n");
+  if (paper.course === "en") return checkVocabEn(paper);
+  const texts = corpusOf(paper);
   const { tok, disi } = olc(texts, LAST_UNIT[paper.level] ?? 25, [], paper.level.toLowerCase());
   const pct = tok.length ? Math.round((100 * disi.length) / tok.length) : 0;
   const limit = OUT_LIMIT[paper.level];
@@ -254,7 +390,7 @@ function checkVocab(paper: MockPaper): { pct: number; top: string[] } {
   ters tırnak ya da metinde geçen bir sözcük) ya da somut bir sayı/oran
   veriyor. İkisi de yoksa açıklama "metinde öyle yazıyor"un uzun hâlidir.
 */
-function checkExplain(where: string, task: MockTask, item: MockItem) {
+function checkExplain(where: string, task: MockTask, item: MockItem, course: string) {
   const src = sourceFor(task, item);
   if (!src.trim()) return;
   const ex = item.explain;
@@ -265,7 +401,7 @@ function checkExplain(where: string, task: MockTask, item: MockItem) {
   const quoted = /[«»"„“`]/.test(ex);
   const numeric = /\d/.test(ex);
   const sw = new Set(wordsOf(src));
-  const shared = content(wordsOf(ex)).some((w) => sw.has(w));
+  const shared = content(wordsOf(ex), course).some((w) => sw.has(w));
   if (!quoted && !numeric && !shared) {
     warn(where, `açıklama sınanabilir bir dayanak taşımıyor (alıntı yok, sayı yok, metinden sözcük yok): "${ex.slice(0, 60)}…"`);
   }
@@ -273,10 +409,20 @@ function checkExplain(where: string, task: MockTask, item: MockItem) {
 
 /* ── 7: okuma hızı ────────────────────────────────────────────────────────── */
 
-/** Görev süresine düşen kelime — seviye başına makul üst sınır (kelime/dakika). */
-const WPM_LIMIT: Record<string, number> = { A1: 55, A2: 75, B1: 100, B2: 130, C1: 160 };
+/**
+ * Görev süresine düşen kelime — seviye başına makul üst sınır (kelime/dakika).
+ *
+ * İngilizce sınırlar yüksek çünkü ölçülen birim SÖZCÜK ve İngilizce sözcükler
+ * daha kısa: aynı içeriği okumak daha çok sözcük geçmeyi gerektiriyor. Almanca
+ * sayıyı İngilizce metne uygulamak, aslında rahat olan bir görevi "süre yetmez"
+ * diye işaretlerdi.
+ */
+const WPM_LIMIT: Record<string, Record<string, number>> = {
+  de: { A1: 55, A2: 75, B1: 100, B2: 130, C1: 160 },
+  en: { A1: 70, A2: 95, B1: 130, B2: 165, C1: 200 },
+};
 
-function checkPace(where: string, part: MockPart, level: string) {
+function checkPace(where: string, part: MockPart, level: string, course: string) {
   if (part.skill !== "reading") return;
   const secs = taskSeconds(part);
   part.tasks.forEach((task, i) => {
@@ -285,8 +431,9 @@ function checkPace(where: string, part: MockPart, level: string) {
       (task.options ?? []).reduce((a, o) => a + wordsOf(`${o.label} ${o.body ?? ""}`).length, 0);
     if (!n) return;
     const wpm = Math.round(n / (secs[i] / 60));
-    if (wpm > (WPM_LIMIT[level] ?? 200)) {
-      warn(`${where} · Teil ${task.no}`, `dakikada ${wpm} kelime okumak gerekiyor (${level} sınırı ${WPM_LIMIT[level]}) — süre yetmez`);
+    const limit = WPM_LIMIT[course]?.[level] ?? 200;
+    if (wpm > limit) {
+      warn(`${where} · Teil ${task.no}`, `dakikada ${wpm} kelime okumak gerekiyor (${level} sınırı ${limit}) — süre yetmez`);
     }
   });
 }
@@ -313,7 +460,7 @@ for (const paper of MOCK_PAPERS) {
     const w = `${paper.id} · ${part.skill}`;
     checkKeySpread(w, part);
     checkBoolBalance(w, part);
-    checkPace(w, part, paper.level);
+    checkPace(w, part, paper.level, paper.course);
     for (const task of part.tasks) {
       if (isOpenTask(task)) continue;
       // Metin öğrencinin önünde mi: okumada evet, dinlemede hayır. İki
@@ -321,15 +468,22 @@ for (const paper of MOCK_PAPERS) {
       const visible = part.skill === "reading" || part.skill === "writing";
       for (const item of task.items) {
         const iw = `${w} · Teil ${task.no} · madde ${item.no}`;
-        checkItemCraft(iw, task, item, visible);
-        checkExplain(iw, task, item);
+        checkItemCraft(iw, task, item, visible, paper.course);
+        checkExplain(iw, task, item, paper.course);
       }
     }
   }
-  rows.push(`  ${paper.id}  havuz dışı %${String(v.pct).padStart(2)}  en sık: ${v.top.join(" ")}`);
+  const etiket = paper.course === "en" ? "9+ harf   %" : "havuz dışı %";
+  rows.push(`  ${paper.id}  ${etiket}${String(v.pct).padStart(2)}  en sık: ${v.top.join(" ")}`);
 }
 
 console.log("\nKelime erişimi (okuma + dinleme metinleri):");
 console.log(rows.join("\n"));
+// Atlanan denetim sessiz kalmamalı: İngilizce kâğıtlarda havuz kapısı yerine
+// sözcük uzunluğu vekili çalışıyor ve okuyan bunu bilmeli.
+if (MOCK_PAPERS.some((p) => p.course === "en")) {
+  console.log("\n  Not: İngilizce kâğıtlarda havuz kapısı (vocab-gate) ÇALIŞMIYOR — gate Almancaya özgü.");
+  console.log("  Yerine sözcük uzunluğu vekili ölçülüyor: ortalama uzunluk ve 9+ harfli sözcük oranı.");
+}
 console.log(hard ? `\n${hard} ağır bulgu, ${soft} uyarı` : `\n0 ağır bulgu, ${soft} uyarı`);
 process.exit(hard ? 1 : 0);

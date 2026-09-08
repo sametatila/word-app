@@ -27,6 +27,7 @@ import {
   MOCK_SKILL_ORDER,
   partPoints,
   taskSeconds,
+  type MockCourse,
   type MockItem,
   type MockLevel,
   type MockPaper,
@@ -44,59 +45,139 @@ const warn = (where: string, msg: string) => { warnings++; console.warn(`! ${whe
  * Aynı seviyedeki her kâğıt bu yapıda olmalı. Sayılar gerçek sınavların
  * bölüm/görev dağılımına bakılarak belirlendi; değiştirilirse o seviyedeki
  * TÜM kâğıtlar birlikte değişir, yoksa denemeler kıyaslanamaz hale gelir.
+ *
+ * KURS BAŞINA AYRI PLAN. Almanca ve İngilizce sınav gelenekleri aynı seviyede
+ * farklı kâğıt kuruyor: İngilizce tarafta A2'den itibaren dil sistemi açıkça
+ * ölçülüyor (boşluklu metinler), B2'den itibaren kelime türetme ve anahtar
+ * sözcükle dönüştürme geliyor; bunların Almanca kâğıtlarda karşılığı yok.
+ * Tek bir tablo ikisini birden tarif edemez.
  */
 type PartPlan = { skill: MockSkill; minutes: number; tasks: number[] };
-const PLAN: Record<MockLevel, PartPlan[]> = {
-  A1: [
-    { skill: "reading", minutes: 25, tasks: [5, 5, 5] },
-    { skill: "listening", minutes: 20, tasks: [6, 4, 5] },
-    { skill: "writing", minutes: 20, tasks: [5, 0] },
-    { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
-  ],
-  A2: [
-    { skill: "reading", minutes: 30, tasks: [5, 5, 5, 5] },
-    { skill: "listening", minutes: 30, tasks: [5, 5, 5, 5] },
-    { skill: "writing", minutes: 30, tasks: [0, 0] },
-    { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
-  ],
-  B1: [
-    { skill: "reading", minutes: 65, tasks: [6, 6, 7, 7, 4] },
-    { skill: "listening", minutes: 40, tasks: [10, 5, 7, 8] },
-    { skill: "writing", minutes: 60, tasks: [0, 0, 0] },
-    { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
-  ],
-  B2: [
-    { skill: "reading", minutes: 65, tasks: [9, 6, 6, 6, 3] },
-    { skill: "listening", minutes: 40, tasks: [10, 6, 6, 8] },
-    { skill: "writing", minutes: 75, tasks: [0, 0] },
-    { skill: "speaking", minutes: 15, tasks: [0, 0] },
-  ],
-  C1: [
-    { skill: "reading", minutes: 70, tasks: [10, 10, 5] },
-    { skill: "listening", minutes: 40, tasks: [10, 15] },
-    { skill: "writing", minutes: 80, tasks: [0, 10] },
-    { skill: "speaking", minutes: 15, tasks: [0, 0] },
-  ],
+const PLAN: Record<MockCourse, Record<MockLevel, PartPlan[]>> = {
+  de: {
+    A1: [
+      { skill: "reading", minutes: 25, tasks: [5, 5, 5] },
+      { skill: "listening", minutes: 20, tasks: [6, 4, 5] },
+      { skill: "writing", minutes: 20, tasks: [5, 0] },
+      { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
+    ],
+    A2: [
+      { skill: "reading", minutes: 30, tasks: [5, 5, 5, 5] },
+      { skill: "listening", minutes: 30, tasks: [5, 5, 5, 5] },
+      { skill: "writing", minutes: 30, tasks: [0, 0] },
+      { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
+    ],
+    B1: [
+      { skill: "reading", minutes: 65, tasks: [6, 6, 7, 7, 4] },
+      { skill: "listening", minutes: 40, tasks: [10, 5, 7, 8] },
+      { skill: "writing", minutes: 60, tasks: [0, 0, 0] },
+      { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
+    ],
+    B2: [
+      { skill: "reading", minutes: 65, tasks: [9, 6, 6, 6, 3] },
+      { skill: "listening", minutes: 40, tasks: [10, 6, 6, 8] },
+      { skill: "writing", minutes: 75, tasks: [0, 0] },
+      { skill: "speaking", minutes: 15, tasks: [0, 0] },
+    ],
+    C1: [
+      { skill: "reading", minutes: 70, tasks: [10, 10, 5] },
+      { skill: "listening", minutes: 40, tasks: [10, 15] },
+      { skill: "writing", minutes: 80, tasks: [0, 10] },
+      { skill: "speaking", minutes: 15, tasks: [0, 0] },
+    ],
+  },
+  /*
+    İngilizce planı. Okuma bölümü aynı zamanda dil sistemi bölümü — gerçek
+    İngilizce sınavlarda da okuma ile dilbilgisi/kelime tek kâğıtta durur.
+    Ayrı bir beceri açmak (`MockSkill`e beşinci değer) veritabanındaki `skill`
+    kolonunu, istatistik kırılımlarını ve iki oynatıcıyı birden açardı;
+    kazancı ise `byTask` kırılımının zaten verdiği teşhis olurdu.
+  */
+  en: {
+    A1: [
+      { skill: "reading", minutes: 30, tasks: [5, 5, 4, 4] },
+      { skill: "listening", minutes: 20, tasks: [6, 4, 5] },
+      { skill: "writing", minutes: 20, tasks: [5, 0] },
+      { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
+    ],
+    A2: [
+      { skill: "reading", minutes: 35, tasks: [5, 5, 4, 5, 5] },
+      { skill: "listening", minutes: 30, tasks: [5, 5, 5, 5] },
+      { skill: "writing", minutes: 30, tasks: [0, 0] },
+      { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
+    ],
+    B1: [
+      { skill: "reading", minutes: 55, tasks: [5, 5, 5, 5, 5, 5] },
+      { skill: "listening", minutes: 35, tasks: [7, 6, 6, 6] },
+      { skill: "writing", minutes: 50, tasks: [0, 0] },
+      { skill: "speaking", minutes: 15, tasks: [0, 0, 0, 0] },
+    ],
+    B2: [
+      { skill: "reading", minutes: 70, tasks: [6, 6, 6, 4, 5, 4, 5] },
+      { skill: "listening", minutes: 40, tasks: [8, 8, 6, 8] },
+      { skill: "writing", minutes: 70, tasks: [0, 0] },
+      { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
+    ],
+    C1: [
+      { skill: "reading", minutes: 80, tasks: [6, 6, 6, 4, 4, 4, 4, 6] },
+      { skill: "listening", minutes: 40, tasks: [6, 8, 8, 8] },
+      { skill: "writing", minutes: 80, tasks: [0, 0] },
+      { skill: "speaking", minutes: 15, tasks: [0, 0, 0] },
+    ],
+  },
 };
 
-/** Seviyeye göre en uzun cümlenin kelime sınırı — aşarsa uyarı. */
-const MAX_SENTENCE: Record<MockLevel, number> = { A1: 16, A2: 22, B1: 30, B2: 42, C1: 58 };
+/**
+ * Seviyeye göre en uzun cümlenin kelime sınırı — aşarsa uyarı.
+ *
+ * İngilizce sınırlar daha yüksek ve bu bir gevşeme değil. Almanca aynı bilgiyi
+ * daha az sözcükle taşıyor: bileşik ad tek sözcük ("Anmeldeformular"), İngilizce
+ * karşılığı üç ("registration form for"). Aynı sayıyı iki dile uygulamak
+ * İngilizce metni haksız yere uzun gösterirdi.
+ */
+const MAX_SENTENCE: Record<MockCourse, Record<MockLevel, number>> = {
+  de: { A1: 16, A2: 22, B1: 30, B2: 42, C1: 58 },
+  en: { A1: 18, A2: 24, B1: 32, B2: 45, C1: 60 },
+};
 
 /**
  * Seviyenin üstünde kalan yapı işaretleri. Tam bir dilbilgisi denetimi değil;
  * kâğıda yanlışlıkla sızan üst seviye kalıbı yakalayan ucuz bir elek.
+ *
+ * İngilizce A1'de present perfect, edilgen, ilgi cümlesi ve koşul kipleri
+ * beklenmez; A2'de üçüncü tip koşul, ortaç öbeği ve devrik yapı beklenmez.
  */
-const OVER_LEVEL: Partial<Record<MockLevel, RegExp>> = {
-  A1: /\b(würde[nst]?|wäre[nst]?|hätte[nst]?|obwohl|trotzdem|jedoch|dessen|deren|worden|sofern|geworden wäre)\b/i,
-  A2: /\b(dessen|deren|worden|sofern|insofern|nichtsdestotrotz|hätte[nst]? gehabt)\b/i,
+const OVER_LEVEL: Record<MockCourse, Partial<Record<MockLevel, RegExp>>> = {
+  de: {
+    A1: /\b(würde[nst]?|wäre[nst]?|hätte[nst]?|obwohl|trotzdem|jedoch|dessen|deren|worden|sofern|geworden wäre)\b/i,
+    A2: /\b(dessen|deren|worden|sofern|insofern|nichtsdestotrotz|hätte[nst]? gehabt)\b/i,
+  },
+  en: {
+    A1: /\b(although|however|whereas|nevertheless|whose|despite|unless|had been|would have|(?:have|has)\s+(?:been|never|already|just)\b)/i,
+    A2: /\b(whereas|nevertheless|albeit|notwithstanding|had been|would have been|having\s+\w+ed\b|no sooner|not only had)\b/i,
+  },
 };
 
-/** Kâğıtlarda geçmemesi gereken kurum ve sınav adları. */
+/**
+ * Kâğıtlarda geçmemesi gereken kurum ve sınav adları.
+ *
+ * Kısaltmalar bilerek yok. `BRAND_RE` sözcük sınırıyla arıyor ve "pet", "key",
+ * "first", "ise" gibi kısaltmalar İngilizcede sıradan sözcükler: onları listeye
+ * koymak her kâğıtta yanlış alarm üretirdi. Yerine tek anlamlı ÖBEKLER var.
+ * Kurum adlarının kendisi ("cambridge", "trinity", "pearson") listede duruyor;
+ * bu, kâğıtlarda o sözcükleri şehir ya da kişi adı olarak da kullanmamak
+ * demektir ve kasıtlı — bir sınav kâğıdında geçen "Cambridge" okuyucuya her
+ * durumda markayı çağrıştırır.
+ */
 const BRANDS = [
   "goethe", "telc", "ösd", "oesd", "testdaf", "test daf", "dsh", "dtz", "öif", "oeif",
   "start deutsch", "fit in deutsch", "modellsatz", "übungssatz", "uebungssatz",
   "kandidatenblätter", "prüferblätter", "zertifikat b1", "zertifikat b2", "zertifikat a2",
   "deutsch-test für zuwanderer", "g.a.s.t", "zfa", "onset",
+  "cambridge", "ielts", "toefl", "toeic", "aptis", "trinity", "languagecert",
+  "pearson", "pte", "esol", "ukvi", "ets", "british council", "idp", "linguaskill",
+  "key english test", "preliminary english test", "first certificate",
+  "certificate in advanced english", "certificate of proficiency", "use of english",
 ];
 const BRAND_RE = new RegExp(`(^|[^\\p{L}])(${BRANDS.map((b) => b.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})($|[^\\p{L}])`, "iu");
 
@@ -143,12 +224,43 @@ function checkItem(where: string, item: MockItem, task: MockTask) {
     if (item.accept.some((a) => !a.trim())) fail(where, "kabul listesinde boş giriş var");
     const norm = item.accept.map((a) => a.trim().toLowerCase());
     if (new Set(norm).size !== norm.length) fail(where, "kabul listesinde tekrar var");
+
+    if (task.format === "transform") {
+      /*
+        Dönüştürme maddesinin iki kuralı var ve ikisi de görevin ne ölçtüğünü
+        belirliyor. Anahtar sözcük DEĞİŞTİRİLMEDEN kullanılmalı — değişebilseydi
+        madde "aynı anlamı başka türlü söyle"ye dönerdi ve hedef yapı ölçülmezdi.
+        Cevap iki ile beş sözcük arası olmalı: tek sözcük dönüştürme değil boşluk
+        doldurmadır, beşten uzunu ise cümlenin yarısını yeniden yazdırır ve
+        kabul listesi tutulamaz hale gelir.
+      */
+      if (!item.cue?.trim()) fail(where, "dönüştürme maddesinde anahtar sözcük (cue) yok");
+      else {
+        const cue = item.cue.trim().toLowerCase();
+        for (const a of item.accept) {
+          if (!new RegExp(`(^|\\s)${cue.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|\\s)`).test(a.toLowerCase())) {
+            fail(where, `kabul edilen cevap anahtar sözcüğü aynen taşımıyor: "${a}" içinde "${item.cue}" yok`);
+          }
+          const n = a.trim().split(/\s+/).filter(Boolean).length;
+          if (n < 2 || n > 5) fail(where, `kabul edilen cevap ${n} sözcük ("${a}") — 2 ile 5 arası olmalı`);
+        }
+      }
+      if (!item.text.includes("\n")) fail(where, "dönüştürme maddesinde kaynak ve hedef cümle satır sonuyla ayrılmalı");
+    }
+    // Kelime türetmede kök büyük harfle yazılır ve cevabın kendisi olamaz:
+    // kök ile cevap aynıysa madde bir türetme değil bir kopyalama ister.
+    if (task.format === "gap" && item.text.trim() && /^[A-ZÄÖÜ][A-ZÄÖÜ\s-]*$/.test(item.text.trim())) {
+      const root = item.text.trim().toLowerCase();
+      if (item.accept.some((a) => a.trim().toLowerCase() === root)) {
+        fail(where, `kelime türetmede cevap kökün kendisi ("${item.text.trim()}") — madde hiçbir şey ölçmüyor`);
+      }
+    }
   }
 }
 
 /* ── görev denetimi ─────────────────────────────────────────────────────── */
 
-function checkTask(where: string, task: MockTask, level: MockLevel) {
+function checkTask(where: string, task: MockTask, level: MockLevel, course: MockCourse) {
   if (!task.prompt.trim() || !task.promptTr.trim()) fail(where, "görev yönergesi eksik (prompt / promptTr)");
 
   const textIds = (task.texts ?? []).map((t) => t.id);
@@ -173,15 +285,37 @@ function checkTask(where: string, task: MockTask, level: MockLevel) {
   if (task.format === "match") {
     const opts = task.options ?? [];
     if (!opts.length) fail(where, "eşleştirme görevinde şık bankası yok");
-    if (opts.length < task.items.length + 1) {
-      fail(where, `şık bankası ${opts.length}, madde ${task.items.length} — en az bir çeldirici şık olmalı`);
-    }
     const keys = opts.map((o) => o.key);
     if (new Set(keys).size !== keys.length) fail(where, "şık bankasında aynı harf iki kez var");
     const answers = task.items.filter((i) => i.kind === "match").map((i) => i.answer as string);
-    if (new Set(answers).size !== answers.length) fail(where, "iki madde aynı şıkkı istiyor (her şık en fazla bir kez)");
+
+    if (task.reuseOptions) {
+      /*
+        Şık tekrarlı eşleştirme (İngilizce çoklu eşleştirme): dört metne altı
+        soru sorulur, her metin birkaç kez cevap olur. Çeldirici şık ve
+        "her şık bir kez" kuralları burada anlamsız — yerine görevi çürüten
+        iki başka dizilim aranıyor.
+      */
+      const used = new Set(answers);
+      for (const o of opts) if (!used.has(o.key)) fail(where, `"${o.key}" şıkkı hiçbir maddenin cevabı değil — ölü şık`);
+      const counts = new Map<string, number>();
+      for (const a of answers) counts.set(a, (counts.get(a) ?? 0) + 1);
+      const cap = Math.ceil(answers.length / 2);
+      for (const [k, n] of counts) {
+        if (n > cap) fail(where, `"${k}" şıkkı ${answers.length} maddenin ${n} tanesinin cevabı (en çok ${cap}) — görev tek metne yığılmış`);
+      }
+      if (opts.length < 2) fail(where, `şık bankası ${opts.length} — tekrarlı eşleştirmede en az iki şık olmalı`);
+    } else {
+      if (opts.length < task.items.length + 1) {
+        fail(where, `şık bankası ${opts.length}, madde ${task.items.length} — en az bir çeldirici şık olmalı`);
+      }
+      if (new Set(answers).size !== answers.length) fail(where, "iki madde aynı şıkkı istiyor (her şık en fazla bir kez)");
+    }
   } else if (task.options?.length) {
     fail(where, "şık bankası yalnız eşleştirme görevinde olur");
+  }
+  if (task.reuseOptions && task.format !== "match") {
+    fail(where, "şık tekrarı bayrağı yalnız eşleştirme görevinde anlamlı");
   }
 
   // Boşluklu metin: işaretler ile maddeler birebir örtüşmeli. Biçimden
@@ -295,9 +429,10 @@ function checkTask(where: string, task: MockTask, level: MockLevel) {
   // Metin uzunluğu ve seviye elemesi.
   for (const t of task.texts ?? []) {
     const body = t.kind === "text" ? t.body : t.segments.map((s) => s.text).join(" ");
-    const long = sentences(body).find((s) => words(s) > MAX_SENTENCE[level]);
-    if (long) warn(`${where} · ${t.id}`, `cümle ${words(long)} kelime (${level} sınırı ${MAX_SENTENCE[level]}): "${long.slice(0, 70)}…"`);
-    const over = OVER_LEVEL[level]?.exec(body);
+    const maxSentence = MAX_SENTENCE[course][level];
+    const long = sentences(body).find((s) => words(s) > maxSentence);
+    if (long) warn(`${where} · ${t.id}`, `cümle ${words(long)} kelime (${level} sınırı ${maxSentence}): "${long.slice(0, 70)}…"`);
+    const over = OVER_LEVEL[course][level]?.exec(body);
     if (over) warn(`${where} · ${t.id}`, `${level} üstü yapı: "${over[0]}"`);
     for (const g of t.gloss ?? []) if (!g.de.trim() || !g.tr.trim()) fail(`${where} · ${t.id}`, "sözlükçe maddesinde eksik dil");
   }
@@ -305,7 +440,7 @@ function checkTask(where: string, task: MockTask, level: MockLevel) {
 
 /* ── bölüm ve kâğıt ─────────────────────────────────────────────────────── */
 
-function checkPart(where: string, part: MockPart, level: MockLevel, plan: PartPlan) {
+function checkPart(where: string, part: MockPart, level: MockLevel, course: MockCourse, plan: PartPlan) {
   if (part.minutes !== plan.minutes) fail(where, `süre ${part.minutes} dk, plan ${plan.minutes} dk`);
 
   // Görev süreleri bölümün süresini tam doldurmalı: dijital oturumda saat
@@ -325,7 +460,7 @@ function checkPart(where: string, part: MockPart, level: MockLevel, plan: PartPl
       fail(`${where} · Teil ${task.no}`, `madde sayısı ${task.items.length}, plan ${need}`);
     }
     if (task.no !== ix + 1) fail(`${where} · Teil ${task.no}`, `görev numarası ${task.no}, sırası ${ix + 1}`);
-    checkTask(`${where} · Teil ${task.no}`, task, level);
+    checkTask(`${where} · Teil ${task.no}`, task, level, course);
   });
 
   // Madde numaraları bölüm boyunca 1..N kesintisiz.
@@ -338,11 +473,11 @@ function checkPart(where: string, part: MockPart, level: MockLevel, plan: PartPl
 
 function checkPaper(paper: MockPaper) {
   const w = paper.id;
-  if (!/^de-[a-c][12]-\d{2}$/.test(paper.id)) fail(w, "kimlik biçimi \"de-a1-01\" olmalı");
+  if (!/^(de|en)-[a-c][12]-\d{2}$/.test(paper.id)) fail(w, "kimlik biçimi \"de-a1-01\" ya da \"en-a1-01\" olmalı");
   if (!paper.id.startsWith(`${paper.course}-${paper.level.toLowerCase()}-`)) fail(w, "kimlik seviye/kurs ile uyuşmuyor");
   if (!paper.theme.trim() || !paper.themeTr.trim()) fail(w, "kâğıdın teması eksik");
 
-  const plan = PLAN[paper.level];
+  const plan = PLAN[paper.course][paper.level];
   if (paper.parts.length !== plan.length) fail(w, `bölüm sayısı ${paper.parts.length}, plan ${plan.length}`);
   const order = paper.parts.map((p) => p.skill);
   if (JSON.stringify(order) !== JSON.stringify(MOCK_SKILL_ORDER)) fail(w, `bölüm sırası ${order.join(",")} (Lesen, Hören, Schreiben, Sprechen olmalı)`);
@@ -352,7 +487,7 @@ function checkPaper(paper: MockPaper) {
 
   paper.parts.forEach((part, ix) => {
     const pp = plan.find((p) => p.skill === part.skill) ?? plan[ix];
-    checkPart(`${w} · ${part.skill}`, part, paper.level, pp);
+    checkPart(`${w} · ${part.skill}`, part, paper.level, paper.course, pp);
   });
 
   // Marka taraması — kâğıdın her dizesi.
