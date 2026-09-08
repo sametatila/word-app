@@ -16,6 +16,8 @@ import { PageBack } from "@/components/page-back";
 import { Disclosure } from "@/components/disclosure";
 import { SettingRow } from "@/components/setting-row";
 import { ThemeSetting } from "@/components/theme-toggle";
+import { useT, useLang } from "@/lib/i18n/client";
+import { courseName, courseSub } from "@/lib/courses";
 import { LangSetting } from "@/components/lang-setting";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 import { track } from "@/lib/track";
@@ -32,17 +34,22 @@ type Initial = {
   totalXp: number;
 };
 
-const COURSES = [
-  { id: "de", label: "Almanca", sub: "Hochdeutsch" },
-  { id: "gsw-zh", label: "Zürih Almancası", sub: "Züritüütsch" },
-];
+/**
+ * Ayarlarda seçilebilen kurslar.
+ *
+ * Ad ve alt satır artık BURADA yazılı değil: kurs kayıt defterinden
+ * (`lib/courses`) arayüz diline göre okunuyor. Sabit yazılıyken arayüz
+ * İngilizceye alındığında bile "Almanca / Hochdeutsch" diyordu.
+ */
+const COURSES = [{ id: "de" }, { id: "gsw-zh" }];
 
+/** Seviyeler — açıklama sözlükten, kod (A1…C1) dilden bağımsız. */
 const LEVELS = [
-  { id: "A1", label: "A1", desc: "Yeni başlıyorum" },
-  { id: "A2", label: "A2", desc: "Temel günlük dili biliyorum" },
-  { id: "B1", label: "B1", desc: "Kendimi genel konularda ifade ederim" },
-  { id: "B2", label: "B2", desc: "İş ve toplum dilini anlarım" },
-  { id: "C1", label: "C1", desc: "Akademik ve soyut dile hâkimim" },
+  { id: "A1", label: "A1", descKey: "onboarding.i_m_just_starting_out" },
+  { id: "A2", label: "A2", descKey: "level.a2_desc" },
+  { id: "B1", label: "B1", descKey: "level.b1_desc" },
+  { id: "B2", label: "B2", descKey: "level.b2_desc" },
+  { id: "C1", label: "C1", descKey: "level.c1_desc" },
 ];
 
 /**
@@ -66,6 +73,8 @@ export function ProfileForm({
   userId: string;
   authEnabled: boolean;
 }) {
+  const t = useT();
+  const lang = useLang();
   const [displayName, setDisplayName] = useState(initial.displayName);
   const [dailyGoal, setDailyGoal] = useState(initial.dailyGoal);
   const [newPerDay, setNewPerDay] = useState(initial.newPerDay);
@@ -122,7 +131,7 @@ export function ProfileForm({
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4">
-      <PageBack fallback="/profile" title="Ayarlar" subtitle="Öğrenme, uygulama ve hesap" />
+      <PageBack fallback="/profile" title={t("settings.settings")} />
 
       {/*
         AYARLAR İKİYE AYRILDI.
@@ -149,19 +158,19 @@ export function ProfileForm({
         etiket, altında yalnız o kavramın kartı. Etiket zaten ne olduğunu
         söylediği için kartın içindeki tekrar eden başlıklar da kalktı.
       */}
-      <Section title="HESAP">
+      <Section title={t("settings.account")}>
         <label className="block">
           <input
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
             maxLength={60}
-            placeholder="Adın"
+            placeholder={t("settings.display_name")}
             className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
           />
         </label>
       </Section>
 
-      <Section title="ÖĞRENİLECEK DİL">
+      <Section title={t("settings.language_to_learn")}>
         <div>
           {/* İki kurs telefonda da yan yana. `sm:grid-cols-2` dar ekranda tek
               sütuna düşüyordu ve iki kısa etiket için iki tam satır harcıyordu. */}
@@ -177,8 +186,8 @@ export function ProfileForm({
                 }}
                 className={`option px-3 py-3 text-left ${course === c.id ? "option-correct" : ""}`}
               >
-                <span className="block text-sm font-bold">{c.label}</span>
-                <span className="muted block text-xs">{c.sub}</span>
+                <span className="block text-strong">{courseName(c.id, lang)}</span>
+                <span className="muted block text-caption">{courseSub(c.id, lang)}</span>
               </button>
             ))}
           </div>
@@ -190,13 +199,13 @@ export function ProfileForm({
                 color: "var(--color-brand)",
               }}
             >
-              Kelimeler ve tekrar kuyruğun yeni kursa geçer. Diğer kurs silinmez.
+              {t("settings.course_switch_note")}
             </p>
           ) : null}
         </div>
       </Section>
 
-      <Section title="SEVİYE">
+      <Section title={t("settings.level")}>
         <div>
           {/* Beş seviye tek satırda. `sm:grid-cols-5` telefonda tek sütuna
               düşüyor ve "A1".."C1" gibi iki karakterlik etiketler için beş tam
@@ -210,7 +219,7 @@ export function ProfileForm({
                 className={`option px-1 py-2.5 text-sm font-bold ${
                   level === l.id ? "option-correct" : ""
                 }`}
-                title={l.desc}
+                title={t(l.descKey)}
               >
                 {l.label}
               </button>
@@ -221,13 +230,13 @@ export function ProfileForm({
               dört satır yer kaplıyordu. Kalan tek ek bilgi kullanıcıyı
               ilgilendiren tek şey: bu düğmeyi ondan başkası çevirmiyor. */}
           <p className="muted mt-1.5 text-xs">
-            {LEVELS.find((l) => l.id === level)?.desc}. Seviyeni <strong>yalnızca sen</strong>{" "}
-            değiştirirsin.
+            {t(LEVELS.find((l) => l.id === level)?.descKey ?? "")}.{" "}
+            {t("settings.only_you_change_level")}
           </p>
         </div>
       </Section>
 
-      <Section title="OKUMA SESİ">
+      <Section title={t("settings.reading_voice")}>
         <div>
           <VoicePicker
             course={course}
@@ -238,23 +247,23 @@ export function ProfileForm({
         </div>
       </Section>
 
-      <Section title="GÜNLÜK HEDEF">
+      <Section title={t("settings.daily_goal_reviews_day")}>
         <Slider
-          label="Günlük tekrar hedefi"
+          label={t("settings.daily_goal_short")}
           value={dailyGoal}
           min={5}
           max={120}
           step={5}
-          suffix="tekrar"
+          suffix={t("settings.reviews_unit")}
           onChange={setDailyGoal}
         />
         <Slider
-          label="Günde yeni kelime"
+          label={t("settings.new_per_day")}
           value={newPerDay}
           min={0}
           max={40}
           step={1}
-          suffix="kelime"
+          suffix={t("settings.words_unit")}
           onChange={setNewPerDay}
         />
         {/* Tekrar mantığı eskiden ayrı bir "Tekrar sistemi" kartındaydı: dört
@@ -262,9 +271,7 @@ export function ProfileForm({
             ayarlayan kişinin merak ettiği tek şey o sayının neyi belirlediği.
             Kaydırıcıların ÜSTÜNDEYDİ ve negatif boşluk yüzünden ilk etiketin
             üstüne biniyordu; notun yeri zaten anlattığı şeyin altı. */}
-        <p className="muted -mt-1 text-xs">
-          Tekrar zamanları cevabının hızına ve doğruluğuna göre kendiliğinden hesaplanır.
-        </p>
+        <p className="muted -mt-1 text-caption">{t("settings.srs_note")}</p>
       </Section>
 
       <div className="mx-auto w-full max-w-3xl">
@@ -274,7 +281,7 @@ export function ProfileForm({
             disabled={saving || !nameOk}
             className="btn btn-primary px-6 py-3 disabled:opacity-60"
           >
-            {saving ? "Kaydediliyor…" : "Kaydet"}
+            {saving ? t("settings.saving") : t("common.save")}
           </button>
           {saved ? (
             <motion.span
@@ -282,7 +289,7 @@ export function ProfileForm({
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center gap-1 text-sm font-semibold text-[color:var(--color-mint)]"
             >
-              <CheckIcon size={16} /> Kaydedildi
+              <CheckIcon size={16} /> {t("settings.saved")}
             </motion.span>
           ) : null}
         </div>
@@ -302,13 +309,13 @@ export function ProfileForm({
       {/* Uygulama ayarları tek kartta, ayırıcı çizgilerle. Sıra bir kuralı
           izliyor: iPhone'da bildirim ancak uygulama ana ekrana eklenmişken
           çalışıyor, o yüzden kurulum bildirimden önce geliyor. */}
-      <Section title="UYGULAMA" bare>
+      <Section title={t("settings.app")} bare>
         {/* Kurulum rehberi açılır kutuda. Üç numaralı adım, cihaz seçici ve
             açıklama metni 330 piksel tutuyordu ve bu, hayatta BİR KEZ yapılan
             bir işin yönergesi — zaten kurmuş olan kullanıcı her ayar açılışında
             onu geçmek zorunda kalıyordu. */}
         <div className="p-5">
-          <Disclosure title="Ana ekrana ekle" hint="tam ekran, çevrimdışı">
+          <Disclosure title={t("settings.add_to_home")} hint={t("settings.add_to_home_hint")}>
             <InstallGuide tone="plain" />
           </Disclosure>
         </div>
@@ -328,11 +335,11 @@ export function ProfileForm({
       </Section>
 
       {/* Gizlilik: analitik anahtarı ve hukuki metinler (Play: politika uygulama içinden erişilebilir olmalı). */}
-      <Section title="GİZLİLİK" bare>
+      <Section title={t("settings.privacy")} bare>
         <AnalyticsSettings bare />
-        <SettingRow title="Gizlilik ve şartlar" sub="Hangi veriyi neden işlediğimiz, hakların">
-          <Link href="/privacy" prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">Gizlilik</Link>
-          <Link href="/terms" prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">Şartlar</Link>
+        <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
+          <Link href="/privacy" prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.privacy_policy")}</Link>
+          <Link href="/terms" prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.terms_of_use")}</Link>
         </SettingRow>
       </Section>
 
@@ -342,11 +349,11 @@ export function ProfileForm({
       {/* Hesap da satır. "Giriş yaptın, ilerlemen senkron" cümlesi kalıyor
           çünkü çıkış yapmadan önce bilinmesi gereken tek şey o; ama iki satır
           metin ve tam genişlikte bir düğme için 172 piksel gerekmiyordu. */}
-      <Section title="OTURUM" bare>
+      <Section title={t("settings.session")} bare>
         {authEnabled ? (
           <SettingRow
-            title="Hesap"
-            sub={`${accountName ? `${accountName} olarak girdin` : "Giriş yaptın"} · ilerlemen tüm cihazlarında senkron`}
+            title={t("settings.account_row")}
+            sub={t("settings.account_sub", { name: accountName ?? "" })}
           >
             <button
               onClick={async () => {
@@ -362,19 +369,19 @@ export function ProfileForm({
               disabled={signingOut}
               className="btn btn-ghost h-9 px-3.5 text-xs disabled:opacity-60"
             >
-              {signingOut ? "Çıkılıyor…" : "Çıkış yap"}
+              {signingOut ? t("settings.signing_out") : t("profile.log_out")}
             </button>
           </SettingRow>
         ) : (
           <SettingRow
-            title="Demo modu"
-            sub="Neon Auth anahtarları eklendiğinde giriş ve çoklu cihaz senkronizasyonu kendiliğinden açılır."
+            title={t("settings.demo_mode")}
+            sub={t("settings.demo_mode_sub")}
           />
         )}
         {authEnabled ? (
-          <SettingRow title="Hesabı sil" sub="Tüm verilerinle birlikte, geri alınamaz.">
+          <SettingRow title={t("settings.delete_account")} sub={t("settings.with_all_your_data_can_t_be")}>
             <Link href="/account/delete" prefetch={false} className="btn btn-ghost h-9 px-3.5 text-xs" style={{ color: "var(--color-rose-500)" }}>
-              Sil
+              {t("common.delete")}
             </Link>
           </SettingRow>
         ) : null}

@@ -90,6 +90,11 @@ export function courseName(courseId: string | null | undefined, lang: NativeLang
   return courseOrDefault(courseId).label[lang];
 }
 
+/** Kursun alt satırı (lehçe/kapsam), verilen arayüz dilinde. */
+export function courseSub(courseId: string | null | undefined, lang: NativeLang): string {
+  return courseOrDefault(courseId).sub[lang];
+}
+
 const BY_ID = new Map<string, Course>(COURSES.map((c) => [c.id, c]));
 
 export function isCourseId(value: string): value is CourseId {

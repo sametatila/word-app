@@ -53,9 +53,17 @@ export type Voice = {
   id: VoiceId;
   /** Arayüzde görünen ad. */
   label: string;
-  gender: "kadın" | "erkek";
+  /**
+   * Sesin cinsiyeti — KİMLİK, gösterilecek metin değil.
+   *
+   * Değerler Türkçe sözcüklerdi ("kadın" | "erkek") ve doğrudan ekrana
+   * basılıyordu: tip sistemi bir dili dayatıyor, arayüz İngilizce olduğunda
+   * ses seçicide yine Türkçe çıkıyordu. `Band` ile aynı hata, aynı çözüm.
+   */
+  gender: "female" | "male";
   /** Kullanıcıya bu sesin farkını anlatan tek cümle. */
-  note: string;
+  /** Sesi anlatan tek satırın SÖZLÜK ANAHTARI (metnin kendisi değil). */
+  noteKey: string;
   course: "de" | "gsw-zh" | "en";
 };
 
@@ -68,47 +76,47 @@ export const VOICES: Voice[] = [
   {
     id: "de-DE-KatjaNeural",
     label: "Katja",
-    gender: "kadın",
-    note: "Net ve anlaşılır; en hızlı gelen kadın ses",
+    gender: "female",
+    noteKey: "voice.de_de_katjaneural.note",
     course: "de",
   },
   {
     id: "de-DE-ConradNeural",
     label: "Conrad",
-    gender: "erkek",
-    note: "Tok ve sakin; en hızlı gelen erkek ses",
+    gender: "male",
+    noteKey: "voice.de_de_conradneural.note",
     course: "de",
   },
   {
     id: "de-CH-LeniNeural",
     label: "Leni",
-    gender: "kadın",
+    gender: "female",
     // Zürih kursunun asıl kazancı bu ses: Dieth yazımı fonetik olduğu için
     // gerçekten İsviçre Almancası konuşan bir ses lehçe metnini doğru okuyor.
-    note: "Gerçekten İsviçre Almancası konuşur",
+    noteKey: "voice.de_ch_lenineural.note",
     course: "gsw-zh",
   },
   {
     id: "de-CH-JanNeural",
     label: "Jan",
-    gender: "erkek",
+    gender: "male",
     // Dürüst olmak gerekiyor: Jan İsviçre aksanlı Hochdeutsch konuşuyor,
     // Leni kadar lehçeye yakın değil. Erkek sesi isteyen için var.
-    note: "İsviçre aksanlı; Leni kadar lehçeye yakın değil",
+    noteKey: "voice.de_ch_janneural.note",
     course: "gsw-zh",
   },
   {
     id: "en-US-JennyNeural",
     label: "Jenny",
-    gender: "kadın",
-    note: "Net ve doğal Amerikan aksanı",
+    gender: "female",
+    noteKey: "voice.en_us_jennyneural.note",
     course: "en",
   },
   {
     id: "en-US-GuyNeural",
     label: "Guy",
-    gender: "erkek",
-    note: "Sakin ve tok Amerikan aksanı",
+    gender: "male",
+    noteKey: "voice.en_us_guyneural.note",
     course: "en",
   },
 ];

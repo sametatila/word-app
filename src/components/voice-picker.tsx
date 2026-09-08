@@ -4,6 +4,7 @@ import { useState } from "react";
 import { voicesFor, resolveVoice, type VoiceId } from "@/lib/tts/voices";
 import { speakWithVoice } from "@/components/speak-button";
 import { CheckIcon, SpeakerIcon } from "@/components/icons";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Ses seçimi — hem ilk kurulumda hem profilde aynı bileşen.
@@ -40,6 +41,7 @@ export function VoicePicker({
    */
   compact?: boolean;
 }) {
+  const t = useT();
   const [playing, setPlaying] = useState<string | null>(null);
   const options = voicesFor(course);
   // Kurs değiştiğinde eski kursun sesi seçili kalabilir; gösterilen seçim
@@ -74,7 +76,7 @@ export function VoicePicker({
                 className="min-w-0 flex-1 text-left"
               >
                 <span className="block truncate text-sm font-bold">{v.label}</span>
-                <span className="muted block truncate text-[11px]">{v.gender}</span>
+                <span className="muted block truncate text-[11px]">{t(v.gender === "female" ? "voice.gender_female" : "voice.gender_male")}</span>
               </button>
               {active ? (
                 <span
@@ -124,9 +126,9 @@ export function VoicePicker({
                 </span>
               ) : null}
               <p className="font-bold">
-                {v.label} <span className="muted text-xs font-normal">{v.gender}</span>
+                {v.label} <span className="muted text-xs font-normal">{t(v.gender === "female" ? "voice.gender_female" : "voice.gender_male")}</span>
               </p>
-              <p className="muted mt-1.5 text-xs leading-relaxed">{v.note}</p>
+              <p className="muted mt-1.5 text-xs leading-relaxed">{t(v.noteKey)}</p>
             </button>
 
             <button
