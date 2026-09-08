@@ -425,7 +425,7 @@ Anmeldung bis 15. September.`,
               kind: "match",
               id: "de-a2-04-l4-17",
               no: 17,
-              text: "Herr Osei hat einen Führerschein und möchte Vollzeit arbeiten.",
+              text: "Herr Adeyemi hat einen Führerschein und möchte Vollzeit arbeiten.",
               answer: "d",
               explain:
                 "(d) tam zamanlı ve B sınıfı ehliyet istiyor. (a) günde yalnız dört saat; (g) üç yıllık bir eğitim, iş değil.",
@@ -611,9 +611,9 @@ Anmeldung bis 15. September.`,
           format: "match",
           goal: "detail",
           prompt:
-            "Sie hören ein Gespräch. Fünf Personen übernehmen eine Aufgabe für die Messe. Was macht wer? Ordnen Sie zu. Sie hören den Text zweimal.",
+            "Sie hören ein Gespräch. Fünf Personen übernehmen eine Aufgabe für die Messe. Was macht wer? Ordnen Sie zu. Drei Aufgaben bleiben übrig. Sie hören den Text zweimal.",
           promptTr:
-            "Bir konuşma dinleyeceksin. Beş kişi fuar için bir iş üstleniyor. Kim ne yapıyor? Eşleştir. Kaydı iki kez dinleyebilirsin.",
+            "Bir konuşma dinleyeceksin. Beş kişi fuar için bir iş üstleniyor. Kim ne yapıyor? Eşleştir. Üç iş artıyor. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",

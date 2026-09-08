@@ -554,9 +554,9 @@ Selin`,
           format: "match",
           goal: "detail",
           prompt:
-            "Sie hören ein Gespräch. Eine Familie plant fünf Urlaubstage. Was machen sie an welchem Tag? Ordnen Sie zu. Sie hören den Text zweimal.",
+            "Sie hören ein Gespräch. Eine Familie plant fünf Urlaubstage. Was machen sie an welchem Tag? Ordnen Sie zu. Drei Aktivitäten bleiben übrig. Sie hören den Text zweimal.",
           promptTr:
-            "Bir konuşma dinleyeceksin. Bir aile beş tatil gününü planlıyor. Hangi gün ne yapıyorlar? Eşleştir. Kaydı iki kez dinleyebilirsin.",
+            "Bir konuşma dinleyeceksin. Bir aile beş tatil gününü planlıyor. Hangi gün ne yapıyorlar? Eşleştir. Üç etkinlik artıyor. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",

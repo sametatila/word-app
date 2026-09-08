@@ -274,9 +274,9 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
           format: "match",
           goal: "orientation",
           prompt:
-            "Die Personen 13 bis 19 suchen ein Angebot in ihrer Stadt. Lesen Sie die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Jede Anzeige passt nur einmal.",
+            "Die Personen 13 bis 19 suchen ein Angebot in ihrer Stadt. Lesen Sie die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Jede Anzeige passt nur einmal. Drei Anzeigen passen zu niemandem.",
           promptTr:
-            "13–19. kişiler şehirlerinde bir olanak arıyor. a–j ilanlarını oku. Hangi ilan hangi kişiye uyar? Her ilan yalnız bir kez kullanılır.",
+            "13–19. kişiler şehirlerinde bir olanak arıyor. a–j ilanlarını oku. Hangi ilan hangi kişiye uyar? Her ilan yalnız bir kez kullanılır; üç ilan hiç kimseye uymaz.",
           options: [
             {
               key: "a",

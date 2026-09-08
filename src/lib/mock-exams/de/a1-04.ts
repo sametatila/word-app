@@ -804,7 +804,7 @@ Unterschrift:             L. Novak`,
               id: "de-a1-04-s1-3",
               no: 3,
               text: "Telefon",
-              accept: ["0341 66 24 08", "0341662408", "0341 662408", "0341/66 24 08"],
+              accept: ["0341 66 24 08", "0341662408", "0341 662408"],
               explain:
                 "Telefon numarası yönergede veriliyor: 0341 66 24 08. Boşluklar ya da eğik çizgi fark etmez, rakamların sırası önemlidir.",
             },

@@ -802,7 +802,7 @@ Unterschrift:             A. Sarr`,
               id: "de-a1-01-s1-2",
               no: 2,
               text: "Straße, Hausnummer",
-              accept: ["Lindenstraße 8", "Lindenstrasse 8", "Lindenstr. 8"],
+              accept: ["Lindenstraße 8", "Lindenstr. 8"],
               explain: "Adres yönergede tam veriliyor. Sokak adı ve kapı numarası birlikte yazılır; `-straße` kısaltması da doğrudur.",
             },
             {

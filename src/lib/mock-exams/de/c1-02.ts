@@ -556,7 +556,6 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               accept: [
                 "pädagogische Ausbildung",
                 "eine pädagogische Ausbildung",
-                "paedagogische Ausbildung",
                 "Ausbildung",
               ],
               explain:
@@ -568,7 +567,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
               no: 5,
               ref: "a1",
               text: "Notiz 5",
-              accept: ["12", "zwölf", "zwoelf"],
+              accept: ["12", "zwölf"],
               explain: "«eine Schulung an zwei Samstagen, insgesamt zwölf Stunden» — sayı gün sayısıyla değil, toplam saatle isteniyor.",
             },
             {
@@ -581,7 +580,6 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
                 "erweitertes Führungszeugnis",
                 "Führungszeugnis",
                 "ein erweitertes Führungszeugnis",
-                "erweitertes Fuehrungszeugnis",
               ],
               explain:
                 "«ein erweitertes Führungszeugnis, das Sie beim Bürgeramt beantragen; die Gebühr übernehmen wir» — kayıttan önceki ikinci koşul.",
@@ -1160,7 +1158,8 @@ Dr. Elena Sturm, Vorstand`,
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Was geht verloren, wenn eine Sprache verschwindet?\". Behandeln Sie fünf Inhaltspunkte: Einstieg — Beschreibung des Phänomens — Ursachen — Folgen auf verschiedenen Ebenen — eigene Bewertung mit Ausblick.",
           promptTr:
             "\"Bir dil yok olunca ne yiter?\" konusunda yaklaşık dört dakikalık bir sunum yap. Beş içerik noktasını işle: giriş — olgunun betimlenmesi — nedenler — farklı düzeylerdeki sonuçlar — kendi değerlendirmen ve öngörün.",
-          prepSeconds: 240,
+          minutes: 8,
+          prepSeconds: 180,
           speakSeconds: 240,
           items: [],
           rubric: {
@@ -1192,6 +1191,7 @@ Dr. Elena Sturm, Vorstand`,
             "Eine Schule erhält Mittel für ein Sprachprojekt. Zur Wahl stehen: (a) Herkunftssprachenunterricht für die drei größten Sprachgruppen, (b) eine Fortbildung für alle Lehrkräfte zum Umgang mit Mehrsprachigkeit, (c) eine mehrsprachige Schulbibliothek. Diskutieren Sie Vor- und Nachteile und einigen Sie sich.",
           promptTr:
             "Bir okula dil projesi için bütçe veriliyor. Seçenekler: (a) en büyük üç dil grubu için köken dili dersi, (b) tüm öğretmenlere çok dillilikle çalışma eğitimi, (c) çok dilli bir okul kütüphanesi. Artı ve eksileri tartışın ve anlaşın.",
+          minutes: 7,
           prepSeconds: 120,
           exchange: [
             { who: "partner", de: "Eine Schule erhält Mittel für genau ein Sprachprojekt. Zur Wahl stehen Herkunftssprachenunterricht für die drei größten Sprachgruppen, eine Fortbildung für alle Lehrkräfte und eine mehrsprachige Schulbibliothek. Wofür plädieren Sie?", tr: "Bir okula tam bir dil projesi için bütçe veriliyor. Seçenekler: en büyük üç dil grubu için köken dili dersi, tüm öğretmenlere eğitim ve çok dilli bir okul kütüphanesi. Sen hangisini savunursun?" },

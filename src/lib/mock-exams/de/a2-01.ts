@@ -561,9 +561,9 @@ Katja`,
           format: "match",
           goal: "detail",
           prompt:
-            "Sie hören ein Gespräch. Fünf Personen übernehmen eine Aufgabe für das Fest. Was macht wer? Ordnen Sie zu. Sie hören den Text zweimal.",
+            "Sie hören ein Gespräch. Fünf Personen übernehmen eine Aufgabe für das Fest. Was macht wer? Ordnen Sie zu. Drei Aufgaben bleiben übrig. Sie hören den Text zweimal.",
           promptTr:
-            "Bir konuşma dinleyeceksin. Beş kişi şenlik için bir iş üstleniyor. Kim ne yapıyor? Eşleştir. Kaydı iki kez dinleyebilirsin.",
+            "Bir konuşma dinleyeceksin. Beş kişi şenlik için bir iş üstleniyor. Kim ne yapıyor? Eşleştir. Üç iş artıyor. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
               kind: "audio",

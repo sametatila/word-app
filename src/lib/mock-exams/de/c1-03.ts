@@ -97,7 +97,7 @@ Kontrollen sind nötig, erzeugen aber teilweise selbst {{9}}. Umgekehrt wird Ver
               id: "de-c1-03-l1-1",
               no: 1,
               text: "Lücke 1",
-              accept: ["Erwartung", "eine Erwartung", "Annahme", "Unterstellung"],
+              accept: ["Erwartung", "Annahme"],
               explain:
                 "Metin tanımı iki kez veriyor: \"nicht ein Gefühl, sondern eine Erwartung\". Özet aynı karşıtlığı kurduğu için boşluğa bu sözcük giriyor.",
             },
@@ -106,7 +106,7 @@ Kontrollen sind nötig, erzeugen aber teilweise selbst {{9}}. Umgekehrt wird Ver
               id: "de-c1-03-l1-2",
               no: 2,
               text: "Lücke 2",
-              accept: ["abgesichert", "gesichert", "vertraglich abgesichert", "kontrolliert"],
+              accept: ["abgesichert", "gesichert", "kontrolliert"],
               explain:
                 "\"Wo sie fehlt, muss jede Zusage abgesichert werden: durch Verträge, Bürgschaften, Kontrollen\" — boşluk bu edilgen yapının ortacını istiyor.",
             },
@@ -115,7 +115,7 @@ Kontrollen sind nötig, erzeugen aber teilweise selbst {{9}}. Umgekehrt wird Ver
               id: "de-c1-03-l1-3",
               no: 3,
               text: "Lücke 3",
-              accept: ["Fünftel", "ein Fünftel"],
+              accept: ["Fünftel"],
               explain:
                 "Metindeki oran \"ein Aufschlag von bis zu einem Fünftel\". Özet aynı payı adlandırıyor; yüzde 20 yazmak da aynı şeyi söyler ama istenen tek sözcük.",
             },
@@ -133,7 +133,7 @@ Kontrollen sind nötig, erzeugen aber teilweise selbst {{9}}. Umgekehrt wird Ver
               id: "de-c1-03-l1-5",
               no: 5,
               text: "Lücke 5",
-              accept: ["Erfahrung", "Erfahrungen", "Kontakte", "Berührung"],
+              accept: ["Erfahrung", "Erfahrungen", "Kontakte"],
               explain:
                 "Sabit kalan güven, insanların \"unmittelbar zu tun haben\" olduğu kurumlara ait; metin bunu karşıt paragrafta \"eigene Erfahrung\" diye adlandırıyor.",
             },
@@ -142,7 +142,7 @@ Kontrollen sind nötig, erzeugen aber teilweise selbst {{9}}. Umgekehrt wird Ver
               id: "de-c1-03-l1-6",
               no: 6,
               text: "Lücke 6",
-              accept: ["Berichterstattung", "Berichte", "Medien", "Presse"],
+              accept: ["Berichterstattung", "Presse"],
               explain:
                 "Metinde deneyimin yerini alan şey açıkça veriliyor: \"wo eigene Erfahrung fehlt und die Berichterstattung an ihre Stelle tritt\".",
             },
@@ -151,7 +151,7 @@ Kontrollen sind nötig, erzeugen aber teilweise selbst {{9}}. Umgekehrt wird Ver
               id: "de-c1-03-l1-7",
               no: 7,
               text: "Lücke 7",
-              accept: ["Misserfolg", "Fehlern", "Misserfolgen", "Fehler"],
+              accept: ["Misserfolg", "Fehlern", "Misserfolgen"],
               explain:
                 "İkinci bulgu: güven başarıdan değil, \"dem nachvollziehbaren Umgang mit Misserfolg\" ile büyüyor. Özet aynı yapıyı kullanıyor.",
             },
@@ -603,7 +603,7 @@ Abgelehnte Vorschläge bleiben {{10}} — wichtigste Lehre aus dem ersten Jahr.`
               no: 6,
               ref: "a1",
               text: "Notiz 6",
-              accept: ["40 000 Euro", "40000 Euro", "40.000 Euro", "vierzigtausend Euro"],
+              accept: ["40 000 Euro", "40000 Euro", "vierzigtausend Euro"],
               explain:
                 "Öneri başına üst sınır 40 000 euro; gerekçesi de veriliyor: tek bir proje bütün bütçeyi bağlamasın.",
             },
@@ -1025,21 +1025,21 @@ Daraus folgt für mich, dass nicht mehr Kontrolle nötig ist, sondern nachvollzi
               title: "Widerspruch gegen einen Gebührenbescheid",
               body: `Sehr geehrte Damen und Herren,
 
-{{1}} (viteslendirme: yazının konusunu ve ilgili belgeyi bildir) vom 3. Mai, Aktenzeichen OA-2291/24, lege ich hiermit Widerspruch ein.
+gegen Ihren Gebührenbescheid vom 3. Mai, Aktenzeichen OA-2291/24, lege ich fristgerecht Widerspruch ein.
 
-{{2}} (gerekçenin girişi) hat der Bescheid eine Sondernutzung des Gehwegs für den Zeitraum vom 1. bis 14. April zugrunde gelegt. {{3}} (karşı çıkış) fand die Nutzung ausschließlich am 12. und 13. April statt; die Baustelle war zuvor nicht eingerichtet.
+{{1}} hat der Bescheid eine Sondernutzung des Gehwegs für den Zeitraum vom 1. bis 14. April zugrunde gelegt. {{2}} fand die Nutzung ausschließlich am 12. und 13. April statt; die Baustelle war zuvor nicht eingerichtet.
 
-Als Nachweis {{4}} (ek belgeye atıf) die Lieferscheine des Gerüstbauers sowie zwei datierte Fotografien.
+{{3}} übersende ich Ihnen die Lieferscheine des Gerüstbauers sowie zwei datierte Fotografien.
 
-{{5}} (kabul edilen nokta) ist mir bewusst, dass die Anmeldung des Zeitraums in meiner Verantwortung lag und ich diesen zu großzügig angegeben habe. {{6}} (sınırlama) betrifft die Gebühr nach Ziffer 4 der Satzung ausdrücklich die tatsächliche Nutzung.
+{{4}} ist mir bewusst, dass die Anmeldung des Zeitraums in meiner Verantwortung lag und ich den Zeitraum zu großzügig angegeben habe. {{5}} betrifft die Gebühr nach Ziffer 4 der Satzung ausdrücklich die tatsächliche Nutzung.
 
-{{7}} (talep) die Gebühr auf zwei Tage neu zu berechnen und den überzahlten Betrag zu erstatten.
+{{6}}, die Gebühr auf zwei Tage neu zu berechnen und den überzahlten Betrag zu erstatten.
 
-{{8}} (koşullu ikinci talep) sollte dem nicht entsprochen werden, bitte ich um eine schriftliche Begründung unter Angabe der herangezogenen Ziffer.
+{{7}} diesem Antrag nicht entsprochen werden, bitte ich {{8}} eine schriftliche Begründung unter Angabe der herangezogenen Ziffer.
 
-{{9}} (kibar hatırlatma) einer Antwort bis zum 30. Juni, da die Widerspruchsfrist für die weitere Prüfung sonst verstreicht.
+Über eine Antwort bis zum 30. Juni {{9}}, da die Frist für die weitere Prüfung sonst verstreicht.
 
-{{10}} (resmî veda)
+{{10}}
 Bianca Hoffmann`,
             },
           ],
@@ -1048,99 +1048,89 @@ Bianca Hoffmann`,
               kind: "gap",
               id: "de-c1-03-s2-1",
               no: 1,
-              text: "Lücke 1 — Betreff und Bezug",
-              accept: [
-                "Gegen Ihren Gebührenbescheid",
-                "Gegen den Gebührenbescheid",
-                "Gegen Ihren Bescheid",
-                "Gegen den Bescheid",
-              ],
+              text: "Lücke 1 (Übergang zur Begründung)",
+              accept: ["Zur Begründung", "Zur Erläuterung", "Im Einzelnen", "Zur Sache"],
               explain:
-                "Resmî itirazlar hangi belgeye karşı yapıldığını en başta bildirir. `Gegen Ihren Gebührenbescheid vom … lege ich Widerspruch ein` kalıbı hem konuyu hem dayanağı verir.",
+                "Gerekçe bölümü resmî yazıda kendi geçişiyle açılır. `Zur Begründung` ya da `Im Einzelnen` okura yapının neresinde olduğunu söyler; `Weil` ile başlamak kaydı düşürür.",
             },
             {
               kind: "gap",
               id: "de-c1-03-s2-2",
               no: 2,
-              text: "Lücke 2 — Begründung einleiten",
-              accept: ["Zur Begründung", "Begründung", "Zur Sache", "Im Einzelnen"],
+              text: "Lücke 2 (Gegensatz zur Annahme des Bescheids)",
+              accept: ["Tatsächlich", "Demgegenüber", "In Wirklichkeit"],
               explain:
-                "`Zur Begründung` gerekçe bölümünü açan standart kalıptır ve okura yapının nerede olduğunu söyler; `Weil` ile başlamak resmî yazıda kayıt düşürür.",
+                "Kararın varsaydığı süre ile gerçek süre arasındaki farkı açan bir zarf gerekiyor. `Tatsächlich` bu karşıtlığı kurar ve ardından gelen fiil ikinci sırada kalır.",
             },
             {
               kind: "gap",
               id: "de-c1-03-s2-3",
               no: 3,
-              text: "Lücke 3 — Widerspruch zur Annahme",
-              accept: ["Tatsächlich", "Demgegenüber", "Dem steht entgegen, dass", "Richtig ist jedoch, dass"],
+              text: "Lücke 3 (Hinweis auf beigefügte Nachweise)",
+              accept: ["Als Nachweis", "Zum Nachweis", "Als Beleg", "Hierzu"],
               explain:
-                "Kararın varsayımıyla gerçek arasındaki farkı açan bir bağlaç gerekiyor. `Tatsächlich` ya da `Demgegenüber` bu karşıtlığı resmî kayıtta kurar.",
+                "Ek belgeler önce işlevleriyle duyurulur: `Als Nachweis übersende ich Ihnen …`. Boşluğa fiil yazmak cümleyi bozar, çünkü yüklem zaten yerinde.",
             },
             {
               kind: "gap",
               id: "de-c1-03-s2-4",
               no: 4,
-              text: "Lücke 4 — Verweis auf Anlagen",
-              accept: ["übersende ich Ihnen", "füge ich bei", "übersende ich", "lege ich bei", "erhalten Sie anbei"],
+              text: "Lücke 4 (Zugeständnis einleiten)",
+              accept: ["Zwar", "Selbstverständlich", "Natürlich", "Sehr wohl"],
               explain:
-                "Ek belgeler `füge ich bei` ya da `übersende ich Ihnen` ile duyurulur. `schicke ich mit` günlük dildir ve dilekçe üslubuna uymaz.",
+                "Kendi payına düşen hatayı kabul etmek itirazı güçlendirir. `Zwar …` bu ödünü açar ve bir sonraki boşluktaki sınırlamayı hazırlar.",
             },
             {
               kind: "gap",
               id: "de-c1-03-s2-5",
               no: 5,
-              text: "Lücke 5 — Zugeständnis",
-              accept: ["Zwar", "Es trifft zu, dass", "Zutreffend ist, dass", "Ich räume ein, dass"],
+              text: "Lücke 5 (einschränkender Anschluss)",
+              accept: ["Gleichwohl", "Jedoch", "Allerdings", "Dennoch", "Nichtsdestoweniger"],
               explain:
-                "Kendi payına düşen hatayı kabul etmek itirazı zayıflatmaz, güçlendirir. `Zwar …, jedoch …` yapısı bu ödünü ve ardından gelen sınırlamayı birlikte taşır.",
+                "Kabulden sonra asıl argümanı getiren zıtlık bağlacı: ücret fiilen kullanılan süreye göre hesaplanır. `Gleichwohl` bu işlevi resmî kayıtta görür.",
             },
             {
               kind: "gap",
               id: "de-c1-03-s2-6",
               no: 6,
-              text: "Lücke 6 — Einschränkung",
-              accept: ["Gleichwohl", "Jedoch", "Allerdings", "Nichtsdestoweniger"],
+              text: "Lücke 6 (Antrag, an einen Infinitivsatz anschließend)",
+              accept: ["Ich beantrage daher", "Ich beantrage", "Hiermit beantrage ich", "Ich bitte Sie daher", "Ich bitte Sie"],
               explain:
-                "Kabulden sonra asıl argümanı getiren zıtlık bağlacı gerekiyor. `Gleichwohl` ve `Allerdings` C1'de bu işlevi resmî kayıtta yerine getirir.",
+                "Talep açık bir fiille adlandırılır ve `zu`-mastarına bağlanır: `Ich beantrage daher, die Gebühr … neu zu berechnen`.",
             },
             {
               kind: "gap",
               id: "de-c1-03-s2-7",
               no: 7,
-              text: "Lücke 7 — Antrag",
-              accept: ["Ich beantrage daher", "Ich beantrage", "Hiermit beantrage ich", "Ich bitte Sie daher"],
+              text: "Lücke 7 (Hilfsantrag, Konditional ohne \"wenn\")",
+              accept: ["Sollte", "Sollte wider Erwarten"],
               explain:
-                "Talep açık bir fiille adlandırılmalı: `Ich beantrage daher, die Gebühr … neu zu berechnen`. `Ich will` ya da `Bitte machen Sie` bu türde yanlış kayıttır.",
+                "İkincil talep koşula bağlanır ve resmî yazıda bu koşul `wenn` olmadan, fiil başta kurulur: `Sollte diesem Antrag nicht entsprochen werden, …`.",
             },
             {
               kind: "gap",
               id: "de-c1-03-s2-8",
               no: 8,
-              text: "Lücke 8 — Hilfsantrag",
-              accept: ["Hilfsweise", "Für den Fall, dass", "Sollte dies nicht möglich sein", "Andernfalls"],
+              text: "Lücke 8 (Präposition zu \"bitten\")",
+              accept: ["um"],
               explain:
-                "İkincil talep `Hilfsweise` ya da `Für den Fall, dass …` ile açılır; böylece iki talep karışmaz ve makam hangisinin öncelikli olduğunu görür.",
+                "`bitten` bu anlamda `um` ile kurulur: `ich bitte um eine schriftliche Begründung`. Başka bir edat cümleyi dilbilgisel olarak bozar.",
             },
             {
               kind: "gap",
               id: "de-c1-03-s2-9",
               no: 9,
-              text: "Lücke 9 — höfliche Fristsetzung",
-              accept: [
-                "Ich bitte um Zusendung",
-                "Ich sehe Ihrer Antwort entgegen",
-                "Ich bitte um Mitteilung",
-                "Ich wäre Ihnen dankbar für",
-              ],
+              text: "Lücke 9 (höfliche Erwartung am Satzende)",
+              accept: ["würde ich mich freuen", "wäre ich Ihnen dankbar", "freue ich mich", "wäre ich dankbar"],
               explain:
-                "Süre belirtirken baskı değil rica kurulur: `Ich bitte um Mitteilung bis zum 30. Juni`. Gerekçe eklemek (sürenin dolması) talebi haklı çıkarır.",
+                "Cümle `Über eine Antwort …` ile başladığı için yüklem sona gelir ve özne devrilir. Süre isteği böylece baskı değil rica olarak okunur.",
             },
             {
               kind: "gap",
               id: "de-c1-03-s2-10",
               no: 10,
-              text: "Lücke 10 — Grußformel",
-              accept: ["Mit freundlichen Grüßen", "Mit freundlichem Gruß", "Hochachtungsvoll"],
+              text: "Lücke 10 (Grußformel)",
+              accept: ["Mit freundlichen Grüßen", "Mit freundlichem Gruß", "Freundliche Grüße", "Hochachtungsvoll"],
               explain:
                 "Kuruma yazılan resmî yazının vedası `Mit freundlichen Grüßen`. `Liebe Grüße` özel yazışmaya aittir ve burada üslup hatasıdır.",
             },
@@ -1165,6 +1155,7 @@ Bianca Hoffmann`,
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Kontrolle oder Vertrauen — wie sollte eine Verwaltung arbeiten?\". Gliedern Sie: Einstieg — Begriffsklärung — Lage in Ihrem Herkunftsland — Abwägung — eigene Position — Ausblick.",
           promptTr:
             "\"Denetim mi güven mi — bir idare nasıl çalışmalı?\" konusunda yaklaşık dört dakikalık bir sunum yap. Şu sırayı izle: giriş — kavramı netleştirme — kendi ülkendeki durum — tartma — kendi konumun — kapanış.",
+          minutes: 8,
           prepSeconds: 180,
           speakSeconds: 240,
           items: [],
@@ -1200,6 +1191,7 @@ Bianca Hoffmann`,
             "Ihre Gesprächspartnerin vertritt eine Gegenposition. Verteidigen Sie Ihre Sicht, gehen Sie auf Einwände ein und suchen Sie am Ende eine gemeinsame Formulierung. Thema: Soll eine Behörde verpflichtet werden, jede Abweichung von einem Fachgutachten schriftlich zu begründen?",
           promptTr:
             "Karşındaki karşıt bir görüşü savunuyor. Kendi bakışını savun, itirazları ele al ve sonunda ortak bir formül ara. Konu: Bir idare, bilirkişi görüşünden her sapmayı yazılı gerekçelendirmeye zorunlu tutulmalı mı?",
+          minutes: 7,
           prepSeconds: 120,
           exchange: [
             {
@@ -1211,7 +1203,7 @@ Bianca Hoffmann`,
               who: "you",
               hint: "Konumunu ortaya koy ve itirazın haklı yanını da adlandır.",
               expect: "kendi konumunu gerekçelendirerek savunmak ve karşı gerekçenin haklı yanını kabul etmek",
-              seconds: 70,
+              seconds: 60,
             },
             {
               who: "partner",
@@ -1222,7 +1214,7 @@ Bianca Hoffmann`,
               who: "you",
               hint: "Bu itirazı ciddiye al ve yükümlülüğün nasıl kurulması gerektiğini söyle.",
               expect: "bir itirazı kabul edip önlemi yeniden tasarlamak (biçimsel yerine getirmeye karşı ölçüt önermek)",
-              seconds: 70,
+              seconds: 60,
             },
             {
               who: "partner",
@@ -1233,7 +1225,7 @@ Bianca Hoffmann`,
               who: "you",
               hint: "Bu noktayı ele al ve kendi önerinle nasıl bağlandığını göster.",
               expect: "yeni bir boyutu kendi önerisine bağlamak ve tutarlılığını göstermek",
-              seconds: 70,
+              seconds: 60,
             },
             {
               who: "partner",

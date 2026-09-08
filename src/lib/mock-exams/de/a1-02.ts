@@ -784,7 +784,7 @@ Unterschrift:             O. Haddad`,
               id: "de-a1-02-s1-2",
               no: 2,
               text: "Straße, Hausnummer",
-              accept: ["Gartenstraße 21", "Gartenstrasse 21", "Gartenstr. 21"],
+              accept: ["Gartenstraße 21", "Gartenstr. 21"],
               explain: "Sokak adı ve kapı numarası birlikte yazılır. `-straße` kısaltması (`-str.`) da kabul edilir.",
             },
             {

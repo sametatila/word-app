@@ -1165,7 +1165,8 @@ Halim Yücel`,
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Verfügbarkeit als neue Währung\". Behandeln Sie fünf Inhaltspunkte: Einstieg — Beschreibung der heutigen Lage — Ursachen — Folgen für verschiedene Gruppen — eigene Bewertung mit Ausblick.",
           promptTr:
             "\"Yeni bir para birimi olarak erişilebilirlik\" konusunda yaklaşık dört dakikalık bir sunum yap. Beş içerik noktasını işle: giriş — bugünkü durumun betimlenmesi — nedenler — farklı gruplar için sonuçlar — kendi değerlendirmen ve öngörün.",
-          prepSeconds: 240,
+          minutes: 8,
+          prepSeconds: 180,
           speakSeconds: 240,
           items: [],
           rubric: {
@@ -1197,6 +1198,7 @@ Halim Yücel`,
             "Ihre Abteilung erhält Mittel für eine Maßnahme. Zur Wahl stehen: (a) Dienstpläne drei Wochen im Voraus, (b) ein Budget für Weiterbildung, (c) zwei zusätzliche freie Tage im Jahr. Diskutieren Sie Vor- und Nachteile und einigen Sie sich auf eine Lösung.",
           promptTr:
             "Bölümünüze bir uygulama için bütçe ayrıldı. Seçenekler: (a) üç hafta önceden hazırlanan vardiya planları, (b) eğitim bütçesi, (c) yılda iki ek izin günü. Artı ve eksileri tartışın ve bir çözümde anlaşın.",
+          minutes: 7,
           prepSeconds: 120,
           exchange: [
             { who: "partner", de: "Unsere Abteilung erhält Mittel für genau eine Maßnahme. Zur Wahl stehen Dienstpläne drei Wochen im Voraus, ein Weiterbildungsbudget und zwei zusätzliche freie Tage. Wofür würden Sie plädieren?", tr: "Bölümümüze tam bir uygulama için bütçe ayrıldı. Seçenekler: üç hafta önceden vardiya planı, eğitim bütçesi ve yılda iki ek izin günü. Sen hangisini savunursun?" },

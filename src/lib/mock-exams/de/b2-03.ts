@@ -508,7 +508,7 @@ Es wäre also ehrlicher, offen über die Verteilung dieser Kosten zu streiten, s
             },
             {
               key: "e",
-              label: "e — Frau Adomeit, Weiterbildnerin",
+              label: "e — Frau Kirchhoff, Weiterbildnerin",
               body: "Ich unterrichte seit zwanzig Jahren Erwachsene und sehe den Unterschied sofort: Wer freiwillig kommt, lernt mehr. Eine Pflicht füllt Räume, keine Köpfe. Man sollte lieber die Bedingungen verbessern, unter denen jemand freiwillig kommt.",
             },
             {
@@ -518,7 +518,7 @@ Es wäre also ehrlicher, offen über die Verteilung dieser Kosten zu streiten, s
             },
             {
               key: "g",
-              label: "g — Frau Prohaska, Juristin",
+              label: "g — Frau Steinlein, Juristin",
               body: "Rechtlich ist eine solche Pflicht unproblematisch, sie existiert im Arbeitsschutz längst. Entscheidend ist nicht das Ob, sondern die Frage, wer im Streitfall nachweisen muss, dass die Weiterbildung notwendig war.",
             },
             {

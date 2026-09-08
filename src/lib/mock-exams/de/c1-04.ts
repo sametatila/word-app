@@ -98,7 +98,7 @@ Gegen eine feinere Einteilung spricht, dass sie die Verständigung {{9}}. Der Te
               id: "de-c1-04-l1-2",
               no: 2,
               text: "Lücke 2",
-              accept: ["25", "fünfundzwanzig", "25 Jahre"],
+              accept: ["25", "fünfundzwanzig"],
               explain:
                 "Örnek metinde: 65 yaşındaki bir kadın ile 90 yaşındaki bir adam arasında \"fünfundzwanzig Jahre\" var. Özet bu aralığı sayıyla istiyor.",
             },
@@ -107,7 +107,7 @@ Gegen eine feinere Einteilung spricht, dass sie die Verständigung {{9}}. Der Te
               id: "de-c1-04-l1-3",
               no: 3,
               text: "Lücke 3",
-              accept: ["größer", "grösser", "stärker", "ausgeprägter"],
+              accept: ["größer", "stärker", "ausgeprägter"],
               explain:
                 "Metnin savı: \"Die Unterschiede innerhalb der Gruppe sind größer als die Unterschiede zwischen ihr und anderen Altersgruppen\".",
             },
@@ -125,7 +125,7 @@ Gegen eine feinere Einteilung spricht, dass sie die Verständigung {{9}}. Der Te
               id: "de-c1-04-l1-5",
               no: 5,
               text: "Lücke 5",
-              accept: ["Jahrzehnt", "ein Jahrzehnt", "Jahrzehnte"],
+              accept: ["Jahrzehnt"],
               explain:
                 "Sağlıklı yıl sayısı meslek grupları arasında \"um mehr als ein Jahrzehnt\" ayrışıyor; ortalama yaşam beklentisi bunu örtüyor.",
             },
@@ -594,7 +594,7 @@ Antrag auf Pflegegrad: formlos möglich; Leistungen ab {{10}}.`,
               no: 5,
               ref: "a1",
               text: "Notiz 5",
-              accept: ["80 bis 240 Euro", "zwischen 80 und 240 Euro", "80–240 Euro", "80-240 Euro"],
+              accept: ["80 bis 240 Euro", "zwischen 80 und 240 Euro", "80–240 Euro"],
               explain:
                 "Bakım ücreti ilçede \"zwischen achtzig und zweihundertvierzig Euro im Monat\" aralığında değişiyor.",
             },
@@ -1026,23 +1026,23 @@ Daraus folgt für mich, dass Bezahlung eine notwendige, aber keine hinreichende 
               title: "Widerspruch gegen die Einstufung",
               body: `Sehr geehrte Damen und Herren,
 
-{{1}} (konu ve dayanak) vom 12. Februar, Versichertennummer 4471 09 823, lege ich fristgerecht Widerspruch ein.
+gegen Ihren Bescheid vom 12. Februar, Versichertennummer 4471 09 823, lege ich fristgerecht Widerspruch ein.
 
-{{2}} (gerekçeye geçiş) stützt sich die Einstufung auf ein Gutachten vom 28. Januar, das den Hilfebedarf meiner Mutter im Bereich der Selbstversorgung mit "gering" bewertet.
+{{1}} stützt sich die Einstufung auf ein Gutachten vom 28. Januar, das den Hilfebedarf meiner Mutter im Bereich der Selbstversorgung mit "gering" bewertet.
 
-{{3}} (karşı çıkış) entspricht diese Einschätzung nicht dem Alltag. Meine Mutter benötigt beim Ankleiden und beim Duschen täglich Unterstützung; ohne Begleitung verlässt sie die Wohnung seit August nicht mehr.
+{{2}} entspricht diese Einschätzung nicht dem Alltag. Meine Mutter benötigt beim Ankleiden und beim Duschen täglich Unterstützung; ohne Begleitung verlässt sie die Wohnung seit August nicht mehr.
 
-{{4}} (kanıta atıf) ein Pflegetagebuch über sechs Wochen sowie eine Stellungnahme des behandelnden Hausarztes vom 3. März.
+{{3}} übersende ich Ihnen ein Pflegetagebuch über sechs Wochen sowie eine Stellungnahme des behandelnden Hausarztes vom 3. März.
 
-{{5}} (kabul edilen nokta) ist mir bewusst, dass der Termin der Begutachtung an einem Tag lag, an dem es meiner Mutter vergleichsweise gut ging. {{6}} (sınırlama) bildet ein einzelner Vormittag den durchschnittlichen Bedarf nicht ab.
+{{4}} ist mir bewusst, dass der Termin der Begutachtung an einem Tag lag, an dem es meiner Mutter vergleichsweise gut ging. {{5}} bildet ein einzelner Vormittag den durchschnittlichen Bedarf nicht ab.
 
-{{7}} (asıl talep) den Bescheid aufzuheben und eine erneute Begutachtung zu veranlassen.
+{{6}}, den Bescheid aufzuheben und eine erneute Begutachtung zu veranlassen.
 
-{{8}} (koşullu ikinci talep) dies nicht möglich sein, bitte ich um Übersendung des vollständigen Gutachtens einschließlich der Einzelbewertungen.
+{{7}} dies nicht möglich sein, bitte ich {{8}} Übersendung des vollständigen Gutachtens einschließlich der Einzelbewertungen.
 
-{{9}} (kibar süre talebi) einer Rückmeldung bis zum 15. April, da die Versorgung bis dahin geregelt sein muss.
+Über eine Rückmeldung bis zum 15. April {{9}}, da die Versorgung bis dahin geregelt sein muss.
 
-{{10}} (resmî veda)
+{{10}}
 Dorothea Simon`,
             },
           ],
@@ -1051,99 +1051,89 @@ Dorothea Simon`,
               kind: "gap",
               id: "de-c1-04-s2-1",
               no: 1,
-              text: "Lücke 1 — Betreff und Bezug",
-              accept: [
-                "Gegen Ihren Bescheid",
-                "Gegen den Bescheid",
-                "Gegen Ihren Einstufungsbescheid",
-                "Gegen den Einstufungsbescheid",
-              ],
+              text: "Lücke 1 (Übergang zur Begründung)",
+              accept: ["Zur Begründung", "Zur Erläuterung", "Im Einzelnen", "Zur Sache"],
               explain:
-                "İtiraz hangi karara karşı yapıldığını ilk cümlede bildirir. `Gegen Ihren Bescheid vom … lege ich Widerspruch ein` kalıbı konuyu, tarihi ve işlemi birlikte verir.",
+                "İtirazın gerekçesi kendi geçişiyle açılır. `Zur Begründung stützt sich die Einstufung auf …` hem bölümü işaretler hem de fiili ikinci sırada tutar.",
             },
             {
               kind: "gap",
               id: "de-c1-04-s2-2",
               no: 2,
-              text: "Lücke 2 — Begründung einleiten",
-              accept: ["Zur Begründung", "Begründung", "Im Einzelnen", "Zur Sache"],
+              text: "Lücke 2 (Gegensatz zur Einschätzung des Gutachtens)",
+              accept: ["Tatsächlich", "Demgegenüber", "In Wirklichkeit"],
               explain:
-                "`Zur Begründung` gerekçe bölümünü açan standart kalıptır; okur yapının neresinde olduğunu görür ve dilekçe okunabilir kalır.",
+                "Bilirkişinin değerlendirmesi ile günlük gerçeklik karşı karşıya getiriliyor. `Demgegenüber entspricht diese Einschätzung nicht dem Alltag` bu karşıtlığı kurar.",
             },
             {
               kind: "gap",
               id: "de-c1-04-s2-3",
               no: 3,
-              text: "Lücke 3 — Widerspruch zur Einschätzung",
-              accept: ["Tatsächlich", "Demgegenüber", "Dem steht entgegen, dass", "Richtig ist jedoch, dass"],
+              text: "Lücke 3 (Hinweis auf beigefügte Nachweise)",
+              accept: ["Als Nachweis", "Zum Nachweis", "Als Beleg", "Hierzu"],
               explain:
-                "Bilirkişi değerlendirmesiyle günlük gerçek arasındaki farkı açan bağlaç gerekiyor. `Demgegenüber` ya da `Tatsächlich` bu karşıtlığı resmî kayıtta kurar.",
+                "Bakım günlüğü ve hekim görüşü kanıt olarak duyurulur: `Als Nachweis übersende ich Ihnen …`. Yüklem cümlede zaten var, boşluğa fiil girmez.",
             },
             {
               kind: "gap",
               id: "de-c1-04-s2-4",
               no: 4,
-              text: "Lücke 4 — Verweis auf Nachweise",
-              accept: ["Beigefügt sind", "Als Nachweis füge ich bei", "Anbei übersende ich", "Beiliegend erhalten Sie"],
+              text: "Lücke 4 (Zugeständnis einleiten)",
+              accept: ["Zwar", "Selbstverständlich", "Natürlich", "Sehr wohl"],
               explain:
-                "Ekler `Beigefügt sind …` ya da `Als Nachweis füge ich bei` ile duyurulur. `Ich schicke Ihnen mal` günlük dildir ve dilekçenin kaydını bozar.",
+                "Muayenenin iyi bir güne denk geldiğini kabul etmek itirazı zayıflatmaz, inandırıcı kılar. `Zwar …` bu ödünü açar.",
             },
             {
               kind: "gap",
               id: "de-c1-04-s2-5",
               no: 5,
-              text: "Lücke 5 — Zugeständnis",
-              accept: ["Zwar", "Es trifft zu, dass", "Zutreffend ist, dass", "Ich räume ein, dass"],
+              text: "Lücke 5 (einschränkender Anschluss)",
+              accept: ["Gleichwohl", "Jedoch", "Allerdings", "Dennoch", "Nichtsdestoweniger"],
               explain:
-                "Karşı tarafın haklı olabileceği noktayı önce kabul etmek itirazı güçlendirir; `Zwar …, jedoch …` yapısı bu ödünü ve sınırlamayı birlikte taşır.",
+                "Kabulden sonra asıl argüman geliyor: tek bir sabah ortalama ihtiyacı temsil etmez. `Gleichwohl` bu dönüşü resmî kayıtta sağlar.",
             },
             {
               kind: "gap",
               id: "de-c1-04-s2-6",
               no: 6,
-              text: "Lücke 6 — Einschränkung",
-              accept: ["Gleichwohl", "Jedoch", "Allerdings", "Nichtsdestoweniger"],
+              text: "Lücke 6 (Antrag, an einen Infinitivsatz anschließend)",
+              accept: ["Ich beantrage daher", "Ich beantrage", "Hiermit beantrage ich", "Ich bitte Sie daher", "Ich bitte Sie"],
               explain:
-                "Kabulden sonra asıl argümanı getiren zıtlık bağlacı: tek bir sabah ortalama ihtiyacı temsil etmiyor. `Gleichwohl` bu işlevi resmî kayıtta görür.",
+                "Talep `zu`-mastarına bağlanan açık bir fiille kurulur: `Ich beantrage daher, den Bescheid aufzuheben …`.",
             },
             {
               kind: "gap",
               id: "de-c1-04-s2-7",
               no: 7,
-              text: "Lücke 7 — Hauptantrag",
-              accept: ["Ich beantrage daher", "Ich beantrage", "Hiermit beantrage ich", "Ich bitte Sie daher"],
+              text: "Lücke 7 (Hilfsantrag, Konditional ohne \"wenn\")",
+              accept: ["Sollte", "Sollte wider Erwarten"],
               explain:
-                "Talep açık bir fiille adlandırılır: `Ich beantrage daher, den Bescheid aufzuheben …`. Böylece kurum ne istendiğini yorumlamak zorunda kalmaz.",
+                "İkincil talep koşullu açılır ve resmî yazıda koşul `wenn` olmadan, fiil başta kurulur: `Sollte dies nicht möglich sein, …`.",
             },
             {
               kind: "gap",
               id: "de-c1-04-s2-8",
               no: 8,
-              text: "Lücke 8 — Hilfsantrag",
-              accept: ["Sollte", "Hilfsweise, sollte", "Für den Fall, dass", "Falls"],
+              text: "Lücke 8 (Präposition zu \"bitten\")",
+              accept: ["um"],
               explain:
-                "İkincil talep `Sollte dies nicht möglich sein, bitte ich um …` biçiminde koşula bağlanır; iki talep böylece karışmaz.",
+                "`bitten` bu anlamda `um` ister: `ich bitte um Übersendung des vollständigen Gutachtens`. Edat düşerse cümle dilbilgisel olarak kurulmaz.",
             },
             {
               kind: "gap",
               id: "de-c1-04-s2-9",
               no: 9,
-              text: "Lücke 9 — höfliche Fristsetzung",
-              accept: [
-                "Ich bitte um Mitteilung",
-                "Ich bitte um Rückmeldung",
-                "Ich sehe Ihrer Antwort entgegen",
-                "Ich wäre Ihnen dankbar für",
-              ],
+              text: "Lücke 9 (höfliche Erwartung am Satzende)",
+              accept: ["würde ich mich freuen", "wäre ich Ihnen dankbar", "freue ich mich", "wäre ich dankbar"],
               explain:
-                "Süre baskıyla değil ricayla istenir ve gerekçelendirilir: `Ich bitte um Rückmeldung bis zum 15. April, da …`.",
+                "Cümle `Über eine Rückmeldung …` ile başladığı için yüklem sona, özne fiilden sonraya geçer. Süre böylece talep değil rica olur.",
             },
             {
               kind: "gap",
               id: "de-c1-04-s2-10",
               no: 10,
-              text: "Lücke 10 — Grußformel",
-              accept: ["Mit freundlichen Grüßen", "Mit freundlichem Gruß", "Hochachtungsvoll"],
+              text: "Lücke 10 (Grußformel)",
+              accept: ["Mit freundlichen Grüßen", "Mit freundlichem Gruß", "Freundliche Grüße", "Hochachtungsvoll"],
               explain:
                 "Kuruma yazılan resmî yazının vedası `Mit freundlichen Grüßen`; `Viele Grüße` yarı resmî, `Liebe Grüße` özel yazışmaya aittir.",
             },
@@ -1168,6 +1158,7 @@ Dorothea Simon`,
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Wer soll für die Pflege im Alter aufkommen — Familie, Staat oder der Einzelne?\". Gliedern Sie: Einstieg — Begriffsklärung — Lage in Ihrem Herkunftsland — Abwägung — eigene Position — Ausblick.",
           promptTr:
             "\"Yaşlılıkta bakımın yükünü kim üstlenmeli — aile, devlet mi birey mi?\" konusunda yaklaşık dört dakikalık bir sunum yap. Şu sırayı izle: giriş — kavramı netleştirme — kendi ülkendeki durum — tartma — kendi konumun — kapanış.",
+          minutes: 8,
           prepSeconds: 180,
           speakSeconds: 240,
           items: [],
@@ -1203,6 +1194,7 @@ Dorothea Simon`,
             "Ihre Gesprächspartnerin vertritt eine Gegenposition. Verteidigen Sie Ihre Sicht, gehen Sie auf Einwände ein und suchen Sie am Ende eine gemeinsame Formulierung. Thema: Soll die Pflege von Angehörigen wie Erwerbsarbeit bezahlt werden?",
           promptTr:
             "Karşındaki karşıt bir görüşü savunuyor. Kendi bakışını savun, itirazları ele al ve sonunda ortak bir formül ara. Konu: Yakınların yaptığı bakım, ücretli bir iş gibi ödenmeli mi?",
+          minutes: 7,
           prepSeconds: 120,
           exchange: [
             {
@@ -1214,7 +1206,7 @@ Dorothea Simon`,
               who: "you",
               hint: "Konumunu ortaya koy ve itirazın haklı yanını adlandır.",
               expect: "kendi konumunu gerekçelendirerek savunmak ve karşı gerekçenin haklı yanını kabul etmek",
-              seconds: 70,
+              seconds: 60,
             },
             {
               who: "partner",
@@ -1225,7 +1217,7 @@ Dorothea Simon`,
               who: "you",
               hint: "Bu bulguyu ele al ve kendi önerini ona göre yeniden kur.",
               expect: "karşı bulguyu yorumlayıp önerisini koşullandırmak",
-              seconds: 70,
+              seconds: 60,
             },
             {
               who: "partner",
@@ -1236,7 +1228,7 @@ Dorothea Simon`,
               who: "you",
               hint: "Denetim sorununu ele al ve ölçülü bir çözüm öner.",
               expect: "denetim ile mahremiyet arasında ölçülü bir çözüm önermek",
-              seconds: 70,
+              seconds: 60,
             },
             {
               who: "partner",

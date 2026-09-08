@@ -368,7 +368,7 @@ Unsere Antwort ist einfach: Einmal im Monat gibt es nach dem Training Essen, und
               kind: "match",
               id: "de-b1-04-l3-16",
               no: 16,
-              text: "Herr Nowak hat ein defektes Radio und möchte es nicht wegwerfen.",
+              text: "Herr Wieland hat ein defektes Radio und möchte es nicht wegwerfen.",
               answer: "d",
               explain:
                 "(d) ortak onarım buluşması ve radyoları açıkça sayıyor; işçilik ücretsiz, yalnız yedek parça ödeniyor.",
