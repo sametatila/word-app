@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { speakGerman, speakSegments, stopSpeaking } from "@/components/speak-button";
-import { SpeakerIcon, CheckIcon } from "@/components/icons";
+import { SpeakerIcon, MicIcon, CheckIcon } from "@/components/icons";
+import { captureClip } from "@/lib/pronounce-client";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT } from "@/lib/mock-exams/types";
 import { foldAnswer, isOpenTask } from "@/lib/mock-exams/scoring";
@@ -340,8 +341,10 @@ function TaskView({
 
       {!grouped ? task.items.map((it) => <Item key={it.id} item={it} task={task} value={answers[it.id]} onAnswer={onAnswer} />) : null}
 
-      {isOpenTask(task) ? (
+      {task.format === "writing" ? (
         <OpenTask task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} onOpen={onOpen} onOpenScore={onOpenScore} />
+      ) : task.format === "speaking" ? (
+        <SpeakingTask task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} onOpen={onOpen} onOpenScore={onOpenScore} />
       ) : null}
     </div>
   );
@@ -409,13 +412,7 @@ function Item({ item, task, value, onAnswer }: { item: MockItem; task: MockTask;
   );
 }
 
-/**
- * Yazma ve konuşma — ikisi de aynı uçtan değerlendiriliyor.
- *
- * Konuşmada karşı tarafın replikleri sesle okunuyor; cevap tarayıcıda
- * YAZILIYOR (mobilde tanıyıcıdan geliyor). Değerlendirmeye giden şey iki
- * uçta da aynı: dökümün kendisi.
- */
+/** Yazma görevi: içerik noktaları, canlı kelime sayacı, rubrik değerlendirmesi. */
 function OpenTask({
   task, value, score, attemptId, onOpen, onOpenScore,
 }: {
@@ -452,42 +449,15 @@ function OpenTask({
         </div>
       ))}
 
-      {task.exchange?.length ? (
-        <div className="mt-4 space-y-2">
-          <p className="muted text-xs font-bold tracking-wide">KARŞILIKLI KONUŞMA</p>
-          {task.exchange.map((turn, i) =>
-            turn.who === "partner" ? (
-              <div key={i} className="rounded-xl p-3" style={{ background: "var(--surface-2)" }}>
-                <div className="flex items-start justify-between gap-2">
-                  <p className="text-sm leading-relaxed" lang="de">{turn.de}</p>
-                  <button type="button" className="btn btn-ghost shrink-0 px-2 py-1 text-xs" onClick={() => speakGerman(turn.de)} aria-label="Dinle">
-                    <SpeakerIcon className="size-4" />
-                  </button>
-                </div>
-                <p className="muted mt-1 text-sm">{turn.tr}</p>
-              </div>
-            ) : (
-              <p key={i} className="text-sm" style={{ color: "var(--color-brand)" }}>Sıra sende ({turn.seconds} sn): {turn.hint}</p>
-            ),
-          )}
-        </div>
-      ) : null}
-
       <textarea
         value={value}
         onChange={(e) => onOpen(task.id, e.target.value)}
         rows={8}
         className="input mt-4 w-full"
-        placeholder={task.format === "speaking" ? "Söyleyeceklerini buraya yaz" : "Buraya yaz"}
+        placeholder="Buraya yaz"
         lang="de"
       />
       <p className="muted mt-1 text-xs">{need ? `${n} / ${need} kelime` : `${n} kelime`}</p>
-      {task.format === "speaking" ? (
-        <p className="muted mt-1 text-xs leading-relaxed">
-          Tarayıcıda konuşma tanıma her platformda güvenilir değil; bu yüzden web'de cevabını yazıyorsun.
-          Uygulamada aynı görev mikrofonla çalışıyor.
-        </p>
-      ) : null}
 
       {score ? (
         <OpenResult score={score} />
@@ -497,6 +467,202 @@ function OpenTask({
         </button>
       )}
       {!attemptId ? <p className="muted mt-2 text-xs">Değerlendirme için giriş ve bağlantı gerekiyor.</p> : null}
+    </div>
+  );
+}
+
+/**
+ * Konuşma görevi — web, fazlı.
+ *
+ * Mobil oynatıcıyla aynı akış: hazırlık sayacı → karşı tarafın repliği sesle
+ * okunur → sıra sana gelince mikrofon açılır → söylenen yazıya çevrilir.
+ * Tarayıcı da mikrofonu kullanabiliyor (uygulama PWA olarak kuruluyor ve
+ * lernomi.app HTTPS): ses `getUserMedia` ile kaydediliyor ve `/api/stt`
+ * üzerinden yazıya çevriliyor — yürüyüş modunun kullandığı aynı zincir.
+ *
+ * DÖKÜM DÜZENLENEBİLİR. Tanıyıcı yanılabiliyor ve değerlendirilen şey döküm.
+ * Bu yüzden metin bir alana yazılıyor ve öğrenci düzeltebiliyor; mikrofon hiç
+ * çalışmazsa aynı alana doğrudan yazılabiliyor. Ses hiçbir yerde saklanmıyor.
+ */
+function SpeakingTask({
+  task, value, score, attemptId, onOpen, onOpenScore,
+}: {
+  task: MockTask;
+  value: string;
+  score?: OpenScore;
+  attemptId: number | null;
+  onOpen: (id: string, v: string) => void;
+  onOpenScore: (id: string, v: OpenScore) => void;
+}) {
+  const [step, setStep] = useState<"bekleme" | "hazirlik" | "konusma" | "bitti">("bekleme");
+  const [turn, setTurn] = useState(0);
+  const [count, setCount] = useState(0);
+  const [busy, setBusy] = useState(false);
+  const [micErr, setMicErr] = useState(false);
+  const alive = useRef(true);
+  useEffect(() => () => { alive.current = false; }, []);
+
+  const exchange = task.exchange ?? [];
+  const prep = task.prepSeconds ?? 60;
+
+  useEffect(() => {
+    if (step !== "hazirlik" && step !== "konusma") return;
+    if (count <= 0) return;
+    const id = setTimeout(() => setCount((c) => c - 1), 1000);
+    return () => clearTimeout(id);
+  }, [step, count]);
+
+  /** Karşı tarafın repliğini okur ve bitince döner. */
+  const say = (text: string) =>
+    new Promise<void>((resolve) => {
+      let done = false;
+      const finish = () => { if (!done) { done = true; resolve(); } };
+      // Ses hiç çalmazsa görev asılı kalmasın: üst sınır konuşma uzunluğuna göre.
+      const guard = setTimeout(finish, Math.min(30_000, 2500 + text.length * 90));
+      speakGerman(text, () => { clearTimeout(guard); finish(); });
+    });
+
+  /** Bir turluk kayıt → `/api/stt` → düz metin. */
+  async function listen(seconds: number): Promise<string> {
+    const cap = await captureClip(seconds * 1000 + 500);
+    if (!cap) { setMicErr(true); return ""; }
+    setCount(seconds);
+    await new Promise<void>((r) => setTimeout(r, seconds * 1000));
+    const blob = await cap.stop();
+    if (!blob) return "";
+    const form = new FormData();
+    const ext = blob.type.includes("wav") ? "wav" : blob.type.includes("mp4") ? "mp4" : blob.type.includes("ogg") ? "ogg" : "webm";
+    form.append("audio", blob, `clip.${ext}`);
+    form.append("language", "de");
+    try {
+      const res = await fetch("/api/stt", { method: "POST", body: form });
+      if (!res.ok) return "";
+      // Güven eşiği UYGULANMIYOR: yürüyüş modunda düşük güvenli metin yanlış
+      // bir cevabı doğru sayabilirdi, burada metin zaten düzenlenebilir ve
+      // eksik bir döküm hiç dökümden iyidir.
+      const d = (await res.json()) as { text?: string };
+      return (d.text ?? "").trim();
+    } catch {
+      return "";
+    }
+  }
+
+  async function run() {
+    setStep("konusma");
+    const said: string[] = [];
+    if (!exchange.length) {
+      const got = await listen(task.speakSeconds ?? 120);
+      if (got) said.push(got);
+    } else {
+      for (const [i, tn] of exchange.entries()) {
+        if (!alive.current) return;
+        setTurn(i);
+        if (tn.who === "partner") {
+          setCount(0);
+          await say(tn.de);
+        } else {
+          const got = await listen(tn.seconds);
+          said.push(`(${tn.expect}) ${got}`.trim());
+        }
+      }
+    }
+    if (!alive.current) return;
+    onOpen(task.id, said.join("\n"));
+    setStep("bitti");
+  }
+
+  // Hazırlık bitince kendiliğinden konuşmaya geçer — dijital oturumda fazlar
+  // otomatik akar.
+  useEffect(() => {
+    if (step === "hazirlik" && count === 0) void run();
+  }, [step, count]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function evaluate() {
+    const text = value.trim();
+    if (busy || !attemptId || text.length < 5) return;
+    setBusy(true);
+    try {
+      const d = await post<{ result: OpenScore }>({ action: "assess", id: attemptId, taskId: task.id, text });
+      onOpenScore(task.id, d.result);
+    } catch {
+      onOpenScore(task.id, { score: null });
+    }
+    setBusy(false);
+  }
+
+  const current = exchange[turn];
+  return (
+    <div className="card p-4">
+      <p className="muted text-xs font-bold tracking-wide">İÇERİK NOKTALARI</p>
+      {(task.rubric?.points ?? []).map((p, i) => (
+        <div key={i} className="mt-2">
+          <p className="text-sm" lang="de">• {p.de}</p>
+          <p className="muted text-sm">{p.tr}</p>
+        </div>
+      ))}
+
+      {step === "bekleme" ? (
+        <>
+          <p className="muted mt-4 text-sm leading-relaxed">
+            {exchange.length
+              ? `Karşılıklı konuşma: ${exchange.filter((x) => x.who === "you").length} kez sıra sana gelecek. Önce ${prep} saniye hazırlık süren var.`
+              : `Önce ${prep} saniye hazırlık, sonra ${task.speakSeconds ?? 120} saniye konuşma.`}
+          </p>
+          <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" onClick={() => { setCount(prep); setStep("hazirlik"); }}>
+            <MicIcon className="size-4" /> Konuşmaya başla
+          </button>
+          <button type="button" className="btn btn-ghost ml-2 mt-3 px-4 py-2 text-sm" onClick={() => setStep("bitti")}>
+            Mikrofonsuz yaz
+          </button>
+        </>
+      ) : step === "hazirlik" ? (
+        <div className="mt-4 text-center">
+          <p className="muted text-xs font-bold tracking-wide">HAZIRLIK</p>
+          <p className="text-3xl font-bold tabular-nums" style={{ color: "var(--color-brand)" }}>{mmss(count)}</p>
+          <p className="muted mt-1 text-sm">Ne söyleyeceğini planla. Süre bitince mikrofon kendiliğinden açılacak.</p>
+        </div>
+      ) : step === "konusma" ? (
+        <div className="mt-4">
+          {current?.who === "partner" ? (
+            <>
+              <p className="muted text-xs font-bold tracking-wide">KARŞI TARAF</p>
+              <p className="mt-1 text-sm leading-relaxed" lang="de">{current.de}</p>
+              <p className="muted mt-1 text-sm">{current.tr}</p>
+            </>
+          ) : (
+            <div className="text-center">
+              <MicIcon className="mx-auto size-6" style={{ color: "var(--color-danger)" }} />
+              <p className="mt-1 text-sm font-bold" style={{ color: "var(--color-danger)" }}>Şimdi konuş · {mmss(count)}</p>
+              <p className="muted mt-1 text-sm">{current?.who === "you" ? current.hint : "Görevi baştan sona anlat."}</p>
+            </div>
+          )}
+        </div>
+      ) : (
+        <>
+          <p className="muted mt-4 text-xs font-bold tracking-wide">SÖYLEDİKLERİN</p>
+          <textarea
+            value={value}
+            onChange={(e) => onOpen(task.id, e.target.value)}
+            rows={8}
+            className="input mt-1 w-full"
+            placeholder="Söylediklerin buraya gelir; mikrofon çalışmadıysa doğrudan yazabilirsin."
+            lang="de"
+          />
+          <p className="muted mt-1 text-xs leading-relaxed">
+            {micErr
+              ? "Mikrofon açılamadı. Cevabını yazarak verebilirsin."
+              : "Metin konuşma tanıyıcısından geldi; yanlış yazılan yerleri düzeltebilirsin. Ses hiçbir yerde saklanmıyor."}
+          </p>
+          {score ? (
+            <OpenResult score={score} />
+          ) : (
+            <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" disabled={busy || !attemptId || value.trim().length < 5} onClick={() => void evaluate()}>
+              {busy ? "Değerlendiriliyor…" : "Değerlendir"}
+            </button>
+          )}
+          {!attemptId ? <p className="muted mt-2 text-xs">Değerlendirme için giriş ve bağlantı gerekiyor.</p> : null}
+        </>
+      )}
     </div>
   );
 }
