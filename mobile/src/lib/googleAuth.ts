@@ -1,5 +1,6 @@
 import { Platform } from "react-native";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
+import { sameEmail, tokenEmail } from "./accountLinks";
 import { signInGoogleNative } from "./auth";
 import { t } from "./i18n";
 import type { AuthOutcome } from "./auth";
@@ -79,6 +80,46 @@ export async function googleSignIn(): Promise<AuthOutcome> {
   } catch (e) {
     const code = (e as { code?: string })?.code ?? "";
     // Kullanıcı iptali sessiz geçilir; gerisi net hata.
+    if (code === "SIGN_IN_CANCELLED" || code === "-5" || code === "12501") {
+      return { ok: false, code: "CANCELLED", message: t("autherror.cancelled") };
+    }
+    return { ok: false, code: "GOOGLE", message: t("autherror.google_failed") };
+  }
+}
+
+/**
+ * Google hesabını AÇIK OTURUMA bağlar (Ayarlar → Giriş yöntemleri).
+ *
+ * Girişle aynı yoldan gidiyor: better-auth'un `link-social` ucu idToken kabul
+ * etmiyor, yalnız tarayıcı yönlendirmesi veriyor; native token'ı kabul eden uç
+ * `sign-in/social` ve o uç, e-posta eşleşen mevcut hesaba bağlıyor.
+ *
+ * KORUMA: o uç "bu e-postanın hesabına gir" demek. Kullanıcı hesap seçicide
+ * BAŞKA bir Google hesabı seçerse bağlama olmaz — sessizce o hesaba geçilir ya
+ * da yeni hesap açılır, yani kişi kendi hesabını bağlamaya çalışırken başka bir
+ * hesaba düşer. Bu yüzden token'daki e-posta oturumunkiyle karşılaştırılıyor ve
+ * uymuyorsa çağrı hiç kurulmuyor.
+ *
+ * Hesap seçici her seferinde açılsın diye önce SDK oturumu kapatılıyor; yoksa
+ * son kullanılan hesapla sessizce devam ediyor ve kullanıcı seçemiyor.
+ */
+export async function googleLink(expectEmail: string | null): Promise<AuthOutcome> {
+  if (!googleSupported()) return { ok: false, code: "GOOGLE", message: t("autherror.google_failed") };
+  try {
+    ensureConfigured();
+    await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+    try { await GoogleSignin.signOut(); } catch { /* yut */ }
+    const res = (await GoogleSignin.signIn()) as
+      | { type?: string; data?: { idToken?: string | null }; idToken?: string | null };
+    if (res?.type === "cancelled") return { ok: false, code: "CANCELLED", message: t("autherror.cancelled") };
+    const idToken = res?.data?.idToken ?? res?.idToken ?? null;
+    if (!idToken) return { ok: false, code: "NO_TOKEN", message: t("autherror.no_google_token") };
+    if (expectEmail && !sameEmail(tokenEmail(idToken), expectEmail)) {
+      return { ok: false, code: "EMAIL_MISMATCH", message: t("links.email_mismatch") };
+    }
+    return await signInGoogleNative(idToken);
+  } catch (e) {
+    const code = (e as { code?: string })?.code ?? "";
     if (code === "SIGN_IN_CANCELLED" || code === "-5" || code === "12501") {
       return { ok: false, code: "CANCELLED", message: t("autherror.cancelled") };
     }

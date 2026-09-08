@@ -1,6 +1,7 @@
 import { Platform } from "react-native";
 import appleAuth from "@invertase/react-native-apple-authentication";
 import { signInAppleNative, updateUserName, sendAppleAuthorizationCode } from "./auth";
+import { sameEmail, tokenEmail } from "./accountLinks";
 import { t } from "./i18n";
 import type { AuthOutcome } from "./auth";
 
@@ -89,6 +90,38 @@ export async function appleSignIn(): Promise<AuthOutcome> {
     return outcome;
   } catch (e) {
     // 1001 = kullanıcı iptali (appleAuth.Error.CANCELED). Sessiz geçilir.
+    const code = String((e as { code?: string | number })?.code ?? "");
+    if (code === appleAuth.Error.CANCELED) {
+      return { ok: false, code: "CANCELLED", message: t("autherror.cancelled") };
+    }
+    return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
+  }
+}
+
+/**
+ * Apple hesabını AÇIK OTURUMA bağlar. Gerekçe ve koruma googleLink ile aynı:
+ * native token'ı yalnız `sign-in/social` kabul ediyor ve o uç e-posta
+ * eşleşmezse bağlamak yerine hesap değiştirir.
+ *
+ * Apple ad/e-postayı YALNIZ ilk yetkilendirmede gönderiyor; kıyas bu yüzden
+ * yanıttaki alandan değil, imzalı token'ın içindeki `email` iddiasından
+ * yapılıyor — o her seferinde geliyor.
+ */
+export async function appleLink(expectEmail: string | null): Promise<AuthOutcome> {
+  if (!appleSupported()) return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
+  try {
+    const res = await appleAuth.performRequest({
+      requestedOperation: appleAuth.Operation.LOGIN,
+      requestedScopes: [appleAuth.Scope.FULL_NAME, appleAuth.Scope.EMAIL],
+      nonceEnabled: false,
+    });
+    const idToken = res.identityToken;
+    if (!idToken) return { ok: false, code: "NO_TOKEN", message: t("autherror.no_apple_token") };
+    if (expectEmail && !sameEmail(tokenEmail(idToken), expectEmail)) {
+      return { ok: false, code: "EMAIL_MISMATCH", message: t("links.email_mismatch") };
+    }
+    return await signInAppleNative(idToken);
+  } catch (e) {
     const code = String((e as { code?: string | number })?.code ?? "");
     if (code === appleAuth.Error.CANCELED) {
       return { ok: false, code: "CANCELLED", message: t("autherror.cancelled") };

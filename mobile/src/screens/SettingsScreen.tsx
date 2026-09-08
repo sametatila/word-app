@@ -7,6 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
+import { LinkedAccounts } from "../ui/LinkedAccounts";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
@@ -162,6 +163,13 @@ export function SettingsScreen() {
             </View>
             <ChevronRightIcon color={colors.textFaint} size={20} />
           </PressableScale>
+        </Section>
+
+        {/* Giriş yöntemleri: parola + sosyal hesaplar. Aynı e-postayla giriş
+            yapan kişi tek hesapta buluşsun diye; doğrulanmamış e-postada
+            otomatik bağlama bilerek yapılmıyor ve tek çıkış burası. */}
+        <Section title={t("links.title")} colors={colors}>
+          <LinkedAccounts colors={colors} />
         </Section>
 
         <Section title={t("settings.language_to_learn")} colors={colors}>
