@@ -1,6 +1,6 @@
 import type { ComponentType, SVGProps } from "react";
 import type { SkillId } from "@/lib/skills/types";
-import { BookOpenIcon, HeadphonesIcon, MicIcon, PenIcon } from "@/components/icons";
+import { BookOpenIcon, HeadphonesIcon, MicIcon, PenIcon, PuzzleIcon } from "@/components/icons";
 
 /**
  * CEFR seviye renkleri — level-badge ve ilerleme çubuklarıyla aynı ton dili.
@@ -28,6 +28,7 @@ export const SKILL_ICON: Record<
   listening: HeadphonesIcon,
   writing: PenIcon,
   speaking: MicIcon,
+  grammar: PuzzleIcon,
 };
 
 /**
@@ -42,4 +43,7 @@ export const SKILL_TINT: Record<SkillId, string> = {
   listening: "var(--color-violet-500)",
   writing: "var(--color-mint-500)",
   speaking: "var(--color-brand-500)",
+  // Dil bilgisi mobilde `streak` (kehribar) tonunu alıyor; buradaki karşılığı
+  // seri rengi olan alev.
+  grammar: "var(--color-flame-500)",
 };

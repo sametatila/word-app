@@ -96,7 +96,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
             {report.weakRules.slice(0, 3).map((r) => (
               <li key={r} className="flex items-center justify-between text-sm">
                 <span>{r}</span>
-                <Link href="/lessons" className="btn btn-ghost px-3 py-1 text-xs">
+                <Link href="/immersion" className="btn btn-ghost px-3 py-1 text-xs">
                   Konuşmaya git
                 </Link>
               </li>

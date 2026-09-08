@@ -1,56 +1,23 @@
-import { getUserId } from "@/lib/auth/server";
 import { redirect } from "next/navigation";
-import { ensureProfile } from "@/lib/session";
-import { lessonBoard, lessonCount, nextLesson, weakRules } from "@/lib/lessons/progress";
-import { scoredSteps } from "@/lib/lessons/types";
-import { LessonHub, type HubCard } from "@/components/lessons/lesson-hub";
-import { passedModuleExams } from "@/lib/exam";
-
-export const dynamic = "force-dynamic";
 
 /**
- * Dersler — serbest sohbetin yerine geçen ana bölüm.
+ * Dersler LİSTESİ artık Patika'ya yönleniyor.
  *
- * Sıradaki ders sunucuda seçiliyor çünkü karar veriye bağlı: tekrarı gelmiş
- * ders varsa o, yoksa açılmamış ilk ders.
+ * Aynı içeriğin iki yüzeyi vardı: burası (kıvrılan ders yolu) ve `/immersion`
+ * (Patika). İkisi aynı dersleri, aynı sırayla, aynı ilerlemeyle gösteriyordu;
+ * fark yalnız çizimdeydi. Alt gezinmede zaten yalnız Patika duruyor — bu sayfa
+ * oynatıcı sonlarından ve zayıf nokta kartından açılıyor, yani kullanıcı ders
+ * bitirdikten sonra kendini BAŞKA bir ders ekranında buluyordu.
+ *
+ * Mobilde böyle bir ikilik yok: tek bir Patika var (`PathScreen`). Web de öyle.
+ *
+ * DERSİN KENDİSİ (`/lessons/[id]`) ve modül sınavı (`/lessons/boss/…`)
+ * duruyor — kaldırılan yalnızca LİSTE. Patika'nın ünite adımları da oraya
+ * bağlanıyor (bkz. lib/immersion/hub `hrefFor`).
+ *
+ * Adres bir yönlendirme olarak kalıyor, silinmiyor: dışarıya verilmiş
+ * bağlantılar (paylaşılan bağlantı, yer imi, eski bildirim) sessizce ölmemeli.
  */
-export default async function LessonsPage() {
-  const userId = await getUserId();
-  if (!userId) redirect("/login");
-  const profile = await ensureProfile(userId);
-
-  const board = await lessonBoard(userId, profile.course);
-  const next = await nextLesson(userId, profile.course, profile.level);
-  const weak = await weakRules(userId);
-  // Yol haritasındaki taç modül SINAVINDAN geliyor. Hız turunun en iyi süresi
-  // burada ARTIK OKUNMUYOR: tur yolun düğümünden kaldırıldı (bkz.
-  // components/lessons/lesson-hub), girişi sınav sonucu ekranında.
-  const passed = await passedModuleExams(userId);
-
-  const cards: HubCard[] = board.map((c) => ({
-    lesson: c.lesson,
-    // "Bitti" ölçüsü rol yapmayı da içeriyor: alıştırmaları geçip konuşmadan
-    // çıkmak dersin asıl parçasını atlamak demek.
-    done: Boolean(c.state?.roleplayDone),
-    // Başlanmış ama bitmemiş ders ayrı bir durum. Önce yalnızca "bitti /
-    // bitmedi" vardı ve dört alıştırmayı da doğru yapıp konuşmaya girmemiş bir
-    // ders hiç dokunulmamış derslerden ayırt edilemiyordu — öğrenci
-    // yaptıklarının hiçbir izini görmüyordu.
-    started: Boolean(c.state) && !c.state?.roleplayDone,
-    due: c.due,
-    correct: c.state?.correct ?? 0,
-    total: c.state?.total ?? scoredSteps(c.lesson),
-    attempts: c.state?.attempts ?? 0,
-  }));
-
-  return (
-    <LessonHub
-      cards={cards}
-      next={next?.lesson.id ?? null}
-      weak={weak}
-      total={lessonCount(profile.course)}
-      userLevel={profile.level}
-      passed={Object.fromEntries(passed)}
-    />
-  );
+export default function LessonsIndexRedirect() {
+  redirect("/immersion");
 }

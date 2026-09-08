@@ -42,7 +42,7 @@ export default async function BossPage({
           Modül sınavı (25 dk, yedi bölüm) →
         </Link>
       </div>
-      <BossPlayer level={level} moduleIndex={index} onExitHref="/lessons" />
+      <BossPlayer level={level} moduleIndex={index} onExitHref="/immersion" />
     </>
   );
 }

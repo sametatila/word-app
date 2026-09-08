@@ -304,7 +304,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         <p className="text-sm">Sınav şu an yüklenemedi ya da kaydedilemedi.</p>
-        <Link href="/lessons" className="btn btn-ghost mt-3 px-4 py-2 text-sm">
+        <Link href="/immersion" className="btn btn-ghost mt-3 px-4 py-2 text-sm">
           Konuşmalara dön
         </Link>
       </section>
@@ -691,7 +691,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
       <button type="button" onClick={onStart} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
         Sınava başla
       </button>
-      <Link href="/lessons" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
+      <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
         Vazgeç
       </Link>
     </section>
@@ -969,7 +969,7 @@ function Result({
       ) : (
         <p className="muted mt-3 text-xs">Zayıf bölüm için profilde &quot;Zayıf noktaların&quot; ve &quot;Sıradaki en iyi adım&quot; var.</p>
       )}
-      <Link href="/lessons" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
+      <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
         Konuşmalara dön
       </Link>
       {/*

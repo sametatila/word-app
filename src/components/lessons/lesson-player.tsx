@@ -1587,7 +1587,7 @@ export function LessonPlayer({
               ) : null}
               <button
                 type="button"
-                onClick={() => router.push("/lessons")}
+                onClick={() => router.push("/immersion")}
                 className={`btn flex-1 py-3 text-sm ${roleplayDone && !extras.next ? "btn-primary" : "btn-ghost"}`}
               >
                 Konuşmalara dön

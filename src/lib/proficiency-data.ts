@@ -254,7 +254,7 @@ export async function nextStep(
       ? `${name} ${level} ${cell.score} — ${translate(lang, bandKey(cell.band ?? "beginner"))}`
       : translate(lang, "proficiency.not_measured", { skill: name, level });
     if (skill === "vocab") return { skill, label: name, reason, href: "/learn/game", title: translate(lang, "plan.word_round"), minutes: 6 };
-    if (skill === "grammar") return { skill, label: name, reason, href: "/lessons", title: translate(lang, "proficiency.grammar_practice"), minutes: 5 };
+    if (skill === "grammar") return { skill, label: name, reason, href: "/immersion", title: translate(lang, "proficiency.grammar_practice"), minutes: 5 };
     const open = metas.find((m) => m.skill === skill && !done.has(m.id));
     if (open) return { skill, label: name, reason, href: `/immersion/skill/${open.id}`, title: open.title, minutes: open.minutes };
   }

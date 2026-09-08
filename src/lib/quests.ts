@@ -69,7 +69,7 @@ const QUESTS: QuestDef[] = [
   { id: "listen5", labelKey: "quest.listen5", href: "/learn", target: 5, xp: 150 },
   { id: "daily", labelKey: "quest.daily", href: "/learn", target: 1, xp: 200, discovery: true },
   { id: "skill1", labelKey: "quest.skill1", href: "/immersion", target: 1, xp: 200, discovery: true },
-  { id: "lesson1", labelKey: "quest.lesson1", href: "/lessons", target: 1, xp: 200, discovery: true },
+  { id: "lesson1", labelKey: "quest.lesson1", href: "/immersion", target: 1, xp: 200, discovery: true },
 ];
 
 /** Üçünü birden bitirmenin ödülü — ayrı bir "görev" gibi talep edilir. */
