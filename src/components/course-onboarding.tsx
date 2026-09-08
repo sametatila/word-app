@@ -21,6 +21,21 @@ const GOALS = [
   { id: "swiss", title: "İsviçre", desc: "Zürih'te yaşam: lehçeyi anlamak, Hochdeutsch ile yazmak." },
 ];
 
+/**
+ * Günlük hedef — mobil onboarding'in dördüncü adımıyla AYNI üç seçenek ve
+ * aynı değerler (`M/src/screens/OnboardingScreen.tsx`).
+ *
+ * Etiket dakika diyor, değer TEKRAR SAYISI: mobilde de öyle ve iki taraf
+ * bilerek aynı bırakıldı — biri "düzeltilirse" aynı seçeneği seçen iki
+ * kullanıcı iki farklı hedefe düşerdi. Etiket–değer uyumsuzluğu ayrı bir iş
+ * ve iki tarafta birden yapılmalı (bkz. docs/plan/web-parity.md, Şerit O).
+ */
+const PACES = [
+  { goal: 5, title: "Rahat", desc: "5 dk / gün" },
+  { goal: 10, title: "Kararlı", desc: "10 dk / gün" },
+  { goal: 20, title: "Ciddi", desc: "20 dk / gün" },
+];
+
 const LEVELS = [
   { id: "A1", desc: "Yeni başlıyorum" },
   { id: "A2", desc: "Temel günlük dili biliyorum" },
@@ -29,7 +44,7 @@ const LEVELS = [
   { id: "C1", desc: "Akademik ve soyut dile hâkimim" },
 ];
 
-type Step = 0 | 1 | 2 | 3;
+type Step = 0 | 1 | 2 | 3 | 4;
 
 /**
  * İlk giriş akışı (plan WP-65): dört ekran, her biri tek karar.
@@ -46,7 +61,7 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
   const [step, setStep] = useState<Step>(0);
   // Onboarding hunisi: hangi adıma kadar gelindi (WP-80).
   useEffect(() => {
-    track("onboarding_step", step, ["welcome", "goal", "level", "ready"][step] ?? "other");
+    track("onboarding_step", step, ["welcome", "goal", "level", "pace", "ready"][step] ?? "other");
   }, [step]);
   const [name, setName] = useState(initialName);
   const [course, setCourse] = useState("de");
@@ -54,6 +69,7 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
   const [goal, setGoal] = useState<string | null>(null);
   const [level, setLevel] = useState("A1");
   const [levelMode, setLevelMode] = useState<"pick" | "measure" | null>(null);
+  const [pace, setPace] = useState<number | null>(null);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -67,7 +83,7 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
       const res = await fetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ displayName: cleanName, course, voice, goal, level, ...extra }),
+        body: JSON.stringify({ displayName: cleanName, course, voice, goal, level, ...(pace ? { dailyGoal: pace } : {}), ...extra }),
       });
       if (!res.ok) throw new Error(String(res.status));
       return true;
@@ -79,23 +95,38 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
     }
   }
 
-  async function finishWithLevel() {
+  /**
+   * Seviye adımı artık KAYDETMİYOR, günlük hedef adımına geçiyor.
+   *
+   * Mobilde de sıra böyle: kurs → başlangıç noktası → günlük hedef → bitir.
+   * Hedef en sonda çünkü iki seviye yolunun (test / kendin seç) ikisi de
+   * ondan geçmeli; seviye adımında kaydedilseydi test yolunu seçen kullanıcı
+   * hedefi hiç görmezdi.
+   */
+  function toPace() {
+    track("nav", 0, levelMode === "measure" ? "onboarding:level_measure" : "onboarding:level_pick");
+    setStep(3);
+  }
+
+  /** Günlük hedef seçildikten sonra: profil yazılır, yol ayrılır. */
+  async function finishFromPace() {
+    if (levelMode === "measure") {
+      // Profil önce kaydedilir (isim/kurs/hedef); seviye testin sonunda yazılır.
+      if (await save({ level: "A1" })) {
+        track("nav", 0, "onboarding:placement");
+        router.push("/placement");
+      }
+      return;
+    }
     if (await save({ level })) {
       track("nav", 0, "onboarding:level");
-      setStep(3);
-    }
-  }
-  async function goMeasure() {
-    // Profil önce kaydedilir (isim/kurs/hedef); seviye testin sonunda yazılır.
-    if (await save({ level: "A1" })) {
-      track("nav", 0, "onboarding:placement");
-      router.push("/placement");
+      setStep(4);
     }
   }
 
   const dots = (
-    <ol className="mb-5 flex items-center gap-2" aria-label={`Adım ${step + 1} / 4`}>
-      {[0, 1, 2, 3].map((i) => (
+    <ol className="mb-5 flex items-center gap-2" aria-label={`Adım ${step + 1} / 5`}>
+      {[0, 1, 2, 3, 4].map((i) => (
         <li key={i} className="h-1.5 flex-1 rounded-full" style={{ background: i <= step ? "var(--color-brand)" : "var(--surface-2)" }} />
       ))}
     </ol>
@@ -106,8 +137,10 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
       <div className="mb-6 flex items-center gap-2.5">
         <LogoMark size={36} />
         <div>
-          <h1 className="text-lg font-bold">{step === 0 ? "Hoş geldin!" : step === 1 ? "Neden Almanca?" : step === 2 ? "Seviyen" : "Hazırsın"}</h1>
-          <p className="muted text-xs">Adım {step + 1} / 4 · sonradan profilden değiştirebilirsin</p>
+          <h1 className="text-h3">
+            {step === 0 ? "Hoş geldin!" : step === 1 ? "Neden Almanca?" : step === 2 ? "Seviyen" : step === 3 ? "Günlük hedefin" : "Hazırsın"}
+          </h1>
+          <p className="muted text-caption">Adım {step + 1} / 5 · sonradan profilden değiştirebilirsin</p>
         </div>
       </div>
       {dots}
@@ -230,20 +263,56 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
                 <button type="button" onClick={() => setStep(1)} className="btn btn-ghost px-4 py-3 text-sm">
                   Geri
                 </button>
-                {levelMode === "measure" ? (
-                  <button type="button" disabled={saving} onClick={() => void goMeasure()} className="btn btn-primary flex-1 px-6 py-3 text-base disabled:opacity-60">
-                    {saving ? "Hazırlanıyor…" : "Teste başla"}
-                  </button>
-                ) : (
-                  <button type="button" disabled={saving || levelMode !== "pick"} onClick={() => void finishWithLevel()} className="btn btn-primary flex-1 px-6 py-3 text-base disabled:opacity-60">
-                    {saving ? "Kaydediliyor…" : `${level} ile devam`}
-                  </button>
-                )}
+                <button
+                  type="button"
+                  disabled={!levelMode}
+                  onClick={toPace}
+                  className="btn btn-primary flex-1 px-6 py-3 disabled:opacity-60"
+                >
+                  {levelMode === "measure" ? "Devam" : levelMode === "pick" ? `${level} ile devam` : "Devam"}
+                </button>
               </div>
             </>
           ) : null}
 
           {step === 3 ? (
+            <>
+              <div className="flex items-start gap-3">
+                <Mascot mood="think" size={72} stage="onboarding" />
+                <p className="muted text-body">
+                  Her gün tekrar et, daha hızlı öğren. Hedefi sonradan Ayarlar&apos;dan değiştirebilirsin.
+                </p>
+              </div>
+              <div className="mt-5 grid gap-3">
+                {PACES.map((p) => (
+                  <button
+                    key={p.goal}
+                    type="button"
+                    onClick={() => setPace(p.goal)}
+                    className={`option p-4 text-left ${pace === p.goal ? "option-picked" : ""}`}
+                  >
+                    <p className="text-h3">{p.title}</p>
+                    <p className="muted mt-0.5 text-caption">{p.desc}</p>
+                  </button>
+                ))}
+              </div>
+              <div className="mt-6 flex gap-2">
+                <button type="button" onClick={() => setStep(2)} className="btn btn-ghost px-4 py-3">
+                  Geri
+                </button>
+                <button
+                  type="button"
+                  disabled={saving || !pace}
+                  onClick={() => void finishFromPace()}
+                  className="btn btn-primary flex-1 px-6 py-3 disabled:opacity-60"
+                >
+                  {saving ? "Kaydediliyor…" : levelMode === "measure" ? "Teste başla" : "Başla"}
+                </button>
+              </div>
+            </>
+          ) : null}
+
+          {step === 4 ? (
             <>
               <div className="flex items-start gap-3">
                 <Mascot mood="cheer" size={80} stage="onboarding" />
