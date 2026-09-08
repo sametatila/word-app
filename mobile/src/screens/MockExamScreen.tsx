@@ -63,13 +63,16 @@ import { useTheme, spacing, radii, type Palette } from "../theme";
  * tanıyıcısıyla yazıya çevriliyor (STT). SES SUNUCUYA GİTMİYOR, yalnız döküm
  * gidiyor ve değerlendirme onun üzerinden yapılıyor.
  *
- * ANLIK KAYIT. Her cevap sunucuya yazılıyor (`/api/mock-exam` save).
- * Uygulama kapansa, telefon kilitlense, ağ kopsa bile sınav kaybolmuyor;
- * yeniden girişte kaldığı görevden ve kalan süreden devam ediliyor.
+ * ANLIK KAYIT, İKİ KATMANLI. Her cevap ÖNCE cihaza (`mockExamLocal`), sonra
+ * sunucuya (`/api/mock-exam` save) yazılıyor. Uygulama kapansa, telefon
+ * kilitlense, sunucuya ulaşılamasa bile sınav kaybolmuyor: yeniden girişte
+ * kaldığı görevden ve kalan süreden devam ediliyor. Sunucu yetkili olmayı
+ * sürdürüyor; cihazdaki kayıt bir yedek, ikinci bir doğruluk kaynağı değil.
  *
  * PUAN SUNUCUDA. İstemci cevapları gönderiyor, puanı sunucu kâğıdın
- * kendisiyle hesaplıyor. Ağ yoksa yerel bir sonuç gösteriliyor ve bunun
- * KAYDEDİLMEDİĞİ ekranda yazıyor.
+ * kendisiyle hesaplıyor. Sunucuya ulaşılamazsa cihazda hesaplanan bir sonuç
+ * gösteriliyor; o sonuç da saklanıyor ama sunucu istatistiğine girmediği hem
+ * ekranda hem listedeki rozette yazıyor.
  */
 
 type Answers = Record<string, string>;
