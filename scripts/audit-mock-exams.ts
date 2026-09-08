@@ -39,6 +39,11 @@ const { olc, SERBEST } = require("./lib/vocab-gate.cjs") as {
   olc: (ham: string, unit: number, ek?: string[], seviye?: string) => { tok: string[]; disi: string[] };
   SERBEST: Set<string>;
 };
+/* İngilizce kapı ayrı bir dosya: her kuralı başka bir dilin kuralı. */
+const { olc: olcEn, SERBEST: SERBEST_GATE_EN } = require("./lib/vocab-gate-en.cjs") as {
+  olc: (ham: string, seviye?: string, ek?: string[]) => { tok: string[]; disi: string[] };
+  SERBEST: Set<string>;
+};
 
 let hard = 0;
 let soft = 0;
@@ -50,32 +55,13 @@ const norm = (s: string) =>
 const wordsOf = (s: string) => norm(s).split(" ").filter(Boolean);
 
 /**
- * İngilizce işlev sözcükleri — `SERBEST`in İngilizce karşılığı.
+ * İngilizce işlev sözcükleri — kapının kendi listesi.
  *
- * Neden gerekli: "içerik sözcüğü" tanımı hem birebir alıntı ölçütünde hem
- * çeldirici demirlemesinde kullanılıyor ve "dörtten uzun ve işlev sözcüğü
- * değil" diye kuruluyor. Almanca liste İngilizce metne uygulandığında
- * `that`, `with`, `have`, `been`, `they`, `which`, `there` içerik sözcüğü
- * sayılıyor; bir şık metinle yalnız `which` paylaşsa bile "demirlenmiş"
- * görünüyor ve ölçüt sessizce kör kalıyordu.
+ * "İçerik sözcüğü" tanımı hem birebir alıntı ölçütünde hem çeldirici
+ * demirlemesinde kullanılıyor. Liste burada bir kez daha yazılsaydı iki kopya
+ * ayrı ayrı eskirdi; kapı zaten aynı ayrımı yapmak zorunda.
  */
-const SERBEST_EN = new Set(`a an the this that these those there here
-i you he she it we they me him her us them my your his its our their mine yours
-and or but so because if when while although though unless until since as than
-of in on at to for with from by about into over under after before during between
-is are was were be been being am do does did done doing have has had having
-will would shall should can could may might must going used
-not no nor only just also very too much many more most some any all both each every
-what which who whom whose where why how whether
-one two three four five six seven eight nine ten
-percent euro pound dollar hour hours day days week weeks month months year years
-mr mrs ms dear sincerely regards hello thanks thank please
-yes true false right wrong
-own same other another such then now still even ever never always often
-get got gets make makes made take takes took give gives gave
-say says said tell tells told go goes went come comes came
-know knows knew think thinks thought want wants wanted need needs needed
-like likes liked look looks looked find finds found`.split(/\s+/).filter(Boolean));
+const SERBEST_EN = SERBEST_GATE_EN;
 
 /** Kâğıdın diline göre işlev sözcüğü kümesi. */
 const freeWords = (course: string) => (course === "en" ? SERBEST_EN : SERBEST);
@@ -325,43 +311,28 @@ const LAST_UNIT: Record<string, number> = { A1: 25, A2: 25, B1: 45, B2: 25, C1: 
 const OUT_LIMIT: Record<string, number | null> = { A1: 18, A2: 26, B1: 38, B2: null, C1: null };
 
 /**
- * İngilizce metinlerin YEDEK ölçütü — kelime kapısının yerine geçen şey.
+ * İngilizce havuz dışı kelime sınırı.
  *
- * `scripts/lib/vocab-gate.cjs` İngilizceyi DESTEKLEMİYOR ve zorlanamaz:
- * havuzu `data/app/words.json` (Almanca), sözcük regexleri `[a-zäöüß]`,
- * biçimbilimi Almanca (ayrılabilen önek, ge-…-t ortacı, da-bileşiği) ve
- * kümülatif küme `mobile/src/data/lessons/de-*.json` ders dosyalarından
- * kuruluyor — İngilizce ders dosyası yalnız A1 ve A2 için var.
- *
- * Sessizce geçmek yerine ölçülebilir bir vekil kullanılıyor: ortalama sözcük
- * uzunluğu ve uzun sözcük oranı. İkisi de sözlük zorluğuyla birlikte artar
- * (Latince kökenli soyut sözcükler İngilizcede belirgin biçimde uzundur) ve
- * seviyeden seviyeye tutarlı bir eşik verir. Kesin bir kapı değil; amacı bir
- * A2 kâğıdına sızmış C1 sözlüğünü yakalamak.
+ * Sayılar "bu seviyede metin okunur mu" sorusundan geliyor, kâğıtlarımızın
+ * ölçülen oranından değil: anlama için kabaca %95 tanıdık sözcük gerekiyor,
+ * yani %5 civarı bilinmeyen normal. Buradaki sınırlar onun iki-üç katı,
+ * çünkü işleri bir felaketi yakalamak — seviyenin üstüne kaçmış bir metni —
+ * ince ayar yapmak değil. Üst seviyelerde sınır gevşiyor: bir C1 metninde
+ * bilinmeyen sözcük BULUNMALI, baş etme becerisi de ölçülüyor.
  */
-const EN_LEN_LIMIT: Record<string, { avg: number; longPct: number }> = {
-  A1: { avg: 4.5, longPct: 8 },
-  A2: { avg: 4.8, longPct: 12 },
-  B1: { avg: 5.2, longPct: 18 },
-  B2: { avg: 5.6, longPct: 26 },
-  C1: { avg: 6.1, longPct: 34 },
-};
+const OUT_LIMIT_EN: Record<string, number> = { A1: 10, A2: 12, B1: 16, B2: 20, C1: 25 };
 
 function checkVocabEn(paper: MockPaper): { pct: number; top: string[] } {
-  const ws = wordsOf(corpusOf(paper)).filter((w) => !/^\d+$/.test(w));
-  if (!ws.length) return { pct: 0, top: [] };
-  const avg = ws.reduce((a, w) => a + w.length, 0) / ws.length;
-  const long = ws.filter((w) => w.length >= 9);
-  const longPct = Math.round((100 * long.length) / ws.length);
-  const lim = EN_LEN_LIMIT[paper.level];
-  if (lim) {
-    if (avg > lim.avg) warn(paper.id, `ortalama sözcük uzunluğu ${avg.toFixed(2)} harf (${paper.level} sınırı ${lim.avg}) — sözlük seviyenin üstünde olabilir`);
-    if (longPct > lim.longPct) warn(paper.id, `9+ harfli sözcük oranı %${longPct} (${paper.level} sınırı %${lim.longPct}) — sözlük seviyenin üstünde olabilir`);
+  const { tok, disi } = olcEn(corpusOf(paper), paper.level.toLowerCase());
+  const pct = tok.length ? Math.round((100 * disi.length) / tok.length) : 0;
+  const limit = OUT_LIMIT_EN[paper.level];
+  if (limit != null && pct > limit) {
+    warn(paper.id, `havuz dışı kelime %${pct} (${paper.level} sınırı %${limit}) — metinler seviyenin üstünde olabilir`);
   }
   const freq = new Map<string, number>();
-  for (const w of long) freq.set(w, (freq.get(w) ?? 0) + 1);
+  for (const d of disi) freq.set(d, (freq.get(d) ?? 0) + 1);
   const top = [...freq.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([w, n]) => `${w}×${n}`);
-  return { pct: longPct, top };
+  return { pct, top };
 }
 
 function checkVocab(paper: MockPaper): { pct: number; top: string[] } {
@@ -473,17 +444,10 @@ for (const paper of MOCK_PAPERS) {
       }
     }
   }
-  const etiket = paper.course === "en" ? "9+ harf   %" : "havuz dışı %";
-  rows.push(`  ${paper.id}  ${etiket}${String(v.pct).padStart(2)}  en sık: ${v.top.join(" ")}`);
+  rows.push(`  ${paper.id}  havuz dışı %${String(v.pct).padStart(2)}  en sık: ${v.top.join(" ")}`);
 }
 
 console.log("\nKelime erişimi (okuma + dinleme metinleri):");
 console.log(rows.join("\n"));
-// Atlanan denetim sessiz kalmamalı: İngilizce kâğıtlarda havuz kapısı yerine
-// sözcük uzunluğu vekili çalışıyor ve okuyan bunu bilmeli.
-if (MOCK_PAPERS.some((p) => p.course === "en")) {
-  console.log("\n  Not: İngilizce kâğıtlarda havuz kapısı (vocab-gate) ÇALIŞMIYOR — gate Almancaya özgü.");
-  console.log("  Yerine sözcük uzunluğu vekili ölçülüyor: ortalama uzunluk ve 9+ harfli sözcük oranı.");
-}
 console.log(hard ? `\n${hard} ağır bulgu, ${soft} uyarı` : `\n0 ağır bulgu, ${soft} uyarı`);
 process.exit(hard ? 1 : 0);

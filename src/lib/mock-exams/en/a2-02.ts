@@ -129,10 +129,10 @@ export const EN_A2_02: MockPaper = {
               no: 5,
               ref: "m5",
               text: "Why does the writer want the names today?",
-              options: ["Because the train is full on Friday", "Because the group is too big", "Because the tickets get more expensive later"],
+              options: ["Because the train is often full on a Friday evening", "Because the group must book together", "Because the tickets get more expensive later"],
               answer: 2,
               explain:
-                "İleti koşulu kuruyor: cumadan önce alınırsa daha ucuz, sonra «the price goes up». Aciliyetin sebebi fiyat. Trenin dolması ya da grubun büyüklüğü metinde hiç geçmiyor.",
+                "İleti koşulu kuruyor: cumadan önce alınırsa daha ucuz, sonra «the price goes up». Aciliyetin sebebi fiyat. İkinci şık metindeki `book` fiilinden kuruluyor ama metin birlikte alınmasından değil ERKEN alınmasından söz ediyor; trenin dolması ise hiç geçmiyor.",
             },
           ],
         },
