@@ -11,6 +11,7 @@ import { recordAiUsage } from "@/lib/ai-usage";
 import { mockPaperById, type MockSkill, type MockTask } from "@/lib/mock-exams";
 import { findPart, isOpenTask, scorePart } from "@/lib/mock-exams/scoring";
 import { mockFeedback } from "@/lib/mock-exams/feedback";
+import { mockStats } from "@/lib/mock-exams/stats";
 import type { AssessLevel } from "@/lib/assess-prompts";
 
 export const dynamic = "force-dynamic";
@@ -91,7 +92,7 @@ export async function GET(req: Request) {
 
   if (url.searchParams.get("stats")) {
     try {
-      return NextResponse.json(await stats(userId), { headers: { "cache-control": "no-store" } });
+      return NextResponse.json(await mockStats(userId), { headers: { "cache-control": "no-store" } });
     } catch (err) {
       console.error("[mock-exam stats]", err);
       return NextResponse.json({ error: "database" }, { status: 500 });
@@ -328,59 +329,3 @@ async function finish(userId: string, body: Record<string, unknown>) {
  * Üç kırılım veriliyor çünkü üçü üç ayrı soruya cevap: TOPLAM "ne kadar
  * çalıştım", BÖLÜM "hangi becerim zayıf", GEÇMİŞ "ilerliyor muyum".
  */
-async function stats(userId: string) {
-  const rows = await db
-    .select()
-    .from(mockExamAttempts)
-    .where(and(eq(mockExamAttempts.userId, userId), isNotNull(mockExamAttempts.finishedAt)))
-    .orderBy(desc(mockExamAttempts.finishedAt))
-    .limit(200);
-
-  const bySkill = new Map<string, { attempts: number; correct: number; total: number; best: number }>();
-  const byLevel = new Map<string, { attempts: number; passed: number }>();
-  for (const r of rows) {
-    if (r.total > 0) {
-      const s = bySkill.get(r.skill) ?? { attempts: 0, correct: 0, total: 0, best: 0 };
-      s.attempts++;
-      s.correct += r.correct;
-      s.total += r.total;
-      s.best = Math.max(s.best, r.score);
-      bySkill.set(r.skill, s);
-    }
-    const l = byLevel.get(r.level) ?? { attempts: 0, passed: 0 };
-    l.attempts++;
-    if (r.passed) l.passed++;
-    byLevel.set(r.level, l);
-  }
-
-  return {
-    attempts: rows.length,
-    bySkill: [...bySkill.entries()].map(([skill, v]) => ({
-      skill,
-      attempts: v.attempts,
-      pct: v.total ? Math.round((100 * v.correct) / v.total) : 0,
-      best: v.best,
-    })),
-    byLevel: [...byLevel.entries()].map(([level, v]) => ({ level, ...v })),
-    recent: rows.slice(0, 20).map((r) => ({
-      id: r.id,
-      paperId: r.paperId,
-      skill: r.skill,
-      level: r.level,
-      score: r.score,
-      correct: r.correct,
-      total: r.total,
-      passed: r.passed,
-      finishedAt: r.finishedAt,
-    })),
-    // Devam eden denemeler ayrı: "yarım kalan sınavın var" uyarısı buradan.
-    running: (
-      await db
-        .select({ id: mockExamAttempts.id, paperId: mockExamAttempts.paperId, skill: mockExamAttempts.skill, level: mockExamAttempts.level, taskIx: mockExamAttempts.taskIx })
-        .from(mockExamAttempts)
-        .where(and(eq(mockExamAttempts.userId, userId), eq(mockExamAttempts.state, "running")))
-        .orderBy(desc(mockExamAttempts.startedAt))
-        .limit(10)
-    ),
-  };
-}

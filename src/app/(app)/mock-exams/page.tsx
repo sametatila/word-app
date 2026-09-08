@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageBack } from "@/components/page-back";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { and, desc, eq, isNotNull } from "drizzle-orm";
@@ -71,13 +72,21 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-3">
-      <header>
-        <h1 className="text-2xl font-bold">Deneme Sınavları</h1>
-        <p className="muted mt-1 text-sm leading-relaxed">
-          Her bölüm kendi başına çözülür ve kendi süresi vardır. Süre dolunca bir sonraki göreve otomatik geçilir ve
-          bitmiş bir göreve geri dönülemez — gerçek dijital sınav oturumlarında olduğu gibi.
-        </p>
-      </header>
+      <PageBack fallback="/skills" title="Deneme Sınavları">
+        {/* İstatistiğin kapısı burada: liste "ne çözeyim", istatistik "nasıl
+            gidiyorum" sorusunun yeri ve ikisi aynı ekranda yarışmamalı. */}
+        <Link
+          href="/mock-exams/stats"
+          prefetch={false}
+          className="btn btn-ghost h-11 shrink-0 px-3.5 text-caption"
+        >
+          İstatistik
+        </Link>
+      </PageBack>
+      <p className="muted text-body">
+        Her bölüm kendi başına çözülür ve kendi süresi vardır. Süre dolunca bir sonraki göreve otomatik geçilir ve
+        bitmiş bir göreve geri dönülemez — gerçek dijital sınav oturumlarında olduğu gibi.
+      </p>
 
       <nav className="flex flex-wrap gap-2" aria-label="Seviye">
         {LEVELS.map((l) => (
