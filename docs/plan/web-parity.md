@@ -177,11 +177,12 @@ sayfanın içine sıkıştırılmış · **farklı** = var ama kurgusu/yerleşim
 
 | # | Ne | Neden | Kanıt |
 |---|---|---|---|
-| X1 | `/lessons` + `/lessons/boss/*` + `lesson-hub.tsx` (783 satır) | Patika ile aynı içeriğin ikinci yüzeyi; alt gezinmede yok, mobilde karşılığı yok | `src/components/app-shell.tsx` `NAV`; `docs/plan/immersion.md` |
-| X2 | `/demo-games`, `/demo-feedback` | Geliştirme vitrini; üretimde erişilebilir | `src/app/demo-*/page.tsx` |
-| X3 | `session-player.tsx` (1690 satır) | Beş ayrı ekranın (merkez, oyun, yürüyüş, günlük, meydan okuma) tek bileşende toplanması; şerit L bunu bölecek | |
-| X4 | `vercel.json` | Vercel terk edildi, cron'lar systemd timer'ına taşındı (AGENTS.md) | `vercel.json` |
-| X5 | Y1/Y2 (bkz. §0) | Temiz kurulum kırık | |
+| X1 | ~~`/lessons` listesi + `lesson-hub.tsx` (783 satır)~~ | **BİTTİ** (`65e019d`): liste Patika'ya yönlendi, hub silindi, yedi bağlantı çevrildi. Ders (`/lessons/[id]`) ve modül sınavı duruyor | |
+| X2 | ~~`/demo-games`, `/demo-feedback`~~ | **YANLIŞ ALARM**: belgelenmiş geliştirme/ekran görüntüsü sayfaları (README, `docs/plan/60-ui-composition.md`). Dokunulmadı | |
+| X3 | ~~`session-player.tsx` (1690 satır)~~ | **BİTTİ** (`9d2c931`): merkez, üç yan mod ve oynatıcı ayrıldı; dosya 380 satır küçüldü | |
+| X4 | ~~`vercel.json`~~ | **YANLIŞ ALARM**: dosya kendi içinde neden durduğunu yazıyor — cron tanımları KAYIT olarak tutuluyor, çalıştıran systemd timer'ları | |
+| X5 | ~~Y1/Y2 (bkz. §0)~~ | **BİTTİ** (`6b992d6`): `0039` günlüğe girdi, auth tabloları `0040_auth_tables.sql` ile migrasyona geldi. Boş veritabanı yalnız `drizzle-kit migrate` ile tam kuruluyor | |
+| X6 | Öksüz bileşenler | **BİTTİ** (`65e019d`): eski başlangıç kartının beş parçası + `profile-menu` silindi; `knip` `src/` altında öksüz dosya görmüyor | |
 
 ---
 
@@ -330,5 +331,5 @@ Arkadaşlar / kullanıcı / gelen kutusu / sosyal ayarlar ekranlarını yeni dil
 | R — Profil/Ayarlar | **bitti** | `815728d` maskot avatarı + düzenleyici · `dd57b9e` profil + 4 yeni adres + onay diyaloğu · `c33face` üçlü tema · `62c8a51` ayar bölümleri · `86bdc4b` deneme istatistiği |
 | S — Sosyal | **bitti** | `97bef74` — kimlik kartı + davet bandı + dolgusuz çipler |
 | O — Onboarding | **bitti** | `b9b68ba` günlük hedef adımı · `11bbbe3` akış mobil sıraya: misafir onboarding + `/ilk-kelimeler` + kararların hesaba taşınması |
-| I — Arayüz dili | başlanmadı | |
-| X — Temizlik | başlanmadı | |
+| I — Arayüz dili | **sürüyor** | `b4a5bf2` altyapı · `b2eb5a8` kabuk+sekmeler · `bda8770` profil/ünite · `189cf21` görevler (sunucu) · `6b332b7` başarımlar (sunucu) · `fc2ff10` yetkinlik/gelişim. Kalan: ekranların geri kalanı + can-do (128) ve dilbilgisi açıklamaları (42) |
+| X — Temizlik | **bitti** | `6b992d6` migrasyon açıkları · `65e019d` ders ikiliği + öksüz bileşenler. İki madde yanlış alarmdı (vercel.json, demo sayfaları) |
