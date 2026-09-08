@@ -44,6 +44,15 @@ export type AssessRequest = {
   /** Egzersiz kimliği — kayıt ve gelişim grafiği için. */
   exerciseId?: string;
   locale?: "tr";
+  /**
+   * Değerlendirilen ÜRETİMİN dili. Verilmezse Almanca — bugüne kadarki tek
+   * hedef dil oydu ve mevcut çağıranların hiçbiri bu alanı yazmıyor.
+   *
+   * Ayrı bir alan olması şart: istem hem öğretmen kimliğini hem seviye
+   * beklentilerini bu dile göre kuruyor. İngilizce bir metni "Almanca
+   * öğretmeni" kimliğiyle değerlendirmek Perfekt arayan bir rubrik üretiyordu.
+   */
+  lang?: "de" | "en";
 };
 
 export type AssessScore = {
@@ -83,6 +92,23 @@ export const ASSESS_MAX_CHARS = 1500;
  */
 export const ASSESS_MAX_TOKENS = 1600;
 
+/**
+ * İngilizce seviye beklentileri.
+ *
+ * Almanca listenin çevirisi DEĞİL: iki dilin seviye eşikleri farklı yerlerde.
+ * Almancada A2'nin belirleyicisi Perfekt ve yan cümle sözdizimi; İngilizcede
+ * o yerde geçmiş zaman ve `going to` duruyor. B2'de Almanca Passiv çeşitleri
+ * ve Nominalisierung ararken İngilizce üçüncü tip koşul, ortaç öbeği ve
+ * kayıt farkını arıyor.
+ */
+const LEVEL_EXPECTATIONS_EN: Record<AssessLevel, string> = {
+  A1: "Basit ana cümleler, present simple, `be`/`have got`, temel sözcük sırası, `can` ile yeterlilik, `a/an/the`. Present perfect, edilgen ya da koşul cümlesi beklenmez; doğru kullanılmışsa ödüllendir, kullanılmamışsa cezalandırma.",
+  A2: "Past simple (düzenli ve sık düzensiz fiiller), present continuous, `going to`/`will`, karşılaştırma dereceleri, sıklık zarfları, `because`/`when`/`if` ile basit yan cümle.",
+  B1: "Present perfect ile past simple ayrımı, birinci ve ikinci tip koşul, ilgi cümlesi, `used to`, temel edilgen, sık öbek fiiller. Metinde bağlantı ve akış beklenir.",
+  B2: "Edilgen çeşitleri, üçüncü tip koşul ve karma koşul, dolaylı anlatım, ortaç öbeği, gelişmiş bağlayıcılar (whereas, despite, nevertheless), resmî/gayriresmî kayıt farkı, eşdizim doğruluğu.",
+  C1: "Doğal ve deyimsel ifade, devrik yapı ve yarma cümle gibi vurgulama araçları, adlaştırma, ince kayıt farkları, çekimserlik (hedging). Küçük yapaylıklar bile puanı düşürür.",
+};
+
 const LEVEL_EXPECTATIONS: Record<AssessLevel, string> = {
   A1: "Basit ana cümleler, Präsens, temel kelime sırası (fiil ikinci sırada), artikel ve zamirler. Perfekt ya da yan cümle beklenmez; doğru kullanılmışsa ödüllendir, kullanılmamışsa cezalandırma.",
   A2: "Perfekt ve Präteritum (sein/haben), Modalverben, Dativ/Akkusativ edatları, weil/dass ile yan cümle, ayrılabilir fiiller. Basit bağlaçlarla bağlanmış cümleler.",
@@ -111,8 +137,10 @@ const KIND_BRIEF: Record<AssessKind, string> = {
  * İstemdeki şema + toleranslı ayrıştırıcı (`parseAssessment`) hepsinde aynı
  * çalışıyor; geçersiz çıktı 502 ile dürüstçe geri çevriliyor.
  */
-export function assessSystemPrompt(kind: AssessKind, level: AssessLevel): string {
-  return `Sen Almanca öğrenen Türk öğrencilerin yazılı ve sözlü üretimini değerlendiren deneyimli bir Almanca öğretmenisin. Öğrencinin seviyesi CEFR ${level}.
+export function assessSystemPrompt(kind: AssessKind, level: AssessLevel, lang: "de" | "en" = "de"): string {
+  const dil = lang === "en" ? "İngilizce" : "Almanca";
+  const beklenti = lang === "en" ? LEVEL_EXPECTATIONS_EN[level] : LEVEL_EXPECTATIONS[level];
+  return `Sen ${dil} öğrenen Türk öğrencilerin yazılı ve sözlü üretimini değerlendiren deneyimli bir ${dil} öğretmenisin. Öğrencinin seviyesi CEFR ${level}.
 
 ${KIND_BRIEF[kind]}
 
@@ -125,7 +153,7 @@ uyuşturucu ya da yasa dışı iş ANLATMA; öğrencinin metni o yöne gidiyorsa
 düzeltmeyi ve gerekçeyi dil düzeyinde tut, içeriği geliştirme ya da sürdürme.
 Öğrenciden kişisel veri isteme; tıbbi, hukuki ya da mali tavsiye verme.
 
-${level} SEVİYESİNDEN BEKLENEN: ${LEVEL_EXPECTATIONS[level]}
+${level} SEVİYESİNDEN BEKLENEN: ${beklenti}
 
 RUBRİK (her ölçüt 0–4):
 - task: görev karşılandı mı — DİLBİLGİSİNDEN BAĞIMSIZ: istenen içeriğin hepsi varsa hatalı yazılmış olsa da 4, biri eksikse 3, yarısı varsa 2, çok azı 1, konu dışı/boş 0. Hataları grammar ölçer, task ölçmez. Tersi de geçerli: konu dışı bir metinde task 0 olur ama grammar/vocab/structure metnin KENDİ kalitesine göre puanlanır (doğru yazılmış konu dışı metin: task 0, grammar 4). Konu dışı cümleleri errors listesine "meaning" diye yazma; bunu next_tip_tr'de söyle.

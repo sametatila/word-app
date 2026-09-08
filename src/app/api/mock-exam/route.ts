@@ -245,7 +245,9 @@ async function assessOpen(userId: string, body: Record<string, unknown>) {
   if (!paper || !task || !isOpenTask(task)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 
   const day = clampDay(typeof body.day === "string" ? body.day : undefined);
-  const req = { ...assessTaskFor(task, text.slice(0, MAX_OPEN_CHARS)), level: paper.level as AssessLevel, exerciseId: taskId, locale: "tr" as const };
+  // Değerlendirme kâğıdın dilinde yapılıyor: İngilizce bir yazma görevi
+  // "Almanca öğretmeni" kimliğiyle okunursa rubrik olmayan yapıları arar.
+  const req = { ...assessTaskFor(task, text.slice(0, MAX_OPEN_CHARS)), level: paper.level as AssessLevel, exerciseId: taskId, locale: "tr" as const, lang: paper.course };
   const outcome = await assess(userId, req, day, (r) => recordAiUsage(userId, { kind: "assess", ...r }));
 
   const scores = (row.openScores ?? {}) as Record<string, unknown>;
@@ -296,7 +298,7 @@ async function finish(userId: string, body: Record<string, unknown>) {
   const explains: Record<string, string> = {};
   for (const t of part.tasks) for (const it of t.items) explains[it.id] = it.explain;
 
-  const ai = await mockFeedback(score, explains, (r) => recordAiUsage(userId, { kind: "assess", ...r }));
+  const ai = await mockFeedback(score, explains, paper.course, (r) => recordAiUsage(userId, { kind: "assess", ...r }));
 
   const [saved] = await db
     .update(mockExamAttempts)

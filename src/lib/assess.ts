@@ -52,6 +52,10 @@ export function assessHash(req: AssessRequest): string {
       l: req.level,
       t: req.task,
       a: req.answer.text.trim(),
+      // Hedef dil önbelleğin parçası: aynı metin iki dilde farklı değerlendirilir.
+      // `undefined` JSON'dan düştüğü için Almanca isteklerin özeti DEĞİŞMİYOR,
+      // yani mevcut önbellek geçerli kalıyor; yalnız İngilizce kendi anahtarını alıyor.
+      g: req.lang,
     }),
   );
   return h.digest("hex").slice(0, 40);
@@ -105,7 +109,7 @@ export async function assess(
   let raw: string;
   try {
     raw = await completeChat(
-      assessSystemPrompt(clean.kind, clean.level),
+      assessSystemPrompt(clean.kind, clean.level, clean.lang),
       [{ role: "user", content: assessUserMessage(clean) }],
       ASSESS_MAX_TOKENS,
       reportAndRemember,
@@ -207,7 +211,7 @@ export async function runAssessQueue(limit = 20): Promise<{ pending: number; don
     };
     let provider: string | null = null;
     try {
-      const raw = await completeChat(assessSystemPrompt(req.kind, req.level), [{ role: "user", content: assessUserMessage(req) }], ASSESS_MAX_TOKENS, (r) => {
+      const raw = await completeChat(assessSystemPrompt(req.kind, req.level, req.lang), [{ role: "user", content: assessUserMessage(req) }], ASSESS_MAX_TOKENS, (r) => {
         if (r.ok) provider = `${r.provider}/${r.model}`;
       });
       const result = parseAssessment(raw, row.answer, req.kind);

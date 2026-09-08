@@ -1,6 +1,7 @@
 import "server-only";
 import { completeChat, chatConfigured, type CallReport } from "@/lib/chat-providers";
 import type { MockScore } from "./scoring";
+import type { MockCourse } from "./types";
 
 /**
  * Deneme sınavından sonra yapılacaklar listesi.
@@ -47,7 +48,33 @@ export const GOAL_TR: Record<string, string> = {
   interaction: "karşılıklı iletişim",
 };
 
-/** Hedefe bağlı çalışma yolu — kural tabanlı listenin gövdesi. */
+/**
+ * Hedefe bağlı çalışma yolu — kural tabanlı listenin gövdesi.
+ *
+ * KURSA GÖRE AYRI. Tavsiyeler somut olduğu için dile bağlı: "aber, trotzdem,
+ * deshalb sözcüklerinin ardına bak" bir İngilizce sınavında hiçbir işe
+ * yaramaz. Genel bir tavsiyeye ("bağlaçlara dikkat et") indirgemek iki
+ * öğrenciye birden zarar verirdi — listenin bütün değeri somutluğunda.
+ */
+const GOAL_HOW_EN: Record<string, string> = {
+  gist:
+    "Metni iki turda oku. Birinci turda yalnız ilk ve son paragrafı oku ve metnin ne savunduğunu tek cümleyle kendine söyle; ayrıntıya hiç bakma. İkinci turda soruları oku ve o cümleyi sına.",
+  detail:
+    "Soruları metinden ÖNCE oku ve her sorudaki sayıyı, saati ya da özel adı işaretle. Sonra metni tararken yalnız o işaretleri ara. Bu maddelerde tuzak çoğu zaman metindeki ikinci bir sayıdır.",
+  opinion:
+    "Her metnin SON cümlesini ayrıca oku: taraf çoğu zaman orada belli olur. `but`, `however`, `still`, `only`, `in fact` sözcüklerinden sonrası yazarın vardığı sonuçtur; öncesi çoğu zaman karşı tarafa verilen paydır.",
+  orientation:
+    "Kişinin metnindeki ölçütleri önce bir kenara yaz (kaç kişi, hangi gün, ne kadar para). Sonra ilanları elemeye çalış: bir ilan tek bir ölçütte düşüyorsa gerisini okumana gerek yok.",
+  instruction:
+    "Yönergelerde istisnayı ara. `only`, `except`, `unless`, `from`, `until` sözcüklerinin geçtiği cümleleri iki kez oku — maddelerin çoğu kuralın kendisini değil sınırını sorar.",
+  structure:
+    "Boşluk doldurmada önce boşluğun ne TÜR sözcük istediğini söyle: edat mı, yardımcı fiil mi, bağlaç mı, ilgi zamiri mi. Türü bilmeden anlam aramak en sık yapılan hata. Kelime türetmede kökün türünü değiştir (isim mi sıfat mı), sonra olumsuzluk ekini ve çoğulu kontrol et.",
+  production:
+    "Metni yazdıktan sonra içerik noktalarını tek tek işaretle: her noktaya karşılık gelen cümleyi bulamıyorsan o nokta işlenmemiştir. Sınavda en sık kaybedilen puan burada.",
+  interaction:
+    "Karşı tarafın söylediğine açıkça gönderme yapmayı çalış: `That's true, but …`, `I hadn't thought of that …`. Yalnız kendi önerini sıralamak bu görevlerde yeterli sayılmaz.",
+};
+
 const GOAL_HOW: Record<string, string> = {
   gist:
     "Metni iki turda oku. Birinci turda yalnız ilk ve son paragrafı oku ve metnin ne savunduğunu tek cümleyle kendine söyle; ayrıntıya hiç bakma. İkinci turda soruları oku ve o cümleyi sına.",
@@ -81,7 +108,8 @@ const SKILL_TR: Record<string, string> = {
  * değilse tek bir madde veriliyor (en düşük hedef), çünkü boş bir liste de
  * öğrenciye bir şey söylemez.
  */
-export function rulesFeedback(score: MockScore): MockFeedback {
+export function rulesFeedback(score: MockScore, course: MockCourse = "de"): MockFeedback {
+  const how = course === "en" ? GOAL_HOW_EN : GOAL_HOW;
   const ranked = score.byGoal
     .filter((g) => g.total > 0)
     .map((g) => ({ ...g, pct: Math.round((100 * g.correct) / g.total) }))
@@ -103,18 +131,18 @@ export function rulesFeedback(score: MockScore): MockFeedback {
     todo: picked.map((g) => ({
       title: `${GOAL_TR[g.goal] ?? g.goal} üzerine çalış`,
       why: `Bu hedefteki ${g.total} maddenin ${g.total - g.correct} tanesi yanlış (%${g.pct}).`,
-      how: GOAL_HOW[g.goal] ?? "Yanlış maddelerin açıklamalarını sırayla oku ve her birinde hatanın nereden geldiğini kendi cümlenle yaz.",
+      how: how[g.goal] ?? "Yanlış maddelerin açıklamalarını sırayla oku ve her birinde hatanın nereden geldiğini kendi cümlenle yaz.",
     })),
     source: "rules",
   };
 }
 
-const SYSTEM = `Sen Almanca sınavlarına hazırlanan bir öğrencinin çalışma koçusun.
+const SYSTEM = (dil: string) => `Sen ${dil} sınavlarına hazırlanan bir öğrencinin çalışma koçusun.
 Öğrencinin bir deneme sınavı bölümündeki sonucunu ve yanlış maddelerini alacaksın.
 Görevin, ölçülebilir ve tek oturumda yapılabilir bir YAPILACAKLAR listesi üretmek.
 
 Kurallar:
-- Türkçe yaz. Almanca örnekler verebilirsin ama açıklama Türkçe olsun.
+- Türkçe yaz. ${dil} örnekler verebilirsin ama açıklama Türkçe olsun.
 - En fazla 4 madde. Az ve keskin olsun; her madde tek bir davranış değiştirsin.
 - Her madde ÖĞRENCİNİN GERÇEK HATASINA dayansın. Genel tavsiye ("daha çok oku") yasak.
 - "how" alanı somut bir yöntem olsun: ne yapılacak, hangi sırayla, neye bakılacak.
@@ -172,10 +200,12 @@ function wrongDigest(score: MockScore, explains: Record<string, string>): string
 export async function mockFeedback(
   score: MockScore,
   explains: Record<string, string>,
+  course: MockCourse = "de",
   report?: CallReport,
 ): Promise<MockFeedback> {
-  if (!chatConfigured() || score.total === 0) return rulesFeedback(score);
+  if (!chatConfigured() || score.total === 0) return rulesFeedback(score, course);
 
+  const dil = course === "en" ? "İngilizce" : "Almanca";
   const goals = score.byGoal
     .map((g) => `${GOAL_TR[g.goal] ?? g.goal}: ${g.correct}/${g.total}`)
     .join(" · ");
@@ -187,10 +217,10 @@ export async function mockFeedback(
     `Yanlış maddeler:\n${wrongDigest(score, explains)}`;
 
   try {
-    const raw = await completeChat(SYSTEM, [{ role: "user", content: user }], 900, report);
-    return parse(raw) ?? rulesFeedback(score);
+    const raw = await completeChat(SYSTEM(dil), [{ role: "user", content: user }], 900, report);
+    return parse(raw) ?? rulesFeedback(score, course);
   } catch {
     // Sağlayıcı hatası öğrencinin sonucunu görmesini engellememeli.
-    return rulesFeedback(score);
+    return rulesFeedback(score, course);
   }
 }
