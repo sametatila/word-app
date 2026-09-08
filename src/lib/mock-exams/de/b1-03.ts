@@ -1164,7 +1164,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
               options: ["Die sofortige Schließung des Flughafens.", "Höhere Ticketpreise.", "Keine neuen Subventionen."],
               answer: 2,
               explain:
-                "Talebini kendisi sınırlıyor: \"Ich sage auch nicht: morgen zumachen. Ich sage: keine neuen Subventionen.\" Bilet fiyatı önerisi ondan gelmiyor.",
+                "Talebini kendisi sınırlıyor: \"Deshalb sage ich auch nicht: morgen zumachen. Ich sage: keine neuen Subventionen.\" Bilet fiyatı önerisi ondan gelmiyor.",
             },
             {
               kind: "mcq",

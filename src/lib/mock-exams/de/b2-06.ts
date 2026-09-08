@@ -319,7 +319,7 @@ Für die Praxis heißt das eine Verschiebung des Blicks. Statt zu fragen, was je
               text: "Lücke 12",
               answer: "g",
               explain:
-                "Görünür bir önlemden sonra başka bir harcamaya izin verme anlatılıyor; (g) bu olguyu adlandırıyor: \"ein moralisches Guthaben\".",
+                "Görünür bir önlemden sonra başka bir harcamaya izin verme anlatılıyor; (g) bu olguyu adlandırıyor: \"einem moralischen Guthaben\".",
             },
             {
               kind: "match",

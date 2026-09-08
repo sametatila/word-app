@@ -678,7 +678,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
               options: ["Im Paketshop.", "Beim Nachbarn.", "Wieder beim Absender."],
               answer: 0,
               explain:
-                "Kimse evde olmadığı için paket başka yere bırakılmış: \"Ihr Paket liegt jetzt im Paketshop in der Feldstraße\".",
+                "Kimse evde olmadığı için paket başka yere bırakılmış: \"Ihr Paket liegt jetzt im Paketshop in der Rosenstraße\".",
             },
             {
               kind: "mcq",

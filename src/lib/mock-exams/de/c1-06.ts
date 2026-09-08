@@ -617,7 +617,7 @@ Vorrat laufend verbrauchen und nachkaufen.`,
               text: "Notiz 8",
               accept: ["200 Euro", "zweihundert Euro", "200"],
               explain:
-                "Öneri hane başına \"zweihundert Euro, in Zehnern und Zwanzigern\" — kart çalışmazsa kimse para bozamıyor.",
+                "Öneri hane başına \"zweihundert Euro pro Haushalt, in Zehnern und Zwanzigern\" — kart çalışmazsa kimse para bozamıyor.",
             },
             {
               kind: "gap",

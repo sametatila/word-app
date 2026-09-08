@@ -863,7 +863,7 @@ Abgelehnte Vorschläge bleiben {{10}} — wichtigste Lehre aus dem ersten Jahr.`
               ],
               answer: 1,
               explain:
-                "Adaletsiz görülen kararlarda hızlı ulaşılabilirlik \"beschleunigt die Enttäuschung\" ve çatışmayı büyütüyor. Maliyet ya da kullanım oranı gerekçe değil.",
+                "Adaletsiz görülen kararlarda hızlı ulaşılabilirlik \"weil sie die Enttäuschung beschleunigt\" ve çatışmayı büyütüyor. Maliyet ya da kullanım oranı gerekçe değil.",
             },
             {
               kind: "mcq",

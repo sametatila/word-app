@@ -270,7 +270,7 @@ Mein Großvater hätte diesen Text vermutlich für umständlich gehalten. Er hä
               ],
               answer: 0,
               explain:
-                "İki büyüklük sayılıyor: \"die Zeit, die ein Kunde auf ein Ersatzgerät hätte warten müssen\" ve \"dass dieser Kunde im Winter darauf angewiesen war\".",
+                "İki büyüklük sayılıyor: \"die ein Kunde auf ein Ersatzgerät hätte warten müssen\" ve \"dass dieser Kunde im Winter darauf angewiesen war\".",
             },
             {
               kind: "mcq",

@@ -380,7 +380,7 @@ Bleibt ein Einwand, den ich ernst nehme: Ohne konkrete Zahl erreicht man womögl
               ],
               answer: 0,
               explain:
-                "\"eine falsche, aber befolgte Regel ist oft nützlicher als eine richtige, die niemand umsetzt\" — pratik yararı öne koyuyor.",
+                "\"eine falsche, aber befolgte Regel oft nützlicher als eine richtige, die niemand umsetzt\" — pratik yararı öne koyuyor.",
             },
             {
               kind: "mcq",

@@ -204,7 +204,7 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
               ],
               answer: 0,
               explain:
-                "\"seltener, um etwas zu kaufen, und häufiger, um Zeit zu verbringen\" — amaç değişmiş. Kalış süresi ve haftanın günü metinde geçmiyor.",
+                "\"seltener in die Innenstadt, um etwas zu kaufen, und häufiger, um Zeit zu verbringen\" — amaç değişmiş. Kalış süresi ve haftanın günü metinde geçmiyor.",
             },
             {
               kind: "mcq",

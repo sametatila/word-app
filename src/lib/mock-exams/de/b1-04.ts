@@ -504,7 +504,7 @@ Bernd K.: Ich bin Hausmeister und sammle die Geräte am Morgen ein. Ehrlich: Es 
               options: ["Dagegen.", "Dafür."],
               answer: 0,
               explain:
-                "Sorunun evde başladığını söylüyor ve okul yasağının \"die Verantwortung nur verschiebt\" olduğunu ekliyor. Yani telefonun zararını görmesi yasağı desteklediği anlamına gelmiyor.",
+                "Sorunun evde başladığını söylüyor ve okul yasağının \"verschiebt die Verantwortung nur\" olduğunu ekliyor. Yani telefonun zararını görmesi yasağı desteklediği anlamına gelmiyor.",
             },
             {
               kind: "mcq",

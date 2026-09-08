@@ -1105,7 +1105,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               ],
               answer: 0,
               explain:
-                "Ölçeği değiştiriyor: \"niemand wohnt in der ganzen Stadt, sondern in einer Straße\" — küçük ortalama, tek tek sokaklarda büyük etki demek.",
+                "Ölçeği değiştiriyor: \"wohnt niemand in der ganzen Stadt, sondern in einer Straße\" — küçük ortalama, tek tek sokaklarda büyük etki demek.",
             },
             {
               kind: "mcq",

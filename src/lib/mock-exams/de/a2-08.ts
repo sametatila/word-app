@@ -153,7 +153,7 @@ Stadtverwaltung`,
               ],
               answer: 2,
               explain:
-                "Durak kalkınca yeni yer veriliyor: \"Bitte steigen Sie am Rathaus aus\". Beş dakika yürüme süresi, erken çıkma önerisi değil.",
+                "Durak kalkınca yeni yer veriliyor: \"steigen Sie bitte am Rathaus aus\". Beş dakika yürüme süresi, erken çıkma önerisi değil.",
             },
             {
               kind: "mcq",
@@ -325,7 +325,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               options: ["Weil es kaputt war.", "Um es auszuprobieren.", "Weil sie Geld brauchten."],
               answer: 1,
               explain:
-                "Sebep ikinci cümlede: \"Wir wollten sehen, ob es ohne geht\". Arıza ya da para sıkıntısı hiç geçmiyor.",
+                "Sebep ikinci cümlede: \"weil wir sehen wollten, ob es auch ohne geht\". Arıza ya da para sıkıntısı hiç geçmiyor.",
             },
             {
               kind: "mcq",

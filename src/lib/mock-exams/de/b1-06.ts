@@ -907,7 +907,7 @@ Nicht zurückgeben können Sie Waren, die nach Ihren Angaben angefertigt wurden,
               options: ["61 Euro im Monat.", "140 Euro im Monat.", "200 Euro im Monat."],
               answer: 0,
               explain:
-                "Danışman topluyor: iki müzik servisi ve spor salonu \"zusammen 61 Euro im Monat\". 140 kalan tutar, 200 ise hedef.",
+                "Danışman topluyor: iki müzik servisi ve spor salonu \"Zusammen sind das 61 Euro im Monat\". 140 kalan tutar, 200 ise hedef.",
             },
             {
               kind: "mcq",

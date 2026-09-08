@@ -307,7 +307,7 @@ Mein früherer Chef sagt bis heute, ich hätte damit den Bildern ihre Kraft geno
               ],
               answer: 0,
               explain:
-                "Yalan söylediğini reddediyor: \"beide Bilder sind wahr und beide unvollständig\" — seçtiği şey \"die Unvollständigkeit …, die mehr Wirkung hatte\".",
+                "Yalan söylediğini reddediyor: \"beide Bilder wahr sind und beide unvollständig\" — seçtiği şey \"die Unvollständigkeit …, die mehr Wirkung hatte\".",
             },
             {
               kind: "mcq",

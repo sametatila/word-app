@@ -928,7 +928,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
               text: "Je mehr Leute organisieren, desto besser.",
               answer: false,
               explain:
-                "Üç kişi yetiyor; altıdan fazlasında \"wartet jeder auf den anderen\" diyor. Yani kalabalık işi zorlaştırıyor.",
+                "Üç kişi yetiyor; altıdan fazlasında \"weil dann jeder auf den anderen wartet\" diyor. Yani kalabalık işi zorlaştırıyor.",
             },
             {
               kind: "bool",

@@ -264,7 +264,7 @@ Was ich allerdings zurückweise, ist die Vorstellung, das lasse sich verordnen. 
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 0,
               explain:
-                "A: seçme özgürlüğü ile sürekli erişilebilirlik beklentisi \"rechtlich gegensätzliche Sachverhalte\" ama günlük hayatta birlikte görünüyor.",
+                "A: seçme özgürlüğü ile sürekli erişilebilirlik beklentisi \"Rechtlich sind das gegensätzliche Sachverhalte\" ama günlük hayatta birlikte görünüyor.",
             },
             {
               kind: "mcq",
@@ -829,7 +829,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               ],
               answer: 1,
               explain:
-                "Sorunun biçimini değiştirdiğinizde sonucun \"regelmäßig kippt\" olduğunu söylüyor — itiraz yöntemedir, sayıya değil.",
+                "Sorunun biçimini değiştirdiğinizde sonucun \"kippt das Ergebnis regelmäßig\" olduğunu söylüyor — itiraz yöntemedir, sayıya değil.",
             },
             {
               kind: "mcq",
