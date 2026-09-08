@@ -62,13 +62,59 @@ function isCorrect(item: MockItem, ans: string | undefined): boolean {
   return item.accept.some((a) => foldAnswer(a) === foldAnswer(ans));
 }
 
+/*
+  Yerel kayıt — mobildeki `mockExamLocal` ile aynı düşünce.
+
+  Sınav yalnız sunucuya yazılıyordu ve sunucuya ulaşılamadığı an çözülmüş bir
+  bölümün tamamı kayboluyordu. Artık her cevap ÖNCE tarayıcıya, sonra sunucuya
+  yazılıyor. Sunucu yetkili olmayı sürdürüyor; yerel kayıt bir yedek.
+*/
+type LocalRun = { answers: Answers; open: Record<string, string>; taskIx: number; secondsLeft: number };
+const runKey = (paperId: string, skill: string) => `lernomi:mock-run:${paperId}:${skill}`;
+
+function readLocalRun(paperId: string, skill: string): LocalRun | null {
+  try {
+    const raw = localStorage.getItem(runKey(paperId, skill));
+    return raw ? (JSON.parse(raw) as LocalRun) : null;
+  } catch {
+    return null;
+  }
+}
+function writeLocalRun(paperId: string, skill: string, run: LocalRun): void {
+  try { localStorage.setItem(runKey(paperId, skill), JSON.stringify(run)); } catch { /* depolama kapalı */ }
+}
+function dropLocalRun(paperId: string, skill: string): void {
+  try { localStorage.removeItem(runKey(paperId, skill)); } catch { /* yut */ }
+}
+
+/**
+ * Sunucuya neden ulaşılamadı — üçü üç ayrı şey ve üçü ayrı söylenmeli.
+ * Hepsine "bağlantı yok" demek yanlış teşhis koyuyordu.
+ */
+type Fail = "not_deployed" | "unauthorized" | "unreachable";
+const FAIL_TR: Record<Fail, string> = {
+  not_deployed: "Sunucu bu bölümü henüz tanımıyor: uygulama sunucudan yeni. Sınav çalıştı ama puan sunucuda hesaplanamadı.",
+  unauthorized: "Oturumun düşmüş görünüyor. Tekrar giriş yaptığında sonuçların kaydedilmeye başlar.",
+  unreachable: "Sunucuya ulaşılamadı. Sınav çalıştı ama puan sunucuda hesaplanamadı.",
+};
+
+class HttpError extends Error {
+  constructor(readonly status: number) { super(String(status)); }
+}
+function failOf(err: unknown): Fail {
+  const st = err instanceof HttpError ? err.status : 0;
+  if (st === 404 || st === 501) return "not_deployed";
+  if (st === 401 || st === 403) return "unauthorized";
+  return "unreachable";
+}
+
 async function post<T>(body: Record<string, unknown>): Promise<T> {
   const res = await fetch("/api/mock-exam", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });
-  if (!res.ok) throw new Error(String(res.status));
+  if (!res.ok) throw new HttpError(res.status);
   return (await res.json()) as T;
 }
 
@@ -85,7 +131,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   const [resumed, setResumed] = useState(false);
   const [autoNext, setAutoNext] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [result, setResult] = useState<{ score: Score; ai: Feedback | null; offline: boolean } | null>(null);
+  const [result, setResult] = useState<{ score: Score; ai: Feedback | null; offline: Fail | null } | null>(null);
+  const [fail, setFail] = useState<Fail | null>(null);
   const [reveal, setReveal] = useState<Record<string, boolean>>({});
   const announced = useRef<Set<string>>(new Set());
   useEffect(() => () => stopSpeaking(), []);
@@ -109,8 +156,9 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     const next = ix + 1;
     setIx(next);
     setLeft(budgets[next] ?? 60);
+    writeLocalRun(paper.id, part.skill, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 });
     if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 }).catch(() => {});
-  }, [ix, part.tasks.length, budgets, attempt, answers, open]);
+  }, [ix, part.tasks.length, part.skill, paper.id, budgets, attempt, answers, open]);
 
   useEffect(() => {
     if (phase === "run" && left === 0) advance(true);
@@ -118,8 +166,11 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
 
   // Anlık kayıt: her değişiklikten iki saniye sonra.
   useEffect(() => {
-    if (!attempt || phase !== "run") return;
-    const id = setTimeout(() => { void post({ action: "save", id: attempt.id, answers, open, taskIx: ix, secondsLeft: left }).catch(() => {}); }, 2000);
+    if (phase !== "run") return;
+    const id = setTimeout(() => {
+      writeLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left });
+      if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: ix, secondsLeft: left }).catch(() => {});
+    }, 2000);
     return () => clearTimeout(id);
   }, [answers, open, attempt, phase, ix]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -135,10 +186,21 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       const start = Math.min(d.attempt.taskIx ?? 0, part.tasks.length - 1);
       setIx(start);
       setLeft(d.resumed && d.attempt.secondsLeft > 0 ? d.attempt.secondsLeft : budgets[start] ?? 60);
-    } catch {
+    } catch (e) {
       setAttempt(null);
-      setIx(0);
-      setLeft(budgets[0] ?? 60);
+      setFail(failOf(e));
+      const local = readLocalRun(paper.id, part.skill);
+      if (local) {
+        setResumed(true);
+        setAnswers(local.answers ?? {});
+        setOpen(local.open ?? {});
+        const start = Math.min(local.taskIx ?? 0, part.tasks.length - 1);
+        setIx(start);
+        setLeft(local.secondsLeft > 0 ? local.secondsLeft : budgets[start] ?? 60);
+      } else {
+        setIx(0);
+        setLeft(budgets[0] ?? 60);
+      }
     }
     setBusy(false);
     setPhase("run");
@@ -149,20 +211,22 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     let dead = false;
     void (async () => {
       setBusy(true);
+      let final: { score: Score; ai: Feedback | null; offline: Fail | null };
       if (attempt) {
         try {
           const d = await post<{ score: Score; ai: Feedback }>({ action: "finish", id: attempt.id, answers });
-          if (!dead) setResult({ score: d.score, ai: d.ai ?? null, offline: false });
-        } catch {
-          if (!dead) setResult({ score: localScore(part, answers), ai: null, offline: true });
+          final = { score: d.score, ai: d.ai ?? null, offline: null };
+        } catch (e) {
+          final = { score: localScore(part, answers), ai: null, offline: failOf(e) };
         }
       } else {
-        setResult({ score: localScore(part, answers), ai: null, offline: true });
+        final = { score: localScore(part, answers), ai: null, offline: fail ?? "unreachable" };
       }
-      if (!dead) setBusy(false);
+      dropLocalRun(paper.id, part.skill);
+      if (!dead) { setResult(final); setBusy(false); }
     })();
     return () => { dead = true; };
-  }, [phase, result, attempt, answers, part]);
+  }, [phase, result, attempt, answers, part, paper.id, fail]);
 
   const task = part.tasks[ix];
 
@@ -466,7 +530,7 @@ function OpenTask({
           {busy ? "Değerlendiriliyor…" : "Değerlendir"}
         </button>
       )}
-      {!attemptId ? <p className="muted mt-2 text-xs">Değerlendirme için giriş ve bağlantı gerekiyor.</p> : null}
+      {!attemptId ? <p className="muted mt-2 text-xs">Değerlendirme sunucuda yapılıyor; şu an sunucuya ulaşılamadığı için kapalı.</p> : null}
     </div>
   );
 }
@@ -660,7 +724,7 @@ function SpeakingTask({
               {busy ? "Değerlendiriliyor…" : "Değerlendir"}
             </button>
           )}
-          {!attemptId ? <p className="muted mt-2 text-xs">Değerlendirme için giriş ve bağlantı gerekiyor.</p> : null}
+          {!attemptId ? <p className="muted mt-2 text-xs">Değerlendirme sunucuda yapılıyor; şu an sunucuya ulaşılamadığı için kapalı.</p> : null}
         </>
       )}
     </div>
@@ -693,7 +757,7 @@ function Result({
   answers: Answers;
   open: Record<string, string>;
   openScores: Record<string, OpenScore>;
-  result: { score: Score; ai: Feedback | null; offline: boolean };
+  result: { score: Score; ai: Feedback | null; offline: Fail | null };
   reveal: Record<string, boolean>;
   onReveal: (id: string) => void;
 }) {
@@ -701,9 +765,10 @@ function Result({
   return (
     <section className="mx-auto w-full max-w-2xl space-y-3">
       {offline ? (
-        <p className="card p-4 text-sm" style={{ color: "var(--color-danger)" }}>
-          Bağlantı ya da oturum yok: bu sonuç kaydedilmedi ve istatistiğe girmedi.
-        </p>
+        <div className="card p-4">
+          <p className="text-sm" style={{ color: "var(--color-danger)" }}>{FAIL_TR[offline]}</p>
+          <p className="muted mt-1 text-xs">Cevapların bu tarayıcıda saklandı; sunucu istatistiğine girmedi.</p>
+        </div>
       ) : null}
 
       {score.total > 0 ? (
