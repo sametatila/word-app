@@ -60,6 +60,11 @@ Morgen früh geht es nicht. Da muss ich um sieben zur Arbeit.
 
 Liebe Grüße
 Lina`,
+              gloss: [
+                { de: "annehmen", tr: "teslim almak", en: "to accept, take in" },
+                { de: "klingeln", tr: "zil çalmak", en: "to ring the doorbell" },
+                { de: "der Stock", tr: "kat", en: "floor, storey" },
+              ],
             },
             {
               kind: "text",
@@ -75,6 +80,10 @@ Ab Dienstag sind wir wieder für Sie da, von 7 bis 21 Uhr.
 Der Bäcker am Eingang hat auch am Montag offen.
 
 Ihr Team vom Markt am Ring`,
+              gloss: [
+                { de: "das Regal", tr: "raf", en: "shelf" },
+                { de: "der Bäcker", tr: "fırıncı", en: "baker" },
+              ],
             },
           ],
           items: [

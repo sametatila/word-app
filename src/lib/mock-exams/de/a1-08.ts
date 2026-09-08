@@ -64,6 +64,11 @@ Bring bitte ein Handtuch mit. Duschgel habe ich dabei.
 
 Bis Sonntag
 Jana`,
+              gloss: [
+                { de: "der Eintritt", tr: "giriş ücreti", en: "admission, entry fee" },
+                { de: "das Handtuch", tr: "havlu", en: "towel" },
+                { de: "das Duschgel", tr: "duş jeli", en: "shower gel" },
+              ],
             },
             {
               kind: "text",
@@ -79,6 +84,10 @@ Die Sauna bleibt im Juli und August zu.
 Am Dienstag ist das Bad nur für Kurse offen, von 14 bis 18 Uhr.
 
 Ihr Team vom Freibad Süd`,
+              gloss: [
+                { de: "das Gewitter", tr: "fırtına", en: "thunderstorm" },
+                { de: "verlassen", tr: "terk etmek", en: "to leave" },
+              ],
             },
           ],
           items: [

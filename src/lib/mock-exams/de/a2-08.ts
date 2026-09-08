@@ -212,6 +212,12 @@ Geld verdient der Verein nicht. Die Fahrkarten decken den Diesel, mehr nicht.
 Ein Problem bleibt: Es fehlen jüngere Fahrer, denn die meisten im Team sind über sechzig. Frau Wilms sagt, dass sie deshalb jedes Jahr neu sucht.
 
 "Wer mitfahren will, muss auch mitmachen wollen", sagt Frau Wilms und lacht.`,
+              gloss: [
+                { de: "die Verbindung", tr: "ulaşım bağlantısı", en: "connection, link" },
+                { de: "das Steuer", tr: "direksiyon", en: "steering wheel" },
+                { de: "decken", tr: "karşılamak", en: "to cover (costs)" },
+                { de: "der Nachwuchs", tr: "yeni katılanlar", en: "new recruits, next generation" },
+              ],
             },
           ],
           items: [
@@ -303,6 +309,10 @@ Zweimal haben wir uns für ein paar Stunden ein Auto geliehen. Das kostet wenige
 Am meisten überrascht hat mich etwas anderes: Wir fahren jetzt seltener weg, aber wir sehen mehr von der Stadt.
 
 Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber nicht mehr.`,
+              gloss: [
+                { de: "das Lastenrad", tr: "yük bisikleti", en: "cargo bike" },
+                { de: "überraschen", tr: "şaşırtmak", en: "to surprise" },
+              ],
             },
           ],
           items: [

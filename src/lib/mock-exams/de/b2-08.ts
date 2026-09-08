@@ -66,6 +66,11 @@ Kinder, die zu Hause Kurdisch sprechen, haben mir gesagt, sie sprächen "nichts"
 Die Leistungen im Deutschen haben darunter nicht gelitten. Im Gegenteil: Das Sprechen über Sprache scheint zu helfen, weil die Kinder Regeln vergleichen.
 
 Was mir fehlt, ist nicht Material. Es fehlt Zeit im Stundenplan, und die bekomme ich nur, wenn ich etwas anderes streiche.`,
+              gloss: [
+                { de: "die Scham", tr: "utanç", en: "shame" },
+                { de: "vergleichen", tr: "karşılaştırmak", en: "to compare" },
+                { de: "streichen", tr: "(programdan) çıkarmak", en: "to cut, drop" },
+              ],
             },
             {
               kind: "text",
@@ -80,6 +85,10 @@ Fachlich diskutiere ich ohne Mühe; in der Kaffeepause bin ich still. Das hat Fo
 Man hat mir oft geraten, ich solle einfach mehr sprechen. Das ist gut gemeint und geht am Kern vorbei.
 
 Es fehlt mir nicht an Wörtern, sondern an Geschwindigkeit. Bis mein Satz fertig ist, sind zwei Themen weiter.`,
+              gloss: [
+                { de: "die Absprache", tr: "gayriresmî anlaşma", en: "informal arrangement" },
+                { de: "am Kern vorbeigehen", tr: "asıl noktayı ıskalamak", en: "to miss the point" },
+              ],
             },
             {
               kind: "text",
@@ -94,6 +103,11 @@ Der häufigste Fehler ist nicht ein falsches Wort, sondern eine falsche Annahme:
 Wirksam ist eine einfache Technik: Ich bitte darum, dass die Person mit eigenen Worten wiederholt, worum es geht.
 
 Das dauert drei Minuten und spart später Monate.`,
+              gloss: [
+                { de: "die Annahme", tr: "varsayım", en: "assumption" },
+                { de: "zustimmen", tr: "onaylamak, kabul etmek", en: "to consent" },
+                { de: "wirksam", tr: "etkili", en: "effective" },
+              ],
             },
             {
               kind: "text",
@@ -108,6 +122,11 @@ Was funktioniert, ist banal: kein Kurs, keine Anmeldung, kein Niveau.
 Was nicht funktioniert, ist die Erwartung, dass daraus messbare Fortschritte werden. Wer ein Zertifikat braucht, ist bei uns falsch, und das sage ich inzwischen gleich am Anfang.
 
 Uns geht es um den Moment, in dem jemand zum ersten Mal einen Witz auf Deutsch versteht. Der lässt sich nicht in Stufen einteilen.`,
+              gloss: [
+                { de: "das Niveau", tr: "seviye", en: "level" },
+                { de: "messbar", tr: "ölçülebilir", en: "measurable" },
+                { de: "einteilen", tr: "bölümlere ayırmak", en: "to divide up" },
+              ],
             },
           ],
           items: [
@@ -232,6 +251,13 @@ Hinzu kommt ein sozialer Faktor, der selten benannt wird. Ein Kind darf Fehler m
 Praktische Folgerungen liegen nahe. Wer Erwachsene unterrichtet, sollte weniger auf Perfektion und mehr auf Gelegenheiten setzen. {{15}}
 
 Was bleibt, ist eine Korrektur des Bildes: Nicht das Alter begrenzt den Erfolg, sondern die Umstände, unter denen gelernt wird.`,
+              gloss: [
+                { de: "hartnäckig", tr: "inatçı, kolay kolay geçmeyen", en: "persistent" },
+                { de: "die Aussprache", tr: "telaffuz", en: "pronunciation" },
+                { de: "der Nachteil", tr: "dezavantaj", en: "disadvantage" },
+                { de: "die Gelegenheit", tr: "fırsat", en: "opportunity" },
+                { de: "begrenzen", tr: "sınırlamak", en: "to limit" },
+              ],
             },
           ],
           options: [
@@ -344,6 +370,13 @@ Man wird einwenden, eine Anforderung ohne Vorbedingung sei wertlos. Der Einwand 
 Bemerkenswert ist, wer von der jetzigen Regelung profitiert. Die Behörden nicht, deren Aufwand bleibt gleich. Profitiert haben private Anbieter, die in einigen Ländern die einzigen Prüfungsstellen betreiben.
 
 Mein Vorschlag ist deshalb unspektakulär: Nachweis ja, aber binnen zwölf Monaten nach der Einreise, verbunden mit einem Kursanspruch von Anfang an.`,
+              gloss: [
+                { de: "der Ehegattennachzug", tr: "eş birleşimi", en: "spousal reunification" },
+                { de: "die Einreise", tr: "ülkeye giriş", en: "entry into the country" },
+                { de: "die Hürde", tr: "engel", en: "hurdle" },
+                { de: "das Gespenst", tr: "hayalet, olmayan tehdit", en: "phantom, bogeyman" },
+                { de: "der Anspruch", tr: "hak", en: "entitlement" },
+              ],
             },
           ],
           items: [
@@ -568,6 +601,11 @@ Ein Ausgleich wird auf Antrag gewährt und ist bei der Anmeldung nachzuweisen. N
 
 §4 Ergebnisse
 Ergebnisse werden nach etwa vier Wochen zugestellt. Eine Einsicht in die Bewertung ist innerhalb eines Monats nach Zustellung möglich; eine Aushändigung von Kopien erfolgt nicht.`,
+              gloss: [
+                { de: "die Umbuchung", tr: "tarih değişikliği", en: "rebooking" },
+                { de: "der Nachteilsausgleich", tr: "dezavantaj telafisi", en: "compensatory arrangement" },
+                { de: "die Einsicht", tr: "(evrakı) görme hakkı", en: "inspection, access" },
+              ],
             },
           ],
           items: [

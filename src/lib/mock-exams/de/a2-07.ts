@@ -214,6 +214,12 @@ Ein Problem gibt es aber: Das Netz im Dorf ist langsam. Videotelefonate brechen 
 Die Gemeinde hat jetzt Geld für ein besseres Kabel bekommen. Im Herbst soll es verlegt werden.
 
 Frau Steiner freut sich darüber. Sie sagt aber auch: "Technik allein reicht nicht. Man braucht jemanden, der Zeit hat."`,
+              gloss: [
+                { de: "leihen", tr: "ödünç vermek", en: "to lend" },
+                { de: "der Rechner", tr: "bilgisayar", en: "computer" },
+                { de: "abbrechen", tr: "kesilmek", en: "to break off, drop" },
+                { de: "verlegen", tr: "döşemek", en: "to lay (a cable)" },
+              ],
             },
           ],
           items: [
@@ -307,6 +313,10 @@ Am Ende des Monats habe ich das Handy wieder ausgepackt. Aber ich habe alle Tön
 Heute schaue ich dreimal am Tag auf den Bildschirm. Vorher waren es sicher fünfzig Mal.
 
 Ich empfehle den Versuch. Ganz ohne Handy zu leben, das geht bei mir aber nicht.`,
+              gloss: [
+                { de: "greifen", tr: "uzanmak, el atmak", en: "to reach" },
+                { de: "mitbekommen", tr: "farkına varmak", en: "to catch, notice" },
+              ],
             },
           ],
           items: [

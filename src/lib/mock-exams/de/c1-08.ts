@@ -71,6 +71,13 @@ Die Fachdiskussion hat sich deshalb verschoben. Statt nach dem früheren Zustand
 Widerstand kommt nicht nur von den Nutzern der Fläche. Auch im Naturschutz selbst gilt der Verzicht auf ein historisches Ziel manchen als Aufgabe des eigentlichen Anliegens. Wer nur noch Funktionen sichert, so das Argument, verteidigt am Ende einen Park.
 
 Der Einwand hat Gewicht und lässt sich gleichwohl entkräften. Funktionen sind messbar, historische Bilder sind es nicht — und was ohnehin nicht gemessen wird, geht im Konflikt um Flächen regelmäßig verloren.`,
+              gloss: [
+                { de: "begradigen", tr: "(dereyi) düzleştirmek", en: "to straighten" },
+                { de: "mäandrieren", tr: "kıvrılarak akmak", en: "to meander" },
+                { de: "das Zielbild", tr: "hedef görüntü, varılmak istenen durum", en: "target state" },
+                { de: "der Rückhalt", tr: "(suyun) tutulması", en: "retention" },
+                { de: "entkräften", tr: "çürütmek", en: "to refute" },
+              ],
             },
             {
               kind: "text",
@@ -212,6 +219,11 @@ Ein weiterer Punkt betrifft die Sprache. In der öffentlichen Debatte stehen Lan
 Was folgt daraus? Zunächst eine Zumutung für beide Seiten. Wer Landschaft will, muss sie bezahlen, und zwar verlässlich über Jahrzehnte und nicht in Förderperioden. Wer Betriebe schützen will, muss hinnehmen, dass Zahlungen an Ergebnisse gebunden werden und nicht an Absichten.
 
 Ich vermute, dass beides nicht geschehen wird. Nicht weil die Argumente fehlten, sondern weil ein Haushalt in Legislaturperioden denkt und eine Hecke in Jahrzehnten. Dieses Auseinanderfallen der Fristen ist das eigentliche Hindernis, und es lässt sich mit besserer Argumentation nicht auflösen.`,
+              gloss: [
+                { de: "der Schlag", tr: "tarla parseli", en: "field parcel" },
+                { de: "honorieren", tr: "karşılığını ödemek", en: "to reward, pay for" },
+                { de: "die Bestäubung", tr: "tozlaşma", en: "pollination" },
+              ],
             },
           ],
           items: [

@@ -70,6 +70,15 @@ Nicht alles ist leichter geworden. Über die Dachsanierung wurde zwei Jahre gest
 "Wenn man sein Haus selbst verwaltet, verschwinden die Konflikte nicht", sagt Frau Hollstein. "Sie bekommen nur einen Ort, an dem man sie austragen kann."
 
 Inzwischen fragen andere Häuser um Rat. Der Verein gibt seine Unterlagen weiter, warnt aber auch: Ohne zwei oder drei Leute, die viel Zeit haben, funktioniert es nicht.`,
+              gloss: [
+                { de: "die Mietpartei", tr: "kiracı hane", en: "tenant household" },
+                { de: "der Kredit", tr: "kredi", en: "loan" },
+                { de: "die Versammlung", tr: "toplantı, genel kurul", en: "assembly, meeting" },
+                { de: "abstimmen", tr: "oy vermek", en: "to vote" },
+                { de: "die Sanierung", tr: "yenileme, tadilat", en: "renovation" },
+                { de: "austragen", tr: "(anlaşmazlığı) görüşüp çözmek", en: "to settle, thrash out" },
+                { de: "die Unterlagen", tr: "belgeler", en: "documents" },
+              ],
             },
           ],
           items: [
@@ -199,6 +208,10 @@ Bitte gebt es an die Leute weiter, die nicht in der Gruppe sind.`,
 Waschen ist von 22 bis 7 Uhr nicht erlaubt. Das gilt auch am Wochenende.
 
 Wer die Regel dreimal bricht, verliert den Zugang zur Waschküche für einen Monat.`,
+              gloss: [
+                { de: "die Beschwerde", tr: "şikâyet", en: "complaint" },
+                { de: "der Zugang", tr: "erişim", en: "access" },
+              ],
             },
             {
               kind: "text",
@@ -210,6 +223,9 @@ Wer die Regel dreimal bricht, verliert den Zugang zur Waschküche für einen Mon
 Gleichzeitig fehlen kleine Wohnungen.
 
 Wer allein lebt, bleibt deshalb oft in einer Wohnung, die für zwei oder drei Personen gedacht war.`,
+              gloss: [
+                { de: "der Einpersonenhaushalt", tr: "tek kişilik hane", en: "single-person household" },
+              ],
             },
           ],
           items: [
@@ -461,6 +477,15 @@ Tobias Grabow: Ich habe selbst einen Hund und bin trotzdem gegen ein generelles 
 Rosa Lienhard: Die Diskussion wird immer mit Hunden geführt. Bei uns war das Problem ein Papagei, der jeden Morgen um fünf angefangen hat. Nach acht Monaten ist die Familie freiwillig ausgezogen. Ohne die Möglichkeit, etwas zu untersagen, hätte niemand von uns geschlafen.
 
 Jonas Feddersen: Vermieter dürfen schon heute jeden Einzelfall prüfen, und genau das tun sie nicht — sie schreiben pauschal Nein. Ein klares Ja mit Grenzen wäre ehrlicher als ein Verbot, das ohnehin ständig gebrochen wird.`,
+              gloss: [
+                { de: "der Bestand", tr: "(konut) portföyü", en: "housing stock" },
+                { de: "der Halter", tr: "(hayvan) sahibi", en: "owner, keeper" },
+                { de: "die Absprache", tr: "önceden anlaşma", en: "arrangement, agreement" },
+                { de: "der Allergiker", tr: "alerjisi olan kişi", en: "allergy sufferer" },
+                { de: "die Kündigung", tr: "fesih, tahliye", en: "termination, notice" },
+                { de: "untersagen", tr: "yasaklamak", en: "to prohibit" },
+                { de: "pauschal", tr: "toptan, ayrım gözetmeden", en: "across the board" },
+              ],
             },
           ],
           items: [
@@ -568,6 +593,11 @@ Die Belegung erfolgt über den Plan an der Tür. Ein Termin verfällt, wenn er d
 
 4. Müll
 Papier, Glas und Restmüll werden getrennt. Sperrmüll gehört nicht in den Hof; die Abholung ist selbst zu beauftragen. Wer Müll falsch entsorgt, trägt die Kosten der Nachsortierung.`,
+              gloss: [
+                { de: "der Fluchtweg", tr: "yangın çıkış yolu", en: "escape route" },
+                { de: "verfallen", tr: "geçersiz olmak", en: "to lapse, expire" },
+                { de: "der Sperrmüll", tr: "hacimli atık", en: "bulky waste" },
+              ],
             },
           ],
           items: [

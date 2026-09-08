@@ -63,6 +63,11 @@ Was mich dabei überrascht hat: Die Bewerberinnen fragen nicht zuerst nach dem H
 Seit ich eine halbe Stelle anbiete und den Notdienst mit zwei Kolleginnen teile, kommen Anfragen. Das Problem war also nie der Ort, sondern der Zuschnitt der Arbeit.
 
 Belastend bleibt etwas anderes: Ich verbringe täglich anderthalb Stunden mit Formularen, von denen ein großer Teil nie gelesen wird.`,
+              gloss: [
+                { de: "die Nachfolge", tr: "devralacak kişi, halef", en: "successor" },
+                { de: "der Notdienst", tr: "nöbet hizmeti", en: "emergency duty" },
+                { de: "der Zuschnitt", tr: "(işin) düzeni, kesiti", en: "structure, set-up" },
+              ],
             },
             {
               kind: "text",
@@ -77,6 +82,11 @@ Für eine Überweisung, deren Ausstellung zwei Minuten dauert, nehme ich mir ein
 Man sagt mir, die elektronische Akte werde das lösen. Ich höre diesen Satz seit acht Jahren, und in meinem Alltag hat sich nichts geändert.
 
 Ehrlich gesagt setze ich inzwischen weniger auf Technik als auf eine einfache Regel: Wer schon einmal da war, sollte nicht wieder alles ausfüllen müssen.`,
+              gloss: [
+                { de: "die Überweisung", tr: "sevk (hekim)", en: "referral" },
+                { de: "zermürben", tr: "yıpratmak", en: "to wear down" },
+                { de: "die Akte", tr: "dosya", en: "file, record" },
+              ],
             },
             {
               kind: "text",
@@ -91,6 +101,11 @@ Es fehlen nicht die Ausgebildeten. Es fehlen diejenigen, die bleiben. In meinem 
 Gegangen sind die anderen nicht wegen der Schwere der Arbeit. Gegangen sind sie, weil sich der Dienstplan dreimal im Monat ändert und weil man nie weiß, ob der freie Sonntag hält.
 
 Ein höheres Gehalt hätte bei mir nichts geändert. Ein verlässlicher Plan hätte es.`,
+              gloss: [
+                { de: "die Pflegefachkraft", tr: "bakım uzmanı", en: "qualified nurse" },
+                { de: "der Personalmangel", tr: "personel eksikliği", en: "staff shortage" },
+                { de: "verlässlich", tr: "güvenilir, öngörülebilir", en: "reliable" },
+              ],
             },
             {
               kind: "text",
@@ -105,6 +120,12 @@ Menschen kommen zu mir, weil in der Praxis kein Termin frei ist, und erwarten ei
 Was mir fehlt, ist nicht mehr Geld, sondern die Befugnis, bei einfachen Fragen selbst zu entscheiden.
 
 In mehreren Nachbarländern ist das seit Jahren üblich, und die dortigen Systeme sind daran nicht zerbrochen.`,
+              gloss: [
+                { de: "der Widerspruch", tr: "çelişki", en: "contradiction" },
+                { de: "die Einschätzung", tr: "değerlendirme, teşhis benzeri görüş", en: "assessment" },
+                { de: "die Befugnis", tr: "yetki", en: "authority, power" },
+                { de: "zerbrechen", tr: "çökmek, parçalanmak", en: "to break down" },
+              ],
             },
           ],
           items: [
@@ -229,6 +250,13 @@ Dass es anders gehen kann, zeigen einzelne Programme. In Finnland wurde in den s
 Übertragbar ist das nur begrenzt. Die damalige Ausgangslage war extrem, und die Bevölkerung war klein und wenig beweglich. {{15}}
 
 Was bleibt, ist eine nüchterne Einsicht: Vorbeugung verliert nicht in der Sache, sondern in der Buchführung.`,
+              gloss: [
+                { de: "die Vorbeugung", tr: "koruyucu önlem", en: "prevention" },
+                { de: "der Nachweis", tr: "kanıt", en: "evidence" },
+                { de: "die Zuständigkeit", tr: "yetki alanı", en: "responsibility, remit" },
+                { de: "entlasten", tr: "yükünü hafifletmek", en: "to relieve" },
+                { de: "die Buchführung", tr: "muhasebe", en: "bookkeeping" },
+              ],
             },
           ],
           options: [
@@ -337,6 +365,13 @@ Man kann das begrüßen: mehr Kontrolle, mehr Sicherheit. Man kann aber ebenso f
 Der Vorschlag, Termine zentral zu vergeben, wird seit Jahren diskutiert und ebenso lange abgeräumt. Die Begründung, das sei Bevormundung, überzeugt mich nicht. Bevormundet wird bereits heute, nur eben nicht nach Dringlichkeit, sondern nach Auskunftsfähigkeit.
 
 Mir wäre deshalb eine kleine Lösung lieber als gar keine: Jede Praxis veröffentlicht, wie viele Termine sie kurzfristig vergibt und an wen. Wer das ablehnt, sollte begründen, warum.`,
+              gloss: [
+                { de: "die Wartezeit", tr: "bekleme süresi", en: "waiting time" },
+                { de: "verdecken", tr: "gizlemek, örtmek", en: "to obscure" },
+                { de: "die Auskunftsfähigkeit", tr: "bilgiye erişebilme durumu", en: "ability to find out" },
+                { de: "die Bevormundung", tr: "vesayet, karar hakkını elinden alma", en: "paternalism" },
+                { de: "abräumen", tr: "(öneriyi) rafa kaldırmak", en: "to sweep aside" },
+              ],
             },
           ],
           items: [
@@ -565,6 +600,11 @@ Vorzulegen sind die Originalrechnung sowie ein Nachweis der Zahlung. Kopien werd
 
 §4 Fristen
 Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingegangene Anträge werden ohne inhaltliche Prüfung zurückgewiesen.`,
+              gloss: [
+                { de: "bewilligen", tr: "onaylamak", en: "to approve" },
+                { de: "ausschöpfen", tr: "(hakkı) tümüyle kullanmak", en: "to use up" },
+                { de: "zurückweisen", tr: "reddetmek", en: "to reject" },
+              ],
             },
           ],
           items: [

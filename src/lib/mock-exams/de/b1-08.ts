@@ -69,6 +69,15 @@ Einfach ist es nicht. Zweimal im Jahr fällt eine Schicht aus, weil sich niemand
 "Ehrenamt heißt nicht, dass immer jemand da ist", sagt Frau Kurz. "Es heißt, dass sich jemand kümmert, wenn niemand da ist."
 
 Die größte Sorge ist das Alter. Zwei Drittel der Freiwilligen sind über sechzig, und Nachwuchs kommt kaum.`,
+              gloss: [
+                { de: "die Gemeinde", tr: "belediye", en: "municipality" },
+                { de: "betreiben", tr: "işletmek", en: "to run, operate" },
+                { de: "der Dienstplan", tr: "nöbet çizelgesi", en: "duty roster" },
+                { de: "die Übernahme", tr: "devralma", en: "takeover" },
+                { de: "sich eintragen", tr: "listeye yazılmak", en: "to sign up" },
+                { de: "sich kümmern", tr: "ilgilenmek, sahip çıkmak", en: "to take care of" },
+                { de: "der Nachwuchs", tr: "yeni katılanlar", en: "new recruits" },
+              ],
             },
           ],
           items: [
@@ -167,6 +176,10 @@ vielen Dank für Ihr Interesse. Für den Besuchsdienst im Pflegeheim brauchen wi
 Das beantragen Sie beim Bürgeramt; die Kosten übernehmen wir.
 
 Ohne dieses Papier dürfen wir Sie leider nicht einsetzen.`,
+              gloss: [
+                { de: "das Führungszeugnis", tr: "adli sicil belgesi", en: "certificate of good conduct" },
+                { de: "einsetzen", tr: "görevlendirmek", en: "to deploy, assign" },
+              ],
             },
             {
               kind: "text",
@@ -211,6 +224,9 @@ Anträge, die später als vier Wochen nach dem Einsatz kommen, können wir nicht
 Zugleich ist die Zahl derer, die ein Amt im Vorstand übernehmen, um ein Drittel gesunken.
 
 Vereine finden also Mitglieder, aber keine Verantwortlichen.`,
+              gloss: [
+                { de: "der Vorstand", tr: "yönetim kurulu", en: "board, committee" },
+              ],
             },
           ],
           items: [
@@ -458,6 +474,15 @@ Jörg Frings: Man tut so, als ginge es um Löhne. Es geht um Fahrtkosten, um Tel
 Beate Kirchner: Bei uns wurde eine Pauschale für Übungsleiter eingeführt. Seitdem melden sich mehr Leute — aber es sind andere. Die Alten sind gegangen, weil ihnen der Ton nicht mehr passte. Unterm Strich haben wir nichts gewonnen.
 
 Timo Reichert: Bezahlung nein, Ersatz der Auslagen ja. Und vor allem: Versicherung. Ich habe mir bei einem Einsatz die Hand gebrochen und musste drei Wochen selbst klären, wer das zahlt. Darüber sollten wir reden, nicht über Stundenlöhne.`,
+              gloss: [
+                { de: "die Aufwandsentschädigung", tr: "masraf karşılığı ödeme", en: "expense allowance" },
+                { de: "die Pauschale", tr: "götürü ödeme", en: "flat-rate payment" },
+                { de: "die Auslagen", tr: "yapılan masraflar", en: "out-of-pocket expenses" },
+                { de: "der Einsatz", tr: "görev, nöbet", en: "assignment, shift" },
+                { de: "die Nachbarschaftshilfe", tr: "komşuluk yardımlaşması", en: "neighbourhood help" },
+                { de: "zynisch", tr: "alaycı, acımasız", en: "cynical" },
+                { de: "unterm Strich", tr: "sonuçta", en: "on balance" },
+              ],
             },
           ],
           items: [
@@ -565,6 +590,11 @@ Wer eine Schicht nicht übernehmen kann, sagt spätestens achtundvierzig Stunden
 
 4. Auslagen
 Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur nach vorheriger Absprache. Anträge sind innerhalb von vier Wochen einzureichen.`,
+              gloss: [
+                { de: "der Nachweis", tr: "belge, kanıt", en: "proof, documentation" },
+                { de: "die Haftpflicht", tr: "sorumluluk sigortası", en: "third-party liability" },
+                { de: "erstatten", tr: "(masrafı) geri ödemek", en: "to reimburse" },
+              ],
             },
           ],
           items: [

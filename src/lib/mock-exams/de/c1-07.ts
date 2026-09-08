@@ -69,6 +69,11 @@ Die Luftfahrt hat daraus vor Jahrzehnten Konsequenzen gezogen. Meldungen über B
 Ein verbreitetes Missverständnis besteht darin, Fehlerkultur mit Folgenlosigkeit zu verwechseln. Gemeint ist das Gegenteil. Wer absichtlich gegen Regeln verstößt, muss mit Konsequenzen rechnen; wer unter unklaren Bedingungen falsch entscheidet, soll berichten dürfen. Die Grenze verläuft nicht zwischen schwer und leicht, sondern zwischen Absicht und Umstand.
 
 Schwierig bleibt der Umgang mit der Öffentlichkeit. Eine anonyme Meldung eignet sich nicht für eine Schlagzeile, ein Name schon. Solange Aufklärung und Empörung ohnehin dieselbe Bühne teilen, wird die erste Frage die lautere bleiben.`,
+              gloss: [
+                { de: "die Milde", tr: "hoşgörü, yumuşaklık", en: "leniency" },
+                { de: "der Beinaheunfall", tr: "ramak kala olay", en: "near miss" },
+                { de: "die Empörung", tr: "öfke, infial", en: "outrage" },
+              ],
             },
             {
               kind: "text",
@@ -210,6 +215,13 @@ Genau das geschieht regelmäßig. In mehreren Ländern haben Staatsanwaltschafte
 Was folgt daraus? Zunächst nichts Bequemes. Wer Systeme sicherer machen will, muss hinnehmen, dass einzelne Fälle unaufgeklärt bleiben. Wer jeden Fall aufklären will, muss hinnehmen, dass weniger berichtet wird. Beides zugleich zu fordern ist verbreitet, aber unaufrichtig.
 
 Meine Neigung ist die erste. Nicht weil Einzelfälle unwichtig wären, sondern weil die Zahl der verhinderten Fälle größer ausfällt als die der aufgeklärten. Das ist ein statistisches Argument, und statistische Argumente verlieren gegen Gesichter. Deshalb wird sich vermutlich wenig ändern.`,
+              gloss: [
+                { de: "die Schnittstelle", tr: "arayüz, geçiş noktası", en: "interface" },
+                { de: "die Haftung", tr: "hukuki sorumluluk", en: "liability" },
+                { de: "die Zurechnung", tr: "(sorumluluğun) atfedilmesi", en: "attribution" },
+                { de: "die Anklageschrift", tr: "iddianame", en: "indictment" },
+                { de: "unaufrichtig", tr: "samimiyetsiz", en: "disingenuous" },
+              ],
             },
           ],
           items: [
