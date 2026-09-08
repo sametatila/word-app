@@ -37,6 +37,7 @@ import { CoachBubble } from "@/components/coach-bubble";
 import { LearnHeader } from "@/components/app-header";
 import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon } from "@/components/icons";
 import { readCache, writeCache } from "@/lib/use-cached";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Turun durumları.
@@ -131,6 +132,7 @@ function localDay(): string {
  * artık Öğren merkezinde (`components/learn/learn-hub`).
  */
 export function SessionPlayer() {
+  const t = useT();
   const router = useRouter();
   const [status, setStatus] = useState<Status>("loading");
   const [session, setSession] = useState<SessionPayload | null>(null);
@@ -155,7 +157,7 @@ export function SessionPlayer() {
   const startedAt = useRef(Date.now());
   /** Ekrandaki tur sunucudan mı geldi (önbellekten değil). */
   const fresh = useRef(false);
-  /** Süren istek — "Başla" gerekirse bunu bekliyor. */
+  /** Süren istek — t("common.start") gerekirse bunu bekliyor. */
   const inflight = useRef<Promise<SessionPayload | null> | null>(null);
   const pending = useRef<Answer[]>([]);
   const sessionXp = useRef(0);
@@ -316,15 +318,15 @@ export function SessionPlayer() {
     /*
       ÖNCE ÖNBELLEK, SONRA TAZELEME (bkz. lib/use-cached).
 
-      Ekran her açılışta "Bugünkü çalışman hazırlanıyor…" gösteriyordu ve bu,
+      Ekran her açılışta t("session.preparing") gösteriyordu ve bu,
       uygulamayı açan herkesin gördüğü ilk şeydi. Oysa kartın söylediklerinin
       çoğu — kaç kelime, hangi seviye, seri, hedef — bir turdan diğerine
       değişmiyor.
 
-      Ama tur verisi bir metin değil: "Başla" o kuyruğu oynatıyor. Eski bir
+      Ama tur verisi bir metin değil: t("common.start") o kuyruğu oynatıyor. Eski bir
       kuyruğu oynatmak, cevaplanmış kelimeleri tekrar sormak demek. Bu yüzden
       önbellek yalnızca KARTI çiziyor; `fresh` bayrağı sunucudan taze kuyruk
-      gelene kadar kapalı duruyor ve "Başla" o ana kadar bekliyor
+      gelene kadar kapalı duruyor ve t("common.start") o ana kadar bekliyor
       (bkz. startFresh). Pratikte fark edilmiyor — istek karta bakma süresinden
       kısa — ama yanlış kuyrukla tur başlaması imkânsız.
     */
@@ -334,7 +336,7 @@ export function SessionPlayer() {
       setResumable(cached.resume);
       setStatus("ready");
     }
-    // İstek `inflight`e alınıyor: önbellekli açılışta "Başla" bunu bekliyor.
+    // İstek `inflight`e alınıyor: önbellekli açılışta t("common.start") bunu bekliyor.
     inflight.current = load({ game, quiet: Boolean(cached?.rounds?.length) });
     void inflight.current;
   }, [load]);
@@ -797,7 +799,7 @@ export function SessionPlayer() {
             </motion.span>
           ) : (
             <span className="muted">
-              {tally.total > 0 ? `%${Math.round((tally.correct / tally.total) * 100)} doğru` : "Hadi başlayalım"}
+              {tally.total > 0 ? `%${Math.round((tally.correct / tally.total) * 100)} doğru` : t("session.lets_go")}
             </span>
           )}
         </div>
@@ -825,7 +827,7 @@ export function SessionPlayer() {
         >
           <AlertIcon size={16} />
           {saveWarning === "dropped"
-            ? "Bu turun cevapları kaydedilemedi. Tur devam ediyor."
+            ? t("session.save_failed")
             : "Cevapların kaydedilemiyor — bağlantın döndüğünde otomatik gönderilecek."}
         </div>
       ) : null}
@@ -883,6 +885,7 @@ function Screen({ fills, header, children }: { fills?: boolean; header?: boolean
 }
 
 function LoadingCard() {
+  const t = useT();
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 items-center justify-center">
       <div className="flex flex-col items-center gap-3">
@@ -891,17 +894,18 @@ function LoadingCard() {
           animate={{ rotate: [0, 90, 180, 270, 360], borderRadius: ["30%", "50%", "30%"] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         />
-        <p className="muted text-sm">Bugünkü çalışman hazırlanıyor…</p>
+        <p className="muted text-sm">{t("session.preparing")}</p>
       </div>
     </div>
   );
 }
 
 function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) {
+  const t = useT();
   const content = {
     auth: {
-      title: "Oturumun sona ermiş",
-      body: "İlerlemen kayıtlı — girince kaldığın yerden devam edersin.",
+      title: t("session.expired"),
+      body: t("session.expired_sub"),
       action: (
         <Link href="/login" className="btn btn-primary mt-5 w-full px-5 py-3.5">
           Giriş yap
@@ -909,8 +913,8 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
       ),
     },
     db: {
-      title: "Kelimeler yüklenemedi",
-      body: "Birkaç saniye sonra tekrar denemek genelde yetiyor.",
+      title: t("session.load_failed"),
+      body: t("session.load_failed_sub"),
       action: (
         <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-3.5">
           <RefreshIcon size={18} /> Tekrar dene
@@ -918,8 +922,8 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
       ),
     },
     network: {
-      title: "İnternet bağlantısı yok",
-      body: "Bağlantını kontrol et.",
+      title: t("session.offline"),
+      body: t("session.offline_sub"),
       action: (
         <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-3.5">
           <RefreshIcon size={18} /> Tekrar dene
@@ -951,6 +955,7 @@ function EmptyCard({
   onExtra: () => void;
   onMixed: () => void;
 }) {
+  const t = useT();
   // Tek oyun seçiliyken boş dönmesinin sebebi hedefin tamamlanması değil.
   // İki sebepten biri: bu mod yalnızca daha önce görülmüş kelimeleri
   // tekrarlıyor ve tekrarlanacak kelime henüz yok, ya da o oyun kuyruktaki
@@ -969,7 +974,7 @@ function EmptyCard({
           <h2 className="mt-1 text-xl font-bold">{GAME_LABELS[onlyGame]} için kelime yok</h2>
           {/* Tek cümle. Önce üç satırlık bir açıklama vardı ve modun nasıl
               çalıştığını baştan anlatıyordu; boş ekranda okunacak son şey bu. */}
-          <p className="muted mt-2 text-sm">Bu mod yalnızca öğrendiğin kelimeleri tekrarlar.</p>
+          <p className="muted mt-2 text-sm">{t("session.review_only_mode")}</p>
           <button onClick={onMixed} className="btn btn-primary mt-5 w-full px-5 py-3.5">
             Karışık tura dön
           </button>
@@ -986,8 +991,8 @@ function EmptyCard({
     >
       <div className="card p-8 text-center">
         <Mascot mood="cheer" size={112} className="mx-auto" />
-        <h2 className="mt-1 text-xl font-bold">Günlük hedefini tamamladın</h2>
-        <p className="muted mt-2 text-sm">Planlanan tekrarların bitti.</p>
+        <h2 className="mt-1 text-xl font-bold">{t("session.goal_done")}</h2>
+        <p className="muted mt-2 text-sm">{t("session.goal_done_sub")}</p>
         {meta ? (
           <p className="muted mt-4 text-sm">
             Bugün <strong>{meta.reviewsToday}</strong> tekrar · <strong>{meta.newToday}</strong> yeni
@@ -1033,6 +1038,7 @@ function StageCard({
   onContinue: (wager: boolean) => void;
   onStop: () => void;
 }) {
+  const t = useT();
   const [bet, setBet] = useState(false);
   const perfect = total > 0 && correct === total;
 
@@ -1067,7 +1073,7 @@ function StageCard({
             Etap {stage} / {stages}
           </p>
           <h2 className="mt-0.5 text-xl font-bold">
-            {perfect ? "Tertemiz" : "Etap tamam"}
+            {perfect ? t("stage.clean") : t("stage.done")}
           </h2>
           <div className="mt-3 flex items-center justify-center gap-1.5">
             {Array.from({ length: stages }, (_, i) => (
@@ -1084,8 +1090,8 @@ function StageCard({
         </div>
 
         <div className="grid grid-cols-2 divide-x" style={{ borderColor: "var(--border)" }}>
-          <Stat label="Bu etap" value={`${correct}/${total}`} />
-          <Stat label="En uzun seri" value={bestCombo > 0 ? `${bestCombo}` : "—"} />
+          <Stat label={t("stage.this_stage")} value={`${correct}/${total}`} />
+          <Stat label={t("stage.best_streak")} value={bestCombo > 0 ? `${bestCombo}` : "—"} />
         </div>
 
         {/* Kapanan bahsin sonucu. Üç hâl var ve üçü de açıkça söyleniyor:
@@ -1107,7 +1113,7 @@ function StageCard({
               ? `Bahis tuttu · +${wagerResult} XP`
               : wagerResult < 0
                 ? `Bahis yandı · ${wagerResult} XP`
-                : "Bahis başa baş — bir yanlış yeter de artmaz da"}
+                : t("wager.even")}
           </div>
         ) : null}
 
@@ -1142,7 +1148,7 @@ function StageCard({
               />
             </span>
             <span className="min-w-0">
-              <span className="block text-sm font-bold">Sonraki etapta bahse gir</span>
+              <span className="block text-sm font-bold">{t("wager.next_stage")}</span>
               <span className="muted block text-xs">
                 Beşi de doğruysa etabın puanı iki katı; iki yanlışta etap puan kazandırmaz.
                 Önceki puanına dokunulmaz.
@@ -1192,6 +1198,7 @@ function SummaryCard({
   onContinue: () => void;
   onChallenge: () => void;
 }) {
+  const t = useT();
   const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
   const xp = result?.xpGained ?? tally.xp;
   const mastered = result?.newlyMastered ?? 0;
@@ -1245,7 +1252,7 @@ function SummaryCard({
             )}
           </motion.div>
           <h2 className="mt-2 text-2xl font-bold">
-            {partial ? "Buraya kadar" : "Tur tamamlandı"}
+            {partial ? t("summary.stopped") : t("summary.round_done")}
           </h2>
           <p className="mt-1 text-sm opacity-90">
             +<CountUp value={xp} /> XP
@@ -1253,9 +1260,9 @@ function SummaryCard({
         </div>
 
         <div className="grid grid-cols-3 divide-x" style={{ borderColor: "var(--border)" }}>
-          <Stat label="Doğruluk" value={`%${accuracy}`} />
-          <Stat label="Kelime" value={String(tally.total)} />
-          <Stat label="Seri" value={`${result?.currentStreak ?? 0}g`} />
+          <Stat label={t("summary.accuracy")} value={`%${accuracy}`} />
+          <Stat label={t("summary.words")} value={String(tally.total)} />
+          <Stat label={t("summary.streak")} value={`${result?.currentStreak ?? 0}g`} />
         </div>
 
         {/* Son etap bahisliyse sonucu burada kapanıyor: etap kartı
@@ -1277,7 +1284,7 @@ function SummaryCard({
         {result ? (
           <div className="px-6 pb-2">
             <div className="mb-2 flex items-center justify-between text-xs font-semibold">
-              <span className="muted">Günlük hedef</span>
+              <span className="muted">{t("learn.daily_goal")}</span>
               <span className="muted">
                 {result.reviewsToday} / {result.dailyGoal}
               </span>
@@ -1336,7 +1343,7 @@ function SummaryCard({
           </div>
         ) : null}
 
-        {/* Ertesi güne dair somut bir sayı. "Tekrar planına alındı" doğruydu
+        {/* Ertesi güne dair somut bir sayı. t("summary.scheduled") doğruydu
             ama tarihsizdi; kullanıcıya yarın uygulamayı açmak için bir sebep
             vermiyordu. */}
         {result && result.dueTomorrow > 0 ? (
@@ -1378,7 +1385,7 @@ function SummaryCard({
             {/*
               Kelime listesinin GİRİŞİ burası.
 
-              "Kelimelerim" alt sekmeden çıktı çünkü bir hedef değil bir sonuç:
+              t("profile.my_words") alt sekmeden çıktı çünkü bir hedef değil bir sonuç:
               kimse "kelime listeme bakayım" diye uygulamayı açmıyor, tura girip
               zorlandığı kelimeyi merak ettiğinde bakıyor. Merakın doğduğu an tam
               olarak bu ekran — bağlantı da o yüzden burada.
@@ -1399,7 +1406,7 @@ function SummaryCard({
 
         <div className="space-y-2 p-6 pt-4">
           <button onClick={onContinue} className="btn btn-primary w-full px-5 py-3.5">
-            {partial ? "Tura geri dön" : "Devam et"}
+            {partial ? t("summary.back_to_round") : t("game.continue")}
           </button>
           <button onClick={onChallenge} className="btn btn-ghost w-full px-5 py-3">
             Hayatta kalma turu
