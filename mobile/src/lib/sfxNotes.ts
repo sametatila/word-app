@@ -1,9 +1,12 @@
 /**
  * SFX nota tablosu — TEK KAYNAK. Üç çalma yolu da bu tabloyu aynı sentez modeliyle çalar:
  *  - ttsBridge.bridgeSfx: WebView WebAudio (ekran açık, köprü hazırken)
- *  - LernomiSpeechModule.playSfx (Kotlin): ekran-kapalı yürüyüş, AudioTrack ham PCM — tablo orada
- *    BİREBİR kopyadır; değiştirince `python3 scripts/render-sfx.py --kotlin` çıktısını oraya yapıştır.
- *  - android res/raw mp3 (react-native-sound yedeği): `python3 scripts/render-sfx.py` ile üretilir.
+ *  - ekran-kapalı yürüyüşte native ton sentezi — İKİ platformda da tablo BİREBİR kopyadır:
+ *      LernomiSpeechModule.playSfx (Kotlin, AudioTrack ham PCM) ← `render-sfx.py --kotlin`
+ *      LernomiSpeech.sfxNotes     (Swift, AVAudioPlayer + WAV)  ← `render-sfx.py --swift`
+ *    Tabloyu değiştirince İKİ çıktıyı da yapıştır; kapı __tests__/sfxNotes.test.ts.
+ *  - mp3 yedeği (react-native-sound): `python3 scripts/render-sfx.py` iki pakete birden
+ *    yazar — android res/raw + ios/Lernomi/sfx.
  * Sesler: Duolingo tarzı ksilofon ailesi (artifact'ta seçilen D10 / Y10 / A2 / K2 / B11).
  *
  * Nota: [freq, start, dur, peak, wave, glide, lp, attack, hold, release]

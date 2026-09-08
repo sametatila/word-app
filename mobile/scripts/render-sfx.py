@@ -7,7 +7,8 @@ kaynaktır: WebView köprüsü (ttsBridge) ve ekran-kapalı native sentez
 modelini numpy ile uygular ve react-native-sound yedeği için mp3 yazar.
 
   python3 scripts/render-sfx.py            # tüm sesler
-  python3 scripts/render-sfx.py --kotlin   # Kotlin tablosunu stdout'a bas (NomiSpeechModule'e yapıştır)
+  python3 scripts/render-sfx.py --kotlin   # Kotlin tablosunu stdout'a bas (LernomiSpeechModule.playSfx)
+  python3 scripts/render-sfx.py --swift    # Swift tablosunu stdout'a bas (LernomiSpeech.sfxNotes)
 
 Nota formatı (10 sayı): [freq, start, dur, peak, wave, glide, lp, attack, hold, release]
   wave: 0 sine, 1 triangle, 2 square · glide: hedef frekans (0 = yok, dur boyunca üstel)
@@ -130,10 +131,34 @@ def kotlin(table):
     return "\n".join(lines)
 
 
+def swift(table):
+    """iOS'un ekran-kapalı ton sentezi (LernomiSpeech.sfxNotes) — Kotlin'in karşılığı.
+
+    Kotlin çıktısı ilk günden beri vardı, Swift'i yoktu ve tablo ELLE kopyalanmıştı:
+    tabloyu değiştiren biri Android'i yeniden üretip iOS'u sessizce geride bırakabilirdi.
+    İki çıktı da aynı `table`dan geldiği için artık ayrışamazlar (kapı:
+    __tests__/sfxNotes.test.ts).
+    """
+    lines = ["    switch kind {"]
+    for kind, notes in table.items():
+        lines.append(f'    case "{kind}":')
+        lines.append("      return [")
+        for n in notes:
+            lines.append("        [" + ", ".join(repr(float(v)) for v in n) + "],")
+        lines.append("      ]")
+    lines.append("    default:")
+    lines.append("      return [[1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0]]")
+    lines.append("    }")
+    return "\n".join(lines)
+
+
 if __name__ == "__main__":
     table = load_table()
     if "--kotlin" in sys.argv:
         print(kotlin(table))
+        sys.exit(0)
+    if "--swift" in sys.argv:
+        print(swift(table))
         sys.exit(0)
     for kind, notes in table.items():
         path = write_mp3(kind, render(notes))
