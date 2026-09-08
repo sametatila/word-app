@@ -27,6 +27,8 @@ import { B1_05 } from "./de/b1-05";
 import { B1_06 } from "./de/b1-06";
 import { B1_07 } from "./de/b1-07";
 import { B1_08 } from "./de/b1-08";
+import { B1_09 } from "./de/b1-09";
+import { B1_10 } from "./de/b1-10";
 import { B2_01 } from "./de/b2-01";
 import { B2_02 } from "./de/b2-02";
 import { B2_03 } from "./de/b2-03";
@@ -91,7 +93,7 @@ export * from "./types";
  * okur, mobil paketi `scripts/dump-mock-exams-mobile.ts` bundan üretilir.
  * Sıra listedeki sıradır; `no` alanı kâğıdın kaçıncı deneme olduğunu söyler.
  */
-export const MOCK_PAPERS: readonly MockPaper[] = [A1_01, A1_02, A1_03, A1_04, A1_05, A1_06, A1_07, A1_08, A1_09, A1_10, A2_01, A2_02, A2_03, A2_04, A2_05, A2_06, A2_07, A2_08, A2_09, A2_10, B1_01, B1_02, B1_03, B1_04, B1_05, B1_06, B1_07, B1_08, B2_01, B2_02, B2_03, B2_04, B2_05, B2_06, B2_07, B2_08, C1_01, C1_02, C1_03, C1_04, C1_05, C1_06, C1_07, C1_08, EN_A1_01, EN_A1_02, EN_A1_03, EN_A1_04, EN_A1_05, EN_A1_06, EN_A1_07, EN_A1_08, EN_A2_01, EN_A2_02, EN_A2_03, EN_A2_04, EN_A2_05, EN_A2_06, EN_A2_07, EN_A2_08, EN_B1_01, EN_B1_02, EN_B1_03, EN_B1_04, EN_B1_05, EN_B1_06, EN_B1_07, EN_B1_08, EN_B2_01, EN_B2_02, EN_B2_03, EN_B2_04, EN_B2_05, EN_B2_06, EN_B2_07, EN_B2_08, EN_C1_01, EN_C1_02, EN_C1_03, EN_C1_04, EN_C1_05, EN_C1_06];
+export const MOCK_PAPERS: readonly MockPaper[] = [A1_01, A1_02, A1_03, A1_04, A1_05, A1_06, A1_07, A1_08, A1_09, A1_10, A2_01, A2_02, A2_03, A2_04, A2_05, A2_06, A2_07, A2_08, A2_09, A2_10, B1_01, B1_02, B1_03, B1_04, B1_05, B1_06, B1_07, B1_08, B1_09, B1_10, B2_01, B2_02, B2_03, B2_04, B2_05, B2_06, B2_07, B2_08, C1_01, C1_02, C1_03, C1_04, C1_05, C1_06, C1_07, C1_08, EN_A1_01, EN_A1_02, EN_A1_03, EN_A1_04, EN_A1_05, EN_A1_06, EN_A1_07, EN_A1_08, EN_A2_01, EN_A2_02, EN_A2_03, EN_A2_04, EN_A2_05, EN_A2_06, EN_A2_07, EN_A2_08, EN_B1_01, EN_B1_02, EN_B1_03, EN_B1_04, EN_B1_05, EN_B1_06, EN_B1_07, EN_B1_08, EN_B2_01, EN_B2_02, EN_B2_03, EN_B2_04, EN_B2_05, EN_B2_06, EN_B2_07, EN_B2_08, EN_C1_01, EN_C1_02, EN_C1_03, EN_C1_04, EN_C1_05, EN_C1_06];
 
 export function mockPapersFor(level: MockLevel, course = "de"): MockPaper[] {
   return MOCK_PAPERS.filter((p) => p.level === level && p.course === course).slice().sort((a, b) => a.no - b.no);
