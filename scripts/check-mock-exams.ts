@@ -523,12 +523,22 @@ for (const paper of MOCK_PAPERS) {
   }
 }
 
-// Seviye başına kâğıt sayısı ve numaraların tekilliği.
-for (const level of ["A1", "A2", "B1", "B2", "C1"] as MockLevel[]) {
-  const ps = MOCK_PAPERS.filter((p) => p.level === level);
-  const nos = ps.map((p) => p.no).sort((a, b) => a - b);
-  if (new Set(nos).size !== nos.length) fail(level, `deneme numarası tekrar ediyor: ${nos.join(",")}`);
-  if (nos.length && nos[0] !== 1) warn(level, `numaralar 1'den başlamıyor: ${nos.join(",")}`);
+/*
+  Deneme numaralarının tekilliği KURS İÇİNDE aranıyor.
+
+  `no` alanı "bu seviyenin kaçıncı denemesi" demek ve ekranda kursun kendi
+  listesinde görünüyor: İngilizce A1'in birinci denemesi ile Almanca A1'in
+  birinci denemesi ayrı listelerde duruyor, çakışmıyorlar. Denetim seviyeye
+  göre yapıldığında ikinci kurs eklenir eklenmez her seviye hata veriyordu.
+*/
+for (const course of ["de", "en"] as MockCourse[]) {
+  for (const level of ["A1", "A2", "B1", "B2", "C1"] as MockLevel[]) {
+    const ps = MOCK_PAPERS.filter((p) => p.course === course && p.level === level);
+    if (!ps.length) continue;
+    const nos = ps.map((p) => p.no).sort((a, b) => a - b);
+    if (new Set(nos).size !== nos.length) fail(`${course}/${level}`, `deneme numarası tekrar ediyor: ${nos.join(",")}`);
+    if (nos[0] !== 1) warn(`${course}/${level}`, `numaralar 1'den başlamıyor: ${nos.join(",")}`);
+  }
 }
 
 const rows = MOCK_PAPERS.map((p) => {
