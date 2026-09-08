@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { getUserId } from "@/lib/auth/server";
 import { Reveal } from "@/components/reveal";
 import { Mascot } from "@/components/mascot";
 import { InstallGuide } from "@/components/install-guide";
@@ -71,7 +72,18 @@ const FEATURES = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  /*
+    "Başla" oturuma göre iki yere gidiyor.
+
+    Önce hepsi `/learn`e gidiyordu ve girişi olmayan ziyaretçi oradan doğrudan
+    giriş duvarına düşüyordu: uygulamayı görmeden hesap açması isteniyordu.
+    Mobilde ilk açılış onboarding'e gider, oradan beş kelimelik ısınmaya, hesap
+    en sona kalır. Web de öyle oldu.
+  */
+  const signedIn = Boolean(await getUserId());
+  const startHref = signedIn ? "/learn" : "/setup";
+
   return (
     <div className="relative min-h-dvh overflow-hidden">
       <div
@@ -87,7 +99,7 @@ export default function Home() {
         </div>
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link href="/learn" className="btn btn-primary px-4 py-2.5 text-sm">
+          <Link href={startHref} className="btn btn-primary px-4 py-2.5 text-sm">
             Başla
           </Link>
         </div>
@@ -124,7 +136,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link href="/learn" className="btn btn-primary w-full px-7 py-4 text-base sm:w-auto">
+              <Link href={startHref} className="btn btn-primary w-full px-7 py-4 text-base sm:w-auto">
                 Hemen başla — ücretsiz
               </Link>
               <Link href="/immersion" className="btn btn-ghost w-full px-7 py-4 text-base sm:w-auto">
@@ -229,7 +241,7 @@ export default function Home() {
   Serini başlat, ilk kelimelerini öğren. Neyi ne zaman tekrar edeceğini uygulama takip ediyor.
               </p>
               <Link
-                href="/learn"
+                href={startHref}
                 className="btn mt-6 bg-white px-7 py-3.5 text-base text-[color:var(--color-brand-600)]"
               >
                 Öğrenmeye başla

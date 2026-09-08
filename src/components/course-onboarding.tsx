@@ -8,6 +8,8 @@ import { Mascot } from "@/components/mascot";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 import { AlertIcon, CheckIcon, LogoMark } from "@/components/icons";
 import { track } from "@/lib/track";
+import { saveOnboardingPrefs } from "@/lib/onboarding-prefs";
+import { hasFirstWords } from "@/lib/first-words";
 
 const COURSES = [
   { id: "de", title: "Almanca", subtitle: "Hochdeutsch", desc: "CEFR A1–C1 kelime hazinesi, sınav formatında okuma, dinleme ve yazma." },
@@ -56,7 +58,18 @@ type Step = 0 | 1 | 2 | 3 | 4;
  * iki yolda da karar kullanıcının. Erdi her ekranda rehber; her ekranın
  * ilerleme noktası var ki "daha ne kadar var" belli olsun.
  */
-export function CourseOnboarding({ initialName = "" }: { initialName?: string }) {
+export function CourseOnboarding({
+  initialName = "",
+  signedIn = true,
+}: {
+  initialName?: string;
+  /**
+   * Oturum var mı. Yoksa kararlar sunucuya YAZILAMAZ (kullanıcı henüz yok) —
+   * cihazda saklanıp giriş sonrası taşınıyorlar. Mobilde de sıra bu:
+   * onboarding → ilk kelimeler → hesap → kararların profile geçmesi.
+   */
+  signedIn?: boolean;
+}) {
   const router = useRouter();
   const [step, setStep] = useState<Step>(0);
   // Onboarding hunisi: hangi adıma kadar gelindi (WP-80).
@@ -77,6 +90,20 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
   const nameOk = cleanName.length >= 2;
 
   async function save(extra: Record<string, unknown>): Promise<boolean> {
+    // Misafir: sunucuda yazılacak bir profil yok. Kararlar cihazda duruyor ve
+    // giriş yapılır yapılmaz profile taşınıyor (components/onboarding-adopt).
+    if (!signedIn) {
+      saveOnboardingPrefs({
+        displayName: cleanName,
+        course,
+        voice,
+        goal: goal ?? undefined,
+        level,
+        ...(pace ? { dailyGoal: pace } : {}),
+        ...(extra as { level?: string }),
+      });
+      return true;
+    }
     setSaving(true);
     setError(null);
     try {
@@ -112,16 +139,26 @@ export function CourseOnboarding({ initialName = "" }: { initialName?: string })
   async function finishFromPace() {
     if (levelMode === "measure") {
       // Profil önce kaydedilir (isim/kurs/hedef); seviye testin sonunda yazılır.
+      // Misafirde seviye testi hesap ister: yerleştirme sunucuda puanlanıyor.
       if (await save({ level: "A1" })) {
         track("nav", 0, "onboarding:placement");
-        router.push("/placement");
+        router.push(signedIn ? "/placement" : "/login?mode=signup&next=/placement");
       }
       return;
     }
-    if (await save({ level })) {
-      track("nav", 0, "onboarding:level");
-      setStep(4);
+    if (!(await save({ level }))) return;
+    track("nav", 0, "onboarding:level");
+    /*
+      MİSAFİR ISINMAYA GİDİYOR. Mobilde "sıfırdan" ve "seviyeni seç"
+      yollarının ikisi de giriş duvarından önce beş kelimeden geçiyor; o
+      ısınma, hesap açmanın gerekçesi. Isınma seti olmayan paritede adım
+      atlanıyor ve doğrudan hesap açılıyor.
+    */
+    if (!signedIn) {
+      router.push(hasFirstWords("tr", course) ? "/ilk-kelimeler" : "/login?mode=signup");
+      return;
     }
+    setStep(4);
   }
 
   const dots = (

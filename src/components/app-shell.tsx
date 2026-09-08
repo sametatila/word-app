@@ -10,6 +10,7 @@ import { InstallPrompt } from "./install-prompt";
 import { SessionKeeper } from "./session-keeper";
 import { Telemetry } from "./telemetry";
 import { AchievementUnlock } from "./achievement-unlock";
+import { OnboardingAdopt } from "./onboarding-adopt";
 import { track } from "@/lib/track";
 import { BellIcon, FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, SparkIcon, UserIcon } from "./icons";
 
@@ -247,6 +248,9 @@ export function AppShell({
           değiştiyse eski hesabın kopyaları önce siliniyor. Çocuk bileşenin
           etkisi ebeveyninkinden önce çalıştığı için sıra buradan geliyor. */}
       <SessionKeeper userId={userId} />
+      {/* Misafirken verilen kararlar (kurs, seviye, ad, günlük hedef) hesaba
+          taşınır — mobilde `adoptAccount`ın yaptığı iş. */}
+      <OnboardingAdopt />
       <Telemetry />
       {/* Rozet kutlaması kabukta: rozet altı ayrı yerde kazanılabiliyor
           (kelime turu, ders, beceri, görev, günün turu, hayatta kalma) ve
