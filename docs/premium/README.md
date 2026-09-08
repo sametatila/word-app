@@ -166,36 +166,75 @@ abonelik beyanı kurallarına aykırı.
 
 ### 3.3 RevenueCat panosu
 
-1. `app.revenuecat.com` → **Create new project**: `Lernomi`.
-2. **Project settings → Apps → + New app**:
-   - **Google Play Store**: paket adı `com.lernomi.learn`, §3.2'deki servis
-     hesabı JSON'unu yükle.
-   - **App Store**: bundle `app.lernomi.ios`, §3.1'deki *shared secret* ve
-     *In-App Purchase Key* (.p8) dosyasını yükle.
-3. **Products**: her iki uygulama için `premium_monthly` ve `premium_yearly`'yi
-   içe aktar (*Import* mağazadan okur).
-4. **Entitlements → + New**: identifier **`premium`**.
+> **Pano 2025–26'da yeniden tasarlandı.** Dikey menüye geçildi, projeler üst
+> düzeye çıktı ve **Product catalog** diye birleşik bir bölüm geldi (Products,
+> Offerings, Entitlements, Virtual Currencies). API anahtarları ve entegrasyonlar
+> eskiden "Apps" altındaydı, artık **Platforms** başlığı altında. Aşağıdaki adlar
+> yeni panoya göre; eski düzendeysen adlar farklı görünür. Değişirse kaynak:
+> [Product catalog](https://www.revenuecat.com/docs/getting-started/entitlements) ·
+> [Webhooks](https://www.revenuecat.com/docs/integrations/webhooks) ·
+> [API keys](https://www.revenuecat.com/docs/projects/authentication).
+
+1. **Proje**: panonun üstündeki proje açılırından **+ Create new project** →
+   `Lernomi`.
+
+2. **Uygulamaları bağla** — proje panosunda **Apps** (yeni düzende **Platforms**
+   altında; web sağlayıcıları için ayrıca **Web**):
+   - **Google Play Store**: uygulama adı, paket adı `com.lernomi.learn`,
+     §3.2'deki **Service Credentials** (servis hesabı JSON'u).
+   - **Apple App Store**: uygulama adı, bundle `app.lernomi.ios`,
+     **Shared Secret** ve **In-App Purchase Key** (.p8).
+     İsteğe bağlı ama **işini kolaylaştırır**: **App Store Connect API Key** —
+     bunu da verirsen RevenueCat ürünleri mağazadan doğrudan çekebiliyor, elle
+     ürün girmen gerekmiyor.
+
+3. **Ürünler** — **Product catalog → Products**:
+   `+ New` → **Import Products** (mağazadan okur) ya da `+ New product` ile elle.
+   İki uygulama için de `premium_monthly` ve `premium_yearly` görünmeli.
+   Ürün kimlikleri panelde yazılı olanla aynı olmalı (`/admin/premium` →
+   *Planlar*), yoksa offering boş kalır.
+
+4. **Entitlement** — **Product catalog → Entitlements** → `+ New entitlement`,
+   identifier **`premium`**.
    Bu değer `mobile/src/lib/billingConfig.ts` içindeki `entitlementId` ile
    **birebir** aynı olmalı.
-   Dört ürünün (2 platform × 2 süre) hepsini bu entitlement'a bağla.
-5. **Offerings → + New**: identifier **`default`**, *Make current* işaretli.
-   İki paket ekle:
-   - `$rc_monthly` → `premium_monthly`
-   - `$rc_annual` → `premium_yearly`
-   Paywall fiyatları buradan okuyor; offering boşsa paywall fiyat gösteremez.
-6. **Project settings → Integrations → Webhooks → + New**:
+   Entitlement'ı açıp **Attach** düğmesiyle dört ürünün (2 platform × 2 süre)
+   hepsini bağla.
+
+5. **Offering** — **Product catalog → Offerings** → `+ New`, identifier
+   **`default`**. İçine gir, **+ Add package** ile iki paket ekle; **Identifier**
+   alanı serbest metin değil, süreye göre bir **açılır liste**:
+   - *Monthly* (RevenueCat'in ayırdığı kimlik: `$rc_monthly`) → `premium_monthly`
+   - *Annual* (`$rc_annual`) → `premium_yearly`
+
+   Sonra bu offering'i projenin **Default Offering**'i yap. Paywall fiyatları
+   buradan okuyor; offering boşsa ya da varsayılan değilse fiyat gösterilemez.
+
+6. **Webhook** — sol menüde **Integrations → Webhooks** → *Add new configuration*:
+   - **Webhook Name**: serbest, ör. `Lernomi sunucu`
    - **URL**: `https://www.lernomi.app/api/premium/webhook/revenuecat`
-   - **Authorization header**: uzun rastgele bir sır üret
+   - **Authorization Header**: uzun rastgele bir sır üret
      (`openssl rand -hex 32`) ve **aynı değeri** üç env dosyasına da yaz:
      `.env.example` (boş bırak), yerel `.env`, sunucu `/opt/lernomi/.env` —
      anahtar adı `REVENUECAT_WEBHOOK_AUTH`.
-   - **Environment**: Production. (Sandbox olayları sunucuda bilerek yok
-     sayılıyor; test için `REVENUECAT_ALLOW_SANDBOX=1` gerekiyor ve bu
-     **üretimde asla** açılmaz.)
-7. **Project settings → API keys → Public app-specific keys**: Android
-   anahtarını (`goog_…`) ve iOS anahtarını (`appl_…`)
-   `mobile/src/lib/billingConfig.ts` içine yaz. Bu anahtarlar **sır değil**,
-   uygulama paketinde zaten gömülü.
+   - **Environment filter**: **Production**. (Sunucu sandbox olaylarını zaten
+     reddediyor; iki katman birlikte duruyor. Test için
+     `REVENUECAT_ALLOW_SANDBOX=1` gerekiyor ve bu **üretimde asla** açılmaz.)
+   - **App scope**: tüm uygulamalar — tek uç iki platformu da karşılıyor.
+   - **Event type filters**: boş bırak. Adaptör tanımadığı olayı zaten sessizce
+     geçiyor ve filtre koymak, ileride eklenecek bir olay türünü sessizce
+     kaybettirir.
+
+   RevenueCat 200 dışını **beş kez** yeniden deniyor. Uç bu yüzden yalnız gerçek
+   hatada (401 yetkisiz, 503 yapılandırılmamış) 2xx dışı dönüyor; "bizim işimize
+   yaramayan ama geçerli" olaylar 200 ile kapanıyor.
+
+7. **SDK anahtarları** — **API keys** (yeni düzende **Platforms** altında; tek
+   bir uygulamanınkine **Apps** → uygulamayı seçerek de bakılabilir). Android
+   (`goog_…`) ve iOS (`appl_…`) **public** anahtarlarını
+   `mobile/src/lib/billingConfig.ts` içine yaz. Bunlar **sır değil**, uygulama
+   paketinde zaten gömülü; gizli olan `sk_…` ile başlayan secret anahtarlar ve
+   onlara bu projede hiç ihtiyaç yok.
 
 ### 3.4 Sunucu tarafı
 
