@@ -22,6 +22,8 @@ type SpeechNative = {
   destroy(): void;
   isAvailable(locale: string): Promise<boolean>;
   hasMicrophone(): Promise<boolean>;
+  /** YALNIZ iOS — Android'de karşılığı JS'teki PermissionsAndroid çağrısı. */
+  ensureMicPermission?(): Promise<boolean>;
   setKeepAwake(on: boolean): void;
   startRecording(): Promise<boolean>;
   stopRecording(): Promise<string | null>;
@@ -44,8 +46,21 @@ const emitter = Native ? new NativeEventEmitter(NativeModules.LernomiSpeech) : n
 // Native HTTP allowlist: uploadStt/httpGet/playTtsUrl yalnız API sunucusuna (https) çıkar.
 try { Native?.setApiBase?.(API_BASE); } catch { /* yut */ }
 
+/**
+ * Mikrofon izni — konuşan her ekranın kapısı (ders, konuşma alıştırması, deneme
+ * sınavı, yürüyüş modu). Reddedilirse çağıran "izin yok" ekranını çizer.
+ *
+ * iOS'ta izni native taraf soruyor (`LernomiSpeech.ensureMicPermission`, Info.plist
+ * NSMicrophoneUsageDescription). Burası eskiden koşulsuz `true` dönüyordu ve
+ * "izinler SFSpeech ile alınır" diyordu; oysa konuşma tanıma izni mikrofonu
+ * kapsamıyor — mikrofonu reddetmiş cihazda oturum yine açılıyor, giriş sessizlik
+ * oluyor ve dört ekran da sebebini söylemeden "duyamadım" diyordu. Yöntem
+ * bulunamazsa (eski yapı) eski davranış korunur: VAR sayılır.
+ */
 export async function ensureMicPermission(): Promise<boolean> {
-  if (Platform.OS !== "android") return true; // iOS izinleri native tarafta (SFSpeech) istenir
+  if (Platform.OS !== "android") {
+    try { return (await Native?.ensureMicPermission?.()) ?? true; } catch { return true; }
+  }
   try {
     const g = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO, {
       title: t("micperm.microphone_permission"),
@@ -170,7 +185,10 @@ export function stopWalkService(): void { try { Native?.stopWalkService(); } cat
 
 /**
  * Arka plan yolu kurulamadı — Android'de mikrofonlu ön plan servisi kalkmadı,
- * iOS'ta ses oturumu etkinleşmedi. `reason`: permission | background | session | unknown.
+ * iOS'ta ses oturumu etkinleşmedi ya da kesintiden sonra geri alınamadı.
+ * `reason`: permission | background | session | interrupted | unknown.
+ * ("permission" iki platformda da mikrofon izninin geri alınması; "interrupted"
+ * yalnız iOS — sistem başka bir uygulamaya devrettiği oturumu geri vermiyor.)
  *
  * Eskiden iki platformda da sessizdi: servis ölüyor, tur devam ediyor, kullanıcı
  * ekranı kapatınca mikrofon sebepsizce kesiliyordu. Tur ekran açıkken çalışmayı

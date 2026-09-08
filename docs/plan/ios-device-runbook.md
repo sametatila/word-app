@@ -310,6 +310,21 @@ Ayarlar › Genel › Aktarma veya Sıfırlama › Sıfırla › **Konum ve Gizl
 çalıştırıp cihaz dilini değiştirmek gerekir. İzni verdikten sonra bu adım tekrar
 ölçülemez — 6.1'i 6.2'den önce ve dikkatli koş.
 
+### 6.1a · Mikrofon REDDEDİLİRSE
+**Önce:** 6.1 · **Kaynak:** Android `3d9dc25` izin kapısının iOS karşılığı
+**Yap:** Ayarlar › Lernomi › Mikrofon'u **kapat**. Sonra sırayla dört ekranı aç: yürüyüş
+modu, ders diyaloğu, konuşma alıştırması (Sınav), deneme sınavının konuşma bölümü.
+**Geçti:** dördü de **başlamadan** "izin yok" ekranını/uyarısını çiziyor. Hiçbiri tura
+girip arka arkaya "duyamadım" demiyor.
+**Neden ölçülüyor:** iOS'ta ses oturumu izin OLMADAN da etkinleşir, yalnız giriş sessizlik
+olur — yani kapı olmasa hata sessiz kalır ve kullanıcı üç "duyamadım" sonunda turu
+kaybeder. Android'de bu kapı `PermissionsAndroid` + servisin `checkSelfPermission`'ı;
+iOS'ta karşılığı `LernomiSpeech.ensureMicPermission` (ve `startWalkService`'in kapısı).
+**Geçmezse:** `mobile/src/lib/stt.ts` `ensureMicPermission` iOS dalı — native yöntem
+bulunamazsa eski davranışa (koşulsuz `true`) düşüyor; `LernomiSpeech.m`'de
+`RCT_EXTERN_METHOD(ensureMicPermission…)` satırı var mı.
+**Sonra:** izni geri aç; 6.2'den itibaren izinli koşuluyor.
+
 ### 6.2 · Ekran açıkken tur
 **Önce:** 6.1
 **Yap:** Turu başlat, ekran açık, telefonu elde tut. Beş-altı kelime cevapla; birini
@@ -457,9 +472,12 @@ diyerek durmuyor.
 kabul edip kapat.
 **Geçti:** çağrı bitince ses oturumu toparlanıyor ve tur devam ediyor (ya da temiz
 biçimde duruyor — sessizce ölmüyor).
-**Geçmezse:** `LernomiSpeech.swift` — `AVAudioSession` kesinti (interruption) bildirimi
-dinlenmiyorsa oturum kesintiden sonra geri açılmaz. Bugün böyle bir dinleyici **yok**;
-bu adım geçmezse eklenecek iş `LernomiSpeech.swift`'te, yani Ajan 1'de.
+**Geçmezse:** `LernomiSpeech.swift` `startAudioObservers` — `AVAudioSession`
+kesinti (interruption) bildirimi `75f1ba9`'dan beri dinleniyor: `.ended` + `.shouldResume`
+gelince oturum yeniden etkinleştiriliyor, sistem "devam etme" derse tur kesilmiyor ama
+JS'e `LernomiWalkServiceFailed` (`reason: "interrupted"`) gidiyor ve ekranda uyarı
+çiziliyor. Yani üç sonuç ayrı: tur sürdü / uyarıyla sürdü / sessizce öldü. Yalnız
+sonuncusu kusur.
 
 ### 8.10 · Ekran kapalıyken ses efektleri
 **Önce:** 8.1 · **Kaynak:** §5.8
@@ -576,8 +594,9 @@ Eski numaralar kaybolmasın diye. §5 artık buraya işaret eden tek satıra ine
 
 §5'te olmayıp buraya eklenenler: 1.2 (`Podfile.lock`), 3.1 (ikon), 3.4 (arayüz dili),
 4.1-4.2 (modül ayakta mı), 5.1 (e-posta girişi), 5.5 + 9.5 (mağaza metinleri), 6.5
-(analitik), **7.1 (belirleyici ölçüm)**, 8.5 (kilit ekranından durdurma), 8.8 (kısa
-kesinti), 8.11 (Azure harcaması), 9.x (yükleme), 10.x (kapanış).
+(analitik), 6.1a (mikrofon reddedilirse), **7.1 (belirleyici ölçüm)**, 8.5 (kilit
+ekranından durdurma), 8.8 (kısa kesinti), 8.11 (Azure
+harcaması), 9.x (yükleme), 10.x (kapanış).
 
 ---
 

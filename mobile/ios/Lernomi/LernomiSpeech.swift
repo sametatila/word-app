@@ -25,9 +25,14 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
 
   override static func requiresMainQueueSetup() -> Bool { return false }
 
-  /// JS'in abone olabildiği TÜM olay adları; dokuzunun da yayan tarafı bu dosyada.
+  /// JS'in abone olabildiği TÜM olay adları — Android'deki listenin aynısı.
   /// Liste eksik kalamaz: `stt.ts` hepsine abone oluyor ve RCTEventEmitter listede olmayan
   /// bir ada abone olununca RCTLogError basıyor.
+  /// Onunun dokuzu bu dosyadan yayılıyor; `LernomiSpeechBegin` YAYILMIYOR ve bu bilinçli:
+  /// Android'de `RecognitionListener.onBeginningOfSpeech` var, iOS'ta karşılığı yok
+  /// (`SFSpeechRecognitionTask` "konuşma başladı" demiyor, doğrudan ara sonuç veriyor).
+  /// JS'te dinleyeni de yok — ilk `LernomiSpeechPartial` aynı anı zaten söylüyor. Adı
+  /// listede duruyor ki iki platformun sözleşmesi tek liste kalsın.
   /// `LernomiWalkStop` iOS'ta kilit ekranı denetiminden geliyor — Android'de kalıcı
   /// bildirimdeki "Durdur"un karşılığı; bkz. showNowPlaying / enableWalkRemoteCommands.
   /// `LernomiWalkServiceFailed` arka plan yolunun kurulamadığını söylüyor: iOS'ta ses
@@ -73,6 +78,49 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
       return
     }
     resolve(!inputs.isEmpty)
+  }
+
+  /**
+   * Mikrofon İZNİ — Android'de `stt.ts:47` `PermissionsAndroid.request(RECORD_AUDIO)` ile
+   * soruyor; iOS'ta o dal bugüne kadar koşulsuz `true` dönüyordu ve izin sorulmuyordu.
+   *
+   * Konuşma tanıma izni AYRI bir izindir ve mikrofonu KAPSAMAZ: yalnız
+   * `SFSpeechRecognizer.requestAuthorization` istenirse, mikrofonu reddetmiş bir cihazda
+   * ses oturumu yine etkinleşiyor, `AVAudioEngine` girişi SESSİZLİK üretiyor ve tanıma
+   * "duyamadım" diyor. Yani konuşma alıştırmaları, ders diyaloğu, deneme sınavı ve
+   * yürüyüş modu sebebi söylenmeden bozuluyordu; Android'de dördü de baştan
+   * "izin yok" ekranına düşüyor.
+   *
+   * İzin daha önce verilmiş/reddedilmişse sistem diyaloğu ÇIKMAZ, kayıtlı cevap döner.
+   * Metin Info.plist'teki NSMicrophoneUsageDescription (üç dilde .lproj'da).
+   */
+  @objc(ensureMicPermission:rejecter:)
+  func ensureMicPermission(_ resolve: @escaping RCTPromiseResolveBlock,
+                           rejecter reject: @escaping RCTPromiseRejectBlock) {
+    withMicPermission { resolve($0) }
+  }
+
+  /// Mikrofon izni var mı; yoksa bir kez sorar. Cevap ANA KUYRUKTA verilir.
+  ///
+  /// iOS 17'de API `AVAudioApplication`a taşındı ama hedefimiz 15.1
+  /// (`IPHONEOS_DEPLOYMENT_TARGET`), o yüzden ikisi de duruyor. Eski dal derlemede
+  /// "deprecated" UYARISI verir — hata değil; hedef 17'ye çıkınca `else` bloğu ve
+  /// `#available` birlikte silinir.
+  private func withMicPermission(_ done: @escaping (Bool) -> Void) {
+    if #available(iOS 17.0, *) {
+      switch AVAudioApplication.shared.recordPermission {
+      case .granted: done(true)
+      case .denied: done(false)
+      default: AVAudioApplication.requestRecordPermission { ok in DispatchQueue.main.async { done(ok) } }
+      }
+    } else {
+      let session = AVAudioSession.sharedInstance()
+      switch session.recordPermission {
+      case .granted: done(true)
+      case .denied: done(false)
+      default: session.requestRecordPermission { ok in DispatchQueue.main.async { done(ok) } }
+      }
+    }
   }
 
   // --- Ağ güvenliği: native HTTP (uploadStt/httpGet) yalnız uygulamanın kendi API
@@ -153,12 +201,23 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
         self.showNowPlaying()
         return
       }
-      guard self.activateWalkSession() else { return }
-      self.walkSessionHeld = true
-      // Oturum etkin OLDUKTAN sonra: kayıt olmadan kilit ekranı denetimi çizilmez.
-      self.showNowPlaying()
-      self.enableWalkRemoteCommands()
-      self.startAudioObservers()
+      // İzin kapısı — Android'de `LernomiWalkService` `startForeground`'dan önce
+      // `checkSelfPermission(RECORD_AUDIO)`a bakıyor ve düşerse "permission" yayıyor.
+      // iOS'ta karşılığı burası: ses oturumu izinsiz de ETKİNLEŞİR, yalnız giriş
+      // sessizlik olur — yani kapı olmadan hata sessiz kalır. Sebep adı Android'le
+      // aynı ("permission"), `stt.ts` onu zaten sayıyor.
+      self.withMicPermission { granted in
+        guard granted else {
+          self.send("LernomiWalkServiceFailed", ["reason": "permission"])
+          return
+        }
+        guard self.activateWalkSession() else { return }
+        self.walkSessionHeld = true
+        // Oturum etkin OLDUKTAN sonra: kayıt olmadan kilit ekranı denetimi çizilmez.
+        self.showNowPlaying()
+        self.enableWalkRemoteCommands()
+        self.startAudioObservers()
+      }
     }
   }
 
@@ -828,12 +887,22 @@ class LernomiSpeech: RCTEventEmitter, AVAudioPlayerDelegate {
           reject("permissions", "Konuşma tanıma izni yok", nil)
           return
         }
-        do {
-          try self.beginSession(locale)
-          resolve(true)
-        } catch {
-          self.send("LernomiSpeechError", ["code": "start_failed"])
-          reject("start_failed", error.localizedDescription, error)
+        // Mikrofon AYRI bir izin: yalnız tanıma izni verilmişse oturum kurulur, giriş
+        // sessizlik olur ve her kelime "duyamadım" döner. Aynı hata kodu kullanılıyor —
+        // çağıran için ikisi de "izin yok".
+        self.withMicPermission { granted in
+          guard granted else {
+            self.send("LernomiSpeechError", ["code": "permissions"])
+            reject("permissions", "Mikrofon izni yok", nil)
+            return
+          }
+          do {
+            try self.beginSession(locale)
+            resolve(true)
+          } catch {
+            self.send("LernomiSpeechError", ["code": "start_failed"])
+            reject("start_failed", error.localizedDescription, error)
+          }
         }
       }
     }
