@@ -150,6 +150,35 @@ export const auth = betterAuth({
         }
       : {}),
   },
+  /**
+   * HESAP BAĞLAMA — aynı kişinin parola ve sosyal girişi tek hesapta buluşur.
+   *
+   * Kural: e-postası DOĞRULANMIŞ sağlayıcıdan gelen giriş, aynı e-postaya sahip
+   * mevcut hesaba kendiliğinden bağlanır. Doğrulanmamışsa bağlanmaz; kullanıcı
+   * kendi yöntemiyle girip ayarlardan bağlar (bkz. /api/account/links).
+   *
+   * `trustedProviders` BİLEREK BOŞ. Oraya bir sağlayıcı yazmak "e-posta
+   * doğrulanmasa da bağla" demektir ve yaygın tavsiyenin aksine güvenli
+   * değildir: e-postasını doğrulamayan bir sağlayıcıda saldırgan kurbanın
+   * adresiyle hesap açıp onun hesabına bağlanabilir. Google gerçek Gmail
+   * adreslerinde `email_verified: true` gönderiyor, Apple da imzalı token'ın
+   * içinde — yani doğru kullanıcı zaten kendiliğinden bağlanıyor. Denetimi
+   * atlamanın kazancı yok, bedeli hesap devralma.
+   *
+   * `allowDifferentEmails` kapalı: bağlama yalnız e-posta AYNIYSA. Açık olsaydı
+   * bağlama, adres eşleşmesi aramayan bir birleştirmeye dönerdi.
+   *
+   * `allowUnlinkingAll` kapalı: son giriş yöntemi sökülemez, yoksa kullanıcı
+   * kendi hesabının dışında kalırdı.
+   */
+  account: {
+    accountLinking: {
+      enabled: true,
+      trustedProviders: [],
+      allowDifferentEmails: false,
+      allowUnlinkingAll: false,
+    },
+  },
   session: {
     expiresIn: 60 * 60 * 24 * 30, // 30 gün
     updateAge: 60 * 60 * 24, // günde bir tazele

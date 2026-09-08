@@ -69,6 +69,14 @@ export function translateAuthError(input: unknown): string {
     return "E-posta veya parola hatalı.";
   if (code.includes("USER_ALREADY_EXISTS") || msg.includes("already exists"))
     return "Bu e-posta zaten kayıtlı. Giriş yapmayı dene.";
+  /*
+    Sosyal giriş, aynı e-postalı mevcut hesaba bağlanamadı: sağlayıcı e-postayı
+    DOĞRULANMIŞ olarak bildirmedi (bkz. auth/server accountLinking). Genel
+    "beklenmeyen hata" burada en kötü metin — kullanıcı kendi hesabının önünde
+    durup ne yapacağını bilemiyor. Çıkış yolu söyleniyor.
+  */
+  if (code.includes("ACCOUNT_NOT_LINKED") || msg.includes("account not linked"))
+    return "Bu e-postayla zaten bir hesabın var. Önce her zamanki yönteminle gir, sonra Ayarlar'dan bu hesabı bağla.";
   if (code.includes("USER_NOT_FOUND") || msg.includes("user not found"))
     return "Bu e-postayla kayıtlı bir hesap bulunamadı.";
   if (
