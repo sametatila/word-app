@@ -53,8 +53,7 @@ sürümde üçü birden elle artar:
 | `android/app/build.gradle` | `versionName`, `versionCode` |
 | `ios/Lernomi.xcodeproj/project.pbxproj` | `MARKETING_VERSION`, `CURRENT_PROJECT_VERSION` |
 
-`src/version.ts` native modül eklememek için sabit tutuluyor (device-info yok) ve
-güncelleme denetimi (`src/lib/useUpdate.ts`) onu GitHub'daki son sürümle karşılaştırıyor.
+`src/version.ts` native modül eklememek için sabit tutuluyor (device-info yok).
 Biri geride kalırsa uygulama kendini yanlış sürüm sanır; iOS uzun süre böyle sarktı.
 
 ## patch-package
@@ -88,7 +87,7 @@ npm run i18n:check   # çeviri katmanını ATLAYAN ham Türkçe metin taraması 
 npm run i18n:scan    # aynı tarama, dosya dosya döküm
 npm run ios:check    # iOS paketinin elle tutulan yerleri (sürüm üçlüsü, ikon, .strings)
 npm run release:check # yayın öncesi denetim: sürüm üçlüsü + yayın anahtarı (yapı üretmez)
-npm run release:android # Play için AAB + yan dağıtım APK'sı, üretilen doğrulanır
+npm run release:android # Play için AAB + cihazda deneme APK'sı, üretilen doğrulanır
 npm run check:16kb   # bir .aab/.apk içindeki 64-bit .so'ların 16 KB hizası
 ```
 
@@ -125,10 +124,8 @@ tutucu var.
 `app/build.gradle`'da, görev grafiği hazır olunca bakılıyor; `./gradlew tasks`,
 IDE eşitlemesi ve debug yapıları etkilenmiyor.
 
-Eskiden anahtar yokken release sessizce **debug anahtarıyla** imzalanıyordu. İki
-sonucu vardı: Play böyle bir yüklemeyi reddediyor, ama asıl tehlike yan dağıtımdı —
-o APK GitHub sürümüne çıkarsa imza anahtarı bir daha **değiştirilemez**, yani yanlış
-anahtarla çıkan bir sürüm o kullanıcıların bir daha güncelleme alamaması demek.
+Eskiden anahtar yokken release sessizce **debug anahtarıyla** imzalanıyordu. Play
+böyle bir yüklemeyi reddediyor; kapı o sessiz hatayı yapının başında görünür kılıyor.
 
 Kapı `--dry-run` ile sınandı: anahtarsız `:app:assembleRelease` mesajla düşüyor,
 `-PallowDebugSigning` ile geçiyor (uyarı basarak), `:app:assembleDebug` ve
@@ -141,8 +138,8 @@ Deneme amaçlı bir release paketi gerekiyorsa kapı elle açılıyor:
 ```
 
 Çıkan yapı debug anahtarıyla imzalanıyor **ve** `-devkey` sürüm ekiyle işaretleniyor
-(`1.0.11-devkey`), yani elde kaldığında ne olduğunu kendisi söylüyor. O dosya ne
-mağazaya ne GitHub sürümüne gidebilir.
+(`1.0.11-devkey`), yani elde kaldığında ne olduğunu kendisi söylüyor. O dosya
+mağazaya gidemez.
 
 ### JDK nereden geliyor
 
@@ -169,7 +166,7 @@ sonrasında da ürettiğini denetliyor:
 | Yayın anahtarı | `keystore.properties` var mı |
 | İmza | `apksigner` ile doğrulama; imzalayan "Android Debug" ise durur |
 | 16 KB sayfa boyutu | AAB ve APK içindeki her 64-bit `.so`nun LOAD hizası ≥ 16384, APK'da ayrıca `zipalign -P 16` |
-| Yüklenecekler | AAB, ProGuard eşlemi, native semboller, yan dağıtım APK'sı |
+| Yüklenecekler | AAB, ProGuard eşlemi, native semboller (APK yalnız cihazda deneme için) |
 
 16 KB denetimi tek başına da koşar (`npm run check:16kb <dosya>`) ve yapılandırmaya
 değil **üretilen dosyaya** bakar: `useLegacyPackaging = false` yalnız arşiv içi

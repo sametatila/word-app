@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Lernomi — Android yayın yapısı (Play için AAB + yan dağıtım için APK).
+# Lernomi — Android yayın yapısı (Play için AAB + cihazda deneme için APK).
 #
 # NEDEN VAR: `./gradlew bundleRelease` tek başına mağazaya gidecek bir yapı üretmez.
 #
@@ -8,14 +8,14 @@
 #      `-devkey` sürüm ekiyle işaretleniyor. Buradaki denetim onun erken ve okunur
 #      hâli — gradle'ı hiç başlatmadan aynı şeyi söylüyor.
 #   2) Sürüm numarası üç ayrı dosyada elle tutuluyor (bkz. mobile/README.md). Biri
-#      geride kalırsa uygulama kendini yanlış sürüm sanar ve güncelleme denetimi bozulur.
+#      geride kalırsa Play'e yanlış sürümle yükleme yapılır.
 #
 # Betik ikisini de yapıdan ÖNCE kapatıyor, sonra üretiyor, sonra ürettiğini
 # doğruluyor: imzanın debug olmadığı ve 16 KB sayfa boyutu.
 #
 # NE DOĞRULAR: imza, sürüm tutarlılığı, 16 KB hizalama, dosyaların varlığı.
 # NE DOĞRULAMAZ: uygulamanın çalıştığını. R8 kırılmaları yalnız cihazda görünür —
-# üretilen APK'yı gerçek bir telefona kurup akışı koşmadan yükleme yapılmamalı.
+# üretilen APK'yı gerçek bir telefona kurup akışı koşmadan Play'e yükleme yapılmamalı.
 #
 # Kullanım:
 #   bash mobile/scripts/release-android.sh
@@ -73,8 +73,7 @@ Anahtar üretimi:  bash mobile/scripts/gen-release-keystore.sh
 Yalnız deneme:    ./gradlew assembleRelease -PallowDebugSigning (mağazaya gidemez)
 
 Anahtar ve parolası YEDEKLENMEDEN ilk yükleme yapılmamalı. Play tarafında bu bir
-YÜKLEME anahtarı (kaybı Google'dan sıfırlatılabilir), ama GitHub'dan inen APK'yı
-imzalayan da o: orada anahtar değişirse kullanıcılar bir daha güncelleme alamaz.
+YÜKLEME anahtarı: kaybı Google'dan sıfırlatılabilir ama süreç günler alır.
 EOF
   [ "$CHECK_ONLY" = "1" ] || exit 2
   fail=1
@@ -93,7 +92,7 @@ if [ "$CHECK_ONLY" = "1" ]; then
 fi
 
 # --- 3. Yapı -------------------------------------------------------------------
-# AAB Play'e gider; APK yan dağıtıma (GitHub sürümü) ve cihazda duman testine.
+# AAB Play'e gider; APK yalnız cihazda duman testine.
 step "Gradle"
 # Gradle bir JDK istiyor ve bu makinede java PATH'te olmayabiliyor; Gradle'ın kendi
 # indirdiği JDK (~/.gradle/jdks) zaten burada duruyor, onu kullanıyoruz.
@@ -142,7 +141,7 @@ step "Play Console'a yüklenecekler"
 printf '  AAB              %s\n' "$OUT_AAB"
 if [ -f "$MAPPING" ]; then printf '  ProGuard eşlemi  %s (çökme izlerinin okunabilmesi için)\n' "$MAPPING"; fi
 if [ -f "$SYMBOLS" ]; then printf '  Native semboller %s\n' "$SYMBOLS"; fi
-printf '  Yan dağıtım APK  %s\n' "$OUT_APK"
+printf '\n  Play'"'"'e gitmez, cihazda denemek için: %s\n' "$OUT_APK"
 cat <<EOF
 
 Yüklemeden önce, sırayla:
