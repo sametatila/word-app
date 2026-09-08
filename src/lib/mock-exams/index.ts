@@ -37,6 +37,8 @@ import { EN_A1_01 } from "./en/a1-01";
 import { EN_A1_02 } from "./en/a1-02";
 import { EN_A1_03 } from "./en/a1-03";
 import { EN_A1_04 } from "./en/a1-04";
+import { EN_A1_05 } from "./en/a1-05";
+import { EN_A1_06 } from "./en/a1-06";
 import { EN_A2_01 } from "./en/a2-01";
 import { EN_A2_02 } from "./en/a2-02";
 import { EN_A2_03 } from "./en/a2-03";
@@ -63,7 +65,7 @@ export * from "./types";
  * okur, mobil paketi `scripts/dump-mock-exams-mobile.ts` bundan üretilir.
  * Sıra listedeki sıradır; `no` alanı kâğıdın kaçıncı deneme olduğunu söyler.
  */
-export const MOCK_PAPERS: readonly MockPaper[] = [A1_01, A1_02, A1_03, A1_04, A1_05, A1_06, A1_07, A1_08, A2_01, A2_02, A2_03, A2_04, A2_05, A2_06, A2_07, A2_08, B1_01, B1_02, B1_03, B1_04, B1_05, B1_06, B2_01, B2_02, B2_03, B2_04, B2_05, B2_06, C1_01, C1_02, C1_03, C1_04, C1_05, C1_06, EN_A1_01, EN_A1_02, EN_A1_03, EN_A1_04, EN_A2_01, EN_A2_02, EN_A2_03, EN_A2_04, EN_B1_01, EN_B1_02, EN_B1_03, EN_B1_04, EN_B2_01, EN_B2_02, EN_B2_03, EN_B2_04, EN_C1_01, EN_C1_02, EN_C1_03, EN_C1_04];
+export const MOCK_PAPERS: readonly MockPaper[] = [A1_01, A1_02, A1_03, A1_04, A1_05, A1_06, A1_07, A1_08, A2_01, A2_02, A2_03, A2_04, A2_05, A2_06, A2_07, A2_08, B1_01, B1_02, B1_03, B1_04, B1_05, B1_06, B2_01, B2_02, B2_03, B2_04, B2_05, B2_06, C1_01, C1_02, C1_03, C1_04, C1_05, C1_06, EN_A1_01, EN_A1_02, EN_A1_03, EN_A1_04, EN_A1_05, EN_A1_06, EN_A2_01, EN_A2_02, EN_A2_03, EN_A2_04, EN_B1_01, EN_B1_02, EN_B1_03, EN_B1_04, EN_B2_01, EN_B2_02, EN_B2_03, EN_B2_04, EN_C1_01, EN_C1_02, EN_C1_03, EN_C1_04];
 
 export function mockPapersFor(level: MockLevel, course = "de"): MockPaper[] {
   return MOCK_PAPERS.filter((p) => p.level === level && p.course === course).slice().sort((a, b) => a.no - b.no);
