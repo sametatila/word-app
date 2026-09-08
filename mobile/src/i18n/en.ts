@@ -441,7 +441,6 @@ export const en: Record<string, string> = {
   "learn.greeting_named": "Hello {name}",
   "learn.learn": "Learn {lang}",
   "learn.same_challenge_for_everyone_get": "Same challenge for everyone · get ranked",
-  "learn.tap_to_download": "Tap to download",
   "learn.practice_your_words": "Practice your words",
   "learn.test_what_you_ve_learned_weekly": "Test what you've learned · weekly",
   "learn.featured": "Featured",

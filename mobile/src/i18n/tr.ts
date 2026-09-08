@@ -446,7 +446,6 @@ export const tr: Record<string, string> = {
   "learn.greeting_named": "Merhaba {name}",
   "learn.learn": "{lang} öğren",
   "learn.same_challenge_for_everyone_get": "Herkesle aynı yarışma · sıralamaya gir",
-  "learn.tap_to_download": "İndirmek için dokun",
   "learn.practice_your_words": "Kelimelerini çalış",
   "learn.test_what_you_ve_learned_weekly": "Öğrendiklerini ölç · haftada bir",
   "learn.featured": "Öne çıkan",

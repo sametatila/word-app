@@ -1,6 +1,6 @@
 import React from "react";
 import { t, targetLangName } from "../lib/i18n";
-import { View, Linking } from "react-native";
+import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -12,7 +12,6 @@ import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, RepeatIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe, formatXp } from "../lib/useMe";
-import { useUpdate } from "../lib/useUpdate";
 import { useMicrophone } from "../lib/useMicrophone";
 import { supportsMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
@@ -66,7 +65,6 @@ export function LearnScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
   const { me, loading: meLoading } = useMe();
-  const update = useUpdate();   // iOS'ta hep null (APK şeridi yok, bkz. lib/useUpdate)
   const greeting = user?.name ? t("learn.greeting_named", { name: user.name.split(" ")[0] }) : t("learn.greeting");
   // Deneme Sınavları yalnız sınav kataloğu OLAN kursta. İngilizce kursunun
   // karşılığı yok (bkz. data/exams.ts); orada kart açık kalsaydı o kursta hiç
@@ -87,18 +85,6 @@ export function LearnScreen() {
 
   return (
     <Screen>
-      {update && (
-        <PressableScale onPress={() => Linking.openURL(update.url)} style={{ marginBottom: spacing.md }}>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.primarySoft, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.primary, paddingHorizontal: spacing.lg, paddingVertical: 12 }}>
-            <BoltIcon color={colors.primary} size={20} />
-            <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong" color={colors.primary}>Yeni sürüm hazır · v{update.version}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("learn.tap_to_download")}</Text>
-            </View>
-            <ArrowRightIcon color={colors.primary} size={18} />
-          </View>
-        </PressableScale>
-      )}
       <AppHeader title={t("learn.learn", { lang: targetLangName() })} subtitle={greeting} />
 
       {/* GÜNLÜK TUR — dil-içerik öncelikli kahraman (fitness halkası değil) */}
