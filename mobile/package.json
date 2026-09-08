@@ -14,6 +14,7 @@
     "ios:check": "python3 scripts/check-ios.py",
     "release:check": "bash scripts/release-android.sh --check",
     "release:android": "bash scripts/release-android.sh",
+    "release:ios": "bash scripts/ios-archive.sh",
     "check:16kb": "bash scripts/check-16kb.sh"
   },
   "dependencies": {

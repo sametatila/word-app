@@ -22,21 +22,23 @@ command -v xcodebuild >/dev/null || { echo "xcodebuild yok — Xcode kurulu mu?"
 # yalnız hangi hesabın imzalayacağını bilmek zorunda.
 : "${DEVELOPMENT_TEAM:?DEVELOPMENT_TEAM tanımlı değil (Apple Developer takım kimliği, 10 karakter). Örn: export DEVELOPMENT_TEAM=ABCDE12345}"
 
-# Sürüm üç yerde elle eşitleniyor (bkz. src/version.ts). Arşiv almadan önce
-# pbxproj ile version.ts'i karşılaştır: sessizce ayrışmış bir sürümle TestFlight'a
-# çıkmak, geri alınamayan bir build numarası harcamak demek.
-JS_VERSION=$(sed -nE 's/.*APP_VERSION = "([^"]+)".*/\1/p' src/version.ts)
-JS_BUILD=$(sed -nE 's/.*APP_VERSION_CODE = ([0-9]+).*/\1/p' src/version.ts)
-IOS_VERSION=$(sed -nE 's/.*MARKETING_VERSION = ([^;]+);.*/\1/p' ios/Lernomi.xcodeproj/project.pbxproj | head -1 | tr -d ' ')
-IOS_BUILD=$(sed -nE 's/.*CURRENT_PROJECT_VERSION = ([^;]+);.*/\1/p' ios/Lernomi.xcodeproj/project.pbxproj | head -1 | tr -d ' ')
-if [ "$JS_VERSION" != "$IOS_VERSION" ] || [ "$JS_BUILD" != "$IOS_BUILD" ]; then
-  echo "SÜRÜM AYRIŞMASI — arşiv alınmadı."
-  echo "  src/version.ts : $JS_VERSION ($JS_BUILD)"
-  echo "  project.pbxproj: $IOS_VERSION ($IOS_BUILD)"
-  echo "Üçüncü kaynak android/app/build.gradle da elle eşitlenmeli."
-  exit 1
-fi
-echo "Sürüm $JS_VERSION ($JS_BUILD) — iki kaynak uyuşuyor."
+# Paket denetimi — arşivden ÖNCE. Android'de karşılığı release-android.sh'ın
+# yapıdan önce koştuğu sürüm + imza kapısı; buradaki kapı check-ios.py.
+#
+# Kendi iki kaynaklı sürüm karşılaştırmamız vardı (version.ts ↔ pbxproj) ve üçüncüyü
+# — android/app/build.gradle — "elle eşitlensin" diye NOT olarak bırakıyordu. Oysa
+# check-ios.py üçünü birden karşılaştırıyor, üstüne ikon ölçülerini, .strings
+# sözlüklerini, dil beyanını ve pbxproj bütünlüğünü de bakıyor. Hepsi App Store'a
+# YÜKLERKEN patlayan, derlemede görünmeyen sınıftan; arşiv alındıktan sonra öğrenmek
+# geri alınamayan bir build numarası harcamak demek.
+#
+# Denetim macOS istemiyor: Mac'e geçmeden `npm run ios:check` ile aynı kapı koşulabilir.
+echo "== Paket denetimi (check-ios.py)"
+python3 scripts/check-ios.py || {
+  echo
+  echo "Denetim düştü — arşiv alınmadı. Yukarıdaki maddeler kapanmadan yayın yapılamaz." >&2
+  exit 2
+}
 
 rm -rf "$ARCHIVE" "$EXPORT"
 mkdir -p "$BUILD"
