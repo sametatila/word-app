@@ -212,32 +212,33 @@ Diğer her şerit bunun üstüne kuruluyor.
 1. ~~`src/app/globals.css` paletini mobil `colors.ts` ile hizala: `--color-brand-*` turuncu
    rampasına (`orange 50…900`) geç, `bg/surface/surface-2/border/hairline` değerlerini
    mobilinkilerle eşitle, koyu tema aynı şekilde.~~ **BİTTİ** (`7bc52e0`)
-2. Tipografi ölçeğini token'a bağla (`display/h1/h2/h3/body/bodyStrong/caption/micro`) —
+2. ~~Tipografi ölçeğini token'a bağla~~ **BİTTİ** (`9ef1947`). Eski hali: (`display/h1/h2/h3/body/bodyStrong/caption/micro`) —
    Tailwind `@theme` üzerinden sınıf olarak; sayfalar serbest `text-*` yazmayı bıraksın.
-3. Yarıçap + boşluk + `softShadow` karşılıklarını CSS değişkeni yap.
-4. `.card`, `.chip`, `.option` bileşen sınıflarını yeni ölçülere taşı (kart: radius 26 +
-   yumuşak gölge). `.btn-primary` rengi `7bc52e0`'de yapıldı; kalan iş yalnız ölçü.
-5. `PressableScale` karşılığı: `.pressable` yardımcı sınıfı (transform + spring easing,
-   `prefers-reduced-motion`'da kapalı).
+3. ~~Yarıçap + boşluk + `softShadow` karşılıklarını CSS değişkeni yap.~~ **BİTTİ** (`9ef1947`) — boşluğa token gerekmedi, mobilin ölçeği Tailwind tabanına birebir oturuyor.
+4. ~~`.card`, `.chip`, `.option` bileşen sınıflarını yeni ölçülere taşı.~~ **BİTTİ**
+   (`7bc52e0` renk, `9ef1947` ölçü).
+5. ~~`PressableScale` karşılığı: `.pressable` yardımcı sınıfı.~~ **BİTTİ** (`9ef1947`).
 6. **Mobil düzeltmesi:** `M/src/theme/colors.ts` — `textMuted` beyaz kart üstünde 4.23
    veriyor (eşik 4.5); web'in `#7c6c5d`'sine çekilecek. İki ton yan yana ayırt
    edilemiyor, yani görsel paritede kayıp yok. (Buton rengi T-KARAR-1 ile olduğu gibi
    kalıyor — orada iki taraf zaten aynı.)
-7. `scripts/palette-check.mjs`'i yeni palette koştur; ΔE ve kontrast eşiklerinin hepsi geçsin.
+7. ~~`scripts/palette-check.mjs`'i yeni palette koştur.~~ **BİTTİ** — kabul edilmiş sapma
+   dışında tüm ölçümler geçiyor; araç ayrıca yorumları ayrıştırmadan önce siliyor.
 
 **Kabul:** paletin her rengi ölçülüp geçti; `/learn`, `/immersion`, `/skills` kareleri
 mobil karelerinin yanında aynı ürün gibi duruyor.
 
 ### Şerit K — Kabuk ve gezinme (T'ye bağlı)
 
-1. `AppHeader` web karşılığı: sekme başına büyük başlık + alt satır, sağda seri hapı +
-   gelen kutusu zili + maskot avatarı.
-2. Alt gezinme: yüzen hap (radius 34, gölge, etkin sekme çipi). Güvenli alan hesabı
-   korunuyor (`--safe-b` ölçümü aynen kalır).
-3. Yığın başlığı: 44px kare geri düğmesi + `h2` + sağ eylem — tek bileşen, `PageBack`
-   yerine geçer.
-4. `ContentColumn` / `CardGrid` web karşılıkları; masaüstü kenar çubuğu yeni tipografiye.
-5. `Skeleton` ailesi (`SkeletonLine(variant)`, `SkeletonCard`, `SkeletonTile`, `textHeight`).
+1. ~~`AppHeader` web karşılığı.~~ **BİTTİ** (`fb1ecf9`) — kabuktaki ortak üst çubuk
+   kalktı, başlığı her sekme kendi çiziyor. Avatar hâlâ baş-harf arması; maskota
+   dönüşü Şerit R'de.
+2. ~~Alt gezinme: yüzen hap.~~ **BİTTİ** (`fb1ecf9`) — ayrıca çubuk artık YALNIZ üç
+   sekmede çiziliyor, mobildeki gibi. Güvenli alan hesabı korundu.
+3. ~~Yığın başlığı.~~ **BİTTİ** (`beedf5d`) — 44px kare düğme + `h2` + `HeaderAction`.
+4. ~~`ContentColumn` / `CardGrid`.~~ **BİTTİ** (`9b88cb0`). Sayfaların kendi
+   `max-w-*`larından buraya taşınması ilgili şeritlerde yapılıyor.
+5. ~~`Skeleton` ailesi.~~ **BİTTİ** (`9b88cb0`) — ölçüler tipografi ölçeğinden türüyor.
 
 **Kabul:** üç sekme + üç yığın sayfası mobil kareleriyle bire bir hizalı; 320 px'de taşma yok.
 
@@ -312,8 +313,8 @@ Arkadaşlar / kullanıcı / gelen kutusu / sosyal ayarlar ekranlarını yeni dil
 
 | Şerit | Durum | Not |
 |---|---|---|
-| T — Tasarım dili | **sürüyor** | Adım 1 (palet) bitti: `7bc52e0`. Sırada tipografi + yarıçap/gölge token'ları |
-| K — Kabuk | başlanmadı | T'ye bağlı |
+| T — Tasarım dili | **bitti** | `7bc52e0` palet · `9ef1947` tipografi/yarıçap/gölge + kart + `.pressable`. Kalan tek kalem mobil `textMuted` (adım 6) |
+| K — Kabuk | **bitti** | `fb1ecf9` sekme başlığı + yüzen çubuk + ikonlar · `beedf5d` yığın başlığı · `9b88cb0` kap/ızgara/iskelet |
 | L — Öğren | başlanmadı | |
 | P — Patika | başlanmadı | |
 | B — Beceriler | başlanmadı | |
