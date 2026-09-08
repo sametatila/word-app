@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { AppHeader } from "@/components/app-header";
 import type { CefrLevel } from "@/lib/skills/types";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
 
@@ -69,22 +70,25 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
   const pctAll = totalUnits ? Math.round((doneUnits / totalUnits) * 100) : 0;
 
   return (
-    <div className="mx-auto w-full max-w-md px-4 pb-28 pt-11">
-      {/* üst başlık */}
-      <header className="mb-4">
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-extrabold">Patika</h1>
-          <span className="rounded-full px-3 py-1 text-xs font-bold" style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}>
-            {level}
-          </span>
-        </div>
-        <div className="mt-3 h-2.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+    <div className="mx-auto w-full max-w-md">
+      {/*
+        Başlık artık sekmelerin ortak başlığı (`AppHeader`) — mobildeki gibi
+        32 puntoda ve sağında seri + gelen kutusu + profil. Buradaki eski
+        `h1` 24 puntoydu ve kabuktaki uygulama çubuğunun altında İKİNCİ bir
+        başlık satırı olarak duruyordu.
+
+        Seviye rozeti ile ilerleme çubuğu başlığın altına, kendi satırına
+        indi: ikisi de "Patika"nın süsü değil, patikanın DURUMU.
+      */}
+      <AppHeader title="Patika" />
+      <div className="mb-4">
+        <div className="h-2.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
           <div className="h-full rounded-full transition-[width] duration-500" style={{ width: `${pctAll}%`, background: "var(--color-mint-500)" }} />
         </div>
-        <p className="mt-1.5 text-xs font-semibold" style={{ color: "var(--text-muted)" }}>
+        <p className="mt-1.5 text-caption" style={{ color: "var(--text-muted)" }}>
           {level} · {doneUnits}/{totalUnits} ünite tamam
         </p>
-      </header>
+      </div>
 
       {feat && <Featured unit={feat} isCurrent={feat.index === currentIndex} />}
 

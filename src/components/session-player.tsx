@@ -44,6 +44,7 @@ import { WalkPlayer } from "@/components/walk-player";
 import { QuestCard } from "@/components/quest-card";
 import { PlanCard } from "@/components/plan-card";
 import { CoachBubble } from "@/components/coach-bubble";
+import { LearnHeader } from "@/components/app-header";
 import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon, TargetIcon } from "@/components/icons";
 import { readCache, writeCache } from "@/lib/use-cached";
 
@@ -673,13 +674,13 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     );
   if (status === "loading")
     return (
-      <Screen fills>
+      <Screen fills header>
         <LoadingCard />
       </Screen>
     );
   if (status === "ready" && session)
     return (
-      <Screen>
+      <Screen header>
         <StartCard
           meta={session.meta}
           rounds={session.rounds}
@@ -703,13 +704,13 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
     );
   if (status === "error")
     return (
-      <Screen>
+      <Screen header>
         <ErrorCard kind={errorKind} onRetry={() => void load()} />
       </Screen>
     );
   if (status === "empty")
     return (
-      <Screen>
+      <Screen header>
         <EmptyCard
           meta={session?.meta}
           onlyGame={onlyGame}
@@ -891,8 +892,19 @@ export function SessionPlayer({ leaderboard }: { leaderboard?: ReactNode }) {
  * — sıralama tablosunun altı — kaydırma sonuna gelindiğinde bile gezinmenin
  * altında kalıyordu.
  */
-function Screen({ fills, children }: { fills?: boolean; children: ReactNode }) {
-  return <div className={fills ? "flex min-h-0 flex-1 flex-col" : "flex flex-col"}>{children}</div>;
+function Screen({ fills, header, children }: { fills?: boolean; header?: boolean; children: ReactNode }) {
+  return (
+    <div className={fills ? "flex min-h-0 flex-1 flex-col" : "flex flex-col"}>
+      {/*
+        `header`: sekmenin kendi başlığı. Kabuktaki ortak üst çubuk kalktı
+        (bkz. components/app-shell) ve başlığı artık her sekme kendi çiziyor.
+        OYUN ekranlarında çizilmiyor — mobilde de tur ayrı bir tam ekran ve
+        orada seri/profil değil, ilerleme çubuğu ile çıkış var.
+      */}
+      {header ? <LearnHeader /> : null}
+      {children}
+    </div>
+  );
 }
 
 function StartCard({

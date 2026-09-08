@@ -89,6 +89,42 @@ export const MoonIcon = (p: IconProps) => (
   </Svg>
 );
 
+/*
+ * ── ALT GEZİNMENİN ÜÇ İKONU ───────────────────────────────────────────────
+ *
+ * Şekiller mobil `M/src/ui/icons.tsx`ten BİREBİR: aynı 24×24 ızgara, aynı
+ * yollar. Web'de üçü de başka şeylerdi (kartlar / pusula / yıldız) ve iki
+ * uygulamanın sekme çubuğu yan yana konduğunda aynı üç yeri anlatmıyordu.
+ *
+ * Çizgi kalınlığı burada 2 — mobilin `stroke()` yardımcısının değeri. Setin
+ * geri kalanı 1.8'de; sekme ikonları 23 pikselde çiziliyor ve o boyda 1.8
+ * inceliyor.
+ */
+/** Öğren sekmesi — üst üste yığılmış katmanlar (kelime destesi) */
+export const LearnIcon = (p: IconProps) => (
+  <Svg strokeWidth={2} {...p}>
+    <path d="M4 7l8-3 8 3-8 3-8-3z" />
+    <path d="M4 12l8 3 8-3M4 17l8 3 8-3" />
+  </Svg>
+);
+
+/** Patika sekmesi — kıvrılan yol, üstünde üç durak */
+export const PathIcon = (p: IconProps) => (
+  <Svg strokeWidth={2} {...p}>
+    <path d="M6 20c0-4 12-4 12-8s-8-4-8-8" />
+    <circle cx="6" cy="20" r="2" fill="currentColor" />
+    <circle cx="18" cy="12" r="2" fill="currentColor" />
+    <circle cx="10" cy="4" r="2" fill="currentColor" />
+  </Svg>
+);
+
+/** Beceriler sekmesi — yıldız */
+export const SkillsIcon = (p: IconProps) => (
+  <Svg strokeWidth={2} {...p}>
+    <path d="M12 3l1.9 4.6L18.5 9l-3.6 3.2 1 4.9L12 14.8 8.1 17l1-4.9L5.5 9l4.6-1.4L12 3z" />
+  </Svg>
+);
+
 /** Öğren sekmesi — üst üste kartlar */
 export const CardsIcon = (p: IconProps) => (
   <Svg {...p}>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { useEffect, useState, type ReactNode, useRef } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode, useRef } from "react";
 import { TopProgress } from "./top-progress";
 import { ScreenDiag } from "@/components/screen-diag";
 import { InstallPrompt } from "./install-prompt";
@@ -11,9 +11,7 @@ import { SessionKeeper } from "./session-keeper";
 import { Telemetry } from "./telemetry";
 import { AchievementUnlock } from "./achievement-unlock";
 import { track } from "@/lib/track";
-import { BellIcon, CardsIcon, CompassIcon, FlameIcon, HandshakeIcon, ListIcon, SparkIcon, StarIcon, UserIcon } from "./icons";
-import { Avatar } from "@/components/avatar";
-import { NotificationBell } from "@/components/social/notification-bell";
+import { BellIcon, FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, SparkIcon, UserIcon } from "./icons";
 
 /**
  * Alt gezinme: ÜÇ sekme.
@@ -35,10 +33,41 @@ import { NotificationBell } from "@/components/social/notification-bell";
  * ikisi de üst başlıktan/ikincil gruptan ulaşılır. Üç sekme 320 px'de sığıyor.
  */
 const NAV = [
-  { href: "/learn", label: "Öğren", Icon: CardsIcon, key: "learn" },
-  { href: "/immersion", label: "Patika", Icon: CompassIcon, key: "immersion" },
-  { href: "/skills", label: "Beceriler", Icon: StarIcon, key: "skills" },
+  { href: "/learn", label: "Öğren", Icon: LearnIcon, key: "learn" },
+  { href: "/immersion", label: "Patika", Icon: PathIcon, key: "immersion" },
+  { href: "/skills", label: "Beceriler", Icon: SkillsIcon, key: "skills" },
 ];
+
+/**
+ * Sekme çubuğu YALNIZ sekmelerde görünüyor — mobildeki gibi.
+ *
+ * Mobilde üç sekme bir `BottomTabNavigator`da duruyor ve onun ÜSTÜNE açılan
+ * her şey (Profil, Kelimeler, Ayarlar, oyun, sınav) tam ekran bir yığın
+ * ekranı: orada sekme çubuğu yok, geri düğmesi var. Web'de çubuk her sayfada
+ * duruyordu ve iki ayrı geri yolu üretiyordu — kullanıcı Ayarlar'dan çıkmak
+ * için ya geri düğmesine ya "Öğren"e basıyor, ikisi farklı yere götürüyordu.
+ *
+ * Ölçüt TAM EŞLEŞME, `startsWith` değil: `/learn/practice` mobilde ayrı bir
+ * yığın ekranı (Practice), `/immersion/skill/[id]` de öyle (Item).
+ */
+const TAB_PATHS = new Set(NAV.map((n) => n.href));
+
+/**
+ * Kabuğun sekmelere açtığı veri — seri, XP ve kimlik.
+ *
+ * Sunucudan bir kez okunuyor (bkz. `(app)/layout.tsx`) ama iki yerde birden
+ * gerekiyor: kabuğun kendi rozetlerinde ve her sekmenin kendi başlığında
+ * (`AppHeader`). Başlık sayfanın içinde çizildiği için prop olarak geçmesi
+ * her sayfaya aynı üç parametreyi taşımak demekti.
+ */
+type ShellData = { streak: number; xp: number; userId: string; name: string | null; course: string };
+const ShellContext = createContext<ShellData | null>(null);
+
+export function useShell(): ShellData {
+  const v = useContext(ShellContext);
+  if (!v) throw new Error("useShell yalnız AppShell içinde kullanılabilir");
+  return v;
+}
 
 /** Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor. */
 const SECONDARY = [
@@ -68,9 +97,16 @@ export function AppShell({
   name?: string | null;
 }) {
   const pathname = usePathname();
-  const navRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
   const shellRef = useRef<HTMLDivElement>(null);
   const [stats, setStats] = useState({ streak, xp });
+  const showTabs = TAB_PATHS.has(pathname);
+  // Kimlik değişmiyor, sayaçlar değişiyor: nesne her render'da yeniden
+  // kurulursa bağlama abone olan her başlık boşuna yeniden çiziliyor.
+  const shellData = useMemo(
+    () => ({ streak: stats.streak, xp: stats.xp, userId, name, course }),
+    [stats.streak, stats.xp, userId, name, course],
+  );
 
   // Oyun sırasında kazanılan XP/seri anında rozetlere yansısın.
   useEffect(() => setStats({ streak, xp }), [streak, xp]);
@@ -90,11 +126,11 @@ export function AppShell({
   /**
    * Alt gezinmenin GERÇEK yüksekliği — `--nav-h`.
    *
-   * İçeriğin altında kalmaması için artık gerekmiyor: gezinme akışta duruyor
-   * ve kendi yerini kendisi açıyor. Ama çubuğun ÜSTÜNDE duran serbest öğeler
-   * hâlâ bu ölçüye bakıyor — mirketin açılır balonu, ders yolundaki "kaldığın
-   * yer" düğmesi ve alt şerit. Sabit bir değer yazılamaz: yükseklik cihazın
-   * güvenli alanına ve kullanıcının yazı tipi ölçeğine göre değişiyor.
+   * İki şey buna bakıyor. Biri `main`in alt dolgusu: çubuk artık içeriğin
+   * üstünde YÜZDÜĞÜ için son kart onun altında kalmasın. Diğeri çubuğun
+   * üstünde duran serbest öğeler — mirketin açılır balonu, ders yolundaki
+   * "kaldığın yer" düğmesi ve alt şerit. Sabit bir değer yazılamaz: yükseklik
+   * cihazın güvenli alanına ve kullanıcının yazı tipi ölçeğine göre değişiyor.
    *
    * Ölçüm `ResizeObserver` ile: yazı tipi ölçeği ya da yönlendirme değişince
    * kendiliğinden güncelleniyor.
@@ -108,7 +144,9 @@ export function AppShell({
     const ro = new ResizeObserver(apply);
     ro.observe(nav);
     return () => ro.disconnect();
-  }, []);
+    // Çubuk yığın sayfalarında hiç çizilmiyor; `showTabs` değişince ölçüm
+    // yeniden bağlanmalı, yoksa `--nav-h` kalkmış bir çubuğun boyunda kalır.
+  }, [showTabs]);
 
   /**
    * Alt güvenli alan payı — ÖLÇÜLEREK veriliyor, varsayılarak değil.
@@ -204,6 +242,7 @@ export function AppShell({
       */
       style={{ height: "var(--app-h, 100dvh)" }}
     >
+      <ShellContext.Provider value={shellData}>
       {/* Kurs/ses aynasının yazılmasından önce çalışması gerekiyor: hesap
           değiştiyse eski hesabın kopyaları önce siliniyor. Çocuk bileşenin
           etkisi ebeveyninkinden önce çalıştığı için sıra buradan geliyor. */}
@@ -287,102 +326,93 @@ export function AppShell({
         </div>
       </aside>
 
-      <div className="flex min-w-0 flex-1 flex-col">
-        {/* Mobil başlık */}
-        <header
-          className="safe-top sticky top-0 z-20 flex items-center justify-between border-b px-4 pb-3 backdrop-blur md:hidden"
-          style={{ borderColor: "var(--border)", background: "color-mix(in srgb, var(--bg) 85%, transparent)" }}
-        >
-          <Link href="/learn" className="flex min-w-0 items-center gap-2">
-            <img src="/logo-mark.png" alt="" width={32} height={32} className="shrink-0 rounded-lg" />
-            {/*
-              Kelime markası 380 pikselin altında gizleniyor. Başlıkta artık
-              avatar da var ve 320 px'lik bir ekranda logo + ad + iki rozet +
-              tema + avatar sığmıyordu: ad rozetin altına giriyordu. Logonun
-              kendisi zaten kimliği taşıyor, ad ise tekrar.
-            */}
-            <span className="hidden font-bold min-[380px]:inline">Lernomi</span>
-          </Link>
-          <div className="flex items-center gap-2">
-            <StatPills streak={stats.streak} xp={stats.xp} />
-            {/* Sosyal gelen kutusu: arkadaşlık isteği, tepki, dürtme. Rozet sayısı kişiye özel. */}
-            <NotificationBell className="muted" />
-            {/*
-              Profilin girişi: alt sekme değil, başlıktaki avatar.
+      <div className="relative flex min-w-0 flex-1 flex-col">
+        {/*
+          MOBİL ÜST ÇUBUK KALKTI (2026-09-08).
 
-              Rozetlerin hemen yanında duruyor ve o komşuluk tesadüf değil —
-              seri, XP ve kimlik aynı şeyin üç yüzü. Alt çubuktan çıkması üç
-              sekmeye yer açtı; buradan her ekrandan tek dokunuşla ulaşılıyor.
-            */}
-            <Link
-              href="/profile"
-              prefetch={false}
-              aria-label="Profil ve ayarlar"
-              aria-current={pathname.startsWith("/profile") ? "page" : undefined}
-              className="shrink-0 rounded-full transition-shadow"
-              style={
-                pathname.startsWith("/profile")
-                  ? { boxShadow: "0 0 0 2px var(--color-brand)" }
-                  : undefined
-              }
-            >
-              <Avatar userId={userId} name={name} size={32} />
-            </Link>
-          </div>
-        </header>
+          Her sekmenin üstünde aynı çubuk duruyordu — logo + "Lernomi" + iki
+          minik rozet + zil + 32px arma — ve hangi sekmede olunduğunu
+          söylemiyordu; sayfanın kendi başlığı onun ALTINDA ikinci bir satır
+          olarak geliyordu. Mobilde iki satır değil bir satır var: başlığın
+          kendisi ekranın adı, 32 puntoda, sağında seri + gelen kutusu +
+          profil. Onu artık her sekme kendi çiziyor (`components/app-header`).
+
+          `safe-top` buradan `main`e taşındı: durum çubuğu payını karşılayan
+          öğe artık kaydırılan alanın kendisi.
+        */}
 
         {/* Kaydırma yalnızca burada olur: uzun listeler kayar, oyun ekranları
             kalan alanı tam olarak bilir ve taşmaz.
             `overscroll-contain` elastik kaydırmanın sayfa gövdesine zincirlenip
             kaymıyormuş gibi durmasını engelliyor. */}
-        <main className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-4 py-4 md:px-8 md:py-8">
+        <main
+          className="safe-top flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-4 pb-4 md:px-8 md:pb-8 md:pt-8"
+          /*
+            Çubuk artık içeriğin ÜSTÜNDE yüzüyor, akışta değil — o yüzden son
+            kartın çubuğun altında kalmaması için alt dolgu gerekiyor. Ölçü
+            mobildeki `Screen`in kendi payıyla aynı fikirde: çubuğun ölçülen
+            yüksekliği + bir nefes. `--nav-h` yoksa (masaüstü, ilk boyama)
+            yalnız normal dolgu kalıyor.
+          */
+          style={showTabs ? { paddingBottom: "calc(var(--nav-h, 0px) + 1.5rem)" } : undefined}
+        >
           {children}
         </main>
 
         {/*
-          Mobil alt gezinme — AKIŞTA, sabit konumlu değil.
+          Alt gezinme — mobildeki YÜZEN HAP (`M/src/navigation/TabBar.tsx`).
 
-          Önce `fixed bottom-0` idi ve içeriğin altında kalmaması için `main`
-          içine gezinme yüksekliğinde bir dolgu öğesi konuyordu. İki ayrı ölçü
-          aynı şeyi anlatmaya çalışıyordu ve donanım gezinme tuşu olmayan
-          telefonlarda ikisi tutmuyordu: sabit konumun dayandığı düzen alanı
-          ile ekranın gerçek dibi aynı yer değil, çubuk boşlukta kalıyordu.
+          Önceki hali ekranın dibine yapışık, üst kenarlıklı düz bir banttı ve
+          akışta duruyordu; o karar bir çift sayma hatasını çözmek için
+          alınmıştı (sabit konumun dayandığı düzen alanı ile ekranın gerçek
+          dibi aynı yer değil). Çözümün kendisi kalıyor, yalnız dayanağı
+          değişiyor: kabuk ölçülen yükseklikte (`--app-h`) ve çubuk O KABIN
+          içinde mutlak konumlu, ekranın değil. Yani hâlâ ölçülmüş bir dibe
+          oturuyor, ama içeriğin üstünde yüzüyor.
 
-          Kabuk zaten tam ekran yüksekliğinde (`h-dvh`) ve içeride yalnızca
-          `main` kayıyor. Gezinme o sütunun son öğesi olunca ekranın dibine
-          kendiliğinden oturuyor: ölçülecek bir şey, telafi edilecek bir dolgu
-          ve çakışacak bir katman kalmıyor.
+          `--nav-h` yine ölçülüyor — hem `main`in alt dolgusu hem de çubuğun
+          ÜSTÜNDE duran serbest öğeler (mirketin balonu, "kaldığın yer"
+          düğmesi) ona bakıyor.
 
-          `--nav-h` yine ölçülüyor: mirket açılır balonu ve "kaldığın yer"
-          düğmesi çubuğun üstünde durmak için onu kullanıyor.
+          Sarmalayıcı `pointer-events-none`: hap dışında kalan boşluk altındaki
+          içeriğe dokunmayı engellemesin.
         */}
-        <nav
-          ref={navRef}
-          className="safe-bottom flex shrink-0 border-t md:hidden"
-          style={{ borderColor: "var(--border)", background: "var(--bg)" }}
-        >
-          {NAV.map((item) => {
-            const active = pathname.startsWith(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="relative flex flex-1 flex-col items-center gap-0.5 pt-2.5 text-xs font-semibold"
-                style={{ color: active ? "var(--color-brand)" : "var(--text-muted)" }}
-              >
-                <item.Icon size={20} />
-                {item.label}
-                {active && (
-                  <motion.span
-                    layoutId="tab-active"
-                    className="brand-gradient absolute -top-px h-0.5 w-10 rounded-full"
-                  />
-                )}
-              </Link>
-            );
-          })}
-        </nav>
+        {showTabs ? (
+          <div
+            ref={navRef}
+            className="safe-bottom pointer-events-none absolute inset-x-0 bottom-0 z-20 flex justify-center px-4 md:hidden"
+          >
+            <nav className="pointer-events-auto flex w-full max-w-lg gap-1 rounded-float border p-[7px] shadow-soft-lg"
+              style={{ borderColor: "var(--hairline)", background: "var(--surface)" }}
+            >
+              {NAV.map((item) => {
+                const active = pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className="pressable relative flex flex-1 flex-col items-center gap-[3px] rounded-panel py-2.5 text-micro"
+                    style={{ color: active ? "var(--color-brand)" : "var(--text-muted)" }}
+                  >
+                    {active && (
+                      <motion.span
+                        layoutId="tab-active"
+                        className="absolute inset-0 rounded-panel"
+                        style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)" }}
+                        transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                      />
+                    )}
+                    <item.Icon size={23} className="relative" />
+                    <span className="relative">{item.label}</span>
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+        ) : null}
       </div>
+      </ShellContext.Provider>
     </div>
   );
 }

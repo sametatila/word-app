@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AppHeader } from "@/components/app-header";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { listExerciseMeta, type SkillMeta } from "@/lib/skills";
@@ -72,13 +73,13 @@ export default async function SkillsPage({
 
   return (
     <div className="mx-auto w-full max-w-2xl">
-      <header className="mb-4">
-        <h1 className="text-2xl font-extrabold">Beceriler</h1>
-        <p className="muted mt-1 text-sm">
-          Patika sıradaki adımı seçer; burada tüm okuma, dinleme, yazma ve ses
-          çalışmalarına istediğin sırayla girebilirsin.
-        </p>
-      </header>
+      {/* Ortak sekme başlığı: 32 punto başlık + açıklama alt satırı, sağda
+          seri/gelen kutusu/profil. Mobilde `AppHeader` aynı iki satırı
+          taşıyor (`SkillsScreen`). */}
+      <AppHeader
+        title="Beceriler"
+        subtitle="Patika sıradakini seçer; burası kütüphane"
+      />
 
       {/*
         Deneme sınavlarının web kapısı burası. Alt gezinme bilerek üç sekmede
