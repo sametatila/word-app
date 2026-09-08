@@ -42,7 +42,7 @@ export const EN_A1_09: MockPaper = {
               genre: "Message from the teacher",
               genreTr: "Öğretmenden ileti",
               title: "The English course",
-              body: `Hi Emir,
+              body: `Hi Yasin,
 
 The English course starts on Monday, not on Tuesday. It is at seven in the evening.
 
@@ -97,7 +97,7 @@ Coffee and food are not allowed here.`,
               id: "en-a1-09-l1-3",
               no: 3,
               ref: "t1",
-              text: "Emir must bring a pen.",
+              text: "Yasin must bring a pen.",
               answer: true,
               explain:
                 "İleti bunu gerekçesiyle istiyor: «Please bring a pen. We have no pens here».",
@@ -344,7 +344,7 @@ I want to learn Spanish, {{17}} the course is full. I am sad.
 
 Last week I {{18}} four books home. They are very good.
 
-Deniz`,
+Lenn`,
             },
           ],
           items: [
@@ -857,7 +857,7 @@ It is twelve euros a month and the first evening is free.
 Please come with me!
 
 See you soon,
-Deniz`,
+Lenn`,
             criteria: [
               "Üç içerik noktasının üçü de var mı? Biri eksikse metin tam sayılmaz.",
               "Gün ve saat açıkça söylendi mi?",

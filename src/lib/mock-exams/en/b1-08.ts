@@ -163,7 +163,7 @@ export const EN_B1_08: MockPaper = {
               kind: "match",
               id: "en-b1-08-l2-6",
               no: 6,
-              text: "Nadia wants to study in the evening but her flat is noisy and she has no money for a café.",
+              text: "Eren wants to study in the evening but her flat is noisy and she has no money for a café.",
               answer: "a",
               explain:
                 "İlan üç koşulu birden karşılıyor: «Open eight until midnight», «Free with a library card» ve «no talking». Ücretsizlik burada belirleyici.",
@@ -1142,7 +1142,7 @@ I am not asking you to take anybody's phone away. Could you say the rule out lou
 Thank you for a course I am otherwise enjoying.
 
 Best wishes,
-Nadia Roth`,
+Eren Roth`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",
               "Somut bir örnek verildi mi, yoksa yalnız genel yakınma mı var?",
