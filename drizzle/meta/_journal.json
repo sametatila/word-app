@@ -288,6 +288,13 @@
       "when": 1788368884105,
       "tag": "0040_auth_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 41,
+      "version": "7",
+      "when": 1788368885105,
+      "tag": "0041_premium_entitlements",
+      "breakpoints": true
     }
   ]
 }

@@ -1,24 +1,32 @@
 /**
- * RevenueCat (gerçek satın alma) yapılandırması — LANSMAN İÇİN DOLDURULACAK.
+ * RevenueCat genel (public) SDK anahtarları — SATIN ALMA arayüzü için.
  *
- * Kod tarafı hazır: anahtar girilince uygulama otomatik "gerçek satın alma"
- * moduna geçer (paywall gerçek fiyatları çeker, satın alma + geri yükleme çalışır,
- * premium özellikler açılır). Anahtar boşken satın alma devre dışıdır ve paywall
- * huni (ölçüm) modunda çalışır — yani bu dosya doldurulana dek hiçbir şey bozulmaz.
+ * NE İŞE YARAR, NE İŞE YARAMAZ. Bu anahtarlar yalnız mağaza satın alma akışını
+ * açıyor: fiyatları çekmek, ödeme ekranını göstermek, geri yüklemek. YETKİ
+ * bunlardan gelmiyor — "premium miyim" sorusunun cevabı sunucuda
+ * (`lib/premium.ts` → `/api/premium/status`). Bu yüzden anahtarlar boşken
+ * uygulama bozulmuyor: satın alma yolu kapalı kalıyor, ama promo koduyla ya da
+ * davet ödülüyle premium olan kullanıcı özelliklerini SORUNSUZ kullanıyor.
  *
- * Yapılacaklar (yalnız mağaza/panel tarafı — kod değişmez):
- *  1) RevenueCat panelinde proje aç; Android (Google Play) + iOS (App Store)
- *     uygulamalarını ekle. Her platformun "Public SDK Key"ini aşağıya yapıştır.
- *  2) Play Console / App Store Connect'te abonelik ürünlerini (yıllık/aylık) oluştur.
- *  3) RevenueCat'te bir "premium" entitlement'ı + bir "default" offering'i bu
- *     ürünlere bağla. (entitlementId aşağıdakiyle aynı olmalı.)
+ * Anahtarlar SIR DEĞİL: uygulama paketinde zaten gömülü ve RevenueCat bunları
+ * "public" diye adlandırıyor. Gizli olan webhook sırrı (`REVENUECAT_WEBHOOK_AUTH`)
+ * ve o yalnız sunucuda.
+ *
+ * `entitlementId` RevenueCat panosundaki entitlement kimliğiyle BİREBİR aynı
+ * olmalı. Ayrışırsa satın alma tamamlanır ama SDK "yetki yok" der; sunucu
+ * tarafı webhook'tan yine doğru yazar, yani kullanıcı premium olur — ama satın
+ * alma ekranındaki geri bildirim yanlış görünür.
+ *
+ * Kurulumun tamamı (mağaza ürünleri, fiyatlar, deneme, webhook, entitlement,
+ * offering) adım adım: `docs/premium/README.md` §3.
  */
 export const REVENUECAT = {
-  androidKey: "", // "goog_..." — RevenueCat Android Public SDK Key
-  iosKey: "",     // "appl_..." — RevenueCat iOS Public SDK Key
+  androidKey: "", // "goog_..." — RevenueCat › Project settings › API keys
+  iosKey: "",     // "appl_..." — aynı yer, iOS uygulaması
   entitlementId: "premium",
 };
 
+/** Satın alma yolu açık mı. Yetki ile İLGİSİ YOK (bkz. dosya başı). */
 export function billingConfigured(platform: "android" | "ios"): boolean {
   return (platform === "ios" ? REVENUECAT.iosKey : REVENUECAT.androidKey).length > 0;
 }

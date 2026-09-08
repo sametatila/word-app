@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
-import Purchases, { type CustomerInfo } from "react-native-purchases";
-import { billingAvailable, hasPremium, getPremium } from "./billing";
+import { usePremiumStatus } from "./premium";
 
 /**
- * Kullanıcının premium durumu — RevenueCat entitlement'ından, canlı dinlenir.
- * Billing yapılandırılmamışsa her zaman false (paywall huni modunda).
+ * Kullanıcının premium durumu — TEK BOOLEAN.
+ *
+ * Kaynak SUNUCU (`/api/premium/status`), mağaza SDK'sı değil. Eskiden burası
+ * `Purchases.getCustomerInfo()` çağırıp RevenueCat'in entitlement'ına bakıyordu;
+ * o kurgunun iki kusuru vardı ve ikisi de kullanıcıya yansıyordu:
+ *
+ *  - Sağlayıcıya bağlıydı: RevenueCat'i çıkarmak bu ekranı ve ona bakan her
+ *    ekranı yeniden yazmak demekti.
+ *  - Mağazadan GELMEYEN yetkiyi göremiyordu. Promo kodu bozduran, referans ödülü
+ *    kazanan ya da elle premium verilen kullanıcı uygulamada ücretsiz
+ *    görünüyordu — yani kazandığı şeyi kullanamıyordu.
+ *
+ * Ayrıntılı durum (bitiş tarihi, kaynak, bekleyen hediye, kotalar) gerekiyorsa
+ * `usePremiumStatus()` kullanılır; burası yalnız "açık mı" sorusuna cevap verir.
  */
 export function usePremium(): boolean {
-  const [premium, setPremium] = useState(false);
-  useEffect(() => {
-    if (!billingAvailable()) return;
-    let alive = true;
-    void getPremium().then((p) => { if (alive) setPremium(p); });
-    const listener = (info: CustomerInfo) => setPremium(hasPremium(info));
-    try { Purchases.addCustomerInfoUpdateListener(listener); } catch { /* yut */ }
-    return () => { alive = false; try { Purchases.removeCustomerInfoUpdateListener(listener); } catch { /* yut */ } };
-  }, []);
-  return premium;
+  const { status } = usePremiumStatus();
+  return !!status?.premium;
 }

@@ -150,11 +150,27 @@ export const profiles = pgTable("profiles", {
    */
   streakRepairAt: date("streak_repair_at"),
   /**
-   * Premium yetki bitişi (abonelik). null → ücretsiz. `isPremium` bunu okur.
-   * Gerçek satın alma (RevenueCat webhook / web ödeme) bu alanı `grantPremium`
-   * ile yazacak; şimdilik altyapı hazır, kaynak bağlı değil (WP-90).
+   * Premium yetkinin bitişi — TÜREV ALAN, tek okuma noktası.
+   *
+   * Gerçek durum `entitlements` tablosunda ve iki bileşenden oluşuyor: mağaza
+   * aboneliği (`store_until`) ve bizim verdiğimiz bonus (promo/referans/elle).
+   * Burası ikisinin bileşimi, `lib/premium/entitlement.ts` `resolveEntitlement`
+   * tarafından yazılır. ELLE YAZILMAZ: kaynağı bilmeyen bir güncelleme, bonus
+   * bakiyesini ya da mağaza penceresini sessizce siler.
+   *
+   * Türev olmasının sebebi hız: yetki kontrolü her istekte, çoğu istekte birden
+   * çok kez soruluyor; iki tabloyu birleştirip hesaplamak yerine tek sütun
+   * okunuyor. `isPremium` bunu okur.
    */
   premiumUntil: timestamp("premium_until", { withTimezone: true }),
+  /**
+   * Davet kodu — kullanıcının kendi referans kodu (`referrals.code`).
+   *
+   * Profilde duruyor çünkü kod kullanıcıya AİT ve ömür boyu sabit: değişirse
+   * dağıtılmış bağlantılar ölür. Null = henüz üretilmedi; ilk istendiğinde
+   * üretilip yazılıyor (eski hesaplar için göç gerekmesin diye).
+   */
+  referralCode: text("referral_code"),
   /**
    * Sosyal kimlik ve gizlilik (bkz. lib/social, docs/plan/social.md).
    *
@@ -178,7 +194,10 @@ export const profiles = pgTable("profiles", {
   /** Kullanıcı adı 14 günde bir değişebilir — sık değişen ad, bulunamayan addır. */
   usernameChangedAt: timestamp("username_changed_at", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
-}, (t) => [uniqueIndex("profiles_username_idx").on(t.username)]);
+}, (t) => [
+  uniqueIndex("profiles_username_idx").on(t.username),
+  uniqueIndex("profiles_referral_code_idx").on(t.referralCode),
+]);
 
 /**
  * Web push abonelikleri — cihaz başına bir satır.
@@ -1056,4 +1075,224 @@ export const rateLimits = pgTable("rate_limits", {
   key: text("key").primaryKey(),
   count: integer("count").notNull().default(0),
   resetAt: timestamp("reset_at", { withTimezone: true }).notNull(),
+});
+
+/*
+ * ──────────────────────── Premium yetki (entitlement) ────────────────────────
+ *
+ * TASARIM KARARI: yetkinin tek kaynağı BURASI, mağaza değil.
+ *
+ * RevenueCat (ya da yarın onun yerine geçecek her ne ise) yalnız bir GİRDİ.
+ * Uygulama "premium mi" sorusunu hiçbir zaman sağlayıcıya sormuyor; sağlayıcı
+ * bize olay yolluyor, biz kendi defterimize yazıyoruz, herkes defteri okuyor.
+ * Bunun üç somut karşılığı var:
+ *
+ *  1. Sağlayıcı değiştirilebilir. Yeni sağlayıcı için tek iş bir adaptör yazıp
+ *     olaylarını `store` kaynağına çevirmek; gating, promo, referans, admin ve
+ *     istemcilerin tamamı değişmez (bkz. lib/premium/ports.ts).
+ *  2. Mağazadan GELMEYEN yetki mümkün. Promo kodu, referans ödülü ve elle
+ *     verilen süre aynı deftere yazılıyor — sağlayıcıya sorsaydık bu üçünü
+ *     uygulama hiç göremezdi.
+ *  3. Denetlenebilir. Her yetki hareketi `premium_grants`te satır bırakıyor:
+ *     kim, ne zaman, hangi kaynaktan, ne kadar. "Bu kullanıcı neden premium"
+ *     sorusunun cevabı tek sorgu.
+ */
+
+/**
+ * Kullanıcı başına yetki durumu — iki BAĞIMSIZ bileşen.
+ *
+ * MAĞAZA PENCERESİ (`store_*`): mutlak bir bitiş tarihi, sağlayıcı bildirir ve
+ * her olayda ÜZERİNE YAZILIR. Tek kaynak sağlayıcıdır; biz uzatmayız.
+ *
+ * BONUS (`bonus_*`): bizim verdiğimiz süre — promo, referans, elle. İki parça
+ * hâlinde tutuluyor ve sebebi kullanıcı lehine:
+ *   - `bonus_minutes` BAKİYE. Biriken, henüz harcanmamış süre. Referans ödülleri
+ *     buraya eklenir; üç davet = 21 gün, üstüste biner (istenen davranış bu).
+ *   - `bonus_until` ÇALIŞAN pencere. Bakiye ancak mağaza aboneliği YOKKEN
+ *     harcanmaya başlar; abonelik varken bakiye bekler, yanmaz.
+ * Kullanıcı bonus penceresi sürerken abone olursa kalan süre bakiyeye GERİ
+ * DÖNER (bkz. entitlement.ts `startStoreWindow`) — yoksa ödediği ay, hediye
+ * ayının üstüne binip hediyeyi yer.
+ */
+export const entitlements = pgTable("entitlements", {
+  userId: text("user_id").primaryKey(),
+  /** Sağlayıcının bildirdiği abonelik bitişi. null = mağaza aboneliği yok. */
+  storeUntil: timestamp("store_until", { withTimezone: true }),
+  /** revenuecat | appstore | play | stripe — hangi adaptörden geldi. */
+  storeProvider: text("store_provider"),
+  /** ios | android | web — satın almanın yapıldığı yer (iptal yönergesi buna göre). */
+  storePlatform: text("store_platform"),
+  /** Mağazadaki ürün kimliği (premium_monthly / premium_yearly). */
+  storeProduct: text("store_product"),
+  /** trial | active | grace | canceled | expired | refunded | paused */
+  storeState: text("store_state"),
+  /** Sağlayıcıdaki abonelik kimliği — aynı aboneliğin olaylarını eşlemek için. */
+  storeRef: text("store_ref"),
+  /**
+   * İlk GERÇEK ödemenin alındığı an (deneme değil).
+   *
+   * Referans ödülünün tetiği bu: deneme başlangıcı ödül üretmez, yoksa sahte
+   * hesapla hafta üretmek serbest kalırdı (karar: 2026-09-08). Bir kez yazılır,
+   * sonraki yenilemelerde değişmez.
+   */
+  storePaidAt: timestamp("store_paid_at", { withTimezone: true }),
+  /** Harcanmamış bonus bakiyesi (dakika). Promo + referans + elle. */
+  bonusMinutes: integer("bonus_minutes").notNull().default(0),
+  /** Şu an çalışan bonus penceresinin bitişi. null/geçmiş = bonus çalışmıyor. */
+  bonusUntil: timestamp("bonus_until", { withTimezone: true }),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+/**
+ * Yetki hareketleri — EKLEME YAPILIR, güncellenmez.
+ *
+ * `entitlements` "şu an durum ne" sorusunu, burası "nasıl bu hâle geldi"
+ * sorusunu cevaplıyor. İade ihtilafında, "premium'um kayboldu" desteğinde ve
+ * sağlayıcı değiştirirken durumu yeniden kurmakta tek dayanak bu tablo.
+ */
+export const premiumGrants = pgTable(
+  "premium_grants",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** store | promo | referral | manual */
+    source: text("source").notNull(),
+    /** Bonus süresi (dakika). Mağaza penceresinde null. */
+    minutes: integer("minutes"),
+    /** Mağaza penceresinin yeni bitişi. Bonusta null. */
+    until: timestamp("until", { withTimezone: true }),
+    /** Kaynağın kimliği: promo kodu, davet edilen kullanıcı, sağlayıcı olay kimliği. */
+    ref: text("ref"),
+    /** Kim yaptı: admin e-postası, "system", sağlayıcı adı. */
+    actor: text("actor"),
+    note: text("note"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("premium_grants_user_idx").on(t.userId, t.createdAt)],
+);
+
+/**
+ * Promo kodları — admin panelinden üretilir, bağlantıyla dağıtılır.
+ *
+ * Kod BÜYÜK harfe normalize edilerek saklanır ve öyle aranır; kullanıcı küçük
+ * harf yazdı diye kod tutmamazlık etmesin. Karışan karakterler (0/O, 1/I/L)
+ * üretimde hiç kullanılmıyor — kod telefonla okunuyor, elle yazılıyor.
+ */
+export const promoCodes = pgTable(
+  "promo_codes",
+  {
+    id: serial("id").primaryKey(),
+    code: text("code").notNull(),
+    /** Kaç gün premium verir. */
+    days: integer("days").notNull(),
+    /** Kaç kez kullanılabilir. 1 = tek kişilik; toplu kampanyada büyük olur. */
+    maxUses: integer("max_uses").notNull().default(1),
+    uses: integer("uses").notNull().default(0),
+    /** Kodun kendi son kullanma tarihi (verdiği süreden ayrı). null = süresiz. */
+    expiresAt: timestamp("expires_at", { withTimezone: true }),
+    /** Toplu üretimde grup adı — "instagram-eylul" gibi; raporlama buradan. */
+    campaign: text("campaign"),
+    note: text("note"),
+    createdBy: text("created_by"),
+    /** Doldurulmuşsa kod kapalı; silmek yerine kapatılıyor ki geçmiş okunabilsin. */
+    disabledAt: timestamp("disabled_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("promo_codes_code_idx").on(t.code),
+    index("promo_codes_campaign_idx").on(t.campaign),
+  ],
+);
+
+/**
+ * Kod kullanımları. (kod, kullanıcı) benzersiz: aynı kişi aynı kodu iki kez
+ * kullanamaz — çok kullanımlık kampanya kodlarında tek koruma bu.
+ */
+export const promoRedemptions = pgTable(
+  "promo_redemptions",
+  {
+    id: serial("id").primaryKey(),
+    codeId: integer("code_id").notNull(),
+    userId: text("user_id").notNull(),
+    minutes: integer("minutes").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("promo_redemptions_once_idx").on(t.codeId, t.userId),
+    index("promo_redemptions_user_idx").on(t.userId),
+  ],
+);
+
+/**
+ * Davet zinciri. Bir satır = bir davet edilen kullanıcı.
+ *
+ * `invitee_user_id` BENZERSİZ: bir kişi yalnız bir kez davet edilmiş sayılır,
+ * yoksa aynı hesap birden çok davetçiye ödül üretirdi. Ödül davet edilenin İLK
+ * ÖDEMESİNDE düşer (`rewarded_at`), deneme başlangıcında değil.
+ */
+export const referrals = pgTable(
+  "referrals",
+  {
+    id: serial("id").primaryKey(),
+    inviterUserId: text("inviter_user_id").notNull(),
+    inviteeUserId: text("invitee_user_id").notNull(),
+    /** Kullanılan kod — davetçinin `profiles.referral_code`'u. */
+    code: text("code").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    /** null = davet edilen henüz ödeme yapmadı, ödül düşmedi. */
+    rewardedAt: timestamp("rewarded_at", { withTimezone: true }),
+    rewardMinutes: integer("reward_minutes"),
+  },
+  (t) => [
+    uniqueIndex("referrals_invitee_idx").on(t.inviteeUserId),
+    index("referrals_inviter_idx").on(t.inviterUserId, t.createdAt),
+  ],
+);
+
+/**
+ * Kota sayaçları — ücretsiz katmanın sınırları ve premium'un adil kullanım tavanı.
+ *
+ * Tek tablo üç ayrı pencereyi taşıyor ve ayrım `period` sütununda:
+ *   "2026-09-08"  günlük     (ör. cepte yürüyüş turu)
+ *   "2026-W37"    haftalık   (ör. yenilenen konuşma dersi hakkı)
+ *   "all"         ömürlük    (ör. seviye başına 2 ders — key "speak_lesson:A1")
+ *
+ * Sayaç neden olayları (events) saymıyor: telemetri kaybolabilir, örneklenebilir
+ * ve geriye dönük düzeltilebilir. Kota bir FATURA kapısı, tahmin değil.
+ */
+export const usageCounters = pgTable(
+  "usage_counters",
+  {
+    userId: text("user_id").notNull(),
+    /** Kota anahtarı — lib/premium/gates.ts'teki adlar. Seviyeye bağlıysa "key:A1". */
+    key: text("key").notNull(),
+    period: text("period").notNull(),
+    count: integer("count").notNull().default(0),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.key, t.period] })],
+);
+
+/**
+ * Çalışma zamanı ayarları — panelden düzenlenen, deploy gerektirmeyen değerler.
+ *
+ * NEDEN VERİTABANINDA: premium sınırları (ücretsiz kota, paket boyu, geçme
+ * eşiği, adil kullanım tavanı, referans ödülü, fiyat etiketleri) ürün kararıdır
+ * ve deneyerek ayarlanır. Kodda sabit olsalardı her ayar denemesi bir commit,
+ * bir derleme ve bir mağaza sürümü demek olurdu — yani pratikte hiç denenmezdi.
+ *
+ * NEDEN KODDA DA VARSAYILAN VAR: bu tablo BOŞ olabilir (temiz kurulum, göç,
+ * veritabanı okunamaması). O durumda uygulama çalışmaya devam etmeli ve makul
+ * sınırlarla çalışmalı. Kod varsayılanı taban, tablo yalnız ÜSTÜNE yazar
+ * (bkz. lib/premium/config.ts). Bir anahtarı silmek = varsayılana dönmek.
+ *
+ * Değer `jsonb`: sayı, metin, nesne — hepsi aynı yerde durur ve şema değişmeden
+ * yeni ayar eklenebilir. Doğrulama okurken yapılıyor, yazarken de: panelden
+ * gelen bozuk bir değer varsayılana düşer, uygulamayı kırmaz.
+ */
+export const appSettings = pgTable("app_settings", {
+  key: text("key").primaryKey(),
+  value: jsonb("value").notNull(),
+  updatedBy: text("updated_by"),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
 });

@@ -11,6 +11,8 @@ import {
   type AssessLevel,
   type AssessRequest,
 } from "@/lib/assess-prompts";
+import { canAiPractice } from "@/lib/premium/access";
+import { premiumConfig, bumpUsage, getUsage } from "@/lib/premium";
 
 export const dynamic = "force-dynamic";
 
@@ -43,6 +45,44 @@ export async function POST(req: Request) {
   const parsed = parseBody(body);
   if (!parsed) return NextResponse.json({ error: "bad_request" }, { status: 400 });
   if (parsed.tooLong) return NextResponse.json({ error: "too_long", max: ASSESS_MAX_CHARS }, { status: 413 });
+
+  /**
+   * PREMIUM KAPISI — yalnız AI değerlendirmesi taşıyan türlerde.
+   *
+   * `sentence` bilerek DIŞARIDA: o, kelime turunun içindeki serbest cümle
+   * görevi ve kelime turları iki katmanda da sınırsız. Kilit, ücretsiz katmanda
+   * kotalı olan konuşma ve yazma alıştırmalarında.
+   *
+   * `roleplay` konuşma sayılıyor: uygulamada "Konuşma" dersinin kendisi o.
+   *
+   * KOTA BURADA ARTMIYOR. Bir alıştırma birden çok değerlendirme üretebiliyor
+   * (yaz, düzelt, yeniden gönder) ve her birini hak saymak kullanıcının iki
+   * hakkını tek alıştırmada yakardı. Hak alıştırma BAŞINDA bir kez sayılıyor
+   * (`/api/premium/consume`); burası yalnız "hakkı var mı" diye bakıyor.
+   */
+  const gated = parsed.req.kind === "writing" || parsed.req.kind === "speaking" || parsed.req.kind === "roleplay";
+  if (gated) {
+    const kind = parsed.req.kind === "writing" ? "writing" : "speaking";
+    const gate = await canAiPractice(userId, kind, "lesson", parsed.req.level);
+    if (!gate.allowed) {
+      return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
+    }
+    /**
+     * Emniyet tavanı — ÇAĞRI başına.
+     *
+     * Hak sayacını hiç çağırmayan değiştirilmiş bir istemci yukarıdaki kapıyı
+     * geçip aynı hakla sınırsız değerlendirme isteyebilirdi. Günlük çağrı
+     * tavanı buna karşı: alıştırma başına birkaç değerlendirmeye izin verecek
+     * kadar cömert (×4), tek bir hesabın Mistral bütçesini yakmasına izin
+     * vermeyecek kadar dar.
+     */
+    const cfg = await premiumConfig();
+    const ceiling = Math.max(cfg.fairUse.aiPracticePerDay, 1) * 4;
+    if ((await getUsage(userId, "ai_assess_calls", "day")) >= ceiling) {
+      return NextResponse.json({ error: "quota", reason: "fair_use" }, { status: 429 });
+    }
+    void bumpUsage(userId, "ai_assess_calls", "day");
+  }
 
   const outcome = await assess(userId, parsed.req, parsed.day, (r) =>
     recordAiUsage(userId, { kind: "assess", ...r }),
@@ -111,6 +151,11 @@ function parseBody(body: unknown): { req: AssessRequest; day: string; tooLong: b
       },
       exerciseId: text(b.exerciseId, 40) || undefined,
       locale: "tr",
+      // Hedef dil: istemci vermezse Almanca (tarihsel varsayılan). İngilizce
+      // kütüphane egzersizleri (2026-09) "en" gönderir; tip zaten alanı
+      // taşıyordu ama route hiç okumuyordu, yani İngilizce metin Almanca
+      // rubriğiyle puanlanırdı.
+      lang: b.lang === "en" ? "en" : "de",
     },
   };
 }

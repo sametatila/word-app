@@ -9,6 +9,7 @@ import { track } from "@/lib/events";
 import { assess } from "@/lib/assess";
 import { recordAiUsage } from "@/lib/ai-usage";
 import { mockPaperById, type MockSkill, type MockTask } from "@/lib/mock-exams";
+import { canMockPaper } from "@/lib/premium/access";
 import { findPart, isOpenTask, scorePart } from "@/lib/mock-exams/scoring";
 import { mockFeedback } from "@/lib/mock-exams/feedback";
 import { mockStats } from "@/lib/mock-exams/stats";
@@ -158,6 +159,23 @@ async function start(userId: string, body: Record<string, unknown>) {
   const paper = mockPaperById(paperId);
   const part = paper ? findPart(paper, skill) : null;
   if (!paper || !part || !SKILLS.has(skill)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+
+  /**
+   * PREMIUM KAPISI — kâğıt açık mı.
+   *
+   * Ücretsiz katmanda seviye başına belirli sayıda kâğıt, premium'da paketler
+   * hâlinde ilerleyen erişim (bkz. lib/premium/access `mockAccess`). Kapı BURADA
+   * çünkü sınav ancak burada BAŞLIYOR: listede kilitli görünen bir kâğıdın
+   * kimliğini doğrudan bu uca göndermek, kilidin tek gerçek sınavı.
+   *
+   * Yarım kalan denemeden ÖNCE bakılıyor: bir kullanıcı kâğıdı açıkken erişimi
+   * biterse (abonelik sona erdi) yarım deneme devam ettirilmemeli — aksi hâlde
+   * kilit, bir kez başlatılmış her kâğıt için kalıcı olarak delinirdi.
+   */
+  const gate = await canMockPaper(userId, paperId, paper.level, paper.course);
+  if (!gate.allowed) {
+    return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
+  }
 
   // Yarım kalan varsa yenisi açılmıyor: aynı bölüm için iki açık deneme
   // istatistiği bozar ve öğrenci hangisinde kaldığını bilemez.

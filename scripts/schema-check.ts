@@ -16,11 +16,15 @@ import * as schema from "../src/lib/db/schema";
 const sql = new Pool({ connectionString: process.env.DATABASE_URL! });
 
 async function main() {
-  const live = await sql`
-    select table_name, column_name from information_schema.columns
-    where table_schema = 'public'`;
+  // `pg.Pool` bir şablon etiketi DEĞİL: `sql`...`` çağrısı "sql is not a
+  // function" ile düşüyordu ve betik hiç koşmuyordu. Sorgu `.query()` ile
+  // gönderiliyor, satırlar `rows` içinde geliyor.
+  const live = await sql.query(
+    `select table_name, column_name from information_schema.columns
+     where table_schema = 'public'`,
+  );
   const liveCols = new Map<string, Set<string>>();
-  for (const r of live as { table_name: string; column_name: string }[]) {
+  for (const r of live.rows as { table_name: string; column_name: string }[]) {
     if (!liveCols.has(r.table_name)) liveCols.set(r.table_name, new Set());
     liveCols.get(r.table_name)!.add(r.column_name);
   }

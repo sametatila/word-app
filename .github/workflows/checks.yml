@@ -27,6 +27,11 @@ jobs:
       # aşar ve burası kırılır; listede olmayan her kural zaten hata.
       - name: ESLint
         run: npm run lint
+      # Premium kurallarının birim testi — veritabanı istemiyor. Paket ilerlemesi,
+      # yapılandırma doğrulaması ve paywall metinlerinin üç sözlükte de bulunması.
+      # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.
+      - name: Premium kuralları
+        run: npm run test:premium
       - name: next build
         run: npx next build
         env:

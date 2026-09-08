@@ -19,11 +19,13 @@ async function main() {
 
   const arg = process.argv[2];
   if (!arg || arg === "--check") {
-    const rows = (await sql`
-      select table_name from information_schema.tables
-      where table_schema = 'public' order by 1
-    `) as { table_name: string }[];
-    console.log(rows.map((r) => r.table_name).join("\n"));
+    // `.query()` — `pg.Pool` şablon etiketi olarak çağrılamıyor (aşağıdaki
+    // uygulama yolu zaten `.query()` kullanıyordu; yalnız bu dal kırıktı).
+    const res = await sql.query(
+      `select table_name from information_schema.tables
+       where table_schema = 'public' order by 1`,
+    );
+    console.log((res.rows as { table_name: string }[]).map((r) => r.table_name).join("\n"));
     return;
   }
 

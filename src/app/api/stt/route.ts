@@ -3,6 +3,8 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { sttProviders, type SttMode } from "@/lib/chat-providers";
 import { SttError, transcribe } from "@/lib/stt";
+import { canPocketWalk } from "@/lib/premium/access";
+import { premiumConfig, bumpUsage, getUsage } from "@/lib/premium";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -56,6 +58,40 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
+  /**
+   * PREMIUM KAPISI — yalnız `walk` kipinde.
+   *
+   * Burası cebe/ekran kapalı yolun tek girişi ve ürünün marjinal maliyeti
+   * taşıyan tek yeri (Azure STT). Ekran AÇIK yürüyüş buraya hiç gelmiyor
+   * (cihazın kendi tanıyıcısı kullanılıyor), bu yüzden ücretsiz katmanda
+   * yürüyüş modu sınırsız kalabiliyor: kilit özelliğin kendisinde değil,
+   * faturayı üreten yolda.
+   *
+   * Kapı SUNUCUDA çünkü istemcide duran bir kapı kapı değil: uygulama
+   * değiştirilebilir, uç doğrudan çağrılabilir.
+   */
+  if (mode === "walk") {
+    const gate = await canPocketWalk(userId);
+    if (!gate.allowed) {
+      return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
+    }
+    /**
+     * Emniyet tavanı — KELİME başına.
+     *
+     * Adil kullanım tavanı TUR cinsinden sayılıyor (`/api/premium/consume`,
+     * tur başında bir kez) ve kullanıcıya öyle duyuruluyor. Ama tur sayacını
+     * hiç çağırmayan değiştirilmiş bir istemci o tavanı atlar; burada kelime
+     * başına ikinci bir tavan var ki bir hesap günlük bütçeyi yakamasın.
+     * Tur başına kelime sayısı cömert tutuldu: normal kullanıcı bunu görmez.
+     */
+    const cfg = await premiumConfig();
+    const ceiling = Math.max(cfg.fairUse.pocketWalksPerDay, 1) * 40;
+    if ((await getUsage(userId, "pocket_walk_words", "day")) >= ceiling) {
+      return NextResponse.json({ error: "quota", reason: "fair_use" }, { status: 429 });
+    }
+    void bumpUsage(userId, "pocket_walk_words", "day");
+  }
+
   if (!sttProviders(mode).length) return NextResponse.json({ error: "not_configured" }, { status: 503 });
   if (!file || file.size === 0) return NextResponse.json({ error: "no_audio" }, { status: 400 });
   if (file.size > MAX_BYTES) return NextResponse.json({ error: "too_large" }, { status: 413 });
