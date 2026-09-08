@@ -150,7 +150,7 @@ sayfanın içine sıkıştırılmış · **farklı** = var ama kurgusu/yerleşim
 | `PaywallScreen` | `/premium` | **yakın** | |
 | `DeleteAccountScreen` | `/account/delete` | **yakın** | |
 | `OnboardingScreen` | `/setup` | **yakın** | ENVANTER DÜZELTMESİ (8 Eyl): web `/setup` tek sayfalık form DEĞİL, zaten dört adımlı bir sihirbazdı (isim+kurs+ses → amaç → seviye → hazır). Eksik olan tek adım günlük hedefti; `1e0…` ile geldi ve akış beş adım oldu. Web'de fazladan bir **amaç** adımı var (İş / Günlük hayat / Sınav / İsviçre), mobilde yok |
-| `FirstPracticeScreen` | — | **yok** | İlk 5 kelime, KAYIT ÖNCESİ. Web'de karşılığı yok ve eklemek küçük bir iş değil: `/setup` zaten oturum arkasında, açılış sayfasının bütün çağrıları `/learn`e (yani `/login`e) gidiyor. Anonim bir oturum modeli gerekiyor — bkz. §3 Şerit O |
+| `FirstPracticeScreen` | `/ilk-kelimeler` | **yakın** | İlk 5 kelime, kayıt öncesi. `11bbbe3` ile geldi; kelime listesi mobil `firstWords.ts` ile birebir |
 | `NotifPrimeScreen` | `push-optin` bileşeni | **gömülü** | |
 | `AuthScreen` | `/login` | **yakın** | |
 | — | `/analytics`, `/admin`, `/demo-games`, `/demo-feedback` | web'e özel | Yönetim/geliştirme yüzeyleri, paritesi gerekmiyor |
@@ -289,11 +289,12 @@ Arkadaşlar / kullanıcı / gelen kutusu / sosyal ayarlar ekranlarını yeni dil
 
 1. ~~`/setup` çok adımlı sihirbaza dönüşür.~~ Zaten öyleymiş (envanter yanlıştı).
    Eksik olan **günlük hedef adımı** eklendi — akış beş adım.
-2. **İlk kelimeler turu (`FirstPractice`) — AÇIK KALDI.** Mobilde kayıt ÖNCESİ
-   beş kelime oynatılıyor ve bu bir ürün kararı: kullanıcı değer görmeden hesap
-   açmıyor. Web'de aynısını yapmak anonim oturum gerektiriyor (kelime kuyruğu,
-   ilerleme, sonradan hesaba devretme) — küçük bir ekran işi değil, ayrı
-   kararı olan bir iş. Sahibe sorulacak.
+2. ~~İlk kelimeler turu (`FirstPractice`).~~ **BİTTİ** (`11bbbe3`).
+   İlk değerlendirme yanlıştı: anonim OTURUM gerekmiyordu. Mobilin ısınması
+   statik bir kelime listesi oynatıyor — sunucu yok, ilerleme kaydı yok,
+   hesaba devredilecek kuyruk yok. Gereken tek şey akış sırasının değişmesiydi:
+   `/setup` oturumdan çıkarıldı, kararlar cihazda saklanıyor ve giriş sonrası
+   profile taşınıyor.
 3. `/login` mobil `AuthScreen` yerleşimine.
 4. **Etiket–değer uyumsuzluğu (iki tarafta birden):** günlük hedef seçenekleri
    "5/10/20 dk" diyor ama yazılan değer `dailyGoal` = tekrar sayısı. Tek
@@ -328,6 +329,6 @@ Arkadaşlar / kullanıcı / gelen kutusu / sosyal ayarlar ekranlarını yeni dil
 | B — Beceriler | **bitti** | `14d2cf0` — beş eşit seviye sekmesi, beceri renkleri, `CardGrid` |
 | R — Profil/Ayarlar | **bitti** | `815728d` maskot avatarı + düzenleyici · `dd57b9e` profil + 4 yeni adres + onay diyaloğu · `c33face` üçlü tema · `62c8a51` ayar bölümleri · `86bdc4b` deneme istatistiği |
 | S — Sosyal | **bitti** | `97bef74` — kimlik kartı + davet bandı + dolgusuz çipler |
-| O — Onboarding | **kısmen** | Günlük hedef adımı geldi; ilk kelimeler turu açık (anonim oturum kararı gerekiyor) |
+| O — Onboarding | **bitti** | `b9b68ba` günlük hedef adımı · `11bbbe3` akış mobil sıraya: misafir onboarding + `/ilk-kelimeler` + kararların hesaba taşınması |
 | I — Arayüz dili | başlanmadı | |
 | X — Temizlik | başlanmadı | |
