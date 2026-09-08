@@ -158,4 +158,21 @@ export const trWeb: Record<string, string> = {
   "ach.bilingual.hint": "Hem Almanca hem Zürihçe kursunda çalış",
   "ach.quests20.title": "Günü kapatan",
   "ach.quests20.hint": "20 gün, günün üç görevini de bitir",
+  /*
+   * Yetkinlik panosu ve gelişim raporu. Bant adları TİPİN İÇİNDE Türkçe
+   * sözcüklerdi ("başlangıç" | "gelişiyor" | …), yani tip sistemi bir dili
+   * dayatıyordu. Artık kararlı kimlik + sözlük.
+   */
+  "band.beginner": "başlangıç",
+  "band.developing": "gelişiyor",
+  "band.solid": "sağlam",
+  "band.mastered": "ustalaştı",
+  "growth.first_good_writing": "İlk 70+ puanlı yazı",
+  "growth.first_lesson": "İlk konuşma rol yapmayla tamamlandı",
+  "growth.last_week": "Geçen hafta: {parts}.",
+  "growth.last_week_empty": "Geçen hafta çalışma yok — bu hafta küçük bir turla başla.",
+  "proficiency.not_measured": "{skill} {level} henüz ölçülmedi",
+  "proficiency.grammar_practice": "Dilbilgisi çalışması",
+  "proficiency.next_conversation": "sıradaki konuşma",
+  "plan.word_round": "Kelime turu",
 };

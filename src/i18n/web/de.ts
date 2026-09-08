@@ -139,4 +139,17 @@ export const deWeb: Record<string, string> = {
   "ach.bilingual.hint": "Lerne sowohl den Deutsch- als auch den Züritüütsch-Kurs",
   "ach.quests20.title": "Tagesabschluss",
   "ach.quests20.hint": "Beende an 20 Tagen alle drei Tagesaufgaben",
+  /* Yetkinlik/gelişim — bkz. tr.ts notu. */
+  "band.beginner": "Anfang",
+  "band.developing": "im Aufbau",
+  "band.solid": "solide",
+  "band.mastered": "gemeistert",
+  "growth.first_good_writing": "Erster Text mit 70+ Punkten",
+  "growth.first_lesson": "Erstes Gespräch samt Rollenspiel abgeschlossen",
+  "growth.last_week": "Letzte Woche: {parts}.",
+  "growth.last_week_empty": "Letzte Woche kein Lernen — starte diese Woche mit einer kurzen Runde.",
+  "proficiency.not_measured": "{skill} {level} noch nicht gemessen",
+  "proficiency.grammar_practice": "Grammatikübung",
+  "proficiency.next_conversation": "nächstes Gespräch",
+  "plan.word_round": "Wortrunde",
 };

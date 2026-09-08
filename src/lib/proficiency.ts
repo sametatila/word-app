@@ -15,13 +15,20 @@ import type { CefrLevel } from "@/lib/skills/types";
 
 export type ProficiencySkill = "reading" | "listening" | "writing" | "speaking" | "grammar" | "vocab";
 export const PROFICIENCY_SKILLS: ProficiencySkill[] = ["reading", "listening", "writing", "speaking", "grammar", "vocab"];
-export const PROFICIENCY_LABELS: Record<ProficiencySkill, string> = {
-  reading: "Okuma",
-  listening: "Dinleme",
-  writing: "Yazma",
-  speaking: "Konuşma",
-  grammar: "Dilbilgisi",
-  vocab: "Kelime",
+/**
+ * Beceri adlarının SÖZLÜK ANAHTARLARI.
+ *
+ * Metin burada Türkçe sabit yazılıydı ve yetkinlik panosuna öyle gidiyordu.
+ * Anahtar tutmak, aynı adın (Okuma / Dinleme / Yazma) uygulamanın başka
+ * yerlerindeki kopyalarıyla tek sözlükten beslenmesini de sağlıyor.
+ */
+export const PROFICIENCY_LABEL_KEYS: Record<ProficiencySkill, string> = {
+  reading: "skills.reading",
+  listening: "skills.listening",
+  writing: "skills.writing",
+  speaking: "unitkind.speaking",
+  grammar: "unitkind.grammar",
+  vocab: "unitkind.vocab",
 };
 
 export type EvidenceSource = "exam" | "assessment" | "lesson" | "exercise" | "drill" | "game";
@@ -57,7 +64,20 @@ export type Evidence = {
   at: Date;
 };
 
-export type Band = "başlangıç" | "gelişiyor" | "sağlam" | "ustalaştı";
+/**
+ * Yetkinlik bandı — KİMLİK, gösterilecek metin değil.
+ *
+ * Değerler Türkçe sözcüklerdi ("başlangıç" | "gelişiyor" | …) ve doğrudan
+ * ekrana basılıyordu: yani tip sistemi bir dili dayatıyordu ve arayüz
+ * İngilizce olduğunda bant yine Türkçe çıkıyordu. Artık kararlı kimlikler;
+ * metin `bandKey()` ile sözlükten geliyor.
+ */
+export type Band = "beginner" | "developing" | "solid" | "mastered";
+
+/** Bandın sözlük anahtarı. */
+export function bandKey(band: Band): string {
+  return `band.${band}`;
+}
 
 export type Cell = {
   /** Ağırlıklı ortalama 0–100; kanıt yoksa null. */
@@ -72,10 +92,10 @@ export type Cell = {
 export type Proficiency = Record<ProficiencySkill, Partial<Record<CefrLevel, Cell>>>;
 
 export function bandOf(score: number): Band {
-  if (score >= 85) return "ustalaştı";
-  if (score >= 70) return "sağlam";
-  if (score >= 40) return "gelişiyor";
-  return "başlangıç";
+  if (score >= 85) return "mastered";
+  if (score >= 70) return "solid";
+  if (score >= 40) return "developing";
+  return "beginner";
 }
 
 /** Zaman sönümü: bugün 1, 30 gün önce 0 (doğrusal). */

@@ -3,7 +3,8 @@ import { and, asc, eq, gte, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { assessments, dailyStats, events, exams, reviews, userLessons, userSkills } from "@/lib/db/schema";
 import { ERROR_LABELS, isErrorType } from "@/lib/errors";
-import { computeProficiency, PROFICIENCY_LABELS, PROFICIENCY_SKILLS, type Band, type ProficiencySkill } from "@/lib/proficiency";
+import { computeProficiency, PROFICIENCY_LABEL_KEYS, PROFICIENCY_SKILLS, type Band, type ProficiencySkill } from "@/lib/proficiency";
+import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { gatherEvidence, nextStep, type NextStep } from "@/lib/proficiency-data";
 import { shiftDay, weekStart } from "@/lib/session";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -77,7 +78,14 @@ function bucket(weeks: string[], rows: { week: string; value: number; n: number 
  * Şimdi tek kaynak: puan, bant, değişim oku, kanıt sayısı ve önerilen adım
  * aynı rapordan geliyor.
  */
-export async function growthReport(userId: string, course: string, level: CefrLevel, today: string): Promise<GrowthReport> {
+export async function growthReport(
+  userId: string,
+  course: string,
+  level: CefrLevel,
+  today: string,
+  /** Rapor metinlerinin dili — çağıranın profilinden. */
+  lang: NativeLang = DEFAULT_NATIVE,
+): Promise<GrowthReport> {
   const thisWeek = weekStart(today);
   const weeks = Array.from({ length: WEEKS }, (_, i) => shiftDay(thisWeek, -7 * (WEEKS - 1 - i)));
   const since = new Date(`${weeks[0]}T00:00:00Z`);
@@ -126,12 +134,12 @@ export async function growthReport(userId: string, course: string, level: CefrLe
   const profBefore = computeProficiency(await gatherEvidence(userId, before), before);
   const proficiency = PROFICIENCY_SKILLS.map((skill) => ({
     skill,
-    label: PROFICIENCY_LABELS[skill],
+    label: translate(lang, PROFICIENCY_LABEL_KEYS[skill]),
     now: profNow[skill]?.[level]?.score ?? null,
     before: profBefore[skill]?.[level]?.score ?? null,
     band: profNow[skill]?.[level]?.band ?? null,
   }));
-  const next = await nextStep(userId, course, level, profNow);
+  const next = await nextStep(userId, course, level, profNow, lang);
 
   // Kilometre taşları — ilk'ler.
   const milestones: { at: string; text: string }[] = [];
@@ -143,9 +151,9 @@ export async function growthReport(userId: string, course: string, level: CefrLe
     .where(and(eq(assessments.userId, userId), eq(assessments.kind, "writing"), sql`(${assessments.result}->'score'->>'overall')::int >= 70`))
     .orderBy(asc(assessments.createdAt))
     .limit(1);
-  if (firstGoodWriting) milestones.push({ at: firstGoodWriting.at.toISOString().slice(0, 10), text: "İlk 70+ puanlı yazı" });
+  if (firstGoodWriting) milestones.push({ at: firstGoodWriting.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_good_writing") });
   const [firstLesson] = await db.select({ at: userLessons.lastAt }).from(userLessons).where(and(eq(userLessons.userId, userId), eq(userLessons.roleplayDone, true))).orderBy(asc(userLessons.lastAt)).limit(1);
-  if (firstLesson) milestones.push({ at: firstLesson.at.toISOString().slice(0, 10), text: "İlk konuşma rol yapmayla tamamlandı" });
+  if (firstLesson) milestones.push({ at: firstLesson.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_lesson") });
   const [firstPlacement] = await db.select({ day: events.day, kind: events.kind }).from(events).where(and(eq(events.userId, userId), eq(events.name, "placement_finish"))).orderBy(asc(events.createdAt)).limit(1);
   if (firstPlacement) milestones.push({ at: String(firstPlacement.day), text: `Seviye testi: ${firstPlacement.kind ?? "?"} önerildi` });
   milestones.sort((a, b) => a.at.localeCompare(b.at));
@@ -155,7 +163,12 @@ export async function growthReport(userId: string, course: string, level: CefrLe
 }
 
 /** Geçen haftanın özeti (kart Pazartesi, bildirim cron). */
-export async function weeklySummary(userId: string, today: string, series?: GrowthReport["series"]): Promise<WeeklySummary> {
+export async function weeklySummary(
+  userId: string,
+  today: string,
+  series?: GrowthReport["series"],
+  lang: NativeLang = DEFAULT_NATIVE,
+): Promise<WeeklySummary> {
   const thisWeek = weekStart(today);
   const lastWeek = shiftDay(thisWeek, -7);
   const from = new Date(`${lastWeek}T00:00:00Z`);
@@ -193,6 +206,8 @@ export async function weeklySummary(userId: string, today: string, series?: Grow
   if (writing.to !== null) parts.push(writing.from !== null ? `yazma ${writing.from}→${writing.to}` : `yazma ${writing.to}`);
   if (usage !== null) parts.push(`kullanım ${usage}`);
   if (topError) parts.push(`en çok hata: ${topError.label}`);
-  const text = parts.length ? `Geçen hafta: ${parts.join(", ")}.` : "Geçen hafta çalışma yok — bu hafta küçük bir turla başla.";
+  const text = parts.length
+    ? translate(lang, "growth.last_week", { parts: parts.join(", ") })
+    : translate(lang, "growth.last_week_empty");
   return { week: lastWeek, answers, exercises, lessonsPassed, writing, usage, topError, text };
 }

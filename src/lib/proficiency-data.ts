@@ -7,7 +7,8 @@ import { type GameId } from "@/lib/types";
 import { listExerciseMeta } from "@/lib/skills";
 import { nextLesson } from "@/lib/lessons/progress";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
-import { computeProficiency, DECAY_DAYS, PROFICIENCY_LABELS, weakestSkill, type Evidence, type Proficiency, type ProficiencySkill } from "@/lib/proficiency";
+import { computeProficiency, DECAY_DAYS, PROFICIENCY_LABEL_KEYS, bandKey, weakestSkill, type Evidence, type Proficiency, type ProficiencySkill } from "@/lib/proficiency";
+import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import type { Assessment } from "@/lib/assess-prompts";
 
 /**
@@ -233,7 +234,14 @@ export type NextStep = {
  * egzersiz; beceri egzersizi olmayan beceriler (kelime, dilbilgisi) için
  * kelime turu / dilbilgisi çalışması; hiçbiri yoksa sıradaki ders.
  */
-export async function nextStep(userId: string, course: string, level: CefrLevel, prof: Proficiency): Promise<NextStep | null> {
+export async function nextStep(
+  userId: string,
+  course: string,
+  level: CefrLevel,
+  prof: Proficiency,
+  /** Öneri metinlerinin dili — çağıranın profilinden. */
+  lang: NativeLang = DEFAULT_NATIVE,
+): Promise<NextStep | null> {
   const metas = (await listExerciseMeta(course)).filter((m) => m.level === level);
   const done = new Set(
     (await db.select({ exerciseId: userSkills.exerciseId }).from(userSkills).where(eq(userSkills.userId, userId))).map((r) => r.exerciseId),
@@ -241,14 +249,25 @@ export async function nextStep(userId: string, course: string, level: CefrLevel,
   const order = [...PROFICIENCY_SKILLSORDERED].sort((a, b) => (prof[a]?.[level]?.score ?? -1) - (prof[b]?.[level]?.score ?? -1));
   for (const skill of order) {
     const cell = prof[skill]?.[level];
-    const reason = cell ? `${PROFICIENCY_LABELS[skill]} ${level} ${cell.score} — ${cell.band}` : `${PROFICIENCY_LABELS[skill]} ${level} henüz ölçülmedi`;
-    if (skill === "vocab") return { skill, label: PROFICIENCY_LABELS[skill], reason, href: "/learn", title: "Kelime turu", minutes: 6 };
-    if (skill === "grammar") return { skill, label: PROFICIENCY_LABELS[skill], reason, href: "/lessons", title: "Dilbilgisi çalışması", minutes: 5 };
+    const name = translate(lang, PROFICIENCY_LABEL_KEYS[skill]);
+    const reason = cell
+      ? `${name} ${level} ${cell.score} — ${translate(lang, bandKey(cell.band ?? "beginner"))}`
+      : translate(lang, "proficiency.not_measured", { skill: name, level });
+    if (skill === "vocab") return { skill, label: name, reason, href: "/learn/game", title: translate(lang, "plan.word_round"), minutes: 6 };
+    if (skill === "grammar") return { skill, label: name, reason, href: "/lessons", title: translate(lang, "proficiency.grammar_practice"), minutes: 5 };
     const open = metas.find((m) => m.skill === skill && !done.has(m.id));
-    if (open) return { skill, label: PROFICIENCY_LABELS[skill], reason, href: `/immersion/skill/${open.id}`, title: open.title, minutes: open.minutes };
+    if (open) return { skill, label: name, reason, href: `/immersion/skill/${open.id}`, title: open.title, minutes: open.minutes };
   }
   const lesson = await nextLesson(userId, course, level);
-  if (lesson) return { skill: "speaking", label: "Konuşma", reason: "sıradaki konuşma", href: `/lessons/${lesson.lesson.id}`, title: lesson.lesson.title, minutes: lesson.lesson.minutes };
+  if (lesson)
+    return {
+      skill: "speaking",
+      label: translate(lang, "unitkind.speaking"),
+      reason: translate(lang, "proficiency.next_conversation"),
+      href: `/lessons/${lesson.lesson.id}`,
+      title: lesson.lesson.title,
+      minutes: lesson.lesson.minutes,
+    };
   return null;
 }
 
