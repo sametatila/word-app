@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AppHeader } from "@/components/app-header";
+import { useT } from "@/lib/i18n/client";
 import { UnitPane, KindIconFor } from "@/components/immersion/unit-pane";
 import { CheckIcon, LockIcon } from "@/components/icons";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -102,6 +103,7 @@ function useTwoPane(): boolean {
 }
 
 export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits }: ImmersionHubProps) {
+  const t = useT();
   const twoPane = useTwoPane();
   const [selected, setSelected] = useState<number | null>(null);
   const pctAll = totalUnits ? Math.round((doneUnits / totalUnits) * 100) : 0;
@@ -126,7 +128,7 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
         />
       </div>
       <p className="muted mb-4 mt-1.5 text-caption">
-        {level} · {doneUnits}/{totalUnits} ünite tamam
+        {t("path.units_done", { level, n: doneUnits, total: totalUnits })}
       </p>
 
       {featured ? (
@@ -153,7 +155,7 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
 
   return (
     <div className="mx-auto w-full max-w-3xl xl:max-w-none">
-      <AppHeader title="Patika" />
+      <AppHeader title={t("path.path")} />
       {twoPane ? (
         <div className="grid grid-cols-[45fr_55fr] items-start gap-4">
           <div>{body}</div>

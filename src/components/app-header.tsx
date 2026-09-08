@@ -5,6 +5,8 @@ import { MyAvatar } from "@/components/my-avatar";
 import { FlameIcon } from "@/components/icons";
 import { NotificationBell } from "@/components/social/notification-bell";
 import { useShell } from "@/components/app-shell";
+import { useT, useLang } from "@/lib/i18n/client";
+import { courseName } from "@/lib/courses";
 
 /**
  * Sekmelerin ortak üst başlığı — mobil `M/src/ui/AppHeader.tsx`'in karşılığı.
@@ -23,36 +25,28 @@ import { useShell } from "@/components/app-shell";
  * zıplardı.
  */
 /**
- * Kursun ADI, öğrenilen dil olarak. Mobilde `targetLangName()` aynı işi
- * yapıyor; web'de kurs kaydı henüz tek yerden okunmadığı için burada duruyor
- * (Şerit I ile `lib/courses`e taşınacak).
- */
-const COURSE_LANG: Record<string, string> = {
-  de: "Almanca",
-  "gsw-zh": "Zürih Almancası",
-  en: "İngilizce",
-};
-
-/**
- * Öğren sekmesinin başlığı — mobildeki "Almanca öğren" + selamlama.
+ * Öğren sekmesinin başlığı — "Almanca öğren" + selamlama.
  *
- * Ayrı bir bileşen çünkü başlığın iki satırı da veriden türüyor: üstte kursun
- * dili, altta kullanıcının ADI. Sayfanın her yerinden aynı iki değeri
- * geçirmek yerine bağlamdan okunuyor.
+ * Üç şey de dile bağlı: kursun ADI (mobil `targetLangName()`), başlığın kalıbı
+ * ("{lang} öğren") ve selamlama. Kurs adı sabit yazılıydı, yani arayüz
+ * İngilizceye alındığında bile "Almanca öğren" diyordu.
  */
 export function LearnHeader() {
   const { name, course } = useShell();
+  const t = useT();
+  const lang = useLang();
   const first = name?.trim().split(" ")[0];
   return (
     <AppHeader
-      title={`${COURSE_LANG[course] ?? "Dil"} öğren`}
-      subtitle={first ? `Merhaba ${first}` : "Hoş geldin"}
+      title={t("learn.learn", { lang: courseName(course, lang) })}
+      subtitle={first ? t("learn.greeting_named", { name: first }) : t("learn.greeting")}
     />
   );
 }
 
 export function AppHeader({ title, subtitle }: { title: string; subtitle?: string }) {
   const { streak } = useShell();
+  const t = useT();
   return (
     <header className="mb-4 flex items-center justify-between gap-3">
       <div className="min-w-0 flex-1">
@@ -71,7 +65,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
           <Link
             href="/profile"
             prefetch={false}
-            aria-label={`${streak} günlük seri — ilerlemeni gör`}
+            aria-label={t("appheader.progress")}
             className="pressable flex items-center gap-1.5 rounded-full px-3 py-2 text-strong"
             style={{
               background: "color-mix(in srgb, var(--color-flame) 16%, transparent)",
@@ -86,7 +80,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
         <Link
           href="/profile"
           prefetch={false}
-          aria-label="Profil ve ayarlar"
+          aria-label={t("appheader.profile")}
           className="pressable shrink-0 rounded-full"
           style={{ boxShadow: "var(--shadow-soft-sm)" }}
         >

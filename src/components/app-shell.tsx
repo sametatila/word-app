@@ -12,6 +12,7 @@ import { Telemetry } from "./telemetry";
 import { AchievementUnlock } from "./achievement-unlock";
 import { OnboardingAdopt } from "./onboarding-adopt";
 import { track } from "@/lib/track";
+import { useT } from "@/lib/i18n/client";
 import { BellIcon, FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, SparkIcon, UserIcon } from "./icons";
 
 /**
@@ -34,9 +35,9 @@ import { BellIcon, FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, Skil
  * ikisi de üst başlıktan/ikincil gruptan ulaşılır. Üç sekme 320 px'de sığıyor.
  */
 const NAV = [
-  { href: "/learn", label: "Öğren", Icon: LearnIcon, key: "learn" },
-  { href: "/immersion", label: "Patika", Icon: PathIcon, key: "immersion" },
-  { href: "/skills", label: "Beceriler", Icon: SkillsIcon, key: "skills" },
+  { href: "/learn", labelKey: "nav.learn", Icon: LearnIcon, key: "learn" },
+  { href: "/immersion", labelKey: "nav.path", Icon: PathIcon, key: "immersion" },
+  { href: "/skills", labelKey: "nav.skills", Icon: SkillsIcon, key: "skills" },
 ];
 
 /**
@@ -72,10 +73,10 @@ export function useShell(): ShellData {
 
 /** Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor. */
 const SECONDARY = [
-  { href: "/words", label: "Kelimelerim", Icon: ListIcon },
-  { href: "/friends", label: "Arkadaşlar", Icon: HandshakeIcon },
-  { href: "/notifications", label: "Bildirimler", Icon: BellIcon },
-  { href: "/profile", label: "Profil", Icon: UserIcon },
+  { href: "/words", labelKey: "profile.my_words", Icon: ListIcon },
+  { href: "/friends", labelKey: "profile.friends", Icon: HandshakeIcon },
+  { href: "/notifications", labelKey: "profile.notifications", Icon: BellIcon },
+  { href: "/profile", labelKey: "profile.profile", Icon: UserIcon },
 ];
 
 export function AppShell({
@@ -102,6 +103,7 @@ export function AppShell({
   const shellRef = useRef<HTMLDivElement>(null);
   const [stats, setStats] = useState({ streak, xp });
   const showTabs = TAB_PATHS.has(pathname);
+  const t = useT();
   // Kimlik değişmiyor, sayaçlar değişiyor: nesne her render'da yeniden
   // kurulursa bağlama abone olan her başlık boşuna yeniden çiziliyor.
   const shellData = useMemo(
@@ -294,7 +296,7 @@ export function AppShell({
                   />
                 )}
                 <item.Icon size={18} className="relative" />
-                <span className="relative">{item.label}</span>
+                <span className="relative">{t(item.labelKey)}</span>
               </Link>
             );
           })}
@@ -319,7 +321,7 @@ export function AppShell({
                 }`}
               >
                 <item.Icon size={17} />
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             );
           })}
@@ -408,7 +410,7 @@ export function AppShell({
                       />
                     )}
                     <item.Icon size={23} className="relative" />
-                    <span className="relative">{item.label}</span>
+                    <span className="relative">{t(item.labelKey)}</span>
                   </Link>
                 );
               })}

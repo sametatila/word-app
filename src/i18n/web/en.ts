@@ -8,4 +8,11 @@
  * bu dosya kazanır (bkz. lib/i18n/dict.ts) — yani yanlışlıkla kopyalanan bir
  * anahtar sessizce mobilden ayrışır.
  */
-export const enWeb: Record<string, string> = {};
+export const enWeb: Record<string, string> = {
+  /* Kahraman kartındaki iki rozet — mobilde henüz sabit yazılı (bkz. tr.ts). */
+  "learn.due_count": "{n} review",
+  "learn.new_count": "{n} new",
+  /* Web'e özel mod. */
+  "learn.survival": "Survival",
+  "learn.survival_pitch": "40 s · until time runs out",
+};

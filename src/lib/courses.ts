@@ -28,6 +28,17 @@ export type Course = {
   /** Konuşma/tanıma için temel dil kodu — aynı dilin lehçeleri bunu paylaşır. */
   targetLang: "de" | "en";
   /**
+   * Kursun adı, ARAYÜZ dilinde. "Almanca öğren" / "Learn German" /
+   * "Deutsch lernen" — üçü de aynı kursun adı, üç ayrı okuyucu için.
+   *
+   * Sabit yazılıydı ("Almanca") ve arayüz tek dile gömülü olduğu sürece sorun
+   * değildi. Mobilde bu harita baştan beri var (`M/src/lib/courses.ts`) ve
+   * değerler oradan birebir alındı.
+   */
+  label: Record<NativeLang, string>;
+  /** Kursun alt satırı — lehçe/kapsam bilgisi, yine arayüz dilinde. */
+  sub: Record<NativeLang, string>;
+  /**
    * İçeriği hazır mı.
    *
    * API yalnızca hazır kursları kabul eder: içeriği olmayan bir kursa geçen
@@ -38,11 +49,46 @@ export type Course = {
 };
 
 export const COURSES: Course[] = [
-  { id: "de", targetLang: "de", enabled: true },
-  { id: "gsw-zh", targetLang: "de", enabled: true },
+  {
+    id: "de",
+    targetLang: "de",
+    label: { tr: "Almanca", en: "German", de: "Deutsch" },
+    sub: {
+      tr: "Hochdeutsch · CEFR A1–C1",
+      en: "Standard German · CEFR A1–C1",
+      de: "Hochdeutsch · CEFR A1–C1",
+    },
+    enabled: true,
+  },
+  {
+    id: "gsw-zh",
+    targetLang: "de",
+    label: { tr: "Zürih Almancası", en: "Zurich German", de: "Züritüütsch" },
+    sub: {
+      tr: "Züritüütsch · İsviçre lehçesi",
+      en: "Züritüütsch · Swiss dialect",
+      de: "Züritüütsch · Schweizer Dialekt",
+    },
+    enabled: true,
+  },
   // Kelime katmanı hazır; ders/beceri içeriği henüz yok.
-  { id: "en", targetLang: "en", enabled: true },
+  {
+    id: "en",
+    targetLang: "en",
+    label: { tr: "İngilizce", en: "English", de: "Englisch" },
+    sub: {
+      tr: "İngilizce · CEFR A1–C1",
+      en: "English · CEFR A1–C1",
+      de: "Englisch · CEFR A1–C1",
+    },
+    enabled: true,
+  },
 ];
+
+/** Kursun adı, verilen arayüz dilinde — mobil `targetLangName()` karşılığı. */
+export function courseName(courseId: string | null | undefined, lang: NativeLang): string {
+  return courseOrDefault(courseId).label[lang];
+}
 
 const BY_ID = new Map<string, Course>(COURSES.map((c) => [c.id, c]));
 

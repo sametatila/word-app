@@ -8,6 +8,7 @@ import { PlanCard } from "@/components/plan-card";
 import { FriendPulse } from "@/components/social/friend-pulse";
 import { CardGrid } from "@/components/layout";
 import { LearnHeader } from "@/components/app-header";
+import { useT } from "@/lib/i18n/client";
 import {
   ArrowRightIcon,
   BoltIcon,
@@ -59,6 +60,7 @@ export type LearnHubData = {
 const nf = new Intl.NumberFormat("tr-TR");
 
 export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboard?: ReactNode }) {
+  const t = useT();
   const { level, mastered, totalWords, xp, streak, dailyGoal, reviewsToday, dueCount, newToday } = data;
   const pct = totalWords ? Math.min(100, Math.round((mastered / totalWords) * 100)) : 0;
   const goalPct = dailyGoal ? Math.min(100, Math.round((reviewsToday / dailyGoal) * 100)) : 0;
@@ -85,12 +87,12 @@ export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboar
           <div className="absolute right-3 top-3 z-10 flex gap-1.5">
             {dueCount > 0 ? (
               <span className="flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-micro text-white">
-                <RefreshIcon size={13} /> {dueCount} tekrar
+                <RefreshIcon size={13} /> {t("learn.due_count", { n: dueCount })}
               </span>
             ) : null}
             {newToday > 0 ? (
               <span className="flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-micro text-white">
-                <BoltIcon size={13} /> {newToday} yeni
+                <BoltIcon size={13} /> {t("learn.new_count", { n: newToday })}
               </span>
             ) : null}
           </div>
@@ -102,17 +104,15 @@ export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboar
               <span className="flex h-11 w-11 items-center justify-center rounded-tile bg-white/20 text-white">
                 <BoltIcon size={22} />
               </span>
-              <span className="text-micro uppercase tracking-widest text-white/80">Günlük tur</span>
+              <span className="text-micro uppercase tracking-widest text-white/80">{t("learn.daily_round")}</span>
             </div>
-            <p className="text-h1 text-white">Kelimelerini çalış</p>
-            <p className="mt-1 text-body text-white/90">
-              Tekrar zamanı gelenleri pekiştir, yeni kelimeler öğren.
-            </p>
+            <p className="text-h1 text-white">{t("learn.practice_your_words")}</p>
+<p className="mt-1 text-body text-white/90">{t("learn.daily_pitch")}</p>
             <span
               className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-strong"
               style={{ color: "var(--color-brand-600)" }}
             >
-              Başla <ArrowRightIcon size={18} />
+              {t("common.start")} <ArrowRightIcon size={18} />
             </span>
           </div>
           {/*
@@ -131,7 +131,7 @@ export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboar
         {dailyGoal > 0 ? (
           <div className="px-5 pb-4">
             <div className="mb-1.5 flex justify-between text-micro text-white/85">
-              <span>Günlük hedef</span>
+              <span>{t("learn.daily_goal")}</span>
               <span className="tabular-nums">
                 {reviewsToday}/{dailyGoal}
               </span>
@@ -159,7 +159,7 @@ export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboar
             >
               {level}
             </span>
-            <span className="truncate text-strong">{nf.format(mastered)} kelime öğrenildi</span>
+            <span className="truncate text-strong">{t("learn.words_learned", { n: nf.format(mastered) })}</span>
           </div>
           <span className="muted shrink-0 text-caption tabular-nums">{nf.format(xp)} XP</span>
         </div>
@@ -185,15 +185,15 @@ export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboar
           (acıyı dindiren). İkisi de kursa/cihaza bağlı; yoksa bölüm hiç yok. */}
       {data.canWalk || data.hasMockExams ? (
         <section className="mb-5 mt-2">
-          <h2 className="muted mb-3 text-h3">Öne çıkan</h2>
+          <h2 className="muted mb-3 text-h3">{t("learn.featured")}</h2>
           <div className="grid grid-cols-2 gap-3">
             {data.canWalk ? (
               <Wedge
                 href="/learn/walk"
                 tone="var(--color-violet-500)"
                 icon={<WalkIcon size={24} />}
-                title="Yürüyüş modu"
-                pitch="Dinle ve söyle, ekrana bakmadan"
+                title={t("learn.walk_mode")}
+                pitch={t("learn.walk_pitch")}
               />
             ) : null}
             {data.hasMockExams ? (
@@ -201,8 +201,8 @@ export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboar
                 href="/mock-exams"
                 tone="var(--color-flame-500)"
                 icon={<ExamIcon size={24} />}
-                title="Deneme Sınavları"
-                pitch="Süreli, tam kâğıt"
+                title={t("learn.mock_exams")}
+                pitch={t("learn.mock_exams_pitch")}
               />
             ) : null}
           </div>
@@ -210,28 +210,28 @@ export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboar
       ) : null}
 
       {/* DİĞER ÖĞRENME YOLLARI */}
-      <h2 className="muted mb-3 text-h3">Daha fazlası</h2>
+      <h2 className="muted mb-3 text-h3">{t("learn.more")}</h2>
       <CardGrid min={380} className="mb-5">
         <Action
           href="/learn/practice"
           tone="var(--color-brand-500)"
           icon={<TargetIcon size={24} />}
-          title="Pratik"
-          sub="Tek bir oyunu kendi kelimelerinle çalış"
+          title={t("learn.practice")}
+          sub={t("learn.practice_one_game_with_your_own")}
         />
         <Action
           href="/learn/daily"
           tone="var(--color-sky-500)"
           icon={<PodiumIcon size={24} />}
-          title="Günün turu"
-          sub="Herkesle aynı yarışma · sıralamaya gir"
+          title={t("learn.daily_round_2")}
+          sub={t("learn.same_challenge_for_everyone_get")}
         />
         <Action
           href="/learn/weekly"
           tone="var(--color-mint-500)"
           icon={<CrownIcon size={24} />}
-          title="Haftalık sınav"
-          sub="Öğrendiklerini ölç · haftada bir"
+          title={t("learn.weekly_quiz")}
+          sub={t("learn.test_what_you_ve_learned_weekly")}
         />
         {/*
           Hayatta kalma mobilde YOK — web'e özel bir mod. Parite "webde fazla
@@ -241,8 +241,8 @@ export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboar
           href="/learn/challenge"
           tone="var(--color-rose-500)"
           icon={<HeartIcon size={24} />}
-          title="Hayatta kalma"
-          sub="40 sn · süre bitene kadar"
+          title={t("learn.survival")}
+          sub={t("learn.survival_pitch")}
         />
       </CardGrid>
 

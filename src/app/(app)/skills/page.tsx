@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AppHeader } from "@/components/app-header";
+import { getT } from "@/lib/i18n/server";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { listExerciseMeta, type SkillMeta } from "@/lib/skills";
@@ -40,6 +41,7 @@ export default async function SkillsPage({
 }: {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
+  const t = await getT();
   const user = await getUserInfo();
   if (!user) return null;
 
@@ -76,10 +78,7 @@ export default async function SkillsPage({
       {/* Ortak sekme başlığı: 32 punto başlık + açıklama alt satırı, sağda
           seri/gelen kutusu/profil. Mobilde `AppHeader` aynı iki satırı
           taşıyor (`SkillsScreen`). */}
-      <AppHeader
-        title="Beceriler"
-        subtitle="Patika sıradakini seçer; burası kütüphane"
-      />
+      <AppHeader title={t("skills.skills")} subtitle={t("skills.aciklama")} />
 
       {/*
         Deneme sınavlarının web kapısı burası. Alt gezinme bilerek üç sekmede
