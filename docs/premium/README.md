@@ -158,11 +158,28 @@ abonelik beyanı kurallarına aykırı.
    tabloya göre; kalan ülkeler için USD tabanından dönüştür.
 4. **Aktifleştir** (Activate). Etkin olmayan bir base plan RevenueCat'e
    görünmez.
-5. **Service account**: Google Cloud'da bir servis hesabı aç, *Google Play
-   Android Developer API*'yi etkinleştir, JSON anahtarını indir. Play Console →
-   *Users and permissions* → o servis hesabını davet et ve **View financial
-   data** + **Manage orders and subscriptions** yetkisini ver. (Yetki
-   verilmezse RevenueCat abonelikleri doğrulayamaz.)
+5. **Service account** — RevenueCat'in satın almaları Google'a doğrulatmasını
+   sağlayan şey. Eksikse hiçbir Android aboneliği doğrulanmaz.
+
+   a. **Google Cloud** (Play hesabına bağlı proje) → *APIs & Services* → şu **üç**
+      API'yi etkinleştir: **Android Publisher API**, **Google Play Developer
+      Reporting API**, **Cloud Pub/Sub API** (sonuncusu platform sunucu
+      bildirimleri için).
+   b. *IAM & Admin → Service Accounts* → yeni servis hesabı, **iki** rol:
+      **Pub/Sub Editor** (bildirimler) ve **Monitoring Viewer** (bildirim
+      kuyruğunun izlenmesi).
+   c. Servis hesabı → *Keys → Add key → **JSON*** → inen dosya RevenueCat'e
+      yüklenir. **Bu dosya SIR**: depoya da `.env`'e de girmez, yüklendikten
+      sonra yerel kopyası silinir.
+   d. **Play Console → Users and permissions** → servis hesabının e-postasını
+      davet et ve **dört** yetkiyi ver:
+      *View app information and download bulk reports (read-only)* ·
+      *View financial data, orders, and cancellation survey responses* ·
+      *Manage orders and subscriptions* ·
+      *Manage store presence* (ürün oluşturma/güncelleme için).
+   e. **36 saate kadar sürebilir.** Hemen çalışmazsa bozuk değil. Hızlandırma:
+      *Monetize → Products*'ta bir ürün açıklamasını değiştir — bu genelde
+      kimlik bilgilerini hemen ya da 24 saat içinde aktive ediyor.
 
 ### 3.3 RevenueCat panosu
 
@@ -180,8 +197,21 @@ abonelik beyanı kurallarına aykırı.
 
 2. **Uygulamaları bağla** — proje panosunda **Apps** (yeni düzende **Platforms**
    altında; web sağlayıcıları için ayrıca **Web**):
-   - **Google Play Store**: uygulama adı, paket adı `com.lernomi.learn`,
-     §3.2'deki **Service Credentials** (servis hesabı JSON'u).
+   - **Google Play Store**: uygulama adı, paket adı `com.lernomi.learn`
+     (`build.gradle`'daki **`applicationId`** — `namespace` olan `com.lernomi`
+     DEĞİL), §3.2'deki **Service Credentials** (servis hesabı JSON'u).
+
+     Aynı ekrandaki üç alan **boş bırakılır** ve üçünün de sebebi ayrı:
+     · **Custom URL Scheme** — RevenueCat'in kendi hazır paywall'ının
+       önizlemesi için. Biz onu kullanmıyoruz (paywall bizim kodumuzda),
+       doldurmak AndroidManifest'e çalışmayan bir intent-filter eklemek olurdu.
+     · **Financial reports bucket ID** — yalnız GEÇMİŞ finansal veriyi içe
+       aktarmak için; yeni uygulamada geçmiş yok. Gerekirse Play Console →
+       *Download reports → Financial* altındaki `gs://pubsite_prod_…`.
+     · **Google Apps Experience / Games Level Up Program** — 1M doları aşan
+       TEKRARLANMAYAN satın almalarda hizmet bedelini düşüren program. Biz
+       yalnız abonelik satıyoruz; programa gerçekten katılmadan tarih yazmak
+       komisyon hesabını bozar.
    - **Apple App Store**: uygulama adı, bundle `app.lernomi.ios`,
      **Shared Secret** ve **In-App Purchase Key** (.p8).
      İsteğe bağlı ama **işini kolaylaştırır**: **App Store Connect API Key** —
