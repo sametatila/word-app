@@ -75,11 +75,27 @@ Web ve mobil aynı uygulamanın iki yüzü değil, **iki ayrı ürün gibi** gö
 | mobil `textMuted` / surface | 4.23 | 4.5 | sınırda kalıyor |
 | web `--text-muted` / surface | 5.05 | 4.5 | geçiyor |
 
-> **Karar (T-KARAR-1).** Marka rengi web'de de `#f87612` olacak — kimlik mobilden gelir.
-> Ama **üstünde yazı taşıyan dolu yüzeylerde** turuncunun koyu basamağı kullanılacak
-> (`#b44909`, beyaz yazıyla 5.39). İkisi de tartışmasız "turuncu" okunuyor; fark ölçülebilir
-> tek şey okunabilirlik. Aynı düzeltme mobil tarafta da yapılmalı (ayrı iş kalemi,
-> bkz. §3 Şerit T adım 6) — yoksa iki taraf yine ayrışır.
+> **Karar (T-KARAR-1) — sahibin kararı, 8 Eyl 2026.** Marka rengi web'de de `#f87612`
+> ve dolu butonun yazısı **beyaz**: mobil uygulamayla **birebir aynı**. Ölçüm 2.77 ve
+> AA eşiğinin (4.5) altında; bu bilinerek seçildi — iki uygulamanın aynı görünmesi,
+> bu tek eşleşmedeki kontrast kazancının önüne geçti.
+>
+> Reddedilen alternatifler, sonradan tartışılabilsin diye ölçülmüş halleriyle:
+>
+> | Seçenek | Ölçüm | Neden seçilmedi |
+> |---|---|---|
+> | zemin `#f87612`, yazı `#2f1911` | 5.99 | Mobil açık temada beyaz kullanıyor |
+> | zemin `#b44909`, yazı beyaz | 5.39 | Marka rengi gözle görülür biçimde yanıyor |
+> | ikisini birden `#b44909`'a çekmek | 5.39 | Mobil uygulamanın da görünümü değişirdi |
+>
+> **Kararın sınırı:** yalnız marka yüzeyleri. Renk TEK taşıyıcı olduğu yerlerde (CEFR
+> rozetleri, der/die/das) KATI eşik geçerli olmayı sürdürüyor — B2 rozeti bu yüzden
+> turuncunun 700'üne indi (beyazla 5.39, C1'den ΔE 20.3).
+>
+> **Ölçüm gizlenmiyor.** `scripts/palette-check.mjs`'e "kabul edilmiş sapma" kategorisi
+> eklendi: değer ve eşik aynen yazılıyor, yanına kararın adı geliyor, çıkış kodu
+> bozulmuyor. Ölçümü listeden çıkarmak aracı yalancı yapardı; kırmızıya boyamak da
+> denetim adımını her koşuda kırar ve insanlar kalan ölçümlere bakmayı bırakırdı.
 
 ### 1.2 Kabuk ve gezinme
 
@@ -193,18 +209,20 @@ olmalı, ekran görüntüsüyle kanıtlanmalı, ayrı commit edilmeli (proje kur
 
 Diğer her şerit bunun üstüne kuruluyor.
 
-1. `src/app/globals.css` paletini mobil `colors.ts` ile hizala: `--color-brand-*` turuncu
+1. ~~`src/app/globals.css` paletini mobil `colors.ts` ile hizala: `--color-brand-*` turuncu
    rampasına (`orange 50…900`) geç, `bg/surface/surface-2/border/hairline` değerlerini
-   mobilinkilerle eşitle, koyu tema aynı şekilde.
+   mobilinkilerle eşitle, koyu tema aynı şekilde.~~ **BİTTİ** (`7bc52e0`)
 2. Tipografi ölçeğini token'a bağla (`display/h1/h2/h3/body/bodyStrong/caption/micro`) —
    Tailwind `@theme` üzerinden sınıf olarak; sayfalar serbest `text-*` yazmayı bıraksın.
 3. Yarıçap + boşluk + `softShadow` karşılıklarını CSS değişkeni yap.
-4. `.card`, `.btn-primary`, `.chip`, `.option` bileşen sınıflarını yeni ölçülere taşı
-   (kart: radius 26 + yumuşak gölge; buton: düz turuncu + beyaz yazı, koyu basamak).
+4. `.card`, `.chip`, `.option` bileşen sınıflarını yeni ölçülere taşı (kart: radius 26 +
+   yumuşak gölge). `.btn-primary` rengi `7bc52e0`'de yapıldı; kalan iş yalnız ölçü.
 5. `PressableScale` karşılığı: `.pressable` yardımcı sınıfı (transform + spring easing,
    `prefers-reduced-motion`'da kapalı).
-6. **Mobil düzeltmesi:** `M/src/theme/colors.ts` — üstünde yazı taşıyan dolu yüzeyler için
-   `primaryStrong`'u `#b44909`'a çek (bkz. T-KARAR-1). İki taraf birlikte değişir.
+6. **Mobil düzeltmesi:** `M/src/theme/colors.ts` — `textMuted` beyaz kart üstünde 4.23
+   veriyor (eşik 4.5); web'in `#7c6c5d`'sine çekilecek. İki ton yan yana ayırt
+   edilemiyor, yani görsel paritede kayıp yok. (Buton rengi T-KARAR-1 ile olduğu gibi
+   kalıyor — orada iki taraf zaten aynı.)
 7. `scripts/palette-check.mjs`'i yeni palette koştur; ΔE ve kontrast eşiklerinin hepsi geçsin.
 
 **Kabul:** paletin her rengi ölçülüp geçti; `/learn`, `/immersion`, `/skills` kareleri
@@ -294,7 +312,7 @@ Arkadaşlar / kullanıcı / gelen kutusu / sosyal ayarlar ekranlarını yeni dil
 
 | Şerit | Durum | Not |
 |---|---|---|
-| T — Tasarım dili | başlanmadı | |
+| T — Tasarım dili | **sürüyor** | Adım 1 (palet) bitti: `7bc52e0`. Sırada tipografi + yarıçap/gölge token'ları |
 | K — Kabuk | başlanmadı | T'ye bağlı |
 | L — Öğren | başlanmadı | |
 | P — Patika | başlanmadı | |
