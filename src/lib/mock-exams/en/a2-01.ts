@@ -172,7 +172,7 @@ export const EN_A2_01: MockPaper = {
             { key: "e", label: "Evening Yoga", body: "Two classes a week, at seven and at half past eight. The late class is quieter and slower. First class free." },
             { key: "f", label: "Football for Girls", body: "Training on Wednesdays after school, from nine to fourteen years. Boots are necessary. Ten pounds a month." },
             { key: "g", label: "Back Class", body: "A doctor sends you or you come alone. Small groups of six, on Monday and Thursday at five. The class is for people with back pain." },
-            { key: "h", label: "Table Tennis Club", body: "Every day from four to nine, all ages. You can play alone or in a team. Bring your own bat or borrow one." },
+            { key: "h", label: "Table Tennis Club", body: "Every day from four to nine, all ages. You can play alone or with a partner. Bring your own bat or borrow one." },
           ],
           items: [
             {
@@ -218,7 +218,7 @@ export const EN_A2_01: MockPaper = {
               text: "Ayla is twelve. She wants to play a team sport after school in the week.",
               answer: "f",
               explain:
-                "İlandaki yaş aralığı «from nine to fourteen years» ve zamanı «on Wednesdays after school». Ayla on iki yaşında, aralığın içinde. Masa tenisi de hafta içi ama orada takım zorunlu değil ve yaş sınırı yok; futbol ilanı iki ölçütü birden tutuyor.",
+                "İlandaki yaş aralığı «from nine to fourteen years» ve zamanı «on Wednesdays after school». Ayla on iki yaşında, aralığın içinde. Masa tenisi de hafta içi ama tek başına ya da eşli oynanıyor, takım sporu değil; futbol ilanı üç ölçütü birden tutuyor.",
             },
           ],
         },

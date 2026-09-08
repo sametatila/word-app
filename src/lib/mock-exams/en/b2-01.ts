@@ -589,10 +589,10 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
               kind: "match",
               id: "en-b2-01-l7-32",
               no: 32,
-              text: "Which text mentions a decision that was made together with the staff?",
+              text: "Which text mentions a decision that the staff were consulted about?",
               answer: "b",
               explain:
-                "Peter kararın kabul görmesini bir yönteme bağlıyor: «mainly because we asked them first rather than announcing it». Öteki üç metinde çalışanlara danışmaktan söz edilmiyor.",
+                "Peter kararın kabul görmesini bir yönteme bağlıyor: «mainly because we asked them first rather than announcing it» — karar alınmadan önce danışılmış. Öteki üç metinde çalışanlara danışmaktan hiç söz edilmiyor.",
             },
             {
               kind: "match",
