@@ -59,7 +59,7 @@ Bunlar cihaz işi değil; eksikse ilgili adım "ölçülemedi" kalır.
 | 0.1 | Apple Developer hesabı (ücretli), Team ID | Samet | 2'den sonrası |
 | 0.2 | App ID `app.lernomi.ios` + **Sign in with Apple** işaretli | Samet | 5.3 |
 | 0.3 | Sunucu `.env`'de `APPLE_BUNDLE_ID` dolu + deploy edilmiş | Samet (push) | 5.3 |
-| 0.4 | Google Cloud'da **iOS** OAuth istemcisi; id `googleAuth.ts` `IOS_CLIENT_ID`'ye, tersi `Info.plist` `CFBundleURLTypes`'a | Samet + kod | 5.2 |
+| 0.4 | Google Cloud'da **iOS** OAuth istemcisi (paket kimliği `app.lernomi.ios`), sonra `npm run google:ios -- <istemci-kimliği>` | Samet | 5.2 |
 | 0.5 | Sunucu `.env`'de `AZURE_SPEECH_KEY` + `AZURE_SPEECH_REGION` dolu | Samet | 7, 8.6, 8.7 |
 | 0.6 | RevenueCat iOS anahtarı (`billingConfig.ts` `iosKey`) | Samet | 9.5 (paywall ekranı anahtar boşken hiçbir yerden AÇILMIYOR) |
 | 0.7 | Parolası olan bir iPhone (kilit ekranı ve data protection testleri için) | — | 7, 8 |
@@ -252,12 +252,21 @@ zorunda — canlıda öyle).
 **Önce:** 5.1, 0.4 · **Kaynak:** C4, §5.10
 **Yap:** Çıkış yap, "Google ile devam et".
 **Geçti:** cihazın hesap seçici sayfası açılıyor, seçimden sonra oturum açılıyor.
-**Geçmezse:** `mobile/src/lib/googleAuth.ts` `IOS_CLIENT_ID` **ve** `Info.plist`
-`CFBundleURLTypes` içindeki ters client id — **ikisi birlikte** dolu olmalı, biri boş
-kalırsa giriş "invalid client" ile düşer. `webClientId` DEĞİŞMEZ: idToken'ın `aud`'u
-web client id olmaya devam ediyor ve sunucudaki `GOOGLE_CLIENT_ID` o.
-**Bugün:** `IOS_CLIENT_ID` boş; düğme `googleSupported()` ile gizli. Yani 0.4 yapılmadan
-bu adım "ölçülemedi"dir, "başarısız" değil.
+**Geçmezse, sırayla:** (1) `npm run ios:check` › "Google iOS istemcisi" ne diyor —
+KAPALI ise 0.4 yapılmamış, "yarım kurulum" ise iki dosyadan biri boş kalmış; (2) Google
+Console'daki iOS istemcisinin **paket kimliği** pbxproj'daki `PRODUCT_BUNDLE_IDENTIFIER`
+ile birebir aynı mı (`app.lernomi.ios`) — ayrışırsa "invalid client"; (3) `/api/config`
+`providers.google` true mu (sunucuda `GOOGLE_CLIENT_ID` + `SECRET`); (4)
+`mobile/src/lib/googleAuth.ts`.
+**Değişmeyen:** `webClientId`. Kütüphane onu `GIDConfiguration`a `serverClientID` olarak
+veriyor (`RNGoogleSignin.mm` `configure:`), Google da ID token'ın `aud`'unu ondan
+üretiyor — yani idToken'ın `aud`'u iOS'ta da **web** client id ve sunucudaki
+`GOOGLE_CLIENT_ID` onu doğruluyor. iOS istemcisi yalnız uygulamayı tanıtıyor.
+**İki yazım tek komutla:** kimlik `googleAuth.ts`'te düz, `Info.plist`'te TERS duruyor;
+ikisini `npm run google:ios -- <istemci-kimliği>` birlikte yazıyor, `--clear` geri
+kapatıyor. Elle yazmak yarım kurulum riski — kapı `check-ios.py`de.
+**Bugün:** kapalı; düğme `googleSupported()` ile gizli. Yani 0.4 yapılmadan bu adım
+"ölçülemedi"dir, "başarısız" değil.
 
 ### 5.3 · Apple ile Giriş
 **Önce:** 5.1, 0.2, 0.3 · **Kaynak:** C3, §5.11

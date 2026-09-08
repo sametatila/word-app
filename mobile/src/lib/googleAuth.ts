@@ -28,12 +28,26 @@ const WEB_CLIENT_ID = "658160017552-9vkn1d5rbie1utdspf5f61n497p668hu.apps.google
  * better-auth token'ı reddeder.
  *
  * BOŞ = iOS istemcisi henüz açılmadı (Google Cloud › Kimlik Bilgileri › OAuth
- * istemcisi › iOS, bundle kimliğiyle). Doldurulduğu gün TERS yazımı da
- * Info.plist'e CFBundleURLTypes olarak girmeli (Şerit P'ye teslim edildi,
- * docs/plan/ios-parity-A-teslim.md §1.2) — ikisi ayrışırsa giriş "invalid client"
- * ile düşer.
+ * istemcisi › iOS, paket kimliği `app.lernomi.ios`).
+ *
+ * ELLE DOLDURMA: aynı kimlik Info.plist'te de, TERS yazımla duruyor
+ * (`com.googleusercontent.apps.<num>-<karma>`) ve yalnız biri dolarsa giriş
+ * çalışmaz — üstelik iki yarım durumun hatası da yanıltıcı (biri hesap seçiciden
+ * geri dönemez, öteki düğmeyi hiç çizmez). İkisini tek komut yazıyor:
+ *
+ *     npm run google:ios -- <istemci-kimliği>      # aç
+ *     npm run google:ios -- --clear                # kapat
+ *
+ * Kapı `scripts/check-ios.py` › "Google iOS istemcisi": yarım kurulum CI'da düşer.
+ *
+ * `: string` ZORUNLU, süs değil. Olmasa TypeScript sabiti değişmez LİTERAL tip
+ * sayıyor; değer dolduğu an aşağıdaki `!== ""` karşılaştırması "bu iki tipin
+ * kesişimi yok" (TS2367) ile HATA veriyor ve `npx tsc --noEmit` — yani CI —
+ * kırılıyor. Yani kimliği doldurmak, başka hiçbir şey yapmadan, derlemeyi
+ * bozardı. Ölçüldü: örnek bir kimlikle koşuldu, hata çıktı, açıklama buraya
+ * düşüldü. Kaldırılmamalı.
  */
-const IOS_CLIENT_ID = "";
+const IOS_CLIENT_ID: string = "";
 
 /** iOS'ta Google girişi kurulu mu; Android'de her zaman true (istemci koda girmez). */
 export function googleSupported(): boolean {

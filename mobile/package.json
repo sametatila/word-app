@@ -12,6 +12,7 @@
     "i18n:scan": "node scripts/i18n-scan.js",
     "i18n:check": "node scripts/i18n-scan.js --check",
     "ios:check": "python3 scripts/check-ios.py",
+    "google:ios": "python3 scripts/set-google-ios-client.py",
     "release:check": "bash scripts/release-android.sh --check",
     "release:android": "bash scripts/release-android.sh",
     "release:ios": "bash scripts/ios-archive.sh",

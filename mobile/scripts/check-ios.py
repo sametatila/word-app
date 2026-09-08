@@ -519,6 +519,61 @@ def check_device_family():
     return hatalar, f"aile {sorted(aileler)[0] if aileler else '?'} — iPhone + iPad, 6.9\" ve 13\" kareleri"
 
 
+# --- 8. Google iOS istemcisi ---------------------------------------------------
+
+GOOGLE_TS = os.path.join(ROOT, "src", "lib", "googleAuth.ts")
+GOOGLE_YER_TUTUCU = "com.googleusercontent.apps.YER-TUTUCU"
+GOOGLE_ID = re.compile(r"^\d+-[a-z0-9]+\.apps\.googleusercontent\.com$")
+
+
+def check_google_ios():
+    """iOS Google istemcisi iki dosyada da AYNI şeyi söylüyor mu.
+
+    Kimlik iki ayrı yazımda duruyor: `googleAuth.ts` düz, `Info.plist` ters
+    (`com.googleusercontent.apps.<num>-<karma>`). Yalnız biri dolarsa giriş
+    çalışmaz ve hata yanıltıcı olur — kimlik dolu/şema boşsa kullanıcı hesabını
+    seçtikten sonra uygulamaya geri dönemez, şema dolu/kimlik boşsa düğme hiç
+    çizilmez (`googleSupported()`). İkisi de derlemeden geçer, ikisi de ancak
+    cihazda görülür. İki geçerli durum var: KAPALI (boş + yer tutucu) ve AÇIK
+    (dolu + tam tersi). Arası yok.
+
+    Yazma işi `scripts/set-google-ios-client.py`de; burası yalnız kapı.
+    """
+    hatalar = []
+    m = re.search(r'^const IOS_CLIENT_ID(?::\s*string)?\s*=\s*"(.*)";$', read(GOOGLE_TS), re.M)
+    if not m:
+        return [f"{rel(GOOGLE_TS)}: `const IOS_CLIENT_ID = \"...\";` satırı yok"], ""
+    client_id = m.group(1)
+
+    plist = plistlib.load(open(INFO_PLIST, "rb"))
+    semalar = [s for t in (plist.get("CFBundleURLTypes") or []) for s in (t.get("CFBundleURLSchemes") or [])]
+    google = [s for s in semalar if s.startswith("com.googleusercontent.apps.")]
+    if len(google) != 1:
+        return [f"Info.plist: com.googleusercontent.apps.* şeması {len(google)} tane (1 olmalı)"], ""
+    sema = google[0]
+
+    acik_kimlik = client_id != ""
+    acik_sema = sema != GOOGLE_YER_TUTUCU
+
+    if acik_kimlik != acik_sema:
+        dolu, bos = ("googleAuth.ts", "Info.plist") if acik_kimlik else ("Info.plist", "googleAuth.ts")
+        hatalar.append(
+            f"yarım kurulum: {dolu} dolu, {bos} boş — iOS'ta Google girişi bu hâlde ÇALIŞMAZ. "
+            "Düzeltme: `npm run google:ios -- <istemci-kimliği>` (ya da `-- --clear`)"
+        )
+        return hatalar, ""
+
+    if not acik_kimlik:
+        return [], "KAPALI — iOS istemcisi henüz açılmadı (Android etkilenmez)"
+
+    if not GOOGLE_ID.match(client_id):
+        hatalar.append(f"IOS_CLIENT_ID biçimi beklenen gibi değil: {client_id}")
+    beklenen = "com.googleusercontent.apps." + client_id[: -len(".apps.googleusercontent.com")]
+    if sema != beklenen:
+        hatalar.append(f"şema kimliğin tersi değil:\n         Info.plist: {sema}\n         beklenen  : {beklenen}")
+    return hatalar, f"AÇIK — {client_id}"
+
+
 DENETIMLER = [
     ("pbxproj bütünlüğü", check_pbxproj),
     ("sürüm üçlüsü", check_versions),
@@ -527,6 +582,7 @@ DENETIMLER = [
     ("dil beyanı ↔ .lproj", check_localizations),
     ("Swift/ObjC sözdizimi", check_sources),
     ("cihaz ailesi", check_device_family),
+    ("Google iOS istemcisi", check_google_ios),
 ]
 
 
