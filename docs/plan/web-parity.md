@@ -315,9 +315,9 @@ Arkadaşlar / kullanıcı / gelen kutusu / sosyal ayarlar ekranlarını yeni dil
 |---|---|---|
 | T — Tasarım dili | **bitti** | `7bc52e0` palet · `9ef1947` tipografi/yarıçap/gölge + kart + `.pressable`. Kalan tek kalem mobil `textMuted` (adım 6) |
 | K — Kabuk | **bitti** | `fb1ecf9` sekme başlığı + yüzen çubuk + ikonlar · `beedf5d` yığın başlığı · `9b88cb0` kap/ızgara/iskelet |
-| L — Öğren | başlanmadı | |
-| P — Patika | başlanmadı | |
-| B — Beceriler | başlanmadı | |
+| L — Öğren | **bitti** | `9d2c931` — merkez + `/learn/game` + üç yan mod kendi adresinde |
+| P — Patika | **bitti** | `f9b89d2` — mobil yerleşim, emoji yerine ikon, `/immersion/unit/[index]`, geniş ekranda iki panel |
+| B — Beceriler | **bitti** | `14d2cf0` — beş eşit seviye sekmesi, beceri renkleri, `CardGrid` |
 | R — Profil/Ayarlar | başlanmadı | |
 | S — Sosyal | başlanmadı | |
 | O — Onboarding | başlanmadı | |
