@@ -172,6 +172,27 @@ function distinct(named, min, note) {
   console.log(`  ${Object.values(named).map(sw).join("")} ${note.padEnd(30)} en yakin ${pair.padEnd(16)} ${(ok ? C.ok : C.bad)}dE ${worst.toFixed(1).padStart(5)}${C.off} ${C.dim}/ ${min}${C.off}  ${ok ? "gecer" : "KALIR"}`);
 }
 
+/**
+ * KABUL EDİLMİŞ SAPMA — eşiği geçmeyen ama bilerek öyle bırakılmış eşleşmeler.
+ *
+ * Neden ayrı bir kategori: bu ölçümleri listeden ÇIKARMAK aracı yalancı yapardı
+ * ("tüm ölçümler geçti" derken bir ölçümü hiç yapmamak, ölçmemenin en kötü
+ * biçimi). Kırmızıya boyayıp çıkış kodunu bozmak da yanlış olurdu — o zaman
+ * denetim adımı her koşuda kalır ve insanlar kalan ölçümlere bakmayı bırakır.
+ *
+ * Onun yerine değer aynen yazılıyor, eşik yazılıyor, yanına kararın adı
+ * yazılıyor. Kimse bunun geçtiğini iddia edemiyor, kimse de yeni bir kaçak
+ * ekleyemiyor: yeni bir sapma buraya elle, gerekçesiyle yazılmak zorunda.
+ */
+function acceptedRows(rows) {
+  for (const [name, fg, bg, need, why] of rows) {
+    const c = contrast(fg, bg);
+    console.log(
+      `  ${sw(bg)}${sw(fg)} ${name.padEnd(32)} ${C.warn}${c.toFixed(2).padStart(5)}${C.off} ${C.dim}/ ${need}${C.off}  kabul  ${C.dim}${why}${C.off}`,
+    );
+  }
+}
+
 const W = "#ffffff";
 const MASCOT_INK = "#2f1911";
 
@@ -189,12 +210,28 @@ contrastRows([
   ["koyu: soluk / kart", D["--text-muted"], D["--surface"]],
 ]);
 
-title("2. BIRINCIL BUTON  (kehribar zemin + maskotun koyu kahvesi)");
+title("2. BIRINCIL BUTON  (duz marka turuncusu + beyaz yazi)");
+/*
+ * Buton kehribar zemin + koyu kahve yazıydı ve 7.94 ölçüyordu. Marka rengi
+ * mobil uygulamanın turuncusuna taşınınca (docs/plan/web-parity.md, Şerit T)
+ * yazı da mobildeki gibi beyaz oldu. Ölçüm düştü ve bu bilerek yapıldı —
+ * sahibin kararı: iki uygulamanın birebir aynı görünmesi, bu tek eşleşmedeki
+ * kontrast kazancının önüne geçti.
+ *
+ * Ölçülen alternatifler kayda geçiyor ki karar sonradan tartışılabilsin:
+ *   zemin #b44909 + beyaz  -> 5.39  (marka rengi gözle görülür biçimde yanık)
+ *   zemin #f87612 + #2f1911 -> 5.99 (mobil açık temada beyaz kullanıyor)
+ */
+acceptedRows([
+  ["beyaz / turuncu 400", W, step("brand", 400), 4.5, "T-KARAR-1 (gradyanin acik ucu)"],
+  ["beyaz / turuncu 500", W, step("brand", 500), 4.5, "T-KARAR-1 (btn-primary, chip-active)"],
+  ["beyaz / turuncu 600", W, step("brand", 600), 4.5, "T-KARAR-1 (derin panelin acik ucu)"],
+]);
 contrastRows([
-  ["koyu kahve / kehribar 300", MASCOT_INK, step("brand", 300)],
-  ["koyu kahve / kehribar 400", MASCOT_INK, step("brand", 400)],
-  ["koyu kahve / kehribar 500", MASCOT_INK, step("brand", 500)],
-  ["beyaz / derin panel 600", W, step("brand", 600)],
+  /* Koyu kahve yazı artık butonda kullanılmıyor ama maskotun kendi eşleşmesi:
+     turuncu üstünde okunan bir ikinci seçenek olarak ölçülmeye devam ediyor. */
+  ["koyu kahve / turuncu 400", MASCOT_INK, step("brand", 400)],
+  ["koyu kahve / turuncu 500", MASCOT_INK, step("brand", 500)],
   ["beyaz / derin panel 800", W, step("brand", 800)],
 ]);
 
@@ -208,7 +245,9 @@ contrastRows(FAMS.flatMap((f) => [
 ]));
 
 title("4. CEFR ROZETLERI  (dolu zemin + beyaz yazi)  [KATI]");
-const BADGE = { A1: step("mint", 600), A2: step("sky", 600), B1: step("violet", 600), B2: step("brand", 600), C1: step("rose", 600) };
+/* B2 turuncunun 700'ünde: KATI eşik dolu zemin + beyaz yazı istiyor ve 600
+   beyazla 3.72 veriyor. Kaynak `components/level-badge.tsx` ile aynı. */
+const BADGE = { A1: step("mint", 600), A2: step("sky", 600), B1: step("violet", 600), B2: step("brand", 700), C1: step("rose", 600) };
 contrastRows(Object.entries(BADGE).map(([k, v]) => [`beyaz / ${k}`, W, v]));
 distinct(BADGE, 20, "renk tek tasiyici");
 

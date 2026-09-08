@@ -52,17 +52,30 @@
   --color-ink-900: #1e1916;
   --color-ink-950: #14100e;
 
-  /* Kehribar — maskotun kürkü. 100 ve 300 basamakları çizimden BİREBİR. */
-  --color-brand-50: #fef7ed;
-  --color-brand-100: #fae6c9;
-  --color-brand-200: #f5d3a4;
-  --color-brand-300: #eda45d;
-  --color-brand-400: #e08b38;
-  --color-brand-500: #c87318;
-  --color-brand-600: #a65c15;
-  --color-brand-700: #854a15;
-  --color-brand-800: #653916;
-  --color-brand-900: #452714;
+  /*
+   * Turuncu — MARKANIN KENDİSİ, logo zemininden. Rampa mobil uygulamanınkiyle
+   * BİREBİR aynı (`mobile/src/theme/colors.ts` `orange`).
+   *
+   * Burası eskiden kehribardı (#eda45d/#c87318): maskotun kürk tonundan
+   * ölçülmüştü ve kendi içinde tutarlıydı, ama mobil uygulama hiç oraya
+   * gitmemişti. Aynı ürünün iki yüzü iki ayrı marka rengi taşıyordu — telefonda
+   * canlı turuncu bir uygulama, tarayıcıda soluk kehribar bir uygulama.
+   * Kimlik mobilden gelir, çünkü logo ve uygulama simgesi zaten o turuncu.
+   *
+   * Kehribardan kalan tek şey ARA BASAMAKLARIN İŞİ: numaralı basamaklar sabit
+   * ve temadan bağımsız, numarasız `--color-brand` ise temaya göre okunan tonu
+   * gösterir (aşağıya bak).
+   */
+  --color-brand-50: #fff4e9;
+  --color-brand-100: #ffe3c4;
+  --color-brand-200: #ffc98d;
+  --color-brand-300: #ffab54;
+  --color-brand-400: #fb8f2a;
+  --color-brand-500: #f87612;
+  --color-brand-600: #db5f08;
+  --color-brand-700: #b44909;
+  --color-brand-800: #8f3a0f;
+  --color-brand-900: #74310f;
 
   /* Yosun — doğru cevap, A1, "das". 150° */
   --color-mint-200: #b6e8cc;
@@ -129,24 +142,48 @@
  * koyu temada açık tona dönerse yazı kaybolur. Oralarda sabit `-600` var.
  */
 :root {
-  --color-brand: var(--color-brand-600);
+  /*
+   * Turuncu YAZI olarak okunacaksa 700'e iniyor: 600 (#db5f08) beyaz kart
+   * üstünde 3.72 veriyor, eşik 4.5. 700 (#b44909) 5.39. Dolu zeminlerin
+   * turuncusu bundan bağımsız ve tam parlaklığında kalıyor (`.btn-primary`,
+   * `.chip-active`) — orada renk taşıyıcı, burada yazı.
+   */
+  --color-brand: var(--color-brand-700);
   --color-mint: var(--color-mint-600);
   --color-rose: var(--color-rose-600);
   --color-flame: var(--color-flame-600);
   --color-sky: var(--color-sky-600);
   --color-violet: var(--color-violet-600);
 
-  --bg: #fbf6ee;
+  /*
+   * Yüzeyler mobil paletle birebir (`mobile/src/theme/colors.ts` `light`).
+   * Fark küçüktü (#fbf6ee → #fbf7f2) ama iki uygulama yan yana konduğunda
+   * zemin sıcaklığı farkı görünüyordu; aynı değer, aynı zemin.
+   *
+   * TEK SAPMA `--text-muted`: mobilin değeri #8a7866 ve beyaz kart üstünde
+   * 4.23 veriyor (eşik 4.5). Web'in #7c6c5d'si 5.05. İki ton yan yana ayırt
+   * edilemiyor, yani görsel paritede kaybedilen bir şey yok; okunabilirlikte
+   * kazanılan var. Mobil tarafın da buraya çekilmesi gerekiyor
+   * (bkz. docs/plan/web-parity.md, Şerit T).
+   */
+  --bg: #fbf7f2;
   --surface: #ffffff;
-  --surface-2: #f6efe3;
-  --border: #e9decb;
-  --text: #2c2521;
+  --surface-2: #f5efe8;
+  --border: #ece3d8;
+  /* Kart içi ayraç — kenarlıktan daha sönük. Mobilde `hairline`. */
+  --hairline: #f1eae0;
+  --text: #241a12;
   --text-muted: #7c6c5d;
   color-scheme: light;
 }
 
 .dark {
-  --color-brand: var(--color-brand-300);
+  /*
+   * Koyu temada turuncu 400'de duruyor — mobilin koyu paletiyle aynı basamak
+   * (`colors.ts` `dark.primary = orange[400]`). Kart üstünde 7.41, yani yazı
+   * olarak da rahat okunuyor.
+   */
+  --color-brand: var(--color-brand-400);
   --color-mint: var(--color-mint-300);
   --color-rose: var(--color-rose-300);
   --color-flame: var(--color-flame-300);
@@ -154,15 +191,16 @@
   --color-violet: var(--color-violet-300);
 
   /*
-   * Koyu taraf maskotun kontur renginden (#2F1911) türetildi ama doygunluğu
-   * düşürüldü: konturun kendisi zemin olarak kullanıldığında uygulama kahverengi
-   * görünüyor, koyu değil. Sıcaklık kalıyor, renk çekiliyor.
+   * Koyu yüzeyler de mobil paletle birebir (`colors.ts` `dark`). Eskisi
+   * maskotun kontur renginden türetilmişti ve bir tık daha soğuk/koyuydu;
+   * mobilinki aynı fikri biraz daha sıcak tutuyor. İki taraf tek değer.
    */
-  --bg: #14100e;
-  --surface: #1e1916;
-  --surface-2: #2a231e;
-  --border: #3b322b;
-  --text: #f4eee4;
+  --bg: #17120e;
+  --surface: #211a14;
+  --surface-2: #2b221a;
+  --border: #3a2e23;
+  --hairline: #2b221a;
+  --text: #f6efe6;
   --text-muted: #a79684;
   color-scheme: dark;
 }
@@ -197,36 +235,37 @@
     color: var(--text-muted);
   }
   /*
-   * Marka gradyanı — kehribardan kestaneye. Önceki gradyan indigo→mor→gök
-   * maviydi; üç ayrı hue geçiyordu ve hiçbiri maskotta yoktu. Yeni gradyan
-   * maskotun kendi kürk tonları arasında geziniyor.
+   * Marka gradyanı — mobilin `gradientA`sı (`colors.ts`): açık turuncudan
+   * marka turuncusuna, dar bir aralıkta. Neredeyse düz görünüyor ve bilerek
+   * öyle: mobil kahraman kartları DÜZ turuncu, gradyan yalnız yüzeye hafif bir
+   * derinlik veriyor.
+   *
+   * Yazı beyaz. Kehribar dönemde koyu kahveydi (7.94) çünkü beyaz o zeminde
+   * 1.9'da kalıyordu; turuncuda beyaz 2.77 veriyor ve bu ölçüm EŞİĞİN ALTINDA
+   * — sahibin bilinçli kararı (bkz. docs/plan/web-parity.md T-KARAR-1): mobil
+   * uygulama açık temada aynı eşleşmeyi kullanıyor ve iki yüzeyin birebir aynı
+   * görünmesi, ölçümün önüne geçiyor. Ölçüm gizlenmiyor: palette-check.mjs
+   * değeri yazdırmaya devam ediyor, yalnız "kabul edilmiş sapma" diyor.
    */
   .brand-gradient {
     background-image: linear-gradient(
       135deg,
-      var(--color-brand-300),
-      var(--color-brand-400) 60%,
+      var(--color-brand-400),
       var(--color-brand-500)
     );
-    /*
-      Kehribarın üstündeki yazı koyu kahve — maskotun kendi eşleşmesi, 7.9
-      kontrast. Beyaz aynı zeminde 1.9'da kalıyor, yani okunmuyor: eski palet
-      indigoyken beyaz doğruydu, kehribarda değil.
-    */
-    color: #2f1911;
+    color: #ffffff;
   }
   /*
-    Büyük paneller için derin uç.
-
-    İki işi birden yapıyor: beyaz yazı taşıyabiliyor (5.0 ve üstü) ve üstündeki
-    MASKOT okunuyor. Kehribar zeminde kehribar bir mirket zemine gömülüyordu —
-    uygulama simgesinde de aynı sebeple kestane zemin seçildi.
+    Büyük paneller için derin uç — tur özeti, günün turu kapağı gibi tam
+    genişlikte turuncu yüzeyler. Mobilde bunların karşılığı düz `primary`;
+    burada 500→600 arası çok dar bir gradyan var, tek renk gibi okunuyor ama
+    geniş yüzeyde bantlaşmayı önlüyor.
   */
   .brand-gradient-deep {
     background-image: linear-gradient(
       135deg,
-      var(--color-brand-600),
-      var(--color-brand-800)
+      var(--color-brand-500),
+      var(--color-brand-600)
     );
     color: #ffffff;
   }
@@ -252,21 +291,25 @@
     transform: scale(0.97);
   }
   /*
-   * Birincil buton: kehribar zemin + KOYU KAHVE yazı.
+   * Birincil buton: DÜZ marka turuncusu + beyaz yazı — mobil uygulamayla
+   * birebir (`M/src/screens/SettingsScreen.tsx` "Kaydet", `AuthScreen` "Giriş
+   * yap", `PathScreen` "Devam et"). Gölge de mobilin `softShadow`u gibi geniş
+   * ve düşük opaklıkta.
    *
-   * Bu eşleşme maskotun kendisinden geliyor — kürk kehribar, kontur koyu kahve.
-   * Ölçümü de maskot kazanıyor: #2F1911 üstüne #EDA45D 7.94 kontrast veriyor,
-   * yani AAA. Beyaz yazı aynı kehribarda 1.9'da kalıyordu; markayı beyaz yazı
-   * taşıyacak kadar koyulaştırmak ise onu kahverengiye çeviriyor ve maskotun
-   * imza rengi ekrandan tamamen kayboluyordu.
+   * Ölçüm: beyaz / #f87612 = 2.77, WCAG AA eşiği 4.5. Bu bir gözden kaçma
+   * değil, kayda geçmiş bir ürün kararı — iki uygulamanın aynı görünmesi
+   * seçildi (docs/plan/web-parity.md, T-KARAR-1). Alternatifleri ölçüldü:
+   * zemini #b44909'a indirmek beyazla 5.39 veriyor ama marka rengini gözle
+   * görülür biçimde yakıyor; yazıyı #2f1911 yapmak 5.99 veriyor ama mobil
+   * açık temada beyaz kullanıyor.
    *
-   * İki temada da aynı: kehribar her iki zeminde de açık kalıyor, yani buton
+   * İki temada da aynı: turuncu her iki zeminde de açık kalıyor, yani buton
    * tema değiştiğinde kimlik değiştirmiyor.
    */
   .btn-primary {
-    color: #2f1911;
-    background-image: linear-gradient(135deg, var(--color-brand-300), var(--color-brand-400));
-    box-shadow: 0 8px 20px -10px var(--color-brand-600);
+    color: #ffffff;
+    background-color: var(--color-brand-500);
+    box-shadow: 0 10px 24px -12px var(--color-brand-700);
   }
   /*
    * Fare imleci OLAN cihazlarda üzerine gelme vurgusu.
@@ -336,12 +379,13 @@
   .chip:active {
     transform: scale(0.95);
   }
-  /* Seçili çip de birincil butonun dilini konuşuyor: kehribar zemin, koyu yazı. */
+  /* Seçili çip birincil butonun dilini konuşuyor: düz turuncu zemin, beyaz
+     yazı — mobildeki filtre çipiyle aynı (`M/src/screens/WordsScreen.tsx`). */
   .chip-active {
     border-color: transparent;
-    color: #2f1911;
-    background-image: linear-gradient(135deg, var(--color-brand-300), var(--color-brand-400));
-    box-shadow: 0 6px 16px -8px var(--color-brand-600);
+    color: #ffffff;
+    background-color: var(--color-brand-500);
+    box-shadow: 0 6px 16px -8px var(--color-brand-700);
   }
   /*
    * Seçili çipin içindeki ikincil metin.
@@ -356,10 +400,12 @@
    *
    * Çözüm rengi sabitlemek değil, aynı yazı rengini SAYDAMLAŞTIRMAK: sayı
    * çipin kendi yazı renginden türüyor, yani zemin değişse de birlikte
-   * değişiyor, ve saydamlık onu başlıktan geri planda tutuyor. %85 ölçülerek
-   * seçildi — geçişin en koyu ucunda 4.84:1, en açık ucunda 6.16:1; ikisi de
-   * küçük metin için AA eşiğinin (4.5) üstünde. Çipin kendi etiketi 6.25:1,
-   * yani sıralama korunuyor: önce etiket, sonra sayı.
+   * değişiyor, ve saydamlık onu başlıktan geri planda tutuyor. %85 oranı o
+   * dönemde ölçülerek seçilmişti (kehribar zemin + koyu kahve yazı).
+   *
+   * Zemin turuncuya, yazı beyaza döndüğünde oranın işi değişmedi — hâlâ
+   * etiketle sayı arasında bir sıralama kuruyor — ama mutlak kontrast artık
+   * çipin kendi kararına bağlı (bkz. `.btn-primary` notu, T-KARAR-1).
    */
   .chip-active .muted {
     color: color-mix(in srgb, currentColor 85%, transparent);

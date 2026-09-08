@@ -10,11 +10,19 @@ import { motion } from "framer-motion";
  * C1 eskiden hardaldı; B2'nin kehribarıyla ΔE 14.9 veriyordu ve rozette rengi
  * açıklayan bir etiket yok — iki seviye birbirine karışıyordu. Kiremitle 26.1.
  */
+  /*
+   * B2 turuncunun 700'ünde, diğerleri 600'de. Sebep ölçüm: rozet DOLU zemin +
+   * beyaz yazı ve renk tek taşıyıcı (yanında rengi açıklayan etiket yok), yani
+   * KATI eşik geçerli. Marka turuncusuna geçildiğinde 600 (#db5f08) beyazla
+   * 3.72 veriyordu; 700 (#b44909) 5.39. Birincil butonun kabul edilmiş sapması
+   * (T-KARAR-1) buraya UZANMIYOR: orada zeminin markanın kendisi olması bir
+   * kimlik kararı, burada zemin bir bilgi taşıyıcısı.
+   */
 const TONE: Record<string, string> = {
   A1: "var(--color-mint-600)",
   A2: "var(--color-sky-600)",
   B1: "var(--color-violet-600)",
-  B2: "var(--color-brand-600)",
+  B2: "var(--color-brand-700)",
   C1: "var(--color-rose-600)",
 };
 

@@ -240,7 +240,7 @@ export function AppShell({
                 key={item.href}
                 href={item.href}
                 className={`relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors ${
-                  active ? "text-[color:#2f1911]" : "muted hover:text-[color:var(--text)]"
+                  active ? "text-white" : "muted hover:text-[color:var(--text)]"
                 }`}
               >
                 {active && (
