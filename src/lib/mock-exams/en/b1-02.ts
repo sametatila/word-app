@@ -783,7 +783,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               situation: "İki arkadaş bir kurstan söz ediyor.",
               plays: 2,
               segments: [
-                { speaker: "Petra", text: "Is the repair café worth going to?" },
+                { speaker: "Hanne", text: "Is the repair café worth going to?" },
                 { speaker: "Alp", text: "Go, but not with a broken laptop. They are wonderful with lamps and kettles, and honest about what they cannot do." },
               ],
             },

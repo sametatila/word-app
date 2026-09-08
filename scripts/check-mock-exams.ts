@@ -23,6 +23,7 @@
  * markası geçmemeli; geçerse bu bir hata.
  */
 import { MOCK_PAPERS } from "../src/lib/mock-exams";
+import { foldAnswer } from "../src/lib/mock-exams/scoring";
 import {
   MOCK_SKILL_ORDER,
   partPoints,
@@ -222,8 +223,17 @@ function checkItem(where: string, item: MockItem, task: MockTask) {
   if (item.kind === "gap") {
     if (!item.accept.length) fail(where, "kabul edilen cevap listesi boş");
     if (item.accept.some((a) => !a.trim())) fail(where, "kabul listesinde boş giriş var");
-    const norm = item.accept.map((a) => a.trim().toLowerCase());
-    if (new Set(norm).size !== norm.length) fail(where, "kabul listesinde tekrar var");
+    /*
+      Tekrar denetimi PUANLAMANIN katlamasıyla yapılıyor, ham dizeyle değil.
+      Ham karşılaştırma "sixty-one" ile "sixty one"ı ayrı sayıyor, oysa
+      `foldAnswer` ikisini de aynı şeye indiriyor: liste iki giriş taşıyor ama
+      tek bir yazımı kabul ediyor. Bu, listeyi yazanın kapsadığını sandığı
+      biçimlerden daha azını kapsaması demek — sessiz bir eksiklik.
+    */
+    const norm = item.accept.map(foldAnswer);
+    if (new Set(norm).size !== norm.length) {
+      fail(where, `kabul listesi katlamadan sonra çakışıyor (aynı yazımı iki kez sayıyor): ${JSON.stringify(item.accept)}`);
+    }
 
     if (task.format === "transform") {
       /*

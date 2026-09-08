@@ -299,11 +299,11 @@ The most likely future is therefore a mixed one, with different fields making di
               kind: "gap",
               id: "en-b2-02-l4-19",
               no: 19,
-              text: "The editors cancelled the interview because of the storm.\nThe interview ______ because of the storm.",
-              cue: "OFF",
-              accept: ["was called off", "had been called off"],
+              text: "It is not worth reading the release before the paper.\nThere ______ reading the release before the paper.",
+              cue: "POINT",
+              accept: ["is no point in", "is little point in"],
               explain:
-                "Etken cümle edilgene çevriliyor ve `cancel` yerine öbek fiil isteniyor. Anahtar sözcük `off` değişmeden, öbek fiilin ikinci parçası olarak kalıyor: «was called off». Zaman bağlama göre geçmiş öncesi de olabilir.",
+                "«It is not worth + -ing» yapısı, `there is no point in + -ing` kalıbına çevriliyor. Anahtar sözcük `point` kalıbın çekirdeği ve ardından `in` gelmek zorunda; `no point to` ya da `no point of` yaygın hatalardır. `little` ile kurulan yumuşak biçim de kabul edilir.",
             },
             {
               kind: "gap",

@@ -436,9 +436,9 @@ Leyla`,
               id: "en-a2-01-l5-23",
               no: 23,
               text: "Gap 23",
-              accept: ["must", "will", "have"],
+              accept: ["must", "will"],
               explain:
-                "Arabaları olmadığı için tren zorunlu: «so we ___ take the train». Zorunluluk `must` ile, gelecek planı `will` ile kurulur; `have` de `have to` kalıbının ilk sözcüğü olarak kabul edilir. Üçü de aynı anlamı verir.",
+                "Arabaları olmadığı için tren zorunlu: «so we ___ take the train». Zorunluluk `must`, plan ise `will` ile kurulur; ikisi de tek sözcük olarak boşluğa girer. `have` kabul edilmiyor, çünkü bu anlamı ancak `have to` iki sözcüğüyle verir ve yönerge boşluk başına TEK sözcük istiyor.",
             },
             {
               kind: "gap",

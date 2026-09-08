@@ -880,6 +880,10 @@ function Result({
                   </span>
                   <div className="min-w-0">
                     <p className="whitespace-pre-line text-sm font-semibold leading-relaxed" lang={paper.course}>{it.no}. {it.text}</p>
+                    {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
+                    {it.kind === "gap" && it.cue ? (
+                      <p className="mt-1 text-sm font-bold tracking-wide" lang={paper.course} style={{ color: "var(--color-brand)" }}>{it.cue}</p>
+                    ) : null}
                     {!ok ? <p className="muted mt-1 text-sm">Senin cevabın: {s?.given || "boş"}</p> : null}
                     <p className="mt-1 text-sm" style={{ color: ok ? "var(--color-success)" : undefined }}>Doğru cevap: {s?.expected ?? expected(it, task)}</p>
                     <p className="muted mt-1 text-sm leading-relaxed">{it.explain}</p>

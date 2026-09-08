@@ -1074,6 +1074,10 @@ function ResultView({
                     </View>
                     <View style={{ flex: 1 }}>
                       <Text variant="bodyStrong" style={{ lineHeight: 22 }}>{it.no}. {it.text}</Text>
+                      {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
+                      {it.kind === "gap" && it.cue ? (
+                        <Text variant="bodyStrong" color={colors.primary} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{it.cue}</Text>
+                      ) : null}
                       {!ok ? (
                         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>
                           {t("mockexam.your_answer")}: {givenLabel}

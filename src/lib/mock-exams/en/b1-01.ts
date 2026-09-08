@@ -519,7 +519,7 @@ You write that the lane has made the journey slower for drivers. This is true, b
 
 If the council {{28}} removed the lane last year, those passengers would be in cars today, and the road would be worse for everybody.
 
-I have lived in this street for eleven years and I have never seen the pavement so busy. People are walking again, {{29}} they used to drive two hundred metres to the shop.
+I have lived in this street for eleven years and I have never seen the pavement so busy. People are walking again in the street {{29}} they used to drive two hundred metres to the shop.
 
 The lane is not perfect. But it should be judged {{30}} the number of people it moves, not by the speed of a single car.`,
             },
@@ -559,7 +559,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               text: "Gap 29",
               accept: ["where"],
               explain:
-                "İki durum yer üzerinden karşılaştırılıyor: insanlar artık yürüyor, oysa eskiden markete iki yüz metre araba kullanıyorlardı. `where` bu yer ilişkisini kurar ve `used to` ile geçmiş alışkanlığı bağlar; `when` zaman ilişkisi kurardı ve cümledeki mesafe bilgisiyle uyuşmaz.",
+                "Öncül bir yer: «on the street ___ they used to drive». Yer öncülüne bağlanan ilgi bağlacı `where` olur. `when` zaman öncülü ister, `which` ve `that` ise bu yapıda bir edat olmadan gelemez — dolayısıyla tek doğru sözcük `where`.",
             },
             {
               kind: "gap",

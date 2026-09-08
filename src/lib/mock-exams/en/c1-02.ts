@@ -330,7 +330,7 @@ They hold that a standard should carry an explicit account of its own {{17}}: th
               no: 22,
               text: "She only understood the problem after the meeting.\nIt ______ after the meeting that she understood the problem.",
               cue: "NOT",
-              accept: ["was not until", "was only not until"],
+              accept: ["was not until"],
               explain:
                 "Yarma cümle kuruluyor: «It was not until after the meeting that …». Anahtar sözcük `not` bu kalıbın parçası ve vurgulanan öge zaman; `only` ile kurulan özgün cümlenin anlamı aynen korunuyor.",
             },
@@ -895,7 +895,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
               no: 8,
               ref: "b1",
               text: "Gap 8",
-              accept: ["61", "sixty-one", "sixty one"],
+              accept: ["61", "sixty-one"],
               explain:
                 "«sixty-one are still working in the trade» — meslekte kalan sayı. Bu sayı aynı zamanda konuşmacının memnun olduğu tutunma oranının payını veriyor.",
             },
@@ -955,7 +955,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
               no: 14,
               ref: "b1",
               text: "Gap 14",
-              accept: ["mixed-age", "mixed age", "mixed"],
+              accept: ["mixed-age", "mixed"],
               explain:
                 "«mixed-age cohorts outperformed same-age cohorts on every measure we tried» — karma yaşlı gruplar üstün çıkmış. Konuşmacı sebebini bilmediğini de açıkça söylüyor.",
             },

@@ -978,7 +978,7 @@ The most valuable material has come from the {{14}} visits.`,
               no: 14,
               ref: "b1",
               text: "Gap 14",
-              accept: ["follow-up", "follow up"],
+              accept: ["follow-up"],
               explain:
                 "«the most valuable material has come not from the interviews themselves but from the follow-up visits» — asıl değer sonraki ziyaretlerde, çünkü insanlar önemsiz sandıkları belgeleri o zaman çıkarıyor.",
             },

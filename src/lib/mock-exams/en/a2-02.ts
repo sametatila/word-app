@@ -298,7 +298,7 @@ Put your passport in the same pocket every time. People {{17}} lose it in the qu
 
 Trains to the airport are often {{18}} than taxis, and they are cheaper too. Look at the timetable the night before.
 
-And finally: {{19}} you have a long wait, take a book. Your phone battery is shorter than the day.`,
+And finally: {{19}} you have a long wait, take a book. Your phone battery will not last all day.`,
             },
           ],
           items: [
