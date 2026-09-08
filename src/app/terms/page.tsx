@@ -104,7 +104,8 @@ export default function TermsPage() {
         <li><strong>Satın alma:</strong> Premium, uygulamayı indirdiğin mağazanın kendi ödeme sistemiyle satın alınır: Android&apos;de Google Play Faturalandırma{hasIos() ? <>, iOS&apos;ta Apple uygulama içi satın alma</> : null}. Ödemeyi mağaza işler ve mağazanın kendi hizmet şartları da geçerlidir. Fiyat, para birimi, süre, deneme koşulları ve vergiler satın alma anında mağaza tarafından gösterilir; bu bilgiler 6502 sayılı Kanun ve Mesafeli Sözleşmeler Yönetmeliği kapsamındaki ön bilgilendirmeyi oluşturur.</li>
         <li><strong>Yenileme ve iptal:</strong> Abonelik, dönem sonundan en az 24 saat önce iptal edilmezse aynı süreyle yenilenir. İptal, aboneliği aldığın mağazadan yapılır: Play Store &rsaquo; Ödemeler ve abonelikler{hasIos() ? <>, iOS&apos;ta Ayarlar &rsaquo; Apple Hesabı &rsaquo; Abonelikler</> : null}. Hesap silmek aboneliği iptal etmez. Ücretsiz deneme bitmeden iptal edersen ücret alınmaz.</li>
         <li><strong>Cayma hakkı:</strong> Dijital içerik hizmeti satın alma anında ifa edilmeye başlandığından, Mesafeli Sözleşmeler Yönetmeliği m.15/1-ğ ve AB Tüketici Hakları Direktifi m.16(m) uyarınca cayma hakkı, ifaya başlanmasına verdiğin onayla sona erer; satın alma ekranında bu onay istenir. Mağazanın kendi iade politikası ayrıca uygulanır ve mağazanın kabul ettiği iadeleri biz de tanırız{hasIos() ? <> — Google Play için Play desteği, Apple için reportaproblem.apple.com</> : null}.</li>
-        <li><strong>Fiyat değişikliği:</strong> Fiyat değişikliğini yürürlükten önce mağaza üzerinden bildiririz; kabul etmezsen aboneliği iptal edebilirsin.</li>
+        <li><strong>Fiyat değişikliği:</strong> Abonelik ücreti zamanla değişebilir. Kural şu: <strong>ödediğin dönemin fiyatı o dönem boyunca değişmez</strong> — bir artış hiçbir zaman geriye yürümez ve yalnızca bir sonraki yenilemeden itibaren geçerli olur. Bir artıştan önce mağaza üzerinden (e-posta ve mağaza bildirimi) en az <strong>30 gün</strong> önceden, yeni tutar ve yürürlük tarihiyle birlikte bilgilendirilirsin. Artışın büyüklüğüne ve mağazanın kurallarına göre iki yol işler: küçük ve seyrek artışlarda abonelik, sen iptal etmediğin sürece yeni fiyatla yenilenir; bunun dışındaki artışlarda <strong>açık onayın aranır</strong> ve onay vermezsen abonelik yenilenmeden sona erer. Her iki durumda da yürürlük tarihinden önce iptal edersen yeni fiyat senden tahsil edilmez. Para birimi, bölge ya da vergi oranı değişikliklerinden (ör. KDV) kaynaklanan tutar farkları mağaza tarafından uygulanır ve bu maddedeki bildirim süresine tabi değildir.</li>
+        <li><strong>Tanıtım fiyatları ve hediye süreler:</strong> Ücretsiz deneme, indirimli giriş fiyatı, promosyon kodu ve davet ödülü <strong>yalnız belirtilen süre için</strong> geçerlidir; süre bitince standart fiyat uygulanır ve bu bilgi satın alma anında gösterilir. Hediye ya da kodla kazanılan süre bir para alacağı değildir: nakde çevrilemez, devredilemez ve gelecekteki fiyatların sabit kalacağı anlamına gelmez.</li>
         <li><strong>Satış belgesi:</strong> Satışı mağaza yapar ve belgeyi mağaza düzenleyip mağaza hesabındaki e-posta adresine gönderir; belge talebini mağazanın desteğine iletirsin. Yayıncı bir şirket değil, gerçek kişidir ve mobil uygulama geliştiriciliği kazanç istisnası kapsamında olduğundan ayrıca fatura düzenlemez.</li>
       </ul>
 
@@ -115,6 +116,12 @@ export default function TermsPage() {
         {FAIR_USE.pronounceRequestsPerDay} istek, içerik bildirimi {FAIR_USE.reportsPerDay}. Sınıra ulaşınca uygulama bunu gösterir ve ertesi
         gün açılır. Sınırlar dürüst ağır kullanımın çok üstündedir; yalnız otomasyon ve kötüye kullanımı engellemek içindir ve gerektiğinde
         güncellenebilir.
+      </p>
+      <p>
+        Premium&apos;un kendi günlük adil kullanım sınırları da vardır (cepte yürüyüş turu ve yapay zekâ değerlendirmesi). Bu sınırlar
+        ürünle birlikte ayarlandığı için burada sabit bir sayı yazılmaz; <strong>yürürlükteki değerler uygulamadaki Premium sayfasında</strong>{" "}
+        açıkça gösterilir ve satın almadan önce görülebilir. Bir sınır düşürülürse değişiklik aynı sayfada duyurulur. Premium hiçbir yerde
+        &ldquo;sınırsız&rdquo; olarak tanıtılmaz.
       </p>
 
       <h2>7b. Üçüncü taraf hizmetler</h2>

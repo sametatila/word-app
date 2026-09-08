@@ -45,16 +45,17 @@
  * Yürürlük tarihi ve sürüm. İkisi de EN YENİ değişikliği anlatır ve
  * LEGAL_CHANGELOG'un ilk kaydıyla aynı olmak zorundadır.
  *
- * iOS yayın gününde ikisi de değişecek (→ "1.3" ve o günün tarihi); ne yazılacağı
+ * iOS yayın gününde ikisi de değişecek (→ "1.4" ve o günün tarihi); ne yazılacağı
  * ve kaydın metni IOS_LAUNCH_ENTRY'de hazır bekliyor.
  *
- * 1.2.1 yama numarası aldı, 1.3 DEĞİL: "1.3" iOS yayınına ayrılmış ve o günün
- * üç adımlı yordamı aşağıda yazılı. Yama basamağı, hak/yükümlülük/veri işleme
- * değiştirmeyen bir adlandırma düzeltmesini anlatıyor — okuyucu sürüm listesinde
- * esaslı değişiklikle terim değişikliğini ayırt edebilsin diye.
+ * "1.3" ÖNCE iOS'a ayrılmıştı, sonra abonelik maddesine verildi. Sebep: fiyat
+ * değişikliği, promosyon kodu ve davet ödülü maddeleri hak ve yükümlülük
+ * DEĞİŞTİRİYOR, yani yama basamağı (1.2.2) onları hafife alırdı — okuyucu sürüm
+ * listesinde esaslı değişikliği terim düzeltmesinden ayırt edebilmeli. iOS kaydı
+ * bir sürüm kaydırıldı; yordamı aynı, yalnız numarası "1.4".
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-07";
-export const LEGAL_VERSION = "1.2.1";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-08";
+export const LEGAL_VERSION = "1.3";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
@@ -225,7 +226,7 @@ export type LegalChangelogEntry = {
  * bayrağın arkasında duruyor.
  */
 const IOS_LAUNCH_ENTRY: LegalChangelogEntry = {
-  version: "1.3",
+  version: "1.4",
   date: LEGAL_EFFECTIVE_DATE,
   changes: {
     tr: [
@@ -255,6 +256,27 @@ const IOS_LAUNCH_ENTRY: LegalChangelogEntry = {
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
   // Bayrak kapalıyken bu kayıt listede YOK; açıldığı gün kendiliğinden başa gelir.
   ...(LEGAL_PLATFORMS.ios ? [IOS_LAUNCH_ENTRY] : []),
+  {
+    version: "1.3",
+    date: "2026-09-08",
+    changes: {
+      tr: [
+        "Abonelik ücretinin nasıl değişebileceği ayrıntılı yazıldı: ödediğin dönemin fiyatı o dönem boyunca değişmez, artış geriye yürümez ve yalnız bir sonraki yenilemede geçerli olur; her artış en az 30 gün önceden mağaza üzerinden bildirilir. Artışın büyüklüğüne göre ya iptal etmediğin sürece yeni fiyattan yenilenir ya da açık onayın aranır — onay vermezsen abonelik yenilenmeden sona erer. Yürürlükten önce iptal edersen yeni fiyat tahsil edilmez.",
+        "Tanıtım fiyatları ve hediye süreler için ayrı bir madde eklendi: ücretsiz deneme, indirimli giriş fiyatı, promosyon kodu ve davet ödülü yalnız belirtilen süre geçerlidir; kazanılan süre nakde çevrilemez, devredilemez ve gelecekteki fiyatı sabitlemez.",
+        "Premium'un adil kullanım sınırları metne girdi (günlük cepte yürüyüş turu ve yapay zekâ değerlendirmesi). Sabit bir sayı YAZILMADI: sınır üründe ayarlanabilir olduğu için metin, yürürlükteki değerin gösterildiği yeri (uygulamadaki Premium sayfası) işaret ediyor. Sayı buraya yazılsaydı bir ayar değişikliği sözleşmeyi sürüm artışı ve bildirim olmadan sessizce değiştirirdi.",
+      ],
+      en: [
+        "How the subscription price can change is now spelled out: the price you paid holds for the period you paid for, an increase never applies retroactively and only takes effect at the next renewal, and every increase is announced through the store at least 30 days in advance. Depending on its size it either renews at the new price unless you cancel, or requires your explicit consent — without which the subscription ends instead of renewing. Cancel before the effective date and you are not charged the new price.",
+        "A separate clause covers promotional prices and gifted time: a free trial, a discounted introductory price, a promo code and a referral reward are valid only for the stated period; time gained cannot be cashed out or transferred and does not fix future prices.",
+        "Premium fair-use limits entered the text (daily pocket-walk rounds and AI evaluations). No fixed number is written: because the limit is adjustable in the product, the text points to where the value in force is shown (the Premium page in the app). Writing the number here would let a settings change alter the contract silently, without a version bump or notice.",
+      ],
+      de: [
+        "Wie sich der Abopreis ändern kann, steht jetzt ausführlich da: Der bezahlte Preis gilt für den bezahlten Zeitraum, eine Erhöhung wirkt nie rückwirkend und greift erst bei der nächsten Verlängerung; jede Erhöhung wird mindestens 30 Tage vorher über den Store angekündigt. Je nach Höhe verlängert sich das Abo zum neuen Preis, sofern du nicht kündigst, oder es ist deine ausdrückliche Zustimmung nötig — ohne sie endet das Abo, statt sich zu verlängern. Kündigst du vor dem Stichtag, wird der neue Preis nicht berechnet.",
+        "Eine eigene Klausel behandelt Aktionspreise und geschenkte Laufzeit: kostenlose Testphase, vergünstigter Einführungspreis, Aktionscode und Einladungsprämie gelten nur für den angegebenen Zeitraum; gewonnene Laufzeit ist nicht auszahlbar, nicht übertragbar und schreibt künftige Preise nicht fest.",
+        "Die Fair-Use-Grenzen von Premium kamen in den Text (tägliche Taschen-Geh-Runden und KI-Bewertungen). Es steht keine feste Zahl darin: Da die Grenze im Produkt einstellbar ist, verweist der Text auf die Stelle, an der der geltende Wert angezeigt wird (die Premium-Seite in der App). Stünde die Zahl hier, würde eine Einstellungsänderung den Vertrag still ändern — ohne Versionssprung und ohne Mitteilung.",
+      ],
+    },
+  },
   {
     version: "1.2.1",
     date: "2026-09-07",
