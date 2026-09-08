@@ -5,6 +5,7 @@ import { getUserId } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { WordProgress } from "@/components/progress-view";
 import { WordList, type WordRow } from "@/components/word-list";
+import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +19,7 @@ export default async function WordsPage({
   searchParams: Promise<Search>;
 }) {
   const sp = await searchParams;
+  const t = await getT();
   const userId = await getUserId();
   if (!userId) return null;
 
@@ -29,9 +31,11 @@ export default async function WordsPage({
   const page = Math.max(0, Number(sp.page ?? 0) || 0);
 
   const filters: SQL[] = [];
+  let course = "de";
   // Liste yalnızca aktif kursun kelimelerini gösterir (de ↔ gsw-zh).
   try {
     const profile = await ensureProfile(userId);
+    course = profile.course;
     filters.push(eq(words.course, profile.course));
   } catch {
     filters.push(eq(words.course, "de"));
@@ -121,9 +125,14 @@ export default async function WordsPage({
         page={page}
         hasMore={hasMore}
         query={{ q, level, status }}
+        course={course}
         progressSummary={
           progress
-            ? `${mastered.toLocaleString("tr-TR")} pekişti · ${seen.toLocaleString("tr-TR")} görüldü · ${progress.dueNow} tekrar sırada`
+            ? t("words.progress_summary", {
+                mastered: mastered.toLocaleString("tr-TR"),
+                seen: seen.toLocaleString("tr-TR"),
+                due: progress.dueNow,
+              })
             : undefined
         }
         progress={

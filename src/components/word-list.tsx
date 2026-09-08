@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import { useT, useLang } from "@/lib/i18n/client";
+import { LANG_LABEL } from "@/lib/i18n/dict";
+import { courseName } from "@/lib/courses";
 import { useRouter, useSearchParams } from "next/navigation";
 import { trackOnce } from "@/lib/track";
 import { AnimatePresence, motion } from "framer-motion";
@@ -35,28 +38,29 @@ const ARTIKEL_TONE: Record<string, string> = {
   das: "var(--color-mint)",
 };
 
+/** Seviye süzgeci — "Tümü" dışındakiler zaten dilden bağımsız (CEFR kodu). */
 const LEVELS = [
-  { id: "", label: "Tümü" },
-  { id: "A1", label: "A1" },
-  { id: "A2", label: "A2" },
-  { id: "B1", label: "B1" },
-  { id: "B2", label: "B2" },
-  { id: "C1", label: "C1" },
+  { id: "", labelKey: "words.filter_all" },
+  { id: "A1", labelKey: "" },
+  { id: "A2", labelKey: "" },
+  { id: "B1", labelKey: "" },
+  { id: "B2", labelKey: "" },
+  { id: "C1", labelKey: "" },
 ];
 
 const STATUSES = [
-  { id: "", label: "Hepsi" },
-  { id: "new", label: "Görülmemiş" },
-  { id: "learning", label: "Öğreniliyor" },
-  { id: "mastered", label: "Pekişmiş" },
+  { id: "", labelKey: "words.filter_all" },
+  { id: "new", labelKey: "words.status_new" },
+  { id: "learning", labelKey: "words.status_learning" },
+  { id: "mastered", labelKey: "words.status_mastered" },
 ];
 
-function statusOf(r: WordRow): { label: string; tone: string } {
-  if (r.leech) return { label: "zorlanıyorsun", tone: "var(--color-rose)" };
-  if (r.intervalDays == null) return { label: "yeni", tone: "var(--text-muted)" };
-  if (r.intervalDays >= 21) return { label: "pekişmiş", tone: "var(--color-mint)" };
-  if (r.intervalDays >= 3) return { label: "tanıdık", tone: "var(--color-sky)" };
-  return { label: "öğreniliyor", tone: "var(--color-flame)" };
+function statusOf(r: WordRow): { labelKey: string; tone: string } {
+  if (r.leech) return { labelKey: "words.status_leech", tone: "var(--color-rose)" };
+  if (r.intervalDays == null) return { labelKey: "words.status_new", tone: "var(--text-muted)" };
+  if (r.intervalDays >= 21) return { labelKey: "words.status_mastered", tone: "var(--color-mint)" };
+  if (r.intervalDays >= 3) return { labelKey: "words.status_familiar", tone: "var(--color-sky)" };
+  return { labelKey: "words.status_learning", tone: "var(--color-flame)" };
 }
 
 function dueLabel(dueAt: string | null): string | null {
@@ -75,6 +79,7 @@ export function WordList({
   query,
   progress,
   progressSummary,
+  course = "de",
 }: {
   rows: WordRow[];
   total: number;
@@ -85,7 +90,14 @@ export function WordList({
   progress?: ReactNode;
   /** Kapalıyken de görünen tek satırlık özet. */
   progressSummary?: string;
+  /** Arama kutusunun ipucu metni hedef dilin adını söylüyor. */
+  course?: string;
 }) {
+  /* Çevirmen `tx` adında: aşağıda arama kutusunun zamanlayıcısı `t` adını
+     kullanıyor ve iki `t` aynı kapsamda duramaz. Mobil tarafta da aynı
+     sebeple `tx` deniyor (bkz. M/src/screens/FriendsScreen.tsx). */
+  const tx = useT();
+  const lang = useLang();
   const [showProgress, setShowProgress] = useState(false);
   const router = useRouter();
   const params = useSearchParams();
@@ -131,8 +143,8 @@ export function WordList({
       */}
       <PageBack
         fallback="/learn"
-        title="Kelimelerim"
-        subtitle={`${total.toLocaleString("tr-TR")} kelime · A1'den C1'e`}
+        title={tx("words.my_words")}
+        subtitle={tx("words.subtitle", { n: total.toLocaleString("tr-TR") })}
       />
 
       {/*
@@ -154,7 +166,7 @@ export function WordList({
             className="flex w-full items-center gap-3 px-4 py-3 text-left"
           >
             <span className="min-w-0 flex-1">
-              <span className="block text-sm font-bold">İlerlemem</span>
+              <span className="block text-strong">{tx("appheader.progress")}</span>
               {progressSummary ? <span className="muted block text-xs">{progressSummary}</span> : null}
             </span>
             <motion.span
@@ -187,7 +199,7 @@ export function WordList({
         <input
           value={term}
           onChange={(e) => setTerm(e.target.value)}
-          placeholder="Almanca, Türkçe veya İngilizce ara…"
+          placeholder={tx("words.search", { target: courseName(course, lang), nativeLang: LANG_LABEL[lang] })}
           className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
         />
         <div className="flex flex-wrap items-center gap-2">
@@ -198,7 +210,7 @@ export function WordList({
               aria-pressed={query.level === l.id}
               className={`chip px-3 py-1.5 text-xs ${query.level === l.id ? "chip-active" : ""}`}
             >
-              {l.label}
+              {l.labelKey ? tx(l.labelKey) : l.id}
             </button>
           ))}
           <span className="mx-1 h-5 w-px" style={{ background: "var(--border)" }} />
@@ -209,7 +221,7 @@ export function WordList({
               aria-pressed={query.status === s.id}
               className={`chip px-3 py-1.5 text-xs ${query.status === s.id ? "chip-active" : ""}`}
             >
-              {s.label}
+              {tx(s.labelKey)}
             </button>
           ))}
         </div>
@@ -217,7 +229,7 @@ export function WordList({
 
       {rows.length === 0 ? (
         <div className="card p-8 text-center">
-          <p className="muted text-sm">Bu filtreye uyan kelime yok.</p>
+          <p className="muted text-sm">{tx("words.no_words_found")}</p>
         </div>
       ) : (
         <ul className="space-y-2">
@@ -261,7 +273,7 @@ export function WordList({
                     </p>
                   </div>
                   <span className="shrink-0 text-xs font-semibold" style={{ color: st.tone }}>
-                    {st.label}
+                    {tx(st.labelKey)}
                   </span>
                   <span className="muted shrink-0 text-xs">{r.niveau}</span>
                 </button>

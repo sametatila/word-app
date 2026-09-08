@@ -152,4 +152,8 @@ export const deWeb: Record<string, string> = {
   "proficiency.grammar_practice": "Grammatikübung",
   "proficiency.next_conversation": "nächstes Gespräch",
   "plan.word_round": "Wortrunde",
+  "words.subtitle": "{n} Wörter · A1 bis C1",
+  "words.status_leech": "schwierig",
+  "words.status_familiar": "vertraut",
+  "words.progress_summary": "{mastered} gefestigt · {seen} gesehen · {due} fällig",
 };

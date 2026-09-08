@@ -152,4 +152,8 @@ export const enWeb: Record<string, string> = {
   "proficiency.grammar_practice": "Grammar practice",
   "proficiency.next_conversation": "next conversation",
   "plan.word_round": "Word round",
+  "words.subtitle": "{n} words · A1 to C1",
+  "words.status_leech": "struggling",
+  "words.status_familiar": "familiar",
+  "words.progress_summary": "{mastered} mastered · {seen} seen · {due} due",
 };

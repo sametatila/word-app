@@ -175,4 +175,8 @@ export const trWeb: Record<string, string> = {
   "proficiency.grammar_practice": "Dilbilgisi çalışması",
   "proficiency.next_conversation": "sıradaki konuşma",
   "plan.word_round": "Kelime turu",
+  "words.subtitle": "{n} kelime · A1'den C1'e",
+  "words.status_leech": "zorlanıyorsun",
+  "words.status_familiar": "tanıdık",
+  "words.progress_summary": "{mastered} pekişti · {seen} görüldü · {due} tekrar sırada",
 };
