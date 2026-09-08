@@ -6,7 +6,8 @@ import { ensureProfile } from "@/lib/session";
 import { listExerciseMeta, type SkillMeta } from "@/lib/skills";
 import { immersionCompletion } from "@/lib/immersion/progress";
 import { SKILL_LABELS, SKILL_ORDER } from "@/lib/skills/meta";
-import { LEVEL_TONE, SKILL_ICON } from "@/components/skills/theme";
+import { SKILL_ICON, SKILL_TINT } from "@/components/skills/theme";
+import { CardGrid } from "@/components/layout";
 import { CheckIcon, ChevronRightIcon } from "@/components/icons";
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -68,7 +69,6 @@ export default async function SkillsPage({
     console.error("[skills] ilerleme okunamadı", err);
   }
 
-  const withContent = LEVELS.filter((lv) => metas.some((m) => m.level === lv));
   const doneCount = atLevel.filter((m) => done(m.id)).length;
 
   return (
@@ -97,28 +97,39 @@ export default async function SkillsPage({
         <ChevronRightIcon className="size-4 shrink-0" />
       </Link>
 
-      {withContent.length > 1 ? (
-        <nav className="mb-4 flex flex-wrap gap-2" aria-label="Seviye">
-          {withContent.map((lv) => {
-            const active = lv === level;
-            return (
-              <Link
-                key={lv}
-                href={`/skills?level=${lv}`}
-                aria-current={active ? "page" : undefined}
-                className="rounded-lg border px-3 py-1.5 text-sm font-bold"
-                style={{
-                  borderColor: active ? "transparent" : "var(--border)",
-                  background: active ? (LEVEL_TONE[lv] ?? "var(--color-brand)") : "transparent",
-                  color: active ? "#fff" : "var(--text-muted)",
-                }}
-              >
-                {lv}
-              </Link>
-            );
-          })}
-        </nav>
-      ) : null}
+      {/*
+        Seviye seçici — mobildeki gibi EŞİT GENİŞLİKTE BEŞ sekme.
+
+        Önce yalnız içeriği olan seviyeler çiziliyordu ve çipler CEFR
+        renklerini (nane, turkuaz, erik…) dolu zemin olarak taşıyordu. İkisi de
+        yanlıştı. Beş yerine üç çip, seviyenin bir ÖLÇEK olduğunu gizliyordu:
+        kullanıcı B2'nin var olduğunu görmüyordu bile. CEFR rengi de burada
+        anlam taşımıyor — o renk rozette seviyeyi AYIRT etmek için var, burada
+        ise tek bir şey söylenmesi gerekiyor: hangisi seçili.
+      */}
+      <p className="muted mb-2 ml-1 text-caption tracking-wide">Seviye</p>
+      <nav className="mb-4 flex gap-2" aria-label="Seviye">
+        {LEVELS.map((lv) => {
+          const active = lv === level;
+          return (
+            <Link
+              key={lv}
+              href={`/skills?level=${lv}`}
+              aria-current={active ? "page" : undefined}
+              className="pressable flex-1 rounded-tile py-2.5 text-center text-strong"
+              style={{
+                border: `1.5px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,
+                background: active
+                  ? "color-mix(in srgb, var(--color-brand-500) 14%, transparent)"
+                  : "var(--surface)",
+                color: active ? "var(--color-brand)" : "var(--text-muted)",
+              }}
+            >
+              {lv}
+            </Link>
+          );
+        })}
+      </nav>
 
       {atLevel.length ? (
         <p className="muted mb-3 text-xs font-semibold">
@@ -126,31 +137,37 @@ export default async function SkillsPage({
         </p>
       ) : null}
 
-      {SKILL_ORDER.map((skill) => {
-        const list = atLevel.filter((m) => m.skill === skill);
-        if (!list.length) return null;
-        const Icon = SKILL_ICON[skill];
-        return (
-          <section key={skill} className="mb-5">
-            <h2 className="mb-2 flex items-center gap-2 px-1 text-sm font-bold">
-              <Icon size={16} />
-              {SKILL_LABELS[skill]}
-              <span className="muted font-semibold">({list.length})</span>
-            </h2>
-            <ul className="card divide-y" style={{ borderColor: "var(--border)" }}>
-              {list.map((m) => (
-                <li key={m.id}>
-                  <Row meta={m} done={done(m.id)} />
-                </li>
-              ))}
-            </ul>
-          </section>
-        );
-      })}
+      {/* Geniş ekranda beceri bölümleri yan yana: tek sütunda okuma bitmeden
+          dinlemeyi görmek için kaydırmak gerekiyordu. Telefonda hiç
+          sarmalamıyor, düzen birebir eskisi. */}
+      <CardGrid min={440}>
+        {SKILL_ORDER.map((skill) => {
+          const list = atLevel.filter((m) => m.skill === skill);
+          if (!list.length) return null;
+          const Icon = SKILL_ICON[skill];
+          const tint = SKILL_TINT[skill];
+          return (
+            <section key={skill} className="mb-5">
+              <h2 className="mb-2 ml-1 flex items-center gap-2 text-h3">
+                <Icon size={18} style={{ color: tint }} />
+                {SKILL_LABELS[skill]}
+                <span className="muted text-caption">{list.length} alıştırma</span>
+              </h2>
+              <ul className="card divide-y px-4" style={{ borderColor: "var(--hairline)" }}>
+                {list.map((m) => (
+                  <li key={m.id}>
+                    <Row meta={m} done={done(m.id)} tint={tint} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        })}
+      </CardGrid>
 
       {!atLevel.length ? (
-        <p className="card p-5 text-sm" style={{ color: "var(--text-muted)" }}>
-          Bu atLevel henüz beceri çalışması yok.
+        <p className="card p-5 text-body" style={{ color: "var(--text-muted)" }}>
+          Bu seviyede henüz okuma, dinleme ya da yazma çalışması yok.
         </p>
       ) : null}
 
@@ -159,27 +176,29 @@ export default async function SkillsPage({
   );
 }
 
-function Row({ meta, done }: { meta: SkillMeta; done: boolean }) {
+function Row({ meta, done, tint }: { meta: SkillMeta; done: boolean; tint: string }) {
   return (
     <Link
       href={`/immersion/skill/${meta.id}?from=skills`}
-      className="flex items-center gap-3 px-4 py-3"
+      className="pressable flex items-center gap-3 py-3"
     >
+      {/* Nokta: biten yosun, bitmeyen becerinin kendi rengi. Mobilde de öyle —
+          renk hem durumu hem hangi beceride olunduğunu taşıyor. */}
       <span
         aria-hidden
         className="h-2 w-2 shrink-0 rounded-full"
-        style={{ background: done ? "var(--color-mint)" : "var(--border)" }}
+        style={{ background: done ? "var(--color-mint-500)" : tint }}
       />
       <span className="min-w-0 flex-1">
-        <span className="block truncate font-semibold">{meta.title}</span>
-        <span className="muted block text-xs">
+        <span className="block truncate text-strong">{meta.title}</span>
+        <span className="muted block text-caption">
           {meta.genre} · {meta.minutes} dk · {meta.items} madde
         </span>
       </span>
       {done ? (
-        <CheckIcon size={16} className="shrink-0 text-[color:var(--color-mint)]" />
+        <CheckIcon size={18} className="shrink-0" style={{ color: "var(--color-mint)" }} />
       ) : (
-        <ChevronRightIcon size={18} className="shrink-0" style={{ color: "var(--text-faint)" }} />
+        <ChevronRightIcon size={20} className="muted shrink-0" />
       )}
     </Link>
   );
