@@ -1,0 +1,153 @@
+import React, { useCallback, useEffect, useState } from "react";
+import { View, ScrollView, ActivityIndicator, RefreshControl } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParams } from "../navigation/RootStack";
+import { t } from "../lib/i18n";
+import { Text } from "../ui/Text";
+import { Card } from "../ui/Card";
+import { PressableScale } from "../ui/PressableScale";
+import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
+import { fetchMockStats, type MockStats } from "../game/mockExam";
+import { mockPaperById } from "../data/exams";
+import { useTheme, spacing, radii } from "../theme";
+
+/**
+ * Deneme sınavı istatistiği.
+ *
+ * Üç kırılım var çünkü üçü üç ayrı soruya cevap veriyor: BÖLÜM "hangi becerim
+ * zayıf", SEVİYE "bu seviyeyi geçiyor muyum", GEÇMİŞ "ilerliyor muyum".
+ * Dördüncü blok yarım kalan denemeler — sınav yarıda bırakıldıysa kullanıcı
+ * bunu ancak burada görür.
+ *
+ * Sayılar SUNUCUDAN geliyor ve yalnız sunucuda puanlanmış denemeleri
+ * kapsıyor: ağ yokken çözülen bir bölüm istatistiğe girmiyor ve oynatıcı bunu
+ * o ekranda da söylüyor.
+ */
+export function MockStatsScreen() {
+  const { colors } = useTheme();
+  const insets = useSafeAreaInsets();
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const [data, setData] = useState<MockStats | null>(null);
+  const [err, setErr] = useState(false);
+  const [busy, setBusy] = useState(true);
+
+  const load = useCallback(async () => {
+    setBusy(true);
+    try {
+      setData(await fetchMockStats());
+      setErr(false);
+    } catch {
+      setErr(true);
+    }
+    setBusy(false);
+  }, []);
+  useEffect(() => { void load(); }, [load]);
+
+  const label = (paperId: string) => {
+    const p = mockPaperById(paperId);
+    return p ? `${p.level} · ${t("mockexams.paper", { n: p.no })}` : paperId;
+  };
+
+  return (
+    <View style={{ flex: 1, backgroundColor: colors.bg }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+        <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <ArrowBackIcon color={colors.text} size={24} />
+        </PressableScale>
+        <Text variant="h2">{t("mockstats.title")}</Text>
+      </View>
+
+      <ScrollView
+        contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}
+        showsVerticalScrollIndicator={false}
+        refreshControl={<RefreshControl refreshing={busy && !!data} onRefresh={() => void load()} tintColor={colors.primary} />}
+      >
+        {busy && !data ? (
+          <View style={{ paddingTop: spacing.xxl, alignItems: "center" }}><ActivityIndicator color={colors.primary} /></View>
+        ) : err ? (
+          <Card padded><Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("mockstats.needs_session")}</Text></Card>
+        ) : !data || data.attempts === 0 ? (
+          <>
+            {data?.running?.length ? <Running data={data} colors={colors} nav={nav} label={label} /> : null}
+            <Card padded><Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>{t("mockstats.empty")}</Text></Card>
+          </>
+        ) : (
+          <>
+            {data.running.length ? <Running data={data} colors={colors} nav={nav} label={label} /> : null}
+
+            <Card padded style={{ marginBottom: spacing.md }}>
+              <Text variant="micro" color={colors.textMuted}>{t("mockstats.by_skill")}</Text>
+              {data.bySkill.map((s) => (
+                <View key={s.skill} style={{ marginTop: spacing.sm }}>
+                  <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
+                    <Text variant="body">{t(`mockexam.skill_${s.skill}`)}</Text>
+                    <Text variant="bodyStrong" color={s.pct >= 60 ? colors.success : colors.danger}>%{s.pct}</Text>
+                  </View>
+                  <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: 4 }}>
+                    <View style={{ height: 4, borderRadius: 2, width: `${s.pct}%`, backgroundColor: s.pct >= 60 ? colors.success : colors.danger }} />
+                  </View>
+                  <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>
+                    {t("mockstats.attempts_best", { n: s.attempts, best: s.best })}
+                  </Text>
+                </View>
+              ))}
+            </Card>
+
+            <Card padded style={{ marginBottom: spacing.md }}>
+              <Text variant="micro" color={colors.textMuted}>{t("mockstats.by_level")}</Text>
+              {data.byLevel.map((l) => (
+                <View key={l.level} style={{ flexDirection: "row", justifyContent: "space-between", marginTop: spacing.sm }}>
+                  <Text variant="body">{l.level}</Text>
+                  <Text variant="bodyStrong">{t("mockstats.passed_of", { passed: l.passed, n: l.attempts })}</Text>
+                </View>
+              ))}
+            </Card>
+
+            <Card padded>
+              <Text variant="micro" color={colors.textMuted}>{t("mockstats.recent")}</Text>
+              {data.recent.map((r) => (
+                <View key={r.id} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.sm }}>
+                  <View style={{ flex: 1 }}>
+                    <Text variant="body">{label(r.paperId)} · {t(`mockexam.skill_${r.skill}`)}</Text>
+                    <Text variant="micro" color={colors.textMuted}>{t("mockexam.score", { correct: r.correct, total: r.total })}</Text>
+                  </View>
+                  <Text variant="bodyStrong" color={r.passed ? colors.success : colors.danger}>%{r.score}</Text>
+                </View>
+              ))}
+            </Card>
+          </>
+        )}
+      </ScrollView>
+    </View>
+  );
+}
+
+function Running({
+  data, colors, nav, label,
+}: {
+  data: MockStats;
+  colors: ReturnType<typeof useTheme>["colors"];
+  nav: NativeStackNavigationProp<RootStackParams>;
+  label: (id: string) => string;
+}) {
+  return (
+    <Card padded style={{ marginBottom: spacing.md }}>
+      <Text variant="micro" color={colors.textMuted}>{t("mockstats.running")}</Text>
+      {data.running.map((r) => (
+        <PressableScale
+          key={r.id}
+          onPress={() => nav.navigate("MockExam", { paperId: r.paperId, skill: r.skill })}
+          style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm, paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.md, backgroundColor: colors.surface2 }}
+        >
+          <View style={{ flex: 1 }}>
+            <Text variant="bodyStrong">{label(r.paperId)} · {t(`mockexam.skill_${r.skill}`)}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("mockstats.at_task", { n: r.taskIx + 1 })}</Text>
+          </View>
+          <ChevronRightIcon color={colors.textMuted} size={20} />
+        </PressableScale>
+      ))}
+    </Card>
+  );
+}

@@ -71,11 +71,28 @@ export type MockRubric = {
 export type MockFormat =
   | "mcq" | "truefalse" | "yesno" | "match" | "gap" | "gapMcq" | "notes" | "mixed" | "writing" | "speaking";
 
+/**
+ * Karşılıklı konuşmanın tek adımı: `partner` replikleri sesle okunur (TTS),
+ * `you` adımlarında mikrofon açılır ve söylenen cihazın tanıyıcısıyla yazıya
+ * çevrilir (STT). Ses sunucuya gitmez, yalnız döküm gider.
+ */
+export type MockTurn =
+  | { who: "partner"; de: string; tr: string }
+  | { who: "you"; hint: string; expect: string; seconds: number };
+
 export type MockTask = {
   id: string;
   no: number;
   format: MockFormat;
   goal: string;
+  /** Görevin kendi süresi (dakika); yoksa bölüm süresi bölüştürülür. */
+  minutes?: number;
+  /** Konuşma görevinde hazırlık süresi (saniye). */
+  prepSeconds?: number;
+  /** Tek kişilik konuşma görevinde konuşma süresi (saniye). */
+  speakSeconds?: number;
+  /** Karşılıklı konuşma adımları. */
+  exchange?: MockTurn[];
   prompt: string;
   promptTr: string;
   texts?: MockStimulus[];
@@ -112,6 +129,43 @@ export const MOCK_PASS_PCT = 60;
 export function partPoints(part: MockPart): number {
   return part.tasks.reduce((a, t) => a + (t.format === "writing" || t.format === "speaking" ? 0 : t.items.length), 0);
 }
+
+const wordCount = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
+
+/**
+ * Görevlere düşen süre (saniye) — `src/lib/mock-exams/types.ts` içindeki
+ * `taskSeconds` ile AYNI kural.
+ *
+ * İki yerde durmasının nedeni paket: mobil `src/` göremiyor, kâğıt JSON
+ * olarak geliyor. İkisi birlikte değişir; ayrılırlarsa oynatıcının saati
+ * kâğıdın kendi süresiyle çelişir.
+ */
+function workload(task: MockTask): number {
+  let w = 0;
+  for (const s of task.texts ?? []) {
+    if (s.kind === "text") w += wordCount(s.body) / 120;
+    else w += (s.segments.reduce((a, x) => a + wordCount(x.text), 0) / 140) * s.plays + 0.25;
+  }
+  for (const o of task.options ?? []) w += wordCount(`${o.label} ${o.body ?? ""}`) / 120;
+  w += task.items.length * 0.5;
+  if (task.format === "writing") w += (task.rubric?.minWords ?? 40) / 8;
+  if (task.format === "speaking") w += task.rubric?.minutes ?? 3;
+  return Math.max(w, 0.5);
+}
+
+export function taskSeconds(part: MockPart): number[] {
+  const total = part.minutes * 60;
+  const explicit = part.tasks.map((t) => (t.minutes ? t.minutes * 60 : null));
+  if (explicit.every((x) => x !== null)) return explicit as number[];
+  const weights = part.tasks.map(workload);
+  const sum = weights.reduce((a, x) => a + x, 0) || 1;
+  const out = weights.map((w) => Math.max(60, Math.round((total * w) / sum)));
+  out[out.length - 1] += total - out.reduce((a, x) => a + x, 0);
+  return out;
+}
+
+/** Yazma/konuşma görevi mi — nesnel puanı olmayan görevler. */
+export const isOpenTask = (t: MockTask) => t.format === "writing" || t.format === "speaking";
 
 /** Hedef dili Almanca olan kurslar bu kataloğu görür. */
 const BY_TARGET: Record<string, MockPaper[]> = { de: ALL };

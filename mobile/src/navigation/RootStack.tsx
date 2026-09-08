@@ -7,6 +7,7 @@ import { ProfileScreen } from "../screens/ProfileScreen";
 import { AvatarScreen } from "../screens/AvatarScreen";
 import { MockExamsScreen } from "../screens/MockExamsScreen";
 import { MockExamScreen } from "../screens/MockExamScreen";
+import { MockStatsScreen } from "../screens/MockStatsScreen";
 import { ExamScreen } from "../screens/ExamScreen";
 import { WalkModeScreen } from "../screens/WalkModeScreen";
 import { PaywallScreen } from "../screens/PaywallScreen";
@@ -48,6 +49,8 @@ export type RootStackParams = {
   MockExams: undefined;
   /** Deneme sınavının TEK bölümü — kâğıt kimliği + hangi beceri. */
   MockExam: { paperId: string; skill: "reading" | "listening" | "writing" | "speaking" };
+  /** Deneme sınavı istatistiği — bölüm, seviye ve geçmiş kırılımı. */
+  MockStats: undefined;
   /** Sınav: modül (module = 0..) ya da seviye sınavı (module = null). */
   Exam: { level: string; module: number | null };
   Walk: undefined;
@@ -98,6 +101,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Avatar" component={AvatarScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="MockExams" component={MockExamsScreen} layout={wideColumnLayout} />
       <Stack.Screen name="MockExam" component={MockExamScreen} layout={contentColumnLayout} />
+      <Stack.Screen name="MockStats" component={MockStatsScreen} layout={contentColumnLayout} />
       <Stack.Screen name="Exam" component={ExamScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Walk" component={WalkModeScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />

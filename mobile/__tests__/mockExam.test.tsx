@@ -7,7 +7,23 @@ import { ThemeProvider } from "../src/theme";
 import { AuthProvider } from "../src/lib/AuthContext";
 import { MockExamScreen } from "../src/screens/MockExamScreen";
 import { MockExamsScreen } from "../src/screens/MockExamsScreen";
-import { mockPapersFor, mockPaperById, partPoints } from "../src/data/exams";
+import { isOpenTask, mockPapersFor, mockPaperById, partPoints, taskSeconds } from "../src/data/exams";
+import { foldAnswer, isItemCorrect, offlineScore } from "../src/game/mockExam";
+
+// Ekran açılır açılmaz yönergeyi sesli okuyor ve konuşma görevinde mikrofonu
+// açıyor. İkisi de gerçek cihaz işi; testte sahtesi kullanılıyor, yoksa
+// tanıyıcının ve sentezleyicinin zamanlayıcıları testten sonra da yaşıyor.
+jest.mock("../src/lib/tts", () => ({
+  speakAndWaitVoiced: jest.fn(async () => {}),
+  speakTarget: jest.fn(),
+  ttsAvailable: jest.fn(async () => false),
+}));
+jest.mock("../src/lib/stt", () => ({
+  ensureMicPermission: jest.fn(async () => false),
+  sttAvailable: jest.fn(async () => false),
+  listenOnce: jest.fn(async () => null),
+  stopListening: jest.fn(),
+}));
 
 /**
  * Deneme sınavı paketi ve ekranları.
@@ -113,6 +129,49 @@ describe("deneme sınavı paketi", () => {
     }
   });
 
+  it("görev süreleri bölümün süresini tam dolduruyor", () => {
+    // Dijital oturumda saat görev başına işliyor; toplam kâğıtta yazan süreyle
+    // çelişemez, yoksa öğrencinin gördüğü süre kâğıdın süresi olmaz.
+    for (const level of LEVELS) {
+      for (const p of mockPapersFor(COURSE, level)) {
+        for (const part of p.parts) {
+          const secs = taskSeconds(part);
+          expect(secs).toHaveLength(part.tasks.length);
+          expect(secs.reduce((a, x) => a + x, 0)).toBe(part.minutes * 60);
+          expect(Math.min(...secs)).toBeGreaterThanOrEqual(60);
+        }
+      }
+    }
+  });
+
+  it("konuşma görevleri fazlı ve karşılıklı olanlarda adımlar var", () => {
+    for (const level of LEVELS) {
+      for (const p of mockPapersFor(COURSE, level)) {
+        const part = p.parts.find((x) => x.skill === "speaking")!;
+        for (const task of part.tasks) {
+          expect(task.prepSeconds).toBeGreaterThan(0);
+          if (task.goal === "production") {
+            expect(task.speakSeconds).toBeGreaterThan(0);
+          } else {
+            const ex = task.exchange ?? [];
+            expect(ex.length).toBeGreaterThan(0);
+            // Konuşmayı açan sınavda hep karşı taraftır.
+            expect(ex[0].who).toBe("partner");
+            const mine = ex.filter((x) => x.who === "you");
+            expect(mine.length).toBeGreaterThanOrEqual(2);
+            for (const turn of mine) {
+              if (turn.who !== "you") continue;
+              expect(turn.hint.trim()).toBeTruthy();
+              expect(turn.expect.trim()).toBeTruthy();
+              expect(turn.seconds).toBeGreaterThanOrEqual(15);
+              expect(turn.seconds).toBeLessThanOrEqual(120);
+            }
+          }
+        }
+      }
+    }
+  });
+
   it("kurum ve sınav markası hiçbir alanda geçmiyor", () => {
     const brands = /(^|[^\p{L}])(goethe|telc|ösd|oesd|testdaf|dsh|dtz|öif|oeif|modellsatz)($|[^\p{L}])/iu;
     for (const level of LEVELS) {
@@ -161,5 +220,60 @@ describe("deneme sınavı ekranları", () => {
     const paper = mockPaperById("de-b1-01")!;
     expect(paper.parts.some((p) => p.skill === skill)).toBe(true);
     await render(<Harness name="MockExam" component={MockExamScreen} params={{ paperId: paper.id, skill }} />);
+  });
+});
+
+/* ── puanlama ─────────────────────────────────────────────────────────────── */
+
+describe("cevap karşılaştırma", () => {
+  // Bu kural `src/lib/mock-exams/scoring.ts` içindeki `foldAnswer` ile aynı.
+  // İkisi ayrılırsa öğrenci ekranda doğru görünen bir cevabın sunucuda yanlış
+  // sayıldığını görür; testin ölçtüğü şey tam bu.
+  it.each([
+    ["Straße", "strasse"],
+    ["Gartenstraße 21", "gartenstrasse 21"],
+    ["  Zwei   Jahresgehälter ", "zwei jahresgehaelter"],
+    ["04.03.1990", "04 03 1990"],
+    ["Bezug nehmend auf", "bezug nehmend auf"],
+  ])("%s → %s", (raw, folded) => {
+    expect(foldAnswer(raw)).toBe(folded);
+  });
+
+  it("boşluk maddesi kabul listesindeki her biçimi kabul ediyor", () => {
+    const paper = mockPaperById("de-a1-01")!;
+    const part = paper.parts.find((p) => p.skill === "writing")!;
+    const gap = part.tasks[0].items.find((i) => i.kind === "gap")!;
+    if (gap.kind !== "gap") return;
+    for (const ok of gap.accept) expect(isItemCorrect(gap, ok)).toBe(true);
+    expect(isItemCorrect(gap, "")).toBe(false);
+    expect(isItemCorrect(gap, "kesinlikle yanlış")).toBe(false);
+  });
+
+  it("boş bırakılan madde her zaman yanlış", () => {
+    const paper = mockPaperById("de-b1-01")!;
+    const part = paper.parts.find((p) => p.skill === "reading")!;
+    const s = offlineScore(part, {});
+    expect(s.correct).toBe(0);
+    expect(s.total).toBe(part.tasks.filter((t) => !isOpenTask(t)).reduce((a, t) => a + t.items.length, 0));
+    expect(s.passed).toBe(false);
+  });
+
+  it("tamamı doğru cevaplanınca puan yüz", () => {
+    const paper = mockPaperById("de-a2-01")!;
+    const part = paper.parts.find((p) => p.skill === "listening")!;
+    const answers: Record<string, string> = {};
+    for (const task of part.tasks) {
+      for (const it of task.items) {
+        if (it.kind === "mcq") answers[it.id] = String(it.answer);
+        else if (it.kind === "bool") answers[it.id] = it.answer ? "true" : "false";
+        else if (it.kind === "match") answers[it.id] = it.answer;
+        else answers[it.id] = it.accept[0];
+      }
+    }
+    const s = offlineScore(part, answers);
+    expect(s.pct).toBe(100);
+    expect(s.passed).toBe(true);
+    // Hedef kırılımı da dolu olmalı: zayıf beceriyi gösteren tek yer orası.
+    expect(s.byGoal.length).toBeGreaterThan(0);
   });
 });

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { View, ScrollView, TextInput } from "react-native";
+import { View, ScrollView, TextInput, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { t } from "../lib/i18n";
@@ -7,89 +7,75 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
-import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon } from "../ui/icons";
+import { ArrowBackIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon } from "../ui/icons";
 import { speakAndWaitVoiced } from "../lib/tts";
 import { voicesFor } from "../lib/voices";
-import { foldCompare } from "../lib/textFold";
-import { currentCourseId } from "../lib/courses";
+import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
+import { currentCourseId, currentTargetLocale } from "../lib/courses";
 import {
+  isOpenTask,
   mockPaperById,
   MOCK_PASS_PCT,
+  taskSeconds,
   type MockItem,
   type MockPart,
   type MockStimulus,
   type MockTask,
 } from "../data/exams";
+import {
+  assessOpen,
+  blankCount,
+  finishAttempt,
+  isItemCorrect,
+  offlineScore,
+  saveAttempt,
+  startAttempt,
+  type Attempt,
+  type MockFeedback,
+  type MockScore,
+  type OpenScore,
+} from "../game/mockExam";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
 /**
- * Deneme sınavı oynatıcısı — TEK BÖLÜM.
+ * Deneme sınavı oynatıcısı — TEK BÖLÜM, dijital oturum kurallarıyla.
  *
  * NEDEN BÖLÜM BÖLÜM. Bir A1 kâğıdı 80, bir C1 kâğıdı 205 dakika sürüyor.
  * Telefonda tek oturumda çözülecek bir şey değil ve gerçek sınavlar da
- * modüler: bölümler ayrı ayrı alınabiliyor. Bu yüzden ekran her seferinde tek
- * bir bölümü (Lesen / Hören / Schreiben / Sprechen) çalıştırıyor ve süre o
- * bölümün kendi süresi.
+ * modüler: bölümler ayrı ayrı alınabiliyor.
  *
- * ÜÇ AŞAMA: `kapak` (yönerge + başla), `sinav` (görev görev), `sonuc`
- * (puan + çözümler). Açıklamalar sınav SIRASINDA gösterilmiyor; her maddenin
- * `explain` alanı yalnız son ekranda okunuyor. Ölçme sırasında geri bildirim
- * vermek ölçümü bozar.
+ * DİJİTAL OTURUM KURALLARI. Gerçek dijital sınavlarda saat BÖLÜM değil GÖREV
+ * başına işler, süre dolunca bir sonraki göreve otomatik geçilir ve bitmiş
+ * bir göreve GERİ DÖNÜLMEZ. Üçü de burada uygulanıyor. Bu bir kısıtlama
+ * değil ölçümün parçası: geri dönebilen öğrenci zaman baskısını hiç
+ * yaşamıyor ve deneme sınavı asıl işini yapmıyor.
  *
- * DİNLEME. Kayıt yok; metin cihazın/köprünün sesiyle okunuyor. Konuşmacılar
- * kursun iki sesi arasında dönüşümlü dağıtılıyor, böylece diyalogda kimin
- * konuştuğu duyulabiliyor. `plays` alanı gerçek sınavın "bir kez / iki kez"
- * ayrımını taşıyor ve oynatıcı bunu SINIR olarak uyguluyor — hakkı biten
- * düğme kapanıyor.
+ * SESLİ YÖNERGE. Bölüm başında bölümün yönergesi, her görevin başında
+ * görevin yönergesi Almanca okunuyor. Gerçek oturumda yönergeler kayıttan
+ * gelir; okumadan geçen öğrenci sınavda da okumadan geçer.
  *
- * PUANLAMA yerelde ve yalnız nesnel maddeler için. Yazma ve konuşma bölümleri
- * ölçüt listesi ve örnek cevapla birlikte gösteriliyor; makine puanı yok ve
- * bu ekranda uydurulmuyor. Sonuç sunucuya YAZILMIYOR: deneme sınavı sonucu
- * için henüz bir tablo yok, sahte bir kayıt üretmektense sonuç oturumda kalıyor.
+ * KONUŞMA. Fazlı: önce hazırlık sayacı, sonra konuşma. Karşılıklı görevlerde
+ * karşı tarafın replikleri sesle okunuyor (TTS) ve cevap cihazın
+ * tanıyıcısıyla yazıya çevriliyor (STT). SES SUNUCUYA GİTMİYOR, yalnız döküm
+ * gidiyor ve değerlendirme onun üzerinden yapılıyor.
+ *
+ * ANLIK KAYIT. Her cevap sunucuya yazılıyor (`/api/mock-exam` save).
+ * Uygulama kapansa, telefon kilitlense, ağ kopsa bile sınav kaybolmuyor;
+ * yeniden girişte kaldığı görevden ve kalan süreden devam ediliyor.
+ *
+ * PUAN SUNUCUDA. İstemci cevapları gönderiyor, puanı sunucu kâğıdın
+ * kendisiyle hesaplıyor. Ağ yoksa yerel bir sonuç gösteriliyor ve bunun
+ * KAYDEDİLMEDİĞİ ekranda yazıyor.
  */
 
 type Answers = Record<string, string>;
 
-/** Boşluk işaretlerini okunur bir yer tutucuya çevirir: "{{3}}" → " (3) ______ ". */
+/** Boşluk işaretlerini okunur yer tutucuya çevirir: "{{3}}" → " (3) ______ ". */
 function withBlanks(body: string): string {
   return body.replace(/\{\{(\d+)\}\}/g, (_m, n) => ` (${n}) ______ `);
 }
 
-function isCorrect(item: MockItem, ans: string | undefined): boolean {
-  if (ans == null || ans.trim() === "") return false;
-  if (item.kind === "mcq") return Number(ans) === item.answer;
-  if (item.kind === "bool") return (ans === "true") === item.answer;
-  if (item.kind === "match") return ans === item.answer;
-  return item.accept.some((a) => foldCompare(a, "de") === foldCompare(ans, "de"));
-}
-
-/** Maddenin doğru cevabının okunur hâli — sonuç ekranı için. */
-function correctLabel(item: MockItem, task: MockTask, boolLabels: [string, string]): string {
-  if (item.kind === "mcq") return item.options[item.answer] ?? "";
-  if (item.kind === "bool") return item.answer ? boolLabels[0] : boolLabels[1];
-  if (item.kind === "match") {
-    const o = task.options?.find((x) => x.key === item.answer);
-    return o ? `${o.key}) ${o.label}` : item.answer;
-  }
-  return item.accept[0];
-}
-
-function givenLabel(item: MockItem, task: MockTask, ans: string | undefined, boolLabels: [string, string]): string {
-  if (ans == null || ans.trim() === "") return t("mockexam.blank");
-  if (item.kind === "mcq") return item.options[Number(ans)] ?? ans;
-  if (item.kind === "bool") return ans === "true" ? boolLabels[0] : boolLabels[1];
-  if (item.kind === "match") {
-    const o = task.options?.find((x) => x.key === ans);
-    return o ? `${o.key}) ${o.label}` : ans;
-  }
-  return ans;
-}
-
-/** Yazma/konuşma görevi mi — puanlanmayan görevler. */
-const isOpen = (task: MockTask) => task.format === "writing" || task.format === "speaking";
-
-/** Doğru/yanlış etiketleri görevin biçiminden gelir: Richtig/Falsch ya da Ja/Nein. */
 function boolLabelsFor(task: MockTask): [string, string] {
   return task.format === "yesno" ? [t("mockexam.ja"), t("mockexam.nein")] : [t("mockexam.richtig"), t("mockexam.falsch")];
 }
@@ -99,6 +85,8 @@ function mmss(sec: number): string {
   return `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
 }
 
+const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
+
 export function MockExamScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -106,30 +94,118 @@ export function MockExamScreen() {
   const route = useRoute<RouteProp<RootStackParams, "MockExam">>();
   const paper = mockPaperById(route.params.paperId);
   const part = paper?.parts.find((p) => p.skill === route.params.skill) ?? null;
+  const budgets = useMemo(() => (part ? taskSeconds(part) : []), [part]);
 
-  const [phase, setPhase] = useState<"kapak" | "sinav" | "sonuc">("kapak");
-  const [taskIx, setTaskIx] = useState(0);
+  const [phase, setPhase] = useState<"kapak" | "gorev" | "sonuc">("kapak");
+  const [ix, setIx] = useState(0);
+  const [left, setLeft] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
-  const [essays, setEssays] = useState<Record<string, string>>({});
+  const [open, setOpen] = useState<Record<string, string>>({});
+  const [openScores, setOpenScores] = useState<Record<string, OpenScore>>({});
   const [plays, setPlays] = useState<Record<string, number>>({});
   const [speaking, setSpeaking] = useState<string | null>(null);
+  const [attempt, setAttempt] = useState<Attempt | null>(null);
+  const [resumed, setResumed] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [result, setResult] = useState<{ score: MockScore; ai: MockFeedback | null; offline: boolean } | null>(null);
   const [reveal, setReveal] = useState<Record<string, boolean>>({});
-  const [left, setLeft] = useState(0);
   const [quit, setQuit] = useState(false);
+  const [autoNext, setAutoNext] = useState(false);
   const scroller = useRef<React.ComponentRef<typeof ScrollView> | null>(null);
-  // Ekrandan çıkılınca yarım kalan okuma sürsün istemiyoruz.
   const alive = useRef(true);
-  useEffect(() => () => { alive.current = false; }, []);
+  useEffect(() => () => { alive.current = false; stopListening(); }, []);
 
+  /* ── sesli yönerge ──────────────────────────────────────────────────────
+   * Bölüm ve görev yönergeleri Almanca okunuyor. `announced` aynı yönergenin
+   * iki kez okunmasını engelliyor: görev değişmeden tekrar tetiklenmesin.
+   */
+  const announced = useRef<Set<string>>(new Set());
+  const announce = useCallback(async (key: string, text: string) => {
+    if (announced.current.has(key)) return;
+    announced.current.add(key);
+    const v = voicesFor(currentCourseId())[0];
+    try { await speakAndWaitVoiced(text, v.id); } catch { /* ses yoksa sınav durmaz */ }
+  }, []);
+
+  /* ── saat: görev başına ─────────────────────────────────────────────── */
   useEffect(() => {
-    if (phase !== "sinav") return;
+    if (phase !== "gorev") return;
     const id = setInterval(() => setLeft((s) => (s <= 1 ? 0 : s - 1)), 1000);
     return () => clearInterval(id);
   }, [phase]);
-  useEffect(() => {
-    if (phase === "sinav" && left === 0) setPhase("sonuc");
-  }, [left, phase]);
 
+  const advance = useCallback((auto: boolean) => {
+    if (!part) return;
+    setAutoNext(auto);
+    if (ix >= part.tasks.length - 1) { setPhase("sonuc"); return; }
+    const next = ix + 1;
+    setIx(next);
+    setLeft(budgets[next] ?? 60);
+    scroller.current?.scrollTo({ y: 0, animated: false });
+    if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: next, secondsLeft: budgets[next] ?? 60 });
+  }, [ix, part, budgets, attempt, answers, open]);
+
+  useEffect(() => {
+    if (phase === "gorev" && left === 0) advance(true);
+    // `left` sıfıra düştüğünde bir kez çalışsın diye bağımlılık dar tutuldu.
+  }, [left, phase]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  /* ── anlık kayıt ────────────────────────────────────────────────────────
+   * Her cevap değişikliğinde iki saniye bekleyip gönderiyor: tuşa her
+   * basışta istek atmak gereksiz, hiç atmamak ise sınavı kaybettirir.
+   */
+  useEffect(() => {
+    if (!attempt || phase !== "gorev") return;
+    const id = setTimeout(() => { void saveAttempt(attempt.id, { answers, open, taskIx: ix, secondsLeft: left }); }, 2000);
+    return () => clearTimeout(id);
+  }, [answers, open, attempt, phase, ix]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  /* ── başlat / devam et ──────────────────────────────────────────────── */
+  const begin = useCallback(async () => {
+    if (!paper || !part || busy) return;
+    setBusy(true);
+    try {
+      const d = await startAttempt(paper.id, part.skill);
+      setAttempt(d.attempt);
+      setResumed(d.resumed);
+      setAnswers(d.attempt.answers ?? {});
+      setOpen(d.attempt.open ?? {});
+      setOpenScores(d.attempt.openScores ?? {});
+      const startIx = Math.min(d.attempt.taskIx ?? 0, part.tasks.length - 1);
+      setIx(startIx);
+      setLeft(d.resumed && d.attempt.secondsLeft > 0 ? d.attempt.secondsLeft : budgets[startIx] ?? 60);
+    } catch {
+      // Oturum ya da ağ yoksa sınav yine çalışır; sonuç kaydedilmez.
+      setAttempt(null);
+      setIx(0);
+      setLeft(budgets[0] ?? 60);
+    }
+    setBusy(false);
+    setPhase("gorev");
+  }, [paper, part, busy, budgets]);
+
+  /* ── bitir ──────────────────────────────────────────────────────────── */
+  useEffect(() => {
+    if (phase !== "sonuc" || result || !part) return;
+    let cancelled = false;
+    void (async () => {
+      setBusy(true);
+      if (attempt) {
+        try {
+          const d = await finishAttempt(attempt.id, answers);
+          if (!cancelled) setResult({ score: d.score, ai: d.ai ?? null, offline: false });
+        } catch {
+          if (!cancelled) setResult({ score: offlineScore(part, answers), ai: null, offline: true });
+        }
+      } else {
+        setResult({ score: offlineScore(part, answers), ai: null, offline: true });
+      }
+      if (!cancelled) setBusy(false);
+    })();
+    return () => { cancelled = true; };
+  }, [phase, result, part, attempt, answers]);
+
+  /* ── dinleme ────────────────────────────────────────────────────────── */
   const play = useCallback(
     async (st: Extract<MockStimulus, { kind: "audio" }>) => {
       if (speaking) return;
@@ -137,34 +213,18 @@ export function MockExamScreen() {
       if (used >= st.plays) return;
       setPlays((p) => ({ ...p, [st.id]: used + 1 }));
       setSpeaking(st.id);
-      // Konuşmacılar kursun iki sesine dönüşümlü dağıtılıyor; tek sesli
-      // metinde herkes ilk sesi kullanır.
       const vs = voicesFor(currentCourseId());
       const who: string[] = [];
       for (const seg of st.segments) if (seg.speaker && !who.includes(seg.speaker)) who.push(seg.speaker);
       for (const seg of st.segments) {
         if (!alive.current) break;
-        const ix = seg.speaker ? who.indexOf(seg.speaker) : 0;
-        await speakAndWaitVoiced(seg.text, (vs[ix % vs.length] ?? vs[0]).id);
+        const i = seg.speaker ? who.indexOf(seg.speaker) : 0;
+        await speakAndWaitVoiced(seg.text, (vs[i % vs.length] ?? vs[0]).id);
       }
       if (alive.current) setSpeaking(null);
     },
     [plays, speaking],
   );
-
-  const scored = useMemo(() => {
-    if (!part) return { correct: 0, total: 0 };
-    let correct = 0;
-    let total = 0;
-    for (const task of part.tasks) {
-      if (isOpen(task)) continue;
-      for (const it of task.items) {
-        total++;
-        if (isCorrect(it, answers[it.id])) correct++;
-      }
-    }
-    return { correct, total };
-  }, [part, answers]);
 
   if (!paper || !part) {
     return (
@@ -174,49 +234,36 @@ export function MockExamScreen() {
     );
   }
 
-  const pct = scored.total ? Math.round((100 * scored.correct) / scored.total) : 0;
-  const passed = scored.total > 0 && pct >= MOCK_PASS_PCT;
-  const blanks = part.tasks
-    .filter((x) => !isOpen(x))
-    .reduce((a, x) => a + x.items.filter((i) => !(answers[i.id] ?? "").trim()).length, 0);
-
-  const head = (
-    <View
-      style={{
-        flexDirection: "row",
-        alignItems: "center",
-        gap: spacing.md,
-        paddingTop: insets.top + spacing.sm,
-        paddingHorizontal: spacing.lg,
-        paddingBottom: spacing.sm,
-      }}
-    >
-      <PressableScale
-        hitSlop={4}
-        onPress={() => (phase === "sinav" ? setQuit(true) : nav.goBack())}
-        accessibilityLabel={t("common.back")}
-        style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}
-      >
-        <ArrowBackIcon color={colors.text} size={24} />
-      </PressableScale>
-      <View style={{ flex: 1 }}>
-        <Text variant="micro" color={colors.textMuted}>
-          {paper.level} · {t("mockexams.paper", { n: paper.no })}
-        </Text>
-        <Text variant="h3">{t(`mockexam.skill_${part.skill}`)}</Text>
-      </View>
-      {phase === "sinav" ? (
-        <View style={{ alignItems: "flex-end" }}>
-          <Text variant="micro" color={colors.textMuted}>{t("mockexam.time_left")}</Text>
-          <Text variant="bodyStrong" color={left < 60 ? colors.danger : colors.text}>{mmss(left)}</Text>
-        </View>
-      ) : null}
-    </View>
-  );
+  const task = part.tasks[ix];
+  const blanks = blankCount(part, answers);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      {head}
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+        <PressableScale
+          hitSlop={4}
+          onPress={() => (phase === "gorev" ? setQuit(true) : nav.goBack())}
+          accessibilityLabel={t("common.back")}
+          style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}
+        >
+          <ArrowBackIcon color={colors.text} size={24} />
+        </PressableScale>
+        <View style={{ flex: 1 }}>
+          <Text variant="micro" color={colors.textMuted}>
+            {paper.level} · {t("mockexams.paper", { n: paper.no })}
+          </Text>
+          <Text variant="h3">{t(`mockexam.skill_${part.skill}`)}</Text>
+        </View>
+        {phase === "gorev" ? (
+          <View style={{ alignItems: "flex-end" }}>
+            <Text variant="micro" color={colors.textMuted}>{t("mockexam.task_time")}</Text>
+            <Text variant="bodyStrong" color={left < 30 ? colors.danger : colors.text}>{mmss(left)}</Text>
+          </View>
+        ) : null}
+      </View>
+
+      {phase === "gorev" ? <TaskBar part={part} ix={ix} colors={colors} /> : null}
+
       <ScrollView
         ref={(r) => { scroller.current = r; }}
         contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}
@@ -224,88 +271,76 @@ export function MockExamScreen() {
         keyboardShouldPersistTaps="handled"
       >
         {phase === "kapak" ? (
+          <Cover
+            paper={paper}
+            part={part}
+            colors={colors}
+            busy={busy}
+            onAnnounce={() => void announce(`part:${part.skill}`, part.instruction)}
+            onStart={() => void begin()}
+          />
+        ) : phase === "gorev" ? (
           <>
-            <Card padded style={{ marginBottom: spacing.md }}>
-              <Text variant="micro" color={colors.textMuted}>{t("mockexam.instructions")}</Text>
-              <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{part.instruction}</Text>
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
-                {part.instructionTr}
-              </Text>
-            </Card>
-            <Card padded style={{ marginBottom: spacing.lg }}>
-              <Text variant="bodyStrong">{paper.theme}</Text>
-              <Text variant="caption" color={colors.textMuted}>{paper.themeTr}</Text>
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
-                {t("mockexams.part_summary", { minutes: part.minutes, n: part.tasks.reduce((a, x) => a + (isOpen(x) ? 0 : x.items.length), 0) })}
-              </Text>
-            </Card>
-            <Primary
+            {autoNext ? (
+              <Card padded style={{ marginBottom: spacing.sm, backgroundColor: colors.dangerSoft }}>
+                <Text variant="caption" color={colors.danger}>{t("mockexam.auto_next")}</Text>
+              </Card>
+            ) : null}
+            {resumed && ix === (attempt?.taskIx ?? 0) ? (
+              <Card padded style={{ marginBottom: spacing.sm }}>
+                <Text variant="caption" color={colors.textMuted}>{t("mockexam.resumed")}</Text>
+              </Card>
+            ) : null}
+            <TaskView
+              key={task.id}
+              task={task}
+              index={ix}
+              total={part.tasks.length}
+              answers={answers}
+              open={open}
+              openScores={openScores}
+              plays={plays}
+              speaking={speaking}
+              attemptId={attempt?.id ?? null}
               colors={colors}
-              label={t("mockexam.start")}
-              onPress={() => { setLeft(part.minutes * 60); setPhase("sinav"); }}
+              onAnnounce={() => void announce(`task:${task.id}`, task.prompt)}
+              onAnswer={(id, v) => setAnswers((a) => ({ ...a, [id]: v }))}
+              onOpen={(id, v) => setOpen((e) => ({ ...e, [id]: v }))}
+              onOpenScore={(id, v) => setOpenScores((s) => ({ ...s, [id]: v }))}
+              onPlay={play}
             />
           </>
-        ) : phase === "sinav" ? (
-          <TaskView
-            task={part.tasks[taskIx]}
-            index={taskIx}
-            total={part.tasks.length}
-            answers={answers}
-            essays={essays}
-            plays={plays}
-            speaking={speaking}
-            colors={colors}
-            onAnswer={(id, v) => setAnswers((a) => ({ ...a, [id]: v }))}
-            onEssay={(id, v) => setEssays((e) => ({ ...e, [id]: v }))}
-            onPlay={play}
-          />
+        ) : busy || !result ? (
+          <View style={{ paddingTop: spacing.xxl, alignItems: "center" }}>
+            <ActivityIndicator color={colors.primary} />
+            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.scoring")}</Text>
+          </View>
         ) : (
           <ResultView
             part={part}
             answers={answers}
-            essays={essays}
+            open={open}
+            openScores={openScores}
+            score={result.score}
+            ai={result.ai}
+            offline={result.offline}
             reveal={reveal}
             colors={colors}
-            correct={scored.correct}
-            total={scored.total}
-            passed={passed}
-            timeUp={left === 0}
             onReveal={(id) => setReveal((r) => ({ ...r, [id]: true }))}
           />
         )}
       </ScrollView>
 
-      {phase === "sinav" ? (
-        <View
-          style={{
-            flexDirection: "row",
-            gap: spacing.sm,
-            paddingHorizontal: spacing.lg,
-            paddingTop: spacing.sm,
-            paddingBottom: insets.bottom + spacing.sm,
-            backgroundColor: colors.bg,
-            borderTopWidth: 1,
-            borderTopColor: colors.surface2,
-          }}
-        >
-          {taskIx > 0 ? (
-            <Secondary
-              colors={colors}
-              label={t("mockexam.prev_task")}
-              onPress={() => { setTaskIx((i) => i - 1); scroller.current?.scrollTo({ y: 0, animated: false }); }}
-            />
-          ) : null}
-          {taskIx < part.tasks.length - 1 ? (
-            <Primary
-              colors={colors}
-              label={t("mockexam.next_task")}
-              onPress={() => { setTaskIx((i) => i + 1); scroller.current?.scrollTo({ y: 0, animated: false }); }}
-            />
-          ) : (
-            <Primary colors={colors} label={t("mockexam.submit")} onPress={() => setPhase("sonuc")} />
-          )}
+      {phase === "gorev" ? (
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.sm, backgroundColor: colors.bg, borderTopWidth: 1, borderTopColor: colors.surface2 }}>
+          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{t("mockexam.no_back")}</Text>
+          <Primary
+            colors={colors}
+            label={ix < part.tasks.length - 1 ? t("mockexam.next_task") : t("mockexam.submit")}
+            onPress={() => advance(false)}
+          />
         </View>
-      ) : phase === "sonuc" ? (
+      ) : phase === "sonuc" && result ? (
         <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.sm, backgroundColor: colors.bg }}>
           <Primary colors={colors} label={t("mockexam.back_to_list")} onPress={() => nav.goBack()} />
         </View>
@@ -314,62 +349,118 @@ export function MockExamScreen() {
       <ConfirmDialog
         visible={quit}
         title={t("mockexam.quit_title")}
-        message={blanks ? `${t("mockexam.quit_body")} ${t("mockexam.unanswered", { n: blanks })}` : t("mockexam.quit_body")}
+        message={`${t("mockexam.quit_body_saved")} ${blanks ? t("mockexam.unanswered", { n: blanks }) : ""}`.trim()}
         confirmLabel={t("mockexam.quit_ok")}
         destructive
-        onConfirm={() => { setQuit(false); nav.goBack(); }}
+        onConfirm={() => {
+          setQuit(false);
+          if (attempt) void saveAttempt(attempt.id, { answers, open, taskIx: ix, secondsLeft: left });
+          nav.goBack();
+        }}
         onCancel={() => setQuit(false)}
       />
     </View>
   );
 }
 
-/* ── düğmeler ─────────────────────────────────────────────────────────────── */
+/* ── ortak parçalar ───────────────────────────────────────────────────────── */
 
-function Primary({ colors, label, onPress }: { colors: Palette; label: string; onPress: () => void }) {
+function Primary({ colors, label, onPress, disabled }: { colors: Palette; label: string; onPress: () => void; disabled?: boolean }) {
   return (
     <PressableScale
       onPress={onPress}
-      style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}
+      disabled={disabled}
+      style={{ backgroundColor: disabled ? colors.surface2 : colors.primary, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}
     >
-      <Text variant="bodyStrong" color={colors.onPrimary}>{label}</Text>
+      <Text variant="bodyStrong" color={disabled ? colors.textMuted : colors.onPrimary}>{label}</Text>
     </PressableScale>
   );
 }
 
-function Secondary({ colors, label, onPress }: { colors: Palette; label: string; onPress: () => void }) {
+/** Görev şeridi: kaçıncı görevdeyiz, kaçı bitti. Geri dönüş yok, bu yüzden tıklanmıyor. */
+function TaskBar({ part, ix, colors }: { part: MockPart; ix: number; colors: Palette }) {
   return (
-    <PressableScale
-      onPress={onPress}
-      style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: spacing.md, alignItems: "center" }}
-    >
-      <Text variant="bodyStrong">{label}</Text>
-    </PressableScale>
+    <View style={{ flexDirection: "row", gap: 4, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
+      {part.tasks.map((tk, i) => (
+        <View
+          key={tk.id}
+          style={{
+            flex: 1,
+            height: 4,
+            borderRadius: 2,
+            backgroundColor: i < ix ? colors.success : i === ix ? colors.primary : colors.surface2,
+          }}
+        />
+      ))}
+    </View>
+  );
+}
+
+function Cover({
+  paper, part, colors, busy, onStart, onAnnounce,
+}: {
+  paper: NonNullable<ReturnType<typeof mockPaperById>>;
+  part: MockPart;
+  colors: Palette;
+  busy: boolean;
+  onStart: () => void;
+  onAnnounce: () => void;
+}) {
+  // Bölüm yönergesi ekrana gelir gelmez okunuyor — gerçek oturumda da
+  // yönerge kayıttan gelir.
+  useEffect(() => { onAnnounce(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const points = part.tasks.reduce((a, x) => a + (isOpenTask(x) ? 0 : x.items.length), 0);
+  return (
+    <>
+      <Card padded style={{ marginBottom: spacing.md }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+          <SpeakerIcon color={colors.primary} size={18} />
+          <Text variant="micro" color={colors.textMuted}>{t("mockexam.instructions")}</Text>
+        </View>
+        <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{part.instruction}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>{part.instructionTr}</Text>
+      </Card>
+      <Card padded style={{ marginBottom: spacing.md }}>
+        <Text variant="bodyStrong">{paper.theme}</Text>
+        <Text variant="caption" color={colors.textMuted}>{paper.themeTr}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
+          {points ? t("mockexams.part_summary", { minutes: part.minutes, n: points }) : t("mockexams.part_open", { minutes: part.minutes })}
+        </Text>
+      </Card>
+      <Card padded style={{ marginBottom: spacing.lg }}>
+        <Text variant="micro" color={colors.textMuted}>{t("mockexam.rules_title")}</Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{t("mockexam.rules_body")}</Text>
+      </Card>
+      <Primary colors={colors} label={busy ? t("mockexam.starting") : t("mockexam.start")} onPress={onStart} disabled={busy} />
+    </>
   );
 }
 
 /* ── görev ────────────────────────────────────────────────────────────────── */
 
 function TaskView({
-  task, index, total, answers, essays, plays, speaking, colors, onAnswer, onEssay, onPlay,
+  task, index, total, answers, open, openScores, plays, speaking, attemptId, colors,
+  onAnnounce, onAnswer, onOpen, onOpenScore, onPlay,
 }: {
   task: MockTask;
   index: number;
   total: number;
   answers: Answers;
-  essays: Record<string, string>;
+  open: Record<string, string>;
+  openScores: Record<string, OpenScore>;
   plays: Record<string, number>;
   speaking: string | null;
+  attemptId: number | null;
   colors: Palette;
+  onAnnounce: () => void;
   onAnswer: (id: string, v: string) => void;
-  onEssay: (id: string, v: string) => void;
+  onOpen: (id: string, v: string) => void;
+  onOpenScore: (id: string, v: OpenScore) => void;
   onPlay: (st: Extract<MockStimulus, { kind: "audio" }>) => void;
 }) {
+  useEffect(() => { onAnnounce(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const bools = boolLabelsFor(task);
-  // Maddeler metne bağlıysa metin–madde–metin sırasıyla çizilir; bağlı
-  // değilse (ör. "bunu hangi kişi söylüyor") önce bütün metinler gelir.
   const grouped = (task.texts ?? []).length > 1 && task.items.some((i) => i.ref);
-
   const itemsOf = (ref?: string) => (grouped ? task.items.filter((i) => i.ref === ref) : task.items);
 
   return (
@@ -410,41 +501,10 @@ function TaskView({
           ))
         : null}
 
-      {isOpen(task) && task.rubric ? (
-        <Card padded style={{ marginTop: spacing.sm }}>
-          <Text variant="micro" color={colors.textMuted}>{t("mockexam.content_points")}</Text>
-          {task.rubric.points.map((p, i) => (
-            <View key={i} style={{ marginTop: spacing.xs }}>
-              <Text variant="body">• {p.de}</Text>
-              <Text variant="caption" color={colors.textMuted}>{p.tr}</Text>
-            </View>
-          ))}
-          {task.format === "writing" ? (
-            <>
-              {task.rubric.minWords ? (
-                <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.md }}>
-                  {t("mockexam.min_words", { n: task.rubric.minWords })}
-                </Text>
-              ) : null}
-              <TextInput
-                value={essays[task.id] ?? ""}
-                onChangeText={(v) => onEssay(task.id, v)}
-                multiline
-                placeholder={t("mockexam.write_here")}
-                placeholderTextColor={colors.textFaint}
-                style={{
-                  marginTop: spacing.xs,
-                  minHeight: 160,
-                  borderRadius: radii.md,
-                  backgroundColor: colors.surface2,
-                  color: colors.text,
-                  padding: spacing.md,
-                  textAlignVertical: "top",
-                }}
-              />
-            </>
-          ) : null}
-        </Card>
+      {task.format === "writing" ? (
+        <WritingTask task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} colors={colors} onOpen={onOpen} onOpenScore={onOpenScore} />
+      ) : task.format === "speaking" ? (
+        <SpeakingTask task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} colors={colors} onOpen={onOpen} onOpenScore={onOpenScore} />
       ) : null}
     </View>
   );
@@ -480,19 +540,12 @@ function StimulusView({
         onPress={() => onPlay(st)}
         disabled={rest <= 0 || busy}
         style={{
-          marginTop: spacing.sm,
-          flexDirection: "row",
-          alignItems: "center",
-          gap: spacing.sm,
-          alignSelf: "flex-start",
-          paddingVertical: spacing.sm,
-          paddingHorizontal: spacing.md,
-          borderRadius: radii.pill,
-          backgroundColor: rest > 0 ? colors.primarySoft : colors.surface2,
-          opacity: rest > 0 ? 1 : 0.6,
+          marginTop: spacing.sm, flexDirection: "row", alignItems: "center", gap: spacing.sm, alignSelf: "flex-start",
+          paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill,
+          backgroundColor: rest > 0 ? colors.primarySoft : colors.surface2, opacity: rest > 0 ? 1 : 0.6,
         }}
       >
-        <SpeakerIcon color={rest > 0 ? colors.primary : colors.textMuted} size={20} />
+        {busy ? <ActivityIndicator color={colors.primary} size="small" /> : <SpeakerIcon color={rest > 0 ? colors.primary : colors.textMuted} size={20} />}
         <Text variant="bodyStrong" color={rest > 0 ? colors.primary : colors.textMuted}>
           {rest <= 0 ? t("mockexam.plays_done") : used === 0 ? t("mockexam.listen") : t("mockexam.listen_again")}
         </Text>
@@ -519,13 +572,9 @@ function ItemView({
       key={key ?? label}
       onPress={onPress}
       style={{
-        paddingVertical: spacing.sm,
-        paddingHorizontal: spacing.md,
-        borderRadius: radii.md,
+        paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.md,
         backgroundColor: active ? colors.primarySoft : colors.surface2,
-        borderWidth: 1,
-        borderColor: active ? colors.primary : "transparent",
-        marginBottom: spacing.xs,
+        borderWidth: 1, borderColor: active ? colors.primary : "transparent", marginBottom: spacing.xs,
       }}
     >
       <Text variant="body" color={active ? colors.primary : colors.text}>{label}</Text>
@@ -567,48 +616,349 @@ function ItemView({
   );
 }
 
+/* ── yazma ────────────────────────────────────────────────────────────────── */
+
+function WritingTask({
+  task, value, score, attemptId, colors, onOpen, onOpenScore,
+}: {
+  task: MockTask;
+  value: string;
+  score?: OpenScore;
+  attemptId: number | null;
+  colors: Palette;
+  onOpen: (id: string, v: string) => void;
+  onOpenScore: (id: string, v: OpenScore) => void;
+}) {
+  const [busy, setBusy] = useState(false);
+  const n = words(value);
+  const need = task.rubric?.minWords ?? 0;
+
+  async function evaluate() {
+    if (busy || !attemptId || n < 5) return;
+    setBusy(true);
+    try {
+      const d = await assessOpen(attemptId, task.id, value.trim());
+      onOpenScore(task.id, d.result);
+    } catch {
+      onOpenScore(task.id, { score: null, reason: "offline" });
+    }
+    setBusy(false);
+  }
+
+  return (
+    <Card padded style={{ marginTop: spacing.sm }}>
+      <Text variant="micro" color={colors.textMuted}>{t("mockexam.content_points")}</Text>
+      {(task.rubric?.points ?? []).map((p, i) => (
+        <View key={i} style={{ marginTop: spacing.xs }}>
+          <Text variant="body">• {p.de}</Text>
+          <Text variant="caption" color={colors.textMuted}>{p.tr}</Text>
+        </View>
+      ))}
+      <TextInput
+        value={value}
+        onChangeText={(v) => onOpen(task.id, v)}
+        multiline
+        placeholder={t("mockexam.write_here")}
+        placeholderTextColor={colors.textFaint}
+        style={{ marginTop: spacing.md, minHeight: 180, borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
+      />
+      <Text variant="micro" color={need && n < need ? colors.textMuted : colors.success} style={{ marginTop: spacing.xs }}>
+        {need ? `${n} / ${need} ${t("mockexam.words_unit")}` : `${n} ${t("mockexam.words_unit")}`}
+      </Text>
+
+      {score ? (
+        <OpenResult score={score} colors={colors} />
+      ) : (
+        <PressableScale
+          onPress={() => void evaluate()}
+          disabled={busy || !attemptId || n < 5}
+          style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft, opacity: busy || !attemptId || n < 5 ? 0.5 : 1 }}
+        >
+          <Text variant="bodyStrong" color={colors.primary}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
+        </PressableScale>
+      )}
+      {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_session")}</Text> : null}
+    </Card>
+  );
+}
+
+function OpenResult({ score, colors }: { score: OpenScore; colors: Palette }) {
+  if (score.score == null) {
+    return <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, lineHeight: 20 }}>{t("mockexam.ai_off")}</Text>;
+  }
+  return (
+    <View style={{ marginTop: spacing.md }}>
+      <Text variant="h3" color={score.score >= 60 ? colors.success : colors.danger}>%{score.score}</Text>
+      {score.praise ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{score.praise}</Text> : null}
+      {score.tip ? <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{score.tip}</Text> : null}
+      {(score.errors ?? []).slice(0, 5).map((e, i) => (
+        <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>
+          {e.wrong} → {e.right}{e.why_tr ? ` · ${e.why_tr}` : ""}
+        </Text>
+      ))}
+    </View>
+  );
+}
+
+/* ── konuşma ──────────────────────────────────────────────────────────────── */
+
+/**
+ * Konuşma görevi — fazlı.
+ *
+ * Tek kişilik görevde: hazırlık sayacı → konuşma (tanıyıcı açık) → döküm.
+ * Karşılıklı görevde: karşı tarafın repliği sesle okunur, sıra sana gelince
+ * mikrofon açılır ve söylediklerin yazıya çevrilir. Adımlar kendiliğinden
+ * ilerler; gerçek dijital oturumda da fazlar otomatik akar.
+ */
+function SpeakingTask({
+  task, value, score, attemptId, colors, onOpen, onOpenScore,
+}: {
+  task: MockTask;
+  value: string;
+  score?: OpenScore;
+  attemptId: number | null;
+  colors: Palette;
+  onOpen: (id: string, v: string) => void;
+  onOpenScore: (id: string, v: OpenScore) => void;
+}) {
+  const [step, setStep] = useState<"bekleme" | "hazirlik" | "konusma" | "bitti">("bekleme");
+  const [turn, setTurn] = useState(0);
+  const [count, setCount] = useState(0);
+  const [heard, setHeard] = useState<string[]>([]);
+  const [micOk, setMicOk] = useState<boolean | null>(null);
+  const [busy, setBusy] = useState(false);
+  const alive = useRef(true);
+  useEffect(() => () => { alive.current = false; stopListening(); }, []);
+
+  const exchange = task.exchange ?? [];
+  const prep = task.prepSeconds ?? 60;
+
+  // Hazırlık sayacı.
+  useEffect(() => {
+    if (step !== "hazirlik") return;
+    if (count <= 0) { void run(); return; }
+    const id = setTimeout(() => setCount((c) => c - 1), 1000);
+    return () => clearTimeout(id);
+  }, [step, count]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function begin() {
+    const ok = await ensureMicPermission();
+    setMicOk(ok);
+    if (!ok) return;
+    if (!(await sttAvailable(currentTargetLocale()))) { setMicOk(false); return; }
+    setCount(prep);
+    setStep("hazirlik");
+  }
+
+  /** Hazırlık bitince: tek kişilikse doğrudan konuş, karşılıklıysa adımları yürüt. */
+  async function run() {
+    setStep("konusma");
+    const said: string[] = [];
+    const vs = voicesFor(currentCourseId());
+    const partnerVoice = (vs[1] ?? vs[0]).id;
+
+    if (!exchange.length) {
+      const secs = task.speakSeconds ?? 120;
+      setTurn(0);
+      const got = await listenOnce(currentTargetLocale(), secs * 1000);
+      if (got?.[0]) said.push(got[0]);
+    } else {
+      for (const [i, tn] of exchange.entries()) {
+        if (!alive.current) return;
+        setTurn(i);
+        if (tn.who === "partner") {
+          try { await speakAndWaitVoiced(tn.de, partnerVoice); } catch { /* ses yoksa yazıdan okunur */ }
+        } else {
+          const got = await listenOnce(currentTargetLocale(), tn.seconds * 1000);
+          said.push(`(${tn.expect}) ${got?.[0] ?? ""}`.trim());
+        }
+      }
+    }
+    if (!alive.current) return;
+    setHeard(said);
+    onOpen(task.id, said.join("\n"));
+    setStep("bitti");
+  }
+
+  async function evaluate() {
+    const text = (value || heard.join("\n")).trim();
+    if (busy || !attemptId || text.length < 5) return;
+    setBusy(true);
+    try {
+      const d = await assessOpen(attemptId, task.id, text);
+      onOpenScore(task.id, d.result);
+    } catch {
+      onOpenScore(task.id, { score: null, reason: "offline" });
+    }
+    setBusy(false);
+  }
+
+  const current = exchange[turn];
+  return (
+    <Card padded style={{ marginTop: spacing.sm }}>
+      <Text variant="micro" color={colors.textMuted}>{t("mockexam.content_points")}</Text>
+      {(task.rubric?.points ?? []).map((p, i) => (
+        <View key={i} style={{ marginTop: spacing.xs }}>
+          <Text variant="body">• {p.de}</Text>
+          <Text variant="caption" color={colors.textMuted}>{p.tr}</Text>
+        </View>
+      ))}
+
+      {step === "bekleme" ? (
+        <>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, lineHeight: 20 }}>
+            {exchange.length
+              ? t("mockexam.exchange_intro", { n: exchange.filter((x) => x.who === "you").length, prep })
+              : t("mockexam.solo_intro", { prep, speak: task.speakSeconds ?? 120 })}
+          </Text>
+          <PressableScale
+            onPress={() => void begin()}
+            style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.sm, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft }}
+          >
+            <MicIcon color={colors.primary} size={20} />
+            <Text variant="bodyStrong" color={colors.primary}>{t("mockexam.speak_start")}</Text>
+          </PressableScale>
+          {micOk === false ? <Text variant="caption" color={colors.danger} style={{ marginTop: spacing.xs }}>{t("mockexam.mic_needed")}</Text> : null}
+        </>
+      ) : step === "hazirlik" ? (
+        <View style={{ marginTop: spacing.md, alignItems: "center" }}>
+          <Text variant="micro" color={colors.textMuted}>{t("mockexam.prep")}</Text>
+          <Text variant="h1" color={colors.primary}>{mmss(count)}</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center", lineHeight: 20 }}>{t("mockexam.prep_hint")}</Text>
+        </View>
+      ) : step === "konusma" ? (
+        <View style={{ marginTop: spacing.md }}>
+          {current?.who === "partner" ? (
+            <>
+              <Text variant="micro" color={colors.textMuted}>{t("mockexam.partner")}</Text>
+              <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{current.de}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{current.tr}</Text>
+            </>
+          ) : (
+            <View style={{ alignItems: "center" }}>
+              <MicIcon color={colors.danger} size={28} />
+              <Text variant="bodyStrong" color={colors.danger} style={{ marginTop: spacing.xs }}>{t("mockexam.speak_now")}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center", lineHeight: 20 }}>
+                {current?.who === "you" ? current.hint : t("mockexam.solo_hint")}
+              </Text>
+            </View>
+          )}
+        </View>
+      ) : (
+        <>
+          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.transcript_you")}</Text>
+          <TextInput
+            value={value}
+            onChangeText={(v) => onOpen(task.id, v)}
+            multiline
+            placeholder={t("mockexam.write_here")}
+            placeholderTextColor={colors.textFaint}
+            style={{ marginTop: spacing.xs, minHeight: 120, borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
+          />
+          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 18 }}>{t("mockexam.transcript_note")}</Text>
+          {score ? (
+            <OpenResult score={score} colors={colors} />
+          ) : (
+            <PressableScale
+              onPress={() => void evaluate()}
+              disabled={busy || !attemptId}
+              style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft, opacity: busy || !attemptId ? 0.5 : 1 }}
+            >
+              <Text variant="bodyStrong" color={colors.primary}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
+            </PressableScale>
+          )}
+          {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_session")}</Text> : null}
+        </>
+      )}
+    </Card>
+  );
+}
+
 /* ── sonuç ────────────────────────────────────────────────────────────────── */
 
 function ResultView({
-  part, answers, essays, reveal, colors, correct, total, passed, timeUp, onReveal,
+  part, answers, open, openScores, score, ai, offline, reveal, colors, onReveal,
 }: {
   part: MockPart;
   answers: Answers;
-  essays: Record<string, string>;
+  open: Record<string, string>;
+  openScores: Record<string, OpenScore>;
+  score: MockScore;
+  ai: MockFeedback | null;
+  offline: boolean;
   reveal: Record<string, boolean>;
   colors: Palette;
-  correct: number;
-  total: number;
-  passed: boolean;
-  timeUp: boolean;
   onReveal: (id: string) => void;
 }) {
-  const pct = total ? Math.round((100 * correct) / total) : 0;
   return (
     <View>
-      {timeUp ? (
-        <Card padded style={{ marginBottom: spacing.md }}>
-          <Text variant="body" color={colors.danger}>{t("mockexam.time_up")}</Text>
+      {offline ? (
+        <Card padded style={{ marginBottom: spacing.md, backgroundColor: colors.dangerSoft }}>
+          <Text variant="caption" color={colors.danger} style={{ lineHeight: 20 }}>{t("mockexam.offline")}</Text>
         </Card>
       ) : null}
 
-      {total > 0 ? (
-        <Card padded style={{ marginBottom: spacing.lg }}>
+      {score.total > 0 ? (
+        <Card padded style={{ marginBottom: spacing.md }}>
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.result")}</Text>
           <View style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", marginTop: spacing.xs }}>
-            <Text variant="h1" color={passed ? colors.success : colors.danger}>%{pct}</Text>
-            <Text variant="bodyStrong">{t("mockexam.score", { correct, total })}</Text>
+            <Text variant="h1" color={score.passed ? colors.success : colors.danger}>%{score.pct}</Text>
+            <Text variant="bodyStrong">{t("mockexam.score", { correct: score.correct, total: score.total })}</Text>
           </View>
-          <Text variant="bodyStrong" color={passed ? colors.success : colors.danger} style={{ marginTop: spacing.sm }}>
-            {passed ? t("mockexam.passed") : t("mockexam.failed")}
+          <Text variant="bodyStrong" color={score.passed ? colors.success : colors.danger} style={{ marginTop: spacing.sm }}>
+            {score.passed ? t("mockexam.passed") : t("mockexam.failed")}
           </Text>
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.pass_note", { pct: MOCK_PASS_PCT })}</Text>
         </Card>
       ) : (
-        <Card padded style={{ marginBottom: spacing.lg }}>
+        <Card padded style={{ marginBottom: spacing.md }}>
           <Text variant="body" style={{ lineHeight: 22 }}>{t("mockexam.not_scored")}</Text>
         </Card>
       )}
+
+      {score.byGoal.length ? (
+        <Card padded style={{ marginBottom: spacing.md }}>
+          <Text variant="micro" color={colors.textMuted}>{t("mockexam.by_goal")}</Text>
+          {score.byGoal.map((g) => {
+            const pct = g.total ? Math.round((100 * g.correct) / g.total) : 0;
+            return (
+              <View key={g.goal} style={{ marginTop: spacing.sm }}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                  <Text variant="body">{t(`mockexam.goal_${g.goal}`)}</Text>
+                  <Text variant="bodyStrong" color={pct >= 70 ? colors.success : pct >= 50 ? colors.text : colors.danger}>
+                    {g.correct}/{g.total}
+                  </Text>
+                </View>
+                <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: 4 }}>
+                  <View style={{ height: 4, borderRadius: 2, width: `${pct}%`, backgroundColor: pct >= 70 ? colors.success : pct >= 50 ? colors.primary : colors.danger }} />
+                </View>
+              </View>
+            );
+          })}
+        </Card>
+      ) : null}
+
+      {ai ? (
+        <Card padded style={{ marginBottom: spacing.md }}>
+          <Text variant="micro" color={colors.textMuted}>{t("mockexam.todo")}</Text>
+          <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{ai.summary}</Text>
+          {ai.strengths.length ? (
+            <Text variant="caption" color={colors.success} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
+              {t("mockexam.strengths")}: {ai.strengths.join(" · ")}
+            </Text>
+          ) : null}
+          {ai.todo.map((td, i) => (
+            <View key={i} style={{ marginTop: spacing.md, borderLeftWidth: 2, borderLeftColor: colors.primary, paddingLeft: spacing.md }}>
+              <Text variant="bodyStrong">{i + 1}. {td.title}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, lineHeight: 20 }}>{td.why}</Text>
+              <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{td.how}</Text>
+            </View>
+          ))}
+          {ai.source === "rules" ? (
+            <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.md, lineHeight: 18 }}>{t("mockexam.source_rules")}</Text>
+          ) : null}
+        </Card>
+      ) : null}
 
       <Text variant="h3" style={{ marginBottom: spacing.sm }}>{t("mockexam.review")}</Text>
 
@@ -616,14 +966,15 @@ function ResultView({
         <View key={task.id} style={{ marginBottom: spacing.md }}>
           <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>Teil {task.no}</Text>
 
-          {isOpen(task) && task.rubric ? (
+          {isOpenTask(task) && task.rubric ? (
             <Card padded>
-              {task.format === "writing" && (essays[task.id] ?? "").trim() ? (
+              {(open[task.id] ?? "").trim() ? (
                 <>
                   <Text variant="micro" color={colors.textMuted}>{t("mockexam.your_answer")}</Text>
-                  <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{essays[task.id]}</Text>
+                  <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{open[task.id]}</Text>
                 </>
               ) : null}
+              {openScores[task.id] ? <OpenResult score={openScores[task.id]} colors={colors} /> : null}
               <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.criteria")}</Text>
               {task.rubric.criteria.map((c, i) => (
                 <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>• {c}</Text>
@@ -644,8 +995,17 @@ function ResultView({
             </Card>
           ) : (
             task.items.map((it) => {
-              const ok = isCorrect(it, answers[it.id]);
+              const ok = isItemCorrect(it, answers[it.id]);
+              const scored = score.items.find((s) => s.id === it.id);
               const bools = boolLabelsFor(task);
+              const given = answers[it.id];
+              const givenLabel = !given
+                ? t("mockexam.blank")
+                : it.kind === "mcq"
+                  ? it.options[Number(given)] ?? given
+                  : it.kind === "bool"
+                    ? given === "true" ? bools[0] : bools[1]
+                    : given;
               return (
                 <Card key={it.id} padded style={{ marginBottom: spacing.sm }}>
                   <View style={{ flexDirection: "row", gap: spacing.sm }}>
@@ -656,11 +1016,11 @@ function ResultView({
                       <Text variant="bodyStrong" style={{ lineHeight: 22 }}>{it.no}. {it.text}</Text>
                       {!ok ? (
                         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>
-                          {t("mockexam.your_answer")}: {givenLabel(it, task, answers[it.id], bools)}
+                          {t("mockexam.your_answer")}: {givenLabel}
                         </Text>
                       ) : null}
                       <Text variant="caption" color={ok ? colors.success : colors.text} style={{ marginTop: spacing.xs }}>
-                        {t("mockexam.correct_answer")}: {correctLabel(it, task, bools)}
+                        {t("mockexam.correct_answer")}: {scored?.expected ?? ""}
                       </Text>
                       <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{it.explain}</Text>
                     </View>

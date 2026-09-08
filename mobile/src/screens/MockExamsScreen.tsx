@@ -60,7 +60,14 @@ export function MockExamsScreen() {
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{t("mockexams.title")}</Text>
+        <Text variant="h2" style={{ flex: 1 }}>{t("mockexams.title")}</Text>
+        <PressableScale
+          onPress={() => nav.navigate("MockStats")}
+          accessibilityLabel={t("mockexams.stats")}
+          style={{ paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.surface2 }}
+        >
+          <Text variant="micro" color={colors.textMuted}>{t("mockexams.stats")}</Text>
+        </PressableScale>
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
