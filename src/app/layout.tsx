@@ -91,8 +91,13 @@ try {
   }
 } catch (e) {}
 try {
+  // Üç durum: 'dark' | 'light' | 'system'. Anahtarın YOKLUĞU da sistem demek
+  // (eski sürümlerde açıkça 'system' yazılmıyordu). 'system' değerini truthy
+  // diye okuyup "açık tema" saymak, sistemi izleyen herkesi açık temaya
+  // düşürürdü — bkz. lib/theme.ts.
   var stored = localStorage.getItem('lernomi-theme');
-  var dark = stored ? stored === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  var dark = stored === 'dark' ||
+    ((!stored || stored === 'system') && matchMedia('(prefers-color-scheme: dark)').matches);
   if (dark) document.documentElement.classList.add('dark');
 } catch (e) {}
 `;
