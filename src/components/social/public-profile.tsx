@@ -109,7 +109,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
                   ["impersonation", "Sahte hesap"],
                   ["other", "Başka"],
                 ].map(([k, l]) => (
-                  <button key={k} className="chip text-xs" disabled={busy} onClick={() => void report(k)}>
+                  <button key={k} className="chip px-3 py-1.5 text-caption" disabled={busy} onClick={() => void report(k)}>
                     {l}
                   </button>
                 ))}

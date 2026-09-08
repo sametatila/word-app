@@ -105,7 +105,7 @@ export function SocialSettings({ initial }: { initial: SocialMeView }) {
           {VIS.map((v) => (
             <button
               key={v.key}
-              className={`chip justify-start text-left ${me.visibility === v.key ? "chip-active" : ""}`}
+              className={`chip justify-start px-3.5 py-2.5 text-left text-caption ${me.visibility === v.key ? "chip-active" : ""}`}
               aria-pressed={me.visibility === v.key}
               disabled={busy}
               onClick={() => void save({ visibility: v.key })}

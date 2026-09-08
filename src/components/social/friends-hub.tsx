@@ -86,34 +86,73 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
 
   return (
     <div className="mx-auto w-full max-w-md">
-      <section className="card flex items-center gap-3 px-4 py-3">
-        <Avatar userId={me.userId} name={me.name} size={44} />
-        <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-bold">{me.name ?? "İsimsiz öğrenci"}</p>
-          <p className="muted truncate text-xs">
-            @{me.username} · {me.counts.friends} arkadaş
-          </p>
+      {/*
+        KİMLİK KARTI — Profil'deki kartla aynı kurgu (mobil `FriendsScreen`
+        de öyle): ortalanmış arma, ad, kullanıcı adı ve rozetler.
+
+        Önce tek satırlık sıkışık bir şeritti: 44px arma, iki satır metin, bir
+        buton ve bir dişli yan yana. 360 piksellik bir ekranda davet düğmesinin
+        etiketi ("Davet et") armanın altına düşüyordu ve kullanıcı adı —
+        davetin ADRESİ, bu ekranın var oluş sebebi — kırpılıyordu.
+      */}
+      <section className="card flex flex-col items-center p-5">
+        <Avatar userId={me.userId} name={me.name} size={64} />
+        <p className="mt-3 text-h3">{me.name ?? "İsimsiz öğrenci"}</p>
+        <p className="muted text-caption">@{me.username}</p>
+        <div className="mt-3 flex gap-2">
+          <span
+            className="rounded-full px-3 py-1.5 text-caption"
+            style={{
+              background: "color-mix(in srgb, var(--color-mint-500) 16%, transparent)",
+              color: "var(--color-mint)",
+            }}
+          >
+            {me.counts.friends} arkadaş
+          </span>
+          <Link
+            href="/profile/settings#social"
+            prefetch={false}
+            aria-label="Sosyal ayarlar"
+            className="pressable flex items-center gap-1.5 rounded-full px-3 py-1.5 text-caption"
+            style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}
+          >
+            <WrenchIcon size={14} /> Ayarlar
+          </Link>
         </div>
-        <button className="btn btn-primary h-9 px-3 text-xs" onClick={() => void share()}>
-          <HandshakeIcon size={15} />
-          <span className="ml-1.5">{copied ? "Kopyalandı" : "Davet et"}</span>
-        </button>
-        <Link href="/profile/settings#social" prefetch={false} className="btn btn-ghost h-9 w-9 px-0" aria-label="Sosyal ayarlar">
-          <WrenchIcon size={16} />
-        </Link>
       </section>
 
-      <nav className="mt-3 flex gap-1.5 overflow-x-auto pb-1" aria-label="Sosyal sekmeler">
+      {/* Davet — premium bandıyla aynı dil: tam genişlikte, dolu zemin.
+          Bu ekranın tek asıl eylemi o ve satır sonunda bir düğme olarak
+          durduğunda öyle görünmüyordu. */}
+      <button
+        onClick={() => void share()}
+        className="pressable mt-3 flex w-full items-center gap-3 rounded-card p-4 text-white shadow-soft"
+        style={{ background: "var(--color-brand-500)" }}
+      >
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tile bg-white/20">
+          <HandshakeIcon size={22} />
+        </span>
+        <span className="min-w-0 flex-1 text-left">
+          <span className="block text-h3">{copied ? "Bağlantı kopyalandı" : "Arkadaş davet et"}</span>
+          <span className="block text-caption text-white/85">Aynı tabloda yarışın, birbirinizi dürtün</span>
+        </span>
+      </button>
+
+      {/* Sekmeler çipti ama DOLGUSU yoktu: `.chip` yalnız kenarlık, yarıçap
+          ve renk veriyor, ölçüyü kullanan yer seçiyor. Sonuç, yan yana yapışık
+          beş etiketti — seçili olan dolu zeminliyken bile nerede bittiği
+          okunmuyordu. */}
+      <nav className="no-scrollbar mt-3 flex gap-1.5 overflow-x-auto pb-1" aria-label="Sosyal sekmeler">
         {TABS.map((t) => (
           <button
             key={t.key}
-            className={`chip shrink-0 ${tab === t.key ? "chip-active" : ""}`}
+            className={`chip shrink-0 px-3.5 py-2 text-caption ${tab === t.key ? "chip-active" : ""}`}
             aria-current={tab === t.key ? "page" : undefined}
             onClick={() => go(t.key)}
           >
             {t.label}
             {t.key === "requests" && incoming > 0 ? (
-              <span className="ml-1.5 rounded-full px-1.5 text-[10px] font-black" style={{ background: "var(--color-flame)", color: "#fff" }}>
+              <span className="ml-1.5 rounded-full px-1.5 text-micro" style={{ background: "var(--color-flame)", color: "#fff" }}>
                 {incoming}
               </span>
             ) : null}
@@ -122,7 +161,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
       </nav>
 
       <div className="mt-3">
-        {err ? <p className="mb-2 text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+        {err ? <p className="mb-2 text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
         {tab === "friends" ? (
           data === null ? (
             <RowSkeleton rows={3} height={64} />
@@ -132,9 +171,9 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
                 <FriendList friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
               ) : (
                 <div className="card p-6 text-center">
-                  <p className="font-bold">Henüz arkadaşın yok</p>
-                  <p className="muted mt-1 text-sm">Kullanıcı adıyla ara ya da davet bağlantını gönder. Arkadaşlar birbirinin serisini görür, tepki verir, birlikte görev yapar.</p>
-                  <button className="btn btn-primary mt-4 h-9 px-4 text-xs" onClick={() => go("find")}>
+                  <p className="text-h3">Henüz arkadaşın yok</p>
+                  <p className="muted mt-1 text-body">Kullanıcı adıyla ara ya da davet bağlantını gönder. Arkadaşlar birbirinin serisini görür, tepki verir, birlikte görev yapar.</p>
+                  <button className="btn btn-primary mt-4 px-4 py-2.5" onClick={() => go("find")}>
                     Arkadaş bul
                   </button>
                 </div>
