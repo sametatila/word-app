@@ -82,3 +82,117 @@ export function RowSkeleton({ rows = 3, height = 56 }: { rows?: number; height?:
     </div>
   );
 }
+
+/*
+ * ── ÖLÇÜYE OTURAN İSKELET ─────────────────────────────────────────────────
+ *
+ * Mobilde iskelet gerçek düzenin ölçüleriyle çiziliyor (`M/src/ui/Skeleton.tsx`):
+ * bir başlık satırının yeri o başlığın satır yüksekliği kadar, bir kartın yeri
+ * kartın kendi dolgusu kadar. Sonuç, veri gelince hiçbir şeyin yerinden
+ * oynamaması.
+ *
+ * Web'de tek bir `CardSkeleton height={…}` vardı ve yükseklik göz kararı
+ * yazılıyordu; tutmadığında iskeletin çözdüğü sarsıntıyı iskeletin kendisi
+ * üretiyordu. Aşağıdakiler tipografi ölçeğinden TÜRÜYOR, o yüzden ölçek
+ * değişirse iskelet de değişiyor.
+ */
+
+/** Tipografi ölçeğinin punto ve satır yükseklikleri — globals.css `@theme` ile aynı. */
+const TEXT: Record<string, [size: number, lineHeight: number]> = {
+  display: [32, 1.15],
+  h1: [26, 1.2],
+  h2: [20, 1.3],
+  h3: [16, 1.35],
+  body: [15, 1.5],
+  strong: [15, 1.5],
+  caption: [12.5, 1.4],
+  micro: [11, 1.35],
+};
+export type TextVariant = keyof typeof TEXT;
+
+/** Bir metin satırının gerçek yüksekliği (px) — iskelet ölçüsü buradan. */
+export function textHeight(variant: TextVariant): number {
+  const [size, lh] = TEXT[variant];
+  return Math.round(size * lh);
+}
+
+/** Tek bir metin satırının yeri. */
+export function SkeletonLine({
+  variant = "body",
+  width = "100%",
+  className = "",
+}: {
+  variant?: TextVariant;
+  width?: number | string;
+  className?: string;
+}) {
+  return (
+    <div
+      aria-hidden
+      className={`animate-pulse rounded-chip ${className}`}
+      style={{ height: textHeight(variant), width, background: "var(--surface-2)" }}
+    />
+  );
+}
+
+/** Yatay çubuk — ilerleme çizgisi, ayraç. */
+export function SkeletonBar({ height = 8, className = "" }: { height?: number; className?: string }) {
+  return (
+    <div
+      aria-hidden
+      className={`animate-pulse rounded-full ${className}`}
+      style={{ height, background: "var(--surface-2)" }}
+    />
+  );
+}
+
+/** Kare karo — ikon kutusu, avatar, rozet. */
+export function SkeletonTile({ size = 44, className = "" }: { size?: number; className?: string }) {
+  return (
+    <div
+      aria-hidden
+      className={`shrink-0 animate-pulse rounded-tile ${className}`}
+      style={{ height: size, width: size, background: "var(--surface-2)" }}
+    />
+  );
+}
+
+/** Hap — seri/XP rozetlerinin yeri. */
+export function SkeletonPill({
+  width = 96,
+  height = 32,
+  className = "",
+}: {
+  width?: number | string;
+  height?: number;
+  className?: string;
+}) {
+  return (
+    <div
+      aria-hidden
+      className={`animate-pulse rounded-full ${className}`}
+      style={{ width, height, background: "var(--surface-2)" }}
+    />
+  );
+}
+
+/**
+ * Kart iskeleti — İÇİ olan.
+ *
+ * `CardSkeleton` boş bir kutu; bu, kartın kendi çerçevesini (yarıçap, kenarlık,
+ * dolgu) koruyup içine gerçek düzenin parçalarını almayı sağlıyor. Kartın
+ * yüksekliği böylece varsayılmıyor, içeriğinden çıkıyor.
+ */
+export function SkeletonCard({
+  children,
+  className = "",
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`card p-4 ${className}`} role="status" aria-busy="true" aria-label="Yükleniyor">
+      {children}
+    </div>
+  );
+}
