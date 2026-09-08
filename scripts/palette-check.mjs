@@ -101,7 +101,20 @@ const mix = (a, p, b) => {
 
 // ─── globals.css'i oku ─────────────────────────────────────────────────────
 
-const css = await readFile(CSS, "utf8");
+/*
+ * YORUMLAR ÖNCE SİLİNİYOR — bloklar metinde aranıyor ve yorumların içindeki bir
+ * seçici adı aramayı kaçırtıyor.
+ *
+ * Ölçüldü: gölge notunda geçen bir `:root` sözcüğü, gerçek `:root` kuralından
+ * önce geldiği için `block(":root")` yorumun üstüne düşüyor ve araç "renk
+ * çözülemedi" diye patlıyordu. Yorumu yeniden yazmak da bir çözümdü ama bir
+ * sonraki yazan aynı tuzağa düşerdi; ayrıştırıcının yorumu görmemesi doğrusu.
+ *
+ * Değiştirme uzunluk korumalı (aynı sayıda boşluk) — hata mesajlarındaki
+ * konumlar dosyadaki gerçek konumla uyuşmayı sürdürsün diye.
+ */
+const raw = await readFile(CSS, "utf8");
+const css = raw.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " "));
 
 /** Bir blok içindeki `--ad: değer;` çiftlerini toplar. */
 function block(selector) {

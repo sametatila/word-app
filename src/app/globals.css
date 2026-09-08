@@ -2,24 +2,27 @@
 
 /*
  * ══════════════════════════════════════════════════════════════════════════
- * PALET — hepsi maskottan türetildi
+ * TASARIM DİLİ — palet, tipografi, yarıçap, gölge
  * ══════════════════════════════════════════════════════════════════════════
  *
- * Kaynak `public/erdi.svg`. Maskotun renkleri tahmin edilmedi, çizimin piksel
- * histogramından ÖLÇÜLDÜ; izleme zaten sekiz renge indirgemişti:
+ * KAYNAK: mobil uygulama (`mobile/src/theme/`). Web ve mobil aynı ürünün iki
+ * yüzü; ölçüler tek yerde tanımlanıp iki tarafta da aynı olmalı ve o tek yer
+ * mobil, çünkü marka rengi logodan ve uygulama simgesinden geliyor.
  *
- *   #2F1911  kontur, göz, burun    %15.8   -> koyu tema zemini, dolu buton yazısı
- *   #FAE6C9  göğüs, yüz            %15.2   -> brand-100 (birebir)
- *   #BC8458  ten kahve             %11.9
- *   #EDA45D  ANA KÜRK              %10.6   -> brand-300 (birebir), markanın kendisi
- *   #D3B293  bej                    %9.1
- *   #9F633C  gölge kürk             %9.0
+ * Web bir dönem kendi paletini yürüttü: renkler maskotun (`public/erdi.svg`)
+ * piksel histogramından ölçülmüş kehribar tonlarıydı (ANA KÜRK #EDA45D) ve
+ * kendi içinde tutarlıydı. Ama mobil uygulama hiç oraya gitmedi; iki yüzey
+ * iki ayrı marka rengi taşıyor oldu. Kehribar 2026-09-08'de turuncuya
+ * bırakıldı (bkz. docs/plan/web-parity.md).
  *
- * Önceki palet indigo/mor/gök maviydi ve maskotla hiçbir ilgisi yoktu: ekranda
- * sıcak kahverengi bir mirket, çevresinde soğuk mor bir arayüz duruyordu.
+ * Maskottan gelen İKİ şey kaldı ve ikisi de hâlâ ölçüme dayanıyor: nötrlerin
+ * sıcaklığı (kontur rengi #2F1911'den doygunluk düşürülerek) ve gölgenin
+ * kahverengi olması.
  *
- * Renkler ölçülerek seçildi, `node scripts/palette-check.mjs` hepsini yeniden
- * ölçüyor: WCAG kontrastı ve kategorik ayrışma için CIEDE2000.
+ * `node scripts/palette-check.mjs` renklerin hepsini yeniden ölçüyor: WCAG
+ * kontrastı ve kategorik ayrışma için CIEDE2000. Eşiği geçmeyen tek eşleşme
+ * bilinçli bir karar ve orada "kabul edilmiş sapma" olarak, değeriyle
+ * birlikte yazılıyor.
  *
  * ── İKİ KADEMELİ ÖLÇÜT ────────────────────────────────────────────────────
  *
@@ -121,7 +124,107 @@
   --color-violet-600: #77439d;
   --color-violet-700: #5d347a;
 
-  --radius-xl2: 1.25rem;
+  /*
+   * ── TİPOGRAFİ ÖLÇEĞİ ────────────────────────────────────────────────────
+   *
+   * Mobil `M/src/theme/tokens.ts` `typography` ile BİREBİR. Orada her metin
+   * `<Text variant="…">` ile yazılıyor ve serbest punto yok; web'de ise punto
+   * her sayfada yeniden seçiliyordu (`text-2xl font-extrabold`, `text-xl
+   * font-bold`, `text-sm`…). Aynı işi gören iki başlık iki ayrı boyutta
+   * çıkıyordu ve hangi boyutun ne demek olduğunu kimse söyleyemiyordu.
+   *
+   * İsimler Tailwind'in kendi `text-xs…text-9xl` ölçeğiyle ÇAKIŞMIYOR, yani
+   * eski sınıflar olduğu gibi çalışmaya devam ediyor; ekranlar şerit şerit
+   * buraya taşınıyor.
+   *
+   * Satır yükseklikleri web'e ait: React Native punto başına kendi satır
+   * yüksekliğini hesaplıyor, tarayıcı hesaplamıyor. Değerler mobildeki görsel
+   * yoğunluğu verecek şekilde seçildi — başlıklar sıkı, gövde metni rahat.
+   */
+  --text-display: 2rem; /* 32 — ekran başlığı (AppHeader) */
+  --text-display--line-height: 1.15;
+  --text-display--font-weight: 800;
+  --text-display--letter-spacing: -0.016em; /* mobil: -0.5px @ 32 */
+
+  --text-h1: 1.625rem; /* 26 */
+  --text-h1--line-height: 1.2;
+  --text-h1--font-weight: 800;
+  --text-h1--letter-spacing: -0.012em; /* mobil: -0.3px @ 26 */
+
+  --text-h2: 1.25rem; /* 20 */
+  --text-h2--line-height: 1.3;
+  --text-h2--font-weight: 700;
+
+  --text-h3: 1rem; /* 16 */
+  --text-h3--line-height: 1.35;
+  --text-h3--font-weight: 700;
+
+  --text-body: 0.9375rem; /* 15 */
+  --text-body--line-height: 1.5;
+  --text-body--font-weight: 500;
+
+  --text-strong: 0.9375rem; /* 15 — mobil `bodyStrong` */
+  --text-strong--line-height: 1.5;
+  --text-strong--font-weight: 700;
+
+  --text-caption: 0.78125rem; /* 12.5 */
+  --text-caption--line-height: 1.4;
+  --text-caption--font-weight: 600;
+
+  --text-micro: 0.6875rem; /* 11 */
+  --text-micro--line-height: 1.35;
+  --text-micro--font-weight: 700;
+  --text-micro--letter-spacing: 0.036em; /* mobil: 0.4px @ 11 */
+
+  /*
+   * ── YARIÇAP ÖLÇEĞİ ──────────────────────────────────────────────────────
+   *
+   * Mobil `radii` ile birebir, ama İSİMLER FARKLI ve bu bilerek: mobilin
+   * `sm/md/lg/xl/xxl`'i Tailwind'in kendi `rounded-sm…rounded-3xl`'iyle aynı
+   * adları taşıyor ve onları ezmek, depodaki her `rounded-lg`'yi 8px'ten
+   * 20px'e sıçratırdı — hiçbiri gözden geçirilmeden. Adlar bunun yerine
+   * NEREDE kullanıldıklarını söylüyor.
+   *
+   *   chip  10  (mobil sm)   rozet, küçük etiket
+   *   tile  14  (mobil md)   ikon karosu, giriş alanı, geri düğmesi
+   *   panel 20  (mobil lg)   iç panel, liste satırı kabı, buton
+   *   card  26  (mobil xl)   kartın kendisi
+   *   float 34  (mobil xxl)  yüzen sekme çubuğu
+   *
+   * Boşluk ölçeğine ayrı token GEREKMİYOR: mobilin `spacing`i (4/8/12/16/20/
+   * 28/40) Tailwind'in 0.25rem tabanına birebir oturuyor — sırasıyla
+   * `1 2 3 4 5 7 10`.
+   */
+  --radius-chip: 0.625rem;
+  --radius-tile: 0.875rem;
+  --radius-panel: 1.25rem;
+  --radius-card: 1.625rem;
+  --radius-float: 2.125rem;
+
+}
+
+/*
+ * ── GÖLGE ─────────────────────────────────────────────────────────────────
+ *
+ * Mobil `softShadow(color, elevation)`: iOS'ta y ofseti yüksekliğin 0.7'si,
+ * bulanıklık 1.6'sı, opaklık 0.16. Aynı formül burada üç basamağa dondurulmuş
+ * halde. Renk de aynı: `#5a3418` — nötr siyah yerine sıcak bir kahve, çünkü
+ * zemin de sıcak; siyah gölge kremin üstünde gri bir kir gibi duruyor.
+ *
+ * `@theme` İÇİNDE DEĞİL, `:root` içinde: Tailwind `--shadow-*` anahtarlarını
+ * ürettiği sınıfın içine DEĞER olarak gömüyor, yani `.dark` altında yeniden
+ * tanımlamak işe yaramazdı. Değişken burada durup `@utility` ile kullanım
+ * anında okunduğunda koyu tema kendi gölgesini verebiliyor — ve gerekiyor:
+ * sıcak kahve bir gölge koyu zeminde görünmüyor, orada gölgeyi siyah yapıyor.
+ */
+@utility shadow-soft-sm {
+  box-shadow: var(--shadow-soft-sm);
+}
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+@utility shadow-soft-lg {
+  box-shadow: var(--shadow-soft-lg);
 }
 
 /*
@@ -174,6 +277,11 @@
   --hairline: #f1eae0;
   --text: #241a12;
   --text-muted: #7c6c5d;
+
+  --shadow-soft-sm: 0 4px 10px -2px rgb(90 52 24 / 0.14); /* mobil elevation 6 */
+  --shadow-soft: 0 7px 16px -4px rgb(90 52 24 / 0.16); /* mobil elevation 10 */
+  --shadow-soft-lg: 0 11px 26px -6px rgb(90 52 24 / 0.16); /* mobil elevation 16 */
+
   color-scheme: light;
 }
 
@@ -202,6 +310,13 @@
   --hairline: #2b221a;
   --text: #f6efe6;
   --text-muted: #a79684;
+
+  /* Koyu zeminde sıcak kahve gölge görünmüyor; orada gölge siyaha dönüyor ve
+     derinleşiyor — Android'in `elevation`'ı da koyu temada aynı şeyi yapar. */
+  --shadow-soft-sm: 0 4px 10px -2px rgb(0 0 0 / 0.4);
+  --shadow-soft: 0 7px 16px -4px rgb(0 0 0 / 0.45);
+  --shadow-soft-lg: 0 11px 26px -6px rgb(0 0 0 / 0.5);
+
   color-scheme: dark;
 }
 
@@ -223,10 +338,28 @@
 }
 
 @layer components {
+  /*
+   * Kart — mobil `M/src/ui/Card.tsx` ile birebir: yüzey zemini, 26px yarıçap,
+   * 1px SAÇ ÇİZGİSİ (kenarlık değil) ve yumuşak gölge.
+   *
+   * İki değişiklik de ölçülü bir fark yaratıyor. Yarıçap 20'den 26'ya çıkınca
+   * kartlar mobildeki yuvarlaklığa oturuyor. Gölge ise web'de hiç yoktu:
+   * kartlar zeminden yalnızca kenarlıklarıyla ayrılıyordu ve krem bir zeminin
+   * üstünde krem bir kenarlık, kartı zemine yapıştırıyordu. Mobilde kart
+   * yüzüyor; ayrımı yapan şey kenarlık değil gölge, o yüzden kenarlık da
+   * daha sönük olan `--hairline`a inebiliyor.
+   */
   .card {
     background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-xl2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+  }
+  /* Gölgesiz kart — kartın İÇİNDEKİ kart, ya da zaten gölgeli bir kabın içi.
+     İç içe iki gölge kirli bir hâle üretiyor. */
+  .card-flat {
+    box-shadow: none;
+    border-color: var(--border);
   }
   .surface-2 {
     background: var(--surface-2);
@@ -278,17 +411,45 @@
   .dark .brand-text {
     background-image: linear-gradient(135deg, var(--color-brand-200), var(--color-brand-400));
   }
+  /*
+   * Buton — mobilde `radii.lg` (20) ve `h3` (16/700). Yarıçap 0.9rem'den
+   * (14.4) 20'ye çıkıyor; mobilde tam genişlik butonlar belirgin biçimde
+   * yuvarlak ve web'deki köşeli hâli iki uygulamayı ayıran ilk şeylerdendi.
+   */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border-radius: 0.9rem;
-    font-weight: 600;
+    border-radius: var(--radius-panel);
+    font-size: var(--text-h3);
+    font-weight: 700;
     transition: transform 0.15s ease, filter 0.15s ease, background-color 0.15s ease;
   }
   .btn:active {
     transform: scale(0.97);
+  }
+  /*
+   * Basma geri bildirimi — mobil `PressableScale`ın karşılığı.
+   *
+   * Mobilde dokunulabilir HER şey basınca 0.96'ya iniyor: kartlar, liste
+   * satırları, karolar, sekmeler. Web'de yalnız `.btn` tepki veriyordu ve bu
+   * fark oturumda hissediliyor — bir karta dokunuyorsun, ekran seni duymamış
+   * gibi duruyor, sonra sayfa değişiyor.
+   *
+   * Yay (spring) yerine kısa bir `cubic-bezier`: CSS'te yay yok ve
+   * `transition` süresi 120ms'ye inince fark edilmiyor. `will-change` YOK —
+   * yüzlerce satırın hepsini kompozitör katmanına almak, kazandırdığından
+   * fazlasını götürüyor.
+   *
+   * Hareket azaltma tercihinde ölçek tamamen kapanıyor (aşağıdaki blok).
+   */
+  .pressable {
+    transition: transform 0.12s cubic-bezier(0.2, 0, 0.2, 1);
+    touch-action: manipulation;
+  }
+  .pressable:active {
+    transform: scale(0.96);
   }
   /*
    * Birincil buton: DÜZ marka turuncusu + beyaz yazı — mobil uygulamayla
@@ -338,7 +499,7 @@
   .option {
     border: 1.5px solid var(--border);
     background: var(--surface);
-    border-radius: 1rem;
+    border-radius: var(--radius-panel);
     transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.12s ease,
       box-shadow 0.15s ease;
   }
@@ -418,7 +579,7 @@
    * değil, bir bildirim; kenarlık onu dokunulabilir gösterirdi.
    */
   .verdict {
-    border-radius: 1rem;
+    border-radius: var(--radius-panel);
   }
   /*
     Metin karışımı %72 renk / %28 metin idi ve ölçümde açık temada doğru
@@ -505,6 +666,10 @@
   .animate-shake,
   .animate-glow {
     animation: none;
+  }
+  /* Basma ölçeği de hareket: tercih verilmişse öğe yerinde kalıyor. */
+  .pressable:active {
+    transform: none;
   }
   *,
   *::before,
