@@ -43,7 +43,9 @@ uygulama adımından sonra buradaki maddeler tek tek yeniden denetlenir.
 - POST/DELETE `/api/social/reactions` {eventId, kind} — tek tepki/kullanıcı/olay; değiştirilebilir
 - POST `/api/social/nudges` {userId, kind} — yalnız arkadaşa; 1/gün/arkadaş, 20/gün toplam
 - GET/POST `/api/social/quests` · POST `/api/social/quests/[id]/respond` — davet/kabul/ret/iptal; ilerleme haftalık XP
-- GET `/api/social/leaderboard/friends` — bu hafta XP, ben + arkadaşlar, sıra
+- GET `/api/social/leaderboard` — bu hafta XP, ben + arkadaşlar, sıra
+- GET/POST `/api/social/league` — bu haftanın lig grubu (canlı XP, terfi/düşme kuşakları) + gösterilmemiş geçen hafta sonucu
+- POST/DELETE `/api/push/device` {token, platform} — mobil FCM jetonu kaydı/silme
 - GET `/api/social/notifications?cursor=` · POST `/api/social/notifications/read` {ids|all}
 - GET/POST/DELETE `/api/social/blocks` · POST `/api/social/reports`
 - Sunucu içi: `emitActivity(userId, type, payload)` — mevcut XP/seri/seviye/rozet yollarından çağrılır;
@@ -70,26 +72,39 @@ uygulama adımından sonra buradaki maddeler tek tek yeniden denetlenir.
 - [x] IDOR: isteğe yalnız alıcı cevaplar; göreve yalnız davet edilen; bildirim yalnız sahibi; `sameOrigin` her yazan rotada; kapalı sözlük doğrulama
 - [x] İndeksler + `drizzle/0036_social.sql` (drizzle-kit çıktısıyla birebir karşılaştırıldı) + journal kaydı
 - [x] Analitik: `EVENT_NAMES`e 9 sosyal olay
-- [x] Web + mobil eşlik: aynı API; web `/friends` (5 sekme), `/u/[username]`, `/notifications`, ayarlar, öğren-nabız, zil; mobil `Friends/User/Inbox/SocialSettings` ekranları, sıralamada Arkadaşlar sekmesi, başlıkta zil, profilde satırlar
+- [x] Web + mobil eşlik: aynı API; web `/friends` (3 sekme: Arkadaşlar/Akış/Bul), `/u/[username]`, `/notifications`, ayarlar, öğren-nabız, zil; mobil `Friends` (dördüncü sekme) + `User/Inbox/SocialSettings`, sıralamada Lig ve Arkadaşlar, başlıkta zil, profilde satırlar
 - [x] Kişi arması: web `avatar.tsx` ile aynı hash/palet mobilde `PersonAvatar` — aynı kişi iki platformda aynı renk
 
-## Bilinçli sınırlar (v1)
-- Mobilde uzak push yok (FCM kurulmadı); gelen kutusu çekmeli. Sonraki adım: `device_tokens` + FCM.
-- Haftalık sıralama olayları (`weekly_top`) ve görev kapanışı ilk sosyal okumada tembel çalışır; cron kurulursa `closeWeekIfNeeded` oradan da çağrılabilir.
+## v2 — ligler, ortak seri, uzak push (0047 + 0048)
+- **Ligler** düz genel sıralamanın yerine geçti: `league_members`, beş basamak, en çok 30 kişilik hafta grupları, terfi/düşme kuşakları, hafta sonu sonuç kartı. XP sayılmıyor, `daily_stats`ten canlı okunuyor; `final_xp` yalnız kapanışta donuyor. Genel tablo (`getLeaderboard`) ve `/api/leaderboard` kaldırıldı.
+- **Ortak seri** artık yayınlanıyor (`friend_streak`, 7/30/100), listede "bugün kırılıyor" uyarısı çıkıyor, dürtme duruma göre `remind`/`cheer` gönderiyor ve kırılmadan önce hatırlatma bildirimi gidiyor (en üst öncelik).
+- **Uzak push** kuruldu: `device_tokens` + FCM HTTP v1 (SDK yok, JWT `node:crypto` ile imzalanıyor). `sendToUser` iki kanala birden gönderiyor; üç hatırlatma turu da cihaz jetonlarını hedefliyor. Anahtar yoksa her katmanda sessizce kapalı.
+
+## Bilinçli sınırlar
+- Ortak göreve rastgele eşleştirme yok: görev hâlâ arkadaş gerektiriyor. Yabancılarla rekabeti ligler karşılıyor.
+- Haftalık kapanış (lig sonuçları, `weekly_top`, görev kapanışı) ilk sosyal okumada tembel çalışır; hata yolunda kilit bırakılır, tekrarlanamayacak tek adımın kendi kilidi vardır. Cron kurulursa `closeWeekIfNeeded` oradan da çağrılabilir.
 - Şikayetler yalnız kaydedilir; otomatik yaptırım yok.
 - `WeeklyScreen`/haftalık sınav skoru sosyal katmana bağlı değil.
 
 ## Yayına alma sırası (ZORUNLU)
 1. Sunucuda migration: `ssh lernomi 'cd /opt/lernomi/$(cat /opt/lernomi/active) && npx tsx scripts/apply-migration.ts drizzle/0036_social.sql'` — kod deploy'undan ÖNCE (yeni kod `profiles`ten yeni sütunları okur; sütun yoksa öğrenme yolları da 500 verir). Migration eski kod için zararsız (yalnız ekleme).
+   0047/0048 için ELLE ADIM GEREKMEZ: `deploy.sh` build'den önce `drizzle-kit push --force`
+   çağırıyor ve iki tablo da yalnız EKLEME (canlı şema ile kod arasındaki tek fark onlar,
+   2026-09-09'da `information_schema` ile doğrulandı). Eski renk bu tabloları hiç okumaz.
 2. `git push origin main` → webhook → deploy.
 3. Doğrulama: `/friends` açılır, kullanıcı adı otomatik gelir; iki hesapla istek/kabul/tepki/dürtme/görev.
 
 ## Arayüz
-- Web: `/friends` (Arkadaşlar · İstekler · Öneriler · Ara · Akış), `/u/[username]`, bildirim zili +
-  `/notifications`, ayarlarda "Sosyal ve gizlilik", ana sayfada arkadaş görevi kartı, lider tablosunda
-  "Arkadaşlar" sekmesi.
-- Mobil: FriendsScreen (aynı sekmeler), FeedScreen, PublicProfileScreen, NotificationsScreen,
-  Settings > Sosyal, Home'da görev kartı, Leaderboard'da Arkadaşlar sekmesi, tepki seçici (6 SVG).
+Arkadaşlar iki platformda da alt gezinmenin DÖRDÜNCÜ sekmesi. Merkez üç sekme:
+Arkadaşlar (gelen istekler + bu haftanın ortak görevi + liste + arkadaş tablosu) ·
+Akış · Bul (arama + öneriler + gönderilen istekler). "İstekler" ve "Görevler"
+sekmeleri kaldırıldı: biri haftanın neredeyse tamamında boştu, diğeri kişi başına
+tek görev kuralı yüzünden hiçbir zaman listeye dönüşemezdi. Eski `?tab=quests|requests`
+adresleri arkadaş sekmesine düşer.
+- Web: `/friends` (3 sekme), `/u/[username]`, bildirim zili + `/inbox`, ayarlarda
+  "Sosyal ve gizlilik", öğren ekranında görev nabzı, `/leaderboard` (Lig · Arkadaşlar).
+- Mobil: Friends sekmesi (aynı üç sekme), User/Inbox/SocialSettings ekranları,
+  Home'da görev kartı, Leaderboard'da Lig ve Arkadaşlar, tepki seçici (6 SVG).
 
 ## Uygulama sırası
 1. Şema + migration → 2. sunucu kütüphanesi (`src/lib/social/*`: friendship durum makinesi,
