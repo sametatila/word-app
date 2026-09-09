@@ -9,9 +9,15 @@ import { ArrowBackIcon, TrophyIcon, CheckIcon } from "../ui/icons";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
-import { GROUP_LABEL, type Achievement, type Tier, type AchGroup } from "../data/achievements";
+import { GROUP_ORDER, GROUP_LABEL_KEY, type Achievement, type Tier, type AchGroup } from "../data/achievements";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { useLayout } from "../lib/useLayout";
+
+/** Grup başlığı — sözlükte karşılığı olmayan (sunucudan yeni gelen) grup ham adıyla çizilir. */
+function groupLabel(group: string): string {
+  const key = GROUP_LABEL_KEY[group as AchGroup];
+  return key ? t(key) : group;
+}
 
 function tierColor(t: Tier, colors: Palette): string {
   return t === "bronze" ? "#b08d57" : t === "silver" ? "#9aa3ad" : t === "gold" ? colors.streak : colors.accent;
@@ -20,7 +26,7 @@ function tierColor(t: Tier, colors: Palette): string {
 function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
   const { gridItemWidth } = useLayout();
   const tc = tierColor(a.tier, colors);
-  const pct = a.target ? Math.min(100, Math.round((a.progress / a.target) * 100)) : 0;
+  const pct = a.target ? Math.min(100, Math.round((a.done / a.target) * 100)) : 0;
   return (
     <View style={{ width: gridItemWidth, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, opacity: a.unlocked ? 1 : 0.92 }}>
       <View style={[{ width: 46, height: 46, borderRadius: 23, alignItems: "center", justifyContent: "center", backgroundColor: a.unlocked ? tc : colors.surface2 }, a.unlocked ? softShadow(tc, 6) : {}]}>
@@ -37,7 +43,7 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
           <View style={{ height: 5, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
             <View style={{ height: "100%", width: `${pct}%`, backgroundColor: tc, borderRadius: 3 }} />
           </View>
-          <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{a.progress}/{a.target}</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{a.done}/{a.target}</Text>
         </View>
       )}
     </View>
@@ -66,10 +72,17 @@ export function AchievementsScreen() {
 
   const list = useMemo(() => remote ?? [], [remote]);
   const earned = list.filter((a) => a.unlocked).length;
+  // Grup kovaları sunucudaki sırayla açılıyor; listede OLMAYAN bir grup gelirse
+  // atılmıyor, sona ekleniyor. Eski hâli üç grup biliyordu ve dördüncüsü geldiğinde
+  // etiketi `undefined` olup ekranı çökertiyordu.
   const groups = useMemo(() => {
-    const g: Record<AchGroup, Achievement[]> = { streak: [], vocab: [], games: [] };
-    for (const a of list) (g[a.group] ??= []).push(a);
-    return g;
+    const g = new Map<string, Achievement[]>(GROUP_ORDER.map((k) => [k, []]));
+    for (const a of list) {
+      const bucket = g.get(a.group);
+      if (bucket) bucket.push(a);
+      else g.set(a.group, [a]);
+    }
+    return [...g.entries()].filter(([, rows]) => rows.length);
   }, [list]);
 
   return (
@@ -106,16 +119,14 @@ export function AchievementsScreen() {
         </View>
       ) : (
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
-        {(Object.keys(groups) as AchGroup[]).map((gk) =>
-          groups[gk].length ? (
-            <View key={gk} style={{ marginTop: spacing.lg }}>
-              <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{GROUP_LABEL[gk].toUpperCase()}</Text>
-              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
-                {groups[gk].map((a) => <Badge key={a.id} a={a} colors={colors} />)}
-              </View>
+        {groups.map(([gk, rows]) => (
+          <View key={gk} style={{ marginTop: spacing.lg }}>
+            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{groupLabel(gk).toUpperCase()}</Text>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+              {rows.map((a) => <Badge key={a.id} a={a} colors={colors} />)}
             </View>
-          ) : null,
-        )}
+          </View>
+        ))}
       </ScrollView>
       )}
     </View>
