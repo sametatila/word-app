@@ -53,7 +53,7 @@ export function ThemeToggle() {
  * değişiyor — dinleyici o yüzden var. Açık/koyu seçiliyken dinleyici hiçbir
  * şey yapmıyor, kullanıcı zaten karar vermiş.
  */
-export function ThemeSetting() {
+export function ThemeSetting({ bare = false }: { bare?: boolean } = {}) {
   const t = useT();
   const [mode, setMode] = useState<ThemeMode>("system");
 
@@ -79,23 +79,27 @@ export function ThemeSetting() {
     { key: "dark", label: t("settings.theme_dark") },
   ];
 
-  return (
-    <SettingRow title={t("theme.appearance")}>
-      {/* Segment: üçü de aynı ağırlıkta, seçili olan dolu. Mobildeki üçlü
-          segmentin aynısı. */}
-      <div className="flex gap-1.5">
-        {OPTIONS.map((o) => (
-          <button
-            key={o.key}
-            type="button"
-            onClick={() => pick(o.key)}
-            aria-pressed={mode === o.key}
-            className={`chip px-3 py-1.5 text-caption ${mode === o.key ? "chip-active" : ""}`}
-          >
-            {o.label}
-          </button>
-        ))}
-      </div>
-    </SettingRow>
+  {/* Segment: üçü de aynı ağırlıkta, seçili olan dolu. Mobildeki üçlü
+      segmentin aynısı. */}
+  const segment = (
+    <div className="flex gap-1.5">
+      {OPTIONS.map((o) => (
+        <button
+          key={o.key}
+          type="button"
+          onClick={() => pick(o.key)}
+          aria-pressed={mode === o.key}
+          className={`chip px-3 py-1.5 text-caption ${mode === o.key ? "chip-active" : ""}`}
+        >
+          {o.label}
+        </button>
+      ))}
+    </div>
   );
+
+  // `bare`: bölümün etiketi ("GÖRÜNÜM") zaten adı söylüyor; satır başlığı
+  // aynı kelimeyi ikinci kez yazardı. Mobilde de etiketin altında doğrudan
+  // üçlü segment var.
+  if (bare) return <div className="px-4 py-3">{segment}</div>;
+  return <SettingRow title={t("theme.appearance")}>{segment}</SettingRow>;
 }

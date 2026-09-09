@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { authApi } from "@/lib/auth/api";
-import { AlertIcon, CheckIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon, ChevronRightIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
 import { PushSettings } from "@/components/push-settings";
@@ -64,14 +62,19 @@ const LEVELS = [
 export function ProfileForm({
   userId,
   initial,
-  accountName,
   authEnabled,
+  linkedAccounts,
 }: {
   initial: Initial;
-  accountName: string | null;
   /** Armanın türetildiği hesap kimliği — sıralamadakiyle aynı görünsün diye. */
   userId: string;
   authEnabled: boolean;
+  /**
+   * Giriş yöntemleri bölümü. Sunucuda çiziliyor (Google yapılandırılmış mı
+   * bilgisini istemciye taşımamak için) ama YERİ burası: mobilde HESAP'ın
+   * hemen altında.
+   */
+  linkedAccounts?: ReactNode;
 }) {
   const t = useT();
   const lang = useLang();
@@ -81,9 +84,7 @@ export function ProfileForm({
   const [level, setLevel] = useState(initial.level);
   const [course, setCourse] = useState(initial.course);
   const [voice, setVoice] = useState<string | null>(initial.voice);
-  const router = useRouter();
   const [saving, setSaving] = useState(false);
-  const [signingOut, setSigningOut] = useState(false);
   const [saved, setSaved] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
 
@@ -168,7 +169,32 @@ export function ProfileForm({
             className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
           />
         </label>
+        {/* Hesap silme bu bölümün İÇİNDE — mobilde de adın hemen altında,
+            ince bir çizgiyle ayrılmış tek satır. Web'de en dipteki "OTURUM"
+            bölümündeydi ve oraya varmak için bütün ayarları geçmek
+            gerekiyordu. */}
+        {authEnabled ? (
+          <Link
+            href="/account/delete"
+            prefetch={false}
+            className="pressable mt-3 flex items-center gap-3 border-t pt-3"
+            style={{ borderColor: "var(--hairline)" }}
+          >
+            <span className="min-w-0 flex-1">
+              <span className="block text-strong" style={{ color: "var(--color-rose-500)" }}>
+                {t("settings.delete_account")}
+              </span>
+              <span className="muted block text-caption">{t("settings.with_all_your_data_can_t_be")}</span>
+            </span>
+            <ChevronRightIcon size={20} className="muted shrink-0" />
+          </Link>
+        ) : null}
       </Section>
+
+      {/* Giriş yöntemleri HESAP'ın hemen altında — mobildeki sıra. Web'de
+          sayfanın dibindeydi, yani "nasıl giriyorum" sorusunun cevabı
+          hesabın yanında değil sonundaydı. */}
+      {linkedAccounts}
 
       <Section title={t("settings.language_to_learn")}>
         <div>
@@ -236,17 +262,6 @@ export function ProfileForm({
         </div>
       </Section>
 
-      <Section title={t("settings.reading_voice")}>
-        <div>
-          <VoicePicker
-            course={course}
-            value={voice}
-            onChange={(v: VoiceId) => setVoice(v)}
-            compact
-          />
-        </div>
-      </Section>
-
       <Section title={t("settings.daily_goal_reviews_day")}>
         <Slider
           label={t("settings.daily_goal_short")}
@@ -272,6 +287,17 @@ export function ProfileForm({
             Kaydırıcıların ÜSTÜNDEYDİ ve negatif boşluk yüzünden ilk etiketin
             üstüne biniyordu; notun yeri zaten anlattığı şeyin altı. */}
         <p className="muted -mt-1 text-caption">{t("settings.srs_note")}</p>
+      </Section>
+
+      <Section title={t("settings.reading_voice")}>
+        <div>
+          <VoicePicker
+            course={course}
+            value={voice}
+            onChange={(v: VoiceId) => setVoice(v)}
+            compact
+          />
+        </div>
       </Section>
 
       <div className="mx-auto w-full max-w-3xl">
@@ -306,9 +332,26 @@ export function ProfileForm({
         ) : null}
       </div>
 
-      {/* Uygulama ayarları tek kartta, ayırıcı çizgilerle. Sıra bir kuralı
-          izliyor: iPhone'da bildirim ancak uygulama ana ekrana eklenmişken
-          çalışıyor, o yüzden kurulum bildirimden önce geliyor. */}
+      {/* UYGULAMA DİLİ ve GÖRÜNÜM mobilde İKİ AYRI bölüm. Web'de ikisi
+          kurulum, ses ve bildirimle birlikte tek "UYGULAMA" kartındaydı;
+          etiketi olmayan bir ayar, aranırken görünmüyor.
+
+          Tema seçimi de üst başlıktan buraya indi: orada her ekranda duran
+          ama günde bir kez bile dokunulmayan bir düğmeydi. Ayarın evi
+          ayarlar. */}
+      <Section title={t("settings.app_language")} bare>
+        <LangSetting bare />
+      </Section>
+
+      <Section title={t("settings.appearance")} bare>
+        <ThemeSetting bare />
+      </Section>
+
+      {/* CİHAZ — mobilde karşılığı yok, olamaz da: kurulum tarayıcıya,
+          ses ve bildirim izni de web'e özgü. Mobilin sırasını bozmuyor,
+          görünümle gizliliğin arasına kendi etiketiyle giriyor. Sıra bir
+          kuralı izliyor: iPhone'da bildirim ancak uygulama ana ekrana
+          eklenmişken çalışıyor, o yüzden kurulum bildirimden önce. */}
       <Section title={t("settings.app")} bare>
         {/* Kurulum rehberi açılır kutuda. Üç numaralı adım, cihaz seçici ve
             açıklama metni 330 piksel tutuyordu ve bu, hayatta BİR KEZ yapılan
@@ -319,17 +362,6 @@ export function ProfileForm({
             <InstallGuide tone="plain" />
           </Disclosure>
         </div>
-        {/*
-          Tema seçimi üst başlıktan buraya indi. Orada her ekranda duran bir
-          düğmeydi ama günde bir kez bile dokunulmayan bir tercih; başlıkta
-          yer kaplıyor ve avatarla birlikte dar telefonlarda taşıyordu.
-          Ayarın evi ayarlar.
-        */}
-        {/* Dil, görünümün hemen üstünde: mobilde de "uygulama dili" ile
-            "görünüm" ardışık ve ikisi de uygulamanın kendisiyle ilgili
-            (öğrenilen dil değil, arayüz). */}
-        <LangSetting />
-        <ThemeSetting />
         <SoundSettings bare />
         <PushSettings bare />
       </Section>
@@ -343,47 +375,13 @@ export function ProfileForm({
         </SettingRow>
       </Section>
 
-      {/* Hesap da satır. "Giriş yaptın, ilerlemen senkron" cümlesi kalıyor
-          çünkü çıkış yapmadan önce bilinmesi gereken tek şey o; ama iki satır
-          metin ve tam genişlikte bir düğme için 172 piksel gerekmiyordu. */}
-      <Section title={t("settings.session")} bare>
-        {authEnabled ? (
-          <SettingRow
-            title={t("settings.account_row")}
-            sub={t("settings.account_sub", { name: accountName ?? "" })}
-          >
-            <button
-              onClick={async () => {
-                setSigningOut(true);
-                try {
-                  await authApi("sign-out", {});
-                } catch {
-                  /* yine de ana sayfaya dön */
-                }
-                router.push("/");
-                router.refresh();
-              }}
-              disabled={signingOut}
-              className="btn btn-ghost h-9 px-3.5 text-xs disabled:opacity-60"
-            >
-              {signingOut ? t("settings.signing_out") : t("profile.log_out")}
-            </button>
-          </SettingRow>
-        ) : (
-          <SettingRow
-            title={t("settings.demo_mode")}
-            sub={t("settings.demo_mode_sub")}
-          />
-        )}
-        {authEnabled ? (
-          <SettingRow title={t("settings.delete_account")} sub={t("settings.with_all_your_data_can_t_be")}>
-            <Link href="/account/delete" prefetch={false} className="btn btn-ghost h-9 px-3.5 text-xs" style={{ color: "var(--color-rose-500)" }}>
-              {t("common.delete")}
-            </Link>
-          </SettingRow>
-        ) : null}
-      </Section>
-
+      {/*
+        OTURUM BÖLÜMÜ KALKTI. Çıkış yap Profil ekranının dibinde zaten var ve
+        orada onay diyaloğuyla — mobilde de tek yer orası. Hesap silme de
+        HESAP bölümüne, adın hemen altına taşındı. Geriye "… olarak girdin,
+        ilerlemen senkron" cümlesi kalıyordu; onu söyleyen satır zaten
+        Profil'deki kimlik kartı.
+      */}
     </div>
   );
 }

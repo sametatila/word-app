@@ -103,9 +103,13 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
   const satirlar = [...new Set([...accounts.map((a) => a.provider), ...(googleEnabled ? ["google"] : [])])];
 
   return (
-    <section id="accounts" className="mx-auto w-full max-w-md">
-      <h2 className="mb-2 mt-6 px-1 text-sm font-bold">{t("links.title")}</h2>
-      <div className="card divide-y divide-[var(--color-border)]">
+    /* Ayarların diğer bölümleriyle AYNI kalıp: üstte küçük etiket, altında
+       kart. Bölüm sayfanın dibindeyken kendi genişliği (max-w-md) ve kendi
+       başlığı (kalın h2) vardı; HESAP'ın altına gelince aradaki fark bir
+       yamaya dönüştü. */
+    <section id="accounts" className="mx-auto w-full max-w-3xl">
+      <p className="muted mb-2 ml-1 text-caption tracking-wide">{t("links.title")}</p>
+      <div className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
         {satirlar.map((p) => {
           const bagli = bagliMi(p);
           const etiket = ETIKET[p] ?? { ad: p, alt: "" };

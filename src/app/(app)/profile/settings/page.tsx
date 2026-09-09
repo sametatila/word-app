@@ -53,7 +53,6 @@ export default async function SettingsPage() {
     <>
       <ProfileForm
         authEnabled={authEnabled}
-        accountName={user.name}
         userId={user.id}
         initial={{
           displayName: profile.displayName ?? "",
@@ -66,11 +65,12 @@ export default async function SettingsPage() {
           longestStreak: profile.longestStreak,
           totalXp: profile.totalXp,
         }}
+        /* Giriş yöntemleri: parola + sosyal hesaplar tek yerde. Apple web
+           akışı açık olmadığı için burada yalnız Google teklif ediliyor;
+           iOS'ta Apple native yoldan bağlanıyor. Formun İÇİNE veriliyor
+           çünkü yeri HESAP'ın hemen altı — mobildeki sıra. */
+        linkedAccounts={<LinkedAccounts googleEnabled={googleConfigured} />}
       />
-      {/* Giriş yöntemleri: parola + sosyal hesaplar tek yerde. Apple web akışı
-          açık olmadığı için burada yalnız Google teklif ediliyor; iOS'ta Apple
-          native yoldan bağlanıyor. */}
-      <LinkedAccounts googleEnabled={googleConfigured} />
       {me ? (
         <div className="mx-auto w-full max-w-md">
           <SocialSettings initial={me} course={profile.course} />

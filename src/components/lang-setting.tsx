@@ -21,7 +21,12 @@ import { writeLangCookie } from "@/lib/i18n/set-lang";
  * bileşenlerini etkiliyor ve yumuşak tazeleme istemcideki bağlamı eski dilde
  * bırakıyor.
  */
-export function LangSetting() {
+/**
+ * `bare`: başlıksız — bölümün kendi etiketi ("UYGULAMA DİLİ") zaten adı
+ * söylüyor, satır başlığı onu ikinci kez yazardı. Mobilde de etiketin altında
+ * doğrudan çipler var.
+ */
+export function LangSetting({ bare = false }: { bare?: boolean } = {}) {
   const t = useT();
   const current = useLang();
   const [busy, setBusy] = useState(false);
@@ -43,23 +48,35 @@ export function LangSetting() {
     window.location.reload();
   }
 
+  const chips = (
+    <div className="flex gap-1.5">
+      {NATIVE_LANGS.map((l) => (
+        <button
+          key={l}
+          type="button"
+          disabled={busy}
+          onClick={() => void pick(l)}
+          aria-pressed={current === l}
+          lang={l}
+          className={`chip px-3 py-1.5 text-caption disabled:opacity-60 ${current === l ? "chip-active" : ""}`}
+        >
+          {LANG_LABEL[isNativeLang(l) ? l : "tr"]}
+        </button>
+      ))}
+    </div>
+  );
+
+  if (bare) {
+    return (
+      <div className="px-4 py-3">
+        {chips}
+        <p className="muted mt-2 text-xs leading-snug">{t("lang.app_language_sub")}</p>
+      </div>
+    );
+  }
   return (
     <SettingRow title={t("lang.app_language")} sub={t("lang.app_language_sub")}>
-      <div className="flex gap-1.5">
-        {NATIVE_LANGS.map((l) => (
-          <button
-            key={l}
-            type="button"
-            disabled={busy}
-            onClick={() => void pick(l)}
-            aria-pressed={current === l}
-            lang={l}
-            className={`chip px-3 py-1.5 text-caption disabled:opacity-60 ${current === l ? "chip-active" : ""}`}
-          >
-            {LANG_LABEL[isNativeLang(l) ? l : "tr"]}
-          </button>
-        ))}
-      </div>
+      {chips}
     </SettingRow>
   );
 }
