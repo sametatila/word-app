@@ -26,7 +26,8 @@ import { cleanHeadword } from "../src/lib/headword";
  *                "tr · en" biçiminde iki kez görünürdü
  *   rank         NULL — mevcut rank ALMANCA frekansı, İngilizceye taşınmaz
  *   niveau       İNGİLİZCE CEFR seviyesi (Almanca kaynağın seviyesi değil)
- *   de_gloss     ALMANCA KARŞILIK — kaynak satırın başlığından TÜRETİLİYOR
+ *   de_gloss     ALMANCA KARŞILIK — kaynak satırın başlığından TÜRETİLİYOR;
+ *                kaynağı olmayan 200 maddede kaynak dosyada elle yazılı
  *   beispiel_de  NULL — türetilemiyor, aşağıda anlatılıyor
  */
 
@@ -40,6 +41,15 @@ type Row = {
   niveau: string;
   beispiel: string;
   beispielTr: string;
+  /**
+   * Almanca karşılık — YALNIZ kaynağı olmayan maddelerde yazılı.
+   *
+   * 6.975 madde Almanca havuzdan türetilmiş ve karşılığı kaynak satırdan
+   * geliyor; burada yazılı olan 200 madde İngilizceye özgü eklemeler
+   * (`corner shop`, `queue`, `plaster`) ve türetecek bir kaynakları yok.
+   * Elle yazılan değer türetilenden önce gelir — açık bilgi çıkarımı yener.
+   */
+  deGloss?: string;
 };
 
 type SrcRow = { id: number; de: string };
@@ -86,9 +96,12 @@ async function main() {
 
   const german = readGermanHeadwords();
   let derived = 0;
+  let written = 0;
   const values = rows.map((r) => {
-    const deGloss = r.srcId ? (german.get(r.srcId) ?? null) : null;
-    if (deGloss) derived++;
+    // Elle yazılan değer türetilenden ÖNCE gelir.
+    const deGloss = r.deGloss?.trim() || (r.srcId ? (german.get(r.srcId) ?? null) : null);
+    if (r.deGloss?.trim()) written++;
+    else if (deGloss) derived++;
     return {
       id: r.id,
       de: r.de,
@@ -115,7 +128,10 @@ async function main() {
       course: "en",
     };
   });
-  console.log(`  Almanca karşılık türetildi: ${derived}/${rows.length}`);
+  console.log(
+    `  Almanca karşılık: ${derived + written}/${rows.length} ` +
+      `(${derived} türetildi, ${written} elle yazılmış)`,
+  );
 
   const CHUNK = 400;
   for (let i = 0; i < values.length; i += CHUNK) {
