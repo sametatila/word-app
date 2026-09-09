@@ -131,6 +131,17 @@ export const profiles = pgTable("profiles", {
   timezone: text("timezone").notNull().default("Europe/Istanbul"),
   remindersEnabled: boolean("reminders_enabled").notNull().default(true),
   /**
+   * Seri koruma ve haftalık sınav çağrısı — mobildeki üç hatırlatma
+   * anahtarının web'de eksik olan ikisi (bkz. `NotificationsScreen`).
+   *
+   * `remindersEnabled` GÜNLÜK kanalı yönetiyor ve aboneliğe bağlı
+   * (abone olunca açılıyor, çıkılınca kapanıyor). Bu ikisi ise
+   * kullanıcının kendi kararı: abone olan biri günlük hatırlatmayı
+   * isteyip akşam dürtmesini istemeyebilir.
+   */
+  streakAlert: boolean("streak_alert").notNull().default(true),
+  weeklyReminder: boolean("weekly_reminder").notNull().default(true),
+  /**
    * En son hangi gün hatırlatma gönderildi.
    *
    * Kullanıcı başına, cihaz başına değil: üç cihazı olan biri üç bildirim

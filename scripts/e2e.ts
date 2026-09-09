@@ -1435,7 +1435,9 @@ async function main() {
   check("kaynak dizi değişmiyor", src.join("") === "12345");
 
   console.log("\n19) Hatırlatma metni — sıra ve eşikler");
-  const base = { name: "Samet Atila", level: "A2" };
+  // Dil açıkça veriliyor: metinler artık ALICININ dilinden geliyor ve
+  // testin hangi cümleyi beklediği dile bağlı.
+  const base = { name: "Samet Atila", level: "A2", lang: "tr" as const };
   const rival = { name: "Erdi", gap: 140 };
 
   // Seri her şeyin üstünde: bugüne bağlı ve kaçırılırsa geri gelmiyor.
@@ -1477,13 +1479,13 @@ async function main() {
   console.log("\n20) Paylaşılan metin — günün turu bir meydan okuma");
   const marks = [true, true, false, true];
   const sessionText = buildShareText({
-    marks, total: 20, accuracy: 85, streak: 4, level: "A2", origin: "https://x.test",
+    marks, total: 20, accuracy: 85, streak: 4, level: "A2", origin: "https://x.test", lang: "tr" as const,
   });
   check("sıradan tur kelime sayısı yazıyor", sessionText.includes("20 kelime"));
   check("sıradan turda meydan okuma yok", !sessionText.includes("Aynı sorular"));
 
   const dailyText = buildShareText({
-    marks, total: 20, accuracy: 85, streak: 4, level: "A2", origin: "https://x.test",
+    marks, total: 20, accuracy: 85, streak: 4, level: "A2", origin: "https://x.test", lang: "tr" as const,
     kind: "daily", score: 1240,
   });
   check("günün turu başlıkta belli", dailyText.includes("Günün turu"));

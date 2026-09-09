@@ -6,6 +6,7 @@ import { dailyStats, profiles, pushSubscriptions, userWords } from "@/lib/db/sch
 import { weekStart } from "@/lib/session";
 import { shiftDay } from "@/lib/award";
 import { track } from "@/lib/events";
+import { DEFAULT_NATIVE, formatNumber, isNativeLang, translate, type NativeLang } from "@/lib/i18n/dict";
 
 /**
  * Hatırlatma bildirimleri.
@@ -70,21 +71,35 @@ export function composeReminder(input: {
   dueCount: number;
   level: string;
   /**
+   * Bildirimin dili — ALICININ arayüz dili (`profiles.native_lang`).
+   *
+   * Metinler sabit Türkçe yazılıydı: arayüzü Almanca olan bir kullanıcı her
+   * akşam Türkçe bir bildirim alıyordu. Sosyal bildirimlerde aynı düzeltme
+   * `social/notify.ts`de yapılmıştı; hatırlatma turu atlanmıştı.
+   */
+  lang: NativeLang;
+  /**
    * Haftalık tabloda hemen üstteki kişi ve aradaki fark. Yoksa null —
    * tek kişilik bir tabloda rakip yoktur.
    */
   rival?: { name: string; gap: number } | null;
 }): PushPayload | null {
+  const { lang } = input;
   const first = input.name?.trim().split(/\s+/)[0];
-  const hey = first ? `${first}, ` : "";
+  /*
+    Adlı ve adsız cümleler AYRI anahtarlar. Önce tek cümlenin başına
+    "{ad}, " ekleniyordu; ad yoksa cümle küçük harfle başlıyordu
+    ("bugün henüz çalışmadın"). Bir dilde çalışan bu numara üç dilde hiç
+    çalışmaz — Almancada ad ayrı bir hitap satırı ister.
+  */
+  const key = (base: string) => (first ? `${base}_named` : base);
+  const vars = (extra: Record<string, string | number> = {}) => ({ name: first ?? "", ...extra });
 
   if (input.streak > 0) {
+    const base = input.dueCount > 0 ? "push.rem_streak_due" : "push.rem_streak_idle";
     return {
-      title: `${input.streak} günlük serin tehlikede`,
-      body:
-        input.dueCount > 0
-          ? `${hey}bugün ${input.dueCount} kelimenin tekrarı var. Birkaç dakika seriyi kurtarır.`
-          : `${hey}bugün henüz çalışmadın. Kısa bir tur seriyi ayakta tutar.`,
+      title: translate(lang, "push.rem_streak_title", { n: input.streak }),
+      body: translate(lang, key(base), vars({ n: input.dueCount })),
       url: "/learn",
       tag: "reminder",
     };
@@ -100,8 +115,8 @@ export function composeReminder(input: {
   // sayı taşıyor.
   if (input.rival && input.rival.gap > 0 && input.rival.gap <= CATCHABLE_XP) {
     return {
-      title: `${input.rival.name} bu hafta önde`,
-      body: `${hey}aradaki fark ${input.rival.gap} XP — bir turluk mesafe. Pazartesi tablo sıfırlanıyor.`,
+      title: translate(lang, "push.rem_rival_title", { who: input.rival.name }),
+      body: translate(lang, key("push.rem_rival_body"), vars({ gap: formatNumber(input.rival.gap, lang) })),
       url: "/learn",
       tag: "reminder",
     };
@@ -109,8 +124,8 @@ export function composeReminder(input: {
 
   if (input.dueCount > 0) {
     return {
-      title: `${input.dueCount} kelime unutulmak üzere`,
-      body: `${hey}bu kelimeleri tam unutmadan önce yakalamanın vakti. Tur hazır.`,
+      title: translate(lang, "push.rem_due_title", { n: input.dueCount }),
+      body: translate(lang, key("push.rem_due_body"), vars()),
       url: "/learn",
       tag: "reminder",
     };
@@ -119,8 +134,8 @@ export function composeReminder(input: {
   // Tekrar borcu da serisi de yok: bırakmış ya da hiç başlamamış biri.
   // Ona borç hatırlatmak anlamsız, davet etmek gerekiyor.
   return {
-    title: "Bugün 5 dakika?",
-    body: `${hey}${input.level} seviyesinde yeni kelimeler seni bekliyor.`,
+    title: translate(lang, "push.rem_idle_title"),
+    body: translate(lang, key("push.rem_idle_body"), vars({ level: input.level })),
     url: "/learn",
     tag: "reminder",
   };
@@ -180,6 +195,8 @@ export type ReminderTarget = {
   userId: string;
   displayName: string | null;
   level: string;
+  /** Alıcının arayüz dili — bildirim bu dilde yazılıyor. */
+  lang: string | null;
   /**
    * Bugün kaybedilebilecek seri — kayıtlı `current_streak` değil.
    *
@@ -226,6 +243,8 @@ export async function findReminderTargets(limit = 500): Promise<ReminderTarget[]
       userId: profiles.userId,
       displayName: profiles.displayName,
       level: profiles.level,
+      // Bildirimin dili ALICIDAN geliyor; sunucunun ya da çerezin dili değil.
+      lang: profiles.nativeLang,
       liveStreak: sql<number>`(case when ${profiles.lastActiveDay} = ${localDay} - 1
         then ${profiles.currentStreak} else 0 end)::int`,
     })
@@ -364,6 +383,7 @@ export async function runReminders() {
       streak: t.liveStreak,
       dueCount: due.get(t.userId) ?? 0,
       level: t.level,
+      lang: isNativeLang(t.lang ?? "") ? (t.lang as NativeLang) : DEFAULT_NATIVE,
       rival: rivals.get(t.userId) ?? null,
     });
     if (!payload) continue;
