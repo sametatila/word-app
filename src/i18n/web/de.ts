@@ -1089,7 +1089,6 @@ export const deWeb: Record<string, string> = {
   "bossw.rule_pool": "Die Fragen stammen aus den {n} Wörtern dieses Moduls.",
   "bossw.not_ready_yet": "Du hast {done}/{total} Gespräche dieses Moduls abgeschlossen. Der Test ist trotzdem offen — ohne die Wörter ist er aber schwer.",
   "bossw.best_left": "Bestanden · deine beste Restzeit sind {n} s",
-  "quizw.pct_correct": "{pct} richtig",
   "quizw.from_earlier": "(Wiederholung aus früheren Einheiten)",
   "appw.offline_title": "Keine Verbindung",
   "appw.offline_body": "Du bist weiterhin angemeldet, aber der Server ist gerade nicht erreichbar. Versuch es in ein paar Sekunden noch einmal — abmelden musst du dich nicht.",
