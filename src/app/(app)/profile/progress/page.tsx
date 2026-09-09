@@ -27,6 +27,7 @@ export default async function ProgressPage() {
     const profile = await ensureProfile(user.id, user.name);
     const data = await getProgress(user.id, today);
     const mastered = data.levels.reduce((s, l) => s + l.mastered, 0);
+    const totalWords = data.levels.reduce((s, l) => s + l.total, 0);
     content = (
       <ActivityProgress
         days={data.days.map((d) => ({
@@ -36,9 +37,11 @@ export default async function ProgressPage() {
           xp: d.xp,
         }))}
         streak={profile.currentStreak}
-        longest={profile.longestStreak}
         seconds={data.seconds}
         mastered={mastered}
+        totalWords={totalWords}
+        xp={profile.totalXp}
+        level={profile.level}
         today={today}
       />
     );

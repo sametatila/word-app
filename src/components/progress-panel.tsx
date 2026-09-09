@@ -7,6 +7,7 @@ import { WeakSpotsCard } from "@/components/weak-spots-card";
 import { useCachedJson } from "@/lib/use-cached";
 import type { GrowthReport, WeekPoint } from "@/lib/growth";
 import { useT } from "@/lib/i18n/client";
+import { bandKey } from "@/lib/proficiency";
 
 /**
  * "Gelişimin" — profilin ölçüm bloğu.
@@ -85,7 +86,10 @@ export function ProgressPanel() {
                           {Math.abs(delta)}
                         </span>
                       ) : null}
-                      {p.band ? <span className="ml-1.5">{p.band}</span> : null}
+                      {/* Bant bir KİMLİK ("developing"), gösterilecek metin
+                          değil — ham hâliyle basılıyordu ve puana yapışık
+                          çıkıyordu ("40developing"). */}
+                      {p.band ? <span className="ml-1.5">{t(bandKey(p.band))}</span> : null}
                     </>
                   )}
                 </span>

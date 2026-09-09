@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BookIcon, ChevronRightIcon, FlameIcon, SparkIcon, TrophyIcon } from "@/components/icons";
+import { BookIcon, ChevronRightIcon, ClockIcon, FlameIcon, SparkIcon, TrophyIcon } from "@/components/icons";
+import { Mascot } from "@/components/mascot";
 import type { ComponentType, SVGProps } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, localeOf, type NativeLang } from "@/lib/i18n/dict";
@@ -49,7 +50,6 @@ export function WordProgress({
   leeches: number;
 }) {
   const t = useT();
-  const lang = useLang();
   const totalSeen = levels.reduce((s, l) => s + l.seen, 0);
   const totalWords = levels.reduce((s, l) => s + l.total, 0);
 
@@ -130,41 +130,97 @@ export function WordProgress({
 export function ActivityProgress({
   days,
   streak,
-  longest,
   seconds,
   mastered,
+  totalWords,
+  xp,
+  level,
   today,
 }: {
   days: DayRow[];
   streak: number;
-  longest: number;
   seconds: number;
   /** Pekişmiş kelime sayısı — kart Kelimeler ekranına götürüyor. */
   mastered: number;
+  /** Seviyedeki toplam kelime — hakimiyet şeridinin paydası. */
+  totalWords: number;
+  xp: number;
+  level: string;
   today: string;
 }) {
   const t = useT();
   const lang = useLang();
   const byDay = new Map(days.map((d) => [d.day, d]));
+  const pct = totalWords ? Math.min(100, Math.round((mastered / totalWords) * 100)) : 0;
 
   return (
     <div className="space-y-4">
+      {/*
+        SERİ KAHRAMANI — mobil `ProgressScreen`in ilk kartı. Web'de seri dört
+        eşit karodan biriydi; oysa bu ekrana çoğunlukla başlıktaki seri
+        rozetinden geliniyor, yani gelen kişinin sorusu "kaç gün" ve cevabı
+        diğer üç sayıyla aynı boyda duruyordu.
+      */}
+      <div
+        className="flex items-center gap-4 rounded-card p-5 text-white shadow-soft"
+        style={{ background: "var(--color-flame-500)" }}
+      >
+        <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-tile bg-white/20">
+          <FlameIcon size={34} />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-display">{streak}</span>
+          <span className="block text-strong text-white/85">{t("progress.day_streak")}</span>
+        </span>
+        <Mascot mood={streak > 0 ? "happy" : "idle"} size={58} />
+      </div>
+
+      {/* Dört karo mobildekiyle aynı: öğrenilen kelime, toplam XP, bu hafta
+          süre, seviye. Web'de bunların ikisi (güncel/en uzun seri) seriyi iki
+          kez söylüyordu; en uzun seri zaten herkese açık profilde yazıyor. */}
       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-        <KpiCard label={t("prog.current_streak")} value={t("social.days", { n: streak })} tone="var(--color-flame)" Icon={FlameIcon} />
-        <KpiCard label={t("socialw.stat_longest")} value={t("social.days", { n: longest })} tone="var(--color-brand)" Icon={TrophyIcon} />
-        <KpiCard label={t("prog.study_time")} value={formatDuration(seconds, t)} tone="var(--color-violet)" Icon={SparkIcon} />
         {/* Tek dokunuşla kelime ekranına: kapsamın ayrıntısı orada. */}
         <KpiCard
-          label={t("prog.mastered_words")}
+          label={t("progress.words_learned")}
           value={formatNumber(mastered, lang)}
-          tone="var(--color-mint)"
+          tone="var(--color-brand)"
           Icon={BookIcon}
           href="/words"
         />
+        <KpiCard label={t("progress.total_xp")} value={formatNumber(xp, lang)} tone="var(--color-mint)" Icon={SparkIcon} />
+        <KpiCard label={t("prog.study_time")} value={formatDuration(seconds, t)} tone="var(--color-sky)" Icon={ClockIcon} />
+        <KpiCard label={t("progress.level")} value={level} tone="var(--color-violet)" Icon={TrophyIcon} />
       </div>
 
-      <ActivityStrip byDay={byDay} today={today} />
+      {/* Kelime hakimiyeti — mobilde karoların hemen altında tek şerit. */}
+      <section className="card p-4">
+        <div className="mb-2 flex items-center justify-between gap-3">
+          <span className="text-strong">{t("progress.word_mastery")}</span>
+          <span className="muted text-caption tabular-nums">
+            {formatNumber(mastered, lang)}/{totalWords ? formatNumber(totalWords, lang) : "—"}
+          </span>
+        </div>
+        <div className="h-2 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+          <div
+            className="h-full rounded-full transition-[width] duration-500"
+            style={{ width: `${Math.max(3, pct)}%`, background: "var(--color-mint-500)" }}
+          />
+        </div>
+      </section>
 
+      {/* Başarımlar satırı — mobilde de ilerlemenin altında, kendi ekranına. */}
+      <Link href="/profile/achievements" prefetch={false} className="card flex items-center gap-3 p-4">
+        <span
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile"
+          style={{ background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)", color: "var(--color-flame)" }}
+        >
+          <TrophyIcon size={20} />
+        </span>
+        <span className="flex-1 text-strong">{t("progress.achievements")}</span>
+        <ChevronRightIcon size={20} className="muted shrink-0" />
+      </Link>
+
+      <ActivityStrip byDay={byDay} today={today} />
     </div>
   );
 }
@@ -200,8 +256,6 @@ function KpiCard({
    */
   href?: string;
 }) {
-  const t = useT();
-  const lang = useLang();
   const body = (
     <>
       <div className="flex items-center justify-between" style={{ color: tone }}>
@@ -349,8 +403,6 @@ function heatColor(count: number) {
 }
 
 function Donut({ value, total }: { value: number; total: number }) {
-  const t = useT();
-  const lang = useLang();
   const pct = Math.min(100, (value / total) * 100);
   return (
     <div
