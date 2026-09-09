@@ -45,8 +45,8 @@ export const deA2P4: SkillExercise[] = [
         text: "Warum ist die richtige Tonne wichtig?",
         options: [
           "Falscher Müll kostet das Haus Geld.",
-          "Der Hausmeister hat dann weniger Arbeit.",
-          "Die Stadt schickt sonst einen Brief.",
+          "Sonst bleiben die Kartons im Hof liegen.",
+          "Der Hausmeister nimmt sonst keine Batterien an.",
         ],
         answer: 0,
         explain: "„Falsch sortierter Müll kostet das ganze Haus Geld.“ — gerekçe daha ilk paragrafta.",

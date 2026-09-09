@@ -48,7 +48,7 @@ export const enB1P3: SkillExercise[] = [
       {
         text: "What does the text describe?",
         options: [
-          "the way a bag travels through an airport",
+          "the steps between the desk and the plane",
           "how to pack a suitcase for a long trip",
           "why airports lose so many bags",
         ],
@@ -173,8 +173,8 @@ export const enB1P3: SkillExercise[] = [
         text: "What is checked twice before the water is sent out?",
         options: [
           "every sample, by two different people",
-          "the pumps, by one engineer",
-          "the pipes in each house",
+          "the chlorine, by one engineer",
+          "the sand filter, once a week",
         ],
         answer: 0,
         explain: "„Nothing is sent out before it has been checked twice by two different people.“",

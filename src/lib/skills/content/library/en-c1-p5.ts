@@ -71,8 +71,8 @@ export const enC1P5: SkillExercise[] = [
         text: "Why did uptake rise?",
         options: [
           "The glasses are delivered to the school.",
-          "Families were reminded far more often.",
-          "The tests became compulsory for everybody.",
+          "The prescription is valid for a longer period.",
+          "The year group is tested twice instead of once.",
         ],
         answer: 0,
         explain: "„Under the current arrangement, the glasses are made and delivered to the school … It is a journey to a shop during opening hours.“",

@@ -42,7 +42,7 @@ export const enA1P5: SkillExercise[] = [
     questions: [
       {
         text: "What does Marta need?",
-        options: ["somebody for one walk a day", "a new home for her dog", "a car for the weekend"],
+        options: ["somebody for one walk a day", "a place for Milo from Monday to Friday", "a driver who takes Milo to the park"],
         answer: 0,
         explain: "„I need somebody for one walk every day, at about one o'clock.“",
       },

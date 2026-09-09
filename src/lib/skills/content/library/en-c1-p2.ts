@@ -157,8 +157,8 @@ export const enC1P2: SkillExercise[] = [
         text: "Why does the speaker call vandalism a convenient reason?",
         options: [
           "It allows closure without a decision.",
-          "It is cheaper to repair than to clean.",
-          "It is the easiest thing to measure.",
+          "It is the only reason that can be measured.",
+          "It explains why provision fell by sixty per cent.",
         ],
         answer: 0,
         explain: "„… which is a genuine problem and also a convenient one, because it produces closure without a decision.“",

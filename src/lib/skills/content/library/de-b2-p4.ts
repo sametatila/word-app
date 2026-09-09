@@ -65,9 +65,9 @@ export const deB2P4: SkillExercise[] = [
       {
         text: "Wer führt die Schlichtung durch?",
         options: [
-          "eine ehrenamtlich tätige Person aus dem Stadtteil",
-          "eine hauptamtliche Richterin am Amtsgericht",
-          "ein von der Stadt bezahlter Anwalt",
+          "eine unbezahlte Person aus demselben Stadtteil",
+          "eine Richterin, die den Streit entscheidet",
+          "eine Person, die beide Parteien selbst auswählen",
         ],
         answer: 0,
         explain: "„Zuständig ist eine ehrenamtlich tätige Person im Stadtteil, oft Schiedsfrau oder Schiedsmann genannt.“",

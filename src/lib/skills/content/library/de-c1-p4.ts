@@ -153,8 +153,8 @@ export const deC1P4: SkillExercise[] = [
         text: "Warum wird man in hohen Räumen leiser?",
         options: [
           "weil man die eigene Stimme verzögert hört",
-          "weil es dort meistens deutlich kälter ist",
-          "weil dort in der Regel ein Verbot gilt",
+          "weil man es in der Kirche so gelernt hat",
+          "weil die harten Wände den Schall schlucken",
         ],
         answer: 0,
         explain: "„… kommt die eigene Stimme verzögert zurück … Das Sprechen wird anstrengend.“",

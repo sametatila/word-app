@@ -55,8 +55,8 @@ export const deB2P3: SkillExercise[] = [
         text: "Was ist die Hauptaussage des Textes?",
         options: [
           "Barrierefreiheit entsteht erst im täglichen Betrieb.",
-          "Rampen und Aufzüge sind insgesamt zu teuer.",
-          "Prüflisten für Neubauten sollten strenger werden.",
+          "Eine Prüfliste erfasst alles, worauf es ankommt.",
+          "Rampen und Aufzüge sind die teuersten Posten.",
         ],
         answer: 0,
         explain: "Son paragraf bunu açıkça söylüyor: „ein Zustand, der jeden Tag neu hergestellt wird“.",
@@ -98,8 +98,8 @@ export const deB2P3: SkillExercise[] = [
         text: "Was kritisiert der Text an der üblichen Reihenfolge?",
         options: [
           "Betroffene werden erst am Ende gefragt.",
-          "Die Planung dauert insgesamt zu lange.",
-          "Die Verbände schreiben zu kurze Texte.",
+          "Die Prüfliste wird zu spät ausgefüllt.",
+          "Die Stellungnahme des Verbands wird nicht gelesen.",
         ],
         answer: 0,
         explain: "„Zuerst wird geplant, dann gebaut, und erst am Ende werden die betroffenen Menschen gefragt.“",

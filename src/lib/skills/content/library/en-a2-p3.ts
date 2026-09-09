@@ -88,8 +88,8 @@ export const enA2P3: SkillExercise[] = [
         text: "Why do they not fill the shelves during this hour?",
         options: [
           "so that there are no carts in the way",
-          "because the staff are on a break",
-          "because the lights are too low",
+          "because the carts are needed at the checkout",
+          "because the staff speak quietly then",
         ],
         answer: 0,
         explain: "„We do not fill the shelves during this hour, so there are no carts in the way.“",
@@ -133,7 +133,7 @@ export const enA2P3: SkillExercise[] = [
       },
       {
         text: "What happened to the car?",
-        options: ["Somebody drove into it.", "It broke down on the highway.", "Somebody took it away."],
+        options: ["Somebody drove into it.", "It broke down on the highway.", "The garage kept it after a service."],
         answer: 0,
         explain: "„My car is in the garage; somebody drove into it yesterday evening.“",
       },

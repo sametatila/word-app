@@ -101,8 +101,8 @@ export const deC1P5: SkillExercise[] = [
         text: "Warum werden Anleitungen selten getestet?",
         options: [
           "Sie werden von Leuten geprüft, die das Gerät kennen.",
-          "Ein Test wäre für die Hersteller zu teuer.",
-          "Die geltende Norm verlangt keinen Test.",
+          "Die Hinweise werden ohnehin übersprungen.",
+          "Die Überschriften ändern sich zu oft.",
         ],
         answer: 0,
         explain: "„Geschrieben werden sie von denen, die es am besten kennen, und geprüft von denen, die es gebaut haben.“",

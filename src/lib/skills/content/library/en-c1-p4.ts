@@ -71,8 +71,8 @@ export const enC1P4: SkillExercise[] = [
         text: "How does he decide how to tune an instrument?",
         options: [
           "by asking who plays it",
-          "by measuring the room temperature",
-          "by following the maker's manual",
+          "by listening to the instrument for ten minutes",
+          "by checking whether the frame has moved",
         ],
         answer: 0,
         explain: "„By asking who plays it. A piano in a school … is tuned differently.“",
@@ -159,8 +159,8 @@ export const enC1P4: SkillExercise[] = [
         text: "Why is the last stage so expensive?",
         options: [
           "It happens once, to one address, at an uncontrolled time.",
-          "The vans used for it are far too small.",
-          "The drivers on that stage are paid much more.",
+          "A van is loaded by machine and not by a person.",
+          "The routing software is still not good enough.",
         ],
         answer: 0,
         explain: "„The last stage happens once, to one address, at a time nobody controls.“",

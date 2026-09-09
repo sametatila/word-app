@@ -49,7 +49,7 @@ export const enA1P2: SkillExercise[] = [
       },
       {
         text: "When can you water the plants?",
-        options: ["before ten or after six", "any time in the morning", "only on Saturday"],
+        options: ["before ten or after six", "any time before the gate closes", "only on the first Saturday"],
         answer: 0,
         explain: "„Water the plants before ten or after six.“ Cumartesi buluşma günü.",
       },
@@ -78,7 +78,7 @@ export const enA1P2: SkillExercise[] = [
       },
       {
         text: "What happens on the first Saturday?",
-        options: ["People meet for coffee and work.", "The garden is closed all day.", "New families get a bed."],
+        options: ["People meet for coffee and work.", "The gate stays open until eleven.", "Every family gets a second bed."],
         answer: 0,
         explain: "„We meet every first Saturday of the month at eleven for coffee and work.“",
       },

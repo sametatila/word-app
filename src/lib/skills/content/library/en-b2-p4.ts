@@ -63,8 +63,8 @@ export const enB2P4: SkillExercise[] = [
         text: "What does a mark with a clean edge suggest?",
         options: [
           "It has dried and got wet several times.",
-          "It happened only a few days ago.",
-          "It was painted over very recently.",
+          "It comes from a gutter that was blocked last winter.",
+          "It is fresh, because fresh damp is dark and cold.",
         ],
         answer: 0,
         explain: "„If the mark has a clean edge and the paint around it is chalky, it must have dried and got wet again several times.“",

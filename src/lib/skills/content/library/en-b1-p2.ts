@@ -143,7 +143,7 @@ export const enB1P2: SkillExercise[] = [
       },
       {
         text: "What would Tomas do?",
-        options: ["finish a course he stopped", "travel around the world", "start his own business"],
+        options: ["finish a course he stopped", "travel around the world", "work fewer days in the warehouse"],
         answer: 0,
         explain: "„I would finish the electrician course I stopped four years ago.“",
       },

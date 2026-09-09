@@ -157,8 +157,8 @@ export const enB2P5: SkillExercise[] = [
         text: "Why did Ilias stop?",
         options: [
           "He could not find a way to do less.",
-          "The work itself became too hard.",
-          "He moved away to another town.",
+          "A meeting had been moved to an evening.",
+          "He was busy, as he told the others at the time.",
         ],
         answer: 0,
         explain: "„I stopped because I could not find a way to do less. It was all or nothing.“",

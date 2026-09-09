@@ -175,8 +175,8 @@ export const deB1P2: SkillExercise[] = [
         text: "Welches Problem nennt Ruth?",
         options: [
           "Manche Leistungen sind viel gefragter.",
-          "Die Mitglieder kommen zu unregelmäßig.",
-          "Die Stadt will den Verein schließen.",
+          "Für das Sommerfest fehlen Stunden auf den Konten.",
+          "Die Gründerinnen haben zu wenig Zeit.",
         ],
         answer: 0,
         explain: "„Wer Fahrräder repariert, hat ein volles Konto und findet nichts, was er selbst braucht.“",

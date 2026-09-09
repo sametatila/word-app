@@ -131,10 +131,14 @@ export const deB1P3: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Seit wann macht Frau Vogt diese Arbeit?",
-        options: ["seit elf Jahren", "seit drei Monaten", "seit zwei Jahren"],
+        text: "Was für eine Arbeit macht Frau Vogt?",
+        options: [
+          "Sie trägt nachts Zeitungen aus.",
+          "Sie arbeitet in einer Druckerei.",
+          "Sie fährt morgens einen Schulbus.",
+        ],
         answer: 0,
-        explain: "„Seit elf Jahren.“ Üç ay, başlangıçta dayanamayacağını sandığı süre.",
+        explain: "„Wie viele Zeitungen sind es pro Nacht?“ ve „Am Wochenende sind die Ausgaben dicker“ — gece gazete dağıtıyor.",
       },
       {
         text: "Warum fährt sie am Wochenende zweimal?",
@@ -168,12 +172,12 @@ export const deB1P3: SkillExercise[] = [
       {
         text: "Wem würde sie die Arbeit empfehlen?",
         options: [
-          "Menschen, die früh schlafen können",
+          "Menschen, die abends nicht ausgehen",
           "Menschen, die gern allein sind",
           "Menschen, die keine Angst vor Hunden haben",
         ],
         answer: 0,
-        explain: "„Nur jemandem, der wirklich früh schlafen kann.“ Yalnızlık ve köpekler başka bağlamda geçiyor.",
+        explain: "„Wer abends noch ausgeht, hält das nicht durch.“ Yalnızlık ve köpekler başka bağlamda geçiyor.",
       },
     ],
   },

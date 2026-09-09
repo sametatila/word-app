@@ -189,8 +189,8 @@ export const deC1P2: SkillExercise[] = [
         text: "Was will Frau Perl in ihrer Praxis ändern?",
         options: [
           "Beschwerden nach Zeit und Ort auswerten",
-          "nachts deutlich mehr Kontrollen anordnen",
-          "die Öffnungszeiten der Clubs verkürzen",
+          "Auflagen für alle vier Straßen erlassen",
+          "eine Taxispur vor jedem Club verlangen",
         ],
         answer: 0,
         explain: "„… Beschwerden nicht mehr nur zählen, sondern nach Uhrzeit und Ort auswerten.“",

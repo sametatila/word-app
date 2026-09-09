@@ -46,7 +46,7 @@ export const enA2P2: SkillExercise[] = [
     questions: [
       {
         text: "How did Ines start beekeeping?",
-        options: ["A swarm came to her balcony.", "She studied it at school.", "Her family always had bees."],
+        options: ["A swarm came to her balcony.", "The fire service offered her a course.", "A neighbor asked her to take a hive."],
         answer: 0,
         explain: "„By accident. Four years ago a swarm sat on my balcony for two days.“",
       },
@@ -127,15 +127,15 @@ export const enA2P2: SkillExercise[] = [
     questions: [
       {
         text: "What is the problem?",
-        options: ["The computer system is not working.", "The library is closed today.", "There are no free seats."],
+        options: ["The computer system is not working.", "The printers have all been taken away.", "The reading rooms are closed today."],
         answer: 0,
         explain: "„Our computer system is not working this morning.“",
       },
       {
         text: "Where do you borrow books today?",
-        options: ["at the desk near the door", "at the machines", "in the reading room"],
+        options: ["from a person, not from a machine", "at one of the machines as usual", "in the reading room upstairs"],
         answer: 0,
-        explain: "„Please come to the desk near the door. We write everything on paper today.“",
+        explain: "„Please come to the desk near the door. We write everything on paper today.“ — makineler kapalı.",
       },
       {
         kind: "truefalse",

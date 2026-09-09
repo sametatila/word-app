@@ -43,7 +43,7 @@ export const enA2P4: SkillExercise[] = [
     questions: [
       {
         text: "What is the fridge for?",
-        options: ["sharing food in the street", "keeping food for the shops", "selling cheap food"],
+        options: ["sharing food in the street", "keeping food for the bakery", "selling food that shops throw away"],
         answer: 0,
         explain: "„Anybody can put food in it, and anybody can take food out.“",
       },

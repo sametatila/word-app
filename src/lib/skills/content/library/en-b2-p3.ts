@@ -64,8 +64,8 @@ export const enB2P3: SkillExercise[] = [
         text: "Why can a cheaper quote be cheaper?",
         options: [
           "Something has been left out of it.",
-          "The workers are always less experienced.",
-          "The materials are always of lower quality.",
+          "The disposal fee is paid separately later.",
+          "The second coat is charged by the hour.",
         ],
         answer: 0,
         explain: "„… often cheaper because something has been left out: the removal of the old material, the disposal fee, the second coat.“",

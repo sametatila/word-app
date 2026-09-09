@@ -135,7 +135,7 @@ export const enA2P5: SkillExercise[] = [
       },
       {
         text: "What happens if you take your phone out?",
-        options: ["Somebody brings a wooden box.", "You have to leave the café.", "You pay two euros more."],
+        options: ["Somebody brings a wooden box.", "The sign on the door is explained to you.", "You are asked to sit at the next table."],
         answer: 0,
         explain: "„Somebody comes and brings you a small wooden box for the table.“",
       },
