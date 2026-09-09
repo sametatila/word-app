@@ -48,7 +48,7 @@ const TURKISH_ASCII = /(?:^|\s)(?:ve|ile|bir|bu|daha|sonra|kadar|gibi|ama|var|yo
  * Sabit liste tutmaya gerek yok — sözlük zaten ürünün Türkçesi.
  * (Web tarafında aynı kural `scripts/i18n-hardcoded.mjs` içinde.)
  */
-const CODEY = /[(){}\[\]<>=;\/\\|&$*+"'`~^%@#]/;
+const CODEY = /[(){}[\]<>=;/\\|&$*+"'`~^%@#]/;
 
 /**
  * İkinci kuraldan MUAF dosyalar — ikisinde de Türkçe olması DOĞRU:
