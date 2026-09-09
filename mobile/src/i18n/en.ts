@@ -1091,4 +1091,6 @@ export const en: Record<string, string> = {
   "writings.no_graded_writing_yet_do_writing": "No graded writing yet. Do a writing exercise and get it graded — it'll show up here.",
   "writings.to_be_graded": "To be graded.",
   "writings.my_writing": "My writing",
+  "time.minutes_short": "{m} min",
+  "time.hours_minutes_short": "{h}h {m}m",
 };

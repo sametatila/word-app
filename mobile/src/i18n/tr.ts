@@ -1096,4 +1096,6 @@ export const tr: Record<string, string> = {
   "writings.no_graded_writing_yet_do_writing": "Henüz değerlendirilmiş yazın yok. Yazma alıştırması yapıp değerlendirt — buraya gelir.",
   "writings.to_be_graded": "Puanlanacak.",
   "writings.my_writing": "Yazılarım",
+  "time.minutes_short": "{m} dk",
+  "time.hours_minutes_short": "{h}s {m}dk",
 };

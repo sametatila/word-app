@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { setCurrentCourse } from "./courses";
-import { adoptServerLang } from "./i18n";
+import { adoptServerLang, t } from "./i18n";
 import { loadOnboardingPrefs } from "./onboardingPrefs";
 import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
@@ -124,10 +124,12 @@ export function useMe(): { me: Me | null; loading: boolean } {
 
 /** Saniyeyi "Xs Ydk" / "Ydk" biçimine getirir (süre metresi). */
 export function formatDuration(seconds: number): string {
+  // Kısaltmalar SÖZLÜKTEN. Buradaki "dk" ve "s" eskiden koda gömülüydü ve
+  // İngilizce arayüzde de "11s 20dk" yazıyordu (cihazda görüldü 2026-09-09).
   const m = Math.round(seconds / 60);
-  if (m < 60) return `${m} dk`;
+  if (m < 60) return t("time.minutes_short", { m });
   const h = Math.floor(m / 60);
-  return `${h}s ${m % 60}dk`;
+  return t("time.hours_minutes_short", { h, m: m % 60 });
 }
 
 /** XP'yi kısaltır: 1240 → "1.2k". */
