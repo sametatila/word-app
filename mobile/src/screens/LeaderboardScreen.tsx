@@ -5,10 +5,10 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { LeagueBoard } from "../social/LeagueBoard";
 import { ScreenHeader } from "../social/common";
+import { Chip } from "../ui/Chip";
 import { Text } from "../ui/Text";
-import { PressableScale } from "../ui/PressableScale";
 import { useAuth } from "../lib/AuthContext";
-import { useTheme, spacing, radii } from "../theme";
+import { useTheme, spacing } from "../theme";
 
 /**
  * Sıralama — iki küme, tek ekran: LİG ve ARKADAŞLAR.
@@ -31,9 +31,7 @@ export function LeaderboardScreen() {
       {/* Ayarlar'daki Chip dili: kenarlıklı, radius md; pill değil. */}
       <View style={{ flexDirection: "row", gap: spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
         {([["league", "leaderboard.league"], ["friends", "social.tab_friends"]] as const).map(([k, label]) => (
-          <PressableScale key={k} onPress={() => setMode(k)} style={{ paddingHorizontal: 16, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: mode === k ? colors.primary : colors.border, backgroundColor: mode === k ? colors.primarySoft : colors.surface }}>
-            <Text variant="bodyStrong" color={mode === k ? colors.primary : colors.textMuted}>{t(label)}</Text>
-          </PressableScale>
+          <Chip key={k} label={t(label)} active={mode === k} onPress={() => setMode(k)} />
         ))}
       </View>
 

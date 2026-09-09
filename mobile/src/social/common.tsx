@@ -110,20 +110,9 @@ export function Pill({ label, onPress, tone = "primary", disabled, icon: Icon, b
   );
 }
 
-/** Kenarlıklı seçim çipi — Ayarlar'daki Chip ile aynı (pill DEĞİL, radius md, 1.5 kenar). */
-export function Chip({ label, active, onPress, badge }: { label: string; active: boolean; onPress: () => void; badge?: number }) {
-  const { colors } = useTheme();
-  return (
-    <PressableScale onPress={onPress} accessibilityState={{ selected: active }} style={{ flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: 14, paddingVertical: 9, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
-      <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{label}</Text>
-      {badge ? (
-        <View style={{ minWidth: 18, height: 18, borderRadius: 9, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center", paddingHorizontal: 4 }}>
-          <Text variant="micro" color="#fff" style={{ fontSize: 10, lineHeight: 12 }}>{badge}</Text>
-        </View>
-      ) : null}
-    </PressableScale>
-  );
-}
+/* Seçim çipi `ui/Chip.tsx`e taşındı (dört kopyası vardı); buradan yeniden
+   dışa veriliyor ki sosyal ekranların mevcut import'ları kırılmasın. */
+export { Chip } from "../ui/Chip";
 
 /** Boş durum: ikon karosu + başlık + açıklama + isteğe bağlı düğme (Öğren'deki ActionRow gibi). */
 export function EmptyCard({ icon, tint, title, text, action, onAction }: { icon: IconCmp; tint?: string; title: string; text: string; action?: string; onAction?: () => void }) {

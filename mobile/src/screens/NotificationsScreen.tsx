@@ -4,6 +4,7 @@ import { View, ScrollView, Switch } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
+import { Chip } from "../ui/Chip";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, BellIcon } from "../ui/icons";
@@ -17,13 +18,6 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const TIMES = ["09:00", "12:00", "15:00", "19:00", "21:00"];
 
-function Chip({ label, active, onPress, colors }: { label: string; active: boolean; onPress: () => void; colors: Palette }) {
-  return (
-    <PressableScale onPress={onPress} style={{ paddingHorizontal: 16, paddingVertical: 9, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
-      <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{label}</Text>
-    </PressableScale>
-  );
-}
 
 /** Tek bir bildirim kategorisi — başlık + açıklama + aç/kapa; açıkken ek içerik. */
 function ToggleRow({ title, subtitle, value, onValueChange, colors, children }: { title: string; subtitle: string; value: boolean; onValueChange: (v: boolean) => void; colors: Palette; children?: React.ReactNode }) {
@@ -103,7 +97,7 @@ export function NotificationsScreen() {
             <View style={{ marginTop: spacing.md }}>
               <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("notifications.hour")}</Text>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-                {TIMES.map((t) => <Chip key={t} label={t} active={dailyTime === t} onPress={() => pickTime(t)} colors={colors} />)}
+                {TIMES.map((t) => <Chip key={t} label={t} active={dailyTime === t} onPress={() => pickTime(t)} />)}
               </View>
             </View>
           )}

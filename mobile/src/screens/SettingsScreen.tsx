@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
+import { Chip } from "../ui/Chip";
 import { Card } from "../ui/Card";
 import { LinkedAccounts } from "../ui/LinkedAccounts";
 import { PressableScale } from "../ui/PressableScale";
@@ -47,13 +48,6 @@ function courseOptions(lang: NativeLang): { key: string; label: string; sub: str
   return coursesForNative(lang).map((c) => ({ key: c.id, label: c.label[lang], sub: c.sub[lang] }));
 }
 
-function Chip({ label, active, onPress, colors }: { label: string; active: boolean; onPress: () => void; colors: Palette }) {
-  return (
-    <PressableScale onPress={onPress} style={{ paddingHorizontal: 16, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
-      <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{label}</Text>
-    </PressableScale>
-  );
-}
 
 /** Ayar bölümü — başlık + kart. Görsel gruplama için tutarlı çerçeve. */
 /**
@@ -209,7 +203,7 @@ export function SettingsScreen() {
 
         <Section title={t("settings.level")} colors={colors}>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-            {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => setLevel(l)} colors={colors} />)}
+            {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => setLevel(l)} />)}
           </View>
           <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
             <Text variant="bodyStrong" color={colors.primary}>{t("settings.not_sure_take_placement_test")}</Text>
@@ -218,7 +212,7 @@ export function SettingsScreen() {
 
         <Section title={t("settings.daily_goal_reviews_day")} colors={colors}>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-            {Array.from(new Set([...GOALS, goal])).sort((a, b) => a - b).map((g) => <Chip key={g} label={String(g)} active={goal === g} onPress={() => setGoal(g)} colors={colors} />)}
+            {Array.from(new Set([...GOALS, goal])).sort((a, b) => a - b).map((g) => <Chip key={g} label={String(g)} active={goal === g} onPress={() => setGoal(g)} />)}
           </View>
         </Section>
 
@@ -234,7 +228,6 @@ export function SettingsScreen() {
                 key={l}
                 label={LANG_LABEL[l]}
                 active={uiLang === l}
-                colors={colors}
                 onPress={() => { setUiLang(l); void setLang(l); void updateProfile({ nativeLang: l }); void keepCourseValid(l); }}
               />
             ))}
