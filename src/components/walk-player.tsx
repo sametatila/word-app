@@ -15,6 +15,7 @@ import { cueListen } from "@/lib/lessons/cues";
 import { sharedAudioContext } from "@/lib/audio-context";
 import {
   pocketCue,
+  setPocketAlbum,
   startPocketAudio,
   stopPocketAudio,
   updatePocketTitle,
@@ -549,6 +550,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const arm = useCallback(async (): Promise<boolean> => {
     if (armed.current) return true;
     if (!sttReady.current) return false;
+    // Kilit ekranındaki albüm adı da kullanıcının dilinde olsun.
+    setPocketAlbum(t("walkw.album"));
     startPocketAudio(`Lernomi · ${t("walk.title")}`, {});
     if (!(await openMic())) {
       stopPocketAudio();

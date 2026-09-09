@@ -252,14 +252,14 @@ export function BossPlayer({
           <TrophyIcon size={26} />
         </div>
         <p className="muted text-xs font-bold uppercase tracking-wide">
-          {data.meta.level} · {data.meta.moduleIndex + 1}. modül
+          {t("bossw.level_module", { level: data.meta.level, n: data.meta.moduleIndex + 1 })}
         </p>
-        <h2 className="mt-1 text-xl font-bold">{data.meta.title} sınavı</h2>
+        <h2 className="mt-1 text-xl font-bold">{t("bossw.title_exam", { title: data.meta.title })}</h2>
         <ul className="mt-4 space-y-1.5 text-left text-sm">
-          <li>· {data.rounds.length} soru, {data.seconds} saniyeyle başlıyorsun.</li>
-          <li>· Her doğru +{data.bonus} sn, her yanlış −{data.penalty} sn.</li>
-          <li>· Süre bitmeden hepsini bitirirsen modül tacı senin.</li>
-          <li className="muted">· Sorular bu modülün {data.pool} kelimesinden geliyor.</li>
+          <li>· {t("bossw.rule_start", { n: data.rounds.length, sec: data.seconds })}</li>
+          <li>· {t("bossw.rule_time", { bonus: data.bonus, penalty: data.penalty })}</li>
+          <li>· {t("bossw.rule_crown")}</li>
+          <li className="muted">· {t("bossw.rule_pool", { n: data.pool })}</li>
         </ul>
 
         {!ready ? (
@@ -270,13 +270,12 @@ export function BossPlayer({
               color: "var(--color-flame)",
             }}
           >
-            Bu modülün {data.meta.lessonsDone}/{data.meta.lessonsTotal} konuşmasını bitirdin. Sınav
-            yine de açık — ama kelimeleri görmeden girmek zor.
+            {t("bossw.not_ready_yet", { done: data.meta.lessonsDone, total: data.meta.lessonsTotal })}
           </p>
         ) : null}
 
         {best !== null ? (
-          <p className="muted mt-3 text-sm">Geçtin · en iyi kalan süren {best} sn</p>
+          <p className="muted mt-3 text-sm">{t("bossw.best_left", { n: best })}</p>
         ) : null}
 
         <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5 text-base">

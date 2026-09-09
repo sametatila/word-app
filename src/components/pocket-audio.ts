@@ -174,7 +174,7 @@ export function startPocketAudio(title: string, controls: PocketControls = {}) {
   try {
     const MD = (window as unknown as { MediaMetadata?: new (i: object) => MediaMetadata })
       .MediaMetadata;
-    if (MD) ms.metadata = new MD({ title, artist: "Lernomi", album: "Yürürken" });
+    if (MD) ms.metadata = new MD({ title, artist: "Lernomi", album: pocketAlbum });
     ms.playbackState = "playing";
     ms.setActionHandler("pause", () => controls.onPause?.());
     ms.setActionHandler("play", () => controls.onResume?.());
@@ -184,6 +184,16 @@ export function startPocketAudio(title: string, controls: PocketControls = {}) {
   }
 }
 
+/*
+  Kilit ekranındaki albüm adı. Sabit "Yürürken" yazılıydı ve bu, telefonun
+  kilit ekranında görünen tek Türkçe metindi. Modül düzeyinde bir değişken,
+  çünkü burası bir React bileşeni değil: dili çağıran veriyor.
+*/
+let pocketAlbum = "Lernomi";
+export function setPocketAlbum(label: string) {
+  pocketAlbum = label;
+}
+
 /** Kilit ekranındaki başlığı günceller — hangi kelimede olunduğu görünsün. */
 export function updatePocketTitle(title: string) {
   const nav = navigator as Navigator & { mediaSession?: { metadata: MediaMetadata | null } };
@@ -191,7 +201,7 @@ export function updatePocketTitle(title: string) {
     .MediaMetadata;
   if (!nav.mediaSession || !MD) return;
   try {
-    nav.mediaSession.metadata = new MD({ title, artist: "Lernomi", album: "Yürürken" });
+    nav.mediaSession.metadata = new MD({ title, artist: "Lernomi", album: pocketAlbum });
   } catch {
     /* önemsiz */
   }

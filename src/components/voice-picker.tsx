@@ -90,7 +90,7 @@ export function VoicePicker({
                 type="button"
                 onClick={() => preview(v.id)}
                 className="chip flex h-8 w-8 shrink-0 items-center justify-center"
-                aria-label={`${v.label} sesini dinle`}
+                aria-label={t("voicew.listen_to", { name: v.label })}
                 title="Dinle"
               >
                 <SpeakerIcon size={14} />
@@ -135,10 +135,10 @@ export function VoicePicker({
               type="button"
               onClick={() => preview(v.id)}
               className="btn btn-ghost mt-3 h-8 px-3 text-xs"
-              aria-label={`${v.label} sesini dinle`}
+              aria-label={t("voicew.listen_to", { name: v.label })}
             >
               <SpeakerIcon size={13} />
-              <span className="ml-1.5">{playing === v.id ? "Çalıyor…" : "Dinle"}</span>
+              <span className="ml-1.5">{playing === v.id ? t("voicew.playing") : t("common.listen")}</span>
             </button>
           </div>
         );

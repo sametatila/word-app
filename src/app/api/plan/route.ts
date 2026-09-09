@@ -8,6 +8,13 @@ export const dynamic = "force-dynamic";
 
 /**
  * Bugünkü plan (WP-60): `GET /api/plan?day=YYYY-MM-DD`.
+ *
+ * ŞU AN ÇAĞIRANI YOK. Tek istemcisi Öğren sekmesindeki "bugünkü plan"
+ * satırıydı; mobilin Öğren ekranında öyle bir yüzey olmadığı için parite
+ * turunda kaldırıldı (bkz. docs/plan/web-parity.md §7) ve bileşen de silindi.
+ * Uç ve `lib/plan` duruyor: e2e onları hâlâ deniyor ve plan mantığı zayıf
+ * nokta/beceri önerisiyle ortak. Kalıcı olarak atılıp atılmayacağı ayrı bir
+ * karar; sessizce çürümemesi için burada yazılı.
  * Gün istemcinin yerel günü — "bugün yapıldı" işareti ona göre.
  */
 export async function GET(req: Request) {

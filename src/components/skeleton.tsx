@@ -63,7 +63,12 @@ export function CardSkeleton({
       style={{ height, background: "var(--surface-2)", borderColor: "transparent" }}
       role="status"
       aria-busy="true"
-      aria-label={label ?? "Yükleniyor"}
+      /* Etiket VERİLMEZSE hiç yazılmıyor. Önce sabit "Yükleniyor" düşülüyordu
+         ve bu dosya sunucu bileşenlerinden de çağrıldığı için (bkz. Suspense
+         yer tutucuları) `useT()` kullanılamıyor — yanlış dilde bir etiket
+         yerine `role="status"` + `aria-busy` yeterli. Çağıranların hepsi
+         zaten kendi etiketini veriyor. */
+      aria-label={label}
     />
   );
 }
@@ -186,12 +191,15 @@ export function SkeletonPill({
 export function SkeletonCard({
   children,
   className = "",
+  label,
 }: {
   children?: React.ReactNode;
   className?: string;
+  /** Ekran okuyucu etiketi; verilmezse yalnız "meşgul" durumu duyurulur. */
+  label?: string;
 }) {
   return (
-    <div className={`card p-4 ${className}`} role="status" aria-busy="true" aria-label="Yükleniyor">
+    <div className={`card p-4 ${className}`} role="status" aria-busy="true" aria-label={label}>
       {children}
     </div>
   );

@@ -49,8 +49,8 @@ export function SoundSettings({ bare = false }: { bare?: boolean } = {}) {
         <button
           type="button"
           onClick={() => play("correct")}
-          aria-label="Örnek sesi dinle"
-          title="Dinle"
+          aria-label={t("snd.play_sample")}
+          title={t("common.listen")}
           className="chip flex h-8 w-8 items-center justify-center"
         >
           <SpeakerIcon size={15} />
