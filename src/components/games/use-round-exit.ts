@@ -61,7 +61,7 @@ export function useRoundExit() {
     (
       text: string,
       done: () => void,
-      opts: { tail?: number; maxWaitMs?: number; onDuration?: (ms: number) => void } = {},
+      opts: { tail?: number; maxWaitMs?: number } = {},
     ) => {
       abort();
       const { tail = 0, ...speech } = opts;
@@ -99,7 +99,7 @@ export function useRoundExit() {
    * kalmasın diye buradan yönetiliyor.
    */
   const speak = useCallback(
-    (text: string, opts: { maxWaitMs?: number; onDuration?: (ms: number) => void } = {}) => {
+    (text: string, opts: { maxWaitMs?: number } = {}) => {
       abort();
       cancelSpeech.current = speakThen(text, () => { cancelSpeech.current = null; }, opts);
     },

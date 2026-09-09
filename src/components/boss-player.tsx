@@ -7,7 +7,6 @@ import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
-import { AnswerPulse } from "@/components/answer-pulse";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
@@ -334,7 +333,6 @@ export function BossPlayer({
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col">
-      <AnswerPulse />
       <div className="mb-3 flex items-center justify-between px-1">
         <span className="text-sm font-bold tabular-nums">
           {index + 1} / {data!.rounds.length}

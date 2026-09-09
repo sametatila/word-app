@@ -6,7 +6,7 @@ import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
 import { withArtikel, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
-import { fx, vibrate } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
 import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "@/lib/sentence-match";
 import { askAssess } from "@/lib/assess-client";
@@ -117,7 +117,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
       quality,
       ...(correct ? {} : { errorType: m.errorType ?? "meaning", detail: typed.slice(0, 60) }),
     });
-    speak(sentence.de, { onDuration: (ms) => fx(correct ? "correct" : "wrong", ms) });
+    speak(sentence.de);
   }
 
   function insertChar(char: string) {

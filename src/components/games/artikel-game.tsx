@@ -8,7 +8,7 @@ import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
 import type { GameProps, GameResult } from "./types";
 import type { Round } from "@/lib/types";
-import { fx, vibrate } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -53,7 +53,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     // bekletiyordu. Yanlışta doğruyu görmek için kısa bir ek süre kalıyor.
     vibrate(correct ? "correct" : "wrong");
     setPending({ wordId: word.id, correct, latencyMs, ...miss(correct, "article", opt) });
-    speak(`${answer} ${word.de}`, { onDuration: (ms) => fx(correct ? "correct" : "wrong", ms) });
+    speak(`${answer} ${word.de}`);
   }
 
   return (

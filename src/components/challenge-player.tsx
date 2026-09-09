@@ -7,7 +7,6 @@ import type { Answer, Round } from "@/lib/types";
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
-import { AnswerPulse } from "@/components/answer-pulse";
 import { AchievementFlash, Confetti, CountUp } from "@/components/celebrate";
 import { vibrate } from "@/lib/fx";
 import { play, resetCombo } from "@/lib/sfx";
@@ -403,9 +402,6 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           <span className="muted text-xs font-semibold">
             {index + 1}/{data!.rounds.length}
           </span>
-        </div>
-        <div className="mt-1">
-          <AnswerPulse />
         </div>
       </div>
 

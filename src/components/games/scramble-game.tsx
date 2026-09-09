@@ -10,7 +10,7 @@ import { useRoundExit } from "./use-round-exit";
 import { normalize, withArtikel, type GameProps, type GameResult } from "./types";
 import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
-import { fx, vibrate } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { prefetchGerman, SpeakButton } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -103,7 +103,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
       hintUsed,
       ...miss(isCorrect, "spelling", placed.map((t) => t.char).join("")),
     });
-    speak(withArtikel(word), { onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms) });
+    speak(withArtikel(word));
   }, [placed, status, targetLetters.length, compareTarget, word, hintUsed, speak]);
 
   const usedIds = new Set(placed.map((t) => t.id));

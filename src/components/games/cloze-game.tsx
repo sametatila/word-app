@@ -9,7 +9,7 @@ import { useRoundExit } from "./use-round-exit";
 import { matchesAnswer, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
-import { fx, vibrate } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -81,7 +81,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
     });
 
     vibrate(isCorrect ? "correct" : "wrong");
-    speak(truth, { onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms) });
+    speak(truth);
   }
 
   return (

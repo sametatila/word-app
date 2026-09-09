@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
-import { fx, vibrate } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
@@ -80,7 +80,6 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
       const quality = o >= 90 ? 5 : o >= 70 ? 4 : o >= 40 ? 3 : 2;
       setOutcome({ correct: o >= 70, quality });
       vibrate(o >= 70 ? "correct" : "wrong");
-      fx(o >= 70 ? "correct" : "wrong", 600);
     } else {
       if (ai.reason === "aborted") return;
       const fb = fallbackAssessment(req, t);

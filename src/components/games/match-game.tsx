@@ -7,7 +7,7 @@ import { GameShell } from "./game-shell";
 import { withArtikel, shuffle, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
-import { fx } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
 
@@ -67,17 +67,17 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
 
       if (next.size === words.length && !doneRef.current) {
         doneRef.current = true;
-        fx("correct", 500);
+        vibrate("correct");
         // Tur "Devam" ile kapanıyor (bkz. game-shell): mobilde de eşleştirme
         // bitince şerit ve düğme geliyor, ekran kendiliğinden kayıp gitmiyor.
         // Kopya: `resultsRef` bir sonraki turda sıfırlanıyor, duruma
         // referans vermek onu turdan sonra da canlı tutardı.
         setPending([...resultsRef.current]);
       } else {
-        fx("correct");
+        vibrate("correct");
       }
     } else {
-      fx("wrong");
+      vibrate("wrong");
       wrongBeforeRef.current.add(leftId);
       wrongBeforeRef.current.add(rightItem.wordId);
       setWrongPair({ left: leftId, rightIdx });

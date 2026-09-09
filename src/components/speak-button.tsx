@@ -227,7 +227,6 @@ function speakChain(
   course: string,
   onEnd?: () => void,
   slow = false,
-  onDuration?: (ms: number) => void,
 ): (() => void) | null {
   const mine = ++token;
   stopActiveChain();
@@ -236,19 +235,18 @@ function speakChain(
   const cancel = playGapless([ttsUrl(voice, clean, slow)], {
     mine,
     onEnd,
-    onDuration,
     onFail: () => {
       // Ölçüm: nöral ses WebAudio ile çalınamadı. Sık görünüyorsa sorun ağ ya
       // da çözme tarafında; bu iki basamak da hâlâ DOĞRU sesi çalıyor.
       if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "element");
-      play(clean, voice, course, onEnd, slow, onDuration);
+      play(clean, voice, course, onEnd, slow);
     },
   });
   if (cancel) {
     activeChainStop = cancel;
     return cancel;
   }
-  play(clean, voice, course, onEnd, slow, onDuration);
+  play(clean, voice, course, onEnd, slow);
   return null;
 }
 
@@ -472,20 +470,11 @@ function playGapless(
      * indirme/çözme gecikmesi kullanıcıya hiç görünmüyor.
      */
     onStart?: () => void;
-    /**
-     * Planlama bitince kalan çalma süresi (ms).
-     *
-     * `play()` bunu `onplaying` olayından veriyor; burada olay yok, süre
-     * planlanan son sesin bitiş anından hesaplanıyor. Oyunların geçiş çizgisi
-     * ve maskot animasyonu buna bağlı — bu yol süre bildirmeseydi WebAudio ile
-     * çalan turlarda animasyon hiç başlamazdı.
-     */
-    onDuration?: (ms: number) => void;
   },
 ): (() => void) | null {
   const ctx = sharedAudioContext();
   if (!ctx || ctx.state !== "running") return null;
-  const { mine, onEnd, onFail, onStart, onDuration } = opts;
+  const { mine, onEnd, onFail, onStart } = opts;
 
   const sources: AudioBufferSourceNode[] = [];
   let cancelled = false;
@@ -544,7 +533,6 @@ function playGapless(
       finish();
       return;
     }
-    onDuration?.(Math.max(0, tail - ctx.currentTime) * 1000);
     lastSource.onended = finish;
     // Emniyet: `onended` gelmezse (sekme arka plana düştü, tarayıcı atladı)
     // bitiş planlanan sürenin az sonrasında yine bildirilsin.
@@ -857,8 +845,6 @@ function play(
   course: string,
   onEnd?: () => void,
   slow = false,
-  /** Ses uzunluğu öğrenilince çağrılır — geçiş çizgisi bunu kullanıyor. */
-  onDuration?: (ms: number) => void,
 ) {
   const audio = audioElement();
   if (!audio) {
@@ -907,21 +893,10 @@ function play(
   extra?.pause();
   audio.onended = finish;
   audio.onerror = fallback;
-  // Süre, ses ÇALMAYA BAŞLADIĞI anda bildiriliyor — üstveri indiği anda değil.
-  //
-  // Fark önemli: üstveri ile çalmanın başlaması arasında tamponlama süresi
-  // var. Çizgiyi üstveride başlatmak onu sesten önce bitiriyor ve kullanıcı
-  // dolu bir çizgiye bakarak bekliyor. Bu, tam olarak "loading bitti ama hâlâ
-  // bekliyor" şikâyetinin sebebiydi.
-  //
-  // Kalan süre `duration - currentTime` ile hesaplanıyor: `playing` olayı
-  // duraklatma sonrası da geldiği için baştan başladığı varsayılamaz.
-  audio.onplaying = () => {
-    if (!onDuration) return;
-    const total = audio.duration;
-    if (!Number.isFinite(total) || total <= 0) return;
-    onDuration(Math.round((total - audio.currentTime) * 1000));
-  };
+  // Öğe paylaşılıyor: yarıda kesilen bir parça zinciri kendi `onplaying`
+  // işleyicisini geride bırakmış olabilir (bkz. chainWithElements). Burada
+  // okunacak süre yok, ama eski işleyici de bu okumanın üstünde kalmamalı.
+  audio.onplaying = null;
   audio.src = ttsUrl(voice, clean, slow);
   // `currentTime` ataması KORUNMALI: kaynak henüz yüklenmemişken (readyState
   // HAVE_NOTHING) Safari bunu InvalidStateError ile reddedebiliyor ve fırlayan
@@ -1062,18 +1037,9 @@ export function speakThen(
   opts: {
     /** Ses hiç çalmazsa turun asılı kalmaması için üst sınır. */
     maxWaitMs?: number;
-    /**
-     * Sesin gerçek uzunluğu öğrenilince çağrılır.
-     *
-     * Oyunlar geçiş çizgisini bununla başlatıyor. Sabit bir süre vermek iki
-     * yönde de yanlıştı: kısa tahmin çizgiyi erken dolduruyor ve kullanıcı
-     * dolu bir çizgiye bakarak bekliyordu, uzun tahmin ise ses bittikten
-     * sonra boşuna bekletiyordu.
-     */
-    onDuration?: (ms: number) => void;
   } = {},
 ): () => void {
-  const { maxWaitMs = 6000, onDuration } = opts;
+  const { maxWaitMs = 6000 } = opts;
   let finished = false;
   const finish = () => {
     if (finished) return;
@@ -1091,7 +1057,7 @@ export function speakThen(
   const voice = resolveVoice(course, readLocal(VOICE_KEY));
   // speakGerman ile AYNI zincir. Eskiden burası doğrudan play() çağırıyordu ve
   // ikinci basamakta takılan okuma sessizce tarayıcı sentezine düşüyordu.
-  const cancelChain = speakChain(clean, voice, course, finish, false, onDuration);
+  const cancelChain = speakChain(clean, voice, course, finish, false);
   return () => {
     finished = true;
     clearTimeout(guard);

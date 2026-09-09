@@ -9,7 +9,7 @@ import { useRoundExit } from "./use-round-exit";
 import { withArtikel, type GameProps, type GameResult } from "./types";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
-import { fx, vibrate } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman } from "@/components/speak-button";
 import { CheckIcon, XIcon } from "@/components/icons";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -63,13 +63,10 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     vibrate(correct ? "correct" : "wrong");
     setPending({ wordId: word.id, correct, latencyMs, ...miss(correct, "meaning", opt.text) });
 
-    if (deSide) {
-      // Bu yönde soru zaten kart açılırken okundu; seçimde ses yok.
-      fx(correct ? "correct" : "wrong", correct ? 620 : 1200);
-      return;
-    }
-    // Almanca olan taraf cevap: okunuyor, geçiş çizgisi okumanın uzunluğunda.
-    speak(answer, { onDuration: (ms) => fx(correct ? "correct" : "wrong", ms) });
+    // Bu yönde soru zaten kart açılırken okundu; seçimde ses yok.
+    if (deSide) return;
+    // Almanca olan taraf cevap: seçimden sonra okunuyor.
+    speak(answer);
   }
 
   return (

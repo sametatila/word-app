@@ -657,12 +657,6 @@
   animation: shake 0.32s ease-in-out;
 }
 
-/* Cevap sonrası geçiş çizgisi (AnswerPulse) */
-@keyframes pulse-fill {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
-
 /* Doğru cevapta kısa bir yeşil hâle — dikkat dağıtmadan onaylar. */
 @keyframes glow-correct {
   0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-mint) 45%, transparent); }

@@ -9,7 +9,7 @@ import { useRoundExit } from "./use-round-exit";
 import { withArtikel, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
-import { fx } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { CheckIcon, XIcon } from "@/components/icons";
 import { speakGerman, SpeakButton } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -54,7 +54,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
     const isCorrect = said === isTrue;
     const latencyMs = Date.now() - started.current;
     // Yanlış eşleşmede gerçek karşılığı okumaya vakit gerekir.
-    fx(isCorrect ? "correct" : "wrong", isCorrect ? 900 : 2400);
+    vibrate(isCorrect ? "correct" : "wrong");
     setPending({ wordId: word.id, correct: isCorrect, latencyMs, ...miss(isCorrect, "meaning", claim.text) });
   }
 

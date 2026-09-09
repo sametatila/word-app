@@ -23,10 +23,9 @@ import { LevelBadge } from "@/components/level-badge";
 import { prefetchGerman } from "@/components/speak-button";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
-import { fx } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { track } from "@/lib/track";
 import { FitBox } from "@/components/fit-box";
-import { AnswerPulse } from "@/components/answer-pulse";
 import { PushOptIn } from "@/components/push-optin";
 import { ShareResult } from "@/components/share-result";
 import { Mascot } from "@/components/mascot";
@@ -862,10 +861,6 @@ export function SessionPlayer() {
             transition={{ type: "spring", stiffness: 180, damping: 26 }}
           />
         </div>
-        {/* Cevap verildiği an dolan çizgi: "seçimin alındı, geçiliyor" sinyali. */}
-        <div className="mt-1">
-          <AnswerPulse />
-        </div>
       </div>
 
       {saveWarning ? (
@@ -1177,7 +1172,7 @@ function StageCard({
             type="button"
             onClick={() => {
               setBet((b) => !b);
-              fx("tap");
+              vibrate("tap");
             }}
             aria-pressed={bet}
             className="flex w-full items-center gap-3 rounded-xl px-3.5 py-3 text-left transition-colors"

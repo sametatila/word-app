@@ -8,7 +8,7 @@ import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
 import { withArtikel, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
-import { fx, vibrate } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman, SpeakButton } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -59,7 +59,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
     // çalışırdı. Çoğul artikeli hep „die“.
     vibrate(isCorrect ? "correct" : "wrong");
     setPending({ wordId: word.id, correct: isCorrect, latencyMs, ...miss(isCorrect, "plural", option) });
-    speak(`die ${answer}`, { onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms) });
+    speak(`die ${answer}`);
   }
 
   return (

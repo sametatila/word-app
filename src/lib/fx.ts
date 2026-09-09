@@ -1,24 +1,28 @@
 /**
  * Dokunsal, işitsel ve görsel anlık geri bildirim.
  *
- * Oyunlar cevabı aldığı anda `fx()` çağırır: telefon kısa bir titreşim verir,
- * ses efekti çalar ve arayüzde "cevabın alındı, sıradakine geçiliyor" çizgisi
- * başlar. Böylece kullanıcı seçiminin kaydedilip kaydedilmediğinden emin olur.
+ * Oyunlar cevabı aldığı anda `vibrate()` çağırır: telefon kısa bir titreşim
+ * verir ve ses efekti çalar. Böylece kullanıcı seçiminin kaydedildiğinden emin
+ * olur.
+ *
+ * Üçüncü bir geri bildirim daha vardı: ekranın üstünde, bekleme süresi
+ * boyunca dolan ince bir çizgi. Turlar kendiliğinden ilerlerken işi vardı —
+ * "seçimin alındı, sıradakine geçiliyor" diyordu. Turu artık öğrenci
+ * "Devam" ile kapatıyor, yani beklenen bir süre yok: çizgi cevapla birlikte
+ * doluyor ve kimse ona bakmadan kayboluyordu. Çizgiyle birlikte onu besleyen
+ * olay ve sesin uzunluğunu ölçen zincir de kalktı.
  *
  * Ses buraya, `vibrate()` içine bağlandı — on oyunun hepsi ve dersler cevabı
- * aldığı anda ya `vibrate()` ya da onu zaten çağıran `fx()` üzerinden geçiyor.
- * Tek geçit olması, on bir çağrı yerini tek tek dolaşmadan bütün uygulamayı
- * seslendirmeyi mümkün kıldı; `sfx` tarafındaki kısa yineleme penceresi de
- * ikisini birden çağıran oyunlarda sesin iki kez çıkmasını engelliyor.
+ * aldığı anda buradan geçiyor. Tek geçit olması, on bir çağrı yerini tek tek
+ * dolaşmadan bütün uygulamayı seslendirmeyi mümkün kıldı. Çizgiyi başlatan
+ * ikinci bir sarmalayıcı (`fx`) daha vardı; çizgi kalkınca o da kalktı ve
+ * bazı oyunlarda ikisi birden çağrıldığı için gereken yineleme koruması
+ * (`sfx` içindeki kısa pencere) artık yalnız emniyet payı.
  */
 
 import { play } from "@/lib/sfx";
 
 export type FxKind = "correct" | "wrong" | "tap";
-
-export type FxDetail = { kind: FxKind; ms: number };
-
-const EVENT = "lernomi:fx";
 
 /** Titreşim desenleri — kısa tutulur, rahatsız etmemeli. */
 const PATTERN: Record<FxKind, number | number[]> = {
@@ -43,20 +47,4 @@ export function vibrate(kind: FxKind) {
   } catch {
     /* tarayıcı izin vermeyebilir */
   }
-}
-
-/**
- * @param kind cevabın sonucu
- * @param ms   bir sonraki tura geçilene kadar geçecek süre (geçiş çizgisi bu sürede dolar)
- */
-export function fx(kind: FxKind, ms = 0) {
-  vibrate(kind);
-  if (typeof window === "undefined") return;
-  window.dispatchEvent(new CustomEvent<FxDetail>(EVENT, { detail: { kind, ms } }));
-}
-
-export function onFx(handler: (detail: FxDetail) => void): () => void {
-  const listener = (e: Event) => handler((e as CustomEvent<FxDetail>).detail);
-  window.addEventListener(EVENT, listener);
-  return () => window.removeEventListener(EVENT, listener);
 }

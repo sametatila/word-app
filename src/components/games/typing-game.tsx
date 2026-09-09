@@ -8,7 +8,7 @@ import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
 import { matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
-import { fx, vibrate } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -115,7 +115,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
       hintUsed,
       ...miss(correct, classifyTyping(value, [word.de, ...(round.alternatives ?? [])]), value),
     });
-    speak(withArtikel(word), { onDuration: (ms) => fx(correct ? "correct" : "wrong", ms) });
+    speak(withArtikel(word));
   }
 
   function insertChar(char: string) {

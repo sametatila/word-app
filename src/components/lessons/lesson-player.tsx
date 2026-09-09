@@ -18,7 +18,7 @@ import { AlertIcon, MicIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { parseReply } from "@/lib/chat-format";
 import { Confetti } from "@/components/celebrate";
-import { fx } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { useStill } from "@/lib/use-still";
 import { cueListen, startThinking } from "@/lib/lessons/cues";
 import { judgeSpeech } from "@/lib/speech";
@@ -676,7 +676,7 @@ export function LessonPlayer({
         const ok = judgment === e.answer;
         track("lesson_step", ok ? (isFirstTry ? 2 : 1) : 0, `truefalse:${via}`);
         if (ok && isFirstTry) setCorrectCount((n) => n + 1);
-        fx(ok ? "correct" : "wrong", 900);
+        vibrate(ok ? "correct" : "wrong");
         interject(
           [nar(ok ? PRAISE_KEYS[stepIndexRef.current % PRAISE_KEYS.length] : "lessonp.not_quite"), ...e.why],
           () => runStepRef.current(stepIndexRef.current + 1),
@@ -693,7 +693,7 @@ export function LessonPlayer({
       if (best.kind === "correct") {
         track("lesson_step", isFirstTry ? 2 : 1, `${e.kind}:${via}`);
         if (e.kind === "produce" && isFirstTry) setCorrectCount((n) => n + 1);
-        fx("correct", 900);
+        vibrate("correct");
         next();
         return;
       }
@@ -707,7 +707,7 @@ export function LessonPlayer({
       }
 
       attempts.current += 1;
-      fx("wrong", 900);
+      vibrate("wrong");
 
       if (attempts.current >= 3) {
         track("lesson_step", 0, `${e.kind}:${via}`);

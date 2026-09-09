@@ -8,7 +8,7 @@ import { GameShell } from "./game-shell";
 import { withArtikel, type GameProps, type GameResult } from "./types";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText, SentenceTranslation } from "@/components/meaning-text";
-import { fx } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { speakGerman, useSpeechAvailable } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
 import { firstExample } from "@/lib/example";
@@ -55,7 +55,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
     setPicked(option.text);
     const isCorrect = option.text === word.tr;
     const latencyMs = Date.now() - started.current;
-    fx(isCorrect ? "correct" : "wrong", isCorrect ? 1400 : 2600);
+    vibrate(isCorrect ? "correct" : "wrong");
     // Tur "Devam" ile kapanıyor (bkz. game-shell): dinleme turunda cevabı
     // görmek kadar kelimeyi bir kez daha dinlemek de öğrencinin hakkı.
     setPending({

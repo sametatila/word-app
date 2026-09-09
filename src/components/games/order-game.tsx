@@ -10,7 +10,7 @@ import { useRoundExit } from "./use-round-exit";
 import type { GameProps, GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
-import { fx, vibrate } from "@/lib/fx";
+import { vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman, SpeakButton } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -97,7 +97,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
         placed.map((t) => t.text).join(" "),
       ),
     });
-    speak(full, { maxWaitMs: 12000, onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms) });
+    speak(full, { maxWaitMs: 12000 });
   }, [placed, status, answer, tail, word.id, hintUsed, speak]);
 
   const usedIds = new Set(placed.map((t) => t.id));
