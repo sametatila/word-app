@@ -53,6 +53,13 @@ jobs:
       # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.
       - name: Premium kuralları
         run: npm run test:premium
+      # Sözlük kapısı + ham metin kapısı. Birincisi üç dilin anahtar kümesini ve
+      # yer tutucularını karşılaştırıyor; ikincisi sözlüğe HİÇ GİRMEMİŞ Türkçe
+      # metni sayıyor (cırcırlı taban, yalnız aşağı iner). İkincisi olmadan
+      # doğrulama e-postası, Patika başlıkları ve AI kapalıyken çıkan geri
+      # bildirim aylarca Türkçe kaldı ve hiçbir denetim bunu söylemedi.
+      - name: i18n kapısı
+        run: npm run i18n:check
       # Hukuki metinlerin kapısı. Buradaki hata sınıfı derlemeyi kırmıyor,
       # yayımlanmış metni okuyan biri fark ediyor: elle iki yerde artırılan
       # sürüm numarası, bir dile eklenip ötekine eklenmeyen kayıt maddesi,
