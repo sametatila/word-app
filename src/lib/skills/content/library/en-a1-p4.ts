@@ -52,10 +52,10 @@ export const enA1P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The building is new.",
+        text: "Tickets are cheaper on Mondays than on other days.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„The building is the same, but inside everything is new.“ — bina eski, içi yeni.",
+        answer: 0,
+        explain: "„Tickets are seven euros … On Mondays all tickets are five euros.“",
       },
       {
         kind: "gapfill",

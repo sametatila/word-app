@@ -69,7 +69,7 @@ export const deB2P3: SkillExercise[] = [
           "Die Eingangstür ist für Rollstühle zu schmal.",
         ],
         answer: 0,
-        explain: "„… ein Bildschirm, dessen Text … zu klein ist, und der rufende Lautsprecher nennt nur die Nummer.“",
+        explain: "„… dessen Text für sehbehinderte Besucher zu klein ist, und der rufende Lautsprecher nennt nur die Nummer.“",
       },
       {
         kind: "truefalse",
@@ -152,10 +152,10 @@ export const deB2P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Für die Auswahl ist die Herkunft eines Baumes entscheidend.",
+        text: "Die Stadt bewässert einen neuen Baum mehrere Jahre lang.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Wichtig ist nicht die Herkunft eines Baumes, sondern seine Toleranz gegenüber Trockenheit, Salz und wenig Platz.“",
+        answer: 0,
+        explain: "„Die erste Bewässerung übernehmen wir drei Jahre lang.“",
       },
       {
         kind: "short_answer",

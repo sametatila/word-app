@@ -83,7 +83,7 @@ export const deB1P3: SkillExercise[] = [
         text: "Was soll man tun, wenn die Rechnung zu hoch ist?",
         options: [],
         answer: 0,
-        accept: ["unter Vorbehalt zahlen", "unter Vorbehalt bezahlen", "das auf die Quittung schreiben"],
+        accept: ["unter Vorbehalt zahlen", "unter Vorbehalt", "das auf die Quittung schreiben"],
         explain: "„… zahlen Sie unter Vorbehalt und schreiben das auf die Quittung.“",
       },
       {
@@ -144,10 +144,10 @@ export const deB1P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Für Frau Vogt ist die Kälte das größte Problem.",
+        text: "Frau Vogt wacht heute meistens ohne Wecker auf.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Nicht die Kälte, wie alle denken.“ — köpekler, karanlık girişler ve buzlu kaldırım daha zor.",
+        answer: 0,
+        explain: "„Heute wache ich zwei Minuten vor dem Wecker auf.“",
       },
       {
         kind: "short_answer",

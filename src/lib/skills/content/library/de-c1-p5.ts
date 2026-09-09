@@ -76,10 +76,10 @@ export const deC1P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Der Text hält die Verfasser für nachlässig.",
+        text: "Nach dem Text entscheidet der Verfasser nicht darüber, ob gelesen wird.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Der Fehler ist deshalb nicht Nachlässigkeit; es ist eine Perspektive …“",
+        answer: 0,
+        explain: "„Wer eine Anleitung schreibt, entscheidet nicht darüber, ob sie gelesen wird.“",
       },
       {
         kind: "gapfill",

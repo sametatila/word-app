@@ -55,10 +55,10 @@ export const enA1P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "You can bring your dog to the garden.",
+        text: "Children can come, but not on their own.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "Altıncı kural: „No music and no dogs.“",
+        answer: 0,
+        explain: "„Children are welcome, but they must stay with an adult.“",
       },
       {
         kind: "gapfill",

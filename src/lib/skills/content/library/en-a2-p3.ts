@@ -139,10 +139,10 @@ export const enA2P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Somebody was hurt in the accident.",
+        text: "Melis can choose between a morning and an afternoon lesson.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„Nobody was hurt, don't worry …“",
+        answer: 0,
+        explain: "„Saturday at nine in the morning, or Monday at four in the afternoon.“",
       },
       {
         kind: "short_answer",

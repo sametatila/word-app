@@ -74,10 +74,10 @@ export const deB2P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Die Freistellung durch den Arbeitgeber ist gesetzlich nicht geregelt.",
+        text: "Selbstständige bekommen ihren Verdienstausfall nur zum Teil ersetzt.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Zwar ist die Freistellung gesetzlich geregelt, doch in kleinen Betrieben fällt sie schwer.“",
+        answer: 0,
+        explain: "„… und Selbstständige verlieren Einkommen, das nur teilweise ersetzt wird.“",
       },
       {
         kind: "gapfill",

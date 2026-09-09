@@ -74,10 +74,10 @@ export const deB2P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Wer nicht zur Schlichtung erscheint, hat keine Nachteile.",
+        text: "Das Gespräch findet nicht in einer der beiden Wohnungen statt.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Beide Seiten werden geladen; wer nicht erscheint, riskiert Kosten.“",
+        answer: 0,
+        explain: "„… findet in einem neutralen Raum statt, nicht in einer der beiden Wohnungen.“",
       },
       {
         kind: "gapfill",

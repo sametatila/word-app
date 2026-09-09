@@ -69,10 +69,10 @@ export const deB1P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Die Autorin hält eine Abschaffung für einfach.",
+        text: "Auch das Kind der Autorin merkt die Umstellung.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Ich verstehe, dass eine Abschaffung nicht einfach ist“ — zorluğu kabul ediyor, yine de istiyor.",
+        answer: 0,
+        explain: "„Auch meine Tochter … schläft schlechter und ist am Nachmittag gereizt.“",
       },
       {
         kind: "gapfill",

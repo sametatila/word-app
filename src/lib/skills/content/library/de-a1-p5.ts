@@ -127,10 +127,10 @@ export const deA1P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Das Essen gibt es um ein Uhr.",
+        text: "Die Gruppe isst zusammen im Freien.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Um zwölf Uhr essen wir zusammen im Garten.“ — saat birde değil, on ikide.",
+        answer: 0,
+        explain: "„Um zwölf Uhr essen wir zusammen im Garten.“",
       },
       {
         kind: "short_answer",

@@ -124,10 +124,10 @@ export const deA1P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Die gefundenen Sachen liegen in der Umkleide.",
+        text: "Die gefundenen Sachen bekommt man an der Kasse.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Die Sachen liegen an der Kasse.“ — soyunma odasında değil, kasada.",
+        answer: 0,
+        explain: "„Die Sachen liegen an der Kasse. Bitte fragen Sie dort nach Ihren Dingen.“",
       },
       {
         kind: "short_answer",

@@ -74,10 +74,10 @@ export const deC1P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Frau Rosenow findet Romane schwieriger als Sachbücher.",
+        text: "Frau Rosenow hört sich am nächsten Morgen einen Teil ihrer Aufnahme an.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Sachbuch. Im Roman gibt der Text Hinweise, im Sachbuch nicht.“",
+        answer: 0,
+        explain: "„Aber ich höre mir seit Jahren die ersten fünf Minuten am nächsten Morgen an.“",
       },
       {
         kind: "gapfill",

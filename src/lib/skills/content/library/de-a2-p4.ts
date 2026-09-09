@@ -63,10 +63,10 @@ export const deA2P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Man muss die Joghurtbecher vor dem Wegwerfen waschen.",
+        text: "Falsch sortierter Müll kostet alle Bewohner Geld.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Bitte nur leeren, nicht waschen.“ — boşaltmak yeterli.",
+        answer: 0,
+        explain: "„Falsch sortierter Müll kostet das ganze Haus Geld.“",
       },
       {
         kind: "gapfill",

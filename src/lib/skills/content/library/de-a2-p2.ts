@@ -58,10 +58,10 @@ export const deA2P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Man muss für die Bücher bezahlen.",
+        text: "Frau Riedl repariert den Schrank selbst, wenn etwas kaputt ist.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Niemand kontrolliert etwas, und es kostet nichts.“",
+        answer: 0,
+        explain: "„Im Winter wird das Papier feucht, deshalb habe ich eine kleine Tür repariert.“",
       },
       {
         kind: "gapfill",

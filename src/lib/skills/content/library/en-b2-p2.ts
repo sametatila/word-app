@@ -74,10 +74,10 @@ export const enB2P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer says that every old building should be saved.",
+        text: "The writer accepts that some buildings cannot be converted.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„None of this means that every old building should be kept.“",
+        answer: 0,
+        explain: "„There are structures whose floors cannot carry modern services and whose windows cannot be enlarged …“",
       },
       {
         kind: "gapfill",
@@ -164,14 +164,14 @@ export const enB2P2: SkillExercise[] = [
         text: "Ines dismisses the objection to opt-out.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„I take it seriously, and I think the answer depends on how easy it is to opt out.“",
+        explain: "„I take it seriously, and the answer depends on how easy it is to opt out.“",
       },
       {
         kind: "short_answer",
         text: "What does Ines call the actual bottleneck?",
         options: [],
         answer: 0,
-        accept: ["the families", "family conversations", "the family talk"],
+        accept: ["the family", "families", "the families"],
         explain: "„… a family who has never discussed it will usually say no. That is the actual bottleneck.“",
       },
       {

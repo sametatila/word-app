@@ -56,10 +56,10 @@ export const deA1P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Im August kann man keine Bücher zurückbringen.",
+        text: "Auch während der Schließzeit kann man Bücher zurückgeben.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Bücher könnt ihr in dieser Zeit in den blauen Kasten vor der Tür werfen.“ — kapalıyken de iade var.",
+        answer: 0,
+        explain: "„Bücher könnt ihr in dieser Zeit in den blauen Kasten vor der Tür werfen.“",
       },
       {
         kind: "gapfill",

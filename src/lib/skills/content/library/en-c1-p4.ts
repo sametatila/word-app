@@ -79,10 +79,10 @@ export const enC1P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "He says that ten minutes of listening tells a buyer enough.",
+        text: "For him a piano can never be in tune in every key at once.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„The things that matter cannot be heard in ten minutes.“",
+        answer: 0,
+        explain: "„A piano cannot be in tune with itself in every key at once; that is arithmetic, not opinion.“",
       },
       {
         kind: "gapfill",

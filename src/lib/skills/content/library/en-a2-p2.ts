@@ -62,10 +62,10 @@ export const enA2P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ines says the bees are the hardest part.",
+        text: "Ines talks to the neighbors before she puts a hive on a roof.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„The neighbors, not the bees.“",
+        answer: 0,
+        explain: "„Before I put a hive on a roof, I talk to every flat in the building.“",
       },
       {
         kind: "gapfill",

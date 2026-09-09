@@ -165,17 +165,17 @@ export const enB2P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ruth says that exit conversations are very useful.",
+        text: "Sena now asks volunteers to announce their departure in advance.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„So exit conversations tell you very little.“",
+        answer: 0,
+        explain: "„I now ask them to tell me when they are going, four weeks earlier.“",
       },
       {
         kind: "short_answer",
         text: "Who should you ask, according to Ruth?",
         options: [],
         answer: 0,
-        accept: ["people who reduced their hours", "those who do less now", "people still there"],
+        accept: ["reduced their hours", "people who reduced their hours", "those who do less now"],
         explain: "„What tells you a lot is asking people who have just reduced their hours …“",
       },
       {

@@ -68,10 +68,10 @@ export const deB1P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Die Standgebühr steigt sofort.",
+        text: "Die Entscheidung im Rat fiel knapp aus.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„… die Standgebühr wird im ersten halben Jahr nicht erhöht.“",
+        answer: 0,
+        explain: "„Das hat der Stadtrat am Dienstag mit knapper Mehrheit beschlossen.“",
       },
       {
         kind: "gapfill",

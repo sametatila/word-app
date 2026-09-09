@@ -148,10 +148,10 @@ export const enB1P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The water is made softer at the works.",
+        text: "The water is checked more than once before it leaves the works.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„… no, the water is not made softer here. That is done in your house, or not at all.“",
+        answer: 0,
+        explain: "„Nothing is sent out before it has been checked twice by two different people.“",
       },
       {
         kind: "short_answer",

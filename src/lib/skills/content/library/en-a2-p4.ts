@@ -55,10 +55,10 @@ export const enA2P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "You have to say why you take food.",
+        text: "Shops and a bakery bring food to the fridge every day.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„Nobody has to explain why.“",
+        answer: 0,
+        explain: "„Three shops and one bakery bring things every day.“",
       },
       {
         kind: "gapfill",
@@ -149,7 +149,7 @@ export const enA2P4: SkillExercise[] = [
         text: "What is Bruno going to buy?",
         options: [],
         answer: 0,
-        accept: ["pots and soil", "the pots and some soil", "big pots and soil"],
+        accept: ["pots and some soil", "pots and soil", "big pots and soil"],
         explain: "„… that is enough for the big pots and some soil.“ — „I can buy them on Saturday.“",
       },
       {

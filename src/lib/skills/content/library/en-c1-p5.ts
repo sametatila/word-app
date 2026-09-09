@@ -166,10 +166,10 @@ export const enC1P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The speaker agrees with most style guides about connectives.",
+        text: "The speaker calls a summary useful only if it goes beyond the text.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„Now the warnings, and this is where I disagree with most guides.“",
+        answer: 0,
+        explain: "„A summary that repeats the text in shorter words is redundant. A summary that states what follows from the text is not.“",
       },
       {
         kind: "short_answer",

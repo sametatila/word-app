@@ -165,10 +165,10 @@ export const deB2P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Für Nuray ist das Abgeben das Schwierigste.",
+        text: "Rund die Hälfte der Hunde besteht die Prüfung nicht.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Nicht das Abgeben, was alle denken. Das Schwierigste ist das erste halbe Jahr.“",
+        answer: 0,
+        explain: "„Etwa die Hälfte. Die anderen werden vermittelt, meistens an die Familie, die sie großgezogen hat.“",
       },
       {
         kind: "short_answer",

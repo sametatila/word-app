@@ -155,10 +155,10 @@ export const enB1P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The caller has to bring a photo from home.",
+        text: "The insurance pays the extra nights only against receipts.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„There is usually a machine at the consulate. You don't have to bring one from home.“",
+        answer: 0,
+        explain: "„We pay for up to three nights, but only with receipts.“",
       },
       {
         kind: "short_answer",

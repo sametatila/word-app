@@ -139,10 +139,10 @@ export const deA2P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Herr Bleul hat weniger verkauft als im letzten Jahr.",
+        text: "Herr Bleul denkt heute anders über die Änderung als am Anfang.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Im Sommer war mein Umsatz sogar höher als im letzten Jahr.“ — daha az değil, daha çok.",
+        answer: 0,
+        explain: "„Am Anfang hatte ich Angst um meine Kunden“ — sonra: „Im Sommer war mein Umsatz sogar höher.“",
       },
       {
         kind: "short_answer",

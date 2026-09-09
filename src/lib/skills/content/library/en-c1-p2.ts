@@ -77,10 +77,10 @@ export const enC1P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer argues that forms should be treated with suspicion.",
+        text: "The writer calls the rotation of option order cheap but rarely done.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„None of this amounts to an argument for suspicion. Forms are among the most useful instruments we have.“",
+        answer: 0,
+        explain: "„… a change of no cost that is nevertheless implemented in a minority of cases.“",
       },
       {
         kind: "gapfill",

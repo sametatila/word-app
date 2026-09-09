@@ -124,10 +124,10 @@ export const enA1P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The shop closes at six o'clock.",
+        text: "The shop is open longer than the museum.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„The shop is open until ten past six.“ — altıyı on geçe kadar.",
+        answer: 0,
+        explain: "„The museum closes … at six o'clock“ ama „The shop is open until ten past six.“",
       },
       {
         kind: "short_answer",

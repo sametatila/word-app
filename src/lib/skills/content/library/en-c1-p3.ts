@@ -167,10 +167,10 @@ export const enC1P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Ruth is against free admission in every museum.",
+        text: "Yusuf has looked at the question in more than ten countries.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„I am against it as a national rule, which is not quite the same thing.“",
+        answer: 0,
+        explain: "„Yusuf, you have looked at this across twelve countries.“",
       },
       {
         kind: "short_answer",

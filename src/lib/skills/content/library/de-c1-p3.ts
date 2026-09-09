@@ -161,10 +161,10 @@ export const deC1P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Normen sind rechtlich in der Regel verbindlich.",
+        text: "Die Mitarbeit in einem Normungsausschuss wird meistens nicht bezahlt.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Normen sind rechtlich meist nicht verbindlich“ — etkileri mahkeme ve sigorta üzerinden dolaylı.",
+        answer: 0,
+        explain: "„Die Teilnahme ist freiwillig und in der Regel unbezahlt.“",
       },
       {
         kind: "short_answer",

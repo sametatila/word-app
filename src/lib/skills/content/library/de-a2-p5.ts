@@ -84,7 +84,7 @@ export const deA2P5: SkillExercise[] = [
         text: "Was macht bei Bea eine Person, die ihre Woche verpasst?",
         options: [],
         answer: 0,
-        accept: ["sie kocht am Sonntag", "am Sonntag kochen", "kocht für alle", "sie kocht für alle"],
+        accept: ["kocht am Sonntag für alle", "sie kocht am Sonntag", "am Sonntag kochen", "kocht für alle"],
         explain: "„Wer seine Woche verpasst, kocht am Sonntag für alle.“",
       },
       {
@@ -140,10 +140,10 @@ export const deA2P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Die Kundin bekommt dreißig Prozent vom Preis.",
+        text: "Die Kundin verzichtet auf das Geld.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "İki seçenek sunuluyor ve müşteri „Ich spende“ diyor — parayı almıyor.",
+        answer: 0,
+        explain: "İki seçenek sunuluyor ve müşteri „Ich spende“ diyor — payı almıyor.",
       },
       {
         kind: "short_answer",

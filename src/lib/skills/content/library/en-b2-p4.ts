@@ -71,10 +71,10 @@ export const enB2P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Grete thinks that most sellers hide problems.",
+        text: "Grete looks at the walls last.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„Less often than people think. Most sellers don't know.“",
+        answer: 0,
+        explain: "„The floor, then the ceiling above it, and then I go outside … Walls are the last thing.“",
       },
       {
         kind: "gapfill",
@@ -171,7 +171,7 @@ export const enB2P4: SkillExercise[] = [
         text: "Who uses the early room?",
         options: [],
         answer: 0,
-        accept: ["pupils with long journeys", "those with long journeys", "students who travel far"],
+        accept: ["the longest journeys", "pupils with long journeys", "those with long journeys"],
         explain: "„… they are not the tired ones. They are the ones with the longest journeys.“",
       },
       {

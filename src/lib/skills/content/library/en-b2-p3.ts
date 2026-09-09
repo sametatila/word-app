@@ -159,10 +159,10 @@ export const enB2P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "More than half of the recovered bikes are returned to their owners.",
+        text: "Most recovered bikes are found near the place of the theft.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„Fewer than one in ten is returned to its owner.“",
+        answer: 0,
+        explain: "„… seventy per cent of recovered bikes are found within four kilometers of where they were taken.“",
       },
       {
         kind: "short_answer",

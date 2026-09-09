@@ -141,10 +141,10 @@ export const enA2P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The café has more customers now than before.",
+        text: "Ilva would introduce the rule again.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„We also lost customers, that is true. Some come for work and need a screen.“",
+        answer: 0,
+        explain: "„Would you do it again?“ — „Yes, but I would explain it better at the beginning.“",
       },
       {
         kind: "short_answer",

@@ -67,10 +67,10 @@ export const enB1P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The lamps waste light because they are switched on for too long.",
+        text: "The idea for the evening came from teachers.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„… because the lamps are old and have no cover on top“ — sorun süre değil, biçim.",
+        answer: 0,
+        explain: "„The idea came from a group of teachers at the secondary school.“",
       },
       {
         kind: "gapfill",

@@ -147,10 +147,10 @@ export const deB1P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Herr Kunze lehnt jede Lösung ab.",
+        text: "Frau Sander urteilt aus beruflicher Erfahrung.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Wenn die Ampel kommt, mache ich mit.“ — bir koşulla katılıyor.",
+        answer: 0,
+        explain: "„Ich bin Fahrlehrerin, und ich sehe dort jeden Morgen Sachen, die ich meinen Schülern verbieten würde.“",
       },
       {
         kind: "short_answer",

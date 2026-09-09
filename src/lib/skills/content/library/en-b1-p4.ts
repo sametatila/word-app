@@ -70,10 +70,10 @@ export const enB1P4: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Everybody at the meeting agreed with the van idea.",
+        text: "The village will try two things at the same time.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„Two members disagreed. Mr. Lang said that a van was not a shop …“",
+        answer: 0,
+        explain: "„These two are not alternatives.“ — ikisi birlikte yürüyecek.",
       },
       {
         kind: "gapfill",
@@ -88,7 +88,7 @@ export const enB1P4: SkillExercise[] = [
         text: "What will the working group do before May?",
         options: [],
         answer: 0,
-        accept: ["ask about a loan", "talk to the bank", "go to the bank"],
+        accept: ["ask the bank", "ask about a loan", "talk to the bank"],
         explain: "„… a working group of five people will ask the bank about a loan before the end of April.“",
       },
       {

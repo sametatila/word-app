@@ -126,10 +126,10 @@ export const enA1P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "You can eat on the bus.",
+        text: "The bus stops two times during the tour.",
         options: ["True", "False"],
-        answer: 1,
-        explain: "„Please do not eat on the bus, but water is fine.“",
+        answer: 0,
+        explain: "„We stop two times: at the castle and at the river.“",
       },
       {
         kind: "short_answer",

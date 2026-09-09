@@ -55,10 +55,10 @@ export const deA1P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Alle Tage kosten drei Euro.",
+        text: "Nur ein Tag im Programm kostet Geld.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Alle Tage sind kostenlos. Nur die Fahrradtour kostet drei Euro.“ — para yalnız bir gün için.",
+        answer: 0,
+        explain: "„Alle Tage sind kostenlos. Nur die Fahrradtour kostet drei Euro.“ — para yalnız bir gün için isteniyor.",
       },
       {
         kind: "gapfill",

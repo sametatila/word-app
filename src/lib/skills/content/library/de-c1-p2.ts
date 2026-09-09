@@ -79,10 +79,10 @@ export const deC1P2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Der Verzicht auf die Reservefahrzeuge war laut Text von Anfang an unvernünftig.",
+        text: "Das eingesparte Geld wurde tatsächlich genutzt.",
         options: ["Richtig", "Falsch"],
-        answer: 1,
-        explain: "„Die Entscheidungen … waren einzeln jeweils vertretbar“; tasarruf edilen para gerçekten kullanılan seferlere gitti.",
+        answer: 0,
+        explain: "„… das Geld floss in zwei zusätzliche Abendfahrten, die tatsächlich genutzt wurden.“",
       },
       {
         kind: "gapfill",
