@@ -75,7 +75,13 @@ fi
 
 # 10000 gün ≈ 27 yıl: Play, anahtarın 2033'ten sonrasına kadar geçerli olmasını
 # istiyor ve süresi dolan bir anahtarla yeni sürüm yüklenemiyor.
+#
+# -storetype AÇIK yazılıyor. JDK 9'dan beri varsayılan zaten PKCS12, ama
+# varsayılana güvenmek anahtarın BİÇİMİNİ derlemeyi yapan JDK'ya bağlar; başka
+# bir makinede JKS'e düşerse hem her okumada "proprietary format" uyarısı basar
+# hem de anahtar eski biçimde kalır. Biçim, anahtarın kendisi kadar kalıcıdır.
 "$KEYTOOL" -genkeypair -v -keystore "$OUT" -alias "$ALIAS" \
+  -storetype PKCS12 \
   -keyalg RSA -keysize 4096 -validity 10000 \
   -storepass "$STOREPW" -keypass "$STOREPW" \
   -dname "CN=Lernomi, O=Lernomi, C=DE"
