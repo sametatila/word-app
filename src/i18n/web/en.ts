@@ -1209,4 +1209,7 @@ export const enWeb: Record<string, string> = {
   "socialw.cheered": "Cheered",
   "socialw.cheer_hint": "They studied today - send a cheer",
   "socialw.costreak_risk_hint": "If you both skip today, the chain resets",
+  "push.rem_costreak_title": "Your streak with {who} breaks today",
+  "push.rem_costreak_body": "The chain you built together resets tonight. One short round saves you both.",
+  "push.rem_costreak_body_named": "{name}, the chain you built with {who} resets tonight. One short round saves you both.",
 };

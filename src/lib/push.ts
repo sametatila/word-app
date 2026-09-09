@@ -2,11 +2,11 @@ import "server-only";
 import webpush from "web-push";
 import { and, eq, inArray, lte, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { dailyStats, leagueMembers, profiles, pushSubscriptions, userWords } from "@/lib/db/schema";
+import { dailyStats, deviceTokens, leagueMembers, profiles, pushSubscriptions, userWords } from "@/lib/db/schema";
 import { weekStart } from "@/lib/session";
 import { shiftDay } from "@/lib/award";
 import { track } from "@/lib/events";
-import { fcmEnabled, sendFcm } from "@/lib/fcm";
+import { deviceTokensFor, fcmEnabled, sendFcm, sendFcmRows } from "@/lib/fcm";
 import { DEFAULT_NATIVE, formatNumber, isNativeLang, translate, type NativeLang } from "@/lib/i18n/dict";
 
 /**
@@ -84,6 +84,10 @@ export function composeReminder(input: {
    * tek kişilik bir tabloda rakip yoktur.
    */
   rival?: { name: string; gap: number } | null;
+  /**
+   * Bugün kırılacak ortak seri ve karşı tarafın adı. Yoksa null.
+   */
+  coStreak?: { name: string } | null;
 }): PushPayload | null {
   const { lang } = input;
   const first = input.name?.trim().split(/\s+/)[0];
@@ -95,6 +99,27 @@ export function composeReminder(input: {
   */
   const key = (base: string) => (first ? `${base}_named` : base);
   const vars = (extra: Record<string, string | number> = {}) => ({ name: first ?? "", ...extra });
+
+  /*
+    ORTAK SERİ EN ÜSTTE — kendi serisinin bile üstünde.
+
+    Sebebi rakamın değil, karşı tarafın olması: kendi serisi kişinin kendine
+    verdiği bir söz, ortak seri başka birine verdiği bir söz. İkisi de bugüne
+    bağlı ve kaçırılırsa geri gelmiyor, ama ikincisi kaçırıldığında bir kişi
+    daha kaybediyor. Zaten bu bildirimi alan kişi bugün çalışmamış olan taraf
+    (hatırlatma turunun ön koşulu), yani mesaj kendi serisini de kapsıyor.
+
+    Uzunluk yazılmıyor, İSİM yazılıyor. "Ali ile seriniz bugün kırılıyor"
+    cümlesinde çalışan şey sayı değil, karşıda bekleyen kişi.
+  */
+  if (input.coStreak) {
+    return {
+      title: translate(lang, "push.rem_costreak_title", { who: input.coStreak.name }),
+      body: translate(lang, key("push.rem_costreak_body"), vars({ who: input.coStreak.name })),
+      url: "/friends",
+      tag: "reminder",
+    };
+  }
 
   if (input.streak > 0) {
     const base = input.dueCount > 0 ? "push.rem_streak_due" : "push.rem_streak_idle";
@@ -269,7 +294,11 @@ export async function findReminderTargets(limit = 500): Promise<ReminderTarget[]
         sql`(${profiles.lastActiveDay} is null or ${profiles.lastActiveDay} < ${localDay})`,
         sql`(${profiles.lastReminderDay} is null or ${profiles.lastReminderDay} < ${localDay})`,
         // Aboneliği olmayana bakmanın anlamı yok.
-        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})`,
+        // İki kanaldan BİRİ yeterli: tarayıcı aboneliği ya da mobil cihaz jetonu.
+        // Yalnız aboneliğe bakılıyordu; uygulamayı kullanan ama tarayıcıdan
+        // abone olmamış herkes hatırlatma turunun tamamen dışında kalıyordu.
+        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})
+            or exists (select 1 from ${deviceTokens} d where d.user_id = ${profiles.userId})`,
       ),
     )
     .limit(limit);
@@ -316,6 +345,63 @@ export async function dueCounts(userIds: string[]): Promise<Map<string, number>>
  * Bu hafta hiç puanı olmayanın da rakibi var: grubun en altındaki kişi.
  * Fark büyük çıkarsa çağıran taraf zaten mesajı atmıyor.
  */
+/**
+ * Bugün kırılacak ortak seriler — kullanıcı başına bir arkadaş adı.
+ *
+ * TEK SORGU. Hatırlatma turunun bir süre bütçesi var (bkz. yukarıdaki not) ve
+ * ortak serinin GERÇEK uzunluğunu hesaplamak, çiftlerin bir yıllık günlerini
+ * bellekte yürümek demekti — yüzlerce hedef için bunun bedeli tur boyunca
+ * ödenirdi. Bildirim zaten uzunluğu yazmıyor, o yüzden gereken tek şey
+ * zincirin CANLI olduğunu bilmek: iki gün üst üste ikisinin de çalışmış
+ * olması. Bir günlük bir zincir bildirime değmez, iki günlük değer.
+ *
+ * "Bugün kırılıyor" koşulunun ikinci yarısı çağıran tarafta zaten sağlanmış:
+ * hatırlatma yalnız o gün ÇALIŞMAMIŞ kullanıcılara gidiyor.
+ */
+export async function coStreaksAtRisk(userIds: string[], today: string): Promise<Map<string, { name: string }>> {
+  const out = new Map<string, { name: string }>();
+  if (!userIds.length) return out;
+  const y1 = shiftDay(today, -1);
+  const y2 = shiftDay(today, -2);
+  const rows = await db.execute(sql`
+    with live as (
+      select f.requester_id as a, f.addressee_id as b
+        from friendships f
+       where f.status = 'accepted'
+         and (f.requester_id = any(${userIds}::text[]) or f.addressee_id = any(${userIds}::text[]))
+         and exists (select 1 from daily_stats d where d.user_id = f.requester_id and d.day = ${y1} and d.xp > 0)
+         and exists (select 1 from daily_stats d where d.user_id = f.addressee_id and d.day = ${y1} and d.xp > 0)
+         and exists (select 1 from daily_stats d where d.user_id = f.requester_id and d.day = ${y2} and d.xp > 0)
+         and exists (select 1 from daily_stats d where d.user_id = f.addressee_id and d.day = ${y2} and d.xp > 0)
+    )
+    select a as self, b as friend from live
+    union all
+    select b as self, a as friend from live
+  `);
+  const pairs = (rows as unknown as { rows: { self: string; friend: string }[] }).rows ?? [];
+  const wanted = new Set(userIds);
+  const friendIds = [...new Set(pairs.filter((p) => wanted.has(p.self)).map((p) => p.friend))];
+  if (!friendIds.length) return out;
+  const names = await db
+    .select({ userId: profiles.userId, name: profiles.displayName })
+    .from(profiles)
+    .where(inArray(profiles.userId, friendIds));
+  // Adı olmayan arkadaş atlanıyor: bu bildirimin çalışan yanı isim, isimsizi
+  // göndermek "biri seni bekliyor" demekten öteye geçmez.
+  const nameOf = new Map<string, string>();
+  for (const n of names) {
+    const first = n.name?.trim().split(/\s+/)[0];
+    if (first) nameOf.set(n.userId, first);
+  }
+  for (const p of pairs) {
+    // Birden çok ortak seri varsa ilki yeter: bildirim tek kişi anıyor.
+    if (!wanted.has(p.self) || out.has(p.self)) continue;
+    const name = nameOf.get(p.friend);
+    if (name) out.set(p.self, { name });
+  }
+  return out;
+}
+
 export async function weeklyRivals(
   userIds: string[],
   today: string,
@@ -392,10 +478,12 @@ export async function runReminders() {
     .where(inArray(profiles.userId, userIds));
 
   const today = new Date().toISOString().slice(0, 10);
-  const [due, subs, rivals] = await Promise.all([
+  const [due, subs, rivals, coStreaks, devices] = await Promise.all([
     dueCounts(userIds),
     db.select().from(pushSubscriptions).where(inArray(pushSubscriptions.userId, userIds)),
     weeklyRivals(userIds, today),
+    coStreaksAtRisk(userIds, today),
+    deviceTokensFor(userIds),
   ]);
 
   const byUser = new Map<string, (typeof subs)[number][]>();
@@ -405,11 +493,12 @@ export async function runReminders() {
     else byUser.set(s.userId, [s]);
   }
 
-  const jobs: Promise<boolean>[] = [];
+  const jobs: Promise<number>[] = [];
   const logs: Promise<void>[] = [];
   for (const t of targets) {
     const list = byUser.get(t.userId);
-    if (!list?.length) continue;
+    const tokens = devices.get(t.userId);
+    if (!list?.length && !tokens?.length) continue;
     const payload = composeReminder({
       name: t.displayName,
       streak: t.liveStreak,
@@ -417,9 +506,11 @@ export async function runReminders() {
       level: t.level,
       lang: isNativeLang(t.lang ?? "") ? (t.lang as NativeLang) : DEFAULT_NATIVE,
       rival: rivals.get(t.userId) ?? null,
+      coStreak: coStreaks.get(t.userId) ?? null,
     });
     if (!payload) continue;
-    for (const sub of list) jobs.push(deliver(sub, payload));
+    for (const sub of list ?? []) jobs.push(deliver(sub, payload).then((ok) => (ok ? 1 : 0)));
+    if (tokens?.length) jobs.push(sendFcmRows(tokens, payload));
     // Gönderim ucu: push_open ile birlikte bildirim hunisi (WP-80). Sayıma
     // girmiyor — `sent` yalnız teslimatı sayar.
     logs.push(track(t.userId, "push_sent", today, 0, "reminder"));
@@ -427,7 +518,7 @@ export async function runReminders() {
 
   const results = await Promise.all(jobs);
   await Promise.all(logs);
-  return { targets: targets.length, sent: results.filter(Boolean).length };
+  return { targets: targets.length, sent: results.reduce((a, b) => a + b, 0) };
 }
 
 /**
@@ -466,7 +557,11 @@ export async function runStreakAlerts(limit = 500) {
         // Seri ancak DÜN çalışılmışsa bugün kaybedilebilir.
         sql`${profiles.lastActiveDay} = ${localDay} - 1`,
         sql`(${profiles.lastReminderDay} is null or ${profiles.lastReminderDay} < ${localDay})`,
-        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})`,
+        // İki kanaldan BİRİ yeterli: tarayıcı aboneliği ya da mobil cihaz jetonu.
+        // Yalnız aboneliğe bakılıyordu; uygulamayı kullanan ama tarayıcıdan
+        // abone olmamış herkes hatırlatma turunun tamamen dışında kalıyordu.
+        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})
+            or exists (select 1 from ${deviceTokens} d where d.user_id = ${profiles.userId})`,
       ),
     )
     .limit(limit);
@@ -501,7 +596,11 @@ export async function runWeeklyReminders(limit = 500) {
         sql`extract(dow from ${localDay}) = 0`, // pazar
         sql`${localHour} >= 18`,
         sql`(${profiles.lastReminderDay} is null or ${profiles.lastReminderDay} < ${localDay})`,
-        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})`,
+        // İki kanaldan BİRİ yeterli: tarayıcı aboneliği ya da mobil cihaz jetonu.
+        // Yalnız aboneliğe bakılıyordu; uygulamayı kullanan ama tarayıcıdan
+        // abone olmamış herkes hatırlatma turunun tamamen dışında kalıyordu.
+        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})
+            or exists (select 1 from ${deviceTokens} d where d.user_id = ${profiles.userId})`,
       ),
     )
     .limit(limit);
@@ -523,7 +622,10 @@ async function deliverRound(
     .where(inArray(profiles.userId, userIds));
 
   const today = new Date().toISOString().slice(0, 10);
-  const subs = await db.select().from(pushSubscriptions).where(inArray(pushSubscriptions.userId, userIds));
+  const [subs, devices] = await Promise.all([
+    db.select().from(pushSubscriptions).where(inArray(pushSubscriptions.userId, userIds)),
+    deviceTokensFor(userIds),
+  ]);
   const byUser = new Map<string, (typeof subs)[number][]>();
   for (const s of subs) {
     const list = byUser.get(s.userId);
@@ -531,11 +633,12 @@ async function deliverRound(
     else byUser.set(s.userId, [s]);
   }
 
-  const jobs: Promise<boolean>[] = [];
+  const jobs: Promise<number>[] = [];
   const logs: Promise<void>[] = [];
   for (const t of targets) {
     const list = byUser.get(t.userId);
-    if (!list?.length) continue;
+    const tokens = devices.get(t.userId);
+    if (!list?.length && !tokens?.length) continue;
     const lang = isNativeLang(t.lang ?? "") ? (t.lang as NativeLang) : DEFAULT_NATIVE;
     const first = t.displayName?.trim().split(/\s+/)[0];
     const named = (base: string) => (first ? `${base}_named` : base);
@@ -553,11 +656,12 @@ async function deliverRound(
             url: "/learn/weekly",
             tag: "reminder",
           };
-    for (const sub of list) jobs.push(deliver(sub, payload));
+    for (const sub of list ?? []) jobs.push(deliver(sub, payload).then((ok) => (ok ? 1 : 0)));
+    if (tokens?.length) jobs.push(sendFcmRows(tokens, payload));
     logs.push(track(t.userId, "push_sent", today, 0, kind));
   }
 
   const results = await Promise.all(jobs);
   await Promise.all(logs);
-  return { targets: targets.length, sent: results.filter(Boolean).length };
+  return { targets: targets.length, sent: results.reduce((a, b) => a + b, 0) };
 }

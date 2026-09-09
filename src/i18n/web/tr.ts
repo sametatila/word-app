@@ -1234,4 +1234,7 @@ export const trWeb: Record<string, string> = {
   "socialw.cheered": "Alkışlandı",
   "socialw.cheer_hint": "Bugün çalıştı — alkışla",
   "socialw.costreak_risk_hint": "Bugün ikiniz de çalışmazsanız zincir sıfırlanır",
+  "push.rem_costreak_title": "{who} ile seriniz bugün kırılıyor",
+  "push.rem_costreak_body": "Birlikte kurduğunuz zincir bu gece sıfırlanır. Kısa bir tur ikinizi de kurtarır.",
+  "push.rem_costreak_body_named": "{name}, {who} ile kurduğunuz zincir bu gece sıfırlanır. Kısa bir tur ikinizi de kurtarır.",
 };

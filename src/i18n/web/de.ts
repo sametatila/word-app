@@ -1209,4 +1209,7 @@ export const deWeb: Record<string, string> = {
   "socialw.cheered": "Applaudiert",
   "socialw.cheer_hint": "Hat heute gelernt - schick Applaus",
   "socialw.costreak_risk_hint": "Wenn ihr heute beide aussetzt, beginnt die Kette von vorn",
+  "push.rem_costreak_title": "Eure Serie mit {who} reißt heute",
+  "push.rem_costreak_body": "Die gemeinsame Kette wird heute Nacht zurückgesetzt. Eine kurze Runde rettet euch beide.",
+  "push.rem_costreak_body_named": "{name}, eure Kette mit {who} wird heute Nacht zurückgesetzt. Eine kurze Runde rettet euch beide.",
 };

@@ -107,7 +107,31 @@ export type FcmPayload = {
 export async function sendFcm(userId: string, payload: FcmPayload): Promise<number> {
   if (!fcmEnabled) return 0;
   const rows = await db.select().from(deviceTokens).where(eq(deviceTokens.userId, userId));
-  if (!rows.length) return 0;
+  return sendFcmRows(rows, payload);
+}
+
+/** Kullanıcı başına cihaz jetonları — hatırlatma turu hepsini TEK sorguda alsın. */
+export async function deviceTokensFor(userIds: string[]): Promise<Map<string, DeviceRow[]>> {
+  const map = new Map<string, DeviceRow[]>();
+  if (!fcmEnabled || !userIds.length) return map;
+  const rows = await db.select().from(deviceTokens).where(inArray(deviceTokens.userId, userIds));
+  for (const r of rows) {
+    const list = map.get(r.userId);
+    if (list) list.push(r);
+    else map.set(r.userId, [r]);
+  }
+  return map;
+}
+
+export type DeviceRow = typeof deviceTokens.$inferSelect;
+
+/**
+ * Verilen jetonlara gönderir. Hatırlatma turu jetonları toplu okuyup buraya
+ * veriyor: kullanıcı başına ayrı sorgu, turun süre bütçesini kullanıcı
+ * sayısıyla orantılı yiyordu (bkz. push.ts'teki aynı gerekçe).
+ */
+export async function sendFcmRows(rows: DeviceRow[], payload: FcmPayload): Promise<number> {
+  if (!fcmEnabled || !rows.length) return 0;
   const auth = await accessToken();
   if (!auth) return 0;
 
