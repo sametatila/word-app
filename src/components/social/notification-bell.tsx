@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BellIcon } from "@/components/icons";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Başlıktaki zil: okunmamış sayısı. Dakikada bir ve sekme görünür olunca
@@ -14,6 +15,7 @@ import { BellIcon } from "@/components/icons";
  * ama aynı listeyi ikinci kez çiziyordu; mobilde zil `InboxScreen`e götürüyor.
  */
 export function NotificationBell({ className = "" }: { className?: string }) {
+  const t = useT();
   const [unread, setUnread] = useState(0);
   useEffect(() => {
     let alive = true;
@@ -43,7 +45,7 @@ export function NotificationBell({ className = "" }: { className?: string }) {
     };
   }, []);
   return (
-    <Link href="/inbox" prefetch={false} aria-label={unread ? `Bildirimler, ${unread} okunmamış` : "Bildirimler"} className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${className}`}>
+    <Link href="/inbox" prefetch={false} aria-label={unread ? t("inbox.bell_unread", { n: unread }) : t("inbox.bell")} className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${className}`}>
       <BellIcon size={20} />
       {unread > 0 ? (
         <span
