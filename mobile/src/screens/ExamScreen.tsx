@@ -16,6 +16,7 @@ import { ensureMicPermission, listenOnce } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
+import { isPremiumRefusal } from "../lib/premium";
 import { todayStr } from "../game/session";
 import type { Round } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -559,6 +560,8 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
   const [typed, setTyped] = useState("");
   const [busy, setBusy] = useState(false);
   const [score, setScore] = useState<number | null>(null);
+  /** Premium kapısı notu — puan yerine bu gösterilir. */
+  const [gateNote, setGateNote] = useState<string | null>(null);
   const wordCount = typed.trim() ? typed.trim().split(/\s+/).length : 0;
 
   async function evaluate() {
@@ -574,10 +577,14 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         }),
       });
       setScore(d.result?.score?.overall ?? null);
-    } catch {
+    } catch (e) {
+      // Premium kapısı ağ hatası DEĞİL. Uydurma bir yedek puan vermek kapıyı
+      // görünmez kılar: kullanıcı yapay zekâ değerlendirmesinin hakkının
+      // bittiğini hiç öğrenmez ve aldığı puanın gerçek olduğunu sanır.
+      if (isPremiumRefusal(e)) { setGateNote(t("assess.fail_premium")); setScore(null); }
       // Sağlayıcı yoksa ya da ağ yoksa sınav durmaz: kelime sayısı ölçütüyle
       // geçici puan verilir, sunucu yine kendi sınırlarını uygular.
-      setScore(wordCount >= w.task.minWords ? 70 : 40);
+      else setScore(wordCount >= w.task.minWords ? 70 : 40);
     }
     setBusy(false);
   }
@@ -593,7 +600,11 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
           placeholder={t("exam.write_text")} placeholderTextColor={colors.textFaint}
           style={{ minHeight: 140, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         <Text variant="caption" color={colors.textMuted}>{wordCount} / {w.task.minWords}</Text>
-        {score !== null ? (
+        {gateNote ? (
+          // Kapı notu puanın YERİNE geçiyor: sahte bir yüzde göstermek,
+          // değerlendirmenin yapıldığını sanmaya yol açardı.
+          <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{gateNote}</Text>
+        ) : score !== null ? (
           <>
             <Text variant="bodyStrong" color={score >= 60 ? colors.success : colors.danger}>%{score}</Text>
             <PressableScale onPress={() => onDone(score >= 60, score)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>

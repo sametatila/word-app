@@ -10,6 +10,7 @@ import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "..
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLang, currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
+import { isPremiumRefusal } from "../lib/premium";
 import { haptic } from "../lib/haptics";
 import { spacing, radii, softShadow, type Palette } from "../theme";
 import type { Gloss } from "../data/skills";
@@ -200,6 +201,8 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
   const [checks, setChecks] = useState<boolean[]>(() => mono.bulletsTr.map(() => false));
   const [result, setResult] = useState<{ overall: number; praise: string; tip: string; corrected: string } | null>(null);
   const [failed, setFailed] = useState(false);
+  /** Premium kapısı — ağ hatasından ayrı gösterilir. */
+  const [gated, setGated] = useState(false);
   const [showSample, setShowSample] = useState(false);
   const recording = useRef(false);
   const textRef = useRef("");
@@ -263,7 +266,10 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
       setResult({ overall, praise: d.result?.praise_tr ?? "", tip: d.result?.next_tip_tr ?? "", corrected: d.result?.corrected ?? "" });
       setPhase("result");
       onDone(overall >= 60, overall);
-    } catch {
+    } catch (e) {
+      // Premium kapısı ağ hatası DEĞİL: uydurma bir yedek puan vermek kapıyı
+      // görünmez kılar, kullanıcı hakkının bittiğini hiç öğrenmez.
+      if (isPremiumRefusal(e)) setGated(true);
       // Sağlayıcı/ağ yoksa alıştırma durmaz: kalıp kullanımı ve süreyle kaba bir karar.
       setFailed(true);
       const used = mono.targets.filter((x) => text.toLowerCase().includes(x.de.split(/…|\.\.\./)[0].trim().toLowerCase())).length;
@@ -388,7 +394,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
             </>
           ) : (
             <Text variant="body" color={colors.textMuted} style={{ lineHeight: 22 }}>
-              {failed ? t("item.mono_unscored") : t("item.mono_self_done", { n: checks.filter(Boolean).length, total: checks.length })}
+              {gated ? t("assess.fail_premium") : failed ? t("item.mono_unscored") : t("item.mono_self_done", { n: checks.filter(Boolean).length, total: checks.length })}
             </Text>
           )}
           <PressableScale onPress={() => setShowSample((v) => !v)} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>

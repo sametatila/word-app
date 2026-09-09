@@ -125,3 +125,17 @@ export async function awaitPremiumAfterPurchase(tries = 6): Promise<boolean> {
   }
   return false;
 }
+
+/**
+ * Sunucu bir PREMIUM KAPISI yüzünden mi reddetti?
+ *
+ * `/api/stt` ve `/api/assess` ücretsiz katmanın hakkı bittiğinde 403 +
+ * `premium_required` döndürüyor. Bu bir hata değil bir kapı, ve çağıranın onu
+ * ağ hatasından ayırması gerekiyor: "bir şey bozuldu" demek kullanıcıyı yanlış
+ * yere bakmaya gönderiyor, üstelik uydurma bir yedek puan vermek kapıyı
+ * görünmez kılıyor.
+ */
+export function isPremiumRefusal(e: unknown): boolean {
+  const err = e as { status?: number; message?: string } | null;
+  return err?.status === 403 && err?.message === "premium_required";
+}

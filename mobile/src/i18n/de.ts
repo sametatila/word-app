@@ -844,7 +844,7 @@ export const de: Record<string, string> = {
   "settings.theme_dark": "Dunkel",
   "settings.theme_light": "Hell",
   "settings.theme_system": "System",
-  "settings.app_language": "App-Sprache",
+  "settings.app_language": "Meine Sprache",
   "settings.you_ll_be_asked_about_voice_data": "Im Gehmodus wird der Hinweis zu Audiodaten erneut gezeigt",
   "share.invite": "Ich lerne {lang} mit Lernomi wie ein Spiel — probier's aus! {link}",
   "share.result": "Heute hatte ich bei Lernomi {correct} von {total} Wörtern richtig! Probier's aus: {link}",
@@ -1121,4 +1121,5 @@ export const de: Record<string, string> = {
   "settings.notifications_sub": "Erinnerungen, Serienschutz, Wochentest",
   "paywall.store_not_open": "Das Store-Abo ist noch nicht freigeschaltet",
   "paywall.store_not_open_sub": "Premium bekommst du heute über eine Einladungsprämie oder einen Promo-Code — beides steht unten.",
+  "assess.fail_premium": "KI-Feedback gehört zu Premium; dein kostenloses Kontingent für diesen Zeitraum ist aufgebraucht. Im Profil kannst du dir Premium ansehen.",
 };

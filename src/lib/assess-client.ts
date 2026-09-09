@@ -14,6 +14,7 @@ import { translate, DEFAULT_NATIVE } from "@/lib/i18n/dict";
  */
 
 export type AssessFailure =
+  | "premium"
   | "not_configured"
   | "quota"
   | "too_long"
@@ -32,6 +33,9 @@ export const ASSESS_TIMEOUT_MS = 20_000;
 
 /** Kullanıcıya gösterilecek kısa açıklama. */
 export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {
+  // Bir HATA değil bir KAPI: ücretsiz katmanın yapay zekâ değerlendirme hakkı
+  // bitmiş. Genel hata metniyle göstermek kullanıcıya "bir şey bozuldu" dedirtir.
+  premium: "assess.fail_premium",
   not_configured: "assess.fail_not_configured",
   quota: "assess.fail_quota",
   too_long: "assess.fail_too_long",
@@ -71,6 +75,14 @@ export async function askAssess(
     }
     const err = (await res.json().catch(() => ({}))) as { error?: string };
     switch (res.status) {
+      /*
+        403 iki ayrı şey olabilir ve ikisi çok farklı: premium kapısı (ücretsiz
+        katmanın hakkı bitti) ya da yetkisizlik. Ayırt edilmezse premium reddi
+        `default` dalına düşüp "geçersiz istek" diye gösteriliyordu — kullanıcı
+        bir şeyin bozulduğunu sanıyor, oysa kapıya çarpmış.
+      */
+      case 403:
+        return { ok: false, reason: err.error === "premium_required" ? "premium" : "unauthorized" };
       case 401:
         return { ok: false, reason: "unauthorized" };
       case 413:

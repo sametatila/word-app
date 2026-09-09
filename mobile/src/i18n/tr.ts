@@ -849,7 +849,7 @@ export const tr: Record<string, string> = {
   "settings.theme_dark": "Koyu",
   "settings.theme_light": "Açık",
   "settings.theme_system": "Sistem",
-  "settings.app_language": "Uygulama dili",
+  "settings.app_language": "Ana dilim",
   "settings.you_ll_be_asked_about_voice_data": "Yürüyüş modunda ses verisi açıklaması yeniden sorulur",
   "share.invite": "Lernomi ile {lang} öğreniyorum, oyun gibi — sen de dene! {link}",
   "share.result": "Bugün Lernomi'de {total} kelimeden {correct} tanesini doğru bildim! Sen de dene: {link}",
@@ -1126,4 +1126,5 @@ export const tr: Record<string, string> = {
   "settings.notifications_sub": "Hatırlatmalar, seri koruma, haftalık test",
   "paywall.store_not_open": "Mağaza aboneliği henüz açılmadı",
   "paywall.store_not_open_sub": "Premium'a bugün davet ödülüyle ya da promo koduyla geçebilirsin — ikisi de aşağıda.",
+  "assess.fail_premium": "Yapay zekâ değerlendirmesi Premium'a özel; ücretsiz hakkın bu dönem için doldu. Profilden Premium'a bakabilirsin.",
 };

@@ -844,7 +844,7 @@ export const en: Record<string, string> = {
   "settings.theme_dark": "Dark",
   "settings.theme_light": "Light",
   "settings.theme_system": "System",
-  "settings.app_language": "App language",
+  "settings.app_language": "My language",
   "settings.you_ll_be_asked_about_voice_data": "You'll be asked about voice data again in walk mode",
   "share.invite": "I'm learning {lang} on Lernomi, like a game — give it a try! {link}",
   "share.result": "Today on Lernomi I got {correct} out of {total} words right! Give it a try: {link}",
@@ -1121,4 +1121,5 @@ export const en: Record<string, string> = {
   "settings.notifications_sub": "Reminders, streak saver, weekly test",
   "paywall.store_not_open": "Store subscriptions aren't open yet",
   "paywall.store_not_open_sub": "You can get Premium today with an invite reward or a promo code — both are below.",
+  "assess.fail_premium": "AI feedback is part of Premium; your free allowance for this period is used up. You can look at Premium in your profile.",
 };
