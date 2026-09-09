@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-b1-schlaf",
+  "sceneEn": "You are talking to a sleep consultant: your habits before bed, what happens in the night, how you wake in the morning. Describe the order with bevor and während.",
+  "partnerEn": "a sleep consultant who asks about the daily routine step by step",
+  "openingEn": "Please describe your evening to me: what do you do in the two hours before you go to bed?",
+  "goalEn": "Your habits before bed, what happens in the night and how you wake in the morning have all been described."
+ },
+ {
+  "lesson": "de-b1-psychische-gesundheit",
+  "sceneEn": "You are telling a friend you trust that you have been struggling lately: what is weighing on you, when it started, what helps. Build it with fixed-preposition verbs.",
+  "partnerEn": "a friend who knows how to listen and does not rush you",
+  "openingEn": "You've seemed different for a few weeks. Do you want to tell me what's going on?",
+  "goalEn": "What is weighing on you and when it started have been described, and what helps has been discussed."
+ },
+ {
+  "lesson": "de-b1-notaufnahme",
+  "sceneEn": "You are telling the nurse at the emergency department what happened: what happened, in what order, and where it hurts now. Order it by pulling the earlier event back.",
+  "partnerEn": "an emergency nurse who asks quick, clear questions",
+  "openingEn": "Just stay sitting quietly. Tell me briefly: what happened and when was that?",
+  "goalEn": "What happened has been told in order and where it hurts now has been said."
+ },
+ {
+  "lesson": "de-b1-impfung",
+  "sceneEn": "You are at your vaccination appointment: ask what you need to bring, about the possible side effects and when the booster is due. Repeat the passive sentences you hear in your own words.",
+  "partnerEn": "a practice worker who speaks briefly and clearly",
+  "openingEn": "Good afternoon. Have you got your vaccination card with you? Then we'll see what's being done today.",
+  "goalEn": "What you need to bring, the possible side effects and the timing of the booster have all been found out."
+ },
+ {
+  "lesson": "de-b1-krankenhaus-besuch",
+  "sceneEn": "You are visiting a relative in hospital: ask how they are, offer help, cheer them up. Soften your offers with the subjunctive.",
+  "partnerEn": "a relative who is tired but wants to talk",
+  "openingEn": "How lovely that you're here. Sit down — and tell me something from outside, will you?",
+  "goalEn": "How they are has been asked, help has been offered and their spirits have been lifted."
+ },
+ {
+  "lesson": "de-b1-muelltrennung",
+  "sceneEn": "You are asking a neighbour about the rubbish rules in the building you have just moved into: which rubbish goes in which bin, how the deposit is claimed back, which day it is collected.",
+  "partnerEn": "a slightly meticulous neighbour who knows the rules well",
+  "openingEn": "You're new here, aren't you? Everyone gets the rubbish wrong at first — what would you like to know?",
+  "goalEn": "Which rubbish goes where and how the deposit is claimed back have both been found out."
+ },
+ {
+  "lesson": "de-b1-energie-sparen",
+  "sceneEn": "You are discussing the rising electricity bill with your flatmate: what you suggest changing and why. Give the aim of your suggestions with um … zu.",
+  "partnerEn": "a flatmate who likes their comfort and is wary of saving",
+  "openingEn": "The electricity bill has got really high. But I don't want to sit in the dark — what do you suggest?",
+  "goalEn": "At least two suggestions have been made along with their aim, and one has been agreed on."
+ },
+ {
+  "lesson": "de-b1-verkehrswende",
+  "sceneEn": "You are arguing with a colleague about how to get to work: by car, by bike or by public transport. Set both sides out with paired conjunctions and justify your own choice.",
+  "partnerEn": "a practical colleague who is attached to their car",
+  "openingEn": "You cycle every day now? In this weather? Well, I'm sticking with the car — go on, convince me.",
+  "goalEn": "The pros and cons of both sides have been given and your own choice has been defended with reasons."
+ },
+ {
+  "lesson": "de-b1-nachhaltig-einkaufen",
+  "sceneEn": "You and a friend are talking about your shopping habits: which products you go for, which shops you go to, why. Describe your choices with relative clauses.",
+  "partnerEn": "a friend who watches the price but is open to persuasion",
+  "openingEn": "You only shop at the packaging-free shop now? Isn't that much more expensive? Do tell.",
+  "goalEn": "Which products and shops you go for has been described along with your reasons."
+ },
+ {
+  "lesson": "de-b1-garten-projekt",
+  "sceneEn": "You are explaining the rules to someone who wants to join the community garden: when the work happens, how the harvest is shared, who is responsible for what. Give the rules in passive sentences.",
+  "partnerEn": "an eager new member who knows nothing at all",
+  "openingEn": "I'd love to join in. How does it actually work here — do you have to come every week?",
+  "goalEn": "The work day, the sharing of the harvest and the responsibilities have been described, and the new member has said what they have decided."
+ },
+ {
+  "lesson": "de-b1-wetterextrem",
+  "sceneEn": "You are talking to a neighbour about how the weather has changed: how it used to be, how it is now, what you notice. Describe the change with comparative forms.",
+  "partnerEn": "a long-standing neighbour who likes comparing the years",
+  "openingEn": "We never used to have a summer like this. Do you notice it too, or am I imagining it?",
+  "goalEn": "Then and now have been compared and what you have noticed has been described."
+ },
+ {
+  "lesson": "de-b1-ehrenamt",
+  "sceneEn": "You are at an introductory meeting at a voluntary organisation: say why you want to volunteer, how much time you have a week and what you could do.",
+  "partnerEn": "a warm but realistic volunteer coordinator",
+  "openingEn": "Glad you could come. First tell me: why do you want to get involved with us?",
+  "goalEn": "Your reason for volunteering, the time you can give and what you could do have all been described."
+ },
+ {
+  "lesson": "de-b1-stadtentwicklung",
+  "sceneEn": "You are talking about the changes with someone who has lived in the area a long time: what has been done up, what has closed, what has happened to the rents, who has left. Describe the change in the past passive.",
+  "partnerEn": "a resident who resents the change and misses the old area",
+  "openingEn": "You should have seen this neighbourhood ten years ago. Do you know what's disappeared from here?",
+  "goalEn": "What has been done up, what has closed and what has happened to the rents have all been discussed."
+ },
+ {
+  "lesson": "de-b1-demo",
+  "sceneEn": "A journalist is talking to you at a demonstration: why you are here, what you are demanding, what you want changed. Give your aim in damit clauses.",
+  "partnerEn": "a local journalist who wants short, clear answers",
+  "openingEn": "Excuse me, briefly for our paper: why are you here today?",
+  "goalEn": "Why you are there and what you are demanding have been said, and what you want changed has been described."
+ },
+ {
+  "lesson": "de-b1-tierheim",
+  "sceneEn": "You are talking to a worker at the animal shelter: which animal you could look after, what sort of home is needed, what the daily responsibility is. Describe the animals with relative clauses.",
+  "partnerEn": "an honest shelter worker who knows the animals very well",
+  "openingEn": "Come with me, I'll show you the animals. Are you looking for an animal for yourself or for the family?",
+  "goalEn": "Which animal you could look after, what sort of home is needed and the daily responsibility have all been discussed."
+ },
+ {
+  "lesson": "de-b1-irreal",
+  "sceneEn": "You and a friend are playing a 'what if' game: what you would do if you were rich, where you would live, what you would not change. Build your answers with unreal conditional clauses.",
+  "partnerEn": "a friend who loves daydreaming and keeps producing questions",
+  "openingEn": "Imagine you win a million tomorrow. What would you do first?",
+  "goalEn": "What you would do if you were rich, where you would live and what you would not change have all been said."
+ },
+ {
+  "lesson": "de-b1-wuensche",
+  "sceneEn": "You and a friend are sharing your wishes: what you would ask for if you had three wishes, which wish has still not come true. Build your answers in the subjunctive.",
+  "partnerEn": "a warm friend who tells you their own wishes too",
+  "openingEn": "If you had three wishes free — but honestly, no millions: what would your three be?",
+  "goalEn": "Three wishes have been given and it has been said which one has still not come true."
+ },
+ {
+  "lesson": "de-b1-vergangen-bereuen",
+  "sceneEn": "You are telling a friend about a decision you made in the past: what had happened, what you should have done looking back, whether you regret it now. Use the patterns of regret.",
+  "partnerEn": "a friend who does not judge and tells you their own regrets",
+  "openingEn": "You said the other day you still think about that business a lot. What would you have done differently?",
+  "goalEn": "The decision has been described, what you should have done looking back has been said and how you see it today has been given."
+ },
+ {
+  "lesson": "de-b1-zukunftsangst",
+  "sceneEn": "You are talking to someone close about your fears for the future: what you are afraid will go wrong, what you would do in the worst case, what reassures you.",
+  "partnerEn": "someone close who calms you down and makes you think with questions",
+  "openingEn": "You've seemed on edge since the decision came up. What's the worst possibility you're thinking of?",
+  "goalEn": "The fear has been named, what you would do in the worst case has been said and what reassures you has been discussed."
+ },
+ {
+  "lesson": "de-b1-freundschaft-pflegen",
+  "sceneEn": "You have run into an old friend after years: what has happened in between, why the friendship lapsed, how things are now. Order it by pulling the earlier event back.",
+  "partnerEn": "a talkative old friend who is sorry to have lost touch",
+  "openingEn": "I don't believe it — how long has it been? Tell me, what's been happening with you?",
+  "goalEn": "What happened in between has been described, the reason for the lapse has been discussed and you have promised to meet again."
+ },
+ {
+  "lesson": "de-b1-liebeserklaerung",
+  "sceneEn": "You are telling someone you have been friends with for a long time how you feel: what you feel, what you are suggesting, and that you want to keep the friendship whatever the answer. Soften your sentences with the subjunctive.",
+  "partnerEn": "a surprised but warm friend who asks for time to think",
+  "openingEn": "You wanted to talk about something and you look so serious. Now I'm curious — what is it?",
+  "goalEn": "Your feeling has been said, an offer has been made and it has been made clear that the friendship will go on whatever the answer."
+ },
+ {
+  "lesson": "de-b1-konflikt-loesen",
+  "sceneEn": "You are talking through a problem between you and someone close: what happened, how you felt, what you want to happen. Instead of blame, give your aim in damit clauses.",
+  "partnerEn": "someone close who is defensive at first but opens up to listening",
+  "openingEn": "You've been odd with me for days. Will you please tell me what's actually going on?",
+  "goalEn": "What happened and how you felt have been described without blame, and what you want to happen has been said."
+ },
+ {
+  "lesson": "de-b1-heimweh",
+  "sceneEn": "Someone is asking you about your life between two countries: what it was like when you arrived, what you miss, where you feel you belong now. Tell the past moments with als.",
+  "partnerEn": "an unhurried acquaintance who is genuinely interested",
+  "openingEn": "May I ask you something personal? Where do you actually feel at home — here or there?",
+  "goalEn": "How your arrival was, what you miss and where you feel you belong now have all been described."
+ },
+ {
+  "lesson": "de-b1-lebenstraum",
+  "sceneEn": "You are telling someone about your big dream: what it is, why you want it, what the first step would be and what is holding you back. Build the dream with infinitive phrases.",
+  "partnerEn": "a supportive listener who asks realistic questions",
+  "openingEn": "You once told me about a plan you'd had in mind for years. What became of it?",
+  "goalEn": "Your dream, your reason, the first step and what is holding you back have all been described."
+ },
+ {
+  "lesson": "de-b1-rueckblick",
+  "sceneEn": "You are having a mid-course review with your teacher: how the road has gone, what was hardest, what you are proud of, what you will do next.",
+  "partnerEn": "a proud teacher who has followed you from the start",
+  "openingEn": "We're at the end of the first part. Look back a moment: what was the most important moment for you?",
+  "goalEn": "How the road has gone, the hardest part, what you are proud of and your next goal have all been described."
+ }
+]
