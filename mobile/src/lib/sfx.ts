@@ -61,7 +61,27 @@ function playNow(kind: SfxKind): void {
     if (screenOffMode) { LernomiSfx?.playSfx?.(kind); return; }
     // Öncelik: WebAudio köprüsü — web ile birebir sentez, çalıştığı KANITLI çıkış (TTS de buradan).
     if (bridgeReady()) { bridgeSfx(kind); return; }
-    // Yedek: cihazda react-native-sound (her tür için kendi mp3'ü var).
+    /*
+     * Köprü hazır DEĞİL ve ekran açık: NATIVE ton sentezi. Aynı nota tablosu, aynı ses.
+     *
+     * Burada eskiden doğrudan mp3 yedeğine düşülüyordu ve o yedek RELEASE APK'SINDA
+     * HİÇ YOKTU. Sebep: `res/raw/*.mp3` dosyalarına kodda `R.raw.correct` diye atıf
+     * yok — react-native-sound onları adla açıyor — ve kaynak küçültücü statik atıf
+     * göremediği için hepsini atıyor. Ölçüldü 2026-09-09: üretilen APK'da ne bir
+     * .mp3 girdisi var ne `raw` kaynak tipi; küçültücü raporunda yedi satır birden
+     * "raw:correct … is not reachable".
+     *
+     * `res/raw/keep.xml` ile korumak işe YARAMIYOR: React Native'in paketleme görevi
+     * aynı adlı dosyayı `build/generated/res/react/<variant>/raw/keep.xml` olarak
+     * kendisi üretiyor (JS'ten gelen görselleri korumak için) ve üretilen kaynak
+     * dizini `src/main/res`i eziyor — elle yazılan keep.xml birleştirmeyi kaybediyor.
+     *
+     * Küçültücüyle boğuşmak yerine yol değişti: native sentez iki platformda da var
+     * (Kotlin `playSfx`, Swift `playSfx`), ekran açıkken de çalışıyor ve zaten aynı
+     * tabloyu çalıyor. Böylece bu dalın hiçbir dosyaya bağımlılığı kalmadı.
+     */
+    if (LernomiSfx?.playSfx) { LernomiSfx.playSfx(kind); return; }
+    // Son çare: mp3 (debug yapısı, ya da native modülün bulunmadığı bir ortam).
     const s = cache[kind];
     if (s === undefined) { preload(kind); return; }
     if (!s) return;
