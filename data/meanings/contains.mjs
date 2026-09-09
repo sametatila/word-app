@@ -68,6 +68,9 @@ const PREFIXES = [
   "herunter",
   "zusammen",
   "entgegen",
+  // `aufrecht` de sıfat kökenli ayrılabilir ön ek ailesinden ("aufrechterhalten"),
+  // ama listede yoktu: "erhält den Kontakt aufrecht" reddediliyordu.
+  "aufrecht",
   "spazieren",
   "nebenan",
   "entlang",
