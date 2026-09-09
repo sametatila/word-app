@@ -812,7 +812,7 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
       if (nm.size === words.length) {
         const batch = words.map((w) => ({ wordId: w.id, correct: !wrongBefore.current.has(w.id) }));
         const okCount = batch.filter((b) => b.correct).length;
-        setFb({ correct: batch.every((b) => b.correct), note: `${okCount}/${words.length} kelime ilk denemede`, tr: null, answerDe: null });
+        setFb({ correct: batch.every((b) => b.correct), note: tx("rounds.match_first_try", { n: okCount, total: words.length }), tr: null, answerDe: null });
       }
     } else {
       wrongBefore.current.add(selLeft); haptic("wrong"); sfx("wrong");

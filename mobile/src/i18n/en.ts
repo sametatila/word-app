@@ -816,6 +816,7 @@ export const en: Record<string, string> = {
   "rounds.recall": "Recall",
   "rounds.type": "Type...",
   "rounds.struggled": "Struggled",
+  "rounds.match_first_try": "{n}/{total} words on the first try",
   "settings.analytics_sub": "Which features get used; never leaves us",
   "settings.settings": "Settings",
   "settings.not_sure_take_placement_test": "Not sure? Take the placement test →",

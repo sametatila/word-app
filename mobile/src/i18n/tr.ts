@@ -821,6 +821,7 @@ export const tr: Record<string, string> = {
   "rounds.recall": "Hatırla",
   "rounds.type": "Yaz...",
   "rounds.struggled": "Zorlandım",
+  "rounds.match_first_try": "{n}/{total} kelime ilk denemede",
   "settings.analytics_sub": "Hangi özelliklerin kullanıldığı; üçüncü tarafa gitmez",
   "settings.settings": "Ayarlar",
   "settings.not_sure_take_placement_test": "Emin değil misin? Seviye testini çöz →",

@@ -818,6 +818,7 @@ export const deBase: Record<string, string> = {
   "rounds.recall": "Erinnern",
   "rounds.type": "Schreiben…",
   "rounds.struggled": "Schwer",
+  "rounds.match_first_try": "{n}/{total} Wörter beim ersten Versuch",
   "settings.analytics_sub": "Welche Funktionen genutzt werden; geht an keinen Dritten",
   "settings.settings": "Einstellungen",
   "settings.not_sure_take_placement_test": "Unsicher? Mach den Einstufungstest →",
