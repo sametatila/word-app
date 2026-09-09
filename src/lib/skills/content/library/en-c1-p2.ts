@@ -209,10 +209,10 @@ export const enC1P2: SkillExercise[] = [
     genre: "Özet",
     intro: "Küçük bir çalışmanın akademik özetini yazacaksın; önce iki cümle kur, sonra özeti yaz.",
     gloss: [
-      { de: "abstract", tr: "özet" },
+      { de: "questionnaire", tr: "anket formu" },
       { de: "limitation", tr: "sınırlılık" },
-      { de: "implication", tr: "çıkarım" },
-      { de: "methodology", tr: "yöntem" },
+      { de: "rotation", tr: "döndürme" },
+      { de: "reliance", tr: "dayanma" },
     ],
     minutes: 14,
     tasks: [
@@ -220,14 +220,12 @@ export const enC1P2: SkillExercise[] = [
         kind: "build",
         tr: "Kategorilerin değiştirilmesi farklı bir sonuç üretti.",
         answer: "The change of categories produced a different result.",
-        alternatives: ["A change of categories produced a different result."],
         hint: "Akademik kayıtta fiil sık sık adlaştırılır: we changed → the change of.",
       },
       {
         kind: "build",
         tr: "Veriler üç okulda toplandı.",
         answer: "The data were collected in three schools.",
-        alternatives: ["Data were collected in three schools."],
         hint: "„data“ akademik yazıda çoğul sayılır; edilgen çatı faili geri planda bırakır.",
       },
       {

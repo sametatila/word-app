@@ -192,9 +192,9 @@ export const enB1P3: SkillExercise[] = [
     genre: "Blog yazısı",
     intro: "Çoğu kişinin görmediği bir işi anlatan blog yazısı yazacaksın; önce iki cümle kur, sonra yazıyı yaz.",
     gloss: [
-      { de: "reception", tr: "resepsiyon" },
+      { de: "desk", tr: "resepsiyon" },
       { de: "guest", tr: "misafir" },
-      { de: "silence", tr: "sessizlik" },
+      { de: "trained", tr: "eğitilmiş" },
       { de: "awake", tr: "uyanık" },
     ],
     minutes: 10,

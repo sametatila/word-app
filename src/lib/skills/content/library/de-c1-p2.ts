@@ -226,7 +226,6 @@ export const deC1P2: SkillExercise[] = [
         kind: "build",
         tr: "Sanki hiç uyarı gelmemiş gibi davranıldı.",
         answer: "Man tat so, als wäre nie eine Warnung gekommen.",
-        alternatives: ["Man tat so, als sei nie eine Warnung gekommen."],
         hint: "„als“ tek başına kullanılınca fiil hemen arkasından gelir; Konjunktiv I ya da II ikisi de doğrudur.",
       },
       {

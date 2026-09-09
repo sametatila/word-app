@@ -187,7 +187,7 @@ export const deA2P4: SkillExercise[] = [
     genre: "Bülten yazısı",
     intro: "Derneğin bülteni için kısa bir etkinlik raporu yazacaksın; önce iki cümle kur, sonra raporu yaz.",
     gloss: [
-      { de: "der Bericht", tr: "rapor", en: "report" },
+      { de: "platt", tr: "patlak", en: "flat" },
       { de: "teilnehmen", tr: "katılmak", en: "to take part" },
       { de: "der Reifen", tr: "lastik", en: "tire" },
       { de: "die Pumpe", tr: "pompa", en: "pump" },
@@ -198,7 +198,6 @@ export const deA2P4: SkillExercise[] = [
         kind: "build",
         tr: "Yirmi iki kişi katıldı.",
         answer: "Zweiundzwanzig Personen haben teilgenommen.",
-        alternatives: ["Es haben zweiundzwanzig Personen teilgenommen."],
         hint: "Ayrılabilen fiilin Partizip'inde „ge-“ ön ekle kökün ARASINA girer: teil-ge-nommen.",
       },
       {

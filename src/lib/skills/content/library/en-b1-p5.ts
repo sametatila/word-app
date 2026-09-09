@@ -217,7 +217,6 @@ export const enB1P5: SkillExercise[] = [
         kind: "build",
         tr: "Bu evrakı yanında taşımak zorunda değilsin.",
         answer: "You don't have to carry this paper with you.",
-        alternatives: ["You do not have to carry this paper with you."],
         hint: "„don't have to“ zorunluluk yok demektir; „mustn't“ ise yasak demektir — ikisi karıştırılmamalı.",
       },
       {

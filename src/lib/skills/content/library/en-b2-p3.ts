@@ -203,7 +203,7 @@ export const enB2P3: SkillExercise[] = [
     genre: "Yönerge",
     intro: "İş yerindeki cihazların bakımı için meslektaşlarına yönerge yazacaksın; önce iki cümle kur, sonra yönergeyi yaz.",
     gloss: [
-      { de: "equipment", tr: "ekipman" },
+      { de: "label", tr: "etiket" },
       { de: "request", tr: "talep" },
       { de: "replacement", tr: "yedek" },
       { de: "urgent", tr: "acil" },
@@ -221,7 +221,6 @@ export const enB2P3: SkillExercise[] = [
         kind: "build",
         tr: "Onarımların iki gün sürdüğü söyleniyor.",
         answer: "Repairs are said to take two days.",
-        alternatives: ["It is said that repairs take two days."],
         hint: "Kaynağı belirsiz bilgi „is said to“ ya da „It is said that“ ile aktarılır.",
       },
       {

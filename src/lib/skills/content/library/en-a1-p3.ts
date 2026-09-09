@@ -175,14 +175,13 @@ export const enA1P3: SkillExercise[] = [
         kind: "build",
         tr: "Yirmi dakika geç kaldım.",
         answer: "I am twenty minutes late.",
-        alternatives: ["I'm twenty minutes late."],
         hint: "„be“ + süre + late kalıbı yeter; ayrı bir fiil eklemeye gerek yok.",
       },
       {
         kind: "build",
         tr: "Lütfen benim için bir çay ısmarla.",
         answer: "Please order a tea for me.",
-        alternatives: ["Please order me a tea."],
+        alternatives: ["Order a tea for me, please."],
         hint: "Emir cümlesi özne almaz; kime yapıldığını „for me“ ile ya da doğrudan „me“ ile söylersin.",
       },
       {

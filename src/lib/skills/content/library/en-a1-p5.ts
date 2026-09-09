@@ -177,7 +177,6 @@ export const enA1P5: SkillExercise[] = [
         kind: "build",
         tr: "Oda küçük ama çok temiz.",
         answer: "The room is small but very clean.",
-        alternatives: ["The room is small, but it is very clean."],
         hint: "„but“ iki yarıyı bağlar; ikinci yarıda özne ve fiil tekrar edilebilir.",
       },
       {

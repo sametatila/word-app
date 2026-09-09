@@ -180,7 +180,7 @@ export const deA2P5: SkillExercise[] = [
     genre: "Mektup",
     intro: "Uzun süredir yazmadığın bir arkadaşına mektup yazacaksın; önce iki cümle kur, sonra mektubu yaz.",
     gloss: [
-      { de: "sich melden", tr: "haber vermek", en: "to get in touch" },
+      { de: "der Balkon", tr: "balkon", en: "balcony" },
       { de: "vermissen", tr: "özlemek", en: "to miss" },
       { de: "sich verändern", tr: "değişmek", en: "to change" },
       { de: "ziehen", tr: "taşınmak", en: "to move" },

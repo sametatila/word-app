@@ -197,7 +197,6 @@ export const enA2P2: SkillExercise[] = [
         kind: "build",
         tr: "Bana yazılı bir teyit gönderir misiniz?",
         answer: "Could you send me a written confirmation?",
-        alternatives: ["Could you send a written confirmation to me?"],
         hint: "Kibar rica „Could you …?“ ile kurulur ve arkasından yalın fiil gelir.",
       },
       {

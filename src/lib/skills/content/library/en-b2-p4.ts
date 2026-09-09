@@ -204,7 +204,7 @@ export const enB2P4: SkillExercise[] = [
       { de: "delivery", tr: "teslimat" },
       { de: "cause", tr: "neden" },
       { de: "likely", tr: "muhtemel" },
-      { de: "evidence", tr: "kanıt" },
+      { de: "log", tr: "kayıt defteri" },
     ],
     minutes: 12,
     tasks: [
@@ -212,14 +212,12 @@ export const enB2P4: SkillExercise[] = [
         kind: "build",
         tr: "Paket depoda kalmış olmalı.",
         answer: "The parcel must have stayed in the warehouse.",
-        alternatives: ["It must have stayed in the warehouse."],
         hint: "Geçmiş için kesine yakın çıkarım „must have + üçüncü hâl“ ile kurulur.",
       },
       {
         kind: "build",
         tr: "Sürücü zili çalmış olamaz.",
         answer: "The driver can't have rung the bell.",
-        alternatives: ["The driver cannot have rung the bell."],
         hint: "Geçmiş için imkânsızlık „can't have“ ile söylenir; „mustn't have“ denmez.",
       },
       {

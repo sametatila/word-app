@@ -212,7 +212,7 @@ export const enB2P5: SkillExercise[] = [
       { de: "consultation", tr: "görüş alma" },
       { de: "amend", tr: "değiştirmek" },
       { de: "exempt", tr: "muaf tutmak" },
-      { de: "enforce", tr: "uygulatmak" },
+      { de: "slot", tr: "zaman dilimi" },
     ],
     minutes: 12,
     tasks: [
@@ -220,14 +220,12 @@ export const enB2P5: SkillExercise[] = [
         kind: "build",
         tr: "Konteyneri kaldırmak sorunu çözmez.",
         answer: "Removing the container will not solve the problem.",
-        alternatives: ["Removing the container is not going to solve the problem."],
         hint: "Fiil özne olduğunda -ing biçimini alır: Removing … solves.",
       },
       {
         kind: "build",
         tr: "Kuralı bir yıl ertelemenizi öneriyoruz.",
         answer: "We propose to postpone the rule for one year.",
-        alternatives: ["We propose postponing the rule for one year."],
         hint: "„propose“ hem mastar hem -ing alır; „decide“ yalnız mastar, „avoid“ yalnız -ing alır.",
       },
       {

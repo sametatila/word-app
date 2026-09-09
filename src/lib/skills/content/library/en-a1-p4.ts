@@ -168,7 +168,7 @@ export const enA1P4: SkillExercise[] = [
     intro: "Dolabını boşaltıyorsun; önce iki cümle kur, sonra bir eşyanı satmak için küçük bir ilan yaz.",
     gloss: [
       { de: "size", tr: "beden" },
-      { de: "sell", tr: "satmak" },
+      { de: "coat", tr: "palto" },
       { de: "warm", tr: "sıcak tutan" },
       { de: "pick up", tr: "gelip almak" },
     ],

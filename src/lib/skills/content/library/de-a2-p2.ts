@@ -176,7 +176,7 @@ export const deA2P2: SkillExercise[] = [
     gloss: [
       { de: "die Geldbörse", tr: "cüzdan", en: "wallet" },
       { de: "der Ausweis", tr: "kimlik", en: "ID card" },
-      { de: "zurückgeben", tr: "geri vermek", en: "to give back" },
+      { de: "das Kleingeld", tr: "bozuk para", en: "small change" },
       { de: "erreichen", tr: "ulaşmak", en: "to reach" },
     ],
     minutes: 9,

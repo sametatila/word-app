@@ -222,14 +222,12 @@ export const enC1P3: SkillExercise[] = [
         kind: "build",
         tr: "Rakamlar bunu düşündürüyor ama kanıtlamıyor.",
         answer: "The figures suggest this, but they do not prove it.",
-        alternatives: ["The figures suggest this without proving it."],
         hint: "„suggest“ ve „indicate“ iddiayı yumuşatır; „prove“ ise kesinlik iddia eder.",
       },
       {
         kind: "build",
         tr: "Bu değişikliğin ölçülebilir bir etkisi olmamış olabilir.",
         answer: "The change may well have had no measurable effect.",
-        alternatives: ["It may well be that the change had no measurable effect."],
         hint: "„may well“ olasılığı güçlendirir; tek başına „may“ daha zayıf bir iddia taşır.",
       },
       {

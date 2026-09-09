@@ -210,10 +210,10 @@ export const enC1P5: SkillExercise[] = [
     genre: "Deneme",
     intro: "Fikrini değiştirdiğin bir konuyu anlatan kısa bir deneme yazacaksın; önce iki cümle kur, sonra denemeyi yaz.",
     gloss: [
-      { de: "conviction", tr: "kanaat" },
+      { de: "handover", tr: "devir" },
       { de: "thin", tr: "zayıf" },
       { de: "concede", tr: "kabul etmek" },
-      { de: "retain", tr: "korumak" },
+      { de: "suspicion", tr: "kuşku" },
     ],
     minutes: 14,
     tasks: [

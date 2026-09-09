@@ -177,14 +177,12 @@ export const enA1P2: SkillExercise[] = [
         kind: "build",
         tr: "Telefonumun ekranı kırık.",
         answer: "The screen of my phone is broken.",
-        alternatives: ["My phone's screen is broken."],
         hint: "İyelik iki yolla kurulur: „of“ ile ya da „'s“ ile; kısa biçim daha doğaldır.",
       },
       {
         kind: "build",
         tr: "Tamir ne kadar sürer?",
         answer: "How long does the repair take?",
-        alternatives: ["How long will the repair take?"],
         hint: "Soru sırası: soru kelimesi + yardımcı fiil + özne + yalın fiil.",
       },
       {

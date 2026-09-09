@@ -197,7 +197,6 @@ export const enA2P4: SkillExercise[] = [
         kind: "build",
         tr: "Kaç kişi geldi?",
         answer: "How many people came?",
-        alternatives: ["How many people were there?"],
         hint: "Sayılabilen isimlerde „many“, sayılamayanlarda „much“ kullanılır.",
       },
       {

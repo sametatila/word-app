@@ -192,7 +192,7 @@ export const enB1P4: SkillExercise[] = [
     genre: "Resmî e-posta",
     intro: "Telefonda konuşulanları yazılı olarak teyit edeceksin; önce iki cümle kur, sonra e-postayı yaz.",
     gloss: [
-      { de: "agency", tr: "acente" },
+      { de: "heating", tr: "kalorifer" },
       { de: "confirm", tr: "teyit etmek" },
       { de: "hallway", tr: "koridor" },
       { de: "notice", tr: "duyuru" },
@@ -203,14 +203,12 @@ export const enB1P4: SkillExercise[] = [
         kind: "build",
         tr: "Bana işin nisanda başlayacağını söylediniz.",
         answer: "You told me that the work would start in April.",
-        alternatives: ["You told me the work would start in April."],
         hint: "Aktarımda zaman bir adım geriye gider: will → would. „that“ atılabilir.",
       },
       {
         kind: "build",
         tr: "Meslektaşınız pencerelerin değiştirilmeyeceğini söyledi.",
         answer: "Your colleague said that the windows would not be changed.",
-        alternatives: ["Your colleague said the windows would not be changed."],
         hint: "Olumsuz biçim de geriye kayar: will not → would not.",
       },
       {

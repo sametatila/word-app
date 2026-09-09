@@ -179,7 +179,7 @@ export const enA2P3: SkillExercise[] = [
     genre: "Forum yazısı",
     intro: "Bir forumda ilk tam zamanlı işe başlayan birine tavsiye vereceksin; önce iki cümle kur, sonra cevabını yaz.",
     gloss: [
-      { de: "advice", tr: "tavsiye" },
+      { de: "tip", tr: "tavsiye" },
       { de: "empty", tr: "boş" },
       { de: "calendar", tr: "takvim" },
       { de: "tired", tr: "yorgun" },
@@ -190,7 +190,6 @@ export const enA2P3: SkillExercise[] = [
         kind: "build",
         tr: "Sabahlar akşamlardan daha sakin.",
         answer: "The mornings are quieter than the evenings.",
-        alternatives: ["Mornings are quieter than evenings."],
         hint: "Kısa sıfatlar -er alır ve karşılaştırmada „than“ gelir.",
       },
       {

@@ -205,9 +205,9 @@ export const enB2P2: SkillExercise[] = [
     genre: "Yorum yazısı",
     intro: "Bir gazete için kısa bir köşe yazısı yazacaksın; önce iki cümle kur, sonra yorumu yaz.",
     gloss: [
-      { de: "parcel", tr: "koli" },
+      { de: "gamble", tr: "kumar" },
       { de: "charge", tr: "ücret almak" },
-      { de: "hidden", tr: "gizli" },
+      { de: "shift", tr: "vardiya" },
       { de: "flat fee", tr: "sabit ücret" },
     ],
     minutes: 12,
@@ -216,14 +216,12 @@ export const enB2P2: SkillExercise[] = [
         kind: "build",
         tr: "Hiçbir şeyi geri göndermeyen müşteriler farkı ödüyor.",
         answer: "The customers who never send anything back pay the difference.",
-        alternatives: ["Customers who never send anything back pay the difference."],
         hint: "Tanımlayıcı ilgi cümlesi virgülsüzdür ve hangi müşteriler olduğunu belirler.",
       },
       {
         kind: "build",
         tr: "Bahsettiğim mağaza artık iadeler için ücret alıyor.",
         answer: "The shop that I mentioned now charges for returns.",
-        alternatives: ["The shop I mentioned now charges for returns."],
         hint: "İlgi zamiri nesne konumundaysa atılabilir: the shop (that) I mentioned.",
       },
       {
