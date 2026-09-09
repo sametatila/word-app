@@ -1,4 +1,4 @@
-import type { FeedItem, FriendRow, PublicUser, QuestView, ReactionKind, ReactionSummary, Relation } from "./types";
+import { LEAGUE_TIERS, type FeedItem, type FriendRow, type LeagueOutcome, type PublicUser, type QuestView, type ReactionKind, type ReactionSummary, type Relation } from "./types";
 import { translate, localeOf, formatNumber, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { readLangCookie } from "@/lib/i18n/set-lang";
 
@@ -121,6 +121,32 @@ export type PublicProfileView = {
   recent: FeedItem[];
 };
 
+export type LeagueRowView = {
+  rank: number;
+  userId: string;
+  name: string | null;
+  username: string | null;
+  level: string;
+  xp: number;
+  streak: number;
+  isMe: boolean;
+};
+
+export type LeagueView = {
+  weekStart: string;
+  tier: number;
+  daysLeft: number;
+  rows: LeagueRowView[];
+  promote: number;
+  demote: number;
+  result: { weekStart: string; tier: number; nextTier: number; rank: number; xp: number; outcome: LeagueOutcome } | null;
+};
+
+/** Lig adının sözlük anahtarı — basamak dizinden, sınır dışı değer en alta düşer. */
+export function tierKey(tier: number): string {
+  return `league.tier_${LEAGUE_TIERS[Math.max(0, Math.min(LEAGUE_TIERS.length - 1, tier))]}`;
+}
+
 export const social = {
   me: () => call<SocialMeView>("/api/social/me"),
   updateMe: (patch: Record<string, unknown>) => call<SocialMeView>("/api/social/me", { method: "PATCH", body: json(patch) }),
@@ -140,6 +166,8 @@ export const social = {
   inviteQuest: (userId: string) => call<QuestView>("/api/social/quests", { method: "POST", body: json({ userId }) }),
   questAction: (id: number, action: "accept" | "decline" | "cancel") => call<{ ok: true }>(`/api/social/quests/${id}`, { method: "POST", body: json({ action }) }),
   board: () => call<BoardView>("/api/social/leaderboard"),
+  league: () => call<LeagueView>("/api/social/league"),
+  leagueSeen: () => call<{ ok: true }>("/api/social/league", { method: "POST", body: json({ action: "seen" }) }),
   notifications: (cursor?: number | null) =>
     call<{ items: NotificationView[]; nextCursor: number | null; unread: number }>(`/api/social/notifications${cursor ? `?cursor=${cursor}` : ""}`),
   markRead: (ids: number[] | "all") =>
@@ -189,6 +217,8 @@ export function feedText(item: FeedItem, lang: NativeLang): string {
         name: String(p.friendName ?? T("social.feed_a_friend")),
         n: Number(p.days ?? 0),
       });
+    case "league_up":
+      return T("social.feed_league", { league: T(tierKey(Number(p.tier ?? 0))) });
     default:
       return T("social.feed_default");
   }
@@ -218,6 +248,8 @@ export function notificationText(n: NotificationView, lang: NativeLang): string 
       return T("social.notif_quest_accepted", { who });
     case "quest_completed":
       return T("social.notif_quest_done", { who });
+    case "league_up":
+      return T("social.notif_league_up", { league: T(tierKey(Number((d.payload as Record<string, unknown>)?.tier ?? 0))) });
     case "friend_milestone":
       return T("social.notif_milestone", {
         who,
@@ -244,6 +276,8 @@ function describeShort(type: string, p: Record<string, unknown>, lang: NativeLan
       return translate(lang, "social.on_weekly", { rank: Number(p.rank ?? 0) });
     case "friend_joined":
       return translate(lang, "social.on_friend");
+    case "league_up":
+      return translate(lang, "social.on_league");
     default:
       return translate(lang, "social.on_default");
   }

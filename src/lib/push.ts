@@ -1,8 +1,8 @@
 import "server-only";
 import webpush from "web-push";
-import { and, desc, eq, gte, inArray, lt, lte, sql } from "drizzle-orm";
+import { and, eq, inArray, lte, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { dailyStats, profiles, pushSubscriptions, userWords } from "@/lib/db/schema";
+import { dailyStats, leagueMembers, profiles, pushSubscriptions, userWords } from "@/lib/db/schema";
 import { weekStart } from "@/lib/session";
 import { shiftDay } from "@/lib/award";
 import { track } from "@/lib/events";
@@ -289,13 +289,18 @@ export async function dueCounts(userIds: string[]): Promise<Map<string, number>>
  * fonksiyonun süre sınırına götüren şey buydu.
  */
 /**
- * Haftalık tabloda kimin hemen üstünde kim var.
+ * Kullanıcının KENDİ LİGİNDE hemen üstünde kim var.
  *
- * Tek sorgu: herkesin bu haftaki XP'si bir kez okunuyor ve sıralama bellekte
- * yapılıyor. Kullanıcı başına sorgu atmak, hatırlatma turunu kullanıcı
- * sayısıyla doğru orantılı yavaşlatırdı — ki o turun zaten bir süre sınırı var.
+ * Eskiden bütün kullanıcılar tek bir tabloya diziliyordu. Lig kurgusuyla o
+ * mesaj yalan söyler hâle geldi: "Ali 140 XP önde" diyorsun ama Ali başka bir
+ * ligde ve kullanıcı onu geçse bile kendi tablosunda hiçbir şey değişmiyor.
+ * Rakip artık aynı grupta — geçilebilecek biri.
  *
- * Bu hafta hiç çalışmamış birinin de rakibi var: tablonun en altındaki kişi.
+ * Tek sorgu: ilgili kullanıcıların grupları ve o gruplardaki herkesin bu
+ * haftaki XP'si bir kez okunuyor, sıralama bellekte yapılıyor. Kullanıcı
+ * başına sorgu, hatırlatma turunu kullanıcı sayısıyla orantılı yavaşlatırdı.
+ *
+ * Bu hafta hiç puanı olmayanın da rakibi var: grubun en altındaki kişi.
  * Fark büyük çıkarsa çağıran taraf zaten mesajı atmıyor.
  */
 export async function weeklyRivals(
@@ -308,40 +313,54 @@ export async function weeklyRivals(
   const start = weekStart(today);
   const end = shiftDay(start, 7);
 
-  const rows = await db
+  // Hedef kullanıcıların bu haftaki grupları; sonra o grupların TÜM üyeleri.
+  const mineGroups = await db
+    .select({ userId: leagueMembers.userId, tier: leagueMembers.tier, cohort: leagueMembers.cohort })
+    .from(leagueMembers)
+    .where(and(eq(leagueMembers.weekStart, start), inArray(leagueMembers.userId, userIds)));
+  if (!mineGroups.length) return out;
+  // Tekil (lig, grup) çiftleri — aynı gruptaki iki hedef kullanıcı tabloyu iki kez okutmasın.
+  const pairs = [...new Map(mineGroups.map((g) => [`${g.tier}:${g.cohort}`, g])).values()];
+
+  const members = await db
     .select({
-      userId: dailyStats.userId,
+      userId: leagueMembers.userId,
+      tier: leagueMembers.tier,
+      cohort: leagueMembers.cohort,
       name: profiles.displayName,
-      xp: sql<number>`sum(${dailyStats.xp})::int`,
+      xp: sql<number>`coalesce((
+        select sum(${dailyStats.xp})::int from ${dailyStats}
+         where ${dailyStats.userId} = ${leagueMembers.userId}
+           and ${dailyStats.day} >= ${start} and ${dailyStats.day} < ${end}
+      ), 0)`,
     })
-    .from(dailyStats)
-    .innerJoin(profiles, eq(profiles.userId, dailyStats.userId))
-    .where(and(gte(dailyStats.day, start), lt(dailyStats.day, end)))
-    .groupBy(dailyStats.userId, profiles.displayName)
-    .having(sql`sum(${dailyStats.xp}) > 0`)
-    .orderBy(desc(sql`sum(${dailyStats.xp})`));
+    .from(leagueMembers)
+    .innerJoin(profiles, eq(profiles.userId, leagueMembers.userId))
+    .where(
+      and(
+        eq(leagueMembers.weekStart, start),
+        or(...pairs.map((g) => and(eq(leagueMembers.tier, g.tier), eq(leagueMembers.cohort, g.cohort)))),
+      ),
+    );
 
-  if (rows.length < 2) return out; // tek kişilik tabloda rakip yok
+  // Grup başına sıralı tablo — bellekte, tek geçişte.
+  const boards = new Map<string, { userId: string; name: string; xp: number }[]>();
+  for (const m of members) {
+    const key = `${m.tier}:${m.cohort}`;
+    const list = boards.get(key) ?? [];
+    list.push({ userId: m.userId, name: m.name?.trim().split(/\s+/)[0] || "Bir öğrenci", xp: Number(m.xp) });
+    boards.set(key, list);
+  }
+  for (const list of boards.values()) list.sort((a, b) => b.xp - a.xp);
 
-  const board = rows.map((r) => ({
-    userId: r.userId,
-    name: r.name?.trim().split(/\s+/)[0] || "Bir öğrenci",
-    xp: Number(r.xp),
-  }));
-  const mine = new Map(board.map((b) => [b.userId, b]));
-  const last = board[board.length - 1];
-
-  for (const id of userIds) {
-    const me = mine.get(id);
-    if (!me) {
-      // Bu hafta hiç puanı yok: hedef, tablonun en altındaki kişi.
-      if (last.userId !== id) out.set(id, { name: last.name, gap: last.xp });
-      continue;
-    }
-    const i = board.findIndex((b) => b.userId === id);
-    if (i <= 0) continue; // zirvedeyse geçilecek kimse yok
+  for (const g of mineGroups) {
+    const board = boards.get(`${g.tier}:${g.cohort}`);
+    if (!board || board.length < 2) continue; // tek kişilik grupta rakip yok
+    const i = board.findIndex((b) => b.userId === g.userId);
+    if (i < 0) continue;
+    if (i === 0) continue; // zirvedeyse geçilecek kimse yok
     const above = board[i - 1];
-    out.set(id, { name: above.name, gap: Math.max(0, above.xp - me.xp) });
+    out.set(g.userId, { name: above.name, gap: Math.max(0, above.xp - board[i].xp) });
   }
   return out;
 }

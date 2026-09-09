@@ -1376,3 +1376,44 @@ export const legalDocuments = pgTable(
   },
   (t) => [primaryKey({ name: "legal_documents_pk", columns: [t.doc, t.locale] })],
 );
+
+/**
+ * Lig üyeliği — haftalık, küme başına tek satır (0047).
+ *
+ * Genel sıralama tek ve düz bir tabloydu: on iki kullanıcıda işe yarıyor, iki
+ * bin kullanıcıda ilk onu motive edip geri kalanı kırıyor. Lig kurgusu aynı
+ * XP'yi küçük gruplara böler — kullanıcı hep yenebileceği otuz kişiyle yarışır
+ * ve hafta sonunda yükselir ya da düşer.
+ *
+ * XP BURADA TUTULMUYOR: hafta sürerken sıralama `daily_stats`ten canlı
+ * hesaplanıyor (getLeaderboard ile aynı gerekçe — tek doğruluk kaynağı).
+ * `finalXp` yalnız hafta kapanırken, sonucu dondurmak için yazılıyor; geçmiş
+ * hafta bir daha değişmesin diye.
+ *
+ * Satır, kullanıcı o hafta İLK XP'sini kazandığında açılıyor. Hiç çalışmayan
+ * kullanıcı tabloda görünmüyor: yarışmayan biri kimsenin sırasını bozmamalı.
+ */
+export const leagueMembers = pgTable(
+  "league_members",
+  {
+    userId: text("user_id").notNull(),
+    weekStart: date("week_start").notNull(),
+    /** 0..LEAGUE_TIERS.length-1 — o hafta yarışılan lig. */
+    tier: integer("tier").notNull().default(0),
+    /** Lig içindeki grup numarası; her grup en çok LEAGUE_SIZE kişi. */
+    cohort: integer("cohort").notNull().default(0),
+    /** Hafta kapanınca dondurulan XP ve sıra; hafta sürerken 0/NULL. */
+    finalXp: integer("final_xp").notNull().default(0),
+    rank: integer("rank"),
+    /** promoted | demoted | stayed — hafta kapanınca yazılır. */
+    outcome: text("outcome"),
+    /** Sonuç ekranı gösterildi mi (bir kez gösterilir). */
+    seen: boolean("seen").notNull().default(false),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    primaryKey({ name: "league_members_pk", columns: [t.userId, t.weekStart] }),
+    index("league_members_group_idx").on(t.weekStart, t.tier, t.cohort),
+    index("league_members_user_idx").on(t.userId, t.weekStart),
+  ],
+);

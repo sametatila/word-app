@@ -3,6 +3,7 @@ import { db } from "@/lib/db";
 import { dailyStats } from "@/lib/db/schema";
 import { emitActivity } from "./activity";
 import { shiftDay, weekStart } from "./dates";
+import { closeLeagueWeek } from "./leagues";
 import { finalizeExpiredQuests } from "./quests";
 import { claimOnce } from "./ratelimit";
 
@@ -10,8 +11,8 @@ import { claimOnce } from "./ratelimit";
  * Hafta kapanışı — cron YOK (sunucuda zamanlayıcı kurulu değil), o yüzden
  * "geçen haftayı kapat" işini yeni haftanın ilk sosyal okuması yapar. İş bir
  * kez yapılır: claimOnce aynı hafta anahtarını üç instance arasında tek
- * kişiye verir. Yapılan: geçen haftanın ilk üçüne akış olayı, süresi dolan
- * ortak görevleri kapatma.
+ * kişiye verir. Yapılan: geçen haftanın liglerini kapatma (sıra, terfi,
+ * düşme), ilk üçüne akış olayı, süresi dolan ortak görevleri kapatma.
  */
 export async function closeWeekIfNeeded(today: string): Promise<void> {
   const thisWeek = weekStart(today);
@@ -20,6 +21,7 @@ export async function closeWeekIfNeeded(today: string): Promise<void> {
   if (!mine) return;
   try {
     await finalizeExpiredQuests(today);
+    await closeLeagueWeek(lastWeek);
     // Süresi bir günden fazla geçmiş hız-sınırı sayaçları: tablo sonsuza dek büyümesin.
     await db.execute(sql`delete from rate_limits where reset_at < now() - interval '1 day' and key not like 'weekly_close:%'`);
     const top = await db

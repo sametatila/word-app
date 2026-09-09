@@ -330,6 +330,13 @@
       "when": 1788960697854,
       "tag": "0046_words_de_gloss",
       "breakpoints": true
+    },
+    {
+      "idx": 47,
+      "version": "7",
+      "when": 1788964297854,
+      "tag": "0047_leagues",
+      "breakpoints": true
     }
   ]
 }

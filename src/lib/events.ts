@@ -153,6 +153,7 @@ export const EVENT_NAMES = [
   "feed_view", // arkadaş akışı açıldı (value = gösterilen olay sayısı)
   "block_user", // kullanıcı engellendi
   "social_settings", // kullanıcı adı/görünürlük değişti (kind = alan)
+  "league_up", // bir üst lige yükseldi (value = yeni lig, kind = lig slug'ı)
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];

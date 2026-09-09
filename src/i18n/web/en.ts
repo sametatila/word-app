@@ -1275,4 +1275,8 @@ export const enWeb: Record<string, string> = {
   "assessfb.retry_when_ai": "When AI is back on you can have the same text assessed again.",
   "push.assess_title": "Your writing has been assessed",
   "push.assess_body": "Score {score}/100 — take a look at the corrections.",
+  "push.league_up_title": "You moved up to the {league}",
+  "push.league_up_body": "You finished last week in {rank}th place. New league, new rivals - start this week too.",
+  "react.league_up": "your league promotion",
+  "lbw.league_sub": "Everyone in your group started the week with you. It resets Monday.",
 };

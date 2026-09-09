@@ -1275,4 +1275,8 @@ export const deWeb: Record<string, string> = {
   "assessfb.retry_when_ai": "Sobald die KI wieder da ist, kannst du denselben Text erneut bewerten lassen.",
   "push.assess_title": "Dein Text wurde bewertet",
   "push.assess_body": "Punktzahl {score}/100 — sieh dir die Korrekturen an.",
+  "push.league_up_title": "Du bist in die {league} aufgestiegen",
+  "push.league_up_body": "Letzte Woche hast du Platz {rank} erreicht. Neue Liga, neue Gegner - fang auch diese Woche an.",
+  "react.league_up": "deinen Liga-Aufstieg",
+  "lbw.league_sub": "Alle in deiner Gruppe haben die Woche mit dir begonnen. Montag wird zurückgesetzt.",
 };

@@ -1,4 +1,5 @@
 import { emitActivity, streakMilestoneCrossed } from "./activity";
+import { joinLeague } from "./leagues";
 import { checkQuestProgress } from "./quests";
 
 /**
@@ -12,6 +13,8 @@ export async function onActivityAwarded(userId: string, today: string, prevStrea
   try {
     const m = streakMilestoneCrossed(prevStreak, nextStreak);
     if (m) await emitActivity(userId, "streak_milestone", { days: m });
+    // Lige giriş XP kazanınca: hafta boyunca bir kez, sonraki çağrılar okuyup döner.
+    await joinLeague(userId, today);
     await checkQuestProgress(userId, today);
   } catch (err) {
     console.error("[social:hook:award]", err);

@@ -26,6 +26,8 @@ function describeEvent(type: string, payload: Record<string, unknown>, lang: Nat
       return translate(lang, "social.on_streak", { n: Number(payload.days ?? 0) });
     case "achievement":
       return translate(lang, "social.on_badge", { badge: String(payload.title ?? "") });
+    case "league_up":
+      return translate(lang, "react.league_up");
     case "friend_joined":
       return translate(lang, "social.on_friend");
     case "quest_completed":

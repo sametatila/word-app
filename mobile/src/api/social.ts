@@ -34,6 +34,18 @@ export type SearchHit = PublicUser & { relation: Relation; currentStreak: number
 export type Suggestion = PublicUser & { mutual: number; reason: "mutual" | "level" | "active"; currentStreak: number };
 export type BoardRow = { rank: number; userId: string; name: string | null; username: string | null; level: string; xp: number; streak: number; isMe: boolean };
 export type BoardView = { rows: BoardRow[]; start: string; daysLeft: number };
+export type LeagueOutcome = "promoted" | "demoted" | "stayed";
+export type LeagueRow = { rank: number; userId: string; name: string | null; username: string | null; level: string; xp: number; streak: number; isMe: boolean };
+export type LeagueView = {
+  weekStart: string; tier: number; daysLeft: number; rows: LeagueRow[]; promote: number; demote: number;
+  result: { weekStart: string; tier: number; nextTier: number; rank: number; xp: number; outcome: LeagueOutcome } | null;
+};
+
+/** Lig basamakları — sunucudaki LEAGUE_TIERS ile aynı sıra. */
+export const LEAGUE_TIERS = ["bronze", "silver", "gold", "sapphire", "diamond"] as const;
+export function tierName(tier: number): string {
+  return t(`league.tier_${LEAGUE_TIERS[Math.max(0, Math.min(LEAGUE_TIERS.length - 1, tier))]}`);
+}
 export type NotificationView = { id: number; type: string; read: boolean; createdAt: string; actor: PublicUser | null; ref: { type: string; id: number } | null; detail: Record<string, unknown> };
 export type PublicProfileView = {
   user: PublicUser; bio: string | null; visibility: Visibility; relation: Relation; friendshipId: number | null; canRequest: boolean; mutual: number;
@@ -62,6 +74,8 @@ export const social = {
   inviteQuest: (userId: string) => api<QuestView>("/api/social/quests", { method: "POST", body: j({ userId }) }),
   questAction: (id: number, action: "accept" | "decline" | "cancel") => api<{ ok: true }>(`/api/social/quests/${id}`, { method: "POST", body: j({ action }) }),
   board: () => api<BoardView>("/api/social/leaderboard"),
+  league: () => api<LeagueView>("/api/social/league"),
+  leagueSeen: () => api<{ ok: true }>("/api/social/league", { method: "POST", body: j({ action: "seen" }) }),
   notifications: (cursor?: number | null) => api<{ items: NotificationView[]; nextCursor: number | null; unread: number }>(`/api/social/notifications${cursor ? `?cursor=${cursor}` : ""}`),
   markRead: (ids: number[] | "all") => api<{ ok: true; unread: number }>("/api/social/notifications", { method: "POST", body: j(ids === "all" ? { all: true } : { ids }) }),
   blocks: () => api<{ blocked: (PublicUser & { since: string })[] }>("/api/social/blocks"),
@@ -123,6 +137,7 @@ function feedPhrase(type: string, p: Record<string, unknown>): string {
     case "quest_completed": return t("social.feed_quest", { name: String(p.partnerName ?? t("social.feed_a_friend")), xp: formatXp(Number(p.targetXp ?? 0)) });
     case "weekly_top": return t("social.feed_weekly", { rank: Number(p.rank ?? 0), xp: formatXp(Number(p.xp ?? 0)) });
     case "friend_streak": return t("social.feed_costreak", { name: String(p.friendName ?? t("social.feed_a_friend")), n: Number(p.days ?? 0) });
+    case "league_up": return t("social.feed_league", { league: tierName(Number(p.tier ?? 0)) });
     default: return t("social.feed_default");
   }
 }
@@ -139,6 +154,7 @@ function reactionTarget(type: string, p: Record<string, unknown>): string {
     case "quest_completed": return t("social.on_quest");
     case "weekly_top": return t("social.on_weekly", { rank: Number(p.rank ?? 0) });
     case "friend_joined": return t("social.on_friend");
+    case "league_up": return t("social.on_league");
     default: return t("social.on_default");
   }
 }
@@ -155,6 +171,7 @@ export function notificationText(n: NotificationView): string {
     case "quest_invite": return t("social.notif_quest_invite", { who, xp: formatXp(Number(d.targetXp ?? 0)) });
     case "quest_accepted": return t("social.notif_quest_accepted", { who });
     case "quest_completed": return t("social.notif_quest_done", { who });
+    case "league_up": return t("social.notif_league_up", { league: tierName(Number(payload.tier ?? 0)) });
     case "friend_milestone": return t("social.notif_milestone", { who, event: feedPhrase(String(d.eventType ?? ""), payload) });
     default: return t("social.notif_default");
   }

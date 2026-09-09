@@ -22,6 +22,7 @@ export const ACTIVITY_TYPES = [
   "quest_completed",
   "weekly_top",
   "friend_streak",
+  "league_up",
 ] as const;
 export type ActivityType = (typeof ACTIVITY_TYPES)[number];
 
@@ -40,6 +41,7 @@ export const NOTIFICATION_TYPES = [
   "quest_accepted",
   "quest_completed",
   "friend_milestone",
+  "league_up",
 ] as const;
 export type NotificationType = (typeof NOTIFICATION_TYPES)[number];
 
@@ -51,6 +53,18 @@ export const STREAK_MILESTONES = [3, 7, 14, 30, 50, 100, 200, 365, 500, 1000] as
 
 /** Arkadaş serisinde kutlanan eşikler. */
 export const FRIEND_STREAK_MILESTONES = [7, 30, 100] as const;
+
+/**
+ * Lig basamakları, alttan üste. Slug İngilizce (anahtar), görünen ad
+ * `league.tier_<slug>` sözlük anahtarından geliyor — hem web hem mobil aynı
+ * adı okusun. Beş basamak yeter: daha fazlası kullanıcıya bir merdiven değil
+ * bir tablo gibi görünür.
+ */
+export const LEAGUE_TIERS = ["bronze", "silver", "gold", "sapphire", "diamond"] as const;
+export type LeagueTier = (typeof LEAGUE_TIERS)[number];
+
+/** Hafta sonunda kullanıcının başına gelen. */
+export type LeagueOutcome = "promoted" | "demoted" | "stayed";
 
 /** İki kullanıcı arasındaki durum — istemci düğmeyi buna göre çizer. */
 export type Relation =

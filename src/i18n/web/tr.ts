@@ -1300,4 +1300,8 @@ export const trWeb: Record<string, string> = {
   "assessfb.retry_when_ai": "AI açıldığında aynı metni tekrar değerlendirebilirsin.",
   "push.assess_title": "Yazın değerlendirildi",
   "push.assess_body": "Puan {score}/100 — düzeltmelere bak.",
+  "push.league_up_title": "{league}'e yükseldin",
+  "push.league_up_body": "Geçen haftayı {rank}. sırada bitirdin. Yeni lig, yeni rakipler — bu hafta da başla.",
+  "react.league_up": "lig yükselişine",
+  "lbw.league_sub": "Grubundaki herkes seninle aynı hafta başladı. Pazartesi sıfırlanır.",
 };
