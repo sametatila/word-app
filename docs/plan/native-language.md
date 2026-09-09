@@ -87,7 +87,7 @@ Bu fazda ayrıca:
 Bir pariteyi açmak = `check:pairs` onu "!" ile işaretlemesi + `PAIR_READY`ye
 eklenmesi.
 
-### 1. gsw örnek cümleleri — 8.266 çeviri DEĞİL, 1.183 cümle
+### 1. gsw örnek cümleleri — BİTTİ (167/167 paket, 8.267 madde)
 
 İlk ölçümde bu kalem "8.266 İngilizce çeviri" görünüyordu. Yanlıştı.
 `seed-zurich.ts` zaten şunu yapıyor: lehçe cümlesi Almanca cümlenin karşılığı
@@ -99,24 +99,37 @@ O iş `data/zurich/beispiel/SPEC.md`'de tanımlıydı ama hiç koşulmamıştı
 çevirisi 0/8.266, Türkçe 7.915/8.266.
 
 Triyaj (`triage.mjs`, denetleyicinin KENDİ kurallarıyla) gerçek boyutu verdi:
-
-```
-8.267 madde · 7.084 korunabilir · 1.183 yazılacak
-   877  çok cümleli        334  sayı uyuşmazlığı     285  soru uyuşmazlığı
-   ~300 uzunluk             72  kelime cümlede yok    35  çok seçenekli (/)
-```
+1.183 cümle. Gerçekleşen: **1.123 cümle elle yazıldı, 7.144 korundu**, 167/167
+paket, 0 hata 0 uyarı. Devralma kapsamı ölçüldü: **8.267/8.267 (%100)** —
+`data/meanings/out` her maddeyi taşıyor, yani hiçbir cümle çevirisiz kalmıyor.
 
 Hat: `make-packets` → `fix/<paket>.json` (yalnız yeniden yazılanlar) →
 `apply.mjs` (korunanları otomatik ekler) → `check.mjs`. `fix/` sayesinde bir
 paketin diff'i "neyi elle yazdım"ı gösteriyor, elli maddelik kopyayı değil.
 
-**a1-001 bitti**: 50 madde, 29 korundu, 21 yazıldı, denetim temiz. Bu ilk paket
-kalite ölçütü — kalan 166 paket aynı yordamla.
+**Yazılacakların çoğu çeviri değil, hizalama sorunuydu.** En büyük kalem "çok
+cümleli" (%64): eski cümle ya "1. … 2. …" diye numaralanmış iki ayrı örnek ya
+da bir diyalog parçasıydı. Çeviri Almanca satırdan devralındığı için cümlenin
+`beispielDe` ile BİRE BİR aynı şeyi söylemesi gerekiyor. İkinci kalem soru
+uyuşmazlığı: cümle soru, çevirisi düz cümle — sessizce yalan söylüyordu.
+Üçüncüsü sayı: Almanca satır sayıyı harfle yazıyor, lehçe cümlesi rakamla ya
+da bambaşka bir sayıyla ("Flächi" 80 m² diyordu, cümle 100).
 
-Yolda bir kaynak hatası çıktı: id 114 (`ein`) lehçe başlığı yalnız `en`
-yazılıydı, oysa Zürihçede belirsiz artikelin üç biçimi var ve nötr isimde `es`
-oluyor ("es Velo"). Cümle ya yanlış cinsiyet ya yanlış anlam taşımak zorunda
-kalıyordu; başlık `en/e/es` yapıldı — id 692 (`ere/em/en`) zaten bu desende.
+**Yan ürün: denetleyicide 30'dan fazla boşluk.** Liste mevcut 8.266 cümle
+ÖLÇÜLEREK kurulmuştu, o yüzden ölçülen metnin taşımadığı biçimi bilmiyordu —
+ve yeni cümleler yazılınca aile aile ortaya çıktı: ayrılabilir ön ekler, emir
+kipi yuvası, üç ablaut ailesi (ä→o, i→u, ie/üü→o), ayrılmaz ön ek, fiil+edat
+başlıklarında edat kaynaşması, st→scht, bağlı ön ek başlıkları (`un-`), ve
+bir gerçek hata (`\b` ASCII olduğu için «Diät» kırpılıyordu). Bu düzeltmeler
+elle tek cümle yazmadan 50'den fazla paket açtı.
+
+Ayrıca beş kaynak hatası çıktı ve düzeltildi: `en` → `en/e/es` (Zürihçede
+belirsiz artikelin üç biçimi var), `was für en` → `was für en/e/es`,
+`zuordne` → `zueordne`, `anschliessend` → `aaschliessend`.
+
+**Kalan adım — üretime uygulama.** `npm run zurich:apply` (ya da `db:seed`)
+üretim veritabanına yazar; AGENTS.md gereği bu ayrıca sorulur. Uygulandığında
+`check:pairs` en→gsw paritesini "!" ile işaretleyecek.
 
 ### 2–4. sırada
 
