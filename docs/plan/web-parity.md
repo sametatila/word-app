@@ -853,7 +853,34 @@ kademe zemini (ikon eşiği 3.0):
 Gümüş ve altın iki tarafta da geçmiyor; birini ötekine çekmek sorunu taşımak
 olurdu. Dört kademenin de geçtiği bir set seçmek ayrı bir ürün kararı.
 
-### 11.5 Yan bulgular
+### 11.5 Açık kalan tek ürün farkı: misafir yerleştirme testi
+
+Android'de sıra şu: misafir onboarding'de "Seviyemi öğrenmek istiyorum" der,
+**testi çözer**, sonra hesap açar. Kod bunu açıkça yazıyor
+(`OnboardingScreen`: "Testle belirle → Placement → hesap") ve test verisi
+uygulamanın içinde (`data/demoPlacement.ts`, on soru, kurs+anadil çiftine
+göre).
+
+Web'de aynı seçenek `/login?mode=signup&next=/placement`e gidiyor: önce
+hesap, sonra test. `/placement` sayfası da misafiri doğrudan `/login`a
+yönlendiriyor.
+
+Bu, `11bbbe34`te ilk kelimeler için verilen kararın aynısını istiyor — "akış
+mobildeki sıraya geçti: önce ısınma, sonra hesap". Ama maliyeti ondan büyük:
+web'in yerleştirme bileşeni baştan sona sunucu güdümlü (`/api/placement`
+start/finish/accept). Misafir demosu için gerekenler:
+
+1. `demoPlacement.ts`nin web karşılığı (on soru, aynı içerik).
+2. `/placement`in misafire çizilmesi (bugün yönlendiriyor).
+3. Bileşende yerel puanlama yolu ve sonuç ekranının misafir varyantı
+   ("Anladım" / "Seviyemi ayarla" ayrımı mobilde `placement.understood` ve
+   `placement.set_level` ile yapılıyor).
+4. Seçilen seviyenin hesaba taşınması — onboarding'in mevcut devretme
+   mekanizması (`onboarding-adopt`) bunu zaten yapıyor.
+
+Tahmini: tek oturumluk iş değil, gözle doğrulama ister. Karar Samet'te.
+
+### 11.6 Yan bulgular
 
 - Seçim çipi mobilde dört kopya halinde yazılıydı (Ayarlar, Bildirimler, sosyal
   ortak modül, Sıralama'da satır içi) ve dolguları üç türlüydü;
