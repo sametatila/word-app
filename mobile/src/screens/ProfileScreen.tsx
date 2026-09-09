@@ -159,9 +159,24 @@ export function ProfileScreen() {
           <Row icon={BellIcon} label={t("profile.notifications")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Notifications")} last />
         </Card>
 
+        {/*
+          HESAPTAN ÇIKIŞ İKİLİSİ — en altta, birlikte.
+
+          "Hesabı sil" Ayarlar'ın EN ÜSTÜNDEKİ hesap bölümünde, ad kutusunun
+          hemen altında duruyordu: yıkıcı bir eylem, sık kullanılan bir alanın
+          bir dokunuş yanında. Yeri burası çünkü (1) çıkış yap zaten burada ve
+          ikisi aynı işin iki ucu, (2) yıkıcı eylem grubun SONUNDA durur,
+          (3) mağaza kuralları (App Store 5.1.1(v), Play veri silme) "kolay
+          bulunur" istiyor — profil sekmesinin dibi, ayarların ortasından daha
+          kolay bulunur.
+        */}
         <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
           <LogoutIcon color={colors.danger} size={20} />
           <Text variant="bodyStrong" color={colors.danger}>{t("profile.log_out")}</Text>
+        </PressableScale>
+
+        <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("settings.delete_account")} style={{ alignItems: "center", paddingVertical: spacing.sm }}>
+          <Text variant="caption" color={colors.textMuted}>{t("settings.delete_account")}</Text>
         </PressableScale>
       </ScrollView>
 

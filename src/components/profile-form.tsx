@@ -3,7 +3,7 @@
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { AlertIcon, CheckIcon, ChevronRightIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
 import { AnalyticsSettings } from "@/components/analytics-settings";
@@ -59,13 +59,11 @@ const LEVELS = [
  */
 export function ProfileForm({
   initial,
-  authEnabled,
   linkedAccounts,
 }: {
   initial: Initial;
   /** Armanın türetildiği hesap kimliği — sıralamadakiyle aynı görünsün diye. */
   userId: string;
-  authEnabled: boolean;
   /**
    * Giriş yöntemleri bölümü. Sunucuda çiziliyor (Google yapılandırılmış mı
    * bilgisini istemciye taşımamak için) ama YERİ burası: mobilde HESAP'ın
@@ -166,26 +164,9 @@ export function ProfileForm({
             className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
           />
         </label>
-        {/* Hesap silme bu bölümün İÇİNDE — mobilde de adın hemen altında,
-            ince bir çizgiyle ayrılmış tek satır. Web'de en dipteki "OTURUM"
-            bölümündeydi ve oraya varmak için bütün ayarları geçmek
-            gerekiyordu. */}
-        {authEnabled ? (
-          <Link
-            href="/account/delete"
-            prefetch={false}
-            className="pressable mt-3 flex items-center gap-3 border-t pt-3"
-            style={{ borderColor: "var(--hairline)" }}
-          >
-            <span className="min-w-0 flex-1">
-              <span className="block text-strong" style={{ color: "var(--color-rose-500)" }}>
-                {t("settings.delete_account")}
-              </span>
-              <span className="muted block text-caption">{t("settings.with_all_your_data_can_t_be")}</span>
-            </span>
-            <ChevronRightIcon size={20} className="muted shrink-0" />
-          </Link>
-        ) : null}
+        {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
+            eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
+            tamamı profile-view.tsx'te. */}
       </Section>
 
       {/* Giriş yöntemleri HESAP'ın hemen altında — mobildeki sıra. Web'de

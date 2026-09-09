@@ -155,14 +155,9 @@ export function SettingsScreen() {
             autoCapitalize="words"
             style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
           />
-          {/* Hesap silme (Play zorunluluğu): ayrı ekran, iki adımlı onay. */}
-          <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("settings.delete_account")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: spacing.md, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-            <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong" color={colors.danger}>{t("settings.delete_account")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("settings.with_all_your_data_can_t_be")}</Text>
-            </View>
-            <ChevronRightIcon color={colors.textFaint} size={20} />
-          </PressableScale>
+          {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
+              eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
+              tamamı ProfileScreen'de. */}
         </Section>
 
         {/* Giriş yöntemleri: parola + sosyal hesaplar. Aynı e-postayla giriş

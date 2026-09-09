@@ -1,4 +1,4 @@
-import { getUserInfo, authEnabled, googleConfigured } from "@/lib/auth/server";
+import { getUserInfo, googleConfigured } from "@/lib/auth/server";
 import { titleMeta } from "@/lib/page-meta";
 import { getT } from "@/lib/i18n/server";
 import { ensureProfile } from "@/lib/session";
@@ -53,7 +53,6 @@ export default async function SettingsPage() {
   return (
     <>
       <ProfileForm
-        authEnabled={authEnabled}
         userId={user.id}
         initial={{
           displayName: profile.displayName ?? "",

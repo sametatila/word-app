@@ -205,6 +205,14 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         <Row href="/notifications" icon={<BellIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.notifications")} last />
       </nav>
 
+      {/*
+        HESAPTAN ÇIKIŞ İKİLİSİ — en altta, birlikte. "Hesabı sil" ayarların
+        en üstündeki hesap bölümünde, ad kutusunun hemen altında duruyordu:
+        yıkıcı bir eylem, sık kullanılan bir alanın bir dokunuş yanında.
+        Yeri burası çünkü çıkış zaten burada, yıkıcı eylem grubun sonunda
+        durur ve mağaza kuralları (App Store 5.1.1(v), Play veri silme)
+        "kolay bulunur" istiyor. Mobil profil ekranıyla da aynı sıra.
+      */}
       <button
         type="button"
         onClick={() => setConfirmOut(true)}
@@ -213,6 +221,14 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
       >
         {t("profile.log_out")}
       </button>
+
+      <Link
+        href="/account/delete"
+        prefetch={false}
+        className="pressable muted block w-full py-2 text-center text-caption"
+      >
+        {t("settings.delete_account")}
+      </Link>
 
       <ConfirmDialog
         open={confirmOut}
