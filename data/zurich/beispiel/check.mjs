@@ -66,7 +66,20 @@ const SEPARABLE_PREFIXES = [
   // `anerüefe`, `feschthalte`, `obeabe`, `voranechoo`. "fescht" ayrı yazıldı —
   // listede "fascht" vardı ama o "neredeyse" zarfı, ön ek değil.
   "schtatt", "hai", "ewag", "ane", "fescht", "obe", "vorane", "ume", "une",
+  // "unter" listede Almanca yazımıyla duruyordu; Zürihçe t'yi d yapıyor
+  // ("underbräche", "undernää") ve düzleştirme bunu eşitlemiyor. Gövde
+  // değişmediği sürece kelime olduğu gibi bulunuyordu, o yüzden ölçümde
+  // görünmedi — "Bitte underbrich mi nöd" ilk karşı örnek.
+  "under",
+  // `zrächtchoo`, `zrächtlege`: ayrılıyor ("ich chume guet zrächt").
+  // "kaputt" bir sıfat ama ön ek gibi davranıyor: ayrıldığında ayrı duruyor
+  // ("du machsch alles kaputt"), Perfekt'te yapışıp araya "g" alıyor
+  // ("kaputtgmacht"). `grosszieh` gibi ama o hiç ayrılmıyordu.
+  "zracht", "kaputt",
 ];
+// Ayrılmaz ön ekler: cümlede ASLA kopmuyorlar, o yüzden ayrı bir listedeler —
+// yalnız "gövde ablauta girmiş mi" sorusu için kullanılıyorlar.
+const INSEPARABLE_PREFIXES = ["be", "ver", "er", "ent", "emp", "zer", "ge"];
 const SEPARABLE = new RegExp(`^(${SEPARABLE_PREFIXES.join("|")})(.{2,})$`);
 
 /**
@@ -102,7 +115,7 @@ const IRREGULAR = {
   // yeni cümleler yazılırken üçü de ilk denemede "kelime cümlede yok" diye
   // reddedildi ("Ich nime min Räägeschirm mit." — kusursuz Zürihçe).
   // Ölçüme dayanan bir liste, ölçülen metnin taşımadığı biçimi bilmiyor.
-  gää: ["git", "gisch", "gaben", "gee", "gibe", "gänd"],
+  gää: ["git", "gisch", "gaben", "gee", "gibe", "gänd", "gib"],
   nää: ["nimt", "nimsch", "name", "gno", "nime", "nimm", "nämed"],
   schtaa: ["schtaat", "gschtande"],
   laa: ["laat", "laasch", "gla"],
@@ -115,7 +128,7 @@ const IRREGULAR = {
   dorfe: ["darf", "darfsch"],
   solle: ["sott", "sottsch"],
   moge: ["mag", "magsch"],
-  esse: ["isst", "gasse"],
+  esse: ["isst", "gasse", "iss"],
   gfale: ["gfalt", "gfalsch"],
   // `weetue` ayrılınca cümlede "weh" duruyor ("Mir tuet de Chopf weh") ve bu
   // parça ön ek listesine girecek kadar ayırt edici değil — iki harfe inince
@@ -125,6 +138,13 @@ const IRREGULAR = {
   // dört harf istiyor ("lige") ve "ligt" yalnız üçünü paylaşıyor.
   ligge: ["liit", "ligt", "gläge"],
   /*
+    EMİR KİPİ AYRI BİR YUVA. Güçlü fiiller 2. tekilde gövde ünlüsünü
+    değiştiriyor (gää → gib, ässe → iss, träffe → triff, bräche → brich) ve emir
+    kipi de bu değişmiş gövdeyi alıyor — ama liste 2./3. şahıs biçimlerini
+    taşıdığı hâlde emir kipini taşımıyordu. 1. tekilde olan tam olarak buydu:
+    ölçülen 8.266 cümlede emir kipi bu fiillerle hiç geçmiyor, o yüzden listeye
+    hiç girmemiş. "Gib nöd uf!" ve "Iss de Öpfel!" kusursuz Zürihçe.
+
     ABLAUTLU BİÇİMLER. Gövde ünlüsü çekimde değişiyor ve kök karşılaştırması
     bunu yakalayamıyor: hälfe → hilft, laufe → gloffe, träffe → troffe,
     schlaafe → gschlaafe, bringe → brocht, zieh → zoge. Hepsi A2 cümlelerinde
@@ -132,11 +152,49 @@ const IRREGULAR = {
   */
   halfe: ["hilft", "hilfsch", "gholfe", "hilf"],
   laufe: ["lauft", "loffe", "gloffe"],
-  traffe: ["trifft", "triffsch", "troffe"],
+  traffe: ["trifft", "triffsch", "troffe", "triff"],
   schlafe: ["schlaft", "gschlafe"],
   bringe: ["bringt", "brocht", "broocht", "bringsch"],
   zieh: ["zieht", "zoge", "ziet"],
+  // Kaynaktaki başlık `zie` (id 3151) ve ayrılabilir bölme de gövdeyi `zie`
+  // olarak veriyor (`uszie` → "us"+"zie"); `zieh` anahtarı ikisiyle de
+  // eşleşmiyordu, yani "Si sind uszoge" tanınmıyordu.
+  zie: ["zieht", "zoge", "ziet"],
   lase: ["list", "lis", "gläse", "lisch"],
+  bräche: ["bricht", "brichsch", "brich", "broche"],
+  /*
+    AYNI İKİ ABLAUT AİLESİ, ŞİMDİ TOPLUCA. Tek tek eklemek her seferinde bir
+    cümlenin reddedilmesini bekliyor; oysa iki desen kapalı:
+
+      ä → o  (Perfekt):  bräche→broche, schpräche→gschproche, wärfe→gworfe,
+                          schtärbe→gschtorbe, schtäche→gschtoche
+      i → u  (Perfekt):  finde→gfunde, trinke→trunke, singe→gsunge,
+                          zwinge→zwunge, schpringe→gschprunge, binde→bunde
+
+    Düzleştirme ü→u yaptığı için `gwünne`→"gwunne" kendiliğinden eşleşiyor ve
+    aile görünmez kalmıştı; i'li olanlarda öyle bir şans yok. Bileşikleri de
+    kapsıyor: `erfinde`, `usefinde`, `schtattfinde`, `verbinde`, `ustrinke`,
+    `underbräche`, `beschpräche` — ayrılabilir olanlar gövdeden, olmayanlar
+    kendi anahtarından.
+  */
+  schpräche: ["schpricht", "schprichsch", "gschproche", "schproche", "schprich"],
+  schtäche: ["schticht", "gschtoche", "schtoche"],
+  wärfe: ["wirft", "wirfsch", "gworfe", "worfe"],
+  schtärbe: ["schtirbt", "gschtorbe", "schtorbe"],
+  finde: ["findet", "gfunde", "funde"],
+  erfinde: ["erfindet", "erfunde"],
+  empfinde: ["empfindet", "empfunde"],
+  trinke: ["trinkt", "trunke"],
+  singe: ["singt", "gsunge", "sunge"],
+  zwinge: ["zwingt", "zwunge"],
+  schpringe: ["schpringt", "gschprunge", "schprunge"],
+  binde: ["bindet", "bunde"],
+  // Bileşikte kaynak gövdeyi Almanca yazımıyla taşıyor (`bewerbe`, `verwerfe`)
+  // ve düzleştirme ä ile e'yi eşitlemiyor; anahtar iki yazımla da duruyor.
+  werbe: ["wirbt", "worbe", "gworbe"],
+  // `wärde` hiç yoktu: edilgen çatının yardımcı fiili ve ortacı "worde".
+  wärde: ["wird", "wirsch", "worde", "wärded", "wurd"],
+  schpreche: ["schpricht", "schproche", "gschproche"],
   // `grosszieh` ön eki ayrılmıyor ve Perfekt'te gövde ablauta giriyor; "gross"
   // ayrılabilir ön ek listesine girecek bir edat değil, kelimenin parçası.
   grosszieh: ["grosszoge", "zieht gross"],
@@ -160,7 +218,11 @@ function forms(raw) {
   for (const alt of String(raw ?? "").split("/")) {
     const s = alt
       .replace(/^\s*(de|d|s)\s+/i, "")
-      .replace(/\b(sich|mich|mi|dich|di|eus|sech)\b/gi, " ")
+      // `\b` ASCII: "ä" kelime karakteri sayılmadığı için "Diät" iki parçaya
+      // bölünüyor ve "Di" AYRI BİR KELİME sanılıp siliniyordu — başlık "ät"e
+      // iniyor ve iki harf hiçbir cümlede bulunamıyor. Sınır artık harf
+      // sınıfına bakıyor.
+      .replace(/(?<!\p{L})(sich|mich|mi|dich|di|eus|sech)(?!\p{L})/giu, " ")
       .replace(/[.,]+$/, "")
       .replace(/\s+/g, " ")
       .trim();
@@ -228,6 +290,14 @@ function contains(sentence, headword) {
   const partPresent = (part) => {
     const bare = flatKey(part);
     if (!bare) return true;
+    /*
+      TİRE İLE BİTEN BAŞLIK BAĞLI BİR ÖN EK: «un-», «miss-», «Grooss-»,
+      «Elektro-». Ayrı bir kelime olarak ASLA geçmez, ama her zaman bir
+      kelimenin başındadır. Uzun olanları kök karşılaştırması yakalıyordu ama
+      «un-» iki harfe indiği için "tam kelime" kapısına düşüyor ve hiçbir
+      cümlede bulunamıyordu — oysa "unfründlich" tam da aranan şey.
+    */
+    if (/-\s*$/.test(part)) return hasStart(bare);
     const headLen = part.replace(/[^\p{L}]/gu, "").length;
     if (roots(part).some((r) => search(r, headLen))) return true;
 
@@ -252,8 +322,16 @@ function contains(sentence, headword) {
       aranıyor. Altı doğru cümle bu kural olmadan reddediliyordu.
     */
     for (const [prefix, stem] of allSplits) {
-      for (const form of IRREGULAR[stem] ?? []) {
-        const f = flatKey(form);
+      /*
+        Gövdenin DÜZENSİZ biçimi kadar KENDİSİ de deneniyor. Önce yalnız
+        düzensizler aranıyordu ve `iifalle` → "iigfalle" düşüyordu: gövde
+        ("falle") ablauta hiç girmiyor, araya sadece "g" giriyor. `roots()` bu
+        g-eklemesini yapıyor ama SEPARABLE üzerinden, ve "i" bilerek ön ek
+        listesinde değil — yani `ii-` özel durumu g-eklemesinden hiç
+        yararlanmıyordu.
+      */
+      const stemForms = [...roots(stem), ...(IRREGULAR[stem] ?? []).map(flatKey)];
+      for (const f of stemForms) {
         for (const glue of ["", "g", "z"]) {
           const joined = `${prefix}${glue}${f}`;
           if (search(joined, joined.length)) return true;
@@ -266,6 +344,21 @@ function contains(sentence, headword) {
       if (roots(stem).some((r) => search(r, stem.length))) return true;
       const irrSep = IRREGULAR[stem];
       if (irrSep?.some((f) => search(flatKey(f), flatKey(f).length))) return true;
+    }
+
+    /*
+      AYRILMAZ ÖN EK. `be-`, `ver-`, `er-`, `ent-` cümlede hiç kopmuyor — yani
+      yukarıdaki iki döngü (ikisi de ayrılabilir ön ek varsayıyor) bunlara hiç
+      bakmıyor. Ama GÖVDE yine ablauta giriyor: `bewerbe` → "beworbe",
+      `verwärfe` → "verworfe", `beschpräche` → "beschproche". Ön ek "g"yi de
+      yutuyor, o yüzden IRREGULAR listelerinde g'siz ortaç da duruyor.
+    */
+    for (const p of INSEPARABLE_PREFIXES) {
+      if (!bare.startsWith(p) || bare.length - p.length < 3) continue;
+      for (const form of IRREGULAR[bare.slice(p.length)] ?? []) {
+        const joined = `${p}${flatKey(form)}`;
+        if (search(joined, joined.length)) return true;
+      }
     }
 
     const irr = IRREGULAR[bare];
