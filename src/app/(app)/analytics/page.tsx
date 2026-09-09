@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { getUserId } from "@/lib/auth/server";
+import { notFound } from "next/navigation";
+import { adminGate } from "@/lib/admin";
 import { computeFunnel } from "@/lib/funnel";
 
 export const metadata: Metadata = { title: "Huni" };
@@ -26,8 +27,15 @@ function pct(n: number, d: number): string {
 }
 
 export default async function AnalyticsPage() {
-  const userId = await getUserId();
-  if (!userId) return null;
+  /*
+    YÖNETİCİYE KAPALI KAPI. Burada yalnız "giriş yapmış mı" bakılıyordu: toplam
+    kullanıcı, aktivasyon, elde tutma ve paywall → satın alma hunisini oturum
+    açan HERKES görebiliyordu. Sayfa /admin ile aynı sınıfta bir iç araç, kapısı
+    da aynı olmalı (ADMIN_EMAILS). Yetkisiz kullanıcıya sayfa hiç yokmuş gibi
+    davranıyoruz: 403 "burada bir şey var ama giremezsin" der, 404 demez.
+  */
+  const gate = await adminGate();
+  if (!gate.ok) notFound();
   const f = await computeFunnel();
   const maxEvent = f.topEvents[0]?.count ?? 1;
 
