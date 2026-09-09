@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { adminGate } from "@/lib/admin";
+import { sameOrigin } from "@/lib/auth/origin";
 import { savePremiumConfig, premiumConfig, grantPremiumDays, revokeEntitlement, resolveEntitlement } from "@/lib/premium";
 import { createCodes, listCodes, setCodeDisabled } from "@/lib/premium/promo";
 import { topReferrers } from "@/lib/premium/referral";
@@ -18,6 +19,14 @@ export const dynamic = "force-dynamic";
  * e-postası): elle verilen premium'un kim tarafından verildiği sorulabilir olmalı.
  */
 export async function POST(req: Request) {
+  /*
+    Aynı-köken denetimi yetkiden ÖNCE: bu uç premium veriyor, promo kodu üretiyor
+    ve yapılandırma yazıyor — yani en pahalı yazma yüzeyi admin'inki. Oturum
+    çerezi `SameSite=Lax` olduğu için çapraz-site bir POST'ta çerez zaten
+    gitmiyor; buradaki denetim o savunma tek başına kalmasın diye. Uygulamanın
+    geri kalanındaki mutasyon uçlarının hepsinde bu katman vardı, admin'de yoktu.
+  */
+  if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   const gate = await adminGate();
   if (!gate.ok) return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
