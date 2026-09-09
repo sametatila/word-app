@@ -79,7 +79,7 @@ export async function signOut(): Promise<void> {
 }
 
 /**
- * Sosyal giriş (Neon Auth / Managed Better Auth). POST sign-in/social sağlayıcı
+ * Sosyal giriş (self-hosted Better Auth). POST sign-in/social sağlayıcı
  * için bir OAuth başlatma URL'i döndürür; mobil bunu WebView'de açar. Android'de
  * WebView ile fetch AYNI çerez kavanozunu (CookieManager) paylaşır — OAuth bitip
  * oturum çerezi yazılınca uygulamanın istekleri de oturumlu olur. `callbackURL`

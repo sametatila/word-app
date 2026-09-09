@@ -61,7 +61,7 @@ type SessionMetaLite = {
  * Oturum açıksa gerçek özeti getirir; misafirde null döner (ekranlar demo'ya düşer).
  *
  * ÖNEMLİ: /api/me henüz canlıya alınmadıysa (404) DEMO'YA DÜŞMEYİZ — aynı gerçek
- * sayılar /api/session meta'sında da var (Neon'dan: seri, XP, seviye, isim,
+ * sayılar /api/session meta'sında da var (sunucudan: seri, XP, seviye, isim,
  * pekişen/toplam kelime). Böylece ana ekran push beklemeden gerçek veriyle dolar.
  * Hata her iki uçta da yutulur; en fazla demo görünür, kullanıcının önüne geçmez.
  */

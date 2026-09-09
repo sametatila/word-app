@@ -2,7 +2,7 @@ import { api } from "../api/client";
 import { supportsGame } from "../lib/courses";
 
 /**
- * GERÇEK oyun oturumu — web API'siyle aynı sözleşme (Neon'dan gerçek kelimeler
+ * GERÇEK oyun oturumu — web API'siyle aynı sözleşme (sunucudan gerçek kelimeler
  * + SRS). GET /api/session gerçek turları döndürür, POST /api/answers cevapları
  * yazar (SRS'i günceller). Demo YOK: veri kullanıcının kendi hesabından gelir.
  */

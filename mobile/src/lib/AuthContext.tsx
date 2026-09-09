@@ -111,7 +111,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => { alive = false; };
   }, []);
 
-  // Kullanıcı değişince RevenueCat'i Neon kimliğiyle başlat/güncelle (web+mobil
+  // Kullanıcı değişince RevenueCat'i hesap kimliğiyle başlat/güncelle (web+mobil
   // aynı entitlement). Anahtar yoksa güvenle no-op.
   useEffect(() => { void configureBilling(user?.id ?? null); }, [user?.id]);
 

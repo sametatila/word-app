@@ -27,7 +27,7 @@ import { useBackConfirm } from "../lib/useBackConfirm";
 type Phase = "loading" | "auth" | "error" | "play" | "done";
 
 /**
- * GERÇEK kelime turu — Neon verisiyle. /api/session'dan gerçek turları çeker
+ * GERÇEK kelime turu — sunucu verisiyle. /api/session'dan gerçek turları çeker
  * (kullanıcının kendi kelimeleri + SRS zamanlaması), oynatır, /api/answers'a
  * yazar (SRS/XP/seri güncellenir). Oturum yoksa girişe yönlendirir. Demo yok.
  */

@@ -1,6 +1,6 @@
 /**
- * Mobil API istemcisi — canlı web API'sini çağırır (www.lernomi.app; Neon + tüm
- * backend yeniden kullanılır, tek doğruluk kaynağı).
+ * Mobil API istemcisi — canlı web API'sini çağırır (www.lernomi.app; veritabanı
+ * ve tüm backend yeniden kullanılır, tek doğruluk kaynağı).
  *
  * Oturum ÇEREZLE taşınır: giriş yapılınca Better Auth Set-Cookie yazar, RN'in
  * yerel ağ katmanı (Android cookie jar) çerezi saklar ve sonraki her istekte

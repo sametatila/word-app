@@ -3,7 +3,7 @@
  *
  * Web'in saf builder'ının (src/lib/immersion/build.ts) mobil karşılığı: aynı
  * slot deseni, aynı 4/2/2/2 + gramer + quiz + kontrol düzeni, aynı modül
- * temaları. Fark: beceri içeriği (read/listen/write) Neon'da ve daha canlı
+ * temaları. Fark: beceri içeriği (read/listen/write) veritabanında ve daha canlı
  * değil; o slotlar "yayına alınınca" olarak işaretlenir (playable:false).
  * Dersler pakette olduğu için oynanabilir. /api/immersion açıldığında
  * useLearningPath onu tercih eder ve gerçek ilerleme/gating gelir.

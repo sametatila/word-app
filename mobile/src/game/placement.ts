@@ -3,7 +3,7 @@ import { todayStr } from "./session";
 
 /**
  * GERÇEK seviye testi — web ile aynı sözleşme (/api/placement, DEPLOY EDİLMİŞ).
- * Kelime maddeleri Neon'dan (seviye seviye), puanlama sunucuda. Demo YOK:
+ * Kelime maddeleri sunucudan (seviye seviye), puanlama da sunucuda. Demo YOK:
  * oturum açık kullanıcı gerçek testi alır, misafir ekranda demo'ya düşer.
  */
 export type PlacementVocab = {
@@ -44,7 +44,7 @@ export async function startPlacement(): Promise<PlacementVocab[]> {
   return out;
 }
 
-/** Cevapları sunucuya verir; gerçek önerilen seviyeyi (Neon puanlaması) döndürür. */
+/** Cevapları sunucuya verir; gerçek önerilen seviyeyi (sunucu puanlaması) döndürür. */
 export async function finishPlacement(answers: PlacementAnswer[]): Promise<PlacementRecord> {
   return api<PlacementRecord>("/api/placement", {
     method: "POST",

@@ -28,7 +28,7 @@ import { sfx } from "../lib/sfx";
 
 const withArtikel = (a: string | null, de: string) => (a ? `${a} ${de}` : de);
 
-/** Ekranın oynadığı birleşik soru — hem gerçek (Neon) hem demo aynı biçime düşer. */
+/** Ekranın oynadığı birleşik soru — hem sunucudan geleni hem demo aynı biçime düşer. */
 type PQ = { round: ChoiceRound; level: PlacementAnswer["level"]; itemId: string };
 
 function realQuestions(items: PlacementVocab[]): PQ[] {
@@ -57,7 +57,7 @@ export function PlacementScreen() {
   const leave = () => { if (onboarding) nav.reset({ index: 0, routes: [{ name: "Auth" }] }); else nav.goBack(); };
   const { user } = useAuth();
 
-  // Gerçek test (oturum açıksa Neon'dan). Yüklenene dek loading; hata → demo.
+  // Gerçek test (oturum açıksa sunucudan). Yüklenene dek loading; hata → demo.
   const [real, setReal] = useState<PlacementVocab[] | null>(null);
   const [loading, setLoading] = useState<boolean>(!!user);
   const [loadError, setLoadError] = useState(false);
