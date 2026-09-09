@@ -1018,7 +1018,6 @@ export const enWeb: Record<string, string> = {
   "sharew.daily_cta": "The same questions go to everyone at level {level}. Give it a try:",
   "snd.game_sounds": "Game sounds",
   "snd.game_sounds_sub": "Pronunciation audio is separate — it works even with this off",
-  "anlt.send_usage_sub": "Which features get used; it doesn't go to third parties",
   "progp.window": "last 30 days · {n} measurements",
   "growth.p_answers": "{n} answers",
   "growth.p_exercises": "{n} exercises",

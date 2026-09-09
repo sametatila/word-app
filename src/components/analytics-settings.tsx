@@ -18,7 +18,7 @@ export function AnalyticsSettings({ bare = false }: { bare?: boolean } = {}) {
   const [ready, setReady] = useState(false);
   useEffect(() => { setOn(analyticsEnabled()); setReady(true); }, []);
   const body = (
-    <SettingRow title={t("settings.send_usage_data")} sub={t("anlt.send_usage_sub")}>
+    <SettingRow title={t("settings.send_usage_data")} sub={t("settings.analytics_sub")}>
       <Link href={LEGAL_PATHS.privacy} className="chip h-8 px-2.5 text-xs" prefetch={false}>{t("settings.privacy_policy_short")}</Link>
       <Switch on={on} onChange={(next) => { setOn(next); setAnalyticsEnabled(next); }} disabled={!ready} label={t("settings.send_usage_data")} />
     </SettingRow>
