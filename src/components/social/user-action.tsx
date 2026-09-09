@@ -48,7 +48,7 @@ export function UserAction({
 
   const size = compact ? "h-8 px-3 text-xs" : "h-9 px-3.5 text-xs";
   if (state === "self") return null;
-  if (state === "blocked") return <span className="muted text-xs">Engelli</span>;
+  if (state === "blocked") return <span className="muted text-xs">{t("useractionbutton.blocked")}</span>;
 
   let button: React.ReactNode;
   if (state === "friends") {
@@ -64,7 +64,7 @@ export function UserAction({
           });
         }}
       >
-        {t("socialw.friend")}
+        {t("useractionbutton.friends")}
       </button>
     );
   } else if (state === "outgoing") {
@@ -79,7 +79,7 @@ export function UserAction({
           })
         }
       >
-        {t("socialw.request_sent")}
+        {t("useractionbutton.request_sent")}
       </button>
     );
   } else if (state === "incoming") {
@@ -99,7 +99,7 @@ export function UserAction({
       </button>
     );
   } else if (state === "declined") {
-    button = <span className="muted text-xs">{t("socialw.in_a_week")}</span>;
+    button = <span className="muted text-xs">{t("useractionbutton.in_week")}</span>;
   } else {
     button = (
       <button

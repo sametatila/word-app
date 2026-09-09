@@ -34,14 +34,18 @@ export function FriendPulse() {
         <p className="truncate text-sm font-bold">
           {invited
             ? q.invitedByMe
-              ? t("socialw.quest_waiting")
-              : t("socialw.quest_invited_you", { name: q.partner.name ?? t("social.your_friend") })
-            : t("socialw.quest_with", { name: q.partner.name ?? t("social.your_friend") })}
+              ? t("friendpulse.waiting")
+              : t("friendpulse.invited_you", { name: q.partner.name ?? t("social.your_friend") })
+            : t("friendpulse.shared", { name: q.partner.name ?? t("social.your_friend") })}
         </p>
         {invited ? (
           <p className="muted text-xs">
-            {t("socialw.quest_target", { xp: formatNumber(q.targetXp, lang) })} ·{" "}
-            {t(q.invitedByMe ? "socialw.quest_pending" : "socialw.quest_accept")}
+            {/* Mobil hedefi ve durumu tek cümlede yazıyor; web ikisini elle
+                birleştiriyordu ve aradaki ayraç dile göre değişemiyordu. */}
+            {t("friendpulse.target", {
+              xp: formatNumber(q.targetXp, lang),
+              status: t(q.invitedByMe ? "friendpulse.awaiting" : "friendpulse.accept"),
+            })}
           </p>
         ) : (
           <div className="mt-1 h-2 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>

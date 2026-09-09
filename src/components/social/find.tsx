@@ -58,12 +58,12 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder={t("socialw.search_placeholder")}
+          placeholder={t("find.username_or_name")}
           className="min-w-0 flex-1 bg-transparent text-sm outline-none"
           autoCapitalize="none"
           autoCorrect="off"
           spellCheck={false}
-          aria-label={t("socialw.search_label")}
+          aria-label={t("find.search_users")}
         />
         {q ? (
           <button className="muted text-xs" onClick={() => setQ("")} aria-label="Temizle">
@@ -86,11 +86,11 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
             ))}
           </ol>
         ) : (
-          <p className="muted px-1 text-sm">{t("socialw.no_results")}</p>
+          <p className="muted px-1 text-sm">{t("find.no_results_private_profiles_only")}</p>
         )
       ) : (
         <section>
-          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("socialw.you_may_know")}</h3>
+          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("find.you_may_know")}</h3>
           {sugg === null ? (
             <RowSkeleton rows={3} height={60} />
           ) : sugg.length ? (
@@ -99,7 +99,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
                 <PersonRow
                   key={s.userId}
                   user={s}
-                  note={s.reason === "mutual" ? t("social.mutual", { n: s.mutual }) : s.reason === "level" ? t("socialw.same_level", { level: s.level }) : t("socialw.active_this_week")}
+                  note={s.reason === "mutual" ? t("social.mutual", { n: s.mutual }) : s.reason === "level" ? t("find.same_level", { level: s.level }) : t("find.active_week")}
                   streak={s.currentStreak}
                   onChanged={onChanged}
                 >
@@ -108,7 +108,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
               ))}
             </ol>
           ) : (
-            <p className="muted px-1 text-sm">{t("socialw.no_suggestions")}</p>
+            <p className="muted px-1 text-sm">{t("find.no_suggestions_yet_search_by")}</p>
           )}
         </section>
       )}

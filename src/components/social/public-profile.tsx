@@ -44,14 +44,14 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
   }
 
   async function block() {
-    if (!window.confirm(t("socialw.block_confirm", { name: u.name ?? t("social.this_person") }))) return;
+    if (!window.confirm(t("user.block_confirm", { name: u.name ?? t("social.this_person") }))) return;
     await act(async () => {
       await social.block(u.userId);
       router.replace("/friends");
-    }, t("socialw.blocked_done"));
+    }, t("user.blocked_done"));
   }
   async function report(reason: string) {
-    await act(() => social.report(u.userId, reason), t("socialw.report_received"));
+    await act(() => social.report(u.userId, reason), t("user.report_done"));
     setReporting(false);
   }
 
@@ -83,7 +83,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
             {friends ? (
               <>
                 <button className="btn btn-ghost h-9 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.nudge(u.userId, "remind"), t("social.nudged_you"))}>
-                  {t("socialw.nudge")}
+                  {t("user.nudge")}
                 </button>
                 <button className="btn btn-ghost h-9 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))}>
                   <TargetIcon size={14} />
@@ -106,18 +106,18 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
         {more && !isSelf ? (
           <div className="mt-3 flex flex-wrap gap-2 border-t pt-3" style={{ borderColor: "var(--border)" }}>
             <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => void block()}>
-              {t("socialw.block")}
+              {t("user.block")}
             </button>
             <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => setReporting((r) => !r)}>
-              {t("socialw.report")}
+              {t("user.report")}
             </button>
             {reporting ? (
               <div className="flex w-full flex-wrap gap-1.5">
                 {[
-                  ["spam", "socialw.report_spam"],
-                  ["abuse", "socialw.report_abuse"],
-                  ["impersonation", "socialw.report_fake"],
-                  ["other", "socialw.report_other"],
+                  ["spam", "user.report_spam"],
+                  ["abuse", "user.report_abuse"],
+                  ["impersonation", "user.report_fake"],
+                  ["other", "report.something_else"],
                 ].map(([k, l]) => (
                   <button key={k} className="chip px-3 py-1.5 text-caption" disabled={busy} onClick={() => void report(k)}>
                     {t(l)}
@@ -131,22 +131,22 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
 
       {data.stats ? (
         <section className="grid grid-cols-3 gap-2">
-          <Stat label={t("socialw.stat_streak")} value={data.stats.currentStreak} icon={<FlameIcon size={14} />} tone="var(--color-flame)" />
-          <Stat label={t("socialw.stat_week")} value={data.stats.weeklyXp} suffix=" XP" tone="var(--color-brand)" />
-          <Stat label={t("socialw.stat_total")} value={data.stats.totalXp} suffix=" XP" tone="var(--color-brand)" />
+          <Stat label={t("user.day_streak")} value={data.stats.currentStreak} icon={<FlameIcon size={14} />} tone="var(--color-flame)" />
+          <Stat label={t("user.xp_this_week")} value={data.stats.weeklyXp} tone="var(--color-brand)" />
+          <Stat label={t("user.total_xp")} value={data.stats.totalXp} tone="var(--color-brand)" />
           <Stat label={t("socialw.stat_longest")} value={data.stats.longestStreak} tone="var(--color-flame)" />
-          <Stat label={t("socialw.stat_badges")} value={data.stats.achievements} icon={<TrophyIcon size={14} />} tone="var(--color-violet)" />
+          <Stat label={t("user.badge")} value={data.stats.achievements} icon={<TrophyIcon size={14} />} tone="var(--color-violet)" />
           <Stat label={t("socialw.stat_last_active")} text={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short" }) : "—"} tone="var(--text-muted)" />
         </section>
       ) : (
         <section className="card p-4 text-center">
-          <p className="muted text-sm">{t(data.visibility === "friends" ? "socialw.stats_friends_only" : "socialw.profile_private")}</p>
+          <p className="muted text-sm">{t(data.visibility === "friends" ? "user.friends_see_stats" : "user.private_profile")}</p>
         </section>
       )}
 
       {data.recent.length ? (
         <section>
-          <h2 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("socialw.recent_milestones")}</h2>
+          <h2 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("user.recent_milestones")}</h2>
           <div className="flex flex-col gap-2">
             {data.recent.map((it) => (
               <FeedCard key={it.id} item={friends || isSelf ? it : { ...it, isMine: true }} />

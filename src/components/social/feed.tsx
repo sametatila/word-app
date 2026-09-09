@@ -45,8 +45,8 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
   if (!items.length) {
     return (
       <div className="card p-6 text-center">
-        <p className="font-bold">{t("socialw.feed_empty")}</p>
-        <p className="muted mt-1 text-sm">{t("socialw.feed_empty_sub")}</p>
+        <p className="font-bold">{t("feedlist.your_feed_is_still_empty")}</p>
+        <p className="muted mt-1 text-sm">{t("feedlist.empty_text")}</p>
         {onFindFriends ? (
           <button className="btn btn-primary mt-4 h-9 px-4 text-xs" onClick={onFindFriends}>
             {t("friends.find_friends")}
