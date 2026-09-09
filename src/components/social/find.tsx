@@ -80,7 +80,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
         ) : hits.length ? (
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {hits.map((h) => (
-              <PersonRow key={h.userId} user={h} note={`${h.level}${h.currentStreak ? ` · ${h.currentStreak} günlük seri` : ""}`} onChanged={onChanged}>
+              <PersonRow key={h.userId} user={h} note={`${h.level}${h.currentStreak ? ` · ${t("social.days_streak", { n: h.currentStreak })}` : ""}`} onChanged={onChanged}>
                 <UserAction userId={h.userId} relation={h.relation} compact onChange={onChanged} />
               </PersonRow>
             ))}

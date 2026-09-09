@@ -252,7 +252,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             onClick={() => void startRecording()}
             className="btn btn-primary mt-4 flex min-h-12 w-full items-center justify-center gap-2 px-4 text-sm"
           >
-            <MicIcon size={18} /> Kayda başla
+            <MicIcon size={18} /> {t("item.mono_start")}
           </button>
         </section>
       ) : null}
@@ -261,7 +261,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
         <section className="card mt-3 p-5">
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide" style={{ color: "var(--color-rose)" }}>
-              <span className="h-2 w-2 animate-pulse rounded-full" style={{ background: "var(--color-rose)" }} /> Kayıt
+              <span className="h-2 w-2 animate-pulse rounded-full" style={{ background: "var(--color-rose)" }} /> {t("item.mono_recording")}
             </p>
             <span className="tabular-nums text-sm font-bold">
               {mm(seconds)} / {mm(mono.maxSeconds)}
@@ -274,7 +274,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           </ul>
           <p className="mt-3 min-h-12 rounded-xl px-3 py-2 text-sm surface-2" lang={lang} aria-live="polite">
             {transcript} <span className="muted">{interim}</span>
-            {!transcript && !interim ? <span className="muted">{asr ? "Dinliyorum…" : t("item.mono_recording")}</span> : null}
+            {!transcript && !interim ? <span className="muted">{t(asr ? "item.mono_listening" : "item.mono_recording")}</span> : null}
           </p>
           <button
             type="button"
@@ -282,7 +282,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             disabled={seconds < mono.minSeconds}
             className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm"
           >
-            {seconds < mono.minSeconds ? `Bitir (${mono.minSeconds - seconds} sn sonra)` : "Bitir"}
+            {seconds < mono.minSeconds ? t("item.mono_stop_in", { n: mono.minSeconds - seconds }) : t("item.mono_stop")}
           </button>
         </section>
       ) : null}

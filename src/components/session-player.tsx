@@ -1007,7 +1007,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
       body: t("session.load_failed_sub"),
       action: (
         <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-3.5">
-          <RefreshIcon size={18} /> Tekrar dene
+          <RefreshIcon size={18} /> {t("common.try_again")}
         </button>
       ),
     },
@@ -1016,7 +1016,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
       body: t("session.offline_sub"),
       action: (
         <button onClick={onRetry} className="btn btn-primary mt-5 flex w-full items-center justify-center gap-2 px-5 py-3.5">
-          <RefreshIcon size={18} /> Tekrar dene
+          <RefreshIcon size={18} /> {t("common.try_again")}
         </button>
       ),
     },
