@@ -6,6 +6,7 @@ import { buildTrackState } from "@/lib/immersion/state";
 import { immersionCompletion } from "@/lib/immersion/progress";
 import type { CefrLevel } from "@/lib/skills/types";
 import { ImmersionHub } from "@/components/immersion/immersion-hub";
+import { AppHeader } from "@/components/app-header";
 import { buildHubUnits } from "@/lib/immersion/hub";
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
 import { titleMeta } from "@/lib/page-meta";
@@ -55,6 +56,21 @@ export default async function ImmersionPage() {
     .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
     .filter((m): m is { index: number; plan: NonNullable<ReturnType<typeof moduleExamPlan>> } => Boolean(m.plan))
     .map(({ index, plan }) => ({ index, code: plan.code, titleTr: plan.titleTr, titleDe: plan.titleDe }));
+
+  /* DERS PAKETİ OLMAYAN KURSTA ÜNİTE ÜRETİLEMEZ (bugün gsw-zh böyle: diskte
+     hiç dersi yok, bkz. lib/lessons `lessonsFor`). Web bu durumda boş bir
+     Patika çiziyordu; kullanıcı ekranın bozulduğunu sanıyordu. Android sebebi
+     ve çalışan yolları söylüyor (`PathScreen`), web de artık söylüyor. */
+  if (!state.units.length) {
+    return (
+      <div className="mx-auto w-full max-w-3xl">
+        <AppHeader title={t("path.path")} />
+        <div className="card p-5">
+          <p className="muted text-body leading-relaxed">{t("path.no_units")}</p>
+        </div>
+      </div>
+    );
+  }
 
   const doneUnits = state.units.filter((u) => u.complete).length;
   return (
