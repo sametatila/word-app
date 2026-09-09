@@ -4,6 +4,7 @@ import { WebView } from "react-native-webview";
 import { API_BASE } from "../api/client";
 import type { VoiceId } from "./voices";
 import { SFX_MASTER, SFX_NOTES, type SfxKind } from "./sfxNotes";
+import { nativeDelay } from "./stt";
 
 export type { SfxKind } from "./sfxNotes";
 
@@ -34,6 +35,10 @@ export function bridgeSpeak(voice: VoiceId, text: string, slow: boolean): void {
 }
 
 export function bridgeStop(): void {
+  // Bekleyeni de SERBEST BIRAKIR. Eskiden yalnız sesi kesiyordu ve
+  // `bridgeSpeakAndWait`in promise'i asılı kalıyordu: sesi durdurup "bitmesini"
+  // bekleyen çağıranı sonsuza kadar askıda tutmak, kesmenin tanımına aykırı.
+  finishPending();
   if (!bridgeReady()) return;
   try { viewRef!.injectJavaScript("window.ttsStop && window.ttsStop(); true;"); } catch { /* yut */ }
 }
@@ -93,9 +98,10 @@ export function bridgeSfx(kind: SfxKind): void {
  * "end"/"error" gelmezse metin uzunluğuna göre bir üst sınırla yine de çözülür.
  */
 let pendingResolve: (() => void) | null = null;
-let pendingTimer: ReturnType<typeof setTimeout> | null = null;
+/** Her bekleyene bir sıra numarası: geciken emniyet ağı YENİ bekleyeni çözmesin. */
+let pendingSeq = 0;
 function finishPending(): void {
-  if (pendingTimer) { clearTimeout(pendingTimer); pendingTimer = null; }
+  pendingSeq++;
   const r = pendingResolve;
   pendingResolve = null;
   if (r) r();
@@ -105,8 +111,21 @@ export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow = false): 
     if (!bridgeReady() || !text) { resolve(); return; }
     finishPending(); // önceki bekleyeni serbest bırak
     pendingResolve = resolve;
+    const seq = pendingSeq;
     const cap = Math.min(14000, Math.max(3000, text.length * 120));
-    pendingTimer = setTimeout(finishPending, cap);
+    // Emniyet ağı NATIVE gecikmeyle kuruluyor, `setTimeout` ile DEĞİL.
+    //
+    // Ekran kapanınca iki şey aynı anda oluyor: WebView (Chromium) ses odağını
+    // bırakıp oynatmayı duraklatıyor, yani "end" mesajı hiç gelmiyor; ve RN'in
+    // JS zamanlayıcıları duruyor (Choreographer kare vermiyor), yani setTimeout
+    // ile kurulmuş üst sınır da hiç ateşlenmiyor. İkisi birleşince bu promise
+    // sonsuza kadar asılı kalıyor ve yürüyüş turu sessizce donuyor.
+    //
+    // Cihazda ölçüldü 2026-09-09 (SM-S942B): ekran kapandıktan sonra 33 saniye
+    // boyunca ne ses, ne mikrofon, ne istek var; ekran açılır açılmaz tur
+    // kaldığı yerden devam ediyor. `nativeDelay` bu yüzden zaten vardı
+    // (WalkModeScreen'deki `gap`), köprünün emniyet ağına uygulanmamıştı.
+    void nativeDelay(cap).then(() => { if (pendingSeq === seq) finishPending(); });
     const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${slow ? "true" : "false"}); true;`;
     try { viewRef!.injectJavaScript(js); } catch { finishPending(); }
   });

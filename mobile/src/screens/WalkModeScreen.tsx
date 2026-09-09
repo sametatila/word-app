@@ -14,7 +14,7 @@ import { shareResult } from "../lib/share";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } from "../game/session";
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
-import { bridgeReady } from "../lib/ttsBridge";
+import { bridgeReady, bridgeStop } from "../lib/ttsBridge";
 import { narrationVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName } from "../lib/i18n";
 import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
@@ -187,6 +187,11 @@ export function WalkModeScreen() {
       // Kesinti native dinleme SIRASINDA geldiyse tanıyıcı ölür: 8 sn zaman aşımını bekleme,
       // hemen kes ve kelimeyi bir kez daha sor (bkz. judgeSpeak).
       if (off && nativeListeningRef.current) { listenCut.current = true; try { stopListening(); } catch { /* yut */ } }
+      // KONUŞMANIN karşılığı — yukarıdaki satır dinlemeyi kesiyordu, konuşmayı kimse kesmiyordu.
+      // Ekran kapalıyken köprü çalamaz (WebView ses odağını bırakır) ve bitiş mesajı hiç gelmez;
+      // bekleyeni burada serbest bırakmazsak tur o utterance'ta donuyor. Serbest kalınca bir
+      // sonraki cümle zaten native yola düşüyor (`say`/`sayTarget` screenOffRef'e bakıyor).
+      if (off) { try { bridgeStop(); } catch { /* yut */ } }
     });
     return () => { unsub(); stopWalkService(); };
   }, []);
