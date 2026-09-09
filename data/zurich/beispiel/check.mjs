@@ -62,6 +62,10 @@ const SEPARABLE_PREFIXES = [
   "furt", "unter", "uber", "vor", "zue", "na", "nach", "dur", "dure", "mit",
   "los", "fri", "wag", "har", "hare", "us", "uf", "ab", "um", "bi", "hi", "a",
   "zrug", "zrugg", "dra", "draa", "fure", "hinder", "wider", "zwuse",
+  // İkinci turda çıkanlar (A2): `schtattfinde`, `häigaa`, `ewägwerfe`,
+  // `anerüefe`, `feschthalte`, `obeabe`, `voranechoo`. "fescht" ayrı yazıldı —
+  // listede "fascht" vardı ama o "neredeyse" zarfı, ön ek değil.
+  "schtatt", "hai", "ewag", "ane", "fescht", "obe", "vorane", "ume", "une",
 ];
 const SEPARABLE = new RegExp(`^(${SEPARABLE_PREFIXES.join("|")})(.{2,})$`);
 
@@ -132,6 +136,7 @@ const IRREGULAR = {
   schlafe: ["schlaft", "gschlafe"],
   bringe: ["bringt", "brocht", "broocht", "bringsch"],
   zieh: ["zieht", "zoge", "ziet"],
+  lase: ["list", "lis", "gläse", "lisch"],
   // `grosszieh` ön eki ayrılmıyor ve Perfekt'te gövde ablauta giriyor; "gross"
   // ayrılabilir ön ek listesine girecek bir edat değil, kelimenin parçası.
   grosszieh: ["grosszoge", "zieht gross"],
