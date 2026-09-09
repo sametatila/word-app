@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-b1-rezept-lesen",
+  "sceneEn": "A friend is asking you for a recipe from your home country. List the ingredients, then describe the steps in order and in the passive.",
+  "partnerEn": "a curious friend who is just learning to cook",
+  "openingEn": "You said you were cooking something from home. How is that actually made?",
+  "goalEn": "The ingredients have been listed, the steps have been described in order and your friend could repeat the recipe."
+ },
+ {
+  "lesson": "de-b1-im-gasthaus",
+  "sceneEn": "You have come to an inn for two. You are being seated, talking to the waiter and ordering, and asking for the bill at the end.",
+  "partnerEn": "a polite waiter who is rushed off their feet",
+  "openingEn": "Good evening! Have you booked, or shall I show you to a table?",
+  "goalEn": "You have been seated, food and drink have been ordered, the bill has been asked for and the tip has come up."
+ },
+ {
+  "lesson": "de-b1-markt-frisch",
+  "sceneEn": "You are at a stall at the market. You compare two products, ask about the price and the freshness, then make your choice and have it weighed.",
+  "partnerEn": "a jokey stallholder who praises their own goods",
+  "openingEn": "All fresh today! What can I get you — the mushrooms, or the carrots?",
+  "goalEn": "Two products have been compared, the price has been asked, the choice has been made with reasons and it has been weighed."
+ },
+ {
+  "lesson": "de-b1-zum-essen-eingeladen",
+  "sceneEn": "You are invited to dinner at a friend's home. First you ask what to bring, then at the table you praise the food and ask for a recipe.",
+  "partnerEn": "a hospitable host who is proud of their table",
+  "openingEn": "Lovely that you're here! Do sit down — how do you find the food?",
+  "goalEn": "What to bring has been discussed, the table has been praised and a recipe has been asked for."
+ },
+ {
+  "lesson": "de-b1-heimatgericht",
+  "sceneEn": "You are at a barbecue. You introduce the dish you brought and describe who made it and how it is made, with relative clauses.",
+  "partnerEn": "a sociable neighbour who wants to taste everything",
+  "openingEn": "That smells fantastic! What have you brought, then?",
+  "goalEn": "The dish you brought has been introduced and who made it and how it was cooked have been described with relative clauses."
+ },
+ {
+  "lesson": "de-b1-lokal-reklamation",
+  "sceneEn": "The wrong dish has come to your table at a restaurant and there is a mark on the plate. You say so politely, give your reason and ask for a solution.",
+  "partnerEn": "a restaurateur who is defensive at first but then finds a solution",
+  "openingEn": "Right, one schnitzel — enjoy your meal! Is everything all right for you?",
+  "goalEn": "The wrong order has been raised, the reason has been given and a solution has been agreed."
+ },
+ {
+  "lesson": "de-b1-haltbar-machen",
+  "sceneEn": "A lot is left over after a big meal. You and your flatmate discuss what to keep and how, and what to do with what tomorrow.",
+  "partnerEn": "an organised flatmate who cannot bear waste",
+  "openingEn": "Well, that really is a lot left over. What are you going to do with it?",
+  "goalEn": "A plan has been given for each of the leftovers and the two of you have agreed who does what."
+ },
+ {
+  "lesson": "de-b1-esskultur-b1",
+  "sceneEn": "You and a German friend are comparing table customs: what time people eat, what they drink, how a guest is treated. Describe the differences with paired conjunctions.",
+  "partnerEn": "a curious friend who likes questioning their own customs",
+  "openingEn": "Tell me, you eat a hot meal in the evening, don't you? With us it's quite different.",
+  "goalEn": "At least three customs have been compared and the similarities and differences have been given with paired conjunctions."
+ },
+ {
+  "lesson": "de-b1-kuchen-backen",
+  "sceneEn": "There is a celebration at home and you have two hours left. You share out the work with a friend: who does what, and which job comes before which.",
+  "partnerEn": "a friend who has come to help but does not know what to do",
+  "openingEn": "I'm here! Just tell me what to do — what do we start with?",
+  "goalEn": "The jobs have been put in order and it has been settled who does what and when."
+ },
+ {
+  "lesson": "de-b1-abschied-am-tisch",
+  "sceneEn": "You are at the end of a lovely meal and you have to go. You thank your host, offer to help, arrange the next meeting and say goodbye.",
+  "partnerEn": "a warm host who does not want to let you go",
+  "openingEn": "Is it that late already? Do stay a bit longer — there's coffee coming.",
+  "goalEn": "Thanks have been given, help has been offered, the next meeting has been arranged and goodbyes have been said."
+ },
+ {
+  "lesson": "de-b1-preis-vergleichen",
+  "sceneEn": "You have seen the same product in two places. You and a friend compare the prices, the discount and the quality and decide where to buy it.",
+  "partnerEn": "a careful friend who never buys without comparing",
+  "openingEn": "Have you compared the two prices? Which is cheaper?",
+  "goalEn": "The two sellers have been compared on price and quality and a decision has been made with reasons."
+ },
+ {
+  "lesson": "de-b1-umtausch",
+  "sceneEn": "You have gone back to the shop to exchange something you bought two weeks ago. You give your reason, show the receipt and say clearly what you want.",
+  "partnerEn": "an assistant who sticks to the rules but looks for a solution",
+  "openingEn": "Good afternoon! What can I do for you — would you like to exchange something?",
+  "goalEn": "The reason for the return has been given, the receipt has been shown and an exchange or a refund has been agreed."
+ },
+ {
+  "lesson": "de-b1-bank-konto",
+  "sceneEn": "You have come to the bank to open an account. You find out about the fees, the card and the conditions for withdrawing money, with indirect questions.",
+  "partnerEn": "an unhurried bank clerk who enjoys explaining",
+  "openingEn": "Good afternoon! You'd like to open an account — have you any questions already?",
+  "goalEn": "The type of account, the fees and how the card is used have been found out and the next step to open it has been agreed."
+ },
+ {
+  "lesson": "de-b1-online-bestellen",
+  "sceneEn": "There is a problem with something you ordered online: the wrong model came and the manual is missing. You ring customer service and describe what happened in order.",
+  "partnerEn": "a methodical agent who asks for the order number first",
+  "openingEn": "Customer service, good afternoon! What is it about your order?",
+  "goalEn": "What was ordered, what arrived and what is missing have been described and a solution has been agreed."
+ },
+ {
+  "lesson": "de-b1-kleidung-kaufen",
+  "sceneEn": "You are trying clothes on in a shop. You talk about the size, the fabric and the price, describing what you are after with adjectives in front of the noun.",
+  "partnerEn": "a keen assistant who wants you to try everything on",
+  "openingEn": "Can I help you? Are you looking for anything in particular?",
+  "goalEn": "The item you wanted has been described with adjectives, tried on, and it has been decided whether to buy it."
+ },
+ {
+  "lesson": "de-b1-material-waehlen",
+  "sceneEn": "You are in a hardware shop and you do not know the name of the part you want. You describe what it is made of, what it does and where it goes.",
+  "partnerEn": "a patient shopkeeper who listens and tries to find the right part",
+  "openingEn": "What are you looking for? Just describe it — what do you need it for?",
+  "goalEn": "The part has been described by its material and its function and the shopkeeper has found the right one."
+ },
+ {
+  "lesson": "de-b1-wirtschaft-reden",
+  "sceneEn": "You and a colleague are discussing how your industry is going: production, competition, imports. Give both sides of each view with paired conjunctions.",
+  "partnerEn": "a pessimistic colleague who is open to the figures",
+  "openingEn": "Tell me, how do you see the state of our industry at the moment?",
+  "goalEn": "A view has been given on at least three points, both sides of each have been said and a shared conclusion has been reached."
+ },
+ {
+  "lesson": "de-b1-gewinn-verlust",
+  "sceneEn": "You are presenting last year's figures at a small meeting. You describe what the table shows, interpret one figure and answer the questions.",
+  "partnerEn": "a team member who asks about the reason behind the figures",
+  "openingEn": "Thanks for the table. What exactly is being shown there?",
+  "goalEn": "The content of the table has been described, one figure has been interpreted and at least one question has been answered."
+ },
+ {
+  "lesson": "de-b1-anzeige-lesen",
+  "sceneEn": "You and a friend are looking at a second-hand advertisement. You describe the advert, say what is good and what is doubtful about it, and list the missing details.",
+  "partnerEn": "an optimistic friend who is ready to be taken in by the advert",
+  "openingEn": "Look at this advert here — sounds great, doesn't it?",
+  "goalEn": "The advert has been described, at least two missing details have been listed and the questions to ask the seller have been decided."
+ },
+ {
+  "lesson": "de-b1-reklamation-brief",
+  "sceneEn": "You are ringing an authority: the document you sent has been lost. You describe what you sent, what you are expecting and what you will put in a written complaint.",
+  "partnerEn": "a polite official who avoids taking responsibility",
+  "openingEn": "Administration office, good afternoon. How can I help you?",
+  "goalEn": "The lost document has been described, your expectation has been put politely and an address for a written complaint has been taken."
+ },
+ {
+  "lesson": "de-b1-bahn-fahren",
+  "sceneEn": "You are looking for your train at the main station. You did not quite catch the announcement: you ask about the platform, the departure time and whether your ticket is valid for the return.",
+  "partnerEn": "a helpful station attendant who is in a hurry",
+  "openingEn": "Can I help you? You look as if you're looking for something.",
+  "goalEn": "The platform, the departure time and what the ticket covers have been found out and the passenger has been sent to the right train."
+ },
+ {
+  "lesson": "de-b1-am-flughafen",
+  "sceneEn": "Your flight has been delayed and you have missed your connection. At the airport desk you describe what happened in order and ask for a new solution.",
+  "partnerEn": "an airline agent checking the system and looking for a solution",
+  "openingEn": "Good afternoon! What's happened — which flight had you booked?",
+  "goalEn": "What happened has been described in order and a new flight or a place to stay has been found."
+ },
+ {
+  "lesson": "de-b1-auto-unterwegs",
+  "sceneEn": "You and a friend are setting off on a long drive. You talk about what you will do if things come up on the way: petrol, breaks, the weather.",
+  "partnerEn": "a travelling companion who wants every eventuality talked through",
+  "openingEn": "Six hours' driving — what do we do if we get tired?",
+  "goalEn": "What to do has been settled with conditional clauses for at least three eventualities."
+ },
+ {
+  "lesson": "de-b1-verkehrsregeln",
+  "sceneEn": "You are explaining the traffic rules here to a friend who has just arrived in the country: right of way, one-way streets, the pavement, parking. Give the rules impersonally.",
+  "partnerEn": "a friend who has driven in another country and likes comparing",
+  "openingEn": "It was quite different where I come from — what's actually forbidden here?",
+  "goalEn": "At least three rules have been described impersonally and one difference between the two countries has been given."
+ },
+ {
+  "lesson": "de-b1-unterkunft-suchen",
+  "sceneEn": "You and a friend are comparing two places to stay on holiday: price, location, quiet. In the end you choose one.",
+  "partnerEn": "a friend who watches the budget but will not give up comfort",
+  "openingEn": "So, cabin or hotel? I really can't decide.",
+  "goalEn": "The two options have been compared on at least three criteria and a decision has been made with reasons."
+ }
+]
