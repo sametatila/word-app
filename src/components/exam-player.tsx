@@ -277,7 +277,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       locale: "tr",
     };
     const ai = await askAssess(req);
-    const out = ai.ok ? ai.result : fallbackAssessment(req);
+    const out = ai.ok ? ai.result : fallbackAssessment(req, t);
     setWritingResult(out);
     writingScore.current = out.score.overall;
     score.current.writing.correct = (writingScore.current ?? 0) >= 60 ? 1 : 0;

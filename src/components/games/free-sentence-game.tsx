@@ -30,6 +30,7 @@ const SPECIAL_CHARS = ["ä", "ö", "ü", "ß"] as const;
  * lapse yok), < 40 → 2. Hata tipi rubriğin ilk hatasından.
  */
 export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
+  const t = useT();
   const tx = useT();
   const lang = useLang();
   const { word, partners, level } = round;
@@ -82,7 +83,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
       fx(o >= 70 ? "correct" : "wrong", 600);
     } else {
       if (ai.reason === "aborted") return;
-      const fb = fallbackAssessment(req);
+      const fb = fallbackAssessment(req, t);
       setResult(fb);
       setFailure(ai.reason);
       // Yedek dilbilgisini bilmiyor: kalite 3'ü aşmaz, "doğru" yalnız

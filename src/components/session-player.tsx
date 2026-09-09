@@ -1325,8 +1325,8 @@ function SummaryCard({
             }}
           >
             {result.wagerXp > 0
-              ? `Son etapta bahis tuttu · +${result.wagerXp} XP`
-              : `Son etapta bahis yandı · ${result.wagerXp} XP`}
+              ? t("session.wager_won", { xp: result.wagerXp })
+              : t("session.wager_lost", { xp: result.wagerXp })}
           </div>
         ) : null}
 
@@ -1351,7 +1351,7 @@ function SummaryCard({
             </div>
             {result.goalReached ? (
               <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-sm font-semibold text-[color:var(--color-mint)]">
-                <FlameIcon size={16} /> Günlük hedefi tamamladın
+                <FlameIcon size={16} /> {t("session.goal_reached")}
               </p>
             ) : null}
           </div>

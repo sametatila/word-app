@@ -191,7 +191,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       score = ai.result.score.overall;
       ok = score >= 60;
     } else {
-      const fb = fallbackAssessment(req);
+      const fb = fallbackAssessment(req, t);
       setResult(fb);
       setFailure(ai.reason);
       ok = fb.checks.filter((c) => c.ok).length >= Math.ceil(fb.checks.length / 2);

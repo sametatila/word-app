@@ -1,6 +1,7 @@
 "use client";
 
 import { overallScore, type AssessRequest, type Assessment } from "@/lib/assess-prompts";
+import { translate, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 
 /**
  * `/api/assess` istemci yardımcısı (WP-03).
@@ -153,7 +154,15 @@ function minWordsFrom(constraints: string[] | undefined): number | null {
  * satırıyla birlikte gösterilir; hiçbir zaman gerçek değerlendirme gibi
  * sunulmaz (`offline: true`).
  */
-export function fallbackAssessment(req: AssessRequest): FallbackAssessment {
+export function fallbackAssessment(
+  req: AssessRequest,
+  /**
+   * Geri bildirim metinleri ARAYÜZ metni; Türkçe sabit yazılıydı ve AI
+   * kapalıyken İngilizce/Almanca arayüzde Türkçe cümleler çıkıyordu.
+   * Verilmezse Türkçeye düşer (eski çağıranlar kırılmasın diye).
+   */
+  t: (key: string, vars?: Record<string, string | number>) => string = (k, v) => translate(DEFAULT_NATIVE, k, v),
+): FallbackAssessment {
   const text = req.answer.text.trim();
   const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
   const folded = ` ${fold(text)} `;
@@ -198,14 +207,14 @@ export function fallbackAssessment(req: AssessRequest): FallbackAssessment {
     corrected: text,
     praise_tr:
       words >= minWords
-        ? "Görevin uzunluğunu tutturdun."
+        ? t("assessfb.length_ok")
         : words > 0
-          ? "Başladın; biraz daha uzatınca görev tamamlanır."
+          ? t("assessfb.length_short")
           : "",
     next_tip_tr: missing.length
-      ? `Şu kalıbı da kullanmayı dene: ${missing[0]}`
+      ? t("assessfb.try_phrase", { phrase: missing[0] })
       : turkishChars
-        ? "Metinde Türkçe harf var; Almanca klavye düzenine geç."
-        : "AI açıldığında aynı metni tekrar değerlendirebilirsin.",
+        ? t("assessfb.turkish_chars")
+        : t("assessfb.retry_when_ai"),
   };
 }

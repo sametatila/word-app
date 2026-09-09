@@ -167,8 +167,8 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         </p>
         {initialLast ? (
           <p className="mt-3 rounded-xl px-3 py-2 text-xs surface-2">
-            Son alma: {initialLast.at.slice(0, 10)} · öneri <strong>{initialLast.suggested}</strong>
-            {initialLast.accepted ? ` · seçtiğin ${initialLast.accepted}` : ""} · {describePerSkill(initialLast.perSkill)}
+            {t("placement.last_taken", { date: initialLast.at.slice(0, 10) })} <strong>{initialLast.suggested}</strong>
+            {initialLast.accepted ? ` ${t("placement.you_chose", { level: initialLast.accepted })}` : ""} · {describePerSkill(initialLast.perSkill)}
           </p>
         ) : null}
         {canRetake ? (
@@ -219,7 +219,9 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           ))}
         </div>
         <button type="button" onClick={() => void accept()} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
-          {chosen === result.suggested ? `${chosen} ile devam et` : `${chosen} seç ve devam et`}
+          {chosen === result.suggested
+            ? t("placement.continue_with", { level: chosen ?? "" })
+            : t("placement.pick_and_continue", { level: chosen ?? "" })}
         </button>
       </section>
     );
@@ -315,7 +317,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           {item.segments.map((s, i) => (
             <button key={i} type="button" onClick={() => speakGerman(s.text)} className="chip flex items-center gap-1.5 px-3 py-1.5 text-xs">
               <SpeakerIcon size={13} />
-              {s.speaker ? `${s.speaker} · ` : ""}Bölüm {i + 1}
+              {s.speaker ? `${s.speaker} · ` : ""}{t("placement.section_n", { n: i + 1 })}
             </button>
           ))}
         </div>

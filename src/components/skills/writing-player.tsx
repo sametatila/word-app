@@ -391,7 +391,7 @@ function FreeTask({
       setResult(ai.result);
       setFailure(null);
     } else {
-      setResult(fallbackAssessment(req));
+      setResult(fallbackAssessment(req, t));
       setFailure(ai.reason);
       if (ai.reason === "not_configured" || ai.reason === "upstream" || ai.reason === "timeout") {
         // Metin kaybolmasın: sunucu kuyruğa alır, servis dönünce puanlar.
@@ -624,7 +624,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
       setResult(ai.result);
       setOk(ai.result.score.overall >= 70);
     } else {
-      const fb = fallbackAssessment(req);
+      const fb = fallbackAssessment(req, t);
       setResult(fb);
       setFailure(ai.reason);
       setOk(fb.checks.filter((c) => c.kind === "target").every((c) => c.ok) && fb.words >= 3);

@@ -1,4 +1,6 @@
 import "server-only";
+import { langOf } from "@/lib/social/notify";
+import { translate } from "@/lib/i18n/dict";
 import { createHash } from "node:crypto";
 import { and, desc, eq, gte, isNotNull, isNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
@@ -223,9 +225,16 @@ export async function runAssessQueue(limit = 20): Promise<{ pending: number; don
       await track(row.userId, "production_attempt", row.day as unknown as string, result.score.overall, productionKind(req.kind));
       done++;
       try {
+        /*
+          Bildirim metni ALICININ dilinde. Türkçe sabit yazılıydı: arayüzü
+          İngilizce olan kullanıcıya Türkçe bildirim düşüyordu. Sosyal
+          bildirimler bunu zaten doğru yapıyor (lib/social/notify `langOf`),
+          değerlendirme kuyruğu geride kalmıştı.
+        */
+        const lang = await langOf(row.userId);
         await sendToUser(row.userId, {
-          title: "Yazın değerlendirildi",
-          body: `Puan ${result.score.overall}/100 — düzeltmelere bak.`,
+          title: translate(lang, "push.assess_title"),
+          body: translate(lang, "push.assess_body", { score: result.score.overall }),
           url: "/profile#writings",
           tag: "assess",
         });

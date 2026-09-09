@@ -141,7 +141,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     const ai = await askAssess(req);
     if (ai.ok) setResult(ai.result);
     else {
-      setResult(fallbackAssessment(req));
+      setResult(fallbackAssessment(req, t));
       setFailure(ai.reason);
     }
     track("nav", said.length, "roleplay_exam:done");
