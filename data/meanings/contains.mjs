@@ -624,6 +624,26 @@ function contains(sentence, headword) {
           .replace(/[^a-z]/g, "")
           .replace(/(en|n)$/, "");
         if (short.length >= 2 && hasStart(short)) return true;
+        /*
+          Ayrılabilir ön ekin ALTINDA bir de ayrılmayan ön ek durabiliyor:
+          "einberufen" = ein + be + rufen. Bu blok onu denemiyordu ve
+          "berief … ein" reddediliyordu.
+
+          "einbehalten" ("behielt … ein") tesadüfen geçiyordu: a→ie Ablaut
+          ailesi "behalt"tan "behielt" üretiyor. Yani kusur ancak gövdesi
+          nadir bir Ablaut ailesinde olan fiillerde görünür oluyordu —
+          "rufen"in u→ie'si Almancada neredeyse tek örnek. Zinciri kurmak
+          tek fiili değil bütün birleşimi çözüyor.
+        */
+        for (const pre of INSEPARABLE) {
+          if (!rest.startsWith(pre) || rest.length - pre.length < 4) continue;
+          if (
+            irrForms(rest.slice(pre.length)).some((f) =>
+              hasRoot(`${pre}${flat(f).replace(/[^a-z]/g, "")}`),
+            )
+          )
+            return true;
+        }
       }
 
     // Ayrılmayan ön ekin altındaki güçlü gövde (bkz. AYRILMAYAN).
