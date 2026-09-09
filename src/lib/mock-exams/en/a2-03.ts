@@ -60,7 +60,7 @@ export const EN_A2_03: MockPaper = {
               genre: "Email",
               genreTr: "E-posta",
               title: "Water on Thursday",
-              body: `Dear residents, the water will be off on Thursday between nine and twelve. Please fill some bottles on Wednesday evening. The heating is not affected and works as usual.`,
+              body: `Dear residents, the water will be off on Thursday between nine and twelve. Please fill some bottles on Wednesday evening. The heating still works as usual.`,
             },
             {
               kind: "text",
@@ -111,7 +111,7 @@ export const EN_A2_03: MockPaper = {
               options: ["The heating stops for three hours", "The bottles are not delivered", "There is no water in the morning"],
               answer: 2,
               explain:
-                "Su «off on Thursday between nine and twelve», yani sabah kesik. E-posta ısıtmanın etkilenMEdiğini açıkça söylüyor («not affected»); şişeler teslim edilmiyor, okuyucunun çarşamba akşamı kendisi dolduracağı şeyler.",
+                "Su «off on Thursday between nine and twelve», yani sabah kesik. E-posta ısıtmanın sürdüğünü açıkça söylüyor («The heating still works as usual»); şişeler teslim edilmiyor, okuyucunun çarşamba akşamı kendisi dolduracağı şeyler.",
             },
             {
               kind: "mcq",
