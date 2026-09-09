@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
+import { EmptyCard } from "@/components/empty-card";
+import { TargetIcon } from "@/components/icons";
 import { RowSkeleton } from "@/components/skeleton";
 import { errorText, social } from "@/lib/social/client";
 import type { FriendRow, QuestView } from "@/lib/social/types";
@@ -62,28 +64,39 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
         <QuestCard key={q.id} q={q} me={me} busy={busy} onAct={act} />
       ))}
       {!current.length ? (
-        <div className="card p-5 text-center">
-          <p className="font-bold">{t("quests.no_shared_quest_this_week")}</p>
-          <p className="muted mt-1 text-sm">{t("quests.empty_with_friends")}</p>
-          {friends.length ? (
-            <button className="btn btn-primary mt-4 h-9 px-4 text-xs" onClick={() => setPick((p) => !p)} disabled={!canStart}>
-              {t("quests.choose_friend")}
-            </button>
-          ) : (
-            <p className="muted mt-3 text-xs">{t("quests.empty_no_friends")}</p>
-          )}
+        <div>
+          {/* METİN İKİSİNDEN BİRİ. Web ikisini birden yazıyordu: arkadaşı
+              olmayan kullanıcı önce "bir arkadaşınla birlikte hedef XP topla"
+              cümlesini, hemen altında da "önce bir arkadaş ekle"yi görüyordu —
+              ilk cümle olmayan bir arkadaşı varsayıyor. Android bu ikisinden
+              yalnız durumu anlatanı gösteriyor. */}
+          <EmptyCard
+            icon={TargetIcon}
+            title={t("quests.no_shared_quest_this_week")}
+            text={t(friends.length ? "quests.empty_with_friends" : "quests.empty_no_friends")}
+            action={
+              friends.length ? (
+                <button className="btn btn-primary h-9 px-4 text-xs" onClick={() => setPick((p) => !p)} disabled={!canStart}>
+                  {t(pick ? "common.discard" : "quests.choose_friend")}
+                </button>
+              ) : undefined
+            }
+          />
           {pick ? (
-            <ol className="mt-3 divide-y divide-[color:var(--border)] text-left">
-              {friends.map((f) => (
-                <li key={f.userId} className="flex items-center gap-3 py-2">
-                  <Avatar userId={f.userId} name={f.name} size={32} />
-                  <span className="min-w-0 flex-1 truncate text-sm font-semibold">{f.name ?? t("social.unnamed")}</span>
-                  <button className="btn btn-primary h-8 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.inviteQuest(f.userId))}>
-                    {t("quests.invite")}
-                  </button>
-                </li>
-              ))}
-            </ol>
+            <div className="mt-3">
+              <p className="muted mb-1.5 px-1 text-caption font-semibold uppercase tracking-wide">{t("quests.with")}</p>
+              <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
+                {friends.map((f) => (
+                  <li key={f.userId} className="flex items-center gap-3 px-4 py-2.5">
+                    <Avatar userId={f.userId} name={f.name} size={32} />
+                    <span className="min-w-0 flex-1 truncate text-sm font-semibold">{f.name ?? t("social.unnamed")}</span>
+                    <button className="btn btn-primary h-8 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.inviteQuest(f.userId))}>
+                      {t("quests.invite")}
+                    </button>
+                  </li>
+                ))}
+              </ol>
+            </div>
           ) : null}
         </div>
       ) : null}
