@@ -1,0 +1,4 @@
+# Üretilen kareler depoda durmaz: girdiden tek komutla yeniden üretiliyor.
+# Girdi (raw/) ve plan (plan/) depoda; çıktı değil.
+play/
+appstore/

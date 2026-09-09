@@ -1,0 +1,30 @@
+[
+ {
+  "src": "docs/store/raw/mock-list.png",
+  "caption": "Her seviyede 12 tam deneme kâğıdı"
+ },
+ {
+  "src": "docs/store/raw/mock-task.png",
+  "caption": "Gerçek sınav görevi, gerçek süre"
+ },
+ {
+  "src": "docs/store/raw/cando.png",
+  "caption": "Hangi yeterliliği kazandığını gör",
+  "anchor": 0.0
+ },
+ {
+  "src": "docs/store/raw/skills.png",
+  "caption": "Okuma, dinleme, yazma, konuşma",
+  "anchor": 0.0
+ },
+ {
+  "src": "docs/store/raw/daily.png",
+  "caption": "Kelime turları, unutmadan önce",
+  "anchor": 0.0
+ },
+ {
+  "src": "docs/store/raw/walk.png",
+  "caption": "Yürürken de çalış, ekrana bakmadan",
+  "anchor": 0.3
+ }
+]

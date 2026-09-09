@@ -1,0 +1,28 @@
+[
+ {
+  "src": "docs/store/raw/walk.png",
+  "caption": "Yürürken konuş, ekrana bakmadan",
+  "anchor": 0.3
+ },
+ {
+  "src": "docs/store/raw/mic.png",
+  "caption": "Mikrofon yalnız sen başlatınca açılır"
+ },
+ {
+  "src": "docs/store/raw/daily.png",
+  "caption": "Unutmadan hemen önce tekrar",
+  "anchor": 0.0
+ },
+ {
+  "src": "docs/store/raw/lesson.png",
+  "caption": "Kural Türkçe anlatılıyor"
+ },
+ {
+  "src": "docs/store/raw/mock-list.png",
+  "caption": "Her seviyede 12 tam deneme kâğıdı"
+ },
+ {
+  "src": "docs/store/raw/board.png",
+  "caption": "Haftalık sıralama, arkadaşlarınla"
+ }
+]

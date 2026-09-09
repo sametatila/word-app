@@ -1,0 +1,30 @@
+[
+ {
+  "src": "docs/store/raw/lesson.png",
+  "caption": "Kural Türkçe anlatılıyor"
+ },
+ {
+  "src": "docs/store/raw/daily.png",
+  "caption": "Duyduğunu tanı, anlamını seç",
+  "anchor": 0.0
+ },
+ {
+  "src": "docs/store/raw/home.png",
+  "caption": "Günde on dakika, kaldığın yerden",
+  "anchor": 0.0
+ },
+ {
+  "src": "docs/store/raw/skills.png",
+  "caption": "Okuma, dinleme, yazma, konuşma",
+  "anchor": 0.0
+ },
+ {
+  "src": "docs/store/raw/mock-list.png",
+  "caption": "Her seviyede 12 tam deneme kâğıdı"
+ },
+ {
+  "src": "docs/store/raw/walk.png",
+  "caption": "Ekran kapalıyken bile çalışır",
+  "anchor": 0.3
+ }
+]
