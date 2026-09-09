@@ -332,7 +332,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * Hem ref hem durum: döngü içinden okunuyor, ekranda gösteriliyor.
    */
   const armed = useRef(false);
-  const [pocket, setPocket] = useState<"off" | "armed">("off");
+  const [, setPocket] = useState<"off" | "armed">("off");
   /**
    * Ekran KARANLIK ama açık — "cep kilidi".
    *
@@ -1039,7 +1039,6 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         if (!alive()) return;
       }
 
-      // eslint-disable-next-line no-constant-condition
       while (true) {
       for (let i = start; i < current.length; i++) {
         if (!alive()) return;
@@ -1346,7 +1345,15 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     void loop(rounds, from);
   }
 
-  /** "Cebe koy" dokunuşu — okumaz, döngüye not bırakır (bkz. `announce`). */
+  /**
+   * "Cebe koy" dokunuşu — okumaz, döngüye not bırakır (bkz. `announce`).
+   *
+   * ÇAĞIRAN YOK. Silinmedi, çünkü `arm` (mikrofonlu cep yolu) yalnız buradan
+   * kuruluyor ve dosyanın kendi yorumları o yolu yaşıyormuş gibi anlatıyor
+   * (bkz. aşağıda "Cep yolu 'Cebe koy' ile, o an kuruluyor"). Düğme bugün
+   * `darken`e bağlı; ikisinden hangisinin doğru olduğu davranış sorusu, lint
+   * temizliğinin konusu değil.
+   */
   async function toPocket() {
     const ok = await arm();
     announce.current = t(ok ? "walk.pocket_armed" : "walk.pocket_failed");

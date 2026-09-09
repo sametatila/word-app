@@ -258,7 +258,6 @@ function VerdictBar({
     // Erdi başka yerdeyse (altta yürüyor, köşede kutluyor) şeridi getiremez.
     if (!claimStage("pull", PULL_MS + PULL_LINGER_MS)) return null;
     return Math.random() < 0.5 ? "right" : "left";
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [verdict, still, pull]);
 
   useEffect(() => {

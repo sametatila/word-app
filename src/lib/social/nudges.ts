@@ -1,6 +1,6 @@
 import { and, eq, gte, inArray } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { nudges, profiles } from "@/lib/db/schema";
+import { nudges } from "@/lib/db/schema";
 import { track } from "@/lib/events";
 import { blockedEitherWay } from "./blocks";
 import { serverToday } from "./dates";
@@ -30,13 +30,13 @@ export async function sendNudge(me: string, to: string, kind: NudgeKind): Promis
   if (!total.ok) throw new SocialError("rate_limited", 429, total.retryAfterSec);
 
   const [row] = await db.insert(nudges).values({ fromUserId: me, toUserId: to, kind }).returning({ id: nudges.id });
-  const [users, target, weekly] = await Promise.all([
+  // Burada üçüncü bir sorgu daha vardı (hedefin serisi ve adı) ama sonucu
+  // HİÇ okunmuyordu: her dürtmede boşuna bir veritabanı gidişiydi.
+  const [users, weekly] = await Promise.all([
     publicUsers([me]),
-    db.select({ streak: profiles.currentStreak, name: profiles.displayName }).from(profiles).where(eq(profiles.userId, to)).limit(1),
     weeklyXpFor([to], serverToday()),
   ]);
   const meName = users.get(me)?.name ?? "";
-  const streak = target[0]?.streak ?? 0;
   const xp = weekly.get(to) ?? 0;
   await notify(
     to,

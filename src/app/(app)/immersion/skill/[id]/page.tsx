@@ -72,7 +72,6 @@ function pickPlayer(exercise: NonNullable<Awaited<ReturnType<typeof getExercise>
       if ("tasks" in exercise) return <SpeakingPlayer exercise={exercise} backHref={backHref} />;
       // Diyalog biçimi: içerikte yok, oynatıcısı da yok (WP-23 açık diyalog kaldırıldı).
       notFound();
-    // eslint-disable-next-line no-fallthrough
     default:
       notFound();
   }
