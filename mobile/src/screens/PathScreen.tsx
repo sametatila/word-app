@@ -106,6 +106,35 @@ export function PathScreen() {
   const gridItemWidth = gridItemWidthFor(gridColumnsFor(solGenislik));
   const [seciliIndex, setSeciliIndex] = useState<number | null>(null);
 
+  /*
+   * Modül sınavları. Patika'da duruyorlar çünkü kâğıt modülün KENDİ
+   * derslerinden üretiliyor ve dersleri geçilmemişse motor kâğıdı "deneme"
+   * sayıyor — ön koşul burada, giriş de burada olmalı. Web'de aynı liste
+   * ImmersionHub'ın altında.
+   *
+   * Liste tek istekle geliyor (`GET /api/exam?level=…`); plan kod içinde
+   * sabit olduğu için sunucu uzun süre önbellekliyor. Ağ yoksa bölüm hiç
+   * çizilmiyor: Patika'nın kendisi çevrimdışı çalışmaya devam ediyor.
+   *
+   * KANCA SIRASI: bu ikisi AŞAĞIDA, `if (!path) return` kapısının ALTINDA
+   * duruyordu. İlk çizimde patika henüz null olduğu için hiç çağrılmıyor,
+   * veri gelince çağrılıyorlardı — yani render'lar arasında kanca SAYISI
+   * değişiyordu ve React "Rendered more hooks than during the previous
+   * render" ile ekranı düşürüyordu. Kapının üstüne alındılar; `path?.level`
+   * zaten null'a dayanıklı.
+   */
+  const [moduller, setModuller] = useState<{ index: number; code: string; titleTr: string; titleDe: string }[]>([]);
+  const seviye = path?.level;
+  useEffect(() => {
+    if (!seviye) return;
+    let iptal = false;
+    api<{ modules?: { index: number; code: string; titleTr: string; titleDe: string }[] }>(`/api/exam?level=${seviye}`)
+      .then((d) => { if (!iptal) setModuller(d.modules ?? []); })
+      .catch(() => { /* çevrimdışı: bölüm gösterilmez */ });
+    return () => { iptal = true; };
+  }, [seviye]);
+
+
   if (!path) {
     // Düz spinner yerine patika şeklinde iskelet (algılanan hız).
     return (
@@ -171,27 +200,6 @@ export function PathScreen() {
     olduğunu göremezdi — ana-ayrıntı düzeninde seçimin görünmesi şart.
   */
   const vurguluIndex = ikiPanel ? (secili?.index ?? -1) : path.currentIndex;
-
-  /*
-   * Modül sınavları. Patika'da duruyorlar çünkü kâğıt modülün KENDİ
-   * derslerinden üretiliyor ve dersleri geçilmemişse motor kâğıdı "deneme"
-   * sayıyor — ön koşul burada, giriş de burada olmalı. Web'de aynı liste
-   * ImmersionHub'ın altında.
-   *
-   * Liste tek istekle geliyor (`GET /api/exam?level=…`); plan kod içinde
-   * sabit olduğu için sunucu uzun süre önbellekliyor. Ağ yoksa bölüm hiç
-   * çizilmiyor: Patika'nın kendisi çevrimdışı çalışmaya devam ediyor.
-   */
-  const [moduller, setModuller] = useState<{ index: number; code: string; titleTr: string; titleDe: string }[]>([]);
-  const seviye = path?.level;
-  useEffect(() => {
-    if (!seviye) return;
-    let iptal = false;
-    api<{ modules?: { index: number; code: string; titleTr: string; titleDe: string }[] }>(`/api/exam?level=${seviye}`)
-      .then((d) => { if (!iptal) setModuller(d.modules ?? []); })
-      .catch(() => { /* çevrimdışı: bölüm gösterilmez */ });
-    return () => { iptal = true; };
-  }, [seviye]);
 
   const govde = (
     <>
