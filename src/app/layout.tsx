@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { getLang } from "@/lib/i18n/server";
@@ -11,8 +12,7 @@ import { LangProvider } from "@/lib/i18n/client";
  * verilmemişse uygulamanın kök adresi (BETTER_AUTH_URL) kullanılıyor; o da
  * yoksa üretim adresi.
  */
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || process.env.BETTER_AUTH_URL || "https://www.lernomi.app";
+const siteUrl = SITE_URL;
 
 // Tek dile kilitlenmeyen tanım: kurs listesi büyüdükçe (Almanca-İngilizce
 // paritesi) burayı yeniden yazmak gerekmesin.
