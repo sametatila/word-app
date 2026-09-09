@@ -79,10 +79,10 @@
     "check:examvocab": "tsx scripts/check-exam-vocab.ts"
   },
   "dependencies": {
-    "better-auth": "^1.2.8",
+    "better-auth": "^1.7.3",
     "drizzle-orm": "^0.45.2",
     "framer-motion": "^12.23.24",
-    "next": "^16.3.0",
+    "next": "^16.3.4",
     "nodemailer": "^6.10.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -104,7 +104,7 @@
     "imagetracerjs": "^1.2.6",
     "pg": "^8.22.0",
     "playwright-core": "^1.62.1",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
