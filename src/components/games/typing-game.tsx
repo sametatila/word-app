@@ -6,7 +6,7 @@ import { classifyTyping, miss } from "@/lib/errors";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult } from "./types";
+import { matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
@@ -166,7 +166,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
       }
       prompt={
         <span className="text-2xl font-bold sm:text-3xl">
-          {word.tr}
+          {meaningOf(word, lang)}
           {word.en ? (
             <span className="block text-base font-normal opacity-60" lang="en">
               {word.en}
@@ -177,7 +177,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
       hint={
         <div className="flex items-center justify-center gap-2">
           <span className="surface-2 rounded-full px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide">
-            {typLabel(word.typ, word.tr, lang)}
+            {typLabel(word.typ, meaningOf(word, lang), lang)}
           </span>
           <span>
             {/* Baş harf kalın kalmalı ama cümledeki YERİ dile göre değişiyor:

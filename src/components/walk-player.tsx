@@ -1,5 +1,6 @@
 "use client";
 
+import { glossFor, type GlossWord } from "@/lib/option-label";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
@@ -138,14 +139,18 @@ function encourage(t: T): string {
 /**
  * Anlamın SESLİ hâli — metin ve ses BİRLİKTE seçiliyor.
  *
- * `words` tablosunda yalnız Türkçe ve İngilizce karşılık var. Almanca arayüzde
- * Almanca karşılık olmadığı için metin Türkçe kalıyor; o metni anlatım sesiyle
- * (Almanca) okutmak Türkçeyi Almanca sesle okumak olurdu. Bu yüzden karar tek
- * yerde: karşılık hangi dildeyse ses de o dilde.
+ * Karşılık hangi dildeyse ses de o dilde: Türkçe bir metni Almanca anlatım
+ * sesiyle okutmak, kulakta anlamsız bir şey üretir.
+ *
+ * Metin `glossFor`dan geliyor, yani tur havuzuyla AYNI kuraldan: anadilde
+ * karşılığı olmayan kelime zaten tura girmiyor (sunucu süzüyor), dolayısıyla
+ * buraya karşılıksız bir kelime gelmemeli. Geldiğinde Türkçeye düşmek yerine
+ * boş segment dönüyor — yanlış dilde okumaktansa okumamak.
  */
-function glossSegment(word: { tr: string; en: string | null }, lang: NativeLang): SpeechSegment {
-  if (lang === "en" && word.en) return { lang: "en", text: word.en, narration: true };
-  return { lang: "tr", text: word.tr, narration: lang === "tr" };
+function glossSegment(word: GlossWord, lang: NativeLang): SpeechSegment {
+  const g = glossFor(word, lang);
+  if (!g) return { lang: "tr", text: "", narration: false };
+  return { lang, text: g.text, narration: true };
 }
 
 /**
@@ -1085,7 +1090,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
           // Yeni kelime: sorulmuyor, tanıtılıyor. Ekranda da öyle çalışıyor.
           if (round.game === "intro") {
-            setPrompt({ tr: word.tr, de: target });
+            setPrompt({ tr: glossFor(word, lang)?.text ?? "", de: target });
             setVerdict(null);
             setPhase("speaking");
             await say([
@@ -1110,12 +1115,12 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           // kelime ikinci kez gelmesin.
           askedIds.current.add(word.id);
 
-          setPrompt({ tr: word.tr, de: target });
+          setPrompt({ tr: glossFor(word, lang)?.text ?? "", de: target });
           setVerdict(null);
 
           // Soru: Türkçe karşılık okunuyor, ardından mikrofon açılıyor.
           setPhase("speaking");
-          updatePocketTitle(word.tr);
+          updatePocketTitle(glossFor(word, lang)?.text ?? "");
           await say([glossSegment(word, lang)]);
           if (!alive()) return;
 

@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
-import { withArtikel, shuffle, type GameProps, type GameResult } from "./types";
+import { withArtikel, shuffle, type GameProps, type GameResult , meaningOf, meaningSubOf } from "./types";
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
 import { speakGerman } from "@/components/speak-button";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type MatchRound = Extract<Round, { game: "match" }>;
 
@@ -17,6 +17,7 @@ type RightItem = { wordId: number; tr: string; en: string | null };
 
 export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   const tx = useT();
+  const lang = useLang();
   const { words } = round;
 
   const [rightItems, setRightItems] = useState<RightItem[]>([]);
@@ -34,7 +35,9 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   const doneRef = useRef(false);
 
   useEffect(() => {
-    setRightItems(shuffle(words.map((w) => ({ wordId: w.id, tr: w.tr, en: w.en }))));
+    // Sağ sütun ANADİLDE: eşleştirme, kelimeyle anlamı arasında kuruluyor ve
+    // anlam kullanıcının bildiği dilde olmalı.
+    setRightItems(shuffle(words.map((w) => ({ wordId: w.id, tr: meaningOf(w, lang), en: meaningSubOf(w, lang) }))));
     setSelectedLeft(null);
     setSelectedRightIdx(null);
     setMatched(new Set());

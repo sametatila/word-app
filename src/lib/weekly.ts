@@ -4,8 +4,9 @@ import { db } from "@/lib/db";
 import { exams, userWords, words } from "@/lib/db/schema";
 import { chatConfigured } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
-import { makeRound, shiftDay, submitAnswers, toRoundWord, weekStart } from "@/lib/session";
+import { makeRound, shiftDay, submitAnswers, toRoundWord, weekStart , ensureProfile } from "@/lib/session";
 import type { Answer, Round } from "@/lib/types";
+import { nativeOf } from "@/lib/courses";
 
 /**
  * Haftalık kullanım sınavı (plan WP-42).
@@ -86,6 +87,8 @@ async function recentlyExamined(userId: string, week: string): Promise<Set<numbe
 
 export async function buildWeeklyExam(userId: string, course: string, level: string, day: string): Promise<WeeklyExam> {
   const week = weekStart(day);
+  // Sınav soruları da anadilde sorulur; `makeRound` anadili zorunlu istiyor.
+  const native = nativeOf((await ensureProfile(userId))?.nativeLang);
   const skip = await recentlyExamined(userId, week);
   const pick = async (mastered: boolean) => {
     const rows = await db
@@ -124,7 +127,7 @@ export async function buildWeeklyExam(userId: string, course: string, level: str
     const wanted = GAME_PLAN[i] ?? "typing";
     const order: Round["game"][] = wanted === "free_sentence" && !ai ? ["typing"] : [wanted, "typing"];
     for (const game of order) {
-      const r = makeRound(game, word, pool, nextId, "strong");
+      const r = makeRound(game, word, pool, nextId, "strong", native);
       if (!r) continue;
       // Yazarak tamamla: sınavda şık yok.
       if (r.game === "cloze") r.mode = "type";

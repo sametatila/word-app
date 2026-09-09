@@ -5,7 +5,7 @@ import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
-import { withArtikel, type GameProps, type GameResult } from "./types";
+import { withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText, SentenceTranslation } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
@@ -31,6 +31,10 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
   const tx = useT();
   const lang = useLang();
   const { word, options } = round;
+  // Doğru cevap ANADİLDEKİ anlam: şıklar sunucuda anadilde üretiliyor,
+  // karşılaştırma da aynı dilden yapılmalı — eskiden `word.tr` idi ve
+  // İngilizce oynayan kullanıcıda hiçbir şık doğru olamıyordu.
+  const meaning = meaningOf(word, lang);
   const spoken = withArtikel(word);
   const speechAvailable = useSpeechAvailable();
 
@@ -53,7 +57,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
   function choose(option: Option) {
     if (picked) return;
     setPicked(option.text);
-    const isCorrect = option.text === word.tr;
+    const isCorrect = option.text === meaning;
     const latencyMs = Date.now() - started.current;
     vibrate(isCorrect ? "correct" : "wrong");
     // Tur "Devam" ile kapanıyor (bkz. game-shell): dinleme turunda cevabı
@@ -75,15 +79,15 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
   return (
     <GameShell
       label={tx("games.listen")}
-      verdict={picked == null ? null : picked === word.tr ? "correct" : "wrong"}
+      verdict={picked == null ? null : picked === meaning ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
-      why={picked != null && picked !== word.tr ? whyFor({ type: "listening", word, detail: picked }, lang) : null}
+      why={picked != null && picked !== meaning ? whyFor({ type: "listening", word, detail: picked }, lang) : null}
       feedback={
         // Bu oyunda öğrenilen şey sesin YAZIMI: şeritte duyulan kelime
         // yazıyla duruyor. Örnek cümle şeride girmiyor, kendi yerinde kalıyor
         // — şerit tek bakışta okunan bir cevap.
         <span>
-          <strong>{spoken}</strong> — {word.tr}
+          <strong>{spoken}</strong> — {meaningOf(word, lang)}
         </span>
       }
       prompt={
@@ -120,7 +124,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {options.map((option, i) => {
-          const isAnswer = option.text === word.tr;
+          const isAnswer = option.text === meaning;
           const state =
             picked == null
               ? ""

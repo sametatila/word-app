@@ -28,6 +28,7 @@
     "test:apple": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-apple.ts",
     "test:premium": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-premium.ts",
     "test:legal": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal.ts",
+    "test:gloss": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-gloss.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",
     "test:track": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-track.ts",

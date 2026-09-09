@@ -6,7 +6,7 @@ import { classifyTyping, miss } from "@/lib/errors";
 import { AnimatePresence, motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
-import { matchesAnswer, type GameProps, type GameResult } from "./types";
+import { matchesAnswer, type GameProps, type GameResult , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
@@ -96,7 +96,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
       }
       feedback={
         <span>
-          <strong>{answer}</strong> — {word.tr}
+          <strong>{answer}</strong> — {meaningOf(word, lang)}
           {word.en ? (
             <span className="font-normal opacity-70" lang="en">
               {" "}
@@ -163,7 +163,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
             autoCorrect="off"
             spellCheck={false}
             lang="de"
-            placeholder={tx("rounds.write_in_blank", { hint: word.tr })}
+            placeholder={tx("rounds.write_in_blank", { hint: meaningOf(word, lang) })}
             className={`card min-h-14 w-full px-4 text-lg outline-none ${
               picked != null && !correct ? "animate-shake border-[color:var(--color-rose)]" : ""
             } ${picked != null && correct ? "border-[color:var(--color-mint)]" : ""}`}

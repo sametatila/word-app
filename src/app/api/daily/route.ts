@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
+import { nativeOf } from "@/lib/courses";
 import { ensureProfile } from "@/lib/session";
 import { awardActivity, clampDay } from "@/lib/award";
 import {
@@ -36,7 +37,7 @@ export async function GET(req: Request) {
 
     // Oynanmışsa tur gönderilmiyor: cevapları elinde tutan bir istemci, ikinci
     // hakkı olmasa bile turu önden görebilirdi.
-    const rounds = played ? [] : await buildDailyRounds(profile.course, profile.level, day);
+    const rounds = played ? [] : await buildDailyRounds(profile.course, profile.level, day, nativeOf(profile.nativeLang));
 
     return NextResponse.json({
       day,
@@ -85,7 +86,7 @@ export async function POST(req: Request) {
 
   try {
     const profile = await ensureProfile(userId);
-    const rounds = await buildDailyRounds(profile.course, profile.level, day);
+    const rounds = await buildDailyRounds(profile.course, profile.level, day, nativeOf(profile.nativeLang));
     const total = rounds.length;
     if (!total) return NextResponse.json({ error: "no_round" }, { status: 400 });
 

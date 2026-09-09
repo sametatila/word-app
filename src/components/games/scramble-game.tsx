@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { normalize, withArtikel, type GameProps, type GameResult } from "./types";
+import { normalize, withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
 import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
@@ -165,7 +165,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
       }
       prompt={
         <span className="brand-text text-2xl font-bold sm:text-3xl">
-          {word.tr}
+          {meaningOf(word, lang)}
           {/* Karıştırılmış harflerden kelimeyi kuran şey anlam; anlam Türkçede
               başka bir kelimeyle çakışıyorsa İngilizce satır ayırıyor. */}
           {word.en ? (

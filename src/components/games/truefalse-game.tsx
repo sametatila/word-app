@@ -6,7 +6,7 @@ import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
-import { withArtikel, type GameProps, type GameResult } from "./types";
+import { withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
@@ -71,7 +71,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
       feedback={
         <span>
           {withArtikel(word)} ={" "}
-          <strong>{word.tr}</strong>
+          <strong>{meaningOf(word, lang)}</strong>
           {word.en ? (
             <span className="font-normal opacity-70" lang="en">
               {" "}

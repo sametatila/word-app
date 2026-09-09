@@ -8,6 +8,7 @@ import { lessonBoard } from "./progress";
 import { MODULE_SIZE, moduleTheme } from "./modules";
 import { moduleContent } from "./module-content";
 import type { Round } from "@/lib/types";
+import { nativeOf } from "@/lib/courses";
 
 /**
  * Modül sınavı — ders yolunun patron turu.
@@ -74,6 +75,7 @@ export async function buildModuleBoss(
 ): Promise<BossPayload> {
   const profile = await ensureProfile(userId);
   const course = profile.course;
+  const native = nativeOf(profile.nativeLang);
 
   const inLevel = LESSONS.filter((l) => l.course === course && l.level === level);
   const chunk = inLevel.slice(moduleIndex * MODULE_SIZE, (moduleIndex + 1) * MODULE_SIZE);
@@ -166,7 +168,7 @@ export async function buildModuleBoss(
   for (let i = 0; rounds.length < BOSS_ROUNDS && i < BOSS_ROUNDS * 4; i++) {
     const word = shuffled[i % shuffled.length];
     const game = order[i % order.length];
-    const round = makeRound(game, toRoundWord(word, false), distractors, nextId, "solid");
+    const round = makeRound(game, toRoundWord(word, false), distractors, nextId, "solid", native);
     if (round) rounds.push(round);
   }
 

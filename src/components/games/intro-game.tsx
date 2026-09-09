@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
-import { grammarNote, typLabel, withArtikel, type GameProps } from "./types";
+import { grammarNote, typLabel, withArtikel, type GameProps , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
 import { firstExample } from "@/lib/example";
 import { SentenceTranslation } from "@/components/meaning-text";
@@ -88,7 +88,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           <SpeakButton text={withArtikel(word)} />
         </div>
         <p className="muted mt-1 text-sm">
-          {typLabel(word.typ, word.tr, lang)}
+          {typLabel(word.typ, meaningOf(word, lang), lang)}
           {grammarNote(word, lang) ? ` · ${grammarNote(word, lang)}` : ""}
         </p>
 
@@ -98,7 +98,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           transition={{ duration: 0.3 }}
           className="mt-4 text-xl font-semibold text-[color:var(--color-brand)]"
         >
-          {word.tr}
+          {meaningOf(word, lang)}
           {/* İngilizce Türkçenin altında, bir kademe küçük: kartın merkezinde
               hâlâ tek bir karşılık var, ikincisi onu doğrulayan satır. */}
           {word.en ? (

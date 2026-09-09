@@ -46,6 +46,15 @@ export type Course = {
    * yapmak hem seçimi hem API kabulünü birlikte açar.
    */
   enabled: boolean;
+  /**
+   * İlk açılışta yeni kullanıcıya sunulur mu.
+   *
+   * `enabled`den AYRI: duraklatılmış bir kurs (Züritüütsch) mevcut
+   * öğrencisi için açık kalmalı ama yeni gelene önerilmemeli. Mobil bu
+   * ayrımı baştan beri taşıyordu; web'de alan yoktu ve onboarding elle
+   * yazılmış bir listeyle Züritüütsch'ü yeni kullanıcıya sunuyordu.
+   */
+  offeredToNewUsers: boolean;
 };
 
 export const COURSES: Course[] = [
@@ -59,6 +68,7 @@ export const COURSES: Course[] = [
       de: "Hochdeutsch · CEFR A1–C1",
     },
     enabled: true,
+    offeredToNewUsers: true,
   },
   {
     id: "gsw-zh",
@@ -70,6 +80,7 @@ export const COURSES: Course[] = [
       de: "Züritüütsch · Schweizer Dialekt",
     },
     enabled: true,
+    offeredToNewUsers: false, // duraklatılmış lehçe kursu — mevcut öğrenciye açık, yeniye sunulmuyor
   },
   // Kelime katmanı hazır; ders/beceri içeriği henüz yok.
   {
@@ -82,6 +93,7 @@ export const COURSES: Course[] = [
       de: "Englisch · CEFR A1–C1",
     },
     enabled: true,
+    offeredToNewUsers: true,
   },
 ];
 
@@ -128,6 +140,18 @@ export function acceptsCourse(value: string): boolean {
  * Kurs doğrulamasının eşi: arayüz dili de sunucuya yazılıyor (cihaz değişince
  * tercih kaybolmasın diye) ve serbest metin kabul edilmemeli.
  */
+/**
+ * Profilden okunan ham değeri geçerli bir anadile çevirir.
+ *
+ * `profiles.native_lang` NULL olabilir (alan sonradan eklendi) ve serbest
+ * metin taşımamalı. Tek bir normalleştirici olması önemli: her çağıran kendi
+ * `?? "tr"` düşüşünü yazsaydı, bir gün biri onu unutur ve o yolda anlam yanlış
+ * dilde gelirdi.
+ */
+export function nativeOf(value: string | null | undefined): NativeLang {
+  return value && acceptsNativeLang(value) ? (value as NativeLang) : DEFAULT_NATIVE;
+}
+
 export function acceptsNativeLang(value: string): boolean {
   return (NATIVE_LANGS as readonly string[]).includes(value);
 }

@@ -53,6 +53,12 @@ jobs:
       # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.
       - name: Premium kuralları
         run: npm run test:premium
+      # Anadil ekseninin kapısı. Buradaki hata sessiz: anlam yanlış dilde
+      # gelince uygulama çalışmaya devam eder, yalnız kullanıcı anlamadığı
+      # dilde soru görür. En kritik kural sınanıyor — karşılık yoksa Türkçeye
+      # DÜŞÜLMEZ, kelime turdan çıkar.
+      - name: Anadil ekseni
+        run: npm run test:gloss
       # Sözlük kapısı + ham metin kapısı. Birincisi üç dilin anahtar kümesini ve
       # yer tutucularını karşılaştırıyor; ikincisi sözlüğe HİÇ GİRMEMİŞ Türkçe
       # metni sayıyor (cırcırlı taban, yalnız aşağı iner). İkincisi olmadan

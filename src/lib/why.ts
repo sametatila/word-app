@@ -3,6 +3,7 @@ import { parsePluralRule, pluralOf, umlautStem } from "@/lib/german";
 import { ruleFor } from "@/lib/why-rules";
 import { confusableHint } from "@/lib/confusables";
 import { translate, localeOf, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
+import { glossFor } from "@/lib/option-label";
 
 /**
  * "Neden" — yanlış cevabın tek cümlelik gerekçesi (plan WP-13).
@@ -36,6 +37,14 @@ export type WhyWord = {
   de: string;
   artikel: string | null;
   tr: string;
+  /**
+   * Açıklamada kullanılan anlam ANADİLDE seçiliyor (`glossFor`), o yüzden
+   * İngilizce ve Almanca karşılıklar da tipin parçası. İsteğe bağlılar: çağıran
+   * yerlerin bir kısmı yalnız Türkçe taşıyan eski yapılarla çalışıyor ve orada
+   * Türkçe oynayan kullanıcı için sonuç değişmiyor.
+   */
+  en?: string | null;
+  deGloss?: string | null;
   formen?: string | null;
   typ?: string;
 };
@@ -326,8 +335,8 @@ export function whyFor(input: WhyInput, lang: NativeLang = DEFAULT_NATIVE): Why 
         type: "meaning",
         text: w
           ? input.detail
-            ? translate(lang, "why.meaning_wrong_pick", { picked: input.detail, word: withArt(w), meaning: w.tr })
-            : `${withArt(w)} = ${w.tr}.`
+            ? translate(lang, "why.meaning_wrong_pick", { picked: input.detail, word: withArt(w), meaning: glossFor({ ...w, en: w.en ?? null }, lang)?.text ?? w.tr })
+            : `${withArt(w)} = ${glossFor({ ...w, en: w.en ?? null }, lang)?.text ?? w.tr}.`
           : translate(lang, "whyrule.meaning.general"),
         href: null,
       };
@@ -338,7 +347,8 @@ export function whyFor(input: WhyInput, lang: NativeLang = DEFAULT_NATIVE): Why 
         text: w
           ? translate(lang, input.detail ? "why.listening_with_pick" : "why.listening", {
               word: withArt(w),
-              meaning: w.tr,
+              // Açıklama da anadilde: "Auto = araba" mı "Auto = car" mı.
+              meaning: glossFor({ ...w, en: w.en ?? null }, lang)?.text ?? w.tr,
               picked: input.detail ?? "",
             })
           : translate(lang, "whyrule.listening.general"),

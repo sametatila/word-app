@@ -12,7 +12,8 @@ import { nextStreak, shiftDay } from "@/lib/award";
 import { onActivityAwarded } from "@/lib/social/hooks";
 import { xpForChallengeRecord, xpForWager } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
-import { optionLabel } from "@/lib/option-label";
+import { nativeOf, type NativeLang } from "@/lib/courses";
+import { glossFor, hasGloss, optionLabel } from "@/lib/option-label";
 import { pluralChoices } from "@/lib/german";
 import type {
   Answer,
@@ -418,6 +419,8 @@ export async function buildSession(
   // Tüm kelime sorguları aktif kursa bağlıdır: kurs değiştirince diğer kursun
   // tekrarları beklemeye geçer, geri dönünce kaldığı yerden sürer.
   const course = profile.course;
+  // Anlam tarafının dili. Profilde yoksa Türkçe — eski hesaplar böyle kaldı.
+  const native = nativeOf(profile.nativeLang);
 
   // 1) Zamanı gelen tekrarlar
   const dueRows = await db
@@ -542,12 +545,18 @@ export async function buildSession(
   //    seviyeleri. Yakın seviyeden çeldirici, uzak seviyeden gelene göre çok
   //    daha kafa karıştırıcıdır.
   const poolLevels = [...new Set([...band.pool, ...dueRows.map((r) => r.w.niveau)])];
-  const pool = await db
+  const poolRaw = await db
     .select()
     .from(words)
     .where(and(eq(words.course, course), inArray(words.niveau, poolLevels)))
     .orderBy(sql`random()`)
     .limit(140);
+  /*
+    ÇELDİRİCİ HAVUZU DA SÜZÜLÜR. Anadilde karşılığı olmayan kelime yalnız soru
+    olarak değil, ŞIK olarak da çıkmamalı: süzülmeseydi İngilizce oynayan
+    kullanıcı doğru şıkkı İngilizce, çeldiricileri boş görürdü.
+  */
+  const pool = poolRaw.filter((w) => hasGloss(w, native));
 
   // Zorluk kelimenin kendi geçmişinden çıkar, kullanıcının genel notundan değil.
   const dueWords: QueueItem[] = dueRows.map((r) => ({
@@ -632,7 +641,7 @@ export async function buildSession(
     }
   }
 
-  const rounds = composeRounds(dueWords, newWords, pool, only);
+  const rounds = composeRounds(dueWords, newWords, pool, native, only);
 
   // Yazma turlarında aynı Türkçe anlama sahip diğer Almanca kelimeler de kabul
   // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak haksız.
@@ -957,6 +966,7 @@ function composeRounds(
   due: QueueItem[],
   fresh: QueueItem[],
   pool: (typeof words.$inferSelect)[],
+  native: NativeLang,
   only?: PlayableGame,
 ): Round[] {
   const rounds: Round[] = [];
@@ -1028,8 +1038,8 @@ function composeRounds(
         ? // Tek oyun modu: kelimeye o oyun kurulamıyorsa (çoğulu olmayan bir
           // isim, örnek cümlesi olmayan bir kelime) kelime atlanıyor. Zorla
           // başka bir oyuna düşmek, seçimi anlamsız kılardı.
-          makeRound(only, item.word, pool, nextId, item.strength)
-        : pickRound(item.word, item.strength, pool, recent, nextId, item.bias, usage);
+          makeRound(only, item.word, pool, nextId, item.strength, native)
+        : pickRound(item.word, item.strength, pool, recent, nextId, native, item.bias, usage);
     if (!round) continue;
     rounds.push(round);
     meta.set(round.id, item);
@@ -1038,7 +1048,7 @@ function composeRounds(
     if (recent.length > RECENT_GAME_WINDOW) recent.shift();
   }
 
-  if (!only) raiseProductionFloor(rounds, meta, pool, nextId);
+  if (!only) raiseProductionFloor(rounds, meta, pool, nextId, native);
 
   if (useMatch) {
     rounds.push({ id: nextId(), game: "match", words: matchCandidates.map((m) => m.word) });
@@ -1053,6 +1063,7 @@ function raiseProductionFloor(
   meta: Map<string, QueueItem>,
   pool: (typeof words.$inferSelect)[],
   nextId: () => string,
+  native: NativeLang,
 ): void {
   if (PRODUCTION_FLOOR <= 0) return;
   const counted = rounds.filter((r) => r.game !== "intro" && r.game !== "match");
@@ -1070,10 +1081,10 @@ function raiseProductionFloor(
     let alt: Round | null = null;
     if (strength === "solid" || strength === "strong") {
       alt =
-        makeRound(i % 2 ? "translate" : "order", r.word, pool, nextId, strength) ??
-        makeRound("typing", r.word, pool, nextId, strength);
+        makeRound(i % 2 ? "translate" : "order", r.word, pool, nextId, strength, native) ??
+        makeRound("typing", r.word, pool, nextId, strength, native);
     } else {
-      alt = i % 2 ? makeRound("scramble", r.word, pool, nextId, strength) : null;
+      alt = i % 2 ? makeRound("scramble", r.word, pool, nextId, strength, native) : null;
       if (!alt) alt = { id: nextId(), game: "typing", word: r.word, alternatives: [], assist: true } as Round;
     }
     if (!alt) continue;
@@ -1101,6 +1112,7 @@ function pickRound(
   /** Kaçınılacak oyun türleri — arka arkaya (ya da aynı kelimede) tekrar etmesin. */
   avoid: string | string[],
   nextId: () => string,
+  native: NativeLang,
   bias?: "recognition" | "production",
   /** Oturumda her oyunun kaç kez çıktığı; az çıkan öne alınır. */
   usage?: Map<string, number>,
@@ -1144,10 +1156,10 @@ function pickRound(
   const ranked = shuffle(order).sort((a, b) => (usage?.get(a) ?? 0) - (usage?.get(b) ?? 0));
 
   for (const game of ranked) {
-    const round = makeRound(game, word, pool, nextId, strength);
+    const round = makeRound(game, word, pool, nextId, strength, native);
     if (round) return round;
   }
-  return { id: nextId(), game: "choice", word, options: optionsFor(word, pool), direction: "de-tr" };
+  return { id: nextId(), game: "choice", word, options: optionsFor(word, pool, "de-tr", native), direction: "de-tr" };
 }
 
 /**
@@ -1163,7 +1175,16 @@ export function makeRound(
   word: RoundWord,
   pool: (typeof words.$inferSelect)[],
   nextId: () => string,
-  strength: Strength = "solid",
+  strength: Strength,
+  /**
+   * Kullanıcının anadili — turun anlam tarafını belirler.
+   *
+   * VARSAYILANI YOK, ve bu bilinçli: varsayılan "tr" verilseydi bu işlevi
+   * çağıran her yeni yer sessizce Türkçeye düşerdi. Zorunlu olunca derleyici
+   * çağıranları tek tek sayıyor — haftalık sınav, seviye sınavı ve patika
+   * boss turu bu yüzden bulundu.
+   */
+  native: NativeLang,
 ): Round | null {
   switch (game) {
     case "choice": {
@@ -1177,7 +1198,7 @@ export function makeRound(
         id: nextId(),
         game: "choice",
         word,
-        options: optionsFor(word, pool, direction),
+        options: optionsFor(word, pool, direction, native),
         direction,
       };
     }
@@ -1192,13 +1213,13 @@ export function makeRound(
     case "truefalse": {
       // Yarı yarıya doğru/yanlış: ne "hep doğru" ne "hep yanlış" ezberi kurulsun.
       const isTrue = Math.random() < 0.5;
-      const claim = isTrue ? { text: word.tr, sub: word.en } : pickFalseClaim(word, pool);
+      const claim = isTrue ? glossFor(word, native) : pickFalseClaim(word, pool, native);
       if (!claim) return null;
       return { id: nextId(), game: "truefalse", word, claim, isTrue };
     }
     case "listen":
       // Şıklar Türkçe: sorulan şey yazım değil, sesin hangi anlama geldiği.
-      return { id: nextId(), game: "listen", word, options: optionsFor(word, pool, "de-tr") };
+      return { id: nextId(), game: "listen", word, options: optionsFor(word, pool, "de-tr", native) };
     case "plural": {
       // Yalnızca isimler ve yalnızca çoğul kuralı okunabilen maddeler.
       const choices = word.artikel ? pluralChoices(word.de, word.formen, 3) : null;
@@ -1395,12 +1416,13 @@ function similarity(a: string, b: string): number {
 }
 
 /** Bir adayın ekranda göreceği iki satır — üstte karar satırı, altta İngilizce. */
+/** Şık etiketleyici. `null`: kelimenin bu anadilde karşılığı yok. */
 type Labeler = (p: {
   de: string;
   tr: string;
   en: string | null;
   artikel: string | null;
-}) => Option;
+}) => Option | null;
 
 /** Hedefe en çok benzeyen adaylardan rastgele `count` tane döndürür. */
 function pickDistractors(
@@ -1410,16 +1432,19 @@ function pickDistractors(
   label: Labeler,
 ): Option[] {
   const target = label(word);
+  if (!target) return [];
   const seen = new Set([target.text]);
   const scored: { option: Option; score: number }[] = [];
 
   for (const p of pool) {
     const option = label(p);
-    if (p.id === word.id || seen.has(option.text)) continue;
+    if (!option || p.id === word.id || seen.has(option.text)) continue;
     seen.add(option.text);
     const typBonus = p.typ === word.typ ? 6 : 0;
-    const trBonus = similarity(p.tr, word.tr) / 2;
-    scored.push({ option, score: similarity(p.de, word.de) + typBonus + trBonus });
+    // Anlam benzerliği de ANADİLDE ölçülüyor: Türkçe metinleri karşılaştırmak
+    // İngilizce oynayan kullanıcıda hiçbir şey ifade etmiyordu.
+    const glossBonus = similarity(target.text, option.text) / 2;
+    scored.push({ option, score: similarity(p.de, word.de) + typBonus + glossBonus });
   }
 
   scored.sort((a, b) => b.score - a.score);
@@ -1439,12 +1464,20 @@ function pickDistractors(
  * iki kelime ("öğrenci" = Schüler / Student) ikili kararda birbirinin doğru
  * karşılığı sayılmamalı.
  */
-function meanings(word: { tr: string; en: string | null }): Set<string> {
+function meanings(word: { tr: string; en: string | null; deGloss?: string | null }, native: NativeLang): Set<string> {
   const out = new Set<string>();
-  for (const part of word.tr.split(",")) {
-    const m = part.trim().toLocaleLowerCase("tr-TR");
+  // Ana satır ANADİLDE: Türkçe oynayan için Türkçe karşılıklar, İngilizce
+  // oynayan için İngilizce. Yanlış iddianın gerçekten yanlış olması bu kümeye
+  // bakıyor; yanlış dilden bakılsaydı "Schüler = student" iddiası İngilizce
+  // oynayan kullanıcıya "yanlış" diye sorulabilirdi.
+  const primary = native === "en" ? word.en : native === "de" ? word.deGloss : word.tr;
+  const locale = native === "tr" ? "tr-TR" : native === "de" ? "de-DE" : "en-US";
+  for (const part of (primary ?? "").split(",")) {
+    const m = part.trim().toLocaleLowerCase(locale);
     if (m) out.add(m);
   }
+  // İngilizce her zaman kümede: ayırt edici olarak zaten ikinci satırda
+  // duruyor ve iki kelimenin anadilde çöküp İngilizcede ayrışması mümkün.
   if (word.en) out.add(word.en.trim().toLowerCase());
   return out;
 }
@@ -1464,21 +1497,23 @@ function meanings(word: { tr: string; en: string | null }): Set<string> {
 function pickFalseClaim(
   word: RoundWord,
   pool: (typeof words.$inferSelect)[],
+  native: NativeLang,
 ): Option | null {
-  const own = meanings(word);
+  const own = meanings(word, native);
+  const target = glossFor(word, native);
+  if (!target) return null;
   const scored: { option: Option; score: number }[] = [];
-  const seen = new Set<string>([word.tr]);
+  const seen = new Set<string>([target.text]);
 
   for (const p of pool) {
-    if (p.id === word.id || seen.has(p.tr)) continue;
-    const other = meanings(p);
+    if (p.id === word.id) continue;
+    const option = glossFor(p, native);
+    if (!option || seen.has(option.text)) continue;
+    const other = meanings(p, native);
     if ([...other].some((m) => own.has(m))) continue; // ortak anlam varsa iddia yanlış sayılamaz
-    seen.add(p.tr);
+    seen.add(option.text);
     const typBonus = p.typ === word.typ ? 6 : 0;
-    scored.push({
-      option: { text: p.tr, sub: p.en },
-      score: similarity(p.de, word.de) + typBonus,
-    });
+    scored.push({ option, score: similarity(p.de, word.de) + typBonus });
   }
   if (!scored.length) return null;
 
@@ -1490,12 +1525,17 @@ function pickFalseClaim(
 function optionsFor(
   word: RoundWord,
   pool: (typeof words.$inferSelect)[],
-  direction: "de-tr" | "tr-de" = "de-tr",
+  direction: "de-tr" | "tr-de",
+  native: NativeLang,
 ): Option[] {
   // Etiket kuralı ortak kaynakta (lib/option-label.ts) — oyun ekranının doğru
   // cevabı kurma biçimiyle aynı kalsın diye.
-  const label: Labeler = (p) => optionLabel(p, direction);
-  return shuffle([label(word), ...pickDistractors(word, pool, 3, label)]);
+  const label: Labeler = (p) => optionLabel(p, direction, native);
+  const correct = label(word);
+  // Havuz süzüldüğü için buraya anlamsız kelime gelmemeli; yine de tip
+  // düzeyinde ele alınıyor — sessizce Türkçeye düşmektense boş şık listesi.
+  if (!correct) return [];
+  return shuffle([correct, ...pickDistractors(word, pool, 3, label)]);
 }
 
 function shuffle<T>(arr: T[]): T[] {
@@ -1866,13 +1906,17 @@ export async function buildChallenge(
   const fragile = shuffle(ranked.slice(0, half)); // riskli yarı
   const solid = shuffle(ranked.slice(half)); // sağlam yarı
 
+  // Meydan okumanın da anlam tarafı anadilde.
+  const native = nativeOf(profile.nativeLang);
   const poolLevels = [...new Set([...band.pool, ...learned.map((r) => r.w.niveau)])];
-  const pool = await db
-    .select()
-    .from(words)
-    .where(and(eq(words.course, profile.course), inArray(words.niveau, poolLevels)))
-    .orderBy(sql`random()`)
-    .limit(140);
+  const pool = (
+    await db
+      .select()
+      .from(words)
+      .where(and(eq(words.course, profile.course), inArray(words.niveau, poolLevels)))
+      .orderBy(sql`random()`)
+      .limit(140)
+  ).filter((w) => hasGloss(w, native)); // anadilde karşılığı olmayan kelime şık da olamaz
 
   let seq = 0;
   const nextId = () => `c${++seq}`;
@@ -1902,6 +1946,7 @@ export async function buildChallenge(
         pool,
         [...seen, ...recent],
         nextId,
+        native,
         bias,
         usage,
       );

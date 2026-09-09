@@ -6,7 +6,7 @@ import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
-import type { GameProps, GameResult } from "./types";
+import { meaningOf, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
@@ -67,7 +67,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
           <strong>
             {answer} {word.de}
           </strong>{" "}
-          — {word.tr}
+          — {meaningOf(word, lang)}
           {word.en ? (
             <span className="font-normal opacity-70" lang="en">
               {" "}

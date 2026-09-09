@@ -1,4 +1,5 @@
 import type { Round, RoundWord } from "@/lib/types";
+import { glossFor, type GlossWord } from "@/lib/option-label";
 import type { ErrorType } from "@/lib/errors";
 import { umlautStem } from "@/lib/german";
 import { foldNumbers } from "@/lib/german-numbers";
@@ -296,4 +297,25 @@ function splitAlternatives(raw: string): string[] {
 function expandArticle(a: string): string {
   const key = a.toLowerCase();
   return ARTICLE_SHORT[key] ?? key;
+}
+
+/**
+ * Kelimenin ekranda görünen ANLAMI — kullanıcının anadilinde.
+ *
+ * Oyunlar bugüne kadar doğrudan `word.tr` basıyordu; arayüzü İngilizce olan
+ * kullanıcı da Türkçe anlam görüyordu. Çözücü ortak (`lib/option-label`), yani
+ * şıkların üretildiği sunucu tarafıyla ekranın gösterdiği şey aynı kuraldan
+ * geçiyor.
+ *
+ * TÜRKÇEYE DÜŞMÜYOR: karşılık yoksa boş dönüyor. Sunucu havuzu zaten süzdüğü
+ * için buraya karşılıksız kelime gelmemeli; geldiğinde boş bir satır, yanlış
+ * dilde bir satırdan iyidir çünkü fark edilir.
+ */
+export function meaningOf(w: GlossWord, lang: NativeLang): string {
+  return glossFor(w, lang)?.text ?? "";
+}
+
+/** Aynı kelimenin ikinci satırı (İngilizce ayırt edici) — yoksa null. */
+export function meaningSubOf(w: GlossWord, lang: NativeLang): string | null {
+  return glossFor(w, lang)?.sub ?? null;
 }

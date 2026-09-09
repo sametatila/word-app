@@ -6,7 +6,7 @@ import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
-import { withArtikel, type GameProps, type GameResult } from "./types";
+import { withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
@@ -21,8 +21,10 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
   const lang = useLang();
   const { word, options, direction } = round;
   const deSide = direction === "de-tr";
-  const question = deSide ? withArtikel(word) : word.tr;
-  const answer = deSide ? word.tr : withArtikel(word);
+  // Soru ve cevap anadilde: İngilizce oynayan kullanıcıya Türkçe sorulmaz.
+  const meaning = meaningOf(word, lang);
+  const question = deSide ? withArtikel(word) : meaning;
+  const answer = deSide ? meaning : withArtikel(word);
 
   const [picked, setPicked] = useState<string | null>(null);
   const started = useRef(Date.now());

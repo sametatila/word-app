@@ -4,7 +4,8 @@ import { db } from "@/lib/db";
 import { dailyScores, profiles, words } from "@/lib/db/schema";
 import { firstExample } from "@/lib/example";
 import { pluralChoices } from "@/lib/german";
-import { optionLabel } from "@/lib/option-label";
+import type { NativeLang } from "@/lib/courses";
+import { glossFor, hasGloss, optionLabel } from "@/lib/option-label";
 import type { GameId, Option, Round, RoundWord } from "@/lib/types";
 
 /**
@@ -89,6 +90,12 @@ export async function buildDailyRounds(
   course: string,
   level: string,
   day: string,
+  /**
+   * Kullanıcının anadili — turun ANLAM tarafını belirler. Eskiden yoktu ve
+   * anlam her yerde Türkçeydi; arayüzü İngilizce olan kullanıcı da Türkçe
+   * cevap veriyordu.
+   */
+  native: NativeLang = "tr",
 ): Promise<Round[]> {
   const rand = rng(seedOf(day, course, level));
 
@@ -99,9 +106,13 @@ export async function buildDailyRounds(
     .orderBy(asc(sql`coalesce(${words.rank}, 999999)`), asc(words.id))
     .limit(300);
 
-  if (pool.length < 8) return [];
+  // ANADİLDE KARŞILIĞI OLMAYAN KELİME TURA GİRMEZ. Türkçeye düşmek, Alman
+  // kullanıcıya Türkçe anlam göstermek olurdu — eksik çevirinin en kötü
+  // biçimi, çünkü görünürde çalışıyor.
+  const usable = pool.filter((w) => hasGloss(w, native));
+  if (usable.length < 8) return [];
 
-  const picked = shuffleSeeded(pool, rand).slice(0, ROUNDS);
+  const picked = shuffleSeeded(usable, rand).slice(0, ROUNDS);
   const rounds: Round[] = [];
   let seq = 0;
   const nextId = () => `d${++seq}`;
@@ -113,7 +124,7 @@ export async function buildDailyRounds(
     // olanlar arasından seçim yine tohumdan geliyor.
     const options = playableFor(word);
     const game = options[Math.floor(rand() * options.length)];
-    const round = makeDailyRound(game, word, pool, nextId, rand);
+    const round = makeDailyRound(game, word, pool, nextId, rand, native);
     if (round) rounds.push(round);
   }
 
@@ -140,6 +151,7 @@ function makeDailyRound(
   pool: (typeof words.$inferSelect)[],
   nextId: () => string,
   rand: () => number,
+  native: NativeLang,
 ): Round | null {
   switch (game) {
     case "choice": {
@@ -148,32 +160,36 @@ function makeDailyRound(
         id: nextId(),
         game: "choice",
         word,
-        options: seededOptions(word, pool, direction, rand),
+        options: seededOptions(word, pool, direction, rand, native),
         direction,
       };
     }
     case "artikel":
       return word.artikel ? { id: nextId(), game: "artikel", word } : null;
     case "listen":
-      return { id: nextId(), game: "listen", word, options: seededOptions(word, pool, "de-tr", rand) };
+      return { id: nextId(), game: "listen", word, options: seededOptions(word, pool, "de-tr", rand, native) };
     case "truefalse": {
       const isTrue = rand() < 0.5;
+      // İddia da anadilde: "Auto = araba" mı, "Auto = car" mı — kullanıcı hangi
+      // dilde öğreniyorsa o dilde sorulmalı.
+      const claim = glossFor(word, native);
+      if (!claim) return null;
       if (isTrue)
-        return {
-          id: nextId(),
-          game: "truefalse",
-          word,
-          claim: { text: word.tr, sub: word.en },
-          isTrue: true,
-        };
-      const others = pool.filter((p) => p.id !== word.id && p.tr !== word.tr);
+        return { id: nextId(), game: "truefalse", word, claim, isTrue: true };
+      // Yanlış iddia da anadilde ÜRETİLİR ve doğru anlamla çakışmamalı:
+      // eskiden karşılaştırma `p.tr !== word.tr` idi, yani İngilizce oynayan
+      // kullanıcıda iki farklı Türkçe anlamın aynı İngilizceye düşmesi
+      // "yanlış" diye sorulan doğru bir iddia üretebilirdi.
+      const others = pool
+        .map((p) => ({ p, g: p.id === word.id ? null : glossFor(p, native) }))
+        .filter((x): x is { p: typeof x.p; g: NonNullable<typeof x.g> } => x.g !== null && x.g.text !== claim.text);
       if (!others.length) return null;
       const wrong = others[Math.floor(rand() * others.length)];
       return {
         id: nextId(),
         game: "truefalse",
         word,
-        claim: { text: wrong.tr, sub: wrong.en },
+        claim: wrong.g,
         isTrue: false,
       };
     }
@@ -222,18 +238,22 @@ function seededOptions(
   pool: (typeof words.$inferSelect)[],
   direction: "de-tr" | "tr-de",
   rand: () => number,
+  native: NativeLang,
 ): Option[] {
   // Etiket kuralı ortak kaynakta (lib/option-label.ts): artikel buradan
   // düşmüştü ve tr→de yönünde doğru şık seçilemiyordu.
-  const label = (p: { de: string; tr: string; en: string | null; artikel: string | null }): Option =>
-    optionLabel(p, direction);
+  const label = (p: { de: string; tr: string; en: string | null; artikel: string | null }): Option | null =>
+    optionLabel(p, direction, native);
+  // Doğru şıkkın anlamı yoksa tur zaten kurulmamalıydı (havuz süzüldü); yine de
+  // tip düzeyinde ele alınıyor — `!` ile geçilseydi bir gün gerçekten düşerdi.
   const correct = label(word);
+  if (!correct) return [];
   const seen = new Set([correct.text]);
   const distractors: Option[] = [];
   for (const p of pool) {
     if (p.id === word.id) continue;
     const option = label(p);
-    if (!option.text || seen.has(option.text)) continue;
+    if (!option || !option.text || seen.has(option.text)) continue;
     seen.add(option.text);
     distractors.push(option);
   }

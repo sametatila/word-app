@@ -12,7 +12,7 @@ import {
   type ProduceItem as LessonProduceItem,
 } from "@/lib/lessons/module-content";
 import { moduleExamPlan, type ExamCando, type ModuleExamPlan } from "@/lib/lessons/module-exam";
-import { makeRound, toRoundWord, weekStart } from "@/lib/session";
+import { makeRound, toRoundWord, weekStart , ensureProfile } from "@/lib/session";
 import { seededShuffle } from "@/lib/shuffle";
 import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
 import {
@@ -34,6 +34,7 @@ import {
 } from "@/lib/exam-types";
 import type { CefrLevel, WritingTask, SkillExercise } from "@/lib/skills/types";
 import type { Round } from "@/lib/types";
+import { nativeOf } from "@/lib/courses";
 
 /**
  * Modül ve seviye sınavı (plan WP-41, v3).
@@ -209,6 +210,8 @@ function planReading(plan: ModuleExamPlan, count: number, seed: string): TextIte
 }
 
 export async function buildExam(userId: string, course: string, level: CefrLevel, module: number | null, today: string): Promise<ExamPaper> {
+  // Seviye sınavının kelime turları da anadilde.
+  const native = nativeOf((await ensureProfile(userId))?.nativeLang);
   const kind: ExamKind = module === null ? "level" : "module";
   const seed = `${userId}|${examKindKey(kind, level, module)}|${weekStart(today)}`;
   const c = COUNTS[kind];
@@ -235,7 +238,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   for (const w of seededShuffle(candidates, `${seed}|vocab`)) {
     if (vocab.length >= c.vocab) break;
     const word = toRoundWord(w, false);
-    const r = makeRound(vocab.length % 2 === 0 ? "translate" : "typing", word, pool, nextId, "strong") ?? makeRound("typing", word, pool, nextId, "strong");
+    const r = makeRound(vocab.length % 2 === 0 ? "translate" : "typing", word, pool, nextId, "strong", native) ?? makeRound("typing", word, pool, nextId, "strong", native);
     if (r) vocab.push(r);
   }
 
