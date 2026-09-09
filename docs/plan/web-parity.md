@@ -419,3 +419,48 @@ onu görünür kılıyor.
 - `skills.skills` Almanca sözlükte "Skills" diyor, "Fertigkeiten" değil.
 - Mobil `formatDuration` "dk"/"s" sabit yazıyor.
 - Mobil hero rozetleri "{n} tekrar" / "{n} yeni" sabit.
+
+---
+
+## 7. İkinci tur — şeritlerin mobil kaynağıyla yeniden doğrulanması (9 Eyl)
+
+Şeritler "bitti" işaretliydi ama kabul ölçütü ("mobil karesiyle aynı bölüm
+sırası ve aynı kartlar") ekran ekran doğrulanmamıştı. Mobil kaynağı ile web
+DOM'u karşılaştırıldı; on bir fark çıktı ve düzeltildi.
+
+| Ekran | Fark | Commit |
+|---|---|---|
+| Öğren | Mobilde olmayan "bugünkü plan" satırı ve sekmenin altındaki sıralama tablosu; seri rozeti profile gidiyordu | `e558b37e` |
+| Profil | Menüde fazladan "Gelişim", eksik "Arkadaşını davet et", sıralamanın rengi; davet metni sabit Türkçe ve davet kodsuz | `d1d83236` |
+| Beceriler | Mükerrer "Deneme Sınavları" kartı; seviye etiketi ile sayaç ayrı satırlarda | `167d91b3` |
+| Ayarlar | Giriş yöntemleri en dipte, okuma sesi hedeften önce, dil+görünüm tek etiketsiz kartta, mükerrer OTURUM bölümü | `be05b52b` |
+| Sıralama · nabız · paylaşım | Sabit Türkçe cümleler ve sekiz yerde `tr-TR` sabitli sayı biçimi | `d769eac5` |
+| Arkadaşlar | Sosyal ayarlar uygulama ayarlarının içinde ve `#social` çapasıyla; ayarlar düğmesi kartın içinde; iki rozet hiç çizilmiyor | `c2e39958` |
+| İlerleme | Seri kahramanı, kelime ustalığı şeridi ve başarımlar satırı yok; karolar mobildekiler değil; yetkinlik bandı ham ("40developing") | `c188eb5f` |
+| Bildirimler | `/notifications` `/inbox` ile birebir aynı şeyi çiziyordu; hatırlatma anahtarları uygulama ayarlarındaydı | — |
+
+Sözlük denetimine üçüncü kural eklendi: **kodda çağrılan her anahtar sözlükte
+var mı**. `translate` bulamadığı anahtarın kendisini döndürüyor, yani ekrana
+`socialw.friends_load_failed` yazıyor — hata değil, sessiz arıza. İlk koşuda
+yedi tane buldu.
+
+### Açık kalan tek işlevsel boşluk: hatırlatma kategorileri
+
+Mobilde üç ayrı hatırlatma var ve her biri CİHAZDA kuruluyor: günlük
+hatırlatma (saat seçimiyle), seri koruma (her akşam 20:30), haftalık sınav
+(pazar). Web'de bildirim SUNUCUDAN gidiyor (`lib/push` · `runReminders`) ve
+şimdilik tek bir günlük kanal var — kullanıcı başına tercih yok.
+
+Kapatmak için gerekenler (yerleşim değil, arka uç işi):
+
+1. `profiles`e eklemeli üç sütun (`remind_daily`, `remind_streak`,
+   `remind_weekly`) + günlük hatırlatmanın saati. Migrasyon eklemeli olur,
+   varsayılanlar bugünkü davranışı korur.
+2. `runReminders` tercihleri okur; `findReminderTargets` saate göre süzer.
+3. Seri koruma için 20:30'da ikinci bir systemd timer, haftalık için pazar
+   akşamı bir üçüncü (`lernomi-cron-summary` pazartesi sabahı, aynı şey değil).
+4. `/notifications` üç anahtarı ve saat çiplerini gösterir — arayüz tarafı
+   mobilde hazır, kopyalanacak.
+
+Bu satırlar tamamlanana kadar web'de tek anahtar var ve ekranın metni bunu
+dürüstçe söylüyor ("günde en fazla bir bildirim").

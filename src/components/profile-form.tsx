@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { AlertIcon, CheckIcon, ChevronRightIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
-import { PushSettings } from "@/components/push-settings";
-import { SoundSettings } from "@/components/sound-settings";
 import { AnalyticsSettings } from "@/components/analytics-settings";
 import { PageBack } from "@/components/page-back";
 import { Disclosure } from "@/components/disclosure";
@@ -347,11 +345,14 @@ export function ProfileForm({
         <ThemeSetting bare />
       </Section>
 
-      {/* CİHAZ — mobilde karşılığı yok, olamaz da: kurulum tarayıcıya,
-          ses ve bildirim izni de web'e özgü. Mobilin sırasını bozmuyor,
-          görünümle gizliliğin arasına kendi etiketiyle giriyor. Sıra bir
-          kuralı izliyor: iPhone'da bildirim ancak uygulama ana ekrana
-          eklenmişken çalışıyor, o yüzden kurulum bildirimden önce. */}
+      {/* CİHAZ — mobilde karşılığı yok, olamaz da: kurulum tarayıcıya özgü.
+          Mobilin sırasını bozmuyor, görünümle gizliliğin arasına kendi
+          etiketiyle giriyor.
+
+          BİLDİRİM VE SES BURADA DEĞİL: ikisi de "ne zaman rahatsız
+          edilirim" ayarı ve mobilde kendi ekranlarında (`NotificationsScreen`,
+          Profil › Bildirimler). Web'de de oraya taşındı; ayarlar ekranında
+          durduklarında o ekran mobilde olmayan iki satır taşıyordu. */}
       <Section title={t("settings.app")} bare>
         {/* Kurulum rehberi açılır kutuda. Üç numaralı adım, cihaz seçici ve
             açıklama metni 330 piksel tutuyordu ve bu, hayatta BİR KEZ yapılan
@@ -362,8 +363,6 @@ export function ProfileForm({
             <InstallGuide tone="plain" />
           </Disclosure>
         </div>
-        <SoundSettings bare />
-        <PushSettings bare />
       </Section>
 
       {/* Gizlilik: analitik anahtarı ve hukuki metinler (Play: politika uygulama içinden erişilebilir olmalı). */}
