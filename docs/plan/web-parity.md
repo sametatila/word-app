@@ -445,6 +445,7 @@ DOM'u karşılaştırıldı; on bir fark çıktı ve düzeltildi.
 | İçerik bildirme | `POST /api/reports` aylardır vardı, **hiçbir arayüz onu çağırmıyordu** — mobilde üç yerde var | `5dbfe4b6` |
 | Sabit Türkçe (11 yer) | Kelime listesi tekrar cümleleri, modül sınavı yönergesi, ses/gizlilik etiketleri, kilit ekranı albüm adı | `0c001fb6` |
 | Sekme başlıkları | 27 sayfa sabit Türkçe `metadata.title` taşıyordu; Kelimeler'in hiç başlığı yoktu | `9d8b844c` |
+| Sabit Türkçe (3 parti) | Tarayıcının kör noktası düzeltilince 60 kalem daha çıktı: tur özeti, iki push metni, ilerleme, beceri oynatıcıları, **sertifika**, yerleştirme testi | `b2cc4b58` `2127d535` `46f4eeb7` |
 
 Sözlük denetimine üçüncü kural eklendi: **kodda çağrılan her anahtar sözlükte
 var mı**. `translate` bulamadığı anahtarın kendisini döndürüyor, yani ekrana
@@ -525,6 +526,20 @@ Bu turda iki denetim eklendi ve ikisi de ilk koşularında gerçek hata buldu:
   buldu.
 - `npm run typecheck:scripts`: `scripts/` klasörü `tsconfig.json`da `exclude`
   içindeydi ve e2e aylardır 9. testte çöküyordu (bkz. §8).
+- Dördüncü kural: **aynı anahtar iki kez tanımlanmış mı.** TypeScript bunu hata
+  sayıyor ama denetim saymıyordu; `Map` ikincisini yazıyor ve ilki sessizce
+  ölüyor. Bir tane buldu.
+
+**Tarayıcının kendi kör noktası:** JSX metninin İÇİNDE `{…}` varken satır hiç
+taranmıyordu — `{combo} üst üste` gibi ifadeler üç turdur kaçıyordu. Kalıp
+düzeltilince altmış kalem daha çıktı; en ağırı SERTİFİKA idi: indirilip
+paylaşılan belgede bölüm adları çevriliyken gövde metni ("Bu belge",
+"BÖLÜMLER", geçme kuralı) sabit Türkçeydi, yani belge yarı Almanca yarı
+Türkçe basılıyordu.
+
+Geriye kalan Türkçe metinler yalnız `console.error` günlükleri, `?diag=1`
+paneli, `/analytics`, `admin/*` ve dile göre anahtarlanmış haritalar
+(`TRUE_WORD`/`FALSE_WORD` gibi) — hiçbiri kullanıcı arayüzü değil.
 
 Üç dilde 24 sayfalık tam tarama: ekranda ham anahtar YOK, sayfa hatası YOK,
 hepsi üç dilde çiziliyor. (Tarama `networkidle` beklerken `/notifications`
