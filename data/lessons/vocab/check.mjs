@@ -11,6 +11,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractVocab } from "./extract.mjs";
+import { usSpelling } from "../spelling.mjs";
 
 const ROOT = new URL("../../../", import.meta.url).pathname;
 const DIR = `${ROOT}data/lessons/vocab`;
@@ -47,6 +48,7 @@ if (existsSync(`${DIR}/out`))
       else if (en.toLowerCase() === r.de.toLowerCase()) U("karşılık Almancanın aynısı (akraba kelime olabilir)");
       else if (/^[a-z]$/i.test(en)) H(`karşılık tek harf: «${en}»`);
       else if (en.length > 60) U(`karşılık uzun (${en.length})`);
+      for (const h of usSpelling(en)) U(`Amerikan yazımı ${h}`);
       written.set(key, en);
     }
   }
