@@ -43,8 +43,25 @@ export async function ensureReferralCode(userId: string): Promise<string> {
   for (let attempt = 0; attempt < 6; attempt++) {
     const code = randomCode();
     try {
-      await db.update(profiles).set({ referralCode: code }).where(eq(profiles.userId, userId));
-      return code;
+      /**
+       * `.returning()` ŞART. Öncesi yalnız `update` çağırıp kodu döndürüyordu ve
+       * güncelleme HİÇBİR satıra dokunmamış olabilirdi: profil satırı henüz
+       * yoksa (yeni hesap, `ensureProfile` çağrılmadan premium durumu soruldu)
+       * update sessizce 0 satır günceller, hata da vermez. Kullanıcı o kodu
+       * paylaşır, kod hiçbir yerde kayıtlı olmadığı için bağlantı kimseyi
+       * kimseye bağlamaz ve bunu kimse fark etmez — ödül de hiç düşmez.
+       *
+       * Satır dönmediyse kod üretilemedi demektir; çağıran (`referralStats`)
+       * bunu hatayla öğrenir ve arayüz davet kutusunu hiç çizmez.
+       */
+      const [row] = await db
+        .update(profiles)
+        .set({ referralCode: code })
+        .where(eq(profiles.userId, userId))
+        .returning({ code: profiles.referralCode });
+      if (row?.code) return row.code;
+      // Profil satırı yok: yeni kod denemenin faydası olmaz, döngüden çık.
+      break;
     } catch {
       /* benzersiz indeks çarptı — yeni kod dene */
     }

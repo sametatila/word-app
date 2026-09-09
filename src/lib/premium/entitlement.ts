@@ -1,5 +1,5 @@
 import "server-only";
-import { and, eq, sql } from "drizzle-orm";
+import { and, eq, gt, isNull, isNotNull, lte, ne, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { entitlements, premiumGrants, profiles } from "@/lib/db/schema";
 import { STATE_GRANTS, type StoreEvent } from "./ports";
@@ -21,8 +21,6 @@ import { STATE_GRANTS, type StoreEvent } from "./ports";
  * `profiles.premium_until` bu hesabın ÖNBELLEĞİ. Sıcak yolda iki tabloyu
  * birleştirmemek için var ve yalnız buradan yazılıyor.
  */
-
-const MIN_MS = 60_000;
 
 export type EntitlementView = {
   premium: boolean;
@@ -46,7 +44,16 @@ export type EntitlementView = {
 
 type Row = typeof entitlements.$inferSelect;
 
-const EMPTY: Omit<Row, "userId"> = {
+/**
+ * Boş satır — FONKSİYON, sabit değil.
+ *
+ * Sabit olsaydı `updatedAt: new Date()` modül YÜKLENİRKEN bir kez hesaplanır ve
+ * o tarihi taşıyan bir nesne her yerde yeniden kullanılırdı: `updatedAt`i ayrıca
+ * geçersiz kılmayı unutan ilk çağrı, süreç başlangıç zamanını veritabanına
+ * yazardı. Bugün bütün çağrılar geçersiz kılıyor, yani kusur değil tuzak —
+ * tuzağı kaldırmak, üstüne yorum yazmaktan ucuz.
+ */
+const emptyRow = (): Omit<Row, "userId"> => ({
   storeUntil: null,
   storeProvider: null,
   storePlatform: null,
@@ -57,11 +64,11 @@ const EMPTY: Omit<Row, "userId"> = {
   bonusMinutes: 0,
   bonusUntil: null,
   updatedAt: new Date(),
-};
+});
 
 async function readRow(userId: string): Promise<Row> {
   const [row] = await db.select().from(entitlements).where(eq(entitlements.userId, userId)).limit(1);
-  return row ?? { userId, ...EMPTY };
+  return row ?? { userId, ...emptyRow() };
 }
 
 const active = (until: Date | null | undefined, now: number): boolean => !!until && until.getTime() > now;
@@ -92,21 +99,47 @@ export async function resolveEntitlement(userId: string): Promise<EntitlementVie
   let { bonusMinutes, bonusUntil } = row;
   const storeActive = active(row.storeUntil, now);
 
-  // Bonus penceresini başlatma anı: mağaza kapsamı yok, çalışan pencere de yok,
-  // ama bakiye var.
+  /**
+   * Bonus penceresini başlatma anı: mağaza kapsamı yok, çalışan pencere de yok,
+   * ama bakiye var.
+   *
+   * TEK CÜMLEDE, ATOMİK. Önce okuyup sonra hesaplanan değeri yazmak KAYIP
+   * GÜNCELLEME üretiyordu: iki istek arasına bir `grantBonus` girerse (davet
+   * ödülü, promo kodu) okuma sonrası artan bakiye, hesaplanmış sıfırla
+   * silinirdi — kullanıcı kazandığı hediyeyi kaybederdi. Burada bakiye
+   * veritabanının kendi okuduğu değerden süreye çevriliyor ve koşullar da aynı
+   * cümlede: araya girecek bir yazma yok.
+   *
+   * `make_interval(mins => bonus_minutes)`: UPDATE ... SET içinde sütun adı
+   * ESKİ değeri verir (Postgres), yani süre bakiyenin tamamı kadar oluyor.
+   */
   if (!storeActive && !active(bonusUntil, now) && bonusMinutes > 0) {
-    bonusUntil = new Date(now + bonusMinutes * MIN_MS);
-    bonusMinutes = 0;
     try {
-      await db
-        .insert(entitlements)
-        .values({ ...row, userId, bonusMinutes, bonusUntil, updatedAt: new Date() })
-        .onConflictDoUpdate({
-          target: entitlements.userId,
-          set: { bonusMinutes, bonusUntil, updatedAt: new Date() },
-        });
+      const [started] = await db
+        .update(entitlements)
+        .set({
+          bonusUntil: sql`now() + make_interval(mins => ${entitlements.bonusMinutes})`,
+          bonusMinutes: 0,
+          updatedAt: new Date(),
+        })
+        .where(
+          and(
+            eq(entitlements.userId, userId),
+            gt(entitlements.bonusMinutes, 0),
+            or(isNull(entitlements.storeUntil), lte(entitlements.storeUntil, sql`now()`)),
+            or(isNull(entitlements.bonusUntil), lte(entitlements.bonusUntil, sql`now()`)),
+          ),
+        )
+        .returning({ until: entitlements.bonusUntil, minutes: entitlements.bonusMinutes });
+      if (started) {
+        bonusUntil = started.until;
+        bonusMinutes = started.minutes;
+      }
+      // Satır dönmediyse: araya başka bir istek girip pencereyi zaten başlatmış
+      // ya da bu arada bir abonelik gelmiş. İkisi de doğru; elimizdeki okuma
+      // eskidi, bir sonraki çağrı tazesini görecek.
     } catch {
-      /* yazılamadıysa bu istekte yine premium sayılır; sonraki istek tekrar dener */
+      /* yazılamadıysa bu istekte bakiye bekliyor sayılır; sonraki istek dener */
     }
   }
 
@@ -141,12 +174,18 @@ export async function resolveEntitlement(userId: string): Promise<EntitlementVie
 /** Önbelleği (profiles.premium_until) yalnız DEĞİŞMİŞSE yaz. */
 async function syncCache(userId: string, until: Date | null): Promise<void> {
   try {
-    const [p] = await db.select({ until: profiles.premiumUntil }).from(profiles).where(eq(profiles.userId, userId)).limit(1);
-    const cur = p?.until ? p.until.getTime() : null;
-    const next = until ? until.getTime() : null;
-    // Saniye altı fark önbelleği yenilemeye değmez; her istekte UPDATE atmayalım.
-    if (cur === next || (cur != null && next != null && Math.abs(cur - next) < 1000)) return;
-    await db.update(profiles).set({ premiumUntil: until }).where(eq(profiles.userId, userId));
+    // TEK CÜMLE. Önce SELECT edip karşılaştırmak iki gidiş demekti ve bu işlev
+    // her yetki çözümünde çağrılıyor. Koşul WHERE'e taşındı: değer zaten
+    // aynıysa hiçbir satır güncellenmiyor, yani boşa yazma da yok.
+    await db
+      .update(profiles)
+      .set({ premiumUntil: until })
+      .where(
+        and(
+          eq(profiles.userId, userId),
+          until ? or(isNull(profiles.premiumUntil), ne(profiles.premiumUntil, until)) : isNotNull(profiles.premiumUntil),
+        ),
+      );
   } catch {
     /* önbellek; tutmazsa bir sonraki okumada yeniden denenir */
   }
@@ -182,7 +221,7 @@ export async function grantBonus(
   if (minutes <= 0) return resolveEntitlement(userId);
   await db
     .insert(entitlements)
-    .values({ userId, ...EMPTY, bonusMinutes: minutes, updatedAt: new Date() })
+    .values({ userId, ...emptyRow(), bonusMinutes: minutes, updatedAt: new Date() })
     .onConflictDoUpdate({
       target: entitlements.userId,
       set: { bonusMinutes: sql`${entitlements.bonusMinutes} + ${minutes}`, updatedAt: new Date() },
@@ -232,17 +271,10 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
   // Yetki veren bir olayda bitiş sağlayıcıdan gelir; vermeyen olayda pencere kapanır.
   const storeUntil = grants ? ev.expiresAt : null;
 
-  let bonusMinutes = row.bonusMinutes;
-  let bonusUntil = row.bonusUntil;
-  // Hediye çalışırken abonelik başladı: kalanı bakiyeye geri al.
-  if (grants && !wasCovered && active(bonusUntil, now)) {
-    bonusMinutes += Math.ceil((bonusUntil!.getTime() - now) / MIN_MS);
-    bonusUntil = null;
-  }
-
   const firstPayment = ev.paid && !row.storePaidAt;
   const storePaidAt = row.storePaidAt ?? (ev.paid ? new Date() : null);
 
+  // 1) Mağaza alanları — MUTLAK yazılır, çünkü orada tek kaynak sağlayıcıdır.
   const next = {
     storeUntil,
     storeProvider: ev.provider,
@@ -251,14 +283,41 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
     storeState: ev.state,
     storeRef: ev.ref,
     storePaidAt,
-    bonusMinutes,
-    bonusUntil,
     updatedAt: new Date(),
   };
   await db
     .insert(entitlements)
-    .values({ userId: ev.userId, ...EMPTY, ...next })
+    .values({ userId: ev.userId, ...emptyRow(), ...next })
     .onConflictDoUpdate({ target: entitlements.userId, set: next });
+
+  /**
+   * 2) Hediye çalışırken abonelik başladıysa KALANI bakiyeye geri al.
+   *
+   * AYRI VE ARTIRARAK, mutlak yazarak değil. Bakiye yukarıdaki mutlak yazmanın
+   * içinde olsaydı `grantBonus`ın SQL artırımıyla yarışırdı: webhook satırı
+   * okuduktan sonra araya bir davet ödülü girerse, hesaplanmış mutlak değer o
+   * ödülü üzerine yazıp silerdi. Aynı hata sınıfı `resolveEntitlement`te de
+   * vardı ve orada da tek atomik cümleyle kapatıldı.
+   *
+   * Kalan süre veritabanının kendi okuduğu `bonus_until`den hesaplanıyor; koşul
+   * da aynı cümlede, yani pencere bu arada bittiyse hiçbir şey yapılmıyor.
+   */
+  if (grants && !wasCovered) {
+    await db
+      .update(entitlements)
+      .set({
+        bonusMinutes: sql`${entitlements.bonusMinutes} + ceil(extract(epoch from (${entitlements.bonusUntil} - now())) / 60)::int`,
+        bonusUntil: null,
+        updatedAt: new Date(),
+      })
+      .where(
+        and(
+          eq(entitlements.userId, ev.userId),
+          isNotNull(entitlements.bonusUntil),
+          gt(entitlements.bonusUntil, sql`now()`),
+        ),
+      );
+  }
 
   await db.insert(premiumGrants).values({
     userId: ev.userId,
@@ -285,7 +344,7 @@ export async function revokeEntitlement(userId: string, actor: string | null, no
   const cleared = { storeUntil: null, storeState: "expired", bonusMinutes: 0, bonusUntil: null, updatedAt: new Date() };
   await db
     .insert(entitlements)
-    .values({ userId, ...EMPTY, ...cleared })
+    .values({ userId, ...emptyRow(), ...cleared })
     .onConflictDoUpdate({ target: entitlements.userId, set: cleared });
   await db.insert(premiumGrants).values({
     userId,
