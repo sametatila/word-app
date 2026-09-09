@@ -20,6 +20,12 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: "22", cache: npm }
       - run: npm ci
+      # Sürüm kapısı, en başta: dört kaynak (package.json, mobile/src/version.ts,
+      # build.gradle, pbxproj) aynı sürümü söylemek zorunda. Saniye sürüyor ve
+      # yakaladığı şey ancak mağazada, geri alınamaz bir yükleme numarasıyla
+      # fark edilirdi.
+      - name: Sürüm
+        run: npm run version:check
       - name: TypeScript
         run: npx tsc --noEmit
       # Cırcırlı taban: eşik package.json'daki `lint` betiğinde (--max-warnings),

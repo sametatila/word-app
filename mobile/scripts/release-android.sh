@@ -7,7 +7,8 @@
 #      release görevleri düşüyor, `-PallowDebugSigning` ile açılan deneme yapısı da
 #      `-devkey` sürüm ekiyle işaretleniyor. Buradaki denetim onun erken ve okunur
 #      hâli — gradle'ı hiç başlatmadan aynı şeyi söylüyor.
-#   2) Sürüm numarası üç ayrı dosyada elle tutuluyor (bkz. mobile/README.md). Biri
+#   2) Sürüm dört ayrı dosyada yazılı. Tek kaynak package.json; ötekilere
+#      ../scripts/version.mjs basıyor ve aynı betik ayrışmayı denetliyor. Biri
 #      geride kalırsa Play'e yanlış sürümle yükleme yapılır.
 #
 # Betik ikisini de yapıdan ÖNCE kapatıyor, sonra üretiyor, sonra ürettiğini
@@ -40,25 +41,15 @@ step() { printf '\n== %s\n' "$1"; }
 fail=0
 
 # --- 1. Sürüm tutarlılığı ------------------------------------------------------
+# Karşılaştırmayı BU BETİK YAPMIYOR. Sürümün tek kaynağı ve tek denetleyicisi
+# ../scripts/version.mjs; burada ikinci bir uygulama tutmak zaten bir kez
+# pahalıya patladı: buradaki denetim üç mobil kaynağa bakıyordu ve web'in
+# package.json'ını hiç görmüyordu, dolayısıyla "üç kaynak da aynı" derken
+# kullanıcı web'de 1.0.5, mobilde 1.0.0 görüyordu.
 step "Sürüm tutarlılığı"
-ts_name=$(sed -n 's/.*APP_VERSION *= *"\([^"]*\)".*/\1/p' src/version.ts | head -1)
-ts_code=$(sed -n 's/.*APP_VERSION_CODE *= *\([0-9]*\).*/\1/p' src/version.ts | head -1)
-gr_name=$(sed -n 's/.*versionName *"\([^"]*\)".*/\1/p' android/app/build.gradle | head -1)
-gr_code=$(sed -n 's/.*versionCode *\([0-9]*\).*/\1/p' android/app/build.gradle | head -1)
-ios_name=$(sed -n 's/.*MARKETING_VERSION *= *\([^;]*\);.*/\1/p' ios/Lernomi.xcodeproj/project.pbxproj | head -1 | tr -d ' ')
-ios_code=$(sed -n 's/.*CURRENT_PROJECT_VERSION *= *\([^;]*\);.*/\1/p' ios/Lernomi.xcodeproj/project.pbxproj | head -1 | tr -d ' ')
-
-printf '  version.ts    %s (%s)\n' "$ts_name" "$ts_code"
-printf '  build.gradle  %s (%s)\n' "$gr_name" "$gr_code"
-printf '  pbxproj       %s (%s)\n' "$ios_name" "$ios_code"
-
-if [ "$ts_name" != "$gr_name" ] || [ "$ts_code" != "$gr_code" ] \
-   || [ "$ts_name" != "$ios_name" ] || [ "$ts_code" != "$ios_code" ]; then
-  echo "HATA: üç kaynak aynı sürümü söylemiyor; üçünü birden güncelleyin." >&2
+if ! node ../scripts/version.mjs; then
   [ "$CHECK_ONLY" = "1" ] || exit 2
   fail=1
-else
-  echo "Üç kaynak da aynı: $ts_name ($ts_code)."
 fi
 
 # --- 2. Yayın anahtarı ---------------------------------------------------------

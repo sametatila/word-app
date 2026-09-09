@@ -32,6 +32,7 @@ import os
 import plistlib
 import re
 import struct
+import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -169,45 +170,34 @@ def check_pbxproj():
     return hatalar, f"{len(tanimli)} nesne, {len(yollar)} dosya başvurusu"
 
 
-# --- 2. Sürüm üçlüsü ----------------------------------------------------------
+# --- 2. Sürüm dörtlüsü --------------------------------------------------------
 
 def check_versions():
-    hatalar = []
-    gradle = read(GRADLE)
-    ts = read(VERSION_TS)
-    pbx = read(PBXPROJ)
+    """Sürümü BU BETİK KARŞILAŞTIRMIYOR; scripts/version.mjs'e soruyor.
 
-    def tek(ad, degerler, kaynak):
-        benzersiz = set(degerler)
-        if not benzersiz:
-            hatalar.append(f"{kaynak}: {ad} bulunamadı")
-            return None
-        if len(benzersiz) > 1:
-            hatalar.append(f"{kaynak}: {ad} kendi içinde tutarsız → {sorted(benzersiz)}")
-            return None
-        return benzersiz.pop()
+    Eskiden burada kendi karşılaştırması vardı ve üç mobil kaynağa bakıyordu.
+    Dördüncü kaynağı — web'in package.json'ı, ki Ayarlar'ın dibindeki "Lernomi
+    1.0.5" oradan geliyordu — hiç görmüyordu; iki denetim yan yana durup farklı
+    şeyler doğruladı ve ekranda görünen tutarsızlık aylarca kimseye çarpmadı.
 
-    ad_kod = [
-        ("build.gradle", tek("versionName", re.findall(r'versionName\s+"([^"]+)"', gradle), "build.gradle"),
-         tek("versionCode", re.findall(r"versionCode\s+(\d+)", gradle), "build.gradle")),
-        ("version.ts", tek("APP_VERSION", re.findall(r'APP_VERSION\s*=\s*"([^"]+)"', ts), "version.ts"),
-         tek("APP_VERSION_CODE", re.findall(r"APP_VERSION_CODE\s*=\s*(\d+)", ts), "version.ts")),
-        ("project.pbxproj", tek("MARKETING_VERSION", re.findall(r"MARKETING_VERSION = ([^;]+);", pbx), "pbxproj"),
-         tek("CURRENT_PROJECT_VERSION", re.findall(r"CURRENT_PROJECT_VERSION = ([^;]+);", pbx), "pbxproj")),
-    ]
+    İki uygulama tutmanın bedeli buydu. Artık tek uygulama var, buradaki iş onu
+    çağırıp çıktısını bu raporun biçimine çevirmek.
+    """
+    betik = os.path.join(os.path.dirname(ROOT), "scripts", "version.mjs")
+    if not os.path.exists(betik):
+        return [f"sürüm denetleyicisi yok: {betik}"], "-"
+    try:
+        p = subprocess.run(["node", betik], capture_output=True, text=True, timeout=60)
+    except (OSError, subprocess.SubprocessError) as e:
+        return [f"sürüm denetleyicisi çalıştırılamadı: {e}"], "-"
 
-    adlar = {a for _, a, _ in ad_kod if a is not None}
-    kodlar = {k for _, _, k in ad_kod if k is not None}
-    if len(adlar) > 1:
-        hatalar.append("sürüm adı üç kaynakta AYNI DEĞİL: "
-                       + ", ".join(f"{k}={a}" for k, a, _ in ad_kod))
-    if len(kodlar) > 1:
-        hatalar.append("sürüm kodu üç kaynakta AYNI DEĞİL: "
-                       + ", ".join(f"{k}={c}" for k, _, c in ad_kod))
-
-    ad = adlar.pop() if len(adlar) == 1 else "?"
-    kod = kodlar.pop() if len(kodlar) == 1 else "?"
-    return hatalar, f"{ad} / {kod} — build.gradle, version.ts, pbxproj"
+    ciktilar = (p.stdout + p.stderr).strip().splitlines()
+    kaynak = next((l for l in ciktilar if "KAYNAK" in l), "")
+    ozet = kaynak.split(")", 1)[1].strip() if ")" in kaynak else "?"
+    if p.returncode == 0:
+        return [], f"{ozet} — package.json, version.ts, build.gradle, pbxproj"
+    ayrik = [l.strip() for l in ciktilar if l.strip().startswith("AYRIK")]
+    return (ayrik or ["sürüm denetimi düştü (bkz. npm run version:check)"]), ozet
 
 
 # --- 3. AppIcon ---------------------------------------------------------------
@@ -585,7 +575,7 @@ def check_google_ios():
 
 DENETIMLER = [
     ("pbxproj bütünlüğü", check_pbxproj),
-    ("sürüm üçlüsü", check_versions),
+    ("sürüm dörtlüsü", check_versions),
     ("AppIcon ölçüleri", check_appicon),
     (".strings sözlükleri", check_strings),
     ("dil beyanı ↔ .lproj", check_localizations),
