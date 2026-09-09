@@ -56,6 +56,25 @@ function Chip({ label, active, onPress, colors }: { label: string; active: boole
 }
 
 /** Ayar bölümü — başlık + kart. Görsel gruplama için tutarlı çerçeve. */
+/**
+ * Grup başlığı — dokuz düz bölüm dört mantıksal gruba alındı.
+ *
+ * Eskiden hepsi aynı düzlemdeydi: kurs/seviye/hedef (öğrenme) ile arayüz
+ * dili/görünüm (uygulama) ve hesap/gizlilik iç içeydi. Kullanıcı aradığı ayarı
+ * grubun adından değil, satır satır okuyarak buluyordu.
+ */
+function Group({ title, colors }: { title: string; colors: Palette }) {
+  return (
+    <Text
+      variant="h3"
+      color={colors.text}
+      style={{ marginTop: spacing.xxl, marginBottom: -spacing.sm, marginLeft: 4 }}
+    >
+      {title}
+    </Text>
+  );
+}
+
 function Section({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
   return (
     <View style={{ marginTop: spacing.xl }}>
@@ -146,7 +165,8 @@ export function SettingsScreen() {
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        <Section title="HESAP" colors={colors}>
+        <Group title={t("settings.group_account")} colors={colors} />
+        <Section title={t("settings.display_name")} colors={colors}>
           <TextInput
             value={name}
             onChangeText={setName}
@@ -167,6 +187,7 @@ export function SettingsScreen() {
           <LinkedAccounts colors={colors} />
         </Section>
 
+        <Group title={t("settings.group_learning")} colors={colors} />
         <Section title={t("settings.language_to_learn")} colors={colors}>
           {courseOptions(uiLang).map((c, i) => {
             const active = course === c.key;
@@ -203,6 +224,7 @@ export function SettingsScreen() {
           <VoicePicker course={course} value={voice} onChange={pickVoice} />
         </Section>
 
+        <Group title={t("settings.group_app")} colors={colors} />
         <Section title={t("settings.app_language")} colors={colors}>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
             {NATIVE_LANGS.map((l) => (
@@ -230,6 +252,28 @@ export function SettingsScreen() {
           </View>
         </Section>
 
+        {/*
+          BİLDİRİMLER PROFİLDEN BURAYA. Ekranın içeriği bir ayar: hatırlatma
+          saati, seri koruma, haftalık test. Profil menüsünde durduğu sürece
+          kullanıcı onu Ayarlar'da arıyor ve bulamıyordu; ayrıca "Gelen kutusu"
+          satırının hemen altında, neredeyse aynı adla duruyordu.
+        */}
+        <Section title={t("notifications.notifications")} colors={colors}>
+          <PressableScale
+            onPress={() => nav.navigate("Notifications")}
+            accessibilityRole="button"
+            accessibilityLabel={t("notifications.notifications")}
+            style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}
+          >
+            <View style={{ flex: 1 }}>
+              <Text variant="bodyStrong">{t("notifications.reminders")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("settings.notifications_sub")}</Text>
+            </View>
+            <ChevronRightIcon color={colors.textFaint} size={20} />
+          </PressableScale>
+        </Section>
+
+        <Group title={t("settings.group_privacy_about")} colors={colors} />
         <Section title={t("settings.privacy")} colors={colors}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}>
             <View style={{ flex: 1 }}>
