@@ -6,11 +6,12 @@ import { and, desc, eq, isNotNull } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { mockExamAttempts } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
-import { ensureProfile } from "@/lib/session";
+import { ensureProfile, getProgress } from "@/lib/session";
 import { mockPapersFor, mockSkillLabel, partPoints, type MockLevel, type MockSkill } from "@/lib/mock-exams";
 import { mockCourseOf } from "@/lib/courses";
 import { ChevronRightIcon } from "@/components/icons";
-import { getT } from "@/lib/i18n/server";
+import { getT, getLang } from "@/lib/i18n/server";
+import { formatPercent } from "@/lib/i18n/dict";
 
 export const metadata: Metadata = { title: "Deneme Sınavları" };
 export const dynamic = "force-dynamic";
@@ -39,6 +40,7 @@ const LEVELS: MockLevel[] = ["A1", "A2", "B1", "B2", "C1"];
  */
 export default async function MockExamsPage({ searchParams }: { searchParams: Promise<{ level?: string }> }) {
   const t = await getT();
+  const lang = await getLang();
   const userId = await getUserId();
   if (!userId) redirect("/login");
   const profile = await ensureProfile(userId);
@@ -47,6 +49,22 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
 
   const course = mockCourseOf(profile.course);
   const papers = mockPapersFor(level, course);
+
+  /*
+    Kelime kapsamı: pekişmiş kelimenin kursun toplamına oranı (mobil
+    `MockExamsScreen` `overallPct` ile aynı hesap). Okunamazsa kart yalnız
+    seviyeyi gösteriyor — sınav listesi bu sayıya bağlı değil.
+  */
+  const coverage = await getProgress(userId, new Date().toISOString().slice(0, 10))
+    .then((pr) => {
+      const total = pr.levels.reduce((a, l) => a + l.total, 0);
+      const mastered = pr.levels.reduce((a, l) => a + l.mastered, 0);
+      return total ? Math.min(100, Math.round((mastered / total) * 100)) : null;
+    })
+    .catch((err) => {
+      console.error("[mock-exams] kapsam okunamadı", err);
+      return null;
+    });
   const [running, done] = await Promise.all([
     db
       .select({ id: mockExamAttempts.id, paperId: mockExamAttempts.paperId, skill: mockExamAttempts.skill, taskIx: mockExamAttempts.taskIx })
@@ -85,9 +103,24 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           {t("mockstats.title")}
         </Link>
       </PageBack>
-      <p className="muted text-body">
-        {t("mockexams.intro_web")}
-      </p>
+      {/*
+        SEVİYE + KELİME KAPSAMI kartı — mobil `MockExamsScreen`in ilk kartı.
+        Web'de hiç yoktu. Sınav listesine bakan kişinin ilk sorusu "hangi
+        seviyedeyim ve hazır mıyım"; kapsam yüzdesi o sorunun tek sayısal
+        cevabı ve kâğıtları seçmeden önce görülmesi gereken şey.
+      */}
+      <section className="card flex items-center justify-between gap-4 p-4">
+        <span>
+          <span className="muted block text-micro">{t("mockexams.level")}</span>
+          <span className="block text-h1" style={{ color: "var(--color-brand)" }}>{level}</span>
+        </span>
+        {coverage !== null ? (
+          <span className="text-right">
+            <span className="muted block text-micro">{t("mockexams.word_coverage")}</span>
+            <span className="block text-h1">{formatPercent(coverage, lang)}</span>
+          </span>
+        ) : null}
+      </section>
 
       <nav className="flex flex-wrap gap-2" aria-label={t("mockexams.level")}>
         {LEVELS.map((l) => (
@@ -104,6 +137,13 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           </Link>
         ))}
       </nav>
+
+      {/* Giriş metni çiplerin ALTINDA — mobildeki sıra. Üstteyken seviye
+          seçicisini aşağı itiyor, "hangi seviyeyi çözeyim" sorusunun cevabını
+          bir paragrafın arkasına koyuyordu. */}
+      <p className="muted text-body">
+        {t("mockexams.intro_web")}
+      </p>
 
       {running.filter((r) => mine(r.paperId)).length ? (
         <section className="card p-4">

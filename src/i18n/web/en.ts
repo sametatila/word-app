@@ -1156,4 +1156,6 @@ export const enWeb: Record<string, string> = {
   "achu.tier_unlocked": "{tier} badge unlocked",
   "achu.n_unlocked": "{n} badges unlocked",
   "achu.n_more": "+{n} more badges",
+  "candow.n_proven": "{n} proven",
+  "candow.rule": "A statement counts as proven once you finish at least two of the conversations or exercises tied to it.",
 };

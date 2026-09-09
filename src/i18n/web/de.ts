@@ -1156,4 +1156,6 @@ export const deWeb: Record<string, string> = {
   "achu.tier_unlocked": "{tier}-Abzeichen freigeschaltet",
   "achu.n_unlocked": "{n} Abzeichen freigeschaltet",
   "achu.n_more": "+{n} weitere Abzeichen",
+  "candow.n_proven": "{n} nachgewiesen",
+  "candow.rule": "Eine Aussage gilt als nachgewiesen, sobald du mindestens zwei der zugehörigen Gespräche oder Übungen abgeschlossen hast.",
 };

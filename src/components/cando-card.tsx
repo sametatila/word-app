@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { CardSkeleton } from "@/components/skeleton";
 import { CheckIcon } from "@/components/icons";
-import { CANDO_LEVELS, CANDO_SKILL_LABELS, type Cando } from "@/lib/cando";
+import { CANDO_LEVELS, CANDO_SKILL_LABEL_KEYS, type Cando } from "@/lib/cando";
 import type { CefrLevel } from "@/lib/skills/types";
 import { useT } from "@/lib/i18n/client";
 
@@ -52,12 +52,12 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
       {bare ? null : (
         <div className="flex items-baseline justify-between">
           <h2 className="font-bold">{t("lessonp.i_can").replace(":", "")}</h2>
-          <span className="muted text-xs font-semibold">{provenTotal} kanıtlı</span>
+          <span className="muted text-xs font-semibold">{t("candow.n_proven", { n: provenTotal })}</span>
         </div>
       )}
       <p className="muted text-xs">
-        Bir ifade, ona bağlı en az iki konuşma ya da egzersizi tamamlayınca kanıtlı sayılır.
-        {bare ? ` ${provenTotal} kanıtlı.` : ""}
+        {t("candow.rule")}
+        {bare ? ` ${t("candow.n_proven", { n: provenTotal })}.` : ""}
       </p>
       {/* Beş seviye çipi telefonda kartın genişliğini aşıyor ve sonuncusu
           (C1) kesiliyordu: kaydırma olmadığı için ulaşılamaz bir sekmeydi.
@@ -80,7 +80,7 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
       </div>
       {skills.map((sk) => (
         <div key={sk} className="mt-3">
-          <p className="muted text-[11px] font-bold uppercase tracking-wide">{CANDO_SKILL_LABELS[sk]}</p>
+          <p className="muted text-[11px] font-bold uppercase tracking-wide">{t(CANDO_SKILL_LABEL_KEYS[sk])}</p>
           <ul className="mt-1 space-y-1">
             {shown
               .filter((i) => i.cando.skill === sk)

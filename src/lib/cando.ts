@@ -30,12 +30,18 @@ export type Cando = {
   retired?: boolean;
 };
 
-export const CANDO_SKILL_LABELS: Record<CandoSkill, string> = {
-  RD: "Okuma",
-  LS: "Dinleme",
-  WR: "Yazma",
-  SPK: "Konuşma",
-  GR: "Dilbilgisi",
+/**
+ * Beceri adları — ANAHTAR, metin değil. Değerler Türkçe yazılıydı, yani
+ * Yapabildiklerim ekranı Almanca arayüzde de "Okuma"/"Dinleme" diyordu.
+ * Anahtarlar Beceriler sekmesindekilerle aynı (`skills/meta` SKILL_LABEL_KEYS):
+ * iki ekranda aynı beş beceri, tek çeviri.
+ */
+export const CANDO_SKILL_LABEL_KEYS: Record<CandoSkill, string> = {
+  RD: "skills.reading",
+  LS: "skills.listening",
+  WR: "skills.writing",
+  SPK: "skills.speaking",
+  GR: "skills.grammar",
 };
 
 const c = (level: CefrLevel, skill: CandoSkill, n: number, tr: string, source: Cando["source"] = "CEFR-CV", de?: string): Cando => ({
