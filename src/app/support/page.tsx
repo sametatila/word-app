@@ -1,23 +1,18 @@
-import { SupportPage } from "@/content/legal/support";
-import { supportCopy } from "@/content/legal/support";
-import { LEGAL_PATHS, legalPath } from "@/lib/legal";
+import type { Metadata } from "next";
+import { LegalPage, legalMetadata } from "@/components/legal-shell";
 
-const c = supportCopy("tr");
+export const dynamic = "force-dynamic";
 
-export const metadata = {
-  title: c.title,
-  description: c.description,
-  alternates: {
-    canonical: LEGAL_PATHS.support,
-    languages: { tr: legalPath("support"), en: legalPath("support", "en"), de: legalPath("support", "de") },
-  },
-};
+export function generateMetadata(): Promise<Metadata> {
+  return legalMetadata("support", "tr");
+}
 
 /**
- * Destek sayfası, Türkçe kanonik yolda (/support) — App Store Connect'in
- * Support URL alanına girilen adres. Gerekçesi ve yapısı
- * `src/content/legal/support.tsx` başında.
+ * Türkçe kanonik yol. Metnin kendisi `legal_documents` tablosunda (panelden
+ * düzenleniyor); orada satır yoksa `src/content/legal/defaults/support.ts`
+ * basılıyor. Sayfanın işi yalnız hangi belgeyi ve hangi dili istediğini
+ * söylemek.
  */
-export default function Support() {
-  return <SupportPage locale="tr" />;
+export default function Page() {
+  return <LegalPage doc="support" locale="tr" />;
 }

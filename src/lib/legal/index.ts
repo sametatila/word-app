@@ -43,26 +43,35 @@
  */
 /**
  * Yürürlük tarihi ve sürüm. İkisi de EN YENİ değişikliği anlatır ve
- * LEGAL_CHANGELOG'un ilk kaydıyla aynı olmak zorundadır.
+ * LEGAL_CHANGELOG'un ilk kaydıyla aynı olmak zorundadır — kapı
+ * `scripts/test-legal.ts`.
  *
- * iOS yayın gününde ikisi de değişecek (→ "1.4" ve o günün tarihi); ne yazılacağı
- * ve kaydın metni IOS_LAUNCH_ENTRY'de hazır bekliyor.
+ * SÜRÜM GEÇMİŞİ 2026-09-09'DA SIFIRLANDI, ve bu bilinçli.
  *
- * "1.3" ÖNCE iOS'a ayrılmıştı, sonra abonelik maddesine verildi. Sebep: fiyat
- * değişikliği, promosyon kodu ve davet ödülü maddeleri hak ve yükümlülük
- * DEĞİŞTİRİYOR, yani yama basamağı (1.2.2) onları hafife alırdı — okuyucu sürüm
- * listesinde esaslı değişikliği terim düzeltmesinden ayırt edebilmeli. iOS kaydı
- * bir sürüm kaydırıldı; yordamı aynı, yalnız numarası "1.4".
+ * Numara 1.1'den 1.3.1'e kadar yürümüştü ama o yürüyüşün tamamı geliştirme
+ * sırasında oldu. Kayıtların anlattığı değişikliklerin çoğu HENÜZ YAYINDA
+ * OLMAYAN özelliklerin maddeleriydi: abonelik fiyatlandırması, promosyon kodu,
+ * davet ödülü, App Store ek koşulları. Hiçbiri bugün satın alınabilir değil.
  *
- * "1.3.1" YAMA basamağında, çünkü kimsenin hakkı ya da yükümlülüğü değişmedi:
- * alıcılar tablosundan hiç kullanılmamış iki sağlayıcı düştü, bir sağlayıcı
- * adıyla yazıldı ve bölgesi düzeltildi, bir de destek sayfası eklendi. Yine de
- * sürüm ARTTI — metnin kendisi §14'te "değiştiğinde tarih ve sürüm güncellenir"
- * diye söz veriyor; alıcılar tablosu metnin parçası, dolayısıyla sessizce
- * değiştirmek o sözü bozardı.
+ * Kimsenin kabul ettiği bir sürüm de değişmedi: kabul edilen sürüm hiçbir yerde
+ * saklanmıyor (şemada böyle bir sütun yok), uygulama hiçbir mağazada
+ * yayımlanmadı, web tarafındaki hesaplar geliştirme ve test hesapları.
+ *
+ * Sürüm geçmişinin tek işi, okuyucunun DAHA ÖNCE OKUDUĞU metnin neresinin
+ * oynadığını görmesi. Kimsenin okumadığı beş sürümü listelemek o işi yapmıyor;
+ * yalnız metni olduğundan daha oynak gösteriyor ve gerçek ilk sürüm geldiğinde
+ * onu kalabalığın içinde bırakıyor. Sayaç bu yüzden "1.0"a çekildi.
+ *
+ * KURAL DEĞİŞMEDİ, yalnız başlangıç noktası değişti: metin değişince tarih ve
+ * sürüm güncellenir (§14'ün kendi sözü) ve kayıt düşmeden sürüm artırılmaz.
+ * Hak ya da yükümlülüğü değiştiren değişiklik ikinci basamağı (1.1), yalnız
+ * düzelten değişiklik yama basamağını (1.0.1) alır.
+ *
+ * iOS yayın gününde ikisi de değişecek (→ "1.1" ve o günün tarihi); ne
+ * yazılacağı ve kaydın metni IOS_LAUNCH_ENTRY'de hazır bekliyor.
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-09";
-export const LEGAL_VERSION = "1.3.1";
+export const LEGAL_VERSION = "1.0";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
@@ -229,7 +238,7 @@ export const LEGAL_PATHS = {
  *   4. Gizlilik manifesti ile App Store Connect etiketleri örtüşüyor
  *   5. Uygulama ikonu ve açılış ekranı markalı
  *   6. Cihaz sınama listesi koşuldu
- *   7. `LEGAL_VERSION` → "1.4", `LEGAL_EFFECTIVE_DATE` → o gün, kayıt düşüldü
+ *   7. `LEGAL_VERSION` → "1.1", `LEGAL_EFFECTIVE_DATE` → o gün, kayıt düşüldü
  *
  * Metin tarafında yarım iş KALMADI: şartların 7b maddesi (üç dilde) Apple ile
  * girişi zaten `hasIos()` arkasında sayıyor. Bayrak tek satır.
@@ -269,7 +278,7 @@ export type LegalChangelogEntry = {
  *
  * O GÜN YAPILACAKLAR — üçü de bu dosyada, hepsi tek satır:
  *   1. `LEGAL_PLATFORMS.ios` → `true`
- *   2. `LEGAL_VERSION` → `"1.4"`   (kaydın kendi `version` alanıyla aynı)
+ *   2. `LEGAL_VERSION` → `"1.1"`   (kaydın kendi `version` alanıyla aynı)
  *   3. `LEGAL_EFFECTIVE_DATE` → yayın günü
  *
  * ÖNCE bitmesi gerekenler `docs/plan/ios-parity.md` §6'daki kapılar. Metin
@@ -279,7 +288,7 @@ export type LegalChangelogEntry = {
  * satırı da bu dosyada hazır ve aynı bayrağın arkasında.
  */
 const IOS_LAUNCH_ENTRY: LegalChangelogEntry = {
-  version: "1.4",
+  version: "1.1",
   date: LEGAL_EFFECTIVE_DATE,
   changes: {
     tr: [
@@ -310,104 +319,8 @@ export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
   // Bayrak kapalıyken bu kayıt listede YOK; açıldığı gün kendiliğinden başa gelir.
   ...(LEGAL_PLATFORMS.ios ? [IOS_LAUNCH_ENTRY] : []),
   {
-    version: "1.3.1",
+    version: "1.0",
     date: "2026-09-09",
-    changes: {
-      tr: [
-        "Alıcılar tablosundan iki sağlayıcı çıkarıldı: Google Gemini ve OpenRouter. İkisi de bugüne kadar hiç kullanılmamıştı — erişim anahtarları hiçbir sunucu yapılandırmasında yoktu — ve kullanılmayacaklar. Tablo, verinin gitmediği yerleri sayıyordu; artık yalnız gerçekten veri alan tarafları sayıyor.",
-        "E-posta sağlayıcısı adıyla yazıldı (Resend) ve bölgesi düzeltildi: eskiden \"AB (yeterlilik)\" deniyordu, oysa kullanılan uç sağlayıcının küresel ucu; doğru beyan \"ABD, standart sözleşme hükümleri\". Gönderilen veri değişmedi, yalnız beyan gerçeğe getirildi.",
-        "Destek ve iletişim sayfası eklendi (/support): destek adresi, yanıt süresi, hangi konu için hangi kanalın kullanılacağı ve uygulama içindeki bildirme ile engelleme yolları tek sayfada. Adres bugüne kadar yalnız bu metinlerin içinde geçiyordu.",
-      ],
-      en: [
-        "Two providers were removed from the table of recipients: Google Gemini and OpenRouter. Neither had ever been used — their access keys were in no server configuration — and neither will be. The table was listing places the data does not go; it now lists only parties that actually receive it.",
-        "The e-mail provider is now named (Resend) and its region corrected: it previously said \"within the EU (adequacy)\", but the endpoint in use is the provider's global one, so the correct statement is \"USA, standard contractual clauses\". What is sent did not change; only the statement was brought in line with reality.",
-        "A support and contact page was added (/support): the support address, the response time, which channel to use for which topic, and the in-app reporting and blocking paths, all in one place. Until now the address appeared only inside these texts.",
-      ],
-      de: [
-        "Zwei Anbieter wurden aus der Empfängertabelle entfernt: Google Gemini und OpenRouter. Beide wurden nie genutzt — ihre Zugangsschlüssel standen in keiner Serverkonfiguration — und werden es auch nicht. Die Tabelle nannte Stellen, an die die Daten gar nicht gehen; jetzt nennt sie nur noch Parteien, die tatsächlich Daten erhalten.",
-        "Der E-Mail-Anbieter wird jetzt namentlich genannt (Resend), und seine Region wurde korrigiert: Bisher stand dort \"innerhalb der EU (Angemessenheit)\", genutzt wird jedoch der globale Endpunkt des Anbieters; korrekt ist \"USA, Standardvertragsklauseln\". Am Versand selbst hat sich nichts geändert, nur die Angabe wurde richtiggestellt.",
-        "Eine Seite für Support und Kontakt wurde ergänzt (/support): Support-Adresse, Antwortzeit, welcher Kanal für welches Thema und die Melde- und Blockierwege in der App — alles an einem Ort. Bisher stand die Adresse nur innerhalb dieser Texte.",
-      ],
-    },
-  },
-  {
-    version: "1.3",
-    date: "2026-09-08",
-    changes: {
-      tr: [
-        "Abonelik ücretinin nasıl değişebileceği ayrıntılı yazıldı: ödediğin dönemin fiyatı o dönem boyunca değişmez, artış geriye yürümez ve yalnız bir sonraki yenilemede geçerli olur; her artış en az 30 gün önceden mağaza üzerinden bildirilir. Artışın büyüklüğüne göre ya iptal etmediğin sürece yeni fiyattan yenilenir ya da açık onayın aranır — onay vermezsen abonelik yenilenmeden sona erer. Yürürlükten önce iptal edersen yeni fiyat tahsil edilmez.",
-        "Tanıtım fiyatları ve hediye süreler için ayrı bir madde eklendi: ücretsiz deneme, indirimli giriş fiyatı, promosyon kodu ve davet ödülü yalnız belirtilen süre geçerlidir; kazanılan süre nakde çevrilemez, devredilemez ve gelecekteki fiyatı sabitlemez.",
-        "Premium'un adil kullanım sınırları metne girdi (günlük cepte yürüyüş turu ve yapay zekâ değerlendirmesi). Sabit bir sayı YAZILMADI: sınır üründe ayarlanabilir olduğu için metin, yürürlükteki değerin gösterildiği yeri (uygulamadaki Premium sayfası) işaret ediyor. Sayı buraya yazılsaydı bir ayar değişikliği sözleşmeyi sürüm artışı ve bildirim olmadan sessizce değiştirirdi.",
-      ],
-      en: [
-        "How the subscription price can change is now spelled out: the price you paid holds for the period you paid for, an increase never applies retroactively and only takes effect at the next renewal, and every increase is announced through the store at least 30 days in advance. Depending on its size it either renews at the new price unless you cancel, or requires your explicit consent — without which the subscription ends instead of renewing. Cancel before the effective date and you are not charged the new price.",
-        "A separate clause covers promotional prices and gifted time: a free trial, a discounted introductory price, a promo code and a referral reward are valid only for the stated period; time gained cannot be cashed out or transferred and does not fix future prices.",
-        "Premium fair-use limits entered the text (daily pocket-walk rounds and AI evaluations). No fixed number is written: because the limit is adjustable in the product, the text points to where the value in force is shown (the Premium page in the app). Writing the number here would let a settings change alter the contract silently, without a version bump or notice.",
-      ],
-      de: [
-        "Wie sich der Abopreis ändern kann, steht jetzt ausführlich da: Der bezahlte Preis gilt für den bezahlten Zeitraum, eine Erhöhung wirkt nie rückwirkend und greift erst bei der nächsten Verlängerung; jede Erhöhung wird mindestens 30 Tage vorher über den Store angekündigt. Je nach Höhe verlängert sich das Abo zum neuen Preis, sofern du nicht kündigst, oder es ist deine ausdrückliche Zustimmung nötig — ohne sie endet das Abo, statt sich zu verlängern. Kündigst du vor dem Stichtag, wird der neue Preis nicht berechnet.",
-        "Eine eigene Klausel behandelt Aktionspreise und geschenkte Laufzeit: kostenlose Testphase, vergünstigter Einführungspreis, Aktionscode und Einladungsprämie gelten nur für den angegebenen Zeitraum; gewonnene Laufzeit ist nicht auszahlbar, nicht übertragbar und schreibt künftige Preise nicht fest.",
-        "Die Fair-Use-Grenzen von Premium kamen in den Text (tägliche Taschen-Geh-Runden und KI-Bewertungen). Es steht keine feste Zahl darin: Da die Grenze im Produkt einstellbar ist, verweist der Text auf die Stelle, an der der geltende Wert angezeigt wird (die Premium-Seite in der App). Stünde die Zahl hier, würde eine Einstellungsänderung den Vertrag still ändern — ohne Versionssprung und ohne Mitteilung.",
-      ],
-    },
-  },
-  {
-    version: "1.2.1",
-    date: "2026-09-07",
-    changes: {
-      tr: [
-        "Uygulamada \"ders\" denen bölümün adı \"Konuşma\" oldu; bu metinler de artık o adı kullanıyor. Hak, yükümlülük ya da veri işleme uygulamalarında hiçbir değişiklik yok.",
-        "Fikri mülkiyet maddesinde \"ders içerikleri\" yerine \"öğretim içerikleri\" yazıldı: yeni adla yazılsaydı madde yalnız konuşma bölümünü kapsar, okuma, dinleme ve yazma alıştırmaları dışarıda kalırdı.",
-      ],
-      en: [
-        "The part of the app previously called a \"lesson\" is now called \"Speaking\", and these texts use that name. No rights, obligations or data practices changed.",
-        "In the intellectual property clause \"the lesson content\" became \"the learning content\": with the new name the clause would have covered only the speaking part, leaving the reading, listening and writing exercises out.",
-      ],
-      de: [
-        "Der in der App bisher \"Lektion\" genannte Teil heißt jetzt \"Sprechen\"; diese Texte verwenden denselben Namen. An Rechten, Pflichten oder der Datenverarbeitung ändert sich nichts.",
-        "In der Klausel zum geistigen Eigentum wurde aus \"die Lektionsinhalte\" \"die Lerninhalte\": mit dem neuen Namen hätte die Klausel nur den Sprechteil erfasst und Lese-, Hör- und Schreibübungen ausgelassen.",
-      ],
-    },
-  },
-  {
-    version: "1.2",
-    date: "2026-09-04",
-    changes: {
-      tr: [
-        "Uygulamanın adı Lernomi oldu ve adresi www.lernomi.app'e taşındı; eski adres çalışmaya devam ediyor.",
-        "Hesap açma yaşı 16'dan 18'e çıkarıldı; içerik yetişkin öğrenciye yönelik.",
-        "Kurslar doğru sayıldı: Almanca, Zürih Almancası ve İngilizce (metin yalnız Almanca diyordu).",
-        "Veri sorumlusu ile uygulamayı Play'de yayımlayan taraf ayrı ayrı tanıtıldı.",
-        "Veri hakları başvuruları için KVKK ve GDPR'a ayrı adresler açıldı.",
-        "Ürün analitiğinde bir olayın yanında taşınabilecek etiketin sınırları yazıldı.",
-        "Sunucu yedeklerinin saklama süresi 30 gün olarak belirtildi.",
-        "Metinler İngilizce ve Almanca olarak da yayımlandı; bağlayıcı metin Türkçe.",
-      ],
-      en: [
-        "The app is now called Lernomi and moved to www.lernomi.app; the old address keeps working.",
-        "The minimum age for an account was raised from 16 to 18; the content is aimed at adult learners.",
-        "The courses are now stated correctly: German, Zurich German and English (the text said German only).",
-        "The data controller and the person who publishes the app on Play are now identified separately.",
-        "Separate addresses were opened for data rights requests under KVKK and under the GDPR.",
-        "The limits of the technical label an analytics event may carry are now written down.",
-        "The retention period for server backups is stated as 30 days.",
-        "The texts are also published in English and German; the binding text is Turkish.",
-      ],
-      de: [
-        "Die App heißt jetzt Lernomi und ist unter www.lernomi.app erreichbar; die alte Adresse funktioniert weiterhin.",
-        "Das Mindestalter für ein Konto wurde von 16 auf 18 angehoben; die Inhalte richten sich an erwachsene Lernende.",
-        "Die Kurse werden jetzt richtig genannt: Deutsch, Zürichdeutsch und Englisch (der Text nannte nur Deutsch).",
-        "Der Verantwortliche und die Person, die die App bei Play veröffentlicht, werden getrennt ausgewiesen.",
-        "Für Anträge nach KVKK und nach DSGVO wurden getrennte Adressen eingerichtet.",
-        "Die Grenzen der technischen Kennzeichnung, die ein Analyse-Ereignis tragen darf, sind jetzt festgehalten.",
-        "Die Aufbewahrungsfrist für Server-Backups ist mit 30 Tagen angegeben.",
-        "Die Texte erscheinen auch auf Englisch und Deutsch; verbindlich ist die türkische Fassung.",
-      ],
-    },
-  },
-  {
-    version: "1.1",
-    date: "2026-09-03",
     changes: {
       tr: ["İlk yayımlanan sürüm."],
       en: ["First published version."],
@@ -449,7 +362,7 @@ export function legalPath(doc: LegalDoc, locale: LegalLocale = LEGAL_DEFAULT_LOC
  * Türkçe bir hücre, eksik çeviriden daha kötü çünkü fark edilmez. Anahtarla
  * tutulunca eksik çeviri derleme hatası oluyor.
  */
-type Trio = { tr: string; en: string; de: string };
+export type Trio = { tr: string; en: string; de: string };
 
 const PROCESSOR_NAMES = {
   smtp: { tr: "Resend (e-posta, SMTP ile)", en: "Resend (e-mail, over SMTP)", de: "Resend (E-Mail, über SMTP)" },

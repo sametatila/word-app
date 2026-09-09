@@ -1321,3 +1321,31 @@ export const appSettings = pgTable("app_settings", {
   updatedBy: text("updated_by"),
   updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
 });
+
+/**
+ * Hukuki belgelerin gövdesi — panelden düzenlenen metin (0045).
+ *
+ * Gövde MARKDOWN; sayfaya React öğesi olarak basılıyor, ham HTML hiç
+ * oluşmuyor. Dinamik parçalar belirteçle geliyor ({{supportEmail}},
+ * {{processorsTable}}, {{ifIos}}…), sözlüğü `lib/legal/markdown.tsx`te kapalı.
+ *
+ * Tablo BOŞ OLABİLİR: o zaman koddaki varsayılan metin basılır. Satır, yalnız
+ * o belge panelden bir kez kaydedildiğinde oluşuyor.
+ */
+export const legalDocuments = pgTable(
+  "legal_documents",
+  {
+    /** 'privacy' | 'terms' | 'support' */
+    doc: text("doc").notNull(),
+    /** 'tr' | 'en' | 'de' */
+    locale: text("locale").notNull(),
+    title: text("title").notNull(),
+    description: text("description").notNull().default(""),
+    /** "Kısaca" maddeleri (string[]) — makalenin üstündeki kartta basılıyor. */
+    summary: jsonb("summary").notNull().default(sql`'[]'::jsonb`),
+    body: text("body").notNull(),
+    updatedBy: text("updated_by"),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ name: "legal_documents_pk", columns: [t.doc, t.locale] })],
+);
