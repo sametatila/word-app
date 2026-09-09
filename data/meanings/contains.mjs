@@ -78,6 +78,9 @@ const PREFIXES = [
   "bekannt",
   "bereit",
   "zugute",
+  // `zunichte` de aynı fosilleşmiş yuva: yalnız "machen"/"werden" ile
+  // birleşiyor ("machen … zunichte"), tıpkı listedeki preis-, kund-, irre- gibi.
+  "zunichte",
   "stehen",
   "bleiben",
   "kennen",
