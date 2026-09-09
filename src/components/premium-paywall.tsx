@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { supportsMockExams } from "@/lib/mock-exams";
+import { useShell } from "@/components/app-shell";
 import { track } from "@/lib/track";
 import { useT } from "@/lib/i18n/client";
 import { CrownIcon, CheckIcon } from "@/components/icons";
@@ -48,6 +50,7 @@ export function PremiumPaywall({
   prefillCode?: string;
 }) {
   const t = useT();
+  const { course } = useShell();
   const premium = !!status?.premium;
 
   useEffect(() => {
@@ -85,6 +88,9 @@ export function PremiumPaywall({
           <CrownIcon size={42} />
         </div>
         <h1 className="mt-4 text-3xl font-extrabold">{t("paywall.nomi_premium")}</h1>
+        {/* Sloganı mobil başlığın hemen altında gösteriyor; web'de hiç yoktu.
+            Premium'u olana pazarlama yapılmıyor. */}
+        {!premium && <p className="muted mt-1 text-body">{t("paywall.unlimited_learning_full_exam")}</p>}
         <p className="mt-1 muted">{stateLine()}</p>
         {/* Bekleyen hediye her durumda gösteriliyor: kullanıcı kazandığı ama
             henüz başlamamış süreyi göremezse kazandığını bilmez. */}
@@ -138,6 +144,13 @@ export function PremiumPaywall({
           <p className="mt-4 rounded-2xl border p-3 text-xs muted" style={{ borderColor: "var(--border)" }}>
             <strong className="mr-1">{t("paywall.fair_use_title")}:</strong>
             {t("plan.pro_walk_cap", { n: fairUse.pocketWalksPerDay })} · {t("plan.pro_ai", { n: fairUse.aiPracticePerDay })}
+          </p>
+
+          {/* İçerik vaadi — mobilde plan listesinin hemen altında. Sınav
+              formatından yalnız o kursta gerçekten deneme sınavı varsa söz
+              ediliyor; olmayan sınavın sözü verilmiyor. */}
+          <p className="muted mt-3 text-center text-caption">
+            {t(supportsMockExams(course) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
           </p>
 
           {/* Web'de satın alma yok — yönlendirme dürüstçe yazılı. */}
