@@ -101,6 +101,39 @@ for (const p of packets) {
   }
 }
 
+/*
+  İKİZ KARŞILIK — SAYILIYOR, UYARILMIYOR.
+
+  İki İngilizce başlık aynı Almanca karşılığı taşıyabiliyor. İlk bakışta bu
+  bir kusur gibi görünüyor: de→en sorusunda o karşılık gösterildiğinde iki şık
+  birden doğru olur. Madde madde uyarı da yazdım — ve 103 uyarı verdi. Sonra
+  ne olduklarına baktım ve UYARI YANLIŞTI:
+
+    Film      movie = film          İngilizce eşanlamlı
+    Flugzeug  airplane = plane      İngilizce eşanlamlı
+    krank     sick = ill            İngilizce eşanlamlı
+    dick      fat = thick           Almanca tek kelime, İngilizce iki
+    halten    stop = hold           Almanca tek kelime, İngilizce iki
+
+  İki durumda da KARŞILIK DOĞRU. Birinde İngilizce gerçekten iki kelimeyle
+  aynı şeyi söylüyor, ötekinde Almanca bir kelime iki İngilizce anlamı
+  kapsıyor ve ayrım örnek cümlede duruyor. Düzeltilecek bir veri yok.
+
+  Gerçek sorun soru üretiminde: çeldirici seçilirken doğru cevapla aynı
+  karşılığa sahip satır elenmiyorsa soru iki doğru şıkla çıkıyor. Orası
+  `src/lib/` işi, bu hattın değil.
+
+  O yüzden burada yalnız SAYI duruyor — ölçü görünür kalsın, ama yanlış
+  uyarı gerçek sinyali gömmesin.
+*/
+const byGloss = new Map();
+for (const f of readdirSync(IN).filter((x) => x.endsWith(".json"))) {
+  for (const k of JSON.parse(readFileSync(`${IN}/${f}`, "utf8")).words) {
+    byGloss.set(k.deGloss, (byGloss.get(k.deGloss) ?? 0) + 1);
+  }
+}
+const twinGroups = [...byGloss.values()].filter((n) => n > 1).length;
+
 if (errors.length) {
   console.log(`\nHATA (${errors.length}):`);
   console.log(errors.slice(0, 40).join("\n"));
@@ -113,6 +146,6 @@ if (warnings.length) {
 }
 console.log(
   `\nözet: ${packets.length - pending}/${packets.length} paket üretilmiş, ${items} madde · ` +
-    `${errors.length} hata · ${warnings.length} uyarı`,
+    `${errors.length} hata · ${warnings.length} uyarı · ${twinGroups} ikiz karşılık grubu`,
 );
 process.exit(errors.length ? 1 : 0);
