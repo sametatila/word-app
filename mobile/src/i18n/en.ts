@@ -1033,6 +1033,8 @@ export const en: Record<string, string> = {
   "walk.goodbye": "All right, have a good day.",
   "walk.encourage": "No problem.|That's fine, keep going.|You're doing well.|Next time.",
   "walkmode.background_unavailable": "Listening may not continue while the screen is off; finish the round with the screen on.",
+  "walkmode.screen_off_premium": "Studying with the screen off is a Premium feature. Turn the screen back on and we can pick up where we left off.",
+  "walkmode.screen_off_premium_upgrade": "Studying with the screen off is a Premium feature. You can go Premium from your profile, or turn the screen back on and keep going.",
   "walkmode.skip": "Skip",
   "walkmode.back_message": "This round is left unfinished; what you learned is saved.",
   "walkmode.badge_teaching": "Learning a new word",

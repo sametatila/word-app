@@ -1038,6 +1038,8 @@ export const tr: Record<string, string> = {
   "walk.goodbye": "Tamam, iyi günler.",
   "walk.encourage": "Sorun değil.|Olsun, devam.|İyi gidiyorsun.|Bir dahakine.",
   "walkmode.background_unavailable": "Ekran kapalıyken dinleme sürmeyebilir; turu ekran açıkken tamamla.",
+  "walkmode.screen_off_premium": "Ekran kapalıyken çalışmak Premium özelliği. Ekranı açarsan turdan kaldığımız yerden devam edebiliriz.",
+  "walkmode.screen_off_premium_upgrade": "Ekran kapalıyken çalışmak Premium özelliği. Profilden Premium'a geçebilir ya da ekranı açıp turdan devam edebilirsin.",
   "walkmode.skip": "Atla",
   "walkmode.back_message": "Bu tur yarım kalır; öğrendiklerin kaydedilir.",
   "walkmode.badge_teaching": "Yeni kelime öğreniyoruz",

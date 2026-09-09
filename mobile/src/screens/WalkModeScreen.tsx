@@ -15,6 +15,8 @@ import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } fro
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeReady, bridgeStop } from "../lib/ttsBridge";
+import { usePremiumStatus } from "../lib/premium";
+import { billingAvailable } from "../lib/billing";
 import { narrationVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName } from "../lib/i18n";
 import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
@@ -85,6 +87,25 @@ export function WalkModeScreen() {
   const [bgUnavailable, setBgUnavailable] = useState(false);
   const [greeting, setGreeting] = useState(false); // Başla sonrası kısa TTS karşılama
   const screenOffRef = useRef(false); // ücretsiz yol güvenilmez → Azure (adı Android'den; aşağıdaki nota bak)
+
+  /**
+   * EKRAN KAPALI YOL PREMIUM. Sunucu `/api/stt`i `mode=walk` geldiğinde
+   * `canPocketWalk` ile kapatıyor; ücretsiz katmanda günlük hak SIFIR, yani
+   * ücretsiz bir hesapta bu yol HER ZAMAN 403 döner.
+   *
+   * Eskiden bu reddi kimse anlatmıyordu: `azureListenOnce` her hatayı `null`a
+   * çeviriyor, tur da onu "duyamadım" diye okuyordu. Kullanıcı mikrofonunun
+   * bozuk olduğunu sanıyordu — cihazda ölçüldü (2026-09-09): üç kelimede üç
+   * kez 403, ekranda üç kez "duyamadım".
+   */
+  const { status: premium } = usePremiumStatus();
+  const pocketGateRef = useRef<boolean | null>(null);
+  const premiumToldRef = useRef(false);
+  useEffect(() => {
+    pocketGateRef.current = premium?.gates?.pocket_walk?.allowed ?? null;
+  }, [premium]);
+  /** Kapı KESİN kapalı mı (bilinmiyorsa false — bilmediğimiz için susmayız, deneriz). */
+  const pocketGateClosed = () => pocketGateRef.current === false;
   const nativeListeningRef = useRef(false); // şu an native dinliyor mu (kesinti gelince hızlı kesmek için)
   const listenCut = useRef(false); // dinlemeyi BİZ kestik mi — boş sonuç kullanıcının sessizliği sayılmasın
 
@@ -189,6 +210,14 @@ export function WalkModeScreen() {
       // bekleyeni burada serbest bırakmazsak tur o utterance'ta donuyor. Serbest kalınca bir
       // sonraki cümle zaten native yola düşüyor (`say`/`sayTarget` screenOffRef'e bakıyor).
       if (off) { try { bridgeStop(); } catch { /* yut */ } }
+      // Ekran kapalı yol premium'a kapalıysa SÖYLE. Tek sefer: her kelimede
+      // tekrarlamak turu anlatıma çevirirdi. Ekran açıkken tur normal sürüyor,
+      // mesaj da bunu söylüyor — kullanıcı çıkmaz sokakta bırakılmıyor.
+      if (off && pocketGateClosed() && !premiumToldRef.current) {
+        premiumToldRef.current = true;
+        setBgUnavailable(true);
+        void sayNative(tx(billingAvailable() ? "walkmode.screen_off_premium_upgrade" : "walkmode.screen_off_premium"));
+      }
     });
     return () => { unsub(); stopWalkService(); };
   }, []);
@@ -262,7 +291,13 @@ export function WalkModeScreen() {
     // yukarıdaki uzun nota bak) → sunucu (Azure) STT, paralı. Yoksa native.
     const useAzure = screenOffRef.current;
     let res: { k: "v"; heard: string[] } | { k: "m" };
-    if (useAzure) {
+    if (useAzure && pocketGateClosed()) {
+      // Kapı kapalıysa Azure'u HİÇ ÇAĞIRMIYORUZ: her deneme 3 saniyelik kayıt,
+      // bir yükleme ve kesin bir 403 demek. Bunun yerine kullanıcıyı bekliyoruz —
+      // ekranı açarsa tur ücretsiz native tanıyıcıyla kaldığı yerden sürüyor.
+      // Gerekçe ekran-kapandı işleyicisindeki notta; mesaj orada bir kez okunuyor.
+      res = await waitManual().then(() => ({ k: "m" as const }));
+    } else if (useAzure) {
       // Azure: micon HEMEN (setTimeout arka planda durur); micoff kayıt biter bitmez (upload'dan
       // ÖNCE) → verdict'le çakışmaz. Sonra ~1sn upload, sonra verdict.
       sfx("micon");

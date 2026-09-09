@@ -1033,6 +1033,8 @@ export const de: Record<string, string> = {
   "walk.goodbye": "Alles klar, schönen Tag noch.",
   "walk.encourage": "Kein Problem.|Passt schon, weiter.|Du machst das gut.|Nächstes Mal.",
   "walkmode.background_unavailable": "Bei ausgeschaltetem Bildschirm hört das Mikrofon eventuell nicht weiter zu; beende die Runde mit eingeschaltetem Bildschirm.",
+  "walkmode.screen_off_premium": "Mit ausgeschaltetem Bildschirm zu lernen ist eine Premium-Funktion. Schalte den Bildschirm wieder ein, dann machen wir da weiter, wo wir aufgehört haben.",
+  "walkmode.screen_off_premium_upgrade": "Mit ausgeschaltetem Bildschirm zu lernen ist eine Premium-Funktion. Du kannst im Profil auf Premium umsteigen oder den Bildschirm wieder einschalten und weitermachen.",
   "walkmode.skip": "Überspringen",
   "walkmode.back_message": "Diese Runde bleibt unvollendet; das Gelernte wird gespeichert.",
   "walkmode.badge_teaching": "Wir lernen ein neues Wort",
