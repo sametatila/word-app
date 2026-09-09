@@ -1055,7 +1055,6 @@ export const enWeb: Record<string, string> = {
   "push.rem_weekly_title": "Your weekly test is ready",
   "push.rem_weekly_body": "What did you learn at level {level} this week? Ten questions will tell you.",
   "push.rem_weekly_body_named": "{name}, what did you learn at level {level} this week? Ten questions will tell you.",
-  "notifw.hour": "HOUR",
   "weakw.study": "Practise",
   "weakw.round_of": "{game} round",
   "weakw.n_times": "{n} times",

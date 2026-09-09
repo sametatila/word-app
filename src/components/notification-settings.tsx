@@ -106,7 +106,7 @@ export function NotificationSettings() {
                   saatini sormak, cevabı hiçbir şeyi değiştirmeyen bir soru. */}
               {prefs.daily ? (
                 <div className="px-4 pb-3">
-                  <p className="muted mb-2 text-caption tracking-wide">{t("notifw.hour")}</p>
+                  <p className="muted mb-2 text-caption tracking-wide">{t("notifications.hour")}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {HOURS.map((h) => (
                       <button
