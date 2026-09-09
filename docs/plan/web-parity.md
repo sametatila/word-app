@@ -560,3 +560,48 @@ düzenine oturtuldu, yerlerini korudular:
 - **Yapabildiklerim'de beceriye göre alt başlıklar** — mobilde yalnız seviye
   var; web'de eklenen yapı, eksilen değil.
 - **`/analytics` ve `admin/*`** — iç araçlar, Türkçe kalıyor.
+
+
+---
+
+## 9. İkinci turun kapanışı (9 Eyl)
+
+Mobilin 34 ekranının tamamı web karşılığıyla karşılaştırıldı. Şerit tablosu
+(§4) hâlâ geçerli ama "bitti" artık **doğrulanmış** demek: her ekranın bölüm
+sırası, kartları ve denetimleri mobil kaynağıyla yan yana okundu.
+
+### Dil tarafında bulunan iki yapısal açık
+
+1. **İlk ziyarette dil sorulmuyordu.** Çerez ve profil yokken sunucu doğrudan
+   Türkçeye düşüyordu — yani arayüzün üç dilde olması, dili SEÇEBİLEN
+   kullanıcıya kadar hiç işe yaramıyordu. Artık `accept-language` dinleniyor
+   ve onboarding mobildeki soruyu soruyor (`01aab4c0`, `a51adc49`).
+2. **Onboarding'de seçilen dil hesaba taşınmıyordu.** Karar çerezde kalıyor,
+   hesap açılınca `LangSync` profili çereze aynalayıp seçimi eziyordu
+   (`e730c9dc`).
+
+### Son durum
+
+| Denetim | Sonuç |
+|---|---|
+| `npx tsc --noEmit` | temiz |
+| `npm run typecheck:scripts` | temiz |
+| `npm run i18n:check` | base 1079 + web 1227 anahtar × 3 dil, dört kural da geçiyor |
+| `npx eslint src` | 0 hata |
+| `npm run test:e2e` | 618 geçti · 2 oynak (oyun çeşitliliği, aşağıda) |
+| Üç dilde 24 sayfa | ham anahtar yok, sayfa hatası yok |
+
+**Oynak test:** "aynı oyun arka arkaya gelmiyor" yirmi oturum kurup sıfır
+tekrar bekliyor; gerçek veriyle koşuda 0-3 arası çıkıyor, çünkü kelimenin
+durumuna göre uygun oyun sayısı azalabiliyor. Eşiği gevşetmek sorunu gizlemek
+olurdu — merdivenin kendisi bakılacak bir kalem olarak duruyor.
+
+### Samet'e kalanlar
+
+1. **Push** — 170+ yerel commit bekliyor; `git push origin main`.
+2. **Deploy sonrası iki timer:** `lernomi-cron-streak` ve `lernomi-cron-weekly`
+   (AGENTS.md'de yazılı). Uçlar bugün çağrılsa 404 döner.
+3. **Migrasyon** `0042_reminder_kinds` deploy zincirinde uygulanacak.
+4. **İçerik kararları** (§6): karıştırma çiftlerinin İngilizce/Almanca
+   konuşana göre yeniden seçilmesi ve `words` tablosuna Almanca karşılık
+   sütunu. İkisi de içerik projesi, kod değil.
