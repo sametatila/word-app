@@ -1,5 +1,6 @@
 import "server-only";
 import { headers } from "next/headers";
+import { getLang } from "@/lib/i18n/server";
 import { unstable_rethrow } from "next/navigation";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
@@ -82,7 +83,10 @@ export const auth = betterAuth({
     requireEmailVerification: emailConfigured,
     minPasswordLength: 8,
     sendResetPassword: async ({ user: u, url }) => {
-      const { subject, html, text } = resetEmail(url);
+      // Dil isteğin kendisinden: dil çerezi, yoksa tarayıcının Accept-Language'i
+      // (bkz. lib/i18n/server). Profil okumak burada işe yaramaz — sıfırlama
+      // isteği çoğu zaman oturumsuz geliyor.
+      const { subject, html, text } = resetEmail(url, await getLang());
       await sendEmail(u.email, subject, html, text);
     },
   },
@@ -90,7 +94,8 @@ export const auth = betterAuth({
     sendOnSignUp: true,
     autoSignInAfterVerification: true,
     sendVerificationEmail: async ({ user: u, url }) => {
-      const { subject, html, text } = verificationEmail(url);
+      // Kayıt anında profil henüz yok; dilin tek güvenilir kaynağı istek.
+      const { subject, html, text } = verificationEmail(url, await getLang());
       await sendEmail(u.email, subject, html, text);
     },
   },
