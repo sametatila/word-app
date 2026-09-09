@@ -263,11 +263,11 @@
    * Fark küçüktü (#fbf6ee → #fbf7f2) ama iki uygulama yan yana konduğunda
    * zemin sıcaklığı farkı görünüyordu; aynı değer, aynı zemin.
    *
-   * TEK SAPMA `--text-muted`: mobilin değeri #8a7866 ve beyaz kart üstünde
-   * 4.23 veriyor (eşik 4.5). Web'in #7c6c5d'si 5.05. İki ton yan yana ayırt
-   * edilemiyor, yani görsel paritede kaybedilen bir şey yok; okunabilirlikte
-   * kazanılan var. Mobil tarafın da buraya çekilmesi gerekiyor
-   * (bkz. docs/plan/web-parity.md, Şerit T).
+   * `--text-muted` bir süre tek sapmaydı: mobil #8a7866 kullanıyordu ve beyaz
+   * kart üstünde 4.23 veriyordu (eşik 4.5). Ölçüm mobil tarafta kapatıldı,
+   * ikisi de artık #7c6c5d. Koyu temada ise ters yönde eşitlendi: mobilin
+   * #a9998a'sı alındı (6.23; web'in eski #a79684'ü 6.00 — ikisi de geçiyordu,
+   * o yüzden referans Android oldu). Sönük metin iki uygulamada BİREBİR aynı.
    */
   --bg: #fbf7f2;
   --surface: #ffffff;
@@ -312,7 +312,7 @@
   --border: #3a2e23;
   --hairline: #2b221a;
   --text: #f6efe6;
-  --text-muted: #a79684;
+  --text-muted: #a9998a;
 
   /* Koyu zeminde sıcak kahve gölge görünmüyor; orada gölge siyaha dönüyor ve
      derinleşiyor — Android'in `elevation`'ı da koyu temada aynı şeyi yapar. */
