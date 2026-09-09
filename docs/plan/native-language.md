@@ -263,6 +263,66 @@ Yani `vocab` için tek tek okunacak madde 19 değil **714** (695 + 19).
 `VocabItem` ve `PatternItem` tipleri bugün `{ de, tr }` — `en` alanı yok,
 eklenmesi gerekiyor.
 
+#### `lecture` çeviri işi değil: 1.654 parça ANA DİLE bağlı (ölçüldü 2026-09-10)
+
+17.369 `tr()` parçasının çoğu Almanca hakkında konuşuyor — dil değişince
+yalnız dili değişir. Ama bir bölümü öğrencinin ANA DİLİNE bağlı ve olduğu
+gibi çevrilirse yanlış olur. `Türk*` taraması:
+
+```
+"Türkçesi '…' demek"        1.580 parça · 200 derste  ← sözlük istemi
+"Türkçede …" dilbilgisi        63 parça ·  60 derste  ← karşılaştırma
+"Türkçe konuşan için …"        11 parça               ← zorluk iddiası
+Almanca metinde (Türkisch)     10 parça               ← KALIR, hedef dil
+```
+
+(`Türklingel` = Tür + Klingel, taramada elenmesi gereken yanlış eşleşme.)
+
+**Birinci grup mekanik değil.** "Türkçesi 'merhaba' demek" cümlesinin
+İngilizcesi "the English for it is 'hello'" — taşınan şey cümle değil,
+İngilizce karşılığın kendisi. 1.580 kelimenin glossu yazılacak ve havuzdan
+türetme burada da güvenilmez: ders bağlamındaki anlam havuzun birinci
+sözlük anlamından farklı olabiliyor (yukarıdaki %84,6 sorununun aynısı).
+
+**İkinci ve üçüncü grup çevrilemez, yeniden KURULMALI** — ve bazıları
+İngilizcede tersine döner:
+
+```
+de-b1-sprache-akzent  "Türkçe ile Almanca akraba diller değil."
+                      → İngilizce ile Almanca AKRABA. İddia tersine dönüyor,
+                        çevrilirse ders yanlış şey öğretir.
+
+de-a1-sport           "Türkçede 'haftada iki kez' deriz; Almancada sıra tam
+                      tersi: önce kaç kez, sonra hafta."
+                      → İngilizcede sıra Almancanınkiyle AYNI ("twice a
+                        week"). Türk öğrenciye uyarı olan şey İngiliz
+                        öğrenciye hiç sorun değil.
+
+de-a1-aussehen        "Türkçedeki 'takmak'/'giymek' ayrımı Almancada yok."
+                      → İngilizcede de yok (ikisi "wear"). Karşılaştırma
+                        boşa düşer.
+
+de-a1-weh-tun         "Ağrıyan yer özne oluyor, tıpkı Türkçedeki gibi."
+                      → İngilizcede de öyle ("My head hurts") — bu sefer
+                        iddia tutuyor, ama tutması tesadüf, çeviri değil.
+```
+
+**Sonuç: `lecture` üç ayrı iş.**
+
+```
+(a) 15.715 parça  düz çeviri
+(b)  1.580 parça  İngilizce gloss yazımı (kelime kelime karar)
+(c)     74 parça  yeniden argüman kurma (iki dilin dilbilgisini kıyaslama)
+```
+
+(c) sayıca en küçük, birim başına en pahalı kalem: her biri Almanca–İngilizce
+karşılaştırması gerektiriyor ve dördünden ikisi kaynaktakinin TERSİNİ
+söyleyecek. Bu kalem bir çeviri turuna sığmaz, ayrı planlanmalı.
+
+Aynı sorunun küçük bir örneği başlık katmanında zaten çıktı ve çözüldü:
+`de-c1-falsche-freunde-idiome` başlığı "Türkçeyle tuzaklar" → **"Traps from
+English"**. 580 başlıktan ana dili adıyla anan tek ders bu.
+
 **patterns yarısı da BİTTİ (1.291/1.291).** Hat `data/lessons/patterns/`,
 sözlükçenin kardeşi ama triyajsız: kalıbın havuzda karşılığı yok (%0,3),
 hepsi elle.
